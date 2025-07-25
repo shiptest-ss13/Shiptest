@@ -14,7 +14,7 @@
 	maxHealth = 220
 	health = 220
 	loot = list(/obj/effect/gibspawner/generic/animal)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/gorilla = 4)
+	butcher_results = list(/obj/item/food/meat/slab/gorilla = 4)
 	response_help_continuous = "prods"
 	response_help_simple = "prod"
 	response_disarm_continuous = "challenges"
@@ -98,7 +98,7 @@
 	..()
 
 /mob/living/simple_animal/hostile/gorilla/can_use_guns(obj/item/G)
-	to_chat(src, "<span class='warning'>Your meaty finger is much too large for the trigger guard!</span>")
+	to_chat(src, span_warning("Your meaty finger is much too large for the trigger guard!"))
 	return FALSE
 
 

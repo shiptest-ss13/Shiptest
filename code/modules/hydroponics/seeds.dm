@@ -17,12 +17,12 @@
 	var/icon_dead					// Used to override dead icon (default is "[species]-dead"). You can use one dead icon for multiple closely related plants with it.
 	var/icon_harvest				// Used to override harvest icon (default is "[species]-harvest"). If null, plant will use [icon_grow][growthstages].
 
-	var/lifespan = 25				// How long before the plant begins to take damage from age.
+	var/lifespan = 30				// How long before the plant begins to take damage from age.
 	var/endurance = 15				// Amount of health the plant has.
 	var/maturation = 6				// Used to determine which sprite to switch to when growing.
 	var/production = 6				// Changes the amount of time needed for a plant to become harvestable.
 	var/yield = 3					// Amount of growns created per harvest. If is -1, the plant/shroom/weed is never meant to be harvested.
-	var/potency = 10				// The 'power' of a plant. Generally effects the amount of reagent in a plant, also used in other ways.
+	var/potency = 25				// The 'power' of a plant. Generally effects the amount of reagent in a plant, also used in other ways.
 	var/growthstages = 6			// Amount of growth sprites the plant has.
 	var/instability = 5				// Chance that a plant will mutate in each stage of it's life.
 	var/rarity = 0					// How rare the plant is. Used for giving points to cargo when shipping off to CentCom.
@@ -86,11 +86,11 @@
 
 /obj/item/seeds/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Use a pen on it to rename it or change its description.</span>"
+	. += span_notice("Use a pen on it to rename it or change its description.")
 	if(reagents_add && user.can_see_reagents())
-		. += "<span class='notice'>- Plant Reagents -</span>"
+		. += span_notice("- Plant Reagents -")
 		for(var/datum/plant_gene/reagent/gene in genes)
-			. += "<span class='notice'>- [gene.get_name()] -</span>"
+			. += span_notice("- [gene.get_name()] -")
 
 /obj/item/seeds/proc/Copy()
 	var/obj/item/seeds/S = new type(null, 1)
@@ -194,7 +194,7 @@
 	var/product_count = getYield()
 
 	while(t_amount < product_count)
-		var/obj/item/reagent_containers/food/snacks/grown/t_prod
+		var/obj/item/food/grown/t_prod
 		if(instability >= 30 && (seed_flags & MUTATE_EARLY) && LAZYLEN(mutatelist) && prob(instability/3))
 			var/obj/item/seeds/new_prod = pick(mutatelist)
 			t_prod = initial(new_prod.product)
@@ -239,7 +239,7 @@
 	var/output_loc =  parent.loc
 	var/product_name
 	while(t_amount < getYield())
-		var/obj/item/reagent_containers/food/snacks/grown/t_prod = new product(output_loc, src)
+		var/obj/item/food/grown/t_prod = new product(output_loc, src)
 		if(parent.myseed.plantname != initial(parent.myseed.plantname))
 			t_prod.name = lowertext(parent.myseed.plantname)
 		if(productdesc)
@@ -254,11 +254,11 @@
 		product_name = parent.myseed.plantname
 	if(getYield() >= 1)
 		SSblackbox.record_feedback("tally", "food_harvested", getYield(), product_name)
-	parent.investigate_log("autmoatic harvest of [getYield()] of [src], with seed traits [english_list(genes)] and reagents_add [english_list(reagents_add)] and potency [potency].", INVESTIGATE_BOTANY)
+	parent.investigate_log("automatic harvest of [getYield()] of [src], with seed traits [english_list(genes)] and reagents_add [english_list(reagents_add)] and potency [potency].", INVESTIGATE_BOTANY)
 	parent.update_tray()
 	return result
 
-/obj/item/seeds/proc/prepare_result(obj/item/reagent_containers/food/snacks/grown/T)
+/obj/item/seeds/proc/prepare_result(obj/item/food/grown/T)
 	if(!T.reagents)
 		CRASH("[T] has no reagents.")
 
@@ -431,7 +431,7 @@
 
 /obj/item/seeds/attackby(obj/item/O, mob/user, params)
 	if (istype(O, /obj/item/plant_analyzer))
-		var/msg = "This is \a <span class='name'>[src]</span>."
+		var/msg = "This is \a [span_name("[src]")]."
 		var/text
 		var/obj/item/plant_analyzer/P_analyzer = O
 		if(P_analyzer.scan_mode == PLANT_SCANMODE_STATS)
@@ -442,7 +442,7 @@
 			msg += "\n- Plant Reagents -"
 			msg += "\n*---------*"
 			for(var/datum/plant_gene/reagent/Gene in genes)
-				msg += "\n<span class='notice'>- [Gene.get_name()] -</span>"
+				msg += "\n[span_notice("- [Gene.get_name()] -")]"
 			msg += "\n*---------*"
 		to_chat(user, boxed_message(msg))
 
@@ -608,7 +608,7 @@
 /obj/item/proc/get_plant_seed()
 	return null
 
-/obj/item/reagent_containers/food/snacks/grown/get_plant_seed()
+/obj/item/food/grown/get_plant_seed()
 	return seed
 
 /obj/item/grown/get_plant_seed()

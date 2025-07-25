@@ -99,6 +99,33 @@
 	. = 1
 	..()
 
+/datum/reagent/consumable/dote_juice
+	name = "Dote Juice"
+	description = "A delicious juice made from Dote berries"
+	color = "#2359a0"
+	taste_description = "sweet berries"
+	glass_icon_state = "berryjuice"
+	glass_name = "glass of dote juice"
+	glass_desc = "Dote juice is good hot, cold, and anywhere between the poles."
+
+/datum/reagent/consumable/dotu_juice
+	name = "Dotu Juice"
+	description = "A neutral juice made from ripe Dote fruit."
+	color = "#2359a0"
+	taste_description = "bitter fruit"
+	glass_icon_state = "berryjuice"
+	glass_name = "glass of dotu juice"
+	glass_desc = "Dotu juice is said to be bitter, if not plain, but when it's used as a mixer? Anything can happen."
+
+/datum/reagent/consumable/refa_li
+	name = "Refa-Li Juice"
+	description = "Refa-Li is spicy, unless the seeds have been removed, in which case it takes on a more mellow, earthly tone"
+	color = "#d8702b"
+	taste_description = "pungent spice"
+	glass_icon_state = "berryjuice"
+	glass_name = "glass of refa-li juice"
+	glass_desc = "Refa-Li is spicy, unless the seeds have been removed, in which case it takes on a more mellow, earthly tone"
+
 /datum/reagent/consumable/watermelonjuice
 	name = "Watermelon Juice"
 	description = "Delicious juice made from watermelon."
@@ -126,12 +153,6 @@
 	glass_name = "glass of banana juice"
 	glass_desc = "While staring down at this glass, some part of you wonders what went through the minds of those who decided to add this to milk."
 
-/datum/reagent/consumable/banana/on_mob_life(mob/living/carbon/M)
-	if((ishuman(M) && M.job == "Clown") || ismonkey(M))
-		M.heal_bodypart_damage(1,1, 0)
-		. = 1
-	..()
-
 /datum/reagent/consumable/nothing
 	name = "Nothing"
 	description = "Absolutely nothing."
@@ -140,39 +161,6 @@
 	glass_name = "nothing"
 	glass_desc = "Absolutely nothing."
 	shot_glass_icon_state = "shotglass"
-
-/datum/reagent/consumable/nothing/on_mob_life(mob/living/carbon/M)
-	if(ishuman(M) && M.mind?.miming)
-		M.silent = max(M.silent, MIMEDRINK_SILENCE_DURATION)
-		M.heal_bodypart_damage(1,1)
-		. = 1
-	..()
-
-/datum/reagent/consumable/laughter
-	name = "Laughter"
-	description = "Some say that this is the best medicine, but recent studies have proven that to be untrue."
-	metabolization_rate = INFINITY
-	color = "#FF4DD2"
-	taste_description = "laughter"
-
-/datum/reagent/consumable/laughter/on_mob_life(mob/living/carbon/M)
-	M.emote("laugh")
-	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "chemical_laughter", /datum/mood_event/chemical_laughter)
-	..()
-
-/datum/reagent/consumable/superlaughter
-	name = "Super Laughter"
-	description = "Funny until you're the one laughing."
-	metabolization_rate = 1.5 * REAGENTS_METABOLISM
-	color = "#FF4DD2"
-	taste_description = "laughter"
-
-/datum/reagent/consumable/superlaughter/on_mob_life(mob/living/carbon/M)
-	if(prob(30))
-		M.visible_message("<span class='danger'>[M] bursts out into a fit of uncontrollable laughter!</span>", "<span class='userdanger'>You burst out in a fit of uncontrollable laughter!</span>")
-		M.Stun(5)
-		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "chemical_laughter", /datum/mood_event/chemical_superlaughter)
-	..()
 
 /datum/reagent/consumable/potato_juice
 	name = "Potato Juice"
@@ -205,6 +193,25 @@
 		. = 1
 	if(holder.has_reagent(/datum/reagent/consumable/capsaicin))
 		holder.remove_reagent(/datum/reagent/consumable/capsaicin, 2)
+	..()
+
+/datum/reagent/consumable/tiris_milk
+	name = "Tiris Milk"
+	description = "A strong, tangy milk made by a Tiris. Makes a very good cheese."
+	color = "#e2c5c5"
+	taste_description = "milk"
+	glass_icon_state = "glass_white"
+	glass_name = "glass of milk"
+	glass_desc = "A glass of heavy milk. You wonder what animal this could have come from."
+
+/datum/reagent/consumable/tiris_milk/on_mob_life(mob/living/carbon/M)
+	if(M.getBruteLoss() && prob(20))
+		M.heal_bodypart_damage(1,0, 0)
+		. = 1
+	if(holder.has_reagent(/datum/reagent/consumable/capsaicin))
+		holder.remove_reagent(/datum/reagent/consumable/capsaicin, 2)
+	if(holder.has_reagent(/datum/reagent/consumable/refa_li))
+		holder.remove_reagent(/datum/reagent/consumable/refa_li, 2)
 	..()
 
 /datum/reagent/consumable/soymilk
@@ -263,6 +270,13 @@
 	..()
 	. = 1
 
+/datum/reagent/consumable/creamer
+	name = "Coffee Creamer"
+	description = "Powdered milk for cheap coffee. How delightful."
+	taste_description = "milk"
+	color = "#efeff0"
+	nutriment_factor = 1.5 * REAGENTS_METABOLISM
+
 /datum/reagent/consumable/tea
 	name = "Tea"
 	description = "Warm, dark tea."
@@ -307,7 +321,7 @@
 
 /datum/reagent/consumable/tea/arnold_palmer/on_mob_life(mob/living/carbon/M)
 	if(prob(5))
-		to_chat(M, "<span class='notice'>[pick("You remember to square your shoulders.","You remember to keep your head down.","You can't decide between squaring your shoulders and keeping your head down.","You remember to relax.","You think about how someday you'll get two strokes off your golf game... whatever that is.")]</span>")
+		to_chat(M, span_notice("[pick("You remember to square your shoulders.","You remember to keep your head down.","You can't decide between squaring your shoulders and keeping your head down.","You remember to relax.","You think about how someday you'll get two strokes off your golf game... whatever that is.")]"))
 	..()
 	. = 1
 
@@ -937,6 +951,14 @@
 	glass_icon_state = "glass_yellow"
 	glass_name = "glass of bungo juice"
 	glass_desc = "A botanical experiment in creating a new fruit. It smells faintly citrusy, along with a hint of... banana?"
+
+/datum/reagent/consumable/beefbroth
+	name = "Beef Broth"
+	color = "#100800" // rgb: 16, 8, 0 , just like cola
+	taste_description = "Pure Beef Essence"
+	glass_icon_state  = "glass_brown"
+	glass_name = "glass of Master Cola?"
+	glass_desc = "A glass of what appears to be refreshing Space Cola."
 
 /datum/reagent/consumable/prunomix
 	name = "pruno mixture"

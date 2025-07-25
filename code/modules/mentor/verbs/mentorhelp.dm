@@ -9,17 +9,17 @@
 	if(!msg || !mob)
 		return
 	if(prefs.muted & MUTE_MENTORHELP)
-		to_chat(src, "<span class='warning'>You are unable to use mentorhelp (muted).</span>")
+		to_chat(src, span_warning("You are unable to use mentorhelp (muted)."))
 		return
 	var/show_char = CONFIG_GET(flag/mentors_mobname_only)
-	var/mentor_msg = "<span class='mentornotice'><b><span class='info'>MENTORHELP:</b> <b>[key_name_mentor(src, 1, 0, 1, show_char)]</b>:</span> [msg]</span>"
+	var/mentor_msg = span_mentornotice("<b>[span_info("MENTORHELP:</b> <b>[key_name_mentor(src, 1, 0, 1, show_char)]</b>:")] [msg]")
 	log_mentor("MENTORHELP: [key_name_mentor(src, 0, 0, 0, 0)]: [msg]")
 
 	for(var/client/X in GLOB.mentors)
 		SEND_SOUND(X, 'sound/items/bikehorn.ogg')
 		to_chat(X, mentor_msg)
 
-	to_chat(src, "<span class='mentornotice'>PM to-<b>Mentors</b>: [msg]</span>")
+	to_chat(src, span_mentornotice("PM to-<b>Mentors</b>: [msg]"))
 
 	//spam prevention, 60 second delay
 	remove_verb(src, /client/verb/mentorhelp)
@@ -68,9 +68,9 @@
 	if(key)
 		if(include_link)
 			if(CONFIG_GET(flag/mentors_mobname_only))
-				. += "<a href='?mentor_msg=[REF(M)]'>"
+				. += "<a href='byond://?mentor_msg=[REF(M)]'>"
 			else
-				. += "<a href='?mentor_msg=[ckey]'>"
+				. += "<a href='byond://?mentor_msg=[ckey]'>"
 
 		if(C && C.holder && C.holder.fakekey)
 			. += "Administrator"

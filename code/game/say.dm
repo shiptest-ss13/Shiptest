@@ -18,27 +18,75 @@ GLOBAL_LIST_INIT(freqtospan, list(
 
 GLOBAL_LIST_INIT(freqcolor, list())
 
-/atom/movable/proc/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
-	if(!can_speak())
+/atom/movable/proc/say(
+	message,
+	bubble_type,
+	list/spans = list(),
+	sanitize = TRUE,
+	datum/language/language,
+	ignore_spam = FALSE,
+	forced,
+	filterproof = FALSE,
+	message_range = 7,
+	datum/saymode/saymode,
+	list/message_mods = list(),
+)
+	if(!try_speak(message, ignore_spam, forced, filterproof))
 		return
-	if(message == "" || !message)
+	if(sanitize)
+		message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
+	if(!message || message == "")
 		return
 	spans |= speech_span
-	if(!language)
-		language = get_selected_language()
-	send_speech(message, 7, src, , spans, message_language=language)
+	language ||= get_selected_language()
+	message_mods[SAY_MOD_VERB] = say_mod(message, language, message_mods)
+	send_speech(message, message_range, src, bubble_type, spans, language, message_mods)
 
 /atom/movable/proc/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, list/message_mods = list())
 	SEND_SIGNAL(src, COMSIG_MOVABLE_HEAR, args)
 
+/**
+* Checks if our movable can speak the provided message, passing it through filters
+* and spam detection. Does not call can_speak. CAN include feedback messages about
+* why someone can or can't speak
+*
+* Used in [proc/say] and other methods of speech (radios) after a movable has inputted some message.
+* If you just want to check if the movable is able to speak in character, use [proc/can_speak] instead.
+*
+* Parameters:
+* - message (string): the original message
+* - ignore_spam (bool): should we ignore spam?
+* - forced (null|string): what was it forced by? null if voluntary
+* - filterproof (bool): are we filterproof?
+*
+* Returns:
+* TRUE of FASE depending on if our movable can speak
+*/
+
+/atom/movable/proc/try_speak(message, ignore_spam = FALSE, forced = null, filterproof = FALSE)
+	return can_speak()
+
+/**
+* Checks if our movable can currently speak, vocally, in general.
+* Should NOT include feedback messages about why someone can or can't speak
+
+* Used in various places to check if a movable is simply able to speak in general,
+* regardless of OOC status (being muted) and regardless of what they're actually saying.
+*
+* Checked AFTER handling of xeno channels.
+* (I'm not sure what this comment means, but it was here in the past, so I'll maintain it here.)
+*
+* If FALSE, this check will always fail if the movable has a mind and is miming.
+* if TRUE, we will check if the movable can speak irregardless
+*/
 /atom/movable/proc/can_speak()
 	//SHOULD_BE_PURE(TRUE)
-	return TRUE
+	return !HAS_TRAIT(src, TRAIT_MUTE)
 
 /atom/movable/proc/send_speech(message, range = 7, obj/source = src, bubble_type, list/spans, datum/language/message_language = null, list/message_mods = list())
 	var/rendered = compose_message(src, message_language, message, , spans, message_mods)
 	for(var/atom/movable/AM as anything in get_hearers_in_view(range, source))
-		AM.Hear(rendered, src, message_language, message, , spans, message_mods)
+		AM.Hear(rendered, src, message_language, message, , spans, message_mods.Copy())
 
 /atom/movable/proc/compose_message(atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, list/message_mods = list(), face_name = FALSE)
 	//This proc uses text() because it is faster than appending strings. Thanks BYOND.
@@ -77,16 +125,16 @@ GLOBAL_LIST_INIT(freqcolor, list())
 	//Message
 	var/messagepart
 	var/languageicon = ""
-	if (message_mods[MODE_CUSTOM_SAY_ERASE_INPUT])
+	if(message_mods[MODE_CUSTOM_SAY_ERASE_INPUT])
 		messagepart = message_mods[MODE_CUSTOM_SAY_EMOTE]
 	else
-		messagepart = lang_treat(speaker, message_language, raw_message, spans, message_mods)
+		messagepart = speaker.say_quote(raw_message, spans, message_mods)
 
-		var/datum/language/language = GLOB.language_datum_instances[message_language]
-		if(istype(language) && language.display_icon(src))
-			languageicon = "[language.get_icon()] "
+		var/datum/language/dialect = GLOB.language_datum_instances[message_language]
+		if(istype(dialect) && dialect.display_icon(src))
+			languageicon = "[dialect.get_icon()] "
 
-	messagepart = " <span class='message'>[say_emphasis(messagepart)]</span></span>"
+	messagepart = " <span class='message'>[messagepart]</span></span>"
 
 	return "[spanpart1][spanpart2][freqpart][languageicon][compose_track_href(speaker, namepart)][namepart][compose_job(speaker, message_language, raw_message, radio_freq)][endspanpart][messagepart]"
 
@@ -97,32 +145,38 @@ GLOBAL_LIST_INIT(freqcolor, list())
 	var/speakerJob = speaker.GetJob()
 	return "[ speakerJob ? " (" +  speakerJob + ")" : ""]"
 
-/atom/movable/proc/say_mod(input, list/message_mods = list())
+/atom/movable/proc/say_mod(input, datum/language/message_language, list/message_mods = list())
 	var/ending = copytext_char(input, -1)
+	if(!message_language)
+		message_language = get_selected_language()
 	if(copytext_char(input, -2) == "!!")
-		return verb_yell
+		return initial(message_language?.yell_verb) || initial(message_language?.exclaim_verb) || verb_yell
 	else if(message_mods[MODE_SING])
-		. = verb_sing
+		. = initial(message_language?.sing_verb) || verb_sing
 	else if(ending == "?")
-		return verb_ask
+		return initial(message_language?.ask_verb) || verb_ask
 	else if(ending == "!")
-		return verb_exclaim
+		return initial(message_language?.exclaim_verb) || verb_exclaim
 	else
-		return verb_say
+		return initial(message_language?.speech_verb) || verb_say
 
 /atom/movable/proc/say_quote(input, list/spans=list(speech_span), list/message_mods = list())
 	if(!input)
 		input = "..."
 
+	var/say_mod = message_mods[MODE_CUSTOM_SAY_EMOTE] || message_mods[SAY_MOD_VERB] || say_mod(input, get_selected_language(), message_mods)
+
 	if(copytext_char(input, -2) == "!!")
 		spans |= SPAN_YELL
 
-	var/say_mod = message_mods[MODE_CUSTOM_SAY_EMOTE]
-	if (!say_mod)
-		say_mod = say_mod(input, message_mods)
+	/* all inputs should be fully figured out past this point */
 
-	var/spanned = attach_spans(input, spans)
-	return "[say_mod], \"[spanned]\""
+	var/processed_input = say_emphasis(input) //This MUST be done first so that we don't get clipped by spans
+	processed_input = attach_spans(processed_input, spans)
+
+	var/processed_say_mod = say_emphasis(say_mod)
+
+	return "[processed_say_mod], \"[processed_input]\""
 
 /// Transforms the speech emphasis mods from [/atom/movable/proc/say_emphasis] into the appropriate HTML tags. Includes escaping.
 #define ENCODE_HTML_EMPHASIS(input, char, html, varname) \
@@ -141,15 +195,29 @@ GLOBAL_LIST_INIT(freqcolor, list())
 #undef ENCODE_HTML_EMPHASIS
 
 /atom/movable/proc/lang_treat(atom/movable/speaker, datum/language/language, raw_message, list/spans, list/message_mods = list(), no_quote = FALSE)
-	var/atom/movable/source = speaker.GetSource() || speaker //is the speaker virtual
-	if(has_language(language))
-		return no_quote ? raw_message : source.say_quote(raw_message, spans, message_mods)
-	else if(language)
-		var/datum/language/D = GLOB.language_datum_instances[language]
-		raw_message = D.scramble(raw_message)
-		return no_quote ? raw_message : source.say_quote(raw_message, spans, message_mods)
-	else
-		return "makes a strange sound."
+	SEND_SIGNAL(src, COMSIG_MOVABLE_TREAT_MESSAGE, args)
+	if(!language)
+		message_mods[MODE_CUSTOM_SAY_ERASE_INPUT] = TRUE
+		message_mods[MODE_CUSTOM_SAY_EMOTE] = "makes a strange sound."
+		return message_mods[MODE_CUSTOM_SAY_EMOTE]
+
+	if(!has_language(language))
+		var/list/mutual_languages
+		// Get what we can kinda understand, factor in any bonuses passed in from say mods
+		var/list/partially_understood_languages = get_partially_understood_languages()
+		if(LAZYLEN(partially_understood_languages))
+			mutual_languages = partially_understood_languages.Copy()
+			for(var/bonus_language in message_mods[LANGUAGE_MUTUAL_BONUS])
+				mutual_languages[bonus_language] = max(message_mods[LANGUAGE_MUTUAL_BONUS][bonus_language], mutual_languages[bonus_language])
+		if((initial(language?.flags) & SIGNED_LANGUAGE) && !mutual_languages[language])
+			message_mods[MODE_CUSTOM_SAY_ERASE_INPUT] = TRUE
+			message_mods[MODE_CUSTOM_SAY_EMOTE] = "signs something."
+			return message_mods[MODE_CUSTOM_SAY_EMOTE]
+
+		var/datum/language/dialect = GLOB.language_datum_instances[language]
+		raw_message = dialect.scramble_paragraph(raw_message, mutual_languages)
+
+	return raw_message
 
 /proc/get_radio_span(freq)
 	if(!freq) // If there's no freq attached to the message, then it's not for a radio.
@@ -193,7 +261,7 @@ GLOBAL_LIST_INIT(freqcolor, list())
 	return "0"
 
 /atom/movable/proc/GetVoice(if_no_voice = "Unknown")
-	return "[src]"	//Returns the atom's name, prepended with 'The' if it's not a proper noun
+	return "[src]"//Returns the atom's name, prepended with 'The' if it's not a proper noun
 
 /atom/movable/proc/IsVocal()
 	return 1

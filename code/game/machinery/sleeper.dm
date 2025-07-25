@@ -80,8 +80,8 @@
 	return ..()
 
 /obj/machinery/sleeper/container_resist_act(mob/living/user)
-	visible_message("<span class='notice'>[occupant] emerges from [src]!</span>",
-		"<span class='notice'>You climb out of [src]!</span>")
+	visible_message(span_notice("[occupant] emerges from [src]!"),
+		span_notice("You climb out of [src]!"))
 	open_machine()
 
 /obj/machinery/sleeper/Exited(atom/movable/user)
@@ -144,7 +144,7 @@
 		..(user)
 		var/mob/living/mob_occupant = occupant
 		if(mob_occupant && mob_occupant.stat != DEAD)
-			to_chat(occupant, "<span class='notice'><b>You feel cool air surround you. You go numb as your senses turn inward.</b></span>")
+			to_chat(occupant, span_notice("<b>You feel cool air surround you. You go numb as your senses turn inward.</b>"))
 
 /obj/machinery/sleeper/emp_act(severity)
 	. = ..()
@@ -166,7 +166,7 @@
 		replace_chembag(user, W)
 	else if(chembag && istype(W, /obj/item/reagent_containers) && !(W.item_flags & ABSTRACT) && W.is_open_container())
 		user.transferItemToLoc(W, chembag)
-		to_chat(user, "<span class='notice'>You put [W] into [src]'s [chembag].</span>")
+		to_chat(user, span_notice("You put [W] into [src]'s [chembag]."))
 		update_contents()
 	return ..()
 
@@ -177,12 +177,14 @@
 /obj/machinery/sleeper/proc/replace_chembag(mob/living/user, obj/item/storage/bag/chemistry/new_bag)
 	if(!user)
 		return FALSE
+	if(!user.canUseTopic(src, BE_CLOSE))
+		return
 	if(chembag)
-		to_chat(user, "<span class='notice'>You remove the [chembag] from [src].</span>")
+		to_chat(user, span_notice("You remove the [chembag] from [src]."))
 		user.put_in_hands(chembag)
 		chembag = null
 	if(new_bag && user.transferItemToLoc(new_bag, src))
-		to_chat(user, "<span class='notice'>You slot the [new_bag] into [src]'s chemical storage slot.</span>")
+		to_chat(user, span_notice("You slot the [new_bag] into [src]'s chemical storage slot."))
 		chembag = new_bag
 	update_contents()
 	return TRUE
@@ -192,10 +194,10 @@
 	if(..())
 		return
 	if(occupant)
-		to_chat(user, "<span class='warning'>[src] is currently occupied!</span>")
+		to_chat(user, span_warning("[src] is currently occupied!"))
 		return
 	if(state_open)
-		to_chat(user, "<span class='warning'>[src] must be closed to [panel_open ? "close" : "open"] its maintenance hatch!</span>")
+		to_chat(user, span_warning("[src] must be closed to [panel_open ? "close" : "open"] its maintenance hatch!"))
 		return
 	if(default_deconstruction_screwdriver(user, "[initial(icon_state)]-o", initial(icon_state), I))
 		return
@@ -217,7 +219,7 @@
 	. = !(state_open || panel_open || (flags_1 & NODECONSTRUCT_1)) && I.tool_behaviour == TOOL_CROWBAR
 	if(.)
 		I.play_tool_sound(src, 50)
-		visible_message("<span class='notice'>[usr] pries open [src].</span>", "<span class='notice'>You pry open [src].</span>")
+		visible_message(span_notice("[usr] pries open [src]."), span_notice("You pry open [src]."))
 		open_machine()
 
 /obj/machinery/sleeper/ui_interact(mob/user, datum/tgui/ui)
@@ -243,8 +245,8 @@
 
 /obj/machinery/sleeper/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click [src] to [state_open ? "close" : "open"] it.</span>"
-	. += "<span class='notice'>[chembag ? "There is a chembag in the chemical storage slot. It can be removed by Ctrl-clicking." : "It looks like a chembag can be attached to the chemical storage slot."]</span>"
+	. += span_notice("Alt-click [src] to [state_open ? "close" : "open"] it.")
+	. += span_notice("[chembag ? "There is a chembag in the chemical storage slot. It can be removed by Ctrl-clicking." : "It looks like a chembag can be attached to the chemical storage slot."]")
 
 /obj/machinery/sleeper/ui_data(mob/user)
 	if(src.contains(user) && !controls_inside)

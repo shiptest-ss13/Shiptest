@@ -32,22 +32,22 @@
 		return FALSE
 
 	if(M == user)
-		M.visible_message("<span class='notice'>[user] attempts to [apply_method] [src].</span>")
+		M.visible_message(span_notice("[user] attempts to [apply_method] [src]."))
 		if(self_delay)
 			if(!do_after(user, self_delay, M))
 				return FALSE
-		to_chat(M, "<span class='notice'>You [apply_method] [src].</span>")
+		to_chat(M, span_notice("You [apply_method] [src]."))
 
 	else
-		M.visible_message("<span class='danger'>[user] attempts to force [M] to [apply_method] [src].</span>", \
-							"<span class='userdanger'>[user] attempts to force you to [apply_method] [src].</span>")
+		M.visible_message(span_danger("[user] attempts to force [M] to [apply_method] [src]."), \
+							span_userdanger("[user] attempts to force you to [apply_method] [src]."))
 		if(!do_after(user, target = M))
 			return FALSE
-		M.visible_message("<span class='danger'>[user] forces [M] to [apply_method] [src].</span>", \
-							"<span class='userdanger'>[user] forces you to [apply_method] [src].</span>")
+		M.visible_message(span_danger("[user] forces [M] to [apply_method] [src]."), \
+							span_userdanger("[user] forces you to [apply_method] [src]."))
 
 	if(icon_state == "pill4" && prob(5)) //you take the red pill - you stay in Wonderland, and I show you how deep the rabbit hole goes
-		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), M, "<span class='notice'>[pick(strings(REDPILL_FILE, "redpill_questions"))]</span>"), 50)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), M, span_notice("[pick(strings(REDPILL_FILE, "redpill_questions"))]")), 50)
 
 	if(reagents.total_volume)
 		reagents.trans_to(M, reagents.total_volume, transfered_by = user, method = apply_type)
@@ -62,14 +62,14 @@
 	if(!dissolvable || !target.is_refillable())
 		return
 	if(target.is_drainable() && !target.reagents.total_volume)
-		to_chat(user, "<span class='warning'>[target] is empty! There's nothing to dissolve [src] in.</span>")
+		to_chat(user, span_warning("[target] is empty! There's nothing to dissolve [src] in."))
 		return
 
 	if(target.reagents.holder_full())
-		to_chat(user, "<span class='warning'>[target] is full.</span>")
+		to_chat(user, span_warning("[target] is full."))
 		return
 
-	user.visible_message("<span class='warning'>[user] slips something into [target]!</span>", "<span class='notice'>You dissolve [src] in [target].</span>", null, 2)
+	user.visible_message(span_warning("[user] slips something into [target]!"), span_notice("You dissolve [src] in [target]."), null, 2)
 	reagents.trans_to(target, reagents.total_volume, transfered_by = user)
 	qdel(src)
 
@@ -328,3 +328,9 @@ WS End */
 	desc = "A medical spray bottle.This one contains rhigoxane, it is used to treat burns and cool down temperature if applied with spray."
 	icon_state = "sprayer"
 	list_reagents = list(/datum/reagent/medicine/rhigoxane = 100)
+
+/obj/item/reagent_containers/pill/placebatol
+	name = "prescription pill"
+	desc = "A pill composed of a white, powdery substance. Take as prescribed."
+	icon_state = "pill9"
+	list_reagents = list(/datum/reagent/drug/placebatol = 10)

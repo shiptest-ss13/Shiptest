@@ -1,5 +1,5 @@
 #define ELZUOSE_EMAG_COLORS list("#00ffff", "#ffc0cb", "#9400D3", "#4B0082", "#0000FF", "#00FF00", "#FFFF00", "#FF7F00", "#FF0000")
-#define GOOD_SOIL list(/turf/open/floor/plating/grass, /turf/open/floor/plating/dirt, /turf/open/floor/ship/dirt, /turf/open/floor/grass/ship, /turf/open/floor/plating/asteroid/whitesands/grass, /turf/open/floor/grass/fairy/beach)
+#define GOOD_SOIL list(/turf/open/floor/plating/grass, /turf/open/floor/plating/dirt, /turf/open/floor/ship/dirt, /turf/open/floor/grass/ship, /turf/open/floor/plating/asteroid/whitesands/grass, /turf/open/floor/grass/fairy/beach, /turf/open/floor/plating/asteroid/dirt)
 #define DIG_TIME (7.5 SECONDS)
 #define ROOT_TIME (3 SECONDS)
 #define ROOT_CHARGE_GAIN (5 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
@@ -10,14 +10,14 @@
 	attack_verb = "burn"
 	attack_sound = 'sound/weapons/etherealhit.ogg'
 	miss_sound = 'sound/weapons/etherealmiss.ogg'
-	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ethereal
+	meat = /obj/item/food/meat/slab/human/mutant/ethereal
 	mutantstomach = /obj/item/organ/stomach/ethereal
 	mutanttongue = /obj/item/organ/tongue/ethereal
 	siemens_coeff = 0.5 //They thrive on energy
 	attack_type = BURN //burn bish
 	exotic_bloodtype = "E"
 	species_age_max = 300
-	species_traits = list(DYNCOLORS, EYECOLOR, HAIR, FACEHAIR)
+	species_traits = list(DYNCOLORS, EYECOLOR, HAIR, FACEHAIR, HAS_FLESH, HAS_BONE)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	species_language_holder = /datum/language_holder/ethereal
 	inherent_traits = list(TRAIT_NOHUNGER)
@@ -158,8 +158,11 @@
 		var/turf/terrain = get_turf(_human)
 		if(_human.has_status_effect(/datum/status_effect/rooted))
 			return FALSE
-		if(is_type_in_list(terrain,GOOD_SOIL))
+		if(is_type_in_list(terrain, GOOD_SOIL))
 			return TRUE
+		for(var/atom/movable/thing in terrain.contents)
+			if(is_type_in_list(thing, list(/obj/machinery/hydroponics/wooden, /obj/machinery/hydroponics/soil)))
+				return TRUE
 		return FALSE
 
 /datum/species/elzuose/random_name(gender,unique,lastname)

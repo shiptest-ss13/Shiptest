@@ -1611,7 +1611,7 @@
 	color = "#8A9397"
 	},
 /obj/item/cutting_board,
-/obj/item/reagent_containers/food/snacks/donkpocket/warm,
+/obj/item/food/donkpocket/warm,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/hallway/central)
 "kO" = (
@@ -3205,6 +3205,7 @@
 	dir = 4
 	},
 /obj/machinery/computer/operating,
+/obj/item/disk/surgery/t2,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "wc" = (
@@ -4066,13 +4067,7 @@
 /obj/item/storage/ration/beef_goulash,
 /obj/item/storage/ration/beef_strips,
 /obj/item/storage/ration/fried_fish,
-/obj/item/reagent_containers/food/snacks/popcorn{
-	desc = "Dehydrated, salted sunflower seeds, for snacking!";
-	icon = 'icons/obj/hydroponics/seeds.dmi';
-	icon_state = "seed-sunflower";
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4);
-	name = "Snacking Sunflower Seeds"
-	},
+/obj/item/food/popcorn,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /turf/open/floor/plasteel/tech,

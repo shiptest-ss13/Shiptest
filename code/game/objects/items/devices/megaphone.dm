@@ -25,7 +25,7 @@
 /obj/item/megaphone/proc/handle_speech(mob/living/carbon/user, list/speech_args)
 	if (user.get_active_held_item() == src)
 		if(spamcheck > world.time)
-			to_chat(user, "<span class='warning'>\The [src] needs to recharge!</span>")
+			to_chat(user, span_warning("\The [src] needs to recharge!"))
 		else
 			playsound(loc, 'sound/items/megaphone.ogg', 100, FALSE, TRUE)
 			spamcheck = world.time + 50
@@ -34,7 +34,7 @@
 /obj/item/megaphone/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
 		return
-	to_chat(user, "<span class='warning'>You overload \the [src]'s voice synthesizer.</span>")
+	to_chat(user, span_warning("You overload \the [src]'s voice synthesizer."))
 	obj_flags |= EMAGGED
 	voicespan = list(SPAN_REALLYBIG, "userdanger")
 
@@ -52,10 +52,3 @@
 	name = "supply megaphone"
 	icon_state = "megaphone-cargo"
 	item_state = "megaphone-cargo"
-
-/obj/item/megaphone/clown
-	name = "clown's megaphone"
-	desc = "Something that should not exist."
-	icon_state = "megaphone-clown"
-	item_state = "megaphone-clown"
-	voicespan = list(SPAN_CLOWN)

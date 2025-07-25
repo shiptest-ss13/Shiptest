@@ -93,6 +93,8 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define HIDDEN_AREA (1<<6)
 /// If false, loading multiple maps with this area type will create multiple instances.
 #define UNIQUE_AREA (1<<7)
+///Refers to ship areas with docking ports, telling the smoothing subsytem to only smooth tiles within the same ship.
+#define SHIP_SMOOTHING (1<<8)
 
 /*
 	These defines are used specifically with the atom/pass_flags bitmask
@@ -108,6 +110,8 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define LETPASSTHROW (1<<6)
 #define PASSDOORHATCH (1<<7)
 #define PASSPLATFORM (1<<8)
+/// Do not intercept click attempts during Adjacent() checks. See [turf/proc/ClickCross]. **ONLY MEANINGFUL ON pass_flags_self!**
+#define LETPASSCLICKS (1<<9)
 
 //Movement Types
 #define GROUND (1<<0)

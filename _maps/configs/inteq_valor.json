@@ -13,6 +13,7 @@
 	],
 	"map_short_name": "Valor-class",
 	"map_path": "_maps/shuttles/inteq/inteq_valor.dmm",
+	"token_icon_state": "ship_big_generic",
 	"limit": 1,
 	"job_slots": {
 		"Vanguard": {
@@ -26,7 +27,7 @@
 			"slots": 1
 		},
 		"Shuttle Pilot": {
-			"outfit": "/datum/outfit/job/inteq/warden/pilot",
+			"outfit": "/datum/outfit/job/inteq/pilot/empty",
 			"officer": true,
 			"slots": 1
 		},
@@ -46,7 +47,7 @@
 			"outfit": "/datum/outfit/job/inteq/engineer",
 			"slots": 1
 		},
-		"Recruit": {
+		"Auxiliary": {
 			"outfit": "/datum/outfit/job/inteq/assistant",
 			"slots": 2
 		}

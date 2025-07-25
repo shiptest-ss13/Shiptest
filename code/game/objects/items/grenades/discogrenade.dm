@@ -14,7 +14,7 @@
 	var/list/messages = list("This party is great!", "Wooo!!!", "Party!", "Check out these moves!", "Hey, want to dance with me?")
 	var/list/message_social_anxiety = list("I want to go home...", "Where are the toilets?", "I don't like this song.")
 
-/obj/item/grenade/discogrenade/prime(mob/living/lanced_by)
+/obj/item/grenade/discogrenade/prime()
 	. = ..()
 	update_mob()
 	var/current_turf = get_turf(src)
@@ -28,7 +28,7 @@
 	for(var/i in 1 to 6)
 		new /obj/item/grenade/discogrenade/subgrenade(current_turf, TRUE)
 
-	qdel(src)
+	resolve()
 
 //////////////////////
 //   Sub grenades   //
@@ -56,7 +56,7 @@
 	addtimer(CALLBACK(src, PROC_REF(prime)), rand(10, 60))
 	randomiseLightColor()
 
-/obj/item/grenade/discogrenade/subgrenade/prime(mob/living/lanced_by)
+/obj/item/grenade/discogrenade/subgrenade/prime()
 	update_mob()
 	var/current_turf = get_turf(src)
 	if(!current_turf)
@@ -74,7 +74,7 @@
 
 	for(var/mob/living/carbon/human/victim in hearers(4, src))
 		forcedance(get_turf(victim), victim)
-	qdel(src)
+	resolve()
 
 /obj/item/grenade/discogrenade/subgrenade/proc/randomiseLightColor()
 	remove_atom_colour(TEMPORARY_COLOUR_PRIORITY)
@@ -94,13 +94,6 @@
 
 	var/distance = max(0,get_dist(get_turf(src), target_turf))
 	if(distance > 2.5)
-		return
-
-	if(target.has_quirk(/datum/quirk/social_anxiety))
-		target.say(pick(message_social_anxiety))
-		if(rand(3) && target.get_ear_protection() == 0)
-			target.drop_all_held_items()
-			target.show_message(span_warning("You cover your ears, the music is just too loud for you."), 2)
 		return
 
 	if(HAS_TRAIT(target, TRAIT_MINDSHIELD))

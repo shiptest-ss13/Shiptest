@@ -4,7 +4,7 @@
 #define MERITS_PER_ICE MOLS_PER_ICE / MOLS_PER_MERIT //1 ice = 5 merits
 #define MERITS_USED_PER_TICK 2
 #define H2_PUMP_SHUTOFF_PRESSURE 4000
-#define CREDITS_TO_MERITS 4 // currently 2:5 credits to mols hydrogen. # of credits per merit
+#define CREDITS_TO_MERITS 3 // currently 3:10 credits to mols hydrogen. # of credits per merit
 #define OUTPOST_HYDROGEN_CUT 0.8
 #define HYDROGEN_IDEAL 45000 //used for high and low end of merit multiplier
 #define MERIT_EXPONENT 0.95 //used for diminishing returns, values closer to 1 increase returns, lower decrease.
@@ -93,7 +93,7 @@
 	if(istype(item, /obj/item/multitool))
 		var/obj/item/multitool/multi = item
 		multi.buffer = src
-		to_chat(user, "<span class='notice'>[src] stored in [multi].</span>")
+		to_chat(user, span_notice("[src] stored in [multi]."))
 		return
 	return ..()
 
@@ -110,7 +110,7 @@
 
 /obj/machinery/mineral/electrolyzer/proc/electrolyze(atom/movable/electrolyze_target, sound=TRUE)
 	if(!find_electrolyzer())
-		visible_message("<span class='danger'>[src] doesn't have a linked console!</span>")
+		visible_message(span_danger("[src] doesn't have a linked console!"))
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, FALSE, 1)
 		return
 	if(istype(electrolyze_target, /obj/effect) || !linked_console || !isturf(electrolyze_target.loc) || (machine_stat & (BROKEN|NOPOWER)))
@@ -166,13 +166,13 @@
 /obj/machinery/atmospherics/components/unary/hydrogen_pump/examine(mob/user)
 	. = ..()
 	if(merit)
-		. += "<span class='notice'>[src] has [merit] merits, equaling [merit * MOLS_PER_MERIT] mols of hydrogen.</span>"
+		. += span_notice("[src] has [merit] merits, equaling [merit * MOLS_PER_MERIT] mols of hydrogen.")
 	else
-		. += "<span class='notice'>[src] has no merits, get some from the electrolyzer or buy them to get hydrogen!</span>"
-	. += "<span class='notice'>[src] is currently [on ? "on" : "off"], and shuts off above [H2_PUMP_SHUTOFF_PRESSURE] kPa.</span>"
-	. += "<span class='notice'>[src] can be Alt-Clicked to eject merits.</span>"
+		. += span_notice("[src] has no merits, get some from the electrolyzer or buy them to get hydrogen!")
+	. += span_notice("[src] is currently [on ? "on" : "off"], and shuts off above [H2_PUMP_SHUTOFF_PRESSURE] kPa.")
+	. += span_notice("[src] can be Alt-Clicked to eject merits.")
 	if(not_processing_bug == TRUE)
-		. += "<span class='warning'>[src] is temporarily disabled. Check back later!</span>"
+		. += span_warning("[src] is temporarily disabled. Check back later!")
 
 /obj/machinery/atmospherics/components/unary/hydrogen_pump/process_atmos(seconds_per_tick)
 	..()
@@ -182,7 +182,7 @@
 		return
 	if(!merit || air.return_pressure() > H2_PUMP_SHUTOFF_PRESSURE)
 		on = FALSE
-		visible_message("<span class='danger'>[src] shuts off!</span>")
+		visible_message(span_danger("[src] shuts off!"))
 		playsound(src, 'sound/machines/switch2.ogg', 10, FALSE)
 		return
 	var/meritused
@@ -201,7 +201,7 @@
 	if(istype(I, /obj/item/merit/bundle))
 		var/obj/item/merit/bundle/C = I
 		merit += C.value
-		to_chat(user, "<span class='notice'>You deposit [I], for a total of [merit] merits.</span>")
+		to_chat(user, span_notice("You deposit [I], for a total of [merit] merits."))
 		qdel(I)
 		return
 	return ..()
@@ -213,7 +213,7 @@
 	if(on)
 		SSair.start_processing_machine(src)
 	playsound(src, 'sound/machines/switch3.ogg', 10, FALSE)
-	to_chat(user, "<span class='notice'>You toggle the pump [on ? "on" : "off"].</span>")
+	to_chat(user, span_notice("You toggle the pump [on ? "on" : "off"]."))
 	investigate_log("was turned [on ? "on" : "off"] by [key_name(user)]", INVESTIGATE_ATMOS)
 	update_appearance()
 
@@ -222,9 +222,9 @@
 		new /obj/item/merit/bundle(drop_location(), merit)
 		merit = FALSE
 		playsound(src, 'sound/items/poster_being_created.ogg', 10, FALSE)
-		to_chat(user, "<span class='notice'>You retrieve the hydrogen merits.</span>")
+		to_chat(user, span_notice("You retrieve the hydrogen merits."))
 	else
-		to_chat(user, "<span class='notice'>There were no merits left to retrieve.</span>")
+		to_chat(user, span_notice("There were no merits left to retrieve."))
 
 
 //Hydrogen exchange
@@ -249,13 +249,13 @@
 		value = H.credits
 	if(value)
 		credits += value
-		to_chat(user, "<span class='notice'>You deposit [I], for a total of [credits] credits.</span>")
+		to_chat(user, span_notice("You deposit [I], for a total of [credits] credits."))
 		qdel(I)
 		return
 	if(istype(I, /obj/item/merit/bundle))
 		var/obj/item/merit/bundle/C = I
 		merits += C.value
-		to_chat(user, "<span class='notice'>You deposit [I], for a total of [merits] merits.</span>")
+		to_chat(user, span_notice("You deposit [I], for a total of [merits] merits."))
 		qdel(I)
 		return
 	return ..()
@@ -303,7 +303,7 @@
 
 /obj/machinery/computer/hydrogen_exchange/AltClick(mob/user)
 	dispense_funds()
-	to_chat(user, "<span class='notice'>You force the credits and merits out of the machine.</span>")
+	to_chat(user, span_notice("You force the credits and merits out of the machine."))
 
 /obj/machinery/computer/hydrogen_exchange/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -381,7 +381,7 @@
 		H.dropItemToGround(src)
 		H.dropItemToGround(bundle)
 		H.put_in_hands(bundle)
-	to_chat(user, "<span class='notice'>You add [value] merits worth of money to the bundle.<br>It now holds [bundle.value] merits.</span>")
+	to_chat(user, span_notice("You add [value] merits worth of money to the bundle.<br>It now holds [bundle.value] merits."))
 	qdel(src)
 
 /obj/item/merit/Destroy()
@@ -454,7 +454,7 @@
 
 /obj/item/merit/bundle/attack_self(mob/user)
 	if(!Adjacent(user))
-		to_chat(user, "<span class='warning'>You need to be in arm's reach for that!</span>")
+		to_chat(user, span_warning("You need to be in arm's reach for that!"))
 		return
 
 	var/cashamount = input(user, "How many merits do you want to take? (0 to [value])", "Take Merits", 20) as num
@@ -475,7 +475,7 @@
 
 /obj/item/merit/bundle/AltClick(mob/living/user)
 	if(!Adjacent(user))
-		to_chat(user, "<span class='warning'>You need to be in arm's reach for that!</span>")
+		to_chat(user, span_warning("You need to be in arm's reach for that!"))
 		return
 
 	var/cashamount = input(user, "How many merits do you want to take? (0 to [value])", "Take Merits", 20) as num

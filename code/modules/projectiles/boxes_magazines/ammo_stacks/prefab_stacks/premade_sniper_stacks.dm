@@ -27,9 +27,9 @@
 	max_ammo = 5
 
 /obj/item/storage/box/ammo/a858
-	name = "box of .300 magnum ammo"
-	desc = "A box of standard .300 Magnum ammo."
-	icon_state = "300box"
+	name = "box of 8x58mm caseless ammo"
+	desc = "A box of 8x58mm caseless rounds."
+	icon_state = "8x58mmbox"
 
 /obj/item/storage/box/ammo/a858/PopulateContents()
 	var/static/items_inside = list(
@@ -66,15 +66,15 @@
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a300/trac = 2)
 	generate_items_inside(items_inside,src)
 
-//6.5x57mm CLIP
+//6.5mm CLIP
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a65clip
 	ammo_type = /obj/item/ammo_casing/a65clip
 	max_ammo = 5
 
 /obj/item/storage/box/ammo/a65clip
-	name = "box of 6.5x57mm CLIP ammo"
-	desc = "A box of standard 6.5x57mm CLIP ammo."
+	name = "box of 6.5mm CLIP ammo"
+	desc = "A box of standard 6.5mm CLIP ammo."
 	icon_state = "65box"
 
 /obj/item/storage/box/ammo/a65clip/PopulateContents()
@@ -87,8 +87,8 @@
 	max_ammo = 5
 
 /obj/item/storage/box/ammo/a65clip/trac
-	name = "box of 6.5x57mm CLIP tracker ammo"
-	desc = "A box of standard 6.5x57mm CLIP tracker ammo."
+	name = "box of 6.5mm CLIP tracker ammo"
+	desc = "A box of standard 6.5mm CLIP tracker ammo."
 
 /obj/item/storage/box/ammo/a65clip/trac/PopulateContents()
 	var/static/items_inside = list(

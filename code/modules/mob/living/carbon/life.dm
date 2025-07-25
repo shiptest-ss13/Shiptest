@@ -86,7 +86,7 @@
 //Second link in a breath chain, calls check_breath()
 /mob/living/carbon/proc/breathe()
 	var/obj/item/organ/lungs = getorganslot(ORGAN_SLOT_LUNGS)
-	if(reagents.has_reagent(/datum/reagent/toxin/lexorin, needs_metabolizing = TRUE))
+	if(has_reagent(/datum/reagent/toxin/lexorin, needs_metabolizing = TRUE))
 		return
 	if(istype(loc, /obj/machinery/atmospherics/components/unary/cryo_cell))
 		return
@@ -160,7 +160,7 @@
 
 	//CRIT
 	if(!breath || (breath.total_moles() == 0) || !lungs)
-		if(reagents.has_reagent(/datum/reagent/medicine/epinephrine, needs_metabolizing = TRUE) && lungs)
+		if(has_reagent(/datum/reagent/medicine/epinephrine, needs_metabolizing = TRUE) && lungs)
 			return
 		adjustOxyLoss(1)
 
@@ -315,7 +315,7 @@
 			if(O.owner) // This exist mostly because reagent metabolization can cause organ reshuffling
 				O.on_life()
 	else
-		if(reagents.has_reagent(/datum/reagent/toxin/formaldehyde, 1)) // No organ decay if the body contains formaldehyde.
+		if(has_reagent(/datum/reagent/toxin/formaldehyde, 1)) // No organ decay if the body contains formaldehyde.
 			return
 		for(var/V in internal_organs)
 			var/obj/item/organ/O = V
@@ -329,6 +329,12 @@
 
 		if(stat != DEAD || D.process_dead)
 			D.stage_act()
+
+/mob/living/carbon/handle_wounds()
+	for(var/thing in all_wounds)
+		var/datum/wound/W = thing
+		if(W.processes) // meh
+			W.handle_process()
 
 //todo generalize this and move hud out
 /mob/living/carbon/proc/handle_changeling()
@@ -507,13 +513,13 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		if(drunkenness >= 81)
 			adjustToxLoss(1)
 			if(prob(5) && !stat)
-				to_chat(src, "<span class='warning'>Maybe you should lie down for a bit...</span>")
+				to_chat(src, span_warning("Maybe you should lie down for a bit..."))
 
 		if(drunkenness >= 91)
 			adjustToxLoss(1)
 			adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.4)
 			if(prob(20) && !stat)
-				to_chat(src, "<span class='warning'>Just a quick nap...</span>")
+				to_chat(src, span_warning("Just a quick nap..."))
 				Sleeping(900)
 
 		if(drunkenness >= 101)
@@ -654,6 +660,53 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		bodytemperature = clamp(bodytemperature + amount,min_temp,max_temp)
 		return amount
 
+///////////
+//Stomach//
+///////////
+/mob/living/carbon/get_fullness()
+	var/fullness = nutrition
+	var/obj/item/organ/stomach/belly = getorganslot(ORGAN_SLOT_STOMACH)
+	if(!belly) //nothing to see here if we do not have a stomach
+		return fullness
+	for(var/bile in belly.reagents.reagent_list)
+		var/datum/reagent/bits = bile
+		if(istype(bits, /datum/reagent/consumable))
+			var/datum/reagent/consumable/goodbit = bile
+			fullness += goodbit.nutriment_factor * goodbit.volume / goodbit.metabolization_rate
+			continue
+		fullness += 0.6 * bits.volume / bits.metabolization_rate //not food takes up space
+	return fullness
+
+/mob/living/carbon/has_reagent(reagent, amount = -1, needs_metabolizing = FALSE)
+	. = ..()
+	if(.)
+		return
+	var/obj/item/organ/stomach/belly = getorganslot(ORGAN_SLOT_STOMACH)
+	if(!belly)
+		return FALSE
+	return belly.reagents.has_reagent(reagent, amount, needs_metabolizing)
+
+/mob/living/carbon/remove_reagent(reagent, custom_amount, safety)
+	if(!custom_amount)
+		custom_amount = get_reagent_amount(reagent)
+	var/amount_body = reagents.get_reagent_amount(reagent)
+	if(custom_amount <= amount_body)
+		reagents.remove_reagent(reagent, custom_amount, safety)
+		return	TRUE
+	reagents.remove_reagent(reagent, amount_body, safety)
+	custom_amount -= amount_body
+	var/obj/item/organ/stomach/belly = getorganslot(ORGAN_SLOT_STOMACH)
+	if(!belly)
+		return FALSE
+	belly.reagents.remove_reagent(reagent, custom_amount, safety)
+	return TRUE
+
+/mob/living/carbon/get_reagent_amount(reagent)
+	. = ..()
+	var/obj/item/organ/stomach/belly = getorganslot(ORGAN_SLOT_STOMACH)
+	if(!belly)
+		return
+	. += belly.reagents.get_reagent_amount(reagent)
 
 /////////
 //LIVER//
@@ -673,13 +726,26 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		return TRUE
 
 /mob/living/carbon/proc/liver_failure()
-	reagents.end_metabolization(src, keep_liverless = TRUE) //Stops trait-based effects on reagents, to prevent permanent buffs
+	end_metabolization(src, keep_liverless = TRUE) //Stops trait-based effects on reagents, to prevent permanent buffs
 	reagents.metabolize(src, can_overdose=FALSE, liverless = TRUE)
 	if(HAS_TRAIT(src, TRAIT_STABLELIVER) || HAS_TRAIT(src, TRAIT_NOMETABOLISM))
 		return
 	adjustToxLoss(4, TRUE,  TRUE)
 	if(prob(30))
-		to_chat(src, "<span class='warning'>You feel a stabbing pain in your abdomen!</span>")
+		to_chat(src, span_warning("You feel a stabbing pain in your abdomen!"))
+
+/**
+ * Ends metabolization on the mob
+ *
+ * This stop all reagents in the body and organs from metabolizing
+ * Vars:
+ * * keep_liverless (bool)(optional)(default:TRUE) Will keep working without a liver
+ */
+/mob/living/carbon/proc/end_metabolization(keep_liverless = TRUE)
+	reagents.end_metabolization(src, keep_liverless = keep_liverless)
+	var/obj/item/organ/stomach/belly = getorganslot(ORGAN_SLOT_STOMACH)
+	if(belly)
+		belly.reagents.end_metabolization(src, keep_liverless = keep_liverless)
 
 /////////////
 //CREMATION//
@@ -707,11 +773,11 @@ All effects don't start immediately, but rather get worse over time; the rate is
 				if(limb.cremation_progress >= 100)
 					if(IS_ORGANIC_LIMB(limb))  //Non-organic limbs don't burn
 						limb.drop_limb()
-						limb.visible_message("<span class='warning'>[src]'s [limb.name] crumbles into ash!</span>")
+						limb.visible_message(span_warning("[src]'s [limb.name] crumbles into ash!"))
 						qdel(limb)
 					else
 						limb.drop_limb()
-						limb.visible_message("<span class='warning'>[src]'s [limb.name] detaches from [p_their()] body!</span>")
+						limb.visible_message(span_warning("[src]'s [limb.name] detaches from [p_their()] body!"))
 	if(still_has_limbs)
 		return
 
@@ -723,17 +789,17 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			if(head.cremation_progress >= 100)
 				if(!IS_ORGANIC_LIMB(head)) //Non-organic limbs don't burn
 					head.drop_limb()
-					head.visible_message("<span class='warning'>[src]'s head crumbles into ash!</span>")
+					head.visible_message(span_warning("[src]'s head crumbles into ash!"))
 					qdel(head)
 				else
 					head.drop_limb()
-					head.visible_message("<span class='warning'>[src]'s head detaches from [p_their()] body!</span>")
+					head.visible_message(span_warning("[src]'s head detaches from [p_their()] body!"))
 		return
 
 	//Nothing left: dust the body, drop the items (if they're flammable they'll burn on their own)
 	chest.cremation_progress += rand(2,5)
 	if(chest.cremation_progress >= 100)
-		visible_message("<span class='warning'>[src]'s body crumbles into a pile of ash!</span>")
+		visible_message(span_warning("[src]'s body crumbles into a pile of ash!"))
 		dust(TRUE, TRUE)
 
 ////////////////

@@ -142,7 +142,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 /datum/preferences/proc/announce_conflict(list/notadded)
 	to_chat(parent, "<span class='userdanger'>KEYBINDING CONFLICT!!!\n\
 	There are new keybindings that have defaults bound to keys you already set, They will default to Unbound. You can bind them in Setup Character or Game Preferences\n\
-	<a href='?_src_=prefs;preference=tab;tab=3'>Or you can click here to go straight to the keybindings page</a></span>")
+	<a href='byond://?_src_=prefs;preference=tab;tab=3'>Or you can click here to go straight to the keybindings page</a></span>")
 	for(var/item in notadded)
 		var/datum/keybinding/conflicted = item
 		to_chat(parent, "<span class='userdanger'>[conflicted.category]: [conflicted.full_name] needs updating")
@@ -222,6 +222,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["pda_style"], pda_style)
 	READ_FILE(S["pda_color"], pda_color)
 	READ_FILE(S["whois_visible"], whois_visible)
+	READ_FILE(S["tgui_input"], tgui_input)
+	READ_FILE(S["large_tgui_buttons"], large_tgui_buttons)
+	READ_FILE(S["swapped_tgui_buttons"], swapped_tgui_buttons)
 
 	READ_FILE(S["show_credits"], show_credits)
 
@@ -372,6 +375,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["favorite_outfits"], favorite_outfits)
 	WRITE_FILE(S["whois_visible"], whois_visible)
 	WRITE_FILE(S["hearted_until"], (hearted_until > world.realtime ? hearted_until : null))
+	WRITE_FILE(S["large_tgui_buttons"], large_tgui_buttons)
+	WRITE_FILE(S["swapped_tgui_buttons"], swapped_tgui_buttons)
+	WRITE_FILE(S["tgui_input"], tgui_input)
 	return TRUE
 
 /datum/preferences/proc/load_character(slot)
@@ -425,7 +431,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["jumpsuit_style"], jumpsuit_style)
 	READ_FILE(S["uplink_loc"], uplink_spawn_loc)
 	READ_FILE(S["phobia"], phobia)
-	READ_FILE(S["preferred_smoke_brand"], preferred_smoke_brand)
 	READ_FILE(S["generic_adjective"], generic_adjective)
 	READ_FILE(S["randomise"],  randomise)
 	READ_FILE(S["body_size"], features["body_size"])
@@ -623,7 +628,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["uplink_loc"]					, uplink_spawn_loc)
 	WRITE_FILE(S["randomise"]					, randomise)
 	WRITE_FILE(S["species"]						, pref_species.id)
-	WRITE_FILE(S["preferred_smoke_brand"]		, preferred_smoke_brand)
 	WRITE_FILE(S["phobia"]						, phobia)
 	WRITE_FILE(S["generic_adjective"]			, generic_adjective)
 	WRITE_FILE(S["body_size"]					, features["body_size"])

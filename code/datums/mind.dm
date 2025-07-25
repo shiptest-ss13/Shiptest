@@ -48,7 +48,6 @@
 	var/linglink
 	var/datum/martial_art/martial_art
 	var/static/default_martial_art = new/datum/martial_art
-	var/miming = FALSE // Mime's vow of silence
 	var/list/antag_datums
 	var/antag_hud_icon_state = null //this mind's ANTAG_HUD should have this icon_state
 	var/datum/atom_hud/antag/antag_hud = null //this mind's antag HUD
@@ -57,7 +56,6 @@
 	var/hasSoul = TRUE // If false, renders the character unable to sell their soul.
 
 	var/mob/living/enslaved_to //If this mind's master is another mob
-	var/datum/language_holder/language_holder
 	var/unconvertable = FALSE
 	var/late_joiner = FALSE
 
@@ -104,7 +102,6 @@
 	SSticker.minds -= src
 	if(islist(antag_datums))
 		QDEL_LIST(antag_datums)
-	QDEL_NULL(language_holder)
 	QDEL_NULL(guestbook)
 	set_current(null)
 	soulOwner = null
@@ -122,11 +119,6 @@
 /datum/mind/proc/clear_current(datum/source)
 	SIGNAL_HANDLER
 	set_current(null)
-
-/datum/mind/proc/get_language_holder()
-	if(!language_holder)
-		language_holder = new (src)
-	return language_holder
 
 /datum/mind/proc/transfer_to(mob/new_character, force_key_move = 0)
 	set_original_character(null)
@@ -147,7 +139,19 @@
 	var/datum/atom_hud/antag/hud_to_transfer = antag_hud//we need this because leave_hud() will clear this list
 	var/mob/living/old_current = current
 	if(current)
-		current.transfer_observers_to(new_character) //transfer anyone observing the old character to the new one
+		//transfer anyone observing the old character to the new one
+		current.transfer_observers_to(new_character)
+
+		// Offload all mind languages from the old holder to a temp one
+		var/datum/language_holder/empty/temp_holder = new()
+		var/datum/language_holder/old_holder = old_current.get_language_holder()
+		var/datum/language_holder/new_holder = new_character.get_language_holder()
+		// Off load mind languages to the temp holder momentarily
+		new_holder.transfer_mind_languages(temp_holder)
+		// Transfer the old holder's mind languages to the new holder
+		old_holder.transfer_mind_languages(new_holder)
+		// And finally transfer the temp holder's mind languages back to the old holder
+		temp_holder.transfer_mind_languages(old_holder)
 	set_current(new_character) //associate ourself with our new body
 	new_character.mind = src //and associate our new body with ourself
 	for(var/a in antag_datums) //Makes sure all antag datums effects are applied in the new body
@@ -165,7 +169,6 @@
 	if(new_character.client)
 		LAZYCLEARLIST(new_character.client.recent_examines)
 		new_character.client.init_verbs() // re-initialize character specific verbs
-	current.update_atom_languages()
 
 //I cannot trust you fucks to do this properly
 /datum/mind/proc/set_original_character(new_original_character)
@@ -240,7 +243,7 @@
 		if(known_skills[i][SKILL_LVL] > SKILL_LEVEL_NONE) //Do we actually have a level in this?
 			shown_skills += i
 	if(!length(shown_skills))
-		to_chat(user, "<span class='notice'>You don't seem to have any particularly outstanding skills.</span>")
+		to_chat(user, span_notice("You don't seem to have any particularly outstanding skills."))
 		return
 	var/msg = "[span_info("<EM>Your skills</EM>")]\n<span class='notice'>"
 	for(var/i in shown_skills)
@@ -404,7 +407,7 @@
 
 	if (!uplink_loc)
 		if(!silent)
-			to_chat(traitor_mob, "<span class='boldwarning'>Unfortunately, [employer] wasn't able to get you an Uplink.</span>")
+			to_chat(traitor_mob, span_boldwarning("Unfortunately, [employer] wasn't able to get you an Uplink."))
 		. = 0
 	else
 		. = uplink_loc
@@ -414,11 +417,11 @@
 		U.setup_unlock_code()
 		if(!silent)
 			if(uplink_loc == R)
-				to_chat(traitor_mob, "<span class='boldnotice'>[employer] has cunningly disguised a Syndicate Uplink as your [R.name]. Simply dial the frequency [format_frequency(U.unlock_code)] to unlock its hidden features.</span>")
+				to_chat(traitor_mob, span_boldnotice("[employer] has cunningly disguised a Syndicate Uplink as your [R.name]. Simply dial the frequency [format_frequency(U.unlock_code)] to unlock its hidden features."))
 			else if(uplink_loc == PDA)
-				to_chat(traitor_mob, "<span class='boldnotice'>[employer] has cunningly disguised a Syndicate Uplink as your [PDA.name]. Simply enter the code \"[U.unlock_code]\" into the ringtone select to unlock its hidden features.</span>")
+				to_chat(traitor_mob, span_boldnotice("[employer] has cunningly disguised a Syndicate Uplink as your [PDA.name]. Simply enter the code \"[U.unlock_code]\" into the ringtone select to unlock its hidden features."))
 			else if(uplink_loc == P)
-				to_chat(traitor_mob, "<span class='boldnotice'>[employer] has cunningly disguised a Syndicate Uplink as your [P.name]. Simply twist the top of the pen [english_list(U.unlock_code)] from its starting position to unlock its hidden features.</span>")
+				to_chat(traitor_mob, span_boldnotice("[employer] has cunningly disguised a Syndicate Uplink as your [P.name]. Simply twist the top of the pen [english_list(U.unlock_code)] from its starting position to unlock its hidden features."))
 
 		if(uplink_owner)
 			uplink_owner.antag_memory += U.unlock_note + "<br>"
@@ -444,7 +447,7 @@
 
 	if(creator.mind.special_role)
 		message_admins("[ADMIN_LOOKUPFLW(current)] has been created by [ADMIN_LOOKUPFLW(creator)], an antagonist.")
-		to_chat(current, "<span class='userdanger'>Despite your creator's current allegiances, your true master remains [creator.real_name]. If their loyalties change, so do yours. This will never change unless your creator's body is destroyed.</span>")
+		to_chat(current, span_userdanger("Despite your creator's current allegiances, your true master remains [creator.real_name]. If their loyalties change, so do yours. This will never change unless your creator's body is destroyed."))
 
 /datum/mind/proc/show_memory(mob/recipient, window=1)
 	if(!recipient)
@@ -486,7 +489,7 @@
 	if(href_list["remove_antag"])
 		var/datum/antagonist/A = locate(href_list["remove_antag"]) in antag_datums
 		if(!istype(A))
-			to_chat(usr,"<span class='warning'>Invalid antagonist ref to be removed.</span>")
+			to_chat(usr,span_warning("Invalid antagonist ref to be removed."))
 			return
 		A.admin_remove(usr)
 
@@ -638,7 +641,7 @@
 							log_admin("[key_name(usr)] changed [current]'s telecrystal count to [crystals].")
 			if("uplink")
 				if(!equip_traitor())
-					to_chat(usr, "<span class='danger'>Equipping a syndicate failed!</span>")
+					to_chat(usr, span_danger("Equipping a syndicate failed!"))
 					log_admin("[key_name(usr)] tried and failed to give [current] an uplink.")
 				else
 					log_admin("[key_name(usr)] gave [current] an uplink.")
@@ -660,7 +663,7 @@
 
 /datum/mind/proc/announce_objectives()
 	var/obj_count = 1
-	to_chat(current, "<span class='notice'>Your current objectives:</span>")
+	to_chat(current, span_notice("Your current objectives:"))
 	for(var/objective in get_all_objectives())
 		var/datum/objective/O = objective
 		to_chat(current, "<B>Objective #[obj_count]</B>: [O.explanation_text]")

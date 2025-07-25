@@ -2,7 +2,7 @@
 	name = "alien"
 	icon_state = "alien"
 	pass_flags = PASSTABLE
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 5, /obj/item/stack/sheet/animalhide/xeno = 1)
+	butcher_results = list(/obj/item/food/meat/slab/xeno = 5, /obj/item/stack/sheet/animalhide/xeno = 1)
 	possible_a_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, INTENT_HARM)
 	limb_destroyer = 1
 	hud_type = /datum/hud/alien
@@ -40,17 +40,17 @@
 	dat += "<table>"
 	for(var/i in 1 to held_items.len)
 		var/obj/item/I = get_item_for_held_index(i)
-		dat += "<tr><td><B>[get_held_index_name(i)]:</B></td><td><A href='?src=[REF(src)];item=[ITEM_SLOT_HANDS];hand_index=[i]'>[(I && !(I.item_flags & ABSTRACT)) ? I : "<font color=grey>Empty</font>"]</a></td></tr>"
+		dat += "<tr><td><B>[get_held_index_name(i)]:</B></td><td><A href='byond://?src=[REF(src)];item=[ITEM_SLOT_HANDS];hand_index=[i]'>[(I && !(I.item_flags & ABSTRACT)) ? I : "<font color=grey>Empty</font>"]</a></td></tr>"
 	dat += "</td></tr><tr><td>&nbsp;</td></tr>"
-	dat += "<tr><td><A href='?src=[REF(src)];pouches=1'>Empty Pouches</A></td></tr>"
+	dat += "<tr><td><A href='byond://?src=[REF(src)];pouches=1'>Empty Pouches</A></td></tr>"
 
 	if(handcuffed)
-		dat += "<tr><td><B>Handcuffed:</B> <A href='?src=[REF(src)];item=[ITEM_SLOT_HANDCUFFED]'>Remove</A></td></tr>"
+		dat += "<tr><td><B>Handcuffed:</B> <A href='byond://?src=[REF(src)];item=[ITEM_SLOT_HANDCUFFED]'>Remove</A></td></tr>"
 	if(legcuffed)
-		dat += "<tr><td><B>Legcuffed:</B> <A href='?src=[REF(src)];item=[ITEM_SLOT_LEGCUFFED]'>Remove</A></td></tr>"
+		dat += "<tr><td><B>Legcuffed:</B> <A href='byond://?src=[REF(src)];item=[ITEM_SLOT_LEGCUFFED]'>Remove</A></td></tr>"
 
 	dat += {"</table>
-	<A href='?src=[REF(user)];mach_close=mob[REF(src)]'>Close</A>
+	<A href='byond://?src=[REF(user)];mach_close=mob[REF(src)]'>Close</A>
 	"}
 
 	var/datum/browser/popup = new(user, "mob[REF(src)]", "[src]", 440, 510)
@@ -61,8 +61,8 @@
 /mob/living/carbon/alien/humanoid/Topic(href, href_list)
 	//strip panel
 	if(href_list["pouches"] && usr.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
-		visible_message("<span class='danger'>[usr] tries to empty [src]'s pouches.</span>", \
-						"<span class='userdanger'>[usr] tries to empty your pouches.</span>")
+		visible_message(span_danger("[usr] tries to empty [src]'s pouches."), \
+						span_userdanger("[usr] tries to empty your pouches."))
 		if(do_after(usr, POCKET_STRIP_DELAY * 0.5, src))
 			dropItemToGround(r_store)
 			dropItemToGround(l_store)
@@ -76,8 +76,8 @@
 
 /mob/living/carbon/alien/humanoid/resist_grab(moving_resist)
 	if(pulledby.grab_state)
-		visible_message("<span class='danger'>[src] breaks free of [pulledby]'s grip!</span>", \
-						"<span class='danger'>You break free of [pulledby]'s grip!</span>")
+		visible_message(span_danger("[src] breaks free of [pulledby]'s grip!"), \
+						span_danger("You break free of [pulledby]'s grip!"))
 	pulledby.stop_pulling()
 	. = 0
 

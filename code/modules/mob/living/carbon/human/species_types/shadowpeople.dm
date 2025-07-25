@@ -6,7 +6,7 @@
 	name = "???"
 	id = SPECIES_SHADOW
 	sexes = 0
-	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/shadow
+	meat = /obj/item/food/meat/slab/human/mutant/shadow
 	species_traits = list(NOBLOOD,NOEYESPRITES)
 	inherent_traits = list(TRAIT_RADIMMUNE,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH)
 	inherent_factions = list("faithless")
@@ -56,7 +56,7 @@
 	if(istype(T))
 		var/light_amount = T.get_lumcount()
 		if(light_amount < SHADOW_SPECIES_LIGHT_THRESHOLD)
-			H.visible_message("<span class='danger'>[H] dances in the shadows, evading [P]!</span>")
+			H.visible_message(span_danger("[H] dances in the shadows, evading [P]!"))
 			playsound(T, "bullet_miss", 75, TRUE)
 			return BULLET_ACT_FORCE_PIERCE
 	return ..()
@@ -76,7 +76,7 @@
 	..()
 	if(M.dna.species.id != "nightmare")
 		M.set_species(/datum/species/shadow/nightmare)
-		visible_message("<span class='warning'>[M] thrashes as [src] takes root in [M.p_their()] body!</span>")
+		visible_message(span_warning("[M] thrashes as [src] takes root in [M.p_their()] body!"))
 	var/obj/effect/proc_holder/spell/targeted/shadowwalk/SW = new
 	M.AddSpell(SW)
 	shadowwalk = SW
@@ -107,14 +107,14 @@
 	if(M != user)
 		return ..()
 	user.visible_message(
-		"<span class='warning'>[user] raises [src] to [user.p_their()] mouth and tears into it with [user.p_their()] teeth!</span>", \
-		"<span class='danger'>[src] feels unnaturally cold in your hands. You raise [src] your mouth and devour it!</span>")
+		span_warning("[user] raises [src] to [user.p_their()] mouth and tears into it with [user.p_their()] teeth!"), \
+		span_danger("[src] feels unnaturally cold in your hands. You raise [src] your mouth and devour it!"))
 	playsound(user, 'sound/magic/demon_consume.ogg', 50, TRUE)
 
 
 	user.visible_message(
-		"<span class='warning'>Blood erupts from [user]'s arm as it reforms into a weapon!</span>", \
-		"<span class='userdanger'>Icy blood pumps through your veins as your arm reforms itself!</span>")
+		span_warning("Blood erupts from [user]'s arm as it reforms into a weapon!"), \
+		span_userdanger("Icy blood pumps through your veins as your arm reforms itself!"))
 	user.temporarilyRemoveItemFromInventory(src, TRUE)
 	Insert(user)
 
@@ -127,7 +127,7 @@
 /obj/item/organ/heart/nightmare/Remove(mob/living/carbon/M, special = 0)
 	respawn_progress = 0
 	if(blade && special != HEART_SPECIAL_SHADOWIFY)
-		M.visible_message("<span class='warning'>\The [blade] disintegrates!</span>")
+		M.visible_message(span_warning("\The [blade] disintegrates!"))
 		QDEL_NULL(blade)
 	..()
 
@@ -150,9 +150,9 @@
 			Remove(owner, HEART_SPECIAL_SHADOWIFY)
 			old_owner.set_species(/datum/species/shadow)
 			Insert(old_owner, HEART_SPECIAL_SHADOWIFY)
-			to_chat(owner, "<span class='userdanger'>You feel the shadows invade your skin, leaping into the center of your chest! You're alive!</span>")
+			to_chat(owner, span_userdanger("You feel the shadows invade your skin, leaping into the center of your chest! You're alive!"))
 			SEND_SOUND(owner, sound('sound/effects/ghost.ogg'))
-		owner.visible_message("<span class='warning'>[owner] staggers to [owner.p_their()] feet!</span>")
+		owner.visible_message(span_warning("[owner] staggers to [owner.p_their()] feet!"))
 		playsound(owner, 'sound/hallucinations/far_noise.ogg', 50, TRUE)
 		respawn_progress = 0
 
@@ -174,7 +174,7 @@
 	righthand_file = 'icons/mob/inhands/antag/changeling_righthand.dmi'
 	item_flags = ABSTRACT | DROPDEL
 	w_class = WEIGHT_CLASS_HUGE
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 
 /obj/item/light_eater/Initialize()
 	. = ..()
@@ -213,9 +213,9 @@
 		PDA.set_light_on(FALSE)
 		PDA.set_light_range(0) //It won't be turning on again.
 		PDA.update_appearance()
-		visible_message("<span class='danger'>The light in [PDA] shorts out!</span>")
+		visible_message(span_danger("The light in [PDA] shorts out!"))
 	else
-		visible_message("<span class='danger'>[O] is disintegrated by [src]!</span>")
+		visible_message(span_danger("[O] is disintegrated by [src]!"))
 		O.burn()
 	playsound(src, 'sound/items/welder.ogg', 50, TRUE)
 

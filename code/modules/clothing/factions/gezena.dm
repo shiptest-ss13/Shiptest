@@ -9,7 +9,7 @@
 	icon_state = "naval"
 	item_state = "bluejump"
 	supports_variations = DIGITIGRADE_VARIATION
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 
 /obj/item/clothing/under/gezena/captain
 	name = "\improper Gezenan captain's navywear"
@@ -58,7 +58,7 @@
 	body_parts_covered = CHEST|GROIN
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 20, "energy" = 40, "bomb" = 20, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 20, "energy" = 40, "bomb" = 20, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	allowed = null
 
 /obj/item/clothing/suit/armor/gezena/engi
@@ -78,14 +78,14 @@
 	desc = "Raksha - a Kalixcian word for 'protection of the heart'. Sturdy and reliable."
 	icon_state = "marinevest"
 	item_state = "marinevest"
-	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) //the laser gun country should probably have laser armor
+	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20) //the laser gun country should probably have laser armor
 
 /obj/item/clothing/suit/armor/gezena/marinecoat
 	name = "coated Raksha-plating"
 	desc = "Less practical with the coat than without."
 	icon_state = "marinecoat"
 	item_state = "bluecloth"
-	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) //same
+	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20) //same
 
 //Spacesuits
 
@@ -98,7 +98,7 @@
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	icon_state = "spacesuit"
 	item_state = "spacesuit"
-	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 10)
 	w_class = WEIGHT_CLASS_NORMAL
 	supports_variations = DIGITIGRADE_VARIATION
 
@@ -115,7 +115,7 @@
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	icon_state = "spacehelmet"
 	item_state = "spacehelm"
-	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 10)
 	w_class = WEIGHT_CLASS_NORMAL
 
 //Hats
@@ -129,7 +129,7 @@
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	icon_state = "navalhat"
 	item_state = "bluecloth"
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/head/gezena/flap
 	name = "\improper PGFN Betzu-il cap"
@@ -189,9 +189,11 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/head.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
-	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) //the laser gun country should probably have laser armor
+	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20) //the laser gun country should probably have laser armor
 	icon_state = "marinehelmet"
 	item_state = "marinehelm"
+	can_flashlight = TRUE
+	content_overlays = TRUE
 
 //Gloves
 
@@ -203,13 +205,13 @@
 	icon_state = "navalgloves"
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
-	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/gloves/gezena/marine
 	name = "\improper PGFMC Ihuz-irra Gloves"
 	desc = "As the name, “ihuz-irra”, or “sure-grip”, suggests, the gloves employed by the PGF military are designed to ensure the highest possible grip is maintained while also providing protection from blisters in work environments. Carries extra tactile grip on the fingertips for easy use of firearms."
 	icon_state = "marinegloves"
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 75, "acid" = 50)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 75, "acid" = 50)
 
 /obj/item/clothing/gloves/gezena/engi
 	name = "\improper PGFN Engineering Ihuz-irra Gloves"
@@ -292,6 +294,8 @@
 	icon_state = "cape"
 	item_state = "blackcloth"
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
 /obj/item/clothing/neck/cloak/gezena/lead
 	name = "marine officer's Azuilhauz"

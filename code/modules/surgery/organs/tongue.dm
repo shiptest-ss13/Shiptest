@@ -7,6 +7,11 @@
 	attack_verb = list("licked", "slobbered", "slapped", "frenched", "tongued")
 	var/list/languages_possible
 	var/say_mod = "says"
+	var/ask_mod = "asks"
+	var/exclaim_mod = "exclaims"
+	var/whisper_mod = "whispers"
+	var/sing_mod = "sings"
+	var/yell_mod = "yells"
 	var/taste_sensitivity = 15 // lower is more sensitive.
 	var/modifies_speech = FALSE
 	var/static/list/languages_possible_base = typecacheof(list(
@@ -52,9 +57,10 @@
 	modifies_speech = TRUE
 
 /obj/item/organ/tongue/lizard/handle_speech(datum/source, list/speech_args)
-	// Sarathi tongues don't hiss when speaking Kalixcian.
+	// Sarathi tongues don't hiss when speaking Kalixcian. Or when signing.
 	// we should make non-sarathi hiss in Kalixcian
-	if(speech_args[SPEECH_LANGUAGE] == /datum/language/kalixcian_common)
+	var/datum/language/language_used = speech_args[SPEECH_LANGUAGE]
+	if((language_used == /datum/language/kalixcian_common) || (initial(language_used?.flags) & SIGNED_LANGUAGE))
 		return
 
 	var/static/regex/lizard_hiss = new("s+", "g")
@@ -125,6 +131,9 @@
 	organ_flags = NONE
 	icon_state = "tonguerobot"
 	say_mod = "states"
+	ask_mod = "queries"
+	exclaim_mod = "declares"
+	yell_mod = "alarms"
 	attack_verb = list("beeped", "booped")
 	modifies_speech = TRUE
 	taste_sensitivity = 25 // not as good as an organic tongue
@@ -137,7 +146,7 @@
 /obj/item/organ/tongue/robot/emp_act(severity)
 	owner.apply_effect(EFFECT_STUTTER, 120)
 	owner.force_scream()
-	to_chat(owner, "<span class='warning'>Alert: Vocal cords are malfunctioning.</span>")
+	to_chat(owner, span_warning("Alert: Vocal cords are malfunctioning."))
 
 /obj/item/organ/tongue/robot/handle_speech(datum/source, list/speech_args)
 	speech_args[SPEECH_SPANS] |= SPAN_ROBOT
@@ -368,26 +377,26 @@
 		return
 
 	if(T.mothership == mothership)
-		to_chat(H, "<span class='notice'>[src] is already attuned to the same channel as your own.</span>")
+		to_chat(H, span_notice("[src] is already attuned to the same channel as your own."))
 
-	H.visible_message("<span class='notice'>[H] holds [src] in their hands, and concentrates for a moment.</span>", "<span class='notice'>You attempt to modify the attunation of [src].</span>")
+	H.visible_message(span_notice("[H] holds [src] in their hands, and concentrates for a moment."), span_notice("You attempt to modify the attunation of [src]."))
 	if(do_after(H, delay=15, target=src))
-		to_chat(H, "<span class='notice'>You attune [src] to your own channel.</span>")
+		to_chat(H, span_notice("You attune [src] to your own channel."))
 		mothership = T.mothership
 
 /obj/item/organ/tongue/abductor/examine(mob/M)
 	. = ..()
 	if(HAS_TRAIT(M, TRAIT_ABDUCTOR_TRAINING) || HAS_TRAIT(M.mind, TRAIT_ABDUCTOR_TRAINING) || isobserver(M))
 		if(!mothership)
-			. += "<span class='notice'>It is not attuned to a specific mothership.</span>"
+			. += span_notice("It is not attuned to a specific mothership.")
 		else
-			. += "<span class='notice'>It is attuned to [mothership].</span>"
+			. += span_notice("It is attuned to [mothership].")
 
 /obj/item/organ/tongue/abductor/handle_speech(datum/source, list/speech_args)
 	//Hacks
 	var/message = speech_args[SPEECH_MESSAGE]
 	var/mob/living/carbon/human/user = source
-	var/rendered = "<span class='abductor'><b>[user.real_name]:</b> [message]</span>"
+	var/rendered = span_abductor("<b>[user.real_name]:</b> [message]")
 	user.log_talk(message, LOG_SAY, tag="abductor")
 	for(var/mob/living/carbon/human/H in GLOB.alive_mob_list)
 		var/obj/item/organ/tongue/abductor/T = H.getorganslot(ORGAN_SLOT_TONGUE)

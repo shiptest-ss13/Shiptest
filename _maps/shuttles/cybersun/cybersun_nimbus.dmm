@@ -42,9 +42,9 @@
 	pixel_x = 7;
 	pixel_y = 2
 	},
-/obj/item/reagent_containers/glass/bottle/vial/large/preloaded/tricord,
-/obj/item/reagent_containers/glass/bottle/vial/large/preloaded/tricord{
-	pixel_x = -8
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/tricord,
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/tricord{
+	pixel_x = -5
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/cargo)
@@ -73,9 +73,7 @@
 	pixel_x = 5;
 	pixel_y = -6
 	},
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm)
 "aQ" = (
 /obj/structure/closet/crate/bin,
@@ -139,9 +137,7 @@
 /area/ship/crew/ccommons)
 "cx" = (
 /obj/structure/chair/sofa/blue/corpo/corner/directional/south,
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/ccommons)
 "cX" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
@@ -306,9 +302,7 @@
 /area/ship/cargo)
 "fv" = (
 /obj/structure/chair/sofa/blue/corpo/directional/south,
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/ccommons)
 "fx" = (
 /obj/structure/cable/cyan{
@@ -376,9 +370,7 @@
 "gX" = (
 /obj/effect/turf_decal/spline/fancy/opaque/white,
 /obj/machinery/light/directional/west,
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/ccommons)
 "hp" = (
 /obj/machinery/power/shuttle/engine/electric,
@@ -514,9 +506,7 @@
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/white,
 /obj/machinery/holopad/secure,
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/ccommons)
 "jU" = (
 /obj/machinery/computer/cryopod/directional/north,
@@ -580,9 +570,7 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "lB" = (
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/ccommons)
 "lE" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/line,
@@ -799,9 +787,7 @@
 /obj/item/radio/intercom/directional/north{
 	pixel_x = 5
 	},
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/bridge)
 "qj" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -826,16 +812,17 @@
 /area/ship/engineering/engine)
 "qo" = (
 /obj/structure/table/glass,
-/obj/item/reagent_containers/food/snacks/vegetariansushiroll{
-	pixel_y = 4
-	},
 /obj/item/cutting_board{
 	pixel_y = 2
 	},
-/obj/item/kitchen/fork{
-	pixel_y = 9;
-	pixel_x = -14;
-	name = "sushi fork"
+/obj/item/food/vegetariansushiroll{
+	pixel_y = 4
+	},
+/obj/item/melee/knife{
+	pixel_x = -13
+	},
+/obj/item/food/lifosa/homemade{
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
@@ -848,9 +835,7 @@
 	pixel_y = 16;
 	pixel_x = -32
 	},
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/ccommons)
 "rd" = (
 /obj/structure/cable/cyan{
@@ -916,9 +901,7 @@
 /area/ship/external/dark)
 "rL" = (
 /obj/structure/chair/sofa/blue/corpo/left/directional/west,
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/ccommons)
 "rP" = (
 /obj/structure/platform/ship_two,
@@ -1017,9 +1000,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/bridge)
 "tf" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/warning,
@@ -1032,9 +1013,7 @@
 /area/ship/external/dark)
 "tg" = (
 /obj/machinery/recharge_station,
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm)
 "tj" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/line,
@@ -1342,6 +1321,10 @@
 	pixel_x = 7;
 	pixel_y = -8
 	},
+/obj/item/clothing/mask/gas/syndicate{
+	pixel_x = -4;
+	pixel_y = -3
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "xM" = (
@@ -1360,9 +1343,7 @@
 	name = "window shutters";
 	id = "zcouch2"
 	},
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/ccommons)
 "xU" = (
 /obj/structure/toilet{
@@ -1550,8 +1531,8 @@
 /obj/structure/sign/poster/contraband/c20r{
 	pixel_y = -28
 	},
-/obj/item/clothing/suit/space/syndicate/black/red,
-/obj/item/clothing/head/helmet/space/syndicate/black/red,
+/obj/item/clothing/head/helmet/space/syndicate/white_red,
+/obj/item/clothing/suit/space/syndicate/white_red,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Df" = (
@@ -1676,9 +1657,7 @@
 	name = "window shutters";
 	id = "zbridge"
 	},
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/bridge)
 "Fq" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -1686,30 +1665,76 @@
 "Fw" = (
 /obj/structure/table/chem,
 /obj/structure/closet/wall/white/directional/west,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
-/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
-/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
-/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
-/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
-/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
-/obj/item/reagent_containers/condiment/rice{
-	pixel_y = 9
-	},
 /obj/item/reagent_containers/condiment/rice{
 	pixel_y = 9;
-	pixel_x = -5
+	pixel_x = -7
 	},
 /obj/item/cutting_board{
 	pixel_y = 8;
 	pixel_x = 2
 	},
 /obj/item/melee/knife/kitchen,
+/obj/item/food/meat/slab/miras{
+	pixel_x = -9;
+	pixel_y = -5
+	},
+/obj/item/food/meat/slab/miras{
+	pixel_x = -9;
+	pixel_y = -5
+	},
+/obj/item/food/meat/slab/miras{
+	pixel_x = -9;
+	pixel_y = -5
+	},
+/obj/item/food/meat/slab/miras{
+	pixel_x = -9;
+	pixel_y = -5
+	},
+/obj/item/food/meat/slab/miras{
+	pixel_x = -9;
+	pixel_y = -5
+	},
+/obj/item/food/meat/slab/tiris{
+	pixel_y = -5
+	},
+/obj/item/food/meat/slab/tiris{
+	pixel_y = -5
+	},
+/obj/item/food/meat/slab/tiris{
+	pixel_y = -5
+	},
+/obj/item/food/grown/sososi{
+	pixel_y = 5;
+	pixel_x = -7
+	},
+/obj/item/food/grown/sososi{
+	pixel_x = -6;
+	pixel_y = 5
+	},
+/obj/item/food/grown/sososi{
+	pixel_x = -6;
+	pixel_y = 5
+	},
+/obj/item/food/grown/sososi{
+	pixel_x = -6;
+	pixel_y = 5
+	},
+/obj/item/food/grown/sososi{
+	pixel_x = -6;
+	pixel_y = 5
+	},
+/obj/item/food/grown/dote_berries{
+	pixel_x = 5
+	},
+/obj/item/food/grown/dote_berries{
+	pixel_x = 5
+	},
+/obj/item/food/grown/dote_berries{
+	pixel_x = 5
+	},
+/obj/item/food/grown/dote_berries{
+	pixel_x = 5
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
 "FH" = (
@@ -1779,9 +1804,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/white{
 	dir = 1
 	},
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/ccommons)
 "Gu" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/line,
@@ -1952,9 +1975,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/ccommons)
 "IW" = (
 /obj/machinery/holopad,
@@ -1969,9 +1990,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/bridge)
 "Jf" = (
 /obj/effect/turf_decal/box/white,
@@ -1982,8 +2001,8 @@
 	},
 /obj/machinery/light/directional/west,
 /obj/machinery/airalarm/directional/north,
-/obj/item/clothing/suit/space/syndicate/black/red,
-/obj/item/clothing/head/helmet/space/syndicate/black/red,
+/obj/item/clothing/head/helmet/space/syndicate/white_red,
+/obj/item/clothing/suit/space/syndicate/white_red,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Jo" = (
@@ -2053,22 +2072,17 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
 	},
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm)
 "KF" = (
 /obj/effect/spawner/bunk_bed{
 	dir = 1
 	},
 /obj/structure/curtain/cloth/fancy,
-/obj/structure/rack,
 /obj/structure/sign/poster/contraband/cybersun{
 	pixel_x = -28
 	},
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm)
 "KN" = (
 /obj/structure/sign/number/seven{
@@ -2106,9 +2120,9 @@
 	pixel_y = 12;
 	pixel_x = 6
 	},
-/obj/item/reagent_containers/food/drinks/bottle/sake{
-	pixel_y = 5;
-	pixel_x = 15
+/obj/item/reagent_containers/food/drinks/bottle/sososeta{
+	pixel_x = 17;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
@@ -2226,15 +2240,11 @@
 /area/ship/engineering/engine)
 "Ob" = (
 /obj/machinery/light/directional/west,
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm)
 "OX" = (
 /obj/effect/turf_decal/spline/fancy/opaque/white,
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/ccommons)
 "OZ" = (
 /obj/structure/cable/cyan{
@@ -2272,9 +2282,7 @@
 	pixel_x = -1;
 	pixel_y = 2
 	},
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm)
 "PI" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -2428,9 +2436,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/bridge)
 "Su" = (
 /obj/structure/table/chem,
@@ -2456,7 +2462,8 @@
 /obj/machinery/washing_machine{
 	pixel_y = 18;
 	pixel_x = 9;
-	density = 0
+	density = 0;
+	should_we_be_dense = 0
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
@@ -2517,9 +2524,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/bridge)
 "Tj" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/line,
@@ -2649,9 +2654,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/white{
 	dir = 1
 	},
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/ccommons)
 "UV" = (
 /obj/machinery/power/shuttle/engine/electric/premium,
@@ -2665,9 +2668,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/ccommons)
 "UZ" = (
 /obj/structure/cable/cyan{
@@ -2804,9 +2805,7 @@
 "YM" = (
 /obj/effect/turf_decal/spline/fancy/opaque/white,
 /obj/machinery/light/directional/east,
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/ccommons)
 "YR" = (
 /obj/structure/cable/cyan{
@@ -2854,12 +2853,8 @@
 /obj/item/clothing/suit/space/hardsuit/syndi/cybersun,
 /obj/item/folder/documents/syndicate/cybersun,
 /obj/item/reagent_containers/food/drinks/flask,
-/obj/item/reagent_containers/food/drinks/bottle/sake{
-	pixel_y = 2
-	},
-/turf/open/floor/suns/hatch{
-	color = "#E6D2BA"
-	},
+/obj/item/reagent_containers/food/drinks/bottle/sake/foxgirl,
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/bridge)
 "Zy" = (
 /obj/effect/turf_decal/trimline/transparent/syndiered/line{

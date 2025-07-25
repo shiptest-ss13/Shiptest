@@ -29,7 +29,7 @@
 	description = "Records show this settlement as belonging to the SRM, but no one has heard from them as of late. I wonder what happened?"
 	suffix = "icemoon_ice_lodge.dmm"
 	ruin_tags = list(RUIN_TAG_HARD_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
-	ruin_mission_types = list(/datum/mission/ruin/fallen_montagne)
+//	ruin_mission_types = list(/datum/mission/ruin/fallen_montagne)
 
 /datum/mission/ruin/fallen_montagne
 	name = "dark signal investigation"
@@ -46,17 +46,26 @@
 	description = "CLIP has recently lost contact with one of it's Anomaly Research Labs. Reports suggest the frontiersmen may have been behind it."
 	suffix = "icemoon_tesla_lab.dmm"
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
-	ruin_mission_types = list(
+/*	ruin_mission_types = list(
 		/datum/mission/ruin/blackbox,
 		/datum/mission/ruin/daughter
 	)
+*/
 
 /datum/mission/ruin/daughter
 	name = "find our daughter!"
 	desc = "Our daughter was recently deployed out to the Frontier - and we haven't heard from her, or the Minutemen - or anyone in weeks! Please find her and make sure she's okay..."
-	value = 4000
+	value = 2000
 	mission_limit = 1
 	author = "Concerned Parents"
 	faction = /datum/faction/clip
 	mission_reward = /obj/item/gun/ballistic/automatic/smg/cm5/compact
 	setpiece_item = /mob/living/carbon/human
+
+/datum/map_template/ruin/icemoon/training_facility
+	name = "Ramzi-controlled Training Facility"
+	id = "training_facility"
+	description = "An abandoned training facility located on this ice-world dating back to the early days of the ICW. Strangely, it still seems to be inhabited."
+	suffix = "icemoon_training_center.dmm"
+	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS, RUIN_TAG_LAVA)
+

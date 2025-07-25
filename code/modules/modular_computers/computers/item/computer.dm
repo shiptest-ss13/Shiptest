@@ -135,7 +135,7 @@
 
 /obj/item/modular_computer/emag_act(mob/user)
 	if(!enabled)
-		to_chat(user, "<span class='warning'>You'd need to turn the [src] on first.</span>")
+		to_chat(user, span_warning("You'd need to turn the [src] on first."))
 		return FALSE
 	obj_flags |= EMAGGED //Mostly for consistancy purposes; the programs will do their own emag handling
 	var/newemag = FALSE
@@ -146,17 +146,17 @@
 		if(app.run_emag())
 			newemag = TRUE
 	if(newemag)
-		to_chat(user, "<span class='notice'>You swipe \the [src]. A console window momentarily fills the screen, with white text rapidly scrolling past.</span>")
+		to_chat(user, span_notice("You swipe \the [src]. A console window momentarily fills the screen, with white text rapidly scrolling past."))
 		return TRUE
-	to_chat(user, "<span class='notice'>You swipe \the [src]. A console window fills the screen, but it quickly closes itself after only a few lines are written to it.</span>")
+	to_chat(user, span_notice("You swipe \the [src]. A console window fills the screen, but it quickly closes itself after only a few lines are written to it."))
 	return FALSE
 
 /obj/item/modular_computer/examine(mob/user)
 	. = ..()
 	if(obj_integrity <= integrity_failure * max_integrity)
-		. += "<span class='danger'>It is heavily damaged!</span>"
+		. += span_danger("It is heavily damaged!")
 	else if(obj_integrity < max_integrity)
-		. += "<span class='warning'>It is damaged.</span>"
+		. += span_warning("It is damaged.")
 
 	. += get_modular_computer_parts_examine(user)
 
@@ -187,9 +187,9 @@
 	var/issynth = issilicon(user) // Robots and AIs get different activation messages.
 	if(obj_integrity <= integrity_failure * max_integrity)
 		if(issynth)
-			to_chat(user, "<span class='warning'>You send an activation signal to \the [src], but it responds with an error code. It must be damaged.</span>")
+			to_chat(user, span_warning("You send an activation signal to \the [src], but it responds with an error code. It must be damaged."))
 		else
-			to_chat(user, "<span class='warning'>You press the power button, but the computer fails to boot up, displaying variety of errors before shutting down again.</span>")
+			to_chat(user, span_warning("You press the power button, but the computer fails to boot up, displaying variety of errors before shutting down again."))
 		return
 
 	// If we have a recharger, enable it automatically. Lets computer without a battery work.
@@ -199,17 +199,17 @@
 
 	if(all_components[MC_CPU] && use_power()) // use_power() checks if the PC is powered
 		if(issynth)
-			to_chat(user, "<span class='notice'>You send an activation signal to \the [src], turning it on.</span>")
+			to_chat(user, span_notice("You send an activation signal to \the [src], turning it on."))
 		else
-			to_chat(user, "<span class='notice'>You press the power button and start up \the [src].</span>")
+			to_chat(user, span_notice("You press the power button and start up \the [src]."))
 		enabled = 1
 		update_appearance()
 		ui_interact(user)
 	else // Unpowered
 		if(issynth)
-			to_chat(user, "<span class='warning'>You send an activation signal to \the [src] but it does not respond.</span>")
+			to_chat(user, span_warning("You send an activation signal to \the [src] but it does not respond."))
 		else
-			to_chat(user, "<span class='warning'>You press the power button but \the [src] does not respond.</span>")
+			to_chat(user, span_warning("You press the power button but \the [src] does not respond."))
 
 // Process currently calls handle_power(), may be expanded in future if more things are added.
 /obj/item/modular_computer/process(seconds_per_tick)
@@ -260,14 +260,14 @@
  * The message that the program wishes to display.
  */
 
-/obj/item/modular_computer/proc/alert_call(datum/computer_file/program/caller, alerttext, sound = 'sound/machines/twobeep_high.ogg')
-	if(!caller || !caller.alert_able || caller.alert_silenced || !alerttext) //Yeah, we're checking alert_able. No, you don't get to make alerts that the user can't silence.
+/obj/item/modular_computer/proc/alert_call(datum/computer_file/program/call_source, alerttext, sound = 'sound/machines/twobeep_high.ogg')
+	if(!call_source || !call_source.alert_able || call_source.alert_silenced || !alerttext) //Yeah, we're checking alert_able. No, you don't get to make alerts that the user can't silence.
 		return
 	playsound(src, sound, 50, TRUE)
-	visible_message("<span class='notice'>The [src] displays a [caller.filedesc] notification: [alerttext]</span>")
+	visible_message(span_notice("The [src] displays a [call_source.filedesc] notification: [alerttext]"))
 	var/mob/living/holder = loc
 	if(istype(holder))
-		to_chat(holder, "[icon2html(src)] <span class='notice'>The [src] displays a [caller.filedesc] notification: [alerttext]</span>")
+		to_chat(holder, "[icon2html(src)] [span_notice("The [src] displays a [call_source.filedesc] notification: [alerttext]")]")
 
 // Function used by NanoUI's to obtain data for header. All relevant entries begin with "PC_"
 /obj/item/modular_computer/proc/get_header_data()
@@ -359,13 +359,13 @@
 		P.kill_program(forced = TRUE)
 		idle_threads.Remove(P)
 	if(loud)
-		physical.visible_message("<span class='notice'>\The [src] shuts down.</span>")
+		physical.visible_message(span_notice("\The [src] shuts down."))
 	enabled = 0
 	update_appearance()
 
 /obj/item/modular_computer/screwdriver_act(mob/user, obj/item/tool)
 	if(!all_components.len)
-		to_chat(user, "<span class='warning'>This device doesn't have any components installed.</span>")
+		to_chat(user, span_warning("This device doesn't have any components installed."))
 		return
 	var/list/component_names = list()
 	for(var/h in all_components)
@@ -403,26 +403,26 @@
 
 	if(W.tool_behaviour == TOOL_WRENCH)
 		if(all_components.len)
-			to_chat(user, "<span class='warning'>Remove all components from \the [src] before disassembling it.</span>")
+			to_chat(user, span_warning("Remove all components from \the [src] before disassembling it."))
 			return
 		new /obj/item/stack/sheet/metal(get_turf(src.loc), steel_sheet_cost)
-		physical.visible_message("<span class='notice'>\The [src] is disassembled by [user].</span>")
+		physical.visible_message(span_notice("\The [src] is disassembled by [user]."))
 		relay_qdel()
 		qdel(src)
 		return
 
 	if(W.tool_behaviour == TOOL_WELDER)
 		if(obj_integrity == max_integrity)
-			to_chat(user, "<span class='warning'>\The [src] does not require repairs.</span>")
+			to_chat(user, span_warning("\The [src] does not require repairs."))
 			return
 
-		if(!W.tool_start_check(user, amount=1))
+		if(!W.tool_start_check(user, src, amount=1))
 			return
 
-		to_chat(user, "<span class='notice'>You begin repairing damage to \the [src]...</span>")
+		to_chat(user, span_notice("You begin repairing damage to \the [src]..."))
 		if(W.use_tool(src, user, 20, volume=50, amount=1))
 			obj_integrity = max_integrity
-			to_chat(user, "<span class='notice'>You repair \the [src].</span>")
+			to_chat(user, span_notice("You repair \the [src]."))
 		return
 
 	..()

@@ -136,7 +136,7 @@
 /datum/chemical_reaction/meatification/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/meat/slab/meatproduct(location)
+		new /obj/item/food/meat/slab/meatproduct(location)
 	return
 
 /datum/chemical_reaction/carbondioxide
@@ -301,28 +301,28 @@
 	mob_react = FALSE
 
 /datum/chemical_reaction/foam/on_reaction(datum/reagents/holder, created_volume)
-	holder.create_foam(/datum/effect_system/foam_spread,2*created_volume,notification="<span class='danger'>The solution spews out foam!</span>")
+	holder.create_foam(/datum/effect_system/foam_spread,2*created_volume,notification=span_danger("The solution spews out foam!"))
 
 /datum/chemical_reaction/metalfoam
 	required_reagents = list(/datum/reagent/aluminium = 3, /datum/reagent/foaming_agent = 1, /datum/reagent/toxin/acid/fluacid = 1)
 	mob_react = FALSE
 
 /datum/chemical_reaction/metalfoam/on_reaction(datum/reagents/holder, created_volume)
-	holder.create_foam(/datum/effect_system/foam_spread/metal,5*created_volume,1,"<span class='danger'>The solution spews out a metallic foam!</span>")
+	holder.create_foam(/datum/effect_system/foam_spread/metal,5*created_volume,1,span_danger("The solution spews out a metallic foam!"))
 
 /datum/chemical_reaction/smart_foam
 	required_reagents = list(/datum/reagent/aluminium = 3, /datum/reagent/smart_foaming_agent = 1, /datum/reagent/toxin/acid/fluacid = 1)
 	mob_react = TRUE
 
 /datum/chemical_reaction/smart_foam/on_reaction(datum/reagents/holder, created_volume)
-	holder.create_foam(/datum/effect_system/foam_spread/metal/smart,5*created_volume,1,"<span class='danger'>The solution spews out metallic foam!</span>")
+	holder.create_foam(/datum/effect_system/foam_spread/metal/smart,5*created_volume,1,span_danger("The solution spews out metallic foam!"))
 
 /datum/chemical_reaction/ironfoam
 	required_reagents = list(/datum/reagent/iron = 3, /datum/reagent/foaming_agent = 1, /datum/reagent/toxin/acid/fluacid = 1)
 	mob_react = FALSE
 
 /datum/chemical_reaction/ironfoam/on_reaction(datum/reagents/holder, created_volume)
-	holder.create_foam(/datum/effect_system/foam_spread/metal,5*created_volume,2,"<span class='danger'>The solution spews out a metallic foam!</span>")
+	holder.create_foam(/datum/effect_system/foam_spread/metal,5*created_volume,2,span_danger("The solution spews out a metallic foam!"))
 
 /datum/chemical_reaction/foaming_agent
 	results = list(/datum/reagent/foaming_agent = 1)
@@ -454,7 +454,7 @@
 	required_reagents = list(/datum/reagent/monkey_powder = 30, /datum/reagent/water = 1)
 
 /datum/chemical_reaction/monkey/on_reaction(datum/reagents/holder, created_volume)
-	var/obj/item/reagent_containers/food/snacks/monkeycube/cube = holder.my_atom
+	var/obj/item/food/monkeycube/cube = holder.my_atom
 	if(istype(cube))
 		cube.Expand()
 	else
@@ -516,10 +516,6 @@
 	results = list(/datum/reagent/royal_bee_jelly = 5)
 	required_reagents = list(/datum/reagent/toxin/mutagen = 10, /datum/reagent/consumable/honey = 40)
 
-/datum/chemical_reaction/laughter
-	results = list(/datum/reagent/consumable/laughter = 10) // Fuck it. I'm not touching this one.
-	required_reagents = list(/datum/reagent/consumable/sugar = 1, /datum/reagent/consumable/banana = 1)
-
 /datum/chemical_reaction/plastic_polymers
 	required_reagents = list(/datum/reagent/fuel/oil = 5, /datum/reagent/toxin/acid = 2, /datum/reagent/ash = 3)
 	required_temp = 374 //lazily consistent with soap & other crafted objects generically created with heat.
@@ -545,7 +541,7 @@
 /datum/chemical_reaction/slimejelly
 	results = list(/datum/reagent/toxin/slimejelly = 5)
 	required_reagents = list(/datum/reagent/fuel/oil = 3, /datum/reagent/uranium/radium = 2, /datum/reagent/consumable/tinlux =1)
-	required_container = /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom
+	required_container = /obj/item/food/grown/mushroom/glowshroom
 	mix_message = "The mushroom's insides bubble and pop and it becomes very limp."
 
 /datum/chemical_reaction/metalgen_imprint
@@ -590,6 +586,17 @@
 	required_reagents = list(/datum/reagent/water/hollowwater = 1)
 	required_catalysts = list(/datum/reagent/water/holywater = 1)
 
+/datum/chemical_reaction/bone_gel
+	required_reagents = list(/datum/reagent/calcium = 10, /datum/reagent/carbon = 10)
+	required_temp = 630
+	mob_react = FALSE
+	mix_message = "The solution clarifies, leaving an ashy gel."
+
+/datum/chemical_reaction/bone_gel/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i in 1 to created_volume)
+		new /obj/item/stack/medical/bone_gel(location)
+
 /datum/chemical_reaction/gravy
 	results = list(/datum/reagent/consumable/gravy = 3)
 	required_reagents = list(/datum/reagent/consumable/milk = 1, /datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/flour = 1)
@@ -606,7 +613,7 @@
 
 /datum/chemical_reaction/hexement
 	results = list(/datum/reagent/cement/hexement = 1)
-	required_reagents = list(/datum/reagent/cement = 6, /datum/reagent/phenol = 1)
+	required_reagents = list(/datum/reagent/cement = 6, /datum/reagent/stable_plasma = 1)
 	required_temp = 400
 	mix_message = "The mixture rapidly condenses and darkens in color..."
 

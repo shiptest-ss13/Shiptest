@@ -1,7 +1,7 @@
 /datum/round_event_control/ion_storm
 	name = "Ion Storm"
 	typepath = /datum/round_event/ion_storm
-	weight = 15
+	weight = 0
 	min_players = 2
 
 /datum/round_event/ion_storm
@@ -11,8 +11,8 @@
 	var/shuffleLawsChance = 10 //chance the AI's laws are shuffled afterwards
 	var/botEmagChance = 1
 	var/ionMessage = null
-	announceWhen	= 1
-	announceChance = 33
+	announce_when	= 1
+	announce_chance = 33
 
 /datum/round_event/ion_storm/add_law_only // special subtype that adds a law only
 	replaceLawsetChance = 0
@@ -22,9 +22,8 @@
 	botEmagChance = 0
 
 /datum/round_event/ion_storm/announce(fake)
-	if(prob(announceChance) || fake)
-		priority_announce("Ion storm detected near the station. Please check all AI-controlled equipment for errors.", "Anomaly Alert", 'sound/ai/ionstorm.ogg')
-
+	if(prob(announce_chance) || fake)
+		priority_announce("Ion storm detected in the sector. Please check all AI-controlled equipment for errors.", "Anomaly Alert", 'sound/ai/ionstorm.ogg')
 
 /datum/round_event/ion_storm/start()
 	//AI laws
@@ -340,19 +339,15 @@
 					switch(rand(1,2)) //Change whose job?
 						if(1) //Change the entire crew's job
 							switch(rand(1,3)) //Change to what?
-								if(1) //Change to a specific random job
+								if(1 to 2) //Change to a specific random job
 									message = "ALL CREWMEMBERS ARE NOW [ionadjectiveshalf][ioncrew1]"
-								if(2) //Change to clowns (HONK)
-									message = "ALL CREWMEMBERS ARE NOW [ionadjectiveshalf]CLOWNS"
 
 								if(3) //Change to heads
 									message = "ALL CREWMEMBERS ARE NOW [ionadjectiveshalf]HEADS OF STAFF"
 						if(2) //Change a specific crewmember's job
 							switch(rand(1,3)) //Change to what?
-								if(1) //Change to a specific random job
+								if(1 to 2) //Change to a specific random job
 									message = "THE [ioncrew1] ARE NOW [ionadjectiveshalf][ioncrew2]"
-								if(2) //Change to clowns (HONK)
-									message = "THE [ioncrew1] ARE NOW [ionadjectiveshalf]CLOWNS"
 								if(3) //Change to heads
 									message = "THE [ioncrew1] ARE NOW [ionadjectiveshalf]HEADS OF STAFF"
 

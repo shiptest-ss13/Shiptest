@@ -42,7 +42,7 @@
 /obj/structure/flora/tree/jungle{
 	icon_state = "tree8"
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "ai" = (
 /obj/structure/platform/military/corner{
@@ -118,14 +118,6 @@
 /obj/structure/spider/cocoon,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/airbase/dorms)
-"aF" = (
-/obj/item/reagent_containers/food/snacks/spidereggs{
-	pixel_y = 7;
-	pixel_x = -8
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "aI" = (
 /obj/structure/platform/military,
 /obj/effect/decal/cleanable/molten_object,
@@ -194,7 +186,7 @@
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "bd" = (
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "be" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
@@ -309,6 +301,13 @@
 /obj/effect/turf_decal/corner/opaque/orange/three_quarters,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/airbase/engineering)
+"bA" = (
+/obj/item/food/spidereggs{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "bC" = (
 /obj/machinery/light/directional/south,
 /obj/structure/spider/stickyweb,
@@ -351,7 +350,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "bI" = (
 /obj/structure/flora/junglebush/large,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "bL" = (
 /obj/structure/spider/stickyweb,
@@ -459,7 +458,7 @@
 /area/ruin/jungle/airbase/hangar)
 "cm" = (
 /obj/structure/spider/stickyweb,
-/obj/item/reagent_containers/food/snacks/meat/slab/human{
+/obj/item/food/meat/slab/human{
 	pixel_x = 7;
 	pixel_y = -5
 	},
@@ -469,7 +468,7 @@
 "co" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/junglebush/b,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "cp" = (
 /obj/structure/railing/thin{
@@ -507,7 +506,7 @@
 	pixel_x = -32
 	},
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "cz" = (
 /turf/open/floor/plasteel/mono/dark/jungleplanet,
@@ -575,7 +574,7 @@
 /obj/structure/spacevine{
 	pixel_y = -32
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "cI" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
@@ -757,13 +756,6 @@
 	},
 /turf/open/floor/plating/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
-"dB" = (
-/obj/item/reagent_containers/food/snacks/spidereggs{
-	pixel_x = 5;
-	pixel_y = 4
-	},
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "dC" = (
 /obj/effect/gibspawner/generic/animal,
 /obj/structure/spider/stickyweb,
@@ -814,10 +806,18 @@
 /obj/structure/spacevine/dense,
 /turf/open/water/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
+"dN" = (
+/obj/item/food/spidereggs{
+	pixel_y = 7;
+	pixel_x = 4
+	},
+/obj/structure/spider/stickyweb,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "dO" = (
 /obj/structure/flora/tree/jungle,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "dP" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -1025,11 +1025,11 @@
 /obj/structure/platform/military{
 	dir = 8
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "eA" = (
 /obj/structure/flora/junglebush/b,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "eE" = (
 /obj/structure/railing/thin{
@@ -1100,7 +1100,7 @@
 /obj/structure/flora/junglebush/b,
 /obj/structure/flora/junglebush/large,
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "eZ" = (
 /obj/effect/turf_decal/weather/dirt,
@@ -1420,7 +1420,7 @@
 /area/ruin/jungle/airbase/dorms)
 "go" = (
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "gq" = (
 /obj/effect/spawner/random/trash/mess,
@@ -1606,7 +1606,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/junglebush/c,
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "he" = (
 /obj/structure/railing/thin{
@@ -1742,7 +1742,7 @@
 /obj/structure/platform/military/corner{
 	dir = 4
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "hI" = (
 /obj/structure/spacevine/dense,
@@ -1765,7 +1765,7 @@
 /obj/structure/platform/military/corner{
 	dir = 8
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "hL" = (
 /obj/effect/turf_decal/road/stripes{
@@ -1823,7 +1823,7 @@
 /obj/structure/spacevine{
 	pixel_x = -32
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "hV" = (
 /obj/machinery/atmospherics/components/binary/valve/digital/on{
@@ -1953,7 +1953,7 @@
 /obj/structure/spacevine{
 	pixel_x = 32
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "it" = (
 /obj/structure/platform/military{
@@ -2095,7 +2095,7 @@
 /obj/structure/spacevine{
 	pixel_x = -32
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "jc" = (
 /obj/structure/table/wood,
@@ -2124,21 +2124,13 @@
 	},
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
-"jm" = (
-/obj/item/reagent_containers/food/snacks/spidereggs{
-	pixel_y = 7;
-	pixel_x = 4
-	},
-/obj/structure/spider/stickyweb,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "jn" = (
 /obj/structure/flora/junglebush/c,
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine{
 	pixel_x = 32
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "jp" = (
 /obj/effect/turf_decal/techfloor{
@@ -2209,7 +2201,7 @@
 /area/ruin/jungle/airbase/hangar)
 "jF" = (
 /obj/structure/spider/stickyweb,
-/obj/item/reagent_containers/food/snacks/meat/slab/human{
+/obj/item/food/meat/slab/human{
 	pixel_y = 8
 	},
 /turf/open/floor/carpet/red,
@@ -2390,7 +2382,7 @@
 	pixel_x = -32
 	},
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "kx" = (
 /obj/structure/closet/firecloset/full{
@@ -2426,7 +2418,7 @@
 /obj/structure/spacevine{
 	pixel_x = 32
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "kG" = (
 /obj/structure/railing/thin{
@@ -2467,7 +2459,7 @@
 /area/ruin/jungle/airbase/engineering)
 "kO" = (
 /obj/structure/flora/rock/jungle,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "kP" = (
 /obj/structure/spider/stickyweb,
@@ -2504,9 +2496,8 @@
 /obj/structure/barricade/security{
 	layer = 2.89
 	},
-/obj/machinery/porta_turret/ship/syndicate/heavy/starport{
-	dir = 10;
-	lethal = 1
+/obj/machinery/porta_turret/ruin/ramzi/heavy{
+	dir = 10
 	},
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/ruin/jungle/airbase/turrets)
@@ -2575,7 +2566,7 @@
 "ll" = (
 /obj/effect/decal/cleanable/molten_object,
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "lo" = (
 /obj/structure/platform/military/corner,
@@ -2676,7 +2667,7 @@
 "lV" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/junglebush/b,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "lX" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
@@ -2886,7 +2877,7 @@
 /turf/open/floor/plasteel/white/jungleplanet,
 /area/ruin/jungle/airbase/med)
 "mK" = (
-/obj/item/reagent_containers/food/snacks/meat/slab/spider,
+/obj/item/food/meat/slab/spider,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
@@ -2916,6 +2907,19 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/airbase/hangar)
+"mO" = (
+/obj/machinery/suit_storage_unit/inherit{
+	state_open = 1
+	},
+/obj/item/clothing/under/syndicate/combat{
+	name = "compression suit";
+	desc = "A specialized suit designed to compress the wearer, and prevent blackouts during high gravity manuevers."
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/head/helmet/space/syndicate/white_red,
+/obj/item/clothing/suit/space/syndicate/white_red,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/airbase/shed)
 "mP" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
@@ -2949,7 +2953,7 @@
 /obj/structure/platform/military{
 	dir = 4
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "mY" = (
 /obj/item/rack_parts,
@@ -2978,7 +2982,7 @@
 	dir = 4
 	},
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "nc" = (
 /obj/effect/turf_decal/industrial/stand_clear/white{
@@ -3107,7 +3111,7 @@
 /obj/structure/spacevine{
 	pixel_x = 32
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "nE" = (
 /turf/open/floor/plasteel/dark,
@@ -3151,7 +3155,7 @@
 "nL" = (
 /obj/structure/flora/junglebush/large,
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "nM" = (
 /obj/structure/cable{
@@ -3286,7 +3290,7 @@
 "ok" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "ol" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -3312,7 +3316,7 @@
 "on" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/junglebush/c,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "op" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered/corner{
@@ -3372,7 +3376,7 @@
 "oD" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/structure/spider/stickyweb,
-/obj/item/reagent_containers/food/snacks/meat/slab/human{
+/obj/item/food/meat/slab/human{
 	pixel_y = -3;
 	pixel_x = -6
 	},
@@ -3385,7 +3389,7 @@
 	pixel_x = 32
 	},
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "oG" = (
 /turf/open/floor/wood,
@@ -3428,10 +3432,6 @@
 /obj/structure/floodlight_frame,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
-"oQ" = (
-/obj/item/reagent_containers/food/snacks/spidereggs,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "oR" = (
 /obj/machinery/light/directional/south,
@@ -3492,12 +3492,12 @@
 	pixel_x = -32
 	},
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "ph" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "pi" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
@@ -3580,9 +3580,8 @@
 /obj/structure/barricade/security{
 	layer = 2.89
 	},
-/obj/machinery/porta_turret/ship/syndicate/heavy/starport{
-	dir = 6;
-	lethal = 1
+/obj/machinery/porta_turret/ruin/ramzi/heavy{
+	dir = 6
 	},
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/ruin/jungle/airbase/turrets)
@@ -3668,7 +3667,7 @@
 "pP" = (
 /obj/structure/flora/junglebush/b,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "pQ" = (
 /obj/effect/turf_decal/techfloor{
@@ -3837,7 +3836,7 @@
 "qB" = (
 /obj/structure/platform/military/corner,
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "qC" = (
 /obj/structure/platform/military{
@@ -3935,7 +3934,7 @@
 /obj/structure/spacevine{
 	pixel_x = 32
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "qS" = (
 /obj/structure/cable{
@@ -3952,7 +3951,7 @@
 /obj/structure/spider/stickyweb,
 /obj/structure/spider/cocoon,
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "qU" = (
 /obj/structure/platform/military{
@@ -4117,7 +4116,7 @@
 	dir = 5
 	},
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "rA" = (
 /obj/structure/spider/stickyweb,
@@ -4140,7 +4139,7 @@
 	dir = 4
 	},
 /obj/structure/flora/grass/jungle/b,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "rG" = (
 /obj/machinery/button/door{
@@ -4199,7 +4198,7 @@
 "rP" = (
 /obj/structure/flora/rock/jungle,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "rQ" = (
 /obj/structure/chair/plastic,
@@ -4216,13 +4215,6 @@
 	},
 /turf/open/floor/plating/jungleplanet/lit,
 /area/ruin/jungle/airbase)
-"rU" = (
-/obj/item/reagent_containers/food/snacks/spidereggs{
-	pixel_y = -6;
-	pixel_x = -4
-	},
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "rV" = (
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/techfloor{
@@ -4292,18 +4284,18 @@
 	dir = 8
 	},
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "sg" = (
 /obj/structure/flora/tree/jungle,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "sh" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine{
 	pixel_x = 32
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "si" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
@@ -4368,7 +4360,7 @@
 	icon_state = "tree10"
 	},
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "st" = (
 /obj/effect/turf_decal/techfloor{
@@ -4505,19 +4497,6 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
-"sY" = (
-/obj/machinery/suit_storage_unit/inherit{
-	locked = 1
-	},
-/obj/item/clothing/under/syndicate/combat{
-	name = "compression suit";
-	desc = "A specialized suit designed to compress the wearer, and prevent blackouts during high gravity manuevers."
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/clothing/suit/space/syndicate/black/red,
-/obj/item/clothing/head/helmet/space/syndicate/black/red,
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/airbase/shed)
 "tb" = (
 /obj/structure/salvageable/airbase/missile_launcher{
 	pixel_x = -24;
@@ -4528,7 +4507,7 @@
 "td" = (
 /obj/structure/flora/junglebush,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "tk" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -4567,7 +4546,7 @@
 "to" = (
 /obj/structure/table,
 /obj/structure/spider/stickyweb,
-/obj/item/reagent_containers/food/snacks/meat/slab/human{
+/obj/item/food/meat/slab/human{
 	pixel_x = 4;
 	pixel_y = 10
 	},
@@ -4631,7 +4610,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "tE" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -4772,6 +4751,14 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/airbase/hangar)
+"uh" = (
+/obj/item/food/spidereggs{
+	pixel_y = 7;
+	pixel_x = -8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "uj" = (
 /obj/structure/chair/plastic{
 	dir = 4
@@ -4860,7 +4847,7 @@
 "uF" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "uH" = (
 /obj/structure/cable{
@@ -4894,7 +4881,7 @@
 /obj/structure/spacevine{
 	pixel_x = 32
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "uN" = (
 /obj/structure/cable{
@@ -5397,7 +5384,7 @@
 "xp" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "xq" = (
 /obj/structure/platform/military{
@@ -5670,7 +5657,7 @@
 /area/ruin/jungle/airbase)
 "yz" = (
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "yB" = (
 /obj/structure/spider/stickyweb,
@@ -5825,7 +5812,7 @@
 /obj/structure/spider/stickyweb,
 /obj/structure/spacevine,
 /obj/structure/spider/cocoon,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "zk" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -5855,7 +5842,7 @@
 	dir = 4
 	},
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "zt" = (
 /obj/machinery/computer/sat_control{
@@ -6071,14 +6058,14 @@
 /obj/structure/flora/tree/jungle/small{
 	icon_state = "tree1"
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ai" = (
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine{
 	pixel_x = -32
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Aj" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -6128,7 +6115,7 @@
 /obj/machinery/atmospherics/components/unary/passive_vent/layer4{
 	dir = 4
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ax" = (
 /obj/effect/turf_decal/corner/opaque/orange{
@@ -6271,7 +6258,7 @@
 /obj/structure/spacevine{
 	pixel_y = -32
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "AX" = (
 /turf/closed/wall,
@@ -6293,7 +6280,7 @@
 "Bc" = (
 /obj/structure/flora/junglebush/large,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Be" = (
 /obj/structure/cable{
@@ -6416,7 +6403,7 @@
 	icon_state = "tree8"
 	},
 /obj/structure/flora/grass/jungle/b,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "BM" = (
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
@@ -6478,13 +6465,13 @@
 /obj/structure/spacevine{
 	pixel_x = 32
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Cc" = (
 /obj/structure/flora/tree/jungle{
 	icon_state = "tree9"
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Cd" = (
 /obj/effect/turf_decal/number/zero{
@@ -6510,7 +6497,7 @@
 	icon_state = "tree4"
 	},
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ch" = (
 /obj/structure/flora/grass/jungle,
@@ -6631,7 +6618,7 @@
 /obj/structure/platform/military{
 	dir = 5
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "CN" = (
 /obj/structure/spacevine{
@@ -6645,7 +6632,7 @@
 /obj/structure/platform/military{
 	dir = 9
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "CP" = (
 /obj/structure/cable{
@@ -6695,7 +6682,7 @@
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "CX" = (
-/obj/item/reagent_containers/food/snacks/meat/slab/spider,
+/obj/item/food/meat/slab/spider,
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "CY" = (
@@ -6833,9 +6820,8 @@
 /obj/structure/barricade/security{
 	layer = 2.89
 	},
-/obj/machinery/porta_turret/ship/syndicate/heavy/starport{
-	dir = 9;
-	lethal = 1
+/obj/machinery/porta_turret/ruin/ramzi/heavy{
+	dir = 9
 	},
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/ruin/jungle/airbase/turrets)
@@ -6923,7 +6909,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "DR" = (
 /obj/effect/gibspawner/generic/animal,
-/obj/item/reagent_containers/food/snacks/meat/slab/spider,
+/obj/item/food/meat/slab/spider,
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "DT" = (
@@ -7168,7 +7154,7 @@
 "EN" = (
 /obj/structure/flora/grass/jungle/b,
 /mob/living/simple_animal/hostile/poison/giant_spider/hunter,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "EP" = (
 /obj/structure/flora/grass/jungle,
@@ -7176,7 +7162,7 @@
 /obj/structure/spacevine{
 	pixel_y = -32
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "ER" = (
 /turf/open/floor/plasteel/dark/jungleplanet/lit,
@@ -7305,7 +7291,7 @@
 	},
 /obj/structure/flora/grass/jungle,
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Fy" = (
 /obj/machinery/door/airlock/grunge{
@@ -7493,6 +7479,19 @@
 	},
 /turf/open/floor/plasteel/white/jungleplanet,
 /area/ruin/jungle/airbase/med)
+"Gj" = (
+/obj/machinery/suit_storage_unit/inherit{
+	locked = 1
+	},
+/obj/item/clothing/under/syndicate/combat{
+	name = "compression suit";
+	desc = "A specialized suit designed to compress the wearer, and prevent blackouts during high gravity manuevers."
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/head/helmet/space/syndicate/white_red,
+/obj/item/clothing/suit/space/syndicate/white_red,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/airbase/shed)
 "Gk" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -7570,7 +7569,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/junglebush/c,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Gv" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7743,7 +7742,7 @@
 	},
 /obj/structure/spacevine,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Hi" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
@@ -7877,7 +7876,7 @@
 	dir = 6
 	},
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "HJ" = (
 /obj/structure/door_assembly/door_assembly_med,
@@ -8042,14 +8041,14 @@
 /obj/structure/spacevine{
 	pixel_y = 32
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Iy" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine{
 	pixel_y = 32
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "IA" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
@@ -8089,7 +8088,7 @@
 "IJ" = (
 /obj/item/chair,
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "IK" = (
 /obj/effect/turf_decal/industrial/warning,
@@ -8098,7 +8097,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "IL" = (
 /obj/structure/flora/grass/jungle/b,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "IN" = (
 /obj/structure/spider/stickyweb,
@@ -8145,7 +8144,7 @@
 "IX" = (
 /obj/structure/flora/junglebush/c,
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "IY" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal{
@@ -8206,7 +8205,7 @@
 /obj/structure/flora/tree/jungle{
 	icon_state = "tree4"
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ji" = (
 /obj/structure/platform/military{
@@ -8358,7 +8357,7 @@
 /obj/structure/spacevine{
 	pixel_x = -32
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "JE" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
@@ -8440,6 +8439,13 @@
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife,
 /turf/open/floor/wood,
 /area/ruin/jungle/airbase/dorms)
+"JW" = (
+/obj/item/food/spidereggs{
+	pixel_y = -6;
+	pixel_x = -4
+	},
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "JY" = (
 /obj/structure/platform/military{
 	dir = 8
@@ -8532,7 +8538,7 @@
 /obj/structure/spacevine{
 	pixel_x = -32
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Kp" = (
 /obj/structure/rack,
@@ -8574,6 +8580,17 @@
 /obj/structure/salvageable/airbase/cannon,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
+/area/ruin/jungle/airbase/shed)
+"Ky" = (
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/under/syndicate/combat{
+	name = "compression suit";
+	desc = "A specialized suit designed to compress the wearer, and prevent blackouts during high gravity manuevers."
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/head/helmet/space/syndicate/white_red,
+/obj/item/clothing/suit/space/syndicate/white_red,
+/turf/open/floor/plasteel/tech,
 /area/ruin/jungle/airbase/shed)
 "KA" = (
 /obj/structure/cable{
@@ -8738,7 +8755,7 @@
 "Lb" = (
 /obj/structure/flora/rock/pile,
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ld" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -8787,7 +8804,7 @@
 /obj/structure/spacevine,
 /obj/structure/spacevine,
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Lp" = (
 /obj/structure/platform/military,
@@ -8807,7 +8824,7 @@
 /obj/structure/flora/tree/jungle/small{
 	icon_state = "tree5"
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Lv" = (
 /obj/machinery/light/directional/east,
@@ -8848,7 +8865,7 @@
 "LC" = (
 /obj/structure/flora/junglebush/c,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "LE" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
@@ -8949,7 +8966,7 @@
 /obj/structure/flora/junglebush/large,
 /obj/structure/flora/grass/jungle,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Mc" = (
 /obj/effect/decal/cleanable/oil{
@@ -8976,7 +8993,7 @@
 	icon_state = "tree10"
 	},
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Mg" = (
 /obj/structure/cable{
@@ -9045,7 +9062,7 @@
 /obj/structure/spacevine{
 	pixel_x = 32
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Mr" = (
 /obj/structure/barricade/sandbags,
@@ -9099,6 +9116,7 @@
 "MF" = (
 /obj/machinery/computer/operating,
 /obj/machinery/light/broken/directional/east,
+/obj/item/disk/surgery/t2,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/airbase/med)
 "MG" = (
@@ -9136,7 +9154,7 @@
 "MJ" = (
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "MK" = (
 /obj/structure/platform/military{
@@ -9191,7 +9209,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/spacevine,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "MZ" = (
 /obj/structure/railing/thin{
@@ -9298,6 +9316,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/airbase)
+"Ns" = (
+/obj/item/food/spidereggs,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Nu" = (
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
@@ -9387,7 +9409,7 @@
 /obj/structure/flora/junglebush/c,
 /obj/structure/spacevine,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "NQ" = (
 /obj/effect/turf_decal/techfloor/corner{
@@ -9522,19 +9544,6 @@
 /obj/structure/spacevine,
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
-"OI" = (
-/obj/machinery/suit_storage_unit/inherit{
-	state_open = 1
-	},
-/obj/item/clothing/under/syndicate/combat{
-	name = "compression suit";
-	desc = "A specialized suit designed to compress the wearer, and prevent blackouts during high gravity manuevers."
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/clothing/suit/space/syndicate/black/red,
-/obj/item/clothing/head/helmet/space/syndicate/black/red,
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/airbase/shed)
 "OL" = (
 /obj/structure/platform/military{
 	dir = 9
@@ -9557,7 +9566,7 @@
 /obj/structure/flora/tree/jungle{
 	icon_state = "tree10"
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "OT" = (
 /obj/structure/salvageable/airbase/missile_launcher{
@@ -9588,7 +9597,7 @@
 	icon_state = "tree1"
 	},
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "OY" = (
 /obj/structure/spacevine,
@@ -9676,7 +9685,7 @@
 "Pk" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Pl" = (
 /obj/effect/decal/cleanable/ash{
@@ -9723,7 +9732,7 @@
 /obj/item/chair,
 /obj/structure/flora/grass/jungle,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Pt" = (
 /obj/structure/platform/military{
@@ -9734,7 +9743,7 @@
 "Pu" = (
 /obj/structure/flora/rock/jungle,
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Px" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -9992,7 +10001,7 @@
 	dir = 1
 	},
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "QG" = (
 /obj/structure/cable{
@@ -10013,7 +10022,7 @@
 	pixel_x = -32
 	},
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "QL" = (
 /obj/effect/decal/cleanable/oil,
@@ -10136,7 +10145,7 @@
 /area/ruin/jungle/airbase/cargo)
 "Rh" = (
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Rj" = (
 /obj/structure/railing/thin{
@@ -10444,7 +10453,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/junglebush/b,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "SD" = (
 /obj/effect/turf_decal/trimline/transparent/syndiered/filled/warning{
@@ -10530,7 +10539,7 @@
 /area/ruin/jungle/airbase/cargo)
 "SX" = (
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "SZ" = (
 /obj/effect/turf_decal/techfloor{
@@ -10581,7 +10590,7 @@
 	icon_state = "tree8"
 	},
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Tj" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
@@ -10687,7 +10696,7 @@
 /obj/structure/spacevine{
 	pixel_y = -32
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "TJ" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/three_quarters{
@@ -10753,7 +10762,7 @@
 /obj/structure/platform/military/corner{
 	dir = 8
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "TU" = (
 /turf/template_noop,
@@ -10859,7 +10868,7 @@
 /obj/structure/spacevine{
 	pixel_y = 32
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Uo" = (
 /obj/effect/gibspawner/generic/animal,
@@ -11030,7 +11039,7 @@
 /obj/structure/platform/military,
 /obj/structure/flora/grass/jungle,
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Vj" = (
 /obj/effect/turf_decal/techfloor,
@@ -11212,18 +11221,18 @@
 /obj/structure/flora/tree/jungle{
 	icon_state = "tree10"
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "VN" = (
 /obj/structure/flora/junglebush/b,
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "VQ" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/junglebush/c,
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "VR" = (
 /obj/structure/spider/stickyweb,
@@ -11305,7 +11314,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/junglebush,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Wm" = (
 /obj/structure/toilet{
@@ -11497,7 +11506,7 @@
 	pixel_x = 32
 	},
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Xc" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
@@ -11513,20 +11522,20 @@
 /obj/structure/spacevine{
 	pixel_y = -32
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Xi" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/spider/stickyweb,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Xk" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/tree/jungle{
 	icon_state = "tree9"
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Xm" = (
 /obj/effect/turf_decal/weather/dirt/corner{
@@ -11784,7 +11793,7 @@
 /obj/structure/platform/military{
 	dir = 1
 	},
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Yu" = (
 /obj/structure/railing/thin{
@@ -11850,7 +11859,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/junglebush/large,
 /obj/structure/spacevine,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "YQ" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -11890,7 +11899,7 @@
 /area/ruin/jungle/airbase)
 "YW" = (
 /obj/structure/flora/junglebush,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "YX" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -11996,7 +12005,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "Zq" = (
 /obj/structure/flora/junglebush/c,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Zr" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/border,
@@ -12019,7 +12028,7 @@
 "Zx" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/grass/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Zy" = (
 /obj/machinery/power/smes/shuttle{
@@ -12095,9 +12104,8 @@
 /obj/structure/barricade/security{
 	layer = 2.89
 	},
-/obj/machinery/porta_turret/ship/syndicate/heavy/starport{
-	dir = 5;
-	lethal = 1
+/obj/machinery/porta_turret/ruin/ramzi/heavy{
+	dir = 5
 	},
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/ruin/jungle/airbase/turrets)
@@ -12158,17 +12166,6 @@
 	},
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
-"ZT" = (
-/obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/under/syndicate/combat{
-	name = "compression suit";
-	desc = "A specialized suit designed to compress the wearer, and prevent blackouts during high gravity manuevers."
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/clothing/suit/space/syndicate/black/red,
-/obj/item/clothing/head/helmet/space/syndicate/black/red,
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/airbase/shed)
 "ZU" = (
 /obj/structure/platform/military{
 	dir = 1
@@ -12700,9 +12697,9 @@ KY
 KY
 dP
 dP
-sY
-OI
-ZT
+Gj
+mO
+Ky
 dP
 cr
 DK
@@ -17329,9 +17326,9 @@ os
 CX
 sK
 os
-dB
+bA
 uX
-aF
+uh
 uX
 mK
 uX
@@ -17346,7 +17343,7 @@ bY
 uX
 uX
 bp
-kX
+pw
 BM
 eO
 "}
@@ -17490,14 +17487,14 @@ ku
 NL
 gu
 os
-rU
+JW
 os
 DR
 Gf
 Gf
 KM
 os
-oQ
+Ns
 os
 uX
 uX
@@ -17576,7 +17573,7 @@ Ub
 Wx
 Wx
 Wx
-jm
+dN
 KM
 sK
 Wx

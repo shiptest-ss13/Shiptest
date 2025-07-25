@@ -5,7 +5,7 @@
 	item_state = "space-independent-eng"
 	desc = "A civilian space suit designed for construction and salvage in hazardous, low-pressure environments. Has shielding against radiation and heat and abundant storage.<br>Though they lack the physical protection of more expensive hardsuits, this type of suit is extremely common wherever construction and salvage work must be done in open space."
 	siemens_coefficient = 0
-	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 20, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75)
+	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 20, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75, "wound" = 10)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 	resistance_flags = FIRE_PROOF
 
@@ -14,7 +14,7 @@
 	icon_state = "space-independent-eng"
 	item_state = "space-independent-eng"
 	desc = "A space helmet designed for construction and salvage in hazardous, low-pressure environments, with an integral hard hat and UV-shielded visor. Has shielding against radiation and heat."
-	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 20, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75)
+	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 20, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75, "wound" = 10)
 	resistance_flags = FIRE_PROOF
 	light_color = "#FFCC66"
 	light_power = 0.8
@@ -42,7 +42,7 @@
 	var/blurb = " Its simple design is quite ancient."
 	up = FALSE
 	actions_types = list(/datum/action/item_action/toggle_helmet)
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 70)
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 70, "wound" = 5) //less wound armor. give em the fokker special
 	visor_flags_inv = HIDEMASK
 	visor_flags = STOPSPRESSUREDAMAGE | ALLOWINTERNALS
 
@@ -79,11 +79,11 @@
 
 /obj/item/clothing/head/helmet/space/pilot/attack_self(mob/user) //pilot helmet toggle
 	if(!isturf(user.loc))
-		to_chat(user, "<span class='warning'>You cannot toggle your helmet while in this [user.loc]!</span>" )
+		to_chat(user, span_warning("You cannot toggle your helmet while in this [user.loc]!") )
 		return
 	up = !up
 	if(!up || force)
-		to_chat(user, "<span class='notice'>You close your helmet's visor and breathing mask.</span>")
+		to_chat(user, span_notice("You close your helmet's visor and breathing mask."))
 		gas_transfer_coefficient = initial(gas_transfer_coefficient)
 		permeability_coefficient = initial(permeability_coefficient)
 		clothing_flags |= visor_flags
@@ -91,7 +91,7 @@
 		flags_inv |= visor_flags_inv
 		cold_protection |= HEAD
 	else
-		to_chat(user, "<span class='notice'>You open your helmet's visor and breathing mask.</span>")
+		to_chat(user, span_notice("You open your helmet's visor and breathing mask."))
 		gas_transfer_coefficient = null
 		permeability_coefficient = null
 		clothing_flags &= ~visor_flags

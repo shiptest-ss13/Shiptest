@@ -133,7 +133,7 @@
 	pull_force = PULL_FORCE_DEFAULT
 	if(prob(15))
 		new /obj/item/mob_trophy/legion_skull(loc)
-		visible_message("<span class='warning'>One of the [src]'s skulls looks intact.</span>")
+		visible_message(span_warning("One of the [src]'s skulls looks intact."))
 	..()
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/random/Initialize()
@@ -159,7 +159,7 @@
 	dwarf_mob = TRUE
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/death(gibbed)
-	visible_message("<span class='warning'>The skulls on [src] wail in anger as they flee from their dying host!</span>")
+	visible_message(span_warning("The skulls on [src] wail in anger as they flee from their dying host!"))
 	var/turf/T = get_turf(src)
 	if(T)
 		if(stored_mob)
@@ -280,7 +280,6 @@
 	malignance = new()
 	malignance.infect(M, FALSE) //we handle all the fancy virus stuff in the organ, so we need a reference for it
 	malignance_tracker = addtimer(CALLBACK(src, PROC_REF(update_stage)), malignance_countdown, TIMER_STOPPABLE|TIMER_DELETE_ME)
-	M.heal_overall_bleeding(12) //stop dying so fast
 
 /obj/item/organ/legion_skull/Remove(mob/living/carbon/M, special = 0)
 	malignance_countdown = initial(malignance_countdown)
@@ -304,7 +303,7 @@
 	if(!malignance)
 		malignance = new()
 		malignance.infect(owner, FALSE)
-	if(owner.reagents.has_reagent(/datum/reagent/medicine/synaptizine, needs_metabolizing = TRUE) || owner.reagents.has_reagent(/datum/reagent/medicine/spaceacillin, needs_metabolizing = TRUE))
+	if(owner.has_reagent(/datum/reagent/medicine/synaptizine, needs_metabolizing = TRUE) || owner.reagents.has_reagent(/datum/reagent/medicine/spaceacillin, needs_metabolizing = TRUE))
 		if(isnull(timeleft(malignance_tracker))) //ruhehehehehe
 			malignance_countdown = min(malignance_countdown + 1 SECONDS, initial(malignance_countdown)) //slightly improve our resistance to dying so we don't turn the second a treatment runs out
 			return
@@ -384,7 +383,7 @@
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
-	visible_message("<span class='userwarning'>[src] falls over with a mighty crash, the remaining legions within it falling apart!</span>")
+	visible_message(span_userwarning("[src] falls over with a mighty crash, the remaining legions within it falling apart!"))
 	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
 	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
 	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)

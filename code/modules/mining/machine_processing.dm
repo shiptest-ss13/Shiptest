@@ -1,5 +1,5 @@
 /// Smelt amount per second
-#define SMELT_AMOUNT 5
+#define SMELT_AMOUNT 50
 
 /**********************Mineral processing unit console**************************/
 
@@ -83,7 +83,7 @@
 		return
 	var/obj/item/multitool/M = I
 	M.buffer = src
-	to_chat(user, "<span class='notice'>You store linkage information in [I]'s buffer.</span>")
+	to_chat(user, span_notice("You store linkage information in [I]'s buffer."))
 	return TRUE
 
 /obj/machinery/mineral/processing_unit_console/ui_interact(mob/user)
@@ -158,7 +158,7 @@
 		if(istype(M.buffer, /obj/machinery/mineral/processing_unit_console))
 			CONSOLE = M.buffer
 			CONSOLE.machine = src
-			to_chat(user, "<span class='notice'>You link [src] to the console in [M]'s buffer.</span>")
+			to_chat(user, span_notice("You link [src] to the console in [M]'s buffer."))
 			return TRUE
 
 /obj/machinery/mineral/processing_unit/proc/process_ore(obj/item/stack/ore/O)
@@ -183,7 +183,7 @@
 		if (selected_material == M)
 			dat += " <i>Smelting</i>"
 		else
-			dat += " <A href='?src=[REF(CONSOLE)];material=[REF(M)]'><b>Not Smelting</b></A> "
+			dat += " <A href='byond://?src=[REF(CONSOLE)];material=[REF(M)]'><b>Not Smelting</b></A> "
 		dat += "<br>"
 
 	dat += "<br><br>"
@@ -195,16 +195,16 @@
 		if (selected_alloy == D.id)
 			dat += " <i>Smelting</i>"
 		else
-			dat += " <A href='?src=[REF(CONSOLE)];alloy=[D.id]'><b>Not Smelting</b></A> "
+			dat += " <A href='byond://?src=[REF(CONSOLE)];alloy=[D.id]'><b>Not Smelting</b></A> "
 		dat += "<br>"
 
 	dat += "<br><br>"
 	//On or off
 	dat += "Machine is currently "
 	if (on)
-		dat += "<A href='?src=[REF(CONSOLE)];set_on=off'>On</A> "
+		dat += "<A href='byond://?src=[REF(CONSOLE)];set_on=off'>On</A> "
 	else
-		dat += "<A href='?src=[REF(CONSOLE)];set_on=on'>Off</A> "
+		dat += "<A href='byond://?src=[REF(CONSOLE)];set_on=on'>Off</A> "
 
 	return dat
 

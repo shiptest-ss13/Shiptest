@@ -117,7 +117,7 @@
 		return
 	var/datum/map_template/M = arena_templates[arena_template]
 	if(!M)
-		to_chat(user,"<span class='warning'>No such arena</span>")
+		to_chat(user,span_warning("No such arena"))
 		return
 	clear_arena() //Clear current arena
 	var/turf/A = get_landmark_turf(ARENA_CORNER_A)
@@ -125,7 +125,7 @@
 	var/wh = abs(A.x - B.x) + 1
 	var/hz = abs(A.y - B.y) + 1
 	if(M.width > wh || M.height > hz)
-		to_chat(user,"<span class='warning'>Arena template is too big for the current arena!</span>")
+		to_chat(user,span_warning("Arena template is too big for the current arena!"))
 		return
 	loading = TRUE
 	var/bd = M.load(get_load_point())
@@ -208,7 +208,7 @@
 	// Could use update_icon on spawnpoints here to show they're on
 	if(ready_to_spawn)
 		for(var/mob/M in all_contestants())
-			to_chat(M,"<span class='userdanger'>Arena you're signed up for is ready!</span>")
+			to_chat(M,span_userdanger("Arena you're signed up for is ready!"))
 
 /obj/machinery/computer/arena/proc/all_contestants()
 	. = list()
@@ -230,9 +230,9 @@
 /obj/machinery/computer/arena/proc/start_match(mob/user)
 	//TODO: Check if everyone is spawned in, if not ask for confirmation.
 	var/timetext = DisplayTimeText(start_delay)
-	to_chat(user,"<span class='notice'>The match will start in [timetext].</span>")
+	to_chat(user,span_notice("The match will start in [timetext]."))
 	for(var/mob/M in all_contestants())
-		to_chat(M,"<span class='userdanger'>The gates will open in [timetext]!</span>")
+		to_chat(M,span_userdanger("The gates will open in [timetext]!"))
 	start_time = world.time + start_delay
 	addtimer(CALLBACK(src, PROC_REF(begin)),start_delay)
 	for(var/team in teams)
@@ -249,7 +249,7 @@
 			var/obj/machinery/arena_spawn/A = get_spawn(team)
 			playsound(A,start_sound, start_sound_volume)
 	for(var/mob/M in all_contestants())
-		to_chat(M,"<span class='userdanger'>START!</span>")
+		to_chat(M,span_userdanger("START!"))
 	//Clean up the countdowns
 	QDEL_LIST(countdowns)
 	start_time = null
@@ -311,7 +311,7 @@
 
 /obj/machinery/computer/arena/proc/load_random_arena(mob/user)
 	if(!length(arena_templates))
-		to_chat(user,"<span class='warning'>No arenas present</span>")
+		to_chat(user,span_warning("No arenas present"))
 		return
 	var/picked = pick(arena_templates)
 	load_arena(picked,user)
@@ -326,8 +326,8 @@
 /obj/machinery/computer/arena/ui_interact(mob/user)
 	. = ..()
 	var/list/dat = list()
-	dat += "<div>Spawning is currently [ready_to_spawn ? "<span class='good'>enabled</span>" : "<span class='bad'>disabled</span>"] <a href='?src=[REF(src)];toggle_spawn=1'>Toggle</a></div>"
-	dat += "<div><a href='?src=[REF(src)];start=1'>[start_time ? "Stop countdown" : "Start!"]</a></div>"
+	dat += "<div>Spawning is currently [ready_to_spawn ? span_good("enabled") : span_bad("disabled")] <a href='byond://?src=[REF(src)];toggle_spawn=1'>Toggle</a></div>"
+	dat += "<div><a href='byond://?src=[REF(src)];start=1'>[start_time ? "Stop countdown" : "Start!"]</a></div>"
 	for(var/team in teams)
 		dat += "<h2>[capitalize(team)] team:</h2>"
 		dat += "<ul>"
@@ -341,28 +341,28 @@
 				else
 					player_status = M.stat == DEAD ? "Dead" : "Alive"
 				dat += "<li>[ckey] - [player_status] - "
-				dat += "<a href='?_src_=holder;[HrefToken(TRUE)];adminplayerobservefollow=[REF(M)]'>FLW</a>"
-				dat += "<a href='?src=[REF(src)];member_action=remove;team=[team];ckey=[ckey]'>Remove</a>"
+				dat += "<a href='byond://?_src_=holder;[HrefToken(TRUE)];adminplayerobservefollow=[REF(M)]'>FLW</a>"
+				dat += "<a href='byond://?src=[REF(src)];member_action=remove;team=[team];ckey=[ckey]'>Remove</a>"
 				//Add more per player features here
 				dat += "</li>"
 		dat += "</ul>"
 		dat += "<div> Team Outfit : [outfits[team] ? outfits[team] : default_outfit]</div>"
-		dat += "<a href='?src=[REF(src)];team_action=loadteam;team=[team]'>Load team</a>"
-		dat += "<a href='?src=[REF(src)];team_action=addmember;team=[team]'>Add member</a>"
-		dat += "<a href='?src=[REF(src)];team_action=outfit;team=[team]'>Change Outfit</a>"
+		dat += "<a href='byond://?src=[REF(src)];team_action=loadteam;team=[team]'>Load team</a>"
+		dat += "<a href='byond://?src=[REF(src)];team_action=addmember;team=[team]'>Add member</a>"
+		dat += "<a href='byond://?src=[REF(src)];team_action=outfit;team=[team]'>Change Outfit</a>"
 		//Add more per team features here
 
 	dat += "Current arena: [current_arena_template]"
 	dat += "<h2>Arena List:</h2>"
 	for(var/A in arena_templates)
-		dat += "<a href='?src=[REF(src)];change_arena=[url_encode(A)]'>[A]</a><br>"
+		dat += "<a href='byond://?src=[REF(src)];change_arena=[url_encode(A)]'>[A]</a><br>"
 	dat += "<hr>"
-	dat += "<a href='?src=[REF(src)];upload=1'>Upload new arena</a><br>"
+	dat += "<a href='byond://?src=[REF(src)];upload=1'>Upload new arena</a><br>"
 	dat += "<hr>"
 	//Special actions
-	dat += "<a href='?src=[REF(src)];special=reset'>Reset Arena.</a><br>"
-	dat += "<a href='?src=[REF(src)];special=randomarena'>Load random arena.</a><br>"
-	dat += "<a href='?src=[REF(src)];special=spawntrophy'>Spawn trophies for survivors.</a><br>"
+	dat += "<a href='byond://?src=[REF(src)];special=reset'>Reset Arena.</a><br>"
+	dat += "<a href='byond://?src=[REF(src)];special=randomarena'>Load random arena.</a><br>"
+	dat += "<a href='byond://?src=[REF(src)];special=spawntrophy'>Spawn trophies for survivors.</a><br>"
 
 	var/datum/browser/popup = new(user, "arena controller", "Arena Controller", 500, 600)
 	popup.set_content(dat.Join())
@@ -406,7 +406,7 @@
 	if(C.ready_to_spawn)
 		var/list/allowed_keys = C.team_keys[team]
 		if(!(user.ckey in allowed_keys))
-			to_chat(user,"<span class='warning'>You're not on the team list.</span>")
+			to_chat(user,span_warning("You're not on the team list."))
 			return
 		C.spawn_member(src,user.ckey,team)
 

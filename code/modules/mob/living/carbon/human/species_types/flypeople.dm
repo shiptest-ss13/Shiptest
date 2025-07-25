@@ -1,14 +1,14 @@
 /datum/species/fly
 	name = "\improper Flyperson"
 	id = SPECIES_FLYPERSON
-	species_traits = list(NOEYESPRITES,TRAIT_ANTENNAE)
+	species_traits = list(NOEYESPRITES, TRAIT_ANTENNAE, HAS_FLESH, HAS_BONE)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
 	mutanttongue = /obj/item/organ/tongue/fly
 	mutantliver = /obj/item/organ/liver/fly
 	mutantstomach = /obj/item/organ/stomach/fly
-	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/fly
+	meat = /obj/item/food/meat/slab/human/mutant/fly
 	disliked_food = null
-	liked_food = GORE | RAW // Sure, the raw... the bloody... but I think stuff GROSS, like baseball burgers, are liked
+	liked_food = GORE | RAW
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	species_language_holder = /datum/language_holder/fly
 
@@ -31,7 +31,7 @@
 			var/turf/pos = get_turf(H)
 			H.vomit(0, FALSE, FALSE, 2, TRUE)
 			playsound(pos, 'sound/effects/splat.ogg', 50, TRUE)
-			H.visible_message("<span class='danger'>[H] vomits on the floor!</span>", \
-						"<span class='userdanger'>You throw up on the floor!</span>")
+			H.visible_message(span_danger("[H] vomits on the floor!"), \
+						span_userdanger("You throw up on the floor!"))
 	return ..()
 

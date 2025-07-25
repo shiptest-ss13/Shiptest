@@ -200,7 +200,6 @@
 	key = "giggle"
 	key_third_person = "giggles"
 	message = "giggles."
-	message_mime = "giggles silently!"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/glare
@@ -219,7 +218,6 @@
 	key = "groan"
 	key_third_person = "groans"
 	message = "groans!"
-	message_mime = "appears to groan!"
 
 /datum/emote/living/grimace
 	key = "grimace"
@@ -267,7 +265,6 @@
 	key = "laugh"
 	key_third_person = "laughs"
 	message = "laughs."
-	message_mime = "laughs silently!"
 	emote_type = EMOTE_AUDIBLE
 	vary = TRUE
 
@@ -282,7 +279,7 @@
 		return
 	var/mob/living/carbon/human/H = user
 	var/human_laugh = ishumanbasic(H)
-	if(human_laugh && (!H.mind || !H.mind.miming))
+	if(human_laugh && (!H.mind))
 		if(user.gender == FEMALE)
 			return 'sound/voice/human/womanlaugh.ogg'
 		else
@@ -327,10 +324,10 @@
 		var/mob/living/carbon/human/H = user
 		if(H.usable_hands == 0)
 			if(H.usable_legs != 0)
-				message_param = "tries to point at %t with a leg, <span class='userdanger'>falling down</span> in the process!"
+				message_param = "tries to point at %t with a leg, [span_userdanger("falling down")] in the process!"
 				H.Paralyze(20)
 			else
-				message_param = "<span class='userdanger'>bumps [user.p_their()] head on the ground</span> trying to motion towards %t."
+				message_param = "[span_userdanger("bumps [user.p_their()] head on the ground")] trying to motion towards %t."
 				H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5)
 	..()
 
@@ -344,7 +341,6 @@
 	key = "scream"
 	key_third_person = "screams"
 	message = "screams."
-	message_mime = "acts out a scream!"
 	emote_type = EMOTE_AUDIBLE
 	mob_type_blacklist_typecache = list(/mob/living/carbon/human) //Humans get specialized scream.
 
@@ -422,7 +418,6 @@
 	key = "snore"
 	key_third_person = "snores"
 	message = "snores."
-	message_mime = "sleeps soundly."
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
 	/// Timer for the blink to wear off
@@ -547,7 +542,6 @@
 	key = "whimper"
 	key_third_person = "whimpers"
 	message = "whimpers."
-	message_mime = "appears hurt."
 
 /datum/emote/living/wsmile
 	key = "wsmile"
@@ -575,9 +569,9 @@
 	. = ..() && intentional
 
 /datum/emote/living/custom/proc/check_invalid(mob/user, input)
-	var/static/regex/stop_bad_mime = regex(@"says|exclaims|yells|asks")
-	if(stop_bad_mime.Find(input, 1, 1))
-		to_chat(user, "<span class='danger'>Invalid emote.</span>")
+	var/static/regex/stop_bypass = regex(@"says|exclaims|yells|asks")
+	if(stop_bypass.Find(input, 1, 1))
+		to_chat(user, span_danger("Invalid emote."))
 		return TRUE
 	return FALSE
 
@@ -585,12 +579,12 @@
 	if(!can_run_emote(user, TRUE, intentional))
 		return FALSE
 	if(is_banned_from(user.ckey, "Emote"))
-		to_chat(user, "<span class='boldwarning'>You cannot send custom emotes (banned).</span>")
+		to_chat(user, span_boldwarning("You cannot send custom emotes (banned)."))
 		return FALSE
 	else if(QDELETED(user))
 		return FALSE
 	else if(user.client && user.client.prefs.muted & MUTE_IC)
-		to_chat(user, "<span class='boldwarning'>You cannot send IC messages (muted).</span>")
+		to_chat(user, span_boldwarning("You cannot send IC messages (muted)."))
 		return FALSE
 	else if(!params)
 		var/custom_emote = copytext(sanitize(input("Choose an emote to display.") as text|null), 1, MAX_MESSAGE_LEN)

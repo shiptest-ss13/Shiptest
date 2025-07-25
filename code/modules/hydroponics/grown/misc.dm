@@ -10,7 +10,7 @@
 	maturation = 5
 	production = 1
 	yield = 2
-	potency = 10
+	potency = 25
 	growthstages = 3
 	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
 	genes = list(/datum/plant_gene/trait/plant_type/weed_hardy)
@@ -50,7 +50,7 @@
 	icon_state = "seed-galaxythistle"
 	species = "galaxythistle"
 	plantname = "Galaxythistle"
-	product = /obj/item/reagent_containers/food/snacks/grown/galaxythistle
+	product = /obj/item/food/grown/galaxythistle
 	lifespan = 70
 	endurance = 40
 	maturation = 3
@@ -69,14 +69,13 @@
 	if(!nogenes)
 		unset_mutability(/datum/plant_gene/trait/invasive, PLANT_GENE_REMOVABLE)
 
-/obj/item/reagent_containers/food/snacks/grown/galaxythistle
+/obj/item/food/grown/galaxythistle
 	seed = /obj/item/seeds/galaxythistle
 	name = "galaxythistle flower head"
 	desc = "This spiny cluster of florets reminds you of the highlands."
 	icon_state = "galaxythistle"
-	filling_color = "#1E7549"
-	bitesize_mod = 3
-	foodtype = VEGETABLES
+	bite_consumption_mod = 2
+	foodtypes = VEGETABLES
 	wine_power = 35
 	wine_flavor = "the vast and infinite cosmos" //WS edit: new wine flavors
 	tastes = list("thistle" = 2, "artichoke" = 1)
@@ -88,7 +87,7 @@
 	icon_state = "seed-cabbage"
 	species = "cabbage"
 	plantname = "Cabbages"
-	product = /obj/item/reagent_containers/food/snacks/grown/cabbage
+	product = /obj/item/food/grown/cabbage
 	lifespan = 50
 	endurance = 25
 	maturation = 3
@@ -100,14 +99,12 @@
 	mutatelist = list(/obj/item/seeds/replicapod)
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
 
-/obj/item/reagent_containers/food/snacks/grown/cabbage
+/obj/item/food/grown/cabbage
 	seed = /obj/item/seeds/cabbage
 	name = "cabbage"
 	desc = "Ewwwwwwwwww. Cabbage."
 	icon_state = "cabbage"
-	filling_color = "#90EE90"
-	bitesize_mod = 2
-	foodtype = VEGETABLES
+	foodtypes = VEGETABLES
 	wine_power = 20
 
 // Sugarcane
@@ -117,24 +114,24 @@
 	icon_state = "seed-sugarcane"
 	species = "sugarcane"
 	plantname = "Sugarcane"
-	product = /obj/item/reagent_containers/food/snacks/grown/sugarcane
+	product = /obj/item/food/grown/sugarcane
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	lifespan = 60
 	endurance = 50
 	maturation = 3
 	yield = 4
 	growthstages = 2
-	reagents_add = list(/datum/reagent/consumable/sugar = 0.25)
+	reagents_add = list(/datum/reagent/consumable/nutriment = 0.04, /datum/reagent/consumable/sugar)
 	mutatelist = list(/obj/item/seeds/bamboo)
 
-/obj/item/reagent_containers/food/snacks/grown/sugarcane
+/obj/item/food/grown/sugarcane
 	seed = /obj/item/seeds/sugarcane
 	name = "sugarcane"
 	desc = "Sickly sweet."
 	icon_state = "sugarcane"
 	filling_color = "#FFD700"
-	bitesize_mod = 2
-	foodtype = VEGETABLES | SUGAR
+	bite_consumption_mod = 2
+	foodtypes = VEGETABLES | SUGAR
 	distill_reagent = /datum/reagent/consumable/ethanol/rum
 
 // Gatfruit
@@ -144,7 +141,7 @@
 	icon_state = "seed-gatfruit"
 	species = "gatfruit"
 	plantname = "Gatfruit Tree"
-	product = /obj/item/reagent_containers/food/snacks/grown/shell/gatfruit
+	product = /obj/item/food/grown/shell/gatfruit
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	lifespan = 20
 	endurance = 20
@@ -158,62 +155,17 @@
 	reagents_add = list(/datum/reagent/sulfur = 0.1, /datum/reagent/carbon = 0.1, /datum/reagent/nitrogen = 0.07, /datum/reagent/potassium = 0.05)
 	research = PLANT_RESEARCH_TIER_5
 
-/obj/item/reagent_containers/food/snacks/grown/shell/gatfruit
+/obj/item/food/grown/shell/gatfruit
 	seed = /obj/item/seeds/gatfruit
 	name = "gatfruit"
 	desc = "It smells like burning."
 	icon_state = "gatfruit"
-	trash = /obj/item/gun/ballistic/revolver/viper
-	bitesize_mod = 2
-	foodtype = FRUIT
+	trash_type = /obj/item/gun/ballistic/revolver
+	bite_consumption_mod = 2
+	foodtypes = FRUIT
 	tastes = list("gunpowder" = 1)
 	wine_power = 90 //It burns going down, too.
 	wine_flavor = "the most powerful handgun in the world" //WS edit: new wine flavors
-
-//Cherry Bombs
-/obj/item/seeds/cherry/bomb
-	name = "pack of cherry bomb pits"
-	desc = "They give you vibes of dread and frustration."
-	icon_state = "seed-cherry_bomb"
-	species = "cherry_bomb"
-	plantname = "Cherry Bomb Tree"
-	product = /obj/item/reagent_containers/food/snacks/grown/cherry_bomb
-	mutatelist = list()
-	reagents_add = list(/datum/reagent/consumable/nutriment = 0.1, /datum/reagent/consumable/sugar = 0.1, /datum/reagent/gunpowder = 0.7)
-	rarity = 60 //See above
-	research = PLANT_RESEARCH_TIER_5
-
-/obj/item/reagent_containers/food/snacks/grown/cherry_bomb
-	name = "cherry bombs"
-	desc = "You think you can hear the hissing of a tiny fuse."
-	icon_state = "cherry_bomb"
-	filling_color = rgb(20, 20, 20)
-	seed = /obj/item/seeds/cherry/bomb
-	bitesize_mod = 2
-	volume = 125 //Gives enough room for the gunpowder at max potency
-	max_integrity = 40
-	wine_power = 80
-	wine_flavor = "smokey sweetness and poprocks" //WS edit: new wine flavors
-
-/obj/item/reagent_containers/food/snacks/grown/cherry_bomb/attack_self(mob/living/user)
-	user.visible_message("<span class='warning'>[user] plucks the stem from [src]!</span>", "<span class='userdanger'>You pluck the stem from [src], which begins to hiss loudly!</span>")
-	log_bomber(user, "primed a", src, "for detonation")
-	prime()
-
-/obj/item/reagent_containers/food/snacks/grown/cherry_bomb/deconstruct(disassembled = TRUE)
-	if(!disassembled)
-		prime()
-	if(!QDELETED(src))
-		qdel(src)
-
-/obj/item/reagent_containers/food/snacks/grown/cherry_bomb/ex_act(severity)
-	qdel(src) //Ensuring that it's deleted by its own explosion. Also prevents mass chain reaction with piles of cherry bombs
-
-/obj/item/reagent_containers/food/snacks/grown/cherry_bomb/proc/prime()
-	icon_state = "cherry_bomb_lit"
-	playsound(src, 'sound/effects/fuse.ogg', seed.potency, FALSE)
-	reagents.chem_temp = 1000 //Sets off the gunpowder
-	reagents.handle_reactions()
 
 // aloe
 /obj/item/seeds/aloe
@@ -222,7 +174,7 @@
 	icon_state = "seed-aloe"
 	species = "aloe"
 	plantname = "Aloe"
-	product = /obj/item/reagent_containers/food/snacks/grown/aloe
+	product = /obj/item/food/grown/aloe
 	lifespan = 60
 	endurance = 25
 	maturation = 4
@@ -232,18 +184,17 @@
 	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.05, /datum/reagent/consumable/nutriment = 0.05)
 
-/obj/item/reagent_containers/food/snacks/grown/aloe
+/obj/item/food/grown/aloe
 	seed = /obj/item/seeds/aloe
 	name = "aloe"
 	desc = "Cut leaves from the aloe plant."
 	icon_state = "aloe"
-	filling_color = "#90EE90"
-	bitesize_mod = 5
-	foodtype = VEGETABLES
+	bite_consumption_mod = 5
+	foodtypes = VEGETABLES
 	juice_results = list(/datum/reagent/consumable/aloejuice = 0)
 	distill_reagent = /datum/reagent/consumable/ethanol/tequila
 
-/obj/item/reagent_containers/food/snacks/grown/aloe/microwave_act(obj/machinery/microwave/M)
+/obj/item/food/grown/aloe/microwave_act(obj/machinery/microwave/M)
 	new /obj/item/stack/medical/aloe(drop_location(), 2)
 	qdel(src)
 
@@ -253,7 +204,7 @@
 	icon_state = "seed-seaweed"
 	species = "seaweed"
 	plantname = "seaweeds"
-	product = /obj/item/reagent_containers/food/snacks/grown/seaweed
+	product = /obj/item/food/grown/seaweed
 	maturation = 2
 	yield = 1
 	growing_icon = 'icons/obj/hydroponics/growing.dmi'
@@ -262,22 +213,23 @@
 	icon_dead = "seaweed-dead"
 	reagents_add = list(/datum/reagent/water = 0.1, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.2)
 
-/obj/item/reagent_containers/food/snacks/grown/seaweed
+/obj/item/food/grown/seaweed
 	seed = /obj/item/seeds/seaweed
 	name = "seaweed"
-	dried_type = /obj/item/reagent_containers/food/snacks/grown/seaweed/sheet
 	desc = "It's so rubbery... is this safe to eat?"
 	icon_state = "seaweed"
-	filling_color = "#4a7244"
-	bitesize_mod = 1
-	foodtype = VEGETABLES
+	bite_consumption_mod = 1
+	foodtypes = VEGETABLES
 	grind_results = list(/datum/reagent/water = 1, /datum/reagent/consumable/sodiumchloride = 2)
 
-/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet
+/obj/item/food/grown/seaweed/sheet
 	name = "seaweed sheet"
 	desc = "A dried sheet of seaweed used for making sushi."
 	icon_state = "seaweedsheet"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
+	food_reagents = list(
+	/datum/reagent/consumable/nutriment = 1,
+	/datum/reagent/consumable/nutriment/vitamin = 1
+	)
 	tastes = list("seaweed" = 1)
-	foodtype = VEGETABLES
+	foodtypes = VEGETABLES
 	w_class = WEIGHT_CLASS_SMALL

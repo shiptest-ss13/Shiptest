@@ -323,7 +323,7 @@
 
 /datum/chemical_reaction/bananahonk
 	results = list(/datum/reagent/consumable/ethanol/bananahonk = 2)
-	required_reagents = list(/datum/reagent/consumable/laughter = 1, /datum/reagent/consumable/cream = 1)
+	required_reagents = list(/datum/reagent/consumable/banana = 1, /datum/reagent/consumable/cream = 1, /datum/reagent/consumable/ice = 1)
 
 /datum/chemical_reaction/silencer
 	results = list(/datum/reagent/consumable/ethanol/silencer = 3)
@@ -392,7 +392,7 @@
 /datum/chemical_reaction/bacchus_blessing
 	results = list(/datum/reagent/consumable/ethanol/bacchus_blessing = 4)
 	required_reagents = list(/datum/reagent/consumable/ethanol/hooch = 1, /datum/reagent/consumable/ethanol/absinthe = 1, /datum/reagent/consumable/ethanol/manly_dorf = 1, /datum/reagent/consumable/ethanol/syndicatebomb = 1)
-	mix_message = "<span class='warning'>The mixture turns to a sickening froth.</span>"
+	mix_message = span_warning("The mixture turns to a sickening froth.")
 
 /datum/chemical_reaction/lemonade
 	results = list(/datum/reagent/consumable/lemonade = 5)
@@ -443,7 +443,7 @@
 
 /datum/chemical_reaction/quintuplesec
 	results = list(/datum/reagent/consumable/ethanol/quintuple_sec = 15)
-	required_reagents = list(/datum/reagent/consumable/ethanol/quadruple_sec = 5, /datum/reagent/consumable/clownstears = 5, /datum/reagent/consumable/ethanol/syndicatebomb = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/quadruple_sec = 5, /datum/reagent/consumable/ethanol/creme_de_menthe = 5, /datum/reagent/consumable/ethanol/syndicatebomb = 5)
 	mix_message = "Judgement is upon you."
 	mix_sound = 'sound/items/airhorn2.ogg'
 

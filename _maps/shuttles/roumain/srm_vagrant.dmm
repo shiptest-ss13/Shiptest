@@ -57,17 +57,17 @@
 /obj/structure/closet/crate/wooden{
 	anchored = 1
 	},
-/obj/item/reagent_containers/food/snacks/meat/steak,
-/obj/item/reagent_containers/food/snacks/meat/steak,
-/obj/item/reagent_containers/food/snacks/meat/steak,
-/obj/item/reagent_containers/food/snacks/meat/steak,
-/obj/item/reagent_containers/food/snacks/meat/steak/chicken,
-/obj/item/reagent_containers/food/snacks/meat/steak/chicken,
-/obj/item/reagent_containers/food/snacks/grown/carrot,
-/obj/item/reagent_containers/food/snacks/grown/carrot,
+/obj/item/food/meat/steak,
+/obj/item/food/meat/steak,
+/obj/item/food/meat/steak,
+/obj/item/food/meat/steak,
+/obj/item/food/meat/steak/chicken,
+/obj/item/food/meat/steak/chicken,
+/obj/item/food/grown/carrot,
+/obj/item/food/grown/carrot,
 /obj/item/food/bread/plain,
-/obj/item/reagent_containers/food/snacks/grown/apple,
-/obj/item/reagent_containers/food/snacks/grown/apple,
+/obj/item/food/grown/apple,
+/obj/item/food/grown/apple,
 /obj/item/reagent_containers/food/drinks/beer,
 /obj/item/reagent_containers/food/drinks/beer,
 /obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine,
@@ -326,7 +326,7 @@
 /turf/open/floor/wood/walnut,
 /area/ship/cargo)
 "fa" = (
-/obj/machinery/hydroponics/soil,
+/obj/machinery/hydroponics/wooden,
 /turf/open/floor/plating/sandy_dirt/ship,
 /area/ship/roumain)
 "fd" = (
@@ -921,7 +921,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "nk" = (
-/obj/machinery/hydroponics/soil,
+/obj/machinery/hydroponics/wooden,
 /obj/structure/platform/wood{
 	dir = 4
 	},
@@ -1446,7 +1446,7 @@
 /turf/open/floor/wood/birch,
 /area/ship/cargo)
 "xS" = (
-/obj/machinery/hydroponics/soil,
+/obj/machinery/hydroponics/wooden,
 /turf/open/floor/grass/ship,
 /area/ship/roumain)
 "xU" = (
@@ -2140,10 +2140,10 @@
 /area/ship/crew/cryo)
 "Lb" = (
 /obj/structure/closet/crate/freezer,
-/obj/item/reagent_containers/food/snacks/egg,
-/obj/item/reagent_containers/food/snacks/egg,
-/obj/item/reagent_containers/food/snacks/egg,
-/obj/item/reagent_containers/food/snacks/egg,
+/obj/item/food/egg,
+/obj/item/food/egg,
+/obj/item/food/egg,
+/obj/item/food/egg,
 /obj/item/stack/ore/glass/basalt{
 	amount = 25;
 	pixel_y = -2;

@@ -198,13 +198,8 @@ GLOBAL_LIST_INIT(uplink_spawn_loc_list, list(UPLINK_PDA, UPLINK_RADIO, UPLINK_PE
 #define PREF_CIG_ROBUSTGOLD "Robust Gold Cigarettes"
 #define PREF_CIG_CARP "Carp Classic Cigarettes"
 #define PREF_CIG_MIDORI "Midori Taboko Rollies"
-#define PREF_CIGAR "Premium Cigars"
-#define PREF_CIGAR_SOLAR "Solarian Cigars"
-#define PREF_CIGAR_COHIBA "Cohiba Cigars"
-#define PREF_VAPE "Vape Pen"
-#define PREF_PIPE "Fancy Pipe"
 
-GLOBAL_LIST_INIT(valid_smoke_types, sortList(list(PREF_CIG_SPACE, PREF_CIG_DROMEDARY, PREF_CIG_UPLIFT, PREF_CIG_ROBUST, PREF_CIG_ROBUSTGOLD, PREF_CIG_CARP, PREF_CIG_MIDORI, PREF_CIGAR, PREF_CIGAR_SOLAR, PREF_CIGAR_COHIBA, PREF_VAPE, PREF_PIPE)))
+GLOBAL_LIST_INIT(valid_smoke_types, sortList(list(PREF_CIG_SPACE, PREF_CIG_DROMEDARY, PREF_CIG_UPLIFT, PREF_CIG_ROBUST, PREF_CIG_ROBUSTGOLD, PREF_CIG_CARP, PREF_CIG_MIDORI)))
 
 	//Female Uniforms
 GLOBAL_LIST_EMPTY(female_clothing_icons)
@@ -264,7 +259,7 @@ GLOBAL_LIST_INIT(TAGGERLOCATIONS, list("Disposals",
 	"Robotics", "Head of Personnel's Office", "Library", "Chapel", "Theatre",
 	"Bar", "Kitchen", "Hydroponics", "Janitor Closet","Genetics",
 	"Experimentor Lab", "Toxins", "Dormitories", "Virology",
-	, "Law Office","Detective's Office"))
+	"Law Office","Detective's Office"))
 
 GLOBAL_LIST_INIT(station_prefixes, world.file2list("strings/station_prefixes.txt"))
 
@@ -297,4 +292,13 @@ GLOBAL_LIST_INIT(planet_prefixes, world.file2list("strings/planet_prefixes.txt")
 
 GLOBAL_LIST_INIT(station_numerals, greek_letters + phonetic_alphabet + numbers_as_words + generate_number_strings())
 
-GLOBAL_LIST_INIT(admiral_messages, list("Do you know how expensive these stations are?","Stop wasting my time.","I was sleeping, thanks a lot.","Stand and fight you cowards!","You knew the risks coming in.","Stop being paranoid.","Whatever's broken just build a new one.","No.", "<i>null</i>","<i>Error: No comment given.</i>", "It's a good day to die!"))
+/// 1000 element long list containing the 1000 most common words in the English language.
+/// Indexed by word, value is the rank of the word in the list. So accessing it is fasta.
+GLOBAL_LIST_INIT(most_common_words, init_common_words())
+
+/proc/init_common_words()
+	. = list()
+	var/i = 1
+	for(var/word in world.file2list("strings/1000_most_common.txt"))
+		.[word] = i
+		i += 1

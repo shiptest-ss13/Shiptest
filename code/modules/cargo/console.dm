@@ -14,6 +14,8 @@
 
 	/// The ship we reside on for ease of access
 	var/datum/overmap/ship/controlled/current_ship
+	var/datum/faction/current_faction
+
 	var/contraband = FALSE
 	var/self_paid = FALSE
 	var/safety_warning = "For safety reasons, the automated supply shuttle \
@@ -41,8 +43,8 @@
 	if(obj_flags & EMAGGED)
 		return
 	if(user)
-		user.visible_message("<span class='warning'>[user] swipes a suspicious card through [src]!</span>",
-		"<span class='notice'>You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband.</span>")
+		user.visible_message(span_warning("[user] swipes a suspicious card through [src]!"),
+		span_notice("You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband."))
 
 	obj_flags |= EMAGGED
 	contraband = TRUE
@@ -54,7 +56,14 @@
 	update_static_data(user)
 
 /obj/machinery/computer/cargo/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	. = ..()
 	current_ship = port.current_ship
+	reconnect(port)
+
+/obj/machinery/computer/cargo/proc/reconnect(obj/docking_port/mobile/port)
+	if(current_ship)
+		current_faction = current_ship.source_template.faction
+		charge_account = current_ship.ship_account
 
 /obj/machinery/computer/cargo/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -78,17 +87,16 @@
 	var/outpost_docked = istype(current_ship.docked_to, /datum/overmap/outpost)
 
 	data["onShip"] = !isnull(current_ship)
+	data["shipFaction"] = current_ship.source_template.faction.name
 	data["numMissions"] = current_ship ? LAZYLEN(current_ship.missions) : 0
 	data["maxMissions"] = current_ship ? current_ship.max_missions : 0
 	data["outpostDocked"] = outpost_docked
 	data["points"] = charge_account ? charge_account.account_balance : 0
 	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access(user)
-	data["supplies"] = list()
 	message = "Purchases will be delivered to your hangar's delivery zone."
 	if(SSshuttle.supplyBlocked)
 		message = blockade_warning
 	data["message"] = message
-
 	data["supplies"] = supply_pack_data
 
 	data["shipMissions"] = list()
@@ -120,36 +128,29 @@
 					var/mob/living/carbon/human/user = usr
 					user.put_in_hands(cash_chip)
 				playsound(src, 'sound/machines/twobeep_high.ogg', 50, TRUE)
-				src.visible_message("<span class='notice'>[src] dispenses a holochip.</span>")
+				src.visible_message(span_notice("[src] dispenses a holochip."))
 			return TRUE
 
-		if("add")
+		if("purchase")
+			var/list/purchasing = params["cart"]
+			var/total_cost = text2num(params["total"])
 			var/datum/overmap/outpost/current_outpost = current_ship.docked_to
-			if(istype(current_ship.docked_to))
-				var/datum/supply_pack/current_pack = locate(params["ref"]) in current_outpost.supply_packs
-				var/same_faction = current_pack.faction ? current_ship.source_template.faction.allowed_faction(current_pack.faction) : FALSE
-				var/total_cost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : current_pack.cost
-				if(!current_pack || !charge_account?.has_money(total_cost))
-					return
+			if(!istype(current_ship.docked_to) || purchasing.len == 0)
+				return
 
-				// note that, because of CHECK_TICK above, we aren't sure if we can
-				// afford the pack, even though we checked earlier. luckily adjust_money
-				// returns false if the account can't afford the price
-				if(charge_account.adjust_money(-total_cost, CREDIT_LOG_CARGO))
-					var/name = "*None Provided*"
-					var/rank = "*None Provided*"
-					if(ishuman(usr))
-						var/mob/living/carbon/human/H = usr
-						name = H.get_authentification_name()
-						rank = H.get_assignment(hand_first = TRUE)
-					else if(issilicon(usr))
-						name = usr.real_name
-						rank = "Silicon"
-					var/datum/supply_order/SO = new(current_pack, name, rank, usr.ckey, "", ordering_outpost = current_ship.docked_to)
-					var/obj/hangar_crate_spawner/crate_spawner = return_crate_spawner()
-					crate_spawner.handle_order(SO)
-					update_appearance() // ??????????????????
-					return TRUE
+			if(!charge_account.adjust_money(-total_cost, CREDIT_LOG_CARGO))
+				say("Insufficent funds!")
+				return
+
+			playsound(src, 'sound/machines/twobeep_high.ogg', 50, TRUE)
+			say("Order incoming!")
+
+			var/list/unprocessed_packs = list()
+			for(var/list/current_item as anything in purchasing)
+				unprocessed_packs += locate(current_item["ref"]) in current_outpost.market.supply_packs
+
+			current_outpost.market.make_order(usr, unprocessed_packs, return_crate_spawner())
+
 		if("mission-act")
 			var/datum/mission/outpost/mission = locate(params["ref"])
 			var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
@@ -169,25 +170,11 @@
 					mission.give_up()
 				return TRUE
 
-/obj/machinery/computer/cargo/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	. = ..()
-	reconnect(port)
-
-/obj/machinery/computer/cargo/proc/reconnect(obj/docking_port/mobile/port)
-	if(!port)
-		var/area/ship/current_area = get_area(src)
-		if(!istype(current_area))
-			return
-		port = current_area.mobile_port
-	if(!port)
-		return
-	charge_account = port.current_ship.ship_account
-
 /obj/machinery/computer/cargo/attackby(obj/item/W, mob/living/user, params)
 	var/value = W.get_item_credit_value()
 	if(value && charge_account)
 		charge_account.adjust_money(value, CREDIT_LOG_DEPOSIT)
-		to_chat(user, "<span class='notice'>You deposit [W]. The Vessel Budget is now [charge_account.account_balance] cr.</span>")
+		to_chat(user, span_notice("You deposit [W]. The Vessel Budget is now [charge_account.account_balance] cr."))
 		qdel(W)
 		return TRUE
 	..()
@@ -203,26 +190,27 @@
 	if(!istype(outpost_docked))
 		return supply_pack_data
 
-	for(var/datum/supply_pack/current_pack as anything in outpost_docked.supply_packs)
-		if(!supply_pack_data[current_pack.group])
-			supply_pack_data[current_pack.group] = list(
-				"name" = current_pack.group,
+	for(var/datum/supply_pack/current_pack as anything in outpost_docked.market.supply_packs)
+		if(!supply_pack_data[current_pack.category])
+			supply_pack_data[current_pack.category] = list(
+				"name" = current_pack.category,
 				"packs" = list()
 			)
-		if((current_pack.hidden))
+		if((!current_pack.available))
 			continue
-		var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_ship.source_template.faction) : FALSE
+		var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_faction) : FALSE
 		var/discountedcost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : null
 		if(current_pack.faction_locked && !same_faction)
 			continue
-		supply_pack_data[current_pack.group]["packs"] += list(list(
+		supply_pack_data[current_pack.category]["packs"] += list(list(
 			"name" = current_pack.name,
 			"cost" = current_pack.cost,
 			"discountedcost" = discountedcost ? discountedcost : null,
 			"discountpercent" = current_pack.faction_discount,
 			"faction_locked" = current_pack.faction_locked, //this will only show if you are same faction, so no issue
 			"ref" = REF(current_pack),
-			"desc" = (current_pack.desc || current_pack.name) + (discountedcost ? "\n-[current_pack.faction_discount]% off due to your faction affiliation.\nWas [current_pack.cost]" : "") + (current_pack.faction_locked ? "\nYou are able to purchase this item due to your faction affiliation." : "") // If there is a description, use it. Otherwise use the pack's name.
+			"desc" = (current_pack.desc || current_pack.name) + (discountedcost ? "\n-[current_pack.faction_discount]% off due to your faction affiliation.\nWas [current_pack.cost]" : "") + (current_pack.faction_locked ? "\nYou are able to purchase this item due to your faction affiliation." : ""), // If there is a description, use it. Otherwise use the pack's name.
+			"no_bundle" = current_pack.no_bundle
 		))
 
 

@@ -128,17 +128,17 @@ Nothing else in the console has ID requirements.
 		if(!plant_already_researched[E.type])
 			if(!E.research)
 				playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 3, -1)
-				visible_message("<span class='warning'>[src] buzzes and displays a message: Sample quality error! Sample is either too common to be of value or too full of bugs to be of use!</span>")
+				visible_message(span_warning("[src] buzzes and displays a message: Sample quality error! Sample is either too common to be of value or too full of bugs to be of use!"))
 				return
 			else
 				playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)
-				visible_message("<span class='notice'>[user] inserts [E] into a slot on the [src]!</span>", "<span class='notice'>You insert [E] into a slot on the [src], producting [E.research] points from the plant's genetic makeup!</span>")
+				visible_message(span_notice("[user] inserts [E] into a slot on the [src]!"), span_notice("You insert [E] into a slot on the [src], producting [E.research] points from the plant's genetic makeup!"))
 				stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = E.research))
 				plant_already_researched[E.type] = TRUE
 				qdel(D)
 				return
 		else
-			visible_message("<span class='notice'>[src] buzzes and displays a message: Genetic data already researched!</span>")
+			visible_message(span_notice("[src] buzzes and displays a message: Genetic data already researched!"))
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 3, -1)
 			return
 	if(istype(D, /obj/item/assembly/signaler/anomaly))
@@ -149,7 +149,7 @@ Nothing else in the console has ID requirements.
 			return
 
 		playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)
-		visible_message("<span class='notice'>[user] inserts [anomaly] into a slot on the [src]!</span>", "<span class='notice'>You insert [anomaly] into a slot on the [src], producting [anomaly.research] points!</span>")
+		visible_message(span_notice("[user] inserts [anomaly] into a slot on the [src]!"), span_notice("You insert [anomaly] into a slot on the [src], producting [anomaly.research] points!"))
 		stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = anomaly.research))
 		qdel(anomaly)
 		return
@@ -182,25 +182,25 @@ Nothing else in the console has ID requirements.
 	if(istype(D, /obj/item/disk))
 		if(istype(D, /obj/item/disk/tech_disk))
 			if(t_disk)
-				to_chat(user, "<span class='warning'>A technology disk is already loaded!</span>")
+				to_chat(user, span_warning("A technology disk is already loaded!"))
 				return
 			if(!user.transferItemToLoc(D, src))
-				to_chat(user, "<span class='warning'>[D] is stuck to your hand!</span>")
+				to_chat(user, span_warning("[D] is stuck to your hand!"))
 				return
 			t_disk = D
 		else if (istype(D, /obj/item/disk/design_disk))
 			if(d_disk)
-				to_chat(user, "<span class='warning'>A design disk is already loaded!</span>")
+				to_chat(user, span_warning("A design disk is already loaded!"))
 				return
 			if(!user.transferItemToLoc(D, src))
-				to_chat(user, "<span class='warning'>[D] is stuck to your hand!</span>")
+				to_chat(user, span_warning("[D] is stuck to your hand!"))
 				return
 			d_disk = D
 		else
-			to_chat(user, "<span class='warning'>Machine cannot accept disks in that format.</span>")
+			to_chat(user, span_warning("Machine cannot accept disks in that format."))
 			return
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
-		to_chat(user, "<span class='notice'>You insert [D] into \the [src]!</span>")
+		to_chat(user, span_notice("You insert [D] into \the [src]!"))
 	else if(!(linked_destroy && linked_destroy.busy) && !(linked_lathe && linked_lathe.busy) && !(linked_imprinter && linked_imprinter.busy))
 		. = ..()
 
@@ -220,9 +220,9 @@ Nothing else in the console has ID requirements.
 	. += ..()
 	if(in_range(user, src) || isobserver(user))
 		if (t_disk)
-			. += "<span class='notice'>[t_disk.name] is loaded, Ctrl-Click to remove.</span>"
+			. += span_notice("[t_disk.name] is loaded, Ctrl-Click to remove.")
 		if (d_disk)
-			. += "<span class='notice'>[d_disk.name] is loaded, Alt-Click to remove.</span>"
+			. += span_notice("[d_disk.name] is loaded, Alt-Click to remove.")
 
 /obj/machinery/computer/rdconsole/proc/research_node(id, mob/user)
 	if(!stored_research.available_nodes[id] || stored_research.researched_nodes[id])
@@ -276,7 +276,7 @@ Nothing else in the console has ID requirements.
 
 /obj/machinery/computer/rdconsole/emag_act(mob/user)
 	if(!(obj_flags & EMAGGED))
-		to_chat(user, "<span class='notice'>You disable the security protocols[locked? " and unlock the console":""].</span>")
+		to_chat(user, span_notice("You disable the security protocols[locked? " and unlock the console":""]."))
 		playsound(src, "sparks", 75, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 		obj_flags |= EMAGGED
 		locked = FALSE
@@ -300,7 +300,7 @@ Nothing else in the console has ID requirements.
 			l += "</tr><tr>"
 			line_length = 1
 
-		l += "<td><A href='?src=[REF(src)];category=[C];switch_screen=[menu_num]'>[C]</A></td>"
+		l += "<td><A href='byond://?src=[REF(src)];category=[C];switch_screen=[menu_num]'>[C]</A></td>"
 		line_length++
 
 	l += "</tr></table></div>"
@@ -313,57 +313,57 @@ Nothing else in the console has ID requirements.
 	l += "<div class='statusDisplay'><b>[stored_research.organization] Research and Development Network</b>"
 	l += "Available points: <BR>[techweb_point_display_rdconsole(stored_research.research_points, stored_research.last_bitcoins)]"
 	l += "Security protocols: [obj_flags & EMAGGED ? "<font color='red'>Disabled</font>" : "<font color='green'>Enabled</font>"]"
-	l += "<a href='?src=[REF(src)];switch_screen=[RDSCREEN_MENU]'>Main Menu</a> | <a href='?src=[REF(src)];switch_screen=[back]'>Back</a></div>[RDSCREEN_NOBREAK]"
-	l += "[ui_mode == 1? "<span class='linkOn'>Normal View</span>" : "<a href='?src=[REF(src)];ui_mode=1'>Normal View</a>"] | [ui_mode == 2? "<span class='linkOn'>Expert View</span>" : "<a href='?src=[REF(src)];ui_mode=2'>Expert View</a>"] | [ui_mode == 3? "<span class='linkOn'>List View</span>" : "<a href='?src=[REF(src)];ui_mode=3'>List View</a>"]"
+	l += "<a href='byond://?src=[REF(src)];switch_screen=[RDSCREEN_MENU]'>Main Menu</a> | <a href='byond://?src=[REF(src)];switch_screen=[back]'>Back</a></div>[RDSCREEN_NOBREAK]"
+	l += "[ui_mode == 1? span_linkon("Normal View") : "<a href='byond://?src=[REF(src)];ui_mode=1'>Normal View</a>"] | [ui_mode == 2? span_linkon("Expert View") : "<a href='byond://?src=[REF(src)];ui_mode=2'>Expert View</a>"] | [ui_mode == 3? span_linkon("List View") : "<a href='byond://?src=[REF(src)];ui_mode=3'>List View</a>"]"
 	return l
 
 /obj/machinery/computer/rdconsole/proc/ui_main_menu()
 	var/list/l = list()
 	if(research_control)
-		l += "<H2><a href='?src=[REF(src)];switch_screen=[RDSCREEN_TECHWEB]'>Technology</a>"
+		l += "<H2><a href='byond://?src=[REF(src)];switch_screen=[RDSCREEN_TECHWEB]'>Technology</a>"
 	if(d_disk)
-		l += "<hr><a href='?src=[REF(src)];switch_screen=[RDSCREEN_DESIGNDISK]'>[d_disk.name]</a>"
+		l += "<hr><a href='byond://?src=[REF(src)];switch_screen=[RDSCREEN_DESIGNDISK]'>[d_disk.name]</a>"
 	if(t_disk)
-		l += "<hr><a href='?src=[REF(src)];switch_screen=[RDSCREEN_TECHDISK]'>[t_disk.name]</a>"
+		l += "<hr><a href='byond://?src=[REF(src)];switch_screen=[RDSCREEN_TECHDISK]'>[t_disk.name]</a>"
 	if(linked_destroy)
-		l += "<hr><a href='?src=[REF(src)];switch_screen=[RDSCREEN_DECONSTRUCT]'>Destructive Analyzer</a>"
+		l += "<hr><a href='byond://?src=[REF(src)];switch_screen=[RDSCREEN_DECONSTRUCT]'>Destructive Analyzer</a>"
 	if(linked_lathe)
-		l += "<hr><a href='?src=[REF(src)];switch_screen=[RDSCREEN_PROTOLATHE]'>Protolathe</a>"
+		l += "<hr><a href='byond://?src=[REF(src)];switch_screen=[RDSCREEN_PROTOLATHE]'>Protolathe</a>"
 	if(linked_imprinter)
-		l += "<hr><a href='?src=[REF(src)];switch_screen=[RDSCREEN_IMPRINTER]'>Circuit Imprinter</a>"
-	l += "<hr><a href='?src=[REF(src)];switch_screen=[RDSCREEN_SETTINGS]'>Settings</a></H2>"
+		l += "<hr><a href='byond://?src=[REF(src)];switch_screen=[RDSCREEN_IMPRINTER]'>Circuit Imprinter</a>"
+	l += "<hr><a href='byond://?src=[REF(src)];switch_screen=[RDSCREEN_SETTINGS]'>Settings</a></H2>"
 	return l
 
 /obj/machinery/computer/rdconsole/proc/ui_locked()
-	return list("<h3><a href='?src=[REF(src)];switch_screen=[RDSCREEN_MENU];unlock_console=1'>SYSTEM LOCKED</a></h3></br>")
+	return list("<h3><a href='byond://?src=[REF(src)];switch_screen=[RDSCREEN_MENU];unlock_console=1'>SYSTEM LOCKED</a></h3></br>")
 
 /obj/machinery/computer/rdconsole/proc/ui_settings()
 	var/list/l = list()
 	l += "<div class='statusDisplay'><h3>R&D Console Settings:</h3>"
-	l += "<A href='?src=[REF(src)];switch_screen=[RDSCREEN_DEVICE_LINKING]'>Device Linkage Menu</A>"
-	l += "<A href='?src=[REF(src)];lock_console=1'>Lock Console</A></div>"
+	l += "<A href='byond://?src=[REF(src)];switch_screen=[RDSCREEN_DEVICE_LINKING]'>Device Linkage Menu</A>"
+	l += "<A href='byond://?src=[REF(src)];lock_console=1'>Lock Console</A></div>"
 	return l
 
 /obj/machinery/computer/rdconsole/proc/ui_device_linking()
 	var/list/l = list()
-	l += "<A href='?src=[REF(src)];switch_screen=[RDSCREEN_SETTINGS]'>Settings Menu</A><div class='statusDisplay'>"
+	l += "<A href='byond://?src=[REF(src)];switch_screen=[RDSCREEN_SETTINGS]'>Settings Menu</A><div class='statusDisplay'>"
 	l += "<h3>R&D Console Device Linkage Menu:</h3>"
-	l += "<A href='?src=[REF(src)];find_device=1'>Re-sync with Nearby Devices</A>"
+	l += "<A href='byond://?src=[REF(src)];find_device=1'>Re-sync with Nearby Devices</A>"
 	l += "<h3>Linked Devices:</h3>"
-	l += linked_destroy? "* Destructive Analyzer <A href='?src=[REF(src)];disconnect=destroy'>Disconnect</A>" : "* No Destructive Analyzer Linked"
-	l += linked_lathe? "* Protolathe <A href='?src=[REF(src)];disconnect=lathe'>Disconnect</A>" : "* No Protolathe Linked"
-	l += linked_imprinter? "* Circuit Imprinter <A href='?src=[REF(src)];disconnect=imprinter'>Disconnect</A>" : "* No Circuit Imprinter Linked"
+	l += linked_destroy? "* Destructive Analyzer <A href='byond://?src=[REF(src)];disconnect=destroy'>Disconnect</A>" : "* No Destructive Analyzer Linked"
+	l += linked_lathe? "* Protolathe <A href='byond://?src=[REF(src)];disconnect=lathe'>Disconnect</A>" : "* No Protolathe Linked"
+	l += linked_imprinter? "* Circuit Imprinter <A href='byond://?src=[REF(src)];disconnect=imprinter'>Disconnect</A>" : "* No Circuit Imprinter Linked"
 	l += "</div>"
 	return l
 
 /obj/machinery/computer/rdconsole/proc/ui_protolathe_header()
 	var/list/l = list()
-	l += "<div class='statusDisplay'><A href='?src=[REF(src)];switch_screen=[RDSCREEN_PROTOLATHE]'>Protolathe Menu</A>"
+	l += "<div class='statusDisplay'><A href='byond://?src=[REF(src)];switch_screen=[RDSCREEN_PROTOLATHE]'>Protolathe Menu</A>"
 	if(linked_lathe.materials.mat_container)
-		l += "<A href='?src=[REF(src)];switch_screen=[RDSCREEN_PROTOLATHE_MATERIALS]'><B>Material Amount:</B> [linked_lathe.materials.format_amount()]</A>"
+		l += "<A href='byond://?src=[REF(src)];switch_screen=[RDSCREEN_PROTOLATHE_MATERIALS]'><B>Material Amount:</B> [linked_lathe.materials.format_amount()]</A>"
 	else
 		l += "<font color='red'>No material storage connected, please contact the quartermaster.</font>"
-	l += "<A href='?src=[REF(src)];switch_screen=[RDSCREEN_PROTOLATHE_CHEMICALS]'><B>Chemical volume:</B> [linked_lathe.reagents.total_volume] / [linked_lathe.reagents.maximum_volume]</A></div>"
+	l += "<A href='byond://?src=[REF(src)];switch_screen=[RDSCREEN_PROTOLATHE_CHEMICALS]'><B>Chemical volume:</B> [linked_lathe.reagents.total_volume] / [linked_lathe.reagents.maximum_volume]</A></div>"
 	return l
 
 /obj/machinery/computer/rdconsole/proc/ui_protolathe_category_view()	//Legacy code
@@ -388,20 +388,20 @@ Nothing else in the console has ID requirements.
 			var/t = linked_lathe.check_mat(D, M)
 			temp_material += " | "
 			if (t < 1)
-				temp_material += "<span class='bad'>[all_materials[M]/coeff] [CallMaterialName(M)]</span>"
+				temp_material += span_bad("[all_materials[M]/coeff] [CallMaterialName(M)]")
 			else
 				temp_material += " [all_materials[M]/coeff] [CallMaterialName(M)]"
 			c = min(c,t)
 
 		if (c >= 1)
-			l += "<A href='?src=[REF(src)];build=[D.id];amount=1'>[D.name]</A>[RDSCREEN_NOBREAK]"
+			l += "<A href='byond://?src=[REF(src)];build=[D.id];amount=1'>[D.name]</A>[RDSCREEN_NOBREAK]"
 			if(c >= 5)
-				l += "<A href='?src=[REF(src)];build=[D.id];amount=5'>x5</A>[RDSCREEN_NOBREAK]"
+				l += "<A href='byond://?src=[REF(src)];build=[D.id];amount=5'>x5</A>[RDSCREEN_NOBREAK]"
 			if(c >= 10)
-				l += "<A href='?src=[REF(src)];build=[D.id];amount=10'>x10</A>[RDSCREEN_NOBREAK]"
+				l += "<A href='byond://?src=[REF(src)];build=[D.id];amount=10'>x10</A>[RDSCREEN_NOBREAK]"
 			l += "[temp_material][RDSCREEN_NOBREAK]"
 		else
-			l += "<span class='linkOff'>[D.name]</span>[temp_material][RDSCREEN_NOBREAK]"
+			l += "[span_linkoff("[D.name]")][temp_material][RDSCREEN_NOBREAK]"
 		l += ""
 	l += "</div>"
 	return l
@@ -441,20 +441,20 @@ Nothing else in the console has ID requirements.
 			var/t = linked_lathe.check_mat(D, M)
 			temp_material += " | "
 			if (t < 1)
-				temp_material += "<span class='bad'>[all_materials[M]/coeff] [CallMaterialName(M)]</span>"
+				temp_material += span_bad("[all_materials[M]/coeff] [CallMaterialName(M)]")
 			else
 				temp_material += " [all_materials[M]/coeff] [CallMaterialName(M)]"
 			c = min(c,t)
 
 		if (c >= 1)
-			l += "<A href='?src=[REF(src)];build=[D.id];amount=1'>[D.name]</A>[RDSCREEN_NOBREAK]"
+			l += "<A href='byond://?src=[REF(src)];build=[D.id];amount=1'>[D.name]</A>[RDSCREEN_NOBREAK]"
 			if(c >= 5)
-				l += "<A href='?src=[REF(src)];build=[D.id];amount=5'>x5</A>[RDSCREEN_NOBREAK]"
+				l += "<A href='byond://?src=[REF(src)];build=[D.id];amount=5'>x5</A>[RDSCREEN_NOBREAK]"
 			if(c >= 10)
-				l += "<A href='?src=[REF(src)];build=[D.id];amount=10'>x10</A>[RDSCREEN_NOBREAK]"
+				l += "<A href='byond://?src=[REF(src)];build=[D.id];amount=10'>x10</A>[RDSCREEN_NOBREAK]"
 			l += "[temp_material][RDSCREEN_NOBREAK]"
 		else
-			l += "<span class='linkOff'>[D.name]</span>[temp_material][RDSCREEN_NOBREAK]"
+			l += "[span_linkoff("[D.name]")][temp_material][RDSCREEN_NOBREAK]"
 		l += ""
 	l += "</div>"
 	return l
@@ -473,9 +473,9 @@ Nothing else in the console has ID requirements.
 		var/amount = mat_container.materials[mat_id]
 		var/ref = REF(M)
 		l += "* [amount] of [M.name]: "
-		if(amount >= MINERAL_MATERIAL_AMOUNT) l += "<A href='?src=[REF(src)];ejectsheet=[ref];eject_amt=1'>Eject</A> [RDSCREEN_NOBREAK]"
-		if(amount >= MINERAL_MATERIAL_AMOUNT*5) l += "<A href='?src=[REF(src)];ejectsheet=[ref];eject_amt=5'>5x</A> [RDSCREEN_NOBREAK]"
-		if(amount >= MINERAL_MATERIAL_AMOUNT) l += "<A href='?src=[REF(src)];ejectsheet=[ref];eject_amt=50'>All</A>[RDSCREEN_NOBREAK]"
+		if(amount >= MINERAL_MATERIAL_AMOUNT) l += "<A href='byond://?src=[REF(src)];ejectsheet=[ref];eject_amt=1'>Eject</A> [RDSCREEN_NOBREAK]"
+		if(amount >= MINERAL_MATERIAL_AMOUNT*5) l += "<A href='byond://?src=[REF(src)];ejectsheet=[ref];eject_amt=5'>5x</A> [RDSCREEN_NOBREAK]"
+		if(amount >= MINERAL_MATERIAL_AMOUNT) l += "<A href='byond://?src=[REF(src)];ejectsheet=[ref];eject_amt=50'>All</A>[RDSCREEN_NOBREAK]"
 		l += ""
 	l += "</div>[RDSCREEN_NOBREAK]"
 	return l
@@ -484,22 +484,22 @@ Nothing else in the console has ID requirements.
 	RDSCREEN_UI_LATHE_CHECK
 	var/list/l = list()
 	l += ui_protolathe_header()
-	l += "<div class='statusDisplay'><A href='?src=[REF(src)];disposeallP=1'>Disposal All Chemicals in Storage</A>"
+	l += "<div class='statusDisplay'><A href='byond://?src=[REF(src)];disposeallP=1'>Disposal All Chemicals in Storage</A>"
 	l += "<h3>Chemical Storage:</h3>"
 	for(var/datum/reagent/R in linked_lathe.reagents.reagent_list)
 		l += "[R.name]: [R.volume]"
-		l += "<A href='?src=[REF(src)];disposeP=[R]'>Purge</A>"
+		l += "<A href='byond://?src=[REF(src)];disposeP=[R]'>Purge</A>"
 	l += "</div>"
 	return l
 
 /obj/machinery/computer/rdconsole/proc/ui_circuit_header()		//Legacy Code
 	var/list/l = list()
-	l += "<div class='statusDisplay'><A href='?src=[REF(src)];switch_screen=[RDSCREEN_IMPRINTER]'>Circuit Imprinter Menu</A>"
+	l += "<div class='statusDisplay'><A href='byond://?src=[REF(src)];switch_screen=[RDSCREEN_IMPRINTER]'>Circuit Imprinter Menu</A>"
 	if (linked_imprinter.materials.mat_container)
-		l += "<A href='?src=[REF(src)];switch_screen=[RDSCREEN_IMPRINTER_MATERIALS]'><B>Material Amount:</B> [linked_imprinter.materials.format_amount()]</A>"
+		l += "<A href='byond://?src=[REF(src)];switch_screen=[RDSCREEN_IMPRINTER_MATERIALS]'><B>Material Amount:</B> [linked_imprinter.materials.format_amount()]</A>"
 	else
 		l += "<font color='red'>No material storage connected, please contact the quartermaster.</font>"
-	l += "<A href='?src=[REF(src)];switch_screen=[RDSCREEN_IMPRINTER_CHEMICALS]'><B>Chemical volume:</B> [linked_imprinter.reagents.total_volume] / [linked_imprinter.reagents.maximum_volume]</A></div>"
+	l += "<A href='byond://?src=[REF(src)];switch_screen=[RDSCREEN_IMPRINTER_CHEMICALS]'><B>Chemical volume:</B> [linked_imprinter.reagents.total_volume] / [linked_imprinter.reagents.maximum_volume]</A></div>"
 	return l
 
 /obj/machinery/computer/rdconsole/proc/ui_circuit()		//Legacy code
@@ -543,13 +543,13 @@ Nothing else in the console has ID requirements.
 			temp_materials += " | "
 			if (!linked_imprinter.check_mat(D, M))
 				check_materials = FALSE
-				temp_materials += " <span class='bad'>[all_materials[M]/coeff] [CallMaterialName(M)]</span>"
+				temp_materials += " [span_bad("[all_materials[M]/coeff] [CallMaterialName(M)]")]"
 			else
 				temp_materials += " [all_materials[M]/coeff] [CallMaterialName(M)]"
 		if (check_materials)
-			l += "<A href='?src=[REF(src)];imprint=[D.id]'>[D.name]</A>[temp_materials]"
+			l += "<A href='byond://?src=[REF(src)];imprint=[D.id]'>[D.name]</A>[temp_materials]"
 		else
-			l += "<span class='linkOff'>[D.name]</span>[temp_materials]"
+			l += "[span_linkoff("[D.name]")][temp_materials]"
 	l += "</div>"
 	return l
 
@@ -573,13 +573,13 @@ Nothing else in the console has ID requirements.
 			temp_materials += " | "
 			if (!linked_imprinter.check_mat(D, M))
 				check_materials = FALSE
-				temp_materials += " <span class='bad'>[all_materials[M]/coeff] [CallMaterialName(M)]</span>"
+				temp_materials += " [span_bad("[all_materials[M]/coeff] [CallMaterialName(M)]")]"
 			else
 				temp_materials += " [all_materials[M]/coeff] [CallMaterialName(M)]"
 		if (check_materials)
-			l += "<A href='?src=[REF(src)];imprint=[D.id]'>[D.name]</A>[temp_materials]"
+			l += "<A href='byond://?src=[REF(src)];imprint=[D.id]'>[D.name]</A>[temp_materials]"
 		else
-			l += "<span class='linkOff'>[D.name]</span>[temp_materials]"
+			l += "[span_linkoff("[D.name]")][temp_materials]"
 	l += "</div>"
 	return l
 
@@ -587,11 +587,11 @@ Nothing else in the console has ID requirements.
 	RDSCREEN_UI_IMPRINTER_CHECK
 	var/list/l = list()
 	l += ui_circuit_header()
-	l += "<A href='?src=[REF(src)];disposeallI=1'>Disposal All Chemicals in Storage</A><div class='statusDisplay'>"
+	l += "<A href='byond://?src=[REF(src)];disposeallI=1'>Disposal All Chemicals in Storage</A><div class='statusDisplay'>"
 	l += "<h3>Chemical Storage:</h3>"
 	for(var/datum/reagent/R in linked_imprinter.reagents.reagent_list)
 		l += "[R.name]: [R.volume]"
-		l += "<A href='?src=[REF(src)];disposeI=[R]'>Purge</A>"
+		l += "<A href='byond://?src=[REF(src)];disposeI=[R]'>Purge</A>"
 	return l
 
 /obj/machinery/computer/rdconsole/proc/ui_circuit_materials()	//Legacy code!
@@ -608,9 +608,9 @@ Nothing else in the console has ID requirements.
 		var/amount = mat_container.materials[mat_id]
 		var/ref = REF(M)
 		l += "* [amount] of [M.name]: "
-		if(amount >= MINERAL_MATERIAL_AMOUNT) l += "<A href='?src=[REF(src)];imprinter_ejectsheet=[ref];eject_amt=1'>Eject</A> [RDSCREEN_NOBREAK]"
-		if(amount >= MINERAL_MATERIAL_AMOUNT*5) l += "<A href='?src=[REF(src)];imprinter_ejectsheet=[ref];eject_amt=5'>5x</A> [RDSCREEN_NOBREAK]"
-		if(amount >= MINERAL_MATERIAL_AMOUNT) l += "<A href='?src=[REF(src)];imprinter_ejectsheet=[ref];eject_amt=50'>All</A>[RDSCREEN_NOBREAK]"
+		if(amount >= MINERAL_MATERIAL_AMOUNT) l += "<A href='byond://?src=[REF(src)];imprinter_ejectsheet=[ref];eject_amt=1'>Eject</A> [RDSCREEN_NOBREAK]"
+		if(amount >= MINERAL_MATERIAL_AMOUNT*5) l += "<A href='byond://?src=[REF(src)];imprinter_ejectsheet=[ref];eject_amt=5'>5x</A> [RDSCREEN_NOBREAK]"
+		if(amount >= MINERAL_MATERIAL_AMOUNT) l += "<A href='byond://?src=[REF(src)];imprinter_ejectsheet=[ref];eject_amt=50'>All</A>[RDSCREEN_NOBREAK]"
 		l += ""
 	l += "</div>[RDSCREEN_NOBREAK]"
 	return l
@@ -618,41 +618,41 @@ Nothing else in the console has ID requirements.
 /obj/machinery/computer/rdconsole/proc/ui_techdisk()		//Legacy code
 	RDSCREEN_UI_TDISK_CHECK
 	var/list/l = list()
-	l += "<div class='statusDisplay'>Disk Operations: <A href='?src=[REF(src)];clear_tech=0'>Clear Disk</A>"
-	l += "<A href='?src=[REF(src)];eject_tech=1'>Eject Disk</A>"
-	l += "<A href='?src=[REF(src)];updt_tech=0'>Upload All</A>"
-	l += "<A href='?src=[REF(src)];copy_tech=1'>Load Technology to Disk</A></div>"
+	l += "<div class='statusDisplay'>Disk Operations: <A href='byond://?src=[REF(src)];clear_tech=0'>Clear Disk</A>"
+	l += "<A href='byond://?src=[REF(src)];eject_tech=1'>Eject Disk</A>"
+	l += "<A href='byond://?src=[REF(src)];updt_tech=0'>Upload All</A>"
+	l += "<A href='byond://?src=[REF(src)];copy_tech=1'>Load Technology to Disk</A></div>"
 	l += "<div class='statusDisplay'><h3>Stored Technology Nodes:</h3>"
 	for(var/i in t_disk.stored_research.researched_nodes)
 		var/datum/techweb_node/N = SSresearch.techweb_node_by_id(i)
-		l += "<A href='?src=[REF(src)];view_node=[i];back_screen=[screen]'>[N.display_name]</A>"
+		l += "<A href='byond://?src=[REF(src)];view_node=[i];back_screen=[screen]'>[N.display_name]</A>"
 	l += "</div>"
 	return l
 
 /obj/machinery/computer/rdconsole/proc/ui_designdisk()		//Legacy code
 	RDSCREEN_UI_DDISK_CHECK
 	var/list/l = list()
-	l += "Disk Operations: <A href='?src=[REF(src)];clear_design=0'>Clear Disk</A><A href='?src=[REF(src)];updt_design=0'>Upload All</A><A href='?src=[REF(src)];eject_design=1'>Eject Disk</A>"
+	l += "Disk Operations: <A href='byond://?src=[REF(src)];clear_design=0'>Clear Disk</A><A href='byond://?src=[REF(src)];updt_design=0'>Upload All</A><A href='byond://?src=[REF(src)];eject_design=1'>Eject Disk</A>"
 	for(var/i in d_disk.blueprints)
 		l += "<div class='statusDisplay'>"
 		if(istype(i, /datum/design))
 			var/datum/design/D = i
-			l += "[D.icon_html(usr)] <A href='?src=[REF(src)];view_design=[D.id]'>[D.name]</A>"
-			l += "Operations: <A href='?src=[REF(src)];updt_design=[i]'>Upload to database</A> <A href='?src=[REF(src)];clear_design=[i]'>Clear Slot</A>"
+			l += "[D.icon_html(usr)] <A href='byond://?src=[REF(src)];view_design=[D.id]'>[D.name]</A>"
+			l += "Operations: <A href='byond://?src=[REF(src)];updt_design=[i]'>Upload to database</A> <A href='byond://?src=[REF(src)];clear_design=[i]'>Clear Slot</A>"
 		else
-			l += "Empty Slot Operations: <A href='?src=[REF(src)];switch_screen=[RDSCREEN_DESIGNDISK_UPLOAD];disk_slot=[i]'>Load Design to Slot</A>"
+			l += "Empty Slot Operations: <A href='byond://?src=[REF(src)];switch_screen=[RDSCREEN_DESIGNDISK_UPLOAD];disk_slot=[i]'>Load Design to Slot</A>"
 		l += "</div>"
 	return l
 
 /obj/machinery/computer/rdconsole/proc/ui_designdisk_upload()	//Legacy code
 	RDSCREEN_UI_DDISK_CHECK
 	var/list/l = list()
-	l += "<A href='?src=[REF(src)];switch_screen=[RDSCREEN_DESIGNDISK];back_screen=[screen]'>Return to Disk Operations</A><div class='statusDisplay'>"
+	l += "<A href='byond://?src=[REF(src)];switch_screen=[RDSCREEN_DESIGNDISK];back_screen=[screen]'>Return to Disk Operations</A><div class='statusDisplay'>"
 	l += "<h3>Load Design to Disk:</h3>"
 	for(var/v in stored_research.researched_designs)
 		var/datum/design/D = SSresearch.techweb_design_by_id(v)
 		l += "[D.icon_html(usr)] [D.name] "
-		l += "<A href='?src=[REF(src)];copy_design=[disk_slot_selected];copy_design_ID=[D.id]'>Copy to Disk</A>"
+		l += "<A href='byond://?src=[REF(src)];copy_design=[disk_slot_selected];copy_design_ID=[D.id]'>Copy to Disk</A>"
 	l += "</div>"
 	return l
 
@@ -663,7 +663,7 @@ Nothing else in the console has ID requirements.
 		l += "<div class='statusDisplay'>No item loaded. Standing-by...</div>"
 	else
 		l += "<div class='statusDisplay'>[RDSCREEN_NOBREAK]"
-		l += "<table><tr><td>[icon2html(linked_destroy.loaded_item, usr)]</td><td><b>[linked_destroy.loaded_item.name]</b> <A href='?src=[REF(src)];eject_item=1'>Eject</A></td></tr></table>[RDSCREEN_NOBREAK]"
+		l += "<table><tr><td>[icon2html(linked_destroy.loaded_item, usr)]</td><td><b>[linked_destroy.loaded_item.name]</b> <A href='byond://?src=[REF(src)];eject_item=1'>Eject</A></td></tr></table>[RDSCREEN_NOBREAK]"
 		l += "Select a node to boost by deconstructing this item. This item can boost:"
 
 		var/anything = FALSE
@@ -675,14 +675,14 @@ Nothing else in the console has ID requirements.
 
 			l += "<div class='statusDisplay'>[RDSCREEN_NOBREAK]"
 			if (stored_research.researched_nodes[N.id])  // already researched
-				l += "<span class='linkOff'>[N.display_name]</span>"
+				l += span_linkoff("[N.display_name]")
 				l += "This node has already been researched."
 			else if(!length(worth))  // reveal only
 				if (stored_research.hidden_nodes[N.id])
-					l += "<A href='?src=[REF(src)];deconstruct=[N.id]'>[N.display_name]</A>"
+					l += "<A href='byond://?src=[REF(src)];deconstruct=[N.id]'>[N.display_name]</A>"
 					l += "This node will be revealed."
 				else
-					l += "<span class='linkOff'>[N.display_name]</span>"
+					l += span_linkoff("[N.display_name]")
 					l += "This node has already been revealed."
 			else  // boost by the difference
 				var/list/differences = list()
@@ -693,10 +693,10 @@ Nothing else in the console has ID requirements.
 					if(amt > 0)
 						differences[i] = amt
 				if (length(differences))
-					l += "<A href='?src=[REF(src)];deconstruct=[N.id]'>[N.display_name]</A>"
+					l += "<A href='byond://?src=[REF(src)];deconstruct=[N.id]'>[N.display_name]</A>"
 					l += "This node will be boosted with the following:<BR>[techweb_point_display_generic(differences)]"
 				else
-					l += "<span class='linkOff'>[N.display_name]</span>"
+					l += span_linkoff("[N.display_name]")
 					l += "This node has already been boosted.</span>"
 			l += "</div>[RDSCREEN_NOBREAK]"
 
@@ -706,16 +706,16 @@ Nothing else in the console has ID requirements.
 			anything = TRUE
 			l += "<div class='statusDisplay'>[RDSCREEN_NOBREAK]"
 			if (stored_research.deconstructed_items[linked_destroy.loaded_item.type])
-				l += "<span class='linkOff'>Point Deconstruction</span>"
+				l += span_linkoff("Point Deconstruction")
 				l += "This item's points have already been claimed."
 			else
-				l += "<A href='?src=[REF(src)];deconstruct=[RESEARCH_MATERIAL_RECLAMATION_ID]'>Point Deconstruction</A>"
+				l += "<A href='byond://?src=[REF(src)];deconstruct=[RESEARCH_MATERIAL_RECLAMATION_ID]'>Point Deconstruction</A>"
 				l += "This item is worth: <BR>[techweb_point_display_generic(point_values)]!"
 			l += "</div>[RDSCREEN_NOBREAK]"
 
 		if(!(linked_destroy.loaded_item.resistance_flags & INDESTRUCTIBLE))
 			var/list/materials = linked_destroy.loaded_item.custom_materials
-			l += "<div class='statusDisplay'><A href='?src=[REF(src)];deconstruct=[RESEARCH_MATERIAL_RECLAMATION_ID]'>[LAZYLEN(materials)? "Material Reclamation" : "Destroy Item"]</A>"
+			l += "<div class='statusDisplay'><A href='byond://?src=[REF(src)];deconstruct=[RESEARCH_MATERIAL_RECLAMATION_ID]'>[LAZYLEN(materials)? "Material Reclamation" : "Destroy Item"]</A>"
 			for (var/M in materials)
 				l += "* [CallMaterialName(M)] x [materials[M]]"
 			l += "</div>[RDSCREEN_NOBREAK]"
@@ -765,14 +765,14 @@ Nothing else in the console has ID requirements.
 		for(var/datum/techweb_node/N in avail)
 			var/not_unlocked = (stored_research.available_nodes[N.id] && !stored_research.researched_nodes[N.id])
 			var/has_points = (stored_research.can_afford(N.get_price(stored_research)))
-			var/research_href = not_unlocked? (has_points? "<A href='?src=[REF(src)];research_node=[N.id]'>Research</A>" : "<span class='linkOff bad'>Not Enough Points</span>") : null
-			l += "<A href='?src=[REF(src)];view_node=[N.id];back_screen=[screen]'>[N.display_name]</A>[research_href]"
+			var/research_href = not_unlocked? (has_points? "<A href='byond://?src=[REF(src)];research_node=[N.id]'>Research</A>" : "<span class='linkOff bad'>Not Enough Points</span>") : null
+			l += "<A href='byond://?src=[REF(src)];view_node=[N.id];back_screen=[screen]'>[N.display_name]</A>[research_href]"
 		l += "</div><div><h3>Locked Nodes:</h3>"
 		for(var/datum/techweb_node/N in unavail)
-			l += "<A href='?src=[REF(src)];view_node=[N.id];back_screen=[screen]'>[N.display_name]</A>"
+			l += "<A href='byond://?src=[REF(src)];view_node=[N.id];back_screen=[screen]'>[N.display_name]</A>"
 		l += "</div><div><h3>Researched Nodes:</h3>"
 		for(var/datum/techweb_node/N in res)
-			l += "<A href='?src=[REF(src)];view_node=[N.id];back_screen=[screen]'>[N.display_name]</A>"
+			l += "<A href='byond://?src=[REF(src)];view_node=[N.id];back_screen=[screen]'>[N.display_name]</A>"
 		l += "</div>[RDSCREEN_NOBREAK]"
 	return l
 
@@ -785,18 +785,18 @@ Nothing else in the console has ID requirements.
 		return l
 	var/display_name = node.display_name
 	if (selflink)
-		display_name = "<A href='?src=[REF(src)];view_node=[node.id];back_screen=[screen]'>[display_name]</A>"
+		display_name = "<A href='byond://?src=[REF(src)];view_node=[node.id];back_screen=[screen]'>[display_name]</A>"
 	l += "<div class='statusDisplay technode'><b>[display_name]</b> [RDSCREEN_NOBREAK]"
 	if(minimal)
 		l += "<br>[node.description]"
 	else
 		if(stored_research.researched_nodes[node.id])
-			l += "<span class='linkOff'>Researched</span>"
+			l += span_linkoff("Researched")
 		else if(stored_research.available_nodes[node.id])
 			if(stored_research.can_afford(node.get_price(stored_research)))
-				l += "<BR><A href='?src=[REF(src)];research_node=[node.id]'>[node.price_display(stored_research)]</A>"
+				l += "<BR><A href='byond://?src=[REF(src)];research_node=[node.id]'>[node.price_display(stored_research)]</A>"
 			else
-				l += "<BR><span class='linkOff'>[node.price_display(stored_research)]</span>"  // gray - too expensive
+				l += "<BR>[span_linkoff("[node.price_display(stored_research)]")]"  // gray - too expensive
 		else
 			l += "<BR><span class='linkOff bad'>[node.price_display(stored_research)]</span>"  // red - missing prereqs
 		if(ui_mode == RDCONSOLE_UI_MODE_NORMAL)
@@ -850,11 +850,11 @@ Nothing else in the console has ID requirements.
 		if(selected_design.build_type & IMPRINTER)
 			lathes += "<span data-tooltip='Circuit Imprinter'>[machine_icon(/obj/machinery/rnd/production/circuit_imprinter)]</span>[RDSCREEN_NOBREAK]"
 			if (linked_imprinter && stored_research.researched_designs[selected_design.id])
-				l += "<A href='?src=[REF(src)];search=1;type=imprint;to_search=[selected_design.name]'>Imprint</A>"
+				l += "<A href='byond://?src=[REF(src)];search=1;type=imprint;to_search=[selected_design.name]'>Imprint</A>"
 		if(selected_design.build_type & PROTOLATHE)
 			lathes += "<span data-tooltip='Protolathe'>[machine_icon(/obj/machinery/rnd/production/protolathe)]</span>[RDSCREEN_NOBREAK]"
 			if (linked_lathe && stored_research.researched_designs[selected_design.id])
-				l += "<A href='?src=[REF(src)];search=1;type=proto;to_search=[selected_design.name]'>Construct</A>"
+				l += "<A href='byond://?src=[REF(src)];search=1;type=proto;to_search=[selected_design.name]'>Construct</A>"
 		if(selected_design.build_type & AUTOLATHE)
 			lathes += "<span data-tooltip='Autolathe'>[machine_icon(/obj/machinery/autolathe)]</span>[RDSCREEN_NOBREAK]"
 		if(selected_design.build_type & MECHFAB)
@@ -945,17 +945,17 @@ Nothing else in the console has ID requirements.
 		ui_mode = text2num(ls["ui_mode"])
 	if(ls["lock_console"])
 		if(obj_flags & EMAGGED)
-			to_chat(usr, "<span class='boldwarning'>Security protocol error: Unable to lock.</span>")
+			to_chat(usr, span_boldwarning("Security protocol error: Unable to lock."))
 			return
 		if(allowed(usr))
 			lock_console(usr)
 		else
-			to_chat(usr, "<span class='boldwarning'>Unauthorized Access.</span>")
+			to_chat(usr, span_boldwarning("Unauthorized Access."))
 	if(ls["unlock_console"])
 		if(allowed(usr))
 			unlock_console(usr)
 		else
-			to_chat(usr, "<span class='boldwarning'>Unauthorized Access.</span>")
+			to_chat(usr, span_boldwarning("Unauthorized Access."))
 	if(ls["find_device"])
 		SyncRDevices()
 		say("Resynced with nearby devices.")
@@ -1129,7 +1129,7 @@ Nothing else in the console has ID requirements.
 			say("No Destructive Analyzer Linked!")
 			return
 		if(linked_destroy.busy)
-			to_chat(usr, "<span class='danger'>The destructive analyzer is busy at the moment.</span>")
+			to_chat(usr, span_danger("The destructive analyzer is busy at the moment."))
 		else if(linked_destroy.loaded_item)
 			linked_destroy.unload_item()
 			screen = RDSCREEN_MENU

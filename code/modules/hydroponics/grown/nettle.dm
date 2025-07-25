@@ -4,7 +4,7 @@
 	icon_state = "seed-nettle"
 	species = "nettle"
 	plantname = "Nettles"
-	product = /obj/item/reagent_containers/food/snacks/grown/nettle
+	product = /obj/item/food/grown/nettle
 	lifespan = 30
 	endurance = 40 // tuff like a toiger
 	yield = 4
@@ -25,7 +25,7 @@
 	icon_state = "seed-deathnettle"
 	species = "deathnettle"
 	plantname = "Death Nettles"
-	product = /obj/item/reagent_containers/food/snacks/grown/nettle/death
+	product = /obj/item/food/grown/nettle/death
 	endurance = 25
 	maturation = 8
 	yield = 2
@@ -41,12 +41,13 @@
 		unset_mutability(/datum/plant_gene/trait/attack/nettle_attack/death, PLANT_GENE_REMOVABLE)
 		unset_mutability(/datum/plant_gene/trait/backfire/nettle_burn/death, PLANT_GENE_REMOVABLE)
 
-/obj/item/reagent_containers/food/snacks/grown/nettle // "snack"
+/obj/item/food/grown/nettle // "snack"
 	seed = /obj/item/seeds/nettle
 	name = "nettle"
 	desc = "It's probably <B>not</B> wise to touch it with bare hands..."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "nettle"
+	bite_consumption_mod = 2
 	lefthand_file = 'icons/mob/inhands/weapons/plants_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/plants_righthand.dmi'
 	damtype = "fire"
@@ -60,12 +61,13 @@
 	wine_power = 20
 	wine_flavor = "tingling itchiness" //WS edit: new wine flavors
 
-/obj/item/reagent_containers/food/snacks/grown/nettle/death
+/obj/item/food/grown/nettle/death
 	seed = /obj/item/seeds/nettle/death
 	name = "deathnettle"
 	desc = "The <span class='danger'>glowing</span> nettle incites <span class='boldannounce'>rage</span> in you just from looking at it!"
 	icon_state = "deathnettle"
 	force = 30
 	throwforce = 15
+	wound_bonus = CANT_WOUND
 	wine_power = 50
 	wine_flavor = "burning rage" //WS edit: new wine flavors

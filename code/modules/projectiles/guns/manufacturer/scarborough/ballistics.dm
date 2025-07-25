@@ -4,7 +4,7 @@
 //########### PISTOLS ###########//
 /obj/item/gun/ballistic/automatic/pistol/ringneck
 	name = "PC-76 \"Ringneck\""
-	desc = "A compact handgun used by most Syndicate-affiliated groups. Small enough to conceal in most pockets, making it popular for covert elements and simply as a compact defensive weapon. Chambered in 10mm."
+	desc = "A compact handgun used by most Syndicate-affiliated groups. Small enough to conceal in most pockets, making it popular for covert elements and simply as a compact defensive weapon. Chambered in 10x22mm."
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
@@ -60,7 +60,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/ringneck)
 
 /obj/item/gun/ballistic/automatic/pistol/ringneck/indie
 	name = "Ringneck-76"
-	desc = "A service handgun popular among law enforcement, mercenaries, and independent spacers with discerning tastes. Chambered in 10mm."
+	desc = "A service handgun popular among law enforcement, mercenaries, and independent spacers with discerning tastes. Chambered in 10x22mm."
 
 	icon_state = "ringneck76"
 	item_state = "sa_indie"
@@ -75,12 +75,12 @@ NO_MAG_GUN_HELPER(automatic/pistol/ringneck/indie)
 
 
 /obj/item/ammo_box/magazine/m10mm_ringneck
-	name = "Ringneck pistol magazine (10mm)"
+	name = "Ringneck pistol magazine (10x22mm)"
 	desc = "An 8-round magazine for the Ringneck pistol. These rounds do moderate damage, but struggle against armor."
 	icon_state = "ringneck_mag-1"
 	base_icon_state = "ringneck_mag"
 	ammo_type = /obj/item/ammo_casing/c10mm
-	caliber = "10mm"
+	caliber = "10x22mm"
 	max_ammo = 8
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
@@ -183,6 +183,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 	fire_delay = 0.35 SECONDS
 
 	spread = 3
+	spread_unwielded = 8
 	recoil = 1
 	recoil_unwielded = 2
 
@@ -198,12 +199,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 	icon_state = "viper23"
 	item_state = "viper23"
-
-	semi_auto = FALSE //not double action
-	safety_wording = "hammer"
-
-	fire_delay = 0.4 SECONDS
-	spread = 4
+	spread = 5
+	spread_unwielded = 10
 
 /obj/item/gun/ballistic/revolver/viper/ComponentInitialize()
 	. = ..()
@@ -214,7 +211,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 /obj/item/gun/ballistic/automatic/pistol/rattlesnake
 	name = "MP-84 \"Rattlesnake\""
-	desc = "A machine pistol, once used by Syndicate infiltrators and special forces during the ICW. Still used by specialists in former Syndicate factions. Chambered in 9mm."
+	desc = "A machine pistol, once used by Syndicate infiltrators and special forces during the ICW. Still used by specialists in former Syndicate factions. Chambered in 9x18mm."
 
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
@@ -264,6 +261,9 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
 	fire_delay = 0.4 SECONDS
+	wear_minor_threshold = 240
+	wear_major_threshold = 720
+	wear_maximum = 1200
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	default_firemode = FIREMODE_SEMIAUTO
 
@@ -271,18 +271,18 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake)
 
 /obj/item/gun/ballistic/automatic/pistol/rattlesnake/inteq
 	name = "MP-84m Kingsnake"
-	desc = "A machine pistol obtained from Syndicate stockpiles and lightly modified to Inteq standards. Generally issued only to specialists. Chambered in 9mm."
+	desc = "A machine pistol obtained from Syndicate stockpiles and lightly modified to Inteq standards. Generally issued only to specialists. Chambered in 9x18mm."
 
 	icon_state = "rattlesnake_inteq"
 	item_state = "rattlesnake_inteq"
 
 /obj/item/ammo_box/magazine/m9mm_rattlesnake
-	name = "Rattlesnake magazine (9mm)"
+	name = "Rattlesnake magazine (9x18mm)"
 	desc = "A long, 18-round double-stack magazine designed for the Rattlesnake machine pistol. These rounds do okay damage, but struggle against armor."
 	icon_state = "rattlesnake_mag_18"
 	base_icon_state = "rattlesnake_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9mm"
+	caliber = "9x18mm"
 	max_ammo = 18
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
@@ -368,7 +368,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 
 /obj/item/gun/ballistic/automatic/smg/cobra
 	name = "C-20r \"Cobra\""
-	desc = "A bullpup submachine gun, heavily used by Syndicate strike teams during the ICW. Still sees widespread use by the descendants of the Gorlex Marauders. Chambered in .45."
+	desc = "A bullpup submachine gun with an integrated suppressor, heavily used by Syndicate strike teams during the ICW. Still sees widespread use by the descendants of the Gorlex Marauders. Chambered in .45."
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
@@ -394,6 +394,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	default_attachments = list(/obj/item/attachment/silencer/cobra)
+	unique_attachments = list(/obj/item/attachment/silencer/cobra)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_RAIL = 1
@@ -416,6 +418,16 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra)
 	desc = "An older model of submachine gun manufactured by Scarborough Arms and marketed to mercenaries, law enforcement, and independent militia. Only became popular after the end of the ICW. Chambered in .45."
 	icon_state = "cobra20"
 	item_state = "cobra20"
+	burst_size = 3
+	burst_delay = 1.75
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst")
+	default_firemode = FIREMODE_BURST
+	default_attachments = null
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	unique_attachments = null
+
 
 NO_MAG_GUN_HELPER(automatic/smg/cobra/indie)
 
@@ -593,12 +605,12 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang)
 NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 
 /obj/item/ammo_box/magazine/boomslang
-	name = "\improper Boomslang Magazine (6.5x57mm CLIP)"
+	name = "\improper Boomslang Magazine (6.5mm CLIP)"
 	desc = "A large 10-round box magazine for Boomslang sniper rifles. These rounds deal amazing damage and can pierce protective equipment, excluding armored vehicles."
 	base_icon_state = "boomslang"
 	icon_state = "boomslang-10"
 	ammo_type = /obj/item/ammo_casing/a65clip
-	caliber = "6.5CLIP"
+	caliber = "6.5mm CLIP"
 	max_ammo = 10
 	multiple_sprites = AMMO_BOX_PER_BULLET
 
@@ -606,12 +618,12 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/boomslang/short
-	name = "\improper Boomslang Magazine (6.5x57mm CLIP)"
+	name = "\improper Boomslang Magazine (6.5mm CLIP)"
 	desc = "A 5-round box magazine for Boomslang sniper rifles. These rounds deal amazing damage and can pierce protective equipment, excluding armored vehicles."
 	base_icon_state = "boomslang_short"
 	icon_state = "boomslang_short-5"
 	ammo_type = /obj/item/ammo_casing/a65clip
-	caliber = "6.5CLIP"
+	caliber = "6.5mm CLIP"
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
 
@@ -756,9 +768,11 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra)
 
 	burst_delay = 0.08 SECONDS
 	fire_delay = 0.08 SECONDS
-	spread = 6
-	spread_unwielded = 20
-	wield_slowdown = SAW_SLOWDOWN //better than the lmgs since it doesnt have a bipod, still not ideal
+	spread = 7
+	spread_unwielded = 25
+	recoil = 2
+	recoil_unwielded = 4
+	wield_slowdown = SAW_SLOWDOWN
 	wield_delay = 0.9 SECONDS //ditto
 
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
@@ -936,6 +950,10 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 	caliber = "12ga"
 	max_ammo = 8
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/m12g_bulldog/slug
+	name = "shotgun box magazine (12g Slugs)"
+	ammo_type = /obj/item/ammo_casing/shotgun
 
 /obj/item/ammo_box/magazine/m12g_bulldog/empty
 	start_empty = TRUE

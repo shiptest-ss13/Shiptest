@@ -102,7 +102,7 @@
 	glass_cost = 0
 	power_used = 0
 	cooldownTime = 10 //Only 1 second - hivebots are extremely weak
-	dispense_type = /mob/living/simple_animal/hostile/hivebot
+	dispense_type = /mob/living/basic/hivebot
 	begin_create_message = "closes and begins fabricating something within."
 	end_create_message = "slams open, revealing a hivebot!"
 	recharge_sound = null
@@ -111,7 +111,7 @@
 /obj/machinery/droneDispenser/examine(mob/user)
 	. = ..()
 	if((mode == DRONE_RECHARGING) && !machine_stat && recharging_text)
-		. += "<span class='warning'>[recharging_text]</span>"
+		. += span_warning("[recharging_text]")
 
 /obj/machinery/droneDispenser/process(seconds_per_tick)
 	..()
@@ -132,7 +132,7 @@
 			if(maximum_idle && (count_shells() >= maximum_idle))
 				return // then do nothing; check again next tick
 			if(begin_create_message)
-				visible_message("<span class='notice'>[src] [begin_create_message]</span>")
+				visible_message(span_notice("[src] [begin_create_message]"))
 			if(work_sound)
 				playsound(src, work_sound, 50, TRUE)
 			mode = DRONE_PRODUCTION
@@ -150,7 +150,7 @@
 			if(create_sound)
 				playsound(src, create_sound, 50, TRUE)
 			if(end_create_message)
-				visible_message("<span class='notice'>[src] [end_create_message]</span>")
+				visible_message(span_notice("[src] [end_create_message]"))
 
 			mode = DRONE_RECHARGING
 			timer = world.time + cooldownTime
@@ -160,7 +160,7 @@
 			if(recharge_sound)
 				playsound(src, recharge_sound, 50, TRUE)
 			if(recharge_message)
-				visible_message("<span class='notice'>[src] [recharge_message]</span>")
+				visible_message(span_notice("[src] [recharge_message]"))
 
 			mode = DRONE_READY
 			update_appearance()
@@ -189,26 +189,26 @@
 		var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 		materials.retrieve_all()
 		I.play_tool_sound(src)
-		to_chat(user, "<span class='notice'>You retrieve the materials from [src].</span>")
+		to_chat(user, span_notice("You retrieve the materials from [src]."))
 
 	else if(I.tool_behaviour == TOOL_WELDER)
 		if(!(machine_stat & BROKEN))
-			to_chat(user, "<span class='warning'>[src] doesn't need repairs.</span>")
+			to_chat(user, span_warning("[src] doesn't need repairs."))
 			return
 
-		if(!I.tool_start_check(user, amount=1))
+		if(!I.tool_start_check(user, src, amount=1))
 			return
 
 		user.visible_message(
-			"<span class='notice'>[user] begins patching up [src] with [I].</span>",
-			"<span class='notice'>You begin restoring the damage to [src]...</span>")
+			span_notice("[user] begins patching up [src] with [I]."),
+			span_notice("You begin restoring the damage to [src]..."))
 
 		if(!I.use_tool(src, user, 40, volume=50, amount=1))
 			return
 
 		user.visible_message(
-			"<span class='notice'>[user] fixes [src]!</span>",
-			"<span class='notice'>You restore [src] to operation.</span>")
+			span_notice("[user] fixes [src]!"),
+			span_notice("You restore [src] to operation."))
 
 		set_machine_stat(machine_stat & ~BROKEN)
 		obj_integrity = max_integrity
@@ -221,7 +221,7 @@
 	if(!.)
 		return
 	if(break_message)
-		audible_message("<span class='warning'>[src] [break_message]</span>")
+		audible_message(span_warning("[src] [break_message]"))
 	if(break_sound)
 		playsound(src, break_sound, 50, TRUE)
 

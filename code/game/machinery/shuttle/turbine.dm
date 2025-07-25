@@ -123,7 +123,7 @@
 /obj/machinery/power/compressor/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Efficiency at <b>[efficiency*100]%</b>.</span>"
+		. += span_notice("The status display reads: Efficiency at <b>[efficiency*100]%</b>.")
 
 /obj/machinery/power/compressor/attackby(obj/item/I, mob/user, params)
 	if(default_deconstruction_screwdriver(user, initial(icon_state), initial(icon_state), I))
@@ -131,10 +131,10 @@
 
 	if(default_change_direction_wrench(user, I))
 		if(turbine)
-			to_chat(user, "<span class='notice'>Turbine connected.</span>")
+			to_chat(user, span_notice("Turbine connected."))
 			set_machine_stat(machine_stat & ~BROKEN)
 		else
-			to_chat(user, "<span class='alert'>Turbine not connected.</span>")
+			to_chat(user, span_alert("Turbine not connected."))
 		return
 
 	default_deconstruction_crowbar(I)
@@ -226,7 +226,7 @@
 /obj/machinery/power/shuttle/engine/turbine/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Productivity at <b>[productivity*100]%</b>.</span>"
+		. += span_notice("The status display reads: Productivity at <b>[productivity*100]%</b>.")
 
 /obj/machinery/power/shuttle/engine/turbine/locate_machinery()
 	if(compressor)
@@ -310,9 +310,9 @@
 
 	if(default_change_direction_wrench(user, I))
 		if(compressor)
-			to_chat(user, "<span class='notice'>Compressor connected.</span>")
+			to_chat(user, span_notice("Compressor connected."))
 		else
-			to_chat(user, "<span class='alert'>Compressor not connected.</span>")
+			to_chat(user, span_alert("Compressor not connected."))
 			obj_break()
 		return
 
@@ -380,6 +380,11 @@
 	circuit = /obj/item/circuitboard/computer/turbine_computer
 	var/obj/machinery/power/compressor/compressor
 	var/id = 0
+
+/obj/machinery/computer/turbine_computer/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
 
 /obj/machinery/computer/turbine_computer/Initialize()
 	. = ..()

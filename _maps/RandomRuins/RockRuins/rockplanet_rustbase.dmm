@@ -401,6 +401,23 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/rockplanet/rust_base)
+"dZ" = (
+/obj/structure/closet/crate/medical,
+/obj/item/hatchet/wooden,
+/obj/item/melee/knife/survival,
+/obj/item/wirecutters,
+/obj/item/stack/medical/splint/hunter,
+/obj/item/screwdriver,
+/obj/item/bodybag,
+/obj/item/bodybag,
+/obj/item/reagent_containers/glass/bottle/morphine,
+/obj/structure/lattice/catwalk,
+/obj/effect/decal/cleanable/greenglow,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/gloves/color/latex/nitrile/evil,
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4,
+/turf/open/floor/plating,
+/area/ruin/rockplanet/rust_base/engine_two)
 "eg" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3112,7 +3129,7 @@
 /area/ruin/rockplanet/rust_base)
 "DV" = (
 /obj/machinery/hydroponics/soil,
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit,
+/obj/item/food/grown/ash_flora/cactus_fruit,
 /turf/open/floor/plating/dirt/rockplanet,
 /area/ruin/rockplanet/rust_base)
 "DZ" = (
@@ -3378,7 +3395,7 @@
 /area/ruin/rockplanet/rust_base/armory)
 "GG" = (
 /obj/machinery/hydroponics/soil,
-/obj/item/reagent_containers/food/snacks/grown/potato/sweet,
+/obj/item/food/grown/sweet_potato,
 /turf/open/floor/plating/dirt/rockplanet,
 /area/ruin/rockplanet/rust_base)
 "GM" = (
@@ -3906,13 +3923,6 @@
 /obj/machinery/atmospherics/pipe/manifold/brown/hidden/layer4,
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/engine_two)
-"MA" = (
-/obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/head/helmet/space/syndicate/black/orange,
-/obj/item/clothing/suit/space/syndicate/black/orange,
-/obj/item/tank/internals/oxygen/yellow,
-/turf/open/floor/plating,
-/area/ruin/rockplanet/rust_base/engine_two)
 "MB" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 8
@@ -4284,10 +4294,10 @@
 /obj/item/reagent_containers/condiment/saltshaker,
 /obj/item/reagent_containers/condiment/saltshaker,
 /obj/effect/decal/cleanable/food/salt,
-/obj/item/reagent_containers/food/snacks/meat/slab/goliath,
+/obj/item/food/meat/slab/goliath,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/item/reagent_containers/food/snacks/meat/slab/goliath,
-/obj/item/reagent_containers/food/snacks/meat/slab/goliath,
+/obj/item/food/meat/slab/goliath,
+/obj/item/food/meat/slab/goliath,
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/rust_base/slop)
 "PQ" = (
@@ -4430,6 +4440,13 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/rockplanet/rust_base/slop)
+"Ru" = (
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/clothing/suit/space/syndicate/ramzi,
+/obj/item/clothing/head/helmet/space/syndicate/ramzi,
+/turf/open/floor/plating,
+/area/ruin/rockplanet/rust_base/engine_two)
 "Rv" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4824,23 +4841,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/rust_base/hallway)
-"VO" = (
-/obj/structure/closet/crate/medical,
-/obj/item/hatchet/wooden,
-/obj/item/melee/knife/survival,
-/obj/item/wirecutters,
-/obj/item/stack/medical/splint/ghetto,
-/obj/item/screwdriver,
-/obj/item/bodybag,
-/obj/item/bodybag,
-/obj/item/reagent_containers/glass/bottle/morphine,
-/obj/structure/lattice/catwalk,
-/obj/effect/decal/cleanable/greenglow,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/gloves/color/latex/nitrile/evil,
-/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4,
-/turf/open/floor/plating,
-/area/ruin/rockplanet/rust_base/engine_two)
 "VX" = (
 /obj/structure/girder/reinforced,
 /turf/open/floor/plating,
@@ -5770,7 +5770,7 @@ fj
 gg
 hR
 zX
-MA
+Ru
 fj
 Qg
 aN
@@ -5854,7 +5854,7 @@ fj
 wn
 Sw
 cI
-VO
+dZ
 Cu
 LH
 Qg

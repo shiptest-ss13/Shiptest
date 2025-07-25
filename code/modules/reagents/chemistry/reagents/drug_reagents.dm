@@ -24,7 +24,7 @@
 	..()
 
 /datum/reagent/drug/space_drugs/overdose_start(mob/living/M)
-	to_chat(M, "<span class='userdanger'>You start tripping hard!</span>")
+	to_chat(M, span_userdanger("You start tripping hard!"))
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/overdose, name)
 
 /datum/reagent/drug/space_drugs/overdose_process(mob/living/M)
@@ -46,7 +46,7 @@
 /datum/reagent/drug/nicotine/on_mob_life(mob/living/carbon/M)
 	if(prob(1))
 		var/smoke_message = pick("You feel relaxed.", "You feel calmed.","You feel alert.","You feel rugged.")
-		to_chat(M, "<span class='notice'>[smoke_message]</span>")
+		to_chat(M, span_notice("[smoke_message]"))
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "smoked", /datum/mood_event/smoked, name)
 	M.AdjustStun(-5)
 	M.AdjustKnockdown(-5)
@@ -73,7 +73,7 @@
 /datum/reagent/drug/crank/on_mob_life(mob/living/carbon/M)
 	if(prob(5))
 		var/high_message = pick("You feel jittery.", "You feel like you gotta go fast.", "You feel like you need to step it up.")
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_medium, name)
 	M.AdjustStun(-20)
 	M.AdjustKnockdown(-20)
@@ -131,7 +131,7 @@
 /datum/reagent/drug/methamphetamine/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("You feel hyper.", "You feel like you need to go faster.", "You feel like you can run the world.")
 	if(prob(5))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_medium, name)
 	M.AdjustStun(-40)
 	M.AdjustKnockdown(-40)
@@ -149,7 +149,7 @@
 		for(var/i in 1 to 4)
 			step(M, pick(GLOB.cardinals))
 	if(prob(33))
-		M.visible_message("<span class='danger'>[M]'s hands flip out and flail everywhere!</span>")
+		M.visible_message(span_danger("[M]'s hands flip out and flail everywhere!"))
 		M.drop_all_held_items()
 	..()
 	M.adjustToxLoss(1, 0)
@@ -195,6 +195,7 @@
 
 /datum/reagent/drug/mammoth/on_mob_metabolize(mob/living/L)
 	..()
+	ADD_TRAIT(L, TRAIT_VERY_HARDLY_WOUNDED, /datum/reagent/drug/mammoth)
 	ADD_TRAIT(L, TRAIT_STUNIMMUNE, type)
 	ADD_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
 	L.AddComponent(/datum/component/tackler, stamina_cost= 25, base_knockdown= 2 SECONDS, range=6, speed=1, skill_mod=2)
@@ -204,6 +205,7 @@
 		C.gain_trauma(rage, TRAUMA_RESILIENCE_ABSOLUTE)
 
 /datum/reagent/drug/mammoth/on_mob_end_metabolize(mob/living/L)
+	REMOVE_TRAIT(L, TRAIT_VERY_HARDLY_WOUNDED, /datum/reagent/drug/mammoth)
 	REMOVE_TRAIT(L, TRAIT_STUNIMMUNE, type)
 	REMOVE_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
 	if(L.GetComponent(/datum/component/tackler))
@@ -221,6 +223,7 @@
 	if(prob(40))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	M.hallucination += 5
+	..()
 	. = 1
 
 /datum/reagent/drug/mammoth/overdose_process(mob/living/M)
@@ -282,7 +285,7 @@
 /datum/reagent/drug/aranesp/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("You feel amped up.", "You feel ready.", "You feel like you can push it to the limit.")
 	if(prob(5))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	M.adjustStaminaLoss(-18, 0)
 	M.adjustToxLoss(0.5, 0)
 	if(prob(50))
@@ -377,7 +380,7 @@
 	M.adjust_jitter(5)
 
 	if(prob(5))
-		to_chat(M, "<span class='notice'>[pick("Go! Go! GO!", "You feel ready...", "You feel invincible...")]</span>")
+		to_chat(M, span_notice("[pick("Go! Go! GO!", "You feel ready...", "You feel invincible...")]"))
 	if(prob(15))
 		M.losebreath++
 		M.adjustToxLoss(2, 0)
@@ -385,7 +388,7 @@
 	. = 1
 
 /datum/reagent/drug/pumpup/overdose_start(mob/living/M)
-	to_chat(M, "<span class='userdanger'>You can't stop shaking, your heart beats faster and faster...</span>")
+	to_chat(M, span_userdanger("You can't stop shaking, your heart beats faster and faster..."))
 
 /datum/reagent/drug/pumpup/overdose_process(mob/living/M)
 	M.adjust_jitter(5)
@@ -469,6 +472,7 @@
 /datum/reagent/drug/combat_drug/on_mob_metabolize(mob/living/L)
 	..()
 	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
+	ADD_TRAIT(L, TRAIT_HARDLY_WOUNDED, /datum/reagent/drug/combat_drug)
 	L.playsound_local(get_turf(L), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/shoalmix)
 	if(!isvox(L))
@@ -482,6 +486,7 @@
 
 /datum/reagent/drug/combat_drug/on_mob_end_metabolize(mob/living/L)
 	..()
+	REMOVE_TRAIT(L, TRAIT_HARDLY_WOUNDED, /datum/reagent/drug/combat_drug)
 	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/shoalmix)
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
@@ -577,7 +582,7 @@
 	reagent_state = LIQUID
 	color = "#df71c7" //yeah its kinda pinkruple
 	overdose_threshold = 30
-	addiction_threshold = 20
+	addiction_threshold = 21
 	metabolization_rate = 0.1
 	taste_description = "a distant earthiness"
 	var/vision_trait = TRAIT_CHEMICAL_NIGHTVISION
@@ -587,14 +592,14 @@
 	if(iscarbon(L))
 		var/mob/living/carbon/drugged = L
 		ADD_TRAIT(drugged, TRAIT_CLOUDED, type)
-		ADD_TRAIT(drugged, TRAIT_CHEMICAL_NIGHTVISION, type)
+		ADD_TRAIT(drugged, vision_trait, type)
 		drugged.update_sight()
 
 
 /datum/reagent/drug/stardrop/on_mob_end_metabolize(mob/living/L)
 	if(iscarbon(L))
 		var/mob/living/carbon/drugged = L
-		REMOVE_TRAIT(drugged, TRAIT_CHEMICAL_NIGHTVISION, type)
+		REMOVE_TRAIT(drugged, vision_trait, type)
 		REMOVE_TRAIT(drugged, TRAIT_CLOUDED, type)
 		drugged.update_sight()
 
@@ -645,6 +650,19 @@
 	color = "#bc329e"
 	overdose_threshold = 17
 	addiction_threshold = 11
-	metabolization_rate = 0.2
+	metabolization_rate = 0.15
 	vision_trait = TRAIT_GOOD_CHEMICAL_NIGHTVISION
 	taste_description = "sulpheric sweetness"
+
+/datum/reagent/drug/placebatol
+	name = "Placebatol"
+	description = "An odorless, colorless, powdery substance that's sometimes prescribed. May not actually do anything...?"
+	reagent_state = SOLID
+	color = "#f5f5f0"
+	metabolization_rate = REAGENTS_METABOLISM * 0.25
+	taste_description = "sugar" //effectively a sugar pill, but sugar actually has a use
+
+/datum/reagent/drug/placebatol/on_mob_life(mob/living/carbon/M)
+	if(prob(3))
+		to_chat(M, span_notice("[pick("You feel better.", "You feel normal.", "You feel stable.")]")) //normal pills
+	..()

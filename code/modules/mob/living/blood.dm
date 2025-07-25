@@ -1,148 +1,199 @@
 #define BLOOD_DRIP_RATE_MOD 90 //Greater number means creating blood drips more often while bleeding
 
-/****************************************************
-				BLOOD SYSTEM
-****************************************************/
-
-/mob/living/carbon/monkey/handle_blood()
-	if(bodytemperature >= TCRYO && !(HAS_TRAIT(src, TRAIT_HUSK))) //cryosleep or husked people do not pump the blood.
-		//Blood regeneration if there is some space
-		if(blood_volume < BLOOD_VOLUME_NORMAL)
-			blood_volume += 0.1 // regenerate blood VERY slowly
-			if(blood_volume < BLOOD_VOLUME_OKAY)
-				adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
-
 // Takes care blood loss and regeneration
 /mob/living/carbon/human/handle_blood()
 
-	if(NOBLOOD in dna.species.species_traits)
+	if((NOBLOOD in dna.species.species_traits) || HAS_TRAIT(src, TRAIT_NOBLEED) || (HAS_TRAIT(src, TRAIT_FAKEDEATH)))
 		return
 
-	if(bodytemperature >= TCRYO && !(HAS_TRAIT(src, TRAIT_HUSK))) //cryosleep or husked people do not pump the blood.
+	if(bodytemperature < TCRYO || (HAS_TRAIT(src, TRAIT_HUSK))) //cryosleep or husked people do not pump the blood.
+		return
 
-		//Blood regeneration if there is some space
-		if(blood_volume < BLOOD_VOLUME_NORMAL && !HAS_TRAIT(src, TRAIT_NOHUNGER))
-			var/nutrition_ratio = 0
-			switch(nutrition)
-				if(0 to NUTRITION_LEVEL_STARVING)
-					nutrition_ratio = 0.2
-				if(NUTRITION_LEVEL_STARVING to NUTRITION_LEVEL_HUNGRY)
-					nutrition_ratio = 0.4
-				if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_FED)
-					nutrition_ratio = 0.6
-				if(NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
-					nutrition_ratio = 0.8
-				else
-					nutrition_ratio = 1
-			if(satiety > 80)
-				nutrition_ratio *= 1.25
-			adjust_nutrition(-nutrition_ratio * HUNGER_FACTOR)
-			blood_volume = min(BLOOD_VOLUME_NORMAL, blood_volume + 0.5 * nutrition_ratio)
-		if(blood_volume < BLOOD_VOLUME_NORMAL && HAS_TRAIT(src, TRAIT_NOHUNGER)) //blood regen for non eaters
-			blood_volume = min(BLOOD_VOLUME_NORMAL, blood_volume + 0.5 * 1.25) //assumes best nutrition conditions for non eaters because they don't eat
+	//Blood regeneration if there is some space
+	if(blood_volume < BLOOD_VOLUME_NORMAL && !HAS_TRAIT(src, TRAIT_NOHUNGER))
+		var/nutrition_ratio = 0
+		switch(nutrition)
+			if(0 to NUTRITION_LEVEL_STARVING)
+				nutrition_ratio = 0.2
+			if(NUTRITION_LEVEL_STARVING to NUTRITION_LEVEL_HUNGRY)
+				nutrition_ratio = 0.4
+			if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_FED)
+				nutrition_ratio = 0.6
+			if(NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
+				nutrition_ratio = 0.8
+			else
+				nutrition_ratio = 1
 
-		//Effects of bloodloss
-		var/word = pick("dizzy","woozy","faint")
-		switch(blood_volume)
-			if(BLOOD_VOLUME_EXCESS to BLOOD_VOLUME_MAX_LETHAL)
-				if(prob(15))
-					to_chat(src, "<span class='userdanger'>Blood starts to tear your skin apart. You're going to burst!</span>")
-					inflate_gib()
-			if(BLOOD_VOLUME_MAXIMUM to BLOOD_VOLUME_EXCESS)
-				if(prob(10))
-					to_chat(src, "<span class='warning'>You feel terribly bloated.</span>")
+		if(satiety > 80)
+			nutrition_ratio *= 1.25
+		adjust_nutrition(-nutrition_ratio * HUNGER_FACTOR)
+		blood_volume = min(BLOOD_VOLUME_NORMAL, blood_volume + 0.5 * nutrition_ratio)
 
-			if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
+	if(blood_volume < BLOOD_VOLUME_NORMAL && HAS_TRAIT(src, TRAIT_NOHUNGER)) //blood regen for non eaters
+		blood_volume = min(BLOOD_VOLUME_NORMAL, blood_volume + 0.5 * 1.25) //assumes best nutrition conditions for non eaters because they don't eat
 
-				if(prob(1))
-					to_chat(src, "<span class='warning'>You feel [word].</span>")
-				if(oxyloss < 20)
-					adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
+	//Effects of bloodloss
+	var/word = pick("dizzy","woozy","faint")
+	switch(blood_volume)
+		if(BLOOD_VOLUME_EXCESS to BLOOD_VOLUME_MAX_LETHAL)
+			if(prob(15))
+				to_chat(src, span_userdanger("Blood starts to tear your skin apart. You're going to burst!"))
+				inflate_gib()
 
-			if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
-				if(eye_blurry < 50)
-					adjust_blurriness(5)
-				if(oxyloss < 40)
-					adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
-				else
-					adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.01, 1))
+		if(BLOOD_VOLUME_MAXIMUM to BLOOD_VOLUME_EXCESS)
+			if(prob(10))
+				to_chat(src, span_warning("You feel terribly bloated."))
 
-				if(prob(15))
-					Unconscious(rand(2 SECONDS,6 SECONDS))
-					to_chat(src, "<span class='warning'>You feel very [word].</span>")
-
-			if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
+		if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
+			if(prob(1))
+				to_chat(src, span_warning("You feel [word]."))
+			if(oxyloss < 20)
 				adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
-				adjustToxLoss(2)
-				if(prob(15))
-					Unconscious(rand(2 SECONDS,6 SECONDS))
-					to_chat(src, "<span class='warning'>You feel extremely [word].</span>")
-			if(-INFINITY to BLOOD_VOLUME_SURVIVE)
-				if(!HAS_TRAIT(src, TRAIT_NODEATH))
-					death()
 
-		//Bleeding out
-		var/limb_bleed = 0
-		for(var/obj/item/bodypart/BP as anything in bodyparts)
-			if(BP.GetComponent(/datum/component/bandage))
-				continue
-			//We want an accurate reading of .len
-			listclearnulls(BP.embedded_objects)
-			for(var/obj/item/embeddies in BP.embedded_objects)
-				if(!embeddies.isEmbedHarmless())
-					BP.adjust_bleeding(0.1, BLOOD_LOSS_DAMAGE_MAXIMUM)
-			limb_bleed += BP.bleeding
+		if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
+			if(eye_blurry < 50)
+				adjust_blurriness(5)
+			if(oxyloss < 40)
+				adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
+			else
+				adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.01, 1))
+			if(prob(10))
+				Unconscious(rand(2 SECONDS,6 SECONDS))
+				to_chat(src, span_warning("You feel very [word]."))
 
-		var/message_cooldown = 5 SECONDS
-		var/bleeeding_wording
-//		var/bleed_change_wording
-		switch(limb_bleed)
-			if(0 to 0.5)
-				bleeeding_wording = "You hear droplets of blood drip down."
-				message_cooldown *= 2.5
-			if(0.5 to 1)
-				bleeeding_wording = "You feel your blood flow quietly to the floor."
-				message_cooldown *= 2
-			if(1 to 2)
-				bleeeding_wording = "The flow of blood leaving your body onto the ground is worrying..."
-				message_cooldown *= 1.7
-			if(2 to 4)
-				bleeeding_wording = "You're losing blood <b><i>very fast</i></b>, which is freaking you out!"
-				message_cooldown *= 1.5
-			if(4 to INFINITY)
-				bleeeding_wording = "<b>Your heartbeat beats unstably fast as you lose a massive amount of blood!!</b>"
+		if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
+			adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
+			adjustToxLoss(2)
+			if(prob(15))
+				Unconscious(rand(2 SECONDS,6 SECONDS))
+				to_chat(src, span_warning("You feel extremely [word]."))
 
-		if(limb_bleed && !bleedsuppress && !HAS_TRAIT(src, TRAIT_FAKEDEATH))
-			bleed(limb_bleed)
+		if(-INFINITY to BLOOD_VOLUME_SURVIVE)
+			if(!HAS_TRAIT(src, TRAIT_NODEATH))
+				death()
 
-			if(!blood_particle)
-				blood_particle = new(src, /particles/droplets/blood, PARTICLE_ATTACH_MOB)
-			blood_particle.particles.color = dna.blood_type.color //mouthful
-			blood_particle.particles.spawning = (limb_bleed/2)
-			blood_particle.particles.count = (round(clamp((limb_bleed * 2), 1, INFINITY)))
+	var/temp_bleed = 0
+	var/update_bleed_icons = FALSE
+	//Bleeding out
+	for(var/obj/item/bodypart/iter_part as anything in bodyparts)
+		var/iter_bleed_rate = iter_part.get_part_bleed_rate()
+		temp_bleed += iter_bleed_rate
+		iter_part.generic_bleedstacks = max(0, iter_part.generic_bleedstacks - 1)
+		if(iter_part.update_part_wound_overlay())
+			update_bleed_icons = TRUE
 
-			if(COOLDOWN_FINISHED(src, bloodloss_message) && bleeeding_wording)
-				to_chat(src, span_warning("[bleeeding_wording]"))
-				COOLDOWN_START(src, bloodloss_message, message_cooldown)
-		else
-			if(blood_particle)
-				QDEL_NULL(blood_particle)
+	if(update_bleed_icons)
+		update_wound_overlays()
 
-//Makes a blood drop, leaking amt units of blood from the mob
+	if(temp_bleed)
+		bleed(temp_bleed)
+		bleed_warn(temp_bleed)
+
+/// Has each bodypart update its bleed/wound overlay icon states. If any have changed, it has the owner update wound overlays and returns TRUE
+/mob/living/carbon/proc/update_bodypart_bleed_overlays()
+	var/update_bleed_icons
+	for(var/obj/item/bodypart/iter_part as anything in bodyparts)
+		if(iter_part.update_part_wound_overlay())
+			update_bleed_icons = TRUE
+
+	if(update_bleed_icons)
+		update_wound_overlays()
+	return update_bleed_icons
+
+/// Makes a blood drop, leaking amt units of blood from the mob
 /mob/living/carbon/proc/bleed(amt)
-	if(blood_volume)
-		blood_volume = max(blood_volume - amt, 0)
-		if (prob(sqrt(amt)*BLOOD_DRIP_RATE_MOD))
-			if(isturf(src.loc) && !isgroundlessturf(src.loc)) //Blood loss still happens in locker, floor stays clean
-				if(amt >= 2)
-					add_splatter_floor(src.loc, amt = amt)
-				else
-					add_splatter_floor(src.loc, TRUE, amt)
+	if(!blood_volume)
+		return
+	blood_volume = max(blood_volume - amt, 0)
+
+	//Blood loss still happens in locker, floor stays clean
+	if(isturf(loc) && prob(sqrt(amt)*BLOOD_DRIP_RATE_MOD) && !isgroundlessturf(src.loc))
+		add_splatter_floor(loc, (amt >= 10))
 
 /mob/living/carbon/human/bleed(amt)
 	amt *= physiology.bleed_mod
 	if(!(NOBLOOD in dna.species.species_traits))
 		..()
+
+/// A helper to see how much blood we're losing per tick
+/mob/living/carbon/proc/get_bleed_rate()
+	if(!blood_volume)
+		return
+	var/bleed_amt = 0
+	for(var/X in bodyparts)
+		var/obj/item/bodypart/iter_bodypart = X
+		bleed_amt += iter_bodypart.get_part_bleed_rate()
+	return bleed_amt
+
+/mob/living/carbon/human/get_bleed_rate()
+	if((NOBLOOD in dna.species.species_traits))
+		return
+	. = ..()
+	. *= physiology.bleed_mod
+
+
+/**
+ * bleed_warn() is used to for carbons with an active client to occasionally receive messages warning them about their bleeding status (if applicable)
+ *
+ * Arguments:
+ * * bleed_amt- When we run this from [/mob/living/carbon/human/proc/handle_blood] we already know how much blood we're losing this tick, so we can skip tallying it again with this
+ * * forced-
+ */
+/mob/living/carbon/proc/bleed_warn(bleed_amt = 0, forced = FALSE)
+	if(!blood_volume || !client)
+		return
+	if(!COOLDOWN_FINISHED(src, bleeding_message_cd) && !forced)
+		return
+
+	if(!bleed_amt) // if we weren't provided the amount of blood we lost this tick in the args
+		bleed_amt = get_bleed_rate()
+
+	var/bleeding_severity = ""
+	var/next_cooldown = BLEEDING_MESSAGE_BASE_CD
+
+	switch(bleed_amt)
+		if(-INFINITY to 0)
+			return
+		if(0 to 1)
+			bleeding_severity = "You feel light trickles of blood across your skin"
+			next_cooldown *= 2.5
+		if(1 to 3)
+			bleeding_severity = "You feel a small stream of blood running across your body"
+			next_cooldown *= 2
+		if(3 to 5)
+			bleeding_severity = "You skin feels clammy from the flow of blood leaving your body"
+			next_cooldown *= 1.7
+		if(5 to 7)
+			bleeding_severity = "Your body grows more and more numb as blood streams out"
+			next_cooldown *= 1.5
+		if(7 to INFINITY)
+			bleeding_severity = "Your heartbeat thrashes wildly trying to keep up with your bloodloss"
+
+	var/rate_of_change = ", but it's getting better." // if there's no wounds actively getting bloodier or maintaining the same flow, we must be getting better!
+	if(HAS_TRAIT(src, TRAIT_COAGULATING)) // if we have an active coagulant, we're getting better quick
+		rate_of_change = ", but it's clotting up quickly!"
+	else
+		// flick through our wounds to see if there are any bleeding ones getting worse or holding flow (maybe move this to handle_blood and cache it so we don't need to cycle through the wounds so much)
+		for(var/i in all_wounds)
+			var/datum/wound/iter_wound = i
+			if(!iter_wound.blood_flow)
+				continue
+			var/iter_wound_roc = iter_wound.get_bleed_rate_of_change()
+			switch(iter_wound_roc)
+				if(BLOOD_FLOW_INCREASING) // assume the worst, if one wound is getting bloodier, we focus on that
+					rate_of_change = ", <b>and it's getting worse!</b>"
+					break
+				if(BLOOD_FLOW_STEADY) // our best case now is that our bleeding isn't getting worse
+					rate_of_change = ", and it's holding steady."
+				if(BLOOD_FLOW_DECREASING) // this only matters if none of the wounds fit the above two cases, included here for completeness
+					continue
+
+	to_chat(src, "<span class='warning'>[bleeding_severity][rate_of_change]</span>")
+	COOLDOWN_START(src, bleeding_message_cd, next_cooldown)
+
+/mob/living/carbon/human/bleed_warn(bleed_amt = 0, forced = FALSE)
+	if(!(NOBLOOD in dna.species.species_traits))
+		return ..()
 
 /**
  * This proc is a helper for spraying blood for things like slashing/piercing wounds and dismemberment.
@@ -158,20 +209,19 @@
 		return
 	var/obj/effect/decal/cleanable/blood/hitsplatter/our_splatter = new(loc)
 
-//	our_splatter.transfer_mob_blood_dna(return_blood_DNA(src))
 	our_splatter.blood_dna_info = get_blood_dna_list()
 	our_splatter.transfer_mob_blood_dna(src)
 	var/turf/targ = get_ranged_target_turf(src, splatter_direction, splatter_strength)
 	INVOKE_ASYNC(our_splatter, TYPE_PROC_REF(/obj/effect/decal/cleanable/blood/hitsplatter, fly_towards), targ, splatter_strength)
 
-
 /mob/living/proc/restore_blood()
 	blood_volume = initial(blood_volume)
 
-/mob/living/carbon/human/restore_blood()
+/mob/living/carbon/restore_blood()
 	blood_volume = BLOOD_VOLUME_NORMAL
-	for(var/obj/item/bodypart/BP as anything in get_bleeding_parts())
-		BP.bleeding = 0
+	for(var/i in bodyparts)
+		var/obj/item/bodypart/BP = i
+		BP.generic_bleedstacks = 0
 
 /****************************************************
 				BLOOD TRANSFERS
@@ -232,7 +282,7 @@
 			blood_data["viruses"] += D.Copy()
 
 		blood_data["blood_DNA"] = dna.unique_enzymes
-		if(disease_resistances && disease_resistances.len)
+		if(LAZYLEN(disease_resistances))
 			blood_data["resistances"] = disease_resistances.Copy()
 		var/list/temp_chem = list()
 		for(var/datum/reagent/R in reagents.reagent_list)
@@ -264,10 +314,6 @@
 
 /mob/living/simple_animal/get_blood_id()
 	if(blood_volume)
-		return /datum/reagent/blood
-
-/mob/living/carbon/monkey/get_blood_id()
-	if(!(HAS_TRAIT(src, TRAIT_HUSK)))
 		return /datum/reagent/blood
 
 /mob/living/carbon/human/get_blood_id()
@@ -332,7 +378,6 @@
 
 	if(QDELETED(B)) //Give it up
 		return
-	B.bloodiness = min((B.bloodiness + BLOOD_AMOUNT_PER_DECAL), BLOOD_POOL_MAX)
 	B.transfer_mob_blood_dna(src) //give blood info to the blood decal.
 	if(temp_blood_DNA)
 		B.add_blood_DNA(temp_blood_DNA)

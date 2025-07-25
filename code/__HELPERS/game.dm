@@ -371,18 +371,52 @@ block( \
 	for(var/client/C in show_to)
 		C.images -= I
 
-/proc/flick_overlay(image/I, list/show_to, duration)
-	for(var/client/C in show_to)
-		C.images += I
-	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(remove_images_from_clients), I, show_to), duration, TIMER_CLIENT_TIME)
+/// Add an image to a list of clients and calls a proc to remove it after a duration
+/proc/flick_overlay_global(image/image_to_show, list/show_to, duration)
+	if(!show_to || !length(show_to) || !image_to_show)
+		return
+	for(var/client/add_to in show_to)
+		add_to.images += image_to_show
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(remove_images_from_clients), image_to_show, show_to), duration, TIMER_CLIENT_TIME)
 
-/proc/flick_overlay_view(image/I, atom/target, duration) //wrapper for the above, flicks to everyone who can see the target atom
-	var/list/viewing = list()
-	for(var/m in viewers(target))
-		var/mob/M = m
-		if(M.client)
-			viewing += M.client
-	flick_overlay(I, viewing, duration)
+///Flicks a certain overlay onto an atom, handling icon_state strings
+/atom/proc/flick_overlay(image_to_show, list/show_to, duration, layer)
+	var/image/passed_image = \
+		istext(image_to_show) \
+			? image(icon, src, image_to_show, layer) \
+			: image_to_show
+
+	flick_overlay_global(passed_image, show_to, duration)
+
+/**
+ * Helper atom that copies an appearance and exists for a period
+*/
+/atom/movable/flick_visual
+
+/// Takes the passed in MA/icon_state, mirrors it onto ourselves, and displays that in world for duration seconds
+/// Returns the displayed object, you can animate it and all, but you don't own it, we'll delete it after the duration
+/atom/proc/flick_overlay_view(mutable_appearance/display, duration)
+	if(!display)
+		return null
+
+	var/mutable_appearance/passed_appearance = \
+		istext(display) \
+			? mutable_appearance(icon, display, layer) \
+			: display
+
+	// If you don't give it a layer, we assume you want it to layer on top of this atom
+	// Because this is vis_contents, we need to set the layer manually (you can just set it as you want on return if this is a problem)
+	if(passed_appearance.layer == FLOAT_LAYER)
+		passed_appearance.layer = layer + 0.1
+	// This is faster then pooling. I promise
+	var/atom/movable/flick_visual/visual = new()
+	visual.appearance = passed_appearance
+	visual.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	// I hate /area
+	var/atom/movable/lies_to_children = src
+	lies_to_children.vis_contents += visual
+	QDEL_IN_CLIENT_TIME(visual, duration)
+	return visual
 
 ///Get active players who are playing in the round
 /proc/get_active_player_count(alive_check = FALSE, afk_check = FALSE, human_check = FALSE)
@@ -414,22 +448,22 @@ block( \
 	var/list/answers = ignore_category ? list("Yes", "No", "Never for this round") : list("Yes", "No")
 	switch(tgui_alert(M, Question, "A limited-time offer!", answers, timeout=poll_time))
 		if("Yes")
-			to_chat(M, "<span class='notice'>Choice registered: Yes.</span>")
+			to_chat(M, span_notice("Choice registered: Yes."))
 			if(time_passed + poll_time <= world.time)
-				to_chat(M, "<span class='danger'>Sorry, you answered too late to be considered!</span>")
+				to_chat(M, span_danger("Sorry, you answered too late to be considered!"))
 				SEND_SOUND(M, 'sound/machines/buzz-sigh.ogg')
 				candidates -= M
 			else
 				candidates += M
 		if("No")
-			to_chat(M, "<span class='danger'>Choice registered: No.</span>")
+			to_chat(M, span_danger("Choice registered: No."))
 			candidates -= M
 		if("Never for this round")
 			var/list/L = GLOB.poll_ignore[ignore_category]
 			if(!L)
 				GLOB.poll_ignore[ignore_category] = list()
 			GLOB.poll_ignore[ignore_category] += M.ckey
-			to_chat(M, "<span class='danger'>Choice registered: Never for this round.</span>")
+			to_chat(M, span_danger("Choice registered: Never for this round."))
 			candidates -= M
 		else
 			candidates -= M
@@ -534,7 +568,7 @@ block( \
 	if(!SSticker.IsRoundInProgress() || QDELETED(character))
 		return
 	var/area/A = get_area(character)
-	deadchat_broadcast("<span class='game'> has arrived on the <span class='name'>[ship.name]</span> at <span class='name'>[A.name]</span>.</span>", "<span class='game'><span class='name'>[character.real_name]</span> ([rank])</span>", follow_target = character, message_type=DEADCHAT_ARRIVALRATTLE)
+	deadchat_broadcast(span_game(" has arrived on the [span_name("[ship.name]")] at [span_name("[A.name]")]."), span_game("[span_name("[character.real_name]")] ([rank])"), follow_target = character, message_type=DEADCHAT_ARRIVALRATTLE)
 	if((!GLOB.announcement_systems.len) || (!character.mind))
 		return
 	if((character.mind.assigned_role == "Cyborg") || (character.mind.assigned_role == character.mind.special_role))

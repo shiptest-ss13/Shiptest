@@ -42,7 +42,7 @@
 		return ..()
 
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, "<span class='warning'>You don't want to harm [target]!</span>")
+		to_chat(user, span_warning("You don't want to harm [target]!"))
 		return
 
 	var/obj/item/bodypart/affecting = user.zone_selected //Find what the player is aiming at
@@ -85,11 +85,11 @@
 
 	//Display an attack message.
 	if(target != user)
-		target.visible_message("<span class='danger'>[user] hits [target][head_attack_message] with a bottle of [src.name]!</span>", \
-				"<span class='userdanger'>[user] hits you [head_attack_message] with a bottle of [src.name]!</span>")
+		target.visible_message(span_danger("[user] hits [target][head_attack_message] with a bottle of [src.name]!"), \
+				span_userdanger("[user] hits you [head_attack_message] with a bottle of [src.name]!"))
 	else
-		target.visible_message("<span class='danger'>[target] hits [target.p_them()]self with a bottle of [src.name][head_attack_message]!</span>", \
-				"<span class='userdanger'>You hit yourself with a bottle of [src.name][head_attack_message]!</span>")
+		target.visible_message(span_danger("[target] hits [target.p_them()]self with a bottle of [src.name][head_attack_message]!"), \
+				span_userdanger("You hit yourself with a bottle of [src.name][head_attack_message]!"))
 
 	//Attack logs
 	log_combat(user, target, "attacked", src)
@@ -116,7 +116,7 @@
 	item_state = "beer"
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("stabbed", "slashed", "attacked")
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	var/static/icon/broken_outline = icon('icons/obj/drinks/drinks.dmi', "broken")
 
 /obj/item/broken_bottle/Initialize()
@@ -130,7 +130,7 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/gin = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/whiskey
-	name = "Kadi-Witka Reserve"
+	name = "Kadi-Witka Reserve Whiskey"
 	desc = "An equivalent to single-malt whiskey, commonly enjoyed and brewed in a brewery originally founded Zohil. While different from traditionally used wheat, it can be safely enjoyed by every species."
 	icon_state = "whiskeybottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 100)
@@ -141,7 +141,7 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey/candycorn = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/vodka
-	name = "Triple Horned"
+	name = "Triple Horned Vodka"
 	desc = "Potato-based liquor commonly known as Vodka, distilled thrice to the standards of the PGF's requirements for their rations."
 	icon_state = "vodkabottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 100)
@@ -153,7 +153,7 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/tequila
-	name = "Rimeki Letisa"
+	name = "Rimeki Letisa Tequila"
 	desc = "Originally made from fermented succulents growing near Teceti's equator-deserts, this brand considers itself equivalent to the original tequila."
 	icon_state = "tequilabottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/tequila = 100)
@@ -173,7 +173,7 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/patron = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/rum
-	name = "Ahkskra Spiced"
+	name = "Ahkskra Spiced Rum"
 	desc = "Ahkskra Spiced - a spiced rum for the vox folkhero in everyone. Features a gallant-looking vox on the front of the bottle."
 	icon_state = "rumbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/rum = 100)
@@ -190,13 +190,13 @@
 	list_reagents = list(/datum/reagent/hellwater = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/vermouth
-	name = "Whitespear Dry"
+	name = "Whitespear Dry Vermouth"
 	desc = "Dry and sweet vermouth, commonly used for mixed drinks. Some Solarians drink it as a digestive before meals."
 	icon_state = "vermouthbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/vermouth = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/kahlua
-	name = "Keh'Lu'Tex Liqueur"
+	name = "Keh'Lu'Tex 'Kahlua' Liqueur"
 	desc = "An adapted recipe of a caffeine-mixed liqueur originating from Reh'himl, which replaces its original ingredient with coffee from Terra."
 	icon_state = "kahluabottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/kahlua = 100)
@@ -222,13 +222,13 @@
 	foodtype = FRUIT | ALCOHOL
 
 /obj/item/reagent_containers/food/drinks/bottle/absinthe
-	name = "Severtail Green"
+	name = "Severtail Green Absinthe"
 	desc = "Strong absinthe brewed in the Pan-Gezenan Federation, with their own transplants of Wormwood gifted to them during the first contact with humankind. If the legend (and label) means anything, the first attempt at brewing this caused some poor sarathi's tail to fall off."
 	icon_state = "absinthebottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/absinthe = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/absinthe/premium
-	name = "Chacheyi Gold"
+	name = "Chacheyi Gold Absinthe"
 	desc = "A higher shelf absinthe, distributed primarily from The Shoal. Features the folkhero Chacheyi on the label, alongside their goldgrub companions."
 	icon_state = "absinthepremium"
 
@@ -240,7 +240,7 @@
 	foodtype = FRUIT | ALCOHOL
 
 /obj/item/reagent_containers/food/drinks/bottle/hcider
-	name = "Neue Hamburg Spiced"
+	name = "Neue Hamburg Spiced Cider"
 	desc = "One of the main exports of Neue Hamburg - hard, spiced cider. Enjoyed all across the cantons and beyond."
 	icon_state = "hcider"
 	volume = 50
@@ -263,17 +263,32 @@
 	desc = "An alcoholic drink derived from rice, rediscovered by Solarian historians and reintroduced to the best of their ability to reproduce it."
 	icon_state = "sakebottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/sake = 100)
+	var/random = TRUE
 
 /obj/item/reagent_containers/food/drinks/bottle/sake/Initialize()
 	. = ..()
+	if(!random)
+		return FALSE
 	if(prob(10))
-		name = "Fluffy Tail"
+		name = "Fluffy Tail Sake"
 		desc += "This particular brand's mascot is a human with nine fox tails - which is an impressive amount of genemodding."
 		icon_state = "sakebottle_k"
 	else if(prob(10))
-		name = "Inubashiri's Home Brew"
+		name = "Inubashiri's Home Brew Sake"
 		desc += "This particular brand's mascot is a human with vaguely canine ears and a tail."
 		icon_state = "sakebottle_i"
+
+/obj/item/reagent_containers/food/drinks/bottle/sake/foxgirl
+	name = "Fluffy Tail Sake"
+	desc = "An alcoholic drink derived from rice, rediscovered by Solarian historians and reintroduced to the best of their ability to reproduce it. This particular brand's mascot is a human with vaguely canine ears and a tail."
+	icon_state = "sakebottle_k"
+	random = FALSE
+
+/obj/item/reagent_containers/food/drinks/bottle/sake/wolfgirl
+	name = "Inubashiri's Home Brew"
+	desc = "An alcoholic drink derived from rice, rediscovered by Solarian historians and reintroduced to the best of their ability to reproduce it. This particular brand's mascot is a human with nine fox tails - which is an impressive amount of genemodding."
+	icon_state = "sakebottle_i"
+	random = FALSE
 
 /obj/item/reagent_containers/food/drinks/bottle/fernet
 	name = "Fernet Bronca"
@@ -384,7 +399,7 @@
 
 
 /obj/item/reagent_containers/food/drinks/bottle/applejack
-	name = "Mars Lightning"
+	name = "Mars Lightning Applejack"
 	desc = "A strong brandy originating from apples, considered the older sibling to hard cider. Mars Lightning is often partnered with anti-gravity racing companies, leading to it often being served straight or for impromptu mixes."
 	custom_price = 15
 	icon_state = "applejack_bottle"
@@ -447,6 +462,36 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/creme_de_menthe = 100)
 	isGlass = TRUE
 
+///Teceti Drinks
+
+/obj/item/reagent_containers/food/drinks/bottle/dotusira
+	name = "Rakire's Dotusira"
+	desc = "A bottle of Dotusira liquor, decorated in tiny fruits and berries. A small label on the bottle declares it a product of the Southern Teceti Combine."
+	icon_state = "dotusira"
+	list_reagents = list(/datum/reagent/consumable/ethanol/dotusira = 100)
+	isGlass = TRUE
+
+/obj/item/reagent_containers/food/drinks/bottle/faraseta
+	name = "Faraseta Lirili!"
+	desc = "A tall, slim bottle of Faraseta cider. Decorative flames run the base of the bottle. A small label declares it the product of the Northern Teceti Coalition."
+	icon_state = "faraseta"
+	list_reagents = list(/datum/reagent/consumable/ethanol/faraseta = 100)
+	isGlass = TRUE
+
+/obj/item/reagent_containers/food/drinks/bottle/sosomira
+	name = "Yikiki Sososi-Mira"
+	desc = "A bottle of Sososi-Mira made by Yikiki's Brewery. A particularly small Vox is drawn to make sure you know that there is absolutely no Miras in the bottle (potentially because they ate it)."
+	icon_state = "sososi-mira"
+	list_reagents = list(/datum/reagent/consumable/ethanol/sosomira = 100)
+	isGlass = TRUE
+
+/obj/item/reagent_containers/food/drinks/bottle/sososeta
+	name = "Meskili Clear Sososi-Seta"
+	desc = "A bottle of Sososi-Seta sourced from responsibly farmed sosoli plants, heritage dote berries, and enough time to for Solarians to consider it vintage."
+	icon_state = "sososi-seta"
+	list_reagents = list(/datum/reagent/consumable/ethanol/sososeta = 100)
+	isGlass = TRUE
+
 ////////////////////////// MOLOTOV ///////////////////////
 /obj/item/reagent_containers/food/drinks/molotov
 	name = "molotov cocktail"
@@ -488,11 +533,11 @@
 	if(firestarter && active)
 		hit_atom.fire_act()
 		var/turf/T = get_turf(hit_atom)
-		T.IgniteTurf(30)
+		T.ignite_turf(30)
 		var/turf/otherT
 		for(var/direction in GLOB.cardinals)
 			otherT = get_step(T, direction)
-			otherT.IgniteTurf(30)
+			otherT.ignite_turf(30)
 			new /obj/effect/hotspot(otherT)
 	..()
 
@@ -501,7 +546,7 @@
 		active = TRUE
 		log_bomber(user, "has primed a", src, "for detonation")
 
-		to_chat(user, "<span class='info'>You light [src] on fire.</span>")
+		to_chat(user, span_info("You light [src] on fire."))
 		add_overlay(custom_fire_overlay ? custom_fire_overlay : GLOB.fire_overlay)
 		if(!isGlass)
 			addtimer(CALLBACK(src, PROC_REF(explode)), 5 SECONDS)
@@ -521,9 +566,9 @@
 /obj/item/reagent_containers/food/drinks/molotov/attack_self(mob/user)
 	if(active)
 		if(!isGlass)
-			to_chat(user, "<span class='danger'>The flame's spread too far on it!</span>")
+			to_chat(user, span_danger("The flame's spread too far on it!"))
 			return
-		to_chat(user, "<span class='info'>You snuff out the flame on [src].</span>")
+		to_chat(user, span_info("You snuff out the flame on [src]."))
 		cut_overlay(custom_fire_overlay ? custom_fire_overlay : GLOB.fire_overlay)
 		active = 0
 
@@ -579,7 +624,7 @@
 	desc = "Fermented prison wine made from fruit, sugar, and despair."
 	icon_state = "trashbag1" // pruno releases air as it ferments, we don't want to simulate this in atmos, but we can make it look like it did
 	for (var/mob/living/M in view(2, get_turf(src))) // letting people and/or narcs know when the pruno is done
-		to_chat(M, "<span class='info'>A pungent smell emanates from [src], like fruit puking out its guts.</span>")
+		to_chat(M, span_info("A pungent smell emanates from [src], like fruit puking out its guts."))
 		playsound(get_turf(src), 'sound/effects/bubbles2.ogg', 25, TRUE)
 
 /obj/item/reagent_containers/food/drinks/colocup/lean
@@ -600,19 +645,19 @@
 /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla/attack_self(mob/user)
 	if(!is_drainable()) // Uses the reagents.flags cause reagent_flags is only the init value
 		playsound(src, 'sound/items/openbottle.ogg', 30, 1)
-		user.visible_message("<span class='notice'>[user] takes the cap off \the [src].</span>", "<span class='notice'>You take the cap off [src].</span>")
+		user.visible_message(span_notice("[user] takes the cap off \the [src]."), span_notice("You take the cap off [src]."))
 		reagents.flags |= OPENCONTAINER //Cap's off
 		if(prob(1)) //Lucky you
 			var/S = new /obj/item/sandstar(src)
 			user.put_in_hands(S)
-			to_chat(user, "<span class='notice'>You found a Sandblast Star!</span>")
+			to_chat(user, span_notice("You found a Sandblast Star!"))
 	else
 		. = ..()
 
 /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla/examine(mob/user)
 	. = ..()
 	if(!is_drainable())
-		. += "<span class='info'>The cap is still sealed.</span>"
+		. += span_info("The cap is still sealed.")
 
 /obj/item/sandstar
 	name = "SandBlast Sarsaparilla star"
@@ -663,13 +708,13 @@
 /obj/item/storage/bottles/examine(mob/user)
 	. = ..()
 	if(sealed)
-		. += "<span class='info'>It is sealed. You could pry it open with a <i>crowbar</i> to access its contents.</span>"
+		. += span_info("It is sealed. You could pry it open with a <i>crowbar</i> to access its contents.")
 
 /obj/item/storage/bottles/crowbar_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(sealed)
 		var/datum/component/storage/S = GetComponent(/datum/component/storage)
-		user.visible_message("<span class='notice'>[user] pries open \the [src].</span>", "You pry open \the [src]")
+		user.visible_message(span_notice("[user] pries open \the [src]."), "You pry open \the [src]")
 		playsound(src, 'sound/machines/wooden_closet_close.ogg', 20, 1)
 		sealed = FALSE
 		S.locked = FALSE

@@ -61,12 +61,11 @@
 
 /mob/living/attack_ghost(mob/dead/observer/user)
 	if(user.client && user.health_scan)
-		healthscan(user, src, 1, TRUE)
+		healthscan(user, src, 0, TRUE, TRUE)
 	if(user.client && user.chem_scan)
 		chemscan(user, src)
 	return ..()
 
-// ---------------------------------------
 // And here are some good things for free:
 // Now you can click through portals, wormholes, gateways, and teleporters while observing. -Sayu
 

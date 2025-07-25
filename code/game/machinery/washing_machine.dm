@@ -9,8 +9,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		DYE_PURPLE = /obj/item/clothing/under/color/lightpurple,
 		DYE_BLACK = /obj/item/clothing/under/color/black,
 		DYE_WHITE = /obj/item/clothing/under/color/white,
-		DYE_MIME = /obj/item/clothing/under/rank/civilian/mime,
-		DYE_CLOWN = /obj/item/clothing/under/rank/civilian/clown,
 		DYE_CHAP = /obj/item/clothing/under/rank/civilian/chaplain,
 		DYE_QM = /obj/item/clothing/under/rank/cargo/qm,
 		DYE_LAW = /obj/item/clothing/under/suit/black,
@@ -32,7 +30,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		DYE_PURPLE = /obj/item/clothing/under/color/jumpskirt/lightpurple,
 		DYE_BLACK = /obj/item/clothing/under/color/jumpskirt/black,
 		DYE_WHITE = /obj/item/clothing/under/color/jumpskirt/white,
-		DYE_MIME = /obj/item/clothing/under/rank/civilian/mime/skirt,
 		DYE_CHAP = /obj/item/clothing/under/rank/civilian/chaplain/skirt,
 		DYE_QM = /obj/item/clothing/under/rank/cargo/qm/skirt,
 		DYE_CAPTAIN = /obj/item/clothing/under/rank/command/captain/skirt,
@@ -52,8 +49,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		DYE_BLACK = /obj/item/clothing/gloves/color/black,
 		DYE_WHITE = /obj/item/clothing/gloves/color/white,
 		DYE_RAINBOW = /obj/item/clothing/gloves/color/rainbow,
-		DYE_MIME = /obj/item/clothing/gloves/color/white,
-		DYE_CLOWN = /obj/item/clothing/gloves/color/rainbow,
 		DYE_QM = /obj/item/clothing/gloves/color/brown,
 		DYE_CAPTAIN = /obj/item/clothing/gloves/color/captain,
 		DYE_FO = /obj/item/clothing/gloves/color/grey,
@@ -74,7 +69,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		DYE_PURPLE = /obj/item/clothing/shoes/sneakers/purple,
 		DYE_BLACK = /obj/item/clothing/shoes/sneakers/black,
 		DYE_WHITE = /obj/item/clothing/shoes/sneakers/white,
-		DYE_MIME = /obj/item/clothing/shoes/sneakers/black,
 		DYE_QM = /obj/item/clothing/shoes/sneakers/brown,
 		DYE_CAPTAIN = /obj/item/clothing/shoes/sneakers/brown,
 		DYE_FO = /obj/item/clothing/shoes/sneakers/brown,
@@ -105,8 +99,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		DYE_BLACK = /obj/item/bedsheet/black,
 		DYE_WHITE = /obj/item/bedsheet,
 		DYE_RAINBOW = /obj/item/bedsheet/rainbow,
-		DYE_MIME = /obj/item/bedsheet/mime,
-		DYE_CLOWN = /obj/item/bedsheet/clown,
 		DYE_CHAP = /obj/item/bedsheet/chaplain,
 		DYE_QM = /obj/item/bedsheet/qm,
 		DYE_LAW = /obj/item/bedsheet/black,
@@ -137,11 +129,12 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	var/bloody_mess = 0
 	var/obj/item/color_source
 	var/max_wash_capacity = 5
+	var/should_we_be_dense = TRUE
 
 /obj/machinery/washing_machine/examine(mob/user)
 	. = ..()
 	if(!busy)
-		. += "<span class='notice'><b>Alt-click</b> it to start a wash cycle.</span>"
+		. += span_notice("<b>Alt-click</b> it to start a wash cycle.")
 
 /obj/machinery/washing_machine/AltClick(mob/user)
 	if(!user.canUseTopic(src, !issilicon(user)))
@@ -149,10 +142,10 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	if(busy)
 		return
 	if(state_open)
-		to_chat(user, "<span class='warning'>Close the door first!</span>")
+		to_chat(user, span_warning("Close the door first!"))
 		return
 	if(bloody_mess)
-		to_chat(user, "<span class='warning'>[src] must be cleaned up first!</span>")
+		to_chat(user, span_warning("[src] must be cleaned up first!"))
 		return
 	busy = TRUE
 	update_appearance()
@@ -241,9 +234,14 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	. = ..()
 	if(.)
 		var/obj/item/clothing/under/U = .
-		can_adjust = initial(U.can_adjust)
-		if(!can_adjust && adjusted) //we deadjust the uniform if it's now unadjustable
-			toggle_jumpsuit_adjust()
+		//we deadjust the uniform if it's now unadjustable
+		roll_down = initial(U.roll_down)
+		roll_sleeves = initial(U.roll_sleeves)
+		switch(adjusted)
+			if(ALT_STYLE)
+				toggle_jumpsuit_adjust(ALT_STYLE)
+			if(ROLLED_STYLE)
+				toggle_jumpsuit_adjust(ROLLED_STYLE)
 
 /obj/item/clothing/under/machine_wash(obj/machinery/washing_machine/WM)
 	freshly_laundered = TRUE
@@ -296,19 +294,19 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 	else if(user.a_intent != INTENT_HARM)
 		if (!state_open)
-			to_chat(user, "<span class='warning'>Open the door first!</span>")
+			to_chat(user, span_warning("Open the door first!"))
 			return TRUE
 
 		if(bloody_mess)
-			to_chat(user, "<span class='warning'>[src] must be cleaned up first!</span>")
+			to_chat(user, span_warning("[src] must be cleaned up first!"))
 			return TRUE
 
 		if(contents.len >= max_wash_capacity)
-			to_chat(user, "<span class='warning'>The washing machine is full!</span>")
+			to_chat(user, span_warning("The washing machine is full!"))
 			return TRUE
 
 		if(!user.transferItemToLoc(W, src))
-			to_chat(user, "<span class='warning'>\The [W] is stuck to your hand, you cannot put it in the washing machine!</span>")
+			to_chat(user, span_warning("\The [W] is stuck to your hand, you cannot put it in the washing machine!"))
 			return TRUE
 		if(W.dye_color)
 			color_source = W
@@ -322,7 +320,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	if(.)
 		return
 	if(busy)
-		to_chat(user, "<span class='warning'>[src] is busy!</span>")
+		to_chat(user, span_warning("[src] is busy!"))
 		return
 
 	if(user.pulling && user.a_intent == INTENT_GRAB && isliving(user.pulling))
@@ -347,6 +345,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 /obj/machinery/washing_machine/open_machine(drop = 1)
 	..()
-	if(initial(density))
+	if(should_we_be_dense)
 		density = TRUE //because machinery/open_machine() sets it to 0
 	color_source = null

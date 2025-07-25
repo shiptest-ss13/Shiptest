@@ -135,7 +135,6 @@
 	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen."
 	color = "#AAAAAA77" // rgb: 170, 170, 170, 77 (alpha)
 	taste_description = "water"
-	var/cooling_temperature = 2
 	glass_icon_state = "glass_clear"
 	glass_name = "glass of water"
 	glass_desc = "The father of all refreshments."
@@ -143,6 +142,10 @@
 
 	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs //WS Edit - IPCs
 
+/datum/reagent/water/on_mob_life(mob/living/carbon/M)
+	. = ..()
+	if(M.blood_volume)
+		M.blood_volume += 0.1 //full of water...
 /*
  *	Water reaction to turf
  */
@@ -150,21 +153,15 @@
 /datum/reagent/water/expose_turf(turf/open/T, reac_volume)
 	if(!istype(T))
 		return
-	var/CT = cooling_temperature
 
 	if(reac_volume >= 5)
-		T.MakeSlippery(TURF_WET_WATER, 10 SECONDS, min(reac_volume*1.5 SECONDS, 60 SECONDS))
+		T.MakeSlippery(TURF_WET_WATER, 10 SECONDS, min(reac_volume * 1.5 SECONDS, 60 SECONDS))
 
 	for(var/mob/living/simple_animal/slime/M in T)
 		M.apply_water()
 
-	var/obj/effect/hotspot/hotspot = (locate(/obj/effect/hotspot) in T)
-	if(hotspot && !isspaceturf(T))
-		if(T.air)
-			var/datum/gas_mixture/G = T.air
-			G.set_temperature(max(min(G.return_temperature()-(CT*1000),G.return_temperature()/CT),TCMB))
-			G.react(src)
-			qdel(hotspot)
+	T.extinguish_turf(min(reac_volume * 2, 5))
+
 	var/obj/effect/acid/A = (locate(/obj/effect/acid) in T)
 	if(A)
 		A.acid_level = max(A.acid_level - reac_volume*50, 0)
@@ -177,8 +174,8 @@
 	O.extinguish()
 	O.acid_level = 0
 	// Monkey cube
-	if(istype(O, /obj/item/reagent_containers/food/snacks/monkeycube))
-		var/obj/item/reagent_containers/food/snacks/monkeycube/cube = O
+	if(istype(O, /obj/item/food/monkeycube))
+		var/obj/item/food/monkeycube/cube = O
 		cube.Expand()
 
 	// Dehydrated carp
@@ -422,7 +419,7 @@
 
 		if(method == INGEST)
 			if(show_message)
-				to_chat(M, "<span class='notice'>That tasted horrible.</span>")
+				to_chat(M, span_notice("That tasted horrible."))
 	..()
 
 /datum/reagent/mulligan
@@ -436,7 +433,7 @@
 	..()
 	if (!istype(H))
 		return
-	to_chat(H, "<span class='warning'><b>You grit your teeth in pain as your body rapidly mutates!</b></span>")
+	to_chat(H, span_warning("<b>You grit your teeth in pain as your body rapidly mutates!</b>"))
 	H.visible_message("<b>[H]</b> suddenly transforms!")
 	randomize_human(H)
 
@@ -882,7 +879,7 @@
 
 /datum/reagent/bluespace/on_mob_life(mob/living/carbon/M)
 	if(current_cycle > 10 && prob(15))
-		to_chat(M, "<span class='warning'>You feel unstable...</span>")
+		to_chat(M, span_warning("You feel unstable..."))
 		M.adjust_jitter(2)
 		current_cycle = 1
 		addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living, bluespace_shuffle)), 30)
@@ -1622,18 +1619,70 @@
 	color = "#328242"
 	taste_description = "primordial essence"
 	reagent_state = LIQUID
+	var/list/turf_whitelist = list(
+	/turf/open/floor/plating/asteroid,
+	/turf/open/lava,
+	/turf/open/water/acid,
+	/turf/open/floor/plating/moss,
+	/turf/open/floor/plating/grass
+	)
 
-/datum/reagent/genesis/expose_turf(turf/T, reac_volume)
-	if(istype(T, /turf/open/floor/grass))//prevents spamming effect via. smoke or such
-		return
-	if(isplatingturf(T) || istype(T, /turf/open/floor/plasteel))
-		var/turf/open/floor/F = T
-		playsound(T, 'sound/effects/bubbles.ogg', 50)
-		F.PlaceOnTop(/turf/open/floor/grass, flags = CHANGETURF_INHERIT_AIR)
-		new /obj/effect/spawner/random/flower(T)
-		if(prob(75))
-			new /obj/effect/spawner/random/flora(T)
-	..()
+/datum/reagent/genesis/expose_turf(turf/exposed_turf, reac_volume)
+	var/allowed = FALSE //idk how to do this better
+	for(var/turf/checked_turf as anything in turf_whitelist)
+		if(!istype(exposed_turf, checked_turf))
+			continue
+		else
+			allowed = TRUE
+			break
+	if(!allowed)
+		return ..()
+
+	if(isopenturf(exposed_turf))
+		var/turf/open/floor/terraform_target = exposed_turf
+
+		if(istype(terraform_target, /turf/open/lava) || istype(terraform_target, /turf/open/water/acid)) //if hazard, reeplace with basin
+			if(istype(terraform_target, /turf/open/lava))
+				terraform_target.ChangeTurf(/turf/open/floor/plating/asteroid/basalt/lava_land_surface/basin, flags = CHANGETURF_INHERIT_AIR)
+			if(istype(terraform_target, /turf/open/water/acid))
+				terraform_target.ChangeTurf(/turf/open/floor/plating/asteroid/whitesands/dried, flags = CHANGETURF_INHERIT_AIR)
+			terraform_target.visible_message("<span class='notice'>As the serum touches [terraform_target.name], it all starts drying up, leaving a dry basin behind!</span>")
+			playsound(exposed_turf, 'sound/effects/bubbles.ogg', 50)
+			return ..()
+
+		if(istype(terraform_target, /turf/open/floor/plating/asteroid/basalt/lava_land_surface/basin) || istype(terraform_target, /turf/open/floor/plating/asteroid/whitesands/dried)|| istype(terraform_target, /turf/open/floor/plating/asteroid/sand)) //if basin, replace with water
+			return ..()
+
+		if(istype(terraform_target, /turf/open/floor/plating/asteroid/purple))
+			terraform_target.ChangeTurf(/turf/open/floor/plating/asteroid/sand/terraform, flags = CHANGETURF_INHERIT_AIR)
+			terraform_target.visible_message("<span class='notice'>The chemicals in the sand disolve, and the sand looks more natural.</span>")
+			playsound(exposed_turf, 'sound/effects/bubbles.ogg', 50)
+			return ..()
+
+		if(!istype(terraform_target, /turf/open/floor/plating/asteroid/dirt)) // if not dirt, acutally terraform
+			terraform_target.ChangeTurf(/turf/open/floor/plating/asteroid/dirt, flags = CHANGETURF_INHERIT_AIR)
+			terraform_target.visible_message("<span class='notice'>The harsh land becomes fertile dirt, but more work needs to be done for it to be growable and breathable. Perhaps add grass?</span>")
+			playsound(exposed_turf, 'sound/effects/bubbles.ogg', 50)
+			return ..()
+
+
+		if(istype(terraform_target, /turf/open/floor/plating/asteroid/dirt/grass)) //if grass, plant shit
+			for(var/obj/object as anything in terraform_target.contents)
+				if(!istype(object, /obj/structure/flora))
+					continue
+				terraform_target.visible_message("<span class='danger'>Theres already flora on the tile!</span>")
+				return ..()
+
+			terraform_target.visible_message("<span class='notice'>As the serum touches the grass, suddenly flora grows out of it!</span>")
+			playsound(exposed_turf, 'sound/effects/bubbles.ogg', 50)
+			if(prob(70))
+				new /obj/effect/spawner/random/flower(exposed_turf)
+			else if(prob(5))
+				new /obj/structure/flora/ash/garden(exposed_turf)
+			else
+				new /obj/effect/spawner/random/flora(exposed_turf)
+
+	return ..()
 
 /datum/reagent/genesis/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	. = ..()
@@ -1785,7 +1834,7 @@
 			var/mob/living/carbon/human/H = M
 			var/datum/sprite_accessory/hair/picked_hair = pick(GLOB.hairstyles_list)
 			var/datum/sprite_accessory/facial_hair/picked_beard = pick(GLOB.facial_hairstyles_list)
-			to_chat(H, "<span class='notice'>Hair starts sprouting from your scalp.</span>")
+			to_chat(H, span_notice("Hair starts sprouting from your scalp."))
 			H.hairstyle = picked_hair
 			H.facial_hairstyle = picked_beard
 			H.update_hair()
@@ -1801,7 +1850,7 @@
 	if((method == TOUCH || method == SMOKE)  || method == VAPOR)
 		if(M && ishuman(M) && !HAS_TRAIT(M, TRAIT_BALD))
 			var/mob/living/carbon/human/H = M
-			to_chat(H, "<span class='notice'>Your hair starts growing at an incredible speed!</span>")
+			to_chat(H, span_notice("Your hair starts growing at an incredible speed!"))
 			H.hairstyle = "Very Long Hair"
 			H.facial_hairstyle = "Beard (Very Long)"
 			H.update_hair()
@@ -1817,7 +1866,7 @@
 	if((method == TOUCH || method == SMOKE)  || method == VAPOR)
 		if(M && ishuman(M))
 			var/mob/living/carbon/human/H = M
-			to_chat(H, "<span class='danger'>Your hair is falling out in clumps!</span>")
+			to_chat(H, span_danger("Your hair is falling out in clumps!"))
 			H.hairstyle = "Bald"
 			H.facial_hairstyle = "Shaved"
 			H.update_hair()
@@ -2096,7 +2145,7 @@
 	var/yuck_cycle = 0 //! The `current_cycle` when puking starts.
 
 /datum/reagent/yuck/on_mob_add(mob/living/L)
-	if(HAS_TRAIT(src, TRAIT_NOHUNGER)) //they can't puke
+	if(HAS_TRAIT(L, TRAIT_NOHUNGER)) //they can't puke
 		holder.del_reagent(type)
 
 #define YUCK_PUKE_CYCLES 3 		// every X cycle is a puke
@@ -2107,7 +2156,7 @@
 			var/dread = pick("Something is moving in your stomach...", \
 				"A wet growl echoes from your stomach...", \
 				"For a moment you feel like your surroundings are moving, but it's your stomach...")
-			to_chat(C, "<span class='userdanger'>[dread]</span>")
+			to_chat(C, span_userdanger("[dread]"))
 			yuck_cycle = current_cycle
 	else
 		var/yuck_cycles = current_cycle - yuck_cycle
@@ -2225,45 +2274,45 @@
 	taste_description = "lifegiving metal"
 	can_synth = FALSE
 
-/datum/reagent/determination //from /tg/ , but since we dont have wounds its just weaker penthrite
+/datum/reagent/determination
 	name = "Determination"
 	description = "For when you need to push on a little more. Do NOT allow near plants."
 	reagent_state = LIQUID
 	color = "#D2FFFA"
-	metabolization_rate = 0.75 * REAGENTS_METABOLISM
+	metabolization_rate = 0.75 * REAGENTS_METABOLISM // 5u (WOUND_DETERMINATION_CRITICAL) will last for ~17 ticks
 	self_consuming = TRUE
 	taste_description = "pure determination"
-	overdose_threshold = 30
+	overdose_threshold = 45
+	/// Whether we've had at least WOUND_DETERMINATION_SEVERE (2.5u) of determination at any given time. No damage slowdown immunity or indication we're having a second wind if it's just a single moderate wound
+	var/significant = FALSE
 
-/datum/reagent/determination/on_mob_add(mob/living/M)
-	. = ..()
-	to_chat(M,"<span class='notice'>You feel like your heart can take on the world!")
-	ADD_TRAIT(M, TRAIT_NOSOFTCRIT,type)
+/datum/reagent/determination/on_mob_life(mob/living/carbon/M)
+	if(!significant && volume >= WOUND_DETERMINATION_SEVERE)
+		significant = TRUE
+		M.apply_status_effect(STATUS_EFFECT_DETERMINED) // in addition to the slight healing, limping cooldowns are divided by 4 during the combat high
 
-/datum/reagent/determination/on_mob_life(mob/living/carbon/human/H)
-	if(H.health <= HEALTH_THRESHOLD_CRIT && H.health > H.crit_threshold)
+	volume = min(volume, WOUND_DETERMINATION_MAX)
 
-		H.adjustBruteLoss(-2 * REM, 0)
-		H.adjustOxyLoss(-6 * REM, 0)
+	for(var/thing in M.all_wounds)
+		var/datum/wound/W = thing
+		var/obj/item/bodypart/wounded_part = W.limb
+		if(wounded_part)
+			wounded_part.heal_damage(0.25, 0.25)
+		M.adjustStaminaLoss(-0.25*REM) // the more wounds, the more stamina regen
+	..()
 
-		H.losebreath = 0
-
-		H.adjustOrganLoss(ORGAN_SLOT_HEART,max(1,volume/10)) // your heart is barely keeping up!
-
-		H.adjust_jitter(rand(0,2))
-		H.Dizzy(rand(0,2))
-
-
-		if(prob(33))
-			to_chat(H,"<span class='danger'>Your body is trying to give up, but your heart is still beating!</span>")
-	. = ..()
-
-/datum/reagent/determination/on_mob_end_metabolize(mob/living/M)
-	REMOVE_TRAIT(M, TRAIT_NOSOFTCRIT,type)
-	. = ..()
+/datum/reagent/determination/on_mob_end_metabolize(mob/living/carbon/M)
+	if(significant)
+		var/stam_crash = 0
+		for(var/thing in M.all_wounds)
+			var/datum/wound/W = thing
+			stam_crash += (W.severity + 1) * 3 // spike of 3 stam damage per wound severity (moderate = 6, severe = 9, critical = 12) when the determination wears off if it was a combat rush
+		M.adjustStaminaLoss(stam_crash)
+	M.remove_status_effect(STATUS_EFFECT_DETERMINED)
+	..()
 
 /datum/reagent/determination/overdose_process(mob/living/carbon/human/H)
-	to_chat(H,"<span class='danger'>You feel your heart rupturing in two!</span>")
+	to_chat(H,span_danger("You feel your heart rupturing in two!"))
 	H.adjustStaminaLoss(10)
 	H.adjustOrganLoss(ORGAN_SLOT_HEART,100)
 	H.set_heartattack(TRUE)
@@ -2286,8 +2335,8 @@
 	..()
 	. = 1
 
-/datum/reagent/crystal_reagent/overdose_process(mob/living/carbon/human/H) //TODO port bee's regen cores legioning miners, and make it only do that if overdosed on crystal
-	to_chat(H,"<span class='danger'>You feel your heart rupturing in two!</span>")
+/datum/reagent/crystal_reagent/overdose_process(mob/living/carbon/human/H)
+	to_chat(H,span_danger("You feel your heart rupturing in two!"))
 	H.adjustStaminaLoss(10)
 	H.adjustOrganLoss(ORGAN_SLOT_HEART,100)
 	H.set_heartattack(TRUE)
@@ -2350,8 +2399,8 @@
 	L.add_client_colour(/datum/client_colour/thirdeye)
 	if(L.client?.holder) //You are worthy.
 		worthy = TRUE
-		L.visible_message("<span class='danger'><font size = 6>Grips their head and dances around, collapsing to the floor!</font></span>", \
-		"<span class='danger'><font size = 6>Visions of a realm BYOND your own flash across your eyes, before it all goes black...</font></span>")
+		L.visible_message(span_danger("<font size = 6>Grips their head and dances around, collapsing to the floor!</font>"), \
+		span_danger("<font size = 6>Visions of a realm BYOND your own flash across your eyes, before it all goes black...</font>"))
 		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, set_sleeping), 40 SECONDS), 10 SECONDS)
 		addtimer(CALLBACK(L.reagents, TYPE_PROC_REF(/datum/reagents, remove_reagent), src.type, src.volume,), 10 SECONDS)
 		return
@@ -2371,7 +2420,7 @@
 		H.seizure()
 		H.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(2, 4))
 	if(prob(7))
-		to_chat(M, "<span class='warning'><font size = [rand(1,3)]>[pick(dose_messages)]</font></span>")
+		to_chat(M, span_warning("<font size = [rand(1,3)]>[pick(dose_messages)]</font>"))
 
 /datum/reagent/three_eye/overdose_start(mob/living/M)
 	on_mob_metabolize(M) //set worthy
@@ -2392,13 +2441,13 @@
 		var/mob/living/carbon/C = M
 		C.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(1, 2))
 	if(prob(7))
-		to_chat(M, "<span class='danger'><font size = [rand(2,4)]>[pick(overdose_messages)]</font></span>")
+		to_chat(M, span_danger("<font size = [rand(2,4)]>[pick(overdose_messages)]</font>"))
 
 /datum/reagent/three_eye/on_mob_end_metabolize(mob/living/L)
 	. = ..()
 	L.remove_client_colour(/datum/client_colour/thirdeye)
 	if(overdosed && !worthy)
-		to_chat(L, "<span class='danger'><font size = 6>Your mind reels and the world begins to fade away...</font></span>")
+		to_chat(L, span_danger("<font size = 6>Your mind reels and the world begins to fade away...</font>"))
 		if(iscarbon(L))
 			var/mob/living/carbon/C = L
 			addtimer(CALLBACK(C, TYPE_PROC_REF(/mob/living/carbon, adjustOrganLoss), ORGAN_SLOT_BRAIN, 200), 5 SECONDS) //Deathblow to the brain
@@ -2598,14 +2647,13 @@
 
 /datum/reagent/anti_radiation_foam/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method in list(TOUCH, VAPOR))
-		M.radiation = M.radiation - rand(max(M.radiation * 0.95, M.radiation)) //get the hose
+		M.radiation = M.radiation - rand(max(M.radiation * 0.07, 0)) //get the hose
 		M.ExtinguishMob()
 	..()
 
 
 /datum/reagent/anti_radiation_foam/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(0.5, 200)
-	M.adjust_disgust(4)
+	M.radiation = M.radiation - rand(max(M.radiation * 0.03, 0))
 	..()
 	. = 1
 

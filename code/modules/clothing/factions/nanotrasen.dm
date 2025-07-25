@@ -134,7 +134,6 @@
 	name = ""
 	desc = ""
 	icon_state = "captain_parade"
-	can_adjust = FALSE
 */
 
 /obj/item/clothing/under/nanotrasen/officer
@@ -233,7 +232,7 @@
 	icon_state = "armor"
 	item_state = "blackcloth"
 	body_parts_covered = CHEST|GROIN
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/suit/armor/nanotrasen/slim
@@ -247,7 +246,7 @@
 	desc = "A tailored black overcoat, made from cutting-edge ballistic fabrics and composites. Vigilitas's 'VI' logo is embossed on every button. Intimidating and profoundly stylish."
 	icon_state = "command_coat"
 	body_parts_covered = CHEST|GROIN
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90, "wound" = 10)
 	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
 	supports_variations = VOX_VARIATION
 
@@ -257,7 +256,7 @@
 	icon_state = "armor_captain"
 	item_state = "bluecloth"
 	body_parts_covered = CHEST|GROIN
-	armor = list("melee" = 50, "bullet" = 40, "laser" = 50, "energy" = 50, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 90)
+	armor = list("melee" = 50, "bullet" = 40, "laser" = 50, "energy" = 50, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 90, "wound" = 10)
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/suit/armor/nanotrasen/captain/parade
@@ -266,7 +265,7 @@
 	icon_state = "captain_formal"
 	item_state = "bluecloth"
 	body_parts_covered = CHEST|GROIN
-	armor = list("melee" = 30, "bullet" = 0, "laser" = 30, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 90)
+	armor = list("melee" = 30, "bullet" = 0, "laser" = 30, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 90, "wound" = 10)
 
 // Hats //
 

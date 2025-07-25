@@ -7,7 +7,7 @@
 	name = "Kalixcis Wine"
 	time = 40
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit =1,
+		/obj/item/food/grown/ash_flora/cactus_fruit = 1,
 		/datum/reagent/consumable/ethanol = 100
 	)
 	result = /obj/item/reagent_containers/food/drinks/bottle/lizardwine
@@ -98,29 +98,6 @@
 	result = /obj/item/reagent_containers/food/drinks/bottle/candycornliquor
 	time = 30
 	reqs = list(/datum/reagent/consumable/ethanol/whiskey = 100,
-				/obj/item/reagent_containers/food/snacks/candy_corn = 1,
+				/obj/item/food/candy_corn = 1,
 				/obj/item/reagent_containers/food/drinks/bottle = 1)
-	category = CAT_DRINK
-
-/datum/crafting_recipe/pruno
-	name = "pruno mix"
-	result = /obj/item/reagent_containers/food/drinks/bottle/pruno
-	time = 30
-	reqs = list(
-		/obj/item/storage/bag/trash = 1,
-		/obj/item/food/breadslice/moldy = 1,
-		/obj/item/reagent_containers/food/snacks/grown = 4,
-		/obj/item/reagent_containers/food/snacks/candy_corn = 2,
-		/datum/reagent/water = 15
-	)
-	category = CAT_DRINK
-
-/datum/crafting_recipe/lean
-	name = "lean"
-	result = /obj/item/reagent_containers/food/drinks/colocup/lean
-	time = 30
-	reqs = list(/obj/item/reagent_containers/food/drinks/colocup = 1,
-				/obj/item/reagent_containers/food/snacks/gumball = 2,
-				/datum/reagent/medicine/morphine = 5,
-				/datum/reagent/consumable/space_up = 15)
 	category = CAT_DRINK

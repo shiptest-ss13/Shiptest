@@ -159,6 +159,13 @@
 /obj/structure/chair/handrail{
 	dir = 1
 	},
+/obj/structure/bed/dogbed{
+	name = "Kitty's Bed"
+	},
+/mob/living/simple_animal/hostile/asteroid/gutlunch/guthen{
+	name = "Kitty";
+	faction = list("neutral")
+	},
 /turf/open/floor/carpet,
 /area/ship/crew)
 "dT" = (
@@ -1719,10 +1726,10 @@
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
-/obj/item/reagent_containers/food/snacks/canned/beans,
-/obj/item/reagent_containers/food/snacks/canned/beans,
-/obj/item/reagent_containers/food/snacks/canned/beans,
-/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/food/canned/beans,
+/obj/item/food/canned/beans,
+/obj/item/food/canned/beans,
+/obj/item/food/canned/beans,
 /obj/item/reagent_containers/food/drinks/waterbottle,
 /obj/item/reagent_containers/food/drinks/waterbottle,
 /obj/item/reagent_containers/food/drinks/waterbottle,
@@ -1969,8 +1976,8 @@
 	anchored = 1;
 	name = "fridge"
 	},
-/obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/spline/fancy/opaque/grey,
 /turf/open/floor/plasteel/dark,
