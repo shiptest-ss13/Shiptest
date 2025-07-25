@@ -276,11 +276,37 @@
 
 // Colonial League Minutemen
 
+#define RANK_CLIP_LM /obj/item/clothing/accessory/rank/clip/cme1
+#define RANK_CLIP_2LM /obj/item/clothing/accessory/rank/clip/cme2
+#define RANK_CLIP_1LM /obj/item/clothing/accessory/rank/clip/cme3
+#define RANK_CLIP_JSGT /obj/item/clothing/accessory/rank/clip/cme4
+#define RANK_CLIP_SGT /obj/item/clothing/accessory/rank/clip/cme5
+#define RANK_CLIP_2SGT /obj/item/clothing/accessory/rank/clip/cme6
+#define RANK_CLIP_1SGT /obj/item/clothing/accessory/rank/clip/cme7
+#define RANK_CLIP_MSGT /obj/item/clothing/accessory/rank/clip/cme8
+#define RANK_CLIP_SGTM /obj/item/clothing/accessory/rank/clip/cme9
+#define RANK_CLIP_ENS /obj/item/clothing/accessory/rank/clip/cmo1
+#define RANK_CLIP_2LT /obj/item/clothing/accessory/rank/clip/cmo2
+#define RANK_CLIP_1LT /obj/item/clothing/accessory/rank/clip/cmo3
+#define RANK_CLIP_LTCOM /obj/item/clothing/accessory/rank/clip/cmo4
+#define RANK_CLIP_COM /obj/item/clothing/accessory/rank/clip/cmo5
+#define RANK_CLIP_CPT /obj/item/clothing/accessory/rank/clip/cmo6
+#define RANK_CLIP_BRIG /obj/item/clothing/accessory/rank/clip/cmo7
+#define RANK_CLIP_MAJGEN /obj/item/clothing/accessory/rank/clip/cmo8
+#define RANK_CLIP_LTGEN /obj/item/clothing/accessory/rank/clip/cmo9
+#define RANK_CLIP_GEN /obj/item/clothing/accessory/rank/clip/cmo10
+#define RANK_CLIP_GENMIN /obj/item/clothing/accessory/rank/clip/cmo11
+
 /datum/outfit/job/clip/minutemen
 	name = "CLIP Minutemen - Base Outfit"
 
 	jobtype = /datum/job/assistant
 	uniform = /obj/item/clothing/under/clip/minutemen
+	var/list/ranks = list(
+		"E3 - First Class Leagueman" = RANK_CLIP_1LM,
+		"E2 - Second Class Leagueman" = RANK_CLIP_2LM,
+		"E1 - Leagueman" = RANK_CLIP_LM
+	)
 
 	backpack = /obj/item/storage/backpack/security/clip
 	satchel = /obj/item/storage/backpack/satchel/sec/clip
@@ -289,11 +315,40 @@
 
 	box = /obj/item/storage/box/survival/clip/balaclava
 
+/datum/outfit/job/clip/minutemen/post_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	if(visualsOnly)
+		return
+	if(ranks)
+		get_rank(H)
+
+/datum/outfit/job/clip/minutemen/proc/get_rank(mob/living/carbon/human/enlistee)
+	var/rank_chosen
+	if(enlistee.client)
+		rank_chosen = input(enlistee, "What is your character's rank?", "Rank Selection") as null|anything in ranks
+		if(!rank_chosen)
+			rank_chosen = pick(ranks)
+	else
+		rank_chosen = pick(ranks)
+
+	var/obj/item/clothing/accessory/rank/rank_accessory = ranks[rank_chosen]
+	var/obj/item/clothing/under/worn_uniform = enlistee.w_uniform
+	if(!worn_uniform || worn_uniform.attached_accessory) // WHY ARE YOU NAKED
+		enlistee.put_in_hands(new rank_accessory)
+	else
+		worn_uniform.attach_accessory(new rank_accessory)
+
+
 /datum/outfit/job/clip/minutemen/deckhand
 	name = "CLIP Minutemen - Deckhand"
 	id_assignment = "Deckhand"
 	job_icon = "clip_navy1"
 	jobtype = /datum/job/assistant
+	ranks = list(
+		"E3 - First Class Leagueman" = RANK_CLIP_1LM,
+		"E2 - Second Class Leagueman" = RANK_CLIP_2LM,
+		"E1 - Leagueman" = RANK_CLIP_LM
+	)
 
 	uniform =  /obj/item/clothing/under/clip/minutemen
 	shoes = /obj/item/clothing/shoes/combat
@@ -304,6 +359,10 @@
 	name = "CLIP Minutemen - Captain"
 	job_icon = "clip_navy5"
 	jobtype = /datum/job/captain
+	ranks = list(
+		"O6 - Captain" = RANK_CLIP_CPT,
+		"O5 - Commander" = RANK_CLIP_COM
+	)
 
 	id = /obj/item/card/id/gold
 	gloves = /obj/item/clothing/gloves/color/captain
@@ -325,6 +384,12 @@
 	name = "CLIP Minutemen - General"
 	id_assignment = "General"
 	job_icon = "clip_cmm6"
+	ranks = list(
+		"O10 - General" = RANK_CLIP_GEN,
+		"O9 - Lieutenant General" = RANK_CLIP_LTGEN,
+		"O8 - Major General" = RANK_CLIP_MAJGEN,
+		"O7 - Brigadier General" = RANK_CLIP_BRIG
+	)
 
 	head = /obj/item/clothing/head/clip/slouch/officer
 	ears = /obj/item/radio/headset/clip/alt/captain
@@ -348,6 +413,11 @@
 	id_assignment = "Bridge Officer"
 	job_icon = "clip_navy3"
 	jobtype = /datum/job/head_of_personnel
+	ranks = list(
+		"O3 - First Lieutenant" = RANK_CLIP_1LT,
+		"O2 - Second Lieutenant" = RANK_CLIP_2LT,
+		"O1 - Ensign" = RANK_CLIP_ENS
+	)
 
 	id = /obj/item/card/id/silver
 	head = /obj/item/clothing/head/clip/slouch
@@ -365,6 +435,12 @@
 	id_assignment = "Corpsman"
 	job_icon = "clip_navy2"
 	jobtype = /datum/job/doctor
+	ranks = list(
+		"E5 - League Sergeant" = RANK_CLIP_SGT,
+		"E4 - Junior League Sergeant" = RANK_CLIP_JSGT,
+		"E3 - First Class Leagueman" = RANK_CLIP_1LM,
+		"E2 - Second Class Leagueman" = RANK_CLIP_2LM
+	)
 
 	uniform = /obj/item/clothing/under/clip/medic
 	shoes = /obj/item/clothing/shoes/combat
@@ -397,6 +473,11 @@
 	id_assignment = "Pilot"
 	job_icon = "clip_mech2"
 	jobtype = /datum/job/mining
+	ranks = list(
+		"O3 - First Lieutenant" = RANK_CLIP_1LT,
+		"O2 - Second Lieutenant" = RANK_CLIP_2LT,
+		"O1 - Ensign" = RANK_CLIP_ENS
+	)
 
 	head = /obj/item/clothing/head/helmet/bulletproof/m10/clip_vc
 	uniform = /obj/item/clothing/under/clip/minutemen
@@ -417,6 +498,10 @@
 	name = "CLIP Minutemen - Vehicle Commander"
 	id_assignment = "Vehicle Commander"
 	job_icon = "clip_mech3"
+	ranks = list(
+		"O3 - First Lieutenant" = RANK_CLIP_1LT,
+		"O2 - Second Lieutenant" = RANK_CLIP_2LT
+	)
 
 	suit = /obj/item/clothing/suit/jacket/miljacket
 	glasses = /obj/item/clothing/glasses/hud/diagnostic/sunglasses
@@ -426,6 +511,11 @@
 	id_assignment = "Traffic Coordinator"
 	job_icon = "clip_mech4"
 	jobtype = /datum/job/roboticist
+	ranks = list(
+		"O5 - Commander" = RANK_CLIP_COM,
+		"O4 - Lieutenant Commander" = RANK_CLIP_LTCOM,
+		"O3 - First Lieutenant" = RANK_CLIP_1LT
+	)
 
 	belt = null
 
@@ -443,6 +533,12 @@
 	name = "CLIP Minutemen - Engineer"
 	job_icon = "clip_navy2"
 	jobtype = /datum/job/engineer
+	ranks = list(
+		"E5 - League Sergeant" = RANK_CLIP_SGT,
+		"E4 - Junior League Sergeant" = RANK_CLIP_JSGT,
+		"E3 - First Class Leagueman" = RANK_CLIP_1LM,
+		"E2 - Second Class Leagueman" = RANK_CLIP_2LM
+	)
 
 	belt = /obj/item/storage/belt/utility/full/engi
 	shoes = /obj/item/clothing/shoes/workboots
@@ -472,6 +568,12 @@
 	id_assignment = "Minuteman"
 	jobtype = /datum/job/officer
 	job_icon = "clip_cmm2"
+	ranks = list(
+		"E3 - First Class Leagueman" = RANK_CLIP_1LM,
+		"E2 - Second Class Leagueman" = RANK_CLIP_2LM,
+		"E1 - Leagueman" = RANK_CLIP_LM
+	)
+
 	ears = /obj/item/radio/headset/alt
 	box = /obj/item/storage/box/survival/clip/balaclava
 	shoes = /obj/item/clothing/shoes/combat // shoos
@@ -542,6 +644,12 @@
 	name = "CLIP Minutemen - Field Engineer (Dressed)"
 	id_assignment = "Field Engineer"
 	jobtype = /datum/job/engineer
+	ranks = list(
+		"E5 - League Sergeant" = RANK_CLIP_SGT,
+		"E4 - Junior League Sergeant" = RANK_CLIP_JSGT,
+		"E3 - First Class Leagueman" = RANK_CLIP_1LM,
+		"E2 - Second Class Leagueman" = RANK_CLIP_2LM
+	)
 
 	accessory = /obj/item/clothing/accessory/armband/engine
 	belt = /obj/item/storage/belt/military/clip/engi
@@ -556,6 +664,12 @@
 	name = "CLIP Minutemen - Field Corpsman (Dressed)"
 	id_assignment = "Field Corpsman"
 	jobtype = /datum/job/doctor
+	ranks = list(
+		"E5 - League Sergeant" = RANK_CLIP_SGT,
+		"E4 - Junior League Sergeant" = RANK_CLIP_JSGT,
+		"E3 - First Class Leagueman" = RANK_CLIP_1LM,
+		"E2 - Second Class Leagueman" = RANK_CLIP_2LM
+	)
 
 	accessory = /obj/item/clothing/accessory/armband/medblue
 	belt = /obj/item/storage/belt/medical/webbing/clip/prefilled
@@ -580,6 +694,12 @@
 /datum/outfit/job/clip/minutemen/grunt/dressed/gunner_armed
 	name = "CLIP Minutemen - Field Gunner (Armed - CM-40)"
 	id_assignment = "Machinegunner"
+	ranks = list(
+		"E5 - League Sergeant" = RANK_CLIP_SGT,
+		"E4 - Junior League Sergeant" = RANK_CLIP_JSGT,
+		"E3 - First Class Leagueman" = RANK_CLIP_1LM,
+		"E2 - Second Class Leagueman" = RANK_CLIP_2LM
+	)
 
 	accessory = /obj/item/clothing/accessory/armband
 	belt = /obj/item/storage/belt/military/clip/gunner
@@ -594,6 +714,13 @@
 	id_assignment = "Sergeant"
 	job_icon = "clip_cmm3"
 	jobtype = /datum/job/warden
+	ranks = list(
+		"E8 - Master League Sergeant" = RANK_CLIP_MSGT,
+		"E7 - First Class League Sergeant" = RANK_CLIP_1SGT,
+		"E6 - Second Class League Sergeant" = RANK_CLIP_2SGT,
+		"E5 - League Sergeant" = RANK_CLIP_SGT,
+		"E4 - Junior League Sergeant" = RANK_CLIP_JSGT
+	)
 
 	ears = /obj/item/radio/headset/clip/alt
 	uniform = /obj/item/clothing/under/clip/minutemen
@@ -621,6 +748,10 @@
 	id_assignment = "Commander"
 	job_icon = "clip_cmm4"
 	jobtype = /datum/job/hos
+	ranks = list(
+		"O5 - Commander" = RANK_CLIP_COM,
+		"O4 - Lieutenant Commander" = RANK_CLIP_LTCOM
+	)
 
 	ears = /obj/item/radio/headset/clip/alt
 	uniform = /obj/item/clothing/under/clip/officer
@@ -632,10 +763,11 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 
 /datum/outfit/job/clip/minutemen/grunt/major
-	name = "CLIP Minutemen - Major"
-	id_assignment = "Major"
-	job_icon = "clip_cmm5"
+	name = "CLIP Minutemen - Sergeant Major"
+	id_assignment = "Sergeant Major"
+	job_icon = "clip_cmm3"
 	jobtype = /datum/job/captain
+	ranks = list("E9 - Sergeant Major" = RANK_CLIP_SGTM) // lol
 
 	ears = /obj/item/radio/headset/clip/alt
 	uniform = /obj/item/clothing/under/clip/officer
@@ -646,3 +778,24 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 
 	glasses = /obj/item/clothing/glasses/sunglasses
+
+#undef RANK_CLIP_LM
+#undef RANK_CLIP_2LM
+#undef RANK_CLIP_1LM
+#undef RANK_CLIP_JSGT
+#undef RANK_CLIP_SGT
+#undef RANK_CLIP_2SGT
+#undef RANK_CLIP_1SGT
+#undef RANK_CLIP_MSGT
+#undef RANK_CLIP_SGTM
+#undef RANK_CLIP_ENS
+#undef RANK_CLIP_2LT
+#undef RANK_CLIP_1LT
+#undef RANK_CLIP_LTCOM
+#undef RANK_CLIP_COM
+#undef RANK_CLIP_CPT
+#undef RANK_CLIP_BRIG
+#undef RANK_CLIP_MAJGEN
+#undef RANK_CLIP_LTGEN
+#undef RANK_CLIP_GEN
+#undef RANK_CLIP_GENMIN

@@ -13,6 +13,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/accessory.dmi'
 	mob_overlay_state = "cme"
 	icon_state = "cme0"
+	supports_variations = VOX_VARIATION
 //	world_file = 'icons/obj/world/rank.dmi'
 //	world_state = "cmm_rank"
 //	inventory_state = "cme0"
@@ -71,25 +72,21 @@
 /obj/item/clothing/accessory/rank/clip/cmo1
 	name = "rank patch, CMO1 Ensign"
 	desc = "A pair of patches that go on your fatigues and indicate your rank. This pair indicates an Ensign, the lowest commissioned officer rank."
-	mob_overlay_state = "cmo"
 	icon_state = "cmo1"
 
 /obj/item/clothing/accessory/rank/clip/cmo2
 	name = "rank patch, CMO2 Second Class Lieutenant"
 	desc = "A pair of patches that go on your fatigues and indicate your rank. This pair indicates a Second Class Lieutenant."
-	mob_overlay_state = "cmo"
 	icon_state = "cmo2"
 
 /obj/item/clothing/accessory/rank/clip/cmo3
 	name = "rank patch, CMO3 First Class Lieutenant"
 	desc = "A pair of patches that go on your fatigues and indicate your rank. This pair indicates a First Class Lieutenant."
-	mob_overlay_state = "cmo"
 	icon_state = "cmo3"
 
 /obj/item/clothing/accessory/rank/clip/cmo4
 	name = "rank patch, CMO4 Lieutenant Commander"
 	desc = "A pair of patches that go on your fatigues and indicate your rank. This pair indicates a Lieutenant Commander."
-	mob_overlay_state = "cmo"
 	icon_state = "cmo4"
 
 // senior officers
@@ -97,13 +94,11 @@
 /obj/item/clothing/accessory/rank/clip/cmo5
 	name = "rank patch, CMO5 Commander"
 	desc = "A pair of patches that go on your fatigues and indicate your rank. This pair indicates a Commander."
-	mob_overlay_state = "cmo"
 	icon_state = "cmo5"
 
 /obj/item/clothing/accessory/rank/clip/cmo6
 	name = "rank patch, CMO6 Captain"
 	desc = "A pair of patches that go on your fatigues and indicate your rank. This pair indicates a Captain."
-	mob_overlay_state = "cmo"
 	icon_state = "cmo6"
 
 // flag officers
@@ -111,29 +106,24 @@
 /obj/item/clothing/accessory/rank/clip/cmo7
 	name = "rank patch, CMO7 Brigadier General"
 	desc = "A pair of patches that go on your fatigues and indicate your rank. This pair indicates a Brigadier General."
-	mob_overlay_state = "cmo"
 	icon_state = "cmo7"
 
 /obj/item/clothing/accessory/rank/clip/cmo8
 	name = "rank patch, CMO8 Major General"
 	desc = "A pair of patches that go on your fatigues and indicate your rank. This pair indicates a Major General."
-	mob_overlay_state = "cmo"
 	icon_state = "cmo8"
 
 /obj/item/clothing/accessory/rank/clip/cmo9
 	name = "rank patch, CMO9 Lieutenant General"
 	desc = "A pair of patches that go on your fatigues and indicate your rank. This pair indicates a Lieutenant General."
-	mob_overlay_state = "cmo"
 	icon_state = "cmo9"
 
 /obj/item/clothing/accessory/rank/clip/cmo10
 	name = "rank patch, CMO10 General"
 	desc = "A pair of patches that go on your fatigues and indicate your rank. This pair indicates a General."
-	mob_overlay_state = "cmo"
 	icon_state = "cmo10"
 
 /obj/item/clothing/accessory/rank/clip/cmo11
 	name = "rank patch, CMO11 General of the League Minutemen" // if you mention fallout 4 im going to be really sad
 	desc = "A pair of patches that go on your fatigues and indicate your rank. This pair bears the insignia of the General of the League Minutemen, the highest possible rank."
-	mob_overlay_state = "cmo"
 	icon_state = "cmo11"

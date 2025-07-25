@@ -145,10 +145,14 @@
 			if(user && notifyAttach)
 				to_chat(user, span_notice("You attach [accessory] to [src]."))
 
+			// this is stupid and should be merged with update_inv_w_uniform()
+			// but i just want to get this working
 			if(ishuman(loc))
 				var/mob/living/carbon/human/H = loc
 				var/accessory_state = accessory.icon_state
 				var/icon_file = accessory.mob_overlay_icon
+				if(accessory.mob_overlay_state)
+					accessory_state = accessory.mob_overlay_state
 
 				if((H.dna.species.bodytype & BODYTYPE_DIGITIGRADE) && ((accessory.supports_variations & DIGITIGRADE_VARIATION) || (accessory.supports_variations & DIGITIGRADE_VARIATION_SAME_ICON_FILE)))
 					icon_file = DIGITIGRADE_ACCESSORY_PATH
