@@ -465,6 +465,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer4,
+/obj/machinery/holopad/emergency,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "gM" = (
@@ -1285,6 +1286,10 @@
 /obj/item/clothing/mask/gas/vigilitas,
 /obj/item/clothing/mask/gas/vigilitas,
 /obj/item/clothing/mask/gas/vigilitas,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/engi,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "sn" = (
@@ -3042,7 +3047,9 @@
 /area/ship/cargo)
 "LE" = (
 /obj/structure/table/reinforced,
-/obj/machinery/recharger,
+/obj/machinery/recharger{
+	pixel_x = -10
+	},
 /obj/item/bodycamera{
 	pixel_x = 10;
 	pixel_y = 9
@@ -3064,6 +3071,10 @@
 	pixel_y = -3
 	},
 /obj/machinery/light/directional/north,
+/obj/machinery/recharger,
+/obj/machinery/recharger{
+	pixel_x = 9
+	},
 /turf/open/floor/carpet/red,
 /area/ship/security/armory)
 "LS" = (
@@ -3310,6 +3321,7 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/holopad/emergency/command,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Ox" = (
@@ -3742,6 +3754,19 @@
 /area/ship/cargo)
 "Sm" = (
 /obj/effect/turf_decal/siding/white,
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_x = -10
+	},
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_x = -5
+	},
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_x = -1
+	},
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_x = 3
+	},
+/obj/structure/table,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Sn" = (
