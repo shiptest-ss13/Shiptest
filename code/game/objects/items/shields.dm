@@ -39,7 +39,7 @@
 /obj/item/shield/proc/on_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
 	take_damage(damage)
 
-/obj/item/shield/obj_break(damage_flag)
+/obj/item/shield/atom_break(damage_flag)
 	. = ..()
 	if(!broken)
 		if(isliving(loc))
@@ -149,7 +149,7 @@
 	var/shield_break_leftover = /obj/item/stack/sheet/mineral/wood
 	var/shield_break_sound = 'sound/effects/bang.ogg'
 
-/obj/item/shield/riot/buckler/obj_destruction(damage_flag)
+/obj/item/shield/riot/buckler/atom_destruction(damage_flag)
 	playsound(src, shield_break_sound, 50)
 	new shield_break_leftover(get_turf(src))
 	if(isliving(loc))
