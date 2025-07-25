@@ -12,10 +12,10 @@
 	wield_delay = 0.2 SECONDS
 	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
-	spread = 2
-	spread_unwielded = 5
+	spread = 6
+	spread_unwielded = 10
 
-	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/eoehoma)
+	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/eoehoma, /obj/item/ammo_casing/energy/lasergun/eoehoma/heavy)
 	manufacturer = MANUFACTURER_EOEHOMA
 
 
@@ -31,9 +31,9 @@
 
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser/eoehoma)
 	ammo_x_offset = 0
-	spread = 60
-	spread_unwielded = 100
-	dual_wield_spread = 100
+	spread = 30
+	spread_unwielded = 40
+	dual_wield_spread = 40
 	shaded_charge = TRUE
 	manufacturer = MANUFACTURER_EOEHOMA
 

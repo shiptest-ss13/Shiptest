@@ -3,8 +3,8 @@
 	name = "\improper Spooky Scary Skeleton"
 	id = SPECIES_SKELETON
 	sexes = 0
-	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/skeleton
-	species_traits = list(NOBLOOD, NOHUSK) //WHY THE FUCK DOES BONE MAN NOT HAVE BONES?!!
+	meat = /obj/item/food/meat/slab/human/mutant/skeleton
+	species_traits = list(NOBLOOD, HAS_BONE, NOHUSK)
 	inherent_traits = list(TRAIT_NOMETABOLISM,TRAIT_TOXIMMUNE,TRAIT_RESISTHEAT,TRAIT_NOBREATH,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE,\
 	TRAIT_GENELESS,TRAIT_PIERCEIMMUNE,TRAIT_NOHUNGER,TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_FAKEDEATH,TRAIT_XENO_IMMUNE,TRAIT_NOCLONELOSS)
 	inherent_biotypes = MOB_UNDEAD|MOB_HUMANOID
@@ -28,7 +28,7 @@
 	if(chem.type == /datum/reagent/consumable/milk)
 		if(chem.volume > 10)
 			H.reagents.remove_reagent(chem.type, chem.volume - 10)
-			to_chat(H, "<span class='warning'>The excess milk is dripping off your bones!</span>")
+			to_chat(H, span_warning("The excess milk is dripping off your bones!"))
 		H.heal_bodypart_damage(1,1, 0)
 		H.reagents.remove_reagent(chem.type, chem.metabolization_rate)
 		return TRUE
@@ -42,18 +42,18 @@
 				if(2)
 					H.manual_emote(pick("oofs silently.", "looks like their bones hurt.", "grimaces, as though their bones hurt."))
 				if(3)
-					to_chat(H, "<span class='warning'>Your bones hurt!</span>")
+					to_chat(H, span_warning("Your bones hurt!"))
 		if(chem.overdosed)
 			if(prob(4) && iscarbon(H)) //big oof
 				var/selected_part = pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG) //God help you if the same limb gets picked twice quickly.
 				var/obj/item/bodypart/bp = H.get_bodypart(selected_part) //We're so sorry skeletons, you're so misunderstood
 				if(bp)
 					playsound(H, get_sfx("desceration"), 50, TRUE, -1) //You just want to socialize
-					H.visible_message("<span class='warning'>[H] rattles loudly and flails around!!</span>", "<span class='danger'>Your bones hurt so much that your missing muscles spasm!!</span>")
+					H.visible_message(span_warning("[H] rattles loudly and flails around!!"), span_danger("Your bones hurt so much that your missing muscles spasm!!"))
 					H.say("OOF!!", forced=/datum/reagent/toxin/bonehurtingjuice)
 					bp.receive_damage(200, 0, 0) //But I don't think we should
 				else
-					to_chat(H, "<span class='warning'>Your missing arm aches from wherever you left it.</span>")
+					to_chat(H, span_warning("Your missing arm aches from wherever you left it."))
 					H.emote("sigh")
 		H.reagents.remove_reagent(chem.type, chem.metabolization_rate)
 		return TRUE

@@ -12,7 +12,7 @@
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4)
+	butcher_results = list(/obj/item/food/meat/slab = 4)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -49,7 +49,7 @@
 		if(enemies.len && prob(10))
 			enemies = list()
 			LoseTarget()
-			src.visible_message("<span class='notice'>[src] calms down.</span>")
+			src.visible_message(span_notice("[src] calms down."))
 	if(stat == CONSCIOUS)
 		eat_plants()
 		if(!pulledby)
@@ -61,7 +61,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/goat/Retaliate()
 	..()
-	src.visible_message("<span class='danger'>[src] gets an evil-looking gleam in [p_their()] eye.</span>")
+	src.visible_message(span_danger("[src] gets an evil-looking gleam in [p_their()] eye."))
 
 /mob/living/simple_animal/hostile/retaliate/goat/Move()
 	. = ..()
@@ -90,8 +90,8 @@
 		if(istype(H.dna.species, /datum/species/pod))
 			var/obj/item/bodypart/NB = pick(H.bodyparts)
 			H.visible_message(
-				"<span class='warning'>[src] takes a big chomp out of [H]!</span>", \
-				"<span class='userdanger'>[src] takes a big chomp out of your [NB]!</span>")
+				span_warning("[src] takes a big chomp out of [H]!"), \
+				span_userdanger("[src] takes a big chomp out of your [NB]!"))
 			NB.dismember()
 //cow
 /mob/living/simple_animal/cow
@@ -110,7 +110,7 @@
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 6)
+	butcher_results = list(/obj/item/food/meat/slab = 6)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -123,7 +123,7 @@
 	health = 50
 	maxHealth = 50
 	blood_volume = BLOOD_VOLUME_NORMAL
-	food_type = list(/obj/item/reagent_containers/food/snacks/grown/wheat)
+	food_type = list(/obj/item/food/grown/wheat)
 	tame_chance = 25
 	bonus_tame_chance = 15
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -146,9 +146,9 @@
 
 /mob/living/simple_animal/cow/attack_hand(mob/living/carbon/M)
 	if(!stat && M.a_intent == INTENT_DISARM && icon_state != icon_dead)
-		M.visible_message("<span class='warning'>[M] tips over [src].</span>",
-			"<span class='notice'>You tip over [src].</span>")
-		to_chat(src, "<span class='userdanger'>You are tipped over by [M]!</span>")
+		M.visible_message(span_warning("[M] tips over [src]."),
+			span_notice("You tip over [src]."))
+		to_chat(src, span_userdanger("You are tipped over by [M]!"))
 		Paralyze(60, ignore_canstun = TRUE)
 		icon_state = icon_dead
 		addtimer(CALLBACK(src, PROC_REF(cow_tipped), M), rand(20,50))
@@ -170,8 +170,8 @@
 	else
 		external = "[src] seems resigned to its fate."
 		internal = "You resign yourself to your fate."
-	visible_message("<span class='notice'>[external]</span>",
-		"<span class='revennotice'>[internal]</span>")
+	visible_message(span_notice("[external]"),
+		span_revennotice("[internal]"))
 
 ///Wisdom cow, gives XP to a random skill and speaks wisdoms
 /mob/living/simple_animal/cow/wisdom
@@ -188,7 +188,7 @@
 ///Give intense wisdom to the attacker if they're being friendly about it
 /mob/living/simple_animal/cow/wisdom/attack_hand(mob/living/carbon/M)
 	if(!stat && M.a_intent == INTENT_HELP)
-		to_chat(M, "<span class='nicegreen'>[src] whispers you some intense wisdoms and then disappears!</span>")
+		to_chat(M, span_nicegreen("[src] whispers you some intense wisdoms and then disappears!"))
 		M.mind?.adjust_experience(pick(GLOB.skill_types), 500)
 		do_smoke(1, get_turf(src))
 		qdel(src)
@@ -212,7 +212,7 @@
 	density = FALSE
 	speak_chance = 2
 	turns_per_move = 2
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/chicken = 1)
+	butcher_results = list(/obj/item/food/meat/slab/chicken = 1)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -263,9 +263,9 @@
 	density = FALSE
 	speak_chance = 2
 	turns_per_move = 3
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/chicken = 2)
-	var/egg_type = /obj/item/reagent_containers/food/snacks/egg
-	food_type = list(/obj/item/reagent_containers/food/snacks/grown/wheat)
+	butcher_results = list(/obj/item/food/meat/slab/chicken = 2)
+	var/egg_type = /obj/item/food/egg
+	food_type = list(/obj/item/food/grown/wheat)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -313,7 +313,7 @@
 			qdel(O)
 			eggsleft += rand(1, 4)
 		else
-			to_chat(user, "<span class='warning'>[name] doesn't seem hungry!</span>")
+			to_chat(user, span_warning("[name] doesn't seem hungry!"))
 	else
 		..()
 
@@ -322,7 +322,7 @@
 	if(!.)
 		return
 	if((!stat && prob(3) && eggsleft > 0) && egg_type)
-		visible_message("<span class='alertalien'>[src] [pick(layMessage)]</span>")
+		visible_message(span_alertalien("[src] [pick(layMessage)]"))
 		eggsleft--
 		var/obj/item/E = new egg_type(get_turf(src))
 		E.pixel_x = E.base_pixel_x + rand(-6,6)
@@ -331,12 +331,12 @@
 			if(chicken_count < MAX_CHICKENS && prob(25))
 				START_PROCESSING(SSobj, E)
 
-/obj/item/reagent_containers/food/snacks/egg/var/amount_grown = 0
-/obj/item/reagent_containers/food/snacks/egg/process(seconds_per_tick)
+/obj/item/food/egg/var/amount_grown = 0
+/obj/item/food/egg/process(seconds_per_tick)
 	if(isturf(loc))
 		amount_grown += rand(1,2) * seconds_per_tick
 		if(amount_grown >= 200)
-			visible_message("<span class='notice'>[src] hatches with a quiet cracking sound.</span>")
+			visible_message(span_notice("[src] hatches with a quiet cracking sound."))
 			new /mob/living/simple_animal/chick(get_turf(src))
 			STOP_PROCESSING(SSobj, src)
 			qdel(src)
@@ -359,9 +359,9 @@
 	density = FALSE
 	speak_chance = 2
 	turns_per_move = 3
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/chicken = 2)
-	var/egg_type = /obj/item/reagent_containers/food/snacks/egg
-	food_type = list(/obj/item/reagent_containers/food/snacks/grown/wheat)
+	butcher_results = list(/obj/item/food/meat/slab/chicken = 2)
+	var/egg_type = /obj/item/food/egg
+	food_type = list(/obj/item/food/grown/wheat)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -411,7 +411,7 @@
 			qdel(O)
 			eggsleft += rand(1, 4)
 		else
-			to_chat(user, "<span class='warning'>[name] doesn't seem hungry!</span>")
+			to_chat(user, span_warning("[name] doesn't seem hungry!"))
 	else
 		..()
 
@@ -420,7 +420,7 @@
 	if(!.)
 		return
 	if((!stat && prob(3) && eggsleft > 0) && egg_type)
-		visible_message("<span class='alertalien'>[src] [pick(layMessage)]</span>")
+		visible_message(span_alertalien("[src] [pick(layMessage)]"))
 		eggsleft--
 		var/obj/item/E = new egg_type(get_turf(src))
 		E.pixel_x = E.base_pixel_x + rand(-6,6)
@@ -445,7 +445,7 @@
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 3)
+	butcher_results = list(/obj/item/food/meat/slab = 3)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently nudges"
@@ -458,6 +458,27 @@
 	health = 75
 	maxHealth = 75
 	blood_volume = BLOOD_VOLUME_NORMAL
-	food_type = list(/obj/item/reagent_containers/food/snacks/grown/apple)
+	food_type = list(/obj/item/food/grown/apple)
 	footstep_type = FOOTSTEP_MOB_SHOE
 
+//Now that they cant lay eggs I will want to repath these at some point
+/mob/living/simple_animal/chicken/rabbit
+	name = "\improper rabbit"
+	desc = "The hippiest hop around."
+	icon = 'icons/mob/easter.dmi'
+	icon_state = "b_rabbit"
+	icon_living = "b_rabbit"
+	icon_dead = "b_rabbit_dead"
+	icon_prefix = "b_rabbit"
+	speak = list()
+	speak_emote = list("sniffles","twitches")
+	emote_hear = list("hops.")
+	emote_see = list("hops around","bounces up and down")
+	butcher_results = list(/obj/item/food/meat/slab = 1)
+	food_type = /obj/item/food/grown/carrot
+	minbodytemp = 0
+	eggsFertile = FALSE
+	eggsleft = 0
+	egg_type = null
+	feedMessages = list("It nibbles happily.","It noms happily.")
+	layMessage = list("hides an egg.","scampers around suspiciously.","begins making a huge racket.","begins shuffling.")

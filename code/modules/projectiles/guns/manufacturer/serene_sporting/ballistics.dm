@@ -27,8 +27,8 @@
 
 	w_class = WEIGHT_CLASS_SMALL
 
-	spread = 25
-	spread_unwielded = 45
+	spread = 15
+	spread_unwielded = 35
 	recoil = -2
 	recoil_unwielded = -2
 
@@ -50,6 +50,7 @@
 	default_attachments = list(/obj/item/attachment/m17_barrel)
 
 EMPTY_GUN_HELPER(automatic/pistol/m17)
+NO_MAG_GUN_HELPER(automatic/pistol/m17)
 
 /obj/item/ammo_box/magazine/m17
 	name = "Model 17 magazine (.22lr)"
@@ -92,8 +93,8 @@ EMPTY_GUN_HELPER(automatic/pistol/m17)
 	eject_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
 
-	recoil_unwielded = 4
-	recoil = 1
+	recoil_unwielded = 3
+	recoil = 0.5
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -126,11 +127,11 @@ NO_MAG_GUN_HELPER(automatic/pistol/m20_auto_elite)
 	desc = "A large handgun chambered .44 Roumain and manufactured by Serene Outdoors. Modified to Inteq Risk Management Group's standards and issued as a heavy sidearm for officers."
 
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/serene_outdoors/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/serene_outdoors/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/serene_outdoors/onmob.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
 	icon_state = "m20_inteq"
-	item_state = "inteq_generic"
+	item_state = "m20_inteq"
 
 	default_ammo_type = /obj/item/ammo_box/magazine/m20_auto_elite
 	allowed_ammo_types = list(
@@ -220,6 +221,9 @@ EMPTY_GUN_HELPER(automatic/m12_sporter)
 	icon_state = "larker"
 	item_state = "larker"
 
+	wear_minor_threshold = 240
+	wear_major_threshold = 720
+	wear_maximum = 1200
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "triptych")
 	default_firemode = FIREMODE_BURST
@@ -266,6 +270,7 @@ EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
 	recoil_unwielded = 6
 	fire_delay = 0.75 SECONDS
 	wield_delay = 1.15 SECONDS //a little longer and less wieldy than other DMRs
+	zoom_out_amt = 2
 
 	can_be_sawn_off = FALSE
 
@@ -300,16 +305,6 @@ NO_MAG_GUN_HELPER(automatic/marksman/woodsman)
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/m23/empty
-	start_empty = TRUE
-
-/obj/item/ammo_box/magazine/m23/extended
-	name = "Model 23 Extended Magazine (8x50mmR)"
-	desc = "A 10-round magazine for the Model 23 \"Woodsman\". These rounds do high damage, with excellent armor penetration."
-	icon_state = "woodsman_extended-1"
-	base_icon_state = "woodsman_extended"
-	max_ammo = 10
-
-/obj/item/ammo_box/magazine/m23/extended/empty
 	start_empty = TRUE
 
 /* super soaker */
@@ -370,6 +365,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/woodsman)
 	)
 
 EMPTY_GUN_HELPER(automatic/m15)
+NO_MAG_GUN_HELPER(automatic/m15)
 
 /obj/item/ammo_box/magazine/m15
 	name = "Model 15 magazine (5.56x42mm CLIP)"

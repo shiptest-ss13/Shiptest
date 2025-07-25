@@ -34,7 +34,7 @@
 	retreat_distance = 2
 	minimum_distance = 1
 	icon_state = "mining_drone_offense"
-	faction = list("mining", "turret")
+	faction = list("mining", FACTION_TURRET)
 	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/effect/spawner/random/minebot)
 	projectiletype = /obj/projectile/kinetic/miner/weak
 

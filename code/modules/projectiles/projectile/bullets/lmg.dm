@@ -40,6 +40,25 @@
 /obj/projectile/bullet/incendiary/fnx99
 	damage = 25
 
+// Mech Railgun
+
+/obj/projectile/bullet/p50/penetrator/sabot
+	name = "Iron-tungsten rod"
+	icon_state = "sabot"
+	projectile_piercing = NONE // Piercing was requested to be disabled
+	projectile_phasing = NONE
+	var/anti_armour_damage = 50
+	ricochet_chance = 0 // Superheated tungsten rod - I'd like to imagine it's impossible for it to ricochet
+	speed = 0.1 // Railgun, go ludicrously fast to make up for lost piercing
+
+/obj/projectile/bullet/p50/penetrator/sabot/on_hit(atom/target, blocked = FALSE)
+	..()
+	if(ismecha(target))
+		var/obj/mecha/M = target
+		M.take_damage(anti_armour_damage)
+		// Mechs take extra damage
+	return BULLET_ACT_HIT
+
 // Turrets
 
 /obj/projectile/bullet/manned_turret

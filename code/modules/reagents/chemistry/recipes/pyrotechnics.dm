@@ -3,7 +3,16 @@
 	var/modifier = 0
 
 /datum/chemical_reaction/reagent_explosion/on_reaction(datum/reagents/holder, created_volume)
-	explode(holder, created_volume)
+	// We do all this because created_volume is actually the number of time the reaction occurs not the created volume
+	var/volume_per_reaction = 0
+	if (results.len)
+		for(var/reagent in results)
+			volume_per_reaction += results[reagent]
+	else
+		for(var/reagent in required_reagents)
+			volume_per_reaction += required_reagents[reagent]
+
+	explode(holder, created_volume*volume_per_reaction)
 
 /datum/chemical_reaction/reagent_explosion/proc/explode(datum/reagents/holder, created_volume)
 	if(QDELETED(holder.my_atom))
@@ -149,7 +158,7 @@
 				deity = GLOB.deity
 			else
 				deity = "Christ"
-			to_chat(R, "<span class='userdanger'>The power of [deity] compels you!</span>")
+			to_chat(R, span_userdanger("The power of [deity] compels you!"))
 			R.stun(20)
 			R.reveal(100)
 			R.adjustHealth(50)
@@ -164,7 +173,7 @@
 	required_temp = 474
 	strengthdiv = 6
 	modifier = 1
-	mix_message = "<span class='boldannounce'>Sparks start flying around the gunpowder!</span>"
+	mix_message = span_boldannounce("Sparks start flying around the gunpowder!")
 
 /datum/chemical_reaction/reagent_explosion/gunpowder_explosion/on_reaction(datum/reagents/holder, created_volume)
 	addtimer(CALLBACK(src, PROC_REF(explode), holder, created_volume), rand(5,10) SECONDS)
@@ -329,7 +338,7 @@
 	holder.remove_reagent(/datum/reagent/smoke_powder, created_volume*3)
 	var/smoke_radius = round(sqrt(created_volume * 1.5), 1)
 	var/location = get_turf(holder.my_atom)
-	var/datum/effect_system/smoke_spread/chem/S = new
+	var/datum/effect_system/smoke_spread/chem/thin/S = new
 	S.attach(location)
 	playsound(location, 'sound/effects/smoke.ogg', 50, TRUE, -3)
 	if(S)
@@ -344,6 +353,27 @@
 	mob_react = FALSE
 
 /datum/chemical_reaction/smoke_powder_smoke/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.my_atom)
+	var/smoke_radius = round(sqrt(created_volume / 2), 1)
+	var/datum/effect_system/smoke_spread/chem/thin/S = new
+	S.attach(location)
+	playsound(location, 'sound/effects/smoke.ogg', 50, TRUE, -3)
+	if(S)
+		S.set_up(holder, smoke_radius, location, 0)
+		S.start()
+	if(holder && holder.my_atom)
+		holder.clear_reagents()
+
+/datum/chemical_reaction/dense_smoke_powder
+	results = list(/datum/reagent/dense_smoke_powder = 4)
+	required_reagents = list(/datum/reagent/smoke_powder = 3, /datum/reagent/carbon = 1)
+
+/datum/chemical_reaction/dense_smoke_powder_smoke
+	required_reagents = list(/datum/reagent/dense_smoke_powder = 1)
+	required_temp = 374
+	mob_react = FALSE
+
+/datum/chemical_reaction/dense_smoke_powder_smoke/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	var/smoke_radius = round(sqrt(created_volume / 2), 1)
 	var/datum/effect_system/smoke_spread/chem/S = new
@@ -430,19 +460,19 @@
 /datum/chemical_reaction/teslium
 	results = list(/datum/reagent/teslium = 3)
 	required_reagents = list(/datum/reagent/stable_plasma = 1, /datum/reagent/silver = 1, /datum/reagent/gunpowder = 1)
-	mix_message = "<span class='danger'>A jet of sparks flies from the mixture as it merges into a flickering slurry.</span>"
+	mix_message = span_danger("A jet of sparks flies from the mixture as it merges into a flickering slurry.")
 	required_temp = 400
 
 /datum/chemical_reaction/energized_jelly
 	results = list(/datum/reagent/teslium/energized_jelly = 2)
 	required_reagents = list(/datum/reagent/toxin/slimejelly = 1, /datum/reagent/teslium = 1)
-	mix_message = "<span class='danger'>The slime jelly starts glowing intermittently.</span>"
+	mix_message = span_danger("The slime jelly starts glowing intermittently.")
 
 /datum/chemical_reaction/reagent_explosion/teslium_lightning
 	required_reagents = list(/datum/reagent/teslium = 1, /datum/reagent/water = 1)
 	strengthdiv = 100
 	modifier = -100
-	mix_message = "<span class='boldannounce'>The teslium starts to spark as electricity arcs away from it!</span>"
+	mix_message = span_boldannounce("The teslium starts to spark as electricity arcs away from it!")
 	mix_sound = 'sound/machines/defib_zap.ogg'
 	var/zap_flags = ZAP_MOB_DAMAGE | ZAP_OBJ_DAMAGE | ZAP_MOB_STUN
 

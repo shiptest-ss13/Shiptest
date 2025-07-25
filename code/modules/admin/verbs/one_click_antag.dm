@@ -14,13 +14,9 @@
 /datum/admins/proc/one_click_antag()
 
 	var/dat = {"
-		<a href='?src=[REF(src)];[HrefToken()];makeAntag=traitors'>Make Traitors</a><br>
-		<a href='?src=[REF(src)];[HrefToken()];makeAntag=changelings'>Make Changelings</a><br>
-		<a href='?src=[REF(src)];[HrefToken()];makeAntag=wizard'>Make Wizard (Requires Ghosts)</a><br>
-		<a href='?src=[REF(src)];[HrefToken()];makeAntag=nukeops'>Make Nuke Team (Requires Ghosts)</a><br>
-		<a href='?src=[REF(src)];[HrefToken()];makeAntag=centcom'>Make Response Team (Requires Ghosts)</a><br>
-		<a href='?src=[REF(src)];[HrefToken()];makeAntag=abductors'>Make Abductor Team (Requires Ghosts)</a><br>
-		<a href='?src=[REF(src)];[HrefToken()];makeAntag=revenant'>Make Revenant (Requires Ghost)</a><br>
+		<a href='byond://?src=[REF(src)];[HrefToken()];makeAntag=centcom'>Make Response Team (Requires Ghosts)</a><br>
+		<a href='byond://?src=[REF(src)];[HrefToken()];makeAntag=deathsquad'>Make Deathsquad (Requires Ghosts)</a><br>
+		<a href='byond://?src=[REF(src)];[HrefToken()];makeAntag=frontiersmen'>Make Frontiersmen (Requires Ghost)</a><br>
 		"}
 
 	var/datum/browser/popup = new(usr, "oneclickantag", "Quick-Create Antagonist", 400, 400)
@@ -37,141 +33,6 @@
 	if(!considered_alive(applicant.mind) || considered_afk(applicant.mind)) //makes sure the player isn't a zombie, brain, or just afk all together
 		return FALSE
 	return !is_banned_from(applicant.ckey, list(targetrole, ROLE_SYNDICATE))
-
-
-/datum/admins/proc/makeTraitors()
-	var/datum/game_mode/traitor/temp = new
-
-	if(CONFIG_GET(flag/protect_roles_from_antagonist))
-		temp.restricted_jobs += temp.protected_jobs
-
-	if(CONFIG_GET(flag/protect_assistant_from_antagonist))
-		temp.restricted_jobs += "Assistant"
-
-	var/list/mob/living/carbon/human/candidates = list()
-	var/mob/living/carbon/human/H = null
-
-	for(var/mob/living/carbon/human/applicant in GLOB.player_list)
-		if(isReadytoRumble(applicant, ROLE_TRAITOR))
-			if(temp.age_check(applicant.client))
-				if(!(applicant.job in temp.restricted_jobs))
-					candidates += applicant
-
-	if(candidates.len)
-		var/numTraitors = min(candidates.len, 3)
-
-		for(var/i = 0, i<numTraitors, i++)
-			H = pick(candidates)
-			H.mind.make_Traitor()
-			candidates.Remove(H)
-
-		return 1
-
-
-	return 0
-
-
-/datum/admins/proc/makeChangelings()
-
-	var/datum/game_mode/changeling/temp = new
-	if(CONFIG_GET(flag/protect_roles_from_antagonist))
-		temp.restricted_jobs += temp.protected_jobs
-
-	if(CONFIG_GET(flag/protect_assistant_from_antagonist))
-		temp.restricted_jobs += "Assistant"
-
-	var/list/mob/living/carbon/human/candidates = list()
-	var/mob/living/carbon/human/H = null
-
-	for(var/mob/living/carbon/human/applicant in GLOB.player_list)
-		if(isReadytoRumble(applicant, ROLE_CHANGELING))
-			if(temp.age_check(applicant.client))
-				if(!(applicant.job in temp.restricted_jobs))
-					candidates += applicant
-
-	if(candidates.len)
-		var/numChangelings = min(candidates.len, 3)
-
-		for(var/i = 0, i<numChangelings, i++)
-			H = pick(candidates)
-			H.mind.make_Changeling()
-			candidates.Remove(H)
-
-		return 1
-
-	return 0
-
-
-/datum/admins/proc/makeWizard()
-
-	var/list/mob/dead/observer/candidates = pollGhostCandidates("Do you wish to be considered for the position of a Wizard Foundation 'diplomat'?", ROLE_WIZARD, null)
-
-	var/mob/dead/observer/selected = pick_n_take(candidates)
-
-	var/mob/living/carbon/human/new_character = makeBody(selected)
-	new_character.mind.make_Wizard()
-	return TRUE
-
-/datum/admins/proc/makeNukeTeam()
-	var/datum/game_mode/nuclear/temp = new
-	var/list/mob/dead/observer/candidates = pollGhostCandidates("Do you wish to be considered for a nuke team being sent in?", ROLE_OPERATIVE, temp)
-	var/list/mob/dead/observer/chosen = list()
-	var/mob/dead/observer/theghost = null
-
-	if(candidates.len)
-		var/numagents = 5
-		var/agentcount = 0
-
-		for(var/i = 0, i<numagents,i++)
-			shuffle_inplace(candidates) //More shuffles means more randoms
-			for(var/mob/j in candidates)
-				if(!j || !j.client)
-					candidates.Remove(j)
-					continue
-
-				theghost = j
-				candidates.Remove(theghost)
-				chosen += theghost
-				agentcount++
-				break
-		//Making sure we have atleast 3 Nuke agents, because less than that is kinda bad
-		if(agentcount < 3)
-			return 0
-
-		//Let's find the spawn locations
-		var/leader_chosen = FALSE
-		var/datum/team/nuclear/nuke_team
-		for(var/mob/c in chosen)
-			var/mob/living/carbon/human/new_character=makeBody(c)
-			if(!leader_chosen)
-				leader_chosen = TRUE
-				var/datum/antagonist/nukeop/N = new_character.mind.add_antag_datum(/datum/antagonist/nukeop/leader)
-				nuke_team = N.nuke_team
-			else
-				new_character.mind.add_antag_datum(/datum/antagonist/nukeop,nuke_team)
-		return 1
-	else
-		return 0
-
-
-
-
-
-/datum/admins/proc/makeAliens()
-	var/datum/round_event/ghost_role/alien_infestation/E = new(FALSE)
-	E.spawncount = 3
-	// TODO The fact we have to do this rather than just have events start
-	// when we ask them to, is bad.
-	E.processing = TRUE
-	return TRUE
-
-/datum/admins/proc/makeSpaceNinja()
-	new /datum/round_event/ghost_role/ninja()
-	return 1
-
-// DEATH SQUADS
-/datum/admins/proc/makeDeathsquad()
-	return makeEmergencyresponseteam(/datum/ert/independent/deathsquad)
 
 // CENTCOM RESPONSE TEAM
 
@@ -299,7 +160,7 @@
 		var/list/spawnpoints = GLOB.emergencyresponseteamspawn
 		var/index = 0
 
-		var/list/mob/dead/observer/candidates = pollGhostCandidates("Do you wish to be considered for [ertemplate.polldesc]?", "deathsquad")
+		var/list/mob/dead/observer/candidates = pollGhostCandidates("Do you wish to be considered for [ertemplate.polldesc]?", null)
 		var/teamSpawned = FALSE
 
 		// This list will take priority over spawnpoints if not empty
@@ -329,7 +190,16 @@
 					spawn_location = SSovermap.outposts[1]
 
 			if(!spawn_location)
-				spawn_location = SSovermap.get_unused_overmap_square()
+				var/datum/overmap_star_system/selected_system //the star system we are
+
+				if(length(SSovermap.tracked_star_systems) > 1)
+					selected_system = tgui_input_list(usr, "Which star system do you want to spawn it in?", "Spawn ERT Shuttle", SSovermap.tracked_star_systems)
+				else
+					selected_system = SSovermap.tracked_star_systems[1]
+				if(!selected_system)
+					return //if selected_system didnt get selected, we nope out, this is very bad
+
+				spawn_location = selected_system.get_unused_overmap_square()
 
 			var/datum/overmap/ship/controlled/ship = new(spawn_location, template)
 
@@ -485,14 +355,13 @@
 
 	return
 
+/datum/admins/proc/makeDeathsquad()
+	return makeEmergencyresponseteam(/datum/ert/independent/deathsquad)
 
-//Abductors
-/datum/admins/proc/makeAbductorTeam()
-	new /datum/round_event/ghost_role/abductor
-	return 1
-
-/datum/admins/proc/makeRevenant()
-	new /datum/round_event/ghost_role/revenant(TRUE, TRUE)
-	return 1
+/datum/admins/proc/makeFrontiersmen()
+	var/datum/round_event_control/team/frontiersmen/event = new()
+	event.admin_setup()
+	event.run_event(event_cause = "admins")
+	return TRUE
 
 #undef ERT_EXPERIENCED_LEADER_CHOOSE_TOP

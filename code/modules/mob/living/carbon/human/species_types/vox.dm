@@ -4,10 +4,10 @@
 	id = SPECIES_VOX
 	default_color = "6060FF"
 	species_age_max = 280
-	species_traits = list(EYECOLOR)
+	species_traits = list(EYECOLOR, HAS_BONE, HAS_FLESH)
 	mutant_bodyparts = list("vox_head_quills", "vox_neck_quills")
 	default_features = list("mcolor" = "0F0", "wings" = "None", "vox_head_quills" = "None", "vox_neck_quills" = "None", "body_size" = "Normal")
-	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
+	meat = /obj/item/food/meat/slab/chicken
 	disliked_food = GRAIN
 	liked_food = MEAT
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP
@@ -120,7 +120,7 @@
 	if(allergic_to[chem.type]) //Is_type_in_typecache is BAD.
 		H.reagents.add_reagent(/datum/reagent/toxin/histamine, chem.metabolization_rate * 3)
 		if(prob(5))
-			to_chat(H, "<span class='danger'>[pick(allergy_reactions)]</span>")
+			to_chat(H, span_danger("[pick(allergy_reactions)]"))
 		else if(prob(5))
 			H.emote("clack")
 		return FALSE //Its a bit TOO mean to have the chems not work at all.
@@ -178,17 +178,17 @@
 		if(I && I.w_class <= WEIGHT_CLASS_SMALL)
 			if(H.temporarilyRemoveItemFromInventory(I, FALSE, FALSE))
 				held_item = I
-				to_chat(H,"<span class='notice'>You move \the [I] into your tail's grip.</span>")
+				to_chat(H,span_notice("You move \the [I] into your tail's grip."))
 				RegisterSignal(owner, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
 				handle_sprite_magic(force = TRUE)
 				return
 
-		to_chat(H, "<span class='warning'>You are unable to hold that item in your tail!</span>")
+		to_chat(H, span_warning("You are unable to hold that item in your tail!"))
 
 /datum/action/innate/tail_hold/proc/on_examine(datum/source, mob/user, list/examine_list)
 	var/mob/living/carbon/human/H = owner
 	if(held_item)
-		examine_list += "<span class='notice'>[capitalize(H.p_they())] [H.p_are()] holding \a [held_item] in [H.p_their()] tail.</span>"
+		examine_list += span_notice("[capitalize(H.p_they())] [H.p_are()] holding \a [held_item] in [H.p_their()] tail.")
 
 /datum/action/innate/tail_hold/proc/handle_sprite_magic(mob/M, olddir, newdir, force = FALSE)
 	if(!held_item)

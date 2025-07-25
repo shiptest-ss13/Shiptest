@@ -49,6 +49,22 @@
 	name = "energybar wrapper"
 	icon_state = "energybar"
 
+/obj/item/trash/mirastin
+	name = "empty tin"
+	icon_state = "miras"
+	resistance_flags = NONE
+	grind_results = list(/datum/reagent/aluminium = 10) //claims to be tin
+
+/obj/item/trash/lifosa
+	name = "empty can"
+	icon_state = "lifosa"
+	resistance_flags = NONE
+	grind_results = list(/datum/reagent/aluminium = 10)
+
+/obj/item/trash/dote
+	name = "\improper Dote on it!"
+	icon_state= "dote"
+
 /obj/item/trash/waffles
 	name = "waffles tray"
 	icon_state = "waffles"
@@ -84,7 +100,7 @@
 
 /obj/item/trash/can/food/peaches
 	name = "canned peaches"
-	icon = 'icons/obj/food/food.dmi'
+	icon = 'icons/obj/food/canned.dmi'
 	icon_state = "peachcan_empty"
 
 /obj/item/trash/can/food/peaches/maint
@@ -93,8 +109,13 @@
 
 /obj/item/trash/can/food/beans
 	name = "tin of beans"
-	icon = 'icons/obj/food/food.dmi'
+	icon = 'icons/obj/food/canned.dmi'
 	icon_state = "beans_empty"
+
+/obj/item/trash/can/food/beefbroth
+	name = "canned beef broth"
+	icon = 'icons/obj/food/canned.dmi'
+	icon_state = "beefcan_empty"
 
 /obj/item/trash/can/Initialize()
 	. = ..()

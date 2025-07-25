@@ -14,6 +14,8 @@
 	var/icon_icon = 'icons/mob/actions.dmi' //This is the file for the ACTION icon
 	var/button_icon_state = "default" //And this is the state for the action icon
 	var/mob/owner
+		///List of all mobs that are viewing our action button -> A unique movable for them to view.
+	var/list/viewers = list()
 
 /datum/action/New(Target)
 	link_to(Target)
@@ -109,6 +111,10 @@
 		return FALSE
 	return TRUE
 
+/datum/action/proc/UpdateButtons(status_only, force)
+	for(var/datum/hud/hud in viewers)
+		var/atom/movable/screen/movable/button = viewers[hud]
+		UpdateButtonIcon(button, status_only, force)
 
 /datum/action/proc/UpdateButtonIcon(status_only = FALSE, force = FALSE)
 	if(button)
@@ -349,10 +355,10 @@
 	if(istype(target, /obj/item/clothing/head/helmet/space/hardsuit/berserker))
 		var/obj/item/clothing/head/helmet/space/hardsuit/berserker/berzerk = target
 		if(berzerk.berserk_active)
-			to_chat(owner, "<span class='warning'>You are already berserk!</span>")
+			to_chat(owner, span_warning("You are already berserk!"))
 			return
 		if(berzerk.berserk_charge < 100)
-			to_chat(owner, "<span class='warning'>You don't have a full charge.</span>")
+			to_chat(owner, span_warning("You don't have a full charge."))
 			return
 		berzerk.berserk_mode(owner)
 		return
@@ -452,7 +458,7 @@
 			owner.research_scanner++
 		else
 			owner.research_scanner--
-		to_chat(owner, "<span class='notice'>[target] research scanner has been [active ? "activated" : "deactivated"].</span>")
+		to_chat(owner, span_notice("[target] research scanner has been [active ? "activated" : "deactivated"]."))
 		return 1
 
 /datum/action/item_action/toggle_research_scanner/Remove(mob/M)
@@ -516,7 +522,7 @@
 		return
 	//Box closing from here on out.
 	if(!isturf(owner.loc)) //Don't let the player use this to escape mechs/welded closets.
-		to_chat(owner, "<span class='warning'>You need more space to activate this implant!</span>")
+		to_chat(owner, span_warning("You need more space to activate this implant!"))
 		return
 	if(cooldown < world.time - 100)
 		var/box = new boxtype(owner.drop_location())
@@ -659,20 +665,6 @@
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "jetboot"
 
-/datum/action/language_menu
-	name = "Language Menu"
-	desc = "Open the language menu to review your languages, their keys, and select your default language."
-	button_icon_state = "language_menu"
-	check_flags = NONE
-
-/datum/action/language_menu/Trigger()
-	if(!..())
-		return FALSE
-	if(ismob(owner))
-		var/mob/M = owner
-		var/datum/language_holder/H = M.get_language_holder()
-		H.open_language_menu(usr)
-
 /datum/action/item_action/wheelys
 	name = "Toggle Wheely-Heel's Wheels"
 	desc = "Pops out or in your wheely-heel's wheels."
@@ -761,8 +753,80 @@
 	if(istype(target, /obj/item/flashlight/lantern/lanternbang))
 		var/obj/item/flashlight/lantern/lanternbang/L = target
 		if(L.cooldown)
-			to_chat(owner, "<span class='warning'>The lanternbang is still on cooldown!</span>")
+			to_chat(owner, span_warning("The lanternbang is still on cooldown!"))
 			return
-		to_chat(owner, "<span class='warning'>You overload the lanternbang!</span>")
+		to_chat(owner, span_warning("You overload the lanternbang!"))
 		L.activate()
 		return
+
+/// Gives our action to the passed viewer.
+/// Puts our action in their actions list and shows them the button.
+/datum/action/proc/GiveAction(mob/viewer)
+	var/datum/hud/our_hud = viewer.hud_used
+	if(viewers[our_hud]) // Already have a copy of us? go away
+		return
+
+	LAZYOR(viewer.actions, src) // Move this in
+	ShowTo(viewer)
+
+/// Adds our action button to the screen of the passed viewer.
+/datum/action/proc/ShowTo(mob/viewer)
+	var/datum/hud/our_hud = viewer.hud_used
+	if(!our_hud || viewers[our_hud]) // There's no point in this if you have no hud in the first place
+		return
+
+	var/atom/movable/screen/movable/action_button/button = CreateButton()
+	SetId(button, viewer)
+
+	viewers[our_hud] = button
+	if(viewer.client)
+		viewer.client.screen += button
+	viewer.update_action_buttons()
+
+/// Removes our action from the passed viewer.
+/datum/action/proc/HideFrom(mob/viewer)
+	var/datum/hud/our_hud = viewer.hud_used
+	var/atom/movable/screen/movable/action_button/button = viewers[our_hud]
+	LAZYREMOVE(viewer.actions, src)
+	if(button)
+		qdel(button)
+
+/// Creates an action button movable for the passed mob, and returns it.
+/datum/action/proc/CreateButton()
+	var/atom/movable/screen/movable/action_button/button = new()
+	button.linked_action = src
+	button.name = name
+	button.actiontooltipstyle = buttontooltipstyle
+	if(desc)
+		button.desc = desc
+	return button
+
+/datum/action/proc/SetId(atom/movable/screen/movable/action_button/our_button, mob/owner)
+	//button id generation
+	var/bitfield = 0
+	for(var/datum/action/action in owner.actions)
+		if(action == src) // This could be us, which is dumb
+			continue
+		var/atom/movable/screen/movable/action_button/button = action.viewers[owner.hud_used]
+		if(action.name == name && button.id)
+			bitfield |= button.id
+
+	bitfield = ~bitfield // Flip our possible ids, so we can check if we've found a unique one
+	for(var/i in 0 to 23) // We get 24 possible bitflags in dm
+		var/bitflag = 1 << i // Shift us over one
+		if(bitfield & bitflag)
+			our_button.id = bitflag
+			return
+
+/// A general use signal proc that reacts to an event and updates our button icon in accordance
+/datum/action/proc/update_icon_on_signal(datum/source)
+	SIGNAL_HANDLER
+
+	UpdateButtons()
+
+/// Signal proc for COMSIG_MIND_TRANSFERRED - for minds, transfers our action to our new mob on mind transfer
+/datum/action/proc/on_target_mind_swapped(datum/mind/source, mob/old_current)
+	SIGNAL_HANDLER
+
+	// Grant() calls Remove() from the existing owner so we're covered on that
+	Grant(source.current)

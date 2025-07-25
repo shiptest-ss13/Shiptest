@@ -2,10 +2,6 @@
 	description = span_warning("I guess my antics have finally caught up with me.")
 	mood_change = -1
 
-/datum/mood_event/broken_vow //Used for when mimes break their vow of silence
-	description = span_boldwarning("I have brought shame upon my name, and betrayed my fellow mimes by breaking our sacred vow...")
-	mood_change = -8
-
 /datum/mood_event/on_fire
 	description = span_boldwarning("I'M ON FIRE!!!")
 	mood_change = -12
@@ -50,11 +46,6 @@
 /datum/mood_event/depression_minimal
 	description = span_warning("I feel a bit down.")
 	mood_change = -10
-	timeout = 2 MINUTES
-
-/datum/mood_event/depression_mild
-	description = span_warning("I feel sad for no particular reason.")
-	mood_change = -12
 	timeout = 2 MINUTES
 
 /datum/mood_event/depression_moderate
@@ -103,14 +94,6 @@
 	description = span_warning("I should have paid attention to the epilepsy warning.")
 	mood_change = -3
 	timeout = 5 MINUTES
-
-/datum/mood_event/nyctophobia
-	description = span_warning("It sure is dark around here...")
-	mood_change = -3
-
-/datum/mood_event/family_heirloom_missing
-	description = span_warning("I'm missing my family heirloom...")
-	mood_change = -4
 
 /datum/mood_event/healsbadman
 	description = span_warning("I feel like something is moving through my veins, eating away at me!")
@@ -168,10 +151,6 @@
 	description = span_boldwarning("Some unexplainable sadness is consuming me...")
 	mood_change = -15
 	timeout = 90 SECONDS
-
-/datum/mood_event/back_pain
-	description = span_boldwarning("Bags never sit right on my back, this hurts like hell!")
-	mood_change = -15
 
 /datum/mood_event/sad_empath
 	description = span_warning("Someone seems upset...")
@@ -304,11 +283,6 @@
 	description = span_warning("I just got squeezed way too hard.")
 	mood_change = -3
 	timeout = 2 MINUTES
-
-/datum/mood_event/rippedtail
-	description = span_boldwarning("I ripped their tail right off, what have I done!")
-	mood_change = -5
-	timeout = 30 SECONDS
 
 /datum/mood_event/bad_boop
 	description = span_warning("Someone booped my nose... ACK!")

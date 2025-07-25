@@ -28,13 +28,13 @@
 	var/breaksound = "shatter"
 	var/hitsound = 'sound/effects/Glasshit.ogg'
 	var/decon_time = 3 SECONDS
+	/// If something has had their blood spilled on this window, thus making it cleanable
+	var/bloodied = FALSE
+
 	flags_ricochet = RICOCHET_HARD
-	ricochet_chance_mod = 0.4
+	receive_ricochet_chance_mod = 0.4
 
 	hitsound_type = PROJECTILE_HITSOUND_GLASS
-
-	/// If some inconsiderate jerk has had their blood spilled on this window, thus making it cleanable
-	var/bloodied = FALSE
 
 /obj/structure/window/examine(mob/user)
 	. = ..()
@@ -42,18 +42,18 @@
 		return
 	if(reinf)
 		if(anchored && state == WINDOW_SCREWED_TO_FRAME)
-			. += "<span class='notice'>The window is <b>screwed</b> to the frame.</span>"
+			. += span_notice("The window is <b>screwed</b> to the frame.")
 		else if(anchored && state == WINDOW_IN_FRAME)
-			. += "<span class='notice'>The window is <i>unscrewed</i> but <b>pried</b> into the frame.</span>"
+			. += span_notice("The window is <i>unscrewed</i> but <b>pried</b> into the frame.")
 		else if(anchored && state == WINDOW_OUT_OF_FRAME)
-			. += "<span class='notice'>The window is out of the frame, but could be <i>pried</i> in. It is <b>screwed</b> to the floor.</span>"
+			. += span_notice("The window is out of the frame, but could be <i>pried</i> in. It is <b>screwed</b> to the floor.")
 		else if(!anchored)
-			. += "<span class='notice'>The window is <i>unscrewed</i> from the floor, and could be deconstructed by <b>wrenching</b>.</span>"
+			. += span_notice("The window is <i>unscrewed</i> from the floor, and could be deconstructed by <b>wrenching</b>.")
 	else
 		if(anchored)
-			. += "<span class='notice'>The window is <b>screwed</b> to the floor.</span>"
+			. += span_notice("The window is <b>screwed</b> to the floor.")
 		else
-			. += "<span class='notice'>The window is <i>unscrewed</i> from the floor, and could be deconstructed by <b>wrenching</b>.</span>"
+			. += span_notice("The window is <i>unscrewed</i> from the floor, and could be deconstructed by <b>wrenching</b>.")
 
 /obj/structure/window/Initialize(mapload, direct)
 	. = ..()
@@ -95,7 +95,7 @@
 		if(RCD_DECONSTRUCT)
 			if(resistance_flags & INDESTRUCTIBLE)
 				return FALSE
-			to_chat(user, "<span class='notice'>You deconstruct the window.</span>")
+			to_chat(user, span_notice("You deconstruct the window."))
 			qdel(src)
 			return TRUE
 	return FALSE
@@ -148,7 +148,7 @@
 
 /obj/structure/window/attack_tk(mob/user)
 	user.changeNext_move(CLICK_CD_MELEE)
-	user.visible_message("<span class='notice'>Something knocks on [src].</span>")
+	user.visible_message(span_notice("Something knocks on [src]."))
 	add_fingerprint(user)
 	playsound(src, 'sound/effects/Glassknock.ogg', 50, TRUE)
 
@@ -164,8 +164,8 @@
 	if(!can_be_reached(user))
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
-	user.visible_message("<span class='notice'>[user] knocks on [src].</span>", \
-		"<span class='notice'>You knock on [src].</span>")
+	user.visible_message(span_notice("[user] knocks on [src]."), \
+		span_notice("You knock on [src]."))
 	add_fingerprint(user)
 	playsound(src, 'sound/effects/Glassknock.ogg', 50, TRUE)
 
@@ -185,48 +185,48 @@
 
 	if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP)
 		if(obj_integrity < max_integrity)
-			if(!I.tool_start_check(user, amount=0))
+			if(!I.tool_start_check(user, src, amount=0))
 				return
 
-			to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")
+			to_chat(user, span_notice("You begin repairing [src]..."))
 			if(I.use_tool(src, user, 40, volume=50))
 				obj_integrity = max_integrity
 				update_nearby_icons()
-				to_chat(user, "<span class='notice'>You repair [src].</span>")
+				to_chat(user, span_notice("You repair [src]."))
 		else
-			to_chat(user, "<span class='warning'>[src] is already in good condition!</span>")
+			to_chat(user, span_warning("[src] is already in good condition!"))
 		return
 
 	if(!(flags_1&NODECONSTRUCT_1) && !(reinf && state >= RWINDOW_FRAME_BOLTED))
 		if(I.tool_behaviour == TOOL_SCREWDRIVER)
-			to_chat(user, "<span class='notice'>You begin to [anchored ? "unscrew the window from":"screw the window to"] the floor...</span>")
+			to_chat(user, span_notice("You begin to [anchored ? "unscrew the window from":"screw the window to"] the floor..."))
 			if(I.use_tool(src, user, decon_speed, volume = 75, extra_checks = CALLBACK(src, PROC_REF(check_anchored), anchored)))
 				set_anchored(!anchored)
-				to_chat(user, "<span class='notice'>You [anchored ? "fasten the window to":"unfasten the window from"] the floor.</span>")
+				to_chat(user, span_notice("You [anchored ? "fasten the window to":"unfasten the window from"] the floor."))
 			return
 		else if(I.tool_behaviour == TOOL_WRENCH && !anchored)
-			to_chat(user, "<span class='notice'>You begin to disassemble [src]...</span>")
+			to_chat(user, span_notice("You begin to disassemble [src]..."))
 			if(I.use_tool(src, user, decon_speed, volume = 75, extra_checks = CALLBACK(src, PROC_REF(check_state_and_anchored), state, anchored)))
 				var/obj/item/stack/sheet/G = new glass_type(user.loc, glass_amount)
 				G.add_fingerprint(user)
 				playsound(src, 'sound/items/Deconstruct.ogg', 50, TRUE)
-				to_chat(user, "<span class='notice'>You successfully disassemble [src].</span>")
+				to_chat(user, span_notice("You successfully disassemble [src]."))
 				qdel(src)
 			return
 		else if(I.tool_behaviour == TOOL_CROWBAR && reinf && (state == WINDOW_OUT_OF_FRAME) && anchored)
-			to_chat(user, "<span class='notice'>You begin to lever the window into the frame...</span>")
+			to_chat(user, span_notice("You begin to lever the window into the frame..."))
 			if(I.use_tool(src, user, 100, volume = 75, extra_checks = CALLBACK(src, PROC_REF(check_state_and_anchored), state, anchored)))
 				state = RWINDOW_SECURE
-				to_chat(user, "<span class='notice'>You pry the window into the frame.</span>")
+				to_chat(user, span_notice("You pry the window into the frame."))
 			return
 
 	if(istype(I, /obj/item/pickaxe/drill/jackhammer))
-		to_chat(user, "<span class='notice'>You begin to smash though [src]...</span>")
+		to_chat(user, span_notice("You begin to smash though [src]..."))
 		if(do_after(user, 75, target = src))
 			if(!istype(src, /obj/structure/window))
 				return TRUE
 			I.play_tool_sound(src)
-			visible_message("<span class='warning'>[user] smashes through [src] with [I]!</span>", "<span class='italics'>You hear the shattering of glass.</span>")
+			visible_message(span_warning("[user] smashes through [src] with [I]!"), span_italics("You hear the shattering of glass."))
 			playsound(src, 'sound/effects/glassbr1.ogg', 50, TRUE)
 			deconstruct(FALSE)
 			return TRUE
@@ -298,7 +298,7 @@
 	. = ..()
 	if(.)
 		return FALSE
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return FALSE
 	if (I.use_tool(src, user, decon_time, volume=100))
 		to_chat(user, span_warning("You shatter [src] with the [I]."))
@@ -316,13 +316,13 @@
 
 /obj/structure/window/proc/can_be_rotated(mob/user,rotation_type)
 	if(anchored)
-		to_chat(user, "<span class='warning'>[src] cannot be rotated while it is fastened to the floor!</span>")
+		to_chat(user, span_warning("[src] cannot be rotated while it is fastened to the floor!"))
 		return FALSE
 
 	var/target_dir = turn(dir, rotation_type == ROTATION_CLOCKWISE ? -90 : 90)
 
 	if(!valid_window_location(loc, target_dir, is_fulltile = fulltile))
-		to_chat(user, "<span class='warning'>[src] cannot be rotated in that direction!</span>")
+		to_chat(user, span_warning("[src] cannot be rotated in that direction!"))
 		return FALSE
 	return TRUE
 
@@ -379,7 +379,7 @@
 /obj/structure/window/get_dumping_location(obj/item/storage/source,mob/user)
 	return null
 
-/obj/structure/window/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/caller)
+/obj/structure/window/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
 	if(!density)
 		return TRUE
 	if(fulltile || (dir == to_dir))
@@ -414,7 +414,7 @@
 	state = RWINDOW_SECURE
 	glass_type = /obj/item/stack/sheet/rglass
 	rad_insulation = RAD_HEAVY_INSULATION
-	ricochet_chance_mod = 0.8
+	receive_ricochet_chance_mod = 0.8
 	decon_time = 6 SECONDS
 
 //this is shitcode but all of construction is shitcode and needs a refactor, it works for now
@@ -426,43 +426,43 @@
 	switch(state)
 		if(RWINDOW_SECURE)
 			if((I.tool_behaviour == TOOL_WELDER) && user.a_intent == INTENT_HARM)
-				user.visible_message("<span class='notice'>[user] holds \the [I] to the security screws on \the [src]...</span>",
-										"<span class='notice'>You begin heating the security screws on \the [src]...</span>")
+				user.visible_message(span_notice("[user] holds \the [I] to the security screws on \the [src]..."),
+										span_notice("You begin heating the security screws on \the [src]..."))
 				if(I.use_tool(src, user, 150, volume = 100))
-					to_chat(user, "<span class='notice'>The security bolts are glowing white hot and look ready to be removed.</span>")
+					to_chat(user, span_notice("The security bolts are glowing white hot and look ready to be removed."))
 					state = RWINDOW_BOLTS_HEATED
 					addtimer(CALLBACK(src, PROC_REF(cool_bolts)), 300)
 				return
 		if(RWINDOW_BOLTS_HEATED)
 			if(I.tool_behaviour == TOOL_SCREWDRIVER)
-				user.visible_message("<span class='notice'>[user] digs into the heated security screws and starts removing them...</span>",
-										"<span class='notice'>You dig into the heated screws hard and they start turning...</span>")
+				user.visible_message(span_notice("[user] digs into the heated security screws and starts removing them..."),
+										span_notice("You dig into the heated screws hard and they start turning..."))
 				if(I.use_tool(src, user, 50, volume = 50))
 					state = RWINDOW_BOLTS_OUT
-					to_chat(user, "<span class='notice'>The screws come out, and a gap forms around the edge of the pane.</span>")
+					to_chat(user, span_notice("The screws come out, and a gap forms around the edge of the pane."))
 				return
 		if(RWINDOW_BOLTS_OUT)
 			if(I.tool_behaviour == TOOL_CROWBAR)
-				user.visible_message("<span class='notice'>[user] wedges \the [I] into the gap in the frame and starts prying...</span>",
-										"<span class='notice'>You wedge \the [I] into the gap in the frame and start prying...</span>")
+				user.visible_message(span_notice("[user] wedges \the [I] into the gap in the frame and starts prying..."),
+										span_notice("You wedge \the [I] into the gap in the frame and start prying..."))
 				if(I.use_tool(src, user, 40, volume = 50))
 					state = RWINDOW_POPPED
-					to_chat(user, "<span class='notice'>The panel pops out of the frame, exposing some thin metal bars that looks like they can be cut.</span>")
+					to_chat(user, span_notice("The panel pops out of the frame, exposing some thin metal bars that looks like they can be cut."))
 				return
 		if(RWINDOW_POPPED)
 			if(I.tool_behaviour == TOOL_WIRECUTTER)
-				user.visible_message("<span class='notice'>[user] starts cutting the exposed bars on \the [src]...</span>",
-										"<span class='notice'>You start cutting the exposed bars on \the [src]</span>")
+				user.visible_message(span_notice("[user] starts cutting the exposed bars on \the [src]..."),
+										span_notice("You start cutting the exposed bars on \the [src]"))
 				if(I.use_tool(src, user, 20, volume = 50))
 					state = RWINDOW_BARS_CUT
-					to_chat(user, "<span class='notice'>The panels falls out of the way exposing the frame bolts.</span>")
+					to_chat(user, span_notice("The panels falls out of the way exposing the frame bolts."))
 				return
 		if(RWINDOW_BARS_CUT)
 			if(I.tool_behaviour == TOOL_WRENCH)
-				user.visible_message("<span class='notice'>[user] starts unfastening \the [src] from the frame...</span>",
-					"<span class='notice'>You start unfastening the bolts from the frame...</span>")
+				user.visible_message(span_notice("[user] starts unfastening \the [src] from the frame..."),
+					span_notice("You start unfastening the bolts from the frame..."))
 				if(I.use_tool(src, user, 40, volume = 50))
-					to_chat(user, "<span class='notice'>You unscrew the bolts from the frame and the window pops loose.</span>")
+					to_chat(user, span_notice("You unscrew the bolts from the frame and the window pops loose."))
 					state = WINDOW_OUT_OF_FRAME
 					set_anchored(FALSE)
 				return
@@ -472,7 +472,7 @@
 /obj/structure/window/proc/cool_bolts()
 	if(state == RWINDOW_BOLTS_HEATED)
 		state = RWINDOW_SECURE
-		visible_message("<span class='notice'>The bolts on \the [src] look like they've cooled off...</span>")
+		visible_message(span_notice("The bolts on \the [src] look like they've cooled off..."))
 
 /obj/structure/window/reinforced/examine(mob/user)
 	. = ..()
@@ -481,15 +481,15 @@
 
 	switch(state)
 		if(RWINDOW_SECURE)
-			. += "<span class='notice'>It's been screwed in with one way screws, you'd need to <b>heat them</b> to have any chance of backing them out.</span>"
+			. += span_notice("It's been screwed in with one way screws, you'd need to <b>heat them</b> to have any chance of backing them out.")
 		if(RWINDOW_BOLTS_HEATED)
-			. += "<span class='notice'>The screws are glowing white hot, and you'll likely be able to <b>unscrew them</b> now.</span>"
+			. += span_notice("The screws are glowing white hot, and you'll likely be able to <b>unscrew them</b> now.")
 		if(RWINDOW_BOLTS_OUT)
-			. += "<span class='notice'>The screws have been removed, revealing a small gap you could fit a <b>prying tool</b> in.</span>"
+			. += span_notice("The screws have been removed, revealing a small gap you could fit a <b>prying tool</b> in.")
 		if(RWINDOW_POPPED)
-			. += "<span class='notice'>The main plate of the window has popped out of the frame, exposing some bars that look like they can be <b>cut</b>.</span>"
+			. += span_notice("The main plate of the window has popped out of the frame, exposing some bars that look like they can be <b>cut</b>.")
 		if(RWINDOW_BARS_CUT)
-			. += "<span class='notice'>The main pane can be easily moved out of the way to reveal some <b>bolts</b> holding the frame in.</span>"
+			. += span_notice("The main pane can be easily moved out of the way to reveal some <b>bolts</b> holding the frame in.")
 
 /obj/structure/window/reinforced/spawner/east
 	dir = EAST
@@ -556,43 +556,43 @@
 	switch(state)
 		if(RWINDOW_SECURE)
 			if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HARM)
-				user.visible_message("<span class='notice'>[user] holds \the [I] to the security screws on \the [src]...</span>",
-										"<span class='notice'>You begin heating the security screws on \the [src]...</span>")
+				user.visible_message(span_notice("[user] holds \the [I] to the security screws on \the [src]..."),
+										span_notice("You begin heating the security screws on \the [src]..."))
 				if(I.use_tool(src, user, 180, volume = 100))
-					to_chat(user, "<span class='notice'>The security screws are glowing white hot and look ready to be removed.</span>")
+					to_chat(user, span_notice("The security screws are glowing white hot and look ready to be removed."))
 					state = RWINDOW_BOLTS_HEATED
 					addtimer(CALLBACK(src, PROC_REF(cool_bolts)), 300)
 				return
 		if(RWINDOW_BOLTS_HEATED)
 			if(I.tool_behaviour == TOOL_SCREWDRIVER)
-				user.visible_message("<span class='notice'>[user] digs into the heated security screws and starts removing them...</span>",
-										"<span class='notice'>You dig into the heated screws hard and they start turning...</span>")
+				user.visible_message(span_notice("[user] digs into the heated security screws and starts removing them..."),
+										span_notice("You dig into the heated screws hard and they start turning..."))
 				if(I.use_tool(src, user, 80, volume = 50))
 					state = RWINDOW_BOLTS_OUT
-					to_chat(user, "<span class='notice'>The screws come out, and a gap forms around the edge of the pane.</span>")
+					to_chat(user, span_notice("The screws come out, and a gap forms around the edge of the pane."))
 				return
 		if(RWINDOW_BOLTS_OUT)
 			if(I.tool_behaviour == TOOL_CROWBAR)
-				user.visible_message("<span class='notice'>[user] wedges \the [I] into the gap in the frame and starts prying...</span>",
-										"<span class='notice'>You wedge \the [I] into the gap in the frame and start prying...</span>")
+				user.visible_message(span_notice("[user] wedges \the [I] into the gap in the frame and starts prying..."),
+										span_notice("You wedge \the [I] into the gap in the frame and start prying..."))
 				if(I.use_tool(src, user, 50, volume = 50))
 					state = RWINDOW_POPPED
-					to_chat(user, "<span class='notice'>The panel pops out of the frame, exposing some thin metal bars that looks like they can be cut.</span>")
+					to_chat(user, span_notice("The panel pops out of the frame, exposing some thin metal bars that looks like they can be cut."))
 				return
 		if(RWINDOW_POPPED)
 			if(I.tool_behaviour == TOOL_WIRECUTTER)
-				user.visible_message("<span class='notice'>[user] starts cutting the exposed bars on \the [src]...</span>",
-										"<span class='notice'>You start cutting the exposed bars on \the [src]</span>")
+				user.visible_message(span_notice("[user] starts cutting the exposed bars on \the [src]..."),
+										span_notice("You start cutting the exposed bars on \the [src]"))
 				if(I.use_tool(src, user, 30, volume = 50))
 					state = RWINDOW_BARS_CUT
-					to_chat(user, "<span class='notice'>The panels falls out of the way exposing the frame bolts.</span>")
+					to_chat(user, span_notice("The panels falls out of the way exposing the frame bolts."))
 				return
 		if(RWINDOW_BARS_CUT)
 			if(I.tool_behaviour == TOOL_WRENCH)
-				user.visible_message("<span class='notice'>[user] starts unfastening \the [src] from the frame...</span>",
-					"<span class='notice'>You start unfastening the bolts from the frame...</span>")
+				user.visible_message(span_notice("[user] starts unfastening \the [src] from the frame..."),
+					span_notice("You start unfastening the bolts from the frame..."))
 				if(I.use_tool(src, user, 50, volume = 50))
-					to_chat(user, "<span class='notice'>You unfasten the bolts from the frame and the window pops loose.</span>")
+					to_chat(user, span_notice("You unfasten the bolts from the frame and the window pops loose."))
 					state = WINDOW_OUT_OF_FRAME
 					set_anchored(FALSE)
 				return
@@ -602,15 +602,15 @@
 	. = ..()
 	switch(state)
 		if(RWINDOW_SECURE)
-			. += "<span class='notice'>It's been screwed in with one way screws, you'd need to <b>heat them</b> to have any chance of backing them out.</span>"
+			. += span_notice("It's been screwed in with one way screws, you'd need to <b>heat them</b> to have any chance of backing them out.")
 		if(RWINDOW_BOLTS_HEATED)
-			. += "<span class='notice'>The screws are glowing white hot, and you'll likely be able to <b>unscrew them</b> now.</span>"
+			. += span_notice("The screws are glowing white hot, and you'll likely be able to <b>unscrew them</b> now.")
 		if(RWINDOW_BOLTS_OUT)
-			. += "<span class='notice'>The screws have been removed, revealing a small gap you could fit a <b>prying tool</b> in.</span>"
+			. += span_notice("The screws have been removed, revealing a small gap you could fit a <b>prying tool</b> in.")
 		if(RWINDOW_POPPED)
-			. += "<span class='notice'>The main plate of the window has popped out of the frame, exposing some bars that look like they can be <b>cut</b>.</span>"
+			. += span_notice("The main plate of the window has popped out of the frame, exposing some bars that look like they can be <b>cut</b>.")
 		if(RWINDOW_BARS_CUT)
-			. += "<span class='notice'>The main pane can be easily moved out of the way to reveal some <b>bolts</b> holding the frame in.</span>"
+			. += span_notice("The main pane can be easily moved out of the way to reveal some <b>bolts</b> holding the frame in.")
 
 /obj/structure/window/plasma/reinforced/spawner/east
 	dir = EAST
@@ -699,6 +699,11 @@
 	anchored = FALSE
 	state = WINDOW_OUT_OF_FRAME
 
+/obj/structure/window/reinforced/fulltile/indestructible
+	name = "robust window"
+	flags_1 = PREVENT_CLICK_UNDER_1 | NODECONSTRUCT_1
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
 /obj/structure/window/reinforced/tinted/fulltile
 	icon = 'icons/obj/smooth_structures/tinted_window.dmi'
 	icon_state = "tinted_window-0"
@@ -732,7 +737,12 @@
 	explosion_block = 3
 	glass_type = /obj/item/stack/sheet/titaniumglass
 	glass_amount = 2
-	ricochet_chance_mod = 0.9
+	receive_ricochet_chance_mod = 0.9
+
+/obj/structure/window/reinforced/fulltile/shuttle/indestructible
+	name = "robust window"
+	flags_1 = PREVENT_CLICK_UNDER_1 | NODECONSTRUCT_1
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
 /obj/structure/window/reinforced/fulltile/shuttle/narsie_act()
 	add_atom_colour("#3C3434", FIXED_COLOUR_PRIORITY)
@@ -779,7 +789,7 @@
 	if (fulltile)
 		. += new /obj/item/shard/plastitanium(location)
 
-/obj/structure/window/plasma/reinforced/plastitanium/indestructable
+/obj/structure/window/plasma/reinforced/plastitanium/indestructible
 	flags_1 = PREVENT_CLICK_UNDER_1 | NODECONSTRUCT_1
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
@@ -815,7 +825,7 @@
 /obj/structure/window/paperframe/examine(mob/user)
 	. = ..()
 	if(obj_integrity < max_integrity)
-		. += "<span class='info'>It looks a bit damaged, you may be able to fix it with some <b>paper</b>.</span>"
+		. += span_info("It looks a bit damaged, you may be able to fix it with some <b>paper</b>.")
 
 /obj/structure/window/paperframe/spawnDebris(location)
 	. = list(new /obj/item/stack/sheet/mineral/wood(location))
@@ -829,13 +839,13 @@
 	add_fingerprint(user)
 	if(user.a_intent != INTENT_HARM)
 		user.changeNext_move(CLICK_CD_MELEE)
-		user.visible_message("<span class='notice'>[user] knocks on [src].</span>")
+		user.visible_message(span_notice("[user] knocks on [src]."))
 		playsound(src, "pageturn", 50, TRUE)
 	else
 		take_damage(4, BRUTE, "melee", 0)
 		playsound(src, hitsound, 50, TRUE)
 		if(!QDELETED(src))
-			user.visible_message("<span class='danger'>[user] tears a hole in [src].</span>")
+			user.visible_message(span_danger("[user] tears a hole in [src]."))
 			update_appearance()
 
 /obj/structure/window/paperframe/update_appearance(updates)
@@ -859,11 +869,11 @@
 	if(user.a_intent == INTENT_HARM)
 		return ..()
 	if(istype(W, /obj/item/paper) && obj_integrity < max_integrity)
-		user.visible_message("<span class='notice'>[user] starts to patch the holes in \the [src].</span>")
+		user.visible_message(span_notice("[user] starts to patch the holes in \the [src]."))
 		if(do_after(user, 20, target = src))
 			obj_integrity = min(obj_integrity+4,max_integrity)
 			qdel(W)
-			user.visible_message("<span class='notice'>[user] patches some of the holes in \the [src].</span>")
+			user.visible_message(span_notice("[user] patches some of the holes in \the [src]."))
 			if(obj_integrity == max_integrity)
 				update_appearance()
 			return

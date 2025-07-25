@@ -34,7 +34,7 @@
 /obj/item/clothing/glasses/examine(mob/user)
 	. = ..()
 	if(glass_colour_type && ishuman(user))
-		. += "<span class='notice'>Alt-click to toggle its colors.</span>"
+		. += span_notice("Alt-click to toggle [p_their()] colors.")
 
 /obj/item/clothing/glasses/visor_toggling()
 	..()
@@ -61,7 +61,7 @@
 		var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 		if(!H.is_blind())
 			if(H.glasses == src)
-				to_chat(H, "<span class='danger'>[src] overloads and blinds you!</span>")
+				to_chat(H, span_danger("[src] overloads and blinds you!"))
 				H.flash_act(visual = 1)
 				H.blind_eyes(3)
 				H.blur_eyes(5)
@@ -137,7 +137,7 @@
 /obj/item/clothing/glasses/eyepatch/AltClick(mob/user)
 	. = ..()
 	flipped = !flipped
-	to_chat(user, "<span class='notice'>You shift the eyepatch to cover the [flipped == 0 ? "right" : "left"] eye.</span>")
+	to_chat(user, span_notice("You shift the eyepatch to cover the [flipped == 0 ? "right" : "left"] eye."))
 	icon_state = "eyepatch-[flipped]"
 	item_state = "eyepatch-[flipped]"
 	update_appearance()
@@ -151,7 +151,7 @@
 	if(istype(I, /obj/item/clothing/glasses/eyepatch))
 		var/obj/item/clothing/glasses/eyepatch/old_patch = I
 		var/obj/item/clothing/glasses/blindfold/eyepatch/double_patch = new()
-		to_chat(user, "<span class='notice'>You combine the eyepatches with a knot.</span>")
+		to_chat(user, span_notice("You combine the eyepatches with a knot."))
 		qdel(old_patch)
 		qdel(src)
 		user.put_in_hands(double_patch)
@@ -283,7 +283,7 @@
 
 /obj/item/clothing/glasses/trickblindfold
 	name = "blindfold"
-	desc = "A see-through blindfold perfect for cheating at games like pin the stun baton on the clown."
+	desc = "A see-through blindfold perfect for cheating at games."
 	icon_state = "trickblindfold"
 	item_state = "blindfold"
 
@@ -327,7 +327,7 @@
 	var/obj/item/clothing/glasses/eyepatch/patch_two = new/obj/item/clothing/glasses/eyepatch
 	patch_one.forceMove(user.drop_location())
 	patch_two.forceMove(user.drop_location())
-	to_chat(user, "<span class='notice'>You undo the knot on the eyepatches.</span>")
+	to_chat(user, span_notice("You undo the knot on the eyepatches."))
 	qdel(src)
 
 /obj/item/clothing/glasses/sunglasses/big
@@ -386,7 +386,7 @@
 /obj/item/clothing/glasses/thermal/eyepatch/AltClick(mob/user)
 	. = ..()
 	flipped = !flipped
-	to_chat(user, "<span class='notice'>You shift the eyepatch to cover the [flipped == 0 ? "right" : "left"] eye.</span>")
+	to_chat(user, span_notice("You shift the eyepatch to cover the [flipped == 0 ? "right" : "left"] eye."))
 	icon_state = "eyepatch-[flipped]"
 	item_state = "eyepatch-[flipped]"
 	update_appearance()
@@ -431,9 +431,9 @@
 				if(src == H.glasses)
 					H.client.prefs.uses_glasses_colour = !H.client.prefs.uses_glasses_colour
 					if(H.client.prefs.uses_glasses_colour)
-						to_chat(H, "<span class='notice'>You will now see glasses colors.</span>")
+						to_chat(H, span_notice("You will now see glasses colors."))
 					else
-						to_chat(H, "<span class='notice'>You will no longer see glasses colors.</span>")
+						to_chat(H, span_notice("You will no longer see glasses colors."))
 					H.update_glasses_color(src, 1)
 	else
 		return ..()

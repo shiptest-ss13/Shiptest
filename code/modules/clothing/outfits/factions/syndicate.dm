@@ -2,6 +2,7 @@
 
 /datum/outfit/job/syndicate
 	name = "Syndicate - Base Outfit"
+	faction = FACTION_PLAYER_SYNDICATE
 
 	uniform = /obj/item/clothing/under/color/black
 	box = /obj/item/storage/box/survival
@@ -13,12 +14,6 @@
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
 	courierbag = /obj/item/storage/backpack/messenger/sec
-
-/datum/outfit/job/syndicate/post_equip(mob/living/carbon/human/H, visualsOnly)
-	. = ..()
-	if(visualsOnly)
-		return
-	H.faction |= list(FACTION_PLAYER_SYNDICATE)
 
 //generates a codename and assigns syndicate access, used in the twinkleshine.
 /datum/outfit/job/syndicate/proc/assign_codename(mob/living/carbon/human/H)
@@ -57,6 +52,7 @@
 
 /datum/outfit/job/syndicate/assistant/ngr
 	name = "Syndicate - Initiate (New Gorlex Republic)"
+	faction = FACTION_NGR
 	id_assignment = "Initiate"
 
 	head = /obj/item/clothing/head/ngr
@@ -196,7 +192,7 @@
 	var/obj/item/card/id/W = H.get_idcard()
 	if(H.age < AGE_MINOR)
 		W.registered_age = AGE_MINOR
-		to_chat(H, "<span class='notice'>You're not technically old enough to access or serve alcohol, but your ID has been discreetly modified to display your age as [AGE_MINOR]. Try to keep that a secret!</span>")
+		to_chat(H, span_notice("You're not technically old enough to access or serve alcohol, but your ID has been discreetly modified to display your age as [AGE_MINOR]. Try to keep that a secret!"))
 
 /datum/outfit/job/syndicate/bartender/suns
 	name = "Syndicate - Student Mixologist (SUNS)"
@@ -250,7 +246,6 @@
 	job_icon = "botanist"
 
 	suit = /obj/item/clothing/suit/apron
-	alt_suit = /obj/item/clothing/suit/apron/overalls
 	gloves  =/obj/item/clothing/gloves/botanic_leather
 	suit_store = /obj/item/plant_analyzer
 
@@ -327,6 +322,7 @@
 
 /datum/outfit/job/syndicate/captain/ngr
 	name = "Syndicate - Captain (New Gorlex Republic)"
+	faction = FACTION_NGR
 
 	uniform = /obj/item/clothing/under/syndicate/ngr/officer
 	head = /obj/item/clothing/head/ngr/peaked
@@ -443,6 +439,7 @@
 
 /datum/outfit/job/syndicate/ce/ngr
 	name = "Syndicate - Foreman (New Gorlex Republic)"
+	faction = FACTION_NGR
 
 	head = /obj/item/clothing/head/hardhat/ngr/foreman
 	ears = /obj/item/radio/headset/syndicate/alt
@@ -470,7 +467,7 @@
 	head = /obj/item/clothing/head/beret/cmo/cybersun
 	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
 	l_hand = /obj/item/storage/firstaid/medical
-	suit_store = /obj/item/flashlight/pen
+	suit_store = /obj/item/flashlight/pen/paramedic
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
 	box = /obj/item/storage/box/survival/medical
 
@@ -486,7 +483,7 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/suns/cmo
 	l_hand = /obj/item/storage/firstaid/medical
 	r_hand = /obj/item/storage/belt/sabre/suns/cmo
-	suit_store = /obj/item/flashlight/pen
+	suit_store = /obj/item/flashlight/pen/paramedic
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/suns
 	glasses = /obj/item/clothing/glasses/hud/health/suns
@@ -518,6 +515,7 @@
 
 /datum/outfit/job/syndicate/head_of_personnel/ngr
 	name = "Syndicate - Ensign (NGR)"
+	faction = FACTION_NGR
 	id_assignment = "Ensign"
 
 	ears = /obj/item/radio/headset/syndicate
@@ -541,7 +539,6 @@
 	head = /obj/item/clothing/head/HoS/cybersun
 	gloves = /obj/item/clothing/gloves/combat
 	id = /obj/item/card/id/syndicate_command/crew_id
-	r_pocket = /obj/item/melee/knife/survival
 	glasses = /obj/item/clothing/glasses/sunglasses
 
 /datum/outfit/job/syndicate/head_of_personnel/suns
@@ -577,11 +574,6 @@
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/jackboots
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	suit_store = /obj/item/gun/energy/e_gun
-	r_pocket = /obj/item/assembly/flash/handheld
-	l_pocket = /obj/item/restraints/handcuffs
-	backpack_contents = list(/obj/item/melee/baton/loaded=1)
-	box = /obj/item/storage/box/survival/security
 
 /datum/outfit/job/syndicate/hos/gorlex
 	name = "Syndicate - Sergeant (Hardliner)"
@@ -592,10 +584,10 @@
 	suit = /obj/item/clothing/suit/armor/hardliners/sergeant
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/combat
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/ringneck
 
 /datum/outfit/job/syndicate/hos/ngr
 	name = "Syndicate - Lieutenant (New Gorlex Republic)"
+	faction = FACTION_NGR
 	id_assignment = "Lieutenant"
 
 	uniform = /obj/item/clothing/under/syndicate/ngr/officer
@@ -723,13 +715,12 @@
 	head = /obj/item/clothing/head/hardliners
 	suit = /obj/item/clothing/suit/hardliners
 	glasses = /obj/item/clothing/glasses/hud/health
-	r_pocket = /obj/item/melee/knife/survival
 	id = /obj/item/card/id/syndicate_command/crew_id
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical,)
 	shoes = /obj/item/clothing/shoes/combat
 
 /datum/outfit/job/syndicate/doctor/ngr
 	name = "Syndicate - Medical Doctor (New Gorlex Republic)"
+	faction = FACTION_NGR
 
 	uniform = /obj/item/clothing/under/syndicate/ngr
 	head = /obj/item/clothing/head/ngr/surgical
@@ -758,7 +749,7 @@
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
 	belt = /obj/item/storage/belt/medical/paramedic
 	id = /obj/item/card/id
-	suit_store = /obj/item/flashlight/pen
+	suit_store = /obj/item/flashlight/pen/paramedic
 	backpack_contents = list(/obj/item/roller=1)
 	pda_slot = ITEM_SLOT_LPOCKET
 	box = /obj/item/storage/box/survival/medical
@@ -928,8 +919,6 @@
 	uniform = /obj/item/clothing/under/syndicate/hardliners
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/combat
-	l_pocket = /obj/item/restraints/handcuffs
-	r_pocket = /obj/item/assembly/flash/handheld
 
 /datum/outfit/job/syndicate/security/gorlex/pilot
 	name = "Syndicate - Pilot (Hardliner)"
@@ -940,6 +929,7 @@
 
 /datum/outfit/job/syndicate/security/ngr
 	name = "Syndicate - Operative (New Gorlex Republic)"
+	faction = FACTION_NGR
 	id_assignment = "Operative"
 	job_icon = "securityofficer"
 
@@ -1002,6 +992,14 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
 
+/datum/outfit/job/syndicate/security/suns/alternate
+	name = "Syndicate - Peacekeeper - Casual(SUNS)"
+	id_assignment = "Peacekeeper"
+
+	suit = /obj/item/clothing/suit/toggle/suns/pkcoat
+	belt = null
+	head = null
+
 //Miners
 
 /datum/outfit/job/syndicate/miner
@@ -1035,6 +1033,7 @@
 
 /datum/outfit/job/syndicate/miner/ngr
 	name = "Syndicate - Wrecker (New Gorlex Republic)"
+	faction = FACTION_NGR
 	id_assignment = "Wrecker"
 
 	head = /obj/item/clothing/head/hardhat/ngr
@@ -1144,6 +1143,7 @@
 
 /datum/outfit/job/syndicate/engineer/ngr
 	name = "Syndicate - Mechanic (New Gorlex Republic)"
+	faction = FACTION_NGR
 	id_assignment = "Mechanic"
 
 	head = /obj/item/clothing/head/hardhat/ngr

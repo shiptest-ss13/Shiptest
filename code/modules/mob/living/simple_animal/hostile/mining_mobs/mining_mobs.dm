@@ -1,6 +1,7 @@
 //the base mining mob
 /mob/living/simple_animal/hostile/asteroid
-	vision_range = 2
+	vision_range = 8
+	aggro_vision_range = 12
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	faction = list("mining")
 	weather_immunities = list("lava","ash")
@@ -48,7 +49,7 @@
 		if(!stat)
 			Aggro()
 		if(T.throwforce <= throw_deflection)		//WS Edit - Whitesands
-			visible_message("<span class='notice'>The [T.name] [throw_message] [src.name]!</span>")
+			visible_message(span_notice("The [T.name] [throw_message] [src.name]!"))
 			return
 	..()
 

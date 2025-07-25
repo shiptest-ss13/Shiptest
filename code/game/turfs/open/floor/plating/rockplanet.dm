@@ -1,30 +1,51 @@
 /turf/open/floor/plating/asteroid/rockplanet
 	name = "iron sand"
-	icon_state = "dry_soft"
-	base_icon_state = "dry_soft"
-	floor_variance = 100
-	max_icon_states = 7
+	icon = 'icons/turf/floors/rockplanet_dry.dmi'
+	icon_state = "rock-255"
+	base_icon_state = "rock"
+	floor_variance = 80
+	max_icon_states = 4
+	layer = SAND_TURF_LAYER
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/floor/plating/asteroid/rockplanet
 	turf_type = /turf/open/floor/plating/asteroid/rockplanet
 	digResult = /obj/item/stack/ore/glass/rockplanet
 	light_color = COLOR_ROCKPLANET_LIGHT
+	pixel_x = -19 // recenters 70x70 turf sprites for mappers
+	pixel_y = -19
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH, SMOOTH_GROUP_FLOOR_PLASTEEL)
+	smooth_icon = 'icons/turf/floors/rockplanet_dry.dmi'
+
+/turf/open/floor/plating/asteroid/rockplanet/Initialize(mapload, inherited_virtual_z)
+	. = ..()
+	pixel_x = 0 // resets -19 pixel offset
+	pixel_y = 0
+	if(prob(floor_variance))
+		add_overlay("rockalt_[rand(1,max_icon_states)]")
 
 /turf/open/floor/plating/asteroid/rockplanet/safe
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	planetary_atmos = FALSE
 
 /turf/open/floor/plating/asteroid/rockplanet/lit
+	light_color = COLOR_ROCKPLANET_LIGHT
 	light_range = 2
 	light_power = 0.6
 
 /turf/open/floor/plating/asteroid/rockplanet/cracked
 	name = "iron cracked sand"
-	icon_state = "dry_cracked0"
-	base_icon_state = "dry_cracked"
+	icon = 'icons/turf/floors/rockplanet_caves.dmi'
+	layer = STONE_TURF_LAYER
 	baseturfs = /turf/open/floor/plating/asteroid/rockplanet
 	turf_type = /turf/open/floor/plating/asteroid/rockplanet
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH_ROCKY, SMOOTH_GROUP_FLOOR_PLASTEEL)
+	smooth_icon = 'icons/turf/floors/rockplanet_caves.dmi'
+
+	floor_variance = 0
 
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit
 	light_range = 2
@@ -37,8 +58,8 @@
 	planetary_atmos = FALSE
 
 /turf/open/floor/plating/asteroid/rockplanet/wet
-	icon_state = "wet_soft0"
-	base_icon_state = "wet_soft"
+	icon = 'icons/turf/floors/rockplanet_wet.dmi'
+	smooth_icon = 'icons/turf/floors/rockplanet_wet.dmi'
 
 /turf/open/floor/plating/asteroid/rockplanet/wet/safe
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
@@ -48,10 +69,9 @@
 	light_range = 2
 	light_power = 0.6
 
+//TODO: unused, remove - not anymore
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked
 	name = "iron cracked sand"
-	icon_state = "wet_cracked0"
-	base_icon_state = "wet_cracked"
 
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked/safe
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
@@ -73,8 +93,6 @@
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe
 	name = "iron cracked sand"
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
-	icon_state = "dry_cracked0"
-	base_icon_state = "dry_cracked"
 	baseturfs = /turf/open/floor/plating/asteroid/rockplanet
 	turf_type = /turf/open/floor/plating/asteroid/rockplanet
 
@@ -86,8 +104,6 @@
 
 /turf/open/floor/plating/asteroid/rockplanet/wet/safe
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
-	icon_state = "wet_soft0"
-	base_icon_state = "wet_soft"
 
 /turf/open/floor/plating/asteroid/rockplanet/wet/safe/lit
 	light_range = 2
@@ -95,8 +111,6 @@
 
 /turf/open/floor/plating/asteroid/rockplanet/wet/safe/cracked
 	name = "iron cracked sand"
-	icon_state = "wet_cracked0"
-	base_icon_state = "wet_cracked"
 
 /turf/open/floor/plating/asteroid/rockplanet/wet/safe/cracked/lit
 	light_range = 2

@@ -1,5 +1,5 @@
 /datum/supply_pack/fish
-	group = "Fishing Essentials"
+	category = "Fishing Essentials"
 
 
 /datum/supply_pack/fish/fishingkit
@@ -15,22 +15,16 @@
 
 /datum/supply_pack/fish/fishstasis
 	name = "Fish Stasis Kit Supply Crate"
-	desc = "Contains four stasis cases meant to keep fish alive during transportation."
-	cost = 1000
-	contains = list(/obj/item/storage/fish_case,
-					/obj/item/storage/fish_case,
-					/obj/item/storage/fish_case,
-					/obj/item/storage/fish_case)
+	desc = "Contains a stasis case meant to keep fish alive during transportation."
+	cost = 250
+	contains = list(/obj/item/storage/fish_case)
 	crate_name = "stasis case crate"
 
 /datum/supply_pack/fish/premiumworms
 	name = "High Quality Worm Pack"
 	desc = "A selection of the system's finest worms, guaranteed to lure in only the largest of fish."
-	cost = 1000
-	contains = list(/obj/item/bait_can/worm/premium,
-					/obj/item/bait_can/worm/premium,
-					/obj/item/bait_can/worm/premium,
-					/obj/item/bait_can/worm/premium)
+	cost = 250
+	contains = list(/obj/item/bait_can/worm/premium)
 	crate_name = "premium worm crate"
 
 /datum/supply_pack/fish/masterworkpole
@@ -52,9 +46,8 @@
 /datum/supply_pack/fish/fishinglines
 	name = "Fishing Line Pack"
 	desc = "Contains the necessary fishing lines for catching more exotic fish."
-	cost = 1000
-	contains = list(/obj/item/storage/box/fishing_lines,
-					/obj/item/storage/box/fishing_lines) //Comes with two boxes on account of these being more necessary than the hooks
+	cost = 500
+	contains = list(/obj/item/storage/box/fishing_lines)
 	crate_name = "fishing line crate"
 	crate_type = /obj/structure/closet/crate/wooden
 

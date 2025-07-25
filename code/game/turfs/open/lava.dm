@@ -18,17 +18,20 @@
 	heavyfootstep = FOOTSTEP_LAVA
 
 	var/particle_emitter = /obj/effect/particle_emitter/lava
+	var/particle_prob = 15
 	/// Whether the lava has been dug with hellstone found successfully
 	var/is_mined = FALSE
 
 /turf/open/lava/Initialize(mapload)
 	. = ..()
-	particle_emitter = new /obj/effect/particle_emitter/lava(src)
+	if(prob(particle_prob) && ispath(particle_emitter, /obj/effect/particle_emitter))
+		particle_emitter = new particle_emitter(src)
 	AddElement(/datum/element/lazy_fishing_spot, FISHING_SPOT_PRESET_LAVALAND_LAVA)
 
 /turf/open/lava/Destroy()
 	. = ..()
-	QDEL_NULL(particle_emitter)
+	if(isatom(particle_emitter))
+		QDEL_NULL(particle_emitter)
 
 /turf/open/lava/ex_act(severity, target)
 	contents_explosion(severity, target)
@@ -78,7 +81,7 @@
 /turf/open/lava/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	switch(passed_mode)
 		if(RCD_FLOORWALL)
-			to_chat(user, "<span class='notice'>You build a floor.</span>")
+			to_chat(user, span_notice("You build a floor."))
 			PlaceOnTop(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
 			return TRUE
 	return FALSE
@@ -104,18 +107,18 @@
 
 /turf/open/lava/attackby(obj/item/attacking_item, mob/user, params)
 	..()
-	if(istype(attacking_item, /obj/item/stack/rods/lava))
-		var/obj/item/stack/rods/lava/R = attacking_item
+	if(istype(attacking_item, /obj/item/stack/rods))
+		var/obj/item/stack/rods/R = attacking_item
 		var/obj/structure/lattice/lava/H = locate(/obj/structure/lattice/lava, src)
 		if(H)
-			to_chat(user, "<span class='warning'>There is already a lattice here!</span>")
+			to_chat(user, span_warning("There is already a lattice here!"))
 			return
 		if(R.use(1))
-			to_chat(user, "<span class='notice'>You construct a lattice.</span>")
+			to_chat(user, span_notice("You construct a lattice."))
 			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
 			new /obj/structure/lattice/lava(locate(x, y, z))
 		else
-			to_chat(user, "<span class='warning'>You need one rod to build a heatproof lattice.</span>")
+			to_chat(user, span_warning("You need one rod to build a heatproof lattice."))
 		return
 	if(attacking_item.tool_behaviour == TOOL_MINING && (attacking_item.custom_materials[SSmaterials.GetMaterialRef(/datum/material/diamond)]))
 		if(is_mined)
@@ -209,12 +212,13 @@
 	icon_state = "lava-255"
 	base_icon_state = "lava"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_LAVA)
+	smoothing_groups = list(SMOOTH_GROUP_FLOOR_LAVA)
 	canSmoothWith = list(SMOOTH_GROUP_FLOOR_LAVA)
 
 /turf/open/lava/smooth/lava_land_surface
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	planetary_atmos = TRUE
+
 	baseturfs = /turf/open/lava/smooth/lava_land_surface
 
 /turf/open/lava/smooth/airless

@@ -1,14 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"aa" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/closet/emcloset/wall/directional/east,
-/obj/item/clothing/suit/space/syndicate/black/engie,
-/obj/item/clothing/head/helmet/space/syndicate/black/engie,
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/atmospherics)
 "ad" = (
 /obj/machinery/light/directional/north,
 /obj/structure/chair,
@@ -20,9 +10,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "ae" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fueled/plasma,
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "ag" = (
@@ -177,7 +165,7 @@
 	pixel_y = 7;
 	pixel_x = 9
 	},
-/obj/item/reagent_containers/food/snacks/donut/berry{
+/obj/item/food/donut/berry{
 	pixel_x = -4;
 	color = "#730622";
 	name = "suspicious red donut"
@@ -194,9 +182,7 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 1
 	},
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/heater,
 /obj/machinery/door/poddoor/shutters{
 	id = "twinkle_engines";
 	dir = 4
@@ -876,6 +862,63 @@
 /obj/machinery/cell_charger,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
+"fC" = (
+/obj/machinery/atmospherics/pipe/simple/purple/visible,
+/obj/structure/closet/cardboard{
+	name = "mot containment box";
+	desc = "WARNING: Contains mot."
+	},
+/obj/item/storage/box/maid,
+/obj/item/trash/cheesie,
+/mob/living/carbon/human/species/moth{
+	name = "Secret Box Moth";
+	real_name = "Box Moth";
+	gender = "female";
+	faction = list("neutral","playerSyndicate")
+	},
+/obj/item/food/spacetwinkie{
+	pixel_y = 12;
+	pixel_x = 10
+	},
+/obj/item/food/spacetwinkie{
+	pixel_x = -9;
+	pixel_y = 8
+	},
+/obj/item/food/spacetwinkie{
+	pixel_x = 7
+	},
+/obj/item/food/spacetwinkie{
+	pixel_x = -2;
+	pixel_y = 14
+	},
+/obj/item/food/spacetwinkie{
+	pixel_y = -5;
+	pixel_x = -6
+	},
+/obj/structure/sign/poster/contraband/syndiemoth{
+	pixel_x = -32
+	},
+/obj/item/toy/balloon/syndicate,
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering/atmospherics)
+"fD" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/structure/table/wood,
+/obj/item/food/syndicake{
+	pixel_y = 10;
+	pixel_x = 3
+	},
+/obj/structure/sign/poster/official/no_erp{
+	pixel_y = 32
+	},
+/obj/item/toy/cards/deck/syndicate{
+	pixel_x = -7
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew/dorm)
 "fH" = (
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
@@ -1151,30 +1194,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/port)
-"hh" = (
-/obj/structure/closet/secure_closet/engineering_personal{
-	req_access = list(150,10);
-	populate = 0
-	},
-/obj/effect/turf_decal/corner/opaque/orange{
-	dir = 10
-	},
-/obj/machinery/light/directional/south,
-/obj/item/clothing/shoes/magboots/syndie,
-/obj/item/clothing/head/helmet/space/syndicate/black/engie,
-/obj/item/clothing/suit/space/syndicate/black/engie,
-/obj/item/pipe_dispenser,
-/obj/item/storage/belt/utility/syndicate,
-/obj/item/clothing/under/syndicate/gec,
-/obj/item/clothing/glasses/meson/engine,
-/obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/clothing/head/hardhat/red{
-	name = "hard hat"
-	},
-/obj/item/gun/energy/plasmacutter,
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering)
 "hr" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1198,33 +1217,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
-"hB" = (
-/obj/effect/turf_decal/corner/opaque/orange/three_quarters{
-	dir = 1
-	},
-/obj/item/clothing/under/syndicate/gec,
-/obj/item/clothing/shoes/magboots/syndie,
-/obj/item/clothing/head/helmet/space/syndicate/black/engie,
-/obj/item/clothing/suit/space/syndicate/black/engie,
-/obj/structure/closet/secure_closet/engineering_personal{
-	req_access = list(150,10);
-	populate = 0
-	},
-/obj/item/pipe_dispenser,
-/obj/structure/sign/poster/contraband/gec{
-	pixel_y = -32
-	},
-/obj/item/storage/belt/utility/syndicate,
-/obj/item/clothing/under/syndicate/gec,
-/obj/item/clothing/glasses/meson/engine,
-/obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/clothing/head/hardhat/red{
-	name = "hard hat"
-	},
-/obj/item/gun/energy/plasmacutter,
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering)
 "hN" = (
 /obj/effect/turf_decal/corner/opaque/orange{
 	dir = 5
@@ -1482,9 +1474,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "iJ" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/heater,
 /obj/machinery/door/window/eastright{
 	name = "Engine Access"
 	},
@@ -1554,15 +1544,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
-"iX" = (
-/obj/machinery/porta_turret/ship/syndicate/heavy{
-	dir = 10;
-	id = "twink_grid"
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal{
-	rad_insulation = 0
-	},
-/area/ship/engineering/atmospherics)
 "iZ" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 1
@@ -1958,21 +1939,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
-"ln" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/syndicake{
-	pixel_y = 10;
-	pixel_x = 3
-	},
-/obj/structure/sign/poster/official/no_erp{
-	pixel_y = 32
-	},
-/obj/item/toy/cards/deck/syndicate{
-	pixel_x = -7
-	},
-/turf/open/floor/plasteel,
-/area/ship/crew/dorm)
 "lo" = (
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
@@ -2180,15 +2146,6 @@
 /obj/machinery/atmospherics/pipe/manifold4w/orange/visible,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
-"ms" = (
-/obj/machinery/porta_turret/ship/syndicate/heavy{
-	dir = 9;
-	id = "twink_grid"
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal{
-	rad_insulation = 0
-	},
-/area/ship/engineering/atmospherics)
 "mt" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/nitrogen_output{
 	dir = 8
@@ -2259,9 +2216,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "mW" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/heater,
 /obj/machinery/door/window/eastright{
 	name = "Engine Access"
 	},
@@ -2448,7 +2403,7 @@
 	pixel_x = 2;
 	pixel_y = -7
 	},
-/obj/item/reagent_containers/food/snacks/donut/choco{
+/obj/item/food/donut/choco{
 	pixel_x = 3;
 	pixel_y = 7
 	},
@@ -2968,7 +2923,6 @@
 	req_access = list(150)
 	},
 /obj/docking_port/mobile{
-	can_move_docking_ports = 1;
 	name = "Twink Bay";
 	port_direction = 8;
 	preferred_direction = 4;
@@ -3634,15 +3588,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
-"vd" = (
-/obj/machinery/porta_turret/ship/syndicate/heavy{
-	dir = 5;
-	id = "twink_grid"
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal{
-	rad_insulation = 0
-	},
-/area/ship/hallway/port)
 "vl" = (
 /obj/machinery/sleeper/syndie{
 	dir = 8
@@ -3915,9 +3860,7 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced/spawner,
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
@@ -4667,6 +4610,30 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/office)
+"AS" = (
+/obj/structure/closet/secure_closet/engineering_personal{
+	req_access = list(150,10);
+	populate = 0
+	},
+/obj/effect/turf_decal/corner/opaque/orange{
+	dir = 10
+	},
+/obj/machinery/light/directional/south,
+/obj/item/clothing/shoes/magboots/syndie,
+/obj/item/clothing/head/helmet/space/syndicate/engie,
+/obj/item/clothing/suit/space/syndicate/engie,
+/obj/item/pipe_dispenser,
+/obj/item/storage/belt/utility/syndicate,
+/obj/item/clothing/under/syndicate/gec,
+/obj/item/clothing/glasses/meson/engine,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/head/hardhat/red{
+	name = "hard hat"
+	},
+/obj/item/gun/energy/plasmacutter,
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering)
 "AW" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -5487,7 +5454,7 @@
 /obj/item/storage/toolbox/ammo/c10mm{
 	pixel_x = -5;
 	pixel_y = 10;
-	name = "ammo can (10mm)"
+	name = "ammo can (10x22mm)"
 	},
 /obj/item/storage/toolbox/ammo/a308{
 	pixel_x = 6;
@@ -5642,8 +5609,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/light_switch{
 	dir = 8;
-	pixel_x = 20;
-	pixel_y = 0
+	pixel_x = 20
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
@@ -5871,6 +5837,33 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
+"Hi" = (
+/obj/effect/turf_decal/corner/opaque/orange/three_quarters{
+	dir = 1
+	},
+/obj/item/clothing/under/syndicate/gec,
+/obj/item/clothing/shoes/magboots/syndie,
+/obj/item/clothing/head/helmet/space/syndicate/engie,
+/obj/item/clothing/suit/space/syndicate/engie,
+/obj/structure/closet/secure_closet/engineering_personal{
+	req_access = list(150,10);
+	populate = 0
+	},
+/obj/item/pipe_dispenser,
+/obj/structure/sign/poster/contraband/gec{
+	pixel_y = -32
+	},
+/obj/item/storage/belt/utility/syndicate,
+/obj/item/clothing/under/syndicate/gec,
+/obj/item/clothing/glasses/meson/engine,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/head/hardhat/red{
+	name = "hard hat"
+	},
+/obj/item/gun/energy/plasmacutter,
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering)
 "Hj" = (
 /obj/item/radio/intercom/directional/west,
 /obj/effect/turf_decal/corner/opaque/syndiered{
@@ -5893,6 +5886,14 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering/atmospherics)
+"Hr" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/closet/emcloset/wall/directional/east,
+/obj/item/clothing/suit/space/syndicate/engie,
+/obj/item/clothing/head/helmet/space/syndicate/engie,
+/turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "Ht" = (
 /obj/machinery/telecomms/receiver/preset_right{
@@ -6566,6 +6567,16 @@
 /obj/machinery/suit_storage_unit/inherit,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
+"LA" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/closet/emcloset/wall/directional/east,
+/obj/item/clothing/suit/space/syndicate/engie,
+/obj/item/clothing/head/helmet/space/syndicate/engie,
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering/atmospherics)
 "LF" = (
 /obj/effect/turf_decal/atmos/air{
 	dir = 8
@@ -6595,53 +6606,8 @@
 /obj/item/clothing/head/soft/black,
 /turf/open/floor/plasteel,
 /area/ship/crew/dorm)
-"LH" = (
-/obj/machinery/atmospherics/pipe/simple/purple/visible,
-/obj/structure/closet/cardboard{
-	name = "mot containment box";
-	desc = "WARNING: Contains mot."
-	},
-/obj/item/storage/box/maid,
-/obj/item/trash/cheesie,
-/mob/living/carbon/human/species/moth{
-	name = "Secret Box Moth";
-	real_name = "Box Moth";
-	gender = "female";
-	faction = list("neutral","playerSyndicate")
-	},
-/obj/item/reagent_containers/food/snacks/spacetwinkie{
-	pixel_y = 12;
-	pixel_x = 10
-	},
-/obj/item/reagent_containers/food/snacks/spacetwinkie{
-	pixel_x = -9;
-	pixel_y = 8
-	},
-/obj/item/reagent_containers/food/snacks/spacetwinkie{
-	pixel_x = 7
-	},
-/obj/item/reagent_containers/food/snacks/spacetwinkie{
-	pixel_x = -2;
-	pixel_y = 14
-	},
-/obj/item/reagent_containers/food/snacks/spacetwinkie{
-	pixel_y = -5;
-	pixel_x = -6
-	},
-/obj/structure/sign/poster/contraband/syndiemoth{
-	pixel_x = -32;
-	desc = "A Syndicate-commissioned poster that uses Syndie Moth(TM?) to tell the viewer to keep the nuclear authentication disk unsecured. It's signed by 'AspEv'."
-	},
-/obj/item/toy/balloon/syndicate,
-/obj/effect/turf_decal/techfloor/orange{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/engineering/atmospherics)
 "LX" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -6695,15 +6661,6 @@
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
-"Mr" = (
-/obj/machinery/porta_turret/ship/syndicate/heavy{
-	dir = 6;
-	id = "twink_grid"
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal{
-	rad_insulation = 0
-	},
-/area/ship/hallway/starboard)
 "Mw" = (
 /obj/effect/turf_decal/industrial/caution/red,
 /obj/effect/decal/cleanable/shreds{
@@ -6875,9 +6832,7 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 1
 	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
@@ -7415,9 +7370,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/machinery/door/poddoor/shutters{
 	id = "twinkle_engines";
 	dir = 4
@@ -7488,11 +7441,6 @@
 	},
 /obj/structure/closet/emcloset,
 /obj/effect/spawner/random/maintenance/four,
-/obj/item/reagent_containers/food/snacks/burger/red{
-	name = "suspicious red burger";
-	desc = "A suspicious looking burger.";
-	color = "#730622"
-	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
 	},
@@ -7775,14 +7723,6 @@
 /obj/machinery/camera/autoname,
 /turf/open/floor/plating,
 /area/ship/hallway/port)
-"SA" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/closet/emcloset/wall/directional/east,
-/obj/item/clothing/suit/space/syndicate/black/engie,
-/obj/item/clothing/head/helmet/space/syndicate/black/engie,
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/atmospherics)
 "SD" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -7961,15 +7901,6 @@
 /obj/machinery/vending/tool,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
-"TH" = (
-/obj/machinery/porta_turret/ship/syndicate/heavy{
-	dir = 9;
-	id = "twink_grid"
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal{
-	rad_insulation = 0
-	},
-/area/ship/crew/canteen)
 "TI" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -8404,15 +8335,6 @@
 	rad_insulation = 0
 	},
 /area/ship/crew/cryo)
-"We" = (
-/obj/machinery/porta_turret/ship/syndicate/heavy{
-	dir = 10;
-	id = "twink_grid"
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal{
-	rad_insulation = 0
-	},
-/area/ship/security)
 "Wj" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
@@ -8843,7 +8765,6 @@
 /area/ship/bridge)
 "YI" = (
 /obj/structure/sign/poster/contraband/m90{
-	icon_state = "poster-m90";
 	pixel_x = -32
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -9122,7 +9043,7 @@ mp
 mp
 mp
 mp
-ms
+FR
 ae
 LX
 FR
@@ -9142,7 +9063,7 @@ FR
 FR
 LX
 ae
-iX
+FR
 mp
 mp
 mp
@@ -9195,7 +9116,7 @@ wM
 FR
 tU
 aj
-LH
+fC
 Hk
 iC
 sj
@@ -9363,7 +9284,7 @@ gh
 (9,1,1) = {"
 gh
 xW
-SA
+Hr
 ZQ
 NL
 JH
@@ -9391,7 +9312,7 @@ FR
 cp
 mS
 qz
-aa
+LA
 Pn
 gh
 "}
@@ -9508,7 +9429,7 @@ ZX
 Qd
 bM
 zH
-hB
+Hi
 ZX
 hN
 IT
@@ -9543,7 +9464,7 @@ ZX
 fz
 zK
 qK
-hh
+AS
 ZX
 RG
 BV
@@ -9641,7 +9562,7 @@ mp
 mp
 "}
 (17,1,1) = {"
-TH
+xj
 xj
 xj
 xj
@@ -9673,7 +9594,7 @@ kT
 Bj
 Bj
 Bj
-We
+Bj
 "}
 (18,1,1) = {"
 xj
@@ -9961,7 +9882,7 @@ Zt
 Yn
 lG
 Wd
-ln
+fD
 Ql
 bV
 JM
@@ -10380,7 +10301,7 @@ mp
 mp
 mp
 mp
-vd
+NE
 NE
 NE
 NE
@@ -10404,7 +10325,7 @@ lx
 xB
 xB
 xB
-Mr
+xB
 mp
 mp
 mp

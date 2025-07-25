@@ -1,5 +1,5 @@
 /datum/supply_pack/magazine
-	group = "Magazines"
+	category = "Magazines"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	crate_name = "magazine crate"
 	faction_discount = 0
@@ -8,15 +8,15 @@
 /* VI */
 
 /datum/supply_pack/magazine/co9mm_mag
-	name = "9mm Commander Magazine Crate"
-	desc = "Contains a 9mm magazine for the standard-issue Commander pistol, with a capacity of twelve rounds."
+	name = "9x18mm Commander Magazine Crate"
+	desc = "Contains a 9x18mm magazine for the standard-issue Commander pistol, with a capacity of twelve rounds."
 	contains = list(/obj/item/ammo_box/magazine/co9mm/empty)
 	cost = 150
 	faction = /datum/faction/nt
 
 /datum/supply_pack/magazine/smgm9mm_mag
-	name = "9mm SMG Magazine Crate"
-	desc = "Contains a 9mm magazine for the Vector and Saber SMGs, with a capacity of thirty rounds."
+	name = "9x18mm SMG Magazine Crate"
+	desc = "Contains a 9x18mm magazine for the Vector and Saber SMGs, with a capacity of thirty rounds."
 	contains = list(/obj/item/ammo_box/magazine/smgm9mm/empty)
 	cost = 250
 	faction = /datum/faction/nt
@@ -88,12 +88,6 @@
 	contains = list(/obj/item/ammo_box/magazine/m23/empty)
 	cost = 200
 
-/datum/supply_pack/magazine/woodsman_mag_extended
-	name = "Woodsman Magazine Crate"
-	desc = "Contains an 8x50mmR magazine for the Woodsman Rifle, with a capacity of ten rounds."
-	contains = list(/obj/item/ammo_box/magazine/m23/extended/empty)
-	cost = 500
-
 /datum/supply_pack/magazine/m20_auto_elite
 	name = "Auto Elite Magazine Crate"
 	desc = "Contains a .44 Roumain magazine for the Auto Elite pistol, with a capacity of nine rounds."
@@ -125,14 +119,14 @@
 
 /datum/supply_pack/magazine/m10mm_mag
 	name = "Ringneck Magazine Crate"
-	desc = "Contains a 10mm magazine for the Ringneck pistol, with a capacity of eight rounds."
+	desc = "Contains a 10x22mm magazine for the Ringneck pistol, with a capacity of eight rounds."
 	contains = list(/obj/item/ammo_box/magazine/m10mm_ringneck/empty)
 	cost = 150
 	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/m9mm_rattlesnake
 	name = "Rattlesnake Magazine Crate"
-	desc = "Contains a 9mm magazine for the Rattlesnake machine pistol, with a capacity of 18 rounds."
+	desc = "Contains a 9x18mm magazine for the Rattlesnake machine pistol, with a capacity of 18 rounds."
 	contains = list(/obj/item/ammo_box/magazine/m9mm_rattlesnake/empty)
 	cost = 300
 	faction = /datum/faction/syndicate/scarborough
@@ -184,14 +178,14 @@
 
 /datum/supply_pack/magazine/boomslang_mag
 	name = "Boomslang-90 Magazine Crate"
-	desc = "Contains a 6.5 CLIP magazine for the Boomslang rifle platform, with a capacity of five rounds."
+	desc = "Contains a 6.5mm CLIP magazine for the Boomslang rifle platform, with a capacity of five rounds."
 	contains = list(/obj/item/ammo_box/magazine/boomslang/short/empty)
 	cost = 750
 	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/boomslang_mag_extended
 	name = "MSR-90 'Boomslang' Magazine Crate"
-	desc = "Contains a 6.5 CLIP magazine for the Boomslang rifle platform, with a capacity of ten rounds."
+	desc = "Contains a 6.5mm CLIP magazine for the Boomslang rifle platform, with a capacity of ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/boomslang/empty)
 	cost = 1500
 	faction = /datum/faction/syndicate/scarborough
@@ -201,14 +195,14 @@
 
 /datum/supply_pack/magazine/cm23_mag
 	name = "CM-23 Magazine Crate"
-	desc = "Contains a 10mm magazine for the CM-23 handgun with a capacity of 10 rounds."
+	desc = "Contains a 10x22mm magazine for the CM-23 handgun with a capacity of 10 rounds."
 	contains = list(/obj/item/ammo_box/magazine/cm23/empty)
 	cost = 150
 	faction = /datum/faction/clip
 
 /datum/supply_pack/magazine/cm70_mag
 	name = "CM-70 Magazine Crate"
-	desc = "Contains a 9mm magazine for the CM-70 machinepistol."
+	desc = "Contains a 9x18mm magazine for the CM-70 machinepistol."
 	contains = list(/obj/item/ammo_box/magazine/m9mm_cm70/empty)
 	cost = 350
 	faction = /datum/faction/clip
@@ -223,7 +217,7 @@
 
 /datum/supply_pack/magazine/cm5_mag
 	name = "CM-5 Magazine Crate"
-	desc = "Contains a 9mm magazine for the CM-5 SMG with a capacity of 30 rounds."
+	desc = "Contains a 9x18mm magazine for the CM-5 SMG with a capacity of 30 rounds."
 	contains = list(/obj/item/ammo_box/magazine/cm5_9mm/empty)
 	cost = 300
 	faction = /datum/faction/clip
@@ -269,7 +263,7 @@
 	name = "CM-15 Magazine Crate"
 	desc = "Contains an 8-round 12ga magazine for the CM-15 Automatic Shotgun."
 	contains = list(/obj/item/ammo_box/magazine/cm15_12g/empty)
-	cost = 750
+	cost = 400
 	faction = /datum/faction/clip
 
 /datum/supply_pack/magazine/cm40
@@ -322,9 +316,17 @@
 
 /datum/supply_pack/magazine/mongrel_mag
 	name = "Mongrel Magazine Crate"
-	desc = "Contains a 10mm magazine for the SKM-44v 'Mongrel' SMG, with a capacity of twenty-four rounds."
+	desc = "Contains a 10x22mm magazine for the SKM-44v 'Mongrel' SMG, with a capacity of twenty-four rounds."
 	contains = list(/obj/item/ammo_box/magazine/smgm10mm/empty)
 	cost = 300
+	faction = /datum/faction/inteq
+
+/datum/supply_pack/magazine/rottweiler_mag
+
+	name = "Rottweiler Box Magazine Crate"
+	desc = "Contains a .308 box magazine for the KM-05 'Rottweiler' LMG, with a capacity of fifty rounds."
+	contains = list(/obj/item/ammo_box/magazine/rottweiler_308_box/empty)
+	cost = 750
 	faction = /datum/faction/inteq
 
 /* Shotguns */
@@ -333,14 +335,14 @@
 	name = "Bulldog Box Magazine Crate"
 	desc = "Contains an 8-round 12ga box magazine for the Bulldog weapons platform."
 	contains = list(/obj/item/ammo_box/magazine/m12g_bulldog/empty)
-	cost = 750
+	cost = 400
 	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/bulldog_12
 	name = "Bulldog Drum Magazine Crate"
 	desc = "Contains a 12-round 12ga drum magazine for the Bulldog weapons platform."
 	contains = list(/obj/item/ammo_box/magazine/m12g_bulldog/drum/empty)
-	cost = 1500
+	cost = 1200
 	faction = /datum/faction/syndicate/scarborough
 
 /* energy weapons */

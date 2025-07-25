@@ -17,7 +17,7 @@
 	stun_projectile_sound = 'sound/weapons/gun/rifle/hydra.ogg'
 	lethal_projectile = /obj/projectile/bullet/a556_42
 	lethal_projectile_sound = 'sound/weapons/gun/rifle/hydra.ogg'
-	faction = list(FACTION_RAMZI, "turret")
+	faction = list(FACTION_RAMZI, FACTION_TURRET)
 	max_integrity = 180
 	shot_delay = 16
 	burst_delay = 8
@@ -38,6 +38,13 @@
 	max_integrity = 140
 	integrity_failure = 0.6
 
+/obj/machinery/porta_turret/ruin/ramzi/light/bonnie
+	lethal = TRUE
+
+/obj/machinery/porta_turret/ruin/ramzi/light/bonnie/Initialize()
+	. = ..()
+	take_damage(rand(120, 130),BRUTE)
+
 /obj/machinery/porta_turret/ruin/ramzi/heavy
 	name = "Revolt Turret"
 	desc = "A durable turret manufactured by the Gorlex Marauders during the ICW. Some reported examples used anti-vehicle munitions. Most surviving examples are poorly maintained."
@@ -54,9 +61,9 @@
 /obj/machinery/porta_turret/ruin/ramzi/super_heavy
 	name = "Rebellion Turret"
 	desc = "A durable anti-vehicle turret system manufactured by the Gorlex Marauders during the ICW. Most users are unable to get more parts for the turret, leading to a slow reduction in the amount of redundant, working parts."
-	stun_projectile = /obj/item/ammo_casing/p50/soporific
+	stun_projectile = /obj/projectile/bullet/p50/soporific
 	stun_projectile_sound = 'sound/weapons/gun/sniper/shot.ogg'
-	lethal_projectile = /obj/item/ammo_casing/p50
+	lethal_projectile = /obj/projectile/bullet/p50
 	lethal_projectile_sound = 'sound/weapons/gun/sniper/shot.ogg'
 	scan_range = 14
 	shot_delay = 30
@@ -68,7 +75,7 @@
 /obj/machinery/porta_turret/ruin/frontiersmen
 	name = "Spitter Turret"
 	desc = "A juryrigged mishmash of a 9mm SMG and targetting system. Stand clear!"
-	faction = list(FACTION_ANTAG_FRONTIERSMEN, "Turret")
+	faction = list(FACTION_ANTAG_FRONTIERSMEN, FACTION_TURRET)
 	subsystem_type = /datum/controller/subsystem/processing/fastprocess
 	integrity_failure = 0.6
 	max_integrity = 180
@@ -110,3 +117,39 @@
 	scan_range = 8
 	burst_size = 6
 	burst_delay = 2
+
+/* Nanotrasen Derelict Turrets */
+
+/obj/machinery/porta_turret/ruin/nt
+	name = "Sharplite Defense Turret"
+	desc = "A cheap and effective turret designed by Sharplite and purchased and installed on most Nanotrasen Vessels."
+	faction = list(FACTION_PLAYER_NANOTRASEN, "turret")
+	max_integrity = 160
+	integrity_failure = 0.6
+	icon_state = "standard_lethal"
+	base_icon_state = "standard"
+	stun_projectile = /obj/projectile/beam/disabler/sharplite
+	lethal_projectile = /obj/projectile/beam/laser/sharplite
+	lethal_projectile_sound = 'sound/weapons/gun/laser/nt-fire.ogg'
+	stun_projectile_sound = 'sound/weapons/taser2.ogg'
+	shot_delay = 10
+	scan_range = 10
+
+/obj/machinery/porta_turret/ruin/nt/light
+	name = "Sharplite LDS"
+	desc = "A cheap and effective 'defensive system' designed by Sharplite for installation on Nanotrasen vessels."
+	stun_projectile = /obj/projectile/beam/disabler/weak/sharplite
+	lethal_projectile = /obj/projectile/beam/laser/light/sharplite
+	lethal_projectile_sound = 'sound/weapons/gun/laser/nt-fire.ogg'
+	stun_projectile_sound = 'sound/weapons/taser2.ogg'
+
+/obj/machinery/porta_turret/ruin/nt/light/sniper
+	name = "Sharplite Long-Range LDS"
+	desc = "A long-ranged 'defensive system' designed by Sharplite for installation on Nanotrasen stations."
+	stun_projectile = /obj/projectile/beam/disabler/weak/sharplite
+	lethal_projectile = /obj/projectile/beam/laser/light/sharplite
+	lethal_projectile_sound = 'sound/weapons/gun/laser/nt-fire.ogg'
+	stun_projectile_sound = 'sound/weapons/taser2.ogg'
+	shot_delay = 15
+	burst_size = 2
+	burst_delay = 3

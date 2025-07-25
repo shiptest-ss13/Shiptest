@@ -21,6 +21,8 @@
 	///when this be added to vis_contents of something it inherit something.plane, important for visualisation of mob in openspace.
 	vis_flags = VIS_INHERIT_PLANE
 
+	bad_type = /mob
+
 	var/lighting_alpha = LIGHTING_PLANE_ALPHA_VISIBLE
 	var/datum/mind/mind
 	var/static/next_mob_id = 0
@@ -155,7 +157,7 @@
 	var/datum/weakref/LAssailant = null
 
 	/**
-	* construct spells and mime spells.
+	* construct spells
 	*
 	* Spells that do not transfer from one mob to another and can not be lost in mindswap.
 	* obviously do not live in the mind
@@ -221,6 +223,9 @@
 
 	/// Whether the typing indicator is on. Not on /living level because of verbs
 	var/typing_indicator = FALSE
+
+	/// The mob's current tone indicator, indicates whether
+	var/tone_indicator
 
 	///Is the mob pixel shifted?
 	var/is_shifted

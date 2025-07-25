@@ -177,24 +177,24 @@
 		if(user.a_intent == INTENT_HELP)
 			var/body_part = parse_zone(user.zone_selected)
 
-			var/heart_strength = "<span class='danger'>no</span>"
-			var/lung_strength = "<span class='danger'>no</span>"
+			var/heart_strength = span_danger("no")
+			var/lung_strength = span_danger("no")
 
 			var/obj/item/organ/heart/heart = M.getorganslot(ORGAN_SLOT_HEART)
 			var/obj/item/organ/lungs/lungs = M.getorganslot(ORGAN_SLOT_LUNGS)
 
 			if(!(M.stat == DEAD || (HAS_TRAIT(M, TRAIT_FAKEDEATH))))
 				if(heart && istype(heart))
-					heart_strength = "<span class='danger'>an unstable</span>"
+					heart_strength = span_danger("an unstable")
 					if(heart.beating)
 						heart_strength = "a healthy"
 				if(lungs && istype(lungs))
-					lung_strength = "<span class='danger'>strained</span>"
+					lung_strength = span_danger("strained")
 					if(!(M.failed_last_breath || M.losebreath))
 						lung_strength = "healthy"
 
 			var/diagnosis = (body_part == BODY_ZONE_CHEST ? "You hear [heart_strength] pulse and [lung_strength] respiration." : "You faintly hear [heart_strength] pulse.")
-			user.visible_message("<span class='notice'>[user] places [src] against [M]'s [body_part] and listens attentively.</span>", "<span class='notice'>You place [src] against [M]'s [body_part]. [diagnosis]</span>")
+			user.visible_message(span_notice("[user] places [src] against [M]'s [body_part] and listens attentively."), span_notice("You place [src] against [M]'s [body_part]. [diagnosis]"))
 			return
 	return ..(M,user)
 
@@ -310,6 +310,219 @@
 	icon_state = "scarflightbrown"
 	current_skin = "light brown scarf"
 
+//Ponchos. Duh
+
+/obj/item/clothing/neck/poncho
+	name = "poncho"
+	desc = "Perfect for a rainy night with jazz."
+	icon = 'icons/obj/clothing/neck/poncho.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/neck/poncho.dmi'
+	icon_state = "ponchowhite"
+	item_state = "ponchowhite"
+	body_parts_covered = CHEST
+	custom_price = 60
+	unique_reskin = list("white poncho" = "ponchowhite",
+						"grey poncho" = "ponchogrey",
+						"black poncho" = "ponchoblack",
+						"red poncho" = "ponchored",
+						"maroon poncho" = "ponchomaroon",
+						"orange poncho" = "ponchoorange",
+						"yellow poncho" = "ponchoyellow",
+						"green poncho" = "ponchogreen",
+						"dark green poncho" = "ponchodarkgreen",
+						"teal poncho" = "ponchoteal",
+						"blue poncho" = "ponchoblue",
+						"dark blue poncho" = "ponchodarkblue",
+						"purple poncho" = "ponchopurple",
+						"pink poncho" = "ponchopink",
+						"brown poncho" = "ponchobrown",
+						"light brown poncho" = "poncholightbrown"
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+	actions_types = list(/datum/action/item_action/toggle_hood)
+	var/ponchotoggled = FALSE
+	var/obj/item/clothing/head/hooded/hood
+	var/hoodtype = /obj/item/clothing/head/hooded/poncho
+
+	equip_sound = 'sound/items/equip/cloth_equip.ogg'
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+
+/obj/item/clothing/neck/poncho/Initialize()
+	. = ..()
+	if(!base_icon_state)
+		base_icon_state = icon_state
+	make_hood()
+
+/obj/item/clothing/neck/poncho/Destroy()
+	. = ..()
+	qdel(hood)
+	hood = null
+
+/obj/item/clothing/neck/poncho/reskin_obj(mob/M, change_name)
+	. = ..()
+	if(hood)
+		hood.icon_state = base_icon_state
+	return
+
+/obj/item/clothing/neck/poncho/proc/make_hood()
+	if(!hood)
+		var/obj/item/clothing/head/hooded/W = new hoodtype(src)
+		W.suit = src
+		hood = W
+
+/obj/item/clothing/neck/poncho/ui_action_click()
+	toggle_hood()
+
+/obj/item/clothing/neck/poncho/item_action_slot_check(slot, mob/user)
+	if(slot == ITEM_SLOT_NECK)
+		return 1
+
+/obj/item/clothing/neck/poncho/equipped(mob/user, slot)
+	if(slot != ITEM_SLOT_NECK)
+		remove_hood()
+	..()
+
+/obj/item/clothing/neck/poncho/proc/remove_hood()
+	ponchotoggled = FALSE
+	if(hood)
+		if(ishuman(hood.loc))
+			var/mob/living/carbon/H = hood.loc
+			H.transferItemToLoc(hood, src, TRUE)
+			H.update_inv_neck()
+			update_appearance()
+			H.regenerate_icons()
+		else
+			hood.forceMove(src)
+		for(var/X in actions)
+			var/datum/action/A = X
+			A.UpdateButtonIcon()
+
+/obj/item/clothing/neck/poncho/update_appearance(updates)
+	if(ponchotoggled)
+		icon_state = "[base_icon_state]_t"
+	else
+		icon_state = base_icon_state
+	if(isobj(hood))
+		hood.icon_state = base_icon_state
+	. = ..()
+
+/obj/item/clothing/neck/poncho/dropped()
+	..()
+	remove_hood()
+
+/obj/item/clothing/neck/poncho/proc/toggle_hood()
+	if(!ponchotoggled)
+		if(ishuman(src.loc))
+			var/mob/living/carbon/human/H = src.loc
+			if(H.wear_neck != src)
+				to_chat(H, span_warning("You must be wearing [src] to put up the hood!"))
+				return
+			if(H.head)
+				to_chat(H, span_warning("You're already wearing something on your head!"))
+				return
+			else if(H.equip_to_slot_if_possible(hood,ITEM_SLOT_HEAD,0,0,1))
+				ponchotoggled = TRUE
+				H.update_inv_neck()
+				update_appearance()
+				H.regenerate_icons()
+				for(var/X in actions)
+					var/datum/action/A = X
+					A.UpdateButtonIcon()
+	else
+		remove_hood()
+
+/obj/item/clothing/head/hooded/poncho
+	name = "poncho"
+	desc = "Perfect for a rainy night with jazz."
+	icon = 'icons/obj/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
+	icon_state = "ponchowhite"
+	item_state = "ponchowhite"
+	body_parts_covered = HEAD
+	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
+
+/obj/item/clothing/neck/poncho/white
+	name = "white poncho"
+	icon_state = "ponchowhite"
+	current_skin = "white poncho"
+
+/obj/item/clothing/neck/poncho/grey
+	name = "grey poncho"
+	icon_state = "ponchogrey"
+	current_skin = "grey poncho"
+
+/obj/item/clothing/neck/poncho/black
+	name = "black poncho"
+	icon_state = "ponchoblack"
+	current_skin = "black poncho"
+
+/obj/item/clothing/neck/poncho/red
+	name = "red poncho"
+	icon_state = "ponchored"
+	current_skin = "red poncho"
+
+/obj/item/clothing/neck/poncho/maroon
+	name = "maroon poncho"
+	icon_state = "ponchomaroon"
+	current_skin = "maroon poncho"
+
+/obj/item/clothing/neck/poncho/orange
+	name = "orange poncho"
+	icon_state = "ponchoorange"
+	current_skin = "orange poncho"
+
+/obj/item/clothing/neck/poncho/yellow
+	name = "yellow poncho"
+	icon_state = "ponchoyellow"
+	current_skin = "yellow poncho"
+
+/obj/item/clothing/neck/poncho/green
+	name = "green poncho"
+	icon_state = "ponchogreen"
+	current_skin = "green poncho"
+
+/obj/item/clothing/neck/poncho/darkgreen
+	name = "dark green poncho"
+	icon_state = "ponchowhite"
+	current_skin = "dark green poncho"
+
+/obj/item/clothing/neck/poncho/teal
+	name = "teal poncho"
+	icon_state = "ponchoteal"
+	current_skin = "teal poncho"
+
+/obj/item/clothing/neck/poncho/blue
+	name = "blue poncho"
+	icon_state = "ponchoblue"
+	current_skin = "blue poncho"
+
+/obj/item/clothing/neck/poncho/darkblue
+	name = "dark blue poncho"
+	icon_state = "ponchodarkblue"
+	current_skin = "dark blue poncho"
+
+/obj/item/clothing/neck/poncho/purple
+	name = "purple poncho"
+	icon_state = "ponchopurple"
+	current_skin = "purple poncho"
+
+/obj/item/clothing/neck/poncho/pink
+	name = "pink poncho"
+	icon_state = "ponchopink"
+	current_skin = "pink poncho"
+
+/obj/item/clothing/neck/poncho/brown
+	name = "brown poncho"
+	icon_state = "ponchobrown"
+	current_skin = "brown poncho"
+
+/obj/item/clothing/neck/poncho/lightbrown
+	name = "light brown poncho"
+	icon_state = "poncholightbrown"
+	current_skin = "light brown poncho"
+
 //Shemaghs to operate tactically in a operational tactical situation
 
 /obj/item/clothing/neck/shemagh
@@ -339,12 +552,6 @@
 	custom_price = 10
 	supports_variations = VOX_VARIATION
 
-/obj/item/clothing/neck/stripedsolgovscarf
-	name = "striped solgov scarf"
-	icon_state = "stripedsolgovscarf"
-	custom_price = 10
-	supports_variations = VOX_VARIATION
-
 /obj/item/clothing/neck/petcollar
 	name = "pet collar"
 	desc = "It's for pets. But some people wear it anyways for reasons unknown."
@@ -366,6 +573,7 @@
 	resistance_flags = FIRE_PROOF
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_NECK | ITEM_SLOT_POCKETS
+	strip_delay = 10
 
 /obj/item/clothing/neck/dogtag/gold
 	icon_state = "dogtag_gold"
@@ -406,7 +614,7 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(C.get_item_by_slot(ITEM_SLOT_NECK) == src)
-			to_chat(user, "<span class='warning'>You can't untie [src] while wearing it!</span>")
+			to_chat(user, span_warning("You can't untie [src] while wearing it!"))
 			return
 		if(user.is_holding(src))
 			var/obj/item/clothing/mask/bandana/newBand = new sourceBandanaType(user)
@@ -414,9 +622,9 @@
 			var/oldName = src.name
 			qdel(src)
 			user.put_in_hand(newBand, currentHandIndex)
-			user.visible_message("<span class='notice'>You untie [oldName] back into a [newBand.name].</span>", "<span class='notice'>[user] unties [oldName] back into a [newBand.name].</span>")
+			user.visible_message(span_notice("You untie [oldName] back into a [newBand.name]."), span_notice("[user] unties [oldName] back into a [newBand.name]."))
 		else
-			to_chat(user, "<span class='warning'>You must be holding [src] in order to untie it!</span>")
+			to_chat(user, span_warning("You must be holding [src] in order to untie it!"))
 
 /obj/item/clothing/neck/beads
 	name = "plastic bead necklace"
@@ -447,7 +655,7 @@
 	var/datum/effect_system/spark_spread/quantum/spark_creator = new
 	spark_creator.set_up(2, 1, src)
 	spark_creator.start()
-	owner.visible_message("<span class='danger'>[owner]'s shields deflect [attack_text] in a shower of sparks!</span>")
+	owner.visible_message(span_danger("[owner]'s shields deflect [attack_text] in a shower of sparks!"))
 	take_damage(damage_to_take_on_hit)
 	playsound(src, 'sound/effects/hit_on_shattered_glass.ogg', 70, TRUE)
 	return TRUE
@@ -461,7 +669,7 @@
 		if(25 to 50)
 			. += "It appears heavily damaged."
 		if(0 to 25)
-			. += "<span class='warning'>It's falling apart!</span>"
+			. += span_warning("It's falling apart!")
 
 /obj/item/clothing/neck/crystal_amulet/worn_overlays(isinhands)
 	. = ..()
@@ -469,7 +677,7 @@
 		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER + 0.01)
 
 /obj/item/clothing/neck/crystal_amulet/obj_destruction(damage_flag)
-	visible_message("<span class='danger'>[src] shatters into a million pieces!</span>")
+	visible_message(span_danger("[src] shatters into a million pieces!"))
 	playsound(src,"shatter", 70)
 	new /obj/effect/decal/cleanable/glass/strange(get_turf(src))
 	return ..()

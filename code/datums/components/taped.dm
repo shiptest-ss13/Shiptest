@@ -50,14 +50,14 @@
 
 /datum/component/taped/proc/tape_rip(datum/source, obj/item/attacker, mob/user)
 	var/obj/item/I = attacker
-	if(!I.tool_behaviour == TOOL_WIRECUTTER || !I.sharpness >= IS_SHARP)
+	if(!I.tool_behaviour == TOOL_WIRECUTTER || !I.sharpness >= SHARP_EDGED)
 		return
 	playsound(parent, 'sound/items/poster_ripped.ogg', 30, TRUE, -2)
-	user.visible_message("<span class='notice'>[user] cuts and tears [taped_name] off \the [parent].", "<span class='notice'>You finish peeling away all the [taped_name] from \the [parent].</span>")
+	user.visible_message(span_notice("[user] cuts and tears [taped_name] off \the [parent]."), span_notice("You finish peeling away all the [taped_name] from \the [parent]."))
 	remove_tape()
 
 /datum/component/taped/proc/examine_tape(datum/source, mob/user, list/examine_list)
-	examine_list += "<span class='warning'>A bunch of [taped_name] is holding this thing together!</span>"
+	examine_list += span_warning("A bunch of [taped_name] is holding this thing together!")
 
 /datum/component/taped/proc/remove_tape()
 	var/obj/item/I = parent

@@ -17,7 +17,7 @@
 	custom_materials = list(/datum/material/iron=1150, /datum/material/glass=2075)
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("smashed", "crushed", "cleaved", "chopped", "pulped")
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	actions_types = list(/datum/action/item_action/toggle_light)
 	obj_flags = UNIQUE_RENAME
 	light_system = MOVABLE_LIGHT
@@ -38,14 +38,17 @@
 
 /obj/item/kinetic_crusher/examine(mob/living/user)
 	. = ..()
-	. += "<span class='notice'>Induce magnetism in an enemy by striking them with a magnetospheric wave, then hit them in melee to force a waveform collapse for <b>[force + detonation_damage]</b> damage.</span>"
-	. += "<span class='notice'>Does <b>[force + detonation_damage + backstab_bonus]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage]</b>.</span>"
+	. += span_notice("Induce magnetism in an enemy by striking them with a magnetospheric wave, then hit them in melee to force a waveform collapse for <b>[force + detonation_damage]</b> damage.")
+	. += span_notice("Does <b>[force + detonation_damage + backstab_bonus]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage]</b>.")
 
 /obj/item/kinetic_crusher/attack(mob/living/target, mob/living/carbon/user)
 	if(!HAS_TRAIT(src, TRAIT_WIELDED))
-		to_chat(user, "<span class='warning'>[src] is too heavy to use with one hand! You fumble and drop everything.</span>")
-		user.drop_all_held_items()
 		return
+
+	var/atom/throw_target = get_edge_target_turf(target, user.dir)
+	if(!target.anchored)
+		target.throw_at(throw_target, rand(1,2), 2, user, gentle = TRUE)
+
 	var/datum/status_effect/crusher_damage/C = target.has_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
 	var/target_health = target.health
 	..()
@@ -162,7 +165,7 @@
 
 /obj/item/kinetic_crusher/old/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>This hunk of junk's so heavy that you can barely swing it! Though, that blade looks pretty sharp...</span>"
+	. += span_notice("This hunk of junk's so heavy that you can barely swing it! Though, that blade looks pretty sharp...")
 
 /obj/item/kinetic_crusher/old/melee_attack_chain(mob/user, atom/target, params)
 	..()
@@ -191,7 +194,7 @@
 	custom_materials = list(/datum/material/titanium=5000, /datum/material/iron=2075)
 	hitsound = 'sound/weapons/blade1.ogg'
 	attack_verb = list("sliced", "bisected", "diced", "chopped", "filleted")
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	obj_flags = UNIQUE_RENAME
 	light_color = "#fb6767"
 	light_system = MOVABLE_LIGHT

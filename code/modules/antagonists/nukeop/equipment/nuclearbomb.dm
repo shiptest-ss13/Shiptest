@@ -105,43 +105,43 @@
 	switch(deconstruction_state)
 		if(NUKESTATE_INTACT)
 			if(istype(I, /obj/item/screwdriver/nuke))
-				to_chat(user, "<span class='notice'>You start removing [src]'s front panel's screws...</span>")
+				to_chat(user, span_notice("You start removing [src]'s front panel's screws..."))
 				if(I.use_tool(src, user, 60, volume=100))
 					deconstruction_state = NUKESTATE_UNSCREWED
-					to_chat(user, "<span class='notice'>You remove the screws from [src]'s front panel.</span>")
+					to_chat(user, span_notice("You remove the screws from [src]'s front panel."))
 					update_appearance()
 				return
 
 		if(NUKESTATE_PANEL_REMOVED)
 			if(I.tool_behaviour == TOOL_WELDER)
-				if(!I.tool_start_check(user, amount=1))
+				if(!I.tool_start_check(user, src, amount=1))
 					return
-				to_chat(user, "<span class='notice'>You start cutting [src]'s inner plate...</span>")
+				to_chat(user, span_notice("You start cutting [src]'s inner plate..."))
 				if(I.use_tool(src, user, 80, volume=100, amount=1))
-					to_chat(user, "<span class='notice'>You cut [src]'s inner plate.</span>")
+					to_chat(user, span_notice("You cut [src]'s inner plate."))
 					deconstruction_state = NUKESTATE_WELDED
 					update_appearance()
 				return
 		if(NUKESTATE_CORE_EXPOSED)
 			if(istype(I, /obj/item/nuke_core_container))
 				var/obj/item/nuke_core_container/core_box = I
-				to_chat(user, "<span class='notice'>You start loading the plutonium core into [core_box]...</span>")
+				to_chat(user, span_notice("You start loading the plutonium core into [core_box]..."))
 				if(do_after(user, 50, target = src, hidden = TRUE))
 					if(core_box.load(core, user))
-						to_chat(user, "<span class='notice'>You load the plutonium core into [core_box].</span>")
+						to_chat(user, span_notice("You load the plutonium core into [core_box]."))
 						deconstruction_state = NUKESTATE_CORE_REMOVED
 						update_appearance()
 						core = null
 					else
-						to_chat(user, "<span class='warning'>You fail to load the plutonium core into [core_box]. [core_box] has already been used!</span>")
+						to_chat(user, span_warning("You fail to load the plutonium core into [core_box]. [core_box] has already been used!"))
 				return
 			if(istype(I, /obj/item/stack/sheet/metal))
-				if(!I.tool_start_check(user, amount=20))
+				if(!I.tool_start_check(user, src, amount=20))
 					return
 
-				to_chat(user, "<span class='notice'>You begin repairing [src]'s inner metal plate...</span>")
+				to_chat(user, span_notice("You begin repairing [src]'s inner metal plate..."))
 				if(I.use_tool(src, user, 100, amount=20))
-					to_chat(user, "<span class='notice'>You repair [src]'s inner metal plate. The radiation is contained.</span>")
+					to_chat(user, span_notice("You repair [src]'s inner metal plate. The radiation is contained."))
 					deconstruction_state = NUKESTATE_PANEL_REMOVED
 					STOP_PROCESSING(SSobj, core)
 					update_appearance()
@@ -152,16 +152,16 @@
 	. = FALSE
 	switch(deconstruction_state)
 		if(NUKESTATE_UNSCREWED)
-			to_chat(user, "<span class='notice'>You start removing [src]'s front panel...</span>")
+			to_chat(user, span_notice("You start removing [src]'s front panel..."))
 			if(tool.use_tool(src, user, 30, volume=100))
-				to_chat(user, "<span class='notice'>You remove [src]'s front panel.</span>")
+				to_chat(user, span_notice("You remove [src]'s front panel."))
 				deconstruction_state = NUKESTATE_PANEL_REMOVED
 				update_appearance()
 			return TRUE
 		if(NUKESTATE_WELDED)
-			to_chat(user, "<span class='notice'>You start prying off [src]'s inner plate...</span>")
+			to_chat(user, span_notice("You start prying off [src]'s inner plate..."))
 			if(tool.use_tool(src, user, 30, volume=100))
-				to_chat(user, "<span class='notice'>You pry off [src]'s inner plate. You can see the core's green glow!</span>")
+				to_chat(user, span_notice("You pry off [src]'s inner plate. You can see the core's green glow!"))
 				deconstruction_state = NUKESTATE_CORE_EXPOSED
 				update_appearance()
 				START_PROCESSING(SSobj, core)
@@ -393,7 +393,7 @@
 
 /obj/machinery/nuclearbomb/proc/set_anchor()
 	if(isinspace() && !anchored)
-		to_chat(usr, "<span class='warning'>There is nothing to anchor to!</span>")
+		to_chat(usr, span_warning("There is nothing to anchor to!"))
 	else
 		set_anchored(!anchored)
 
@@ -412,7 +412,7 @@
 
 /obj/machinery/nuclearbomb/proc/set_active()
 	if(safety)
-		to_chat(usr, "<span class='danger'>The safety is still on.</span>")
+		to_chat(usr, span_danger("The safety is still on."))
 		return
 	timing = !timing
 	if(timing)
@@ -510,16 +510,16 @@
 /obj/machinery/nuclearbomb/beer/examine(mob/user)
 	. = ..()
 	if(keg.reagents.total_volume)
-		to_chat(user, "<span class='notice'>It has [keg.reagents.total_volume] unit\s left.</span>")
+		to_chat(user, span_notice("It has [keg.reagents.total_volume] unit\s left."))
 	else
-		to_chat(user, "<span class='danger'>It's empty.</span>")
+		to_chat(user, span_danger("It's empty."))
 
 /obj/machinery/nuclearbomb/beer/attackby(obj/item/W, mob/user, params)
 	if(W.is_refillable())
 		W.afterattack(keg, user, TRUE) 	// redirect refillable containers to the keg, allowing them to be filled
 		return TRUE 										// pretend we handled the attack, too.
 	if(istype(W, /obj/item/nuke_core_container))
-		to_chat(user, "<span class='notice'>[src] has had its plutonium core removed as a part of being decommissioned.</span>")
+		to_chat(user, span_notice("[src] has had its plutonium core removed as a part of being decommissioned."))
 		return TRUE
 	return ..()
 
@@ -534,9 +534,6 @@
 	if(!bomb_location)
 		disarm()
 		return
-	var/datum/round_event_control/E = locate(/datum/round_event_control/vent_clog/beer) in SSevents.control
-	if(E)
-		E.runEvent()
 	addtimer(CALLBACK(src, PROC_REF(really_actually_explode)), 110)
 
 /obj/machinery/nuclearbomb/beer/proc/disarm()
@@ -614,43 +611,6 @@ This is here to make the tiles around the station mininuke change when it's arme
 
 	if(!fake)
 		SSpoints_of_interest.make_point_of_interest(src)
-		last_disk_move = world.time
-		START_PROCESSING(SSobj, src)
-
-/obj/item/disk/nuclear/process(seconds_per_tick)
-	if(fake)
-		STOP_PROCESSING(SSobj, src)
-		CRASH("A fake nuke disk tried to call process(). Who the fuck and how the fuck")
-	var/turf/newturf = get_turf(src)
-
-	if(newturf && lastlocation == newturf)
-		/// How comfy is our disk?
-		var/disk_comfort_level = 0
-
-		//Go through and check for items that make disk comfy
-		for(var/obj/comfort_item in loc)
-			if(istype(comfort_item, /obj/item/bedsheet) || istype(comfort_item, /obj/structure/bed))
-				disk_comfort_level++
-
-		if(last_disk_move < world.time - 5000 && prob((world.time - 5000 - last_disk_move)*0.0001))
-			var/datum/round_event_control/operative/loneop = locate(/datum/round_event_control/operative) in SSevents.control
-			if(istype(loneop) && loneop.occurrences < loneop.max_occurrences)
-				loneop.weight += 1
-				if(loneop.weight % 5 == 0 && SSticker.totalPlayers > 1)
-					if(disk_comfort_level >= 2)
-						visible_message("<span class='notice'>[src] sleeps soundly. Sleep tight, disky.</span>")
-					message_admins("[src] is stationary in [ADMIN_VERBOSEJMP(newturf)]. The weight of Lone Operative is now [loneop.weight].")
-				log_game("[src] is stationary for too long in [loc_name(newturf)], and has increased the weight of the Lone Operative event to [loneop.weight].")
-
-	else
-		lastlocation = newturf
-		last_disk_move = world.time
-		var/datum/round_event_control/operative/loneop = locate(/datum/round_event_control/operative) in SSevents.control
-		if(istype(loneop) && loneop.occurrences < loneop.max_occurrences && prob(loneop.weight))
-			loneop.weight = max(loneop.weight - 1, 0)
-			if(loneop.weight % 5 == 0 && SSticker.totalPlayers > 1)
-				message_admins("[src] is on the move (currently in [ADMIN_VERBOSEJMP(newturf)]). The weight of Lone Operative is now [loneop.weight].")
-			log_game("[src] being on the move has reduced the weight of the Lone Operative event to [loneop.weight].")
 
 /obj/item/disk/nuclear/examine(mob/user)
 	. = ..()
@@ -658,7 +618,7 @@ This is here to make the tiles around the station mininuke change when it's arme
 		return
 
 	if(isobserver(user) || HAS_TRAIT(user.mind, TRAIT_DISK_VERIFIER))
-		. += "<span class='warning'>The serial numbers on [src] are incorrect.</span>"
+		. += span_warning("The serial numbers on [src] are incorrect.")
 
 /obj/item/disk/nuclear/Destroy(force=FALSE)
 	// respawning is handled in /obj/Destroy()

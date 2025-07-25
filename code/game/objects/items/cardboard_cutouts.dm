@@ -17,8 +17,6 @@
 	. = ..()
 	possible_appearances = sortList(list(
 		"Assistant" = image(icon = src.icon, icon_state = "cutout_greytide"),
-		"Clown" = image(icon = src.icon, icon_state = "cutout_clown"),
-		"Mime" = image(icon = src.icon, icon_state = "cutout_mime"),
 		"Traitor" = image(icon = src.icon, icon_state = "cutout_traitor"),
 		"Nuke Op" = image(icon = src.icon, icon_state = "cutout_fluke"),
 		"Cultist" = image(icon = src.icon, icon_state = "cutout_cultist"),
@@ -41,7 +39,7 @@
 /obj/item/cardboard_cutout/attack_hand(mob/living/user)
 	if(user.a_intent == INTENT_HELP || pushed_over)
 		return ..()
-	user.visible_message("<span class='warning'>[user] pushes over [src]!</span>", "<span class='danger'>You push over [src]!</span>")
+	user.visible_message(span_warning("[user] pushes over [src]!"), span_danger("You push over [src]!"))
 	playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
 	push_over()
 
@@ -57,7 +55,7 @@
 /obj/item/cardboard_cutout/attack_self(mob/living/user)
 	if(!pushed_over)
 		return
-	to_chat(user, "<span class='notice'>You right [src].</span>")
+	to_chat(user, span_notice("You right [src]."))
 	desc = initial(desc)
 	icon = initial(icon)
 	icon_state = initial(icon_state) //This resets a cutout to its blank state - this is intentional to allow for resetting
@@ -79,15 +77,15 @@
 	user.do_attack_animation(src)
 
 	if(I.force)
-		user.visible_message("<span class='danger'>[user] hits [src] with [I]!</span>", \
-			"<span class='danger'>You hit [src] with [I]!</span>")
+		user.visible_message(span_danger("[user] hits [src] with [I]!"), \
+			span_danger("You hit [src] with [I]!"))
 		if(prob(I.force))
 			push_over()
 
 /obj/item/cardboard_cutout/bullet_act(obj/projectile/P, def_zone, piercing_hit = FALSE)
 	if(istype(P, /obj/projectile/bullet/reusable))
 		P.on_hit(src, 0, piercing_hit)
-	visible_message("<span class='danger'>[src] is hit by [P]!</span>")
+	visible_message(span_danger("[src] is hit by [P]!"))
 	playsound(src, 'sound/weapons/slice.ogg', 50, TRUE)
 	if(prob(P.damage))
 		push_over()
@@ -104,11 +102,11 @@
 	var/new_appearance = show_radial_menu(user, src, possible_appearances, custom_check = CALLBACK(src, PROC_REF(check_menu), user, crayon), radius = 36, require_near = TRUE)
 	if(!new_appearance)
 		return FALSE
-	if(!do_after(user, 10, src, progress = TRUE))
+	if(!do_after(user, 10, src, show_progress = TRUE))
 		return FALSE
 	if(!check_menu(user, crayon))
 		return FALSE
-	user.visible_message("<span class='notice'>[user] gives [src] a new look.</span>", "<span class='notice'>Voila! You give [src] a new look.</span>")
+	user.visible_message(span_notice("[user] gives [src] a new look."), span_notice("Voila! You give [src] a new look."))
 	crayon.use_charges(1)
 	crayon.check_empty(user)
 	alpha = 255
@@ -120,14 +118,6 @@
 			name = "[pick(GLOB.first_names_male)] [pick(GLOB.last_names)]"
 			desc = "A cardboat cutout of an assistant."
 			icon_state = "cutout_greytide"
-		if("Clown")
-			name = pick(GLOB.clown_names)
-			desc = "A cardboard cutout of a clown. You get the feeling that it should be in a corner."
-			icon_state = "cutout_clown"
-		if("Mime")
-			name = pick(GLOB.mime_names)
-			desc = "...(A cardboard cutout of a mime.)"
-			icon_state = "cutout_mime"
 		if("Traitor")
 			name = "[pick("Unknown", "Captain")]"
 			desc = "A cardboard cutout of a traitor."
@@ -213,14 +203,14 @@
 	if(user.incapacitated())
 		return FALSE
 	if(pushed_over)
-		to_chat(user, "<span class='warning'>Right [src] first!</span>")
+		to_chat(user, span_warning("Right [src] first!"))
 		return FALSE
 	if(!crayon || !user.is_holding(crayon))
 		return FALSE
 	if(crayon.check_empty(user))
 		return FALSE
 	if(crayon.is_capped)
-		to_chat(user, "<span class='warning'>Take the cap off first!</span>")
+		to_chat(user, span_warning("Take the cap off first!"))
 		return FALSE
 	return TRUE
 

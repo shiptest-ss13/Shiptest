@@ -13,7 +13,7 @@
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 70)
 	CanAtmosPass = ATMOS_PASS_DENSITY
 	flags_1 = PREVENT_CLICK_UNDER_1
-	ricochet_chance_mod = 0.8
+	receive_ricochet_chance_mod = 0.8
 	damage_deflection = 10
 
 	interaction_flags_atom = INTERACT_ATOM_UI_INTERACT
@@ -50,13 +50,13 @@
 	. = ..()
 	if(red_alert_access)
 		if(GLOB.security_level >= SEC_LEVEL_RED)
-			. += "<span class='notice'>Due to a security threat, its access requirements have been lifted!</span>"
+			. += span_notice("Due to a security threat, its access requirements have been lifted!")
 		else
-			. += "<span class='notice'>In the event of a red alert, its access requirements will automatically lift.</span>"
+			. += span_notice("In the event of a red alert, its access requirements will automatically lift.")
 	if(!poddoor)
-		. += "<span class='notice'>Its maintenance panel is <b>screwed</b> in place.</span>"
+		. += span_notice("Its maintenance panel is <b>screwed</b> in place.")
 	if(safety_mode)
-		. += "<span class='notice'>It has labels indicating that it has an emergency mechanism to open it with <b>just your hands</b> if there's no power.</span>"
+		. += span_notice("It has labels indicating that it has an emergency mechanism to open it with <b>just your hands</b> if there's no power.")
 
 /obj/machinery/door/check_access_list(list/access_list)
 	if(red_alert_access && GLOB.security_level >= SEC_LEVEL_RED)
@@ -97,10 +97,10 @@
 /obj/machinery/door/proc/try_safety_unlock(mob/user, closing = FALSE)
 	if(safety_mode && !hasPower() && (closing || density))
 		if(locked)
-			to_chat(user, "<span class='notice'>You begin to lift [src]'s bolt with the safety mechanism...</span>")
+			to_chat(user, span_notice("You begin to lift [src]'s bolt with the safety mechanism..."))
 			if(do_after(user, 20 SECONDS, target = src)) //unbolting takes 20 seconds
 				unlock()
-		to_chat(user, "<span class='notice'>You begin [density ? "opening" : "closing"] [src] with the safety mechanism...</span>")
+		to_chat(user, span_notice("You begin [density ? "opening" : "closing"] [src] with the safety mechanism..."))
 		if((!density && do_after(user, 5 SECONDS, target = src)) || do_after(user, 15 SECONDS, target = src)) //closing takes 5 seconds, opening takes 15
 			try_to_crowbar(null, user)
 			return TRUE
@@ -392,7 +392,8 @@
 
 /obj/machinery/door/proc/crush()
 	for(var/mob/living/L in get_turf(src))
-		L.visible_message("<span class='warning'>[src] closes on [L], crushing [L.p_them()]!</span>", "<span class='userdanger'>[src] closes on you and crushes you!</span>")
+		L.visible_message(span_warning("[src] closes on [L], crushing [L.p_them()]!"), span_userdanger("[src] closes on you and crushes you!"))
+		SEND_SIGNAL(L, COMSIG_LIVING_DOORCRUSHED, src)
 		if(isalien(L))  //For xenos
 			L.adjustBruteLoss(DOOR_CRUSH_DAMAGE * 1.5) //Xenos go into crit after aproximately the same amount of crushes as humans.
 			L.manual_emote("roar")

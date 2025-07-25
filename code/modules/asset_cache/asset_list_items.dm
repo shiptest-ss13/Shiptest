@@ -115,8 +115,13 @@
 		"stamp-inteq_artificer" = 'icons/stamp_icons/large_stamp-inteq_artificer.png',
 		"stamp-inteq_corpsman" = 'icons/stamp_icons/large_stamp-inteq_corpsman.png',
 		"stamp-clip" = 'icons/stamp_icons/large_stamp-clip.png',
-		"stamp-bard" = 'icons/stamp_icons/large_stamp-bard.png',
-		"stamp-gold" = 'icons/stamp_icons/large_stamp-gold.png',
+		"stamp-clip_cmm" = 'icons/stamp_icons/large_stamp-clip_cmm.png',
+		"stamp-clip_gold" = 'icons/stamp_icons/large_stamp-clip_gold.png',
+		"stamp-clip_bard" = 'icons/stamp_icons/large_stamp-clip_bard.png',
+		"stamp-clip_lord" = 'icons/stamp_icons/large_stamp-clip_lord.png',
+		"stamp-clip_land" = 'icons/stamp_icons/large_stamp-clip_land.png',
+		"stamp-clip_meld" = 'icons/stamp_icons/large_stamp-clip_meld.png',
+		"stamp-clip_deed" = 'icons/stamp_icons/large_stamp-clip_deed.png',
 		"stamp-cybersun" = 'icons/stamp_icons/large_stamp-cybersun.png',
 		"stamp-biodynamics" = 'icons/stamp_icons/large_stamp-biodynamics.png',
 		"stamp-donk" = 'icons/stamp_icons/large_stamp-donk.png',
@@ -252,8 +257,6 @@
 		"meteors" = 'icons/UI_Icons/Achievements/Misc/meteors.png',
 		"timewaste" = 'icons/UI_Icons/Achievements/Misc/timewaste.png',
 		"upgrade" = 'icons/UI_Icons/Achievements/Misc/upgrade.png',
-		"clownking" = 'icons/UI_Icons/Achievements/Misc/clownking.png',
-		"clownthanks" = 'icons/UI_Icons/Achievements/Misc/clownthanks.png',
 		"rule8" = 'icons/UI_Icons/Achievements/Misc/rule8.png',
 		"snail" = 'icons/UI_Icons/Achievements/Misc/snail.png',
 		"mining" = 'icons/UI_Icons/Achievements/Skills/mining.png',
@@ -346,8 +349,8 @@
 				continue
 			I = icon(icon_file, icon_state, SOUTH)
 
-			// computers (and snowflakes) get their screen and keyboard sprites
-			if (ispath(item, /obj/machinery/computer) || ispath(item, /obj/machinery/power/solar_control))
+			// computers get their screen and keyboard sprites
+			if (ispath(item, /obj/machinery/computer))
 				var/obj/machinery/computer/C = item
 				var/screen = initial(C.icon_screen)
 				var/keyboard = initial(C.icon_keyboard)

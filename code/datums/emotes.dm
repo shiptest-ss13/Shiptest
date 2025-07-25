@@ -5,7 +5,6 @@
 	var/key = "" //What calls the emote
 	var/key_third_person = "" //This will also call the emote
 	var/message = "" //Message displayed when emote is used
-	var/message_mime = "" //Message displayed if the user is a mime
 	var/message_alien = "" //Message displayed if the user is a grown alien
 	var/message_larva = "" //Message displayed if the user is an alien larva
 	var/message_robot = "" //Message displayed if the user is a robot
@@ -26,7 +25,7 @@
 	var/vary = FALSE	//used for the honk borg emote
 	var/only_forced_audio = FALSE //can only code call this event instead of the player.
 	var/cooldown = 0.8 SECONDS
-	var/static/regex/stop_bad_mime = regex(@"says|exclaims|yells|asks")
+	var/static/regex/stop_bypasser = regex(@"says|exclaims|yells|asks")
 
 /datum/emote/New()
 	if (ispath(mob_type_allowed_typecache))
@@ -76,9 +75,9 @@
 			M.show_message("[FOLLOW_LINK(M, user)] [dchatmsg]")
 
 	if(emote_type == EMOTE_AUDIBLE)
-		user.audible_message(msg, deaf_message = "<span class='emote'>You see how <b>[user]</b> [msg]</span>", audible_message_flags = EMOTE_MESSAGE)
+		user.audible_message(msg, deaf_message = span_emote("You see how <b>[user]</b> [msg]"), audible_message_flags = EMOTE_MESSAGE)
 	else
-		user.visible_message(msg, blind_message = "<span class='emote'>You hear how <b>[user]</b> [msg]</span>", visible_message_flags = EMOTE_MESSAGE)
+		user.visible_message(msg, blind_message = span_emote("You hear how <b>[user]</b> [msg]"), visible_message_flags = EMOTE_MESSAGE)
 
 /// For handling emote cooldown, return true to allow the emote to happen
 /datum/emote/proc/check_cooldown(mob/user, intentional)
@@ -107,8 +106,6 @@
 	. = message
 	if(!muzzle_ignore && user.is_muzzled() && emote_type == EMOTE_AUDIBLE)
 		return "makes a [pick("strong ", "weak ", "")]noise."
-	if(user.mind && user.mind.miming && message_mime)
-		. = message_mime
 	if(isalienadult(user) && message_alien)
 		. = message_alien
 	else if(islarva(user) && message_larva)
@@ -139,56 +136,55 @@
 				return FALSE
 			switch(user.stat)
 				if(SOFT_CRIT)
-					to_chat(user, "<span class='warning'>You cannot [key] while in a critical condition!</span>")
+					to_chat(user, span_warning("You cannot [key] while in a critical condition!"))
 				if(UNCONSCIOUS, HARD_CRIT)
-					to_chat(user, "<span class='warning'>You cannot [key] while unconscious!</span>")
+					to_chat(user, span_warning("You cannot [key] while unconscious!"))
 				if(DEAD)
-					to_chat(user, "<span class='warning'>You cannot [key] while dead!</span>")
+					to_chat(user, span_warning("You cannot [key] while dead!"))
 			return FALSE
 		if(hands_use_check && HAS_TRAIT(user, TRAIT_HANDS_BLOCKED))
 			if(!intentional)
 				return FALSE
-			to_chat(user, "<span class='warning'>You cannot use your hands to [key] right now!</span>")
+			to_chat(user, span_warning("You cannot use your hands to [key] right now!"))
 			return FALSE
 
 	if(isliving(user))
 		var/mob/living/L = user
 		if(HAS_TRAIT(L, TRAIT_EMOTEMUTE))
 			return FALSE
-/**
+/*
 * Allows the intrepid coder to send a basic emote
 * Takes text as input, sends it out to those who need to know after some light parsing
 * If you need something more complex, make it into a datum emote
 * Arguments:
 * * text - The text to send out
+*
+* Returns TRUE if it was able to run the emote, FALSE otherwise.
 */
-/mob/proc/manual_emote(text) //Just override the song and dance
-	. = TRUE
-	if(findtext(text, "their"))
-		text = replacetext(text, "their", p_their())
-	if(findtext(text, "them"))
-		text = replacetext(text, "them", p_them())
-	if(findtext(text, "%s"))
-		text = replacetext(text, "%s", p_s())
-
-	if(stat != CONSCIOUS)
-		return
-
+/atom/proc/manual_emote(text)
 	if(!text)
 		CRASH("Someone passed nothing to manual_emote(), fix it")
 
 	log_message(text, LOG_EMOTE)
-	text = "<b>[src]</b> " + text
+	visible_message(text, visible_message_flags = EMOTE_MESSAGE)
+	return TRUE
 
-	for(var/mob/M in GLOB.dead_mob_list)
-		if(!M.client || isnewplayer(M))
+/mob/manual_emote(text)
+	if (stat != CONSCIOUS)
+		return FALSE
+	. = ..()
+	if (!.)
+		return FALSE
+	if (!client)
+		return TRUE
+	var/ghost_text = "<b>[src]</b> [text]"
+	var/origin_turf = get_turf(src)
+	for(var/mob/ghost as anything in GLOB.dead_mob_list)
+		if(!ghost.client || isnewplayer(ghost))
 			continue
-		var/T = get_turf(src)
-		if(M.stat == DEAD && M.client && (M.client.prefs.chat_toggles & CHAT_GHOSTSIGHT) && !(M in viewers(T, null)))
-			M.show_message(text)
-
-	visible_message(text)
-
+		if(ghost.client.prefs.chat_toggles & CHAT_GHOSTSIGHT && !(ghost in viewers(origin_turf, null)))
+			ghost.show_message("[FOLLOW_LINK(ghost, src)] [ghost_text]")
+	return TRUE
 /**
  * Returns a boolean based on whether or not the string contains a comma or an apostrophe,
  * to be used for emotes to decide whether or not to have a space between the name of the user

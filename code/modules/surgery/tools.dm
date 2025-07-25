@@ -80,7 +80,7 @@
 	force = 10		//WS Edit - Makes drill weaker than circular saw
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("drilled")
-	sharpness = IS_SHARP		//WS Edit - Makes the Drill sharp
+	sharpness = SHARP_EDGED		//WS Edit - Makes the Drill sharp
 	tool_behaviour = TOOL_DRILL
 	toolspeed = 1
 	demolition_mod = 0.5
@@ -99,7 +99,7 @@
 /obj/item/scalpel
 	name = "scalpel"
 	desc = "The handle of the scalpel is an awkward ergonomic mold, designed to encourage proper form. A blade release button on the end allows for easy cleaning and replacement."
-	icon = 'icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
+	icon = 'icons/obj/surgery.dmi'
 	icon_state = "scalpel-1"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
@@ -116,7 +116,7 @@
 	custom_materials = list(/datum/material/iron=4000, /datum/material/glass=1000)
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	sharpness = IS_SHARP_ACCURATE
+	sharpness = SHARP_POINTY
 	tool_behaviour = TOOL_SCALPEL
 	toolspeed = 1
 	demolition_mod = 0.25
@@ -150,7 +150,7 @@
 	throw_range = 5
 	custom_materials = list(/datum/material/iron=10000, /datum/material/glass=6000)
 	attack_verb = list("attacked", "slashed", "sawed", "cut")
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	tool_behaviour = TOOL_SAW
 	toolspeed = 1
 
@@ -200,13 +200,13 @@
 	if(!proximity)
 		return
 	if(contents.len)
-		to_chat(user, "<span class='warning'>[src] already has something inside it!</span>")
+		to_chat(user, span_warning("[src] already has something inside it!"))
 		return
 	if(!isorgan(I) && !isbodypart(I))
-		to_chat(user, "<span class='warning'>[src] can only hold body parts!</span>")
+		to_chat(user, span_warning("[src] can only hold body parts!"))
 		return
 
-	user.visible_message("<span class='notice'>[user] puts [I] into [src].</span>", "<span class='notice'>You put [I] inside [src].</span>")
+	user.visible_message(span_notice("[user] puts [I] into [src]."), span_notice("You put [I] inside [src]."))
 	icon_state = "evidence"
 	var/xx = I.pixel_x
 	var/yy = I.pixel_y
@@ -225,13 +225,13 @@
 /obj/item/organ_storage/attack_self(mob/user)
 	if(contents.len)
 		var/obj/item/I = contents[1]
-		user.visible_message("<span class='notice'>[user] dumps [I] from [src].</span>", "<span class='notice'>You dump [I] from [src].</span>")
+		user.visible_message(span_notice("[user] dumps [I] from [src]."), span_notice("You dump [I] from [src]."))
 		cut_overlays()
 		I.forceMove(get_turf(src))
 		icon_state = "evidenceobj"
 		desc = "A container for holding body parts."
 	else
-		to_chat(user, "<span class='notice'>[src] is empty.</span>")
+		to_chat(user, span_notice("[src] is empty."))
 	return
 
 /obj/item/surgical_processor //allows medical cyborgs to scan and initiate advanced surgeries
@@ -247,13 +247,13 @@
 	if(!proximity)
 		return
 	if(istype(O, /obj/item/disk/surgery))
-		to_chat(user, "<span class='notice'>You load the surgery protocol from [O] into [src].</span>")
+		to_chat(user, span_notice("You load the surgery protocol from [O] into [src]."))
 		var/obj/item/disk/surgery/D = O
 		if(do_after(user, 10, target = O))
 			advanced_surgeries |= D.surgeries
 		return TRUE
 	if(istype(O, /obj/machinery/computer/operating))
-		to_chat(user, "<span class='notice'>You copy surgery protocols from [O] into [src].</span>")
+		to_chat(user, span_notice("You copy surgery protocols from [O] into [src]."))
 		var/obj/machinery/computer/operating/OC = O
 		if(do_after(user, 10, target = O))
 			advanced_surgeries |= OC.advanced_surgeries
@@ -273,7 +273,7 @@
 	light_system = MOVABLE_LIGHT
 	light_range = 1
 	light_color = LIGHT_COLOR_GREEN
-	sharpness = IS_SHARP_ACCURATE
+	sharpness = SHARP_POINTY
 
 
 /obj/item/scalpel/advanced/attack_self(mob/user)
@@ -366,7 +366,7 @@
 	throw_range = 5
 	custom_materials = list(/datum/material/iron=8000, /datum/material/titanium=6000)
 	attack_verb = list("sheared", "snipped")
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	custom_premium_price = 1800
 
 /obj/item/shears/attack(mob/living/M, mob/user)
@@ -379,7 +379,7 @@
 	var/mob/living/carbon/patient = M
 
 	if(HAS_TRAIT(patient, TRAIT_NODISMEMBER))
-		to_chat(user, "<span class='warning'>The patient's limbs look too sturdy to amputate.</span>")
+		to_chat(user, span_warning("The patient's limbs look too sturdy to amputate."))
 		return
 
 	var/candidate_name
@@ -389,20 +389,20 @@
 	if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
 		tail_snip_candidate = patient.getorganslot(ORGAN_SLOT_TAIL)
 		if(!tail_snip_candidate)
-			to_chat(user, "<span class='warning'>[patient] does not have a tail.</span>")
+			to_chat(user, span_warning("[patient] does not have a tail."))
 			return
 		candidate_name = tail_snip_candidate.name
 
 	else
 		limb_snip_candidate = patient.get_bodypart(check_zone(user.zone_selected))
 		if(!limb_snip_candidate)
-			to_chat(user, "<span class='warning'>[patient] is already missing that limb, what more do you want?</span>")
+			to_chat(user, span_warning("[patient] is already missing that limb, what more do you want?"))
 			return
 		candidate_name = limb_snip_candidate.name
 
 	var/amputation_speed_mod
 
-	patient.visible_message("<span class='danger'>[user] begins to secure [src] around [patient]'s [candidate_name].</span>", "<span class='userdanger'>[user] begins to secure [src] around your [candidate_name]!</span>")
+	patient.visible_message(span_danger("[user] begins to secure [src] around [patient]'s [candidate_name]."), span_userdanger("[user] begins to secure [src] around your [candidate_name]!"))
 	playsound(get_turf(patient), 'sound/items/ratchet.ogg', 20, TRUE)
 	if(patient.stat >= UNCONSCIOUS || patient.IsStun()) //Stun is used by paralytics like curare it should not be confused with the more common paralyze.
 		amputation_speed_mod = 0.5
@@ -418,5 +418,72 @@
 			tail_snip_candidate.forceMove(get_turf(patient))
 		else
 			limb_snip_candidate.dismember()
-		user.visible_message("<span class='danger'>[src] violently slams shut, amputating [patient]'s [candidate_name].</span>", "<span class='notice'>You amputate [patient]'s [candidate_name] with [src].</span>")
+		user.visible_message(span_danger("[src] violently slams shut, amputating [patient]'s [candidate_name]."), span_notice("You amputate [patient]'s [candidate_name] with [src]."))
 
+/obj/item/bonesetter
+	name = "bonesetter"
+	desc = "For setting things right."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "bonesetter"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	custom_materials = list(/datum/material/iron=5000, /datum/material/glass=2500)
+	flags_1 = CONDUCT_1
+	item_flags = SURGICAL_TOOL
+	w_class = WEIGHT_CLASS_SMALL
+	attack_verb = list("corrected", "properly set")
+	tool_behaviour = TOOL_BONESET
+	toolspeed = 1
+
+/obj/item/blood_filter
+	name = "blood filter"
+	desc = "For filtering the blood."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "bloodfilter"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	custom_materials = list(/datum/material/iron=2000, /datum/material/glass=3000, /datum/material/silver=10000)
+	item_flags = SURGICAL_TOOL
+	w_class = WEIGHT_CLASS_NORMAL
+	attack_verb = list("pump", "siphon")
+	tool_behaviour = TOOL_BLOODFILTER
+	toolspeed = 1
+	/// Assoc list of chem ids to names, used for deciding which chems to filter when used for surgery
+	var/list/whitelist = list()
+
+/obj/item/blood_filter/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "BloodFilter", name)
+		ui.open()
+
+/obj/item/blood_filter/ui_data(mob/user)
+	. = list()
+
+	.["whitelist"] = list()
+	for(var/key in whitelist)
+		.["whitelist"] += whitelist[key]
+
+/obj/item/blood_filter/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
+
+	. = TRUE
+	switch(action)
+		if("add")
+			var/selected_reagent = tgui_input_list(usr, "Select reagent to filter", "Whitelist reagent", GLOB.name2reagent)
+			if(!selected_reagent)
+				return FALSE
+
+			var/datum/reagent/chem_id = GLOB.name2reagent[selected_reagent]
+			if(!chem_id)
+				return FALSE
+
+			if(!(chem_id in whitelist))
+				whitelist[chem_id] = selected_reagent
+
+		if("remove")
+			var/chem_name = params["reagent"]
+			var/chem_id = get_chem_id(chem_name)
+			whitelist -= chem_id

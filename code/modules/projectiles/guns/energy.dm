@@ -5,6 +5,8 @@
 	icon_state = "laser"
 	item_state = "spur"
 
+	bad_type = /obj/item/gun/energy
+
 	muzzleflash_iconstate = "muzzle_flash_laser"
 	light_color = COLOR_SOFT_RED
 
@@ -199,7 +201,7 @@
 	if(!internal_magazine && latch_closed)
 		to_chat(user, span_notice("You start to unlatch the [src]'s power cell retainment clip..."))
 		if(do_after(user, latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
-			to_chat(user, span_notice("You unlatch the [src]'s power cell retainment clip " + "<span class='red'>OPEN</span>" + "."))
+			to_chat(user, span_notice("You unlatch the [src]'s power cell retainment clip " + span_red("OPEN") + "."))
 			playsound(src, 'sound/items/taperecorder/taperecorder_play.ogg', 50, FALSE)
 			tac_reloads = TRUE
 			latch_closed = FALSE
@@ -209,7 +211,7 @@
 		// 	return ..() //should bring up the attachment menu if attachments are added. If none are added, it just does leaves the latch open
 		to_chat(user, span_warning("You start to latch the [src]'s power cell retainment clip..."))
 		if (do_after(user, latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
-			to_chat(user, span_notice("You latch the [src]'s power cell retainment clip " + "<span class='green'>CLOSED</span>" + "."))
+			to_chat(user, span_notice("You latch the [src]'s power cell retainment clip " + span_green("CLOSED") + "."))
 			playsound(src, 'sound/items/taperecorder/taperecorder_close.ogg', 50, FALSE)
 			tac_reloads = FALSE
 			latch_closed = TRUE

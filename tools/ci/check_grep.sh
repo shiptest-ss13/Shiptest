@@ -207,6 +207,11 @@ if $grep 'Solcon' $code_files; then
 	echo -e "${RED}ERROR: Misspelling(s) of SolCon detected in code, please capitalize the C(s).${NC}"
 	st=1
 fi;
+if $grep 'indestructable' $code_files; then
+	echo
+	echo -e "${RED}ERROR: Misspelling(s) of indestructible detected in code, it is indestructIBLE not indestructABLE.${NC}"
+	st=1
+fi;
 
 part "map json sanity"
 if command -v jq >/dev/null 2>&1; then

@@ -66,10 +66,15 @@
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/ammo_box/magazine/zip_ammo_9mm
-	name = "budget pistol magazine (9mm)"
-	desc = "A cheaply-made, 4-round surplus magazine that fits standard-issue 9mm pistols. These rounds do okay damage, but struggle against armor."
-	icon_state = "ZipAmmo9mm"
+	name = "budget pistol magazine (9x18mm)"
+	desc = "A cheaply-made, 8-round surplus magazine that fits standard-issue 9x18mm pistols. These rounds do okay damage, but struggle against armor."
+	icon_state = "brazilpistol_mag-1"
+	base_icon_state = "brazilpistol_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm/surplus
-	caliber = "9mm"
-	max_ammo = 4
+	caliber = "9x18mm"
+	max_ammo = 8
 	custom_materials = list(/datum/material/iron = 20000)
+
+/obj/item/ammo_box/magazine/zip_ammo_9mm/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[min(ammo_count(), 1)]"

@@ -1,0 +1,50 @@
+{
+	"prefix": "SUNS",
+	"map_name": "Mercury-class Drua",
+	"map_short_name": "Mercury-class",
+	"map_path": "_maps/shuttles/syndicate/syndicate_mercury.dmm",
+	"faction": "/datum/faction/syndicate/suns",
+	"description": "With growing interest of the frontiers strange environments and peculiar fauna, SUNS eventually took complete interest, and started commissioning custom-built vessels with the goal of prospecting the frontier for geological and biological studies. The Mercury-class is one of said vessels, providing the necessary tools of keeping researchers safe from dangerous fauna, allowing traversal of difficult terrain, and logging for any strange findings. Although suited for rougher work, these vessels still have plenty of accommodations for their crew, often said to be faintly homely.",
+	"tags": [
+		"Mining",
+		"Exploration",
+		"RP Focus"
+	],
+	"starting_funds": 1500,
+	"map_id": "syndicate_mercury",
+	"limit": 1,
+	"namelists": [
+		"SUNS",
+		"SPACE",
+		"GENERAL"
+	],
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/syndicate/captain/suns",
+			"officer": true,
+			"slots": 1
+		},
+
+		"Academic": {
+			"outfit": "/datum/outfit/job/syndicate/head_of_personnel/suns",
+			"officer": true,
+			"slots": 1
+		},
+
+		"Peacekeeper": {
+			"outfit": "/datum/outfit/job/syndicate/security/suns/alternate",
+			"slots": 2
+		},
+
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/syndicate/engineer/suns",
+			"slots": 1
+		},
+
+		"Student": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/suns/complete",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}

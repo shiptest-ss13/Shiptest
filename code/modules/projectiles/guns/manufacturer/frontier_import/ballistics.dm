@@ -1,26 +1,29 @@
 /obj/item/gun/ballistic/automatic/pistol/mauler
 	name = "Mauler machine pistol"
-	desc = "An automatic machine pistol originating from the Shoal. Impressive volume of fire with abysmal accuracy, lackluster armor penetration, and limited magazine size render it mostly useless outside of very close quarters. Chambered in 9mm."
+	desc = "An automatic machine pistol originating from the Shoal. Impressive volume of fire with high recoil, lackluster armor penetration, and limited magazine size render it difficult to use outside of close quarters. Chambered in 9x18mm."
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
 
-	icon_state = "mauler"
+	icon_state = "mauler_mp"
 	item_state = "hp_generic"
-	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_mauler
+	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_mauler/extended
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m9mm_mauler,
+		/obj/item/ammo_box/magazine/m9mm_mauler/extended,
 	)
 	fire_delay = 0.06 SECONDS
 
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
 
-	spread = 25
-	spread_unwielded = 50
+	show_magazine_on_sprite = FALSE //hard coded
+
+	spread = 15
+	spread_unwielded = 30
 	recoil = 1
-	recoil_unwielded = 4
+	recoil_unwielded = 3
 	safety_multiplier = 2 //this means its twice as safe right? //oh, god no.
 
 	fire_sound = 'sound/weapons/gun/pistol/mauler.ogg'
@@ -34,6 +37,8 @@
 	load_empty_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
+
+	wear_rate = 2 // 30 to malfunction, 90 to critical
 
 
 	slot_available = list(
@@ -51,17 +56,56 @@
 		)
 	)
 
-/obj/item/gun/ballistic/automatic/pistol/mauler/ComponentInitialize()
+/obj/item/gun/ballistic/automatic/pistol/mauler/update_overlays()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.06 SECONDS)
+	if (magazine)
+		. += "mauler_mag_[magazine.base_icon_state]"
+
+/obj/item/gun/ballistic/automatic/pistol/mauler/regular
+	name = "Mauler pistol"
+	desc = "A toned down semi-auto version of the Mauler. Still fast to fire still with better accuracy than it's auto counterpart, but it's still innaccurate compared to most modern pistols. Chambered in 9mm."
+
+	icon_state = "mauler"
+
+	spread = 8
+	spread_unwielded = 15
+	recoil = 0
+	recoil_unwielded = 4
+	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_mauler
+
+	fire_delay = 0.12 SECONDS
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 28,
+			"y" = 21,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 20,
+			"y" = 19,
+		)
+	)
+
 
 /obj/item/ammo_box/magazine/m9mm_mauler
-	name = "mauler machine pistol magazine (9mm)"
-	desc = "A 12-round magazine designed for the Mauler machine pistol."
+	name = "mauler pistol magazine (9x18mm)"
+	desc = "A 8-round magazine designed for the Mauler pistol."
 	icon_state = "mauler_mag-1"
 	base_icon_state = "mauler_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9mm"
+	caliber = "9x18mm"
+	max_ammo = 8
+
+/obj/item/ammo_box/magazine/m9mm_mauler/extended
+	name = "mauler machine pistol extended magazine (9x18mm)"
+	desc = "A 12-round magazine designed for the Mauler machine pistol."
+	icon_state = "mauler_extended_mag-1"
+	base_icon_state = "mauler_extended_mag"
+	ammo_type = /obj/item/ammo_casing/c9mm
+	caliber = "9x18mm"
 	max_ammo = 12
 
 /obj/item/ammo_box/magazine/m9mm_mauler/update_icon_state()
@@ -70,7 +114,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/spitter
 	name = "\improper Spitter"
-	desc = "An open-bolt submachine gun favored by the Frontiersmen. This design's origins are unclear, but its simple, robust design has been widely copied throughout the Frontier, and it is stereotypically used by pirates and various criminal groups that value low price and ease of concealment. Chambered in 9mm."
+	desc = "An open-bolt submachine gun favored by the Frontiersmen. This design's origins are unclear, but its simple, robust design has been widely copied throughout the Frontier, and it is stereotypically used by pirates and various criminal groups that value low price and ease of concealment. Chambered in 9x18mm."
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
@@ -106,6 +150,8 @@
 	eject_sound = 'sound/weapons/gun/smg/spitter_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/smg/spitter_unload.ogg'
 
+	wear_rate = 0.8
+
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
 		/obj/item/attachment/foldable_stock/spitter
@@ -134,12 +180,12 @@
 
 
 /obj/item/ammo_box/magazine/spitter_9mm
-	name = "spitter pistol magazine (9mm)"
+	name = "spitter pistol magazine (9x18mm)"
 	desc = "A thin 30-round magazine for the Spitter submachine gun."
 	icon_state = "spitter_mag-1"
 	base_icon_state = "spitter_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9mm"
+	caliber = "9x18mm"
 	max_ammo = 30
 
 /obj/item/ammo_box/magazine/spitter_9mm/update_icon_state()
@@ -177,6 +223,8 @@
 	load_empty_sound = 'sound/weapons/gun/smg/pounder_reload.ogg'
 	eject_sound = 'sound/weapons/gun/smg/pounder_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/smg/pounder_unload.ogg'
+
+	wear_rate = 1
 
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
@@ -251,6 +299,8 @@
 	eject_sound = 'sound/weapons/gun/hmg/shredder_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/hmg/shredder_unload.ogg'
 
+	wear_rate = 3 // 20 to malfunction, 60 to critical
+
 	manufacturer = MANUFACTURER_IMPORT
 	has_bipod = FALSE
 
@@ -282,6 +332,138 @@
 	max_ammo = 40
 	w_class = WEIGHT_CLASS_NORMAL
 
+/obj/item/gun/ballistic/automatic/hmg/skm_lmg
+	name = "\improper SKM-24u"
+	desc = "What appears to be a standard SKM-24 at first glance is actually a light machine gun conversion, with an extended, heavy barrel and overhauled internals. Its weight, bulk, and robust fire rate make it difficult to handle without using the bipod in a prone position or against appropriate cover such as a table. Chambered in 7.62x40mm CLIP."
+
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+
+	icon_state = "skm_lmg"
+	item_state = "skm_lmg"
+
+	fire_sound = 'sound/weapons/gun/rifle/skm.ogg'
+	rack_sound = 'sound/weapons/gun/rifle/skm_cocked.ogg'
+	load_sound = 'sound/weapons/gun/rifle/skm_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/skm_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
+	show_magazine_on_sprite = TRUE
+	unique_mag_sprites_for_variants = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	manufacturer = MANUFACTURER_IMPORT
+	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/skm_762_40,
+	)
+
+	fire_delay = 0.13 SECONDS
+
+	spread = 7 //you can hipfire, but why?
+	spread_unwielded = 25
+
+	recoil = 1 //identical to other LMGS
+	recoil_unwielded = 4 //same as skm
+
+	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal skm
+	wield_delay = 0.85 SECONDS //faster than normal lmgs, slower than stock skm
+
+	has_bipod = TRUE
+
+/obj/item/gun/ballistic/automatic/hmg/mower
+	name = "\improper Mower"
+	desc = "A hefty and relatively accurate HMG, the Mower is built for heavy fire support on the move. Chambered in .308."
+
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+
+	icon_state = "mower"
+	item_state = "mower"
+
+	fire_sound = 'sound/weapons/gun/hmg/hmg.ogg'
+	rack_sound = 'sound/weapons/gun/hmg/cm40_cocked.ogg'
+
+	rack_sound_vary = FALSE
+
+	load_sound_vary = FALSE
+	eject_sound_vary = FALSE
+
+	load_sound = 'sound/weapons/gun/hmg/cm40_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/hmg/cm40_reload.ogg'
+	eject_sound = 'sound/weapons/gun/hmg/cm40_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/hmg/cm40_unload.ogg'
+
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
+
+	show_magazine_on_sprite = TRUE
+	weapon_weight = WEAPON_HEAVY
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	manufacturer = MANUFACTURER_IMPORT
+	default_ammo_type = /obj/item/ammo_box/magazine/mower_lmg_308
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/mower_lmg_308,
+	)
+
+	fire_delay = 0.27 SECONDS //quite slow
+
+	spread = 8
+	spread_unwielded = 50
+
+	recoil = 0.5
+	recoil_unwielded = 4
+
+	//low deploy bonuses due already being somewhat better than average undeployed
+	deploy_spread_bonus = -2
+	deploy_recoil_bonus = -0.5
+
+	has_bipod = TRUE
+
+/obj/item/ammo_box/magazine/mower_lmg_308
+	name = "machine gun drum (.308)"
+	desc = "A drum shaped, 50-round magazine for the Mower .308 machine gun. These rounds do good damage with excelent armor penetration."
+	icon_state = "firestorm_pan"
+	base_icon_state = "firestorm_pan"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = ".308"
+	max_ammo = 50
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/magazine/mower_lmg_308/update_icon_state()
+	. = ..()
+	icon_state = "firestorm_pan"
+
+/obj/item/ammo_box/magazine/mower_lmg_308/empty
+	start_empty = TRUE
+
+/obj/item/gun/ballistic/automatic/hmg/mower/before_firing(atom/target, mob/user, params)
+	. = ..()
+	if(chambered.BB)
+		chambered.BB.icon_state = "redtrac"
+		chambered.BB.light_system = MOVABLE_LIGHT
+		chambered.BB.set_light_color(COLOR_SOFT_RED)
+		chambered.BB.set_light_range(2)
+
+/obj/item/gun/ballistic/automatic/hmg/skm_lmg/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/update_icon_updates_onmob)
+
+/obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended //spawns with the proper extended magazine, for erts
+	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40/extended
+
+/obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag //spawns with a drum, maybe not for erts but admin enhanced ERTS? when things really go to shit
+	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40/drum
 
 /obj/item/gun/ballistic/rocketlauncher/oneshot
 	name = "\improper Hammer"

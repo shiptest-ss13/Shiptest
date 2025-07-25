@@ -34,7 +34,7 @@
 
 	var/turf/open/floor/plasteel/F = A
 	if(!istype(F) || istype(F, /turf/open/floor/plasteel/tech))
-		to_chat(user, "<span class='warning'>\The [src] can only be used on plasteel flooring.</span>")
+		to_chat(user, span_warning("\The [src] can only be used on plasteel flooring."))
 		return
 
 	F.icon_state = floor_state
@@ -58,15 +58,15 @@
 			<img style="-ms-interpolation-mode: nearest-neighbor;" src="floor.png" width=128 height=128 border=4>
 		</center>
 		<center>
-			<a href="?src=[UID()];cycleleft=1">&lt;-</a>
-			<a href="?src=[UID()];choose_state=1">Choose Style</a>
-			<a href="?src=[UID()];cycleright=1">-&gt;</a>
+			<a href="byond://?src=[UID()];cycleleft=1">&lt;-</a>
+			<a href="byond://?src=[UID()];choose_state=1">Choose Style</a>
+			<a href="byond://?src=[UID()];cycleright=1">-&gt;</a>
 		</center>
 		<div class='statusDisplay'>Style: [floor_state]</div>
 		<center>
-			<a href="?src=[UID()];cycledirleft=1">&lt;-</a>
-			<a href="?src=[UID()];choose_dir=1">Choose Direction</a>
-			<a href="?src=[UID()];cycledirright=1">-&gt;</a>
+			<a href="byond://?src=[UID()];cycledirleft=1">&lt;-</a>
+			<a href="byond://?src=[UID()];choose_dir=1">Choose Direction</a>
+			<a href="byond://?src=[UID()];cycledirright=1">-&gt;</a>
 		</center>
 		<div class='statusDisplay'>Direction: [dir2text(floor_dir)]</div>
 	"}
@@ -198,7 +198,7 @@
 
 	var/turf/open/floor/F = A
 	if(!istype(F))
-		to_chat(user, "<span class='warning'>\The [src] can only be used on flooring.</span>")
+		to_chat(user, span_warning("\The [src] can only be used on flooring."))
 		return
 	if(color_disallowed.Find(decal_state))
 		F.AddElement(/datum/element/decal, 'icons/turf/decals/decals.dmi', decal_state, decal_dir, FALSE, color, null, null, alpha)
@@ -222,19 +222,19 @@
 			<img style="-ms-interpolation-mode: nearest-neighbor;" src="floor.png" width=128 height=128 border=4>
 		</center>
 		<center>
-			<a href="?src=[UID()];cycleleft=1">&lt;-</a>
-			<a href="?src=[UID()];choose_state=1">Choose Style</a>
-			<a href="?src=[UID()];cycleright=1">-&gt;</a>
+			<a href="byond://?src=[UID()];cycleleft=1">&lt;-</a>
+			<a href="byond://?src=[UID()];choose_state=1">Choose Style</a>
+			<a href="byond://?src=[UID()];cycleright=1">-&gt;</a>
 		</center>
 		<div class='statusDisplay'>Style: [decal_state]</div>
 		<center>
-			<a href="?src=[UID()];cycledirleft=1">&lt;-</a>
-			<a href="?src=[UID()];choose_dir=1">Choose Direction</a>
-			<a href="?src=[UID()];cycledirright=1">-&gt;</a>
+			<a href="byond://?src=[UID()];cycledirleft=1">&lt;-</a>
+			<a href="byond://?src=[UID()];choose_dir=1">Choose Direction</a>
+			<a href="byond://?src=[UID()];cycledirright=1">-&gt;</a>
 		</center>
 		<div class='statusDisplay'>Direction: [dir2text(decal_dir)]</div>
 		<center>
-			<a href="?src=[UID()];choose_color=1">Choose Color</a>
+			<a href="byond://?src=[UID()];choose_color=1">Choose Color</a>
 		</center>
 	"}
 

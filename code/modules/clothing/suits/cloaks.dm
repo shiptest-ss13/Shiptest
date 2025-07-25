@@ -52,21 +52,6 @@
 	desc = "Worn by the Head of Personnel. It smells faintly of bureaucracy."
 	icon_state = "hopcloak"
 
-/obj/item/clothing/neck/cloak/overseer
-	name = "SolGov overseer's cloak"
-	desc = "Worn by the Overseer. It smells faintly of bureaucracy."
-	icon_state = "solgov_cloak"
-
-/obj/item/clothing/neck/cloak/solgov
-	name = "SolGov weibel"
-	desc = "Worn by SolGov officials. It smells faintly of bureaucracy."
-	icon_state = "solgov_weibel"
-
-/obj/item/clothing/neck/cloak/solgovcap
-	name = "SolGov captain's cloak"
-	desc = "Worn by SolGov captains. It smells faintly of bureaucracy."
-	icon_state = "solgov_cap_cloak"
-
 /obj/item/clothing/neck/cloak/trans
 	name = "vampire cloak"
 	desc = "Worn by high ranking vampires of the transylvanian society of vampires."
@@ -82,7 +67,7 @@
 	icon_state = "goliath_cloak"
 	desc = "A staunch, practical cape made out of numerous monster materials, it is coveted amongst exiles & hermits."
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/melee/spear, /obj/item/organ/regenerative_core/legion, /obj/item/melee/knife/bone, /obj/item/melee/knife/survival)
-	armor = list("melee" = 35, "bullet" = 10, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60) //a fair alternative to bone armor, requiring alternative materials and gaining a suit slot
+	armor = list("melee" = 35, "bullet" = 10, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60, "wound" = 10) //a fair alternative to bone armor, requiring alternative materials and gaining a suit slot
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath
 	body_parts_covered = CHEST|GROIN|ARMS
 
@@ -90,7 +75,7 @@
 	name = "goliath cloak hood"
 	icon_state = "golhood"
 	desc = "A protective & concealing hood."
-	armor = list("melee" = 35, "bullet" = 10, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
+	armor = list("melee" = 35, "bullet" = 10, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60, "wound" = 10)
 	clothing_flags = SNUG_FIT
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 	transparent_protection = HIDEMASK
@@ -124,7 +109,7 @@
 
 /obj/item/clothing/neck/cloak/skill_reward/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>You notice a powerful aura about this cloak, suggesting that only the truly experienced may wield it.</span>"
+	. += span_notice("You notice a powerful aura about this cloak, suggesting that only the truly experienced may wield it.")
 
 /obj/item/clothing/neck/cloak/skill_reward/equipped(mob/user, slot)
 	if (user.mind?.get_skill_level(associated_skill_path) < SKILL_LEVEL_LEGENDARY)

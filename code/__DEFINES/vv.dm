@@ -46,7 +46,7 @@
 #define GET_VV_VAR_TARGET href_list[VV_HK_VARNAME]
 
 //Helper for getting something to vv_do_topic in general
-#define VV_TOPIC_LINK(datum, href_key, text) "<a href='?_src_=vars;[HrefToken()];[href_key]=TRUE;target=[REF(datum)]'>text</a>"
+#define VV_TOPIC_LINK(datum, href_key, text) "<a href='byond://?_src_=vars;[HrefToken()];[href_key]=TRUE;target=[REF(datum)]'>text</a>"
 
 //Helpers for vv_get_dropdown()
 #define VV_DROPDOWN_OPTION(href_key, name) . += "<option value='?_src_=vars;[HrefToken()];[href_key]=TRUE;target=[REF(src)]'>[name]</option>"
@@ -145,3 +145,7 @@
 #define VV_HK_TO_OUTFIT_EDITOR "outfit_editor"
 
 #define VV_HK_WEAKREF_RESOLVE "weakref_resolve"
+
+//overmap objects
+#define VV_HK_VV_PARENT "vv_parent"
+#define VV_HK_UNFSCK_OBJECT "unfsck"

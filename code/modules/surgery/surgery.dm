@@ -12,6 +12,8 @@
 	var/ignore_clothes = FALSE									//This surgery ignores clothes
 	var/mob/living/target										//Operation target mob
 	var/obj/item/bodypart/operated_bodypart						//Operable body part
+	var/datum/wound/operated_wound								//The actual wound datum instance we're targeting
+	var/datum/wound/targetable_wound							//The wound type this surgery targets
 	var/requires_bodypart = TRUE								//Surgery available only when a bodypart is present, or only when it is missing.
 	var/speed_modifier = 0										//Step speed modifier
 	var/requires_real_bodypart = FALSE							//Some surgeries don't work on limbs that don't really exist
@@ -29,8 +31,13 @@
 			location = surgery_location
 		if(surgery_bodypart)
 			operated_bodypart = surgery_bodypart
+			if(targetable_wound)
+				operated_wound = operated_bodypart.get_wound_type(targetable_wound)
+				operated_wound.attached_surgery = src
 
 /datum/surgery/Destroy()
+	if(operated_wound)
+		operated_wound.attached_surgery = null
 	if(target)
 		target.surgeries -= src
 	target = null
@@ -109,7 +116,7 @@
 				// Cancel the surgery if a cautery is used AND it's not the tool used in the next step.
 				attempt_cancel_surgery(src, tool, target, user)
 				return TRUE
-			to_chat(user, "<span class='warning'>This step requires a different tool!</span>")
+			to_chat(user, span_warning("This step requires a different tool!"))
 			return TRUE
 	return FALSE
 
@@ -134,10 +141,60 @@
 
 /obj/item/disk/surgery
 	name = "Surgery Procedure Disk"
-	desc = "A disk that contains advanced surgery procedures, must be loaded into an Operating Console."
+	desc = "A disk that contains surgery procedures, must be loaded into an Operating Console."
 	illustration = "med"
 	custom_materials = list(/datum/material/iron=300, /datum/material/glass=100)
 	var/list/surgeries
+
+/obj/item/disk/surgery/t2
+	name = "Advanced Surgery Procedure Disk"
+	desc = "A disk that contains advanced surgery procedures, must be loaded into an Operating Console."
+	custom_materials = list(/datum/material/iron=300, /datum/material/glass=100)
+
+/obj/item/disk/surgery/t2/Initialize()
+	. = ..()
+	surgeries = list()
+	var/list/req_tech_surgeries = list(
+		/datum/surgery/healing/brute/upgraded,
+		/datum/surgery/healing/burn/upgraded,
+		/datum/surgery/healing/combo)
+	for(var/i in req_tech_surgeries)
+		var/datum/surgery/beep = i
+		if(initial(beep.requires_tech))
+			surgeries += beep
+
+/obj/item/disk/surgery/t3
+	name = "Experimental Surgery Procedure Disk"
+	desc = "A disk that contains exclusive surgery procedures, must be loaded into an Operating Console."
+	custom_materials = list(/datum/material/iron=300, /datum/material/glass=100)
+
+/obj/item/disk/surgery/t3/Initialize()
+	. = ..()
+	surgeries = list()
+	var/list/req_tech_surgeries = list(
+		/datum/surgery/healing/brute/upgraded/femto,
+		/datum/surgery/healing/burn/upgraded/femto,
+		/datum/surgery/healing/combo/upgraded,
+		/datum/surgery/advanced/pacify,
+		/datum/surgery/advanced/lobotomy)
+	for(var/i in req_tech_surgeries)
+		var/datum/surgery/beep = i
+		if(initial(beep.requires_tech))
+			surgeries += beep
+
+/obj/item/disk/surgery/cybersun
+	name = "Cybersun Surgery Procedure Disk"
+	desc = "A disk that contains exclusive Cybersun bioware surgery procedures, must be loaded into an Operating Console."
+	custom_materials = list(/datum/material/iron=300, /datum/material/glass=100)
+
+/obj/item/disk/surgery/cybersun/Initialize()
+	. = ..()
+	surgeries = list()
+	var/list/req_tech_surgeries = subtypesof(/datum/surgery/advanced/bioware)
+	for(var/i in req_tech_surgeries)
+		var/datum/surgery/beep = i
+		if(initial(beep.requires_tech))
+			surgeries += beep
 
 /obj/item/disk/surgery/debug
 	name = "Debug Surgery Disk"

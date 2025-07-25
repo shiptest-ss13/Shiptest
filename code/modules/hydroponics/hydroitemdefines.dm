@@ -68,8 +68,8 @@
 		H.Stun(20)
 		playsound(src, 'sound/weapons/punch4.ogg', 50, TRUE)
 		H.visible_message(
-			"<span class='warning'>[H] steps on [src] causing the handle to hit [H.p_them()] right in the face!</span>", \
-			"<span class='userdanger'>You step on [src] causing the handle to hit you right in the face!</span>")
+			span_warning("[H] steps on [src] causing the handle to hit [H.p_them()] right in the face!"), \
+			span_userdanger("You step on [src] causing the handle to hit you right in the face!"))
 
 /obj/item/hatchet
 	name = "hatchet"
@@ -88,7 +88,7 @@
 	custom_materials = list(/datum/material/iron = 15000)
 	attack_verb = list("chopped", "torn", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 
 /obj/item/hatchet/Initialize()
 	. = ..()

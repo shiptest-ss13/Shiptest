@@ -6,16 +6,11 @@
 
 /datum/outfit/job/nanotrasen
 	name = "Nanotrasen - Base Outfit"
+	faction = FACTION_PLAYER_NANOTRASEN
 	faction_icon = "bg_nanotrasen"
 
 	box = /obj/item/storage/box/survival
 	id = /obj/item/card/id
-
-/datum/outfit/job/nanotrasen/post_equip(mob/living/carbon/human/H, visualsOnly)
-	. = ..()
-	if(visualsOnly)
-		return
-	H.faction |= list(FACTION_PLAYER_NANOTRASEN)
 
 // Command //
 
@@ -61,6 +56,23 @@
 	gloves = null
 	neck = null
 	l_hand = /obj/item/clipboard
+
+	chameleon_extras = /obj/item/stamp/qm
+
+/datum/outfit/job/nanotrasen/captain/ns/empty
+	name = "Nanotrasen - Captain (N+S Logistics) (Naked)"
+
+	head = null
+	uniform = /obj/item/clothing/under/nanotrasen/supply/qm
+	suit = null
+	alt_suit = null
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
+	shoes = /obj/item/clothing/shoes/sneakers/brown
+	glasses = null
+	gloves = null
+	neck = null
+	l_hand = null
+	belt = null
 
 	chameleon_extras = /obj/item/stamp/qm
 
@@ -163,6 +175,14 @@
 	chameleon_extras = list(/obj/item/gun/energy/disabler, /obj/item/clothing/glasses/hud/security/sunglasses, /obj/item/clothing/head/helmet)
 	//The helmet is necessary because /obj/item/clothing/head/helmet/sec is overwritten in the chameleon list by the standard helmet, which has the same name and icon state
 
+/datum/outfit/job/nanotrasen/security/disarmed
+	name = "Nanotrasen - Security Officer (Disarmed)"
+	jobtype = /datum/job/officer
+	job_icon = "securityofficer"
+
+	suit = null
+	chameleon_extras = null
+
 // Warden
 /datum/outfit/job/nanotrasen/warden
 	name = "Nanotrasen - Warden"
@@ -207,6 +227,29 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
 	shoes = /obj/item/clothing/shoes/workboots
 	r_pocket = /obj/item/t_scanner
+
+	backpack = /obj/item/storage/backpack/industrial
+	satchel = /obj/item/storage/backpack/satchel/eng
+	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
+	courierbag = /obj/item/storage/backpack/messenger/engi
+
+	box = /obj/item/storage/box/survival/engineer
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
+
+/datum/outfit/job/nanotrasen/engineer/empty
+	name = "Nanotrasen - Engineer (Naked)"
+	job_icon = "stationengineer"
+	jobtype = /datum/job/engineer
+
+	belt = null
+	l_pocket = null
+	ears = /obj/item/radio/headset/headset_eng
+	uniform = /obj/item/clothing/under/nanotrasen/engineering
+	head = null
+	suit = null
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
+	shoes = /obj/item/clothing/shoes/workboots
+	r_pocket = null
 
 	backpack = /obj/item/storage/backpack/industrial
 	satchel = /obj/item/storage/backpack/satchel/eng
@@ -299,6 +342,63 @@
 
 	chameleon_extras = /obj/item/stamp/qm
 
+//Lead Miner
+
+/datum/outfit/job/nanotrasen/quartermaster/leadminer
+	name = "Nanotrasen - Lead Miner"
+	jobtype = /datum/job/qm
+	job_icon = "shaftminer"
+
+	ears = /obj/item/radio/headset/headset_cargo/mining
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	head = /obj/item/clothing/head/hardhat/nanotrasen/white
+	gloves = /obj/item/clothing/gloves/color/black
+	uniform = /obj/item/clothing/under/nanotrasen/supply/miner
+	suit = /obj/item/clothing/suit/nanotrasen/vest/blue
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/miner
+	r_pocket = /obj/item/storage/bag/ore
+	glasses = null
+	l_hand = null
+
+	backpack_contents = list(
+						/obj/item/flashlight/seclite=1,
+						/obj/item/melee/knife/survival=1,
+						/obj/item/stack/marker_beacon/ten=1,
+						/obj/item/radio/weather_monitor=1,
+						)
+
+	backpack = /obj/item/storage/backpack/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	box = /obj/item/storage/box/survival/mining
+
+	chameleon_extras = /obj/item/gun/energy/kinetic_accelerator
+
+/datum/outfit/job/nanotrasen/quartermaster/leadminer/empty
+	name = "Nanotrasen - Lead Miner (Naked)"
+	jobtype = /datum/job/qm
+	job_icon = "shaftminer"
+
+	ears = /obj/item/radio/headset/headset_cargo/mining
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	head = null
+	gloves = null
+	uniform = /obj/item/clothing/under/nanotrasen/supply/miner
+	suit = null
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/miner
+	r_pocket = null
+	glasses = null
+	l_hand = null
+
+	backpack_contents = null
+
+	backpack = /obj/item/storage/backpack/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	box = /obj/item/storage/box/survival/mining
+
+	chameleon_extras = /obj/item/gun/energy/kinetic_accelerator
+
 //Miner
 /datum/outfit/job/nanotrasen/miner
 	name = "Nanotrasen - Miner"
@@ -328,6 +428,15 @@
 
 	chameleon_extras = /obj/item/gun/energy/kinetic_accelerator
 
+/datum/outfit/job/nanotrasen/miner/empty
+	name = "Nanotrasen - Miner (Naked)"
+
+	head = null
+	gloves = null
+	suit = null
+	r_pocket = null
+	backpack_contents = null
+
 /datum/outfit/job/nanotrasen/miner/no_equipment
 	name = "Nanotrasen - Miner (No Equipment)"
 
@@ -346,6 +455,18 @@
 	uniform = /obj/item/clothing/under/nanotrasen/supply
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
+
+/datum/outfit/job/nanotrasen/cargo_tech/empty
+	name = "Nanotrasen - Cargo Tech (Naked)"
+	jobtype = /datum/job/cargo_tech
+	job_icon = "cargotechnician"
+
+	belt = null
+	ears = /obj/item/radio/headset/headset_cargo
+	head = null
+	uniform = /obj/item/clothing/under/nanotrasen/supply
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
+	backpack_contents = null
 
 // Medical //
 
@@ -395,6 +516,30 @@
 
 	chameleon_extras = /obj/item/gun/syringe
 
+/datum/outfit/job/nanotrasen/paramedic/empty
+	name = "Nanotrasen - Paramedic (Naked)"
+	jobtype = /datum/job/paramedic
+	job_icon = "paramedic"
+
+	ears = /obj/item/radio/headset/headset_med
+	uniform = /obj/item/clothing/under/nanotrasen/medical/paramedic
+	head = null
+	shoes = /obj/item/clothing/shoes/sneakers/blue
+	suit =  null
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical/paramedic
+	gloves = null
+	id = /obj/item/card/id
+
+	backpack_contents = null
+
+	backpack = /obj/item/storage/backpack/medic
+	satchel = /obj/item/storage/backpack/satchel/med
+	duffelbag = /obj/item/storage/backpack/duffelbag/med
+	courierbag = /obj/item/storage/backpack/messenger/para
+	box = /obj/item/storage/box/survival/medical
+
+	chameleon_extras = /obj/item/gun/syringe
+
 // Civilian //
 
 // Assistant
@@ -406,6 +551,15 @@
 	uniform = /obj/item/clothing/under/nanotrasen
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	belt = /obj/item/pda
+
+/datum/outfit/job/nanotrasen/assistant/empty
+	name = "Nanotrasen - Assistant (Naked)"
+	jobtype = /datum/job/assistant
+	job_icon = "assistant"
+
+	uniform = /obj/item/clothing/under/nanotrasen
+	shoes = /obj/item/clothing/shoes/sneakers/black
+	belt = null
 
 // Janitor
 /datum/outfit/job/nanotrasen/janitor

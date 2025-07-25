@@ -94,37 +94,39 @@
  * * mob/living/M - The mob being hit by this item
  * * mob/living/user - The mob hitting with this item
  */
-/obj/item/proc/attack(mob/living/M, mob/living/user)
-	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, M, user) & COMPONENT_ITEM_NO_ATTACK)
+/obj/item/proc/attack(mob/living/target_mob, mob/living/user)
+	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, target_mob, user) & COMPONENT_ITEM_NO_ATTACK)
 		return
-	SEND_SIGNAL(user, COMSIG_MOB_ITEM_ATTACK, M, user)
+	SEND_SIGNAL(user, COMSIG_MOB_ITEM_ATTACK, target_mob, user)
 	if(item_flags & NOBLUDGEON)
 		return
 
 	if(force && HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
+		to_chat(user, span_warning("You don't want to harm other living beings!"))
 		return
 
 	if(item_flags & EYE_STAB && user.zone_selected == BODY_ZONE_PRECISE_EYES)
 		if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
-			M = user
-		return eyestab(M,user)
+			target_mob = user
+		return eyestab(target_mob,user)
 
 	if(!force)
 		playsound(loc, 'sound/weapons/tap.ogg', get_clamped_volume(), TRUE, -1)
 	else if(hitsound)
 		playsound(loc, hitsound, get_clamped_volume(), TRUE, extrarange = stealthy_audio ? SILENCED_SOUND_EXTRARANGE : -1, falloff_distance = 0)
 
-	M.lastattacker = user.real_name
-	M.lastattackerckey = user.ckey
+	target_mob.lastattacker = user.real_name
+	target_mob.lastattackerckey = user.ckey
 
-	if(force && M == user && user.client)
+	if(force && target_mob == user && user.client)
 		user.client.give_award(/datum/award/achievement/misc/selfouch, user)
 
-	user.do_attack_animation(M)
-	M.attacked_by(src, user)
+	user.do_attack_animation(target_mob)
+	target_mob.attacked_by(src, user)
 
-	log_combat(user, M, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
+	SEND_SIGNAL(src, COMSIG_ITEM_POST_ATTACK, target_mob, user)
+
+	log_combat(user, target_mob, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 	add_fingerprint(user)
 
 /// The equivalent of the standard version of [/obj/item/proc/attack] but for object targets.
@@ -146,13 +148,13 @@
 		return
 
 	var/total_force
-	if(istype(src, /obj/structure))
+	if(is_type_in_list(src, list(/obj/structure, /obj/machinery)))
 		total_force = (attacking_item.force * attacking_item.demolition_mod)
 
 	else
 		total_force = (attacking_item.force)
 
-	var/damage = take_damage(total_force, attacking_item.damtype, "melee", 1)
+	var/damage = take_damage(total_force, attacking_item.damtype, "melee", TRUE, get_dir(src, user), attacking_item.armour_penetration)
 
 	var/damage_verb = "hit"
 
@@ -166,17 +168,23 @@
 	log_combat(user, src, "attacked", attacking_item)
 
 /mob/living/attacked_by(obj/item/attacking_item, mob/living/user)
-	var/armor_value = run_armor_check(attack_flag = "melee", armour_penetration = attacking_item.armour_penetration)		//WS Edit - Simplemobs can have armor
+	var/armor_value = run_armor_check(attack_flag = "melee", armour_penetration = attacking_item.armour_penetration)
+
 	send_item_attack_message(attacking_item, user)
+
 	if(!attacking_item.force)
 		return FALSE
-	apply_damage(attacking_item.force, attacking_item.damtype, break_modifier = attacking_item.force, blocked = armor_value, sharpness = attacking_item.get_sharpness()) //Bone break modifier = item force
+
+	apply_damage(attacking_item.force, attacking_item.damtype, blocked = armor_value)
+
 	if(attacking_item.damtype == BRUTE && prob(33))
 		attacking_item.add_mob_blood(src)
 		var/turf/location = get_turf(src)
 		add_splatter_floor(location)
+
 		if(get_dist(user, src) <= 1)	//people with TK won't get smeared with blood
 			user.add_mob_blood(src)
+
 		return TRUE //successful attack
 
 /mob/living/simple_animal/attacked_by(obj/item/I, mob/living/user)
@@ -216,23 +224,30 @@
 		else
 			return clamp(w_class * 6, 10, 100) // Multiply the item's weight class by 6, then clamp the value between 10 and 100
 
-/mob/living/proc/send_item_attack_message(obj/item/I, mob/living/user, hit_area)
+/mob/living/proc/send_item_attack_message(obj/item/attacking_item, mob/living/user, hit_area, obj/item/bodypart/hit_bodypart)
 	var/message_verb = "attacked"
-	if(I.attack_verb && I.attack_verb.len)
-		message_verb = "[pick(I.attack_verb)]"
-	else if(!I.force)
+	if(length(attacking_item.attack_verb))
+		message_verb = "[pick(attacking_item.attack_verb)]"
+	else if(!attacking_item.force)
 		return
+
 	var/message_hit_area = ""
 	if(hit_area)
 		message_hit_area = " in the [hit_area]"
-	var/attack_message = "[src] is [message_verb][message_hit_area] with [I]!"
-	var/attack_message_local = "You're [message_verb][message_hit_area] with [I]!"
-	if(user in viewers(src, null))
-		attack_message = "[user] [message_verb] [src][message_hit_area] with [I]!"
-		attack_message_local = "[user] [message_verb] you[message_hit_area] with [I]!"
-	if(user == src)
-		attack_message_local = "You [message_verb] yourself[message_hit_area] with [I]"
-	visible_message("<span class='danger'>[attack_message]</span>",\
-		"<span class='userdanger'>[attack_message_local]</span>", null, COMBAT_MESSAGE_RANGE)
-	return 1
 
+	var/attack_message = "[src] is [message_verb][message_hit_area] with [attacking_item]!"
+	var/attack_message_local = "You're [message_verb][message_hit_area] with [attacking_item]!"
+	if(user in viewers(src, null))
+		attack_message = "[user] [message_verb] [src][message_hit_area] with [attacking_item]!"
+		attack_message_local = "[user] [message_verb] you[message_hit_area] with [attacking_item]!"
+
+	if(user == src)
+		attack_message_local = "You [message_verb] yourself[message_hit_area] with [attacking_item]"
+
+	visible_message(
+		span_danger("[attack_message]"),
+		span_userdanger("[attack_message_local]"),
+		null,
+		COMBAT_MESSAGE_RANGE,
+	)
+	return 1

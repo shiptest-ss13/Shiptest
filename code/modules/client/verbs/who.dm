@@ -70,7 +70,7 @@
 	msg += "</tr></table>"
 
 	msg += "<b>Total Players: [length(Lines)]</b>"
-	to_chat(src, "<span class='infoplain'>[msg]</span>")
+	to_chat(src, span_infoplain("[msg]"))
 
 /client/verb/adminwho()
 	set category = "Admin"
@@ -108,7 +108,7 @@
 			var/mentor = GLOB.mentor_datums[C.ckey]
 			if(mentor)
 				msg += "<b>\t[C.key]</b> is a Mentor \n"
-		msg += "<span class='info'>Adminhelps are also sent to Discord. If no admins are available in game adminhelp anyways and an admin on Discord will see it and respond.</span>"
+		msg += span_info("Adminhelps are also sent to Discord. If no admins are available in game adminhelp anyways and an admin on Discord will see it and respond.")
 	to_chat(src, msg)
 
 #undef DEFAULT_WHO_CELLS_PER_ROW

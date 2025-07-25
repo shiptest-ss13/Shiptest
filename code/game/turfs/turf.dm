@@ -264,12 +264,12 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 		if(flags & FALL_STOP_INTERCEPTING)
 			break
 	if(prev_turf && !(flags & FALL_NO_MESSAGE))
-		prev_turf.visible_message("<span class='danger'>[mov_name] falls through [prev_turf]!</span>")
+		prev_turf.visible_message(span_danger("[mov_name] falls through [prev_turf]!"))
 	if(flags & FALL_INTERCEPTED)
 		return
 	if(zFall(A, ++levels))
 		return FALSE
-	A.visible_message("<span class='danger'>[A] crashes into [src]!</span>")
+	A.visible_message(span_danger("[A] crashes into [src]!"))
 	A.onZImpact(src, levels)
 	return TRUE
 
@@ -457,7 +457,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	if(.)
 		return
 	if(length(src_object.contents()))
-		to_chat(usr, "<span class='notice'>You start dumping out the contents...</span>")
+		to_chat(usr, span_notice("You start dumping out the contents..."))
 		if(!do_after(usr, 20, target=src_object.parent))
 			return FALSE
 
@@ -657,7 +657,10 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 			continue
 		content.wash(clean_types)
 
-/turf/proc/IgniteTurf(power, fire_color = "red")
+/turf/proc/ignite_turf(power, fire_color = "red")
+	return SEND_SIGNAL(src, COMSIG_TURF_IGNITED, power, fire_color)
+
+/turf/proc/extinguish_turf()
 	return
 
 /turf/proc/on_turf_saved()
@@ -678,11 +681,11 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
  * Returns adjacent turfs to this turf that are reachable, in all cardinal directions
  *
  * Arguments:
- * * caller: The movable, if one exists, being used for mobility checks to see what tiles it can reach
+ * * requester: The movable, if one exists, being used for mobility checks to see what tiles it can reach
  * * ID: An ID card that decides if we can gain access to doors that would otherwise block a turf
  * * simulated_only: Do we only worry about turfs with simulated atmos, most notably things that aren't space?
 */
-/turf/proc/reachableAdjacentTurfs(caller, ID, simulated_only)
+/turf/proc/reachableAdjacentTurfs(requester, ID, simulated_only)
 	var/static/space_type_cache = typecacheof(/turf/open/space)
 	. = list()
 
@@ -690,6 +693,6 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 		var/turf/turf_to_check = get_step(src,iter_dir)
 		if(!turf_to_check || (simulated_only && space_type_cache[turf_to_check.type]))
 			continue
-		if(turf_to_check.density || LinkBlockedWithAccess(turf_to_check, caller, ID))
+		if(turf_to_check.density || LinkBlockedWithAccess(turf_to_check, requester, ID))
 			continue
 		. += turf_to_check
