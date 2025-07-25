@@ -3347,7 +3347,6 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "Js" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/orange,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plating,
@@ -3637,9 +3636,6 @@
 /area/ruin/powered/hunts/gun_shop)
 "LY" = (
 /obj/structure/rack,
-/obj/machinery/door/window/brigdoor/security/holding/southleft{
-	name = "gun lockup"
-	},
 /obj/structure/sign/plaques/blank{
 	pixel_y = 30;
 	name = "M-20 AUTO ELITE";
@@ -3647,6 +3643,7 @@
 	},
 /obj/structure/hazard/fire/wires/alarm,
 /obj/structure/hazard/electrical/electric_sparks/alarm,
+/obj/machinery/door/window/brigdoor,
 /turf/open/floor/carpet/royalblack,
 /area/ruin/powered/hunts/gun_shop)
 "Mb" = (
