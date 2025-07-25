@@ -270,7 +270,7 @@
 	if(ammo_type.len > 1)
 		our_action = new /datum/action/item_action/toggle_ammotype(src)
 
-	for(var/i=1, i <= ammo_type.len+1, i++)
+	for(var/i=1, i <= ammo_type.len, i++)
 		if(default_ammo_type == ammo_type[i])
 			ammotype_index = i
 			if(our_action)
