@@ -278,7 +278,7 @@
 
 
 /obj/item/gun/proc/do_autofire_shot(datum/source, atom/target, mob/living/shooter, params)
-	pre_fire(target, shooter, TRUE, params, null) //dual wielding is handled here
+	pre_fire(target, shooter, TRUE, FALSE, params) //dual wielding is handled here
 
 /datum/component/automatic_fire/proc/disable_autofire(datum/source)
 	enabled = FALSE
