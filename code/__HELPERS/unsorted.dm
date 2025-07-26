@@ -62,47 +62,6 @@
 	else if(x<0)
 		.+=360
 
-/proc/get_line(atom/starting_atom, atom/ending_atom)
-	var/current_x_step = starting_atom.x//start at x and y, then add 1 or -1 to these to get every turf from starting_atom to ending_atom
-	var/current_y_step = starting_atom.y
-	var/starting_z = starting_atom.z
-
-	var/list/line = list(get_turf(starting_atom))//get_turf(atom) is faster than locate(x, y, z)
-
-	var/x_distance = ending_atom.x - current_x_step //x distance
-	var/y_distance = ending_atom.y - current_y_step
-
-	var/abs_x_distance = abs(x_distance)//Absolute value of x distance
-	var/abs_y_distance = abs(y_distance)
-
-	var/x_distance_sign = SIGN(x_distance) //Sign of x distance (+ or -)
-	var/y_distance_sign = SIGN(y_distance)
-
-	var/x = abs_x_distance >> 1 //Counters for steps taken, setting to distance/2
-	var/y = abs_y_distance >> 1 //Bit-shifting makes me l33t.  It also makes get_line() unnessecarrily fast.
-
-	if(abs_x_distance >= abs_y_distance) //x distance is greater than y
-		for(var/distance_counter in 0 to (abs_x_distance - 1))//It'll take abs_x_distance steps to get there
-			y += abs_y_distance
-
-			if(y >= abs_x_distance) //Every abs_y_distance steps, step once in y direction
-				y -= abs_x_distance
-				current_y_step += y_distance_sign
-
-			current_x_step += x_distance_sign //Step on in x direction
-			line += locate(current_x_step, current_y_step, starting_z)//Add the turf to the list
-	else
-		for(var/distance_counter in 0 to (abs_y_distance - 1))
-			x += abs_x_distance
-
-			if(x >= abs_y_distance)
-				x -= abs_y_distance
-				current_x_step += x_distance_sign
-
-			current_y_step += y_distance_sign
-			line += locate(current_x_step, current_y_step, starting_z)
-	return line
-
 //Returns location. Returns null if no location was found.
 /proc/get_teleport_loc(turf/location,mob/target,distance = 1, density = FALSE, errorx = 0, errory = 0, eoffsetx = 0, eoffsety = 0)
 /*
@@ -459,25 +418,6 @@ Turf and target are separate in case you want to teleport some distance from a t
 		if(!ignore_typecache[A.type])
 			processing += A.contents
 			. += A
-
-//Step-towards method of determining whether one atom can see another. Similar to viewers()
-/proc/can_see(atom/source, atom/target, length=5) // I couldnt be arsed to do actual raycasting :I This is horribly inaccurate.
-	var/turf/current = get_turf(source)
-	var/turf/target_turf = get_turf(target)
-	if(get_dist(source, target) > length)
-		return FALSE
-	var/steps = 1
-	if(current != target_turf)
-		current = get_step_towards(current, target_turf)
-		while(current != target_turf)
-			if(steps > length)
-				return FALSE
-			if(IS_OPAQUE_TURF(current))
-				return FALSE
-			current = get_step_towards(current, target_turf)
-			steps++
-	return TRUE
-
 
 //Repopulates sortedAreas list
 /proc/repopulate_sorted_areas()

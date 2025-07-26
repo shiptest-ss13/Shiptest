@@ -295,7 +295,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_BEING_SHOCKED "shocked"
 /// Granted by prismwine, reflects lasers
 #define TRAIT_REFLECTIVE "reflective"
-#define TRAIT_HEARING_SENSITIVE "hearing_sensitive"
 /// You can't see color!
 #define TRAIT_COLORBLIND "colorblind"
 
@@ -307,11 +306,15 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_VENTCRAWLER_ALWAYS "ventcrawler_always"
 #define TRAIT_VENTCRAWLER_NUDE "ventcrawler_nude"
 
+//important_recursive_contents traits
 /*
  * Used for movables that need to be updated, via COMSIG_ENTER_AREA and COMSIG_EXIT_AREA, when transitioning areas.
  * Use [/atom/movable/proc/become_area_sensitive(trait_source)] to properly enable it. How you remove it isn't as important.
  */
 #define TRAIT_AREA_SENSITIVE "area-sensitive"
+
+///every hearing sensitive atom has this trait
+#define TRAIT_HEARING_SENSITIVE "hearing_sensitive"
 
 ///Used for managing KEEP_TOGETHER in [/atom/var/appearance_flags]
 ///every object that is currently the active storage of some client mob has this trait

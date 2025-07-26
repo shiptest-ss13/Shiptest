@@ -213,7 +213,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		// radios don't pick up whispers very well
 		radio_message = stars(radio_message)
 		spans |= SPAN_ITALICS
-	var/radio_return = radio(radio_message, message_mods, spans, language)
+	var/radio_return = radio(radio_message, message_mods, spans, language)//roughly 27% of living/say()'s total cost
 	if(radio_return & ITALICS)
 		spans |= SPAN_ITALICS
 	if(radio_return & REDUCE_RANGE)
@@ -221,7 +221,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		if(!message_mods[WHISPER_MODE])
 			message_mods[WHISPER_MODE] = MODE_WHISPER
 	if(radio_return & NOPASS)
-		return 1
+		return TRUE
 
 	if(!(initial(language?.flags) & SIGNED_LANGUAGE))
 		//No screams in space, unless you're next to someone or signing.
@@ -296,7 +296,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		deaf_type = 2 // Since you should be able to hear yourself without looking
 
 	// Create map text prior to modifying message for goonchat
-	if(client?.prefs.chat_on_map && !(stat == UNCONSCIOUS || stat == HARD_CRIT) && (client.prefs.see_chat_non_mob || ismob(speaker)) && can_hear())
+	if(client?.prefs.chat_on_map && !(stat == UNCONSCIOUS || stat == HARD_CRIT) && (ismob(speaker) || client.prefs.see_chat_non_mob) && can_hear())
 		if(message_mods[MODE_WHISPER] == MODE_WHISPER_CRIT)
 			play_screen_text("<i>message</i>")
 		if(message_mods[MODE_CUSTOM_SAY_ERASE_INPUT])
@@ -333,7 +333,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 				continue //Remove if underlying cause (likely byond issue) is fixed. See TG PR #49004.
 			if(player_mob.stat != DEAD) //not dead, not important
 				continue
-			if(get_dist(player_mob, src) > 7 || player_mob.z != z) //they're out of range of normal hearing
+			if(player_mob.z != z || get_dist(player_mob, src) > 7) //they're out of range of normal hearing
 				if(eavesdrop_range)
 					if(!(player_mob.client?.prefs.chat_toggles & CHAT_GHOSTWHISPER)) //they're whispering and we have hearing whispers at any range off
 						continue
@@ -350,6 +350,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	var/rendered = compose_message(src, message_language, message, , spans, message_mods)
 	for(var/atom/movable/listening_movable as anything in listening)
+		if(!listening_movable)
+			stack_trace("somehow theres a null returned from get_hearers_in_view() in send_speech!")
+			continue
 		if(eavesdrop_range && get_dist(source, listening_movable) > message_range && !(the_dead[listening_movable]))
 			listening_movable.Hear(eavesrendered, src, message_language, eavesdropping, , spans, message_mods.Copy())
 		else
@@ -464,7 +467,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 /mob/living/proc/radio(message, list/message_mods = list(), list/spans, language)
 	var/obj/item/implant/radio/imp = locate() in src
-	if(imp && imp.radio.on)
+	if(imp && imp.radio.is_on())
 		if(message_mods[MODE_HEADSET])
 			imp.radio.talk_into(src, message, , spans, language, message_mods)
 			return ITALICS | REDUCE_RANGE
