@@ -11,7 +11,7 @@
 	var/start_active = FALSE //If it ignores the random chance to start broken on round start
 	var/area/myarea = null
 	w_class = WEIGHT_CLASS_SMALL
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
 	var/view_range = 5
 	var/busy = FALSE
 	var/can_transmit_across_z_levels = FALSE
