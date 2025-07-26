@@ -38,3 +38,35 @@
 	mob_types = list(/mob/living/simple_animal/hostile/carp)
 	spawn_text = "swims out of"
 	faction = list("carp")
+
+// Temporary Spawner for drills
+//this is basically a holder for a spawner which is added independently of this object.
+//think a Helldivers 2 bug breach.
+
+/obj/effect/drill_spawner
+	name = "seismic disturbance"
+	icon = 'icons/mob/nest.dmi'
+	icon_state = "hole"
+	max_integrity = 100
+	var/particle_to_spawn = /particles/smoke/drill_vent
+	var/obj/effect/particle_holder/part_hold
+	var/obj/structure/vein/our_vein
+
+/obj/effect/drill_spawner/Initialize()
+	. = ..()
+	part_hold = new(get_turf(src))
+	part_hold.layer = EDGED_TURF_LAYER
+	part_hold.particles = new particle_to_spawn()
+	underlays.Cut()
+
+/obj/effect/drill_spawner/proc/start_death_timer(time = 45 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(experience_death)), time)
+
+/obj/effect/drill_spawner/proc/experience_death()
+	qdel(src)
+
+/obj/effect/drill_spawner/Destroy()
+	if(our_vein)
+		our_vein.active_spawners -= src
+	QDEL_NULL(part_hold)
+	. = ..()
