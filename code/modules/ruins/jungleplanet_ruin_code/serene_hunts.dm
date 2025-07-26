@@ -5,6 +5,7 @@
 	outfit = /datum/outfit/sauna
 
 /datum/outfit/sauna
+	name = "Sauna Towel"
 	suit = /obj/item/towel/waist
 
 /obj/structure/fountain

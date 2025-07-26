@@ -53,7 +53,7 @@
 
 /obj/item/towel/Initialize()
 	. = ..()
-	change_towel_shape(shape)
+	change_towel_shape(null, shape)
 
 /obj/item/towel/examine(mob/user)
 	. = ..()
