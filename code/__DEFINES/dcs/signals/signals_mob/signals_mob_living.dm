@@ -8,3 +8,6 @@
 
 /// From /datum/ai/behavior/climb_tree/perform() : (mob/living/basic/living_pawn)
 #define COMSIG_LIVING_CLIMB_TREE "living_climb_tree"
+
+///from end of fully_heal():
+#define COMSIG_LIVING_POST_FULLY_HEAL "living_post_fully_heal"
