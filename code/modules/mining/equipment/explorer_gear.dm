@@ -179,8 +179,8 @@
 
 
 /obj/item/clothing/head/hooded/survivor_hood/brown
-	icon_state = "survivor_brown"
-	item_state = "survivor_brown"
+	icon_state = "survivorbrown"
+	item_state = "survivorbrown"
 	suit = /obj/item/clothing/suit/hooded/survivor/brown
 
 
@@ -190,8 +190,8 @@
 	hoodtype = /obj/item/clothing/head/hooded/survivor_hood/yellow
 
 /obj/item/clothing/head/hooded/survivor_hood/yellow
-	icon_state = "survivor_yellow"
-	item_state = "survivor_yellow"
+	icon_state = "survivoryellow"
+	item_state = "survivoryellow"
 	suit = /obj/item/clothing/suit/hooded/survivor/yellow
 
 /obj/item/clothing/suit/hooded/survivor/green
@@ -200,8 +200,8 @@
 	hoodtype = /obj/item/clothing/head/hooded/survivor_hood/green
 
 /obj/item/clothing/head/hooded/survivor_hood/green
-	icon_state = "survivor_green"
-	item_state = "survivor_green"
+	icon_state = "survivorgreen"
+	item_state = "survivorgreen"
 	suit = /obj/item/clothing/suit/hooded/survivor/green
 
 /obj/item/clothing/suit/hooded/survivor/jermit
@@ -210,8 +210,8 @@
 	hoodtype = /obj/item/clothing/head/hooded/survivor_hood/jermit
 
 /obj/item/clothing/head/hooded/survivor_hood/jermit
-	icon_state = "survivor_jermit"
-	item_state = "survivor_jermit"
+	icon_state = "survivorjermit"
+	item_state = "survivorjermit"
 	suit = /obj/item/clothing/suit/hooded/survivor/jermit
 
 /obj/item/clothing/suit/armor/vest/scrap
