@@ -65,8 +65,8 @@
 /datum/ai_behavior/find_hunt_target/scrap_machines
 
 /datum/ai_behavior/find_hunt_target/scrap_machines/valid_dinner(mob/living/source, obj/structure/salvageable/yummers, radius)
-	if(!yummers.salvageable_parts)
-		return FALSE
+	if(length(yummers.salvageable_parts))
+		return TRUE
 
 /datum/ai_behavior/hunt_target/scrap_machines
 	always_reset_target = TRUE
