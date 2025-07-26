@@ -61,7 +61,7 @@
 
 ///wrapper for the udder component addition so you can have uniquely uddered cow subtypes
 /mob/living/basic/cow/proc/setup_udder()
-	AddComponent(/datum/component/udder, reagent_produced_override = milked_reagent)
+	AddComponent(/datum/component/udder, reagent_produced_typepath = milked_reagent)
 
 /*
  * food related components and elements are set up here for a few reasons:
