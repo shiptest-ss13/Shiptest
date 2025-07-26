@@ -29,7 +29,6 @@
 	heat = 3800
 	tool_behaviour = TOOL_WELDER
 	toolspeed = 1
-	wall_decon_damage = 50
 	custom_materials = list(
 		/datum/material/iron = 70,
 		/datum/material/glass = 30,
@@ -46,6 +45,10 @@
 	var/acti_sound = 'sound/items/welderactivate.ogg'
 	var/deac_sound = 'sound/items/welderdeactivate.ogg'
 	var/start_full = TRUE
+	wall_decon_damage = 50
+	wound_bonus = 10
+	bare_wound_bonus = 15
+
 
 /obj/item/weldingtool/empty
 	start_full = FALSE
@@ -130,7 +133,7 @@
 			span_notice("You start fixing some of the dents on [target == user ? "your" : "[target]'s"] [parse_zone(attackedLimb.body_zone)]."))
 	if(!use_tool(target, user, delay = (target == user ? 5 SECONDS : 0.5 SECONDS), amount = 1, volume = 25))
 		return TRUE
-	item_heal_robotic(target, user, brute_heal = 15, burn_heal = 0, integrity_loss = 5)
+	item_heal_robotic(target, user, brute_heal = 15, burn_heal = 0)
 	return TRUE
 
 /obj/item/weldingtool/afterattack(atom/O, mob/user, proximity)

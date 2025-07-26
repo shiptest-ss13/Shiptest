@@ -1001,6 +1001,12 @@
 /obj/item/clothing/head/welding,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/weldingtool/hugetank,
+/obj/item/storage/belt/utility/full/engi,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/under/overalls/olive,
+/obj/item/clothing/head/hardhat/dblue,
+/obj/item/clothing/head/hardhat/orange,
+/obj/item/clothing/gloves/color/yellow,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "mk" = (
@@ -2201,7 +2207,7 @@
 /area/ship/crew/office/lobby)
 "yL" = (
 /obj/structure/closet/crate/bin,
-/obj/item/reagent_containers/food/snacks/badrecipe,
+/obj/item/food/badrecipe,
 /obj/item/trash/can/food/peaches,
 /obj/structure/sign/directions/evac{
 	dir = 4;
@@ -3268,10 +3274,7 @@
 /area/ship/crew/dorm)
 "NZ" = (
 /obj/structure/table,
-/obj/item/reagent_containers/food/snacks/sandwich{
-	pixel_x = 3;
-	pixel_y = 13
-	},
+/obj/item/food/sandwich,
 /obj/machinery/airalarm/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4

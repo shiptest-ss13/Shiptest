@@ -5,6 +5,8 @@
 	damage = 25
 	armour_penetration = -5
 	damage_type = BURN
+	wound_bonus = -20
+	bare_wound_bonus = 10
 
 	hitsound = 'sound/weapons/gun/hit/energy_impact1.ogg'
 	hitsound_non_living = 'sound/weapons/effects/searwall.ogg'
