@@ -636,7 +636,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 		to_chat(src, span_notice("You send a jolt of energy to your host, reviving them!"))
 		victim.grab_ghost(force = TRUE) //brings the host back, no eggscape
 		C.emote("gasp")
-		C.set_jitter(100)
+		C.set_timed_status_effect(200 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 
 /mob/living/simple_animal/borer/verb/bond_brain()
 	set category = "Borer"
