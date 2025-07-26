@@ -385,6 +385,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 		)
 	)
 
+	unique_attachments = list(/obj/item/attachment/scope)
 	default_attachments = list(/obj/item/attachment/scope)
 
 	wield_slowdown = DMR_SLOWDOWN
