@@ -29,7 +29,7 @@
 	var/list/accepted_biomass = list(
 		/obj/item/food/meat/slab/monkey = 25,
 		/obj/item/food/meat/slab/synthmeat = 34,
-		/obj/item/food/meat/slab/human = 50,
+		/obj/item/food/meat/slab = 50,
 		/obj/item/stack/sheet/animalhide/human = 50
 		)
 	var/biomass_per_slab = 20

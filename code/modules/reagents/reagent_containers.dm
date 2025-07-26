@@ -127,10 +127,12 @@
 	// reagents may have been emptied
 	if(!is_drainable() || !reagents.total_volume)
 		return
+
 	playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
 	target.visible_message(span_notice("[user] pours [src] onto [target]."))
 	log_combat(user, target, "poured [english_list(reagents.reagent_list)]", "in [AREACOORD(target)]")
 	log_game("[key_name(user)] poured [english_list(reagents.reagent_list)] on [target] in [AREACOORD(target)].")
+
 	var/frac = min(amount_per_transfer_from_this/reagents.total_volume, 1)
 	// don't use trans_to, because we're not ADDING it to the object, we're just... pouring it.
 	reagents.expose(target, TOUCH, frac)

@@ -2,16 +2,58 @@
 	name = "pancake"
 	desc = "A fluffy pancake. The softer, superior relative of the waffle."
 	icon_state = "pancakes_1"
-	item_state = "pancakes"
+	item_state = null
+	icon = 'icons/obj/food/pancakes.dmi'
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
-		/datum/reagent/consumable/nutriment/vitamin = 2
+		/datum/reagent/consumable/nutriment/vitamin = 2,
 	)
 	tastes = list("pancakes" = 1)
 	foodtypes = GRAIN | SUGAR | BREAKFAST
 	w_class = WEIGHT_CLASS_SMALL
+
 	///Used as a base name while generating the icon states when stacked
 	var/stack_name = "pancakes"
+
+/obj/item/food/pancakes/raw
+	name = "goopy pancake"
+	desc = "A barely cooked mess that some may mistake for a pancake. It longs for the griddle."
+	icon_state = "rawpancakes_1"
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment = 1,
+		/datum/reagent/consumable/nutriment/vitamin = 1,
+	)
+	tastes = list("milky batter" = 1)
+	stack_name = "rawpancakes"
+
+/obj/item/food/pancakes/raw/make_grillable()
+	AddComponent(/datum/component/grillable, /obj/item/food/pancakes, rand(30 SECONDS, 40 SECONDS), TRUE, TRUE)
+
+//this is awful. should be modular
+/obj/item/food/pancakes/raw/attackby(obj/item/garnish, mob/living/user, params)
+	var/newresult
+	if(istype(garnish, /obj/item/food/grown/berries))
+		newresult = /obj/item/food/pancakes/blueberry
+		name = "raw blueberry pancake"
+		icon_state = "rawbbpancakes_1"
+		stack_name = "rawbbpancakes"
+	else if(istype(garnish, /obj/item/food/chocolatebar))
+		newresult = /obj/item/food/pancakes/chocolatechip
+		name = "raw chocolate chip pancake"
+		icon_state = "rawccpancakes_1"
+		stack_name = "rawccpancakes"
+	else
+		return ..()
+
+	if(newresult)
+		qdel(garnish)
+		to_chat(user, span_notice("You add [garnish] to [src]."))
+		AddComponent(/datum/component/grillable, cook_result = newresult)
+
+/obj/item/food/pancakes/raw/examine(mob/user)
+	. = ..()
+	if(name == initial(name))
+		. += span_notice("You can modify the pancake by adding <b>blueberries</b> or <b>chocolate</b> before finishing the griddle.")
 
 /obj/item/food/pancakes/blueberry
 	name = "blueberry pancake"
@@ -79,11 +121,12 @@
 		var/obj/item/food/pancakes/pancake = item
 		if(!user.transferItemToLoc(pancake, src))
 			return
-		to_chat(user, "<span class='notice'>You add the [pancake] to the [src].</span>")
+		to_chat(user, span_notice("You add the [pancake] to the [src]."))
 		pancake.name = initial(pancake.name)
 		contents += pancake
 		update_snack_overlays(pancake)
-		if (pancake.contents.len)
+
+		if(pancake.contents.len)
 			for(var/pancake_content in pancake.contents)
 				pancake = pancake_content
 				pancake.name = initial(pancake.name)

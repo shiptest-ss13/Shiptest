@@ -787,6 +787,16 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/medical)
+"en" = (
+/obj/structure/table/reinforced,
+/obj/item/cutting_board{
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/obj/item/kitchen/rollingpin,
+/obj/item/melee/knife/butcher,
+/turf/open/floor/plating,
+/area/ship/crew/canteen)
 "er" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -2388,9 +2398,6 @@
 /area/ship/storage/eva)
 "mZ" = (
 /obj/structure/table/reinforced,
-/obj/item/cutting_board,
-/obj/item/melee/knife/butcher,
-/obj/item/kitchen/rollingpin,
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 4
 	},
@@ -2403,6 +2410,9 @@
 	},
 /obj/machinery/firealarm/directional/north{
 	pixel_x = 5
+	},
+/obj/machinery/microwave{
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -2443,13 +2453,13 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "nv" = (
-/obj/machinery/deepfryer,
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 8
 	},
+/obj/machinery/oven,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "nx" = (
@@ -2540,8 +2550,6 @@
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm/dormtwo)
 "op" = (
-/obj/structure/table/reinforced,
-/obj/machinery/microwave,
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 4
 	},
@@ -2549,6 +2557,7 @@
 	dir = 8
 	},
 /obj/item/radio/intercom/directional/north,
+/obj/machinery/griddle,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "ow" = (
@@ -6879,7 +6888,6 @@
 /turf/open/floor/engine/vacuum,
 /area/ship/engineering/engine)
 "LP" = (
-/obj/machinery/vending/dinnerware,
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 4
 	},
@@ -6887,6 +6895,7 @@
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/machinery/vending/dinnerware,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "LW" = (
@@ -11085,7 +11094,7 @@ qI
 mZ
 ad
 xK
-vZ
+en
 HC
 bu
 Xf
