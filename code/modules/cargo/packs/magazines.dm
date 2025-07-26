@@ -63,7 +63,7 @@
 
 /datum/supply_pack/magazine/invictus_mag
 	name = "Invictus Magazine Crate"
-	desc = "Contains a 20-round magazine for the Hunter's Prided Invictus Automatic Rifle."
+	desc = "Contains a 20-round magazine for the Hunter's Pride Invictus Automatic Rifle."
 	contains = list(/obj/item/ammo_box/magazine/invictus_308_mag)
 	cost = 300
 	faction = /datum/faction/srm
