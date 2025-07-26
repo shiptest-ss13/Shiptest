@@ -290,7 +290,7 @@ SUBSYSTEM_DEF(spatial_grid)
 	if(!virt_z)
 		return
 
-	var/list/relative_coords = virt_z.get_relative_coords(target)
+	var/list/relative_coords = virt_z.get_relative_coords(target_turf)
 
 	return grids_by_z_level[target_turf.virtual_z()][ROUND_UP(relative_coords[2] / SPATIAL_GRID_CELLSIZE)][ROUND_UP(relative_coords[1] / SPATIAL_GRID_CELLSIZE)]
 
@@ -581,6 +581,18 @@ SUBSYSTEM_DEF(spatial_grid)
 		for(var/list/cell_row as anything in z_level_grid)
 			for(var/datum/spatial_grid_cell/cell as anything in cell_row)
 				cells_with_color[cell] = RANDOM_COLOUR
+	// A bit faster then the one below
+	/*
+	for(var/turf/thing in world.contents)
+		var/datum/spatial_grid_cell/things_cell = get_cell_of(thing)
+		if(!things_cell)
+			continue
+		thing.add_atom_colour(cells_with_color[things_cell], ADMIN_COLOUR_PRIORITY)
+		for(var/atom/turf_thing in thing.contents)
+			turf_thing.add_atom_colour(cells_with_color[things_cell], ADMIN_COLOUR_PRIORITY)
+			RegisterSignal(turf_thing, COMSIG_MOVABLE_MOVED, PROC_REF(update_color))
+	*/
+	// If you are ever getting issues with non-turf objects not being part of grids try this, other one is optimization so we dont get_cell of EVERY atom.
 	for(var/atom/thing in world.contents)
 		var/datum/spatial_grid_cell/things_cell = get_cell_of(thing)
 		if(!things_cell)
@@ -589,7 +601,7 @@ SUBSYSTEM_DEF(spatial_grid)
 		RegisterSignal(thing, COMSIG_MOVABLE_MOVED, PROC_REF(update_color))
 
 //A debugging verb that colors objects based on what grid they belong to
-/datum/controller/subsystem/spatial_grid/proc/update_color(var/atom/movable/thing)
+/datum/controller/subsystem/spatial_grid/proc/update_color(atom/movable/thing)
 	SIGNAL_HANDLER
 
 	var/datum/spatial_grid_cell/things_cell = get_cell_of(thing)
