@@ -126,7 +126,8 @@
 	rapid = 2
 	rapid_fire_delay = 2
 	casingtype = /obj/item/ammo_casing/c46x30mm/tesla
-	loot = list()
+	r_hand = /obj/item/gun/ballistic/automatic/smg/skm_carbine
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 
 //survivor corpses
 
