@@ -11,7 +11,7 @@
 	mob_biotypes = MOB_ORGANIC | MOB_BEAST
 	speak_emote = list("moos","moos hauntingly")
 	speed = 1.1
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 6)
+	butcher_results = list(/obj/item/food/meat/slab = 6)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -27,7 +27,7 @@
 	blood_volume = BLOOD_VOLUME_NORMAL
 	ai_controller = /datum/ai_controller/basic_controller/cow
 	/// what this cow munches on, and what can be used to tame it.
-	var/list/food_types = list(/obj/item/reagent_containers/food/snacks/grown/wheat)
+	var/list/food_types = list(/obj/item/food/grown/wheat)
 	/// message sent when tamed
 	var/tame_message = "lets out a happy moo"
 	/// singular version for player cows

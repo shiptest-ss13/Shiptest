@@ -13,7 +13,7 @@
 	icon_state = "montagne"
 	item_state = "hp_generic"
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
-	spread_unwielded = 15
+	spread_unwielded = 8
 	recoil = 0
 
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44/montagne
@@ -113,7 +113,7 @@ EMPTY_GUN_HELPER(revolver/firebrand)
 	unique_reskin_changes_inhand = TRUE
 
 	recoil = 0
-	spread_unwielded = 10
+	spread_unwielded = 8
 
 /obj/item/gun/ballistic/revolver/shadow/ComponentInitialize()
 	. = ..()
@@ -618,7 +618,7 @@ EMPTY_GUN_HELPER(shotgun/hellfire)
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/winchester/conflagration,
 	)
-
+	door_breaching_weapon = TRUE
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 47,
@@ -835,6 +835,8 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 		)
 	)
 
+	door_breaching_weapon = FALSE
+
 EMPTY_GUN_HELPER(shotgun/flamingarrow)
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/update_icon_state()
@@ -969,8 +971,8 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 //Break-Action Rifle
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon
 	name = "HP Beacon"
-	desc = "A single-shot break-action rifle made by Hunter's Pride and sold to civilian hunters. Boasts excellent accuracy and stopping power. Uses .45-70 ammo."
-	sawn_desc= "A single-shot break-action pistol chambered in .45-70. A bit difficult to aim."
+	desc = "A break-action rifle made by Hunter's Pride and sold to civilian hunters. Boasts excellent accuracy and stopping power. Uses .45-70 ammo."
+	sawn_desc= "A break-action pistol chambered in .45-70. A bit difficult to aim."
 	base_icon_state = "beacon"
 	icon_state = "beacon"
 	item_state = "beacon"
@@ -1040,8 +1042,8 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/factory
-	desc = "A single-shot break-action rifle made by Hunter's Pride and sold to civilian hunters. This example has been kept in excellent shape and may as well be fresh out of the workshop. Uses .45-70 ammo."
-	sawn_desc= "A single-shot break-action pistol chambered in .45-70. A bit difficult to aim."
+	desc = "A break-action rifle made by Hunter's Pride and sold to civilian hunters. This example has been kept in excellent shape and may as well be fresh out of the workshop. Uses .45-70 ammo."
+	sawn_desc= "A break-action pistol chambered in .45-70. A bit difficult to aim."
 	base_icon_state = "beacon_factory"
 	icon_state = "beacon_factory"
 	item_state = "beacon_factory"
@@ -1055,7 +1057,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 //pre sawn off beacon
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/presawn
 	name = "HP Beacon"
-	sawn_desc= "A single-shot break-action pistol chambered in .45-70. A bit difficult to aim."
+	sawn_desc= "A break-action pistol chambered in .45-70. A bit difficult to aim."
 	sawn_off = TRUE
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT
@@ -1168,3 +1170,73 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 			"y" = 14,
 		)
 	)
+
+/obj/item/gun/ballistic/automatic/assault/invictus
+	name = "HP Invictus"
+	desc = "An unwieldy automatic rifle fielded by the Saint-Roumain Militia, commonly sold to police forces and private buyers. Chambered in .308."
+	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
+
+	icon_state = "invictus"
+	item_state = "invictus"
+
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
+
+	default_ammo_type = /obj/item/ammo_box/magazine/invictus_308_mag
+	allowed_ammo_types = /obj/item/ammo_box/magazine/invictus_308_mag
+
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
+
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+
+	fire_delay = 0.25 SECONDS
+
+	spread = 3
+	spread_unwielded = 20
+
+	recoil = 1
+	recoil_unwielded = 4
+
+	fire_sound = 'sound/weapons/gun/hmg/hmg.ogg'
+
+	unique_attachments = list(/obj/item/attachment/bayonet)
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 40,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 20,
+			"y" = 20,
+		)
+	)
+
+EMPTY_GUN_HELPER(automatic/assault/invictus)
+NO_MAG_GUN_HELPER(automatic/assault/invictus)
+
+/obj/item/ammo_box/magazine/invictus_308_mag
+	name = "Invictus magazine (.308)"
+	desc = "A 20 round box magazine for the Invictus automatic rifle. These rounds do good damage with significant armor penetration."
+	base_icon_state = "invictus_mag"
+	icon_state = "invictus_mag-1"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = ".308"
+	max_ammo = 20
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/invictus_308_mag/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/invictus_308_mag/empty
+	start_empty = TRUE

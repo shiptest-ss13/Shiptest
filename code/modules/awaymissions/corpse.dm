@@ -363,10 +363,6 @@
 	name = "Engineer"
 	outfit = /datum/outfit/job/engineer
 
-/obj/effect/mob_spawn/human/clown
-	name = "Clown"
-	outfit = /datum/outfit/job/clown
-
 /obj/effect/mob_spawn/human/scientist
 	name = "Scientist"
 	outfit = /datum/outfit/job/scientist

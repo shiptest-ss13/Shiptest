@@ -20,25 +20,6 @@
 	REMOVE_TRAIT(owner, TRAIT_MUTE, TRAUMA_TRAIT)
 	..()
 
-/datum/brain_trauma/severe/aphasia
-	name = "Aphasia"
-	desc = "Patient is unable to speak or understand any language."
-	scan_desc = "extensive damage to the brain's language center"
-	gain_text = span_warning("You have trouble forming words in your head...")
-	lose_text = span_notice("You suddenly remember how languages work.")
-
-/datum/brain_trauma/severe/aphasia/on_gain()
-	owner.add_blocked_language(subtypesof(/datum/language/) - /datum/language/aphasia, LANGUAGE_APHASIA)
-	owner.grant_language(/datum/language/aphasia, source=LANGUAGE_APHASIA)
-	..()
-
-/datum/brain_trauma/severe/aphasia/on_lose()
-	if(QDELETED(owner))
-		return ..()
-	owner.remove_blocked_language(subtypesof(/datum/language/), LANGUAGE_APHASIA)
-	owner.remove_language(/datum/language/aphasia, TRUE, TRUE, LANGUAGE_APHASIA)
-	..()
-
 /datum/brain_trauma/severe/blindness
 	name = "Cerebral Blindness"
 	desc = "Patient's brain is no longer connected to its eyes."
@@ -191,14 +172,14 @@
 		if(2)
 			if(!high_stress)
 				to_chat(owner, span_warning("You can't stop shaking..."))
-				owner.dizziness += 20
+				owner.adjust_timed_status_effect(40 SECONDS, /datum/status_effect/dizziness)
 				owner.confused += 20
-				owner.set_jitter(20)
+				owner.set_timed_status_effect(40 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 			else
 				to_chat(owner, span_warning("You feel weak and scared! If only you weren't alone..."))
-				owner.dizziness += 20
+				owner.adjust_timed_status_effect(20 SECONDS, /datum/status_effect/dizziness)
 				owner.confused += 20
-				owner.set_jitter(20)
+				owner.set_timed_status_effect(20 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 				owner.adjustStaminaLoss(50)
 
 		if(3, 4)

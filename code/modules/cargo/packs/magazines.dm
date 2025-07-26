@@ -88,12 +88,6 @@
 	contains = list(/obj/item/ammo_box/magazine/m23/empty)
 	cost = 200
 
-/datum/supply_pack/magazine/woodsman_mag_extended
-	name = "Woodsman Magazine Crate"
-	desc = "Contains an 8x50mmR magazine for the Woodsman Rifle, with a capacity of ten rounds."
-	contains = list(/obj/item/ammo_box/magazine/m23/extended/empty)
-	cost = 500
-
 /datum/supply_pack/magazine/m20_auto_elite
 	name = "Auto Elite Magazine Crate"
 	desc = "Contains a .44 Roumain magazine for the Auto Elite pistol, with a capacity of nine rounds."
@@ -184,14 +178,14 @@
 
 /datum/supply_pack/magazine/boomslang_mag
 	name = "Boomslang-90 Magazine Crate"
-	desc = "Contains a 7.5x64mm CLIP magazine for the Boomslang rifle platform, with a capacity of five rounds."
+	desc = "Contains a 6.5mm CLIP magazine for the Boomslang rifle platform, with a capacity of five rounds."
 	contains = list(/obj/item/ammo_box/magazine/boomslang/short/empty)
 	cost = 750
 	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/boomslang_mag_extended
 	name = "MSR-90 'Boomslang' Magazine Crate"
-	desc = "Contains a 7.5x64mm CLIP magazine for the Boomslang rifle platform, with a capacity of ten rounds."
+	desc = "Contains a 6.5mm CLIP magazine for the Boomslang rifle platform, with a capacity of ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/boomslang/empty)
 	cost = 1500
 	faction = /datum/faction/syndicate/scarborough
@@ -260,7 +254,7 @@
 
 /datum/supply_pack/magazine/f90
 	name = "CM-F90 Magazine Crate"
-	desc = "Contains a 5-round 7.5x64mm magazine for use with the CM-F90 sniper rifle."
+	desc = "Contains a 5-round 6.5mm magazine for use with the CM-F90 sniper rifle."
 	contains = list(/obj/item/ammo_box/magazine/f90/empty)
 	cost = 750
 	faction = /datum/faction/clip
@@ -269,7 +263,7 @@
 	name = "CM-15 Magazine Crate"
 	desc = "Contains an 8-round 12ga magazine for the CM-15 Automatic Shotgun."
 	contains = list(/obj/item/ammo_box/magazine/cm15_12g/empty)
-	cost = 750
+	cost = 400
 	faction = /datum/faction/clip
 
 /datum/supply_pack/magazine/cm40
@@ -341,14 +335,14 @@
 	name = "Bulldog Box Magazine Crate"
 	desc = "Contains an 8-round 12ga box magazine for the Bulldog weapons platform."
 	contains = list(/obj/item/ammo_box/magazine/m12g_bulldog/empty)
-	cost = 750
+	cost = 400
 	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/bulldog_12
 	name = "Bulldog Drum Magazine Crate"
 	desc = "Contains a 12-round 12ga drum magazine for the Bulldog weapons platform."
 	contains = list(/obj/item/ammo_box/magazine/m12g_bulldog/drum/empty)
-	cost = 1500
+	cost = 1200
 	faction = /datum/faction/syndicate/scarborough
 
 /* energy weapons */

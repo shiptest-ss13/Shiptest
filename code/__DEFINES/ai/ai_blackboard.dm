@@ -71,3 +71,12 @@
 ///the tree that we will climb
 #define BB_CLIMBED_TREE "BB_climbed_tree"
 
+///hivebot keys
+///the machine we must go to repair
+#define BB_REPAIR_TARGET "BB_repair_target"
+///the machine we must go to repair
+#define BB_SALVAGE_TARGET "BB_salvage_target"
+///the hivebot partner we will go communicate with
+#define BB_HIVE_PARTNER "BB_hive_partner"
+///Our source hive. We try to defend this.
+#define BB_HIVE_SOURCE "BB_hive_partner"

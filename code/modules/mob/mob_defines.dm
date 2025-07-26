@@ -92,10 +92,6 @@
 	var/bodytemperature = HUMAN_BODYTEMP_NORMAL	//310.15K / 98.6F
 	/// Drowsyness level of the mob
 	var/drowsyness = 0//Carbon
-	/// Dizziness level of the mob
-	var/dizziness = 0//Carbon
-	/// jitteryness level of the mob
-	var/jitteriness = 0//Carbon
 	/// Hunger level of the mob
 	var/nutrition = NUTRITION_LEVEL_START_MIN // randomised in Initialize
 	/// Satiation level of the mob
@@ -157,7 +153,7 @@
 	var/datum/weakref/LAssailant = null
 
 	/**
-	* construct spells and mime spells.
+	* construct spells
 	*
 	* Spells that do not transfer from one mob to another and can not be lost in mindswap.
 	* obviously do not live in the mind
@@ -223,6 +219,9 @@
 
 	/// Whether the typing indicator is on. Not on /living level because of verbs
 	var/typing_indicator = FALSE
+
+	/// The mob's current tone indicator, indicates whether
+	var/tone_indicator
 
 	///Is the mob pixel shifted?
 	var/is_shifted

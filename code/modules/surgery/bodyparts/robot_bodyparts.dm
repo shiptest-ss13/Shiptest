@@ -23,7 +23,6 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	uses_integrity = TRUE
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -49,7 +48,6 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	uses_integrity = TRUE
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -75,7 +73,6 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	uses_integrity = TRUE
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -101,7 +98,6 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	uses_integrity = TRUE
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -126,7 +122,6 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	uses_integrity = TRUE
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -229,7 +224,6 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	uses_integrity = TRUE
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -363,7 +357,7 @@
 	icon = 'icons/mob/augmentation/augments_lizard.dmi'
 	should_draw_greyscale = TRUE
 	overlay_icon_state = TRUE
-	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT
 
 /obj/item/bodypart/l_arm/robot/lizard
 	name = "prosthetic lizard left arm"

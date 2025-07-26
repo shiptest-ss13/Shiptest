@@ -42,12 +42,6 @@
 		. += flashing_overlay
 		attached_overlays += flashing_overlay
 
-/obj/item/assembly/flash/proc/clown_check(mob/living/carbon/human/user)
-	if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
-		flash_carbon(user, user, 15, 0)
-		return FALSE
-	return TRUE
-
 /obj/item/assembly/flash/proc/burn_out() //Made so you can override it if you want to have an invincible flash from R&D or something.
 	if(!burnt_out)
 		burnt_out = TRUE
@@ -101,7 +95,7 @@
 	times_used++
 	flash_recharge()
 	update_icon(ALL, TRUE)
-	if(user && !clown_check(user))
+	if(user)
 		return FALSE
 	return TRUE
 
@@ -266,7 +260,7 @@
 			if(!hypnosis)
 				to_chat(M, span_hypnophrase("The light makes you feel oddly relaxed..."))
 				M.confused += min(M.confused + 10, 20)
-				M.dizziness += min(M.dizziness + 10, 20)
+				M.adjust_timed_status_effect(20 SECONDS, /datum/status_effect/dizziness, max_duration = 40 SECONDS)
 				M.drowsyness += min(M.drowsyness + 10, 20)
 				M.apply_status_effect(STATUS_EFFECT_PACIFY, 100)
 			else
@@ -280,6 +274,6 @@
 	else if(M.flash_act())
 		to_chat(M, span_notice("Such a pretty light..."))
 		M.confused += min(M.confused + 4, 20)
-		M.dizziness += min(M.dizziness + 4, 20)
+		M.adjust_timed_status_effect(8 SECONDS, /datum/status_effect/dizziness, max_duration = 40 SECONDS)
 		M.drowsyness += min(M.drowsyness + 4, 20)
 		M.apply_status_effect(STATUS_EFFECT_PACIFY, 40)

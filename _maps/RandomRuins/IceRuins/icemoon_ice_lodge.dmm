@@ -550,6 +550,12 @@
 	},
 /turf/closed/wall/mineral/wood,
 /area/ruin/powered/icemoon/lodge/residential)
+"iL" = (
+/obj/structure/rack,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/box/ammo/a8_50r,
+/turf/open/floor/wood/ebony,
+/area/ruin/powered/icemoon/lodge/mainhall)
 "je" = (
 /obj/structure/table/wood,
 /obj/item/modular_computer/laptop/preset,
@@ -830,15 +836,6 @@
 	},
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
-"mP" = (
-/obj/structure/closet/cabinet,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/head/frontier/peaked,
-/obj/item/clothing/suit/armor/frontier,
-/obj/item/clothing/under/frontiersmen/officer,
-/obj/item/ammo_box/magazine/m9mm_mauler,
-/turf/open/floor/wood/mahogany,
-/area/ruin/powered/icemoon/lodge/montagne_office)
 "nc" = (
 /obj/effect/turf_decal/stoneborder,
 /obj/effect/turf_decal/stoneborder{
@@ -1014,6 +1011,47 @@
 	},
 /turf/closed/wall/mineral/wood,
 /area/ruin/powered/icemoon/lodge/montagne_office)
+"pU" = (
+/obj/structure/table/wood,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/a8_50r{
+	pixel_x = 0;
+	pixel_y = -6;
+	auto_scatter = 0;
+	auto_rotate = 0
+	},
+/obj/item/ammo_casing/a8_50r{
+	pixel_x = 6;
+	pixel_y = -6;
+	auto_rotate = 0;
+	auto_scatter = 0
+	},
+/obj/item/ammo_casing/a8_50r{
+	pixel_x = -6;
+	pixel_y = -6;
+	auto_rotate = 0;
+	auto_scatter = 0
+	},
+/obj/item/ammo_casing/a8_50r{
+	pixel_x = 6;
+	pixel_y = 8;
+	auto_rotate = 0;
+	auto_scatter = 0
+	},
+/obj/item/ammo_casing/a8_50r{
+	pixel_x = 0;
+	pixel_y = 8;
+	auto_rotate = 0;
+	auto_scatter = 0
+	},
+/obj/item/ammo_casing/a8_50r{
+	pixel_x = -6;
+	pixel_y = 8;
+	auto_rotate = 0;
+	auto_scatter = 0
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/powered/icemoon/lodge/mainhall)
 "qb" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
@@ -1058,20 +1096,6 @@
 /obj/structure/fence/door,
 /turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/cave/explored)
-"qH" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/obj/structure/closet/crate/freezer,
-/obj/item/food/meat/slab/bear,
-/obj/item/food/meat/slab/bear,
-/obj/item/food/meat/slab/bear,
-/obj/item/reagent_containers/food/snacks/egg,
-/obj/item/reagent_containers/food/snacks/egg,
-/obj/item/reagent_containers/food/snacks/egg,
-/obj/item/reagent_containers/food/drinks/bottle/absinthe/premium,
-/turf/open/floor/wood/maple,
-/area/ruin/powered/icemoon/lodge/residential)
 "qJ" = (
 /obj/item/mine/pressure/explosive/rusty/live,
 /turf/open/floor/plating/asteroid/icerock,
@@ -1741,6 +1765,20 @@
 "yE" = (
 /turf/closed/wall/mineral/wood,
 /area/ruin/powered/icemoon/lodge/mainhall)
+"yG" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/structure/closet/crate/freezer,
+/obj/item/food/meat/slab/bear,
+/obj/item/food/meat/slab/bear,
+/obj/item/food/meat/slab/bear,
+/obj/item/food/egg,
+/obj/item/food/egg,
+/obj/item/food/egg,
+/obj/item/reagent_containers/food/drinks/bottle/absinthe/premium,
+/turf/open/floor/wood/maple,
+/area/ruin/powered/icemoon/lodge/residential)
 "yH" = (
 /obj/structure/fence/door,
 /turf/open/floor/concrete/slab_3/icemoon,
@@ -2130,6 +2168,16 @@
 /obj/item/trash/candy,
 /turf/open/floor/carpet/black,
 /area/ruin/powered/icemoon/lodge/mainhall)
+"FI" = (
+/obj/structure/closet/cabinet,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/head/frontier/peaked,
+/obj/item/clothing/suit/armor/frontier,
+/obj/item/clothing/under/frontiersmen/officer,
+/obj/item/ammo_box/magazine/m9mm_mauler/extended,
+/obj/item/ammo_box/magazine/m9mm_mauler/extended,
+/turf/open/floor/wood/mahogany,
+/area/ruin/powered/icemoon/lodge/montagne_office)
 "FL" = (
 /obj/effect/turf_decal/siding/blue/corner{
 	dir = 4
@@ -2982,12 +3030,6 @@
 /obj/machinery/door/airlock/wood,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/montagne_office)
-"Tk" = (
-/obj/structure/rack,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/storage/box/ammo/a308/hunterspride,
-/turf/open/floor/wood/ebony,
-/area/ruin/powered/icemoon/lodge/mainhall)
 "To" = (
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/floor/wood/ebony,
@@ -3374,51 +3416,6 @@
 	},
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
-"YO" = (
-/obj/structure/table/wood,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_casing/a308{
-	pixel_y = 11;
-	projectile_type = null;
-	auto_rotate = 0;
-	auto_scatter = 0
-	},
-/obj/item/ammo_casing/a308{
-	pixel_y = 3;
-	projectile_type = null;
-	auto_rotate = 0;
-	auto_scatter = 0
-	},
-/obj/item/ammo_casing/a308{
-	pixel_y = 11;
-	pixel_x = 6;
-	projectile_type = null;
-	auto_rotate = 0;
-	auto_scatter = 0
-	},
-/obj/item/ammo_casing/a308{
-	pixel_y = 11;
-	pixel_x = -6;
-	projectile_type = null;
-	auto_rotate = 0;
-	auto_scatter = 0
-	},
-/obj/item/ammo_casing/a308{
-	pixel_y = 3;
-	pixel_x = -6;
-	projectile_type = null;
-	auto_rotate = 0;
-	auto_scatter = 0
-	},
-/obj/item/ammo_casing/a308{
-	pixel_y = 3;
-	pixel_x = 6;
-	projectile_type = null;
-	auto_rotate = 0;
-	auto_scatter = 0
-	},
-/turf/open/floor/wood/ebony,
-/area/ruin/powered/icemoon/lodge/mainhall)
 "YU" = (
 /obj/effect/turf_decal/weather/snow{
 	dir = 6
@@ -4213,7 +4210,7 @@ vd
 No
 ib
 RV
-qH
+yG
 No
 Hl
 Hl
@@ -4596,7 +4593,7 @@ ms
 Su
 Eb
 QT
-YO
+pU
 yE
 yc
 CN
@@ -4647,7 +4644,7 @@ fg
 ty
 uG
 qY
-Tk
+iL
 yE
 Kh
 tL
@@ -5114,7 +5111,7 @@ OH
 NO
 HQ
 BL
-mP
+FI
 Ws
 Kg
 GD

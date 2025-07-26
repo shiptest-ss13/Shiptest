@@ -72,26 +72,6 @@
 		return 0
 	return ..()
 
-//Mime spell boxes
-
-/obj/item/storage/box/mime
-	name = "invisible box"
-	desc = "Unfortunately not large enough to trap the mime."
-	foldable = null
-	icon_state = "box"
-	item_state = null
-	alpha = 0
-
-/obj/item/storage/box/mime/attack_hand(mob/user)
-	..()
-	if(user.mind.miming)
-		alpha = 255
-
-/obj/item/storage/box/mime/Moved(oldLoc, dir)
-	if (iscarbon(oldLoc))
-		alpha = 0
-	..()
-
 //Disk boxes
 
 /obj/item/storage/box/disks
@@ -542,6 +522,15 @@
 	for(var/i in 1 to 7)
 		new /obj/item/card/id(src)
 
+/obj/item/storage/box/bankcard
+	name = "box of spare bank cards"
+	desc = "Has so many empty bank cards."
+	illustration = "id"
+
+/obj/item/storage/box/bankcard/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/card/bank(src)
+
 //Some spare PDAs in a box
 /obj/item/storage/box/PDAs
 	name = "spare PDAs"
@@ -791,16 +780,6 @@
 	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/reagent_containers/hypospray/medipen(src)
 
-// Clown survival box
-/obj/item/storage/box/hug/survival/PopulateContents()
-	new /obj/item/clothing/mask/breath(src)
-	new /obj/item/reagent_containers/hypospray/medipen(src)
-
-	if(!isplasmaman(loc))
-		new /obj/item/tank/internals/emergency_oxygen(src)
-	else
-		new /obj/item/tank/internals/plasmaman/belt(src)
-
 /obj/item/storage/box/rubbershot
 	name = "box of rubber shots"
 	desc = "A box full of rubber shots, designed for riot shotguns."
@@ -979,7 +958,7 @@
 			/obj/item/food/grown/potato,
 			/obj/item/food/grown/sweet_potato,
 			/obj/item/food/grown/apple,
-			/obj/item/reagent_containers/food/snacks/chocolatebar,
+			/obj/item/food/chocolatebar,
 			/obj/item/food/grown/cherries,
 			/obj/item/food/grown/banana,
 			/obj/item/food/grown/cabbage,
@@ -1048,7 +1027,7 @@
 	for(var/i in 1 to 2)
 		new /obj/item/food/grown/cherries(src)
 		new /obj/item/food/grown/banana(src)
-	new /obj/item/reagent_containers/food/snacks/chocolatebar(src)
+	new /obj/item/food/chocolatebar(src)
 	new /obj/item/food/grown/cocoapod(src)
 	new /obj/item/food/grown/apple(src)
 
@@ -1080,7 +1059,7 @@
 /obj/item/storage/box/ingredients/carnivore/PopulateContents()
 	new /obj/item/food/meat/slab/bear(src)
 	new /obj/item/food/meat/slab/spider(src)
-	new /obj/item/reagent_containers/food/snacks/spidereggs(src)
+	new /obj/item/food/spidereggs(src)
 	new /obj/item/food/fishmeat/carp(src)
 	new /obj/item/food/meat/slab/xeno(src)
 	new /obj/item/food/meat/slab/corgi(src)
@@ -1478,59 +1457,6 @@
 /obj/item/storage/box/sparklers/PopulateContents()
 	for(var/i in 1 to 7)
 		new/obj/item/sparkler(src)
-
-/obj/item/storage/box/gum
-	name = "bubblegum packet"
-	desc = "The packaging is entirely in japanese, apparently. You can't make out a single word of it."
-	icon_state = "bubblegum_generic"
-	w_class = WEIGHT_CLASS_TINY
-	illustration = null
-	foldable = null
-	custom_price = 5
-
-/obj/item/storage/box/gum/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_volume = (STORAGE_VOLUME_CONTAINER_S / 2)
-
-/obj/item/storage/box/gum/PopulateContents()
-	for(var/i in 1 to 4)
-		new/obj/item/reagent_containers/food/snacks/chewable/bubblegum(src)
-
-/obj/item/storage/box/gum/nicotine
-	name = "nicotine gum packet"
-	desc = "Designed to help with nicotine addiction and oral fixation all at once without destroying your lungs in the process. Mint flavored!"
-	icon_state = "bubblegum_nicotine"
-	custom_premium_price = 10
-
-/obj/item/storage/box/gum/nicotine/PopulateContents()
-	for(var/i in 1 to 4)
-		new/obj/item/reagent_containers/food/snacks/chewable/bubblegum/nicotine(src)
-
-/obj/item/storage/box/gum/happiness
-	name = "HP+ gum packet"
-	desc = "A seemingly homemade packaging with an odd smell. It has a weird drawing of a smiling face sticking out its tongue."
-	icon_state = "bubblegum_happiness"
-	custom_price = 10
-	custom_premium_price = 10
-
-/obj/item/storage/box/gum/happiness/Initialize()
-	. = ..()
-	if (prob(25))
-		desc += "You can faintly make out the word 'Hemopagopril' was once scribbled on it."
-
-/obj/item/storage/box/gum/happiness/PopulateContents()
-	for(var/i in 1 to 4)
-		new/obj/item/reagent_containers/food/snacks/chewable/bubblegum/happiness(src)
-
-/obj/item/storage/box/gum/bubblegum
-	name = "bubblegum gum packet"
-	desc = "The packaging is entirely in Demonic, apparently. You feel like even opening this would be a sin."
-	icon_state = "bubblegum_bubblegum"
-
-/obj/item/storage/box/gum/bubblegum/PopulateContents()
-	for(var/i in 1 to 4)
-		new/obj/item/reagent_containers/food/snacks/chewable/bubblegum/bubblegum(src)
 
 /obj/item/storage/box/shipping
 	name = "box of shipping supplies"

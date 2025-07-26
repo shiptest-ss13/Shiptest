@@ -43,7 +43,7 @@
 /datum/crafting_recipe/food/fishandchips
 	name = "Fish and chips"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/fries = 1,
+		/obj/item/food/fries = 1,
 		/obj/item/food/fishmeat = 1
 	)
 	result = /obj/item/food/fishandchips
@@ -63,7 +63,7 @@
 	name = "Sashimi"
 	reqs = list(
 		/datum/reagent/consumable/soysauce = 5,
-		/obj/item/reagent_containers/food/snacks/spidereggs = 1,
+		/obj/item/food/spidereggs = 1,
 		/obj/item/food/fishmeat = 1
 	)
 	result = /obj/item/food/sashimi
@@ -73,7 +73,7 @@
 	name = "Spicy sushi roll"
 	reqs = list(
 		/obj/item/food/grown/seaweed/sheet = 1,
-		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
+		/obj/item/food/salad/boiledrice = 1,
 		/obj/item/food/fishmeat = 1,
 		/obj/item/food/grown/chili = 1,
 		/obj/item/food/grown/onion = 1
@@ -94,7 +94,7 @@
 	name = "Nigiri sushi"
 	reqs = list(
 		/obj/item/food/grown/seaweed/sheet = 1,
-		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
+		/obj/item/food/salad/boiledrice = 1,
 		/obj/item/food/fishmeat = 1,
 		/datum/reagent/consumable/soysauce = 2
 	)
@@ -107,7 +107,7 @@
 	name = "Spider eggs ham"
 	reqs = list(
 		/datum/reagent/consumable/sodiumchloride = 1,
-		/obj/item/reagent_containers/food/snacks/spidereggs = 1,
+		/obj/item/food/spidereggs = 1,
 		/obj/item/food/meat/cutlet/spider = 2
 	)
 	result = /obj/item/food/spidereggsham
@@ -148,7 +148,7 @@
 /datum/crafting_recipe/food/stewedsoymeat
 	name = "Stewed soymeat"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/soydope = 2,
+		/obj/item/food/soydope = 2,
 		/obj/item/food/grown/carrot = 1,
 		/obj/item/food/grown/tomato = 1
 	)
@@ -162,6 +162,35 @@
 		/obj/item/food/meat/cutlet = 2
 	)
 	result = /obj/item/food/sausage
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/tiris_dote
+	name = "Tiris dotesu"
+	reqs = list(
+		/obj/item/food/grown/dote_berries = 1,
+		/obj/item/food/meat/rawcutlet/tiris = 2
+	)
+	result = /obj/item/food/sausage/tiris_dote
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/tiris_refa
+	name = "Tiris refasu"
+	reqs = list(
+		/obj/item/food/grown/refa_li = 1,
+		/obj/item/food/meat/rawcutlet/tiris = 2
+	)
+	result = /obj/item/food/sausage/tiris_refa
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/tirila_li
+	name = "Tirila-li"
+	reqs = list(
+		/obj/item/food/grown/refa_li = 1,
+		/obj/item/food/grown/dotu_fime = 1,
+		/datum/reagent/consumable/sodiumchloride = 1,
+		/obj/item/food/meat/rawcutlet/tiris = 2
+	)
+	result = /obj/item/food/sausage/tirila_li
 	subcategory = CAT_MEAT
 
 /datum/crafting_recipe/food/nugget
@@ -182,14 +211,125 @@
 	result =  /obj/item/food/rawkhinkali
 	subcategory = CAT_MEAT
 
+/datum/crafting_recipe/food/dofi_dore
+	name = "Dofi-dore"
+	reqs = list(
+		/obj/item/food/doughslice = 1,
+		/obj/item/food/meat/slab/dofitis = 1,
+	)
+	result =  /obj/item/food/dofi_dore
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/timera
+	name = "Timera-fa"
+	reqs = list(
+		/obj/item/food/grown/dotu_fime = 1,
+		/obj/item/food/grown/dote_berries = 1,
+		/obj/item/food/meat/steak/tiris = 1,
+	)
+	result = /obj/item/food/timera
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/tiris_apple
+	name = "Tiris and apples"
+	reqs = list(
+		/obj/item/food/grown/apple = 1,
+		/obj/item/food/meat/steak/tiris = 1,
+	)
+	result = /obj/item/food/tiris_apple
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/dofi_tami
+	name = "Dofi-tami"
+	reqs = list(
+		/obj/item/food/meat/slab/dofitis = 2,
+	)
+	result = /obj/item/food/dofi_tami
+	subcategory = CAT_MEAT
+
 /datum/crafting_recipe/food/pigblanket
 	name = "Pig in a Blanket"
 	reqs = list(
 		/obj/item/food/bun = 1,
-		/obj/item/reagent_containers/food/snacks/butter = 1,
+		/obj/item/food/butter = 1,
 		/obj/item/food/meat/cutlet = 1
 	)
 	result = /obj/item/food/pigblanket
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/miras_sososi
+	name = "Miras sososi"
+	reqs = list(
+		/obj/item/food/meat/steak/miras = 1,
+		/obj/item/food/grown/sososi = 1,
+		/datum/reagent/consumable/tiris_sele = 1
+	)
+	result = /obj/item/food/miras_sososi
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/miras_sososi
+	name = "Siti-Miras"
+	reqs = list(
+		/obj/item/food/meat/steak/miras = 1,
+		/obj/item/food/grown/siti = 1,
+		/obj/item/food/grown/dote_berries = 1
+	)
+	result = /obj/item/food/siti_miras
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/miras_li
+	name = "Miras-li"
+	reqs = list(
+		/obj/item/food/meat/slab/miras = 1,
+		/obj/item/food/grown/refa_li = 1
+	)
+	result = /obj/item/food/miras_li
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/wine_remes
+	name = "Wine remes"
+	reqs = list(
+		/obj/item/food/meat/slab/remes = 1,
+		/datum/reagent/consumable/ethanol/wine = 10
+	)
+	result = /obj/item/food/wine_remes
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/remes_li
+	name = "Remes-li"
+	reqs = list(
+		/obj/item/food/meat/slab/remes = 1,
+		/obj/item/food/grown/refa_li = 1
+	)
+	result = /obj/item/food/remes_li
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/dofi_tese
+	name = "dofi-tese"
+	reqs = list(
+		/obj/item/food/meat/steak/dofitis = 1,
+		/obj/item/food/grown/refa_li = 1
+	)
+	result = /obj/item/food/dofi_tese
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/sososi_dofi
+	name = "sososi dofi"
+	reqs = list(
+		/obj/item/food/meat/steak/dofitis = 1,
+		/obj/item/food/grown/sososi = 1
+	)
+	result = /obj/item/food/sososi_dofi
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/sososi_dofi
+	name = "dofi-nari"
+	reqs = list(
+		/obj/item/food/meat/steak/dofitis = 1,
+		/obj/item/food/grown/siti = 1,
+		/obj/item/food/grown/dotu_fime = 1
+	)
+	result = /obj/item/food/dofi_nari
 	subcategory = CAT_MEAT
 
 /datum/crafting_recipe/food/ratkebab
@@ -199,6 +339,26 @@
 		/obj/item/food/deadmouse = 1
 	)
 	result = /obj/item/food/kebab/rat
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/miras_kebab
+	name = "Miras Kebab"
+	reqs = list(
+		/obj/item/stack/rods = 1,
+		/obj/item/food/meat/slab/miras = 1
+	)
+	result = /obj/item/food/kebab/miras
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/fafe_skewer
+	name = "Faferiri skewer"
+	reqs = list(
+		/obj/item/stack/rods = 1,
+		/obj/item/food/meat/slab/remes = 1,
+		/obj/item/food/grown/refa_li = 1,
+		/obj/item/food/grown/sososi = 1
+	)
+	result = /obj/item/food/kebab/fafe_skewer
 	subcategory = CAT_MEAT
 
 /datum/crafting_recipe/food/doubleratkebab
@@ -213,10 +373,10 @@
 /datum/crafting_recipe/food/ricepork
 	name = "Rice and Pork"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
+		/obj/item/food/salad/boiledrice = 1,
 		/obj/item/food/meat/cutlet = 2
 	)
-	result = /obj/item/reagent_containers/food/snacks/salad/ricepork
+	result = /obj/item/food/salad/ricepork
 	subcategory = CAT_MEAT
 
 /datum/crafting_recipe/food/ribs
@@ -229,17 +389,6 @@
 	result = /obj/item/food/bbqribs
 	subcategory = CAT_MEAT
 
-/datum/crafting_recipe/food/gumbo
-	name = "Gumbo"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
-		/obj/item/food/grown/peas = 1,
-		/obj/item/food/grown/chili = 1,
-		/obj/item/food/meat/cutlet = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/salad/gumbo
-	subcategory = CAT_MEAT
-
 /datum/crafting_recipe/food/fishfry
 	name = "Fish fry"
 	reqs = list(
@@ -248,4 +397,15 @@
 		/obj/item/food/fishmeat = 1
 	)
 	result = /obj/item/food/fishfry
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/crab_rangoon
+	name = "Crab Rangoon"
+	reqs = list(
+		/obj/item/food/doughslice = 1,
+		/datum/reagent/consumable/cream = 5,
+		/obj/item/food/cheese/wedge = 1,
+		/obj/item/food/meat/rawcrab = 1
+	)
+	result = /obj/item/food/crab_rangoon
 	subcategory = CAT_MEAT

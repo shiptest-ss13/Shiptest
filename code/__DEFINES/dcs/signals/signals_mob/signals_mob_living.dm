@@ -24,3 +24,6 @@
 #define COMSIG_MOB_ATE "mob_ate"
 	///cancel post eating
 	#define COMSIG_MOB_TERMINATE_EAT (1<<0)
+
+///from end of fully_heal():
+#define COMSIG_LIVING_POST_FULLY_HEAL "living_post_fully_heal"

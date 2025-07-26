@@ -15,9 +15,6 @@
 ///Cooldown on planning if planning failed last time
 #define AI_FAILED_PLANNING_COOLDOWN 1.5 SECONDS
 
-///Flags for ai_behavior new()
-#define AI_CONTROLLER_INCOMPATIBLE (1<<0)
-
 //Return flags for ai_behavior/perform()
 ///Update this behavior's cooldown
 #define AI_BEHAVIOR_DELAY (1<<0)
@@ -27,6 +24,9 @@
 #define AI_BEHAVIOR_FAILED (1<<2)
 
 #define AI_BEHAVIOR_INSTANT (NONE)
+
+///Flags for ai_behavior new()
+#define AI_CONTROLLER_INCOMPATIBLE (1<<0)
 
 ///Does this task require movement from the AI before it can be performed?
 #define AI_BEHAVIOR_REQUIRE_MOVEMENT (1<<0)

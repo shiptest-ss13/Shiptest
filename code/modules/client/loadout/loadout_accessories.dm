@@ -16,6 +16,12 @@
 	display_name = "shemagh"
 	path = /obj/item/clothing/neck/shemagh
 
+//poncho
+
+/datum/gear/accessory/poncho
+	display_name = "poncho, recolorable"
+	path = /obj/item/clothing/neck/poncho
+
 //(The actually good scarves)
 
 /datum/gear/accessory/scarf/striped
@@ -116,6 +122,10 @@
 /datum/gear/accessory/mask/balaclava
 	display_name = "balaclava"
 	path = /obj/item/clothing/mask/balaclava
+
+/datum/gear/accessory/mask/facemask
+	display_name = "face mask"
+	path = /obj/item/clothing/mask/breath/facemask
 
 //Misc
 
