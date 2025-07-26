@@ -257,7 +257,7 @@
 		if(10, 11)
 			. += "[pick(GLOB.planet_prefixes)] [pick(GLOB.planet_names)]"
 		if(12)
-			. += "[pick(GLOB.adjectives)] [pick(GLOB.planet_names)]"
+			. += "[capitalize(pick(GLOB.adjectives))] [pick(GLOB.planet_names)]"
 
 /**
  * Load a level for a ship that's visiting the level.
