@@ -35,6 +35,7 @@
 	gunslinger_recoil_bonus = 0
 	wield_slowdown = 0
 	zoomable = FALSE
+	ammo_counter = TRUE
 
 	valid_attachments = list()
 	unique_attachments = list()
