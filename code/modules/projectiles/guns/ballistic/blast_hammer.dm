@@ -9,16 +9,32 @@
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/blunt_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/blunt_righthand.dmi'
+	has_safety = FALSE
+
 	force = 5
 	throwforce = 15
 	armour_penetration = 40
 	demolition_mod = 2
-	slot_flags = ITEM_SLOT_BACK
 	attack_cooldown = 12
 	attack_verb = list("bashed", "smashed", "crushed", "smacked")
 	hitsound = list('sound/weapons/melee/heavyblunt_hit1.ogg', 'sound/weapons/melee/heavyblunt_hit2.ogg', 'sound/weapons/melee/heavyblunt_hit3.ogg')
 	pickup_sound = 'sound/weapons/melee/heavy_pickup.ogg'
 
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/blasting_hammer
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/shot/blasting_hammer,
+	)
+
+	actually_shoots = FALSE
+	door_breaching_weapon = FALSE //this doesn't breach doors. it OBLITERATES THEM
+
+	var/throw_min = 1
+	var/throw_max = 2
+
+
+/obj/item/gun/ballistic/shotgun/blasting_hammer/Initialize(mapload, spawn_empty)
+	. = ..()
+	update_appearance()
 
 /obj/item/gun/ballistic/shotgun/blasting_hammer/ComponentInitialize()
 	. = ..()
@@ -32,8 +48,39 @@
 	. = ..()
 	tool_behaviour = null
 
-/obj/item/gun/ballistic/shotgun/blasting_hammer/attack(mob/M, mob/user)
+/obj/item/gun/ballistic/shotgun/blasting_hammer/attack(mob/living/target, mob/user)
 	. = ..()
-	if(chambered)
+	if(!HAS_TRAIT(src, TRAIT_WIELDED))
+		return
+	if(can_shoot())
+		throw_min = 5
+		throw_max = 6
+		target.Knockdown(1)
+		target.flash_act(1,1)
+		target.apply_damage(40, BRUTE, user.zone_selected)
+		new /obj/effect/temp_visual/kinetic_blast(target.loc)
+	else
+		throw_min = initial(throw_min)
+		throw_max = initial(throw_max)
+
+	var/atom/throw_target = get_edge_target_turf(target, user.dir)
+	if(!target.anchored)
+		target.throw_at(throw_target, rand(throw_min,throw_max), 2, user, gentle = TRUE)
+
+/obj/item/gun/ballistic/shotgun/blasting_hammer/update_icon_state()
+	. = ..()
+	var/is_loaded = chambered ? 1 : 0
+	icon_state = "[base_icon_state]-[min((is_loaded + magazine.ammo_count()), 3)]"
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
+		item_state = "[base_icon_state]_w"
+	else
+		item_state = base_icon_state
+
+/obj/item/ammo_box/magazine/internal/shot/blasting_hammer
+	name = "blasting hammer magazine"
+	ammo_type = /obj/item/ammo_casing/shotgun/blank
+	caliber = "12ga"
+	max_ammo = 2
+	start_empty = TRUE
 
 

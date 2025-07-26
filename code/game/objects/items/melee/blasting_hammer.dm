@@ -108,9 +108,4 @@
 	else
 		item_state = base_icon_state
 
-/obj/item/ammo_box/magazine/internal/shot/blasting_hammer
-	name = "blasting hammer magazine"
-	ammo_type = /obj/item/ammo_casing/shotgun/blank
-	caliber = "12ga"
-	max_ammo = 2
-	start_empty = TRUE
+
