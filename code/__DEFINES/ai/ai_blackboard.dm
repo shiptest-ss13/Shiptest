@@ -62,6 +62,19 @@
 #define BB_BASIC_MOB_CURRENT_TARGET_HIDING_LOCATION "BB_basic_current_target_hiding_location"
 #define BB_TARGETTING_DATUM "targetting_datum"
 
+///some behaviors that check current_target also set this on deep crit mobs
+#define BB_BASIC_MOB_EXECUTION_TARGET "BB_basic_execution_target"
+///Blackboard key for a whitelist typecache of "things we can target while trying to move"
+#define BB_OBSTACLE_TARGETING_WHITELIST "BB_targeting_whitelist"
+/// Key for the minimum status at which we want to target mobs (does not need to be specified if CONSCIOUS)
+#define BB_TARGET_MINIMUM_STAT "BB_target_minimum_stat"
+/// Flag for whether to target only wounded mobs
+#define BB_TARGET_WOUNDED_ONLY "BB_target_wounded_only"
+/// What typepath the holding object targeting strategy should look for
+#define BB_TARGET_HELD_ITEM "BB_target_held_item"
+/// How likely is this mob to move when idle per tick?
+#define BB_BASIC_MOB_IDLE_WALK_CHANCE "BB_basic_idle_walk_chance"
+
 ///List of mobs who have damaged us
 #define BB_BASIC_MOB_RETALIATE_LIST "BB_basic_mob_shitlist"
 
