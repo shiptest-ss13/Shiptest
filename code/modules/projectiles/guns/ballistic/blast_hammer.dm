@@ -10,6 +10,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/blunt_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/blunt_righthand.dmi'
 	has_safety = FALSE
+	safety = FALSE
 
 	force = 5
 	throwforce = 15
@@ -19,6 +20,7 @@
 	attack_verb = list("bashed", "smashed", "crushed", "smacked")
 	hitsound = list('sound/weapons/melee/heavyblunt_hit1.ogg', 'sound/weapons/melee/heavyblunt_hit2.ogg', 'sound/weapons/melee/heavyblunt_hit3.ogg')
 	pickup_sound = 'sound/weapons/melee/heavy_pickup.ogg'
+	fire_sound = 'sound/weapons/gun/shotgun/brimstone.ogg'
 
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/blasting_hammer
 	allowed_ammo_types = list(
@@ -38,7 +40,7 @@
 
 /obj/item/gun/ballistic/shotgun/blasting_hammer/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = force, force_wielded = 30, icon_wielded="[base_icon_state]_w")
+	AddComponent(/datum/component/two_handed, force_unwielded = force, force_wielded = 30)
 
 /obj/item/gun/ballistic/shotgun/blasting_hammer/on_wield(obj/item/source, mob/user, instant)
 	. = ..()
@@ -48,11 +50,27 @@
 	. = ..()
 	tool_behaviour = null
 
+/obj/item/gun/ballistic/shotgun/blasting_hammer/can_shoot(mob/living/user)
+	if(!..())
+		return FALSE
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
+		expend_round(user)
+		return TRUE
+	else
+		return FALSE
+
+/obj/item/gun/ballistic/shotgun/blasting_hammer/proc/expend_round(mob/living/user)
+	if(!istype(chambered, /obj/item/ammo_casing/shotgun/blank)) //loading a live round into your hammer when it has nowhere to go is a bad idea.
+		unsafe_shot(user)
+		user.visible_message(span_warning("\The [chambered] in \the [src] backfires into \the [user]!"), span_danger("\The [chambered] in \the [src] goes off right at you!"))
+	else
+		chambered.BB = null //fakes the shot
+		chambered.update_appearance()
+		playsound(src,fire_sound,100)
+
 /obj/item/gun/ballistic/shotgun/blasting_hammer/attack(mob/living/target, mob/user)
 	. = ..()
-	if(!HAS_TRAIT(src, TRAIT_WIELDED))
-		return
-	if(can_shoot())
+	if(can_shoot(user))
 		throw_min = 5
 		throw_max = 6
 		target.Knockdown(1)
@@ -63,9 +81,24 @@
 		throw_min = initial(throw_min)
 		throw_max = initial(throw_max)
 
-	var/atom/throw_target = get_edge_target_turf(target, user.dir)
-	if(!target.anchored)
-		target.throw_at(throw_target, rand(throw_min,throw_max), 2, user, gentle = TRUE)
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
+		var/atom/throw_target = get_edge_target_turf(target, user.dir)
+		if(!target.anchored)
+			target.throw_at(throw_target, rand(throw_min,throw_max), 2, user, gentle = TRUE)
+
+/obj/item/gun/ballistic/shotgun/blasting_hammer/attack_obj(obj/O, mob/living/user)
+	if(can_shoot(user))
+		demolition_mod = 10
+	else
+		demolition_mod = initial(demolition_mod)
+	return ..()
+
+/obj/item/gun/ballistic/shotgun/blasting_hammer/closed_turf_attack(turf/closed/wall, mob/living/user, params)
+	. = ..()
+	if(can_shoot(user))
+		demolition_mod = 10
+	else
+		demolition_mod = initial(demolition_mod)
 
 /obj/item/gun/ballistic/shotgun/blasting_hammer/update_icon_state()
 	. = ..()
