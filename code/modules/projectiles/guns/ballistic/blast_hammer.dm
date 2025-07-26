@@ -26,7 +26,7 @@
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/blasting_hammer,
 	)
-	recoil = 1.5
+	recoil = 4
 
 	actually_shoots = FALSE
 	door_breaching_weapon = FALSE //this doesn't breach doors. it OBLITERATES THEM
