@@ -6,14 +6,6 @@
 	allow_duplicates = FALSE
 	ruin_type = RUINTYPE_SPACE
 
-/datum/map_template/ruin/space/bigderelict1
-	id = "bigderelict1"
-	suffix = "bigderelict1.dmm"
-	name = "Derelict Tradepost"
-	description = "A once-bustling tradestation that handled imports and exports from nearby stations now lays eerily dormant. \
-	The last received message was a distress call from one of the on-board officers, but we had no success in making contact again."
-	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER)
-
 /datum/map_template/ruin/space/singularitylab
 	id = "singularitylab"
 	suffix = "singularity_lab.dmm"
@@ -48,6 +40,13 @@
 		/datum/mission/ruin/signaled/kill/foreman
 	)
 */
+
+/datum/map_template/ruin/space/deepstorage
+	id = "VI deepstorage"
+	suffix = "vi_deepstorage.dmm"
+	name = "Vigilitas Deepstorage"
+	description = "A Vigilitas blacksite for holding important and suspicious cargo."
+	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)
 
 /datum/mission/ruin/pgf_captain
 	name = "MIA Vessel Investigation"
