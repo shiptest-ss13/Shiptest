@@ -33,6 +33,8 @@
 	ignores_wear = TRUE
 	manufacturer = null
 	gunslinger_recoil_bonus = 0
+	wield_slowdown = 0
+	zoomable = FALSE
 
 	valid_attachments = list()
 	unique_attachments = list()
@@ -41,11 +43,37 @@
 
 	var/throw_min = 1
 	var/throw_max = 2
+	var/charging = FALSE
 
 
 /obj/item/gun/ballistic/shotgun/blasting_hammer/Initialize(mapload, spawn_empty)
 	. = ..()
 	update_appearance()
+
+/obj/item/gun/ballistic/shotgun/blasting_hammer/pre_attack(atom/A, mob/living/user, params)
+	if(charging)
+		charge(A,user)
+	else
+		return ..()
+
+/obj/item/gun/ballistic/shotgun/blasting_hammer/proc/toggle_charge(mob/user)
+	charging = !charging
+	to_chat(user, "You [charging ? "prepare" : "stop preparing"] to charge.")
+
+/obj/item/gun/ballistic/shotgun/blasting_hammer/proc/charge(target, mob/user)
+	charging = FALSE
+	var/destination = get_turf(target)
+	RegisterSignal(user,COMSIG_MOVABLE_BUMP,PROC_REF(smack))
+	user.throw_at(destination, get_dist(target, user), 2, user, gentle = TRUE)
+	sleep(get_dist(user, destination) * 0.7)
+	UnregisterSignal(user,COMSIG_MOVABLE_BUMP)
+	charging = TRUE
+
+/obj/item/gun/ballistic/shotgun/blasting_hammer/proc/smack(mob/user,target)
+	if(isliving(target))
+		var/mob/living/victim = target
+		attack(victim,user)
+		rack(user,TRUE)
 
 /obj/item/gun/ballistic/shotgun/blasting_hammer/ComponentInitialize()
 	. = ..()
@@ -129,4 +157,23 @@
 	max_ammo = 2
 	start_empty = TRUE
 
+/datum/action/item_action/ramzislayer_charge
+	name = "Charge"
 
+/datum/action/item_action/ramzislayer_charge/Trigger()
+	if(istype(target, /obj/item/gun/ballistic/shotgun/blasting_hammer))
+		var/obj/item/gun/ballistic/shotgun/blasting_hammer/hammer = target
+		hammer.toggle_charge(owner)
+
+/obj/item/gun/ballistic/shotgun/blasting_hammer/ramzislayer //Admin item. Don't actually map this anywhere.
+	name = "ramzislayers hammer"
+	desc = "Despite what the name may imply, not this is not a hammer for killing Ramzi. It's a hammer for Ramzi to kill you with."
+	actions_types = list(/datum/action/item_action/ramzislayer_charge)
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/blasting_hammer/ramzislayer
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/shot/blasting_hammer/ramzislayer,
+	)
+
+/obj/item/ammo_box/magazine/internal/shot/blasting_hammer/ramzislayer
+	max_ammo = 12
+	start_empty = FALSE
