@@ -1,4 +1,4 @@
-/obj/item/gun/ballistic/shotgun/blasting_hammer //yeah, I know this is kinda hacky but it's (probably) better than the other way
+/obj/item/gun/ballistic/shotgun/blasting_hammer
 	name = "blasting hammer"
 	icon_state = "blasting-0"
 	base_icon_state = "blasting"
@@ -26,9 +26,18 @@
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/blasting_hammer,
 	)
+	recoil = 1.5
 
 	actually_shoots = FALSE
 	door_breaching_weapon = FALSE //this doesn't breach doors. it OBLITERATES THEM
+	ignores_wear = TRUE
+	manufacturer = null
+	gunslinger_recoil_bonus = 0
+
+	valid_attachments = list()
+	unique_attachments = list()
+	slot_available = list()
+
 
 	var/throw_min = 1
 	var/throw_max = 2
@@ -50,16 +59,18 @@
 	. = ..()
 	tool_behaviour = null
 
-/obj/item/gun/ballistic/shotgun/blasting_hammer/can_shoot(mob/living/user)
+/obj/item/gun/ballistic/shotgun/blasting_hammer/can_shoot(mob/living/target, mob/living/user)
 	if(!..())
 		return FALSE
-	if(HAS_TRAIT(src, TRAIT_WIELDED))
-		expend_round(user)
+	if(HAS_TRAIT(src, TRAIT_WIELDED) && chambered.BB)
+		expend_round(target, user)
 		return TRUE
 	else
 		return FALSE
 
-/obj/item/gun/ballistic/shotgun/blasting_hammer/proc/expend_round(mob/living/user)
+/obj/item/gun/ballistic/shotgun/blasting_hammer/proc/expend_round(target, mob/living/user)
+	if(!chambered.BB)
+		return
 	if(!istype(chambered, /obj/item/ammo_casing/shotgun/blank)) //loading a live round into your hammer when it has nowhere to go is a bad idea.
 		unsafe_shot(user)
 		user.visible_message(span_warning("\The [chambered] in \the [src] backfires into \the [user]!"), span_danger("\The [chambered] in \the [src] goes off right at you!"))
@@ -67,10 +78,12 @@
 		chambered.BB = null //fakes the shot
 		chambered.update_appearance()
 		playsound(src,fire_sound,100)
+	var/firing_angle = get_angle(user,target)
+	simulate_recoil(user,recoil,firing_angle)
 
 /obj/item/gun/ballistic/shotgun/blasting_hammer/attack(mob/living/target, mob/user)
 	. = ..()
-	if(can_shoot(user))
+	if(can_shoot(target, user))
 		throw_min = 5
 		throw_max = 6
 		target.Knockdown(1)
@@ -87,7 +100,7 @@
 			target.throw_at(throw_target, rand(throw_min,throw_max), 2, user, gentle = TRUE)
 
 /obj/item/gun/ballistic/shotgun/blasting_hammer/attack_obj(obj/O, mob/living/user)
-	if(can_shoot(user))
+	if(can_shoot(O, user))
 		demolition_mod = 10
 	else
 		demolition_mod = initial(demolition_mod)
@@ -95,7 +108,7 @@
 
 /obj/item/gun/ballistic/shotgun/blasting_hammer/closed_turf_attack(turf/closed/wall, mob/living/user, params)
 	. = ..()
-	if(can_shoot(user))
+	if(can_shoot(wall, user))
 		demolition_mod = 10
 	else
 		demolition_mod = initial(demolition_mod)
