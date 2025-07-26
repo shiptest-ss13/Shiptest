@@ -99,7 +99,7 @@
 	scanner_type = /obj/item/survey_handheld/advanced
 	num_wanted = 6
 	danger_bonus = 75
-	garden_string = "rocky gardens"
+	garden_string = "rock gardens"
 	planet_hint = "Rock"
 
 //Survey: we like chemicals
