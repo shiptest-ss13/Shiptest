@@ -149,7 +149,8 @@
 		add_dent(WALL_DENT_SHOT)
 		alter_integrity(-dam, shooter)
 
-/turf/closed/proc/get_item_damage(obj/item/used_item, t_min = min_dam)
+/turf/closed/proc/get_item_damage(obj/item/used_item, mob/user, t_min = min_dam)
+	used_item.closed_turf_attack(src,user)
 	var/damage = used_item.force * used_item.demolition_mod
 	// if dam is below t_min, then the hit has no effect
 	return (damage < t_min ? 0 : damage)
@@ -222,7 +223,7 @@
 
 // catch-all for using most items on the closed turf -- attempt to smash
 /turf/closed/proc/try_destroy(obj/item/used_item, mob/user, turf/T)
-	var/total_damage = get_item_damage(used_item)
+	var/total_damage = get_item_damage(used_item, user)
 	user.do_attack_animation(src)
 	if(total_damage <= 0)
 		to_chat(user, span_warning("[used_item] isn't strong enough to damage [src]!"))
@@ -237,7 +238,7 @@
 		if(BURN)
 			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
 	add_dent(WALL_DENT_HIT)
-	used_item.closed_turf_attack(T,user)
+	//used_item.closed_turf_attack(T,user)
 	alter_integrity(-total_damage, user)
 	return TRUE
 

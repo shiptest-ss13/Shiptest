@@ -123,7 +123,7 @@
 /turf/closed/wall/concrete/try_decon(obj/item/W, mob/user, turf/T)
 	return null
 
-/turf/closed/wall/concrete/get_item_damage(obj/item/I, t_min = min_dam)
+/turf/closed/wall/concrete/get_item_damage(obj/item/I, mob/user, t_min = min_dam)
 	t_min = min_dam / (1 + 7*(1-harden_lvl)) // drying walls are more vulnerable
 	. = .. ()
 
