@@ -1,0 +1,12 @@
+author: melbert,  Erika (porting fox)
+changes:
+  - {refactor: 'Drunkenness is now a status effect. The drunk alert should no longer
+      persist on aheals and in some rare cases, and should overrall act a bit more
+      consistently.'}
+  - {refactor: 'Dizziness is now a status effect, similar to above. You no longer
+      should be stuck with an off center client view if you get very dizzy.'}
+  - {refactor: Refactored status effect examine text. Should overall have 
+      slightly better grammar and more consistent span uses.}
+  - {refactor: Jitterriness is now a status effect}
+  - {rscdel: some contractor related cruft that i didn't want to update}
+delete-after: true
