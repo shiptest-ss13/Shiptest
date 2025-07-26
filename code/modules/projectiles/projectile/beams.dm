@@ -5,6 +5,8 @@
 	damage = 25
 	armour_penetration = -5
 	damage_type = BURN
+	wound_bonus = -20
+	bare_wound_bonus = 10
 
 	hitsound = 'sound/weapons/gun/hit/energy_impact1.ogg'
 	hitsound_non_living = 'sound/weapons/effects/searwall.ogg'
@@ -54,6 +56,10 @@
 	armour_penetration = 0
 	speed = 0.8
 
+/obj/projectile/beam/laser/eoehoma/wasp
+	icon_state = "heavylaser"
+	damage = 30
+
 /obj/projectile/beam/laser/eoehoma/heavy
 	icon_state = "heavylaser"
 	damage = 60
@@ -101,6 +107,24 @@
 
 /obj/projectile/beam/weak
 	damage = 15
+
+/obj/projectile/beam/weak/shotgun
+	damage = 20
+	armour_penetration = -10
+	var/tile_dropoff = 1
+	var/ap_dropoff = 5
+	var/ap_dropoff_cutoff = -35
+
+/obj/projectile/beam/weak/shotgun/Range() //10% loss per tile = max range of 10, generally
+	..()
+	if(damage > 0)
+		damage -= tile_dropoff
+	if(armour_penetration > ap_dropoff_cutoff)
+		armour_penetration -= ap_dropoff
+	if(accuracy_mod < 3)
+		accuracy_mod += 0.3
+	if(damage < 0 && stamina < 0)
+		qdel(src)
 
 /obj/projectile/beam/weak/sharplite
 	damage = 15
@@ -169,6 +193,7 @@
 	armour_penetration = -20
 	damage_type = STAMINA
 	flag = "energy"
+	bullet_identifier = "disabler"
 	hitsound = 'sound/weapons/tap.ogg'
 	hitsound_glass = null
 	hitsound_stone = null
@@ -207,6 +232,7 @@
 	name = "pulse"
 	icon_state = "u_laser"
 	damage = 40
+	bullet_identifier = "pulse"
 	wall_damage_flags = PROJECTILE_BONUS_DAMAGE_MINERALS | PROJECTILE_BONUS_DAMAGE_WALLS | PROJECTILE_BONUS_DAMAGE_WALLS
 	wall_damage_override = 200
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser

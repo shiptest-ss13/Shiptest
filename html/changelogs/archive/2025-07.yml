@@ -1,0 +1,150 @@
+2025-07-02:
+  Erikafox:
+  - bugfix: refa-li recipe fixed
+  Gristlebee:
+  - rscdel: Legion posibrain loot.
+2025-07-05:
+  Erikafox:
+  - rscadd: teceti foods now come with protein
+  - bugfix: chicken meat now has its old sprite
+  firebudgy:
+  - rscdel: Vestigal clownsprite in Ghost HUD
+  generalthrax:
+  - balance: Increased .44's damage and reduced recoil on the M20 Auto Elite
+2025-07-10:
+  Erikafox:
+  - rscadd: reworks the majority of the Atira's interior
+  - rscadd: cirrus interior got remodeled. go see the desk.
+  generalthrax:
+  - rscadd: the woods
+2025-07-11:
+  generalthrax:
+  - balance: Tweaks to Cavecrew, including no more wind, a minor change to the Frontiersmen
+      Heavy, ammo box changes, and other minor things
+2025-07-12:
+  MemeSnorfer:
+  - rscadd: Sun Hat
+  - imageadd: Resprites overalls, and makes them into uniform slot clothes rather
+      than exowear
+  Sadhorizon:
+  - rscadd: Added a stamp for every CLIP division.
+  - rscadd: Typhon, Atlas and Arke now have correct stamps mapped in.
+  thearbiber, generalthrax:
+  - rscadd: New Shield Sprites
+  - rscadd: Blackmarket Spike Shield
+  - balance: Shields now block more and can be repaired in exchange for slowdown
+  - balance: Ballistic Shield in cargo price increased
+2025-07-13:
+  Erikafox:
+  - bugfix: if you get shocked by a shutter it now cancels the interact like intended
+  - bugfix: you can roll sleeves down with alt-click again
+  generalthrax:
+  - bugfix: Overalls now correctly show their alt state
+  - balance: Military and Security belts can now fit one Medium-Sized Pistol (And
+      Other Small Energy Weapons)
+  - bugfix: Fixed storage's exception_hold so some items can actually be exempted
+      from a size restriction
+  - bugfix: Fixed Donut sprite and re-added toast recipes. Slightly decreased jelly
+      consumption
+2025-07-14:
+  Erikafox:
+  - bugfix: you can now properly tell when someone has an excessive amount of wet
+      stacks
+  - bugfix: the miras ration is real
+2025-07-15:
+  Ossa88:
+  - bugfix: Coffee Supplies have had their UPC codes changed to become Civilian Products.
+  - bugfix: Smart Fridge and Grinder boards have had their UPC codes changed to Machinery.
+  TheArbiber, GeneralThrax:
+  - rscadd: ponchos
+2025-07-16:
+  Erikafox:
+  - bugfix: Ship engine shutter position has been standardized.
+  Retrino:
+  - balance: gives cybersun bridge a door bolt button
+2025-07-17:
+  Erikafox:
+  - rscadd: A small hermit trade post has been detected on the surface of your nearest
+      sand planet
+  Gristlebee:
+  - bugfix: Energy weapon lens are indestructible.
+  - rscadd: Bank cards at outpost for 100 credits.
+  - balance: Ion rifle price reduced from 10k to 3500
+  - balance: Ion rifle has a six second cooldown between shots.
+  Retrino:
+  - rscadd: resprite and add new hairs
+  Rye-rice, Gristlebee:
+  - rscadd: Wasp, Semi-Auto Mauler, F3, Mower
+  - rscadd: Wasp Frontiersmen
+  generalthrax:
+  - rscadd: Made lipstick colours softer
+  - balance: Adjusted damage, AP, firerate, and laser amount on the E-SG laser shotgun
+      to be less
+  - bugfix: Rebellion turrets no longer give you infinite .50
+2025-07-18:
+  FalloutFalcon:
+  - rscadd: Added warning signs to mine fields
+  - refactor: 'Refactored minefield spawned to be more better c:'
+  generalthrax:
+  - bugfix: Crab Rangoon has a recipe again
+  thearbiber:
+  - rscadd: Adds the Roach and Flea, Ramzi vessels
+2025-07-19:
+  Erikafox:
+  - rscadd: you can now purchase duffelbags at da outpost
+  - balance: pulling a crate now slows you down
+  - rscadd: You can now use a shotgun on a door to breach through the door
+  FalloutFalcon:
+  - rscadd: The Ramzi faction has chosen to train its troops to use their left hands.
+  Gristlebee:
+  - balance: Max damage from heavy explosions to items is now 150, from 250
+  mothblocks, erika porting:
+  - admin: Added the ability to enforce two-factor authentication onto admins.
+  thearbiber:
+  - rscadd: adds the N+S hardsuit to the game and puts it on the harrier and magpie
+  - balance: removes goliath plating on hardsuits
+  thgvr:
+  - bugfix: rest of the food repathing, report any visible issues
+  - rscadd: Added organic wounds
+  - rscdel: Removed IPC structure
+  - rscadd: minor tweaks to tackle numbers
+2025-07-20:
+  Erikafox:
+  - bugfix: minute bar fluff un-regressed
+  - rscdel: random minefields
+  - rscadd: remodels the fore of the cirrus
+  - rscadd: half-stair decal
+  - bugfix: you can now map specific coffee cartridges
+  - bugfix: grass on beaches being invisible sometimes
+  Zevotech:
+  - rscadd: replaces a large amount of planetary turfs on ruins (jungle, lava, space)
+      with their updated overmap 5 counterparts. please report any atmos issues or
+      missing sprites.
+  - bugfix: fixed unset icon files for various planetary turfs
+  - bugfix: fixed large turf offset in mapping software for 70x70 planetary turfs
+      (shouldnt be player facing, needs review)
+  - bugfix: removed some decals inside walls on NT_ice & NGR_rock outposts that were
+      causing warnings
+  - rscdel: removed unused lavaland and wasteplanet grass types
+  - rscdel: removed legacy lavaland grass types
+  thearbiber:
+  - rscadd: resprites the hermit rifle and zip pistol
+  - balance: reworks the zip pistol, removes safeties off the zip pistol and hermit
+      rifle
+2025-07-21:
+  Erikafox:
+  - bugfix: holocalls now report who's calling
+2025-07-22:
+  Erikafox:
+  - balance: thronglers deal more damage but have a wound bonus based on your armor
+      and spread the damage out
+  SapphicOverload:
+  - bugfix: Fixed being able to understand sign language without knowing sign language
+  - code_imp: Refactors sign language into an actual language
+2025-07-24:
+  generalthrax:
+  - balance: Decreased amount of plasma in flooded rooms in Onehalf and added some
+      misc tweaks like blood packs
+  moffball19:
+  - rscadd: Kiwi-class Prospector, a mining vessel operated by N+S Logistics
+  - code_imp: Processing consoles now use a range distance variable to detect furnaces.

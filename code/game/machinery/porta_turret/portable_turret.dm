@@ -72,13 +72,11 @@
 	/// Turret flags about who is turret allowed to shoot
 	var/turret_flags = TURRET_FLAG_DEFAULT
 
-	/// If the turret is currently retaliating. Turrets will ignore all other settings to shoot at the attacker until they're dead or out of range
+	/// If the turret is currently retaliating. Turrets will ignore all other settings to shoot at the attacker until they're dead or out of range //this. does not work. right now.
 	var/retaliating = FALSE
 
-	/// Same faction mobs will never be shot at, no matter the other settings
-	var/list/faction = list("neutral", "turret")
-
-	var/list/target_faction = list("hostile")
+	/// Factions accounted for by IFF settings
+	var/list/faction = list("neutral", FACTION_TURRET)
 
 	/// does our turret give a flying fuck about what accesses someone has?
 	var/turret_respects_id = TRUE
@@ -505,10 +503,10 @@
 		targets -= target
 		return FALSE
 
-	if((check_flags & TURRET_FLAG_SHOOT_NONFACTION) && faction_check(src.faction, target_mob.faction))
+	if((check_flags & TURRET_FLAG_SHOOT_NONFACTION) && faction_check(src.faction, target_mob.faction)) //contrary to what these say they do they actually exclude targets rather than include them
 		return FALSE
 
-	if((check_flags & TURRET_FLAG_SHOOT_SPECIFIC_FACTION) && !faction_check(src.faction, target_mob.faction))
+	if((check_flags & TURRET_FLAG_SHOOT_SPECIFIC_FACTION) && !faction_check(src.faction, target_mob.faction)) //in case you ever wanted to only have a turret shoot 1 faction. or turn it on its masters (ship turrets have undying loyalty their crew)
 		return FALSE
 
 	if(iscyborg(target_mob))
@@ -533,6 +531,9 @@
 		return target(target_mob)
 
 	//We know the target must be a human now
+	if(!(check_flags & TURRET_FLAG_SHOOT_HUMANS))
+		return FALSE
+
 	var/mob/living/carbon/human/target_carbon = target_mob
 
 	if(turret_respects_id)
@@ -592,7 +593,7 @@
 			COOLDOWN_START(src, reaction_cooldown, reaction_time)
 
 			if(ishuman(target) || target.client)
-				target.do_alert_animation(target)
+				target.do_alert_animation()
 
 			return TRUE
 

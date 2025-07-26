@@ -2,6 +2,7 @@
 
 /datum/outfit/job/clip
 	name = "CLIP - Base Outfit"
+	faction = FACTION_PLAYER_MINUTEMAN
 
 	uniform = /obj/item/clothing/under/clip
 	alt_uniform = null
@@ -13,23 +14,6 @@
 
 	backpack = /obj/item/storage/backpack/security/clip
 	satchel = /obj/item/storage/backpack/satchel/sec/clip
-
-// 	var/list/selectable_alt_titles = list()
-
-/datum/outfit/job/clip/post_equip(mob/living/carbon/human/H, visualsOnly)
-	. = ..()
-	if(visualsOnly)
-		return
-	H.faction |= list(FACTION_PLAYER_MINUTEMAN)
-/* 	if(selectable_alt_titles)
-		var/selection = input(H, "Select an alternative name for your role.", "Job Title", alt_title) as null|anything in selectable_alt_titles)
-	if(!selection)
-		return
-
-	var/obj/item/card/id/W = H.wear_id
-	if(W)
-		W.assignment = alt_title
-*/
 
 // Base CLIP
 
@@ -144,7 +128,7 @@
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/clip
-	suit_store = /obj/item/flashlight/pen
+	suit_store = /obj/item/flashlight/pen/paramedic
 
 	backpack = /obj/item/storage/backpack/medic
 	satchel = /obj/item/storage/backpack/satchel/med

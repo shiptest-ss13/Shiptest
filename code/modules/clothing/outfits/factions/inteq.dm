@@ -1,5 +1,6 @@
 /datum/outfit/job/inteq
 	name = "IRMG - Base Outfit"
+	faction = FACTION_PLAYER_INTEQ
 	faction_icon = "bg_inteq"
 
 	uniform = /obj/item/clothing/under/syndicate/inteq
@@ -9,12 +10,6 @@
 	satchel = /obj/item/storage/backpack/satchel
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger/inteq
-
-/datum/outfit/job/inteq/post_equip(mob/living/carbon/human/H, visualsOnly)
-	. = ..()
-	if(visualsOnly)
-		return
-	H.faction |= list(FACTION_PLAYER_INTEQ)
 
 ///assistants
 
@@ -117,7 +112,7 @@
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 	ears = /obj/item/radio/headset/headset_medsec/alt
 
-	suit_store = /obj/item/flashlight/pen
+	suit_store = /obj/item/flashlight/pen/paramedic
 	backpack_contents = list(/obj/item/roller=1)
 
 /datum/outfit/job/inteq/paramedic/empty

@@ -12,10 +12,12 @@
 	clawfootstep = FOOTSTEP_SAND
 	planetary_atmos = TRUE
 	initial_gas_mix = DESERT_DEFAULT_ATMOS
-	slowdown = 1.05
+	slowdown = 0
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH)
+	pixel_x = -19 // recenters 70x70 turf sprites for mappers
+	pixel_y = -19
 
 	floor_variance = 83
 	max_icon_states = 5
@@ -26,6 +28,8 @@
 
 /turf/open/floor/plating/asteroid/desert/Initialize(mapload, inherited_virtual_z)
 	. = ..()
+	pixel_x = 0 // resets -19 pixel offset
+	pixel_y = 0
 	if(prob(floor_variance))
 		add_overlay("sandalt_[rand(1,max_icon_states)]")
 

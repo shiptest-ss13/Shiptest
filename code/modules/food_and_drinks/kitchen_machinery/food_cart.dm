@@ -69,11 +69,11 @@
 			qdel(DG)
 			glasses++
 			to_chat(user, span_notice("[src] accepts the drinking glass, sterilizing it."))
-	else if(istype(O, /obj/item/reagent_containers/food/snacks))
+	else if(istype(O, /obj/item/food))
 		if(isFull())
 			to_chat(user, span_warning("[src] is at full capacity."))
 		else
-			var/obj/item/reagent_containers/food/snacks/S = O
+			var/obj/item/food/S = O
 			if(!user.transferItemToLoc(S, src))
 				return
 			if(stored_food[sanitize(S.name)])
@@ -88,7 +88,9 @@
 			to_chat(user, span_notice("[src] accepts a sheet of glass."))
 	else if(istype(O, /obj/item/storage/bag/tray))
 		var/obj/item/storage/bag/tray/T = O
-		for(var/obj/item/reagent_containers/food/snacks/S in T.contents)
+		for(var/obj/S in T.contents)
+			if(!IS_EDIBLE(S))
+				continue
 			if(isFull())
 				to_chat(user, span_warning("[src] is at full capacity."))
 				break

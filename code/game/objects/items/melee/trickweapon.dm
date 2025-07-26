@@ -15,7 +15,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	attack_verb = list("attacked", "sawed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 
 	var/transform_cooldown
 	var/swiping = FALSE

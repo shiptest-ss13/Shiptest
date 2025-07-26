@@ -1,5 +1,5 @@
 /datum/supply_pack/tools
-	group = "Tools & Tanks"
+	category = "Tools & Tanks"
 	crate_type = /obj/structure/closet/crate/engineering
 
 /*
@@ -47,11 +47,18 @@
 	crate_name = "bodycamera crate"
 
 /datum/supply_pack/tools/assbelt
-	name = "Assault Belt"
+	name = "Assault Belt Crate"
 	desc = "Contains an assault belt, with not one, not two, but six pockets."
-	cost = 500
+	cost = 300
 	contains = list(/obj/item/storage/belt/military/assault)
 	crate_name = "assault belt crate"
+
+/datum/supply_pack/tools/chestrig
+	name = "Chest Rig Crate"
+	desc = "Contains a chest rig, with seven places to store small items."
+	cost = 500
+	contains = list(/obj/item/storage/belt/military)
+	crate_name = "chest rig crate"
 
 /datum/supply_pack/tools/cellcharger
 	name = "Cell Charger Crate"

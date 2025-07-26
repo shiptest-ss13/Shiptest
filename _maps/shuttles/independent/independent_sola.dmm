@@ -473,8 +473,8 @@
 "ib" = (
 /obj/structure/closet/crate/freezer,
 /obj/effect/mapping_helpers/crate_shelve,
-/obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
 /obj/structure/chair/handrail{
 	dir = 4
 	},
@@ -1108,7 +1108,7 @@
 	},
 /obj/effect/spawner/random/trash/garbage,
 /obj/effect/spawner/random/trash/garbage,
-/obj/item/reagent_containers/food/snacks/badrecipe,
+/obj/item/food/badrecipe,
 /obj/item/reagent_containers/food/drinks/coffee{
 	list_reagents = null
 	},
@@ -1196,7 +1196,7 @@
 /obj/machinery/jukebox/boombox{
 	pixel_x = 16
 	},
-/obj/item/reagent_containers/food/snacks/carrotfries{
+/obj/item/food/carrotfries{
 	pixel_x = -3;
 	pixel_y = 7
 	},
@@ -1735,14 +1735,14 @@
 	locked = 0;
 	name = "fridge"
 	},
-/obj/item/reagent_containers/food/snacks/grown/cabbage,
-/obj/item/reagent_containers/food/snacks/grown/cabbage,
-/obj/item/reagent_containers/food/snacks/grown/potato,
-/obj/item/reagent_containers/food/snacks/grown/carrot,
-/obj/item/reagent_containers/food/snacks/grown/carrot,
-/obj/item/reagent_containers/food/snacks/grown/carrot,
-/obj/item/reagent_containers/food/snacks/grown/potato,
-/obj/item/reagent_containers/food/snacks/grown/potato,
+/obj/item/food/grown/cabbage,
+/obj/item/food/grown/cabbage,
+/obj/item/food/grown/potato,
+/obj/item/food/grown/carrot,
+/obj/item/food/grown/carrot,
+/obj/item/food/grown/carrot,
+/obj/item/food/grown/potato,
+/obj/item/food/grown/potato,
 /obj/item/reagent_containers/condiment/soymilk,
 /obj/item/reagent_containers/condiment/milk,
 /obj/item/reagent_containers/condiment/milk,
@@ -1750,7 +1750,7 @@
 /obj/structure/cable/pink{
 	icon_state = "4-8"
 	},
-/obj/item/reagent_containers/food/snacks/store/cheesewheel,
+/obj/item/food/cheese/wheel,
 /obj/item/storage/fancy/egg_box,
 /obj/item/reagent_containers/condiment/ketchup,
 /obj/item/reagent_containers/condiment/bbqsauce,

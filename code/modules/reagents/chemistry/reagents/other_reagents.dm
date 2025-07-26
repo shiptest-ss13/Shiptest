@@ -142,6 +142,10 @@
 
 	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs //WS Edit - IPCs
 
+/datum/reagent/water/on_mob_life(mob/living/carbon/M)
+	. = ..()
+	if(M.blood_volume)
+		M.blood_volume += 0.1 //full of water...
 /*
  *	Water reaction to turf
  */
@@ -170,8 +174,8 @@
 	O.extinguish()
 	O.acid_level = 0
 	// Monkey cube
-	if(istype(O, /obj/item/reagent_containers/food/snacks/monkeycube))
-		var/obj/item/reagent_containers/food/snacks/monkeycube/cube = O
+	if(istype(O, /obj/item/food/monkeycube))
+		var/obj/item/food/monkeycube/cube = O
 		cube.Expand()
 
 	// Dehydrated carp
@@ -2141,7 +2145,7 @@
 	var/yuck_cycle = 0 //! The `current_cycle` when puking starts.
 
 /datum/reagent/yuck/on_mob_add(mob/living/L)
-	if(HAS_TRAIT(src, TRAIT_NOHUNGER)) //they can't puke
+	if(HAS_TRAIT(L, TRAIT_NOHUNGER)) //they can't puke
 		holder.del_reagent(type)
 
 #define YUCK_PUKE_CYCLES 3 		// every X cycle is a puke
@@ -2270,42 +2274,42 @@
 	taste_description = "lifegiving metal"
 	can_synth = FALSE
 
-/datum/reagent/determination //from /tg/ , but since we dont have wounds its just weaker penthrite
+/datum/reagent/determination
 	name = "Determination"
 	description = "For when you need to push on a little more. Do NOT allow near plants."
 	reagent_state = LIQUID
 	color = "#D2FFFA"
-	metabolization_rate = 0.75 * REAGENTS_METABOLISM
+	metabolization_rate = 0.75 * REAGENTS_METABOLISM // 5u (WOUND_DETERMINATION_CRITICAL) will last for ~17 ticks
 	self_consuming = TRUE
 	taste_description = "pure determination"
-	overdose_threshold = 30
+	overdose_threshold = 45
+	/// Whether we've had at least WOUND_DETERMINATION_SEVERE (2.5u) of determination at any given time. No damage slowdown immunity or indication we're having a second wind if it's just a single moderate wound
+	var/significant = FALSE
 
-/datum/reagent/determination/on_mob_add(mob/living/M)
-	. = ..()
-	to_chat(M,"<span class='notice'>You feel like your heart can take on the world!")
-	ADD_TRAIT(M, TRAIT_NOSOFTCRIT,type)
+/datum/reagent/determination/on_mob_life(mob/living/carbon/M)
+	if(!significant && volume >= WOUND_DETERMINATION_SEVERE)
+		significant = TRUE
+		M.apply_status_effect(STATUS_EFFECT_DETERMINED) // in addition to the slight healing, limping cooldowns are divided by 4 during the combat high
 
-/datum/reagent/determination/on_mob_life(mob/living/carbon/human/H)
-	if(H.health <= HEALTH_THRESHOLD_CRIT && H.health > H.crit_threshold)
+	volume = min(volume, WOUND_DETERMINATION_MAX)
 
-		H.adjustBruteLoss(-2 * REM, 0)
-		H.adjustOxyLoss(-6 * REM, 0)
+	for(var/thing in M.all_wounds)
+		var/datum/wound/W = thing
+		var/obj/item/bodypart/wounded_part = W.limb
+		if(wounded_part)
+			wounded_part.heal_damage(0.25, 0.25)
+		M.adjustStaminaLoss(-0.25*REM) // the more wounds, the more stamina regen
+	..()
 
-		H.losebreath = 0
-
-		H.adjustOrganLoss(ORGAN_SLOT_HEART,max(1,volume/10)) // your heart is barely keeping up!
-
-		H.adjust_jitter(rand(0,2))
-		H.Dizzy(rand(0,2))
-
-
-		if(prob(33))
-			to_chat(H,span_danger("Your body is trying to give up, but your heart is still beating!"))
-	. = ..()
-
-/datum/reagent/determination/on_mob_end_metabolize(mob/living/M)
-	REMOVE_TRAIT(M, TRAIT_NOSOFTCRIT,type)
-	. = ..()
+/datum/reagent/determination/on_mob_end_metabolize(mob/living/carbon/M)
+	if(significant)
+		var/stam_crash = 0
+		for(var/thing in M.all_wounds)
+			var/datum/wound/W = thing
+			stam_crash += (W.severity + 1) * 3 // spike of 3 stam damage per wound severity (moderate = 6, severe = 9, critical = 12) when the determination wears off if it was a combat rush
+		M.adjustStaminaLoss(stam_crash)
+	M.remove_status_effect(STATUS_EFFECT_DETERMINED)
+	..()
 
 /datum/reagent/determination/overdose_process(mob/living/carbon/human/H)
 	to_chat(H,span_danger("You feel your heart rupturing in two!"))
@@ -2331,7 +2335,7 @@
 	..()
 	. = 1
 
-/datum/reagent/crystal_reagent/overdose_process(mob/living/carbon/human/H) //TODO port bee's regen cores legioning miners, and make it only do that if overdosed on crystal
+/datum/reagent/crystal_reagent/overdose_process(mob/living/carbon/human/H)
 	to_chat(H,span_danger("You feel your heart rupturing in two!"))
 	H.adjustStaminaLoss(10)
 	H.adjustOrganLoss(ORGAN_SLOT_HEART,100)

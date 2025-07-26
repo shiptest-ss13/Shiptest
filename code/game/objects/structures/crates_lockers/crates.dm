@@ -17,9 +17,10 @@
 	close_sound = 'sound/machines/crate_close.ogg'
 	open_sound_volume = 35
 	close_sound_volume = 50
-	drag_slowdown = 0
+	//half as much as a closet
+	drag_slowdown = 0.75
 	pass_flags_self = LETPASSCLICKS
-	var/obj/item/paper/fluff/jobs/cargo/manifest/manifest
+	var/obj/item/paper/manifest/manifest
 	var/shelve = FALSE
 	var/shelve_range = 0
 

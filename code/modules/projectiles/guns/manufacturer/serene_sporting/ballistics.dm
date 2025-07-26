@@ -93,8 +93,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/m17)
 	eject_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
 
-	recoil_unwielded = 4
-	recoil = 1
+	recoil_unwielded = 3
+	recoil = 0.5
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -221,6 +221,9 @@ EMPTY_GUN_HELPER(automatic/m12_sporter)
 	icon_state = "larker"
 	item_state = "larker"
 
+	wear_minor_threshold = 240
+	wear_major_threshold = 720
+	wear_maximum = 1200
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "triptych")
 	default_firemode = FIREMODE_BURST
@@ -265,7 +268,7 @@ EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
 	spread_unwielded = 20
 	recoil = 1.25
 	recoil_unwielded = 6
-	fire_delay = 0.5 SECONDS
+	fire_delay = 0.75 SECONDS
 	wield_delay = 1.15 SECONDS //a little longer and less wieldy than other DMRs
 	zoom_out_amt = 2
 
@@ -302,16 +305,6 @@ NO_MAG_GUN_HELPER(automatic/marksman/woodsman)
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/m23/empty
-	start_empty = TRUE
-
-/obj/item/ammo_box/magazine/m23/extended
-	name = "Model 23 Extended Magazine (8x50mmR)"
-	desc = "A 10-round magazine for the Model 23 \"Woodsman\". These rounds do high damage, with excellent armor penetration."
-	icon_state = "woodsman_extended-1"
-	base_icon_state = "woodsman_extended"
-	max_ammo = 10
-
-/obj/item/ammo_box/magazine/m23/extended/empty
 	start_empty = TRUE
 
 /* super soaker */

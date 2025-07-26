@@ -85,8 +85,7 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
 	canSmoothWith = list(SMOOTH_GROUP_FLOOR_ASH, SMOOTH_GROUP_CLOSED_TURFS)
 	layer = HIGH_TURF_LAYER
-	slowdown = 1
-
+	slowdown = 0
 /turf/open/floor/plating/ashplanet/rocky
 	gender = PLURAL
 	name = "rocky ground"
@@ -106,7 +105,7 @@
 	name = "wet rocky ground"
 	smoothing_flags = NONE
 	icon_state = "wateryrock"
-	slowdown = 2
+	slowdown = 0
 	footstep = FOOTSTEP_FLOOR
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
 	clawfootstep = FOOTSTEP_HARD_CLAW
@@ -225,8 +224,9 @@
 /turf/open/floor/plating/grass
 	name = "grass"
 	desc = "A patch of grass."
-	icon_state = "grass0"
+	icon_state = "grass-255"
 	base_icon_state = "grass"
+	icon = 'icons/turf/floors/grass.dmi'
 	bullet_bounce_sound = null
 	footstep = FOOTSTEP_GRASS
 	barefootstep = FOOTSTEP_GRASS
@@ -235,6 +235,8 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
+	pixel_x = -19 // recenters 70x70 turf sprites for mappers
+	pixel_y = -19
 	layer = GRASS_TURF_LAYER
 	flammability = 1.5 // just a bit more than enough to sustain itself, needs additional fuel (plants) to really get going
 	var/smooth_icon = 'icons/turf/floors/grass.dmi'
@@ -243,6 +245,8 @@
 
 /turf/open/floor/plating/grass/Initialize(mapload, inherited_virtual_z)
 	. = ..()
+	pixel_x = 0 // resets -19 pixel offset
+	pixel_y = 0
 	if(smoothing_flags)
 		var/matrix/translation = new
 		translation.Translate(-19, -19)
@@ -253,9 +257,6 @@
 	burn_limit--
 	if(burn_limit <= 0)
 		ScrapeAway()
-
-/turf/open/floor/plating/grass/lavaland
-	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 
 /turf/open/floor/plating/sandy_dirt
 	gender = PLURAL

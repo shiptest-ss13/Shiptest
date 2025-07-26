@@ -308,14 +308,14 @@
 /area/ruin/rockplanet/distillery/crew)
 "cP" = (
 /obj/effect/turf_decal/industrial/outline/red,
-/obj/item/reagent_containers/food/snacks/grown/corn,
-/obj/item/reagent_containers/food/snacks/grown/corn,
+/obj/item/food/grown/corn,
+/obj/item/food/grown/corn,
 /obj/item/reagent_containers/condiment/sugar,
 /obj/item/reagent_containers/condiment/sugar,
-/obj/item/reagent_containers/food/snacks/grown/corn{
+/obj/item/food/grown/corn{
 	pixel_y = 3
 	},
-/obj/item/reagent_containers/food/snacks/grown/corn{
+/obj/item/food/grown/corn{
 	pixel_y = 3
 	},
 /obj/structure/closet/crate/freezer,
@@ -601,28 +601,6 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed/rockplanet,
 /area/ruin/rockplanet/distillery/saloon)
-"gA" = (
-/obj/structure/table/wood/reinforced,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/ammo_casing/c9mm,
-/obj/item/ammo_casing/c9mm,
-/obj/item/ammo_casing/c9mm,
-/obj/item/ammo_casing/c9mm,
-/obj/item/ammo_casing/c9mm,
-/obj/item/ammo_box/magazine/m9mm_mauler{
-	pixel_x = 2;
-	pixel_y = 3
-	},
-/obj/item/ammo_box/magazine/m9mm_mauler{
-	pixel_x = 10;
-	pixel_y = 3
-	},
-/turf/open/floor/carpet,
-/area/ruin/rockplanet/distillery/office)
 "gM" = (
 /obj/machinery/door/airlock,
 /obj/effect/turf_decal/industrial/warning,
@@ -697,21 +675,6 @@
 	},
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"hA" = (
-/obj/structure/table/wood/reinforced,
-/obj/effect/turf_decal/siding/wood{
-	dir = 9
-	},
-/obj/item/reagent_containers/food/snacks/chips{
-	pixel_x = -3;
-	pixel_y = 4
-	},
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = 6;
-	pixel_y = 8
-	},
-/turf/open/floor/wood/rockplanet,
-/area/ruin/rockplanet/distillery/saloon)
 "hH" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
@@ -926,7 +889,7 @@
 /obj/item/trash/plate{
 	pixel_y = 16
 	},
-/obj/item/reagent_containers/food/snacks/donkpocket/warm/pizza{
+/obj/item/food/donkpocket/warm/pizza{
 	pixel_y = 18
 	},
 /turf/open/floor/plasteel/patterned/brushed,
@@ -1375,6 +1338,27 @@
 	icon_state = "panelscorched"
 	},
 /area/ruin/rockplanet/distillery)
+"pF" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/secure_closet/freezer/wall/directional/east,
+/obj/item/food/chips,
+/obj/item/food/butterdog,
+/obj/item/food/chips{
+	pixel_x = 2
+	},
+/obj/item/reagent_containers/food/drinks/bottle/rum{
+	pixel_x = -6
+	},
+/obj/item/food/canned/beans,
+/obj/item/spacecash/bundle/c500,
+/obj/item/reagent_containers/food/drinks/bottle/whiskey{
+	pixel_x = 8
+	},
+/turf/open/floor/wood/rockplanet,
+/area/ruin/rockplanet/distillery/saloon)
 "pL" = (
 /obj/effect/turf_decal/siding/white/end{
 	dir = 1
@@ -1888,14 +1872,14 @@
 /obj/item/seeds/corn{
 	pixel_y = 6
 	},
-/obj/item/reagent_containers/food/snacks/grown/corn{
+/obj/item/food/grown/corn{
 	pixel_y = 6
 	},
-/obj/item/reagent_containers/food/snacks/grown/corn{
+/obj/item/food/grown/corn{
 	pixel_x = 3;
 	pixel_y = -2
 	},
-/obj/item/reagent_containers/food/snacks/grown/corn{
+/obj/item/food/grown/corn{
 	pixel_x = 4;
 	pixel_y = 3
 	},
@@ -2111,7 +2095,7 @@
 	name = "Dog"
 	},
 /obj/structure/bed/dogbed,
-/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/skeleton,
+/obj/item/food/meat/slab/human/mutant/skeleton,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8
 	},
@@ -2864,12 +2848,12 @@
 "GH" = (
 /obj/structure/catwalk/over,
 /obj/structure/closet/crate/hydroponics,
-/obj/item/reagent_containers/food/snacks/grown/corn,
-/obj/item/reagent_containers/food/snacks/grown/corn,
-/obj/item/reagent_containers/food/snacks/grown/corn{
+/obj/item/food/grown/corn,
+/obj/item/food/grown/corn,
+/obj/item/food/grown/corn{
 	pixel_y = 2
 	},
-/obj/item/reagent_containers/food/snacks/grown/corn{
+/obj/item/food/grown/corn{
 	pixel_y = 2
 	},
 /obj/item/seeds/corn,
@@ -2879,10 +2863,10 @@
 	pixel_x = -8
 	},
 /obj/item/reagent_containers/condiment/enzyme,
-/obj/item/reagent_containers/food/snacks/grown/corn{
+/obj/item/food/grown/corn{
 	pixel_y = 4
 	},
-/obj/item/reagent_containers/food/snacks/grown/corn{
+/obj/item/food/grown/corn{
 	pixel_y = 4
 	},
 /turf/open/floor/plating/rockplanet/lit,
@@ -3032,6 +3016,24 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/distillery/saloon)
+"IF" = (
+/obj/structure/table/wood/reinforced,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/ammo_casing/c9mm,
+/obj/item/ammo_casing/c9mm,
+/obj/item/ammo_casing/c9mm,
+/obj/item/ammo_casing/c9mm,
+/obj/item/ammo_casing/c9mm,
+/obj/item/ammo_box/magazine/m9mm_mauler/extended,
+/obj/item/ammo_box/magazine/m9mm_mauler/extended{
+	pixel_x = 10
+	},
+/turf/open/floor/carpet,
+/area/ruin/rockplanet/distillery/office)
 "IN" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/line{
 	dir = 6
@@ -3396,27 +3398,6 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/broken/directional/east,
-/turf/open/floor/wood/rockplanet,
-/area/ruin/rockplanet/distillery/saloon)
-"Nj" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/secure_closet/freezer/wall/directional/east,
-/obj/item/reagent_containers/food/snacks/chips,
-/obj/item/food/butterdog,
-/obj/item/reagent_containers/food/snacks/chips{
-	pixel_x = 2
-	},
-/obj/item/reagent_containers/food/drinks/bottle/rum{
-	pixel_x = -6
-	},
-/obj/item/reagent_containers/food/snacks/canned/beans,
-/obj/item/spacecash/bundle/c500,
-/obj/item/reagent_containers/food/drinks/bottle/whiskey{
-	pixel_x = 8
-	},
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/distillery/saloon)
 "Nk" = (
@@ -4062,6 +4043,21 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/west,
 /mob/living/simple_animal/hostile/human/frontier/internals,
+/turf/open/floor/wood/rockplanet,
+/area/ruin/rockplanet/distillery/saloon)
+"Ui" = (
+/obj/structure/table/wood/reinforced,
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/obj/item/food/chips{
+	pixel_x = -3;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/drinks/beer{
+	pixel_x = 6;
+	pixel_y = 8
+	},
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/distillery/saloon)
 "Uo" = (
@@ -5625,7 +5621,7 @@ hY
 hY
 KA
 Xq
-gA
+IF
 FA
 gv
 CA
@@ -6069,7 +6065,7 @@ tQ
 Wp
 Wu
 Je
-hA
+Ui
 Uy
 Wu
 ba
@@ -6309,7 +6305,7 @@ Wu
 Wu
 HT
 OB
-Nj
+pF
 CM
 FD
 gX

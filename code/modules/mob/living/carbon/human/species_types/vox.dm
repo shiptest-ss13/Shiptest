@@ -4,10 +4,10 @@
 	id = SPECIES_VOX
 	default_color = "6060FF"
 	species_age_max = 280
-	species_traits = list(EYECOLOR)
+	species_traits = list(EYECOLOR, HAS_BONE, HAS_FLESH)
 	mutant_bodyparts = list("vox_head_quills", "vox_neck_quills")
 	default_features = list("mcolor" = "0F0", "wings" = "None", "vox_head_quills" = "None", "vox_neck_quills" = "None", "body_size" = "Normal")
-	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
+	meat = /obj/item/food/meat/slab/chicken
 	disliked_food = GRAIN
 	liked_food = MEAT
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP
