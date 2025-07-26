@@ -1,4 +1,3 @@
-import { useBackend } from '../backend';
 import {
   AnimatedNumber,
   Box,
@@ -6,11 +5,13 @@ import {
   LabeledList,
   NumberInput,
   Section,
-} from '../components';
+} from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
-export const ChemDebugSynthesizer = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ChemDebugSynthesizer = (props) => {
+  const { act, data } = useBackend();
   const {
     amount,
     beakerCurrentVolume,
@@ -19,7 +20,7 @@ export const ChemDebugSynthesizer = (props, context) => {
     beakerContents = [],
   } = data;
   return (
-    <Window width={390} height={330} resizable>
+    <Window width={390} height={330}>
       <Window.Content scrollable>
         <Section
           title="Recipient"
@@ -38,7 +39,7 @@ export const ChemDebugSynthesizer = (props, context) => {
                   maxValue={beakerMaxVolume}
                   step={1}
                   stepPixelSize={2}
-                  onChange={(e, value) =>
+                  onChange={(value) =>
                     act('amount', {
                       amount: value,
                     })

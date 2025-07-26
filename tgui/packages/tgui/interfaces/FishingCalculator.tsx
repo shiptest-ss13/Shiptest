@@ -1,7 +1,9 @@
-import { round } from 'common/math';
+// @ts-nocheck
+
+import { Button, Dropdown, Input, Stack, Table } from 'tgui-core/components';
+import { round } from 'tgui-core/math';
+
 import { useBackend, useLocalState } from '../backend';
-import { Button, Dropdown, Input, Stack, Table } from '../components';
-import { TableCell, TableRow } from '../components/Table';
 import { Window } from '../layouts';
 
 type FishCalculatorEntry = {
@@ -19,34 +21,17 @@ type FishingCalculatorData = {
   spot_types: string[];
 };
 
-export const FishingCalculator = (props, context) => {
-  const { act, data } = useBackend<FishingCalculatorData>(context);
+export const FishingCalculator = (props) => {
+  const { act, data } = useBackend<FishingCalculatorData>();
 
   const [bait, setBait] = useLocalState<string>(
-    context,
     'bait',
-    '/obj/item/reagent_containers/food/snacks/bait/worm'
+    '/obj/item/reagent_containers/food/snacks/bait/worm',
   );
-  const [spot, setSpot] = useLocalState<string>(
-    context,
-    'spot',
-    data.spot_types[0]
-  );
-  const [rod, setRod] = useLocalState<string>(
-    context,
-    'rod',
-    data.rod_types[0]
-  );
-  const [hook, setHook] = useLocalState<string>(
-    context,
-    'hook',
-    data.hook_types[0]
-  );
-  const [line, setLine] = useLocalState<string>(
-    context,
-    'line',
-    data.line_types[0]
-  );
+  const [spot, setSpot] = useLocalState<string>('spot', data.spot_types[0]);
+  const [rod, setRod] = useLocalState<string>('rod', data.rod_types[0]);
+  const [hook, setHook] = useLocalState<string>('hook', data.hook_types[0]);
+  const [line, setLine] = useLocalState<string>('line', data.line_types[0]);
 
   const weight_sum = data.info?.reduce((s, w) => s + w.weight, 0) || 1;
 
@@ -81,18 +66,18 @@ export const FishingCalculator = (props, context) => {
             />
             <Input
               value={bait}
-              label="Bait"
+              placeholder="Bait"
               onChange={(_, value) => setBait(value)}
               width="100%"
             />
             <Button
               onClick={() =>
                 act('recalc', {
-                  'rod': rod,
-                  'bait': bait,
-                  'hook': hook,
-                  'line': line,
-                  'spot': spot,
+                  rod: rod,
+                  bait: bait,
+                  hook: hook,
+                  line: line,
+                  spot: spot,
                 })
               }
             >
@@ -101,23 +86,23 @@ export const FishingCalculator = (props, context) => {
           </Stack.Item>
           <Stack.Item>
             <Table>
-              <TableRow header>
-                <TableCell>Outcome</TableCell>
-                <TableCell>Weight</TableCell>
-                <TableCell>Probabilty</TableCell>
-                <TableCell>Difficulty</TableCell>
-                <TableCell>Count</TableCell>
-              </TableRow>
+              <Table.Row header>
+                <Table.Cell>Outcome</Table.Cell>
+                <Table.Cell>Weight</Table.Cell>
+                <Table.Cell>Probabilty</Table.Cell>
+                <Table.Cell>Difficulty</Table.Cell>
+                <Table.Cell>Count</Table.Cell>
+              </Table.Row>
               {data.info?.map((result) => (
-                <TableRow key={result.result}>
-                  <TableCell>{result.result}</TableCell>
-                  <TableCell>{result.weight}</TableCell>
-                  <TableCell>
+                <Table.Row key={result.result}>
+                  <Table.Cell>{result.result}</Table.Cell>
+                  <Table.Cell>{result.weight}</Table.Cell>
+                  <Table.Cell>
                     {round((result.weight / weight_sum) * 100, 2)}%
-                  </TableCell>
-                  <TableCell>{result.difficulty}</TableCell>
-                  <TableCell>{result.count}</TableCell>
-                </TableRow>
+                  </Table.Cell>
+                  <Table.Cell>{result.difficulty}</Table.Cell>
+                  <Table.Cell>{result.count}</Table.Cell>
+                </Table.Row>
               ))}
             </Table>
           </Stack.Item>

@@ -1,9 +1,10 @@
-import { Section, Button, LabeledList } from '../components';
+import { Button, LabeledList, Section } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
 import { NtosWindow } from '../layouts';
 
-export const NtosRevelation = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtosRevelation = (props) => {
+  const { act, data } = useBackend();
   return (
     <NtosWindow width={400} height={250} theme="syndicate">
       <NtosWindow.Content>

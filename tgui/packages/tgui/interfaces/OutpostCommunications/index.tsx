@@ -1,24 +1,25 @@
-import { useBackend, useSharedState } from '../../backend';
 import {
-  ProgressBar,
-  Section,
-  Tabs,
+  Box,
   Button,
   LabeledList,
-  Box,
+  ProgressBar,
+  Section,
   Stack,
-} from '../../components';
+  Tabs,
+} from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
+
+import { useBackend, useSharedState } from '../../backend';
 import { Window } from '../../layouts';
-
 import { CargoCatalog } from './Catalog';
-import { Mission, Data } from './types';
+import { Data, Mission } from './types';
 
-export const OutpostCommunications = (props, context) => {
-  const { act, data } = useBackend<Data>(context);
+export const OutpostCommunications = (props) => {
+  const { act, data } = useBackend<Data>();
   const { outpostDocked, onShip, points } = data;
-  const [tab, setTab] = useSharedState(context, 'outpostTab', '');
+  const [tab, setTab] = useSharedState('outpostTab', '');
   return (
-    <Window width={600} height={700} resizable>
+    <Window width={600} height={700}>
       <Window.Content scrollable>
         <Section
           title={Math.round(points) + ' credits'}
@@ -55,8 +56,8 @@ export const OutpostCommunications = (props, context) => {
               <Stack.Item>
                 <Button.Input
                   content="Withdraw Cash"
-                  currentValue={100}
-                  defaultValue={100}
+                  currentValue={'100'}
+                  defaultValue={'100'}
                   onCommit={(e, value) =>
                     act('withdrawCash', {
                       value: value,
@@ -77,8 +78,8 @@ export const OutpostCommunications = (props, context) => {
   );
 };
 
-const CargoExpressContent = (props, context) => {
-  const { act, data } = useBackend<Data>(context);
+const CargoExpressContent = (props) => {
+  const { act, data } = useBackend<Data>();
   const { message } = data;
   return (
     <>
@@ -92,8 +93,8 @@ const CargoExpressContent = (props, context) => {
   );
 };
 
-const ShipMissionsContent = (props, context) => {
-  const { data } = useBackend<Data>(context);
+const ShipMissionsContent = (props) => {
+  const { data } = useBackend<Data>();
   const { numMissions, maxMissions, outpostDocked, shipMissions } = data;
   return (
     <Section title={'Current Missions ' + numMissions + '/' + maxMissions}>
@@ -102,8 +103,8 @@ const ShipMissionsContent = (props, context) => {
   );
 };
 
-const OutpostMissionsContent = (props, context) => {
-  const { data } = useBackend<Data>(context);
+const OutpostMissionsContent = (props) => {
+  const { data } = useBackend<Data>();
   const { numMissions, maxMissions, outpostDocked, outpostMissions } = data;
   const disabled = numMissions >= maxMissions;
   return (
@@ -118,15 +119,19 @@ const OutpostMissionsContent = (props, context) => {
   );
 };
 
-const MissionsList = (props, context) => {
-  const showButton = props.showButton as Boolean;
-  const disabled = props.disabled as Boolean;
+const MissionsList = (props) => {
+  const showButton = props.showButton as BooleanLike;
+  const disabled = props.disabled as BooleanLike;
   const tooltip = props.tooltip as string;
   const missionsArray = props.missions as Array<Mission>;
-  const { act } = useBackend(context);
+  const { act } = useBackend();
   //   const { numMissions, maxMissions } = data;
 
-  const buttonJSX = (mission: Mission, tooltip: string, disabled: Boolean) => {
+  const buttonJSX = (
+    mission: Mission,
+    tooltip: string,
+    disabled: BooleanLike,
+  ) => {
     return (
       <Button
         disabled={disabled}

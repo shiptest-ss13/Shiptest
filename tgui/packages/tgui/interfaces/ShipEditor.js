@@ -1,24 +1,25 @@
-import { useBackend, useLocalState } from '../backend';
 import {
+  Button,
   Dropdown,
   Input,
   LabeledList,
   NumberInput,
   Section,
   Table,
-} from '../components';
-import { Button } from '../components/Button';
+} from 'tgui-core/components';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
-export const ShipEditor = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ShipEditor = (props) => {
+  const { act, data } = useBackend();
   const outfits = [];
 
   for (let name in data.outfits) {
     outfits.push(name);
   }
 
-  const [tagText, setTagText] = useLocalState(context, 'tagText', '');
+  const [tagText, setTagText] = useLocalState('tagText', '');
 
   return (
     <Window title="Ship Editor" width={500} height={600}>
@@ -54,7 +55,7 @@ export const ShipEditor = (props, context) => {
                 width={20}
                 height={10}
                 placeholder={'No description'}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('setTemplateDescription', {
                     new_template_description: value,
                   })
@@ -113,7 +114,7 @@ export const ShipEditor = (props, context) => {
             <LabeledList.Item label="Ship Category">
               <Input
                 value={data.templateCategory}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('setTemplateCategory', { new_template_category: value })
                 }
               />
@@ -125,7 +126,7 @@ export const ShipEditor = (props, context) => {
                 minValue={0}
                 maxValue={100}
                 stepPixelSize={30}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('setTemplateLimit', { new_template_limit: value })
                 }
               />
@@ -137,7 +138,7 @@ export const ShipEditor = (props, context) => {
                 minValue={0}
                 maxValue={100}
                 stepPixelSize={30}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('setSpawnCoeff', { new_spawn_coeff: value })
                 }
               />
@@ -149,7 +150,7 @@ export const ShipEditor = (props, context) => {
                 minValue={0}
                 maxValue={100}
                 stepPixelSize={30}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('setOfficerCoeff', { new_officer_coeff: value })
                 }
               />
@@ -194,7 +195,7 @@ export const ShipEditor = (props, context) => {
                   <Input
                     value={job.name}
                     placeholder={'No name'}
-                    onChange={(e, value) =>
+                    onChange={(value) =>
                       act('setJobName', {
                         job_ref: job.ref,
                         job_name: value,
@@ -222,7 +223,7 @@ export const ShipEditor = (props, context) => {
                     value={job.slots}
                     minValue={0}
                     maxValue={100}
-                    onChange={(e, value) =>
+                    onChange={(value) =>
                       act('setJobSlots', {
                         job_ref: job.ref,
                         job_slots: value,

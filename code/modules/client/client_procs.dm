@@ -76,6 +76,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	// Tgui Topic middleware
 	if(tgui_Topic(href_list))
 		return
+	if(href_list["reload_tguipanel"])
+		nuke_chat()
 	if(href_list["reload_statbrowser"])
 		stat_panel.reinitialize()
 	// Log all hrefs
@@ -356,6 +358,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	)
 	addtimer(CALLBACK(src, PROC_REF(check_panel_loaded)), 30 SECONDS)
 
+	INVOKE_ASYNC(src, PROC_REF(acquire_dpi))
+
 	// Initialize tgui panel
 	tgui_panel.initialize()
 
@@ -457,7 +461,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		if(CONFIG_GET(flag/aggressive_changelog))
 			changelog()
 		else
-			winset(src, "infowindow.changelog", "font-style=bold")
+			winset(src, "infobuttons.changelog", "font-style=bold")
 
 	if(ckey in GLOB.clientmessages)
 		for(var/message in GLOB.clientmessages[ckey])
@@ -1180,3 +1184,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	prefs.hearted_until = new_duration
 	prefs.hearted = TRUE
 	prefs.save_preferences()
+
+/// This grabs the DPI of the user per their skin
+/client/proc/acquire_dpi()
+	window_scaling = text2num(winget(src, null, "dpi"))
+
+	//debug_admins("scalies: [window_scaling]")

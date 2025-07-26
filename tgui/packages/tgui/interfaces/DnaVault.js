@@ -1,16 +1,17 @@
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
-  Grid,
+  Flex,
   LabeledList,
   ProgressBar,
   Section,
-} from '../components';
+} from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
-export const DnaVault = (props, context) => {
-  const { act, data } = useBackend(context);
+export const DnaVault = (props) => {
+  const { act, data } = useBackend();
   const {
     completed,
     used,
@@ -50,8 +51,8 @@ export const DnaVault = (props, context) => {
             <Box bold textAlign="center" mb={1}>
               Applicable Gene Therapy Treatments
             </Box>
-            <Grid>
-              <Grid.Column>
+            <Flex>
+              <Flex.Column>
                 <Button
                   fluid
                   bold
@@ -63,8 +64,8 @@ export const DnaVault = (props, context) => {
                     })
                   }
                 />
-              </Grid.Column>
-              <Grid.Column>
+              </Flex.Column>
+              <Flex.Column>
                 <Button
                   fluid
                   bold
@@ -76,8 +77,8 @@ export const DnaVault = (props, context) => {
                     })
                   }
                 />
-              </Grid.Column>
-            </Grid>
+              </Flex.Column>
+            </Flex>
           </Section>
         )}
       </Window.Content>

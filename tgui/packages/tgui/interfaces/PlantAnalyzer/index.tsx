@@ -1,26 +1,24 @@
-import { useBackend } from '../../backend';
 import {
-  ProgressBar,
+  AnimatedNumber,
+  Box,
   Button,
+  ProgressBar,
   Section,
   Stack,
-  AnimatedNumber,
   Tooltip,
-  Box,
-} from '../../components';
+} from 'tgui-core/components';
+import { capitalizeFirst } from 'tgui-core/string';
+
+import { useBackend } from '../../backend';
 import { Window } from '../../layouts';
-
-import { capitalizeFirst } from 'common/string';
-
 import { PLANTSTATUS2COLOR } from './constants';
-
 import { PlantAnalyzerData } from './types';
 
-export const PlantAnalyzer = (props, context) => {
-  const { act, data } = useBackend<PlantAnalyzerData>(context);
+export const PlantAnalyzer = (props) => {
+  const { act, data } = useBackend<PlantAnalyzerData>();
   const { tray, seed } = data;
   return (
-    <Window width={500} height={600} resizable>
+    <Window width={500} height={600}>
       <Window.Content scrollable>
         {tray.name && <TrayContent />}
         {seed.name && <SeedContent />}
@@ -29,8 +27,8 @@ export const PlantAnalyzer = (props, context) => {
   );
 };
 
-const TrayContent = (props, context) => {
-  const { act, data } = useBackend<PlantAnalyzerData>(context);
+const TrayContent = (props) => {
+  const { act, data } = useBackend<PlantAnalyzerData>();
   const { tray } = data;
   return (
     <Section title="Tray">
@@ -76,8 +74,8 @@ const TrayContent = (props, context) => {
   );
 };
 
-const SeedContent = (props, context) => {
-  const { act, data } = useBackend<PlantAnalyzerData>(context);
+const SeedContent = (props) => {
+  const { act, data } = useBackend<PlantAnalyzerData>();
   const { seed } = data;
   return (
     <Section title={seed.name}>
@@ -165,7 +163,7 @@ const SeedContent = (props, context) => {
             <Section title="Mutations">
               {seed.mutatelist?.map((mutation, index) => (
                 <Tooltip key={index} content={mutation.desc}>
-                  <Box index={index}>
+                  <Box key={index}>
                     {mutation.name}
                     <Button
                       icon="magnifying-glass"
