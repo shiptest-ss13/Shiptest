@@ -45,14 +45,14 @@
 			to_chat(user, span_notice("You reseal the insulation for [src]."))
 			icon_state = "cablerelay"
 			broken_status = RELAY_OK
-			obj_integrity = max_integrity
+			atom_integrity = max_integrity
 		else
 			to_chat(user, "You need 10 metal to mend [src].")
 
 	else
 		return ..()
 
-/obj/machinery/power/deck_relay/obj_break()
+/obj/machinery/power/deck_relay/atom_break()
 	..()
 	if(broken_status == RELAY_OK)
 		break_connections()
@@ -61,7 +61,7 @@
 		icon_state = "cablerelay-broken"
 		broken_status = RELAY_ADD_CABLE
 
-/obj/machinery/power/deck_relay/obj_destruction()
+/obj/machinery/power/deck_relay/atom_destruction()
 	return //this shouldn't break under usual means
 
 /obj/machinery/power/deck_relay/Destroy()
