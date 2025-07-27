@@ -109,7 +109,6 @@
 
 	refused_attachments = list(
 		/obj/item/attachment/gun,
-		/obj/item/attachment/sling
 		)
 
 /obj/item/ammo_casing/energy/kalix/pistol
