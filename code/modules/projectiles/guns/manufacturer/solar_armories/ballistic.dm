@@ -28,7 +28,7 @@
 		/obj/item/stock_parts/cell/gun/solgov,
 	)
 
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 	w_class = WEIGHT_CLASS_SMALL
 	fire_delay = 0.6 SECONDS //pistol, but heavy caliber.
 	show_magazine_on_sprite = FALSE
@@ -88,8 +88,6 @@
 
 	fire_select_icon_state_prefix = "caseless_"
 
-	slot_flags = ITEM_SLOT_BELT
-
 /obj/item/gun/ballistic/automatic/pistol/solgov/old
 	icon_state = "pistole-c-old"
 
@@ -122,7 +120,7 @@
 	manufacturer = MANUFACTURER_SOLARARMORIES
 	fire_select_icon_state_prefix = "pellet_"
 
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	valid_attachments = SOLAR_ATTACHMENTS
 	slot_available = SOLAR_ATTACH_SLOTS
@@ -162,7 +160,7 @@
 	empty_indicator = FALSE
 	manufacturer = MANUFACTURER_SOLARARMORIES
 
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	valid_attachments = SOLAR_ATTACHMENTS
 	slot_available = SOLAR_ATTACH_SLOTS

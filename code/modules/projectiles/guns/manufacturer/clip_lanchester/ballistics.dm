@@ -491,7 +491,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	item_state = "cm82"
 	show_magazine_on_sprite = TRUE
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	bolt_type = BOLT_TYPE_CLIP
 	default_ammo_type = /obj/item/ammo_box/magazine/p16
 	allowed_ammo_types = list(
@@ -573,7 +573,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	manufacturer = MANUFACTURER_MINUTEMAN
 	default_ammo_type = /obj/item/ammo_box/magazine/cm40_762_40_box
 	allowed_ammo_types = list(
@@ -662,7 +662,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	bolt_type = BOLT_TYPE_CLIP
 	tac_reloads = FALSE
 
