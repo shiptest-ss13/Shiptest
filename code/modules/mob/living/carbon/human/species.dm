@@ -1244,12 +1244,18 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				return FALSE
 			if(H.s_store && !swap)
 				return FALSE
+			if(HAS_TRAIT(I, TRAIT_FORCE_SUIT_STORAGE_ALWAYS))
+				return TRUE
+			if(HAS_TRAIT(I, TRAIT_FORCE_SUIT_STORAGE))
+				if(!H.w_uniform)
+					if(!disable_warning)
+						to_chat(H, span_warning("You need at least a uniform before you can attach this [I.name]!"))
+					return FALSE
+				return TRUE
 			if(!H.wear_suit)
 				if(!disable_warning)
 					to_chat(H, span_warning("You need a suit before you can attach this [I.name]!"))
 				return FALSE
-			if(HAS_TRAIT(I, TRAIT_FORCE_SUIT_STORAGE))
-				return TRUE
 			if(!H.wear_suit.allowed)
 				if(!disable_warning)
 					to_chat(H, span_warning("You somehow have a suit with no defined allowed items for suit storage, stop that."))

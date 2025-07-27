@@ -56,6 +56,8 @@
 	if(s_store && !(ITEM_SLOT_SUITSTORE in obscured))
 		if(wear_suit)
 			. += "[t_He] [t_is] carrying [s_store.get_examine_string(user)] on [t_his] [wear_suit.name]."
+		else if(w_uniform && !(ITEM_SLOT_ICLOTHING in obscured))
+			. += "[t_He] [t_is] carrying [s_store.get_examine_string(user)] on [t_his] [w_uniform.name]."
 		else
 			. += "[t_He] [t_is] carrying [s_store.get_examine_string(user)]."
 	//back
