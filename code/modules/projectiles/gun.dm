@@ -422,7 +422,7 @@
 	. = ..()
 	if(manufacturer)
 		. += span_notice("It has <b>[manufacturer]</b> engraved on it.")
-	if(HAS_TRAIT(TRAIT_FORCE_SUIT_STORAGE))
+	if(HAS_TRAIT(src,TRAIT_FORCE_SUIT_STORAGE))
 		. += span_notice("It has clips and hooks for easy carrying.")
 
 /obj/item/gun/examine_more(mob/user)
