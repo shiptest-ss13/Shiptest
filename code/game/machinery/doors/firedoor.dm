@@ -47,7 +47,7 @@
 			. += span_notice("It is open, but there appears to be something jammed between the doors preventing it from closing. You could potentially pull it out with your <b>hands</b>.")
 		else
 			. += span_notice("It is open, but could be <b>pried</b> closed.")
-			. += span_notice("You could jam an iron rod or wood plankin while it's open to prevent it from closing.")
+			. += span_notice("You could jam an iron rod or wood plank in while it's open to prevent it from closing.")
 	else if(!welded)
 		. += span_notice("It is closed, but could be <i>pried</i> open. Deconstruction would require it to be <b>welded</b> shut.")
 	else if(boltslocked)
