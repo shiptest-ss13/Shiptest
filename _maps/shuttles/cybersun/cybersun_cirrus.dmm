@@ -1078,11 +1078,18 @@
 	id = "cwin8";
 	name = "shutter control"
 	},
+/obj/machinery/newscaster/directional/east{
+	pixel_y = -3
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/hallway/aft)
 "fR" = (
 /turf/template_noop,
 /area/template_noop)
+"gd" = (
+/obj/structure/falsewall/titanium,
+/turf/open/floor/plasteel/tech,
+/area/ship/crew/dorm/commad)
 "gh" = (
 /obj/machinery/vending/coffee,
 /obj/machinery/firealarm/directional/north,
@@ -2255,6 +2262,7 @@
 "oN" = (
 /obj/structure/chair/bench/blue/directional/east,
 /obj/item/radio/intercom/directional/west,
+/obj/machinery/newscaster/directional/south,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/hallway/aft)
 "oT" = (
@@ -2622,8 +2630,8 @@
 /obj/structure/chair/handrail{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer2,
 /turf/open/floor/plasteel/patterned/grid{
 	color = "#777777"
 	},
@@ -3493,10 +3501,6 @@
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm)
-"BP" = (
-/obj/structure/falsewall/titanium,
-/turf/open/floor/plasteel/tech,
-/area/ship/crew/dorm/commad)
 "BS" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/box/white,
@@ -5632,6 +5636,7 @@
 	color = "#E6D2BA";
 	dir = 1
 	},
+/obj/machinery/newscaster/directional/south,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "Ub" = (
@@ -5766,9 +5771,9 @@
 /area/ship/storage/equip)
 "UX" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/item/radio/intercom/directional/west,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer2,
 /turf/open/floor/plasteel/patterned/grid{
 	color = "#777777"
 	},
@@ -7289,7 +7294,7 @@ VD
 Cw
 Lm
 Lm
-BP
+gd
 Lm
 QB
 fR
