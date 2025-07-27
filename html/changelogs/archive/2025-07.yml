@@ -158,3 +158,31 @@
   - rscadd: Indie engineers now start with olive overalls
   - balance: Indie engineer roles no longer start with toolbelts and insulated gloves.
       Both of these now spawn in engineer's closets.
+2025-07-27:
+  Erikafox:
+  - rscdel: Panacea
+  - bugfix: f4 can take scope again. whoops.
+  SomeguyManperson:
+  - bugfix: you can no longer get infinite attachment slots by pretending to remove
+      existing attachments so the gun thinks it can hold more
+  generalthrax:
+  - bugfix: Invictus magazine is now in cargo
+  - balance: Shields block slightly less, have less integrity, slow you down much
+      more, and now require time and 10 plasteel to repaiar
+  - balance: Prevents most automatic guns from mounting scopes (along with a few more
+      like the E50 and Accelerator laser cannon)
+  - balance: Locks the long scope to the Illestren, lever-actions, and Beacon
+  - balance: Decreased medium scope zoom to give you only about 4 tiles of extra visibility
+  - balance: Hydra DMR can no longer mount extended or casket mags
+  melbert,  Erika (porting fox):
+  - refactor: Drunkenness is now a status effect. The drunk alert should no longer
+      persist on aheals and in some rare cases, and should overrall act a bit more
+      consistently.
+  - refactor: Dizziness is now a status effect, similar to above. You no longer should
+      be stuck with an off center client view if you get very dizzy.
+  - refactor: Refactored status effect examine text. Should overall have slightly
+      better grammar and more consistent span uses.
+  - refactor: Jitterriness is now a status effect
+  - rscdel: some contractor related cruft that i didn't want to update
+  zimon9:
+  - balance: allows bodycameras to be worn around the neck
