@@ -13,24 +13,58 @@
 
 /// BRUTE CHEMS ///
 
-/datum/reagent/medicine/trophazole
-	name = "Trophazole"
-	description = "Orginally developed as fitness supplement, this chemical accelerates wound healing and if ingested turns nutriment into healing peptides"
+/datum/reagent/medicine/indomide
+	name = "Indomide"
+	description = ""
 	reagent_state = LIQUID
 	color = "#FFFF6B"
 	overdose_threshold = 20
+	var/passive_bleed_modifier = 1.2
 
-/datum/reagent/medicine/trophazole/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-1.5*REM, 0.) // heals 3 brute & 0.5 burn if taken with food. compared to 2.5 brute from bicard + nutriment
+/datum/reagent/medicine/indomide/on_mob_life(mob/living/carbon/M)
+	M.adjustBruteLoss(-1*REM, 0)
 	..()
 	. = 1
 
-/datum/reagent/medicine/trophazole/overdose_process(mob/living/M)
-	M.adjustBruteLoss(3*REM, 0)
-	..()
-	. = 1
+/datum/reagent/medicine/indomide/on_mob_metabolize(mob/living/L)
+	. = ..()
+	if(!ishuman(L))
+		return
+	var/mob/living/carbon/human/normal_guy = L
+	normal_guy.physiology?.bleed_mod *= passive_bleed_modifier
 
-/datum/reagent/medicine/trophazole/on_transfer(atom/A, method=INGEST, trans_volume)
+/datum/reagent/medicine/indomide/on_mob_end_metabolize(mob/living/L)
+	. = ..()
+	if(!ishuman(L))
+		return
+	var/mob/living/carbon/human/normal_guy = L
+	normal_guy.physiology?.bleed_mod /= passive_bleed_modifier
+
+
+/datum/reagent/medicine/indomide/overdose_start(mob/living/M)
+	. = ..()
+	ADD_TRAIT(M, TRAIT_BLOODY_MESS, src)
+
+/datum/reagent/medicine/indomide/overdose_process(mob/living/M)
+	. = ..()
+	M.adjustBruteLoss(0.2*REM, 0)
+
+	if(!iscarbon(M))
+		return
+
+	var/mob/living/carbon/victim = M
+
+	if(prob(5))
+		var/obj/item/bodypart/open_sore = pick(victim.bodyparts)
+		if(IS_ORGANIC_LIMB(open_sore))
+			open_sore.force_wound_upwards(/datum/wound/slash/moderate)
+		M.emote("gasps")
+
+/datum/reagent/medicine/indomide/on_mob_end_metabolize(mob/living/L)
+	. = ..()
+	REMOVE_TRAIT(M, TRAIT_BLOODY_MESS, src)
+
+/datum/reagent/medicine/indomide/on_transfer(atom/A, method=INGEST, trans_volume)
 	if(method != INGEST || !iscarbon(A))
 		return
 
@@ -42,7 +76,8 @@
 /datum/reagent/medicine/metafactor
 	name = "Mitogen Metabolism Factor"
 	description = "This enzyme catalyzes the conversion of nutricious food into healing peptides."
-	metabolization_rate = 0.0625  * REAGENTS_METABOLISM //slow metabolism rate so the patient can self heal with food even after the troph has metabolized away for amazing reagent efficency.
+	//slow metabolism rate so the patient can self heal with food even after the troph has metabolized away for amazing reagent efficency.
+	metabolization_rate = 0.0625  * REAGENTS_METABOLISM
 	reagent_state = SOLID
 	color = "#FFBE00"
 	overdose_threshold = 10
@@ -58,14 +93,14 @@
 
 /datum/reagent/medicine/hadrakine
 	name = "Hadrakine Powder"
-	description = "If used in touch-based applications, immediately restores bruising as well as restoring more over time. If ingested through other means or overdosed, deals minor toxin damage."
+	description = ""
 	reagent_state = LIQUID
 	color = "#FF9696"
 	overdose_threshold = 45
-
-/* additional healing when sprayed.
-Slows bleeding down on targeted limb
-
+	var/did_overdose = FALSE
+	var/passive_bleed_modifier = 0.9
+	var/overdose_bleed_modifier = 0.3
+	var/brute_damage_modifier = 1.5
 
 /datum/reagent/medicine/hadrakine/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
@@ -85,15 +120,92 @@ Slows bleeding down on targeted limb
 
 
 /datum/reagent/medicine/hadrakine/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-2*REM, 0)
+	M.adjustBruteLoss(-1*REM, 0)
 	..()
 	. = 1
 
+/datum/reagent/medicine/hadrakina/on_mob_metabolize(mob/living/L)
+	. = ..()
+	if(!ishuman(L))
+		return
+	var/mob/living/carbon/human/normal_guy = L
+	normal_guy.physiology?.bleed_mod *= passive_bleed_modifier
+
+/datum/reagent/medicine/hadrakine/on_mob_end_metabolize(mob/living/L)
+	. = ..()
+	if(!ishuman(L))
+		return
+	var/mob/living/carbon/human/normal_guy = L
+	normal_guy.physiology?.bleed_mod /= passive_bleed_modifier
+	if(did_overdose)
+		normal_guy.physiology?.bleed_mod /= overdose_bleed_modifier
+		normal_guy.physiology?.brute_mod /= brute_damage_modifier
+
+/datum/reagent/medicine/hadrakine/overdose_start(mob/living/M)
+	. = ..()
+
+	if(!ishuman(M))
+		return
+
+	did_overdose = TRUE
+	var/mob/living/carbon/human/overdose_victim = M
+	overdose_victim.physiology?.bleed_mod *= overdose_bleed_modifier
+	overdose_victim.physiology?.brute_mod *= brute_damage_modifier
+
 /datum/reagent/medicine/hadrakine/overdose_process(mob/living/M)
-	M.adjustBruteLoss(2.5*REM, 0)
+	M.adjustBruteLoss(0.5*REM, 0)
 	M.adjustToxLoss(0.5, 0)
+	if(prob(25))
+		M.losebreath++
+	if(prob(10))
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
 	..()
 	. = 1
+
+/datum/reagent/medicine/silfrine
+	name = "Silfrine"
+	description = ""
+	reagent_state = LIQUID
+	color = "#FF9696"
+	overdose_threshold = 20
+
+/datum/reagent/medicine/silfrine/on_mob_life(mob/living/carbon/M)
+	var/effectiveness_multiplier = M.bruteloss/100
+	var/brute_heal = effectiveness_multiplier * REM * 3
+	M.adjustBruteLoss(brute_heal, 0)
+	..()
+	. = 1
+
+/datum/reagent/medicine/silfrine/on_mob_metabolize(mob/living/L)
+	. = ..()
+	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/silfrine)
+	if(!HAS_TRAIT(M, TRAIT_ANALGESIA))
+		SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+
+/datum/reagent/medicine/silfrine/on_mob_end_metabolize(mob/living/L)
+	. = ..()
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/silfrine)
+
+/datum/reagent/medicine/silfrine/overdose_start(mob/living/M)
+	. = ..()
+	M.add_movespeed_modifier(/datum/movespeed_modifier/reagent/silfrine_od)
+	M.force_scream()
+
+
+/datum/reagent/medicine/silfrine/overdose_process(mob/living/M)
+	if(prob(10))
+		if(!HAS_TRAIT(M, TRAIT_ANALGESIA))
+			to_chat(M, span_danger("You feel your flesh twisting as it tries to grow around non-existent wounds!"))
+		else
+			to_chat(M, span_danger("You feel points of pressure all across your body starting to throb uncomfortably."))
+		M.force_scream()
+		M.adjustStaminaLoss(40*REM, 0)
+		M.adjustBruteLoss(5*REM, 0)
+	if(prob(25))
+		M.losebreath++
+	..()
+	. = 1
+
 
 /// BURN REAGENTS ///
 
