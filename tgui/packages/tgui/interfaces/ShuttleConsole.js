@@ -1,4 +1,3 @@
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
@@ -8,11 +7,13 @@ import {
   LabeledList,
   Modal,
   Section,
-} from '../components';
+} from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
-export const ShuttleConsole = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ShuttleConsole = (props) => {
+  const { act, data } = useBackend();
   const { authorization_required } = data;
   return (
     <Window width={350} height={230}>
@@ -61,16 +62,16 @@ const getLocationIdByName = (locations, name) => {
 
 const STATUS_COLOR_KEYS = {
   'In Transit': 'good',
-  'Idle': 'average',
-  'Igniting': 'average',
-  'Recharging': 'average',
-  'Missing': 'bad',
+  Idle: 'average',
+  Igniting: 'average',
+  Recharging: 'average',
+  Missing: 'bad',
   'Unauthorized Access': 'bad',
-  'Locked': 'bad',
+  Locked: 'bad',
 };
 
-const ShuttleConsoleContent = (props, context) => {
-  const { act, data } = useBackend(context);
+const ShuttleConsoleContent = (props) => {
+  const { act, data } = useBackend();
   const {
     status,
     locked,

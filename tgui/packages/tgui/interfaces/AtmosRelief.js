@@ -1,9 +1,15 @@
+import {
+  Button,
+  LabeledList,
+  NumberInput,
+  Section,
+} from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Button, LabeledList, NumberInput, Section } from '../components';
 import { Window } from '../layouts';
 
-export const AtmosRelief = (props, context) => {
-  const { act, data } = useBackend(context);
+export const AtmosRelief = (props) => {
+  const { act, data } = useBackend();
   return (
     <Window width={335} height={115}>
       <Window.Content>
@@ -18,7 +24,7 @@ export const AtmosRelief = (props, context) => {
                 minValue={0}
                 maxValue={4500}
                 step={10}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('open_pressure', {
                     open_pressure: value,
                   })
@@ -45,7 +51,7 @@ export const AtmosRelief = (props, context) => {
                 minValue={0}
                 maxValue={data.open_pressure}
                 step={10}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('close_pressure', {
                     close_pressure: value,
                   })

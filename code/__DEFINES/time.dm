@@ -16,7 +16,6 @@
 /// In-universe year. Offset from ours by this much.
 #define SECTOR_YEAR_OFFSET -1519
 
-
 #define JANUARY 1
 #define FEBRUARY 2
 #define MARCH 3

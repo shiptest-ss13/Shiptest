@@ -1,10 +1,11 @@
+import { Box, LabeledList, ProgressBar, Section } from 'tgui-core/components';
+import { formatSiUnit } from 'tgui-core/format';
+
 import { useBackend } from '../backend';
-import { formatSiUnit } from '../format';
-import { Box, LabeledList, Section, ProgressBar } from '../components';
 import { Window } from '../layouts';
 
-export const ThermalGenerator = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ThermalGenerator = (props) => {
+  const { act, data } = useBackend();
   const {
     powernet,
     power,
@@ -23,7 +24,7 @@ export const ThermalGenerator = (props, context) => {
   };
 
   return (
-    <Window width={400} height={250} resizable>
+    <Window width={400} height={250}>
       <Window.Content>
         <Section>
           <LabeledList>
