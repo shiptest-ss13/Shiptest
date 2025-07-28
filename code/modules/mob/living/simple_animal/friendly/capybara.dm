@@ -9,7 +9,8 @@
 	butcher_results = list()
 	childtype = list()
 
-	minbodytemp = 100
+	// They are just that chill
+	minbodytemp = 170
 
 	response_help_continuous = "pets"
 	response_help_simple = "pet"

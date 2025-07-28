@@ -108,6 +108,7 @@
 		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 5,
 		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 10,
+		/obj/effect/spawner/random/snow_monkey_pack = 5,
 	)
 	feature_spawn_chance = 0.1
 	feature_spawn_list = list(
@@ -173,7 +174,7 @@
 		/obj/structure/vein/ice = 3,
 		/obj/structure/vein/ice/classtwo = 4,
 		/obj/structure/vein/ice/classthree = 1,
-		/obj/effect/spawner/random/greeble/ice_planet = 2,
+		/obj/effect/spawner/random/greeble/ice_planet = 100,
 	)
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
@@ -361,3 +362,6 @@
 
 /datum/map_template/greeble/ice/ice_capy
 	mappath = "_maps/templates/greebles/iceplanet/ice_capy.dmm"
+
+/datum/map_template/greeble/ice/ice_monkey
+	mappath = "_maps/templates/greebles/iceplanet/ice_monkey.dmm"

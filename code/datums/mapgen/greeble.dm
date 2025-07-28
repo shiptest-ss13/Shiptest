@@ -34,6 +34,7 @@
 		qdel(src)
 		return
 
+	message_admins("Greeble: [ADMIN_JMP(src.loc)]")
 	template.load(deploy_location, centered = TRUE, show_oob_error = FALSE, timeout = timeout)
 	qdel(src)
 
