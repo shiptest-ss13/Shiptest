@@ -117,18 +117,12 @@
 *Overdosing on penthrite also causes a heart failure.
 */
 
-/datum/reagent/medicine/c2/penthrite
-	name = "Penthrite"
-	description = "An expensive medicine that aids with pumping blood around the body even without a heart, and prevents the heart from slowing down. It reacts violently with other emergency medication."
-	color = "#F5F5F5"
-	overdose_threshold = 50
-
 /datum/reagent/medicine/c2/penthrite/on_mob_add(mob/living/M)
 	. = ..()
 	to_chat(M,"<span class='notice'>Your heart begins to beat with great force!")
 	ADD_TRAIT(M, TRAIT_STABLEHEART, type)
-	ADD_TRAIT(M, TRAIT_NOSOFTCRIT,type)
 	ADD_TRAIT(M, TRAIT_NOHARDCRIT,type)
+	ADD_TRAIT(M, TRAIT_NOSOFTCRIT,type)
 	M.crit_threshold = M.crit_threshold + HEALTH_THRESHOLD_FULLCRIT*2 //your heart is still pumping!
 
 
@@ -145,8 +139,8 @@
 
 		H.adjustOrganLoss(ORGAN_SLOT_HEART,max(1,volume/10)) // your heart is barely keeping up!
 
-		H.adjust_jitter(rand(0,2))
-		H.Dizzy(rand(0,2))
+		H.set_timed_status_effect(rand(0 SECONDS, 4 SECONDS) * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		H.set_timed_status_effect(rand(0 SECONDS, 4 SECONDS) * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 
 
 		if(prob(33))
