@@ -271,15 +271,11 @@
 	item_state = "mining_helm"
 	hardsuit_type = "mining"
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
-	resistance_flags = FIRE_PROOF
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 	heat_protection = HEAD
-	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 75, "wound" = 20)
+	armor = list("melee" = 50, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 100, "wound" = 20)
 	light_range = 7
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator)
-
-/obj/item/clothing/head/helmet/space/hardsuit/mining/Initialize()
-	. = ..()
-	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/suit/space/hardsuit/mining
 	name = "frontier hardsuit"
@@ -287,17 +283,13 @@
 	icon_state = "hardsuit-mining"
 	item_state = "mining_hardsuit"
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
-	resistance_flags = FIRE_PROOF
-	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 75, "wound" = 20)
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	armor = list("melee" = 50, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 100, "wound" = 20)
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage/bag/ore, /obj/item/pickaxe)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	custom_price = 2000
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
-
-/obj/item/clothing/suit/space/hardsuit/mining/Initialize()
-	. = ..()
-	AddComponent(/datum/component/armor_plate)
 
 	//Heavy Mining Hardsuit, bought from Cargo.
 /obj/item/clothing/suit/space/hardsuit/mining/heavy
@@ -307,7 +299,7 @@
 	item_state = "hvymining_hardsuit"
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 25, "bomb" = 55, "bio" = 100, "rad" = 85, "fire" = 85, "acid" = 100, "wound" = 30)
+	armor = list("melee" = 65, "bullet" = 30, "laser" = 25, "energy" = 30, "bomb" = 70, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100, "wound" = 30)
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage/bag/ore, /obj/item/pickaxe)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/heavy
 	custom_price = 4500
@@ -319,8 +311,29 @@
 	item_state = "hvymining_helm"
 	hardsuit_type = "hvymining"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 15, "energy" = 20, "bomb" = 55, "bio" = 100, "rad" = 75, "fire" = 85, "acid" = 100, "wound" = 30)
+	armor = list("melee" = 65, "bullet" = 30, "laser" = 25, "energy" = 30, "bomb" = 70, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100, "wound" = 30)
 	light_range = 10
+
+	//NS hardsuit
+/obj/item/clothing/suit/space/hardsuit/mining/heavy/ns
+	name = "N+S mining hardsuit"
+	desc = "An N+S brand heavy hardsuit. The armor is slightly cumbersome, with a tag inside the suit rating it for major impacts, atmospheric hazards, and various acids."
+	icon_state = "ns-hardsuit-mining"
+	item_state = "ns-hardsuit-mining"
+	slowdown = 0.7
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/heavy/ns
+	hardsuit_type = "nsmining"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	armor = list("melee" = 65, "bullet" = 30, "laser" = 25, "energy" = 30, "bomb" = 70, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100)
+
+/obj/item/clothing/head/helmet/space/hardsuit/mining/heavy/ns
+	name = "N+S mining hardsuit helmet"
+	desc = "An N+S brand heavy hardsuit. The helmet itself is spacious and thick, rated for major impacts, atmospheric hazards, and various acids."
+	icon_state = "hardsuit0-nsmining"
+	item_state = "hardsuit0-nsmining"
+	hardsuit_type = "nsmining"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	armor = list("melee" = 65, "bullet" = 30, "laser" = 25, "energy" = 30, "bomb" = 70, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100)
 
 	//Syndicate hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi
@@ -431,51 +444,6 @@
 
 	kepori_override_icon = 'icons/mob/clothing/suits/spacesuits_kepori.dmi'
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
-
-//Ramzi Syndie suit
-/obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
-	name = "rust-red hardsuit helmet"
-	desc = "A beat-up standardized dual-mode helmet derived from more advanced special operations helmets, its red rusted into a dirty brown. It is in EVA mode. Manufactured by Ramzi Clique."
-	alt_desc = "A beat-up standardized dual-mode helmet derived from more advanced special operations helmets, its red rusted into a dirty brown. It is in travel mode. Manufactured by Ramzi Clique."
-	icon_state = "hardsuit1-ramzi"
-	item_state = "hardsuit1-ramzi"
-	hardsuit_type = "ramzi"
-	armor = list("melee" = 35, "bullet" = 40, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
-
-/obj/item/clothing/suit/space/hardsuit/syndi/ramzi
-	name = "rust-red hardsuit"
-	desc = "A beat-up standardized dual-mode hardsuit derived from more advanced special operations hardsuits, its red rusted into a dirty brown. It is in EVA mode. Manufactured by Ramzi Clique."
-	alt_desc = "A beat-up standardized dual-mode hardsuit derived from more advanced special operations hardsuits, its red rusted into a dirty brown. It is in travel mode. Manufactured by Ramzi Clique."
-	icon_state = "hardsuit1-ramzi"
-	item_state = "hardsuit1-ramzi"
-	hardsuit_type = "ramzi"
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
-	jetpack = null
-	armor = list("melee" = 35, "bullet" = 40, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
-	slowdown = 0.7
-	jetpack = null
-	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION | VOX_VARIATION
-
-//Ramzi Elite Suit
-/obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi/elite
-	name = "elite rust-red hardsuit helmet"
-	desc = "An elite version of the rusted-red hardsuit helmet, with improved armour and fireproofing. The armour is worn and heavy. It is in EVA mode."
-	alt_desc = "An elite version of the rusted-red hardsuit, with improved armour and fireproofing. The armour is worn and heavy. It is in travel mode."
-	hardsuit_type = "ramzielite"
-	icon_state = "hardsuit1-ramzielite"
-	item_state = "hardsuit1-ramzielite"
-	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 80)
-
-/obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
-	name = "elite rust-red hardsuit"
-	desc = "An elite version of the rusted-red hardsuit, with improved armour and fireproofing. The armour is worn and heavy. It is in EVA mode."
-	alt_desc = "An elite version of the rusted-red hardsuit, with improved armour and fireproofing. The armour is worn and heavy. It is in EVA mode."
-	icon_state = "hardsuit1-ramzielite"
-	item_state = "hardsuit1-ramzielite"
-	hardsuit_type = "ramzielite"
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi/elite
-	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 80)
-	slowdown = 1.25
 
 //Elite Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite
@@ -1041,7 +1009,7 @@
 	icon_state = "hardsuit0-independent-mining"
 	item_state = "independent_mining_helm"
 	hardsuit_type = "independent-mining"
-	armor = list("melee" = 30, "bullet" = 10, "laser" = 5, "energy" = 20, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 75, "wound" = 20)
+	armor = list("melee" = 50, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 100, "wound" = 20)
 
 /obj/item/clothing/suit/space/hardsuit/mining/independent
 	name = "mining hardsuit"
@@ -1050,4 +1018,4 @@
 	item_state = "independent_mining_hardsuit"
 	hardsuit_type = "independent-mining"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/independent
-	armor = list("melee" = 30, "bullet" = 10, "laser" = 5, "energy" = 20, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 75, "wound" = 20)
+	armor = list("melee" = 50, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 100, "wound" = 20)

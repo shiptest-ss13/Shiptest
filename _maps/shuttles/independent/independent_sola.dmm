@@ -1108,7 +1108,7 @@
 	},
 /obj/effect/spawner/random/trash/garbage,
 /obj/effect/spawner/random/trash/garbage,
-/obj/item/reagent_containers/food/snacks/badrecipe,
+/obj/item/food/badrecipe,
 /obj/item/reagent_containers/food/drinks/coffee{
 	list_reagents = null
 	},
@@ -1196,7 +1196,7 @@
 /obj/machinery/jukebox/boombox{
 	pixel_x = 16
 	},
-/obj/item/reagent_containers/food/snacks/carrotfries{
+/obj/item/food/carrotfries{
 	pixel_x = -3;
 	pixel_y = 7
 	},
@@ -1750,7 +1750,7 @@
 /obj/structure/cable/pink{
 	icon_state = "4-8"
 	},
-/obj/item/reagent_containers/food/snacks/store/cheesewheel,
+/obj/item/food/cheese/wheel,
 /obj/item/storage/fancy/egg_box,
 /obj/item/reagent_containers/condiment/ketchup,
 /obj/item/reagent_containers/condiment/bbqsauce,
@@ -2935,7 +2935,6 @@
 	pixel_y = 5
 	},
 /obj/item/storage/backpack/industrial,
-/obj/item/clothing/under/rank/engineering/engineer,
 /obj/item/storage/belt/utility,
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/clothing/head/hardhat/dblue,
@@ -2947,6 +2946,8 @@
 /obj/structure/extinguisher_cabinet/directional/west{
 	pixel_y = -10
 	},
+/obj/item/storage/belt/utility/full/engi,
+/obj/item/clothing/under/overalls/olive,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "MK" = (

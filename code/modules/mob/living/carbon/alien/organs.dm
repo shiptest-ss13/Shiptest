@@ -137,7 +137,7 @@
 		owner.force_scream()
 		owner.Paralyze(100)
 
-	owner.adjust_jitter(30)
+	owner.set_timed_status_effect(200 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	owner.confused += 30
 	owner.stuttering += 30
 
