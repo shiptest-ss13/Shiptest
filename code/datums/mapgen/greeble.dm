@@ -53,6 +53,7 @@
 
 /datum/map_template/greeble
 	var/description
+	var/static/types_cached = FALSE
 	var/static/list/blacklisted_turfs
 	var/static/list/whitelisted_turfs
 	var/static/list/banned_areas
@@ -62,10 +63,13 @@
 
 /datum/map_template/greeble/New()
 	. = ..()
-	banned_areas = typecacheof(/area/ship, /area/ruin)
-	blacklisted_turfs = typecacheof(list(/turf/closed, /turf/open/indestructible))
-	whitelisted_turfs = typecacheof(/turf/closed/mineral)
-	banned_objects = typecacheof(/obj/structure/stone_tile)
+	//Prevent creating a type cache list EVERY time we spawn a greeble
+	if(!types_cached)
+		banned_areas = typecacheof(/area/ship, /area/ruin)
+		blacklisted_turfs = typecacheof(list(/turf/closed, /turf/open/indestructible))
+		whitelisted_turfs = typecacheof(/turf/closed/mineral)
+		banned_objects = typecacheof(/obj/structure/stone_tile)
+		types_cached = TRUE
 
 /datum/map_template/greeble/proc/check_deploy(turf/deploy_location)
 	if(isnull(deploy_location))
