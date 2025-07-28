@@ -32,15 +32,15 @@
 		src.positive_result = positive_result
 
 /datum/component/bakeable/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_ITEM_BAKED, PROC_REF(OnBake))
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(OnExamine))
+	RegisterSignal(parent, COMSIG_ITEM_BAKED, PROC_REF(on_bake))
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
 
 /datum/component/bakeable/UnregisterFromParent()
 	. = ..()
 	UnregisterSignal(parent, list(COMSIG_ITEM_BAKED, COMSIG_PARENT_EXAMINE))
 
 ///Ran every time an item is baked by something
-/datum/component/bakeable/proc/OnBake(datum/source, atom/used_oven, seconds_per_tick = 1)
+/datum/component/bakeable/proc/on_bake(datum/source, atom/used_oven, seconds_per_tick = 1)
 	SIGNAL_HANDLER
 
 	. = COMPONENT_HANDLED_BAKING
@@ -49,10 +49,10 @@
 
 	current_bake_time += seconds_per_tick * 10 //turn it into ds
 	if(current_bake_time >= required_bake_time)
-		FinishBaking(used_oven)
+		finish_baking(used_oven)
 
 ///Ran when an object finished baking
-/datum/component/bakeable/proc/FinishBaking(atom/used_oven)
+/datum/component/bakeable/proc/finish_baking(atom/used_oven)
 
 	var/atom/original_object = parent
 	var/obj/item/plate/oven_tray/used_tray = original_object.loc
@@ -79,7 +79,7 @@
 	qdel(parent)
 
 ///Gives info about the items baking status so you can see if its almost done
-/datum/component/bakeable/proc/OnExamine(atom/A, mob/user, list/examine_list)
+/datum/component/bakeable/proc/on_examine(atom/A, mob/user, list/examine_list)
 	SIGNAL_HANDLER
 
 	if(!current_bake_time) //Not baked yet

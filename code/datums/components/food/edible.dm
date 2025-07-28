@@ -49,7 +49,7 @@ Behavior that's still missing from this component that original food items had t
 	///The flavortext for taste
 	var/list/tastes
 	///The type of atom this creates when the object is microwaved.
-	var/microwaved_type
+	var/atom/microwaved_type
 
 	//TEMP VAR, filling is nonfunctional because newfood isnt customizable yet
 	var/filling_color
@@ -163,6 +163,9 @@ Behavior that's still missing from this component that original food items had t
 
 /datum/component/edible/proc/examine(datum/source, mob/user, list/examine_list)
 	SIGNAL_HANDLER
+
+	if(microwaved_type)
+		examine_list += "[parent] could be <b>microwaved</b> into [initial(microwaved_type.name)]!"
 
 	if(!(food_flags & FOOD_IN_CONTAINER))
 		switch(bitecount)

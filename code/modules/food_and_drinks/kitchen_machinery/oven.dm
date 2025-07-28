@@ -13,6 +13,7 @@
 	desc = "Why do they call it oven when you of in the cold food of out hot eat the food?"
 	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "oven_off"
+	base_icon_state = "oven"
 	density = TRUE
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 5
@@ -20,6 +21,7 @@
 	circuit = /obj/item/circuitboard/machine/oven
 	processing_flags = START_PROCESSING_MANUALLY
 	resistance_flags = FIRE_PROOF
+	active_power_usage = ACTIVE_DRAW_MEDIUM
 
 	///The tray inside of this oven, if there is one.
 	var/obj/item/plate/oven_tray/used_tray
@@ -33,42 +35,48 @@
 /obj/machinery/oven/Initialize(mapload)
 	. = ..()
 	oven_loop = new(src)
-	add_tray_to_oven(new /obj/item/plate/oven_tray(src)) //Start with a tray
+
+	if(mapload)
+		add_tray_to_oven(new /obj/item/plate/oven_tray(src)) //Start with a tray
 
 /obj/machinery/oven/Destroy()
 	QDEL_NULL(oven_loop)
 	QDEL_NULL(particles)
-	. = ..()
+	return ..()
 
 /obj/machinery/oven/update_icon_state()
 	if(!open && used_tray?.contents.len)
-		icon_state = "oven_on"
+		icon_state = "[base_icon_state]_on"
 	else
-		icon_state = "oven_off"
+		icon_state = "[base_icon_state]_off"
 	return ..()
 
 /obj/machinery/oven/update_overlays()
 	. = ..()
 	if(open)
-		var/mutable_appearance/door_overlay = mutable_appearance(icon, "oven_lid_open")
+		var/mutable_appearance/door_overlay = mutable_appearance(icon, "[base_icon_state]_lid_open")
 		door_overlay.pixel_y = OVEN_LID_Y_OFFSET
 		. += door_overlay
 	else
-		. += mutable_appearance(icon, "oven_lid_closed")
+		. += mutable_appearance(icon, "[base_icon_state]_lid_closed")
 		if(used_tray?.contents.len)
-			. += emissive_appearance(icon, "oven_light_mask", alpha = src.alpha)
+			. += emissive_appearance(icon, "[base_icon_state]_light_mask", src, alpha = src.alpha)
 
 /obj/machinery/oven/process(seconds_per_tick)
 	..()
+
 	if(!used_tray) //Are we actually working?
 		set_smoke_state(OVEN_SMOKE_STATE_NONE)
+		update_appearance(UPDATE_ICON)
+		update_baking_audio()
+		end_processing()
 		return
+
 	///We take the worst smoke state, so if something is burning we always know.
 	var/worst_cooked_food_state = 0
 	for(var/obj/item/baked_item in used_tray.contents)
 
 		var/signal_result = SEND_SIGNAL(baked_item, COMSIG_ITEM_BAKED, src, seconds_per_tick)
-
 		if(signal_result & COMPONENT_HANDLED_BAKING) //This means something responded to us baking!
 			if(signal_result & COMPONENT_BAKING_GOOD_RESULT && worst_cooked_food_state < OVEN_SMOKE_STATE_GOOD)
 				worst_cooked_food_state = OVEN_SMOKE_STATE_GOOD
@@ -81,6 +89,7 @@
 
 		if(SPT_PROB(10, seconds_per_tick))
 			visible_message("You smell a burnt smell coming from [src]!") //visible...?
+
 	set_smoke_state(worst_cooked_food_state)
 	update_appearance()
 
@@ -92,7 +101,7 @@
 	else
 		return ..()
 
-///Adds a tray to the oven, making sure the shit can get baked.
+///Adds a tray to the oven, making sure the food can get baked.
 /obj/machinery/oven/proc/add_tray_to_oven(obj/item/plate/oven_tray)
 	used_tray = oven_tray
 
