@@ -5,7 +5,7 @@
 /datum/wires/suit_storage_unit/New(atom/holder)
 	wires = list(
 		WIRE_HACK, WIRE_SAFETY,
-		WIRE_ZAP
+		WIRE_ZAP, WIRE_LOCKDOWN
 	)
 	add_duds(2)
 	..()
@@ -32,6 +32,8 @@
 		if(WIRE_ZAP)
 			if(usr)
 				SSU.shock(usr)
+		if(WIRE_LOCKDOWN)
+			!SSU.locked
 
 /datum/wires/suit_storage_unit/on_cut(wire, mend)
 	var/obj/machinery/suit_storage_unit/SSU = holder
@@ -43,3 +45,9 @@
 		if(WIRE_ZAP)
 			if(usr)
 				SSU.shock(usr)
+		if(WIRE_LOCKDOWN)
+			if(mend)
+				SSU.lock_functional = TRUE
+			else
+				SSU.lock_functional = FALSE
+				SSU.lock = FALSE
