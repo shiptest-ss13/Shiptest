@@ -283,6 +283,8 @@ LOCKED_SSU_HELPER(minutemen/pilot)
 
 /obj/machinery/suit_storage_unit/Initialize(mapload)
 	. = ..()
+	wires = new /datum/wires/suit_storage_unit(src)
+	src.check_access(null)
 	if(req_access.len || req_one_access.len)
 		electronics = new(src)
 		if(req_access.len)
@@ -466,10 +468,10 @@ LOCKED_SSU_HELPER(minutemen/pilot)
 					to_chat(mob_occupant, span_userdanger("[src]'s confines grow warm, then hot, then scorching. You're being burned [!mob_occupant.stat ? "alive" : "away"]!"))
 				cook()
 		if ("lock", "unlock")
+			if(!electronics)
+				to_chat(user, span_warning("You can't cycle the lock on \the [src] without an airlock circuit installed!"))
 			if(!lock_functional)
 				to_chat(user, span_warning("The locking mechanism is shorted out!"))
-			if(!electronics)
-				to_chat(user, span_warning("You can't lock \the [src] without an airlock circuit installed!"))
 			else if (!state_open)
 				if(allowed(user))
 					locked = !locked
@@ -729,11 +731,11 @@ LOCKED_SSU_HELPER(minutemen/pilot)
 			if(!user.transferItemToLoc(I, src))
 				to_chat(user, span_warning("\The [I] is stuck to you!"))
 				return
+			electronics = I
 			if(electronics.one_access)
 				req_one_access = electronics.accesses
 			else
 				req_access = electronics.accesses
-			electronics = I
 	if(!state_open)
 		if(default_deconstruction_screwdriver(user, "[base_icon_state]", "[base_icon_state]", I))
 			update_appearance()
