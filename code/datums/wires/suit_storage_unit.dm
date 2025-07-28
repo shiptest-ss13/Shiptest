@@ -33,7 +33,7 @@
 			if(usr)
 				SSU.shock(usr)
 		if(WIRE_LOCKDOWN)
-			!SSU.locked
+			SSU.locked = !SSU.locked
 
 /datum/wires/suit_storage_unit/on_cut(wire, mend)
 	var/obj/machinery/suit_storage_unit/SSU = holder
@@ -50,4 +50,4 @@
 				SSU.lock_functional = TRUE
 			else
 				SSU.lock_functional = FALSE
-				SSU.lock = FALSE
+				SSU.locked = FALSE
