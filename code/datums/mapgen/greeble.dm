@@ -15,9 +15,11 @@
 
 /obj/effect/greeble_spawner/Initialize()
 	. = ..()
-	message_admins("Greeble Init: [ADMIN_JMP(src.loc)]")
 	if(template_subtype_path)
 		template = pick(subtypesof(template_subtype_path))
+#ifdef GREEBLE_LOGGING
+	message_admins("Greeble [template] Init: [ADMIN_JMP(src.loc)]")
+#endif
 	if(isnull(loc))
 		return INITIALIZE_HINT_QDEL
 
@@ -35,21 +37,23 @@
 		qdel(src)
 		return
 
-	message_admins("Greeble: [ADMIN_JMP(src.loc)]")
+#ifdef GREEBLE_LOGGING
+	message_admins("Greeble [template]: [ADMIN_JMP(src.loc)]")
+#endif
 	template.load(deploy_location, centered = TRUE, show_oob_error = FALSE, timeout = timeout)
 	qdel(src)
 
 /datum/map_template/greeble
 	var/description
-	var/blacklisted_turfs
-	var/whitelisted_turfs
-	var/banned_areas
-	var/banned_objects
-	var/clear_everything = FALSE
+	var/static/list/blacklisted_turfs
+	var/static/list/whitelisted_turfs
+	var/static/list/banned_areas
+	var/static/list/banned_objects
+	var/clear_everything = TRUE
 
 /datum/map_template/greeble/New()
 	. = ..()
-	banned_areas = typecacheof(/area/ship, /area/overmap_encounter/planetoid/cave, /area/ruin)
+	banned_areas = typecacheof(/area/ship, /area/ruin)
 	blacklisted_turfs = typecacheof(list(/turf/closed, /turf/open/indestructible))
 	whitelisted_turfs = typecacheof(/turf/closed/mineral)
 	banned_objects = typecacheof(/obj/structure/stone_tile)
@@ -70,7 +74,7 @@
 			return SHELTER_DEPLOY_BAD_TURFS
 
 		for(var/obj/O in T)
-			if((O.density && O.anchored) || is_type_in_typecache(O, banned_objects))
+			if(is_type_in_typecache(O, banned_objects))
 				return SHELTER_DEPLOY_ANCHORED_OBJECTS
 
 

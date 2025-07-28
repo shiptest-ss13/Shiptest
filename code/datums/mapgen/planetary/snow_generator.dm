@@ -110,7 +110,7 @@
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 10,
 		/obj/effect/spawner/random/snow_monkey_pack = 5,
 	)
-	feature_spawn_chance = 0.3
+	feature_spawn_chance = 0.2
 	feature_spawn_list = list(
 		/obj/effect/spawner/random/anomaly/ice = 12,
 		/obj/effect/spawner/random/anomaly/big = 1,
@@ -120,7 +120,7 @@
 		/obj/structure/vein/ice/classtwo/rare = 10,
 		/obj/structure/vein/ice/classthree = 10,
 		/obj/structure/vein/ice/classthree/rare = 5,
-		/obj/effect/spawner/random/greeble/ice_planet = 100,
+		/obj/effect/spawner/random/greeble/ice_planet = 50,
 	)
 
 /datum/biome/snow/lush
@@ -167,7 +167,7 @@
 		/turf/open/floor/plating/asteroid/snow/lit = 1
 	)
 	#warn remember to adjust weighting
-	feature_spawn_chance = 1
+	feature_spawn_chance = 0.2
 	feature_spawn_list = list(
 		/obj/structure/spawner/burrow/ice_planet = 4,
 		/obj/structure/statue/snow/snowman = 3,
@@ -175,7 +175,7 @@
 		/obj/structure/vein/ice = 3,
 		/obj/structure/vein/ice/classtwo = 4,
 		/obj/structure/vein/ice/classthree = 1,
-		/obj/effect/spawner/random/greeble/ice_planet = 100,
+		/obj/effect/spawner/random/greeble/ice_planet = 1,
 	)
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
