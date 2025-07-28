@@ -548,7 +548,7 @@
 			else if(found_gun.can_trigger_gun(user))
 				bonus_spread += dual_wield_spread
 				loop_counter++
-				addtimer(CALLBACK(found_gun, TYPE_PROC_REF(/obj/item/gun, pre_fire), target, user, TRUE, params, null, bonus_spread), loop_counter)
+				addtimer(CALLBACK(found_gun, TYPE_PROC_REF(/obj/item/gun, pre_fire), target, user, TRUE, FALSE, params, null, bonus_spread, TRUE), loop_counter)
 
 	//get current firemode
 	var/current_firemode = gun_firemodes[firemode_index]
