@@ -186,3 +186,8 @@
   - rscdel: some contractor related cruft that i didn't want to update
   zimon9:
   - balance: allows bodycameras to be worn around the neck
+2025-07-28:
+  'Anticept, FalloutFalcon ':
+  - server: the build chain used in TGS has been fixed so that "#define CBS" is properly
+      prepended to shiptest.dme, and suppresses compiler warnings regarding building
+      the dme directly.
