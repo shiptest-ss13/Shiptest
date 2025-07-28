@@ -271,7 +271,7 @@
 		our_action = new /datum/action/item_action/toggle_ammotype(src)
 
 		for(var/i=1, i <= ammo_type.len, i++)
-			if(default_ammo_type == ammo_type[i])
+			if(default_ammo_type == ammo_type[i]) //default_ammo_type gives the cell, not ammo firing types. Review this?
 				ammotype_index = i
 				if(our_action)
 					our_action.UpdateButtonIcon()
