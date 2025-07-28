@@ -76,7 +76,7 @@
 	helmet_type = /obj/item/clothing/head/hardhat/atmos
 	mask_type = /obj/item/clothing/mask/gas/atmos
 	storage_type = /obj/item/watertank/atmos
-	req_access = (ACCESS_ATMOSPHERICS)
+	req_access = list(ACCESS_ATMOSPHERICS)
 
 LOCKED_SSU_HELPER(industrial/atmos_firesuit)
 
