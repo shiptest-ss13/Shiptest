@@ -110,7 +110,7 @@
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 10,
 		/obj/effect/spawner/random/snow_monkey_pack = 5,
 	)
-	feature_spawn_chance = 0.1
+	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
 		/obj/effect/spawner/random/anomaly/ice = 12,
 		/obj/effect/spawner/random/anomaly/big = 1,
@@ -120,6 +120,7 @@
 		/obj/structure/vein/ice/classtwo/rare = 10,
 		/obj/structure/vein/ice/classthree = 10,
 		/obj/structure/vein/ice/classthree/rare = 5,
+		/obj/effect/spawner/random/greeble/ice_planet = 100,
 	)
 
 /datum/biome/snow/lush

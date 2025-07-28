@@ -15,6 +15,7 @@
 
 /obj/effect/greeble_spawner/Initialize()
 	. = ..()
+	message_admins("Greeble Init: [ADMIN_JMP(src.loc)]")
 	if(template_subtype_path)
 		template = pick(subtypesof(template_subtype_path))
 	if(isnull(loc))
