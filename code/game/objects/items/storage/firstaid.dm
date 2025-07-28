@@ -158,6 +158,7 @@
 		/obj/item/reagent_containers/pill/patch/silver_sulf = 1,
 		/obj/item/reagent_containers/hypospray/medipen/oxandrolone = 1,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
+		/obj/item/reagent_containers/hypospray/medipen/ekit = 1,
 	)
 	generate_items_inside(items_inside,src)
 
