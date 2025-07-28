@@ -53,15 +53,16 @@
 
 /datum/map_template/greeble
 	var/description
-	var/blacklisted_turfs
-	var/whitelisted_turfs
-	var/banned_areas
-	var/banned_objects
-	var/clear_everything = FALSE
+	var/static/list/blacklisted_turfs
+	var/static/list/whitelisted_turfs
+	var/static/list/banned_areas
+	var/static/list/banned_objects
+	var/blocked_by_anchored = FALSE
+	var/clear_everything = TRUE
 
 /datum/map_template/greeble/New()
 	. = ..()
-	banned_areas = typecacheof(/area/ship, /area/overmap_encounter/planetoid/cave, /area/ruin)
+	banned_areas = typecacheof(/area/ship, /area/ruin)
 	blacklisted_turfs = typecacheof(list(/turf/closed, /turf/open/indestructible))
 	whitelisted_turfs = typecacheof(/turf/closed/mineral)
 	banned_objects = typecacheof(/obj/structure/stone_tile)
@@ -82,7 +83,7 @@
 			return SHELTER_DEPLOY_BAD_TURFS
 
 		for(var/obj/O in T)
-			if((O.density && O.anchored) || is_type_in_typecache(O, banned_objects))
+			if((blocked_by_anchored && (O.density && O.anchored)) || is_type_in_typecache(O, banned_objects))
 				return SHELTER_DEPLOY_ANCHORED_OBJECTS
 
 
