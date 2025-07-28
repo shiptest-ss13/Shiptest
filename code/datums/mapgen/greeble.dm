@@ -66,7 +66,7 @@
 	//Prevent creating a type cache list EVERY time we spawn a greeble
 	if(!types_cached)
 		banned_areas = typecacheof(/area/ship, /area/ruin)
-		blacklisted_turfs = typecacheof(list(/turf/closed, /turf/open/indestructible))
+		blacklisted_turfs = typecacheof(list(/turf/closed, /area/overmap_encounter/planetoid/cave/explored, /turf/open/indestructible))
 		whitelisted_turfs = typecacheof(/turf/closed/mineral)
 		banned_objects = typecacheof(/obj/structure/stone_tile)
 		types_cached = TRUE
