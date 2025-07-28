@@ -802,7 +802,16 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 		[second_queue]
 	"}, "window=check_timer_sources;size=700x700")
 
-ADMIN_VERB(allow_browser_inspect, R_DEBUG, "Allow Browser Inspect", "Allow browser debugging via inspect", ADMIN_CATEGORY_DEBUG)
+/client/proc/allow_browser_inspect()
+	set category = "Debug.Debug"
+	set name = "Allow Browser Inspect"
+	set desc = "Allows browser debugging via inspect"
+
+	if(!check_rights(R_DEBUG))
+		return
+
+	var/client/user = usr
+
 	if(user.byond_version < 516)
 		to_chat(user, span_warning("You can only use this on 516!"))
 		return
