@@ -61,7 +61,7 @@
 	// Sarathi tongues don't hiss when speaking Kalixcian. Or when signing.
 	// we should make non-sarathi hiss in Kalixcian
 	var/datum/language/lang_type = speech_args[SPEECH_LANGUAGE]
-	if((initial(lang_type.flags) & NO_HISS) || HAS_TRAIT(usr, TRAIT_SIGN_LANG))
+	if(initial(lang_type.flags) & NO_HISS)
 		return
 
 	var/static/regex/lizard_hiss = new("s+", "g")
