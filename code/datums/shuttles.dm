@@ -401,9 +401,9 @@
 	token_icon_state = "ship_tiny_generic"
 	prefix = "ISV"
 
-/datum/map_template/shuttle/subshuttles/anvil
-	file_name = "inteq_anvil"
-	name = "Anvil-class Mobile Operations Shuttle"
+/datum/map_template/shuttle/subshuttles/javelin
+	file_name = "inteq_javelin"
+	name = "Javelin-class Mobile Operations Shuttle"
 	faction = /datum/faction/inteq
 	token_icon_state = "ship_tiny_generic"
 	prefix = "IRMV"
@@ -480,3 +480,9 @@
 	token_icon_state = "ship_tiny_generic"
 	prefix = "ISV"
 
+/datum/map_template/shuttle/subshuttles/shortbow
+	file_name = "srm_shortbow"
+	name = "Shortbow-class Dropship"
+	faction = /datum/faction/srm
+	token_icon_state = "ship_tiny_generic"
+	prefix = "SRSV"
