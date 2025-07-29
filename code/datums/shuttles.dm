@@ -403,7 +403,7 @@
 
 /datum/map_template/shuttle/subshuttles/anvil
 	file_name = "inteq_anvil"
-	name = "Anvil-class Dropship"
+	name = "Anvil-class Mobile Operations Shuttle"
 	faction = /datum/faction/inteq
 	token_icon_state = "ship_tiny_generic"
 	prefix = "IRMV"
