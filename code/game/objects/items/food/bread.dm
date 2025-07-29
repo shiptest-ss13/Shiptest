@@ -18,7 +18,7 @@
 	AddComponent(/datum/component/food_storage)
 
 /obj/item/food/bread/make_processable()
-	if (slice_type)
+	if(slice_type)
 		AddElement(/datum/element/processable, TOOL_KNIFE, slice_type, yield, 3 SECONDS, table_required = TRUE)
 		AddElement(/datum/element/processable, TOOL_SAW, slice_type, yield, 4 SECONDS, table_required = TRUE)
 

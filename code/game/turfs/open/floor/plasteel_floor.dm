@@ -46,7 +46,7 @@
 /turf/open/floor/plasteel/white/telecomms
 	initial_gas_mix = TCOMMS_ATMOS
 /turf/open/floor/plasteel/white/plasma
-	initial_gas_mix = ATMOS_TANK_PLASMA
+	initial_gas_mix = ATMOS_TANK_PLASMAHALF
 
 /turf/open/floor/plasteel/mono
 	icon_state = "monotile_gray"
@@ -59,9 +59,9 @@
 	base_icon_state = "monotile_light"
 
 /turf/open/floor/plasteel/mono/white/plasma
-	initial_gas_mix = ATMOS_TANK_PLASMA
+	initial_gas_mix = ATMOS_TANK_PLASMAHALF
 /turf/open/floor/plasteel/mono/dark/plasma
-	initial_gas_mix = ATMOS_TANK_PLASMA
+	initial_gas_mix = ATMOS_TANK_PLASMAHALF
 /turf/open/floor/plasteel/mono/white/airless
 	initial_gas_mix = AIRLESS_ATMOS
 /turf/open/floor/plasteel/mono/dark/airless
@@ -94,6 +94,8 @@
 /turf/open/floor/plasteel/patterned
 	icon_state = "tile_full"
 	base_icon_state = "tile_full"
+/turf/open/floor/plasteel/patterned/jungleplanet
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 /turf/open/floor/plasteel/patterned/external
 	initial_gas_mix = AIRLESS_ATMOS
 /turf/open/floor/plasteel/patterned/external/handle_decompression_floor_rip(sum)
@@ -101,6 +103,8 @@
 /turf/open/floor/plasteel/patterned/cargo_one
 	icon_state = "cargo_one_full"
 	base_icon_state = "cargo_one_full"
+/turf/open/floor/plasteel/patterned/cargo_one/jungleplanet
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 /turf/open/floor/plasteel/patterned/cargo_one/external
 	initial_gas_mix = AIRLESS_ATMOS
 /turf/open/floor/plasteel/patterned/cargo_one/external/handle_decompression_floor_rip(sum)

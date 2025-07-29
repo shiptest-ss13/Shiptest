@@ -63,5 +63,5 @@
 			else
 				to_chat(C, span_hypnophrase("The light is so pretty..."))
 				C.confused += min(C.confused + 10, 20)
-				C.dizziness += min(C.dizziness + 10, 20)
+				C.adjust_timed_status_effect(20 SECONDS, /datum/status_effect/dizziness, max_duration = 40 SECONDS)
 				C.drowsyness += min(C.drowsyness + 10, 20)

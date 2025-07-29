@@ -15,7 +15,6 @@
 
 /datum/status_effect/trickwine
 	id = "trick_wine"
-	examine_text = span_notice("They seem to be affected by a trickwine.")
 	alert_type = /atom/movable/screen/alert/status_effect/trickwine
 	// Try to match normal reagent tick rate based on on_mob_life
 	tick_interval = 20
@@ -62,6 +61,12 @@
 	if(particle_generator)
 		QDEL_NULL(particle_generator)
 
+/datum/status_effect/trickwine/get_examine_text()
+	if(trickwine_examine_text)
+		return span_notice(trickwine_examine_text)
+	else
+		return span_notice("SUBJECTPRONOUN seems to be affected by [src].")
+
 //////////
 // BUFF //
 //////////
@@ -69,28 +74,12 @@
 	id = "trick_wine_buff"
 	alert_desc = "Your empowered a trickwine!"
 
-/datum/status_effect/trickwine/buff/on_creation(mob/living/new_owner, datum/reagent/consumable/ethanol/trickwine/trickwine_reagent)
-	. = ..()
-	if(trickwine_examine_text)
-		examine_text = span_notice(trickwine_examine_text)
-	else
-		examine_text = span_notice("SUBJECTPRONOUN seems to be affected by [trickwine_reagent.name].")
 
-////////////
 // DEBUFF //
 ////////////
 /datum/status_effect/trickwine/debuff
 	id = "trick_wine_debuff"
 	alert_desc = "Your weakened a trickwine!"
-
-/datum/status_effect/trickwine/debuff/on_creation(mob/living/new_owner, datum/reagent/consumable/ethanol/trickwine/trickwine_reagent, set_duration = null)
-	if(isnum(set_duration))
-		duration = set_duration
-	. = ..()
-	if(trickwine_examine_text)
-		examine_text = span_notice(trickwine_examine_text)
-	else
-		examine_text = span_notice("SUBJECTPRONOUN seems to be covered in [trickwine_reagent.name].")
 
 //////////////
 // REAGENTS //
@@ -186,7 +175,7 @@
 
 /datum/status_effect/trickwine/buff/ash
 	id = "ash_wine_buff"
-	trickwine_examine_text = "SUBJECTPRONOUN seems to be filled with energy and devotion. There eyes are dialated and they seem to be twitching."
+	trickwine_examine_text = "SUBJECTPRONOUN is filled with energy and devotion! Their eyes are dialated and they are twitching."
 	//message_apply_others =  ""
 	//message_apply_self = ""
 	//message_remove_others = ""
@@ -195,7 +184,7 @@
 
 /datum/status_effect/trickwine/debuff/ash
 	id = "ash_wine_debuff"
-	trickwine_examine_text = "SUBJECTPRONOUN seems to be covered in a thin layer of ash. They seem to be twitching and jittery."
+	trickwine_examine_text = "SUBJECTPRONOUN is covered in a thin layer of ash. They are twitching and jittery."
 	//message_apply_others =  ""
 	//message_apply_self = ""
 	//message_remove_others = ""
@@ -205,9 +194,9 @@
 /datum/status_effect/trickwine/debuff/ash/tick()
 	switch(pick("jitter", "dizzy", "drug"))
 		if("jitter")
-			owner.adjust_jitter(3)
+			owner.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 		if("dizzy")
-			owner.Dizzy(2)
+			owner.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 		if("drug")
 			owner.adjust_drugginess(3)
 
@@ -333,13 +322,51 @@
 	buff_effect = /datum/status_effect/trickwine/buff/hearth
 	debuff_effect = /datum/status_effect/trickwine/debuff/hearth
 	dip_ammo_type = /obj/item/ammo_casing/c38/hotshot
+	/// While this reagent is in our bloodstream, we reduce all bleeding by this factor
+	var/passive_bleed_modifier = 0.4
+	/// For tracking when we tell the person we're no longer bleeding
+	var/was_working
 
-//This needs a buff
+/datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_metabolize(mob/living/M)
+	ADD_TRAIT(M, TRAIT_COAGULATING, /datum/reagent/consumable/ethanol/trickwine/hearth_wine)
+	if(!ishuman(M))
+		return
+
+	var/mob/living/carbon/human/blood_boy = M
+	blood_boy.physiology?.bleed_mod /= passive_bleed_modifier
+	return ..()
+
+/datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_end_metabolize(mob/living/M)
+	REMOVE_TRAIT(M, TRAIT_COAGULATING, /datum/reagent/consumable/ethanol/trickwine/hearth_wine)
+	//should probably generic proc this at a later point. I'm probably gonna use it a bit
+	if(was_working)
+		to_chat(M, span_warning("The alcohol thickening your blood loses its effect!"))
+	if(!ishuman(M))
+		return
+
+	var/mob/living/carbon/human/blood_boy = M
+	blood_boy.physiology?.bleed_mod /= passive_bleed_modifier
+
+	return ..()
+
 /datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_life(mob/living/M)
 	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		H.heal_bleeding(0.25)
+	if(!ishuman(M))
+		return ..()
+	var/mob/living/carbon/guy_who_probably_got_shot = M
+	if(prob(20) && length(guy_who_probably_got_shot.all_wounds))
+		to_chat(M, span_warning("Your cuts and punctures sear for a second, before ceasing their bloody flow!"))
+		for(var/datum/wound/slash/cut in guy_who_probably_got_shot.all_wounds)
+			cut.remove_wound()
+		for(var/datum/wound/pierce/hole in guy_who_probably_got_shot.all_wounds)
+			hole.remove_wound()
+
+	if(prob(10) && length(guy_who_probably_got_shot.all_wounds))
+		to_chat(M, span_warning("Warmth blossoms across your body!"))
+		for(var/datum/wound/muscle/muscle_ouchie in guy_who_probably_got_shot.all_wounds)
+			muscle_ouchie.remove_wound()
+		for(var/obj/item/organ/O in guy_who_probably_got_shot.internal_organs)
+			O.damage = 0
 	return ..()
 
 /datum/status_effect/trickwine/buff/hearth
