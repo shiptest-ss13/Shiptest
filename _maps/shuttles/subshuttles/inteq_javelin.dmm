@@ -25,9 +25,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "dx" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 5
-	},
 /obj/machinery/holopad,
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 4
@@ -40,6 +37,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -299,9 +299,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "ya" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 8
 	},
@@ -319,6 +316,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -379,7 +379,6 @@
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/bridge)
 "ED" = (
-/obj/structure/table/reinforced,
 /obj/item/radio/intercom/table{
 	dir = 8;
 	pixel_x = -6;
@@ -390,13 +389,14 @@
 	pixel_x = -6;
 	pixel_y = 0
 	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 10
-	},
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/south,
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 10
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "FG" = (
@@ -515,14 +515,14 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/bridge)
 "QL" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 6
-	},
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
