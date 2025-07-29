@@ -191,3 +191,7 @@
   - server: the build chain used in TGS has been fixed so that "#define CBS" is properly
       prepended to shiptest.dme, and suppresses compiler warnings regarding building
       the dme directly.
+2025-07-29:
+  SapphicOverload:
+  - bugfix: Fixed manifest and join menu UIs not updating properly
+  - bugfix: Fixed certain text characters breaking memos
