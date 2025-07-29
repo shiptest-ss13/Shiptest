@@ -58,6 +58,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/bridge)
 "fZ" = (
@@ -91,6 +94,9 @@
 /obj/machinery/power/shuttle/engine/electric,
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/bridge)
@@ -180,6 +186,9 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/bridge)
@@ -364,6 +373,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/bridge)
 "ED" = (
@@ -434,6 +446,9 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/maintenance{
+	req_ship_access = 0
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -670,6 +685,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/airlock/maintenance{
+	req_ship_access = 0
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 
