@@ -192,7 +192,7 @@
 /datum/reagent/medicine/silfrine/on_mob_metabolize(mob/living/L)
 	. = ..()
 	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/silfrine)
-	if(!HAS_TRAIT(M, TRAIT_ANALGESIA))
+	if(!HAS_TRAIT(L, TRAIT_ANALGESIA))
 		SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 
 /datum/reagent/medicine/silfrine/on_mob_end_metabolize(mob/living/L)
@@ -234,6 +234,49 @@
 		M.adjust_bodytemperature(4 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(apply_change=FALSE))
 	..()
 
+/datum/reagent/medicine/alvitane
+	name = "Alvitane"
+	description = ""
+	reagent_state = LIQUID
+	color = "#F7FFA5"
+	overdose_threshold = 30
+	var/did_overdose
+
+/datum/reagent/medicine/alvitane/on_mob_life(mob/living/carbon/M)
+	M.adjustFireLoss(-1*REM, 0)
+	M.adjust_bodytemperature(-0.6 * TEMPERATURE_DAMAGE_COEFFICIENT, M.dna.species.bodytemp_normal)
+	..()
+	. = 1
+
+/datum/reagent/medicine/alvitane/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
+		if(method in list(TOUCH, VAPOR, PATCH))
+
+	..()
+
+/datum/reagent/medicine/alvitane/on_mob_end_metabolize(mob/living/L)
+	. = ..()
+	if(!ishuman(L))
+		return
+
+	if(did_overdose)
+		var/mob/living/carbon/human/normal_guy = L
+		normal_guy.physiology?.burn_mod /= brute_damage_modifier
+
+/datum/reagent/medicine/alvitane/overdose_start(mob/living/M)
+	. = ..()
+
+	if(!ishuman(M))
+		return
+
+	did_overdose = TRUE
+	var/mob/living/carbon/human/overdose_victim = M
+	overdose_victim.physiology?.burn_mod *= brute_damage_modifier
+
+/datum/reagent/medicine/alvitane/overdose_process(mob/living/carbon/M)
+	M.adjustFireLoss(3*REM, 0.)
+	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, 50)
+	..()
+
 
 /datum/reagent/medicine/quardexane
 	name = "Quardexane"
@@ -244,7 +287,7 @@
 	reagent_weight = 0.6
 
 /datum/reagent/medicine/rhigoxane/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-2*REM, 0.)
+	M.adjustFireLoss(-2*REM, 0)
 	M.adjust_bodytemperature(-0.6 * TEMPERATURE_DAMAGE_COEFFICIENT, M.dna.species.bodytemp_normal)
 	..()
 	. = 1
