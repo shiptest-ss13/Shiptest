@@ -536,30 +536,3 @@
 	REMOVE_TRAIT(M, TRAIT_STABLEHEART, type)
 	REMOVE_TRAIT(M, TRAIT_STABLELIVER, type)
 
-/datum/reagent/medicine/cordiolis_hepatico
-	name = "Cordiolis Hepatico"
-	description = "A strange, pitch-black reagent that seems to absorb all light. Effects unknown."
-	color = "#000000"
-	self_consuming = TRUE
-
-/datum/reagent/medicine/cordiolis_hepatico/on_mob_add(mob/living/M)
-	..()
-	ADD_TRAIT(M, TRAIT_STABLELIVER, type)
-	ADD_TRAIT(M, TRAIT_STABLEHEART, type)
-
-/datum/reagent/medicine/cordiolis_hepatico/on_mob_end_metabolize(mob/living/M)
-	..()
-	REMOVE_TRAIT(M, TRAIT_STABLEHEART, type)
-	REMOVE_TRAIT(M, TRAIT_STABLELIVER, type)
-
-/datum/reagent/medicine/muscle_stimulant
-	name = "Muscle Stimulant"
-	description = "A potent chemical that allows someone under its influence to be at full physical ability even when under massive amounts of pain."
-
-/datum/reagent/medicine/muscle_stimulant/on_mob_metabolize(mob/living/L)
-	. = ..()
-	L.add_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
-
-/datum/reagent/medicine/muscle_stimulant/on_mob_end_metabolize(mob/living/L)
-	. = ..()
-	L.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)

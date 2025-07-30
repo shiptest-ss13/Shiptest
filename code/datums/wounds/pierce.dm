@@ -116,6 +116,12 @@
 	. = ..()
 	blood_flow -= 0.05 * power // 20u * 0.05 = -1 blood flow, less than with slashes but still good considering smaller bleed rates
 
+/datum/wound/pierce/on_silfrine(power)
+	if(severity < WOUND_SEVERITY_SEVERE)
+		qdel(src)
+	else
+		blood_flow -= 0.1 * power
+
 /// If someone is using a suture to close this puncture
 /datum/wound/pierce/proc/suture(obj/item/stack/medical/suture/I, mob/user)
 	var/self_penalty_mult = (user == victim ? 1 : 1)

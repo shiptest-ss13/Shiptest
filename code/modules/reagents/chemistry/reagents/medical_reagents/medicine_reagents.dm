@@ -15,7 +15,7 @@
 
 /datum/reagent/medicine/indomide
 	name = "Indomide"
-	description = ""
+	description = "An anti-inflammatory initially isolated from a form of Kalixcian cave fungus. Thins the blood, and causes bruises and cuts to slowly heal. Overdose can cause sores to open along the body."
 	reagent_state = LIQUID
 	color = "#FFFF6B"
 	overdose_threshold = 20
@@ -93,7 +93,7 @@
 
 /datum/reagent/medicine/hadrakine
 	name = "Hadrakine Powder"
-	description = ""
+	description = "An aluminum based styptic that rapidly seals flesh wounds upon administration, and lingers in the blood stream, causing slightly reduced blood flow, and stimulating healing of further, minor injuries. Overdose causes blood clotting, shortness of breath, and potential brain damage."
 	reagent_state = LIQUID
 	color = "#FF9696"
 	overdose_threshold = 45
@@ -164,15 +164,28 @@
 
 /datum/reagent/medicine/silfrine
 	name = "Silfrine"
-	description = ""
+	description = "An extremely aggressive silver-based reagent suited best for catalyzing rapid platlet movement, and sealing of wounds. This is an extremely painful process. Overdose causes shortness of breath, and brute damage, as the body tries to seal non-existent wounds."
 	reagent_state = LIQUID
-	color = "#FF9696"
+	color = "#725cfd"
 	overdose_threshold = 20
 
+/datum/reagent/medicine/silfrine/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
+	if(iscarbon(M) && M.stat != DEAD)
+		var/mob/living/carbon/paper_cut_victim = M
+		if(method in list(INGEST, INJECT, PATCH))
+			for(var/datum/wound/paper_cut in paper_cut_victim.all_wounds)
+				paper_cut.on_synthflesh(reac_volume)
+	..()
+
 /datum/reagent/medicine/silfrine/on_mob_life(mob/living/carbon/M)
-	var/effectiveness_multiplier = M.bruteloss/100
+	var/effectiveness_multiplier = clamp(M.bruteloss/100, 0.2, 1.5)
 	var/brute_heal = effectiveness_multiplier * REM * 3
 	M.adjustBruteLoss(brute_heal, 0)
+
+	if(!HAS_TRAIT(M, TRAIT_ANALGESIA))
+		to_chat(M, span_warning("Your body ignites in pain as nerves are rapidly reformed, and flesh is freshly knit!"))
+		M.force_scream()
+
 	..()
 	. = 1
 
