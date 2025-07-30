@@ -1,0 +1,49 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"faction": "/datum/faction/syndicate/hardliners",
+	"prefix": "ISV",
+	"manufacturer": "Kasagi-Fischer Partnership",
+	"map_name": "Suspicious Venetia-class Frontier Yacht",
+	"namelists": [
+		"GORLEX",
+		"NATURAL_AGGRESSIVE",
+		"BEASTS",
+		"WEAPONS"
+	],
+	"map_short_name": "Suspicious Venetia-class",
+	"description": "This suspicious-looking Venetia-class is a design from the high end of Kasagi-Fischer Partnership's catalog, usually seen in the frontier owned by wealthy individuals, the political authorities of independent worlds, and the odd Solarian adventurer. This seems to be none of the three, however, as several sanctioned individuals have been seen entering and exiting this vessel in the past few days, with rumors of a "great Game" afoot. This particular vessel has been overhauled by Cybersun Virtual Solutions, with a contingent of Gorlex Hardliner mercenaries replacing the usual IRMG security detail."
+	,"tags": [
+		"Combat",
+		"scrapper",
+		"RP Focus"
+	],
+	"map_path": "_maps/shuttles/syndicate/syndicate_hardliners_susvenetia.dmm",
+	"map_id": "syndicate_hardliners_susvenetia",
+	"limit": 1,
+	"starting_funds": 2000,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/syndicate/captain/gorlex",
+			"officer": true,
+			"slots": 1
+		},
+		"Cybersun Supervisor": {
+			"outfit": "/datum/outfit/job/syndicate/head_of_personnel/cybersun",
+			"officer": true,
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/syndicate/engineer/gorlex",
+			"slots": 2
+		},
+		"Trooper": {
+			"outfit": "/datum/outfit/job/syndicate/security/gorlex",
+			"slots": 2
+		},
+		"Passenger": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/gorlex",
+			"slots": 4
+		}
+	},
+	"enabled": true
+}
