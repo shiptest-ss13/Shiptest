@@ -286,6 +286,8 @@
 	path = /obj/item/clothing/under/suit/dresssuit/skirt
 
 // Overalls
+/datum/gear/uniform/overalls
+	subtype_path = /datum/gear/uniform/overalls
 
 /datum/gear/uniform/overalls/denim
 	display_name = "overalls, denim"
