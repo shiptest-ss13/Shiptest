@@ -35,7 +35,7 @@
 			continue
 
 		output += include_template("Autowiki/ShipTable/ParentRow", list(
-			"name" = "\[\[[current.name]\]\]",
+			"name" = current.name,
 			"color" = current.color,
 			"length" = length(subfactions) + 1
 		))
@@ -65,7 +65,7 @@
 		ships_output = "''No available ships.''"
 
 	var/list/details = list(
-		"name" = "\[\[[current.name]\]\]",
+		"name" = current.name,
 		"color" = current.color,
 		"ships" = ships_output
 	)
