@@ -23,13 +23,13 @@
 
 		var/ship_name = escape_value(ship.name)
 		output[ship_name] = include_template("Autowiki/Ship", list(
-			"name" = ship_name,
+			"name" = "\[\[[ship_name]|<span style='text-decoration-line: underline; text-decoration-thickness: 3px;'><span style='color: white;'>[ship_name]</span></span>\]\]",
 			"shortname" = escape_value(ship.short_name) || ship_name,
 			"description" = escape_value(ship.description),
 			"manufacturer" = escape_value(ship.manufacturer),
 			"prefix" = escape_value(ship.prefix),
 			"faction" = escape_value(ship.faction.name),
-			"color" = escape_value(copytext_char(ship.faction.background_color, 2)), // The wiki doesn't want the leading # and also use the background color for readability a la ShipTable
+			"color" = escape_value(copytext_char(ship.faction.color, 2)), // The wiki doesn't want the leading #
 			"tags" = escape_value(ship.tags?.Join(", ")),
 			"startingFunds" = ship.starting_funds,
 			"limit" = ship.limit,
