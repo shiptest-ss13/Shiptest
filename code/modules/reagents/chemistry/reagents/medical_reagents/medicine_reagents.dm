@@ -249,8 +249,14 @@
 	. = 1
 
 /datum/reagent/medicine/alvitane/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
-		if(method in list(TOUCH, VAPOR, PATCH))
-
+	if(method in list(TOUCH, VAPOR, PATCH))
+		M.adjustBurnloss(-reac_volume/2)
+		M.force_scream()
+		if(show_message && !HAS_TRAIT(M, TRAIT_ANALGESIA))
+			to_chat(M, span_danger("You feel your burns regenerating! Your nerves are burning!"))
+			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+		else
+			to_chat(M, span_notice("You feel your burns twisting."))
 	..()
 
 /datum/reagent/medicine/alvitane/on_mob_end_metabolize(mob/living/L)
@@ -260,7 +266,7 @@
 
 	if(did_overdose)
 		var/mob/living/carbon/human/normal_guy = L
-		normal_guy.physiology?.burn_mod /= brute_damage_modifier
+		normal_guy.physiology?.burn_mod /= burn_damage_modifier
 
 /datum/reagent/medicine/alvitane/overdose_start(mob/living/M)
 	. = ..()
@@ -270,17 +276,16 @@
 
 	did_overdose = TRUE
 	var/mob/living/carbon/human/overdose_victim = M
-	overdose_victim.physiology?.burn_mod *= brute_damage_modifier
+	overdose_victim.physiology?.burn_mod *= burn_damage_modifier
 
 /datum/reagent/medicine/alvitane/overdose_process(mob/living/carbon/M)
-	M.adjustFireLoss(3*REM, 0.)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, 50)
+	M.adjustToxLoss(0.5*REM, 0)
 	..()
 
 
 /datum/reagent/medicine/quardexane
 	name = "Quardexane"
-	description = "A second generation burn treatment agent exhibiting a cooling effect that is especially pronounced when deployed as a spray. Its high halogen content helps extinguish fires."
+	description = ""
 	reagent_state = LIQUID
 	color = "#F7FFA5"
 	overdose_threshold = 25
@@ -307,6 +312,37 @@
 	M.adjustFireLoss(3*REM, 0.)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, 50)
 	..()
+
+/datum/reagent/medicine/ysilane
+	name = "Ysilane"
+	description = ""
+	reagent_state = LIQUID
+	color = "#F7FFA5"
+	overdose_threshold = 21
+	reagent_weight = 0.6
+
+/datum/reagent/medicine/ysilane/on_mob_life(mob/living/carbon/M)
+	M.adjustStaminaLoss(2*REM, 0)
+	M.adjust_bodytemperature(-0.6 * TEMPERATURE_DAMAGE_COEFFICIENT, M.dna.species.bodytemp_normal)
+	..()
+	. = 1
+
+/datum/reagent/medicine/ysilane/expose_mob(mob/living/carbon/M, method=VAPOR, reac_volume)
+	if(method != VAPOR)
+		return
+
+	M.adjust_bodytemperature(-reac_volume * TEMPERATURE_DAMAGE_COEFFICIENT * 0.5, 200)
+	M.adjust_fire_stacks(-reac_volume / 2)
+	if(reac_volume >= metabolization_rate)
+		M.ExtinguishMob()
+
+	..()
+
+/datum/reagent/medicine/ysilane/overdose_process(mob/living/carbon/M)
+	M.adjustFireLoss(3*REM, 0.)
+	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, 50)
+	..()
+
 
 /// TOXIN REAGENTS ///
 
