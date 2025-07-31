@@ -61,8 +61,8 @@
 #pragma PickWeightedSyntax disabled
 #pragma AmbiguousInOrder error
 #pragma ExtraToken error
-#pragma RuntimeSearchOperator error
+#pragma RuntimeSearchOperator disabled
 
-//4000-4999
-#pragma ListNegativeSizeException warning
-#pragma InitialVarOnPrimitiveException warning
+//4000-4999 - Runtime directives
+//#pragma ListNegativeSizeException warning
+//#pragma InitialVarOnPrimitiveException warning
