@@ -94,7 +94,7 @@
 	short_name = "INTEQ"
 	parent_faction = /datum/faction/inteq
 	prefixes = PREFIX_INTEQ
-	color = "#FACE65"
+	color = "#E6B93C"
 
 /datum/faction/clip
 	name = FACTION_CLIP
