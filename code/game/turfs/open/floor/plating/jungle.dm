@@ -168,10 +168,16 @@
 	light_power = 1
 	light_color = COLOR_JUNGLEPLANET_LIGHT
 
+/turf/open/floor/wood/mahogany/jungleplanet
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
 /turf/open/floor/carpet/jungleplanet
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/carpet/black/jungleplanet
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/carpet/red/jungleplanet
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 
 //cementcrete
