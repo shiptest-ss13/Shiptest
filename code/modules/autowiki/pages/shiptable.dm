@@ -14,8 +14,6 @@
 		var/datum/map_template/shuttle/ship = SSmapping.shuttle_templates[shipname]
 		if(!ship.faction)
 			continue
-		if(ship.category == "subshuttles") // Skip generating/showing subshuttles
-			continue
 
 		LAZYADDASSOCLIST(factions[ship.faction.parent_faction], ship.faction.type, ship)
 
@@ -37,7 +35,7 @@
 			continue
 
 		output += include_template("Autowiki/ShipTable/ParentRow", list(
-			"name" = "\[\[[current.name]|<span style='text-decoration-line: underline; text-decoration-thickness: 3px;'><span style='color: white;'>[current.name]</span></span>\]\]",
+			"name" = "\[\[[current.name]\]\]",
 			"color" = current.color,
 			"length" = length(subfactions) + 1
 		))
@@ -67,7 +65,7 @@
 		ships_output = "''No available ships.''"
 
 	var/list/details = list(
-		"name" = "\[\[[current.name]|<span style='text-decoration-line: underline; text-decoration-thickness: 3px;'><span style='color: white;'>[current.name]</span></span>\]\]",
+		"name" = "\[\[[current.name]\]\]",
 		"color" = current.color,
 		"ships" = ships_output
 	)

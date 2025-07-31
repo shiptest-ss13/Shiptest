@@ -23,7 +23,7 @@
 
 		var/ship_name = escape_value(ship.name)
 		output[ship_name] = include_template("Autowiki/Ship", list(
-			"name" = "\[\[[ship_name]|<span style='text-decoration-line: underline; text-decoration-thickness: 3px;'><span style='color: white;'>[ship_name]</span></span>\]\]",
+			"name" = ship_name,
 			"shortname" = escape_value(ship.short_name) || ship_name,
 			"description" = escape_value(ship.description),
 			"manufacturer" = escape_value(ship.manufacturer),
