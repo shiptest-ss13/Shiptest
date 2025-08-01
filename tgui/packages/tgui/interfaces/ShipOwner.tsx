@@ -1,4 +1,5 @@
 import { useBackend, useLocalState } from '../backend';
+import { decodeHtmlEntities } from 'common/string';
 import {
   Button,
   LabeledList,
@@ -114,7 +115,9 @@ const ShipOwnerContent = (_, context: any) => {
                 onClick={() => act('memo')}
               />
             </LabeledList.Item>
-            <LabeledList.Item label="Current Memo">{memo}</LabeledList.Item>
+            <LabeledList.Item label="Current Memo">
+              {decodeHtmlEntities(memo)}
+            </LabeledList.Item>
           </LabeledList>
           <Divider />
           <Table>
