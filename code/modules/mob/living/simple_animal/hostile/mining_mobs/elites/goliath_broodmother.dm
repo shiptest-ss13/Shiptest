@@ -34,7 +34,7 @@
 	melee_damage_lower = 30
 	melee_damage_upper = 30
 	armour_penetration = 30
-	armor = list("melee" = 40, "bullet" = 40, "laser" = -50, "energy" = 10, "bomb" = 50, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10) // thicker hide due to being older, but still weak to lasers.
+	armor = list("melee" = 40, "bullet" = 40, "laser" = -25, "energy" = 10, "bomb" = 50, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10) // thicker hide due to being older, but still weak to lasers.
 	attack_verb_continuous = "beats down on"
 	attack_verb_simple = "beat down on"
 	attack_sound = 'sound/weapons/punch1.ogg'
