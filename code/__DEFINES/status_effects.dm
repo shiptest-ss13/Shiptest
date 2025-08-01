@@ -1,13 +1,32 @@
 
-//These are all the different status effects. Use the paths for each effect in the defines.
+///if it allows multiple instances of the effect
+#define STATUS_EFFECT_MULTIPLE 0
+///if it allows only one, preventing new instances
+#define STATUS_EFFECT_UNIQUE 1
+///if it allows only one, but new instances replace
+#define STATUS_EFFECT_REPLACE 2
+/// if it only allows one, and new instances just instead refresh the timer
+#define STATUS_EFFECT_REFRESH 3
 
-#define STATUS_EFFECT_MULTIPLE 0 //if it allows multiple instances of the effect
+/// Use in status effect "duration" to make it last forever
+#define STATUS_EFFECT_PERMANENT -1
+/// Use in status effect "tick_interval" to prevent it from calling tick()
+#define STATUS_EFFECT_NO_TICK -1
+/// Use in status effect "tick_interval" to guarantee that tick() gets called on every process()
+#define STATUS_EFFECT_AUTO_TICK 0
 
-#define STATUS_EFFECT_UNIQUE 1 //if it allows only one, preventing new instances
+/// Indicates this status effect is an abstract type, ie not instantiated
+/// Doesn't actually do anything in practice, primarily just a marker / used in unit tests,
+/// so don't worry if your abstract status effect doesn't actually set this
+#define STATUS_EFFECT_ID_ABSTRACT "abstract"
 
-#define STATUS_EFFECT_REPLACE 2 //if it allows only one, but new instances replace
-
-#define STATUS_EFFECT_REFRESH 3 // if it only allows one, and new instances just instead refresh the timer
+///Processing flags - used to define the speed at which the status will work
+/// This is fast - 0.2s between ticks (I believe!)
+#define STATUS_EFFECT_FAST_PROCESS 0
+/// This is slower and better for more intensive status effects - 1s between ticks
+#define STATUS_EFFECT_NORMAL_PROCESS 1
+/// Similar speed to STATUS_EFFECT_FAST_PROCESS, but uses a high priority subsystem (SSpriority_effects)
+#define STATUS_EFFECT_PRIORITY 2
 
 ///////////
 // BUFFS //
