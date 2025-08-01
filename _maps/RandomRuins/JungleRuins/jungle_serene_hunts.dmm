@@ -60,7 +60,7 @@
 "au" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood/ebony/jungleplanet,
+/turf/open/floor/wood/ebony/jungleplanet/lit,
 /area/ruin/powered/hunts/canteen)
 "av" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -192,6 +192,7 @@
 /area/ruin/powered/hunts/barn)
 "bH" = (
 /obj/effect/decal/remains/human,
+/obj/effect/gibspawner/human/bodypartless,
 /turf/open/floor/wood/maple/jungleplanet,
 /area/ruin/powered/hunts/canteen)
 "bI" = (
@@ -239,7 +240,7 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "cj" = (
 /mob/living/simple_animal/hostile/jungle/seedling/mining,
-/turf/open/floor/wood/ebony/jungleplanet,
+/turf/open/floor/wood/ebony/jungleplanet/lit,
 /area/ruin/powered/hunts/canteen)
 "cn" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -705,7 +706,7 @@
 /obj/structure/railing/wood{
 	dir = 4
 	},
-/turf/open/floor/wood/ebony/jungleplanet,
+/turf/open/floor/wood/ebony/jungleplanet/lit,
 /area/ruin/powered/hunts/canteen)
 "hg" = (
 /obj/structure/platform/ship_four{
@@ -982,7 +983,7 @@
 "je" = (
 /obj/structure/table_frame/wood,
 /obj/item/stack/sheet/mineral/wood,
-/turf/open/floor/wood/ebony/jungleplanet,
+/turf/open/floor/wood/ebony/jungleplanet/lit,
 /area/ruin/powered/hunts/canteen)
 "jg" = (
 /obj/structure/grille,
@@ -1189,6 +1190,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/plastic,
 /turf/open/floor/plasteel/white/jungleplanet,
 /area/ruin/powered/hunts/canteen)
 "lb" = (
@@ -1308,7 +1311,7 @@
 /obj/item/chair/wood{
 	dir = 8
 	},
-/turf/open/floor/wood/ebony/jungleplanet,
+/turf/open/floor/wood/ebony/jungleplanet/lit,
 /area/ruin/powered/hunts/canteen)
 "lZ" = (
 /mob/living/simple_animal/hostile/morph{
@@ -1674,10 +1677,6 @@
 	},
 /turf/open/floor/plasteel/stairs/wood/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
-"pi" = (
-/obj/structure/flora/grass/jungle/b,
-/turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/overmap_encounter/planetoid/cave/explored)
 "pj" = (
 /obj/effect/turf_decal/siding/white/corner,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1915,6 +1914,7 @@
 "ru" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/remains/human,
+/obj/effect/gibspawner/human/bodypartless,
 /turf/open/floor/wood/maple/jungleplanet,
 /area/ruin/powered/hunts/canteen)
 "rw" = (
@@ -2125,14 +2125,14 @@
 /obj/structure/railing/wood{
 	dir = 8
 	},
-/turf/open/floor/wood/ebony/jungleplanet,
+/turf/open/floor/wood/ebony/jungleplanet/lit,
 /area/ruin/powered/hunts/canteen)
 "sy" = (
 /obj/structure/railing/wood,
 /obj/item/chair/wood{
 	dir = 1
 	},
-/turf/open/floor/wood/ebony/jungleplanet,
+/turf/open/floor/wood/ebony/jungleplanet/lit,
 /area/ruin/powered/hunts/canteen)
 "sB" = (
 /obj/structure/chair/bench/orange{
@@ -2245,6 +2245,11 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/wood/ebony/jungleplanet,
 /area/ruin/powered/hunts/sec)
+"tr" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/plastic,
+/turf/open/floor/plasteel/white/jungleplanet,
+/area/ruin/powered/hunts/canteen)
 "tt" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spider/stickyweb,
@@ -2336,6 +2341,14 @@
 	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"tS" = (
+/obj/structure/sign/plaques/blank{
+	pixel_y = 30;
+	name = "M-17 MICROTARGET";
+	desc = "The M-17 \"Microtarget\" pistol is a fantastic and versatile choice for any purpose, from small game hunting to self defence. The signature detachable barrel for excellent portability without comprimising accuracy."
+	},
+/turf/closed/wall/mineral/wood,
+/area/ruin/powered/hunts/gun_shop)
 "tT" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 9
@@ -2510,7 +2523,7 @@
 /area/ruin/powered/hunts/gun_shop)
 "vJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood/ebony/jungleplanet,
+/turf/open/floor/wood/ebony/jungleplanet/lit,
 /area/ruin/powered/hunts/canteen)
 "vN" = (
 /obj/structure/spider/stickyweb,
@@ -2887,7 +2900,7 @@
 /obj/item/chair/wood{
 	dir = 1
 	},
-/turf/open/floor/wood/ebony/jungleplanet,
+/turf/open/floor/wood/ebony/jungleplanet/lit,
 /area/ruin/powered/hunts/canteen)
 "zb" = (
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -3079,6 +3092,14 @@
 /obj/item/flashlight/flare/burnt,
 /turf/open/floor/concrete/pavement/jungleplanet,
 /area/ruin/powered/hunts/gate)
+"AE" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/plastic,
+/turf/open/floor/plasteel/white/jungleplanet,
+/area/ruin/powered/hunts/canteen)
 "AF" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark/jungleplanet,
@@ -3416,7 +3437,7 @@
 /obj/structure/sign/plaques/blank{
 	pixel_y = 30;
 	name = "M-17 MICROTARGET";
-	desc = "The M-17 \"Microtarget\" pistol is a fantastic and versatile choice for any purpose, from small game hunting to self defence. The signature detachable barrel for excellent portability without comprimising accuracy."
+	desc = "The M-17 Microtarget pistol is a fantastic and versatile choice for any purpose, from small game hunting to self defence. The signature detachable barrel for excellent portability without comprimising accuracy."
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/powered/hunts/gun_shop)
@@ -3579,7 +3600,7 @@
 /obj/structure/chair/wood{
 	dir = 8
 	},
-/turf/open/floor/wood/ebony/jungleplanet,
+/turf/open/floor/wood/ebony/jungleplanet/lit,
 /area/ruin/powered/hunts/canteen)
 "EJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3968,7 +3989,7 @@
 /obj/structure/railing/wood,
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood/ebony/jungleplanet,
+/turf/open/floor/wood/ebony/jungleplanet/lit,
 /area/ruin/powered/hunts/canteen)
 "HI" = (
 /obj/structure/spacevine,
@@ -4228,6 +4249,10 @@
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"JV" = (
+/obj/effect/decal/cleanable/plastic,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ka" = (
 /obj/machinery/door/airlock{
 	dir = 4;
@@ -4356,7 +4381,7 @@
 /obj/structure/chair/wood{
 	dir = 4
 	},
-/turf/open/floor/wood/ebony/jungleplanet,
+/turf/open/floor/wood/ebony/jungleplanet/lit,
 /area/ruin/powered/hunts/canteen)
 "Li" = (
 /obj/machinery/camera/autoname,
@@ -4430,7 +4455,7 @@
 /obj/structure/chair/wood{
 	dir = 4
 	},
-/turf/open/floor/wood/ebony/jungleplanet,
+/turf/open/floor/wood/ebony/jungleplanet/lit,
 /area/ruin/powered/hunts/canteen)
 "LI" = (
 /obj/effect/turf_decal/spline/fancy/wood{
@@ -5200,7 +5225,7 @@
 /obj/item/chair/wood{
 	dir = 8
 	},
-/turf/open/floor/wood/ebony/jungleplanet,
+/turf/open/floor/wood/ebony/jungleplanet/lit,
 /area/ruin/powered/hunts/canteen)
 "Sf" = (
 /obj/effect/turf_decal/siding/wood,
@@ -5370,7 +5395,7 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "TJ" = (
-/turf/open/floor/wood/ebony/jungleplanet,
+/turf/open/floor/wood/ebony/jungleplanet/lit,
 /area/ruin/powered/hunts/canteen)
 "TM" = (
 /obj/structure/chair/comfy/shuttle{
@@ -5965,6 +5990,15 @@
 /mob/living/simple_animal/hostile/poison/giant_spider,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"YJ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/item/electronics/airlock,
+/obj/effect/decal/cleanable/plastic,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "YL" = (
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
@@ -6053,10 +6087,6 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/toilet)
-"Zp" = (
-/obj/structure/flora/junglebush/c,
-/turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/overmap_encounter/planetoid/cave/explored)
 "Zw" = (
 /obj/item/flashlight/lantern,
 /obj/structure/table/wood,
@@ -6098,7 +6128,7 @@
 	icon_state = "wood_table";
 	dir = 8
 	},
-/turf/open/floor/wood/ebony/jungleplanet,
+/turf/open/floor/wood/ebony/jungleplanet/lit,
 /area/ruin/powered/hunts/canteen)
 "ZI" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse,
@@ -6149,7 +6179,7 @@
 /obj/item/chair/wood{
 	dir = 8
 	},
-/turf/open/floor/wood/ebony/jungleplanet,
+/turf/open/floor/wood/ebony/jungleplanet/lit,
 /area/ruin/powered/hunts/canteen)
 "ZV" = (
 /obj/machinery/door/airlock/wood,
@@ -7779,7 +7809,7 @@ xr
 xr
 Va
 fL
-Yz
+tS
 Yz
 Ll
 RJ
@@ -8551,8 +8581,8 @@ TN
 YT
 eS
 qX
-ou
-pM
+tr
+AE
 ou
 JM
 Qf
@@ -8661,8 +8691,8 @@ YT
 Va
 fl
 rP
-rP
-eW
+JV
+YJ
 Vv
 eS
 eS
@@ -9158,7 +9188,7 @@ pV
 pV
 pV
 NB
-Zp
+DP
 rI
 XJ
 NB
@@ -9213,7 +9243,7 @@ pV
 pP
 lr
 lr
-pi
+gZ
 DP
 BQ
 BQ
@@ -10213,8 +10243,8 @@ lO
 QR
 jU
 bd
-Lj
-pP
+YX
+NB
 lO
 NB
 pV
@@ -10268,7 +10298,7 @@ lO
 lO
 jU
 jU
-pP
+NB
 GF
 NB
 pV

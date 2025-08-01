@@ -22,8 +22,8 @@
 
 /obj/item/paper/crumpled/bloody/fluff/ruin/jungle/reminder
 	name = "\improper Reminder"
-	desc = "Note to self. Remember to replace containment unit 2 next week. The Broodmother dented it pretty badly, even with all the extra padding and the fact we dosed it up with enough tranquilizer to put ten people to sleep permanently."
+	default_raw_text = "Note to self. Remember to replace containment unit 2 next week. The Broodmother dented it pretty badly, even with all the extra padding and the fact we dosed it up with enough tranquilizer to put ten people to sleep permanently."
 
 /obj/item/paper/crumpled/bloody/fluff/ruin/jungle/missive
 	name = "\improper Notice"
-	desc = "Lance, we've hit it big. We got a famous Frontier celebrity coming in to film a commercial with us. They want something more \"dangerous\" and \"exotic\". Bring in something big for the next haul. We're gonna show them shooting it down on film. This is gonna skyrocket our sales."
+	default_raw_text = "Lance, we've hit it big. We got a famous Frontier celebrity coming in to film a commercial with us. They want something more \"dangerous\" and \"exotic\". Bring in something big for the next haul. We're gonna show them shooting it down on film. This is gonna skyrocket our sales."

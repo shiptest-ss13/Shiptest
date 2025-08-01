@@ -159,6 +159,11 @@
 
 /turf/open/floor/wood/ebony/jungleplanet
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+	light_range = 2
+	light_power = 1
+	light_color = COLOR_JUNGLEPLANET_LIGHT
+
+/turf/open/floor/wood/ebony/jungleplanet/lit
 
 /turf/open/floor/plasteel/stairs/wood/jungleplanet
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
