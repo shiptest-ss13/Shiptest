@@ -280,7 +280,7 @@
 	name = "Luminescent Eyes"
 	desc = "A pair of cybernetic eyes that can emit multicolored light"
 	id = "ci-gloweyes"
-	build_type = PROTOLATH
+	build_type = PROTOLATHE
 	construction_time = 40
 	materials = list(/datum/material/iron = 600, /datum/material/glass = 2000)
 	build_path = /obj/item/organ/eyes/robotic/glow
