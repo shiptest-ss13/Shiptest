@@ -603,11 +603,6 @@
 	},
 /turf/open/floor/plating/asteroid/icerock/temperate/lit,
 /area/outpost/exterior)
-"dp" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb,
-/turf/closed/indestructible/titanium/nodiagnonal,
-/area/outpost/maintenance/port)
 "dq" = (
 /obj/machinery/door/airlock/public{
 	name = "Medical Services"
@@ -839,6 +834,27 @@
 	light_range = 2
 	},
 /area/outpost/exterior)
+"eF" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/item/plate{
+	pixel_x = 5;
+	pixel_y = -5
+	},
+/obj/item/trash/sosjerky{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/trash/energybar{
+	pixel_x = -4;
+	pixel_y = -7
+	},
+/obj/structure/sign/poster/contraband/random{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/outpost/maintenance/starboard)
 "eH" = (
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo/smeltery)
@@ -1282,13 +1298,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
-"hl" = (
-/obj/effect/decal/fakelattice{
-	layer = 2.010
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/indestructible/titanium/nodiagnonal,
-/area/outpost/maintenance/port)
 "ho" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plating/asteroid/icerock/temperate/lit,
@@ -8446,27 +8455,6 @@
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/plating,
 /area/outpost/security)
-"VX" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/item/plate{
-	pixel_x = 5;
-	pixel_y = -5
-	},
-/obj/item/trash/sosjerky{
-	pixel_x = 5;
-	pixel_y = 4
-	},
-/obj/item/trash/energybar{
-	pixel_x = -4;
-	pixel_y = -7
-	},
-/obj/structure/sign/poster/contraband/random{
-	pixel_x = 32
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/outpost/maintenance/starboard)
 "VY" = (
 /obj/machinery/door/airlock/outpost{
 	dir = 8
@@ -13777,7 +13765,7 @@ Ak
 dD
 PI
 vs
-hl
+vs
 Tj
 Tj
 Tj
@@ -14113,7 +14101,7 @@ dR
 eo
 tB
 vs
-hl
+vs
 nA
 nA
 Tj
@@ -14202,7 +14190,7 @@ vs
 vs
 vs
 vs
-dp
+vs
 Aj
 YX
 Aj
@@ -14792,7 +14780,7 @@ hG
 Am
 fU
 WL
-VX
+eF
 HO
 TJ
 iZ

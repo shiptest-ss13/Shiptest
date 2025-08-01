@@ -129,9 +129,9 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 5,
 		/datum/reagent/consumable/nutriment/vitamin = 2,
-		/datum/reagent/consumable/nutriment/protein = 2,
+		/datum/reagent/calcium = 2
 	)
-	tastes = list("fitness" = 2)
+	tastes = list("orange chocolate" = 3, "an awful lemon filling" = 2, "something hard" = 1)
 	food_flags = FOOD_FINGER_FOOD
 	w_class = WEIGHT_CLASS_SMALL
 
