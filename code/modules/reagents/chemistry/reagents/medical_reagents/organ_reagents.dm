@@ -38,10 +38,10 @@
 	color = "#606060" //inacusiate is light grey
 
 /datum/reagent/medicine/inacusiate/on_mob_life(mob/living/carbon/M)
-	var/obj/item/organ/ears/ears = M.get_organ_slot(ORGAN_SLOT_EARS)
+	var/obj/item/organ/ears/ears = M.getorganslot(ORGAN_SLOT_EARS)
 	if(!ears)
 		return
-	ears.adjustEarDamage(-4 * REM * seconds_per_tick, -4 * REM * seconds_per_tick)
+	ears.adjustEarDamage(-4 * REM)
 	return ..()
 
 /datum/reagent/medicine/mannitol

@@ -178,6 +178,7 @@
 	REMOVE_TRAIT(L, TRAIT_FEARLESS, type)
 	..()
 
+/datum/reagent/medicine/psicodine/on_mob_life(mob/living/carbon/M)
 	M.adjust_timed_status_effect(-6 SECONDS * REM, /datum/status_effect/jitter)
 	M.adjust_timed_status_effect(-12 SECONDS * REM, /datum/status_effect/dizziness)
 	M.confused = max(0, M.confused-6)

@@ -816,47 +816,6 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	canSmoothWith = list(SMOOTH_GROUP_ABDUCTOR_TABLES)
 	frame = /obj/structure/table_frame/abductor
 
-/obj/structure/table/optable/abductor
-	name = "alien operating table"
-	desc = "Used for alien medical procedures. The surface is covered in tiny spines."
-	frame = /obj/structure/table_frame/abductor
-	buildstack = /obj/item/stack/sheet/mineral/silver
-	framestack = /obj/item/stack/sheet/mineral/abductor
-	buildstackamount = 1
-	framestackamount = 1
-	icon = 'icons/obj/abductor.dmi'
-	icon_state = "bed"
-	can_buckle = 1
-	/// Amount to inject per second
-	var/inject_am = 0.5
-
-	var/static/list/injected_reagents = list(/datum/reagent/medicine/cordiolis_hepatico)
-
-/obj/structure/table/optable/abductor/Initialize()
-	. = ..()
-	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
-	)
-	AddElement(/datum/element/connect_loc, loc_connections)
-
-/obj/structure/table/optable/abductor/proc/on_entered(datum/source, atom/movable/AM)
-	SIGNAL_HANDLER
-	if(iscarbon(AM))
-		START_PROCESSING(SSobj, src)
-		to_chat(AM, span_danger("You feel a series of tiny pricks!"))
-
-/obj/structure/table/optable/abductor/process(seconds_per_tick)
-	. = PROCESS_KILL
-	for(var/mob/living/carbon/C in get_turf(src))
-		. = TRUE
-		for(var/chemical in injected_reagents)
-			if(C.reagents.get_reagent_amount(chemical) < inject_am * seconds_per_tick)
-				C.reagents.add_reagent(chemical, inject_am * seconds_per_tick)
-
-/obj/structure/table/optable/abductor/Destroy()
-	STOP_PROCESSING(SSobj, src)
-	. = ..()
-
 /obj/structure/closet/abductor
 	name = "alien locker"
 	desc = "Contains secrets of the universe."

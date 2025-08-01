@@ -62,13 +62,13 @@
 
 /datum/reagent/medicine/indomide/on_mob_end_metabolize(mob/living/L)
 	. = ..()
-	REMOVE_TRAIT(M, TRAIT_BLOODY_MESS, src)
+	REMOVE_TRAIT(L, TRAIT_BLOODY_MESS, src)
 
 /datum/reagent/medicine/indomide/on_transfer(atom/A, method=INGEST, trans_volume)
 	if(method != INGEST || !iscarbon(A))
 		return
 
-	A.reagents.remove_reagent(/datum/reagent/medicine/trophazole, trans_volume * 0.05)
+	A.reagents.remove_reagent(/datum/reagent/medicine/indomide, trans_volume * 0.05)
 	A.reagents.add_reagent(/datum/reagent/medicine/metafactor, trans_volume * 0.25)
 
 	..()
@@ -124,7 +124,7 @@
 	..()
 	. = 1
 
-/datum/reagent/medicine/hadrakina/on_mob_metabolize(mob/living/L)
+/datum/reagent/medicine/hadrakine/on_mob_metabolize(mob/living/L)
 	. = ..()
 	if(!ishuman(L))
 		return
@@ -174,7 +174,7 @@
 		var/mob/living/carbon/paper_cut_victim = M
 		if(method in list(INGEST, INJECT, PATCH))
 			for(var/datum/wound/paper_cut in paper_cut_victim.all_wounds)
-				paper_cut.on_synthflesh(reac_volume)
+				paper_cut.on_silfrine(reac_volume)
 	..()
 
 /datum/reagent/medicine/silfrine/on_mob_life(mob/living/carbon/M)
@@ -236,11 +236,12 @@
 
 /datum/reagent/medicine/alvitane
 	name = "Alvitane"
-	description = ""
+	description = "A moderate intensity burn medication derived from chemicals specializing in dermal regeneration. Ideal application is exposing it to the flesh, as it allows burns to rapidly reknit themselves. Overdose weakens the user's ability to resist burns, and causes minor toxic effects."
 	reagent_state = LIQUID
 	color = "#F7FFA5"
 	overdose_threshold = 30
 	var/did_overdose
+	var/burn_damage_modifier = 1.3
 
 /datum/reagent/medicine/alvitane/on_mob_life(mob/living/carbon/M)
 	M.adjustFireLoss(-1*REM, 0)
@@ -250,8 +251,12 @@
 
 /datum/reagent/medicine/alvitane/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(method in list(TOUCH, VAPOR, PATCH))
-		M.adjustBurnloss(-reac_volume/2)
+		M.adjustFireLoss(-reac_volume/2)
 		M.force_scream()
+		if(iscarbon(M) && M.stat != DEAD)
+			var/mob/living/carbon/burn_ward_attendee = M
+			for(var/datum/wound/burn in burn_ward_attendee.all_wounds)
+				burn.on_tane(reac_volume/4)
 		if(show_message && !HAS_TRAIT(M, TRAIT_ANALGESIA))
 			to_chat(M, span_danger("You feel your burns regenerating! Your nerves are burning!"))
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
@@ -280,67 +285,84 @@
 
 /datum/reagent/medicine/alvitane/overdose_process(mob/living/carbon/M)
 	M.adjustToxLoss(0.5*REM, 0)
+	M.set_timed_status_effect(5 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 
 /datum/reagent/medicine/quardexane
 	name = "Quardexane"
-	description = ""
+	description = "A third-generation burn medication originating from the Shoal. Injection allows it to rapidly re-knit burns, while vaporous application acts as an cooling agent and sanitizing substance. Overdose causes new burns to form on the user's body."
 	reagent_state = LIQUID
 	color = "#F7FFA5"
 	overdose_threshold = 25
 	reagent_weight = 0.6
 
-/datum/reagent/medicine/rhigoxane/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-2*REM, 0)
+/datum/reagent/medicine/quardexane/on_mob_life(mob/living/carbon/M)
+	M.adjustFireLoss(-1*REM, 0)
 	M.adjust_bodytemperature(-0.6 * TEMPERATURE_DAMAGE_COEFFICIENT, M.dna.species.bodytemp_normal)
 	..()
 	. = 1
 
-/datum/reagent/medicine/rhigoxane/expose_mob(mob/living/carbon/M, method=VAPOR, reac_volume)
-	if(method != VAPOR)
-		return
+/datum/reagent/medicine/quardexane/expose_mob(mob/living/carbon/M, method=VAPOR, reac_volume)
+	if(method == VAPOR)
+		M.adjust_bodytemperature(-reac_volume * TEMPERATURE_DAMAGE_COEFFICIENT * 0.5, 200)
+		M.adjust_fire_stacks(-reac_volume / 2)
+		if(reac_volume >= metabolization_rate)
+			M.ExtinguishMob()
 
-	M.adjust_bodytemperature(-reac_volume * TEMPERATURE_DAMAGE_COEFFICIENT * 0.5, 200)
-	M.adjust_fire_stacks(-reac_volume / 2)
-	if(reac_volume >= metabolization_rate)
-		M.ExtinguishMob()
+	if(method == INJECT)
+		M.adjustFireLoss(-2*reac_volume, 0)
+		if(!HAS_TRAIT(M, TRAIT_ANALGESIA))
+			to_chat(M, span_danger("You feel your burns regenerating! Your nerves are burning!"))
+			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+		else
+			to_chat(M, span_danger("Your burns start to throb, before subsiding!"))
+
+	if(iscarbon(M) && M.stat != DEAD && method in list(VAPOR, INJECT))
+		var/mob/living/carbon/burn_ward_attendee = M
+		for(var/datum/wound/burn in burn_ward_attendee.all_wounds)
+			burn.on_tane(reac_volume/2)
 
 	..()
 
-/datum/reagent/medicine/rhigoxane/overdose_process(mob/living/carbon/M)
+/datum/reagent/medicine/quardexane/overdose_process(mob/living/carbon/M)
 	M.adjustFireLoss(3*REM, 0.)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, 50)
 	..()
 
-/datum/reagent/medicine/ysilane
-	name = "Ysilane"
-	description = ""
+/datum/reagent/medicine/ysiltane
+	name = "Ysiltane"
+	description = "A burn treatment derived from plasma. Application by injection or ingestion causes burns to rapidly repair themselves. The intensity of application causes the user's system to temporarily crash. Overdose causes a toxic crisis within the user's system, and can damage organs."
 	reagent_state = LIQUID
 	color = "#F7FFA5"
 	overdose_threshold = 21
 	reagent_weight = 0.6
 
-/datum/reagent/medicine/ysilane/on_mob_life(mob/living/carbon/M)
-	M.adjustStaminaLoss(2*REM, 0)
-	M.adjust_bodytemperature(-0.6 * TEMPERATURE_DAMAGE_COEFFICIENT, M.dna.species.bodytemp_normal)
+/datum/reagent/medicine/ysiltane/on_mob_life(mob/living/carbon/M)
+	M.adjustStaminaLoss(1*REM, 0)
 	..()
 	. = 1
 
-/datum/reagent/medicine/ysilane/expose_mob(mob/living/carbon/M, method=VAPOR, reac_volume)
-	if(method != VAPOR)
-		return
+/datum/reagent/medicine/ysiltane/expose_mob(mob/living/carbon/M, method=VAPOR, reac_volume)
+	if(method in list(INJECT, INGEST))
+		M.adjustFireLoss(-reac_volume*6)
+		M.adjustStaminaLoss(reac_volume*6)
+		if(!HAS_TRAIT(M, TRAIT_ANALGESIA))
+			to_chat(M, span_danger("You feel your burns regenerating! Your nerves are burning!"))
+			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+		else
+			to_chat(M, span_notice("You feel your burns twisting."))
 
-	M.adjust_bodytemperature(-reac_volume * TEMPERATURE_DAMAGE_COEFFICIENT * 0.5, 200)
-	M.adjust_fire_stacks(-reac_volume / 2)
-	if(reac_volume >= metabolization_rate)
-		M.ExtinguishMob()
+		if(iscarbon(M) && M.stat != DEAD)
+			var/mob/living/carbon/burn_ward_attendee = M
+			for(var/datum/wound/burn in burn_ward_attendee.all_wounds)
+				burn.on_tane(reac_volume)
 
 	..()
 
-/datum/reagent/medicine/ysilane/overdose_process(mob/living/carbon/M)
+/datum/reagent/medicine/ysiltane/overdose_process(mob/living/carbon/M)
 	M.adjustFireLoss(3*REM, 0.)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, 50)
+	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, 330)
 	..()
 
 

@@ -333,7 +333,7 @@
 		return
 
 	var/mob/living/carbon/human/blood_boy = M
-	blood_boy.physiology?.bleed_mod /= passive_bleed_modifier
+	blood_boy.physiology?.bleed_mod *= passive_bleed_modifier
 	return ..()
 
 /datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_end_metabolize(mob/living/M)
