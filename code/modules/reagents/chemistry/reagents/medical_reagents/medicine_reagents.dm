@@ -317,11 +317,11 @@
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 		else
 			to_chat(M, span_danger("Your burns start to throb, before subsiding!"))
-
-	if(iscarbon(M) && M.stat != DEAD && method in list(VAPOR, INJECT))
-		var/mob/living/carbon/burn_ward_attendee = M
-		for(var/datum/wound/burn in burn_ward_attendee.all_wounds)
-			burn.on_tane(reac_volume/2)
+	if(method in list(VAPOR, INJECT))
+		if(iscarbon(M) && M.stat != DEAD)
+			var/mob/living/carbon/burn_ward_attendee = M
+			for(var/datum/wound/burn in burn_ward_attendee.all_wounds)
+				burn.on_tane(reac_volume/2)
 
 	..()
 
@@ -386,77 +386,30 @@
 		. = 1
 	..()
 
-/datum/reagent/medicine/thializid
-	name = "Thializid"
-	description = "A potent antidote for intravenous use with a narrow therapeutic index, it is considered an active prodrug of oxalizid."
+/datum/reagent/medicine/celdramazine
+	name = "Celdramazine"
+	description = ""
 	reagent_state = LIQUID
 	color = "#8CDF24" // heavy saturation to make the color blend better
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM
 	overdose_threshold = 6
 	var/conversion_amount
 
-/datum/reagent/medicine/thializid/on_transfer(atom/A, method=INJECT, trans_volume)
-	if(method != INJECT || !iscarbon(A))
-		return
-	var/mob/living/carbon/C = A
-	if(trans_volume >= 0.6) //prevents cheesing with ultralow doses.
-		C.adjustToxLoss(-1.5 * min(2, trans_volume) * REM, 0)	  //This is to promote iv pole use for that chemotherapy feel.
-	var/obj/item/organ/liver/L = C.internal_organs_slot[ORGAN_SLOT_LIVER]
-	if((L.organ_flags & ORGAN_FAILING) || !L)
-		return
-	conversion_amount = trans_volume * (min(100 -C.getOrganLoss(ORGAN_SLOT_LIVER), 80) / 100) //the more damaged the liver the worse we metabolize.
-	C.reagents.remove_reagent(/datum/reagent/medicine/thializid, conversion_amount)
-	C.reagents.add_reagent(/datum/reagent/medicine/oxalizid, conversion_amount)
-	..()
-
-/datum/reagent/medicine/thializid/on_mob_life(mob/living/carbon/M)
-	M.adjustOrganLoss(ORGAN_SLOT_LIVER, 0.8)
+/datum/reagent/medicine/celdramazine/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-1*REM, 0)
-	for(var/datum/reagent/toxin/R in M.reagents.reagent_list)
-		M.reagents.remove_reagent(R.type,1)
-
-	..()
 	. = 1
-
-/datum/reagent/medicine/thializid/overdose_process(mob/living/carbon/M)
-	M.adjustOrganLoss(ORGAN_SLOT_LIVER, 1.5)
-	M.adjust_disgust(3)
-	M.reagents.add_reagent(/datum/reagent/medicine/oxalizid, 0.225 * REM)
-	..()
-	. = 1
-
-/datum/reagent/medicine/oxalizid
-	name = "Oxalizid"
-	description = "The active metabolite of thializid. Causes muscle weakness on overdose"
-	reagent_state = LIQUID
-	color = "#DFD54E"
-	metabolization_rate = 0.25 * REAGENTS_METABOLISM
-	overdose_threshold = 25
-	var/datum/brain_trauma/mild/muscle_weakness/U
-
-/datum/reagent/medicine/oxalizid/on_mob_life(mob/living/carbon/M)
-	M.adjustOrganLoss(ORGAN_SLOT_LIVER, 0.1)
-	M.adjustToxLoss(-1*REM, 0)
-	for(var/datum/reagent/toxin/R in M.reagents.reagent_list)
-		M.reagents.remove_reagent(R.type,1)
-	..()
-	. = 1
-
-/datum/reagent/medicine/oxalizid/overdose_start(mob/living/carbon/M)
-	U = new()
-	M.gain_trauma(U, TRAUMA_RESILIENCE_ABSOLUTE)
+	for(var/datum/reagent/R in M.reagents.reagent_list)
+		if(R != src)
+			M.reagents.remove_reagent(R.type,1)
 	..()
 
-/datum/reagent/medicine/oxalizid/on_mob_delete(mob/living/carbon/M)
-	if(U)
-		QDEL_NULL(U)
-	return ..()
-
-/datum/reagent/medicine/oxalizid/overdose_process(mob/living/carbon/M)
-	M.adjustOrganLoss(ORGAN_SLOT_LIVER, 1.5)
-	M.adjust_disgust(3)
+/datum/reagent/medicine/celdramazine/on_transfer(atom/A, method=TOUCH, volume)
+	if(method == INGEST || !iscarbon(A)) //the atom not the charcoal
+		return
+	A.reagents.remove_reagent(/datum/reagent/medicine/celdramazine, volume) //We really should not be injecting an insoluble granular material.
+	A.reagents.add_reagent(/datum/reagent/carbon, volume) // Its pores would get clogged with gunk anyway.
 	..()
-	. = 1
+
 
 /datum/reagent/medicine/c2/seiver //a bit of a gray joke
 	name = "Seiver"
