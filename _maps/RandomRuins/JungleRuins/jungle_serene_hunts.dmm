@@ -180,14 +180,6 @@
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/gun_shop)
-"bA" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/plastic,
-/turf/open/floor/plasteel/white/jungleplanet,
-/area/ruin/powered/hunts/canteen)
 "bD" = (
 /obj/structure/spider/stickyweb,
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
@@ -1438,6 +1430,14 @@
 /obj/machinery/light/floor,
 /turf/open/floor/concrete/tiles/jungleplanet/lit,
 /area/ruin/powered/hunts/shuttle)
+"nw" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/plastic,
+/turf/open/floor/plasteel/white/jungleplanet,
+/area/ruin/powered/hunts/canteen)
 "ny" = (
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 1
@@ -1448,10 +1448,6 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/toilet)
-"nz" = (
-/obj/effect/decal/cleanable/plastic,
-/turf/open/floor/concrete/pavement/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "nC" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -2636,15 +2632,6 @@
 /mob/living/simple_animal/hostile/asteroid/ice_whelp,
 /turf/open/floor/engine,
 /area/ruin/powered/hunts/barn)
-"wN" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/item/electronics/airlock,
-/obj/effect/decal/cleanable/plastic,
-/turf/open/floor/concrete/pavement/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "wO" = (
 /obj/structure/spider/stickyweb,
 /obj/structure/cable{
@@ -3092,11 +3079,6 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/toilet)
-"An" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/plastic,
-/turf/open/floor/plasteel/white/jungleplanet,
-/area/ruin/powered/hunts/canteen)
 "Ao" = (
 /turf/open/floor/carpet,
 /area/ruin/powered/hunts/gun_shop)
@@ -3582,6 +3564,10 @@
 /obj/structure/flora/junglebush,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/cave/explored)
+"ED" = (
+/obj/effect/decal/cleanable/plastic,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "EF" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/spider/stickyweb,
@@ -4131,14 +4117,6 @@
 /obj/structure/flora/junglebush,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
-"Jf" = (
-/obj/structure/sign/plaques/blank{
-	pixel_y = 30;
-	name = "M-17 MICROTARGET";
-	desc = "The M-17 \"Microtarget\" pistol is a fantastic and versatile choice for any purpose, from small game hunting to self defence. The signature detachable barrel for excellent portability without comprimising accuracy."
-	},
-/turf/closed/wall/mineral/wood,
-/area/ruin/powered/hunts/gun_shop)
 "Jh" = (
 /obj/structure/closet/cabinet,
 /obj/effect/turf_decal/spline/fancy/wood{
@@ -4850,6 +4828,15 @@
 "OZ" = (
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
+"Pa" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/item/electronics/airlock,
+/obj/effect/decal/cleanable/plastic,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Pe" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
@@ -5678,6 +5665,14 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/concrete,
 /area/ruin/powered/hunts/barn)
+"Wd" = (
+/obj/structure/sign/plaques/blank{
+	pixel_y = 30;
+	name = "M-17 MICROTARGET";
+	desc = "The M-17 \"Microtarget\" pistol is a fantastic and versatile choice for any purpose, from small game hunting to self defence. The signature detachable barrel for excellent portability without comprimising accuracy."
+	},
+/turf/closed/wall/mineral/wood,
+/area/ruin/powered/hunts/gun_shop)
 "Wi" = (
 /obj/structure/spacevine/dense,
 /turf/open/floor/wood/jungleplanet,
@@ -5690,6 +5685,11 @@
 "Wl" = (
 /turf/open/floor/carpet/black,
 /area/ruin/powered/hunts/gun_shop)
+"Wn" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/plastic,
+/turf/open/floor/plasteel/white/jungleplanet,
+/area/ruin/powered/hunts/canteen)
 "Wp" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector{
 	dir = 4
@@ -7810,7 +7810,7 @@ xr
 xr
 Va
 fL
-Jf
+Wd
 Yz
 Ll
 RJ
@@ -8582,8 +8582,8 @@ TN
 YT
 eS
 qX
-An
-bA
+Wn
+nw
 ou
 JM
 Qf
@@ -8692,8 +8692,8 @@ YT
 Va
 fl
 rP
-nz
-wN
+ED
+Pa
 Vv
 eS
 eS
@@ -9042,7 +9042,7 @@ pV
 dD
 dD
 Dc
-rP
+OC
 rP
 Xp
 lw
