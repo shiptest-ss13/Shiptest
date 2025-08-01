@@ -52,7 +52,7 @@
 		if(NONE)
 			return FALSE
 		if(POWER_REQ_ALL)
-			return !T || !A || ((!A.power_equip || isspaceturf(T)) && !is_type_in_list(loc, list(/obj/item, /obj/mecha)))
+			return !T || !A || ((!A.power_equip || isspaceturf(T)) && !is_type_in_list(loc, list(/obj/item)))
 
 /mob/living/silicon/ai/updatehealth()
 	if(status_flags & GODMODE)

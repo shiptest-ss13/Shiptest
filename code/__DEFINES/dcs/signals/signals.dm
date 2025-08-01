@@ -661,9 +661,6 @@
 ///sent to targets during the process_hit proc of projectiles
 #define COMSIG_PELLET_CLOUD_INIT "pellet_cloud_init"
 
-// /obj/mecha signals
-#define COMSIG_MECHA_ACTION_ACTIVATE "mecha_action_activate"	//sent from mecha action buttons to the mecha they're linked to
-
 // /datum/species signals
 #define COMSIG_SPECIES_GAIN "species_gain" //from datum/species/on_species_gain(): (datum/species/new_species, datum/species/old_species)
 #define COMSIG_SPECIES_LOSS "species_loss" //from datum/species/on_species_loss(): (datum/species/lost_species)
@@ -780,11 +777,6 @@
 #define COMSIG_GUN_DISABLE_AUTOFIRE "disable_autofire"
 #define COMSIG_GUN_ENABLE_AUTOFIRE "enable_autofire"
 #define COMSIG_GUN_SET_AUTOFIRE_SPEED "set_autofire_speed"
-
-/// send when enabling/diabling an autofire component for mechs
-#define COMSIG_MECH_DISABLE_AUTOFIRE "disable_mech_autofire"
-#define COMSIG_MECH_ENABLE_AUTOFIRE "enable_mech_autofire"
-#define COMSIG_MECH_SET_AUTOFIRE_SPEED "set_mech_autofire_speed"
 
 #define COMSIG_MECH_ENTERED "mech_entered"
 #define COMSIG_MECH_EXITED "mech_exited"

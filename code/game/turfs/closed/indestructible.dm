@@ -33,18 +33,6 @@
 	playsound(src, 'sound/weapons/tap.ogg', 50, TRUE)
 	return TRUE
 
-/turf/closed/indestructible/mech_melee_attack(obj/mecha/M)
-	M.do_attack_animation(src)
-	switch(M.damtype)
-		if(BRUTE)
-			playsound(src, 'sound/weapons/punch4.ogg', 50, TRUE)
-		if(BURN)
-			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
-		if(TOX)
-			playsound(src, 'sound/effects/spray2.ogg', 100, TRUE)
-	M.visible_message(span_danger("[M.name] hits [src] and doesn't even leave a mark!"), \
-					span_danger("You hit [src] and fail to damage it."), null, COMBAT_MESSAGE_RANGE)
-
 /turf/closed/indestructible/attack_hulk(mob/living/carbon/user)
 	return FALSE
 

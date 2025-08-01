@@ -118,8 +118,6 @@
 
 	if(usr.incapacitated())
 		return TRUE
-	if(ismecha(usr.loc)) // stops inventory actions in a mech
-		return TRUE
 
 	//This is where putting stuff into hands is handled
 	if(hud?.mymob && slot_id)
@@ -227,8 +225,6 @@
 	if(world.time <= user.next_move)
 		return TRUE
 	if(user.incapacitated())
-		return TRUE
-	if (ismecha(user.loc)) // stops inventory actions in a mech
 		return TRUE
 
 	if(user.active_hand_index == held_index)

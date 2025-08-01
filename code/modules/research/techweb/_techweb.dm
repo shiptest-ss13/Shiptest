@@ -375,6 +375,3 @@
 /datum/techweb/specialized/autounlocking/smelter
 	design_autounlock_buildtypes = SMELTER
 	allowed_buildtypes = SMELTER
-
-/datum/techweb/specialized/autounlocking/exofab
-	allowed_buildtypes = MECHFAB

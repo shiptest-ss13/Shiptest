@@ -8,10 +8,6 @@
 			return L
 		else
 			remove_enemy(L)
-	else if(ismecha(A))
-		var/obj/mecha/M = A
-		if(M.occupant)
-			return A
 
 /mob/living/simple_animal/hostile/retaliate/ListTargets()
 	if(!enemies.len)
@@ -30,11 +26,6 @@
 			var/mob/living/M = A
 			if(faction_check_mob(M) && attack_same || !faction_check_mob(M))
 				add_enemy(M)
-		else if(ismecha(A))
-			var/obj/mecha/M = A
-			if(M.occupant)
-				add_enemy(M)
-				add_enemy(M.occupant)
 
 	for(var/mob/living/simple_animal/hostile/retaliate/H in around)
 		if(faction_check_mob(H) && !attack_same && !H.attack_same)

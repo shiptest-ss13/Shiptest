@@ -166,23 +166,6 @@
 	category = list("Computer Boards")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/board/mechacontrol
-	name = "Computer Design (Exosuit Control Console)"
-	desc = "Allows for the construction of circuit boards used to build an exosuit control console."
-	id = "mechacontrol"
-	build_path = /obj/item/circuitboard/computer/mecha_control
-	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
-
-/datum/design/board/mechapower
-	name = "Computer Design (Exosuit) Bay Power Control Console)"
-	desc = "Allows for the construction of circuit boards used to build an exosuit bay power control console."
-	id = "mechapower"
-	build_path = /obj/item/circuitboard/computer/mech_bay_power_console
-	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
-
-
 /datum/design/board/mining
 	name = "Computer Design (Outpost Status Display)"
 	desc = "Allows for the construction of circuit boards used to build an outpost status display console."

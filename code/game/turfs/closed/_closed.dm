@@ -274,27 +274,6 @@
 
 	return FALSE
 
-/turf/closed/mech_melee_attack(obj/mecha/M)
-	M.do_attack_animation(src)
-	switch(M.damtype)
-		if(BRUTE)
-			playsound(src, 'sound/weapons/punch4.ogg', 50, TRUE)
-		if(BURN)
-			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
-		if(TOX)
-			playsound(src, 'sound/effects/spray2.ogg', 100, TRUE)
-
-
-	if(prob(hardness + M.force) && M.force > 20)
-		M.visible_message(span_danger("[M.name] hits [src] with great force!"), \
-					span_danger("You hit [src] with incredible force!"), null, COMBAT_MESSAGE_RANGE)
-		dismantle_wall(TRUE)
-		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-	else
-		M.visible_message(span_danger("[M.name] hits [src]!"), \
-					span_danger("You hit [src]!"), null, COMBAT_MESSAGE_RANGE)
-		alter_integrity(M.force * 20)
-
 /turf/closed/attack_hulk(mob/living/carbon/user)
 	..()
 	var/obj/item/bodypart/arm = user.hand_bodyparts[user.active_hand_index]

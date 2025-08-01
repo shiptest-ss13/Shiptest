@@ -101,20 +101,6 @@
 		damage *= 1 + 7*(1-harden_lvl)
 	.= ..()
 
-/turf/closed/wall/concrete/mech_melee_attack(obj/mecha/M)
-	M.do_attack_animation(src)
-	switch(M.damtype)
-		if(BRUTE)
-			M.visible_message(span_danger("[M.name] hits [src]!"), \
-							span_danger("You hit [src]!"), null, COMBAT_MESSAGE_RANGE)
-			playsound(src, 'sound/weapons/punch4.ogg', 50, TRUE)
-			playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-			alter_integrity(M.force * -20)
-		if(BURN)
-			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
-		if(TOX)
-			playsound(src, 'sound/effects/spray2.ogg', 100, TRUE)
-
 // can't weld out the dents
 /turf/closed/wall/concrete/try_clean(obj/item/W, mob/user, turf/T)
 	return null

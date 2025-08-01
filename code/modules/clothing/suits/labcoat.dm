@@ -113,10 +113,8 @@ You're pretty sure this is just a raincoat.
 //we actually don't have the robotcist labcoats here, but since these are made anyways, might as well put them in
 /obj/item/clothing/suit/longcoat/roboblack
 	name = "roboticist's black labcoat"
-	desc = "A long labcoat colored black with a red stripe. The sleves appear to be cut off with scizors. Perfect for creating mechanical exosuit weapons while laughing like a cartoon villian."
 	icon_state = "labcoat_roboblack_long"
 
 /obj/item/clothing/suit/longcoat/robowhite
 	name = "roboticist's white labcoat"
-	desc = "A long labcoat with a black stripe and sleves. Perfect for creating mechanical exosuit weapons while laughing like a cartoon villian."
 	icon_state = "labcoat_robowhite_long"

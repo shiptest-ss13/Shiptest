@@ -122,7 +122,7 @@
 		else
 			qdel(src)
 
-//Toggle exosuits for different aesthetic styles (hoodies, suit jacket buttons, etc)
+//Toggle suit slot items for different aesthetic styles (hoodies, suit jacket buttons, etc)
 /obj/item/clothing/suit/toggle
 	icon = 'icons/obj/clothing/suits/toggle.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suits/toggle.dmi'

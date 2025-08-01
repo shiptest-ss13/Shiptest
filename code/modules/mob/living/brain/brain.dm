@@ -16,10 +16,6 @@
 		var/obj/item/organ/brain/OB = new(loc) //we create a new brain organ for it.
 		OB.brainmob = src
 		forceMove(OB)
-	if(!container?.mecha) //Unless inside a mecha, brains are rather helpless.
-		ADD_TRAIT(src, TRAIT_IMMOBILIZED, BRAIN_UNAIDED)
-		ADD_TRAIT(src, TRAIT_HANDS_BLOCKED, BRAIN_UNAIDED)
-
 
 /mob/living/brain/proc/create_dna()
 	stored_dna = new /datum/dna/stored(src)
@@ -60,13 +56,6 @@
 	if(stored_dna)
 		stored_dna.real_name = real_name
 
-/mob/living/brain/ClickOn(atom/A, params)
-	..()
-	if(container)
-		var/obj/mecha/M = container.mecha
-		if(istype(M))
-			return M.click_action(A,src,params)
-
 /mob/living/brain/forceMove(atom/destination)
 	if(container)
 		return container.forceMove(destination)
@@ -86,10 +75,6 @@
 	client.mouse_pointer_icon = initial(client.mouse_pointer_icon)
 	if(!container)
 		return
-	if (container.mecha)
-		var/obj/mecha/M = container.mecha
-		if(M.mouse_pointer)
-			client.mouse_pointer_icon = M.mouse_pointer
 	if (client && ranged_ability && ranged_ability.ranged_mousepointer)
 		client.mouse_pointer_icon = ranged_ability.ranged_mousepointer
 

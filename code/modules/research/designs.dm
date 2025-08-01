@@ -27,7 +27,7 @@ other types of metals and chemistry for reagents).
 	var/desc = null
 	/// The ID of the design. Used for quick reference. Alphanumeric, lower-case, no symbols
 	var/id = DESIGN_ID_IGNORE
-	/// Bitflags indicating what machines this design is compatable with. ([IMPRINTER]|[AWAY_IMPRINTER]|[PROTOLATHE]|[AWAY_LATHE]|[AUTOLATHE]|[MECHFAB]|[BIOGENERATOR]|[LIMBGROWER]|[SMELTER])
+	/// Bitflags indicating what machines this design is compatable with. ([IMPRINTER]|[AWAY_IMPRINTER]|[PROTOLATHE]|[AWAY_LATHE]|[AUTOLATHE]|[BIOGENERATOR]|[LIMBGROWER]|[SMELTER])
 	var/build_type = null
 	/// List of materials required to create one unit of the product. Format is (typepath or caregory) -> amount
 	var/list/materials = list()
@@ -37,7 +37,7 @@ other types of metals and chemistry for reagents).
 	var/build_path = null
 	/// List of reagents produced by this design. Currently only supported by the biogenerator
 	var/list/make_reagents = list()
-	/// What category this design falls under. Used for sorting in production machines, mostly the mechfab
+	/// What category this design falls under. Used for sorting in production machines
 	var/list/category = null
 	/// List of reagents required to create one unit of the product
 	var/list/reagents_list = list()
@@ -149,13 +149,6 @@ other types of metals and chemistry for reagents).
 	illustration = "gun"
 	max_blueprints = 2
 	starting_blueprints = list(/datum/design/disposable_gun)
-
-/obj/item/disk/design_disk/clip_mechs
-	design_name = "CLIP exosuit modifications"
-	desc = "A design disk containing specifications for CLIP-custom exosuit conversions."
-	color = "#57b8f0"
-	max_blueprints = 2
-	starting_blueprints = list(/datum/design/clip_ripley_upgrade, /datum/design/clip_durand_upgrade)
 
 /obj/item/disk/design_disk/ammo_c9mm
 	design_name = "9x18mm Ammo"

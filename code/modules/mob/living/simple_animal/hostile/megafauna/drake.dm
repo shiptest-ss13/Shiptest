@@ -212,9 +212,6 @@ Difficulty: Medium
 				if(L.client)
 					empty += pick(((RANGE_TURFS(2, L) - RANGE_TURFS(1, L)) & turfs) - empty) // picks a turf within 2 of the creature not outside or in the shield
 					any_attack = 1
-			for(var/obj/mecha/M in T.contents)
-				empty += pick(((RANGE_TURFS(2, M) - RANGE_TURFS(1, M)) & turfs) - empty)
-				any_attack = 1
 		if(!any_attack)
 			for(var/obj/effect/temp_visual/drakewall/D in drakewalls)
 				qdel(D)
@@ -352,8 +349,6 @@ Difficulty: Medium
 				var/throwtarget = get_edge_target_turf(src, throw_dir)
 				L.throw_at(throwtarget, 3)
 				visible_message(span_warning("[L] is thrown clear of [src]!"))
-	for(var/obj/mecha/M in orange(1, src))
-		M.take_damage(75, BRUTE, "melee", 1)
 
 	for(var/mob/M in range(7, src))
 		shake_camera(M, 15, 1)
@@ -422,10 +417,6 @@ Difficulty: Medium
 			continue
 		L.adjustFireLoss(10)
 		to_chat(L, span_userdanger("You fall directly into the pool of lava!"))
-
-	// deals damage to mechs
-	for(var/obj/mecha/M in T.contents)
-		M.take_damage(45, BRUTE, "melee", 1)
 
 	// changes turf to lava temporarily
 	if(!istype(T, /turf/closed) && !istype(T, /turf/open/lava))

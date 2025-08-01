@@ -157,7 +157,7 @@
 	if(!search_objects)
 		. = hearers(vision_range, target_from) - src //Remove self, so we don't suicide
 
-		var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha))
+		var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret))
 		var/static/mining_drills = typecacheof(list(/obj/machinery/drill))
 
 		. += typecache_filter_list(view(vision_range, targets_from), hostile_machines)
@@ -240,12 +240,6 @@
 				if((faction_check && !attack_same) || L.stat)
 					return FALSE
 			return TRUE
-
-		if(ismecha(the_target))
-			var/obj/mecha/M = the_target
-			if(M.occupant)//Just so we don't attack empty mechs
-				if(CanAttack(M.occupant))
-					return TRUE
 
 		if(istype(the_target, /obj/machinery/porta_turret))
 			var/obj/machinery/porta_turret/P = the_target
@@ -607,7 +601,7 @@
 		toggle_ai(AI_ON)
 
 /mob/living/simple_animal/hostile/proc/ListTargetsLazy(virtual_z)//Step 1, find out what we can see
-	var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha, /obj/machinery/drill)) //WS - add spacepod
+	var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/machinery/drill)) //WS - add spacepod
 	. = list()
 	for (var/mob/M as anything in LAZYACCESS(SSmobs.players_by_virtual_z, "[virtual_z]"))
 		if (get_dist(M, src) < vision_range)
@@ -731,11 +725,4 @@
 			hit_list += L
 			L.adjustFireLoss(20)
 			to_chat(L, span_userdanger("You're hit by [source]'s [fire_source]!"))
-
-		// deals damage to mechs
-		for(var/obj/mecha/M in T.contents)
-			if(M in hit_list)
-				continue
-			hit_list += M
-			M.take_damage(45, BRUTE, "melee", 1)
 		sleep(1.5)

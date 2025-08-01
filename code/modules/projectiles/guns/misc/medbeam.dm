@@ -113,8 +113,7 @@
 				return FALSE // Could not leave the first turf.
 			first_step = FALSE
 		if(mounted && next_step == user_turf)
-
-			continue //Mechs are dense and thus fail the check
+			continue
 		if(next_step.density)
 			qdel(dummy)
 			return FALSE
@@ -148,11 +147,3 @@
 
 /obj/effect/ebeam/medical
 	name = "medical beam"
-
-//////////////////////////////Mech Version///////////////////////////////
-/obj/item/gun/medbeam/mech
-	mounted = 1
-
-/obj/item/gun/medbeam/mech/Initialize()
-	. = ..()
-	STOP_PROCESSING(SSobj, src) //Mech mediguns do not process until installed, and are controlled by the holder obj

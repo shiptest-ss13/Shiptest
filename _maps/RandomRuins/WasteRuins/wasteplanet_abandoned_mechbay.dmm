@@ -1,7 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ae" = (
 /obj/structure/rack,
-/obj/item/mecha_ammo/lmg,
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
@@ -170,9 +169,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "cB" = (
-/obj/machinery/mech_bay_recharge_port{
-	dir = 1
-	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "cJ" = (
@@ -286,9 +282,6 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "dH" = (
-/obj/machinery/mech_bay_recharge_port{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
@@ -1008,14 +1001,6 @@
 "kW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/innards,
-/obj/structure/mecha_wreckage/gygax/dark{
-	name = "515 EX 'Lucky #2'"
-	},
-/obj/effect/landmark/mission_poi/main{
-	already_spawned = 1;
-	type_to_spawn = /obj/structure/mecha_wreckage/gygax/dark;
-	mission_index = 2
-	},
 /turf/open/floor/mech_bay_recharge_floor,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "kZ" = (
@@ -1058,7 +1043,6 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/structure/mecha_wreckage/gygax/dark,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "lh" = (
@@ -1249,8 +1233,6 @@
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
 "np" = (
 /obj/structure/rack,
-/obj/item/mecha_ammo/lmg,
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "nr" = (
@@ -1455,7 +1437,6 @@
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/random/maintenance/six,
-/obj/item/mecha_parts/mecha_equipment/drill/diamonddrill,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "qJ" = (
@@ -1525,7 +1506,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "ro" = (
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
@@ -1705,11 +1685,6 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
-"tE" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/mecha_parts/part/gygax_armor,
-/turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "tJ" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
@@ -2895,12 +2870,6 @@
 "Im" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/wasteplanet/abandoned_mechbay/engineering)
-"In" = (
-/obj/machinery/mech_bay_recharge_port{
-	dir = 8
-	},
-/turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "Iq" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -2910,7 +2879,6 @@
 /area/ruin/wasteplanet/abandoned_mechbay/engineering)
 "Ix" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/mecha_wreckage/gygax/dark,
 /turf/open/floor/mech_bay_recharge_floor,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "Iy" = (
@@ -2951,7 +2919,6 @@
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
 "IJ" = (
 /obj/effect/decal/cleanable/oil,
-/obj/structure/mecha_wreckage/gygax/dark,
 /turf/open/floor/mech_bay_recharge_floor,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "IL" = (
@@ -3226,7 +3193,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/abandoned_mechbay/engineering)
 "Mp" = (
-/obj/machinery/mecha_part_fabricator,
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
@@ -3306,11 +3272,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
 /area/overmap_encounter/planetoid/cave/explored)
-"MX" = (
-/obj/machinery/mech_bay_recharge_port,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/slab_1,
-/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "Ni" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 4
@@ -3361,13 +3322,6 @@
 /obj/item/radio/intercom/directional/west,
 /mob/living/simple_animal/hostile/human/ramzi/melee/machete,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay1)
-"NK" = (
-/obj/machinery/mech_bay_recharge_port{
-	dir = 2
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "NN" = (
 /obj/machinery/door/airlock/hatch{
@@ -3907,7 +3861,6 @@
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/random/maintenance/two,
-/obj/item/mecha_parts/mecha_equipment/drill/diamonddrill,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "VC" = (
@@ -5101,7 +5054,7 @@ BJ
 JU
 NG
 by
-MX
+wL
 ov
 lf
 kt
@@ -5149,7 +5102,7 @@ tC
 BJ
 RY
 GE
-NK
+wL
 gj
 lg
 rN
@@ -5199,7 +5152,7 @@ BJ
 np
 kn
 tr
-tE
+wL
 RG
 ds
 BX
@@ -5209,7 +5162,7 @@ GH
 eB
 hy
 vD
-In
+cB
 Ft
 DN
 Jf
@@ -5542,7 +5495,7 @@ BJ
 YR
 Zx
 by
-MX
+wL
 qf
 lf
 LH
@@ -5590,7 +5543,7 @@ Dd
 BJ
 RY
 kn
-NK
+wL
 kW
 lT
 Rg
@@ -5650,7 +5603,7 @@ GH
 Qr
 hy
 ly
-In
+cB
 sy
 hv
 tW

@@ -116,14 +116,6 @@
 	pixel_y = 12;
 	pixel_x = -6
 	},
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/mecha_kineticgun{
-	pixel_y = 9;
-	pixel_x = 4
-	},
-/obj/item/mecha_parts/mecha_equipment/drill{
-	pixel_x = -6;
-	pixel_y = -5
-	},
 /turf/open/floor/pod/dark,
 /area/ship/hangar)
 "aB" = (
@@ -636,8 +628,6 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
-/obj/item/mecha_parts/mecha_equipment/extinguisher,
-/obj/item/mecha_parts/mecha_equipment/extinguisher,
 /turf/open/floor/plating,
 /area/ship/storage)
 "cJ" = (
@@ -2394,7 +2384,6 @@
 	pixel_x = 2;
 	pixel_y = -1
 	},
-/obj/structure/mecha_wreckage/ripley/clip,
 /turf/open/floor/pod/dark,
 /area/ship/hangar)
 "lo" = (
@@ -4153,19 +4142,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
-"tv" = (
-/obj/mecha/working/ripley/clip,
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 5
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/structure/railing/thin{
-	layer = 4
-	},
-/obj/effect/turf_decal/industrial/hatch/blue,
-/obj/effect/turf_decal/rechargefloor,
-/turf/open/floor/pod/dark,
-/area/ship/hangar)
 "tA" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/siding/wood{
@@ -7259,9 +7235,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/toilet/two)
 "HP" = (
-/obj/machinery/mech_bay_recharge_port{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 1
 	},
@@ -8048,29 +8021,6 @@
 /obj/structure/closet/crate/engineering{
 	name = "replacement mech crate"
 	},
-/obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/clip,
-/obj/item/mecha_parts/part/ripley_left_arm,
-/obj/item/mecha_parts/part/ripley_left_leg,
-/obj/item/mecha_parts/part/ripley_right_arm,
-/obj/item/mecha_parts/part/ripley_right_leg,
-/obj/item/mecha_parts/part/ripley_torso,
-/obj/item/mecha_parts/chassis/ripley,
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/mecha_kineticgun{
-	pixel_y = 9;
-	pixel_x = 4
-	},
-/obj/item/mecha_parts/mecha_equipment/drill{
-	pixel_x = -6;
-	pixel_y = -5
-	},
-/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp,
-/obj/item/mecha_parts/mecha_equipment/thrusters/ion,
-/obj/item/circuitboard/mecha/ripley/main,
-/obj/item/circuitboard/mecha/ripley/peripherals,
-/obj/item/mecha_parts/mecha_equipment/mining_scanner{
-	pixel_x = -7;
-	pixel_y = -9
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Lx" = (
@@ -8304,7 +8254,6 @@
 /area/ship/hallway/central)
 "MK" = (
 /obj/effect/turf_decal/rechargefloor,
-/obj/structure/mecha_wreckage/ripley,
 /obj/structure/platform/military{
 	dir = 4
 	},
@@ -8706,7 +8655,6 @@
 	dir = 8;
 	color = "#75A2BB"
 	},
-/obj/machinery/mech_bay_recharge_port,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 4
 	},
@@ -9517,7 +9465,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "RT" = (
-/obj/machinery/mech_bay_recharge_port,
 /obj/effect/turf_decal/industrial/hatch/blue,
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
@@ -9538,7 +9485,6 @@
 	icon_state = "floor4"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp,
 /turf/open/floor/pod/dark,
 /area/ship/hangar)
 "Sh" = (
@@ -10613,17 +10559,6 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
-/area/ship/hangar)
-"WE" = (
-/obj/item/mecha_parts/mecha_equipment/mining_scanner{
-	pixel_x = -7;
-	pixel_y = -9
-	},
-/obj/item/mecha_parts/mecha_equipment/thrusters/ion{
-	pixel_y = 13;
-	pixel_x = 3
-	},
-/turf/open/floor/pod/dark,
 /area/ship/hangar)
 "WJ" = (
 /obj/machinery/firealarm/directional/south,
@@ -12158,7 +12093,7 @@ bE
 Os
 dl
 LJ
-tv
+TM
 WC
 TI
 ny
@@ -12491,7 +12426,7 @@ We
 We
 dZ
 lk
-WE
+Vh
 rv
 xt
 lf

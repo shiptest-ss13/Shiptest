@@ -271,16 +271,6 @@
 	icon_state = "science"
 	build_path = /obj/machinery/computer/launchpad
 
-/obj/item/circuitboard/computer/mech_bay_power_console
-	name = "Exosuit Bay Power Control Console (Computer Board)"
-	icon_state = "science"
-	build_path = /obj/machinery/computer/mech_bay_power_console
-
-/obj/item/circuitboard/computer/mecha_control
-	name = "Exosuit Control Console (Computer Board)"
-	icon_state = "science"
-	build_path = /obj/machinery/computer/mecha
-
 /obj/item/circuitboard/computer/nanite_chamber_control
 	name = "Nanite Chamber Control (Computer Board)"
 	icon_state = "science"

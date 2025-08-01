@@ -189,33 +189,6 @@ They *could* go in their appropriate files, but this is supposed to be modular
 			. += drained
 		S.spark_system.start()
 
-//MECH//
-/obj/mecha/ninjadrain_act(obj/item/clothing/suit/space/space_ninja/S, mob/living/carbon/human/H, obj/item/clothing/gloves/space_ninja/G)
-	if(!S || !H || !G)
-		return INVALID_DRAIN
-
-	var/maxcapacity = 0 //Safety check
-	var/drain = 0 //Drain amount
-	. = 0
-
-	occupant_message(span_danger("Warning: Unauthorized access through sub-route 4, block H, detected."))
-	if(get_charge())
-		while(G.candrain && cell.charge > 0 && !maxcapacity)
-			drain = rand(G.mindrain,G.maxdrain)
-			if(cell.charge < drain)
-				drain = cell.charge
-			if(S.cell.charge + drain > S.cell.maxcharge)
-				drain = S.cell.maxcharge - S.cell.charge
-				maxcapacity = 1
-			if (do_after(H,10, target = src, hidden = TRUE))
-				spark_system.start()
-				playsound(loc, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
-				cell.use(drain)
-				S.cell.give(drain)
-				. += drain
-			else
-				break
-
 //BORG//
 /mob/living/silicon/robot/ninjadrain_act(obj/item/clothing/suit/space/space_ninja/S, mob/living/carbon/human/H, obj/item/clothing/gloves/space_ninja/G)
 	if(!S || !H || !G)

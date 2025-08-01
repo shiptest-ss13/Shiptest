@@ -3939,13 +3939,6 @@
 	dir = 1
 	},
 /obj/structure/rack,
-/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay{
-	pixel_y = 5;
-	pixel_x = 5
-	},
-/obj/item/mecha_parts/mecha_equipment/thrusters/ion{
-	pixel_x = -10
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/tech/grid,
@@ -5803,7 +5796,6 @@
 	},
 /obj/effect/turf_decal/corner/opaque/syndiered/half,
 /obj/machinery/light/directional/north,
-/obj/structure/mecha_wreckage/ripley/deathripley,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "GW" = (
@@ -6045,7 +6037,6 @@
 /obj/effect/turf_decal/rechargefloor,
 /obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/mecha/combat/gygax/dark,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "Ir" = (
@@ -6446,9 +6437,6 @@
 	pixel_x = 26;
 	dir = 8;
 	id = "twinkle_rightmassdriver"
-	},
-/obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster{
-	pixel_x = -4
 	},
 /obj/effect/turf_decal/corner/opaque/syndiered/half,
 /obj/effect/turf_decal/techfloor{
@@ -7404,7 +7392,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "QX" = (
-/obj/machinery/mech_bay_recharge_port,
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
 	dir = 1
@@ -7729,14 +7716,6 @@
 	},
 /obj/effect/turf_decal/corner/opaque/syndiered/half,
 /obj/structure/rack,
-/obj/item/mecha_ammo/scattershot,
-/obj/item/mecha_ammo/scattershot{
-	pixel_y = 5
-	},
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot{
-	pixel_y = 5;
-	pixel_x = -2
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -8560,22 +8539,6 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/hallway/central)
-"Xt" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/syndiered/half,
-/obj/structure/rack,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/mecha_ammo/missiles_br,
-/obj/item/mecha_ammo/missiles_br{
-	pixel_y = 5
-	},
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/breaching{
-	pixel_y = 13
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/bridge)
 "XE" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 6
@@ -10600,7 +10563,7 @@ tr
 QE
 mp
 nb
-Xt
+SD
 Gg
 QX
 nb

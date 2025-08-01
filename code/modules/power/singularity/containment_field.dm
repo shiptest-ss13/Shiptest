@@ -75,9 +75,6 @@
 	if(isliving(AM))
 		shock(AM)
 
-	if(ismachinery(AM) || isstructure(AM) || ismecha(AM))
-		bump_field(AM)
-
 /obj/machinery/field/containment/proc/set_master(master1,master2)
 	if(!master1 || !master2)
 		return FALSE
@@ -108,15 +105,10 @@
 	if(isliving(mover))
 		shock(mover)
 		return
-	if(ismachinery(mover) || isstructure(mover) || ismecha(mover))
-		bump_field(mover)
-		return
 
 
 /obj/machinery/field/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
-	if(hasShocked || isliving(mover) || ismachinery(mover) || isstructure(mover) || ismecha(mover))
-		return FALSE
 
 /obj/machinery/field/proc/shock(mob/living/user)
 	var/shock_damage = min(rand(30,40),rand(30,40))

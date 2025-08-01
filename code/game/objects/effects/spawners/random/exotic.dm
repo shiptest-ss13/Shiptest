@@ -3,14 +3,6 @@
 	desc = "Super duper rare stuff."
 	icon_state = "showcase"
 
-/obj/effect/spawner/random/exotic/ripley
-	name = "25% exosuit 75% wreckage ripley spawner"
-	icon_state = "ripley"
-	loot = list(
-		/obj/mecha/working/ripley/mining = 1,
-		/obj/structure/mecha_wreckage/ripley = 5
-	)
-
 /obj/effect/spawner/random/exotic/prison_contraband
 	name = "prison contraband loot spawner"
 	icon_state = "prisoner"

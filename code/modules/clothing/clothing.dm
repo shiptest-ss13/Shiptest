@@ -74,9 +74,6 @@
 	. = ..()
 	var/mob/M = usr
 
-	if(ismecha(M.loc)) // stops inventory actions in a mech
-		return
-
 	if(!M.incapacitated() && loc == M && istype(over_object, /atom/movable/screen/inventory/hand))
 		var/atom/movable/screen/inventory/hand/H = over_object
 		if(M.putItemFromInventoryInHandIfPossible(src, H.held_index, FALSE, TRUE))

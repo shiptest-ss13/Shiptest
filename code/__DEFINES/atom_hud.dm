@@ -16,11 +16,11 @@
 #define IMPCHEM_HUD "6"
 /// tracking implant
 #define IMPTRACK_HUD "7"
-/// Silicon/Mech/Circuit Status
+/// Silicon/Circuit Status
 #define DIAG_STAT_HUD "8"
 /// Silicon health bar
 #define DIAG_HUD "9"
-/// Borg/Mech/Circutry power meter
+/// Borg/Circutry power meter
 #define DIAG_BATT_HUD "10"
 /// Mech health bar
 #define DIAG_MECH_HUD "11"
@@ -28,7 +28,7 @@
 #define DIAG_BOT_HUD "12"
 /// Circuit assembly health bar
 #define DIAG_CIRCUIT_HUD "13"
-/// Mech/Silicon tracking beacon, Circutry long range icon
+/// Silicon tracking beacon, Circutry long range icon
 #define DIAG_TRACK_HUD "14"
 /// Airlock shock overlay
 #define DIAG_AIRLOCK_HUD "15"

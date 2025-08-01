@@ -17,24 +17,6 @@
 		/obj/item/trash/syndi_cakes = 1
 	)
 
-/obj/effect/spawner/random/waste/mechwreck
-	icon_state = "ripley"
-	name = "wasteplanet exosuit wreckage"
-	loot = list(
-		/obj/structure/mecha_wreckage/ripley = 15,
-		/obj/structure/mecha_wreckage/ripley/firefighter = 9,
-		/obj/structure/mecha_wreckage/ripley/mkii = 9,
-		/obj/structure/mecha_wreckage/ripley/clip = 9
-		)
-
-/obj/effect/spawner/random/waste/mechwreck/rare
-	loot = list(
-		/obj/structure/mecha_wreckage/durand = 12.5,
-		/obj/structure/mecha_wreckage/durand/clip = 12.5,
-		/obj/structure/mecha_wreckage/odysseus = 25,
-		/obj/structure/mecha_wreckage/gygax = 25
-		)
-
 /obj/effect/spawner/random/waste/radiation
 	loot = list(
 		/obj/structure/hazard/radioactive = 6,

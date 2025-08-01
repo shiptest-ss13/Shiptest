@@ -496,9 +496,6 @@
 /obj/effect/CanEnterDisposals()
 	return
 
-/obj/mecha/CanEnterDisposals()
-	return
-
 /obj/machinery/disposal/bin/newHolderDestination(obj/structure/disposalholder/H)
 	H.destinationTag = 1
 

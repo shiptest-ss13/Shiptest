@@ -51,10 +51,6 @@ GLOBAL_LIST_EMPTY(dead_players_during_shift)
 	remove_status_effect(/datum/status_effect/jitter)
 	if(client && !(client in GLOB.dead_players_during_shift))
 		GLOB.dead_players_during_shift += client
-	if(ismecha(loc))
-		var/obj/mecha/M = loc
-		if(M.occupant == src)
-			M.go_out()
 
 	if(!QDELETED(dna)) //The gibbed param is bit redundant here since dna won't exist at this point if they got deleted.
 		dna.species.spec_death(gibbed, src)

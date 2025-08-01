@@ -78,12 +78,6 @@
 	if(operating || !density)
 		return
 	if (!(ismob(AM)))
-		if(ismecha(AM))
-			var/obj/mecha/mecha = AM
-			if(mecha.occupant && allowed(mecha.occupant))
-				open_and_close()
-			else
-				do_animate("deny")
 		return
 	if (!(SSticker))
 		return

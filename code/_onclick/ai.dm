@@ -65,9 +65,6 @@
 		CtrlClickOn(A)
 		return
 	if(LAZYACCESS(modifiers, MIDDLE_CLICK))
-		if(controlled_mech) //Are we piloting a mech? Placed here so the modifiers are not overridden.
-			controlled_mech.click_action(A, src, params) //Override AI normal click behavior.
-			return
 		MiddleClickOn(A, params)
 		return
 

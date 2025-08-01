@@ -230,17 +230,6 @@
 	availability_prob = 20
 	spawn_weighting = FALSE
 
-/datum/blackmarket_item/ammo/mecha_hades_ammo
-	name = "FNX-99 Incediary Ammo"
-	desc = "A box of 24 incendiary shells for the FNX-99 mounted carbine."
-	item = /obj/item/mecha_ammo/incendiary
-
-	cost_min = 250
-	cost_max = 350
-	stock_min = 3
-	stock_max = 5
-	availability_prob = 0
-
 /datum/blackmarket_item/ammo/mauler_mag
 	name = "Mauler Magazine"
 	desc = "A 12 round 9x18mm magazine for the Mauler machine pistol."

@@ -14,7 +14,6 @@
 	RegisterSignal(target, COMSIG_ATOM_BULLET_ACT, PROC_REF(on_bullet_act))
 	RegisterSignal(target, COMSIG_ATOM_HITBY, PROC_REF(on_hitby))
 	RegisterSignal(target, COMSIG_ATOM_HULK_ATTACK, PROC_REF(on_attack_hulk))
-	RegisterSignal(target, COMSIG_ATOM_ATTACK_MECH, PROC_REF(on_attack_mech))
 
 /datum/element/relay_attackers/Detach(datum/source, ...)
 	. = ..()
@@ -28,7 +27,6 @@
 		COMSIG_ATOM_BULLET_ACT,
 		COMSIG_ATOM_HITBY,
 		COMSIG_ATOM_HULK_ATTACK,
-		COMSIG_ATOM_ATTACK_MECH,
 	))
 
 /datum/element/relay_attackers/proc/on_attackby(atom/target, obj/item/weapon, mob/attacker)
@@ -69,10 +67,6 @@
 /datum/element/relay_attackers/proc/on_attack_hulk(atom/target, mob/attacker)
 	SIGNAL_HANDLER
 	relay_attacker(target, attacker)
-
-/datum/element/relay_attackers/proc/on_attack_mech(atom/target, obj/mecha/mecha_attacker, mob/living/pilot)
-	SIGNAL_HANDLER
-	relay_attacker(target, mecha_attacker)
 
 /// Send out a signal identifying whoever just attacked us (usually a mob but sometimes a mech or turret)
 /datum/element/relay_attackers/proc/relay_attacker(atom/victim, atom/attacker)

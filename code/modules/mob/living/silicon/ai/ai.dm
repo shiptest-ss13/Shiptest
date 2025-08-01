@@ -40,7 +40,6 @@
 	var/alarms = list("Motion"=list(), "Fire"=list(), "Atmosphere"=list(), "Power"=list(), "Camera"=list(), "Burglar"=list())
 	var/viewalerts = 0
 	var/icon/holo_icon //Default is assigned when AI is created.
-	var/obj/mecha/controlled_mech //For controlled_mech a mech, to determine whether to relaymove or use the AI eye.
 	var/radio_enabled = TRUE //Determins if a carded AI can speak with its built in radio or not.
 	radiomod = ";" //AIs will, by default, state their laws on the internal radio.
 	var/obj/item/multitool/aiMulti
@@ -51,7 +50,6 @@
 	//MALFUNCTION
 	var/datum/module_picker/malf_picker
 	var/list/datum/AI_Module/current_modules = list()
-	var/can_dominate_mechs = FALSE
 	var/shunted = FALSE	//1 if the AI is currently shunted. Used to differentiate between shunted and ghosted/braindead
 
 	var/control_disabled = FALSE	// Set to 1 to stop AI from interacting via Click()
@@ -82,7 +80,6 @@
 	var/cooldown = 0
 	var/acceleration = 1
 
-	var/obj/structure/AIcore/deactivated/linked_core //For exosuit control
 	var/mob/living/silicon/robot/deployed_shell = null //For shell control
 	var/datum/action/innate/deploy_shell/deploy_action = new
 	var/datum/action/innate/deploy_last_shell/redeploy_action = new
@@ -394,31 +391,7 @@
 		else
 			to_chat(src, "Target is not on or near any active cameras on your network.")
 		return
-	if (href_list["ai_take_control"]) //Mech domination
-		var/obj/mecha/M = locate(href_list["ai_take_control"]) in GLOB.mechas_list
-		if (!M)
-			return
 
-		var/mech_has_controlbeacon = FALSE
-		for(var/obj/item/mecha_parts/mecha_tracking/ai_control/A in M.trackers)
-			mech_has_controlbeacon = TRUE
-			break
-		if(!can_dominate_mechs && !mech_has_controlbeacon)
-			message_admins("Warning: possible href exploit by [key_name(usr)] - attempted control of a mecha without can_dominate_mechs or a control beacon in the mech.")
-			log_game("Warning: possible href exploit by [key_name(usr)] - attempted control of a mecha without can_dominate_mechs or a control beacon in the mech.")
-			return
-
-		if(controlled_mech)
-			to_chat(src, span_warning("You are already loaded into an onboard computer!"))
-			return
-		if(!GLOB.cameranet.checkCameraVis(M))
-			to_chat(src, span_warning("Exosuit is no longer near active cameras."))
-			return
-		if(!isturf(loc))
-			to_chat(src, span_warning("You aren't in your core!"))
-			return
-		if(M)
-			M.transfer_ai(AI_MECH_HACK, src, usr) //Called on the mech itself.
 	if(href_list["show_paper_note"])
 		var/obj/item/paper/paper_note = locate(href_list["show_paper_note"])
 		if(!paper_note)

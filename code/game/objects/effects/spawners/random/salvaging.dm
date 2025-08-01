@@ -103,7 +103,6 @@
 	loot = list(
 		/obj/effect/spawner/random/maintenance,
 		/obj/effect/spawner/random/salvage/machine,
-		/obj/effect/spawner/random/exotic/ripley,
 		/obj/structure/closet/crate/secure/loot,
 	)
 

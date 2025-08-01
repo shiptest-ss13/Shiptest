@@ -1,16 +1,6 @@
 /datum/blackmarket_item/tech
 	category = "Technology"
 
-/datum/blackmarket_item/tech/ripley_mk_4
-	name = "Ripley Mk IV Upgrade Kit"
-	desc = "Pimp out your Ripley to the CLIP Mark IV Rogue Model today! Killjoy bureaucrats not included, thank god."
-	item = /obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/clip
-
-	cost_min = 1500
-	cost_max = 2500
-	stock_max = 3
-	availability_prob = 30
-
 /datum/blackmarket_item/tech/chem_master
 	name = "Chem Master Board"
 	desc = "A Chem Master board, capable of seperating and packaging reagents. Perfect for any aspiring at home chemist."
@@ -65,7 +55,7 @@
 
 /datum/blackmarket_item/tech/mmi
 	name = "Man Machine Interface"
-	desc = "Transcend the weakness of your flesh with this man machine interface, compatible with AIs, Cyborgs and Mechs!"
+	desc = "Transcend the weakness of your flesh with this man machine interface, compatible with AIs, and Cyborgs!"
 	item = /obj/item/mmi
 
 	cost_min = 250

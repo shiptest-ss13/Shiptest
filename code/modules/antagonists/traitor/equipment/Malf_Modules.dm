@@ -753,18 +753,6 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 	if(AI.eyeobj)
 		AI.eyeobj.relay_speech = TRUE
 
-/// Unlock Mech Domination: Unlocks the ability to dominate mechs. Big shocker, right?
-/datum/AI_Module/upgrade/mecha_domination
-	name = "Unlock Mech Domination"
-	description = "Allows you to hack into a mech's onboard computer, shunting all processes into it and ejecting any occupants. Once uploaded to the mech, it is impossible to leave.\
-	Do not allow the mech to leave the station's vicinity or allow it to be destroyed. Upgrade is done immediately upon purchase."
-	cost = 30
-	upgrade = TRUE
-	unlock_text = span_notice("Virus package compiled. Select a target mech at any time. <b>You must remain on the station at all times. Loss of signal will result in total system lockout.</b>")
-	unlock_sound = 'sound/mecha/nominal.ogg'
-
-/datum/AI_Module/upgrade/mecha_domination/upgrade(mob/living/silicon/ai/AI)
-	AI.can_dominate_mechs = TRUE //Yep. This is all it does. Honk!
 
 #undef DEFAULT_DOOMSDAY_TIMER
 #undef DOOMSDAY_ANNOUNCE_INTERVAL

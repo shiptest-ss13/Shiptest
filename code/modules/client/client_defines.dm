@@ -38,7 +38,7 @@
 		/////////
 	///Player preferences datum for the client
 	var/datum/preferences/prefs = null
-	///last turn of the controlled mob, I think this is only used by mechs?
+	///last turn of the controlled mob, used by pixel shifting
 	var/last_turn = 0
 	///Move delay of controlled mob, related to input handling
 	var/move_delay = 0

@@ -9,7 +9,6 @@
 /turf/open/floor/plating/rust,
 /area/ship/engineering/engines)
 "aq" = (
-/obj/machinery/mech_bay_recharge_port,
 /obj/machinery/light/directional/north,
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/tech/grid,
@@ -1739,8 +1738,6 @@
 	name = "exosuit equipment - WARNING"
 	},
 /obj/item/stack/sheet/mineral/uranium/ten,
-/obj/item/mecha_parts/mecha_equipment/thrusters/ion,
-/obj/item/mecha_parts/mecha_equipment/generator/nuclear,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "MH" = (
@@ -2073,9 +2070,6 @@
 	},
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 1
-	},
-/obj/mecha/working/ripley/cargo{
-	name = "APLU \"Big Betch\""
 	},
 /obj/effect/turf_decal/rechargefloor,
 /obj/effect/decal/cleanable/cobweb/cobweb2,

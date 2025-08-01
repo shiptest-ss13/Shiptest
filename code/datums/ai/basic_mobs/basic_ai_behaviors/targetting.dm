@@ -3,7 +3,7 @@
 	/// How far can we see stuff?
 	var/vision_range = 9
 	/// Static typecache list of potentially dangerous objs
-	var/static/list/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha))
+	var/static/list/hostile_machines = typecacheof(list(/obj/machinery/porta_turret))
 
 /datum/ai_behavior/find_potential_targets/perform(seconds_per_tick, datum/ai_controller/controller, target_key, targetting_datum_key, hiding_location_key)
 	. = ..()

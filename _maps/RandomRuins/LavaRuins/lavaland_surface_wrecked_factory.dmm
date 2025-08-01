@@ -206,11 +206,6 @@
 	},
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/cave/explored)
-"ch" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp,
-/turf/open/floor/plasteel/mono,
-/area/ruin/lavaland/factory/warehouse)
 "cm" = (
 /obj/structure/table/wood,
 /obj/machinery/light/directional/east,
@@ -2168,21 +2163,6 @@
 "uE" = (
 /turf/closed/wall/r_wall,
 /area/ruin/lavaland/factory/manager_office)
-"uH" = (
-/obj/structure/closet/crate/secure/engineering{
-	name = "ripley crate"
-	},
-/obj/item/mecha_parts/chassis/ripley,
-/obj/item/circuitboard/mecha/ripley/main,
-/obj/item/circuitboard/mecha/ripley/peripherals,
-/obj/item/mecha_parts/part/ripley_left_arm,
-/obj/item/mecha_parts/part/ripley_left_leg,
-/obj/item/mecha_parts/part/ripley_right_arm,
-/obj/item/mecha_parts/part/ripley_right_leg,
-/obj/item/mecha_parts/part/ripley_torso,
-/obj/item/mecha_parts/mecha_equipment/drill,
-/turf/open/floor/plasteel/mono,
-/area/ruin/lavaland/factory/warehouse)
 "uJ" = (
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning,
 /turf/open/floor/plasteel/white,
@@ -3528,7 +3508,6 @@
 /area/ruin/lavaland/factory/warehouse)
 "Jk" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/mecha_wreckage/ripley,
 /obj/effect/decal/cleanable/robot_debris/old,
 /turf/open/floor/plasteel/mono,
 /area/ruin/lavaland/factory/warehouse)
@@ -4150,12 +4129,6 @@
 "Qc" = (
 /turf/open/floor/carpet/nanoweave,
 /area/ruin/lavaland/factory/manager_office)
-"Qh" = (
-/obj/machinery/mech_bay_recharge_port{
-	dir = 1
-	},
-/turf/open/floor/plasteel/mono,
-/area/ruin/lavaland/factory/warehouse)
 "Qw" = (
 /obj/structure/flora/rock/hell,
 /turf/open/floor/plating/asteroid/dirt/grass/lavaland,
@@ -5678,7 +5651,7 @@ iP
 yw
 TZ
 Zt
-Qh
+Ho
 mk
 xC
 hw
@@ -5946,7 +5919,7 @@ nD
 qm
 Uh
 LK
-ch
+Rv
 Bs
 AB
 bl
@@ -6221,7 +6194,7 @@ ML
 jk
 yo
 rI
-uH
+Ho
 sG
 iP
 ZU

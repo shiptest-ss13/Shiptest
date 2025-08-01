@@ -168,13 +168,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/garage)
-"aO" = (
-/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech,
-/obj/mecha/combat/gygax/dark/ramzi{
-	name = "\improper 515 EX 'Hammer Down'"
-	},
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/ruin/icemoon/training_facility/course)
 "aP" = (
 /obj/effect/turf_decal,
 /obj/structure/cable{
@@ -3345,7 +3338,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/garage)
 "qt" = (
-/obj/structure/mecha_wreckage/durand,
 /obj/structure/cable{
 	icon_state = "5-10"
 	},
@@ -4578,10 +4570,6 @@
 	pixel_y = 1;
 	pixel_x = 0
 	},
-/obj/item/circuitboard/mecha/durand/targeting{
-	pixel_y = 32;
-	layer = 2.99
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
@@ -5771,19 +5759,10 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/wood,
-/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
-/area/ruin/icemoon/training_facility/classroom)
-"Ck" = (
-/obj/structure/chair/greyscale{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
 /area/ruin/icemoon/training_facility/classroom)
 "Cl" = (
 /obj/structure/grille,
@@ -5993,7 +5972,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/central_hall)
 "Dt" = (
-/obj/machinery/mech_bay_recharge_port,
 /obj/structure/platform/ship_two/corner{
 	dir = 8
 	},
@@ -6441,7 +6419,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech,
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
@@ -7880,10 +7857,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/range)
-"MM" = (
-/obj/structure/mecha_wreckage/ripley,
-/turf/open/floor/plating/asteroid/snow/lit,
-/area/ruin/icemoon/training_facility/course)
 "MN" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6
@@ -10502,10 +10475,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility)
-"YS" = (
-/obj/structure/mecha_wreckage/ripley/clip,
-/turf/open/floor/plating/asteroid/snow/lit,
-/area/ruin/icemoon/training_facility/course)
 "YU" = (
 /obj/structure/railing/thin{
 	dir = 8
@@ -14108,7 +14077,7 @@ qP
 yE
 ed
 Sx
-Ck
+ed
 ed
 Ic
 Cl
@@ -14847,7 +14816,7 @@ Rn
 Rn
 Rn
 Rn
-MM
+Rn
 Rn
 Rn
 Rn
@@ -14990,7 +14959,7 @@ PW
 Kt
 FT
 iu
-aO
+KG
 KG
 KG
 KG
@@ -15141,7 +15110,7 @@ tB
 TJ
 aw
 La
-YS
+Rn
 ye
 Rz
 qt

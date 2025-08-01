@@ -163,16 +163,6 @@
 			dat += " (Stage [stage])"
 			dat += " <a href='byond://?[REF(src)];track=[REF(S)]'>\[Track\]</a><br>"
 
-		for(var/obj/mecha/M in seen)
-			if(M.name in names)
-				names[M.name]++
-				dat += "[M.name] ([names[M.name]])"
-			else
-				names[M.name] = 1
-				dat += "[M.name]"
-			dat += " <a href='byond://?[REF(src)];track=[REF(M)]'>\[Track\]</a><br>"
-
-
 		for(var/mob/living/M in seen)
 			if(M.name in names)
 				names[M.name]++

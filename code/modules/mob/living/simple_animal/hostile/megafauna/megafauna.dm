@@ -184,10 +184,6 @@
 			return L
 		else
 			enemies -= L
-	else if(ismecha(A))
-		var/obj/mecha/M = A
-		if(M.occupant)
-			return A
 
 /mob/living/simple_animal/hostile/megafauna/ListTargets()
 	if(!enemies.len)
@@ -210,11 +206,6 @@
 				var/mob/living/simple_animal/hostile/megafauna/boss = M
 				if(faction_check_mob(boss) && !attack_same && !boss.attack_same)
 					boss.enemies |= enemies
-		else if(ismecha(A))
-			var/obj/mecha/M = A
-			if(M.occupant)
-				enemies |= M
-				enemies |= M.occupant
 
 	return 0
 

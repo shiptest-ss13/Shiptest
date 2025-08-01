@@ -92,9 +92,6 @@
 		if(cardboard_mover.move_delay)
 			return FALSE
 
-	else if(ismecha(mover))
-		return FALSE
-
 	else if(isliving(mover)) // You Shall Not Pass!
 		var/mob/living/living_mover = mover
 		if(isbot(mover)) //Bots understand the secrets

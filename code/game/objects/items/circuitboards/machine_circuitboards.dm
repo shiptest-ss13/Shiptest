@@ -957,24 +957,6 @@
 		/obj/item/stock_parts/manipulator = 2,
 		/obj/item/stock_parts/micro_laser = 2)
 
-/obj/item/circuitboard/machine/mech_recharger
-	name = "Exosuit Bay Recharger (Machine Board)"
-	icon_state = "science"
-	build_path = /obj/machinery/mech_bay_recharge_port
-	req_components = list(
-		/obj/item/stack/cable_coil = 2,
-		/obj/item/stock_parts/capacitor = 5)
-
-/obj/item/circuitboard/machine/mechfab
-	name = "Exosuit Fabricator (Machine Board)"
-	icon_state = "science"
-	build_path = /obj/machinery/mecha_part_fabricator
-	req_components = list(
-		/obj/item/stock_parts/matter_bin = 2,
-		/obj/item/stock_parts/manipulator = 1,
-		/obj/item/stock_parts/micro_laser = 1,
-		/obj/item/stack/sheet/glass = 1)
-
 /obj/item/circuitboard/machine/aug_manipulator
 	name = "Augment Manipulator (Machine Board)"
 	icon_state = "science"

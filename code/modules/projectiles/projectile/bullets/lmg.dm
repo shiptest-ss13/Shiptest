@@ -53,10 +53,6 @@
 
 /obj/projectile/bullet/p50/penetrator/sabot/on_hit(atom/target, blocked = FALSE)
 	..()
-	if(ismecha(target))
-		var/obj/mecha/M = target
-		M.take_damage(anti_armour_damage)
-		// Mechs take extra damage
 	return BULLET_ACT_HIT
 
 // Turrets

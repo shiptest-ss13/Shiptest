@@ -105,40 +105,6 @@
 		hitpush = FALSE
 	..()
 
-
-
-/mob/living/mech_melee_attack(obj/mecha/M)
-	if(M.occupant.a_intent == INTENT_HARM)
-		if(HAS_TRAIT(M.occupant, TRAIT_PACIFISM))
-			to_chat(M.occupant, span_warning("You don't want to harm other living beings!"))
-			return
-		M.do_attack_animation(src)
-		if(M.damtype == "brute")
-			step_away(src,M,15)
-		switch(M.damtype)
-			if(BRUTE)
-				Unconscious(20)
-				take_overall_damage(rand(M.force/2, M.force))
-				playsound(src, 'sound/weapons/punch4.ogg', 50, TRUE)
-			if(BURN)
-				take_overall_damage(0, rand(M.force/2, M.force))
-				playsound(src, 'sound/items/welder.ogg', 50, TRUE)
-			if(TOX)
-				M.mech_toxin_damage(src)
-			else
-				return
-		updatehealth()
-		visible_message(span_danger("[M.name] hits [src]!"), \
-						span_userdanger("[M.name] hits you!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, M)
-		to_chat(M, span_danger("You hit [src]!"))
-		log_combat(M.occupant, src, "attacked", M, "(INTENT: [uppertext(M.occupant.a_intent)]) (DAMTYPE: [uppertext(M.damtype)])")
-	else
-		step_away(src,M)
-		log_combat(M.occupant, src, "pushed", M)
-		visible_message(span_warning("[M] pushes [src] out of the way."), \
-						span_warning("[M] pushes you out of the way."), span_hear("You hear aggressive shuffling!"), 5, M)
-		to_chat(M, span_danger("You push [src] out of the way."))
-
 /mob/living/fire_act()
 	adjust_fire_stacks(3)
 	IgniteMob()

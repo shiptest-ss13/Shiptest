@@ -903,9 +903,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		return ..()
 	return 0
 
-/obj/item/mech_melee_attack(obj/mecha/M)
-	return 0
-
 /obj/item/attack_basic_mob(mob/living/basic/user, list/modifiers)
 	if (obj_flags & CAN_BE_HIT)
 		return ..()

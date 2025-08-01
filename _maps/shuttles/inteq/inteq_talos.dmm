@@ -666,16 +666,7 @@
 /area/ship/hallway/fore)
 "dQ" = (
 /obj/machinery/light/directional/east,
-/obj/item/mecha_parts/mecha_equipment/thrusters/ion,
-/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp{
-	pixel_x = 0;
-	pixel_y = 7
-	},
 /obj/structure/rack,
-/obj/item/mecha_parts/mecha_equipment/cable_layer{
-	pixel_x = 0;
-	pixel_y = -5
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hangar)
 "dW" = (
@@ -3096,11 +3087,6 @@
 "ro" = (
 /obj/machinery/light/directional/west,
 /obj/structure/rack,
-/obj/item/mecha_parts/mecha_equipment/salvage_saw{
-	pixel_x = 0;
-	pixel_y = 4
-	},
-/obj/item/mecha_parts/mecha_equipment/rcd,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hangar)
 "rr" = (
@@ -3256,7 +3242,6 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "sc" = (
-/obj/machinery/mecha_part_fabricator,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "sn" = (
@@ -5556,9 +5541,6 @@
 /area/ship/hallway/central)
 "Gn" = (
 /obj/machinery/airalarm/directional/east,
-/obj/machinery/mech_bay_recharge_port{
-	dir = 2
-	},
 /obj/structure/platform/ship_three{
 	layer = 2.8;
 	dir = 1
@@ -6729,7 +6711,6 @@
 /area/ship/engineering/communications)
 "MD" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/mecha_wreckage/ripley/firefighter,
 /obj/effect/turf_decal/rechargefloor,
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/effect/turf_decal/box,
@@ -7961,9 +7942,6 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/hangar)
 "UK" = (
-/obj/mecha/working/ripley/firefighter{
-	name = "\improper APLU MK-III \"Rex\""
-	},
 /obj/effect/turf_decal/rechargefloor,
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/tech/grid,
@@ -7979,9 +7957,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "UN" = (
-/obj/machinery/mech_bay_recharge_port{
-	dir = 2
-	},
 /obj/structure/platform/ship_three{
 	layer = 2.8;
 	dir = 1

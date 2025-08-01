@@ -650,8 +650,6 @@
 
 ///proc version to finish /mob/verb/mode() execution. used in case the proc needs to be queued for the tick after its first called
 /mob/proc/execute_mode()
-	if(ismecha(loc))
-		return
 
 	if(incapacitated())
 		return
@@ -668,10 +666,6 @@
 	set name = "Do Unique Action"
 	set category = "Object"
 	set src = usr
-
-	if(ismecha(loc))
-		var/obj/mecha/mech = loc
-		return mech.handle_unique_action(src)
 
 	if(incapacitated())
 		return
@@ -690,13 +684,6 @@
 	set category = "Object"
 	set src = usr
 
-	if(ismecha(loc))
-		var/obj/mecha/mecha = loc
-		if(mecha.zoom_action)
-			mecha.zoom_action.Activate()
-			return
-		return
-
 	var/obj/item/I = get_active_held_item()
 	if(istype(I, /obj/item/gun))
 		var/obj/item/gun/our_gun = I
@@ -711,8 +698,6 @@
 	set category = "Object"
 	set src = usr
 
-	if(ismecha(loc))
-		return
 	if(incapacitated())
 		return
 

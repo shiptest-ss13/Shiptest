@@ -247,13 +247,6 @@
 	build_path = /obj/item/circuitboard/machine/rdserver
 	category = list("Research Machinery", "initial", "Equipment")
 
-/datum/design/board/mechfab
-	name = "Machine Design (Exosuit Fabricator Board)"
-	desc = "The circuit board for an Exosuit Fabricator."
-	id = "mechfab"
-	build_path = /obj/item/circuitboard/machine/mechfab
-	category = list("Research Machinery")
-
 /datum/design/board/cyborgrecharger
 	name = "Machine Design (Cyborg Recharger Board)"
 	desc = "The circuit board for a Cyborg Recharger."
@@ -261,14 +254,6 @@
 	build_path = /obj/item/circuitboard/machine/cyborgrecharger
 	category = list("Research Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
-
-/datum/design/board/mech_recharger
-	name = "Machine Design (Mechbay Recharger Board)"
-	desc = "The circuit board for a Mechbay Recharger."
-	id = "mech_recharger"
-	build_path = /obj/item/circuitboard/machine/mech_recharger
-	category = list("Research Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/board/augmanipulator
 	name = "Machine Design (Augment Manipulator Board)"

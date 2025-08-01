@@ -4,8 +4,6 @@ GLOBAL_LIST_EMPTY(cable_list)
 GLOBAL_LIST_EMPTY(portals)
 /// List of all airlocks
 GLOBAL_LIST_EMPTY(airlocks)
-/// List of all mechs. Used by hostile mobs target tracking.
-GLOBAL_LIST_EMPTY(mechas_list)
 /// NOTE: this is a list of ALL machines now. The processing machines list is SSmachine.processing!
 GLOBAL_LIST_EMPTY(machines)
 /// List of all bot nagivation beacons, used for patrolling.

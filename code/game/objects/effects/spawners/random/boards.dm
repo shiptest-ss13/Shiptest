@@ -26,7 +26,6 @@
 	loot = list(
 		/obj/item/circuitboard/computer/aifixer,
 		/obj/item/circuitboard/machine/rdserver,
-		/obj/item/circuitboard/machine/mechfab,
 		/obj/item/circuitboard/machine/circuit_imprinter/department,
 		/obj/item/circuitboard/computer/teleporter,
 		/obj/item/circuitboard/machine/destructive_analyzer,
@@ -99,7 +98,6 @@
 /obj/effect/spawner/random/techstorage/rnd_secure
 	name = "secure RnD circuit board spawner"
 	loot = list(
-		/obj/item/circuitboard/computer/mecha_control,
 		/obj/item/circuitboard/computer/apc_control,
 		/obj/item/circuitboard/computer/robotics
 	)
@@ -167,8 +165,6 @@
 			/obj/item/circuitboard/machine/hydroponics = 5,
 			/obj/item/circuitboard/machine/limbgrower = 5,
 			/obj/item/circuitboard/machine/ltsrbt = 5,
-			/obj/item/circuitboard/machine/mech_recharger = 5,
-			/obj/item/circuitboard/machine/mechfab = 5,
 			/obj/item/circuitboard/machine/medical_kiosk = 5,
 			/obj/item/circuitboard/machine/medipen_refiller = 5,
 			/obj/item/circuitboard/machine/microwave = 5,
@@ -194,20 +190,6 @@
 			/obj/item/circuitboard/machine/shuttle/smes = 5,
 		)
 
-/obj/effect/spawner/random/circuit/machine/mech
-	loot = list(
-			/obj/item/circuitboard/mecha/ripley/main = 100,
-			/obj/item/circuitboard/mecha/ripley/peripherals = 100,
-			/obj/item/circuitboard/mecha/odysseus/main = 25,
-			/obj/item/circuitboard/mecha/odysseus/peripherals = 25,
-			/obj/item/circuitboard/mecha/gygax/main = 20,
-			/obj/item/circuitboard/mecha/gygax/peripherals = 20,
-			/obj/item/circuitboard/mecha/gygax/targeting = 20,
-			/obj/item/circuitboard/mecha/durand/main = 20,
-			/obj/item/circuitboard/mecha/durand/peripherals = 20,
-			/obj/item/circuitboard/mecha/durand/targeting = 20,
-		)
-
 //COMPUTER
 /obj/effect/spawner/random/circuit/computer/common
 	loot = list(
@@ -218,7 +200,6 @@
 			/obj/item/circuitboard/computer/atmos_alert = 5,
 			/obj/item/circuitboard/computer/card = 5,
 			/obj/item/circuitboard/computer/launchpad_console = 5,
-			/obj/item/circuitboard/computer/mech_bay_power_console = 5,
 			/obj/item/circuitboard/computer/pandemic = 5,
 			/obj/item/circuitboard/computer/powermonitor/secret = 5,
 			/obj/item/circuitboard/computer/stationalert = 5,

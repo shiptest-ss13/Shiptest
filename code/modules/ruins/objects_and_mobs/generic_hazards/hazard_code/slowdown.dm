@@ -61,10 +61,6 @@ slowing hazards! either requires laying down, has a chance to stick, or requires
 		if(cardboard_mover.move_delay)
 			return FALSE
 
-	//no mechs!
-	else if(ismecha(mover))
-		return FALSE
-
 	//actual living checks
 	else if(isliving(mover))
 		var/mob/living/living_mover = mover

@@ -639,18 +639,7 @@
 	accessory = /obj/item/clothing/accessory/holster
 	head = /obj/item/clothing/head/beret/command
 
-// Exosuit Pilot
-/datum/outfit/job/nanotrasen/security/mech_pilot
-	name = "Nanotrasen - Exosuit Pilot"
-	id_assignment = "Exosuit Pilot"
-
-	uniform = /obj/item/clothing/under/rank/security/officer/military/eng
-	head = /obj/item/clothing/head/beret/sec/officer
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof
-	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
-
 // LP - for Ranger ship //
-
 /datum/outfit/job/nanotrasen/captain/lp
 	name = "Nanotrasen - Loss Prevention Lieutenant"
 	id_assignment = "Lieutenant"

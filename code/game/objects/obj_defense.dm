@@ -139,33 +139,11 @@
 		return
 	attack_generic(user, rand(10, 15), BRUTE, "melee", 1)
 
-/obj/mech_melee_attack(obj/mecha/M)
-	M.do_attack_animation(src)
-	var/play_soundeffect = 0
-	var/mech_damtype = M.damtype
-	if(M.selected)
-		mech_damtype = M.selected.damtype
-		play_soundeffect = 1
-	else
-		switch(M.damtype)
-			if(BRUTE)
-				playsound(src, 'sound/weapons/punch4.ogg', 50, TRUE)
-			if(BURN)
-				playsound(src, 'sound/items/welder.ogg', 50, TRUE)
-			if(TOX)
-				playsound(src, 'sound/effects/spray2.ogg', 50, TRUE)
-				return 0
-			else
-				return 0
-	M.visible_message(span_danger("[M.name] hits [src]!"), span_danger("You hit [src]!"), null, COMBAT_MESSAGE_RANGE)
-	return take_damage(M.force*3, mech_damtype, "melee", play_soundeffect, get_dir(src, M)) // multiplied by 3 so we can hit objs hard but not be overpowered against mobs.
-
 /obj/singularity_act()
 	SSexplosions.highobj += src
 	if(src && !QDELETED(src))
 		qdel(src)
 	return 2
-
 
 ///// ACID
 

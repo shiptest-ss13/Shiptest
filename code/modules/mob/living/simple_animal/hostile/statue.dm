@@ -133,10 +133,6 @@
 			if(M.client && CanAttack(M) && !M.has_unlimited_silicon_privilege)
 				if(!M.is_blind())
 					return M
-		for(var/obj/mecha/M in view(world.view + 1, check)) //assuming if you can see them they can see you
-			if(M.occupant && M.occupant.client)
-				if(!M.occupant.is_blind())
-					return M.occupant
 	return null
 
 // Cannot talk

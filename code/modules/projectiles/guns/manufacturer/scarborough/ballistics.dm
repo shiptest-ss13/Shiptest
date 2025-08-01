@@ -634,7 +634,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 
 /obj/item/gun/ballistic/automatic/marksman/taipan
 	name = "AMR-83 \"Taipan\""
-	desc = "A monstrous semi-automatic anti-materiel rifle, surprisingly short for its class. Designed to destroy mechs, light vehicles, and equipment, but more than capable of obliterating regular personnel. Chambered in .50 BMG."
+	desc = "A monstrous semi-automatic anti-materiel rifle, surprisingly short for its class. Designed to destroy light vehicles and equipment, but more than capable of obliterating regular personnel. Chambered in .50 BMG."
 
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
@@ -1001,7 +1001,7 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 
 /obj/item/gun/ballistic/rocketlauncher/mako
 	name = "RR-86 \"Mako\""
-	desc = "A large, four-tube rocket launcher, the Mako fires (relatively) small rockets filled with incendiary compound, designed to cause fires and deny enemy movement. Capable of causing significant damage to exosuits on impact, as well."
+	desc = "A large, four-tube rocket launcher, the Mako fires (relatively) small rockets filled with incendiary compound, designed to cause fires and deny enemy movement."
 
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'

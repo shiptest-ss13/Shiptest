@@ -964,10 +964,6 @@
 	SEND_SIGNAL(src, COMSIG_ATOM_DIR_CHANGE, dir, newdir)
 	dir = newdir
 
-///Handle melee attack by a mech
-/atom/proc/mech_melee_attack(obj/mecha/M)
-	return
-
 /**
  * Called when the atom log's in or out
  *
@@ -1402,8 +1398,6 @@
 			log_game(log_text)
 		if(LOG_GAME)
 			log_game(log_text)
-		if(LOG_MECHA)
-			log_mecha(log_text)
 		if(LOG_SHUTTLE)
 			log_shuttle(log_text)
 		if(LOG_RADIO_EMOTE)

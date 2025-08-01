@@ -11,9 +11,6 @@
 	..()
 	explosion(target, 0, 1, 2, 1, 0, flame_range = 4)
 
-	if(ismecha(target))
-		var/obj/mecha/M = target
-		M.take_damage(anti_armour_damage)
 	if(issilicon(target))
 		var/mob/living/silicon/S = target
 		S.take_overall_damage(anti_armour_damage*0.75, anti_armour_damage*0.25)
@@ -38,10 +35,9 @@
 	damage = 30
 	ricochets_max = 0 //it's a MISSILE
 	var/sturdy = list(
-	/turf/closed,
-	/obj/mecha,
-	/obj/machinery/door/,
-	/obj/machinery/door/poddoor/shutters
+		/turf/closed,
+		/obj/machinery/door/,
+		/obj/machinery/door/poddoor/shutters,
 	)
 
 /obj/item/broken_missile
@@ -58,5 +54,5 @@
 		if(istype(target, i))
 			explosion(target, 1, 1, 1, 2)
 			return BULLET_ACT_HIT
-	//if(istype(target, /turf/closed) || ismecha(target))
-	new /obj/item/broken_missile(get_turf(src), 1)
+	if(istype(target, /turf/closed))
+		new /obj/item/broken_missile(get_turf(src), 1)

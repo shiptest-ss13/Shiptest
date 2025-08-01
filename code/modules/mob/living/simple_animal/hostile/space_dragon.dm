@@ -128,9 +128,6 @@
 					adjustHealth(-L.maxHealth * 0.5)
 			return
 	. = ..()
-	if(istype(target, /obj/mecha))
-		var/obj/mecha/M = target
-		M.take_damage(50, BRUTE, "melee", 1)
 
 /mob/living/simple_animal/hostile/space_dragon/Move()
 	if(!using_special)
@@ -204,7 +201,7 @@
  * What occurs on each tile to actually create the fire.
  *
  * Creates a fire on the given turf.
- * It creates a hotspot on the given turf, damages any living mob with 30 burn damage, and damages mechs by 50.
+ * It creates a hotspot on the given turf, damages any living mob with 30 burn damage
  * It can only hit any given target once.
  * Arguments:
  * * turf/T - The turf to trigger the effects on.
@@ -220,12 +217,6 @@
 		hit_list += L
 		L.adjustFireLoss(30)
 		to_chat(L, span_userdanger("You're hit by [src]'s fire breath!"))
-	// deals damage to mechs
-	for(var/obj/mecha/M in T.contents)
-		if(M in hit_list)
-			continue
-		hit_list += M
-		M.take_damage(50, BRUTE, "melee", 1)
 
 /**
  * Handles consuming and storing consumed things inside Space Dragon

@@ -20,9 +20,6 @@
 #define MODE_L_HAND "left hand"
 #define MODE_KEY_L_HAND "l"
 
-#define MODE_EXOSUIT "exosuit"
-#define MODE_KEY_EXOSUIT "z"
-
 #define MODE_INTERCOM "intercom"
 #define MODE_KEY_INTERCOM "i"
 #define MODE_TOKEN_INTERCOM ":i"

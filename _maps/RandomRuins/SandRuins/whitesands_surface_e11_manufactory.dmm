@@ -793,10 +793,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
-"gc" = (
-/obj/structure/mecha_wreckage/ripley,
-/turf/open/floor/concrete/pavement/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "gi" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -1228,13 +1224,6 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ruin/whitesands/e11manufactory/security)
-"jm" = (
-/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp{
-	pixel_y = -9;
-	pixel_x = 2
-	},
-/turf/open/floor/plasteel/mono,
-/area/ruin/whitesands/e11manufactory/warehouse)
 "jn" = (
 /obj/effect/decal/cleanable/insectguts,
 /turf/open/floor/plasteel/mono,
@@ -3705,7 +3694,6 @@
 /area/ruin/whitesands/e11manufactory/mats)
 "DG" = (
 /obj/machinery/light/directional/south,
-/obj/machinery/mech_bay_recharge_port,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/warehouse)
@@ -4244,10 +4232,6 @@
 /obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
 /area/ruin/whitesands/e11manufactory/barracks)
-"Ie" = (
-/obj/structure/mecha_wreckage/ripley,
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Ii" = (
 /obj/effect/turf_decal/corner/opaque/green/diagonal,
 /obj/effect/turf_decal/corner/opaque/red/diagonal{
@@ -4463,9 +4447,6 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "JP" = (
 /obj/effect/turf_decal/rechargefloor,
-/obj/mecha/working/ripley{
-	name = "APLU MK-I 'Forklift'"
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/warehouse)
@@ -7978,7 +7959,7 @@ yN
 VP
 lJ
 KQ
-Ie
+Pg
 oB
 gV
 gV
@@ -8772,7 +8753,7 @@ DD
 qx
 vH
 vL
-jm
+qx
 DG
 di
 vU
@@ -9946,7 +9927,7 @@ gU
 hI
 hI
 gU
-gc
+gU
 id
 Pg
 Pg

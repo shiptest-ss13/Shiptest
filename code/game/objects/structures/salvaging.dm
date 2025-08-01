@@ -177,7 +177,6 @@
 		/obj/effect/spawner/random/salvage/part/manipulator = 30,
 
 		/obj/item/stack/circuit_stack = 50, //this might be the only way in the game to get a poly circuit, and the only way for many ships to get essensial electronics. huh.
-		/obj/effect/spawner/random/circuit/machine/mech = 45, //with all the wonderful broken mechs lying around, this might be a chance to get something stupidly overpowered.
 		/obj/effect/spawner/random/circuit/machine/common = 50, //well.... "common"
 		/obj/effect/spawner/random/circuit/machine/rare = 5,
 

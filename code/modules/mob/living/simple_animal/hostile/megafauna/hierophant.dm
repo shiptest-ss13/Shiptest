@@ -701,14 +701,6 @@ Difficulty: Hard
 			L.adjustBruteLoss(damage)
 		if(caster)
 			log_combat(caster, L, "struck with a [name]")
-	for(var/obj/mecha/M in T.contents - hit_things) //also damage mechs.
-		hit_things += M
-		if(M.occupant)
-			if(friendly_fire_check && caster && caster.faction_check_mob(M.occupant))
-				continue
-			to_chat(M.occupant, span_userdanger("Your [M.name] is struck by a [name]!"))
-		playsound(M,'sound/weapons/sear.ogg', 50, TRUE, -4)
-		M.take_damage(damage, BURN, 0, 0)
 
 /obj/effect/hierophant
 	name = "hierophant beacon"

@@ -532,14 +532,6 @@ so as to remain in compliance with the most up-to-date laws."
 	if(T)
 		AI.eyeobj.setLoc(T)
 
-//EXOSUITS
-
-/atom/movable/screen/alert/low_mech_integrity
-	name = "Exosuit Damaged"
-	desc = "Exosuit integrity is low."
-	icon_state = "low_mech_integrity"
-
-
 //GHOSTS
 //TODO: expand this system to replace the pollCandidates/CheckAntagonist/"choose quickly"/etc Yes/No messages
 /atom/movable/screen/alert/notify_cloning

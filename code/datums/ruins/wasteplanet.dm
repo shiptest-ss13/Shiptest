@@ -19,16 +19,7 @@
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
 	ruin_mission_types = list(
 		/datum/mission/ruin/data_retrieval,
-		/datum/mission/ruin/my_mech
 	)
-
-/datum/mission/ruin/my_mech
-	name = "Lucky #2"
-	desc = "Lemme tell you a quick lil story - back when the ICW was winding down, I was stationed out in a waste world, ready to scramble out with the rest of my lance at a moment's notice. Word never came, and eventually, we all went home. But. I still have that longing to pilot in me. Can you go check these coords, and see if my suit, Lucky #2, is still there? If she is, I want her back."
-	author = "Bernard Lytton"
-	value = 4000
-	mission_limit = 1
-	setpiece_item = /obj/structure/mecha_wreckage/gygax/dark
 
 /datum/map_template/ruin/wasteplanet/tradepost
 	name = "Ruined Tradepost"

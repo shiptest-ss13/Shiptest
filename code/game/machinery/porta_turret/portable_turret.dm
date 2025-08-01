@@ -128,7 +128,6 @@
 		/mob/living/silicon,
 		/mob/living/simple_animal,
 		/mob/living/basic,
-		/obj/mecha,
 	))
 
 	if(is_type_in_typecache(new_target, typecache_of_targets))
@@ -487,17 +486,8 @@
 			break
 
 /obj/machinery/porta_turret/proc/check_target(atom/movable/target, check_flags = turret_flags)
-	// mecha|carbon|silicon|simple_animal
-	if(ismecha(target))
-		var/obj/mecha/mech = target
-		if(!mech.occupant)
-			targets -= target
-			return FALSE
-		target = mech.occupant
-
 	// We know the target must be a mob now
 	var/mob/target_mob = target
-
 	if(target_mob.stat == DEAD)
 		//They probably won't need to be re-checked
 		targets -= target

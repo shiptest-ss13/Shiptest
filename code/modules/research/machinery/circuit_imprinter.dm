@@ -9,7 +9,6 @@
 								"Teleportation Machinery",
 								"Medical Machinery",
 								"Engineering Machinery",
-								"Exosuit Modules",
 								"Hydroponics Machinery",
 								"Subspace Telecomms",
 								"Research Machinery",

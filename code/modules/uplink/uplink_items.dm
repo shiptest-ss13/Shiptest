@@ -829,20 +829,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 1
 	include_modes = list(/datum/game_mode/nuclear)
 
-/datum/uplink_item/ammo/mech/bag
-	name = "Exosuit Support Kit Bag"
-	desc = "A duffel bag containing ammo for four full reloads of the scattershot which is equipped on standard 515 EX and Touro exosuits. Also comes with some support equipment for maintaining the exosuit, including tools and an inducer."
-	item = /obj/item/storage/backpack/duffelbag/syndie/ammo/mech
-	cost = 4
-	include_modes = list(/datum/game_mode/nuclear)
-
-/datum/uplink_item/ammo/touro/bag
-	name = "Touro Ammo Bag"
-	desc = "A duffel bag containing ammo for three full reloads of the LMG, scattershot carbine, and SRM-8 missile laucher that are equipped on a standard Touro exosuit."
-	item = /obj/item/storage/backpack/duffelbag/syndie/ammo/touro
-	cost = 6
-	include_modes = list(/datum/game_mode/nuclear)
-
 /datum/uplink_item/ammo/tec9
 	name = "TEC9 Magazine"
 	desc = "An additional 20 round 9x18mm magazine for the TEC9."
@@ -991,7 +977,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	surplus = 35
 	include_modes = list(/datum/game_mode/nuclear)
 
-//Support and Mechs
+//Support
 /datum/uplink_item/support
 	category = "Support and Exosuits"
 	surplus = 0
@@ -1035,19 +1021,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	refundable = TRUE
 	cost = 35
 	restricted = TRUE
-
-/datum/uplink_item/support/gygax
-	name = "515 EX Exosuit"
-	desc = "A lightweight exosuit, painted in a dark scheme. Its speed and equipment selection make it excellent \
-			for hit-and-run style attacks. Features an incendiary carbine, flash bang launcher, teleporter, ion thrusters and a Tesla energy array."
-	item = /obj/mecha/combat/gygax/dark/loaded
-	cost = 80
-/datum/uplink_item/support/touro
-	name = "Touro Exosuit"
-	desc = "A well-armored and incredibly deadly military-grade exosuit. Features long-range targeting, thrust vectoring \
-			and deployable smoke. Comes equipped with an LMG, scattershot carbine, missile rack, an antiprojectile armor booster and a Tesla energy array."
-	item = /obj/mecha/combat/marauder/touro/loaded
-	cost = 140
 
 // Stealth Items
 /datum/uplink_item/stealthy_tools
@@ -1609,15 +1582,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/reagent_containers/syringe/spider_extract
 	cost = 10
 	restricted_roles = list("Research Director", "Scientist", "Roboticist")
-
-/datum/uplink_item/role_restricted/concealed_weapon_bay
-	name = "Concealed Weapon Bay"
-	desc = "A modification for civilian exosuits that allows them to equip one piece of equipment designed for combat exosuits. \
-			It also hides the equipped weapon from plain sight. \
-			Only one can fit on an exosuit."
-	item = /obj/item/mecha_parts/weapon_bay/concealed
-	cost = 3
-	restricted_roles = list("Roboticist", "Research Director")
 
 /datum/uplink_item/role_restricted/haunted_magic_eightball
 	name = "Haunted Magic Eightball"

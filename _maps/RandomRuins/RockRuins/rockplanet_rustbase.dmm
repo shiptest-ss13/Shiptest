@@ -627,13 +627,7 @@
 /area/ruin/rockplanet/rust_base/hallway)
 "go" = (
 /obj/structure/rack,
-/obj/item/mecha_ammo/scattershot{
-	pixel_y = 5
-	},
 /obj/effect/turf_decal/siding/thinplating,
-/obj/item/mecha_ammo/scattershot{
-	pixel_y = 11
-	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/mechbay)
 "gu" = (
@@ -1138,9 +1132,6 @@
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/rockplanet/rust_base)
 "kU" = (
-/obj/machinery/mech_bay_recharge_port{
-	dir = 8
-	},
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
 	},
@@ -1243,13 +1234,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/rust_base/armory)
-"md" = (
-/obj/structure/mecha_wreckage/touro,
-/obj/effect/decal/cleanable/glass/plasma,
-/obj/effect/decal/cleanable/plastic,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/rust,
-/area/ruin/rockplanet/rust_base/mechbay)
 "me" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1968,9 +1952,6 @@
 /turf/open/floor/plating,
 /area/ruin/rockplanet/rust_base/dorms)
 "sC" = (
-/obj/machinery/mech_bay_recharge_port{
-	dir = 8
-	},
 /obj/effect/turf_decal/siding/thinplating,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/mechbay)
@@ -3418,14 +3399,8 @@
 /area/ruin/rockplanet/rust_base/hallway)
 "GY" = (
 /obj/structure/rack,
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot{
-	pixel_y = 5
-	},
 /obj/machinery/light/directional/south,
 /obj/effect/turf_decal/siding/thinplating,
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser{
-	pixel_y = -2
-	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/mechbay)
 "Hc" = (
@@ -3635,7 +3610,6 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/rockplanet/rust_base/armory)
 "Jq" = (
-/obj/structure/mecha_wreckage/gygax/dark,
 /obj/effect/decal/cleanable/glass/plasma,
 /obj/effect/decal/cleanable/plastic,
 /obj/effect/decal/cleanable/dirt,
@@ -4010,7 +3984,6 @@
 /turf/open/floor/plating,
 /area/ruin/rockplanet/rust_base/dorms)
 "Nw" = (
-/obj/machinery/mech_bay_recharge_port,
 /obj/structure/platform/industrial_alt/corner{
 	dir = 1
 	},
@@ -4367,7 +4340,6 @@
 /turf/open/floor/hangar/plasteel/dark,
 /area/ruin/rockplanet/rust_base/mechbay)
 "QS" = (
-/obj/machinery/mech_bay_recharge_port,
 /obj/structure/platform/industrial_alt/corner{
 	dir = 4
 	},
@@ -7111,7 +7083,7 @@ QJ
 DF
 DZ
 NV
-md
+Jq
 MP
 aN
 aN
