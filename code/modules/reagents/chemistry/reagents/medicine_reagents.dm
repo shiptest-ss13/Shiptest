@@ -51,14 +51,14 @@
 	M.SetParalyzed(0)
 	M.SetImmobilized(0)
 	M.silent = FALSE
-	M.dizziness = 0
 	M.disgust = 0
 	M.drowsyness = 0
 	M.stuttering = 0
 	M.slurring = 0
 	M.confused = 0
 	M.set_sleeping(0)
-	M.jitteriness = 0
+	M.remove_status_effect(/datum/status_effect/jitter)
+	M.remove_status_effect(/datum/status_effect/dizziness)
 	if(M.blood_volume < BLOOD_VOLUME_NORMAL)
 		M.blood_volume = BLOOD_VOLUME_NORMAL
 
@@ -228,8 +228,8 @@
 
 /datum/reagent/medicine/rezadone/overdose_process(mob/living/M)
 	M.adjustToxLoss(1, 0)
-	M.Dizzy(5)
-	M.adjust_jitter(5)
+	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 	. = 1
 
@@ -685,7 +685,7 @@
 		var/obj/item/I = M.get_active_held_item()
 		if(I && M.dropItemToGround(I))
 			to_chat(M, span_notice("Your hands spaz out and you drop what you were holding!"))
-			M.adjust_jitter(10)
+			M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 
 	M.AdjustAllImmobility(-20)
 	M.adjustStaminaLoss(-1*REM, FALSE)
@@ -712,7 +712,7 @@
 	if(prob(3) && iscarbon(M))
 		M.visible_message(span_danger("[M] starts having a seizure!"), span_userdanger("You have a seizure!"))
 		M.Unconscious(100)
-		M.set_jitter(200)
+		M.set_timed_status_effect(120 SECONDS, /datum/status_effect/jitter)
 
 	if(prob(33))
 		M.adjustToxLoss(2*REM, 0)
@@ -724,7 +724,7 @@
 	if(prob(6) && iscarbon(M))
 		M.visible_message(span_danger("[M] starts having a seizure!"), span_userdanger("You have a seizure!"))
 		M.Unconscious(100)
-		M.set_jitter(400)
+		M.set_timed_status_effect(240 SECONDS, /datum/status_effect/jitter)
 
 	if(prob(33))
 		M.adjustToxLoss(3*REM, 0)
@@ -736,7 +736,7 @@
 	if(prob(12) && iscarbon(M))
 		M.visible_message(span_danger("[M] starts having a seizure!"), span_userdanger("You have a seizure!"))
 		M.Unconscious(100)
-		M.set_jitter(600)
+		M.set_timed_status_effect(300 SECONDS, /datum/status_effect/jitter)
 
 	if(prob(33))
 		M.adjustToxLoss(4*REM, 0)
@@ -748,7 +748,7 @@
 	if(prob(24) && iscarbon(M))
 		M.visible_message(span_danger("[M] starts having a seizure!"), span_userdanger("You have a seizure!"))
 		M.Unconscious(100)
-		M.set_jitter(1000)
+		M.set_timed_status_effect(300 SECONDS, /datum/status_effect/jitter)
 
 	if(prob(33))
 		M.adjustToxLoss(5*REM, 0)
@@ -766,7 +766,7 @@
 /datum/reagent/medicine/diphenhydramine/on_mob_life(mob/living/carbon/M)
 	if(prob(10))
 		M.drowsyness += 1
-	M.adjust_jitter(-6)
+	M.adjust_timed_status_effect(-12 SECONDS, /datum/status_effect/jitter)
 	M.reagents.remove_reagent(/datum/reagent/toxin/histamine,3)
 	..()
 
@@ -815,14 +815,14 @@
 /datum/reagent/medicine/morphine/overdose_process(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
-		M.Dizzy(2)
-		M.adjust_jitter(2)
+		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/medicine/morphine/addiction_act_stage1(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
-		M.adjust_jitter(2)
+		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/medicine/morphine/addiction_act_stage2(mob/living/M)
@@ -830,8 +830,8 @@
 		M.drop_all_held_items()
 		M.adjustToxLoss(1*REM, 0)
 		. = 1
-		M.Dizzy(3)
-		M.adjust_jitter(3)
+		M.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/medicine/morphine/addiction_act_stage3(mob/living/M)
@@ -839,8 +839,8 @@
 		M.drop_all_held_items()
 		M.adjustToxLoss(2*REM, 0)
 		. = 1
-		M.Dizzy(4)
-		M.adjust_jitter(4)
+		M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/medicine/morphine/addiction_act_stage4(mob/living/M)
@@ -848,8 +848,8 @@
 		M.drop_all_held_items()
 		M.adjustToxLoss(3*REM, 0)
 		. = 1
-		M.Dizzy(5)
-		M.adjust_jitter(5)
+		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/medicine/tramal
@@ -885,26 +885,26 @@
 
 /datum/reagent/medicine/tramal/overdose_process(mob/living/M)
 	if(prob(33))
-		M.Dizzy(2)
-		M.adjust_jitter(2)
+		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/medicine/tramal/addiction_act_stage1(mob/living/M)
 	if(prob(33))
-		M.adjust_jitter(2)
+		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/medicine/tramal/addiction_act_stage2(mob/living/M)
 	if(prob(33))
-		M.Dizzy(3)
-		M.adjust_jitter(3)
+		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/medicine/tramal/addiction_act_stage3(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
-		M.Dizzy(4)
-		M.adjust_jitter(4)
+		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/medicine/tramal/addiction_act_stage4(mob/living/M)
@@ -912,8 +912,8 @@
 		M.drop_all_held_items()
 		M.adjustToxLoss(2*REM, 0)
 		. = 1
-		M.Dizzy(5)
-		M.adjust_jitter(5)
+		M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/medicine/dimorlin
@@ -970,7 +970,7 @@
 /datum/reagent/medicine/dimorlin/addiction_act_stage1(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
-		M.adjust_jitter(2)
+		M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/medicine/dimorlin/addiction_act_stage2(mob/living/M)
@@ -978,8 +978,8 @@
 		M.drop_all_held_items()
 		M.adjustToxLoss(1*REM, 0)
 		. = 1
-		M.Dizzy(3)
-		M.adjust_jitter(3)
+		M.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/medicine/dimorlin/addiction_act_stage3(mob/living/M)
@@ -987,8 +987,8 @@
 		M.drop_all_held_items()
 		M.adjustToxLoss(2*REM, 0)
 		. = 1
-		M.Dizzy(4)
-		M.adjust_jitter(4)
+		M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/medicine/dimorlin/addiction_act_stage4(mob/living/M)
@@ -996,8 +996,8 @@
 		M.drop_all_held_items()
 		M.adjustToxLoss(3*REM, 0)
 		. = 1
-		M.Dizzy(5)
-		M.adjust_jitter(5)
+		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/medicine/oculine
@@ -1055,15 +1055,15 @@
 		. = 1
 	M.losebreath = 0
 	if(prob(20))
-		M.Dizzy(5)
-		M.adjust_jitter(5)
+		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/medicine/atropine/overdose_process(mob/living/M)
 	M.adjustToxLoss(0.5*REM, 0)
 	. = 1
-	M.Dizzy(1)
-	M.adjust_jitter(1)
+	M.set_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.adjust_timed_status_effect(2 SECONDS * REM, /datum/status_effect/dizziness, max_duration = 20 SECONDS)
 	..()
 
 /datum/reagent/medicine/epinephrine
@@ -1177,7 +1177,7 @@
 	taste_description = "acid"
 
 /datum/reagent/medicine/mutadone/on_mob_life(mob/living/carbon/M)
-	M.adjust_jitter(-50)
+	M.adjust_timed_status_effect(-100 SECONDS * REM, /datum/status_effect/jitter)
 	if(M.has_dna())
 		M.dna.remove_all_mutations(list(MUT_NORMAL, MUT_EXTRA), TRUE)
 	if(!QDELETED(M)) //We were a monkey, now a human
@@ -1190,12 +1190,15 @@
 	taste_description = "raw egg"
 
 /datum/reagent/medicine/antihol/on_mob_life(mob/living/carbon/M)
-	M.dizziness = 0
+	M.remove_status_effect(/datum/status_effect/dizziness)
 	M.drowsyness = 0
 	M.slurring = 0
 	M.confused = 0
 	M.reagents.remove_all_type(/datum/reagent/consumable/ethanol, 3*REM, 0, 1)
 	M.adjustToxLoss(-0.2*REM, 0)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		H.adjust_drunk_effect(-10)
 	..()
 	. = 1
 
@@ -1491,7 +1494,7 @@
 		M.adjustToxLoss(-3 * REM, 0)
 		M.adjustCloneLoss(-1 * REM, 0)
 		M.adjustStaminaLoss(-3 * REM, 0)
-		M.jitteriness = min(max(0, M.jitteriness + 3), 30)
+		M.adjust_timed_status_effect(3 SECONDS, /datum/status_effect/jitter, 30 SECONDS)
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2 * REM, 150)
 	M.druggy = min(max(0, M.druggy + 10), 15) //See above
 	..()
@@ -1542,7 +1545,8 @@
 	for(var/datum/reagent/drug/R in M.reagents.reagent_list)
 		M.reagents.remove_reagent(R.type,5)
 	M.drowsyness += 2
-	M.adjust_jitter(-3)
+	if(M.get_timed_status_effect_duration(/datum/status_effect/jitter) >= 6 SECONDS)
+		M.adjust_timed_status_effect(-6 SECONDS * REM, /datum/status_effect/jitter)
 	if (M.hallucination >= 5)
 		M.hallucination -= 5
 	if(prob(20))
@@ -1583,8 +1587,8 @@
 	..()
 	M.AdjustAllImmobility(-20)
 	M.adjustStaminaLoss(-10, 0)
-	M.adjust_jitter(10, max = 300)
-	M.Dizzy(10)
+	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	return TRUE
 
 /datum/reagent/medicine/changelingadrenaline/on_mob_metabolize(mob/living/L)
@@ -1598,8 +1602,8 @@
 	REMOVE_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
 	REMOVE_TRAIT(L, TRAIT_STUNRESISTANCE, type)
 	L.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
-	L.Dizzy(0)
-	L.set_jitter(0)
+	L.remove_status_effect(/datum/status_effect/dizziness)
+	L.remove_status_effect(/datum/status_effect/jitter)
 
 /datum/reagent/medicine/changelingadrenaline/overdose_process(mob/living/M as mob)
 	M.adjustToxLoss(1, 0)
@@ -1695,7 +1699,7 @@
 		overdose_threshold = overdose_threshold + rand(-10,10)/10 // for extra fun
 		M.AdjustAllImmobility(-5)
 		M.adjustStaminaLoss(-0.5*REM, 0)
-		M.adjust_jitter(1)
+		M.adjust_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, max_duration = 20 SECONDS)
 		metabolization_rate = 0.01 * REAGENTS_METABOLISM * rand(5,20) // randomizes metabolism between 0.02 and 0.08 per tick
 		. = TRUE
 	..()
@@ -1708,17 +1712,17 @@
 	overdose_progress++
 	switch(overdose_progress)
 		if(1 to 40)
-			M.adjust_jitter(min(M.jitteriness+1, 10))
+			M.adjust_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, max_duration = 40 SECONDS)
 			M.stuttering = min(M.stuttering+1, 10)
-			M.Dizzy(5)
+			M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			if(prob(50))
 				M.losebreath++
 		if(41 to 80)
 			M.adjustOxyLoss(0.1*REM, 0)
 			M.adjustStaminaLoss(0.1*REM, 0)
-			M.adjust_jitter(min(M.jitteriness+1, 20))
+			M.adjust_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, max_duration = 40 SECONDS)
 			M.stuttering = min(M.stuttering+1, 20)
-			M.Dizzy(10)
+			M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			if(prob(50))
 				M.losebreath++
 			if(prob(20))
@@ -1752,8 +1756,8 @@
 	..()
 
 /datum/reagent/medicine/psicodine/on_mob_life(mob/living/carbon/M)
-	M.adjust_jitter(-6)
-	M.dizziness = max(0, M.dizziness-6)
+	M.adjust_timed_status_effect(-6 SECONDS * REM, /datum/status_effect/jitter)
+	M.adjust_timed_status_effect(-12 SECONDS * REM, /datum/status_effect/dizziness)
 	M.confused = max(0, M.confused-6)
 	M.disgust = max(0, M.disgust-6)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
@@ -2120,7 +2124,7 @@
 /datum/reagent/medicine/soulus/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
 		if(method in list(INGEST, INJECT))
-			M.adjust_jitter(reac_volume)
+			M.set_timed_status_effect(reac_volume SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 			if(M.getFireLoss())
 				M.adjustFireLoss(-reac_volume*1.2)
 			if(M.getBruteLoss())
@@ -2308,7 +2312,7 @@
 
 /datum/reagent/medicine/lithium_carbonate/overdose_process(mob/living/M)
 	if(prob(5))
-		M.adjust_jitter(5,100)
+		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
 	..()
 	. = 1
@@ -2434,7 +2438,7 @@
 /datum/reagent/medicine/carfencadrizine/addiction_act_stage1(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
-		M.adjust_jitter(4)
+		M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 		M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 1)
 	..()
 
@@ -2443,8 +2447,8 @@
 		M.drop_all_held_items()
 		M.adjustToxLoss(1*REM, 0)
 		. = 1
-		M.Dizzy(3)
-		M.adjust_jitter(3)
+		M.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+		M.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	if(prob(15))
 		M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 1)
 		M.adjustOrganLoss(ORGAN_SLOT_HEART, 1)
@@ -2455,8 +2459,8 @@
 		M.drop_all_held_items()
 		M.adjustToxLoss(1*REM, 0)
 		. = 1
-		M.Dizzy(4)
-		M.adjust_jitter(4)
+		M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+		M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	if(prob(30))
 		M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 1)
 		M.adjustOrganLoss(ORGAN_SLOT_HEART, 2)
@@ -2467,8 +2471,8 @@
 		M.drop_all_held_items()
 		M.adjustToxLoss(1*REM, 0)
 		. = 1
-		M.Dizzy(4)
-		M.adjust_jitter(4)
+		M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+		M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	if(prob(40))
 		M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 2)
 		M.adjustOrganLoss(ORGAN_SLOT_HEART, 2)
