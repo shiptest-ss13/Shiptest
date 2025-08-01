@@ -180,6 +180,14 @@
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/gun_shop)
+"bA" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/plastic,
+/turf/open/floor/plasteel/white/jungleplanet,
+/area/ruin/powered/hunts/canteen)
 "bD" = (
 /obj/structure/spider/stickyweb,
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
@@ -1101,7 +1109,7 @@
 /obj/structure/closet/wall/blue/directional/east,
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised{
 	name = "Naptime";
-	desc = "A length of pipe and miscellaneous bits of scrap fashioned into a rudimentary single-shot shotgun. The word \"Naptime\" has been scrawled onto the barrel."
+	desc = "A length of pipe and miscellaneous bits of scrap fashioned into a rudimentary single-shot shotgun. The word 'Naptime' has been scrawled onto the barrel."
 	},
 /obj/item/reagent_containers/glass/bottle/dimorlin,
 /obj/item/reagent_containers/glass/bottle/curare,
@@ -1316,7 +1324,8 @@
 "lZ" = (
 /mob/living/simple_animal/hostile/morph{
 	melee_damage_lower = 30;
-	melee_damage_upper = 40
+	melee_damage_upper = 40;
+	vision_range = 5
 	},
 /turf/open/floor/engine,
 /area/ruin/powered/hunts/barn)
@@ -1439,6 +1448,10 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/toilet)
+"nz" = (
+/obj/effect/decal/cleanable/plastic,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "nC" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -2245,11 +2258,6 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/wood/ebony/jungleplanet,
 /area/ruin/powered/hunts/sec)
-"tr" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/plastic,
-/turf/open/floor/plasteel/white/jungleplanet,
-/area/ruin/powered/hunts/canteen)
 "tt" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spider/stickyweb,
@@ -2341,14 +2349,6 @@
 	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
-"tS" = (
-/obj/structure/sign/plaques/blank{
-	pixel_y = 30;
-	name = "M-17 MICROTARGET";
-	desc = "The M-17 \"Microtarget\" pistol is a fantastic and versatile choice for any purpose, from small game hunting to self defence. The signature detachable barrel for excellent portability without comprimising accuracy."
-	},
-/turf/closed/wall/mineral/wood,
-/area/ruin/powered/hunts/gun_shop)
 "tT" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 9
@@ -2636,6 +2636,15 @@
 /mob/living/simple_animal/hostile/asteroid/ice_whelp,
 /turf/open/floor/engine,
 /area/ruin/powered/hunts/barn)
+"wN" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/item/electronics/airlock,
+/obj/effect/decal/cleanable/plastic,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "wO" = (
 /obj/structure/spider/stickyweb,
 /obj/structure/cable{
@@ -3083,6 +3092,11 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/toilet)
+"An" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/plastic,
+/turf/open/floor/plasteel/white/jungleplanet,
+/area/ruin/powered/hunts/canteen)
 "Ao" = (
 /turf/open/floor/carpet,
 /area/ruin/powered/hunts/gun_shop)
@@ -3092,14 +3106,6 @@
 /obj/item/flashlight/flare/burnt,
 /turf/open/floor/concrete/pavement/jungleplanet,
 /area/ruin/powered/hunts/gate)
-"AE" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/plastic,
-/turf/open/floor/plasteel/white/jungleplanet,
-/area/ruin/powered/hunts/canteen)
 "AF" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark/jungleplanet,
@@ -3396,7 +3402,7 @@
 	},
 /obj/item/strange_crystal{
 	pixel_x = 13;
-	name = "captain's \"lucky\" crystal"
+	name = "captain's 'lucky' crystal"
 	},
 /obj/machinery/button/door{
 	dir = 4;
@@ -4125,6 +4131,14 @@
 /obj/structure/flora/junglebush,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
+"Jf" = (
+/obj/structure/sign/plaques/blank{
+	pixel_y = 30;
+	name = "M-17 MICROTARGET";
+	desc = "The M-17 \"Microtarget\" pistol is a fantastic and versatile choice for any purpose, from small game hunting to self defence. The signature detachable barrel for excellent portability without comprimising accuracy."
+	},
+/turf/closed/wall/mineral/wood,
+/area/ruin/powered/hunts/gun_shop)
 "Jh" = (
 /obj/structure/closet/cabinet,
 /obj/effect/turf_decal/spline/fancy/wood{
@@ -4248,10 +4262,6 @@
 	dir = 4
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
-"JV" = (
-/obj/effect/decal/cleanable/plastic,
-/turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ka" = (
 /obj/machinery/door/airlock{
@@ -5988,15 +5998,6 @@
 	dir = 1
 	},
 /mob/living/simple_animal/hostile/poison/giant_spider,
-/turf/open/floor/concrete/pavement/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
-"YJ" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/item/electronics/airlock,
-/obj/effect/decal/cleanable/plastic,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "YL" = (
@@ -7809,7 +7810,7 @@ xr
 xr
 Va
 fL
-tS
+Jf
 Yz
 Ll
 RJ
@@ -8581,8 +8582,8 @@ TN
 YT
 eS
 qX
-tr
-AE
+An
+bA
 ou
 JM
 Qf
@@ -8691,8 +8692,8 @@ YT
 Va
 fl
 rP
-JV
-YJ
+nz
+wN
 Vv
 eS
 eS
