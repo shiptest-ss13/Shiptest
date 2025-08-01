@@ -69,3 +69,9 @@
 	suffix = "icemoon_training_center.dmm"
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS, RUIN_TAG_LAVA)
 
+/datum/map_template/ruin/icemoon/downed_transport
+	name = "Downed Transport"
+	id = "downed_transport"
+	description = "Tempfiller."
+	suffix = "icemoon_downed_transport.dmm"
+	ruin_tags = list()
