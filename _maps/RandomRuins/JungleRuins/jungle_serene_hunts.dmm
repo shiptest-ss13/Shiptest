@@ -1430,14 +1430,6 @@
 /obj/machinery/light/floor,
 /turf/open/floor/concrete/tiles/jungleplanet/lit,
 /area/ruin/powered/hunts/shuttle)
-"nw" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/plastic,
-/turf/open/floor/plasteel/white/jungleplanet,
-/area/ruin/powered/hunts/canteen)
 "ny" = (
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 1
@@ -2050,6 +2042,11 @@
 /obj/structure/flora/junglebush/c,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
+"rW" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/plastic,
+/turf/open/floor/plasteel/white/jungleplanet,
+/area/ruin/powered/hunts/canteen)
 "rY" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -3297,6 +3294,14 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/hunts/toilet)
+"BT" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/plastic,
+/turf/open/floor/plasteel/white/jungleplanet,
+/area/ruin/powered/hunts/canteen)
 "BZ" = (
 /obj/structure/spider/stickyweb,
 /obj/structure/cable{
@@ -3564,10 +3569,6 @@
 /obj/structure/flora/junglebush,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/cave/explored)
-"ED" = (
-/obj/effect/decal/cleanable/plastic,
-/turf/open/floor/concrete/pavement/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "EF" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/spider/stickyweb,
@@ -4436,6 +4437,15 @@
 /obj/item/modular_computer/laptop/preset/civilian/rilena,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/shed)
+"LE" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/item/electronics/airlock,
+/obj/effect/decal/cleanable/plastic,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "LG" = (
 /obj/structure/railing/wood{
 	dir = 10
@@ -4567,7 +4577,7 @@
 /obj/structure/sign/plaques/blank{
 	pixel_y = 30;
 	name = "M-20 AUTO ELITE";
-	desc = "The perfect union of power and portability, the M-20 Auto Elite was once the standard issue pistol of Star City police forms. Chambered in .44 Roumain for excellent stopping power in a compact package. A large sticker has been pasted onto the bottom: \"SORRY OUT OF STOCK\""
+	desc = "The perfect union of power and portability, the M-20 Auto Elite was once the standard issue pistol of Star City police forms. Chambered in .44 Roumain for excellent stopping power in a compact package. A large sticker has been pasted onto the bottom: SORRY OUT OF STOCK"
 	},
 /obj/structure/hazard/electrical/electric_sparks/alarm,
 /obj/machinery/door/window/brigdoor,
@@ -4730,6 +4740,14 @@
 	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/ruin/powered/hunts/gate)
+"Ok" = (
+/obj/structure/sign/plaques/blank{
+	pixel_y = 30;
+	name = "M-17 MICROTARGET";
+	desc = "The M-17 \"Microtarget\" pistol is a fantastic and versatile choice for any purpose, from small game hunting to self defence. The signature detachable barrel for excellent portability without comprimising accuracy."
+	},
+/turf/closed/wall/mineral/wood,
+/area/ruin/powered/hunts/gun_shop)
 "Om" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
@@ -4828,15 +4846,6 @@
 "OZ" = (
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
-"Pa" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/item/electronics/airlock,
-/obj/effect/decal/cleanable/plastic,
-/turf/open/floor/concrete/pavement/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "Pe" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
@@ -5122,6 +5131,10 @@
 	pixel_y = -6
 	},
 /turf/open/water/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"Ri" = (
+/obj/effect/decal/cleanable/plastic,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Rm" = (
 /obj/item/stack/sheet/mineral/wood,
@@ -5665,14 +5678,6 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/concrete,
 /area/ruin/powered/hunts/barn)
-"Wd" = (
-/obj/structure/sign/plaques/blank{
-	pixel_y = 30;
-	name = "M-17 MICROTARGET";
-	desc = "The M-17 \"Microtarget\" pistol is a fantastic and versatile choice for any purpose, from small game hunting to self defence. The signature detachable barrel for excellent portability without comprimising accuracy."
-	},
-/turf/closed/wall/mineral/wood,
-/area/ruin/powered/hunts/gun_shop)
 "Wi" = (
 /obj/structure/spacevine/dense,
 /turf/open/floor/wood/jungleplanet,
@@ -5685,11 +5690,6 @@
 "Wl" = (
 /turf/open/floor/carpet/black,
 /area/ruin/powered/hunts/gun_shop)
-"Wn" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/plastic,
-/turf/open/floor/plasteel/white/jungleplanet,
-/area/ruin/powered/hunts/canteen)
 "Wp" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector{
 	dir = 4
@@ -7810,7 +7810,7 @@ xr
 xr
 Va
 fL
-Wd
+Ok
 Yz
 Ll
 RJ
@@ -8582,8 +8582,8 @@ TN
 YT
 eS
 qX
-Wn
-nw
+rW
+BT
 ou
 JM
 Qf
@@ -8692,8 +8692,8 @@ YT
 Va
 fl
 rP
-ED
-Pa
+Ri
+LE
 Vv
 eS
 eS
