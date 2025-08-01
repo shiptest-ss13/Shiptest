@@ -311,7 +311,7 @@
 	name = "Toolset Arm Implant"
 	desc = "A stripped-down version of engineering cyborg toolset, designed to be installed on subject's arm."
 	id = "ci-toolset"
-	build_type = PROTOLATH
+	build_type = PROTOLATHE
 	materials = list (/datum/material/iron = 2500, /datum/material/glass = 1500, /datum/material/silver = 1500)
 	construction_time = 200
 	build_path = /obj/item/organ/cyberimp/arm/toolset
@@ -322,7 +322,7 @@
 	name = "Medical HUD Implant"
 	desc = "These cybernetic eyes will display a medical HUD over everything you see. Wiggle eyes to control."
 	id = "ci-medhud"
-	build_type = PROTOLATH
+	build_type = PROTOLATHE
 	construction_time = 50
 	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 500, /datum/material/gold = 500)
 	build_path = /obj/item/organ/cyberimp/eyes/hud/medical
@@ -410,7 +410,7 @@
 	name = "Nutriment Pump Implant"
 	desc = "This implant with synthesize and pump into your bloodstream a small amount of nutriment when you are starving."
 	id = "ci-nutriment"
-	build_type = PROTOLATH
+	build_type = PROTOLATHE
 	construction_time = 40
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/gold = 500)
 	build_path = /obj/item/organ/cyberimp/chest/nutriment
