@@ -639,7 +639,7 @@
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 1;
-	id = "flyboy"
+	id = "cell"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
@@ -2029,12 +2029,9 @@
 	},
 /area/ship/maintenance)
 "tu" = (
-/obj/structure/bed{
-	dir = 1
-	},
 /obj/structure/curtain/cloth,
-/obj/effect/spawner/random/bedsheet,
 /obj/structure/extinguisher_cabinet/directional/north,
+/obj/effect/spawner/bunk_bed,
 /turf/open/floor/carpet,
 /area/ship/crew)
 "tE" = (
@@ -2662,9 +2659,8 @@
 /turf/closed/wall/r_wall/rust,
 /area/ship/crew)
 "Ar" = (
-/obj/structure/bed,
 /obj/structure/curtain/cloth,
-/obj/effect/spawner/random/bedsheet,
+/obj/effect/spawner/bunk_bed,
 /turf/open/floor/carpet,
 /area/ship/crew)
 "At" = (
@@ -2980,12 +2976,9 @@
 	},
 /area/ship/maintenance/aft)
 "DN" = (
-/obj/structure/bed{
-	dir = 1
-	},
 /obj/structure/curtain/cloth,
-/obj/effect/spawner/random/bedsheet,
 /obj/machinery/airalarm/directional/north,
+/obj/effect/spawner/bunk_bed,
 /turf/open/floor/carpet,
 /area/ship/crew)
 "DR" = (
@@ -4201,7 +4194,7 @@
 /obj/machinery/button/door{
 	dir = 1;
 	pixel_y = -22;
-	id = "sboard_maint";
+	id = "bridge";
 	name = "bridge shutters"
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -4327,6 +4320,7 @@
 /obj/machinery/recharger{
 	pixel_x = -8
 	},
+/obj/item/bodycamera/broadcast_camera,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Pa" = (
@@ -4601,6 +4595,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "RP" = (
@@ -4914,9 +4909,6 @@
 /area/ship/crew/canteen)
 "Vg" = (
 /obj/structure/table,
-/obj/machinery/recharger{
-	pixel_x = 8
-	},
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -4925,9 +4917,14 @@
 	pixel_y = 20;
 	pixel_x = 12
 	},
-/obj/item/bodycamera/broadcast_camera,
 /obj/structure/sign/warning/electricshock{
 	pixel_x = -25
+	},
+/obj/item/gun_maint_kit{
+	pixel_y = 3
+	},
+/obj/item/gun_maint_kit{
+	pixel_y = 8
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
