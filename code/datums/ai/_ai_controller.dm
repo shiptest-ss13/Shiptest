@@ -186,13 +186,12 @@ multiple modular subtrees with behaviors
 		CancelActions()
 		return
 
-	for(var/i in current_behaviors)
-		var/datum/ai_behavior/current_behavior = i
+	for(var/datum/ai_behavior/current_behavior as anything in current_behaviors)
 
 		// Convert the current behaviour action cooldown to realtime seconds from deciseconds.current_behavior
 		// Then pick the max of this and the seconds_per_tick passed to ai_controller.process()
 		// Action cooldowns cannot happen faster than seconds_per_tick, so seconds_per_tick should be the value used in this scenario.
-		var/action_seconds_per_tick = max(current_behavior.action_cooldown * 0.1, seconds_per_tick)
+		var/action_seconds_per_tick = max(current_behavior.get_cooldown(src) * 0.1, seconds_per_tick)
 
 		if(current_behavior.behavior_flags & AI_BEHAVIOR_REQUIRE_MOVEMENT) //Might need to move closer
 			if(!current_movement_target)
@@ -273,7 +272,18 @@ multiple modular subtrees with behaviors
 	var/list/stored_arguments = behavior_args[behavior.type]
 	if(stored_arguments)
 		arguments += stored_arguments
-	behavior.perform(arglist(arguments))
+
+	var/process_flags = behavior.perform(arglist(arguments))
+	if(process_flags & AI_BEHAVIOR_DELAY)
+		behavior_cooldowns[behavior] = world.time + behavior.get_cooldown(src)
+	if(process_flags & AI_BEHAVIOR_FAILED)
+		arguments[1] = src
+		arguments[2] = FALSE
+		behavior.finish_action(arglist(arguments))
+	else if (process_flags & AI_BEHAVIOR_SUCCEEDED)
+		arguments[1] = src
+		arguments[2] = TRUE
+		behavior.finish_action(arglist(arguments))
 
 /datum/ai_controller/proc/CancelActions()
 	if(!LAZYLEN(current_behaviors))
