@@ -171,8 +171,7 @@
 		cam_location = src.loc.loc
 	if(isturf(cam_location))
 		update_camera_location(cam_location)
-	else
-		return
+	return
 
 /obj/item/bodycamera/proc/do_camera_update(oldLoc)
 	if(oldLoc != get_turf(src)) //we want to make sure the camera source has actually moved before running expensive camera updates
