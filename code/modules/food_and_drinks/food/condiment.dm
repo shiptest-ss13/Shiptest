@@ -246,6 +246,8 @@
 		/datum/reagent/consumable/sugar = list("condi_sugar", "Sugar", "A packet of sugar. Used for sweetening, typically."),
 		/datum/reagent/consumable/astrotame = list("condi_astrotame", "Astrotame", "An artificial sweetener. Just be careful to not give yourself a headache with too much!"),
 		/datum/reagent/consumable/bbqsauce = list("condi_bbq", "BBQ sauce", "A sweet and savory packet of barbeque sauce. It's sticky!"),
+		/datum/reagent/consumable/creamer = list("condi_creamer", "Coffee Creamer", "A packet of coffee creamer. Better not to think about what they are making this from."),
+		/datum/reagent/consumable/chocolatepudding = list("condi_chocolate", "Chocolate Pudding", "A packet of chocolate pudding. The amount of sugar that's already there wasn't enough for you?"),
 		)
 
 /obj/item/reagent_containers/condiment/pack/create_reagents(max_vol, flags)

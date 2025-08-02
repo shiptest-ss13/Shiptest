@@ -12,9 +12,9 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 14
 	var/static/list/can_hold = typecacheof(list(/obj/item/reagent_containers/condiment/pack/sugar,
-												/obj/item/reagent_containers/condiment/creamer,
+												/obj/item/reagent_containers/condiment/pack/creamer,
 												/obj/item/reagent_containers/condiment/pack/astrotame,
-												/obj/item/reagent_containers/condiment/chocolate))
+												/obj/item/reagent_containers/condiment/pack/chocolate))
 	STR.can_hold = can_hold
 
 /obj/item/storage/fancy/coffee_condi_display/Initialize()
@@ -31,10 +31,10 @@
 		if(locate(/obj/item/reagent_containers/condiment/pack/astrotame) in contents)
 			inserted_overlay.icon_state = "condi_display_sweetener"
 			add_overlay(inserted_overlay)
-		if(locate(/obj/item/reagent_containers/condiment/creamer) in contents)
+		if(locate(/obj/item/reagent_containers/condiment/pack/creamer) in contents)
 			inserted_overlay.icon_state = "condi_display_creamer"
 			add_overlay(inserted_overlay)
-		if(locate(/obj/item/reagent_containers/condiment/chocolate) in contents)
+		if(locate(/obj/item/reagent_containers/condiment/pack/chocolate) in contents)
 			inserted_overlay.icon_state = "condi_display_chocolate"
 			add_overlay(inserted_overlay)
 
@@ -44,9 +44,9 @@
 	for(var/i = 1 to 3)
 		new /obj/item/reagent_containers/condiment/pack/astrotame(src)
 	for(var/i = 1 to 4)
-		new /obj/item/reagent_containers/condiment/creamer(src)
+		new /obj/item/reagent_containers/condiment/pack/creamer(src)
 	for(var/i = 1 to 3)
-		new /obj/item/reagent_containers/condiment/chocolate(src)
+		new /obj/item/reagent_containers/condiment/pack/chocolate(src)
 	update_icon()
 
 /obj/item/storage/fancy/coffee_condi_display/update_icon_state()
