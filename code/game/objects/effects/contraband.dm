@@ -787,7 +787,7 @@
 
 /obj/structure/sign/poster/retro/radio
 	name = "Radio"
-	desc = "A poster advertising one of Nanotrasen's earliest products, a radio. One of its main selling points was a integrated OS and two way automatic translation for Solarian Common, and Kalixcian Common, which made it a smash hit. This thing is ancient."
+	desc = "A poster advertising one of Nanotrasen's earliest products, a radio. One of its main selling points was a integrated OS and two way automatic translation for Solarian Common and Gezenan, which made it a smash hit. This thing is ancient."
 	icon_state = "poster-radio70_retro"
 
 //Safety moth posters, credit to AspEv for the art which the below posters are based on and to Ayy-Robotics for the sprites.
