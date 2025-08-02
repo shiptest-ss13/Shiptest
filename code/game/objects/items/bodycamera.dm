@@ -1,3 +1,5 @@
+#define BODYCAM_UPDATE_BUFFER 10 //1 second
+
 /obj/item/bodycamera
 	name = "body camera"
 	desc = "Ruggedized portable camera unit. Warranty void if exposed to space."
@@ -141,7 +143,7 @@
 	user.see_in_dark = 2
 	return 1
 
-#define BODYCAM_UPDATE_BUFFER 10 //1 second
+
 /obj/item/bodycamera/pickup(mob/user)
 	. = ..()
 	if(tracked_mob == user)
@@ -166,7 +168,10 @@
 
 	var/cam_location = src.loc
 	if((istype(cam_location, /obj/item/clothing)) || (istype(cam_location, /obj/item/storage))) //camera isn't equipped to a slot, and is stored in something else
-		cam_location = src.loc.loc
+		if(isturf(src.loc.loc))
+			cam_location = src.loc.loc
+		else
+			return
 	update_camera_location(cam_location)
 
 /obj/item/bodycamera/proc/do_camera_update(oldLoc)
@@ -179,8 +184,6 @@
 	if(!updating)
 		updating = TRUE
 		addtimer(CALLBACK(src, PROC_REF(do_camera_update), oldLoc), BODYCAM_UPDATE_BUFFER)
-
-#undef BODYCAM_UPDATE_BUFFER
 
 /obj/item/paper/guides/bodycam
 	name = "Portable Camera Unit Users Guide"
@@ -292,3 +295,5 @@
 		for(var/obj/machinery/computer/security/telescreen/entertainment/TV in GLOB.machines)
 			TV.notify(TRUE, "[c_tag] is now live on [network[1]]!")
 			COOLDOWN_START(src, broadcast_announcement, 20 SECONDS)
+
+#undef BODYCAM_UPDATE_BUFFER
