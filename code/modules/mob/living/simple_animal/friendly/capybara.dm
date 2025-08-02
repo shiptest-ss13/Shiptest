@@ -9,6 +9,9 @@
 	butcher_results = list()
 	childtype = list()
 
+	// They are just that chill
+	minbodytemp = 170
+
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "bops"
@@ -16,7 +19,14 @@
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
 
-	animal_species = /mob/living/simple_animal/pet/dog
+	animal_species = /mob/living/simple_animal/pet/dog/corgi/capybara
+	var/wear_hat
+
+/mob/living/simple_animal/pet/dog/corgi/capybara/Initialize()
+	. = ..()
+	if(wear_hat && !inventory_head)
+		var/to_add = new wear_hat(src.loc)
+		src.place_on_head(to_add)
 
 /mob/living/simple_animal/pet/dog/corgi/capybara/update_corgi_fluff()
 	// First, change back to defaults
@@ -44,11 +54,18 @@
 	desc = "It's Caspar, the Capybara Captain, the Capy Cappy."
 	gender = MALE
 	unique_pet = TRUE
+	wear_hat = /obj/item/clothing/head/caphat
 
-	var/wear_hat = /obj/item/clothing/head/caphat
+/mob/living/simple_animal/pet/dog/corgi/capybara/orange
+	desc = "What a happy capy!"
+	wear_hat = /obj/item/food/grown/citrus/orange
 
-/mob/living/simple_animal/pet/dog/corgi/capybara/caspar/Initialize()
-	. = ..()
-	if(wear_hat && !inventory_head)
-		var/to_add = new wear_hat(src.loc)
-		src.place_on_head(to_add)
+/obj/effect/spawner/random/sauna_capy
+	name = "random capybara spawner"
+	icon = 'icons/mob/pets.dmi'
+	icon_state = "capybara"
+	loot = list(
+		/mob/living/simple_animal/pet/dog/corgi/capybara,
+		/mob/living/simple_animal/pet/dog/corgi/capybara/orange
+	)
+	spawn_loot_chance = 25
