@@ -37,6 +37,7 @@
 	if(can_use())
 		toggle_cam(null, 0) //kick anyone viewing out and remove from the camera chunks
 	GLOB.cameranet.cameras -= src
+	qdel(tracker)
 	return ..()
 
 /obj/item/bodycamera/examine(mob/user)
