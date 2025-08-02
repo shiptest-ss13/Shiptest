@@ -1388,5 +1388,8 @@
 /mob/living/carbon/human/species/ipc
 	race = /datum/species/ipc
 
+/mob/living/carbon/human/species/ipc/frame
+	race = /datum/species/ipc/frame
+
 /mob/living/carbon/human/species/lizard/ashwalker/kobold
 	race = /datum/species/lizard/ashwalker/kobold
