@@ -165,9 +165,9 @@
 	belt = pick_weight(list(
 			/obj/item/storage/belt/mining = 30,
 			/obj/item/storage/belt/bandolier = 30,
-			/obj/item/storage/belt/military = 20,
+			/obj/item/storage/belt/military = 5,
 			/obj/item/storage/belt/fannypack = 15,
-			/obj/item/storage/belt/mining/alt = 5,
+			/obj/item/storage/belt/mining/alt = 15,
 			/obj/item/storage/belt/mining/primitive = 5
 			)
 		)
