@@ -114,26 +114,6 @@
 		. += M
 
 //the legacy NT exploration gear, flavoured to be old but reliable.
-/obj/item/clothing/suit/hooded/explorer/old
-	name = "prototype exploration suit"
-	desc = "A limited-production heavy-armor softsuit, designed by NT to outfit their fleets of hostile-territory miners. Known as uncomfortable to some and clunky to many, it nonetheless gets the job done. </br> Replicas and redesigns of this suit abound anywhere a little protection goes a long way."
-	icon_state = "miningold"
-	slowdown = 0.1
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 15, "energy" = 15, "bomb" = 65, "bio" = 100, "rad" = 75, "fire" = 75, "acid" = 75)
-	hoodtype = /obj/item/clothing/head/hooded/explorer/old
-
-/obj/item/clothing/head/hooded/explorer/old
-	name = "prototype exploration hood"
-	desc = "An armoured hood, generously-padded and optimized for the rigours of hostile enviroment mining. Will definitely chafe."
-	icon_state = "explorerold"
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 15, "energy" = 15, "bomb" = 65, "bio" = 100, "rad" = 75, "fire" = 75, "acid" = 75)
-
-/obj/item/clothing/mask/gas/explorer/old
-	name = "prototype exploration mask"
-	desc = "An outdated Nanotrasen enviromask, designed for extended deployment in regions without a safe air supply. Armor-plated to a discomfort-inducing fault."
-	icon_state = "old_mining"
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 15, "energy" = 15, "bomb" = 65, "bio" = 100, "rad" = 75, "fire" = 75, "acid" = 75)
-
 /obj/item/clothing/gloves/explorer
 	name = "explorer gloves"
 	desc = "Thick, fire-resistant gloves with a small bracer, sold by EXOCOM to protect your precious fingers from the rigours of planetary exploration."
@@ -159,7 +139,7 @@
 	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
 	icon_state = "survivor"
-	item_state = "survivor_suit"
+	item_state = "survivor"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	min_cold_protection_temperature = (FIRE_SUIT_MIN_TEMP_PROTECT * 2)
 	cold_protection = CHEST|GROIN|LEGS|ARMS
@@ -174,7 +154,8 @@
 /obj/item/clothing/head/hooded/survivor_hood
 	name = "survivor hood"
 	desc = "A loose-fitting hood, patched up with sealant and adhesive. Somewhat protects the head from the environment, but gets the job done."
-	icon_state = "explorerold"
+	icon_state = "survivor"
+	item_state = "survivor"
 	suit = /obj/item/clothing/suit/hooded/survivor
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
@@ -191,32 +172,47 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/hooded/scrap
-	name = "scrap suit"
-	desc = "A ragged makeshift suit."
-	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
-	icon_state = "survivor"
-	item_state = "survivor_suit"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	min_cold_protection_temperature = (FIRE_SUIT_MIN_TEMP_PROTECT * 2)
-	cold_protection = CHEST|GROIN|LEGS|ARMS
-	max_heat_protection_temperature = (FIRE_SUIT_MAX_TEMP_PROTECT / 2)
-	heat_protection = CHEST|GROIN|LEGS|ARMS
-	hoodtype = /obj/item/clothing/head/hooded/scrap
-	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 15, "bomb" = 20, "bio" = 100, "rad" = 20, "fire" = 50, "acid" = 30)
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals)
-	resistance_flags = FIRE_PROOF
-	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
+/obj/item/clothing/suit/hooded/survivor/brown
+	icon_state = "survivorbrown"
+	item_state = "survivorbrown"
+	hoodtype = /obj/item/clothing/head/hooded/survivor_hood/brown
 
-/obj/item/clothing/head/hooded/scrap
-	name = "scrap hood"
-	desc = "A loose-fitting hood. It gets the job done."
-	icon_state = "explorerold"
-	suit = /obj/item/clothing/suit/hooded/scrap
-	body_parts_covered = HEAD
-	flags_inv = HIDEHAIR|HIDEEARS
-	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 15, "bomb" = 20, "bio" = 100, "rad" = 20, "fire" = 50, "acid" = 30)
+
+/obj/item/clothing/head/hooded/survivor_hood/brown
+	icon_state = "survivorbrown"
+	item_state = "survivorbrown"
+	suit = /obj/item/clothing/suit/hooded/survivor/brown
+
+
+/obj/item/clothing/suit/hooded/survivor/yellow
+	icon_state = "survivoryellow"
+	item_state = "survivoryellow"
+	hoodtype = /obj/item/clothing/head/hooded/survivor_hood/yellow
+
+/obj/item/clothing/head/hooded/survivor_hood/yellow
+	icon_state = "survivoryellow"
+	item_state = "survivoryellow"
+	suit = /obj/item/clothing/suit/hooded/survivor/yellow
+
+/obj/item/clothing/suit/hooded/survivor/green
+	icon_state = "survivorgreen"
+	item_state = "survivorgreen"
+	hoodtype = /obj/item/clothing/head/hooded/survivor_hood/green
+
+/obj/item/clothing/head/hooded/survivor_hood/green
+	icon_state = "survivorgreen"
+	item_state = "survivorgreen"
+	suit = /obj/item/clothing/suit/hooded/survivor/green
+
+/obj/item/clothing/suit/hooded/survivor/jermit
+	icon_state = "survivorjermit"
+	item_state = "survivorjermit"
+	hoodtype = /obj/item/clothing/head/hooded/survivor_hood/jermit
+
+/obj/item/clothing/head/hooded/survivor_hood/jermit
+	icon_state = "survivorjermit"
+	item_state = "survivorjermit"
+	suit = /obj/item/clothing/suit/hooded/survivor/jermit
 
 /obj/item/clothing/suit/armor/vest/scrap
 	name = "scrap armor"
