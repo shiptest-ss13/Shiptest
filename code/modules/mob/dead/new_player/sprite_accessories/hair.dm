@@ -510,6 +510,10 @@
 	name = "Ponytail (Grace)"
 	icon_state = "hair_ponytailgrace"
 
+/datum/sprite_accessory/hair/ponytaileye
+	name = "Ponytail (over eye)"
+	icon_state = "hair_ponytaileye"
+
 /datum/sprite_accessory/hair/ponytail4
 	name = "Ponytail 4"
 	icon_state = "hair_ponytail4"
@@ -534,6 +538,10 @@
 /datum/sprite_accessory/hair/countryponytail
 	name = "Ponytail (Country)"
 	icon_state = "hair_ponytailcountry"
+
+/datum/sprite_accessory/hair/ponytailshort
+	name = "Ponytail (simple)"
+	icon_state = "hair_ponytailshort"
 
 /datum/sprite_accessory/hair/fringetail
 	name = "Ponytail (Fringe)"
