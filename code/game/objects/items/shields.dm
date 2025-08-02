@@ -34,7 +34,7 @@
 /obj/item/shield/proc/on_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
 	take_damage(damage)
 
-/obj/item/shield/obj_break(damage_flag)
+/obj/item/shield/atom_break(damage_flag)
 	. = ..()
 	if(!broken)
 		if(isliving(loc))
@@ -47,7 +47,7 @@
 
 /obj/item/shield/examine(mob/user)
 	. = ..()
-	var/healthpercent = round((obj_integrity/max_integrity) * 100, 1)
+	var/healthpercent = round((atom_integrity/max_integrity) * 100, 1)
 	switch(healthpercent)
 		if(50 to 99)
 			. += span_info("It looks slightly damaged.")
@@ -86,14 +86,14 @@
 			playsound(src, shield_bash_sound, 50, TRUE)
 			COOLDOWN_START(src, baton_bash, BATON_BASH_COOLDOWN)
 	else if(istype(W, /obj/item/stack/sheet/plasteel))
-		if (obj_integrity >= max_integrity)
+		if (atom_integrity >= max_integrity)
 			to_chat(user, span_warning("[src] is already in perfect condition."))
-		while(obj_integrity < max_integrity)
+		while(atom_integrity < max_integrity)
 			if(!do_after(user, 30, target= src))
 				return
 			var/obj/item/stack/sheet/plasteel/T = W
 			T.use(10)
-			obj_integrity = max_integrity
+			atom_integrity = max_integrity
 			to_chat(user, span_notice("You repair [src] with [T]."))
 			name = src::name
 			broken = FALSE
@@ -146,7 +146,7 @@
 	var/shield_break_leftover = /obj/item/stack/sheet/mineral/wood
 	var/shield_break_sound = 'sound/effects/bang.ogg'
 
-/obj/item/shield/riot/buckler/obj_destruction(damage_flag)
+/obj/item/shield/riot/buckler/atom_destruction(damage_flag)
 	playsound(src, shield_break_sound, 50)
 	new shield_break_leftover(get_turf(src))
 	if(isliving(loc))

@@ -51,7 +51,7 @@
 /datum/ai_behavior/find_hunt_target/repair_machines
 
 /datum/ai_behavior/find_hunt_target/repair_machines/valid_dinner(mob/living/source, obj/machinery/repair_target, radius)
-	if(repair_target.obj_integrity >= repair_target.max_integrity)
+	if(repair_target.atom_integrity >= repair_target.max_integrity)
 		return FALSE
 
 	return can_see(source, repair_target, radius)
