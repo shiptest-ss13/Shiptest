@@ -73,8 +73,6 @@
 
 	controller.set_blackboard_key(BB_MONKEY_PICKPOCKETING, TRUE)
 
-	var/success = FALSE
-
 	if(do_after(living_pawn, MONKEY_ITEM_SNATCH_DELAY, victim) && target)
 
 		for(var/obj/item/I in victim.held_items)
@@ -83,7 +81,6 @@
 				if(victim.temporarilyRemoveItemFromInventory(target))
 					if(!QDELETED(target) && !equip_item(controller))
 						target.forceMove(living_pawn.drop_location())
-						success = TRUE
 						break
 				else
 					victim.visible_message(span_danger("[living_pawn] tried to snatch [target] from [victim], but failed!"), span_userdanger("[living_pawn] tried to grab [target]!"))

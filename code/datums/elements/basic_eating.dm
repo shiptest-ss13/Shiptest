@@ -33,23 +33,20 @@
 	src.add_to_contents = add_to_contents
 	src.food_types = food_types
 
-	#warn fix
-	//RegisterSignal(target, COMSIG_ATOM_ITEM_INTERACTION, PROC_REF(try_feed))
-	//RegisterSignal(target, COMSIG_LIVING_UNARMED_ATTACK, PROC_REF(on_unarm_attack))
+
+	RegisterSignal(target, COMSIG_PARENT_ATTACKBY, PROC_REF(try_feed))
+	RegisterSignal(target, COMSIG_ATOM_ATTACK_ANIMAL, PROC_REF(on_unarm_attack))
 
 /datum/element/basic_eating/Detach(datum/target)
 	REMOVE_TRAIT(target, TRAIT_MOB_EATER, REF(src))
 
-	#warn fix
-	/*
 	UnregisterSignal(target, list(
-		COMSIG_LIVING_UNARMED_ATTACK,
-		COMSIG_ATOM_ITEM_INTERACTION,
+		COMSIG_PARENT_ATTACKBY,
+		COMSIG_ATOM_ATTACK_ANIMAL
 	))
-	*/
 	return ..()
 
-/datum/element/basic_eating/proc/try_feed(atom/source, mob/living/user, atom/possible_food)
+/datum/element/basic_eating/proc/try_feed(atom/source, atom/possible_food, mob/living/user)
 	SIGNAL_HANDLER
 	if((user.a_intent == INTENT_HARM) || !is_type_in_list(possible_food, food_types))
 		return NONE

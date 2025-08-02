@@ -164,7 +164,6 @@
 	var/atom/movable/attack_target = controller.blackboard[BB_ATTACK_TARGET]
 	if(!attack_target || !can_see(living_pawn, attack_target, length=controller.blackboard[BB_VISION_RANGE]))
 		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED
-		return
 
 	var/mob/living/living_target = attack_target
 	if(istype(living_target) && (living_target.stat == DEAD))
@@ -197,7 +196,6 @@
 	var/atom/movable/follow_target = controller.blackboard[BB_FOLLOW_TARGET]
 	if(!follow_target || get_dist(living_pawn, follow_target) > controller.blackboard[BB_VISION_RANGE])
 		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED
-		return
 
 	var/mob/living/living_target = follow_target
 	if(istype(living_target) && (living_target.stat == DEAD))
