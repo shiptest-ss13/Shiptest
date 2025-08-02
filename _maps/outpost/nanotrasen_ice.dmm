@@ -834,6 +834,27 @@
 	light_range = 2
 	},
 /area/outpost/exterior)
+"eF" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/item/plate{
+	pixel_x = 5;
+	pixel_y = -5
+	},
+/obj/item/trash/sosjerky{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/trash/energybar{
+	pixel_x = -4;
+	pixel_y = -7
+	},
+/obj/structure/sign/poster/contraband/random{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/outpost/maintenance/starboard)
 "eH" = (
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo/smeltery)
@@ -8434,27 +8455,6 @@
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/plating,
 /area/outpost/security)
-"VX" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/item/trash/plate{
-	pixel_x = 5;
-	pixel_y = -5
-	},
-/obj/item/trash/sosjerky{
-	pixel_x = 5;
-	pixel_y = 4
-	},
-/obj/item/trash/energybar{
-	pixel_x = -4;
-	pixel_y = -7
-	},
-/obj/structure/sign/poster/contraband/random{
-	pixel_x = 32
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/outpost/maintenance/starboard)
 "VY" = (
 /obj/machinery/door/airlock/outpost{
 	dir = 8
@@ -14780,7 +14780,7 @@ hG
 Am
 fU
 WL
-VX
+eF
 HO
 TJ
 iZ

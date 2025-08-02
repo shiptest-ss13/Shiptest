@@ -24,6 +24,10 @@
 /obj/item/lighter,
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
+"aE" = (
+/obj/machinery/oven,
+/turf/open/floor/plasteel/mono/white,
+/area/ship/crew/canteen/kitchen)
 "aI" = (
 /obj/structure/chair/office/dark{
 	dir = 8
@@ -488,19 +492,6 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
-"eK" = (
-/obj/structure/table/reinforced,
-/obj/item/cutting_board{
-	pixel_x = -5;
-	pixel_y = 5;
-	anchored = 1
-	},
-/obj/item/melee/knife/kitchen{
-	pixel_x = -11;
-	pixel_y = 9
-	},
-/turf/open/floor/plasteel/mono/white,
-/area/ship/crew/canteen/kitchen)
 "eM" = (
 /obj/structure/chair/wood{
 	dir = 4
@@ -607,6 +598,27 @@
 /obj/effect/turf_decal/borderfloorblack,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen/kitchen)
+"gq" = (
+/obj/machinery/atmospherics/components/binary/pump/on/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/wall/orange/directional/south{
+	name = "Tool Closet"
+	},
+/obj/item/flashlight,
+/obj/item/storage/toolbox/electrical,
+/obj/item/clothing/head/welding,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/weldingtool/hugetank,
+/obj/item/storage/belt/utility/full/engi,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/under/overalls/olive,
+/obj/item/clothing/head/hardhat/dblue,
+/obj/item/clothing/head/hardhat/orange,
+/obj/item/clothing/gloves/color/yellow,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "gu" = (
 /obj/item/clothing/gloves/color/white,
 /obj/item/clothing/glasses/sunglasses,
@@ -642,20 +654,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
-"gC" = (
-/obj/structure/table/reinforced,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/item/reagent_containers/glass/mortar/metal{
-	pixel_y = 8
-	},
-/obj/item/pestle{
-	pixel_y = 6;
-	pixel_x = -13
-	},
-/turf/open/floor/plasteel/mono/white,
-/area/ship/crew/canteen/kitchen)
 "gE" = (
 /obj/machinery/firealarm/directional/north,
 /obj/structure/table/reinforced,
@@ -912,6 +910,13 @@
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/office/lobby)
+"jT" = (
+/obj/structure/cable/orange{
+	icon_state = "5-10"
+	},
+/obj/machinery/griddle,
+/turf/open/floor/plasteel/mono,
+/area/ship/crew/canteen/kitchen)
 "jU" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -988,27 +993,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
-"lf" = (
-/obj/machinery/atmospherics/components/binary/pump/on/layer2{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/wall/orange/directional/south{
-	name = "Tool Closet"
-	},
-/obj/item/flashlight,
-/obj/item/storage/toolbox/electrical,
-/obj/item/clothing/head/welding,
-/obj/item/storage/toolbox/mechanical,
-/obj/item/weldingtool/hugetank,
-/obj/item/storage/belt/utility/full/engi,
-/obj/item/clothing/shoes/workboots,
-/obj/item/clothing/under/overalls/olive,
-/obj/item/clothing/head/hardhat/dblue,
-/obj/item/clothing/head/hardhat/orange,
-/obj/item/clothing/gloves/color/yellow,
-/turf/open/floor/plating,
-/area/ship/maintenance/aft)
 "mk" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2084,6 +2068,23 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
+"xz" = (
+/obj/structure/table/reinforced,
+/obj/structure/cable/orange{
+	icon_state = "5-10"
+	},
+/obj/machinery/reagentgrinder{
+	pixel_y = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/item/melee/knife/kitchen{
+	pixel_x = -11;
+	pixel_y = 9
+	},
+/turf/open/floor/plasteel/mono,
+/area/ship/crew/canteen/kitchen)
 "xI" = (
 /obj/item/reagent_containers/glass/bucket{
 	pixel_x = 12;
@@ -2100,13 +2101,6 @@
 	pixel_y = -19;
 	dir = 1
 	},
-/turf/open/floor/plasteel/mono,
-/area/ship/crew/canteen/kitchen)
-"xT" = (
-/obj/structure/cable/orange{
-	icon_state = "5-10"
-	},
-/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
 "xW" = (
@@ -3163,6 +3157,25 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
+"Ml" = (
+/obj/structure/table/reinforced,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/item/reagent_containers/glass/mortar/metal{
+	pixel_y = 8
+	},
+/obj/item/pestle{
+	pixel_y = 6;
+	pixel_x = -13
+	},
+/obj/item/cutting_board{
+	pixel_x = -5;
+	pixel_y = 5;
+	anchored = 1
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/crew/canteen/kitchen)
 "MN" = (
 /obj/structure/cable/green{
 	icon_state = "5-10"
@@ -3325,19 +3338,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
-"OS" = (
-/obj/structure/table/reinforced,
-/obj/structure/cable/orange{
-	icon_state = "5-10"
-	},
-/obj/machinery/reagentgrinder{
-	pixel_y = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/turf/open/floor/plasteel/mono,
-/area/ship/crew/canteen/kitchen)
 "OU" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6;
@@ -4364,7 +4364,7 @@ BA
 eU
 Gw
 hC
-lf
+gq
 BA
 Xf
 ta
@@ -4546,8 +4546,8 @@ iS
 vY
 Nk
 ul
-gC
-xT
+Ml
+jT
 pb
 Qc
 ZX
@@ -4569,8 +4569,8 @@ Cu
 Nk
 Nk
 FK
-OS
-eK
+xz
+aE
 vH
 Xz
 ds

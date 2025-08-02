@@ -1,16 +1,29 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ab" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 6
 	},
 /obj/effect/turf_decal/borderfloor/corner{
 	dir = 1
 	},
-/obj/machinery/microwave{
-	pixel_y = 6;
-	name = "macrowave oven";
-	desc = "Imagine, if you will a microwave, but instead of being Micro, it's Macro. This was the thought process of the engineering division at Etherbor Lihoma's Interior Furnishing Group, and this device is the fruit of their labor."
+/obj/structure/table,
+/obj/item/cutting_board{
+	pixel_y = 2;
+	pixel_x = 2
+	},
+/obj/item/melee/knife/kitchen{
+	pixel_y = 3
+	},
+/obj/item/kitchen/rollingpin{
+	pixel_x = 6
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_y = 10;
+	pixel_x = -10
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = -10;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
@@ -1841,24 +1854,8 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
-/obj/structure/table,
-/obj/item/cutting_board{
-	pixel_y = 2;
-	pixel_x = 2
-	},
-/obj/item/kitchen/rollingpin{
-	pixel_x = 6
-	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_y = 10;
-	pixel_x = -10
-	},
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_x = -10;
-	pixel_y = 3
-	},
-/obj/item/melee/knife/kitchen{
-	pixel_y = 3
+/obj/machinery/griddle{
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)

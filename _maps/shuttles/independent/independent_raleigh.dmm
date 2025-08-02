@@ -1,4 +1,29 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ai" = (
+/obj/item/clothing/glasses/welding,
+/obj/item/clothing/shoes/workboots{
+	pixel_x = 5;
+	pixel_y = -6
+	},
+/obj/structure/closet/wall/orange/directional/north{
+	name = "Engineer's locker";
+	req_access_txt = "11"
+	},
+/obj/item/clothing/head/hardhat{
+	pixel_y = 9
+	},
+/obj/item/clothing/under/utility{
+	pixel_x = 7
+	},
+/obj/item/clothing/suit/hazardvest,
+/obj/item/storage/toolbox/electrical,
+/obj/item/clothing/gloves/color/yellow{
+	pixel_y = 9
+	},
+/obj/item/storage/backpack/industrial,
+/obj/item/storage/belt/utility/full/engi,
+/turf/open/floor/plating,
+/area/ship/engineering/electrical)
 "aq" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
@@ -804,15 +829,6 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
-"jf" = (
-/obj/structure/crate_shelf,
-/obj/effect/turf_decal/box/corners{
-	dir = 8
-	},
-/obj/effect/turf_decal/box/corners,
-/obj/item/radio/intercom/directional/east,
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
 "jj" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/grimy,
@@ -1237,6 +1253,17 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
+"nS" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/obj/machinery/light/directional/east,
+/obj/machinery/grill/unwrenched,
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "nT" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2207,16 +2234,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
-"xD" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 4
-	},
-/obj/effect/turf_decal/box/corners{
-	dir = 1
-	},
-/obj/machinery/light/directional/east,
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
 "xG" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -2259,6 +2276,17 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/canteen)
+"ye" = (
+/obj/structure/crate_shelf,
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/effect/turf_decal/box/corners,
+/obj/item/radio/intercom/directional/east,
+/obj/structure/closet/crate,
+/obj/item/stack/sheet/mineral/wood/twentyfive,
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "yF" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
@@ -3171,31 +3199,6 @@
 	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
-"Ii" = (
-/obj/item/clothing/glasses/welding,
-/obj/item/clothing/shoes/workboots{
-	pixel_x = 5;
-	pixel_y = -6
-	},
-/obj/structure/closet/wall/orange/directional/north{
-	name = "Engineer's locker";
-	req_access_txt = "11"
-	},
-/obj/item/clothing/head/hardhat{
-	pixel_y = 9
-	},
-/obj/item/clothing/under/utility{
-	pixel_x = 7
-	},
-/obj/item/clothing/suit/hazardvest,
-/obj/item/storage/toolbox/electrical,
-/obj/item/clothing/gloves/color/yellow{
-	pixel_y = 9
-	},
-/obj/item/storage/backpack/industrial,
-/obj/item/storage/belt/utility/full/engi,
-/turf/open/floor/plating,
-/area/ship/engineering/electrical)
 "Il" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/layer4{
 	dir = 1
@@ -5520,8 +5523,8 @@ XG
 lF
 Zu
 XG
-xD
-jf
+nS
+ye
 Zc
 Un
 XG
@@ -5567,7 +5570,7 @@ XG
 XG
 XG
 XG
-Ii
+ai
 UV
 EQ
 Hu

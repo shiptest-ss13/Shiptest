@@ -1,17 +1,5 @@
-
 // see code/module/crafting/table.dm
-
 ////////////////////////////////////////////////EGG RECIPE's////////////////////////////////////////////////
-
-/datum/crafting_recipe/food/friedegg
-	name = "Fried egg"
-	reqs = list(
-		/datum/reagent/consumable/sodiumchloride = 1,
-		/datum/reagent/consumable/blackpepper = 1,
-		/obj/item/food/egg = 1
-	)
-	result = /obj/item/food/friedegg
-	subcategory = CAT_EGG
 
 /datum/crafting_recipe/food/omelette
 	name = "Omelette"
@@ -44,7 +32,7 @@
 /datum/crafting_recipe/food/eggbowl
 	name = "Egg bowl"
 	reqs = list(
-		/obj/item/food/salad/boiledrice = 1,
+		/obj/item/food/boiled_rice = 1,
 		/obj/item/food/boiledegg = 1,
 		/obj/item/food/grown/carrot = 1,
 		/obj/item/food/grown/corn = 1,
@@ -56,7 +44,7 @@
 	name = "Eggrolls"
 	reqs = list(
 		/obj/item/food/grown/seaweed/sheet = 1,
-		/obj/item/food/salad/boiledrice = 1,
+		/obj/item/food/boiled_rice = 1,
 		/obj/item/food/friedegg = 1
 	)
 	result = /obj/item/food/eggrolls

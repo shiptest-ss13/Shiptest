@@ -156,7 +156,7 @@
 	name = "carrot shiv"
 	icon_state = "carrotshiv"
 	item_state = "carrotshiv"
-	icon = 'icons/obj/kitchen.dmi'
+	icon = 'icons/obj/machines/kitchen.dmi'
 	desc = "Unlike other carrots, you should probably keep this far away from your eyes."
 	custom_materials = null
 

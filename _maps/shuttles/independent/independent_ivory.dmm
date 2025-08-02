@@ -664,6 +664,32 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
+"kp" = (
+/obj/structure/closet/secure_closet/wall/directional/south{
+	icon_state = "cargo_wall";
+	name = "mechanic's locker";
+	req_access_txt = "11"
+	},
+/obj/item/storage/backpack/satchel/eng,
+/obj/item/storage/backpack/industrial,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/suit/toggle/hazard,
+/obj/item/clothing/head/hardhat/weldhat/dblue,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/green{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/green{
+	icon_state = "1-8"
+	},
+/obj/item/clothing/glasses/meson/engine,
+/obj/item/clothing/glasses/welding{
+	pixel_y = -3
+	},
+/obj/item/storage/belt/utility/full/engi,
+/obj/item/clothing/gloves/color/yellow,
+/turf/open/floor/plating,
+/area/ship/engineering/engines/port)
 "kr" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -847,34 +873,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
-"nI" = (
-/obj/structure/table/chem{
-	name = "kitchen counter"
-	},
-/obj/item/cutting_board{
-	pixel_y = 1;
-	anchored = 1;
-	pixel_x = 7
-	},
-/obj/item/melee/knife/kitchen{
-	pixel_y = 2;
-	pixel_x = 4
-	},
-/obj/effect/turf_decal/corner/opaque/black/diagonal,
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_y = 8;
-	pixel_x = -7
-	},
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_y = 1;
-	pixel_x = -7
-	},
-/obj/item/reagent_containers/condiment/enzyme{
-	pixel_x = -14;
-	pixel_y = 5
-	},
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/crew/ccommons)
 "nL" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -1202,6 +1200,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/port)
+"sS" = (
+/obj/effect/turf_decal/corner/opaque/black/diagonal,
+/obj/machinery/griddle,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/crew/ccommons)
 "sU" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -1663,6 +1666,16 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
+"AL" = (
+/obj/effect/turf_decal/corner/opaque/black/diagonal,
+/obj/machinery/oven,
+/obj/machinery/reagentgrinder{
+	pixel_y = 20;
+	pixel_x = -8;
+	layer = 3.22
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/crew/ccommons)
 "AX" = (
 /obj/structure/chair/office/dark{
 	dir = 1
@@ -2167,25 +2180,6 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ship/crew)
-"KU" = (
-/obj/structure/table/chem{
-	name = "kitchen counter"
-	},
-/obj/machinery/reagentgrinder{
-	pixel_y = 17;
-	pixel_x = -7;
-	layer = 3.22
-	},
-/obj/effect/turf_decal/corner/opaque/black/diagonal,
-/obj/item/reagent_containers/glass/rag{
-	pixel_x = 10
-	},
-/obj/item/kitchen/rollingpin{
-	pixel_y = 3;
-	pixel_x = 6
-	},
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/crew/ccommons)
 "Ls" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden/layer4,
 /obj/structure/chair/handrail{
@@ -2510,6 +2504,41 @@
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/ccommons)
+"TT" = (
+/obj/structure/table/chem{
+	name = "kitchen counter"
+	},
+/obj/item/cutting_board{
+	pixel_y = 1;
+	anchored = 1;
+	pixel_x = 7
+	},
+/obj/item/melee/knife/kitchen{
+	pixel_y = 2;
+	pixel_x = 4
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_y = 8;
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_y = 1;
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/condiment/enzyme{
+	pixel_x = -14;
+	pixel_y = 5
+	},
+/obj/item/kitchen/rollingpin{
+	pixel_y = 2;
+	pixel_x = 10
+	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = 14;
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/crew/ccommons)
 "Ue" = (
 /obj/machinery/light/floor,
 /turf/open/floor/engine/hull,
@@ -2677,32 +2706,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
-"Yu" = (
-/obj/structure/closet/secure_closet/wall/directional/south{
-	icon_state = "cargo_wall";
-	name = "mechanic's locker";
-	req_access_txt = "11"
-	},
-/obj/item/storage/backpack/satchel/eng,
-/obj/item/storage/backpack/industrial,
-/obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/suit/toggle/hazard,
-/obj/item/clothing/head/hardhat/weldhat/dblue,
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable/green{
-	icon_state = "1-4"
-	},
-/obj/structure/cable/green{
-	icon_state = "1-8"
-	},
-/obj/item/clothing/glasses/meson/engine,
-/obj/item/clothing/glasses/welding{
-	pixel_y = -3
-	},
-/obj/item/storage/belt/utility/full/engi,
-/obj/item/clothing/gloves/color/yellow,
-/turf/open/floor/plating,
-/area/ship/engineering/engines/port)
 "YF" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -2891,7 +2894,7 @@ Ue
 lc
 VO
 OX
-Yu
+kp
 lc
 DK
 JT
@@ -3009,7 +3012,7 @@ hB
 yg
 xq
 Cl
-HQ
+TT
 HK
 aZ
 as
@@ -3030,7 +3033,7 @@ hB
 hB
 hB
 yg
-KU
+AL
 Dm
 HQ
 aL
@@ -3053,7 +3056,7 @@ hB
 hB
 hB
 yg
-nI
+sS
 Cl
 HQ
 HK

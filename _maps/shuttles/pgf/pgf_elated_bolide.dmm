@@ -3752,8 +3752,7 @@
 	pixel_y = 2
 	},
 /obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = -8;
-	pixel_y = 0
+	pixel_x = -8
 	},
 /obj/item/stock_parts/cell/gun/pgf{
 	pixel_x = -8;
@@ -3792,8 +3791,7 @@
 	pixel_y = 2
 	},
 /obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = 6;
-	pixel_y = 0
+	pixel_x = 6
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -6521,6 +6519,17 @@
 /obj/structure/crate_shelf{
 	capacity = 2
 	},
+/obj/structure/closet/crate/engineering{
+	name = "kitchen supplies"
+	},
+/obj/item/circuitboard/machine/griddle,
+/obj/item/circuitboard/machine/griddle,
+/obj/item/circuitboard/machine/oven,
+/obj/item/circuitboard/machine/oven,
+/obj/item/plate/oven_tray,
+/obj/item/plate/oven_tray,
+/obj/item/cutting_board,
+/obj/item/melee/knife/butcher,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "Ps" = (
@@ -7185,8 +7194,7 @@
 	dir = 1
 	},
 /obj/machinery/vending/modularpc{
-	pixel_x = 2;
-	pixel_y = 0
+	pixel_x = 2
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
@@ -7558,7 +7566,6 @@
 "Vd" = (
 /obj/structure/closet/wall/white/directional/south,
 /obj/item/storage/ration/crayons{
-	pixel_y = 0;
 	pixel_x = -6
 	},
 /obj/structure/table/reinforced,

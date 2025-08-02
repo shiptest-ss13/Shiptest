@@ -12,11 +12,6 @@
 /obj/structure/flora/grass/rockplanet,
 /turf/open/floor/ship/dirt,
 /area/ship/crew/ccommons)
-"bx" = (
-/obj/effect/decal/cleanable/food/flour,
-/obj/machinery/light/directional/west,
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/crew/canteen/kitchen)
 "by" = (
 /obj/effect/turf_decal/box/white,
 /obj/structure/rack,
@@ -1000,6 +995,18 @@
 	},
 /turf/open/floor/suns/hatch/maple,
 /area/ship/crew/dorm)
+"uA" = (
+/obj/machinery/light/directional/east,
+/obj/structure/table/chem,
+/obj/item/cutting_board{
+	anchored = 1;
+	pixel_y = 4
+	},
+/obj/item/kitchen/rollingpin{
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/crew/canteen/kitchen)
 "va" = (
 /obj/structure/table/chem,
 /obj/structure/sink/chem{
@@ -1082,6 +1089,44 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/carpet/black,
 /area/ship/crew/ccommons)
+"yc" = (
+/obj/structure/closet/wall/orange/directional/north,
+/obj/item/storage/backpack/industrial,
+/obj/item/clothing/under/rank/engineering/engineer/hazard{
+	pixel_y = 10;
+	pixel_x = 5
+	},
+/obj/item/clothing/head/hardhat/dblue{
+	pixel_y = 15;
+	pixel_x = -5
+	},
+/obj/item/clothing/head/hardhat{
+	pixel_y = 15;
+	pixel_x = 5
+	},
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/head/welding{
+	pixel_y = 8
+	},
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/decal_painter,
+/obj/item/floor_painter,
+/obj/item/airlock_painter,
+/obj/item/weldingtool/electric,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/item/storage/belt/utility/full/engi,
+/obj/item/clothing/under/overalls/olive,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
 "yr" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 5
@@ -1419,6 +1464,50 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ship/crew/dorm)
+"BL" = (
+/obj/effect/decal/cleanable/food/flour,
+/obj/machinery/light/directional/west,
+/obj/structure/filingcabinet/filingcabinet{
+	dir = 4;
+	pixel_x = -11;
+	density = 0;
+	name = "kitchen cabinet"
+	},
+/obj/item/kitchen/fork,
+/obj/item/kitchen/fork,
+/obj/item/melee/knife/kitchen,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = 10
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = 10
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = 10
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = 10
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = 10
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = 10
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/crew/canteen/kitchen)
 "BR" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -1445,19 +1534,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
-"Cz" = (
-/obj/effect/turf_decal/spline/fancy/opaque/white,
-/obj/structure/table/chem,
-/obj/item/cutting_board{
-	anchored = 1;
-	pixel_y = 4
-	},
-/obj/item/kitchen/rollingpin{
-	pixel_y = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/crew/canteen/kitchen)
 "CB" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -1812,6 +1888,12 @@
 "HI" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/canteen/kitchen)
+"HJ" = (
+/obj/effect/turf_decal/spline/fancy/opaque/white,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/griddle,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/crew/canteen/kitchen)
 "II" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
@@ -2020,49 +2102,6 @@
 	},
 /turf/open/floor/suns/hatch/maple,
 /area/ship/crew/dorm)
-"Ms" = (
-/obj/structure/filingcabinet/filingcabinet{
-	dir = 8;
-	pixel_x = 10;
-	density = 0;
-	name = "kitchen cabinet"
-	},
-/obj/item/melee/knife/kitchen,
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = -4
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = -4
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = -4
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = -4
-	},
-/obj/item/reagent_containers/food/drinks/modglass/small{
-	pixel_x = 10
-	},
-/obj/item/reagent_containers/food/drinks/modglass/small{
-	pixel_x = 10
-	},
-/obj/item/reagent_containers/food/drinks/modglass/small{
-	pixel_x = 10
-	},
-/obj/item/reagent_containers/food/drinks/modglass/small{
-	pixel_x = 10
-	},
-/obj/item/reagent_containers/food/drinks/modglass/small{
-	pixel_x = 10
-	},
-/obj/item/reagent_containers/food/drinks/modglass/small{
-	pixel_x = 10
-	},
-/obj/item/kitchen/fork,
-/obj/item/kitchen/fork,
-/obj/machinery/light/directional/east,
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/crew/canteen/kitchen)
 "Mt" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
@@ -2497,44 +2536,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/external/dark)
-"Ut" = (
-/obj/structure/closet/wall/orange/directional/north,
-/obj/item/storage/backpack/industrial,
-/obj/item/clothing/under/rank/engineering/engineer/hazard{
-	pixel_y = 10;
-	pixel_x = 5
-	},
-/obj/item/clothing/head/hardhat/dblue{
-	pixel_y = 15;
-	pixel_x = -5
-	},
-/obj/item/clothing/head/hardhat{
-	pixel_y = 15;
-	pixel_x = 5
-	},
-/obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/shoes/workboots,
-/obj/item/clothing/head/welding{
-	pixel_y = 8
-	},
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/decal_painter,
-/obj/item/floor_painter,
-/obj/item/airlock_painter,
-/obj/item/weldingtool/electric,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 4
-	},
-/obj/item/storage/belt/utility/full/engi,
-/obj/item/clothing/under/overalls/olive,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/engineering)
 "Uw" = (
 /obj/machinery/computer/helm{
 	dir = 8;
@@ -3307,7 +3308,7 @@ la
 II
 II
 II
-Ut
+yc
 qi
 da
 pn
@@ -3554,7 +3555,7 @@ XO
 XO
 HI
 Fj
-bx
+BL
 gp
 xb
 UR
@@ -3611,7 +3612,7 @@ XO
 gO
 wF
 Gn
-Cz
+HJ
 ht
 zF
 gO
@@ -3638,7 +3639,7 @@ XO
 XO
 HI
 va
-Ms
+uA
 AD
 Xn
 Nh

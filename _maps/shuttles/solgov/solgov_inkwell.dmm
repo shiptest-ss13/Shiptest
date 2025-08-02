@@ -488,7 +488,6 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/dorm/dormtwo)
 "dE" = (
-/obj/structure/railing/wood,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
@@ -500,8 +499,8 @@
 	pixel_y = 10
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood,
+/obj/machinery/oven,
+/turf/open/floor/wood/walnut,
 /area/ship/crew/canteen/kitchen)
 "dH" = (
 /obj/effect/turf_decal/spline/fancy/transparent/solgovblue{
@@ -1510,6 +1509,7 @@
 "jX" = (
 /obj/structure/chair/sofa/brown/left/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing/wood,
 /turf/open/floor/carpet/blue,
 /area/ship/crew/canteen/kitchen)
 "ka" = (
@@ -3707,6 +3707,11 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
+"wY" = (
+/obj/structure/table/wood,
+/obj/structure/railing/wood,
+/turf/open/floor/carpet/blue,
+/area/ship/crew/canteen/kitchen)
 "xd" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -5288,7 +5293,6 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "HM" = (
-/obj/structure/railing/corner/wood,
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
@@ -5302,6 +5306,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing/wood{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
 "HT" = (
@@ -5348,6 +5355,7 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing/corner/wood,
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
 "Ik" = (
@@ -6801,14 +6809,14 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/cryo)
 "St" = (
-/obj/structure/railing/wood,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/obj/machinery/griddle,
+/turf/open/floor/wood/walnut,
 /area/ship/crew/canteen/kitchen)
 "Sw" = (
 /obj/effect/turf_decal/spline/fancy/transparent/solgovblue{
@@ -7095,11 +7103,11 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "UF" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen/kitchen)
@@ -8955,7 +8963,7 @@ bU
 EF
 FC
 AU
-pS
+wY
 St
 UF
 Tk
