@@ -664,9 +664,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/wasteplanet/tradepost/center)
-"hO" = (
-/turf/closed/wall,
-/area/ruin/wasteplanet/tradepost/barracks)
 "hU" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 4
@@ -1992,10 +1989,6 @@
 /turf/open/floor/concrete/pavement/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "vR" = (
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "drip3"
-	},
-/obj/effect/decal/cleanable/dirt,
 /turf/closed/wall,
 /area/ruin/wasteplanet/tradepost/barracks)
 "vS" = (
@@ -2078,7 +2071,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/tradepost/barracks)
 "wL" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/closed/wall,
 /area/ruin/wasteplanet/tradepost/barracks)
@@ -2157,14 +2149,6 @@
 /obj/item/stack/ore/salvage/scraptitanium/five,
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
-"xF" = (
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "drip3"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall,
-/area/ruin/wasteplanet/tradepost/barracks)
 "xM" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -2401,7 +2385,6 @@
 /turf/open/floor/concrete/pavement/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "Ac" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/yesdiag,
 /area/ruin/wasteplanet/tradepost/barracks)
 "Ae" = (
@@ -2811,7 +2794,6 @@
 /turf/open/floor/carpet/blue,
 /area/ruin/wasteplanet/tradepost/center)
 "Ex" = (
-/obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/rust,
 /area/ruin/wasteplanet/tradepost/barracks)
 "ED" = (
@@ -3119,7 +3101,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/tradepost/barracks)
 "Hv" = (
-/obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/yesdiag,
 /area/ruin/wasteplanet/tradepost/center)
 "Hy" = (
@@ -4453,10 +4434,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/wasteplanet/tradepost/center)
-"TS" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/rust,
-/area/ruin/wasteplanet/tradepost/barracks)
 "TT" = (
 /obj/effect/decal/cleanable/oil/streak{
 	icon_state = "streak4"
@@ -4604,7 +4581,6 @@
 /turf/open/floor/concrete/pavement/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Wk" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall,
 /area/ruin/wasteplanet/tradepost/barracks)
 "Wl" = (
@@ -5717,18 +5693,18 @@ Ud
 Ud
 en
 Ud
-hO
-hO
-hO
+vR
+vR
+vR
 Rt
 nO
 mK
 Rt
 Rt
-hO
+vR
 Rt
-hO
-hO
+vR
+vR
 bm
 jy
 jy
@@ -5770,7 +5746,7 @@ Ud
 Ud
 Ud
 Rt
-hO
+vR
 sb
 wB
 Rt
@@ -5779,10 +5755,10 @@ ya
 Rt
 RR
 Vy
-hO
+vR
 Rr
 CE
-hO
+vR
 QB
 QB
 QB
@@ -5832,10 +5808,10 @@ zT
 wG
 Ga
 zS
-hO
+vR
 Yj
 Gc
-hO
+vR
 QB
 br
 FZ
@@ -5879,16 +5855,16 @@ Rt
 bZ
 nt
 xm
-hO
-hO
-hO
+vR
+vR
+vR
 Rt
 su
 XQ
-hO
+vR
 vS
 nr
-hO
+vR
 QB
 QB
 Le
@@ -5928,20 +5904,20 @@ Ud
 en
 en
 en
-hO
+vR
 eH
 ZN
 wW
 Xo
 Ji
-hO
+vR
 JB
 EF
 RI
 DB
 Yw
 DL
-hO
+vR
 QB
 QB
 Le
@@ -5981,13 +5957,13 @@ Ud
 Ud
 en
 QB
-hO
+vR
 Iq
 ZN
 wW
 Rt
 Rt
-hO
+vR
 lB
 xx
 AI
@@ -6034,7 +6010,7 @@ en
 en
 Nl
 QB
-hO
+vR
 eH
 ZN
 dN
@@ -6147,12 +6123,12 @@ aI
 Ho
 um
 Rt
-hO
+vR
 FI
-hO
-TS
-xF
-hO
+vR
+Rt
+vR
+vR
 Ps
 QB
 uC
@@ -6195,9 +6171,9 @@ QB
 ly
 Ps
 Rt
-hO
-hO
-hO
+vR
+vR
+vR
 Rt
 Rt
 nU
@@ -6252,7 +6228,7 @@ QB
 QB
 QB
 QB
-hO
+vR
 qJ
 OQ
 Wk
