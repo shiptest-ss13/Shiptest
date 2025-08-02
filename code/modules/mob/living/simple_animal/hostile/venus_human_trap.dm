@@ -203,3 +203,6 @@
 
 	UnregisterSignal(vine, COMSIG_PARENT_QDELETING)
 	vines -= vine
+
+/mob/living/simple_animal/hostile/venus_human_trap/mining
+	faction = list("mining")
