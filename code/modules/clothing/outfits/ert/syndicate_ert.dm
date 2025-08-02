@@ -286,8 +286,8 @@
 	name = "ERT - Ramzi Clique Cell Rifleman"
 
 	head = null
-	mask = /obj/item/clothing/mask/gas/syndicate
-	uniform = /obj/item/clothing/under/syndicate
+	mask = /obj/item/clothing/mask/gas/ramzi
+	uniform = /obj/item/clothing/under/syndicate/ramzi/overalls
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 	suit_store = /obj/item/gun/ballistic/automatic/smg/cobra
 	belt = /obj/item/storage/belt/military/cobra

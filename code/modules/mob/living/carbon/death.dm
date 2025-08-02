@@ -7,7 +7,7 @@
 
 	if(!gibbed)
 		INVOKE_ASYNC(src, PROC_REF(emote), "deathgasp")
-	reagents.end_metabolization(src)
+	end_metabolization(src)
 
 	. = ..()
 

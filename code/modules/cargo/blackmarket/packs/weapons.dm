@@ -42,6 +42,16 @@
 	stock_max = 3
 	availability_prob = 30
 
+/datum/blackmarket_item/weapon/spikeshield
+	name = "Spiked Ballistic Shield"
+	desc = "Be the ancient warrior you always wanted to be. Block bullets and impale your enemies."
+	item = /obj/item/shield/riot/spike
+
+	cost_min = 1000
+	cost_max = 1500
+	stock_max = 2
+	availability_prob = 50
+
 /datum/blackmarket_item/weapon/powerfist
 	name = "Powerfist"
 	desc = "Need a bit more... omph in your right hook? This gas operated powerfist will put you in the heavyweight."
@@ -381,6 +391,16 @@
 	stock_max = 3
 	availability_prob = 50
 
+/datum/blackmarket_item/weapon/guncase/mauler/semi
+	name = "Mauler Semi-Automatic"
+	desc = "Enjoy the Mauler, but want to actually hit the broadside of a Vela? This semi-automatic conversion of the Mauler still features a better than average rate of fire and improved handling.."
+	item = /obj/item/gun/ballistic/automatic/pistol/mauler/regular
+
+	cost_min = 500
+	cost_max = 1000
+	stock_max = 3
+	availability_prob = 50
+
 /datum/blackmarket_item/weapon/guncase/spitter
 	name = "Spitter Submachine Gun"
 	desc = "The aptly named Spitter won't be hitting anything outside of spitting distance. Anything in that range on the otherhand? Let's just say the bereaved will be wanting a closed casket funeral. Chambered in 9x18mm."
@@ -403,6 +423,28 @@
 	cost_max = 2000
 	stock = 1
 	availability_prob = 35
+
+/datum/blackmarket_item/weapon/guncase/f3
+	name = "F3 Marksman Rifle"
+	desc = "Let's bring it back old school. These vintage marksman rifles were the predecessor to the F4, but that doesn't make them any less deadly. After all, 3 is closer to number 1! Chambered in .308."
+	item = /obj/item/gun/ballistic/automatic/marksman/f4/indie
+	pair_item = list(/datum/blackmarket_item/ammo/f4_magazine)
+
+	cost_min = 3100
+	cost_max = 3900
+	stock_max = 2
+	availability_prob = 20
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/weapon/guncase/wasp
+	name = "Wasp Laser SMG"
+	desc = "Float like a butterfly, sting like a... well, a Wasp. A couple of our old E-40s finally gave the ghost, but we made lemonade and converted the laser modules into compact SMGs."
+	item = /obj/item/gun/energy/laser/wasp
+
+	cost_min = 1500
+	cost_max = 2500
+	stock_max = 2
+	availability_prob = 25
 
 /datum/blackmarket_item/weapon/guncase/polymer
 	name = "Polymer Survivor Rifle"
@@ -465,16 +507,6 @@
 
 /// mecha equipment
 
-/datum/blackmarket_item/weapon/mecha_weapon_bay
-	name = "Concealed Weapons Bay"
-	desc = "Ripley with a laser cannon? 200 Series with a missile rack? Sky's the limit with this omni-compatible weapons bay! (Missiles and lasers not included)"
-	item = /obj/item/mecha_parts/weapon_bay/concealed
-
-	cost_min = 1000
-	cost_max = 2000
-	stock_max = 3
-	availability_prob = 20
-
 /datum/blackmarket_item/weapon/mecha_syringe_gun
 	name = "Mounted Syringe Gun"
 	desc = "We ripped this off an old Cybersun exosuit. It's a real advanced piece of equipment. Exosuit not included."
@@ -496,14 +528,4 @@
 	cost_max = 3000
 	stock_max = 2
 	availability_prob = 25
-
-/datum/blackmarket_item/weapon/spikeshield
-	name = "Spiked Ballistic Shield"
-	desc = "Be the ancient warrior you always wanted to be. Block bullets and impale your enemies."
-	item = /obj/item/shield/riot/spike
-
-	cost_min = 1000
-	cost_max = 1500
-	stock_max = 2
-	availability_prob = 50
 

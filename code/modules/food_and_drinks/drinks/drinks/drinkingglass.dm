@@ -126,9 +126,13 @@
 	name = "Space Cola"
 	list_reagents = list(/datum/reagent/consumable/space_cola = 50)
 
+/obj/item/reagent_containers/food/drinks/drinkingglass/filled/bridge_bunny
+	name = "Bridge Bunny"
+	list_reagents = list(/datum/reagent/consumable/ethanol/sidecar = 50)
+
 /obj/item/reagent_containers/food/drinks/drinkingglass/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/reagent_containers/food/snacks/egg)) //breaking eggs
-		var/obj/item/reagent_containers/food/snacks/egg/E = I
+	if(istype(I, /obj/item/food/egg)) //breaking eggs
+		var/obj/item/food/egg/E = I
 		if(reagents)
 			if(reagents.total_volume >= reagents.maximum_volume)
 				to_chat(user, span_notice("[src] is full."))

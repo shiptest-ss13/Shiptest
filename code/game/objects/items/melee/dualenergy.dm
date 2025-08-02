@@ -14,6 +14,8 @@
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
 	resistance_flags = FIRE_PROOF
+	wound_bonus = -10
+	bare_wound_bonus = 20
 	var/active_w_class = WEIGHT_CLASS_BULKY
 	var/two_hand_force = 34
 	var/sword_color = "green"
@@ -53,7 +55,7 @@
 /obj/item/melee/duelenergy/proc/on_wield(obj/item/source, mob/living/carbon/user)
 	SIGNAL_HANDLER
 
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	w_class = active_w_class
 	hitsound = 'sound/weapons/blade1.ogg'
 	START_PROCESSING(SSobj, src)
