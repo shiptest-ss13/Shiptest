@@ -168,11 +168,11 @@
 
 	var/cam_location = src.loc
 	if((istype(cam_location, /obj/item/clothing)) || (istype(cam_location, /obj/item/storage))) //camera isn't equipped to a slot, and is stored in something else
-		if(isturf(src.loc.loc))
-			cam_location = src.loc.loc
-		else
-			return
-	update_camera_location(cam_location)
+		cam_location = src.loc.loc
+	if(isturf(cam_location))
+		update_camera_location(cam_location)
+	else
+		return
 
 /obj/item/bodycamera/proc/do_camera_update(oldLoc)
 	if(oldLoc != get_turf(src)) //we want to make sure the camera source has actually moved before running expensive camera updates
