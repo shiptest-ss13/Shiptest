@@ -1,4 +1,4 @@
-/obj/item/clothing/accessory //Ties moved to neck slot items, but as there are still things like medals and armbands, this accessory system is being kept as-is
+/obj/item/clothing/accessory
 	name = "Accessory"
 	desc = "Something has gone wrong!"
 	icon = 'icons/obj/clothing/accessories.dmi'
@@ -128,6 +128,7 @@
 	custom_materials = list(/datum/material/iron=1000)
 	resistance_flags = FIRE_PROOF
 	attachment_slot = null
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	var/medaltype = "medal" //Sprite used for medalbox
 	var/commended = FALSE
 
