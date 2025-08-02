@@ -467,6 +467,7 @@
 
 	limb.receive_damage(25, stamina = 100, wound_bonus = CANT_WOUND)
 	gelled = TRUE
+	processes = TRUE
 
 /// if someone is using surgical tape on our wound
 /datum/wound/blunt/proc/tape(obj/item/stack/sticky_tape/surgical/I, mob/user)
