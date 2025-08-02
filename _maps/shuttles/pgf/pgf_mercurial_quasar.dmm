@@ -792,6 +792,9 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/west,
+/obj/item/radio/intercom/directional/south{
+	pixel_x = -4
+	},
 /turf/open/floor/pod/dark,
 /area/ship/crew/cryo)
 "jy" = (
@@ -2181,11 +2184,8 @@
 /obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 8
 	},
-/obj/item/radio/intercom/directional/north{
-	dir = 1;
-	pixel_y = 31
-	},
 /obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/computer/cryopod/directional/north,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/cryo)
 "EU" = (
