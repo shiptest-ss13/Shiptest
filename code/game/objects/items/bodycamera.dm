@@ -19,6 +19,7 @@
 	var/can_transmit_across_z_levels = FALSE
 	var/updating = FALSE //portable camera camerachunk update
 	var/mob/tracked_mob //last mob that picked up the bodycamera. needed for cameranet updates
+	var/datum/movement_detector/tracker
 
 /obj/item/bodycamera/Initialize()
 	. = ..()
@@ -26,6 +27,7 @@
 		network -= i
 		network += lowertext(i)
 
+	tracker = new /datum/movement_detector(src, CALLBACK(src, PROC_REF(obj_move)))
 	GLOB.cameranet.cameras += src
 	GLOB.cameranet.addCamera(src)
 	c_tag = "Body Camera - " + random_string(4, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
@@ -143,33 +145,11 @@
 	user.see_in_dark = 2
 	return 1
 
-
-/obj/item/bodycamera/pickup(mob/user)
-	. = ..()
-	if(tracked_mob == user)
-		return
-	if(tracked_mob)
-		UnregisterSignal(tracked_mob, COMSIG_MOVABLE_MOVED)
-		UnregisterSignal(user, COMSIG_MOVABLE_MOVED) //just in case
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(mob_move)) //this signal does stick around after you drop the item, but expensive camera updates are avoided unless the camera moves
-
-/obj/item/bodycamera/Moved(oldLoc, dir) //shamelessly stolen from silicon_movement.dm
-	. = ..()
-	update_camera_location(oldLoc)
-
-/obj/item/bodycamera/forceMove(atom/destination)
-	. = ..()
-	//Only bother updating the camera if we actually managed to move
-	if(.)
-		update_camera_location(destination)
-
-/obj/item/bodycamera/proc/mob_move() //see code/game/machinery/computer/camera.dm:243
+/obj/item/bodycamera/proc/obj_move()
 	SIGNAL_HANDLER
 
 	var/cam_location = src.loc
-	if((istype(cam_location, /obj/item/clothing)) || (istype(cam_location, /obj/item/storage))) //camera isn't equipped to a slot, and is stored in something else
-		cam_location = src.loc.loc
-	if(isturf(cam_location))
+	if(isturf(cam_location) || isatom(cam_location))
 		update_camera_location(cam_location)
 	return
 
