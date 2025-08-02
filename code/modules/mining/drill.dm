@@ -79,7 +79,7 @@
 		update_overlays()
 		update_icon_state()
 	if(!active && our_vein?.currently_spawning)
-		our_vein.toggle_spawning()
+		our_vein.stop_spawning()
 
 /obj/machinery/drill/Destroy()
 	QDEL_NULL(soundloop)
@@ -140,6 +140,7 @@
 			to_chat(user, span_notice("You secure the [src] to the ore vein."))
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			our_vein = vein
+			our_vein.our_drill = src
 			anchored = TRUE
 			update_icon_state()
 			return
@@ -148,8 +149,9 @@
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			anchored = FALSE
 
-			if(our_vein?.spawner_attached && our_vein?.currently_spawning)
-				our_vein.toggle_spawning()
+			if(our_vein?.currently_spawning)
+				our_vein.stop_spawning()
+			our_vein.our_drill = null
 			our_vein = null
 			update_icon_state()
 			return
@@ -283,7 +285,7 @@
 	soundloop.stop()
 	deltimer(current_timerid)
 	if(our_vein?.currently_spawning)
-		our_vein.toggle_spawning()
+		our_vein.stop_spawning()
 	if(destructive)
 		our_vein.Destroy()
 		our_vein = null
@@ -314,10 +316,9 @@
 		var/mine_time
 		active = TRUE
 		soundloop.start()
-		if(!our_vein.spawner_attached)
-			our_vein.begin_spawning()
-		else if(!our_vein.currently_spawning)
-			our_vein.toggle_spawning()
+		our_vein.begin_spawning()
+		if(!our_vein.currently_spawning)
+			our_vein.stop_spawning()
 		for(var/obj/item/stock_parts/micro_laser/laser in component_parts)
 			mine_time = round((300/sqrt(laser.rating))*our_vein.mine_time_multiplier)
 		eta = mine_time*our_vein.mining_charges
@@ -354,8 +355,11 @@
 
 //Overly long proc to handle the unique properties for each malfunction type
 /obj/machinery/drill/proc/malfunction(malfunction_type)
+
+	//we want to pause the creation of new spawners
 	if(active && our_vein?.currently_spawning)
-		our_vein.toggle_spawning() //turns mob spawning off after a malfunction
+		our_vein.stop_spawning()
+
 	switch(malfunction_type)
 		if(MALF_LASER)
 			say("Malfunction: Laser array damaged, please replace before continuing mining operations.")

@@ -527,9 +527,6 @@
 		if(prob(20 / severity) && !opened)
 			if(!locked)
 				open()
-			else
-				req_access = list()
-				req_access += pick(get_all_accesses())
 
 /obj/structure/closet/contents_explosion(severity, target)
 	for(var/atom/A in contents)
