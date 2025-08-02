@@ -14,7 +14,7 @@
 /datum/reagent/medicine/soulus/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
 		if(method in list(INGEST, INJECT))
-			M.adjust_jitter(reac_volume)
+			M.set_timed_status_effect(reac_volume SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 			if(M.getFireLoss())
 				M.adjustFireLoss(-reac_volume*1.2)
 			if(M.getBruteLoss())

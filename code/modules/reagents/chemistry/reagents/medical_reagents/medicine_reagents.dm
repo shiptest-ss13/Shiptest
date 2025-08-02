@@ -15,7 +15,7 @@
 
 /datum/reagent/medicine/indomide
 	name = "Indomide"
-	description = "An anti-inflammatory initially isolated from a form of Kalixcian cave fungus. Thins the blood, and causes bruises and cuts to slowly heal. Overdose can cause sores to open along the body."
+	description = "An anti-inflammatory initially isolated from a Kalixcian cave fungus. Thins the blood, and causes bruises and cuts to slowly heal. Overdose can cause sores to open along the body."
 	reagent_state = LIQUID
 	color = "#FFFF6B"
 	overdose_threshold = 20
@@ -97,7 +97,6 @@
 	reagent_state = LIQUID
 	color = "#FF9696"
 	overdose_threshold = 45
-	var/did_overdose = FALSE
 	var/passive_bleed_modifier = 0.9
 	var/overdose_bleed_modifier = 0.3
 	var/brute_damage_modifier = 1.5
@@ -137,7 +136,7 @@
 		return
 	var/mob/living/carbon/human/normal_guy = L
 	normal_guy.physiology?.bleed_mod /= passive_bleed_modifier
-	if(did_overdose)
+	if(overdosed)
 		normal_guy.physiology?.bleed_mod /= overdose_bleed_modifier
 		normal_guy.physiology?.brute_mod /= brute_damage_modifier
 
@@ -147,7 +146,6 @@
 	if(!ishuman(M))
 		return
 
-	did_overdose = TRUE
 	var/mob/living/carbon/human/overdose_victim = M
 	overdose_victim.physiology?.bleed_mod *= overdose_bleed_modifier
 	overdose_victim.physiology?.brute_mod *= brute_damage_modifier
@@ -240,7 +238,6 @@
 	reagent_state = LIQUID
 	color = "#F7FFA5"
 	overdose_threshold = 30
-	var/did_overdose
 	var/burn_damage_modifier = 1.3
 
 /datum/reagent/medicine/alvitane/on_mob_life(mob/living/carbon/M)
@@ -269,7 +266,7 @@
 	if(!ishuman(L))
 		return
 
-	if(did_overdose)
+	if(overdosed)
 		var/mob/living/carbon/human/normal_guy = L
 		normal_guy.physiology?.burn_mod /= burn_damage_modifier
 
@@ -279,7 +276,6 @@
 	if(!ishuman(M))
 		return
 
-	did_overdose = TRUE
 	var/mob/living/carbon/human/overdose_victim = M
 	overdose_victim.physiology?.burn_mod *= burn_damage_modifier
 
@@ -317,11 +313,11 @@
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 		else
 			to_chat(M, span_danger("Your burns start to throb, before subsiding!"))
-	if(method in list(VAPOR, INJECT))
-		if(iscarbon(M) && M.stat != DEAD)
-			var/mob/living/carbon/burn_ward_attendee = M
-			for(var/datum/wound/burn in burn_ward_attendee.all_wounds)
-				burn.on_tane(reac_volume/2)
+
+	if(iscarbon(M) && M.stat != DEAD && (method in list(VAPOR, INJECT)))
+		var/mob/living/carbon/burn_ward_attendee = M
+		for(var/datum/wound/burn in burn_ward_attendee.all_wounds)
+			burn.on_tane(reac_volume/2)
 
 	..()
 
@@ -373,7 +369,7 @@
 	name = "Calomel"
 	description = "Quickly purges the body of all chemicals. Toxin damage is dealt if the patient is in good condition."
 	reagent_state = LIQUID
-	color = "#19C832"
+	color = "#8CDF24" // heavy saturation to make the color blend better
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	taste_description = "acid"
 
@@ -389,11 +385,10 @@
 /datum/reagent/medicine/celdramazine
 	name = "Celdramazine"
 	description = ""
-	reagent_state = LIQUID
-	color = "#8CDF24" // heavy saturation to make the color blend better
+	reagent_state = SOLID
+	color = "#101a13" // heavy saturation to make the color blend better
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM
-	overdose_threshold = 6
-	var/conversion_amount
+	overdose_threshold = 20
 
 /datum/reagent/medicine/celdramazine/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-1*REM, 0)
@@ -410,25 +405,25 @@
 	A.reagents.add_reagent(/datum/reagent/carbon, volume) // Its pores would get clogged with gunk anyway.
 	..()
 
-
-/datum/reagent/medicine/c2/seiver //a bit of a gray joke
-	name = "Seiver"
-	description = "A medicine that shifts functionality based on temperature. Colder temperatures incurs radiation removal while hotter temperatures promote antitoxicity. Damages the heart." //CHEM HOLDER TEMPS, NOT AIR TEMPS
+//its seiver. i ran out of ideas + seiver was a good one
+/datum/reagent/medicine/pancrazine
+	name = "Pancrazine"
+	description = "" //CHEM HOLDER TEMPS, NOT AIR TEMPS
 	var/radbonustemp = (T0C - 100) //being below this number gives you 10% off rads.
 
-/datum/reagent/medicine/c2/seiver/on_mob_metabolize(mob/living/carbon/human/M)
+/datum/reagent/medicine/pancrazine/on_mob_metabolize(mob/living/carbon/human/M)
 	. = ..()
 	radbonustemp = rand(radbonustemp - 50, radbonustemp + 50) // Basically this means 50K and below will always give the percent heal, and upto 150K could. Calculated once.
 
-/datum/reagent/medicine/c2/seiver/on_mob_life(mob/living/carbon/human/M)
+/datum/reagent/medicine/pancrazine/on_mob_life(mob/living/carbon/human/M)
 	var/chemtemp = min(holder.chem_temp, 1000)
 	chemtemp = chemtemp ? chemtemp : 273 //why do you have null sweaty
 	var/healypoints = 0 //5 healypoints = 1 heart damage; 5 rads = 1 tox damage healed for the purpose of healypoints
 
 	//you're hot
-	var/toxcalc = min(round((chemtemp-1000)/175+5,0.1),5) //max 5 tox healing a tick
+	var/toxcalc = min(round((chemtemp-1000)/175+5,0.1),5) //max 2.5 tox healing a tick
 	if(toxcalc > 0)
-		M.adjustToxLoss(toxcalc*-1)
+		M.adjustToxLoss(toxcalc*-0.5)
 		healypoints += toxcalc
 
 	//and you're cold
@@ -449,8 +444,68 @@
 	..()
 	return TRUE
 
+/datum/reagent/medicine/pancrazine/overdose_process(mob/living/M)
+	. = ..()
+	if(prob(50))
+		M.set_timed_status_effect(5 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	if(prob(10))
+		M.adjust_disgust(33)
+
+/datum/reagent/medicine/gjalrazine
+	name = "Gjalrazine"
+	description = ""
+	reagent_state = LIQUID
+	color = "#8CDF24"
+	metabolization_rate = 0.75 * REAGENTS_METABOLISM
+	overdose_threshold = 12
+
+
+/datum/reagent/medicine/gjalrazine/on_mob_life(mob/living/carbon/M)
+	M.adjustToxLoss(-1*REM, 0)
+	M.adjust_disgust(1)
+	. = 1
+	..()
+
+/datum/reagent/medicine/gjalrazine/expose_mob(mob/living/M, method, reac_volume, show_message, touch_protection)
+	. = ..()
+	if(method in list(TOUCH, PATCH, INGEST) && M.stat != DEAD)
+		if(method == INGEST)
+			M.adjustOrganLoss(ORGAN_SLOT_STOMACH, reac_volume)
+			to_chat(M, "Your stomach cramps!")
+			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+		M.adjustToxLoss(-reac_volume*8)
+		M.adjust_disgust(50)
+		M.set_timed_status_effect(5 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+
+/datum/reagent/medicine/gjalrazine/overdose_process(mob/living/M)
+	. = ..()
+	M.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+	M.adjust_disgust(30)
+	M.adjustToxLoss(2*REM, 0)
 
 /// OXYGEN REAGENTS ///
+
+// oxygen has good reason to be less complicated because it's major causes are suffocating and blood loss
+// blood loss has treatment methods aside from these meds
+// and suffocation shouldn't be a major affair
+
+/datum/reagent/medicine/dexalin
+	name = "Dexalin"
+	description = "Restores oxygen loss. Overdose causes it instead."
+	reagent_state = LIQUID
+	color = "#0080FF"
+	overdose_threshold = 30
+
+/datum/reagent/medicine/dexalin/on_mob_life(mob/living/carbon/M)
+	M.adjustOxyLoss(-0.5*REM, 0)
+	..()
+	. = 1
+
+/datum/reagent/medicine/dexalin/overdose_process(mob/living/M)
+	M.adjustOxyLoss(2*REM, 0)
+	..()
+	. = 1
 
 /datum/reagent/medicine/salbutamol
 	name = "Salbutamol"
@@ -465,29 +520,6 @@
 		M.losebreath -= 2
 	..()
 	. = 1
-
-/datum/reagent/medicine/perfluorodecalin
-	name = "Perfluorodecalin"
-	description = "Restores oxygen deprivation while producing a lesser amount of toxic byproducts. Both scale with exposure to the drug and current amount of oxygen deprivation. Overdose causes toxic byproducts regardless of oxygen deprivation."
-	reagent_state = LIQUID
-	color = "#FF6464"
-	metabolization_rate = 0.25 * REAGENTS_METABOLISM
-	overdose_threshold = 35 // at least 2 full syringes +some, this stuff is nasty if left in for long
-
-/datum/reagent/medicine/perfluorodecalin/on_mob_life(mob/living/carbon/human/M)
-	var/oxycalc = 2.5*REM*current_cycle
-	if(!overdosed)
-		oxycalc = min(oxycalc,M.getOxyLoss()+PERF_BASE_DAMAGE) //if NOT overdosing, we lower our toxdamage to only the damage we actually healed with a minimum of 0.5. IE if we only heal 10 oxygen damage but we COULD have healed 20, we will only take toxdamage for the 10. We would take the toxdamage for the extra 10 if we were overdosing.
-	M.adjustOxyLoss(-oxycalc, 0)
-	M.adjustToxLoss(oxycalc/2.5, 0)
-	if(prob(current_cycle) && M.losebreath)
-		M.losebreath--
-	..()
-	return TRUE
-
-/datum/reagent/medicine/perfluorodecalin/overdose_process(mob/living/M)
-	metabolization_rate += 1
-	return ..()
 
 /// RADIATION REAGENTS ///
 
@@ -539,12 +571,6 @@
 /// MULTI-DAMAGE REAGENTS ///
 
 
-
-
-
-
-
-
 /datum/reagent/medicine/synthflesh
 	name = "Synthflesh"
 	description = "Has a 100% chance of instantly healing brute and burn damage. One unit of the chemical will heal one point of damage. Touch application only."
@@ -574,22 +600,22 @@
 
 
 
-/datum/reagent/medicine/lavaland_extract
-	name = "Lavaland Extract"
-	description = "An extract of lavaland atmospheric and mineral elements. Heals the user in small doses, but is extremely toxic otherwise."
+/datum/reagent/medicine/hunter_extract
+	name = "Hunter's Extract"
+	description = "An extract of . Heals the user in small doses, but is extremely toxic otherwise."
 	color = "#6B372E" //dark and red like lavaland
 	metabolization_rate = REAGENTS_METABOLISM * 0.5
 	overdose_threshold = 10
 
-/datum/reagent/medicine/lavaland_extract/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
+/datum/reagent/medicine/hunter_extract/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	ADD_TRAIT(M, TRAIT_NOLIMBDISABLE, TRAIT_GENERIC)
 	..()
 
-/datum/reagent/medicine/lavaland_extract/on_mob_end_metabolize(mob/living/M)
+/datum/reagent/medicine/hunter_extract/on_mob_end_metabolize(mob/living/M)
 	REMOVE_TRAIT(M, TRAIT_NOLIMBDISABLE, TRAIT_GENERIC)
 	..()
 
-/datum/reagent/medicine/lavaland_extract/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/hunter_extract/on_mob_life(mob/living/carbon/M)
 	M.adjustFireLoss(-1*REM, 0)
 	M.adjustBruteLoss(-1*REM, 0)
 	M.adjustToxLoss(-1*REM, 0)
@@ -598,7 +624,7 @@
 	..()
 	return TRUE
 
-/datum/reagent/medicine/lavaland_extract/overdose_process(mob/living/M)		// Thanks to actioninja
+/datum/reagent/medicine/hunter_extract/overdose_process(mob/living/M)		// Thanks to actioninja
 	if(prob(2) && iscarbon(M))
 		var/selected_part = pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 		var/obj/item/bodypart/bp = M.get_bodypart(selected_part)
@@ -608,7 +634,6 @@
 		else	//SUCH A LUST FOR REVENGE!!!
 			to_chat(M, span_warning("A phantom limb hurts!"))
 	return ..()
-
 
 
 /datum/reagent/medicine/panacea
@@ -636,9 +661,9 @@
 	..()
 	. = 1
 
-/datum/reagent/medicine/omnizine/protozine
-	name = "Protozine"
-	description = "A less environmentally friendly and somewhat weaker variant of omnizine."
+/datum/reagent/medicine/panacea/effluvial
+	name = "Effluvial Panacea"
+	description = ""
 	color = "#d8c7b7"
 	healing = 0.2
 

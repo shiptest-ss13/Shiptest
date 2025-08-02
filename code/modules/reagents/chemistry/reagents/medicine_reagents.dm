@@ -1,5 +1,3 @@
-#define PERF_BASE_DAMAGE 0.5
-
 //////////////////////////////////////////////////////////////////////////////////////////
 					// MEDICINE REAGENTS
 //////////////////////////////////////////////////////////////////////////////////////
@@ -211,22 +209,6 @@
 	..()
 	. = 1
 
-/datum/reagent/medicine/dexalin
-	name = "Dexalin"
-	description = "Restores oxygen loss. Overdose causes it instead."
-	reagent_state = LIQUID
-	color = "#0080FF"
-	overdose_threshold = 30
-
-/datum/reagent/medicine/dexalin/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-0.5*REM, 0)
-	..()
-	. = 1
-
-/datum/reagent/medicine/dexalin/overdose_process(mob/living/M)
-	M.adjustOxyLoss(2*REM, 0)
-	..()
-	. = 1
 
 /datum/reagent/medicine/dexalinp
 	name = "Dexalin Plus"
@@ -333,97 +315,3 @@
 		M.adjustToxLoss(-0.25*REM, 0)
 		. = 1
 	..()
-/datum/reagent/medicine/tetracordrazine //WS edit: Yes
-	name = "Tetracordrazine"
-	description = "A weak dilutant similar to Tricordrazine that slowly heals all damage types."
-	reagent_state = LIQUID
-	color = "#C8A5DC"
-	taste_description = "bottled water that has been sitting out in the sun with a single chili flake in it"
-
-/datum/reagent/medicine/tetracordrazine/on_mob_life(mob/living/carbon/M)
-	if(prob(80))
-		M.adjustBruteLoss(-0.25*REM, 0)
-		M.adjustFireLoss(-0.25*REM, 0)
-		M.adjustToxLoss(-0.25*REM, 0)
-		M.adjustOxyLoss(-0.5*REM, 0)
-		. = 1
-	..()
-
-/datum/reagent/medicine/regen_jelly
-	name = "Regenerative Jelly"
-	description = "Gradually regenerates all types of damage, without harming slime anatomy."
-	reagent_state = LIQUID
-	color = "#CC23FF"
-	taste_description = "jelly"
-
-/datum/reagent/medicine/regen_jelly/expose_mob(mob/living/M, reac_volume)
-	if(M && ishuman(M) && reac_volume >= 0.5)
-		var/mob/living/carbon/human/H = M
-		H.hair_color = "C2F"
-		H.facial_hair_color = "C2F"
-		H.update_hair()
-
-/datum/reagent/medicine/regen_jelly/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-1.5*REM, 0)
-	M.adjustFireLoss(-1.5*REM, 0)
-	M.adjustOxyLoss(-1.5*REM, 0)
-	M.adjustToxLoss(-1.5*REM, 0, TRUE) //heals TOXINLOVERs
-	..()
-	. = 1
-
-/datum/reagent/medicine/syndicate_nanites //Used exclusively by Syndicate medical cyborgs
-	name = "Restorative Nanites"
-	description = "Miniature medical robots that swiftly restore bodily damage."
-	reagent_state = SOLID
-	color = "#555555"
-	overdose_threshold = 30
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs //WS Edit - IPCs
-
-/datum/reagent/medicine/syndicate_nanites/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-5*REM, 0) //A ton of healing - this is a 50 telecrystal investment.
-	M.adjustFireLoss(-5*REM, 0)
-	M.adjustOxyLoss(-15, 0)
-	M.adjustToxLoss(-5*REM, 0)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -15*REM)
-	M.adjustCloneLoss(-3*REM, 0)
-	..()
-	. = 1
-
-/datum/reagent/medicine/syndicate_nanites/overdose_process(mob/living/carbon/M) //wtb flavortext messages that hint that you're vomitting up robots
-	if(prob(25))
-		M.reagents.remove_reagent(type, metabolization_rate*15) // ~5 units at a rate of 0.4 but i wanted a nice number in code
-		M.vomit(20) // nanite safety protocols make your body expel them to prevent harmies
-	..()
-	. = 1
-
-
-/datum/reagent/medicine/haloperidol
-	name = "Haloperidol"
-	description = "Increases depletion rates for most stimulating/hallucinogenic drugs. Reduces druggy effects and jitteriness. Severe stamina regeneration penalty, causes drowsiness. Small chance of brain damage."
-	reagent_state = LIQUID
-	color = "#27870a"
-	metabolization_rate = 0.4 * REAGENTS_METABOLISM
-
-
-
-/*	WS edit begin - Lavaland rework
-/datum/reagent/medicine/lavaland_extract
-	name = "Lavaland Extract"
-	description = "An extract of lavaland atmospheric and mineral elements. Heals the user in small doses, but is extremely toxic otherwise."
-	color = "#6B372E" //dark and red like lavaland
-	overdose_threshold = 3 //To prevent people stacking massive amounts of a very strong healing reagent
-	can_synth = FALSE
-
-/datum/reagent/medicine/lavaland_extract/on_mob_life(mob/living/carbon/M)
-	M.heal_bodypart_damage(5,5)
-	..()
-	return TRUE
-
-/datum/reagent/medicine/lavaland_extract/overdose_process(mob/living/M)
-	M.adjustBruteLoss(3*REM, 0, FALSE, BODYTYPE_ORGANIC)
-	M.adjustFireLoss(3*REM, 0, FALSE, BODYTYPE_ORGANIC)
-	M.adjustToxLoss(3*REM, 0)
-	..()
-	return TRUE
-*/		//WS edit end
-
