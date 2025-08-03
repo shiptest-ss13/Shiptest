@@ -426,6 +426,12 @@
 	volume = 50
 	list_reagents = list(/datum/reagent/medicine/dexalin = 50)
 
+/obj/item/reagent_containers/glass/bottle/gjalrazine
+	name = "gjalrazine bottle"
+	desc = "A small bottle. Contains gjalrazine, used to treat major toxic damage."
+	volume = 50
+	list_reagents = list(/datum/reagent/medicine/gjalrazinee = 50)
+
 /obj/item/reagent_containers/glass/bottle/epinephrine/sleeper
 	cap_on = FALSE
 
