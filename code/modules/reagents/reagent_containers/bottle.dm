@@ -402,11 +402,11 @@
 	volume = 50
 	list_reagents = list(/datum/reagent/medicine/epinephrine = 50)
 
-/obj/item/reagent_containers/glass/bottle/bicaridine
-	name = "bicaridine bottle"
-	desc = "A small bottle. Contains bicaridine, used to treat minor bruising."
+/obj/item/reagent_containers/glass/bottle/indomide
+	name = "indomide bottle"
+	desc = "A small bottle. Contains indomide, used to treat minor bruising."
 	volume = 50
-	list_reagents = list(/datum/reagent/medicine/bicaridine = 50)
+	list_reagents = list(/datum/reagent/medicine/indomide = 50)
 
 /obj/item/reagent_containers/glass/bottle/kelotane
 	name = "alvitane bottle"
