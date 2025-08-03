@@ -1,18 +1,21 @@
 
 /obj/item/power_armor
 	name = "power armor part"
-	icon = 'icons/objects/pa_items.dmi'
+	icon = 'icons/obj/clothing/power_armor/pa_items.dmi'
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0,  FIRE = 0, ACID = 0, WOUND = 0)
 	uses_integrity = TRUE
 	max_integrity = 100
 
 	#warn doc
 	var/icon_state_pa
-	var/chance = 0 //Weight for pick
 	var/list/modules = list(MAIN_MODULE_PA = null, PASSIVE_MODULE_PA = null)
 	var/list/actions_modules = null
 	var/zone = null
 	var/obj/item/clothing/suit/space/hardsuit/power_armor/frame = null
+
+/obj/item/power_armor/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, require_twohands = TRUE)
 
 /obj/item/power_armor/attackby(obj/item/I, mob/living/user, params)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
@@ -32,7 +35,7 @@
 		var/radial_result = part_to_zone[show_radial_menu(user, src, radial_options, require_near = TRUE, tooltips = TRUE)]
 		var/hand = user.get_empty_held_index_for_side(LEFT_HANDS) || user.get_empty_held_index_for_side(RIGHT_HANDS)
 
-		if(radial_result && do_after(user, 5 SECONDS, target = user))
+		if(radial_result && do_after(user, 3 SECONDS, target = user))
 			var/obj/item/pa_module/PA = modules[radial_result]
 			if(!user.put_in_hand(PA, hand))
 				PA.forceMove(user.loc)
@@ -57,7 +60,27 @@
 				actions_modules |= module.actions_modules
 			to_chat(user, span_notice("You successfully install \the [module] into [src]."))
 		return
-	return
+
+	else if(I.tool_behaviour == TOOL_WELDER)
+		if(!(atom_integrity <= max_integrity - 10))
+			to_chat(user, span_warning("The [src] doesn't need repairs."))
+			return
+
+		if(!I.tool_start_check(user, amount=1))
+			return
+		user.visible_message(
+			span_notice("[user] begins patching up the [src] with [I]."),
+			span_notice("You begin restoring the [src]..."))
+		playsound(src, 'sound/items/welder2.ogg', 45, TRUE)
+		if(!I.use_tool(src, user, 1.5 SECONDS, volume = 0, amount = 1))
+			return
+		user.visible_message(
+			span_notice("[user] fixes up [src]!"),
+			span_notice("You mend the damage of [src]."))
+		atom_integrity += 15
+		playsound(src, 'sound/items/welder2.ogg', 45, TRUE)
+		update_appearance()
+		return ..()
 
 /obj/item/power_armor/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir, armour_penetration)
 	if(!uses_integrity)
@@ -70,7 +93,7 @@
 		play_attack_sound(damage_amount, damage_type, damage_flag)
 	if(resistance_flags & INDESTRUCTIBLE)
 		return
-	damage_amount = run_obj_armor(damage_amount, damage_type, damage_flag, attack_dir, armour_penetration)
+	damage_amount = run_atom_armor(damage_amount, damage_type, damage_flag, attack_dir, armour_penetration)
 	if(damage_amount < DAMAGE_PRECISION)
 		return
 	if(SEND_SIGNAL(src, COMSIG_ATOM_TAKE_DAMAGE, damage_amount, damage_type, damage_flag, sound_effect, attack_dir, armour_penetration))
@@ -145,27 +168,24 @@
 	icon_state = "t51_leftleg"
 	icon_state_pa = "t51_leftleg"
 	max_integrity = 250
-	chance = 20
+
 /obj/item/power_armor/leg/right/t51
 	name = "Right leg PA T51"
 	icon_state = "t51_rightleg"
 	icon_state_pa = "t51_rightleg"
 	max_integrity = 250
-	chance = 20
 
 /obj/item/power_armor/chest/t51
 	name = "Chest PA T51"
 	icon_state = "t51_chest"
 	icon_state_pa = "t51_chest"
 	max_integrity = 700
-	chance = 20
 
 /obj/item/power_armor/arm/left/t51
 	name = "Left arm PA T51"
 	icon_state = "t51_lefthand"
 	icon_state_pa = "t51_lefthand"
 	max_integrity = 300
-	chance = 20
 
 /obj/item/power_armor/arm/right/t51
 	name = "Right arm PA T51"
@@ -177,45 +197,3 @@
 	name = "Helmet PA T51"
 	icon_state = "t51_helmet"
 	type_helmet = /obj/item/clothing/head/helmet/space/hardsuit/power_armor/t51
-	chance = 20
-
-//T-45
-/obj/item/power_armor/leg/left/t45
-	name = "Left leg PA T45"
-	icon_state = "t45_leftleg"
-	icon_state_pa = "t45_leftleg"
-	max_integrity = 150
-	chance = 30
-/obj/item/power_armor/leg/right/t45
-	name = "Right leg PA T45"
-	icon_state = "t45_rightleg"
-	icon_state_pa = "t45_rightleg"
-	max_integrity = 150
-	chance = 30
-
-/obj/item/power_armor/chest/t45
-	name = "Chest PA T45"
-	icon_state = "t45_chest"
-	icon_state_pa = "t45_chest"
-	max_integrity = 400
-	chance = 30
-
-/obj/item/power_armor/arm/left/t45
-	name = "Left arm PA T45"
-	icon_state = "t45_lefthand"
-	icon_state_pa = "t45_lefthand"
-	max_integrity = 200
-	chance = 30
-
-/obj/item/power_armor/arm/right/t45
-	name = "Right arm PA T45"
-	icon_state = "t45_righthand"
-	icon_state_pa = "t45_righthand"
-	max_integrity = 200
-	chance = 30
-
-/obj/item/power_armor/head/t45
-	name = "Helmet PA T45"
-	icon_state = "t45_helmet"
-	type_helmet = /obj/item/clothing/head/helmet/space/hardsuit/power_armor/t45
-	chance = 30
