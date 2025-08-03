@@ -158,6 +158,7 @@
 		/obj/item/reagent_containers/pill/patch/alvitane = 1,
 		/obj/item/reagent_containers/hypospray/medipen/ysiltane = 1,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
+		/obj/item/reagent_containers/hypospray/medipen/ekit = 1,
 	)
 	generate_items_inside(items_inside,src)
 
@@ -214,6 +215,7 @@
 		/obj/item/reagent_containers/hypospray/medipen/salbutamol = 1,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
 		/obj/item/storage/pill_bottle/iron = 1,
+		/obj/item/reagent_containers/hypospray/medipen/blood_loss = 2,
 	)
 	generate_items_inside(items_inside,src)
 
@@ -236,6 +238,7 @@
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/stack/medical/splint = 1,
 		/obj/item/reagent_containers/hypospray/medipen/silfrine = 1,
+		/obj/item/reagent_containers/hypospray/medipen/ekit = 1,
 	)
 	generate_items_inside(items_inside,src)
 

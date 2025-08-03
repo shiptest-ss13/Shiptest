@@ -151,9 +151,6 @@
 	///Generic flags
 	var/simple_mob_flags = NONE
 
-	/// Base armor value on this mob for running armor checks
-	var/datum/armor/armor
-
 
 /mob/living/simple_animal/Initialize(mapload)
 	. = ..()
