@@ -43,7 +43,7 @@
 
 /datum/reagent/medicine/indomide/overdose_start(mob/living/M)
 	. = ..()
-	ADD_TRAIT(M, TRAIT_BLOODY_MESS, src)
+	ADD_TRAIT(M, TRAIT_BLOODY_MESS, /datum/reagent/medicine/indomide)
 
 /datum/reagent/medicine/indomide/overdose_process(mob/living/M)
 	. = ..()
@@ -62,7 +62,7 @@
 
 /datum/reagent/medicine/indomide/on_mob_end_metabolize(mob/living/L)
 	. = ..()
-	REMOVE_TRAIT(L, TRAIT_BLOODY_MESS, src)
+	REMOVE_TRAIT(L, TRAIT_BLOODY_MESS, /datum/reagent/medicine/indomide)
 
 /datum/reagent/medicine/indomide/on_transfer(atom/A, method=INGEST, trans_volume)
 	if(method != INGEST || !iscarbon(A))
