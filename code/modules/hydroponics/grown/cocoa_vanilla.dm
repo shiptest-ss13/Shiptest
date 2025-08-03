@@ -38,7 +38,7 @@
 	product = /obj/item/food/grown/vanillapod
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	mutatelist = list()
-	reagents_add = list(/datum/reagent/consumable/vanilla = 0.25, /datum/reagent/consumable/nutriment = 0.1, /datum/reagent/medicine/antitoxin = 0.2)
+	reagents_add = list(/datum/reagent/consumable/vanilla = 0.25, /datum/reagent/consumable/nutriment = 0.1)
 	research = PLANT_RESEARCH_TIER_0 //nothing new, technically
 
 /obj/item/food/grown/vanillapod

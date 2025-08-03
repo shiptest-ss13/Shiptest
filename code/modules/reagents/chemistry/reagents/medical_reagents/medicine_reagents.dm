@@ -162,7 +162,7 @@
 
 /datum/reagent/medicine/silfrine
 	name = "Silfrine"
-	description = "An extremely aggressive silver-based reagent suited best for catalyzing rapid platlet movement, and sealing of wounds. This is an extremely painful process. Overdose causes shortness of breath, and brute damage, as the body tries to seal non-existent wounds."
+	description = "An extremely aggressive silver-based compound suited best for catalyzing rapid platlet movement, and sealing of wounds. This is an extremely painful process. Overdose causes shortness of breath, and brute damage, as the body tries to seal non-existent wounds."
 	reagent_state = LIQUID
 	color = "#725cfd"
 	overdose_threshold = 20
@@ -171,6 +171,9 @@
 	if(iscarbon(M) && M.stat != DEAD)
 		var/mob/living/carbon/paper_cut_victim = M
 		if(method in list(INGEST, INJECT, PATCH))
+			if(!HAS_TRAIT(M, TRAIT_ANALGESIA))
+				to_chat(M, span_warning("Your body ignites in pain as nerves are rapidly reformed, and flesh is freshly knit!"))
+				M.force_scream()
 			for(var/datum/wound/paper_cut in paper_cut_victim.all_wounds)
 				paper_cut.on_silfrine(reac_volume)
 	..()
@@ -179,11 +182,6 @@
 	var/effectiveness_multiplier = clamp(M.bruteloss/100, 0.2, 1.5)
 	var/brute_heal = effectiveness_multiplier * REM * 3
 	M.adjustBruteLoss(brute_heal, 0)
-
-	if(!HAS_TRAIT(M, TRAIT_ANALGESIA))
-		to_chat(M, span_warning("Your body ignites in pain as nerves are rapidly reformed, and flesh is freshly knit!"))
-		M.force_scream()
-
 	..()
 	. = 1
 
@@ -294,13 +292,13 @@
 	reagent_weight = 0.6
 
 /datum/reagent/medicine/quardexane/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-1*REM, 0)
+	M.adjustFireLoss(-1.5*REM, 0)
 	M.adjust_bodytemperature(-0.6 * TEMPERATURE_DAMAGE_COEFFICIENT, M.dna.species.bodytemp_normal)
 	..()
 	. = 1
 
 /datum/reagent/medicine/quardexane/expose_mob(mob/living/carbon/M, method=VAPOR, reac_volume)
-	if(method == VAPOR)
+	if(method == VAPOR || TOUCH)
 		M.adjust_bodytemperature(-reac_volume * TEMPERATURE_DAMAGE_COEFFICIENT * 0.5, 200)
 		M.adjust_fire_stacks(-reac_volume / 2)
 		if(reac_volume >= metabolization_rate)
@@ -314,7 +312,7 @@
 		else
 			to_chat(M, span_danger("Your burns start to throb, before subsiding!"))
 
-	if(iscarbon(M) && M.stat != DEAD && (method in list(VAPOR, INJECT)))
+	if(iscarbon(M) && M.stat != DEAD && (method in list(VAPOR, INJECT, TOUCH)))
 		var/mob/living/carbon/burn_ward_attendee = M
 		for(var/datum/wound/burn in burn_ward_attendee.all_wounds)
 			burn.on_tane(reac_volume/2)
@@ -382,11 +380,11 @@
 		. = 1
 	..()
 
-/datum/reagent/medicine/celdramazine
-	name = "Celdramazine"
+/datum/reagent/medicine/charcoal
+	name = "Charcoal"
 	description = ""
 	reagent_state = SOLID
-	color = "#101a13" // heavy saturation to make the color blend better
+	color = "#101a13"
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM
 	overdose_threshold = 20
 
@@ -521,6 +519,17 @@
 	..()
 	. = 1
 
+/datum/reagent/medicine/inaprovaline
+	name = "Inaprovaline"
+	description = "Stabilizes the breathing of patients. Good for those in critical condition."
+	reagent_state = LIQUID
+	color = "#A4D8D8"
+
+/datum/reagent/medicine/inaprovaline/on_mob_life(mob/living/carbon/M)
+	if(M.losebreath >= 5)
+		M.losebreath -= 5
+	..()
+
 /// RADIATION REAGENTS ///
 
 /datum/reagent/medicine/anti_rad
@@ -598,7 +607,27 @@
 	..()
 	return TRUE
 
+/datum/reagent/medicine/cryoxadone
+	name = "Cryoxadone"
+	description = "A chemical mixture with almost magical healing powers. Its main limitation is that the patient's body temperature must be under 270K for it to metabolise correctly."
+	color = "#0000C8"
+	taste_description = "sludge"
 
+/datum/reagent/medicine/cryoxadone/on_mob_life(mob/living/carbon/M)
+	var/power = -0.00003 * (M.bodytemperature ** 2) + 3
+	if(M.bodytemperature < T0C)
+		M.adjustOxyLoss(-3 * power, 0)
+		M.adjustBruteLoss(-power, 0)
+		M.adjustFireLoss(-power, 0)
+		M.adjustToxLoss(-power, 0, TRUE) //heals TOXINLOVERs
+		M.adjustCloneLoss(-power, 0)
+		for(var/i in M.all_wounds)
+			var/datum/wound/iter_wound = i
+			iter_wound.on_xadone(power)
+		REMOVE_TRAIT(M, TRAIT_DISFIGURED, TRAIT_GENERIC) //fixes common causes for disfiguration
+		. = 1
+	metabolization_rate = REAGENTS_METABOLISM * (0.00001 * (M.bodytemperature ** 2) + 0.5)
+	..()
 
 /datum/reagent/medicine/hunter_extract
 	name = "Hunter's Extract"
@@ -667,6 +696,65 @@
 	color = "#d8c7b7"
 	healing = 0.2
 
+/datum/reagent/medicine/stimulants
+	name = "Indoril Stimulant"
+	description = "Increases stun resistance and movement speed in addition to restoring minor damage and weakness. Overdose causes weakness and toxin damage."
+	color = "#78008C"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	overdose_threshold = 60
+
+/datum/reagent/medicine/stimulants/on_mob_metabolize(mob/living/L)
+	..()
+	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/stimulants)
+	ADD_TRAIT(L, TRAIT_STUNRESISTANCE, type)
+
+/datum/reagent/medicine/stimulants/on_mob_end_metabolize(mob/living/L)
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/stimulants)
+	REMOVE_TRAIT(L, TRAIT_STUNRESISTANCE, type)
+	..()
+
+/datum/reagent/medicine/stimulants/on_mob_life(mob/living/carbon/M)
+	if(M.health < 50 && M.health > 0)
+		M.adjustOxyLoss(-1*REM, 0)
+		M.adjustToxLoss(-1*REM, 0)
+		M.adjustBruteLoss(-1*REM, 0)
+		M.adjustFireLoss(-1*REM, 0)
+	M.AdjustAllImmobility(-60)
+	M.adjustStaminaLoss(-5*REM, 0)
+	..()
+	. = 1
+
+/datum/reagent/medicine/stimulants/overdose_process(mob/living/M)
+	if(prob(33))
+		M.adjustStaminaLoss(2.5*REM, 0)
+		M.adjustToxLoss(1*REM, 0)
+		M.losebreath++
+		. = 1
+	..()
+
+/datum/reagent/medicine/cureall
+	name = "Cureall Solution"
+	description = "A diluted solution created from plasmatic binding of Alvitane, Indomine, and charcoal. Slowly restores all types of damage."
+	reagent_state = LIQUID
+	color = "#C8A5DC"
+	taste_description = "still water"
+	overdose_threshold = 30
+
+/datum/reagent/medicine/cureall/on_mob_life(mob/living/carbon/M)
+	if(prob(80))
+		M.adjustBruteLoss(-0.25*REM, 0)
+		M.adjustFireLoss(-0.25*REM, 0)
+		M.adjustToxLoss(-0.25*REM, 0)
+		. = 1
+	..()
+
+/datum/reagent/medicine/cureall/overdose_process(mob/living/M)
+	if(prob(50))
+		M.adjustBruteLoss(0.5*REM, 0)
+		M.adjustFireLoss(0.5*REM, 0)
+		M.adjustToxLoss(0.5*REM, 0)
+		. = 1
+	..()
 
 /// CRIT REAGENTS ///
 

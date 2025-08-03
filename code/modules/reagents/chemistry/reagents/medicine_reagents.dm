@@ -5,27 +5,7 @@
 
 
 
-/datum/reagent/medicine/cryoxadone
-	name = "Cryoxadone"
-	description = "A chemical mixture with almost magical healing powers. Its main limitation is that the patient's body temperature must be under 270K for it to metabolise correctly."
-	color = "#0000C8"
-	taste_description = "sludge"
 
-/datum/reagent/medicine/cryoxadone/on_mob_life(mob/living/carbon/M)
-	var/power = -0.00003 * (M.bodytemperature ** 2) + 3
-	if(M.bodytemperature < T0C)
-		M.adjustOxyLoss(-3 * power, 0)
-		M.adjustBruteLoss(-power, 0)
-		M.adjustFireLoss(-power, 0)
-		M.adjustToxLoss(-power, 0, TRUE) //heals TOXINLOVERs
-		M.adjustCloneLoss(-power, 0)
-		for(var/i in M.all_wounds)
-			var/datum/wound/iter_wound = i
-			iter_wound.on_xadone(power)
-		REMOVE_TRAIT(M, TRAIT_DISFIGURED, TRAIT_GENERIC) //fixes common causes for disfiguration
-		. = 1
-	metabolization_rate = REAGENTS_METABOLISM * (0.00001 * (M.bodytemperature ** 2) + 0.5)
-	..()
 
 
 
@@ -130,44 +110,6 @@
 
 
 
-
-
-/datum/reagent/medicine/stimulants
-	name = "Indoril"
-	description = "Increases stun resistance and movement speed in addition to restoring minor damage and weakness. Overdose causes weakness and toxin damage."
-	color = "#78008C"
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	overdose_threshold = 60
-
-/datum/reagent/medicine/stimulants/on_mob_metabolize(mob/living/L)
-	..()
-	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/stimulants)
-	ADD_TRAIT(L, TRAIT_STUNRESISTANCE, type)
-
-/datum/reagent/medicine/stimulants/on_mob_end_metabolize(mob/living/L)
-	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/stimulants)
-	REMOVE_TRAIT(L, TRAIT_STUNRESISTANCE, type)
-	..()
-
-/datum/reagent/medicine/stimulants/on_mob_life(mob/living/carbon/M)
-	if(M.health < 50 && M.health > 0)
-		M.adjustOxyLoss(-1*REM, 0)
-		M.adjustToxLoss(-1*REM, 0)
-		M.adjustBruteLoss(-1*REM, 0)
-		M.adjustFireLoss(-1*REM, 0)
-	M.AdjustAllImmobility(-60)
-	M.adjustStaminaLoss(-5*REM, 0)
-	..()
-	. = 1
-
-/datum/reagent/medicine/stimulants/overdose_process(mob/living/M)
-	if(prob(33))
-		M.adjustStaminaLoss(2.5*REM, 0)
-		M.adjustToxLoss(1*REM, 0)
-		M.losebreath++
-		. = 1
-	..()
-
 /datum/reagent/medicine/insulin
 	name = "Insulin"
 	description = "Increases sugar depletion rates."
@@ -192,126 +134,4 @@
 	..()
 	. = 1
 
-/datum/reagent/medicine/bicaridinep
-	name = "Bicaridine Plus"
-	description = "Restores bruising and slowly stems bleeding. Overdose causes it instead. More effective than standardized Bicaridine."
-	reagent_state = LIQUID
-	color = "#bf0000"
-	overdose_threshold = 25
 
-/datum/reagent/medicine/bicaridinep/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-2*REM, 0)
-	..()
-	. = 1
-
-/datum/reagent/medicine/bicaridinep/overdose_process(mob/living/M)
-	M.adjustBruteLoss(6*REM, FALSE, FALSE, BODYTYPE_ORGANIC)
-	..()
-	. = 1
-
-
-/datum/reagent/medicine/dexalinp
-	name = "Dexalin Plus"
-	description = "Restores oxygen loss and purges Lexorin. Overdose causes it instead. More effective than standardized Dexalin."
-	reagent_state = LIQUID
-	color = "#0040FF"
-	overdose_threshold = 25
-
-/datum/reagent/medicine/dexalinp/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-2*REM, 0)
-	if(ishuman(M) && M.blood_volume < BLOOD_VOLUME_NORMAL)
-		M.blood_volume += 1
-	if(holder.has_reagent(/datum/reagent/toxin/lexorin))
-		holder.remove_reagent(/datum/reagent/toxin/lexorin, 3)
-	..()
-	. = 1
-
-/datum/reagent/medicine/dexalinp/overdose_process(mob/living/M)
-	M.adjustOxyLoss(6*REM, 0)
-	..()
-	. = 1
-
-/datum/reagent/medicine/kelotane
-	name = "Kelotane"
-	description = "Heals burn damage. Overdose causes it instead."
-	reagent_state = LIQUID
-	color = "#FFa800"
-	overdose_threshold = 30
-
-/datum/reagent/medicine/kelotane/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-0.5*REM, 0)
-	..()
-	. = 1
-
-/datum/reagent/medicine/kelotane/overdose_process(mob/living/M)
-	M.adjustFireLoss(2*REM, FALSE, FALSE, BODYTYPE_ORGANIC)
-	..()
-	. = 1
-
-/datum/reagent/medicine/dermaline
-	name = "Dermaline"
-	description = "Heals burn damage. Overdose causes it instead. Superior to standardized Kelotane in healing capacity."
-	reagent_state = LIQUID
-	color = "#FF8000"
-	overdose_threshold = 25
-
-/datum/reagent/medicine/dermaline/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-2*REM, 0)
-	..()
-	. = 1
-
-/datum/reagent/medicine/dermaline/overdose_process(mob/living/M)
-	M.adjustFireLoss(6*REM, FALSE, FALSE, BODYTYPE_ORGANIC)
-	..()
-	. = 1
-
-/datum/reagent/medicine/antitoxin
-	name = "Dylovene"
-	description = "Heals toxin damage and removes toxins in the bloodstream. Overdose causes toxin damage."
-	reagent_state = LIQUID
-	color = "#00a000"
-	overdose_threshold = 30
-	taste_description = "a roll of gauze"
-
-/datum/reagent/medicine/antitoxin/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-0.5*REM, 0)
-	for(var/datum/reagent/toxin/R in M.reagents.reagent_list)
-		M.reagents.remove_reagent(R.type,1)
-	..()
-	. = 1
-
-/datum/reagent/medicine/antitoxin/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
-	. = ..()
-	if(chems.has_reagent(type, 1))
-		mytray.adjustToxic(-round(chems.get_reagent_amount(type) * 2))
-
-/datum/reagent/medicine/antitoxin/overdose_process(mob/living/M)
-	M.adjustToxLoss(2*REM, 0) // End result is 1.5 toxin loss taken, because it heals 0.5 and then removes 2.
-	..()
-	. = 1
-
-/datum/reagent/medicine/inaprovaline
-	name = "Inaprovaline"
-	description = "Stabilizes the breathing of patients. Good for those in critical condition."
-	reagent_state = LIQUID
-	color = "#A4D8D8"
-
-/datum/reagent/medicine/inaprovaline/on_mob_life(mob/living/carbon/M)
-	if(M.losebreath >= 5)
-		M.losebreath -= 5
-	..()
-
-/datum/reagent/medicine/tricordrazine
-	name = "Tricordrazine"
-	description = "A weak dilutant that slowly heals brute, burn, and toxin damage."
-	reagent_state = LIQUID
-	color = "#C8A5DC"
-	taste_description = "water that has been standing still in a glass on a counter overnight"
-
-/datum/reagent/medicine/tricordrazine/on_mob_life(mob/living/carbon/M)
-	if(prob(80))
-		M.adjustBruteLoss(-0.25*REM, 0)
-		M.adjustFireLoss(-0.25*REM, 0)
-		M.adjustToxLoss(-0.25*REM, 0)
-		. = 1
-	..()

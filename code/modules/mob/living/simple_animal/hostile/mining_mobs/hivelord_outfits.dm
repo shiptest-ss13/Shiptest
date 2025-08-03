@@ -318,15 +318,15 @@
 	for(var/i = 1 to 3)
 		if(prob(75))
 			backpack_contents += pick_weight(list(
-				/obj/item/reagent_containers/pill/patch/styptic = 5,
-				/obj/item/reagent_containers/pill/patch/silver_sulf = 5,
+				/obj/item/reagent_containers/pill/patch/indomide = 5,
+				/obj/item/reagent_containers/pill/patch/alvitane = 5,
 				/obj/item/storage/firstaid/medical = 3,
 				/obj/item/reagent_containers/syringe = 3,
 				/obj/item/reagent_containers/glass/beaker = 2,
 				/obj/item/reagent_containers/dropper = 2,
 				/obj/item/reagent_containers/pill/charcoal = 2,
-				/obj/item/reagent_containers/medigel/styptic = 2,
-				/obj/item/reagent_containers/medigel/silver_sulf = 2,
+				/obj/item/reagent_containers/medigel/quardexane = 2,
+				/obj/item/reagent_containers/medigel/hadrakine = 2,
 				/obj/item/reagent_containers/medigel/sterilizine = 1,
 				/obj/item/flashlight/pen = 1,
 				/obj/item/hypospray/mkii = 1,

@@ -8,8 +8,6 @@
 	color = "#E1F2E6"
 	metabolization_rate = 0.1 * REAGENTS_METABOLISM
 
-
-
 /datum/reagent/medicine/mutadone
 	name = "Mutadone"
 	description = "Removes jitteriness and restores genetic defects."
@@ -17,7 +15,7 @@
 	taste_description = "acid"
 
 /datum/reagent/medicine/mutadone/on_mob_life(mob/living/carbon/M)
-	M.adjust_jitter(-50)
+	M.adjust_timed_status_effect(-100 SECONDS * REM, /datum/status_effect/jitter)
 	if(M.has_dna())
 		M.dna.remove_all_mutations(list(MUT_NORMAL, MUT_EXTRA), TRUE)
 	if(!QDELETED(M)) //We were a monkey, now a human
@@ -30,12 +28,15 @@
 	taste_description = "raw egg"
 
 /datum/reagent/medicine/antihol/on_mob_life(mob/living/carbon/M)
-	M.dizziness = 0
+	M.remove_status_effect(/datum/status_effect/dizziness)
 	M.drowsyness = 0
 	M.slurring = 0
 	M.confused = 0
 	M.reagents.remove_all_type(/datum/reagent/consumable/ethanol, 3*REM, 0, 1)
 	M.adjustToxLoss(-0.2*REM, 0)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		H.adjust_drunk_effect(-10)
 	..()
 	. = 1
 
@@ -138,6 +139,44 @@
 	..()
 	return TRUE
 
+/datum/reagent/medicine/synaptizine
+	name = "Synaptizine"
+	description = "Increases resistance to stuns as well as reducing drowsiness and hallucinations."
+	color = "#FF00FF"
+
+/datum/reagent/medicine/synaptizine/on_mob_life(mob/living/carbon/M)
+	M.drowsyness = max(M.drowsyness-5, 0)
+	M.AdjustStun(-20)
+	M.AdjustKnockdown(-20)
+	M.AdjustUnconscious(-20)
+	M.AdjustImmobilized(-20)
+	M.AdjustParalyzed(-20)
+	if(M.has_reagent(/datum/reagent/toxin/mindbreaker))
+		M.reagents.remove_reagent(/datum/reagent/toxin/mindbreaker, 5)
+	M.hallucination = max(0, M.hallucination - 10)
+	if(prob(30))
+		M.adjustToxLoss(1, 0)
+		. = 1
+	..()
+
+/datum/reagent/medicine/synaphydramine
+	name = "Diphen-Synaptizine"
+	description = "Reduces drowsiness, hallucinations, and Histamine from body."
+	color = "#EC536D" // rgb: 236, 83, 109
+
+/datum/reagent/medicine/synaphydramine/on_mob_life(mob/living/carbon/M)
+	M.drowsyness = max(M.drowsyness-5, 0)
+	if(M.has_reagent(/datum/reagent/toxin/mindbreaker))
+		M.remove_reagent(/datum/reagent/toxin/mindbreaker, 5)
+	if(M.has_reagent(/datum/reagent/toxin/histamine))
+		M.remove_reagent(/datum/reagent/toxin/histamine, 5)
+	M.hallucination = max(0, M.hallucination - 10)
+	if(prob(30))
+		M.adjustToxLoss(1, 0)
+		. = 1
+	..()
+
+
 //"Mood is status" declared Erika
 
 /datum/reagent/medicine/lithium_carbonate
@@ -157,7 +196,7 @@
 
 /datum/reagent/medicine/lithium_carbonate/overdose_process(mob/living/M)
 	if(prob(5))
-		M.adjust_jitter(5,100)
+		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
 	..()
 	. = 1

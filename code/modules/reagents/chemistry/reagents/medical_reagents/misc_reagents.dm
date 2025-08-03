@@ -1,9 +1,11 @@
-/* really more "weird" reagents
+/*
+** really more "weird" reagents
 ** one could even say strange ones
 */
 
+/* Admin Reagent */
 
-/datum/reagent/medicine/adminordrazine //An OP chemical for admins
+/datum/reagent/medicine/adminordrazine
 	name = "Adminordrazine"
 	description = "It's magic. We don't have to explain it."
 	color = "#E0BB00" //golden for the gods
@@ -69,6 +71,8 @@
 				if(prob(20))
 					mytray.visible_message(span_warning("Nothing happens..."))
 
+/* Basically an anomalychem at this point */
+
 /datum/reagent/medicine/strange_reagent
 	name = "Strange Reagent"
 	description = "A miracle drug capable of bringing the dead back to life. Works topically unless anotamically complex, in which case works orally. Only works if the target has less than 200 total brute and burn damage and hasn't been husked and requires more reagent depending on damage inflicted. Causes damage to the living."
@@ -109,6 +113,8 @@
 	if(chems.has_reagent(type, 5))
 		mytray.spawnplant()
 
+/* Stasis just freezes you. It's pretty misc */
+
 /datum/reagent/medicine/stasis
 	name = "Stasis"
 	description = "A liquid blue chemical that causes the body to enter a chemically induced stasis, irregardless of current state."
@@ -129,6 +135,38 @@
 	M.adjustToxLoss(1)
 	..()
 	. = 1
+
+/* Rezadone is good for unhusking at this point */
+
+/datum/reagent/medicine/rezadone
+	name = "Rezadone"
+	description = "A powder derived from fish toxin, Rezadone can effectively treat genetic damage as well as restoring minor wounds. Overdose will cause intense nausea and minor toxin damage."
+	reagent_state = SOLID
+	color = "#669900" // rgb: 102, 153, 0
+	overdose_threshold = 30
+	taste_description = "fish"
+
+/datum/reagent/medicine/rezadone/on_mob_life(mob/living/carbon/M)
+	M.setCloneLoss(0) //Rezadone is almost never used in favor of cryoxadone. Hopefully this will change that.
+	M.heal_bodypart_damage(1,1)
+	REMOVE_TRAIT(M, TRAIT_DISFIGURED, TRAIT_GENERIC)
+	..()
+	. = 1
+
+/datum/reagent/medicine/rezadone/overdose_process(mob/living/M)
+	M.adjustToxLoss(1, 0)
+	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+	..()
+	. = 1
+
+/datum/reagent/medicine/rezadone/expose_mob(mob/living/M, method=TOUCH, reac_volume)
+	. = ..()
+	if(iscarbon(M))
+		var/mob/living/carbon/patient = M
+		if(reac_volume >= 5 && HAS_TRAIT_FROM(patient, TRAIT_HUSK, "burn") && patient.getFireLoss() < THRESHOLD_UNHUSK) //One carp yields 12u rezadone.
+			patient.cure_husk("burn")
+			patient.visible_message(span_nicegreen("[patient]'s body rapidly absorbs moisture from the enviroment, taking on a more healthy appearance."))
 
 /*
 ** 	changeling reagents

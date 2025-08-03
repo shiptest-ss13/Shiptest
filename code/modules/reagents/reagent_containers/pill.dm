@@ -146,18 +146,25 @@
 	list_reagents = list(/datum/reagent/medicine/mutadone = 50)
 	rename_with_volume = TRUE
 
-/obj/item/reagent_containers/pill/salicylic
-	name = "salicylic acid pill"
+/obj/item/reagent_containers/pill/indomide
+	name = "indomide pill"
 	desc = "Used to dull pain."
 	icon_state = "pill9"
-	list_reagents = list(/datum/reagent/medicine/sal_acid = 24)
+	list_reagents = list(/datum/reagent/medicine/silfrine = 15)
 	rename_with_volume = TRUE
 
-/obj/item/reagent_containers/pill/oxandrolone
-	name = "oxandrolone pill"
+/obj/item/reagent_containers/pill/silfrine
+	name = "silfrine pill"
+	desc = "Used to treat brute healing."
+	icon_state = "pill9"
+	list_reagents = list(/datum/reagent/medicine/silfrine = 15)
+	rename_with_volume = TRUE
+
+/obj/item/reagent_containers/pill/ysiltane
+	name = "ysiltane pill"
 	desc = "Used to stimulate burn healing."
 	icon_state = "pill11"
-	list_reagents = list(/datum/reagent/medicine/oxandrolone = 24)
+	list_reagents = list(/datum/reagent/medicine/ysiltane = 15)
 	rename_with_volume = TRUE
 
 /obj/item/reagent_containers/pill/insulin
@@ -192,13 +199,6 @@
 	name = "lithium carbonate pill"
 	desc = "Used to treat depression."
 	list_reagents = list(/datum/reagent/medicine/lithium_carbonate = 10)
-	icon_state = "pill22"
-	rename_with_volume = TRUE
-
-/obj/item/reagent_containers/pill/hsh
-	name = "HSH pill"
-	desc = "A pill of Human Sleep Hormone."
-	list_reagents = list(/datum/reagent/medicine/melatonin = 10)
 	icon_state = "pill22"
 	rename_with_volume = TRUE
 
@@ -304,11 +304,11 @@ WS End */
 	list_reagents = list(/datum/reagent/iron = 30)
 	rename_with_volume = TRUE
 
-/obj/item/reagent_containers/pill/trophazole
-	name = "Trophazole pill"
+/obj/item/reagent_containers/pill/Indomide
+	name = "Indomide pill"
 	desc = "Used to treat brute damage of minor and moderate severity.The carving in the pill says 'Eat before ingesting'."
 	icon_state = "pill12"
-	list_reagents = list(/datum/reagent/medicine/trophazole = 15)
+	list_reagents = list(/datum/reagent/medicine/indomide = 15)
 	rename_with_volume = TRUE
 
 /obj/item/reagent_containers/pill/stardrop
@@ -323,11 +323,11 @@ WS End */
 	icon_state = "pill11"
 	list_reagents = list(/datum/reagent/drug/stardrop/starlight = 10)
 
-/obj/item/reagent_containers/spray/rhigoxane
-	name = "medical spray (rhigoxane)"
-	desc = "A medical spray bottle.This one contains rhigoxane, it is used to treat burns and cool down temperature if applied with spray."
+/obj/item/reagent_containers/spray/quardexane
+	name = "medical spray (quardexane)"
+	desc = "A medical spray bottle.This one contains quardexane, it is used to treat burns and cool down temperature if applied with spray."
 	icon_state = "sprayer"
-	list_reagents = list(/datum/reagent/medicine/rhigoxane = 100)
+	list_reagents = list(/datum/reagent/medicine/quardexane = 100)
 
 /obj/item/reagent_containers/pill/placebatol
 	name = "prescription pill"

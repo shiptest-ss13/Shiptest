@@ -862,7 +862,7 @@
 	bite_consumption = 1
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 1,
-		/datum/reagent/medicine/regen_jelly = 1,
+		/datum/reagent/medicine/panacea/effluvial = 1,
 	)
 	tastes = list("jelly" = 1, "sweet meat" = 1, "oil" = 1)
 	foodtypes = MEAT

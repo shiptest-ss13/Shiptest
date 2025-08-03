@@ -314,9 +314,9 @@
 	update_appearance()
 
 /obj/item/storage/belt/medical/webbing/frontiersmen/combat/PopulateContents()
-	new /obj/item/reagent_containers/hypospray/medipen/stimulants(src)
-	new /obj/item/reagent_containers/hypospray/medipen/stimulants(src)
-	new /obj/item/reagent_containers/medigel/silver_sulf(src)
-	new /obj/item/reagent_containers/medigel/styptic(src)
+	new /obj/item/reagent_containers/hypospray/medipen/combat_drug(src)
+	new /obj/item/reagent_containers/hypospray/medipen/combat_drug(src)
+	new /obj/item/reagent_containers/medigel/quardexane(src)
+	new /obj/item/reagent_containers/medigel/hadrakine(src)
 	new /obj/item/stack/medical/gauze/twelve(src)
 	new /obj/item/stack/medical/splint(src)
