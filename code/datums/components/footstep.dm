@@ -35,6 +35,11 @@
 			footstep_sounds = GLOB.footstep
 		if(FOOTSTEP_MOB_SLIME)
 			footstep_sounds = 'sound/effects/footstep/slime1.ogg'
+		if(FOOTSTEP_PA)
+			footstep_sounds  = 'sound/mecha/mechstep.ogg'
+			RegisterSignal(target, COMSIG_MOVABLE_MOVED, PROC_REF(play_simplestep_pa))
+			return
+
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(play_simplestep)) //Note that this doesn't get called for humans.
 
 ///Prepares a footstep. Determines if it should get played. Returns the turf it should get played on. Note that it is always a /turf/open
@@ -96,6 +101,20 @@
 	if(!turf_footstep)
 		return
 	playsound(T, pick(footstep_sounds[turf_footstep][1]), footstep_sounds[turf_footstep][2] * volume, TRUE, footstep_sounds[turf_footstep][3] + e_range, falloff_distance = 1)
+
+/datum/element/footstep/proc/play_simplestep_pa(atom/movable/source)
+	SIGNAL_HANDLER
+
+	if(SHOULD_DISABLE_FOOTSTEPS(source))
+		return
+
+	var/turf/open/source_loc = get_turf(source)
+	if(!istype(source_loc))
+		return
+	if(!play_step)
+		playsound(source_loc, footstep_sounds, 100, falloff_distance = 1, vary = sound_vary)
+
+	play_step = !play_step
 
 /datum/component/footstep/proc/play_humanstep(mob/living/carbon/human/source, atom/oldloc, direction)
 	SIGNAL_HANDLER
