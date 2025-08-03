@@ -408,7 +408,7 @@
 	volume = 50
 	list_reagents = list(/datum/reagent/medicine/indomide = 50)
 
-/obj/item/reagent_containers/glass/bottle/kelotane
+/obj/item/reagent_containers/glass/bottle/alvitane
 	name = "alvitane bottle"
 	desc = "A small bottle. Contains alvitane, used for minor burns and skin damage. Best used as injection!"
 	volume = 50
@@ -429,10 +429,10 @@
 /obj/item/reagent_containers/glass/bottle/epinephrine/sleeper
 	cap_on = FALSE
 
-/obj/item/reagent_containers/glass/bottle/bicaridine/sleeper
+/obj/item/reagent_containers/glass/bottle/indomide/sleeper
 	cap_on = FALSE
 
-/obj/item/reagent_containers/glass/bottle/kelotane/sleeper
+/obj/item/reagent_containers/glass/bottle/alvitane/sleeper
 	cap_on = FALSE
 
 /obj/item/reagent_containers/glass/bottle/antitoxin/sleeper

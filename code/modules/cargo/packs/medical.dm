@@ -232,7 +232,7 @@
 	contains = list(
 		/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/indomide,
 	)
-	crate_name = "bicaridine vial crate"
+	crate_name = "indomide vial crate"
 
 /datum/supply_pack/medical/vials/alvi_vial
 	name = "Alvitane Vial Crate"
