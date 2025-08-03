@@ -68,14 +68,12 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH)
-	pixel_x = -19 // recenters 70x70 turf sprites for mappers
-	pixel_y = -19
+	MAP_SWITCH(pixel_x = 0, pixel_x = -19)
+	MAP_SWITCH(pixel_y = 0, pixel_y = -19)
 
 
 /turf/open/floor/plating/asteroid/purple/Initialize(mapload, inherited_virtual_z)
 	. = ..()
-	pixel_x = 0 // resets -19 pixel offset
-	pixel_y = 0
 	if(prob(floor_variance))
 		add_overlay("sandalt_[rand(1,max_icon_states)]")
 
