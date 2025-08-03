@@ -331,7 +331,7 @@
 		var/mob/living/living_target = target
 		living_target.apply_damage(damage, BRUTE, mod.wearer.zone_selected)
 		living_target.Knockdown(knockdown_time)
-	else if(target.obj_integrity)
+	else if(target.atom_integrity)
 		target.take_damage(damage, BRUTE)
 	else
 		return

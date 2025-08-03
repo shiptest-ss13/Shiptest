@@ -138,14 +138,6 @@
 "agu" = (
 /turf/closed/indestructible/splashscreen,
 /area/start)
-"agB" = (
-/obj/structure/window/reinforced/fulltile{
-	max_integrity = 5000;
-	name = "hardened window";
-	obj_integrity = 5000
-	},
-/turf/open/floor/plating,
-/area/ctf)
 "agI" = (
 /obj/machinery/power/emitter/energycannon/ctf{
 	active = 0
@@ -6447,6 +6439,37 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/centcom)
+"cdC" = (
+/obj/structure/closet/secure_closet/freezer/meat/open,
+/obj/item/food/meat/rawbacon,
+/obj/item/food/meat/rawbacon,
+/obj/item/food/meat/rawbacon,
+/obj/item/food/meat/rawbacon,
+/obj/item/food/meat/slab/killertomato,
+/obj/item/food/meat/slab/killertomato,
+/obj/item/food/meat/slab/killertomato,
+/obj/item/food/meat/slab/killertomato,
+/obj/item/food/sausage,
+/obj/item/food/sausage,
+/obj/item/food/meat/rawcutlet,
+/obj/item/food/meat/rawcutlet,
+/obj/item/food/meat/rawcutlet,
+/obj/item/food/fishmeat/carp,
+/obj/item/food/fishmeat/carp,
+/obj/item/food/fishmeat/carp,
+/obj/item/food/fishmeat/carp,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/tdome/tdomeobserve)
 "cfq" = (
 /obj/machinery/light/directional/north,
 /obj/structure/table/reinforced,
@@ -11158,37 +11181,6 @@
 /obj/effect/turf_decal/corner/transparent/neutral,
 /turf/open/floor/plasteel,
 /area/tdome/tdomeobserve)
-"lHy" = (
-/obj/structure/closet/secure_closet/freezer/meat/open,
-/obj/item/food/meat/rawbacon,
-/obj/item/food/meat/rawbacon,
-/obj/item/food/meat/rawbacon,
-/obj/item/food/meat/rawbacon,
-/obj/item/food/meat/slab/killertomato,
-/obj/item/food/meat/slab/killertomato,
-/obj/item/food/meat/slab/killertomato,
-/obj/item/food/meat/slab/killertomato,
-/obj/item/food/sausage,
-/obj/item/food/sausage,
-/obj/item/food/meat/rawcutlet,
-/obj/item/food/meat/rawcutlet,
-/obj/item/food/meat/rawcutlet,
-/obj/item/food/fishmeat/carp,
-/obj/item/food/fishmeat/carp,
-/obj/item/food/fishmeat/carp,
-/obj/item/food/fishmeat/carp,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/neutral,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/tdome/tdomeobserve)
 "lHR" = (
 /obj/item/paper_bin,
 /obj/item/clothing/head/beret/sec/frontier/officer{
@@ -13663,6 +13655,14 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom)
+"qrk" = (
+/obj/structure/window/reinforced/fulltile{
+	max_integrity = 5000;
+	name = "hardened window";
+	atom_integrity = 5000
+	},
+/turf/open/floor/plating,
+/area/ctf)
 "qsu" = (
 /obj/structure/sink{
 	dir = 4;
@@ -57510,7 +57510,7 @@ aEv
 tQR
 huh
 aEp
-lHy
+cdC
 dhD
 lii
 bFq
@@ -58947,7 +58947,7 @@ iku
 agl
 iku
 hTh
-agB
+qrk
 xNr
 iku
 agl
@@ -58977,7 +58977,7 @@ agh
 agl
 agh
 hTh
-agB
+qrk
 xNr
 agh
 agl
@@ -59204,7 +59204,7 @@ agl
 agl
 agl
 hTh
-agB
+qrk
 xNr
 agl
 agl
@@ -59234,7 +59234,7 @@ agl
 agl
 agl
 hTh
-agB
+qrk
 xNr
 agl
 agl
@@ -59461,7 +59461,7 @@ iku
 agl
 iku
 hTh
-agB
+qrk
 xNr
 iku
 agl
@@ -59491,7 +59491,7 @@ agh
 agl
 agh
 hTh
-agB
+qrk
 xNr
 agh
 agl
@@ -61014,7 +61014,7 @@ afZ
 afZ
 agQ
 afZ
-agB
+qrk
 afZ
 iku
 agh
@@ -61022,7 +61022,7 @@ agh
 agh
 iku
 afZ
-agB
+qrk
 afZ
 agQ
 afZ
@@ -61270,17 +61270,17 @@ afZ
 afZ
 afZ
 agQ
-agB
-agB
-agB
+qrk
+qrk
+qrk
 iku
 iku
 iku
 iku
 iku
-agB
-agB
-agB
+qrk
+qrk
+qrk
 agQ
 afZ
 afZ
@@ -61528,7 +61528,7 @@ afZ
 afZ
 agQ
 afZ
-agB
+qrk
 afZ
 afZ
 iku
@@ -61536,7 +61536,7 @@ iku
 iku
 afZ
 afZ
-agB
+qrk
 afZ
 agQ
 afZ
@@ -62055,9 +62055,9 @@ agh
 agh
 agh
 agh
-agB
-agB
-agB
+qrk
+qrk
+qrk
 agQ
 afZ
 afZ
@@ -62302,9 +62302,9 @@ agh
 agh
 afZ
 afZ
-agB
-agB
-agB
+qrk
+qrk
+qrk
 afZ
 afZ
 agh
@@ -62553,7 +62553,7 @@ agh
 dvo
 afZ
 ago
-agB
+qrk
 agh
 ahj
 agh
@@ -62567,7 +62567,7 @@ iku
 agh
 ahj
 agh
-agB
+qrk
 ago
 afZ
 afZ
@@ -62810,7 +62810,7 @@ gmQ
 jHz
 afZ
 ago
-agB
+qrk
 agh
 ahj
 agh
@@ -62824,9 +62824,9 @@ pJt
 agh
 ahj
 agh
-agB
+qrk
 ago
-agB
+qrk
 agI
 uWs
 agQ
@@ -63067,7 +63067,7 @@ iku
 bzD
 afZ
 ago
-agB
+qrk
 agh
 ahj
 agh
@@ -63081,7 +63081,7 @@ iku
 agh
 ahj
 agh
-agB
+qrk
 ago
 afZ
 afZ
@@ -63340,9 +63340,9 @@ ahj
 agh
 afZ
 ago
-agB
-agB
-agB
+qrk
+qrk
+qrk
 agQ
 afZ
 afZ
@@ -63585,13 +63585,13 @@ agl
 agh
 ahj
 agh
-agB
+qrk
 ahj
 ahj
 ahj
 ahj
 ahj
-agB
+qrk
 agh
 ahj
 agh
@@ -63842,19 +63842,19 @@ agl
 agh
 ahj
 agh
-agB
+qrk
 ahj
 ahj
 agl
 ahj
 ahj
-agB
+qrk
 agh
 ahj
 agh
 agl
 ago
-agB
+qrk
 agI
 uWs
 agQ
@@ -64099,13 +64099,13 @@ agl
 agh
 ahj
 agh
-agB
+qrk
 ahj
 ahj
 ahj
 ahj
 ahj
-agB
+qrk
 agh
 ahj
 agh
@@ -64368,9 +64368,9 @@ ahj
 agh
 afZ
 ago
-agB
-agB
-agB
+qrk
+qrk
+qrk
 agQ
 afZ
 afZ
@@ -64609,7 +64609,7 @@ agh
 dvo
 afZ
 ago
-agB
+qrk
 agh
 ahj
 agh
@@ -64623,7 +64623,7 @@ iku
 agh
 ahj
 agh
-agB
+qrk
 ago
 afZ
 afZ
@@ -64866,7 +64866,7 @@ gmQ
 jHz
 afZ
 ago
-agB
+qrk
 agh
 ahj
 agh
@@ -64880,9 +64880,9 @@ pJt
 agh
 ahj
 agh
-agB
+qrk
 ago
-agB
+qrk
 agI
 uWs
 agQ
@@ -65123,7 +65123,7 @@ iku
 bzD
 afZ
 ago
-agB
+qrk
 agh
 ahj
 agh
@@ -65137,7 +65137,7 @@ iku
 agh
 ahj
 agh
-agB
+qrk
 ago
 afZ
 afZ
@@ -65653,9 +65653,9 @@ rfQ
 oLv
 agh
 agh
-agB
-agB
-agB
+qrk
+qrk
+qrk
 agQ
 afZ
 afZ
@@ -66681,9 +66681,9 @@ mlB
 dJP
 agh
 agh
-agB
-agB
-agB
+qrk
+qrk
+qrk
 agQ
 afZ
 afZ
@@ -67179,7 +67179,7 @@ afZ
 afZ
 afZ
 ago
-agB
+qrk
 sBb
 ahz
 ahz
@@ -67193,7 +67193,7 @@ ahz
 ahz
 ahz
 tqJ
-agB
+qrk
 ago
 afZ
 afZ
@@ -67434,9 +67434,9 @@ uWs
 agQ
 rAL
 aha
-agB
+qrk
 ago
-agB
+qrk
 sBb
 ahz
 ahz
@@ -67450,9 +67450,9 @@ ahj
 ahz
 ahz
 tqJ
-agB
+qrk
 ago
-agB
+qrk
 agI
 uWs
 agQ
@@ -67693,7 +67693,7 @@ afZ
 afZ
 afZ
 ago
-agB
+qrk
 sBb
 ahz
 ahz
@@ -67707,7 +67707,7 @@ agl
 ahz
 ahz
 tqJ
-agB
+qrk
 ago
 afZ
 afZ
@@ -67946,9 +67946,9 @@ afZ
 afZ
 afZ
 agQ
-agB
-agB
-agB
+qrk
+qrk
+qrk
 ago
 afZ
 sBb
@@ -67966,9 +67966,9 @@ ahz
 tqJ
 afZ
 ago
-agB
-agB
-agB
+qrk
+qrk
+qrk
 agQ
 afZ
 afZ
@@ -68462,7 +68462,7 @@ uWs
 agQ
 rAL
 aha
-agB
+qrk
 ago
 ahp
 sBb
@@ -68480,7 +68480,7 @@ ahz
 tqJ
 ahp
 ago
-agB
+qrk
 agI
 uWs
 agQ
@@ -68974,9 +68974,9 @@ afZ
 afZ
 afZ
 agQ
-agB
-agB
-agB
+qrk
+qrk
+qrk
 ago
 afZ
 sBb
@@ -68994,9 +68994,9 @@ ahz
 tqJ
 afZ
 ago
-agB
-agB
-agB
+qrk
+qrk
+qrk
 agQ
 afZ
 afZ
@@ -69235,7 +69235,7 @@ afZ
 afZ
 afZ
 ago
-agB
+qrk
 sBb
 ahz
 ahz
@@ -69249,7 +69249,7 @@ agq
 ahz
 ahz
 tqJ
-agB
+qrk
 ago
 afZ
 afZ
@@ -69490,9 +69490,9 @@ uWs
 agQ
 rAL
 aha
-agB
+qrk
 ago
-agB
+qrk
 sBb
 ahz
 ahz
@@ -69506,9 +69506,9 @@ ahB
 ahz
 ahz
 tqJ
-agB
+qrk
 ago
-agB
+qrk
 agI
 uWs
 agQ
@@ -69749,7 +69749,7 @@ afZ
 afZ
 afZ
 ago
-agB
+qrk
 sBb
 ahz
 ahz
@@ -69763,7 +69763,7 @@ ahz
 ahz
 ahz
 tqJ
-agB
+qrk
 ago
 afZ
 afZ
@@ -70259,9 +70259,9 @@ afZ
 afZ
 afZ
 agQ
-agB
-agB
-agB
+qrk
+qrk
+qrk
 agh
 agh
 lkx
@@ -70775,7 +70775,7 @@ uWs
 agQ
 rAL
 aha
-agB
+qrk
 afZ
 afZ
 rCM
@@ -71287,9 +71287,9 @@ afZ
 afZ
 afZ
 agQ
-agB
-agB
-agB
+qrk
+qrk
+qrk
 agh
 agh
 sLA
@@ -71805,7 +71805,7 @@ afZ
 afZ
 afZ
 ago
-agB
+qrk
 agh
 ahB
 agh
@@ -71819,7 +71819,7 @@ fhP
 agh
 ahB
 agh
-agB
+qrk
 ago
 afZ
 tan
@@ -72060,9 +72060,9 @@ uWs
 agQ
 rAL
 aha
-agB
+qrk
 ago
-agB
+qrk
 agh
 ahB
 agh
@@ -72076,7 +72076,7 @@ eSF
 agh
 ahB
 agh
-agB
+qrk
 ago
 afZ
 rqI
@@ -72319,7 +72319,7 @@ afZ
 afZ
 afZ
 ago
-agB
+qrk
 agh
 ahB
 agh
@@ -72333,7 +72333,7 @@ fhP
 agh
 ahB
 agh
-agB
+qrk
 ago
 afZ
 uZQ
@@ -72572,9 +72572,9 @@ afZ
 afZ
 afZ
 agQ
-agB
-agB
-agB
+qrk
+qrk
+qrk
 ago
 afZ
 agh
@@ -72837,13 +72837,13 @@ agq
 agh
 ahB
 agh
-agB
+qrk
 ahB
 ahB
 ahB
 ahB
 ahB
-agB
+qrk
 agh
 ahB
 agh
@@ -73088,19 +73088,19 @@ uWs
 agQ
 rAL
 aha
-agB
+qrk
 ago
 agq
 agh
 ahB
 agh
-agB
+qrk
 ahB
 ahB
 agq
 ahB
 ahB
-agB
+qrk
 agh
 ahB
 agh
@@ -73351,13 +73351,13 @@ agq
 agh
 ahB
 agh
-agB
+qrk
 ahB
 ahB
 ahB
 ahB
 ahB
-agB
+qrk
 agh
 ahB
 agh
@@ -73600,9 +73600,9 @@ afZ
 afZ
 afZ
 agQ
-agB
-agB
-agB
+qrk
+qrk
+qrk
 ago
 afZ
 agh
@@ -73861,7 +73861,7 @@ afZ
 afZ
 afZ
 ago
-agB
+qrk
 agh
 ahB
 agh
@@ -73875,7 +73875,7 @@ fhP
 agh
 ahB
 agh
-agB
+qrk
 ago
 afZ
 tan
@@ -74116,9 +74116,9 @@ uWs
 agQ
 rAL
 aha
-agB
+qrk
 ago
-agB
+qrk
 agh
 ahB
 agh
@@ -74132,7 +74132,7 @@ eSF
 agh
 ahB
 agh
-agB
+qrk
 ago
 afZ
 rqI
@@ -74375,7 +74375,7 @@ afZ
 afZ
 afZ
 ago
-agB
+qrk
 agh
 ahB
 agh
@@ -74389,7 +74389,7 @@ fhP
 agh
 ahB
 agh
-agB
+qrk
 ago
 afZ
 uZQ
@@ -74638,9 +74638,9 @@ agh
 agh
 afZ
 afZ
-agB
-agB
-agB
+qrk
+qrk
+qrk
 afZ
 afZ
 agh
@@ -74885,9 +74885,9 @@ afZ
 afZ
 afZ
 agQ
-agB
-agB
-agB
+qrk
+qrk
+qrk
 agh
 agh
 agh
@@ -75406,7 +75406,7 @@ afZ
 afZ
 agQ
 afZ
-agB
+qrk
 afZ
 afZ
 fhP
@@ -75414,7 +75414,7 @@ fhP
 fhP
 afZ
 afZ
-agB
+qrk
 afZ
 agQ
 afZ
@@ -75662,17 +75662,17 @@ afZ
 afZ
 afZ
 agQ
-agB
-agB
-agB
+qrk
+qrk
+qrk
 fhP
 fhP
 fhP
 fhP
 fhP
-agB
-agB
-agB
+qrk
+qrk
+qrk
 agQ
 afZ
 afZ
@@ -75920,7 +75920,7 @@ afZ
 afZ
 agQ
 afZ
-agB
+qrk
 afZ
 fhP
 agh
@@ -75928,7 +75928,7 @@ agh
 agh
 fhP
 afZ
-agB
+qrk
 afZ
 agQ
 afZ
@@ -77451,7 +77451,7 @@ agh
 agq
 agh
 hrA
-agB
+qrk
 vlb
 agh
 agq
@@ -77481,7 +77481,7 @@ agh
 agq
 agh
 hrA
-agB
+qrk
 vlb
 agh
 agq
@@ -77708,7 +77708,7 @@ agq
 agq
 agq
 hrA
-agB
+qrk
 vlb
 agq
 agq
@@ -77738,7 +77738,7 @@ agq
 agq
 agq
 hrA
-agB
+qrk
 vlb
 agq
 agq
@@ -77965,7 +77965,7 @@ agh
 agq
 agh
 hrA
-agB
+qrk
 vlb
 agh
 agq
@@ -77995,7 +77995,7 @@ agh
 agq
 agh
 hrA
-agB
+qrk
 vlb
 agh
 agq
