@@ -467,7 +467,7 @@
 
 /datum/reagent/medicine/gjalrazine/expose_mob(mob/living/M, method, reac_volume, show_message, touch_protection)
 	. = ..()
-	if(method in list(TOUCH, PATCH, INGEST) && M.stat != DEAD)
+	if((method in list(TOUCH, PATCH, INGEST)) && M.stat != DEAD)
 		if(method == INGEST)
 			M.adjustOrganLoss(ORGAN_SLOT_STOMACH, reac_volume)
 			to_chat(M, "Your stomach cramps!")

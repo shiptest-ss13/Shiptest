@@ -1182,7 +1182,7 @@
 	desc = "Contains patches used to treat burns."
 	illustration = "firepatch"
 
-/obj/item/storage/box/silver_sulf/PopulateContents()
+/obj/item/storage/box/alvitane/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/pill/patch/alvitane(src)
 
