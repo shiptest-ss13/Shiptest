@@ -53,7 +53,7 @@
 	var/mob/living/living_source = source
 	if(living_source.stat != CONSCIOUS)
 		return NONE
-	#warn work on this
+	//requires item interactions rework
 	//return try_eating(source, possible_food, user) ? ITEM_INTERACT_SUCCESS : NONE
 	try_eating(source, possible_food, user)
 
