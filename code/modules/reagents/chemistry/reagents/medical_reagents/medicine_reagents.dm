@@ -388,7 +388,7 @@
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM
 	overdose_threshold = 20
 
-/datum/reagent/medicine/celdramazine/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/charcoal/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-1*REM, 0)
 	. = 1
 	for(var/datum/reagent/R in M.reagents.reagent_list)
@@ -396,10 +396,10 @@
 			M.reagents.remove_reagent(R.type,1)
 	..()
 
-/datum/reagent/medicine/celdramazine/on_transfer(atom/A, method=TOUCH, volume)
+/datum/reagent/medicine/charcoal/on_transfer(atom/A, method=TOUCH, volume)
 	if(method == INGEST || !iscarbon(A)) //the atom not the charcoal
 		return
-	A.reagents.remove_reagent(/datum/reagent/medicine/celdramazine, volume) //We really should not be injecting an insoluble granular material.
+	A.reagents.remove_reagent(/datum/reagent/medicine/charcoal, volume) //We really should not be injecting an insoluble granular material.
 	A.reagents.add_reagent(/datum/reagent/carbon, volume) // Its pores would get clogged with gunk anyway.
 	..()
 

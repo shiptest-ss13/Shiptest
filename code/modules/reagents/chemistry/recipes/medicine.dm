@@ -193,7 +193,7 @@
 
 /datum/chemical_reaction/antihol
 	results = list(/datum/reagent/medicine/antihol = 3)
-	required_reagents = list(/datum/reagent/consumable/ethanol = 1, /datum/reagent/medicine/celdramazine = 1, /datum/reagent/copper = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol = 1, /datum/reagent/medicine/charcoal = 1, /datum/reagent/copper = 1)
 
 /datum/chemical_reaction/haloperidol
 	results = list(/datum/reagent/medicine/haloperidol = 5)
