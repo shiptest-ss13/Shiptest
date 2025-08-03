@@ -382,7 +382,7 @@
 
 /datum/reagent/medicine/charcoal
 	name = "Charcoal"
-	description = ""
+	description = "Heals toxin damage as well as slowly removing any other chemicals the patient has in their bloodstream. Administer orally"
 	reagent_state = SOLID
 	color = "#101a13"
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM

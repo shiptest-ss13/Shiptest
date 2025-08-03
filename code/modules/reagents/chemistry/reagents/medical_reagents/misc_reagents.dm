@@ -168,6 +168,21 @@
 			patient.cure_husk("burn")
 			patient.visible_message(span_nicegreen("[patient]'s body rapidly absorbs moisture from the enviroment, taking on a more healthy appearance."))
 
+
+//insulin
+/datum/reagent/medicine/insulin
+	name = "Insulin"
+	description = "Increases sugar depletion rates."
+	reagent_state = LIQUID
+	color = "#FFFFF0"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+
+/datum/reagent/medicine/insulin/on_mob_life(mob/living/carbon/M)
+	if(M.AdjustSleeping(-20))
+		. = 1
+	M.reagents.remove_reagent(/datum/reagent/consumable/sugar, 3)
+	..()
+
 /*
 ** 	changeling reagents
 ** there's only two so no file
