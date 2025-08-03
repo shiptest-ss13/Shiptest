@@ -92,7 +92,7 @@
 		say("Drill integrity failure. Engaging emergency shutdown procedure.")
 		//Just to make sure mobs don't spawn infinitely from the vein and as a failure state for players
 		our_vein.deconstruct()
-	obj_break()
+	atom_break()
 	update_icon_state()
 	update_overlays()
 
@@ -120,7 +120,7 @@
 			if(tool.use_tool(src, user, 30, volume=50))
 				to_chat(user, "<span class='notice'>You weld the new plating onto the [src], successfully repairing it.")
 				metal_attached = METAL_ABSENT
-				obj_integrity = max_integrity
+				atom_integrity = max_integrity
 				set_machine_stat(machine_stat & ~BROKEN)
 				update_icon_state()
 				return
@@ -174,7 +174,7 @@
 					component_parts += new_part
 					malfunction = null
 					missing_part = null
-					obj_integrity = max_integrity
+					atom_integrity = max_integrity
 					to_chat(user, span_notice("You replace the broken part with [new_part]."))
 					break
 			return
@@ -183,7 +183,7 @@
 				span_notice("You begin recalibrating [src]..."))
 			if(tool.use_tool(src, user, 100, volume=50))
 				malfunction = null
-				obj_integrity = max_integrity
+				atom_integrity = max_integrity
 				return
 		if(tool.tool_behaviour == TOOL_WELDER && malfunction == MALF_STRUCTURAL)
 			if(!tool.tool_start_check(user, src, amount=0))
@@ -193,7 +193,7 @@
 				span_hear("You hear welding."))
 			if(tool.use_tool(src, user, 100, volume=50))
 				malfunction = null
-				obj_integrity = max_integrity
+				atom_integrity = max_integrity
 				return
 		if(istype(tool, /obj/item/stock_parts/cell))
 			var/obj/item/stock_parts/cell/battery = tool
@@ -305,7 +305,7 @@
 		soundloop.stop()
 		update_overlays()
 		return
-	if(obj_integrity <= max_integrity/1.5)
+	if(atom_integrity <= max_integrity/1.5)
 		malfunction = rand(1,5)
 		malfunction(malfunction)
 		active = FALSE
