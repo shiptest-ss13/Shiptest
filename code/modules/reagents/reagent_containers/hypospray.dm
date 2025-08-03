@@ -177,7 +177,7 @@
 	list_reagents = list(/datum/reagent/medicine/ysiltane = 10)
 
 /obj/item/reagent_containers/hypospray/medipen/gjalrazine
-	name = "Gjalrazine medipen"
+	name = "gjalrazine medipen"
 	desc = "A autoinjector containing Gjalrazine, used to purge the body of toxic after effects."
 	icon_state = "penacid"
 	item_state = "penacid"
