@@ -406,7 +406,8 @@
 //its seiver. i ran out of ideas + seiver was a good one
 /datum/reagent/medicine/pancrazine
 	name = "Pancrazine"
-	description = "" //CHEM HOLDER TEMPS, NOT AIR TEMPS
+	description = "A second generation Tecetian research chemical developed as the byproduct of the terraforming process. Injection of the substance while cold causes the body to regenerate radiation damage, while heating it causes rapid purging of toxic effects."
+	color = "#c3915d"
 	var/radbonustemp = (T0C - 100) //being below this number gives you 10% off rads.
 
 /datum/reagent/medicine/pancrazine/on_mob_metabolize(mob/living/carbon/human/M)
@@ -452,7 +453,7 @@
 
 /datum/reagent/medicine/gjalrazine
 	name = "Gjalrazine"
-	description = ""
+	description = "A plasma-derieved syrum that stimulates the body's natural defenses against toxins. Injection forces the body to start purging toxins, at cost of a rising sense of disgust. Overdose causes the substance to start binding to blood cells, causing blood toxicity."
 	reagent_state = LIQUID
 	color = "#8CDF24"
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM
@@ -460,19 +461,19 @@
 
 
 /datum/reagent/medicine/gjalrazine/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-1*REM, 0)
+	M.adjustToxLoss(-3*REM, 0)
 	M.adjust_disgust(1)
 	. = 1
 	..()
 
 /datum/reagent/medicine/gjalrazine/expose_mob(mob/living/M, method, reac_volume, show_message, touch_protection)
 	. = ..()
-	if((method in list(TOUCH, PATCH, INGEST)) && M.stat != DEAD)
+	if((method in list(TOUCH, PATCH, INGEST, INJECT)) && M.stat != DEAD)
 		if(method == INGEST)
 			M.adjustOrganLoss(ORGAN_SLOT_STOMACH, reac_volume)
 			to_chat(M, "Your stomach cramps!")
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
-		M.adjustToxLoss(-reac_volume*8)
+		M.adjustToxLoss(-reac_volume*4)
 		M.adjust_disgust(50)
 		M.set_timed_status_effect(5 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 
@@ -667,7 +668,7 @@
 
 /datum/reagent/medicine/panacea
 	name = "Panacea"
-	description = ""
+	description = "One of the developments of the frontier, Panacea is a term for a variety of mildly-anomalous substances usually found within Frontier space. Despite disparate origins, they all share a similar effect of slowly healing the body. Overdosing on them causes this effect to reverse."
 	reagent_state = LIQUID
 	color = "#DCDCDC"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
@@ -692,9 +693,13 @@
 
 /datum/reagent/medicine/panacea/effluvial
 	name = "Effluvial Panacea"
-	description = ""
+	description = "A waste product of industrial processes to synthesize Panacea, or more often, an impure form, Effluvial Panacea has the same eeffects as true panacea, simply reduced in effectiveness."
 	color = "#d8c7b7"
 	healing = 0.2
+
+/datum/reagent/medicine/panacea/effluvial/on_mob_life(mob/living/carbon/M)
+	if(prob(25))
+		M.adjustOrganLoss(ORGAN_SLOT_HEART, 0.5)
 
 /datum/reagent/medicine/stimulants
 	name = "Indoril Stimulant"
