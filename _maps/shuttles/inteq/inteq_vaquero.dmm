@@ -1,4 +1,11 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ad" = (
+/obj/machinery/porta_turret/ship/inteq/light{
+	dir = 8;
+	id = "vaq_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/external/dark)
 "aj" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
@@ -1050,6 +1057,16 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/aft)
+"hL" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/item/cigbutt,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/hallway/aft)
 "hM" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -1377,6 +1394,8 @@
 /obj/item/reagent_containers/blood/elzuose,
 /obj/item/reagent_containers/blood/lizard,
 /obj/item/reagent_containers/blood/synthetic,
+/obj/item/sensor_device,
+/obj/item/pinpointer/crew,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "jI" = (
@@ -2285,6 +2304,15 @@
 /obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/carpet/orange,
 /area/ship/crew/dorm/captain)
+"tm" = (
+/obj/structure/catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/porta_turret/ship/inteq{
+	dir = 5;
+	id = "vaq_grid"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "to" = (
 /obj/structure/marker_beacon{
 	picked_color = "Burgundy"
@@ -2959,13 +2987,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
-"zo" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/corner{
-	dir = 8
-	},
-/obj/item/ammo_casing/spent/pistol_brass,
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
 "zr" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 8
@@ -3082,6 +3103,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
+"Ai" = (
+/obj/structure/sign/warning/docking{
+	pixel_x = -9;
+	pixel_y = -7
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/external/dark)
 "Am" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden{
 	dir = 4
@@ -3557,6 +3585,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
+"EH" = (
+/obj/structure/catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/porta_turret/ship/inteq{
+	dir = 6;
+	id = "vaq_grid"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "EX" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/railing/corner{
@@ -3826,15 +3863,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
-"GX" = (
-/obj/structure/catwalk,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/porta_turret/ship/inteq{
-	dir = 6;
-	id = "vaq_grid"
-	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
 "Ha" = (
 /obj/effect/turf_decal/number/five,
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -4228,15 +4256,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"JS" = (
-/obj/structure/catwalk,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/porta_turret/ship/inteq{
-	dir = 5;
-	id = "vaq_grid"
-	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
 "Kr" = (
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
@@ -4343,13 +4362,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
-"Lz" = (
-/obj/structure/sign/warning/docking{
-	pixel_x = -9;
-	pixel_y = -7
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/external/dark)
 "LB" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -4524,16 +4536,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"MU" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 1
-	},
-/obj/item/cigbutt,
-/turf/open/floor/plasteel/patterned/grid,
-/area/ship/hallway/aft)
 "Nb" = (
 /obj/structure/sign/warning/electricshock{
 	pixel_y = 8
@@ -4650,6 +4652,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
+"OL" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/corner{
+	dir = 8
+	},
+/obj/item/ammo_casing/spent/pistol_brass,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "ON" = (
 /obj/structure/table/reinforced,
 /obj/structure/noticeboard{
@@ -5828,13 +5837,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
-"Yb" = (
-/obj/machinery/porta_turret/ship/inteq/light{
-	dir = 8;
-	id = "vaq_grid"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/external/dark)
 "Yc" = (
 /obj/structure/sign/warning/electricshock{
 	pixel_y = -4
@@ -6182,9 +6184,9 @@ ww
 ox
 ww
 iz
-Lz
+Ai
 fl
-Yb
+ad
 ww
 SW
 ww
@@ -6346,7 +6348,7 @@ Hn
 gb
 Ue
 Hn
-MU
+hL
 hk
 fr
 Ny
@@ -6630,7 +6632,7 @@ vo
 (21,1,1) = {"
 ww
 ww
-JS
+tm
 Eh
 yT
 jB
@@ -6647,7 +6649,7 @@ cq
 gh
 CQ
 te
-GX
+EH
 ww
 ww
 "}
@@ -6833,7 +6835,7 @@ fZ
 rP
 Wl
 vw
-zo
+OL
 zY
 Ty
 fV
