@@ -117,7 +117,14 @@
 *Overdosing on penthrite also causes a heart failure.
 */
 
-/datum/reagent/medicine/c2/penthrite/on_mob_add(mob/living/M)
+/datum/reagent/medicine/penthrite
+	name = "Penthrite"
+	description = "An expensive medicine that aids with pumping blood around the body even without a heart, and prevents the heart from slowing down. It reacts violently with other emergency medication."
+	color = "#F5F5F5"
+	overdose_threshold = 50
+
+
+/datum/reagent/medicine/penthrite/on_mob_add(mob/living/M)
 	. = ..()
 	to_chat(M,"<span class='notice'>Your heart begins to beat with great force!")
 	ADD_TRAIT(M, TRAIT_STABLEHEART, type)
@@ -126,7 +133,7 @@
 	M.crit_threshold = M.crit_threshold + HEALTH_THRESHOLD_FULLCRIT*2 //your heart is still pumping!
 
 
-/datum/reagent/medicine/c2/penthrite/on_mob_life(mob/living/carbon/human/H)
+/datum/reagent/medicine/penthrite/on_mob_life(mob/living/carbon/human/H)
 	H.adjustOrganLoss(ORGAN_SLOT_STOMACH,0.25)
 	if(H.health <= HEALTH_THRESHOLD_CRIT && H.health > H.crit_threshold) //we cannot save someone above our raised crit threshold.
 
@@ -154,14 +161,14 @@
 		volume = 0
 	. = ..()
 
-/datum/reagent/medicine/c2/penthrite/on_mob_end_metabolize(mob/living/M)
+/datum/reagent/medicine/penthrite/on_mob_end_metabolize(mob/living/M)
 	M.crit_threshold = M.crit_threshold - HEALTH_THRESHOLD_FULLCRIT*2 //your heart is still pumping!
 	REMOVE_TRAIT(M, TRAIT_STABLEHEART, type)
 	REMOVE_TRAIT(M, TRAIT_NOHARDCRIT,type)
 	REMOVE_TRAIT(M, TRAIT_NOSOFTCRIT,type)
 	. = ..()
 
-/datum/reagent/medicine/c2/penthrite/overdose_process(mob/living/carbon/human/H)
+/datum/reagent/medicine/penthrite/overdose_process(mob/living/carbon/human/H)
 	REMOVE_TRAIT(H, TRAIT_STABLEHEART, type)
 	H.adjustStaminaLoss(10)
 	H.adjustOrganLoss(ORGAN_SLOT_HEART,10)

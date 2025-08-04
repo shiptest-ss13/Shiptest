@@ -36,7 +36,7 @@
 
 /datum/chemical_reaction/ysiltane
 	results = list(/datum/reagent/medicine/ysiltane = 5)
-	required_reagents = list(/datum/reagent/ammonia = 1, /datum/reagent/silver = 1, /datum/reagent/sulfur = 1, /datum/reagent/oxygen = 1, /datum/reagent/chlorine = 1)
+	required_reagents = list(/datum/reagent/ammonia = 1, /datum/reagent/silver = 1, /datum/reagent/sulfur = 1, /datum/reagent/hydrogen = 1, /datum/reagent/chlorine = 1)
 	required_catalysts = list(/datum/reagent/toxin/plasma = 10)
 	mix_message = "The solution quickly fizzes, a small cloud of smoke coming out!"
 
@@ -62,7 +62,7 @@
 /datum/chemical_reaction/pancrazine
 	results = list(/datum/reagent/medicine/pancrazine = 3)
 	required_reagents = list(/datum/reagent/nitrogen = 1, /datum/reagent/silicon = 1, /datum/reagent/potassium = 1)
-	required_catalysts = list(/datum/chemical_reaction/ammonia = 5)
+	required_catalysts = list(/datum/reagent/ammonia = 5)
 
 /datum/chemical_reaction/gjalrazine
 	results = list(/datum/reagent/medicine/gjalrazine = 10)
