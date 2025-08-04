@@ -60,10 +60,10 @@
 	chameleon_extras = /obj/item/stamp/qm
 
 /datum/outfit/job/nanotrasen/captain/vi
-	name = "Nanotrasen - Captain (Vigilitas Interstellar)
+	name = "Nanotrasen - Captain (Vigilitas Interstellar)"
 
 	belt = /obj/item/pda/heads/hos
-	ears = /obj/item/radio/headset/nanotrasen/captain/alt
+	ears = /obj/item/radio/headset/nanotrasen/alt/captain
 	uniform = /obj/item/clothing/under/nanotrasen/security/director
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/jackboots
