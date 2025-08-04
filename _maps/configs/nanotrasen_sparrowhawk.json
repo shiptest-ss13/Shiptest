@@ -1,0 +1,43 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Sparrowhawk-class Gunship",
+	"prefix": "VISV",
+	"manufacturer": "Nanotrasen Spaceworks",
+	"faction": "/datum/faction/nt",
+	"namelists": [
+		"NANOTRASEN",
+		"NATURAL_AGGRESSIVE",
+		"WEAPONS"
+	],
+	"map_short_name": "Sparrowhawk-class",
+	"map_path": "_maps/shuttles/nanotrasen/nanotrasen_magpie.dmm",
+	"token_icon_state": "ship_generic",
+	"description": "The Sparrowhawk-class is a common class of gunship used by Vigilitas Interstellar for space patrols. Agile and well-armed, Sparrowhawks can be found wherever Vigilitas or its clients have assets in need of protection.",
+	"tags": ["Combat"],
+	"limit": 2,
+	"starting_funds": 1500,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/nanotrasen/captain/vi",
+			"officer": true,
+			"slots": 1
+		},
+		"Security Officer": {
+			"outfit": "/datum/outfit/job/nanotrasen/security/disarmed",
+			"slots": 2
+		},
+		"Paramedic": {
+			"outfit": "/datum/outfit/job/nanotrasen/paramedic",
+			"slots": 1
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/nanotrasen/engineer",
+			"slots": 1
+		},
+		"Assistant": {
+			"outfit": "/datum/outfit/job/nanotrasen/assistant",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

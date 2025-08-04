@@ -59,6 +59,34 @@
 
 	chameleon_extras = /obj/item/stamp/qm
 
+/datum/outfit/job/nanotrasen/captain/vi
+	name = "Nanotrasen - Captain (Vigilitas Interstellar)
+
+	belt = /obj/item/pda/heads/hos
+	ears = /obj/item/radio/headset/nanotrasen/captain/alt
+	uniform = /obj/item/clothing/under/nanotrasen/security/director
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/jackboots
+	suit = /obj/item/clothing/suit/armor/nanotrasen/slim
+	alt_suit = /obj/item/clothing/suit/armor/nanotrasen/sec_director
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
+	gloves = /obj/item/clothing/gloves/color/black
+	head = /obj/item/clothing/head/nanotrasen/beret/security/command
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	suit_store = null
+	r_pocket = /obj/item/assembly/flash/handheld
+	l_pocket = /obj/item/restraints/handcuffs
+
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/sec
+	courierbag = /obj/item/storage/backpack/messenger/sec
+	box = /obj/item/storage/box/survival/security
+
+	implants = list(/obj/item/implant/mindshield)
+
+	chameleon_extras = list(/obj/item/gun/energy/e_gun/hos, /obj/item/stamp/hos)
+
 /datum/outfit/job/nanotrasen/captain/centcom
 	name = "Nanotrasen - Captain (Central Command)"
 
