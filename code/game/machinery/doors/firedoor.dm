@@ -27,7 +27,7 @@
 	interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_REQUIRES_SILICON | INTERACT_MACHINE_OPEN
 	air_tight = TRUE
 	var/jammed_open = FALSE
-	var/datum/material/material_jammed = null
+	var/obj/item/stack/material_jammed = null
 	var/emergency_close_timer = 0
 	var/nextstate = null
 	var/boltslocked = TRUE
@@ -125,10 +125,7 @@
 			user.visible_message(span_notice("[user] successfully unjams \the [src]."), span_notice("You unjam \the [src]."))
 			jammed_open = FALSE
 			if(material_jammed)
-				if(material_jammed == /datum/material/wood)
-					new /obj/item/stack/sheet/mineral/wood(loc)
-				else if (material_jammed == /datum/material/iron)
-					new /obj/item/stack/rods(loc)
+				material_jammed.forceMove(loc)
 				material_jammed = null
 			close()
 			return
@@ -152,8 +149,12 @@
 			if(do_after(user, 10, src) && jammer.use(1))
 				jammed_open = TRUE
 				user.visible_message("You jam open \the [src] with \the [C.name].")
-				material_jammed = jammer.material_type
-				icon_state = "jammed_[material_jammed.name]"
+				if(istype(C, /obj/item/stack/sheet/mineral/wood))
+					material_jammed = new /obj/item/stack/sheet/mineral/wood
+					icon_state = "jammed_wood"
+				else
+					material_jammed = new /obj/item/stack/rods
+					icon_state = "jammed_iron"
 				playsound(loc, door_close_sound, 90, TRUE)
 
 	if(welded)

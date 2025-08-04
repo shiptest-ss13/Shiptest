@@ -34,7 +34,6 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 	hitsound = 'sound/weapons/gun/general/grenade_launch.ogg'
 	embedding = list()
 	novariants = TRUE
-	material_type = /datum/material/iron
 
 /obj/item/stack/rods/Initialize(mapload, new_amount, merge = TRUE)
 	. = ..()
