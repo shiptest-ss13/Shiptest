@@ -470,7 +470,7 @@
 	pixel_y = -1
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/fax/pgf{
+/obj/machinery/fax/indie{
 	pixel_y = 9
 	},
 /turf/open/floor/plasteel/tech,
@@ -946,10 +946,6 @@
 	},
 /obj/machinery/computer/cargo,
 /obj/item/radio/intercom/directional/east,
-/obj/item/toy/figure/md{
-	pixel_y = 17;
-	pixel_x = 9
-	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "oB" = (
@@ -3486,6 +3482,10 @@
 	pixel_x = -6;
 	pixel_y = 3
 	},
+/obj/item/toy/figure/md{
+	pixel_y = 3;
+	pixel_x = 7
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Sq" = (
@@ -3897,13 +3897,13 @@
 "YM" = (
 /obj/effect/turf_decal/corner_steel_grid/full,
 /obj/structure/table/reinforced,
-/obj/machinery/fax/pgf{
-	pixel_y = 9
-	},
 /obj/machinery/airalarm/directional/west,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/fax/indie{
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/cargo)
