@@ -531,17 +531,17 @@
 	icon_state = "shemagh"
 	supports_variations = VOX_VARIATION
 
-/obj/item/clothing/neck/shemagh/light
-	icon_state = "shemagh_l"
+/obj/item/clothing/neck/shemagh/khaki
+	icon_state = "shemagh_khaki"
+
+/obj/item/clothing/neck/shemagh/olive
+	icon_state = "shemagh_olive"
 
 /obj/item/clothing/neck/shemagh/brown
-	icon_state = "shemagh_b"
-
-/obj/item/clothing/neck/shemagh/dark_brown
-	icon_state = "shemagh_db"
+	icon_state = "shemagh_brown"
 
 /obj/item/clothing/neck/shemagh/black
-	icon_state = "shemagh_bl"
+	icon_state = "shemagh_black"
 
 //The three following scarves don't have the scarf subtype
 //This is because Ian can equip anything from that subtype
