@@ -70,6 +70,9 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	/// Used to stop radiation from travelling across virtual z-levels such as transit zones and planetary encounters.
 	var/rad_fullblocker = FALSE
 
+	// Determines if light tubes and bulbs are allowed to randomly break on the turf during late initialization. Off by default.
+	var/ran_light_breakage = FALSE
+
 	hitsound_volume = 90
 
 /turf/vv_edit_var(var_name, new_value)
