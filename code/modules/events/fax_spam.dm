@@ -20,8 +20,7 @@
 
 /obj/item/advertisement
 	name = "advertisement"
-	icon = 'icons/obj/bureaucracy.dmi'
-	icon_state = "paperslip_words"
+	icon = 'icons/obj/fliers.dmi'
 	throwforce = 0
 	w_class = WEIGHT_CLASS_TINY
 	pressure_resistance = 0
@@ -34,13 +33,17 @@
 /obj/item/advertisement/gec
 	name = "robust advertisement"
 	desc = "A recruitment pamphlet for the Galactic Engineer's Concordat, listing several benefits to union members compared to the average worker."
+	icon_state = "gec"
 
 /obj/item/advertisement/vitcom
 	desc = "A pamphlet advertising VitCom Consumer Electronic's new model of \"bowman\" headset, focusing on benefits for salvage crews working with loud machinery."
+	icon_state = "vitcom"
 
 /obj/item/advertisement/vanity
 	name = "fancy advertisement"
 	desc = "A fancifully decorated pamphlet advertising Vanity's premier line of gemstone studded electronics, you wonder if you'll ever be able to afford one working in the Frontier..."
+	icon_state = "vanity"
 
 /obj/item/advertisement/cliptour
 	desc = "A pamphlet advertising tour guides on Luna-Town, most prominently an interior tour of certain restricted sections of the UNSV Lichtenstein."
+	icon_state = "cliptour"
