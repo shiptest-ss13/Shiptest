@@ -286,17 +286,6 @@
 	icon_state = "pill18"
 	list_reagents = list(/datum/reagent/drug/finobranc = 5)
 
-/*WS Begin - No Cobbychem
-
-/obj/item/reagent_containers/pill/c2/probital
-	name = "Probital pill"
-	desc = "Used to treat brute damage of minor and moderate severity.The carving in the pill says 'Eat before ingesting'. Causes fatigue and diluted with granibitaluri."
-	icon_state = "pill12"
-	list_reagents = list(/datum/reagent/medicine/c2/probital = 5, /datum/reagent/medicine/granibitaluri = 10)
-	rename_with_volume = TRUE
-
-WS End */
-
 /obj/item/reagent_containers/pill/iron
 	name = "iron pill"
 	desc = "Used to reduce bloodloss slowly."
