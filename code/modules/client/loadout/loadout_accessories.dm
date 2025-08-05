@@ -16,6 +16,22 @@
 	display_name = "shemagh"
 	path = /obj/item/clothing/neck/shemagh
 
+/datum/gear/accessory/shemagh_black
+	display_name = "shemagh, black"
+	path = /obj/item/clothing/neck/shemagh/black
+
+/datum/gear/accessory/shemagh_dark_brown
+	display_name = "shemagh, dark brown"
+	path = /obj/item/clothing/neck/shemagh/dark_brown
+
+/datum/gear/accessory/shemagh_brown
+	display_name = "shemagh, brown"
+	path = /obj/item/clothing/neck/shemagh/brown
+
+/datum/gear/accessory/shemagh_light_brown
+	display_name = "shemagh, light brown"
+	path = /obj/item/clothing/neck/shemagh/light
+
 //poncho
 
 /datum/gear/accessory/poncho
