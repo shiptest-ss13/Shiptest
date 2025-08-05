@@ -190,13 +190,13 @@
 		return COMPONENT_HOSTILE_NO_ATTACK
 
 /mob/living/basic/hivebot/mechanic/proc/repair_machine(obj/machinery/fixable)
-	if(fixable.obj_integrity >= fixable.max_integrity)
+	if(fixable.atom_integrity >= fixable.max_integrity)
 		to_chat(src, span_warning("Diagnostics indicate that this machine is at peak integrity."))
 		return
 	if(!COOLDOWN_FINISHED(src, repair_cooldown))
 		balloon_alert(src, "recharging!")
 		return
-	fixable.obj_integrity = fixable.max_integrity
+	fixable.atom_integrity = fixable.max_integrity
 	do_sparks(n = 3, c = TRUE, source = fixable)
 	to_chat(src, span_warning("Repairs complete!"))
 	COOLDOWN_START(src, repair_cooldown, 50 SECONDS)
