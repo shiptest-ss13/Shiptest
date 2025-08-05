@@ -103,3 +103,7 @@
 /obj/item/storage/photo_album/prison
 	name = "photo album (Prison)"
 	persistence_id = "prison"
+
+/obj/item/storage/photo_album/correspondent
+	name = "photo album (CLIP Correspondents)"
+	persistence_id = "correspondent"
