@@ -292,7 +292,7 @@
 	reagent_weight = 0.6
 
 /datum/reagent/medicine/quardexane/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-1.5*REM, 0)
+	M.adjustFireLoss(-2*REM, 0)
 	M.adjust_bodytemperature(-0.6 * TEMPERATURE_DAMAGE_COEFFICIENT, M.dna.species.bodytemp_normal)
 	..()
 	. = 1
@@ -330,7 +330,7 @@
 	reagent_state = LIQUID
 	color = "#F7FFA5"
 	overdose_threshold = 21
-	reagent_weight = 0.6
+	reagent_weight = 2
 
 /datum/reagent/medicine/ysiltane/on_mob_life(mob/living/carbon/M)
 	M.adjustStaminaLoss(1*REM, 0)
@@ -458,7 +458,6 @@
 	color = "#8CDF24"
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM
 	overdose_threshold = 12
-
 
 /datum/reagent/medicine/gjalrazine/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-3*REM, 0)
