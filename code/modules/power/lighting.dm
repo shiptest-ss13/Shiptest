@@ -349,12 +349,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 	switch(fitting)
 		if("tube")
 			brightness = 8
-			if(prob(2))
-				break_light_tube(1)
 		if("bulb")
 			brightness = 4
-			if(prob(5))
-				break_light_tube(1)
 	addtimer(CALLBACK(src, PROC_REF(update), 0), 1)
 
 /obj/machinery/light/Destroy()
