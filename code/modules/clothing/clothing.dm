@@ -27,11 +27,10 @@
 	var/active_sound = null
 	var/toggle_cooldown = null
 	var/cooldown = 0
+	var/clothing_flags = NONE
 
 	var/cuttable = FALSE //If you can cut the clothing with anything sharp
 	var/clothamnt = 0 //How much cloth
-
-	var/clothing_flags = NONE
 
 	var/can_be_bloody = TRUE
 
@@ -83,16 +82,16 @@
 		if(M.putItemFromInventoryInHandIfPossible(src, H.held_index, FALSE, TRUE))
 			add_fingerprint(usr)
 
-/obj/item/reagent_containers/food/snacks/clothing
+/obj/item/food/clothing // fuck you
 	name = "temporary moth clothing snack item"
 	desc = "If you're reading this it means I messed up. This is related to moths eating clothes and I didn't know a better way to do it than making a new food object."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	food_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	tastes = list("dust" = 1, "lint" = 1)
-	foodtype = CLOTH
+	foodtypes = CLOTH
 
 /obj/item/clothing/attack(mob/M, mob/user, def_zone)
 	if(user.a_intent != INTENT_HARM && moth_edible && ismoth(M))
-		var/obj/item/reagent_containers/food/snacks/clothing/clothing_as_food = new
+		var/obj/item/food/clothing/clothing_as_food = new
 		clothing_as_food.name = name
 		if(clothing_as_food.attack(M, user, def_zone))
 			take_damage(15, sound_effect=FALSE)
@@ -118,23 +117,26 @@
 			to_chat(user, span_notice("You fail to fix the damage on [src]."))
 			return TRUE
 		update_clothes_damaged_state(FALSE)
-		obj_integrity = max_integrity
+		atom_integrity = max_integrity
 		to_chat(user, span_notice("You fix the damage on [src] with [cloth]."))
 		return TRUE
+
 	return ..()
 
 /obj/item/clothing/dropped(mob/user)
 	..()
 	if(!istype(user))
 		return
+
 	for(var/trait in clothing_traits)
 		REMOVE_CLOTHING_TRAIT(user, trait)
+
 	if(wearer?.resolve())
 		wearer = null
 
 /obj/item/clothing/equipped(mob/user, slot)
 	..()
-	if (!istype(user))
+	if(!istype(user))
 		return
 	if(slot_flags & slot) //Was equipped to a valid slot for this item?
 		for(var/trait in clothing_traits)
@@ -178,15 +180,18 @@
 
 /obj/item/clothing/examine(mob/user)
 	. = ..()
-	switch (max_heat_protection_temperature)
+
+	switch(max_heat_protection_temperature)
 		if (400 to 1000)
 			. += "[src] offers the wearer limited protection from fire."
 		if (1001 to 1600)
 			. += "[src] offers the wearer some protection from fire."
 		if (1601 to 35000)
 			. += "[src] offers the wearer robust protection from fire."
+
 	if(damaged_clothes)
 		. += span_warning("It looks damaged!")
+
 	var/datum/component/storage/pockets = GetComponent(/datum/component/storage)
 	if(pockets)
 		var/list/how_cool_are_your_threads = list("<span class='notice'>")
@@ -286,9 +291,10 @@
 			. = "X"
 	return .
 
-/obj/item/clothing/obj_break(damage_flag)
+/obj/item/clothing/atom_break(damage_flag)
 	if(!damaged_clothes)
 		update_clothes_damaged_state(TRUE)
+
 	if(ismob(loc)) //It's not important enough to warrant a message if nobody's wearing it
 		var/mob/M = loc
 		to_chat(M, span_warning("Your [name] starts to fall apart!"))
@@ -302,11 +308,12 @@
 
 /obj/item/clothing/update_overlays()
 	. = ..()
+	var/index = "[REF(initial(icon))]-[initial(icon_state)]"
+	var/static/list/damaged_clothes_icons = list()
+
 	if(!damaged_clothes)
 		return
 
-	var/index = "[REF(initial(icon))]-[initial(icon_state)]"
-	var/static/list/damaged_clothes_icons = list()
 	var/icon/damaged_clothes_icon = damaged_clothes_icons[index]
 	if(!damaged_clothes_icon)
 		damaged_clothes_icon = icon(initial(icon), initial(icon_state), , 1) //we only want to apply damaged effect to the initial icon_state for each object
@@ -315,15 +322,6 @@
 		damaged_clothes_icon = fcopy_rsc(damaged_clothes_icon)
 		damaged_clothes_icons[index] = damaged_clothes_icon
 	. += damaged_clothes_icon
-/*
-* SEE_SELF  // can see self, no matter what
-* SEE_MOBS  // can see all mobs, no matter what
-* SEE_OBJS  // can see all objs, no matter what
-* SEE_TURFS // can see all turfs (and areas), no matter what
-* SEE_PIXELS// if an object is located on an unlit area, but some of its pixels are
-*           // in a lit area (via pixel_x,y or smooth movement), can see those pixels
-* BLIND     // can't see anything
-*/
 
 /obj/item/proc/generate_species_clothing(file2use, state2use, layer, datum/species/mob_species)
 	if(!icon_exists(file2use, state2use))
@@ -494,7 +492,7 @@
 
 // handles logic of toggling uniform rolling and sleeve rolling
 // if i had more time i would've written a shorter letter
-/obj/item/clothing/under/proc/toggle_jumpsuit_adjust(style)
+/obj/item/clothing/under/proc/toggle_jumpsuit_adjust(style) //please rework this if you see this
 	adjusted = !adjusted
 	// are we already using an alternative uniform style?
 	if(adjusted) // we aren't
@@ -571,8 +569,7 @@
 			return 1
 	return 0
 
-
-/obj/item/clothing/obj_destruction(damage_flag)
+/obj/item/clothing/atom_destruction(damage_flag)
 	if(damage_flag == "bomb" || damage_flag == "melee")
 		var/turf/T = get_turf(src)
 		//so the shred survives potential turf change from the explosion.

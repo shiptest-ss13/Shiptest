@@ -80,7 +80,7 @@
 	force = 10		//WS Edit - Makes drill weaker than circular saw
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("drilled")
-	sharpness = IS_SHARP		//WS Edit - Makes the Drill sharp
+	sharpness = SHARP_EDGED		//WS Edit - Makes the Drill sharp
 	tool_behaviour = TOOL_DRILL
 	toolspeed = 1
 	demolition_mod = 0.5
@@ -116,7 +116,7 @@
 	custom_materials = list(/datum/material/iron=4000, /datum/material/glass=1000)
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	sharpness = IS_SHARP_ACCURATE
+	sharpness = SHARP_POINTY
 	tool_behaviour = TOOL_SCALPEL
 	toolspeed = 1
 	demolition_mod = 0.25
@@ -150,7 +150,7 @@
 	throw_range = 5
 	custom_materials = list(/datum/material/iron=10000, /datum/material/glass=6000)
 	attack_verb = list("attacked", "slashed", "sawed", "cut")
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	tool_behaviour = TOOL_SAW
 	toolspeed = 1
 
@@ -273,7 +273,7 @@
 	light_system = MOVABLE_LIGHT
 	light_range = 1
 	light_color = LIGHT_COLOR_GREEN
-	sharpness = IS_SHARP_ACCURATE
+	sharpness = SHARP_POINTY
 
 
 /obj/item/scalpel/advanced/attack_self(mob/user)
@@ -366,7 +366,7 @@
 	throw_range = 5
 	custom_materials = list(/datum/material/iron=8000, /datum/material/titanium=6000)
 	attack_verb = list("sheared", "snipped")
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	custom_premium_price = 1800
 
 /obj/item/shears/attack(mob/living/M, mob/user)
@@ -406,7 +406,7 @@
 	playsound(get_turf(patient), 'sound/items/ratchet.ogg', 20, TRUE)
 	if(patient.stat >= UNCONSCIOUS || patient.IsStun()) //Stun is used by paralytics like curare it should not be confused with the more common paralyze.
 		amputation_speed_mod = 0.5
-	else if(patient.jitteriness >= 1)
+	else if(patient.has_status_effect(/datum/status_effect/jitter))
 		amputation_speed_mod = 1.5
 	else
 		amputation_speed_mod = 1
@@ -419,6 +419,21 @@
 		else
 			limb_snip_candidate.dismember()
 		user.visible_message(span_danger("[src] violently slams shut, amputating [patient]'s [candidate_name]."), span_notice("You amputate [patient]'s [candidate_name] with [src]."))
+
+/obj/item/bonesetter
+	name = "bonesetter"
+	desc = "For setting things right."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "bonesetter"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	custom_materials = list(/datum/material/iron=5000, /datum/material/glass=2500)
+	flags_1 = CONDUCT_1
+	item_flags = SURGICAL_TOOL
+	w_class = WEIGHT_CLASS_SMALL
+	attack_verb = list("corrected", "properly set")
+	tool_behaviour = TOOL_BONESET
+	toolspeed = 1
 
 /obj/item/blood_filter
 	name = "blood filter"

@@ -72,7 +72,7 @@
 	user.visible_message(span_danger("[user] starts flipping [src]!"), span_notice("You start flipping over the [src]!"))
 	if(do_after(user, max_integrity/4))
 		var/obj/structure/table/table_unflip = new table_type(src.loc)
-		table_unflip.obj_integrity = obj_integrity
+		table_unflip.update_integrity(atom_integrity)
 		user.visible_message(span_danger("[user] flips over the [src]!"), span_notice("You flip over the [src]!"))
 		playsound(src, 'sound/items/trayhit2.ogg', 100)
 		qdel(src)

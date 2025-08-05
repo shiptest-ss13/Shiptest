@@ -1369,7 +1369,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		else if(H.satiety < 0)
 			H.satiety++
 			if(prob(round(-H.satiety/40)))
-				H.adjust_jitter(5, max = 100)
+				H.adjust_timed_status_effect(5 SECONDS, /datum/status_effect/jitter)
 			hunger_rate = 3 * HUNGER_FACTOR
 		hunger_rate *= H.physiology.hunger_mod
 		H.adjust_nutrition(-hunger_rate)
@@ -1555,19 +1555,26 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(user.limb_destroyer)
 			target.dismembering_strike(user, affecting.body_zone)
 
-		if(atk_verb == ATTACK_EFFECT_KICK)//kicks deal 1.5x raw damage
-			target.apply_damage(damage*1.5, user.dna.species.attack_type, affecting, armor_block)
+		var/attack_direction = get_dir(user, target)
+		if(atk_verb == ATTACK_EFFECT_KICK) //kicks deal 1.5x raw damage
+			target.apply_damage(damage*1.5, user.dna.species.attack_type, affecting, armor_block, attack_direction = attack_direction)
 			log_combat(user, target, "kicked")
-		else//other attacks deal full raw damage + 1.5x in stamina damage
-			target.apply_damage(damage, user.dna.species.attack_type, affecting, armor_block)
+		else //other attacks deal full raw damage + 1.5x in stamina damage
+			target.apply_damage(damage, user.dna.species.attack_type, affecting, armor_block, attack_direction = attack_direction)
 			target.apply_damage(damage*1.5, STAMINA, affecting, armor_block)
 			log_combat(user, target, "punched")
 
 		if((target.stat != DEAD) && damage >= user.dna.species.punchstunthreshold)
-			target.visible_message(span_danger("[user] knocks [target] down!"), \
-							span_userdanger("You're knocked down by [user]!"), span_hear("You hear aggressive shuffling followed by a loud thud!"), COMBAT_MESSAGE_RANGE, user)
+			target.visible_message(
+				span_danger("[user] knocks [target] down!"),
+				span_userdanger("You're knocked down by [user]!"),
+				span_hear("You hear aggressive shuffling followed by a loud thud!"),
+				COMBAT_MESSAGE_RANGE,
+				user,
+			)
 			to_chat(user, span_danger("You knock [target] down!"))
-			var/knockdown_duration = 40 + (target.getStaminaLoss() + (target.getBruteLoss()*0.5))*0.8 //50 total damage = 40 base stun + 40 stun modifier = 80 stun duration, which is the old base duration
+			//50 total damage = 40 base stun + 40 stun modifier = 80 stun duration, which is the old base duration
+			var/knockdown_duration = 40 + (target.getStaminaLoss() + (target.getBruteLoss()*0.5))*0.8
 			target.apply_effect(knockdown_duration, EFFECT_KNOCKDOWN, armor_block)
 			log_combat(user, target, "got a stun punch with their previous punch")
 
@@ -1576,10 +1583,16 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 /datum/species/proc/disarm(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)
 	if(target.check_block())
-		target.visible_message(span_warning("[user]'s shove is blocked by [target]!"), \
-						span_danger("You block [user]'s shove!"), span_hear("You hear a swoosh!"), COMBAT_MESSAGE_RANGE, user)
+		target.visible_message(
+			span_warning("[user]'s shove is blocked by [target]!"),
+			span_danger("You block [user]'s shove!"),
+			span_hear("You hear a swoosh!"),
+			COMBAT_MESSAGE_RANGE,
+			user,
+		)
 		to_chat(user, span_warning("Your shove at [target] was blocked!"))
 		return FALSE
+
 	if(attacker_style && attacker_style.disarm_act(user,target))
 		return TRUE
 	if(user.resting || user.IsKnockdown())
@@ -1610,17 +1623,16 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 						span_danger("[M] attempts to touch you!"), span_hear("You hear a swoosh!"), COMBAT_MESSAGE_RANGE, M)
 		to_chat(M, span_warning("You attempt to touch [H]!"))
 		return 0
+
 	SEND_SIGNAL(M, COMSIG_MOB_ATTACK_HAND, M, H, attacker_style)
+
 	switch(M.a_intent)
 		if("help")
 			help(M, H, attacker_style)
-
 		if("grab")
 			grab(M, H, attacker_style)
-
 		if("harm")
 			harm(M, H, attacker_style)
-
 		if("disarm")
 			disarm(M, H, attacker_style)
 
@@ -1643,20 +1655,18 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	var/armor_block = H.run_armor_check(affecting, "melee", I.armour_penetration, FALSE, span_notice("Your armor has protected your [hit_area]!"), span_warning("Your armor has softened a hit to your [hit_area]!"))
 	armor_block = min(90,armor_block) //cap damage reduction at 90%
+	var/Iwound_bonus = I.wound_bonus
 
-	apply_damage(I.force, I.damtype, def_zone, armor_block, H, sharpness = I.get_sharpness())
+	// this way, you can't wound with a surgical tool on help intent if they have a surgery active and are laying down, so a misclick with a circular saw on the wrong limb doesn't bleed them dry (they still get hit tho)
+	if((I.item_flags & SURGICAL_TOOL) && user.a_intent == INTENT_HELP && (H.mobility_flags & ~MOBILITY_STAND) && (LAZYLEN(H.surgeries) > 0))
+		Iwound_bonus = CANT_WOUND
 
-	H.send_item_attack_message(I, user, hit_area)
+	H.send_item_attack_message(I, user, hit_area, affecting)
+	var/attack_direction = get_dir(user, H)
+	apply_damage(I.force , I.damtype, def_zone, armor_block, H, wound_bonus = Iwound_bonus, bare_wound_bonus = I.bare_wound_bonus, sharpness = I.get_sharpness(), attack_direction = attack_direction)
 
 	if(!I.force)
 		return 0 //item force is zero
-
-	//dismemberment
-	var/probability = I.get_dismemberment_chance(affecting)
-	if(prob(probability) || (HAS_TRAIT(H, TRAIT_EASYDISMEMBER) && prob(probability))) //try twice
-		if(affecting.dismember(I.damtype))
-			I.add_mob_blood(H)
-			playsound(get_turf(H), I.get_dismember_sound(), 80, TRUE)
 
 	var/bloody = 0
 	if(((I.damtype == BRUTE) && I.force && prob(25 + (I.force * 2))))
@@ -1713,8 +1723,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	return TRUE
 
-/datum/species/proc/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE, spread_damage = FALSE, sharpness = FALSE)
-	SEND_SIGNAL(H, COMSIG_MOB_APPLY_DAMGE, damage, damagetype, def_zone)
+/datum/species/proc/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE, attack_direction = null)
+	SEND_SIGNAL(H, COMSIG_MOB_APPLY_DAMAGE, damage, damagetype, def_zone, wound_bonus, bare_wound_bonus, sharpness, attack_direction)
 	var/hit_percent = (100-(blocked+armor))/100
 	hit_percent = (hit_percent * (100-H.physiology.damage_resistance))/100
 	if(!damage || (!forced && hit_percent <= 0))
@@ -1736,9 +1746,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			H.damageoverlaytemp = 20
 			var/damage_amount = forced ? damage : damage * hit_percent * brutemod * H.physiology.brute_mod
 			if(BP)
-				if(BP.receive_damage(damage_amount, 0, sharpness = sharpness))
+				if(BP.receive_damage(damage_amount, 0, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness, attack_direction = attack_direction))
 					H.update_damage_overlays()
-			else//no bodypart, we deal damage with a more general method.
+			else //no bodypart, we deal damage with a more general method.
 				H.adjustBruteLoss(damage_amount)
 			if(H.stat <= HARD_CRIT)
 				H.shake_animation(damage_amount)
@@ -1746,7 +1756,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			H.damageoverlaytemp = 20
 			var/damage_amount = forced ? damage : damage * hit_percent * burnmod * H.physiology.burn_mod
 			if(BP)
-				if(BP.receive_damage(0, damage_amount, sharpness = sharpness))
+				if(BP.receive_damage(0, damage_amount, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness, attack_direction = attack_direction))
 					H.update_damage_overlays()
 			else
 				H.adjustFireLoss(damage_amount)
@@ -2408,5 +2418,15 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 /datum/species/proc/get_harm_descriptors()
 	return
+
+/**
+ * The human species version of [/mob/living/carbon/proc/get_biological_state]. Depends on the HAS_FLESH and HAS_BONE species traits, having bones lets you have bone wounds, having flesh lets you have burn, slash, and piercing wounds
+ */
+/datum/species/proc/get_biological_state(mob/living/carbon/human/H)
+	. = BIO_INORGANIC
+	if(HAS_FLESH in species_traits)
+		. |= BIO_JUST_FLESH
+	if(HAS_BONE in species_traits)
+		. |= BIO_JUST_BONE
 
 #undef MINIMUM_MOLS_TO_HARM

@@ -89,3 +89,119 @@
   - bugfix: Crab Rangoon has a recipe again
   thearbiber:
   - rscadd: Adds the Roach and Flea, Ramzi vessels
+2025-07-19:
+  Erikafox:
+  - rscadd: you can now purchase duffelbags at da outpost
+  - balance: pulling a crate now slows you down
+  - rscadd: You can now use a shotgun on a door to breach through the door
+  FalloutFalcon:
+  - rscadd: The Ramzi faction has chosen to train its troops to use their left hands.
+  Gristlebee:
+  - balance: Max damage from heavy explosions to items is now 150, from 250
+  mothblocks, erika porting:
+  - admin: Added the ability to enforce two-factor authentication onto admins.
+  thearbiber:
+  - rscadd: adds the N+S hardsuit to the game and puts it on the harrier and magpie
+  - balance: removes goliath plating on hardsuits
+  thgvr:
+  - bugfix: rest of the food repathing, report any visible issues
+  - rscadd: Added organic wounds
+  - rscdel: Removed IPC structure
+  - rscadd: minor tweaks to tackle numbers
+2025-07-20:
+  Erikafox:
+  - bugfix: minute bar fluff un-regressed
+  - rscdel: random minefields
+  - rscadd: remodels the fore of the cirrus
+  - rscadd: half-stair decal
+  - bugfix: you can now map specific coffee cartridges
+  - bugfix: grass on beaches being invisible sometimes
+  Zevotech:
+  - rscadd: replaces a large amount of planetary turfs on ruins (jungle, lava, space)
+      with their updated overmap 5 counterparts. please report any atmos issues or
+      missing sprites.
+  - bugfix: fixed unset icon files for various planetary turfs
+  - bugfix: fixed large turf offset in mapping software for 70x70 planetary turfs
+      (shouldnt be player facing, needs review)
+  - bugfix: removed some decals inside walls on NT_ice & NGR_rock outposts that were
+      causing warnings
+  - rscdel: removed unused lavaland and wasteplanet grass types
+  - rscdel: removed legacy lavaland grass types
+  thearbiber:
+  - rscadd: resprites the hermit rifle and zip pistol
+  - balance: reworks the zip pistol, removes safeties off the zip pistol and hermit
+      rifle
+2025-07-21:
+  Erikafox:
+  - bugfix: holocalls now report who's calling
+2025-07-22:
+  Erikafox:
+  - balance: thronglers deal more damage but have a wound bonus based on your armor
+      and spread the damage out
+  SapphicOverload:
+  - bugfix: Fixed being able to understand sign language without knowing sign language
+  - code_imp: Refactors sign language into an actual language
+2025-07-24:
+  generalthrax:
+  - balance: Decreased amount of plasma in flooded rooms in Onehalf and added some
+      misc tweaks like blood packs
+  moffball19:
+  - rscadd: Kiwi-class Prospector, a mining vessel operated by N+S Logistics
+  - code_imp: Processing consoles now use a range distance variable to detect furnaces.
+2025-07-25:
+  thearbiber:
+  - rscadd: Various Ramzi Clique Clothing
+2025-07-26:
+  generalthrax:
+  - rscadd: Reflavoured the Mudskipper to be a Hardline vessel. Many changes including
+      new walls, decal-style, and shuffling around of equipment and machinery
+  - rscadd: Indie engineers now start with olive overalls
+  - balance: Indie engineer roles no longer start with toolbelts and insulated gloves.
+      Both of these now spawn in engineer's closets.
+2025-07-27:
+  Erikafox:
+  - rscdel: Panacea
+  - bugfix: f4 can take scope again. whoops.
+  SomeguyManperson:
+  - bugfix: you can no longer get infinite attachment slots by pretending to remove
+      existing attachments so the gun thinks it can hold more
+  generalthrax:
+  - bugfix: Invictus magazine is now in cargo
+  - balance: Shields block slightly less, have less integrity, slow you down much
+      more, and now require time and 10 plasteel to repaiar
+  - balance: Prevents most automatic guns from mounting scopes (along with a few more
+      like the E50 and Accelerator laser cannon)
+  - balance: Locks the long scope to the Illestren, lever-actions, and Beacon
+  - balance: Decreased medium scope zoom to give you only about 4 tiles of extra visibility
+  - balance: Hydra DMR can no longer mount extended or casket mags
+  melbert,  Erika (porting fox):
+  - refactor: Drunkenness is now a status effect. The drunk alert should no longer
+      persist on aheals and in some rare cases, and should overrall act a bit more
+      consistently.
+  - refactor: Dizziness is now a status effect, similar to above. You no longer should
+      be stuck with an off center client view if you get very dizzy.
+  - refactor: Refactored status effect examine text. Should overall have slightly
+      better grammar and more consistent span uses.
+  - refactor: Jitterriness is now a status effect
+  - rscdel: some contractor related cruft that i didn't want to update
+  zimon9:
+  - balance: allows bodycameras to be worn around the neck
+2025-07-28:
+  'Anticept, FalloutFalcon ':
+  - server: the build chain used in TGS has been fixed so that "#define CBS" is properly
+      prepended to shiptest.dme, and suppresses compiler warnings regarding building
+      the dme directly.
+2025-07-29:
+  SapphicOverload:
+  - bugfix: Fixed manifest and join menu UIs not updating properly
+  - bugfix: Fixed certain text characters breaking memos
+2025-07-30:
+  ? '''s are required for the changelog to work! You can put your name to the right
+    of the first :cl: if you want to overwrite your GitHub username as author ingame.
+    -->'
+  : - bugfix: armor bugfix, likely nothing player-facing
+2025-07-31:
+  generalthrax:
+  - bugfix: Onehalf's holofields are now anchored
+  thearbiber:
+  - rscadd: Venetia-class Superyacht

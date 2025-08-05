@@ -10,7 +10,7 @@
 	throwforce = 15
 	armour_penetration = 40
 	demolition_mod = 2
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	attack_cooldown = 12
@@ -67,4 +67,4 @@
 	if(HAS_TRAIT(src, TRAIT_WIELDED)) //destroys windows and grilles in one hit
 		if(istype(A, /obj/structure/window) || istype(A, /obj/structure/grille))
 			var/obj/structure/W = A
-			W.obj_destruction("axe")
+			W.atom_destruction("axe")
