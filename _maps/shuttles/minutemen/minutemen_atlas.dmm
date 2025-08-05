@@ -439,7 +439,7 @@
 /area/ship/engineering)
 "dO" = (
 /obj/machinery/atmospherics/components/unary/tank/oxygen{
-	dir = 1;
+	dir = 8;
 	layer = 3.07
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1138,6 +1138,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/closet/emcloset/wall/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "ix" = (
@@ -1792,6 +1793,7 @@
 /obj/effect/turf_decal/industrial/warning/green,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "mC" = (
@@ -2515,21 +2517,10 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/structure/closet/emcloset/wall/directional/north,
-/obj/item/clothing/head/helmet/space/eva{
-	pixel_x = 6;
-	pixel_y = 15
-	},
-/obj/item/clothing/head/helmet/space/eva{
-	pixel_x = 10;
-	pixel_y = 7
-	},
-/obj/item/clothing/suit/space/eva{
-	pixel_x = -8;
-	pixel_y = 3
-	},
-/obj/item/clothing/suit/space/eva{
-	pixel_y = -4
+/obj/machinery/suit_storage_unit/industrial{
+	suit_type = /obj/item/clothing/suit/space/eva;
+	helmet_type = /obj/item/clothing/head/helmet/space/eva;
+	mask_type = /obj/item/clothing/mask/breath
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -2772,8 +2763,8 @@
 /obj/machinery/atmospherics/components/trinary/mixer{
 	dir = 4;
 	name = "fuel mixer";
-	node1_concentration = 0.67;
-	node2_concentration = 0.33;
+	node1_concentration = 0.33;
+	node2_concentration = 0.67;
 	target_pressure = 500;
 	piping_layer = 4
 	},
@@ -3000,6 +2991,9 @@
 	},
 /obj/effect/turf_decal/corner/transparent/lime/half{
 	dir = 1
+	},
+/obj/structure/closet/secure_closet/clip/minutemen/engineer{
+	pixel_x = -6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -3594,9 +3588,9 @@
 	pixel_x = -10;
 	pixel_y = 23
 	},
-/obj/item/gun/ballistic/automatic/assault/skm/cm24{
-	pixel_x = -6;
-	pixel_y = 13
+/obj/item/gun/ballistic/automatic/assault/skm/cm24/no_mag{
+	pixel_x = -9;
+	pixel_y = 12
 	},
 /obj/item/gun/ballistic/automatic/pistol/cm23/no_mag{
 	pixel_x = -5;
@@ -5048,9 +5042,6 @@
 /obj/structure/railing/thin{
 	layer = 3.081
 	},
-/obj/structure/closet/secure_closet/clip/minutemen/engineer{
-	pixel_x = -6
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "LT" = (
@@ -5570,14 +5561,8 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
-	piping_layer = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/effect/turf_decal/industrial/warning/green/full,
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "atlas_engines_south"
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Qw" = (

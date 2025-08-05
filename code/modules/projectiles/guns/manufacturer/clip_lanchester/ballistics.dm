@@ -543,7 +543,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	fire_select_icon_state_prefix = "clip_"
 	adjust_fire_select_icon_state_on_safety = TRUE
 
-NO_MAG_GUN_HELPER(automatic/assault/skm/cm24/no_mag)
+NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 
 /obj/item/gun/ballistic/automatic/hmg/cm40
 	name = "\improper CM-40"
