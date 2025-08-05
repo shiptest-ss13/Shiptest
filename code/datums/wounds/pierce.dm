@@ -126,7 +126,7 @@
 		if(12 to 30)
 			if(severity < WOUND_SEVERITY_SEVERE)
 				qdel(src)
-	blood_flow -= 0.05 * power'
+	blood_flow -= 0.05 * power
 
 /// If someone is using a suture to close this puncture
 /datum/wound/pierce/proc/suture(obj/item/stack/medical/suture/I, mob/user)

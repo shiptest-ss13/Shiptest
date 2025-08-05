@@ -161,7 +161,7 @@
 		if(12 to 30)
 			if(severity < WOUND_SEVERITY_SEVERE)
 				qdel(src)
-	blood_flow -= 0.05 * power'
+	blood_flow -= 0.05 * power
 
 /// If someone's putting a laser gun up to our cut to cauterize it
 /datum/wound/slash/proc/las_cauterize(obj/item/gun/energy/laser/lasgun, mob/user)
