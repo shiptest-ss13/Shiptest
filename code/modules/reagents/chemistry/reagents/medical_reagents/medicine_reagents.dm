@@ -174,13 +174,14 @@
 			if(!HAS_TRAIT(M, TRAIT_ANALGESIA))
 				to_chat(M, span_warning("Your body ignites in pain as nerves are rapidly reformed, and flesh is freshly knit!"))
 				M.force_scream()
-			for(var/datum/wound/paper_cut in paper_cut_victim.all_wounds)
+			for(var/owie in paper_cut_victim.all_wounds)
+				var/datum/wound/paper_cut = i
 				paper_cut.on_silfrine(reac_volume)
 	..()
 
 /datum/reagent/medicine/silfrine/on_mob_life(mob/living/carbon/M)
 	var/effectiveness_multiplier = clamp(M.bruteloss/100, 0.2, 1.5)
-	var/brute_heal = effectiveness_multiplier * REM * 3
+	var/brute_heal = effectiveness_multiplier * REM * -3
 	M.adjustBruteLoss(brute_heal, 0)
 	..()
 	. = 1
@@ -250,7 +251,8 @@
 		M.force_scream()
 		if(iscarbon(M) && M.stat != DEAD)
 			var/mob/living/carbon/burn_ward_attendee = M
-			for(var/datum/wound/burn in burn_ward_attendee.all_wounds)
+			for(var/owie in burn_ward_attendee.all_wounds)
+				var/datum/wound/burn = i
 				burn.on_tane(reac_volume/4)
 		if(show_message && !HAS_TRAIT(M, TRAIT_ANALGESIA))
 			to_chat(M, span_danger("You feel your burns regenerating! Your nerves are burning!"))
@@ -314,7 +316,8 @@
 
 	if(iscarbon(M) && M.stat != DEAD && (method in list(VAPOR, INJECT, TOUCH)))
 		var/mob/living/carbon/burn_ward_attendee = M
-		for(var/datum/wound/burn in burn_ward_attendee.all_wounds)
+		for(var/owie in burn_ward_attendee.all_wounds)
+			var/datum/wound/burn = i
 			burn.on_tane(reac_volume/2)
 
 	..()
@@ -349,7 +352,8 @@
 
 		if(iscarbon(M) && M.stat != DEAD)
 			var/mob/living/carbon/burn_ward_attendee = M
-			for(var/datum/wound/burn in burn_ward_attendee.all_wounds)
+			for(var/owie in burn_ward_attendee.all_wounds)
+				var/datum/wound/burn = i
 				burn.on_tane(reac_volume)
 
 	..()
