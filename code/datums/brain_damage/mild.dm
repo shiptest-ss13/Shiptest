@@ -71,7 +71,7 @@
 			if(1)
 				owner.vomit()
 			if(2,3)
-				owner.dizziness += 10
+				owner.adjust_timed_status_effect(20 SECONDS, /datum/status_effect/dizziness)
 			if(4,5)
 				owner.confused += 10
 				owner.blur_eyes(10)
@@ -168,6 +168,9 @@
 		owner.emote("cough")
 	..()
 
+///Commented out until I make it a status effect (probably next week)
+/*
+
 /datum/brain_trauma/mild/monoxide_poisoning_stage1
 	name = "Stage 1 Carbon Monoxide Poisoning"
 	desc = "Due to overexposure to carbon monoxide, patient's mental facilities are degrading.."
@@ -255,7 +258,7 @@
 			if(1)
 				owner.vomit()
 			if(2,3)
-				owner.dizziness += 10
+				owner.owner.adjust_timed_status_effect(20 SECONDS, /datum/status_effect/dizziness)
 			if(4,5)
 				owner.confused += 10
 				owner.blur_eyes(10)
@@ -269,3 +272,4 @@
 				owner.Unconscious(80)
 
 	..()
+*/

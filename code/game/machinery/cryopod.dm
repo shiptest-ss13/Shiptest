@@ -346,7 +346,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 			qdel(G)
 
 	var/datum/overmap/ship/controlled/original_ship = mob_occupant.mind.original_ship.resolve()
-	original_ship.manifest -= mob_occupant.real_name
+	original_ship.manifest_remove(mob_occupant)
 
 	var/obj/machinery/computer/cryopod/control_computer_obj = control_computer?.resolve()
 
