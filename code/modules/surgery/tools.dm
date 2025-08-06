@@ -406,7 +406,7 @@
 	playsound(get_turf(patient), 'sound/items/ratchet.ogg', 20, TRUE)
 	if(patient.stat >= UNCONSCIOUS || patient.IsStun()) //Stun is used by paralytics like curare it should not be confused with the more common paralyze.
 		amputation_speed_mod = 0.5
-	else if(patient.jitteriness >= 1)
+	else if(patient.has_status_effect(/datum/status_effect/jitter))
 		amputation_speed_mod = 1.5
 	else
 		amputation_speed_mod = 1

@@ -54,13 +54,19 @@
 	cost = 300
 	faction = /datum/faction/srm
 
-/datum/supply_pack/magazine/firestorm_mag
+/datum/supply_pack/magazine/firestorm_pan_mag
 	name = "Firestorm Pan Magazine Crate"
 	desc = "Contains a 40-round pan magazine for the Hunter's Pride Firestorm SMG."
 	contains = list(/obj/item/ammo_box/magazine/c44_firestorm_mag/pan/empty)
 	cost = 1000
 	faction = /datum/faction/srm
 
+/datum/supply_pack/magazine/invictus_mag
+	name = "Invictus Magazine Crate"
+	desc = "Contains a 20-round magazine for the Hunter's Pride Invictus Automatic Rifle."
+	contains = list(/obj/item/ammo_box/magazine/invictus_308_mag)
+	cost = 300
+	faction = /datum/faction/srm
 
 /* Serene Sporting */
 

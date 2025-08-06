@@ -1078,11 +1078,18 @@
 	id = "cwin8";
 	name = "shutter control"
 	},
+/obj/machinery/newscaster/directional/east{
+	pixel_y = -3
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/hallway/aft)
 "fR" = (
 /turf/template_noop,
 /area/template_noop)
+"gd" = (
+/obj/structure/falsewall/titanium,
+/turf/open/floor/plasteel/tech,
+/area/ship/crew/dorm/commad)
 "gh" = (
 /obj/machinery/vending/coffee,
 /obj/machinery/firealarm/directional/north,
@@ -1713,7 +1720,6 @@
 	name = "hypospray crate"
 	},
 /obj/item/storage/box/hypospray/mkiii,
-/obj/item/storage/box/hypospray/mkiii,
 /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/stasis{
 	pixel_x = 6;
 	pixel_y = -6
@@ -2256,6 +2262,7 @@
 "oN" = (
 /obj/structure/chair/bench/blue/directional/east,
 /obj/item/radio/intercom/directional/west,
+/obj/machinery/newscaster/directional/south,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/hallway/aft)
 "oT" = (
@@ -2312,6 +2319,7 @@
 	pixel_y = 12;
 	pixel_x = 13
 	},
+/obj/machinery/newscaster/directional/east,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
 "pm" = (
@@ -2622,8 +2630,8 @@
 /obj/structure/chair/handrail{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer2,
 /turf/open/floor/plasteel/patterned/grid{
 	color = "#777777"
 	},
@@ -2976,6 +2984,13 @@
 /obj/effect/turf_decal/siding/wood/end{
 	color = "#E6D2BA";
 	dir = 4
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_y = -10;
+	pixel_x = 22;
+	name = "shutter control";
+	id = "cnwin3"
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/dorm/commad)
@@ -3663,9 +3678,7 @@
 "Dg" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8;
-	name = "grav couch";
-	pixel_x = -1;
-	pixel_y = 4
+	name = "grav couch"
 	},
 /obj/effect/turf_decal/trimline/transparent/syndiered/line{
 	dir = 9
@@ -3940,6 +3953,10 @@
 	dir = 4;
 	pixel_y = 15;
 	pixel_x = -14
+	},
+/obj/item/disk/surgery/cybersun{
+	pixel_x = 5;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical/surgery)
@@ -4487,28 +4504,27 @@
 	dir = 10
 	},
 /obj/structure/closet/wall/red/directional/north,
-/obj/item/storage/box/ammo/c9mm_ap{
-	pixel_y = 11;
-	pixel_x = -6
-	},
-/obj/item/storage/box/ammo/c9mm_ap{
-	pixel_y = 11;
-	pixel_x = 6
-	},
-/obj/item/storage/box/ammo/c9mm_ap{
-	pixel_y = 11
-	},
-/obj/item/storage/guncase/pistol/rattlesnake,
 /obj/structure/cable/cyan{
 	icon_state = "2-8"
 	},
-/obj/item/storage/box/ammo/c9mm_rubber{
-	pixel_x = 6;
-	pixel_y = -7
+/obj/item/storage/box/ammo/c10mm_ap{
+	pixel_x = -6;
+	pixel_y = 1
 	},
-/obj/item/storage/box/ammo/c9mm_rubber{
-	pixel_x = -7;
-	pixel_y = -7
+/obj/item/storage/box/ammo/c10mm_ap{
+	pixel_x = 7;
+	pixel_y = 1
+	},
+/obj/item/storage/box/ammo/c10mm_rubber{
+	pixel_y = -7;
+	pixel_x = -6
+	},
+/obj/item/storage/box/ammo/c10mm_rubber{
+	pixel_y = -7;
+	pixel_x = 7
+	},
+/obj/item/storage/guncase/c20r{
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/storage/equip)
@@ -5232,6 +5248,10 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/item/radio/intercom/directional/east,
 /obj/machinery/airalarm/directional/north,
+/obj/item/disk/surgery/t2{
+	pixel_x = -5;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical/surgery)
 "Qp" = (
@@ -5624,6 +5644,7 @@
 	color = "#E6D2BA";
 	dir = 1
 	},
+/obj/machinery/newscaster/directional/south,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "Ub" = (
@@ -5758,9 +5779,9 @@
 /area/ship/storage/equip)
 "UX" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/item/radio/intercom/directional/west,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer2,
 /turf/open/floor/plasteel/patterned/grid{
 	color = "#777777"
 	},
@@ -5822,6 +5843,7 @@
 	name = "shutter control";
 	id = "cnwin1"
 	},
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm)
 "Vt" = (
@@ -5851,25 +5873,24 @@
 	dir = 6
 	},
 /obj/structure/closet/wall/red/directional/north,
-/obj/item/storage/box/ammo/c9mm_ap{
-	pixel_y = 11;
+/obj/item/storage/box/ammo/c10mm_ap{
+	pixel_x = -6;
+	pixel_y = 1
+	},
+/obj/item/storage/box/ammo/c10mm_ap{
+	pixel_x = 7;
+	pixel_y = 1
+	},
+/obj/item/storage/box/ammo/c10mm_rubber{
+	pixel_y = -7;
 	pixel_x = -6
 	},
-/obj/item/storage/box/ammo/c9mm_ap{
-	pixel_y = 11;
-	pixel_x = 6
+/obj/item/storage/box/ammo/c10mm_rubber{
+	pixel_y = -7;
+	pixel_x = 7
 	},
-/obj/item/storage/box/ammo/c9mm_ap{
-	pixel_y = 11
-	},
-/obj/item/storage/guncase/pistol/rattlesnake,
-/obj/item/storage/box/ammo/c9mm_rubber{
-	pixel_x = -7;
-	pixel_y = -7
-	},
-/obj/item/storage/box/ammo/c9mm_rubber{
-	pixel_x = 6;
-	pixel_y = -7
+/obj/item/storage/guncase/c20r{
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/storage/equip)
@@ -7281,7 +7302,7 @@ VD
 Cw
 Lm
 Lm
-Lm
+gd
 Lm
 QB
 fR
