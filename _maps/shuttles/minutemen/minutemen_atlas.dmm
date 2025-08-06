@@ -2828,12 +2828,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "ts" = (
-/obj/effect/turf_decal/corner/transparent/lime/full,
 /obj/machinery/light/directional/west,
-/obj/structure/table/reinforced,
-/obj/machinery/cell_charger{
-	pixel_y = 9
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "tB" = (
@@ -6080,6 +6075,9 @@
 "Sz" = (
 /obj/effect/turf_decal/corner/transparent/lime/full,
 /obj/structure/table/reinforced,
+/obj/machinery/cell_charger{
+	pixel_y = 9
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "SG" = (
