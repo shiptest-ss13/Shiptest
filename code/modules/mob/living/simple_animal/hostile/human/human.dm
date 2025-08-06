@@ -64,8 +64,7 @@
 					/datum/species/ipc = 20,
 					/datum/species/elzuose = 20,
 					/datum/species/moth = 5,
-					/datum/species/spider = 3,
-					/datum/species/vox = 2
+					/datum/species/spider = 3
 				)
 			)
 		apply_dynamic_human_appearance(src, species_path = mob_species, mob_spawn_path = mob_spawner, r_hand = r_hand, l_hand = l_hand, seed = rand(1,3))
