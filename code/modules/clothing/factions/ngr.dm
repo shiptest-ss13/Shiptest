@@ -18,6 +18,8 @@
 	icon_state = "ngr_fatigues"
 	item_state = "ngr_fatigues"
 
+	roll_down = TRUE
+
 /obj/item/clothing/under/syndicate/ngr/jumpsuit
 	name = "\improper NGR jumpsuit"
 	desc = "A beige jumpsuit with black overalls used by wreckers of the New Gorlex Republic. A reminder of Gorlex VII's history as a mining colony, prior to its destruction."
