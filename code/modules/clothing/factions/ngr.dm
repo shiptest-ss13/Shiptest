@@ -38,7 +38,7 @@
 	item_state = "ngr_officer"
 	supports_variations = DIGITIGRADE_VARIATION
 
-roll_sleeves = TRUE
+	roll_sleeves = TRUE
 
 /obj/item/clothing/under/plasmaman/ngr
 	name = "\improper NGR phorid envirosuit"
