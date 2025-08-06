@@ -168,6 +168,11 @@
 	item_state = "armor_correspondant"
 	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION_SAME_ICON_FILE
 
+/obj/item/clothing/suit/armor/vest/clip_correspondent/Initialize()
+	. = ..()
+	if(allowed)
+		allowed += list(/obj/item/bodycamera/broadcast_camera) // i mean. come on
+
 //spacesuits
 /obj/item/clothing/suit/space/hardsuit/clip_patroller
 	name = "\improper CM-410 'Patroller' EVA Hardsuit"

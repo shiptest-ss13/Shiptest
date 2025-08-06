@@ -2,6 +2,21 @@
 	name = "CLIP storage"
 	desc = "dont use this type stinky"
 
+/obj/structure/closet/secure_closet/clip/minutemen/armor
+	name = "minuteman personal equipment locker"
+	desc = "A locker to safeguard your armor and vests."
+	req_access = list(ACCESS_ARMORY)
+	var/armor_sets = 5
+
+/obj/structure/closet/secure_closet/clip/minutemen/armor/PopulateContents()
+	. = ..()
+	for(var/i in 1 to armor_sets)
+		new /obj/item/clothing/head/helmet/bulletproof/x11/clip(src)
+		new /obj/item/clothing/suit/armor/vest/bulletproof(src)
+		new /obj/item/clothing/mask/gas/clip(src)
+		new /obj/item/storage/belt/military/clip(src)
+	return
+
 /obj/structure/closet/secure_closet/clip/minutemen/captain
 	name = "captain locker"
 	desc = "This locker contains all (most of what) a cunning captain needs for day to day leadership."
