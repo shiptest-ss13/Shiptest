@@ -294,7 +294,6 @@
 	courierbag = /obj/item/storage/backpack/satchel/sec/clip
 
 	box = /obj/item/storage/box/survival/clip/minutemen
-	wallet = null // bring your own
 
 /datum/outfit/job/clip/minutemen/deckhand
 	name = "CLIP Minutemen - Deckhand"

@@ -553,6 +553,7 @@
 	pixel_x = -19;
 	pixel_y = 13
 	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
 "eD" = (
@@ -3213,6 +3214,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "xm" = (
@@ -4582,6 +4586,9 @@
 /obj/effect/turf_decal/siding/thinplating/corner,
 /obj/effect/turf_decal/siding/thinplating/corner{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
@@ -6309,6 +6316,9 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/corner{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
