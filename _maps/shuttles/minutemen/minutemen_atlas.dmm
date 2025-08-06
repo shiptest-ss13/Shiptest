@@ -138,7 +138,6 @@
 /area/ship/cargo)
 "bj" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "bk" = (
@@ -354,7 +353,6 @@
 /obj/effect/turf_decal/corner/transparent/lime/half{
 	dir = 4
 	},
-/obj/structure/chair/office,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "cE" = (
@@ -2329,6 +2327,7 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/west,
+/obj/structure/tank_dispenser,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "pU" = (
@@ -2830,15 +2829,11 @@
 /area/ship/hallway/central)
 "ts" = (
 /obj/effect/turf_decal/corner/transparent/lime/full,
-/obj/structure/rack,
-/obj/item/stack/sheet/metal/twenty{
-	pixel_x = -5;
+/obj/machinery/light/directional/west,
+/obj/structure/table/reinforced,
+/obj/machinery/cell_charger{
 	pixel_y = 9
 	},
-/obj/item/stack/sheet/glass/twenty{
-	pixel_x = 5
-	},
-/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "tB" = (
@@ -3098,14 +3093,18 @@
 	dir = 6
 	},
 /obj/effect/turf_decal/corner/transparent/lime/full,
-/obj/structure/rack,
-/obj/item/storage/toolbox/mechanical{
-	pixel_x = -3;
-	pixel_y = 9
+/obj/structure/table/reinforced,
+/obj/item/flashlight/lamp{
+	pixel_x = 4;
+	pixel_y = 5
 	},
-/obj/item/storage/toolbox/electrical{
-	pixel_x = 3;
-	pixel_y = 2
+/obj/item/paper_bin{
+	pixel_y = 5;
+	pixel_x = -11
+	},
+/obj/item/pen{
+	pixel_x = -11;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -5631,6 +5630,7 @@
 /area/ship/crew/toilet)
 "Oo" = (
 /obj/effect/turf_decal/industrial/caution,
+/obj/structure/chair/office,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Ot" = (
@@ -5864,9 +5864,13 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
 	},
-/obj/structure/table/reinforced,
-/obj/machinery/cell_charger{
+/obj/structure/rack,
+/obj/item/stack/sheet/metal/twenty{
+	pixel_x = -5;
 	pixel_y = 9
+	},
+/obj/item/stack/sheet/glass/twenty{
+	pixel_x = 5
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -6075,7 +6079,7 @@
 /area/ship/crew/dorm/commad)
 "Sz" = (
 /obj/effect/turf_decal/corner/transparent/lime/full,
-/obj/structure/tank_dispenser,
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "SG" = (
@@ -6541,18 +6545,14 @@
 /obj/effect/turf_decal/corner/transparent/lime/half{
 	dir = 4
 	},
-/obj/structure/table/reinforced,
-/obj/item/paper_bin{
-	pixel_y = 5;
-	pixel_x = -11
+/obj/structure/rack,
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = -3;
+	pixel_y = 9
 	},
-/obj/item/pen{
-	pixel_x = -11;
-	pixel_y = 5
-	},
-/obj/item/flashlight/lamp{
-	pixel_x = 4;
-	pixel_y = 5
+/obj/item/storage/toolbox/electrical{
+	pixel_x = 3;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -6668,10 +6668,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
-"XK" = (
-/obj/machinery/light/directional/north,
-/turf/template_noop,
-/area/template_noop)
 "XT" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -7292,7 +7288,7 @@ HW
 ps
 "}
 (15,1,1) = {"
-XK
+ps
 gT
 fL
 Ze
