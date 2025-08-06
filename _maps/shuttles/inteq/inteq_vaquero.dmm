@@ -529,6 +529,9 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
+"eT" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/crew)
 "fc" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/warning,
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
@@ -1728,6 +1731,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"mU" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/security)
 "mY" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -2204,6 +2210,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
+"sl" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/hallway/starboard)
 "sm" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 4
@@ -2816,6 +2825,9 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
+"xO" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/medical)
 "xV" = (
 /obj/structure/tank_dispenser/oxygen,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -3333,6 +3345,9 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
+"Cw" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/cargo)
 "CA" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -3479,6 +3494,9 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"Dn" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/crew/crewtwo)
 "Ds" = (
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -3725,6 +3743,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
+"Ft" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/security/armory)
 "Fu" = (
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	dir = 4;
@@ -5826,6 +5847,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
+"XU" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/crew/cryo)
 "XW" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -6415,7 +6439,7 @@ ww
 ww
 "}
 (12,1,1) = {"
-Gq
+eT
 Gq
 Gq
 Gq
@@ -6436,7 +6460,7 @@ bz
 bz
 bz
 bz
-bz
+XU
 "}
 (13,1,1) = {"
 gl
@@ -6607,7 +6631,7 @@ Oe
 DT
 "}
 (20,1,1) = {"
-GI
+Dn
 GI
 GI
 Eh
@@ -6628,7 +6652,7 @@ te
 te
 vo
 vo
-vo
+sl
 "}
 (21,1,1) = {"
 ww
@@ -6778,7 +6802,7 @@ ww
 ww
 ww
 ww
-Eh
+Cw
 lo
 lo
 ko
@@ -6793,7 +6817,7 @@ zY
 zY
 ZF
 zY
-te
+mU
 ww
 ww
 ww
@@ -6875,7 +6899,7 @@ ww
 ww
 ww
 ww
-lo
+xO
 lo
 lo
 lo
@@ -6888,7 +6912,7 @@ ww
 UL
 zY
 zY
-zY
+Ft
 ww
 ww
 ww
