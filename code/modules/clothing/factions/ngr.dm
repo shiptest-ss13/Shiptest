@@ -21,6 +21,7 @@
 	item_state = "ngr_fatigues"
 
 	roll_down = TRUE
+	roll_sleeves = FALSE
 
 /obj/item/clothing/under/syndicate/ngr/jumpsuit
 	name = "\improper NGR jumpsuit"
