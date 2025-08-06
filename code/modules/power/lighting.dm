@@ -346,15 +346,15 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 
 /obj/machinery/light/LateInitialize()
 	. = ..()
-	var/turf/T = get_turf(src.loc)
+	var/area/A = get_area(src.loc)
 	switch(fitting)
 		if("tube")
 			brightness = 8
-			if(prob(2) && T.ran_light_breakage)
+			if(prob(2) && !(A.area_flags & NO_RANDOM_LIGHT_BREAKAGE))
 				break_light_tube(1)
 		if("bulb")
 			brightness = 4
-			if(prob(5) && T.ran_light_breakage)
+			if(prob(5) && !(A.area_flags & NO_RANDOM_LIGHT_BREAKAGE))
 				break_light_tube(1)
 	addtimer(CALLBACK(src, PROC_REF(update), 0), 1)
 
