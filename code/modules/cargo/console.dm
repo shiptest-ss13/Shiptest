@@ -15,6 +15,8 @@
 	/// The ship we reside on for ease of access
 	var/datum/overmap/ship/controlled/current_ship
 	var/datum/faction/current_faction
+	/// The outpost we're docked to, FALSE if we aren't docked to an outpost
+	var/datum/overmap/outpost/outpost_docked
 
 	var/contraband = FALSE
 	var/self_paid = FALSE
@@ -64,6 +66,9 @@
 	if(current_ship)
 		current_faction = current_ship.source_template.faction
 		charge_account = current_ship.ship_account
+		outpost_docked = current_ship.docked_to
+		if (!istype(outpost_docked))
+			outpost_docked = FALSE
 
 /obj/machinery/computer/cargo/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -75,7 +80,6 @@
 
 /obj/machinery/computer/cargo/ui_static_data(mob/user)
 	. = ..()
-	var/outpost_docked = istype(current_ship.docked_to, /datum/overmap/outpost)
 	if(outpost_docked)
 		generate_pack_data()
 	else
@@ -83,8 +87,6 @@
 
 /obj/machinery/computer/cargo/ui_data(mob/user)
 	var/list/data = list()
-
-	var/outpost_docked = istype(current_ship.docked_to, /datum/overmap/outpost)
 
 	data["onShip"] = !isnull(current_ship)
 	data["shipFaction"] = current_ship.source_template.faction.name
@@ -94,8 +96,10 @@
 	data["points"] = charge_account ? charge_account.account_balance : 0
 	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access(user)
 	message = "Purchases will be delivered to your hangar's delivery zone."
-	if(SSshuttle.supplyBlocked)
+	data["blockade"] = FALSE
+	if(outpost_docked && outpost_docked.market.supply_blocked)
 		message = blockade_warning
+		data["blockade"] = TRUE
 	data["message"] = message
 	data["supplies"] = supply_pack_data
 
@@ -136,6 +140,10 @@
 			var/total_cost = text2num(params["total"])
 			var/datum/overmap/outpost/current_outpost = current_ship.docked_to
 			if(!istype(current_ship.docked_to) || purchasing.len == 0)
+				return
+
+			if(outpost_docked && outpost_docked.market.supply_blocked)
+				say("Outpost cargo unavailable!")
 				return
 
 			if(!charge_account.adjust_money(-total_cost, CREDIT_LOG_CARGO))
