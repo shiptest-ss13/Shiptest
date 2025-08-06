@@ -176,7 +176,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "bx" = (
-/obj/machinery/door/firedoor,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -188,15 +187,24 @@
 /obj/effect/turf_decal/siding/thinplating/corner{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
 "bC" = (
 /obj/effect/turf_decal/corner/transparent/blue/full,
-/obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/medical{
 	name = "Infirmary"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "bF" = (
@@ -453,7 +461,6 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
 	},
-/obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/research{
 	name = "Cargo Bay"
 	},
@@ -461,6 +468,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "dX" = (
@@ -1255,11 +1266,16 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/white/half,
-/obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/grunge{
 	dir = 4;
 	name = "Restroom";
 	id_tag = "atlas_bathroom"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/dorm/commad)
@@ -1539,7 +1555,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 8
 	},
-/obj/machinery/door/firedoor,
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -1559,6 +1574,12 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/corner{
 	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -1611,7 +1632,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 8
 	},
-/obj/machinery/door/firedoor,
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 4
 	},
@@ -1633,6 +1653,12 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/corner{
 	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -1889,7 +1915,6 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
 "mO" = (
-/obj/machinery/door/firedoor,
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -1904,6 +1929,12 @@
 	dir = 4;
 	name = "Officer Quarters";
 	req_access = list(19)
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/dorm/commad)
@@ -2943,7 +2974,6 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
 "vT" = (
-/obj/machinery/door/firedoor,
 /obj/effect/turf_decal/corner/opaque/white/bordercorner,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -2957,6 +2987,12 @@
 /obj/machinery/door/airlock/grunge{
 	dir = 4;
 	name = "Office"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/office)
@@ -3289,7 +3325,6 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "xZ" = (
-/obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
@@ -3302,6 +3337,10 @@
 /obj/effect/turf_decal/siding/thinplating/corner,
 /obj/effect/turf_decal/siding/thinplating/corner{
 	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
@@ -3464,11 +3503,14 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
 	},
-/obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/research{
 	name = "Cargo Bay"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "zl" = (
@@ -5455,13 +5497,16 @@
 /area/ship/crew/toilet)
 "PK" = (
 /obj/effect/turf_decal/corner/transparent/blue/full,
-/obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/medical{
 	name = "Infirmary"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -5868,7 +5913,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Ti" = (
-/obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -5886,6 +5930,12 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 8;
 	id = "atlas_bridgelockdown"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -6305,7 +6355,6 @@
 /obj/effect/turf_decal/corner/opaque/white/half{
 	dir = 1
 	},
-/obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/grunge{
 	name = "Head"
 	},
@@ -6320,6 +6369,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
 "Xg" = (
