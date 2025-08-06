@@ -726,6 +726,7 @@
 /datum/sprite_accessory/hair/twintailslong
 	name = "Twintails (Long)"
 	icon_state = "hair_twintaillong"
+
 /datum/sprite_accessory/hair/ruby
 	name = "Ruby"
 	icon_state = "hair_ruby"
