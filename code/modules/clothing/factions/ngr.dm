@@ -10,6 +10,8 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	icon = 'icons/obj/clothing/faction/ngr/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/uniforms.dmi'
+
+	roll_sleeves = TRUE
 	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/syndicate/ngr/fatigues
@@ -26,12 +28,16 @@
 	icon_state = "ngr_jumpsuit"
 	item_state = "ngr_jumpsuit"
 
+	roll_sleeves = TRUE
+
 /obj/item/clothing/under/syndicate/ngr/officer
 	name = "\improper NGR officer uniform"
 	desc = "A button-up in a tasteful black with beige pants, used by officers of the New Gorlex Republic."
 	icon_state = "ngr_officer"
 	item_state = "ngr_officer"
 	supports_variations = DIGITIGRADE_VARIATION
+
+roll_sleeves = TRUE
 
 /obj/item/clothing/under/plasmaman/ngr
 	name = "\improper NGR phorid envirosuit"
