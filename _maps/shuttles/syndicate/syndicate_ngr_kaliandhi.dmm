@@ -541,7 +541,7 @@
 "cP" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/lattice{
-	icon_state = "lattice-10"
+	icon_state = "lattice-13"
 	},
 /turf/open/floor/plating,
 /area/ship/external/dark)
@@ -694,7 +694,7 @@
 /obj/structure/lattice{
 	icon_state = "lattice-5"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/external/dark)
 "dY" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible/layer2{
@@ -1583,7 +1583,10 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "iV" = (
-/obj/structure/lattice/catwalk,
+/obj/docking_port/stationary{
+	dir = 4;
+	name = "Karst Docking Gantry"
+	},
 /turf/open/floor/plating,
 /area/ship/external/dark)
 "iZ" = (
@@ -2035,7 +2038,7 @@
 "kS" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/lattice{
-	icon_state = "lattice-14"
+	icon_state = "lattice-13"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
@@ -2044,7 +2047,7 @@
 /obj/structure/lattice{
 	icon_state = "lattice-9"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/external/dark)
 "lb" = (
 /obj/effect/turf_decal/corner_steel_grid/diagonal,
@@ -2357,20 +2360,15 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "mU" = (
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/structure/grille,
-/obj/machinery/door/poddoor/shutters{
-	id = "kali_lounge_shut"
-	},
-/turf/open/floor/plating,
-/area/ship/crew/ccommons)
-"mY" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/lattice{
-	icon_state = "lattice-13"
+	icon_state = "lattice-10"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/external/dark)
+"mY" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/hallway/central)
 "nd" = (
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -3052,6 +3050,10 @@
 /obj/structure/window/reinforced/tinted{
 	dir = 4
 	},
+/obj/item/instrument/piano_synth/headphones{
+	pixel_x = 1;
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "qH" = (
@@ -3211,12 +3213,24 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/port)
 "rH" = (
-/obj/docking_port/stationary{
-	dir = 4;
-	name = "Karst Docking Gantry"
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
-/turf/open/floor/plating,
-/area/ship/external/dark)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 1
+	},
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/central)
 "rJ" = (
 /obj/structure/sign/poster/contraband/engis_unite,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -3673,25 +3687,8 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "tE" = (
-/obj/effect/turf_decal/industrial/outline{
-	color = "#791500"
-	},
-/obj/item/storage/backpack,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/under/syndicate/ngr,
-/obj/item/clothing/suit/hooded/wintercoat/security/ngr,
-/obj/item/clothing/gloves/color/black,
-/obj/item/clothing/mask/balaclava/ngr,
-/obj/item/clothing/mask/breath/ngr,
-/obj/item/clothing/neck/shemagh/ngr,
-/obj/item/clothing/head/ngr/flap,
-/obj/item/clothing/head/ngr,
-/obj/effect/turf_decal/corner/opaque/beige/mono,
-/obj/structure/closet/wall/red/directional/east{
-	name = "Operative's Locker"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/security)
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering/atmospherics)
 "tL" = (
 /obj/effect/turf_decal/industrial/outline{
 	color = "#791500"
@@ -4351,12 +4348,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "xh" = (
-/obj/machinery/porta_turret/ship/ngr{
-	id = "kali_grid";
-	dir = 5
+/obj/structure/lattice/catwalk,
+/obj/structure/lattice{
+	icon_state = "lattice-9"
 	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew/dorm/captain)
+/turf/open/floor/plating/airless,
+/area/ship/external/dark)
 "xn" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5076,16 +5073,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/item/reagent_containers/food/drinks/waterbottle{
-	list_reagents = null;
-	pixel_x = 5;
-	pixel_y = 1
-	},
 /obj/structure/noticeboard{
 	dir = 1;
 	pixel_y = -25
 	},
-/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "BB" = (
@@ -5144,8 +5135,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hangar)
 "BP" = (
-/turf/template_noop,
-/area/template_noop)
+/obj/structure/lattice/catwalk,
+/obj/structure/lattice{
+	icon_state = "lattice-14"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external/dark)
 "BT" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -5274,12 +5269,8 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "CN" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/lattice{
-	icon_state = "lattice-5"
-	},
-/turf/open/floor/plating,
-/area/ship/external/dark)
+/turf/template_noop,
+/area/template_noop)
 "CO" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -5337,7 +5328,24 @@
 /turf/open/floor/plasteel,
 /area/ship/storage/port)
 "CU" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_cw{
+	dir = 1;
+	pixel_y = -1
+	},
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "CV" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -5946,24 +5954,9 @@
 /turf/open/floor/carpet/red_gold,
 /area/ship/storage/port)
 "Gf" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 5
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/line{
-	dir = 1
-	},
-/obj/machinery/light/dim/directional/north,
-/turf/open/floor/plasteel/tech,
-/area/ship/hallway/central)
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating,
+/area/ship/external/dark)
 "Gj" = (
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/structure/cable{
@@ -5987,6 +5980,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
+	},
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_x = 0;
+	pixel_y = -25
 	},
 /turf/open/floor/carpet/red,
 /area/ship/crew/ccommons)
@@ -6163,13 +6160,12 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "HE" = (
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 10
+/obj/machinery/porta_turret/ship/ngr{
+	id = "kali_grid";
+	dir = 5
 	},
-/obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_cw,
-/obj/machinery/light/directional/south,
-/turf/open/floor/plasteel/tech,
-/area/ship/hallway/aft)
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/dorm/captain)
 "HP" = (
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -7018,12 +7014,13 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
 "MP" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/lattice{
-	icon_state = "lattice-13"
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
 	},
-/turf/open/floor/plating,
-/area/ship/external/dark)
+/obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_cw,
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/aft)
 "MQ" = (
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -7680,17 +7677,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
 "PV" = (
-/obj/effect/turf_decal/corner/opaque/beige/mono,
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 6
+/obj/structure/lattice/catwalk,
+/obj/structure/lattice{
+	icon_state = "lattice-5"
 	},
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 19;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/canteen)
+/turf/open/floor/plating/airless,
+/area/ship/external/dark)
 "PW" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -7840,8 +7832,17 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "QB" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering/atmospherics)
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 19;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/canteen)
 "QC" = (
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -8097,25 +8098,25 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/toilet/two)
 "RW" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
+/obj/effect/turf_decal/industrial/outline{
+	color = "#791500"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
+/obj/item/storage/backpack,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/under/syndicate/ngr,
+/obj/item/clothing/suit/hooded/wintercoat/security/ngr,
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/mask/balaclava/ngr,
+/obj/item/clothing/mask/breath/ngr,
+/obj/item/clothing/neck/shemagh/ngr,
+/obj/item/clothing/head/ngr/flap,
+/obj/item/clothing/head/ngr,
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/structure/closet/wall/red/directional/east{
+	name = "Operative's Locker"
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 5
-	},
-/obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_cw{
-	dir = 1;
-	pixel_y = -1
-	},
-/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/tech,
-/area/ship/hallway/central)
+/area/ship/security)
 "RX" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 6
@@ -8767,6 +8768,12 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	list_reagents = null;
+	pixel_x = 5;
+	pixel_y = 1
+	},
+/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "VI" = (
@@ -8984,12 +8991,13 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "WE" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/lattice{
-	icon_state = "lattice-9"
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "kali_lounge_shut"
 	},
 /turf/open/floor/plating,
-/area/ship/external/dark)
+/area/ship/crew/ccommons)
 "WO" = (
 /obj/machinery/computer/helm/viewscreen/directional/west,
 /obj/item/flashlight/lamp{
@@ -9709,41 +9717,41 @@
 /area/ship/storage/port)
 
 (1,1,1) = {"
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 lz
-BP
-BP
-BP
+CN
+CN
+CN
 fo
 gS
 fo
 gS
 fo
-BP
-BP
-BP
+CN
+CN
+CN
 fo
 gS
 fo
 gS
 fo
-BP
-BP
-BP
+CN
+CN
+CN
 lz
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 "}
 (2,1,1) = {"
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 fo
 lv
 fo
@@ -9753,9 +9761,9 @@ fT
 fo
 fT
 fo
-BP
-BP
-BP
+CN
+CN
+CN
 fo
 oc
 fo
@@ -9765,16 +9773,16 @@ lv
 fo
 lv
 fo
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 "}
 (3,1,1) = {"
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 fo
 yn
 fo
@@ -9796,16 +9804,16 @@ XS
 fo
 XS
 fo
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 "}
 (4,1,1) = {"
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 fo
 Eb
 Ci
@@ -9827,25 +9835,25 @@ ql
 Ci
 Ks
 fo
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 "}
 (5,1,1) = {"
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 fo
-QB
+tE
 OM
-QB
-QB
-QB
-QB
-QB
-QB
+tE
+tE
+tE
+tE
+tE
+tE
 eC
 mt
 YV
@@ -9858,18 +9866,18 @@ fo
 xn
 fo
 fo
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 "}
 (6,1,1) = {"
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 BY
-QB
+tE
 Uq
 qH
 Jk
@@ -9889,16 +9897,16 @@ cJ
 jx
 ko
 EY
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 "}
 (7,1,1) = {"
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 dQ
 nn
 lq
@@ -9907,7 +9915,7 @@ jn
 dY
 pk
 on
-QB
+tE
 Mh
 yc
 Lj
@@ -9920,18 +9928,18 @@ AO
 vB
 oJ
 Wo
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 "}
 (8,1,1) = {"
-BP
-BP
-BP
-BP
-BP
-QB
+CN
+CN
+CN
+CN
+CN
+tE
 Xu
 ii
 kw
@@ -9950,26 +9958,26 @@ qy
 Mk
 Or
 bh
-BP
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
+CN
 "}
 (9,1,1) = {"
-BP
-BP
-BP
-BP
-BP
-QB
+CN
+CN
+CN
+CN
+CN
+tE
 Xq
 pr
 zF
 Qr
 NQ
 ps
-QB
+tE
 ht
 We
 lb
@@ -9981,26 +9989,26 @@ tu
 xz
 zc
 bh
-BP
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
+CN
 "}
 (10,1,1) = {"
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 vv
-QB
+tE
 zs
 jV
-QB
+tE
 HX
 KX
-QB
-QB
+tE
+tE
 PW
 IJ
 JF
@@ -10013,16 +10021,16 @@ FP
 NW
 bh
 Zn
-dW
-BP
-BP
-BP
+PV
+CN
+CN
+CN
 "}
 (11,1,1) = {"
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 yF
 yF
 yF
@@ -10044,17 +10052,17 @@ vq
 vq
 vq
 vq
-mY
-BP
-BP
-BP
+kS
+CN
+CN
+CN
 "}
 (12,1,1) = {"
-BP
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
+CN
 Ka
 Xp
 oU
@@ -10076,16 +10084,16 @@ Oh
 zS
 Qx
 FI
-BP
-BP
-BP
+CN
+CN
+CN
 "}
 (13,1,1) = {"
-BP
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
+CN
 sE
 CR
 VK
@@ -10107,16 +10115,16 @@ Rx
 lj
 LK
 Oz
-BP
-BP
-BP
+CN
+CN
+CN
 "}
 (14,1,1) = {"
-BP
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
+CN
 Ka
 sr
 wc
@@ -10137,14 +10145,14 @@ PI
 TQ
 vq
 Qa
-kY
-BP
-BP
-BP
+xh
+CN
+CN
+CN
 "}
 (15,1,1) = {"
-BP
-BP
+CN
+CN
 sl
 Mg
 Mg
@@ -10157,7 +10165,7 @@ iO
 jb
 yF
 oQ
-HE
+MP
 hu
 hu
 hu
@@ -10167,14 +10175,14 @@ vq
 WP
 vq
 vq
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 hz
 "}
 (16,1,1) = {"
-BP
+CN
 FQ
 YL
 WO
@@ -10198,14 +10206,14 @@ WC
 fm
 Xz
 VO
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 hz
 "}
 (17,1,1) = {"
-BP
+CN
 Mg
 uk
 Le
@@ -10231,12 +10239,12 @@ ma
 VO
 VO
 Be
-BP
-BP
+CN
+CN
 Vh
 "}
 (18,1,1) = {"
-BP
+CN
 Qz
 jr
 Mj
@@ -10262,12 +10270,12 @@ uV
 jZ
 wY
 VO
-BP
-BP
+CN
+CN
 Ym
 "}
 (19,1,1) = {"
-BP
+CN
 Qz
 sI
 YA
@@ -10293,12 +10301,12 @@ qc
 ja
 NS
 Yp
-BP
-BP
+CN
+CN
 QG
 "}
 (20,1,1) = {"
-BP
+CN
 Mg
 lr
 YA
@@ -10324,12 +10332,12 @@ Fw
 Yn
 co
 VO
-BP
-BP
+CN
+CN
 QG
 "}
 (21,1,1) = {"
-BP
+CN
 Mg
 VF
 YU
@@ -10355,12 +10363,12 @@ Uu
 VB
 tA
 Yp
-BP
-BP
+CN
+CN
 QG
 "}
 (22,1,1) = {"
-BP
+CN
 Mg
 fA
 gb
@@ -10386,12 +10394,12 @@ Dn
 Ly
 iT
 VO
-BP
-BP
+CN
+CN
 pn
 "}
 (23,1,1) = {"
-BP
+CN
 Qz
 fS
 CX
@@ -10411,18 +10419,18 @@ Uo
 yU
 Wv
 TZ
-PV
+QB
 CE
 Dj
 ua
 Nx
 De
-BP
-BP
+CN
+CN
 Wq
 "}
 (24,1,1) = {"
-BP
+CN
 Qz
 Ox
 Ne
@@ -10448,12 +10456,12 @@ IK
 IK
 IK
 Be
-BP
-BP
+CN
+CN
 Ep
 "}
 (25,1,1) = {"
-BP
+CN
 Qz
 dz
 zn
@@ -10478,14 +10486,14 @@ Fj
 FF
 xO
 oj
-BP
-BP
-BP
+CN
+CN
+CN
 GB
 "}
 (26,1,1) = {"
-BP
-BP
+CN
+CN
 TN
 Os
 Os
@@ -10509,19 +10517,19 @@ CI
 pl
 Ef
 IK
-BP
-BP
-BP
+CN
+CN
+CN
 Lb
 "}
 (27,1,1) = {"
-BP
-BP
+CN
+CN
 br
-BP
+CN
 br
-BP
-xh
+CN
+HE
 iy
 iy
 iy
@@ -10529,7 +10537,7 @@ XX
 XX
 XX
 XX
-RW
+CU
 Uk
 IK
 uv
@@ -10540,18 +10548,18 @@ AW
 XV
 Yv
 pa
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 "}
 (28,1,1) = {"
-BP
-BP
+CN
+CN
 Wo
-BP
+CN
 Wo
-BP
+CN
 Ey
 vq
 hQ
@@ -10572,17 +10580,17 @@ IK
 IK
 IK
 jD
-BP
-BP
-BP
+CN
+CN
+CN
 "}
 (29,1,1) = {"
-BP
-BP
+CN
+CN
 Wo
-BP
+CN
 Wo
-BP
+CN
 gv
 gv
 gv
@@ -10603,17 +10611,17 @@ FU
 Qs
 cM
 MW
-BP
-BP
-BP
+CN
+CN
+CN
 "}
 (30,1,1) = {"
-BP
-BP
+CN
+CN
 Wo
-BP
+CN
 Wo
-BP
+CN
 gv
 BB
 Ra
@@ -10634,17 +10642,17 @@ wT
 AV
 qd
 MW
-BP
-BP
-BP
+CN
+CN
+CN
 "}
 (31,1,1) = {"
-BP
-BP
+CN
+CN
 Wo
-BP
+CN
 mN
-BP
+CN
 gv
 sc
 vt
@@ -10665,17 +10673,17 @@ RP
 VC
 UT
 MW
-BP
-BP
-BP
+CN
+CN
+CN
 "}
 (32,1,1) = {"
-BP
-BP
+CN
+CN
 Wo
-BP
-BP
-BP
+CN
+CN
+CN
 gv
 gv
 gv
@@ -10696,17 +10704,17 @@ Uw
 yX
 GH
 MW
-BP
-BP
-BP
+CN
+CN
+CN
 "}
 (33,1,1) = {"
-BP
-BP
+CN
+CN
 mN
-BP
-BP
-BP
+CN
+CN
+CN
 gv
 Hv
 CJ
@@ -10727,17 +10735,17 @@ MW
 MW
 MW
 MW
-BP
-BP
-BP
+CN
+CN
+CN
 "}
 (34,1,1) = {"
-BP
-BP
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
+CN
+CN
 gv
 EE
 gg
@@ -10746,7 +10754,7 @@ ND
 bf
 ku
 gv
-Gf
+rH
 Nn
 Oe
 wA
@@ -10758,15 +10766,15 @@ tX
 ka
 kR
 tX
-BP
-BP
-BP
+CN
+CN
+CN
 "}
 (35,1,1) = {"
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 Fq
 ab
 gv
@@ -10790,14 +10798,14 @@ Lm
 Hn
 tX
 gX
-BP
-BP
+CN
+CN
 "}
 (36,1,1) = {"
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 us
 vq
 vq
@@ -10821,14 +10829,14 @@ DB
 Uc
 Dz
 tX
-BP
-BP
+CN
+CN
 "}
 (37,1,1) = {"
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 Xv
 Ld
 mv
@@ -10852,15 +10860,15 @@ Na
 vc
 Zx
 tX
-BP
-BP
+CN
+CN
 "}
 (38,1,1) = {"
+CN
+CN
+CN
+CN
 BP
-BP
-BP
-BP
-kS
 LK
 th
 oK
@@ -10883,14 +10891,14 @@ Jy
 LN
 Dp
 tX
-BP
-BP
+CN
+CN
 "}
 (39,1,1) = {"
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 yy
 cf
 GO
@@ -10899,14 +10907,14 @@ Wk
 Wk
 hO
 Nn
-CU
+mY
 iE
 iE
 iE
 Oe
 NG
-tE
-tE
+RW
+RW
 WA
 cF
 tX
@@ -10914,15 +10922,15 @@ tX
 tb
 tX
 tX
-BP
-BP
+CN
+CN
 "}
 (40,1,1) = {"
-BP
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
+CN
 Wk
 qF
 Hc
@@ -10930,7 +10938,7 @@ qm
 Wk
 rh
 pY
-CU
+mY
 Wo
 Wo
 Wo
@@ -10945,26 +10953,26 @@ SL
 FH
 Gz
 FT
-BP
-BP
+CN
+CN
 "}
 (41,1,1) = {"
-BP
-BP
-BP
-BP
-BP
-mU
+CN
+CN
+CN
+CN
+CN
+WE
 Qv
 JC
 JW
 Sq
 dI
 pY
-CU
-BP
-BP
-BP
+mY
+CN
+CN
+CN
 DK
 FV
 Yg
@@ -10976,15 +10984,15 @@ xH
 ox
 wP
 tX
-BP
-BP
+CN
+CN
 "}
 (42,1,1) = {"
-BP
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
+CN
 Wk
 sp
 JC
@@ -10992,10 +11000,10 @@ JW
 Sq
 TI
 Kv
-CU
-BP
-BP
-BP
+mY
+CN
+CN
+CN
 DK
 Ak
 XM
@@ -11007,26 +11015,26 @@ bC
 Vy
 uS
 tX
-BP
-BP
+CN
+CN
 "}
 (43,1,1) = {"
-BP
-BP
-BP
-BP
-BP
-mU
+CN
+CN
+CN
+CN
+CN
+WE
 rN
 Od
 SC
 lH
 pZ
 lx
-CU
-BP
-BP
-BP
+mY
+CN
+CN
+CN
 DK
 BM
 cB
@@ -11038,15 +11046,15 @@ Qo
 Zt
 oo
 tX
-BP
-BP
+CN
+CN
 "}
 (44,1,1) = {"
-BP
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
+CN
 Wk
 Xm
 fc
@@ -11054,10 +11062,10 @@ gC
 Wk
 pv
 Xs
-CU
-BP
-BP
-BP
+mY
+CN
+CN
+CN
 DK
 Ff
 UE
@@ -11069,15 +11077,15 @@ RH
 jE
 Sx
 tX
-BP
-BP
+CN
+CN
 "}
 (45,1,1) = {"
-BP
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
+CN
 bl
 oB
 nt
@@ -11085,10 +11093,10 @@ Gl
 Wk
 pu
 Oy
-CU
-BP
-BP
-BP
+mY
+CN
+CN
+CN
 VT
 DK
 DK
@@ -11100,15 +11108,15 @@ tX
 tX
 tX
 Tb
-BP
-BP
+CN
+CN
 "}
 (46,1,1) = {"
-BP
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
+CN
 OG
 xG
 PA
@@ -11117,29 +11125,29 @@ Wk
 Al
 xw
 Ol
-BP
-BP
-BP
+CN
+CN
+CN
 Lv
+Gf
+pi
+pi
 iV
-pi
-pi
-rH
 pi
 pi
 pi
 dV
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 "}
 (47,1,1) = {"
-BP
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
+CN
 Gm
 Ol
 xZ
@@ -11149,28 +11157,28 @@ gU
 tz
 Ol
 zT
-BP
-BP
-BP
-iV
+CN
+CN
+CN
+Gf
 pi
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 pi
-iV
-BP
-BP
-BP
-BP
+Gf
+CN
+CN
+CN
+CN
 "}
 (48,1,1) = {"
-BP
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
+CN
 Gm
 AN
 zq
@@ -11180,27 +11188,27 @@ Rw
 UJ
 Yr
 Ol
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
 "}
 (49,1,1) = {"
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 dL
 Ol
 iJ
@@ -11211,27 +11219,27 @@ Pw
 fn
 fX
 Ol
+dW
 CN
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
 "}
 (50,1,1) = {"
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 hF
 el
 Js
@@ -11242,27 +11250,27 @@ Rs
 cl
 fE
 nd
-MP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
+cP
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
 "}
 (51,1,1) = {"
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 hF
 KW
 hy
@@ -11273,27 +11281,27 @@ tj
 eS
 cA
 YB
-MP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
+cP
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
 "}
 (52,1,1) = {"
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 hF
 zP
 Xb
@@ -11304,28 +11312,28 @@ iZ
 UO
 zv
 kf
-MP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
+cP
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
 "}
 (53,1,1) = {"
-BP
-BP
-BP
-BP
-cP
+CN
+CN
+CN
+CN
+mU
 Ol
 Fl
 ZR
@@ -11335,28 +11343,28 @@ hU
 Er
 be
 Ol
-WE
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
+kY
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
 "}
 (54,1,1) = {"
-BP
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
+CN
 Ol
 ia
 tL
@@ -11366,27 +11374,27 @@ jo
 Rd
 mJ
 Ol
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
 "}
 (55,1,1) = {"
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 Wo
 Ol
 pm
@@ -11397,27 +11405,27 @@ nu
 zN
 UF
 Ol
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
 "}
 (56,1,1) = {"
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
 hP
 Ml
 Ol
@@ -11428,19 +11436,19 @@ Ol
 Ol
 Ol
 XG
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
+CN
 "}
