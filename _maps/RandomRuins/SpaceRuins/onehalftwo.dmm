@@ -120,6 +120,11 @@
 	dir = 8
 	},
 /obj/item/clothing/neck/stethoscope,
+/obj/item/reagent_containers/blood/OMinus,
+/obj/item/reagent_containers/blood/OMinus,
+/obj/item/reagent_containers/blood/OMinus,
+/obj/item/reagent_containers/blood/OMinus,
+/obj/machinery/iv_drip,
 /turf/open/floor/plasteel/white/plasma,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "bh" = (
@@ -742,6 +747,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "0";
+	pixel_x = -16;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/space/has_grav/refuelingpost/solarstorage)
 "im" = (
@@ -1125,6 +1135,11 @@
 "lK" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "&";
+	pixel_x = -10;
+	pixel_y = 12
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/space/has_grav/refuelingpost/solarstorage)
@@ -1743,6 +1758,11 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "+";
+	pixel_x = -12;
+	pixel_y = -11
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/space/has_grav/refuelingpost/solarstorage)
 "tq" = (
@@ -1750,7 +1770,7 @@
 	id = "fuelinghangar"
 	},
 /obj/structure/cable/yellow,
-/obj/machinery/power/shieldwallgen/atmos/strong{
+/obj/machinery/power/shieldwallgen/atmos/strong/roundstart{
 	dir = 4;
 	id = "fuelingholo"
 	},
@@ -2489,18 +2509,13 @@
 	},
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "credit";
-	pixel_x = 1;
-	pixel_y = -4
-	},
-/obj/effect/decal/cleanable/crayon{
-	icon_state = "credit";
-	pixel_x = 10;
-	pixel_y = 7
-	},
-/obj/effect/decal/cleanable/crayon{
-	icon_state = "credit";
 	pixel_x = -9;
 	pixel_y = 7
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "3";
+	pixel_x = 9;
+	pixel_y = 4
 	},
 /obj/item/storage/backpack/satchel/flat/onehalftwo,
 /turf/open/floor/plasteel/patterned,
@@ -4530,7 +4545,7 @@
 	id = "fuelinghangar"
 	},
 /obj/structure/cable/yellow,
-/obj/machinery/power/shieldwallgen/atmos/strong{
+/obj/machinery/power/shieldwallgen/atmos/strong/roundstart{
 	dir = 8;
 	id = "fuelingholo"
 	},
@@ -5810,7 +5825,7 @@ At
 XU
 At
 kD
-kD
+sO
 we
 Lg
 FG
@@ -5852,7 +5867,7 @@ At
 At
 At
 kD
-kD
+sO
 we
 NH
 jv

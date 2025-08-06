@@ -2030,16 +2030,18 @@
 /turf/open/floor/plasteel/white/jungleplanet,
 /area/ruin/jungle/airbase/med)
 "iL" = (
-/obj/item/clothing/head/helmet/syndie{
-	pixel_y = 9
-	},
-/obj/item/clothing/suit/armor/vest/syndie{
-	pixel_y = -4
-	},
 /obj/machinery/light/directional/west,
 /obj/item/radio/intercom/directional/north,
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/suit/armor/ramzi{
+	pixel_x = 0;
+	pixel_y = -4
+	},
+/obj/item/clothing/head/helmet/ramzi{
+	pixel_x = 0;
+	pixel_y = 9
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/airbase/armory)
 "iM" = (
@@ -5404,14 +5406,18 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/airbase/armory)
 "xy" = (
-/obj/item/clothing/head/helmet/syndie{
-	pixel_y = 10
-	},
-/obj/item/clothing/suit/armor/vest/syndie,
 /obj/machinery/light/directional/east,
 /obj/item/radio/intercom/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack,
+/obj/item/clothing/suit/armor/ramzi{
+	pixel_x = 0;
+	pixel_y = -5
+	},
+/obj/item/clothing/head/helmet/ramzi{
+	pixel_x = -1;
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/airbase/armory)
 "xC" = (
@@ -8715,12 +8721,9 @@
 /obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/storage/belt/security/webbing{
-	name = "syndicate webbing";
-	desc = "Unique and versatile chest rig, can hold syndicate gear."
-	},
 /obj/item/flashlight/seclite,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/storage/belt/security/webbing/ramzi,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/airbase/armory)
 "KU" = (
@@ -10073,15 +10076,12 @@
 /obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/storage/belt/security/webbing{
-	name = "syndicate webbing";
-	desc = "Unique and versatile chest rig, can hold syndicate gear."
-	},
 /obj/item/flashlight/seclite,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/storage/belt/security/webbing/ramzi,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/airbase/armory)
 "QV" = (
@@ -10315,17 +10315,17 @@
 "RX" = (
 /obj/structure/table,
 /obj/machinery/light/directional/west,
-/obj/item/clothing/suit/armor/vest/syndie{
-	pixel_y = -1;
-	pixel_x = 7
-	},
-/obj/item/clothing/suit/armor/vest/syndie{
-	pixel_y = 7;
-	pixel_x = -5
-	},
 /obj/item/storage/box/ammo/c22lr/ap{
 	pixel_y = -11;
 	pixel_x = -12
+	},
+/obj/item/clothing/suit/armor/ramzi{
+	pixel_x = 9;
+	pixel_y = -4
+	},
+/obj/item/clothing/suit/armor/ramzi{
+	pixel_x = -6;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/airbase/cargo)
