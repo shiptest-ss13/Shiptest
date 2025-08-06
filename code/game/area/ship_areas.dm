@@ -25,7 +25,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	power_light = FALSE
 	power_equip = FALSE
 	power_environ = FALSE
-	area_flags = UNIQUE_AREA | CAVES_ALLOWED | MOB_SPAWN_ALLOWED | NO_RANDOM_LIGHT_BREAKAGE
+	area_flags = UNIQUE_AREA | CAVES_ALLOWED | MOB_SPAWN_ALLOWED
 	outdoors = TRUE
 	ambience_index = AMBIENCE_SPACE
 	flags_1 = CAN_BE_DIRTY_1
@@ -85,7 +85,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	always_unpowered = FALSE
-	area_flags = VALID_TERRITORY | SHIP_SMOOTHING // Loading the same shuttle map at a different time will produce distinct area instances.
+	area_flags = VALID_TERRITORY | SHIP_SMOOTHING | NO_RANDOM_LIGHT_BREAKAGE // Loading the same shuttle map at a different time will produce distinct area instances.
 	icon_state = "shuttle"
 	flags_1 = CAN_BE_DIRTY_1
 	lighting_colour_tube = "#fff0dd"
