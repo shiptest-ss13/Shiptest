@@ -218,10 +218,12 @@
 	name = "seaweed"
 	desc = "It's so rubbery... is this safe to eat?"
 	icon_state = "seaweed"
-	microwaved_type = /obj/item/food/grown/seaweed/sheet
 	bite_consumption_mod = 1
 	foodtypes = VEGETABLES
 	grind_results = list(/datum/reagent/water = 1, /datum/reagent/consumable/sodiumchloride = 2)
+
+/obj/item/food/grown/seaweed/make_dryable()
+	AddElement(/datum/element/dryable, /obj/item/food/grown/seaweed/sheet)
 
 /obj/item/food/grown/seaweed/sheet
 	name = "seaweed sheet"
