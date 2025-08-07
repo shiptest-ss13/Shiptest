@@ -472,6 +472,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/aft)
+"dB" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/medical)
 "dO" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 8
@@ -529,9 +532,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
-"eT" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/crew)
 "fc" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/warning,
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
@@ -870,6 +870,7 @@
 	},
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/megaphone/sec,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm/captain)
 "hh" = (
@@ -1094,6 +1095,9 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/starboard)
+"ic" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/crew)
 "id" = (
 /obj/structure/railing,
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
@@ -1514,6 +1518,9 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
+"kB" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/hallway/starboard)
 "kW" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/railing{
@@ -1731,9 +1738,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
-"mU" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/security)
 "mY" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -2210,9 +2214,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
-"sl" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/hallway/starboard)
 "sm" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 4
@@ -2754,6 +2755,9 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/starboard)
+"xd" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/security/armory)
 "xe" = (
 /obj/structure/catwalk,
 /obj/effect/decal/fakelattice,
@@ -2825,9 +2829,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
-"xO" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/medical)
 "xV" = (
 /obj/structure/tank_dispenser/oxygen,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -3345,9 +3346,6 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
-"Cw" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/cargo)
 "CA" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -3494,9 +3492,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
-"Dn" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/crew/crewtwo)
 "Ds" = (
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -3743,9 +3738,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
-"Ft" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/security/armory)
 "Fu" = (
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	dir = 4;
@@ -4153,6 +4145,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
+"Jd" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/crew/crewtwo)
 "Je" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -4314,6 +4309,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
+"KP" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/crew/cryo)
 "KR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -4878,7 +4876,8 @@
 /area/ship/security)
 "Pp" = (
 /obj/machinery/washing_machine{
-	pixel_x = -8
+	pixel_x = -8;
+	density = 0
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -4909,6 +4908,9 @@
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"PZ" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/security)
 "Qy" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/maintenance/starboard)
@@ -5172,6 +5174,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
+"Sk" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/cargo)
 "SD" = (
 /obj/structure/chair{
 	dir = 8
@@ -5847,9 +5852,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
-"XU" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/crew/cryo)
 "XW" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -6439,7 +6441,7 @@ ww
 ww
 "}
 (12,1,1) = {"
-eT
+ic
 Gq
 Gq
 Gq
@@ -6460,7 +6462,7 @@ bz
 bz
 bz
 bz
-XU
+KP
 "}
 (13,1,1) = {"
 gl
@@ -6631,7 +6633,7 @@ Oe
 DT
 "}
 (20,1,1) = {"
-Dn
+Jd
 GI
 GI
 Eh
@@ -6652,7 +6654,7 @@ te
 te
 vo
 vo
-sl
+kB
 "}
 (21,1,1) = {"
 ww
@@ -6802,7 +6804,7 @@ ww
 ww
 ww
 ww
-Cw
+Sk
 lo
 lo
 ko
@@ -6817,7 +6819,7 @@ zY
 zY
 ZF
 zY
-mU
+PZ
 ww
 ww
 ww
@@ -6899,7 +6901,7 @@ ww
 ww
 ww
 ww
-xO
+dB
 lo
 lo
 lo
@@ -6912,7 +6914,7 @@ ww
 UL
 zY
 zY
-Ft
+xd
 ww
 ww
 ww
