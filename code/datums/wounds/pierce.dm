@@ -118,12 +118,12 @@
 
 /datum/wound/pierce/on_silfrine(power)
 	switch(power)
-		if(0 to 5)
+		if(0 to 3)
 			EMPTY_BLOCK_GUARD
-		if(6 to 11)
+		if(4 to 8)
 			if(severity < WOUND_SEVERITY_MODERATE)
 				qdel(src)
-		if(12 to 30)
+		if(8 to 30)
 			if(severity < WOUND_SEVERITY_SEVERE)
 				qdel(src)
 	blood_flow -= 0.05 * power

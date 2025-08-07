@@ -172,7 +172,7 @@
 		var/mob/living/carbon/paper_cut_victim = M
 		if(method in list(INGEST, INJECT, PATCH))
 			if(!HAS_TRAIT(M, TRAIT_ANALGESIA))
-				to_chat(M, span_warning("Your body ignites in pain as nerves are rapidly reformed, and flesh is freshly knit!"))
+				to_chat(M, span_boldwarning("Your body ignites in pain as nerves are rapidly reformed, and flesh is freshly knit!"))
 				M.force_scream()
 			for(var/owie in paper_cut_victim.all_wounds)
 				var/datum/wound/paper_cut = owie
@@ -288,7 +288,7 @@
 	name = "Quardexane"
 	description = "A third-generation burn medication originating from the Shoal. Injection allows it to rapidly re-knit burns, while vaporous application acts as an cooling agent and sanitizing substance. Overdose causes new burns to form on the user's body."
 	reagent_state = LIQUID
-	color = "#F7FFA5"
+	color = "#4ab1ba"
 	overdose_threshold = 25
 	reagent_weight = 0.6
 
@@ -330,11 +330,13 @@
 	name = "Ysiltane"
 	description = "A burn treatment derived from plasma. Application by injection or ingestion causes burns to rapidly repair themselves. The intensity of application causes the user's system to temporarily crash. Overdose causes a toxic crisis within the user's system, and can damage organs."
 	reagent_state = LIQUID
-	color = "#F7FFA5"
+	color = "#862929"
 	overdose_threshold = 21
 	reagent_weight = 2
 
 /datum/reagent/medicine/ysiltane/on_mob_life(mob/living/carbon/M)
+	if(current_cycle > 2 && current_cycle =< 6)
+		M.adjustFireLoss(-10*REM, 0)
 	M.adjustFireLoss(-2*REM, 0)
 	M.adjustStaminaLoss(1*REM, 0)
 	..()
@@ -342,13 +344,13 @@
 
 /datum/reagent/medicine/ysiltane/expose_mob(mob/living/carbon/M, method=VAPOR, reac_volume)
 	if(method in list(INJECT, INGEST))
-		M.adjustFireLoss(-reac_volume*6)
-		M.adjustStaminaLoss(reac_volume*4)
+		M.adjustFireLoss(-reac_volume*2)
+		M.adjustStaminaLoss(reac_volume*6)
 		if(!HAS_TRAIT(M, TRAIT_ANALGESIA))
-			to_chat(M, span_danger("You feel your burns regenerating! Your nerves are burning!"))
+			to_chat(M, span_boldwarning("Your nerves ignite in pain as burns start to rapidly regenerate!"))
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 		else
-			to_chat(M, span_notice("You feel your burns twisting."))
+			to_chat(M, span_warning("You feel your burns twisting."))
 
 		if(iscarbon(M) && M.stat != DEAD)
 			var/mob/living/carbon/burn_ward_attendee = M
