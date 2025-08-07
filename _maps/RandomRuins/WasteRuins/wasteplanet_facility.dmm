@@ -1647,8 +1647,8 @@
 /area/ruin/wasteplanet/facility/northwing)
 "kK" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/conveyor/inverted{
-	dir = 8;
+/obj/machinery/conveyor{
+	dir = 4;
 	id = "salvage-conveyor"
 	},
 /turf/open/floor/pod/dark,
@@ -2502,13 +2502,13 @@
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/facility/eastbay)
 "rh" = (
-/obj/machinery/conveyor/inverted{
-	dir = 8;
-	id = "salvage-conveyor"
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing{
 	layer = 4.1
+	},
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "salvage-conveyor"
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/facility/northwing)
@@ -3244,8 +3244,8 @@
 /area/ruin/wasteplanet/facility/northwing)
 "wk" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/conveyor/inverted{
-	dir = 4;
+/obj/machinery/conveyor{
+	dir = 8;
 	id = "mineral_conveyor"
 	},
 /turf/open/floor/pod/dark,
@@ -7494,7 +7494,6 @@
 /area/ruin/wasteplanet/facility/southwing)
 "Vu" = (
 /obj/structure/table,
-/obj/structure/table,
 /obj/item/cutting_board,
 /obj/item/assembly/mousetrap{
 	pixel_x = -4;
@@ -7575,8 +7574,8 @@
 /turf/closed/wall/rust,
 /area/ruin/wasteplanet/facility/westbay)
 "Wc" = (
-/obj/machinery/conveyor/inverted{
-	dir = 4;
+/obj/machinery/conveyor{
+	dir = 8;
 	id = "mineral_conveyor"
 	},
 /turf/open/floor/pod/dark,
