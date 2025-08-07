@@ -472,10 +472,19 @@
 	merge_type = /obj/item/stack/medical/splint/hunter
 
 /obj/item/stack/medical/splint/improvised
-	name = "improvised splint"
+	name = "wooden improvised splint"
 	desc = "Crudely made out splints with wood and some cotton sling, you doubt this will be any good."
-	singular_name = "improvised splint"
+	singular_name = "wooden improvised splint"
 	icon_state = "splint_improv"
 	amount = 1
 	splint_type = /datum/bodypart_aid/splint/improvised
 	merge_type = /obj/item/stack/medical/splint/improvised
+
+/obj/item/stack/medical/splint/improvised_metal
+	name = "metal improvised splint"
+	desc = "Crudely made out splints with metal rods and some cotton sling, you doubt this will be any good."
+	singular_name = "metal improvised splint"
+	icon_state = "splint_improv_metal"
+	amount = 1
+	splint_type = /datum/bodypart_aid/splint/improvised_metal
+	merge_type = /obj/item/stack/medical/splint/improvised_metal
