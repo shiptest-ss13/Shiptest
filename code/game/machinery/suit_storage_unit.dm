@@ -176,7 +176,6 @@ LOCKED_SSU_HELPER(cmo)
 	name = "bomb suit storage unit"
 	suit_type = /obj/item/clothing/suit/space/hardsuit/bomb
 	mask_type = /obj/item/clothing/mask/breath
-	req_access = list(ACCESS_RD)
 
 LOCKED_SSU_HELPER(rd)
 
