@@ -208,7 +208,7 @@
 	hardsuit_type = "inteqeod"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/bomb/inteq
 
-/obj/item/clothing/head/helmet/space/hardsuit/bomb
+/obj/item/clothing/head/helmet/space/hardsuit/bomb/inteq
 	name = "Inteq EOD hardsuit helmet"
 	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
@@ -223,12 +223,13 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
 	icon_state = "hardsuit-boulder"
 	hardsuit_type = "boulder"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/inteq/boulder
 	slowdown = 1.5
 	armor = list("melee" = 60, "bullet" = 70, "laser" = 50, "energy" = 40, "bomb" = 100, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 50)
 
 /obj/item/clothing/head/helmet/space/hardsuit/security/inteq/boulder
 	name = "Boulder hardsuit helmet"
-	desc = "A modified EOD helmet, with extra plating and a more durable visor.
+	desc = "A modified EOD helmet, with extra plating and a more durable visor."
 	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
 	icon_state = "hardsuit0-boulder"
