@@ -23,6 +23,7 @@
 
 /obj/machinery/emergency_panel/examine(mob/user)
 	. = ..()
+	. += span_warning("Per interstellar travel code, misuse of emergency communication systems can lead to fines, questioning, and/or legal action.")
 	if(!hatch_open)
 		. += span_notice("You can Alt-Click to open the hatch and access the panel.")
 	if(ship_key)
