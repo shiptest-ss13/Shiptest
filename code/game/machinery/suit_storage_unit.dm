@@ -172,9 +172,9 @@ LOCKED_SSU_HELPER(mining/eva)
 
 LOCKED_SSU_HELPER(cmo)
 
-/obj/machinery/suit_storage_unit/rd
-	name = "RD's suit storage unit"
-	suit_type = /obj/item/clothing/suit/space/hardsuit/rd
+/obj/machinery/suit_storage_unit/bomb
+	name = "bomb suit storage unit"
+	suit_type = /obj/item/clothing/suit/space/hardsuit/bomb
 	mask_type = /obj/item/clothing/mask/breath
 	req_access = list(ACCESS_RD)
 

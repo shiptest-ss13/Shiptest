@@ -173,11 +173,11 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/sci_hardsuit
-	name = "Scientific Hardsuit Crate"
-	desc = "Contains one science hardsuit, designed to provide safety under advanced experimental conditions, or while handling explosives."
+	name = "EOD Hardsuit Crate
+	desc = "Contains one EOD hardsuit, to provide safety with explosives."
 	cost = 2000
-	contains = list(/obj/item/clothing/suit/space/hardsuit/rd)
-	crate_name = "scientific hardsuit crate"
+	contains = list(/obj/item/clothing/suit/space/hardsuit/bomb)
+	crate_name = "EOD hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/science
 	faction = /datum/faction/nt
 
