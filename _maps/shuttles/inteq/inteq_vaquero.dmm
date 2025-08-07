@@ -221,6 +221,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"bw" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/medical)
 "bz" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/cryo)
@@ -317,6 +320,9 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
+"cE" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/crew/crewtwo)
 "cH" = (
 /obj/structure/closet/secure_closet/armorycage{
 	anchored = 1;
@@ -490,6 +496,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/aft)
 "ec" = (
@@ -508,12 +515,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
-"ed" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/medical)
-"ee" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/crew)
 "eC" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
@@ -589,6 +590,9 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/crewtwo)
+"fp" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/crew/cryo)
 "fr" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 8
@@ -601,9 +605,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/aft)
-"fB" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/hallway/starboard)
 "fC" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -659,6 +660,9 @@
 	},
 /turf/open/floor/carpet/orange,
 /area/ship/crew/dorm/captain)
+"fR" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/hallway/starboard)
 "fV" = (
 /obj/effect/turf_decal/siding/thinplating/dark/end{
 	dir = 4
@@ -702,13 +706,14 @@
 	pixel_x = -20;
 	pixel_y = 12
 	},
+/obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "gl" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "vaq_external_windows"
+	id = "vaq_bunk1_windows"
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -843,7 +848,8 @@
 	pixel_y = -4
 	},
 /obj/item/clothing/suit/armor/vest/security/warden/inteq{
-	name = "enforcer class one's armored coat"
+	name = "enforcer class one's armored coat";
+	desc = "A brown armored coat with a bulletproof vest over it, usually worn by the mid-ranking members of the IRMG."
 	},
 /obj/item/clothing/shoes/combat{
 	pixel_y = -8;
@@ -1302,9 +1308,6 @@
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
-"ju" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/security/armory)
 "jw" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -1336,6 +1339,9 @@
 	dir = 4;
 	pixel_x = -20;
 	pixel_y = -12
+	},
+/obj/structure/chair/handrail{
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -1473,6 +1479,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "jV" = (
@@ -1708,6 +1715,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
+"mI" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/security)
 "mR" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/porta_turret/ship/inteq{
@@ -1749,6 +1759,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "nm" = (
@@ -1784,6 +1797,7 @@
 	icon_state = "6-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/maintenance/port)
 "od" = (
@@ -1801,6 +1815,7 @@
 	pixel_y = 17;
 	id = "vaq_grid"
 	},
+/obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "ox" = (
@@ -1898,6 +1913,9 @@
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew)
+"pI" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/crew)
 "pM" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/corner{
 	dir = 8
@@ -1987,6 +2005,9 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/aft)
+"qX" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/security/armory)
 "ri" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
 	dir = 4;
@@ -2138,6 +2159,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/starboard)
 "rD" = (
@@ -2178,6 +2200,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
+"sb" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/cargo)
 "sf" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -2215,6 +2240,7 @@
 	pixel_y = -11
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "sm" = (
@@ -2473,6 +2499,7 @@
 /obj/machinery/camera/autoname{
 	dir = 6
 	},
+/obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "uy" = (
@@ -2789,6 +2816,13 @@
 	pixel_x = 10
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	dir = 1;
+	id = "vaq_bunk2_windows";
+	name = "Exterior Window Lockdown";
+	pixel_y = -20;
+	pixel_x = -2
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/crewtwo)
 "xn" = (
@@ -2965,6 +2999,7 @@
 	icon_state = "0-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "zg" = (
@@ -3275,6 +3310,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil/streak,
+/obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "BX" = (
@@ -3654,6 +3690,7 @@
 /obj/machinery/light/small/directional/south{
 	pixel_x = 13
 	},
+/obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "Fc" = (
@@ -3713,6 +3750,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Fm" = (
@@ -4178,6 +4216,13 @@
 	pixel_y = -20;
 	pixel_x = 10
 	},
+/obj/machinery/button/door{
+	dir = 1;
+	id = "vaq_bunk1_windows";
+	name = "Exterior Window Lockdown";
+	pixel_y = -20;
+	pixel_x = -2
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew)
 "Jl" = (
@@ -4275,9 +4320,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"Kp" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/security)
 "Kr" = (
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
@@ -4556,6 +4598,9 @@
 	pixel_y = -6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Nb" = (
@@ -4982,9 +5027,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
-"QY" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/crew/cryo)
 "Re" = (
 /obj/structure/window/reinforced/tinted/frosted,
 /obj/effect/turf_decal/steeldecal/steel_decals10{
@@ -5230,9 +5272,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
-"Tw" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/cargo)
 "Ty" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -5270,9 +5309,6 @@
 	},
 /turf/open/floor/carpet/orange,
 /area/ship/crew/dorm/captain)
-"TF" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/crew/crewtwo)
 "TK" = (
 /obj/machinery/suit_storage_unit/inherit{
 	req_access_txt = "20";
@@ -5470,7 +5506,7 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "vaq_external_windows"
+	id = "vaq_bunk2_windows"
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -6446,7 +6482,7 @@ ww
 ww
 "}
 (12,1,1) = {"
-ee
+pI
 Gq
 Gq
 Gq
@@ -6467,7 +6503,7 @@ bz
 bz
 bz
 bz
-QY
+fp
 "}
 (13,1,1) = {"
 gl
@@ -6638,7 +6674,7 @@ Oe
 DT
 "}
 (20,1,1) = {"
-TF
+cE
 GI
 GI
 Eh
@@ -6659,7 +6695,7 @@ te
 te
 vo
 vo
-fB
+fR
 "}
 (21,1,1) = {"
 ww
@@ -6809,7 +6845,7 @@ ww
 ww
 ww
 ww
-Tw
+sb
 lo
 lo
 ko
@@ -6824,7 +6860,7 @@ zY
 zY
 ZF
 zY
-Kp
+mI
 ww
 ww
 ww
@@ -6906,7 +6942,7 @@ ww
 ww
 ww
 ww
-ed
+bw
 lo
 lo
 lo
@@ -6919,7 +6955,7 @@ ww
 UL
 zY
 zY
-ju
+qX
 ww
 ww
 ww
