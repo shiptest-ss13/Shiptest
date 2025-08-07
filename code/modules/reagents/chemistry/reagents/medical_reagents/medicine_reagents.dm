@@ -18,7 +18,7 @@
 	description = "An anti-inflammatory initially isolated from a Kalixcian cave fungus. Thins the blood, and causes bruises and cuts to slowly heal. Overdose can cause sores to open along the body."
 	reagent_state = LIQUID
 	color = "#FFFF6B"
-	overdose_threshold = 20
+	overdose_threshold = 30
 	var/passive_bleed_modifier = 1.2
 
 /datum/reagent/medicine/indomide/on_mob_life(mob/living/carbon/M)
@@ -119,7 +119,7 @@
 
 
 /datum/reagent/medicine/hadrakine/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-1*REM, 0)
+	M.adjustBruteLoss(-2*REM, 0)
 	..()
 	. = 1
 
@@ -181,7 +181,7 @@
 
 /datum/reagent/medicine/silfrine/on_mob_life(mob/living/carbon/M)
 	var/effectiveness_multiplier = clamp(M.bruteloss/100, 0.2, 1.5)
-	var/brute_heal = effectiveness_multiplier * REM * -3
+	var/brute_heal = effectiveness_multiplier * REM * -4
 	M.adjustBruteLoss(brute_heal, 0)
 	..()
 	. = 1
@@ -246,19 +246,18 @@
 	. = 1
 
 /datum/reagent/medicine/alvitane/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
-	if(method in list(TOUCH, VAPOR, PATCH))
-		M.adjustFireLoss(-reac_volume/2)
-		M.force_scream()
-		if(iscarbon(M) && M.stat != DEAD)
-			var/mob/living/carbon/burn_ward_attendee = M
-			for(var/owie in burn_ward_attendee.all_wounds)
-				var/datum/wound/burn = owie
-				burn.on_tane(reac_volume/4)
-		if(show_message && !HAS_TRAIT(M, TRAIT_ANALGESIA))
-			to_chat(M, span_danger("You feel your burns regenerating! Your nerves are burning!"))
-			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
-		else
-			to_chat(M, span_notice("You feel your burns twisting."))
+	M.adjustFireLoss(-reac_volume/2)
+	M.force_scream()
+	if(iscarbon(M) && M.stat != DEAD)
+		var/mob/living/carbon/burn_ward_attendee = M
+		for(var/owie in burn_ward_attendee.all_wounds)
+			var/datum/wound/burn = owie
+			burn.on_tane(reac_volume/4)
+	if(show_message && !HAS_TRAIT(M, TRAIT_ANALGESIA))
+		to_chat(M, span_danger("You feel your burns regenerating! Your nerves are burning!"))
+		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+	else
+		to_chat(M, span_notice("You feel your burns twisting."))
 	..()
 
 /datum/reagent/medicine/alvitane/on_mob_end_metabolize(mob/living/L)
@@ -336,6 +335,7 @@
 	reagent_weight = 2
 
 /datum/reagent/medicine/ysiltane/on_mob_life(mob/living/carbon/M)
+	M.adjustFireLoss(-2*REM, 0)
 	M.adjustStaminaLoss(1*REM, 0)
 	..()
 	. = 1
@@ -343,7 +343,7 @@
 /datum/reagent/medicine/ysiltane/expose_mob(mob/living/carbon/M, method=VAPOR, reac_volume)
 	if(method in list(INJECT, INGEST))
 		M.adjustFireLoss(-reac_volume*6)
-		M.adjustStaminaLoss(reac_volume*6)
+		M.adjustStaminaLoss(reac_volume*4)
 		if(!HAS_TRAIT(M, TRAIT_ANALGESIA))
 			to_chat(M, span_danger("You feel your burns regenerating! Your nerves are burning!"))
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)

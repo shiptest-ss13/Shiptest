@@ -150,7 +150,7 @@
 	name = "indomide pill"
 	desc = "Used to dull pain."
 	icon_state = "pill9"
-	list_reagents = list(/datum/reagent/medicine/silfrine = 15)
+	list_reagents = list(/datum/reagent/medicine/indomide = 15)
 	rename_with_volume = TRUE
 
 /obj/item/reagent_containers/pill/silfrine
