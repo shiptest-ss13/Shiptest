@@ -484,7 +484,7 @@
 	name = "bottle of indomide pills"
 	desc = "Contains pills used to treat brute damage.The tag in the bottle states 'Eat before ingesting'."
 
-/obj/item/storage/pill_bottle/trophazole/PopulateContents()
+/obj/item/storage/pill_bottle/indomide/PopulateContents()
 	for(var/i in 1 to 4)
 		new /obj/item/reagent_containers/pill/indomide(src)
 
