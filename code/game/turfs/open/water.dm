@@ -124,6 +124,7 @@
 	light_color = "#7e3d24"
 	initial_gas_mix = "o2=22;n2=82;TEMP=305"
 	light_range = 2
+	light_power = 0.90
 
 /turf/open/water/tar
 	name = "tar pit"

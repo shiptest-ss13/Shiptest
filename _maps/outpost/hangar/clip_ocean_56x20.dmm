@@ -4,14 +4,14 @@
 	dir = 5
 	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "bJ" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/corner,
 /obj/structure/railing/thin{
 	dir = 9
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "bZ" = (
 /obj/structure/railing/thin{
@@ -20,7 +20,7 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 6
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "cC" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
@@ -29,7 +29,7 @@
 /obj/structure/railing/thin{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "dh" = (
 /obj/machinery/conveyor/auto/outpost{
@@ -42,7 +42,7 @@
 	dir = 6
 	},
 /obj/machinery/light/floor,
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "eb" = (
 /turf/closed/indestructible/plastitanium/nodiagnonal,
@@ -71,8 +71,9 @@
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 9
 	},
-/turf/open/floor/plating{
-	color = "#999999"
+/turf/open/floor/hangar/clipoutpost{
+	color = "#999999";
+	light_power = 0.7
 	},
 /area/hangar)
 "hd" = (
@@ -84,19 +85,19 @@
 /obj/structure/railing/thin{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "hy" = (
 /obj/structure/railing/thin{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "jC" = (
 /obj/structure/railing/thin{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "jE" = (
 /obj/structure/platform/industrial_alt/corner/indestructible{
@@ -107,20 +108,21 @@
 /turf/open/water/beach/deep/outpost,
 /area/hangar)
 "kt" = (
-/turf/open/floor/plating{
-	color = "#999999"
+/turf/open/floor/hangar/clipoutpost{
+	color = "#999999";
+	light_power = 0.7
 	},
 /area/hangar)
 "kC" = (
 /obj/effect/landmark/outpost/shaft_number,
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "ll" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 8
 	},
 /obj/structure/railing/thin/corner,
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "lw" = (
 /obj/structure/plasticflaps/outpost,
@@ -144,12 +146,12 @@
 /area/hangar)
 "mw" = (
 /obj/structure/railing/thin,
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "mz" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
 /obj/machinery/light/floor,
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "nK" = (
 /obj/machinery/conveyor/auto/outpost{
@@ -171,21 +173,22 @@
 	dir = 8
 	},
 /obj/effect/decal/fakelattice,
-/turf/open/floor/plating,
+/turf/open/floor/hangar/clipoutpost,
 /area/hangar)
 "oS" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 1
 	},
 /obj/machinery/light/floor,
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "pH" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 5
 	},
-/turf/open/floor/plating{
-	color = "#999999"
+/turf/open/floor/hangar/clipoutpost{
+	color = "#999999";
+	light_power = 0.7
 	},
 /area/hangar)
 "qA" = (
@@ -193,7 +196,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "qD" = (
 /obj/structure/platform/industrial_alt/indestructible{
@@ -211,22 +214,24 @@
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 1
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "rN" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 6
 	},
-/turf/open/floor/plating{
-	color = "#999999"
+/turf/open/floor/hangar/clipoutpost{
+	color = "#999999";
+	light_power = 0.7
 	},
 /area/hangar)
 "tr" = (
 /obj/structure/platform/industrial_alt/corner/indestructible{
 	dir = 4
 	},
-/turf/open/floor/plating{
-	color = "#999999"
+/turf/open/floor/hangar/clipoutpost{
+	color = "#999999";
+	light_power = 0.7
 	},
 /area/hangar)
 "tt" = (
@@ -275,14 +280,16 @@
 /obj/structure/platform/industrial_alt/corner/indestructible{
 	dir = 8
 	},
-/turf/open/floor/plating{
-	color = "#999999"
+/turf/open/floor/hangar/clipoutpost{
+	color = "#999999";
+	light_power = 0.7
 	},
 /area/hangar)
 "vD" = (
 /obj/structure/platform/industrial_alt/indestructible,
-/turf/open/floor/plating{
-	color = "#999999"
+/turf/open/floor/hangar/clipoutpost{
+	color = "#999999";
+	light_power = 0.7
 	},
 /area/hangar)
 "vI" = (
@@ -295,14 +302,15 @@
 	pixel_x = 9;
 	pixel_y = 0
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "vO" = (
 /obj/structure/platform/industrial_alt/corner/indestructible{
 	dir = 1
 	},
-/turf/open/floor/plating{
-	color = "#999999"
+/turf/open/floor/hangar/clipoutpost{
+	color = "#999999";
+	light_power = 0.7
 	},
 /area/hangar)
 "vR" = (
@@ -327,7 +335,7 @@
 	pixel_x = 9;
 	pixel_y = 0
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "zs" = (
 /obj/structure/platform/industrial_alt/indestructible{
@@ -338,7 +346,7 @@
 /turf/open/water/beach/deep/outpost,
 /area/hangar)
 "zF" = (
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "Aq" = (
 /obj/machinery/conveyor/auto/outpost{
@@ -359,21 +367,14 @@
 /obj/structure/railing/thin/corner{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/dark,
-/area/hangar)
-"CG" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "CI" = (
 /obj/structure/railing/thin{
 	dir = 1
 	},
 /obj/structure/chair/bench/blue/directional/south,
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "CM" = (
 /obj/structure/platform/industrial_alt/indestructible{
@@ -409,7 +410,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "Fu" = (
 /obj/effect/landmark/outpost/elevator_machine{
@@ -420,7 +421,7 @@
 	pixel_x = 25;
 	pixel_y = 6
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "FP" = (
 /turf/open/floor/plasteel/elevatorshaft,
@@ -442,7 +443,7 @@
 /obj/structure/railing/thin{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "HZ" = (
 /obj/structure/platform/industrial_alt/indestructible{
@@ -458,8 +459,9 @@
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 4
 	},
-/turf/open/floor/plating{
-	color = "#999999"
+/turf/open/floor/hangar/clipoutpost{
+	color = "#999999";
+	light_power = 0.7
 	},
 /area/hangar)
 "Jn" = (
@@ -469,7 +471,7 @@
 /obj/structure/railing/thin{
 	dir = 8
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "Kr" = (
 /obj/structure/railing{
@@ -478,7 +480,7 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "Kt" = (
 /obj/effect/landmark/outpost/elevator{
@@ -491,21 +493,22 @@
 	dir = 1
 	},
 /obj/structure/railing/thin,
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "KM" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 10
 	},
-/turf/open/floor/plating{
-	color = "#999999"
+/turf/open/floor/hangar/clipoutpost{
+	color = "#999999";
+	light_power = 0.7
 	},
 /area/hangar)
 "LI" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 8
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "Mz" = (
 /obj/structure/railing/thin{
@@ -521,7 +524,7 @@
 	pixel_x = 9;
 	pixel_y = 0
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "Ny" = (
 /obj/machinery/disposal/deliveryChute{
@@ -537,7 +540,7 @@
 /area/hangar)
 "Op" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "OC" = (
 /obj/structure/platform/industrial_alt/indestructible{
@@ -552,8 +555,9 @@
 /area/hangar)
 "Pf" = (
 /obj/structure/platform/industrial_alt/corner/indestructible,
-/turf/open/floor/plating{
-	color = "#999999"
+/turf/open/floor/hangar/clipoutpost{
+	color = "#999999";
+	light_power = 0.7
 	},
 /area/hangar)
 "Pj" = (
@@ -586,7 +590,7 @@
 /area/hangar)
 "Qw" = (
 /obj/structure/chair/bench/blue/directional/south,
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "RM" = (
 /obj/machinery/conveyor/auto/outpost,
@@ -600,12 +604,12 @@
 /obj/structure/railing/thin{
 	dir = 6
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "So" = (
 /obj/structure/railing/thin,
 /obj/structure/chair/bench/blue/directional/north,
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "Sp" = (
 /obj/structure/disposalpipe/trunk{
@@ -626,11 +630,11 @@
 /obj/structure/railing/thin{
 	dir = 10
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "Ua" = (
 /obj/effect/landmark/outpost/hangar_numbers,
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "UQ" = (
 /obj/structure/platform/industrial_alt/corner/indestructible{
@@ -644,16 +648,18 @@
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 1
 	},
-/turf/open/floor/plating{
-	color = "#999999"
+/turf/open/floor/hangar/clipoutpost{
+	color = "#999999";
+	light_power = 0.7
 	},
 /area/hangar)
 "UX" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	dir = 8
 	},
-/turf/open/floor/plating{
-	color = "#999999"
+/turf/open/floor/hangar/clipoutpost{
+	color = "#999999";
+	light_power = 0.7
 	},
 /area/hangar)
 "WQ" = (
@@ -669,20 +675,20 @@
 	dir = 9
 	},
 /obj/machinery/light/floor,
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "Zd" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 4
 	},
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "Zf" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 10
 	},
 /obj/machinery/light/floor,
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "Zr" = (
 /turf/open/floor/plasteel/tech,
@@ -704,7 +710,7 @@
 	dir = 5
 	},
 /obj/machinery/light/floor,
-/turf/open/floor/hangar/plasteel/dark,
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 
 (1,1,1) = {"
@@ -4233,26 +4239,26 @@ vR
 vR
 "}
 (76,1,1) = {"
-CG
-CG
-CG
-CG
-CG
-CG
-CG
-CG
-CG
-CG
-CG
-CG
-CG
-CG
-CG
-CG
-CG
-CG
-CG
-CG
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
 oF
 FP
 FP
@@ -4260,24 +4266,24 @@ FP
 FP
 Kt
 oF
-CG
-CG
-CG
-CG
-CG
-CG
-CG
-CG
-CG
 DR
-CG
-CG
-CG
-CG
-CG
-CG
-CG
-CG
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
+DR
 "}
 (77,1,1) = {"
 hd
