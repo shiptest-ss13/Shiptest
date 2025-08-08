@@ -218,7 +218,7 @@
 //Boulder Hardsuit
 /obj/item/clothing/suit/space/hardsuit/security/inteq/boulder
 	name = "Boulder hardsuit"
-	desc = "A drastic modification of an EOD suit, the Boulder hardsuit was originally an unsupervised Artificer project. Due to its heavy armor and suprisingly low cost, it was formerly adopted as an armor modification. Extreme bulk guaranteed."
+	desc = "An extreme EOD-suit modification created by a group of unsupervised IRMG artificers, a few nights, and far too much Vimukti. The ingenuity of the conversion, as well as relatively low production cost has lead it to adaptation by the IRMG. Extreme bulk guaranteed."
 	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
 	icon_state = "hardsuit-boulder"
