@@ -1,4 +1,4 @@
-#define SERENE_ATTACHMENTS list(/obj/item/attachment/rail_light, /obj/item/attachment/bayonet,/obj/item/attachment/scope,/obj/item/attachment/long_scope, /obj/item/attachment/sling, /obj/item/attachment/gun, /obj/item/attachment/ammo_counter)
+#define SERENE_ATTACHMENTS list(/obj/item/attachment/rail_light, /obj/item/attachment/bayonet,/obj/item/attachment/scope,/obj/item/attachment/sling, /obj/item/attachment/gun, /obj/item/attachment/ammo_counter)
 #define SERENE_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_RAIL = 1, ATTACHMENT_SLOT_SCOPE = 1)
 
 /* Micro Target */
@@ -268,7 +268,7 @@ EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
 	spread_unwielded = 20
 	recoil = 1.25
 	recoil_unwielded = 6
-	fire_delay = 0.5 SECONDS
+	fire_delay = 0.75 SECONDS
 	wield_delay = 1.15 SECONDS //a little longer and less wieldy than other DMRs
 	zoom_out_amt = 2
 
@@ -305,16 +305,6 @@ NO_MAG_GUN_HELPER(automatic/marksman/woodsman)
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/m23/empty
-	start_empty = TRUE
-
-/obj/item/ammo_box/magazine/m23/extended
-	name = "Model 23 Extended Magazine (8x50mmR)"
-	desc = "A 10-round magazine for the Model 23 \"Woodsman\". These rounds do high damage, with excellent armor penetration."
-	icon_state = "woodsman_extended-1"
-	base_icon_state = "woodsman_extended"
-	max_ammo = 10
-
-/obj/item/ammo_box/magazine/m23/extended/empty
 	start_empty = TRUE
 
 /* super soaker */

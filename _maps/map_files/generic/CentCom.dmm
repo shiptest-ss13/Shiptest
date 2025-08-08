@@ -61,13 +61,6 @@
 	},
 /turf/open/floor/circuit/green,
 /area/tdome/arena_source)
-"afR" = (
-/obj/item/reagent_containers/food/snacks/egg/rainbow{
-	desc = "I bet you think you're pretty clever... well you are.";
-	name = "easter egg"
-	},
-/turf/open/space/basic,
-/area/space)
 "afU" = (
 /obj/machinery/door/poddoor{
 	id = "thunderdomehea";
@@ -149,7 +142,7 @@
 /obj/structure/window/reinforced/fulltile{
 	max_integrity = 5000;
 	name = "hardened window";
-	obj_integrity = 5000
+	atom_integrity = 5000
 	},
 /turf/open/floor/plating,
 /area/ctf)
@@ -1679,13 +1672,6 @@
 /obj/machinery/status_display/ai,
 /turf/closed/indestructible/riveted,
 /area/centcom/evac)
-"atW" = (
-/obj/structure/rack,
-/obj/item/melee/sword/claymore{
-	damtype = "stamina"
-	},
-/turf/open/floor/wood,
-/area/centcom/holding)
 "atX" = (
 /obj/machinery/door/airlock{
 	icon = 'icons/obj/doors/airlocks/station/uranium.dmi';
@@ -1889,13 +1875,6 @@
 	},
 /turf/open/floor/carpet,
 /area/wizard_station)
-"avt" = (
-/obj/structure/rack,
-/obj/item/melee/sword/katana{
-	damtype = "stamina"
-	},
-/turf/open/floor/wood,
-/area/centcom/holding)
 "avu" = (
 /obj/item/storage/box/drinkingglasses,
 /obj/item/reagent_containers/food/drinks/bottle/rum,
@@ -3294,13 +3273,6 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/centcom/evac)
-"aHG" = (
-/obj/item/reagent_containers/food/snacks/egg/rainbow{
-	desc = "I bet you think you're pretty clever... well you are.";
-	name = "easter egg"
-	},
-/turf/open/space,
-/area/space)
 "aHH" = (
 /obj/machinery/light/directional/south,
 /turf/open/floor/wood,
@@ -3938,14 +3910,6 @@
 	dir = 1
 	},
 /turf/open/floor/carpet/black,
-/area/centcom/holding)
-"aMx" = (
-/obj/machinery/light/directional/east,
-/obj/structure/rack,
-/obj/item/melee/sword/claymore{
-	damtype = "stamina"
-	},
-/turf/open/floor/wood,
 /area/centcom/holding)
 "aMz" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -4845,14 +4809,6 @@
 /obj/item/storage/box/alienhandcuffs,
 /turf/open/floor/plating/abductor,
 /area/abductor_ship)
-"aRS" = (
-/obj/machinery/light/directional/west,
-/obj/structure/rack,
-/obj/item/melee/sword/claymore{
-	damtype = "stamina"
-	},
-/turf/open/floor/wood,
-/area/centcom/holding)
 "aRY" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "XCCcustoms1";
@@ -5682,11 +5638,6 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/centcom/ferry)
-"aYf" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/chawanmushi,
-/turf/open/floor/wood,
-/area/centcom/holding)
 "aYg" = (
 /obj/structure/table,
 /obj/item/toy/sword,
@@ -6188,6 +6139,10 @@
 /obj/item/food/pancakes/blueberry,
 /turf/open/floor/plasteel,
 /area/centcom)
+"bqD" = (
+/obj/structure/speaking_tile,
+/turf/closed/mineral/random/waterplanet,
+/area/errorroom)
 "bsD" = (
 /obj/structure/table/reinforced,
 /obj/item/folder,
@@ -6326,6 +6281,24 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/centcom)
+"bFq" = (
+/obj/structure/table/reinforced,
+/obj/item/food/mint,
+/obj/item/reagent_containers/condiment/enzyme{
+	pixel_y = 5
+	},
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/tdome/tdomeobserve)
 "bIh" = (
 /obj/structure/chair{
 	dir = 4
@@ -6478,6 +6451,14 @@
 	},
 /turf/open/floor/circuit/red,
 /area/ctf)
+"cdA" = (
+/obj/structure/railing,
+/obj/structure/sign/flag/gezena{
+	dir = 8;
+	pixel_x = 30
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/centcom)
 "cfq" = (
 /obj/machinery/light/directional/north,
 /obj/structure/table/reinforced,
@@ -6748,6 +6729,13 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/tdome/tdomeobserve)
+"cBs" = (
+/obj/structure/rack,
+/obj/item/melee/sword/katana{
+	damtype = "stamina"
+	},
+/turf/open/floor/wood,
+/area/centcom/holding)
 "cCK" = (
 /obj/machinery/telecomms/relay/preset/syndicate{
 	autolinkers = list("relay")
@@ -7144,9 +7132,6 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/dark,
 /area/ctf)
-"dvE" = (
-/turf/closed/mineral/ash_rock,
-/area/errorroom)
 "dAW" = (
 /obj/item/storage/box/handcuffs,
 /obj/item/crowbar/red,
@@ -7581,6 +7566,9 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/control)
+"enH" = (
+/turf/closed/mineral/random/waterplanet,
+/area/errorroom)
 "epS" = (
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 1
@@ -10309,6 +10297,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/control)
+"jYm" = (
+/obj/structure/rack,
+/obj/item/melee/sword/claymore{
+	damtype = "stamina"
+	},
+/turf/open/floor/wood,
+/area/centcom/holding)
 "jYL" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
@@ -11158,10 +11153,6 @@
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeadmin)
-"lEw" = (
-/obj/structure/speaking_tile,
-/turf/closed/mineral/ash_rock,
-/area/errorroom)
 "lEZ" = (
 /obj/effect/turf_decal/corner/opaque/brown,
 /obj/effect/turf_decal/corner/opaque/brown{
@@ -11227,6 +11218,11 @@
 /obj/structure/table/glass,
 /turf/open/floor/plasteel/patterned/grid,
 /area/centcom)
+"lIb" = (
+/turf/open/water/stormy_planet_lit{
+	planetary_atmos = 0
+	},
+/area/errorroom)
 "lIm" = (
 /obj/structure/table,
 /obj/item/paper/pamphlet/centcom/visitor_info,
@@ -11492,6 +11488,11 @@
 	},
 /turf/open/floor/plating,
 /area/ctf)
+"mia" = (
+/obj/structure/table/wood,
+/obj/item/food/chawanmushi,
+/turf/open/floor/wood,
+/area/centcom/holding)
 "miR" = (
 /obj/structure/closet/secure_closet/freezer/meat/open,
 /obj/item/food/meat/slab/bear,
@@ -12504,17 +12505,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ctf)
-"okc" = (
-/obj/structure/table/wood,
-/obj/effect/turf_decal/corner/transparent/bar,
-/obj/effect/turf_decal/corner/transparent/bar{
-	dir = 1
-	},
-/obj/item/reagent_containers/food/snacks/syndicake{
-	pixel_y = 3
-	},
-/turf/open/floor/plasteel,
-/area/syndicate_mothership/control)
 "oof" = (
 /obj/structure/table/reinforced,
 /obj/item/clipboard,
@@ -13077,6 +13067,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/ferry)
+"pnp" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/syndicate_mothership/control)
 "pqm" = (
 /obj/structure/railing{
 	dir = 8
@@ -13300,6 +13298,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeobserve)
+"pEG" = (
+/obj/machinery/light/directional/west,
+/obj/structure/rack,
+/obj/item/melee/sword/claymore{
+	damtype = "stamina"
+	},
+/turf/open/floor/wood,
+/area/centcom/holding)
 "pFf" = (
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
@@ -13867,13 +13873,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
-"qTh" = (
-/obj/item/rupee,
-/turf/open/floor/plating/asteroid/waterplanet{
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15";
-	planetary_atmos = 0
-	},
-/area/errorroom)
 "qVj" = (
 /obj/effect/turf_decal/corner/opaque/red,
 /obj/effect/turf_decal/corner/opaque/red{
@@ -14532,24 +14531,6 @@
 /obj/item/kirbyplants/random,
 /turf/open/floor/plasteel,
 /area/centcom)
-"rUH" = (
-/obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/snacks/mint,
-/obj/item/reagent_containers/condiment/enzyme{
-	pixel_y = 5
-	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/neutral,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/tdome/tdomeobserve)
 "rVR" = (
 /obj/structure/table/wood,
 /obj/item/storage/fancy/donut_box,
@@ -14694,6 +14675,13 @@
 	},
 /turf/open/floor/circuit/red,
 /area/ctf)
+"swD" = (
+/obj/structure/flora/tree/dead_pine,
+/turf/open/floor/plating/asteroid/waterplanet{
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15";
+	planetary_atmos = 0
+	},
+/area/errorroom)
 "syj" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
@@ -15131,6 +15119,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
+"tqx" = (
+/obj/structure/flora/rock/asteroid,
+/turf/open/floor/plating/asteroid/waterplanet{
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15";
+	planetary_atmos = 0
+	},
+/area/errorroom)
 "tqJ" = (
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/circuit/green/off,
@@ -16819,14 +16814,6 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel,
 /area/centcom/ferry)
-"xHM" = (
-/obj/structure/railing,
-/obj/structure/sign/flag/gezena{
-	dir = 8;
-	pixel_x = 30
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/centcom)
 "xJB" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -16940,6 +16927,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeadmin)
+"xYv" = (
+/obj/machinery/light/directional/east,
+/obj/structure/rack,
+/obj/item/melee/sword/claymore{
+	damtype = "stamina"
+	},
+/turf/open/floor/wood,
+/area/centcom/holding)
 "xYD" = (
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/circuit,
@@ -17746,15 +17741,15 @@ aaa
 aaa
 aaa
 ngI
-dvE
-dvE
-dvE
-dvE
-dvE
-dvE
-dvE
-dvE
-dvE
+enH
+enH
+enH
+enH
+enH
+enH
+enH
+enH
+enH
 ngI
 aaa
 "}
@@ -18003,15 +17998,15 @@ aaa
 aaa
 aaa
 ngI
-dvE
-qTh
-qTh
-qTh
+enH
+tqx
 qNi
-qTh
-qTh
-qTh
-dvE
+qNi
+qNi
+lIb
+lIb
+tqx
+enH
 ngI
 aaa
 "}
@@ -18260,15 +18255,15 @@ aaa
 aaa
 aaa
 ngI
-dvE
-qTh
-qTh
-qTh
+enH
 qNi
-qTh
-qTh
-qTh
-dvE
+swD
+qNi
+qNi
+qNi
+lIb
+lIb
+enH
 ngI
 aaa
 "}
@@ -18517,15 +18512,15 @@ aaa
 aaa
 aaa
 ngI
-dvE
-qTh
-qTh
-qTh
+enH
 qNi
-qTh
-qTh
-qTh
-dvE
+qNi
+qNi
+qNi
+swD
+lIb
+lIb
+enH
 ngI
 aaa
 "}
@@ -18774,15 +18769,15 @@ aaa
 aaa
 aaa
 ngI
-dvE
+enH
+swD
 qNi
 qNi
 qNi
+tqx
 qNi
-qNi
-qNi
-qNi
-dvE
+lIb
+enH
 ngI
 aaa
 "}
@@ -19031,15 +19026,15 @@ aaa
 aaa
 aaa
 ngI
-dvE
-qTh
-qTh
-qTh
+enH
 qNi
 qNi
 qNi
 qNi
-dvE
+qNi
+qNi
+qNi
+enH
 ngI
 aaa
 "}
@@ -19288,15 +19283,15 @@ aaa
 aaa
 aaa
 ngI
-lEw
-qTh
-qTh
-qTh
+bqD
+qNi
+qNi
+qNi
 qNi
 qNi
 wrq
 oKG
-dvE
+enH
 ngI
 aaa
 "}
@@ -19545,15 +19540,15 @@ aaa
 aaa
 aaa
 ngI
-dvE
-qTh
-qTh
-qTh
+enH
 qNi
 qNi
 qNi
 qNi
-dvE
+qNi
+qNi
+qNi
+enH
 ngI
 aaa
 "}
@@ -19802,15 +19797,15 @@ aaa
 aaa
 aaa
 ngI
-dvE
+enH
+swD
 qNi
 qNi
 qNi
 qNi
 qNi
 qNi
-qNi
-dvE
+enH
 ngI
 aaa
 "}
@@ -20059,15 +20054,15 @@ aaa
 aaa
 aaa
 ngI
-dvE
-qTh
-qTh
-qTh
+enH
+tqx
 qNi
-qTh
-qTh
-qTh
-dvE
+swD
+qNi
+qNi
+swD
+qNi
+enH
 ngI
 aaa
 "}
@@ -20316,15 +20311,15 @@ aaa
 aaa
 aaa
 ngI
-dvE
-qTh
-qTh
-qTh
+enH
 qNi
-qTh
-qTh
-qTh
-dvE
+qNi
+qNi
+qNi
+qNi
+qNi
+qNi
+enH
 ngI
 aaa
 "}
@@ -20573,15 +20568,15 @@ aaa
 aaa
 aaa
 ngI
-dvE
-qTh
-qTh
-qTh
+enH
 qNi
-qTh
-qTh
-qTh
-dvE
+swD
+qNi
+qNi
+tqx
+qNi
+swD
+enH
 ngI
 aaa
 "}
@@ -20830,15 +20825,15 @@ aaa
 aaa
 aaa
 ngI
-dvE
-dvE
-dvE
-dvE
-dvE
-dvE
-dvE
-dvE
-dvE
+enH
+enH
+enH
+enH
+enH
+enH
+enH
+enH
+enH
 ngI
 aaa
 "}
@@ -21346,7 +21341,7 @@ aaa
 aaa
 aaa
 aaa
-afR
+aaa
 aaa
 aaa
 aaa
@@ -23868,7 +23863,7 @@ aGz
 aGX
 alI
 alI
-aHG
+aad
 aaa
 aaa
 aaa
@@ -31848,7 +31843,7 @@ aaa
 gRm
 vMz
 qfB
-xHM
+cdA
 msb
 hKv
 gRm
@@ -34889,7 +34884,7 @@ mtq
 puS
 jbg
 luo
-okc
+pnp
 mtq
 jbg
 avw
@@ -43407,11 +43402,11 @@ aCT
 aCT
 aCT
 aNT
-avt
-aRS
+cBs
+pEG
 aOU
 aOU
-aRS
+pEG
 aVF
 aWO
 aaa
@@ -44678,7 +44673,7 @@ auG
 axA
 aED
 aoV
-aYf
+mia
 aUE
 aCT
 aCT
@@ -45977,12 +45972,12 @@ aCT
 aCT
 aCT
 aNT
-avt
-aMx
+cBs
+xYv
 aQg
 aTb
-aMx
-atW
+xYv
+jYm
 aWO
 aaa
 aaa
@@ -57534,7 +57529,7 @@ aEp
 lHy
 dhD
 lii
-rUH
+bFq
 mKS
 log
 oPV

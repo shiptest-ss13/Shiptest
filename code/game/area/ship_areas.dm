@@ -217,6 +217,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/dorm/captain
 	name = "Captain's Quarters"
 
+/area/ship/crew/dorm/commad
+	name = "Command Quarters"
+
 /area/ship/crew/toilet
 	name = "Restroom"
 	icon_state = "toilet"

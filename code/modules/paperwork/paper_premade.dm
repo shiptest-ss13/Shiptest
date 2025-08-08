@@ -129,3 +129,15 @@
 /obj/item/paper/crumpled/fluff/fueling/command
 	name = "\improper Hastily Written Note"
 	default_raw_text = "dont trust Ozeen-Jur, big plume of plasma came up in medical during break. saw them welding scrubbers, said it was 'maintenance'. ACLF traitor piece of SHIT , sent out an order to close off ventilation to prevent any leakage elsewhere until the evac came in. any cleanup crews coming in, do NOT under ANY circumstances unweld the vents or use the airlocks"
+
+/obj/item/paper/crumpled/fluff/prisoners
+	name = "\improper DONT FORGET"
+	default_raw_text = "Yes, you. These ID's aren't set, you'll need to ask the captain to set access with their console. Don't cause a fuss over not being able to read."
+
+/obj/item/paper/crumpled/fluff/ruin/space/deepstorage/diary
+	name = "\improper Written Diary"
+	default_raw_text = "Finally got a small shipment, this time. At first I thought it was a blessing, then they told me the contents. Apparently the big shots say they're trying to make a reliable cure for it, and that we've gotta keep this shit under the radar as usual. Little thing of note, apparently the shipping vessel was paranoid about some readings following them. Probably just sensor ghosts, again. Still, think I'm finally moving up in the chain since they told me the contents of the cargo!"
+
+/obj/item/paper/crumpled/fluff/ruin/space/deepstorage/orders
+	name = "\improper Written Log"
+	default_raw_text = "You know the drill, people. Shoot anyone on sight approaching the station. This includes our own colors, conducts the same as usual. Give fair warning to our boys, unless shots have already been fired. Cargo's more valuable this time, and we've gotta get our shit together to get that sweet, sweet raise."

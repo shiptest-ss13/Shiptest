@@ -1,7 +1,9 @@
-#define NO_STUTTER 1
-#define TONGUELESS_SPEECH 2
-#define LANGUAGE_HIDE_ICON_IF_UNDERSTOOD 4
-#define LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD 8
+#define NO_STUTTER (1<<0)
+#define TONGUELESS_SPEECH (1<<1)
+#define LANGUAGE_HIDE_ICON_IF_UNDERSTOOD (1<<2)
+#define LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD (1<<3)
+/// This language is signed, not spoken.
+#define SIGNED_LANGUAGE (1<<4)
 
 // LANGUAGE SOURCE DEFINES
 /// For use in full removal only.

@@ -56,6 +56,14 @@
 	item_state = "inteq_honorable"
 	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
 
+/obj/item/clothing/under/syndicate/inteq/sneaksuit
+	name = "inteq sneaksuit"
+	desc = "A tactical sneaksuit developed for usage in the IRMG's covert elements. Maximizes stealth by minimizing friction."
+	icon_state = "inteq_sneak"
+	item_state = "inteq_sneak"
+	roll_sleeves = FALSE
+
+
 // Oversuits // can someone like. change the vanguard and maa armors to be subtypes of armor/inteq. please
 
 /obj/item/clothing/suit/armor/hos/inteq
@@ -74,7 +82,7 @@
 	desc = "A sleek black coat with snow white fur trims made to order for honorable vanguards of the IRMG. It feels even tougher than the typical battlecoat."
 	icon_state = "armor_inteq_honorable_battlecoat"
 	item_state = "inteq_honorable_battlecoat"
-	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
+	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90, "wound" = 20)
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/suit/armor/vest/security/warden/inteq
@@ -155,7 +163,7 @@
 	item_state = "space-inteq"
 	icon_state = "space-inteq"
 	slowdown = 0.8
-	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 10)
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/clothing/head/helmet/space/inteq
@@ -165,7 +173,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
 	item_state = "space-inteq"
 	icon_state = "space-inteq"
-	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 10)
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/clothing/head/helmet/space/hardsuit/security/inteq
@@ -176,7 +184,7 @@
 	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
 	hardsuit_type = "inteq"
-	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 	supports_variations = SNOUTED_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/security/inteq
@@ -188,7 +196,7 @@
 	item_state = "hardsuit-inteq"
 	hardsuit_type = "inteq"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/inteq
-	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 	supports_variations = DIGITIGRADE_VARIATION
 
 //Pointman Hardsuit
