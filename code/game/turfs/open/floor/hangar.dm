@@ -45,7 +45,7 @@ Each floor in a hangar map must be subtyped here.
 	planetary_atmos = 1
 	light_range = 2
 	light_power = 0.90
-	light_color = "#7e3d24"
+	light_color = "#97442f"
 	initial_gas_mix = "o2=22;n2=82;TEMP=305"
 
 /turf/open/floor/hangar/plasteel/dark/clipoutpost
@@ -56,5 +56,5 @@ Each floor in a hangar map must be subtyped here.
 	planetary_atmos = 1
 	light_range = 2
 	light_power = 0.90
-	light_color = "#7e3d24"
+	light_color = "#97442f"
 	initial_gas_mix = "o2=22;n2=82;TEMP=305"

@@ -121,7 +121,7 @@
 
 /turf/open/water/beach/deep/outpost
 	color = "#22423b"
-	light_color = "#7e3d24"
+	light_color = "#97442f"
 	initial_gas_mix = "o2=22;n2=82;TEMP=305"
 	light_range = 2
 	light_power = 0.90
