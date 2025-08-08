@@ -381,3 +381,9 @@
 	name = "Absolution-Lux 'Solferino'"
 	limbs_id = "ablux"
 	has_screen = FALSE
+
+/datum/sprite_accessory/ipc_chassis/humanipc
+	name = "Placeholder HumanIPC"
+	limbs_id = "humanipc"
+	has_screen = FALSE
+	use_eyes = TRUE
