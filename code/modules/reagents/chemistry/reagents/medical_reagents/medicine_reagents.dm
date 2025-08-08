@@ -335,7 +335,7 @@
 	reagent_weight = 2
 
 /datum/reagent/medicine/ysiltane/on_mob_life(mob/living/carbon/M)
-	if(current_cycle > 2 && current_cycle =< 6)
+	if(current_cycle > 2 && current_cycle <= 6)
 		M.adjustFireLoss(-10*REM, 0)
 	M.adjustFireLoss(-2*REM, 0)
 	M.adjustStaminaLoss(1*REM, 0)
