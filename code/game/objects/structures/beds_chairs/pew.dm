@@ -14,7 +14,7 @@
 /obj/structure/chair/pew/left
 	name = "left wooden pew end"
 	icon_state = "pewend_left"
-	var/mutable_appearance/rightpewarmrest
+	var/mutable_appearance/leftpewarmrest
 
 /obj/structure/chair/pew/left/Initialize()
 	leftpewarmrest = GetLeftPewArmrest()
