@@ -7,6 +7,38 @@
 	var/automatic_charge_overlays = TRUE
 	allow_hand_interaction = TRUE
 
+/obj/item/attachment/gun/energy/Initialize(mapload, spawn_empty = FALSE)
+	. = ..()
+	build_ammotypes()
+
+/obj/item/attachment/gun/energy/proc/build_ammotypes()
+	for(var/datum/action/item_action/toggle_ammotype/old_ammotype in actions)
+		old_ammotype.Destroy()
+	var/datum/action/item_action/our_action
+
+	var/obj/item/gun/energy/e_gun = attached_gun
+	if(e_gun.ammo_type.len > 1)
+		our_action = new /datum/action/item_action/toggle_ammotype(src)
+
+	for(var/i=1, i <= e_gun.ammo_type.len+1, i++)
+		if(e_gun.default_ammo_type == e_gun.ammo_type[i])
+			e_gun.ammotype_index = i
+			if(our_action)
+				our_action.UpdateButtonIcon()
+			return
+
+	e_gun.ammotype_index = 1
+	CRASH("default_ammo_type isn't in the ammo_type list of [src.type]!! Defaulting to 1!!")
+
+
+/obj/item/attachment/gun/energy/ui_action_click(mob/user, actiontype)
+	var/obj/item/gun/energy/e_gun = attached_gun
+	if (istype(actiontype, /datum/action/item_action/toggle_ammotype))
+		e_gun.select_fire(user)
+		update_appearance()
+	else
+		..()
+
 /obj/item/attachment/gun/energy/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/stock_parts/cell/gun))
 		attached_gun.attackby(I, user)
@@ -34,10 +66,6 @@
 	if(!e_gun.internal_magazine)
 		examine_list += span_notice("- The cell retainment latch is [e_gun.latch_closed ? span_green("CLOSED") : span_red("OPEN")]. Alt-Click to toggle the latch.")
 	return examine_list
-
-/obj/item/attachment/gun/energy/AltClick(mob/user)
-	. = ..()
-	attached_gun.AltClick(user)
 
 /obj/item/attachment/gun/energy/get_cell()
 	return attached_gun.cell
