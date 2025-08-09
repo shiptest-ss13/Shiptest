@@ -125,13 +125,6 @@
 	pixel_y = 7;
 	name = "Aft Holofield"
 	},
-/obj/machinery/button/shieldwallgen{
-	dir = 8;
-	id = "karstbackdoor";
-	pixel_x = 28;
-	pixel_y = 7;
-	name = "Fore Holofield"
-	},
 /obj/machinery/button/door{
 	dir = 8;
 	pixel_x = 21;
@@ -143,17 +136,26 @@
 	pixel_x = -8;
 	pixel_y = -2
 	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = 29;
+	pixel_y = -2;
+	id = "karst_back";
+	name = "Side Door Controls"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "l" = (
-/obj/machinery/button/door{
-	dir = 8;
-	pixel_x = -3;
-	pixel_y = -2;
-	id = "karst_back";
-	name = "Fore Door Controls"
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/poddoor{
+	id = "karst_back";
+	dir = 1
+	},
+/turf/open/floor/plating,
 /area/ship/bridge)
 "m" = (
 /obj/machinery/turretid/ship{
@@ -191,9 +193,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/structure/chair/comfy/shuttle{
-	dir = 1
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -203,6 +202,12 @@
 	},
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 6
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -216,14 +221,12 @@
 	},
 /obj/item/clothing/under/syndicate/ngr/fatigues,
 /obj/item/clothing/head/helmet/ngr/swat,
-/obj/item/clothing/glasses/hud/security/sunglasses/ngr,
 /obj/item/radio/headset/syndicate/alt,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/gloves/fingerless{
 	desc = "These make you feel like a better pilot than you are.";
 	name = "pilot's driving gloves"
 	},
-/obj/item/storage/guncase/pistol/ringneck,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "q" = (
@@ -256,9 +259,6 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/filled/line{
 	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -383,20 +383,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
-"A" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/obj/machinery/door/poddoor{
-	id = "karst_back";
-	dir = 4
-	},
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "karstbackdoor"
-	},
-/turf/open/floor/plating,
-/area/ship/bridge)
 "B" = (
 /obj/machinery/porta_turret/ship/ngr/heavy{
 	id = "karstgrid";
@@ -409,8 +395,9 @@
 	icon_state = "0-2"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/power/smes/engineering,
-/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/power/smes/engineering{
+	input_level = 10000
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "D" = (
@@ -450,12 +437,6 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/filled/line{
 	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -500,18 +481,15 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "I" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 1
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/effect/turf_decal/corner/opaque/tan{
-	dir = 10
-	},
-/obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
+	},
+/obj/structure/chair/handrail{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -577,22 +555,6 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/bridge)
-"O" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/obj/machinery/door/poddoor{
-	id = "karst_back";
-	dir = 4
-	},
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 1;
-	id = "karstbackdoor";
-	locked = 1
-	},
-/turf/open/floor/plating,
 /area/ship/bridge)
 "P" = (
 /turf/template_noop,
@@ -785,7 +747,7 @@ w
 U
 N
 o
-F
+l
 P
 "}
 (7,1,1) = {"
@@ -822,9 +784,9 @@ a
 K
 j
 F
-A
-O
-l
+F
+F
+F
 x
 K
 "}

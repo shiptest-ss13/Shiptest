@@ -947,6 +947,11 @@
 	uniform = /obj/item/clothing/under/syndicate/ngr/fatigues
 	head = /obj/item/clothing/head/helmet/ngr/swat
 
+/datum/outfit/job/syndicate/security/ngr/pilot/skivvies
+	head = null
+	l_pocket = null
+	r_pocket = null
+
 /datum/outfit/job/syndicate/security/twink
 	name = "Syndicate - Operative (Twinkleshine)"
 
