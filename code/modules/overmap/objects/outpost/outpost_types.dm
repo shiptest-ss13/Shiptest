@@ -28,7 +28,8 @@
 /datum/map_template/outpost/elevator_rock
 	name = "elevator_rock"
 
-
+/datum/map_template/outpost/elevator_clip
+	name = "elevator_clip"
 /*
 	Independent Space Outpost //creative name!
 */
@@ -122,6 +123,36 @@
 	dock_width = 56
 	dock_height = 40
 
+/*
+	CLIP Ocean outpost //I really hated ghost leviathans, man
+*/
+/datum/map_template/outpost/clip_ocean
+	name = "clip_ocean"
+
+/datum/map_template/outpost/hangar/clip_ocean_20x20
+	name = "hangar/clip_ocean_20x20"
+	dock_width = 20
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/clip_ocean_40x20
+	name = "hangar/clip_ocean_40x20"
+	dock_width = 40
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/clip_ocean_40x40
+	name = "hangar/clip_ocean_40x40"
+	dock_width = 40
+	dock_height = 40
+
+/datum/map_template/outpost/hangar/clip_ocean_56x20
+	name = "hangar/clip_ocean_56x20"
+	dock_width = 56
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/clip_ocean_56x40
+	name = "hangar/clip_ocean_56x40"
+	dock_width = 56
+	dock_height = 40
 
 /*
 	/datum/overmap/outpost subtypes
@@ -160,6 +191,19 @@
 		/datum/map_template/outpost/hangar/ngr_rock_40x40,
 		/datum/map_template/outpost/hangar/ngr_rock_56x20,
 		/datum/map_template/outpost/hangar/ngr_rock_56x40
+	)
+
+/datum/overmap/outpost/clip_ocean
+	token_icon_state = "station_asteroid"
+	main_template = /datum/map_template/outpost/clip_ocean
+	elevator_template = /datum/map_template/outpost/elevator_clip
+	weather_controller_type = /datum/weather_controller/lush
+	hangar_templates = list(
+		/datum/map_template/outpost/hangar/clip_ocean_20x20,
+		/datum/map_template/outpost/hangar/clip_ocean_40x20,
+		/datum/map_template/outpost/hangar/clip_ocean_40x40,
+		/datum/map_template/outpost/hangar/clip_ocean_56x20,
+		/datum/map_template/outpost/hangar/clip_ocean_56x40
 	)
 
 /datum/overmap/outpost/no_main_level // For example and adminspawn.
