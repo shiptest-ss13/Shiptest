@@ -371,6 +371,7 @@
 		SStgui.close_uis(src)
 		return
 
+
 // Enable picking paper up by clicking on it with the clipboard or folder
 	if(istype(attacking_item, /obj/item/clipboard) || istype(attacking_item, /obj/item/folder) || istype(attacking_item, /obj/item/paper_bin))
 		attacking_item.attackby(src, user)
@@ -380,6 +381,13 @@
 	var/writing_stats = istype(attacking_item) ? attacking_item.get_writing_implement_details() : null
 
 	if(!writing_stats)
+		if (attacking_item.sharpness > SHARP_NONE && !istype(src, /obj/item/paper/paperslip))
+			playsound(src.loc, 'sound/weapons/slash.ogg', 50, TRUE)
+			to_chat(user, span_notice("You neatly cut [src]."))
+			new /obj/item/paper/paperslip(get_turf(src))
+			new /obj/item/paper/paperslip(get_turf(src))
+			qdel(src)
+			return
 		ui_interact(user)
 		return ..()
 
