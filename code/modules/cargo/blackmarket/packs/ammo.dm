@@ -176,6 +176,17 @@
 	stock = 2
 	availability_prob = 20
 
+/datum/blackmarket_item/ammo/military_etherbor_cell
+	name = "Military-Grade Etherbor Cell"
+	desc = "A military-grade Etherbor weapon cell. A surefire upgrade to the ones on the civilian market. Lime flavor!"
+	item = /obj/item/stock_parts/cell/gun/solgov
+
+	cost_min = 800
+	cost_max = 1200
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 40
+
 /datum/blackmarket_item/ammo/gauss_cell
 	name = "SolCon Weapon Cell"
 	desc = "A Solarian weapon cell, for powering their gauss weaponry."

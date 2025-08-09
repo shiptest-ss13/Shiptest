@@ -1068,9 +1068,11 @@
 "jO" = (
 /obj/structure/guncloset,
 /obj/item/gun/energy/kalix/pistol,
-/obj/item/gun/energy/kalix/pistol,
 /obj/item/gun/energy/kalix{
 	pixel_y = -8
+	},
+/obj/item/gun/energy/kalix/duck{
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/rockvault,
 /area/ship/security/armory)
@@ -3981,6 +3983,7 @@
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 2
 	},
+/obj/item/tank/internals/oxygen/red,
 /turf/open/floor/engine/hull/interior,
 /area/ship/medical/surgery)
 "Td" = (

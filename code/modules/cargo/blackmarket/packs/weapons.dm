@@ -292,9 +292,19 @@
 	availability_prob = 25
 
 /datum/blackmarket_item/weapon/guncase/bg_16
+	name = "VG-A5 Beam Gun"
+	desc = "So you've seen those triplebarrel Etherbor scatterguns? Well this thing's got four! Four barrels!"
+	item = /obj/item/storage/guncase/energy/vga5
+
+	cost_min = 3500
+	cost_max = 5000
+	stock = 2
+	availability_prob = 20
+
+/datum/blackmarket_item/weapon/guncase/bg_16
 	name = "BG-16 Beam Gun"
 	desc = "Not satisfied by Etherbor's civilian offerings? Try this military grade one we found!"
-	item = /obj/item/gun/energy/kalix/pgf
+	item = /obj/item/storage/guncase/energy/bg16
 
 	cost_min = 2500
 	cost_max = 5000

@@ -147,8 +147,16 @@
 	gun_type = /obj/item/gun/energy/kalix
 	mag_type = /obj/item/stock_parts/cell/gun/kalix
 
+/obj/item/storage/guncase/energy/kalixduck
+	gun_type = /obj/item/gun/energy/kalix/duck
+	mag_type = /obj/item/stock_parts/cell/gun/kalix
+
 /obj/item/storage/guncase/energy/bg16
 	gun_type = /obj/item/gun/energy/kalix/pgf
+	mag_type = /obj/item/stock_parts/cell/gun/pgf
+
+/obj/item/storage/guncase/energy/vga5
+	gun_type = /obj/item/gun/energy/kalix/pgf/duck
 	mag_type = /obj/item/stock_parts/cell/gun/pgf
 
 /obj/item/storage/guncase/energy/bgc10
