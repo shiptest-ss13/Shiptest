@@ -278,6 +278,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake)
 	icon_state = "rattlesnake_inteq"
 	item_state = "rattlesnake_inteq"
 
+NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
+
 /obj/item/ammo_box/magazine/m9mm_rattlesnake
 	name = "Rattlesnake magazine (9x18mm)"
 	desc = "A long, 18-round double-stack magazine designed for the Rattlesnake machine pistol. These rounds do okay damage, but struggle against armor."
