@@ -22,7 +22,7 @@
 	default_firemode = FIREMODE_OTHER
 
 	weapon_weight = WEAPON_MEDIUM
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	show_magazine_on_sprite = TRUE
 	ammo_counter = TRUE

@@ -102,7 +102,7 @@
 	)
 	force = 10
 	flags_1 =  CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/accelerator)
 	ammo_x_offset = 3
 	manufacturer = MANUFACTURER_SHARPLITE
