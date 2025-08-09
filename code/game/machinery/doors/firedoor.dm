@@ -26,6 +26,8 @@
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 70)
 	interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_REQUIRES_SILICON | INTERACT_MACHINE_OPEN
 	air_tight = TRUE
+	var/jammed_open = FALSE
+	var/obj/item/stack/material_jammed = null
 	var/emergency_close_timer = 0
 	var/nextstate = null
 	var/boltslocked = TRUE
@@ -41,7 +43,11 @@
 /obj/machinery/door/firedoor/examine(mob/user)
 	. = ..()
 	if(!density)
-		. += span_notice("It is open, but could be <b>pried</b> closed.")
+		if(jammed_open)
+			. += span_notice("It is open, but there appears to be something jammed between the doors preventing it from closing. You could potentially pull it out with your <b>hands</b>.")
+		else
+			. += span_notice("It is open, but could be <b>pried</b> closed.")
+			. += span_notice("You could jam an iron rod or wood plank in while it's open to prevent it from closing.")
 	else if(!welded)
 		. += span_notice("It is closed, but could be <i>pried</i> open. Deconstruction would require it to be <b>welded</b> shut.")
 	else if(boltslocked)
@@ -101,7 +107,7 @@
 	. = ..()
 	if(.)
 		return
-	if(!welded && !operating && !(machine_stat & NOPOWER) && (!density || allow_hand_open(user)))
+	if(!welded && !operating && !(machine_stat & NOPOWER) && (!density || allow_hand_open(user)) && !jammed_open)
 		user.visible_message("[user] tries to open \the [src] manually.",
 								"You operate the manual lever on \the [src].")
 		if (!do_after(user, 30, src))
@@ -113,6 +119,16 @@
 		else
 			close()
 		return TRUE
+	if(jammed_open)
+		user.visible_message(span_notice("[user] begins unjamming \the [src]."), span_notice("You begin unjamming \the [src]."))
+		if(do_after(user,10,src))
+			user.visible_message(span_notice("[user] successfully unjams \the [src]."), span_notice("You unjam \the [src]."))
+			jammed_open = FALSE
+			if(material_jammed)
+				material_jammed.forceMove(loc)
+				material_jammed = null
+			close()
+			return
 	if(operating || !density)
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
@@ -126,6 +142,20 @@
 	add_fingerprint(user)
 	if(operating)
 		return
+
+	if(!density)
+		if(istype(C, /obj/item/stack/rods) || istype(C, /obj/item/stack/sheet/mineral/wood))
+			var/obj/item/stack/jammer = C
+			if(do_after(user, 10, src) && jammer.use(1))
+				jammed_open = TRUE
+				user.visible_message("You jam open \the [src] with \the [C.name].")
+				if(istype(C, /obj/item/stack/sheet/mineral/wood))
+					material_jammed = new /obj/item/stack/sheet/mineral/wood
+					icon_state = "jammed_wood"
+				else
+					material_jammed = new /obj/item/stack/rods
+					icon_state = "jammed_iron"
+				playsound(loc, door_close_sound, 90, TRUE)
 
 	if(welded)
 		if(C.tool_behaviour == TOOL_WRENCH)
@@ -239,8 +269,12 @@
 
 /obj/machinery/door/firedoor/close()
 	playsound(loc, door_close_sound, 90, TRUE)
-	. = ..()
-	latetoggle()
+	if(jammed_open)
+		visible_message(span_warning("\The [src] tries to close, but has something jammed between the doors!"))
+		return FALSE
+	else
+		. = ..()
+		latetoggle()
 
 /obj/machinery/door/firedoor/proc/whack_a_mole(reconsider_immediately = FALSE)
 	set waitfor = 0
@@ -291,7 +325,7 @@
 				T.ImmediateCalculateAdjacentTurfs()
 
 /obj/machinery/door/firedoor/proc/emergency_pressure_stop(consider_timer = TRUE)
-	if(density || operating || welded)
+	if(density || operating || welded || jammed_open)
 		return
 	if(world.time >= emergency_close_timer || !consider_timer)
 		emergency_pressure_close()
