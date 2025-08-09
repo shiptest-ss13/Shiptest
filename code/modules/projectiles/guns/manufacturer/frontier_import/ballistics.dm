@@ -38,7 +38,10 @@
 	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 
-	wear_rate = 2 // 30 to malfunction, 90 to critical
+	wear_rate = 2
+	wear_minor_threshold = 240
+	wear_major_threshold = 720
+	wear_maximum = 1200
 
 
 	slot_available = list(
@@ -151,6 +154,9 @@
 	eject_empty_sound = 'sound/weapons/gun/smg/spitter_unload.ogg'
 
 	wear_rate = 0.8
+	wear_minor_threshold = 240
+	wear_major_threshold = 720
+	wear_maximum = 1200
 
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
