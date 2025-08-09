@@ -36,6 +36,7 @@
 */
 /datum/map_template/outpost/indie_space
 	name = "indie_space"
+	outpost_name = "Installation Trifuge"
 
 /datum/map_template/outpost/hangar/indie_space_20x20
 	name = "hangar/indie_space_20x20"
@@ -67,6 +68,7 @@
 */
 /datum/map_template/outpost/nanotrasen_ice
 	name = "nanotrasen_ice"
+	outpost_name = "Yebiri Sipili"
 
 /datum/map_template/outpost/hangar/nt_ice_20x20
 	name = "hangar/nt_ice_20x20"
@@ -98,6 +100,7 @@
 */
 /datum/map_template/outpost/ngr_rock
 	name = "ngr_rock"
+	outpost_name = "Agni Trading Post"
 
 /datum/map_template/outpost/hangar/ngr_rock_20x20
 	name = "hangar/ngr_rock_20x20"
