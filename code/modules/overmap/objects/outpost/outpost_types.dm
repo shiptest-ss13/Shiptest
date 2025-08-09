@@ -8,6 +8,7 @@
 	// (Interestingly, this is much less of a problem for ruins: PlaceOnTop ignores the top closed turf in the baseturfs stack
 	// of the new tile, meaning that placing plating on top of a wall doesn't result in a wall underneath the plating.)
 	should_place_on_top = FALSE
+	var/outpost_name
 
 /datum/map_template/outpost/New()
 	. = ..(path = "_maps/outpost/[name].dmm")
@@ -128,6 +129,7 @@
 */
 /datum/map_template/outpost/clip_ocean
 	name = "clip_ocean"
+	outpost_name = "Arrowsong Refueling Platform"
 
 /datum/map_template/outpost/hangar/clip_ocean_20x20
 	name = "hangar/clip_ocean_20x20"
