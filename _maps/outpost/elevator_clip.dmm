@@ -8,42 +8,40 @@
 /obj/machinery/status_display/elevator{
 	pixel_x = 32
 	},
-/turf/template_noop,
-/area/template_noop)
-"e" = (
 /obj/structure/crate_shelf{
 	capacity = 2
 	},
+/turf/template_noop,
+/area/template_noop)
+"e" = (
 /obj/structure/elevator_platform,
+/obj/structure/table,
+/obj/item/radio/intercom/table{
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = 0
+	},
 /turf/template_noop,
 /area/template_noop)
 "B" = (
+/obj/structure/elevator_platform,
 /obj/machinery/elevator_floor_button{
 	pixel_y = 0;
 	dir = 8;
-	pixel_x = 22
+	pixel_x = 19
 	},
-/obj/structure/elevator_platform,
+/obj/structure/chair/bench/blue/directional/west,
 /turf/template_noop,
 /area/template_noop)
 "L" = (
 /obj/structure/elevator_platform,
 /obj/machinery/light/small/directional/east,
+/obj/structure/chair/bench/blue/directional/west,
 /turf/template_noop,
 /area/template_noop)
 "M" = (
 /obj/structure/elevator_platform,
 /obj/machinery/light/small/directional/west,
-/turf/template_noop,
-/area/template_noop)
-"N" = (
-/obj/structure/elevator_platform,
-/obj/structure/chair/bench/blue/directional/west,
-/turf/template_noop,
-/area/template_noop)
-"T" = (
-/obj/structure/elevator_platform,
-/obj/structure/chair/bench/blue/directional/east,
 /turf/template_noop,
 /area/template_noop)
 
@@ -57,7 +55,7 @@ M
 (2,1,1) = {"
 a
 a
-N
+a
 a
 a
 "}
@@ -71,7 +69,7 @@ a
 (4,1,1) = {"
 a
 a
-T
+a
 a
 a
 "}
