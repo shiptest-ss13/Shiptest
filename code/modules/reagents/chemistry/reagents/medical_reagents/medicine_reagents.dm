@@ -109,7 +109,8 @@
 				to_chat(M, span_warning("You don't feel so good..."))
 		else if(M.getBruteLoss())
 			M.adjustBruteLoss(-reac_volume)
-			M.force_scream()
+			var/pain_points = M.adjustStaminaLoss(reac_volume*4)
+			M.force_pain_noise(pain_points)
 			if(show_message && !HAS_TRAIT(M, TRAIT_ANALGESIA))
 				to_chat(M, span_danger("You feel your bruises healing! It stings like hell!"))
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
@@ -173,7 +174,7 @@
 		if(method in list(INGEST, INJECT, PATCH))
 			if(!HAS_TRAIT(M, TRAIT_ANALGESIA))
 				to_chat(M, span_boldwarning("Your body ignites in pain as nerves are rapidly reformed, and flesh is freshly knit!"))
-				M.force_scream()
+				M.force_pain_noise(reac_volume*6)
 			for(var/owie in paper_cut_victim.all_wounds)
 				var/datum/wound/paper_cut = owie
 				paper_cut.on_silfrine(reac_volume)
@@ -199,7 +200,7 @@
 /datum/reagent/medicine/silfrine/overdose_start(mob/living/M)
 	. = ..()
 	M.add_movespeed_modifier(/datum/movespeed_modifier/reagent/silfrine_od)
-	M.force_scream()
+	M.force_pain_noise(200)
 
 
 /datum/reagent/medicine/silfrine/overdose_process(mob/living/M)
@@ -208,7 +209,7 @@
 			to_chat(M, span_danger("You feel your flesh twisting as it tries to grow around non-existent wounds!"))
 		else
 			to_chat(M, span_danger("You feel points of pressure all across your body starting to throb uncomfortably."))
-		M.force_scream()
+		M.force_pain_noise(40)
 		M.adjustStaminaLoss(40*REM, 0)
 		M.adjustBruteLoss(5*REM, 0)
 	if(prob(25))
@@ -247,7 +248,7 @@
 
 /datum/reagent/medicine/alvitane/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	M.adjustFireLoss(-reac_volume/2)
-	M.force_scream()
+	M.force_pain_noise(reac_volume/2)
 	if(iscarbon(M) && M.stat != DEAD)
 		var/mob/living/carbon/burn_ward_attendee = M
 		for(var/owie in burn_ward_attendee.all_wounds)
