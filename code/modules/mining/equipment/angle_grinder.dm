@@ -28,7 +28,7 @@
 	usesound = 'sound/weapons/anglegrinder.ogg'
 	tool_behaviour = null // is set to TOOL_DECONSTRUCT once wielded
 	toolspeed = 0.6
-	wall_decon_damage = 350
+	wall_decon_damage = 200
 	usecost = 2.5
 	pack = /obj/item/gear_pack/anglegrinder
 	var/startsound = 'sound/weapons/chainsawhit.ogg'
