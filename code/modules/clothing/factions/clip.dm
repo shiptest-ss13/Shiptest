@@ -491,10 +491,10 @@
 	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/medical/webbing/clip/prefilled/PopulateContents()
-	new /obj/item/reagent_containers/medigel/styptic(src)
-	new /obj/item/reagent_containers/medigel/styptic(src)
-	new /obj/item/reagent_containers/medigel/silver_sulf(src)
-	new /obj/item/reagent_containers/medigel/silver_sulf(src)
+	new /obj/item/reagent_containers/medigel/hadrakine(src)
+	new /obj/item/reagent_containers/medigel/hadrakine(src)
+	new /obj/item/reagent_containers/medigel/quardexane(src)
+	new /obj/item/reagent_containers/medigel/quardexane(src)
 	new /obj/item/reagent_containers/medigel/synthflesh(src)
 	new /obj/item/reagent_containers/medigel/synthflesh(src)
 	new /obj/item/stack/medical/splint(src)

@@ -102,7 +102,8 @@
 	if(prob((severity - 1) * 15))
 		// And you have a 70% or 50% chance to actually land the blow, respectively
 		if(prob(70 - 20 * (severity - 1)))
-			to_chat(victim, span_userdanger("The fracture in your [limb.name] shoots with pain as you strike [target]!"))
+			if(!HAS_TRAIT(M, TRAIT_ANALGESIA))
+				to_chat(victim, span_userdanger("The fracture in your [limb.name] shoots with pain as you strike [target]!"))
 			limb.receive_damage(brute = rand(1,2))
 		else
 			victim.visible_message(

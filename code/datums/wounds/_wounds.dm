@@ -327,6 +327,14 @@
 /datum/wound/proc/on_synthflesh(power)
 	return
 
+/// When silfrine is applied to the victim, we call this.
+/datum/wound/proc/on_silfrine(power)
+	return
+
+/// When ysiltane/alvitane/quardextane is applied to the victim, we call this.
+/datum/wound/proc/on_tane(power)
+	return
+
 /// Called when the patient is undergoing stasis, so that having fully treated a wound doesn't make you sit there helplessly until you think to unbuckle them
 /datum/wound/proc/on_stasis()
 	return

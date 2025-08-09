@@ -89,7 +89,7 @@
 		/datum/reagent/toxin/slimejelly,
 		/datum/reagent/consumable/banana,
 		/datum/reagent/consumable/berryjuice,
-		/datum/reagent/medicine/omnizine,
+		/datum/reagent/medicine/panacea,
 	)
 	reagents.add_reagent(extra_reagent, 3)
 

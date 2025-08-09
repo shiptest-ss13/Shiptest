@@ -63,7 +63,6 @@
 	else if(open || broken)
 		if(istype(I, allowed_type) && !stored)
 			var/obj/item/storee = I
-			SIGNAL_HANDLER
 			if(storee && HAS_TRAIT(storee, TRAIT_WIELDED))
 				to_chat(user, span_warning("Unwield the [storee.name] first."))
 				return
