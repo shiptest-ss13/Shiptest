@@ -406,7 +406,7 @@
 	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 
 	icon_state = "nitrile_clip"
-	item_state = "nitrile_clip"
+	item_state = "lgloves"
 
 	supports_variations = VOX_VARIATION
 
