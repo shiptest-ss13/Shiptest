@@ -3,14 +3,15 @@
 	name = "Galactic Common"
 	desc = "The common galactic tongue."
 	key = "0"
-	flags = TONGUELESS_SPEECH | LANGUAGE_HIDE_ICON_IF_UNDERSTOOD
+	flags = TONGUELESS_SPEECH | LANGUAGE_HIDE_ICON_IF_UNDERSTOOD | ROUNDSTART_LANGUAGE
 	default_priority = 100
 
 	icon_state = "galcom"
 
 	mutual_understanding = list(
 		/datum/language/solarian_international = 20,
-		/datum/language/kalixcian_common = 20,
+		/datum/language/gezena_kalixcian = 20,
+		/datum/language/zohil_kalixcian = 15, // similar to gezenan
 	)
 
 
