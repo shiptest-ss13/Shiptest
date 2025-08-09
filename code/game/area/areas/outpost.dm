@@ -214,11 +214,9 @@
 	allow_weather = TRUE
 
 /area/outpost/exterior/ocean
-	name = "Exterior"
-	icon_state = "green"
+	name = "Walkway"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
 	ambience_index = AMBIENCE_BEACH
-	allow_weather = TRUE
 
 // this might be redundant with /area/space/nearstation. unsure; use with caution?
 /area/outpost/external
