@@ -368,8 +368,13 @@
 	has_snout = TRUE
 
 /datum/sprite_accessory/ipc_chassis/inteqsprinter
-	name = "Inteq Mothership 'Sprinter'"
+	name = "Inteq Mothership 'Sprinter' Type 1"
 	limbs_id = "inteqsprinter"
+	has_screen = FALSE
+
+/datum/sprite_accessory/ipc_chassis/inteqsprintertype2
+	name = "Inteq Mothership 'Sprinter' Type 2"
+	limbs_id = "inteqsprinter2"
 	has_screen = FALSE
 
 /datum/sprite_accessory/ipc_chassis/seekeripc
