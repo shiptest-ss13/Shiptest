@@ -100,6 +100,22 @@
 /turf/open/floor/plasteel/dark/wasteplanet/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
 	return
 
+/turf/open/floor/plasteel/stairs/wasteplanet
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	baseturfs = /turf/open/floor/plating/wasteplanet
+
+/turf/open/floor/plasteel/stairs/wasteplanet/lit
+	light_color = COLOR_WASTEPLANET_LIGHT
+
+/turf/open/floor/pod/wasteplanet
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	baseturfs = /turf/open/floor/plating/wasteplanet
+
+/turf/open/floor/pod/wasteplanet/lit
+	light_color = COLOR_WASTEPLANET_LIGHT
+
 /turf/open/floor/wood/waste
 	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
 	planetary_atmos = TRUE
