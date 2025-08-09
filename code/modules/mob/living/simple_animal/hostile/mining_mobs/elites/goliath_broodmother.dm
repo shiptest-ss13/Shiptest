@@ -34,6 +34,7 @@
 	melee_damage_lower = 30
 	melee_damage_upper = 30
 	armour_penetration = 30
+	armor = list("melee" = 40, "bullet" = 40, "laser" = -25, "energy" = 10, "bomb" = 50, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10) // thicker hide due to being older, but still weak to lasers.
 	attack_verb_continuous = "beats down on"
 	attack_verb_simple = "beat down on"
 	attack_sound = 'sound/weapons/punch1.ogg'
@@ -43,7 +44,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	mouse_opacity = MOUSE_OPACITY_ICON
 	deathmessage = "explodes into gore!"
-	//loot_drop = /obj/item/mob_trophy/broodmother_tongue
+	loot = list(/obj/item/mob_trophy/broodmother_tongue)
 
 	attack_action_types = list(/datum/action/innate/elite_attack/tentacle_patch,
 								/datum/action/innate/elite_attack/spawn_children,
