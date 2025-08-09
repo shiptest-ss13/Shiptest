@@ -102,6 +102,10 @@
 	var/x_distance
 	/// Distance in the Y axis of the sub-zone
 	var/y_distance
+	//Spatial Grid
+	var/cells_on_x_axis = 0
+	//Spatial Grid
+	var/cells_on_y_axis = 0
 	/// Z value of the virtual level, for easy access
 	var/z_value
 	/// Virtual level that is above this one (multi-z)
@@ -408,6 +412,7 @@
 	passed_map.add_virtual_level(src)
 	SSmapping.virtual_z_translation["[id]"] = src
 	reserve(lx, ly, hx, hy, passed_z)
+	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_NEW_VIRT_Z, src)
 	return ..()
 
 /datum/virtual_level/Destroy()
@@ -527,6 +532,8 @@
 	parent_level.virtual_levels += src
 	x_distance = high_x - low_x + 1
 	y_distance = high_y - low_y + 1
+	cells_on_x_axis = SPATIAL_GRID_CELLS_PER_SIDE(x_distance)
+	cells_on_y_axis = SPATIAL_GRID_CELLS_PER_SIDE(y_distance)
 	mark_turfs()
 
 /datum/virtual_level/proc/is_in_bounds(atom/Atom)

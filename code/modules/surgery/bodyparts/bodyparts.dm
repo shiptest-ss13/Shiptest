@@ -1017,7 +1017,7 @@
 		bleed_rate++
 
 	//We want an accurate reading of .len
-	listclearnulls(embedded_objects)
+	list_clear_nulls(embedded_objects)
 	for(var/obj/item/embeddies as anything in embedded_objects)
 		if(!embeddies.isEmbedHarmless())
 			bleed_rate += 0.25
