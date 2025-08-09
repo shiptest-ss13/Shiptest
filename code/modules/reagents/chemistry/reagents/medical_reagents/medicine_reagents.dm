@@ -699,7 +699,7 @@
 
 /datum/reagent/medicine/panacea/effluvial
 	name = "Effluvial Panacea"
-	description = "A waste product of industrial processes to synthesize Panacea, or more often, an impure form, Effluvial Panacea has the same eeffects as true panacea, simply reduced in effectiveness."
+	description = "A waste product of industrial processes to synthesize Panacea, or more often, an impure form, Effluvial Panacea has the same effects as true panacea, simply reduced in effectiveness."
 	color = "#d8c7b7"
 	healing = 0.2
 
