@@ -671,6 +671,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "fZ" = (
@@ -1159,6 +1162,10 @@
 	pixel_x = 6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/storage/box/emptysandbags{
+	pixel_y = 4;
+	pixel_x = -7
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "ig" = (
@@ -1372,21 +1379,9 @@
 	pixel_x = 9;
 	pixel_y = 9
 	},
-/obj/item/bodybag{
-	pixel_y = 8;
-	pixel_x = -10
-	},
-/obj/item/bodybag{
-	pixel_y = 8;
-	pixel_x = -10
-	},
-/obj/item/bodybag{
-	pixel_y = 8;
-	pixel_x = -10
-	},
-/obj/item/bodybag{
-	pixel_y = 8;
-	pixel_x = -10
+/obj/item/storage/box/bodybags{
+	pixel_x = -9;
+	pixel_y = 4
 	},
 /obj/item/reagent_containers/glass/bottle/dimorlin{
 	pixel_x = 11
