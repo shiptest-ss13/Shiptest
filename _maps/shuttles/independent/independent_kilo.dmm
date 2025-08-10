@@ -81,11 +81,14 @@
 	populate = 0
 	},
 /obj/item/storage/backpack/industrial,
-/obj/item/clothing/under/rank/engineering/engineer,
 /obj/item/clothing/suit/hazardvest,
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/head/hardhat/dblue,
 /obj/effect/turf_decal/box,
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/storage/belt/utility/full/engi,
+/obj/item/clothing/head/hardhat/orange,
+/obj/item/clothing/under/overalls/olive,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "aU" = (
@@ -1155,10 +1158,7 @@
 /obj/item/toy/cards/deck{
 	pixel_y = 22
 	},
-/obj/item/reagent_containers/food/snacks/sandwich{
-	pixel_x = -1;
-	pixel_y = 9
-	},
+/obj/item/food/sandwich,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "wh" = (
@@ -1238,8 +1238,8 @@
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
-/obj/item/reagent_containers/food/snacks/icecreamsandwich,
-/obj/item/reagent_containers/food/snacks/icecreamsandwich,
+/obj/item/food/icecreamsandwich,
+/obj/item/food/icecreamsandwich,
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
 /turf/open/floor/plasteel,

@@ -116,7 +116,7 @@
 
 	feature_spawn_chance = 0.8
 	feature_spawn_list = list(
-		/obj/effect/greeble_spawner/grass_patch_spawner/dark = 1,
+		/obj/effect/greeble_spawner/grass_patch_spawner/dark_beach = 1,
 	)
 
 /datum/biome/grass/dense

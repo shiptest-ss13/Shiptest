@@ -251,7 +251,6 @@
 	job_icon = "botanist"
 
 	suit = /obj/item/clothing/suit/apron
-	alt_suit = /obj/item/clothing/suit/apron/overalls
 	gloves  =/obj/item/clothing/gloves/botanic_leather
 	suit_store = /obj/item/plant_analyzer
 
@@ -479,7 +478,7 @@
 	head = /obj/item/clothing/head/beret/cmo/cybersun
 	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
 	l_hand = /obj/item/storage/firstaid/medical
-	suit_store = /obj/item/flashlight/pen
+	suit_store = /obj/item/flashlight/pen/paramedic
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
 	box = /obj/item/storage/box/survival/medical
 
@@ -495,7 +494,7 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/suns/cmo
 	l_hand = /obj/item/storage/firstaid/medical
 	r_hand = /obj/item/storage/belt/sabre/suns/cmo
-	suit_store = /obj/item/flashlight/pen
+	suit_store = /obj/item/flashlight/pen/paramedic
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/suns
 	glasses = /obj/item/clothing/glasses/hud/health/suns
@@ -773,7 +772,7 @@
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
 	belt = /obj/item/storage/belt/medical/paramedic
 	id = /obj/item/card/id
-	suit_store = /obj/item/flashlight/pen
+	suit_store = /obj/item/flashlight/pen/paramedic
 	backpack_contents = list(/obj/item/roller=1)
 	pda_slot = ITEM_SLOT_LPOCKET
 	box = /obj/item/storage/box/survival/medical
