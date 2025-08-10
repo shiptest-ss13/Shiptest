@@ -175,6 +175,7 @@
 			if(!HAS_TRAIT(M, TRAIT_ANALGESIA))
 				to_chat(M, span_boldwarning("Your body ignites in pain as nerves are rapidly reformed, and flesh is freshly knit!"))
 				M.force_pain_noise(reac_volume*6)
+				M.adjustStaminaLoss(reac_volume*4)
 			for(var/owie in paper_cut_victim.all_wounds)
 				var/datum/wound/paper_cut = owie
 				paper_cut.on_silfrine(reac_volume)
@@ -249,6 +250,7 @@
 /datum/reagent/medicine/alvitane/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	M.adjustFireLoss(-reac_volume/2)
 	M.force_pain_noise(reac_volume/2)
+	M.adjustStaminaLoss(reac_volume/2)
 	if(iscarbon(M) && M.stat != DEAD)
 		var/mob/living/carbon/burn_ward_attendee = M
 		for(var/owie in burn_ward_attendee.all_wounds)
