@@ -5,7 +5,7 @@
 
 // helps bleeding wounds clot faster
 /datum/reagent/medicine/chitosan
-	name = "chitosan"
+	name = "Chitosan"
 	description = "Vastly improves the blood's natural ability to coagulate and stop bleeding by hightening platelet production and effectiveness. Overdosing will cause extreme blood clotting, resulting in potential brain damage."
 	reagent_state = LIQUID
 	color = "#bb2424"
