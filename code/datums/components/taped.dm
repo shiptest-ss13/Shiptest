@@ -39,7 +39,7 @@
 	var/obj/I = parent
 	var/icon/tape_marks = icon(initial(I.icon), initial(I.icon_state))
 
-	I.obj_integrity = min((I.obj_integrity + patch_amount), I.max_integrity)
+	I.atom_integrity = min((I.atom_integrity + patch_amount), I.max_integrity)
 	taped_integrity += patch_amount
 
 	tape_marks.Blend("#fff", ICON_ADD)
@@ -61,6 +61,6 @@
 
 /datum/component/taped/proc/remove_tape()
 	var/obj/item/I = parent
-	I.obj_integrity -= taped_integrity
+	I.atom_integrity -= taped_integrity
 	I.cut_overlay(taped_icon)
 	qdel(src)

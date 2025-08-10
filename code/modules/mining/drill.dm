@@ -79,7 +79,7 @@
 		update_overlays()
 		update_icon_state()
 	if(!active && our_vein?.currently_spawning)
-		our_vein.toggle_spawning()
+		our_vein.stop_spawning()
 
 /obj/machinery/drill/Destroy()
 	QDEL_NULL(soundloop)
@@ -92,7 +92,7 @@
 		say("Drill integrity failure. Engaging emergency shutdown procedure.")
 		//Just to make sure mobs don't spawn infinitely from the vein and as a failure state for players
 		our_vein.deconstruct()
-	obj_break()
+	atom_break()
 	update_icon_state()
 	update_overlays()
 
@@ -120,7 +120,7 @@
 			if(tool.use_tool(src, user, 30, volume=50))
 				to_chat(user, "<span class='notice'>You weld the new plating onto the [src], successfully repairing it.")
 				metal_attached = METAL_ABSENT
-				obj_integrity = max_integrity
+				atom_integrity = max_integrity
 				set_machine_stat(machine_stat & ~BROKEN)
 				update_icon_state()
 				return
@@ -140,6 +140,7 @@
 			to_chat(user, span_notice("You secure the [src] to the ore vein."))
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			our_vein = vein
+			our_vein.our_drill = src
 			anchored = TRUE
 			update_icon_state()
 			return
@@ -148,8 +149,9 @@
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			anchored = FALSE
 
-			if(our_vein?.spawner_attached && our_vein?.currently_spawning)
-				our_vein.toggle_spawning()
+			if(our_vein?.currently_spawning)
+				our_vein.stop_spawning()
+			our_vein.our_drill = null
 			our_vein = null
 			update_icon_state()
 			return
@@ -172,7 +174,7 @@
 					component_parts += new_part
 					malfunction = null
 					missing_part = null
-					obj_integrity = max_integrity
+					atom_integrity = max_integrity
 					to_chat(user, span_notice("You replace the broken part with [new_part]."))
 					break
 			return
@@ -181,7 +183,7 @@
 				span_notice("You begin recalibrating [src]..."))
 			if(tool.use_tool(src, user, 100, volume=50))
 				malfunction = null
-				obj_integrity = max_integrity
+				atom_integrity = max_integrity
 				return
 		if(tool.tool_behaviour == TOOL_WELDER && malfunction == MALF_STRUCTURAL)
 			if(!tool.tool_start_check(user, src, amount=0))
@@ -191,7 +193,7 @@
 				span_hear("You hear welding."))
 			if(tool.use_tool(src, user, 100, volume=50))
 				malfunction = null
-				obj_integrity = max_integrity
+				atom_integrity = max_integrity
 				return
 		if(istype(tool, /obj/item/stock_parts/cell))
 			var/obj/item/stock_parts/cell/battery = tool
@@ -283,7 +285,7 @@
 	soundloop.stop()
 	deltimer(current_timerid)
 	if(our_vein?.currently_spawning)
-		our_vein.toggle_spawning()
+		our_vein.stop_spawning()
 	if(destructive)
 		our_vein.Destroy()
 		our_vein = null
@@ -303,7 +305,7 @@
 		soundloop.stop()
 		update_overlays()
 		return
-	if(obj_integrity <= max_integrity/1.5)
+	if(atom_integrity <= max_integrity/1.5)
 		malfunction = rand(1,5)
 		malfunction(malfunction)
 		active = FALSE
@@ -314,10 +316,9 @@
 		var/mine_time
 		active = TRUE
 		soundloop.start()
-		if(!our_vein.spawner_attached)
-			our_vein.begin_spawning()
-		else if(!our_vein.currently_spawning)
-			our_vein.toggle_spawning()
+		our_vein.begin_spawning()
+		if(!our_vein.currently_spawning)
+			our_vein.stop_spawning()
 		for(var/obj/item/stock_parts/micro_laser/laser in component_parts)
 			mine_time = round((300/sqrt(laser.rating))*our_vein.mine_time_multiplier)
 		eta = mine_time*our_vein.mining_charges
@@ -354,8 +355,11 @@
 
 //Overly long proc to handle the unique properties for each malfunction type
 /obj/machinery/drill/proc/malfunction(malfunction_type)
+
+	//we want to pause the creation of new spawners
 	if(active && our_vein?.currently_spawning)
-		our_vein.toggle_spawning() //turns mob spawning off after a malfunction
+		our_vein.stop_spawning()
+
 	switch(malfunction_type)
 		if(MALF_LASER)
 			say("Malfunction: Laser array damaged, please replace before continuing mining operations.")

@@ -40,6 +40,7 @@
 	var/wear_major_threshold = 180
 	/// Highest wear value so the gun doesn't end up completely irreperable
 	var/wear_maximum = 300
+	var/ignores_wear = FALSE
 	/// Doesn't ever keep ammo when loading a new round into the chamber. Mainly for BOLT_TYPE_NO_BOLT guns.
 	var/doesnt_keep_bullet = FALSE
 

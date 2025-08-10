@@ -56,6 +56,14 @@
 	item_state = "inteq_honorable"
 	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
 
+/obj/item/clothing/under/syndicate/inteq/sneaksuit
+	name = "inteq sneaksuit"
+	desc = "A tactical sneaksuit developed for usage in the IRMG's covert elements. Maximizes stealth by minimizing friction."
+	icon_state = "inteq_sneak"
+	item_state = "inteq_sneak"
+	roll_sleeves = FALSE
+
+
 // Oversuits // can someone like. change the vanguard and maa armors to be subtypes of armor/inteq. please
 
 /obj/item/clothing/suit/armor/hos/inteq

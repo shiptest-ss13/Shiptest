@@ -38,9 +38,9 @@
 	. = ..()
 	// by this point it's guaranteed to be a concrete wall
 	var/turf/closed/wall/concrete/conc_wall = T
-	if(conc_wall.integrity != integrity || conc_wall.harden_lvl != harden_lvl)
+	if(conc_wall.atom_integrity != atom_integrity || conc_wall.harden_lvl != harden_lvl)
 		conc_wall.harden_lvl = harden_lvl
-		conc_wall.integrity = integrity
+		conc_wall.atom_integrity = atom_integrity
 		// very much not a fan of all the repetition here,
 		// but there's unfortunately no easy way around it
 		conc_wall.check_harden()
@@ -75,8 +75,8 @@
 
 /turf/closed/wall/concrete/create_girder()
 	var/obj/girder = ..()
-	if(integrity < 0)
-		girder.take_damage(min(abs(integrity), 50))
+	if(atom_integrity < 0)
+		girder.take_damage(min(abs(atom_integrity), 50))
 	return girder
 
 /turf/closed/wall/concrete/proc/check_harden()
@@ -93,7 +93,7 @@
 /turf/closed/wall/concrete/update_stats()
 	.= .. ()
 	// explosion block is diminished on a damaged / soft wall
-	explosion_block = (integrity / max_integrity) * harden_lvl * initial(explosion_block)
+	explosion_block = (atom_integrity / max_integrity) * harden_lvl * initial(explosion_block)
 
 /turf/closed/wall/concrete/alter_integrity(damage)
 	// 8x as vulnerable when unhardened
@@ -123,7 +123,7 @@
 /turf/closed/wall/concrete/try_decon(obj/item/W, mob/user, turf/T)
 	return null
 
-/turf/closed/wall/concrete/get_item_damage(obj/item/I, t_min = min_dam)
+/turf/closed/wall/concrete/get_item_damage(obj/item/I, mob/user, t_min = min_dam)
 	t_min = min_dam / (1 + 7*(1-harden_lvl)) // drying walls are more vulnerable
 	. = .. ()
 

@@ -72,10 +72,11 @@
 	name = "headphones"
 	desc = "Unce unce unce unce. Boop!"
 	icon = 'icons/obj/clothing/accessories.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/ears.dmi'
 	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
 	icon_state = "headphones"
-	item_state = "earmuffs"
+	item_state = "headphones"
 	slot_flags = ITEM_SLOT_EARS | ITEM_SLOT_HEAD
 	force = 0
 	w_class = WEIGHT_CLASS_SMALL

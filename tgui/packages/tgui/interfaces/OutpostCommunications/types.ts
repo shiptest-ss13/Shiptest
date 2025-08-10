@@ -1,6 +1,7 @@
 export type Data = {
   points: number;
   outpostDocked: boolean;
+  blockade: boolean;
   onShip: boolean;
   numMissions: number;
   maxMissions: number;

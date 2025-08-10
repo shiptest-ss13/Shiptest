@@ -1,0 +1,47 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Venetia-class Frontier Yacht",
+	"faction": "/datum/faction/independent",
+	"prefix": "SV",
+	"manufacturer": "Kasagi-Fischer Partnership",
+	"namelists": [
+		"SPACE",
+		"GENERAL",
+		"NATURAL"
+	],
+	"map_short_name": "Venetia-class",
+	"description": "The Venetia-class is a design from the high end of Kasagi-Fischer Partnership's catalog, usually seen in the frontier owned by wealthy individuals, the political authorities of independent worlds, and the odd Solarian adventurer. The spectacle of the ICW, and economic opportunities left by its wake have caused a resurgence in sales of the Venetia-class. This is owed to an ease of modification, and with a few oddball hull alterations, they make a comfortable salvaging vessel. Captains seeking to operate their Venetia in this manner tend to pad their expenses by renting out spare cabins to both passengers - keen to see the frontier in comfort - and those willing to work - often in exchange for room and board. The wealth and status that this vessel represents calls for an active security detail, and mercenaries are hired from Frontier-local groups such as Inteq Risk Management Services. A small part of the vessel normally used to refrigerate exotic foods is easily converted into an office for mercenary services. All together leading to a vessel that allows stylish, protected work in the most dangerous region of the galaxy."
+	,"tags": [
+		"engineering",
+		"scrapper",
+		"RP Focus"
+	],
+	"map_path": "_maps/shuttles/independent/independent_venetia.dmm",
+	"limit": 1,
+	"starting_funds": 2000,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"First Mate": {
+			"outfit": "/datum/outfit/job/independent/hop/western",
+			"officer": true,
+			"slots": 1
+		},
+		"Salvage Technician": {
+			"outfit": "/datum/outfit/job/independent/engineer/salvage",
+			"slots": 2
+		},
+		"Enforcer": {
+			"outfit": "/datum/outfit/job/inteq/security/empty",
+			"slots": 2
+		},
+		"Passenger": {
+			"outfit": "/datum/outfit/job/independent/assistant/fancy",
+			"slots": 4
+		}
+	},
+	"enabled": true
+}

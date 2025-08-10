@@ -64,7 +64,7 @@
 				targets += C
 
 	if(!targets.len)
-		obj_break()
+		atom_break()
 	update_appearance()
 
 

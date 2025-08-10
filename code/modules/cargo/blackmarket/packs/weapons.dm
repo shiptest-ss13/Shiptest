@@ -42,6 +42,32 @@
 	stock_max = 3
 	availability_prob = 30
 
+/datum/blackmarket_item/weapon/blastinghammer
+	name = "Blasting Hammer"
+	desc = "Have you ever thought: \"Man, my 20 pound sledgehammer isn't crushing skulls well enough.\" No? Well, our friends in the Ramzi Clique have solved this issue anyways and made it everyone else's problem. This baby loads 12g blanks as propollent to really make that swing a home run. Just don't put a live shell in, yeah?"
+	item = /obj/item/storage/backpack/duffelbag/syndie
+
+	cost_min = 4000
+	cost_max = 6000
+	stock = 1
+	availability_prob = 15
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/weapon/blastinghammer/spawn_item(loc)
+	var/obj/item/storage/backpack/duffelbag/syndie/B = ..()
+	new /obj/item/gun/ballistic/shotgun/blasting_hammer(B)
+	new /obj/item/storage/box/ammo/a12g_blank(B)
+	return B
+/datum/blackmarket_item/weapon/spikeshield
+	name = "Spiked Ballistic Shield"
+	desc = "Be the ancient warrior you always wanted to be. Block bullets and impale your enemies."
+	item = /obj/item/shield/riot/spike
+
+	cost_min = 1000
+	cost_max = 1500
+	stock_max = 2
+	availability_prob = 50
+
 /datum/blackmarket_item/weapon/powerfist
 	name = "Powerfist"
 	desc = "Need a bit more... omph in your right hook? This gas operated powerfist will put you in the heavyweight."
@@ -497,16 +523,6 @@
 
 /// mecha equipment
 
-/datum/blackmarket_item/weapon/mecha_weapon_bay
-	name = "Concealed Weapons Bay"
-	desc = "Ripley with a laser cannon? 200 Series with a missile rack? Sky's the limit with this omni-compatible weapons bay! (Missiles and lasers not included)"
-	item = /obj/item/mecha_parts/weapon_bay/concealed
-
-	cost_min = 1000
-	cost_max = 2000
-	stock_max = 3
-	availability_prob = 20
-
 /datum/blackmarket_item/weapon/mecha_syringe_gun
 	name = "Mounted Syringe Gun"
 	desc = "We ripped this off an old Cybersun exosuit. It's a real advanced piece of equipment. Exosuit not included."
@@ -528,14 +544,4 @@
 	cost_max = 3000
 	stock_max = 2
 	availability_prob = 25
-
-/datum/blackmarket_item/weapon/spikeshield
-	name = "Spiked Ballistic Shield"
-	desc = "Be the ancient warrior you always wanted to be. Block bullets and impale your enemies."
-	item = /obj/item/shield/riot/spike
-
-	cost_min = 1000
-	cost_max = 1500
-	stock_max = 2
-	availability_prob = 50
 

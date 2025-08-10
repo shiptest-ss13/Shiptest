@@ -139,6 +139,10 @@
 	user.do_attack_animation(O)
 	O.attacked_by(src, user)
 
+/// if an item should have special behavior when attacking a wall
+/obj/item/proc/closed_turf_attack(turf/closed/wall, mob/living/user, params)
+	return
+
 /// Called from [/obj/item/proc/attack_obj] and [/obj/item/proc/attack] if the attack succeeds
 /atom/movable/proc/attacked_by()
 	return

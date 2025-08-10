@@ -760,7 +760,7 @@
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 5, /obj/item/stack/ore/diamond = 3,
 		/obj/item/stack/ore/plasma = 10, /obj/item/stack/ore/iron = 45, /obj/item/stack/ore/titanium = 20,
-		/turf/closed/mineral/gibtonite/whitesands = 4, /turf/open/floor/plating/asteroid/whitesands = 2, /obj/item/stack/ore/bluespace_crystal = 4)
+		/turf/open/floor/plating/asteroid/whitesands = 2, /obj/item/stack/ore/bluespace_crystal = 4)
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	defer_change = TRUE
 	has_borders = TRUE

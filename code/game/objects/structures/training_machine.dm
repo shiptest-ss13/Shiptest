@@ -47,7 +47,7 @@
 /**
  * Called on a normal destruction, so we have a cool explosion and toss whatever's attached
  */
-/obj/structure/training_machine/obj_destruction(damage_flag)
+/obj/structure/training_machine/atom_destruction(damage_flag)
 	remove_attached_item(throwing = TRUE)
 	explosion(src, 0,0,1, flame_range = 2)
 	return ..()

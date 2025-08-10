@@ -80,7 +80,7 @@
 		unwrenched_sign.desc = "[desc] It can be placed on a wall."
 		unwrenched_sign.icon_state = icon_state
 		unwrenched_sign.sign_path = type
-	unwrenched_sign.obj_integrity = obj_integrity //Transfer how damaged it is.
+	unwrenched_sign.update_integrity(atom_integrity) //Transfer how damaged it is.
 	unwrenched_sign.setDir(dir)
 	qdel(src) //The sign structure on the wall goes poof and only the sign item from unwrenching remains.
 	return TRUE
@@ -89,7 +89,7 @@
 	. = ..()
 	if(user.a_intent == INTENT_HARM)
 		return FALSE
-	if(obj_integrity == max_integrity)
+	if(atom_integrity == max_integrity)
 		to_chat(user, span_warning("This sign is already in perfect condition."))
 		return TRUE
 	if(!I.tool_start_check(user, src, amount=0))
@@ -102,14 +102,14 @@
 	user.visible_message(
 		span_notice("[user] finishes repairing [src]."), \
 		span_notice("You finish repairing [src]."))
-	obj_integrity = max_integrity
+	atom_integrity = max_integrity
 	return TRUE
 
 /obj/item/sign/welder_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(user.a_intent == INTENT_HARM)
 		return FALSE
-	if(obj_integrity == max_integrity)
+	if(atom_integrity == max_integrity)
 		to_chat(user, span_warning("This sign is already in perfect condition."))
 		return TRUE
 	if(!I.tool_start_check(user, src, amount=0))
@@ -122,7 +122,7 @@
 	user.visible_message(
 		span_notice("[user] finishes repairing [src]."), \
 		span_notice("You finish repairing [src]."))
-	obj_integrity = max_integrity
+	atom_integrity = max_integrity
 	return TRUE
 
 /obj/structure/sign/attackby(obj/item/I, mob/user, params)
@@ -149,7 +149,7 @@
 		var/obj/structure/sign/changedsign = new sign_type(get_turf(src))
 		changedsign.pixel_x = pixel_x
 		changedsign.pixel_y = pixel_y
-		changedsign.obj_integrity = obj_integrity
+		changedsign.atom_integrity = atom_integrity
 		qdel(src)
 		user.visible_message(
 			span_notice("[user] finishes changing the sign."), \
@@ -204,7 +204,7 @@
 		span_notice("[user] fastens [src] to [target_turf]."), \
 		span_notice("You attach the sign to [target_turf]."))
 	playsound(target_turf, 'sound/items/deconstruct.ogg', 50, TRUE)
-	placed_sign.obj_integrity = obj_integrity
+	placed_sign.update_integrity(atom_integrity)
 	placed_sign.setDir(turn(dir,180)) //SinguloStation13 Edit (Normally all wallframes's dir point away from the wall, not look into it when placed.)
 	qdel(src)
 
