@@ -380,7 +380,19 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
 
+<<<<<<<<< Temporary merge branch 1
+/datum/outfit/job/nanotrasen/cargo_tech/empty
+	name = "Nanotrasen - Cargo Tech (Naked)"
+	jobtype = /datum/job/cargo_tech
+	job_icon = "cargotechnician"
 	phorid_outfit = /datum/outfit/plasmaman/cargo
+
+	belt = null
+	ears = /obj/item/radio/headset/headset_cargo
+	head = null
+	uniform = /obj/item/clothing/under/nanotrasen/supply
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
+	backpack_contents = null
 
 // Medical //
 

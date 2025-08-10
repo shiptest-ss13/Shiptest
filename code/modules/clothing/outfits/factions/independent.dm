@@ -97,6 +97,7 @@
 	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/rank/command/captain
 	skirt_uniform = /obj/item/clothing/under/rank/command/captain/skirt
+	suit = /obj/item/clothing/suit/armor/captaincoat
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain //WS Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/caphat
@@ -1009,7 +1010,7 @@
 	jobtype = /datum/job/hydro
 
 	ears = /obj/item/radio/headset/headset_srv
-	uniform = /obj/item/clothing/under/color/green
+	uniform = /obj/item/clothing/under/overalls
 	skirt_uniform = null
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/hydro
 	suit = /obj/item/clothing/suit/apron/overalls
