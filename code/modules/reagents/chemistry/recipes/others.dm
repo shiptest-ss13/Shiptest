@@ -666,7 +666,6 @@
 	required_reagents = list(/datum/reagent/water = 1)
 	mix_message = "The mixture boils off a vapor..."
 	required_temp = T0C + 100
-	mob_react = FALSE
 
 /datum/chemical_reaction/water_vaporization/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -684,11 +683,9 @@
 	mix_message = "The mixture solidifies into clear crystals..."
 	required_temp = T0C
 	is_cold_recipe = TRUE
-	mob_react = FALSE
 
 /datum/chemical_reaction/ice_melting
 	results = list(/datum/reagent/water = 1)
 	required_reagents = list(/datum/reagent/consumable/ice = 1)
 	mix_message = "The ice melts into water!"
 	required_temp = T0C
-	mob_react = FALSE

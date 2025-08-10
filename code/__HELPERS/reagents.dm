@@ -9,8 +9,8 @@
 	else
 		var/datum/chemical_reaction/cold_one = r1.is_cold_recipe ? r1 : r2
 		var/datum/chemical_reaction/warm_one = r1.is_cold_recipe ? r2 : r1
-		if(cold_one.required_temp < warm_one.required_temp)
-			//the range of temperatures does not overlap, so there is no conflict
+		if((cold_one.required_temp < warm_one.required_temp) || warm_one.required_temp == 0)
+			//the range of temperatures does not overlap or the warm reaction works for any temperature, so there is no conflict
 			return FALSE
 
 	//find the reactions with the shorter and longer required_reagents list
