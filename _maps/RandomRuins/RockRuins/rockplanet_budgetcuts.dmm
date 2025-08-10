@@ -199,7 +199,7 @@
 /obj/structure/flora/rock/asteroid{
 	icon_state = "lavarocks2"
 	},
-/turf/open/floor/plating/dirt/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "cS" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -233,7 +233,7 @@
 	pixel_x = 5;
 	pixel_y = -1
 	},
-/turf/open/floor/plating/dirt/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "do" = (
 /obj/effect/decal/cleanable/dirt,
@@ -262,7 +262,7 @@
 	pixel_y = -11
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/dirt/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "dZ" = (
 /obj/machinery/door/airlock/vault,
@@ -324,11 +324,8 @@
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "fa" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 9
-	},
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/plating/dirt/jungle/wasteland,
+/turf/open/floor/plating/asteroid/dirt/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "fd" = (
 /turf/closed/wall/r_wall/rust,
@@ -463,7 +460,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/nanotrasen)
 "ho" = (
-/turf/open/water/jungle,
+/turf/open/water/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "hr" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -499,7 +496,7 @@
 /obj/structure/flora/rock/asteroid,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/dirt/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "iu" = (
 /obj/machinery/door/airlock/research,
@@ -537,7 +534,7 @@
 	pixel_x = -3;
 	pixel_y = -8
 	},
-/turf/open/floor/plating/dirt/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "iI" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -640,7 +637,7 @@
 	pixel_x = -6;
 	pixel_y = -3
 	},
-/turf/open/floor/plating/dirt/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "kU" = (
 /obj/effect/decal/cleanable/dirt,
@@ -651,7 +648,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
-/turf/open/water/jungle,
+/turf/open/water/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "ln" = (
 /obj/effect/turf_decal/sand,
@@ -750,7 +747,7 @@
 /area/ruin/rockplanet/nanotrasen)
 "mp" = (
 /obj/structure/flora/rock/pile,
-/turf/open/floor/plating/dirt/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "mx" = (
 /obj/structure/table/reinforced{
@@ -801,15 +798,6 @@
 /obj/item/stack/circuit_stack,
 /turf/open/floor/engine,
 /area/ruin/rockplanet/nanotrasen)
-"mW" = (
-/obj/effect/turf_decal/weather/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/dirt/jungle/wasteland,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "nc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood{
@@ -956,7 +944,7 @@
 	pixel_x = 1;
 	pixel_y = -2
 	},
-/turf/open/floor/plating/dirt/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "pj" = (
 /obj/structure/table/reinforced,
@@ -977,7 +965,7 @@
 /area/ruin/rockplanet/nanotrasen)
 "pt" = (
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/water/jungle,
+/turf/open/water/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "pv" = (
 /obj/effect/turf_decal/industrial/traffic{
@@ -1081,7 +1069,7 @@
 	pixel_y = -3
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/dirt/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "rF" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1199,7 +1187,7 @@
 /area/ruin/rockplanet/nanotrasen)
 "td" = (
 /obj/structure/flora/tree/jungle/small,
-/turf/open/floor/plating/dirt/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "tm" = (
 /obj/structure/table,
@@ -1440,7 +1428,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/water/jungle,
+/turf/open/water/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "xH" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1510,7 +1498,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
-/turf/open/water/jungle,
+/turf/open/water/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "zk" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
@@ -1575,7 +1563,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
-/turf/open/water/jungle,
+/turf/open/water/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "AV" = (
 /obj/machinery/door/airlock/mining{
@@ -1677,7 +1665,7 @@
 /area/ruin/rockplanet/nanotrasen)
 "Ci" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/dirt/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Cn" = (
 /obj/machinery/processor,
@@ -1779,7 +1767,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/water/jungle,
+/turf/open/water/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "DW" = (
 /obj/structure/sign/poster/contraband/random{
@@ -1805,7 +1793,7 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "EB" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/dirt/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "EN" = (
 /obj/effect/decal/cleanable/glass/plasma{
@@ -1882,7 +1870,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
-/turf/open/water/jungle,
+/turf/open/water/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Fo" = (
 /obj/machinery/light/small/directional/east,
@@ -1984,13 +1972,13 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
-/turf/open/water/jungle,
+/turf/open/water/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Gr" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/water/jungle,
+/turf/open/water/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Gs" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2144,18 +2132,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/nanotrasen)
-"Kc" = (
-/obj/structure/flora/rock/pile,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 9
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 5
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/dirt/jungle/wasteland,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "Ky" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -2346,7 +2322,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/water/jungle,
+/turf/open/water/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "OZ" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -2537,7 +2513,7 @@
 /turf/open/floor/plating,
 /area/ruin/rockplanet/nanotrasen)
 "Sf" = (
-/turf/open/floor/plating/dirt/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "So" = (
 /obj/machinery/door/airlock/hatch{
@@ -2589,7 +2565,7 @@
 /area/ruin/rockplanet/nanotrasen)
 "TH" = (
 /obj/structure/flora/rock/asteroid,
-/turf/open/water/jungle,
+/turf/open/water/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "TI" = (
 /obj/structure/railing{
@@ -2650,7 +2626,7 @@
 "UL" = (
 /obj/structure/flora/stump,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/dirt/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "UR" = (
 /turf/open/floor/plasteel/tech,
@@ -2813,11 +2789,11 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
-/turf/open/floor/plating/dirt/jungle/wasteland,
+/turf/open/floor/plating/asteroid/dirt/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "YN" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/open/floor/plating/dirt/jungle/lit,
+/turf/open/floor/plating/asteroid/dirt/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Ze" = (
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/smg,
@@ -3447,7 +3423,7 @@ ho
 pt
 kz
 Ci
-mW
+fa
 zo
 zo
 Eo
@@ -3492,7 +3468,7 @@ Fm
 DV
 lb
 Ci
-Kc
+mp
 YF
 zo
 zo

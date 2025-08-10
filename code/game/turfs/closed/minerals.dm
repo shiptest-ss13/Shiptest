@@ -812,8 +812,8 @@
 	base_icon_state = "jungle_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
 	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
-	turf_type = /turf/open/floor/plating/dirt/jungle
-	baseturfs = /turf/open/floor/plating/dirt/jungle
+	turf_type = /turf/open/floor/plating/asteroid/dirt/jungle
+	baseturfs = /turf/open/floor/plating/asteroid/dirt/jungle
 
 	mineralChance = 16
 
