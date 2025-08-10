@@ -383,7 +383,7 @@
 	has_screen = FALSE
 
 /datum/sprite_accessory/ipc_chassis/humanipc
-	name = "Placeholder HumanIPC"
+	name = "Clover Corporation 'Humaniform'"
 	limbs_id = "humanipc"
 	has_screen = FALSE
 	use_eyes = TRUE
