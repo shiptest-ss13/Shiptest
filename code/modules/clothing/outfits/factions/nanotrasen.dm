@@ -62,6 +62,7 @@
 /datum/outfit/job/nanotrasen/captain/vi
 	name = "Nanotrasen - Captain (Vigilitas Interstellar)"
 
+	neck = null
 	belt = /obj/item/pda/heads/hos
 	ears = /obj/item/radio/headset/nanotrasen/alt/captain
 	uniform = /obj/item/clothing/under/nanotrasen/security/director
