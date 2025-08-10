@@ -674,6 +674,25 @@
 /obj/structure/chair/handrail{
 	dir = 1
 	},
+/obj/machinery/button/door{
+	id = "vaq_armory";
+	name = "Door Control";
+	normaldoorcontrol = 1;
+	pixel_x = -6;
+	pixel_y = -21;
+	req_access_txt = "3";
+	dir = 1
+	},
+/obj/machinery/button/door{
+	id = "vaq_armory";
+	name = "Door Bolt Control";
+	normaldoorcontrol = 1;
+	pixel_x = 6;
+	pixel_y = -21;
+	req_access_txt = "3";
+	specialfunctions = 4;
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "fZ" = (
@@ -690,6 +709,9 @@
 /obj/effect/turf_decal/box,
 /obj/machinery/portable_atmospherics/pump,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/contraband/inteq_gec{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
 "gh" = (
@@ -1074,6 +1096,7 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/east,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/aft)
 "hL" = (
@@ -1084,6 +1107,7 @@
 	dir = 1
 	},
 /obj/item/cigbutt,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/aft)
 "hM" = (
@@ -1744,6 +1768,9 @@
 	pixel_x = 2
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/official/safety_internals{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "mY" = (
@@ -2193,6 +2220,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/sign/poster/clip/lanchester{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "sb" = (
@@ -2405,10 +2435,13 @@
 	dir = 1
 	},
 /obj/structure/chair,
-/obj/machinery/light/small/directional/north,
 /obj/machinery/light_switch{
 	pixel_x = 11;
 	pixel_y = 22
+	},
+/obj/structure/sign/poster/official/wtf_is_co2{
+	pixel_y = 32;
+	pixel_x = -4
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/aft)
@@ -2889,6 +2922,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light/small/directional/south,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/aft)
 "yg" = (
@@ -2918,10 +2952,13 @@
 	pixel_x = -21;
 	pixel_y = -10
 	},
-/obj/item/radio/intercom/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/autoname{
 	dir = 4
+	},
+/obj/structure/sign/poster/contraband/inteq_nt{
+	pixel_y = 32;
+	layer = 2.809
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -2935,6 +2972,7 @@
 /obj/machinery/camera/autoname{
 	dir = 9
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/aft)
 "yQ" = (
@@ -3070,6 +3108,9 @@
 /obj/item/tank/internals/emergency_oxygen/engi{
 	pixel_x = 5;
 	pixel_y = -5
+	},
+/obj/item/clothing/mask/gas/inteq{
+	pixel_x = -6
 	},
 /obj/item/clothing/mask/gas/inteq{
 	pixel_x = -6
@@ -3269,6 +3310,9 @@
 	pixel_y = 12
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/radio/intercom/directional/east{
+	pixel_y = -2
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "BT" = (
@@ -6190,7 +6234,8 @@
 /obj/machinery/door/airlock/security/glass{
 	dir = 4;
 	name = "Armory";
-	req_access_txt = "3"
+	req_access_txt = "3";
+	id_tag = "vaq_armory"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
