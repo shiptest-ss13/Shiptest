@@ -81,6 +81,9 @@
 /area/ship/bridge)
 "i" = (
 /obj/machinery/power/shuttle/engine/electric,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/bridge)
 "j" = (
@@ -209,6 +212,9 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 4;
 	id = "hestiawindow"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
