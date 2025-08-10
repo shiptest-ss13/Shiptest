@@ -4253,6 +4253,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/outpost/operations)
+"oy" = (
+/obj/structure/platform/industrial_alt/indestructible{
+	color = "#999999";
+	layer = 2;
+	dir = 4
+	},
+/obj/structure/platform/industrial_alt/corner/indestructible,
+/turf/open/water/beach/deep/outpost,
+/area/outpost/external)
 "oz" = (
 /obj/machinery/cryopod{
 	dir = 8
@@ -5521,6 +5530,23 @@
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/crew/lounge)
+"sz" = (
+/obj/effect/decal/fakelattice{
+	color = "#999999";
+	icon_state = "lattice-39"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	color = "#717326";
+	dir = 8
+	},
+/obj/structure/platform/industrial_alt/indestructible{
+	dir = 6
+	},
+/turf/open/floor/hangar/clipoutpost{
+	color = "#999999";
+	light_power = 0.7
+	},
+/area/outpost/exterior/ocean)
 "sA" = (
 /obj/structure/window/plasma/reinforced/plastitanium/indestructible,
 /obj/structure/grille,
@@ -15035,13 +15061,13 @@
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/exterior/ocean)
 "XM" = (
-/obj/structure/platform/industrial_alt/corner/indestructible{
-	dir = 1
-	},
 /obj/structure/platform/industrial_alt/indestructible{
 	color = "#999999";
 	layer = 2;
 	dir = 8
+	},
+/obj/structure/platform/industrial_alt/corner/indestructible{
+	dir = 1
 	},
 /turf/open/water/beach/deep/outpost,
 /area/outpost/external)
@@ -21252,7 +21278,7 @@ hn
 Fb
 Wq
 Wq
-Wq
+oy
 wJ
 wJ
 wJ
@@ -21375,7 +21401,7 @@ kZ
 ce
 ce
 ce
-ce
+sz
 Ec
 Ec
 Ec
