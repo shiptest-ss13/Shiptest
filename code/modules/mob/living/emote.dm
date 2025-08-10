@@ -279,7 +279,7 @@
 		return
 	var/mob/living/carbon/human/H = user
 	var/human_laugh = ishumanbasic(H)
-	if(human_laugh && (!H.mind))
+	if(human_laugh && H.mind)
 		if(user.gender == FEMALE)
 			return 'sound/voice/human/womanlaugh.ogg'
 		else

@@ -14,6 +14,11 @@
 	name = ".38 match bullet"
 	armour_penetration = -10
 	speed_mod = BULLET_SPEED_AP_MOD
+
+	wound_bonus = -20
+	bare_wound_bonus = 10
+	embedding = list(embed_chance=15, fall_chance=2, jostle_chance=2, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.4, pain_mult=3, jostle_pain_mult=5, rip_time=10)
+
 	ricochets_max = 4
 	ricochet_chance = 100
 	ricochet_auto_aim_angle = 40
@@ -77,8 +82,8 @@
 	. = ..()
 	if(isliving(target))
 		var/mob/living/M = target
-		M.adjust_jitter(5)
-		M.Dizzy(5)
+		M.set_timed_status_effect(10 SECONDS, /datum/status_effect/jitter)
+		M.set_timed_status_effect(10 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 		M.adjust_drugginess(10)
 
 /obj/projectile/bullet/c38/shock

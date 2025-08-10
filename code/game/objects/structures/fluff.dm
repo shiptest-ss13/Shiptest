@@ -171,6 +171,12 @@
 	icon = 'icons/obj/fluff.dmi'
 	icon_state = "fokof"
 
+/obj/structure/fluff/minefield_sign
+	name = "minefield sign"
+	desc = "A sign with the words 'WARNING MINEFIELD DO NOT CROSS'."
+	icon = 'icons/obj/fluff.dmi'
+	icon_state = "mine_sign"
+
 /obj/structure/fluff/big_chain
 	name = "giant chain"
 	desc = "A towering link of chains leading up to the ceiling."

@@ -11,25 +11,6 @@
 /obj/machinery/atmospherics/components/unary/passive_vent/layer4,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
-"aC" = (
-/obj/structure/table,
-/obj/machinery/jukebox/boombox{
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/food/drinks/soda_cans/pacfuel{
-	pixel_x = -8;
-	pixel_y = 4
-	},
-/obj/item/reagent_containers/food/snacks/energybar{
-	pixel_x = 4;
-	pixel_y = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/ship/cargo)
 "aH" = (
 /obj/effect/turf_decal/siding/thinplating/corner{
 	dir = 1
@@ -208,6 +189,25 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/dormtwo)
+"by" = (
+/obj/structure/table,
+/obj/machinery/jukebox/boombox{
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/food/drinks/soda_cans/pacfuel{
+	pixel_x = -8;
+	pixel_y = 4
+	},
+/obj/item/food/energybar{
+	pixel_x = 4;
+	pixel_y = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ship/cargo)
 "bB" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 8
@@ -279,6 +279,29 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"cp" = (
+/obj/structure/table/reinforced,
+/obj/item/folder/syndicate{
+	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
+	pixel_y = 11;
+	pixel_x = 5
+	},
+/obj/item/table_bell{
+	pixel_x = -5
+	},
+/obj/item/stamp/inteq/maa{
+	pixel_y = 2;
+	pixel_x = 7
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "cq" = (
 /obj/structure/table,
 /obj/structure/bedsheetbin{
@@ -407,39 +430,18 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hangar)
-"dc" = (
-/obj/structure/filingcabinet/chestdrawer,
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 1
+"cV" = (
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
-/obj/effect/turf_decal/corner/opaque/brown{
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/poddoor{
+	id = "sus_starboard";
 	dir = 4
 	},
-/obj/item/folder/syndicate{
-	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
-	pixel_x = -8
-	},
-/obj/item/folder/syndicate{
-	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/hand_labeler{
-	pixel_x = -4
-	},
-/obj/item/hand_labeler_refill{
-	pixel_x = 8;
-	pixel_y = 5
-	},
-/obj/item/hand_labeler_refill{
-	pixel_x = 8
-	},
-/obj/item/hand_labeler_refill{
-	pixel_x = 8;
-	pixel_y = -5
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/engineering/engines/starboard)
 "dl" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
@@ -468,6 +470,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
+"dr" = (
+/obj/structure/table/reinforced,
+/obj/item/folder/syndicate{
+	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
+	pixel_y = 11;
+	pixel_x = 5
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
 "dx" = (
 /obj/structure/chair,
 /obj/effect/turf_decal/corner/opaque/brown{
@@ -726,25 +738,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"ff" = (
-/obj/machinery/light/small/directional/north,
-/obj/machinery/light_switch{
-	pixel_x = 10;
-	pixel_y = 22
-	},
-/obj/machinery/camera/autoname,
-/obj/effect/turf_decal/trimline/opaque/yellow/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 9
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/railing{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering/engines/starboard)
 "fp" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/office)
@@ -1247,13 +1240,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
-"jz" = (
-/obj/machinery/porta_turret/ship/inteq{
-	dir = 9;
-	id = "colossus_grid"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering/engines/starboard)
 "jA" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -1303,13 +1289,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar)
-"jP" = (
-/obj/machinery/porta_turret/ship/inteq{
-	dir = 10;
-	id = "colossus_grid"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering/engines/port)
 "jR" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable{
@@ -1394,6 +1373,61 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
+"ko" = (
+/obj/structure/closet/secure_closet/freezer{
+	anchored = 1;
+	locked = 0;
+	name = "fridge"
+	},
+/obj/machinery/light/small/directional/west,
+/obj/item/food/grown/cabbage{
+	pixel_x = -4;
+	pixel_y = 2
+	},
+/obj/item/food/grown/cabbage{
+	pixel_x = -4;
+	pixel_y = 2
+	},
+/obj/item/food/meat/slab{
+	pixel_x = 4;
+	pixel_y = -4
+	},
+/obj/item/food/meat/slab{
+	pixel_x = 4;
+	pixel_y = -4
+	},
+/obj/item/food/meat/slab{
+	pixel_x = 4;
+	pixel_y = -4
+	},
+/obj/item/food/meat/slab{
+	pixel_x = 4;
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/rice{
+	pixel_y = -3
+	},
+/obj/item/reagent_containers/condiment/flour{
+	pixel_y = -6
+	},
+/obj/item/reagent_containers/condiment/flour{
+	pixel_y = -6
+	},
+/obj/item/storage/fancy/egg_box{
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/condiment/milk{
+	pixel_x = -8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/food/grown/citrus/lemon,
+/obj/item/food/icecreamsandwich,
+/obj/item/reagent_containers/condiment/enzyme{
+	pixel_x = -8
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/crew/canteen)
 "kq" = (
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/effect/turf_decal/corner/opaque/yellow{
@@ -1743,29 +1777,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
-"lS" = (
-/obj/structure/table/reinforced,
-/obj/item/folder/syndicate{
-	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
-	pixel_y = 11;
-	pixel_x = 5
-	},
-/obj/item/table_bell{
-	pixel_x = -5
-	},
-/obj/item/stamp/inteq/maa{
-	pixel_y = 2;
-	pixel_x = 7
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
 "lZ" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 4
@@ -2334,18 +2345,6 @@
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hangar)
-"pA" = (
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/smes/shuttle/precharged,
-/obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/door/poddoor{
-	id = "sus_port";
-	dir = 4
-	},
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ship/engineering/engines/port)
 "pB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -2634,6 +2633,39 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/starboard)
+"rx" = (
+/obj/structure/filingcabinet/chestdrawer,
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/obj/item/folder/syndicate{
+	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
+	pixel_x = -8
+	},
+/obj/item/folder/syndicate{
+	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
+	pixel_x = -8;
+	pixel_y = -4
+	},
+/obj/item/hand_labeler{
+	pixel_x = -4
+	},
+/obj/item/hand_labeler_refill{
+	pixel_x = 8;
+	pixel_y = 5
+	},
+/obj/item/hand_labeler_refill{
+	pixel_x = 8
+	},
+/obj/item/hand_labeler_refill{
+	pixel_x = 8;
+	pixel_y = -5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "ry" = (
 /obj/structure/chair,
 /obj/structure/noticeboard{
@@ -3104,6 +3136,30 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"uB" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/structure/filingcabinet/double{
+	dir = 8;
+	pixel_x = 10;
+	density = 0
+	},
+/obj/machinery/light/directional/east,
+/obj/item/folder/syndicate{
+	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
+	pixel_x = -8
+	},
+/obj/item/folder/syndicate{
+	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
+	pixel_x = -8;
+	pixel_y = -4
+	},
+/obj/item/clipboard{
+	pixel_y = -2
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/crew/office)
 "uP" = (
 /obj/structure/closet/crate/medical{
 	name = "corpsman's kit"
@@ -3429,16 +3485,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hangar)
-"wo" = (
-/obj/structure/table/reinforced,
-/obj/item/folder/syndicate{
-	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
-	pixel_y = 11;
-	pixel_x = 5
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/canteen)
 "wq" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/warning{
 	dir = 1
@@ -3560,61 +3606,6 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/plating,
-/area/ship/crew/canteen)
-"xa" = (
-/obj/structure/closet/secure_closet/freezer{
-	anchored = 1;
-	locked = 0;
-	name = "fridge"
-	},
-/obj/machinery/light/small/directional/west,
-/obj/item/food/grown/cabbage{
-	pixel_x = -4;
-	pixel_y = 2
-	},
-/obj/item/food/grown/cabbage{
-	pixel_x = -4;
-	pixel_y = 2
-	},
-/obj/item/food/meat/slab{
-	pixel_x = 4;
-	pixel_y = -4
-	},
-/obj/item/food/meat/slab{
-	pixel_x = 4;
-	pixel_y = -4
-	},
-/obj/item/food/meat/slab{
-	pixel_x = 4;
-	pixel_y = -4
-	},
-/obj/item/food/meat/slab{
-	pixel_x = 4;
-	pixel_y = -4
-	},
-/obj/item/reagent_containers/condiment/sugar,
-/obj/item/reagent_containers/condiment/rice{
-	pixel_y = -3
-	},
-/obj/item/reagent_containers/condiment/flour{
-	pixel_y = -6
-	},
-/obj/item/reagent_containers/condiment/flour{
-	pixel_y = -6
-	},
-/obj/item/storage/fancy/egg_box{
-	pixel_y = -4
-	},
-/obj/item/reagent_containers/condiment/milk{
-	pixel_x = -8
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/item/food/grown/citrus/lemon,
-/obj/item/reagent_containers/food/snacks/icecreamsandwich,
-/obj/item/reagent_containers/condiment/enzyme{
-	pixel_x = -8
-	},
-/turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "xd" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -4061,18 +4052,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
-"Aj" = (
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/smes/shuttle/precharged,
-/obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/door/poddoor{
-	id = "sus_starboard";
-	dir = 4
-	},
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ship/engineering/engines/starboard)
 "Ap" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/chair/handrail,
@@ -5609,6 +5588,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
+"JO" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/poddoor{
+	id = "sus_port";
+	dir = 4
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/engineering/engines/port)
 "JW" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/power/apc/auto_name/directional/west,
@@ -6090,6 +6081,13 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
+"MF" = (
+/obj/machinery/porta_turret/ship/inteq{
+	dir = 9;
+	id = "colossus_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering/engines/starboard)
 "MG" = (
 /obj/effect/decal/fakelattice,
 /obj/structure/platform/ship_three{
@@ -7204,37 +7202,6 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
-"SR" = (
-/obj/structure/filingcabinet/chestdrawer{
-	dir = 1
-	},
-/obj/item/toy/figure/vanguard{
-	pixel_x = -4
-	},
-/obj/item/toy/figure/warden{
-	pixel_x = -4;
-	pixel_y = -4
-	},
-/obj/item/reagent_containers/food/snacks/candyheart{
-	pixel_y = -8;
-	pixel_x = -3
-	},
-/obj/effect/turf_decal/techfloor,
-/obj/item/clipboard{
-	pixel_x = 9;
-	pixel_y = 2
-	},
-/obj/item/folder/syndicate{
-	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
-	pixel_x = 8
-	},
-/obj/item/folder/syndicate{
-	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
-	pixel_x = 8;
-	pixel_y = -4
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/bridge)
 "SU" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 8
@@ -7497,6 +7464,67 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
+"TQ" = (
+/obj/structure/filingcabinet/chestdrawer{
+	dir = 1
+	},
+/obj/item/toy/figure/vanguard{
+	pixel_x = -4
+	},
+/obj/item/toy/figure/warden{
+	pixel_x = -4;
+	pixel_y = -4
+	},
+/obj/item/food/candyheart{
+	pixel_y = -8;
+	pixel_x = -3
+	},
+/obj/effect/turf_decal/techfloor,
+/obj/item/clipboard{
+	pixel_x = 9;
+	pixel_y = 2
+	},
+/obj/item/folder/syndicate{
+	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
+	name = "folder";
+	pixel_x = 8
+	},
+/obj/item/folder/syndicate{
+	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
+	name = "folder";
+	pixel_x = 8;
+	pixel_y = -4
+	},
+/obj/structure/filingcabinet/chestdrawer{
+	dir = 1
+	},
+/obj/item/toy/figure/vanguard{
+	pixel_x = -4
+	},
+/obj/item/toy/figure/warden{
+	pixel_x = -4;
+	pixel_y = -4
+	},
+/obj/item/food/candyheart{
+	pixel_y = -8;
+	pixel_x = -3
+	},
+/obj/effect/turf_decal/techfloor,
+/obj/item/clipboard{
+	pixel_x = 9;
+	pixel_y = 2
+	},
+/obj/item/folder/syndicate{
+	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
+	pixel_x = 8
+	},
+/obj/item/folder/syndicate{
+	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
+	pixel_x = 8;
+	pixel_y = -4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
 "TR" = (
 /obj/effect/spawner/bunk_bed{
 	dir = 1
@@ -7721,30 +7749,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
-"Vk" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 8
-	},
-/obj/structure/filingcabinet/double{
-	dir = 8;
-	pixel_x = 10;
-	density = 0
-	},
-/obj/machinery/light/directional/east,
-/obj/item/folder/syndicate{
-	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
-	pixel_x = -8
-	},
-/obj/item/folder/syndicate{
-	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/clipboard{
-	pixel_y = -2
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/crew/office)
 "Vm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -7769,6 +7773,13 @@
 "Vu" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/canteen)
+"Vv" = (
+/obj/machinery/porta_turret/ship/inteq{
+	dir = 10;
+	id = "colossus_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering/engines/port)
 "Vx" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -8023,6 +8034,25 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"WZ" = (
+/obj/machinery/light/small/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = 10;
+	pixel_y = 22
+	},
+/obj/machinery/camera/autoname,
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering/engines/starboard)
 "Xc" = (
 /obj/structure/closet/secure_closet{
 	anchored = 1;
@@ -8563,7 +8593,7 @@ vm
 hU
 hU
 Hr
-jP
+Vv
 re
 re
 re
@@ -8579,7 +8609,7 @@ re
 re
 re
 re
-jz
+MF
 Fe
 NR
 NR
@@ -8591,8 +8621,8 @@ re
 re
 re
 vm
-pA
-pA
+JO
+JO
 ly
 vm
 re
@@ -8612,8 +8642,8 @@ re
 re
 sy
 kH
-Aj
-Aj
+cV
+cV
 sy
 re
 re
@@ -9014,7 +9044,7 @@ Rg
 lw
 jN
 sy
-ff
+WZ
 nb
 bl
 sy
@@ -9167,7 +9197,7 @@ XD
 lF
 nZ
 Vu
-xa
+ko
 Sy
 gq
 KB
@@ -9257,7 +9287,7 @@ Fw
 eH
 fp
 oL
-Vk
+uB
 oZ
 Vu
 li
@@ -9388,7 +9418,7 @@ nz
 mU
 oe
 As
-wo
+dr
 kG
 wL
 re
@@ -9569,7 +9599,7 @@ qJ
 AQ
 vC
 rb
-lS
+cp
 kP
 GN
 Kk
@@ -9599,7 +9629,7 @@ Nu
 Ea
 SQ
 LZ
-dc
+rx
 ZU
 Nf
 GN
@@ -9620,9 +9650,9 @@ vs
 DE
 Ws
 pf
-SR
+TQ
 Hk
-aC
+by
 nG
 Wl
 cM

@@ -142,8 +142,14 @@
 	///What kind of footstep this mob should have. Null if it shouldn't have any.
 	var/footstep_type
 
-	/// Base armor value on this mob for running armor checks
-	var/datum/armor/armor
+	///How much wounding power it has
+	var/wound_bonus = 5
+	///How much bare wounding power it has
+	var/bare_wound_bonus = 0
+	///If the attacks from this are sharp
+	var/sharpness = SHARP_NONE
+	///Generic flags
+	var/simple_mob_flags = NONE
 
 
 /mob/living/simple_animal/Initialize(mapload)

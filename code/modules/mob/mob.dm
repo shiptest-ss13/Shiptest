@@ -1521,9 +1521,6 @@
 		if(NAMEOF(src, stat))
 			set_stat(var_value)
 			. =  TRUE
-		if(NAMEOF(src, dizziness))
-			set_dizziness(var_value)
-			. =  TRUE
 		if(NAMEOF(src, eye_blind))
 			set_blindness(var_value)
 			. =  TRUE
