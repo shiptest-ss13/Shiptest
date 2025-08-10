@@ -27,13 +27,13 @@
 
 /obj/structure/barricade/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_WELDER && user.a_intent != INTENT_HARM && bar_material == METAL)
-		if(obj_integrity < max_integrity)
+		if(atom_integrity < max_integrity)
 			if(!I.tool_start_check(user, src, amount=0))
 				return
 
 			to_chat(user, span_notice("You begin repairing [src]..."))
 			if(I.use_tool(src, user, 40, volume=40))
-				obj_integrity = clamp(obj_integrity + 20, 0, max_integrity)
+				atom_integrity = clamp(atom_integrity + 20, 0, max_integrity)
 	else
 		return ..()
 
@@ -215,7 +215,7 @@
 			var/turf/target_turf2 = get_step(src, WEST)
 			if(!target_turf2.is_blocked_turf())
 				new /obj/structure/barricade/security(target_turf2)
-	qdel(src)
+	resolve()
 
 /obj/item/grenade/barrier/ui_action_click(mob/user)
 	toggle_mode(user)

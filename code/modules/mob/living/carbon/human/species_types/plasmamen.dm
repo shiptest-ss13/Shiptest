@@ -3,8 +3,9 @@
 	id = SPECIES_PLASMAMAN
 	sexes = 0
 	meat = /obj/item/stack/sheet/mineral/plasma
-	species_traits = list(NOBLOOD,NOTRANSSTING,NOHUSK)
-	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_NOHUNGER,TRAIT_ALWAYS_CLEAN)
+	species_traits = list(NOBLOOD, NOTRANSSTING, HAS_BONE)
+	// plasmemes get hard to wound since they only need a severe bone wound to dismember, but unlike skellies, they can't pop their bones back into place
+	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_NOHUNGER,TRAIT_ALWAYS_CLEAN, TRAIT_HARDLY_WOUNDED)
 	inherent_biotypes = MOB_HUMANOID|MOB_MINERAL
 	mutantlungs = /obj/item/organ/lungs/plasmaman
 	mutanttongue = /obj/item/organ/tongue/bone/plasmaman
@@ -87,36 +88,12 @@
 	return randname
 
 /datum/species/plasmaman/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
-	if(chem.type == /datum/reagent/consumable/milk)
-		if(chem.volume > 10)
-			H.reagents.remove_reagent(chem.type, chem.volume - 10)
-			to_chat(H, span_warning("The excess milk is dripping off your bones!"))
-		H.heal_bodypart_damage(1.5,0, 0)
+	. = ..()
+	if(istype(chem, /datum/reagent/toxin/plasma))
 		H.reagents.remove_reagent(chem.type, chem.metabolization_rate)
+		for(var/i in H.all_wounds)
+			var/datum/wound/iter_wound = i
+			iter_wound.on_xadone(4) // plasmamen use plasma to reform their bones or whatever
 		return TRUE
-	if(chem.type == /datum/reagent/toxin/bonehurtingjuice)
-		H.adjustStaminaLoss(7.5, 0)
-		H.adjustBruteLoss(0.5, 0)
-		if(prob(20))
-			switch(rand(1, 3))
-				if(1)
-					H.say(pick("oof.", "ouch.", "my bones.", "oof ouch.", "oof ouch my bones."), forced = /datum/reagent/toxin/bonehurtingjuice)
-				if(2)
-					H.manual_emote(pick("oofs silently.", "looks like their bones hurt.", "grimaces, as though their bones hurt."))
-				if(3)
-					to_chat(H, span_warning("Your bones hurt!"))
-		if(chem.overdosed)
-			if(prob(4) && iscarbon(H)) //big oof
-				var/selected_part = pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG) //God help you if the same limb gets picked twice quickly.
-				var/obj/item/bodypart/bp = H.get_bodypart(selected_part) //We're so sorry skeletons, you're so misunderstood
-				if(bp)
-					playsound(H, get_sfx("desceration"), 50, TRUE, -1) //You just want to socialize
-					H.visible_message(span_warning("[H] rattles loudly and flails around!!"), span_danger("Your bones hurt so much that your missing muscles spasm!!"))
-					H.say("OOF!!", forced=/datum/reagent/toxin/bonehurtingjuice)
-					bp.receive_damage(200, 0, 0) //But I don't think we should
-				else
-					to_chat(H, span_warning("Your missing arm aches from wherever you left it."))
-					H.emote("sigh")
-		H.reagents.remove_reagent(chem.type, chem.metabolization_rate)
-		return TRUE
+
 	return ..()

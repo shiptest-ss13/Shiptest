@@ -49,13 +49,13 @@
 	M.drowsyness = max(0,M.drowsyness-7)
 	M.AdjustSleeping(-40)
 	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
-	if(!HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
-		M.adjust_jitter(5, max = 100)
+	if(!HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE) && !isvox(M))
+		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	return ..()
 
 /datum/reagent/consumable/ethanol/vimukti/overdose_start(mob/living/M)
 	to_chat(M, span_userdanger("Your entire body violently jitters as you start to feel queasy. You really shouldn't have drank all of that [name]!"))
-	M.adjust_jitter(20, max = 500)
+	M.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	M.Stun(15)
 
 /datum/reagent/consumable/ethanol/vimukti/overdose_process(mob/living/M)
@@ -64,7 +64,7 @@
 		if(I)
 			M.dropItemToGround(I)
 			to_chat(M, span_notice("Your hands flinch and you drop what you were holding!"))
-			M.adjust_jitter(10, max = 500)
+			M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 
 	if(prob(7))
 		to_chat(M, span_warning("[pick("You have a really bad headache.", "Your eyes hurt.", "You find it hard to stay still.", "You feel your heart practically beating out of your chest.")]"))
@@ -358,7 +358,7 @@
 	..()
 
 /datum/reagent/consumable/ethanol/beepsky_smash/on_mob_life(mob/living/carbon/M)
-	M.adjust_jitter(2, max = 100)
+	M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	if(HAS_TRAIT(M.mind, TRAIT_LAW_ENFORCEMENT_METABOLISM))
 		M.adjustStaminaLoss(-10, 0)
 		if(prob(20))
@@ -913,7 +913,7 @@
 	M.set_drugginess(50)
 	if(!HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
 		M.confused = max(M.confused+2,0)
-		M.Dizzy(10)
+		M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	if (!M.slurring)
 		M.slurring = 1
 	M.slurring += 3
@@ -939,7 +939,7 @@
 	glass_desc = "Like having your brain smashed out by a slice of lemon wrapped around a large gold brick."
 
 /datum/reagent/consumable/ethanol/gargle_blaster/on_mob_life(mob/living/carbon/M)
-	M.dizziness +=1.5
+	M.set_timed_status_effect(3 SECONDS, /datum/status_effect/dizziness, TRUE)
 	switch(current_cycle)
 		if(15 to 45)
 			if(!M.slurring)
@@ -972,7 +972,7 @@
 
 /datum/reagent/consumable/ethanol/neurotoxin/on_mob_life(mob/living/carbon/M)
 	M.set_drugginess(50)
-	M.dizziness +=2
+	M.set_timed_status_effect(2 SECONDS, /datum/status_effect/jitter, TRUE)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1*REM, 150)
 	if(prob(20))
 		M.adjustStaminaLoss(10)
@@ -1019,19 +1019,19 @@
 		M.slurring = 1
 	switch(current_cycle)
 		if(1 to 5)
-			M.Dizzy(10)
+			M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			M.set_drugginess(30)
 		if(5 to 20)
-			M.adjust_jitter(20, max = 200)
-			M.Dizzy(20)
+			M.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+			M.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			M.set_drugginess(45)
 		if (20 to 200)
-			M.adjust_jitter(40, max = 400)
-			M.Dizzy(40)
+			M.set_timed_status_effect(80 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+			M.set_timed_status_effect(80 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			M.set_drugginess(60)
 		if(200 to INFINITY)
-			M.adjust_jitter(60, max = 600)
-			M.Dizzy(60)
+			M.set_timed_status_effect(120 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+			M.set_timed_status_effect(120 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			M.set_drugginess(75)
 			if(prob(30))
 				M.adjustToxLoss(2, 0)
@@ -1457,7 +1457,7 @@
 /datum/reagent/consumable/ethanol/turbo/on_mob_life(mob/living/carbon/M)
 	if(prob(4))
 		to_chat(M, span_notice("[pick("You feel disregard for the rule of law.", "You feel pumped!", "Your head is pounding.", "Your thoughts are racing...")]"))
-	M.adjustStaminaLoss(-M.drunkenness * 0.25)
+	M.adjustStaminaLoss(-M.get_drunk_amount() * 0.25)
 	return ..()
 
 /datum/reagent/consumable/ethanol/old_timer
@@ -1516,7 +1516,7 @@
 	var/stored_teleports = 0
 
 /datum/reagent/consumable/ethanol/blazaam/on_mob_life(mob/living/carbon/M)
-	if(M.drunkenness > 40)
+	if(M.get_drunk_amount() > 40)
 		if(stored_teleports)
 			do_teleport(M, get_turf(M), rand(1,3), channel = TELEPORT_CHANNEL_WORMHOLE)
 			stored_teleports--
@@ -1644,12 +1644,12 @@
 /datum/reagent/consumable/ethanol/spriters_bane/on_mob_life(mob/living/carbon/C)
 	switch(current_cycle)
 		if(5 to 40)
-			C.adjust_jitter(3, max = 200)
+			C.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 			if(prob(10) && !C.eye_blurry)
 				C.blur_eyes(6)
 				to_chat(C, span_warning("That outline is so distracting, it's hard to look at anything else!"))
 		if(40 to 100)
-			C.Dizzy(10)
+			C.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			if(prob(15))
 				new /datum/hallucination/hudscrew(C)
 		if(100 to INFINITY)
@@ -1657,7 +1657,7 @@
 				C.blind_eyes(6)
 				to_chat(C, span_userdanger("Your vision fades as your eyes are outlined in black!"))
 			else
-				C.Dizzy(20)
+				C.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/ethanol/spriters_bane/expose_atom(atom/A, volume)

@@ -277,7 +277,7 @@ WS End*/
 	radbonustemp = rand(radbonustemp - 50, radbonustemp + 50) // Basically this means 50K and below will always give the percent heal, and upto 150K could. Calculated once.
 
 /datum/reagent/medicine/c2/seiver/on_mob_life(mob/living/carbon/human/M)
-	var/chemtemp = min(M.reagents?.chem_temp, 1000)
+	var/chemtemp = min(holder.chem_temp, 1000)
 	chemtemp = chemtemp ? chemtemp : 273 //why do you have null sweaty
 	var/healypoints = 0 //5 healypoints = 1 heart damage; 5 rads = 1 tox damage healed for the purpose of healypoints
 
@@ -414,6 +414,10 @@ WS End*/
 
 /******COMBOS******/
 /*Suffix: Combo of healing, prob gonna get wack REAL fast*/
+
+
+
+/* fucking whitesands left this in code while we had the OTHER synthflesh
 /datum/reagent/medicine/c2/instabitaluri
 	name = "Synthflesh (Instabitaluri)"
 	description = "Heals brute and burn damage at the cost of toxicity (66% of damage healed). Touch application only."
@@ -428,6 +432,9 @@ WS End*/
 		if(method in list(PATCH, TOUCH, SMOKE))
 			var/harmies = min(carbies.getBruteLoss(),carbies.adjustBruteLoss(-1.25 * reac_volume)*-1)
 			var/burnies = min(carbies.getFireLoss(),carbies.adjustFireLoss(-1.25 * reac_volume)*-1)
+			for(var/i in carbies.all_wounds)
+				var/datum/wound/iter_wound = i
+				iter_wound.on_synthflesh(reac_volume)
 			carbies.adjustToxLoss((harmies+burnies)*0.66)
 			if(show_message)
 				to_chat(carbies, span_danger("You feel your burns and bruises healing! It stings like hell!"))
@@ -437,6 +444,7 @@ WS End*/
 				carbies.visible_message("<span class='nicegreen'>A rubbery liquid coats [carbies]'s burns. [carbies] looks a lot healthier!") //we're avoiding using the phrases "burnt flesh" and "burnt skin" here because carbies could be a skeleton or something
 	..()
 	return TRUE
+*/
 
 /******ORGAN HEALING******/
 /*Suffix: -rite*/
@@ -478,8 +486,8 @@ WS End*/
 
 		H.adjustOrganLoss(ORGAN_SLOT_HEART,max(1,volume/10)) // your heart is barely keeping up!
 
-		H.adjust_jitter(rand(0,2))
-		H.Dizzy(rand(0,2))
+		H.set_timed_status_effect(rand(0 SECONDS, 4 SECONDS) * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		H.set_timed_status_effect(rand(0 SECONDS, 4 SECONDS) * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 
 
 		if(prob(33))
