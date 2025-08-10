@@ -163,9 +163,6 @@
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
-"lg" = (
-/turf/open/floor/plasteel/tech,
-/area/hangar)
 "mo" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5
@@ -270,6 +267,16 @@
 /obj/machinery/door/poddoor/ert,
 /turf/open/floor/plasteel/tech,
 /area/hangar)
+"uQ" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line,
+/obj/structure/railing/thin/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 4
+	},
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
+/area/hangar)
 "vs" = (
 /obj/structure/platform/industrial_alt/indestructible,
 /turf/open/floor/hangar/clipoutpost{
@@ -338,10 +345,6 @@
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
-"yZ" = (
-/obj/structure/railing/thin,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
 "zi" = (
 /obj/effect/landmark/outpost/shaft_number,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
@@ -405,6 +408,9 @@
 "BL" = (
 /obj/structure/railing/thin{
 	dir = 1
+	},
+/obj/structure/chair/bench/blue/directional/north{
+	dir = 2
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
@@ -3772,7 +3778,7 @@ IE
 vs
 sG
 yn
-AQ
+uQ
 Er
 BB
 MM
@@ -4530,8 +4536,8 @@ Lc
 MT
 Er
 BB
-Es
-yZ
+EF
+ow
 LX
 mw
 zC
@@ -4593,11 +4599,11 @@ gk
 pK
 vs
 JM
-sG
-RZ
-RZ
-RZ
-sG
+EF
+MT
+Er
+BB
+Es
 of
 LX
 Xb
@@ -4661,9 +4667,9 @@ GP
 Rw
 sG
 sG
-lg
-lg
-lg
+RZ
+RZ
+RZ
 sG
 sG
 Io

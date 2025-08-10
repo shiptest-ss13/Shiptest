@@ -28,7 +28,7 @@
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
-"cZ" = (
+"cB" = (
 /obj/effect/landmark/outpost/shaft_number,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
@@ -166,6 +166,9 @@
 "jJ" = (
 /obj/structure/railing/thin{
 	dir = 1
+	},
+/obj/structure/chair/bench/blue/directional/north{
+	dir = 2
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
@@ -361,9 +364,6 @@
 /obj/machinery/light/floor,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
-"Ap" = (
-/turf/open/floor/plasteel/tech,
-/area/hangar)
 "AG" = (
 /obj/structure/platform/industrial_alt/indestructible{
 	color = "#999999";
@@ -404,10 +404,6 @@
 	dir = 8
 	},
 /obj/structure/railing/thin/corner,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"DL" = (
-/obj/structure/railing/thin,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "Er" = (
@@ -505,6 +501,16 @@
 	color = "#999999";
 	light_power = 0.7
 	},
+/area/hangar)
+"Ir" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line,
+/obj/structure/railing/thin/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 4
+	},
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "Ju" = (
 /obj/structure/platform/industrial_alt/indestructible{
@@ -4822,7 +4828,7 @@ HR
 Ox
 dH
 Ov
-tb
+Ir
 xA
 ZJ
 TD
@@ -5509,7 +5515,7 @@ bd
 bd
 mR
 dU
-cZ
+cB
 mA
 xA
 ZJ
@@ -5580,8 +5586,8 @@ eW
 mA
 xA
 ZJ
-JX
-DL
+UX
+Er
 Ie
 uX
 Yu
@@ -5643,11 +5649,11 @@ CE
 Oa
 Ox
 vB
-dH
-KF
-KF
-KF
-dH
+UX
+mA
+xA
+ZJ
+JX
 Hf
 Ie
 fY
@@ -5711,9 +5717,9 @@ AG
 dQ
 dH
 dH
-Ap
-Ap
-Ap
+KF
+KF
+KF
 dH
 dH
 af

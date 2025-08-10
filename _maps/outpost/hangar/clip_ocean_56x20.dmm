@@ -91,6 +91,9 @@
 /obj/structure/railing/thin{
 	dir = 1
 	},
+/obj/structure/chair/bench/blue/directional/north{
+	dir = 2
+	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "jC" = (
@@ -143,10 +146,6 @@
 /obj/structure/disposalpipe/segment,
 /obj/structure/catwalk/over,
 /turf/open/water/beach/deep/outpost,
-/area/hangar)
-"mw" = (
-/obj/structure/railing/thin,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "mz" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
@@ -209,6 +208,16 @@
 /area/hangar)
 "rb" = (
 /turf/open/floor/hangar/clipoutpost,
+/area/hangar)
+"rh" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line,
+/obj/structure/railing/thin/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 4
+	},
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
 "ri" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
@@ -692,9 +701,6 @@
 	},
 /obj/machinery/light/floor,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
-"Zr" = (
-/turf/open/floor/plasteel/tech,
 /area/hangar)
 "ZP" = (
 /obj/structure/platform/industrial_alt/corner/indestructible{
@@ -3595,7 +3601,7 @@ kt
 vD
 eb
 bZ
-hp
+rh
 Qu
 ri
 rb
@@ -4126,8 +4132,8 @@ Ua
 Op
 Qu
 ri
-Fu
-mw
+zF
+So
 UU
 tt
 zs
@@ -4169,11 +4175,11 @@ Ob
 fx
 vD
 Mz
-eb
-tL
-tL
-tL
-eb
+zF
+Op
+Qu
+ri
+Fu
 xJ
 UU
 fL
@@ -4217,9 +4223,9 @@ Qm
 rN
 eb
 eb
-Zr
-Zr
-Zr
+tL
+tL
+tL
 eb
 eb
 pH

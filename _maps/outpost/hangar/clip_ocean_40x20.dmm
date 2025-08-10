@@ -169,9 +169,6 @@
 	light_power = 0.7
 	},
 /area/hangar)
-"oE" = (
-/turf/open/floor/plasteel/tech,
-/area/hangar)
 "oK" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 1
@@ -331,6 +328,16 @@
 	},
 /turf/open/water/beach/deep/outpost,
 /area/hangar)
+"Ak" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line,
+/obj/structure/railing/thin/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 4
+	},
+/turf/open/floor/hangar/plasteel/dark/clipoutpost,
+/area/hangar)
 "Am" = (
 /obj/effect/landmark/outpost/elevator{
 	shaft = "1"
@@ -425,10 +432,6 @@
 	light_power = 0.7
 	},
 /area/hangar)
-"Gs" = (
-/obj/structure/railing/thin,
-/turf/open/floor/hangar/plasteel/dark/clipoutpost,
-/area/hangar)
 "GX" = (
 /turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/hangar)
@@ -508,6 +511,9 @@
 "JZ" = (
 /obj/structure/railing/thin{
 	dir = 1
+	},
+/obj/structure/chair/bench/blue/directional/north{
+	dir = 2
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/hangar)
@@ -2843,7 +2849,7 @@ oj
 XS
 GX
 Jf
-AX
+Ak
 BA
 oK
 eE
@@ -3374,8 +3380,8 @@ Sn
 lZ
 BA
 oK
-vR
-Gs
+am
+co
 hi
 zF
 kQ
@@ -3417,11 +3423,11 @@ PF
 fh
 XS
 IZ
-GX
-Tv
-Tv
-Tv
-GX
+am
+lZ
+BA
+oK
+vR
 wJ
 hi
 XN
@@ -3465,9 +3471,9 @@ Nu
 Fv
 GX
 GX
-oE
-oE
-oE
+Tv
+Tv
+Tv
 GX
 GX
 FN
