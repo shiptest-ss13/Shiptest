@@ -477,7 +477,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	start_empty = TRUE
 
 /obj/item/gun/ballistic/automatic/marksman/f90/inteq
-	name = "CM-F90 Saluki"
+	name = "\improper SSG-08 Saluki"
 	desc = "A powerful sniper purchased from CLIP, lightly modified with superficial modifications and an IRMG paintjob by the Artificer Division. Chambered in 6.5mm."
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
