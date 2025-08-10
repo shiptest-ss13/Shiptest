@@ -768,6 +768,16 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/saluki
+	name = "CM-F90 Saluki Sniper Rifle Crate"
+	desc = "Contains a military sniper rifle equipped with an 8x sniper scope, fitted by the Inteq Artificer Division. Chambered in the powerful 6.5mm CLIP cartridge."
+	cost = 4500
+	contains = list(/obj/item/storage/guncase/saluki)
+	crate_name = "marksman rifle crate"
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/gun/scout
 	name = "Scout Sniper Rifle Crate"
 	desc = "Contains a traditional scoped rifle to hunt wildlife and big game from a respectful distance. Chambered in powerful .300 Magnum."

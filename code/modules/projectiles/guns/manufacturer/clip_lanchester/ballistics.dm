@@ -476,6 +476,18 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 /obj/item/ammo_box/magazine/f90/empty
 	start_empty = TRUE
 
+/obj/item/gun/ballistic/automatic/marksman/f90/inteq
+	name = "CM-F90 Saluki"
+	desc = "A powerful sniper purchased from CLIP, lightly modified with superficial modifications and an IRMG paintjob by the Artificer Division. Chambered in 6.5mm."
+	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
+
+	icon_state = "saluki"
+	item_state = "saluki"
+
+	manufacturer = MANUFACTURER_INTEQ
+
 //########### RIFLES ###########//
 /obj/item/gun/ballistic/automatic/assault/cm82
 	name = "\improper CM-82"
