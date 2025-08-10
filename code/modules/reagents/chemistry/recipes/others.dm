@@ -661,3 +661,34 @@
 	results = list(/datum/reagent/cement/roadmix = 2)
 	required_reagents = list(/datum/reagent/cement = 1, /datum/reagent/asphalt = 1)
 	mix_message = "The mixture mixing suddenly reminds you of cramped urban worlds."
+
+/datum/chemical_reaction/water_vaporization
+	required_reagents = list(/datum/reagent/water = 1)
+	mix_message = "The mixture boils off a vapor..."
+	required_temp = T0C + 100
+	mob_react = FALSE
+
+/datum/chemical_reaction/water_vaporization/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.my_atom)
+	var/smoke_radius = round(sqrt(created_volume / 10), 1)
+	var/datum/effect_system/smoke_spread/smoke = new
+	smoke.attach(location)
+	playsound(location, 'sound/effects/smoke.ogg', 50, TRUE, -3)
+	if(smoke)
+		smoke.set_up(holder, smoke_radius, location, 0)
+		smoke.start()
+
+/datum/chemical_reaction/water_freezing
+	results = list(/datum/reagent/consumable/ice = 1)
+	required_reagents = list(/datum/reagent/water = 1)
+	mix_message = "The mixture solidifies into clear crystals..."
+	required_temp = T0C
+	is_cold_recipe = TRUE
+	mob_react = FALSE
+
+/datum/chemical_reaction/ice_melting
+	results = list(/datum/reagent/water = 1)
+	required_reagents = list(/datum/reagent/consumable/ice = 1)
+	mix_message = "The ice melts into water!"
+	required_temp = T0C
+	mob_react = FALSE

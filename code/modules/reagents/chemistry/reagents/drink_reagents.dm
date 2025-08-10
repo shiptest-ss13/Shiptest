@@ -624,6 +624,7 @@
 	name = "Ice"
 	description = "Frozen water, your dentist wouldn't like you chewing this."
 	reagent_state = SOLID
+	default_temp = T0C - 20
 	color = "#619494" // rgb: 97, 148, 148
 	taste_description = "ice"
 	glass_icon_state = "iceglass"

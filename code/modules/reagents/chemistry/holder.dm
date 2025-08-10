@@ -715,7 +715,7 @@
  * * reagtemp - Temperature of this reagent, will be equalized
  * * no_react - prevents reactions being triggered by this addition
  */
-/datum/reagents/proc/add_reagent(reagent, amount, list/data=null, reagtemp = 300, no_react = 0)
+/datum/reagents/proc/add_reagent(reagent, amount, list/data=null, reagtemp, no_react = 0)
 	if(!isnum(amount) || !amount)
 		return FALSE
 
@@ -726,6 +726,9 @@
 	if(!D)
 		WARNING("[my_atom] attempted to add a reagent called '[reagent]' which doesn't exist. ([usr])")
 		return FALSE
+
+	if(isnull(reagtemp))
+		reagtemp = D.default_temp
 
 	update_total()
 	var/cached_total = total_volume
