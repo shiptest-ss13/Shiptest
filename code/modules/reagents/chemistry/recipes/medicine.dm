@@ -28,6 +28,7 @@
 	required_reagents = list(/datum/reagent/carbon = 1, /datum/reagent/silicon = 1, /datum/reagent/silver = 2)
 	required_catalysts = list(/datum/reagent/cryptobiolin = 5)
 	required_temp = 220
+	is_cold_recipe = 1
 	mix_message = "The solution quietly incorporates as the temperatures drop."
 
 /datum/chemical_reaction/quardexane
