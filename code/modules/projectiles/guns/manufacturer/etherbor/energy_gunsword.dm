@@ -34,7 +34,7 @@
 	delay = 1
 
 /obj/projectile/beam/hitscan/kalix
-	name = "concentrated energy"
+	name = "concentrated energy beam"
 	tracer_type = /obj/effect/projectile/tracer/kalix
 	muzzle_type = /obj/effect/projectile/muzzle/kalix
 	impact_type = /obj/effect/projectile/impact/kalix
@@ -45,6 +45,110 @@
 	damage_constant = 0.8
 	damage = 25
 	armour_penetration = -10
+
+/obj/projectile/beam/hitscan/kalix/nock
+	name = "concentrated energy beam"
+	damage_constant = 0.8
+	damage = 15
+	armour_penetration = -20
+
+/obj/item/ammo_casing/energy/kalix/nock
+	projectile_type = /obj/projectile/beam/hitscan/kalix/nock
+	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
+	e_cost = 312
+	select_name = "kill"
+
+/obj/item/ammo_casing/energy/disabler/hitscan/kalix/nock
+	projectile_type = /obj/projectile/beam/hitscan/disabler
+	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
+	e_cost = 312
+	select_name = "disable"
+
+/obj/item/gun/energy/kalix/nock
+	name = "Etherbor VG-F3"
+	desc = "The Etherbor Industries VG-F3 is a further refinement of the antiquated beam volleygun concept. The first of its kind to find commercial success in the modern day, the VG-F3 has found a comfortable niche with law enforcement and home defense markets galaxy-wide."
+	icon_state = "kalixnock"
+	item_state = "kalixnock"
+	slot_flags = ITEM_SLOT_BELT
+
+	modifystate = TRUE
+
+	gun_firemodes = list(FIREMODE_BURST)
+	default_firemode = FIREMODE_BURST
+
+	randomspread = TRUE
+	burst_size = 4
+	burst_delay = 0.1 SECONDS
+	fire_delay = 0.7 SECONDS
+
+	wield_delay = 0.7 SECONDS
+	wield_slowdown = LASER_SMG_SLOWDOWN
+
+	spread = 10
+	spread_unwielded = 15
+
+	slot_available = list(
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+
+	default_ammo_type = /obj/item/stock_parts/cell/gun/kalix
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix,
+	)
+	ammo_type = list(/obj/item/ammo_casing/energy/kalix/nock , /obj/item/ammo_casing/energy/disabler/hitscan/kalix/nock)
+
+/obj/projectile/beam/hitscan/kalix/pgf/nock
+	name = "concentrated energy beam"
+	damage_constant = 0.8
+	damage = 15
+	armour_penetration = -20
+
+/obj/item/ammo_casing/energy/kalix/pgf/nock
+	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf/nock
+	fire_sound = 'sound/weapons/gun/energy/kalixrifle.ogg'
+	e_cost = 250
+	select_name = "kill"
+
+/obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/nock
+	projectile_type = /obj/projectile/beam/hitscan/disabler
+	fire_sound = 'sound/weapons/gun/energy/kalixrifle.ogg'
+	e_cost = 250
+	select_name = "disable"
+
+/obj/item/gun/energy/kalix/pgf/nock
+	name = "Etherbor VG-A5"
+	desc = "Piggybacking off the success of the VG-F3, the Etherbor Industries VG-A5 Beam Volleygun was designed specifically for contract sale to the PGFMC. With the addition of a stronger capacitor and a forward grip, the VG-A5 has found itself popular among marine raiders for its ability to take control of tight spaces."
+	icon_state = "pgfnock"
+	item_state = "pgfnock"
+	slot_flags = ITEM_SLOT_BELT
+
+	modifystate = TRUE
+
+	gun_firemodes = list(FIREMODE_BURST)
+	default_firemode = FIREMODE_BURST
+
+	randomspread = TRUE
+	burst_size = 5
+	burst_delay = 0.1 SECONDS
+	fire_delay = 0.7 SECONDS
+
+	wield_delay = 0.5 SECONDS
+	wield_slowdown = LASER_SMG_SLOWDOWN
+
+	spread = 10
+	spread_unwielded = 15
+
+	slot_available = list(
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+
+	default_ammo_type = /obj/item/stock_parts/cell/gun/pgf
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix,
+	)
+	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pgf/nock , /obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/nock)
 
 /obj/item/gun/energy/kalix/empty_cell
 	spawn_no_ammo = TRUE
@@ -69,7 +173,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pgf , /obj/item/ammo_casing/energy/disabler/hitscan)
 
 /obj/projectile/beam/hitscan/kalix/pgf
-	name = "concentrated energy"
+	name = "concentrated energy beam"
 	tracer_type = /obj/effect/projectile/tracer/pgf
 	muzzle_type = /obj/effect/projectile/muzzle/pgf
 	impact_type = /obj/effect/projectile/impact/pgf
@@ -140,7 +244,7 @@
 	spread = 0.5
 	spread_unwielded = 15
 
-	ammo_type = list(/obj/item/ammo_casing/energy/pgf/assault , /obj/item/ammo_casing/energy/disabler/hitscan)
+	ammo_type = list(/obj/item/ammo_casing/energy/pgf/assault , /obj/item/ammo_casing/energy/disabler/hitscan/heavy)
 
 /obj/item/gun/energy/kalix/pgf/heavy
 	name = "Etherbor HBG-7"

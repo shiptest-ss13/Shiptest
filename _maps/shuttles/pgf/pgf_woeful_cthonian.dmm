@@ -1067,11 +1067,13 @@
 /area/ship/crew/ccommons)
 "jO" = (
 /obj/structure/guncloset,
-/obj/item/gun/energy/kalix/pistol,
-/obj/item/gun/energy/kalix/pistol,
+/obj/item/gun/energy/kalix/pistol{
+	pixel_y = 8
+	},
 /obj/item/gun/energy/kalix{
 	pixel_y = -8
 	},
+/obj/item/gun/energy/kalix/nock,
 /turf/open/floor/plasteel/rockvault,
 /area/ship/security/armory)
 "jQ" = (
@@ -1979,9 +1981,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/noticeboard{
-	pixel_y = 25
-	},
+/obj/machinery/computer/helm/viewscreen/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "vl" = (
@@ -3325,6 +3325,10 @@
 "JT" = (
 /obj/machinery/washing_machine,
 /obj/machinery/light/small/directional/east,
+/obj/structure/noticeboard{
+	pixel_y = -25;
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "JX" = (
@@ -3981,6 +3985,7 @@
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 2
 	},
+/obj/item/tank/internals/oxygen/red,
 /turf/open/floor/engine/hull/interior,
 /area/ship/medical/surgery)
 "Td" = (

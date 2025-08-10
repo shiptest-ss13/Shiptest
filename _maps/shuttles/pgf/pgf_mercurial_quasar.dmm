@@ -12,6 +12,7 @@
 	pixel_x = 5
 	},
 /obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/tank/internals/oxygen/red,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "at" = (
@@ -170,6 +171,7 @@
 	dir = 6
 	},
 /obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/tank/internals/oxygen/red,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "cy" = (
@@ -2838,6 +2840,7 @@
 /obj/machinery/camera/autoname{
 	dir = 4
 	},
+/obj/item/tank/internals/oxygen/red,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/hallway/fore)
 "LH" = (
@@ -3357,14 +3360,8 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Uj" = (
-/obj/item/gun/energy/kalix/pistol{
-	pixel_y = -8
-	},
 /obj/item/gun/energy/kalix/pgf/medium{
 	pixel_y = 13
-	},
-/obj/item/gun/energy/kalix/pgf{
-	pixel_y = -1
 	},
 /obj/structure/rack,
 /obj/machinery/light/small/directional/west,
@@ -3374,6 +3371,12 @@
 /obj/effect/turf_decal/corner/opaque/neutral/full,
 /obj/item/gun/energy/kalix/pgf{
 	pixel_y = 6
+	},
+/obj/item/gun/energy/kalix/pgf/nock{
+	pixel_y = -1
+	},
+/obj/item/gun/energy/kalix/pistol{
+	pixel_y = -8
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
