@@ -745,7 +745,7 @@
 
 /datum/reagent/medicine/cureall
 	name = "Cureall Solution"
-	description = "A diluted solution created from plasmatic binding of Alvitane, Indomine, and charcoal. Slowly restores all types of damage."
+	description = "A diluted solution created from plasmatic binding of Alvitane, Indomide, and charcoal. Slowly restores all types of damage."
 	reagent_state = LIQUID
 	color = "#C8A5DC"
 	taste_description = "still water"
