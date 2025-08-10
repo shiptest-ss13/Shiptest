@@ -59,3 +59,4 @@
 	required_catalysts = list(/datum/reagent/toxin/plasma = 5)
 	mix_message = "The mixture concentrates into itself, taking on a deep coloration!"
 	required_temp = 150
+	is_cold_recipe = TRUE

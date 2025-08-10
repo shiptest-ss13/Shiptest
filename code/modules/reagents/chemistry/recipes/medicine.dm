@@ -28,7 +28,7 @@
 	required_reagents = list(/datum/reagent/carbon = 1, /datum/reagent/silicon = 1, /datum/reagent/silver = 2)
 	required_catalysts = list(/datum/reagent/cryptobiolin = 5)
 	required_temp = 220
-	is_cold_recipe = 1
+	is_cold_recipe = TRUE
 	mix_message = "The solution quietly incorporates as the temperatures drop."
 
 /datum/chemical_reaction/quardexane
@@ -171,6 +171,7 @@
 	required_reagents = list(/datum/reagent/medicine/dimorlin = 1, /datum/reagent/medicine/synaptizine = 1, /datum/reagent/consumable/sugar = 2)
 	required_catalysts = list(/datum/reagent/toxin/plasma = 2)
 	required_temp = 127
+	is_cold_recipe = TRUE
 
 /datum/chemical_reaction/dimorlin
 	results = list(/datum/reagent/medicine/dimorlin = 2, /datum/reagent/hydrogen = 2)
