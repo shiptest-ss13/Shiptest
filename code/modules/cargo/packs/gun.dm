@@ -761,7 +761,7 @@
 /datum/supply_pack/gun/f90
 	name = "CM-F90 Sniper Rifle Crate"
 	desc = "Contains a military sniper rifle equipped with an 8x sniper scope, for Minuteman use only. Chambered in the powerful 6.5mm CLIP cartridge."
-	cost = 4500
+	cost = 4000
 	contains = list(/obj/item/storage/guncase/cmf90)
 	crate_name = "marksman rifle crate"
 	faction = /datum/faction/clip
@@ -771,7 +771,7 @@
 /datum/supply_pack/gun/saluki
 	name = "SSG-08 Saluki Sniper Rifle Crate"
 	desc = "Contains a military sniper rifle equipped with an 8x sniper scope, fitted by the Inteq Artificer Division. Chambered in the powerful 6.5mm CLIP cartridge."
-	cost = 4500
+	cost = 4000
 	contains = list(/obj/item/storage/guncase/saluki)
 	crate_name = "marksman rifle crate"
 	faction = /datum/faction/inteq
