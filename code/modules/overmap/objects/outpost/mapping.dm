@@ -72,7 +72,7 @@ GLOBAL_LIST_EMPTY(outpost_landmarks)
 
 /obj/effect/landmark/outpost/subshuttle_dock
 	name = "subshuttle outpost dock landmark"
-	var/datum/map_template/shuttle/subship_template
+	var/datum/map_template/shuttle/subship_template = /datum/map_template/shuttle/subshuttles/skink //place holder
 
 /obj/effect/landmark/outpost/subshuttle_dock/proc/set_up_dock(datum/overmap/outpost/parent_outpost)
 	new /obj/effect/landmark/subship/outpost(loc, subship_template, parent_outpost)
