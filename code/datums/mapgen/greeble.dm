@@ -209,9 +209,9 @@
 	chance_to_terminate = 5
 	terminate_chance_add = 8
 
-/obj/effect/greeble_spawner/grass_patch_spawner/dark
+/obj/effect/greeble_spawner/grass_patch_spawner/dark_beach
 	name = "dark grass patch spawner"
-	turf_to_spread = /turf/open/floor/plating/asteroid/dirt/grass/dark
+	turf_to_spread = /turf/open/floor/plating/grass/beach/dark/lit
 	big_brush = TRUE
 	only_spread_on_spawning_turf = TRUE
 	max_turfs_to_spread = 8

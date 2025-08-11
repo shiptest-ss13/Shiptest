@@ -1,12 +1,12 @@
 /obj/item/gun/energy/ionrifle
 	name = "ion rifle"
-	desc = "A man-portable anti-armor weapon designed to disable mechanical threats at range."
+	desc = "A man-portable anti-armor weapon designed to disable mechanical threats at range. The high energy load requires the gun to cooldown between each shot."
 	icon_state = "ionrifle"
 	item_state = null	//so the human update icon uses the icon_state instead.
 	shaded_charge = FALSE
 	ammo_x_offset = 2
 	ammo_y_offset = 2
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/ion)
@@ -17,6 +17,23 @@
 
 /obj/item/gun/energy/ionrifle/empty_cell
 	spawn_no_ammo = TRUE
+
+/obj/item/gun/energy/ionrifle/update_overlays()
+	. = ..()
+	var/mutable_appearance/cooldown_overlay = mutable_appearance('icons/obj/guns/energy.dmi')
+	if(current_cooldown)
+		cooldown_overlay = "[icon_state]_cooldown"
+		.+= cooldown_overlay
+
+/obj/item/gun/energy/ionrifle/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
+	. = ..()
+	update_appearance()
+
+/obj/item/gun/energy/ionrifle/reset_current_cooldown()
+	. = ..()
+	update_appearance()
+	playsound(src, 'sound/machines/synth_yes.ogg', 100, TRUE, frequency = 6120)
+
 
 /obj/item/gun/energy/ionrifle/carbine
 	name = "ion carbine"
@@ -119,7 +136,7 @@
 	flags_1 = CONDUCT_1
 	attack_verb = list("attacked", "slashed", "cut", "sliced")
 	force = 12
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	can_charge = FALSE
 
 	heat = 3800
@@ -185,7 +202,7 @@
 			span_notice("You start fixing some of the dents on [target == user ? "your" : "[target]'s"] [parse_zone(attackedLimb.body_zone)]."))
 	if(!use_tool(target, user, delay = (target == user ? 5 SECONDS : 0.5 SECONDS), amount = 1, volume = 25))
 		return TRUE
-	item_heal_robotic(target, user, brute_heal = 15, burn_heal = 0, integrity_loss = 5)
+	item_heal_robotic(target, user, brute_heal = 15, burn_heal = 0)
 	return TRUE
 
 /obj/item/gun/energy/plasmacutter/use(amount)

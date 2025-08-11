@@ -10,6 +10,8 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	icon = 'icons/obj/clothing/faction/ngr/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/uniforms.dmi'
+
+	roll_sleeves = TRUE
 	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/syndicate/ngr/fatigues
@@ -18,11 +20,16 @@
 	icon_state = "ngr_fatigues"
 	item_state = "ngr_fatigues"
 
+	roll_down = TRUE
+	roll_sleeves = FALSE
+
 /obj/item/clothing/under/syndicate/ngr/jumpsuit
 	name = "\improper NGR jumpsuit"
 	desc = "A beige jumpsuit with black overalls used by wreckers of the New Gorlex Republic. A reminder of Gorlex VII's history as a mining colony, prior to its destruction."
 	icon_state = "ngr_jumpsuit"
 	item_state = "ngr_jumpsuit"
+
+	roll_sleeves = TRUE
 
 /obj/item/clothing/under/syndicate/ngr/officer
 	name = "\improper NGR officer uniform"
@@ -30,6 +37,8 @@
 	icon_state = "ngr_officer"
 	item_state = "ngr_officer"
 	supports_variations = DIGITIGRADE_VARIATION
+
+	roll_sleeves = TRUE
 
 /obj/item/clothing/under/plasmaman/ngr
 	name = "\improper NGR phorid envirosuit"
@@ -94,7 +103,7 @@
 	icon = 'icons/obj/clothing/faction/ngr/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
 	blood_overlay_type = "armor"
-	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) // 5. additional. bullet armor.
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10) // 5. additional. bullet armor.
 
 /obj/item/clothing/suit/armor/ngr/lieutenant
 	name = "\improper 2nd Battlegroup overcoat"
@@ -103,7 +112,7 @@
 	icon_state = "ngr_lieutenant"
 	item_state = "ngr_lieutenant"
 	blood_overlay_type = "coat"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 
 /obj/item/clothing/suit/armor/ngr/captain
 	name = "\improper 2nd Battlegroup coat"
@@ -112,7 +121,7 @@
 	icon_state = "ngr_captain"
 	item_state = "ngr_captain"
 	blood_overlay_type = "coat"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 
 ///////////////
 //Spacesuits//
