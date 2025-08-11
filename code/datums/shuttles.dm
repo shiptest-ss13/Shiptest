@@ -486,7 +486,7 @@
 	faction = /datum/faction/srm
 	token_icon_state = "ship_tiny_generic"
 	prefix = "SRSV"
-  
+
 /datum/map_template/shuttle/subshuttles/karst
 	file_name = "ngr_karst"
 	name = "Karst-class Drop Pod"
