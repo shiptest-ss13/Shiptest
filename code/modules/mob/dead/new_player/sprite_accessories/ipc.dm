@@ -178,7 +178,7 @@
 
 /datum/sprite_accessory/ipc_antennas
 	icon = 'icons/mob/ipc_accessories.dmi'
-	color_src = HAIR
+	color_src = FACEHAIR
 
 /datum/sprite_accessory/ipc_antennas/none
 	name = "None"
