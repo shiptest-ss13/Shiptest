@@ -3414,9 +3414,8 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/cargo/smeltery)
 "up" = (
-/mob/living/basic/bear/polar{
-	faction = list("neutral");
-	name = "polar bear"
+/obj/effect/landmark/outpost/subshuttle_dock{
+	subship_template = /datum/map_template/shuttle/subshuttles/skink
 	},
 /turf/open/floor/plating/asteroid/snow/temperatre/lit,
 /area/outpost/external)
@@ -3643,6 +3642,12 @@
 /obj/machinery/newscaster/security_unit/directional/east,
 /turf/open/floor/carpet/red,
 /area/outpost/security/checkpoint)
+"vn" = (
+/obj/effect/landmark/subship{
+	subship_template = /datum/map_template/shuttle/subshuttles/skink
+	},
+/turf/open/floor/plating/asteroid/snow/temperatre/lit,
+/area/outpost/external)
 "vo" = (
 /obj/effect/turf_decal/corner/opaque/neutral,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -11781,7 +11786,7 @@ QL
 QL
 QL
 QL
-QL
+vn
 QL
 QL
 QL
@@ -12884,7 +12889,7 @@ QL
 QL
 QL
 QL
-CP
+QL
 QL
 QL
 QL
@@ -12960,7 +12965,7 @@ QL
 CP
 QL
 QL
-CP
+QL
 wl
 wl
 wl
@@ -12972,7 +12977,7 @@ QL
 Lh
 QL
 QL
-CP
+QL
 QL
 QL
 QL
@@ -13049,7 +13054,7 @@ wl
 wl
 QL
 QL
-CP
+up
 QL
 zq
 QL
@@ -13143,7 +13148,7 @@ QL
 Lh
 QL
 QL
-CP
+QL
 QL
 TF
 Sc
@@ -13221,7 +13226,7 @@ QL
 Lh
 QL
 QL
-CP
+QL
 QL
 QL
 QL
@@ -13300,7 +13305,7 @@ wl
 wl
 QL
 QL
-CP
+QL
 QL
 QL
 QL
@@ -13378,7 +13383,7 @@ CP
 QL
 QL
 QL
-CP
+QL
 QL
 wl
 wl
@@ -13393,7 +13398,7 @@ QL
 QL
 QL
 QL
-CP
+QL
 QL
 Lh
 QL
@@ -13467,7 +13472,7 @@ QL
 wl
 wl
 QL
-up
+QL
 QL
 QL
 Lh
@@ -13547,7 +13552,7 @@ Lh
 QL
 QL
 QL
-CP
+QL
 wl
 wl
 wl
@@ -13637,10 +13642,10 @@ wl
 wl
 QL
 QL
-CP
 QL
 QL
-CP
+QL
+QL
 QL
 QL
 QL
@@ -13728,7 +13733,7 @@ QL
 QL
 QL
 QL
-CP
+QL
 QL
 QL
 QL
@@ -13883,7 +13888,7 @@ QL
 QL
 QL
 QL
-CP
+QL
 QL
 wl
 wl
@@ -13975,12 +13980,12 @@ wl
 QL
 QL
 QL
-CP
 QL
 QL
 QL
 QL
-CP
+QL
+QL
 QL
 Rj
 Rj
@@ -14062,7 +14067,7 @@ QL
 QL
 QL
 QL
-CP
+QL
 QL
 QL
 Rj
@@ -14135,7 +14140,7 @@ QL
 CP
 QL
 QL
-CP
+QL
 QL
 QL
 wl
@@ -14221,7 +14226,7 @@ QL
 QL
 QL
 QL
-CP
+QL
 wl
 wl
 wl
