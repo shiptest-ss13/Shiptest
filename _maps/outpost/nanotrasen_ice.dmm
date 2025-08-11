@@ -3414,9 +3414,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/cargo/smeltery)
 "up" = (
-/obj/effect/landmark/outpost/subshuttle_dock{
-	subship_template = /datum/map_template/shuttle/subshuttles/skink
-	},
+/mob/living/basic/bear/polar,
 /turf/open/floor/plating/asteroid/snow/temperatre/lit,
 /area/outpost/external)
 "ut" = (
@@ -3642,12 +3640,6 @@
 /obj/machinery/newscaster/security_unit/directional/east,
 /turf/open/floor/carpet/red,
 /area/outpost/security/checkpoint)
-"vn" = (
-/obj/effect/landmark/subship{
-	subship_template = /datum/map_template/shuttle/subshuttles/skink
-	},
-/turf/open/floor/plating/asteroid/snow/temperatre/lit,
-/area/outpost/external)
 "vo" = (
 /obj/effect/turf_decal/corner/opaque/neutral,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -11786,7 +11778,7 @@ QL
 QL
 QL
 QL
-vn
+QL
 QL
 QL
 QL
