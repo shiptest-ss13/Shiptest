@@ -93,7 +93,7 @@
 
 /obj/item/ammo_casing/energy/laser/sharplite/smg
 	projectile_type = /obj/projectile/beam/weak/sharplite
-	e_cost = 570 //17 shots with a normal power cell, 35 with an upgraded
+	e_cost = 500 //20 shots with a normal power cell, 40 with an upgraded
 	select_name = "kill"
 	delay = 0.13 SECONDS
 	fire_sound = 'sound/weapons/gun/laser/nt-fire_light.ogg'

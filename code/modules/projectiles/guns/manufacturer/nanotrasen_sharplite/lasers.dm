@@ -269,7 +269,9 @@
 	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 
 	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/sharplite,
 		/obj/item/stock_parts/cell/gun/sharplite/plus,
+		/obj/item/stock_parts/cell/gun/sharplite/empty,
 		/obj/item/stock_parts/cell/gun/sharplite/plus/empty,
 	)
 
@@ -314,7 +316,9 @@
 	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 
 	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/sharplite,
 		/obj/item/stock_parts/cell/gun/sharplite/plus,
+		/obj/item/stock_parts/cell/gun/sharplite/empty,
 		/obj/item/stock_parts/cell/gun/sharplite/plus/empty,
 	)
 
