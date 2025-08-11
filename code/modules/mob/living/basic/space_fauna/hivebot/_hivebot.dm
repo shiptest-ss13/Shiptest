@@ -91,9 +91,9 @@
 	ai_controller = /datum/ai_controller/basic_controller/hivebot/ranged
 
 /mob/living/basic/hivebot/rapid
-	icon_state = "ranged"
-	icon_living = "ranged"
-	icon_dead = "ranged"
+	icon_state = "rapid"
+	icon_living = "rapid"
+	icon_dead = "rapid"
 	ranged_attacker = TRUE
 	ai_controller = /datum/ai_controller/basic_controller/hivebot/ranged/rapid
 
@@ -120,9 +120,9 @@
 /mob/living/basic/hivebot/core //slave to the system
 	name = "core hivebot"
 	desc = "A massive, alien tower of metal and circuitry. Eyes adorn its body, each one casting a ray of electronic light in myriad directions. Slaved to its whim is a scrapped turret mounting, angrily glancing at the world around it."
-	icon_state = "strong"
-	icon_living = "strong"
-	icon_dead = "strong"
+	icon_state = "core"
+	icon_living = "core"
+	icon_dead = "core"
 	armor = list("melee" = 40, "bullet" = 60, "laser" = 30, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 100, "fire" = 50, "acid" = 0)
 	health = 120
 	maxHealth = 120
@@ -160,9 +160,9 @@
 
 /mob/living/basic/hivebot/mechanic
 	name = "hivebot mechanic"
-	icon_state = "strong"
-	icon_living = "strong"
-	icon_dead = "strong"
+	icon_state = "eng"
+	icon_living = "eng"
+	icon_dead = "eng"
 	desc = "A tidy, discordant machine made of scrap, adorned with analyzers, waldos, and touching eyes."
 	health = 60
 	maxHealth = 60
