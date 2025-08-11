@@ -498,6 +498,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/subship/outpost
 	outpost_docker = TRUE
 	load_on_init = FALSE
+	subship_template = /datum/map_template/shuttle/subshuttles/tanto
 
 
 
