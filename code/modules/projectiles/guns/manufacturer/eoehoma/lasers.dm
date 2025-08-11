@@ -70,11 +70,6 @@
 	charge_sections = 2
 	slot_flags = 0
 
-	unique_attachments = list(
-		/obj/item/attachment/scope,
-		/obj/item/attachment/long_scope,
-	)
-
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_RAIL = 1,

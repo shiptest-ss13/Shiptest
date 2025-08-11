@@ -253,9 +253,11 @@
 	var/attack_mod = 0
 
 	// DE-FENSE
-	if(target.drunkenness > 60) // drunks are easier to knock off balance
+	// Drunks are easier to knock off balance
+	var/target_drunkenness = target.get_drunk_amount()
+	if(target_drunkenness > 60)
 		defense_mod -= 3
-	else if(target.drunkenness > 30)
+	else if(target_drunkenness > 30)
 		defense_mod -= 1
 	if(HAS_TRAIT(target, TRAIT_CLUMSY))
 		defense_mod -= 2
@@ -296,10 +298,12 @@
 	// OF-FENSE
 	var/mob/living/carbon/sacker = parent
 
-	if(sacker.drunkenness > 60) // you're far too drunk to hold back!
+	var/sacker_drunkenness = sacker.get_drunk_amount()
+	if(sacker_drunkenness > 60) // you're far too drunk to hold back!
 		attack_mod += 1
-	else if(sacker.drunkenness > 30) // if you're only a bit drunk though, you're just sloppy
+	else if(sacker_drunkenness > 30) // if you're only a bit drunk though, you're just sloppy
 		attack_mod -= 1
+
 	if(HAS_TRAIT(sacker, TRAIT_CLUMSY))
 		attack_mod -= 2
 	if(HAS_TRAIT(sacker, TRAIT_DWARF))
@@ -462,7 +466,7 @@
 			user.hitby(shard, skipcatch = TRUE, hitpush = FALSE)
 			shard.embedding = list()
 			shard.updateEmbedding()
-		W.obj_destruction()
+		W.atom_destruction()
 		user.adjustStaminaLoss(10 * speed)
 		user.Paralyze(30)
 		user.visible_message(span_danger("[user] slams into [W] and shatters it, shredding [user.p_them()]self with glass!"), span_userdanger("You slam into [W] and shatter it, shredding yourself with glass!"))
@@ -477,7 +481,7 @@
 
 /datum/component/tackler/proc/delayedSmash(obj/structure/window/W)
 	if(W)
-		W.obj_destruction()
+		W.atom_destruction()
 		playsound(W, "shatter", 70, TRUE)
 
 ///Check to see if we hit a table, and if so, make a big mess!
