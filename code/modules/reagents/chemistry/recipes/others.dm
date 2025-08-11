@@ -675,7 +675,7 @@
 	smoke.attach(location)
 	playsound(location, 'sound/effects/smoke.ogg', 50, TRUE, -3)
 	if(smoke)
-		smoke.set_up(holder, smoke_radius, location, 0)
+		smoke.set_up(smoke_radius, location)
 		smoke.start()
 
 /datum/chemical_reaction/water_freezing
