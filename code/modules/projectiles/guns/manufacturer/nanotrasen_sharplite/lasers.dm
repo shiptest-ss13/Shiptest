@@ -202,7 +202,7 @@
 
 /obj/item/gun/energy/sharplite/x12/inteq
 	name = "PP10 “Cadejo” Energy Carbine"
-	desc = "TODO"
+	desc = "A Sharplite X12 VEC refinished in Inteq Risk Management Group colors. Like the base model, it fires lethal electroplasma or nonlethal disabler bolts. Typically issued to IRMG base guards and station security staff. The modifications appear to be largely cosmetic."
 
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
@@ -293,7 +293,7 @@
 
 /obj/item/gun/energy/e_gun/hades/inteq
 	name = "PP20 “Barghest” APR"
-	desc = "TODO"
+	desc = "A Sharplite Assault Plasma Rifle refinished in Inteq Risk Management Group colors. A powerful weapon that can deliver rapid-fire, armor-penetrating electroplasma bolts. Most likely stolen by disgruntled Vigilitas employees at the end of the ICW or raided from a cache, as new APRs would be nearly impossible for IRMG to obtain under normal circumstances."
 
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
