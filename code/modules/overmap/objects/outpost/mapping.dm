@@ -75,4 +75,4 @@ GLOBAL_LIST_EMPTY(outpost_landmarks)
 	var/datum/map_template/shuttle/subship_template
 
 /obj/effect/landmark/outpost/subshuttle_dock/proc/set_up_dock(datum/overmap/outpost/parent_outpost)
-	new /obj/effect/landmark/subship/map_spawn/outpost(loc, subship_template, parent_outpost)
+	new /obj/effect/landmark/subship/outpost(loc, subship_template, parent_outpost)

@@ -495,13 +495,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	// I'm not sure landmarks destroyed on landing is intended behavior or not, so we're not destroying the dock on deletion just in case it is.
 	. = ..()
 
-/obj/effect/landmark/subship/map_spawn
-	load_on_init = TRUE
-
-/obj/effect/landmark/subship/map_spawn/ruin
-	load_on_init = FALSE
-
-/obj/effect/landmark/subship/map_spawn/outpost
+/obj/effect/landmark/subship/outpost
 	outpost_docker = TRUE
 	load_on_init = FALSE
 
