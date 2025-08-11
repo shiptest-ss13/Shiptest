@@ -2128,6 +2128,7 @@
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
 	dir = 9
 	},
+/obj/machinery/computer/helm/viewscreen/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "mR" = (
@@ -4403,6 +4404,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/green{
 	dir = 1
 	},
+/obj/machinery/computer/helm/viewscreen/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "Br" = (
@@ -8202,10 +8204,6 @@
 	name = "medic's locker";
 	populate = 0
 	},
-/obj/item/clothing/gloves/gezena{
-	pixel_x = 3;
-	pixel_y = 11
-	},
 /obj/item/clothing/head/gezena/medic{
 	pixel_x = 7;
 	pixel_y = 4
@@ -8241,6 +8239,14 @@
 	},
 /obj/effect/turf_decal/box,
 /obj/item/defibrillator/loaded,
+/obj/item/clothing/gloves/color/latex/nitrile{
+	pixel_x = 1;
+	pixel_y = 10
+	},
+/obj/item/flashlight/pen{
+	pixel_y = 0;
+	pixel_x = 11
+	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical)
 "YN" = (
