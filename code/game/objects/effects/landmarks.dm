@@ -498,6 +498,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/subship/map_spawn
 	load_on_init = TRUE
 
+/obj/effect/landmark/subship/map_spawn/ruin
+	load_on_init = FALSE
+
 /obj/effect/landmark/subship/map_spawn/outpost
 	outpost_docker = TRUE
 	load_on_init = FALSE
