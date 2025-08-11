@@ -137,10 +137,16 @@
 	..()
 
 /datum/bodypart_aid/splint/improvised
-	name = "improvised splint"
+	name = "wooden improvised splint"
 	splint_factor = 0.7
 	stack_to_drop = /obj/item/stack/medical/splint/improvised
 	overlay_prefix = "splint_improv"
+
+/datum/bodypart_aid/splint/improvised_metal
+	name = "metal improvised splint"
+	splint_factor = 0.7
+	stack_to_drop = /obj/item/stack/medical/splint/improvised_metal
+	overlay_prefix = "splint_improv_metal"
 
 /datum/bodypart_aid/splint/hunter
 	name = "hunter splint"
