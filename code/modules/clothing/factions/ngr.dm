@@ -169,8 +169,8 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/bomb/ngr
 	name = "NGR EOD hardsuit helmet"
-	icon = 'icons/obj/clothing/faction/ngr/hats.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/hats.dmi'
+	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
 	icon_state = "hardsuit0-ngreod"
 	hardsuit_type = "ngreod"
 

@@ -244,8 +244,8 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/bomb/clip
 	name = "CMM EOD hardsuit helmet"
-	icon = 'icons/obj/clothing/faction/clip/hats.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/clip/hats.dmi'
+	icon = 'icons/obj/clothing/faction/clip/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
 	icon_state = "hardsuit0-clipeod"
 	hardsuit_type = "clipeod"
 
