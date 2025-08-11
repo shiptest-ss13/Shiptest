@@ -429,7 +429,16 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/machinery/telecomms/relay/preset/pgf,
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate{
+	name = "boarding saw crate"
+	},
+/obj/item/clothing/glasses/welding{
+	pixel_y = -1;
+	pixel_x = 1
+	},
+/obj/item/radio/headset/pgf/alt,
+/obj/item/gear_pack/anglegrinder,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "R" = (
@@ -440,16 +449,7 @@
 	icon_state = "1-4"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/closet/crate{
-	name = "boarding saw crate"
-	},
-/obj/item/gear_pack/anglegrinder,
-/obj/item/radio/headset/pgf/alt,
-/obj/item/clothing/glasses/welding{
-	pixel_y = -1;
-	pixel_x = 1
-	},
-/obj/structure/crate_shelf,
+/obj/machinery/telecomms/relay/preset/pgf,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "S" = (
