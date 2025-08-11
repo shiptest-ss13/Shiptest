@@ -217,7 +217,8 @@
 	dir = 9
 	},
 /obj/structure/closet/wall/red/directional/south{
-	name = "Pilot's Locker"
+	name = "Pilot's Locker";
+	req_access = list(1)
 	},
 /obj/item/clothing/under/syndicate/ngr/fatigues,
 /obj/item/clothing/head/helmet/ngr/swat,
@@ -513,7 +514,8 @@
 	dir = 4;
 	req_ship_access = 0;
 	name = "Cockpit";
-	id_tag = "karst_cockpit"
+	id_tag = "karst_cockpit";
+	req_access = list(1)
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
