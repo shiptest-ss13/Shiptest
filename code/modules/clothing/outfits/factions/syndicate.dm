@@ -948,6 +948,7 @@
 	head = /obj/item/clothing/head/helmet/ngr/swat
 
 /datum/outfit/job/syndicate/security/ngr/pilot/skivvies
+	name = "Syndicate - Pilot Jumpsuit (New Gorlex Republic)"
 	head = null
 	l_pocket = null
 	r_pocket = null
