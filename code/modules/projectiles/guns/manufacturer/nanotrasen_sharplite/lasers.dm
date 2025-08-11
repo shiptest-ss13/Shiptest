@@ -19,6 +19,7 @@
 	)
 
 	muzzleflash_iconstate = "muzzle_flash_nt"
+	light_color = COLOR_PALE_BLUE_GRAY
 
 	modifystate = TRUE
 	ammo_x_offset = 2
@@ -30,7 +31,7 @@
 // /obj/item/gun/energy/sharplite/x26
 /obj/item/gun/energy/e_gun/mini
 	name = "SL X26 Variable Energy Pistol"
-	desc = "Needs description. 2 fire mode pistol"
+	desc = "A compact energy pistol that can fire lethal electroplasma bolts or stamina-draining disabler bolts. The VEP (or, occasionally, \"veep\") is Sharplite's most popular product, practically ubiquitous wherever Sharplite products can be obtained - which is to say, everywhere."
 
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
@@ -63,7 +64,7 @@
 // /obj/item/gun/energy/sharplite/x01
 /obj/item/gun/energy/e_gun/hos
 	name = "SL X01 Heavy Variable Pistol"
-	desc = "Needs desc. Heavy laser pistol"
+	desc = "A bulky pistol that can fire devastating electroplasma bolts and disabler shots. An early Sharplite product noted for its unusual power output and prohibitive production costs. Small numbers are still produced as something of a prestige piece for Vigilitas field managers."
 
 
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
@@ -99,7 +100,7 @@
 // /obj/item/gun/energy/sharplite/l305
 /obj/item/gun/energy/e_gun/smg
 	name = "\improper L305 Tactical Plasma Gun"
-	desc = "Needs Desc. laser SMG. Are these names too wordy?"
+	desc = "A radical development on the X26 frame, fitted with a rapid-cycle plasma chamber and designed to produce sustained bursts of low-power electroplasma bolts. The Tac Plasma, as it is often called, serves a role analogous to ballistic sub-machine guns, and is similarly favored in close-quarters environments, especially by Vigilitas security and combat personnel."
 
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
@@ -133,7 +134,7 @@
 
 /obj/item/gun/energy/sharplite/l201
 	name = "SL L201 Marksman Plasma Rifle"
-	desc = "Needs Desc. Laser DMR"
+	desc = "A long rifle-sized electroplasma gun. Developed at the same time as the L204, the L201 is specialized for long-range shooting, with an extended focusing assembly that produces much higher projectile velocities and more powerful bolts at the cost of power usage."
 
 	icon_state = "l201"
 	item_state = "l201"
@@ -158,7 +159,7 @@
 
 /obj/item/gun/energy/sharplite/l201/l204
 	name = "SL L204 Plasma Rifle"
-	desc = "Needs Desc. Laser Carbine"
+	desc = "A rifle-sized, semi-automatic electroplasma gun known for its low price and surprisingly low energy usage. The L204 is common on civilian markets, and is a standby for homesteaders, miners, and other spacers looking to save on ammunition."
 	icon_state = "l204"
 	item_state = "l204"
 
@@ -180,7 +181,7 @@
 //repath /obj/item/gun/energy/e_gun to
 /obj/item/gun/energy/sharplite/x12
 	name = "SL X12 Variable Energy Carbine"
-	desc = "Needs Desc. 2 fire mode Carbine"
+	desc = "A short, somewhat hefty carbine that can fire electroplasma or disabler bolts. The X12's non-lethal capability has made it the standard weapon for Vigilitas guards in public-facing and low-threat postings where lethal force is not always appropriate, but the added visibility of a carbine is necessary."
 
 	icon_state = "x12"
 	item_state = "x12"
@@ -216,7 +217,7 @@
 // /obj/item/gun/energy/sharplite/x46
 /obj/item/gun/energy/e_gun/iot
 	name = "\improper SL X46 Variable Energy Blaster"
-	desc = "Needs Desc. 2 fire mode shotgun."
+	desc = "A heavy, bulky weapon designed to fire multiple electroplasma or disabler bolts, not unlike a ballistic shotgun. Unlike most Sharplite electroplasma weapons, the Blaster's bolts are optimized for maximum impact at short range, and quickly lose cohesion over longer distances. The X46 is devastating in close quarters, and is the favorite weapon of Vigilitas breach teams."
 
 	icon_state = "x46"
 	item_state = "x46"
@@ -261,7 +262,7 @@
 // /obj/item/gun/energy/sharplite/al655
 /obj/item/gun/energy/e_gun/hades
 	name = "SL AL655 Assault Plasma Rifle"
-	desc = "Needs desc. laser assault rifle. Add something like; Affectionately nicnamed the 'Hades' by ICW security forces due to the terrible burns it would cause, only possible from 'fire from hades itself.'"
+	desc = "A powerful electroplasma gun with a rapid repeater assembly and many capacitors. The APR rapidly fires heavy electroplasma bolts, and is the standard weapon of Vigilitas's paramilitary division. Its cost and power have made the APR somewhat exclusive, and it is rarely seen outside of big-budget corporate clients."
 	icon_state = "al655"
 	item_state = "al655"
 
