@@ -4,6 +4,7 @@
 	faction_icon = "bg_inteq"
 
 	uniform = /obj/item/clothing/under/syndicate/inteq
+	alt_uniform = /obj/item/clothing/under/syndicate/inteq/sneaksuit
 	box = /obj/item/storage/box/survival/inteq
 
 	backpack = /obj/item/storage/backpack

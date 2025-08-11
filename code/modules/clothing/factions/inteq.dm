@@ -62,7 +62,7 @@
 	icon_state = "inteq_sneak"
 	item_state = "inteq_sneak"
 	roll_sleeves = FALSE
-
+	roll_down = TRUE
 
 // Oversuits // can someone like. change the vanguard and maa armors to be subtypes of armor/inteq. please
 
@@ -199,7 +199,6 @@
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 	supports_variations = DIGITIGRADE_VARIATION
 
-//Bomb suit
 /obj/item/clothing/suit/space/hardsuit/bomb/inteq
 	name = "Inteq EOD hardsuit"
 	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'

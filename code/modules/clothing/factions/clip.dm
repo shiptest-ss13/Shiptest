@@ -234,6 +234,21 @@
 
 	supports_variations = SNOUTED_VARIATION
 
+/obj/item/clothing/suit/space/hardsuit/bomb/clip
+	name = "CMM EOD hardsuit"
+	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
+	icon_state = "hardsuit-clipeod"
+	hardsuit_type = "clipeod"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/bomb/clip
+
+/obj/item/clothing/head/helmet/space/hardsuit/bomb/clip
+	name = "CMM EOD hardsuit helmet"
+	icon = 'icons/obj/clothing/faction/clip/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/hats.dmi'
+	icon_state = "hardsuit0-clipeod"
+	hardsuit_type = "clipeod"
+
 //hats
 /obj/item/clothing/head/clip
 	name = "\improper Minutemen service cap"
