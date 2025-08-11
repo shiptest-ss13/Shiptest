@@ -666,6 +666,7 @@
 	required_reagents = list(/datum/reagent/water = 1)
 	mix_message = "The mixture boils off a vapor..."
 	required_temp = T0C + 100
+	mob_react = FALSE
 
 /datum/chemical_reaction/water_vaporization/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)

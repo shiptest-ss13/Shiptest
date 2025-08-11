@@ -575,7 +575,16 @@
 			var/list/seen = viewers(4, get_turf(my_atom))
 			var/iconhtml = icon2html(cached_my_atom, seen)
 			if(cached_my_atom)
-				if(!ismob(cached_my_atom)) // No bubbling mobs
+				var/obj/item/organ/stomach/upset_stomach = cached_my_atom
+				if(istype(upset_stomach))
+					if(selected_reaction.notify_stomach && prob(3))
+						var/stomach_message = "[pick("grumbles", "rumbles")][multiplier >= 10 ? " loudly!" : "."]"
+						var/mob/living/carbon/upset_stomacher = upset_stomach.owner
+						upset_stomacher.audible_message(span_notice("You hear [upset_stomacher]'s stomach [stomach_message]"), null, 4, span_notice("Your stomach [stomach_message]"))
+						if(selected_reaction.mix_sound)
+							playsound(get_turf(cached_my_atom), selected_reaction.mix_sound, 60, TRUE, -3) // Muffled by the whole body that the reaction is occuring in
+
+				else if(!ismob(cached_my_atom)) // No bubbling mobs
 					if(selected_reaction.mix_sound)
 						playsound(get_turf(cached_my_atom), selected_reaction.mix_sound, 80, TRUE)
 
