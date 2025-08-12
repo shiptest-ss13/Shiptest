@@ -247,8 +247,8 @@
 //repath /obj/item/gun/energy/laser/iot to this
 //repath /obj/item/gun/energy/laser/iot/lethal to this
 /obj/item/gun/energy/e_gun/iot/zeta
-	name = "\improper SL X-46 Rev. 1"
-	desc = "Needs Desc. A very old looking X-46, it has no stock or much decoration, and it is from before Sharplite cut the disable mode... Hey! What's this screen next to the mode select button?"
+	name = "\improper SL X-45"
+	desc = "A very old looking X-46, it has no stock or much decoration, and it is from before... Hey! What's this screen next to the mode select button?"
 
 	icon_state = "x46_zeta"
 	item_state = "x46_zeta"
