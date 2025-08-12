@@ -73,6 +73,10 @@
 /obj/item/screwdriver,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/wasteplanet/facility/northwing)
+"ar" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating/wasteplanet/rust/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "av" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/girder/displaced,
@@ -555,18 +559,17 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/wasteplanet/facility/crew)
 "cX" = (
-/obj/effect/turf_decal/corner_techfloor_gray{
-	dir = 5
-	},
+/obj/effect/turf_decal/borderfloor/full,
+/obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 5
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/patterned,
-/area/ruin/wasteplanet/facility/southwing)
+/area/ruin/wasteplanet/facility/westbay)
 "cZ" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -1070,15 +1073,20 @@
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/facility/northwing)
 "gP" = (
-/obj/effect/turf_decal/borderfloor,
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner_techfloor_gray,
+/obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
+/obj/structure/cable{
+	icon_state = "6-10"
 	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/wasteplanet/facility/southwing)
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel/patterned,
+/area/ruin/wasteplanet/facility)
 "gQ" = (
 /obj/machinery/light/floor,
 /obj/structure/railing/corner{
@@ -1379,10 +1387,16 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/wasteplanet/facility)
 "iC" = (
-/turf/open/floor/plating{
-	icon_state = "platingdmg1"
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
 	},
-/area/ruin/wasteplanet/facility/eastbay)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/viscerator,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/facility/northwing)
 "iE" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -1569,21 +1583,10 @@
 /turf/open/floor/pod/light,
 /area/ruin/wasteplanet/facility/southwing)
 "kp" = (
-/obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/oil,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "2-5"
-	},
-/obj/structure/cable{
-	icon_state = "5-8"
-	},
+/mob/living/simple_animal/hostile/abandoned_minebot/reprogrammed,
 /turf/open/floor/plating/rust,
-/area/ruin/wasteplanet/facility)
+/area/ruin/wasteplanet/facility/westbay)
 "ku" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
@@ -2010,6 +2013,10 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/facility)
+"mT" = (
+/mob/living/simple_animal/hostile/abandoned_minebot/reprogrammed,
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "mZ" = (
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/facility/northwing)
@@ -2390,16 +2397,21 @@
 /area/ruin/wasteplanet/facility)
 "pT" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/structure/platform{
-	dir = 1
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
-/turf/open/floor/plating/rust,
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/plating,
 /area/ruin/wasteplanet/facility/northwing)
 "qb" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible{
 	dir = 1
 	},
-/turf/closed/wall/rust,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/facility/northwing)
 "qc" = (
 /mob/living/basic/hivebot/strong/reprogrammed,
@@ -2458,14 +2470,11 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "qG" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 8
+/obj/structure/platform{
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/plating,
+/mob/living/simple_animal/hostile/abandoned_minebot/reprogrammed,
+/turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/facility/northwing)
 "qH" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer2{
@@ -2768,12 +2777,17 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/wasteplanet/facility/crew)
 "sO" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/chair{
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8
 	},
-/turf/open/floor/plasteel/patterned,
-/area/ruin/wasteplanet/facility/crew)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/south,
+/mob/living/simple_animal/hostile/viscerator,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/facility/northwing)
 "sP" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -3209,6 +3223,13 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/facility/northwing)
+"vO" = (
+/obj/structure/cable{
+	icon_state = "4-5"
+	},
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "vQ" = (
 /turf/open/water/acid/waste,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -3223,6 +3244,19 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/facility/northwing)
+"vW" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 2
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer2,
+/obj/machinery/light/small/directional/east,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/mob/living/simple_animal/hostile/viscerator,
+/turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/facility/northwing)
 "vX" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2{
@@ -3584,6 +3618,7 @@
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
+/obj/structure/barricade/sandbags,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "xI" = (
@@ -4329,14 +4364,11 @@
 /turf/open/water/acid/waste,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Cu" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
+/mob/living/simple_animal/hostile/abandoned_minebot/reprogrammed,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
 	},
-/turf/open/floor/plating,
-/area/ruin/wasteplanet/facility/northwing)
+/area/ruin/wasteplanet/facility/eastbay)
 "Cy" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating/wasteplanet/lit,
@@ -4574,17 +4606,13 @@
 /turf/open/floor/plating/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "DM" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 2
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer2,
-/obj/machinery/light/small/directional/east,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating/rust,
-/area/ruin/wasteplanet/facility/northwing)
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/pod/dark,
+/area/ruin/wasteplanet/facility/southwing)
 "DO" = (
 /obj/structure/cable{
 	icon_state = "1-9"
@@ -5324,19 +5352,13 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/wasteplanet/facility/northwing)
 "IZ" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner_techfloor_gray,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/white{
-	dir = 1
+/obj/structure/chair{
+	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "6-10"
-	},
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/patterned,
-/area/ruin/wasteplanet/facility)
+/area/ruin/wasteplanet/facility/crew)
 "Jd" = (
 /obj/structure/grille,
 /obj/machinery/light/small/directional/west,
@@ -5534,15 +5556,8 @@
 /turf/open/floor/pod/light,
 /area/ruin/wasteplanet/facility/crew)
 "Km" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/turf/open/floor/plating/rust,
-/area/ruin/wasteplanet/facility/northwing)
+/turf/closed/wall/rust/wasteplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "Ks" = (
 /turf/open/floor/plasteel/patterned,
 /area/ruin/wasteplanet/facility)
@@ -5763,7 +5778,8 @@
 /area/ruin/wasteplanet/facility/eastbay)
 "LJ" = (
 /obj/machinery/door/poddoor{
-	dir = 4
+	dir = 4;
+	id = "westbay1"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/shieldwallgen/atmos{
@@ -6061,18 +6077,9 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/wasteplanet/facility/northwing)
 "MT" = (
-/obj/effect/turf_decal/borderfloor/full,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 10
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ruin/wasteplanet/facility/eastbay)
+/mob/living/simple_animal/hostile/viscerator,
+/turf/open/floor/plating/wasteplanet/rust/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Nc" = (
 /obj/structure/flora/ash/glowshroom,
 /obj/structure/reagent_dispensers/fueltank,
@@ -6156,6 +6163,17 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/facility/northwing)
+"NG" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/plasteel/tech,
+/area/ruin/wasteplanet/facility/southwing)
 "NJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/catwalk/over/plated_catwalk,
@@ -6190,6 +6208,24 @@
 	},
 /turf/open/floor/carpet/cyan,
 /area/ruin/wasteplanet/facility/crew)
+"NZ" = (
+/obj/effect/turf_decal/corner_techfloor_gray{
+	dir = 5
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/button/door{
+	id = "maints";
+	dir = 4;
+	pixel_x = -24
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/wasteplanet/facility/southwing)
 "Oc" = (
 /obj/structure/flora/ash/garden/waste,
 /turf/open/floor/plating,
@@ -6587,7 +6623,8 @@
 /mob/living/simple_animal/hostile/human/hermit/ranged/tesla_rifle{
 	ranged_cooldown_time = 100;
 	rapid = 1;
-	loot = list(/obj/effect/mob_spawn/human/corpse/damaged/whitesands/hunter, /obj/effect/spawner/random/tesla_bullets)
+	loot = list(/obj/effect/mob_spawn/human/corpse/damaged/whitesands/hunter, /obj/effect/spawner/random/tesla_bullets);
+	name = "Hermit Inventor"
 	},
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/facility/eastbay)
@@ -6766,6 +6803,23 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/facility/northwing)
+"Ru" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/mob/living/simple_animal/hostile/abandoned_minebot/reprogrammed,
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/facility)
 "Rx" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor/shutters{
@@ -6912,38 +6966,19 @@
 /turf/open/floor/plating/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Sm" = (
-/obj/effect/turf_decal/corner_techfloor_gray{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner_techfloor_gray{
-	dir = 10
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/ash{
-	pixel_y = 8
-	},
-/obj/item/cigbutt{
-	pixel_y = 8;
-	pixel_x = -2
-	},
-/obj/effect/decal/cleanable/glass,
-/obj/effect/turf_decal/borderfloor{
-	dir = 5
-	},
-/obj/effect/turf_decal/siding/white{
-	dir = 5
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 8
-	},
+/obj/effect/turf_decal/borderfloor/full,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "2-4"
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/patterned,
-/area/ruin/wasteplanet/facility)
+/area/ruin/wasteplanet/facility/eastbay)
 "Sq" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -7573,6 +7608,10 @@
 "VU" = (
 /turf/closed/wall/rust,
 /area/ruin/wasteplanet/facility/westbay)
+"Wb" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Wc" = (
 /obj/machinery/conveyor{
 	dir = 8;
@@ -7794,12 +7833,39 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/wasteplanet/facility)
 "XA" = (
+/obj/effect/turf_decal/corner_techfloor_gray{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner_techfloor_gray{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/ash{
+	pixel_y = 8
+	},
+/obj/item/cigbutt{
+	pixel_y = 8;
+	pixel_x = -2
+	},
+/obj/effect/decal/cleanable/glass,
 /obj/effect/turf_decal/borderfloor{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 5
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/pod/dark,
-/area/ruin/wasteplanet/facility/southwing)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel/patterned,
+/area/ruin/wasteplanet/facility)
 "XH" = (
 /obj/structure/salvageable/autolathe{
 	anchored = 0
@@ -7911,16 +7977,9 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/wasteplanet/facility)
 "Yb" = (
-/obj/effect/turf_decal/borderfloor/full,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ruin/wasteplanet/facility/westbay)
+/mob/living/simple_animal/hostile/viscerator,
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Yk" = (
 /obj/machinery/atmospherics/components/unary/passive_vent,
 /obj/structure/railing{
@@ -8060,6 +8119,8 @@
 /obj/structure/closet/crate/engineering,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/west,
+/obj/item/stack/ore/salvage/scrapgold/five,
+/obj/item/stack/ore/salvage/scrapmetal/twenty,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/wasteplanet/facility)
 "Zs" = (
@@ -8167,11 +8228,6 @@ wM
 wM
 wM
 wM
-Al
-Al
-Al
-Al
-Al
 wM
 wM
 wM
@@ -8179,19 +8235,24 @@ wM
 wM
 wM
 wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+Qy
+Qy
+Qy
+Qy
 mb
-Qy
-Qy
-Qy
-Qy
-Qy
-Qy
-wM
-wM
-wM
-wM
-wM
-wM
 wM
 wM
 wM
@@ -8222,18 +8283,298 @@ wM
 wM
 wM
 wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+Qy
+Qy
+Qy
+wM
+Qy
+mb
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+"}
+(3,1,1) = {"
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+mb
+Qy
+Qy
+Qy
+Qy
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+"}
+(4,1,1) = {"
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+Qy
+Qy
+Qy
+Qy
+mb
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+mb
+Qy
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+"}
+(5,1,1) = {"
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+KO
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+"}
+(6,1,1) = {"
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
 Al
-Al
-VP
-Al
-Al
-Al
-VP
 Al
 Al
 Al
 Al
 wM
+wM
+Qy
+Qy
+Qy
+Qy
+Qy
+mb
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+mb
+Qy
+Qy
+Qy
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+"}
+(7,1,1) = {"
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+Al
+Al
+VP
+Al
+Al
+Al
+VP
+Al
+Al
+Al
+Al
+Qy
 Qy
 Qy
 Qy
@@ -8247,13 +8588,13 @@ Qy
 Qy
 Qy
 KO
-wM
-wM
-wM
-wM
-wM
-wM
-wM
+Qy
+Qy
+Qy
+Qy
+Qy
+Km
+Al
 wM
 wM
 wM
@@ -8262,7 +8603,7 @@ wM
 wM
 wM
 "}
-(3,1,1) = {"
+(8,1,1) = {"
 wM
 wM
 wM
@@ -8304,12 +8645,12 @@ Qy
 Qy
 Qy
 Qy
-wM
-wM
-wM
-wM
-wM
-wM
+Qy
+Qy
+Qy
+Al
+Al
+Al
 wM
 wM
 wM
@@ -8318,7 +8659,7 @@ wM
 wM
 wM
 "}
-(4,1,1) = {"
+(9,1,1) = {"
 wM
 wM
 wM
@@ -8346,10 +8687,16 @@ Al
 Al
 Al
 VP
-Qy
-Qy
+Wb
+Wb
 KO
 Qy
+Yb
+Qy
+Qy
+Qy
+Wb
+Wb
 Qy
 Qy
 Qy
@@ -8357,15 +8704,9 @@ Qy
 Qy
 Qy
 Qy
-Qy
-Qy
-Qy
-Qy
-wM
-wM
-wM
-wM
-wM
+Al
+Al
+Al
 wM
 wM
 wM
@@ -8374,7 +8715,7 @@ wM
 wM
 wM
 "}
-(5,1,1) = {"
+(10,1,1) = {"
 wM
 wM
 wM
@@ -8403,7 +8744,7 @@ Al
 Al
 Qy
 Ah
-Qy
+Wb
 Qy
 Qy
 Qy
@@ -8411,17 +8752,17 @@ Qy
 qc
 hX
 Im
-Qy
+Wb
 KO
 Qy
 Qy
 Qy
 Qy
-wM
-wM
-wM
-wM
-wM
+Qy
+Qy
+Qy
+Al
+Al
 wM
 wM
 wM
@@ -8430,7 +8771,7 @@ wM
 wM
 wM
 "}
-(6,1,1) = {"
+(11,1,1) = {"
 wM
 wM
 wM
@@ -8460,7 +8801,7 @@ Qy
 mn
 hD
 DO
-Qy
+Yb
 KO
 Qy
 mb
@@ -8474,10 +8815,10 @@ Qy
 KO
 Qy
 Qy
-wM
-wM
-wM
-wM
+mb
+Al
+Al
+Al
 wM
 wM
 wM
@@ -8486,7 +8827,7 @@ wM
 wM
 wM
 "}
-(7,1,1) = {"
+(12,1,1) = {"
 wM
 wM
 wM
@@ -8519,7 +8860,7 @@ Nw
 Qy
 Qy
 Qy
-Qy
+Yb
 Qy
 nT
 KO
@@ -8530,9 +8871,9 @@ Qy
 Qy
 Qy
 Qy
-wM
-wM
-wM
+Al
+Al
+Km
 wM
 wM
 wM
@@ -8542,7 +8883,7 @@ wM
 wM
 wM
 "}
-(8,1,1) = {"
+(13,1,1) = {"
 wM
 wM
 wM
@@ -8585,10 +8926,10 @@ Qy
 Qy
 Qy
 Qy
-wM
-wM
-wM
-wM
+Qy
+Km
+Al
+Al
 wM
 wM
 wM
@@ -8598,7 +8939,7 @@ wM
 wM
 wM
 "}
-(9,1,1) = {"
+(14,1,1) = {"
 wM
 wM
 wM
@@ -8641,8 +8982,8 @@ Qy
 Qy
 Qy
 KO
-wM
-wM
+Qy
+Qy
 wM
 wM
 wM
@@ -8654,7 +8995,7 @@ wM
 wM
 wM
 "}
-(10,1,1) = {"
+(15,1,1) = {"
 wM
 wM
 wM
@@ -8696,8 +9037,8 @@ mb
 Qy
 Qy
 mb
-wM
-wM
+Qy
+Qy
 wM
 wM
 wM
@@ -8710,7 +9051,7 @@ wM
 wM
 wM
 "}
-(11,1,1) = {"
+(16,1,1) = {"
 wM
 wM
 wM
@@ -8741,7 +9082,7 @@ Ml
 fR
 aZ
 oZ
-nx
+kp
 he
 kR
 OK
@@ -8751,7 +9092,7 @@ bK
 Qy
 KO
 Qy
-wM
+Qy
 wM
 wM
 wM
@@ -8766,7 +9107,7 @@ wM
 wM
 wM
 "}
-(12,1,1) = {"
+(17,1,1) = {"
 wM
 wM
 wM
@@ -8807,7 +9148,7 @@ bK
 bK
 Qy
 Qy
-wM
+Qy
 wM
 wM
 wM
@@ -8822,7 +9163,7 @@ wM
 wM
 wM
 "}
-(13,1,1) = {"
+(18,1,1) = {"
 wM
 wM
 wM
@@ -8859,7 +9200,7 @@ xM
 Pj
 xM
 eG
-Yb
+cX
 bK
 Qy
 mb
@@ -8878,7 +9219,7 @@ wM
 wM
 wM
 "}
-(14,1,1) = {"
+(19,1,1) = {"
 wM
 wM
 wM
@@ -8934,7 +9275,7 @@ wM
 wM
 wM
 "}
-(15,1,1) = {"
+(20,1,1) = {"
 wM
 wM
 wM
@@ -8990,7 +9331,7 @@ wM
 wM
 wM
 "}
-(16,1,1) = {"
+(21,1,1) = {"
 wM
 wM
 wM
@@ -9046,7 +9387,7 @@ wM
 wM
 wM
 "}
-(17,1,1) = {"
+(22,1,1) = {"
 wM
 wM
 wM
@@ -9065,7 +9406,7 @@ yW
 Fw
 Iq
 kK
-pT
+qG
 yX
 wk
 uw
@@ -9102,7 +9443,7 @@ Qy
 wM
 wM
 "}
-(18,1,1) = {"
+(23,1,1) = {"
 wM
 wM
 wM
@@ -9158,7 +9499,7 @@ Qy
 KO
 wM
 "}
-(19,1,1) = {"
+(24,1,1) = {"
 wM
 wM
 wM
@@ -9207,14 +9548,14 @@ qJ
 fP
 GY
 Qy
-Qy
+Yb
 Qy
 Qy
 Qy
 Qy
 Qy
 "}
-(20,1,1) = {"
+(25,1,1) = {"
 wM
 wM
 wM
@@ -9266,11 +9607,11 @@ Qy
 Qy
 Qy
 Qy
-KO
+MT
 Qy
 Qy
 "}
-(21,1,1) = {"
+(26,1,1) = {"
 wM
 wM
 wM
@@ -9326,7 +9667,7 @@ Qy
 Qy
 mb
 "}
-(22,1,1) = {"
+(27,1,1) = {"
 wM
 wM
 wM
@@ -9359,7 +9700,7 @@ ym
 LU
 BR
 GY
-Sm
+XA
 Xt
 QS
 iy
@@ -9382,7 +9723,7 @@ Qy
 KO
 Qy
 "}
-(23,1,1) = {"
+(28,1,1) = {"
 wM
 wM
 wM
@@ -9398,7 +9739,7 @@ wQ
 Iq
 xj
 Mn
-qG
+sO
 Ka
 dH
 Ps
@@ -9432,13 +9773,13 @@ fP
 GY
 Qy
 KO
-Qy
+Yb
 Qy
 Qy
 Qy
 wM
 "}
-(24,1,1) = {"
+(29,1,1) = {"
 wM
 wM
 wM
@@ -9494,7 +9835,7 @@ Qy
 wM
 wM
 "}
-(25,1,1) = {"
+(30,1,1) = {"
 wM
 wM
 Qy
@@ -9531,7 +9872,7 @@ kQ
 gg
 zd
 ts
-cX
+NZ
 gx
 Qf
 Le
@@ -9550,7 +9891,7 @@ wM
 wM
 wM
 "}
-(26,1,1) = {"
+(31,1,1) = {"
 wM
 wM
 KO
@@ -9564,7 +9905,7 @@ KR
 Iq
 Iq
 rF
-Km
+iC
 cH
 Ka
 Ud
@@ -9574,7 +9915,7 @@ EZ
 iN
 LQ
 ay
-kp
+Ru
 za
 Mj
 jC
@@ -9606,7 +9947,7 @@ wM
 wM
 wM
 "}
-(27,1,1) = {"
+(32,1,1) = {"
 wM
 Qy
 Qy
@@ -9626,10 +9967,10 @@ Ka
 JC
 cq
 DW
-sO
+IZ
 Et
 Ka
-IZ
+gP
 ZR
 Zc
 nV
@@ -9662,7 +10003,7 @@ wM
 wM
 wM
 "}
-(28,1,1) = {"
+(33,1,1) = {"
 wM
 Qy
 Qy
@@ -9674,7 +10015,7 @@ cf
 ES
 KR
 aX
-DM
+vW
 Vl
 LC
 Ka
@@ -9718,7 +10059,7 @@ wM
 wM
 wM
 "}
-(29,1,1) = {"
+(34,1,1) = {"
 Qy
 KO
 Qy
@@ -9774,7 +10115,7 @@ wM
 wM
 wM
 "}
-(30,1,1) = {"
+(35,1,1) = {"
 Qy
 Qy
 Qy
@@ -9810,7 +10151,7 @@ ku
 ZK
 so
 gx
-XA
+DM
 yl
 gx
 gx
@@ -9830,7 +10171,7 @@ wM
 wM
 wM
 "}
-(31,1,1) = {"
+(36,1,1) = {"
 Qy
 Qy
 Qy
@@ -9861,7 +10202,7 @@ Pn
 eX
 YR
 eX
-gP
+NG
 gx
 gx
 RN
@@ -9886,7 +10227,7 @@ wM
 wM
 wM
 "}
-(32,1,1) = {"
+(37,1,1) = {"
 Qy
 Qy
 mb
@@ -9942,7 +10283,7 @@ wM
 wM
 wM
 "}
-(33,1,1) = {"
+(38,1,1) = {"
 Qy
 Qy
 Qy
@@ -9998,7 +10339,7 @@ wM
 wM
 wM
 "}
-(34,1,1) = {"
+(39,1,1) = {"
 KO
 Qy
 RJ
@@ -10054,7 +10395,7 @@ wM
 wM
 wM
 "}
-(35,1,1) = {"
+(40,1,1) = {"
 Qy
 Qy
 RJ
@@ -10110,13 +10451,13 @@ wM
 wM
 wM
 "}
-(36,1,1) = {"
+(41,1,1) = {"
 wM
 KO
 LP
 jP
 Lo
-KR
+Ee
 tw
 IY
 Xb
@@ -10166,7 +10507,7 @@ wM
 wM
 wM
 "}
-(37,1,1) = {"
+(42,1,1) = {"
 wM
 Qy
 Qy
@@ -10180,7 +10521,7 @@ mZ
 Uk
 OF
 od
-Cu
+pT
 Ka
 My
 Md
@@ -10188,7 +10529,7 @@ wV
 ZG
 qi
 Ka
-MT
+Sm
 Wh
 mL
 YF
@@ -10222,7 +10563,7 @@ wM
 wM
 wM
 "}
-(38,1,1) = {"
+(43,1,1) = {"
 wM
 Qy
 Qy
@@ -10278,7 +10619,7 @@ wM
 wM
 wM
 "}
-(39,1,1) = {"
+(44,1,1) = {"
 wM
 mb
 KO
@@ -10306,7 +10647,7 @@ ol
 yz
 la
 bU
-iC
+Cu
 uu
 UI
 fM
@@ -10334,7 +10675,7 @@ wM
 wM
 wM
 "}
-(40,1,1) = {"
+(45,1,1) = {"
 wM
 Qy
 Qy
@@ -10390,7 +10731,7 @@ wM
 wM
 wM
 "}
-(41,1,1) = {"
+(46,1,1) = {"
 wM
 wM
 KO
@@ -10446,7 +10787,7 @@ wM
 wM
 wM
 "}
-(42,1,1) = {"
+(47,1,1) = {"
 wM
 wM
 wM
@@ -10502,7 +10843,7 @@ wM
 wM
 wM
 "}
-(43,1,1) = {"
+(48,1,1) = {"
 wM
 wM
 wM
@@ -10558,7 +10899,7 @@ wM
 wM
 wM
 "}
-(44,1,1) = {"
+(49,1,1) = {"
 wM
 wM
 wM
@@ -10604,8 +10945,8 @@ Al
 Al
 Al
 VP
-wM
-wM
+Qy
+Qy
 wM
 wM
 wM
@@ -10614,7 +10955,7 @@ wM
 wM
 wM
 "}
-(45,1,1) = {"
+(50,1,1) = {"
 wM
 wM
 wM
@@ -10625,7 +10966,7 @@ wM
 wM
 wM
 wM
-wM
+Qy
 Qy
 Kx
 Kx
@@ -10660,9 +11001,9 @@ Al
 Al
 Qy
 Qy
-wM
-wM
-wM
+Qy
+Qy
+Qy
 wM
 wM
 wM
@@ -10670,7 +11011,7 @@ wM
 wM
 wM
 "}
-(46,1,1) = {"
+(51,1,1) = {"
 wM
 wM
 wM
@@ -10681,10 +11022,10 @@ wM
 wM
 wM
 wM
-wM
-wM
-wM
-wM
+Qy
+Qy
+Qy
+Qy
 Kx
 Kx
 Kx
@@ -10716,289 +11057,9 @@ Qy
 Qy
 KO
 Qy
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-"}
-(47,1,1) = {"
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-Kx
-Kx
 Qy
 Qy
 Qy
-Ey
-jU
-TO
-qh
-Qy
-Qy
-Qy
-ML
-Qy
-Qy
-KO
-Qy
-qh
-hX
-zQ
-KO
-Qy
-Qy
-Qy
-Qy
-Qy
-Qy
-Qy
-Qy
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-"}
-(48,1,1) = {"
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-Qy
-Gy
-Hm
-pC
-KO
-Qy
-Wy
-Qy
-jU
-xG
-Qy
-Qy
-Qy
-mb
-Qy
-qw
-qj
-bA
-Qy
-Qy
-KO
-Qy
-Qy
-mb
-Qy
-Qy
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-"}
-(49,1,1) = {"
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-Qy
-Qy
-Qy
-Qy
-Qy
-qc
-mb
-it
-pC
-Qy
-Qy
-qc
-Qy
-Qy
-Qy
-Qy
-KO
-Qy
-Qy
-Qy
-Qy
-Qy
-Qy
-Qy
-Qy
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-"}
-(50,1,1) = {"
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-Qy
-KO
-Qy
-Qy
-Qy
-Qy
-KO
-Qy
-Qy
-Qy
-Qy
-Qy
-Qy
-Qy
-KO
-Qy
-Qy
-Qy
-Qy
-Qy
-KO
-Qy
-Qy
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-"}
-(51,1,1) = {"
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-Qy
-Qy
-Al
-VP
-Qy
-Qy
-Qy
-qc
-KO
-Qy
-Qy
-Al
-Al
-VP
-Qy
-mb
-Qy
-Qy
-KO
-Qy
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
 wM
 wM
 wM
@@ -11018,44 +11079,44 @@ wM
 wM
 wM
 wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-Al
-Al
-Al
-Al
-Qy
-Qy
-Qy
-Qy
-Qy
-Al
-Al
-Al
-Al
-Al
 KO
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
+Qy
+Qy
+mb
+Qy
+Kx
+Kx
+Qy
+Wb
+Qy
+Ey
+jU
+TO
+qh
+Qy
+Qy
+Wb
+ML
+Wb
+Qy
+KO
+Qy
+qh
+hX
+zQ
+KO
+Wb
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+mb
+Qy
 wM
 wM
 wM
@@ -11074,44 +11135,44 @@ wM
 wM
 wM
 wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-VP
-Al
-Al
 Qy
 Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Wb
+Gy
+Hm
+pC
+KO
+Qy
+Wy
+Yb
+vO
+xG
+Wb
 Qy
 Qy
 mb
-Al
-VP
-Al
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
-wM
+Qy
+qw
+qj
+bA
+Wb
+Qy
+KO
+Qy
+Qy
+mb
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
 wM
 wM
 wM
@@ -11131,6 +11192,50 @@ wM
 wM
 wM
 wM
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Wb
+Wb
+Wb
+Qy
+Qy
+qc
+mb
+it
+pC
+Qy
+Qy
+qc
+Qy
+Qy
+Qy
+Qy
+ar
+Wb
+Wb
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+wM
+wM
+wM
+wM
+wM
+wM
+"}
+(55,1,1) = {"
 wM
 wM
 wM
@@ -11141,6 +11246,242 @@ wM
 wM
 wM
 wM
+wM
+wM
+wM
+Qy
+Qy
+mb
+Qy
+Qy
+Qy
+Qy
+KO
+Qy
+Qy
+Qy
+Qy
+KO
+Qy
+Qy
+Qy
+Yb
+Qy
+Qy
+Qy
+KO
+Qy
+Qy
+Qy
+Qy
+Qy
+KO
+Qy
+Qy
+Qy
+Qy
+mb
+Qy
+Qy
+Qy
+Qy
+wM
+wM
+wM
+wM
+wM
+"}
+(56,1,1) = {"
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Al
+VP
+Qy
+Yb
+Qy
+qc
+KO
+Qy
+Qy
+Al
+Al
+VP
+Qy
+mb
+Qy
+Qy
+KO
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+wM
+wM
+wM
+wM
+wM
+"}
+(57,1,1) = {"
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+Qy
+Qy
+Qy
+Qy
+mb
+Qy
+Al
+Al
+Al
+Al
+Qy
+Qy
+Qy
+Qy
+Qy
+Al
+Al
+Al
+Al
+Al
+KO
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+wM
+wM
+wM
+wM
+"}
+(58,1,1) = {"
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+Qy
+Qy
+KO
+Qy
+Qy
+Qy
+VP
+Al
+Al
+Qy
+Qy
+Qy
+mT
+mb
+Al
+VP
+Al
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+mb
+Qy
+Qy
+KO
+Qy
+Qy
+Qy
+mb
+wM
+wM
+wM
+wM
+"}
+(59,1,1) = {"
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+Qy
+Qy
+Qy
+Qy
+Qy
 Al
 Al
 VP
@@ -11149,6 +11490,32 @@ Qy
 Qy
 Qy
 Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+KO
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+wM
+wM
+wM
+wM
+wM
+"}
+(60,1,1) = {"
 wM
 wM
 wM
@@ -11158,6 +11525,260 @@ wM
 wM
 wM
 wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+mb
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+mb
+Qy
+Qy
+Qy
+Al
+VP
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+"}
+(61,1,1) = {"
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+Qy
+mb
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Al
+Al
+Al
+Al
+Qy
+mb
+Qy
+Qy
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+"}
+(62,1,1) = {"
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+KO
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+VP
+Al
+Al
+Qy
+Qy
+Qy
+Qy
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+"}
+(63,1,1) = {"
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+wM
+wM
+wM
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+Qy
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+"}
+(64,1,1) = {"
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+wM
+Qy
+KO
+Qy
+Qy
+wM
+wM
+wM
+wM
+wM
+Qy
+Qy
+Qy
+mb
+Qy
 wM
 wM
 wM
