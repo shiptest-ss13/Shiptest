@@ -1,6 +1,7 @@
 /obj/item/gun/energy/laser
 	name = "E-20 mining emitter"
-	desc = "A basic mining laser that fires concentrated beams of light which break down rock. Notably, these beams of light melt down flesh, and the design, while literally ancient, is well known and suprisngly modular, leading to many modifications and upgrades over the years."
+	desc = "A basic mining laser that fires concentrated beams of light which break down rock. Notably, these beams of light melt down flesh as well."
+	//desc = "A basic mining laser that fires concentrated beams of light which break down rock. Notably, these beams of light melt down flesh, and the design, while literally ancient, is well known and suprisngly modular, leading to many modifications and upgrades over the years."
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
 	item_state = "laser"

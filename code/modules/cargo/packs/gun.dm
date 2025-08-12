@@ -451,7 +451,6 @@
 	faction_discount = 10
 	faction = /datum/faction/nt
 
-//TODO: REMOVE
 /datum/supply_pack/gun/champion
 	name = "PHB Champion Machinepistol Crate"
 	desc = "Contains a compact 9x18mm burst fire machine pistol produced by Nanotrasen advantage. For NT employee use onlyNEEDS DeSC."
