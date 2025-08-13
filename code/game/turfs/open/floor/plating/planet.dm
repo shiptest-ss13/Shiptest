@@ -73,8 +73,8 @@
 	layer = GRASS_TURF_LAYER
 	icon = 'icons/turf/floors/grass.dmi'
 	smooth_icon = 'icons/turf/floors/grass.dmi'
-	pixel_x = -19 // recenters 70x70 turf sprites for mappers
-	pixel_y = -19
+	MAP_SWITCH(pixel_x = 0, pixel_x = -19)
+	MAP_SWITCH(pixel_y = 0, pixel_y = -19)
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/floor/plating/asteroid/dirt
 	floor_variance = 100
@@ -84,8 +84,6 @@
 
 /turf/open/floor/plating/asteroid/dirt/grass/Initialize(mapload, inherited_virtual_z)
 	. = ..()
-	pixel_x = 0 // resets -19 pixel offset
-	pixel_y = 0
 	if(prob(floor_variance))
 		add_overlay("grassalt_[rand(1,max_icon_states)]")
 
