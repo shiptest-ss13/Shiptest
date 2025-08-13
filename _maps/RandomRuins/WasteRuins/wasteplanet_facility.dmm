@@ -6623,7 +6623,7 @@
 /mob/living/simple_animal/hostile/human/hermit/ranged/tesla_rifle{
 	ranged_cooldown_time = 100;
 	rapid = 1;
-	loot = list(/obj/effect/mob_spawn/human/corpse/damaged/whitesands/hunter, /obj/effect/spawner/random/tesla_bullets);
+	loot = list(/obj/effect/spawner/random/tesla_bullets);
 	name = "Hermit Inventor"
 	},
 /turf/open/floor/plating,
