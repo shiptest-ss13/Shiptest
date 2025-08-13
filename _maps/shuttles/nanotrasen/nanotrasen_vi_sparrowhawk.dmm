@@ -483,7 +483,8 @@
 /area/ship/hallway/starboard)
 "fV" = (
 /obj/structure/sign/number/random{
-	color = "Black"
+	color = "Black";
+	pixel_y = -6
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/security)
@@ -675,7 +676,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
-	id = "sparrowhawk_windows"
+	id = "sparrowhawk_cockpit_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/security/armory)
@@ -1262,10 +1263,6 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/captain)
 "rF" = (
-/obj/structure/guncloset{
-	name = "equipment locker";
-	req_access_txt = "3"
-	},
 /obj/effect/turf_decal/trimline/opaque/vired/filled/line{
 	dir = 5
 	},
@@ -1274,19 +1271,10 @@
 /obj/structure/window/plasma/reinforced{
 	dir = 1
 	},
+/obj/structure/guncloset{
+	req_access_txt = "3"
+	},
 /turf/open/floor/plasteel/tech,
-/area/ship/security/armory)
-"rK" = (
-/obj/structure/cable{
-	icon_state = "0-10"
-	},
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "sparrowhawk_windows"
-	},
-/turf/open/floor/plating,
 /area/ship/security/armory)
 "rM" = (
 /obj/machinery/firealarm/directional/north{
@@ -1638,7 +1626,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "sparrowhawk_windows"
+	id = "sparrowhawk_cockpit_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/security/armory)
@@ -1689,7 +1677,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "sparrowhawk_windows"
+	id = "sparrowhawk_cockpit_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/security/armory)
@@ -1826,18 +1814,13 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "AX" = (
-/obj/machinery/telecomms/relay{
-	freq_listening = list(1351);
-	id = "Nanotrasen Relay";
-	name = "Nanotrasen relay";
-	network = "nt_commnet"
-	},
 /obj/machinery/door/window/brigdoor/security{
 	req_access_txt = "19"
 	},
 /obj/structure/window/plasma/reinforced{
 	dir = 4
 	},
+/obj/machinery/telecomms/relay/preset/nanotrasen,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/security/armory)
 "AY" = (
@@ -2396,7 +2379,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "sparrowhawk_windows"
+	id = "sparrowhawk_cockpit_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/security/armory)
@@ -2407,17 +2390,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
-"Kc" = (
-/obj/structure/cable{
-	icon_state = "0-9"
-	},
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	id = "sparrowhawk_windows"
-	},
-/turf/open/floor/plating,
-/area/ship/security/armory)
 "Ke" = (
 /obj/structure/chair,
 /obj/effect/landmark/start/station_engineer{
@@ -2506,7 +2478,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
-	id = "sparrowhawk_windows"
+	id = "sparrowhawk_cockpit_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/security/armory)
@@ -2532,8 +2504,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "sparrowhawk_windows"
+	id = "sparrowhawk_cockpit_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/security/armory)
@@ -2754,7 +2725,8 @@
 /area/ship/security/armory)
 "Om" = (
 /obj/structure/sign/number/random{
-	color = "Black"
+	color = "Black";
+	pixel_y = -6
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical)
@@ -3118,7 +3090,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
-	id = "sparrowhawk_windows"
+	id = "sparrowhawk_cockpit_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/security/armory)
@@ -3463,6 +3435,13 @@
 	id = "sparrowhawk_windows";
 	name = "Window Shutters";
 	pixel_x = -19;
+	pixel_y = -6
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "sparrowhawk_cockpit_windows";
+	name = "Cockpit Window Shutters";
+	pixel_x = -27;
 	pixel_y = -6
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -4673,10 +4652,10 @@ Ln
 OR
 Ln
 xI
-rK
+xI
 uE
 Lp
-Kc
+Lp
 Ln
 Ln
 Ln
