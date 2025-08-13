@@ -298,7 +298,6 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/wasteplanet/facility/eastbay)
 "bw" = (
-/obj/structure/frame/machine,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
@@ -759,9 +758,6 @@
 	},
 /area/ruin/wasteplanet/facility/westbay)
 "eh" = (
-/obj/structure/salvageable/server{
-	anchored = 0
-	},
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/facility/eastbay)
 "el" = (
@@ -1037,7 +1033,6 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/wasteplanet/facility/crew)
 "gt" = (
-/obj/structure/frame/computer/retro,
 /obj/structure/platform{
 	dir = 4
 	},
@@ -1247,9 +1242,6 @@
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/facility/westbay)
 "hN" = (
-/obj/structure/salvageable/machine{
-	anchored = 0
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/facility/eastbay)
@@ -1918,14 +1910,19 @@
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/facility/southwing)
 "mq" = (
-/obj/structure/salvageable/autolathe{
-	anchored = 0
-	},
 /obj/structure/platform{
-	dir = 4
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
+/obj/structure/frame/computer/retro{
+	dir = 4
+	},
+/obj/item/circuitboard/computer/crew,
+/obj/item/stack/cable_coil/cut/red{
+	amount = 3
+	},
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/facility/eastbay)
 "ms" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -2500,16 +2497,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/facility/eastbay)
-"qX" = (
-/obj/structure/platform{
-	dir = 8
-	},
-/obj/structure/salvageable/computer{
-	anchored = 0;
-	dir = 1
-	},
-/turf/open/floor/plating/rust,
-/area/ruin/wasteplanet/facility/eastbay)
 "rh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing{
@@ -2720,6 +2707,7 @@
 	name = "dead grass";
 	layer = 2.8
 	},
+/obj/structure/frame/machine,
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/facility/eastbay)
 "sE" = (
@@ -2841,6 +2829,10 @@
 	dir = 2
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/salvageable/computer{
+	anchored = 0;
+	dir = 1
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/facility/eastbay)
 "tg" = (
@@ -3760,9 +3752,6 @@
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/facility)
 "yz" = (
-/obj/structure/salvageable/machine{
-	anchored = 0
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/platform/corner{
@@ -4625,6 +4614,9 @@
 	},
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/salvageable/machine{
+	anchored = 0
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/facility/eastbay)
 "DR" = (
@@ -4645,21 +4637,6 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/plating,
-/area/ruin/wasteplanet/facility/eastbay)
-"Ea" = (
-/obj/structure/platform{
-	dir = 8
-	},
-/obj/structure/frame/computer/retro{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/item/circuitboard/computer/crew,
-/obj/item/stack/cable_coil/cut/red{
-	amount = 3
-	},
-/obj/effect/decal/cleanable/glass,
-/turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/facility/eastbay)
 "Ee" = (
 /obj/structure/window/reinforced/fulltile,
@@ -5334,16 +5311,6 @@
 	anchored = 0
 	},
 /turf/open/floor/plating,
-/area/ruin/wasteplanet/facility/eastbay)
-"IV" = (
-/obj/structure/salvageable/computer{
-	anchored = 0;
-	dir = 1
-	},
-/obj/structure/platform/corner{
-	dir = 4
-	},
-/turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/facility/eastbay)
 "IY" = (
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible{
@@ -6256,6 +6223,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/salvageable/computer{
+	anchored = 0;
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/facility/eastbay)
 "Ou" = (
@@ -6381,7 +6352,6 @@
 /turf/open/floor/pod/dark,
 /area/ruin/wasteplanet/facility/eastbay)
 "Pe" = (
-/obj/structure/frame/machine,
 /obj/structure/platform/corner{
 	dir = 2
 	},
@@ -7372,6 +7342,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/frame/computer/retro,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -7390,14 +7361,13 @@
 "UC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass,
-/obj/structure/salvageable/computer{
-	dir = 4;
-	anchored = 0
-	},
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/facility/eastbay)
 "UI" = (
 /obj/effect/decal/cleanable/glass,
+/obj/structure/salvageable/autolathe{
+	anchored = 0
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/facility/eastbay)
 "UP" = (
@@ -10421,7 +10391,7 @@ TC
 TP
 bu
 sE
-IV
+ps
 bw
 jt
 hN
@@ -10478,7 +10448,7 @@ Uc
 dT
 aa
 Jh
-mq
+gt
 DQ
 KZ
 Pe
@@ -10589,12 +10559,12 @@ XZ
 MI
 BY
 sE
-Ea
 Hy
+mq
 RB
 av
 cp
-qX
+sE
 sE
 sE
 CT
