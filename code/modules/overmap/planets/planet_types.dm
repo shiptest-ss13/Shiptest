@@ -183,6 +183,22 @@
 	selfloop = TRUE
 #endif
 
+// empty space if you need to run a space ruin the old way or just need an empty clearing for whatever reason
+
+/datum/planet_type/space
+	name = "weak energy signal"
+	desc = "A very weak energy signal originating from space."
+	planet = DYNAMIC_WORLD_SPACERUIN
+	icon_state = "signal_strange"
+	color = null
+	mapgen = /datum/map_generator/single_turf/space
+	default_baseturf = /turf/open/space
+	weather_controller_type = null
+	ruin_type = RUINTYPE_SPACE
+#ifndef RUIN_PLACEMENT_TEST
+	selfloop = TRUE
+#endif
+
 /datum/planet_type/waste
 	name = "waste disposal planetoid"
 	desc = "A highly oxygenated world, coated in garbage, radiation, and rust."
