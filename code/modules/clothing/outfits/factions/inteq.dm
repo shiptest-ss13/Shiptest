@@ -4,6 +4,7 @@
 	faction_icon = "bg_inteq"
 
 	uniform = /obj/item/clothing/under/syndicate/inteq
+	alt_uniform = /obj/item/clothing/under/syndicate/inteq/sneaksuit
 	box = /obj/item/storage/box/survival/inteq
 
 	backpack = /obj/item/storage/backpack
@@ -217,6 +218,36 @@
 
 /datum/outfit/job/inteq/warden/empty
 	name = "IRMG - Master At Arms (Naked)"
+
+	head = null
+	glasses = null
+	mask = null
+	belt = null
+	suit = null
+	gloves = null
+
+/datum/outfit/job/inteq/warden/classone
+	name = "IRMG - Enforcer Class One"
+	id_assignment = "Enforcer Class One"
+	jobtype = /datum/job/warden
+	job_icon = "warden"
+
+	ears = /obj/item/radio/headset/inteq/alt
+	head = /obj/item/clothing/head/soft/inteq
+	uniform = /obj/item/clothing/under/syndicate/inteq
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+	mask = /obj/item/clothing/mask/balaclava/inteq
+	belt = /obj/item/storage/belt/security/webbing/inteq/alt
+	suit = /obj/item/clothing/suit/armor/vest/security/warden/inteq
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+	suit_store = null
+
+	courierbag = /obj/item/storage/backpack/messenger/inteq
+
+/datum/outfit/job/inteq/warden/classone/empty
+	name = "IRMG - Enforcer Class One (Naked)"
 
 	head = null
 	glasses = null
