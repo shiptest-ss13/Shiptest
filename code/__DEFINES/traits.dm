@@ -296,6 +296,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// Granted by prismwine, reflects lasers
 #define TRAIT_REFLECTIVE "reflective"
 #define TRAIT_HEARING_SENSITIVE "hearing_sensitive"
+#define TRAIT_BINARY_RADIO "binary_radio" //lets the mob talk and receive over binary radio
 /// You can't see color!
 #define TRAIT_COLORBLIND "colorblind"
 
