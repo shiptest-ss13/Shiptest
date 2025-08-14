@@ -1226,7 +1226,7 @@
 /area/ship/cargo)
 "pn" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
-/turf/open/space/basic,
+/turf/open/floor/plating,
 /area/ship/security/armory)
 "pr" = (
 /obj/machinery/airalarm/directional/north,
@@ -1379,6 +1379,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "rA" = (
