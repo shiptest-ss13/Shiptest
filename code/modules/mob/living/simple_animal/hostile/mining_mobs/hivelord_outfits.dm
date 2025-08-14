@@ -27,7 +27,6 @@
 		/obj/item/clothing/suit/jacket/leather = 1,
 		/obj/item/clothing/suit/jacket/leather/duster = 1,
 		/obj/item/clothing/suit/jacket/miljacket = 1,
-		/obj/item/clothing/suit/jacket/puffer = 1,
 		/obj/item/clothing/suit/gothcoat = 1,
 		/obj/item/clothing/suit/toggle/industrial = 1,
 		/obj/item/clothing/suit/toggle/hazard = 1,

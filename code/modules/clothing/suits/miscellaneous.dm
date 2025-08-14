@@ -277,22 +277,6 @@
 	icon_state = "duster_command"
 	item_state = "duster_command"
 
-/obj/item/clothing/suit/jacket/puffer
-	name = "puffer jacket"
-	desc = "A thick jacket with a rubbery, water-resistant shell."
-	icon_state = "pufferjacket"
-	item_state = "hostrench"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 50, "rad" = 0, "fire" = 0, "acid" = 0)
-
-/obj/item/clothing/suit/jacket/puffer/vest
-	name = "puffer vest"
-	desc = "A thick vest with a rubbery, water-resistant shell."
-	icon_state = "puffervest"
-	item_state = "armor"
-	body_parts_covered = CHEST|GROIN
-	cold_protection = CHEST|GROIN
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 30, "rad" = 0, "fire" = 0, "acid" = 0)
-
 /obj/item/clothing/suit/jacket/miljacket
 	name = "military jacket"
 	desc = "A canvas jacket styled after traditional military garb. Feels sturdy, yet comfortable."
