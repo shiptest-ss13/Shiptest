@@ -247,7 +247,7 @@
 		var/obj/R = new rods_type(drop_location(), rods_broken) || locate(rods_type) in drop_location() // see above
 		transfer_fingerprints_to(R)
 		qdel(src)
-
+	. = ..()
 
 // shock user with probability prb (if all connections & power are working)
 // returns 1 if shocked, 0 otherwise
