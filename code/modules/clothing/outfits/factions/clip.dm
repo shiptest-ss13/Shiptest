@@ -5,7 +5,7 @@
 	faction = FACTION_PLAYER_MINUTEMAN
 
 	uniform = /obj/item/clothing/under/clip
-	skirt_uniform = null // NO military skirt for you young minutewoman
+	skirt_uniform = /obj/item/clothing/under/clip
 	alt_uniform = null
 
 	faction_icon = "bg_clip"
