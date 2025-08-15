@@ -177,7 +177,7 @@
 	availability_prob = 20
 
 /datum/blackmarket_item/ammo/military_etherbor_cell
-	name = "Military-Grade Etherbor Cell"
+	name = "military-grade Etherbor cell"
 	desc = "A military-grade Etherbor weapon cell. A surefire upgrade to the ones on the civilian market. Lime flavor!"
 	item = /obj/item/stock_parts/cell/gun/solgov
 
