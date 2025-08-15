@@ -640,7 +640,7 @@
 
 /datum/reagent/medicine/hunter_extract
 	name = "Hunter's Extract"
-	description = "An extract of . Heals the user in small doses, but is extremely toxic otherwise."
+	description = "An extract of floral compounds and exotic frontier bacteria. Heals the user in small doses, but is extremely toxic otherwise."
 	color = "#6B372E" //dark and red like lavaland
 	metabolization_rate = REAGENTS_METABOLISM * 0.5
 	overdose_threshold = 10

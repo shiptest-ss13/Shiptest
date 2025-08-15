@@ -251,7 +251,7 @@
 
 /obj/item/reagent_containers/syringe/ysiltane
 	name = "syringe (ysiltane)"
-	desc = "Contains oxandrolone, used to treat severe burns."
+	desc = "Contains ysiltane, used to treat severe burns."
 	list_reagents = list(/datum/reagent/medicine/ysiltane = 15)
 
 /obj/item/reagent_containers/syringe/silfrine
