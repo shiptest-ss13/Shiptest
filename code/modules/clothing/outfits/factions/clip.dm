@@ -2,7 +2,6 @@
 
 /datum/outfit/job/clip
 	name = "CLIP - Base Outfit"
-	faction = FACTION_PLAYER_MINUTEMAN
 
 	uniform = /obj/item/clothing/under/clip
 	alt_uniform = null
@@ -14,6 +13,23 @@
 
 	backpack = /obj/item/storage/backpack/security/clip
 	satchel = /obj/item/storage/backpack/satchel/sec/clip
+
+// 	var/list/selectable_alt_titles = list()
+
+/datum/outfit/job/clip/post_equip(mob/living/carbon/human/H, visualsOnly)
+	. = ..()
+	if(visualsOnly)
+		return
+	H.faction |= list(FACTION_PLAYER_MINUTEMAN)
+/* 	if(selectable_alt_titles)
+		var/selection = input(H, "Select an alternative name for your role.", "Job Title", alt_title) as null|anything in selectable_alt_titles)
+	if(!selection)
+		return
+
+	var/obj/item/card/id/W = H.wear_id
+	if(W)
+		W.assignment = alt_title
+*/
 
 // Base CLIP
 
@@ -30,11 +46,11 @@
 	job_icon = "scribe"
 
 	suit = /obj/item/clothing/suit/hazardvest
-	head = /obj/item/clothing/head/soft/utility_navy
+	head = /obj/item/clothing/head/soft/darkblue
 	gloves = /obj/item/clothing/gloves/color/black
 	accessory = /obj/item/clothing/accessory/pocketprotector/full
 	shoes = /obj/item/clothing/shoes/workboots
-	l_pocket = /obj/item/clipboard
+	belt = /obj/item/clipboard
 
 /datum/outfit/job/clip/captain
 	name = "CLIP - Captain"
@@ -45,7 +61,7 @@
 	alt_uniform = /obj/item/clothing/under/clip/formal/with_shirt
 	suit = /obj/item/clothing/suit/toggle/lawyer/clip/command
 	alt_suit = null
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
+	dcoat = /obj/item/clothing/suit/armor/clip_trenchcoat
 	head = /obj/item/clothing/head/clip/slouch/officer
 	id = /obj/item/card/id/gold
 	ears = /obj/item/radio/headset/clip/alt/captain
@@ -278,7 +294,7 @@
 
 	belt = /obj/item/bodycamera/broadcast_camera
 
-// Colonial League Minutemen
+// Confederated League Minutemen
 
 /datum/outfit/job/clip/minutemen
 	name = "CLIP Minutemen - Base Outfit"
@@ -407,20 +423,18 @@
 	job_icon = "clip_mech2"
 	jobtype = /datum/job/mining
 
-	head = /obj/item/clothing/head/helmet/bulletproof/m10/clip_vc
 	uniform = /obj/item/clothing/under/clip/minutemen
 	shoes = /obj/item/clothing/shoes/jackboots
 	ears = /obj/item/radio/headset/clip
 
-	suit = /obj/item/clothing/suit/armor/vest/alt
 	gloves = /obj/item/clothing/gloves/fingerless
-	glasses = /obj/item/clothing/glasses/hud/diagnostic
 
-/datum/outfit/job/clip/minutemen/vehicle_pilot/disarmed
-	name = "CLIP Minutemen - Vehicle Pilot (Disarmed)"
-	head = null
-	suit = null
-	glasses = null
+/datum/outfit/job/clip/minutemen/vehicle_pilot/dressed
+	name = "CLIP Minutemen - Vehicle Pilot (Dressed)"
+
+	head = /obj/item/clothing/head/helmet/bulletproof/m10/clip_vc
+	suit = /obj/item/clothing/suit/armor/vest/alt
+	glasses = /obj/item/clothing/glasses/hud/diagnostic
 
 /datum/outfit/job/clip/minutemen/vehicle_pilot/commander
 	name = "CLIP Minutemen - Vehicle Commander"
@@ -428,6 +442,7 @@
 	job_icon = "clip_mech3"
 
 	suit = /obj/item/clothing/suit/jacket/miljacket
+	head = /obj/item/clothing/head/helmet/bulletproof/m10/clip_vc
 	glasses = /obj/item/clothing/glasses/hud/diagnostic/sunglasses
 
 /datum/outfit/job/clip/minutemen/vehicle_crew/coordinator

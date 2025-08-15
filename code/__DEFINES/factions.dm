@@ -33,5 +33,6 @@
 #define PREFIX_RAMZI list("RCSV")
 #define PREFIX_NONE list()
 
-#define FACTION_SORT_DEFAULT 0
-#define FACTION_SORT_INDEPENDENT 100
+#define FACTION_SORT_INDEPENDENT 100 // Independents first because of majority
+#define FACTION_SORT_DEFAULT 50 // Everything else in the middle
+#define FACTION_SORT_ASPAWN 0 // Frontiersmen and Ramzi on the bottom because of rarity
