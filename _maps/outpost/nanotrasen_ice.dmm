@@ -1221,6 +1221,12 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/button/door{
+	pixel_x = -10;
+	pixel_y = 21;
+	name = "Door Bolt";
+	id = "ice_stall1"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/crew/bathroom)
 "gD" = (
@@ -2751,6 +2757,12 @@
 	},
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 9
+	},
+/obj/machinery/button/door{
+	pixel_x = -10;
+	pixel_y = 21;
+	name = "Door Bolt";
+	id = "ice_stall2"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/crew/bathroom)
@@ -8182,8 +8194,11 @@
 	},
 /area/outpost/exterior)
 "Ut" = (
-/obj/structure/curtain/cloth/grey,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/airlock{
+	name = "Bathroom Stall 1";
+	id_tag = "ice_stall1"
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/bathroom)
 "Uw" = (
@@ -9013,6 +9028,14 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/tech,
 /area/outpost/maintenance/port)
+"YZ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/airlock{
+	name = "Bathroom Stall 2";
+	id_tag = "waterbar_stall2"
+	},
+/turf/open/floor/plasteel/tech,
+/area/outpost/crew/bathroom)
 "Zf" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -15001,7 +15024,7 @@ IJ
 XU
 bh
 BQ
-Ut
+YZ
 jY
 mk
 qd
