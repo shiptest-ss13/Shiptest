@@ -244,7 +244,7 @@
 	required_reagents = list(/datum/reagent/phenol = 1, /datum/reagent/copper = 1, /datum/reagent/medicine/salglu_solution = 3)
 	required_catalysts = list(/datum/reagent/toxin/plasma = 5)
 	required_temp = 207
-	is_cold_recipe = 1
+	is_cold_recipe = TRUE
 
 /datum/chemical_reaction/system_cleaner
 	results = list(/datum/reagent/medicine/system_cleaner = 4)
