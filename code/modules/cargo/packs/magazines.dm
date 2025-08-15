@@ -354,8 +354,8 @@
 /* energy weapons */
 
 /datum/supply_pack/magazine/guncell
-	name = "Universal Laser Gun Cell Crate"
-	desc = "Contains a weapon cell, compatible with all Eoehoma laser guns along with cells compatable with Eoehomas. NOT COMPATABLE WITH NANOTRASEN LASERS!!"
+	name = "Eoehoma-style Power Cell"
+	desc = "Contains a weapon power cell built to be compatible with Eoehoma weapons, and systems that still use Eoehoma's style of cell."
 	contains = list(/obj/item/stock_parts/cell/gun)
 	cost = 500
 
@@ -369,8 +369,8 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/magazine/nt_guncell
-	name = "Sharplite Proprietary Weapon Cell Crate"
-	desc = "Contains a proprietary weapon cell, compatible with most Nanotrasen models. NOTE: This is NOT compatable with legacy Eoehoma models!"
+	name = "Sharplite Power Cell"
+	desc = "Contains a proprietary weapon cell, compatible with most Sharplite energy weapons."
 	contains = list(/obj/item/stock_parts/cell/gun/sharplite)
 	faction = /datum/faction/nt
 	faction_discount = 30
