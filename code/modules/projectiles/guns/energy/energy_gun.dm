@@ -18,8 +18,6 @@
 /obj/item/gun/energy/e_gun/empty_cell
 	spawn_no_ammo = TRUE
 
-
-
 /obj/item/gun/energy/e_gun/turret
 	name = "hybrid turret gun"
 	desc = "A heavy hybrid energy cannon with two settings: Stun and kill. ...It doesn't seem have a trigger, seems it can only be used as a turret."
