@@ -310,7 +310,7 @@
 	spawn_weighting = FALSE
 
 /datum/blackmarket_item/clothing/ablative_coat
-	name = "Ablative Trenchocat"
+	name = "Ablative Trenchcoat"
 	desc = "An fullbody ablative trenchcoat and hood designed to massively disperse the impact of laser weaponry. Will not protect against bullets, knives, or mean words about your choice of outfit."
 	item = /obj/item/clothing/suit/hooded/ablative
 
@@ -354,8 +354,8 @@
 	desc = "A thermal eyepatch, capable of tracking the heat signatures of living beings through solid objects."
 	item = /obj/item/clothing/glasses/thermal/eyepatch
 
-	cost_min = 1000
-	cost_max = 3000
+	cost_min = 2500
+	cost_max = 3500
 	stock = 1
 	availability_prob = 15
 	spawn_weighting = FALSE
