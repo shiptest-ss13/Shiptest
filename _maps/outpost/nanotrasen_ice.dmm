@@ -603,11 +603,6 @@
 	},
 /turf/open/floor/plating/asteroid/icerock/temperate/lit,
 /area/outpost/exterior)
-"dp" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb,
-/turf/closed/indestructible/titanium/nodiagnonal,
-/area/outpost/maintenance/port)
 "dq" = (
 /obj/machinery/door/airlock/public{
 	name = "Medical Services"
@@ -1282,13 +1277,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
-"hl" = (
-/obj/effect/decal/fakelattice{
-	layer = 2.010
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/indestructible/titanium/nodiagnonal,
-/area/outpost/maintenance/port)
 "ho" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plating/asteroid/icerock/temperate/lit,
@@ -1559,13 +1547,13 @@
 /obj/item/binoculars{
 	pixel_x = 3
 	},
-/obj/item/fish_feed{
-	pixel_x = -8;
-	pixel_y = 5
-	},
 /obj/item/binoculars{
 	pixel_x = 3;
 	pixel_y = 6
+	},
+/obj/item/fish_feed{
+	pixel_x = 10;
+	pixel_y = -3
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/bar)
@@ -7487,7 +7475,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/maintenance/starboard)
 "Qf" = (
-/obj/structure/aquarium/prefilled,
+/obj/structure/aquarium/outpost,
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/bar)
 "Qi" = (
@@ -13777,7 +13765,7 @@ Ak
 dD
 PI
 vs
-hl
+vs
 Tj
 Tj
 Tj
@@ -14113,7 +14101,7 @@ dR
 eo
 tB
 vs
-hl
+vs
 nA
 nA
 Tj
@@ -14202,7 +14190,7 @@ vs
 vs
 vs
 vs
-dp
+vs
 Aj
 YX
 Aj

@@ -2,8 +2,8 @@
 
 /turf/open/floor/plating/asteroid/sand
 	name = "sand"
-	icon = 'icons/misc/beach.dmi'
-	icon_state = "sand"
+	icon = 'icons/turf/floors/beachsand.dmi'
+	icon_state = "sand-255"
 	base_icon_state = "sand"
 	floor_variance = 83
 	max_icon_states = 5
@@ -20,6 +20,8 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH)
+	MAP_SWITCH(pixel_x = 0, pixel_x = -19)
+	MAP_SWITCH(pixel_y = 0, pixel_y = -19)
 	slowdown = 0
 
 
@@ -59,8 +61,6 @@
 	light_power = 0.80
 
 /turf/open/floor/plating/grass/beach/dark
-	icon_state = "junglegrass"
-	base_icon_state = "junglegrass"
 	icon = 'icons/turf/floors/junglegrass.dmi'
 	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
 

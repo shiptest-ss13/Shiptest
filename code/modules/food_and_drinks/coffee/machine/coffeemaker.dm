@@ -232,8 +232,8 @@
 		update_icon()
 		return TRUE
 
-	if(istype(attack_item, /obj/item/reagent_containers/condiment/creamer))
-		var/obj/item/reagent_containers/condiment/creamer/new_pack = attack_item
+	if(istype(attack_item, /obj/item/reagent_containers/condiment/pack/creamer))
+		var/obj/item/reagent_containers/condiment/pack/creamer/new_pack = attack_item
 		if(new_pack.reagents.total_volume < new_pack.reagents.maximum_volume)
 			balloon_alert(user, "the pack must be full!")
 			return TRUE
@@ -393,7 +393,7 @@
 	if(!creamer_packs)
 		balloon_alert(user, "no creamer left!")
 		return
-	var/obj/item/reagent_containers/condiment/creamer/new_pack = new(get_turf(src))
+	var/obj/item/reagent_containers/condiment/pack/creamer/new_pack = new(get_turf(src))
 	user.put_in_hands(new_pack)
 	creamer_packs--
 	update_icon()
