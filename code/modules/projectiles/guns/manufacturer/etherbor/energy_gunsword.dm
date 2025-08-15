@@ -1,5 +1,5 @@
 /obj/item/gun/energy/kalix
-	name = "Etherbor BG-12"
+	name = "\improper Etherbor BG-12"
 	desc = "Etherbor Industries's current civilian energy weapon model. The BG-12 energy beam gun is identical to the military model, minus the removal of the full auto mode. Otherwise, it's no different from older hunting beams from Kalixcis's history."
 	icon_state = "kalixgun"
 	item_state = "kalixgun"
@@ -65,7 +65,7 @@
 	select_name = "disable"
 
 /obj/item/gun/energy/kalix/nock
-	name = "Etherbor VG-F3"
+	name = "\improper Etherbor VG-F3"
 	desc = "The Etherbor Industries VG-F3 is a further refinement of the antiquated beam volleygun concept. The first of its kind to find commercial success in the modern day, the VG-F3 has found a comfortable niche with law enforcement and home defense markets galaxy-wide."
 	icon_state = "kalixnock"
 	item_state = "kalixnock"
@@ -96,7 +96,7 @@
 		/obj/item/stock_parts/cell/gun/pgf,
 		/obj/item/stock_parts/cell/gun/kalix,
 	)
-	ammo_type = list(/obj/item/ammo_casing/energy/kalix/nock , /obj/item/ammo_casing/energy/disabler/hitscan/kalix/nock)
+	ammo_type = list(/obj/item/ammo_casing/energy/kalix/nock, /obj/item/ammo_casing/energy/disabler/hitscan/kalix/nock)
 
 /obj/projectile/beam/hitscan/kalix/pgf/nock
 	name = "concentrated energy beam"
@@ -117,7 +117,7 @@
 	select_name = "disable"
 
 /obj/item/gun/energy/kalix/pgf/nock
-	name = "Etherbor VG-A5"
+	name = "\improper Etherbor VG-A5"
 	desc = "Piggybacking off the success of the VG-F3, the Etherbor Industries VG-A5 Beam Volleygun was designed specifically for contract sale to the PGFMC. With the addition of a stronger capacitor and a forward grip, the VG-A5 has found itself popular among marine raiders for its ability to take control of tight spaces."
 	icon_state = "pgfnock"
 	item_state = "pgfnock"
@@ -148,13 +148,13 @@
 		/obj/item/stock_parts/cell/gun/pgf,
 		/obj/item/stock_parts/cell/gun/kalix,
 	)
-	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pgf/nock , /obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/nock)
+	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pgf/nock, /obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/nock)
 
 /obj/item/gun/energy/kalix/empty_cell
 	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/kalix/pgf
-	name = "Etherbor BG-16"
+	name = "\improper Etherbor BG-16"
 	desc = "The BG-16 is the military-grade beam gun designed and manufactured by Etherbor Industries as the standard-issue close-range weapon of the PGF."
 	icon_state = "pgfgun"
 	item_state = "pgfgun"
@@ -188,7 +188,7 @@
 	delay = 1
 
 /obj/item/gun/energy/kalix/pistol //blue
-	name = "Etherbor SG-8"
+	name = "\improper Etherbor SG-8"
 	desc = "Etherbor's current and sidearm offering. While marketed for the military, it's also available for civillians as an upgrade over older and obsolete beam pistols."
 	icon_state = "kalixpistol"
 	item_state = "kalixpistol"
@@ -225,7 +225,7 @@
 	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/kalix/pgf/medium
-	name = "Etherbor BGC-10"
+	name = "\improper Etherbor BGC-10"
 	desc = "Etherbor's answer to the PGFMC's request for a carbine style weapon; the BGC-10 offers greater accuracy and power than the BG-16, while being less cumbersome than the DMR mode equipped HBG series rifles."
 	icon_state = "pgfmedium"
 	item_state = "pgfmedium"
@@ -244,10 +244,10 @@
 	spread = 0.5
 	spread_unwielded = 15
 
-	ammo_type = list(/obj/item/ammo_casing/energy/pgf/assault , /obj/item/ammo_casing/energy/disabler/hitscan/heavy)
+	ammo_type = list(/obj/item/ammo_casing/energy/pgf/assault, /obj/item/ammo_casing/energy/disabler/hitscan/heavy)
 
 /obj/item/gun/energy/kalix/pgf/heavy
-	name = "Etherbor HBG-7"
+	name = "\improper Etherbor HBG-7"
 	desc = "The HBG-7 is the standard-issue rifle weapon of the PGF. It comes with a special DMR mode that has greater armor piercing for dealing with armored targets."
 	icon_state = "pgfheavy"
 	item_state = "pgfheavy"
@@ -302,7 +302,7 @@
 	damage_constant = 1
 
 /obj/item/gun/energy/kalix/pgf/heavy/sniper
-	name = "Etherbor HBG-7L"
+	name = "\improper Etherbor HBG-7L"
 	desc = "HBG-7 with a longer barrel and scope. Intended to get the best use out of the DMR mode, it suffers from longer wield times and slowdown, but it's longer barrel makes it ideal for accuracy."
 	icon_state = "pgfheavy_sniper"
 	item_state = "pgfheavy_sniper"
