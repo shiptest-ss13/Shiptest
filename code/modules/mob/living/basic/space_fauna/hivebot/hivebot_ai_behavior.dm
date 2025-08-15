@@ -36,13 +36,12 @@
 	var/mob/living/living_pawn = controller.pawn
 
 	if(QDELETED(target))
-		finish_action(controller, FALSE, target_key)
-		return
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED
 	var/message_relayed = ""
 	for(var/i in 1 to length_of_message)
 		message_relayed += prob(50) ? "1" : "0"
 	living_pawn.say(message_relayed, forced = "AI Controller")
-	finish_action(controller, TRUE, target_key)
+	return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
 
 /datum/ai_behavior/relay_message/finish_action(datum/ai_controller/controller, succeeded, target_key)
 	. = ..()
@@ -51,7 +50,7 @@
 /datum/ai_behavior/find_hunt_target/repair_machines
 
 /datum/ai_behavior/find_hunt_target/repair_machines/valid_dinner(mob/living/source, obj/machinery/repair_target, radius)
-	if(repair_target.obj_integrity >= repair_target.max_integrity)
+	if(repair_target.atom_integrity >= repair_target.max_integrity)
 		return FALSE
 
 	return can_see(source, repair_target, radius)
@@ -65,8 +64,8 @@
 /datum/ai_behavior/find_hunt_target/scrap_machines
 
 /datum/ai_behavior/find_hunt_target/scrap_machines/valid_dinner(mob/living/source, obj/structure/salvageable/yummers, radius)
-	if(!yummers.salvageable_parts)
-		return FALSE
+	if(length(yummers.salvageable_parts))
+		return TRUE
 
 /datum/ai_behavior/hunt_target/scrap_machines
 	always_reset_target = TRUE

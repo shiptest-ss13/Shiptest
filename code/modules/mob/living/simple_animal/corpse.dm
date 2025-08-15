@@ -178,6 +178,24 @@
 	back = /obj/item/storage/backpack/messenger
 	id = /obj/item/card/id
 
+/datum/outfit/vigilitas/space
+	name = "VI Responder"
+	suit = /obj/item/clothing/suit/space/hardsuit/security
+	head = /obj/item/clothing/head/helmet/space/hardsuit/security
+	back = /obj/item/tank/jetpack/carbondioxide
+
+/datum/outfit/vigilitas/space/hos
+	name = "VI Breacher"
+	suit = /obj/item/clothing/suit/space/hardsuit/security/hos
+	head = /obj/item/clothing/head/helmet/space/hardsuit/security/hos
+	back = /obj/item/tank/jetpack/carbondioxide
+
+/datum/outfit/vigilitas/director
+	name = "VI director"
+	uniform = /obj/item/clothing/under/nanotrasen/security/director
+	suit = /obj/item/clothing/suit/armor/nanotrasen/sec_director
+	head = /obj/item/clothing/head/nanotrasen/beret/security/command
+
 /datum/outfit/vigilitas/private
 	name = "VI Private"
 
@@ -185,6 +203,11 @@
 	name = "VI Private"
 	id_job = "Vigilitas Interstellar"
 	outfit = /datum/outfit/vigilitas/private
+
+/obj/effect/mob_spawn/human/corpse/vigilitas_director
+	name = "VI Director"
+	id_job = "Vigilitas Interstellar"
+	outfit = /datum/outfit/vigilitas/director
 
 /datum/outfit/vigilitas/trooper
 	name = "VI Trooper"
@@ -203,6 +226,16 @@
 	head = /obj/item/clothing/head/helmet/space/hardsuit/ert/sec
 	back = /obj/item/storage/backpack/security
 	gloves = /obj/item/clothing/gloves/combat
+
+/obj/effect/mob_spawn/human/corpse/vigilitas_hos
+	name = "VI Breacher"
+	id_job = "Vigilitas Assault Force"
+	outfit = /datum/outfit/vigilitas/space/hos
+
+/obj/effect/mob_spawn/human/corpse/vigilitas_space
+	name = "VI Responder"
+	id_job = "Vigilitas Assault Force"
+	outfit = /datum/outfit/vigilitas/space
 
 /obj/effect/mob_spawn/human/corpse/vigilitas_elite
 	name = "VI Response Team"

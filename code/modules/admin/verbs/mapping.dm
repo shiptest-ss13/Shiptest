@@ -44,6 +44,7 @@ GLOBAL_LIST_INIT(admin_verbs_debug_extra, list(
 	/client/proc/start_line_profiling,
 	/client/proc/stop_line_profiling,
 	/client/proc/check_timer_sources,
+	/client/proc/allow_browser_inspect,
 	/client/proc/air_status, //Air things
 	/client/proc/air_status_loc, //More air things
 	/client/proc/manipulate_organs,

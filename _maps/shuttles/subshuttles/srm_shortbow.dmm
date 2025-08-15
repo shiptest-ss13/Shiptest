@@ -1,0 +1,622 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/template_noop,
+/area/template_noop)
+"b" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/preopen{
+	id = "shortbow_window"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"c" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"d" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/landmark/ert_shuttle_brief_spawn,
+/turf/open/floor/wood/birch,
+/area/ship/bridge)
+"e" = (
+/obj/machinery/door/poddoor{
+	id = "shortbow_blast";
+	dir = 4
+	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 8;
+	launch_status = 0;
+	preferred_direction = 4
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/bridge)
+"f" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"g" = (
+/turf/closed/wall/r_wall,
+/area/ship/bridge)
+"h" = (
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/door/poddoor/preopen{
+	id = "shortbow_window";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/bridge)
+"i" = (
+/obj/structure/rack,
+/obj/item/stack/sheet/mineral/plasma/ten,
+/turf/open/floor/wood/walnut,
+/area/ship/bridge)
+"j" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 1
+	},
+/turf/open/floor/wood/birch,
+/area/ship/bridge)
+"k" = (
+/obj/effect/turf_decal/siding/brown,
+/turf/open/floor/wood/birch,
+/area/ship/bridge)
+"l" = (
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
+	dir = 1
+	},
+/obj/machinery/firealarm/directional/west{
+	pixel_x = -32;
+	pixel_y = 6
+	},
+/obj/structure/extinguisher_cabinet/directional/west{
+	pixel_x = -28;
+	pixel_y = -7
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"m" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 10
+	},
+/turf/open/floor/wood/birch,
+/area/ship/bridge)
+"n" = (
+/obj/machinery/power/shuttle/engine/electric,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/bridge)
+"o" = (
+/obj/effect/turf_decal/trimline/opaque/orange/filled/corner{
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 5;
+	layer = 2.89
+	},
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"p" = (
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/light_switch{
+	pixel_y = -2;
+	pixel_x = -20;
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"q" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/west,
+/obj/machinery/button/door{
+	pixel_y = -21;
+	pixel_x = 1;
+	id = "shortbow_window";
+	name = "Window Shutters";
+	dir = 1
+	},
+/obj/effect/landmark/ert_shuttle_spawn,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"r" = (
+/obj/machinery/holopad/emergency/command,
+/obj/effect/turf_decal/spline/fancy/wood/cee{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-6"
+	},
+/turf/open/floor/wood/mahogany,
+/area/ship/bridge)
+"s" = (
+/obj/machinery/button/door{
+	pixel_x = 21;
+	pixel_y = 7;
+	dir = 8;
+	id = "shortbow_blast"
+	},
+/obj/structure/chair/comfy/shuttle,
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 20;
+	pixel_y = -3;
+	id = "shortbow_holo";
+	dir = 8
+	},
+/obj/effect/landmark/ert_shuttle_spawn,
+/turf/open/floor/wood/walnut,
+/area/ship/bridge)
+"t" = (
+/obj/machinery/power/shuttle/engine/electric,
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/bridge)
+"u" = (
+/obj/effect/turf_decal/siding/brown,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/wood/birch,
+/area/ship/bridge)
+"v" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"w" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/engine/hull,
+/area/ship/bridge)
+"x" = (
+/obj/machinery/light/dim/directional/north,
+/obj/structure/chair/comfy/shuttle,
+/obj/effect/landmark/ert_shuttle_spawn,
+/turf/open/floor/wood/walnut,
+/area/ship/bridge)
+"y" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	id = "shortbow_blast";
+	dir = 4
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "shortbow_holo"
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/bridge)
+"z" = (
+/obj/effect/turf_decal/spline/fancy/wood,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/wood/mahogany,
+/area/ship/bridge)
+"A" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/wood/birch,
+/area/ship/bridge)
+"B" = (
+/obj/machinery/light/dim/directional/south,
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/effect/landmark/ert_shuttle_spawn,
+/turf/open/floor/wood/walnut,
+/area/ship/bridge)
+"D" = (
+/obj/machinery/computer/helm{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-9"
+	},
+/obj/item/radio/intercom/wideband/directional/south,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"E" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/machinery/button/door{
+	pixel_x = 21;
+	pixel_y = 7;
+	dir = 8;
+	id = "shortbow_blast"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 20;
+	pixel_y = -3;
+	id = "shortbow_holo";
+	dir = 8
+	},
+/obj/effect/landmark/ert_shuttle_spawn,
+/turf/open/floor/wood/walnut,
+/area/ship/bridge)
+"F" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"G" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/engine/hull,
+/area/ship/bridge)
+"H" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/structure/cable/yellow{
+	icon_state = "5-8"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"I" = (
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "shortbow_window";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/bridge)
+"J" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	id = "shortbow_blast";
+	dir = 4
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "shortbow_holo";
+	dir = 1
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/bridge)
+"K" = (
+/obj/effect/turf_decal/stairs_wood{
+	dir = 5;
+	color = "#792f27"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "5-10"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"L" = (
+/obj/effect/turf_decal/spline/fancy/wood,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/command/glass{
+	dir = 4;
+	name = "Helm"
+	},
+/turf/open/floor/wood/mahogany,
+/area/ship/bridge)
+"M" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/brown,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood/birch,
+/area/ship/bridge)
+"N" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood/birch,
+/area/ship/bridge)
+"O" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/preopen{
+	id = "shortbow_window";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"Q" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/wood/birch,
+/area/ship/bridge)
+"R" = (
+/turf/closed/wall/r_wall/yesdiag,
+/area/ship/bridge)
+"S" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"T" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/brown{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood/birch,
+/area/ship/bridge)
+"U" = (
+/obj/structure/crate_shelf/built{
+	capacity = 2
+	},
+/turf/open/floor/wood/walnut,
+/area/ship/bridge)
+"V" = (
+/obj/effect/turf_decal/trimline/opaque/orange/filled/corner{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 6
+	},
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"X" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 9
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-10"
+	},
+/turf/open/floor/wood/birch,
+/area/ship/bridge)
+"Y" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/wood/birch,
+/area/ship/bridge)
+"Z" = (
+/obj/structure/table/reinforced,
+/obj/machinery/light/small/directional/west,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/machinery/button/door{
+	pixel_x = -6;
+	pixel_y = 22;
+	id = "shortbow_blast"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 6;
+	pixel_y = 20;
+	id = "shortbow_holo"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+
+(1,1,1) = {"
+a
+a
+R
+g
+O
+g
+R
+a
+a
+"}
+(2,1,1) = {"
+a
+w
+g
+Z
+r
+q
+g
+G
+a
+"}
+(3,1,1) = {"
+g
+t
+g
+f
+z
+D
+g
+n
+g
+"}
+(4,1,1) = {"
+g
+h
+g
+g
+L
+H
+g
+I
+g
+"}
+(5,1,1) = {"
+g
+S
+l
+v
+K
+F
+p
+c
+g
+"}
+(6,1,1) = {"
+R
+g
+V
+X
+d
+m
+o
+g
+R
+"}
+(7,1,1) = {"
+a
+g
+x
+j
+N
+k
+B
+g
+a
+"}
+(8,1,1) = {"
+a
+b
+U
+j
+N
+k
+i
+b
+a
+"}
+(9,1,1) = {"
+a
+g
+s
+A
+Q
+u
+E
+g
+a
+"}
+(10,1,1) = {"
+a
+R
+g
+T
+Y
+M
+g
+R
+a
+"}
+(11,1,1) = {"
+a
+a
+g
+y
+e
+J
+g
+a
+a
+"}

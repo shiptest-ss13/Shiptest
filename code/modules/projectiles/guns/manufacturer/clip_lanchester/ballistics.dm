@@ -385,9 +385,8 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 		)
 	)
 
-	unique_attachments = list(/obj/item/attachment/scope)
-	default_attachments = list(/obj/item/attachment/scope)
-
+	zoom_amt = 6
+	zoom_out_amt = 2
 	wield_slowdown = DMR_SLOWDOWN
 	spread = -4
 	fire_select_icon_state_prefix = "clip_"
@@ -476,6 +475,19 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 
 /obj/item/ammo_box/magazine/f90/empty
 	start_empty = TRUE
+
+/obj/item/gun/ballistic/automatic/marksman/f90/inteq
+	name = "\improper SSG-08 Saluki"
+	desc = "A powerful sniper purchased from CLIP, lightly modified with superficial modifications and an IRMG paintjob by the Artificer Division. Chambered in 6.5mm."
+	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
+
+	icon_state = "saluki"
+	item_state = "saluki"
+
+	manufacturer = MANUFACTURER_INTEQ
 
 //########### RIFLES ###########//
 /obj/item/gun/ballistic/automatic/assault/cm82
