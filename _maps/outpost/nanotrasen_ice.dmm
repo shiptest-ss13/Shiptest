@@ -4290,6 +4290,7 @@
 /area/outpost/security/armory)
 "ye" = (
 /obj/effect/turf_decal/siding/white/corner,
+/obj/effect/turf_decal/trimline/opaque/vired/corner,
 /turf/open/floor/plasteel/tech,
 /area/outpost/operations)
 "yh" = (
@@ -8111,6 +8112,9 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/vired/line{
 	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/vired/corner{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/operations)
