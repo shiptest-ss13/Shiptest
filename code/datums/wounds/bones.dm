@@ -432,7 +432,7 @@
 		return
 
 	I.use(1)
-	victim.force_scream()
+	victim.force_pain_noise(60)
 	if(user != victim)
 		user.visible_message(
 			span_notice("[user] finishes applying [I] to [victim]'s [limb.name], giving off a wet fizzle."),
