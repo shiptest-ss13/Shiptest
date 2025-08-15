@@ -81,7 +81,7 @@
 			BIOME_LOWEST_HUMIDITY = /datum/biome/cave/waste,
 			BIOME_LOW_HUMIDITY = /datum/biome/cave/waste,
 			BIOME_MEDIUM_HUMIDITY = /datum/biome/cave/waste/metal,
-			BIOME_HIGH_HUMIDITY = /datum/biome/cave/waste/metal/,
+			BIOME_HIGH_HUMIDITY = /datum/biome/cave/waste/metal,
 			BIOME_HIGHEST_HUMIDITY = /datum/biome/cave/waste/metal
 		)
 	)
