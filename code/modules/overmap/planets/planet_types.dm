@@ -191,6 +191,7 @@
 	planet = DYNAMIC_WORLD_SPACERUIN
 	icon_state = "signal_strange"
 	color = null
+	weight = 0
 	mapgen = /datum/map_generator/single_turf/space
 	default_baseturf = /turf/open/space
 	weather_controller_type = null
