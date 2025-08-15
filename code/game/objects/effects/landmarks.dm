@@ -444,7 +444,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 
 /obj/effect/landmark/subship/New(loc, datum/map_template/shuttle/ship_template, datum/overmap/dock_holder)
 	..(loc)
-	if(!subship_template && ship_template)
+	if(ship_template)
 		subship_template = ship_template
 	var/datum/map_template/shuttle/template = SSmapping.shuttle_templates[initial(subship_template.file_name)]
 	var/dock_x
