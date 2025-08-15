@@ -31,7 +31,7 @@
 	projectile_type = /obj/projectile/beam/laser/assault
 	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
 	delay = 2
-	e_cost = 1000 //20 per upgraded cell
+	e_cost = 666 //30 per upgraded cell, 14 per regular
 
 /obj/item/ammo_casing/energy/laser/assault/sharplite
 	projectile_type = /obj/projectile/beam/laser/assault/sharplite
