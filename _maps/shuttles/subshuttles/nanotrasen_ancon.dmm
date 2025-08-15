@@ -38,6 +38,9 @@
 	dir = 4;
 	id = "ancon_door"
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "dw" = (
@@ -58,6 +61,9 @@
 /obj/machinery/door/poddoor/preopen{
 	dir = 4;
 	id = "ancon_door"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
@@ -80,6 +86,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
@@ -139,9 +148,6 @@
 /obj/effect/turf_decal/siding/thinplating/light{
 	dir = 6
 	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
 /obj/machinery/light/directional/east,
 /obj/structure/table,
 /obj/item/paper_bin{
@@ -154,6 +160,9 @@
 /obj/item/clipboard{
 	pixel_y = 3;
 	pixel_x = -8
+	},
+/obj/structure/cable{
+	icon_state = "5-8"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
@@ -212,6 +221,9 @@
 	pixel_x = 4;
 	id = "ancon_hf"
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "xH" = (
@@ -239,6 +251,9 @@
 	dir = 1
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "yp" = (
@@ -414,9 +429,6 @@
 "Th" = (
 /obj/effect/turf_decal/corner/opaque/green/half,
 /obj/machinery/power/smes/engineering,
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
 /obj/structure/cable{
 	icon_state = "0-9"
 	},
@@ -468,6 +480,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "ZG" = (
@@ -475,11 +490,11 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
 /obj/machinery/power/port_gen/pacman,
 /obj/item/wrench,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 
