@@ -45,9 +45,6 @@
 /obj/effect/turf_decal/corner/transparent/lime/half{
 	dir = 1
 	},
-/obj/structure/fluff/overhead/lattice{
-	icon_state = "lattice-12"
-	},
 /obj/machinery/power/port_gen/pacman{
 	anchored = 1
 	},
@@ -501,13 +498,6 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/south,
-/obj/structure/fluff/overhead/lattice{
-	icon_state = "lattice-3"
-	},
-/obj/structure/fluff/overhead/lattice{
-	icon_state = "lattice-1";
-	pixel_y = -16
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "dY" = (
@@ -731,17 +721,6 @@
 /obj/item/clothing/mask/breath,
 /obj/item/tank/internals/oxygen,
 /obj/effect/turf_decal/industrial/warning/green/fulltile,
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	dir = 4;
-	pixel_y = 15
-	},
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	dir = 4;
-	pixel_y = 15;
-	pixel_x = 7
-	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -888,17 +867,6 @@
 	pixel_y = 8
 	},
 /obj/structure/catwalk/over/plated_catwalk/white,
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	dir = 4;
-	pixel_y = 15
-	},
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	dir = 4;
-	pixel_y = 15;
-	pixel_x = 5
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/toilet)
 "gA" = (
@@ -1203,34 +1171,12 @@
 /obj/item/radio/intercom/wideband{
 	pixel_y = -7
 	},
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	dir = 4
-	},
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/crew/dorm/commad)
 "iy" = (
 /obj/effect/decal/fakelattice,
 /obj/structure/railing,
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	pixel_x = 14
-	},
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	pixel_x = 14;
-	pixel_y = 6
-	},
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	pixel_x = 5;
-	pixel_y = 6
-	},
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	pixel_x = 5
-	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/hallway/central)
 "iD" = (
@@ -1493,13 +1439,6 @@
 /obj/machinery/vending/cigarette,
 /obj/effect/turf_decal/corner/opaque/blue/border,
 /obj/machinery/light/directional/north,
-/obj/structure/fluff/overhead/lattice{
-	icon_state = "lattice-3"
-	},
-/obj/structure/fluff/overhead/lattice{
-	icon_state = "lattice-2";
-	pixel_y = 16
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "ky" = (
@@ -1566,17 +1505,6 @@
 /obj/item/clothing/suit/space/hardsuit/clip_patroller,
 /obj/item/clothing/mask/breath,
 /obj/item/tank/internals/oxygen,
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	dir = 4;
-	pixel_y = 15
-	},
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	dir = 4;
-	pixel_y = 15;
-	pixel_x = -7
-	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -1709,9 +1637,6 @@
 /obj/structure/railing/thin{
 	layer = 3.081
 	},
-/obj/structure/fluff/overhead/lattice{
-	icon_state = "lattice-12"
-	},
 /obj/machinery/power/terminal{
 	dir = 8
 	},
@@ -1799,17 +1724,6 @@
 	pixel_y = 7
 	},
 /obj/structure/catwalk/over/plated_catwalk/white,
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	dir = 4;
-	pixel_y = 15
-	},
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	dir = 4;
-	pixel_y = 15;
-	pixel_x = -5
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/toilet)
 "mn" = (
@@ -1876,17 +1790,6 @@
 /obj/effect/turf_decal/industrial/warning/green{
 	dir = 10
 	},
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	dir = 4;
-	pixel_y = 20
-	},
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	dir = 4;
-	pixel_y = 20;
-	pixel_x = -6
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "mH" = (
@@ -1920,16 +1823,8 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	pixel_x = 14
-	},
 /obj/effect/turf_decal/corner/opaque/mauve/bordercorner{
 	dir = 4
-	},
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	pixel_x = 5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -2626,9 +2521,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/fluff/overhead/lattice{
-	icon_state = "lattice-3"
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "si" = (
@@ -2775,10 +2667,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "tg" = (
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	pixel_x = 14
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
@@ -2790,10 +2678,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
-	},
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	pixel_x = 5
 	},
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/mono/dark,
@@ -2881,9 +2765,6 @@
 	},
 /obj/effect/turf_decal/corner/transparent/lime/half{
 	dir = 1
-	},
-/obj/structure/fluff/overhead/lattice{
-	icon_state = "lattice-12"
 	},
 /obj/effect/turf_decal/floordetail/pryhole,
 /obj/machinery/power/terminal{
@@ -3043,10 +2924,6 @@
 	dir = 1;
 	icon_state = "computer-middle"
 	},
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	dir = 4
-	},
 /turf/open/floor/plasteel,
 /area/ship/crew/dorm/commad)
 "vp" = (
@@ -3165,11 +3042,6 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "vZ" = (
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	dir = 4;
-	pixel_y = 20
-	},
 /obj/machinery/bluespace_drive{
 	icon_state = "bsdrive_right"
 	},
@@ -3497,9 +3369,6 @@
 /obj/effect/turf_decal/industrial/warning/green{
 	dir = 8
 	},
-/obj/structure/fluff/overhead/lattice{
-	icon_state = "lattice-3"
-	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "yE" = (
@@ -3538,18 +3407,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "yJ" = (
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	dir = 6;
-	icon_state = "pipe11-5"
-	},
-/obj/structure/fluff/overhead/lattice{
-	icon_state = "lattice-8";
-	pixel_x = 16
-	},
-/obj/structure/fluff/overhead/lattice{
-	icon_state = "lattice-12"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
@@ -4032,11 +3889,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "BX" = (
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	dir = 1;
-	icon_state = "pipe11-5"
-	},
 /obj/effect/turf_decal/corner/transparent/lime/half{
 	dir = 4
 	},
@@ -4408,11 +4260,6 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
 	},
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	dir = 4;
-	pixel_y = 15
-	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -4685,10 +4532,6 @@
 /obj/effect/turf_decal/trimline/opaque/blue/warning{
 	dir = 1
 	},
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	pixel_x = 14
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
@@ -4700,10 +4543,6 @@
 	},
 /obj/effect/turf_decal/corner/opaque/white/bordercorner,
 /obj/effect/turf_decal/corner/transparent/blue/bordercorner,
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	pixel_x = 5
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Gv" = (
@@ -5081,14 +4920,6 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	pixel_x = 14
-	},
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	pixel_x = 5
-	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/hallway/central)
 "Ko" = (
@@ -5336,9 +5167,6 @@
 /obj/structure/railing/thin{
 	layer = 3.081
 	},
-/obj/structure/fluff/overhead/lattice{
-	icon_state = "lattice-12"
-	},
 /obj/machinery/power/port_gen/pacman{
 	anchored = 1
 	},
@@ -5351,13 +5179,6 @@
 /obj/structure/platform/industrial,
 /obj/structure/railing/thin{
 	layer = 3.081
-	},
-/obj/structure/fluff/overhead/lattice{
-	icon_state = "lattice-12"
-	},
-/obj/structure/fluff/overhead/lattice{
-	icon_state = "lattice-4";
-	pixel_x = -16
 	},
 /obj/machinery/power/smes/engineering{
 	charge = 1e+006
@@ -5379,20 +5200,9 @@
 /area/ship/crew/dorm/commad)
 "LX" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	dir = 4;
-	pixel_y = 20
-	},
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/closet/secure_closet/clip/minutemen/engineer{
 	pixel_x = -6
-	},
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	dir = 4;
-	pixel_y = 20;
-	pixel_x = 6
 	},
 /obj/item/clothing/mask/gas/clip,
 /turf/open/floor/plasteel/tech,
@@ -5590,9 +5400,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/fluff/overhead/lattice{
-	icon_state = "lattice-12"
-	},
 /obj/effect/turf_decal/floordetail/pryhole,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -5639,11 +5446,6 @@
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "OI" = (
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	dir = 4;
-	pixel_y = 15
-	},
 /obj/machinery/suit_storage_unit/industrial{
 	suit_type = /obj/item/clothing/suit/space/eva;
 	helmet_type = /obj/item/clothing/head/helmet/space/eva;
@@ -5929,9 +5731,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/obj/structure/fluff/overhead/lattice{
-	icon_state = "lattice-12"
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Ra" = (
@@ -6282,13 +6081,6 @@
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "UO" = (
-/obj/structure/fluff/overhead/lattice{
-	icon_state = "lattice-8";
-	pixel_x = 16
-	},
-/obj/structure/fluff/overhead/lattice{
-	icon_state = "lattice-12"
-	},
 /obj/effect/turf_decal/corner/transparent/lime/half{
 	dir = 4
 	},
@@ -6559,9 +6351,6 @@
 /obj/effect/turf_decal/industrial/warning/green{
 	dir = 8
 	},
-/obj/structure/fluff/overhead/lattice{
-	icon_state = "lattice-3"
-	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "WY" = (
@@ -6825,13 +6614,6 @@
 /obj/effect/turf_decal/corner/transparent/lime/half{
 	dir = 1
 	},
-/obj/structure/fluff/overhead/lattice{
-	icon_state = "lattice-12"
-	},
-/obj/structure/fluff/overhead/lattice{
-	icon_state = "lattice-4";
-	pixel_x = -16
-	},
 /obj/machinery/power/smes/engineering{
 	charge = 1e+006
 	},
@@ -6841,11 +6623,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "YQ" = (
-/obj/structure/fluff/overhead/pipe{
-	color = "#535456";
-	dir = 5;
-	icon_state = "pipe11-5"
-	},
 /obj/effect/turf_decal/corner/transparent/lime/half{
 	dir = 4
 	},
