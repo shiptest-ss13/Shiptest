@@ -1,6 +1,7 @@
 /obj/item/gun/energy/laser
-	name = "SL L-204 laser gun"
-	desc = "A basic energy-based laser gun that fires concentrated beams of light which pass through glass and thin metal."
+	name = "E-20 mining emitter"
+	desc = "A basic mining tool that fires concentrated bolts of light, which easily cause flesh, stone, and metal to yield."
+	//desc = "A basic mining laser that fires concentrated beams of light which break down rock. Notably, these beams of light melt down flesh, and the design, while literally ancient, is well known and suprisngly modular, leading to many modifications and upgrades over the years."
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
 	item_state = "laser"
@@ -10,7 +11,7 @@
 	ammo_x_offset = 1
 	shaded_charge = TRUE
 	supports_variations = VOX_VARIATION
-	manufacturer = MANUFACTURER_SHARPLITE_NEW
+	manufacturer = MANUFACTURER_EOEHOMA
 
 	spread = 0
 	spread_unwielded = 10
@@ -20,20 +21,32 @@
 
 /obj/item/gun/energy/laser/practice
 	name = "practice laser gun"
-	desc = "A modified version of the L-204 laser gun, this one fires less concentrated energy bolts designed for target practice."
+	desc = "A modified version of the L104 laser gun, this one fires less concentrated energy bolts designed for target practice."
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/practice/sharplite)
 	item_flags = NONE
 
-/obj/item/gun/energy/laser/retro
-	name ="SL L-104 retro laser gun"
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
-	icon_state = "retro"
+
+	icon_state = "laser"
 	item_state = "laser"
+
+	manufacturer = MANUFACTURER_SHARPLITE
+
+/obj/item/gun/energy/laser/retro
+	name ="SL L104"
 	desc = "An antiquated model of the basic lasergun, no longer used or sold by Sharplite. Nevertheless, the sheer popularity of this model makes it a somewhat common sight to this day."
-	ammo_x_offset = 3
+
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+
+	icon_state = "laser"
+	item_state = "laser"
+
 	manufacturer = MANUFACTURER_SHARPLITE
 
 /obj/item/gun/energy/laser/captain
@@ -105,7 +118,7 @@
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/accelerator)
 	ammo_x_offset = 3
-	manufacturer = MANUFACTURER_SHARPLITE
+	manufacturer = MANUFACTURER_NONE
 
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
@@ -179,7 +192,7 @@
 	inhand_y_dimension = 64
 	icon_state = "iotshotgun"
 	item_state = "shotgun_combat"
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima)
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/shotgun)
 	w_class = WEIGHT_CLASS_BULKY
 	var/obj/item/modular_computer/integratedNTOS
 	var/NTOS_type = /obj/item/modular_computer/internal
@@ -199,7 +212,7 @@
 
 /obj/item/gun/energy/laser/iot/lethal
 	desc = "An energy shotgun with an integrated computer system for surveillance and statistics tracking. This one appears to be modified to fire lethal beams."
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/ultima)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/shotgun)
 
 /obj/item/gun/energy/laser/hitscanpistol
 	name = "experimental laser gun"
@@ -217,7 +230,7 @@
 		/obj/item/stock_parts/cell/gun/mini,
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/hitscan)
-	manufacturer = MANUFACTURER_SHARPLITE_NEW
+	manufacturer = MANUFACTURER_SHARPLITE
 
 /obj/item/gun/energy/laser/hitscanpistol/examine_more(mob/user)
 	. = ..()
