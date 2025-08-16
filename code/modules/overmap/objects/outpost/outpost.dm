@@ -56,6 +56,7 @@
 	var/datum/faction/faction
 	/// simple var that toggles the flag on/off, neant for eventing purposes
 	var/flag_overlay = TRUE
+	var/outpost_name
 
 /datum/overmap/outpost/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
 	. = ..()
@@ -138,6 +139,8 @@
 
 // Shamelessly cribbed from how Elite: Dangerous does station names.
 /datum/overmap/outpost/proc/gen_outpost_name()
+	if(main_template?.outpost_name)
+		return "[main_template.outpost_name]"
 	return "[random_species_name()] [pick(GLOB.station_suffixes)]"
 
 /proc/random_species_name()
