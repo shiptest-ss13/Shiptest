@@ -117,3 +117,29 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/TURRETS
 	name = "ICW Base TURRETS"
 	icon_state = "red"
+
+//Salvage Facility
+
+/area/ruin/wasteplanet/facility
+	name = "Central Hallway"
+	icon_state = "bluenew"
+
+/area/ruin/wasteplanet/facility/westbay
+	name = "Salvage Bay West"
+	icon_state = "green"
+
+/area/ruin/wasteplanet/facility/eastbay
+	name = "Salvage Bay East"
+	icon_state = "yellow"
+
+/area/ruin/wasteplanet/facility/crew
+	name = "Crew Area"
+	icon_state = "purple"
+
+/area/ruin/wasteplanet/facility/northwing
+	name = "North Wing"
+	icon_state = "fmaint"
+
+/area/ruin/wasteplanet/facility/southwing
+	name = "South Wing"
+	icon_state = "amaint"
