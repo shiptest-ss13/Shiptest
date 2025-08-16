@@ -182,7 +182,7 @@
 	..()
 
 /datum/reagent/medicine/silfrine/on_mob_life(mob/living/carbon/M)
-	var/effectiveness_multiplier = clamp(M.getBruteLoss()/100, 0.3, 1.5)
+	var/effectiveness_multiplier = clamp(M.getBruteLoss()/75, 0.3, 1.5)
 	var/brute_heal = effectiveness_multiplier * REM * -4
 	M.adjustBruteLoss(brute_heal, 0)
 	..()
