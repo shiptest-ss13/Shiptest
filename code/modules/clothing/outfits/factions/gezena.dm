@@ -3,12 +3,6 @@
 	faction = FACTION_PLAYER_GEZENA
 	// faction_icon = "bg_pgf"
 
-/datum/outfit/job/gezena/post_equip(mob/living/carbon/human/H, visualsOnly)
-	. = ..()
-	if(visualsOnly)
-		return
-	H.grant_language(/datum/language/kalixcian_common)
-
 //Playable Roles (put in ships):
 /datum/outfit/job/gezena/assistant
 	name = "PGF - Crewman"
