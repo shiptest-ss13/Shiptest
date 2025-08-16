@@ -2240,7 +2240,7 @@
 
 /datum/reagent/crystal_reagent
 	name = "Crystal Reagent"
-	description = "A strange crystal substance. Heals faster than omnizine."
+	description = "A strange crystal substance. Heals faster than Panacea."
 	reagent_state = LIQUID
 	color = "#1B9681"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM

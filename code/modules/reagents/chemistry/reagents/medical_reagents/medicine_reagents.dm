@@ -182,7 +182,7 @@
 	..()
 
 /datum/reagent/medicine/silfrine/on_mob_life(mob/living/carbon/M)
-	var/effectiveness_multiplier = clamp(M.bruteloss/100, 0.3, 1.5)
+	var/effectiveness_multiplier = clamp(M.getBruteLoss()/100, 0.3, 1.5)
 	var/brute_heal = effectiveness_multiplier * REM * -4
 	M.adjustBruteLoss(brute_heal, 0)
 	..()
@@ -754,11 +754,10 @@
 	overdose_threshold = 30
 
 /datum/reagent/medicine/cureall/on_mob_life(mob/living/carbon/M)
-	if(prob(80))
-		M.adjustBruteLoss(-0.25*REM, 0)
-		M.adjustFireLoss(-0.25*REM, 0)
-		M.adjustToxLoss(-0.25*REM, 0)
-		. = 1
+	M.adjustBruteLoss(-0.3*REM, 0)
+	M.adjustFireLoss(-0.3*REM, 0)
+	M.adjustToxLoss(-0.3*REM, 0)
+	. = 1
 	..()
 
 /datum/reagent/medicine/cureall/overdose_process(mob/living/M)

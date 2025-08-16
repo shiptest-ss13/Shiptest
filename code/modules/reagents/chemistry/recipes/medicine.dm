@@ -107,6 +107,17 @@
 	results = list(/datum/reagent/medicine/cureall = 3)
 	required_reagents = list(/datum/reagent/medicine/alvitane = 1, /datum/reagent/medicine/indomide = 1, /datum/reagent/medicine/charcoal = 1)
 
+/datum/chemical_reaction/cureall_alternative
+	results = list(/datum/reagent/medicine/cureall = 5)
+	required_reagents = list(/datum/reagent/medicine/panacea/effluvial = 5, /datum/reagent/toxin/plasma = 1)
+	mix_message = "The plasma begins tinting the compound as it incorporates into the mix"
+
+/datum/chemical_reaction/panacea
+	results = list(/datum/reagent/medicine/panacea = 5)
+	required_reagents = list(/datum/reagent/medicine/panacea/effluvial = 3, /datum/reagent/stable_plasma = 1, /datum/chemical_reaction/cryoxadone = 1)
+	required_temp = 78
+	is_cold_recipe = TRUE
+
 /datum/chemical_reaction/hunter_extract
 	results = list(/datum/reagent/medicine/hunter_extract = 5)
 	required_reagents = list(/datum/reagent/consumable/vitfro = 1, /datum/reagent/medicine/puce_essence = 2,  /datum/reagent/toxin/plasma = 2)

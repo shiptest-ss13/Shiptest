@@ -43,7 +43,7 @@
 
 /datum/blackmarket_item/consumable/syndie_cigs
 	name = "Syndicate Cigarettes"
-	desc = "Who said smoking was bad for you? These omnizine laced cigarettes will have you feeling like a million bucks!"
+	desc = "Who said smoking was bad for you? These Panacea laced cigarettes will have you feeling like a million bucks!"
 	item = /obj/item/storage/fancy/cigarettes/cigpack_syndicate
 
 	cost_min = 50
