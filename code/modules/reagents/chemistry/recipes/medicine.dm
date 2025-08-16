@@ -114,7 +114,7 @@
 
 /datum/chemical_reaction/panacea
 	results = list(/datum/reagent/medicine/panacea = 5)
-	required_reagents = list(/datum/reagent/medicine/panacea/effluvial = 3, /datum/reagent/stable_plasma = 1, /datum/chemical_reaction/cryoxadone = 1)
+	required_reagents = list(/datum/reagent/medicine/panacea/effluvial = 3, /datum/reagent/stable_plasma = 1, /datum/reagent/medicine/cryoxadone = 1)
 	required_temp = 78
 	is_cold_recipe = TRUE
 
