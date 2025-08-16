@@ -702,6 +702,13 @@ SUBSYSTEM_DEF(overmap)
 		quaternary_dock.adjust_dock_for_landing = TRUE
 		docking_ports += quaternary_dock
 
+	else // we've spawned a ruin and are now checking for any docks that it has
+		for(var/obj/docking_port/stationary/port as obj in SSshuttle.stationary)
+			if(port.virtual_z() == vlevel.id)
+				if(port in docking_ports)
+					continue
+				docking_ports += port
+
 	var/list/datum/weakref/spawned_mission_pois = list()
 	for(var/obj/effect/landmark/mission_poi/mission_poi in SSmissions.unallocated_pois)
 		if(!vlevel.is_in_bounds(mission_poi))

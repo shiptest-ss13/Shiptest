@@ -37,6 +37,9 @@
 	/// Whether or not the overmap object is currently docking.
 	var/docking
 
+	/// Whether this can attempt to dock to the special ports on the outpost
+	var/outpost_special_dock_perms = FALSE
+
 	/// Current overmap we are apart of.
 	var/datum/overmap_star_system/current_overmap
 	/// List of all datums docked in this datum.

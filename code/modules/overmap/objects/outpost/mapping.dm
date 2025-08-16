@@ -15,7 +15,6 @@ GLOBAL_LIST_EMPTY(outpost_landmarks)
 	GLOB.outpost_landmarks -= src
 	. = ..()
 
-
 /obj/effect/landmark/outpost/hangar_dock
 	name = "hangar dock landmark"
 
@@ -70,3 +69,10 @@ GLOBAL_LIST_EMPTY(outpost_landmarks)
 /obj/machinery/light/floor/hangar/LateInitialize()
 	. = ..()
 	brightness = 20
+
+/obj/effect/landmark/outpost/subshuttle_dock
+	name = "subshuttle outpost dock landmark"
+	var/datum/map_template/shuttle/subship_template = /datum/map_template/shuttle/subshuttles/tanto //place holder
+
+/obj/effect/landmark/outpost/subshuttle_dock/proc/set_up_dock(datum/overmap/outpost/parent_outpost)
+	new /obj/effect/landmark/subship/outpost(loc, subship_template, parent_outpost)
