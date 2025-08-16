@@ -597,6 +597,9 @@
 	light_range = 0
 	light_power = 0
 
+/area/overmap_encounter/planetoid/asteroid/explored
+	area_flags = VALID_TERRITORY
+
 /area/overmap_encounter/planetoid/gas_giant
 	name = "\improper Gas Giant"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
