@@ -375,6 +375,11 @@
 /obj/item/storage/guncase/energy/e10
 	gun_type = /obj/item/gun/energy/laser/e10
 
+/* Frontiersmen */
+/obj/item/storage/guncase/pounder
+	gun_type = /obj/item/gun/ballistic/automatic/smg/pounder
+	mag_type = /obj/item/ammo_box/magazine/c22lr_pounder_pan
+
 /* underbarrel guns */
 /obj/item/storage/guncase/underbarrel_shotgun
 	gun_type = /obj/item/attachment/gun/ballistic/shotgun
