@@ -249,6 +249,24 @@
 	crate_name = "beam gun crate"
 	faction = /datum/faction/pgf
 
+/datum/supply_pack/gun/laser/kalix/nock
+	name = "Etherbor VG-F3 Beam Volleygun Crate"
+	desc = "Contains a single VG-F3 Beam Volleygun, a civilian-grade duck's foot styled volleygun developed in the PGF, manufactured by Etherbor Industries."
+	cost = 3000
+	contains = list(/obj/item/storage/guncase/energy/kalixnock)
+	crate_name = "beam volleygun crate"
+	faction = /datum/faction/pgf
+
+/datum/supply_pack/gun/laser/vga5
+	name = "Etherbor VG-A5 Beam Volleygun Crate"
+	desc = "Contains a single VG-A5 Beam Volleygun, a military-grade duck's foot styled volleygun developed in the PGF and manufactured by Etherbor Industries for use within the Marine Corps."
+	cost = 4000
+	contains = list(/obj/item/storage/guncase/energy/vga5)
+	crate_name = "beam volleygun crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/gun/laser/bg16
 	name = "Etherbor BG-16 Beam Gun Crate"
 	desc = "Contains a single BG-16 Beam Gun, a military-grade automatic developed in the PGF and manufactured by Etherbor Industries for use within the Marine Corps."
