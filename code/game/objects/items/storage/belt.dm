@@ -271,10 +271,10 @@
 
 /obj/item/storage/belt/medical/webbing/combat/PopulateContents()
 	. = ..()
-	new /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor(src)
-	new /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor(src)
-	new /obj/item/reagent_containers/medigel/silver_sulf(src)
-	new /obj/item/reagent_containers/medigel/styptic(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimpack(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimpack(src)
+	new /obj/item/reagent_containers/medigel/hadrakine(src)
+	new /obj/item/reagent_containers/medigel/quardexane(src)
 	new /obj/item/stack/medical/gauze/twelve(src)
 	new /obj/item/stack/medical/splint(src)
 
