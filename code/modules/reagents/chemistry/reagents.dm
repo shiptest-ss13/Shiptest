@@ -22,6 +22,8 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/description = ""
 	///J/(K*mol)
 	var/specific_heat = SPECIFIC_HEAT_DEFAULT
+	///Temperature of the reagent when first created (for example: ice starting cold)
+	var/default_temp = T20C
 	/// used by taste messages
 	var/taste_description = "metaphorical salt"
 	///how this taste compares to others. Higher values means it is more noticable
