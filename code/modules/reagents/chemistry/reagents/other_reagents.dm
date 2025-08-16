@@ -1626,7 +1626,6 @@
 	/turf/open/lava,
 	/turf/open/water/acid,
 	/turf/open/floor/plating/moss,
-	/turf/open/floor/plating/grass
 	)
 
 /datum/reagent/genesis/expose_turf(turf/exposed_turf, reac_volume)

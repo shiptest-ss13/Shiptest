@@ -48,35 +48,23 @@
 	light_range = 2
 	light_power = 0.80
 
-/turf/open/floor/plating/grass/beach
-	icon = 'icons/turf/floors/grass.dmi'
+/turf/open/floor/plating/asteroid/dirt/grass/beach
 	baseturfs = /turf/open/floor/plating/asteroid/sand
 	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
 	light_color = COLOR_BEACHPLANET_LIGHT
 	planetary_atmos = TRUE
 
-/turf/open/floor/plating/grass/beach/lit
-	light_color = COLOR_BEACHPLANET_LIGHT
-	light_range = 2
-	light_power = 0.80
-
-/turf/open/floor/plating/grass/beach/dark
-	icon = 'icons/turf/floors/junglegrass.dmi'
-	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
-
-/turf/open/floor/plating/grass/beach/dark/lit
-	light_range = 2
-	light_power = 0.80
-
-/turf/open/floor/plating/dirt/beach
+/turf/open/floor/plating/asteroid/dirt/grass/dark/beach
 	baseturfs = /turf/open/floor/plating/asteroid/sand
 	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
 	light_color = COLOR_BEACHPLANET_LIGHT
 	planetary_atmos = TRUE
 
-/turf/open/floor/plating/dirt/beach/lit
-	light_range = 2
-	light_power = 0.80
+/turf/open/floor/plating/asteroid/dirt/beach
+	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
+	light_color = COLOR_BEACHPLANET_LIGHT
+	planetary_atmos = TRUE
+	baseturfs = /turf/open/floor/plating/asteroid/dirt/beach
 
 /* non organic */
 
