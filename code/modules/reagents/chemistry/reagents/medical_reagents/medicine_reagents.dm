@@ -681,7 +681,7 @@
 	color = "#DCDCDC"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 30
-	var/healing = 0.5
+	var/healing = 1
 
 /datum/reagent/medicine/panacea/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-healing*REM, 0)
