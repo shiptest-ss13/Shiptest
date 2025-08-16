@@ -30,3 +30,22 @@
 	. = ..()
 	if(. == TRUE)
 		do_sparks(1, TRUE, src)
+
+/obj/structure/hazard/electrical/electric_sparks
+	name = "electric sparks"
+	desc = "electrical sparks crackling with power!"
+	icon_state = "electrified"
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF | HYPERSPACE_PROOF
+	move_resist = INFINITY
+	obj_flags = 0
+	density = FALSE
+	random_sparks = TRUE
+	random_zap = TRUE
+	contact_damage = 10
+	random_min = 2 SECONDS
+	random_max = 4 SECONDS
+
+/obj/structure/hazard/electrical/electric_sparks/alarm
+	on = FALSE
+	alarm_sensitive = TRUE
