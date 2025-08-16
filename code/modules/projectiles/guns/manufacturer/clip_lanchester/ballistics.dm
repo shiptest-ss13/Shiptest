@@ -556,6 +556,8 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	fire_select_icon_state_prefix = "clip_"
 	adjust_fire_select_icon_state_on_safety = TRUE
 
+NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
+
 /obj/item/gun/ballistic/automatic/hmg/cm40
 	name = "\improper CM-40"
 	desc = "A light machine gun used by CLIP heavy weapons teams, capable of withering suppressive fire. The weight and recoil make it nearly impossible to use without deploying the bipod against appropriate cover, such as a table, or bracing against solid cover. Chambered in 7.62x40mm CLIP."
