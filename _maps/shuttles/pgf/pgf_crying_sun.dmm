@@ -2026,6 +2026,12 @@
 /obj/effect/turf_decal/corner/opaque/purple,
 /turf/open/floor/vault,
 /area/ship/security/armory)
+"qJ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/pod,
+/area/ship/hangar/starboard)
 "qV" = (
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 8
@@ -5454,6 +5460,9 @@
 	pixel_y = 19
 	},
 /obj/item/radio/intercom/directional/north,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hangar/starboard)
 "Rg" = (
@@ -7355,7 +7364,7 @@ oC
 IF
 SB
 QU
-eB
+qJ
 eB
 eB
 eB
