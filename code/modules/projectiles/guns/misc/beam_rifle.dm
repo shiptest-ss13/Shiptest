@@ -6,7 +6,7 @@
 
 #define AUTOZOOM_PIXEL_STEP_FACTOR 48
 
-#define AIMING_BEAM_ANGLE_CHANGE_THRESHOLD 0.1
+// #define AIMING_BEAM_ANGLE_CHANGE_THRESHOLD 0.1
 
 /obj/item/gun/energy/beam_rifle
 	name = "particle acceleration rifle"
@@ -34,19 +34,19 @@
 		/obj/item/stock_parts/cell/gun/large,
 	)
 	canMouseDown = TRUE
-	var/aiming = FALSE
-	var/aiming_time = 12
-	var/aiming_time_fire_threshold = 5
-	var/aiming_time_left = 12
-	var/aiming_time_increase_user_movement = 3
-	var/scoped_slow = 1
-	var/aiming_time_increase_angle_multiplier = 0.3
-	var/last_process = 0
+	// var/aiming = FALSE
+	// var/aiming_time = 12
+	// var/aiming_time_fire_threshold = 5
+	// var/aiming_time_left = 12
+	// var/aiming_time_increase_user_movement = 3
+	// var/scoped_slow = 1
+	// var/aiming_time_increase_angle_multiplier = 0.3
+	// var/last_process = 0
 
-	var/lastangle = 0
-	var/aiming_lastangle = 0
-	var/mob/current_user = null
-	var/list/obj/effect/projectile/tracer/current_tracers
+	// var/lastangle = 0
+	// var/aiming_lastangle = 0
+	// var/mob/current_user = null
+	// var/list/obj/effect/projectile/tracer/current_tracers
 
 	var/structure_piercing = 2				//Amount * 2. For some reason structures aren't respecting this unless you have it doubled. Probably with the objects in question's Bump() code instead of this but I'll deal with this later.
 	var/structure_bleed_coeff = 0.7
@@ -62,8 +62,8 @@
 	var/projectile_damage = 30
 	var/projectile_stun = 0
 	var/projectile_setting_pierce = TRUE
-	var/delay = 25
-	var/lastfire = 0
+	// var/delay = 25
+	// var/lastfire = 0
 
 	//ZOOMING
 	var/zoom_current_view_increase = 0
@@ -76,7 +76,7 @@
 	var/current_zoom_y = 0
 
 	var/datum/action/item_action/zoom_lock_action/zoom_lock_action
-	var/mob/listeningTo
+	// var/mob/listeningTo
 
 /obj/item/gun/energy/beam_rifle/debug
 	delay = 0
@@ -87,17 +87,17 @@
 	aiming_time = 0
 	recoil = 0
 
-/obj/item/gun/energy/beam_rifle/equipped(mob/user)
-	set_user(user)
-	return ..()
+// /obj/item/gun/energy/beam_rifle/equipped(mob/user)
+// 	set_user(user)
+// 	return ..()
 
-/obj/item/gun/energy/beam_rifle/pickup(mob/user)
-	set_user(user)
-	return ..()
+// /obj/item/gun/energy/beam_rifle/pickup(mob/user)
+// 	set_user(user)
+// 	return ..()
 
-/obj/item/gun/energy/beam_rifle/dropped(mob/user)
-	set_user()
-	return ..()
+// /obj/item/gun/energy/beam_rifle/dropped(mob/user)
+// 	set_user()
+// 	return ..()
 
 /obj/item/gun/energy/beam_rifle/ui_action_click(mob/user, actiontype)
 	if(istype(actiontype, zoom_lock_action))
@@ -157,24 +157,24 @@
 	aiming_beam()
 
 /obj/item/gun/energy/beam_rifle/proc/update_slowdown()
-	if(aiming)
-		slowdown = scoped_slow
-	else
-		slowdown = initial(slowdown)
+	// if(aiming)
+	// 	slowdown = scoped_slow
+	// else
+	// 	slowdown = initial(slowdown)
 
 /obj/item/gun/energy/beam_rifle/Initialize()
 	. = ..()
 	fire_delay = delay
-	current_tracers = list()
-	START_PROCESSING(SSfastprocess, src)
+	// current_tracers = list()
+	// START_PROCESSING(SSfastprocess, src)
 	zoom_lock_action = new(src)
 
-/obj/item/gun/energy/beam_rifle/Destroy()
-	STOP_PROCESSING(SSfastprocess, src)
-	set_user(null)
-	QDEL_LIST(current_tracers)
-	listeningTo = null
-	return ..()
+// /obj/item/gun/energy/beam_rifle/Destroy()
+// 	STOP_PROCESSING(SSfastprocess, src)
+// 	set_user(null)
+// 	QDEL_LIST(current_tracers)
+// 	listeningTo = null
+// 	return ..()
 
 /obj/item/gun/energy/beam_rifle/emp_act(severity)
 	. = ..()
@@ -183,124 +183,124 @@
 	chambered = null
 	recharge_newshot()
 
-/obj/item/gun/energy/beam_rifle/proc/aiming_beam(force_update = FALSE)
-	var/diff = abs(aiming_lastangle - lastangle)
-	if(!check_user())
-		return
-	if(diff < AIMING_BEAM_ANGLE_CHANGE_THRESHOLD && !force_update)
-		return
-	aiming_lastangle = lastangle
-	var/obj/projectile/beam/beam_rifle/hitscan/aiming_beam/P = new
-	P.gun = src
-	P.wall_pierce_amount = wall_pierce_amount
-	P.structure_pierce_amount = structure_piercing
-	P.do_pierce = projectile_setting_pierce
-	if(aiming_time)
-		var/percent = ((100/aiming_time)*aiming_time_left)
-		P.color = rgb(255 * percent,255 * ((100 - percent) / 100),0)
-	else
-		P.color = rgb(0, 255, 0)
-	var/turf/curloc = get_turf(src)
-	var/turf/targloc = get_turf(current_user.client.mouseObject)
-	if(!istype(targloc))
-		if(!istype(curloc))
-			return
-		targloc = get_turf_in_angle(lastangle, curloc, 10)
-	var/mouse_modifiers = params2list(current_user.client.mouseParams)
-	P.preparePixelProjectile(targloc, current_user, mouse_modifiers, 0)
-	P.fire(lastangle)
+// /obj/item/gun/energy/beam_rifle/proc/aiming_beam(force_update = FALSE)
+// 	var/diff = abs(aiming_lastangle - lastangle)
+// 	if(!check_user())
+// 		return
+// 	if(diff < AIMING_BEAM_ANGLE_CHANGE_THRESHOLD && !force_update)
+// 		return
+// 	aiming_lastangle = lastangle
+// 	var/obj/projectile/beam/beam_rifle/hitscan/aiming_beam/P = new
+// 	P.gun = src
+// 	P.wall_pierce_amount = wall_pierce_amount <<< may need to set this
+// 	P.structure_pierce_amount = structure_piercing
+// 	P.do_pierce = projectile_setting_pierce
+// 	if(aiming_time)
+// 		var/percent = ((100/aiming_time)*aiming_time_left)
+// 		P.color = rgb(255 * percent,255 * ((100 - percent) / 100),0)
+// 	else
+// 		P.color = rgb(0, 255, 0)
+// 	var/turf/curloc = get_turf(src)
+// 	var/turf/targloc = get_turf(current_user.client.mouseObject)
+// 	if(!istype(targloc))
+// 		if(!istype(curloc))
+// 			return
+// 		targloc = get_turf_in_angle(lastangle, curloc, 10)
+// 	var/mouse_modifiers = params2list(current_user.client.mouseParams)
+// 	P.preparePixelProjectile(targloc, current_user, mouse_modifiers, 0)
+// 	P.fire(lastangle)
 
-/obj/item/gun/energy/beam_rifle/process(seconds_per_tick)
-	if(!aiming)
-		last_process = world.time
-		return
-	check_user()
-	handle_zooming()
-	aiming_time_left = max(0, aiming_time_left - (world.time - last_process))
-	aiming_beam(TRUE)
-	last_process = world.time
+// /obj/item/gun/energy/beam_rifle/process(seconds_per_tick)
+// 	if(!aiming)
+// 		last_process = world.time
+// 		return
+// 	check_user()
+// 	handle_zooming()
+// 	aiming_time_left = max(0, aiming_time_left - (world.time - last_process))
+// 	aiming_beam(TRUE)
+// 	last_process = world.time
 
-/obj/item/gun/energy/beam_rifle/proc/check_user(automatic_cleanup = TRUE)
-	if(!istype(current_user) || !isturf(current_user.loc) || !(src in current_user.held_items) || current_user.incapacitated())	//Doesn't work if you're not holding it!
-		if(automatic_cleanup)
-			stop_aiming()
-			set_user(null)
-		return FALSE
-	return TRUE
+// /obj/item/gun/energy/beam_rifle/proc/check_user(automatic_cleanup = TRUE)
+// 	if(!istype(current_user) || !isturf(current_user.loc) || !(src in current_user.held_items) || current_user.incapacitated())	//Doesn't work if you're not holding it!
+// 		if(automatic_cleanup)
+// 			stop_aiming()
+// 			set_user(null)
+// 		return FALSE
+// 	return TRUE
 
-/obj/item/gun/energy/beam_rifle/proc/process_aim()
-	if(istype(current_user) && current_user.client && current_user.client.mouseParams)
-		var/angle = mouse_angle_from_client(current_user.client)
-		current_user.setDir(angle2dir_cardinal(angle))
-		var/difference = abs(closer_angle_difference(lastangle, angle))
-		delay_penalty(difference * aiming_time_increase_angle_multiplier)
-		lastangle = angle
+// /obj/item/gun/energy/beam_rifle/proc/process_aim()
+// 	if(istype(current_user) && current_user.client && current_user.client.mouseParams)
+// 		var/angle = mouse_angle_from_client(current_user.client)
+// 		current_user.setDir(angle2dir_cardinal(angle))
+// 		var/difference = abs(closer_angle_difference(lastangle, angle))
+// 		delay_penalty(difference * aiming_time_increase_angle_multiplier)
+// 		lastangle = angle
 
-/obj/item/gun/energy/beam_rifle/proc/on_mob_move()
-	check_user()
-	if(aiming)
-		delay_penalty(aiming_time_increase_user_movement)
-		process_aim()
-		aiming_beam(TRUE)
+// /obj/item/gun/energy/beam_rifle/proc/on_mob_move()
+// 	check_user()
+// 	if(aiming)
+// 		delay_penalty(aiming_time_increase_user_movement)
+// 		process_aim()
+// 		aiming_beam(TRUE)
 
-/obj/item/gun/energy/beam_rifle/proc/start_aiming()
-	aiming_time_left = aiming_time
-	aiming = TRUE
-	process_aim()
-	aiming_beam(TRUE)
-	zooming_angle = lastangle
-	start_zooming()
+// /obj/item/gun/energy/beam_rifle/proc/start_aiming()
+// 	aiming_time_left = aiming_time
+// 	aiming = TRUE
+// 	process_aim()
+// 	aiming_beam(TRUE)
+// 	zooming_angle = lastangle
+// 	start_zooming()
 
-/obj/item/gun/energy/beam_rifle/proc/stop_aiming(mob/user)
-	set waitfor = FALSE
-	aiming_time_left = aiming_time
-	aiming = FALSE
-	QDEL_LIST(current_tracers)
-	stop_zooming(user)
+// /obj/item/gun/energy/beam_rifle/proc/stop_aiming(mob/user)
+// 	set waitfor = FALSE
+// 	aiming_time_left = aiming_time
+// 	aiming = FALSE
+// 	QDEL_LIST(current_tracers)
+// 	stop_zooming(user)
 
-/obj/item/gun/energy/beam_rifle/proc/set_user(mob/user)
-	if(user == current_user)
-		return
-	stop_aiming(current_user)
-	if(listeningTo)
-		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
-		listeningTo = null
-	if(istype(current_user))
-		current_user = null
-	if(istype(user))
-		current_user = user
-		RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(on_mob_move))
-		listeningTo = user
+// /obj/item/gun/energy/beam_rifle/proc/set_user(mob/user)
+// 	if(user == current_user)
+// 		return
+// 	stop_aiming(current_user)
+// 	if(listeningTo)
+// 		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
+// 		listeningTo = null
+// 	if(istype(current_user))
+// 		current_user = null
+// 	if(istype(user))
+// 		current_user = user
+// 		RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(on_mob_move))
+// 		listeningTo = user
 
-/obj/item/gun/energy/beam_rifle/onMouseDrag(src_object, over_object, src_location, over_location, params, mob)
-	if(aiming)
-		process_aim()
-		aiming_beam()
-		if(zoom_lock == ZOOM_LOCK_AUTOZOOM_FREEMOVE)
-			zooming_angle = lastangle
-			set_autozoom_pixel_offsets_immediate(zooming_angle)
-	return ..()
+// /obj/item/gun/energy/beam_rifle/onMouseDrag(src_object, over_object, src_location, over_location, params, mob)
+// 	if(aiming)
+// 		process_aim()
+// 		aiming_beam()
+// 		if(zoom_lock == ZOOM_LOCK_AUTOZOOM_FREEMOVE)
+// 			zooming_angle = lastangle
+// 			set_autozoom_pixel_offsets_immediate(zooming_angle)
+// 	return ..()
 
-/obj/item/gun/energy/beam_rifle/onMouseDown(object, location, params, mob/mob)
-	if(istype(mob))
-		set_user(mob)
-	if(istype(object, /atom/movable/screen) && !istype(object, /atom/movable/screen/click_catcher))
-		return
-	if((object in mob.contents) || (object == mob))
-		return
-	start_aiming()
-	return ..()
+// /obj/item/gun/energy/beam_rifle/onMouseDown(object, location, params, mob/mob)
+// 	if(istype(mob))
+// 		set_user(mob)
+// 	if(istype(object, /atom/movable/screen) && !istype(object, /atom/movable/screen/click_catcher))
+// 		return
+// 	if((object in mob.contents) || (object == mob))
+// 		return
+// 	start_aiming()
+// 	return ..()
 
-/obj/item/gun/energy/beam_rifle/onMouseUp(object, location, params, mob/M)
-	if(istype(object, /atom/movable/screen) && !istype(object, /atom/movable/screen/click_catcher))
-		return
-	process_aim()
-	if(aiming_time_left <= aiming_time_fire_threshold && check_user())
-		sync_ammo()
-		afterattack(M.client.mouseObject, M, FALSE, M.client.mouseParams, passthrough = TRUE)
-	stop_aiming()
-	QDEL_LIST(current_tracers)
-	return ..()
+// /obj/item/gun/energy/beam_rifle/onMouseUp(object, location, params, mob/M)
+// 	if(istype(object, /atom/movable/screen) && !istype(object, /atom/movable/screen/click_catcher))
+// 		return
+// 	process_aim()
+// 	if(aiming_time_left <= aiming_time_fire_threshold && check_user())
+// 		sync_ammo()
+// 		afterattack(M.client.mouseObject, M, FALSE, M.client.mouseParams, passthrough = TRUE)
+// 	stop_aiming()
+// 	QDEL_LIST(current_tracers)
+// 	return ..()
 
 /obj/item/gun/energy/beam_rifle/afterattack(atom/target, mob/living/user, flag, params, passthrough = FALSE)
 	if(flag) //It's adjacent, is the user, or is on the user's person
@@ -322,8 +322,8 @@
 	for(var/obj/item/ammo_casing/energy/beam_rifle/AC in contents)
 		AC.sync_stats()
 
-/obj/item/gun/energy/beam_rifle/proc/delay_penalty(amount)
-	aiming_time_left = clamp(aiming_time_left + amount, 0, aiming_time)
+// /obj/item/gun/energy/beam_rifle/proc/delay_penalty(amount)
+// 	aiming_time_left = clamp(aiming_time_left + amount, 0, aiming_time)
 
 /obj/item/ammo_casing/energy/beam_rifle
 	name = "particle acceleration lens"
