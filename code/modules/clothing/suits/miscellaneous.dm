@@ -54,14 +54,6 @@
 	allowed = list(/obj/item/storage/fancy/cigarettes, /obj/item/spacecash/bundle)
 	flags_inv = HIDEJUMPSUIT
 
-
-/obj/item/clothing/suit/apron/overalls
-	name = "coveralls"
-	desc = "A set of denim overalls."
-	icon_state = "overalls"
-	item_state = "overalls"
-	body_parts_covered = CHEST|GROIN|LEGS
-
 /obj/item/clothing/suit/apron/purple_bartender
 	name = "purple bartender apron"
 	desc = "A fancy purple apron for a stylish person."
@@ -254,6 +246,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	cold_protection = CHEST|GROIN|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	supports_variations = KEPORI_VARIATION
 
 	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
 	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
@@ -284,22 +277,6 @@
 	desc = "A long, supple leather coat. Ideal for protecting its wearer from rain, sun, dust, and paperwork."
 	icon_state = "duster_command"
 	item_state = "duster_command"
-
-/obj/item/clothing/suit/jacket/puffer
-	name = "puffer jacket"
-	desc = "A thick jacket with a rubbery, water-resistant shell."
-	icon_state = "pufferjacket"
-	item_state = "hostrench"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 50, "rad" = 0, "fire" = 0, "acid" = 0)
-
-/obj/item/clothing/suit/jacket/puffer/vest
-	name = "puffer vest"
-	desc = "A thick vest with a rubbery, water-resistant shell."
-	icon_state = "puffervest"
-	item_state = "armor"
-	body_parts_covered = CHEST|GROIN
-	cold_protection = CHEST|GROIN
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 30, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/jacket/miljacket
 	name = "military jacket"
@@ -453,3 +430,13 @@
 	equip_delay_self = EQUIP_DELAY_COAT
 	equip_delay_other = EQUIP_DELAY_COAT * 1.5
 	strip_delay = EQUIP_DELAY_COAT * 1.5
+
+/obj/item/clothing/suit/hawaiian/pink
+	name = "floral shirt"
+	desc = "From grills to guns, this shirt's seen it all."
+	icon_state = "hawaiian_pink"
+
+/obj/item/clothing/suit/hawaiian/red
+	name = "floral shirt"
+	desc = "From grills to guns, this shirt's seen it all."
+	icon_state = "hawaiian_red"

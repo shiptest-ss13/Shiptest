@@ -27,8 +27,9 @@
 	attack_verb_continuous = "bites"
 	attack_verb_simple = "bite"
 	attack_sound = 'sound/weapons/bite.ogg'
+	sharpness = SHARP_POINTY
 	//attack_vis_effect = ATTACK_EFFECT_BITE
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/effect/decal/cleanable/brimdust = 1)
+	butcher_results = list(/obj/item/food/meat/slab = 2, /obj/effect/decal/cleanable/brimdust = 1)
 	loot = list()
 	robust_searching = TRUE
 	footstep_type = FOOTSTEP_MOB_CLAW

@@ -15,18 +15,14 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/mining_charges = 6
 	//Classification of the quality of possible ores within a vein
 	//Used to determine difficulty & ore amounts
-	//Intended to range from class one to class three
+	//Intended to range from class one to class three. Class four exists as a mission landmark
 	var/vein_class = 1
 	//A weighted list of all possible ores that can generate in a vein
 	//The design process is that class 1 veins have a small chance of generating with class 2 ores and so on
 	//As higher class veins will be increasingly harder to mine
 	var/list/ore_list = list(
-		/obj/item/stack/ore/sulfur = 40,
-		/obj/item/stack/ore/galena = 30,
-		/obj/item/stack/ore/sulfur/pyrite = 20,
-		/obj/item/stack/ore/magnetite = 20,
+		/obj/item/stack/ore/iron = 20,
 		/obj/item/stack/ore/plasma = 20,
-		/obj/item/stack/ore/malachite = 20,
 		)
 	//The post initialize list of all possible drops from the vein
 	//Meant to be player facing in the form of mining scanners
@@ -37,12 +33,9 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	//Allows subtyped veins to determine how much loot is dropped per drop_ore call
 	var/drop_rate_amount_min = 15
 	var/drop_rate_amount_max = 20
-	//Mob spawning variables
-	var/spawner_attached = FALSE //Probably a drastically less sloppy way of doing this, but it technically works
-	///is the spawner currently spawning mobs?
-	var/currently_spawning = FALSE
-	var/max_mobs = 6
-	var/spawn_time = 15 SECONDS
+	///variables for the mob spawners we generate
+	var/max_mobs = 3
+	var/spawn_time = 10 SECONDS
 	var/mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 20,
@@ -52,11 +45,38 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/faction = list("hostile","mining")
 	var/spawn_sound = list('sound/effects/break_stone.ogg')
 	var/spawner_type = /datum/component/spawner
+
+	///how away from the source can mob spawners create something
+	var/spawner_distance_min = 0
+	var/spawner_distance_max = 1
+
+
+	var/currently_spawning = FALSE
+
+	///how far away can we create mob_spawners?
 	var/spawn_distance_min = 4
 	var/spawn_distance_max = 6
-	var/wave_length = 2 MINUTES
+
+
+	///a list of currently active spawners created by the vein. Used to keep us from going insane when we turn them on / off
+	var/list/active_spawners = list()
+
+	///how many waves are you expected to endure before a break
+	var/waves_per_break = 3
+	///what consequetive wave are we on? Non-consequetive waves reset this tally
+	var/wave_tally = 0
+	///how long will our spawners create mobs for?
+	var/wave_length = 45 SECONDS
+	///how long is our break after we do enough waves?
 	var/wave_downtime = 1 MINUTES
 
+	///var for a timer
+	var/wave_timer
+	//ditto
+	var/wave_end_cooldown
+
+	///the drill currently digging us
+	var/obj/machinery/drill/our_drill
 
 //Generates amount of ore able to be pulled from the vein (mining_charges) and types of ore within it (vein_contents)
 /obj/structure/vein/Initialize()
@@ -94,9 +114,67 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	return ..()
 
 /obj/structure/vein/proc/begin_spawning()
-	AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawn_distance_min, spawn_distance_max, wave_length, wave_downtime, vein_class)
-	spawner_attached = TRUE
 	currently_spawning = TRUE
+	START_PROCESSING(SSprocessing, src)
+
+/obj/structure/vein/proc/stop_spawning()
+	if(currently_spawning)
+		currently_spawning = FALSE
+		STOP_PROCESSING(SSprocessing, src)
+		COOLDOWN_RESET(src, wave_timer)
+		return FALSE
+	return TRUE
+
+/obj/structure/vein/process(seconds_per_tick)
+	if(!currently_spawning)
+		return
+	try_spawning_spawner()
+
+/obj/structure/vein/proc/try_spawning_spawner()
+	if(!COOLDOWN_FINISHED(src, wave_timer))
+		return
+	COOLDOWN_START(src, wave_timer, wave_length)
+	if(!increment_wave_tally())
+		return FALSE
+	var/breaches_to_spawn = clamp(vein_class, 1, vein_class - length(active_spawners))
+	for(var/mob_index in 1 to breaches_to_spawn)
+		if(length(active_spawners) >= vein_class)
+			return
+
+		var/turf/open/spawning_tile = pick_tile()
+
+		var/obj/effect/drill_spawner/bug_breach = new /obj/effect/drill_spawner(spawning_tile)
+		active_spawners += bug_breach
+		bug_breach.our_vein = src
+		bug_breach.AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawner_distance_min, spawner_distance_max)
+		bug_breach.start_death_timer(wave_length - 5 SECONDS)
+
+/obj/structure/vein/proc/pick_tile(list/peel)
+	if(!length(peel))
+		peel = turf_peel(spawn_distance_max, spawn_distance_min, src, TRUE)
+	var/turf/open/spawning_tile
+	if(length(peel))
+		spawning_tile = pick(peel)
+	else
+		spawning_tile = pick(circleviewturfs(loc, spawn_distance_max))
+	if(istype(spawning_tile, /turf/closed))
+		return pick_tile(peel)
+	for(var/obj/object in spawning_tile.contents)
+		if(object.density || istype(object, /obj/effect/drill_spawner))
+			return pick_tile(peel)
+	return spawning_tile
+
+/obj/structure/vein/proc/increment_wave_tally()
+	if(!our_drill || !our_drill.active)
+		wave_tally = 0
+		return TRUE
+	wave_tally += 1
+	if(wave_tally > waves_per_break)
+		wave_tally = 0
+		our_drill.say("Seismic disturbances subsiding. Estimated return in [time2text(wave_downtime, "mm:ss")].")
+		return FALSE
+	return TRUE
+
 
 //Pulls a random ore from the vein list per vein_class
 /obj/structure/vein/proc/drop_ore(multiplier,obj/machinery/drill/current)
@@ -111,10 +189,6 @@ GLOBAL_LIST_EMPTY(ore_veins)
 /obj/structure/vein/proc/destroy_effect()
 	playsound(loc,'sound/effects/explosionfar.ogg', 200, TRUE)
 	visible_message(span_boldannounce("[src] collapses!"))
-
-/obj/structure/vein/proc/toggle_spawning()
-	currently_spawning = SEND_SIGNAL(src, COMSIG_SPAWNER_TOGGLE_SPAWNING, currently_spawning)
-
 
 //
 //	Planetary and Class Subtypes
@@ -133,17 +207,13 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	mining_charges = 8
 	vein_class = 2
 	ore_list = list(
-		/obj/item/stack/ore/sulfur = 30,
-		/obj/item/stack/ore/galena = 20,
-		/obj/item/stack/ore/sulfur/pyrite = 10,
-		/obj/item/stack/ore/magnetite = 10,
+		/obj/item/stack/ore/iron = 10,
 		/obj/item/stack/ore/plasma = 10,
-		/obj/item/stack/ore/malachite = 10,
 		/obj/item/stack/ore/diamond = 1,
 		/obj/item/stack/ore/gold = 2,
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		)
-	max_mobs = 6
+	max_mobs = 2
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 30,
@@ -152,21 +222,27 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/nest = 5,
 		)
 
+/obj/structure/vein/lavaland/classtwo/rare
+	mining_charges = 12
+	vein_class = 2
+	ore_list = list(
+		/obj/item/stack/ore/plasma = 20,
+		/obj/item/stack/ore/gold = 20,
+		/obj/item/stack/ore/diamond = 5,
+		/obj/item/stack/ore/bluespace_crystal = 5
+		)
+
 /obj/structure/vein/lavaland/classthree
 	mining_charges = 10
 	vein_class = 3
 	ore_list = list(
-		/obj/item/stack/ore/sulfur = 9,
-		/obj/item/stack/ore/galena = 9,
-		/obj/item/stack/ore/sulfur/pyrite = 4,
-		/obj/item/stack/ore/magnetite = 4,
+		/obj/item/stack/ore/iron = 4,
 		/obj/item/stack/ore/plasma = 5,
-		/obj/item/stack/ore/malachite = 4,
 		/obj/item/stack/ore/diamond = 1,
 		/obj/item/stack/ore/gold = 2,
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		)
-	max_mobs = 6 //Best not to go past 6 due to balance and lag reasons
+	max_mobs = 3 //Best not to go past 6 due to balance and lag reasons
 	spawn_time = 8 SECONDS
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
@@ -174,6 +250,16 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 5,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/nest = 10,
+		)
+
+/obj/structure/vein/lavaland/classthree/rare
+	mining_charges = 14
+	vein_class = 3
+	ore_list = list(
+		/obj/item/stack/ore/plasma = 10,
+		/obj/item/stack/ore/gold = 10,
+		/obj/item/stack/ore/diamond = 8,
+		/obj/item/stack/ore/bluespace_crystal = 5,
 		)
 
 // TODO: populate all planet veins with class 4s ; this exact path should not be used, used as a templa
@@ -186,7 +272,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 /obj/structure/vein/ice
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf = 40,
-		/mob/living/simple_animal/hostile/asteroid/polarbear = 40,
+		/mob/living/basic/bear/polar = 40,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow/nest = 20,
 		/mob/living/simple_animal/hostile/asteroid/ice_demon = 5,
 		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 1,
@@ -195,15 +281,12 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	//Ice planets earn a slightly higher rare ore chance on account of them being notably harder
 	//Alongside being a much more reliable source of plasma
 	ore_list = list(
-		/obj/item/stack/ore/malachite = 40,
-		/obj/item/stack/ore/quartzite = 30,
-		/obj/item/stack/ore/hematite = 20,
+		/obj/item/stack/ore/iron = 20,
 		/obj/item/stack/ore/gold = 20,
-		/obj/item/stack/ore/rutile = 15,
+		/obj/item/stack/ore/titanium = 15,
 		/obj/item/stack/ore/plasma = 10,
-		/obj/item/stack/ore/proustite = 10,
-		/obj/item/stack/ore/autunite = 10,
-		/obj/item/stack/ore/galena = 1,
+		/obj/item/stack/ore/silver = 10,
+		/obj/item/stack/ore/uranium = 10,
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		/obj/item/stack/ore/ice = 7,
 		)
@@ -212,53 +295,58 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	mining_charges = 8
 	vein_class = 2
 	ore_list = list(
-		/obj/item/stack/ore/malachite = 20,
-		/obj/item/stack/ore/quartzite = 10,
-		/obj/item/stack/ore/hematite = 10,
+		/obj/item/stack/ore/iron = 10,
 		/obj/item/stack/ore/gold = 10,
-		/obj/item/stack/ore/rutile = 5,
+		/obj/item/stack/ore/titanium = 5,
 		/obj/item/stack/ore/plasma = 5,
-		/obj/item/stack/ore/proustite = 5,
-		/obj/item/stack/ore/autunite = 5,
-		/obj/item/stack/ore/galena = 3,
+		/obj/item/stack/ore/silver = 5,
+		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		/obj/item/stack/ore/ice = 8,
 		)
 	max_mobs = 6
 	spawn_time = 10 SECONDS
 
+/obj/structure/vein/ice/classtwo/rare
+	mining_charges = 12
+	vein_class = 2
+	ore_list = list(
+		/obj/item/stack/ore/ice = 10,
+		)
+
 /obj/structure/vein/ice/classthree
 	mining_charges = 10
 	vein_class = 3
 	ore_list = list(
-		/obj/item/stack/ore/malachite = 10,
-		/obj/item/stack/ore/quartzite = 5,
-		/obj/item/stack/ore/hematite = 2,
+		/obj/item/stack/ore/iron = 2,
 		/obj/item/stack/ore/gold = 5,
-		/obj/item/stack/ore/rutile = 5,
+		/obj/item/stack/ore/titanium = 5,
 		/obj/item/stack/ore/plasma = 5,
-		/obj/item/stack/ore/proustite = 5,
-		/obj/item/stack/ore/autunite = 5,
-		/obj/item/stack/ore/galena = 6,
+		/obj/item/stack/ore/silver = 5,
+		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/bluespace_crystal = 4,
 		/obj/item/stack/ore/ice = 8,
 		)
 	max_mobs = 6
 	spawn_time = 8 SECONDS
 
+/obj/structure/vein/ice/classthree/rare
+	mining_charges = 14
+	vein_class = 3
+	ore_list = list(
+		/obj/item/stack/ore/ice = 10,
+		)
+
 /obj/structure/vein/ice/classfour
 	mining_charges = 30
 	vein_class = 4
 	ore_list = list(
-		/obj/item/stack/ore/malachite = 10,
-		/obj/item/stack/ore/quartzite = 5,
-		/obj/item/stack/ore/hematite = 2,
+		/obj/item/stack/ore/iron = 2,
 		/obj/item/stack/ore/gold = 5,
-		/obj/item/stack/ore/rutile = 5,
+		/obj/item/stack/ore/titanium = 5,
 		/obj/item/stack/ore/plasma = 5,
-		/obj/item/stack/ore/proustite = 5,
-		/obj/item/stack/ore/autunite = 5,
-		/obj/item/stack/ore/galena = 6,
+		/obj/item/stack/ore/silver = 5,
+		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/bluespace_crystal = 4,
 		/obj/item/stack/ore/ice = 8,
 		)
@@ -270,21 +358,19 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	// class 1 has easy mobs, the ones you find on the surface
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 50,
-		/mob/living/simple_animal/hostile/bear/cave = 30,
+		/mob/living/basic/bear/cave = 30,
 		/mob/living/simple_animal/hostile/poison/giant_spider = 5,
 		/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 1,
 	)
 
 	//same surface ore drop rate too...
 	ore_list = list(
-		/obj/item/stack/ore/graphite/coal = 60,
-		/obj/item/stack/ore/malachite = 50,
-		/obj/item/stack/ore/sulfur = 40,
+		/obj/item/stack/ore/iron = 50,
 		/obj/item/stack/ore/gold = 30,
-		/obj/item/stack/ore/proustite = 20,
+		/obj/item/stack/ore/silver = 20,
+		/obj/item/stack/ore/uranium = 10,
 		/obj/item/stack/ore/diamond = 10,
-		/obj/item/stack/ore/galena = 1,
-		/obj/item/stack/ore/rutile = 1,
+		/obj/item/stack/ore/titanium = 1,
 		)
 
 /obj/structure/vein/jungle/classtwo
@@ -293,26 +379,31 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	//We then start to introduce the unused jungle mobs... slowly.
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 75,
-		/mob/living/simple_animal/hostile/bear/cave = 60,
+		/mob/living/basic/bear/cave = 60,
 		/mob/living/simple_animal/hostile/poison/giant_spider = 45,
 		/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 20,
 		/mob/living/simple_animal/hostile/jungle/seedling = 1,
 		/mob/living/simple_animal/hostile/jungle/mega_arachnid = 1,
 		/mob/living/simple_animal/hostile/jungle/mook = 1,
-		/mob/living/simple_animal/hostile/jungle/leaper = 1,
 	)
 	ore_list = list(
-		/obj/item/stack/ore/graphite/coal = 50,
-		/obj/item/stack/ore/malachite = 40,
-		/obj/item/stack/ore/sulfur = 30,
+		/obj/item/stack/ore/iron = 40,
 		/obj/item/stack/ore/gold = 20,
-		/obj/item/stack/ore/proustite = 10,
+		/obj/item/stack/ore/silver = 10,
+		/obj/item/stack/ore/uranium = 10,
 		/obj/item/stack/ore/diamond = 10,
-		/obj/item/stack/ore/galena = 4,
-		/obj/item/stack/ore/rutile = 4,
+		/obj/item/stack/ore/titanium = 4,
 		)
-	max_mobs = 6
+	max_mobs = 2
 	spawn_time = 15 SECONDS
+
+/obj/structure/vein/jungle/classtwo/rare
+	mining_charges = 12
+	vein_class = 2
+	ore_list = list(
+		/obj/item/stack/ore/gold = 10,
+		/obj/item/stack/ore/diamond = 5,
+		)
 
 /obj/structure/vein/jungle/classthree
 	mining_charges = 10
@@ -323,21 +414,26 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/jungle/seedling = 5,
 		/mob/living/simple_animal/hostile/jungle/mega_arachnid = 20,
 		/mob/living/simple_animal/hostile/jungle/mook = 30,
-		/mob/living/simple_animal/hostile/jungle/leaper = 10,
 	)
 	ore_list = list(
-		/obj/item/stack/ore/graphite/coal = 20,
-		/obj/item/stack/ore/malachite = 20,
-		/obj/item/stack/ore/sulfur = 20,
+		/obj/item/stack/ore/iron = 10,
+		/obj/item/stack/ore/uranium = 10,
 		/obj/item/stack/ore/gold = 10,
-		/obj/item/stack/ore/proustite = 10,
+		/obj/item/stack/ore/silver = 10,
 		/obj/item/stack/ore/diamond = 10,
-		/obj/item/stack/ore/galena = 6,
-		/obj/item/stack/ore/rutile = 4,
+		/obj/item/stack/ore/titanium = 4,
 		)
 	//jungle mobs are kind of fucking hard, less max
-	max_mobs = 4
+	max_mobs = 3
 	spawn_time = 10 SECONDS
+
+/obj/structure/vein/jungle/classthree/rare
+	mining_charges = 14
+	vein_class = 3
+	ore_list = list(
+		/obj/item/stack/ore/gold = 10,
+		/obj/item/stack/ore/diamond = 10,
+		)
 
 //Sand planets - more or less the same as lavaland but with the sand planet variants
 
@@ -349,13 +445,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/quartzite = 50,
-		/obj/item/stack/ore/hematite = 45,
-		/obj/item/stack/ore/rutile = 20,
+		/obj/item/stack/ore/iron = 45,
+		/obj/item/stack/ore/titanium = 20,
 		/obj/item/stack/ore/plasma = 10,
-		/obj/item/stack/ore/sulfur/pyrite = 10,
-		/obj/item/stack/ore/galena = 10,
-		/obj/item/stack/ore/autunite = 1,
+		/obj/item/stack/ore/uranium = 1,
 		/obj/item/stack/ore/diamond = 1,
 		)
 
@@ -370,35 +463,47 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/quartzite = 40,
-		/obj/item/stack/ore/hematite = 35,
-		/obj/item/stack/ore/rutile = 10,
+		/obj/item/stack/ore/iron = 35,
+		/obj/item/stack/ore/titanium = 10,
 		/obj/item/stack/ore/plasma = 5,
-		/obj/item/stack/ore/sulfur/pyrite = 5,
-		/obj/item/stack/ore/galena = 5,
-		/obj/item/stack/ore/autunite = 4,
+		/obj/item/stack/ore/uranium = 4,
 		/obj/item/stack/ore/diamond = 4,
 		)
 	max_mobs = 6
 	spawn_time = 10 SECONDS
+
+/obj/structure/vein/sand/classtwo/rare
+	mining_charges = 12
+	vein_class = 2
+	ore_list = list(
+		/obj/item/stack/ore/plasma = 10,
+		/obj/item/stack/ore/uranium = 5,
+		/obj/item/stack/ore/diamond = 2,
+		)
 
 /obj/structure/vein/sand/classthree
 	mining_charges = 10
 	vein_class = 3
 
 	ore_list = list(
-		/obj/item/stack/ore/quartzite = 15,
-		/obj/item/stack/ore/hematite = 10,
-		/obj/item/stack/ore/rutile = 5,
+		/obj/item/stack/ore/iron = 10,
+		/obj/item/stack/ore/titanium = 5,
 		/obj/item/stack/ore/plasma = 5,
-		/obj/item/stack/ore/sulfur/pyrite = 5,
-		/obj/item/stack/ore/galena = 5,
-		/obj/item/stack/ore/autunite = 6,
+		/obj/item/stack/ore/uranium = 6,
 		/obj/item/stack/ore/diamond = 6,
 		)
 
 	max_mobs = 6
 	spawn_time = 8 SECONDS
+
+/obj/structure/vein/sand/classthree/rare
+	mining_charges = 14
+	vein_class = 3
+	ore_list = list(
+		/obj/item/stack/ore/plasma = 10,
+		/obj/item/stack/ore/uranium = 10,
+		/obj/item/stack/ore/diamond = 4,
+		)
 
 // rockplanet
 
@@ -411,12 +516,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/hematite = 80,
-		/obj/item/stack/ore/sulfur = 25,
-		/obj/item/stack/ore/malachite = 20,
-		/obj/item/stack/ore/galena = 10,
-		/obj/item/stack/ore/graphite = 10,
-		/obj/item/stack/ore/autunite = 5,
+		/obj/item/stack/ore/iron = 80,
+		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/gold = 4,
 		/obj/item/stack/ore/diamond = 1,
 		/obj/item/stack/ore/bluespace_crystal = 1,
@@ -433,18 +534,14 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/hematite = 60,
-		/obj/item/stack/ore/sulfur = 15,
-		/obj/item/stack/ore/malachite = 10,
-		/obj/item/stack/ore/galena = 5,
-		/obj/item/stack/ore/graphite = 5,
-		/obj/item/stack/ore/autunite = 5,
+		/obj/item/stack/ore/iron = 60,
+		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/gold = 4,
 		/obj/item/stack/ore/diamond = 1,
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		)
 
-	max_mobs = 6
+	max_mobs = 3
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/rockplanet/classthree
@@ -460,18 +557,14 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/hematite = 20,
-		/obj/item/stack/ore/sulfur = 10,
-		/obj/item/stack/ore/malachite = 5,
-		/obj/item/stack/ore/galena = 5,
-		/obj/item/stack/ore/graphite = 5,
-		/obj/item/stack/ore/autunite = 5,
+		/obj/item/stack/ore/iron = 20,
+		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/gold = 6,
 		/obj/item/stack/ore/diamond = 5,
 		/obj/item/stack/ore/bluespace_crystal = 4,
 		)
 
-	max_mobs = 6
+	max_mobs = 3
 	spawn_time = 8 SECONDS
 
 /obj/structure/vein/rockplanet/classfour
@@ -487,104 +580,12 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/hematite = 20,
-		/obj/item/stack/ore/sulfur = 10,
-		/obj/item/stack/ore/malachite = 5,
-		/obj/item/stack/ore/galena = 5,
-		/obj/item/stack/ore/graphite = 5,
-		/obj/item/stack/ore/autunite = 5,
+		/obj/item/stack/ore/iron = 20,
+		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/gold = 6,
 		/obj/item/stack/ore/diamond = 5,
 		/obj/item/stack/ore/bluespace_crystal = 4,
 		)
-//wasteplanet
-/obj/structure/vein/waste
-	// class 1 has easy mobs, the ones you find on the surface
-	mob_types = list(
-		//hivebots, not too difficult
-		/mob/living/simple_animal/hostile/hivebot/strong = 20,
-		/mob/living/simple_animal/hostile/hivebot/ranged = 40,
-		/mob/living/simple_animal/hostile/hivebot/ranged/rapid = 30,
-		//bots, are hostile
-		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
-		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
-		)
-
-	//same surface ore drop rate too...
-	ore_list = list(
-		/obj/item/stack/ore/sulfur = 45,
-		/obj/item/stack/ore/hematite = 40,
-		/obj/item/stack/ore/plasma = 35,
-		/obj/item/stack/ore/autunite = 30,
-		/obj/item/stack/ore/galena = 30,
-		/obj/item/stack/ore/malachite = 20,
-
-		/obj/item/stack/ore/graphite = 2,
-		/obj/item/stack/ore/proustite = 5,
-		/obj/item/stack/ore/gold = 4,
-		)
-
-/obj/structure/vein/waste/classtwo
-	mining_charges = 8
-	vein_class = 2
-	mob_types = list( //nor organics, more biased towards hivebots though
-		/mob/living/simple_animal/hostile/hivebot/strong = 20,
-		/mob/living/simple_animal/hostile/hivebot/ranged = 50,
-		/mob/living/simple_animal/hostile/hivebot/ranged/rapid = 50,
-		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
-		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 1,
-		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
-		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
-		/obj/structure/spawner/hivebot = 20
-	)
-	ore_list = list(
-		/obj/item/stack/ore/sulfur = 35,
-		/obj/item/stack/ore/hematite = 30,
-		/obj/item/stack/ore/plasma = 25,
-		/obj/item/stack/ore/autunite = 20,
-		/obj/item/stack/ore/galena = 20,
-		/obj/item/stack/ore/malachite = 10,
-
-		/obj/item/stack/ore/graphite = 5,
-		/obj/item/stack/ore/proustite = 10,
-		/obj/item/stack/ore/gold = 8,
-		/obj/item/stack/ore/diamond = 1,
-		)
-	//seeing as hivebots die in 1-2 hits from pistols we spawn more
-	max_mobs = 7
-	spawn_time = 10 SECONDS
-
-/obj/structure/vein/waste/classthree
-	mining_charges = 10
-	vein_class = 3
-
-	mob_types = list( //Whoops! All hivebots!
-		/mob/living/simple_animal/hostile/hivebot/strong = 20,
-		/mob/living/simple_animal/hostile/hivebot/ranged = 40,
-		/mob/living/simple_animal/hostile/hivebot/ranged/rapid = 20,
-		/mob/living/simple_animal/hostile/hivebot = 20,
-		/mob/living/simple_animal/hostile/hivebot/defender = 1
-	)
-	ore_list = list(
-		/obj/item/stack/ore/sulfur = 20,
-		/obj/item/stack/ore/hematite = 15,
-		/obj/item/stack/ore/plasma = 15,
-		/obj/item/stack/ore/autunite = 10,
-		/obj/item/stack/ore/galena = 10,
-		/obj/item/stack/ore/malachite = 10,
-
-		/obj/item/stack/ore/graphite = 7,
-		/obj/item/stack/ore/proustite = 10,
-		/obj/item/stack/ore/gold = 10,
-		/obj/item/stack/ore/diamond = 5,
-		)
-	//ditto
-	max_mobs = 7
-	spawn_time = 8 SECONDS
-
-/obj/structure/vein/waste/classfour
-	mining_charges = 30
-	vein_class = 4
 
 //moons, have a dupe of asteroid but less of an emphasis on  goliaths
 
@@ -599,13 +600,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	//same surface ore drop rate too...
 	ore_list = list(
-		/obj/item/stack/ore/quartzite = 80,
-		/obj/item/stack/ore/hematite = 40,
-		/obj/item/stack/ore/rutile = 20,
+		/obj/item/stack/ore/iron = 40,
+		/obj/item/stack/ore/titanium = 20,
 		/obj/item/stack/ore/bluespace_crystal = 5,
 		/obj/item/stack/ore/gold = 5,
-		/obj/item/stack/ore/autunite = 2,
-		/obj/item/stack/ore/galena = 2,
+		/obj/item/stack/ore/uranium = 2,
 		/obj/item/stack/ore/diamond = 1,
 		)
 
@@ -623,16 +622,14 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/quartzite = 60,
-		/obj/item/stack/ore/hematite = 30,
-		/obj/item/stack/ore/rutile = 10,
+		/obj/item/stack/ore/iron = 30,
+		/obj/item/stack/ore/titanium = 10,
 		/obj/item/stack/ore/bluespace_crystal = 7,
 		/obj/item/stack/ore/gold = 7,
-		/obj/item/stack/ore/autunite = 5,
-		/obj/item/stack/ore/galena = 5,
+		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/diamond = 2,
 		)
-	max_mobs = 6
+	max_mobs = 3
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/moon/classthree
@@ -648,17 +645,15 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 1
 		)
 	ore_list = list(
-		/obj/item/stack/ore/quartzite = 20,
-		/obj/item/stack/ore/hematite = 15,
-		/obj/item/stack/ore/rutile = 10,
+		/obj/item/stack/ore/iron = 15,
+		/obj/item/stack/ore/titanium = 10,
 		/obj/item/stack/ore/bluespace_crystal = 7,
 		/obj/item/stack/ore/gold = 7,
-		/obj/item/stack/ore/autunite = 7,
-		/obj/item/stack/ore/galena = 7,
+		/obj/item/stack/ore/uranium = 7,
 		/obj/item/stack/ore/diamond = 5,
 		)
 
-	max_mobs = 6
+	max_mobs = 3
 	spawn_time = 8 SECONDS
 
 
@@ -672,17 +667,12 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	//same surface ore drop rate too...
 	ore_list = list(
-		/obj/item/stack/ore/graphite/coal = 60,
-		/obj/item/stack/ore/sulfur = 40,
-		/obj/item/stack/ore/quartzite = 40,
 		/obj/item/stack/ore/gold = 20,
-		/obj/item/stack/ore/hematite = 20,
-		/obj/item/stack/ore/autunite = 10,
-		/obj/item/stack/ore/galena = 7,
+		/obj/item/stack/ore/iron = 20,
+		/obj/item/stack/ore/uranium = 10,
 		/obj/item/stack/ore/plasma = 5,
 		/obj/item/stack/ore/diamond = 5,
-		/obj/item/stack/ore/malachite = 5,
-		/obj/item/stack/ore/rutile = 4,
+		/obj/item/stack/ore/titanium = 4,
 		)
 
 /obj/structure/vein/desert/classtwo
@@ -694,19 +684,14 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/graphite/coal = 40,
-		/obj/item/stack/ore/sulfur = 30,
-		/obj/item/stack/ore/quartzite = 30,
 		/obj/item/stack/ore/gold = 30,
-		/obj/item/stack/ore/hematite = 10,
-		/obj/item/stack/ore/autunite = 10,
-		/obj/item/stack/ore/galena = 8,
+		/obj/item/stack/ore/iron = 10,
+		/obj/item/stack/ore/uranium = 10,
 		/obj/item/stack/ore/plasma = 7,
 		/obj/item/stack/ore/diamond = 7,
-		/obj/item/stack/ore/malachite = 7,
-		/obj/item/stack/ore/rutile = 5,
+		/obj/item/stack/ore/titanium = 5,
 		)
-	max_mobs = 6
+	max_mobs = 3
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/desert/classthree
@@ -719,20 +704,15 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/graphite/coal = 20,
-		/obj/item/stack/ore/sulfur = 15,
-		/obj/item/stack/ore/quartzite = 15,
 		/obj/item/stack/ore/gold = 15,
-		/obj/item/stack/ore/hematite = 10,
-		/obj/item/stack/ore/autunite = 10,
-		/obj/item/stack/ore/galena = 10,
+		/obj/item/stack/ore/iron = 10,
+		/obj/item/stack/ore/uranium = 10,
 		/obj/item/stack/ore/plasma = 7,
 		/obj/item/stack/ore/diamond = 7,
-		/obj/item/stack/ore/malachite = 7,
-		/obj/item/stack/ore/rutile = 7,
+		/obj/item/stack/ore/titanium = 7,
 		)
 
-	max_mobs = 6
+	max_mobs = 3
 	spawn_time = 8 SECONDS
 
 
@@ -749,21 +729,19 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	//same surface ore drop rate
 	ore_list = list(
-		/obj/item/stack/ore/autunite = 30,
+		/obj/item/stack/ore/uranium = 30,
 		/obj/item/stack/ore/plasma = 25,
-		/obj/item/stack/ore/magnetite = 20,
-		/obj/item/stack/ore/galena = 12,
+		/obj/item/stack/ore/iron = 20,
 		/obj/item/stack/ore/bluespace_crystal = 10,
-		/obj/item/stack/ore/rutile = 6,
+		/obj/item/stack/ore/titanium = 6,
 		/obj/item/stack/ore/gold = 5,
-		/obj/item/stack/ore/quartzite = 5,
 		/obj/item/stack/ore/diamond = 1,
 		)
 
-	max_mobs = -1
+	max_mobs = 3
 	spawn_time = 5 SECONDS
 	///His greed was his downfall
-	var/greed_chance = 10
+	var/greed_chance = 20
 
 /obj/structure/vein/shrouded/Initialize()
 	. = ..()
@@ -781,20 +759,18 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/autunite = 20,
+		/obj/item/stack/ore/uranium = 20,
 		/obj/item/stack/ore/plasma = 15,
-		/obj/item/stack/ore/magnetite = 10,
-		/obj/item/stack/ore/galena = 10,
+		/obj/item/stack/ore/iron = 10,
 		/obj/item/stack/ore/bluespace_crystal = 10,
-		/obj/item/stack/ore/rutile = 6,
+		/obj/item/stack/ore/titanium = 6,
 		/obj/item/stack/ore/gold = 5,
-		/obj/item/stack/ore/quartzite = 5,
 		/obj/item/stack/ore/diamond = 1,
 		)
 
-	spawn_time = 4 SECONDS
+	spawn_time = 8 SECONDS
 
-	greed_chance = 20
+	greed_chance = 30
 
 /obj/structure/vein/shrouded/classthree
 	mining_charges = 12
@@ -808,19 +784,17 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/autunite = 10,
+		/obj/item/stack/ore/uranium = 10,
 		/obj/item/stack/ore/plasma = 10,
-		/obj/item/stack/ore/magnetite = 10,
-		/obj/item/stack/ore/galena = 10,
+		/obj/item/stack/ore/iron = 10,
 		/obj/item/stack/ore/bluespace_crystal = 10,
-		/obj/item/stack/ore/rutile = 8,
+		/obj/item/stack/ore/titanium = 8,
 		/obj/item/stack/ore/gold = 7,
-		/obj/item/stack/ore/quartzite = 7,
 		/obj/item/stack/ore/diamond = 5,
 		)
 
-	greed_chance = 25
-	spawn_time = 3 SECONDS
+	greed_chance = 40
+	spawn_time = 6 SECONDS
 
 // Asteroid veins.
 
@@ -835,13 +809,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	ore_list = list(
 		/obj/item/stack/ore/plasma = 40,
-		/obj/item/stack/ore/hematite = 65,
-		/obj/item/stack/ore/malachite = 50,
-		/obj/item/stack/ore/sulfur = 5,
-		/obj/item/stack/ore/rutile = 5,
-		/obj/item/stack/ore/galena = 4,
+		/obj/item/stack/ore/iron = 65,
+		/obj/item/stack/ore/titanium = 5,
 		/obj/item/stack/ore/gold = 4,
-		/obj/item/stack/ore/autunite = 3,
+		/obj/item/stack/ore/uranium = 3,
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		)
 
@@ -861,18 +832,22 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	ore_list = list(
 		/obj/item/stack/ore/plasma = 30,
-		/obj/item/stack/ore/hematite = 55,
-		/obj/item/stack/ore/malachite = 40,
-		/obj/item/stack/ore/sulfur = 7,
-		/obj/item/stack/ore/rutile = 7,
-		/obj/item/stack/ore/galena = 5,
+		/obj/item/stack/ore/iron = 55,
+		/obj/item/stack/ore/titanium = 7,
 		/obj/item/stack/ore/gold = 5,
-		/obj/item/stack/ore/autunite = 5,
+		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/bluespace_crystal = 3,
 		)
 
-	max_mobs = 6
+	max_mobs = 3
 	spawn_time = 10 SECONDS
+
+/obj/structure/vein/asteroid/classtwo/rare
+	mining_charges = 12
+	vein_class = 2
+	ore_list = list(
+		/obj/item/stack/ore/ice = 10,
+		)
 
 /obj/structure/vein/asteroid/classthree
 	mining_charges = 10
@@ -889,25 +864,28 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	ore_list = list(
 		/obj/item/stack/ore/plasma = 15,
-		/obj/item/stack/ore/hematite = 30,
-		/obj/item/stack/ore/malachite = 25,
-		/obj/item/stack/ore/sulfur = 10,
-		/obj/item/stack/ore/rutile = 10,
-		/obj/item/stack/ore/galena = 7,
+		/obj/item/stack/ore/iron = 30,
+		/obj/item/stack/ore/titanium = 10,
 		/obj/item/stack/ore/gold = 7,
-		/obj/item/stack/ore/autunite = 7,
+		/obj/item/stack/ore/uranium = 7,
 		/obj/item/stack/ore/bluespace_crystal = 5,
 		)
 
-	max_mobs = 6
+	max_mobs = 3
 	spawn_time = 8 SECONDS
 
+/obj/structure/vein/asteroid/classthree/rare
+	mining_charges = 14
+	vein_class = 3
+	ore_list = list(
+		/obj/item/stack/ore/ice = 10,
+		)
 
 // Waterplanet veins.
 
 /obj/structure/vein/waterplanet
 	mob_types = list(
-		/mob/living/simple_animal/hostile/bear/cave = 60,
+		/mob/living/basic/bear/cave = 60,
 		/mob/living/simple_animal/hostile/carp = 40,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity/beach = 20,
 		/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 10,
@@ -917,13 +895,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	ore_list = list(
 		/obj/item/stack/ore/plasma = 40,
-		/obj/item/stack/ore/hematite = 65,
-		/obj/item/stack/ore/malachite = 50,
-		/obj/item/stack/ore/sulfur = 5,
-		/obj/item/stack/ore/rutile = 5,
-		/obj/item/stack/ore/galena = 4,
+		/obj/item/stack/ore/iron = 65,
+		/obj/item/stack/ore/titanium = 5,
 		/obj/item/stack/ore/gold = 4,
-		/obj/item/stack/ore/autunite = 3,
+		/obj/item/stack/ore/uranium = 3,
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		)
 
@@ -932,7 +907,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	vein_class = 2
 
 	mob_types = list(
-		/mob/living/simple_animal/hostile/bear/cave = 50,
+		/mob/living/basic/bear/cave = 50,
 		/mob/living/simple_animal/hostile/carp = 30,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity/beach = 30,
 		/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 15,
@@ -942,17 +917,14 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	ore_list = list(
 		/obj/item/stack/ore/plasma = 30,
-		/obj/item/stack/ore/hematite = 55,
-		/obj/item/stack/ore/malachite = 40,
-		/obj/item/stack/ore/sulfur = 7,
-		/obj/item/stack/ore/rutile = 7,
-		/obj/item/stack/ore/galena = 5,
+		/obj/item/stack/ore/iron = 55,
+		/obj/item/stack/ore/titanium = 7,
 		/obj/item/stack/ore/gold = 5,
-		/obj/item/stack/ore/autunite = 5,
+		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/bluespace_crystal = 3,
 		)
 
-	max_mobs = 6
+	max_mobs = 3
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/waterplanet/classthree
@@ -960,7 +932,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	vein_class = 3
 
 	mob_types = list(
-		/mob/living/simple_animal/hostile/bear/cave = 10,
+		/mob/living/basic/bear/cave = 10,
 		/mob/living/simple_animal/hostile/carp = 20,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity/beach = 10,
 		/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 40,
@@ -970,16 +942,13 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	ore_list = list(
 		/obj/item/stack/ore/plasma = 15,
-		/obj/item/stack/ore/hematite = 30,
-		/obj/item/stack/ore/malachite = 25,
-		/obj/item/stack/ore/sulfur = 10,
-		/obj/item/stack/ore/rutile = 10,
-		/obj/item/stack/ore/galena = 7,
+		/obj/item/stack/ore/iron = 30,
+		/obj/item/stack/ore/titanium = 10,
 		/obj/item/stack/ore/gold = 7,
-		/obj/item/stack/ore/autunite = 7,
+		/obj/item/stack/ore/uranium = 7,
 		/obj/item/stack/ore/bluespace_crystal = 5,
 		)
 
-	max_mobs = 6
+	max_mobs = 3
 	spawn_time = 8 SECONDS
 

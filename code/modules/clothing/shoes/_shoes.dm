@@ -79,7 +79,7 @@
 
 	. = ..()
 
-/obj/item/clothing/shoes/update_clothes_damaged_state(damaging = TRUE)
+/obj/item/clothing/shoes/update_clothes_damaged_state(damaged_state = CLOTHING_DAMAGED)
 	..()
 	if(ismob(loc))
 		var/mob/M = loc
@@ -162,8 +162,6 @@
 
 		var/mod_time = lace_time
 		to_chat(user, span_notice("You quietly set to work [tied ? "untying" : "knotting"] [loc]'s [src.name]..."))
-		if(HAS_TRAIT(user, TRAIT_CLUMSY)) // based clowns trained their whole lives for this
-			mod_time *= 0.75
 
 		if(do_after(user, mod_time, target = our_guy, extra_checks = CALLBACK(src, PROC_REF(still_shoed), our_guy)))
 			to_chat(user, span_notice("You [tied ? "untie" : "knot"] the laces on [loc]'s [src.name]."))

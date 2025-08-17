@@ -372,7 +372,7 @@
 			continue
 		if(isstructure(atm))
 			var/obj/structure/S = atm
-			S.obj_integrity = S.max_integrity
+			S.update_integrity(S.max_integrity)
 		else if(!is_type_in_typecache(atm, ctf_object_typecache))
 			qdel(atm)
 
@@ -416,6 +416,10 @@
 		damage = 60
 		return PROJECTILE_PIERCE_NONE	/// hey uhh don't hit anyone behind them
 	. = ..()
+
+/obj/item/gun/ballistic/automatic/laser
+	bad_type = /obj/item/gun/ballistic/automatic/laser
+	spawn_blacklisted = TRUE
 
 /obj/item/gun/ballistic/automatic/laser/ctf
 	default_ammo_type = /obj/item/ammo_box/magazine/recharge/ctf

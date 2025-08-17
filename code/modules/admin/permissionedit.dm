@@ -11,11 +11,11 @@
 		return
 	var/datum/asset/asset_cache_datum = get_asset_datum(/datum/asset/group/permissions)
 	asset_cache_datum.send(usr)
-	var/list/output = list("<link rel='stylesheet' type='text/css' href='[SSassets.transport.get_asset_url("panels.css")]'><a href='?_src_=holder;[HrefToken()];editrightsbrowser=1'>\[Permissions\]</a>")
+	var/list/output = list("<link rel='stylesheet' type='text/css' href='[SSassets.transport.get_asset_url("panels.css")]'><a href='byond://?_src_=holder;[HrefToken()];editrightsbrowser=1'>\[Permissions\]</a>")
 	if(action)
-		output += " | <a href='?_src_=holder;[HrefToken()];editrightsbrowserlog=1;editrightspage=0'>\[Log\]</a> | <a href='?_src_=holder;[HrefToken()];editrightsbrowsermanage=1'>\[Management\]</a><hr style='background:#000000; border:0; height:3px'>"
+		output += " | <a href='byond://?_src_=holder;[HrefToken()];editrightsbrowserlog=1;editrightspage=0'>\[Log\]</a> | <a href='byond://?_src_=holder;[HrefToken()];editrightsbrowsermanage=1'>\[Management\]</a><hr style='background:#000000; border:0; height:3px'>"
 	else
-		output += "<br><a href='?_src_=holder;[HrefToken()];editrightsbrowserlog=1;editrightspage=0'>\[Log\]</a><br><a href='?_src_=holder;[HrefToken()];editrightsbrowsermanage=1'>\[Management\]</a>"
+		output += "<br><a href='byond://?_src_=holder;[HrefToken()];editrightsbrowserlog=1;editrightspage=0'>\[Log\]</a><br><a href='byond://?_src_=holder;[HrefToken()];editrightsbrowsermanage=1'>\[Management\]</a>"
 	if(action == 1)
 		var/logcount = 0
 		var/logssperpage = 20
@@ -34,7 +34,7 @@
 		if(logcount > logssperpage)
 			output += "<br><b>Page: </b>"
 			while(logcount > 0)
-				output += "|<a href='?_src_=holder;[HrefToken()];editrightsbrowserlog=1;editrightstarget=[target];editrightsoperation=[operation];editrightspage=[pagecount]'>[pagecount == page ? "<b>\[[pagecount]\]</b>" : "\[[pagecount]\]"]</a>"
+				output += "|<a href='byond://?_src_=holder;[HrefToken()];editrightsbrowserlog=1;editrightstarget=[target];editrightsoperation=[operation];editrightspage=[pagecount]'>[pagecount == page ? "<b>\[[pagecount]\]</b>" : "\[[pagecount]\]"]</a>"
 				logcount -= logssperpage
 				pagecount++
 			output += "|"
@@ -73,7 +73,7 @@
 		while(query_check_admin_errors.NextRow())
 			var/admin_key = query_check_admin_errors.item[1]
 			var/admin_rank = query_check_admin_errors.item[2]
-			output += "[admin_key] has non-existent rank [admin_rank] | <a href='?_src_=holder;[HrefToken()];editrightsbrowsermanage=1;editrightschange=[admin_key]'>\[Change Rank\]</a> | <a href='?_src_=holder;[HrefToken()];editrightsbrowsermanage=1;editrightsremove=[admin_key]'>\[Remove\]</a>"
+			output += "[admin_key] has non-existent rank [admin_rank] | <a href='byond://?_src_=holder;[HrefToken()];editrightsbrowsermanage=1;editrightschange=[admin_key]'>\[Change Rank\]</a> | <a href='byond://?_src_=holder;[HrefToken()];editrightsbrowsermanage=1;editrightsremove=[admin_key]'>\[Remove\]</a>"
 			output += "<hr style='background:#000000; border:0; height:1px'>"
 		qdel(query_check_admin_errors)
 		output += "<h3>Unused ranks</h3>"
@@ -83,7 +83,7 @@
 			return
 		while(query_check_unused_rank.NextRow())
 			var/admin_rank = query_check_unused_rank.item[1]
-			output += {"Rank [admin_rank] is not held by any admin | <a href='?_src_=holder;[HrefToken()];editrightsbrowsermanage=1;editrightsremoverank=[admin_rank]'>\[Remove\]</a>
+			output += {"Rank [admin_rank] is not held by any admin | <a href='byond://?_src_=holder;[HrefToken()];editrightsbrowsermanage=1;editrightsremoverank=[admin_rank]'>\[Remove\]</a>
 			<br>Permissions: [rights2text(text2num(query_check_unused_rank.item[2])," ")]
 			<br>Denied: [rights2text(text2num(query_check_unused_rank.item[3])," ", "-")]
 			<br>Allowed to edit: [rights2text(text2num(query_check_unused_rank.item[4])," ", "*")]
@@ -99,7 +99,7 @@
 		<body onload='selectTextField();updateSearch();'>
 		<div id='main'><table id='searchable' cellspacing='0'>
 		<tr class='title'>
-		<th style='width:150px;'>CKEY <a class='small' href='?src=[REF(src)];[HrefToken()];editrights=add'>\[+\]</a></th>
+		<th style='width:150px;'>CKEY <a class='small' href='byond://?src=[REF(src)];[HrefToken()];editrights=add'>\[+\]</a></th>
 		<th style='width:125px;'>RANK</th>
 		<th style='width:40%;'>PERMISSIONS</th>
 		<th style='width:20%;'>DENIED</th>
@@ -116,15 +116,18 @@
 			if(D.owner)
 				adm_ckey = D.owner.key
 			if (D.deadmined)
-				deadminlink = " <a class='small' href='?src=[REF(src)];[HrefToken()];editrights=activate;key=[adm_ckey]'>\[RA\]</a>"
+				deadminlink = " <a class='small' href='byond://?src=[REF(src)];[HrefToken()];editrights=activate;key=[adm_ckey]'>\[RA\]</a>"
 			else
-				deadminlink = " <a class='small' href='?src=[REF(src)];[HrefToken()];editrights=deactivate;key=[adm_ckey]'>\[DA\]</a>"
+				deadminlink = " <a class='small' href='byond://?src=[REF(src)];[HrefToken()];editrights=deactivate;key=[adm_ckey]'>\[DA\]</a>"
+			var/verify_link = ""
+			if (D.blocked_by_2fa)
+				verify_link += " | <a class='small' href='?src=[REF(src)];[HrefToken()];editrights=verify;key=[adm_ckey]'>\[2FA VERIFY\]</a>"
 			output += "<tr>"
-			output += "<td style='text-align:center;'>[adm_ckey]<br>[deadminlink]<a class='small' href='?src=[REF(src)];[HrefToken()];editrights=remove;key=[adm_ckey]'>\[-\]</a><a class='small' href='?src=[REF(src)];[HrefToken()];editrights=sync;key=[adm_ckey]'>\[SYNC TGDB\]</a></td>"
-			output += "<td><a href='?src=[REF(src)];[HrefToken()];editrights=rank;key=[adm_ckey]'>[D.rank.name]</a></td>"
-			output += "<td><a class='small' href='?src=[REF(src)];[HrefToken()];editrights=permissions;key=[adm_ckey]'>[rights2text(D.rank.include_rights," ")]</a></td>"
-			output += "<td><a class='small' href='?src=[REF(src)];[HrefToken()];editrights=permissions;key=[adm_ckey]'>[rights2text(D.rank.exclude_rights," ", "-")]</a></td>"
-			output += "<td><a class='small' href='?src=[REF(src)];[HrefToken()];editrights=permissions;key=[adm_ckey]'>[rights2text(D.rank.can_edit_rights," ", "*")]</a></td>"
+			output += "<td style='text-align:center;'>[adm_ckey]<br>[deadminlink]<a class='small' href='?src=[REF(src)];[HrefToken()];editrights=remove;key=[adm_ckey]'>\[-\]</a><a class='small' href='?src=[REF(src)];[HrefToken()];editrights=sync;key=[adm_ckey]'>\[SYNC TGDB\]</a>[verify_link]</td>"
+			output += "<td><a href='byond://?src=[REF(src)];[HrefToken()];editrights=rank;key=[adm_ckey]'>[D.rank.name]</a></td>"
+			output += "<td><a class='small' href='byond://?src=[REF(src)];[HrefToken()];editrights=permissions;key=[adm_ckey]'>[rights2text(D.rank.include_rights," ")]</a></td>"
+			output += "<td><a class='small' href='byond://?src=[REF(src)];[HrefToken()];editrights=permissions;key=[adm_ckey]'>[rights2text(D.rank.exclude_rights," ", "-")]</a></td>"
+			output += "<td><a class='small' href='byond://?src=[REF(src)];[HrefToken()];editrights=permissions;key=[adm_ckey]'>[rights2text(D.rank.can_edit_rights," ", "*")]</a></td>"
 			output += "</tr>"
 		output += "</table></div><div id='top'><b>Search:</b> <input type='text' id='filter' value='' style='width:70%;' onkeyup='updateSearch();'></div></body>"
 	if(QDELETED(usr))
@@ -148,7 +151,7 @@
 	var/task = href_list["editrights"]
 	var/skip
 	var/legacy_only
-	if(task == "activate" || task == "deactivate" || task == "sync")
+	if(task == "activate" || task == "deactivate" || task == "sync" || task == "verify")
 		skip = TRUE
 	if(!CONFIG_GET(flag/admin_legacy_system) && CONFIG_GET(flag/protect_legacy_admins) && task == "rank")
 		if(admin_ckey in GLOB.protected_admins)
@@ -204,6 +207,13 @@
 			force_deadmin(admin_key, D)
 		if("sync")
 			sync_lastadminrank(admin_ckey, admin_key, D)
+		if("verify")
+			var/msg = "has authenticated [admin_ckey]"
+			message_admins("[key_name_admin(usr)] [msg]")
+			log_admin("[key_name(usr)] [msg]")
+
+			D.bypass_2fa = TRUE
+			D.associate(GLOB.directory[admin_ckey])
 	edit_admin_permissions()
 
 /datum/admins/proc/add_admin(admin_ckey, admin_key, use_db)
@@ -384,10 +394,14 @@
 	if(D) //they were previously an admin
 		D.disassociate() //existing admin needs to be disassociated
 		D.rank = R //set the admin_rank as our rank
+		D.bypass_2fa = TRUE // Another admin has cleared us
 		var/client/C = GLOB.directory[admin_ckey]
 		D.associate(C)
 	else
-		D = new(R, admin_ckey, TRUE) //new admin
+		D = new(R, admin_ckey) //new admin
+		D.bypass_2fa = TRUE // Another admin has cleared us
+		D.activate()
+
 	SSredbot.send_discord_message("admin","[m2]","admin")
 	message_admins(m1)
 	log_admin(m2)

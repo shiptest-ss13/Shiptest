@@ -7,6 +7,7 @@
 	value = 0
 	gain_text = span_notice("You know Kalixcian Common.")
 	lose_text = span_danger("You forget Kalixcian Common.")
+	detectable = FALSE
 
 /datum/quirk/lang_kalixcian/add()
 	var/mob/living/carbon/human/knower = quirk_holder
@@ -24,6 +25,7 @@
 	value = 0
 	gain_text = span_notice("You know Teceti Unified.")
 	lose_text = span_danger("You forget Teceti Unified.")
+	detectable = FALSE
 
 /datum/quirk/lang_tuc/add()
 	var/mob/living/carbon/human/knower = quirk_holder
@@ -41,6 +43,7 @@
 	value = 0
 	gain_text = span_notice("You know Solarian International.")
 	lose_text = span_danger("You forget Solarian International.")
+	detectable = FALSE
 
 /datum/quirk/lang_solarian_international/add()
 	var/mob/living/carbon/human/knower = quirk_holder
@@ -57,6 +60,7 @@
 	desc = "You're fluent in Moth Pidgin."
 	gain_text = span_notice("You know Moth Pidgin.")
 	lose_text = span_danger("You forget Moth Pidgin.")
+	detectable = FALSE
 
 /datum/quirk/lang_moth/add()
 	var/mob/living/carbon/human/knower = quirk_holder
@@ -66,3 +70,21 @@
 	if(quirk_holder)
 		var/mob/living/carbon/human/knower = quirk_holder
 		knower.remove_language(/datum/language/moffic, source = LANGUAGE_MIND)
+
+// Sign Language
+/datum/quirk/signer
+	name = "Signer"
+	desc = "You're fluent in Universal Sign Language."
+	value = 0
+	gain_text = span_notice("You know Universal Sign Language.")
+	lose_text = span_danger("You forget Universal Sign Language.")
+	detectable = FALSE
+
+/datum/quirk/signer/add()
+	var/mob/living/carbon/human/knower = quirk_holder
+	knower.grant_language(/datum/language/sign_language, source = LANGUAGE_MIND)
+
+/datum/quirk/signer/remove()
+	if(quirk_holder)
+		var/mob/living/carbon/human/knower = quirk_holder
+		knower.remove_language(/datum/language/sign_language, source = LANGUAGE_MIND)

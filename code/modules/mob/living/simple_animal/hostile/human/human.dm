@@ -46,7 +46,7 @@
 	var/datum/species/mob_species
 	/// Path of the right hand held item we give to the mob's visuals.
 	var/obj/r_hand
-	/// Path of the left hand held item we give to the mob's visuals.
+	/// THE DEFAULT HAND (Required if you want them to wield it). Path of the left hand held item we give to the mob's visuals.
 	var/obj/l_hand
 	// Prob of us dropping l/r hand loot.
 	var/weapon_drop_chance = 10

@@ -69,7 +69,7 @@
 	if(!QDELETED(shooter))
 		RegisterSignal(shooter, COMSIG_MOB_LOGOUT, PROC_REF(autofire_off))
 		UnregisterSignal(shooter, COMSIG_MOB_LOGIN)
-	RegisterSignal(parent, list(COMSIG_PARENT_QDELETING, COMSIG_ITEM_DROPPED), PROC_REF(autofire_off))
+	RegisterSignals(parent, list(COMSIG_PARENT_QDELETING, COMSIG_ITEM_DROPPED), PROC_REF(autofire_off))
 	parent.RegisterSignal(src, COMSIG_AUTOFIRE_ONMOUSEDOWN, TYPE_PROC_REF(/obj/item/gun, autofire_bypass_check))
 	parent.RegisterSignal(parent, COMSIG_AUTOFIRE_SHOT, TYPE_PROC_REF(/obj/item/gun, do_autofire))
 
@@ -278,7 +278,7 @@
 
 
 /obj/item/gun/proc/do_autofire_shot(datum/source, atom/target, mob/living/shooter, params)
-	pre_fire(target, shooter, TRUE, params, null) //dual wielding is handled here
+	pre_fire(target, shooter, TRUE, FALSE, params) //dual wielding is handled here
 
 /datum/component/automatic_fire/proc/disable_autofire(datum/source)
 	enabled = FALSE

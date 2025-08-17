@@ -16,6 +16,28 @@
 	display_name = "shemagh"
 	path = /obj/item/clothing/neck/shemagh
 
+/datum/gear/accessory/shemagh_black
+	display_name = "shemagh, black"
+	path = /obj/item/clothing/neck/shemagh/black
+
+/datum/gear/accessory/shemagh_brown
+	display_name = "shemagh, brown"
+	path = /obj/item/clothing/neck/shemagh/brown
+
+/datum/gear/accessory/shemagh_olive
+	display_name = "shemagh, olive"
+	path = /obj/item/clothing/neck/shemagh/olive
+
+/datum/gear/accessory/shemagh_khaki
+	display_name = "shemagh, khaki"
+	path = /obj/item/clothing/neck/shemagh/khaki
+
+//poncho
+
+/datum/gear/accessory/poncho
+	display_name = "poncho, recolorable"
+	path = /obj/item/clothing/neck/poncho
+
 //(The actually good scarves)
 
 /datum/gear/accessory/scarf/striped
@@ -116,6 +138,10 @@
 /datum/gear/accessory/mask/balaclava
 	display_name = "balaclava"
 	path = /obj/item/clothing/mask/balaclava
+
+/datum/gear/accessory/mask/facemask
+	display_name = "face mask"
+	path = /obj/item/clothing/mask/breath/facemask
 
 //Misc
 

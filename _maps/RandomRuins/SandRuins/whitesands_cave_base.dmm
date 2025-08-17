@@ -2142,13 +2142,9 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/layer2{
 	dir = 1
 	},
-/obj/machinery/portable_atmospherics/canister/toxins{
-	icon_state = "blue";
-	name = "oxygen canister";
-	desc = "Oxygen. Necessary for human life."
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/newscaster/directional/south,
+/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plating/rust,
 /area/ruin/whitesands/cave_base/engi)
 "yd" = (
@@ -3742,7 +3738,6 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/whitesands/cave_base/engi)
 "Nf" = (
-/obj/effect/decal/cleanable/dirt,
 /turf/closed/mineral/random/whitesands,
 /area/overmap_encounter/planetoid/cave/explored)
 "Nj" = (
@@ -4252,14 +4247,10 @@
 /area/ruin/whitesands/cave_base/engi)
 "Ta" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/layer4,
-/obj/machinery/portable_atmospherics/canister/toxins{
-	icon_state = "blue";
-	name = "oxygen canister";
-	desc = "Oxygen. Necessary for human life."
-	},
 /obj/effect/turf_decal/box,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/north,
+/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/whitesands/cave_base/engi)
 "Tg" = (
@@ -4818,13 +4809,9 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/layer2{
 	dir = 1
 	},
-/obj/machinery/portable_atmospherics/canister/toxins{
-	icon_state = "blue";
-	name = "oxygen canister";
-	desc = "Oxygen. Necessary for human life."
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/south,
+/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plating,
 /area/ruin/whitesands/cave_base/engi)
 "Zb" = (

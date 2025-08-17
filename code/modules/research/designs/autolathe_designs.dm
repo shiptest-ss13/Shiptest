@@ -150,7 +150,7 @@
 	name = "Cable Coil"
 	id = "cable_coil"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/copper = 10, /datum/material/carbon = 5)
+	materials = list(/datum/material/iron = 10, /datum/material/glass = 5)
 	build_path = /obj/item/stack/cable_coil/random //WS Edit - Smartwire Revert
 	category = list("initial","Tools","Tool Designs")
 	maxstack = MAXCOIL
@@ -333,15 +333,6 @@
 	category = list("initial","Construction")
 	maxstack = 50
 
-/datum/design/refine_glass
-	name = "Refine Quartz into Glass"
-	id = "quartz2glass"
-	build_type = SMELTER
-	materials = list(/datum/material/quartz = ORE_MATERIAL_AMOUNT)
-	build_path = /obj/item/stack/sheet/glass
-	category = list("initial","Construction")
-	maxstack = 50
-
 /datum/design/rglass
 	name = "Reinforced Glass"
 	id = "rglass"
@@ -349,16 +340,6 @@
 	materials = list(/datum/material/iron = 1000, /datum/material/glass = MINERAL_MATERIAL_AMOUNT)
 	build_path = /obj/item/stack/sheet/rglass
 	category = list("initial","Construction","Stock Parts")
-	maxstack = 50
-
-
-/datum/design/silicon
-	name = "Refine Quartz into Silicon (Quartz 1:2 Carbon)"
-	id = "silicon"
-	build_type = SMELTER
-	materials = list(/datum/material/quartz = ORE_MATERIAL_AMOUNT, /datum/material/carbon = ORE_MATERIAL_AMOUNT*2)
-	build_path = /obj/item/stack/sheet/mineral/silicon
-	category = list("initial","Construction")
 	maxstack = 50
 
 /datum/design/rods
@@ -613,6 +594,15 @@
 	category = list("initial", "Medical", "Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
+/datum/design/bonesetter
+	name = "Bonesetter"
+	id = "bonesetter"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 1000)
+	build_path = /obj/item/bonesetter
+	category = list("initial", "Medical", "Tool Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
 /datum/design/beaker
 	name = "Beaker"
 	id = "beaker"
@@ -851,7 +841,7 @@
 	name = "Ammo Box (.38 surplus)"
 	id = "c38_surplus"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/copper = 8000, /datum/material/sulfur = 5000, /datum/material/lead = 2000)
+	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/storage/box/ammo/c38_surplus
 	category = list("initial", "Security", "Ammo")
 
@@ -891,7 +881,7 @@
 	name = "Ammo Box (10x22mm surplus)"
 	id = "c10mm-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 8000, /datum/material/sulfur = 5000, /datum/material/lead = 2000)
+	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/storage/box/ammo/c10mm_surplus
 	category = list("initial", "Security", "Ammo")
 
@@ -899,7 +889,7 @@
 	name = "Ammo Box (.45 surplus)"
 	id = "c45-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 8000, /datum/material/sulfur = 5000, /datum/material/lead = 2000)
+	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/storage/box/ammo/c45_surplus
 	category = list("initial", "Security", "Ammo")
 
@@ -907,7 +897,7 @@
 	name = "Ammo Box (9x18mm surplus)"
 	id = "c9mm-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/copper = 8000, /datum/material/sulfur = 5000, /datum/material/lead = 2000)
+	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/storage/box/ammo/c9mm_surplus
 	category = list("initial", "Security", "Ammo")
 
@@ -915,7 +905,7 @@
 	name = "Ammo Box (surplus 5.56mm HITP caseless)"
 	id = "c556mmHITP-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 10000, /datum/material/sulfur = 5000, /datum/material/lead = 2000)
+	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/storage/box/ammo/c556mm_surplus
 	category = list("initial", "Security", "Ammo")
 
@@ -1279,6 +1269,15 @@
 	materials = list(/datum/material/iron = 100, /datum/material/glass = 50)
 	build_path = /obj/item/assembly/control
 	category = list("initial","Misc")
+
+/datum/design/sticky_tape/surgical
+	name = "Surgical Tape"
+	id = "surgical_tape"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/plastic = 500)
+	build_path = /obj/item/stack/sticky_tape/surgical
+	category = list("initial", "Medical")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/holofield_control
 	name = "Holofield Controller"

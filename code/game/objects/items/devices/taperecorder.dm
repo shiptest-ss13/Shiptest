@@ -123,11 +123,11 @@
 	return ..()
 
 
-/obj/item/taperecorder/Hear(message, atom/movable/speaker, message_langs, raw_message, radio_freq, spans, list/message_mods = list())
+/obj/item/taperecorder/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, spans, list/message_mods = list())
 	. = ..()
 	if(mytape && recording)
 		mytape.timestamp += mytape.used_capacity
-		mytape.storedinfo += "\[[time2text(mytape.used_capacity * 10,"mm:ss")]\] [message]"
+		mytape.storedinfo += "\[[time2text(mytape.used_capacity * 10,"mm:ss")]\] [speaker.GetVoice()] [speaker.say_mod(raw_message, message_language, message_mods)], \"[raw_message]\""
 
 /obj/item/taperecorder/verb/record()
 	set name = "Start Recording"

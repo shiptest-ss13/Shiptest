@@ -677,18 +677,18 @@
 /area/outpost/engineering/atmospherics)
 "dB" = (
 /obj/structure/table,
-/obj/item/reagent_containers/food/snacks/sausage{
+/obj/item/food/sausage{
 	pixel_y = 9
 	},
-/obj/item/reagent_containers/food/snacks/salami,
-/obj/item/reagent_containers/food/snacks/salami,
-/obj/item/reagent_containers/food/snacks/salami,
-/obj/item/reagent_containers/food/snacks/meat/rawbacon,
-/obj/item/reagent_containers/food/snacks/meat/rawbacon,
-/obj/item/reagent_containers/food/snacks/meat/rawbacon,
-/obj/item/reagent_containers/food/snacks/meat/rawbacon,
-/obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/food/salami,
+/obj/item/food/salami,
+/obj/item/food/salami,
+/obj/item/food/meat/rawbacon,
+/obj/item/food/meat/rawbacon,
+/obj/item/food/meat/rawbacon,
+/obj/item/food/meat/rawbacon,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
 /turf/open/floor/plating/asteroid/rockplanet/safe/lit,
 /area/outpost/external)
 "dC" = (
@@ -1878,13 +1878,13 @@
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/outpost/maintenance/central)
 "jn" = (
-/obj/structure/aquarium/prefilled,
 /obj/item/fish_feed{
 	pixel_y = 19
 	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 9
 	},
+/obj/structure/aquarium/outpost,
 /turf/open/floor/plasteel/dark,
 /area/outpost/maintenance/central)
 "jp" = (
@@ -7681,10 +7681,6 @@
 "LU" = (
 /turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/hallway/central)
-"LW" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/indestructible/plastitanium/nodiagnonal,
-/area/outpost/maintenance/central)
 "Ma" = (
 /obj/structure/chair/sofa/brown/old/left,
 /obj/effect/turf_decal/techfloor{
@@ -12138,7 +12134,7 @@ LU
 LU
 LU
 Np
-LW
+kt
 XQ
 Ga
 Np

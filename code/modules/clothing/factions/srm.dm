@@ -7,7 +7,6 @@
 	desc = "A simple, hard-wearing suit designed for the hardworking hunters of the Saint-Roumain Militia."
 	icon_state = "rouma_work"
 	item_state = "rouma_work"
-	can_adjust = FALSE
 	icon = 'icons/obj/clothing/faction/srm/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/srm/uniforms.dmi'
 	supports_variations = KEPORI_VARIATION
@@ -41,7 +40,7 @@
 	icon = 'icons/obj/clothing/faction/srm/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/srm/suits.dmi'
 	icon_state = "rouma_med_coat"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/suit/hazardvest/roumain
@@ -51,7 +50,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/srm/suits.dmi'
 	icon_state = "armor_rouma_machinist"
 	item_state = "rouma_coat"
-	armor = list("melee" = 35, "bullet" = 20, "laser" = 20, "energy" = 40, "bomb" = 35, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
+	armor = list("melee" = 35, "bullet" = 20, "laser" = 20, "energy" = 40, "bomb" = 35, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60, "wound" = 10)
 
 /obj/item/clothing/suit/armor/roumain/flamebearer
 	name = "saint-roumain flamebearer robes"
@@ -75,7 +74,7 @@
 	icon_state = "armor_rouma_montagne"
 	item_state = "rouma_montagne_coat"
 	body_parts_covered = CHEST|GROIN
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20)
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	supports_variations = KEPORI_VARIATION

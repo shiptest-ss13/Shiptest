@@ -3,14 +3,14 @@
 /* Attachments */
 
 /datum/supply_pack/attachment
-	group = "Gun Attachments"
+	category = "Gun Attachments"
 	crate_type = /obj/structure/closet/crate/secure/weapon
 	faction_discount = 10
 
 /datum/supply_pack/attachment/rail_light
 	name = "Tactical Rail Light Crate"
 	desc = "Contains a single rail light to be mounted on a firearm."
-	cost = 100
+	cost = 75
 	contains = list(/obj/item/attachment/rail_light)
 	crate_name = "rail light crate"
 
@@ -38,15 +38,6 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/attachment/alof
-	name = "Alof Tube Crate"
-	desc = "Contains an antiquated spring operated magazine attachment for the HP Beacon. Has a capacity of three rounds."
-	cost = 1000
-	contains = list(/obj/item/attachment/alof)
-	crate_name = "alof crate"
-	faction = /datum/faction/srm
-	faction_discount = 10
-
 /datum/supply_pack/attachment/silencer
 	name = "Suppressor Crate"
 	desc = "Contains a single suppressor to be mounted on a firearm."
@@ -60,13 +51,6 @@
 	cost = 100
 	contains = list(/obj/item/attachment/ammo_counter)
 	crate_name = "ammo counter crate"
-
-/datum/supply_pack/attachment/sling
-	name = "Shoulder Sling Crate"
-	desc = "Contains a single shoulder sling to be mounted on a firearm for easy carrying without armor holsters. Only compatible with longarms."
-	cost = 250
-	contains = list(/obj/item/attachment/sling)
-	crate_name = "shoulder sling crate"
 
 /datum/supply_pack/attachment/scope
 	name = "Scope Crate"

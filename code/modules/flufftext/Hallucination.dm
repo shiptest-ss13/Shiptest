@@ -279,18 +279,6 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		to_chat(target, span_notice("[xeno_name] scrambles into the ventilation ducts!"))
 	qdel(src)
 
-/obj/effect/hallucination/simple/clown
-	image_icon = 'icons/mob/animal.dmi'
-	image_state = "clown"
-
-/obj/effect/hallucination/simple/clown/Initialize(mapload, mob/living/carbon/T, duration)
-	..(loc, T)
-	name = pick(GLOB.clown_names)
-	QDEL_IN(src,duration)
-
-/obj/effect/hallucination/simple/clown/scary
-	image_state = "scary_clown"
-
 /obj/effect/hallucination/simple/bubblegum
 	name = "Bubblegum"
 	image_icon = 'icons/mob/lavaland/96x96megafauna.dmi'
@@ -729,7 +717,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	// Display message
 	if (!is_radio && !target.client?.prefs.chat_on_map)
 		var/image/speech_overlay = image('icons/mob/talk.dmi', person, "default0", layer = ABOVE_MOB_LAYER)
-		INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay), speech_overlay, list(target.client), 30)
+		INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay_global), speech_overlay, list(target.client), 3 SECONDS)
 	if (target.client?.prefs.chat_on_map)
 		target.create_chat_message(speaker || person, understood_language, chosen, spans)
 	to_chat(target, message)
@@ -890,7 +878,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 				target.playsound_local(source, pick('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg'), 50, 1)
 		if("creepy")
 		//These sounds are (mostly) taken from Hidden: Source
-			target.playsound_local(source, pick(CREEPY_SOUNDS), 50, 1)
+			target.playsound_local(source, pick(GLOB.creepy_ambience), 50, 1)
 		if("tesla") //Tesla loose!
 			target.playsound_local(source, 'sound/magic/lightningbolt.ogg', 35, 1)
 			sleep(30)
@@ -1265,8 +1253,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	target.playsound_local(get_turf(src), "sparks", 100, 1)
 	target.staminaloss += 50
 	target.Stun(40)
-	target.adjust_jitter(1000, max = 1500)
-	target.do_jitter_animation(target.jitteriness)
+	target.set_timed_status_effect(300 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	addtimer(CALLBACK(src, PROC_REF(shock_drop)), 20)
 
 /datum/hallucination/shock/proc/reset_shock_animation()
@@ -1275,7 +1262,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		target.client.images.Remove(electrocution_skeleton_anim)
 
 /datum/hallucination/shock/proc/shock_drop()
-	target.jitteriness = max(target.jitteriness - 990, 10) //Still jittery, but vastly less
+	target.set_timed_status_effect(20 SECONDS, /datum/status_effect/jitter)
 	target.Paralyze(60)
 
 /datum/hallucination/husks

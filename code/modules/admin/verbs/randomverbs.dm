@@ -72,7 +72,7 @@
 			if (RADIO_CHANNEL_SYNDICATE)
 				sender = input("From what faction?", "Syndicate") as null|anything in list("Liberation Front Leadership", "Gorlex Republic Military Command", "Cybersun Industries", "the Student-Union of Naturalistic Sciences")
 			if (RADIO_CHANNEL_MINUTEMEN)
-				sender = input("From what division?", "Minutemen") as null|anything in list("the Colonial League Minutemen", "the Galactic Optium Labor Divison", "the Biohazard Assesment and Removal Division")
+				sender = input("From what division?", "Minutemen") as null|anything in list("the Confederated League", "the Galactic Optium Labor Divison", "the Biohazard Assesment and Removal Division")
 			if (RADIO_CHANNEL_INTEQ)
 				sender = "Inteq Risk Management"
 			if ("Outpost")
@@ -360,13 +360,47 @@
 	message_admins("[key_name_admin(src)] has changed Central Command's name to [input]")
 	log_admin("[key_name(src)] has changed the Central Command name to: [input]")
 
-/client/proc/cmd_admin_distress_signal(datum/overmap/overmap_location as anything in SSovermap.overmap_objects)
-	set category = "Event"
+/client/proc/cmd_admin_distress_signal()
+	set category = "Event.Overmap"
 	set name = "Create Distress Signal"
+
+	var/datum/overmap/overmap_location = tgui_input_list(
+		src,
+		"Select a location to launch a distress signal from.",
+		"Signal Location",
+		SSovermap.overmap_objects
+	)
 
 	if(!istype(overmap_location)) // Sanity check
 		return
-	var/confirm = alert(src, "Do you want to create a distress signal for [overmap_location.name]", "Distress Signal", "Yes", "No")
+	var/confirm = alert(src, "Do you want to create a distress signal for [overmap_location.name] [overmap_location.docked_to ? "docked to [overmap_location.docked_to]" : "at ([overmap_location.x], [overmap_location.y])"]?", "Distress Signal", "Yes", "No")
+
+	switch(confirm)
+		if("Yes")
+			create_distress_beacon(overmap_location)
+		if("No")
+			return
+
+/client/proc/cmd_admin_distress_signal_here()
+	set category = "Event.Overmap"
+	set name = "Create Distress Signal Here"
+
+	var/mob/self_mob = src.mob
+	var/datum/overmap/overmap_location
+	if(!istype(self_mob))
+		return
+
+	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(self_mob)
+	if(istype(ship))
+		overmap_location = ship
+
+	if(!overmap_location)
+		overmap_location = self_mob.get_overmap_location()
+
+	if(!overmap_location && !istype(overmap_location))
+		return
+
+	var/confirm = alert(src, "Do you want to create a distress signal for [overmap_location.name] [overmap_location.docked_to ? "docked to [overmap_location.docked_to]" : "at ([overmap_location.x], [overmap_location.y])"]?", "Distress Signal", "Yes", "No")
 
 	switch(confirm)
 		if("Yes")
@@ -791,8 +825,8 @@
 /datum/admins/proc/modify_goals()
 	var/dat = ""
 	for(var/datum/station_goal/S in SSticker.mode.station_goals)
-		dat += "[S.name] - <a href='?src=[REF(S)];[HrefToken()];announce=1'>Announce</a> | <a href='?src=[REF(S)];[HrefToken()];remove=1'>Remove</a><br>"
-	dat += "<br><a href='?src=[REF(src)];[HrefToken()];add_station_goal=1'>Add New Goal</a>"
+		dat += "[S.name] - <a href='byond://?src=[REF(S)];[HrefToken()];announce=1'>Announce</a> | <a href='byond://?src=[REF(S)];[HrefToken()];remove=1'>Remove</a><br>"
+	dat += "<br><a href='byond://?src=[REF(src)];[HrefToken()];add_station_goal=1'>Add New Goal</a>"
 	usr << browse(dat, "window=goals;size=400x400")
 
 /proc/immerse_player(mob/living/carbon/target, toggle=TRUE, remove=FALSE)
@@ -809,12 +843,6 @@
 /proc/mass_immerse(remove=FALSE)
 	for(var/mob/living/carbon/M in GLOB.mob_list)
 		immerse_player(M, toggle=FALSE, remove=remove)
-
-/proc/pie_smite(mob/living/target)
-	if(QDELETED(target))
-		return
-	var/obj/item/reagent_containers/food/snacks/pie/cream/creamy = new(get_turf(target))
-	creamy.splat(target)
 
 /client/proc/toggle_hub()
 	set category = "Server"
@@ -1048,18 +1076,26 @@
 	if(!check_rights(R_ADMIN) || !check_rights(R_FUN))
 		return
 
-	var/list/punishment_list = list(ADMIN_PUNISHMENT_BREAK_BONES, ADMIN_PUNISHMENT_LIGHTNING, ADMIN_PUNISHMENT_BRAINDAMAGE, ADMIN_PUNISHMENT_GIB, ADMIN_PUNISHMENT_BSA, ADMIN_PUNISHMENT_FIREBALL, ADMIN_PUNISHMENT_ROD, ADMIN_PUNISHMENT_SUPPLYPOD_QUICK, ADMIN_PUNISHMENT_SUPPLYPOD, ADMIN_PUNISHMENT_MAZING, ADMIN_PUNISHMENT_IMMERSE, ADMIN_PUNISHMENT_NYA, ADMIN_PUNISHMENT_PIE)
+	var/list/punishment_list = list(
+		ADMIN_PUNISHMENT_LIGHTNING,
+		ADMIN_PUNISHMENT_BRAINDAMAGE,
+		ADMIN_PUNISHMENT_GIB,
+		ADMIN_PUNISHMENT_BSA,
+		ADMIN_PUNISHMENT_FIREBALL,
+		ADMIN_PUNISHMENT_SUPPLYPOD_QUICK,
+		ADMIN_PUNISHMENT_SUPPLYPOD,
+		ADMIN_PUNISHMENT_MAZING,
+		ADMIN_PUNISHMENT_CRACK,
+		ADMIN_PUNISHMENT_BLEED,
+		ADMIN_PUNISHMENT_PERFORATE,
+	)
 
-	var/punishment = input("Choose a punishment", "DIVINE SMITING") as null|anything in sortList(punishment_list)
+	var/punishment = input("Choose a punishment", "mods kill this guy") as null|anything in sortList(punishment_list)
 
 	if(QDELETED(target) || !punishment)
 		return
 
 	switch(punishment)
-		if(ADMIN_PUNISHMENT_BREAK_BONES)
-			if(iscarbon(target))
-				var/mob/living/carbon/C = target
-				C.break_all_bones()
 		if(ADMIN_PUNISHMENT_LIGHTNING)
 			var/turf/T = get_step(get_step(target, NORTH), NORTH)
 			T.Beam(target, icon_state="lightning[rand(1,12)]", time = 5)
@@ -1068,30 +1104,28 @@
 				var/mob/living/carbon/human/H = target
 				H.electrocution_animation(40)
 			to_chat(target, span_userdanger("The gods have punished you for your sins!"), confidential = TRUE)
+
 		if(ADMIN_PUNISHMENT_BRAINDAMAGE)
 			target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 199, 199)
+
 		if(ADMIN_PUNISHMENT_GIB)
 			target.gib(FALSE)
+
 		if(ADMIN_PUNISHMENT_BSA)
 			bluespace_artillery(target)
+
 		if(ADMIN_PUNISHMENT_FIREBALL)
 			new /obj/effect/temp_visual/target(get_turf(target))
-		if(ADMIN_PUNISHMENT_ROD)
-			var/turf/T = get_turf(target)
-			var/startside = pick(GLOB.cardinals)
-			var/datum/virtual_level/vlevel = T.get_virtual_level()
-			var/turf/startT = vlevel.get_side_turf(startside)
-			var/turf/endT = vlevel.get_side_turf(REVERSE_DIR(startside))
-			new /obj/effect/immovablerod(startT, endT,target)
+
 		if(ADMIN_PUNISHMENT_SUPPLYPOD_QUICK)
-			var/target_path = input(usr,"Enter typepath of an atom you'd like to send with the pod (type \"empty\" to send an empty pod):" ,"Typepath","/obj/item/reagent_containers/food/snacks/grown/harebell") as null|text
+			var/target_path = input(usr,"Enter typepath of an atom you'd like to send with the pod (type \"empty\" to send an empty pod):" ,"Typepath","/obj/item/food/grown/harebell") as null|text
 			var/obj/structure/closet/supplypod/centcompod/pod = new()
 			pod.damage = 40
 			pod.explosionSize = list(0,0,0,2)
 			pod.effectStun = TRUE
-			if (isnull(target_path)) //The user pressed "Cancel"
+			if(isnull(target_path)) //The user pressed "Cancel"
 				return
-			if (target_path != "empty")//if you didn't type empty, we want to load the pod with a delivery
+			if(target_path != "empty")//if you didn't type empty, we want to load the pod with a delivery
 				var/delivery = text2path(target_path)
 				if(!ispath(delivery))
 					delivery = pick_closest_path(target_path)
@@ -1100,6 +1134,7 @@
 						return
 				new delivery(pod)
 			new /obj/effect/pod_landingzone(get_turf(target), pod)
+
 		if(ADMIN_PUNISHMENT_SUPPLYPOD)
 			var/datum/centcom_podlauncher/plaunch  = new(usr)
 			if(!holder)
@@ -1113,22 +1148,106 @@
 			plaunch.temp_pod.effectStun = TRUE
 			plaunch.ui_interact(usr)
 			return //We return here because punish_log() is handled by the centcom_podlauncher datum
+
 		if(ADMIN_PUNISHMENT_MAZING)
 			if(!puzzle_imprison(target))
 				to_chat(usr,span_warning("Imprisonment failed!"), confidential = TRUE)
 				return
-		if(ADMIN_PUNISHMENT_IMMERSE)
-			immerse_player(target)
-		if(ADMIN_PUNISHMENT_NYA)
+
+		if(ADMIN_PUNISHMENT_CRACK)
 			if(!iscarbon(target))
-				to_chat(usr,span_warning("This must be used on a carbon mob."))
+				to_chat(usr, span_warning("This must be used on a carbon mob."), confidential = TRUE)
 				return
-			to_chat(target, span_userdanger("You do nyat feew vewy good!"), confidential = TRUE)
+			var/mob/living/carbon/C = target
+			for(var/i in C.bodyparts)
+				var/obj/item/bodypart/squish_part = i
+				var/type_wound = pick(list(/datum/wound/blunt/severe, /datum/wound/blunt/severe, /datum/wound/blunt/moderate))
+				squish_part.force_wound_upwards(type_wound, smited=TRUE)
+
+		if(ADMIN_PUNISHMENT_BLEED)
+			if(!iscarbon(target))
+				to_chat(usr, span_warning("This must be used on a carbon mob."), confidential = TRUE)
+				return
+			var/mob/living/carbon/C = target
+			for(var/i in C.bodyparts)
+				var/obj/item/bodypart/slice_part = i
+				var/type_wound = pick(list(/datum/wound/slash/critical, /datum/wound/slash/moderate))
+				slice_part.force_wound_upwards(type_wound, smited=TRUE)
+				type_wound = pick(list(/datum/wound/slash/critical, /datum/wound/slash/moderate))
+				slice_part.force_wound_upwards(type_wound, smited=TRUE)
+				type_wound = pick(list(/datum/wound/slash/critical, /datum/wound/slash/moderate))
+				slice_part.force_wound_upwards(type_wound, smited=TRUE)
+
+		if(ADMIN_PUNISHMENT_PERFORATE)
+			if(!iscarbon(target))
+				to_chat(usr, span_warning("This must be used on a carbon mob."), confidential = TRUE)
+				return
+
+			var/list/how_fucked_is_this_dude = list("A little", "A lot", "So fucking much", "FUCK THIS DUDE")
+			var/hatred = input("How much do you hate this guy?") in how_fucked_is_this_dude
+			var/repetitions
+			var/shots_per_limb_per_rep = 2
+			var/damage
+			switch(hatred)
+				if("A little")
+					repetitions = 1
+					damage = 5
+				if("A lot")
+					repetitions = 2
+					damage = 8
+				if("So fucking much")
+					repetitions = 3
+					damage = 10
+				if("FUCK THIS DUDE")
+					repetitions = 4
+					damage = 10
+
 			var/mob/living/carbon/dude = target
-			var/obj/item/organ/tongue/uwuspeak/tonje = new
-			tonje.Insert(dude, TRUE, FALSE)
+			var/list/open_adj_turfs = get_adjacent_open_turfs(dude)
+			var/list/wound_bonuses = list(15, 70, 110, 250)
+
+			var/delay_per_shot = 1
+			var/delay_counter = 1
+
+			dude.Immobilize(5 SECONDS)
+			for(var/wound_bonus_rep in 1 to repetitions)
+				for(var/i in dude.bodyparts)
+					var/obj/item/bodypart/slice_part = i
+					var/shots_this_limb = 0
+					for(var/t in shuffle(open_adj_turfs))
+						var/turf/iter_turf = t
+						addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(firing_squad), dude, iter_turf, slice_part.body_zone, wound_bonuses[wound_bonus_rep], damage), delay_counter)
+						delay_counter += delay_per_shot
+						shots_this_limb++
+						if(shots_this_limb > shots_per_limb_per_rep)
+							break
 
 	punish_log(target, punishment)
+
+/**
+ * firing_squad is a proc for the :B:erforate smite to shoot each individual bullet at them, so that we can add actual delays without sleep() nonsense
+ *
+ * Hilariously, if you drag someone away mid smite, the bullets will still chase after them from the original spot, possibly hitting other people. Too funny to fix imo
+ *
+ * Arguments:
+ * * target- guy we're shooting obviously
+ * * source_turf- where the bullet begins, preferably on a turf next to the target
+ * * body_zone- which bodypart we're aiming for, if there is one there
+ * * wound_bonus- the wounding power we're assigning to the bullet, since we don't care about the base one
+ * * damage- the damage we're assigning to the bullet, since we don't care about the base one
+ */
+/proc/firing_squad(mob/living/carbon/target, turf/source_turf, body_zone, wound_bonus, damage)
+	if(!target.get_bodypart(body_zone))
+		return
+	playsound(target, 'sound/weapons/gun/revolver/shot.ogg', 100)
+	var/obj/projectile/bullet/smite/divine_wrath = new(source_turf)
+	divine_wrath.damage = damage
+	divine_wrath.wound_bonus = wound_bonus
+	divine_wrath.original = target
+	divine_wrath.def_zone = body_zone
+	divine_wrath.spread = 0
+	divine_wrath.preparePixelProjectile(target, source_turf)
+	divine_wrath.fire()
 
 /client/proc/punish_log(whom, punishment)
 	var/msg = "[key_name_admin(usr)] punished [key_name_admin(whom)] with [punishment]."
@@ -1136,7 +1255,7 @@
 	admin_ticket_log(whom, msg)
 	log_admin("[key_name(usr)] punished [key_name(whom)] with [punishment].")
 
-/client/proc/cmd_admin_check_player_exp()	//Allows admins to determine who the newer players are.
+/client/proc/cmd_admin_check_player_exp() //Allows admins to determine who the newer players are.
 	set category = "Admin"
 	set name = "Player Playtime"
 	if(!check_rights(R_ADMIN))
@@ -1149,7 +1268,7 @@
 	var/list/msg = list()
 	msg += "<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Playtime Report</title></head><body>Playtime:<BR><UL>"
 	for(var/client/C in GLOB.clients)
-		msg += "<LI> - [key_name_admin(C)]: <A href='?_src_=holder;[HrefToken()];getplaytimewindow=[REF(C.mob)]'>" + C.get_exp_living() + "</a></LI>"
+		msg += "<LI> - [key_name_admin(C)]: <A href='byond://?_src_=holder;[HrefToken()];getplaytimewindow=[REF(C.mob)]'>" + C.get_exp_living() + "</a></LI>"
 	msg += "</UL></BODY></HTML>"
 	src << browse(msg.Join(), "window=Player_playtime_check")
 

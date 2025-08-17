@@ -12,6 +12,8 @@
 	max_amount = 5
 	resistance_flags = FLAMMABLE
 	grind_results = list(/datum/reagent/cellulose = 5)
+	w_class = WEIGHT_CLASS_TINY
+	full_w_class = WEIGHT_CLASS_SMALL
 
 	var/list/conferred_embed = EMBED_HARMLESS
 	var/overwrite_existing = FALSE
@@ -68,9 +70,17 @@
 	prefix = "super pointy"
 	conferred_embed = EMBED_POINTY_SUPERIOR
 
+/obj/item/stack/sticky_tape/surgical
+	name = "surgical tape"
+	singular_name = "surgical tape"
+	desc = "Made for patching broken bones back together alongside bone gel."
+	prefix = "surgical"
+	conferred_embed = list("embed_chance" = 30, "pain_mult" = 0, "jostle_pain_mult" = 0, "ignore_throwspeed_threshold" = TRUE)
+	custom_price = 500
+
 /obj/item/stack/tape
 	name = "packaging tape"
-	singular_name = "tape strip"
+	singular_name = "packaging tape"
 	desc = "Sticks things together with minimal effort."
 	icon = 'icons/obj/tapes.dmi'
 	icon_state = "tape"
@@ -81,7 +91,6 @@
 	usesound = 'sound/items/tape.ogg'
 
 	var/lifespan = 300
-	var/bleed_reduction = 0.002
 	var/nonorganic_heal = 5
 	var/self_delay = 30 //! Also used for the tapecuff delay
 	var/other_delay = 10
@@ -180,10 +189,6 @@
 			if(affecting.heal_damage(nonorganic_heal))
 				C.update_damage_overlays()
 			return TRUE
-	if(affecting.can_bandage(user))
-		affecting.apply_bandage(bleed_reduction, lifespan, name)
-		to_chat(user, span_notice("You tape up [C]'s [parse_zone(affecting.body_zone)]!"))
-		return TRUE
 	to_chat(user, span_warning("[src] can't patch what [C] has..."))
 
 /obj/item/stack/tape/proc/apply_gag(mob/living/carbon/target, mob/user)
@@ -266,8 +271,11 @@
 
 /obj/item/stack/tape/industrial
 	name = "duct tape"
+	singular_name = "duct tape"
 	desc = "This roll of silver sorcery can fix just about anything."
 	icon_state = "tape_d"
+	amount = 15
+	max_amount = 15
 
 	lifespan = 400
 	nonorganic_heal = 20
@@ -279,7 +287,7 @@
 	if(.)
 		return .
 	if(user.a_intent == INTENT_HELP)
-		if(O.obj_integrity < O.max_integrity)
+		if(O.atom_integrity < O.max_integrity)
 			to_chat(user, span_notice("Nothing a little [src] can't fix..."))
 			play_tool_sound(O, 30)
 			if(src.use_tool(O, user, other_delay, 1))
@@ -291,6 +299,7 @@
 
 /obj/item/stack/tape/industrial/electrical
 	name = "electrical tape"
+	singular_name = "electrical tape"
 	desc = "Specialty insulated strips of adhesive plastic. Made for securing cables."
 	icon_state = "tape_e"
 
@@ -314,6 +323,7 @@
 
 /obj/item/stack/tape/industrial/pro
 	name = "professional-grade duct tape"
+	singular_name = "professional-grade duct tape"
 	desc = "Now THIS is engineering."
 	icon_state = "tape_y"
 

@@ -7,6 +7,8 @@
 	living_flags = MOVES_ON_ITS_OWN
 	status_flags = CANPUSH
 
+	bad_type = /mob/living/simple_animal
+
 	var/icon_living = ""
 	///Icon when the animal is dead. Don't use animated icons for this.
 	var/icon_dead = ""
@@ -140,8 +142,14 @@
 	///What kind of footstep this mob should have. Null if it shouldn't have any.
 	var/footstep_type
 
-	/// Base armor value on this mob for running armor checks
-	var/datum/armor/armor
+	///How much wounding power it has
+	var/wound_bonus = 5
+	///How much bare wounding power it has
+	var/bare_wound_bonus = 0
+	///If the attacks from this are sharp
+	var/sharpness = SHARP_NONE
+	///Generic flags
+	var/simple_mob_flags = NONE
 
 
 /mob/living/simple_animal/Initialize(mapload)
@@ -199,10 +207,6 @@
 			tamed(user)
 		else
 			tame_chance += bonus_tame_chance
-
-///Extra effects to add when the mob is tamed, such as adding a riding component
-/mob/living/simple_animal/proc/tamed(whomst)
-	return
 
 /mob/living/simple_animal/examine(mob/user)
 	. = ..()

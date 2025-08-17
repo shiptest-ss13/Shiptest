@@ -300,7 +300,7 @@
 
 /obj/effect/mob_spawn/cow
 	name = "sleeper"
-	mob_type = 	/mob/living/simple_animal/cow
+	mob_type = 	/mob/living/basic/cow
 	death = FALSE
 	roundstart = FALSE
 	mob_gender = FEMALE
@@ -364,10 +364,6 @@
 /obj/effect/mob_spawn/human/engineer
 	name = "Engineer"
 	outfit = /datum/outfit/job/engineer
-
-/obj/effect/mob_spawn/human/clown
-	name = "Clown"
-	outfit = /datum/outfit/job/clown
 
 /obj/effect/mob_spawn/human/scientist
 	name = "Scientist"
@@ -465,7 +461,6 @@
 	name = "Beach Bum"
 	glasses = /obj/item/clothing/glasses/sunglasses
 	r_pocket = /obj/item/storage/wallet/random
-	l_pocket = /obj/item/reagent_containers/food/snacks/pizzaslice/dank
 	uniform = /obj/item/clothing/under/pants/jeans
 	id = /obj/item/card/id
 

@@ -259,6 +259,7 @@ Difficulty: Very Hard
 	eyeblur = 0
 	damage_type = BRUTE
 	pass_flags = PASSTABLE
+	plane = GAME_PLANE
 
 /obj/projectile/colossus/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -461,21 +462,6 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 
 /obj/machinery/anomalous_crystal/ex_act()
 	ActivationReaction(null, ACTIVATE_BOMB)
-
-/obj/machinery/anomalous_crystal/honk //Strips and equips you as a clown. I apologize for nothing
-	observer_desc = "This crystal strips and equips its targets as clowns."
-	possible_methods = list(ACTIVATE_MOB_BUMP, ACTIVATE_SPEECH)
-	activation_sound = 'sound/items/bikehorn.ogg'
-
-/obj/machinery/anomalous_crystal/honk/ActivationReaction(mob/user)
-	if(..() && ishuman(user) && !(user in affected_targets))
-		var/mob/living/carbon/human/H = user
-		for(var/obj/item/W in H)
-			H.dropItemToGround(W)
-		var/datum/job/clown/C = new /datum/job/clown()
-		C.equip(H)
-		qdel(C)
-		affected_targets.Add(H)
 
 /obj/machinery/anomalous_crystal/theme_warp //Warps the area you're in to look like a new one
 	observer_desc = "This crystal warps the area around it to a theme."

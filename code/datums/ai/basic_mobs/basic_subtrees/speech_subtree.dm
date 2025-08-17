@@ -17,8 +17,8 @@
 	if(emote_see)
 		emote_see = string_list(emote_see)
 
-/datum/ai_planning_subtree/random_speech/SelectBehaviors(datum/ai_controller/controller, delta_time)
-	if(SPT_PROB(speech_chance, delta_time))
+/datum/ai_planning_subtree/random_speech/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
+	if(SPT_PROB(speech_chance, seconds_per_tick))
 		var/audible_emotes_length = emote_hear?.len
 		var/non_audible_emotes_length = emote_see?.len
 		var/speak_lines_length = speak?.len
@@ -43,3 +43,15 @@
 	speak = list("Squeak!", "SQUEAK!", "Squeak?")
 	emote_hear = list("squeaks.")
 	emote_see = list("runs in a circle.", "shakes.")
+
+/datum/ai_planning_subtree/random_speech/cow
+	speech_chance = 1
+	speak = list("moo?","moo","MOOOOOO")
+	//sound = list('sound/mobs/non-humanoids/cow/cow.ogg')
+	emote_hear = list("brays.")
+	emote_see = list("shakes her head.")
+
+/datum/ai_planning_subtree/random_speech/bear
+	speech_chance = 5
+	emote_hear = list("rawrs.","grumbles.","grawls.", "stomps!")
+	emote_see = list("stares ferociously.")

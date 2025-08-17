@@ -9,7 +9,6 @@
 	item_state = "solgov_tunic"
 	armor = list("melee" = 0, "fire" = 30, "acid" = 30)
 	strip_delay = 50
-	can_adjust = FALSE
 	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/solgov/terragov
@@ -18,7 +17,6 @@
 	icon_state = "terragov_tunic"
 	item_state = "terragov_tunic"
 	armor = list("melee" = 0, "fire" = 30, "acid" = 30)
-	can_adjust = FALSE
 
 /obj/item/clothing/under/solgov/dress
 	name = "\improper SolGov dress"
@@ -31,28 +29,25 @@
 	desc = "A formal SolGov uniform, commonly used by representatives and officials."
 	icon_state = "formal_solgov"
 	item_state = "formal_solgov"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/solgov/formal/skirt
 	name = "\improper SolGov formal suitskirt"
 	desc = "A formal SolGov uniform, commonly used by representatives and officials."
 	icon_state = "formal_solgov_skirt"
 	item_state = "formal_solgov_skirt"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/solgov/formal/terragov
 	name = "\improper TerraGov formal uniform"
 	desc = "A formal SolGov uniform, for special occasions. This one is colored in original TerraGov green."
 	icon_state = "formal_terragov"
 	item_state = "formal_terragov"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/solgov/formal/captain
 	name = "\improper SolGov captain uniform"
 	desc = "A formal SolGov uniform, utilized by captains of SolGov vessels."
 	icon_state = "solgov_captain"
 	item_state = "solgov_captain"
-	can_adjust = FALSE
+
 
 /obj/item/clothing/under/plasmaman/solgov
 	name = "\improper SolGov envirosuit"
@@ -61,7 +56,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/uniforms.dmi'
 	icon_state = "plasma_solgov"
 	item_state = "plasma_solgov"
-	can_adjust = FALSE
+
 
 /obj/item/clothing/head/helmet/space/plasmaman/solgov
 	name = "\improper SolGov envirosuit helmet"
@@ -91,7 +86,7 @@
 	icon_state = "solgov_overseer_robe"
 	item_state = "solgov_overseer_robe"
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 
@@ -101,7 +96,7 @@
 	icon_state = "solgov_coat"
 	item_state = "solgov_coat"
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 
@@ -126,7 +121,7 @@
 	icon_state = "vacsuit_solgov"
 	item_state = "vacsuit_solgov"
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy, /obj/item/tank/internals)
-	armor = list("bio" = 100, "rad" = 50, "fire" = 60, "acid" = 75)
+	armor = list("bio" = 100, "rad" = 50, "fire" = 60, "acid" = 75, "wound" = 10)
 	slowdown = 0.5
 	w_class = WEIGHT_CLASS_NORMAL
 	supports_variations = DIGITIGRADE_VARIATION
@@ -139,7 +134,7 @@
 	icon_state = "hardsuit0-solgov"
 	item_state = "hardsuit0-solgov"
 	hardsuit_type = "solgov"
-	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 60, "fire" = 90, "acid" = 75)
+	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 60, "fire" = 90, "acid" = 75, "wound" = 30)
 
 /obj/item/clothing/suit/space/hardsuit/solgov //see this is a good path. not fucking /security/independant/inteq. its just /hardsuit/solgov
 
@@ -149,7 +144,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/suits.dmi'
 	icon_state = "hardsuit_solgov"
 	item_state = "hardsuit_solgov"
-	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 60, "fire" = 90, "acid" = 75) //intentionally the fucking strong, this is master chief-tier armor //is this really what you call the strong?? is this the best solgov has to offer??????
+	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 60, "fire" = 90, "acid" = 75, "wound" = 30) //intentionally the fucking strong, this is master chief-tier armor //is this really what you call the strong?? is this the best solgov has to offer??????
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/solgov
 	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 	slowdown = 0.2
@@ -222,7 +217,7 @@
 	item_state = "coat_solgov"
 	blood_overlay_type = "coat"
 	togglename = "buttons"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 
 /obj/item/clothing/suit/toggle/solgov/terragov
 	name = "\improper Terragov coat"

@@ -34,7 +34,7 @@
 /obj/item/clothing/glasses/examine(mob/user)
 	. = ..()
 	if(glass_colour_type && ishuman(user))
-		. += span_notice("Alt-click to toggle its colors.")
+		. += span_notice("Alt-click to toggle [p_their()] colors.")
 
 /obj/item/clothing/glasses/visor_toggling()
 	..()
@@ -283,7 +283,7 @@
 
 /obj/item/clothing/glasses/trickblindfold
 	name = "blindfold"
-	desc = "A see-through blindfold perfect for cheating at games like pin the stun baton on the clown."
+	desc = "A see-through blindfold perfect for cheating at games."
 	icon_state = "trickblindfold"
 	item_state = "blindfold"
 

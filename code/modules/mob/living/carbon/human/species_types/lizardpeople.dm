@@ -4,7 +4,7 @@
 	id = SPECIES_SARATHI
 	default_color = "00FF00"
 	species_age_max = 175
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,SCLERA,EMOTE_OVERLAY,MUTCOLORS_SECONDARY)
+	species_traits = list(MUTCOLORS, EYECOLOR, LIPS, SCLERA, EMOTE_OVERLAY, MUTCOLORS_SECONDARY, HAS_FLESH, HAS_BONE)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
 	mutant_bodyparts = list("tail_lizard", "face_markings", "frills", "horns", "spines", "body_markings", "legs")
 	mutanttongue = /obj/item/organ/tongue/lizard
@@ -16,7 +16,7 @@
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
-	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/lizard
+	meat = /obj/item/food/meat/slab/human/mutant/lizard
 	skinned_type = /obj/item/stack/sheet/animalhide/lizard
 	exotic_bloodtype = "L"
 	disliked_food = GRAIN | DAIRY | CLOTH | GROSS

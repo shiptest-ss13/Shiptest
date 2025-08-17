@@ -143,14 +143,14 @@
 	return TRUE
 
 //Allow you to drag-drop disposal pipes and transit tubes into it
-/obj/machinery/pipedispenser/MouseDrop_T(obj/structure/pipe, mob/usr)
-	if(usr.incapacitated())
+/obj/machinery/pipedispenser/MouseDrop_T(obj/structure/pipe, mob/user)
+	if(user.incapacitated())
 		return
 
 	if(!istype(pipe, /obj/structure/disposalconstruct) && !istype(pipe, /obj/structure/c_transit_tube) && !istype(pipe, /obj/structure/c_transit_tube_pod))
 		return
 
-	if(get_dist(usr, src) > 1 || get_dist(src,pipe) > 1)
+	if(get_dist(user, src) > 1 || get_dist(src,pipe) > 1)
 		return
 
 	if(pipe.anchored)

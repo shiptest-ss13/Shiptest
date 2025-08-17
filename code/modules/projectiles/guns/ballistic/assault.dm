@@ -1,4 +1,6 @@
 /obj/item/gun/ballistic/automatic/assault
+	bad_type = /obj/item/gun/ballistic/automatic/assault
+
 	show_magazine_on_sprite = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 
@@ -24,9 +26,9 @@
 	gunslinger_spread_bonus = 16
 
 	light_range = 2
-	wear_minor_threshold = 100
-	wear_major_threshold = 300
-	wear_maximum = 600
+	wear_minor_threshold = 200
+	wear_major_threshold = 600
+	wear_maximum = 1200
 
 /obj/item/gun/ballistic/automatic/assault/skm
 	name = "\improper SKM-24"
@@ -49,7 +51,7 @@
 	show_magazine_on_sprite = TRUE
 	unique_mag_sprites_for_variants = TRUE
 	weapon_weight = WEAPON_MEDIUM
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	manufacturer = MANUFACTURER_IMPORT
 	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40
 	allowed_ammo_types = list(
@@ -58,8 +60,6 @@
 
 	//truly a doohickey for every occasion
 	unique_attachments = list (
-		/obj/item/attachment/scope,
-		/obj/item/attachment/long_scope,
 		/obj/item/attachment/energy_bayonet,
 	)
 
@@ -146,7 +146,7 @@
 
 	fire_select_icon_state_prefix = "swisschesse_"
 
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	default_ammo_type = /obj/item/ammo_box/magazine/swiss
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/swiss,

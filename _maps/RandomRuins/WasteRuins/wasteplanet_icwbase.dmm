@@ -233,7 +233,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcommoni)
 "aO" = (
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = -4
 	},
 /obj/effect/spawner/random/trash/botanical_waste,
@@ -596,12 +596,12 @@
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_icwbase/eng)
 "cx" = (
-/obj/item/reagent_containers/food/snacks/bait/worm,
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm,
+/obj/item/food/bait/worm{
 	pixel_x = 9;
 	pixel_y = -13
 	},
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = -13;
 	pixel_y = -13
 	},
@@ -734,7 +734,6 @@
 /turf/open/floor/circuit/red/anim,
 /area/ruin/wasteplanet/wasteplanet_icwbase/vault)
 "cP" = (
-/obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
 "cR" = (
@@ -1697,11 +1696,11 @@
 	icon_state = "dirty_mattress"
 	},
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = -12;
 	pixel_y = -2
 	},
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = 13
 	},
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters{
@@ -2061,6 +2060,13 @@
 	},
 /turf/open/floor/engine/waste/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"hG" = (
+/obj/structure/cable,
+/obj/machinery/porta_turret/ruin/frontiersmen{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/ruin/wasteplanet/wasteplanet_icwbase/TURRETS)
 "hH" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/bordercee{
 	dir = 4
@@ -2225,7 +2231,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
 "io" = (
-/obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/mineral/plastitanium,
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
 "ip" = (
@@ -2282,6 +2287,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/engine/waste/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
@@ -2579,7 +2587,7 @@
 /turf/open/floor/carpet/purple,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "kn" = (
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = -7;
 	pixel_y = -3
 	},
@@ -2666,9 +2674,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "kG" = (
 /obj/structure/cable,
-/obj/machinery/porta_turret/ship/frontiersmen{
-	reqpower = 0;
-	faction = list("Frontiersmen");
+/obj/machinery/porta_turret/ruin/frontiersmen{
 	dir = 5
 	},
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
@@ -3179,7 +3185,7 @@
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "mP" = (
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = -11;
 	pixel_y = 1
 	},
@@ -3290,10 +3296,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen{
-	reqpower = 0;
-	faction = list("Frontiersmen")
-	},
+/obj/machinery/porta_turret/ruin/frontiersmen,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/ruin/wasteplanet/wasteplanet_icwbase/TURRETS)
 "nn" = (
@@ -3861,7 +3864,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "pq" = (
 /obj/effect/spawner/random/trash,
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = 11;
 	pixel_y = -4
 	},
@@ -3873,7 +3876,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = 6;
 	pixel_y = -7
 	},
@@ -3886,7 +3889,7 @@
 /obj/effect/decal/cleanable/garbage,
 /obj/effect/decal/cleanable/generic,
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = -4;
 	pixel_y = 5
 	},
@@ -4528,7 +4531,6 @@
 	dir = 1;
 	pixel_y = 1
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "rN" = (
@@ -4610,7 +4612,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "sf" = (
 /obj/effect/spawner/random/trash,
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = -5;
 	pixel_y = 6
 	},
@@ -4787,9 +4789,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen{
-	reqpower = 0;
-	faction = list("Frontiersmen");
+/obj/machinery/porta_turret/ruin/frontiersmen{
 	dir = 10
 	},
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
@@ -5408,7 +5408,7 @@
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "vs" = (
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = -5;
 	pixel_y = -3
 	},
@@ -5619,11 +5619,11 @@
 	dir = 1
 	},
 /obj/effect/mob_spawn/human/corpse/cybersunfieldmedic,
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = -11;
 	pixel_y = 7
 	},
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = 12;
 	pixel_y = 2
 	},
@@ -5994,7 +5994,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "xL" = (
 /obj/effect/spawner/random/trash,
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = 5;
 	pixel_y = 3
 	},
@@ -6086,11 +6086,11 @@
 	icon_state = "dirty_mattress"
 	},
 /obj/effect/mob_spawn/human/corpse/vigilitas_private,
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = -7;
 	pixel_y = -4
 	},
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = 7;
 	pixel_y = 5
 	},
@@ -6124,7 +6124,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
 "yf" = (
-/turf/open/water/acid,
+/turf/open/water/acid/waste,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "yk" = (
 /obj/effect/decal/cleanable/robot_debris/gib,
@@ -6264,7 +6264,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "yM" = (
 /obj/effect/spawner/random/trash,
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = -6;
 	pixel_y = -3
 	},
@@ -6363,10 +6363,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen{
-	reqpower = 0;
-	faction = list("Frontiersmen")
-	},
+/obj/machinery/porta_turret/ruin/frontiersmen,
 /turf/open/floor/concrete/pavement/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/TURRETS)
 "zp" = (
@@ -6678,10 +6675,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen{
-	reqpower = 0;
-	faction = list("Frontiersmen")
-	},
+/obj/machinery/porta_turret/ruin/frontiersmen,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/ruin/wasteplanet/wasteplanet_icwbase/TURRETS)
 "Ao" = (
@@ -6807,11 +6801,11 @@
 	icon_state = "dirty_mattress"
 	},
 /obj/effect/decal/cleanable/blood/old,
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = 4;
 	pixel_y = -9
 	},
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = -8;
 	pixel_y = 5
 	},
@@ -6868,7 +6862,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "AY" = (
 /obj/effect/spawner/random/trash,
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = 7;
 	pixel_y = 5
 	},
@@ -7041,7 +7035,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "BO" = (
-/obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "BQ" = (
@@ -7108,11 +7101,11 @@
 	pixel_x = 11;
 	pixel_y = -5
 	},
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = 6;
 	pixel_y = 6
 	},
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = -9;
 	pixel_y = -6
 	},
@@ -8366,15 +8359,15 @@
 "Hw" = (
 /obj/structure/kitchenspike,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = -11;
 	pixel_y = 16
 	},
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = 6;
 	pixel_y = 1
 	},
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = -9;
 	pixel_y = -4
 	},
@@ -8435,7 +8428,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
 "HP" = (
-/obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "HS" = (
@@ -8456,7 +8448,7 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
 "HV" = (
 /obj/effect/gibspawner/human/bodypartless,
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = -7
 	},
 /obj/effect/decal/cleanable/blood/old{
@@ -8493,9 +8485,7 @@
 /obj/structure/cable{
 	icon_state = "0-6"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen/heavy{
-	faction = list("Frontiersmen")
-	},
+/obj/machinery/porta_turret/ruin/frontiersmen/heavy,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/ruin/wasteplanet/wasteplanet_icwbase/TURRETS)
 "Ib" = (
@@ -9281,7 +9271,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "KP" = (
 /obj/effect/spawner/random/trash,
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = 9;
 	pixel_y = 8
 	},
@@ -9653,9 +9643,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen{
-	reqpower = 0;
-	faction = list("Frontiersmen");
+/obj/machinery/porta_turret/ruin/frontiersmen{
 	dir = 10
 	},
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
@@ -10038,7 +10026,7 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
 "Oo" = (
 /obj/structure/table,
-/obj/item/reagent_containers/food/snacks/pizza/dank,
+/obj/item/food/pizza/dank,
 /obj/item/melee/knife/pizza_cutter{
 	pixel_x = -5;
 	pixel_y = 5
@@ -10977,8 +10965,6 @@
 "Sr" = (
 /obj/structure/closet/secure_closet/freezer/fridge/open,
 /obj/effect/turf_decal/corner/opaque/cybersunteal/bordercee,
-/obj/item/food/breadslice/moldy,
-/obj/item/food/breadslice/moldy,
 /obj/item/reagent_containers/food/drinks/bottle/moonshine,
 /turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
@@ -11608,9 +11594,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen{
-	reqpower = 0;
-	faction = list("Frontiersmen");
+/obj/machinery/porta_turret/ruin/frontiersmen{
 	dir = 1
 	},
 /turf/open/floor/plating/wasteplanet{
@@ -12009,7 +11993,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
 "Wn" = (
-/obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/mineral/plastitanium,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
 "Wp" = (
@@ -12057,9 +12040,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen{
-	reqpower = 0;
-	faction = list("Frontiersmen");
+/obj/machinery/porta_turret/ruin/frontiersmen{
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
@@ -12439,11 +12420,11 @@
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Yf" = (
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = -4;
 	pixel_y = -5
 	},
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = -11;
 	pixel_y = 16
 	},
@@ -12452,7 +12433,7 @@
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/shreds,
 /obj/effect/mob_spawn/human/corpse/cybersunfieldmedic,
-/obj/item/reagent_containers/food/snacks/bait/worm{
+/obj/item/food/bait/worm{
 	pixel_x = -11;
 	pixel_y = 8
 	},
@@ -16143,7 +16124,7 @@ yf
 Nx
 Kp
 nX
-kG
+hG
 Wt
 Cd
 fg

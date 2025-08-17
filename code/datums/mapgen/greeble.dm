@@ -33,7 +33,6 @@
 	. = ..()
 	if(isnull(loc))
 		return INITIALIZE_HINT_QDEL
-	INVOKE_ASYNC(src, PROC_REF(start_load))
 
 /obj/effect/greeble_spawner/proc/start_load()
 	template = new template()
@@ -54,18 +53,23 @@
 
 /datum/map_template/greeble
 	var/description
-	var/blacklisted_turfs
-	var/whitelisted_turfs
-	var/banned_areas
-	var/banned_objects
-	var/clear_everything = FALSE
+	var/static/types_cached = FALSE
+	var/static/list/blacklisted_turfs
+	var/static/list/whitelisted_turfs
+	var/static/list/banned_areas
+	var/static/list/banned_objects
+	var/blocked_by_anchored = FALSE
+	var/clear_everything = TRUE
 
 /datum/map_template/greeble/New()
 	. = ..()
-	banned_areas = typecacheof(/area/ship, /area/overmap_encounter/planetoid/cave, /area/ruin)
-	blacklisted_turfs = typecacheof(list(/turf/closed, /turf/open/indestructible))
-	whitelisted_turfs = typecacheof(/turf/closed/mineral)
-	banned_objects = typecacheof(/obj/structure/stone_tile)
+	//Prevent creating a type cache list EVERY time we spawn a greeble
+	if(!types_cached)
+		banned_areas = typecacheof(/area/ship, /area/ruin)
+		blacklisted_turfs = typecacheof(list(/turf/closed, /area/overmap_encounter/planetoid/cave/explored, /turf/open/indestructible))
+		whitelisted_turfs = typecacheof(/turf/closed/mineral)
+		banned_objects = typecacheof(/obj/structure/stone_tile)
+		types_cached = TRUE
 
 /datum/map_template/greeble/proc/check_deploy(turf/deploy_location)
 	if(isnull(deploy_location))
@@ -83,7 +87,7 @@
 			return SHELTER_DEPLOY_BAD_TURFS
 
 		for(var/obj/O in T)
-			if((O.density && O.anchored) || is_type_in_typecache(O, banned_objects))
+			if((blocked_by_anchored && (O.density && O.anchored)) || is_type_in_typecache(O, banned_objects))
 				return SHELTER_DEPLOY_ANCHORED_OBJECTS
 
 
@@ -191,7 +195,7 @@
 
 /obj/effect/greeble_spawner/grass_patch_spawner/dark_jungle
 	name = "dark jungle grass patch spawner"
-	turf_to_spread = /turf/open/floor/plating/asteroid/dirt/grass/jungle_dark
+	turf_to_spread = /turf/open/floor/plating/asteroid/dirt/grass/jungle/dark
 	big_brush = TRUE
 	only_spread_on_spawning_turf = TRUE
 	max_turfs_to_spread = 16
@@ -202,7 +206,7 @@
 
 /obj/effect/greeble_spawner/grass_patch_spawner/yellow_jungle
 	name = "yellow jungle grass patch spawner"
-	turf_to_spread = /turf/open/floor/plating/asteroid/dirt/grass/jungle_yellow
+	turf_to_spread = /turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow
 	big_brush = FALSE
 	only_spread_on_spawning_turf = FALSE
 	max_turfs_to_spread = 5
@@ -210,9 +214,9 @@
 	chance_to_terminate = 5
 	terminate_chance_add = 8
 
-/obj/effect/greeble_spawner/grass_patch_spawner/dark
+/obj/effect/greeble_spawner/grass_patch_spawner/dark_beach
 	name = "dark grass patch spawner"
-	turf_to_spread = /turf/open/floor/plating/asteroid/dirt/grass/dark
+	turf_to_spread = /turf/open/floor/plating/grass/beach/dark/lit
 	big_brush = TRUE
 	only_spread_on_spawning_turf = TRUE
 	max_turfs_to_spread = 8

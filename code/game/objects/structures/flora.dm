@@ -898,7 +898,7 @@
 			else if (isliving(user))
 				var/mob/living/L = user
 				L.Immobilize(100, TRUE)
-				L.adjust_jitter(50)
+				L.set_timed_status_effect(100 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 				L.adjustToxLoss(66)
 		return 1
 	else ..()
@@ -1055,7 +1055,7 @@
 			reagents.clear_reagents()
 		if(health > 25)
 			if(prob(50))
-				var/obj/item/reagent_containers/food/snacks/grown/apple/apple = new(get_step(get_turf(src), apple_direction))
+				var/obj/item/food/grown/apple/apple = new(get_step(get_turf(src), apple_direction))
 				apple.name = "illestren Apple"
 				apple.desc = "You can grind this for bacteria."
 				apple.reagents.add_reagent(/datum/reagent/srm_bacteria, 10)

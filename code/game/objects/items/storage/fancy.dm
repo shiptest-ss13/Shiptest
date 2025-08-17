@@ -72,7 +72,7 @@
 	icon = 'icons/obj/food/donuts.dmi'
 	icon_state = "donutbox_inner"
 	base_icon_state = "donutbox"
-	spawn_type = /obj/item/reagent_containers/food/snacks/donut
+	spawn_type = /obj/item/food/donut
 	is_open = TRUE
 	appearance_flags = KEEP_TOGETHER
 	contents_tag = "donut"
@@ -81,7 +81,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/donut))
+	STR.set_holdable(list(/obj/item/food/donut))
 
 /obj/item/storage/fancy/donut_box/PopulateContents()
 	. = ..()
@@ -100,7 +100,7 @@
 	var/donuts = 0
 
 	for(var/_donut in contents)
-		var/obj/item/reagent_containers/food/snacks/donut/donut = _donut
+		var/obj/item/food/donut/donut = _donut
 		if (!istype(donut))
 			continue
 
@@ -124,14 +124,14 @@
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
 	name = "egg box"
 	desc = "A carton for containing eggs."
-	spawn_type = /obj/item/reagent_containers/food/snacks/egg
+	spawn_type = /obj/item/food/egg
 	contents_tag = "egg"
 
 /obj/item/storage/fancy/egg_box/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 12
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/egg))
+	STR.set_holdable(list(/obj/item/food/egg))
 
 /obj/item/storage/fancy/egg_box/update_icon_state()
 	. = ..()
@@ -143,7 +143,7 @@
 	if(!is_open)
 		return
 	var/egg_count = 0
-	for(var/obj/item/reagent_containers/food/snacks/egg as anything in contents)
+	for(var/obj/item/food/egg as anything in contents)
 		egg_count++
 		if(!egg)
 			return
@@ -476,15 +476,14 @@
 	base_icon_state = "chocolatebox"
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
-	spawn_type = /obj/item/reagent_containers/food/snacks/tinychocolate
+	spawn_type = /obj/item/food/bonbon
 	contents_tag = "chocolate"
 
 /obj/item/storage/fancy/heart_box/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 8
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/tinychocolate))
-
+	STR.set_holdable(list(/obj/item/food/bonbon))
 
 /obj/item/storage/fancy/nugget_box
 	name = "nugget box"
@@ -493,10 +492,10 @@
 	icon_state = "nuggetbox"
 	base_icon_state = "nuggetbox"
 	contents_tag = "nugget"
-	spawn_type = /obj/item/reagent_containers/food/snacks/nugget
+	spawn_type = /obj/item/food/nugget
 
 /obj/item/storage/fancy/nugget_box/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/nugget))
+	STR.set_holdable(list(/obj/item/food/nugget))

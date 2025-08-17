@@ -6,19 +6,16 @@
 	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT
 
 /datum/ai_behavior/fetch/perform(seconds_per_tick, datum/ai_controller/controller)
-	. = ..()
 	var/mob/living/living_pawn = controller.pawn
 	var/obj/item/fetch_thing = controller.blackboard[BB_FETCH_TARGET]
 
 	if(fetch_thing.anchored || !isturf(fetch_thing.loc) || IS_EDIBLE(fetch_thing)) //either we can't pick it up, or we'd rather eat it, so stop trying.
-		finish_action(controller, FALSE)
-		return
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED
 
 	if(in_range(living_pawn, fetch_thing))
-		finish_action(controller, TRUE)
-		return
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
 
-	finish_action(controller, FALSE)
+	return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED
 
 /datum/ai_behavior/fetch/finish_action(datum/ai_controller/controller, success)
 	. = ..()
@@ -27,27 +24,25 @@
 		var/obj/item/target = controller.blackboard[BB_FETCH_TARGET]
 		if(target)
 			controller.blackboard[BB_FETCH_IGNORE_LIST][target] = TRUE
-		controller.blackboard[BB_FETCH_TARGET] = null
-		controller.blackboard[BB_FETCH_DELIVER_TO] = null
+		controller.clear_blackboard_key(BB_FETCH_TARGET)
+		controller.clear_blackboard_key(BB_FETCH_DELIVER_TO)
 
 
 /// This is simply a behaviour to pick up a fetch target
 /datum/ai_behavior/simple_equip/perform(seconds_per_tick, datum/ai_controller/controller)
-	. = ..()
 	var/obj/item/fetch_target = controller.blackboard[BB_FETCH_TARGET]
 	if(!isturf(fetch_target?.loc)) // someone picked it up or something happened to it
-		finish_action(controller, FALSE)
-		return
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED
 
 	if(in_range(controller.pawn, fetch_target))
 		pickup_item(controller, fetch_target)
-		finish_action(controller, TRUE)
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
 	else
-		finish_action(controller, FALSE)
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED
 
 /datum/ai_behavior/simple_equip/finish_action(datum/ai_controller/controller, success)
 	. = ..()
-	controller.blackboard[BB_FETCH_TARGET] = null
+	controller.clear_blackboard_key(BB_FETCH_TARGET)
 
 /datum/ai_behavior/simple_equip/proc/pickup_item(datum/ai_controller/controller, obj/item/target)
 	var/atom/pawn = controller.pawn
@@ -65,7 +60,7 @@
 	var/atom/pawn = controller.pawn
 	pawn.visible_message(span_notice("[pawn] drops [carried_item]."))
 	carried_item.forceMove(get_turf(pawn))
-	controller.blackboard[BB_SIMPLE_CARRY_ITEM] = null
+	controller.clear_blackboard_key(BB_SIMPLE_CARRY_ITEM)
 	return TRUE
 
 
@@ -75,25 +70,23 @@
 	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT
 
 /datum/ai_behavior/deliver_item/perform(seconds_per_tick, datum/ai_controller/controller)
-	. = ..()
 	var/mob/living/return_target = controller.blackboard[BB_FETCH_DELIVER_TO]
 	if(!return_target)
-		finish_action(controller, FALSE)
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED
 	if(in_range(controller.pawn, return_target))
 		deliver_item(controller)
-		finish_action(controller, TRUE)
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
 
 /datum/ai_behavior/deliver_item/finish_action(datum/ai_controller/controller, success)
 	. = ..()
-	controller.blackboard[BB_FETCH_DELIVER_TO] = null
+	controller.clear_blackboard_key(BB_FETCH_DELIVER_TO)
 
 /// Actually drop the fetched item to the target
 /datum/ai_behavior/deliver_item/proc/deliver_item(datum/ai_controller/controller)
 	var/obj/item/carried_item = controller.blackboard[BB_SIMPLE_CARRY_ITEM]
 	var/atom/movable/return_target = controller.blackboard[BB_FETCH_DELIVER_TO]
 	if(!carried_item || !return_target)
-		finish_action(controller, FALSE)
-		return
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED
 
 	if(ismob(return_target))
 		controller.pawn.visible_message(span_notice("[controller.pawn] delivers [carried_item] at [return_target]'s feet."))
@@ -109,10 +102,9 @@
 	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT
 
 /datum/ai_behavior/eat_snack/perform(seconds_per_tick, datum/ai_controller/controller)
-	. = ..()
 	var/obj/item/snack = controller.current_movement_target
 	if(!istype(snack) || !IS_EDIBLE(snack) || !(isturf(snack.loc) || ishuman(snack.loc)))
-		finish_action(controller, FALSE)
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED
 
 	var/mob/living/living_pawn = controller.pawn
 	if(!in_range(living_pawn, snack))
@@ -124,7 +116,7 @@
 		living_pawn.manual_emote("stares at [snack.loc]'s [snack.name] with a sad puppy-face.")
 
 	if(QDELETED(snack)) // we ate it!
-		finish_action(controller, TRUE)
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
 
 
 /// This behavior involves either eating a snack we can reach, or begging someone holding a snack
@@ -132,13 +124,12 @@
 	behavior_flags = NONE
 
 /datum/ai_behavior/play_dead/perform(seconds_per_tick, datum/ai_controller/controller)
-	. = ..()
 	var/mob/living/simple_animal/simple_pawn = controller.pawn
 	if(!istype(simple_pawn))
 		return
 
 	if(!controller.blackboard[BB_DOG_PLAYING_DEAD])
-		controller.blackboard[BB_DOG_PLAYING_DEAD] = TRUE
+		controller.set_blackboard_key(BB_DOG_PLAYING_DEAD, TRUE)
 		simple_pawn.emote("deathgasp", intentional=FALSE)
 		simple_pawn.icon_state = simple_pawn.icon_dead
 		if(simple_pawn.flip_on_death)
@@ -146,7 +137,7 @@
 		simple_pawn.density = FALSE
 
 	if(SPT_PROB(10, seconds_per_tick))
-		finish_action(controller, TRUE)
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
 
 /datum/ai_behavior/play_dead/finish_action(datum/ai_controller/controller, succeeded)
 	. = ..()
@@ -166,25 +157,21 @@
 	required_distance = 3
 
 /datum/ai_behavior/harass/perform(seconds_per_tick, datum/ai_controller/controller)
-	. = ..()
 	var/mob/living/living_pawn = controller.pawn
 	if(!istype(living_pawn))
 		return
 
 	var/atom/movable/harass_target = controller.blackboard[BB_DOG_HARASS_TARGET]
 	if(!harass_target || !can_see(living_pawn, harass_target, length=AI_DOG_VISION_RANGE))
-		finish_action(controller, FALSE)
-		return
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED
 
 	if(controller.blackboard[BB_DOG_FRIENDS][harass_target])
 		living_pawn.visible_message(span_danger("[living_pawn] looks sideways at [harass_target] for a moment, then shakes [living_pawn.p_their()] head and ceases aggression."))
-		finish_action(controller, FALSE)
-		return
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED
 
 	var/mob/living/living_target = harass_target
 	if(istype(living_target) && (living_target.stat || HAS_TRAIT(living_target, TRAIT_FAKEDEATH)))
-		finish_action(controller, TRUE)
-		return
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
 
 	// subtypes of this behavior can change behavior for how eager/averse the pawn is to attack the target as opposed to falling back/making noise/getting help
 	if(in_range(living_pawn, living_target))
@@ -194,7 +181,7 @@
 
 /datum/ai_behavior/harass/finish_action(datum/ai_controller/controller, succeeded)
 	. = ..()
-	controller.blackboard[BB_DOG_HARASS_TARGET] = null
+	controller.clear_blackboard_key(BB_DOG_HARASS_TARGET)
 
 /// A proc representing when the mob is pushed to actually attack the target. Again, subtypes can be used to represent different attacks from different animals, or it can be some other generic behavior
 /datum/ai_behavior/harass/proc/attack(datum/ai_controller/controller, mob/living/living_target)

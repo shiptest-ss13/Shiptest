@@ -133,7 +133,7 @@
 /obj/mecha/working/ripley/mining
 	desc = "An old, dusty mining Ripley."
 	name = "\improper APLU \"Miner\""
-	obj_integrity = 75 //Low starting health
+	atom_integrity = 75 //Low starting health
 
 /obj/mecha/working/ripley/mining/Initialize()
 	. = ..()
@@ -183,7 +183,7 @@
 	icon_state = "hauler"
 	base_icon_state = "hauler"
 	max_equip = 2
-	obj_integrity = 50 //Low starting health
+	atom_integrity = 50 //Low starting health
 	max_integrity = 100 //Has half the health of a normal RIPLEY mech, so it's harder to use as a weapon.
 
 /obj/mecha/working/ripley/cargo/Initialize()
@@ -225,7 +225,7 @@
 	output += "<b>Cargo Compartment Contents:</b><div style=\"margin-left: 15px;\">"
 	if(cargo.len)
 		for(var/obj/O in cargo)
-			output += "<a href='?src=[REF(src)];drop_from_cargo=[REF(O)]'>Unload</a> : [O]<br>"
+			output += "<a href='byond://?src=[REF(src)];drop_from_cargo=[REF(O)]'>Unload</a> : [O]<br>"
 	else
 		output += "Nothing"
 	output += "</div>"

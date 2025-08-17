@@ -72,13 +72,11 @@
 	/// Turret flags about who is turret allowed to shoot
 	var/turret_flags = TURRET_FLAG_DEFAULT
 
-	/// If the turret is currently retaliating. Turrets will ignore all other settings to shoot at the attacker until they're dead or out of range
+	/// If the turret is currently retaliating. Turrets will ignore all other settings to shoot at the attacker until they're dead or out of range //this. does not work. right now.
 	var/retaliating = FALSE
 
-	/// Same faction mobs will never be shot at, no matter the other settings
-	var/list/faction = list("neutral", "turret")
-
-	var/list/target_faction = list("hostile")
+	/// Factions accounted for by IFF settings
+	var/list/faction = list("neutral", FACTION_TURRET)
 
 	/// does our turret give a flying fuck about what accesses someone has?
 	var/turret_respects_id = TRUE
@@ -129,6 +127,7 @@
 		/mob/living/carbon,
 		/mob/living/silicon,
 		/mob/living/simple_animal,
+		/mob/living/basic,
 		/obj/mecha,
 	))
 
@@ -322,19 +321,19 @@
 		return
 
 	if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP)
-		if(obj_integrity >= max_integrity)
+		if(atom_integrity >= max_integrity)
 			to_chat(user, span_warning("[src] is already in good condition!"))
 			return
 
 		to_chat(user, span_notice("You begin repairing [src]..."))
-		while(obj_integrity < max_integrity)
+		while(atom_integrity < max_integrity)
 			if(!I.use_tool(src, user, 4 SECONDS, 2, 50))
 				break
-			obj_integrity = max(obj_integrity + 20, max_integrity)
+			atom_integrity = max(atom_integrity + 20, max_integrity)
 			to_chat(user, span_notice("You repair [src]."))
 
-			if(obj_integrity > (max_integrity * integrity_failure) && (machine_stat & BROKEN))
-				obj_integrity = max_integrity
+			if(atom_integrity > (max_integrity * integrity_failure) && (machine_stat & BROKEN))
+				atom_integrity = max_integrity
 				set_machine_stat(machine_stat & ~BROKEN)
 				update_appearance(UPDATE_ICON_STATE)
 				check_should_process()
@@ -360,10 +359,12 @@
 			return
 		if(!multitool_check_buffer(user, I))
 			return
-		var/obj/item/multitool/M = I
-		M.buffer = src
-		to_chat(user, span_notice("You add [src] to multitool buffer."))
-		return
+		var/obj/item/multitool/m_tool = I
+		if(istype(m_tool.buffer, /obj/machinery/turretid))
+			var/obj/machinery/turretid/turret_controls = m_tool.buffer
+			turret_controls.turret_refs |= WEAKREF(src)
+			to_chat(user, span_notice("You link \the [src] with \the [turret_controls]."))
+			return
 
 	if(istype(I, /obj/item/card/id))
 		toggle_lock(user)
@@ -424,7 +425,7 @@
 
 /obj/machinery/porta_turret/take_damage(damage, damage_type = BRUTE, damage_flag = 0, sound_effect = 1)
 	. = ..()
-	if(!. || obj_integrity <= 0)
+	if(!. || atom_integrity <= 0)
 		return
 	//damage received
 	if(prob(30))
@@ -449,7 +450,7 @@
 		return
 	retaliate(user)
 
-/obj/machinery/porta_turret/obj_break(damage_flag)
+/obj/machinery/porta_turret/atom_break(damage_flag)
 	. = ..()
 	if(.)
 		power_change()
@@ -502,10 +503,10 @@
 		targets -= target
 		return FALSE
 
-	if((check_flags & TURRET_FLAG_SHOOT_NONFACTION) && faction_check(src.faction, target_mob.faction))
+	if((check_flags & TURRET_FLAG_SHOOT_NONFACTION) && faction_check(src.faction, target_mob.faction)) //contrary to what these say they do they actually exclude targets rather than include them
 		return FALSE
 
-	if((check_flags & TURRET_FLAG_SHOOT_SPECIFIC_FACTION) && !faction_check(src.faction, target_mob.faction))
+	if((check_flags & TURRET_FLAG_SHOOT_SPECIFIC_FACTION) && !faction_check(src.faction, target_mob.faction)) //in case you ever wanted to only have a turret shoot 1 faction. or turn it on its masters (ship turrets have undying loyalty their crew)
 		return FALSE
 
 	if(iscyborg(target_mob))
@@ -519,7 +520,7 @@
 			return target(target_mob)
 
 		//this is still a bit gross, but less gross than before
-		var/static/list/dangerous_fauna = typecacheof(list(/mob/living/simple_animal/hostile, /mob/living/carbon/alien, /mob/living/carbon/monkey))
+		var/static/list/dangerous_fauna = typecacheof(list(/mob/living/simple_animal/hostile, /mob/living/basic, /mob/living/carbon/alien, /mob/living/carbon/monkey))
 		if(!is_type_in_typecache(target_mob, dangerous_fauna) || faction_check(list("neutral"), target_mob.faction))
 			return FALSE
 
@@ -530,6 +531,9 @@
 		return target(target_mob)
 
 	//We know the target must be a human now
+	if(!(check_flags & TURRET_FLAG_SHOOT_HUMANS))
+		return FALSE
+
 	var/mob/living/carbon/human/target_carbon = target_mob
 
 	if(turret_respects_id)
@@ -589,7 +593,7 @@
 			COOLDOWN_START(src, reaction_cooldown, reaction_time)
 
 			if(ishuman(target) || target.client)
-				target.do_alert_animation(target)
+				target.do_alert_animation()
 
 			return TRUE
 

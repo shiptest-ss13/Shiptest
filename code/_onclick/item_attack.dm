@@ -139,6 +139,10 @@
 	user.do_attack_animation(O)
 	O.attacked_by(src, user)
 
+/// if an item should have special behavior when attacking a wall
+/obj/item/proc/closed_turf_attack(turf/closed/wall, mob/living/user, params)
+	return
+
 /// Called from [/obj/item/proc/attack_obj] and [/obj/item/proc/attack] if the attack succeeds
 /atom/movable/proc/attacked_by()
 	return
@@ -154,7 +158,7 @@
 	else
 		total_force = (attacking_item.force)
 
-	var/damage = take_damage(total_force, attacking_item.damtype, "melee", TRUE, get_dir(user, src), attacking_item.armour_penetration)
+	var/damage = take_damage(total_force, attacking_item.damtype, "melee", TRUE, get_dir(src, user), attacking_item.armour_penetration)
 
 	var/damage_verb = "hit"
 
@@ -168,17 +172,23 @@
 	log_combat(user, src, "attacked", attacking_item)
 
 /mob/living/attacked_by(obj/item/attacking_item, mob/living/user)
-	var/armor_value = run_armor_check(attack_flag = "melee", armour_penetration = attacking_item.armour_penetration)		//WS Edit - Simplemobs can have armor
+	var/armor_value = run_armor_check(attack_flag = "melee", armour_penetration = attacking_item.armour_penetration)
+
 	send_item_attack_message(attacking_item, user)
+
 	if(!attacking_item.force)
 		return FALSE
-	apply_damage(attacking_item.force, attacking_item.damtype, blocked = armor_value, sharpness = attacking_item.get_sharpness()) //Bone break modifier = item force
+
+	apply_damage(attacking_item.force, attacking_item.damtype, blocked = armor_value)
+
 	if(attacking_item.damtype == BRUTE && prob(33))
 		attacking_item.add_mob_blood(src)
 		var/turf/location = get_turf(src)
 		add_splatter_floor(location)
+
 		if(get_dist(user, src) <= 1)	//people with TK won't get smeared with blood
 			user.add_mob_blood(src)
+
 		return TRUE //successful attack
 
 /mob/living/simple_animal/attacked_by(obj/item/I, mob/living/user)
@@ -218,23 +228,30 @@
 		else
 			return clamp(w_class * 6, 10, 100) // Multiply the item's weight class by 6, then clamp the value between 10 and 100
 
-/mob/living/proc/send_item_attack_message(obj/item/I, mob/living/user, hit_area)
+/mob/living/proc/send_item_attack_message(obj/item/attacking_item, mob/living/user, hit_area, obj/item/bodypart/hit_bodypart)
 	var/message_verb = "attacked"
-	if(I.attack_verb && I.attack_verb.len)
-		message_verb = "[pick(I.attack_verb)]"
-	else if(!I.force)
+	if(length(attacking_item.attack_verb))
+		message_verb = "[pick(attacking_item.attack_verb)]"
+	else if(!attacking_item.force)
 		return
+
 	var/message_hit_area = ""
 	if(hit_area)
 		message_hit_area = " in the [hit_area]"
-	var/attack_message = "[src] is [message_verb][message_hit_area] with [I]!"
-	var/attack_message_local = "You're [message_verb][message_hit_area] with [I]!"
-	if(user in viewers(src, null))
-		attack_message = "[user] [message_verb] [src][message_hit_area] with [I]!"
-		attack_message_local = "[user] [message_verb] you[message_hit_area] with [I]!"
-	if(user == src)
-		attack_message_local = "You [message_verb] yourself[message_hit_area] with [I]"
-	visible_message(span_danger("[attack_message]"),\
-		span_userdanger("[attack_message_local]"), null, COMBAT_MESSAGE_RANGE)
-	return 1
 
+	var/attack_message = "[src] is [message_verb][message_hit_area] with [attacking_item]!"
+	var/attack_message_local = "You're [message_verb][message_hit_area] with [attacking_item]!"
+	if(user in viewers(src, null))
+		attack_message = "[user] [message_verb] [src][message_hit_area] with [attacking_item]!"
+		attack_message_local = "[user] [message_verb] you[message_hit_area] with [attacking_item]!"
+
+	if(user == src)
+		attack_message_local = "You [message_verb] yourself[message_hit_area] with [attacking_item]"
+
+	visible_message(
+		span_danger("[attack_message]"),
+		span_userdanger("[attack_message_local]"),
+		null,
+		COMBAT_MESSAGE_RANGE,
+	)
+	return 1

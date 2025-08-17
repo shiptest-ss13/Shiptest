@@ -200,7 +200,6 @@
 	key = "giggle"
 	key_third_person = "giggles"
 	message = "giggles."
-	message_mime = "giggles silently!"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/glare
@@ -219,7 +218,6 @@
 	key = "groan"
 	key_third_person = "groans"
 	message = "groans!"
-	message_mime = "appears to groan!"
 
 /datum/emote/living/grimace
 	key = "grimace"
@@ -267,7 +265,6 @@
 	key = "laugh"
 	key_third_person = "laughs"
 	message = "laughs."
-	message_mime = "laughs silently!"
 	emote_type = EMOTE_AUDIBLE
 	vary = TRUE
 
@@ -282,7 +279,7 @@
 		return
 	var/mob/living/carbon/human/H = user
 	var/human_laugh = ishumanbasic(H)
-	if(human_laugh && (!H.mind || !H.mind.miming))
+	if(human_laugh && H.mind)
 		if(user.gender == FEMALE)
 			return 'sound/voice/human/womanlaugh.ogg'
 		else
@@ -344,7 +341,6 @@
 	key = "scream"
 	key_third_person = "screams"
 	message = "screams."
-	message_mime = "acts out a scream!"
 	emote_type = EMOTE_AUDIBLE
 	mob_type_blacklist_typecache = list(/mob/living/carbon/human) //Humans get specialized scream.
 
@@ -422,7 +418,6 @@
 	key = "snore"
 	key_third_person = "snores"
 	message = "snores."
-	message_mime = "sleeps soundly."
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
 	/// Timer for the blink to wear off
@@ -547,7 +542,6 @@
 	key = "whimper"
 	key_third_person = "whimpers"
 	message = "whimpers."
-	message_mime = "appears hurt."
 
 /datum/emote/living/wsmile
 	key = "wsmile"
@@ -575,8 +569,8 @@
 	. = ..() && intentional
 
 /datum/emote/living/custom/proc/check_invalid(mob/user, input)
-	var/static/regex/stop_bad_mime = regex(@"says|exclaims|yells|asks")
-	if(stop_bad_mime.Find(input, 1, 1))
+	var/static/regex/stop_bypass = regex(@"says|exclaims|yells|asks")
+	if(stop_bypass.Find(input, 1, 1))
 		to_chat(user, span_danger("Invalid emote."))
 		return TRUE
 	return FALSE

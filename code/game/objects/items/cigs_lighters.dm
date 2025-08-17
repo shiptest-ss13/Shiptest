@@ -386,12 +386,10 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_off = "candyoff" //make sure to add positional sprites in icons/obj/cigarettes.dmi if you add more.
 	item_state = "candyoff"
 	icon_state = "candyoff"
-	type_butt = /obj/item/reagent_containers/food/snacks/candy_trash
 	list_reagents = list(/datum/reagent/consumable/sugar = 10, /datum/reagent/consumable/caramel = 10)
 
 /obj/item/clothing/mask/cigarette/candy/nicotine
 	desc = "For all ages*! Doesn't contain any* amount of nicotine. Health and safety risks can be read on the tip of the cigarette."
-	type_butt = /obj/item/reagent_containers/food/snacks/candy_trash/nicotine
 	list_reagents = list(/datum/reagent/consumable/sugar = 10, /datum/reagent/consumable/caramel = 10, /datum/reagent/drug/nicotine = 20) //oh no!
 	smoke_all = TRUE //timmy's not getting out of this one
 
@@ -500,10 +498,10 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 
 /obj/item/clothing/mask/cigarette/pipe/attackby(obj/item/O, mob/user, params)
-	if(istype(O, /obj/item/reagent_containers/food/snacks/grown))
-		var/obj/item/reagent_containers/food/snacks/grown/G = O
+	if(istype(O, /obj/item/food/grown))
+		var/obj/item/food/grown/G = O
 		if(!packeditem)
-			if(G.dry == 1)
+			if(HAS_TRAIT(G, TRAIT_DRIED))
 				to_chat(user, span_notice("You stuff [O] into [src]."))
 				smoketime = 400
 				packeditem = 1
@@ -808,9 +806,10 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	. = ..()
 	if(!proximity)
 		return
-	if(istype(target, /obj/item/reagent_containers/food/snacks/grown))
-		var/obj/item/reagent_containers/food/snacks/grown/O = target
-		if(O.dry)
+
+	if(istype(target, /obj/item/food/grown))
+		var/obj/item/food/grown/O = target
+		if(HAS_TRAIT(O, TRAIT_DRIED))
 			var/obj/item/clothing/mask/cigarette/rollie/R = new /obj/item/clothing/mask/cigarette/rollie(user.loc)
 			R.chem_volume = target.reagents.total_volume
 			target.reagents.trans_to(R, R.chem_volume, transfered_by = user)

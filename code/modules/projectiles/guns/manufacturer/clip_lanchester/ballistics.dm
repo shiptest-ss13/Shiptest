@@ -1,4 +1,4 @@
-#define CLIP_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/scope, /obj/item/attachment/long_scope, /obj/item/attachment/sling, /obj/item/attachment/gun, /obj/item/attachment/ammo_counter)
+#define CLIP_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/gun, /obj/item/attachment/ammo_counter)
 #define CLIP_ATTACHMENT_POINTS list(ATTACHMENT_SLOT_MUZZLE = 1,ATTACHMENT_SLOT_RAIL = 1,ATTACHMENT_SLOT_SCOPE=1)
 
 
@@ -94,6 +94,10 @@
 
 	spread = 8
 	spread_unwielded = 20
+
+	wear_minor_threshold = 240
+	wear_major_threshold = 720
+	wear_maximum = 1200
 
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
@@ -381,8 +385,8 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 		)
 	)
 
-	default_attachments = list(/obj/item/attachment/scope)
-
+	zoom_amt = 6
+	zoom_out_amt = 2
 	wield_slowdown = DMR_SLOWDOWN
 	spread = -4
 	fire_select_icon_state_prefix = "clip_"
@@ -397,6 +401,21 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
 	icon_state = "f4_inteq"
 	item_state = "f4_inteq"
+
+NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
+
+/obj/item/gun/ballistic/automatic/marksman/f4/indie
+	name = "\improper F3"
+	desc = "An old model of CLIP's F4 rifle, designed very early into the history of the League. Most have been sold off as surplus by this point and tend to suffer from internal wear due to their age. Chambered in .308."
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+
+	icon_state = "f4_indie"
+	item_state = "f4_indie"
+
+	wear_rate = 1.5
 
 /obj/item/gun/ballistic/automatic/marksman/f90
 	name = "CM-F90"
@@ -446,8 +465,8 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 	desc = "A large 5-round box magazine for the CM-F90 sniper rifles. These rounds deal amazing damage and bypass half of their protective equipment, though it isn't a high enough caliber to pierce armored vehicles."
 	base_icon_state = "f90_mag"
 	icon_state = "f90_mag-1"
-	ammo_type = /obj/item/ammo_casing/a75clip
-	caliber = "7.5x64mm CLIP"
+	ammo_type = /obj/item/ammo_casing/a65clip
+	caliber = "6.5mm CLIP"
 	max_ammo = 5
 
 /obj/item/ammo_box/magazine/f90/update_icon_state()
@@ -456,6 +475,19 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 
 /obj/item/ammo_box/magazine/f90/empty
 	start_empty = TRUE
+
+/obj/item/gun/ballistic/automatic/marksman/f90/inteq
+	name = "\improper SSG-08 Saluki"
+	desc = "A powerful sniper purchased from CLIP, lightly modified with superficial modifications and an IRMG paintjob by the Artificer Division. Chambered in 6.5mm."
+	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
+
+	icon_state = "saluki"
+	item_state = "saluki"
+
+	manufacturer = MANUFACTURER_INTEQ
 
 //########### RIFLES ###########//
 /obj/item/gun/ballistic/automatic/assault/cm82
@@ -471,7 +503,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 	item_state = "cm82"
 	show_magazine_on_sprite = TRUE
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	bolt_type = BOLT_TYPE_CLIP
 	default_ammo_type = /obj/item/ammo_box/magazine/p16
 	allowed_ammo_types = list(
@@ -553,7 +585,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	manufacturer = MANUFACTURER_MINUTEMAN
 	default_ammo_type = /obj/item/ammo_box/magazine/cm40_762_40_box
 	allowed_ammo_types = list(
@@ -642,7 +674,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	bolt_type = BOLT_TYPE_CLIP
 	tac_reloads = FALSE
 
@@ -664,6 +696,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 	deploy_spread_bonus = -10 //2 degree spread when deployed, making it VERY accurate for an lmg
 
 	valid_attachments = CLIP_ATTACHMENTS
+	unique_attachments = list(/obj/item/attachment/scope)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_SCOPE = 1
@@ -690,6 +723,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 	base_icon_state = "rottweiler_mag"
 	icon_state = "rottweiler_mag-1"
 	ammo_type = /obj/item/ammo_casing/a308
+	caliber = ".308"
 	max_ammo = 50
 	w_class = WEIGHT_CLASS_NORMAL
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
@@ -766,3 +800,5 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 
 /obj/item/gun/ballistic/shotgun/cm15/incendiary
 	default_ammo_type = /obj/item/ammo_box/magazine/cm15_12g/incendiary
+
+

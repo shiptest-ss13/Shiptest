@@ -12,7 +12,7 @@
 
 /datum/antagonist/ert/minutemen/greet()
 	to_chat(owner, "<B><font size=3 color=red>You are \the [role].</font></B>")
-	var/missiondesc = "You serve in the Colonial Minutemen, the armed forces of the Confederated League of Independent Planets. You are being deployed to the sector of [station_name()].<BR>"
+	var/missiondesc = "You serve in the Confederated League Minutemen, the armed forces of the Confederated League of Independent Planets. You are being deployed to the sector of [station_name()].<BR>"
 	if(leader) //If Squad Leader
 		missiondesc += "Lead your squad to complete all objectives."
 	else
@@ -47,6 +47,8 @@
 	outfit = /datum/outfit/job/clip/minutemen/grunt/dressed/gunner_armed
 	role = "Field Gunner"
 
+// BARD
+
 /datum/antagonist/ert/minutemen/bard
 	name = "BARD Field Agent"
 	outfit = /datum/outfit/job/clip/minutemen/bard
@@ -68,10 +70,10 @@
 	role = "Medical Specialist"
 
 /datum/antagonist/ert/minutemen/bard/emergency/leader
-	name = "BARD Master Sergeant"
+	name = "BARD Team Leader"
 	leader = TRUE
 	outfit = /datum/outfit/job/clip/minutemen/bard/emergency/leader
-	role = "Master Sergeant"
+	role = "Team Leader"
 
 /datum/antagonist/ert/minutemen/military_police
 	name = "C-MM Military Police"
@@ -103,3 +105,7 @@
 	name = "C-MM War Correspondent"
 	outfit = /datum/outfit/job/clip/correspondent
 	role = "Correspondant"
+
+/datum/antagonist/ert/minutemen/correspondent/greet()
+	to_chat(owner, "<B><font size=3 color=red>You are a Confederated League correspondant.</font></B>")
+	to_chat(owner, "You have been hired to report on CLIP's activity in the frontier. Your task: [ert_team.mission.explanation_text]")

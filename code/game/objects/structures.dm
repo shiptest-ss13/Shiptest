@@ -5,9 +5,11 @@
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND | INTERACT_ATOM_UI_INTERACT
 	layer = BELOW_OBJ_LAYER
 	flags_ricochet = RICOCHET_HARD
-	ricochet_chance_mod = 0.5
+	receive_ricochet_chance_mod = 0.5
 
 	hitsound_type = PROJECTILE_HITSOUND_METAL
+
+	bad_type = /obj/structure
 
 	///is this assigned the climbable element on init?
 	var/climbable = FALSE
@@ -64,7 +66,7 @@
 			. += examine_status
 
 /obj/structure/proc/examine_status(mob/user) //An overridable proc, mostly for falsewalls.
-	var/healthpercent = (obj_integrity/max_integrity) * 100
+	var/healthpercent = (atom_integrity/max_integrity) * 100
 	switch(healthpercent)
 		if(50 to 99)
 			return  "It looks slightly damaged."

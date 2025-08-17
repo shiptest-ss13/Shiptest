@@ -43,8 +43,7 @@
 	name = "Independent - Assistant (Fancy)"
 
 	shoes = /obj/item/clothing/shoes/laceup
-	uniform = /obj/item/clothing/under/suit/charcoal
-	accessory = /obj/item/clothing/accessory/waistcoat
+	uniform = /obj/item/clothing/under/suit/black_really
 
 /datum/outfit/job/independent/assistant/pirate
 	name = "Independent - Assistant (Pirate)"
@@ -94,10 +93,35 @@
 	gloves = /obj/item/clothing/gloves/color/captain
 	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/rank/command/captain
+	suit = /obj/item/clothing/suit/armor/captaincoat
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain //WS Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/caphat
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
+
+	backpack = /obj/item/storage/backpack/captain
+	satchel = /obj/item/storage/backpack/satchel/cap
+	duffelbag = /obj/item/storage/backpack/duffelbag/captain
+	courierbag = /obj/item/storage/backpack/messenger/com
+
+	accessory = /obj/item/clothing/accessory/medal/gold/captain
+
+	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/captain)
+
+/datum/outfit/job/independent/captain/empty
+	name = "Independent - Captain (Naked)"
+	job_icon = "captain"
+	jobtype = /datum/job/captain
+
+	id = /obj/item/card/id/gold
+	gloves = null
+	ears = /obj/item/radio/headset/headset_com
+	uniform = /obj/item/clothing/under/rank/command/captain
+	suit = null
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain //WS Edit - Alt Uniforms
+	shoes = /obj/item/clothing/shoes/laceup
+	head = null
+	backpack_contents = null
 
 	backpack = /obj/item/storage/backpack/captain
 	satchel = /obj/item/storage/backpack/satchel/cap
@@ -206,6 +230,23 @@
 	courierbag = /obj/item/storage/backpack/messenger/com
 
 	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/officer)
+
+/datum/outfit/job/independent/hop/hunter
+	name = "Independent - Head of Personnel (Hunter)"
+
+	uniform = /obj/item/clothing/under/syndicate/camo
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	gloves = /obj/item/clothing/gloves/explorer
+	glasses = /obj/item/clothing/glasses/sunglasses
+	suit = /obj/item/clothing/suit/armor/vest/duster
+	alt_suit = /obj/item/clothing/suit/armor/vest/alt
+
+	backpack_contents = null
+
+	backpack = /obj/item/storage/backpack/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger
 
 /datum/outfit/job/independent/hop/western
 	name = "Independent - Head of Personnel (Western)"
@@ -365,15 +406,14 @@
 	job_icon = "stationengineer"
 	jobtype = /datum/job/engineer
 
-	belt = /obj/item/storage/belt/utility/full/engi
-	gloves = /obj/item/clothing/gloves/color/yellow
+	belt = null
+	gloves = null
 	ears = /obj/item/radio/headset/headset_eng
-	uniform = /obj/item/clothing/under/rank/engineering/engineer
+	uniform = /obj/item/clothing/under/overalls/olive
 	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/hazard
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
 	shoes = /obj/item/clothing/shoes/workboots
-	head = /obj/item/clothing/head/hardhat/dblue
-	l_pocket = /obj/item/t_scanner
+	head = null
 
 	backpack = /obj/item/storage/backpack/industrial
 	satchel = /obj/item/storage/backpack/satchel/eng
@@ -653,6 +693,24 @@
 	backpack = /obj/item/storage/backpack/science
 	satchel = /obj/item/storage/backpack/satchel/tox
 	courierbag = /obj/item/storage/backpack/messenger/tox
+
+// Hunter
+
+/datum/outfit/job/independent/hunter
+	name = "Independent - Hunter"
+	jobtype = /datum/job/mining
+	job_icon = "securityofficer"
+
+	ears = /obj/item/radio/headset/headset_cargo/mining
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	gloves = /obj/item/clothing/gloves/explorer
+	uniform = /obj/item/clothing/under/syndicate/camo
+	backpack_contents = list(
+		/obj/item/melee/knife/survival=1,\
+		/obj/item/radio/weather_monitor=1)
+
+	backpack = /obj/item/storage/backpack/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
 
 // Cook
 
@@ -936,11 +994,10 @@
 	jobtype = /datum/job/hydro
 
 	ears = /obj/item/radio/headset/headset_srv
-	uniform = /obj/item/clothing/under/color/green
+	uniform = /obj/item/clothing/under/overalls
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/hydro
-	suit = /obj/item/clothing/suit/apron/overalls
 	gloves  =/obj/item/clothing/gloves/botanic_leather
-	suit_store = /obj/item/plant_analyzer
+	belt = /obj/item/plant_analyzer
 
 	backpack = /obj/item/storage/backpack/botany
 	satchel = /obj/item/storage/backpack/satchel/hyd
@@ -951,5 +1008,4 @@
 
 	ears = /obj/item/radio/headset/headset_med
 	belt = /obj/item/storage/bag/plants
-	suit = /obj/item/clothing/suit/apron/overalls
 	uniform = /obj/item/clothing/under/utility

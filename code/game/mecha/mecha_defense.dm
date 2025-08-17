@@ -1,16 +1,16 @@
-/obj/mecha/proc/get_armour_facing(relative_dir)
-	switch(relative_dir)
-		if(0) // BACKSTAB!
+/obj/mecha/proc/get_armour_facing(attack_dir)
+	switch(abs(dir2angle(attack_dir) - dir2angle(dir)))
+		if(180) // BACKSTAB!
 			return facing_modifiers[MECHA_BACK_ARMOUR]
-		if(45, 90, 270, 315)
+		if(90, 135, 225, 270)
 			return facing_modifiers[MECHA_SIDE_ARMOUR]
-		if(225, 180, 135)
+		if(0, 45, 315)
 			return facing_modifiers[MECHA_FRONT_ARMOUR]
 	return 1 //always return non-0
 
 /obj/mecha/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
 	. = ..()
-	if(. && obj_integrity > 0)
+	if(. && atom_integrity > 0)
 		spark_system.start()
 		switch(damage_flag)
 			if("fire")
@@ -23,7 +23,7 @@
 			occupant_message(span_userdanger("Taking damage!"))
 		log_message("Took [damage_amount] points of damage. Damage type: [damage_type]", LOG_MECHA)
 
-/obj/mecha/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
+/obj/mecha/run_atom_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
 	. = ..()
 	if(!damage_amount)
 		return 0
@@ -43,7 +43,7 @@
 				break
 
 	if(attack_dir)
-		var/facing_modifier = get_armour_facing(abs(dir2angle(attack_dir) - dir2angle(dir)))
+		var/facing_modifier = get_armour_facing(attack_dir)
 		booster_damage_modifier /= facing_modifier
 		booster_deflection_modifier *= facing_modifier
 	if(prob(deflect_chance * booster_deflection_modifier))
@@ -300,14 +300,14 @@
 		clearInternalDamage(MECHA_INT_TANK_BREACH)
 		to_chat(user, span_notice("You repair the damaged gas tank."))
 		return
-	while(obj_integrity < max_integrity)
+	while(atom_integrity < max_integrity)
 		if(!do_after(user, 20, target= src))
 			return
 		if(!W.use_tool(src, user, 0, volume=50, amount=1))
 			return
 		user.visible_message(span_notice("[user] repairs some damage to [name]."), span_notice("You repair some damage to [src]."))
-		obj_integrity += min(10 * repair_multiplier, max_integrity-obj_integrity)
-		if(obj_integrity == max_integrity)
+		atom_integrity += min(10 * repair_multiplier, max_integrity-atom_integrity)
+		if(atom_integrity == max_integrity)
 			to_chat(user, span_notice("It looks to be fully repaired now."))
 			return
 	to_chat(user, span_warning("The [name] is at full integrity!"))
@@ -330,7 +330,7 @@
 		. = ..()
 
 /obj/mecha/proc/full_repair(charge_cell)
-	obj_integrity = max_integrity
+	atom_integrity = max_integrity
 	if(cell && charge_cell)
 		cell.charge = cell.maxcharge
 	if(internal_damage & MECHA_INT_FIRE)
@@ -359,7 +359,7 @@
 				visual_effect_icon = ATTACK_EFFECT_MECHTOXIN
 	..()
 
-/obj/mecha/obj_destruction()
+/obj/mecha/atom_destruction()
 	if(wreckage)
 		var/mob/living/silicon/ai/AI
 		if(isAI(occupant))
