@@ -73,7 +73,12 @@
 	volume = 50
 
 /datum/looping_sound/weather/rain/indoors
-	volume = 30
+	volume = 60
+	mid_sounds = list(
+		'sound/ambience/acidrain_indoors_mid.ogg' = 1
+		)
+	start_sound = 'sound/ambience/acidrain_indoors_start.ogg'
+	end_sound = 'sound/ambience/acidrain_indoors_end.ogg'
 
 /datum/looping_sound/weather/rain/storm
 	mid_sounds = list(
