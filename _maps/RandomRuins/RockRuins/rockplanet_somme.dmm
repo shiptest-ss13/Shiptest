@@ -528,7 +528,7 @@
 "fv" = (
 /obj/machinery/door/airlock/grunge{
 	dir = 4;
-	name = "big boss' quarters"
+	name = "Big Boss' Quarters"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -627,7 +627,7 @@
 "gy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/grunge{
-	name = "armoury out"
+	name = "Armoury Out"
 	},
 /turf/open/floor/concrete/slab_2/rockplanet,
 /area/ruin/rockplanet/somme/armory)
@@ -1334,7 +1334,7 @@
 /area/ruin/rockplanet/somme/trench)
 "mw" = (
 /obj/machinery/door/airlock/medical/glass{
-	name = "medical"
+	name = "Medical"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1733,7 +1733,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/grunge{
-	name = "local preparations"
+	name = "Local Preparations"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -2064,7 +2064,7 @@
 /area/ruin/rockplanet/somme/trench)
 "vV" = (
 /obj/machinery/door/airlock/grunge{
-	name = "washroom";
+	name = "Washroom";
 	dir = 4
 	},
 /obj/structure/cable{
@@ -2738,7 +2738,7 @@
 "DX" = (
 /obj/machinery/door/airlock/grunge{
 	dir = 4;
-	name = "armoury storage"
+	name = "Armoury Storage"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4223,10 +4223,6 @@
 	dir = 4;
 	id = "somme_armoury_doors"
 	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "somme_armoury_doors"
-	},
 /turf/open/floor/concrete/slab_4/rockplanet,
 /area/ruin/rockplanet/somme/armory)
 "VS" = (
@@ -4245,7 +4241,6 @@
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/medical)
 "VY" = (
-/obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/concrete,
 /area/ruin/rockplanet/somme/hallway)
 "VZ" = (
@@ -4260,7 +4255,7 @@
 /area/ruin/rockplanet/somme/trench)
 "Wa" = (
 /obj/machinery/door/airlock/grunge{
-	name = "armoury in"
+	name = "Armoury In"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4307,7 +4302,7 @@
 /area/ruin/rockplanet/somme/trench)
 "WM" = (
 /obj/machinery/door/airlock/grunge{
-	name = "entrance"
+	name = "Entryway"
 	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
@@ -4509,9 +4504,6 @@
 	},
 /obj/structure/marker_beacon,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/subship{
-	subship_template = /datum/map_template/shuttle/subshuttles/frontiersman_brawler
-	},
 /turf/open/floor/concrete/slab_1/rockplanet/lit,
 /area/ruin/rockplanet/somme/landing)
 "Zd" = (
