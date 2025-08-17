@@ -1,3 +1,4 @@
+import { decodeHtmlEntities } from 'common/string';
 import {
   Button,
   Divider,
@@ -115,7 +116,9 @@ const ShipOwnerContent = (_) => {
                 onClick={() => act('memo')}
               />
             </LabeledList.Item>
-            <LabeledList.Item label="Current Memo">{memo}</LabeledList.Item>
+            <LabeledList.Item label="Current Memo">
+              {decodeHtmlEntities(memo)}
+            </LabeledList.Item>
           </LabeledList>
           <Divider />
           <Table>

@@ -13,14 +13,24 @@ import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 import { logger } from '../logging';
 
+const findShipByRef = (ship_list, ship_ref) => {
+  for (let i = 0; i < ship_list.length; i++) {
+    if (ship_list[i].ref === ship_ref) return ship_list[i];
+  }
+  return null;
+};
+
 export const ShipSelect = (props) => {
   const { act, data } = useBackend();
+
 
   const ships = data.ships || {};
   const templates = data.templates || [];
 
   const [currentTab, setCurrentTab] = useLocalState('tab', 1);
-  const [selectedShip, setSelectedShip] = useLocalState('selectedShip', null);
+  const [selectedShipRef, setSelectedShipRef] = useLocalState('selectedShipRef', null);
+
+  const selectedShip = findShipByRef(ships, selectedShipRef);
 
   const applyStates = {
     open: 'Open',
@@ -102,7 +112,7 @@ export const ShipSelect = (props) => {
                             : 'good'
                         }
                         onClick={() => {
-                          setSelectedShip(ship);
+                          setSelectedShipRef(ship.ref);
                           setCurrentTab(2);
                           const newTab = {
                             name: 'Job Select',
@@ -150,7 +160,7 @@ export const ShipSelect = (props) => {
                   {selectedShip.joinMode}
                 </LabeledList.Item>
                 <LabeledList.Item label="Ship Memo">
-                  {selectedShip.memo || 'No Memo'}
+                  {decodeHtmlEntities(selectedShip.memo) || 'No Memo'}
                 </LabeledList.Item>
               </LabeledList>
             </Section>

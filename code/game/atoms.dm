@@ -272,6 +272,16 @@
 	custom_materials = null //Null the list to prepare for applying the materials properly
 	set_custom_materials(temp_list)
 
+	if(uses_integrity)
+		if (islist(armor))
+			armor = getArmor(arglist(armor))
+		else if (!armor)
+			armor = getArmor()
+		else if (!istype(armor, /datum/armor))
+			stack_trace("Invalid type [armor.type] found in .armor during /obj Initialize()")
+		if(atom_integrity == null)
+			atom_integrity = max_integrity
+
 	ComponentInitialize()
 	InitializeAIController()
 
@@ -1631,6 +1641,10 @@
 						continue
 					max_grav = max(SG.active,max_grav)
 		return max_grav
+
+///Called after the atom is 'tamed' for type-specific operations, Usually called by the tameable component but also other things.
+/atom/proc/tamed(mob/living/tamer, obj/item/food)
+	return
 
 /**
  * Called when a mob examines (shift click or verb) this atom twice (or more) within EXAMINE_MORE_TIME (default 1.5 seconds)

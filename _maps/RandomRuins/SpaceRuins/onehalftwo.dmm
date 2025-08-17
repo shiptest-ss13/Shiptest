@@ -75,7 +75,6 @@
 /obj/machinery/button/shieldwallgen{
 	dir = 8;
 	pixel_x = 18;
-	pixel_y = 0;
 	id = "fuelingholo"
 	},
 /turf/open/floor/plating/airless,
@@ -282,8 +281,7 @@
 	dir = 1
 	},
 /obj/item/paper_bin{
-	pixel_x = 4;
-	pixel_y = 0
+	pixel_x = 4
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/refuelingpost/bridge)
@@ -1770,7 +1768,7 @@
 	id = "fuelinghangar"
 	},
 /obj/structure/cable/yellow,
-/obj/machinery/power/shieldwallgen/atmos/strong{
+/obj/machinery/power/shieldwallgen/atmos/strong/roundstart{
 	dir = 4;
 	id = "fuelingholo"
 	},
@@ -2827,7 +2825,6 @@
 /obj/structure/table/glass,
 /obj/item/documents/nanotrasen,
 /obj/item/shard{
-	pixel_x = 0;
 	pixel_y = -32
 	},
 /obj/effect/landmark/mission_poi/main{
@@ -3029,9 +3026,7 @@
 /turf/open/space/basic,
 /area/ruin/space/refuelingsolars)
 "JF" = (
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
@@ -3370,7 +3365,6 @@
 /area/ruin/space/has_grav/refuelingpost/upper)
 "ML" = (
 /obj/structure/sign/warning/securearea{
-	pixel_x = 0;
 	pixel_y = 30
 	},
 /obj/effect/turf_decal/industrial/caution,
@@ -3639,10 +3633,6 @@
 /obj/effect/turf_decal/trimline/opaque/nsorange/corner,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/refuelingpost/cargo)
-"QH" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/space/has_grav/refuelingpost/armory)
 "QP" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/reagent_dispensers/fueltank,
@@ -3675,7 +3665,6 @@
 	icon_state = "med"
 	},
 /obj/item/reagent_containers/hypospray/medipen/tramal{
-	pixel_x = 0;
 	pixel_y = -5
 	},
 /obj/item/reagent_containers/hypospray/medipen/tramal{
@@ -3683,7 +3672,6 @@
 	pixel_y = -4
 	},
 /obj/item/reagent_containers/hypospray/medipen/morphine{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /obj/item/reagent_containers/hypospray/medipen/morphine{
@@ -3780,7 +3768,6 @@
 /area/ruin/space/hivebotshuttle)
 "RY" = (
 /obj/structure/sign/warning/securearea{
-	pixel_x = 0;
 	pixel_y = 29
 	},
 /obj/effect/turf_decal/industrial/caution,
@@ -3895,13 +3882,9 @@
 	dir = 1
 	},
 /obj/item/clipboard{
-	pixel_x = -13;
-	pixel_y = 0
+	pixel_x = -13
 	},
-/obj/item/stamp/nanotrasen/captain{
-	pixel_x = 0;
-	pixel_y = 0
-	},
+/obj/item/stamp/nanotrasen/captain,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "Tk" = (
@@ -3940,8 +3923,7 @@
 	dir = 4
 	},
 /obj/item/newspaper{
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 5
 	},
 /obj/item/paper/crumpled/fluff,
 /obj/item/paper/crumpled/fluff{
@@ -3972,7 +3954,6 @@
 	name = "internals crate"
 	},
 /obj/item/tank/internals/emergency_oxygen/engi{
-	pixel_x = 0;
 	pixel_y = -3
 	},
 /obj/item/tank/internals/emergency_oxygen/engi{
@@ -4545,7 +4526,7 @@
 	id = "fuelinghangar"
 	},
 /obj/structure/cable/yellow,
-/obj/machinery/power/shieldwallgen/atmos/strong{
+/obj/machinery/power/shieldwallgen/atmos/strong/roundstart{
 	dir = 8;
 	id = "fuelingholo"
 	},
@@ -4615,7 +4596,6 @@
 	},
 /obj/machinery/button/door{
 	pixel_x = 6;
-	pixel_y = 0;
 	name = "mechbay shutters";
 	id = "ripleyfueling"
 	},
@@ -5629,7 +5609,7 @@ kN
 YT
 YT
 jR
-QH
+YT
 zt
 CI
 oW

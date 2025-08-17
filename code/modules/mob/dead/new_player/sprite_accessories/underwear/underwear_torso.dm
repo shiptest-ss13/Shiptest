@@ -84,6 +84,10 @@
 	name = "Sleeveless Turtleneck (Greyscale)"
 	icon_state = "turtle_sleeveless"
 
+/datum/sprite_accessory/undershirt/turtle_smooth
+	name = "Smooth Turtleneck (Greyscale)"
+	icon_state = "turtle_smooth"
+
 /datum/sprite_accessory/undershirt/buttondown
 	name = "Button-down Shirt (Greyscale)"
 	icon_state = "button"
