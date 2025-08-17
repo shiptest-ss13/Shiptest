@@ -394,15 +394,6 @@
 	r_hand = /obj/item/gun/ballistic/automatic/pistol/mauler
 	armor_base = /obj/item/clothing/suit/armor/frontier
 
-/mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals
-	icon_state = "frontiersmanofficer_mask"
-	atmos_requirements = IMMUNE_ATMOS_REQS
-	minbodytemp = 0
-	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer/internals
-
-/mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals/neutered
-	weapon_drop_chance = 0
-
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/neutured
 	weapon_drop_chance = 0
 
@@ -414,3 +405,49 @@
 	r_hand = /obj/item/gun/ballistic/rifle/illestren
 	rapid = 2
 	rapid_fire_delay = 10
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle/neutered
+	weapon_drop_chance = 100
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals
+	icon_state = "frontiersmanofficer_mask"
+	atmos_requirements = IMMUNE_ATMOS_REQS
+	minbodytemp = 0
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer/internals
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals/neutered
+	weapon_drop_chance = 0
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle/internals
+	icon_state = "frontiersmanofficer_mask"
+	atmos_requirements = IMMUNE_ATMOS_REQS
+	minbodytemp = 0
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer/internals
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle/internals/neutered
+	weapon_drop_chance = 0
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/wasp
+	name = "Frontiersman Captain"
+	desc = "This Frontiersman stands with a pride that the lesser Frontiersmen lack. They look with haughty superiority at their surroundings, right hand clutching a wasp with the surety of its use."
+	retreat_distance = 2
+	minimum_distance = 1
+	projectilesound = 'sound/weapons/laser4.ogg'
+	rapid = 4
+	spread = 16
+	casingtype = null
+	projectiletype = /obj/projectile/beam/laser/eoehoma/wasp
+	rapid_fire_delay = 0.1 SECONDS
+	r_hand = /obj/item/gun/energy/laser/wasp
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/wasp/neutered
+	weapon_drop_chance = 0
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/wasp/internals
+	icon_state = "frontiersmanofficer_mask"
+	atmos_requirements = IMMUNE_ATMOS_REQS
+	minbodytemp = 0
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer/internals
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/wasp/internals/neutered
+	weapon_drop_chance = 0

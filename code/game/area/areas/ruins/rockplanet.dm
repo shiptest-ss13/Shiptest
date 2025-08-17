@@ -2,11 +2,6 @@
 /area/ruin/rockplanet
 	icon_state = "red"
 
-//budgetcuts
-/area/ruin/rockplanet/nanotrasen
-	name = "Abandoned Research Facility"
-	always_unpowered = FALSE
-
 //shippingdock
 /area/ruin/rockplanet/shippingdockoffice
 	name = "Employee Office"
@@ -187,9 +182,9 @@
 	icon_state = "engine"
 
 /area/ruin/rockplanet/somme/landing
-	name = "Primary Landing Zone"
-	icon_state = "security"
+	name = "Warehouse"
+	icon_state = "storage"
 
 /area/ruin/rockplanet/somme/trench
 	name = "Trenchline"
-	icon_state = "hallb"
+	icon_state = "security"
