@@ -708,6 +708,8 @@
 /datum/reagent/medicine/panacea/effluvial/on_mob_life(mob/living/carbon/M)
 	if(prob(25))
 		M.adjustOrganLoss(ORGAN_SLOT_HEART, 0.5)
+	..()
+	. = 1
 
 /datum/reagent/medicine/stimulants
 	name = "Indoril Stimulant"
