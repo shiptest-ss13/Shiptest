@@ -14,6 +14,7 @@
 	var/obj/machinery/power/deck_relay/above ///The relay that's above us (for bridging powernets)
 	anchored = TRUE
 	density = FALSE
+	resistance_flags = INDESTRUCTIBLE
 
 /obj/machinery/power/deck_relay/examine(mob/user)
 	. += ..()
@@ -45,14 +46,14 @@
 			to_chat(user, span_notice("You reseal the insulation for [src]."))
 			icon_state = "cablerelay"
 			broken_status = RELAY_OK
-			obj_integrity = max_integrity
+			atom_integrity = max_integrity
 		else
 			to_chat(user, "You need 10 metal to mend [src].")
 
 	else
 		return ..()
 
-/obj/machinery/power/deck_relay/obj_break()
+/obj/machinery/power/deck_relay/atom_break()
 	..()
 	if(broken_status == RELAY_OK)
 		break_connections()
@@ -60,9 +61,6 @@
 		playsound(loc, 'sound/effects/glassbr3.ogg', 100, TRUE)
 		icon_state = "cablerelay-broken"
 		broken_status = RELAY_ADD_CABLE
-
-/obj/machinery/power/deck_relay/obj_destruction()
-	return //this shouldn't break under usual means
 
 /obj/machinery/power/deck_relay/Destroy()
 	break_connections()

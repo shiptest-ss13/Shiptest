@@ -61,7 +61,7 @@
 
 /turf/closed/wall/r_wall/update_stats()
 	var/integrity_per_state = max_integrity/7
-	d_state = (7 - round(integrity/integrity_per_state))
+	d_state = (7 - round(atom_integrity/integrity_per_state))
 	.= ..()
 
 /// Calculate how much integrity the r-wall should have a a given state.
