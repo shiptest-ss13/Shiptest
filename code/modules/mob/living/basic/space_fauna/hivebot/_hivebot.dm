@@ -53,6 +53,12 @@
 	///what does a hivebot shooting sound like
 	var/firing_sound = 'sound/weapons/gun/pistol/shot.ogg'
 
+	/// How much extra max health can this hivebot get from scrap?
+	var/growth_cap = 100
+	/// keeps track of how much it's grown for sizing up
+	var/growth = 0
+	var/growth_stage = 0
+
 	///aggro phrases on our hivebot
 	var/list/aggro_quips = list("CODE 7-34!!",
 		"CODE 7-11!!",
@@ -217,14 +223,36 @@
 	if(!COOLDOWN_FINISHED(src, salvage_cooldown))
 		balloon_alert(src, "recharging!")
 		return
+	if(growth >= growth_cap)
+		to_chat(src, span_warning("You don't have any more capacity to integrate more scrap!"))
+		return
 	if(scrap.salvageable_parts)
 		for(var/path in scrap.salvageable_parts)
 			maxHealth += 5
+			growth += 5
 		scrap.salvageable_parts = null
 	scrap.dismantle(src)
+	grow()
 	do_sparks(n = 3, c = TRUE, source = scrap)
 	to_chat(src, span_warning("Salvaging complete!"))
+	qdel(scrap)
 	COOLDOWN_START(src, salvage_cooldown, 50 SECONDS)
+
+/mob/living/basic/hivebot/proc/grow()
+	var/growth_percent = growth/growth_cap
+	switch(growth_stage)
+		if(1)
+			if(growth_percent > 0.33)
+				transform *= 1.1
+				growth_stage++
+		if(2)
+			if(growth_percent > 0.66)
+				transform *= 1.1
+				growth_stage++
+		if(3)
+			if(growth_percent > 0.88)
+				transform *= 1.1
+				growth_stage++
 
 /datum/action/innate/hivebot/foamwall/Activate()
 	var/mob/living/basic/hivebot/our_hivebot = owner
