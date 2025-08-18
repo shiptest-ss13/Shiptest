@@ -97,10 +97,10 @@
 
 	user.visible_message(
 		span_warning("[user] tears the barricade apart."),
-		span_notice("You start prying boards off of the barricade..."),
+		span_notice("You start prying boards off the barricade..."),
 		span_hear("You hear sounds of wood crashing on the floor.")
 	)
-	if(tool.use_tool(src, user, 80, volume=100))
+	if(tool.use_tool(src, user, 50, volume=100))
 		playsound(loc, 'sound/effects/plank_fall.ogg', 100)
 		to_chat(user, span_notice("You disassemble the barricade."))
 		var/obj/item/stack/sheet/mineral/wood/M = new (loc, 5)
