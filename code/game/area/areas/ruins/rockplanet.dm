@@ -163,7 +163,7 @@
 
 /area/ruin/rockplanet/somme/hallway
 	name = "Main Hallway"
-	icon_state = "hallA"
+	icon_state = "hallC"
 
 /area/ruin/rockplanet/somme/ross
 	name = "Big Boss' Quarters"
@@ -187,4 +187,12 @@
 
 /area/ruin/rockplanet/somme/trench
 	name = "Trenchline"
-	icon_state = "security"
+	icon_state = "danger"
+
+/area/ruin/rockplanet/somme/mainlock
+	name = "Bunker Main Airlock"
+	icon_state = "hallF"
+
+/area/ruin/rockplanet/somme/seclock
+	name = "Bunker Secondary Airlock"
+	icon_state = "hallP"
