@@ -1,6 +1,6 @@
 /datum/map_generator/planet_generator/waste
 
-	mountain_height = 0.6
+	mountain_height = 0.5
 	perlin_zoom = 40
 
 	initial_closed_chance = 45
@@ -387,7 +387,7 @@
 		/turf/open/floor/plating/wasteplanet = 4
 	)
 	closed_turf_types = list(
-		/turf/closed/mineral/random/wasteplanet = 60,
+		/turf/closed/mineral/random/wasteplanet = 45,
 		/turf/closed/wall/r_wall/wasteplanet = 1,
 		/turf/closed/wall/r_wall/rust/wasteplanet = 1,
 		/turf/closed/wall/wasteplanet = 5,
@@ -432,7 +432,7 @@
 		/turf/open/floor/concrete/pavement/wasteplanet = 4
 	)
 	closed_turf_types = list(
-		/turf/closed/mineral/random/wasteplanet = 60,
+		/turf/closed/mineral/random/wasteplanet = 50,
 		/turf/closed/wall/concrete/wasteplanet = 15,
 		/turf/closed/wall/concrete/reinforced/wasteplanet = 3
 	)
