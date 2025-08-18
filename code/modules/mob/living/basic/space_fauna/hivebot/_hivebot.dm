@@ -229,6 +229,7 @@
 	if(scrap.salvageable_parts)
 		for(var/path in scrap.salvageable_parts)
 			maxHealth += 5
+			heal_overall_damage(5)
 			growth += 5
 		scrap.salvageable_parts = null
 	scrap.dismantle(src)
