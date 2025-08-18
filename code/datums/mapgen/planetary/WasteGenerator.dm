@@ -265,7 +265,7 @@
 		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
 		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
-		/obj/structure/spawner/hivebot = 10
+		/obj/structure/spawner/hivebot = 15
 	)
 	mob_spawn_chance = 2
 
@@ -422,7 +422,7 @@
 		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
 		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
-		/obj/structure/spawner/hivebot = 10
+		/obj/structure/spawner/hivebot = 15
 	)
 
 /datum/biome/cave/waste/conc //da concrete jungle baybee
@@ -461,7 +461,7 @@
 		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
 		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
-		/obj/structure/spawner/hivebot = 10
+		/obj/structure/spawner/hivebot = 15
 	)
 
 	flora_spawn_chance = 30
