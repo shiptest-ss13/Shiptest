@@ -259,7 +259,7 @@
 
 /datum/supply_pack/gun/laser/vga5
 	name = "Etherbor VG-A5 Beam Volleygun Crate"
-	desc = "Contains a single VG-A5 Beam Volleygun, a military-grade developed in the PGF and manufactured by Etherbor Industries for use within the Marine Corps."
+	desc = "Contains a single VG-A5 Beam Volleygun, a military-grade volleygun developed in the PGF and manufactured by Etherbor Industries for use within the Marine Corps."
 	cost = 4000
 	contains = list(/obj/item/storage/guncase/energy/vga5)
 	crate_name = "beam volleygun crate"
