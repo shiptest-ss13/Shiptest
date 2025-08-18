@@ -90,6 +90,26 @@
 		deconstruct()
 		return TRUE
 
+/obj/structure/barricade/wooden/crowbar_act(mob/user, obj/item/tool)
+	if(..())
+		return TRUE
+	. = FALSE
+
+	user.visible_message(
+		span_warning("[user] tears the barricade apart."),
+		span_notice("You start prying boards off of the barricade..."),
+		span_hear("You hear sounds of wood crashing on the floor.")
+	)
+	if(tool.use_tool(src, user, 80, volume=100))
+		playsound(loc, 'sound/effects/plank_fall.ogg', 100)
+		to_chat(user, span_notice("You disassemble the barricade."))
+		var/obj/item/stack/sheet/mineral/wood/M = new (loc, 5)
+		if (!QDELETED(M)) // might be a stack that's been merged
+			M.add_fingerprint(user)
+		qdel(src)
+	return TRUE
+
+
 /obj/structure/barricade/wooden/crude
 	name = "crude plank barricade"
 	desc = "This space is blocked off by a crude assortment of planks."
