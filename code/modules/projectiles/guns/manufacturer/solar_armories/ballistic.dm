@@ -48,7 +48,7 @@
 		/obj/item/attachment/rail_light,
 	)
 
-	canMouseDown = TRUE
+	//canMouseDown = TRUE
 
 /obj/item/gun/ballistic/automatic/powered/gauss/modelh/no_mag
 	default_ammo_type = FALSE
@@ -211,3 +211,39 @@
 	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 
+/obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon
+	name = "Rail Cannon"
+	desc = "Rails you. Hard."
+	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/solararmories/onmob.dmi'
+
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/rail
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/rail,
+	)
+	default_cell_type = /obj/item/stock_parts/cell/gun/solgov
+	allowed_cell_types = list(
+		/obj/item/stock_parts/cell/gun/solgov,
+	)
+
+	icon_state = "mecha_railgun"
+	item_state = "ssg669c"
+
+	manufacturer = MANUFACTURER_SOLARARMORIES
+	spread = -5
+	spread_unwielded = 20
+	recoil = 1
+	recoil_unwielded = 8
+	wield_slowdown = SNIPER_SLOWDOWN
+	wield_delay = 1.3 SECONDS
+
+	fire_sound = 'sound/weapons/blastcannon.ogg'
+
+	bolt_type = BOLT_TYPE_NO_BOLT
+	internal_magazine = TRUE
+	show_magazine_on_sprite = FALSE
+	empty_indicator = FALSE
+
+	canMouseDown = TRUE
