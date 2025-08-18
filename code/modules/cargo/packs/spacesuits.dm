@@ -131,6 +131,13 @@
 	crate_name = "security hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 
+/datum/supply_pack/spacesuits/eod_hardsuit
+	name = "EOD Hardsuit Crate"
+	desc = "Contains one EOD hardsuit, to provide safety with explosives."
+	cost = 2000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/bomb)
+	crate_name = "EOD hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/science
 
 //nt hardsuit breaker
 
@@ -171,15 +178,6 @@
 	crate_type = /obj/structure/closet/crate/secure/plasma
 	faction = /datum/faction/nt
 	faction_locked = TRUE
-
-/datum/supply_pack/spacesuits/sci_hardsuit
-	name = "Scientific Hardsuit Crate"
-	desc = "Contains one science hardsuit, designed to provide safety under advanced experimental conditions, or while handling explosives."
-	cost = 2000
-	contains = list(/obj/item/clothing/suit/space/hardsuit/rd)
-	crate_name = "scientific hardsuit crate"
-	crate_type = /obj/structure/closet/crate/secure/science
-	faction = /datum/faction/nt
 
 /datum/supply_pack/spacesuits/atmos_hardsuit
 	name = "Atmospherics Hardsuit Crate"
@@ -261,6 +259,17 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/spacesuits/eod_inteq
+	name = "IRMG EOD Hardsuit Crate"
+	desc = "Contains one EOD hardsuit, to provide safety with explosives."
+	cost = 2000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/bomb/inteq)
+	crate_name = "EOD hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/science
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
 //solarian hardsuit
 
 /datum/supply_pack/spacesuits/solar_hardsuit
@@ -298,6 +307,17 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/spacesuits/eod_clip
+	name = "CMM EOD Hardsuit Crate"
+	desc = "Contains one EOD hardsuit, to provide safety with explosives."
+	cost = 2000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/bomb/clip)
+	crate_name = "EOD hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/science
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
 //jardline
 
 /datum/supply_pack/spacesuits/white_red_hardsuit
@@ -320,6 +340,17 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/syndi/ngr)
 	crate_name = "beige-red hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/syndicate/ngr
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/eod_ngr
+	name = "NGR EOD Hardsuit Crate"
+	desc = "Contains one EOD hardsuit, to provide safety with explosives."
+	cost = 2000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/bomb/ngr)
+	crate_name = "EOD hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/science
 	faction = /datum/faction/syndicate/ngr
 	faction_discount = 0
 	faction_locked = TRUE

@@ -91,3 +91,44 @@
   - bugfix: Added calls to parent methods where expected
   generalthrax:
   - bugfix: Machine pistols now have the same wear thresholds across the board
+2025-08-14:
+  FalloutFalcon:
+  - code_imp: turf offset at compile time instead of init
+  Gristlebee:
+  - bugfix: Typhon engines
+  moffball19:
+  - rscadd: Remapped the Vaquero-class Light Frigate
+  - rscadd: Enforcer Class One outfit
+  - rscadd: no_mag subtype for the Kingsnake
+  newwavediscologist:
+  - rscadd: Adds new hairbows
+  rye-rice, thearbiber, generalthrax:
+  - rscadd: Added SSG-08 Saluki, Inteq sniper rifle refit of the F90, chambered in
+      6.5mm
+  - balance: Reduced F90 price to 4000
+  thearbiber, generalthrax:
+  - rscadd: Added new hermit sprites and hermit dynamic mobs
+  - balance: Generalized hermit drops across the board to be pretty similar for all
+      mobs
+  - rscdel: Removed prototype explorer gear
+  - rscdel: Removed IPCs from the hermit species pool
+2025-08-15:
+  FalloutFalcon:
+  - refactor: cows are now basic mobs
+  - bugfix: hive bot mechanics will salvage machines
+  thearbiber:
+  - rscadd: touches up honorable vanguard sprites
+2025-08-16:
+  Erikafox:
+  - bugfix: towels should no longer crash the server
+  Gristlebee:
+  - balance: Generalizes shoulder sling behavior.
+  Ical92:
+  - rscadd: Added improved fax spam event
+  moffball, generalthrax, erikafox:
+  - rscadd: A new IPC frame, the Clover Corporation 'Humaniform'
+  - rscadd: A new FBP sprite unique to humans
+  thearbiber:
+  - rscadd: resprites pufferjackets
+  - rscadd: kepori variants to various pants
+  - bugfix: human hand sprite
