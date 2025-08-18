@@ -19,6 +19,12 @@
 	icon_state = "wood-broken"
 	},
 /area/ruin/rockplanet/somme/trench)
+"ah" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken4"
+	},
+/area/ruin/rockplanet/somme/landing)
 "aj" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/mob_spawn/human/corpse/inteq/recruit,
@@ -37,8 +43,8 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	icon_state = "wood-broken4"
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken6"
 	},
 /area/ruin/rockplanet/somme/landing)
 "am" = (
@@ -58,7 +64,9 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken7"
+	},
 /area/ruin/rockplanet/somme/hallway)
 "aw" = (
 /obj/structure/cable{
@@ -70,7 +78,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "ay" = (
 /obj/effect/turf_decal/siding/wood/corner{
@@ -114,18 +122,15 @@
 "aG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/turf/open/floor/wood{
-	icon_state = "wood-broken4"
-	},
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/somme/restroom)
-"aL" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood,
-/obj/machinery/atmospherics/components/binary/pump/on{
-	dir = 4
+"aM" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
 	},
-/turf/open/floor/concrete/slab_1/rockplanet,
-/area/ruin/rockplanet/somme/engineeering)
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/rockplanet/somme/hallway)
 "aN" = (
 /obj/structure/platform/wood/corner{
 	dir = 1
@@ -156,7 +161,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/landing)
 "aW" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
@@ -175,6 +180,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/rockplanet/lit,
 /area/ruin/rockplanet/somme/landing)
+"aX" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/obj/structure/barricade/sandbags,
+/obj/effect/turf_decal/siding/wood/corner,
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "aY" = (
 /obj/effect/mob_spawn/human/corpse/inteq/enforcer,
 /obj/structure/closet/body_bag{
@@ -188,10 +201,10 @@
 /obj/structure/platform/wood{
 	dir = 9
 	},
-/obj/structure/platform/wood/corner,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/effect/turf_decal/siding/wood/corner,
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "bb" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -206,17 +219,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
-"bd" = (
-/obj/structure/platform/wood{
-	dir = 8
-	},
-/obj/structure/platform/wood{
-	dir = 4
-	},
-/turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "bh" = (
 /obj/effect/mob_spawn/human/corpse/inteq/vanguard,
 /obj/structure/closet/body_bag{
@@ -226,16 +230,6 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/somme/landing)
-"bl" = (
-/obj/structure/platform/wood{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/platform/wood{
-	dir = 8
-	},
-/turf/open/floor/plating/dirt/rockplanet,
-/area/ruin/rockplanet/somme/trench)
 "bn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/bench/beige/directional/west,
@@ -291,9 +285,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/wood{
-	icon_state = "wood-broken7"
-	},
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/trench)
 "bC" = (
 /obj/effect/decal/cleanable/dirt,
@@ -325,18 +317,6 @@
 	},
 /turf/open/floor/carpet,
 /area/ruin/rockplanet/somme/ross)
-"bL" = (
-/obj/structure/platform/wood{
-	dir = 9
-	},
-/obj/structure/platform/wood/corner,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "bM" = (
 /obj/structure/mirror{
 	pixel_y = 5;
@@ -350,6 +330,9 @@
 /obj/structure/catwalk/over,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/airalarm/directional/north,
+/obj/effect/turf_decal/spline/fancy/opaque/white{
+	dir = 6
+	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/somme/restroom)
 "bQ" = (
@@ -366,21 +349,23 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"bY" = (
-/obj/structure/platform/wood/corner,
+"ca" = (
+/obj/structure/platform/wood{
+	dir = 10
+	},
 /obj/structure/platform/wood/corner{
 	dir = 8
 	},
-/turf/open/floor/wood/rockplanet,
-/area/ruin/rockplanet/somme/trench)
+/turf/open/floor/plating/dirt/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "cb" = (
 /obj/structure/platform/wood{
-	dir = 9
+	dir = 8
 	},
-/obj/effect/turf_decal/siding/wood/corner,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/platform/wood/corner,
-/turf/open/floor/concrete/slab_1/rockplanet,
+/obj/structure/platform/wood{
+	dir = 4
+	},
+/turf/open/floor/plating/dirt/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "cc" = (
 /obj/effect/turf_decal/borderfloor{
@@ -406,17 +391,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/dorms)
-"cd" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 10
-	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
+"cm" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/industrial/stand_clear,
+/turf/open/floor/concrete/slab_1/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "cn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/landing)
 "ct" = (
 /obj/structure/cable{
@@ -429,7 +415,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "cu" = (
 /obj/structure/platform/wood{
@@ -491,19 +477,6 @@
 	dir = 1
 	},
 /area/ruin/rockplanet/somme/engineeering)
-"cM" = (
-/obj/structure/platform/wood{
-	dir = 6
-	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/platform/wood/corner{
-	dir = 4
-	},
-/turf/open/floor/concrete/slab_1/rockplanet,
-/area/ruin/rockplanet/somme/trench)
 "cO" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -564,6 +537,13 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/somme/armory)
+"di" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "dj" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/rockplanet{
@@ -600,27 +580,20 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/wood{
-	icon_state = "wood-broken7"
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 5
 	},
+/turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/somme/hallway)
 "dv" = (
-/obj/structure/platform/wood,
 /obj/structure/platform/wood{
-	dir = 1
-	},
-/turf/open/floor/plasteel/stairs/wood/mid{
 	dir = 4
 	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
-"dx" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
+/obj/structure/platform/wood{
+	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/rockplanet,
-/area/ruin/rockplanet/somme/engineeering)
+/area/ruin/rockplanet/somme/trench)
 "dy" = (
 /obj/structure/platform/wood/corner{
 	dir = 8
@@ -688,6 +661,16 @@
 	},
 /turf/open/floor/carpet,
 /area/ruin/rockplanet/somme/ross)
+"dM" = (
+/obj/structure/platform/wood{
+	dir = 10
+	},
+/obj/structure/platform/wood/corner{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/dirt/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "dO" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 5
@@ -696,8 +679,21 @@
 /area/ruin/rockplanet/somme/ross)
 "dP" = (
 /obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/wood,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/opaque/yellow/line,
+/turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/somme/hallway)
+"dT" = (
+/obj/structure/platform/wood/corner{
+	dir = 8
+	},
+/obj/structure/platform/wood/corner{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/plating/dirt/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "dU" = (
 /obj/structure/platform/wood/corner{
 	dir = 1
@@ -720,12 +716,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/rockplanet,
 /area/ruin/rockplanet/somme/trench)
-"dX" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9
-	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "dZ" = (
 /obj/structure/railing,
 /obj/structure/noticeboard{
@@ -746,8 +736,21 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/armory)
+"ea" = (
+/obj/structure/platform/wood{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/platform/wood/corner{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "eb" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -787,7 +790,7 @@
 	filter_types = list("co2","bz","water_vapor","freon","tritium","n20");
 	widenet = 1
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "el" = (
 /obj/structure/chair/office/dark{
@@ -825,6 +828,15 @@
 "eA" = (
 /turf/closed/wall/concrete,
 /area/ruin/rockplanet/somme/restroom)
+"eE" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "eG" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -835,8 +847,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/wood{
-	icon_state = "wood"
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken7"
 	},
 /area/ruin/rockplanet/somme/landing)
 "eH" = (
@@ -903,6 +915,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/somme/hallway)
 "eX" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/concrete,
 /area/ruin/rockplanet/somme/restroom)
 "eY" = (
@@ -930,8 +943,8 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/wood{
-	icon_state = "wood-broken"
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken4"
 	},
 /area/ruin/rockplanet/somme/hallway)
 "fl" = (
@@ -950,18 +963,6 @@
 	},
 /turf/open/floor/plating/dirt/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
-"fo" = (
-/turf/open/floor/concrete/slab_2/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
-"fq" = (
-/obj/structure/platform/wood,
-/obj/structure/platform/wood{
-	dir = 1
-	},
-/turf/open/floor/plasteel/stairs/wood/mid{
-	dir = 8
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "ft" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/rockplanet{
@@ -1023,9 +1024,7 @@
 /area/ruin/rockplanet/somme/armory)
 "fI" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	icon_state = "wood-broken"
-	},
+/turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/somme/hallway)
 "fN" = (
 /obj/structure/platform/wood{
@@ -1039,11 +1038,10 @@
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "fO" = (
-/turf/open/floor/wood{
-	icon_state = "wood-broken2"
-	},
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/landing)
 "fT" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/concrete,
 /area/ruin/rockplanet/somme/trench)
 "fV" = (
@@ -1069,31 +1067,44 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "gc" = (
 /obj/structure/flora/tree/cactus,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"gg" = (
+/obj/structure/platform/wood{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/platform/wood{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "gh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/platform/wood{
-	dir = 6
+	dir = 9
 	},
-/obj/structure/platform/wood/corner{
-	dir = 4
-	},
+/obj/structure/platform/wood/corner,
 /turf/open/floor/plating/dirt/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "gi" = (
+/obj/structure/platform/wood,
 /obj/structure/platform/wood{
-	dir = 6
+	dir = 1
 	},
-/obj/structure/platform/wood/corner{
-	dir = 4
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
 	},
 /turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "gm" = (
 /obj/structure/table,
 /obj/item/cutting_board,
@@ -1114,6 +1125,14 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/rockplanet/somme/hallway)
+"gn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/obj/structure/closet/crate/bin,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/somme/hallway)
 "go" = (
@@ -1139,11 +1158,13 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken"
+	},
 /area/ruin/rockplanet/somme/hallway)
 "gw" = (
-/turf/open/floor/wood{
-	icon_state = "wood-broken6"
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken5"
 	},
 /area/ruin/rockplanet/somme/armory)
 "gy" = (
@@ -1181,7 +1202,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer4{
 	dir = 1
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken7"
+	},
 /area/ruin/rockplanet/somme/hallway)
 "gL" = (
 /obj/effect/turf_decal/siding/wood{
@@ -1192,14 +1215,6 @@
 /obj/item/stack/sheet/mineral/uranium/ten,
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/engineeering)
-"gM" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/turf/open/floor/wood/rockplanet,
-/area/ruin/rockplanet/somme/trench)
 "gO" = (
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
@@ -1213,8 +1228,8 @@
 /area/ruin/rockplanet/somme/trench)
 "gQ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/wood{
-	icon_state = "wood-broken"
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken7"
 	},
 /area/ruin/rockplanet/somme/landing)
 "gR" = (
@@ -1228,16 +1243,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/rockplanet/lit,
 /area/ruin/rockplanet/somme/landing)
-"gS" = (
-/obj/structure/platform/wood,
-/obj/structure/platform/wood{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "gT" = (
 /turf/closed/mineral/random/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -1247,16 +1252,6 @@
 /obj/effect/turf_decal/siding/wood/end,
 /turf/open/floor/plating/dirt/rockplanet,
 /area/ruin/rockplanet/somme/trench)
-"gZ" = (
-/obj/structure/platform/wood{
-	dir = 10
-	},
-/obj/structure/platform/wood/corner{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "hf" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
@@ -1363,14 +1358,6 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"hD" = (
-/obj/structure/platform/wood{
-	dir = 8
-	},
-/turf/open/floor/plasteel/stairs/wood/mid{
-	dir = 1
-	},
-/area/ruin/rockplanet/somme/trench)
 "hE" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable{
@@ -1400,6 +1387,16 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/rockplanet/somme/medical)
+"hL" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/barricade/sandbags,
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "hM" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/turf_decal/siding/wood/corner{
@@ -1429,9 +1426,7 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/wood{
-	icon_state = "wood-broken"
-	},
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "ic" = (
 /obj/structure/vein/rockplanet,
@@ -1494,6 +1489,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
+"iu" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood/corner,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/rockplanet/somme/hallway)
 "iw" = (
 /turf/closed/wall/concrete,
 /area/ruin/rockplanet/somme/hallway)
@@ -1557,7 +1557,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "iM" = (
 /obj/structure/platform/wood{
@@ -1643,12 +1643,32 @@
 	icon_state = "wood-broken2"
 	},
 /area/ruin/rockplanet/somme/trench)
+"iX" = (
+/turf/open/floor/concrete/slab_3/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "iY" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/structure/closet/emcloset/wall/directional/east,
-/obj/effect/turf_decal/box,
-/turf/open/floor/wood,
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/somme/hallway)
+"jb" = (
+/obj/structure/platform/wood,
+/obj/structure/platform/wood{
+	dir = 1
+	},
+/obj/structure/platform/wood/corner,
+/turf/open/floor/plating/dirt/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "je" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood,
@@ -1687,8 +1707,18 @@
 /obj/structure/sign/poster/contraband/steppyflag{
 	pixel_y = 32
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
+"ji" = (
+/obj/structure/platform/wood,
+/obj/structure/platform/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/plating/dirt/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "jj" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/rockplanet{
@@ -1731,19 +1761,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/rockplanet/lit,
 /area/ruin/rockplanet/somme/trench)
-"jx" = (
-/obj/structure/platform/wood,
-/obj/structure/platform/wood{
-	dir = 1
-	},
-/obj/structure/platform/wood/corner,
-/turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "jA" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "jC" = (
 /obj/structure/table/wood,
@@ -1757,19 +1779,6 @@
 	},
 /turf/open/floor/carpet,
 /area/ruin/rockplanet/somme/ross)
-"jE" = (
-/obj/structure/platform/wood{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/platform/wood/corner{
-	dir = 1
-	},
-/obj/structure/platform/wood/corner{
-	dir = 4
-	},
-/turf/open/floor/concrete/slab_1/rockplanet,
-/area/ruin/rockplanet/somme/trench)
 "jF" = (
 /obj/structure/platform/wood{
 	dir = 4
@@ -1801,7 +1810,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "jV" = (
 /obj/structure/platform/wood/corner{
@@ -1845,14 +1854,6 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/dorms)
-"km" = (
-/obj/structure/platform/wood/corner{
-	dir = 1
-	},
-/turf/open/floor/wood/rockplanet{
-	icon_state = "wood-broken4"
-	},
-/area/ruin/rockplanet/somme/trench)
 "kp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood,
@@ -1867,7 +1868,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "kv" = (
 /obj/structure/vein/rockplanet/classthree,
@@ -1883,7 +1884,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken3"
+	},
 /area/ruin/rockplanet/somme/landing)
 "kz" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1896,13 +1899,16 @@
 "kA" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/light/small/directional/west,
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1;
 	filter_types = list("co2","bz","water_vapor","freon","tritium","n20");
 	widenet = 1
 	},
-/turf/open/floor/wood,
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/somme/hallway)
 "kC" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1917,26 +1923,8 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/directional/east,
-/turf/open/floor/wood{
-	icon_state = "wood-broken7"
-	},
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
-"kE" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/structure/barricade/sandbags,
-/turf/open/floor/concrete/slab_1/rockplanet,
-/area/ruin/rockplanet/somme/trench)
-"kF" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "kI" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -2041,6 +2029,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/hangar/plasteel/dark,
 /area/ruin/rockplanet/somme/hallway)
+"lu" = (
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken2"
+	},
+/area/ruin/rockplanet/somme/trench)
 "lG" = (
 /obj/structure/platform/wood{
 	dir = 10
@@ -2066,7 +2059,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/wood{
+/turf/open/floor/wood/birch{
 	icon_state = "wood-broken"
 	},
 /area/ruin/rockplanet/somme/hallway)
@@ -2078,6 +2071,15 @@
 	icon_state = "wood-broken3"
 	},
 /area/ruin/rockplanet/somme/trench)
+"lS" = (
+/obj/structure/platform/wood{
+	dir = 6
+	},
+/obj/structure/platform/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/plating/dirt/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "lW" = (
 /obj/structure/platform/wood{
 	dir = 1
@@ -2105,22 +2107,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
 	},
-/turf/open/floor/wood,
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/somme/restroom)
-"md" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/obj/structure/platform/wood{
-	dir = 8
-	},
-/obj/structure/platform/wood/corner{
-	dir = 8
-	},
-/obj/structure/platform/wood/corner,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_1/rockplanet,
-/area/ruin/rockplanet/somme/trench)
 "ml" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2166,19 +2154,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/somme/restroom)
-"ms" = (
-/obj/structure/platform/wood{
-	dir = 10
-	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/platform/wood/corner{
-	dir = 8
-	},
-/turf/open/floor/concrete/slab_1/rockplanet,
-/area/ruin/rockplanet/somme/trench)
 "mt" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -2212,17 +2187,6 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/somme/landing)
-"mB" = (
-/obj/structure/platform/wood/corner,
-/obj/structure/platform/wood/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_1/rockplanet,
-/area/ruin/rockplanet/somme/trench)
 "mF" = (
 /obj/structure/platform/wood{
 	dir = 4
@@ -2251,9 +2215,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/wood{
-	icon_state = "wood-broken"
-	},
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/landing)
 "mT" = (
 /obj/structure/table,
@@ -2268,6 +2230,16 @@
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/concrete/slab_1/rockplanet/lit,
+/area/ruin/rockplanet/somme/trench)
+"nj" = (
+/obj/structure/platform/wood/corner{
+	dir = 8
+	},
+/obj/structure/platform/wood/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "nm" = (
 /obj/structure/barricade/sandbags,
@@ -2290,14 +2262,6 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/somme/landing)
-"ny" = (
-/obj/structure/platform/wood/corner{
-	dir = 4
-	},
-/turf/open/floor/wood/rockplanet{
-	icon_state = "wood-broken7"
-	},
-/area/ruin/rockplanet/somme/trench)
 "nC" = (
 /obj/structure/platform/military/corner,
 /turf/open/floor/wood/rockplanet{
@@ -2313,7 +2277,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/armory)
 "nJ" = (
 /obj/structure/platform/wood{
@@ -2335,6 +2299,7 @@
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "nL" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/closed/mineral/random/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "nP" = (
@@ -2353,20 +2318,16 @@
 /turf/open/floor/carpet,
 /area/ruin/rockplanet/somme/ross)
 "nR" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 8
+/obj/structure/platform/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/structure/platform/wood{
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/turf/open/floor/wood{
-	icon_state = "wood-broken4"
-	},
-/area/ruin/rockplanet/somme/landing)
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "nT" = (
 /obj/machinery/light/small/directional/west,
 /obj/effect/turf_decal/siding/wood{
@@ -2382,24 +2343,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
-"nX" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/turf/open/floor/concrete/slab_1,
-/area/ruin/rockplanet/somme/hallway)
 "og" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood{
-	dir = 10
+	dir = 2
 	},
 /turf/open/floor/wood/rockplanet{
-	icon_state = "wood-broken3"
+	icon_state = "wood-broken2"
 	},
 /area/ruin/rockplanet/somme/trench)
 "oh" = (
@@ -2408,6 +2359,19 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"oj" = (
+/obj/structure/platform/wood{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/platform/wood/corner{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "or" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood,
@@ -2481,6 +2445,16 @@
 	icon_state = "wood-broken"
 	},
 /area/ruin/rockplanet/somme/trench)
+"oS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/platform/wood{
+	dir = 6
+	},
+/obj/structure/platform/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/plating/dirt/rockplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "oT" = (
 /obj/structure/platform/wood{
 	dir = 6
@@ -2491,26 +2465,6 @@
 	},
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
-"oU" = (
-/obj/structure/platform/wood{
-	dir = 5
-	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/platform/wood/corner{
-	dir = 1
-	},
-/turf/open/floor/concrete/slab_1/rockplanet,
-/area/ruin/rockplanet/somme/trench)
-"oV" = (
-/obj/structure/platform/wood,
-/obj/structure/platform/wood{
-	dir = 1
-	},
-/turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "oW" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 6;
@@ -2543,13 +2497,14 @@
 	},
 /area/ruin/rockplanet/somme/dorms)
 "pa" = (
-/obj/structure/platform/wood,
 /obj/structure/platform/wood{
-	dir = 1
+	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/platform/wood{
+	dir = 4
+	},
 /turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/overmap_encounter/planetoid/cave/explored)
 "pc" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -2569,18 +2524,20 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken7"
+	},
 /area/ruin/rockplanet/somme/trench)
 "pg" = (
-/obj/structure/platform/wood{
-	dir = 5
-	},
-/obj/structure/platform/wood/corner{
-	dir = 1
-	},
+/obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/wood/rockplanet{
+	icon_state = "wood-broken3"
+	},
+/area/ruin/rockplanet/somme/trench)
 "ph" = (
 /obj/structure/platform/wood/corner{
 	dir = 8
@@ -2638,7 +2595,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "py" = (
 /obj/structure/chair/bench/grey/directional/east,
@@ -2653,6 +2610,7 @@
 /obj/structure/platform/wood/corner{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "pC" = (
@@ -2682,32 +2640,17 @@
 	},
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/engineeering)
-"pI" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
-	},
-/obj/structure/barricade/sandbags,
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8
-	},
-/turf/open/floor/concrete/slab_1/rockplanet,
-/area/ruin/rockplanet/somme/trench)
 "pP" = (
-/turf/open/floor/concrete/slab_3/rockplanet/lit,
+/obj/structure/platform/wood{
+	dir = 9
+	},
+/turf/open/floor/plating/dirt/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "pQ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/dorms)
-"pU" = (
-/obj/structure/platform/wood{
-	dir = 9
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood/corner,
-/turf/open/floor/concrete/slab_1/rockplanet,
-/area/ruin/rockplanet/somme/trench)
 "pX" = (
 /obj/effect/turf_decal/borderfloor/corner{
 	color = "#74746c"
@@ -2729,7 +2672,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "qh" = (
 /obj/structure/table,
@@ -2743,9 +2686,7 @@
 /area/ruin/rockplanet/somme/trench)
 "ql" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	icon_state = "wood-broken7"
-	},
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/landing)
 "qs" = (
 /obj/structure/platform/wood/corner,
@@ -2819,6 +2760,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/somme/landing)
+"qL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/somme/engineeering)
 "qN" = (
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt,
@@ -2852,12 +2801,15 @@
 	},
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
-"qY" = (
-/obj/effect/turf_decal/siding/wood/end{
+"qZ" = (
+/obj/structure/platform/wood{
+	dir = 4
+	},
+/obj/structure/platform/wood{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/turf/open/floor/plating/dirt/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "ra" = (
 /obj/machinery/vending/coffee,
 /obj/effect/turf_decal/box,
@@ -2865,17 +2817,6 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/somme/hallway)
-"rf" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/effect/turf_decal/borderfloor{
-	dir = 2;
-	color = "#74746c"
-	},
-/turf/open/floor/concrete/slab_1,
-/area/ruin/rockplanet/somme/landing)
 "rg" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -2883,16 +2824,8 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/landing)
-"rh" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
-	},
-/turf/open/floor/wood/rockplanet,
-/area/ruin/rockplanet/somme/trench)
 "ri" = (
 /obj/structure/platform/wood{
 	dir = 8
@@ -2909,7 +2842,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken4"
+	},
 /area/ruin/rockplanet/somme/hallway)
 "ro" = (
 /obj/machinery/suit_storage_unit/inherit,
@@ -2972,15 +2907,23 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_3/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"rG" = (
+/obj/structure/barricade/sandbags,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/turf/open/floor/wood/rockplanet{
+	icon_state = "wood-broken4"
+	},
+/area/ruin/rockplanet/somme/trench)
 "rH" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/wood{
-	icon_state = "wood-broken7"
-	},
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/trench)
 "rS" = (
 /obj/structure/platform/wood{
@@ -2992,12 +2935,10 @@
 /turf/open/floor/plating/dirt/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "rU" = (
-/obj/structure/platform/wood{
-	dir = 9
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken6"
 	},
-/obj/structure/platform/wood/corner,
-/turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/ruin/rockplanet/somme/armory)
 "rW" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -3018,7 +2959,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken2"
+	},
 /area/ruin/rockplanet/somme/hallway)
 "sd" = (
 /obj/effect/turf_decal/siding/wood{
@@ -3049,15 +2992,15 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/rockplanet/somme/medical)
 "sm" = (
-/obj/structure/platform/wood{
-	dir = 6
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
 	},
-/obj/structure/platform/wood/corner{
-	dir = 4
+/obj/structure/barricade/sandbags,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "so" = (
 /obj/structure/rack,
 /obj/item/storage/toolbox/ammo/shotgun{
@@ -3076,9 +3019,15 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/somme/armory)
 "su" = (
+/obj/structure/platform/wood{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/structure/platform/wood{
+	dir = 8
+	},
+/turf/open/floor/plating/dirt/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "sw" = (
 /obj/structure/table/wood,
 /obj/effect/turf_decal/borderfloor{
@@ -3099,12 +3048,13 @@
 /turf/open/floor/carpet,
 /area/ruin/rockplanet/somme/ross)
 "sA" = (
-/obj/structure/barricade/sandbags,
+/obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/ruin/rockplanet/somme/trench)
+/obj/structure/chair/bench/red/directional/east,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/rockplanet/somme/hallway)
 "sF" = (
 /obj/structure/platform/wood{
 	dir = 1
@@ -3131,17 +3081,15 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/wood{
-	icon_state = "wood-broken6"
-	},
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/armory)
 "sK" = (
-/obj/effect/turf_decal/industrial/loading,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	icon_state = "wood-broken5"
+/obj/structure/platform/wood{
+	dir = 9
 	},
-/area/ruin/rockplanet/somme/landing)
+/obj/structure/platform/wood/corner,
+/turf/open/floor/plating/dirt/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "sL" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -3169,7 +3117,10 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/somme/hallway)
 "sU" = (
 /obj/structure/cable{
@@ -3182,10 +3133,20 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 5
 	},
-/turf/open/floor/wood{
-	icon_state = "wood-broken3"
-	},
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/somme/restroom)
+"sZ" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "ta" = (
 /obj/effect/turf_decal/box,
 /obj/structure/crate_shelf{
@@ -3199,13 +3160,11 @@
 /area/ruin/rockplanet/somme/landing)
 "tb" = (
 /obj/structure/platform/wood{
-	dir = 4
+	dir = 1
 	},
-/obj/structure/platform/wood{
-	dir = 8
-	},
-/turf/open/floor/concrete/slab_1/rockplanet,
-/area/ruin/rockplanet/somme/trench)
+/obj/structure/platform/wood,
+/turf/open/floor/plating/dirt/rockplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "te" = (
 /obj/structure/platform/wood{
 	dir = 10
@@ -3226,21 +3185,22 @@
 	},
 /turf/open/floor/plating/dirt/rockplanet,
 /area/ruin/rockplanet/somme/trench)
-"tx" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_1,
-/area/ruin/rockplanet/somme/hallway)
 "tz" = (
 /obj/effect/turf_decal/industrial/loading,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/landing)
+"tB" = (
+/obj/structure/barricade/sandbags,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/turf/open/floor/wood/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "tE" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -3251,6 +3211,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
+"tI" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/industrial/stand_clear,
+/turf/open/floor/concrete/slab_1/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "tM" = (
 /obj/effect/turf_decal/box,
 /obj/structure/crate_shelf{
@@ -3319,7 +3285,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken"
+	},
 /area/ruin/rockplanet/somme/hallway)
 "ua" = (
 /obj/structure/platform/wood{
@@ -3334,13 +3302,6 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/somme/medical)
-"ue" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
-	},
-/turf/open/floor/concrete/slab_1,
-/area/ruin/rockplanet/somme/hallway)
 "up" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/tank_dispenser,
@@ -3372,14 +3333,17 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/rockplanet/somme/medical)
 "uD" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/structure/platform/wood{
+	dir = 8
+	},
 /obj/structure/platform/wood/corner{
 	dir = 8
 	},
 /obj/structure/platform/wood/corner,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "uL" = (
@@ -3462,7 +3426,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 5
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "uY" = (
 /obj/structure/table,
@@ -3492,7 +3456,9 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken4"
+	},
 /area/ruin/rockplanet/somme/hallway)
 "vg" = (
 /obj/structure/cable{
@@ -3527,7 +3493,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/landing)
 "vm" = (
 /turf/open/floor/plasteel/stairs/wood/mid{
@@ -3543,6 +3509,7 @@
 	},
 /area/ruin/rockplanet/somme/trench)
 "vq" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/rockplanet/somme/landing)
 "vr" = (
@@ -3572,7 +3539,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken7"
+	},
 /area/ruin/rockplanet/somme/armory)
 "vB" = (
 /obj/structure/platform/wood/corner{
@@ -3607,12 +3576,21 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken6"
+	},
 /area/ruin/rockplanet/somme/landing)
 "vQ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/rockplanet/somme/medical)
+"vR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "vT" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered,
 /turf/open/floor/wood/rockplanet,
@@ -3760,6 +3738,7 @@
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "ws" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/concrete,
 /area/ruin/rockplanet/somme/hallway)
 "wt" = (
@@ -3793,6 +3772,9 @@
 	dir = 1
 	},
 /obj/structure/catwalk/over,
+/obj/effect/turf_decal/spline/fancy/opaque/white{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/somme/restroom)
 "wI" = (
@@ -3862,6 +3844,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/engineeering)
+"xc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/rockplanet/somme/hallway)
 "xf" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1,
@@ -3875,25 +3867,25 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/somme/hallway)
 "xh" = (
-/obj/structure/barricade/sandbags,
-/turf/open/floor/wood/rockplanet{
-	icon_state = "wood-broken3"
-	},
-/area/ruin/rockplanet/somme/trench)
-"xk" = (
-/turf/open/floor/plating/asteroid/rockplanet/cracked,
-/area/overmap_encounter/planetoid/cave/explored)
-"xn" = (
 /obj/structure/platform/wood,
 /obj/structure/platform/wood{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/dirt/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
+"xi" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/structure/barricade/sandbags,
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/somme/trench)
+"xk" = (
+/turf/open/floor/plating/asteroid/rockplanet/cracked,
+/area/overmap_encounter/planetoid/cave/explored)
 "xp" = (
 /obj/structure/platform/wood{
 	dir = 4
@@ -3913,16 +3905,6 @@
 	icon_state = "wood-broken2"
 	},
 /area/ruin/rockplanet/somme/trench)
-"xB" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood{
-	dir = 9
-	},
-/turf/open/floor/wood/rockplanet{
-	icon_state = "wood-broken4"
-	},
-/area/ruin/rockplanet/somme/trench)
 "xD" = (
 /obj/structure/platform/wood{
 	dir = 9
@@ -3935,9 +3917,17 @@
 	},
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/somme/trench)
+"xJ" = (
+/obj/effect/turf_decal/siding/wood/end{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "xL" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken6"
+	},
 /area/ruin/rockplanet/somme/landing)
 "xO" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3958,28 +3948,29 @@
 "xS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/wood{
-	icon_state = "wood-broken2"
-	},
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/landing)
-"xT" = (
-/obj/structure/platform/wood,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
+"xU" = (
+/obj/structure/platform/wood{
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/platform/wood{
+/obj/structure/platform/wood/corner{
 	dir = 1
+	},
+/obj/structure/platform/wood/corner{
+	dir = 4
 	},
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "xW" = (
-/turf/open/floor/wood{
-	icon_state = "wood-broken6"
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken"
 	},
 /area/ruin/rockplanet/somme/landing)
 "xX" = (
 /obj/machinery/light/small/directional/east,
+/obj/effect/decal/cleanable/dirt,
 /turf/closed/mineral/random/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "yb" = (
@@ -4018,6 +4009,15 @@
 	icon_state = "wood-broken7"
 	},
 /area/ruin/rockplanet/somme/trench)
+"yl" = (
+/obj/structure/platform/wood,
+/obj/structure/platform/wood{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/dirt/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "yv" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/rockplanet{
@@ -4046,10 +4046,18 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/turf/open/floor/wood{
-	icon_state = "wood-broken2"
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken7"
 	},
 /area/ruin/rockplanet/somme/armory)
+"yN" = (
+/obj/structure/barricade/sandbags,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/wood/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "yO" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered,
@@ -4113,7 +4121,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "zd" = (
 /obj/machinery/light/directional/east,
@@ -4133,13 +4141,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/hangar/plasteel/dark,
 /area/ruin/rockplanet/somme/hallway)
-"zi" = (
-/obj/structure/platform/wood{
-	dir = 1
-	},
-/obj/structure/platform/wood,
-/turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "zj" = (
 /obj/structure/cable{
 	icon_state = "1-6"
@@ -4155,7 +4156,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/airalarm/directional/west,
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken"
+	},
 /area/ruin/rockplanet/somme/armory)
 "zx" = (
 /obj/structure/cable{
@@ -4191,6 +4194,12 @@
 "zP" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/rockplanet/somme/ross)
+"zR" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "zS" = (
 /obj/structure/platform/wood{
 	dir = 4
@@ -4251,7 +4260,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "Ao" = (
 /obj/effect/decal/cleanable/dirt,
@@ -4273,11 +4282,15 @@
 	},
 /area/ruin/rockplanet/somme/trench)
 "Aw" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	icon_state = "wood-broken6"
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
+	dir = 4
 	},
-/area/ruin/rockplanet/somme/landing)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "AB" = (
 /obj/structure/platform/wood,
 /obj/effect/decal/cleanable/dirt,
@@ -4292,6 +4305,12 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/rockplanet/somme/medical)
+"AD" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "AE" = (
 /turf/open/floor/plasteel/stairs/wood/mid{
 	dir = 8
@@ -4318,7 +4337,9 @@
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/engineeering)
 "AK" = (
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken4"
+	},
 /area/ruin/rockplanet/somme/landing)
 "AW" = (
 /turf/template_noop,
@@ -4400,17 +4421,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
-"BU" = (
+"BT" = (
 /obj/structure/platform/wood{
-	dir = 6
+	dir = 9
 	},
-/obj/structure/platform/wood/corner{
-	dir = 4
-	},
+/obj/effect/turf_decal/siding/wood/corner,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/structure/platform/wood/corner,
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "BV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -4420,7 +4439,9 @@
 	pixel_x = 25;
 	name = "shipping board"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken7"
+	},
 /area/ruin/rockplanet/somme/landing)
 "BZ" = (
 /obj/structure/platform/wood{
@@ -4468,7 +4489,7 @@
 "Cp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+/obj/machinery/atmospherics/components/binary/pump/on{
 	dir = 4
 	},
 /turf/open/floor/concrete/slab_1/rockplanet,
@@ -4524,25 +4545,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/rockplanet/lit,
 /area/ruin/rockplanet/somme/trench)
-"CD" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/obj/effect/turf_decal/borderfloor/corner{
-	color = "#74746c";
-	dir = 1
-	},
-/turf/open/floor/concrete/slab_1,
-/area/ruin/rockplanet/somme/landing)
 "CF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/turf/open/floor/wood{
-	icon_state = "wood-broken7"
-	},
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "CI" = (
 /obj/structure/platform/wood,
@@ -4568,14 +4576,14 @@
 /obj/structure/table,
 /turf/open/floor/hangar/plasteel/dark,
 /area/ruin/rockplanet/somme/hallway)
-"CQ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood{
+"CR" = (
+/obj/structure/platform/wood{
 	dir = 9
 	},
-/obj/structure/chair/bench/red/directional/east,
-/turf/open/floor/concrete/slab_1,
-/area/ruin/rockplanet/somme/hallway)
+/obj/structure/platform/wood/corner,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/dirt/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "CV" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /obj/effect/decal/cleanable/dirt,
@@ -4595,18 +4603,11 @@
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "Db" = (
-/obj/structure/platform/wood{
-	dir = 6
-	},
-/obj/structure/platform/wood/corner{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken3"
 	},
-/turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/ruin/rockplanet/somme/landing)
 "Df" = (
 /obj/structure/platform/wood{
 	dir = 9
@@ -4630,7 +4631,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 1
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "Dl" = (
 /obj/structure/cable{
@@ -4646,7 +4647,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken2"
+	},
 /area/ruin/rockplanet/somme/hallway)
 "Dq" = (
 /obj/structure/platform/wood{
@@ -4681,6 +4684,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/stand_clear{
 	dir = 4
 	},
 /turf/open/floor/concrete/slab_1/rockplanet/lit,
@@ -4733,6 +4739,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/somme/landing)
+"DE" = (
+/obj/structure/platform/wood{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/platform/military/corner{
+	dir = 4
+	},
+/turf/open/floor/wood/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "DH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood{
@@ -4743,15 +4759,13 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/somme/landing)
-"DI" = (
+"DM" = (
 /obj/structure/platform/wood{
-	dir = 4
+	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/platform/military/corner{
-	dir = 4
+/turf/open/floor/plasteel/stairs/wood/mid{
+	dir = 1
 	},
-/turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "DO" = (
 /obj/machinery/light/small/directional/south,
@@ -4759,20 +4773,20 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/somme/restroom)
 "DQ" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
+/obj/structure/platform/wood{
+	dir = 9
 	},
-/obj/effect/turf_decal/siding/thinplating/dark/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/thinplating/dark/corner,
+/obj/structure/platform/wood/corner,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/concrete/slab_1/rockplanet/lit,
-/area/ruin/rockplanet/somme/landing)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/plating/dirt/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "DR" = (
 /obj/structure/platform/wood{
 	dir = 9
@@ -4800,8 +4814,8 @@
 "DY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/wood{
-	icon_state = "wood-broken4"
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken5"
 	},
 /area/ruin/rockplanet/somme/armory)
 "Ea" = (
@@ -4840,17 +4854,31 @@
 	name = "Suit Storage Shutters";
 	dir = 8
 	},
-/turf/open/floor/wood{
-	icon_state = "wood-broken5"
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 6
 	},
+/turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/somme/hallway)
+"Eo" = (
+/obj/structure/platform/wood{
+	dir = 6
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/platform/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "Ev" = (
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer4{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood{
+/obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
 /turf/open/floor/concrete/slab_1,
@@ -4864,6 +4892,7 @@
 	pixel_y = 28
 	},
 /obj/structure/catwalk/over,
+/obj/effect/turf_decal/spline/fancy/opaque/white/corner,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/somme/restroom)
 "EE" = (
@@ -4928,6 +4957,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/wood,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "Fa" = (
@@ -5000,7 +5030,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "Fs" = (
 /obj/structure/platform/wood{
@@ -5066,14 +5096,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
-"FH" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
-	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "FI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer4{
@@ -5100,17 +5124,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/somme/hallway)
-"FM" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "FQ" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_4/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/structure/platform/wood{
+	dir = 5
+	},
+/obj/structure/platform/wood/corner{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "Gb" = (
 /obj/structure/chair/plastic{
 	dir = 4
@@ -5121,9 +5143,7 @@
 "Gf" = (
 /obj/effect/turf_decal/industrial/loading,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	icon_state = "wood-broken"
-	},
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/landing)
 "Gg" = (
 /obj/structure/platform/wood,
@@ -5186,7 +5206,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken4"
+	},
 /area/ruin/rockplanet/somme/hallway)
 "Gs" = (
 /obj/structure/platform/wood{
@@ -5196,12 +5218,17 @@
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "Gt" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/somme/landing)
+"GB" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/wood/rockplanet{
+	icon_state = "wood-broken2"
+	},
+/area/ruin/rockplanet/somme/trench)
 "GC" = (
 /obj/structure/platform/wood{
 	dir = 9
@@ -5209,14 +5236,6 @@
 /turf/open/floor/wood/rockplanet{
 	icon_state = "wood-broken6"
 	},
-/area/ruin/rockplanet/somme/trench)
-"GG" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9
-	},
-/obj/structure/barricade/sandbags,
-/obj/effect/turf_decal/siding/wood/corner,
-/turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "GH" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5238,7 +5257,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "GX" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5313,13 +5332,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/hangar/plasteel/dark,
 /area/ruin/rockplanet/somme/hallway)
-"Hr" = (
-/obj/structure/platform/wood{
-	dir = 1
-	},
-/obj/structure/platform/wood,
-/turf/open/floor/plating/dirt/rockplanet,
-/area/ruin/rockplanet/somme/trench)
 "Hu" = (
 /obj/structure/platform/wood{
 	dir = 4
@@ -5332,15 +5344,6 @@
 	},
 /turf/open/floor/plating/dirt/rockplanet,
 /area/ruin/rockplanet/somme/trench)
-"Hy" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood,
-/obj/effect/turf_decal/borderfloor{
-	dir = 1;
-	color = "#74746c"
-	},
-/turf/open/floor/concrete/slab_1,
-/area/ruin/rockplanet/somme/landing)
 "Hz" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
 	dir = 8
@@ -5391,6 +5394,17 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer4,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/rockplanet/somme/medical)
+"HH" = (
+/obj/structure/platform/wood/corner{
+	dir = 8
+	},
+/obj/structure/platform/wood/corner,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "HN" = (
 /obj/effect/turf_decal/box,
 /obj/structure/crate_shelf{
@@ -5435,7 +5449,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/landing)
 "HZ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5443,7 +5457,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/landing)
 "Ia" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5475,8 +5489,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 9
 	},
-/turf/open/floor/wood{
-	icon_state = "wood-broken3"
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken2"
 	},
 /area/ruin/rockplanet/somme/trench)
 "Iq" = (
@@ -5512,8 +5526,8 @@
 	icon_state = "1-4"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	icon_state = "wood-broken3"
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken2"
 	},
 /area/ruin/rockplanet/somme/hallway)
 "Ix" = (
@@ -5523,8 +5537,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/wood{
-	icon_state = "wood-broken6"
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken7"
 	},
 /area/ruin/rockplanet/somme/landing)
 "IA" = (
@@ -5549,12 +5563,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/rockplanet/lit,
 /area/ruin/rockplanet/somme/landing)
-"IG" = (
-/obj/structure/platform/wood{
-	dir = 9
-	},
-/turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "IH" = (
 /obj/effect/decal/cleanable/blood/splatter{
 	icon_state = "gibbl4"
@@ -5565,16 +5573,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/rockplanet/somme/medical)
-"II" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/obj/structure/barricade/sandbags,
-/turf/open/floor/concrete/slab_1/rockplanet,
-/area/ruin/rockplanet/somme/trench)
 "IJ" = (
 /obj/structure/platform/wood/corner{
 	dir = 4
@@ -5682,16 +5680,10 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/airalarm/directional/west,
-/turf/open/floor/wood{
-	icon_state = "wood-broken7"
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken"
 	},
 /area/ruin/rockplanet/somme/landing)
-"Jg" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 2
-	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "Ji" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -5702,6 +5694,19 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/engineeering)
+"Jm" = (
+/obj/structure/platform/wood{
+	dir = 6
+	},
+/obj/structure/platform/wood/corner{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/plating/dirt/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Jp" = (
 /obj/effect/spawner/bunk_bed{
 	dir = 4
@@ -5749,12 +5754,6 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/somme/landing)
-"JA" = (
-/obj/structure/barricade/sandbags,
-/turf/open/floor/wood/rockplanet{
-	icon_state = "wood-broken2"
-	},
-/area/ruin/rockplanet/somme/trench)
 "JJ" = (
 /obj/structure/platform/wood,
 /turf/open/floor/wood/rockplanet{
@@ -5776,8 +5775,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 10
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
+"JQ" = (
+/turf/open/floor/concrete/slab_2/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "JR" = (
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt,
@@ -5800,14 +5802,16 @@
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "JT" = (
-/obj/structure/platform/wood,
-/obj/structure/platform/wood{
+/obj/effect/turf_decal/siding/wood/end{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/platform/wood/corner,
+/obj/structure/platform/wood/corner{
+	dir = 1
+	},
 /turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/ruin/rockplanet/somme/trench)
 "JU" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -5819,20 +5823,6 @@
 /obj/structure/platform/wood,
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
-"JV" = (
-/obj/structure/platform/wood{
-	dir = 6
-	},
-/obj/structure/platform/wood/corner{
-	dir = 4
-	},
-/obj/item/flashlight/lantern{
-	pixel_y = 18;
-	pixel_x = -7;
-	on = 1
-	},
-/turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "JW" = (
 /obj/structure/sign/poster/contraband/winchester{
 	pixel_x = -32
@@ -5841,9 +5831,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/wood{
-	icon_state = "wood-broken7"
-	},
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/armory)
 "JY" = (
 /obj/structure/cable{
@@ -5856,9 +5844,10 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	icon_state = "wood-broken2"
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 9
 	},
+/turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/somme/hallway)
 "Kd" = (
 /obj/structure/platform/wood/corner{
@@ -5908,6 +5897,12 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/somme/armory)
+"KA" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "KC" = (
 /mob/living/simple_animal/hostile/human/frontier/internals,
 /obj/effect/turf_decal/siding/wood{
@@ -5930,7 +5925,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "KM" = (
 /obj/structure/cable{
@@ -5943,20 +5938,13 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken7"
+	},
 /area/ruin/rockplanet/somme/landing)
 "KQ" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/rockplanet/somme/medical)
-"KU" = (
-/obj/structure/platform/wood{
-	dir = 10
-	},
-/obj/structure/platform/wood/corner{
-	dir = 8
-	},
-/turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "KV" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
 	dir = 1
@@ -5967,6 +5955,14 @@
 	},
 /turf/open/floor/concrete/slab_1/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"KW" = (
+/obj/structure/platform/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/wood/rockplanet{
+	icon_state = "wood-broken7"
+	},
+/area/ruin/rockplanet/somme/trench)
 "KX" = (
 /obj/structure/platform/wood{
 	dir = 4
@@ -5984,7 +5980,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/door/airlock/external,
-/turf/open/floor/concrete/slab_2,
+/turf/open/floor/wood/ebony,
 /area/ruin/rockplanet/somme/trench)
 "La" = (
 /obj/structure/table/reinforced,
@@ -6023,7 +6019,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken7"
+	},
 /area/ruin/rockplanet/somme/landing)
 "Lf" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6042,41 +6040,18 @@
 	},
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/somme/trench)
-"Lo" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/directional/north,
-/turf/open/floor/wood,
-/area/ruin/rockplanet/somme/hallway)
 "Lr" = (
 /obj/structure/platform/wood{
 	dir = 10
 	},
 /turf/open/floor/wood/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
-"Lw" = (
-/obj/structure/platform/wood{
-	dir = 4
-	},
-/obj/structure/platform/wood{
-	dir = 8
-	},
-/turf/open/floor/plating/dirt/rockplanet,
-/area/ruin/rockplanet/somme/trench)
 "Lx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "Ly" = (
 /obj/structure/platform/wood{
@@ -6103,7 +6078,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/landing)
 "LI" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6230,7 +6205,7 @@
 /turf/open/floor/carpet,
 /area/ruin/rockplanet/somme/ross)
 "Mg" = (
-/turf/open/floor/wood,
+/turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/somme/hallway)
 "Mi" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -6257,20 +6232,28 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"Mr" = (
-/obj/structure/platform/wood{
-	dir = 4
-	},
-/obj/structure/platform/wood{
-	dir = 8
-	},
-/turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "Mt" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
 /obj/structure/barricade/sandbags,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
+"Mu" = (
+/obj/structure/platform/wood{
+	dir = 6
+	},
+/obj/structure/platform/wood/corner{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/dirt/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
+"Mx" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 2
+	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "My" = (
@@ -6300,17 +6283,8 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/armory)
-"MD" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/turf/open/floor/concrete/slab_1/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "MG" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
@@ -6324,23 +6298,25 @@
 /obj/effect/turf_decal/corner/opaque/tan,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/somme/armory)
-"MK" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4
-	},
-/obj/structure/closet/crate/bin,
-/turf/open/floor/concrete/slab_1,
-/area/ruin/rockplanet/somme/hallway)
 "MM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/wood{
-	icon_state = "wood-broken7"
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken5"
 	},
 /area/ruin/rockplanet/somme/armory)
+"MN" = (
+/obj/structure/platform/wood,
+/obj/structure/platform/wood,
+/obj/structure/platform/wood{
+	dir = 1
+	},
+/turf/open/floor/plasteel/stairs/wood/mid{
+	dir = 8
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "MT" = (
 /obj/structure/platform/military{
 	dir = 6
@@ -6430,7 +6406,6 @@
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "Nu" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 8
 	},
@@ -6461,7 +6436,7 @@
 	icon_state = "1-2"
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered,
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/armory)
 "NE" = (
 /obj/structure/platform/wood{
@@ -6484,9 +6459,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 10
 	},
-/turf/open/floor/wood{
-	icon_state = "wood-broken2"
-	},
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/armory)
 "NJ" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
@@ -6519,7 +6492,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "NQ" = (
 /obj/structure/platform/wood{
@@ -6532,6 +6505,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
+	},
+/turf/open/floor/wood/rockplanet,
+/area/ruin/rockplanet/somme/trench)
+"NT" = (
+/obj/structure/platform/wood/corner,
+/obj/structure/platform/wood/corner{
+	dir = 8
 	},
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/somme/trench)
@@ -6589,12 +6569,18 @@
 /area/ruin/rockplanet/somme/hallway)
 "Od" = (
 /obj/structure/platform/wood{
-	dir = 1
+	dir = 6
 	},
-/turf/open/floor/plasteel/stairs/wood/mid{
+/obj/structure/platform/wood/corner{
 	dir = 4
 	},
-/area/ruin/rockplanet/somme/trench)
+/obj/item/flashlight/lantern{
+	pixel_y = 18;
+	pixel_x = -7;
+	on = 1
+	},
+/turf/open/floor/plating/dirt/rockplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "Oe" = (
 /obj/structure/platform/wood{
 	dir = 4
@@ -6603,6 +6589,13 @@
 	dir = 1
 	},
 /area/ruin/rockplanet/somme/trench)
+"Of" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/rockplanet/somme/hallway)
 "Og" = (
 /obj/structure/platform/wood/corner{
 	dir = 1
@@ -6631,12 +6624,32 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
+"Op" = (
+/obj/structure/platform/wood{
+	dir = 4
+	},
+/obj/structure/platform/wood{
+	dir = 8
+	},
+/turf/open/floor/plating/dirt/rockplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "Ov" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/rockplanet{
 	icon_state = "wood-broken7"
 	},
 /area/ruin/rockplanet/somme/engineeering)
+"Ox" = (
+/obj/structure/platform/wood/corner,
+/obj/structure/platform/wood/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "Oy" = (
 /obj/structure/platform/wood{
 	dir = 9
@@ -6689,8 +6702,8 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/open/floor/wood{
-	icon_state = "wood-broken6"
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken"
 	},
 /area/ruin/rockplanet/somme/armory)
 "OS" = (
@@ -6700,7 +6713,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 9
 	},
-/turf/open/floor/wood,
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/somme/restroom)
 "OU" = (
 /obj/structure/cable{
@@ -6713,7 +6726,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken"
+	},
 /area/ruin/rockplanet/somme/hallway)
 "OV" = (
 /obj/structure/toilet{
@@ -6740,6 +6755,15 @@
 	},
 /turf/open/floor/concrete/slab_2/rockplanet,
 /area/ruin/rockplanet/somme/engineeering)
+"OZ" = (
+/obj/structure/platform/wood{
+	dir = 9
+	},
+/obj/structure/platform/wood/corner,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/dirt/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Pe" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals/buckshot/neutered{
 	casingtype = /obj/item/ammo_casing/shotgun;
@@ -6830,43 +6854,17 @@
 	icon_state = "wood-broken2"
 	},
 /area/ruin/rockplanet/somme/trench)
-"PT" = (
-/obj/structure/platform/wood{
-	dir = 9
-	},
-/obj/structure/platform/wood/corner,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
-"PZ" = (
-/obj/structure/platform/wood/corner{
-	dir = 8
-	},
-/obj/structure/platform/wood/corner{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood,
-/turf/open/floor/plating/dirt/rockplanet,
-/area/ruin/rockplanet/somme/trench)
 "Qh" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/rockplanet{
 	icon_state = "wood-broken3"
 	},
 /area/ruin/rockplanet/somme/trench)
-"Ql" = (
-/turf/open/floor/wood{
-	icon_state = "wood-broken7"
-	},
-/area/ruin/rockplanet/somme/trench)
 "Qo" = (
 /obj/structure/barricade/sandbags,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
+/turf/open/floor/wood/rockplanet{
+	icon_state = "wood-broken3"
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/rockplanet/somme/trench)
 "Qp" = (
 /turf/open/floor/wood/rockplanet{
@@ -6985,15 +6983,22 @@
 	},
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/engineeering)
-"QW" = (
+"QV" = (
 /obj/structure/platform/wood{
-	dir = 8
+	dir = 1
 	},
-/obj/structure/platform/wood{
-	dir = 4
-	},
+/obj/structure/platform/wood,
 /turf/open/floor/plating/dirt/rockplanet,
 /area/ruin/rockplanet/somme/trench)
+"QW" = (
+/obj/structure/platform/wood,
+/obj/structure/platform/wood{
+	dir = 1
+	},
+/turf/open/floor/plasteel/stairs/wood/mid{
+	dir = 4
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "QX" = (
 /obj/structure/platform/wood{
 	dir = 6
@@ -7024,18 +7029,31 @@
 	filter_types = list("co2","bz","water_vapor","freon","tritium","n20");
 	widenet = 1
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/white,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/somme/restroom)
 "Rj" = (
 /obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/wood{
-	icon_state = "wood-broken"
-	},
+/obj/effect/turf_decal/trimline/opaque/yellow/line,
+/turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/somme/hallway)
 "Rm" = (
 /obj/item/mine/pressure/explosive/rusty/live,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Rq" = (
+/obj/structure/platform/wood/corner{
+	dir = 1
+	},
+/turf/open/floor/wood/rockplanet{
+	icon_state = "wood-broken4"
+	},
+/area/ruin/rockplanet/somme/trench)
+"Rv" = (
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken7"
+	},
+/area/ruin/rockplanet/somme/landing)
 "Rw" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/turf_decal/siding/wood{
@@ -7084,13 +7102,20 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/rockplanet/somme/medical)
+"RJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/borderfloor{
+	dir = 1;
+	color = "#74746c"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/rockplanet/somme/landing)
 "RK" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/wood{
-	icon_state = "wood-broken2"
-	},
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/landing)
 "RM" = (
 /turf/closed/wall/concrete,
@@ -7101,20 +7126,15 @@
 	icon_state = "wood-broken5"
 	},
 /area/ruin/rockplanet/somme/trench)
-"RP" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood/corner,
-/turf/open/floor/concrete/slab_1,
-/area/ruin/rockplanet/somme/hallway)
 "RS" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 1
+/obj/structure/platform/wood{
+	dir = 6
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8
+/obj/structure/platform/wood/corner{
+	dir = 4
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/turf/open/floor/plating/dirt/rockplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "RV" = (
 /obj/structure/platform/wood{
 	dir = 6
@@ -7124,16 +7144,6 @@
 	dir = 4
 	},
 /turf/open/floor/plating/dirt/rockplanet,
-/area/ruin/rockplanet/somme/trench)
-"RW" = (
-/obj/structure/platform/wood{
-	dir = 5
-	},
-/obj/structure/platform/wood/corner{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "RX" = (
 /obj/structure/table,
@@ -7184,7 +7194,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken4"
+	},
 /area/ruin/rockplanet/somme/landing)
 "Sk" = (
 /obj/structure/cable{
@@ -7198,12 +7210,14 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "Sl" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken3"
+	},
 /area/ruin/rockplanet/somme/landing)
 "Sn" = (
 /obj/machinery/shower{
@@ -7217,8 +7231,20 @@
 	},
 /obj/structure/window/reinforced,
 /obj/structure/catwalk/over,
+/obj/effect/turf_decal/spline/fancy/opaque/white{
+	dir = 6
+	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/somme/restroom)
+"So" = (
+/obj/structure/platform/wood,
+/obj/structure/platform/wood{
+	dir = 1
+	},
+/turf/open/floor/plasteel/stairs/wood/mid{
+	dir = 8
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Sq" = (
 /obj/structure/chair/bench/beige/directional/east,
 /obj/machinery/light/small/directional/west,
@@ -7242,7 +7268,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken4"
+	},
 /area/ruin/rockplanet/somme/landing)
 "Sv" = (
 /turf/open/floor/plasteel/stairs/wood/mid{
@@ -7268,17 +7296,6 @@
 /obj/structure/platform/wood{
 	dir = 10
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_1/rockplanet,
-/area/ruin/rockplanet/somme/trench)
-"SL" = (
-/obj/structure/platform/wood/corner{
-	dir = 8
-	},
-/obj/structure/platform/wood/corner{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
@@ -7308,17 +7325,14 @@
 /area/ruin/rockplanet/somme/trench)
 "Tc" = (
 /obj/structure/platform/wood{
-	dir = 8
+	dir = 6
 	},
-/obj/effect/turf_decal/siding/wood{
+/obj/structure/platform/wood/corner{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/platform/wood{
-	dir = 4
-	},
-/turf/open/floor/concrete/slab_1/rockplanet,
-/area/ruin/rockplanet/somme/trench)
+/turf/open/floor/plating/dirt/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Tf" = (
 /obj/structure/table,
 /obj/structure/showcase/machinery/microwave,
@@ -7342,13 +7356,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/ruin/rockplanet/somme/trench)
-"Tr" = (
-/obj/structure/platform/wood{
-	dir = 9
+"Tp" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
 	},
-/obj/structure/platform/wood/corner,
-/turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/cave/explored)
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "TC" = (
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
@@ -7371,6 +7384,14 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/somme/trench)
+"TH" = (
+/obj/structure/platform/wood,
+/obj/structure/platform/wood{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/dirt/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "TI" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Dorm";
@@ -7423,7 +7444,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken7"
+	},
 /area/ruin/rockplanet/somme/landing)
 "Ue" = (
 /obj/structure/platform/wood/corner{
@@ -7447,7 +7470,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "Uh" = (
 /obj/structure/platform/wood{
@@ -7465,6 +7488,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/rockplanet,
 /area/ruin/rockplanet/somme/trench)
+"Uq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 2;
+	color = "#74746c"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/rockplanet/somme/landing)
 "Uu" = (
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/somme/engineeering)
@@ -7482,6 +7516,18 @@
 	icon_state = "wood-broken3"
 	},
 /area/ruin/rockplanet/somme/trench)
+"UP" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/concrete/slab_1/rockplanet/lit,
+/area/ruin/rockplanet/somme/landing)
 "UQ" = (
 /obj/structure/platform/wood{
 	dir = 4
@@ -7497,7 +7543,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/light/directional/west,
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/landing)
 "UT" = (
 /obj/effect/turf_decal/box,
@@ -7517,9 +7563,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/wood{
-	icon_state = "wood-broken2"
-	},
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/armory)
 "UV" = (
 /obj/structure/platform/wood/corner{
@@ -7545,21 +7589,20 @@
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Va" = (
-/obj/structure/platform/wood,
-/obj/structure/platform/wood,
 /obj/structure/platform/wood{
 	dir = 1
 	},
 /turf/open/floor/plasteel/stairs/wood/mid{
-	dir = 8
+	dir = 4
 	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/ruin/rockplanet/somme/trench)
 "Vd" = (
 /obj/structure/urinal{
 	pixel_y = 28
 	},
 /obj/machinery/light/small/directional/east,
 /obj/structure/catwalk/over,
+/obj/effect/turf_decal/spline/fancy/opaque/white,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/somme/restroom)
 "Vg" = (
@@ -7572,11 +7615,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
-"Vn" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
-/obj/effect/turf_decal/siding/wood,
-/turf/open/floor/concrete/slab_1/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "Vr" = (
 /obj/machinery/door/airlock/external{
 	dir = 4
@@ -7608,12 +7646,9 @@
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "VA" = (
-/obj/effect/turf_decal/industrial/loading,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	icon_state = "wood-broken6"
-	},
-/area/ruin/rockplanet/somme/landing)
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "VD" = (
 /obj/machinery/light/small/directional/north,
 /turf/closed/wall/concrete,
@@ -7631,8 +7666,18 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 5
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken4"
+	},
 /area/ruin/rockplanet/somme/hallway)
+"VI" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_1/rockplanet,
+/area/ruin/rockplanet/somme/engineeering)
 "VM" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
@@ -7644,7 +7689,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/hallway)
 "VQ" = (
 /obj/structure/table/reinforced,
@@ -7666,7 +7711,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch,
 /area/ruin/rockplanet/somme/trench)
 "VW" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered,
@@ -7712,29 +7757,18 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/armory)
 "Wf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood{
-	dir = 4
+	dir = 6
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
-"Wg" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood{
-	dir = 2
+/obj/effect/turf_decal/borderfloor/corner{
+	color = "#74746c";
+	dir = 1
 	},
-/turf/open/floor/wood/rockplanet{
-	icon_state = "wood-broken2"
-	},
-/area/ruin/rockplanet/somme/trench)
-"Wi" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/wood,
+/turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/somme/landing)
 "Wr" = (
 /obj/structure/platform/wood/corner{
@@ -7775,8 +7809,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/wood{
-	icon_state = "wood"
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken7"
 	},
 /area/ruin/rockplanet/somme/trench)
 "WJ" = (
@@ -7967,7 +8001,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/landing)
 "XX" = (
 /obj/structure/platform/wood{
@@ -8017,7 +8051,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/wood,
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken7"
+	},
 /area/ruin/rockplanet/somme/hallway)
 "Ye" = (
 /obj/effect/decal/cleanable/dirt,
@@ -8029,14 +8065,6 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/somme/hallway)
-"Yg" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/platform/wood{
-	dir = 9
-	},
-/obj/structure/platform/wood/corner,
-/turf/open/floor/plating/dirt/rockplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "Yk" = (
 /obj/structure/platform/wood{
 	dir = 1
@@ -8053,12 +8081,25 @@
 /obj/structure/platform/wood/corner,
 /turf/open/floor/plating/dirt/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
+"Yo" = (
+/obj/structure/platform/wood{
+	dir = 9
+	},
+/obj/structure/platform/wood/corner,
+/turf/open/floor/plating/dirt/rockplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "Yp" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/structure/closet/firecloset/wall/directional/west,
-/obj/effect/turf_decal/box,
-/turf/open/floor/wood,
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/obj/effect/turf_decal/box/corners,
+/turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/somme/hallway)
 "Yr" = (
 /obj/structure/platform/wood{
@@ -8089,6 +8130,23 @@
 	},
 /turf/open/floor/concrete/slab_1/rockplanet/lit,
 /area/ruin/rockplanet/somme/landing)
+"YK" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/airalarm/directional/north,
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/rockplanet/somme/hallway)
 "YM" = (
 /obj/structure/table,
 /obj/item/clothing/under/frontiersmen,
@@ -8100,6 +8158,16 @@
 /obj/item/defibrillator/loaded,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/somme/medical)
+"YP" = (
+/obj/structure/platform/wood{
+	dir = 5
+	},
+/obj/structure/platform/wood/corner{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/dirt/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "YT" = (
 /obj/effect/spawner/bunk_bed{
 	dir = 4
@@ -8115,20 +8183,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 9
 	},
-/turf/open/floor/wood,
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/somme/restroom)
 "YW" = (
-/obj/structure/platform/wood{
-	dir = 6
-	},
-/obj/structure/platform/wood/corner{
-	dir = 4
-	},
-/turf/open/floor/plating/dirt/rockplanet,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_4/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "YZ" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/armory)
 "Zd" = (
 /obj/structure/flora/rock/rockplanet,
@@ -8178,24 +8241,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/dorms)
-"Zq" = (
-/obj/effect/turf_decal/siding/wood/end{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/platform/wood/corner,
-/obj/structure/platform/wood/corner{
-	dir = 1
-	},
-/turf/open/floor/plating/dirt/rockplanet,
-/area/ruin/rockplanet/somme/trench)
 "Zr" = (
 /obj/structure/railing{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/turf/open/floor/wood,
+/turf/open/floor/wood/walnut,
 /area/ruin/rockplanet/somme/armory)
 "Zz" = (
 /obj/structure/platform/wood/corner,
@@ -8724,11 +8776,11 @@ BK
 BK
 Zd
 WJ
-kF
-cb
-Tc
-ms
-FH
+Tp
+BT
+gg
+oj
+AD
 Mp
 BK
 "}
@@ -8780,12 +8832,12 @@ BK
 BK
 WJ
 bD
-kF
+Tp
 qt
 uS
-xh
+Qo
 HF
-ms
+oj
 LP
 AW
 "}
@@ -8835,14 +8887,14 @@ BK
 WJ
 bD
 bD
-kF
+Tp
 DR
 vj
 IJ
 qj
 cv
-JA
-xT
+GB
+nR
 LP
 AW
 "}
@@ -8856,8 +8908,8 @@ BK
 BK
 dK
 kI
-hD
-ny
+DM
+KW
 Gg
 jn
 Hd
@@ -8889,17 +8941,17 @@ Gh
 ox
 jn
 ap
-Jg
+Mx
 ua
 vj
 vj
 Ai
-qY
+xJ
 WT
 wI
 Bp
 XB
-cM
+Eo
 LP
 AW
 "}
@@ -8912,7 +8964,7 @@ BK
 BK
 yR
 sL
-Od
+Va
 JS
 am
 UV
@@ -8946,17 +8998,17 @@ Xp
 Gh
 te
 jn
-kF
-Hr
-dX
+Tp
+QV
+KA
 oh
 oh
-RS
-cd
-oU
-md
-cM
-dX
+eE
+zR
+ea
+uD
+Eo
+KA
 ay
 AW
 "}
@@ -8969,7 +9021,7 @@ BK
 BK
 Ne
 Uh
-ny
+KW
 am
 Hb
 rx
@@ -9003,7 +9055,7 @@ xx
 Qp
 wN
 vj
-QW
+cb
 Ai
 LP
 BK
@@ -9011,7 +9063,7 @@ BK
 BK
 hk
 oh
-pa
+TH
 oh
 ay
 gc
@@ -9035,7 +9087,7 @@ KX
 Cj
 KX
 xp
-bY
+NT
 xp
 KX
 UG
@@ -9068,7 +9120,7 @@ BK
 BK
 BK
 BK
-JT
+yl
 mm
 BK
 BK
@@ -9124,8 +9176,8 @@ BK
 BK
 BK
 pt
-PT
-BU
+OZ
+Mu
 BK
 BK
 Pg
@@ -9147,9 +9199,9 @@ BF
 Pg
 Pg
 Pg
-Tr
-Mr
-gh
+Yo
+Op
+oS
 Pg
 RM
 RM
@@ -9167,7 +9219,7 @@ OS
 eA
 Ia
 VT
-Ql
+lu
 WM
 Xw
 Tg
@@ -9181,7 +9233,7 @@ BK
 BK
 BK
 BK
-pa
+TH
 BK
 BK
 Bf
@@ -9203,8 +9255,8 @@ rx
 jr
 Pg
 Pg
-Yg
-JV
+gh
+Od
 Pg
 nL
 RM
@@ -9214,8 +9266,8 @@ cB
 ml
 mw
 rY
-ue
-MK
+Of
+gn
 eA
 eA
 eA
@@ -9237,8 +9289,8 @@ BK
 BK
 BK
 gc
-ba
-sm
+CR
+Tc
 BK
 Pg
 Pg
@@ -9260,7 +9312,7 @@ Xp
 EB
 Pg
 Pg
-zi
+tb
 nL
 xX
 RM
@@ -9272,7 +9324,7 @@ ud
 RM
 NL
 It
-ue
+Of
 Lf
 Ye
 qG
@@ -9294,7 +9346,7 @@ BK
 BK
 BK
 BK
-JT
+yl
 BK
 Pg
 Pg
@@ -9314,10 +9366,10 @@ BK
 Ne
 OA
 vT
-km
+Rq
 UY
-bd
-gi
+pa
+RS
 Pg
 RM
 RM
@@ -9351,7 +9403,7 @@ BK
 BK
 BK
 mm
-JT
+yl
 BK
 Pg
 Pg
@@ -9387,7 +9439,7 @@ RM
 An
 ls
 py
-au
+CF
 CV
 iw
 iw
@@ -9408,7 +9460,7 @@ BK
 BK
 BK
 BK
-JT
+yl
 BK
 Pg
 Pg
@@ -9465,7 +9517,7 @@ BK
 BK
 BK
 BK
-JT
+yl
 BK
 BK
 BK
@@ -9522,7 +9574,7 @@ BK
 BK
 BK
 BK
-pa
+TH
 BK
 BK
 BK
@@ -9578,8 +9630,8 @@ BK
 BK
 BK
 BK
-bL
-BU
+DQ
+Mu
 BK
 BK
 BK
@@ -9615,7 +9667,7 @@ aE
 Sk
 fV
 zh
-au
+CF
 NJ
 Ct
 kp
@@ -9635,7 +9687,7 @@ BK
 BK
 BK
 BK
-Va
+MN
 cx
 BK
 BK
@@ -9675,7 +9727,7 @@ qh
 jA
 IA
 Ct
-aL
+Cp
 dj
 IT
 Ov
@@ -9691,8 +9743,8 @@ BK
 BK
 BK
 BK
-su
-FM
+VA
+di
 BK
 BK
 BK
@@ -9724,7 +9776,7 @@ pX
 XP
 zP
 zP
-RP
+iu
 qG
 lQ
 sj
@@ -9732,7 +9784,7 @@ IK
 au
 Qx
 Ct
-dx
+VI
 jj
 fX
 fX
@@ -9749,7 +9801,7 @@ BK
 BK
 BK
 BK
-su
+VA
 BK
 BK
 BK
@@ -9780,8 +9832,8 @@ vg
 Se
 zP
 zP
-RP
-nX
+iu
+xc
 FG
 bb
 Lx
@@ -9789,7 +9841,7 @@ GW
 kD
 IA
 Ct
-Cp
+qL
 fA
 Ct
 dz
@@ -9806,8 +9858,8 @@ pc
 pc
 ap
 BK
-su
-su
+VA
+VA
 BK
 BK
 Bf
@@ -9840,13 +9892,13 @@ Lf
 qG
 KH
 gb
-CQ
+sA
 eU
 iw
 iw
 iw
 Ct
-Cp
+qL
 fX
 dj
 dj
@@ -9855,15 +9907,15 @@ yO
 wR
 va
 Qh
-Zq
-QW
-QW
-QW
+JT
+cb
+cb
+cb
 Ce
 Kd
 bQ
 BK
-su
+VA
 BK
 BK
 BK
@@ -9903,7 +9955,7 @@ iw
 TC
 iP
 Ct
-Cp
+qL
 jj
 Uu
 jj
@@ -9919,8 +9971,8 @@ hC
 hC
 hC
 ee
-su
-su
+VA
+VA
 BK
 AW
 BK
@@ -9977,7 +10029,7 @@ BK
 BK
 BK
 BK
-Wf
+vR
 BK
 AW
 AW
@@ -10010,7 +10062,7 @@ iw
 iw
 iw
 tZ
-tx
+aM
 XS
 iw
 FI
@@ -10034,7 +10086,7 @@ BK
 BK
 BK
 BK
-dv
+QW
 BK
 AW
 AW
@@ -10090,8 +10142,8 @@ BK
 BK
 BK
 BK
-rU
-Db
+sK
+Jm
 BK
 BK
 BK
@@ -10147,7 +10199,7 @@ Kk
 BK
 Bf
 BK
-jx
+jb
 BK
 mm
 BK
@@ -10180,7 +10232,7 @@ Pg
 Pg
 nL
 iw
-Lo
+YK
 Mg
 Rj
 kV
@@ -10204,7 +10256,7 @@ BK
 BK
 BK
 BK
-oV
+xh
 BK
 BK
 BK
@@ -10261,7 +10313,7 @@ BK
 BK
 BK
 BK
-oV
+xh
 BK
 BK
 BK
@@ -10318,8 +10370,8 @@ BK
 BK
 BK
 BK
-pg
-gZ
+YP
+dM
 BK
 BK
 BK
@@ -10376,7 +10428,7 @@ BK
 Zd
 BK
 BK
-oV
+xh
 BK
 BK
 BK
@@ -10433,7 +10485,7 @@ BK
 BK
 BK
 BK
-oV
+xh
 BK
 BK
 BK
@@ -10490,7 +10542,7 @@ BK
 BK
 BK
 BK
-pa
+TH
 BK
 BK
 BK
@@ -10546,8 +10598,8 @@ BK
 BK
 BK
 BK
-rU
-sm
+sK
+Tc
 BK
 BK
 Pg
@@ -10603,7 +10655,7 @@ BK
 BK
 BK
 mm
-gS
+ji
 BK
 BK
 BK
@@ -10646,7 +10698,7 @@ qI
 Rb
 oy
 YZ
-gw
+rU
 gw
 nI
 ET
@@ -10660,7 +10712,7 @@ BK
 Kk
 BK
 BK
-fq
+So
 BK
 BK
 BK
@@ -10717,7 +10769,7 @@ BK
 BK
 BK
 BK
-FM
+di
 BK
 Bf
 BK
@@ -10749,7 +10801,7 @@ XH
 oz
 QE
 lm
-AK
+fO
 Nu
 Si
 HN
@@ -10806,13 +10858,13 @@ QH
 gW
 QE
 lm
-AK
+Rv
 je
 mN
-rf
+Uq
 Mn
-Hy
-xL
+RJ
+Db
 Ko
 Rb
 Cu
@@ -10831,7 +10883,7 @@ BK
 BK
 BK
 BK
-su
+VA
 BK
 BK
 mm
@@ -10845,9 +10897,9 @@ AW
 AW
 AW
 AW
-GG
-kE
-kE
+aX
+hL
+hL
 KD
 BK
 BK
@@ -10887,7 +10939,7 @@ aB
 BK
 BK
 BK
-su
+VA
 BK
 BK
 BK
@@ -10922,11 +10974,11 @@ QE
 Jz
 AK
 mA
-nR
+mN
 Xc
 Mn
 or
-xL
+ah
 GX
 Rb
 hn
@@ -10963,8 +11015,8 @@ QM
 ST
 VE
 Zk
-tb
-tb
+dv
+dv
 Vs
 jn
 Hd
@@ -10977,13 +11029,13 @@ Xp
 oz
 QE
 ou
-AK
+fO
 je
 aT
 HE
 Mn
 ta
-VA
+Gf
 Ko
 Rb
 LJ
@@ -11002,7 +11054,7 @@ BK
 BK
 BK
 BK
-dv
+QW
 BK
 BK
 BK
@@ -11022,9 +11074,9 @@ WC
 KD
 Rw
 yw
-pz
-tb
-tb
+FQ
+dv
+dv
 Vs
 jn
 Hd
@@ -11037,10 +11089,10 @@ aY
 ql
 mA
 Ud
-rf
+Uq
 Mn
-Hy
-Aw
+RJ
+ql
 GX
 Rb
 yb
@@ -11059,7 +11111,7 @@ BK
 BK
 BK
 mm
-xn
+gi
 BK
 BK
 BK
@@ -11073,20 +11125,20 @@ AW
 AW
 BK
 BK
-pI
-II
-II
+sm
+xi
+xi
 KD
 BK
 hM
 Rw
 Rw
 yw
-pz
-tb
-tb
-tb
-EZ
+FQ
+dv
+dv
+dv
+nj
 Xp
 gI
 QE
@@ -11097,7 +11149,7 @@ aT
 vX
 Mn
 tM
-sK
+Gf
 GX
 Rb
 iS
@@ -11116,7 +11168,7 @@ BK
 Kk
 BK
 BK
-pa
+TH
 BK
 BK
 BK
@@ -11150,11 +11202,11 @@ QE
 RB
 os
 Lc
-Ud
+mN
 Xt
 aD
-CD
-AK
+Wf
+xW
 Ko
 Rb
 ro
@@ -11172,8 +11224,8 @@ BK
 BK
 BK
 BK
-IG
-YW
+pP
+lS
 BK
 BK
 BK
@@ -11209,7 +11261,7 @@ Dt
 zF
 kw
 rg
-Wi
+xS
 gQ
 xS
 wL
@@ -11229,7 +11281,7 @@ BK
 BK
 BK
 BK
-oV
+xh
 BK
 BK
 BK
@@ -11286,7 +11338,7 @@ BK
 BK
 BK
 mm
-pa
+TH
 BK
 BK
 BK
@@ -11343,7 +11395,7 @@ BK
 BK
 BK
 BK
-pa
+TH
 BK
 BK
 BK
@@ -11400,7 +11452,7 @@ BK
 BK
 BK
 BK
-pa
+TH
 BK
 gc
 BK
@@ -11437,7 +11489,7 @@ RN
 IB
 aW
 uQ
-DQ
+UP
 YJ
 hh
 sQ
@@ -11457,8 +11509,8 @@ Zd
 BK
 BK
 BK
-pg
-KU
+YP
+ca
 BK
 BK
 BK
@@ -11496,7 +11548,7 @@ dA
 yv
 PE
 eN
-DI
+DE
 Hu
 go
 ph
@@ -11515,7 +11567,7 @@ BK
 BK
 BK
 BK
-pa
+TH
 BK
 BK
 BK
@@ -11572,7 +11624,7 @@ BK
 BK
 BK
 BK
-pa
+TH
 BK
 BK
 BK
@@ -11607,12 +11659,12 @@ OA
 am
 mH
 Fw
-FQ
-FQ
-FQ
+YW
+YW
+YW
 UZ
-FQ
-VY
+YW
+cm
 lW
 LM
 Gg
@@ -11629,7 +11681,7 @@ gc
 BK
 BK
 BK
-oV
+xh
 BK
 BK
 BK
@@ -11664,11 +11716,11 @@ OA
 Hb
 EB
 KV
-FQ
+YW
 rA
 eP
 rA
-FQ
+YW
 VY
 LL
 Xp
@@ -11686,7 +11738,7 @@ BK
 BK
 WJ
 bD
-oV
+xh
 bD
 bD
 Mp
@@ -11726,7 +11778,7 @@ rA
 eP
 rA
 UZ
-VY
+cm
 va
 Xp
 Gg
@@ -11741,9 +11793,9 @@ pc
 pc
 qw
 WJ
-kF
+Tp
 BM
-jE
+xU
 Nn
 Vg
 LP
@@ -11778,11 +11830,11 @@ OA
 LM
 BF
 KV
-FQ
+YW
 rA
-fo
+JQ
 rA
-FQ
+YW
 VY
 sF
 am
@@ -11798,10 +11850,10 @@ Cs
 vB
 Mt
 Ua
-pU
+ba
 jV
-xB
-og
+rG
+pg
 Fs
 LP
 BK
@@ -11831,11 +11883,11 @@ Df
 Nn
 Nn
 Nn
-SL
+EZ
 Xp
 JJ
 KV
-FQ
+YW
 rA
 eP
 rA
@@ -11843,8 +11895,8 @@ UZ
 VY
 lf
 VE
-mB
-Lw
+Ox
+qZ
 Cs
 Cs
 RV
@@ -11853,12 +11905,12 @@ hC
 hC
 bW
 dW
-bl
-bl
-PZ
+su
+su
+dT
 qj
 NA
-Wg
+og
 Fs
 LP
 BK
@@ -11892,12 +11944,12 @@ OA
 Xp
 mH
 Fw
-FQ
+YW
 rA
 eP
 rA
-FQ
-VY
+YW
+cm
 va
 LM
 Gg
@@ -11914,8 +11966,8 @@ hC
 yw
 XX
 SK
-rh
-gM
+tB
+yN
 Fs
 LP
 BK
@@ -11949,11 +12001,11 @@ OA
 Xp
 JJ
 KV
-FQ
-pP
+YW
+iX
 eP
 rA
-FQ
+YW
 VY
 va
 Xp
@@ -11969,8 +12021,8 @@ BK
 BK
 BK
 hk
-cd
-RW
+zR
+pz
 ER
 ER
 Ld
@@ -12006,12 +12058,12 @@ OA
 Xp
 EB
 Fw
-FQ
-FQ
-FQ
-FQ
-FQ
-Vn
+YW
+YW
+YW
+YW
+YW
+tI
 va
 Xp
 Gg
@@ -12063,10 +12115,10 @@ OA
 rx
 EB
 dr
-MD
+sZ
+Aw
 Dv
-Dv
-Dv
+Aw
 Dv
 qT
 lf
@@ -12239,7 +12291,7 @@ mF
 lb
 lb
 nK
-uD
+HH
 qV
 oT
 nm
@@ -12297,7 +12349,7 @@ Rw
 Rw
 yw
 Fs
-sA
+nm
 hC
 ee
 BK
@@ -12354,7 +12406,7 @@ BK
 BK
 Ne
 Fs
-Qo
+aB
 BK
 BK
 BK
@@ -12411,7 +12463,7 @@ BK
 BK
 Ne
 Fs
-Qo
+aB
 BK
 BK
 BK
@@ -12468,7 +12520,7 @@ BK
 BK
 Ne
 Ku
-Qo
+aB
 BK
 BK
 BK
@@ -12525,7 +12577,7 @@ BK
 BK
 Ne
 vZ
-Qo
+aB
 BK
 BK
 BK
