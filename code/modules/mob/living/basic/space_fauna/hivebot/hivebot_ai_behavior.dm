@@ -61,8 +61,6 @@
 /datum/ai_behavior/hunt_target/repair_machines/target_caught(mob/living/basic/hivebot/mechanic/hunter, obj/machinery/repair_target)
 	hunter.repair_machine(repair_target)
 
-/datum/ai_behavior/find_hunt_target/scrap_machines
-
 /datum/ai_behavior/find_hunt_target/scrap_machines/valid_dinner(mob/living/source, obj/structure/salvageable/yummers, radius)
 	if(length(yummers.salvageable_parts))
 		return TRUE
