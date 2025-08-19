@@ -146,13 +146,6 @@
 	list_reagents = list(/datum/reagent/medicine/mutadone = 50)
 	rename_with_volume = TRUE
 
-/obj/item/reagent_containers/pill/indomide
-	name = "indomide pill"
-	desc = "Used to dull pain."
-	icon_state = "pill9"
-	list_reagents = list(/datum/reagent/medicine/indomide = 15)
-	rename_with_volume = TRUE
-
 /obj/item/reagent_containers/pill/silfrine
 	name = "silfrine pill"
 	desc = "Used to treat brute healing."
@@ -293,7 +286,7 @@
 	list_reagents = list(/datum/reagent/iron = 30)
 	rename_with_volume = TRUE
 
-/obj/item/reagent_containers/pill/Indomide
+/obj/item/reagent_containers/pill/indomide
 	name = "Indomide pill"
 	desc = "Used to treat brute damage of minor and moderate severity.The carving in the pill says 'Eat before ingesting'."
 	icon_state = "pill12"
