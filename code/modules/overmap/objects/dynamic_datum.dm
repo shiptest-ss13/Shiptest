@@ -286,7 +286,7 @@
 	if(istype(our_likely_vlevel) && selfloop)
 		our_likely_vlevel.selfloop()
 
-	for(var/obj/docking_port/stationary/port as obj in reserve_docks)
+	for(var/obj/docking_port/stationary/port in reserve_docks)
 		if(port.roundstart_template)
 			port.name = "[name] auxillary docking location"
 			port.load_roundstart()
