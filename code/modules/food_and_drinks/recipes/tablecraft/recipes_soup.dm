@@ -298,4 +298,3 @@
 	)
 	result = /obj/item/food/soup/miras_dola
 	subcategory = CAT_SOUP
-
