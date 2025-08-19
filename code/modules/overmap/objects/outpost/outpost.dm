@@ -10,7 +10,9 @@
 	// Set to an instance of the singleton for its type in New.
 	var/datum/map_template/outpost/main_template = null
 
-	var/list/obj/docking_port/stationary/reserve_docks
+	var/list/obj/docking_port/stationary/reserve_docks = list()
+
+	var/list/obj/docking_port/stationary/main_floor_docks = list()
 
 	var/datum/map_template/outpost/elevator_template = null
 	/// List of hangar templates. This list should contain hangar templates sufficient for any ship to dock within one,
@@ -214,6 +216,13 @@
 		else
 			shaft_lists[mach_mark.shaft] += mach_mark
 
+	for(var/obj/effect/landmark/outpost/subshuttle_dock/sub_dock in GLOB.outpost_landmarks)
+		sub_dock.set_up_dock(src)
+
+	for(var/obj/docking_port/stationary/docks in main_floor_docks)
+		docks.name = "[name] subshuttle dock"
+		docks.load_roundstart()
+
 	for(var/shaft_name in shaft_lists)
 		var/list/obj/shaft_li = shaft_lists[shaft_name]
 		var/obj/effect/landmark/outpost/elevator/anchor_landmark = shaft_li[1]
@@ -259,6 +268,10 @@
 	for(var/obj/docking_port/stationary/reserve_dock as anything in reserve_docks)
 		if(!reserve_dock.docked && !reserve_dock.current_docking_ticket)
 			LAZYADD(docks, reserve_dock)
+	if(requesting_interactor.outpost_special_dock_perms == TRUE)
+		for(var/obj/docking_port/stationary/main_floor_dock as anything in main_floor_docks)
+			if(!main_floor_dock.docked && !main_floor_dock.current_docking_ticket)
+				LAZYADD(docks, main_floor_dock)
 	return docks
 
 /datum/overmap/outpost/post_docked(datum/overmap/ship/controlled/dock_requester)
