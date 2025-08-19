@@ -148,7 +148,7 @@
 
 /obj/item/reagent_containers/pill/silfrine
 	name = "silfrine pill"
-	desc = "Used to treat brute healing."
+	desc = "Used to stimulate brute healing."
 	icon_state = "pill9"
 	list_reagents = list(/datum/reagent/medicine/silfrine = 15)
 	rename_with_volume = TRUE
