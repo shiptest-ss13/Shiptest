@@ -371,7 +371,6 @@
 		SStgui.close_uis(src)
 		return
 
-
 // Enable picking paper up by clicking on it with the clipboard or folder
 	if(istype(attacking_item, /obj/item/clipboard) || istype(attacking_item, /obj/item/folder) || istype(attacking_item, /obj/item/paper_bin))
 		attacking_item.attackby(src, user)
