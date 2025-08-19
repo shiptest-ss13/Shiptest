@@ -364,7 +364,7 @@
 	foodtypes = DAIRY | GRAIN | BREAKFAST
 
 /obj/item/food/soup/gumbo
-	name = "black eyed gumbo"
+	name = "gumbo"
 	desc = "A specific form of stew consisting of a strongly flavored, thickened stock along with a celery, bell peppers, and onions. While gumbo also includes some specific inclusions for tradition, this one seems to lack both."
 	icon_state = "gumbo"
 	food_reagents = list(
