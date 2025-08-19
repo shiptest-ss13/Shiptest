@@ -373,7 +373,7 @@
 		/datum/reagent/consumable/nutriment = 5,
 	)
 	tastes = list("savory meat and vegtables" = 1)
-	foodtype = GRAIN | MEAT | VEGETABLES
+	foodtypes = GRAIN | MEAT | VEGETABLES
 
 /obj/item/food/soup/miras_dola
 	name = "miras-dola"
