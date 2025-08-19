@@ -63,6 +63,10 @@
 	bar_material = WOOD
 	var/drop_amount = 3
 
+/obj/structure/barricade/wooden/examine(mob/user)
+	. = ..()
+	. += span_notice("You could use a crowbar to pry it apart.")
+
 /obj/structure/barricade/wooden/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/stack/sheet/mineral/wood))
 		var/obj/item/stack/sheet/mineral/wood/W = I
@@ -101,9 +105,9 @@
 		span_hear("You hear sounds of wood crashing on the floor.")
 	)
 	if(tool.use_tool(src, user, 50, volume=100))
-		playsound(loc, 'sound/effects/plank_fall.ogg', 100)
+		playsound(loc, 'sound/effects/plank_fall.ogg', 100, vary = TRUE)
 		to_chat(user, span_notice("You disassemble the barricade."))
-		var/obj/item/stack/sheet/mineral/wood/M = new (loc, 5)
+		var/obj/item/stack/sheet/mineral/wood/M = new (loc, 3)
 		if (!QDELETED(M)) // might be a stack that's been merged
 			M.add_fingerprint(user)
 		qdel(src)
