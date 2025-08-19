@@ -1840,6 +1840,18 @@
 /mob/living/basic/hivebot/strong/reprogrammed,
 /turf/open/floor/grass/ship/jungle,
 /area/ruin/wasteplanet/facility/northwing)
+"lW" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/atmospherics/pipe/simple/yellow/visible/layer4{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 8;
+	id = "engi-window"
+	},
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/facility/northwing)
 "lY" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
@@ -2408,6 +2420,9 @@
 	},
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "engi-window"
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/facility/northwing)
 "qc" = (
@@ -2781,6 +2796,10 @@
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/atmospherics/pipe/simple/yellow/visible/layer4{
 	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 8;
+	id = "engi-window"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/facility/northwing)
@@ -4201,6 +4220,14 @@
 	},
 /turf/open/floor/plating/wasteplanet/rust/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"Bl" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "engi-window"
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/wasteplanet/facility/northwing)
 "Bn" = (
 /obj/structure/platform/industrial/corner{
 	dir = 4
@@ -5235,6 +5262,11 @@
 	},
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 8
+	},
+/obj/machinery/button/door{
+	pixel_y = 26;
+	id = "engi-window";
+	name = "Window Shutters"
 	},
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/facility/northwing)
@@ -10427,7 +10459,7 @@ KO
 LP
 jP
 Lo
-Ee
+Bl
 tw
 IY
 Xb
@@ -10600,7 +10632,7 @@ KR
 Iq
 sP
 sP
-iE
+lW
 Iq
 ip
 gM
