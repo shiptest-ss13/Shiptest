@@ -119,7 +119,7 @@
  * * creation_template - The template used to create the ship.
  * * target_port - The port to dock the new ship to.
  */
-/datum/overmap/ship/controlled/Initialize(position, system_spawned_in, datum/map_template/shuttle/creation_template, create_shuttle = TRUE)
+/datum/overmap/ship/controlled/Initialize(position, system_spawned_in, datum/map_template/shuttle/creation_template, create_shuttle = TRUE, outpost_special_docking_perms)
 	. = ..()
 	if(creation_template)
 		source_template = creation_template
@@ -138,6 +138,8 @@
 
 			refresh_engines()
 		ship_account = new(name, source_template.starting_funds)
+		if(outpost_special_docking_perms)
+			outpost_special_dock_perms = TRUE
 
 	else
 		stack_trace("Attempted to create a controlled ship without a template!")
