@@ -33,6 +33,8 @@
 	. = ..()
 	if(hatch_open)
 		icon_state = "panel_open"
+	if(ship_key)
+		icon_state = "panel_open_key"
 	else
 		icon_state = "panel"
 
@@ -86,12 +88,7 @@
 
 	switch(alert(user, "Are you sure you want to create a distress signal?",, "Yes", "No"))
 		if("Yes")
-			var/distress_message = stripped_input(user, "Please write any information you'd like potential rescue to know. Be concise.")
-			if(distress_message)
-				distress_message = uppertext(distress_message) // flavor
-				create_distress_beacon(get_overmap_location(), distress_message)
-			else
-				create_distress_beacon(get_overmap_location())
+			create_distress_beacon(get_overmap_location())
 			playsound(src, 'sound/machines/triple_beep.ogg', 50, FALSE)
 			to_chat(user, span_warning("Distress signal broadcasted."))
 			distress_cooldown = world.time + EMERGENCY_PANEL_COOLDOWN
