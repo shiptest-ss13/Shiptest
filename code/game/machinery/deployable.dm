@@ -62,6 +62,7 @@
 	icon_state = "woodenbarricade"
 	bar_material = WOOD
 	var/drop_amount = 3
+	var/crowbar_time = 4 SECONDS
 
 /obj/structure/barricade/wooden/examine(mob/user)
 	. = ..()
@@ -104,7 +105,7 @@
 		span_notice("You start prying boards off the barricade..."),
 		span_hear("You hear sounds of wood crashing on the floor.")
 	)
-	if(tool.use_tool(src, user, 40, volume=100))
+	if(tool.use_tool(src, user, crowbar_time, volume=100))
 		playsound(loc, 'sound/effects/plank_fall.ogg', 100, vary = TRUE)
 		to_chat(user, span_notice("You disassemble the barricade."))
 		var/obj/item/stack/sheet/mineral/wood/M = new (loc, 3)
@@ -121,6 +122,7 @@
 	drop_amount = 1
 	max_integrity = 50
 	proj_pass_rate = 65
+	crowbar_time = 2 SECONDS
 
 /obj/structure/barricade/wooden/crude/snow
 	desc = "This space is blocked off by a crude assortment of planks. It seems to be covered in a layer of snow."
