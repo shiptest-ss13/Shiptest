@@ -131,7 +131,6 @@
 					exceptions_list += e1
 
 			move_mode = oldT.fromShuttleMove(newT, move_mode)												//turfs
-
 			move_mode = newT.toShuttleMove(oldT, move_mode, src)											//turfs
 
 			if(move_mode & MOVE_AREA)
