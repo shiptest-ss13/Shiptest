@@ -170,9 +170,7 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "bw" = (
-/obj/item/radio/intercom/directional/east,
-/obj/effect/turf_decal/siding/white/corner,
-/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/turf/open/floor/concrete,
 /area/ruin/powered/hunts/gate)
 "bx" = (
 /obj/item/food/meat/slab/goliath,
@@ -207,6 +205,15 @@
 	},
 /turf/open/floor/carpet/green/jungleplanet,
 /area/ruin/powered/hunts/gun_shop)
+"bN" = (
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/item/phone,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete,
+/area/ruin/powered/hunts/gate)
 "bO" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
@@ -246,6 +253,19 @@
 /mob/living/simple_animal/hostile/jungle/seedling/mining,
 /turf/open/floor/wood/ebony/jungleplanet/lit,
 /area/ruin/powered/hunts/canteen)
+"ck" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/brigdoor{
+	dir = 4
+	},
+/obj/item/stack/arcadeticket{
+	name = "voucher ticket";
+	singular_name = "voucher ticket";
+	desc = "A punched ticket. Says 'ADMIT ONE' on the front"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete,
+/area/ruin/powered/hunts/gate)
 "cn" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/mahogany,
@@ -329,6 +349,15 @@
 	},
 /turf/open/floor/concrete,
 /area/ruin/powered/hunts/barn)
+"dp" = (
+/obj/machinery/door/airlock{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/area/ruin/powered/hunts/gate)
 "dq" = (
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/toilet)
@@ -849,15 +878,13 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hunts/shuttle)
 "ia" = (
-/obj/structure/spider/stickyweb,
-/obj/machinery/button/door{
-	dir = 1;
-	pixel_y = -23;
-	id = "hunt";
-	name = "gate shutters"
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
 	},
-/turf/open/floor/wood/ebony/jungleplanet,
-/area/ruin/powered/hunts/sec)
+/obj/effect/turf_decal/industrial/stand_clear/white,
+/obj/effect/turf_decal/siding/white/corner,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/ruin/powered/hunts/gate)
 "ig" = (
 /obj/machinery/processor,
 /turf/open/floor/plasteel/dark/jungleplanet,
@@ -1339,6 +1366,9 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"mi" = (
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/area/ruin/powered/hunts/gate)
 "mo" = (
 /obj/structure/chair/stool{
 	dir = 4
@@ -1598,6 +1628,10 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered/hunts/barn)
+"oI" = (
+/obj/effect/turf_decal/stoneborder/corner,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "oJ" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector{
 	dir = 8
@@ -1806,6 +1840,12 @@
 	},
 /turf/open/floor/carpet/royalblack/jungleplanet,
 /area/ruin/powered/hunts/gun_shop)
+"qc" = (
+/obj/structure/chair/office{
+	dir = 4
+	},
+/turf/open/floor/concrete,
+/area/ruin/powered/hunts/gate)
 "qd" = (
 /obj/structure/spacevine,
 /obj/structure/cable{
@@ -2249,12 +2289,27 @@
 	},
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"to" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "tp" = (
 /obj/item/shard,
 /obj/effect/decal/cleanable/glass,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/wood/ebony/jungleplanet,
 /area/ruin/powered/hunts/sec)
+"ts" = (
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ruin/powered/hunts/gate)
 "tt" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spider/stickyweb,
@@ -2263,6 +2318,12 @@
 	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"tx" = (
+/obj/structure/filingcabinet{
+	dir = 4
+	},
+/turf/open/floor/concrete,
+/area/ruin/powered/hunts/gate)
 "tz" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 4
@@ -2453,6 +2514,12 @@
 	},
 /turf/open/floor/carpet/orange,
 /area/ruin/powered/hunts/hotel)
+"uM" = (
+/obj/effect/turf_decal/stoneborder{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "uQ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -2929,10 +2996,10 @@
 /turf/open/floor/wood/maple,
 /area/ruin/powered/hunts/hotel)
 "zl" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
+/obj/item/radio/intercom/directional/east,
+/obj/effect/turf_decal/siding/white{
+	dir = 4
 	},
-/obj/effect/turf_decal/industrial/stand_clear/white,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/ruin/powered/hunts/gate)
 "zo" = (
@@ -3424,6 +3491,13 @@
 	},
 /turf/open/floor/wood/ebony/jungleplanet,
 /area/ruin/powered/hunts/gun_shop)
+"CX" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete,
+/area/ruin/powered/hunts/gate)
 "Da" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced,
@@ -3547,6 +3621,11 @@
 /obj/effect/gibspawner/generic/animal,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/powered/hunts/canteen)
+"En" = (
+/obj/machinery/light/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete,
+/area/ruin/powered/hunts/gate)
 "Eo" = (
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered/hunts/shed)
@@ -4043,6 +4122,10 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/ruin/powered/hunts/canteen)
+"If" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete,
+/area/ruin/powered/hunts/gate)
 "Ig" = (
 /mob/living/simple_animal/hostile/asteroid/brimdemon,
 /obj/structure/cable{
@@ -4456,6 +4539,20 @@
 /obj/item/modular_computer/laptop/preset/civilian/rilena,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/shed)
+"LC" = (
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_y = -23;
+	id = "hunt";
+	name = "gate shutters"
+	},
+/obj/structure/table/reinforced,
+/obj/item/clothing/head/soft/red{
+	pixel_y = 8
+	},
+/obj/item/flashlight/seclite,
+/turf/open/floor/concrete,
+/area/ruin/powered/hunts/gate)
 "LG" = (
 /obj/structure/railing/wood{
 	dir = 10
@@ -4745,6 +4842,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hunts/shuttle)
 "Oi" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/stand_clear/white,
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 8
 	},
@@ -4867,6 +4968,10 @@
 "Ps" = (
 /turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow,
 /area/overmap_encounter/planetoid/jungle/explored)
+"Pt" = (
+/obj/effect/turf_decal/stoneborder,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Px" = (
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 8
@@ -4986,6 +5091,25 @@
 /obj/structure/spider/fake_eggcluster,
 /turf/open/floor/engine,
 /area/ruin/powered/hunts/barn)
+"Qe" = (
+/obj/structure/closet/wall/med/directional/north{
+	icon_door = "med_wall";
+	name = "First Aid Closet"
+	},
+/obj/item/stack/medical/gauze/twelve,
+/obj/item/reagent_containers/glass/bottle/ethanol{
+	name = "disinfectant bottle";
+	desc = "A small bottle of alcohol based disinfectant. It appears to be half empty.";
+	list_reagents = list(/datum/reagent/consumable/ethanol = 15);
+	pixel_y = 7;
+	pixel_x = 10
+	},
+/obj/item/stack/medical/bruise_pack{
+	pixel_y = 9
+	},
+/obj/item/storage/pill_bottle/tramal,
+/turf/open/floor/concrete,
+/area/ruin/powered/hunts/gate)
 "Qf" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -9367,11 +9491,11 @@ NB
 pV
 pV
 pV
-pV
-pV
-pV
-Va
-Va
+oI
+uM
+uM
+uM
+uM
 dD
 Qq
 eW
@@ -9422,14 +9546,14 @@ BQ
 pV
 pV
 pV
-pV
-pV
-pV
-Va
-Va
-dD
-Qq
-EN
+Pt
+Qs
+ZA
+ZA
+ZA
+NG
+uR
+to
 qk
 dD
 yC
@@ -9474,14 +9598,14 @@ NB
 lO
 BQ
 BQ
-NB
 pV
 pV
 pV
-pV
-pV
-Va
-Va
+eD
+dp
+eD
+eD
+wg
 dD
 Qq
 eW
@@ -9530,13 +9654,13 @@ Zc
 YX
 YX
 NB
-gZ
-NB
 pV
 pV
-pV
-pV
-pV
+eD
+CX
+ts
+eD
+eD
 dD
 Qq
 eW
@@ -9585,13 +9709,13 @@ NB
 YX
 YX
 gY
-NB
-NB
 pV
 pV
-pV
-pV
-pV
+eD
+If
+bw
+tx
+eD
 dD
 HP
 PQ
@@ -9640,13 +9764,13 @@ NB
 gY
 NB
 lW
-Lo
-NB
 pV
 pV
-pV
-pV
-Va
+eD
+bw
+If
+En
+eD
 dD
 HP
 bj
@@ -9695,13 +9819,13 @@ rI
 NB
 rI
 NB
-NB
-NB
 pV
 pV
-pV
-pV
-pV
+eD
+Qe
+qc
+LC
+eD
 dD
 HP
 eW
@@ -9710,7 +9834,7 @@ yC
 By
 Fv
 Tq
-ia
+WR
 By
 dD
 yU
@@ -9747,7 +9871,6 @@ Mj
 Xr
 TD
 rI
-rI
 NB
 NB
 dY
@@ -9755,8 +9878,9 @@ eD
 eD
 eD
 eD
+ck
+bN
 eD
-FZ
 dD
 HP
 eW
@@ -9802,15 +9926,15 @@ BQ
 BQ
 So
 rI
-rI
 YX
 vQ
 vQ
 vQ
 HR
 jF
-zl
 Oi
+ZL
+ZL
 ZL
 jw
 Rt
@@ -9857,7 +9981,6 @@ NB
 BQ
 Lj
 NB
-pP
 vQ
 Ra
 Ra
@@ -9865,6 +9988,7 @@ Ra
 lb
 jF
 om
+AK
 AK
 AK
 rP
@@ -9912,7 +10036,6 @@ NB
 BQ
 NB
 jU
-jU
 vQ
 Ra
 AB
@@ -9920,6 +10043,7 @@ Ra
 QG
 jF
 om
+AK
 AK
 AK
 rP
@@ -9967,7 +10091,6 @@ NB
 Xr
 NB
 jU
-jU
 vQ
 vQ
 vQ
@@ -9975,6 +10098,7 @@ vQ
 QG
 jF
 om
+AK
 AK
 AK
 rP
@@ -10022,15 +10146,15 @@ Sh
 BQ
 NB
 jU
-jU
 NB
 vQ
 vQ
 ys
 HR
 jF
+ia
 zl
-bw
+WP
 WP
 Rc
 OC
@@ -10077,7 +10201,6 @@ BQ
 BQ
 rI
 lr
-lr
 NB
 lO
 dY
@@ -10087,6 +10210,7 @@ eD
 eD
 eD
 FZ
+mi
 dD
 Qq
 tt
@@ -10135,7 +10259,7 @@ jU
 NB
 NB
 NB
-NB
+pV
 pV
 pV
 pV
@@ -10190,7 +10314,7 @@ Lj
 Lo
 lO
 XP
-NB
+pV
 pV
 pV
 pV
@@ -10245,7 +10369,7 @@ bd
 YX
 NB
 lO
-NB
+pV
 pV
 pV
 pV
