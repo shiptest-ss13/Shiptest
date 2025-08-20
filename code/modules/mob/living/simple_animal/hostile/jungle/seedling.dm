@@ -235,6 +235,9 @@
 		return
 	return ..()
 
+/mob/living/simple_animal/hostile/jungle/seedling/mining
+	faction = list("mining")
+
 #undef SEEDLING_STATE_NEUTRAL
 #undef SEEDLING_STATE_WARMUP
 #undef SEEDLING_STATE_ACTIVE
