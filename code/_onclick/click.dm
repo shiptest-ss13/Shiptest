@@ -103,7 +103,7 @@
 		CtrlClickOn(A)
 		return
 
-	if(incapacitated(ignore_restraints = TRUE, ignore_stasis = TRUE))
+	if(incapacitated(ignore_restraints = TRUE))
 		return
 
 	face_atom(A)
@@ -216,7 +216,7 @@
 			if(closed[target] || isarea(target))  // avoid infinity situations
 				continue
 			closed[target] = TRUE
-			if(isturf(target) || isturf(target.loc) || (target in direct_access) || (ismovable(target) && target.flags_1 & IS_ONTOP_1)) //Directly accessible atoms
+			if(isturf(target) || isturf(target.loc) || (target in direct_access) || (ismovable(target) && target.flags_1 & PREVENT_CLICK_UNDER_1)) //Directly accessible atoms
 				if(Adjacent(target) || (tool && CheckToolReach(src, target, tool.reach))) //Adjacent or reaching attacks
 					return TRUE
 
@@ -295,8 +295,18 @@
  * for things like ranged glove touches, spitting alien acid/neurotoxin,
  * animals lunging, etc.
  */
-/mob/proc/RangedAttack(atom/A, params)
-	SEND_SIGNAL(src, COMSIG_MOB_ATTACK_RANGED, A, params)
+/mob/proc/RangedAttack(atom/A, modifiers)
+	if(SEND_SIGNAL(src, COMSIG_MOB_ATTACK_RANGED, A, modifiers) & COMPONENT_CANCEL_ATTACK_CHAIN)
+		return TRUE
+
+/**
+ * Ranged secondary attack
+ *
+ * If the same conditions are met to trigger RangedAttack but it is
+ * instead initialized via a right click, this will trigger instead.
+ * Useful for mobs that have their abilities mapped to right click.
+ */
+/mob/proc/ranged_secondary_attack(atom/target, modifiers)
 
 
 /**
