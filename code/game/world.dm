@@ -282,7 +282,7 @@ GLOBAL_VAR(restart_counter)
 	shutdown_logging() // makes sure the thread is closed before end, else we terminate
 	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
 	if (debug_server)
-		LIBCALL(debug_server, "auxtools_shutdown")()
+		call_ext(debug_server, "auxtools_shutdown")()
 	..()
 
 /world/proc/update_status()
