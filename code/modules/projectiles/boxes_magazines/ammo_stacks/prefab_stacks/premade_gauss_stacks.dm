@@ -5,7 +5,7 @@
 /obj/item/storage/box/ammo/ferropellet
 	name = "box of ferromagnetic pellets"
 	desc = "A box of ferromagnetic pellets for gauss firearms."
-
+	icon_state = "herropelletsbox"
 
 /obj/item/storage/box/ammo/ferropellet/PopulateContents()
 	var/static/items_inside = list(
