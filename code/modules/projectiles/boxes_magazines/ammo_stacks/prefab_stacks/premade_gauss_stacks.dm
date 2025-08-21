@@ -55,7 +55,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/ferrolance
 	ammo_type = /obj/item/ammo_casing/caseless/gauss/lance
-	max_ammo = 32
+	max_ammo = 16
 
 /obj/item/storage/box/ammo/ferrolance
 	name = "box of ferromagnetic lances"
