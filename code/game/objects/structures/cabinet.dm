@@ -63,7 +63,6 @@
 	else if(open || broken)
 		if(istype(I, allowed_type) && !stored)
 			var/obj/item/storee = I
-			SIGNAL_HANDLER
 			if(storee && HAS_TRAIT(storee, TRAIT_WIELDED))
 				to_chat(user, span_warning("Unwield the [storee.name] first."))
 				return
@@ -102,6 +101,7 @@
 		playsound(src, 'sound/effects/glassbr3.ogg', 100, TRUE)
 		new /obj/item/shard(loc)
 		new /obj/item/shard(loc)
+	. = ..()
 
 /obj/structure/cabinet/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))

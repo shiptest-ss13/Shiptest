@@ -22,37 +22,31 @@
 	var/best_force = controller.blackboard[BB_MONKEY_BEST_FORCE_FOUND]
 
 	if(!target)
-		finish_action(controller, FALSE)
-		return
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED
 
 	if(target.anchored) //Can't pick it up, so stop trying.
-		finish_action(controller, FALSE)
-		return
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED
 
 	// Strong weapon
 	else if(target.force > best_force)
 		living_pawn.drop_all_held_items()
 		living_pawn.put_in_hands(target)
 		controller.set_blackboard_key(BB_MONKEY_BEST_FORCE_FOUND, target.force)
-		finish_action(controller, TRUE)
-		return
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
 
 	else if(target.slot_flags) //Clothing == top priority
 		living_pawn.dropItemToGround(target, TRUE)
 		living_pawn.update_icons()
 		if(!living_pawn.equip_to_appropriate_slot(target))
-			finish_action(controller, FALSE)
-			return //Already wearing something, in the future this should probably replace the current item but the code didn't actually do that, and I dont want to support it right now.
-		finish_action(controller, TRUE)
-		return
+			return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED //Already wearing something, in the future this should probably replace the current item but the code didn't actually do that, and I dont want to support it right now.
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
 
 	// EVERYTHING ELSE
 	else if(living_pawn.get_empty_held_index_for_side(LEFT_HANDS) || living_pawn.get_empty_held_index_for_side(RIGHT_HANDS))
 		living_pawn.put_in_hands(target)
-		finish_action(controller, TRUE)
-		return
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
 
-	finish_action(controller, FALSE)
+	return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED
 
 /datum/ai_behavior/monkey_equip/ground
 	required_distance = 0
@@ -79,8 +73,6 @@
 
 	controller.set_blackboard_key(BB_MONKEY_PICKPOCKETING, TRUE)
 
-	var/success = FALSE
-
 	if(do_after(living_pawn, MONKEY_ITEM_SNATCH_DELAY, victim) && target)
 
 		for(var/obj/item/I in victim.held_items)
@@ -89,12 +81,11 @@
 				if(victim.temporarilyRemoveItemFromInventory(target))
 					if(!QDELETED(target) && !equip_item(controller))
 						target.forceMove(living_pawn.drop_location())
-						success = TRUE
 						break
 				else
 					victim.visible_message(span_danger("[living_pawn] tried to snatch [target] from [victim], but failed!"), span_userdanger("[living_pawn] tried to grab [target]!"))
 
-	finish_action(controller, success) //We either fucked up or got the item.
+	return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
 
 /datum/ai_behavior/monkey_equip/pickpocket/finish_action(datum/ai_controller/controller, success)
 	. = ..()
@@ -104,12 +95,10 @@
 /datum/ai_behavior/monkey_flee
 
 /datum/ai_behavior/monkey_flee/perform(seconds_per_tick, datum/ai_controller/controller)
-	. = ..()
-
 	var/mob/living/living_pawn = controller.pawn
 
 	if(living_pawn.health >= MONKEY_FLEE_HEALTH)
-		finish_action(controller, TRUE) //we're back in bussiness
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED //we're back in bussiness
 
 	var/mob/living/target = null
 
@@ -122,19 +111,18 @@
 	if(target)
 		walk_away(living_pawn, target, MONKEY_ENEMY_VISION, 5)
 	else
-		finish_action(controller, TRUE)
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
 
 /datum/ai_behavior/monkey_attack_mob
 	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_MOVE_AND_PERFORM //performs to increase frustration
 
 /datum/ai_behavior/monkey_attack_mob/perform(seconds_per_tick, datum/ai_controller/controller)
-	. = ..()
 
 	var/mob/living/target = controller.blackboard[BB_MONKEY_CURRENT_ATTACK_TARGET]
 	var/mob/living/living_pawn = controller.pawn
 
 	if(!target || target.stat != CONSCIOUS)
-		finish_action(controller, TRUE) //Target == owned
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED //Target == owned
 
 	if(isturf(target.loc) && !IS_DEAD_OR_INCAP(living_pawn)) // Check if they're a valid target
 		// check if target has a weapon
@@ -211,7 +199,7 @@
 		var/list/enemies = controller.blackboard[BB_MONKEY_ENEMIES]
 		enemies.Remove(target)
 		if(controller.blackboard[BB_MONKEY_CURRENT_ATTACK_TARGET] == target)
-			finish_action(controller, TRUE)
+			return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
 
 /datum/ai_behavior/disposal_mob
 	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_MOVE_AND_PERFORM //performs to increase frustration
@@ -223,10 +211,9 @@
 	controller.clear_blackboard_key(BB_MONKEY_TARGET_DISPOSAL) //No target disposal
 
 /datum/ai_behavior/disposal_mob/perform(seconds_per_tick, datum/ai_controller/controller)
-	. = ..()
 
 	if(controller.blackboard[BB_MONKEY_DISPOSING]) //We are disposing, don't do ANYTHING!!!!
-		return
+		return AI_BEHAVIOR_DELAY
 
 	var/mob/living/target = controller.blackboard[BB_MONKEY_CURRENT_ATTACK_TARGET]
 	var/mob/living/living_pawn = controller.pawn
@@ -237,15 +224,16 @@
 		if(living_pawn.Adjacent(target) && isturf(target.loc))
 			living_pawn.a_intent = INTENT_GRAB
 			target.grabbedby(living_pawn)
-		return //Do the rest next turn
+		return AI_BEHAVIOR_DELAY //Do the rest next turn
 
 	var/obj/machinery/disposal/disposal = controller.blackboard[BB_MONKEY_TARGET_DISPOSAL]
 	controller.current_movement_target = disposal
 
 	if(living_pawn.Adjacent(disposal))
 		INVOKE_ASYNC(src, PROC_REF(try_disposal_mob), controller) //put him in!
-	else //This means we might be getting pissed!
-		return
+		return AI_BEHAVIOR_DELAY
+	//This means we might be getting pissed!
+	return AI_BEHAVIOR_DELAY
 
 /datum/ai_behavior/disposal_mob/proc/try_disposal_mob(datum/ai_controller/controller)
 	var/mob/living/living_pawn = controller.pawn
@@ -256,11 +244,10 @@
 
 	if(target && disposal?.stuff_mob_in(target, living_pawn))
 		disposal.flush()
-	finish_action(controller, TRUE)
+	return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
 
 
 /datum/ai_behavior/recruit_monkeys/perform(seconds_per_tick, datum/ai_controller/controller)
-	. = ..()
 
 	controller.blackboard[BB_MONKEY_RECRUIT_COOLDOWN] = world.time + MONKEY_RECRUIT_COOLDOWN
 	var/mob/living/living_pawn = controller.pawn
@@ -276,4 +263,4 @@
 		var/list/enemies = L.ai_controller.blackboard[BB_MONKEY_ENEMIES]
 		enemies[your_enemy] = MONKEY_RECRUIT_HATED_AMOUNT
 		monkey_ai.blackboard[BB_MONKEY_RECRUIT_COOLDOWN] = world.time + MONKEY_RECRUIT_COOLDOWN
-	finish_action(controller, TRUE)
+	return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
