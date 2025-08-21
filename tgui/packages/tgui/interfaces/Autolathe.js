@@ -95,7 +95,7 @@ export const Autolathe = (props) => {
             fluid
             placeholder="Search Recipes..."
             selfClear
-            onChange={(value) => {
+            onChange={(e, value) => {
               if (value.length) {
                 act('search', {
                   to_search: value,
