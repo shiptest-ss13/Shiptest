@@ -42,7 +42,7 @@
 	name = ".44 Roumain Speedloader Crate"
 	desc = "Contains a .44 Roumain speedloader for the HP Montagne, with a capacity of six rounds."
 	contains = list(/obj/item/ammo_box/a44roum_speedloader/empty)
-	cost = 250
+	cost = 100
 	faction = /datum/faction/srm
 
 /datum/supply_pack/magazine/firestorm_mag
@@ -58,7 +58,7 @@
 	name = "Firestorm Pan Magazine Crate"
 	desc = "Contains a 40-round pan magazine for the Hunter's Pride Firestorm SMG."
 	contains = list(/obj/item/ammo_box/magazine/c44_firestorm_mag/pan/empty)
-	cost = 1000
+	cost = 750
 	faction = /datum/faction/srm
 
 /datum/supply_pack/magazine/invictus_mag
@@ -163,14 +163,14 @@
 	name = "SBR-80 DMR Short Magazine Crate"
 	desc = "Contains a 5.56x42mm CLIP made specially for the SBR-80 Designated Marksman Rifle, with a capacity of 20 rounds."
 	contains = list(/obj/item/ammo_box/magazine/m556_42_hydra/small/empty)
-	cost = 400
+	cost = 300
 	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/hydra_mag
 	name = "SMR-80 Rifle Magazine Crate"
 	desc = "Contains a 5.56x42mm CLIP for the SMR-80 assault rifle, with a capacity of 30 rounds."
 	contains = list(/obj/item/ammo_box/magazine/m556_42_hydra/empty)
-	cost = 500
+	cost = 400
 	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/saw_mag
@@ -186,14 +186,14 @@
 	name = "Boomslang-90 Magazine Crate"
 	desc = "Contains a 6.5mm CLIP magazine for the Boomslang rifle platform, with a capacity of five rounds."
 	contains = list(/obj/item/ammo_box/magazine/boomslang/short/empty)
-	cost = 750
+	cost = 200
 	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/boomslang_mag_extended
 	name = "MSR-90 'Boomslang' Magazine Crate"
 	desc = "Contains a 6.5mm CLIP magazine for the Boomslang rifle platform, with a capacity of ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/boomslang/empty)
-	cost = 1500
+	cost = 750
 	faction = /datum/faction/syndicate/scarborough
 
 
@@ -210,7 +210,7 @@
 	name = "CM-70 Magazine Crate"
 	desc = "Contains a 9x18mm magazine for the CM-70 machinepistol."
 	contains = list(/obj/item/ammo_box/magazine/m9mm_cm70/empty)
-	cost = 350
+	cost = 150
 	faction = /datum/faction/clip
 	faction_discount = 20
 
@@ -218,7 +218,7 @@
 	name = "CM-357 Magazine Crate"
 	desc = "Contains a .357 magazine for the CM-357 automag pistol with a capacity of 7 rounds."
 	contains = list(/obj/item/ammo_box/magazine/cm357/empty)
-	cost = 250
+	cost = 150
 	faction = /datum/faction/clip
 
 /datum/supply_pack/magazine/cm5_mag
@@ -233,14 +233,14 @@
 	name = "CM-82 Magazine Crate"
 	desc = "Contains a 5.56mm magazine for the CM-82 rifle, with a capacity of thirty rounds."
 	contains = list(/obj/item/ammo_box/magazine/p16/empty)
-	cost = 500
+	cost = 300
 	faction = /datum/faction/clip
 
 /datum/supply_pack/magazine/skm_ammo
 	name = "SKM Magazine Crate"
 	desc = "Contains a 7.62x40mm magazine for the SKM rifles, with a capacity of twenty rounds."
 	contains = list(/obj/item/ammo_box/magazine/skm_762_40/empty)
-	cost = 500
+	cost = 300
 
 /datum/supply_pack/magazine/skm_ammo_extended
 	name = "SKM Extended Magazine Crate"
@@ -255,14 +255,14 @@
 	name = "F4 Magazine Crate"
 	desc = "Contains a .308 magazine for SsG-04 and CM-F4 platform rifles, with a capacity of ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/f4_308/empty)
-	cost = 500
+	cost = 300
 	faction = /datum/faction/clip
 
 /datum/supply_pack/magazine/f90
 	name = "CM-F90 Magazine Crate"
 	desc = "Contains a 5-round 6.5mm magazine for use with the CM-F90 sniper rifle."
 	contains = list(/obj/item/ammo_box/magazine/f90/empty)
-	cost = 750
+	cost = 200
 	faction = /datum/faction/clip
 
 /datum/supply_pack/magazine/cm15
@@ -324,7 +324,7 @@
 	name = "Mongrel Magazine Crate"
 	desc = "Contains a 10x22mm magazine for the SKM-44v 'Mongrel' SMG, with a capacity of twenty-four rounds."
 	contains = list(/obj/item/ammo_box/magazine/smgm10mm/empty)
-	cost = 300
+	cost = 200
 	faction = /datum/faction/inteq
 
 /datum/supply_pack/magazine/rottweiler_mag
@@ -358,7 +358,7 @@
 	desc = "Contains a weapon cell, compatible with laser guns."
 	contains = list(/obj/item/stock_parts/cell/gun)
 	faction = /datum/faction/nt
-	cost = 500
+	cost = 300
 
 /datum/supply_pack/magazine/solgovcell
 	name = "SolCon Weapon Cell Crate"
