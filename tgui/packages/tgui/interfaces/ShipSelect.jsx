@@ -23,12 +23,14 @@ const findShipByRef = (ship_list, ship_ref) => {
 export const ShipSelect = (props) => {
   const { act, data } = useBackend();
 
-
   const ships = data.ships || {};
   const templates = data.templates || [];
 
   const [currentTab, setCurrentTab] = useLocalState('tab', 1);
-  const [selectedShipRef, setSelectedShipRef] = useLocalState('selectedShipRef', null);
+  const [selectedShipRef, setSelectedShipRef] = useLocalState(
+    'selectedShipRef',
+    null,
+  );
 
   const selectedShip = findShipByRef(ships, selectedShipRef);
 

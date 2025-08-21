@@ -1,4 +1,3 @@
-import { decodeHtmlEntities } from 'tgui-core/string';
 import {
   Button,
   Divider,
@@ -8,6 +7,7 @@ import {
   Table,
   Tabs,
 } from 'tgui-core/components';
+import { decodeHtmlEntities } from 'tgui-core/string';
 
 import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';

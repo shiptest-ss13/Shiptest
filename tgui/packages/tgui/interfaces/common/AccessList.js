@@ -1,7 +1,7 @@
 import { sortBy } from 'common/collections';
 import { Button, Flex, Section, Tabs } from 'tgui-core/components';
 
-import { useLocalState } from '../../backend';
+import { useSharedState } from '../../backend';
 
 const diffMap = {
   0: {
@@ -28,7 +28,7 @@ export const AccessList = (props) => {
     grantDep,
     denyDep,
   } = props;
-  const [selectedAccessName, setSelectedAccessName] = useLocalState(
+  const [selectedAccessName, setSelectedAccessName] = useSharedState(
     'accessName',
     accesses[0]?.name,
   );
