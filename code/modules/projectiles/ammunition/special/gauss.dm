@@ -25,7 +25,7 @@
 	icon_state = "gauss-lance"
 	projectile_type = /obj/projectile/bullet/gauss/lance
 	auto_rotate = TRUE
-	energy_cost = 162
+	energy_cost = 155
 
 /obj/item/ammo_casing/caseless/gauss/lance/hc
 	name = "high conductivity lance"
@@ -35,7 +35,7 @@
 	projectile_type = /obj/projectile/bullet/gauss/lance/hc
 	auto_rotate = FALSE
 	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect/gauss
-	energy_cost = 240
+	energy_cost = 233
 
 /obj/item/ammo_casing/caseless/gauss/slug
 	name = "ferromagnetic slug"
