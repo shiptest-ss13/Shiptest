@@ -443,7 +443,7 @@
 	contains = list(/obj/item/storage/box/ammo/ferrolance)
 	cost = 285 //5 ammo efficiency at 30 damage
 
-/datum/supply_pack/ammo/ferrolanceboxcrate
+/datum/supply_pack/ammo/ferrolanceboxcrate_hc
 	name = "High Conductivity Lance Box Crate"
 	desc = "Contains a 48-round box for high-powered gauss guns such as the GAR assault rifle."
 	contains = list(/obj/item/storage/box/ammo/ferrolance/hc)
