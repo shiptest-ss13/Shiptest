@@ -152,6 +152,20 @@
 	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
 	r_hand = /obj/item/gun/ballistic/rifle/illestren
 
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/neutered
+	weapon_drop_chance = 0
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/neutered/sentry
+	name = "Frontiersman Sentry"
+	desc = "A member of the brutal Frontiersman terrorist fleet! This one waits patiently, their finger on the trigger, as the glint of their scope in the sun catches your eye."
+	vision_range = 14
+	aggro_vision_range = 14
+	minimum_distance = 14
+	stop_automated_movement = 1
+	wander = 0
+	retreat_distance = 0
+	environment_smash = 0
+
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin/space
 	icon_state = "frontiersmanrangedrifle_mask"
 	atmos_requirements = IMMUNE_ATMOS_REQS
@@ -175,8 +189,16 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered
 	weapon_drop_chance = 0
 
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/neutered
-	weapon_drop_chance = 0
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered/sentry
+	name = "Frontiersman Sentry"
+	desc = "A member of the brutal Frontiersman terrorist fleet! This one waits patiently, their finger on the trigger, as the glint of their scope in the sun catches your eye."
+	vision_range = 14
+	aggro_vision_range = 14
+	minimum_distance = 14
+	stop_automated_movement = 1
+	wander = 0
+	retreat_distance = 0
+	environment_smash = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper
 	name = "Frontiersman Doorkicker"
