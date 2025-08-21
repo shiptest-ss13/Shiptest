@@ -5,7 +5,7 @@
 /obj/item/storage/box/ammo/ferropellet
 	name = "box of ferromagnetic pellets"
 	desc = "A box of ferromagnetic pellets for gauss firearms."
-	icon_state = "herropelletsbox"
+	icon_state = "ferropelletsbox"
 
 /obj/item/storage/box/ammo/ferropellet/PopulateContents()
 	var/static/items_inside = list(
@@ -14,12 +14,12 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/ferropellet/hc
 	ammo_type = /obj/item/ammo_casing/caseless/gauss/hc
-	icon_state = "ferropelletsbox-hc"
+
 
 /obj/item/storage/box/ammo/ferropellet/hc
 	name = "box of high conductivity pellets"
 	desc = "A box of high conductivity pellets for gauss firearms."
-	icon_state = "ferropelletsbox"
+	icon_state = "ferropelletsbox-hc"
 
 /obj/item/storage/box/ammo/ferropellet/hc/PopulateContents()
 	var/static/items_inside = list(
