@@ -575,6 +575,11 @@
 	dir = 1
 	},
 /area/ruin/rockplanet/somme/engineeering)
+"cE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/spent/rifle_brass,
+/turf/open/floor/wood/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "cF" = (
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/structure/platform/wood,
@@ -1686,7 +1691,9 @@
 "hA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/box,
-/obj/machinery/power/port_gen/pacman/super,
+/obj/machinery/power/port_gen/pacman/super{
+	anchored = 1
+	},
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -2991,15 +2998,12 @@
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "ob" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
+/obj/structure/platform/wood{
+	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered/sentry{
-	desc = "A member of the brutal Frontiersman terrorist fleet! This one waits patiently, their finger on the trigger, as the glint of their scope in the sun catches your eye. A pin on their lapel reads 'proudly vegan!'."
-	},
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/item/ammo_casing/spent/rifle_brass,
+/turf/open/floor/wood/rockplanet,
+/area/ruin/rockplanet/somme/trench)
 "og" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt,
@@ -3141,6 +3145,7 @@
 	dir = 8
 	},
 /obj/structure/barricade/sandbags,
+/obj/item/ammo_casing/spent/rifle_brass,
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "oS" = (
@@ -4498,6 +4503,13 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/rockplanet/lit,
+/area/ruin/rockplanet/somme/trench)
+"vF" = (
+/obj/item/ammo_casing/spent/rifle_brass,
+/obj/item/ammo_casing/spent/rifle_brass,
+/turf/open/floor/wood/rockplanet{
+	icon_state = "wood-broken6"
+	},
 /area/ruin/rockplanet/somme/trench)
 "vN" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -6607,6 +6619,8 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
+/obj/item/ammo_casing/spent/rifle_brass,
+/obj/item/ammo_casing/spent/rifle_brass,
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "Gl" = (
@@ -6667,6 +6681,7 @@
 	},
 /obj/structure/platform/wood/corner,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/spent/rifle_brass,
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/trench)
 "GB" = (
@@ -7016,6 +7031,7 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered/sentry,
 /turf/open/floor/concrete/slab_1/rockplanet/lit,
 /area/ruin/rockplanet/somme/trench)
 "It" = (
@@ -7292,6 +7308,14 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/somme/landing)
+"JH" = (
+/obj/structure/platform/wood{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered/sentry,
+/turf/open/floor/concrete/slab_1/rockplanet/lit,
+/area/ruin/rockplanet/somme/trench)
 "JJ" = (
 /obj/structure/platform/wood,
 /turf/open/floor/wood/rockplanet{
@@ -8649,6 +8673,14 @@
 /turf/open/floor/wood/rockplanet{
 	icon_state = "wood-broken2"
 	},
+/area/ruin/rockplanet/somme/trench)
+"Qg" = (
+/obj/structure/platform/wood,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered{
+	environment_smash = 0
+	},
+/turf/open/floor/concrete/slab_1/rockplanet/lit,
 /area/ruin/rockplanet/somme/trench)
 "Qh" = (
 /obj/effect/decal/cleanable/dirt,
@@ -11848,7 +11880,7 @@ Dq
 RY
 eR
 qj
-AB
+Qg
 aB
 BK
 BK
@@ -12875,7 +12907,7 @@ mo
 Nf
 xO
 OT
-ob
+aB
 BK
 BK
 BK
@@ -13019,7 +13051,7 @@ BK
 BK
 BK
 Ne
-js
+JH
 Oo
 QC
 ZW
@@ -13296,7 +13328,7 @@ gc
 BK
 QM
 ST
-Xl
+VE
 Zk
 Hl
 ao
@@ -14458,7 +14490,7 @@ vp
 hi
 hl
 QN
-hi
+ob
 Vn
 QF
 Kl
@@ -14513,8 +14545,8 @@ FA
 yf
 vu
 VE
-xO
-Qp
+cE
+vF
 Vu
 xO
 sm
