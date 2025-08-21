@@ -386,6 +386,10 @@
 	name = "Long Bun"
 	icon_state = "hair_longbun"
 
+/datum/sprite_accessory/hair/halfbun
+	name = "Long Bun (Half)"
+	icon_state = "hair_longerbun"
+
 /datum/sprite_accessory/hair/longbangs
 	name = "Long Bangs"
 	icon_state = "hair_lbangs"
@@ -718,6 +722,10 @@
 /datum/sprite_accessory/hair/twintails
 	name = "Twintails"
 	icon_state = "hair_twintail"
+
+/datum/sprite_accessory/hair/twintailslong
+	name = "Twintails (Long)"
+	icon_state = "hair_twintaillong"
 
 /datum/sprite_accessory/hair/ruby
 	name = "Ruby"
