@@ -46,8 +46,8 @@
 
 	sound_active_inside = /datum/looping_sound/weather/rain/indoors
 	sound_active_outside = /datum/looping_sound/weather/rain
-	sound_weak_inside = /datum/looping_sound/weather/rain/indoors
-	sound_weak_outside = /datum/looping_sound/weather/rain
+	sound_weak_inside = /datum/looping_sound/weather/rain/weak/indoors
+	sound_weak_outside = /datum/looping_sound/weather/rain/weak
 
 	fire_suppression = 8
 	thunder_chance = 2
@@ -100,8 +100,8 @@
 
 	sound_active_inside = /datum/looping_sound/weather/rain/indoors
 	sound_active_outside = /datum/looping_sound/weather/rain
-	sound_weak_inside = /datum/looping_sound/weather/rain/indoors
-	sound_weak_outside = /datum/looping_sound/weather/rain
+	sound_weak_inside = /datum/looping_sound/weather/rain/weak/indoors
+	sound_weak_outside = /datum/looping_sound/weather/rain/weak
 
 	var/toxic_power = 2
 
@@ -177,8 +177,8 @@
 
 	sound_active_inside = /datum/looping_sound/weather/rain/indoors
 	sound_active_outside = /datum/looping_sound/weather/rain
-	sound_weak_inside = /datum/looping_sound/weather/rain/indoors
-	sound_weak_outside = /datum/looping_sound/weather/rain
+	sound_weak_inside = /datum/looping_sound/weather/rain/weak/indoors
+	sound_weak_outside = /datum/looping_sound/weather/rain/weak
 
 	thunder_chance = 10
 
@@ -214,5 +214,5 @@
 
 	sound_active_inside = /datum/looping_sound/weather/rain/storm/indoors
 	sound_active_outside = /datum/looping_sound/weather/rain/storm
-	sound_weak_inside = /datum/looping_sound/weather/rain/storm/indoors
-	sound_weak_outside = /datum/looping_sound/weather/rain/storm
+	sound_weak_inside = /datum/looping_sound/weather/rain/weak/indoors
+	sound_weak_outside = /datum/looping_sound/weather/rain/weak

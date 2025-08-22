@@ -9,11 +9,11 @@
 		'sound/weather/ashstorm/outside/active_mid_07.ogg'=1,
 		'sound/weather/ashstorm/outside/active_mid_08.ogg'=1
 		)
-	mid_length = 0.85 SECONDS
+	mid_length = 0.8 SECONDS
 	start_sound = 'sound/weather/ashstorm/outside/active_start.ogg'
-	start_length = 12 SECONDS
+	start_length = 6 SECONDS
 	end_sound = 'sound/weather/ashstorm/outside/active_end.ogg'
-	volume = 45
+	volume = 40
 
 /datum/looping_sound/active_inside_ashstorm
 	mid_sounds = list(
@@ -95,10 +95,9 @@
 		'sound/weather/rain/rain_mid_06.ogg' = 1
 		)
 	mid_length = 0.75 SECONDS
-	start_sound = 'sound/weather/rain/rain_start.ogg'
-	start_length = 13 SECONDS
 	end_sound = 'sound/weather/rain/rain_end.ogg'
 	volume = 50
+	start_length = null
 
 /datum/looping_sound/weather/rain/indoors
 	volume = 30
@@ -109,6 +108,29 @@
 		'sound/weather/rain/rain_inside_mid_04.ogg' = 1,
 		'sound/weather/rain/rain_inside_mid_05.ogg' = 1,
 		'sound/weather/rain/rain_inside_mid_06.ogg' = 1
+		)
+	start_sound = 'sound/weather/rain/rain_indoors_start.ogg'
+	end_sound = 'sound/weather/rain/rain_indoors_end.ogg'
+
+/datum/looping_sound/weather/rain/weak
+	mid_sounds = list(
+		'sound/weather/rain/rain_weak_mid_01.ogg' = 1,
+		'sound/weather/rain/rain_weak_mid_02.ogg' = 1,
+		'sound/weather/rain/rain_weak_mid_03.ogg' = 1,
+		'sound/weather/rain/rain_weak_mid_04.ogg' = 1,
+		'sound/weather/rain/rain_weak_mid_05.ogg' = 1
+		)
+	start_sound = 'sound/weather/rain/rain_start.ogg'
+	start_length = 12 SECONDS
+	volume = 40
+
+/datum/looping_sound/weather/rain/weak/indoors
+	mid_sounds = list(
+		'sound/weather/rain/rain_weak_inside_mid_01.ogg' = 1,
+		'sound/weather/rain/rain_weak_inside_mid_02.ogg' = 1,
+		'sound/weather/rain/rain_weak_inside_mid_03.ogg' = 1,
+		'sound/weather/rain/rain_weak_inside_mid_04.ogg' = 1,
+		'sound/weather/rain/rain_weak_inside_mid_05.ogg' = 1
 		)
 	start_sound = 'sound/weather/rain/rain_indoors_start.ogg'
 	end_sound = 'sound/weather/rain/rain_indoors_end.ogg'
