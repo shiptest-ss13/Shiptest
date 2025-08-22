@@ -179,7 +179,7 @@
 /datum/blackmarket_item/ammo/military_etherbor_cell
 	name = "military-grade Etherbor cell"
 	desc = "A military-grade Etherbor weapon cell. A surefire upgrade to the ones on the civilian market. Lime flavor!"
-	item = /obj/item/stock_parts/cell/gun/solgov
+	item = /obj/item/stock_parts/cell/gun/pgf
 
 	cost_min = 800
 	cost_max = 1200
