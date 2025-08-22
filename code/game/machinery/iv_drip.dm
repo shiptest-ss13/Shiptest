@@ -99,8 +99,21 @@
 			return
 		if(!user.transferItemToLoc(W, src))
 			return
+
+		var/obj/item/reagent_containers/blood/bloodbag = W
+		if (istype(bloodbag) && bloodbag.cut && bloodbag.reagents.total_volume)
+			var/floor = get_turf(src)
+			bloodbag.reagents.expose(get_turf(src), TOUCH)
+			bloodbag.reagents.clear_reagents()
+			bloodbag.forceMove(floor)
+			playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
+
+			visible_message(span_warning("[W] falls from [src] and splashes it's content onto [floor]!"))
+			return
+
 		beaker = W
 		to_chat(user, span_notice("You attach [W] to [src]."))
+
 		user.log_message("attached a [W] to [src] at [AREACOORD(src)] containing ([beaker.reagents.log_list()])", LOG_ATTACK)
 		add_fingerprint(user)
 		update_appearance()

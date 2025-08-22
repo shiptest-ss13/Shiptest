@@ -113,6 +113,10 @@
 			reagents.expose(target, TOUCH)
 			reagents.clear_reagents()
 			playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
+
+		else if(user.a_intent == INTENT_DISARM)
+			attempt_pour(target, user)
+
 		else if(target.is_refillable()) //Something like a glass. Player probably wants to transfer TO it.
 			if(!reagents.total_volume)
 				to_chat(user, span_warning("[src] is empty!"))
@@ -125,5 +129,3 @@
 			var/trans = reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
 			to_chat(user, span_notice("You transfer [trans] unit\s of the solution to [target]."))
 			playsound(src, 'sound/items/glass_transfer.ogg', 50, 1)
-		else
-			attempt_pour(target, user)
