@@ -2345,7 +2345,9 @@
 "kp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood,
-/obj/machinery/atmospherics/components/unary/tank/air,
+/obj/machinery/atmospherics/components/unary/tank/air{
+	dir = 4
+	},
 /turf/open/floor/concrete/slab_1/rockplanet,
 /area/ruin/rockplanet/somme/engineeering)
 "kr" = (
@@ -5749,7 +5751,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood,
 /obj/item/ammo_casing/spent/slug/buck,
-/obj/machinery/atmospherics/pipe/layer_manifold{
+/obj/machinery/atmospherics/pipe/layer_manifold/visible{
 	dir = 4
 	},
 /turf/open/floor/concrete/slab_1/rockplanet,
@@ -7569,10 +7571,10 @@
 /area/ruin/rockplanet/somme/seclock)
 "La" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax/frontiersmen,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6
 	},
+/obj/machinery/fax/ruin,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/somme/armory)
 "Lc" = (
@@ -9714,6 +9716,7 @@
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 10
 	},
+/obj/structure/closet/crate,
 /obj/item/storage/fancy/cigarettes/cigpack_uplift{
 	pixel_x = 6;
 	pixel_y = 8
@@ -9740,7 +9743,6 @@
 	pixel_x = 5
 	},
 /obj/effect/mapping_helpers/crate_shelve,
-/obj/structure/closet/crate,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/somme/landing)
 "Vu" = (
@@ -9788,7 +9790,7 @@
 "VI" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/binary/pump/layer4{
+/obj/machinery/atmospherics/components/binary/pump/on/layer4{
 	dir = 4
 	},
 /turf/open/floor/concrete/slab_1/rockplanet,
