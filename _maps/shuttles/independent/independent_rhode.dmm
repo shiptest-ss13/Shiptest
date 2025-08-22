@@ -173,7 +173,6 @@
 	populate = 0;
 	name = "salvager's locker"
 	},
-/obj/item/storage/belt/utility,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/toolbox/electrical,
 /obj/item/clothing/glasses/welding,
@@ -182,6 +181,7 @@
 /obj/item/clothing/under/rank/engineering/engineer/hazard,
 /obj/item/clothing/suit/hazardvest,
 /obj/item/clothing/shoes/workboots,
+/obj/item/storage/belt/utility/full/engi,
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "dg" = (
@@ -1264,7 +1264,6 @@
 	populate = 0;
 	name = "salvager's locker"
 	},
-/obj/item/storage/belt/utility,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/toolbox/electrical,
 /obj/machinery/light/small/directional/north,
@@ -1274,6 +1273,7 @@
 /obj/item/clothing/under/rank/engineering/engineer/hazard,
 /obj/item/clothing/suit/hazardvest,
 /obj/item/clothing/shoes/workboots,
+/obj/item/storage/belt/utility/full/engi,
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "Cq" = (
@@ -1387,7 +1387,7 @@
 /area/ship/bridge)
 "En" = (
 /obj/structure/table,
-/obj/item/reagent_containers/food/snacks/grilledcheese{
+/obj/item/food/grilled_cheese_sandwich{
 	pixel_x = 2;
 	pixel_y = 12
 	},
@@ -1879,14 +1879,14 @@
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
-/obj/item/reagent_containers/food/snacks/canned/beans,
-/obj/item/reagent_containers/food/snacks/canned/beans,
-/obj/item/reagent_containers/food/snacks/canned/beans,
-/obj/item/reagent_containers/food/snacks/canned/beans,
-/obj/item/reagent_containers/food/snacks/canned/beans,
-/obj/item/reagent_containers/food/snacks/canned/beans,
-/obj/item/reagent_containers/food/snacks/canned/beans,
-/obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/food/canned/beans,
+/obj/item/food/canned/beans,
+/obj/item/food/canned/beans,
+/obj/item/food/canned/beans,
+/obj/item/food/canned/beans,
+/obj/item/food/canned/beans,
+/obj/item/food/canned/beans,
+/obj/item/food/canned/beans,
 /obj/item/reagent_containers/food/drinks/waterbottle,
 /obj/item/reagent_containers/food/drinks/waterbottle,
 /obj/item/reagent_containers/food/drinks/waterbottle,

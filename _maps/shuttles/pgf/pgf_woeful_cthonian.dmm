@@ -142,13 +142,13 @@
 "bQ" = (
 /obj/structure/table,
 /obj/machinery/light/directional/south,
-/obj/item/reagent_containers/food/drinks/mug/tea{
-	pixel_y = 3;
-	pixel_x = 7
+/obj/item/food/toastedsandwich{
+	pixel_y = 8;
+	pixel_x = -3
 	},
-/obj/item/reagent_containers/food/snacks/friedegg{
-	pixel_y = -1;
-	pixel_x = -5
+/obj/item/reagent_containers/food/drinks/mug/tea{
+	pixel_y = 11;
+	pixel_x = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
@@ -468,6 +468,14 @@
 	pixel_x = -9;
 	pixel_y = 3
 	},
+/obj/item/bodycamera{
+	pixel_y = -10;
+	pixel_x = -12
+	},
+/obj/item/bodycamera{
+	pixel_y = -10;
+	pixel_x = -5
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "ex" = (
@@ -722,6 +730,7 @@
 	pixel_y = -12;
 	pixel_x = 20
 	},
+/obj/machinery/computer/cryopod/directional/north,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/cryo)
 "gy" = (
@@ -3923,10 +3932,6 @@
 	pixel_y = 4;
 	pixel_x = 3
 	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_y = 4;
-	pixel_x = 3
-	},
 /obj/item/reagent_containers/condiment/bbqsauce{
 	pixel_x = 6;
 	pixel_y = -5
@@ -3937,6 +3942,11 @@
 	},
 /obj/effect/turf_decal/corner/opaque/green/bordercorner,
 /obj/structure/extinguisher_cabinet/directional/north,
+/obj/item/storage/fancy/egg_box,
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = 3;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/ccommons)
 "SB" = (

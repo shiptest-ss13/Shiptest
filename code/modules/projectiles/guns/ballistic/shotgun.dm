@@ -11,7 +11,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	force = 10
 	flags_1 =  CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot,
@@ -46,6 +46,47 @@
 
 	min_recoil = 0.1
 	wear_rate = 0
+
+	//in an ideal world this would be a component but I don't wanna untangle all the sleeps doors pull
+	///can this shotgun breach doors
+	var/door_breaching_weapon = TRUE
+
+/obj/item/gun/ballistic/shotgun/attack_obj(obj/O, mob/living/user)
+	if(door_breaching_weapon && istype(O, /obj/machinery/door/airlock))
+		var/obj/machinery/door/airlock/breaching = O
+		if(chambered && chambered.BB && !is_type_in_list(chambered, list(/obj/item/ammo_casing/shotgun/blank, /obj/item/ammo_casing/shotgun/beanbag, /obj/item/ammo_casing/shotgun/rubbershot)))
+			user.visible_message(
+				span_warning("[user] put the barrel of [src] to [breaching]'s electronics!"),
+				span_warning("You puts the barrel of [src] to [breaching]'s electronics, preparing to shred them!"),
+				span_warning("Metal brushes against metal")
+			)
+			if(do_after(user, 5 SECONDS, breaching))
+				if(process_fire(breaching, user, FALSE))
+					switch(breaching.security_level)
+						if(0)
+							EMPTY_BLOCK_GUARD
+						if (1) // thin metal plate. blast through it and create debris
+							var/obj/item/debris = new /obj/item/stack/ore/salvage/scrapmetal
+							debris.safe_throw_at(user, 2, 5, null, 1)
+							breaching.security_level = 0
+						if(2 to 6) //two shots to break
+							var/obj/item/debris = new /obj/item/stack/ore/salvage/scrapmetal
+							debris.safe_throw_at(user, 2, 5, null, 1)
+							breaching.security_level -= 3
+							breaching.security_level = max(breaching.security_level, 0)
+							return
+					if(!breaching.open())
+						update_icon(ALL, 1, 1)
+					//im not rewriting the behavior to do exactly what this does with a different name
+					breaching.obj_flags |= EMAGGED
+					breaching.lights = FALSE
+					breaching.locked = TRUE
+					breaching.loseMainPower()
+					breaching.loseBackupPower()
+					return TRUE
+				return FALSE
+			return FALSE
+	. = ..()
 
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	if(chambered && chambered.BB)

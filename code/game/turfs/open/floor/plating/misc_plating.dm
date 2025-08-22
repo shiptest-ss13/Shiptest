@@ -224,8 +224,9 @@
 /turf/open/floor/plating/grass
 	name = "grass"
 	desc = "A patch of grass."
-	icon_state = "grass0"
+	icon_state = "grass-255"
 	base_icon_state = "grass"
+	icon = 'icons/turf/floors/grass.dmi'
 	bullet_bounce_sound = null
 	footstep = FOOTSTEP_GRASS
 	barefootstep = FOOTSTEP_GRASS
@@ -234,6 +235,8 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
+	MAP_SWITCH(pixel_x = 0, pixel_x = -19)
+	MAP_SWITCH(pixel_y = 0, pixel_y = -19)
 	layer = GRASS_TURF_LAYER
 	flammability = 1.5 // just a bit more than enough to sustain itself, needs additional fuel (plants) to really get going
 	var/smooth_icon = 'icons/turf/floors/grass.dmi'
@@ -252,9 +255,6 @@
 	burn_limit--
 	if(burn_limit <= 0)
 		ScrapeAway()
-
-/turf/open/floor/plating/grass/lavaland
-	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 
 /turf/open/floor/plating/sandy_dirt
 	gender = PLURAL

@@ -8,7 +8,7 @@ GLOBAL_LIST_EMPTY(dynamic_human_appearances)
 	if(!ispath(species_path))
 		stack_trace("Attempted to call get_dynamic_human_appearance() with an instantiated species_path. Pass the species datum typepath instead.")
 		return FALSE
-	var/arg_string = "[outfit_path]_[species_path]_[mob_spawn_path]_[l_hand]_[r_hand]_[bloody_slots]"
+	var/arg_string = "[outfit_path]_[species_path]_[mob_spawn_path]_[l_hand]_[r_hand]_[bloody_slots]_[rand(1,5)]"
 	if(GLOB.dynamic_human_appearances[arg_string]) //if already exists in our cache, just return that
 		return GLOB.dynamic_human_appearances[arg_string]
 	var/mob/living/carbon/human/dummy/consistent/dummy = new()
@@ -36,12 +36,10 @@ GLOBAL_LIST_EMPTY(dynamic_human_appearances)
 		if(dummy.is_holding(carried_item))
 			var/datum/component/two_handed/twohanded = carried_item.GetComponent(/datum/component/two_handed)
 			if(twohanded)
-				twohanded.wield(dummy)
-			/*
+				twohanded.wield(dummy, instant = TRUE)
 			var/datum/component/transforming/transforming = carried_item.GetComponent(/datum/component/transforming)
 			if(transforming)
 				transforming.set_active(carried_item)
-			*/
 		if(bloody_slots & carried_item.slot_flags)
 			carried_item.add_mob_blood(dummy)
 	//dummy.update_held_items()

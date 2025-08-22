@@ -160,26 +160,6 @@
 	light_range = 2
 	light_power = 0.2
 
-///biological-ish turfs
-
-/turf/open/floor/plating/grass/wasteplanet
-	icon_state = "junglegrass"
-	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	light_color = COLOR_WASTEPLANET_LIGHT
-
-/turf/open/floor/plating/dirt/old/waste
-	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	light_color = COLOR_WASTEPLANET_LIGHT
-
-/turf/open/floor/plating/grass/wasteplanet/lit
-	light_range = 2
-	light_power = 0.2
-
-/turf/open/floor/plating/dirt/old/waste/lit
-	light_range = 2
-	light_power = 0.2
 
 ///cement turfs
 
@@ -293,7 +273,7 @@
 //closed turfs are a thing
 /turf/closed/wall/r_wall/wasteplanet
 	max_integrity = 800
-	integrity = 800
+	atom_integrity = 800
 	baseturfs = /turf/open/floor/plating/wasteplanet
 	girder_type = /obj/structure/girder/wasteworld
 
@@ -305,7 +285,7 @@
 
 /turf/closed/wall/r_wall/rust/wasteplanet
 	max_integrity = 600
-	integrity = 600
+	atom_integrity = 600
 	baseturfs = /turf/open/floor/plating/wasteplanet/rust
 	girder_type = /obj/structure/girder/wasteworld
 
@@ -316,7 +296,7 @@
 
 /turf/closed/wall/wasteplanet
 	max_integrity = 200
-	integrity = 200
+	atom_integrity = 200
 	baseturfs = /turf/open/floor/plating/wasteplanet
 	girder_type = /obj/structure/girder/wasteworld
 
@@ -327,7 +307,7 @@
 
 /turf/closed/wall/rust/wasteplanet
 	max_integrity = 100
-	integrity = 100
+	atom_integrity = 100
 	baseturfs = /turf/open/floor/plating/wasteplanet/rust
 	girder_type = /obj/structure/girder/wasteworld
 
@@ -338,7 +318,7 @@
 
 /turf/closed/wall/concrete/wasteplanet
 	max_integrity = 200
-	integrity = 200
+	atom_integrity = 200
 	baseturfs = /turf/open/floor/concrete/wasteplanet
 
 /turf/closed/wall/concrete/wasteplanet/Initialize(mapload, inherited_virtual_z)
@@ -348,7 +328,7 @@
 
 /turf/closed/wall/concrete/reinforced/wasteplanet
 	max_integrity = 700
-	integrity = 700
+	atom_integrity = 700
 	baseturfs = /turf/open/floor/concrete/wasteplanet
 
 /turf/closed/wall/concrete/reinforced/wasteplanet/Initialize(mapload, inherited_virtual_z)

@@ -122,7 +122,7 @@
 			if(do_after(user, 2 SECONDS, target = src))
 				glass.use(2)
 				broken = FALSE
-				obj_integrity = max_integrity
+				atom_integrity = max_integrity
 				update_appearance()
 			return TRUE
 	else
@@ -220,7 +220,7 @@
 		ui = new(user, src, "Aquarium", name)
 		ui.open()
 
-/obj/structure/aquarium/obj_break(damage_flag)
+/obj/structure/aquarium/atom_break(damage_flag)
 	. = ..()
 	if(!broken)
 		aquarium_smash()
@@ -257,7 +257,17 @@
 	new /obj/item/fish/angelfish(src)
 	new /obj/item/fish/guppy(src)
 
-/obj/structure/aquarium/prefilled/cirrus/Initialize(mapload)
+/obj/structure/aquarium/outpost/Initialize(mapload)
+	. = ..()
+
+	new /obj/item/aquarium_prop/rocks(src)
+	new /obj/item/aquarium_prop/seaweed(src)
+
+	new /obj/item/fish/goldfish/outpost(src)
+	new /obj/item/fish/angelfish/outpost(src)
+	new /obj/item/fish/guppy/outpost(src)
+
+/obj/structure/aquarium/cirrus/Initialize(mapload)
 	. = ..()
 
 	new /obj/item/aquarium_prop/rocks(src)

@@ -29,6 +29,9 @@
 	var/x_offset = -4
 	var/y_offset = -4
 
+	MAP_SWITCH(pixel_x = 0, pixel_x = -4)
+	MAP_SWITCH(pixel_y = 0, pixel_y = -4)
+
 	attack_hitsound = 'sound/effects/break_stone.ogg'
 	break_sound = 'sound/effects/break_stone.ogg'
 	hitsound_type = PROJECTILE_HITSOUND_STONE
@@ -760,7 +763,7 @@
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 5, /obj/item/stack/ore/diamond = 3,
 		/obj/item/stack/ore/plasma = 10, /obj/item/stack/ore/iron = 45, /obj/item/stack/ore/titanium = 20,
-		/turf/closed/mineral/gibtonite/whitesands = 4, /turf/open/floor/plating/asteroid/whitesands = 2, /obj/item/stack/ore/bluespace_crystal = 4)
+		/turf/open/floor/plating/asteroid/whitesands = 2, /obj/item/stack/ore/bluespace_crystal = 4)
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	defer_change = TRUE
 	has_borders = TRUE

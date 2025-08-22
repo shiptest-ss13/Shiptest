@@ -346,14 +346,15 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 
 /obj/machinery/light/LateInitialize()
 	. = ..()
+	var/area/A = get_area(src.loc)
 	switch(fitting)
 		if("tube")
 			brightness = 8
-			if(prob(2))
+			if(prob(2) && !(A.area_flags & NO_RANDOM_LIGHT_BREAKAGE))
 				break_light_tube(1)
 		if("bulb")
 			brightness = 4
-			if(prob(5))
+			if(prob(5) && !(A.area_flags & NO_RANDOM_LIGHT_BREAKAGE))
 				break_light_tube(1)
 	addtimer(CALLBACK(src, PROC_REF(update), 0), 1)
 
@@ -567,7 +568,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 		newlight.pixel_y = pixel_y
 		newlight.stage = cur_stage
 		if(!disassembled)
-			newlight.obj_integrity = newlight.max_integrity * 0.5
+			newlight.update_integrity(newlight.max_integrity * 0.5)
 			if(status != LIGHT_BROKEN)
 				break_light_tube()
 			if(status != LIGHT_EMPTY)

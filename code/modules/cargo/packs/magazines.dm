@@ -54,13 +54,19 @@
 	cost = 300
 	faction = /datum/faction/srm
 
-/datum/supply_pack/magazine/firestorm_mag
+/datum/supply_pack/magazine/firestorm_pan_mag
 	name = "Firestorm Pan Magazine Crate"
 	desc = "Contains a 40-round pan magazine for the Hunter's Pride Firestorm SMG."
 	contains = list(/obj/item/ammo_box/magazine/c44_firestorm_mag/pan/empty)
 	cost = 1000
 	faction = /datum/faction/srm
 
+/datum/supply_pack/magazine/invictus_mag
+	name = "Invictus Magazine Crate"
+	desc = "Contains a 20-round magazine for the Hunter's Pride Invictus Automatic Rifle."
+	contains = list(/obj/item/ammo_box/magazine/invictus_308_mag)
+	cost = 300
+	faction = /datum/faction/srm
 
 /* Serene Sporting */
 
@@ -263,7 +269,7 @@
 	name = "CM-15 Magazine Crate"
 	desc = "Contains an 8-round 12ga magazine for the CM-15 Automatic Shotgun."
 	contains = list(/obj/item/ammo_box/magazine/cm15_12g/empty)
-	cost = 750
+	cost = 400
 	faction = /datum/faction/clip
 
 /datum/supply_pack/magazine/cm40
@@ -335,14 +341,14 @@
 	name = "Bulldog Box Magazine Crate"
 	desc = "Contains an 8-round 12ga box magazine for the Bulldog weapons platform."
 	contains = list(/obj/item/ammo_box/magazine/m12g_bulldog/empty)
-	cost = 750
+	cost = 400
 	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/bulldog_12
 	name = "Bulldog Drum Magazine Crate"
 	desc = "Contains a 12-round 12ga drum magazine for the Bulldog weapons platform."
 	contains = list(/obj/item/ammo_box/magazine/m12g_bulldog/drum/empty)
-	cost = 1500
+	cost = 1200
 	faction = /datum/faction/syndicate/scarborough
 
 /* energy weapons */

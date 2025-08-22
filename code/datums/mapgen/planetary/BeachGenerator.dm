@@ -108,7 +108,7 @@
 		/mob/living/simple_animal/butterfly = 1,
 		/mob/living/simple_animal/chicken/rabbit = 1,
 		/mob/living/basic/mouse = 1,
-		/mob/living/simple_animal/cow = 1,
+		/mob/living/basic/cow = 1,
 		/mob/living/simple_animal/deer = 1
 	)
 	mob_spawn_chance = 1
@@ -116,7 +116,7 @@
 
 	feature_spawn_chance = 0.8
 	feature_spawn_list = list(
-		/obj/effect/greeble_spawner/grass_patch_spawner/dark = 1,
+		/obj/effect/greeble_spawner/grass_patch_spawner/dark_beach = 1,
 	)
 
 /datum/biome/grass/dense
