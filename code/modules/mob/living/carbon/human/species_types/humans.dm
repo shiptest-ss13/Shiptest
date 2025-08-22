@@ -13,6 +13,15 @@
 	loreblurb = "Mostly hairless mammalians. Their home system, Sol, lies in a sort of \"bluespace dead-zone\" that blocks anything from entering or exiting Sol's dead-zone through bluespace without a relay. While it leaves Sol extremely well-defended, it meant that they went unnoticed and uncontacted until they were themselves able to breach it."
 	species_language_holder = /datum/language_holder/human
 
+	species_robotic_chest = /obj/item/bodypart/chest/robot/human
+	species_robotic_head = /obj/item/bodypart/head/robot/human
+	species_robotic_l_arm = /obj/item/bodypart/l_arm/robot/surplus/human
+	species_robotic_r_arm = /obj/item/bodypart/r_arm/robot/surplus/human
+	species_robotic_l_leg = /obj/item/bodypart/leg/left/robot/surplus/human
+	species_robotic_r_leg = /obj/item/bodypart/leg/right/robot/surplus/human
+
+	robotic_eyes = /obj/item/organ/eyes/robotic
+
 /datum/species/human/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	switch(C.dna.features["ears"])
 		if("Elf")
