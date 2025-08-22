@@ -113,7 +113,6 @@
 
 		beaker = W
 		to_chat(user, span_notice("You attach [W] to [src]."))
-
 		user.log_message("attached a [W] to [src] at [AREACOORD(src)] containing ([beaker.reagents.log_list()])", LOG_ATTACK)
 		add_fingerprint(user)
 		update_appearance()
