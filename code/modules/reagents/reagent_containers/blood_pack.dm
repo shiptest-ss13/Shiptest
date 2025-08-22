@@ -91,7 +91,7 @@
 			labelled = 0
 			update_name()
 
-	if (!cut && I.get_sharpness() == SHARP_POINTY )
+	if (!cut && I.get_sharpness() == SHARP_POINTY)
 		visible_message(span_warning("[user], begins to slice to slice \the [name],"), span_notice("You begin the slice \the [name]."), vision_distance=COMBAT_MESSAGE_RANGE)
 		if (do_after(user, 3 SECONDS, src))
 			to_chat(user, span_notice("You cut \the [name] open."))
