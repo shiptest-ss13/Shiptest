@@ -3,10 +3,13 @@
 	desc = "Contains blood used for transfusion. Must be attached to an IV drip."
 	icon = 'icons/obj/bloodpack.dmi'
 	icon_state = "bloodpack"
+	possible_transfer_amounts = list(5,10,15,20,25,30,50,100,200)
 	volume = 200
+	reagent_flags = DRAWABLE
 	var/datum/blood_type/blood_type = null
 	var/unique_blood = null
 	var/labelled = 0
+	var/cut = FALSE
 	fill_icon_thresholds = list(10, 20, 30, 40, 50, 60, 70, 80, 90, 100)
 
 /obj/item/reagent_containers/blood/Initialize()
@@ -29,9 +32,9 @@
 	. = ..()
 	if(!labelled)
 		if(blood_type)
-			name = "blood pack[blood_type ? " - [unique_blood ? blood_type : blood_type.name]" : null]"
+			name = "[cut ? "cut " : null]blood pack[blood_type ? " - [unique_blood ? blood_type : blood_type.name]" : null]"
 		else
-			name = "blood pack"
+			name = "[cut ? "cut " : null]blood pack"
 
 /obj/item/reagent_containers/blood/random
 	icon_state = "random_bloodpack"
@@ -83,9 +86,44 @@
 			return
 		if(t)
 			labelled = 1
-			name = "blood pack - [t]"
+			name = "[cut ? "cut " : null]blood pack - [t]"
 		else
 			labelled = 0
 			update_name()
+
+	if (!cut && I.get_sharpness() == SHARP_POINTY )
+		visible_message(span_warning("[user], begins to slice to slice \the [name],"), span_notice("You begin the slice \the [name]."), vision_distance=COMBAT_MESSAGE_RANGE)
+		if (do_after(user, 3 SECONDS, src))
+			to_chat(user, span_notice("You cut \the [name] open."))
+			cut = TRUE
+			reagent_flags |= DRAINABLE
+			reagents.flags = reagent_flags
+			desc = "Contains blood used for transfusion. It's cut open."
+			update_name()
+			update_desc()
 	else
 		return ..()
+
+/obj/item/reagent_containers/blood/afterattack(obj/target, mob/user, proximity)
+	. = ..()
+	if(cut && reagents.total_volume)
+		if(user.a_intent == INTENT_HARM)
+			user.visible_message(span_danger("[user] splashes the contents of [src] onto [target]!"), \
+								span_notice("You splash the contents of [src] onto [target]."))
+			reagents.expose(target, TOUCH)
+			reagents.clear_reagents()
+			playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
+		else if(target.is_refillable()) //Something like a glass. Player probably wants to transfer TO it.
+			if(!reagents.total_volume)
+				to_chat(user, span_warning("[src] is empty!"))
+				return
+
+			if(target.reagents.holder_full())
+				to_chat(user, span_warning("[target] is full."))
+				return
+
+			var/trans = reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
+			to_chat(user, span_notice("You transfer [trans] unit\s of the solution to [target]."))
+			playsound(src, 'sound/items/glass_transfer.ogg', 50, 1)
+		else
+			attempt_pour(target, user)
