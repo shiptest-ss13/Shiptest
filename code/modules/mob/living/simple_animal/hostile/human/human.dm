@@ -73,6 +73,8 @@
 
 /mob/living/simple_animal/hostile/human/drop_loot()
 	. = ..()
+	if(QDELING(src))
+		return
 	if(!human_loot)
 		return
 	if(mob_spawner)
