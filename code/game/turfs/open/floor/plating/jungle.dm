@@ -76,9 +76,59 @@
 	light_color = COLOR_JUNGLEPLANET_LIGHT
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 
+/turf/open/floor/carpet/green/jungleplanet
+	planetary_atmos = TRUE
+	light_color = COLOR_JUNGLEPLANET_LIGHT
+
 /turf/open/floor/plasteel/mono/dark/jungleplanet/lit
 	light_range = 2
 	light_power = 1
+
+/turf/open/floor/wood/jungleplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/wood/maple/jungleplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/wood/ebony/jungleplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/wood/ebony/jungleplanet/lit
+	light_range = 2
+	light_power = 1
+	light_color = COLOR_JUNGLEPLANET_LIGHT
+
+/turf/open/floor/plasteel/stairs/wood/jungleplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/stairs/wood/jungleplanet/lit
+	light_range = 2
+	light_power = 1
+	light_color = COLOR_JUNGLEPLANET_LIGHT
+
+/turf/open/floor/wood/mahogany/jungleplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/carpet/jungleplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/carpet/royalblack/jungleplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/carpet/black/jungleplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/carpet/red/jungleplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 
 //cementcrete
 
@@ -108,3 +158,28 @@
 /turf/open/floor/concrete/reinforced/jungleplanet/lit
 	light_range = 2
 	light_power = 1
+
+/turf/open/floor/concrete/pavement/jungleplanet
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/pavement/jungleplanet/lit
+	light_range = 2
+	light_power = 1
+	light_color = COLOR_JUNGLEPLANET_LIGHT
+
+/turf/open/floor/concrete/tiles/jungleplanet
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/tiles/jungleplanet/lit
+	light_range = 2
+	light_power = 1
+	light_color = COLOR_JUNGLEPLANET_LIGHT
+
+/turf/open/floor/engine/hull/interior
+	planetary_atmos = TRUE
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/engine/hull/interior/lit
+	light_range = 2
+	light_power = 1
+	light_color = COLOR_JUNGLEPLANET_LIGHT

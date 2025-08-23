@@ -1,0 +1,82 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/structure/elevator_platform,
+/turf/template_noop,
+/area/template_noop)
+"c" = (
+/obj/structure/elevator_platform,
+/obj/machinery/status_display/elevator{
+	pixel_x = 32
+	},
+/obj/structure/crate_shelf{
+	capacity = 2
+	},
+/turf/template_noop,
+/area/template_noop)
+"e" = (
+/obj/structure/elevator_platform,
+/obj/structure/table,
+/obj/item/radio/intercom/table{
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/turf/template_noop,
+/area/template_noop)
+"B" = (
+/obj/structure/elevator_platform,
+/obj/machinery/elevator_floor_button{
+	pixel_y = 0;
+	dir = 8;
+	pixel_x = 19
+	},
+/obj/structure/chair/bench/blue/directional/west,
+/turf/template_noop,
+/area/template_noop)
+"L" = (
+/obj/structure/elevator_platform,
+/obj/machinery/light/small/directional/east,
+/obj/structure/chair/bench/blue/directional/west,
+/turf/template_noop,
+/area/template_noop)
+"M" = (
+/obj/structure/elevator_platform,
+/obj/machinery/light/small/directional/west,
+/turf/template_noop,
+/area/template_noop)
+
+(1,1,1) = {"
+M
+a
+a
+a
+M
+"}
+(2,1,1) = {"
+a
+a
+a
+a
+a
+"}
+(3,1,1) = {"
+a
+a
+e
+a
+a
+"}
+(4,1,1) = {"
+a
+a
+a
+a
+a
+"}
+(5,1,1) = {"
+c
+L
+B
+L
+c
+"}

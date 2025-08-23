@@ -62,7 +62,7 @@
 
 /datum/supply_pack/gun/cm23
 	name = "CM-23 Pistol Crate"
-	desc = "Contains a 10x22mm CM-23 Pistol, standard issue of the Colonial Minutemen."
+	desc = "Contains a 10x22mm CM-23 Pistol, standard issue of the Confederated Minutemen."
 	cost = 1000
 	contains = list(/obj/item/storage/guncase/pistol/cm23)
 	faction = /datum/faction/clip
@@ -71,7 +71,7 @@
 
 /datum/supply_pack/gun/cm70
 	name = "CM-70 Machinepistol Crate"
-	desc = "Contains a 9x18mm machinepistol produced proudly within Lanchester City. Colonial Minuteman issue only."
+	desc = "Contains a 9x18mm machinepistol produced proudly within Lanchester City. Confederated Minuteman issue only."
 	cost = 2500
 	contains = list(/obj/item/storage/guncase/pistol/cm70)
 	faction = /datum/faction/clip
@@ -361,7 +361,7 @@
 
 /datum/supply_pack/gun/cm15
 	name = "CM-15 Shotgun Crate"
-	desc = "A combat shotgun produced by Lanchester Arms Co. for the Colonial Minuteman and CLIP-BARD for use in CQC operations. Chambered in 12ga and equipped with 8-round box magazines."
+	desc = "A combat shotgun produced by Lanchester Arms Co. for the Confederated Minutemen and CLIP-BARD for use in CQC operations. Chambered in 12ga and equipped with 8-round box magazines."
 	contains = list(/obj/item/storage/guncase/cm15)
 	cost = 4000
 	crate_name = "shotgun crate"
@@ -493,7 +493,7 @@
 
 /datum/supply_pack/gun/cm5
 	name = "CM-5 SMG Crate"
-	desc = "Contains a CM-5 automatic SMG, produced proudly within Lanchester City. Colonial Minuteman issue only."
+	desc = "Contains a CM-5 automatic SMG, produced proudly within Lanchester City. Confederated Minutemen issue only."
 	cost = 2500
 	contains = list(/obj/item/storage/guncase/cm5)
 	crate_name = "SMG crate"
@@ -611,7 +611,7 @@
 
 /datum/supply_pack/gun/cm82
 	name = "CM-82 Standard Issue Rifle"
-	desc = "Contains a high-powered rifle chambered in 5.56 CLIP, standard issue of the Colonial Minutemen."
+	desc = "Contains a high-powered rifle chambered in 5.56 CLIP, standard issue of the Confederated Minutemen."
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/cm82)
 	crate_name = "rifle crate"
@@ -665,7 +665,7 @@
 
 /datum/supply_pack/gun/cmf4
 	name = "CM-F4 Designated Marksman Rifle"
-	desc = "Contains a high-powered marksman rifle chambered in .308. For Colonial Minuteman issue only."
+	desc = "Contains a high-powered marksman rifle chambered in .308. For Confederated Minutemen issue only."
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/cmf4)
 	crate_name = "dmr crate"
@@ -761,10 +761,20 @@
 /datum/supply_pack/gun/f90
 	name = "CM-F90 Sniper Rifle Crate"
 	desc = "Contains a military sniper rifle equipped with an 8x sniper scope, for Minuteman use only. Chambered in the powerful 6.5mm CLIP cartridge."
-	cost = 4500
+	cost = 4000
 	contains = list(/obj/item/storage/guncase/cmf90)
 	crate_name = "marksman rifle crate"
 	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/saluki
+	name = "SSG-08 Saluki Sniper Rifle Crate"
+	desc = "Contains a military sniper rifle equipped with an 8x sniper scope, fitted by the Inteq Artificer Division. Chambered in the powerful 6.5mm CLIP cartridge."
+	cost = 4000
+	contains = list(/obj/item/storage/guncase/saluki)
+	crate_name = "marksman rifle crate"
+	faction = /datum/faction/inteq
 	faction_discount = 0
 	faction_locked = TRUE
 
