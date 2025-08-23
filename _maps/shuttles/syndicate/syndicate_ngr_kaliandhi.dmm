@@ -1814,12 +1814,6 @@
 /obj/effect/turf_decal/techfloor{
 	layer = 2.04
 	},
-/obj/machinery/button/door{
-	id = "karst_dock_blast";
-	pixel_x = -7;
-	pixel_y = 21;
-	name = "Shuttle Dock Inner Door"
-	},
 /obj/machinery/button/shieldwallgen{
 	pixel_x = 3;
 	pixel_y = 20;
@@ -1828,6 +1822,12 @@
 	},
 /obj/structure/guncloset{
 	req_access = list(58)
+	},
+/obj/machinery/button/door{
+	id = "karst_dock_blast";
+	pixel_x = -7;
+	pixel_y = 21;
+	name = "Shuttle Dock Inner Door"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -3172,19 +3172,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
-"rl" = (
-/obj/machinery/shower{
-	pixel_x = 0;
-	pixel_y = 15
-	},
-/obj/effect/turf_decal/steeldecal/steel_decals10{
-	dir = 10
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/ship/crew/toilet)
 "rm" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/toilet)
@@ -4410,9 +4397,6 @@
 /obj/machinery/autolathe/hacked,
 /obj/effect/turf_decal/industrial/outline{
 	color = "#791500"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
@@ -6647,6 +6631,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hangar)
 "JU" = (
@@ -6946,9 +6931,6 @@
 "Mh" = (
 /obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -8762,6 +8744,19 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
+"UO" = (
+/obj/machinery/shower{
+	pixel_x = 0;
+	pixel_y = 15
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals10{
+	dir = 10
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/ship/crew/toilet)
 "UT" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/beer{
@@ -8946,9 +8941,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/airalarm/directional/north,
 /obj/machinery/door/firedoor/heavy,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/button/door{
+	id = "karst_dock_blast";
+	pixel_x = -7;
+	pixel_y = 21;
+	name = "Shuttle Dock Inner Door"
+	},
 /turf/open/floor/plating,
 /area/ship/hangar)
 "VK" = (
@@ -10768,7 +10768,7 @@ Ey
 vq
 Fp
 rm
-rl
+UO
 Zk
 uN
 QU
@@ -10799,7 +10799,7 @@ gv
 gv
 gv
 rm
-rl
+UO
 yI
 KM
 rm

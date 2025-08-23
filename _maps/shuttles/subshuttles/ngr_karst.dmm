@@ -165,7 +165,8 @@
 	pixel_y = 24;
 	id = "karstgrid";
 	pixel_x = 0;
-	name = "Karst TCP"
+	name = "Karst TCP";
+	req_access = list(1)
 	},
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
@@ -216,10 +217,6 @@
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
 	},
-/obj/structure/closet/wall/red/directional/south{
-	name = "Pilot's Locker";
-	req_access = list(1)
-	},
 /obj/item/clothing/under/syndicate/ngr/fatigues,
 /obj/item/clothing/head/helmet/ngr/swat,
 /obj/item/radio/headset/syndicate/alt,
@@ -227,6 +224,10 @@
 /obj/item/clothing/gloves/fingerless{
 	desc = "These make you feel like a better pilot than you are.";
 	name = "pilot's driving gloves"
+	},
+/obj/structure/closet/wall/red/directional/south{
+	name = "Pilot's Locker";
+	req_access = list(1)
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
