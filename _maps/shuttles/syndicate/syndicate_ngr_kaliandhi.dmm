@@ -221,8 +221,7 @@
 	},
 /obj/machinery/door/airlock/hatch{
 	dir = 1;
-	name = "Briefing Room";
-	req_access = list(1)
+	name = "Briefing Room"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
@@ -1959,9 +1958,6 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
 	},
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "ke" = (
@@ -3176,19 +3172,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
-"rl" = (
-/obj/machinery/shower{
-	pixel_x = 0;
-	pixel_y = 15
-	},
-/obj/effect/turf_decal/steeldecal/steel_decals10{
-	dir = 10
-	},
-/obj/structure/window/reinforced/tinted{
-	dir = 8
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/ship/crew/toilet)
 "rm" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/toilet)
@@ -3660,7 +3643,6 @@
 	},
 /obj/machinery/door/airlock/hatch{
 	name = "Crew Quarters";
-	req_ship_access = 0;
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -8375,9 +8357,6 @@
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 10
 	},
-/obj/structure/window/reinforced/tinted{
-	dir = 8
-	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
 "Sg" = (
@@ -8402,8 +8381,7 @@
 	},
 /obj/machinery/door/airlock/hatch{
 	dir = 8;
-	name = "Canteen";
-	req_ship_access = 0
+	name = "Canteen"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -8795,11 +8773,11 @@
 	pixel_x = 0;
 	pixel_y = 15
 	},
-/obj/structure/window/reinforced/tinted{
-	dir = 8
-	},
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 10
+	},
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
@@ -9299,8 +9277,7 @@
 	},
 /obj/machinery/door/airlock/hatch{
 	dir = 8;
-	name = "Briefing Room";
-	req_access = list(1)
+	name = "Briefing Room"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew)
@@ -10844,7 +10821,7 @@ gv
 gv
 gv
 rm
-rl
+UO
 yI
 KM
 rm
