@@ -307,6 +307,22 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
 
+/obj/effect/mob_spawn/animal_corpse
+	name = "animal corpse spawner"
+	mob_type = /mob/living/basic/mouse
+	death = TRUE
+	icon = 'icons/mob/lavaland/lavaland_monsters_wide.dmi'
+	icon_state = "goliath_dead_helper"
+
+/obj/effect/mob_spawn/animal_corpse/goliath
+	name = "dead goliath"
+	mob_type = /mob/living/simple_animal/hostile/asteroid/goliath/beast
+
+/obj/effect/mob_spawn/animal_corpse/wolf
+	name = "dead wolf"
+	mob_type = /mob/living/simple_animal/hostile/asteroid/wolf
+
+
 // I'll work on making a list of corpses people request for maps, or that I think will be commonly used. Syndicate operatives for example.
 
 ///////////Civilians//////////////////////

@@ -14,6 +14,8 @@
 		var/datum/map_template/shuttle/ship = SSmapping.shuttle_templates[shipname]
 		if(!ship.faction)
 			continue
+		if(ship.category == "subshuttles")
+			continue
 
 		LAZYADDASSOCLIST(factions[ship.faction.parent_faction], ship.faction.type, ship)
 
