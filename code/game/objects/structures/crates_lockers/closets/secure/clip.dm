@@ -96,11 +96,15 @@
 	new /obj/item/clothing/under/clip/minutemen(src)
 	new /obj/item/clothing/shoes/workboots(src)
 	new /obj/item/storage/belt/utility/full/engi(src)
+	new /obj/item/clothing/gloves/color/yellow(src)
+	new /obj/item/clothing/gloves/color/yellow(src)
 	new /obj/item/clothing/suit/hazardvest(src)
 	new /obj/item/storage/backpack/satchel/eng(src)
 	new /obj/item/clothing/head/clip(src)
 	new /obj/item/clothing/head/hardhat/dblue(src)
-	new /obj/item/clothing/head/hardhat/dblue(src)
+	new /obj/item/clothing/glasses/welding(src)
+	new /obj/item/storage/box/emptysandbags(src)
+	new /obj/item/shovel(src)
 	new /obj/item/holosign_creator/engineering(src)
 
 /obj/structure/closet/secure_closet/clip/minutemen/correspondent
