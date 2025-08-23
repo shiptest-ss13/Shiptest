@@ -7,6 +7,9 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/external/dark)
 "ad" = (
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "ah" = (
@@ -1445,9 +1448,6 @@
 "ia" = (
 /obj/structure/platform/industrial{
 	dir = 3
-	},
-/obj/machinery/camera/autoname{
-	dir = 6
 	},
 /turf/open/floor/plasteel/stairs/mid{
 	dir = 8;
@@ -7278,28 +7278,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
-"NG" = (
-/obj/item/storage/backpack,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/under/syndicate/ngr,
-/obj/item/clothing/suit/hooded/wintercoat/security/ngr,
-/obj/item/clothing/gloves/color/black,
-/obj/item/clothing/mask/balaclava/ngr,
-/obj/item/clothing/mask/breath/ngr,
-/obj/item/clothing/neck/shemagh/ngr,
-/obj/item/clothing/head/ngr/flap,
-/obj/item/clothing/head/ngr,
-/obj/machinery/camera/autoname,
-/obj/effect/turf_decal/corner/opaque/beige/mono,
-/obj/structure/closet/wall/red/directional/east{
-	name = "Operative's Locker";
-	req_access = list(1)
-	},
-/obj/effect/turf_decal/industrial/outline{
-	color = "#791500"
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/security)
 "NL" = (
 /obj/structure/dresser{
 	dir = 4
@@ -9575,9 +9553,6 @@
 /obj/structure/rack,
 /obj/item/stack/sheet/glass/twenty,
 /obj/item/stack/sheet/metal/twenty,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "Yu" = (
@@ -11107,7 +11082,7 @@ iE
 iE
 iE
 Oe
-NG
+RW
 RW
 fr
 WA
@@ -11414,7 +11389,7 @@ Pw
 fn
 fX
 Ol
-Wo
+Oz
 CN
 CN
 CN
