@@ -6469,7 +6469,7 @@
 	dir = 4;
 	id_tag = "kali_officer_door";
 	name = "Officers Quarters";
-	req_access_txt = "58"
+	req_access_txt = list(57)
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/commad)
@@ -7016,7 +7016,7 @@
 /obj/structure/closet/wall/red/directional/north{
 	name = "Ensign's Locker";
 	desc = "Pack it down, compartmentalize it. Your Republic needs you.";
-	req_access = list(57)
+	req_access = s
 	},
 /obj/item/storage/backpack,
 /obj/item/radio/headset/syndicate,
