@@ -717,7 +717,6 @@
 	subship_template = /datum/map_template/shuttle/subshuttles/karst;
 	name = "Shuttle Docking Gantry"
 	},
-/obj/structure/lattice/catwalk,
 /turf/open/floor/plating,
 /area/ship/external/dark)
 "dY" = (
@@ -1631,8 +1630,18 @@
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/westright{
 	dir = 1;
-	req_access = list(20);
+	req_access = list(58);
 	req_ship_access = 1
+	},
+/obj/machinery/door/airlock/hatch{
+	dir = 8;
+	name = "Armory";
+	req_access = 4
+	},
+/obj/machinery/door/airlock/hatch{
+	dir = 8;
+	name = "Armory";
+	req_access = 4
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 1;
@@ -1991,12 +2000,6 @@
 /obj/effect/turf_decal/borderfloorblack,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
-"ko" = (
-/obj/structure/closet/secure_closet/engineering_personal{
-	populate = 0
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/external/dark)
 "kt" = (
 /obj/effect/turf_decal/corner/opaque/red/half,
 /obj/effect/turf_decal/techfloor{
@@ -2309,7 +2312,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 8;
 	name = "Armory";
-	req_access = list(58)
+	req_access = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -5955,18 +5958,6 @@
 /obj/item/pizzabox,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
-"FV" = (
-/obj/item/clothing/suit/space/syndicate/ngr,
-/obj/item/clothing/suit/space/syndicate/ngr,
-/obj/item/clothing/head/helmet/space/syndicate/ngr,
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
-/obj/machinery/suit_storage_unit/inherit{
-	req_access = list(1)
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/hangar)
 "FW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -6014,10 +6005,6 @@
 /obj/structure/chair/sofa/brown/corpo/directional/south,
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/office)
-"Gf" = (
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plating,
-/area/ship/external/dark)
 "Gj" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -10279,7 +10266,7 @@ hu
 hu
 hu
 vq
-ko
+vq
 vq
 vq
 vq
@@ -11205,7 +11192,7 @@ CN
 CN
 CN
 DK
-FV
+Yg
 Yg
 lL
 DK
@@ -11361,7 +11348,7 @@ CN
 CN
 Lv
 CN
-Gf
+pi
 pi
 pi
 iV
@@ -11392,14 +11379,14 @@ CN
 CN
 CN
 CN
-Gf
+pi
 pi
 CN
 CN
 CN
 CN
 pi
-Gf
+pi
 CN
 CN
 CN
