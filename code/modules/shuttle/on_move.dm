@@ -36,7 +36,7 @@ All ShuttleMove procs go here
 				M.visible_message(span_warning("[shuttle] slams into [M]!"))
 				SSblackbox.record_feedback("tally", "shuttle_gib", 1, M.type)
 				log_attack("[key_name(M)] was shuttle gibbed by [shuttle].")
-				if(is_type_in_list(M, list(/mob/living/simple_animal, /mob/living/basic)))
+				if(isanimal(M) || isbasicmob(M))
 					qdel(M)
 				else
 					M.gib()
