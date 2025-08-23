@@ -162,7 +162,7 @@
 	else
 		return ..()
 
-/obj/item/geiger_counter/AltClick(mob/living/user)
+/obj/item/geiger_counter/attack_hand_secondary(mob/user, list/modifiers)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE))
 		return ..()
 	if(!scanning)
