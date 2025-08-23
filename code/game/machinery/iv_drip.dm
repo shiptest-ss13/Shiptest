@@ -170,7 +170,8 @@
 	else
 		toggle_mode()
 
-/obj/machinery/iv_drip/AltClick(mob/living/user)
+/obj/machinery/iv_drip/attack_hand_secondary(mob/living/user)
+	. = ..()
 	if(!user.canUseTopic(src, be_close=TRUE))
 		return
 	if(dripfeed)

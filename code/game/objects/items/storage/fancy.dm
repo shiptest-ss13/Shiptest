@@ -209,17 +209,48 @@
 	. = ..()
 	. += span_notice("Alt-click to extract contents.")
 
-/obj/item/storage/fancy/cigarettes/AltClick(mob/living/carbon/user)
+/obj/item/storage/fancy/cigarettes/afterattack_secondary(atom/target, mob/user, proximity_flag, click_parameters)
+	. = ..()
+	if(!proximity_flag)
+		return
+	if(ishuman(target) && contents.len)
+		var/mob/living/carbon/human/bumming_a_smoke = target
+		if(do_after(user, 15, bumming_a_smoke, show_progress = FALSE))
+			var/obj/item/clothing/mask/cigarette/british_slang = locate(/obj/item/clothing/mask/cigarette) in contents
+			if(british_slang)
+				SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, british_slang, user)
+				if(bumming_a_smoke.equip_to_slot_if_possible(british_slang, ITEM_SLOT_MASK, disable_warning=TRUE))
+					user.visible_message(span_notice("[user] puts a cigarette in [bumming_a_smoke]'s lips"), span_notice("You put a cigarette in [bumming_a_smoke]'s lips"))
+				else
+					bumming_a_smoke.put_in_hand(british_slang)
+					user.visible_message(span_notice("[user] puts a cigarette in [bumming_a_smoke]'s hand"), span_notice("You put a cigarette in [bumming_a_smoke]'s hands"))
+				contents -= british_slang
+
+/obj/item/storage/fancy/cigarettes/attack_self_secondary(mob/living/carbon/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
-	var/obj/item/clothing/mask/cigarette/W = locate(/obj/item/clothing/mask/cigarette) in contents
-	if(W && contents.len > 0)
-		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user)
-		user.put_in_hands(W)
-		contents -= W
-		to_chat(user, span_notice("You take \a [W] out of the pack."))
+	get_cigarette(user)
+
+/obj/item/storage/fancy/cigarettes/AltClick(mob/living/carbon/user)
+	. = ..()
+	var/obj/item/lighter/the_zippo = locate(/obj/item/lighter) in contents
+	if(the_zippo)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, the_zippo, user)
+		user.put_in_hands(the_zippo)
+		contents -= the_zippo
+	else
+		get_cigarette(user)
+
+/obj/item/storage/fancy/cigarettes/proc/get_cigarette(mob/living/carbon/user)
+	var/obj/item/clothing/mask/cigarette/british_slang = locate(/obj/item/clothing/mask/cigarette) in contents
+	if(british_slang)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, british_slang, user)
+		user.put_in_hands(british_slang)
+		contents -= british_slang
+		to_chat(user, span_notice("You take \a [british_slang] out of the pack."))
 	else
 		to_chat(user, span_notice("There are no [contents_tag]s left in the pack."))
+
 
 /obj/item/storage/fancy/cigarettes/update_icon_state()
 	. = ..()
