@@ -790,7 +790,7 @@
 	dir = 4;
 	id_tag = "kali_mess_door";
 	name = "Officer Mess";
-	req_access_txt = "57"
+	req_access_txt = "list(19)"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -6451,7 +6451,7 @@
 	dir = 4;
 	id_tag = "kali_officer_door";
 	name = "Officers Quarters";
-	req_access_txt = list(57)
+	req_access_txt = "list(19)"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/commad)
