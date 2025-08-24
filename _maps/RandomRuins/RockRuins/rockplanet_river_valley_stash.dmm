@@ -72,7 +72,7 @@
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "bF" = (
 /obj/effect/decal/cleanable/blood/gibs,
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "bN" = (
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
@@ -95,7 +95,7 @@
 "cl" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/item/shovel,
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "ds" = (
 /obj/structure/flora/rock/rockplanet,
@@ -112,10 +112,7 @@
 /obj/item/flashlight/glowstick{
 	on = 1
 	},
-/turf/open/floor/plating/grass/rockplanet{
-	light_power = 0.6;
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "dy" = (
 /obj/effect/turf_decal/sand/plating,
@@ -183,24 +180,18 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "gU" = (
 /obj/effect/turf_decal/sand/plating,
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "hL" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/open/floor/plating/grass/rockplanet{
-	light_power = 0.6;
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "iu" = (
 /obj/item/stack/cable_coil/cut/red{
 	pixel_x = 6;
 	pixel_y = 14
 	},
-/turf/open/floor/plating/grass/rockplanet{
-	light_power = 0.6;
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "iX" = (
 /obj/structure/barricade/sandbags,
@@ -219,10 +210,7 @@
 	pixel_y = 21;
 	id = "gudge_holo"
 	},
-/turf/open/floor/plating/grass/rockplanet{
-	light_power = 0.6;
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "jl" = (
 /obj/effect/decal/cleanable/blood{
@@ -237,21 +225,18 @@
 	color = "#A47449";
 	dir = 4
 	},
-/turf/open/water/jungle/lit{
-	initial_gas_mix = "ROCKPLANET_ATMOS";
-	light_power = 0.6
-	},
+/turf/open/water/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "jX" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/item/flashlight/glowstick{
 	on = 1
 	},
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "kh" = (
 /obj/effect/decal/cleanable/oil/streak,
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "ko" = (
 /obj/effect/turf_decal/sand/plating,
@@ -288,10 +273,7 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "kR" = (
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/plating/grass/rockplanet{
-	light_power = 0.6;
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "le" = (
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked/lit,
@@ -309,7 +291,7 @@
 /obj/item/flashlight/glowstick{
 	on = 1
 	},
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "lB" = (
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
@@ -444,7 +426,7 @@
 "qF" = (
 /obj/item/chainsaw,
 /obj/item/clothing/under/costume/skeleton,
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "qU" = (
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
@@ -480,10 +462,10 @@
 "rB" = (
 /obj/effect/decal/cleanable/blood/gibs,
 /obj/effect/decal/remains/human,
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "rO" = (
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "rP" = (
 /obj/structure/flora/grass/rockplanet,
@@ -493,14 +475,11 @@
 "rQ" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/effect/decal/cleanable/blood/gibs,
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "rX" = (
 /obj/effect/turf_decal/sand/plating,
-/turf/open/floor/plating/grass/rockplanet{
-	light_power = 0.6;
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "sp" = (
 /obj/structure/rack,
@@ -521,10 +500,7 @@
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "sQ" = (
 /obj/structure/flora/stump,
-/turf/open/floor/plating/grass/rockplanet{
-	light_power = 0.6;
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "to" = (
 /obj/structure/railing/modern{
@@ -593,10 +569,7 @@
 /area/ruin/rockplanet/river_valley_stash/hut)
 "vb" = (
 /obj/effect/turf_decal/sand/plating,
-/turf/open/floor/plating/grass/rockplanet{
-	light_power = 0.6;
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "vc" = (
 /obj/effect/turf_decal/siding/wood,
@@ -624,10 +597,7 @@
 	color = "#A47449";
 	dir = 8
 	},
-/turf/open/water/jungle/lit{
-	initial_gas_mix = "ROCKPLANET_ATMOS";
-	light_power = 0.6
-	},
+/turf/open/water/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "wF" = (
 /obj/structure/barricade/sandbags,
@@ -861,11 +831,11 @@
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "Dh" = (
 /obj/structure/barricade/sandbags,
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "Dj" = (
 /obj/structure/flora/grass/rockplanet,
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "DK" = (
 /obj/effect/turf_decal/techfloor{
@@ -882,7 +852,7 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals/neutered{
 	wander = 0
 	},
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "EH" = (
 /obj/effect/turf_decal/sand/plating,
@@ -940,10 +910,7 @@
 /obj/item/flashlight/glowstick{
 	on = 1
 	},
-/turf/open/floor/plating/grass/rockplanet{
-	light_power = 0.6;
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Hm" = (
 /obj/structure/flora/rock/pile/rockplanet,
@@ -1041,10 +1008,7 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Kj" = (
 /obj/effect/decal/cleanable/oil/streak,
-/turf/open/floor/plating/grass/rockplanet{
-	light_power = 0.6;
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Kk" = (
 /obj/structure/cable{
@@ -1073,7 +1037,7 @@
 "Kw" = (
 /obj/effect/decal/cleanable/blood/gibs,
 /obj/item/bodypart/l_arm/skeleton,
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "KA" = (
 /turf/open/water/rockplanet,
@@ -1113,7 +1077,7 @@
 "LF" = (
 /obj/item/mine/pressure/explosive/rusty/live,
 /obj/structure/flora/grass/rockplanet,
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "LI" = (
 /obj/effect/turf_decal/sand/plating,
@@ -1130,10 +1094,7 @@
 "Mh" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/barricade/sandbags,
-/turf/open/floor/plating/grass/rockplanet{
-	light_power = 0.6;
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "MD" = (
 /obj/structure/barricade/sandbags,
@@ -1175,10 +1136,7 @@
 /area/ruin/rockplanet/river_valley_stash/shuttle)
 "Od" = (
 /obj/structure/barricade/sandbags,
-/turf/open/floor/plating/grass/rockplanet{
-	light_power = 0.6;
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "OR" = (
 /obj/structure/barricade/sandbags,
@@ -1233,7 +1191,7 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "Pf" = (
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "PG" = (
 /obj/effect/turf_decal/sand/plating,
@@ -1242,12 +1200,12 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "PJ" = (
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "PP" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/item/bodypart/leg/right/skeleton,
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "PQ" = (
 /obj/structure/window/reinforced/fulltile,
@@ -1308,7 +1266,7 @@
 "SZ" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/effect/decal/cleanable/oil/slippery,
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "To" = (
 /obj/effect/decal/cleanable/blood/gibs,
@@ -1316,10 +1274,7 @@
 /turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/overmap_encounter/planetoid/cave/explored)
 "TC" = (
-/turf/open/water/jungle/lit{
-	initial_gas_mix = "ROCKPLANET_ATMOS";
-	light_power = 0.6
-	},
+/turf/open/water/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "TE" = (
 /obj/effect/turf_decal/sand/plating,
@@ -1340,10 +1295,7 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "Ub" = (
 /obj/structure/flora/tree/palm,
-/turf/open/floor/plating/grass/rockplanet{
-	light_power = 0.6;
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "VA" = (
 /obj/structure/flora/grass/rockplanet,
@@ -1400,10 +1352,7 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "Wy" = (
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/plating/grass/rockplanet{
-	light_power = 0.6;
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "WN" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -1444,15 +1393,12 @@
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Xb" = (
-/turf/open/floor/plating/grass/rockplanet{
-	light_power = 0.6;
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Xc" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/barricade/sandbags,
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "Xk" = (
 /obj/structure/flora/rock/pile/rockplanet,
@@ -1508,7 +1454,7 @@
 "ZE" = (
 /obj/structure/flora/grass/jungle,
 /obj/effect/decal/cleanable/oil/streak,
-/turf/open/floor/plating/grass/rockplanet,
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 
 (1,1,1) = {"
