@@ -1,27 +1,11 @@
 //GREEBLES
-
-/obj/effect/spawner/random/greeble/random_ruin_greeble
-	name = "random planet greeble chance"
-	loot = list(
-			/obj/effect/greeble_spawner/moon/crater1 = 5,
-			/obj/effect/greeble_spawner/moon/crater2 = 5,
-			/obj/effect/greeble_spawner/moon/crater3 = 5,
-			/obj/effect/greeble_spawner/moon/crater4 = 5,
-			/obj/effect/greeble_spawner/moon/crater5 = 5,
-			/obj/effect/greeble_spawner/moon/crater6 = 5,
-		)
-
-/obj/effect/spawner/random/greeble/random_ruin_greeble/spawn_loot(lootcount_override)
-	var/lootspawn = pick_weight_recursive(loot)
-	if(!can_spawn(lootspawn))
-		return
-	make_item(get_turf(src), lootspawn)
-
 /obj/effect/greeble_spawner
 	name = "planet greeble spawner"
 	icon = 'icons/effects/mapping/landmarks_static.dmi'
 	icon_state = "x"
-	var/datum/map_template/greeble/template = /datum/map_template/greeble/moon/crater1
+	var/datum/map_template/greeble/template
+	/// The subtypes (this excludes the provided path) to pick from as an alternative to var/template to reduce boilerplate if applicable
+	var/datum/map_template/greeble/template_subtype_path
 	/// Amount of time before the mapgen gives up on loading this greeble.
 	var/timeout = 8 SECONDS
 
@@ -31,6 +15,11 @@
 
 /obj/effect/greeble_spawner/Initialize()
 	. = ..()
+	if(template_subtype_path)
+		template = pick(subtypesof(template_subtype_path))
+#ifdef GREEBLE_LOGGING
+	message_admins("Greeble [template] Init: [ADMIN_JMP(src.loc)]")
+#endif
 	if(isnull(loc))
 		return INITIALIZE_HINT_QDEL
 
@@ -48,6 +37,9 @@
 		qdel(src)
 		return
 
+#ifdef GREEBLE_LOGGING
+	message_admins("Greeble [template]: [ADMIN_JMP(src.loc)]")
+#endif
 	template.load(deploy_location, centered = TRUE, show_oob_error = FALSE, timeout = timeout)
 	qdel(src)
 

@@ -62,6 +62,7 @@
 	filling_color = "#FFA500"
 	juice_results = list(/datum/reagent/consumable/orangejuice = 0)
 	distill_reagent = /datum/reagent/consumable/ethanol/triple_sec
+	dog_fashion = /datum/dog_fashion/head/orange
 
 /obj/item/food/grown/citrus/orange/make_processable()
 	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/garnish/lime, 3, 3 SECONDS, table_required = TRUE)
