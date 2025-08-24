@@ -108,7 +108,7 @@
 	if(tool.use_tool(src, user, crowbar_time, volume=100))
 		playsound(loc, 'sound/effects/plank_fall.ogg', 100, vary = TRUE)
 		to_chat(user, span_notice("You disassemble the barricade."))
-		var/obj/item/stack/sheet/mineral/wood/M = new (loc, 3)
+		var/obj/item/stack/sheet/mineral/wood/M = new (loc, drop_amount)
 		if (!QDELETED(M)) // might be a stack that's been merged
 			M.add_fingerprint(user)
 		qdel(src)
