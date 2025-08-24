@@ -188,7 +188,7 @@
 /datum/planet_type/space
 	name = "weak energy signal"
 	desc = "A very weak energy signal originating from space."
-	planet = DYNAMIC_WORLD_SPACERUIN
+	planet = DYNAMIC_WORLD_SPACE_NO_RUIN
 	icon_state = "signal_strange"
 	color = null
 	weight = 0
