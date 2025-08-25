@@ -3,7 +3,7 @@
 	jobtype = /datum/job/officer
 
 	head = /obj/item/clothing/head/beret/sec/frontier
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
 	suit_store = /obj/item/gun/ballistic/rifle/illestren
 	belt = /obj/item/storage/belt/security/military/frontiersmen/illestren
 	uniform = /obj/item/clothing/under/frontiersmen
