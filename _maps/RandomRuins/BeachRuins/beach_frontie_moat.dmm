@@ -627,7 +627,7 @@
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/village/infirmary)
 "mG" = (
-/obj/machinery/light/directional/east,
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/beach/village/armory)
 "mK" = (
@@ -1108,7 +1108,7 @@
 /turf/open/floor/wood,
 /area/ruin/beach/village/dorm)
 "wo" = (
-/obj/machinery/light/directional/west,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/beach/village/armory)
 "wA" = (
@@ -2049,10 +2049,6 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/kitchen)
-"Pz" = (
-/obj/machinery/light/directional/south,
-/turf/open/floor/wood,
-/area/ruin/beach/village/officers)
 "PK" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/bag/tray/cafeteria,
@@ -2112,6 +2108,10 @@
 	},
 /turf/open/water/beach/deep,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"QX" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/wood,
+/area/ruin/beach/village/officers)
 "Rx" = (
 /obj/structure/cable{
 	icon_state = "4-10"
@@ -4074,7 +4074,7 @@ If
 If
 If
 mn
-wo
+mG
 TA
 Fp
 If
@@ -4354,7 +4354,7 @@ If
 If
 If
 mn
-mG
+wo
 EU
 Oy
 If
@@ -5807,7 +5807,7 @@ ZA
 eW
 Ut
 nL
-Pz
+QX
 ZA
 QP
 Jk
