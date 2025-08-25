@@ -1843,7 +1843,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/item/key,
+/obj/effect/spawner/random/maintenance/eight,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "sS" = (
@@ -5117,10 +5117,9 @@
 /turf/open/floor/concrete/slab_1/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "YG" = (
-/obj/vehicle/ridden/atv{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/rack,
+/obj/effect/spawner/random/maintenance/eight,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "YI" = (
