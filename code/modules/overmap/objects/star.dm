@@ -1,7 +1,6 @@
 /datum/overmap/star
 	name = "star"
 	desc = "A star."
-
 	interference_power = 30
 
 	var/spectral_type = STAR_G
@@ -17,11 +16,11 @@
 		/datum/overmap/event/flare/minor = 40,
 		/datum/overmap/event/flare = 20,
 		/datum/overmap/event/flare/major = 5,
-
+/*
 		/datum/overmap/event/emp/minor = 20,
 		/datum/overmap/event/emp = 10,
 		/datum/overmap/event/emp/major = 5,
-
+*/
 		/datum/overmap/event/rad/minor = 40,
 		/datum/overmap/event/rad = 20,
 		/datum/overmap/event/rad/major = 5,
@@ -37,12 +36,11 @@
 	///The maximum spawn range of the random events.
 	var/eventspawn_max_range = 2
 
-
 	///The minimum lifespan of the random events
 	var/eventspawn_cooldown_min = (5 SECONDS)
 	///The maximum lifespan of the random events
 	var/eventspawn_cooldown_max = (15 SECONDS)
-	///cooldown declare to store this value
+	/// Cooldown declare to store this value
 	COOLDOWN_DECLARE(event_spawn_cd)
 
 
@@ -63,15 +61,15 @@
 	var/list/directions_to_spawn_event = GLOB.alldirs
 	var/spawndir
 	var/spawn_sametile = FALSE
+
 	//First off if we outlived our usefulness then we self destrutct
-
-
 	if(!enable_event_spawning || !(COOLDOWN_FINISHED(src, event_spawn_cd)))
 		return
 
 	if(spawn_sametile)
 		directions_to_spawn_event += NONE
 	picked_event_to_spawn = pick_weight(events_to_spawn)
+
 	if(!picked_event_to_spawn)
 		return
 	spawndir = pick(directions_to_spawn_event)
@@ -140,10 +138,11 @@
 	spectral_type = STAR_T
 	color_vary = 1
 	events_to_spawn = list(\
+/*
 		/datum/overmap/event/emp/minor = 40,
 		/datum/overmap/event/emp = 20,
 		/datum/overmap/event/emp/major = 5,
-
+*/
 		/datum/overmap/event/rad/minor = 40,
 		/datum/overmap/event/rad = 20,
 		/datum/overmap/event/rad/major = 5,
@@ -158,11 +157,11 @@
 		/datum/overmap/event/electric/minor = 50,
 		/datum/overmap/event/electric = 40,
 		/datum/overmap/event/electric/major = 3,
-
+/*
 		/datum/overmap/event/emp/minor = 80,
 		/datum/overmap/event/emp = 100,
 		/datum/overmap/event/emp/major = 120,
-
+*/
 		/datum/overmap/event/rad/minor = 20,
 		/datum/overmap/event/rad = 10,
 		/datum/overmap/event/rad/major = 5,
@@ -301,11 +300,11 @@
 
 	events_to_spawn = list(\
 		/datum/overmap/event/nebula = 40,
-
+/*
 		/datum/overmap/event/emp/minor = 20,
 		/datum/overmap/event/emp = 30,
 		/datum/overmap/event/emp/major = 40,
-
+*/
 		/datum/overmap/event/rad/minor = 60,
 		/datum/overmap/event/rad = 70,
 		/datum/overmap/event/rad/major = 80,
@@ -338,11 +337,11 @@
 		/datum/overmap/event/electric/minor = 50,
 		/datum/overmap/event/electric = 40,
 		/datum/overmap/event/electric/major = 3,
-
+/*
 		/datum/overmap/event/emp/minor = 80,
 		/datum/overmap/event/emp = 100,
 		/datum/overmap/event/emp/major = 120,
-
+*/
 		/datum/overmap/event/rad/minor = 20,
 		/datum/overmap/event/rad = 10,
 		/datum/overmap/event/rad/major = 5,
