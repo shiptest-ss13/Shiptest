@@ -980,7 +980,7 @@
 			to_chat(owner, span_warning("The defensive wind is faltering!"))
 		if(current_charges <= 0)
 			owner.visible_message(span_warning("The desert storm protecting [owner] fades away, leaving only ionized sparks!"))
-			playsound(loc, 'sound/weather/ashstorm/inside/weak_end.ogg', 100, TRUE)
+			playsound(loc, 'sound/weather/ashstorm/outside/weak_end.ogg', 100, TRUE)
 			shield_state = "broken"
 			owner.update_inv_wear_suit()
 		return 1

@@ -617,7 +617,7 @@
 	results = list(/datum/reagent/consumable/ethanol/trickwine/ash_wine = 5)
 	required_reagents = list(/datum/reagent/consumable/ethanol/absinthe = 3, /datum/reagent/ash = 1, /datum/reagent/drug/mushroomhallucinogen = 1)
 	required_container = /obj/structure/fermenting_barrel/distiller
-	mix_sound ='sound/weather/ashstorm/inside/weak_end.ogg'
+	mix_sound ='sound/weather/ashstorm/outside/weak_end.ogg'
 
 /datum/chemical_reaction/ice_wine
 	results = list(/datum/reagent/consumable/ethanol/trickwine/ice_wine = 5)
