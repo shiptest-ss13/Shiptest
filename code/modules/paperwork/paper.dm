@@ -380,6 +380,13 @@
 	var/writing_stats = istype(attacking_item) ? attacking_item.get_writing_implement_details() : null
 
 	if(!writing_stats)
+		if (attacking_item.sharpness > SHARP_NONE && !istype(src, /obj/item/paper/paperslip) && do_after(user, 5, src))
+			playsound(src.loc, 'sound/weapons/slash.ogg', 50, TRUE)
+			to_chat(user, span_notice("You neatly cut [src]."))
+			new /obj/item/paper/paperslip(get_turf(src))
+			new /obj/item/paper/paperslip(get_turf(src))
+			qdel(src)
+			return
 		ui_interact(user)
 		return ..()
 
