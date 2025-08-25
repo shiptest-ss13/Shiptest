@@ -967,13 +967,9 @@ default_icon_file: The icon file to draw states from if no other icon file is sp
 isinhands: If true then alternate_worn_icon is skipped so that default_icon_file is used,
 in this situation default_icon_file is expected to match either the lefthand_ or righthand_ file var
 
-^this female part sucks and will be fully ripped out ideally
-
 */
 // Note: if handled_by_bodytype is TRUE before calling this, it makes species use greyscale
 /obj/item/proc/build_worn_icon(default_layer = 0, default_icon_file = null, isinhands = FALSE, override_state = null, override_file = null, datum/species/mob_species = null, direction = null)
-
-	// WS Edit Start - Worn Icon State
 	var/t_state
 	if(override_state)
 		t_state = override_state
@@ -992,7 +988,6 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 	if(!standing)
 		standing = mutable_appearance(file2use, t_state, -layer2use)
 
-	// WS Edit End - Worn Icon State
 	//Get the overlays for this item when it's being worn
 	//eg: ammo counters, primed grenade flashes, etc.
 	var/list/worn_overlays = worn_overlays(isinhands, file2use)
