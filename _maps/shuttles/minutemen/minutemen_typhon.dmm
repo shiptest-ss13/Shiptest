@@ -62,19 +62,19 @@
 	pixel_y = 3;
 	pixel_x = -8
 	},
-/obj/item/storage/box/ammo/c9mm{
-	pixel_y = 11;
-	pixel_x = 5
-	},
-/obj/item/storage/box/ammo/c9mm{
-	pixel_y = 7;
-	pixel_x = 5
+/obj/structure/window,
+/obj/item/storage/toolbox/ammo/c9mm{
+	pixel_x = 4;
+	pixel_y = 9
 	},
 /obj/item/storage/box/ammo/c10mm{
 	pixel_y = 3;
 	pixel_x = 5
 	},
-/obj/structure/window,
+/obj/item/storage/box/ammo/c10mm{
+	pixel_y = -3;
+	pixel_x = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "bp" = (
@@ -663,6 +663,11 @@
 	},
 /obj/machinery/firealarm/directional/west{
 	pixel_y = -11
+	},
+/obj/item/megaphone/command,
+/obj/item/storage/pouch/squad{
+	pixel_x = -12;
+	pixel_y = -13
 	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm/captain)
@@ -1304,6 +1309,10 @@
 /obj/item/clothing/head/soft/utility_navy{
 	pixel_y = 13
 	},
+/obj/item/megaphone/command,
+/obj/item/storage/belt/military/clip{
+	pixel_y = -9
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "qQ" = (
@@ -1678,10 +1687,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
-/obj/item/hand_labeler{
-	pixel_x = 12;
-	pixel_y = -9
-	},
 /obj/structure/cable/cyan{
 	icon_state = "1-4"
 	},
@@ -1771,14 +1776,14 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "vz" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
 /obj/structure/sign/poster/contraband/cardinal_port_starboard{
 	pixel_x = 27
+	},
+/obj/effect/turf_decal/trimline/transparent/blue/line{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -1907,7 +1912,7 @@
 	pixel_y = 17
 	},
 /obj/item/reagent_containers/glass/bottle/welding_fuel{
-	list_reagents = list(/datum/reagent/fuel = 5);
+	list_reagents = list(/datum/reagent/fuel=5);
 	layer = 3.01
 	},
 /turf/open/floor/plating/airless,
@@ -2016,7 +2021,7 @@
 /obj/item/reagent_containers/spray{
 	pixel_y = -5;
 	pixel_x = 6;
-	list_reagents = list(/datum/reagent/water = 120, /datum/reagent/plantnutriment/eznutriment = 20, /datum/reagent/plantnutriment/endurogrow = 10);
+	list_reagents = list(/datum/reagent/water=120,/datum/reagent/plantnutriment/eznutriment=20,/datum/reagent/plantnutriment/endurogrow=10);
 	volume = 150;
 	desc = "A spray bottle with a label saying 'Food'.";
 	name = "'Food' spray"
@@ -2166,14 +2171,14 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security)
 "Bm" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
 /obj/machinery/light/directional/north,
 /obj/structure/chair/handrail,
+/obj/effect/turf_decal/trimline/transparent/blue/line{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Bp" = (
@@ -2729,6 +2734,14 @@
 /obj/item/clothing/gloves/combat{
 	pixel_y = -6;
 	pixel_x = 12
+	},
+/obj/item/clothing/glasses/sunglasses/ballistic{
+	pixel_y = 7;
+	pixel_x = 2
+	},
+/obj/item/clothing/glasses/sunglasses/ballistic{
+	pixel_x = 2;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -3483,9 +3496,6 @@
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 4
 	},
-/obj/structure/sign/poster/clip/random{
-	pixel_y = 30
-	},
 /obj/structure/cable/cyan{
 	icon_state = "2-8"
 	},
@@ -3504,6 +3514,15 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 8
 	},
+/obj/structure/filingcabinet/double/grey{
+	pixel_y = 18;
+	pixel_x = 6;
+	density = 0
+	},
+/obj/item/clipboard,
+/obj/item/hand_labeler,
+/obj/item/folder/red,
+/obj/item/folder,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "RD" = (
@@ -3722,6 +3741,9 @@
 /obj/item/gun/ballistic/automatic/smg/cm5/no_mag,
 /obj/item/gun/ballistic/automatic/smg/cm5/no_mag,
 /obj/item/gun/ballistic/automatic/pistol/cm23/no_mag,
+/obj/structure/sign/poster/clip/random{
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Tw" = (
@@ -4092,11 +4114,6 @@
 	pixel_x = 2
 	},
 /obj/item/pen,
-/obj/item/clipboard{
-	pixel_y = 9;
-	pixel_x = 5;
-	layer = 2.99
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "Yj" = (
