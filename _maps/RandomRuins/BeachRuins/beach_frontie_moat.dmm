@@ -10,6 +10,7 @@
 	name = "Corpse Storage"
 	},
 /obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/armory)
 "av" = (
@@ -49,6 +50,7 @@
 	dir = 5;
 	color = "#543C30"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/village/kitchen)
 "bf" = (
@@ -101,6 +103,7 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "cx" = (
 /obj/machinery/light/small/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/village/armory)
 "cK" = (
@@ -133,6 +136,11 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/armory)
+"cX" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/beach/village/officers)
 "cZ" = (
 /obj/effect/decal/cleanable/crayon{
 	color = "#FF3333";
@@ -142,8 +150,13 @@
 	},
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"dd" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "df" = (
 /obj/structure/chair/comfy/beige/old/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood{
 	icon_state = "wood-broken6"
 	},
@@ -152,10 +165,12 @@
 /obj/structure/cable{
 	icon_state = "2-9"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/village/armory)
 "dl" = (
 /obj/machinery/vending/cola/starkist,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood{
 	icon_state = "wood-broken"
 	},
@@ -167,6 +182,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "ed" = (
@@ -218,9 +234,15 @@
 "ew" = (
 /turf/closed/wall/mineral/wood,
 /area/ruin/beach/village/dorm)
+"eB" = (
+/obj/effect/mob_spawn/animal_corpse/wolf,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/village/armory)
 "eW" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer,
 /obj/machinery/light/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/black,
 /area/ruin/beach/village/officers)
 "fa" = (
@@ -236,10 +258,18 @@
 "fh" = (
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"fi" = (
+/obj/structure/chair/plastic{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet,
+/area/ruin/beach/village/kitchen)
 "fr" = (
 /obj/effect/turf_decal/siding/wideplating{
 	dir = 6
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/beach/village/infirmary)
 "ft" = (
@@ -293,6 +323,7 @@
 /area/ruin/beach/village/armory)
 "gj" = (
 /obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/village/armory)
 "go" = (
@@ -404,6 +435,7 @@
 /obj/structure/cable{
 	icon_state = "2-5"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/village/infirmary)
 "hY" = (
@@ -419,6 +451,16 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/officers)
+"iw" = (
+/obj/structure/closet/cabinet,
+/obj/item/clothing/suit/armor/frontier,
+/obj/item/clothing/under/frontiersmen/officer,
+/obj/item/clothing/head/frontier/peaked,
+/obj/item/clothing/shoes/sandal,
+/obj/item/clothing/under/shorts/jorts,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/beach/village/officers)
 "iF" = (
 /obj/structure/chair/sofa/brown/old/right{
 	dir = 4
@@ -430,6 +472,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/beach/village/officers)
 "iN" = (
@@ -479,6 +522,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/beach/village/armory)
 "je" = (
@@ -491,10 +535,16 @@
 /mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/carpet/orange,
 /area/ruin/beach/village/dorm)
+"jv" = (
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet,
+/area/ruin/beach/village/kitchen)
 "jD" = (
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/armory)
 "jH" = (
@@ -504,6 +554,10 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/beach/village/kitchen)
+"jO" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_2,
+/area/ruin/beach/village/dorm)
 "jS" = (
 /obj/structure/cable{
 	icon_state = "5-8"
@@ -581,6 +635,7 @@
 "ly" = (
 /obj/structure/closet/crate/bin,
 /obj/machinery/light/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/beach/village/dorm)
 "lz" = (
@@ -624,11 +679,20 @@
 /obj/structure/chair{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/village/infirmary)
 "mG" = (
-/obj/machinery/light/directional/west,
-/turf/open/floor/plasteel/tech/techmaint,
+/obj/machinery/shower{
+	dir = 8
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals10,
+/obj/effect/turf_decal/steeldecal/steel_decals10{
+	dir = 4
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals2,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/plasteel/freezer,
 /area/ruin/beach/village/armory)
 "mK" = (
 /obj/structure/cable{
@@ -668,6 +732,7 @@
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/village/kitchen)
 "nV" = (
@@ -775,6 +840,11 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/beach/village/infirmary)
+"pu" = (
+/obj/structure/table/glass,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/green,
+/area/ruin/beach/village/dorm)
 "pI" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -817,6 +887,10 @@
 	},
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"qd" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/beach/village/kitchen)
 "qe" = (
 /obj/effect/mob_spawn/human/corpse/clip/vc,
 /obj/item/clothing/head/helmet/bulletproof/m10/clip_vc{
@@ -829,6 +903,13 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/armory)
+"qj" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/beach/village/dorm)
 "qk" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/power/rtg/geothermal,
@@ -842,6 +923,7 @@
 /obj/structure/railing/corner{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/village/kitchen)
 "qq" = (
@@ -869,6 +951,7 @@
 "qO" = (
 /obj/structure/table/wood/fancy,
 /obj/machinery/fax/ruin,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/beach/village/officers)
 "qZ" = (
@@ -883,6 +966,7 @@
 "rz" = (
 /obj/effect/mob_spawn/human/corpse/clip/minuteman,
 /obj/machinery/light/small/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/armory)
 "rA" = (
@@ -902,6 +986,24 @@
 	},
 /turf/open/water/beach/deep,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"rJ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood/walnut,
+/area/ruin/beach/village/officers)
+"rO" = (
+/obj/structure/closet/cabinet,
+/obj/item/clothing/under/frontiersmen,
+/obj/item/clothing/under/frontiersmen/deckhand,
+/obj/item/clothing/shoes/combat{
+	pixel_y = -10
+	},
+/obj/item/clothing/head/soft/frontiersmen{
+	pixel_y = 5
+	},
+/obj/item/storage/backpack/duffelbag,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/beach/village/dorm)
 "sh" = (
 /obj/structure/chair/comfy/beige/old/directional/east,
 /turf/open/floor/wood,
@@ -913,8 +1015,13 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/armory)
+"sn" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/green,
+/area/ruin/beach/village/dorm)
 "sq" = (
 /obj/machinery/door/airlock/maintenance/external/glass{
 	name = "Armory"
@@ -980,6 +1087,10 @@
 	},
 /turf/open/water/beach/deep,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"ur" = (
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/beach/village/armory)
 "uw" = (
 /obj/structure/cable{
 	icon_state = "5-8"
@@ -1006,6 +1117,10 @@
 /obj/item/fishing_rod,
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/village/kitchen)
+"uH" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/orange,
+/area/ruin/beach/village/dorm)
 "uJ" = (
 /obj/structure/table/wood/fancy,
 /obj/item/storage/fancy/heart_box{
@@ -1053,6 +1168,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/beach/village/kitchen)
 "vB" = (
@@ -1097,6 +1213,7 @@
 /obj/structure/cable{
 	icon_state = "1-10"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/village/kitchen)
 "vX" = (
@@ -1108,9 +1225,9 @@
 /turf/open/floor/wood,
 /area/ruin/beach/village/dorm)
 "wo" = (
-/obj/machinery/light/directional/east,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/beach/village/armory)
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/red,
+/area/ruin/beach/village/officers)
 "wA" = (
 /turf/closed/wall/mineral/sandstone,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -1127,6 +1244,7 @@
 	icon_state = "gib4";
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/armory)
 "wW" = (
@@ -1167,6 +1285,7 @@
 	pixel_x = -4;
 	pixel_y = 2
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/village/infirmary)
 "xC" = (
@@ -1217,6 +1336,10 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"xW" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood/walnut,
+/area/ruin/beach/village/kitchen)
 "yb" = (
 /obj/effect/mob_spawn/animal_corpse/wolf,
 /turf/open/floor/concrete/slab_1,
@@ -1227,6 +1350,18 @@
 	},
 /turf/open/water/beach/deep,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"yn" = (
+/obj/machinery/shower{
+	dir = 8
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals10,
+/obj/effect/turf_decal/steeldecal/steel_decals10{
+	dir = 4
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals2,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/beach/village/armory)
 "yx" = (
 /obj/structure/rack,
 /obj/item/ammo_box/magazine/f4_308/empty{
@@ -1279,17 +1414,30 @@
 	pixel_x = -5;
 	pixel_y = 9
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/kitchen)
 "zy" = (
 /turf/closed/wall/mineral/wood,
 /area/ruin/beach/village/infirmary)
+"zD" = (
+/obj/effect/turf_decal/road,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "zK" = (
 /obj/structure/cable{
 	icon_state = "6-10"
 	},
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"zT" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/beach/village/armory)
 "Aq" = (
 /turf/open/floor/plasteel/freezer,
 /area/ruin/beach/village/armory)
@@ -1322,6 +1470,10 @@
 "AF" = (
 /obj/structure/closet/secure_closet/engineering_welding,
 /turf/open/floor/concrete/slab_3,
+/area/ruin/beach/village/armory)
+"AN" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/armory)
 "AP" = (
 /obj/structure/urinal{
@@ -1392,6 +1544,10 @@
 	},
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"BR" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_2,
+/area/ruin/beach/village/armory)
 "Cf" = (
 /obj/machinery/door/airlock/wood{
 	dir = 4;
@@ -1427,6 +1583,11 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/wood,
 /area/ruin/beach/village/dorm)
+"CN" = (
+/obj/machinery/light/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/beach/village/officers)
 "CP" = (
 /obj/structure/platform/wood{
 	dir = 8
@@ -1457,6 +1618,10 @@
 /obj/item/storage/box/ammo/c9mm,
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/beach/village/armory)
+"Dl" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/freezer,
 /area/ruin/beach/village/armory)
 "Dn" = (
 /obj/effect/turf_decal/siding/thinplating/corner{
@@ -1493,6 +1658,10 @@
 "Dy" = (
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"DC" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/black,
+/area/ruin/beach/village/officers)
 "DG" = (
 /obj/structure/chair/plastic,
 /turf/open/floor/carpet,
@@ -1505,6 +1674,7 @@
 	id = "villagesecure";
 	name = "Shed Door"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/village/armory)
 "DK" = (
@@ -1579,6 +1749,13 @@
 /obj/effect/turf_decal/siding/thinplating/corner{
 	dir = 8
 	},
+/obj/structure/closet/crate/internals,
+/obj/item/clothing/mask/gas/frontiersmen,
+/obj/item/clothing/mask/gas/frontiersmen,
+/obj/item/clothing/mask/gas/clip,
+/obj/item/clothing/mask/gas/clip,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/engi,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/beach/village/armory)
 "Fa" = (
@@ -1661,6 +1838,13 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/wood,
 /area/ruin/beach/village/dorm)
+"Gp" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/beach/village/armory)
 "Gs" = (
 /obj/structure/window/fulltile,
 /obj/structure/grille,
@@ -1672,6 +1856,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/village/kitchen)
 "GE" = (
@@ -1682,6 +1867,7 @@
 /area/ruin/beach/village/officers)
 "GP" = (
 /obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/armory)
 "Hk" = (
@@ -1700,6 +1886,7 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/south,
+/obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/beach/village/armory)
 "Hq" = (
@@ -1720,8 +1907,13 @@
 	icon_state = "wood-broken4"
 	},
 /area/ruin/beach/village/dorm)
+"Hy" = (
+/obj/effect/decal/cleanable/garbage,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/beach/village/armory)
 "HA" = (
 /obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/village/armory)
 "HB" = (
@@ -1750,12 +1942,14 @@
 	id = "villagesecure";
 	name = "Shed Override"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/beach/village/officers)
 "HS" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
 	},
@@ -1771,6 +1965,7 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Iw" = (
 /obj/effect/turf_decal/siding/thinplating,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/beach/village/armory)
 "Iz" = (
@@ -1780,6 +1975,10 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/village/kitchen)
+"IL" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/beach/village/armory)
 "IU" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Generator"
@@ -1789,6 +1988,14 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/armory)
+"Jf" = (
+/obj/structure/toilet{
+	dir = 1
+	},
+/obj/machinery/light/small/directional/south,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/beach/village/armory)
 "Jk" = (
 /turf/open/water/beach/deep,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -1796,10 +2003,15 @@
 /obj/structure/curtain/cloth/grey,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/beach/village/armory)
+"JE" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/beach/village/armory)
 "JV" = (
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/village/infirmary)
 "Kd" = (
@@ -1825,10 +2037,12 @@
 /area/ruin/beach/village/kitchen)
 "Kp" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/wasp,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/green,
 /area/ruin/beach/village/dorm)
 "Kv" = (
 /obj/machinery/light/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/village/armory)
 "KT" = (
@@ -1838,6 +2052,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/armory)
 "Lu" = (
@@ -1944,6 +2159,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/armory)
 "Ny" = (
@@ -1956,6 +2172,7 @@
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/village/officers)
 "NC" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/village/infirmary)
 "NN" = (
@@ -1967,6 +2184,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/armory)
 "NV" = (
@@ -2003,6 +2221,10 @@
 /obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/plasteel,
 /area/ruin/beach/village/infirmary)
+"Oo" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/beach/village/officers)
 "Ow" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2019,6 +2241,13 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"OQ" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/beach/village/kitchen)
 "OY" = (
 /obj/structure/railing/wood{
 	dir = 5
@@ -2060,6 +2289,7 @@
 	pixel_x = 0;
 	pixel_y = 9
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/kitchen)
 "PT" = (
@@ -2108,10 +2338,6 @@
 	},
 /turf/open/water/beach/deep,
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"QX" = (
-/obj/machinery/light/directional/south,
-/turf/open/floor/wood,
-/area/ruin/beach/village/officers)
 "Rx" = (
 /obj/structure/cable{
 	icon_state = "4-10"
@@ -2131,6 +2357,11 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/armory)
+"RQ" = (
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/rations,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/beach/village/armory)
 "Sg" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
@@ -2143,6 +2374,10 @@
 /obj/structure/flora/stump,
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Sx" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_3,
+/area/ruin/beach/village/armory)
 "SE" = (
 /obj/structure/bed{
 	dir = 4
@@ -2157,6 +2392,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/village/kitchen)
 "SU" = (
@@ -2185,6 +2421,10 @@
 /obj/item/storage/backpack/duffelbag,
 /turf/open/floor/wood,
 /area/ruin/beach/village/dorm)
+"To" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/beach/village/armory)
 "Tr" = (
 /obj/structure/fluff/beach_umbrella,
 /turf/open/floor/carpet/red,
@@ -2226,6 +2466,7 @@
 "TA" = (
 /obj/structure/crate_shelf,
 /obj/effect/turf_decal/siding/thinplating/corner,
+/obj/structure/closet/crate/trashcart,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/beach/village/armory)
 "TP" = (
@@ -2251,6 +2492,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/ruin/beach/village/armory)
 "Uj" = (
@@ -2260,6 +2502,7 @@
 /obj/item/clothing/head/frontier/peaked,
 /obj/item/clothing/shoes/sandal,
 /obj/item/clothing/under/shorts/dolphin,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/beach/village/officers)
 "Ul" = (
@@ -2378,6 +2621,7 @@
 	dir = 4;
 	color = "#543C30"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/beach/village/kitchen)
 "Xv" = (
@@ -2422,6 +2666,7 @@
 /obj/structure/cable{
 	icon_state = "1-6"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/village/armory)
 "YG" = (
@@ -2440,6 +2685,17 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/beach/village/armory)
+"Zf" = (
+/obj/effect/turf_decal/road{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Zg" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/beach/village/dorm)
 "Zs" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/item/food/fishmeat,
@@ -3849,9 +4105,9 @@ LR
 LR
 AP
 If
-mi
+BR
 Jr
-Hn
+Jf
 If
 fh
 Es
@@ -3898,12 +4154,12 @@ oU
 oU
 If
 If
-Fp
+Gp
 Fp
 VV
 Ye
-Ye
-lc
+JE
+Sx
 VV
 cx
 If
@@ -3954,14 +4210,14 @@ oU
 oU
 If
 Aq
-Aq
+Dl
 Mq
 If
 Kv
-Ye
+JE
 UB
 If
-mi
+BR
 Jr
 Hn
 If
@@ -4009,8 +4265,8 @@ PT
 oU
 Su
 If
-fC
-fC
+mG
+yn
 fC
 If
 Ye
@@ -4073,8 +4329,8 @@ NZ
 If
 If
 If
-mn
-mG
+RQ
+ur
 TA
 Fp
 If
@@ -4129,7 +4385,7 @@ Ye
 DQ
 lc
 nM
-fR
+Hy
 vd
 pK
 rD
@@ -4147,8 +4403,8 @@ Kh
 Kh
 Kh
 Kh
-Kh
-Kh
+dd
+dd
 Kh
 Kh
 Kh
@@ -4178,14 +4434,14 @@ oU
 oU
 If
 Dg
-mi
-mi
+BR
+BR
 Gs
-Ye
+JE
 Ye
 lc
 If
-fR
+To
 Iw
 cV
 Nu
@@ -4194,16 +4450,16 @@ Uh
 xR
 YG
 YG
+zD
+zD
+zD
+zD
+zD
 YG
 YG
 YG
-YG
-YG
-YG
-YG
-YG
-YG
-YG
+zD
+zD
 YG
 YG
 YG
@@ -4234,7 +4490,7 @@ oU
 oU
 If
 yx
-mi
+BR
 mi
 sq
 mm
@@ -4244,21 +4500,21 @@ If
 fR
 Iw
 jD
-rD
+AN
 Ul
 Ny
 dq
+Zf
+Zf
 LH
 LH
 LH
 LH
 LH
-LH
-LH
-LH
-LH
-LH
-LH
+Zf
+Zf
+Zf
+Zf
 LH
 LH
 LH
@@ -4290,7 +4546,7 @@ oU
 oU
 If
 Kk
-Oy
+zT
 Cn
 Gs
 hD
@@ -4300,7 +4556,7 @@ xe
 Za
 Dn
 gK
-rD
+AN
 Ul
 jm
 uU
@@ -4312,8 +4568,8 @@ Kh
 Kh
 Kh
 Kh
-Kh
-Kh
+dd
+dd
 Kh
 Kh
 Kh
@@ -4354,7 +4610,7 @@ If
 If
 If
 mn
-wo
+IL
 EU
 Oy
 If
@@ -4462,11 +4718,11 @@ si
 KT
 IU
 FY
-Ye
+JE
 ts
 If
 qe
-yb
+eB
 wT
 If
 Es
@@ -5346,7 +5602,7 @@ ad
 nT
 UM
 Eb
-Eb
+qd
 sZ
 ll
 ZI
@@ -5358,7 +5614,7 @@ uJ
 ot
 ZA
 lR
-bo
+cX
 ZA
 ZA
 QP
@@ -5400,9 +5656,9 @@ ll
 GB
 vV
 qp
-UM
+OQ
 DG
-wP
+jv
 Oc
 ll
 QP
@@ -5458,19 +5714,19 @@ SP
 MW
 vv
 DG
-wP
-Oc
+jv
+fi
 ll
 QP
 Jk
 rA
 ZA
-Oj
-DU
+iw
+wo
 QO
 ZA
 Hk
-bo
+cX
 pQ
 ZA
 QP
@@ -5479,8 +5735,8 @@ rA
 ew
 kA
 Mt
-an
-an
+jO
+jO
 HS
 Ht
 ew
@@ -5512,21 +5768,21 @@ ll
 Dq
 zw
 PK
-UM
+OQ
 DG
 wP
-Oc
+fi
 ll
 QP
 Jk
 rA
 Vu
 Dv
-DU
+wo
 DU
 iQ
 NN
-bo
+cX
 ph
 ZA
 QP
@@ -5535,7 +5791,7 @@ rA
 ew
 CM
 Kp
-Cw
+pu
 Cw
 lz
 ly
@@ -5578,7 +5834,7 @@ Jk
 rA
 Vu
 Dv
-Dv
+Oo
 df
 ZA
 Hq
@@ -5590,10 +5846,10 @@ Jk
 rA
 ew
 Oi
-lz
+sn
 uP
 AC
-lz
+sn
 dl
 ew
 QP
@@ -5625,7 +5881,7 @@ Zs
 AV
 cT
 iU
-iU
+xW
 iU
 LS
 ll
@@ -5702,7 +5958,7 @@ Jk
 rA
 ew
 Ba
-an
+jO
 sY
 iF
 an
@@ -5749,8 +6005,8 @@ uE
 kI
 jb
 nL
-nL
-nL
+DC
+DC
 Dv
 ZA
 QP
@@ -5758,7 +6014,7 @@ Jk
 rA
 ew
 vX
-qK
+qj
 jn
 FX
 qK
@@ -5801,22 +6057,22 @@ Jk
 Jk
 rA
 Xz
-kI
-kI
+rJ
+rJ
 ZA
 eW
 Ut
-nL
-QX
+DC
+CN
 ZA
 QP
 Jk
 rA
 ew
 Tj
-Ud
-FX
-FX
+Zg
+uH
+uH
 Ud
 Tj
 ew
@@ -5857,7 +6113,7 @@ Jk
 Jk
 rA
 Xz
-kI
+rJ
 tw
 ZA
 qO
@@ -5872,7 +6128,7 @@ ew
 ew
 qq
 Tj
-Tj
+rO
 qq
 ew
 ew
