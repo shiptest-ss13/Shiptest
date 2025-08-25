@@ -5416,10 +5416,13 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/firealarm/directional/east{
-	pixel_y = 6
+	pixel_y = -4
 	},
 /obj/structure/extinguisher_cabinet/directional/east{
-	pixel_y = -6
+	pixel_y = -16
+	},
+/obj/machinery/light/small/directional/east{
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
@@ -5443,11 +5446,11 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/noticeboard{
 	dir = 1;
 	pixel_y = -25
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
 "Ul" = (
@@ -6096,7 +6099,7 @@
 	pixel_y = 22
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/east,
+/obj/machinery/computer/cryopod/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "Zh" = (
