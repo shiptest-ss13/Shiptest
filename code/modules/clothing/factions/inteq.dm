@@ -73,7 +73,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
 	icon_state = "armor_inteq_battlecoat"
 	item_state = "inteq_battlecoat"
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/inteq/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/inteq/kepori.dmi'
 
@@ -90,7 +90,9 @@
 	desc = "A brown armored coat with a bulletproof vest over it, usually worn by the Master At Arms of the IRMG."
 	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/inteq/kepori.dmi'
 	icon_state = "maacoat"
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/suit/armor/inteq/corpsman
 	name = "inteq corpsman vest"
@@ -138,6 +140,8 @@
 
 /obj/item/clothing/head/hooded/winterhood/security/inteq
 	icon_state = "hood_inteq"
+	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/inteq/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/inteq/kepori.dmi'
