@@ -19,6 +19,10 @@
 	mask = /obj/item/clothing/mask/gas/sechailer
 	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
+/datum/outfit/frontier/internals/fake
+	name = "Frontiersman Corpse Internals"
+	neck = null
+
 /obj/effect/mob_spawn/human/corpse/frontier/ranged
 	outfit = /datum/outfit/frontier
 
