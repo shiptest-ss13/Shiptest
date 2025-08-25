@@ -2,16 +2,16 @@
 GLOBAL_LIST_EMPTY(dynamic_human_appearances)
 
 /// Creates a human with the given parameters and returns an appearance of it
-/proc/get_dynamic_human_appearance(outfit_path, species_path = /datum/species/human, mob_spawn_path, r_hand, l_hand, bloody_slots = NONE, animated = TRUE)
+/proc/get_dynamic_human_appearance(outfit_path, species_path = /datum/species/human, mob_spawn_path, r_hand, l_hand, bloody_slots = NONE, seed = 1)
 	if(!species_path)
 		return FALSE
 	if(!ispath(species_path))
 		stack_trace("Attempted to call get_dynamic_human_appearance() with an instantiated species_path. Pass the species datum typepath instead.")
 		return FALSE
-	var/arg_string = "[outfit_path]_[species_path]_[mob_spawn_path]_[l_hand]_[r_hand]_[bloody_slots]_[rand(1,5)]"
+	var/arg_string = "[outfit_path]_[species_path]_[mob_spawn_path]_[l_hand]_[r_hand]_[bloody_slots]_[seed]"
 	if(GLOB.dynamic_human_appearances[arg_string]) //if already exists in our cache, just return that
 		return GLOB.dynamic_human_appearances[arg_string]
-	var/mob/living/carbon/human/dummy/consistent/dummy = new()
+	var/mob/living/carbon/human/dummy/dummy = new()
 	dummy.set_species(species_path)
 	dummy.stat = CONSCIOUS //He needs to be alive or he has no eyes. Scary
 	dummy.underwear = "Nude"
@@ -50,7 +50,7 @@ GLOBAL_LIST_EMPTY(dynamic_human_appearances)
 	return output
 
 ///This exists to apply the icons async, as that cannot be done in Initialize because of possible sleeps.
-/proc/apply_dynamic_human_appearance(atom/target, outfit_path, species_path = /datum/species/human, mob_spawn_path, r_hand, l_hand, bloody_slots = NONE)
+/proc/apply_dynamic_human_appearance(atom/target, outfit_path, species_path = /datum/species/human, mob_spawn_path, r_hand, l_hand, bloody_slots = NONE, seed = 1)
 	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(set_dynamic_human_appearance), args)
 
 ///This proc gets an argument of a target and runs
