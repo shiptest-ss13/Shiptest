@@ -23,6 +23,7 @@
 	name = "Frontiersman Corpse Internals"
 	head = /obj/item/clothing/head/clip/boonie
 	neck = null
+	mask = /obj/item/clothing/mask/gas/frontiersmen
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged
 	outfit = /datum/outfit/frontier
