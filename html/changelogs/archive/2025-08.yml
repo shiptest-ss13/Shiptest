@@ -147,3 +147,23 @@
   - bugfix: Morph Aggro
   thearbiber:
   - rscadd: clip outpost
+2025-08-24:
+  goober3:
+  - rscdel: Planetary siding decals have been removed.
+  thearbiber:
+  - bugfix: species pants
+2025-08-25:
+  Anticept:
+  - server: Cleaned up __byond_version_compat.dm, minimum version is now 515.1644
+  - server: updates .tgs.yml, dependencies.sh, and dockerfile to use 515.1647
+  Zevotech:
+  - rscadd: Every deprecated instance of plating/dirt and plating/grass has been updated
+      to use their /asteroid modern counterparts. Rejoice! Pretty much nothing has
+      changed!
+  - rscadd: Updates beach, jungle, and most rockplanet ruin maps to use the non-deprecated
+      dirt and grass turfs.
+  - bugfix: Removed two duplicate sprites in jungle.dmi that were causing dirt to
+      use the wrong sprites in editor
+  - rscdel: Every deprecated turf under /turf/open/floor/plating/dirt and /turf/open/floor/plating/grass
+  - rscdel: Removed /turf/open/floor/plating/grass. Anything that used it now uses
+      /asteroid/dirt/grass.

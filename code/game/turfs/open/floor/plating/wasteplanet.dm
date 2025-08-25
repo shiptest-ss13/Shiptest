@@ -201,27 +201,6 @@
 /turf/open/floor/concrete/pavement/wasteplanet/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
 	return
 
-
-
-///Biological Turfs
-
-/turf/open/floor/plating/grass/wasteplanet
-	icon_state = "junglegrass"
-	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	light_color = COLOR_WASTEPLANET_LIGHT
-
-/turf/open/floor/plating/dirt/old/waste
-	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	baseturfs = /turf/open/floor/plating/asteroid/wasteplanet
-	light_color = COLOR_WASTEPLANET_LIGHT
-
-
-
-
-
-
 //open turfs then open lits.
 
 /turf/open/floor/plating/wasteplanet/lit
@@ -251,16 +230,6 @@
 	light_color = COLOR_WASTEPLANET_LIGHT
 
 /turf/open/floor/concrete/pavement/wasteplanet/lit
-	light_range = 2
-	light_power = 0.2
-	light_color = COLOR_WASTEPLANET_LIGHT
-
-/turf/open/floor/plating/dirt/old/waste/lit
-	light_range = 2
-	light_power = 0.2
-	light_color = COLOR_WASTEPLANET_LIGHT
-
-/turf/open/floor/plating/grass/wasteplanet/lit
 	light_range = 2
 	light_power = 0.2
 	light_color = COLOR_WASTEPLANET_LIGHT
