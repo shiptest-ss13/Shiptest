@@ -218,7 +218,7 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/f3
 	name = "Frontiersman Marksman"
 	desc = "A member of the brutal Frontiersman terrorist fleet! Bedecked in military-grade armor, they steadily hold their aging DMR in your direction."
-	icon_state = "frontiersmanrangedelite"
+	icon_state = "frontiersmanrangedmosin"
 	shoot_point_blank = TRUE
 	projectilesound = 'sound/weapons/gun/rifle/f4.ogg'
 	rapid = 2
