@@ -7,7 +7,10 @@
 	var/obj/item/reagent_containers/required_container = null // the exact container path required for the reaction to happen
 	var/required_other = 0 // an integer required for the reaction to happen
 
-	var/mob_react = TRUE //Determines if a chemical reaction can occur inside a mob
+	///Determines if a chemical reaction can occur inside a mob
+	var/mob_react = TRUE
+	///Determines if a chemical reaction inside a stomach will be audibly upset by the reaction
+	var/notify_stomach = FALSE
 
 	var/required_temp = 0
 	var/is_cold_recipe = 0 // Set to 1 if you want the recipe to only react when it's BELOW the required temp.
