@@ -51,3 +51,23 @@
 
 /area/ruin/beach/bunker/side_two
 	icon_state = "green"
+
+// fishing village
+
+/area/ruin/beach/village
+	icon_state = "green"
+
+/area/ruin/beach/village/armory
+	icon_state = "armory"
+
+/area/ruin/beach/village/infirmary
+	icon_state = "blue"
+
+/area/ruin/beach/village/kitchen
+	icon_state = "bar"
+
+/area/ruin/beach/village/officers
+	icon_state = "bridge"
+
+/area/ruin/beach/village/dorm
+	icon_state = "crew_quarters"
