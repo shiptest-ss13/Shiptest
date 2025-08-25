@@ -233,29 +233,41 @@
 
 /obj/item/storage/guncase/pistol/miniegun
 	gun_type = /obj/item/gun/energy/e_gun/mini
-	mag_type = /obj/item/stock_parts/cell/gun/mini
+	mag_type = /obj/item/stock_parts/cell/gun/sharplite/mini
 
 /obj/item/storage/guncase/energy
 	mag_type = /obj/item/stock_parts/cell/gun
 
 /obj/item/storage/guncase/energy/laser
-	gun_type = /obj/item/gun/energy/laser
+	gun_type = /obj/item/gun/energy/sharplite/l201/l204
+	mag_type = /obj/item/stock_parts/cell/gun/sharplite
+
+/obj/item/storage/guncase/energy/l201
+	gun_type = /obj/item/gun/energy/sharplite/l201
+	mag_type = /obj/item/stock_parts/cell/gun/sharplite
 
 /obj/item/storage/guncase/energy/egun
-	gun_type = /obj/item/gun/energy/e_gun
+	gun_type = /obj/item/gun/energy/sharplite/x12
+	mag_type = /obj/item/stock_parts/cell/gun/sharplite
 
 /obj/item/storage/guncase/energy/ultima
 	gun_type = /obj/item/gun/energy/e_gun/iot
+	mag_type = /obj/item/stock_parts/cell/gun/sharplite
 
 /obj/item/storage/guncase/energy/etar
 	gun_type = /obj/item/gun/energy/e_gun/smg
+	mag_type = /obj/item/stock_parts/cell/gun/sharplite
+
+/obj/item/storage/guncase/energy/al607
+	gun_type = /obj/item/gun/energy/sharplite/al607
+	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 
 /obj/item/storage/guncase/energy/iongun
 	gun_type = /obj/item/gun/energy/ionrifle
 
 /obj/item/storage/guncase/hades
 	gun_type = /obj/item/gun/energy/e_gun/hades
-	mag_type = /obj/item/stock_parts/cell/gun/upgraded
+	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 
 /* Old NT */
 
@@ -263,13 +275,9 @@
 	gun_type = /obj/item/gun/ballistic/automatic/smg/wt550
 	mag_type = /obj/item/ammo_box/magazine/wt550m9
 
-/obj/item/storage/guncase/gauss
-	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss
-	mag_type = /obj/item/ammo_box/magazine/gauss
-
 /obj/item/storage/guncase/saber
-	gun_type = /obj/item/gun/ballistic/automatic/smg/skm_carbine/saber
-	mag_type = /obj/item/ammo_box/magazine/smgm9mm
+	gun_type = /obj/item/gun/ballistic/automatic/pistol/champion
+	mag_type = /obj/item/ammo_box/magazine/co9mm
 
 /* Minutemen */
 

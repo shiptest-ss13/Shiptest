@@ -32,46 +32,6 @@
 	wear_major_threshold = 720
 	wear_maximum = 1200
 
-/obj/item/gun/ballistic/automatic/smg/wt550
-	name = "\improper WT-550 Automatic Rifle"
-	desc = "An outdated PDW, used centuries ago by Nanotrasen security elements. Uses 4.6x30mm rounds."
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
-	icon_state = "wt550"
-	item_state = "arg"
-	default_ammo_type = /obj/item/ammo_box/magazine/wt550m9
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/wt550m9,
-	)
-	actions_types = list()
-	show_magazine_on_sprite = TRUE
-	show_magazine_on_sprite_ammo = TRUE
-	empty_indicator = TRUE
-	manufacturer = MANUFACTURER_NANOTRASEN_OLD
-	fire_sound = 'sound/weapons/gun/smg/smg_heavy.ogg'
-
-/obj/item/gun/ballistic/automatic/smg/wt550/no_mag
-	default_ammo_type = FALSE
-
-/obj/item/gun/ballistic/automatic/smg/vector
-	name = "\improper Vector carbine"
-	desc = "A police carbine based on a pre-Night of Fire SMG design. Most of the complex workings have been removed for reliability. Chambered in 9x18mm."
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
-	icon_state = "vector"
-	item_state = "vector"
-	default_ammo_type = /obj/item/ammo_box/magazine/smgm9mm
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/smgm9mm,
-	) //you guys remember when the autorifle was chambered in 9mm
-	bolt_type = BOLT_TYPE_LOCKING
-	show_magazine_on_sprite = TRUE
-	weapon_weight = WEAPON_LIGHT
-	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine
 	name = "\improper SKM-24v"
@@ -173,6 +133,7 @@
 
 NO_MAG_GUN_HELPER(automatic/smg/skm_carbine/inteq)
 
+//TODO: REMOVE
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/saber
 	name = "\improper Nanotrasen Saber SMG"
 	desc = "A prototype full-auto 9x18mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."

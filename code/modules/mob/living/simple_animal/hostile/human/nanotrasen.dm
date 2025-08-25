@@ -102,7 +102,7 @@
 	desc = "A member of Vigilitas Interstellar, with their chin high up. They confidently aim around their shotgun, ready to burn away any trespassers."
 	icon_state = "nanotrasenrangedsmg"
 	icon_living = "nanotrasenrangedsmg"
-	casingtype = /obj/item/ammo_casing/energy/laser/ultima
+	casingtype = /obj/item/ammo_casing/energy/laser/shotgun/sharplite
 	r_hand = /obj/item/gun/energy/laser/iot/lethal
 	rapid = 2
 	rapid_fire_delay = 5
@@ -194,7 +194,7 @@
 	minimum_distance = 1
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
-	casingtype = /obj/item/ammo_casing/energy/laser/ultima
+	casingtype = /obj/item/ammo_casing/energy/laser/shotgun/sharplite
 	projectiletype = null
 	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
 	r_hand = /obj/item/gun/energy/laser/iot/lethal
