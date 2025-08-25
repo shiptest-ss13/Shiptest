@@ -158,7 +158,7 @@
 		ui = new(user, src, "Crayon", name)
 		ui.open()
 
-/obj/item/toy/crayon/spraycan/AltClick(mob/user)
+/obj/item/toy/crayon/spraycan/attack_self_secondary(mob/user)
 	if(user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		if(has_cap)
 			is_capped = !is_capped

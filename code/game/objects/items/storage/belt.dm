@@ -834,7 +834,7 @@
 	if(length(contents))
 		. += span_notice("Alt-click it to quickly draw the blade.")
 
-/obj/item/storage/belt/sabre/AltClick(mob/user)
+/obj/item/storage/belt/sabre/attack_hand_secondary(mob/user, list/modifiers)
 	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if(length(contents))
@@ -844,6 +844,7 @@
 		update_appearance()
 	else
 		to_chat(user, span_warning("[src] is empty!"))
+	. = ..()
 
 /obj/item/storage/belt/sabre/update_icon_state()
 	icon_state = "[base_icon_state]"

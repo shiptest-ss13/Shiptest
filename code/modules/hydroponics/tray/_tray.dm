@@ -436,12 +436,6 @@
 		var/obj/item/reagent_containers/reagent_source = O
 		lastuser = REF(user)
 
-		if(istype(reagent_source, /obj/item/reagent_containers/syringe))
-			var/obj/item/reagent_containers/syringe/syr = reagent_source
-			if(syr.mode != 1)
-				to_chat(user, span_warning("You can't get any extract out of this plant."))
-				return
-
 		if(!reagent_source.reagents.total_volume)
 			to_chat(user, span_notice("[reagent_source] is empty."))
 			return 1
@@ -460,8 +454,6 @@
 			if(istype(reagent_source, /obj/item/reagent_containers/syringe/))
 				var/obj/item/reagent_containers/syringe/syr = reagent_source
 				visi_msg = "[user] injects [target] with [syr]"
-				if(syr.reagents.total_volume <= syr.amount_per_transfer_from_this)
-					syr.mode = 0
 			// Beakers, bottles, buckets, etc.
 			if(reagent_source.is_drainable())
 				playsound(loc, 'sound/effects/slosh.ogg', 25, TRUE)
@@ -595,6 +587,12 @@
 			return
 	else
 		return ..()
+
+/obj/machinery/hydroponics/attackby_secondary(obj/item/weapon, mob/user, list/modifiers, list/attack_modifiers)
+	if (istype(weapon, /obj/item/reagent_containers/syringe))
+		to_chat(user, span_warning("You can't get any extract out of this plant."))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	return SECONDARY_ATTACK_CALL_NORMAL
 
 /obj/machinery/hydroponics/can_be_unfasten_wrench(mob/user, silent)
 	if (!unwrenchable) // case also covered by NODECONSTRUCT checks in default_unfasten_wrench
