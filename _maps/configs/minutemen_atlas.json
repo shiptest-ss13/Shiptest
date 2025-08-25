@@ -20,27 +20,31 @@
 			"officer": true,
 			"slots": 1
 		},
-		"First Officer": {
-			"outfit": "/datum/outfit/job/clip/first_officer",
+		"Bridge Officer": {
+			"outfit": "/datum/outfit/job/clip/minutemen/bridge_officer",
 			"officer": true,
 			"slots": 1
 		},
-		"Sergeant": {
+		"Team Sergeant": {
 			"outfit": "/datum/outfit/job/clip/minutemen/grunt/lead",
 			"officer": true,
 			"slots": 1
 		},
-		"Corpsman": {
-			"outfit": "/datum/outfit/job/clip/minutemen/doctor",
+		"Combat Medic": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt/medic",
 			"slots": 1
 		},
-		"Engineer": {
+		"Naval Engineer": {
 			"outfit": "/datum/outfit/job/clip/minutemen/engineer",
 			"slots": 1
 		},
 		"Minuteman": {
 			"outfit": "/datum/outfit/job/clip/minutemen/grunt",
-			"slots": 4
+			"slots": 2
+		},
+		"Military Correspondent": {
+			"outfit": "/datum/outfit/job/clip/correspondent",
+			"slots": 1
 		},
 		"Reservist": {
 			"outfit": "/datum/outfit/job/clip/minutemen/grunt/reserve",
