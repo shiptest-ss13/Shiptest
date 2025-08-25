@@ -20,7 +20,6 @@
 	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
 /datum/outfit/frontier/internals/fake
-	name = "Frontiersman Corpse Internals"
 	head = /obj/item/clothing/head/clip/boonie
 	neck = null
 	mask = /obj/item/clothing/mask/gas/frontiersmen
