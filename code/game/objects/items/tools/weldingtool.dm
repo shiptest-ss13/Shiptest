@@ -29,11 +29,16 @@
 	heat = 3800
 	tool_behaviour = TOOL_WELDER
 	toolspeed = 1
-	custom_materials = list(/datum/material/iron=70, /datum/material/glass=30)
-	///Whether the welding tool is on or off.
+	custom_materials = list(
+		/datum/material/iron = 70,
+		/datum/material/glass = 30,
+	)
+	/// Whether the welding tool is on or off.
 	var/welding = FALSE
-	var/status = TRUE 		//Whether the welder is secured or unsecured (able to attach rods to it to make a flamethrower)
-	var/max_fuel = 20 	//The max amount of fuel the welder can hold
+	// Whether the welder is secured or unsecured (able to attach rods to it to make a flamethrower)
+	var/status = TRUE
+	/// The max amount of fuel the welder can hold
+	var/max_fuel = 20
 	var/change_icons = 1
 	var/can_off_process = 0
 	var/burned_fuel_for = 0	//when fuel was last removed
@@ -164,7 +169,6 @@
 				message_admins("[ADMIN_LOOKUPFLW(user)] set [key_name_admin(L)] on fire with [src] at [AREACOORD(user)]")
 				log_game("[key_name(user)] set [key_name(L)] on fire with [src] at [AREACOORD(user)]")
 
-
 /obj/item/weldingtool/attack_self(mob/user)
 	if(src.reagents.has_reagent(/datum/reagent/toxin/plasma))
 		message_admins("[ADMIN_LOOKUPFLW(user)] activated a rigged welder at [AREACOORD(user)].")
@@ -172,7 +176,6 @@
 	switched_on(user)
 
 	update_appearance()
-
 
 // Ah fuck, I can't believe you've done this
 /obj/item/weldingtool/proc/handle_fuel_and_temps(used = 0, mob/living/user)
@@ -183,7 +186,6 @@
 // Returns the amount of fuel in the welder
 /obj/item/weldingtool/proc/get_fuel()
 	return reagents.get_reagent_amount(/datum/reagent/fuel)
-
 
 // Uses fuel from the welding tool.
 /obj/item/weldingtool/use(used = 0)
@@ -200,7 +202,6 @@
 	else
 		return FALSE
 
-
 //Toggles the welding value.
 /obj/item/weldingtool/proc/set_welding(new_value)
 	if(welding == new_value)
@@ -208,7 +209,6 @@
 	. = welding
 	welding = new_value
 	set_light_on(welding)
-
 
 //Turns off the welder if there is no more fuel (does this really need to be its own proc?)
 /obj/item/weldingtool/proc/check_fuel(mob/user)
@@ -250,7 +250,6 @@
 	damtype = "brute"
 	hitsound = "swing_hit"
 	update_appearance()
-
 
 /obj/item/weldingtool/examine(mob/user)
 	. = ..()
