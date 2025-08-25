@@ -30,7 +30,7 @@
 /datum/mission/ruin/minutecorpse
 	name = "Bro's gone."
 	desc = "One of my pals, great person, recently enlisted into the minutemen as some vehicle dude or whatever. Said they were going on some scouting mission here, haven't heard a response from them in about a week. Think you could find out what happened, and get something for their family?"
-	value = 2750
+	value = 2250
 	mission_limit = 1
 	author = "A friend."
 	faction = /datum/faction/clip
