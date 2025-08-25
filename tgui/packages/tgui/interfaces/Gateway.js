@@ -1,4 +1,3 @@
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
@@ -6,12 +5,14 @@ import {
   NoticeBox,
   ProgressBar,
   Section,
-} from '../components';
+} from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 export const Gateway = () => {
   return (
-    <Window resizable>
+    <Window>
       <Window.Content scrollable>
         <GatewayContent />
       </Window.Content>
@@ -19,8 +20,8 @@ export const Gateway = () => {
   );
 };
 
-const GatewayContent = (props, context) => {
-  const { act, data } = useBackend(context);
+const GatewayContent = (props) => {
+  const { act, data } = useBackend();
   const {
     gateway_present = false,
     gateway_status = false,

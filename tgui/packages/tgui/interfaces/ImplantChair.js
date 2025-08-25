@@ -1,9 +1,10 @@
+import { Button, Icon, LabeledList, Section } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Button, Icon, LabeledList, Section } from '../components';
 import { Window } from '../layouts';
 
-export const ImplantChair = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ImplantChair = (props) => {
+  const { act, data } = useBackend();
   return (
     <Window width={375} height={280}>
       <Window.Content>
@@ -19,15 +20,15 @@ export const ImplantChair = (props, context) => {
                   data.occupant.stat === 0
                     ? 'good'
                     : data.occupant.stat === 1
-                    ? 'average'
-                    : 'bad'
+                      ? 'average'
+                      : 'bad'
                 }
               >
                 {data.occupant.stat === 0
                   ? 'Conscious'
                   : data.occupant.stat === 1
-                  ? 'Unconcious'
-                  : 'Dead'}
+                    ? 'Unconcious'
+                    : 'Dead'}
               </LabeledList.Item>
             )}
           </LabeledList>

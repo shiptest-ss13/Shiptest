@@ -80,11 +80,13 @@ export const DmTarget = new Juke.Target({
     get(DefineParameter).includes("ALL_MAPS") && DmMapsIncludeTarget,
   ],
   inputs: [
-    "_maps/map_files/**",
-    "code/**",
-    "html/**",
-    "icons/**",
-    "interface/**",
+    '_maps/map_files/**',
+    'code/**',
+    'html/**',
+    'icons/**',
+    'interface/**',
+    'sound/**',
+    'tgui/public/tgui.html',
     `${DME_NAME}.dme`,
     NamedVersionFile,
   ],
@@ -235,7 +237,7 @@ export const TguiTarget = new Juke.Target({
     "tgui/.yarn/install-target",
     "tgui/webpack.config.js",
     "tgui/**/package.json",
-    "tgui/packages/**/*.+(js|cjs|ts|tsx|scss)",
+    "tgui/packages/**/*.+(js|cjs|ts|tsx|jsx|scss)",
   ],
   outputs: [
     "tgui/public/tgui.bundle.css",
@@ -383,3 +385,17 @@ export const TgsTarget = new Juke.Target({
 const TGS_MODE = process.env.CBT_BUILD_MODE === "TGS";
 
 export default TGS_MODE ? TgsTarget : BuildTarget;
+
+export const TguiPrettierFix = new Juke.Target({
+  dependsOn: [YarnTarget],
+  executes: () => yarn('tgui:prettier-fix'),
+});
+
+export const TguiEslintFix = new Juke.Target({
+  dependsOn: [YarnTarget],
+  executes: () => yarn('tgui:eslint-fix'),
+});
+
+export const TguiFix = new Juke.Target({
+  dependsOn: [TguiPrettierFix, TguiEslintFix],
+});

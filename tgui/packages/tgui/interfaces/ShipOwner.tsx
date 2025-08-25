@@ -1,14 +1,15 @@
-import { useBackend, useLocalState } from '../backend';
-import { decodeHtmlEntities } from 'common/string';
 import {
   Button,
+  Divider,
   LabeledList,
+  NumberInput,
   Section,
   Table,
   Tabs,
-  Divider,
-  NumberInput,
-} from '../components';
+} from 'tgui-core/components';
+import { decodeHtmlEntities } from 'tgui-core/string';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
 type ShipOwnerData = {
@@ -46,9 +47,9 @@ type JobData = {
   def: number;
 };
 
-export const ShipOwner = (props, context) => {
+export const ShipOwner = (props) => {
   return (
-    <Window width={620} height={620} resizable>
+    <Window width={620} height={620}>
       <Window.Content scrollable>
         <ShipOwnerContent />
       </Window.Content>
@@ -56,9 +57,9 @@ export const ShipOwner = (props, context) => {
   );
 };
 
-const ShipOwnerContent = (_, context: any) => {
-  const { act, data } = useBackend<ShipOwnerData>(context);
-  const [tab, setTab] = useLocalState(context, 'tab', 1);
+const ShipOwnerContent = (_) => {
+  const { act, data } = useBackend<ShipOwnerData>();
+  const [tab, setTab] = useLocalState('tab', 1);
   const {
     crew = [],
     jobs = [],
@@ -105,8 +106,8 @@ const ShipOwnerContent = (_, context: any) => {
                   joinMode === 'Open'
                     ? 'good'
                     : joinMode === 'Apply'
-                    ? 'average'
-                    : 'bad'
+                      ? 'average'
+                      : 'bad'
                 }
                 onClick={() => act('cycleJoin')}
               />
@@ -215,14 +216,13 @@ const ShipOwnerContent = (_, context: any) => {
           <LabeledList>
             <LabeledList.Item label="Crew Profit Share">
               <NumberInput
-                animate
                 unit="%"
                 step={1}
                 stepPixelSize={15}
                 minValue={0}
                 maxValue={7}
                 value={crew_share * 100}
-                onDrag={(e, value) =>
+                onDrag={(value) =>
                   act('adjustshare', {
                     adjust: value,
                   })

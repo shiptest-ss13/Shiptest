@@ -1,9 +1,10 @@
+import { Button, LabeledList, Section } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Button, LabeledList, Section } from '../components';
 import { Window } from '../layouts';
 
-export const Mint = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Mint = (props) => {
+  const { act, data } = useBackend();
   const inserted_materials = data.inserted_materials || [];
   return (
     <Window width={300} height={250}>

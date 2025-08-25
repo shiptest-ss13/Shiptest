@@ -1,4 +1,3 @@
-import { useBackend } from '../backend';
 import {
   AnimatedNumber,
   Box,
@@ -6,11 +5,13 @@ import {
   LabeledList,
   ProgressBar,
   Section,
-} from '../components';
+} from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
-export const SmokeMachine = (props, context) => {
-  const { act, data } = useBackend(context);
+export const SmokeMachine = (props) => {
+  const { act, data } = useBackend();
   const {
     TankContents,
     isTankLoaded,

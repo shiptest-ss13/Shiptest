@@ -42,7 +42,7 @@ COPY dependencies.sh .
 RUN apt-get update \
     && apt-get install curl -y \
     && /bin/bash -c "source dependencies.sh \
-    && curl -fsSL https://deb.nodesource.com/setup_\$NODE_VERSION.x | bash -" \
+    && curl -fsSL https://deb.nodesource.com/setup_\$NODE_VERSION_LTS.x | bash -" \
     && apt-get install -y nodejs
 
 # Build TGUI, tgfonts, and the dmb

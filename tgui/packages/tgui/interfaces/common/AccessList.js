@@ -1,6 +1,7 @@
 import { sortBy } from 'common/collections';
-import { useLocalState } from '../../backend';
-import { Button, Flex, Grid, Section, Tabs } from '../../components';
+import { Button, Flex, Section, Tabs } from 'tgui-core/components';
+
+import { useSharedState } from '../../backend';
 
 const diffMap = {
   0: {
@@ -17,7 +18,7 @@ const diffMap = {
   },
 };
 
-export const AccessList = (props, context) => {
+export const AccessList = (props) => {
   const {
     accesses = [],
     selectedList = [],
@@ -27,16 +28,16 @@ export const AccessList = (props, context) => {
     grantDep,
     denyDep,
   } = props;
-  const [selectedAccessName, setSelectedAccessName] = useLocalState(
-    context,
+  const [selectedAccessName, setSelectedAccessName] = useSharedState(
     'accessName',
-    accesses[0]?.name
+    accesses[0]?.name,
   );
   const selectedAccess = accesses.find(
-    (access) => access.name === selectedAccessName
+    (access) => access.name === selectedAccessName,
   );
-  const selectedAccessEntries = sortBy((entry) => entry.desc)(
-    selectedAccess?.accesses || []
+  const selectedAccessEntries = sortBy(
+    selectedAccess?.accesses || [],
+    (entry) => entry.desc,
   );
 
   const checkAccessIcon = (accesses) => {
@@ -101,8 +102,8 @@ export const AccessList = (props, context) => {
           </Tabs>
         </Flex.Item>
         <Flex.Item grow={1}>
-          <Grid>
-            <Grid.Column mr={0}>
+          <Flex>
+            <Flex.Column mr={0}>
               <Button
                 fluid
                 icon="check"
@@ -110,8 +111,8 @@ export const AccessList = (props, context) => {
                 color="good"
                 onClick={() => grantDep(selectedAccess.regid)}
               />
-            </Grid.Column>
-            <Grid.Column ml={0}>
+            </Flex.Column>
+            <Flex.Column ml={0}>
               <Button
                 fluid
                 icon="times"
@@ -119,8 +120,8 @@ export const AccessList = (props, context) => {
                 color="bad"
                 onClick={() => denyDep(selectedAccess.regid)}
               />
-            </Grid.Column>
-          </Grid>
+            </Flex.Column>
+          </Flex>
           {selectedAccessEntries.map((entry) => (
             <Button.Checkbox
               fluid

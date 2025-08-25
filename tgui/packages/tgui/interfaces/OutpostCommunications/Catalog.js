@@ -1,9 +1,7 @@
-import { flow } from 'common/fp';
-import { filter, sortBy } from 'common/collections';
-import { useBackend, useSharedState } from '../../backend';
 import {
   Box,
   Button,
+  Collapsible,
   Flex,
   Icon,
   Input,
@@ -11,35 +9,32 @@ import {
   Stack,
   Table,
   Tabs,
-  Collapsible,
-} from '../../components';
-import { formatMoney } from '../../format';
+} from 'tgui-core/components';
+import { formatMoney } from 'tgui-core/format';
 
-export const CargoCatalog = (props, context) => {
-  const { act, data } = useBackend(context);
+import { useBackend, useSharedState } from '../../backend';
+import { searchForSupplies } from './helpers';
+
+export const CargoCatalog = (props) => {
+  const { act, data } = useBackend();
 
   const { self_paid, app_cost, blockade } = data;
 
   const supplies = Object.values(data.supplies);
 
   const [activeSupplyName, setActiveSupplyName] = useSharedState(
-    context,
     'supply',
-    supplies[0]?.name
+    supplies[0]?.name,
   );
 
-  const [searchText, setSearchText] = useSharedState(
-    context,
-    'search_text',
-    ''
-  );
+  const [searchText, setSearchText] = useSharedState('search_text', '');
 
-  const [cart, setCart] = useSharedState(context, 'cart', []);
+  const [cart, setCart] = useSharedState('cart', []);
 
   const cartTotal = cart.reduce(
     (cartTotal, entry) =>
       cartTotal + (entry.discountedcost ? entry.discountedcost : entry.cost),
-    0
+    0,
   );
 
   const activeSupply =
@@ -199,7 +194,7 @@ export const CargoCatalog = (props, context) => {
                           : formatMoney(
                               (self_paid && !pack.goody) || app_cost
                                 ? Math.round(pack.cost * 1.1)
-                                : pack.cost
+                                : pack.cost,
                             )}
                         {' cr'}
                       </Button>
@@ -213,27 +208,4 @@ export const CargoCatalog = (props, context) => {
       </Section>
     </>
   );
-};
-
-/**
- * Take entire supplies tree
- * and return a flat supply pack list that matches search,
- * sorted by name and only the first page.
- * @param {any[]} supplies Supplies list.
- * @param {string} search The search term
- * @returns {any[]} The flat list of supply packs.
- */
-const searchForSupplies = (supplies, search) => {
-  search = search.toLowerCase();
-
-  return flow([
-    (categories) => categories.flatMap((category) => category.packs),
-    filter(
-      (pack) =>
-        pack.name?.toLowerCase().includes(search.toLowerCase()) ||
-        pack.desc?.toLowerCase().includes(search.toLowerCase())
-    ),
-    sortBy((pack) => pack.name),
-    (packs) => packs.slice(0, 25),
-  ])(supplies);
 };

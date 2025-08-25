@@ -1,10 +1,11 @@
+import { Box, Button, Flex, NoticeBox, Section } from 'tgui-core/components';
+import { toTitleCase } from 'tgui-core/string';
+
 import { useBackend } from '../backend';
-import { Box, Button, Grid, Section, NoticeBox } from '../components';
-import { toTitleCase } from 'common/string';
 import { Window } from '../layouts';
 
-export const EightBallVote = (props, context) => {
-  const { act, data } = useBackend(context);
+export const EightBallVote = (props) => {
+  const { act, data } = useBackend();
   const { shaking } = data;
   return (
     <Window width={400} height={600}>
@@ -17,17 +18,17 @@ export const EightBallVote = (props, context) => {
   );
 };
 
-const EightBallVoteQuestion = (props, context) => {
-  const { act, data } = useBackend(context);
+const EightBallVoteQuestion = (props) => {
+  const { act, data } = useBackend();
   const { question, answers = [] } = data;
   return (
     <Section>
       <Box bold textAlign="center" fontSize="16px" m={1}>
         &quot;{question}&quot;
       </Box>
-      <Grid>
+      <Flex>
         {answers.map((answer) => (
-          <Grid.Column key={answer.answer}>
+          <Flex.Column key={answer.answer}>
             <Button
               fluid
               bold
@@ -46,9 +47,9 @@ const EightBallVoteQuestion = (props, context) => {
             <Box bold textAlign="center" fontSize="30px">
               {answer.amount}
             </Box>
-          </Grid.Column>
+          </Flex.Column>
         ))}
-      </Grid>
+      </Flex>
     </Section>
   );
 };
