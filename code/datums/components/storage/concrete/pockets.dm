@@ -90,6 +90,7 @@
 		/obj/item/clothing/glasses/hud/security/night,
 		/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 		/obj/item/clothing/glasses/sunglasses/ballistic,
+		/obj/item/clothing/glasses/security/sunglasses/pgf,
 		/obj/item/clothing/glasses/hud/security/sunglasses/ngr,
 		/obj/item/clothing/glasses/hud/security/sunglasses/hardliners,
 		/obj/item/ammo_casing,

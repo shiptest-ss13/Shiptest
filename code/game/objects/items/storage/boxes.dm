@@ -162,6 +162,10 @@
 	mask_type = /obj/item/clothing/mask/balaclava
 	internal_type = /obj/item/tank/internals/emergency_oxygen/double
 
+/obj/item/storage/box/survival/pgf
+	mask_type = /obj/item/clothing/mask/breath/pgfmask
+	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
+
 /obj/item/storage/box/survival/inteq
 	mask_type = /obj/item/clothing/mask/balaclava/inteq
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
