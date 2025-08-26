@@ -20,6 +20,7 @@
 	equip_delay_other = 25
 	resistance_flags = FLAMMABLE
 	custom_price = 250
+	alternate_worn_layer = BELT_LAYER
 
 /obj/item/clothing/ears/earmuffs/ComponentInitialize()
 	. = ..()
