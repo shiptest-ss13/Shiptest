@@ -204,6 +204,10 @@
 	pixel_x = -6;
 	pixel_y = 28
 	},
+/obj/item/clothing/head/chefhat{
+	pixel_x = -8;
+	pixel_y = -9
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/kitchen)
 "ee" = (
@@ -719,6 +723,13 @@
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/armory)
+"nQ" = (
+/obj/item/clothing/head/chefhat{
+	pixel_x = 7;
+	pixel_y = 6
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/beach/village/kitchen)
 "nT" = (
 /obj/structure/cable{
 	icon_state = "5-8"
@@ -1399,6 +1410,10 @@
 	pixel_y = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/food/grown/banana{
+	pixel_x = 10;
+	pixel_y = -8
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/kitchen)
 "zy" = (
@@ -2241,6 +2256,10 @@
 	name = "frontiersmen cow";
 	desc = "You get the feeling that somehow, this cow wishes they'd hit Luna-Town again. They also have a pancake in their mouth."
 	},
+/obj/item/grown/bananapeel{
+	pixel_x = -8;
+	pixel_y = -13
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/kitchen)
 "PK" = (
@@ -2684,7 +2703,9 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/beach/village/armory)
 "Zs" = (
-/obj/structure/closet/secure_closet/freezer/fridge,
+/obj/structure/closet/secure_closet/freezer/fridge{
+	populate = 0
+	},
 /obj/item/food/fishmeat,
 /obj/item/food/fishmeat,
 /obj/item/food/fishmeat,
@@ -5419,7 +5440,7 @@ oU
 oU
 CK
 Ko
-bp
+Ns
 Ns
 bp
 Vt
@@ -5867,7 +5888,7 @@ ll
 Zs
 AV
 cT
-iU
+nQ
 WO
 iU
 LS
