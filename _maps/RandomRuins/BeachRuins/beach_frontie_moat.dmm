@@ -25,7 +25,7 @@
 /obj/structure/cable{
 	icon_state = "4-9"
 	},
-/turf/open/floor/plating/asteroid/dirt/beach,
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/dorm)
 "aW" = (
 /obj/structure/cable{
@@ -70,7 +70,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/light/small/directional/east,
-/turf/open/floor/plating/asteroid/dirt/beach,
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/kitchen)
 "bs" = (
 /obj/effect/turf_decal/siding/thinplating{
@@ -231,7 +231,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/open/floor/plating/asteroid/dirt/beach,
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/officers)
 "ei" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -256,10 +256,6 @@
 	},
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"ff" = (
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plating/asteroid/dirt/beach,
-/area/ruin/beach/village/infirmary)
 "fh" = (
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -328,7 +324,7 @@
 /obj/structure/cable{
 	icon_state = "1-6"
 	},
-/turf/open/floor/plating/asteroid/dirt/beach,
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/infirmary)
 "gr" = (
 /obj/structure/table,
@@ -385,7 +381,7 @@
 /area/ruin/beach/village/armory)
 "hy" = (
 /obj/machinery/light/small/directional/north,
-/turf/open/floor/plating/asteroid/dirt/grass/beach,
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/infirmary)
 "hD" = (
 /obj/structure/cable{
@@ -574,6 +570,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/wood,
 /area/ruin/beach/village/dorm)
 "kI" = (
@@ -1087,13 +1084,6 @@
 	},
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/village/infirmary)
-"uz" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/plating/asteroid/dirt/beach,
-/area/ruin/beach/village/officers)
 "uE" = (
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/floor/wood/walnut,
@@ -1175,7 +1165,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/light/small/directional/east,
-/turf/open/floor/plating/asteroid/dirt/grass/beach,
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/officers)
 "vR" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
@@ -1564,7 +1554,7 @@
 /area/ruin/beach/village/dorm)
 "CK" = (
 /obj/machinery/light/small/directional/east,
-/turf/open/floor/plating/asteroid/dirt/grass/beach,
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/kitchen)
 "CM" = (
 /obj/structure/closet/crate/bin,
@@ -1702,10 +1692,6 @@
 "Es" = (
 /turf/open/floor/plating/asteroid/sand/dense/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"Ew" = (
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/plating/asteroid/dirt/grass/beach,
-/area/ruin/beach/village/dorm)
 "EG" = (
 /obj/effect/decal/cleanable/crayon{
 	color = "#FF3333";
@@ -2002,7 +1988,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/open/floor/plating/asteroid/dirt/beach,
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/kitchen)
 "Kp" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/wasp,
@@ -2129,7 +2115,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating/asteroid/dirt/beach,
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/kitchen)
 "Nu" = (
 /obj/structure/cable{
@@ -2284,7 +2270,7 @@
 /area/ruin/beach/village/armory)
 "Qe" = (
 /obj/machinery/light/small/directional/east,
-/turf/open/floor/plating/asteroid/dirt/beach,
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/dorm)
 "Qf" = (
 /obj/structure/cable{
@@ -2328,7 +2314,7 @@
 /turf/open/floor/plating/asteroid/sand/dense/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "RE" = (
-/turf/open/floor/plating/asteroid/dirt/beach,
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/dorm)
 "RP" = (
 /obj/machinery/door/airlock/engineering{
@@ -3981,7 +3967,7 @@ Sp
 Ya
 QA
 zy
-ff
+hy
 Dy
 oU
 oU
@@ -5503,7 +5489,7 @@ mK
 mK
 vP
 eh
-uz
+vP
 Vt
 mK
 Qf
@@ -5627,7 +5613,7 @@ aM
 RE
 RE
 RE
-Ew
+Qe
 oU
 QP
 Jk
