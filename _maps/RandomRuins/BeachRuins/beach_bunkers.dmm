@@ -1425,9 +1425,7 @@
 /turf/closed/wall/concrete,
 /area/ruin/beach/bunker/side_one)
 "rw" = (
-/obj/vehicle/ridden/atv{
-	dir = 4
-	},
+/obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/concrete/pavement/beachplanet,
 /area/ruin/beach/bunker/side_one)
 "rH" = (
@@ -1960,7 +1958,6 @@
 /area/ruin/beach/bunker)
 "yM" = (
 /obj/structure/rack,
-/obj/item/key,
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/concrete/pavement/beachplanet,
 /area/ruin/beach/bunker/side_one)
@@ -2785,6 +2782,11 @@
 	dir = 4
 	},
 /turf/open/floor/concrete/slab_1,
+/area/ruin/beach/bunker/side_one)
+"Ir" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil/streak,
+/turf/open/floor/concrete/pavement/beachplanet,
 /area/ruin/beach/bunker/side_one)
 "IA" = (
 /obj/effect/turf_decal/siding/wood{
@@ -4921,7 +4923,7 @@ in
 wk
 rt
 yq
-CL
+Ir
 yq
 rt
 bW
