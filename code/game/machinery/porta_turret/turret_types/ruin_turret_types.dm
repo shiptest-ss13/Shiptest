@@ -153,3 +153,10 @@
 	shot_delay = 15
 	burst_size = 2
 	burst_delay = 3
+
+/obj/machinery/porta_turret/ruin/nt/heavy
+	name = "Sharplite Defense Cannon"
+	desc = "A heavy laser mounting designed by Sharplite for usage on Nanotrasen vessels."
+	lethal_projectile = /obj/projectile/beam/laser/heavylaser/sharplite
+	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
+	max_integrity = 250

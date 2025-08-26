@@ -39,12 +39,12 @@
 	if(iscyborg(user) || I.tool_behaviour == TOOL_MULTITOOL)
 		hack_lock(user)
 	else if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP && !broken)
-		if(obj_integrity < max_integrity)
+		if(atom_integrity < max_integrity)
 			if(!I.tool_start_check(user, src, amount=2))
 				return
 			to_chat(user, span_notice("You begin repairing [src]"))
 			if(I.use_tool(src, user, 40, volume=50, amount=2))
-				obj_integrity = max_integrity
+				atom_integrity = max_integrity
 				update_appearance()
 				to_chat(user, span_notice("You repair [src]"))
 		else
@@ -58,12 +58,11 @@
 		to_chat(user, span_notice("You start fixing [src]..."))
 		if(do_after(user, 20, target = src) && G.use(2))
 			broken = 0
-			obj_integrity = max_integrity
+			atom_integrity = max_integrity
 			update_appearance()
 	else if(open || broken)
 		if(istype(I, allowed_type) && !stored)
 			var/obj/item/storee = I
-			SIGNAL_HANDLER
 			if(storee && HAS_TRAIT(storee, TRAIT_WIELDED))
 				to_chat(user, span_warning("Unwield the [storee.name] first."))
 				return
@@ -95,13 +94,14 @@
 	if(.)
 		update_appearance()
 
-/obj/structure/cabinet/obj_break(damage_flag)
+/obj/structure/cabinet/atom_break(damage_flag)
 	if(!broken && !(flags_1 & NODECONSTRUCT_1))
 		update_appearance()
 		broken = TRUE
 		playsound(src, 'sound/effects/glassbr3.ogg', 100, TRUE)
 		new /obj/item/shard(loc)
 		new /obj/item/shard(loc)
+	. = ..()
 
 /obj/structure/cabinet/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -154,7 +154,7 @@
 	if(open)
 		. += "glass_raised"
 		return
-	var/hp_percent = obj_integrity/max_integrity * 100
+	var/hp_percent = atom_integrity/max_integrity * 100
 	if(broken)
 		. += "glass4"
 	else

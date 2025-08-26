@@ -219,6 +219,7 @@
 	var/json_key
 	//Setting this to false will prevent the roundstart_template from being loaded on Initiallize(). You should set this to false if this loads a subship on a ship map template
 	var/load_template_on_initialize = TRUE
+	var/outpost_special_dock_perms = FALSE //gives the ship we're spawning special dock perms on the outpost
 	/// The docking ticket of the ship docking to this port.
 	var/datum/docking_ticket/current_docking_ticket
 	/// Moves docking port around in it's "box" so that any ship can land in this "box" think of this as, whatever the height and width are set to on initialize, anything smaller than the "box" can land in it with this on
@@ -234,7 +235,7 @@
 	///ditto
 	var/datum/map_template/outpost/hangar/initial_hangar_template
 
-/obj/docking_port/stationary/Initialize(mapload)
+/obj/docking_port/stationary/Initialize(mapload, datum/overmap/dock_holder)
 	. = ..()
 	SSshuttle.stationary += src
 	initial_location = list("x" = x, "y" = y, "z" = z)
@@ -246,6 +247,9 @@
 			T.flags_1 |= NO_RUINS_1
 		if(SSshuttle.initialized && load_template_on_initialize) // If the docking port is loaded via map but SSshuttle has already init (therefore this would never be called)
 			INVOKE_ASYNC(src, PROC_REF(load_roundstart))
+	if(istype(dock_holder, /datum/overmap/outpost))
+		var/datum/overmap/outpost/parent_outpost = dock_holder
+		LAZYADD(parent_outpost.main_floor_docks,src)
 
 	#ifdef DOCKING_PORT_HIGHLIGHT
 	highlight("#f00")
@@ -263,7 +267,7 @@
 		if(!roundstart_template)
 			CRASH("Invalid path ([template]) passed to docking port.")
 
-		var/datum/overmap/ship/controlled/new_ship = new(SSovermap.get_overmap_object_by_location(src), , template, FALSE) //Don't instantiate, we handle that ourselves
+		var/datum/overmap/ship/controlled/new_ship = new(SSovermap.get_overmap_object_by_location(src), , template, FALSE, outpost_special_dock_perms) //Don't instantiate, we handle that ourselves
 		new_ship.connect_new_shuttle_port(SSshuttle.action_load(template, new_ship, src))
 
 /**

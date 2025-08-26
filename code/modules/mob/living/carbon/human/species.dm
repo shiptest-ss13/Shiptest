@@ -572,10 +572,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/hair_hidden = FALSE //ignored if the matching dynamic_X_suffix is non-empty
 	var/facialhair_hidden = FALSE // ^
 
-	//for augmented heads
-	if(!IS_ORGANIC_LIMB(HD))
-		return
-
 	//we check if our hat or helmet hides our facial hair.
 	if(H.head)
 		var/obj/item/I = H.head
@@ -1244,7 +1240,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				return FALSE
 			if(H.s_store && !swap)
 				return FALSE
+			if(HAS_TRAIT(I, TRAIT_FORCE_SUIT_STORAGE_ALWAYS))
+				return TRUE
 			if(HAS_TRAIT(I, TRAIT_FORCE_SUIT_STORAGE))
+				if(!H.w_uniform)
+					if(!disable_warning)
+						to_chat(H, span_warning("You need at least a uniform before you can attach this [I.name]!"))
+					return FALSE
 				return TRUE
 			if(!H.wear_suit)
 				if(!disable_warning)
@@ -1369,7 +1371,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		else if(H.satiety < 0)
 			H.satiety++
 			if(prob(round(-H.satiety/40)))
-				H.adjust_jitter(5, max = 100)
+				H.adjust_timed_status_effect(5 SECONDS, /datum/status_effect/jitter)
 			hunger_rate = 3 * HUNGER_FACTOR
 		hunger_rate *= H.physiology.hunger_mod
 		H.adjust_nutrition(-hunger_rate)

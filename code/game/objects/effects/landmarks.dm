@@ -437,11 +437,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "subship_dock"
 	dir = NORTH
 	var/datum/map_template/shuttle/subship_template
+	var/load_on_init = FALSE
+	var/outpost_docker = FALSE
 	var/offset_x = 0
 	var/offset_y = 0
 
-/obj/effect/landmark/subship/New(loc)
+/obj/effect/landmark/subship/New(loc, datum/map_template/shuttle/ship_template, datum/overmap/dock_holder)
 	..(loc)
+	if(ship_template)
+		subship_template = ship_template
 	var/datum/map_template/shuttle/template = SSmapping.shuttle_templates[initial(subship_template.file_name)]
 	var/dock_x
 	var/dock_y
@@ -458,9 +462,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 		if(WEST)
 			dock_x = template.height - template.port_y_offset
 			dock_y = template.port_x_offset - 1
-	var/obj/docking_port/stationary/dock = new(locate(x + offset_x + dock_x, y + offset_y + dock_y, z))
+	var/obj/docking_port/stationary/dock = new(locate(x + offset_x + dock_x, y + offset_y + dock_y, z), dock_holder)
 	dock.roundstart_template = subship_template
-	dock.load_template_on_initialize = FALSE
+	dock.outpost_special_dock_perms = outpost_docker
+	dock.load_template_on_initialize = load_on_init
 	dock.dir = angle2dir_cardinal(dir2angle(template.port_dir)+dir2angle(dir))
 	switch(template.port_dir) // Setting the dock's bounding box vars
 		if(NORTH)
@@ -489,3 +494,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	// Subship landmarks are in the bounding box of the subship, meaning that the landmark can be landed on which destroys it.
 	// I'm not sure landmarks destroyed on landing is intended behavior or not, so we're not destroying the dock on deletion just in case it is.
 	. = ..()
+
+/obj/effect/landmark/subship/outpost
+	outpost_docker = TRUE
+	load_on_init = FALSE
+	subship_template = /datum/map_template/shuttle/subshuttles/tanto
+
+
+

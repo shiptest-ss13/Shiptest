@@ -424,6 +424,9 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	for(var/obj/machinery/door/DOOR in src)
 		close_and_lock_door(DOOR)
 
+	for(var/obj/structure/hazard/hazards in src)
+		hazards.alarm()
+
 	for (var/i in GLOB.silicon_mobs)
 		var/mob/living/silicon/SILICON = i
 		if(SILICON.triggerAlarm("Burglar", src, cameras, trigger))

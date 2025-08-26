@@ -33,7 +33,7 @@
 
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 100, "fire" = 50, "acid" = 0)
 
-	habitable_atmos = list("min_oxy" = 0, "max_oxy" = 0, "min_plas" = 0, "max_plas" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	habitable_atmos = IMMUNE_ATMOS_REQS
 	minimum_survivable_temperature = TCMB
 	ai_controller = /datum/ai_controller/basic_controller/hivebot
 
@@ -91,9 +91,9 @@
 	ai_controller = /datum/ai_controller/basic_controller/hivebot/ranged
 
 /mob/living/basic/hivebot/rapid
-	icon_state = "ranged"
-	icon_living = "ranged"
-	icon_dead = "ranged"
+	icon_state = "rapid"
+	icon_living = "rapid"
+	icon_dead = "rapid"
 	ranged_attacker = TRUE
 	ai_controller = /datum/ai_controller/basic_controller/hivebot/ranged/rapid
 
@@ -120,9 +120,9 @@
 /mob/living/basic/hivebot/core //slave to the system
 	name = "core hivebot"
 	desc = "A massive, alien tower of metal and circuitry. Eyes adorn its body, each one casting a ray of electronic light in myriad directions. Slaved to its whim is a scrapped turret mounting, angrily glancing at the world around it."
-	icon_state = "strong"
-	icon_living = "strong"
-	icon_dead = "strong"
+	icon_state = "core"
+	icon_living = "core"
+	icon_dead = "core"
 	armor = list("melee" = 40, "bullet" = 60, "laser" = 30, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 100, "fire" = 50, "acid" = 0)
 	health = 120
 	maxHealth = 120
@@ -160,9 +160,9 @@
 
 /mob/living/basic/hivebot/mechanic
 	name = "hivebot mechanic"
-	icon_state = "strong"
-	icon_living = "strong"
-	icon_dead = "strong"
+	icon_state = "eng"
+	icon_living = "eng"
+	icon_dead = "eng"
 	desc = "A tidy, discordant machine made of scrap, adorned with analyzers, waldos, and touching eyes."
 	health = 60
 	maxHealth = 60
@@ -190,13 +190,13 @@
 		return COMPONENT_HOSTILE_NO_ATTACK
 
 /mob/living/basic/hivebot/mechanic/proc/repair_machine(obj/machinery/fixable)
-	if(fixable.obj_integrity >= fixable.max_integrity)
+	if(fixable.atom_integrity >= fixable.max_integrity)
 		to_chat(src, span_warning("Diagnostics indicate that this machine is at peak integrity."))
 		return
 	if(!COOLDOWN_FINISHED(src, repair_cooldown))
 		balloon_alert(src, "recharging!")
 		return
-	fixable.obj_integrity = fixable.max_integrity
+	fixable.atom_integrity = fixable.max_integrity
 	do_sparks(n = 3, c = TRUE, source = fixable)
 	to_chat(src, span_warning("Repairs complete!"))
 	COOLDOWN_START(src, repair_cooldown, 50 SECONDS)

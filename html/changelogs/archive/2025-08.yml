@@ -1,0 +1,176 @@
+2025-08-01:
+  Aquidu:
+  - rscadd: Adds a wide variety of changes to the Harrier
+  - code_imp: Added a glass full of Bridge Bunny as a placeable object
+  Erikafox:
+  - bugfix: you can live laugh love again
+  generalthrax:
+  - rscdel: removed gibtonite from sand planet randomgen
+  generalthrax, moffball19:
+  - balance: F4 and variants no longer have a scope attachment and instead have an
+      integrated scope
+  jlsnow301:
+  - bugfix: Gets TGUI <i>FUNCTIONAL</i>, but not necessarily smooth on 516. There's
+      still going to be a lot of issues, but at least it'll be playable.
+  thearbiber:
+  - rscadd: Resprites polo, button up, alt sports bra and tank top
+2025-08-02:
+  Erikafox:
+  - rscdel: fax spam
+  - balance: Solaris scope removed, Solaris power cost increased, Solaris cycle time
+      increased
+  - rscadd: Drills now spawn a spawner, which in turn spawns the monsters. It's an
+      innovative system really.
+  - bugfix: ACTUALLY FIXED DRILL TURF PLACEMENT THIS TIME
+  - rscadd: 'Garden scanning missions: Take a survey scanner from the outpost and
+      go scan the everliving shit out of some gardens.'
+  - balance: hollow water no longer spawns in geysers
+  - rscdel: spraypainting clothing
+  GeneralThrax:
+  - rscadd: added emergency first-aid autoinjectors and hypovolemic-response autoinjectors
+      to specialist medical first-aid kits
+  - bugfix: increased volume of epipens so that all listed reagents are spawned
+  Gristlebee:
+  - rscdel: EMPs randomize locker access
+  - rscadd: Suit Storage Unit locks respect access
+  SapphicOverload:
+  - balance: Significantly reduced the time ion storms disable APCs for, preventing
+      softlocks
+2025-08-03:
+  thearbiber:
+  - rscadd: resprites pews
+  - rscadd: resprites ponytail, adds ponytail simple, ponytail over eye
+2025-08-05:
+  Erikafox:
+  - bugfix: bone gel on its own now causes bone breaks to heal
+  - balance: replace cirrus rattlesnakes with cobras
+2025-08-06:
+  Ical92:
+  - bugfix: minor Atira-class QoL tweaks
+  - bugfix: Market blockades now work again
+  Ossa88:
+  - bugfix: Coffee Creamer Packages have sprites.
+  - bugfix: Chocolate Sprinkles have sprites.
+  - bugfix: Coffee is being placed inside the coffee bags, and its already dried.
+  - bugfix: Premium Coffee Machine correctly understand dried and undried beans inside
+      the coffee bag.
+2025-08-07:
+  Erikafox:
+  - rscadd: inteq sneaksuit outfit by @thearbiber
+  - imageadd: new shemagh sprites by @thearbiber
+  Gristlebee, theArbiter:
+  - rscadd: Ramzi Blasting Hammer
+  - bugfix: Blank spent shell icons
+  generalthrax:
+  - bugfix: cirrus now has the correct ammo
+  - rscadd: You can dry Seaweed again using the drying rack
+  kaylexis:
+  - rscadd: New Hivebot Sprites
+  thearbiber:
+  - rscadd: resprites twintail, adds twintail long and long bun half
+2025-08-08:
+  Ical92:
+  - bugfix: fixed outpost communications console TGUI crash
+2025-08-09:
+  thearbiber:
+  - rscadd: Shortbow-class dropship, Javelin-class Mobile Operations Shuttle
+  - rscdel: Anvil-class Dropship
+2025-08-10:
+  blinkdog:
+  - bugfix: Cleaning up some QA lints
+2025-08-12:
+  DIB-DOG:
+  - rscadd: Added a door and shutters to the Nail subshuttle
+  - rscadd: Adds cryogenic oversight consoles into the Mercurial Quasar and Woeful
+      Cthonian
+  generalthrax:
+  - rscadd: Outposts now have a special aquarium with fish that don't starve (in 8
+      hours)
+2025-08-13:
+  blinkdog:
+  - bugfix: Added calls to parent methods where expected
+  generalthrax:
+  - bugfix: Machine pistols now have the same wear thresholds across the board
+2025-08-14:
+  FalloutFalcon:
+  - code_imp: turf offset at compile time instead of init
+  Gristlebee:
+  - bugfix: Typhon engines
+  moffball19:
+  - rscadd: Remapped the Vaquero-class Light Frigate
+  - rscadd: Enforcer Class One outfit
+  - rscadd: no_mag subtype for the Kingsnake
+  newwavediscologist:
+  - rscadd: Adds new hairbows
+  rye-rice, thearbiber, generalthrax:
+  - rscadd: Added SSG-08 Saluki, Inteq sniper rifle refit of the F90, chambered in
+      6.5mm
+  - balance: Reduced F90 price to 4000
+  thearbiber, generalthrax:
+  - rscadd: Added new hermit sprites and hermit dynamic mobs
+  - balance: Generalized hermit drops across the board to be pretty similar for all
+      mobs
+  - rscdel: Removed prototype explorer gear
+  - rscdel: Removed IPCs from the hermit species pool
+2025-08-15:
+  FalloutFalcon:
+  - refactor: cows are now basic mobs
+  - bugfix: hive bot mechanics will salvage machines
+  thearbiber:
+  - rscadd: touches up honorable vanguard sprites
+2025-08-16:
+  Erikafox:
+  - bugfix: towels should no longer crash the server
+  Gristlebee:
+  - balance: Generalizes shoulder sling behavior.
+  Ical92:
+  - rscadd: Added improved fax spam event
+  moffball, generalthrax, erikafox:
+  - rscadd: A new IPC frame, the Clover Corporation 'Humaniform'
+  - rscadd: A new FBP sprite unique to humans
+  thearbiber:
+  - rscadd: resprites pufferjackets
+  - rscadd: kepori variants to various pants
+  - bugfix: human hand sprite
+2025-08-20:
+  Gristlebee:
+  - rscadd: Subshuttle spawners can now be mapped onto ruins and outpost maps to spawn
+      functional ships.
+  moffball19:
+  - rscadd: NT has installed proper bathroom locks on their outposts
+2025-08-21:
+  Gristlebee:
+  - rscadd: Serene Hunts
+  - rscadd: Fire and electrical hazards
+  - rscadd: Legions can be made to spawn specific mobs.
+  - bugfix: Ammo Casing Cookoff
+  - bugfix: Morph Aggro
+  thearbiber:
+  - rscadd: clip outpost
+2025-08-24:
+  goober3:
+  - rscdel: Planetary siding decals have been removed.
+  thearbiber:
+  - bugfix: species pants
+2025-08-25:
+  Anticept:
+  - server: Cleaned up __byond_version_compat.dm, minimum version is now 515.1644
+  - server: updates .tgs.yml, dependencies.sh, and dockerfile to use 515.1647
+  Zevotech:
+  - rscadd: Every deprecated instance of plating/dirt and plating/grass has been updated
+      to use their /asteroid modern counterparts. Rejoice! Pretty much nothing has
+      changed!
+  - rscadd: Updates beach, jungle, and most rockplanet ruin maps to use the non-deprecated
+      dirt and grass turfs.
+  - bugfix: Removed two duplicate sprites in jungle.dmi that were causing dirt to
+      use the wrong sprites in editor
+  - rscdel: Every deprecated turf under /turf/open/floor/plating/dirt and /turf/open/floor/plating/grass
+  - rscdel: Removed /turf/open/floor/plating/grass. Anything that used it now uses
+      /asteroid/dirt/grass.
+2025-08-26:
+  generalthrax:
+  - rscdel: Removed hivebot metal biome from wastes
+  - balance: Wastes are now significantly less cavey and have much less hivebots.
+      Current cave biomes have less concrete and wall density
+  thearbiber:
+  - rscadd: redo of NT ice sauna

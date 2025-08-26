@@ -257,7 +257,7 @@
 		if(10, 11)
 			. += "[pick(GLOB.planet_prefixes)] [pick(GLOB.planet_names)]"
 		if(12)
-			. += "[pick(GLOB.adjectives)] [pick(GLOB.planet_names)]"
+			. += "[capitalize(pick(GLOB.adjectives))] [pick(GLOB.planet_names)]"
 
 /**
  * Load a level for a ship that's visiting the level.
@@ -285,6 +285,11 @@
 	var/datum/virtual_level/our_likely_vlevel = mapzone.virtual_levels[1]
 	if(istype(our_likely_vlevel) && selfloop)
 		our_likely_vlevel.selfloop()
+
+	for(var/obj/docking_port/stationary/port in reserve_docks)
+		if(port.roundstart_template)
+			port.name = "[name] auxillary docking location"
+			port.load_roundstart()
 
 	SEND_SIGNAL(src, COMSIG_OVERMAP_LOADED)
 	loading = FALSE
