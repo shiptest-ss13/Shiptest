@@ -219,7 +219,7 @@
 
 	uniform = /obj/item/clothing/under/gezena/marine
 	suit = /obj/item/clothing/suit/armor/gezena/marine
-	head = /obj/item/clothing/head/gezena/marine
+	head = /obj/item/clothing/head/helmet/gezena
 	belt = /obj/item/storage/belt/military/gezena
 	gloves = /obj/item/clothing/gloves/gezena/marine
 	shoes = /obj/item/clothing/shoes/combat/gezena/marine
