@@ -45,6 +45,7 @@
 #define DYNAMIC_WORLD_ASTEROID "asteroid"
 #define DYNAMIC_WORLD_MINOR_PLANET "minor"
 #define DYNAMIC_WORLD_SPACERUIN "space"
+#define DYNAMIC_WORLD_SPACE_NO_RUIN "empty space"
 #define DYNAMIC_WORLD_GAS_GIANT "gas giant"
 #define DYNAMIC_WORLD_PLASMA_GIANT "plasma giant"
 
