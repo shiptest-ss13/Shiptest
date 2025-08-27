@@ -161,7 +161,7 @@
 
 	uniform = /obj/item/clothing/under/gezena
 	suit = /obj/item/clothing/suit/armor/gezena/engi
-	head = /obj/item/clothing/head/gezena
+	head = /obj/item/clothing/head/gezena/engi
 	belt = /obj/item/storage/belt/utility/full/engi
 	gloves = /obj/item/clothing/gloves/gezena/engi
 	shoes = /obj/item/clothing/shoes/combat/gezena
@@ -178,9 +178,9 @@
 	job_icon = "medicaldoctor"
 
 	uniform = /obj/item/clothing/under/gezena
-	suit = /obj/item/clothing/suit/armor/gezena
+	suit = /obj/item/clothing/suit/armor/gezena/medic
 	head = /obj/item/clothing/head/gezena/medic
-	gloves = /obj/item/clothing/gloves/gezena
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/med
 
@@ -202,7 +202,9 @@
 	gloves = /obj/item/clothing/gloves/gezena/marine
 	shoes = /obj/item/clothing/shoes/combat/gezena/marine
 	neck = /obj/item/clothing/neck/cloak/gezena
-	r_hand = /obj/item/gun/energy/kalix/pgf/heavy
+	r_hand = /obj/item/gun/energy/kalix/pgf/medium
+	mask = /obj/item/clothing/mask/breath/pgfmask
+	glasses = /obj/item/clothing/glasses/sunglasses/pgf
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
@@ -222,7 +224,9 @@
 	gloves = /obj/item/clothing/gloves/gezena/marine
 	shoes = /obj/item/clothing/shoes/combat/gezena/marine
 	neck = /obj/item/clothing/neck/cloak/gezena/command
-	r_hand = /obj/item/gun/energy/kalix/pgf
+	r_hand = /obj/item/gun/energy/kalix/pgf/heavy
+	mask = /obj/item/clothing/mask/breath/pgfmask
+	glasses = /obj/item/clothing/glasses/sunglasses/pgf
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
@@ -240,9 +244,11 @@
 	head = /obj/item/clothing/head/helmet/gezena
 	belt = /obj/item/storage/belt/medical/gezena
 	gloves = /obj/item/clothing/gloves/gezena/marine
-	shoes = /obj/item/clothing/shoes/combat/gezena
+	shoes = /obj/item/clothing/shoes/combat/gezena/marine
 	neck = /obj/item/clothing/neck/cloak/gezena/med
 	r_hand = /obj/item/gun/energy/kalix/pgf
+	mask = /obj/item/clothing/mask/breath/pgfmask
+	glasses = /obj/item/clothing/glasses/sunglasses/pgf
 
 	backpack = /obj/item/storage/backpack/medic
 	satchel = /obj/item/storage/backpack/satchel/med

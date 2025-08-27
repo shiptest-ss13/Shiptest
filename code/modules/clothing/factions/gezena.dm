@@ -124,10 +124,10 @@
 
 /obj/item/clothing/suit/space/gezena/marine
 	name = "\improper PGFMC Lataka Combat Suit"
-	desc = "Not quite as old as the Rakalla suit, but venerable in its own right the Lataka combat suit is the Marine Corps' go-to EVA combat suit when power armored unit aren't availible. For what it lacks in protection, it makes up for in price and ease of use."
+	desc = "Not quite as old as the Rakalla suit, but venerable in its own right the Lataka combat suit is the Marine Corps' go-to EVA combat suit when power armored unit aren't availible. For what it lacks in comparative protection, it makes up for in price and ease of use."
 	icon_state = "marinespacesuit"
 	item_state = "marinespace"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
 
 /obj/item/clothing/head/helmet/space/gezena
@@ -148,7 +148,7 @@
 	desc = "Features rubberized grommets for safely accomodating any length of horn and thicker plating on the forehead, sacrificing visibility for much needed protection."
 	icon_state = "marinespacehelmet"
 	item_state = "marinespacehelm"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 	supports_variations = SNOUTED_VARIATION
 
 //Hats
@@ -169,7 +169,7 @@
 
 /obj/item/clothing/head/gezena/flap
 	name = "\improper PGFN Betzu-il cap"
-	desc = "The standard cap of the PGF military, in Navy colors. “betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects."
+	desc = "The standard cap of the PGF military, in Navy colors. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects."
 	icon_state = "navyflap"
 	item_state = "bluecloth"
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
@@ -190,7 +190,7 @@
 
 /obj/item/clothing/head/gezena/flap/marine
 	name = "\improper PGFMC Betzu-il cap"
-	desc = "The standard cap of the PGF military, in Marine Corps colors. “betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects."
+	desc = "The standard cap of the PGF military, in Marine Corps colors. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
@@ -208,7 +208,7 @@
 
 /obj/item/clothing/head/gezena/flap/engi
 	name = "\improper PGF engineering Betzu-il cap"
-	desc = "The standard cap of the PGF military. “betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. The coloring indicates the wearer as an engineering specialist."
+	desc = "The standard cap of the PGF military. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. The coloring indicates the wearer as an engineering specialist."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
@@ -226,7 +226,7 @@
 
 /obj/item/clothing/head/gezena/flap/medic
 	name = "\improper PGF medical Betzu-il cap"
-	desc = "The standard cap of the PGF military. “betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. The coloring indicates the wearer as a medical specialist."
+	desc = "The standard cap of the PGF military. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. The coloring indicates the wearer as a medical specialist."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
@@ -244,7 +244,7 @@
 
 /obj/item/clothing/head/gezena/flap/captain
 	name = "\improper PGF Captain's Betzu-il cap"
-	desc = "The standard cap of the PGF military. “betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. The decoration indicates the wearer as a ship's Captain."
+	desc = "The standard cap of the PGF military. “Betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. The decoration indicates the wearer as a ship's Captain."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
