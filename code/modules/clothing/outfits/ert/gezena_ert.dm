@@ -13,7 +13,7 @@
 	neck = /obj/item/clothing/neck/cloak/gezena
 	suit_store = /obj/item/gun/energy/kalix/pgf/medium
 	mask = /obj/item/clothing/mask/breath/pgfmask
-	glasses = /obj/item/clothing/glasses/security/sunglasses/pgf
+	glasses = /obj/item/clothing/glasses/sunglasses/pgf
 
 	l_pocket = /obj/item/melee/knife/combat
 	r_pocket = /obj/item/flashlight/seclite
@@ -30,7 +30,7 @@
 	name = "ERT - PGF Marine Combat Engineer"
 	id_assignment = "Marine Combat Engineer"
 
-	suit_store = /obj/item/gun/energy/kalix/pgf/medium
+	suit_store = /obj/item/gun/energy/kalix/pgf
 	belt = /obj/item/storage/belt/military/gezena/engineer
 
 /datum/outfit/job/gezena/ert/medic

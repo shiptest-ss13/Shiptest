@@ -76,8 +76,8 @@
 	allowed = null
 
 /obj/item/clothing/suit/armor/gezena/medic
-	name = "A heavy belted coat with a pair of sleek epaulettes in a sterile medical white."
-	desc = "TEMP for medics"
+	name = "medical navywear coat"
+	desc = "A heavy belted coat with a pair of sleek epaulettes in a sterile medical white."
 	icon_state = "medcoat"
 	item_state = "bluecloth"
 
@@ -122,7 +122,7 @@
 	. = ..()
 	allowed = GLOB.security_hardsuit_allowed
 
-/obj/item/clothing/suit/space/gezena
+/obj/item/clothing/suit/space/gezena/marine
 	name = "\improper PGFMC Lataka Combat Suit"
 	desc = "Not quite as old as the Rakalla suit, but venerable in its own right the Lataka combat suit is the Marine Corps' go-to EVA combat suit when power armored unit aren't availible. For what it lacks in protection, it makes up for in price and ease of use."
 	icon_state = "marinespacesuit"
@@ -143,7 +143,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	supports_variations = SNOUTED_VARIATION
 
-/obj/item/clothing/head/helmet/space/gezena
+/obj/item/clothing/head/helmet/space/gezena/marine
 	name = "\improper PGFMC Lataka Combat Helmet"
 	desc = "Features rubberized grommets for safely accomodating any length of horn and thicker plating on the forehead, sacrificing visibility for much needed protection."
 	icon_state = "marinespacehelmet"
@@ -166,7 +166,6 @@
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
-
 
 /obj/item/clothing/head/gezena/flap
 	name = "\improper PGFN Betzu-il cap"
@@ -198,27 +197,27 @@
 	icon_state = "marineflap"
 	item_state = "greencloth"
 
-/obj/item/clothing/head/gezena/marine/lead
-	name = "\improper PGFMC Commander Cap"
-	desc = "The standard cap of the PGF military, in Marine Corps colors. The silver markings denote it as a commander's cap."
+/obj/item/clothing/head/gezena/engi
+	name = "\improper PGF engineer cap"
+	desc = "The standard cap of the PGF military. The coloring indicates the wearer as an engineering specialist."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
-	icon_state = "squadhat"
-	item_state = "greencloth"
+	icon_state = "engihat"
+	item_state = "bluecloth"
 
-/obj/item/clothing/head/gezena/flap/marine/lead
-	name = "\improper PGFMC Commander's' Betzu-il cap"
-	desc = "The standard cap of the PGF military, in Marine Corps colors. “betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. The silver markings denote it as a commander's cap."
+/obj/item/clothing/head/gezena/flap/engi
+	name = "\improper PGF engineering Betzu-il cap"
+	desc = "The standard cap of the PGF military. “betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. The coloring indicates the wearer as an engineering specialist."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
-	icon_state = "squadflap"
-	item_state = "greencloth"
+	icon_state = "engiflap"
+	item_state = "bluecloth"
 
 /obj/item/clothing/head/gezena/medic
-	name = "\improper PGF medic cap"
-	desc = "The standard cap of the PGF military. The coloring indicates the wearer as a medical officer."
+	name = "\improper PGF medical cap"
+	desc = "The standard cap of the PGF military. The coloring indicates the wearer as a medical specialist."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
@@ -226,8 +225,8 @@
 	item_state = "whitecloth"
 
 /obj/item/clothing/head/gezena/flap/medic
-	name = "\improper PGF medic Betzu-il cap"
-	desc = "The standard cap of the PGF military. “betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. The coloring indicates the wearer as a medical officer."
+	name = "\improper PGF medical Betzu-il cap"
+	desc = "The standard cap of the PGF military. “betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. The coloring indicates the wearer as a medical specialist."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
@@ -235,7 +234,7 @@
 	item_state = "whitecloth"
 
 /obj/item/clothing/head/gezena/captain
-	name = "\improper PGFN captain's cap"
+	name = "\improper PGFN Captain's cap"
 	desc = "The standard cap of the PGF military, in Navy colors. The decoration indicates the wearer as a ship's Captain."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
@@ -243,9 +242,8 @@
 	icon_state = "captainhat"
 	item_state = "bluecloth"
 
-
 /obj/item/clothing/head/gezena/flap/captain
-	name = "\improper PGF captain's Betzu-il cap"
+	name = "\improper PGF Captain's Betzu-il cap"
 	desc = "The standard cap of the PGF military. “betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. The decoration indicates the wearer as a ship's Captain."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
@@ -396,9 +394,9 @@
 	permeability_coefficient = 0.01
 
 //Eyes
-/obj/item/clothing/glasses/security/sunglasses/pgf
+/obj/item/clothing/glasses/sunglasses/pgf
 	name = "L-98 Enviromental Protection Goggles"
-	desc = "The optional eye protection component of the L-98 respirator, complete with a polarized lens and snap latches for securing the two parts together securely. Commonly worn both with and without it's partner."
+	desc = "The optional eye protection component of the L-98 respirator, complete with a polarized lens and snap latches for connecting the two parts together securely. Commonly worn both with and without it's partner."
 	icon = 'icons/obj/clothing/faction/gezena/eyes.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/eyes.dmi'
 	icon_state = "pgfgoggles"

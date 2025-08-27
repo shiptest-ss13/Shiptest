@@ -100,12 +100,23 @@
 //fucking gezena
 
 /datum/supply_pack/spacesuits/spacesuit/pgf
-	name = "Rakalla Crate"
-	desc = "Contains one Rakalla Suit. It provides robust-enough protection from the elements while being quite flexible."
+	name = "PGFN Rakalla Utility Suit Crate"
+	desc = "Contains one Rakalla Utility Suit. The aging but beloved workhorse of Navy space operations."
 	cost = 600
 	contains = list(/obj/item/clothing/suit/space/gezena,
 					/obj/item/clothing/head/helmet/space/gezena)
 	crate_name = "rakalla suit crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/spacesuit/pgf/marine
+	name = "PGMC Lataka Combat Suit Crate"
+	desc = "Contains one Lataka Combat Suit. The backbone of any Marine Corps space assault."
+	cost = 1000
+	contains = list(/obj/item/clothing/suit/space/gezena/marine,
+					/obj/item/clothing/head/helmet/space/gezena/marine)
+	crate_name = "lataka suit crate"
 	faction = /datum/faction/pgf
 	faction_discount = 0
 	faction_locked = TRUE
