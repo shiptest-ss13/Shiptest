@@ -406,7 +406,7 @@
 	..()
 
 /datum/reagent/medicine/charcoal/on_transfer(atom/A, method=TOUCH, volume)
-	if(method == INGEST || !iscarbon(A)) //the atom not the charcoal
+	if(method == INGEST || !istype(A, /obj/item/organ/stomach))
 		return
 	A.reagents.remove_reagent(/datum/reagent/medicine/charcoal, volume) //We really should not be injecting an insoluble granular material.
 	A.reagents.add_reagent(/datum/reagent/carbon, volume) // Its pores would get clogged with gunk anyway.
