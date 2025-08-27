@@ -124,7 +124,7 @@
 
 /obj/item/clothing/suit/space/gezena/marine
 	name = "\improper PGFMC Lataka Combat Suit"
-	desc = "Not quite as old as the Rakalla suit, but venerable in its own right the Lataka combat suit is the Marine Corps' go-to EVA combat suit when power armored unit aren't availible. For what it lacks in comparative protection, it makes up for in price and ease of use."
+	desc = "Not quite as old as the Rakalla suit but venerable in its own right, the Lataka combat suit is the Marine Corps' go-to EVA combat suit when power armored units aren't availible. For what it lacks in comparative protection, it makes up for in price and ease of use."
 	icon_state = "marinespacesuit"
 	item_state = "marinespace"
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
@@ -141,7 +141,7 @@
 	item_state = "navyspacehelm"
 	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 10)
 	w_class = WEIGHT_CLASS_NORMAL
-	supports_variations = SNOUTED_VARIATION
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION
 
 /obj/item/clothing/head/helmet/space/gezena/marine
 	name = "\improper PGFMC Lataka Combat Helmet"
@@ -149,7 +149,7 @@
 	icon_state = "marinespacehelmet"
 	item_state = "marinespacehelm"
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
-	supports_variations = SNOUTED_VARIATION
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION
 
 //Hats
 

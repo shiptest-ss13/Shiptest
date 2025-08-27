@@ -77,6 +77,16 @@
 	stock_max = 2
 	availability_prob = 50
 
+/datum/blackmarket_item/weapon/cutlass
+	name = "PGF Boarding Cutlass"
+	desc = "A mass produced fighting blade fresh from the belt of some poor sailor. It's got some mean weight to it."
+	item = /obj/item/storage/belt/sabre/pgf
+
+	cost_min = 1000
+	cost_max = 1750
+	stock = 1
+	availability_prob = 25
+
 /datum/blackmarket_item/weapon/sabre
 	name = "SUNS Dueling Sabre"
 	desc = "A mastercrafted sabre formerly wielded by a SUNS academic. It's very sharp, we had to spend hours stitching our fingers back on after getting it."
