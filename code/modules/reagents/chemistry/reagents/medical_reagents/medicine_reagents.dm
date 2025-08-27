@@ -65,7 +65,7 @@
 	REMOVE_TRAIT(L, TRAIT_BLOODY_MESS, /datum/reagent/medicine/indomide)
 
 /datum/reagent/medicine/indomide/on_transfer(atom/A, method=INGEST, trans_volume)
-	if(method != INGEST || !iscarbon(A))
+	if(method != INGEST || !istype(A, /obj/item/organ/stomach))
 		return
 
 	A.reagents.remove_reagent(/datum/reagent/medicine/indomide, trans_volume * 0.05)
