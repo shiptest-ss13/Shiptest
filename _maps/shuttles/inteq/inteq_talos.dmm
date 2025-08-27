@@ -392,6 +392,20 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/hallway/central)
+"bS" = (
+/obj/machinery/light/directional/west,
+/obj/structure/sign/poster/random{
+	pixel_y = -32
+	},
+/obj/structure/chair/comfy/grey/directional/east,
+/mob/living/basic/hivebot/mechanic{
+	desc = "A very rusty maintenance hivebot. Judging by the wires looping haphazardly from its panels and the Inteq shield spray painted on its chassis, somebody, somehow, has hacked it into complacency.";
+	environment_smash = 0;
+	faction = list("neutral");
+	name = "Heph"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "bU" = (
 /obj/machinery/light/directional/south,
 /obj/effect/turf_decal/trimline/opaque/yellow/line,
@@ -2796,26 +2810,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
-"pu" = (
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 4
-	},
-/obj/structure/closet/secure_closet/freezer{
-	anchored = 1;
-	locked = 0;
-	name = "fridge"
-	},
-/obj/item/storage/cans/sixbeer,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/item/reagent_containers/food/snacks/popsicle/creamsicle_orange,
-/obj/item/reagent_containers/food/snacks/popsicle/creamsicle_orange,
-/obj/item/radio/intercom/directional/north,
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/canteen)
 "pA" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
@@ -4640,20 +4634,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
-"zM" = (
-/obj/machinery/light/directional/west,
-/obj/structure/sign/poster/random{
-	pixel_y = -32
-	},
-/obj/structure/chair/comfy/grey/directional/east,
-/mob/living/basic/hivebot/mechanic{
-	desc = "A very rusty maintenance hivebot. Judging by the wires looping haphazardly from its panels and the Inteq shield spray painted on its chassis, somebody, somehow, has hacked it into complacency.";
-	environment_smash = 0;
-	faction = list("neutral");
-	name = "Heph"
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "zR" = (
 /obj/machinery/firealarm/directional/south,
 /obj/structure/extinguisher_cabinet/directional/east,
@@ -4888,10 +4868,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"Bn" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/hangar)
 "Br" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -5929,6 +5905,26 @@
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/hallway/fore)
+"HW" = (
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet/freezer{
+	anchored = 1;
+	locked = 0;
+	name = "fridge"
+	},
+/obj/item/storage/cans/sixbeer,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/item/food/popsicle/creamsicle_orange,
+/obj/item/food/popsicle/creamsicle_orange,
+/obj/item/radio/intercom/directional/north,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
 "Ia" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -9239,7 +9235,7 @@ sW
 PJ
 Ia
 xI
-pu
+HW
 kD
 tF
 rP
@@ -9897,7 +9893,7 @@ fK
 gY
 fV
 fV
-zM
+bS
 fK
 sw
 sw
@@ -10154,7 +10150,7 @@ mR
 yp
 cq
 cq
-Bn
+yp
 yp
 sw
 sw

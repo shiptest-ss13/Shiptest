@@ -178,7 +178,7 @@
 
 /datum/sprite_accessory/ipc_antennas
 	icon = 'icons/mob/ipc_accessories.dmi'
-	color_src = HAIR
+	color_src = FACEHAIR
 
 /datum/sprite_accessory/ipc_antennas/none
 	name = "None"
@@ -368,8 +368,13 @@
 	has_snout = TRUE
 
 /datum/sprite_accessory/ipc_chassis/inteqsprinter
-	name = "Inteq Mothership 'Sprinter'"
+	name = "Inteq Mothership 'Sprinter' Type 1"
 	limbs_id = "inteqsprinter"
+	has_screen = FALSE
+
+/datum/sprite_accessory/ipc_chassis/inteqsprintertype2
+	name = "Inteq Mothership 'Sprinter' Type 2"
+	limbs_id = "inteqsprinter2"
 	has_screen = FALSE
 
 /datum/sprite_accessory/ipc_chassis/seekeripc
@@ -381,3 +386,9 @@
 	name = "Absolution-Lux 'Solferino'"
 	limbs_id = "ablux"
 	has_screen = FALSE
+
+/datum/sprite_accessory/ipc_chassis/humanipc
+	name = "Clover Corporation 'Humaniform'"
+	limbs_id = "humanipc"
+	has_screen = FALSE
+	use_eyes = TRUE

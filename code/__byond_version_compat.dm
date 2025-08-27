@@ -2,11 +2,11 @@
 
 //Update this whenever you need to take advantage of more recent byond features
 #define MIN_COMPILER_VERSION 515
-#define MIN_COMPILER_BUILD 1621
+#define MIN_COMPILER_BUILD 1644
 #if (DM_VERSION < MIN_COMPILER_VERSION || DM_BUILD < MIN_COMPILER_BUILD) && !defined(SPACEMAN_DMM) && !defined(OPENDREAM)
 //Don't forget to update this part
 #error Your version of BYOND is too out-of-date to compile this project. Go to https://secure.byond.com/download and update.
-#error You need version 515.1621 or higher
+#error You need version 515.1644 or higher
 #endif
 
 // 516.1660 broke (x in vars), which breaks a lot of things.
@@ -17,13 +17,6 @@
 // Keep savefile compatibilty at minimum supported level
 #if DM_VERSION >= 515
 /savefile/byond_version = MIN_COMPILER_VERSION
-#endif
-
-// 515 split call for external libraries into call_ext
-#if DM_VERSION < 515
-#define LIBCALL call
-#else
-#define LIBCALL call_ext
 #endif
 
 // So we want to have compile time guarantees these methods exist on local type

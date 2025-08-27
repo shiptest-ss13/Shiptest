@@ -74,6 +74,6 @@
 			H.set_nutrition(min(H.nutrition+30, NUTRITION_LEVEL_FULL))
 		if(/obj/projectile/energy/florarevolution)
 			H.show_message(span_notice("The radiation beam leaves you feeling disoriented!"))
-			H.Dizzy(15)
+			H.set_timed_status_effect(30 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			H.emote("flip")
 			H.emote("spin")

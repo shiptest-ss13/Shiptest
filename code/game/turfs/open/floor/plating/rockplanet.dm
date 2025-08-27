@@ -12,7 +12,8 @@
 	turf_type = /turf/open/floor/plating/asteroid/rockplanet
 	digResult = /obj/item/stack/ore/glass/rockplanet
 	light_color = COLOR_ROCKPLANET_LIGHT
-
+	MAP_SWITCH(pixel_x = 0, pixel_x = -19)
+	MAP_SWITCH(pixel_y = 0, pixel_y = -19)
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH, SMOOTH_GROUP_FLOOR_PLASTEEL)
@@ -115,13 +116,13 @@
 
 //start crackhead subtyping (open reward of 1 erika token to anyone who untangles this somewhat)
 
-/turf/open/floor/plating/grass/rockplanet
+/turf/open/floor/plating/asteroid/dirt/grass/rockplanet
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 	light_color = COLOR_ROCKPLANET_LIGHT
 	name = "dry grass"
 	desc = "A patch of dry grass."
 
-/turf/open/floor/plating/dirt/rockplanet
+/turf/open/floor/plating/asteroid/dirt/rockplanet
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 	light_color = COLOR_ROCKPLANET_LIGHT
 	name = "mud"

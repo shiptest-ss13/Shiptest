@@ -125,6 +125,7 @@
 	stat_attack = HARD_CRIT
 	robust_searching = 1
 	var/dwarf_mob = FALSE
+	var/mob_to_spawn //if this legion is suppossed to spawn a specific mob
 	var/mob/living/carbon/human/stored_mob
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/death(gibbed)
@@ -165,6 +166,8 @@
 		if(stored_mob)
 			stored_mob.forceMove(get_turf(src))
 			stored_mob = null
+		else if(mob_to_spawn)
+			new mob_to_spawn(T)
 		else if(from_nest)
 			new /obj/effect/mob_spawn/human/corpse/charredskeleton(T)
 		else if(dwarf_mob)
@@ -280,7 +283,6 @@
 	malignance = new()
 	malignance.infect(M, FALSE) //we handle all the fancy virus stuff in the organ, so we need a reference for it
 	malignance_tracker = addtimer(CALLBACK(src, PROC_REF(update_stage)), malignance_countdown, TIMER_STOPPABLE|TIMER_DELETE_ME)
-	M.heal_overall_bleeding(12) //stop dying so fast
 
 /obj/item/organ/legion_skull/Remove(mob/living/carbon/M, special = 0)
 	malignance_countdown = initial(malignance_countdown)

@@ -754,22 +754,20 @@
 
 /datum/reagent/toxin/heparin //Based on a real-life anticoagulant. I'm not a doctor, so this won't be realistic.
 	name = "Heparin"
-	description = "A powerful anticoagulant. Victims will bleed uncontrollably and suffer scaling bruising."
+	description = "A powerful anticoagulant. All open cut wounds on the victim will open up and bleed much faster"
 	silent_toxin = TRUE
 	reagent_state = LIQUID
 	color = "#C8C8C8" //RGB: 200, 200, 200
 	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	toxpwr = 0
 
-/datum/reagent/toxin/heparin/on_mob_life(mob/living/carbon/M)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		for(var/obj/item/bodypart/BP in H.get_bleeding_parts())
-			BP.adjust_bleeding(BP.bleeding * 0.1)
-		H.adjustBruteLoss(1, 0) //Brute damage increases with the amount they're bleeding
-		. = 1
-	return ..() || .
+/datum/reagent/toxin/heparin/on_mob_metabolize(mob/living/M)
+	ADD_TRAIT(M, TRAIT_BLOODY_MESS, /datum/reagent/toxin/heparin)
+	return ..()
 
+/datum/reagent/toxin/heparin/on_mob_end_metabolize(mob/living/M)
+	REMOVE_TRAIT(M, TRAIT_BLOODY_MESS, /datum/reagent/toxin/heparin)
+	return ..()
 
 /datum/reagent/toxin/rotatium //Rotatium. Fucks up your rotation and is hilarious
 	name = "Rotatium"
@@ -989,7 +987,7 @@
 
 /datum/reagent/toxin/bungotoxin/on_mob_life(mob/living/carbon/M)
 	M.adjustOrganLoss(ORGAN_SLOT_HEART, 3)
-	M.confused = M.dizziness //add a tertiary effect here if this is isn't an effective poison.
+	M.confused = M.get_timed_status_effect_duration(/datum/status_effect/dizziness) //add a tertiary effect here if this is isn't an effective poison.
 	if(current_cycle >= 12 && prob(8))
 		var/tox_message = pick("You feel your heart spasm in your chest.", "You feel faint.","You feel you need to catch your breath.","You feel a prickle of pain in your chest.")
 		to_chat(M, span_notice("[tox_message]"))
