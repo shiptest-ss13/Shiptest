@@ -341,7 +341,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.allow_quick_gather = TRUE
 	STR.click_gather = TRUE
-	STR.set_holdable(list(/obj/item/reagent_containers/pill, /obj/item/dice))
+	STR.set_holdable(list(/obj/item/reagent_containers/pill, /obj/item/dice, /obj/item/paper/paperslip))
 	STR.use_sound = 'sound/items/storage/pillbottle.ogg'
 
 /obj/item/storage/pill_bottle/charcoal

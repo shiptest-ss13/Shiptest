@@ -64,3 +64,13 @@
 	)
 	result = /obj/item/food/blt
 	subcategory = CAT_SANDWICH
+
+/datum/crafting_recipe/food/hotdog
+	name = "Hotdog"
+	reqs = list(
+		/obj/item/food/bun = 1,
+		/obj/item/food/sausage = 1,
+		/datum/reagent/consumable/ketchup = 5
+	)
+	result = /obj/item/food/hotdog
+	subcategory = CAT_SANDWICH
