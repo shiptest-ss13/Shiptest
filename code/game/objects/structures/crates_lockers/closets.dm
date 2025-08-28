@@ -247,9 +247,10 @@
 		new material_drop(loc, material_drop_amount)
 	qdel(src)
 
-/obj/structure/closet/obj_break(damage_flag)
+/obj/structure/closet/atom_break(damage_flag)
 	if(!broken && !(flags_1 & NODECONSTRUCT_1))
 		bust_open()
+	. = ..()
 
 /obj/structure/closet/attackby(obj/item/W, mob/user, params)
 	if(user in src)
@@ -527,9 +528,6 @@
 		if(prob(20 / severity) && !opened)
 			if(!locked)
 				open()
-			else
-				req_access = list()
-				req_access += pick(get_all_accesses())
 
 /obj/structure/closet/contents_explosion(severity, target)
 	for(var/atom/A in contents)

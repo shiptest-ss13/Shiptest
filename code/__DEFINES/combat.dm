@@ -54,7 +54,6 @@
 #define EFFECT_SLUR "slur"
 #define EFFECT_EYE_BLUR "eye_blur"
 #define EFFECT_DROWSY "drowsy"
-#define EFFECT_JITTER "jitter"
 
 //Bitflags defining which status effects could be or are inflicted on a mob
 #define CANSTUN (1<<0)
@@ -230,3 +229,6 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(/obj/item/gun)))
 
 /// Proceed with the attack chain, but don't call the normal methods.
 #define SECONDARY_ATTACK_CONTINUE_CHAIN 3
+
+/// Calculates the new armour value after armour penetration. Can return negative values, and those must be caught.
+#define PENETRATE_ARMOUR(armour, penetration) (penetration == 100 ? 0 : 100 * (armour - penetration) / (100 - penetration))

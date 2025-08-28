@@ -6,7 +6,6 @@
 	var/static/list/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha))
 
 /datum/ai_behavior/find_potential_targets/perform(seconds_per_tick, datum/ai_controller/controller, target_key, targetting_datum_key, hiding_location_key)
-	. = ..()
 	var/list/potential_targets
 	var/mob/living/living_mob = controller.pawn
 	var/datum/targetting_datum/targetting_datum = controller.blackboard[targetting_datum_key]
@@ -21,8 +20,7 @@
 			potential_targets += HM
 
 	if(!potential_targets.len)
-		finish_action(controller, FALSE)
-		return
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED
 
 	var/list/filtered_targets = list()
 
@@ -32,8 +30,7 @@
 			continue
 
 	if(!filtered_targets.len)
-		finish_action(controller, FALSE)
-		return
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED
 
 	var/atom/target = pick(filtered_targets)
 	controller.set_blackboard_key(target_key, target)
@@ -43,4 +40,4 @@
 	if(potential_hiding_location) //If they're hiding inside of something, we need to know so we can go for that instead initially.
 		controller.set_blackboard_key(hiding_location_key, potential_hiding_location)
 
-	finish_action(controller, TRUE)
+	return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED

@@ -77,7 +77,7 @@
 			H.stop_sound_channel(CHANNEL_HEARTBEAT)
 			beat = BEAT_NONE
 
-		if(H.jitteriness > 100)
+		if(owner.has_status_effect(/datum/status_effect/jitter))
 			if(H.health > HEALTH_THRESHOLD_FULLCRIT && (!beat || beat == BEAT_SLOW))
 				H.playsound_local(get_turf(H),fastbeat,40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 				beat = BEAT_FAST
@@ -214,7 +214,7 @@
 	if(. & EMP_PROTECT_SELF)
 		return
 	if(world.time > severe_cooldown) //So we cant just spam emp to kill people.
-		owner.Dizzy(10)
+		owner.set_timed_status_effect(20 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 		owner.losebreath += 10
 		severe_cooldown = world.time + 20 SECONDS
 

@@ -368,15 +368,15 @@ export const CleanAllTarget = new Juke.Target({
  */
 const prependDefines = (...defines) => {
   const dmeContents = fs.readFileSync(`${DME_NAME}.dme`);
-  const textToWrite = defines.map((define) => `#define ${define}\n`);
+  const textToWrite = defines.map((define) => `#define ${define}\n`).join("");
   fs.writeFileSync(`${DME_NAME}.dme`, `${textToWrite}\n${dmeContents}`);
 };
 
 export const TgsTarget = new Juke.Target({
   dependsOn: [TguiTarget],
   executes: async () => {
-    Juke.logger.info("Prepending TGS define");
-    prependDefines("TGS");
+    Juke.logger.info("Prepending TGS & CBT define");
+    prependDefines("TGS", "CBT");
   },
 });
 

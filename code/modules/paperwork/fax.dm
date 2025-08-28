@@ -529,7 +529,7 @@
 /obj/machinery/fax/clip
 	special_networks = list(
 		list(fax_name = "Outpost Authority", fax_id = "outpost", color = "orange", emag_needed = FALSE),
-		list(fax_name = "Colonial League Leadership", fax_id = "minutemen", color = "blue", emag_needed = FALSE),
+		list(fax_name = "Confederated League Leadership", fax_id = "minutemen", color = "blue", emag_needed = FALSE),
 		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE)
 	)
 

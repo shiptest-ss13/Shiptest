@@ -53,7 +53,7 @@
 	. = ..()
 	if(isliving(target))
 		var/mob/living/living_target = target
-		living_target.adjust_jitter(5)
+		living_target.set_timed_status_effect(10 SECONDS, /datum/status_effect/jitter)
 
 /obj/projectile/temp/basilisk/heated
 	name = "energy blast"
