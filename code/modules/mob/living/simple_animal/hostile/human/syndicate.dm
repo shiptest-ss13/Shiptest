@@ -69,6 +69,7 @@
 	status_flags = 0
 
 	l_hand =/obj/item/melee/knife/combat
+	sharpness = SHARP_POINTY
 
 	melee_damage_lower = 20
 	melee_damage_upper = 20
@@ -88,6 +89,7 @@
 	attack_verb_simple = "cut"
 
 	l_hand = /obj/item/melee/sword/mass
+	sharpness = SHARP_EDGED
 
 	melee_damage_lower = 25
 	melee_damage_upper = 25
@@ -103,6 +105,7 @@
 	attack_sound = 'sound/weapons/blade1.ogg'
 
 	l_hand = /obj/item/melee/sledgehammer/gorlex
+	sharpness = SHARP_NONE
 	armour_penetration = 40
 	melee_damage_lower = 30
 	melee_damage_upper = 30
@@ -139,6 +142,7 @@
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
 	l_hand =/obj/item/melee/knife/combat
+	sharpness = SHARP_POINTY
 
 	melee_damage_lower = 20
 	melee_damage_upper = 20
@@ -154,6 +158,7 @@
 	attack_verb_continuous = "cuts"
 	attack_verb_simple = "cut"
 	l_hand =/obj/item/melee/sword/mass
+	sharpness = SHARP_EDGED
 	melee_damage_lower = 25
 	melee_damage_upper = 25
 
@@ -170,6 +175,7 @@
 	attack_verb_continuous = "cuts"
 	attack_verb_simple = "cut"
 	r_hand = /obj/item/melee/sword/mass
+	sharpness = SHARP_EDGED
 	melee_damage_lower = 25
 	melee_damage_upper = 25
 
@@ -181,6 +187,7 @@
 	armour_penetration = 40
 	melee_damage_lower = 30
 	melee_damage_upper = 30
+	sharpness = SHARP_NONE
 
 	attack_verb_continuous = "smashes"
 	attack_verb_simple = "smash"
@@ -219,6 +226,7 @@
 	icon_living = "syndicate_stormtrooper_sword"
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	l_hand = /obj/item/melee/sledgehammer/gorlex
+	sharpness = SHARP_NONE
 	armour_penetration = 40
 	melee_damage_lower = 30
 	melee_damage_upper = 30
