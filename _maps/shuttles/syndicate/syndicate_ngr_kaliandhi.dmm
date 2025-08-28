@@ -1626,21 +1626,12 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "iU" = (
-/obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/westright{
 	dir = 1;
 	req_access = list(58);
 	req_ship_access = 1
 	},
-/obj/machinery/door/airlock/hatch{
-	dir = 8;
-	name = "Armory";
-	req_access = 4
-	},
-/obj/machinery/door/airlock/maintenance_hatch{
-	name = "Starboard Thrusters";
-	req_access_txt = "10"
-	},
+/obj/structure/table/reinforced,
 /obj/machinery/door/poddoor/shutters{
 	dir = 1;
 	id = "kali_armory_shut";
