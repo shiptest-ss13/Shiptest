@@ -178,3 +178,11 @@
   firebudgy:
   - balance: ATVs have been recalled following a string of hotwiring-related incidents
       on the frontier.
+2025-08-28:
+  Anticept:
+  - refactor: Byond version 515.1644 fixed a nasty bug with in style loops that led
+      to SGTs. Reverting workaround code as prior PR requires 515.1644 or higher.
+  Gristlebee:
+  - rscadd: Space ruins use asteroid map gen
+  generalthrax:
+  - rscdel: Removed jungle medtech ruin
