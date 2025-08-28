@@ -45,7 +45,7 @@
 	pixel_y = 6;
 	layer = 2.8
 	},
-/turf/open/floor/plating/dirt/old,
+/turf/open/floor/plating/asteroid/dirt,
 /area/ruin/wasteplanet/facility/northwing)
 "ai" = (
 /obj/effect/turf_decal/siding/white{
@@ -1837,7 +1837,10 @@
 "lV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/ausbushes/brflowers,
-/mob/living/basic/hivebot/strong/reprogrammed,
+/mob/living/basic/hivebot/strong/reprogrammed{
+	name = "The Gardener";
+	faction = list("neutral")
+	},
 /turf/open/floor/grass/ship/jungle,
 /area/ruin/wasteplanet/facility/northwing)
 "lW" = (
@@ -6088,7 +6091,7 @@
 /obj/structure/railing/corner{
 	layer = 4.1
 	},
-/obj/structure/hazard/spray/steam/cough,
+/obj/structure/fluff/steam_vent/low,
 /turf/open/floor/pod/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Nq" = (
@@ -7205,7 +7208,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 5
 	},
-/obj/structure/hazard/spray/steam/cough,
+/obj/structure/fluff/steam_vent/low,
 /turf/open/floor/pod/light,
 /area/ruin/wasteplanet/facility)
 "TM" = (
