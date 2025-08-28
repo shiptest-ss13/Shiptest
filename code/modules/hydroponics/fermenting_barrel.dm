@@ -23,7 +23,7 @@
 
 /obj/structure/fermenting_barrel/Initialize()
 	. = ..()
-	create_reagents(500, DRAINABLE | AMOUNT_VISIBLE)
+	create_reagents(500, DRAINABLE)
 	soundloop = new(list(src), fermenting)
 	soundloop.volume = sound_volume
 
@@ -46,6 +46,15 @@
 		if(istype(object, /obj/item/food/grown) && insert_fruit(user, object))
 			to_chat(user, span_notice("You place [object] into [src]."))
 			return
+		else
+			var/dipped = FALSE
+			for(var/datum/reagent/R in reagents.reagent_list)
+				if(R.dip_object(object, user, src))
+					dipped = TRUE
+			if(dipped)
+				to_chat(user, span_notice("You dip [object] into [src], and the solution begins to bubble."))
+				playsound(src, 'sound/effects/bubbles.ogg', 80, TRUE)
+				return TRUE
 	else if(object.is_refillable())
 		return //so we can refill them via their afterattack.
 	return ..()
@@ -56,13 +65,13 @@
 	if(open)
 		open = FALSE
 		reagents.flags |= DRAINABLE
-		reagents.flags &= ~(REFILLABLE | TRANSPARENT)
+		reagents.flags &= ~(REFILLABLE | TRANSPARENT | AMOUNT_VISIBLE)
 		playsound(src, lid_close_sound, sound_volume)
 		start_fermentation()
 	else
 		open = TRUE
 		reagents.flags &= ~(DRAINABLE)
-		reagents.flags |= REFILLABLE | TRANSPARENT
+		reagents.flags |= REFILLABLE | TRANSPARENT | AMOUNT_VISIBLE
 		playsound(src, lid_open_sound, sound_volume)
 		stop_fermentation()
 	update_appearance(UPDATE_ICON)
