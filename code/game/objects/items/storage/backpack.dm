@@ -39,6 +39,8 @@
 	strip_delay = EQUIP_DELAY_BACK * 1.5
 	equip_self_flags = EQUIP_ALLOW_MOVEMENT | EQUIP_SLOWDOWN
 
+	custom_price = 50
+
 /obj/item/storage/backpack/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
