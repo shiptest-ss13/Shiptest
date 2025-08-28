@@ -1,7 +1,7 @@
 //Not only meat, actually, but also snacks that are almost meat, such as fish meat or tofu
 
 /obj/item/food/cubancarp
-	name = "\improper Cuban carp"
+	name = "carp sandwich"
 	desc = "A sandwich consisting of heavily spiced and batter-fried fish. It's very hot!"
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "cubancarp"
