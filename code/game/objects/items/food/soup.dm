@@ -363,6 +363,18 @@
 	tastes = list("oats" = 1, "milk" = 1)
 	foodtypes = DAIRY | GRAIN | BREAKFAST
 
+/obj/item/food/soup/gumbo
+	name = "gumbo"
+	desc = "A specific form of stew consisting of a strongly flavored, thickened stock along with a celery, bell peppers, and onions. While gumbo also includes some specific inclusions for tradition, this one seems to lack both."
+	icon_state = "peasoup"
+	food_reagents = list(
+		/datum/reagent/consumable/capsaicin = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 3,
+		/datum/reagent/consumable/nutriment = 5,
+	)
+	tastes = list("savory meat and vegtables" = 1)
+	foodtypes = GRAIN | MEAT | VEGETABLES
+
 /obj/item/food/soup/miras_dola
 	name = "miras-dola"
 	desc = "Miras stewed with the juices of a cactus until it has absorbed the flavors. The aroma is very prominent."
