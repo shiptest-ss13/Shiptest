@@ -7,6 +7,9 @@
 	product_slogans = "Dress for success!;Prepare to look swagalicious!;Look at all this swag!;Why leave style up to fate? Use the ClothesMate!"
 	vend_reply = "Thank you for using the ClothesMate!"
 	products = list(
+		/obj/item/storage/backpack = 4,
+		/obj/item/storage/backpack/satchel = 4,
+		/obj/item/storage/backpack/duffelbag = 4,
 		/obj/item/clothing/head/beanie = 3,
 		/obj/item/clothing/head/soft = 3,
 		/obj/item/clothing/head/beanie/black = 3,
