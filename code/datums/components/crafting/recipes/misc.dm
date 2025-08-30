@@ -151,12 +151,22 @@
 	)
 	category = CAT_MISC
 
-/datum/crafting_recipe/improvsplint
-	name = "Improvised Splint"
+/datum/crafting_recipe/improvsplintwood
+	name = "Improvised Wooden Splint"
 	result = /obj/item/stack/medical/splint/improvised
 	time = 30
 	reqs = list(
 		/obj/item/stack/sheet/mineral/wood = 2,
+		/obj/item/stack/sheet/cotton/cloth = 2,
+	)
+	category = CAT_MISC
+
+/datum/crafting_recipe/improvsplintrods
+	name = "Improvised Metal Splint"
+	result = /obj/item/stack/medical/splint/improvised_metal
+	time = 30
+	reqs = list(
+		/obj/item/stack/rods = 4,
 		/obj/item/stack/sheet/cotton/cloth = 2,
 	)
 	category = CAT_MISC

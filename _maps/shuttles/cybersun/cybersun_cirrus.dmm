@@ -875,7 +875,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
-/obj/structure/aquarium/prefilled/cirrus,
+/obj/structure/aquarium/cirrus,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
 "eI" = (
@@ -4507,24 +4507,24 @@
 /obj/structure/cable/cyan{
 	icon_state = "2-8"
 	},
-/obj/item/storage/box/ammo/c10mm_ap{
-	pixel_x = -6;
-	pixel_y = 1
-	},
-/obj/item/storage/box/ammo/c10mm_ap{
-	pixel_x = 7;
-	pixel_y = 1
-	},
-/obj/item/storage/box/ammo/c10mm_rubber{
-	pixel_y = -7;
-	pixel_x = -6
-	},
-/obj/item/storage/box/ammo/c10mm_rubber{
-	pixel_y = -7;
-	pixel_x = 7
-	},
 /obj/item/storage/guncase/c20r{
 	pixel_y = 10
+	},
+/obj/item/storage/box/ammo/c45_ap{
+	pixel_x = 4;
+	pixel_y = 0
+	},
+/obj/item/storage/box/ammo/c45_ap{
+	pixel_x = -5;
+	pixel_y = 0
+	},
+/obj/item/storage/box/ammo/c45_rubber{
+	pixel_x = 4;
+	pixel_y = -5
+	},
+/obj/item/storage/box/ammo/c45_rubber{
+	pixel_x = -5;
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/storage/equip)
@@ -5873,24 +5873,24 @@
 	dir = 6
 	},
 /obj/structure/closet/wall/red/directional/north,
-/obj/item/storage/box/ammo/c10mm_ap{
-	pixel_x = -6;
-	pixel_y = 1
-	},
-/obj/item/storage/box/ammo/c10mm_ap{
-	pixel_x = 7;
-	pixel_y = 1
-	},
-/obj/item/storage/box/ammo/c10mm_rubber{
-	pixel_y = -7;
-	pixel_x = -6
-	},
-/obj/item/storage/box/ammo/c10mm_rubber{
-	pixel_y = -7;
-	pixel_x = 7
-	},
 /obj/item/storage/guncase/c20r{
 	pixel_y = 10
+	},
+/obj/item/storage/box/ammo/c45_ap{
+	pixel_x = 6;
+	pixel_y = 0
+	},
+/obj/item/storage/box/ammo/c45_ap{
+	pixel_x = -5;
+	pixel_y = 0
+	},
+/obj/item/storage/box/ammo/c45_rubber{
+	pixel_x = 6;
+	pixel_y = -5
+	},
+/obj/item/storage/box/ammo/c45_rubber{
+	pixel_x = -5;
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/storage/equip)

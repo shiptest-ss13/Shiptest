@@ -4,13 +4,21 @@
 	icon_state = "survivor_base"
 	icon_living = "survivor_base"
 	atmos_requirements = list("min_oxy" = 1, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 999, "min_n2" = 0, "max_n2" = 0)
-	loot = list(
-		/obj/effect/mob_spawn/human/corpse/damaged/whitesands
-	)
+	loot = list()
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
+	footstep_type = FOOTSTEP_MOB_SHOE
 	armor_base = /obj/item/clothing/suit/hooded/survivor
 
 	speak_emote = list("breathes heavily.", "growls.", "sharply inhales.")
 	emote_hear = list("murmers.","grumbles.","whimpers.")
+
+	var/projectile_deflect_chance = 0
+
+/mob/living/simple_animal/hostile/human/hermit/bullet_act(obj/projectile/Proj)
+	if(prob(projectile_deflect_chance))
+		visible_message(span_danger("[src] blocks [Proj] with its shield!"))
+		return BULLET_ACT_BLOCK
+	return ..()
 
 /mob/living/simple_animal/hostile/human/hermit/survivor/death(gibbed)
 	move_force = MOVE_FORCE_DEFAULT
@@ -21,10 +29,39 @@
 
 /mob/living/simple_animal/hostile/human/hermit/survivor
 	name = "Hermit Wanderer"
-	desc =" A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body, twisted by the heavy metals and high background radiation of the sandworlds."
-	loot = list(
-		/obj/effect/mob_spawn/human/corpse/damaged/whitesands/survivor
-	)
+	desc = "A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body, twisted by the heavy metals and high background radiation of the sandworlds."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
+	r_hand = /obj/item/melee/knife/survival
+	attack_verb_continuous = "cuts"
+	attack_verb_simple = "cut"
+	attack_sound = 'sound/weapons/bladeslice.ogg'
+	melee_damage_lower = 15
+	melee_damage_upper = 15
+
+/mob/living/simple_animal/hostile/human/hermit/survivor/lunatic
+	name = "Hermit Lunatic"
+	desc= "A wild-eyed figure clad in tattered mining equipment wielding a plastic chair. They move erratically, eyes darting about frantically."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
+	r_hand = /obj/item/chair/plastic
+	attack_verb_continuous = "bashes"
+	attack_verb_simple = "bashed"
+	attack_sound = 'sound/items/trayhit1.ogg'
+	melee_damage_lower = 5
+	melee_damage_upper = 5
+	speed = 15
+
+/mob/living/simple_animal/hostile/human/hermit/survivor/lunatic/Aggro()
+	..()
+	summon_backup(15)
+	say("HAAAAHAAAHAAAAA!!")
+
+/mob/living/simple_animal/hostile/human/hermit/survivor/brawler
+	name = "Hermit Brawler"
+	desc = "A stanced figure sheltered behind a shoddy, makeshift wooden buckler. A jagged machete is held within their clutch."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
+	r_hand = /obj/item/melee/sword/mass
+	l_hand = /obj/item/shield/riot/buckler
+	projectile_deflect_chance = 25
 
 /mob/living/simple_animal/hostile/human/hermit/ranged
 	icon_state = "survivor_hunter"
@@ -39,10 +76,20 @@
 
 /mob/living/simple_animal/hostile/human/hermit/ranged/hunter
 	name = "Hermit Hunter"
-	desc ="A wild-eyed figure. Watch out- he has a gun, and he remembers just enough of his old life to use it!"
-	loot = list(
-		/obj/effect/mob_spawn/human/corpse/damaged/whitesands/hunter,
-	)
+	desc ="A wild-eyed figure. Watch out- he has a shotgun, and he remembers just enough of his old life to use it!"
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
+	r_hand = /obj/item/gun/ballistic/rifle/polymer
+
+/mob/living/simple_animal/hostile/human/hermit/ranged/shotgun
+	name = "Hermit Pursuer"
+	desc ="A wild-eyed figure wielding a makeshift shotgun. The expression through their cloudy visor is fierce, and they're poised to sprint."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
+	r_hand = /obj/item/gun/ballistic/shotgun/doublebarrel/improvised
+	casingtype = /obj/item/ammo_casing/shotgun/improvised
+	projectilesound = 'sound/weapons/gun/shotgun/shot.ogg'
+	retreat_distance = 3
+	minimum_distance = 3
+	speed = 10
 
 /mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger
 	name = "Hermit Soldier"
@@ -54,9 +101,8 @@
 	rapid = 3
 	rapid_fire_delay = 3
 	casingtype = /obj/item/ammo_casing/c46x30mm/recycled
-	loot = list(
-		/obj/effect/mob_spawn/human/corpse/damaged/whitesands/gunslinger,
-	)
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
+	r_hand = /obj/item/gun/ballistic/automatic/smg/skm_carbine
 
 /mob/living/simple_animal/hostile/human/hermit/ranged/e11
 	name = "Hermit Trooper"
@@ -68,9 +114,8 @@
 	rapid_fire_delay = 1
 	casingtype = null
 	projectiletype = /obj/projectile/beam/laser/eoehoma/hermit
-	loot = list(
-		/obj/effect/mob_spawn/human/corpse/damaged/whitesands/e11,
-	)
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
+	r_hand = /obj/item/gun/energy/e_gun/e11
 
 /mob/living/simple_animal/hostile/human/hermit/ranged/tesla_rifle
 	name = "Hermit Guardsman"
@@ -81,36 +126,49 @@
 	rapid = 2
 	rapid_fire_delay = 2
 	casingtype = /obj/item/ammo_casing/c46x30mm/tesla
-	loot = list()
+	r_hand = /obj/item/gun/ballistic/automatic/smg/skm_carbine
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 
 //survivor corpses
 
 /obj/effect/mob_spawn/human/corpse/damaged/whitesands
-	uniform = /obj/item/clothing/under/color/random
-	belt = /obj/item/storage/belt/fannypack
-	shoes = /obj/item/clothing/shoes/workboots/mining
-	suit = /obj/item/clothing/suit/hooded/survivor
-	l_pocket = /obj/item/radio
-	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
-	var/survivor_type //room for alternatives inside the fuckoff grade init.
+	outfit = /datum/outfit/hermit
+
+// this shit sucks man
 
 /obj/effect/mob_spawn/human/corpse/damaged/whitesands/Initialize() //everything here should equal out to 100 for the sake of my sanity.
 	mob_species = pick_weight(list(
 			/datum/species/human = 50,
 			/datum/species/lizard = 20,
-			/datum/species/ipc = 10,
 			/datum/species/elzuose = 10,
-			/datum/species/moth = 5,
-			/datum/species/spider = 5
+			/datum/species/moth = 10,
+			/datum/species/spider = 10,
 		)
 	)
-	//to-do: learn how to make mobsprites for other survivors
 
+	outfit = pick_weight(list(
+			/datum/outfit/hermit = 24,
+			/datum/outfit/hermit/brown = 24,
+			/datum/outfit/hermit/green = 24,
+			/datum/outfit/hermit/yellow = 24,
+			/datum/outfit/hermit/jermit = 4,
+			)
+	)
 	//gloves are a tossup
 	gloves = pick_weight(list(
 			/obj/item/clothing/gloves/color/black = 60,
 			/obj/item/clothing/gloves/explorer = 30,
 			/obj/item/clothing/gloves/explorer/old = 10
+			)
+		)
+
+	belt = pick_weight(list(
+			/obj/item/storage/belt/mining = 30,
+			/obj/item/storage/belt/bandolier = 30,
+			/obj/item/storage/belt/military = 5,
+			/obj/item/storage/belt/fannypack = 15,
+			/obj/item/storage/belt/mining/alt = 15,
+			/obj/item/storage/belt/mining/primitive = 5
 			)
 		)
 
@@ -187,7 +245,6 @@
 	mask = pick_weight(list(
 		/obj/item/clothing/mask/gas = 40,
 		/obj/item/clothing/mask/gas/explorer = 20,
-		/obj/item/clothing/mask/gas/explorer/old = 20,
 		/obj/item/clothing/mask/gas/syndicate = 20,
 		)
 	)
@@ -211,131 +268,34 @@
 			/obj/item/radio/headset/alt = 50
 			)
 		)
-	//now for the fun stuff
-	switch(survivor_type)
-		if("survivor")
-			//uniforms are random to show varied backgrounds, but similar goal
-			uniform = pick_weight(list(
-				/obj/item/clothing/under/color/random = 65,
-				/obj/item/clothing/under/rank/cargo/miner/lavaland = 10,
-				/obj/item/clothing/under/rank/prisoner = 10,
-				/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 5,
-				/obj/item/clothing/under/rank/cargo/miner = 5
-				)
-			)
-			//storage is semi-randomized, giving some variety
-			belt = 	pick_weight(list(
-				/obj/item/storage/belt/fannypack = 40,
-				/obj/item/storage/belt/mining = 20,
-				/obj/item/storage/belt/mining/alt = 15,
-				/obj/item/storage/belt/utility = 10,
-				/obj/item/storage/belt/bandolier = 9,
-				/obj/item/storage/belt/utility/full = 5,
-				/obj/item/storage/belt/chameleon= 1,
-				)
-			)
-			if(prob(30))
-				l_pocket = /obj/item/food/meat/slab/goliath
-			if(prob(20))
-				r_pocket = /obj/item/spacecash/bundle/smallrand
-
-		if("hunter")
-			uniform = pick_weight(list(
-				/obj/item/clothing/under/color/random = 50,
-				/obj/item/clothing/under/rank/cargo/miner/lavaland = 25,
-				/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 15,
-				/obj/item/clothing/under/rank/security/officer/camo = 5,
-				/obj/item/clothing/under/utility = 5
-				)
-			)
-			belt = 	pick_weight(list(
-				/obj/item/storage/belt/mining = 30,
-				/obj/item/storage/belt/fannypack = 20,
-				/obj/item/storage/belt/mining/alt = 15,
-				/obj/item/storage/belt/mining/primitive = 15,
-				/obj/item/storage/belt/bandolier = 10,
-				/obj/item/storage/belt/military = 7,
-				/obj/item/storage/belt/mining/vendor = 3,
-				)
-			)
-			if(prob(20))
-				l_pocket = /obj/item/food/meat/slab/goliath
-			else if(prob(60))
-				l_pocket = /obj/item/ammo_box/a762_stripper
-			if(prob(20))
-				new /obj/item/gun/ballistic/rifle/polymer(loc)
-			else
-				visible_message(span_warning("The hermit's weapon shatters as they impact the ground!"))
-
-		if("gunslinger")
-			uniform = pick_weight(list(
-				/obj/item/clothing/under/rank/cargo/miner/lavaland = 35,
-				/obj/item/clothing/under/color/random = 25,
-				/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 15,
-				/obj/item/clothing/under/rank/security/officer/camo = 10,
-				/obj/item/clothing/under/syndicate/camo = 10,
-				/obj/item/clothing/under/syndicate/combat = 5
-				)
-			)
-			belt = pick_weight(list(
-				/obj/item/storage/belt/mining = 30,
-				/obj/item/storage/belt/bandolier = 30,
-				/obj/item/storage/belt/military = 20,
-				/obj/item/storage/belt/fannypack = 15,
-				/obj/item/storage/belt/mining/alt = 5,
-				/obj/item/storage/belt/mining/primitive = 5
-				)
-			)
-			if(prob(30))
-				shoes = /obj/item/clothing/shoes/combat //sometimes there are nicer shoes
-			if(prob(50))
-				l_pocket = /obj/item/ammo_box/magazine/skm_46_30/recycled
-			if(prob(20))
-				new /obj/item/gun/ballistic/automatic/smg/skm_carbine(loc)
-			else
-				visible_message(span_warning("The hermit's weapon shatters as they impact the ground!"))
-
-		if("e11")
-			uniform = pick_weight(list(
-				/obj/item/clothing/under/rank/cargo/miner = 65,
-				/obj/item/clothing/under/color/random = 25,
-				/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 10,
-				)
-			)
-			belt = pick_weight(list(
-				/obj/item/storage/belt/utility = 25,
-				/obj/item/storage/belt/mining = 15,
-				/obj/item/storage/belt/fannypack = 15,
-				/obj/item/storage/belt/mining/alt = 5,
-				)
-			)
-			shoes = /obj/item/clothing/shoes/workboots
-			if(prob(40)) // Hilarious, ain't it?
-				new /obj/item/gun/energy/e_gun/e11 (loc)
-			else
-				visible_message(span_warning("The trooper's weapon shatters as they impact the ground!"))
 	. = ..()
 
-
-/obj/effect/mob_spawn/human/corpse/damaged/whitesands/survivor
-	survivor_type = "survivor"
-
-/obj/effect/mob_spawn/human/corpse/damaged/whitesands/hunter
-	survivor_type = "hunter"
-
-/obj/effect/mob_spawn/human/corpse/damaged/whitesands/gunslinger
-	survivor_type = "gunslinger"
-
-/obj/effect/mob_spawn/human/corpse/damaged/whitesands/e11
-	survivor_type = "e11"
-
-//hold overs for any admin who may want to spawn their own survivor realmobs
-
-/datum/outfit/whitesands
+/datum/outfit/hermit
 	name = "Whitesands Survivor"
 	uniform = /obj/item/clothing/under/color/random
 	back = /obj/item/storage/backpack
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	suit = /obj/item/clothing/suit/hooded/survivor
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
-	gloves = /obj/item/clothing/gloves/color/black //randomize a bit
+	gloves = /obj/item/clothing/gloves/color/black
+	head = /obj/item/clothing/head/hooded/survivor_hood
+
+/datum/outfit/hermit/brown
+	name = "Whitesands Survivor Brown"
+	suit = /obj/item/clothing/suit/hooded/survivor/brown
+	head = /obj/item/clothing/head/hooded/survivor_hood/brown
+
+/datum/outfit/hermit/yellow
+	name = "Whitesands Survivor Yellow"
+	suit = /obj/item/clothing/suit/hooded/survivor/yellow
+	head = /obj/item/clothing/head/hooded/survivor_hood/yellow
+
+/datum/outfit/hermit/green
+	name = "Whitesands Survivor Green"
+	suit = /obj/item/clothing/suit/hooded/survivor/green
+	head = /obj/item/clothing/head/hooded/survivor_hood/green
+
+/datum/outfit/hermit/jermit
+	name = "Whitesands Survivor Jermit"
+	suit = /obj/item/clothing/suit/hooded/survivor/jermit
+	head = /obj/item/clothing/head/hooded/survivor_hood/jermit

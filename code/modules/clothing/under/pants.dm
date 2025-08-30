@@ -12,6 +12,7 @@
 	name = "black jeans"
 	desc = "Only for those who can pull it off."
 	icon_state = "jeansblack"
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/pants/cargo
 	name = "cargo pants"
@@ -77,11 +78,13 @@
 	name = "black pants"
 	desc = "These pants are dark, like your soul."
 	icon_state = "blackpants"
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/pants/tan
 	name = "tan pants"
 	desc = "Some tan pants. You look like a white collar worker with these on."
 	icon_state = "khaki"
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/pants/track
 	name = "track pants"
@@ -92,11 +95,13 @@
 	name = "jeans"
 	desc = "A nondescript pair of tough blue jeans."
 	icon_state = "jeans"
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/pants/khaki
 	name = "khaki pants"
 	desc = "A pair of dust beige khaki pants."
 	icon_state = "khaki"
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/pants/camo
 	name = "camo pants"

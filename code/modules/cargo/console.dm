@@ -15,7 +15,6 @@
 	/// The ship we reside on for ease of access
 	var/datum/overmap/ship/controlled/current_ship
 	var/datum/faction/current_faction
-	/// The outpost we're docked to, FALSE if we aren't docked to an outpost
 	var/datum/overmap/outpost/outpost_docked
 
 	var/contraband = FALSE
@@ -67,8 +66,6 @@
 		current_faction = current_ship.source_template.faction
 		charge_account = current_ship.ship_account
 		outpost_docked = current_ship.docked_to
-		if (!istype(outpost_docked))
-			outpost_docked = FALSE
 
 /obj/machinery/computer/cargo/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -80,7 +77,8 @@
 
 /obj/machinery/computer/cargo/ui_static_data(mob/user)
 	. = ..()
-	if(outpost_docked)
+	outpost_docked = current_ship.docked_to
+	if(istype(outpost_docked))
 		generate_pack_data()
 	else
 		supply_pack_data = list()
@@ -92,12 +90,12 @@
 	data["shipFaction"] = current_ship.source_template.faction.name
 	data["numMissions"] = current_ship ? LAZYLEN(current_ship.missions) : 0
 	data["maxMissions"] = current_ship ? current_ship.max_missions : 0
-	data["outpostDocked"] = outpost_docked
+	data["outpostDocked"] = istype(outpost_docked)
 	data["points"] = charge_account ? charge_account.account_balance : 0
 	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access(user)
 	message = "Purchases will be delivered to your hangar's delivery zone."
 	data["blockade"] = FALSE
-	if(outpost_docked && outpost_docked.market.supply_blocked)
+	if(istype(outpost_docked) && outpost_docked.market.supply_blocked)
 		message = blockade_warning
 		data["blockade"] = TRUE
 	data["message"] = message
@@ -109,9 +107,8 @@
 	if(current_ship)
 		for(var/datum/mission/outpost/M as anything in current_ship.missions)
 			data["shipMissions"] += list(M.get_tgui_info())
-		if(outpost_docked)
-			var/datum/overmap/outpost/out = current_ship.docked_to
-			for(var/datum/mission/outpost/M as anything in out.missions)
+		if(istype(outpost_docked))
+			for(var/datum/mission/outpost/M as anything in outpost_docked.missions)
 				data["outpostMissions"] += list(M.get_tgui_info())
 
 	return data
@@ -142,7 +139,7 @@
 			if(!istype(current_ship.docked_to) || purchasing.len == 0)
 				return
 
-			if(outpost_docked && outpost_docked.market.supply_blocked)
+			if(istype(outpost_docked) && outpost_docked.market.supply_blocked)
 				say("Outpost cargo unavailable!")
 				return
 
@@ -192,8 +189,6 @@
 
 	if(!current_ship.docked_to)
 		return supply_pack_data
-
-	var/datum/overmap/outpost/outpost_docked = current_ship.docked_to
 
 	if(!istype(outpost_docked))
 		return supply_pack_data
