@@ -19,7 +19,7 @@
 	icon_state = "aesirsalad"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 8,
-		/datum/reagent/medicine/omnizine = 10,
+		/datum/reagent/medicine/panacea = 10,
 		/datum/reagent/consumable/nutriment/vitamin = 12
 	)
 	tastes = list("leaves" = 1)

@@ -2569,10 +2569,6 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/cavecrew/ship)
 "IZ" = (
-/obj/item/reagent_containers/syringe/contraband/fentanyl{
-	pixel_x = -3;
-	pixel_y = 4
-	},
 /obj/item/reagent_containers/syringe/contraband/methamphetamine,
 /obj/item/reagent_containers/food/drinks/beer{
 	pixel_x = -4
@@ -2590,6 +2586,10 @@
 /obj/item/reagent_containers/syringe/contraband/mammoth{
 	pixel_y = 11;
 	pixel_x = 5
+	},
+/obj/item/reagent_containers/syringe/contraband/morphine{
+	pixel_y = 4;
+	pixel_x = -4
 	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken2"

@@ -54,7 +54,7 @@
 	strengthdiv = 2
 
 /datum/chemical_reaction/reagent_explosion/rdx
-	results = list(/datum/reagent/rdx= 2)
+	results = list(/datum/reagent/rdx = 2)
 	required_reagents = list(/datum/reagent/phenol = 2, /datum/reagent/toxin/acid/nitracid = 1, /datum/reagent/acetone_oxide = 1)
 	required_temp = 404
 	strengthdiv = 6 //rdx deserves better than being just about equal to nitrous
@@ -133,11 +133,11 @@
 
 
 /datum/chemical_reaction/reagent_explosion/penthrite_explosion_epinephrine
-	required_reagents = list(/datum/reagent/medicine/c2/penthrite = 1, /datum/reagent/medicine/epinephrine = 1)
+	required_reagents = list(/datum/reagent/medicine/penthrite = 1, /datum/reagent/medicine/epinephrine = 1)
 	strengthdiv = 5
 
 /datum/chemical_reaction/reagent_explosion/penthrite_explosion_atropine
-	required_reagents = list(/datum/reagent/medicine/c2/penthrite = 1, /datum/reagent/medicine/atropine = 1)
+	required_reagents = list(/datum/reagent/medicine/penthrite = 1, /datum/reagent/medicine/atropine = 1)
 	strengthdiv = 5
 	modifier = 5
 
@@ -511,4 +511,4 @@
 	results = list(/datum/reagent/firefighting_foam = 3)
 	required_reagents = list(/datum/reagent/stabilizing_agent = 1,/datum/reagent/fluorosurfactant = 1,/datum/reagent/carbon = 1)
 	required_temp = 200
-	is_cold_recipe = 1
+	is_cold_recipe = TRUE

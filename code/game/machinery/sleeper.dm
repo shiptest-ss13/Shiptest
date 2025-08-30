@@ -28,10 +28,10 @@
 
 	var/list/starting_beakers = list(
 		/obj/item/reagent_containers/glass/bottle/antitoxin/sleeper,
-		/obj/item/reagent_containers/glass/bottle/bicaridine/sleeper,
+		/obj/item/reagent_containers/glass/bottle/indomide/sleeper,
 		/obj/item/reagent_containers/glass/bottle/dexalin/sleeper,
 		/obj/item/reagent_containers/glass/bottle/epinephrine/sleeper,
-		/obj/item/reagent_containers/glass/bottle/kelotane/sleeper,
+		/obj/item/reagent_containers/glass/bottle/alvitane/sleeper,
 		/obj/item/reagent_containers/glass/bottle/morphine/sleeper)
 
 	///Chembag which holds all the beakers, don't look at me like that

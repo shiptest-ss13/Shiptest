@@ -559,7 +559,7 @@
 		if(updating_health)
 			owner.updatehealth()
 		if(owner.dna?.species && (REVIVESBYHEALING in owner.dna.species.species_traits))
-			if(owner.health > 0 && !owner.hellbound)
+			if(owner.health > 0)
 				owner.revive(FALSE)
 				owner.cure_husk() // If it has REVIVESBYHEALING, it probably can't be cloned. No husk cure.
 	cremation_progress = min(0, cremation_progress - ((brute_dam + burn_dam)*(100/max_damage)))
