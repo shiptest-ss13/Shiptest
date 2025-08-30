@@ -179,3 +179,6 @@
 	name = "Deputy REAL_NAME"
 	desc = "He's your huckleberry."
 	emote_see = list("squints into the middle distance.", "spins his revolver.")
+
+/datum/dog_fashion/head/orange
+	obj_icon_state = "orange"

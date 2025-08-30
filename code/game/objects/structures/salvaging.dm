@@ -12,9 +12,10 @@
 	. += "You can use a crowbar to salvage this."
 
 /obj/structure/salvageable/proc/dismantle(mob/living/user)
-	var/obj/frame = new frame_type(get_turf(src))
-	frame.anchored = anchored
-	frame.dir = dir
+	if(frame_type)
+		var/obj/frame = new frame_type(get_turf(src))
+		frame.anchored = anchored
+		frame.dir = dir
 	for(var/path in salvageable_parts)
 		if(prob(salvageable_parts[path]))
 			new path (loc)
@@ -333,6 +334,16 @@
 		/obj/item/stock_parts/subspace/crystal = 30,
 		/obj/item/stock_parts/subspace/crystal = 30,
 		/obj/item/computer_hardware/network_card/advanced = 20,
+	)
+
+/obj/structure/salvageable/remains
+	name = "destroyed machine"
+	icon_state = "wreck_remains"
+	salvageable_parts = list(
+		/obj/item/stack/sheet/glass/two = 80,
+		/obj/item/stack/cable_coil/cut = 80,
+		/obj/item/stack/ore/salvage/scrapplasma/five = 60,
+		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
 	)
 
 /obj/structure/salvageable/seed

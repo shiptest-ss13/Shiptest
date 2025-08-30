@@ -231,7 +231,10 @@
 /datum/biome/cave/sand/volcanic/acidic
 	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried = 1, /turf/open/water/whitesands = 8)
 
+//This spawner is quite redundent but im leaving it in incase someone wants to tweak rarities
 /obj/effect/spawner/random/greeble/sulfurpool
+	loot = list(/obj/effect/greeble_spawner/whitesands/sulfurpools)
+	/*
 	loot = list(
 			/obj/effect/greeble_spawner/whitesands/sulfurpool1 = 5,
 			/obj/effect/greeble_spawner/whitesands/sulfurpool2 = 5,
@@ -252,133 +255,139 @@
 			/obj/effect/greeble_spawner/whitesands/sulfurpool17 = 5,
 			/obj/effect/greeble_spawner/whitesands/sulfurpool18 = 5,
 		)
+	*/
 
+/obj/effect/greeble_spawner/whitesands/sulfurpools
+	template_subtype_path = /datum/map_template/greeble/whitesands/sulfurpool
+
+/*
 /obj/effect/greeble_spawner/whitesands/sulfurpool1
-	template = /datum/map_template/greeble/whitesands/sulfurpool1
+	template = /datum/map_template/greeble/whitesands/sulfurpool/pool_1
 
 /obj/effect/greeble_spawner/whitesands/sulfurpool2
-	template = /datum/map_template/greeble/whitesands/sulfurpool2
+	template = /datum/map_template/greeble/whitesands/sulfurpool/pool_2
 
 /obj/effect/greeble_spawner/whitesands/sulfurpool3
-	template = /datum/map_template/greeble/whitesands/sulfurpool3
+	template = /datum/map_template/greeble/whitesands/sulfurpool/pool_3
 
 /obj/effect/greeble_spawner/whitesands/sulfurpool4
-	template = /datum/map_template/greeble/whitesands/sulfurpool4
+	template = /datum/map_template/greeble/whitesands/sulfurpool/pool_4
 
 /obj/effect/greeble_spawner/whitesands/sulfurpool5
-	template = /datum/map_template/greeble/whitesands/sulfurpool5
+	template = /datum/map_template/greeble/whitesands/sulfurpool/pool_5
 
 /obj/effect/greeble_spawner/whitesands/sulfurpool6
-	template = /datum/map_template/greeble/whitesands/sulfurpool6
+	template = /datum/map_template/greeble/whitesands/sulfurpool/pool_6
 
 /obj/effect/greeble_spawner/whitesands/sulfurpool7
-	template = /datum/map_template/greeble/whitesands/sulfurpool7
+	template = /datum/map_template/greeble/whitesands/sulfurpool/pool_7
 
 /obj/effect/greeble_spawner/whitesands/sulfurpool8
-	template = /datum/map_template/greeble/whitesands/sulfurpool8
+	template = /datum/map_template/greeble/whitesands/sulfurpool/pool_8
 
 /obj/effect/greeble_spawner/whitesands/sulfurpool9
-	template = /datum/map_template/greeble/whitesands/sulfurpool9
+	template = /datum/map_template/greeble/whitesands/sulfurpool/pool_9
 
 /obj/effect/greeble_spawner/whitesands/sulfurpool10
-	template = /datum/map_template/greeble/whitesands/sulfurpool10
+	template = /datum/map_template/greeble/whitesands/sulfurpool/pool_10
 
 /obj/effect/greeble_spawner/whitesands/sulfurpool10
-	template = /datum/map_template/greeble/whitesands/sulfurpool10
+	template = /datum/map_template/greeble/whitesands/sulfurpool/pool_10
 
 /obj/effect/greeble_spawner/whitesands/sulfurpool11
-	template = /datum/map_template/greeble/whitesands/sulfurpool11
+	template = /datum/map_template/greeble/whitesands/sulfurpool/pool_11
 
 /obj/effect/greeble_spawner/whitesands/sulfurpool12
-	template = /datum/map_template/greeble/whitesands/sulfurpool12
+	template = /datum/map_template/greeble/whitesands/sulfurpool/pool_12
 
 /obj/effect/greeble_spawner/whitesands/sulfurpool13
-	template = /datum/map_template/greeble/whitesands/sulfurpool13
+	template = /datum/map_template/greeble/whitesands/sulfurpool/pool_13
 
 /obj/effect/greeble_spawner/whitesands/sulfurpool14
-	template = /datum/map_template/greeble/whitesands/sulfurpool14
+	template = /datum/map_template/greeble/whitesands/sulfurpool/pool_14
 
 /obj/effect/greeble_spawner/whitesands/sulfurpool15
-	template = /datum/map_template/greeble/whitesands/sulfurpool15
+	template = /datum/map_template/greeble/whitesands/sulfurpool/pool_15
 
 /obj/effect/greeble_spawner/whitesands/sulfurpool16
-	template = /datum/map_template/greeble/whitesands/sulfurpool16
+	template = /datum/map_template/greeble/whitesands/sulfurpool/pool_16
 
 /obj/effect/greeble_spawner/whitesands/sulfurpool17
-	template = /datum/map_template/greeble/whitesands/sulfurpool17
+	template = /datum/map_template/greeble/whitesands/sulfurpool/pool_17
 
 /obj/effect/greeble_spawner/whitesands/sulfurpool18
-	template = /datum/map_template/greeble/whitesands/sulfurpool18
+	template = /datum/map_template/greeble/whitesands/sulfurpool/pool_18
+*/
 
-/datum/map_template/greeble/whitesands/sulfurpool1
+/datum/map_template/greeble/whitesands/sulfurpool/pool_1
 	name = "Sulfur Greeble 1"
 	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_1.dmm"
 
-/datum/map_template/greeble/whitesands/sulfurpool2
+/datum/map_template/greeble/whitesands/sulfurpool/pool_2
 	name = "Sulfur Greeble 2"
 	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_2.dmm"
 
-/datum/map_template/greeble/whitesands/sulfurpool3
+/datum/map_template/greeble/whitesands/sulfurpool/pool_3
 	name = "Sulfur Greeble 3"
 	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_3.dmm"
 
-/datum/map_template/greeble/whitesands/sulfurpool4
+/datum/map_template/greeble/whitesands/sulfurpool/pool_4
 	name = "Sulfur Greeble 4"
 	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_4.dmm"
 
-/datum/map_template/greeble/whitesands/sulfurpool5
+/datum/map_template/greeble/whitesands/sulfurpool/pool_5
 	name = "Sulfur Greeble 5"
 	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_5.dmm"
 
-/datum/map_template/greeble/whitesands/sulfurpool6
+/datum/map_template/greeble/whitesands/sulfurpool/pool_6
 	name = "Sulfur Greeble 6"
 	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_6.dmm"
 
-/datum/map_template/greeble/whitesands/sulfurpool7
+/datum/map_template/greeble/whitesands/sulfurpool/pool_7
 	name = "Sulfur Greeble 7"
 	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_7.dmm"
 
-/datum/map_template/greeble/whitesands/sulfurpool8
+/datum/map_template/greeble/whitesands/sulfurpool/pool_8
 	name = "Sulfur Greeble 8"
 	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_8.dmm"
 
-/datum/map_template/greeble/whitesands/sulfurpool9
+/datum/map_template/greeble/whitesands/sulfurpool/pool_9
 	name = "Sulfur Greeble 9"
 	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_9.dmm"
 
-/datum/map_template/greeble/whitesands/sulfurpool10
+/datum/map_template/greeble/whitesands/sulfurpool/pool_10
 	name = "Sulfur Greeble 10"
 	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_10.dmm"
 
-/datum/map_template/greeble/whitesands/sulfurpool11
+/datum/map_template/greeble/whitesands/sulfurpool/pool_11
 	name = "Sulfur Greeble 11"
 	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_11.dmm"
 
-/datum/map_template/greeble/whitesands/sulfurpool12
+/datum/map_template/greeble/whitesands/sulfurpool/pool_12
 	name = "Sulfur Greeble 12"
 	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_12.dmm"
 
-/datum/map_template/greeble/whitesands/sulfurpool13
+/datum/map_template/greeble/whitesands/sulfurpool/pool_13
 	name = "Sulfur Greeble 13"
 	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_13.dmm"
 
-/datum/map_template/greeble/whitesands/sulfurpool14
+/datum/map_template/greeble/whitesands/sulfurpool/pool_14
 	name = "Sulfur Greeble 14"
 	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_14.dmm"
 
-/datum/map_template/greeble/whitesands/sulfurpool15
+/datum/map_template/greeble/whitesands/sulfurpool/pool_15
 	name = "Sulfur Greeble 15"
 	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_15.dmm"
 
-/datum/map_template/greeble/whitesands/sulfurpool16
+/datum/map_template/greeble/whitesands/sulfurpool/pool_16
 	name = "Sulfur Greeble 16"
 	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_16.dmm"
 
-/datum/map_template/greeble/whitesands/sulfurpool17
+/datum/map_template/greeble/whitesands/sulfurpool/pool_17
 	name = "Sulfur Greeble 17"
 	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_17.dmm"
 
-/datum/map_template/greeble/whitesands/sulfurpool18
+/datum/map_template/greeble/whitesands/sulfurpool/pool_18
 	name = "Sulfur Greeble 18"
 	mappath = "_maps/templates/greebles/whitesands/sulfur_pool_18.dmm"
 

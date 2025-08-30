@@ -1,3 +1,5 @@
+//Gives these guys a shared type path at some point
+
 /obj/effect/spawner/random/randomthreat
 	var/static/mob_category = rand(1, 3)
 
@@ -92,3 +94,22 @@
 		/mob/living/basic/bear/polar = 85,
 		/mob/living/basic/bear/polar/warrior = 15
 	)
+
+/obj/effect/spawner/random/rare_frontiersmen
+	name = "very rare frontiersmen"
+	icon_state = "frontiersmanmelee"
+	icon = 'icons/mob/simple_frontiersman.dmi'
+	loot = list(/mob/living/simple_animal/hostile/human/frontier/internals)
+	spawn_loot_chance = 1
+
+/obj/effect/spawner/random/snow_monkey_pack
+	loot = list(
+		/mob/living/basic/snow_monkey
+	)
+	spawn_loot_count = null
+	spawn_loot_double = TRUE
+
+/obj/effect/spawner/random/snow_monkey_pack/spawn_loot(lootcount_override)
+	if(!spawn_loot_count)
+		spawn_loot_count = rand(2,5)
+	. = ..()
