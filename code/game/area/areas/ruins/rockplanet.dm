@@ -2,11 +2,6 @@
 /area/ruin/rockplanet
 	icon_state = "red"
 
-//budgetcuts
-/area/ruin/rockplanet/nanotrasen
-	name = "Abandoned Research Facility"
-	always_unpowered = FALSE
-
 //shippingdock
 /area/ruin/rockplanet/shippingdockoffice
 	name = "Employee Office"
@@ -156,3 +151,48 @@
 /area/ruin/rockplanet/river_valley_stash/hut
 	name = "Frontiersmen Hut"
 	icon_state = "red"
+
+// Frontiersman Trench Complex
+/area/ruin/rockplanet/somme/armory
+	name = "Bunker Armoury"
+	icon_state = "armory"
+
+/area/ruin/rockplanet/somme/dorms
+	name = "Frontiersman Dorms"
+	icon_state = "crew_quarters"
+
+/area/ruin/rockplanet/somme/hallway
+	name = "Main Hallway"
+	icon_state = "hallC"
+
+/area/ruin/rockplanet/somme/ross
+	name = "Big Boss' Quarters"
+	icon_state = "bridge"
+
+/area/ruin/rockplanet/somme/medical
+	name = "Bunker medbay"
+	icon_state = "blue"
+
+/area/ruin/rockplanet/somme/restroom
+	name = "Bunker Restroom"
+	icon_state = "green"
+
+/area/ruin/rockplanet/somme/engineeering
+	name = "Utilities Bunker"
+	icon_state = "engine"
+
+/area/ruin/rockplanet/somme/landing
+	name = "Warehouse"
+	icon_state = "storage"
+
+/area/ruin/rockplanet/somme/trench
+	name = "Trenchline"
+	icon_state = "danger"
+
+/area/ruin/rockplanet/somme/mainlock
+	name = "Bunker Main Airlock"
+	icon_state = "hallF"
+
+/area/ruin/rockplanet/somme/seclock
+	name = "Bunker Secondary Airlock"
+	icon_state = "hallP"
