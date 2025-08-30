@@ -4,6 +4,7 @@
 	name = "CLIP - Base Outfit"
 
 	uniform = /obj/item/clothing/under/clip
+	skirt_uniform = /obj/item/clothing/under/clip
 	alt_uniform = null
 
 	faction_icon = "bg_clip"
@@ -59,6 +60,7 @@
 
 	uniform = /obj/item/clothing/under/clip/formal
 	alt_uniform = /obj/item/clothing/under/clip/formal/with_shirt
+	skirt_uniform = /obj/item/clothing/under/clip/formal/alt
 	suit = /obj/item/clothing/suit/toggle/lawyer/clip/command
 	alt_suit = null
 	dcoat = /obj/item/clothing/suit/armor/clip_trenchcoat
@@ -114,7 +116,7 @@
 	id = /obj/item/card/id/silver
 	ears = /obj/item/radio/headset/clip/alt
 	uniform = /obj/item/clothing/under/clip/formal
-	alt_uniform = null
+	skirt_uniform = /obj/item/clothing/under/clip/formal/alt
 	suit = /obj/item/clothing/suit/toggle/lawyer/clip
 	alt_suit = null
 
@@ -232,6 +234,7 @@
 	head = /obj/item/clothing/head/fedora/det_hat/clip
 	belt = /obj/item/clipboard
 	uniform = /obj/item/clothing/under/clip/formal
+	skirt_uniform = /obj/item/clothing/under/clip/formal/alt
 	suit = /obj/item/clothing/suit/armor/clip_trenchcoat
 	ears = /obj/item/radio/headset/alt
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -265,6 +268,7 @@
 
 	head = /obj/item/clothing/head/flatcap/clip
 	uniform = /obj/item/clothing/under/clip/formal/with_shirt
+	skirt_uniform = /obj/item/clothing/under/clip/formal/alt
 	shoes = /obj/item/clothing/shoes/laceup
 
 	backpack = /obj/item/storage/backpack/satchel/leather
@@ -279,6 +283,7 @@
 
 	head = /obj/item/clothing/head/helmet/bulletproof/m10/clip_correspondent
 	uniform = /obj/item/clothing/under/clip/formal/with_shirt
+	skirt_uniform = /obj/item/clothing/under/clip/formal/alt // hehe
 	suit = /obj/item/clothing/suit/armor/vest/clip_correspondent
 	shoes = /obj/item/clothing/shoes/laceup
 
