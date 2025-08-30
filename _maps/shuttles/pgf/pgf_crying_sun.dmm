@@ -1039,6 +1039,10 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
+/obj/item/computer_hardware/card_slot{
+	pixel_y = 2;
+	pixel_x = 7
+	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "ii" = (
@@ -5498,6 +5502,12 @@
 /obj/structure/chair,
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/hallway/central)
+"Rp" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/pod,
+/area/ship/hangar/starboard)
 "Rx" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
@@ -7364,7 +7374,7 @@ oC
 IF
 SB
 QU
-qJ
+Rp
 eB
 eB
 eB
