@@ -1,5 +1,12 @@
 macro "default"
-
+	elem ".winset :map.right-click=false"
+		name = "SHIFT+Shift"
+	elem "Shift"
+		name = "SHIFT"
+		command = ".winset :map.right-click=false"
+	elem "ShiftUp"
+		name = "SHIFT+UP"
+		command = ".winset :map.right-click=true"
 
 menu "menu"
 	elem
@@ -119,6 +126,7 @@ window "mapwindow"
 		anchor2 = 100,100
 		font-family = "Arial"
 		font-size = 7
+		right-click = true
 		text-color = none
 		is-default = true
 		saved-params = "zoom;letterbox;zoom-mode"
