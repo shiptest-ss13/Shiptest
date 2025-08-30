@@ -1205,7 +1205,10 @@
 
 /// Gets a lazylist of all mutually understood languages.
 /atom/movable/proc/get_partially_understood_languages()
-	return get_language_holder().best_mutual_languages
+	var/datum/language_holder/our_holder = get_language_holder()
+	if(!our_holder.best_mutual_languages)
+		our_holder.calculate_best_mutual_language()
+	return our_holder.best_mutual_languages
 
 /// Gets a random spoken language, useful for forced speech and such.
 /atom/movable/proc/get_random_spoken_language()
