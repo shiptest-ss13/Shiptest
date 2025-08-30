@@ -8,8 +8,9 @@
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	icon_state = "navywear"
 	item_state = "navyjump"
-	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 
 /obj/item/clothing/under/gezena/captain
@@ -48,8 +49,9 @@
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
 /obj/item/clothing/suit/toggle/gezena/marine
 	name = "PGFMC silkenweave jacket"
@@ -73,8 +75,9 @@
 	cold_protection = CHEST|GROIN|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo
-	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 20, "energy" = 40, "bomb" = 20, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	allowed = null
 
@@ -119,8 +122,9 @@
 	item_state = "navyspace"
 	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 10)
 	w_class = WEIGHT_CLASS_NORMAL
-	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
 /obj/item/clothing/suit/space/gezena/Initialize()
 	. = ..()
@@ -132,8 +136,9 @@
 	icon_state = "marinespacesuit"
 	item_state = "marinespace"
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
-	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
 /obj/item/clothing/head/helmet/space/gezena
 	name = "\improper PGFN Rakalla Utility Helmet"
@@ -146,8 +151,9 @@
 	item_state = "navyspacehelm"
 	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 10)
 	w_class = WEIGHT_CLASS_NORMAL
-	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
 /obj/item/clothing/head/helmet/space/gezena/marine
 	name = "\improper PGFMC Lataka Combat Helmet"
@@ -155,8 +161,9 @@
 	icon_state = "marinespacehelmet"
 	item_state = "marinespacehelm"
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
-	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
 //Hats
 
