@@ -1,4 +1,3 @@
-import { useBackend } from '../backend';
 import {
   AnimatedNumber,
   Box,
@@ -8,12 +7,14 @@ import {
   Section,
   Stack,
   Tabs,
-} from '../components';
-import { formatMoney } from '../format';
+} from 'tgui-core/components';
+import { formatMoney } from 'tgui-core/format';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
-export const BlackMarketUplink = (props, context) => {
-  const { act, data } = useBackend(context);
+export const BlackMarketUplink = (props) => {
+  const { act, data } = useBackend();
   const {
     categories = [],
     markets = [],
@@ -23,7 +24,7 @@ export const BlackMarketUplink = (props, context) => {
     viewing_category,
   } = data;
   return (
-    <Window width={900} height={480} theme="hackerman" resizable>
+    <Window width={900} height={480} theme="hackerman">
       <ShipmentSelector />
       <Window.Content scrollable>
         <Section
@@ -104,8 +105,8 @@ export const BlackMarketUplink = (props, context) => {
   );
 };
 
-const ShipmentSelector = (props, context) => {
-  const { act, data } = useBackend(context);
+const ShipmentSelector = (props) => {
+  const { act, data } = useBackend();
   const { buying, ltsrbt_built, money } = data;
   if (!buying) {
     return null;

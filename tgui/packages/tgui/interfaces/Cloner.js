@@ -1,10 +1,11 @@
-import { useBackend } from '../backend';
-import { Button, Section, ProgressBar } from '../components';
-import { BeakerContents } from './common/BeakerContents';
-import { Window } from '../layouts';
+import { Button, ProgressBar, Section } from 'tgui-core/components';
 
-export const Cloner = (props, context) => {
-  const { act, data } = useBackend(context);
+import { useBackend } from '../backend';
+import { Window } from '../layouts';
+import { BeakerContents } from './common/BeakerContents';
+
+export const Cloner = (props) => {
+  const { act, data } = useBackend();
 
   return (
     <Window width={200} height={100}>
