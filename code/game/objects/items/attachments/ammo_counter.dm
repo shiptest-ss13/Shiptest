@@ -5,7 +5,7 @@
 
 	attach_features_flags = ATTACH_REMOVABLE_HAND|ATTACH_TOGGLE
 
-	slot = ATTACHMENT_SLOT_RAIL
+	slot = ATTACHMENT_SLOT_SCOPE
 	pixel_shift_x = 0
 	pixel_shift_y = 0
 	size_mod = 0
