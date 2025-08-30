@@ -442,6 +442,7 @@
 	icon_state = "1-10"
 	},
 /obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "dM" = (
@@ -1333,8 +1334,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
 	},
 /obj/structure/catwalk/over,
 /obj/structure/cable{
@@ -1445,12 +1446,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "ky" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 6
-	},
 /obj/effect/turf_decal/corner/transparent/blue/three_quarters,
 /obj/effect/turf_decal/corner/transparent/blue{
 	dir = 1
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 6
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/white{
 	dir = 8
@@ -1751,7 +1752,7 @@
 	name = "atlas dock"
 	},
 /obj/machinery/porta_turret/ship/clip{
-	id = "atlas";
+	id = "atlas_turrets";
 	dir = 9
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -1887,13 +1888,13 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/dorm/commad)
 "mS" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/transparent/blue{
 	dir = 9
 	},
 /obj/effect/turf_decal/corner/transparent/blue,
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
 /obj/effect/turf_decal/spline/fancy/opaque/white/corner,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -2224,10 +2225,10 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/office)
 "pS" = (
+/obj/machinery/light/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/machinery/light/directional/west,
 /obj/structure/tank_dispenser,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -2357,14 +2358,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "qA" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 4
+/obj/effect/turf_decal/corner/transparent/blue/three_quarters{
+	dir = 8
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/white/corner{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/transparent/blue/three_quarters{
-	dir = 8
+/obj/effect/turf_decal/siding/white{
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -2603,11 +2604,11 @@
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/bridge)
 "sM" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 4
-	},
 /obj/effect/turf_decal/corner/transparent/blue/three_quarters{
 	dir = 8
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 4
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/white/corner{
 	dir = 1
@@ -3026,7 +3027,7 @@
 /area/ship/medical)
 "vS" = (
 /obj/machinery/porta_turret/ship/clip{
-	id = "atlas";
+	id = "atlas_turrets";
 	dir = 10
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -3081,13 +3082,13 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "we" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 9
-	},
 /obj/effect/turf_decal/corner/transparent/blue/three_quarters{
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/transparent/blue,
+/obj/effect/turf_decal/siding/white{
+	dir = 9
+	},
 /obj/effect/turf_decal/spline/fancy/opaque/white{
 	dir = 4
 	},
@@ -4213,11 +4214,11 @@
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "Ek" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 5
-	},
 /obj/effect/turf_decal/corner/transparent/blue/three_quarters{
 	dir = 8
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 5
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/white{
 	dir = 8
@@ -4408,19 +4409,19 @@
 	},
 /obj/machinery/button/door{
 	pixel_x = -13;
-	pixel_y = 7;
-	id = "atlas_bridge";
-	name = "bridge shutters button"
-	},
-/obj/machinery/button/door{
-	pixel_x = -13;
-	pixel_y = -2;
+	pixel_y = -1;
 	id = "atlas_bridgelockdown";
 	name = "bridge lockdown button";
 	color = "#FFD6D6"
 	},
+/obj/machinery/button/door{
+	pixel_x = -13;
+	pixel_y = 7;
+	id = "atlas_bridge";
+	name = "bridge shutters button"
+	},
 /obj/machinery/turretid/ship{
-	id = "atlas";
+	id = "atlas_turrets";
 	pixel_y = 28
 	},
 /turf/open/floor/plasteel,
@@ -4632,7 +4633,7 @@
 /area/ship/crew/canteen)
 "GU" = (
 /obj/machinery/porta_turret/ship/clip{
-	id = "atlas";
+	id = "atlas_turrets";
 	dir = 6
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -4732,11 +4733,11 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "Ir" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 10
-	},
 /obj/effect/turf_decal/corner/transparent/blue/three_quarters{
 	dir = 1
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 10
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/white{
 	dir = 4
@@ -5095,13 +5096,13 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "LD" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/transparent/blue{
 	dir = 9
 	},
 /obj/effect/turf_decal/corner/transparent/blue,
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
 /obj/effect/turf_decal/spline/fancy/opaque/white/corner{
 	dir = 4
 	},
@@ -5524,7 +5525,8 @@
 /area/ship/engineering)
 "Pu" = (
 /obj/machinery/porta_turret/ship/clip/heavy{
-	dir = 5
+	dir = 5;
+	id = "atlas_turrets"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security/armory)
@@ -6185,7 +6187,8 @@
 /area/ship/engineering)
 "VE" = (
 /obj/machinery/porta_turret/ship/clip/heavy{
-	dir = 6
+	dir = 6;
+	id = "atlas_turrets"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/toilet)
@@ -6495,7 +6498,7 @@
 /area/ship/cargo)
 "XZ" = (
 /obj/machinery/porta_turret/ship/clip{
-	id = "atlas";
+	id = "atlas_turrets";
 	dir = 5
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
