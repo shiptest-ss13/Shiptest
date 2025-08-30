@@ -10432,12 +10432,12 @@
 	id = "somme_cargo_holo";
 	dir = 1
 	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "somme_cargo_airlock_shutters"
-	},
 /obj/structure/cable{
 	icon_state = "0-1"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "somme_cargo_blast_doors"
 	},
 /turf/open/floor/concrete/slab_2,
 /area/ruin/rockplanet/somme/landing)
