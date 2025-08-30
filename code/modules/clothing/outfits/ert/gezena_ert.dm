@@ -9,9 +9,11 @@
 	head = /obj/item/clothing/head/helmet/gezena
 	belt = /obj/item/storage/belt/military/gezena/bg16
 	gloves = /obj/item/clothing/gloves/gezena/marine
-	shoes = /obj/item/clothing/shoes/combat/gezena
+	shoes = /obj/item/clothing/shoes/combat/gezena/marine
 	neck = /obj/item/clothing/neck/cloak/gezena
-	suit_store = /obj/item/gun/energy/kalix/pgf
+	suit_store = /obj/item/gun/energy/kalix/pgf/medium
+	mask = /obj/item/clothing/mask/breath/pgfmask
+	glasses = /obj/item/clothing/glasses/sunglasses/pgf
 
 	l_pocket = /obj/item/melee/knife/combat
 	r_pocket = /obj/item/flashlight/seclite
@@ -22,12 +24,13 @@
 /datum/outfit/job/gezena/ert/gunner
 	name = "ERT - PGF Marine Gunner"
 
-	suit_store = /obj/item/gun/energy/kalix/pgf/heavy // yea there's not much else to put in. sorry
+	suit_store = /obj/item/gun/energy/kalix/pgf/heavy
 
 /datum/outfit/job/gezena/ert/engineer
 	name = "ERT - PGF Marine Combat Engineer"
 	id_assignment = "Marine Combat Engineer"
 
+	suit_store = /obj/item/gun/energy/kalix/pgf
 	belt = /obj/item/storage/belt/military/gezena/engineer
 
 /datum/outfit/job/gezena/ert/medic
@@ -39,6 +42,7 @@
 	belt = /obj/item/storage/belt/medical/gezena/paramedic
 	gloves = /obj/item/clothing/gloves/gezena/marine
 	neck = /obj/item/clothing/neck/cloak/gezena/med
+	suit_store = /obj/item/gun/energy/kalix/pgf
 
 	backpack = /obj/item/storage/backpack/medic
 	satchel = /obj/item/storage/backpack/satchel/med
@@ -46,7 +50,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/para
 	box = /obj/item/storage/box/survival/medical
 
-	backpack_contents = list(/obj/item/gun/energy/kalix/pistol, /obj/item/stock_parts/cell/gun/kalix = 2, /obj/item/screwdriver)
+	backpack_contents = list(/obj/item/gun/energy/kalix/pistol, /obj/item/stock_parts/cell/gun/kalix = 2)
 
 
 /datum/outfit/job/gezena/ert/leader
@@ -55,11 +59,11 @@
 	jobtype = /datum/job/hos
 	job_icon = "headofsecurity"
 
-	suit = /obj/item/clothing/suit/armor/gezena/marinecoat
+	suit = /obj/item/clothing/suit/armor/gezena/marine
 	head = /obj/item/clothing/head/helmet/gezena
 	gloves = /obj/item/clothing/gloves/gezena/marine
-	shoes = /obj/item/clothing/shoes/combat/gezena
-	neck = /obj/item/clothing/neck/cloak/gezena/lead
+	shoes = /obj/item/clothing/shoes/combat/gezena/marine
+	neck = /obj/item/clothing/neck/cloak/gezena/command
 	suit_store = /obj/item/gun/energy/kalix/pgf/heavy
 
 	backpack_contents = list(/obj/item/gun/energy/kalix/pistol, /obj/item/stock_parts/cell/gun/kalix = 2, /obj/item/grenade/smokebomb = 3, /obj/item/binoculars)
@@ -75,6 +79,7 @@
 	neck = /obj/item/clothing/neck/cloak/gezena/command
 	uniform = /obj/item/clothing/under/gezena
 	suit = /obj/item/clothing/suit/armor/gezena
+	shoes = /obj/item/clothing/shoes/combat/gezena
 	suit_store = null
 	belt = null
 	gloves = /obj/item/clothing/gloves/gezena

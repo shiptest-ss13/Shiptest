@@ -237,3 +237,20 @@
 	-When pressure releases, reach below device and lift via underside in one clean motion. Mounting legs will automatically retract. <br><br> \
 	-The device is now safe to handle. <br><br> \
 	-Safely stow device in secure, moisture-free location, away from fire and blunt force. "
+
+/*
+		Factional
+*/
+
+//gezena
+
+/datum/supply_pack/tools/pgfwebbing
+	name = "PGF Combat Webbing"
+	desc = "Contains a lightweight harness covered in pouches for use in carrying ammunition and tools."
+	cost = 500
+	contains = list(/obj/item/storage/belt/military/gezena)
+	crate_name = "webbing crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
