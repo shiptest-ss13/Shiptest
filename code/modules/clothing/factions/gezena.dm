@@ -267,7 +267,7 @@
 
 /obj/item/clothing/head/helmet/gezena
 	name = "\improper PGFMC AR-98 Helmet"
-	desc = "The helmet component of the recently introduced Arbitrator body armor system. Generously fitted with connector clips for the L-98 respirator and vacant hardware for attachments."
+	desc = "The helmet component of the PGF's recently introduced Arbitrator body armor system. Generously fitted with connector clips for the L-98 respirator and vacant hardware for attachments."
 	icon = 'icons/obj/clothing/faction/gezena/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/head.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
@@ -286,7 +286,7 @@
 
 /obj/item/clothing/gloves/gezena
 	name = "\improper PGFN Gloves"
-	desc = "A pair of government contract made Smithworx “sure-grip” gloves. Extraordinarily popular in the civilian market for their quality reputation, these military issues never seem to live up to the hype."
+	desc = "A pair of government contract made Smithworx “sure-grip” gloves. Extraordinarily popular on the civilian market for their quality reputation, these military issues never seem to live up to the hype."
 	icon = 'icons/obj/clothing/faction/gezena/hands.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/hands.dmi'
 	icon_state = "navalgloves"
@@ -300,19 +300,19 @@
 
 /obj/item/clothing/gloves/gezena/marine
 	name = "\improper PGFMC Combat Gloves"
-	desc = "A pair of government contract made Smithworx “sure-grip” gloves. Extraordinarily popular in the civilian market for their quality reputation, these military issues never seem to live up to the hype. This pair comes with extra tactile grip on the fingertips for easy use of firearms."
+	desc = "A pair of government contract made Smithworx “sure-grip” gloves. Extraordinarily popular on the civilian market for their quality reputation, these military issues never seem to live up to the hype. This pair comes with extra tactile grip on the fingertips for easy use of firearms."
 	icon_state = "marinegloves"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 75, "acid" = 50)
 
 /obj/item/clothing/gloves/gezena/engi
 	name = "\improper PGFN Engineering Gloves"
-	desc = "A pair of government contract made Smithworx “sure-grip” gloves. Extraordinarily popular in the civilian market for their quality reputation, these military issues never seem to live up to the hype. This pair comes with anti-conductive microfibers interwoven to supply the useer with electrical insulation."
+	desc = "A pair of government contract made Smithworx “sure-grip” gloves. Extraordinarily popular on the civilian market for their quality reputation, these military issues never seem to live up to the hype. This pair comes with anti-conductive microfibers interwoven to supply the useer with electrical insulation."
 	icon_state = "engigloves"
 	siemens_coefficient = 0
 
 /obj/item/clothing/gloves/gezena/captain
 	name = "\improper PGFN Captain's Gloves"
-	desc = "A pair of government contract made Smithworx “sure-grip” gloves. Extraordinarily popular in the civilian market for their quality reputation, these military issues never seem to live up to the hype. This pair bears the silver standard of a Gezenan captain."
+	desc = "A pair of government contract made Smithworx “sure-grip” gloves. Extraordinarily popular on the civilian market for their quality reputation, these military issues never seem to live up to the hype. This pair bears the silver standard of a Gezenan captain."
 	icon_state = "captaingloves"
 
 //Boots
@@ -394,7 +394,7 @@
 
 //Masks
 /obj/item/clothing/mask/breath/pgfmask
-	name = "L-98 Respirator"
+	name = "\improper L-98 Respirator"
 	desc = "A comfortable half-mask respirator introduced to PGF military service in FSC 498 alongside the new Arbitrator body armor system, replacing and improving upon the much bulkier and shorter lived L-90 masks. Made to connect seamlessly with the PGFMC's AR-98 combat helmet, the L-98 can be connected to external filters and air supplies via a connector port under the chin."
 	icon_state = "pgfmask"
 	item_state = "pgfmask"
@@ -409,7 +409,7 @@
 
 //Eyes
 /obj/item/clothing/glasses/sunglasses/pgf
-	name = "L-98 Enviromental Protection Goggles"
+	name = "\improper L-98 Enviromental Protection Goggles"
 	desc = "The optional eye protection component of the L-98 respirator, complete with a polarized lens and snap latches for connecting the two parts together securely. Commonly worn both with and without it's partner."
 	icon = 'icons/obj/clothing/faction/gezena/eyes.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/eyes.dmi'
