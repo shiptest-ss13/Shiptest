@@ -342,7 +342,7 @@
 
 /obj/item/storage/belt/military/gezena
 	name = "\improper PGF Webbing"
-	desc = "A lightweight harness covered in pouches and a slightly larger than average rear pack. Supplied to the combat ground forces of the PGF this variant is designed for carrying ammunition."
+	desc = "A lightweight harness covered in pouches and a slightly larger than average rear pack. Supplied to the combat ground forces of the PGF. This variant is designed for carrying ammunition."
 	icon = 'icons/obj/clothing/faction/gezena/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/belt.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
@@ -371,7 +371,7 @@
 
 /obj/item/storage/belt/medical/gezena
 	name = "\improper PGF Medical Webbing"
-	desc = "A lightweight harness covered in pouches and a slightly larger than average rear pack. Supplied to the combat ground forces of the PGF this variant is designed for carrying medical equipment."
+	desc = "A lightweight harness covered in pouches and a slightly larger than average rear pack. Supplied to the combat ground forces of the PGF. This variant is designed for carrying medical equipment."
 	icon = 'icons/obj/clothing/faction/gezena/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/belt.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
