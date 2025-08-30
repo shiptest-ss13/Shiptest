@@ -127,6 +127,8 @@
 	//gauss doesn't explode so there's not light.
 	light_range = 0
 
+	doesnt_keep_bullet = TRUE
+
 
 /obj/item/gun/ballistic/automatic/powered/gauss/claris/suns
 	desc = "An antiquated Solarian rifle. Chambered in ferromagnetic pellets, just as the founding Solarians intended. Evidently, SUNS' founders echo the sentiment, as it appears to be painted in their colors."
