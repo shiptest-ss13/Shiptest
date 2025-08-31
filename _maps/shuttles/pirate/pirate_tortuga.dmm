@@ -233,7 +233,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/grunge{
-	req_one_access = list(1)
+	req_one_access = list(1);
+	id_tag = "armory"
 	},
 /turf/open/floor/plating/rust,
 /area/ship/security/armory)
@@ -802,7 +803,8 @@
 "hD" = (
 /obj/machinery/door/airlock/command{
 	dir = 4;
-	id_tag = "bridge_door"
+	id_tag = "bridge_door";
+	req_one_access = list(19)
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -904,10 +906,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
-"ix" = (
-/obj/effect/decal/cleanable/glass,
-/turf/closed/wall/r_wall/rust,
-/area/ship/crew/toilet)
 "iy" = (
 /obj/structure/cable/yellow{
 	icon_state = "6-10"
@@ -1591,10 +1589,6 @@
 /obj/effect/turf_decal/borderfloor,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
-"ny" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/r_wall/rust,
-/area/ship/crew/toilet)
 "nE" = (
 /obj/machinery/light_switch{
 	pixel_y = 20
@@ -2126,10 +2120,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/ccommons)
-"to" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/r_wall/rust,
-/area/ship/security/armory)
 "tq" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -2676,10 +2666,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
-"yc" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/r_wall/rust,
-/area/ship/maintenance)
 "yd" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp{
@@ -4601,6 +4587,23 @@
 	pixel_x = -8
 	},
 /obj/item/bodycamera/broadcast_camera,
+/obj/machinery/button/door{
+	id = "armory";
+	name = "Door Control";
+	normaldoorcontrol = 1;
+	pixel_x = -7;
+	pixel_y = 21;
+	req_access_txt = "3"
+	},
+/obj/machinery/button/door{
+	id = "armory";
+	name = "Door Bolt Control";
+	normaldoorcontrol = 1;
+	pixel_x = 6;
+	pixel_y = 21;
+	req_access_txt = "3";
+	specialfunctions = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Pa" = (
@@ -6758,7 +6761,7 @@ Vg
 if
 FQ
 js
-to
+qD
 QJ
 QJ
 AG
@@ -6855,7 +6858,7 @@ Px
 pF
 pF
 KR
-ny
+pF
 tV
 Gc
 Ab
@@ -6934,7 +6937,7 @@ Px
 Px
 Px
 pF
-ix
+pF
 pF
 YJ
 DR
@@ -7041,7 +7044,7 @@ Hk
 kv
 om
 Hk
-yc
+QJ
 lJ
 lJ
 lJ
