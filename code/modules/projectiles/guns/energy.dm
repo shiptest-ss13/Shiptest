@@ -271,14 +271,12 @@
 		our_action = new /datum/action/item_action/toggle_ammotype(src)
 
 		for(var/i=1, i <= ammo_type.len, i++)
-			if(default_ammo_type == ammo_type[i]) //default_ammo_type gives the cell, not ammo firing types. Review this?
+			if(default_ammo_type == ammo_type[i])
 				ammotype_index = i
 				if(our_action)
 					our_action.UpdateButtonIcon()
 				return
 		ammotype_index = 1
-
-	CRASH("default_ammo_type isn't in the ammo_type list of [src.type]!! Defaulting to 1!!")
 
 /obj/item/gun/energy/ui_action_click(mob/user, actiontype)
 	if (istype(actiontype, /datum/action/item_action/toggle_ammotype))
