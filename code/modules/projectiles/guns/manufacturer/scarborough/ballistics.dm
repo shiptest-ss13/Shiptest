@@ -1,4 +1,4 @@
-#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/energy_bayonet, /obj/item/attachment/scope, /obj/item/attachment/gun, /obj/item/attachment/sling, /obj/item/attachment/ammo_counter)
+#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/energy_bayonet, /obj/item/attachment/gun, /obj/item/attachment/ammo_counter)
 #define SCARBOROUGH_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_SCOPE = 1, ATTACHMENT_SLOT_RAIL = 1)
 
 //########### PISTOLS ###########//
@@ -118,6 +118,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/ringneck/indie)
 	show_magazine_on_sprite = TRUE
 
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	unique_attachments = list(/obj/item/attachment/scope)
 	slot_available = SCARBOROUGH_ATTACH_SLOTS
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -242,6 +243,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 	show_magazine_on_sprite = TRUE
 
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	unique_attachments = list(/obj/item/attachment/scope)
 	slot_available = SCARBOROUGH_ATTACH_SLOTS
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -275,6 +277,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake)
 
 	icon_state = "rattlesnake_inteq"
 	item_state = "rattlesnake_inteq"
+
+NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 
 /obj/item/ammo_box/magazine/m9mm_rattlesnake
 	name = "Rattlesnake magazine (9x18mm)"
@@ -558,8 +562,6 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 
 	fire_delay = 1 SECONDS
 
-	slot_flags = ITEM_SLOT_BACK
-
 	show_magazine_on_sprite = TRUE
 	unique_mag_sprites_for_variants = TRUE
 	show_ammo_capacity_on_magazine_sprite = TRUE
@@ -655,7 +657,6 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 	w_class = WEIGHT_CLASS_BULKY
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
 	zoom_out_amt = 5
-	slot_flags = ITEM_SLOT_BACK
 	actions_types = list()
 	show_magazine_on_sprite = TRUE
 	manufacturer = MANUFACTURER_SCARBOROUGH
@@ -707,7 +708,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/taipan)
 
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	burst_size = 2
 	burst_delay = 0.1 SECONDS
@@ -801,7 +802,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra)
 
 /obj/item/gun/ballistic/automatic/assault/hydra/dmr
 	name = "SBR-80 \"Hydra\""
-	desc = "Scarborough Arms' premier modular assault rifle platform. This example is configured as a marksman rifle, with an extended barrel and medium-zoom scope. Its lightweight cartridge is compensated for with a 2-round burst action. Chambered in 5.56mm CLIP."
+	desc = "Scarborough Arms' premier modular assault rifle platform. This example is configured as a marksman rifle, with an extended barrel and medium-zoom scope. Its lightweight cartridge is compensated for with a 2-round burst action, though it is unable to fit large extended magazines. Chambered in 5.56mm CLIP."
 
 	icon_state = "hydra_dmr"
 	item_state = "hydra_dmr"
@@ -817,6 +818,10 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra)
 	zoom_amt = 6
 	zoom_out_amt = 2
 	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra/small
+	blacklisted_ammo_types = list(
+		/obj/item/ammo_box/magazine/m556_42_hydra/extended,
+		/obj/item/ammo_box/magazine/m556_42_hydra/casket,
+	)
 
 NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 
@@ -920,6 +925,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	wield_delay = 0.65 SECONDS
 
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	unique_attachments = list(/obj/item/attachment/scope)
 	slot_available = SCARBOROUGH_ATTACH_SLOTS
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(

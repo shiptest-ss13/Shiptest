@@ -604,7 +604,7 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
-/area/template_noop)
+/area/ship/engineering/engines/port)
 "io" = (
 /obj/structure/chair/office{
 	dir = 8
@@ -1281,9 +1281,6 @@
 /obj/item/clothing/shoes/combat{
 	pixel_y = -8
 	},
-/obj/item/clothing/head/clip/slouch{
-	pixel_y = 12
-	},
 /obj/item/clothing/under/clip/minutemen{
 	pixel_x = -5
 	},
@@ -1304,6 +1301,9 @@
 	pixel_y = -13
 	},
 /obj/item/melee/knife/combat,
+/obj/item/clothing/head/soft/utility_navy{
+	pixel_y = 13
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "qQ" = (

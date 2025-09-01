@@ -1,6 +1,8 @@
 /datum/ai_behavior/basic_melee_attack
 	action_cooldown = 2 SECONDS
 	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_CAN_PLAN_DURING_EXECUTION
+	///do we finish this action after hitting once?
+	var/terminate_after_action = FALSE
 
 /datum/ai_behavior/basic_melee_attack/setup(datum/ai_controller/controller, target_key, targetting_datum_key, hiding_location_key)
 	. = ..()
@@ -16,15 +18,13 @@
 	set_movement_target(controller, target)
 
 /datum/ai_behavior/basic_melee_attack/perform(seconds_per_tick, datum/ai_controller/controller, target_key, targetting_datum_key, hiding_location_key)
-	. = ..()
 	var/mob/living/basic/basic_mob = controller.pawn
 	//targetting datum will kill the action if not real anymore
 	var/atom/target = controller.blackboard[target_key]
 	var/datum/targetting_datum/targetting_datum = controller.blackboard[targetting_datum_key]
 
 	if(!targetting_datum.can_attack(basic_mob, target))
-		finish_action(controller, FALSE, target_key)
-		return
+		return AI_BEHAVIOR_INSTANT | AI_BEHAVIOR_FAILED
 
 	var/hiding_target = targetting_datum.find_hidden_mobs(basic_mob, target) //If this is valid, theyre hidden in something!
 
@@ -35,6 +35,9 @@
 	else
 		basic_mob.melee_attack(target)
 
+	if(terminate_after_action)
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
+	return AI_BEHAVIOR_DELAY
 
 /datum/ai_behavior/basic_melee_attack/finish_action(datum/ai_controller/controller, succeeded, target_key, targetting_datum_key, hiding_location_key)
 	. = ..()
@@ -63,26 +66,23 @@
 	set_movement_target(controller, target)
 
 /datum/ai_behavior/basic_ranged_attack/perform(seconds_per_tick, datum/ai_controller/controller, target_key, targetting_datum_key, hiding_location_key)
-	. = ..()
 	var/mob/living/basic/basic_mob = controller.pawn
 	//targetting datum will kill the action if not real anymore
 	var/atom/target = controller.blackboard[target_key]
 	var/datum/targetting_datum/targetting_datum = controller.blackboard[targetting_datum_key]
 
 	if(!targetting_datum.can_attack(basic_mob, target))
-		finish_action(controller, FALSE, target_key)
-		return
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED
 
 	var/atom/hiding_target = targetting_datum.find_hidden_mobs(basic_mob, target) //If this is valid, theyre hidden in something!
 	var/atom/final_target = hiding_target ? hiding_target : target
 
 	if(!can_see(basic_mob, final_target, required_distance))
-		finish_action(controller, FALSE, target_key)
-		return
+		return AI_BEHAVIOR_INSTANT
 
 	if(avoid_friendly_fire && check_friendly_in_path(basic_mob, target, targetting_datum))
 		adjust_position(basic_mob, target)
-		return ..()
+		return AI_BEHAVIOR_INSTANT
 
 	controller.set_blackboard_key(hiding_location_key, hiding_target)
 
@@ -94,6 +94,8 @@
 		callback.Invoke()
 	else
 		basic_mob.RangedAttack(final_target)
+
+	return AI_BEHAVIOR_DELAY //only start the cooldown when the shot is shot
 
 /datum/ai_behavior/basic_ranged_attack/finish_action(datum/ai_controller/controller, succeeded, target_key, targetting_datum_key, hiding_location_key)
 	. = ..()

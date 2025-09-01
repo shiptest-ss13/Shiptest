@@ -109,21 +109,21 @@
 		if(1)
 			to_chat(owner, span_warning("You are paralyzed with fear!"))
 			owner.Stun(70)
-			owner.set_jitter(8)
+			owner.set_timed_status_effect(16 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 		if(2)
 			owner.emote("scream")
-			owner.set_jitter(5)
+			owner.set_timed_status_effect(10 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 			owner.say("AAAAH!!", forced = "phobia")
 			if(reason)
 				owner.pointed(reason)
 		if(3)
 			to_chat(owner, span_warning("You shut your eyes in terror!"))
-			owner.set_jitter(5)
+			owner.set_timed_status_effect(10 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 			owner.blind_eyes(10)
 		if(4)
-			owner.dizziness += 10
+			owner.adjust_timed_status_effect(20 SECONDS, /datum/status_effect/dizziness)
 			owner.confused += 10
-			owner.set_jitter(10)
+			owner.set_timed_status_effect(20 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 			owner.stuttering += 10
 
 // Defined phobia types for badminry, not included in the RNG trauma pool to avoid diluting.

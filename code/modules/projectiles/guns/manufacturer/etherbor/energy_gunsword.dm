@@ -109,7 +109,6 @@
 
 	refused_attachments = list(
 		/obj/item/attachment/gun,
-		/obj/item/attachment/sling
 		)
 
 /obj/item/ammo_casing/energy/kalix/pistol
@@ -125,7 +124,7 @@
 	desc = "Etherbor's answer to the PGFMC's request for a carbine style weapon; the BGC-10 offers greater accuracy and power than the BG-16, while being less cumbersome than the DMR mode equipped HBG series rifles."
 	icon_state = "pgfmedium"
 	item_state = "pgfmedium"
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	modifystate = TRUE
 
@@ -147,7 +146,7 @@
 	desc = "The HBG-7 is the standard-issue rifle weapon of the PGF. It comes with a special DMR mode that has greater armor piercing for dealing with armored targets."
 	icon_state = "pgfheavy"
 	item_state = "pgfheavy"
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	modifystate = FALSE
 

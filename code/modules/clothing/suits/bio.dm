@@ -33,13 +33,6 @@
 	equip_sound = 'sound/items/equip/straps_equip.ogg'
 	equip_self_flags = null
 
-//Standard biosuit, orange stripe
-/obj/item/clothing/head/bio_hood/general
-	icon_state = "bio_general"
-
-/obj/item/clothing/suit/bio_suit/general
-	icon_state = "bio_general"
-
 //Virology biosuit, green stripe
 /obj/item/clothing/head/bio_hood/virology
 	icon_state = "bio_virology"

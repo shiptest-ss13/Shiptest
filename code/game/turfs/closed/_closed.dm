@@ -19,8 +19,6 @@
 	// force, damage type, tool behavior, and sharpness. This is the minimum
 	// amount of force that a blunt, brute item must have to damage the wall.
 	var/min_dam = 0
-	var/max_integrity = 100
-	var/integrity
 	var/brute_mod = 1
 	var/burn_mod = 1
 	// Projectiles that do extra damage to the wall
@@ -37,8 +35,8 @@
 
 /turf/closed/Initialize(mapload, inherited_virtual_z)
 	. = ..()
-	if(integrity == null)
-		integrity = max_integrity
+	if(atom_integrity == null)
+		atom_integrity = max_integrity
 
 /turf/closed/copyTurf(turf/T, copy_air, flags)
 	. = ..()
@@ -50,7 +48,7 @@
 /turf/closed/update_overlays()
 	. = ..()
 	damage_overlay = null
-	var/adj_dam_pct = 1 - (integrity/(max_integrity))
+	var/adj_dam_pct = 1 - (atom_integrity/(max_integrity))
 	if(adj_dam_pct < 0)
 		adj_dam_pct = 0
 	if(!damage_overlay)
@@ -81,7 +79,7 @@
 	. += damage_hints(user)
 
 /turf/closed/proc/damage_hints(mob/user)
-	switch(integrity / max_integrity)
+	switch(atom_integrity / max_integrity)
 		if(0.5 to 0.99)
 			return "[p_they(TRUE)] look[p_s()] slightly damaged."
 		if(0.25 to 0.5)
@@ -102,15 +100,15 @@
 // negative values reduce integrity, positive values increase integrity.
 // Devastate forces a devestate, safe decon prevents it.
 /turf/closed/proc/alter_integrity(damage, mob/user, devastate = FALSE, safe_decon = FALSE)
-	integrity += damage
-	if(integrity >= max_integrity)
-		integrity = max_integrity
-	if(integrity <= 0)
+	atom_integrity += damage
+	if(atom_integrity >= max_integrity)
+		atom_integrity = max_integrity
+	if(atom_integrity <= 0)
 		if(safe_decon)
 			dismantle_wall(FALSE, user)
 			return FALSE
 		// if damage put us 50 points or more below 0, and not safe decon we got proper demolished
-		if(integrity <= -50)
+		if(atom_integrity <= -50)
 			dismantle_wall(TRUE, user)
 			return FALSE
 		if(devastate)
@@ -118,14 +116,14 @@
 			return FALSE
 		dismantle_wall(FALSE,user)
 		return FALSE
-	integrity = min(integrity, max_integrity)
+	atom_integrity = min(atom_integrity, max_integrity)
 	update_stats()
-	return integrity
+	return atom_integrity
 
 /turf/closed/proc/set_integrity(amount,devastate = FALSE, mob/user)
-	integrity = amount
+	atom_integrity = amount
 	update_stats()
-	if(integrity <= 0)
+	if(atom_integrity <= 0)
 		dismantle_wall(devastate, user)
 
 /turf/closed/proc/dismantle_wall(devastate = FALSE, mob/user)
@@ -149,7 +147,8 @@
 		add_dent(WALL_DENT_SHOT)
 		alter_integrity(-dam, shooter)
 
-/turf/closed/proc/get_item_damage(obj/item/used_item, t_min = min_dam)
+/turf/closed/proc/get_item_damage(obj/item/used_item, mob/user, t_min = min_dam)
+	used_item.closed_turf_attack(src,user)
 	var/damage = used_item.force * used_item.demolition_mod
 	// if dam is below t_min, then the hit has no effect
 	return (damage < t_min ? 0 : damage)
@@ -222,7 +221,7 @@
 
 // catch-all for using most items on the closed turf -- attempt to smash
 /turf/closed/proc/try_destroy(obj/item/used_item, mob/user, turf/T)
-	var/total_damage = get_item_damage(used_item)
+	var/total_damage = get_item_damage(used_item, user)
 	user.do_attack_animation(src)
 	if(total_damage <= 0)
 		to_chat(user, span_warning("[used_item] isn't strong enough to damage [src]!"))
@@ -237,6 +236,7 @@
 		if(BURN)
 			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
 	add_dent(WALL_DENT_HIT)
+	//used_item.closed_turf_attack(T,user)
 	alter_integrity(-total_damage, user)
 	return TRUE
 

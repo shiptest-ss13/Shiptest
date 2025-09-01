@@ -486,8 +486,8 @@ WS End*/
 
 		H.adjustOrganLoss(ORGAN_SLOT_HEART,max(1,volume/10)) // your heart is barely keeping up!
 
-		H.adjust_jitter(rand(0,2))
-		H.Dizzy(rand(0,2))
+		H.set_timed_status_effect(rand(0 SECONDS, 4 SECONDS) * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		H.set_timed_status_effect(rand(0 SECONDS, 4 SECONDS) * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 
 
 		if(prob(33))

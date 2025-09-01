@@ -442,7 +442,7 @@
 		to_chat(victim, span_userdanger("[user] finishes applying [I] to your [limb.name], your bones coursing with pain!"))
 	else
 		var/painkiller_bonus = 0
-		if(victim.drunkenness > 10)
+		if(victim.get_drunk_amount() > 10)
 			painkiller_bonus += 10
 		if(victim.reagents.has_reagent(/datum/reagent/medicine/morphine))
 			painkiller_bonus += 20
@@ -467,6 +467,7 @@
 
 	limb.receive_damage(25, stamina = 100, wound_bonus = CANT_WOUND)
 	gelled = TRUE
+	processes = TRUE
 
 /// if someone is using surgical tape on our wound
 /datum/wound/blunt/proc/tape(obj/item/stack/sticky_tape/surgical/I, mob/user)

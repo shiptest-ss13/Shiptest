@@ -25,7 +25,7 @@
 	var/datum/component/riding/D = GetComponent(/datum/component/riding)
 	D.vehicle_move_delay = round(CONFIG_GET(number/movedelay/run_delay) * delay_multiplier) / speed
 
-/obj/vehicle/ridden/wheelchair/motorized/obj_destruction(damage_flag)
+/obj/vehicle/ridden/wheelchair/motorized/atom_destruction(damage_flag)
 	var/turf/T = get_turf(src)
 	for(var/c in contents)
 		var/atom/movable/thing = c

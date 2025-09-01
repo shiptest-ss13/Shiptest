@@ -552,35 +552,35 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/medical/cmo
 
 	//Research Director hardsuit
-/obj/item/clothing/head/helmet/space/hardsuit/rd
-	name = "scientific hardsuit helmet"
-	desc = "A prototype helmet designed for research in a hazardous, low pressure environment. Scientific data flashes across the visor."
-	icon_state = "hardsuit0-rd"
-	hardsuit_type = "rd"
+/obj/item/clothing/head/helmet/space/hardsuit/bomb
+	name = "EOD hardsuit helmet"
+	desc = "A bulky helmet designed for hazardous, low pressure environments. Fitted with extensive plating for handling of explosives and shrapnel. The difference between a closed and open-casket."
+	icon_state = "hardsuit0-eod"
+	hardsuit_type = "eod"
 	resistance_flags = ACID_PROOF | FIRE_PROOF
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
-	armor = list("melee" = 30, "bullet" = 40, "laser" = 10, "energy" = 20, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 80, "wound" = 20)
+	armor = list("melee" = 30, "bullet" = 40, "laser" = 10, "energy" = 20, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 80, "wound" = 40)
 	var/explosion_detection_dist = 21
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SCAN_REAGENTS | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS //WS Port - Cit Internals
 	actions_types = list(/datum/action/item_action/toggle_helmet_light, /datum/action/item_action/toggle_research_scanner)
 
-/obj/item/clothing/head/helmet/space/hardsuit/rd/Initialize()
+/obj/item/clothing/head/helmet/space/hardsuit/bomb/Initialize()
 	. = ..()
 	RegisterSignal(SSdcs, COMSIG_GLOB_EXPLOSION, PROC_REF(sense_explosion))
 
-/obj/item/clothing/head/helmet/space/hardsuit/rd/equipped(mob/living/carbon/human/user, slot)
+/obj/item/clothing/head/helmet/space/hardsuit/bomb/equipped(mob/living/carbon/human/user, slot)
 	..()
 	if (slot == ITEM_SLOT_HEAD)
 		var/datum/atom_hud/DHUD = GLOB.huds[DATA_HUD_DIAGNOSTIC_BASIC]
 		DHUD.add_hud_to(user)
 
-/obj/item/clothing/head/helmet/space/hardsuit/rd/dropped(mob/living/carbon/human/user)
+/obj/item/clothing/head/helmet/space/hardsuit/bomb/dropped(mob/living/carbon/human/user)
 	..()
 	if (user.head == src)
 		var/datum/atom_hud/DHUD = GLOB.huds[DATA_HUD_DIAGNOSTIC_BASIC]
 		DHUD.remove_hud_from(user)
 
-/obj/item/clothing/head/helmet/space/hardsuit/rd/proc/sense_explosion(datum/source, turf/epicenter, devastation_range, heavy_impact_range,
+/obj/item/clothing/head/helmet/space/hardsuit/bomb/proc/sense_explosion(datum/source, turf/epicenter, devastation_range, heavy_impact_range,
 		light_impact_range, took, orig_dev_range, orig_heavy_range, orig_light_range)
 	var/turf/T = get_turf(src)
 	if(T.z != epicenter.z)
@@ -589,22 +589,21 @@
 		return
 	display_visor_message("Explosion detected! Epicenter: [devastation_range], Outer: [heavy_impact_range], Shock: [light_impact_range]")
 
-/obj/item/clothing/suit/space/hardsuit/rd
-	name = "scientific hardsuit"
-	desc = "A prototype suit that protects against hazardous, low pressure environments. Fitted with extensive plating for handling explosives and dangerous research materials."
-	icon_state = "hardsuit-rd"
-	item_state = "hardsuit-rd"
+/obj/item/clothing/suit/space/hardsuit/bomb
+	name = "EOD hardsuit"
+	desc = "A bulky suit that protects against hazardous, low pressure environments. Fitted with extensive plating for handling of explosives and shrapnel. The difference between a closed and open-casket."
+	icon_state = "hardsuit-eod"
+	item_state = "hardsuit-eod"
 	resistance_flags = ACID_PROOF | FIRE_PROOF
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT //Same as an emergency firesuit. Not ideal for extended exposure.
-	allowed = list(/obj/item/flashlight,
-		/obj/item/tank/internals,
-		/obj/item/gun/energy/wormhole_projector,
-		/obj/item/hand_tele,
-		/obj/item/aicard)
-	slowdown = 1.5
-	armor = list("melee" = 30, "bullet" = 40, "laser" = 10, "energy" = 20, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 80, "wound" = 20)
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/rd
-	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
+	slowdown = 1
+	armor = list("melee" = 30, "bullet" = 40, "laser" = 10, "energy" = 20, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 80, "wound" = 40)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/bomb
+	supports_variations = VOX_VARIATION
+
+/obj/item/clothing/suit/space/hardsuit/bomb/Initialize()
+	. = ..()
+	allowed = GLOB.security_hardsuit_allowed
 
 //Security hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/security
