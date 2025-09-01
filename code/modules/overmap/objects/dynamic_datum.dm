@@ -286,6 +286,11 @@
 	if(istype(our_likely_vlevel) && selfloop)
 		our_likely_vlevel.selfloop()
 
+	for(var/obj/docking_port/stationary/port in reserve_docks)
+		if(port.roundstart_template)
+			port.name = "[name] auxillary docking location"
+			port.load_roundstart()
+
 	SEND_SIGNAL(src, COMSIG_OVERMAP_LOADED)
 	loading = FALSE
 	return TRUE
@@ -596,6 +601,9 @@
 	ambience_index = AMBIENCE_SPACE
 	light_range = 0
 	light_power = 0
+
+/area/overmap_encounter/planetoid/asteroid/explored
+	area_flags = VALID_TERRITORY
 
 /area/overmap_encounter/planetoid/gas_giant
 	name = "\improper Gas Giant"
