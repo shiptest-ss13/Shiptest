@@ -36,6 +36,16 @@
 			qdel(our_counter)
 			return TRUE
 
+/obj/item/attachment/ammo_counter/attack_self(mob/user)
+	. = ..()
+	playsound(src, 'sound/items/flashlight_on.ogg', 25)
+	if(slot == ATTACHMENT_SLOT_SCOPE)
+		slot = ATTACHMENT_SLOT_RAIL
+
+	else
+		slot = ATTACHMENT_SLOT_SCOPE
+	to_chat(user, span_notice("You adjust [src] to fit on a gun's [slot]."))
+
 /obj/item/attachment/ammo_counter/toggle_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
 	if(gun::empty_alarm)
