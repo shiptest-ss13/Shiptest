@@ -140,8 +140,6 @@
 
 /obj/item/clothing/head/hooded/winterhood/security/inteq
 	icon_state = "hood_inteq"
-	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/inteq/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/inteq/kepori.dmi'
