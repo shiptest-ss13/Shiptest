@@ -15720,10 +15720,6 @@
 "Ya" = (
 /obj/structure/table/reinforced,
 /obj/item/cutting_board,
-/obj/item/melee/knife{
-	pixel_x = 7;
-	pixel_y = 3
-	},
 /obj/item/kitchen/rollingpin{
 	pixel_x = -5;
 	pixel_y = 3
@@ -15734,6 +15730,10 @@
 /obj/machinery/firealarm/directional/west{
 	pixel_y = 8;
 	pixel_x = -32
+	},
+/obj/item/melee/knife/kitchen{
+	pixel_x = 8;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/canteen)
