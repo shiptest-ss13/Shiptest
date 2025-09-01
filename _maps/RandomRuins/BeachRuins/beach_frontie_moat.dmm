@@ -1258,14 +1258,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/officers)
 "vR" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
-	environment_smash = 0;
-	wander = 0;
-	stop_automated_movement = 1;
-	aggro_vision_range = 14;
-	vision_range = 14;
-	retreat_distance = 0
-	},
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/neutered,
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "vU" = (
@@ -1419,14 +1412,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/village/armory)
 "xO" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
-	environment_smash = 0;
-	wander = 0;
-	stop_automated_movement = 1;
-	aggro_vision_range = 14;
-	vision_range = 14;
-	retreat_distance = 0
-	},
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/neutered/sentry,
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "xR" = (
@@ -2475,13 +2461,13 @@
 /area/ruin/beach/village/infirmary)
 "QB" = (
 /obj/structure/table/wood,
-/obj/item/binoculars{
-	pixel_x = -6;
-	pixel_y = 4
-	},
 /obj/item/clothing/mask/cigarette/rollie/cannabis{
 	pixel_x = 8;
 	pixel_y = 2
+	},
+/obj/item/clothing/mask/cigarette/rollie/trippy{
+	pixel_x = 3;
+	pixel_y = 12
 	},
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
