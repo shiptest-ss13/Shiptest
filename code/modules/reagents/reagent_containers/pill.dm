@@ -287,7 +287,7 @@
 	rename_with_volume = TRUE
 
 /obj/item/reagent_containers/pill/indomide
-	name = "Indomide pill"
+	name = "indomide pill"
 	desc = "Used to treat brute damage of minor and moderate severity.The carving in the pill says 'Eat before ingesting'."
 	icon_state = "pill12"
 	list_reagents = list(/datum/reagent/medicine/indomide = 15)

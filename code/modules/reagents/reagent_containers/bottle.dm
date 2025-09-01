@@ -69,11 +69,6 @@
 	desc = "A small bottle of Mannitol. Useful for healing brain damage."
 	list_reagents = list(/datum/reagent/medicine/mannitol = 30)
 
-/obj/item/reagent_containers/glass/bottle/charcoal
-	name = "charcoal bottle"
-	desc = "A small bottle of charcoal, which removes toxins and other chemicals from the bloodstream."
-	list_reagents = list(/datum/reagent/medicine/charcoal = 30)
-
 /obj/item/reagent_containers/glass/bottle/mutagen
 	name = "unstable mutagen bottle"
 	desc = "A small bottle of unstable mutagen. Randomly changes the DNA structure of whoever comes in contact."
@@ -414,11 +409,10 @@
 	volume = 50
 	list_reagents = list(/datum/reagent/medicine/alvitane = 50)
 
-/obj/item/reagent_containers/glass/bottle/antitoxin
+/obj/item/reagent_containers/glass/bottle/charcoal
 	name = "charcoal bottle"
-	desc = "A small bottle. Contains charcoal, used to treat minor poisoning."
-	volume = 50
-	list_reagents = list(/datum/reagent/medicine/charcoal = 50)
+	desc = "A small bottle of charcoal, which removes toxins and other chemicals from the bloodstream."
+	list_reagents = list(/datum/reagent/medicine/charcoal = 30)
 
 /obj/item/reagent_containers/glass/bottle/dexalin
 	name = "dexalin bottle"
@@ -441,7 +435,7 @@
 /obj/item/reagent_containers/glass/bottle/alvitane/sleeper
 	cap_on = FALSE
 
-/obj/item/reagent_containers/glass/bottle/antitoxin/sleeper
+/obj/item/reagent_containers/glass/bottle/charcoal/sleeper
 	cap_on = FALSE
 
 /obj/item/reagent_containers/glass/bottle/dexalin/sleeper

@@ -232,4 +232,4 @@
 /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/combat
 	name = "combat hypovial"
 	icon_state = "hypoviallarge-t"
-	comes_with = list(/datum/reagent/drug/combat_drug = 40, /datum/reagent/medicine/silfrine = 20, /datum/reagent/medicine/ysiltane = 20, /datum/reagent/medicine/synaptizine = 40) //Epinephrine's main effect here is to kill suff damage, so we don't need much given atropine
+	comes_with = list(/datum/reagent/drug/combat_drug = 40, /datum/reagent/medicine/silfrine = 20, /datum/reagent/medicine/ysiltane = 20, /datum/reagent/medicine/synaptizine = 40)

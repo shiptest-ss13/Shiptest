@@ -2240,13 +2240,13 @@
 
 /datum/reagent/crystal_reagent
 	name = "Crystal Reagent"
-	description = "A strange crystal substance. Heals faster than Panacea."
+	description = "A strange crystalline substance with an impressive healing factor."
 	reagent_state = LIQUID
 	color = "#1B9681"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 20
-	taste_description = "rocks"
-	var/healing = 0.8
+	taste_description = "sharp rocks"
+	var/healing = 2
 
 /datum/reagent/crystal_reagent/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-healing*REM, 0)
@@ -2319,8 +2319,8 @@
 	L.add_client_colour(/datum/client_colour/thirdeye)
 	if(L.client?.holder) //You are worthy.
 		worthy = TRUE
-		L.visible_message(span_danger("[L] grips their head and dances around, collapsing to the floor!</font>"), \
-		span_danger("<font size = 12>Visions of a realm BYOND your own flash across your eyes, before it all goes black...</font>"))
+		L.visible_message(span_danger("[L] grips their head and dances around, collapsing to the floor!"), \
+		span_danger("<font size = 12>Visions of a realm BYOND your own flash across your eyes, before it all goes black..."))
 		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, set_sleeping), 40 SECONDS), 10 SECONDS)
 		addtimer(CALLBACK(L.reagents, TYPE_PROC_REF(/datum/reagents, remove_reagent), src.type, src.volume,), 10 SECONDS)
 		return
@@ -2340,7 +2340,7 @@
 		H.seizure()
 		H.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(2, 4))
 	if(prob(7))
-		to_chat(M, span_warning("<font size = [rand(10,14)]>[pick(dose_messages)]</font>"))
+		to_chat(M, span_warning("[pick(dose_messages)]"))
 
 /datum/reagent/three_eye/overdose_start(mob/living/M)
 	on_mob_metabolize(M) //set worthy
