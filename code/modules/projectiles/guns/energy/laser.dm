@@ -1,6 +1,6 @@
 /obj/item/gun/energy/laser
 	name = "E-20 mining emitter"
-	desc = "A basic mining laser that fires concentrated beams of light which break down rock. Notably, these beams of light melt down flesh as well."
+	desc = "A basic mining tool that fires concentrated bolts of light, which easily cause flesh, stone, and metal to yield."
 	//desc = "A basic mining laser that fires concentrated beams of light which break down rock. Notably, these beams of light melt down flesh, and the design, while literally ancient, is well known and suprisngly modular, leading to many modifications and upgrades over the years."
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
@@ -21,7 +21,7 @@
 
 /obj/item/gun/energy/laser/practice
 	name = "practice laser gun"
-	desc = "A modified version of the 104 laser gun, this one fires less concentrated energy bolts designed for target practice."
+	desc = "A modified version of the L104 laser gun, this one fires less concentrated energy bolts designed for target practice."
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/practice/sharplite)
 	item_flags = NONE
 

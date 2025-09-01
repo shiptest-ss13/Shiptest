@@ -39,7 +39,7 @@
 
 /obj/item/gun/energy/e_gun/rdgun
 	name = "research director's PDW"
-	desc = "A custom energy revolver made from the power of science, but more importantly booze. Only has 6 shots. It looks well worn, however that was long, long ago."
+	desc = "A custom energy revolver made with scientific intent, but more importantly booze.  That was long ago. It's just a curiosity now."
 	icon_state = "rdpdw"
 	item_state = "gun"
 	ammo_x_offset = 2

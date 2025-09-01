@@ -432,8 +432,8 @@
 	return .
 
 /obj/item/stock_parts/cell/gun/upgraded
-	name = "upgraded eoehoma power cell"
-	desc = "A high capacity weapon cell. Intended for higher duty weapons, these might fit in lower grade weapons with some luck."
+	name = "high-capacity eoehoma power cell"
+	desc = "A high capacity weapon cell. Intended for use in heavy weapons and the odd piece of personal gear."
 	icon_state = "e-class2-cell"
 	maxcharge = 20000
 	custom_materials = list(/datum/material/glass=300)
@@ -484,8 +484,8 @@
 
 
 /obj/item/stock_parts/cell/gun/sharplite
-	name = "Sharplite proprietary weapon cell"
-	desc = "A proprietary weapon cell used exclusively by Sharplite weaponry. However, due to the very large market share of Nanotrasen, some non-Nanotrasen weapons accept this cell."
+	name = "Sharplite power cell"
+	desc = "A proprietary power cell primarily used by Sharplite weaponry. Nanotrasen's large market share has forced some weapon developers to include adapters for these cells"
 	icon = 'icons/obj/power.dmi'
 	icon_state = "nt-cell"
 
@@ -493,8 +493,8 @@
 	start_empty = TRUE
 
 /obj/item/stock_parts/cell/gun/sharplite/plus
-	name = "Sharplite Plus proprietary weapon cell"
-	desc = "An upgraded, proprietary weapon cell used exclusively by Sharplite weaponry. Better than the stock version; these Plus versions are bought by preimum customers or alongside the more energy hungry weapons in Sharplite's lineup."
+	name = "Sharplite Plus power cell"
+	desc = "An high-capacity weapon cell used exclusively by Sharplite weaponry. They are a great improvement over the stock cell, and are frequently sought after by collectors, soldiers, and operators of heavy lasers alike."
 	icon_state = "nt_plus-cell"
 
 	maxcharge = 20000
@@ -505,8 +505,8 @@
 	start_empty = TRUE
 
 /obj/item/stock_parts/cell/gun/sharplite/mini
-	name = "Sharplite Compact weapon cell"
-	desc = "A proprietary weapon cell used exclusively by Sharplite weaponry. This is a compact version with less capacity, intended to fit into laser handguns."
+	name = "Sharplite Compact power cell"
+	desc = "A compact weapon cell used exclusively by Sharplite weaponry. It holds less charge and is intended for usage in energy handguns."
 	icon_state = "nt_mini-cell"
 	maxcharge = 7000
 	custom_materials = list(/datum/material/glass=300)
