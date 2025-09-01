@@ -1,6 +1,6 @@
 /obj/item/attachment/ammo_counter
 	name = "ammunition counter"
-	desc = "A computerized ammunition tracker for use on conventional firearms. Includes a small toggle for telling the user when ammo is depleted."
+	desc = "A computerized ammunition tracker for use on conventional firearms. Includes a small toggle for telling the user when ammo is depleted. Capable of mounting on both a railing or scope, depending on the user's preference."
 	icon_state = "ammo_counter"
 
 	attach_features_flags = ATTACH_REMOVABLE_HAND|ATTACH_TOGGLE
