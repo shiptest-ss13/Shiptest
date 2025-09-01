@@ -1580,6 +1580,7 @@
 	name = "morphine syringe"
 	},
 /obj/machinery/light/directional/east,
+/obj/item/defibrillator/compact/loaded,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "eX" = (
@@ -3132,6 +3133,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
+/obj/item/clothing/mask/breath/facemask,
+/obj/item/clothing/mask/breath/facemask,
+/obj/item/clothing/mask/breath/facemask,
+/obj/item/clothing/mask/breath/facemask,
+/obj/item/clothing/mask/breath/facemask,
+/obj/item/clothing/mask/breath/facemask,
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/hallway/starboard)
 "kn" = (
@@ -6298,10 +6305,14 @@
 	pixel_y = 1
 	},
 /obj/item/storage/toolbox/ammo/c10mm{
-	pixel_x = 0;
+	pixel_x = 9;
 	pixel_y = -9
 	},
 /obj/effect/turf_decal/trimline/opaque/yellow/line,
+/obj/item/storage/toolbox/ammo/c75{
+	pixel_x = -9;
+	pixel_y = -9
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "va" = (
@@ -7074,8 +7085,6 @@
 	},
 /obj/item/ammo_box/magazine/skm_762_40/extended,
 /obj/item/ammo_box/magazine/skm_762_40/extended,
-/obj/item/ammo_box/magazine/skm_762_40/extended,
-/obj/item/ammo_box/magazine/skm_762_40/extended,
 /obj/item/ammo_box/magazine/rottweiler_308_box,
 /obj/item/ammo_box/magazine/f4_308,
 /obj/item/ammo_box/magazine/f4_308,
@@ -7097,6 +7106,8 @@
 /obj/item/ammo_box/magazine/m12g_bulldog/empty,
 /obj/effect/turf_decal/trimline/opaque/yellow/line,
 /obj/machinery/light/directional/south,
+/obj/item/ammo_box/magazine/f90,
+/obj/item/ammo_box/magazine/f90,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "xq" = (
@@ -9007,8 +9018,8 @@
 /obj/item/gun/ballistic/automatic/hmg/rottweiler,
 /obj/item/gun/ballistic/automatic/marksman/f4/inteq,
 /obj/item/gun/ballistic/automatic/assault/skm/inteq,
-/obj/item/gun/ballistic/automatic/assault/skm/inteq,
 /obj/effect/turf_decal/trimline/opaque/yellow/line,
+/obj/item/gun/ballistic/automatic/marksman/f90/inteq,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "DC" = (
@@ -12407,6 +12418,12 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/head/helmet/bulletproof/x11/clip,
 /obj/item/clothing/suit/armor/vest/bulletproof,
+/obj/item/clothing/mask/breath/facemask,
+/obj/item/clothing/mask/breath/facemask,
+/obj/item/clothing/mask/breath/facemask,
+/obj/item/clothing/mask/breath/facemask,
+/obj/item/clothing/mask/breath/facemask,
+/obj/item/clothing/mask/breath/facemask,
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/hallway/starboard)
 "NK" = (
@@ -12714,7 +12731,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/cargo/smeltery)
 "OP" = (
-/obj/structure/table/reinforced,
 /obj/machinery/button/door{
 	pixel_x = 0;
 	pixel_y = 21;
@@ -12724,6 +12740,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
+/obj/machinery/telecomms/allinone/indestructible,
 /turf/open/floor/plasteel/tech,
 /area/outpost/operations)
 "OQ" = (
