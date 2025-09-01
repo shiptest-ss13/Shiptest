@@ -202,7 +202,7 @@
 	list_reagents = list(/datum/reagent/medicine/hadrakine = 50)
 
 /obj/item/reagent_containers/glass/beaker/large/quardexane
-	name = "silver sulfadiazine reserve tank"
+	name = "quardexane reserve tank"
 	list_reagents = list(/datum/reagent/medicine/quardexane = 50)
 
 /obj/item/reagent_containers/glass/beaker/large/charcoal

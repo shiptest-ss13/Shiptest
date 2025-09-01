@@ -1,4 +1,4 @@
-/// brute chems
+// brute chems
 
 /datum/chemical_reaction/indomide
 	results = list(/datum/reagent/medicine/indomide = 4)
@@ -16,7 +16,7 @@
 	required_temp = 450
 	mix_message = "The solution rapidly bubbles, before yielding a dark blue compound"
 
-/// burn chems
+// burn chems
 
 /datum/chemical_reaction/leporazine
 	results = list(/datum/reagent/medicine/leporazine = 2)
@@ -47,7 +47,7 @@
 	smoke.start()
 	qdel(smoke)
 
-///Toxin chems
+// toxin chems
 
 /datum/chemical_reaction/calomel
 	results = list(/datum/reagent/medicine/calomel = 2)
@@ -70,7 +70,7 @@
 	required_reagents = list(/datum/reagent/medicine/pancrazine = 3, /datum/reagent/carbon = 4, /datum/reagent/diethylamine = 3)
 	required_catalysts = list(/datum/reagent/toxin/plasma = 1)
 
-///oxygen chems
+// oxygen chems
 
 /datum/chemical_reaction/dexalin
 	results = list(/datum/reagent/medicine/dexalin = 5)

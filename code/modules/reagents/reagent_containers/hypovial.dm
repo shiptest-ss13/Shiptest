@@ -122,17 +122,17 @@
 
 
 /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/indomide
-	name = "red hypovial (Indomide)"
+	name = "red hypovial (indomide)"
 	icon_state = "hypovial-b"
 	comes_with = list(/datum/reagent/medicine/indomide = 60)
 
 /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/pancrazine
-	name = "green hypovial (Pancrazine)"
+	name = "green hypovial (pancrazine)"
 	icon_state = "hypovial-a"
 	comes_with = list(/datum/reagent/medicine/pancrazine = 60)
 
 /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/alvitane
-	name = "orange hypovial (Alvitane)"
+	name = "orange hypovial (alvitane)"
 	icon_state = "hypovial-k"
 	comes_with = list(/datum/reagent/medicine/alvitane = 60)
 
