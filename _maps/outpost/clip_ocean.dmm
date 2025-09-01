@@ -841,7 +841,8 @@
 /obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended{
 	pixel_x = -4;
 	pixel_y = 2;
-	name = "Decommissioned SKM-24u"
+	name = "Decommissioned SKM-24u";
+	anchored = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/library)
@@ -1520,7 +1521,9 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/library)
 "eP" = (
-/obj/item/clothing/suit/space/hardsuit/security/independent/frontier,
+/obj/item/clothing/suit/space/hardsuit/security/independent/frontier{
+	anchored = 1
+	},
 /obj/structure/rack,
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/library)
@@ -2517,11 +2520,13 @@
 /obj/structure/rack,
 /obj/item/clothing/head/helmet/bulletproof/x11/clip{
 	pixel_x = -8;
-	pixel_y = 5
+	pixel_y = 5;
+	anchored = 1
 	},
 /obj/item/clothing/head/helmet/bulletproof/m10/clip_vc{
 	pixel_x = 6;
-	pixel_y = 4
+	pixel_y = 4;
+	anchored = 1
 	},
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/dark,
@@ -4236,11 +4241,13 @@
 /obj/structure/rack,
 /obj/item/gun/ballistic/automatic/assault/skm/cm24{
 	pixel_x = -7;
-	pixel_y = 4
+	pixel_y = 4;
+	anchored = 1
 	},
 /obj/item/gun/ballistic/automatic/assault/skm{
 	pixel_x = -6;
-	pixel_y = -2
+	pixel_y = -2;
+	anchored = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/library)
@@ -6202,11 +6209,13 @@
 /obj/structure/rack,
 /obj/item/gun/ballistic/automatic/smg/cm5{
 	pixel_x = -1;
-	pixel_y = 8
+	pixel_y = 8;
+	anchored = 1
 	},
 /obj/item/gun/ballistic/automatic/smg/cm5/compact{
 	pixel_x = 2;
-	pixel_y = 0
+	pixel_y = 0;
+	anchored = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/library)
@@ -6685,7 +6694,8 @@
 /obj/item/gun/ballistic/automatic/hmg/shredder{
 	pixel_x = -2;
 	pixel_y = 1;
-	name = "Decommissioned Shredder"
+	name = "Decommissioned Shredder";
+	anchored = 1
 	},
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
@@ -9852,11 +9862,13 @@
 /obj/structure/rack,
 /obj/item/clothing/head/helmet/frontier{
 	pixel_x = 0;
-	pixel_y = 9
+	pixel_y = 9;
+	anchored = 1
 	},
 /obj/item/clothing/neck/dogtag/frontier{
 	pixel_x = 0;
-	pixel_y = -8
+	pixel_y = -8;
+	anchored = 1
 	},
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
@@ -11201,11 +11213,13 @@
 /obj/structure/rack,
 /obj/item/clothing/suit/armor/vest/bulletproof{
 	pixel_x = -9;
-	pixel_y = 1
+	pixel_y = 1;
+	anchored = 1
 	},
 /obj/item/clothing/suit/armor/vest/bulletproof{
 	pixel_x = 5;
-	pixel_y = 0
+	pixel_y = 0;
+	anchored = 1
 	},
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/dark,
@@ -13423,11 +13437,13 @@
 "Rb" = (
 /obj/item/storage/belt/military/clip{
 	pixel_x = -8;
-	pixel_y = -1
+	pixel_y = -1;
+	anchored = 1
 	},
 /obj/item/storage/belt/military/clip{
 	pixel_x = 7;
-	pixel_y = -4
+	pixel_y = -4;
+	anchored = 1
 	},
 /obj/structure/rack,
 /turf/open/floor/plasteel/dark,
@@ -13445,11 +13461,13 @@
 /obj/structure/rack,
 /obj/item/gun/ballistic/automatic/marksman/f4{
 	pixel_x = -4;
-	pixel_y = 7
+	pixel_y = 7;
+	anchored = 1
 	},
 /obj/item/gun/ballistic/automatic/marksman/f4/indie{
 	pixel_x = -4;
-	pixel_y = 2
+	pixel_y = 2;
+	anchored = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/library)
@@ -15864,12 +15882,14 @@
 /obj/item/gun/ballistic/automatic/smg/pounder{
 	name = "Decommissioned Pounder";
 	pixel_x = -1;
-	pixel_y = 6
+	pixel_y = 6;
+	anchored = 1
 	},
 /obj/item/gun/ballistic/automatic/pistol/spitter{
 	pixel_x = 1;
 	pixel_y = -11;
-	name = "Decommissioned Spitter"
+	name = "Decommissioned Spitter";
+	anchored = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/library)
