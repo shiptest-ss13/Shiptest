@@ -103,6 +103,7 @@
 		/datum/reagent/consumable/nutriment/protein = 2,
 		/datum/reagent/water = 5,
 		/datum/reagent/consumable/nutriment/vitamin = 9,
+		/datum/reagent/medicine/neoxanthin = 5
 	)
 	tastes = list("nettles" = 1)
 	foodtypes = VEGETABLES
