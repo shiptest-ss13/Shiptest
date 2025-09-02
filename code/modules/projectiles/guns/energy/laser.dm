@@ -5,9 +5,9 @@
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
 	item_state = "laser"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 	custom_materials = list(/datum/material/iron=2000)
-	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/sharplite)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma)
 	ammo_x_offset = 1
 	shaded_charge = TRUE
 	supports_variations = VOX_VARIATION
