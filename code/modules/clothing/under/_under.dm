@@ -156,11 +156,10 @@
 						icon_file = accessory.mob_overlay_icon
 						accessory_state = "[accessory_state]_digi"
 
-				else if(H.dna.species.bodytype & BODYTYPE_VOX)
-					if(accessory.supports_variations & VOX_VARIATION)
-						icon_file = VOX_ACCESSORY_PATH
-						if(accessory.vox_override_icon)
-							icon_file = accessory.vox_override_icon
+				else if((H.dna.species.bodytype & BODYTYPE_VOX) && (accessory.supports_variations & VOX_VARIATION))
+					icon_file = VOX_ACCESSORY_PATH
+					if(accessory.vox_override_icon)
+						icon_file = accessory.vox_override_icon
 
 				else if((H.dna.species.bodytype & BODYTYPE_KEPORI) && (accessory.supports_variations & KEPORI_VARIATION))
 					icon_file = KEPORI_ACCESSORY_PATH
