@@ -54,6 +54,7 @@
 /obj/item/attachment/foldable_stock/resolution_inteq
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	icon_state = "resolution_inteq_stock"
+
 /obj/item/attachment/foldable_stock/wasp
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	icon_state = "wasp_stock"
