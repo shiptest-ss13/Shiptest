@@ -340,6 +340,23 @@ NO_MAG_GUN_HELPER(automatic/pistol/commander/inteq)
 /obj/item/gun/ballistic/automatic/smg/wt550/no_mag
 	default_ammo_type = FALSE
 
+/obj/item/gun/ballistic/automatic/smg/wt550/inteq
+	name = "\improper BDM-50"
+	desc = "An Advantage PD46, modified to Inteq's requirements and standards. As with many of IRMG's weapons, these were likely obtained by former Vigilitas personnel on their way out, as Advantage has no history of custom production runs for Inteq."
+	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
+	icon_state = "resolution_inteq"
+	item_state = "resolution_inteq"
+
+	default_attachments = list(/obj/item/attachment/foldable_stock/resolution_inteq)
+
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/foldable_stock/resolution_inteq
+	)
+
 /obj/item/ammo_box/magazine/wt550m9
 	name = "Resolution magazine (4.6x30mm)"
 	desc = "A 30-round magazine for the Resolution personal defense weapon. These rounds do okay damage with average performance against armor."

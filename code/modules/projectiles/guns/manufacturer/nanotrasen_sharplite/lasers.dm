@@ -76,7 +76,7 @@
 	icon_state = "x01"
 	item_state = "x26"
 
-	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite/upgraded
+	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/sharplite,
 	 	/obj/item/stock_parts/cell/gun/sharplite/plus,
