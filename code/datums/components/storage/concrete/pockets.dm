@@ -139,7 +139,7 @@
 	can_hold = typecacheof(list(
 		/obj/item/gun/ballistic/automatic,
 		/obj/item/gun/ballistic/revolver,
-		/obj/item/gun/energy/e_gun/mini,
+		/obj/item/gun/energy/sharplite/x26,
 		/obj/item/gun/energy/disabler,
 		/obj/item/gun/energy/pulse/carbine,
 		/obj/item/gun/energy/dueling,

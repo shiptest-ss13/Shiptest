@@ -1,5 +1,4 @@
-//repath to /obj/item/gun/ballistic/automatic/pistol/challenger
-/obj/item/gun/ballistic/automatic/pistol/commander
+/obj/item/gun/ballistic/automatic/pistol/challenger
 	name = "Advantage PS9 Challenger"
 	desc = "A lightweight semi-automatic 9mm pistol constructed largely of polymers, first adopted in FS 408 as VI's new standard sidearm in specific regions. Popular among new shooters for its low price point, forgiving recoil, and generous magazine capacity for its class. Chambered in 9x18mm."
 	icon_state = "challenger"
@@ -194,7 +193,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/podium)
 	start_empty = TRUE
 
 
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq
+/obj/item/gun/ballistic/automatic/pistol/challenger/inteq
 	name = "PS-03 Commissioner"
 	desc = "A modified version of the PS9 Challenger, issued as standard to Inteq Risk Management Group personnel. Features the same excellent handling and high magazine capacity as the original. Chambered in 9x18mm."
 
@@ -208,7 +207,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/podium)
 
 NO_MAG_GUN_HELPER(automatic/pistol/commander/inteq)
 
-/obj/item/gun/ballistic/revolver/mateba
+/obj/item/gun/ballistic/revolver/rhino
 	name = "Advantage Rhino"
 	desc = "A very famous high-powered semi-auto revolver. Designed by Nanotrasen Advantage for use in shooting competitions, it has ended up as the de-facto officer weapon of the Nanotrasen aliance. Chambered in .357."
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
@@ -232,12 +231,12 @@ NO_MAG_GUN_HELPER(automatic/pistol/commander/inteq)
 	recoil = 1
 	recoil_unwielded = 3
 
-/obj/item/gun/ballistic/revolver/mateba/ComponentInitialize()
+/obj/item/gun/ballistic/revolver/rhino/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
 
 ///obj/item/gun/ballistic/automatic/smg/expedition
-/obj/item/gun/ballistic/automatic/smg/vector
+/obj/item/gun/ballistic/automatic/smg/expedition
 	name = "\improper Advantage SGL9 Expedition"
 	desc = "A deceptively lightweight submachinegun. Its novel recoil compensation system almost eliminates recoil, and its compact size is well-suited for use aboard ships and stations."
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
@@ -279,7 +278,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/commander/inteq)
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber
 
 // /obj/item/gun/ballistic/automatic/smg/resolution
-/obj/item/gun/ballistic/automatic/smg/wt550
+/obj/item/gun/ballistic/automatic/smg/resolution
 	name = "\improper Advantage PD46 Resolution"
 	desc = "A surprisingly compact 4.6mm personal defense weapon with a very unusual design. Though somewhat awkward to reload, the PD46 has excellent shooting ergonomics and excellent accuracy for its class. This combined with its armor-penetrating cartridge and low price of entry have made it a weapon of choice for many spacers looking to dissuade pirates and other malefactors."
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
@@ -330,17 +329,17 @@ NO_MAG_GUN_HELPER(automatic/pistol/commander/inteq)
 	)
 
 
-/obj/item/gun/ballistic/automatic/smg/wt550/update_icon_state()
+/obj/item/gun/ballistic/automatic/smg/resolution/update_icon_state()
 	. = ..()
 	if(current_skin)
 		icon_state = "[unique_reskin[current_skin]][magazine ? "" : "_nomag"]"
 	else
 		icon_state = "[base_icon_state || initial(icon_state)][magazine ? "" : "_nomag"]"
 
-/obj/item/gun/ballistic/automatic/smg/wt550/no_mag
+/obj/item/gun/ballistic/automatic/smg/resolution/no_mag
 	default_ammo_type = FALSE
 
-/obj/item/gun/ballistic/automatic/smg/wt550/inteq
+/obj/item/gun/ballistic/automatic/smg/resolution/inteq
 	name = "\improper BDM-50"
 	desc = "An Advantage PD46, modified to Inteq's requirements and standards. As with many of IRMG's weapons, these were likely obtained by former Vigilitas personnel on their way out, as Advantage has no history of custom production runs for Inteq."
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
@@ -376,9 +375,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/commander/inteq)
 
 	ammo_type = /obj/item/ammo_casing/c46x30mm/ap
 
-//Dual Feed Shotgun
-// /obj/item/gun/ballistic/shotgun/automatic/negotiator
-/obj/item/gun/ballistic/shotgun/automatic/dual_tube
+/obj/item/gun/ballistic/shotgun/automatic/negotiator
 	name = "Advantage AST12 Negotiator"
 	desc = "A pump-action shotgun with a twin-tube design that allows the user to switch between two ammo types on demand, or simply double their available ammunition. Introduced alongside the PS9 as Advantage's flagship product, the AST12 has run into pervasive production issues that limit its availability."
 
@@ -404,20 +401,20 @@ NO_MAG_GUN_HELPER(automatic/pistol/commander/inteq)
 
 	refused_attachments = list(/obj/item/attachment/gun)
 
-/obj/item/gun/ballistic/shotgun/automatic/dual_tube/secondary_action(user)
+/obj/item/gun/ballistic/shotgun/automatic/negotiator/secondary_action(user)
 	toggle_tube(user)
 
-/obj/item/gun/ballistic/shotgun/automatic/dual_tube/examine(mob/user)
+/obj/item/gun/ballistic/shotgun/automatic/negotiator/examine(mob/user)
 	. = ..()
 	. += span_notice("Tube [toggled ? "B" : "A"] is currently loaded.")
 	. += "You can change the [src]'s tube by pressing the <b>secondary action</b> key. By default, this is <b>Shift + Space</b>"
 
-/obj/item/gun/ballistic/shotgun/automatic/dual_tube/Initialize(mapload, spawn_empty)
+/obj/item/gun/ballistic/shotgun/automatic/negotiator/Initialize(mapload, spawn_empty)
 	. = ..()
 	if (!alternate_magazine)
 		alternate_magazine = new default_ammo_type(src, spawn_empty)
 
-/obj/item/gun/ballistic/shotgun/automatic/dual_tube/proc/toggle_tube(mob/living/user)
+/obj/item/gun/ballistic/shotgun/automatic/negotiator/proc/toggle_tube(mob/living/user)
 	var/current_mag = magazine
 	var/alt_mag = alternate_magazine
 	magazine = alt_mag
@@ -434,8 +431,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/commander/inteq)
 	name = "Toggle Tube"
 
 /datum/action/item_action/toggle_tube/Trigger()
-	if(istype(target, /obj/item/gun/ballistic/shotgun/automatic/dual_tube))
-		var/obj/item/gun/ballistic/shotgun/automatic/dual_tube/shotty = target
+	if(istype(target, /obj/item/gun/ballistic/shotgun/automatic/negotiator))
+		var/obj/item/gun/ballistic/shotgun/automatic/negotiator/shotty = target
 		shotty.toggle_tube(owner)
 		return
 	..()

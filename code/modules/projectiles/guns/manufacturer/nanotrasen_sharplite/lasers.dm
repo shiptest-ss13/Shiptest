@@ -28,8 +28,7 @@
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 	w_class = WEIGHT_CLASS_NORMAL
 
-// /obj/item/gun/energy/sharplite/x26
-/obj/item/gun/energy/e_gun/mini
+/obj/item/gun/energy/sharplite/x26
 	name = "SL X26 Variable Energy Pistol"
 	desc = "A compact energy pistol that can fire lethal electroplasma bolts or stamina-draining disabler bolts. The VEP (or, occasionally, \"veep\") is Sharplite's most popular product, practically ubiquitous wherever Sharplite products can be obtained - which is to say, everywhere."
 
@@ -61,8 +60,7 @@
 
 	muzzleflash_iconstate = "muzzle_flash_nt"
 
-// /obj/item/gun/energy/sharplite/x01
-/obj/item/gun/energy/e_gun/hos
+/obj/item/gun/energy/sharplite/x01
 	name = "SL X01 Heavy Variable Pistol"
 	desc = "A bulky pistol that can fire devastating electroplasma bolts and disabler shots. An early Sharplite product noted for its unusual power output and prohibitive production costs. Small numbers are still produced as something of a prestige piece for Vigilitas field managers."
 
@@ -87,22 +85,21 @@
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
-/obj/item/gun/energy/e_gun/hos/brazil
+/obj/item/gun/energy/sharplite/x01/brazil
 	name = "modified antique laser gun"
 	desc = "It's somehow modified to have more firemodes."
 	icon_state = "capgun_brazil_hos"
 	item_state = "hoslaserkill0"
 	manufacturer = MANUFACTURER_SHARPLITE
 
-/obj/item/gun/energy/e_gun/hos/brazil/true
+/obj/item/gun/energy/sharplite/x01/brazil/true
 	desc = "This genuine antique laser gun, modified with an experimental suite of alternative firing modes based on the X-01 MultiPhase Energy Gun, is now truly one of the finest weapons in the frontier."
 	icon_state = "capgun_hos"
 	item_state = "hoslaserkill0"
 	selfcharge = 1
 	manufacturer = MANUFACTURER_SHARPLITE
 
-// /obj/item/gun/energy/sharplite/l305
-/obj/item/gun/energy/e_gun/smg
+/obj/item/gun/energy/sharplite/l305
 	name = "\improper L305 Tactical Plasma Gun"
 	desc = "A radical development on the X26 frame, fitted with a rapid-cycle plasma chamber and designed to produce sustained bursts of low-power electroplasma bolts. The Tac Plasma, as it is often called, serves a role analogous to ballistic sub-machine guns, and is similarly favored in close-quarters environments, especially by Vigilitas security and combat personnel."
 
@@ -181,7 +178,7 @@
 /obj/item/gun/energy/sharplite/l201/l204/empty_cell
 	spawn_no_ammo = TRUE
 
-/obj/item/gun/energy/e_gun/mini/empty_cell
+/obj/item/gun/energy/sharplite/x26/empty_cell
 	spawn_no_ammo = TRUE
 
 //repath /obj/item/gun/energy/e_gun to

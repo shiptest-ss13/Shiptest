@@ -133,7 +133,7 @@
 			/obj/item/gun/ballistic/revolver/firebrand,
 			/obj/item/gun/ballistic/revolver/shadow,
 			/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/presawn,
-			/obj/item/gun/energy/e_gun/mini))
+			/obj/item/gun/energy/sharplite/x26))
 			if(prob(80))
 				l_hand = pick(list(
 				/obj/item/gun/ballistic/automatic/pistol/disposable,
@@ -141,7 +141,7 @@
 				/obj/item/gun/ballistic/revolver/firebrand,
 				/obj/item/gun/ballistic/revolver/shadow,
 				/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/presawn,
-				/obj/item/gun/energy/e_gun/mini))
+				/obj/item/gun/energy/sharplite/x26))
 		if("Melee")
 			r_hand = pick_weight(list(
 			/obj/item/melee/knife/survival = 15,
@@ -285,7 +285,7 @@
 	suit_store = /obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag
 	gloves = /obj/item/clothing/gloves/combat
 
-	belt = /obj/item/gun/ballistic/revolver/mateba
+	belt = /obj/item/gun/ballistic/revolver/rhino
 
 	backpack_contents = list(/obj/item/ammo_box/magazine/skm_762_40/drum=2,/obj/item/ammo_box/a357=2,/obj/item/grenade/frag=1,/obj/item/radio=1)
 

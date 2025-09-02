@@ -27,7 +27,7 @@
 
 	var/voucher_items = list(
 		"NT-E-Rifle" = /obj/item/gun/energy/e_gun,
-		"E-TAR SMG" = /obj/item/gun/energy/e_gun/smg,
+		"E-TAR SMG" = /obj/item/gun/energy/sharplite/l305,
 		"E-SG 500" = /obj/item/gun/energy/e_gun/iot)
 
 /obj/machinery/vending/security/pre_throw(obj/item/I)
@@ -156,7 +156,7 @@
 	voucher_items = list(
 		"SL AL-655 Energy Rifle" = /obj/item/gun/energy/e_gun/hades,
 		"NT-E-Rifle" = /obj/item/gun/energy/e_gun,
-		"E-TAR SMG" = /obj/item/gun/energy/e_gun/smg,
+		"E-TAR SMG" = /obj/item/gun/energy/sharplite/l305,
 		"E-SG 500" = /obj/item/gun/energy/e_gun/iot)
 /obj/item/gun_voucher
 	name = "security weapon voucher"

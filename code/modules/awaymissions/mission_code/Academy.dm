@@ -220,7 +220,7 @@
 			//Free Gun
 			T.visible_message(span_userdanger("An impressive gun appears!"))
 			do_smoke(0, drop_location())
-			new /obj/item/gun/ballistic/revolver/mateba(drop_location())
+			new /obj/item/gun/ballistic/revolver/rhino(drop_location())
 		if(15)
 			//Random One-use spellbook
 			T.visible_message(span_userdanger("A magical looking book drops to the floor!"))

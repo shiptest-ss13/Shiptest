@@ -26,7 +26,7 @@
 	minimum_distance = 5
 	casingtype = /obj/item/ammo_casing/c9mm
 	rapid = 2
-	r_hand = /obj/item/gun/ballistic/automatic/pistol/commander
+	r_hand = /obj/item/gun/ballistic/automatic/pistol/challenger
 	projectilesound = 'sound/weapons/gun/pistol/rattlesnake.ogg'
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/smg
@@ -36,7 +36,7 @@
 	icon_living = "nanotrasenrangedsmg"
 	rapid = 3
 	casingtype = /obj/item/ammo_casing/c46x30mm
-	r_hand = /obj/item/gun/ballistic/automatic/smg/wt550
+	r_hand = /obj/item/gun/ballistic/automatic/smg/resolution
 	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/shotgun
@@ -94,7 +94,7 @@
 	rapid_fire_delay = 3
 	casingtype = null
 	projectiletype = /obj/projectile/beam/weak/sharplite
-	r_hand = /obj/item/gun/energy/e_gun/smg
+	r_hand = /obj/item/gun/energy/sharplite/l305
 	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/shotgun

@@ -293,7 +293,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/sec
 	box = /obj/item/storage/box/survival/security
 
-	chameleon_extras = list(/obj/item/gun/energy/e_gun/hos, /obj/item/stamp/hos)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/x01, /obj/item/stamp/hos)
 
 /datum/outfit/job/independent/hos/merc
 	name = "Independent - Mercenary XO"

@@ -33,7 +33,7 @@
 
 /datum/objective_item/steal/hoslaser
 	name = "the head of security's personal laser gun."
-	targetitem = /obj/item/gun/energy/e_gun/hos
+	targetitem = /obj/item/gun/energy/sharplite/x01
 	difficulty = 10
 	excludefromjob = list("Head Of Security")
 
