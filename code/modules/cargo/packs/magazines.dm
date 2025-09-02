@@ -385,6 +385,15 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/magazine/upgradedguncellinteq
+	name = "Sharplite Plus Proprietary Weapon Cell"
+	desc = "Contains an upgraded weapon cell, compatible with most Nanotrasen models."
+	contains = list(/obj/item/stock_parts/cell/gun/sharplite/plus)
+	cost = 1000
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
 /* etherbor */
 
 /datum/supply_pack/magazine/kalixcell

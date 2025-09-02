@@ -68,7 +68,7 @@
 /obj/projectile/beam/laser/sharplite/dmr
 	icon_state = "nt_laser_stronger"
 	damage = 30
-	armour_penetration = 0
+	armour_penetration = 20
 
 /obj/projectile/beam/laser/assault/sharplite
 	icon_state = "nt_laser_heavy"
@@ -84,9 +84,9 @@
 
 /obj/projectile/beam/laser/sharplite/sniper
 	icon_state = "nt_laser_sniper"
-	damage = 40
-	armour_penetration = 20
-	speed = 0.3
+	damage = 35
+	armour_penetration = 30
+	speed = 0.2
 	wound_bonus = 0
 	bare_wound_bonus = 20
 

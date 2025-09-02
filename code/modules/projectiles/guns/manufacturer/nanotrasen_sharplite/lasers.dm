@@ -76,7 +76,11 @@
 	icon_state = "x01"
 	item_state = "x26"
 
-	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
+	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite/upgraded
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/sharplite,
+	 	/obj/item/stock_parts/cell/gun/sharplite/plus,
+	)
 	force = 10
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite/hos, /obj/item/ammo_casing/energy/laser/sharplite/hos, /obj/item/ammo_casing/energy/ion/hos, /obj/item/ammo_casing/energy/electrode/hos)
 	shaded_charge = TRUE
@@ -174,6 +178,8 @@
 	spread = 2
 	spread_unwielded = 10
 
+/obj/item/gun/energy/sharplite/l201/l204/empty_cell
+	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/e_gun/mini/empty_cell
 	spawn_no_ammo = TRUE
@@ -200,6 +206,9 @@
 
 	spread = 2
 	spread_unwielded = 10
+
+/obj/item/gun/energy/sharplite/x12/empty_cell
+	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/sharplite/x12/inteq
 	name = "PP10 “Cadejo” Energy Carbine"
