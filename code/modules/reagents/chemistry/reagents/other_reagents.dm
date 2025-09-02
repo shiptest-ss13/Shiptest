@@ -2320,7 +2320,7 @@
 	if(L.client?.holder) //You are worthy.
 		worthy = TRUE
 		L.visible_message(span_danger("[L] grips their head and dances around, collapsing to the floor!"), \
-		span_danger("<font size = 12>Visions of a realm BYOND your own flash across your eyes, before it all goes black..."))
+		span_danger("Visions of a realm BYOND your own flash across your eyes, before it all goes black..."))
 		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, set_sleeping), 40 SECONDS), 10 SECONDS)
 		addtimer(CALLBACK(L.reagents, TYPE_PROC_REF(/datum/reagents, remove_reagent), src.type, src.volume,), 10 SECONDS)
 		return
