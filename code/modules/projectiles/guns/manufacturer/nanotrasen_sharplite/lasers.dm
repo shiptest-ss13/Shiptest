@@ -79,7 +79,7 @@
 	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/sharplite,
-	 	/obj/item/stock_parts/cell/gun/sharplite/plus,
+		/obj/item/stock_parts/cell/gun/sharplite/plus,
 	)
 	force = 10
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite/hos, /obj/item/ammo_casing/energy/laser/sharplite/hos, /obj/item/ammo_casing/energy/ion/hos, /obj/item/ammo_casing/energy/electrode/hos)
