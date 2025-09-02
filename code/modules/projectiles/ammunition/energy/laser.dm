@@ -46,12 +46,12 @@
 
 /obj/item/ammo_casing/energy/lasergun
 	projectile_type = /obj/projectile/beam/laser
-	e_cost = 830
+	e_cost = 555
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/lasergun/sharplite
 	projectile_type = /obj/projectile/beam/laser/sharplite
-	e_cost = 830
+	e_cost = 555
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/lasergun/sharplite/dmr
@@ -63,7 +63,7 @@
 	projectile_type = /obj/projectile/beam/laser/sharplite/sniper
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 	delay = 1.3 SECONDS
-	e_cost = 4000 // 5 per upgraded cell
+	e_cost = 2000 // 5 per regular cell 10 per upgraded cell
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/lasergun/eoehoma
@@ -104,7 +104,7 @@
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/laser/sharplite/hos
-	e_cost = 1200
+	e_cost = 600
 
 /obj/item/ammo_casing/energy/laser/practice
 	projectile_type = /obj/projectile/beam/practice

@@ -269,6 +269,10 @@
 	gun_type = /obj/item/gun/energy/e_gun/hades
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 
+/obj/item/storage/guncase/x01
+	gun_type = /obj/item/gun/energy/e_gun/hos
+	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
+
 /* Old NT */
 
 /obj/item/storage/guncase/wt550
@@ -278,6 +282,10 @@
 /obj/item/storage/guncase/saber
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/champion
 	mag_type = /obj/item/ammo_box/magazine/co9mm
+
+/obj/item/storage/guncase/rhino
+	gun_type = /obj/item/gun/ballistic/revolver/mateba
+	mag_type = /obj/item/ammo_box/a357/empty
 
 /* Minutemen */
 
@@ -362,6 +370,14 @@
 /obj/item/storage/guncase/saluki
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/f90/inteq
 	mag_type = /obj/item/ammo_box/magazine/f90
+
+/obj/item/storage/guncase/cadejo
+	gun_type = /obj/item/gun/energy/sharplite/x12/inteq
+	mag_type = /obj/item/stock_parts/cell/gun/sharplite
+
+/obj/item/storage/guncase/barghest
+	gun_type = /obj/item/gun/energy/e_gun/hades/inteq
+	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 
 /* idk */
 

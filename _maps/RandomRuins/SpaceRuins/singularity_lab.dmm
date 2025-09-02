@@ -10570,14 +10570,11 @@
 	desc = "An advanced laser cannon, a laser etched inscription in the handle states 'NT-LS-1013'. The casing is made of a lightweight alloy.";
 	name = "NT-LS-1013"
 	},
-/obj/item/gun/energy/laser/iot,
-/obj/item/gun/energy/laser/iot{
-	dry_fire_sound = 'sound/items/ding.ogg';
-	dry_fire_text = "ding"
-	},
 /obj/structure/safe{
 	name = "Prototype Storage"
 	},
+/obj/item/gun/energy/e_gun/iot,
+/obj/item/gun/energy/e_gun/iot,
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab/lab)
 "Qe" = (
@@ -11882,11 +11879,11 @@
 	pixel_x = 5;
 	pixel_y = 6
 	},
-/obj/item/gun/energy/laser,
-/obj/item/gun/energy/laser,
 /obj/structure/safe{
 	name = "Prototype Storage"
 	},
+/obj/item/gun/energy/sharplite/l201/l204,
+/obj/item/gun/energy/sharplite/l201/l204,
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab/lab)
 "UM" = (

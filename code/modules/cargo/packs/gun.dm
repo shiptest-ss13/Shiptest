@@ -306,6 +306,16 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/energy/cadejo
+	name = "PP10 'Cadejo' Energy Carbine"
+	desc = "Contains one refitted Sharplite X12 carbine, for IRMG use. Uses sharplite cells."
+	cost = 1250
+	contains = list(/obj/item/storage/guncase/cadejo)
+	crate_name = "beam carbine crate"
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
 /*
 		Shotguns
 */
@@ -606,6 +616,16 @@
 	contains = list(/obj/item/storage/guncase/hades)
 	crate_name = "laser crate"
 	faction = /datum/faction/nt
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/barghest
+	name = "PP20 'Barghest' APR Crate"
+	desc = "Contains a high-energy, automatic laser rifle. Refitted for IRMG use."
+	cost = 5000
+	contains = list(/obj/item/storage/guncase/barghest)
+	crate_name = "laser crate"
+	faction = /datum/faction/inteq
 	faction_discount = 0
 	faction_locked = TRUE
 
