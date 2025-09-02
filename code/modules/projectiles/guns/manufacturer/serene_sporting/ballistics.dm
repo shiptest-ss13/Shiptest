@@ -1,4 +1,4 @@
-#define SERENE_ATTACHMENTS list(/obj/item/attachment/rail_light, /obj/item/attachment/bayonet,/obj/item/attachment/scope,/obj/item/attachment/sling, /obj/item/attachment/gun, /obj/item/attachment/ammo_counter)
+#define SERENE_ATTACHMENTS list(/obj/item/attachment/rail_light, /obj/item/attachment/bayonet,/obj/item/attachment/scope, /obj/item/attachment/gun, /obj/item/attachment/ammo_counter)
 #define SERENE_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_RAIL = 1, ATTACHMENT_SLOT_SCOPE = 1)
 
 /* Micro Target */
@@ -163,7 +163,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/m20_auto_elite)
 	fire_delay =  0.4 SECONDS
 	burst_size = 1
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	show_magazine_on_sprite = TRUE
 	bolt_type = BOLT_TYPE_LOCKING
 
@@ -257,12 +257,10 @@ EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
 
 	bolt_type = BOLT_TYPE_LOCKING
 
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_MEDIUM
-
-	slot_flags = ITEM_SLOT_BACK
 
 	spread = -4
 	spread_unwielded = 20
@@ -332,12 +330,10 @@ NO_MAG_GUN_HELPER(automatic/marksman/woodsman)
 
 	bolt_type = BOLT_TYPE_LOCKING
 
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_MEDIUM
-
-	slot_flags = ITEM_SLOT_BACK
 
 	spread = 0
 	spread_unwielded = 20

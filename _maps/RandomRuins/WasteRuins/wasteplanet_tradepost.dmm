@@ -664,9 +664,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/wasteplanet/tradepost/center)
-"hO" = (
-/turf/closed/wall,
-/area/ruin/wasteplanet/tradepost/barracks)
 "hU" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 4
@@ -1992,10 +1989,6 @@
 /turf/open/floor/concrete/pavement/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "vR" = (
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "drip3"
-	},
-/obj/effect/decal/cleanable/dirt,
 /turf/closed/wall,
 /area/ruin/wasteplanet/tradepost/barracks)
 "vS" = (
@@ -2078,7 +2071,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/tradepost/barracks)
 "wL" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/closed/wall,
 /area/ruin/wasteplanet/tradepost/barracks)
@@ -2157,14 +2149,6 @@
 /obj/item/stack/ore/salvage/scraptitanium/five,
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
-"xF" = (
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "drip3"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall,
-/area/ruin/wasteplanet/tradepost/barracks)
 "xM" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -2400,10 +2384,6 @@
 /obj/item/ammo_casing/spent,
 /turf/open/floor/concrete/pavement/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
-"Ac" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/yesdiag,
-/area/ruin/wasteplanet/tradepost/barracks)
 "Ae" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
@@ -2811,7 +2791,6 @@
 /turf/open/floor/carpet/blue,
 /area/ruin/wasteplanet/tradepost/center)
 "Ex" = (
-/obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/rust,
 /area/ruin/wasteplanet/tradepost/barracks)
 "ED" = (
@@ -3118,10 +3097,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/tradepost/barracks)
-"Hv" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/yesdiag,
-/area/ruin/wasteplanet/tradepost/center)
 "Hy" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -4145,9 +4120,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/tradepost/barracks)
-"Rt" = (
-/turf/closed/wall/rust,
-/area/ruin/wasteplanet/tradepost/barracks)
 "Ry" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -4453,10 +4425,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/wasteplanet/tradepost/center)
-"TS" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/rust,
-/area/ruin/wasteplanet/tradepost/barracks)
 "TT" = (
 /obj/effect/decal/cleanable/oil/streak{
 	icon_state = "streak4"
@@ -4603,10 +4571,6 @@
 "Wg" = (
 /turf/open/floor/concrete/pavement/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
-"Wk" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall,
-/area/ruin/wasteplanet/tradepost/barracks)
 "Wl" = (
 /obj/machinery/shower{
 	dir = 1
@@ -5666,10 +5630,10 @@ Ud
 Ud
 Ud
 en
-Rt
-Rt
-Rt
-Rt
+Ex
+Ex
+Ex
+Ex
 Ps
 QB
 sL
@@ -5717,18 +5681,18 @@ Ud
 Ud
 en
 Ud
-hO
-hO
-hO
-Rt
+vR
+vR
+vR
+Ex
 nO
 mK
-Rt
-Rt
-hO
-Rt
-hO
-hO
+Ex
+Ex
+vR
+Ex
+vR
+vR
 bm
 jy
 jy
@@ -5769,20 +5733,20 @@ Ud
 Ud
 Ud
 Ud
-Rt
-hO
+Ex
+vR
 sb
 wB
-Rt
+Ex
 lx
 ya
-Rt
+Ex
 RR
 Vy
-hO
+vR
 Rr
 CE
-hO
+vR
 QB
 QB
 QB
@@ -5822,20 +5786,20 @@ en
 Ud
 Ud
 Ud
-Rt
+Ex
 RV
 Yf
 hJ
-Rt
+Ex
 ZT
 zT
 wG
 Ga
 zS
-hO
+vR
 Yj
 Gc
-hO
+vR
 QB
 br
 FZ
@@ -5875,20 +5839,20 @@ Ud
 Ud
 Ud
 Ud
-Rt
+Ex
 bZ
 nt
 xm
-hO
-hO
-hO
-Rt
+vR
+vR
+vR
+Ex
 su
 XQ
-hO
+vR
 vS
 nr
-hO
+vR
 QB
 QB
 Le
@@ -5928,20 +5892,20 @@ Ud
 en
 en
 en
-hO
+vR
 eH
 ZN
 wW
 Xo
 Ji
-hO
+vR
 JB
 EF
 RI
 DB
 Yw
 DL
-hO
+vR
 QB
 QB
 Le
@@ -5981,20 +5945,20 @@ Ud
 Ud
 en
 QB
-hO
+vR
 Iq
 ZN
 wW
-Rt
-Rt
-hO
+Ex
+Ex
+vR
 lB
 xx
 AI
 Ex
 vR
-Rt
-Rt
+Ex
+Ex
 Yt
 XS
 vL
@@ -6034,7 +5998,7 @@ en
 en
 Nl
 QB
-hO
+vR
 eH
 ZN
 dN
@@ -6087,20 +6051,20 @@ Ud
 en
 it
 FP
-Rt
+Ex
 jb
 zO
 tf
 lF
 Zb
-Rt
+Ex
 lM
 Mt
 lE
 Th
 CB
 wl
-Rt
+Ex
 Um
 Il
 pk
@@ -6140,19 +6104,19 @@ en
 Nl
 cD
 pb
-Rt
+Ex
 ZK
 NR
 aI
 Ho
 um
-Rt
-hO
+Ex
+vR
 FI
-hO
-TS
-xF
-hO
+vR
+Ex
+vR
+vR
 Ps
 QB
 uC
@@ -6194,12 +6158,12 @@ QB
 QB
 ly
 Ps
-Rt
-hO
-hO
-hO
-Rt
-Rt
+Ex
+vR
+vR
+vR
+Ex
+Ex
 nU
 Nq
 pL
@@ -6252,10 +6216,10 @@ QB
 QB
 QB
 QB
-hO
+vR
 qJ
 OQ
-Wk
+vR
 yb
 QB
 Pc
@@ -6305,10 +6269,10 @@ ba
 UQ
 MS
 MS
-Wk
+vR
 ip
 AQ
-Wk
+vR
 yb
 Jh
 QB
@@ -6358,10 +6322,10 @@ QB
 QB
 QB
 QB
-Ac
-Wk
-Wk
-Ac
+bm
+vR
+vR
+bm
 dS
 gA
 Yt
@@ -6783,7 +6747,7 @@ ez
 Wy
 Wy
 Wy
-Hv
+as
 Ki
 QZ
 hV

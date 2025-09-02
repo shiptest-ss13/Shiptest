@@ -52,9 +52,14 @@
 	//suit/armor
 	if(wear_suit)
 		. += "[t_He] [t_is] wearing [wear_suit.get_examine_string(user)]."
-		//suit/armor storage
-		if(s_store && !(ITEM_SLOT_SUITSTORE in obscured))
+	//suit/armor storage
+	if(s_store && !(ITEM_SLOT_SUITSTORE in obscured))
+		if(wear_suit)
 			. += "[t_He] [t_is] carrying [s_store.get_examine_string(user)] on [t_his] [wear_suit.name]."
+		else if(w_uniform && !(ITEM_SLOT_ICLOTHING in obscured))
+			. += "[t_He] [t_is] carrying [s_store.get_examine_string(user)] on [t_his] [w_uniform.name]."
+		else
+			. += "[t_He] [t_is] carrying [s_store.get_examine_string(user)]."
 	//back
 	if(back)
 		. += "[t_He] [t_has] [back.get_examine_string(user)] on [t_his] back."
