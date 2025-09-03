@@ -531,6 +531,18 @@
 	icon_state = "shemagh"
 	supports_variations = VOX_VARIATION
 
+/obj/item/clothing/neck/shemagh/khaki
+	icon_state = "shemagh_khaki"
+
+/obj/item/clothing/neck/shemagh/olive
+	icon_state = "shemagh_olive"
+
+/obj/item/clothing/neck/shemagh/brown
+	icon_state = "shemagh_brown"
+
+/obj/item/clothing/neck/shemagh/black
+	icon_state = "shemagh_black"
+
 //The three following scarves don't have the scarf subtype
 //This is because Ian can equip anything from that subtype
 //However, these 4 don't have corgi versions of their sprites
@@ -662,7 +674,7 @@
 
 /obj/item/clothing/neck/crystal_amulet/examine(mob/user)
 	. = ..()
-	var/healthpercent = (obj_integrity/max_integrity) * 100
+	var/healthpercent = (atom_integrity/max_integrity) * 100
 	switch(healthpercent)
 		if(50 to 99)
 			. += "It looks slightly damaged."
@@ -676,7 +688,7 @@
 	if(!isinhands)
 		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER + 0.01)
 
-/obj/item/clothing/neck/crystal_amulet/obj_destruction(damage_flag)
+/obj/item/clothing/neck/crystal_amulet/atom_destruction(damage_flag)
 	visible_message(span_danger("[src] shatters into a million pieces!"))
 	playsound(src,"shatter", 70)
 	new /obj/effect/decal/cleanable/glass/strange(get_turf(src))
