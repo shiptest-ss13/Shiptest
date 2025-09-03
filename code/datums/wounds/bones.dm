@@ -102,8 +102,7 @@
 	if(prob((severity - 1) * 15))
 		// And you have a 70% or 50% chance to actually land the blow, respectively
 		if(prob(70 - 20 * (severity - 1)))
-			if(!HAS_TRAIT(M, TRAIT_ANALGESIA))
-				to_chat(victim, span_userdanger("The fracture in your [limb.name] shoots with pain as you strike [target]!"))
+			to_chat(victim, span_userdanger("The fracture in your [limb.name] shoots with pain as you strike [target]!"))
 			limb.receive_damage(brute = rand(1,2))
 		else
 			victim.visible_message(
@@ -288,7 +287,7 @@
 			ignored_mobs = victim,
 		)
 		to_chat(victim, span_userdanger("[user] snaps your dislocated [limb.name] back into place!"))
-		victim.force_pain_noise(80)
+		victim.force_scream()
 		limb.receive_damage(brute = 5, wound_bonus = CANT_WOUND)
 		qdel(src)
 	else
@@ -315,7 +314,7 @@
 			ignored_mobs = victim,
 		)
 		to_chat(victim, span_userdanger("[user] snaps your dislocated [limb.name] with a sickening crack!"))
-		victim.force_pain_noise(100)
+		victim.force_scream()
 		limb.receive_damage(brute = 20, wound_bonus = 40)
 	else
 		user.visible_message(
@@ -432,7 +431,7 @@
 		return
 
 	I.use(1)
-	victim.force_pain_noise(60)
+	victim.force_scream()
 	if(user != victim)
 		user.visible_message(
 			span_notice("[user] finishes applying [I] to [victim]'s [limb.name], giving off a wet fizzle."),

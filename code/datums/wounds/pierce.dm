@@ -116,18 +116,6 @@
 	. = ..()
 	blood_flow -= 0.05 * power // 20u * 0.05 = -1 blood flow, less than with slashes but still good considering smaller bleed rates
 
-/datum/wound/pierce/on_silfrine(power)
-	switch(power)
-		if(0 to 3)
-			EMPTY_BLOCK_GUARD
-		if(4 to 8)
-			if(severity < WOUND_SEVERITY_MODERATE)
-				qdel(src)
-		if(8 to 30)
-			if(severity < WOUND_SEVERITY_SEVERE)
-				qdel(src)
-	blood_flow -= 0.05 * power
-
 /// If someone is using a suture to close this puncture
 /datum/wound/pierce/proc/suture(obj/item/stack/medical/suture/I, mob/user)
 	var/self_penalty_mult = (user == victim ? 1 : 1)
@@ -170,7 +158,7 @@
 	)
 	limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
 	if(prob(15))
-		victim.force_pain_noise(50)
+		victim.force_scream()
 	var/blood_cauterized = (0.6 / (self_penalty_mult * improv_penalty_mult))
 	blood_flow -= blood_cauterized
 

@@ -10,7 +10,7 @@
 	use_power = NO_POWER_USE
 	var/static/list/shortcuts = list(
 		"meth" = /datum/reagent/drug/methamphetamine,
-		"cureall" = /datum/reagent/medicine/cureall
+		"tricord" = /datum/reagent/medicine/tricordrazine
 	)
 
 /obj/machinery/chem_dispenser/chem_synthesizer/ui_interact(mob/user, datum/tgui/ui)

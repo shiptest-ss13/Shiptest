@@ -170,10 +170,6 @@
 	mask_type = null // we spawn in gas masks in frontiersmen bags alongside this, so it isn't nessary
 	internal_type = /obj/item/tank/internals/emergency_oxygen //frontiersmen dont
 
-/obj/item/storage/box/survival/vi
-	mask_type = /obj/item/clothing/mask/gas/vigilitas
-	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
-
 /obj/item/storage/box/gloves
 	name = "box of latex gloves"
 	desc = "Contains sterile latex gloves."
@@ -264,9 +260,9 @@
 
 /obj/item/storage/box/hypospray/PopulateContents()
 	new /obj/item/hypospray/mkii(src)
-	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/indomide(src)
-	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/pancrazine(src)
-	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/alvitane(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/bicaridine(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/antitoxin(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/kelotane(src)
 	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/dexalin(src)
 
 /obj/item/storage/box/hypospray/mkiii
@@ -274,10 +270,10 @@
 
 /obj/item/storage/box/hypospray/mkiii/PopulateContents()
 	new /obj/item/hypospray/mkii/mkiii(src)
-	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/silfrine(src)
-	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/gjalrazine(src)
-	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/ysiltane(src)
-	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/salbutamol(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/bicaridine(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/antitoxin(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/kelotane(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/dexalin(src)
 
 /obj/item/storage/box/medigels
 	name = "box of medical gels"
@@ -1181,14 +1177,14 @@
 	new /obj/item/circuitboard/machine/circuit_imprinter/department/science(src)
 	new /obj/item/circuitboard/computer/rdconsole(src)
 
-/obj/item/storage/box/alvitane
-	name = "box of alvitane patches"
+/obj/item/storage/box/silver_sulf
+	name = "box of silver sulfadiazine patches"
 	desc = "Contains patches used to treat burns."
 	illustration = "firepatch"
 
-/obj/item/storage/box/alvitane/PopulateContents()
+/obj/item/storage/box/silver_sulf/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/pill/patch/alvitane(src)
+		new /obj/item/reagent_containers/pill/patch/silver_sulf(src)
 
 /obj/item/storage/box/fountainpens
 	name = "box of fountain pens"

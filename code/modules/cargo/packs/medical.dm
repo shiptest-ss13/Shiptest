@@ -166,6 +166,7 @@
 					/obj/item/storage/firstaid/fire,
 					/obj/item/defibrillator/loaded,
 					/obj/item/reagent_containers/blood/OMinus,
+					/obj/item/storage/pill_bottle/mining,
 					/obj/item/reagent_containers/pill/neurine,
 					/obj/item/vending_refill/medical)
 	crate_name = "medical surplus crate"
@@ -225,32 +226,32 @@
 		/obj/item/reagent_containers/glass/bottle/vial/small)
 	crate_name = "empty vial crate"
 
-/datum/supply_pack/medical/vials/indo_vial
-	name = "Indomide Vial Crate"
-	desc = "Contains a spare indomide vial, for usage in a Hypospray."
+/datum/supply_pack/medical/vials/bica_vial
+	name = "Bicaridine Vial Crate"
+	desc = "Contains a spare bicaridine vial, for usage in a Hypospray."
 	cost = 400
 	contains = list(
-		/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/indomide,
+		/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/bicaridine,
 	)
-	crate_name = "indomide vial crate"
+	crate_name = "bicaridine vial crate"
 
-/datum/supply_pack/medical/vials/alvi_vial
-	name = "Alvitane Vial Crate"
-	desc = "Contains a spare alvitane vial, for usage in a Hypospray."
+/datum/supply_pack/medical/vials/kelo_vial
+	name = "Kelotane Vial Crate"
+	desc = "Contains a spare kelotane vial, for usage in a Hypospray."
 	cost = 400
 	contains = list(
-		/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/alvitane,
+		/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/kelotane,
 	)
-	crate_name = "alvitane vial crate"
+	crate_name = "kelotane vial crate"
 
 /datum/supply_pack/medical/vials/dylo_vial
-	name = "Pancrazine Vial Crate"
+	name = "Dylovene Vial Crate"
 	desc = "Contains a spare dylovene vial, for usage in a Hypospray."
 	cost = 400
 	contains = list(
-		/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/pancrazine,
+		/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/antitoxin,
 	)
-	crate_name = "pancrazine vial crate"
+	crate_name = "dylovene vial crate"
 
 /datum/supply_pack/medical/vials/dexa_vial
 	name = "Dexalin Vial Crate"
@@ -262,13 +263,13 @@
 	crate_name = "dexalin vial crate"
 
 /datum/supply_pack/medical/vials/tric_vial
-	name = "Cureall Vial Crate"
-	desc = "Contains a spare cureall vial, for usage in a Hypospray."
+	name = "Tricordrazine Vial Crate"
+	desc = "Contains a spare tricordrazine vial, for usage in a Hypospray."
 	cost = 300
 	contains = list(
-		/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/cureall,
+		/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/tricord,
 	)
-	crate_name = "cureall vial crate"
+	crate_name = "tricordrazine vial crate"
 
 /datum/supply_pack/medical/vials/morb_vial
 	name = "Morphine Vial Crate"
