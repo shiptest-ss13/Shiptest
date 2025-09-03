@@ -138,7 +138,7 @@
 	self_delay = 2 SECONDS
 	other_delay = 1.5 SECONDS
 	heal_brute = 10
-	grind_results = list(/datum/reagent/medicine/c2/libital = 10)
+	grind_results = list(/datum/reagent/medicine/indomide = 10)
 	merge_type = /obj/item/stack/medical/bruise_pack
 
 /obj/item/stack/medical/gauze

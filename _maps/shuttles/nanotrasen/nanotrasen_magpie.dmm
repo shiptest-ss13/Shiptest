@@ -1974,6 +1974,18 @@
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line{
 	dir = 10
 	},
+/obj/structure/table/reinforced,
+/obj/structure/closet/wall/med/directional/south{
+	populate = 0;
+	name = "Medical Supplies"
+	},
+/obj/machinery/airalarm/directional/west,
+/obj/item/storage/box/syringes,
+/obj/item/reagent_containers/glass/bottle/indomide,
+/obj/item/storage/pill_bottle/charcoal,
+/obj/effect/spawner/random/medical/medkit,
+/obj/item/storage/firstaid/medical,
+/obj/item/reagent_containers/chem_pack/dimorlin,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "BI" = (
