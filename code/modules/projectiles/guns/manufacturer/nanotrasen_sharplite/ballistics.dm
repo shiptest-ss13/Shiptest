@@ -372,7 +372,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/wt550m9/ap
-	name = "wt550 magazine (4.6x30mm AP)"
+	name = "Resolution magazine (4.6x30mm AP)"
 	desc = "A compact, 30-round top-loading magazine for the WT-550 Automatic Rifle. These armor-piercing rounds are great at piercing protective equipment, but lose some stopping power."
 
 	ammo_type = /obj/item/ammo_casing/c46x30mm/ap
