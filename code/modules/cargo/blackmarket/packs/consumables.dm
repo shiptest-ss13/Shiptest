@@ -129,17 +129,6 @@
 	stock_max = 4
 	availability_prob = 30
 
-/datum/blackmarket_item/consumable/gumballs
-	name = "Gumball"
-	desc = "Looking for a sweet treat? These gumballs are sure to satisfy."
-	item = /obj/item/reagent_containers/food/snacks/gumball
-
-	cost_min = 10
-	cost_max = 20
-	stock_min = 10
-	stock_max = 20
-	availability_prob = 80
-
 /datum/blackmarket_item/consumable/xeno_corpse
 	name = "Xenomorph Corpse"
 	desc = "The Frontier's most dangerous game, delivered right to your plate! May constitute a violation of your local BARD laws and regulations."

@@ -17,7 +17,7 @@
 	custom_materials = list(/datum/material/iron=1150, /datum/material/glass=2075)
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("smashed", "crushed", "cleaved", "chopped", "pulped")
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	actions_types = list(/datum/action/item_action/toggle_light)
 	obj_flags = UNIQUE_RENAME
 	light_system = MOVABLE_LIGHT
@@ -194,7 +194,7 @@
 	custom_materials = list(/datum/material/titanium=5000, /datum/material/iron=2075)
 	hitsound = 'sound/weapons/blade1.ogg'
 	attack_verb = list("sliced", "bisected", "diced", "chopped", "filleted")
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	obj_flags = UNIQUE_RENAME
 	light_color = "#fb6767"
 	light_system = MOVABLE_LIGHT

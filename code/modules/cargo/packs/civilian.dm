@@ -1,5 +1,7 @@
 /datum/supply_pack/civilian
 	category = "Civilian & Decoration"
+	crate_name = "civilian supply crate"
+	crate_type = /obj/structure/closet/crate/wooden
 
 /*
 		Janitorial
@@ -156,7 +158,7 @@
 					/obj/item/coffee_cartridge)
 	crate_name = "Basic Coffee Supply Crate"
 
-/datum/supply_pack/service/coffee_cartridge
+/datum/supply_pack/civilian/coffee_cartridge
 	name = "Solar's Best Coffee Cartridge Resupply"
 	desc = "Contains five coffee cartridges for your coffee machine, imported from Sol."
 	cost = 750
@@ -167,7 +169,7 @@
 					/obj/item/coffee_cartridge)
 	crate_name = "Coffee Cartridge Supply Crate"
 
-/datum/supply_pack/service/coffee_cartridge_fancy
+/datum/supply_pack/civilian/coffee_cartridge_fancy
 	name = "Premium Coffee Cartridge Resupply"
 	desc = "Contains an assortment of five high-quality coffee cartridges."
 	cost = 1250
@@ -178,7 +180,7 @@
 					/obj/item/coffee_cartridge/fancy)
 	crate_name = "Premium Coffee Supply Crate"
 
-/datum/supply_pack/service/coffeekit
+/datum/supply_pack/civilian/coffeekit
 	name = "Coffee Shop Starter Crate"
 	desc = "All the basic equipment needed for enterprising coffee-selling spacefarers. Coffeemaker not included."
 	cost = 1250
@@ -193,7 +195,7 @@
 					/obj/item/reagent_containers/glass/bottle/syrup_bottle/caramel)
 	crate_name = "coffee equpment crate"
 
-/datum/supply_pack/service/coffeemaker
+/datum/supply_pack/civilian/coffeemaker
 	name = "Coffeemaker Crate"
 	desc = "Contains one pre-assembled Attention model coffeemaker."
 	cost = 1000
@@ -201,7 +203,7 @@
 	crate_name = "coffeemaker crate"
 	crate_type = /obj/structure/closet/crate/large
 
-/datum/supply_pack/service/coffeemaker_premium
+/datum/supply_pack/civilian/coffeemaker_premium
 	name = "Premium Coffeemaker Crate"
 	desc = "Contains one pre-assembled professional-grade Sirere model coffeemaker."
 	cost = 1500
@@ -321,6 +323,12 @@
 	cost = 100
 	contains = list(/obj/item/storage/box/ids)
 
+/datum/supply_pack/civilian/bank_card_crate
+	name = "Box of Spare Bank Cards"
+	desc = "A box of spare IDs for replacing a lost bankcard."
+	cost = 100
+	contains = list(/obj/item/storage/box/bankcard)
+
 /datum/supply_pack/civilian/spare_clothes
 	name = "Spare Jumpsuits Crate"
 	desc = "Contains a spare set of utility jumpsuits and shoes for those unfortunate accidents." //how did we not have this before
@@ -330,7 +338,27 @@
 					/obj/item/clothing/shoes/sneakers/black,
 					/obj/item/clothing/shoes/sneakers/black)
 	crate_name = "spare jumpsuits crate"
-	crate_type = /obj/structure/closet/crate/wooden
+
+/datum/supply_pack/civilian/satchel
+	name = "Spare Satchel Crate"
+	desc = "Contains a spare backpack, for the intrepid traveller who managed to lose the last one."
+	cost = 50
+	contains = list(/obj/item/storage/backpack/satchel)
+	crate_name = "spare satchel crate"
+
+/datum/supply_pack/civilian/backpack
+	name = "Spare Backpack Crate"
+	desc = "Contains a spare backpack, for the starfarers who just can't keep track of where they took it off."
+	cost = 50
+	contains = list(/obj/item/storage/backpack)
+	crate_name = "spare backpack crate"
+
+/datum/supply_pack/civilian/duffels
+	name = "Spare Duffelbag Crate"
+	desc = "Contains a spare duffelbag. Ideal for carrying items across long distances."
+	cost = 50
+	contains = list(/obj/item/storage/backpack/duffelbag)
+	crate_name = "spare duffelbag crate"
 
 /datum/supply_pack/civilian/broadcast_camera
 	name = "Broadcast Camera Crate"

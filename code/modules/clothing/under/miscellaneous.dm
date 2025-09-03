@@ -126,3 +126,28 @@
 	icon_state = "utility_skirt"
 	item_state = "utility_skirt"
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
+
+/obj/item/clothing/under/overalls
+	icon = 'icons/obj/clothing/under/misc.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/misc.dmi'
+	name = "denim overalls"
+	desc = "A durable pair of overalls with a removable white work shirt. Perfect for outdoor labor."
+	icon_state = "overalls"
+	item_state = "overalls"
+	roll_down = TRUE
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/under/overalls/black
+	name = "black overalls"
+	icon_state = "overalls_black"
+	item_state = "overalls_black"
+
+/obj/item/clothing/under/overalls/olive
+	name = "olive overalls"
+	icon_state = "overalls_olive"
+	item_state = "overalls_olive"
+
+/obj/item/clothing/under/overalls/brown
+	name = "brown overalls"
+	icon_state = "overalls_brown"
+	item_state = "overalls_brown"

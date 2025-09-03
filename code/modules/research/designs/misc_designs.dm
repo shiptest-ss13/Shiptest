@@ -311,15 +311,6 @@
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_ENGINEERING
 
-/datum/design/lavarods
-	name = "Lava-Resistant Metal Rods"
-	id = "lava_rods"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron=1000, /datum/material/plasma=500, /datum/material/titanium=2000)
-	build_path = /obj/item/stack/rods/lava
-	category = list("initial", "Stock Parts")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
-
 /datum/design/plasticducky
 	name = "Rubber Ducky"
 	desc = "The classic Nanotrasen design for competitively priced bath based duck toys. No need for fancy Waffle co. rubber, buy Plastic Ducks today!"

@@ -107,8 +107,8 @@
 
 /turf/open/lava/attackby(obj/item/attacking_item, mob/user, params)
 	..()
-	if(istype(attacking_item, /obj/item/stack/rods/lava))
-		var/obj/item/stack/rods/lava/R = attacking_item
+	if(istype(attacking_item, /obj/item/stack/rods))
+		var/obj/item/stack/rods/R = attacking_item
 		var/obj/structure/lattice/lava/H = locate(/obj/structure/lattice/lava, src)
 		if(H)
 			to_chat(user, span_warning("There is already a lattice here!"))

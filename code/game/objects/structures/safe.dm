@@ -59,6 +59,8 @@ FLOOR SAFES
 			space += I.w_class
 			I.forceMove(src)
 
+	update_appearance()
+
 /obj/structure/safe/update_icon_state()
 	icon_state = "[initial(icon_state)][open ? "-open" : null]"
 	return ..()

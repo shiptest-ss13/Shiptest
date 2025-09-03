@@ -124,14 +124,14 @@
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
 	name = "egg box"
 	desc = "A carton for containing eggs."
-	spawn_type = /obj/item/reagent_containers/food/snacks/egg
+	spawn_type = /obj/item/food/egg
 	contents_tag = "egg"
 
 /obj/item/storage/fancy/egg_box/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 12
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/egg))
+	STR.set_holdable(list(/obj/item/food/egg))
 
 /obj/item/storage/fancy/egg_box/update_icon_state()
 	. = ..()
@@ -143,7 +143,7 @@
 	if(!is_open)
 		return
 	var/egg_count = 0
-	for(var/obj/item/reagent_containers/food/snacks/egg as anything in contents)
+	for(var/obj/item/food/egg as anything in contents)
 		egg_count++
 		if(!egg)
 			return
@@ -476,15 +476,14 @@
 	base_icon_state = "chocolatebox"
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
-	spawn_type = /obj/item/reagent_containers/food/snacks/tinychocolate
+	spawn_type = /obj/item/food/bonbon
 	contents_tag = "chocolate"
 
 /obj/item/storage/fancy/heart_box/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 8
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/tinychocolate))
-
+	STR.set_holdable(list(/obj/item/food/bonbon))
 
 /obj/item/storage/fancy/nugget_box
 	name = "nugget box"

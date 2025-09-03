@@ -25,7 +25,7 @@ standards:
     - exactly: [8, "escapes", '\\\\(red|blue|green|black|b|i[^mc])']
     - exactly: [8, "Del()s", '\WDel\(']
 
-    - exactly: [1, "/atom text paths", '"/atom']
+    - exactly: [3, "/atom text paths", '"/atom']
     - exactly: [1, "/area text paths", '"/area']
     - exactly: [18, "/datum text paths", '"/datum']
     - exactly: [4, "/mob text paths", '"/mob']
@@ -52,7 +52,7 @@ standards:
               '\(([\t ]+([^)"\n\\]*)|([^("\n]+)[\t ]+)\)',
           ]
 
-    - exactly: [1, "Old-style proc references", '\.proc/(\w+)']
+    - exactly: [0, "Old-style proc references", '\.proc/(\w+)']
     - exactly: [0, "Old-style typed proc references", '([\w/]+?)/?\.proc/(\w+)']
 
     - no_more:

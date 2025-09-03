@@ -206,7 +206,7 @@
 		damaged_cell.rigged = TRUE
 		damaged_cell.show_rigged = FALSE
 
-	return new damaged_cell(loc)
+	return damaged_cell
 
 /datum/blackmarket_item/ammo/advanced_weapon_cell
 	name = "Upgraded Weapon Power Cells"
@@ -244,7 +244,7 @@
 /datum/blackmarket_item/ammo/mauler_mag
 	name = "Mauler Magazine"
 	desc = "A 12 round 9x18mm magazine for the Mauler machine pistol."
-	item = /obj/item/ammo_box/magazine/m9mm_mauler
+	item = /obj/item/ammo_box/magazine/m9mm_mauler/extended
 
 	cost_min = 150
 	cost_max = 300
@@ -271,6 +271,17 @@
 	cost_min = 150
 	cost_max = 350
 	stock = 2
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/f4_magazine
+	name = "F4 Magazine"
+	desc = "10 round .308 magazine for use in the F4 rifle and it's predecessor, the F3."
+	item = /obj/item/ammo_box/magazine/f4_308
+
+	cost_min = 300
+	cost_max = 500
+	stock_min = 2
+	stock_max = 6
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/a4570hp

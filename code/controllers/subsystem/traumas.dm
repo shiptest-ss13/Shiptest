@@ -54,7 +54,7 @@ SUBSYSTEM_DEF(traumas)
 	)
 
 	phobia_objs = list(
-		"snakes" = typecacheof(list(/obj/item/rod_of_asclepius, /obj/item/toy/plush/snakeplushie)),
+		"snakes" = typecacheof(list(/obj/item/toy/plush/snakeplushie)),
 
 		"spiders"   = typecacheof(list(/obj/structure/spider, /obj/item/toy/plush/spider)),
 
@@ -135,7 +135,7 @@ SUBSYSTEM_DEF(traumas)
 
 		"anime" = typecacheof(list(
 			/obj/item/clothing/under/costume/schoolgirl, /obj/item/food/sashimi,
-			/obj/item/reagent_containers/food/snacks/chawanmushi,
+			/obj/item/food/chawanmushi,
 			/obj/item/reagent_containers/food/drinks/bottle/sake, /obj/item/throwing_star,
 			/obj/item/clothing/suit/space/space_ninja,
 			/obj/item/clothing/mask/gas/space_ninja, /obj/item/clothing/shoes/space_ninja, /obj/item/clothing/gloves/space_ninja,

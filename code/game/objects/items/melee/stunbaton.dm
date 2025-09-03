@@ -217,7 +217,7 @@
 			return FALSE
 	/// After a target is hit, we do a chunk of stamina damage, along with other effects.
 	/// After a period of time, we then check to see what stun duration we give.
-	L.set_jitter(20)
+	L.set_timed_status_effect(40 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	L.confused = max(confusion_amt, L.confused)
 	L.stuttering = max(8, L.stuttering)
 	L.apply_damage(stamina_loss_amt, STAMINA, BODY_ZONE_CHEST)
@@ -344,6 +344,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	slot_flags = ITEM_SLOT_BELT
 	force = 12 //9 hit crit
+	wound_bonus = 15
 	w_class = WEIGHT_CLASS_NORMAL
 
 	var/cooldown_check = 0 // Used interally, you don't want to modify
@@ -364,6 +365,7 @@
 	var/active_force // Damage when on - not stunning
 	var/force_off // Damage when off - not stunning
 	var/weight_class_on // What is the new size class when turned on
+
 
 // Description for trying to stun when still on cooldown.
 /obj/item/melee/classic_baton/proc/get_wait_description()
@@ -561,5 +563,5 @@
 	return span_danger("The baton is still charging!")
 
 /obj/item/melee/classic_baton/telescopic/contractor_baton/additional_effects_carbon(mob/living/target, mob/living/user)
-	target.adjust_jitter(20)
+	target.set_timed_status_effect(40 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	target.stuttering += 20

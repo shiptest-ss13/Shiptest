@@ -22,13 +22,13 @@
 	//however - I am a lazy bitch
 	for(var/mob/living/carbon/victim in range(effectrange, src))
 		//if we're not hungry, we're not hungry.
-		if (core?:get_blood_max() < core?:get_blood_stored())
+		if(core?:get_blood_max() < core?:get_blood_stored())
 			new /obj/effect/temp_visual/dir_setting/bloodsplatter(src.loc, rand(1, 8))
 			visible_message(span_boldwarning("[src] vomits up blood, seemingly satiated!"))
 			core?:set_blood_stored(core?:get_blood_max())
 			return
 		//if there's blood to take, take it
-		if (victim.blood_volume > BLOOD_VOLUME_SAFE)
+		if(victim.blood_volume > BLOOD_VOLUME_SAFE)
 			var/bleeder
 			bleeder = rand(10,30)
 			victim.bleed(bleeder)

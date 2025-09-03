@@ -51,7 +51,7 @@
 
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
@@ -246,6 +246,7 @@
 	inhand_y_dimension = 64
 	icon_state = "iotshotgun"
 	item_state = "shotgun_combat"
+	fire_delay = 0.6 SECONDS
 	shaded_charge = TRUE
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima, /obj/item/ammo_casing/energy/laser/ultima)
 	w_class = WEIGHT_CLASS_BULKY

@@ -1159,7 +1159,7 @@
 			cookiealt = /obj/item/reagent_containers/condiment/milk
 
 		else if(iselzuose(H))
-			cookiealt = /obj/item/reagent_containers/food/snacks/energybar
+			cookiealt = /obj/item/food/energybar
 
 		else if(islizard(H))
 			cookiealt = /obj/item/food/nugget

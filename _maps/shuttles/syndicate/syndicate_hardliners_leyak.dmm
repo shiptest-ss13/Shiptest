@@ -298,24 +298,6 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
-"ct" = (
-/obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 9
-	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 9
-	},
-/obj/item/clothing/suit/space/syndicate/engie,
-/obj/item/clothing/shoes/magboots/syndie,
-/obj/item/clothing/head/helmet/space/syndicate/engie,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/machinery/light/small/directional/north,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/engineering/engines)
 "cx" = (
 /obj/structure/catwalk/over/plated_catwalk/white,
 /obj/structure/cable{
@@ -2154,6 +2136,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
+"yY" = (
+/obj/item/clothing/mask/gas/syndicate,
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/machinery/firealarm/directional/west,
+/obj/item/clothing/suit/space/syndicate/white_red,
+/obj/item/clothing/head/helmet/space/syndicate/white_red,
+/turf/open/floor/plasteel/tech,
+/area/ship/science/workshop)
 "zd" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/canteen)
@@ -2190,14 +2180,6 @@
 	pixel_y = -20;
 	id = "leyakgen"
 	},
-/turf/open/floor/plasteel/tech,
-/area/ship/science/workshop)
-"zs" = (
-/obj/item/clothing/mask/gas/syndicate,
-/obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/machinery/firealarm/directional/west,
-/obj/item/clothing/suit/space/syndicate/white_red,
-/obj/item/clothing/head/helmet/space/syndicate/white_red,
 /turf/open/floor/plasteel/tech,
 /area/ship/science/workshop)
 "zF" = (
@@ -2628,6 +2610,24 @@
 /obj/effect/turf_decal/spline/plain/opaque/syndiered,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
+"ES" = (
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 9
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 9
+	},
+/obj/item/clothing/suit/space/syndicate/engie,
+/obj/item/clothing/shoes/magboots/syndie,
+/obj/item/clothing/head/helmet/space/syndicate/engie,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/machinery/light/small/directional/north,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering/engines)
 "ET" = (
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
 	dir = 8
@@ -3606,26 +3606,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
-"Rz" = (
-/obj/item/reagent_containers/food/snacks/ration/condiment/maple_syrup{
-	pixel_x = -11;
-	pixel_y = 2
-	},
-/obj/item/reagent_containers/food/snacks/ration/condiment/maple_syrup{
-	pixel_x = 8;
-	pixel_y = 4
-	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = -4;
-	pixel_y = 3
-	},
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_x = 2;
-	pixel_y = 3
-	},
-/obj/structure/table,
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/crew/canteen)
 "RH" = (
 /obj/effect/turf_decal/siding{
 	color = "#730622"
@@ -4350,6 +4330,26 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"Zh" = (
+/obj/item/food/ration/condiment/maple_syrup{
+	pixel_x = -11;
+	pixel_y = 2
+	},
+/obj/item/food/ration/condiment/maple_syrup{
+	pixel_x = 8;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = -4;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = 2;
+	pixel_y = 3
+	},
+/obj/structure/table,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/crew/canteen)
 "Zz" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable{
@@ -4521,7 +4521,7 @@ Mp
 PK
 PK
 OI
-ct
+ES
 Mc
 Tw
 EC
@@ -4738,7 +4738,7 @@ vx
 kM
 PF
 xp
-Rz
+Zh
 QF
 zd
 Mp
@@ -5198,7 +5198,7 @@ Mp
 Ae
 SR
 TV
-zs
+yY
 Ae
 NO
 Mp

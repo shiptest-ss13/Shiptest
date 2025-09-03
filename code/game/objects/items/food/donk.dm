@@ -54,10 +54,7 @@
 	)
 	tastes = list("meat" = 2, "dough" = 2, "laziness" = 1)
 	foodtypes = GRAIN
-
-	// Warmed donk pockets will burn if you leave them in the oven or microwave.
-	//warm_type = /obj/item/reagent_containers/food/snacks/badrecipe
-	microwaved_type = /obj/item/reagent_containers/food/snacks/badrecipe
+	microwaved_type = /obj/item/food/badrecipe
 	baking_time_short = 10 SECONDS
 	baking_time_long = 15 SECONDS
 

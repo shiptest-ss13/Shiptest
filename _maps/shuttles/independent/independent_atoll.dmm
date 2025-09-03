@@ -644,7 +644,7 @@
 /obj/item/reagent_containers/condiment/flour,
 /obj/item/food/grown/cabbage,
 /obj/item/food/grown/cabbage,
-/obj/item/reagent_containers/food/snacks/branrequests,
+/obj/item/food/branrequests,
 /obj/item/reagent_containers/condiment/enzyme,
 /obj/item/food/grown/tomato,
 /obj/item/food/grown/tomato,
@@ -3179,8 +3179,6 @@
 	name = "Mechanic's Locker"
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
-/obj/item/clothing/under/rank/engineering/engineer,
-/obj/item/storage/belt/utility,
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/clothing/head/hardhat/dblue,
 /obj/item/clothing/shoes/workboots,
@@ -3188,6 +3186,9 @@
 /obj/item/clothing/suit/toggle/industrial,
 /obj/item/storage/backpack/duffelbag/engineering,
 /obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/head/hardhat/orange,
+/obj/item/clothing/under/overalls/olive,
+/obj/item/storage/belt/utility/full/engi,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Ee" = (
@@ -5270,7 +5271,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 4
 	},
-/obj/item/reagent_containers/food/snacks/chewable/lollipop,
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/office/lobby)

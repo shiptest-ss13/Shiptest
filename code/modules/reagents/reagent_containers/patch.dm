@@ -44,3 +44,13 @@
 	desc = "Helps with brute and burn injuries."
 	list_reagents = list(/datum/reagent/medicine/synthflesh = 20)
 	icon_state = "bandaid_both"
+
+/obj/item/reagent_containers/pill/patch/stardrop
+	name = "stardrop patch"
+	desc = "A patch of a vision enhancing compound known as Stardrop."
+	list_reagents = list(/datum/reagent/drug/stardrop = 20)
+
+/obj/item/reagent_containers/pill/patch/starlight
+	name = "starlight patch"
+	desc = "A patch of a vision enhancing compound known as Starlight."
+	list_reagents = list(/datum/reagent/drug/stardrop/starlight = 10)

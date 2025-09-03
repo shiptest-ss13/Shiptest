@@ -2,7 +2,7 @@
 /**
  * Applies damage to this mob
  *
- * Sends [COMSIG_MOB_APPLY_DAMGE]
+ * Sends [COMSIG_MOB_APPLY_DAMAGE]
  *
  * Arguuments:
  * * damage - amount of damage
@@ -12,11 +12,14 @@
  * * forced - bypass hit percentage
  * * spread_damage - used in overrides
  * * sharpness - used for bleeding
- *
+
+ * * wound_bonus - see /carbon/apply_damage
+
  * Returns TRUE if damage applied
  */
-/mob/living/proc/apply_damage(damage = 0,damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, sharpness = FALSE)//WS Edit - Breakable Bones
-	SEND_SIGNAL(src, COMSIG_MOB_APPLY_DAMGE, damage, damagetype, def_zone)
+
+/mob/living/proc/apply_damage(damage = 0,damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE, attack_direction = null)
+	SEND_SIGNAL(src, COMSIG_MOB_APPLY_DAMAGE, damage, damagetype, def_zone)
 	var/hit_percent = (100-blocked)/100
 	if(!damage || (!forced && hit_percent <= 0) || !(flags_1 & INITIALIZED_1))
 		return FALSE
@@ -122,9 +125,7 @@
 			blur_eyes(effect * hit_percent)
 		if(EFFECT_DROWSY)
 			drowsyness = max(drowsyness,(effect * hit_percent))
-		if(EFFECT_JITTER)
-			if((status_flags & CANSTUN) && !HAS_TRAIT(src, TRAIT_STUNIMMUNE))
-				jitteriness = max(jitteriness,(effect * hit_percent))
+
 	return 1
 
 /// applies multiple effects at once via [/mob/living/proc/apply_effect]
@@ -153,8 +154,8 @@
 		apply_effect(drowsy, EFFECT_DROWSY, blocked)
 	if(stamina)
 		apply_damage(stamina, STAMINA, null, blocked)
-	if(jitter)
-		apply_effect(jitter, EFFECT_JITTER, blocked)
+	if(jitter && (status_flags & CANSTUN) && !HAS_TRAIT(src, TRAIT_STUNIMMUNE))
+		adjust_timed_status_effect(jitter, /datum/status_effect/jitter)
 	return TRUE
 
 
@@ -263,14 +264,14 @@
  * needs to return amount healed in order to calculate things like tend wounds xp gain
  */
 /mob/living/proc/heal_bodypart_damage(brute = 0, burn = 0, stamina = 0, updating_health = TRUE, required_status)
-	. = (adjustBruteLoss(-brute, FALSE) + adjustFireLoss(-burn, FALSE) + adjustStaminaLoss(-stamina, FALSE)) //zero as argument for no instant health update
+	. = (adjustBruteLoss(-brute, FALSE) + adjustFireLoss(-burn, FALSE) + adjustStaminaLoss(-stamina, FALSE))
 	if(updating_health)
 		updatehealth()
 		update_stamina()
 
 /// damage ONE external organ, organ gets randomly selected from damaged ones.
-/mob/living/proc/take_bodypart_damage(brute = 0, burn = 0, stamina = 0, updating_health = TRUE, required_status, check_armor = FALSE)
-	adjustBruteLoss(brute, FALSE) //zero as argument for no instant health update
+/mob/living/proc/take_bodypart_damage(brute = 0, burn = 0, stamina = 0, updating_health = TRUE, required_status, check_armor = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE)
+	adjustBruteLoss(brute, FALSE)
 	adjustFireLoss(burn, FALSE)
 	adjustStaminaLoss(stamina, FALSE)
 	if(updating_health)
@@ -282,7 +283,7 @@
 
 /// heal MANY bodyparts, in random order
 /mob/living/proc/heal_overall_damage(brute = 0, burn = 0, stamina = 0, required_status, updating_health = TRUE)
-	adjustBruteLoss(-brute, FALSE) //zero as argument for no instant health update
+	adjustBruteLoss(-brute, FALSE)
 	adjustFireLoss(-burn, FALSE)
 	adjustStaminaLoss(-stamina, FALSE)
 	if(updating_health)

@@ -3,20 +3,6 @@
 	crate_type = /obj/structure/closet/crate/engineering
 
 /*
-		Vehicles
-*/
-
-/datum/supply_pack/tools/all_terrain_vehicle
-	name = "All Terrain Vehicle"
-	desc = "Contains one ATV and a key, for when you want to explore the frontier in style."
-	cost = 2000
-	contains = list(/obj/vehicle/ridden/atv,
-					/obj/item/key)
-	crate_name = "ATV crate"
-	crate_type = /obj/structure/closet/crate/large
-	no_bundle = TRUE
-
-/*
 		Actual tools
 */
 
@@ -47,11 +33,18 @@
 	crate_name = "bodycamera crate"
 
 /datum/supply_pack/tools/assbelt
-	name = "Assault Belt"
+	name = "Assault Belt Crate"
 	desc = "Contains an assault belt, with not one, not two, but six pockets."
-	cost = 500
+	cost = 300
 	contains = list(/obj/item/storage/belt/military/assault)
 	crate_name = "assault belt crate"
+
+/datum/supply_pack/tools/chestrig
+	name = "Chest Rig Crate"
+	desc = "Contains a chest rig, with seven places to store small items."
+	cost = 500
+	contains = list(/obj/item/storage/belt/military)
+	crate_name = "chest rig crate"
 
 /datum/supply_pack/tools/cellcharger
 	name = "Cell Charger Crate"

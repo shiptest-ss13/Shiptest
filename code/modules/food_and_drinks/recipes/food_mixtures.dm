@@ -25,7 +25,7 @@
 /datum/chemical_reaction/chocolate_bar/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/chocolatebar(location)
+		new /obj/item/food/chocolatebar(location)
 	return
 
 /datum/chemical_reaction/chocolate_bar2
@@ -35,7 +35,7 @@
 /datum/chemical_reaction/chocolate_bar2/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/chocolatebar(location)
+		new /obj/item/food/chocolatebar(location)
 	return
 
 /datum/chemical_reaction/soysauce
@@ -66,7 +66,7 @@
 /datum/chemical_reaction/cheesewheel/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/store/cheesewheel(location)
+		new /obj/item/food/cheese/wheel(location)
 
 /datum/chemical_reaction/tiris_cheese
 	required_reagents = list(/datum/reagent/consumable/tiris_milk = 40)
@@ -75,7 +75,7 @@
 /datum/chemical_reaction/tiris_cheese/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/store/tiris_cheese_wheel(location)
+		new /obj/item/food/cheese/wheel/tiris(location)
 
 /datum/chemical_reaction/synthmeat
 	required_reagents = list(/datum/reagent/blood = 5, /datum/reagent/medicine/cryoxadone = 1)
@@ -133,7 +133,7 @@
 
 /datum/chemical_reaction/ricebowl/on_reaction(datum/reagents/holder)
 	var/location = get_turf(holder.my_atom)
-	new /obj/item/reagent_containers/food/snacks/salad/ricebowl(location)
+	new /obj/item/food/salad/ricebowl(location)
 	if(holder && holder.my_atom)
 		qdel(holder.my_atom)
 

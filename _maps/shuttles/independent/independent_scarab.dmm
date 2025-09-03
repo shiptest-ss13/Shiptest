@@ -1502,8 +1502,6 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/item/storage/backpack/industrial,
 /obj/item/storage/backpack/satchel/eng,
-/obj/item/clothing/under/rank/engineering/engineer,
-/obj/item/clothing/under/rank/engineering/engineer,
 /obj/item/clothing/shoes/workboots{
 	pixel_y = -7
 	},
@@ -1517,6 +1515,10 @@
 /obj/item/clothing/head/hardhat/dblue,
 /obj/item/clothing/head/hardhat/dblue,
 /obj/machinery/light/directional/south,
+/obj/item/clothing/under/overalls/olive,
+/obj/item/clothing/under/overalls/olive,
+/obj/item/clothing/head/hardhat/orange,
+/obj/item/clothing/head/hardhat/orange,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "sy" = (
@@ -1938,6 +1940,8 @@
 /obj/item/clothing/glasses/welding,
 /obj/item/clothing/glasses/welding,
 /obj/item/geiger_counter,
+/obj/item/storage/belt/utility/full/engi,
+/obj/item/storage/belt/utility/full/engi,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "wO" = (
@@ -3340,9 +3344,9 @@
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
-/obj/item/reagent_containers/food/snacks/sosjerky,
-/obj/item/reagent_containers/food/snacks/sosjerky,
-/obj/item/reagent_containers/food/snacks/cornchips,
+/obj/item/food/sosjerky,
+/obj/item/food/sosjerky,
+/obj/item/food/cornchips,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "MT" = (

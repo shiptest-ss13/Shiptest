@@ -78,7 +78,7 @@
 
 	tool_behaviour = TOOL_DECONSTRUCT
 	wielded = TRUE
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	icon_state = "[initial(item_state)]-wield"
 	item_state = "[initial(item_state)]-wield"
 
@@ -91,10 +91,6 @@
 	sharpness = initial(sharpness)
 	icon_state = initial(icon_state)
 	item_state = initial(item_state)
-
-/obj/item/gear_handle/anglegrinder/get_dismemberment_chance()
-	if(wielded)
-		. = ..()
 
 /obj/item/gear_handle/anglegrinder/use_tool(atom/target, mob/living/user, delay, amount=1, volume=0, datum/callback/extra_checks)
 	if(adv)

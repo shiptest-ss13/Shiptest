@@ -180,3 +180,8 @@
 	icon_state = "cowboy"
 	item_state = "cowboy"
 
+/obj/item/clothing/head/sunhat
+	name = "sun hat"
+	desc = "A fashionable straw hat designed for providing shade to your head. An essential of tropical touristry and backbreaking labor alike!"
+	icon_state = "sunhat"
+	item_state = "sunhat"

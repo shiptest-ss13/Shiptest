@@ -36,6 +36,8 @@
 	var/trash_type
 	///How much junkiness this food has? God I should remove junkiness soon
 	var/junkiness
+	///How much of the reagent within is transfered at once, mostly for things like drink packets and ration condiments
+	var/amount_per_transfer
 
 /obj/item/food/Initialize()
 	. = ..()
@@ -63,10 +65,13 @@
 		microwaved_type = microwaved_type,\
 	)
 
-
 ///This proc handles processable elements, overwrite this if you want to add behavior such as slicing, forking, spooning, whatever, to turn the item into something else
 /obj/item/food/proc/make_processable()
 	return
+
+///Gives the food item the dryable component set to its own type
+/obj/item/food/proc/make_dryable()
+	AddElement(/datum/element/dryable, type)
 
 ///This proc handles trash components, overwrite this if you want the object to spawn trash
 /obj/item/food/proc/make_leave_trash()

@@ -412,7 +412,7 @@
 	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/carpet/blue/plasma
-	initial_gas_mix = ATMOS_TANK_PLASMA
+	initial_gas_mix = ATMOS_TANK_PLASMAHALF
 
 /turf/open/floor/carpet/narsie_act(force, ignore_mobs, probability = 20)
 	. = (force || prob(probability))

@@ -75,7 +75,7 @@
 /mob/living/carbon/monkey/on_reagent_change()
 	. = ..()
 	var/amount
-	if(reagents.has_reagent(/datum/reagent/medicine/morphine))
+	if(has_reagent(/datum/reagent/medicine/morphine))
 		amount = -1
 	if(amount)
 		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/monkey_reagent_speedmod, TRUE, amount)
@@ -174,7 +174,7 @@
 
 /mob/living/carbon/monkey/angry/Initialize()
 	. = ..()
-	ai_controller.blackboard[BB_MONKEY_AGRESSIVE] = TRUE
+	ai_controller.set_blackboard_key(BB_MONKEY_AGRESSIVE, TRUE)
 	if(prob(10))
 		var/obj/item/clothing/head/helmet/justice/escape/helmet = new(src)
 		equip_to_slot_or_del(helmet,ITEM_SLOT_HEAD)

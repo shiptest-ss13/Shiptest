@@ -149,10 +149,10 @@
 /datum/component/attachment_holder/proc/do_detach(obj/item/attachment, mob/user)
 	var/slot = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_GET_SLOT)
 	slot = attachment_slot_from_bflag(slot)
-	if(slot in slot_room)
-		slot_room[slot]++
 	. = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_DETACH, parent, user)
 	if(.)
+		if(slot in slot_room)
+			slot_room[slot]++
 		attachments -= attachment
 		var/atom/parent = src.parent
 		parent.update_icon()
