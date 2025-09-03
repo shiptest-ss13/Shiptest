@@ -103,7 +103,7 @@
 	icon_state = "nanotrasenrangedsmg"
 	icon_living = "nanotrasenrangedsmg"
 	casingtype = /obj/item/ammo_casing/energy/laser/shotgun/sharplite
-	r_hand = /obj/item/gun/energy/laser/iot/lethal
+	r_hand = /obj/item/gun/energy/sharplite/x46/zeta
 	rapid = 2
 	rapid_fire_delay = 5
 	retreat_distance = 0
@@ -145,7 +145,7 @@
 	rapid_fire_delay = 4
 	casingtype = null
 	projectiletype = /obj/projectile/beam/laser/assault/sharplite
-	r_hand = /obj/item/gun/energy/e_gun/hades
+	r_hand = /obj/item/gun/energy/sharplite/al655
 	projectilesound = 'sound/weapons/gun/laser/e40_las.ogg'
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/rifle/space
@@ -181,7 +181,7 @@
 	faction = list(ROLE_DEATHSQUAD)
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_elite
 	armor_base = /obj/item/clothing/suit/space/hardsuit/ert/sec
-	r_hand = /obj/item/gun/energy/e_gun/hades
+	r_hand = /obj/item/gun/energy/sharplite/al655
 
 /mob/living/simple_animal/hostile/human/nanotrasen/elite/shotgun
 	name = "Vigilitas Response Team"
@@ -197,4 +197,4 @@
 	casingtype = /obj/item/ammo_casing/energy/laser/shotgun/sharplite
 	projectiletype = null
 	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
-	r_hand = /obj/item/gun/energy/laser/iot/lethal
+	r_hand = /obj/item/gun/energy/sharplite/x46/zeta

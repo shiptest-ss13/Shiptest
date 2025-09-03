@@ -446,7 +446,7 @@
 	if(prob(75))
 		r_pocket = pick(/obj/item/flashlight/seclite, /obj/item/assembly/flash/handheld, /obj/item/restraints/handcuffs)
 	if(prob(50))
-		suit_store = pick(/obj/item/gun/energy/e_gun, /obj/item/gun/energy/sharplite/l305)
+		suit_store = pick(/obj/item/gun/energy/sharplite/x12, /obj/item/gun/energy/sharplite/l305)
 	for(var/i = 1 to 3)
 		if(prob(75))
 			backpack_contents += pick_weight(list(

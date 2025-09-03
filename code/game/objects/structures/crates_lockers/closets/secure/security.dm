@@ -31,7 +31,7 @@
 	new /obj/item/radio/headset/heads/captain(src)
 	new /obj/item/clothing/gloves/color/captain(src)
 	new /obj/item/storage/belt/sabre(src)
-	new /obj/item/gun/energy/e_gun(src)
+	new /obj/item/gun/energy/sharplite/x12(src)
 	new /obj/item/door_remote/captain(src)
 	new /obj/item/card/id/captains_spare(src)
 	new /obj/item/storage/photo_album/Captain(src)
@@ -307,7 +307,7 @@
 	..()
 	new /obj/item/gun/energy/ionrifle(src)
 	for(var/i in 1 to 3)
-		new /obj/item/gun/energy/e_gun(src)
+		new /obj/item/gun/energy/sharplite/x12(src)
 	for(var/i in 1 to 3)
 		new /obj/item/gun/energy/laser(src)
 

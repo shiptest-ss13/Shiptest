@@ -39,6 +39,8 @@
 		)
 	)
 
+NO_MAG_GUN_HELPER(automatic/pistol/challenger)
+
 /obj/item/gun/ballistic/automatic/pistol/champion
 	name = "Advantage PHB Champion"
 	desc = "A large, burst-fire machine pistol featuring an impressive recoil compensation assembly, making it substantially more stable and accurate than most machine pistols. Produced only for major Advantage clients. Judging by the markings, this PHB was produced specifically for Vigilitas Interstellar. Chambered in 9x18mm."
@@ -83,7 +85,7 @@
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	default_firemode = FIREMODE_SEMIAUTO
 
-NO_MAG_GUN_HELPER(automatic/pistol/commander)
+NO_MAG_GUN_HELPER(automatic/pistol/champion)
 
 /obj/item/gun/ballistic/automatic/pistol/podium
 	name = "Advantage PH46 Podium"

@@ -251,7 +251,7 @@
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite
 
 /obj/item/storage/guncase/energy/ultima
-	gun_type = /obj/item/gun/energy/e_gun/iot
+	gun_type = /obj/item/gun/energy/sharplite/x46
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite
 
 /obj/item/storage/guncase/energy/etar
@@ -266,7 +266,7 @@
 	gun_type = /obj/item/gun/energy/ionrifle
 
 /obj/item/storage/guncase/hades
-	gun_type = /obj/item/gun/energy/e_gun/hades
+	gun_type = /obj/item/gun/energy/sharplite/al655
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 
 /obj/item/storage/guncase/x01
@@ -376,7 +376,7 @@
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite
 
 /obj/item/storage/guncase/barghest
-	gun_type = /obj/item/gun/energy/e_gun/hades/inteq
+	gun_type = /obj/item/gun/energy/sharplite/al655/inteq
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 
 /* idk */

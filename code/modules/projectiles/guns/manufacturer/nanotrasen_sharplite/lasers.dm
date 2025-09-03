@@ -181,7 +181,6 @@
 /obj/item/gun/energy/sharplite/x26/empty_cell
 	spawn_no_ammo = TRUE
 
-//repath /obj/item/gun/energy/e_gun to
 /obj/item/gun/energy/sharplite/x12
 	name = "SL X12 Variable Energy Carbine"
 	desc = "A short, somewhat hefty carbine that can fire electroplasma or disabler bolts. The X12's non-lethal capability has made it the standard weapon for Vigilitas guards in public-facing and low-threat postings where lethal force is not always appropriate, but the added visibility of a carbine is necessary."
@@ -220,8 +219,7 @@
 	item_state = "x12_inteq"
 
 
-// /obj/item/gun/energy/sharplite/x46
-/obj/item/gun/energy/e_gun/iot
+/obj/item/gun/energy/sharplite/x46
 	name = "\improper SL X46 Variable Energy Blaster"
 	desc = "A heavy, bulky weapon designed to fire multiple electroplasma or disabler bolts, not unlike a ballistic shotgun. Unlike most Sharplite electroplasma weapons, the Blaster's bolts are optimized for maximum impact at short range, and quickly lose cohesion over longer distances. The X46 is devastating in close quarters, and is the favorite weapon of Vigilitas breach teams."
 
@@ -250,9 +248,7 @@
 
 	zoom_amt = SHOTGUN_ZOOM
 
-//repath /obj/item/gun/energy/laser/iot to this
-//repath /obj/item/gun/energy/laser/iot/lethal to this
-/obj/item/gun/energy/e_gun/iot/zeta
+/obj/item/gun/energy/sharplite/x46/zeta
 	name = "\improper SL X-45"
 	desc = "A very old looking X-46, it has no stock or much decoration, and it is from before... Hey! What's this screen next to the mode select button?"
 
@@ -265,8 +261,19 @@
 	var/obj/item/modular_computer/integratedNTOS
 	var/NTOS_type = /obj/item/modular_computer/internal
 
-// /obj/item/gun/energy/sharplite/al655
-/obj/item/gun/energy/e_gun/hades
+/obj/item/gun/energy/sharplite/x46/zeta/Initialize()
+	. = ..()
+	if(NTOS_type)
+		integratedNTOS = new NTOS_type(src)
+		integratedNTOS.physical = src
+
+/obj/item/gun/energy/sharplite/x46/zeta/attack_self(mob/user)
+	. = ..()
+	if(!integratedNTOS)
+		return
+	integratedNTOS.interact(user)
+
+/obj/item/gun/energy/sharplite/al655
 	name = "SL AL655 Assault Plasma Rifle"
 	desc = "A powerful electroplasma gun with a rapid repeater assembly and many capacitors. The APR rapidly fires heavy electroplasma bolts, and is the standard weapon of Vigilitas's paramilitary division. Its cost and power have made the APR somewhat exclusive, and it is rarely seen outside of big-budget corporate clients."
 	icon_state = "al655"
@@ -298,7 +305,7 @@
 	wield_slowdown = HEAVY_LASER_RIFLE_SLOWDOWN
 	spread_unwielded = 20
 
-/obj/item/gun/energy/e_gun/hades/inteq
+/obj/item/gun/energy/sharplite/al655/inteq
 	name = "PP20 “Barghest” APR"
 	desc = "A Sharplite Assault Plasma Rifle refinished in Inteq Risk Management Group colors. A powerful weapon that can deliver rapid-fire, armor-penetrating electroplasma bolts. Most likely stolen by disgruntled Vigilitas employees at the end of the ICW or raided from a cache, as new APRs would be nearly impossible for IRMG to obtain under normal circumstances."
 
@@ -310,8 +317,6 @@
 	icon_state = "al655_inteq"
 	item_state = "al655_inteq"
 
-
-//REMEMBER TO REMOVE /obj/item/gun/energy/e_gun/nuclear FROM rockplanet_mining_installation.dmm
 
 /obj/item/gun/energy/sharplite/al607
 	name = "SL AL607 Plasma Accelerator"
@@ -350,9 +355,8 @@
 	zoom_out_amt = 5
 
 
-// /obj/item/gun/energy/laser/hitscanpistol TO THIS
 /obj/item/gun/energy/sharplite/x11
-	name = "X11 Advanced Stopping Pistol"
+	name = "X11 Advanced Stopping Pistol" //wayland is better
 	desc = "An advanced energy revolver with the capacity to shoot both disabler and lethal lasers, as well as futuristic safari nets."
 	icon_state = "bsgun"
 	item_state = "gun"

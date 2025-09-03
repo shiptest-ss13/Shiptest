@@ -180,40 +180,6 @@
 /obj/item/gun/energy/laser/redtag/hitscan
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/redtag/hitscan)
 
-/obj/item/gun/energy/laser/iot
-	name = "\improper SL E-255 Ultimate"
-	desc = "An energy shotgun with an integrated computer system for surveillance and statistics tracking."
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
-
-	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
-	icon_state = "iotshotgun"
-	item_state = "shotgun_combat"
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/shotgun)
-	w_class = WEIGHT_CLASS_BULKY
-	var/obj/item/modular_computer/integratedNTOS
-	var/NTOS_type = /obj/item/modular_computer/internal
-	manufacturer = MANUFACTURER_SHARPLITE_NEW
-
-/obj/item/gun/energy/laser/iot/Initialize()
-	. = ..()
-	if(NTOS_type)
-		integratedNTOS = new NTOS_type(src)
-		integratedNTOS.physical = src
-
-/obj/item/gun/energy/laser/iot/attack_self(mob/user)
-	. = ..()
-	if(!integratedNTOS)
-		return
-	integratedNTOS.interact(user)
-
-/obj/item/gun/energy/laser/iot/lethal
-	desc = "An energy shotgun with an integrated computer system for surveillance and statistics tracking. This one appears to be modified to fire lethal beams."
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/shotgun)
-
 /obj/item/gun/energy/laser/hitscanpistol
 	name = "experimental laser gun"
 	desc = "A highly experimental laser gun, with unknown inner workings. It has no markings besides a \"GROUP A\" inscription on the barrel."
