@@ -282,8 +282,8 @@
 /* NT */
 
 /datum/supply_pack/magazine/wt550_mag
-	name = "WT-550 Auto Rifle Magazine Crate"
-	desc = "Contains a 20-round magazine for the WT-550 Auto Rifle. Each magazine is designed to facilitate rapid tactical reloads."
+	name = "Resolution Auto Rifle Magazine Crate"
+	desc = "Contains a 20-round magazine for the Resolution Auto Rifle. Each magazine is designed to facilitate rapid tactical reloads."
 	cost = 300
 	contains = list(/obj/item/ammo_box/magazine/wt550m9/empty)
 	faction = /datum/faction/nt
