@@ -191,6 +191,6 @@
 	metabolization_rate = 0.15 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 
-/datum/reagent/medicine/puce_essence/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/neoxanthin/on_mob_life(mob/living/carbon/M)
 	if(prob(80))
 		M.adjustToxLoss(-1*REM, 0)
