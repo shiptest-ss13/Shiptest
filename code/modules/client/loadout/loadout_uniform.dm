@@ -35,7 +35,7 @@
 //Shorts
 
 /datum/gear/uniform/athshorts
-	display_name = "athletic shorts"
+	display_name = "athletic shorts, recolorable"
 	path = /obj/item/clothing/under/shorts
 
 /datum/gear/uniform/dolphinshorts
