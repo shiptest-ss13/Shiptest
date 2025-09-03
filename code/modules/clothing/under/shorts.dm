@@ -33,6 +33,10 @@
 	name = "purple athletic shorts"
 	icon_state = "purpleshorts"
 
+/obj/item/clothing/under/shorts/pink
+	name = "pink athletic shorts"
+	icon_state = "pinkshorts"
+
 /obj/item/clothing/under/shorts/cookjorts
 	name = "grilling shorts"
 	desc = "For when all you want in life is to grill for god's sake!"
