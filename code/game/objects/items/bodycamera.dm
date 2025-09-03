@@ -1,4 +1,4 @@
-#define BODYCAM_UPDATE_BUFFER 10 //1 second
+#define BODYCAM_UPDATE_BUFFER 1 SECONDS
 
 /obj/item/bodycamera
 	name = "body camera"
