@@ -207,7 +207,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/podium)
 	item_state = "inteq_generic"
 	manufacturer = MANUFACTURER_INTEQ
 
-NO_MAG_GUN_HELPER(automatic/pistol/commander/inteq)
+NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 
 /obj/item/gun/ballistic/revolver/rhino
 	name = "Advantage Rhino"
