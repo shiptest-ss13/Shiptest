@@ -919,7 +919,7 @@
 
 /mob/living/carbon/proc/can_defib()
 	var/obj/item/organ/heart = getorgan(/obj/item/organ/heart)
-	if (hellbound || HAS_TRAIT(src, TRAIT_HUSK))
+	if (HAS_TRAIT(src, TRAIT_HUSK))
 		return
 	if((getBruteLoss() >= MAX_REVIVE_BRUTE_DAMAGE) || (getFireLoss() >= MAX_REVIVE_FIRE_DAMAGE))
 		return

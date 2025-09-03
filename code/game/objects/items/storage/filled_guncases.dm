@@ -379,6 +379,10 @@
 	gun_type = /obj/item/gun/energy/sharplite/al655/inteq
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 
+/obj/item/storage/guncase/bdm50
+	gun_type = /obj/item/gun/ballistic/automatic/smg/resolution/inteq
+	mag_type = /obj/item/ammo_box/magazine/wt550m9
+
 /* idk */
 
 /obj/item/storage/guncase/pistol/disposable

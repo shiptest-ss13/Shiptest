@@ -461,6 +461,16 @@
 	faction_discount = 10
 	faction = /datum/faction/nt
 
+/datum/supply_pack/gun/bdm50
+	name = "BDM-50 PDWW Crate"
+	desc = "Contains a compact automatic personal defense weapon chambered in 4.6x30mm, in use by the IRMG."
+	cost = 3000
+	contains = list(/obj/item/storage/guncase/bdm50)
+	crate_name = "PDW crate"
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/gun/champion
 	name = "PHB Champion Machinepistol Crate"
 	desc = "Contains a compact 9x18mm burst fire machine pistol produced by Nanotrasen advantage. For NT employee use only."

@@ -201,7 +201,7 @@
 		desc = "Microwave is taken by a fey mood! It has cooked an exceptional plump pie!"
 		food_reagents = list(
 			/datum/reagent/consumable/nutriment = 11,
-			/datum/reagent/medicine/omnizine = 5,
+			/datum/reagent/medicine/panacea = 5,
 			/datum/reagent/consumable/nutriment/vitamin = 4,
 		)
 	. = ..()

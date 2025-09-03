@@ -337,9 +337,8 @@
 		/datum/reagent/drug/mammoth = 5,
 		/datum/reagent/drug/aranesp = 5,
 		/datum/reagent/drug/pumpup = 10,
-		/datum/reagent/medicine/omnizine = 10,
+		/datum/reagent/medicine/panacea = 10,
 		/datum/reagent/medicine/earthsblood = 15,
-		/datum/reagent/medicine/omnizine/protozine = 15
 	)
 
 /obj/item/melee/sword/greyking/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
