@@ -97,7 +97,12 @@
 	mid_length = 0.75 SECONDS
 	end_sound = 'sound/weather/rain/rain_end.ogg'
 	volume = 50
+	start_length = 6 SECONDS
+	start_sound = 'sound/weather/rain/rain_start.ogg'
+
+/datum/looping_sound/weather/rain/no_start
 	start_length = null
+	start_sound = null
 
 /datum/looping_sound/weather/rain/indoors
 	volume = 30
@@ -120,7 +125,7 @@
 		'sound/weather/rain/rain_weak_mid_04.ogg' = 1,
 		'sound/weather/rain/rain_weak_mid_05.ogg' = 1
 		)
-	start_sound = 'sound/weather/rain/rain_start.ogg'
+	start_sound = 'sound/weather/rain/rain_weak_start.ogg'
 	start_length = 12 SECONDS
 	volume = 40
 
@@ -141,7 +146,7 @@
 		'sound/weather/rain/storm_outdoors_2.ogg' = 1
 		)
 	mid_length = 10.03 SECONDS // The lengths for the files vary, but the longest is ten seconds, so this will make it sound like intermittent wind.
-	start_sound = 'sound/weather/rain/rain_start.ogg'
+	start_sound = 'sound/weather/rain/rain_weak_start.ogg'
 	start_length = null
 	end_sound = null
 	volume = 50

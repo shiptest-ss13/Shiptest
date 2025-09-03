@@ -45,7 +45,7 @@
 	end_overlay = "rain"
 
 	sound_active_inside = /datum/looping_sound/weather/rain/indoors
-	sound_active_outside = /datum/looping_sound/weather/rain
+	sound_active_outside = /datum/looping_sound/weather/rain/no_start
 	sound_weak_inside = /datum/looping_sound/weather/rain/weak/indoors
 	sound_weak_outside = /datum/looping_sound/weather/rain/weak
 
@@ -99,7 +99,7 @@
 	affects_underground = FALSE
 
 	sound_active_inside = /datum/looping_sound/weather/rain/indoors
-	sound_active_outside = /datum/looping_sound/weather/rain
+	sound_active_outside = /datum/looping_sound/weather/rain/no_start
 	sound_weak_inside = /datum/looping_sound/weather/rain/weak/indoors
 	sound_weak_outside = /datum/looping_sound/weather/rain/weak
 
@@ -176,7 +176,7 @@
 	end_overlay = "rain"
 
 	sound_active_inside = /datum/looping_sound/weather/rain/indoors
-	sound_active_outside = /datum/looping_sound/weather/rain
+	sound_active_outside = /datum/looping_sound/weather/rain/no_start
 	sound_weak_inside = /datum/looping_sound/weather/rain/weak/indoors
 	sound_weak_outside = /datum/looping_sound/weather/rain/weak
 
