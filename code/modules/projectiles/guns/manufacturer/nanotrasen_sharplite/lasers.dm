@@ -346,6 +346,7 @@
 
 	slot_flags = ITEM_SLOT_BACK
 
+	spread = -4
 	spread_unwielded = 40
 
 	wield_slowdown = SNIPER_SLOWDOWN

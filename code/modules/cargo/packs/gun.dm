@@ -461,6 +461,16 @@
 	faction_discount = 10
 	faction = /datum/faction/nt
 
+/datum/supply_pack/gun/bdm50
+	name = "BDM50 PDW Crate"
+	desc = "Contains a compact Automatic personal defense weapon chambered in 4.6x30mm, in use by the IRMG."
+	cost = 3000
+	contains = list(/obj/item/storage/guncase/bdm50)
+	crate_name = "PDW crate"
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/gun/champion
 	name = "PHB Champion Machinepistol Crate"
 	desc = "Contains a compact 9x18mm burst fire machine pistol produced by Nanotrasen advantage. For NT employee use only."
@@ -810,6 +820,7 @@
 	faction = /datum/faction/nt
 	faction_discount = 0
 	faction_locked = TRUE
+
 /datum/supply_pack/gun/saluki
 	name = "SSG-08 Saluki Sniper Rifle Crate"
 	desc = "Contains a military sniper rifle equipped with an 8x sniper scope, fitted by the Inteq Artificer Division. Chambered in the powerful 6.5mm CLIP cartridge."

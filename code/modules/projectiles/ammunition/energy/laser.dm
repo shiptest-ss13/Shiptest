@@ -5,7 +5,7 @@
 /obj/item/ammo_casing/energy/laser/sharplite
 	projectile_type = /obj/projectile/beam/laser/sharplite
 	select_name = "kill"
-	e_cost = 800  //8 per NT mini cell 12 per regular cell 25 per upgraded cell
+	e_cost = 555
 
 /obj/item/ammo_casing/energy/laser/sharplite/efficent
 	e_cost = 700  //9 per NT mini cell
