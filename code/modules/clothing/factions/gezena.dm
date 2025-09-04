@@ -168,7 +168,7 @@
 //Hats
 
 /obj/item/clothing/head/gezena
-	name = "\improper PGFN Cap"
+	name = "\improper navy Cap"
 	desc = "The standard cap of the PGF military, in Navy colors."
 	icon = 'icons/obj/clothing/faction/gezena/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/head.dmi'
@@ -194,7 +194,7 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/head/gezena/marine
-	name = "navy cap"
+	name = "marine cap"
 	desc = "The standard cap of the PGF military, in Marine Corps colors."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
