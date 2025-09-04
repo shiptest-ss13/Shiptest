@@ -1897,7 +1897,6 @@
 	},
 /obj/effect/mapping_helpers/crate_shelve,
 /obj/item/stack/sheet/mineral/uranium/ten,
-/obj/item/stack/sheet/mineral/plasma/ten,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage/equip)
@@ -1967,25 +1966,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/clothing/suit/space/hardsuit/medical,
-/obj/item/tank/internals/oxygen,
-/obj/item/clothing/mask/gas,
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line{
 	dir = 10
 	},
-/obj/structure/table/reinforced,
-/obj/structure/closet/wall/med/directional/south{
-	populate = 0;
-	name = "Medical Supplies"
-	},
 /obj/machinery/airalarm/directional/west,
-/obj/item/storage/box/syringes,
-/obj/item/reagent_containers/glass/bottle/indomide,
-/obj/item/storage/pill_bottle/charcoal,
-/obj/effect/spawner/random/medical/medkit,
-/obj/item/storage/firstaid/medical,
-/obj/item/reagent_containers/chem_pack/dimorlin,
+/obj/machinery/suit_storage_unit/inherit/industrial,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "BI" = (
@@ -2030,7 +2015,6 @@
 "Ce" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/box/syringes,
-/obj/item/reagent_containers/glass/bottle/bicaridine,
 /obj/item/storage/pill_bottle/charcoal,
 /obj/effect/spawner/random/medical/medkit,
 /obj/item/storage/firstaid/medical,
@@ -2039,6 +2023,8 @@
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line{
 	dir = 9
 	},
+/obj/item/reagent_containers/glass/bottle/curare,
+/obj/item/reagent_containers/glass/bottle/curare,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Cq" = (
