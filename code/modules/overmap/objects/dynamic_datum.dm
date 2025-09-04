@@ -252,7 +252,9 @@
 				. += capitalize(pick(GLOB.alphabet))
 			. += "-"
 			. += "[pick(rand(1,999))]"
-		if(3 to 7)
+		if(3 to 5)
+			. += "[pick(GLOB.planet_names)]"
+		if(5 to 7)
 			. += "[pick(GLOB.planet_names)] \Roman[rand(1,9)]"
 		if(8 to 11)
 			. += "[pick(GLOB.planet_prefixes)] [pick(GLOB.planet_names)]"
