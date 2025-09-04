@@ -1,12 +1,22 @@
 import { marked } from 'marked';
 import { useBackend, useLocalState } from '../backend';
-import { Input, Stack, Box, Section, Button } from '../components';
+import {
+  Stack,
+  Box,
+  Section,
+  Button,
+  TextArea,
+  NoticeBox,
+} from '../components';
 import { Window } from '../layouts';
 import { walkTokens } from './common/Markdown';
 
 type MarkdownEditorContext = {
   editorName: string;
   inputText: string;
+  placeholder: string;
+  maxLength: string;
+  prompt: string;
 };
 
 export const MarkdownEditor = (props, context) => {
@@ -27,16 +37,20 @@ export const MarkdownEditor = (props, context) => {
   return (
     <Window
       title={data.editorName + (unchanged ? '' : ' (Changed)')}
-      width={500}
-      height={300}
+      width={750}
+      height={500}
     >
       <Window.Content>
+        {data.prompt && <NoticeBox info>{data.prompt}</NoticeBox>}
         <Stack fill>
           <Stack.Item grow>
-            <Input
-              multiline
+            <TextArea
+              autoFocus
+              height={'100%'}
               value={data.inputText}
-              onChange={(value) => setText(value)}
+              maxLength={data.maxLength}
+              placeholder={data.placeholder}
+              onInput={(_, value: string) => setText(value)}
             />
           </Stack.Item>
           <Stack.Item grow>
@@ -52,13 +66,17 @@ export const MarkdownEditor = (props, context) => {
                     color="good"
                     onClick={() => act('saveInput', { text: text })}
                     disabled={unchanged}
-                  />
+                  >
+                    Save
+                  </Button>
                   <Button
                     icon="undo"
                     color="bad"
                     onClick={() => setText(data.inputText)}
                     disabled={unchanged}
-                  />
+                  >
+                    Reset
+                  </Button>
                 </>
               }
             >

@@ -1747,7 +1747,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						age = clamp(round(text2num(new_age)), pref_species.species_age_min, pref_species.species_age_max)
 
 				if("flavor_text")
-					tgui_markdown(user, "Flavor Text", CALLBACK(src, PROC_REF(set_flavortext)), features["flavor_text"])
+					tgui_markdown(user, "Flavor Text", CALLBACK(src, PROC_REF(set_flavortext)), features["flavor_text"], MAX_FLAVOR_LEN, "A snippet of text shown when others examine you, describing what you may look like. This can also be used for OOC notes. The first line (up to 100 characters) will be shown directly on examine, while the rest will need to be opened in a separate window.", "Enter flavortext for [real_name].")
+					//Async prompt so no need to refresh
+					return TRUE
 
 				if("flavor_portrait")
 					var/url = input(user, "A URL to an image that will be shown when others examine you.", "Flavor Portrait", features["flavor_portrait"]) as text|null
@@ -2703,6 +2705,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		else
 			custom_names[name_id] = sanitized_name
 
-/datum/preferences/proc/set_flavortext(result)
-	if(result && result != features["flavor_text"])
-		features["flavor_text"] = result
+/datum/preferences/proc/set_flavortext(user, result)
+	//Only prompt them if they had flavor text to begin with
+	if(!result && (!features["flavor_text"] || tgui_alert(user, "Are you sure you want to clear your flavour text?", "Character Preference", list("Yes", "No")) != "Yes"))
+		return
+	features["flavor_text"] = result
+	ShowChoices(user)

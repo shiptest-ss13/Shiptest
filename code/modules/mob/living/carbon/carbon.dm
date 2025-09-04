@@ -261,9 +261,12 @@
 		paper_note.show_through_camera(usr)
 
 	if(href_list["flavor_more"])
-		var/datum/browser/popup = new(usr, "[name]'s flavor text", "[name]'s Flavor Text (expanded)", 500, 200)
-		popup.set_content(flavor_text_html)
-		popup.open()
+		var/datum/component/flavor_text/ft = GetComponent(/datum/component/flavor_text)
+
+		if(!ft)
+			return
+
+		ft.ui_interact(usr)
 		return
 
 /mob/living/carbon/on_fall()
@@ -1316,23 +1319,32 @@
 	flavor_text = new_text
 	flavor_text_html = parsemarkdown_basic(new_text)
 
+	var/list/split = splittext(flavor_text, "\n")
+	flavor_snip = replacetext(split[1], regex("\[_*#\]"), "")
+
+	if(length(flavor_snip) > MAX_SHORTFLAVOR_LEN)
+		flavor_snip = "[copytext(flavor_snip, 1, MAX_SHORTFLAVOR_LEN)]... <a href=\"byond://?src=[text_ref(src)];flavor_more=1\">More...</a>"
+	else if(length(flavor_text) > MAX_SHORTFLAVOR_LEN)
+		flavor_snip = "[flavor_snip] <a href=\"byond://?src=[text_ref(src)];flavor_more=1\">More...</a>"
+
 	if(findtext(new_portrait, /datum/component/flavor_text::flavortext_regex))
 		//TODO: remove once I decide whether to stick to the TGUI interface or not
-		flavor_text_html += "<img src='[new_portrait]' style='float: right' width=200 />"
+		flavor_text_html = "<div width=50%>[flavor_text_html]</div><img src='[new_portrait]' style='float: right' width=50%></img>"
 
 	if(dna)
 		dna.features["flavor_text"] = flavor_text
 		dna.features["flavor_portrait"] = new_portrait
 		dna.features["flavor_source"] = new_source
 
+/mob/living/carbon/proc/flavor_text_callback(user, new_text)
+	set_flavor_text(new_text, dna.features["flavor_portrait"], dna.features["flavor_source"])
+
 /mob/living/carbon/verb/change_flavor_text()
 	set name = "Change Flavor Text"
 	set category = "IC"
-	set src in usr
+	set desc = "Temporarily change your character's flavor text."
 
-	var/new_text = stripped_multiline_input(usr, "A snippet of text shown when others examine you, describing what you may look like. This can also be used for OOC notes.", "Flavor Text", html_decode(flavor_text), MAX_FLAVOR_LEN, TRUE)
-
-	set_flavor_text(new_text)
+	tgui_markdown(usr, "Flavor Text", CALLBACK(src, PROC_REF(flavor_text_callback)), flavor_text, MAX_FLAVOR_LEN, "A snippet of text shown when others examine you, describing what you may look like. This can also be used for OOC notes. The first line (up to 100 characters) will be shown directly on examine, while the rest will need to be opened in a separate window. THIS CHANGE IS TEMPORARY.", "Enter flavortext for [real_name].")
 
 /mob/living/carbon/get_fire_overlay(stacks, on_fire)
 	var/fire_icon = "[dna?.species.fire_overlay || "human"]_[stacks > MOB_BIG_FIRE_STACK_THRESHOLD ? "big_fire" : "small_fire"]"
