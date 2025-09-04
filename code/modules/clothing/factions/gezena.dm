@@ -101,7 +101,7 @@
 
 /obj/item/clothing/suit/armor/gezena/marine
 	name = "\improper composite marine vest"
-	desc = "Heavy composite plating in a striking bright green, with sturdy shoulder pads for extra protection. Marines can handle the weight"
+	desc = "Heavy composite plating in a striking bright green, with sturdy shoulder pads for extra protection."
 	icon_state = "marinevest"
 	item_state = "marinevest"
 	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20) //the laser gun country should probably have laser armor
@@ -113,7 +113,7 @@
 
 /obj/item/clothing/suit/space/gezena
 	name = "navy utility suit"
-	desc = "With bright hardened plating covering the body and tail, the Rakalla utility suit stands firmly between you and the void of space."
+	desc = "With bright hardened plating covering the body and tail, the 'Rakalla' utility suit stands firmly between you and the void of space."
 	icon = 'icons/obj/clothing/faction/gezena/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/suits.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
@@ -132,7 +132,7 @@
 
 /obj/item/clothing/suit/space/gezena/marine
 	name = "composite combat suit"
-	desc = "With striking bright green composite plating, the Lataka combat suit threatens any danger with the promise of protection."
+	desc = "With striking bright green composite plating, the 'Lataka' combat suit threatens any danger with the promise of protection."
 	icon_state = "marinespacesuit"
 	item_state = "marinespace"
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
@@ -168,7 +168,7 @@
 //Hats
 
 /obj/item/clothing/head/gezena
-	name = "\improper navy Cap"
+	name = "\improper navy cap"
 	desc = "The standard cap of the PGF military, in Navy colors."
 	icon = 'icons/obj/clothing/faction/gezena/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/head.dmi'
@@ -221,7 +221,7 @@
 	item_state = "bluecloth"
 
 /obj/item/clothing/head/gezena/flap/engi
-	name = "\improper PGF engineering Betzu-il cap"
+	name = "\improper navy engineering flap cap"
 	desc = "The standard cap of the PGF military. Features a neck-covering flap for harsher environments. The coloring indicates the wearer as an engineering specialist."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
