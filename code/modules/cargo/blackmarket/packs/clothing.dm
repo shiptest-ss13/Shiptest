@@ -212,8 +212,8 @@
 	return B
 
 /datum/blackmarket_item/clothing/gezena_armor
-	name = "AR-98 Armor Set"
-	desc = "A genuine set of Arbitrator body armor used by the PGF Marine Corps. We even tossed in one of their little mask thingies. If a military guy in a cape comes by, play dumb."
+	name = "Gezenan Composite Armor Set"
+	desc = "A genuine set of composite body armor used by the PGF Marine Corps. We even tossed in one of their little mask thingies. If a military guy in a cape comes by, play dumb."
 	item =  /obj/item/storage/backpack/duffelbag/sec
 
 	cost_min = 750
