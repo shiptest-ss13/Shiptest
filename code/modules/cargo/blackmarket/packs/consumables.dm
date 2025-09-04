@@ -43,7 +43,7 @@
 
 /datum/blackmarket_item/consumable/syndie_cigs
 	name = "Syndicate Cigarettes"
-	desc = "Who said smoking was bad for you? These omnizine laced cigarettes will have you feeling like a million bucks!"
+	desc = "Who said smoking was bad for you? These Panacea laced cigarettes will have you feeling like a million bucks!"
 	item = /obj/item/storage/fancy/cigarettes/cigpack_syndicate
 
 	cost_min = 50
@@ -77,7 +77,7 @@
 /datum/blackmarket_item/consumable/stimpack
 	name = "Stimpack"
 	desc = "A quick inject medipen loaded with a cocktail of powerful stimulants. Side effects may include nasuea, heartburn, constipation, weight loss, increased blood pressure, kidney stones, liver damage, mood swings, mania, anemia, weight gain, total organ failure, runny nose and minor retinal irritation."
-	item = /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor
+	item = /obj/item/reagent_containers/hypospray/medipen/stimpack/crisis
 
 	stock_min = 4
 	stock_max = 6
@@ -292,6 +292,16 @@
 	cost_max = 800
 	stock_max = 6
 	availability_prob = 30
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/consumable/nesah
+	name = "Nesah Injector"
+	desc = "Other day some dude with black hair called us up and started talkin about some grand plan. Grand plan to sell merch, we assume, because he offloaded way too fuckin many of these injectors. Our chems guy said it's just a healing injector, so go fuckin wild. "
+	item = /obj/item/reagent_containers/hypospray/medipen/netzach
+	cost_min = 500
+	cost_max = 1000
+	stock_max = 12
+	availability_prob = 50
 	spawn_weighting = FALSE
 
 /datum/blackmarket_item/consumable/finobranc

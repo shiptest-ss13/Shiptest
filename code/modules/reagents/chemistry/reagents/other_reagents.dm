@@ -292,51 +292,9 @@
 		M.adjustFireLoss(2, 0) // burns
 	..()
 
-/datum/reagent/fuel/unholywater		//if you somehow managed to extract this from someone, dont splash it on yourself and have a smoke
-	name = "Unholy Water"
-	description = "Something that shouldn't exist on this plane of existence."
-	taste_description = "suffering"
-
-/datum/reagent/fuel/unholywater/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if((method == TOUCH || method == SMOKE) || method == VAPOR)
-		M.reagents.add_reagent(type,reac_volume/4)
-		return
-	return ..()
-
-/datum/reagent/fuel/unholywater/on_mob_life(mob/living/carbon/M)
-	// Will deal about 90 damage when 50 units are thrown
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3, 150)
-	M.adjustToxLoss(2, 0)
-	M.adjustFireLoss(2, 0)
-	M.adjustOxyLoss(2, 0)
-	M.adjustBruteLoss(2, 0)
-	holder.remove_reagent(type, 1)
-	return TRUE
-
-/datum/reagent/hellwater			//if someone has this in their system they've really pissed off an eldrich god
-	name = "Hell Water"
-	description = "YOUR FLESH! IT BURNS!"
-	taste_description = "burning"
-	accelerant_quality = 20
-	process_flags = ORGANIC | SYNTHETIC
-
-/datum/reagent/hellwater/on_mob_life(mob/living/carbon/M)
-	M.fire_stacks = min(5,M.fire_stacks + 3)
-	M.IgniteMob()			//Only problem with igniting people is currently the commonly availible fire suits make you immune to being on fire
-	M.adjustToxLoss(1, 0)
-	M.adjustFireLoss(1, 0)		//Hence the other damages... ain't I a bastard?
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5, 150)
-	holder.remove_reagent(type, 1)
-
-/datum/reagent/medicine/omnizine/godblood
-	name = "Godblood"
-	description = "Slowly heals all damage types. Has a rather high overdose threshold. Glows with mysterious power."
-	overdose_threshold = 150
-
-///Used for clownery
 /datum/reagent/lube
-	name = "Space Lube"
-	description = "Lubricant is a substance introduced between two moving surfaces to reduce the friction and wear between them. giggity."
+	name = "Industrial Lubricant"
+	description = "Lubricant is a substance introduced between two moving surfaces to reduce the friction and wear between them."
 	color = "#009CA8" // rgb: 0, 156, 168
 	taste_description = "cherry" // by popular demand
 	var/lube_kind = TURF_WET_LUBE ///What kind of slipperiness gets added to turfs.
@@ -346,12 +304,6 @@
 		return
 	if(reac_volume >= 1)
 		T.MakeSlippery(lube_kind, 15 SECONDS, min(reac_volume * 2 SECONDS, 120))
-
-///Stronger kind of lube. Applies TURF_WET_SUPERLUBE.
-/datum/reagent/lube/superlube
-	name = "Super Duper Lube"
-	description = "This \[REDACTED\] has been outlawed after the incident on \[DATA EXPUNGED\]."
-	lube_kind = TURF_WET_SUPERLUBE
 
 /datum/reagent/spraytan
 	name = "Spray Tan"
@@ -436,33 +388,6 @@
 	to_chat(H, span_warning("<b>You grit your teeth in pain as your body rapidly mutates!</b>"))
 	H.visible_message("<b>[H]</b> suddenly transforms!")
 	randomize_human(H)
-
-/datum/reagent/aslimetoxin
-	name = "Advanced Mutation Toxin"
-	description = "An advanced corruptive toxin produced by slimes."
-	color = "#13BC5E" // rgb: 19, 188, 94
-	taste_description = "slime"
-
-/datum/reagent/aslimetoxin/expose_mob(mob/living/L, method=TOUCH, reac_volume)
-	if(method != TOUCH && method != SMOKE)
-		L.ForceContractDisease(new /datum/disease/transformation/slime(), FALSE, TRUE)
-
-/datum/reagent/gluttonytoxin
-	name = "Gluttony's Blessing"
-	description = "An advanced corruptive toxin produced by something terrible."
-	color = "#5EFF3B" //RGB: 94, 255, 59
-	can_synth = FALSE
-	taste_description = "decay"
-
-/datum/reagent/gluttonytoxin/expose_mob(mob/living/L, method=TOUCH, reac_volume)
-	L.ForceContractDisease(new /datum/disease/transformation/morph(), FALSE, TRUE)
-
-/datum/reagent/serotrotium
-	name = "Serotrotium"
-	description = "A chemical compound that promotes concentrated production of the serotonin neurotransmitter in humans."
-	color = "#202040" // rgb: 20, 20, 40
-	metabolization_rate = 0.25 * REAGENTS_METABOLISM
-	taste_description = "bitterness"
 
 /datum/reagent/oxygen
 	name = "Oxygen"
@@ -1491,12 +1416,7 @@
 		myseed.adjust_weed_chance(round(chems.get_reagent_amount(type) * 0.3))
 		myseed.adjust_production(-round(chems.get_reagent_amount(type) * 0.075))
 
-
-
-
 // GOON OTHERS
-
-
 
 /datum/reagent/fuel/oil
 	name = "Oil"
@@ -2319,13 +2239,13 @@
 
 /datum/reagent/crystal_reagent
 	name = "Crystal Reagent"
-	description = "A strange crystal substance. Heals faster than omnizine."
+	description = "A strange crystalline substance with an impressive healing factor."
 	reagent_state = LIQUID
 	color = "#1B9681"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 20
-	taste_description = "rocks"
-	var/healing = 0.8
+	taste_description = "sharp rocks"
+	var/healing = 2
 
 /datum/reagent/crystal_reagent/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-healing*REM, 0)
@@ -2395,12 +2315,11 @@
 	)
 /datum/reagent/three_eye/on_mob_metabolize(mob/living/L)
 	. = ..()
-	//addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, add_client_colour), /datum/client_colour/thirdeye), 1.5 SECONDS)
 	L.add_client_colour(/datum/client_colour/thirdeye)
 	if(L.client?.holder) //You are worthy.
 		worthy = TRUE
-		L.visible_message(span_danger("<font size = 6>Grips their head and dances around, collapsing to the floor!</font>"), \
-		span_danger("<font size = 6>Visions of a realm BYOND your own flash across your eyes, before it all goes black...</font>"))
+		L.visible_message(span_danger("[L] grips their head and dances around, collapsing to the floor!"), \
+		span_danger("Visions of a realm BYOND your own flash across your eyes, before it all goes black..."))
 		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, set_sleeping), 40 SECONDS), 10 SECONDS)
 		addtimer(CALLBACK(L.reagents, TYPE_PROC_REF(/datum/reagents, remove_reagent), src.type, src.volume,), 10 SECONDS)
 		return
@@ -2420,7 +2339,7 @@
 		H.seizure()
 		H.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(2, 4))
 	if(prob(7))
-		to_chat(M, span_warning("<font size = [rand(1,3)]>[pick(dose_messages)]</font>"))
+		to_chat(M, span_warning("[pick(dose_messages)]"))
 
 /datum/reagent/three_eye/overdose_start(mob/living/M)
 	on_mob_metabolize(M) //set worthy
