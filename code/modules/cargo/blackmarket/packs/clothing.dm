@@ -212,8 +212,8 @@
 	return B
 
 /datum/blackmarket_item/clothing/gezena_armor
-	name = "Raksha-Plating vest"
-	desc = "Genuine armor vests used by the PGF Marine Corp. If a military guy in a cape comes by, play dumb."
+	name = "Gezenan Composite Armor Set"
+	desc = "A genuine set of composite body armor used by the PGF Marine Corps. We even tossed in one of their little mask thingies. If a military guy in a cape comes by, play dumb."
 	item =  /obj/item/storage/backpack/duffelbag/sec
 
 	cost_min = 750
@@ -227,6 +227,8 @@
 	B.desc = "A beat up looking duffel with a frayed embroided nametag."
 	new /obj/item/clothing/suit/armor/gezena/marine(B)
 	new /obj/item/clothing/head/helmet/gezena(B)
+	new /obj/item/clothing/mask/breath/pgfmask(B)
+	new /obj/item/clothing/glasses/sunglasses/pgf(B)
 	return B
 
 /datum/blackmarket_item/clothing/full_spacesuit_set
