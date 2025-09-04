@@ -274,7 +274,7 @@
 	integratedNTOS.interact(user)
 
 /obj/item/gun/energy/sharplite/al655
-	name = "SL AL655 Assault Plasma Rifle"
+	name = "SL AL655 “Hades” Assault Plasma Rifle"
 	desc = "A powerful electroplasma gun with a rapid repeater assembly and many capacitors. The APR rapidly fires heavy electroplasma bolts, and is the standard weapon of Vigilitas's paramilitary division. Its cost and power have made the APR somewhat exclusive, and it is rarely seen outside of big-budget corporate clients."
 	icon_state = "al655"
 	item_state = "al655"

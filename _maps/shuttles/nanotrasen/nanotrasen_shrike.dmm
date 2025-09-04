@@ -1427,22 +1427,6 @@
 	pixel_x = -10;
 	pixel_y = -4
 	},
-/obj/item/ammo_box/magazine/smgm9mm{
-	pixel_x = 11;
-	pixel_y = 8
-	},
-/obj/item/ammo_box/magazine/smgm9mm{
-	pixel_x = 11;
-	pixel_y = 8
-	},
-/obj/item/ammo_box/magazine/smgm9mm{
-	pixel_x = 11;
-	pixel_y = 8
-	},
-/obj/item/storage/toolbox/ammo/c9mm{
-	pixel_y = -4;
-	pixel_x = -2
-	},
 /obj/item/storage/toolbox/ammo/c9mm{
 	pixel_y = -4;
 	pixel_x = 7
@@ -1459,6 +1443,13 @@
 	pixel_x = -9;
 	pixel_y = 8
 	},
+/obj/item/storage/toolbox/ammo/shotgun{
+	pixel_x = 7;
+	pixel_y = 9
+	},
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "rG" = (
@@ -2145,8 +2136,9 @@
 	dir = 4
 	},
 /obj/item/gun/energy/sharplite/l305,
-/obj/item/gun/ballistic/automatic/smg/expedition,
 /obj/item/gun/ballistic/automatic/pistol/challenger,
+/obj/item/gun/ballistic/shotgun/automatic/negotiator,
+/obj/item/gun/ballistic/automatic/pistol/champion/no_mag,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Bt" = (

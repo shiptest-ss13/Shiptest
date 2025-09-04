@@ -310,19 +310,28 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
-		/obj/item/attachment/foldable_stock/resolution
+		/obj/item/attachment/foldable_stock/resolution,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/ammo_counter
 	)
 
 	default_attachments = list(/obj/item/attachment/foldable_stock/resolution)
 
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
-		ATTACHMENT_SLOT_STOCK = 1
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_STOCK = 1,
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 32,
 			"y" = 23,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 27,
+			"y" = 17,
 		),
 		ATTACHMENT_SLOT_STOCK = list(
 			"x" = 17,

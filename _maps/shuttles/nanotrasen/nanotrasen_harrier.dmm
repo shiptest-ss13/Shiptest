@@ -2594,7 +2594,7 @@
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/storage/belt/sabre,
 /obj/machinery/light/small/directional/north,
-/obj/item/stock_parts/cell/gun,
+/obj/item/storage/box/ammo/a357,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm/dormtwo)
 "op" = (
@@ -3159,11 +3159,9 @@
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
 "sl" = (
-/obj/item/gun/energy/sharplite/x12,
-/obj/structure/guncloset/ecase{
-	req_access_txt = "20"
-	},
 /obj/item/radio/intercom/directional/south,
+/obj/item/storage/guncase/rhino,
+/obj/structure/rack,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm/dormtwo)
 "sn" = (
@@ -3864,8 +3862,8 @@
 /obj/item/storage/box/ids,
 /obj/machinery/light/small/directional/south,
 /obj/item/storage/box/PDAs,
-/obj/item/storage/guncase/rhino,
-/obj/item/storage/box/ammo/a357,
+/obj/item/gun/energy/sharplite/x12,
+/obj/item/stock_parts/cell/gun/sharplite,
 /turf/open/floor/carpet/blue,
 /area/ship/crew/dorm)
 "vj" = (

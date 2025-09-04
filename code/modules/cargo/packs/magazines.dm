@@ -288,6 +288,13 @@
 	contains = list(/obj/item/ammo_box/magazine/wt550m9/empty)
 	faction = /datum/faction/nt
 
+/datum/supply_pack/magazine/expedition_mag
+	name = "SGL9 Expedition Submachinegun Magazine Crate"
+	desc = "Contains a 30-round magazine for the Expedition Submachinegun, chambered in 9mm."
+	cost = 250
+	contains = list(/obj/item/ammo_box/magazine/smgm9mm)
+	faction = /datum/faction/nt
+
 /* SolGov */
 
 /datum/supply_pack/magazine/mag_556mm
