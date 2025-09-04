@@ -245,7 +245,7 @@
 //gezena
 
 /datum/supply_pack/tools/pgfwebbing
-	name = "PGF Combat Webbing"
+	name = "Gezenan Combat Webbing"
 	desc = "Contains a lightweight harness covered in pouches for use in carrying ammunition and tools."
 	cost = 500
 	contains = list(/obj/item/storage/belt/military/gezena)

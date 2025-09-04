@@ -91,7 +91,7 @@
 
 //gezena
 /datum/supply_pack/armor/pgf_marine_armor
-	name = "PGFMC AR-98 Armor Crate"
+	name = "Gezenan Composite Armor Crate"
 	desc = "One set of standard issue AR-98 body armor, highly protective and quite mobile. Comes with a matching L-98 respirator."
 	cost = 1500
 	contains = list(/obj/item/clothing/suit/armor/gezena/marine,

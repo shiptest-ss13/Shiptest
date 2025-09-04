@@ -78,7 +78,7 @@
 	availability_prob = 50
 
 /datum/blackmarket_item/weapon/cutlass
-	name = "PGF Boarding Cutlass"
+	name = "Gezenan Boarding Cutlass"
 	desc = "A mass produced fighting blade fresh from the belt of some poor sailor. It's got some mean weight to it."
 	item = /obj/item/storage/belt/sabre/pgf
 
