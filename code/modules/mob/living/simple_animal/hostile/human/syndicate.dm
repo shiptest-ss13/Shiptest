@@ -296,7 +296,7 @@
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
 	casingtype = /obj/item/ammo_casing/a65clip
-	l_hand =/obj/item/gun/ballistic/automatic/marksman/boomslang
+	l_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
 
 /* Space Ranged */
 
@@ -311,6 +311,7 @@
 	speed = 1
 	rapid = 2
 	rapid_fire_delay = 2
+	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space
 	l_hand = /obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonhead
@@ -391,6 +392,7 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	l_hand = /obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonhead
+	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
 	rapid = 2
 	rapid_fire_delay = 2
 
