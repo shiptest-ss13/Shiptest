@@ -286,9 +286,11 @@
 
 /datum/action/item_action/toggle_ammotype/UpdateButtonIcon(status_only = FALSE, force = FALSE)
 	var/obj/item/gun/energy/our_gun = target
-	var/current_ammotype = our_gun.chambered.select_name
+	var/current_ammotype = "fallback"
+	if(istype(current_ammotype, /obj/item/ammo_casing/energy))
+		current_ammotype = our_gun.chambered.select_name
 
-	var/manufacturer_prefix
+	var/manufacturer_prefix = "fallback"
 	if (our_gun.manufacturer == MANUFACTURER_EOEHOMA)
 		manufacturer_prefix = "eoehoma"
 	else if (our_gun.manufacturer == MANUFACTURER_SHARPLITE_NEW)
