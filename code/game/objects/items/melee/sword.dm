@@ -186,8 +186,8 @@
 	name = "\improper boarding cutlass"
 	desc = "When beam and bullet puncture the hull, a trustworthy blade will carry you through the fight"
 	icon_state = "pgf-sabre"
-	block_chance = 30
-	force = 22
+	block_chance = 15
+	force = 28
 
 /obj/item/melee/sword/sabre/suns/telescopic
 	name = "telescopic sabre"
@@ -337,9 +337,8 @@
 		/datum/reagent/drug/mammoth = 5,
 		/datum/reagent/drug/aranesp = 5,
 		/datum/reagent/drug/pumpup = 10,
-		/datum/reagent/medicine/omnizine = 10,
+		/datum/reagent/medicine/panacea = 10,
 		/datum/reagent/medicine/earthsblood = 15,
-		/datum/reagent/medicine/omnizine/protozine = 15
 	)
 
 /obj/item/melee/sword/greyking/afterattack(atom/target, mob/user, proximity_flag, click_parameters)

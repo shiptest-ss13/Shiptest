@@ -271,10 +271,10 @@
 
 /obj/item/storage/belt/medical/webbing/combat/PopulateContents()
 	. = ..()
-	new /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor(src)
-	new /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor(src)
-	new /obj/item/reagent_containers/medigel/silver_sulf(src)
-	new /obj/item/reagent_containers/medigel/styptic(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimpack(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimpack(src)
+	new /obj/item/reagent_containers/medigel/hadrakine(src)
+	new /obj/item/reagent_containers/medigel/quardexane(src)
 	new /obj/item/stack/medical/gauze/twelve(src)
 	new /obj/item/stack/medical/splint(src)
 
@@ -908,9 +908,11 @@
 	sabre_type = /obj/item/melee/sword/sabre/suns/cmo
 
 /obj/item/storage/belt/sabre/pgf
-	name = "cutlass sheath"
-	desc = "A mass produced thermoplastic-leather sheath made to hold a boarding cutlass."
-	base_icon_state = "sheath-pgf"
-	icon_state = "sheath-pgf"
-	item_state = "sheath-pgf"
+	name = "cutlass scabbard"
+	desc = "A mass produced thermoplastic-leather scabbard made to hold a boarding cutlass."
+	icon = 'icons/obj/clothing/faction/gezena/belt.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/belt.dmi'
+	base_icon_state = "pgf-scabbard"
+	icon_state = "pgf-scabbard"
+	item_state = "pgf-scabbard"
 	sabre_type = /obj/item/melee/sword/sabre/pgf

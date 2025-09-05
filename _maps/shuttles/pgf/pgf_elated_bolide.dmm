@@ -345,10 +345,6 @@
 "co" = (
 /obj/structure/table/wood,
 /obj/item/radio/intercom/directional/north,
-/obj/item/clothing/head/gezena/marine/lead{
-	pixel_x = 7;
-	pixel_y = 5
-	},
 /obj/item/flashlight/lamp/green{
 	pixel_x = -7;
 	pixel_y = 12
@@ -421,13 +417,111 @@
 /area/ship/crew/ccommons)
 "dk" = (
 /obj/machinery/airalarm/directional/west,
-/obj/structure/table/reinforced,
-/obj/machinery/recharger{
-	pixel_x = -5;
-	pixel_y = 4
-	},
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
 	dir = 8
+	},
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	can_be_unanchored = 1;
+	icon_state = "sec";
+	name = "uniforms locker";
+	req_access_txt = "1"
+	},
+/obj/item/clothing/suit/toggle/gezena/marine{
+	pixel_y = -1;
+	pixel_x = 2
+	},
+/obj/item/clothing/suit/toggle/gezena/marine{
+	pixel_y = -1;
+	pixel_x = 2
+	},
+/obj/item/clothing/suit/toggle/gezena/marine{
+	pixel_y = -1;
+	pixel_x = 2
+	},
+/obj/item/clothing/suit/toggle/gezena/marine{
+	pixel_y = -1;
+	pixel_x = 2
+	},
+/obj/item/clothing/suit/toggle/gezena/marine{
+	pixel_y = -1;
+	pixel_x = 2
+	},
+/obj/item/clothing/suit/toggle/gezena/marine{
+	pixel_y = -1;
+	pixel_x = 2
+	},
+/obj/item/clothing/head/gezena/flap/marine{
+	pixel_y = 11;
+	pixel_x = -8
+	},
+/obj/item/clothing/head/gezena/flap/marine{
+	pixel_y = 11;
+	pixel_x = -8
+	},
+/obj/item/clothing/head/gezena/flap/marine{
+	pixel_y = 11;
+	pixel_x = -8
+	},
+/obj/item/clothing/head/gezena/flap/marine{
+	pixel_y = 11;
+	pixel_x = -8
+	},
+/obj/item/clothing/head/gezena/flap/marine{
+	pixel_y = 11;
+	pixel_x = -8
+	},
+/obj/item/clothing/head/gezena/flap/marine{
+	pixel_y = 11;
+	pixel_x = -8
+	},
+/obj/item/clothing/head/gezena/marine{
+	pixel_y = 12;
+	pixel_x = 8
+	},
+/obj/item/clothing/head/gezena/marine{
+	pixel_y = 12;
+	pixel_x = 8
+	},
+/obj/item/clothing/head/gezena/marine{
+	pixel_y = 12;
+	pixel_x = 8
+	},
+/obj/item/clothing/head/gezena/marine{
+	pixel_y = 12;
+	pixel_x = 8
+	},
+/obj/item/clothing/head/gezena/marine{
+	pixel_y = 12;
+	pixel_x = 8
+	},
+/obj/item/clothing/head/gezena/marine{
+	pixel_y = 12;
+	pixel_x = 8
+	},
+/obj/item/clothing/gloves/gezena/marine{
+	pixel_y = -9;
+	pixel_x = 1
+	},
+/obj/item/clothing/gloves/gezena/marine{
+	pixel_y = -9;
+	pixel_x = 1
+	},
+/obj/item/clothing/gloves/gezena/marine{
+	pixel_y = -9;
+	pixel_x = 1
+	},
+/obj/item/clothing/gloves/gezena/marine{
+	pixel_y = -9;
+	pixel_x = 1
+	},
+/obj/item/clothing/gloves/gezena/marine{
+	pixel_y = -9;
+	pixel_x = 1
+	},
+/obj/item/clothing/gloves/gezena/marine{
+	pixel_y = -9;
+	pixel_x = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -699,7 +793,6 @@
 /obj/item/clothing/suit/space/gezena,
 /obj/item/clothing/head/helmet/space/gezena,
 /obj/item/tank/internals/oxygen/red,
-/obj/item/clothing/mask/gas,
 /obj/machinery/light/small/directional/north,
 /obj/structure/sign/warning/vacuum{
 	pixel_x = 3;
@@ -1342,6 +1435,18 @@
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
 	dir = 1
 	},
+/obj/machinery/recharger{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/machinery/recharger{
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/obj/machinery/recharger{
+	pixel_x = -18;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "iW" = (
@@ -1403,82 +1508,10 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/directional/south,
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	can_be_unanchored = 1;
-	icon_state = "sec";
-	name = "uniforms locker";
-	req_access_txt = "1"
-	},
-/obj/item/clothing/gloves/gezena/marine{
-	pixel_x = 8;
+/obj/structure/table/reinforced,
+/obj/item/kirbyplants{
+	pixel_x = -5;
 	pixel_y = 10
-	},
-/obj/item/clothing/gloves/gezena/marine{
-	pixel_x = 8;
-	pixel_y = 10
-	},
-/obj/item/clothing/gloves/gezena/marine{
-	pixel_x = 8;
-	pixel_y = 10
-	},
-/obj/item/clothing/gloves/gezena/marine{
-	pixel_x = 8;
-	pixel_y = 10
-	},
-/obj/item/clothing/gloves/gezena/marine{
-	pixel_x = 8;
-	pixel_y = 10
-	},
-/obj/item/clothing/gloves/gezena/marine{
-	pixel_x = 8;
-	pixel_y = 10
-	},
-/obj/item/storage/backpack/industrial{
-	pixel_x = 7
-	},
-/obj/item/storage/backpack/industrial{
-	pixel_x = 7
-	},
-/obj/item/storage/backpack/industrial{
-	pixel_x = 7
-	},
-/obj/item/clothing/head/gezena/flap/marine,
-/obj/item/clothing/head/gezena/flap/marine,
-/obj/item/clothing/head/gezena/flap/marine,
-/obj/item/clothing/head/gezena/flap/marine,
-/obj/item/radio/headset/pgf/alt,
-/obj/item/radio/headset/pgf/alt,
-/obj/item/radio/headset/pgf/alt,
-/obj/item/clothing/head/gezena/marine{
-	pixel_x = -6;
-	pixel_y = 9
-	},
-/obj/item/clothing/head/gezena/marine{
-	pixel_x = -6;
-	pixel_y = 9
-	},
-/obj/item/clothing/head/gezena/marine{
-	pixel_x = -6;
-	pixel_y = 9
-	},
-/obj/item/clothing/under/gezena/marine{
-	pixel_x = -7
-	},
-/obj/item/clothing/under/gezena/marine{
-	pixel_x = -7
-	},
-/obj/item/clothing/under/gezena/marine{
-	pixel_x = -7
-	},
-/obj/item/clothing/shoes/combat/gezena{
-	pixel_x = 3
-	},
-/obj/item/clothing/shoes/combat/gezena{
-	pixel_x = 3
-	},
-/obj/item/clothing/shoes/combat/gezena{
-	pixel_x = 3
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -1536,50 +1569,66 @@
 	can_be_unanchored = 1;
 	icon_state = "warden";
 	name = "Lieutenant's locker";
-	req_access = list(3);
-	req_access_txt = "3"
+	req_access_txt = "3";
+	req_access = list(3)
 	},
-/obj/item/radio/headset/pgf/alt/captain{
-	pixel_x = 5;
-	pixel_y = 11
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
 	},
-/obj/item/clothing/neck/cloak/gezena/lead{
-	pixel_x = -3;
-	pixel_y = 3
+/obj/item/clothing/head/gezena/flap/marine{
+	pixel_y = 11;
+	pixel_x = -8
 	},
-/obj/item/clothing/suit/armor/gezena/marine{
-	pixel_y = 8
+/obj/item/clothing/head/gezena/marine{
+	pixel_y = 12;
+	pixel_x = 8
+	},
+/obj/item/storage/backpack/duffelbag/sec{
+	pixel_y = -13;
+	pixel_x = 4
+	},
+/obj/item/storage/backpack/satchel/sec{
+	pixel_x = -7;
+	pixel_y = -17
+	},
+/obj/item/storage/guncase/pistol/kalixpistol{
+	pixel_y = -13
+	},
+/obj/item/clothing/suit/toggle/gezena/marine{
+	pixel_y = -2;
+	pixel_x = 8
 	},
 /obj/item/clothing/under/gezena/marine{
-	pixel_x = -6;
-	pixel_y = -7
+	pixel_x = -9;
+	pixel_y = -1
+	},
+/obj/item/clothing/neck/cloak/gezena/command{
+	pixel_y = -9;
+	pixel_x = -7
+	},
+/obj/item/clothing/shoes/combat/gezena/marine{
+	pixel_y = -9;
+	pixel_x = 6
 	},
 /obj/item/clothing/gloves/gezena/marine{
-	pixel_x = 3;
-	pixel_y = -6
+	pixel_x = -1;
+	pixel_y = 0
 	},
-/obj/item/storage/belt/military/gezena{
-	pixel_y = 1
+/obj/item/clothing/accessory/holster{
+	pixel_y = 0;
+	pixel_x = -2
 	},
-/obj/item/storage/backpack/security{
-	pixel_y = -6
+/obj/item/radio/headset/pgf/captain{
+	pixel_x = -15;
+	pixel_y = 9
+	},
+/obj/item/radio/headset/pgf/alt/captain{
+	pixel_y = -4;
+	pixel_x = -20
 	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
 	},
-/obj/item/clothing/accessory/medal/silver/valor,
-/obj/item/clothing/mask/whistle{
-	name = "marine whistle"
-	},
-/obj/item/clothing/head/helmet/gezena{
-	pixel_x = -1;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/gezena/flap/marine/lead{
-	pixel_x = -4
-	},
-/obj/item/storage/guncase/pistol/kalixpistol,
-/obj/item/clothing/accessory/holster,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "jn" = (
@@ -2093,6 +2142,7 @@
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
 	dir = 9
 	},
+/obj/machinery/computer/helm/viewscreen/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "mR" = (
@@ -2840,39 +2890,23 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/corner/opaque/neutral/full,
 /obj/item/storage/box/metalfoam{
-	pixel_x = 7;
-	pixel_y = 2
-	},
-/obj/item/storage/box/metalfoam{
-	pixel_x = 2;
-	pixel_y = 4
-	},
-/obj/item/storage/box/smokebombs{
 	pixel_x = -9;
-	pixel_y = -3
-	},
-/obj/item/storage/box/smokebombs{
-	pixel_x = -4;
-	pixel_y = -3
+	pixel_y = 12
 	},
 /obj/structure/sign/warning/nosmoking{
 	pixel_y = 28
 	},
-/obj/item/storage/box/flares{
-	pixel_x = 11;
-	pixel_y = -5
+/obj/item/storage/box/metalfoam{
+	pixel_x = 7;
+	pixel_y = 12
 	},
-/obj/item/storage/box/flares{
-	pixel_x = -11;
-	pixel_y = -5
+/obj/item/storage/box/smokebombs{
+	pixel_x = 7;
+	pixel_y = -3
 	},
-/obj/item/storage/box/flares{
-	pixel_x = -3;
-	pixel_y = -5
-	},
-/obj/item/storage/box/flares{
-	pixel_x = 2;
-	pixel_y = -5
+/obj/item/storage/box/smokebombs{
+	pixel_x = -9;
+	pixel_y = -3
 	},
 /obj/item/gun/grenadelauncher{
 	pixel_y = 6
@@ -3293,6 +3327,10 @@
 /obj/item/storage/box/flares,
 /obj/item/storage/box/flares,
 /obj/item/storage/box/flares,
+/obj/item/storage/box/flares,
+/obj/item/storage/box/flares,
+/obj/item/storage/box/flares,
+/obj/item/storage/box/flares,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "uN" = (
@@ -3581,6 +3619,18 @@
 	pixel_y = -21
 	},
 /obj/machinery/light/directional/east,
+/obj/item/folder/pgf/blue{
+	pixel_y = 5;
+	pixel_x = 1
+	},
+/obj/item/folder/pgf/red{
+	pixel_x = -1;
+	pixel_y = 1
+	},
+/obj/item/folder/pgf{
+	pixel_x = -3;
+	pixel_y = -3
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "xe" = (
@@ -3787,6 +3837,10 @@
 	pixel_x = 6;
 	pixel_y = 4
 	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_x = -8;
+	pixel_y = -4
+	},
 /obj/item/stock_parts/cell/gun/kalix{
 	pixel_x = 6;
 	pixel_y = 2
@@ -3852,13 +3906,13 @@
 /area/ship/hallway/fore)
 "yD" = (
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/gezena,
-/obj/item/clothing/head/helmet/space/gezena,
 /obj/item/tank/internals/oxygen/red,
-/obj/item/clothing/mask/gas,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
+/obj/item/clothing/suit/space/gezena/marine,
+/obj/item/clothing/head/helmet/space/gezena/marine,
+/obj/item/clothing/mask/breath/pgfmask,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "yJ" = (
@@ -4147,52 +4201,6 @@
 /obj/effect/turf_decal/corner/opaque/purple/border{
 	dir = 1
 	},
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	can_be_unanchored = 1;
-	icon_state = "sec";
-	name = "uniforms locker";
-	req_access_txt = "1"
-	},
-/obj/item/clothing/under/gezena/marine{
-	pixel_x = -7
-	},
-/obj/item/clothing/under/gezena/marine{
-	pixel_x = -7
-	},
-/obj/item/clothing/under/gezena/marine{
-	pixel_x = -7
-	},
-/obj/item/clothing/head/gezena/marine{
-	pixel_x = -6;
-	pixel_y = 9
-	},
-/obj/item/clothing/head/gezena/marine{
-	pixel_x = -6;
-	pixel_y = 9
-	},
-/obj/item/clothing/head/gezena/marine{
-	pixel_x = -6;
-	pixel_y = 9
-	},
-/obj/item/clothing/shoes/combat/gezena{
-	pixel_x = 3
-	},
-/obj/item/clothing/shoes/combat/gezena{
-	pixel_x = 3
-	},
-/obj/item/clothing/shoes/combat/gezena{
-	pixel_x = 3
-	},
-/obj/item/storage/backpack/security{
-	pixel_y = -6
-	},
-/obj/item/storage/backpack/security{
-	pixel_y = -6
-	},
-/obj/item/radio/headset/pgf/alt,
-/obj/item/radio/headset/pgf/alt,
-/obj/item/radio/headset/pgf/alt,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 20;
@@ -4207,16 +4215,15 @@
 	pixel_y = 1;
 	req_access = list(3)
 	},
-/obj/item/clothing/head/gezena/marine{
-	pixel_x = -6;
-	pixel_y = 9
+/obj/structure/table/reinforced,
+/obj/item/modular_computer/laptop/preset{
+	pixel_y = 3;
+	pixel_x = -7
 	},
-/obj/item/storage/backpack/security{
-	pixel_y = -6
+/obj/item/computer_hardware/card_slot{
+	pixel_y = 6;
+	pixel_x = 1
 	},
-/obj/item/clothing/head/gezena/flap/marine,
-/obj/item/clothing/head/gezena/flap/marine,
-/obj/item/clothing/head/gezena/flap/marine,
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "AC" = (
@@ -4310,100 +4317,97 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "AY" = (
-/obj/item/clothing/under/gezena{
-	pixel_x = 9;
-	pixel_y = 2
-	},
-/obj/item/clothing/under/gezena{
-	pixel_x = 9;
-	pixel_y = 2
-	},
-/obj/item/clothing/under/gezena{
-	pixel_x = 9;
-	pixel_y = 2
-	},
-/obj/item/clothing/under/gezena{
-	pixel_x = 9;
-	pixel_y = 2
-	},
-/obj/item/clothing/suit/toggle/gezena,
-/obj/item/clothing/suit/toggle/gezena,
-/obj/item/clothing/suit/toggle/gezena,
-/obj/item/clothing/suit/toggle/gezena,
-/obj/item/clothing/shoes/combat/gezena{
-	pixel_x = 3;
-	pixel_y = -7
-	},
-/obj/item/clothing/shoes/combat/gezena{
-	pixel_x = 3;
-	pixel_y = -7
-	},
-/obj/item/clothing/shoes/combat/gezena{
-	pixel_x = 3;
-	pixel_y = -7
-	},
-/obj/item/clothing/shoes/combat/gezena{
-	pixel_x = 3;
-	pixel_y = -7
-	},
-/obj/item/clothing/neck/cloak/gezena{
-	pixel_x = -8;
-	pixel_y = -1
-	},
-/obj/item/clothing/neck/cloak/gezena{
-	pixel_x = -8;
-	pixel_y = -1
-	},
-/obj/item/clothing/neck/cloak/gezena{
-	pixel_x = -8;
-	pixel_y = -1
-	},
-/obj/item/clothing/neck/cloak/gezena{
-	pixel_x = -8;
-	pixel_y = -1
-	},
 /obj/structure/closet{
 	name = "spare uniforms"
 	},
-/obj/item/clothing/head/gezena,
-/obj/item/clothing/head/gezena,
-/obj/item/clothing/head/gezena,
-/obj/item/clothing/head/gezena,
 /obj/effect/turf_decal/borderfloorblack,
 /obj/structure/noticeboard{
 	pixel_y = 25
 	},
-/obj/item/clothing/head/gezena/flap,
-/obj/item/clothing/head/gezena/flap,
-/obj/item/clothing/head/gezena/flap,
-/obj/item/clothing/head/gezena/flap,
-/obj/item/storage/backpack/satchel/explorer{
+/obj/item/clothing/head/gezena/flap{
+	pixel_x = -9;
+	pixel_y = 12
+	},
+/obj/item/clothing/head/gezena/flap{
+	pixel_x = -9;
+	pixel_y = 12
+	},
+/obj/item/clothing/head/gezena/flap{
+	pixel_x = -9;
+	pixel_y = 12
+	},
+/obj/item/clothing/head/gezena{
+	pixel_x = 8;
+	pixel_y = 13
+	},
+/obj/item/clothing/head/gezena{
+	pixel_x = 8;
+	pixel_y = 13
+	},
+/obj/item/clothing/head/gezena{
+	pixel_x = 8;
+	pixel_y = 13
+	},
+/obj/item/clothing/under/gezena{
+	pixel_y = 0;
+	pixel_x = -9
+	},
+/obj/item/clothing/under/gezena{
+	pixel_y = 0;
+	pixel_x = -9
+	},
+/obj/item/clothing/under/gezena{
+	pixel_y = 0;
+	pixel_x = -9
+	},
+/obj/item/clothing/suit/toggle/gezena{
+	pixel_y = -1;
+	pixel_x = 8
+	},
+/obj/item/clothing/suit/toggle/gezena{
+	pixel_y = -1;
+	pixel_x = 8
+	},
+/obj/item/clothing/suit/toggle/gezena{
+	pixel_y = -1;
+	pixel_x = 8
+	},
+/obj/item/clothing/neck/cloak/gezena{
+	pixel_x = 2;
+	pixel_y = 12
+	},
+/obj/item/clothing/neck/cloak/gezena{
+	pixel_x = 2;
+	pixel_y = 12
+	},
+/obj/item/clothing/neck/cloak/gezena{
+	pixel_x = 2;
+	pixel_y = 12
+	},
+/obj/item/clothing/gloves/gezena{
+	pixel_y = -2
+	},
+/obj/item/clothing/gloves/gezena{
+	pixel_y = -2
+	},
+/obj/item/clothing/gloves/gezena{
 	pixel_y = -2
 	},
 /obj/item/storage/backpack/satchel/explorer{
-	pixel_y = -2
+	pixel_y = -8;
+	pixel_x = -10
 	},
 /obj/item/storage/backpack/satchel/explorer{
-	pixel_y = -2
+	pixel_y = -8;
+	pixel_x = -10
 	},
-/obj/item/storage/backpack/satchel/explorer{
-	pixel_y = -2
+/obj/item/storage/backpack/duffelbag{
+	pixel_y = -8;
+	pixel_x = 8
 	},
-/obj/item/storage/backpack/explorer,
-/obj/item/storage/backpack/explorer,
-/obj/item/storage/backpack/explorer,
-/obj/item/storage/backpack/explorer,
-/obj/item/clothing/gloves/gezena{
-	pixel_y = -15
-	},
-/obj/item/clothing/gloves/gezena{
-	pixel_y = -15
-	},
-/obj/item/clothing/gloves/gezena{
-	pixel_y = -15
-	},
-/obj/item/clothing/gloves/gezena{
-	pixel_y = -15
+/obj/item/storage/backpack/duffelbag{
+	pixel_y = -8;
+	pixel_x = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/dorm)
@@ -4423,6 +4427,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/green{
 	dir = 1
 	},
+/obj/machinery/computer/helm/viewscreen/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "Br" = (
@@ -4430,18 +4435,6 @@
 /obj/item/table_bell{
 	pixel_x = -6;
 	pixel_y = 9
-	},
-/obj/item/folder/pgf{
-	pixel_x = -3;
-	pixel_y = -3
-	},
-/obj/item/folder/pgf{
-	pixel_x = 3;
-	pixel_y = 1
-	},
-/obj/item/folder/pgf{
-	pixel_x = 9;
-	pixel_y = 6
 	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
@@ -4615,14 +4608,115 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "CA" = (
-/obj/structure/table/reinforced,
-/obj/machinery/recharger{
-	pixel_x = -5;
-	pixel_y = 8
-	},
 /obj/machinery/light/small/directional/west,
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
 	dir = 8
+	},
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	can_be_unanchored = 1;
+	icon_state = "sec";
+	name = "uniforms locker";
+	req_access_txt = "1"
+	},
+/obj/item/storage/backpack/duffelbag/sec{
+	pixel_y = -9;
+	pixel_x = 4
+	},
+/obj/item/storage/backpack/duffelbag/sec{
+	pixel_y = -9;
+	pixel_x = 4
+	},
+/obj/item/storage/backpack/duffelbag/sec{
+	pixel_y = -9;
+	pixel_x = 4
+	},
+/obj/item/storage/backpack/satchel/sec{
+	pixel_x = -8;
+	pixel_y = -13
+	},
+/obj/item/storage/backpack/satchel/sec{
+	pixel_x = -8;
+	pixel_y = -13
+	},
+/obj/item/storage/backpack/satchel/sec{
+	pixel_x = -8;
+	pixel_y = -13
+	},
+/obj/item/storage/backpack/industrial{
+	pixel_y = -11
+	},
+/obj/item/storage/backpack/industrial{
+	pixel_y = -11
+	},
+/obj/item/storage/backpack/industrial{
+	pixel_y = -11
+	},
+/obj/item/clothing/under/gezena/marine{
+	pixel_y = 8
+	},
+/obj/item/clothing/under/gezena/marine{
+	pixel_y = 8
+	},
+/obj/item/clothing/under/gezena/marine{
+	pixel_y = 8
+	},
+/obj/item/clothing/under/gezena/marine{
+	pixel_y = 8
+	},
+/obj/item/clothing/under/gezena/marine{
+	pixel_y = 8
+	},
+/obj/item/clothing/under/gezena/marine{
+	pixel_y = 8
+	},
+/obj/item/clothing/shoes/combat/gezena/marine{
+	pixel_y = 1;
+	pixel_x = 6
+	},
+/obj/item/clothing/shoes/combat/gezena/marine{
+	pixel_y = 1;
+	pixel_x = 6
+	},
+/obj/item/clothing/shoes/combat/gezena/marine{
+	pixel_y = 1;
+	pixel_x = 6
+	},
+/obj/item/clothing/shoes/combat/gezena/marine{
+	pixel_y = 1;
+	pixel_x = 6
+	},
+/obj/item/clothing/shoes/combat/gezena/marine{
+	pixel_y = 1;
+	pixel_x = 6
+	},
+/obj/item/clothing/shoes/combat/gezena/marine{
+	pixel_y = 1;
+	pixel_x = 6
+	},
+/obj/item/clothing/neck/cloak/gezena{
+	pixel_x = -4;
+	pixel_y = 0
+	},
+/obj/item/clothing/neck/cloak/gezena{
+	pixel_x = -4;
+	pixel_y = 0
+	},
+/obj/item/clothing/neck/cloak/gezena{
+	pixel_x = -4;
+	pixel_y = 0
+	},
+/obj/item/clothing/neck/cloak/gezena{
+	pixel_x = -4;
+	pixel_y = 0
+	},
+/obj/item/clothing/neck/cloak/gezena{
+	pixel_x = -4;
+	pixel_y = 0
+	},
+/obj/item/clothing/neck/cloak/gezena{
+	pixel_x = -4;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -5126,11 +5220,11 @@
 /obj/structure/bed/double{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
 /obj/item/bedsheet/double/brown{
 	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm/captain)
@@ -5364,10 +5458,7 @@
 /area/ship/bridge)
 "Ho" = (
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/gezena,
-/obj/item/clothing/head/helmet/space/gezena,
 /obj/item/tank/internals/oxygen/red,
-/obj/item/clothing/mask/gas,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
@@ -5375,33 +5466,21 @@
 /obj/structure/noticeboard{
 	pixel_y = 25
 	},
+/obj/item/clothing/suit/space/gezena/marine,
+/obj/item/clothing/head/helmet/space/gezena/marine,
+/obj/item/clothing/mask/breath/pgfmask,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "Hr" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/obj/machinery/recharger{
-	pixel_x = -8;
-	pixel_y = 8
+	pixel_x = -15;
+	pixel_y = 2
 	},
 /obj/item/radio/intercom/directional/east,
-/obj/item/bodycamera{
-	pixel_y = -7;
-	pixel_x = -9
-	},
-/obj/item/bodycamera{
-	pixel_y = -7;
-	pixel_x = 9
-	},
-/obj/item/multitool{
-	pixel_x = -1;
-	pixel_y = 6
-	},
-/obj/item/bodycamera{
-	pixel_y = -7
+/obj/machinery/cell_charger{
+	pixel_y = 2;
+	pixel_x = 2
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -5533,43 +5612,114 @@
 	name = "armor locker";
 	req_access_txt = "1"
 	},
-/obj/item/clothing/suit/armor/gezena/marinecoat,
-/obj/item/clothing/suit/armor/gezena/marinecoat,
-/obj/item/clothing/suit/armor/gezena/marinecoat,
-/obj/item/clothing/suit/armor/gezena/marinecoat,
-/obj/item/storage/belt/military/gezena,
-/obj/item/storage/belt/military/gezena,
-/obj/item/storage/belt/military/gezena,
-/obj/item/storage/belt/military/gezena,
-/obj/item/storage/belt/military/gezena,
-/obj/item/clothing/head/helmet/gezena{
-	pixel_x = -1;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/helmet/gezena{
-	pixel_x = -1;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/helmet/gezena{
-	pixel_x = -1;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/helmet/gezena{
-	pixel_x = -1;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/helmet/gezena{
-	pixel_x = -1;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/helmet/gezena{
-	pixel_x = -1;
-	pixel_y = 8
-	},
 /obj/machinery/light/directional/south,
-/obj/item/clothing/suit/armor/gezena/marine,
-/obj/item/clothing/suit/armor/gezena/marine,
-/obj/item/storage/belt/military/gezena,
+/obj/item/clothing/head/helmet/gezena{
+	pixel_y = 14
+	},
+/obj/item/clothing/head/helmet/gezena{
+	pixel_y = 14
+	},
+/obj/item/clothing/head/helmet/gezena{
+	pixel_y = 14
+	},
+/obj/item/clothing/head/helmet/gezena{
+	pixel_y = 14
+	},
+/obj/item/clothing/head/helmet/gezena{
+	pixel_y = 14
+	},
+/obj/item/clothing/head/helmet/gezena{
+	pixel_y = 14
+	},
+/obj/item/clothing/head/helmet/gezena{
+	pixel_y = 14
+	},
+/obj/item/clothing/glasses/sunglasses/pgf{
+	pixel_y = 4;
+	pixel_x = 1
+	},
+/obj/item/clothing/glasses/sunglasses/pgf{
+	pixel_y = 4;
+	pixel_x = 1
+	},
+/obj/item/clothing/glasses/sunglasses/pgf{
+	pixel_y = 4;
+	pixel_x = 1
+	},
+/obj/item/clothing/glasses/sunglasses/pgf{
+	pixel_y = 4;
+	pixel_x = 1
+	},
+/obj/item/clothing/glasses/sunglasses/pgf{
+	pixel_y = 4;
+	pixel_x = 1
+	},
+/obj/item/clothing/glasses/sunglasses/pgf{
+	pixel_y = 4;
+	pixel_x = 1
+	},
+/obj/item/clothing/glasses/sunglasses/pgf{
+	pixel_y = 4;
+	pixel_x = 1
+	},
+/obj/item/clothing/suit/armor/gezena/marine{
+	pixel_y = -8;
+	pixel_x = -5
+	},
+/obj/item/clothing/suit/armor/gezena/marine{
+	pixel_y = -8;
+	pixel_x = -5
+	},
+/obj/item/clothing/suit/armor/gezena/marine{
+	pixel_y = -8;
+	pixel_x = -5
+	},
+/obj/item/clothing/suit/armor/gezena/marine{
+	pixel_y = -8;
+	pixel_x = -5
+	},
+/obj/item/clothing/suit/armor/gezena/marine{
+	pixel_y = -8;
+	pixel_x = -5
+	},
+/obj/item/clothing/suit/armor/gezena/marine{
+	pixel_y = -8;
+	pixel_x = -5
+	},
+/obj/item/clothing/suit/armor/gezena/marine{
+	pixel_y = -8;
+	pixel_x = -5
+	},
+/obj/item/storage/belt/military/gezena{
+	pixel_x = 4;
+	pixel_y = -9
+	},
+/obj/item/storage/belt/military/gezena{
+	pixel_x = 4;
+	pixel_y = -9
+	},
+/obj/item/storage/belt/military/gezena{
+	pixel_x = 4;
+	pixel_y = -9
+	},
+/obj/item/storage/belt/military/gezena{
+	pixel_x = 4;
+	pixel_y = -9
+	},
+/obj/item/storage/belt/military/gezena{
+	pixel_x = 4;
+	pixel_y = -9
+	},
+/obj/item/storage/belt/military/gezena{
+	pixel_x = 4;
+	pixel_y = -9
+	},
+/obj/item/storage/belt/military/gezena{
+	pixel_x = 4;
+	pixel_y = -9
+	},
+/obj/item/radio/headset/pgf/alt,
+/obj/item/radio/headset/pgf/alt,
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "IM" = (
@@ -5736,34 +5886,72 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "JS" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /obj/structure/closet/secure_closet{
 	icon_state = "blueshield";
-	name = "captain's locker";
-	req_access = list(20)
+	req_access = list(20);
+	name = "captain's locker"
+	},
+/obj/item/storage/lockbox/medal{
+	pixel_y = -20;
+	pixel_x = null
+	},
+/obj/item/storage/backpack/satchel/cap{
+	pixel_y = -18;
+	pixel_x = -8
+	},
+/obj/item/storage/backpack/duffelbag/captain{
+	pixel_x = 6;
+	pixel_y = -17
+	},
+/obj/item/clothing/head/gezena/captain{
+	pixel_y = 12;
+	pixel_x = -8
+	},
+/obj/item/clothing/head/gezena/flap/captain{
+	pixel_y = 8;
+	pixel_x = 8
+	},
+/obj/item/clothing/under/gezena/captain{
+	pixel_y = 2;
+	pixel_x = -8
+	},
+/obj/item/clothing/suit/armor/gezena/captain{
+	pixel_y = 2;
+	pixel_x = 8
+	},
+/obj/item/storage/guncase/pistol/kalixpistol{
+	pixel_y = -15;
+	pixel_x = -1
+	},
+/obj/item/clothing/shoes/combat/gezena{
+	pixel_y = -7;
+	pixel_x = -11
+	},
+/obj/item/clothing/neck/cloak/gezena/captain{
+	pixel_y = 2;
+	pixel_x = 3
+	},
+/obj/item/clothing/gloves/gezena/captain{
+	pixel_y = -10
+	},
+/obj/item/storage/belt/sabre/pgf{
+	pixel_y = -6;
+	pixel_x = -2
+	},
+/obj/item/radio/headset/pgf/alt/captain{
+	pixel_x = 10;
+	pixel_y = -4
+	},
+/obj/item/radio/headset/pgf/captain{
+	pixel_x = -10;
+	pixel_y = -8
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/obj/item/radio/headset/pgf/alt/captain,
-/obj/item/clothing/under/gezena/captain{
-	pixel_x = 5;
-	pixel_y = -5
-	},
-/obj/item/clothing/neck/cloak/gezena/captain,
-/obj/item/clothing/gloves/gezena/captain{
-	pixel_y = 4
-	},
-/obj/item/clothing/accessory/medal/silver/valor,
-/obj/item/clothing/mask/whistle{
-	name = "marine whistle"
-	},
-/obj/item/storage/box/holodisc{
-	pixel_x = 7
-	},
-/obj/item/clothing/suit/toggle/gezena,
-/obj/item/clothing/head/gezena/captain,
-/obj/item/clothing/suit/armor/gezena/captain,
-/obj/item/storage/guncase/pistol/kalixpistol,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm/captain)
 "JY" = (
@@ -5809,10 +5997,6 @@
 /obj/effect/turf_decal/spline/fancy/opaque/green,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
-"Kn" = (
-/obj/structure/table/reinforced,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/security/armory)
 "Ko" = (
 /obj/structure/floodlight_frame,
 /turf/open/floor/plasteel/patterned,
@@ -5820,30 +6004,26 @@
 "Kp" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/corner/opaque/neutral/full,
-/obj/item/gun/energy/kalix/pgf/heavy{
-	pixel_x = -3;
-	pixel_y = 11
-	},
-/obj/item/gun/energy/kalix/pistol{
-	pixel_x = 4;
-	pixel_y = -5
-	},
-/obj/item/gun/energy/kalix/pistol{
-	pixel_x = -6;
-	pixel_y = 2
-	},
-/obj/item/gun/energy/kalix/pistol{
-	pixel_x = 3;
-	pixel_y = 2
-	},
-/obj/item/gun/energy/kalix/pistol{
-	pixel_x = -6;
-	pixel_y = -5
-	},
 /obj/machinery/camera/autoname{
 	dir = 4
 	},
 /obj/machinery/light/directional/north,
+/obj/item/gun/energy/kalix/pistol{
+	pixel_x = 4;
+	pixel_y = -8
+	},
+/obj/item/gun/energy/kalix/pistol{
+	pixel_x = -6;
+	pixel_y = -8
+	},
+/obj/item/gun/energy/kalix,
+/obj/item/gun/energy/kalix{
+	pixel_y = 6
+	},
+/obj/item/gun/energy/kalix/pgf/heavy{
+	pixel_x = -3;
+	pixel_y = 11
+	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "Kt" = (
@@ -6260,14 +6440,13 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/head/helmet/space/gezena,
 /obj/item/tank/internals/oxygen/red,
-/obj/item/clothing/mask/gas,
 /obj/item/clothing/suit/space/gezena,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/item/clothing/head/helmet/space/gezena,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/hallway/fore)
 "MS" = (
@@ -6595,10 +6774,6 @@
 /area/ship/crew/dorm)
 "PS" = (
 /obj/structure/table/reinforced,
-/obj/machinery/cell_charger{
-	pixel_x = 2;
-	pixel_y = 7
-	},
 /obj/item/gps{
 	pixel_x = -10;
 	pixel_y = -6
@@ -6609,6 +6784,20 @@
 /obj/item/gps{
 	pixel_x = 10;
 	pixel_y = -6
+	},
+/obj/item/bodycamera{
+	pixel_y = 8;
+	pixel_x = -9
+	},
+/obj/item/bodycamera{
+	pixel_y = 11
+	},
+/obj/item/multitool{
+	pixel_y = 3
+	},
+/obj/item/bodycamera{
+	pixel_y = 8;
+	pixel_x = 9
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -6673,7 +6862,12 @@
 /obj/structure/table/reinforced,
 /obj/item/geiger_counter,
 /obj/item/radio/headset/pgf/alt,
-/obj/item/clothing/head/gezena,
+/obj/item/clothing/head/gezena/engi{
+	pixel_x = 7
+	},
+/obj/item/clothing/head/gezena/flap/engi{
+	pixel_x = -9
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/starboard)
 "Qb" = (
@@ -7777,7 +7971,12 @@
 /obj/structure/table/reinforced,
 /obj/item/geiger_counter,
 /obj/item/radio/headset/pgf/alt,
-/obj/item/clothing/head/gezena,
+/obj/item/clothing/head/gezena/engi{
+	pixel_x = 7
+	},
+/obj/item/clothing/head/gezena/flap/engi{
+	pixel_x = -9
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/starboard)
 "VF" = (
@@ -8143,10 +8342,6 @@
 	pixel_x = 7;
 	pixel_y = -10
 	},
-/obj/item/clothing/suit/armor/gezena{
-	pixel_x = -9;
-	pixel_y = 9
-	},
 /obj/item/clothing/under/gezena{
 	pixel_x = -9;
 	pixel_y = -5
@@ -8156,12 +8351,16 @@
 	pixel_y = 3
 	},
 /obj/effect/turf_decal/box,
-/obj/item/clothing/gloves/color/latex/nitrile{
-	pixel_x = 4;
-	pixel_y = 5
-	},
 /obj/item/defibrillator/loaded,
-/obj/item/flashlight/pen,
+/obj/item/clothing/gloves/color/latex/nitrile{
+	pixel_x = 1;
+	pixel_y = 10
+	},
+/obj/item/flashlight/pen{
+	pixel_y = 0;
+	pixel_x = 11
+	},
+/obj/item/clothing/suit/armor/gezena/medic,
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical)
 "YN" = (
@@ -8328,16 +8527,16 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/corner/opaque/neutral/full,
 /obj/item/gun/energy/kalix/pgf{
-	pixel_y = 4
+	pixel_y = 3
 	},
 /obj/item/gun/energy/kalix/pgf{
-	pixel_y = 11
+	pixel_y = 10
 	},
 /obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/item/gun/energy/kalix/pgf/medium{
 	pixel_x = -2;
-	pixel_y = -3
+	pixel_y = -4
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -9014,7 +9213,7 @@ dg
 Qg
 ks
 ks
-Kn
+ks
 ks
 zS
 jF
