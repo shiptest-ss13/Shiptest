@@ -302,7 +302,7 @@
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space
 	name = "Ramzi Clique Operative"
-	desc = "A deserter from the Gorlex Marauders turned pirate. Rusty gauntlets clutches a modified machinepistol, the added bulk of their wrappings giving it a rather undersized appearance."
+	desc = "A deserter from the Gorlex Marauders turned pirate. Rusty gauntlets clutches a modified machinepistol, scanning for threats."
 	icon_state = "syndicate_space_pistol"
 	icon_living = "syndicate_space_pistol"
 	atmos_requirements = IMMUNE_ATMOS_REQS
