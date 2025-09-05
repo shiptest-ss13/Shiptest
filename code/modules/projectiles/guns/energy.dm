@@ -286,9 +286,8 @@
 
 /datum/action/item_action/toggle_ammotype/UpdateButtonIcon(status_only = FALSE, force = FALSE)
 	var/obj/item/gun/energy/our_gun = target
-	var/current_ammotype = "fallback"
-	if(istype(current_ammotype, /obj/item/ammo_casing/energy))
-		current_ammotype = our_gun.chambered.select_name
+	var/obj/item/ammo_casing/energy/shot = our_gun.ammo_type[our_gun.select]
+	var/current_ammotype = shot.select_name
 
 	var/manufacturer_prefix = "fallback"
 	if (our_gun.manufacturer == MANUFACTURER_EOEHOMA)
@@ -298,7 +297,12 @@
 	else if (our_gun.manufacturer == MANUFACTURER_PGF)
 		manufacturer_prefix = "etherbor"
 	else
-		manufacturer_prefix = "fallback"
+		current_ammotype = "fallback"
+
+	current_ammotype = lowertext(current_ammotype)
+
+	// A list of all ammotypes that have icons for them
+	if (!(current_ammotype in list("kill", "disable", "overcharge", "stun", "ion", "energy", "ar", "dmr")))
 		current_ammotype = "fallback"
 
 	button_icon_state = "[manufacturer_prefix]["_laser_"][current_ammotype]"
