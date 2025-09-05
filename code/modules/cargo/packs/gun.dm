@@ -192,7 +192,7 @@
 */
 
 /datum/supply_pack/gun/l201
-	name = "L201 Marksman Plasma Rifle"
+	name = "L201 'Surge' Marksman Plasma Rifle"
 	desc = "Contains a high-powered marksman laser. For NT employee use only."
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/energy/l201)
@@ -202,7 +202,7 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/l204
-	name = "L204 Plasma Rifle Crate"
+	name = "L204 'Resistor' Plasma Rifle Crate"
 	desc = "Contains a lethal, high-energy laser gun."
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/energy/laser)
@@ -210,7 +210,7 @@
 	faction = /datum/faction/nt
 
 /datum/supply_pack/gun/mini_energy
-	name = "X26 Variable Energy Pistol Crate"
+	name = "X26 'Ohm' Variable Energy Pistol Crate"
 	desc = "Contains a small, versatile energy gun, capable of firing both nonlethal and lethal blasts."
 	cost = 800
 	contains = list(/obj/item/storage/guncase/pistol/miniegun)
@@ -219,7 +219,7 @@
 	faction = /datum/faction/nt
 
 /datum/supply_pack/gun/energy
-	name = "X12 Variable Energy Carbine Crate"
+	name = "X12 'Volt' Variable Energy Carbine Crate"
 	desc = "Contains a versatile energy gun, capable of firing both nonlethal and lethal blasts of light."
 	cost = 1250
 	contains = list(/obj/item/storage/guncase/energy/egun)
@@ -390,7 +390,7 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/x46
-	name = "X46 Variable Energy Blaster Crate"
+	name = "X46 'Voltage' Variable Energy Blaster Crate"
 	desc = "Contains an energy-based shotgun equipped with dual kill/disable modes, ideal for short range. For NT employee use only."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/energy/ultima)
@@ -482,7 +482,7 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/l305
-	name = "L305 Tactical Plasma Gun Crate"
+	name = "L305 'Rush' Tactical Plasma Gun Crate"
 	desc = "Contains a compact energy-based SMG. For NT employee use only."
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/energy/etar)
@@ -812,7 +812,7 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/al607
-	name = "AL607 Plasma Accelerator"
+	name = "AL607 'Sarissa' Plasma Accelerator"
 	desc = "Contains a AL607 Laser Sniper. For NT employee use only."
 	cost = 4500
 	contains = list(/obj/item/storage/guncase/energy/al607)

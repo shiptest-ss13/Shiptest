@@ -103,7 +103,7 @@
 	icon_state = "nanotrasenrangedsmg"
 	icon_living = "nanotrasenrangedsmg"
 	casingtype = /obj/item/ammo_casing/energy/laser/shotgun/sharplite
-	r_hand = /obj/item/gun/energy/sharplite/x46/zeta
+	r_hand = /obj/item/gun/energy/sharplite/x46
 	rapid = 2
 	rapid_fire_delay = 5
 	retreat_distance = 0
@@ -197,4 +197,4 @@
 	casingtype = /obj/item/ammo_casing/energy/laser/shotgun/sharplite
 	projectiletype = null
 	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
-	r_hand = /obj/item/gun/energy/sharplite/x46/zeta
+	r_hand = /obj/item/gun/energy/sharplite/x46

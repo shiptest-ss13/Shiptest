@@ -50,7 +50,7 @@
 	damage = 25
 	armour_penetration = -5
 
-	pass_flags = PASSTABLE //does not go through glass
+	pass_flags = PASSTABLE | PASSGRILLE //does not go through glass
 
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 
@@ -62,7 +62,7 @@
 	speed = 0.3
 	light_color = COLOR_BLUE_LIGHT
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
-	pass_flags = PASSTABLE //does not go through glass
+	pass_flags = PASSTABLE | PASSGRILLE //does not go through glass
 
 
 /obj/projectile/beam/laser/sharplite/dmr
@@ -77,7 +77,7 @@
 	speed = 0.3
 	wound_bonus = 0
 	bare_wound_bonus = 20
-	pass_flags = PASSTABLE //does not go through glass
+	pass_flags = PASSTABLE | PASSGRILLE //does not go through glass
 
 	light_color = COLOR_BLUE_LIGHT
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
@@ -93,7 +93,7 @@
 /obj/projectile/beam/laser/light/sharplite
 	icon_state = "nt_laser_light"
 	speed = 0.4
-	pass_flags = PASSTABLE //does not go through glass
+	pass_flags = PASSTABLE | PASSGRILLE //does not go through glass
 
 /obj/projectile/beam/laser/eoehoma
 	icon_state = "heavylaser"
