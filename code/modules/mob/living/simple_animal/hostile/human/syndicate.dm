@@ -302,15 +302,18 @@
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space
 	name = "Ramzi Clique Operative"
-	desc = "A deserter from the Gorlex Marauders turned pirate. Rusty gauntlets clutch a pocket pistol, the added bulk of their wrappings giving it a rather undersized appearance."
+	desc = "A deserter from the Gorlex Marauders turned pirate. Rusty gauntlets clutches a modified machinepistol, the added bulk of their wrappings giving it a rather undersized appearance."
 	icon_state = "syndicate_space_pistol"
 	icon_living = "syndicate_space_pistol"
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
+	rapid = 2
+	rapid_fire_delay = 2
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space
+	l_hand = /obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonhead
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/Initialize()
 	. = ..()
@@ -387,8 +390,8 @@
 	icon_living = "syndicate_stormtrooper_pistol"
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
-	l_hand = /obj/item/gun/ballistic/automatic/pistol/rattlesnake
-	rapid = 3
+	l_hand = /obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonhead
+	rapid = 2
 	rapid_fire_delay = 2
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/smg
