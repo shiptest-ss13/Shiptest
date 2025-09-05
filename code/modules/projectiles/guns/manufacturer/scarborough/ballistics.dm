@@ -292,8 +292,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake)
 		/obj/item/ammo_box/magazine/m10mm_cottonhead,
 	)
 
-	recoil = 1
-	recoil_unwielded = 2
+	recoil = 0.5
+	recoil_unwielded = 3
 	burst_size = 2
 	burst_delay = 0.1 SECONDS
 	fire_delay = 0.4 SECONDS
