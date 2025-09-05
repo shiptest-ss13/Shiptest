@@ -278,6 +278,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake)
 	icon_state = "rattlesnake_inteq"
 	item_state = "rattlesnake_inteq"
 
+NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
+
 /obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonhead
 	name = "MP-84m Cottonhead"
 	desc = "A machine pistol obtained from Marauder stockpiles and heavily modified by elements of the Ramzi Clique to accept a larger calibre, with a few largely-ignored drawbacks of 2-round burst and magazine capacity. Chambered in 10x22mm."
@@ -292,13 +294,13 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake)
 		/obj/item/ammo_box/magazine/m10mm_cottonhead,
 	)
 
+	wear_rate = 1.5
+
 	recoil = 0.5
 	recoil_unwielded = 3
 	burst_size = 2
 	burst_delay = 0.1 SECONDS
 	fire_delay = 0.4 SECONDS
-
-NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 
 /obj/item/ammo_box/magazine/m9mm_rattlesnake
 	name = "Rattlesnake magazine (9x18mm)"
