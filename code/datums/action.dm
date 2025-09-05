@@ -223,7 +223,7 @@
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 
 /datum/action/item_action/toggle_ammotype
-	name = "Toggle Ammo Type"
+	name = "Toggle Energy Mode"
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 
 

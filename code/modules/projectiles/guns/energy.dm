@@ -284,6 +284,25 @@
 	else
 		..()
 
+/datum/action/item_action/toggle_ammotype/UpdateButtonIcon(status_only = FALSE, force = FALSE)
+	var/obj/item/gun/energy/our_gun = target
+	var/current_ammotype = our_gun.chambered.select_name
+
+	var/manufacturer_prefix
+	if (our_gun.manufacturer == MANUFACTURER_EOEHOMA)
+		manufacturer_prefix = "eoehoma"
+	else if (our_gun.manufacturer == MANUFACTURER_SHARPLITE_NEW)
+		manufacturer_prefix = "sharplite"
+	else if (our_gun.manufacturer == MANUFACTURER_PGF)
+		manufacturer_prefix = "etherbor"
+	else
+		manufacturer_prefix = "fallback"
+		current_ammotype = "fallback"
+
+	button_icon_state = "[manufacturer_prefix]["_laser_"][current_ammotype]"
+
+	return ..()
+
 /obj/item/gun/energy/proc/select_fire(mob/living/user)
 	select++
 	if (select > ammo_type.len)

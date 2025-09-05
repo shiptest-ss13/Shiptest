@@ -52,6 +52,9 @@
 	///Maximum stack size of ammunition
 	var/stack_size = 15
 
+	///The casing selection name
+	var/select_name
+
 /obj/item/ammo_casing/attackby(obj/item/attacking_item, mob/user, params)
 	if(istype(attacking_item, /obj/item/pen))
 		if(!user.is_literate())
