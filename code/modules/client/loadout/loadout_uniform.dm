@@ -34,29 +34,9 @@
 
 //Shorts
 
-/datum/gear/uniform/athshortsred
-	display_name = "athletic shorts, red"
-	path = /obj/item/clothing/under/shorts/red
-
-/datum/gear/uniform/athshortsblack
-	display_name = "athletic shorts, black"
-	path = /obj/item/clothing/under/shorts/black
-
-/datum/gear/uniform/athshortsgrey
-	display_name = "athletic shorts, grey"
-	path = /obj/item/clothing/under/shorts/grey
-
-/datum/gear/uniform/athshortsblue
-	display_name = "athletic shorts, blue"
-	path = /obj/item/clothing/under/shorts/blue
-
-/datum/gear/uniform/athshortsgreen
-	display_name = "athletic shorts, green"
-	path = /obj/item/clothing/under/shorts/green
-
-/datum/gear/uniform/athshortspurple
-	display_name = "athletic shorts, purple"
-	path = /obj/item/clothing/under/shorts/purple
+/datum/gear/uniform/athshorts
+	display_name = "athletic shorts, recolorable"
+	path = /obj/item/clothing/under/shorts
 
 /datum/gear/uniform/dolphinshorts
 	display_name = "dolphin shorts"
