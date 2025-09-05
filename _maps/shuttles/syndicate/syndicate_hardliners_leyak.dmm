@@ -672,6 +672,10 @@
 	pixel_y = -21;
 	id = "leyakgun"
 	},
+/obj/item/stamp/hardliners{
+	pixel_x = 2;
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "fS" = (
@@ -1312,11 +1316,8 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 10
 	},
-/obj/structure/closet/crate/bin,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 1
-	},
 /obj/machinery/airalarm/directional/west,
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "nt" = (
@@ -1634,6 +1635,10 @@
 /obj/item/megaphone{
 	pixel_x = 0;
 	pixel_y = 11
+	},
+/obj/item/stamp/cybersun{
+	pixel_x = 1;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
@@ -2271,8 +2276,10 @@
 /obj/machinery/door/window/brigdoor/westright{
 	layer = 3.29;
 	req_access = list(3);
-	req_ship_access = 1
+	req_ship_access = 1;
+	dir = 4
 	},
+/obj/machinery/door/window/westleft,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "AT" = (

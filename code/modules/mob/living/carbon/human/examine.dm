@@ -52,9 +52,14 @@
 	//suit/armor
 	if(wear_suit)
 		. += "[t_He] [t_is] wearing [wear_suit.get_examine_string(user)]."
-		//suit/armor storage
-		if(s_store && !(ITEM_SLOT_SUITSTORE in obscured))
+	//suit/armor storage
+	if(s_store && !(ITEM_SLOT_SUITSTORE in obscured))
+		if(wear_suit)
 			. += "[t_He] [t_is] carrying [s_store.get_examine_string(user)] on [t_his] [wear_suit.name]."
+		else if(w_uniform && !(ITEM_SLOT_ICLOTHING in obscured))
+			. += "[t_He] [t_is] carrying [s_store.get_examine_string(user)] on [t_his] [w_uniform.name]."
+		else
+			. += "[t_He] [t_is] carrying [s_store.get_examine_string(user)]."
 	//back
 	if(back)
 		. += "[t_He] [t_has] [back.get_examine_string(user)] on [t_his] back."
@@ -131,8 +136,6 @@
 			just_sleeping = TRUE
 
 		if(!just_sleeping)
-			if(hellbound)
-				. += span_warning("[t_His] soul seems to have been ripped out of [t_his] body. Revival is impossible.")
 			. += ""
 			if(getorgan(/obj/item/organ/brain) && !key && !get_ghost(FALSE, TRUE))
 				. += span_deadsay("[t_He] [t_is] limp and unresponsive; there are no signs of life and [t_he] won't be coming back...")

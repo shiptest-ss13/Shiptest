@@ -22,17 +22,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/barracks)
-"as" = (
-/obj/machinery/power/solar,
-/obj/effect/turf_decal/solarpanel,
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 8
-	},
-/turf/open/floor/concrete/reinforced/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "av" = (
 /obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -118,12 +107,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/e11manufactory/security)
-"aP" = (
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 4
-	},
-/turf/open/floor/concrete/pavement/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "aU" = (
 /obj/structure/marker_beacon{
 	picked_color = "Cerulean"
@@ -528,16 +511,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/warehouse)
-"dN" = (
-/obj/effect/turf_decal/weather/whitesands,
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 8
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "dP" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
@@ -548,12 +521,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/whitesands/e11manufactory/office)
-"dR" = (
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 9
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "dX" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -609,20 +576,6 @@
 /obj/structure/cable/yellow,
 /turf/open/floor/concrete/reinforced/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
-"em" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 1
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
-"eq" = (
-/obj/structure/fence,
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 5
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "et" = (
 /obj/structure/table,
 /obj/item/storage/toolbox/mechanical{
@@ -630,13 +583,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/warehouse)
-"ey" = (
-/obj/structure/fence,
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 10
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "ez" = (
 /obj/machinery/conveyor,
 /obj/structure/plasticflaps/opaque,
@@ -754,9 +700,6 @@
 "fJ" = (
 /obj/structure/fence/cut/large{
 	dir = 1
-	},
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 5
 	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -926,15 +869,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/whitesands/e11manufactory/office)
-"ho" = (
-/obj/structure/fence{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 1
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "hp" = (
 /mob/living/simple_animal/hostile/human/hermit/ranged/e11{
 	faction = list("eoehoma")
@@ -1113,10 +1047,6 @@
 	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
-"iu" = (
-/obj/effect/turf_decal/weather/whitesands/corner,
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "ix" = (
 /obj/structure/flora/ash/garden/arid,
 /turf/open/floor/plating/asteroid/whitesands/lit,
@@ -1141,16 +1071,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 1
-	},
 /turf/open/floor/concrete/reinforced/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
-"iL" = (
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 5
-	},
-/turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "iM" = (
 /obj/structure/closet/crate/secure/plasma{
@@ -1461,9 +1382,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "5-8"
 	},
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 1
-	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "lh" = (
@@ -1540,15 +1458,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
-"lT" = (
-/obj/structure/fence{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 6
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "lV" = (
 /obj/structure/closet/crate/secure/weapon{
 	anchored = 1;
@@ -1558,15 +1467,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/whitesands/e11manufactory/warehouse)
-"lY" = (
-/obj/structure/fence{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 9
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "ma" = (
 /obj/structure/railing{
 	dir = 8
@@ -1796,15 +1696,6 @@
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable/orange{
 	icon_state = "0-10"
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
-"nE" = (
-/obj/structure/fence{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 8
 	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -2044,15 +1935,6 @@
 /obj/item/pen,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/whitesands/e11manufactory/security)
-"pv" = (
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 4
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "pE" = (
 /turf/closed/wall/rust/yesdiag,
 /area/ruin/whitesands/e11manufactory)
@@ -2119,10 +2001,6 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
-"qi" = (
-/obj/effect/turf_decal/weather/whitesands/corner,
-/turf/open/floor/concrete/pavement/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "qj" = (
 /obj/machinery/power/solar,
 /obj/effect/turf_decal/solarpanel,
@@ -2146,12 +2024,6 @@
 "qp" = (
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ruin/whitesands/e11manufactory/office)
-"qs" = (
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 4
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "qx" = (
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/warehouse)
@@ -2196,15 +2068,6 @@
 	light_power = 0.6;
 	light_range = 2
 	},
-/area/overmap_encounter/planetoid/sand/explored)
-"qJ" = (
-/obj/structure/fence{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 10
-	},
-/turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "qN" = (
 /obj/machinery/door/airlock/external{
@@ -2268,13 +2131,6 @@
 "rx" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/concrete/pavement/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
-"ry" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/weather/whitesands/corner,
-/turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "rB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2598,12 +2454,6 @@
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plating,
 /area/ruin/whitesands/e11manufactory/barracks)
-"uo" = (
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 1
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "uq" = (
 /obj/effect/turf_decal/road{
 	dir = 5
@@ -2688,9 +2538,6 @@
 	},
 /obj/structure/marker_beacon{
 	picked_color = "Cerulean"
-	},
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 8
 	},
 /turf/open/floor/concrete/pavement/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -3006,13 +2853,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/whitesands/e11manufactory/barracks)
-"xz" = (
-/obj/structure/fence,
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 6
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "xG" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Locker Room"
@@ -3065,13 +2905,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
-"xX" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 4
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "xY" = (
 /obj/structure/closet/firecloset/full,
 /obj/item/extinguisher,
@@ -3125,13 +2958,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/whitesands/e11manufactory/barracks)
-"yC" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/weather/whitesands,
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "yK" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Toilet";
@@ -3144,9 +2970,6 @@
 /obj/effect/decal/cleanable/greenglow,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
-	},
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 5
 	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -3207,13 +3030,6 @@
 	dir = 8
 	},
 /turf/open/floor/concrete/pavement/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
-"zw" = (
-/obj/structure/fence,
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 4
-	},
-/turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "zz" = (
 /turf/open/floor/concrete/slab_3{
@@ -3339,17 +3155,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/e11manufactory)
-"AH" = (
-/obj/machinery/power/solar,
-/obj/effect/turf_decal/solarpanel,
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 8
-	},
-/turf/open/floor/concrete/reinforced/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "AK" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -3357,15 +3162,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/whitesands/e11manufactory/warehouse)
-"AU" = (
-/obj/structure/fence{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 5
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "AW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
@@ -3572,7 +3368,6 @@
 /obj/structure/fence/cut/large{
 	dir = 8
 	},
-/obj/effect/turf_decal/weather/whitesands,
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "CH" = (
@@ -3586,12 +3381,6 @@
 /obj/structure/reagent_dispensers/foamtank,
 /turf/open/floor/concrete/pavement/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
-"CI" = (
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 6
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "CL" = (
 /obj/effect/turf_decal/road{
 	dir = 4
@@ -3600,9 +3389,6 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 1
-	},
 /turf/open/floor/concrete/pavement/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "CN" = (
@@ -3640,12 +3426,6 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/whitesands/e11manufactory/warehouse)
-"CU" = (
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 8
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Da" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -3654,13 +3434,6 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "Db" = (
 /turf/closed/wall/mineral/titanium/survival/pod,
-/area/overmap_encounter/planetoid/sand/explored)
-"Dd" = (
-/obj/structure/fence,
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 8
-	},
-/turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Dp" = (
 /obj/item/chair{
@@ -3717,15 +3490,6 @@
 	},
 /turf/open/floor/concrete/reinforced/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
-"DL" = (
-/obj/structure/fence/cut/large{
-	dir = 8
-	},
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 1
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "DM" = (
 /obj/structure/window/unanchored,
 /obj/item/chair{
@@ -3779,18 +3543,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
-"DW" = (
-/obj/effect/turf_decal/road{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 5
-	},
-/turf/open/floor/concrete/pavement/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Eb" = (
 /obj/machinery/door/airlock/external{
 	dir = 4
@@ -3943,9 +3695,6 @@
 /area/ruin/whitesands/e11manufactory/barracks)
 "Ft" = (
 /obj/structure/fence/door,
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 8
-	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Fx" = (
@@ -3985,12 +3734,6 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/whitesands/e11manufactory/barracks)
-"FP" = (
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 4
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "FR" = (
 /obj/structure/sink/kitchen{
 	dir = 8
@@ -4008,11 +3751,6 @@
 	dir = 4
 	},
 /turf/open/floor/concrete/reinforced/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
-"FV" = (
-/obj/effect/decal/cleanable/greenglow,
-/obj/effect/turf_decal/weather/whitesands/corner,
-/turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "FY" = (
 /obj/effect/turf_decal/road{
@@ -4076,9 +3814,6 @@
 "Gs" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
-	},
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 1
 	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -4159,16 +3894,6 @@
 	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
-"Hi" = (
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 8
-	},
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/whitesands,
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Hp" = (
 /obj/structure/chair{
 	dir = 4
@@ -4202,15 +3927,6 @@
 "HC" = (
 /obj/structure/railing{
 	dir = 9
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
-"HD" = (
-/obj/item/restraints/legcuffs/beartrap{
-	armed = 1
-	},
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 1
 	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -4324,21 +4040,6 @@
 /obj/effect/decal/cleanable/oil/streak,
 /turf/open/floor/concrete/pavement,
 /area/ruin/whitesands/e11manufactory/warehouse)
-"IB" = (
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
-"IC" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 1
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "ID" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4;
@@ -4690,12 +4391,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
 /area/ruin/whitesands/e11manufactory/barracks)
-"LA" = (
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 5
-	},
-/turf/open/floor/concrete/pavement/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "LB" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -4753,15 +4448,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/warehouse)
-"LY" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 1
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "LZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement,
@@ -4926,18 +4612,6 @@
 	},
 /turf/open/floor/concrete/pavement/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
-"Nj" = (
-/obj/effect/turf_decal/road{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Nr" = (
 /obj/structure/fence/door{
 	dir = 4
@@ -4989,11 +4663,8 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "NF" = (
 /obj/item/restraints/legcuffs/beartrap,
-/obj/effect/mob_spawn/human/corpse/damaged/whitesands/e11,
+/obj/effect/mob_spawn/human/corpse/damaged/whitesands,
 /obj/effect/decal/cleanable/blood/old,
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 1
-	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "NH" = (
@@ -5120,39 +4791,11 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/warehouse)
-"OI" = (
-/obj/structure/fence{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 8
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
-"OM" = (
-/obj/structure/fence,
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 9
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "ON" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/barracks)
-"OP" = (
-/obj/effect/turf_decal/road{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 1
-	},
-/turf/open/floor/concrete/pavement/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "OT" = (
 /obj/effect/turf_decal/road{
 	dir = 8
@@ -5286,18 +4929,6 @@
 /area/ruin/whitesands/e11manufactory/security)
 "PP" = (
 /obj/structure/flora/ash/garden/waste,
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 1
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
-"PQ" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 1
-	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "PR" = (
@@ -5375,12 +5006,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/e11manufactory/office)
-"Qp" = (
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 8
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Qq" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_2{
@@ -5399,13 +5024,6 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
-"QD" = (
-/obj/structure/fence,
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 8
-	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "QE" = (
@@ -5675,12 +5293,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
-"Sn" = (
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 1
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Sy" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable/orange{
@@ -5814,13 +5426,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
-"Tg" = (
-/obj/effect/turf_decal/weather/whitesands/corner,
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 4
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Ti" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -5876,19 +5481,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/e11manufactory/office)
-"TP" = (
-/obj/structure/fence{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/whitesands,
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
-"TU" = (
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 6
-	},
-/turf/open/floor/concrete/pavement/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Ug" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -5981,16 +5573,6 @@
 	},
 /turf/open/floor/concrete/pavement,
 /area/ruin/whitesands/e11manufactory/warehouse)
-"UW" = (
-/obj/effect/turf_decal/road{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/whitesands,
-/turf/open/floor/concrete/pavement/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Vc" = (
 /obj/machinery/power/solar,
 /obj/effect/turf_decal/solarpanel,
@@ -6081,13 +5663,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
-"VP" = (
-/obj/effect/decal/cleanable/glass,
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 8
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "We" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable/orange{
@@ -6104,15 +5679,6 @@
 	light_range = 2
 	},
 /area/ruin/whitesands/e11manufactory/warehouse)
-"Wk" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 8
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Wn" = (
 /obj/structure/table/reinforced,
 /obj/item/cutting_board{
@@ -6131,12 +5697,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/whitesands/e11manufactory/office)
-"Wp" = (
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 10
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Wu" = (
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/concrete/pavement/whitesands/lit,
@@ -6145,15 +5705,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/whitesands/e11manufactory/office)
-"Wy" = (
-/obj/item/restraints/legcuffs/beartrap{
-	armed = 1
-	},
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 8
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "WC" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
@@ -6248,10 +5799,6 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/whitesands/e11manufactory/warehouse)
-"Xi" = (
-/obj/effect/turf_decal/weather/whitesands,
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Xj" = (
 /obj/item/solar_assembly,
 /obj/effect/turf_decal/solarpanel,
@@ -6481,9 +6028,6 @@
 	},
 /obj/item/restraints/legcuffs/beartrap{
 	armed = 1
-	},
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 4
 	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -6868,10 +6412,10 @@ mM
 vU
 gM
 gM
-Dd
-Dd
-Dd
-ey
+dq
+dq
+dq
+dq
 Ji
 Ji
 Ji
@@ -6879,15 +6423,15 @@ Ji
 Ji
 Ji
 Ji
-OM
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-ey
+dq
+dq
+dq
+dq
+dq
+dq
+dq
+dq
+dq
 Ji
 Ji
 Ji
@@ -6936,15 +6480,15 @@ oS
 Pg
 Pg
 Pg
-qs
-Qp
-Wp
+Pg
+Pg
+Pg
 vU
-dR
-Qp
-Qp
-Qp
-HD
+Pg
+Pg
+Pg
+Pg
+YK
 gV
 gV
 gV
@@ -6952,12 +6496,12 @@ Pg
 Pg
 gV
 Pg
-Xi
+Pg
 vU
 vU
-dR
-Qp
-Wp
+Pg
+Pg
+Pg
 vU
 vU
 vU
@@ -6996,16 +6540,16 @@ mM
 mM
 mM
 vU
-ho
+KQ
 Pg
 SR
 rg
 Mg
 lh
 Pg
-qs
-Qp
-uo
+Pg
+Pg
+Pg
 gV
 gV
 gV
@@ -7017,13 +6561,13 @@ Pg
 Pg
 gV
 gV
-qs
-Qp
-Wy
-uo
 Pg
-qs
-Wp
+Pg
+YK
+Pg
+Pg
+Pg
+Pg
 vU
 vU
 cc
@@ -7061,7 +6605,7 @@ mM
 mM
 mM
 Bx
-ho
+KQ
 Pg
 ZR
 XF
@@ -7088,10 +6632,10 @@ gV
 gV
 Pg
 Pg
-Xi
+Pg
 vA
-dR
-qJ
+Pg
+KQ
 vU
 vU
 vU
@@ -7126,7 +6670,7 @@ mM
 mM
 mM
 vU
-ho
+KQ
 Pg
 pk
 Yv
@@ -7153,10 +6697,10 @@ Km
 Km
 pE
 Pg
-qs
-Qp
-uo
-TP
+Pg
+Pg
+Pg
+KQ
 vU
 wk
 Zj
@@ -7191,7 +6735,7 @@ mM
 mM
 mM
 vU
-ho
+KQ
 Pg
 XF
 HX
@@ -7221,7 +6765,7 @@ pE
 gV
 Pg
 Pg
-TP
+KQ
 vU
 vU
 gG
@@ -7256,7 +6800,7 @@ mM
 mM
 vU
 Zj
-ho
+KQ
 Pg
 SR
 rg
@@ -7286,7 +6830,7 @@ Km
 gV
 gV
 gV
-TP
+KQ
 vU
 bI
 bI
@@ -7321,8 +6865,8 @@ mM
 mM
 vU
 Zj
-AU
-CU
+KQ
+Pg
 Pg
 Pg
 gV
@@ -7351,7 +6895,7 @@ Km
 Pg
 gV
 gV
-TP
+KQ
 vU
 vU
 hS
@@ -7387,10 +6931,10 @@ vU
 vA
 vU
 cc
-iL
-FP
-FP
-CU
+Pg
+Pg
+Pg
+Pg
 Pg
 Lh
 eE
@@ -7416,7 +6960,7 @@ Km
 Pg
 gV
 Pg
-TP
+KQ
 vU
 Zj
 Zj
@@ -7455,7 +6999,7 @@ cc
 vU
 vU
 vU
-Sn
+Pg
 gV
 Lh
 eE
@@ -7481,7 +7025,7 @@ pE
 gV
 gV
 Pg
-TP
+KQ
 cr
 Zj
 sz
@@ -7518,9 +7062,9 @@ Zj
 Zj
 cc
 vU
-dR
-Qp
-uo
+Pg
+Pg
+Pg
 gV
 uy
 eE
@@ -7582,7 +7126,7 @@ vU
 vU
 vU
 cc
-dR
+Pg
 NF
 gV
 gV
@@ -7607,11 +7151,11 @@ eg
 og
 xY
 Km
-FP
-CU
+Pg
+Pg
 tN
 Pg
-TP
+KQ
 vU
 vU
 bI
@@ -7646,8 +7190,8 @@ mM
 Gy
 vU
 vU
-lY
-uo
+KQ
+Pg
 Pg
 Pg
 gV
@@ -7673,10 +7217,10 @@ xI
 RA
 Km
 vU
-Sn
+Pg
 gV
 Pg
-TP
+KQ
 Bx
 vU
 vU
@@ -7738,13 +7282,13 @@ xq
 Ar
 Km
 vU
-Sn
+Pg
 gV
 Pg
 gM
-Dd
-Dd
-ey
+dq
+dq
+dq
 Ji
 Ji
 Ji
@@ -7759,12 +7303,12 @@ Ji
 Ji
 Ji
 Ji
-OM
-Dd
-Dd
-Dd
-Dd
-ey
+dq
+dq
+dq
+dq
+dq
+dq
 gM
 gM
 Zj
@@ -7778,8 +7322,8 @@ mM
 vU
 gM
 gM
-zw
-QD
+dq
+dq
 dq
 dq
 gM
@@ -7803,14 +7347,14 @@ Km
 WM
 Km
 pE
-uo
+Pg
 Pg
 gV
 Pg
 gV
 oS
-qs
-Wp
+Pg
+Pg
 vU
 Pa
 vU
@@ -7823,14 +7367,14 @@ vU
 vU
 vU
 vU
-dR
-uo
 Pg
 Pg
 Pg
 Pg
-qs
-Wp
+Pg
+Pg
+Pg
+Pg
 gM
 vU
 bI
@@ -7875,28 +7419,28 @@ Pg
 Pg
 Pg
 Pg
-qs
-Wp
+Pg
+Pg
 vU
 vU
-dR
-Qp
-Qp
-Qp
-Wp
+Pg
+Pg
+Pg
+Pg
+Pg
 vU
 vU
 vA
 vU
-iL
-CU
+Pg
+Pg
 hw
 gV
 Pg
 gV
 Pg
-qs
-qJ
+Pg
+KQ
 vU
 bI
 Db
@@ -7909,7 +7453,7 @@ vU
 vU
 cr
 vU
-IC
+sV
 on
 KJ
 KQ
@@ -7941,27 +7485,27 @@ Pg
 Pg
 gV
 gV
-qs
-Wp
+Pg
+Pg
 kr
 oz
 oz
 oz
 kr
-qs
-Qp
-Qp
-Wp
+Pg
+Pg
+Pg
+Pg
 vU
 vU
-Sn
+Pg
 gV
 gV
 gV
 gV
 Pg
 Pg
-TP
+KQ
 vU
 vU
 Hd
@@ -7975,7 +7519,7 @@ vA
 vU
 vU
 yN
-VP
+Ze
 lJ
 KQ
 Ie
@@ -8026,7 +7570,7 @@ ox
 gV
 gV
 Pg
-TP
+KQ
 vU
 vU
 vU
@@ -8091,7 +7635,7 @@ Pg
 Kg
 gV
 gV
-TP
+KQ
 vU
 vU
 vU
@@ -8105,7 +7649,7 @@ vU
 vU
 vU
 vU
-PQ
+EZ
 QB
 KQ
 Pg
@@ -8156,7 +7700,7 @@ Pg
 Pg
 gV
 gV
-TP
+KQ
 vU
 vU
 Zj
@@ -8170,8 +7714,8 @@ mM
 Zj
 vU
 vU
-iL
-FP
+Pg
+Pg
 Ft
 YK
 JM
@@ -8221,7 +7765,7 @@ Pg
 Pg
 gV
 Pg
-TP
+KQ
 vU
 vU
 vA
@@ -8237,8 +7781,8 @@ Zj
 vU
 vU
 vU
-AU
-CU
+KQ
+Pg
 JM
 Pg
 Pg
@@ -8286,7 +7830,7 @@ oz
 oz
 kr
 Pg
-TP
+KQ
 vU
 Zj
 Zj
@@ -8303,7 +7847,7 @@ Rm
 Zj
 vU
 cc
-Sn
+Pg
 HE
 We
 We
@@ -8351,7 +7895,7 @@ SP
 XD
 oz
 Pg
-TP
+KQ
 vU
 RV
 vU
@@ -8367,8 +7911,8 @@ Gy
 vU
 vU
 Vj
-lY
-uo
+KQ
+Pg
 oB
 Pg
 Pg
@@ -8416,7 +7960,7 @@ yO
 my
 oz
 Pg
-TP
+KQ
 Zj
 vU
 vU
@@ -8432,8 +7976,8 @@ vU
 vU
 vU
 Pa
-AU
-CU
+KQ
+Pg
 oB
 Pg
 Pg
@@ -8481,7 +8025,7 @@ ht
 Kb
 oz
 Pg
-TP
+KQ
 Zj
 vU
 vU
@@ -8498,7 +8042,7 @@ Ji
 Ji
 Ji
 gM
-Sn
+Pg
 oB
 oS
 Pg
@@ -8545,8 +8089,8 @@ oz
 oz
 oz
 kr
-iu
-lT
+Pg
+KQ
 vU
 vU
 vU
@@ -8562,8 +8106,8 @@ vU
 vU
 vU
 vU
-dR
-uo
+Pg
+Pg
 JM
 Pg
 Pg
@@ -8580,8 +8124,8 @@ PZ
 dX
 di
 SO
-FP
-CU
+Pg
+Pg
 Ze
 Pg
 Pg
@@ -8610,7 +8154,7 @@ oz
 Pg
 Pg
 Pg
-Xi
+Pg
 cc
 Zj
 vU
@@ -8626,8 +8170,8 @@ vU
 vU
 cr
 Bx
-dR
-uo
+Pg
+Pg
 gV
 oB
 Pg
@@ -8646,7 +8190,7 @@ OF
 et
 di
 vU
-Sn
+Pg
 Pg
 gV
 zE
@@ -8674,8 +8218,8 @@ uu
 oz
 Pg
 Pg
-iu
-CI
+Pg
+Pg
 cc
 vU
 Zj
@@ -8691,7 +8235,7 @@ vU
 vU
 vU
 vU
-Sn
+Pg
 gV
 Pg
 oB
@@ -8711,8 +8255,8 @@ vL
 XM
 di
 jD
-iL
-CU
+Pg
+Pg
 Pg
 gV
 af
@@ -8739,7 +8283,7 @@ oz
 kr
 Pg
 Pg
-Xi
+Pg
 vU
 cc
 Pa
@@ -8754,8 +8298,8 @@ vU
 cc
 vU
 vU
-dR
-AH
+Pg
+SR
 iK
 Xj
 Pg
@@ -8777,7 +8321,7 @@ DG
 di
 vU
 vU
-Sn
+Pg
 gV
 gV
 vp
@@ -8804,7 +8348,7 @@ kr
 Pg
 Pg
 gV
-Xi
+Pg
 vU
 Ex
 mH
@@ -8818,8 +8362,8 @@ vU
 vU
 cc
 vU
-dR
-uo
+Pg
+Pg
 JR
 Xn
 mL
@@ -8841,8 +8385,8 @@ vL
 JP
 di
 vU
-dR
-uo
+Pg
+Pg
 Pg
 Pg
 Qq
@@ -8868,8 +8412,8 @@ Pg
 gV
 gV
 Pg
-FV
-CI
+oS
+Pg
 vU
 Ex
 mH
@@ -8881,9 +8425,9 @@ Gy
 mM
 vU
 vU
-lY
-Qp
-uo
+KQ
+Pg
+Pg
 gV
 vV
 uS
@@ -8905,8 +8449,8 @@ pS
 vL
 Em
 di
-dR
-em
+Pg
+gV
 gV
 Pg
 Pg
@@ -8933,7 +8477,7 @@ bK
 LP
 gV
 gV
-Xi
+Pg
 vU
 vU
 cc
@@ -8946,7 +8490,7 @@ mH
 mM
 vA
 vU
-ho
+KQ
 Pg
 gV
 gV
@@ -8970,7 +8514,7 @@ PR
 vL
 mm
 di
-uo
+Pg
 gV
 Mi
 EZ
@@ -8998,10 +8542,10 @@ nu
 RR
 gV
 Pg
-Xi
+Pg
 vU
-dR
-OI
+Pg
+KQ
 mH
 mH
 vU
@@ -9011,7 +8555,7 @@ mH
 mM
 vU
 vU
-ho
+KQ
 Pg
 gV
 Pg
@@ -9063,9 +8607,9 @@ BJ
 XF
 gV
 Pg
-qs
-Wy
-uo
+Pg
+YK
+Pg
 gM
 mH
 Dz
@@ -9076,7 +8620,7 @@ vU
 mM
 vU
 vU
-ho
+KQ
 Pg
 gV
 Pg
@@ -9141,11 +8685,11 @@ vU
 mM
 vU
 vU
-ho
-iu
-FP
-FP
-as
+KQ
+Pg
+Pg
+Pg
+SR
 uS
 UM
 Pg
@@ -9206,12 +8750,12 @@ vU
 mM
 Zj
 Gy
-AU
-CI
+KQ
+Pg
 vU
 vU
-iL
-Wk
+Pg
+FK
 Pg
 Pg
 oB
@@ -9274,9 +8818,9 @@ vU
 cc
 Bx
 vU
-Hi
+Pg
 vU
-LY
+FK
 Pg
 Jn
 oB
@@ -9338,9 +8882,9 @@ Bx
 vU
 cc
 vU
-dR
-pv
-Qp
+Pg
+Pg
+Pg
 le
 HV
 ZE
@@ -9401,9 +8945,9 @@ mM
 mM
 vU
 vU
-lY
-Qp
-uo
+KQ
+Pg
+Pg
 Pg
 pt
 nA
@@ -9466,7 +9010,7 @@ mM
 mM
 bI
 vU
-ho
+KQ
 Pg
 gV
 Pg
@@ -9516,9 +9060,9 @@ aY
 ln
 Wo
 SE
-ry
-FP
-nE
+FK
+Pg
+KQ
 mH
 Ek
 vU
@@ -9531,7 +9075,7 @@ mM
 vU
 vU
 vU
-ho
+KQ
 Pg
 gV
 Pg
@@ -9581,9 +9125,9 @@ bB
 PV
 KC
 SE
-yC
+FK
 vU
-AU
+KQ
 mH
 vU
 vU
@@ -9596,7 +9140,7 @@ mM
 Hd
 tY
 vU
-ho
+KQ
 gV
 gV
 Pg
@@ -9646,7 +9190,7 @@ NX
 NX
 NX
 mI
-yC
+FK
 vU
 cc
 Zj
@@ -9661,7 +9205,7 @@ mM
 bI
 vU
 vU
-ho
+KQ
 Pg
 gV
 Pg
@@ -9712,7 +9256,7 @@ mI
 Pg
 Pg
 Zb
-Wp
+Pg
 cc
 vU
 Zj
@@ -9726,7 +9270,7 @@ mM
 bI
 bI
 vU
-ho
+KQ
 gV
 gV
 Pg
@@ -9777,8 +9321,8 @@ Oj
 cH
 rV
 Pg
-qs
-qJ
+Pg
+KQ
 vU
 Zj
 vU
@@ -9791,7 +9335,7 @@ mM
 vU
 vU
 vU
-ho
+KQ
 Pg
 gV
 gV
@@ -9843,7 +9387,7 @@ ZR
 hH
 Pg
 Pg
-TP
+KQ
 vU
 vU
 vU
@@ -9856,7 +9400,7 @@ mM
 mM
 vU
 vU
-ho
+KQ
 gV
 gV
 gV
@@ -9908,7 +9452,7 @@ ZR
 hH
 Pg
 Pg
-TP
+KQ
 vU
 vU
 vU
@@ -9921,7 +9465,7 @@ mM
 mM
 vU
 vU
-ho
+KQ
 gV
 Pg
 gV
@@ -9965,15 +9509,15 @@ DQ
 YE
 NX
 yW
-iL
-CU
+Pg
+Pg
 gV
 SA
 ZR
 fA
 Pg
 Pg
-TP
+KQ
 vU
 vU
 vU
@@ -9986,14 +9530,14 @@ mM
 mM
 vU
 vA
-ho
+KQ
 Pg
 YK
-iu
-FP
-FP
-FP
-CU
+Pg
+Pg
+Pg
+Pg
+Pg
 Pg
 Pg
 Pg
@@ -10031,14 +9575,14 @@ QI
 NX
 vU
 vU
-iL
-CU
+Pg
+Pg
 SA
 XF
 hH
 Pg
 Pg
-TP
+KQ
 vA
 vU
 vU
@@ -10053,12 +9597,12 @@ Gy
 vU
 gM
 Pg
-iu
-CI
+Pg
+Pg
 vU
 vU
 vU
-Sn
+Pg
 Pg
 Pg
 Pg
@@ -10097,13 +9641,13 @@ mI
 vU
 Pa
 vU
-Sn
+Pg
 KO
 ZR
 DJ
 gV
 Pg
-TP
+KQ
 vU
 vU
 vU
@@ -10118,12 +9662,12 @@ vU
 vU
 gM
 gM
-xz
+dq
 Ji
 Ji
 gM
 vU
-Sn
+Pg
 Pg
 Pg
 Pg
@@ -10156,19 +9700,19 @@ YK
 hw
 Pg
 jt
-iu
-FP
-CI
+Pg
+Pg
+Pg
 vU
 vU
-dR
-uo
+Pg
+Pg
 gV
 gV
 gV
 gV
 Pg
-TP
+KQ
 vU
 vU
 vU
@@ -10187,8 +9731,8 @@ vU
 vU
 vU
 cc
-dR
-uo
+Pg
+Pg
 Pg
 Pg
 Pg
@@ -10221,13 +9765,13 @@ Pg
 Pg
 dc
 Pg
-Xi
+Pg
 vU
 vU
 vU
 vU
-iL
-CU
+Pg
+Pg
 Pg
 Pg
 Pg
@@ -10251,8 +9795,8 @@ Cw
 Cw
 Cw
 vU
-lY
-uo
+KQ
+Pg
 Pg
 Pg
 Pg
@@ -10283,20 +9827,20 @@ Pg
 Pg
 Pg
 gM
-zw
-zw
-zw
-xz
+dq
+dq
+dq
+dq
 Ji
 Ji
 Ji
 Ji
 Ji
 fJ
-zw
-zw
-zw
-zw
+dq
+dq
+dq
+dq
 gM
 gM
 vU
@@ -10316,7 +9860,7 @@ Cw
 Cw
 Cw
 vU
-ho
+KQ
 Pg
 Pg
 gV
@@ -10347,7 +9891,7 @@ Pg
 Pg
 Pg
 Pg
-TP
+KQ
 Bx
 vU
 vU
@@ -10381,12 +9925,12 @@ Cw
 Cw
 vU
 vU
-ho
+KQ
 Pg
 Pg
-iu
-FP
-CU
+Pg
+Pg
+Pg
 Xy
 gU
 gU
@@ -10412,7 +9956,7 @@ Pg
 Pg
 Pg
 Pg
-TP
+KQ
 vU
 vU
 vU
@@ -10446,13 +9990,13 @@ mM
 Zj
 vU
 vU
-ho
+KQ
 Pg
 Pg
-Xi
+Pg
 Bx
-iL
-Nj
+Pg
+Xy
 gU
 gU
 gU
@@ -10477,7 +10021,7 @@ Pg
 Pg
 gV
 Pg
-TP
+KQ
 vU
 bI
 Zj
@@ -10511,13 +10055,13 @@ mM
 Zj
 ix
 vU
-ho
+KQ
 Pg
 RJ
-Xi
+Pg
 vU
 vU
-OP
+Xy
 gU
 gU
 gU
@@ -10533,16 +10077,16 @@ gU
 gU
 gU
 gU
-qi
-aP
-IB
+gU
+gU
+gU
 gU
 rP
 Pg
 gV
 gV
 Pg
-TP
+KQ
 vU
 bI
 vU
@@ -10576,12 +10120,12 @@ mM
 vU
 Gy
 vU
-ho
+KQ
 Pg
 gV
-Xi
+Pg
 vU
-dR
+Pg
 CL
 hI
 gU
@@ -10597,17 +10141,17 @@ gU
 gU
 gU
 bi
-qi
-TU
+gU
+gU
 vU
-LA
-IB
+gU
+gU
 rP
 gV
 Pg
 gV
 Pg
-TP
+KQ
 Hd
 Zj
 Zj
@@ -10641,12 +10185,12 @@ mM
 vU
 Zj
 vU
-DL
+CA
 Pg
 Pg
-qs
-Qp
-uo
+Pg
+Pg
+Pg
 uq
 gt
 JJ
@@ -10662,17 +10206,17 @@ JJ
 JJ
 JJ
 JJ
-UW
+JJ
 vU
 Pa
 vU
-DW
+JJ
 uR
 gV
 gV
 Pg
 Pg
-TP
+KQ
 vU
 vU
 Zj
@@ -10706,38 +10250,38 @@ mM
 vU
 Zj
 vU
-ho
+KQ
 Pg
 Pg
 gV
 gV
 gV
 gV
-iu
-FP
-CU
 Pg
 Pg
-gV
 Pg
-gV
+Pg
+Pg
 gV
 Pg
 gV
 gV
 Pg
+gV
+gV
 Pg
-Tg
-dN
+Pg
+Pg
+Pg
 vU
 vU
 vU
-Sn
+Pg
 gV
 Pg
 Pg
 Pg
-TP
+KQ
 vU
 vU
 Zj
@@ -10774,14 +10318,14 @@ vU
 gM
 Pg
 Pg
-iu
-FP
-xX
-xX
-CI
+Pg
+Pg
+gV
+gV
+Pg
 vU
-iL
-CU
+Pg
+Pg
 Pg
 Pg
 Pg
@@ -10791,14 +10335,14 @@ gV
 Pg
 Pg
 gV
-iu
-CI
+Pg
+Pg
 vU
 vU
 vU
 vU
-iL
-CU
+Pg
+Pg
 Pg
 Pg
 Pg
@@ -10838,34 +10382,34 @@ Pa
 vU
 gM
 gM
-zw
-xz
+dq
+dq
 Ji
 Ji
 Ji
 Ji
 Ji
 Ji
-eq
-zw
-zw
-zw
+dq
+dq
+dq
+dq
 dq
 hD
-zw
-zw
-zw
-zw
-xz
+dq
+dq
+dq
+dq
+dq
 Ji
 Ji
 Ji
 Ji
 Ji
 Ji
-eq
-zw
-zw
+dq
+dq
+dq
 gM
 gM
 vU

@@ -62,7 +62,7 @@
 	icon_state = "inteq_sneak"
 	item_state = "inteq_sneak"
 	roll_sleeves = FALSE
-
+	roll_down = TRUE
 
 // Oversuits // can someone like. change the vanguard and maa armors to be subtypes of armor/inteq. please
 
@@ -73,7 +73,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
 	icon_state = "armor_inteq_battlecoat"
 	item_state = "inteq_battlecoat"
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/inteq/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/inteq/kepori.dmi'
 
@@ -90,7 +90,9 @@
 	desc = "A brown armored coat with a bulletproof vest over it, usually worn by the Master At Arms of the IRMG."
 	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/inteq/kepori.dmi'
 	icon_state = "maacoat"
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/suit/armor/inteq/corpsman
 	name = "inteq corpsman vest"
@@ -198,6 +200,42 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/inteq
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/suit/space/hardsuit/bomb/inteq
+	name = "Inteq EOD hardsuit"
+	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
+	icon_state = "hardsuit-inteqeod"
+	hardsuit_type = "inteqeod"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/bomb/inteq
+
+/obj/item/clothing/head/helmet/space/hardsuit/bomb/inteq
+	name = "Inteq EOD hardsuit helmet"
+	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
+	icon_state = "hardsuit0-inteqeod"
+	hardsuit_type = "inteqeod"
+
+//Boulder Hardsuit
+/obj/item/clothing/suit/space/hardsuit/security/inteq/boulder
+	name = "Boulder hardsuit"
+	desc = "An extreme EOD-suit modification created by a group of unsupervised IRMG artificers, a few nights, and far too much Vimukti. The ingenuity of the conversion, as well as relatively low production cost has lead it to adaptation by the IRMG. Extreme bulk guaranteed."
+	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
+	icon_state = "hardsuit-boulder"
+	hardsuit_type = "boulder"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/inteq/boulder
+	slowdown = 1.5
+	armor = list("melee" = 60, "bullet" = 70, "laser" = 50, "energy" = 40, "bomb" = 100, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 50)
+
+/obj/item/clothing/head/helmet/space/hardsuit/security/inteq/boulder
+	name = "Boulder hardsuit helmet"
+	desc = "A modified EOD helmet, with extra plating and a more durable visor."
+	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
+	icon_state = "hardsuit0-boulder"
+	hardsuit_type = "boulder"
+	armor = list("melee" = 60, "bullet" = 70, "laser" = 50, "energy" = 40, "bomb" = 100, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 50)
 
 //Pointman Hardsuit
 /obj/item/clothing/suit/space/hardsuit/syndi/inteq
@@ -402,7 +440,7 @@
 	desc = "A harness with a bunch of pouches attached to them emblazoned in the colors of the IRMG, can hold security gear."
 	icon_state = "inteq_droppouch"
 	item_state = "inteq_droppouch"
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/inteq/vox.dmi'
 
 /obj/item/storage/belt/security/webbing/inteq/alt/bulldog/PopulateContents()

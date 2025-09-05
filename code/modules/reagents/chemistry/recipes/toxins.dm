@@ -4,11 +4,6 @@
 	required_reagents = list(/datum/reagent/consumable/ethanol = 1, /datum/reagent/oxygen = 1, /datum/reagent/silver = 1)
 	required_temp = 420
 
-/datum/chemical_reaction/fentanyl
-	results = list(/datum/reagent/toxin/fentanyl = 1)
-	required_reagents = list(/datum/reagent/drug/space_drugs = 1)
-	required_temp = 674
-
 /datum/chemical_reaction/cyanide
 	results = list(/datum/reagent/toxin/cyanide = 3)
 	required_reagents = list(/datum/reagent/fuel/oil = 1, /datum/reagent/ammonia = 1, /datum/reagent/oxygen = 1)
@@ -81,7 +76,7 @@
 
 /datum/chemical_reaction/rotatium
 	results = list(/datum/reagent/toxin/rotatium = 3)
-	required_reagents = list(/datum/reagent/toxin/mindbreaker = 1, /datum/reagent/teslium = 1, /datum/reagent/toxin/fentanyl = 1)
+	required_reagents = list(/datum/reagent/toxin/mindbreaker = 1, /datum/reagent/teslium = 1, /datum/reagent/drug/methamphetamine = 1)
 	mix_message = span_danger("After sparks, fire, and the smell of mindbreaker, the mix is constantly spinning with no stop in sight.")
 
 /datum/chemical_reaction/anacea

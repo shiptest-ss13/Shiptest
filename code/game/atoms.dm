@@ -1642,6 +1642,10 @@
 					max_grav = max(SG.active,max_grav)
 		return max_grav
 
+///Called after the atom is 'tamed' for type-specific operations, Usually called by the tameable component but also other things.
+/atom/proc/tamed(mob/living/tamer, obj/item/food)
+	return
+
 /**
  * Called when a mob examines (shift click or verb) this atom twice (or more) within EXAMINE_MORE_TIME (default 1.5 seconds)
  *

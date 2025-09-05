@@ -73,6 +73,11 @@
 	else if(istype(mover, /obj/projectile))
 		return prob(30)
 
+/obj/structure/spider/fake_eggcluster // if you dont want them to spawn one million spiders
+	name = "egg cluster"
+	desc = "They seem to pulse slightly with an inner life."
+	icon_state = "eggs"
+
 /obj/structure/spider/eggcluster
 	name = "egg cluster"
 	desc = "They seem to pulse slightly with an inner life."
@@ -240,9 +245,10 @@
 	desc = "Something wrapped in silky spider web."
 	icon_state = "cocoon1"
 	max_integrity = 60
+	var/possible_cocoons = list("cocoon1","cocoon2","cocoon3")
 
 /obj/structure/spider/cocoon/Initialize()
-	icon_state = pick("cocoon1","cocoon2","cocoon3")
+	icon_state = pick(possible_cocoons)
 	. = ..()
 
 /obj/structure/spider/cocoon/container_resist_act(mob/living/user)
@@ -264,3 +270,13 @@
 	for(var/atom/movable/A in contents)
 		A.forceMove(T)
 	return ..()
+
+/obj/structure/spider/cocoon/person
+	desc = "Someone wrapped in silky spider web."
+	icon_state = "cocoon_large3"
+	possible_cocoons = list("cocoon_large1","cocoon_large2","cocoon_large3")
+
+/obj/structure/spider/cocoon/person/deconstruct(disassembled)
+	. = ..()
+	var/turf/T = get_turf(src)
+	new /obj/effect/mob_spawn/human/corpse/damaged/legioninfested/dwarf(T)

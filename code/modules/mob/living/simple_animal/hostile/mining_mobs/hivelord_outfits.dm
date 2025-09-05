@@ -27,7 +27,6 @@
 		/obj/item/clothing/suit/jacket/leather = 1,
 		/obj/item/clothing/suit/jacket/leather/duster = 1,
 		/obj/item/clothing/suit/jacket/miljacket = 1,
-		/obj/item/clothing/suit/jacket/puffer = 1,
 		/obj/item/clothing/suit/gothcoat = 1,
 		/obj/item/clothing/suit/toggle/industrial = 1,
 		/obj/item/clothing/suit/toggle/hazard = 1,
@@ -157,7 +156,6 @@
 	if(prob(25))
 		suit = pick_weight(list(
 			/obj/item/clothing/suit/hooded/explorer = 18,
-			/obj/item/clothing/suit/hooded/explorer/old = 1,
 			/obj/item/clothing/suit/hooded/cloak/goliath = 1
 			)
 		)
@@ -190,7 +188,6 @@
 	if(prob(75))
 		mask = pick_weight(list(
 			/obj/item/clothing/mask/gas/explorer = 9,
-			/obj/item/clothing/mask/gas/explorer/old = 1
 			)
 		)
 	if(prob(50))
@@ -318,15 +315,15 @@
 	for(var/i = 1 to 3)
 		if(prob(75))
 			backpack_contents += pick_weight(list(
-				/obj/item/reagent_containers/pill/patch/styptic = 5,
-				/obj/item/reagent_containers/pill/patch/silver_sulf = 5,
+				/obj/item/reagent_containers/pill/patch/indomide = 5,
+				/obj/item/reagent_containers/pill/patch/alvitane = 5,
 				/obj/item/storage/firstaid/medical = 3,
 				/obj/item/reagent_containers/syringe = 3,
 				/obj/item/reagent_containers/glass/beaker = 2,
 				/obj/item/reagent_containers/dropper = 2,
 				/obj/item/reagent_containers/pill/charcoal = 2,
-				/obj/item/reagent_containers/medigel/styptic = 2,
-				/obj/item/reagent_containers/medigel/silver_sulf = 2,
+				/obj/item/reagent_containers/medigel/quardexane = 2,
+				/obj/item/reagent_containers/medigel/hadrakine = 2,
 				/obj/item/reagent_containers/medigel/sterilizine = 1,
 				/obj/item/flashlight/pen = 1,
 				/obj/item/hypospray/mkii = 1,
