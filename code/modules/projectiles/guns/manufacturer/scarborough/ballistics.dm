@@ -295,8 +295,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake)
 	recoil = 1
 	recoil_unwielded = 2
 	burst_size = 2
-	burst_delay = 0.2 SECONDS
-	fire_delay = 0.6 SECONDS
+	burst_delay = 0.1 SECONDS
+	fire_delay = 0.4 SECONDS
 
 NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 
