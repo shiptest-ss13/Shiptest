@@ -280,18 +280,18 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake)
 
 NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 
-/obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonhead
-	name = "MP-84m Cottonhead"
+/obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonmouth
+	name = "MP-84m Cottonmouth"
 	desc = "A machine pistol obtained from Marauder stockpiles and heavily modified by elements of the Ramzi Clique to accept a larger calibre, with a few largely-ignored drawbacks of 2-round burst and magazine capacity. Chambered in 10x22mm."
 
-	icon_state = "cottonhead"
-	item_state = "cottonhead"
+	icon_state = "cottonmouth"
+	item_state = "cottonmouth"
 
 	fire_sound = 'sound/weapons/gun/pistol/asp.ogg'
 
-	default_ammo_type = /obj/item/ammo_box/magazine/m10mm_cottonhead
+	default_ammo_type = /obj/item/ammo_box/magazine/m10mm_cottonmouth
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/m10mm_cottonhead,
+		/obj/item/ammo_box/magazine/m10mm_cottonmouth,
 	)
 
 	wear_rate = 1.5
@@ -319,9 +319,9 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 /obj/item/ammo_box/magazine/m9mm_rattlesnake/empty
 	start_empty = TRUE
 
-/obj/item/ammo_box/magazine/m10mm_cottonhead
-	name = "Cottonhead magazine (10x22mm)"
-	desc = "A long, 14-round double-stack magazine designed for the Cottonhead modified machine pistol. These rounds do moderate damage, but struggle against armor."
+/obj/item/ammo_box/magazine/m10mm_cottonmouth
+	name = "Cottonmouth magazine (10x22mm)"
+	desc = "A long, 14-round double-stack magazine designed for the Cottonmouth modified machine pistol. These rounds do moderate damage, but struggle against armor."
 	icon_state = "rattlesnake_mag_18"
 	base_icon_state = "rattlesnake_mag"
 	ammo_type = /obj/item/ammo_casing/c10mm
@@ -329,11 +329,11 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 	max_ammo = 14
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
-/obj/item/ammo_box/magazine/m10mm_cottonhead/update_icon_state()
+/obj/item/ammo_box/magazine/m10mm_cottonmouth/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]_[ammo_count() == 1 ? 1 : round(ammo_count(),3)]"
 
-/obj/item/ammo_box/magazine/m10mm_cottonhead/empty
+/obj/item/ammo_box/magazine/m10mm_cottonmouth/empty
 	start_empty = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/himehabu

@@ -314,7 +314,7 @@
 	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space
-	l_hand = /obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonhead
+	l_hand = /obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonmouth
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/Initialize()
 	. = ..()
@@ -391,7 +391,7 @@
 	icon_living = "syndicate_stormtrooper_pistol"
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
-	l_hand = /obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonhead
+	l_hand = /obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonmouth
 	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
 	rapid = 2
 	rapid_fire_delay = 2

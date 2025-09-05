@@ -440,11 +440,11 @@
 	stock = 1
 	availability_prob = 35
 
-/datum/blackmarket_item/weapon/guncase/cottonhead
-	name = "MP-84m Cottonhead Machinepistol"
+/datum/blackmarket_item/weapon/guncase/cottonmouth
+	name = "MP-84m Cottonmouth Machinepistol"
 	desc = "Ramzi suppliers been rechambering a buncha Rattlesnakes into 10x22mm. Ol' nine ain't cutting it anymore. Kicks a liiiiiiittle bit worse aaaand it's just a two burst, but it'll suit ya well."
-	item = /obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonhead
-	pair_item = list(/datum/blackmarket_item/ammo/cottonhead)
+	item = /obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonmouth
+	pair_item = list(/datum/blackmarket_item/ammo/cottonmouth)
 
 	cost_min = 1500
 	cost_max = 2250

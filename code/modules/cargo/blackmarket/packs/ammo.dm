@@ -273,10 +273,10 @@
 	stock = 2
 	availability_prob = 0
 
-/datum/blackmarket_item/ammo/cottonhead
-	name = "Cottonhead Magazine"
-	desc = "A 14 round magazine for the modified Cottonhead machine pistol."
-	item = /obj/item/ammo_box/magazine/m10mm_cottonhead
+/datum/blackmarket_item/ammo/cottonmouth
+	name = "Cottonmouth Magazine"
+	desc = "A 14 round magazine for the modified Cottonmouth machine pistol."
+	item = /obj/item/ammo_box/magazine/m10mm_cottonmouth
 
 	cost_min = 100
 	cost_max = 300
