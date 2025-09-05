@@ -278,6 +278,26 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake)
 	icon_state = "rattlesnake_inteq"
 	item_state = "rattlesnake_inteq"
 
+/obj/item/gun/ballistic/automatic/pistol/rattlesnake/ramzi
+	name = "MP-84m Cottonhead"
+	desc = "A machine pistol obtained from Marauder stockpiles and heavily modified by elements of the Ramzi Clique to accept a larger calibre, with a few largely-ignored drawbacks of 2-round burst and magazine capacity. Chambered in 10x22mm."
+
+	icon_state = "cottonhead"
+	item_state = "cottonhead"
+
+	fire_sound = 'sound/weapons/gun/pistol/asp.ogg'
+
+	default_ammo_type = /obj/item/ammo_box/magazine/m10mm_cottonhead
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m10mm_cottonhead,
+	)
+
+	recoil = 1
+	recoil_unwielded = 2
+	burst_size = 2
+	burst_delay = 0.2 SECONDS
+	fire_delay = 0.6 SECONDS
+
 NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 
 /obj/item/ammo_box/magazine/m9mm_rattlesnake
@@ -295,6 +315,23 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 	icon_state = "[base_icon_state]_[ammo_count() == 1 ? 1 : round(ammo_count(),3)]"
 
 /obj/item/ammo_box/magazine/m9mm_rattlesnake/empty
+	start_empty = TRUE
+
+/obj/item/ammo_box/magazine/m10mm_cottonhead
+	name = "Cottonhead magazine (10x22mm)"
+	desc = "A long, 14-round double-stack magazine designed for the Cottonhead modified machine pistol. These rounds do moderate damage, but struggle against armor."
+	icon_state = "rattlesnake_mag_18"
+	base_icon_state = "rattlesnake_mag"
+	ammo_type = /obj/item/ammo_casing/c10mm
+	caliber = "10x22mm"
+	max_ammo = 14
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/m10mm_cottonhead/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]_[ammo_count() == 1 ? 1 : round(ammo_count(),3)]"
+
+/obj/item/ammo_box/magazine/m10mm_cottonhead/empty
 	start_empty = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/himehabu
