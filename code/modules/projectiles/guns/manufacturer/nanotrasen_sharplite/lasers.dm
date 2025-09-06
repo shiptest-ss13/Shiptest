@@ -125,6 +125,9 @@
 	shaded_charge = TRUE
 	modifystate = FALSE
 	weapon_weight = WEAPON_LIGHT
+	w_class = WEIGHT_CLASS_BULKY
+
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	fire_delay = 0.13 SECONDS
 	wield_slowdown = LASER_SMG_SLOWDOWN
@@ -140,7 +143,6 @@
 	icon_state = "l201"
 	item_state = "l201"
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
 	custom_materials = list(/datum/material/iron=2000)
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/sharplite/dmr)
 	ammo_x_offset = 1
@@ -155,6 +157,8 @@
 	zoom_amt = DMR_ZOOM
 	wield_delay = 1 SECONDS
 
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+
 	spread = 0
 	spread_unwielded = 12
 
@@ -164,7 +168,8 @@
 	icon_state = "l204"
 	item_state = "l204"
 
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/sharplite)
 
 	zoomable = FALSE
@@ -188,7 +193,6 @@
 	icon_state = "x12"
 	item_state = "x12"
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	custom_materials = list(/datum/material/iron=2000)
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite, /obj/item/ammo_casing/energy/laser/sharplite)
 	ammo_x_offset = 1
@@ -199,6 +203,8 @@
 	wield_slowdown = SMG_SLOWDOWN
 	aimed_wield_slowdown = LONG_RIFLE_AIM_SLOWDOWN
 	wield_delay = 0.4 SECONDS
+
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	spread = 2
 	spread_unwielded = 10
@@ -246,6 +252,8 @@
 	aimed_wield_slowdown = SHOTGUN_AIM_SLOWDOWN
 	wield_delay = 0.8 SECONDS
 
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+
 	zoom_amt = SHOTGUN_ZOOM
 
 /obj/item/gun/energy/sharplite/x46/zeta
@@ -291,7 +299,6 @@
 
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
@@ -300,6 +307,8 @@
 	modifystate = FALSE
 
 	fire_delay = 0.2 SECONDS
+
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	wield_delay = 0.7 SECONDS
 	wield_slowdown = HEAVY_LASER_RIFLE_SLOWDOWN
@@ -336,7 +345,6 @@
 
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
@@ -344,13 +352,13 @@
 	shaded_charge = TRUE
 	modifystate = FALSE
 
-	slot_flags = ITEM_SLOT_BACK
-
 	spread = -4
 	spread_unwielded = 40
 
 	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
+
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
 	zoom_out_amt = 5

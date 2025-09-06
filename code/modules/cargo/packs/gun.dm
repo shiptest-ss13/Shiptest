@@ -462,7 +462,7 @@
 	faction = /datum/faction/nt
 
 /datum/supply_pack/gun/bdm50
-	name = "BDM50 PDW Crate"
+	name = "BDM-50 'Akita' PDW Crate"
 	desc = "Contains a compact Automatic personal defense weapon chambered in 4.6x30mm, in use by the IRMG."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/bdm50)

@@ -351,7 +351,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 	default_ammo_type = FALSE
 
 /obj/item/gun/ballistic/automatic/smg/resolution/inteq
-	name = "\improper BDM-50"
+	name = "\improper BDM-50 Akita"
 	desc = "An Advantage PD46, modified to Inteq's requirements and standards. As with many of IRMG's weapons, these were likely obtained by former Vigilitas personnel on their way out, as Advantage has no history of custom production runs for Inteq."
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
