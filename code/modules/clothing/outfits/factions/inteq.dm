@@ -36,6 +36,7 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	mask = /obj/item/clothing/mask/balaclava/inteq
 	suit = /obj/item/clothing/suit/armor/hos/inteq
+	uniform = /obj/item/clothing/under/syndicate/inteq/honorable
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
 	belt = /obj/item/storage/belt/security/webbing/inteq
 	gloves = /obj/item/clothing/gloves/combat
@@ -204,7 +205,7 @@
 
 	ears = /obj/item/radio/headset/inteq/alt
 	head = /obj/item/clothing/head/warden/inteq
-	uniform = /obj/item/clothing/under/syndicate/inteq
+	uniform = /obj/item/clothing/under/syndicate/inteq/honorable
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	mask = /obj/item/clothing/mask/balaclava/inteq
 	belt = /obj/item/storage/belt/military/assault
