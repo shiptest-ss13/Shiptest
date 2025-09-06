@@ -882,14 +882,14 @@
 /obj/item/storage/box/ammo/c9mm,
 /obj/item/ammo_box/magazine/co9mm/empty,
 /obj/item/ammo_box/magazine/co9mm/empty,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun/upgraded,
 /obj/item/storage/box/ammo/c9mm,
 /obj/item/storage/box/ammo/c9mm,
 /obj/item/ammo_box/magazine/smgm9mm/empty,
 /obj/item/ammo_box/magazine/smgm9mm/empty,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite/plus,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "nr" = (
@@ -1072,10 +1072,9 @@
 /turf/open/floor/plasteel,
 /area/ship/security)
 "sE" = (
-/obj/item/gun/energy/laser,
 /obj/structure/guncloset,
-/obj/item/gun/ballistic/automatic/pistol/commander,
-/obj/item/gun/ballistic/automatic/smg/vector,
+/obj/item/gun/ballistic/automatic/pistol/challenger,
+/obj/item/gun/ballistic/automatic/smg/expedition,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
@@ -1084,6 +1083,7 @@
 	},
 /obj/machinery/light/directional/west,
 /obj/machinery/camera/autoname,
+/obj/item/gun/energy/sharplite/l201/l204,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "sI" = (
@@ -1215,6 +1215,8 @@
 	pixel_x = -4;
 	pixel_y = 7
 	},
+/obj/item/storage/box/ammo/a357,
+/obj/item/storage/guncase/rhino,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm/captain)
 "tf" = (

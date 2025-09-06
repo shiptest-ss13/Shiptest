@@ -1427,46 +1427,29 @@
 	pixel_x = -10;
 	pixel_y = -4
 	},
-/obj/item/ammo_box/magazine/smgm9mm{
-	pixel_x = 11;
-	pixel_y = 8
-	},
-/obj/item/ammo_box/magazine/smgm9mm{
-	pixel_x = 11;
-	pixel_y = 8
-	},
-/obj/item/ammo_box/magazine/smgm9mm{
-	pixel_x = 11;
-	pixel_y = 8
-	},
-/obj/item/stock_parts/cell/gun/upgraded{
-	pixel_x = -9;
-	pixel_y = 13
-	},
-/obj/item/stock_parts/cell/gun/upgraded{
-	pixel_x = -9;
-	pixel_y = 13
-	},
-/obj/item/stock_parts/cell/gun{
-	pixel_x = -2;
-	pixel_y = 12
-	},
-/obj/item/stock_parts/cell/gun{
-	pixel_x = -2;
-	pixel_y = 12
-	},
-/obj/item/stock_parts/cell/gun{
-	pixel_x = -2;
-	pixel_y = 12
-	},
-/obj/item/storage/toolbox/ammo/c9mm{
-	pixel_y = -4;
-	pixel_x = -2
-	},
 /obj/item/storage/toolbox/ammo/c9mm{
 	pixel_y = -4;
 	pixel_x = 7
 	},
+/obj/item/stock_parts/cell/gun/sharplite/plus{
+	pixel_x = 0;
+	pixel_y = 7
+	},
+/obj/item/stock_parts/cell/gun/sharplite{
+	pixel_x = -9;
+	pixel_y = 8
+	},
+/obj/item/stock_parts/cell/gun/sharplite{
+	pixel_x = -9;
+	pixel_y = 8
+	},
+/obj/item/storage/toolbox/ammo/shotgun{
+	pixel_x = 7;
+	pixel_y = 9
+	},
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "rG" = (
@@ -2148,18 +2131,14 @@
 /obj/structure/guncloset{
 	req_access_txt = "2"
 	},
-/obj/item/gun/ballistic/automatic/smg/vector,
-/obj/item/gun/energy/e_gun/smg{
-	default_ammo_type = 0
-	},
-/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
 /obj/structure/railing/thin,
-/obj/item/gun/energy/e_gun{
-	default_ammo_type = 0
-	},
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
+/obj/item/gun/energy/sharplite/l305,
+/obj/item/gun/ballistic/automatic/pistol/challenger,
+/obj/item/gun/ballistic/shotgun/automatic/negotiator,
+/obj/item/gun/ballistic/automatic/pistol/champion/no_mag,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Bt" = (
@@ -3513,6 +3492,7 @@
 	name = "Bridge shutters";
 	id = "shrikebridgewindow"
 	},
+/obj/item/storage/guncase/x01,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "OY" = (

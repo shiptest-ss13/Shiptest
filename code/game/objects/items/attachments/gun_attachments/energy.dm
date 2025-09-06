@@ -3,7 +3,7 @@
 	desc = "Pew pew laser beam. You probably shouldnt be seeing this."
 	underbarrel_prefix = "laser_"
 	icon_state = "energy"
-	weapon_type = /obj/item/gun/energy/e_gun
+	weapon_type = /obj/item/gun/energy/sharplite/x12
 	var/automatic_charge_overlays = TRUE
 	allow_hand_interaction = TRUE
 

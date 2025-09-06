@@ -26,7 +26,7 @@
 	minimum_distance = 5
 	casingtype = /obj/item/ammo_casing/c9mm
 	rapid = 2
-	r_hand = /obj/item/gun/ballistic/automatic/pistol/commander
+	r_hand = /obj/item/gun/ballistic/automatic/pistol/challenger
 	projectilesound = 'sound/weapons/gun/pistol/rattlesnake.ogg'
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/smg
@@ -36,7 +36,7 @@
 	icon_living = "nanotrasenrangedsmg"
 	rapid = 3
 	casingtype = /obj/item/ammo_casing/c46x30mm
-	r_hand = /obj/item/gun/ballistic/automatic/smg/wt550
+	r_hand = /obj/item/gun/ballistic/automatic/smg/resolution
 	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/shotgun
@@ -94,7 +94,7 @@
 	rapid_fire_delay = 3
 	casingtype = null
 	projectiletype = /obj/projectile/beam/weak/sharplite
-	r_hand = /obj/item/gun/energy/e_gun/smg
+	r_hand = /obj/item/gun/energy/sharplite/l305
 	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/shotgun
@@ -102,8 +102,8 @@
 	desc = "A member of Vigilitas Interstellar, with their chin high up. They confidently aim around their shotgun, ready to burn away any trespassers."
 	icon_state = "nanotrasenrangedsmg"
 	icon_living = "nanotrasenrangedsmg"
-	casingtype = /obj/item/ammo_casing/energy/laser/ultima
-	r_hand = /obj/item/gun/energy/laser/iot/lethal
+	casingtype = /obj/item/ammo_casing/energy/laser/shotgun/sharplite
+	r_hand = /obj/item/gun/energy/sharplite/x46
 	rapid = 2
 	rapid_fire_delay = 5
 	retreat_distance = 0
@@ -145,7 +145,7 @@
 	rapid_fire_delay = 4
 	casingtype = null
 	projectiletype = /obj/projectile/beam/laser/assault/sharplite
-	r_hand = /obj/item/gun/energy/e_gun/hades
+	r_hand = /obj/item/gun/energy/sharplite/al655
 	projectilesound = 'sound/weapons/gun/laser/e40_las.ogg'
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/rifle/space
@@ -181,7 +181,7 @@
 	faction = list(ROLE_DEATHSQUAD)
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_elite
 	armor_base = /obj/item/clothing/suit/space/hardsuit/ert/sec
-	r_hand = /obj/item/gun/energy/e_gun/hades
+	r_hand = /obj/item/gun/energy/sharplite/al655
 
 /mob/living/simple_animal/hostile/human/nanotrasen/elite/shotgun
 	name = "Vigilitas Response Team"
@@ -194,7 +194,7 @@
 	minimum_distance = 1
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
-	casingtype = /obj/item/ammo_casing/energy/laser/ultima
+	casingtype = /obj/item/ammo_casing/energy/laser/shotgun/sharplite
 	projectiletype = null
 	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
-	r_hand = /obj/item/gun/energy/laser/iot/lethal
+	r_hand = /obj/item/gun/energy/sharplite/x46

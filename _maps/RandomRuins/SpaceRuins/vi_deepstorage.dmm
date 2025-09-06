@@ -984,8 +984,8 @@
 /obj/effect/turf_decal/trimline/opaque/vired/warning{
 	dir = 5
 	},
-/obj/item/gun/energy/laser,
-/obj/item/gun/energy/e_gun/iot,
+/obj/item/gun/energy/sharplite/x46,
+/obj/item/gun/energy/sharplite/l201/l204,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/deepstorage/security)
 "gI" = (
@@ -2854,7 +2854,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/hallway/upper)
 "rW" = (
-/obj/item/gun/energy/e_gun/hos{
+/obj/item/gun/energy/sharplite/x01{
 	spawn_no_ammo = 1;
 	pixel_x = 17;
 	pixel_y = 2
@@ -5289,7 +5289,7 @@
 	pixel_x = -16;
 	pixel_y = -5
 	},
-/obj/item/gun/ballistic/automatic/smg/wt550/no_mag{
+/obj/item/gun/ballistic/automatic/smg/resolution/no_mag{
 	pixel_x = 3;
 	pixel_y = -15
 	},
@@ -5701,8 +5701,6 @@
 /obj/structure/closet/secure_closet/armorycage{
 	req_access = null
 	},
-/obj/item/stock_parts/cell/gun/upgraded,
-/obj/item/stock_parts/cell/gun/upgraded,
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
@@ -5710,8 +5708,10 @@
 	dir = 4
 	},
 /obj/item/storage/box/ammo/c46x30mm,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
+/obj/item/stock_parts/cell/gun/sharplite/plus,
+/obj/item/stock_parts/cell/gun/sharplite/plus,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/deepstorage/security)
 "Kj" = (

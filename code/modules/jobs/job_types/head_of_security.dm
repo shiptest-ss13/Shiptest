@@ -51,4 +51,4 @@
 
 	implants = list(/obj/item/implant/mindshield)
 
-	chameleon_extras = list(/obj/item/gun/energy/e_gun/hos, /obj/item/stamp/hos)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/x01, /obj/item/stamp/hos)
