@@ -420,9 +420,7 @@
 	if(invisible_man)
 		. += "...?"
 	else
-		var/flavor = print_flavor_text()
-		if(flavor)
-			. += flavor
+		. += span_notice(flavor_snip)
 	. += "</span>"
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
@@ -451,3 +449,15 @@
 		return
 	if(get_age())
 		. += span_notice("[p_they(TRUE)] appear[p_s()] to be [get_age()].")
+
+/mob/living/carbon/human/get_screentip_name(client/hovering_client)
+	var/mob/client_mob = hovering_client.mob
+	var/datum/guestbook/guestbook = client_mob.mind?.guestbook
+	if(guestbook)
+		var/known_name = guestbook.get_known_name(client_mob, src)
+		if(known_name)
+			return known_name
+		else
+			return get_visible_name()
+	else
+		return real_name

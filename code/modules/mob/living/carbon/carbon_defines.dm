@@ -99,4 +99,11 @@
 	/// Can other carbons be shoved into this one to make it fall?
 	var/can_be_shoved_into = FALSE
 
+	/// Plaintext version of the flavor text, formatted with markdown.
+	var/flavor_text = ""
+	/// The HTML version of the flavor text.
+	var/flavor_text_html = ""
+	/// A snippet of text shown when the mob is examined.
+	var/flavor_snip = ""
+
 	COOLDOWN_DECLARE(bleeding_message_cd)
