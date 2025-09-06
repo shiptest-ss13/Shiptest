@@ -1,25 +1,26 @@
-import { resolveAsset } from '../assets';
-import { useBackend } from '../backend';
 import {
   AnimatedNumber,
   Box,
   Button,
-  Grid,
+  Flex,
   LabeledList,
   ProgressBar,
   Section,
-} from '../components';
+} from 'tgui-core/components';
+
+import { resolveAsset } from '../assets';
+import { useBackend } from '../backend';
 import { NtosWindow } from '../layouts';
 
-export const NtosArcade = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtosArcade = (props) => {
+  const { act, data } = useBackend();
   return (
     <NtosWindow width={450} height={350}>
       <NtosWindow.Content>
         <Section title="Outbomb Cuban Pete Ultra" textAlign="center">
           <Box>
-            <Grid>
-              <Grid.Column size={2}>
+            <Flex>
+              <Flex.Column size={2}>
                 <Box m={1} />
                 <LabeledList>
                   <LabeledList.Item label="Player Health">
@@ -60,8 +61,8 @@ export const NtosArcade = (props, context) => {
                 >
                   {data.Status}
                 </Section>
-              </Grid.Column>
-              <Grid.Column>
+              </Flex.Column>
+              <Flex.Column>
                 <ProgressBar
                   value={data.Hitpoints}
                   minValue={0}
@@ -79,8 +80,8 @@ export const NtosArcade = (props, context) => {
                 <Section inline width="156px" textAlign="center">
                   <img src={resolveAsset(data.BossID)} />
                 </Section>
-              </Grid.Column>
-            </Grid>
+              </Flex.Column>
+            </Flex>
             <Box my={1} mx={4} />
             <Button
               icon="fist-raised"

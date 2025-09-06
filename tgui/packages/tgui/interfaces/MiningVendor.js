@@ -1,13 +1,14 @@
-import { classes } from 'common/react';
+import { Box, Button, Section, Table } from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
+
 import { useBackend } from '../backend';
-import { Box, Button, Section, Table } from '../components';
 import { Window } from '../layouts';
 
-export const MiningVendor = (props, context) => {
-  const { act, data } = useBackend(context);
+export const MiningVendor = (props) => {
+  const { act, data } = useBackend();
   let inventory = [...data.product_records];
   return (
-    <Window width={425} height={600} resizable>
+    <Window width={425} height={600}>
       <Window.Content scrollable>
         <Section title="User">
           {(data.user && (
@@ -49,7 +50,7 @@ export const MiningVendor = (props, context) => {
                       content={product.price + ' points'}
                       onClick={() =>
                         act('purchase', {
-                          'ref': product.ref,
+                          ref: product.ref,
                         })
                       }
                     />
