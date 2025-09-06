@@ -1,5 +1,7 @@
 /datum/outfit/job/gezena
 	name = "PGF - Base Outfit"
+	uniform = /obj/item/clothing/under/gezena
+	skirt_uniform = /obj/item/clothing/under/gezena
 	faction = FACTION_PLAYER_GEZENA
 	// faction_icon = "bg_pgf"
 
