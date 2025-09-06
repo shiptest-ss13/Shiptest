@@ -80,8 +80,8 @@
 		/obj/item/stock_parts/cell/gun/sharplite/plus,
 	)
 	force = 10
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite/hos, /obj/item/ammo_casing/energy/laser/sharplite/hos, /obj/item/ammo_casing/energy/ion/hos, /obj/item/ammo_casing/energy/electrode/hos)
-	shaded_charge = TRUE
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite/hos, /obj/item/ammo_casing/energy/laser/sharplite/hos, /obj/item/ammo_casing/energy/ion/hos)
+	shaded_charge = FALSE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
