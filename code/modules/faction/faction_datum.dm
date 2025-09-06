@@ -155,6 +155,7 @@
 /datum/faction/unknown
 	name = FACTION_UNKNOWN
 	short_name = "???"
+	parent_faction = /datum/faction/unknown
 	prefixes = PREFIX_NONE
 	color = "#504c4c"
 	check_prefix = FALSE
