@@ -17,7 +17,7 @@
 /datum/supply_pack/magazine/smgm9mm_mag
 	name = "9x18mm SMG Magazine Crate"
 	desc = "Contains a 9x18mm magazine for the Vector and Saber SMGs, with a capacity of thirty rounds."
-	contains = list(/obj/item/ammo_box/magazine/smgm9mm/empty)
+	contains = list(/obj/item/ammo_box/magazine/m9mm_expedition/empty)
 	cost = 250
 	faction = /datum/faction/nt
 
@@ -292,7 +292,7 @@
 	name = "SGL9 Expedition Submachinegun Magazine Crate"
 	desc = "Contains a 30-round magazine for the Expedition Submachinegun, chambered in 9mm."
 	cost = 250
-	contains = list(/obj/item/ammo_box/magazine/smgm9mm)
+	contains = list(/obj/item/ammo_box/magazine/m9mm_expedition)
 	faction = /datum/faction/nt
 
 /* SolGov */

@@ -141,9 +141,9 @@ NO_MAG_GUN_HELPER(automatic/smg/skm_carbine/inteq)
 	icon_state = "saber"
 	item_state = "gun"
 
-	default_ammo_type = /obj/item/ammo_box/magazine/smgm9mm
+	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_expedition
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/smgm9mm,
+		/obj/item/ammo_box/magazine/m9mm_expedition,
 	)
 
 	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'

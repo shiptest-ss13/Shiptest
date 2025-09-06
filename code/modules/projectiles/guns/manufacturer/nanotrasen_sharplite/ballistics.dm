@@ -248,9 +248,9 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	icon_state = "expedition"
 	item_state = "expedition"
-	default_ammo_type = /obj/item/ammo_box/magazine/smgm9mm
+	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_expedition
 	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/smgm9mm,
+		/obj/item/ammo_box/magazine/m9mm_expedition,
 	) //you guys remember when the autorifle was chambered in 9mm
 	bolt_type = BOLT_TYPE_LOCKING
 	show_magazine_on_sprite = TRUE
@@ -258,8 +258,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
 
 
-//m9mm_expedition
-/obj/item/ammo_box/magazine/smgm9mm
+/obj/item/ammo_box/magazine/m9mm_expedition
 	name = "expedition submachinegun magazine (9x18mm)"
 	desc = "A 30-round magazine for the Expedition submachine gun. These rounds do okay damage, but struggle against armor."
 	icon_state = "expedition_mag-30"
@@ -269,19 +268,19 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
-/obj/item/ammo_box/magazine/smgm9mm/update_icon_state()
+/obj/item/ammo_box/magazine/m9mm_expedition/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]-[(ammo_count() == 1 || ammo_count() == 2) ? 1 : round(ammo_count(),6)]"
 
-/obj/item/ammo_box/magazine/smgm9mm/empty
+/obj/item/ammo_box/magazine/m9mm_expedition/empty
 	start_empty = TRUE
 
-/obj/item/ammo_box/magazine/smgm9mm/ap
+/obj/item/ammo_box/magazine/m9mm_expedition/ap
 	name = "expedition submachinegun magazine (9x18mm AP)"
 	desc = "A 30-round magazine for the Expedition submachine gun. These armor-piercing rounds are okay at piercing protective equipment, but lose some stopping power."
 	ammo_type = /obj/item/ammo_casing/c9mm/ap
 
-/obj/item/ammo_box/magazine/smgm9mm/rubber
+/obj/item/ammo_box/magazine/m9mm_expedition/rubber
 	name = "expedition submachinegun magazine (9x18mm rubber)"
 	desc = "A 30-round magazine for the Expedition submachine gun. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber

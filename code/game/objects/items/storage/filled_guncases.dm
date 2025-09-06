@@ -224,7 +224,7 @@
 
 /obj/item/storage/guncase/vector
 	gun_type = /obj/item/gun/ballistic/automatic/smg/expedition
-	mag_type = /obj/item/ammo_box/magazine/smgm9mm
+	mag_type = /obj/item/ammo_box/magazine/m9mm_expedition
 
 /obj/item/storage/guncase/cycler
 	gun_type = /obj/item/gun/ballistic/shotgun/automatic/negotiator
