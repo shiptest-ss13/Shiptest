@@ -108,8 +108,9 @@
 		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 5,
 		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 10,
+		/obj/effect/spawner/random/snow_monkey_pack = 5,
 	)
-	feature_spawn_chance = 0.1
+	feature_spawn_chance = 0.2
 	feature_spawn_list = list(
 		/obj/effect/spawner/random/anomaly/ice = 12,
 		/obj/effect/spawner/random/anomaly/big = 1,
@@ -119,6 +120,7 @@
 		/obj/structure/vein/ice/classtwo/rare = 10,
 		/obj/structure/vein/ice/classthree = 10,
 		/obj/structure/vein/ice/classthree/rare = 5,
+		/obj/effect/spawner/random/greeble/ice_planet = 50,
 	)
 
 /datum/biome/snow/lush
@@ -164,7 +166,8 @@
 	open_turf_types = list(
 		/turf/open/floor/plating/asteroid/snow/lit = 1
 	)
-	feature_spawn_chance = 0.1
+	#warn remember to adjust weighting
+	feature_spawn_chance = 0.2
 	feature_spawn_list = list(
 		/obj/structure/spawner/burrow/ice_planet = 4,
 		/obj/structure/statue/snow/snowman = 3,
@@ -172,6 +175,7 @@
 		/obj/structure/vein/ice = 3,
 		/obj/structure/vein/ice/classtwo = 4,
 		/obj/structure/vein/ice/classthree = 1,
+		/obj/effect/spawner/random/greeble/ice_planet = 1,
 	)
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
@@ -327,3 +331,38 @@
 		/turf/open/lava/plasma = 7,
 		/turf/open/floor/plating/asteroid/icerock/smooth = 1
 	)
+
+/obj/effect/spawner/random/greeble/ice_planet
+	loot = list(/obj/effect/greeble_spawner/ice)
+
+#warn I think for this one template_subtype_path is not the right implemenation as i think these should have diffrent weights unlike the other two present greebles
+/obj/effect/greeble_spawner/ice
+	name = "ice greeble spawner"
+	template_subtype_path = /datum/map_template/greeble/ice
+
+/datum/map_template/greeble/ice/ice_1
+	mappath = "_maps/templates/greebles/iceplanet/ice_1.dmm"
+
+/datum/map_template/greeble/ice/ice_2
+	mappath = "_maps/templates/greebles/iceplanet/ice_2.dmm"
+
+/datum/map_template/greeble/ice/ice_3
+	mappath = "_maps/templates/greebles/iceplanet/ice_3.dmm"
+
+/datum/map_template/greeble/ice/ice_4
+	mappath = "_maps/templates/greebles/iceplanet/ice_4.dmm"
+
+/datum/map_template/greeble/ice/ice_5
+	mappath = "_maps/templates/greebles/iceplanet/ice_5.dmm"
+
+/datum/map_template/greeble/ice/ice_6
+	mappath = "_maps/templates/greebles/iceplanet/ice_6.dmm"
+
+/datum/map_template/greeble/ice/ice_7
+	mappath = "_maps/templates/greebles/iceplanet/ice_7.dmm"
+
+/datum/map_template/greeble/ice/ice_capy
+	mappath = "_maps/templates/greebles/iceplanet/ice_capy.dmm"
+
+/datum/map_template/greeble/ice/ice_monkey
+	mappath = "_maps/templates/greebles/iceplanet/ice_monkey.dmm"
