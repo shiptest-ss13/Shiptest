@@ -217,6 +217,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	icon_state = "rhino"
+	item_state = "nt_generic"
 	manufacturer = MANUFACTURER_VIGILITAS
 	semi_auto = TRUE
 	safety_wording = "safety"
