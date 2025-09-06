@@ -273,7 +273,6 @@
 
 /datum/outfit/hermit
 	name = "Whitesands Survivor"
-	faction
 	uniform = /obj/item/clothing/under/color/random
 	back = /obj/item/storage/backpack
 	shoes = /obj/item/clothing/shoes/workboots/mining
