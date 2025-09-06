@@ -8,6 +8,7 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	footstep_type = FOOTSTEP_MOB_SHOE
 	armor_base = /obj/item/clothing/suit/hooded/survivor
+	faction = list(FACTION_ANTAG_HERMITS)
 
 	speak_emote = list("breathes heavily.", "growls.", "sharply inhales.")
 	emote_hear = list("murmers.","grumbles.","whimpers.")
@@ -279,6 +280,12 @@
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/hooded/survivor_hood
+
+/datum/outfit/hermit/post_equip(mob/living/carbon/human/H, visualsOnly)
+	. = ..()
+	if(visualsOnly)
+		return
+	H.faction |= list(FACTION_ANTAG_HERMITS)
 
 /datum/outfit/hermit/brown
 	name = "Whitesands Survivor Brown"
