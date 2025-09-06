@@ -238,7 +238,6 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
 
-///obj/item/gun/ballistic/automatic/smg/expedition
 /obj/item/gun/ballistic/automatic/smg/expedition
 	name = "\improper Advantage SGL9 Expedition"
 	desc = "A deceptively lightweight submachinegun. Its novel recoil compensation system almost eliminates recoil, and its compact size is well-suited for use aboard ships and stations."
@@ -249,6 +248,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 	icon_state = "expedition"
 	item_state = "expedition"
 	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_expedition
+	spread = 3
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m9mm_expedition,
 	) //you guys remember when the autorifle was chambered in 9mm
