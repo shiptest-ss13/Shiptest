@@ -257,15 +257,21 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 	weapon_weight = WEAPON_LIGHT
 	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
 
+
+//m9mm_expedition
 /obj/item/ammo_box/magazine/smgm9mm
 	name = "expedition submachinegun magazine (9x18mm)"
 	desc = "A 30-round magazine for the Expedition submachine gun. These rounds do okay damage, but struggle against armor."
-	icon_state = "expedition_mag-1"
+	icon_state = "expedition_mag-30"
 	base_icon_state = "expedition_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9x18mm"
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/smgm9mm/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[(ammo_count() == 1 || ammo_count() == 2) ? 1 : round(ammo_count(),6)]"
 
 /obj/item/ammo_box/magazine/smgm9mm/empty
 	start_empty = TRUE
