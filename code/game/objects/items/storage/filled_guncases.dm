@@ -351,6 +351,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/hmg/rottweiler
 	mag_type = /obj/item/ammo_box/magazine/rottweiler_308_box
 
+/obj/item/storage/guncase/saluki
+	gun_type = /obj/item/gun/ballistic/automatic/marksman/f90/inteq
+	mag_type = /obj/item/ammo_box/magazine/f90
+
 /* idk */
 
 /obj/item/storage/guncase/pistol/disposable

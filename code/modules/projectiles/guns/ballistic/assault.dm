@@ -51,7 +51,7 @@
 	show_magazine_on_sprite = TRUE
 	unique_mag_sprites_for_variants = TRUE
 	weapon_weight = WEAPON_MEDIUM
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	manufacturer = MANUFACTURER_IMPORT
 	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40
 	allowed_ammo_types = list(
@@ -146,7 +146,7 @@
 
 	fire_select_icon_state_prefix = "swisschesse_"
 
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	default_ammo_type = /obj/item/ammo_box/magazine/swiss
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/swiss,

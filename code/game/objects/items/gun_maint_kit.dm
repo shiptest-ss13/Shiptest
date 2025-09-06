@@ -18,7 +18,7 @@
 /obj/item/gun_maint_kit/afterattack(atom/target, mob/user, proximity)
 	if(!proximity)
 		return
-	if(!uses)
+	if(uses <= 0)
 		to_chat(user, span_warning("[src] is out of uses!"))
 		return
 	var/obj/item/gun/ballistic/fixable = target

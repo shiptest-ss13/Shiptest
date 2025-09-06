@@ -6,7 +6,7 @@
 	base_icon_state = "pdapainter"
 	circuit = /obj/item/circuitboard/machine/aug_manipulator
 	density = TRUE
-	obj_integrity = 200
+	atom_integrity = 200
 	max_integrity = 200
 	var/obj/item/bodypart/storedpart
 	var/initial_icon_state
@@ -83,7 +83,7 @@
 			update_appearance()
 
 	else if(O.tool_behaviour == TOOL_WELDER && user.a_intent != INTENT_HARM)
-		if(obj_integrity < max_integrity)
+		if(atom_integrity < max_integrity)
 			if(!O.tool_start_check(user, src, amount=0))
 				return
 
@@ -96,7 +96,7 @@
 					return
 				to_chat(user, span_notice("You repair [src]."))
 				set_machine_stat(machine_stat & ~BROKEN)
-				obj_integrity = max(obj_integrity, max_integrity)
+				atom_integrity = max(atom_integrity, max_integrity)
 				update_appearance()
 		else
 			to_chat(user, span_notice("[src] does not need repairs."))

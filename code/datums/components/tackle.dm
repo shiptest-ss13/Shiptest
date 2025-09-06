@@ -395,7 +395,7 @@
 			playsound(user, 'sound/effects/blobattack.ogg', 60, TRUE)
 			playsound(user, 'sound/effects/splat.ogg', 70, TRUE)
 			playsound(user, 'sound/effects/wounds/crack2.ogg', 70, TRUE)
-			user.force_scream()
+			user.force_pain_noise(400)
 			user.gain_trauma(/datum/brain_trauma/severe/paralysis/paraplegic) // oopsie indeed!
 			shake_camera(user, 7, 7)
 			user.overlay_fullscreen("flash", /atom/movable/screen/fullscreen/flash)
@@ -466,7 +466,7 @@
 			user.hitby(shard, skipcatch = TRUE, hitpush = FALSE)
 			shard.embedding = list()
 			shard.updateEmbedding()
-		W.obj_destruction()
+		W.atom_destruction()
 		user.adjustStaminaLoss(10 * speed)
 		user.Paralyze(30)
 		user.visible_message(span_danger("[user] slams into [W] and shatters it, shredding [user.p_them()]self with glass!"), span_userdanger("You slam into [W] and shatter it, shredding yourself with glass!"))
@@ -481,7 +481,7 @@
 
 /datum/component/tackler/proc/delayedSmash(obj/structure/window/W)
 	if(W)
-		W.obj_destruction()
+		W.atom_destruction()
 		playsound(W, "shatter", 70, TRUE)
 
 ///Check to see if we hit a table, and if so, make a big mess!

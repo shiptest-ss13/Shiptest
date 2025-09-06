@@ -29,6 +29,9 @@
 	var/x_offset = -4
 	var/y_offset = -4
 
+	MAP_SWITCH(pixel_x = 0, pixel_x = -4)
+	MAP_SWITCH(pixel_y = 0, pixel_y = -4)
+
 	attack_hitsound = 'sound/effects/break_stone.ogg'
 	break_sound = 'sound/effects/break_stone.ogg'
 	hitsound_type = PROJECTILE_HITSOUND_STONE
@@ -812,8 +815,8 @@
 	base_icon_state = "jungle_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
 	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
-	turf_type = /turf/open/floor/plating/dirt/jungle
-	baseturfs = /turf/open/floor/plating/dirt/jungle
+	turf_type = /turf/open/floor/plating/asteroid/dirt/jungle
+	baseturfs = /turf/open/floor/plating/asteroid/dirt/jungle
 
 	mineralChance = 16
 

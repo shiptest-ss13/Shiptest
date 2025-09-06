@@ -128,7 +128,7 @@
 			return
 
 		data["active"] = TRUE
-		data["SM_integrity"] = active.get_integrity()
+		data["SM_integrity"] = active.get_crystal_integ_percent()
 		data["SM_power"] = active.power
 		data["SM_ambienttemp"] = air.return_temperature()
 		data["SM_ambientpressure"] = air.return_pressure()
@@ -158,7 +158,7 @@
 			if(A)
 				SMS.Add(list(list(
 				"area_name" = A.name,
-				"integrity" = S.get_integrity(),
+				"integrity" = S.get_crystal_integ_percent(),
 				"uid" = S.uid
 				)))
 

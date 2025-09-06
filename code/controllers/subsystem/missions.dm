@@ -60,12 +60,15 @@ SUBSYSTEM_DEF(missions)
 
 /datum/controller/subsystem/missions/proc/get_researcher_name()
 	var/group = pick(list(
-		"Cybersun Industries",
-		"CMM-GOLD",
-		"Nanotrasen Anomalous Studies Division",
+		"Cybersun Biodynamics",
+		"CLIP-GOLD Frontier Investigations Office",
+		"Nanotrasen Frontier Studies Division",
 		"The Naturalienwissenschaftlicher Studentenverbindungs-Verband",
-		"The Central Solarian Anomaly Research Agency",
-		"DeForest Medical R&D",
+		"The Central Solarian Frontier Research Agency",
+		"NGR Bureau of Expansion",
+		"A Gezenan newscaster",
+		"Tecetian researchers",
+		"The representative of a Rachnid guild",
 		"A strange sarathi on the outpost"
 	))
 	return group
