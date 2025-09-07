@@ -1395,9 +1395,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/structure/camera_assembly{
-	dir = 10
-	},
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
@@ -1405,6 +1402,9 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/south,
+/obj/machinery/camera/autoname{
+	dir = 10
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "uV" = (
@@ -3397,7 +3397,6 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "UE" = (
-/obj/structure/camera_assembly,
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/line{
 	dir = 1
 	},
