@@ -1,50 +1,193 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/area/space,
-/turf/open/space/basic)
+/turf/closed/wall/mineral/titanium,
+/area/space)
+"h" = (
+/obj/structure/chair/bench/red/directional/west,
+/turf/open/floor/suns/hatch/bamboo,
+/area/space)
+"k" = (
+/obj/structure/fluff/hedge,
+/turf/open/floor/suns/hatch/bamboo,
+/area/space)
+"n" = (
+/obj/structure/chair/bench/red/directional/east,
+/turf/open/floor/suns/hatch/bamboo,
+/area/space)
+"u" = (
+/turf/open/space/basic,
+/area/space)
+"z" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#E6D2BA";
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#E6D2BA";
+	dir = 8
+	},
+/obj/structure/chair/handrail{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/space)
+"A" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 2
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/space)
+"B" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#E6D2BA";
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#E6D2BA"
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/space)
+"D" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#E6D2BA"
+	},
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/space)
+"G" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#E6D2BA";
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#E6D2BA";
+	dir = 4
+	},
+/obj/structure/chair/handrail{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/space)
+"H" = (
+/obj/machinery/door/airlock/glass{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"N" = (
+/obj/structure/crate_shelf,
+/obj/effect/turf_decal/corner/opaque/cybersunteal/half,
+/obj/effect/turf_decal/corner/opaque/cybersunteal/half{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/space)
+"Q" = (
+/obj/effect/turf_decal/corner/opaque/cybersunteal/half,
+/obj/effect/turf_decal/corner/opaque/cybersunteal/half{
+	dir = 1
+	},
+/obj/structure/crate_shelf,
+/turf/open/floor/plasteel/mono/white,
+/area/space)
+"W" = (
+/obj/machinery/door/airlock/glass{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"X" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/turf/open/floor/plating,
+/area/space)
+"Z" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#E6D2BA";
+	dir = 1
+	},
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/space)
 
 (1,1,1) = {"
+u
 a
+W
+X
+X
+W
 a
-a
-a
-a
-a
-a
+u
 "}
 (2,1,1) = {"
 a
 a
+Z
+G
+G
+D
 a
-a
-a
-a
-a
+X
 "}
 (3,1,1) = {"
+A
 a
-a
-a
-a
-a
-a
-a
+B
+h
+h
+B
+N
+X
 "}
 (4,1,1) = {"
+A
 a
-a
-a
-a
-a
-a
-a
+B
+k
+k
+B
+Q
+X
 "}
 (5,1,1) = {"
+A
+a
+B
+n
+n
+B
+N
+X
+"}
+(6,1,1) = {"
 a
 a
+Z
+z
+z
+D
 a
+X
+"}
+(7,1,1) = {"
+u
 a
+H
+X
+X
+H
 a
-a
-a
+u
 "}
