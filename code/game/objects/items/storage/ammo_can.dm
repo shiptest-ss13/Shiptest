@@ -144,7 +144,7 @@
 	for (var/i in 1 to 4)
 		new /obj/item/storage/box/ammo/c46x30mm(src)
 
-/obj/item/storage/toolbox/ammo/c75/PopulateContents()
+/obj/item/storage/toolbox/ammo/c65/PopulateContents()
 	name = "ammo can (6.5mm CLIP)"
 	icon_state = "ammobox_65"
 	current_skin = "6.5mm CLIP"

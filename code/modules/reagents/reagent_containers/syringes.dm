@@ -189,11 +189,6 @@
 	desc = "Contains charcoal."
 	list_reagents = list(/datum/reagent/medicine/charcoal = 15)
 
-/obj/item/reagent_containers/syringe/perfluorodecalin
-	name = "syringe (perfluorodecalin)"
-	desc = "Contains perfluorodecalin."
-	list_reagents = list(/datum/reagent/medicine/perfluorodecalin = 15)
-
 /obj/item/reagent_containers/syringe/antiviral
 	name = "syringe (spaceacillin)"
 	desc = "Contains antiviral agents."
@@ -233,13 +228,6 @@
 	volume = 1
 	list_reagents = list(/datum/reagent/mulligan = 1)
 
-/obj/item/reagent_containers/syringe/gluttony
-	name = "Gluttony's Blessing"
-	desc = "A syringe recovered from a dread place. It probably isn't wise to use."
-	amount_per_transfer_from_this = 1
-	volume = 1
-	list_reagents = list(/datum/reagent/gluttonytoxin = 1)
-
 /obj/item/reagent_containers/syringe/bluespace
 	name = "bluespace syringe"
 	desc = "An advanced syringe that can hold 60 units of chemicals."
@@ -256,20 +244,20 @@
 	volume = 10
 	proj_piercing = 1
 
-/obj/item/reagent_containers/syringe/spider_extract
-	name = "spider extract syringe"
-	desc = "Contains crikey juice - makes any gold core create the most deadly companions in the world."
-	list_reagents = list(/datum/reagent/spider_extract = 1)
+/obj/item/reagent_containers/syringe/dexalin
+	name = "syringe (dexalin)"
+	desc = "Contains dexalin."
+	list_reagents = list(/datum/reagent/medicine/dexalin = 15)
 
-/obj/item/reagent_containers/syringe/oxandrolone
-	name = "syringe (oxandrolone)"
-	desc = "Contains oxandrolone, used to treat severe burns."
-	list_reagents = list(/datum/reagent/medicine/oxandrolone = 15)
+/obj/item/reagent_containers/syringe/ysiltane
+	name = "syringe (ysiltane)"
+	desc = "Contains ysiltane, used to treat severe burns."
+	list_reagents = list(/datum/reagent/medicine/ysiltane = 15)
 
-/obj/item/reagent_containers/syringe/salacid
-	name = "syringe (salicylic acid)"
+/obj/item/reagent_containers/syringe/silfrine
+	name = "syringe (silfrine)"
 	desc = "Contains salicylic acid, used to treat severe brute damage."
-	list_reagents = list(/datum/reagent/medicine/sal_acid = 15)
+	list_reagents = list(/datum/reagent/medicine/silfrine = 15)
 
 /obj/item/reagent_containers/syringe/penacid
 	name = "syringe (pentetic acid)"
@@ -292,16 +280,13 @@
 /obj/item/reagent_containers/syringe/contraband/mammoth
 	list_reagents = list(/datum/reagent/drug/mammoth = 15)
 
-/obj/item/reagent_containers/syringe/contraband/fentanyl
-	list_reagents = list(/datum/reagent/toxin/fentanyl = 15)
-
 /obj/item/reagent_containers/syringe/contraband/morphine
 	list_reagents = list(/datum/reagent/medicine/morphine = 15)
 
-/obj/item/reagent_containers/syringe/thializid
-	name = "syringe (thializid)"
-	desc = "Contains thializid, used to treat toxins and purge chemicals. The tag on the syringe states 'Inject one time per minute'."
-	list_reagents = list(/datum/reagent/medicine/thializid = 15)
+/obj/item/reagent_containers/syringe/pancrazine
+	name = "syringe (pancrazine)"
+	desc = "Contains pancrazine, used to treat toxins and purge chemicals. The tag on the syringe states 'Heat before injection'."
+	list_reagents = list(/datum/reagent/medicine/pancrazine = 15)
 
 /obj/item/reagent_containers/syringe/charcoal
 	name = "syringe (charcoal)"
