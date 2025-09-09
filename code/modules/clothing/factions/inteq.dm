@@ -278,21 +278,22 @@
 	name = "inteq pilot helmet"
 	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
-	item_state = "space-inteq-pilot0"
-	icon_state = "space-inteq-pilot"
+	item_state = "space-inteq-pilot"
+	icon_state = "space-inteq-pilot0"
 	desc = "A specialized space helmet designed for exosuit and shuttle pilots. Offers limited impact protection."
-	up = FALSE
-	actions_types = list(/datum/action/item_action/toggle_helmet)
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 70, "wound" = 5) //less wound armor. give em the fokker special
 	visor_flags_inv = HIDEMASK
 	visor_flags = STOPSPRESSUREDAMAGE | ALLOWINTERNALS
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 
+	up = FALSE
+	actions_types = list(/datum/action/item_action/toggle_helmet)
+
 /obj/item/clothing/head/helmet/space/inteq/pilot/update_icon_state()
-	icon_state = "space-inteq-pilot-[up]"
+	icon_state = "space-inteq-pilot[up]"
 	return ..()
 
-/obj/item/clothing/head/helmet/space/inteq/pilot/attack_self(mob/user) //toggle copied from pilot helm didn't want to deal with reskin
+/obj/item/clothing/head/helmet/space/inteq/pilot/attack_self(mob/user) //pilot helmet toggle
 	if(!isturf(user.loc))
 		to_chat(user, span_warning("You cannot toggle your helmet while in this [user.loc]!") )
 		return
