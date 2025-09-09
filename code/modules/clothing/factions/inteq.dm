@@ -261,6 +261,68 @@
 	full_retraction = TRUE
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 
+// pilot softsuit
+/obj/item/clothing/suit/space/inteq/pilot
+	name = "inteq pilot space suit"
+	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
+	item_state = "space-inteq-pilot"
+	icon_state = "space-inteq-pilot"
+	desc = "A lightweight, unarmored space suit designed for exosuit and shuttle pilots. Special attachment points make mounting and dismounting from exosuits much easier."
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | FAST_EMBARK
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+	slowdown = 0.2
+
+/obj/item/clothing/head/helmet/space/inteq/pilot
+	name = "inteq pilot helmet"
+	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
+	item_state = "space-inteq-pilot0"
+	icon_state = "space-inteq-pilot"
+	desc = "A specialized space helmet designed for exosuit and shuttle pilots. Offers limited impact protection."
+	up = FALSE
+	actions_types = list(/datum/action/item_action/toggle_helmet)
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 70, "wound" = 5) //less wound armor. give em the fokker special
+	visor_flags_inv = HIDEMASK
+	visor_flags = STOPSPRESSUREDAMAGE | ALLOWINTERNALS
+	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
+
+/obj/item/clothing/head/helmet/space/inteq/pilot/update_icon_state()
+	icon_state = "space-inteq-pilot-[up]"
+	return ..()
+
+/obj/item/clothing/head/helmet/space/inteq/pilot/attack_self(mob/user) //toggle copied from pilot helm didn't want to deal with reskin
+	if(!isturf(user.loc))
+		to_chat(user, span_warning("You cannot toggle your helmet while in this [user.loc]!") )
+		return
+	up = !up
+	if(!up || force)
+		to_chat(user, span_notice("You close your helmet's visor and breathing mask."))
+		gas_transfer_coefficient = initial(gas_transfer_coefficient)
+		permeability_coefficient = initial(permeability_coefficient)
+		clothing_flags |= visor_flags
+		flags_cover |= HEADCOVERSEYES | HEADCOVERSMOUTH
+		flags_inv |= visor_flags_inv
+		cold_protection |= HEAD
+	else
+		to_chat(user, span_notice("You open your helmet's visor and breathing mask."))
+		gas_transfer_coefficient = null
+		permeability_coefficient = null
+		clothing_flags &= ~visor_flags
+		flags_cover &= ~(HEADCOVERSEYES | HEADCOVERSMOUTH)
+		flags_inv &= ~visor_flags_inv
+		cold_protection &= ~HEAD
+	update_appearance()
+	playsound(src.loc, 'sound/mecha/mechmove03.ogg', 50, TRUE)
+	user.update_inv_head()
+	if(iscarbon(user))
+		var/mob/living/carbon/C = user
+		C.head_update(src, forced = 1)
+	for(var/X in actions)
+		var/datum/action/A = X
+		A.UpdateButtonIcon()
+
 // Headgear
 
 /obj/item/clothing/head/warden/inteq

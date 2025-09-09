@@ -137,7 +137,7 @@
 	},
 /obj/machinery/door/airlock/command{
 	name = "Command Quarters";
-	req_access_txt = "3"
+	req_access_txt = list(3,48)
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/dormtwo)
@@ -3170,11 +3170,12 @@
 	name = "shuttle pilot's suit storage unit";
 	req_access_txt = "48"
 	},
-/obj/item/clothing/suit/space/inteq,
-/obj/item/clothing/head/helmet/space/inteq,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/clothing/suit/space/inteq/pilot,
+/obj/item/clothing/head/helmet/space/inteq/pilot,
 /obj/item/clothing/mask/gas/inteq,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hangar)
@@ -8056,7 +8057,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
-/obj/structure/chair/handrail,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
@@ -8371,11 +8371,12 @@
 	dir = 8
 	},
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/inteq,
-/obj/item/clothing/head/helmet/space/inteq,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/clothing/suit/space/inteq,
+/obj/item/clothing/head/helmet/space/inteq,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hangar)
 "Yr" = (
