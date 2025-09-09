@@ -216,8 +216,8 @@
 	desc = "A quick-footed member of the brutal Frontiersmen terrorist fleet! This one wields a boxy submachine gun in one hand."
 	rapid = 8
 	rapid_fire_delay = 1
-	retreat_distance = 2
-	minimum_distance = 2
+	retreat_distance = 4
+	minimum_distance = 4
 	projectilesound = 'sound/weapons/gun/smg/spitter.ogg'
 	casingtype = /obj/item/ammo_casing/c9mm
 	r_hand = /obj/item/gun/ballistic/automatic/pistol/spitter
@@ -241,8 +241,8 @@
 	desc = "A quick-footed member of the brutal Frontiersmen terrorist fleet! This one clutches a boxy submachine gun with the bulky gauntlets of their grey hardsuit."
 	rapid = 8
 	rapid_fire_delay = 1
-	retreat_distance = 2
-	minimum_distance = 2
+	retreat_distance = 4
+	minimum_distance = 4
 	projectilesound = 'sound/weapons/gun/smg/spitter.ogg'
 	casingtype = /obj/item/ammo_casing/c9mm
 	r_hand = /obj/item/gun/ballistic/automatic/pistol/spitter
