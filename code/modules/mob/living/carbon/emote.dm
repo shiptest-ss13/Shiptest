@@ -127,6 +127,34 @@
 	key_third_person = "winks"
 	message = "winks."
 
+/datum/emote/living/carbon/sweatdrop
+	key = "sweatdrop"
+	key_third_person = "sweatdrops"
+	message = "sweats"
+	emote_type = EMOTE_ANIMATED | EMOTE_VISIBLE
+	sound_volume = 25
+	vary = TRUE
+	overlay_icon_state = "sweatdrop"
+	overlay_x_offset = 10
+	overlay_y_offset = 10
+	emote_length = 3 SECONDS
+	sound = 'sound/emotes/sweatdrop.ogg'
+
+/datum/emote/living/carbon/sweatdrop/sweat //This is entirely the same as sweatdrop
+	key = "sweat"
+
+/datum/emote/living/carbon/annoyed
+	key = "annoyed"
+	message = "looks annoyed"
+	emote_type = EMOTE_ANIMATED | EMOTE_VISIBLE
+	sound_volume = 25
+	vary = TRUE
+	overlay_icon_state = "annoyed"
+	overlay_x_offset = 10
+	overlay_y_offset = 10
+	emote_length = 6 SECONDS
+	sound = 'sound/emotes/annoyed.ogg'
+
 /datum/emote/living/carbon/circle
 	key = "circle"
 	key_third_person = "circles"
