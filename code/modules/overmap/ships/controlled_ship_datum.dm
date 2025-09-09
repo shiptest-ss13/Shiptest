@@ -496,6 +496,7 @@
 	else
 		helm_locked = !helm_locked
 		playsound(src, helm_locked ? 'sound/machines/button4.ogg' : 'sound/machines/button3.ogg')
+		user.visible_message(span_notice("[user] presses the keyfob on [shipkey]."), helm_locked ? span_notice("You press the keyfob on [shipkey], locking the helm.") : span_notice("You press the keyfob on [shipkey], unlocking the helm."))
 
 	for(var/obj/machinery/computer/helm/helm as anything in helms)
 		SStgui.close_uis(helm)
@@ -569,6 +570,10 @@
 		update_appearance()
 	name = "ship key ([master_ship.name])"
 
+/obj/item/key/ship/examine(mob/user)
+	. = ..()
+	. += "\nThe ship's helm is currently [master_ship.helm_locked ? span_red("LOCKED") : span_green("UNLOCKED")]."
+
 /obj/item/key/ship/update_overlays()
 	. = ..()
 	if(!random_color) //icon override
@@ -586,6 +591,9 @@
 	if(!master_ship || !Adjacent(user))
 		return ..()
 
+	playsound(src, master_ship.helm_locked ? 'sound/machines/button4.ogg' : 'sound/machines/button3.ogg', 50, TRUE)
+
 	master_ship.attempt_key_usage(user, src, src) // hello I am a helm console I promise
+
 	return TRUE
 
