@@ -130,20 +130,17 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/canteen)
 "bD" = (
-/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/blue/filled/corner,
-/obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /obj/machinery/light_switch{
-	pixel_x = 11;
-	pixel_y = 22
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = -12
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -635,9 +632,16 @@
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "jx" = (
-/obj/structure/closet/crate/bin,
-/turf/open/floor/plasteel/mono,
-/area/ship/cargo)
+/obj/structure/bed/roller,
+/obj/machinery/iv_drip{
+	pixel_x = -13
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
+	dir = 5
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
 "jz" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -889,7 +893,15 @@
 /obj/item/storage/box/ammo/c9mm,
 /obj/item/ammo_box/magazine/smgm9mm/empty,
 /obj/item/ammo_box/magazine/smgm9mm/empty,
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/opaque/vired/filled/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/vired/filled/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "nr" = (
@@ -1035,9 +1047,14 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/security)
 "rW" = (
-/obj/effect/spawner/random/vending/snack,
-/turf/open/floor/plasteel/mono,
-/area/ship/cargo)
+/obj/machinery/firealarm/directional/east{
+	pixel_y = 6
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
 "rZ" = (
 /obj/structure/bed/bunk,
 /obj/structure/bed/bunk/top,
@@ -1076,14 +1093,12 @@
 /obj/structure/guncloset,
 /obj/item/gun/ballistic/automatic/pistol/commander,
 /obj/item/gun/ballistic/automatic/smg/vector,
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/vired/half{
-	dir = 8
-	},
-/obj/machinery/light/directional/west,
 /obj/machinery/camera/autoname,
+/obj/effect/turf_decal/trimline/opaque/vired/filled/line{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "sI" = (
@@ -1124,10 +1139,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
-"sQ" = (
-/obj/effect/spawner/random/vending/cola,
-/turf/open/floor/plasteel/mono,
-/area/ship/cargo)
 "sR" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 5
@@ -1238,19 +1249,10 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/effect/turf_decal/trimline/opaque/vired/filled/corner,
-/obj/machinery/light_switch{
-	pixel_x = -21;
-	pixel_y = 4;
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
 	},
-/obj/machinery/button/door{
-	dir = 4;
-	pixel_x = -22;
-	pixel_y = -7;
-	id = "magpie_sec_office";
-	name = "Security Office Shutters"
-	},
+/obj/effect/turf_decal/trimline/opaque/vired/filled/line,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "tE" = (
@@ -1393,9 +1395,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/structure/camera_assembly{
-	dir = 10
-	},
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
@@ -1403,6 +1402,9 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/south,
+/obj/machinery/camera/autoname{
+	dir = 10
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "uV" = (
@@ -1413,22 +1415,34 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
 "vb" = (
-/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
-	dir = 6
+/obj/structure/closet/secure_closet/medical3{
+	populate = 0
 	},
-/obj/structure/bed/roller,
-/obj/machinery/firealarm/directional/east{
-	pixel_y = 6
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
 	},
-/obj/structure/sign/nanotrasen{
-	pixel_y = -32
-	},
-/obj/machinery/light/directional/south,
+/obj/item/storage/box/gloves,
+/obj/item/storage/box/masks,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/clothing/suit/toggle/labcoat/nanotrasen,
+/obj/item/clothing/under/nanotrasen/medical,
+/obj/item/clothing/shoes/sneakers/white,
+/obj/item/storage/backpack/satchel/med,
+/obj/item/storage/belt/medical/webbing,
+/obj/item/clothing/head/nanotrasen/cap/medical,
+/obj/item/storage/backpack/medic,
+/obj/item/clothing/head/nanotrasen/surgical/blue,
+/obj/item/clothing/suit/nanotrasen/medical_smock,
+/obj/item/storage/backpack/duffelbag/med,
 /obj/machinery/camera/autoname{
 	dir = 10
 	},
-/obj/machinery/iv_drip{
-	pixel_x = -13
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
+	dir = 6
+	},
+/obj/structure/sign/nanotrasen{
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -1539,20 +1553,20 @@
 /turf/open/floor/carpet/cyan,
 /area/ship/crew/dorm)
 "vI" = (
-/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
 	},
-/obj/effect/turf_decal/trimline/opaque/blue/filled/corner{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
+/obj/effect/turf_decal/trimline/opaque/blue/filled/corner{
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
+/obj/effect/turf_decal/trimline/opaque/blue/filled/corner{
+	dir = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -1883,7 +1897,6 @@
 	},
 /obj/effect/mapping_helpers/crate_shelve,
 /obj/item/stack/sheet/mineral/uranium/ten,
-/obj/item/stack/sheet/mineral/plasma/ten,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage/equip)
@@ -1939,35 +1952,24 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Bu" = (
-/obj/effect/turf_decal/trimline/opaque/blue/filled/end{
-	dir = 1
-	},
-/obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/clothing/mask/gas,
-/obj/item/tank/internals/oxygen,
-/obj/item/clothing/suit/space/hardsuit/medical,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Bv" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/cargo)
 "Bx" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line{
 	dir = 10
 	},
-/obj/structure/table/reinforced,
-/obj/structure/closet/wall/med/directional/south{
-	populate = 0;
-	name = "Medical Supplies"
-	},
-/obj/machinery/airalarm/directional/west,
-/obj/item/storage/box/syringes,
-/obj/item/reagent_containers/glass/bottle/indomide,
-/obj/item/storage/pill_bottle/charcoal,
-/obj/effect/spawner/random/medical/medkit,
-/obj/item/storage/firstaid/medical,
-/obj/item/reagent_containers/chem_pack/dimorlin,
+/obj/machinery/suit_storage_unit/inherit/industrial,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "BI" = (
@@ -1987,30 +1989,21 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/engines/port)
 "BS" = (
-/obj/structure/closet/secure_closet/medical3{
-	populate = 0
+/obj/machinery/firealarm/directional/south{
+	pixel_x = 7
 	},
-/obj/effect/turf_decal/trimline/opaque/blue/filled/end{
-	dir = 4
+/obj/effect/turf_decal/trimline/opaque/vired/filled/line{
+	dir = 10
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/office/dark{
+	dir = 1
 	},
-/obj/item/storage/box/gloves,
-/obj/item/storage/box/masks,
-/obj/item/clothing/glasses/hud/health,
-/obj/item/clothing/suit/toggle/labcoat/nanotrasen,
-/obj/item/clothing/under/nanotrasen/medical,
-/obj/item/clothing/shoes/sneakers/white,
-/obj/item/storage/backpack/satchel/med,
-/obj/item/storage/belt/medical/webbing,
-/obj/item/clothing/head/nanotrasen/cap/medical,
-/obj/item/storage/backpack/medic,
-/obj/item/clothing/head/nanotrasen/surgical/blue,
-/obj/item/clothing/suit/nanotrasen/medical_smock,
-/obj/item/storage/backpack/duffelbag/med,
-/turf/open/floor/plasteel/white,
-/area/ship/medical)
+/obj/structure/sign/nanotrasen/vigilitas{
+	pixel_x = -30
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "BY" = (
 /obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
@@ -2020,33 +2013,20 @@
 /area/ship/engineering/engines/port)
 "Ce" = (
 /obj/structure/table/reinforced,
-/obj/machinery/firealarm/directional/south{
-	pixel_x = 7
+/obj/item/storage/box/syringes,
+/obj/item/storage/pill_bottle/charcoal,
+/obj/effect/spawner/random/medical/medkit,
+/obj/item/storage/firstaid/medical,
+/obj/item/reagent_containers/chem_pack/dimorlin,
+/obj/structure/closet/wall/med/directional/north,
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
+	dir = 9
 	},
-/obj/machinery/recharger{
-	pixel_x = -10;
-	pixel_y = 10
-	},
-/obj/structure/sign/nanotrasen/vigilitas{
-	pixel_x = -30
-	},
-/obj/item/paper_bin{
-	pixel_x = 5;
-	pixel_y = 3
-	},
-/obj/item/pen{
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/item/stamp/nanotrasen/vigilitas{
-	pixel_x = 6;
-	pixel_y = 5
-	},
-/obj/structure/sign/poster/official/random{
-	pixel_y = 31
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
+/obj/item/reagent_containers/glass/bottle/curare,
+/obj/item/reagent_containers/glass/bottle/curare,
+/obj/item/reagent_containers/glass/bottle/indomide,
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
 "Cq" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
@@ -2425,19 +2405,17 @@
 	icon_state = "sec_wall";
 	name = "Equipment"
 	},
-/obj/effect/turf_decal/trimline/opaque/vired/filled/corner,
 /obj/structure/cable{
 	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
 /obj/item/storage/backpack/duffelbag/sec,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/trimline/opaque/vired/filled/line{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Hc" = (
@@ -3287,18 +3265,45 @@
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "Tv" = (
-/obj/structure/chair/office/dark{
+/obj/machinery/recharger{
+	pixel_x = -10;
+	pixel_y = 10
+	},
+/obj/item/paper_bin{
+	pixel_x = 5;
+	pixel_y = 3
+	},
+/obj/item/pen{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/item/stamp/nanotrasen/vigilitas{
+	pixel_x = 6;
+	pixel_y = 5
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/vired/filled/line{
 	dir = 8
 	},
-/obj/effect/turf_decal/borderfloorblack{
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light_switch{
+	pixel_x = -21;
+	pixel_y = 4;
 	dir = 4
 	},
-/obj/machinery/airalarm/directional/south,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = -22;
+	pixel_y = -7;
+	id = "magpie_sec_office";
+	name = "Security Office Shutters"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
+/obj/item/folder/red{
+	pixel_x = -8;
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -3392,7 +3397,6 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "UE" = (
-/obj/structure/camera_assembly,
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/line{
 	dir = 1
 	},
@@ -4172,7 +4176,7 @@ ph
 gE
 Ap
 qI
-rW
+ic
 ic
 ic
 Tk
@@ -4195,8 +4199,8 @@ ph
 CB
 pH
 jB
-sQ
 ic
+Ce
 Bu
 vI
 Bx
@@ -4217,10 +4221,10 @@ KO
 NI
 TZ
 HD
-jx
+Bv
 ic
-ci
-ci
+jx
+rW
 bD
 vb
 ic
@@ -4242,9 +4246,9 @@ if
 cQ
 ry
 Wf
-Ce
 Wf
-BS
+ci
+ci
 ci
 ic
 Ag
@@ -4266,7 +4270,7 @@ QR
 ry
 sE
 Tv
-Wf
+BS
 Wf
 ic
 Ag
