@@ -31,7 +31,6 @@
 	species_r_leg = /obj/item/bodypart/leg/right/moth
 
 	species_robotic_chest = /obj/item/bodypart/chest/robot/human
-	species_robotic_head = /obj/item/bodypart/head/robot/human
 	species_robotic_l_arm = /obj/item/bodypart/l_arm/robot/surplus/human
 	species_robotic_r_arm = /obj/item/bodypart/r_arm/robot/surplus/human
 	species_robotic_l_leg = /obj/item/bodypart/leg/left/robot/surplus/human
