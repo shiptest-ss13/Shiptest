@@ -211,6 +211,15 @@
 	r_hand = /obj/item/gun/ballistic/shotgun/brimstone
 	armor_base = /obj/item/clothing/suit/armor/vest/frontier
 
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter
+	name = "Frontiersmen Runner"
+	desc = "A quick-footed member of the brutal Frontiersmen terrorist fleet! This one wields a boxy submachine gun in one hand."
+	rapid = 8
+	rapid_fire_delay = 1
+	projectilesound = 'sound/weapons/gun/smg/spitter.ogg'
+	casingtype = /obj/item/ammo_casing/c9mm
+	r_hand = /obj/item/gun/ballistic/automatic/pistol/spitter
+
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/space
 	icon_state = "frontiersmanrangedelite_mask"
 	atmos_requirements = IMMUNE_ATMOS_REQS
@@ -224,6 +233,15 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
 	set_light(4)
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/space/spitter
+	name = "Frontiersmen Runner"
+	desc = "A quick-footed member of the brutal Frontiersmen terrorist fleet! This one clutches a boxy submachine gun with the bulky gauntlets of their grey hardsuit."
+	rapid = 8
+	rapid_fire_delay = 1
+	projectilesound = 'sound/weapons/gun/smg/spitter.ogg'
+	casingtype = /obj/item/ammo_casing/c9mm
+	r_hand = /obj/item/gun/ballistic/automatic/pistol/spitter
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals
 	icon_state = "frontiersmanrangedelite_mask"
