@@ -222,6 +222,9 @@
 	casingtype = /obj/item/ammo_casing/c9mm
 	r_hand = /obj/item/gun/ballistic/automatic/pistol/spitter
 
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter/neutered
+	weapon_drop_chance = 0
+
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/space
 	icon_state = "frontiersmanrangedelite_mask"
 	atmos_requirements = IMMUNE_ATMOS_REQS
@@ -246,6 +249,9 @@
 	projectilesound = 'sound/weapons/gun/smg/spitter.ogg'
 	casingtype = /obj/item/ammo_casing/c9mm
 	r_hand = /obj/item/gun/ballistic/automatic/pistol/spitter
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/space/spitter/neutered
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals
 	icon_state = "frontiersmanrangedelite_mask"
