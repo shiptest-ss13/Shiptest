@@ -145,7 +145,6 @@
 
 /datum/emote/living/carbon/annoyed
 	key = "annoyed"
-	message = "looks annoyed"
 	emote_type = EMOTE_ANIMATED | EMOTE_VISIBLE
 	sound_volume = 25
 	vary = TRUE

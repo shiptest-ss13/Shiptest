@@ -61,6 +61,15 @@
 	. = TRUE
 	if(!can_run_emote(user, TRUE, intentional))
 		return FALSE
+
+	if((emote_type & EMOTE_ANIMATED) && emote_length > 0)
+		var/image/I = image(overlay_icon, user, overlay_icon_state, ABOVE_MOB_LAYER, 0, overlay_x_offset, overlay_y_offset)
+		flick_overlay_view(I, user, emote_length)
+
+	var/tmp_sound = get_sound(user)
+	if(tmp_sound && (!only_forced_audio || !intentional))
+		playsound(user, tmp_sound, 50, vary)
+
 	var/msg = select_message_type(user, intentional)
 	if(params && message_param)
 		msg = select_param(user, params)
@@ -78,14 +87,6 @@
 	user.log_message(msg, LOG_EMOTE)
 	var/space = should_have_space_before_emote(html_encode(msg)[1]) ? " " : ""
 	var/dchatmsg = "<b>[user]</b>[space][msg]"
-
-	if((emote_type & EMOTE_ANIMATED) && emote_length > 0)
-		var/image/I = image(overlay_icon, user, overlay_icon_state, ABOVE_MOB_LAYER, 0, overlay_x_offset, overlay_y_offset)
-		flick_overlay_view(I, user, emote_length)
-
-	var/tmp_sound = get_sound(user)
-	if(tmp_sound && (!only_forced_audio || !intentional))
-		playsound(user, tmp_sound, 50, vary)
 
 	for(var/mob/M in GLOB.dead_mob_list)
 		if(!M.client || isnewplayer(M))
