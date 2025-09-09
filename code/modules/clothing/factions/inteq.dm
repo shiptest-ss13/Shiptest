@@ -282,7 +282,7 @@
 	icon_state = "space-inteq-pilot0"
 	desc = "A specialized space helmet designed for exosuit and shuttle pilots. Offers limited impact protection."
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 70, "wound" = 5) //less wound armor. give em the fokker special
-	visor_flags_inv = HIDEMASK
+	visor_flags_inv = HIDEHAIR|HIDEEARS|HIDEFACE|HIDEFACIALHAIR|HIDEMASK
 	visor_flags = STOPSPRESSUREDAMAGE | ALLOWINTERNALS
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 
