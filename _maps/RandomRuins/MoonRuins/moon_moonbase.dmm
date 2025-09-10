@@ -5709,7 +5709,8 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/trimline/transparent/orange/warning,
 /obj/machinery/atmospherics/components/trinary/mixer/airmix{
-	dir = 4
+	dir = 4;
+	piping_layer = 2
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/moon/moonbase/engineering)
