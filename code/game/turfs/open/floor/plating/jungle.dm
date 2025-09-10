@@ -53,6 +53,35 @@
 	light_range = 2
 	light_power = 1
 
+//for bombed spartport
+
+/turf/open/floor/carpet/red/jungleplanet
+	planetary_atmos = TRUE
+	light_color = COLOR_JUNGLEPLANET_LIGHT
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/jungleplanet
+	planetary_atmos = TRUE
+	light_color = COLOR_JUNGLEPLANET_LIGHT
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/patterned/brushed/jungleplanet
+	planetary_atmos = TRUE
+	light_color = COLOR_JUNGLEPLANET_LIGHT
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/freezer/jungleplanet
+	planetary_atmos = TRUE
+	light_color = COLOR_JUNGLEPLANET_LIGHT
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/stairs/jungleplanet
+	planetary_atmos = TRUE
+	light_color = COLOR_JUNGLEPLANET_LIGHT
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+//end of stuff for starport
+
 /turf/open/floor/plasteel/dark/jungleplanet
 	planetary_atmos = TRUE
 	light_color = COLOR_JUNGLEPLANET_LIGHT
