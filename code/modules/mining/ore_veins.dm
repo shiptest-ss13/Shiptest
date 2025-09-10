@@ -92,7 +92,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 			if(3)
 				ore_type_amount = rand(8,14)
 			if(4)
-				ore_type_amount = rand(30,40)
+				ore_type_amount = rand(10,18)
 			else
 				ore_type_amount = 1
 		for(var/ore_count in 1 to ore_type_amount)
@@ -659,6 +659,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 /obj/structure/vein/moon/classfour
 	mining_charges = 15
 	vein_class = 4
+	drop_rate_amount_min = 30
+	drop_rate_amount_max = 40
 
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath = 10,
