@@ -92,7 +92,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 			if(3)
 				ore_type_amount = rand(8,14)
 			if(4)
-				ore_type_amount = rand(10,18)
+				ore_type_amount = rand(30,40)
 			else
 				ore_type_amount = 1
 		for(var/ore_count in 1 to ore_type_amount)
@@ -656,6 +656,26 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	max_mobs = 3
 	spawn_time = 8 SECONDS
 
+/obj/structure/vein/moon/classfour
+	mining_charges = 15
+	vein_class = 4
+
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/goliath = 10,
+		/mob/living/simple_animal/hostile/asteroid/basilisk = 30,
+		/mob/living/simple_animal/hostile/asteroid/hivelord = 30,
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
+		/mob/living/simple_animal/hostile/carp/megacarp = 20,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal = 5,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal = 5,
+		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten = 5,
+		)
+	ore_list = list(
+		/obj/item/stack/ore/ice = 10
+		)
+
+	max_mobs = 6
+	spawn_time = 8 SECONDS
 
 //Desert planets, since they actually have their own mobs we use those
 
