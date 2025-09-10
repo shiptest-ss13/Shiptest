@@ -42,10 +42,10 @@
 /area/ruin/moon/moonbase/armory)
 "au" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/space,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/space/sentry,
 /turf/open/floor/plating/airless,
 /area/ruin/moon/moonbase)
 "av" = (
@@ -56,7 +56,7 @@
 /area/ruin/moon/moonbase/engineering)
 "aw" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/space,
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/space/sentry,
 /turf/open/floor/plating/airless,
 /area/ruin/moon/moonbase)
 "ax" = (
@@ -226,7 +226,7 @@
 /turf/open/floor/plating/asteroid/moon/lit/surface_craters,
 /area/ruin/moon/moonbase)
 "bM" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/moon/moonbase/engineering)
 "bO" = (
 /obj/structure/grille,
@@ -302,7 +302,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase)
 "cq" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/moon/moonbase/armory)
 "cv" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1421,6 +1421,9 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/moon/moonbase/cargo)
+"lu" = (
+/turf/closed/indestructible/plastitanium/nodiagnonal,
+/area/ruin/moon/moonbase/cargo)
 "lx" = (
 /obj/effect/turf_decal/trimline/transparent/blue/warning,
 /turf/open/floor/plasteel/dark,
@@ -1860,7 +1863,9 @@
 "pS" = (
 /obj/machinery/drill/mission/ruin,
 /obj/structure/vein/moon/classfour,
-/obj/effect/landmark/mission_poi/main/drill,
+/obj/effect/landmark/mission_poi/main/drill{
+	already_spawned = 1
+	},
 /turf/open/floor/plating/asteroid/moon_coarse/dark/lit,
 /area/ruin/moon/moonbase)
 "qa" = (
@@ -1921,6 +1926,9 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/moonbase/cargo)
+"qF" = (
+/turf/closed/indestructible/plastitanium/nodiagnonal,
+/area/ruin/moon/moonbase/engineering)
 "qK" = (
 /turf/open/floor/plasteel/tech/techmaint/airless,
 /area/ruin/moon/moonbase)
@@ -1979,6 +1987,9 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/moon/moonbase/refinery)
+"rp" = (
+/turf/closed/indestructible/plastitanium/nodiagnonal,
+/area/ruin/moon/moonbase/dorms)
 "rt" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
@@ -2911,7 +2922,7 @@
 /turf/open/floor/plating/asteroid/moon/lit/surface_craters,
 /area/ruin/moon/moonbase)
 "Bf" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/moon/moonbase/refinery)
 "Bg" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer5,
@@ -3418,7 +3429,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/moon/moonbase/refinery)
 "Fi" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/moon/moonbase/dorms)
 "Fq" = (
 /obj/structure/closet/crate/engineering{
@@ -4863,7 +4874,7 @@
 /turf/open/floor/plasteel/stairs/right,
 /area/ruin/moon/moonbase)
 "Rn" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/moon/moonbase/cargo)
 "Rp" = (
 /obj/structure/grille,
@@ -5679,6 +5690,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase/refinery)
+"XO" = (
+/turf/closed/indestructible/plastitanium/nodiagnonal,
+/area/ruin/moon/moonbase/armory)
 "XV" = (
 /obj/effect/spawner/bunk_bed,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6390,11 +6404,11 @@ fi
 fi
 fi
 fi
-bM
+qF
 bM
 bM
 Vy
-bM
+qF
 fi
 fi
 fi
@@ -6455,11 +6469,11 @@ bM
 wV
 kg
 FT
+qF
 bM
 bM
 bM
-bM
-bM
+qF
 fi
 fi
 XD
@@ -6570,7 +6584,7 @@ Bf
 Bf
 fi
 fi
-bM
+qF
 bM
 bM
 bM
@@ -6814,7 +6828,7 @@ mk
 fi
 fi
 fi
-bM
+qF
 bM
 vv
 FF
@@ -6826,7 +6840,7 @@ bM
 bM
 bM
 bM
-bM
+qF
 fi
 fi
 fi
@@ -7009,7 +7023,7 @@ bM
 Cm
 VM
 bM
-bM
+qF
 fi
 fi
 Gk
@@ -7065,7 +7079,7 @@ NQ
 dx
 vu
 bM
-bM
+qF
 Ig
 nu
 yM
@@ -7079,10 +7093,10 @@ fi
 fi
 fi
 fi
+rp
 Fi
 Fi
-Fi
-Fi
+rp
 fi
 fi
 fi
@@ -7120,12 +7134,12 @@ fi
 fi
 fi
 fi
-bM
+qF
 bM
 Lh
 bM
 bM
-bM
+qF
 fi
 Ig
 VP
@@ -7143,8 +7157,8 @@ KR
 Fi
 YN
 iQ
-Fi
-Fi
+rp
+rp
 KR
 fi
 fi
@@ -7320,7 +7334,7 @@ Hw
 Se
 By
 fi
-Fi
+rp
 Fi
 Fi
 Fi
@@ -7388,11 +7402,11 @@ Tx
 Fi
 Wi
 xi
+rp
 Fi
 Fi
 Fi
-Fi
-Fi
+rp
 fi
 fi
 fi
@@ -7492,11 +7506,11 @@ fi
 fi
 fi
 fi
-cq
+XO
 Wa
 HN
 cq
-cq
+XO
 Ig
 vO
 VZ
@@ -7548,7 +7562,7 @@ fi
 fi
 fi
 fi
-cq
+XO
 cq
 Fv
 cq
@@ -7607,7 +7621,7 @@ fi
 fi
 Bc
 fi
-cq
+XO
 cq
 cq
 di
@@ -7697,7 +7711,7 @@ sd
 ML
 Fi
 Fi
-Fi
+rp
 fi
 fi
 bv
@@ -7797,7 +7811,7 @@ cq
 cq
 qW
 vb
-cq
+XO
 JJ
 ng
 Oi
@@ -7808,7 +7822,7 @@ VZ
 Se
 By
 KR
-Fi
+rp
 Fi
 Fi
 Fi
@@ -7851,7 +7865,7 @@ ec
 qU
 ec
 XD
-cq
+XO
 cq
 cq
 dy
@@ -7983,8 +7997,8 @@ qr
 HM
 iB
 nF
-cq
-cq
+XO
+XO
 Ig
 vO
 VZ
@@ -8043,7 +8057,7 @@ cS
 Sj
 cq
 vb
-cq
+XO
 cq
 fi
 Ig
@@ -8053,7 +8067,7 @@ Se
 XH
 ET
 Eu
-Fi
+rp
 Fi
 Fi
 Fi
@@ -8105,7 +8119,7 @@ Kz
 mm
 Mh
 cq
-cq
+XO
 fi
 Ig
 vO
@@ -8219,8 +8233,8 @@ fi
 fi
 fi
 fi
-cq
-cq
+XO
+XO
 gy
 Ha
 fn
@@ -8281,13 +8295,13 @@ fi
 fi
 fi
 dh
-cq
-cq
-UC
+XO
 cq
 UC
 cq
+UC
 cq
+XO
 fi
 fi
 Ig
@@ -8399,18 +8413,18 @@ XD
 XD
 fi
 fi
+lu
+Rn
+mF
+Rn
 Rn
 Rn
 mF
 Rn
 Rn
 Rn
-mF
 Rn
-Rn
-Rn
-Rn
-Rn
+lu
 ET
 SR
 nu
@@ -8459,8 +8473,8 @@ ec
 ec
 fi
 fi
-Rn
-Rn
+lu
+lu
 Os
 Np
 Yk
@@ -8654,7 +8668,7 @@ tb
 Rn
 Rn
 Rn
-Rn
+lu
 fz
 NU
 vO
@@ -8886,10 +8900,10 @@ fi
 fi
 fi
 fi
+lu
 Rn
 Rn
-Rn
-Rn
+lu
 bf
 nC
 DN
@@ -8950,7 +8964,7 @@ fi
 fi
 fi
 fi
-Rn
+lu
 pP
 uS
 hF
@@ -8958,7 +8972,7 @@ Rn
 Rn
 zP
 Rn
-Rn
+lu
 fi
 fi
 Ig
