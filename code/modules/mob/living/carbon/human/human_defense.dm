@@ -498,7 +498,7 @@
 			intensity = 2
 			ear_damage = 30
 			deafness_power = 120
-			damage_clothes(rand(90,150) - bomb_armor, BRUTE, "bomb")
+			damage_clothes(max(rand(90,150) - bomb_armor, 0), BRUTE, "bomb")
 			Unconscious(20)							//short amount of time for follow up attacks against elusive enemies like wizards
 			Knockdown(200 - (bomb_armor * 1.6)) 	//between ~4 and ~20 seconds of knockdown depending on bomb armor
 
@@ -508,7 +508,7 @@
 			if(bomb_armor)
 				brute_loss = 15*(2 - round(bomb_armor*0.01, 0.05))
 				burn_loss = bruteloss
-			damage_clothes(max(50 - bomb_armor, 0), BRUTE, "bomb")
+			damage_clothes(max(rand(10,90) - bomb_armor, 0), BRUTE, "bomb")
 			intensity = 1.5
 			ear_damage = 15
 			deafness_power = 60
