@@ -144,7 +144,7 @@
 	for (var/i in 1 to 4)
 		new /obj/item/storage/box/ammo/c46x30mm(src)
 
-/obj/item/storage/toolbox/ammo/c75/PopulateContents()
+/obj/item/storage/toolbox/ammo/c65/PopulateContents()
 	name = "ammo can (6.5mm CLIP)"
 	icon_state = "ammobox_65"
 	current_skin = "6.5mm CLIP"
@@ -199,6 +199,13 @@
 	current_skin = "12ga Buckshot"
 	for (var/i in 1 to 4)
 		new /obj/item/storage/box/ammo/a12g_slug(src)
+
+/obj/item/storage/toolbox/ammo/frag/PopulateContents()
+	name = "ammo can (frag grenades)"
+	icon_state = "ammobox_expl"
+	current_skin = "EXPLOSIVE"
+	for (var/i in 1 to 7)
+		new /obj/item/grenade/frag(src)
 
 /obj/item/storage/toolbox/ammo/c50bmg/PopulateContents()
 	name = "ammo can (.50BMG)"
