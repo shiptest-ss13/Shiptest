@@ -127,8 +127,8 @@
 	key_third_person = "winks"
 	message = "winks."
 
-/datum/emote/living/carbon/sweatdrop
-	key = "sweatdrop"
+/datum/emote/living/carbon/sweat
+	key = "sweat"
 	key_third_person = "sweatdrops"
 	message = "sweats."
 	emote_type = EMOTE_ANIMATED | EMOTE_VISIBLE
@@ -140,8 +140,8 @@
 	emote_length = 3 SECONDS
 	sound = 'sound/emotes/sweatdrop.ogg'
 
-/datum/emote/living/carbon/sweatdrop/sweat //This is entirely the same as sweatdrop
-	key = "sweat"
+/datum/emote/living/carbon/sweat/sweatdrop //This is entirely the same as sweat
+	key = "sweatdrop"
 
 /datum/emote/living/carbon/annoyed
 	key = "annoyed"
