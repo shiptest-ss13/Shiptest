@@ -14,9 +14,9 @@
 
 /datum/mission/ruin/signaled/drill/moonbase
 	name = "Root out Crystal Infestation"
-	desc = "N+S Logistics has lost contact with a recently established mining base. We believe that this base is located upon an extremely lucrative hydrogen-ice vein. \
-			Due to loss of contact, N+S has been unable to verify the existence of this vein. Please move to the site, locate the drilling system, and bring us our geological survey results. \
-			If an N+S team is still on site, please inform them that their communications system has been damaged, and that the next supply run will be in 3 weeks."
+	desc = "CLIP-MELD is putting out a notice to any able-bodied forces in the area to assist in clearing out a crystal infestation on a local ice-extraction moonbase. \
+			A majority of the infestation is located within an ore vein to the north of the site, and is considered to be extremely dangerous, even to the strongest of crews. \
+			Additionally, there are reports of a Frontiersmen outfit setting up in the ruins of the facility. Be careful handling this infestation so that CLIP-MELD may reclaim the site."
 	mission_limit = 1
 	faction = list(
 		/datum/faction/clip,
