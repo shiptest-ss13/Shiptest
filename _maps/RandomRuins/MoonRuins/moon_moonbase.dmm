@@ -37,6 +37,7 @@
 /area/ruin/moon/moonbase/refinery)
 "as" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/advanced_airlock_controller/directional/west,
 /turf/open/floor/pod/dark,
 /area/ruin/moon/moonbase/armory)
 "au" = (
@@ -333,7 +334,7 @@
 /obj/structure/railing,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
-/area/ruin/moon/moonbase/refinery)
+/area/ruin/moon/moonbase)
 "cE" = (
 /turf/closed/wall,
 /area/ruin/moon/moonbase/refinery)
@@ -435,6 +436,7 @@
 	layer = 2.030;
 	dir = 9
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/moonbase/engineering)
 "dy" = (
@@ -643,6 +645,9 @@
 /area/ruin/moon/moonbase/armory)
 "fo" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/moonbase/cargo)
 "fq" = (
@@ -774,7 +779,7 @@
 "gm" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
-/area/ruin/moon/moonbase/refinery)
+/area/ruin/moon/moonbase)
 "gp" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
@@ -968,6 +973,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/machinery/advanced_airlock_controller/directional/south,
 /turf/open/floor/pod/dark,
 /area/ruin/moon/moonbase/dorms)
 "hB" = (
@@ -985,6 +991,12 @@
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "cargo-blast"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/moonbase/cargo)
@@ -1196,7 +1208,7 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/airless,
 /area/ruin/moon/moonbase)
 "jA" = (
 /obj/structure/cable{
@@ -1260,7 +1272,7 @@
 "kb" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plating/airless,
-/area/ruin/moon/moonbase/refinery)
+/area/ruin/moon/moonbase)
 "kc" = (
 /obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1487,7 +1499,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/airless,
 /area/ruin/moon/moonbase)
 "mi" = (
 /obj/structure/grille,
@@ -1736,7 +1748,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/airless,
 /area/ruin/moon/moonbase)
 "oI" = (
 /obj/machinery/light/directional/west,
@@ -1826,11 +1838,11 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/airless,
 /area/ruin/moon/moonbase)
 "pN" = (
 /obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/airless,
 /area/ruin/moon/moonbase)
 "pP" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
@@ -1839,6 +1851,9 @@
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "cargo-blast"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/moonbase/cargo)
@@ -1907,7 +1922,7 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/moonbase/cargo)
 "qK" = (
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/airless,
 /area/ruin/moon/moonbase)
 "qN" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1937,7 +1952,7 @@
 	dir = 4;
 	layer = 2.5
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/airless,
 /area/ruin/moon/moonbase)
 "qW" = (
 /obj/structure/girder,
@@ -2169,7 +2184,9 @@
 /area/ruin/moon/moonbase/refinery)
 "tI" = (
 /obj/machinery/mineral/electrolyzer{
-	icon_state = "grinder-o1bld"
+	icon_state = "grinder-o1bld";
+	input_dir = 4;
+	output_dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase/refinery)
@@ -2210,6 +2227,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/pod/dark,
 /area/ruin/moon/moonbase/engineering)
 "ul" = (
@@ -2275,6 +2293,9 @@
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "cargo-blast"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/moonbase/cargo)
@@ -2343,10 +2364,11 @@
 	},
 /area/ruin/moon/moonbase)
 "vr" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
+/obj/machinery/conveyor{
+	dir = 8;
+	id = "conveyors"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase)
 "vu" = (
 /obj/machinery/computer/monitor{
@@ -2406,7 +2428,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
 "vZ" = (
-/obj/machinery/power/floodlight,
+/obj/machinery/power/floodlight{
+	anchored = 1
+	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -2484,7 +2508,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/light/small/directional/west,
+/obj/machinery/advanced_airlock_controller/directional/west,
 /turf/open/floor/pod/dark,
 /area/ruin/moon/moonbase/engineering)
 "wH" = (
@@ -2524,6 +2548,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/moonbase/cargo)
 "xi" = (
@@ -2557,6 +2584,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/moonbase/cargo)
@@ -2605,7 +2635,7 @@
 	id = "conveyors"
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/moon/moonbase/refinery)
+/area/ruin/moon/moonbase)
 "yu" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 8
@@ -2773,6 +2803,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/moonbase/cargo)
 "Am" = (
@@ -2811,7 +2844,7 @@
 /area/ruin/moon/moonbase/dorms)
 "AA" = (
 /obj/effect/turf_decal/industrial/warning/corner,
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/airless,
 /area/ruin/moon/moonbase)
 "AB" = (
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer2{
@@ -2907,9 +2940,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/moonbase/dorms)
-"Bw" = (
-/turf/open/floor/plating/airless,
-/area/ruin/moon/moonbase/refinery)
 "Bx" = (
 /obj/machinery/computer/atmos_control/tank/oxygen_tank{
 	dir = 1
@@ -3033,7 +3063,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/airless,
 /area/ruin/moon/moonbase)
 "Cf" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/arrow_ccw{
@@ -3062,9 +3092,6 @@
 	id = "electrical-shutters"
 	},
 /obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/airlock/external{
-	dir = 8
-	},
 /turf/open/floor/plating,
 /area/ruin/moon/moonbase/engineering)
 "Cn" = (
@@ -3113,6 +3140,7 @@
 /area/ruin/moon/moonbase)
 "CN" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1,
+/obj/machinery/light/floor,
 /turf/open/floor/plating/airless,
 /area/ruin/moon/moonbase/refinery)
 "CR" = (
@@ -3275,13 +3303,16 @@
 	pixel_x = 7;
 	pixel_y = -3
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/moonbase/cargo)
 "DR" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/airless,
 /area/ruin/moon/moonbase)
 "DX" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3381,11 +3412,11 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/moon/moonbase/engineering)
 "Fe" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/machinery/portable_atmospherics/canister{
+	icon_state = "orangews"
 	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/moon/moonbase)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/moon/moonbase/refinery)
 "Fi" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ruin/moon/moonbase/dorms)
@@ -3487,11 +3518,12 @@
 	dir = 1
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/moon/moonbase/refinery)
+/area/ruin/moon/moonbase)
 "Gv" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
 	dir = 1
 	},
+/obj/machinery/advanced_airlock_controller/directional/west,
 /turf/open/floor/pod/dark,
 /area/ruin/moon/moonbase/cargo)
 "GF" = (
@@ -3621,7 +3653,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase)
 "Hy" = (
-/obj/machinery/power/floodlight,
+/obj/machinery/power/floodlight{
+	anchored = 1
+	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -3631,7 +3665,7 @@
 /obj/machinery/light/floor,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
-/area/ruin/moon/moonbase/refinery)
+/area/ruin/moon/moonbase)
 "HM" = (
 /obj/structure/railing/corner{
 	dir = 1
@@ -3701,6 +3735,7 @@
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/pod/dark,
 /area/ruin/moon/moonbase/refinery)
 "IE" = (
@@ -3726,7 +3761,9 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/moon/moonbase/refinery)
 "IH" = (
-/obj/machinery/power/floodlight,
+/obj/machinery/power/floodlight{
+	anchored = 1
+	},
 /obj/structure/cable{
 	icon_state = "0-6"
 	},
@@ -3754,7 +3791,7 @@
 /obj/effect/turf_decal/techfloor,
 /obj/structure/railing,
 /turf/open/floor/plating/airless,
-/area/ruin/moon/moonbase/refinery)
+/area/ruin/moon/moonbase)
 "IR" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -3814,7 +3851,9 @@
 /area/ruin/moon/moonbase)
 "JL" = (
 /obj/structure/platform/industrial,
-/obj/machinery/atmospherics/components/unary/hydrogen_pump,
+/obj/machinery/atmospherics/components/unary/hydrogen_pump{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/moon/moonbase/refinery)
 "JM" = (
@@ -3984,6 +4023,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/moonbase/cargo)
 "KM" = (
@@ -4021,7 +4063,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
-/area/ruin/moon/moonbase/refinery)
+/area/ruin/moon/moonbase)
 "KY" = (
 /obj/machinery/door/airlock/atmos{
 	dir = 4
@@ -4187,6 +4229,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/moonbase/cargo)
@@ -4417,6 +4462,7 @@
 /area/ruin/moon/moonbase)
 "NW" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/obj/machinery/light/floor,
 /turf/open/floor/plating/airless,
 /area/ruin/moon/moonbase/refinery)
 "Oc" = (
@@ -4494,7 +4540,7 @@
 	},
 /obj/machinery/light/floor,
 /turf/open/floor/plating/airless,
-/area/ruin/moon/moonbase/refinery)
+/area/ruin/moon/moonbase)
 "Os" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 6
@@ -4764,6 +4810,7 @@
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/pod/dark,
 /area/ruin/moon/moonbase/dorms)
 "QE" = (
@@ -4810,7 +4857,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/airless,
 /area/ruin/moon/moonbase)
 "Rf" = (
 /turf/open/floor/plasteel/stairs/right,
@@ -4892,7 +4939,7 @@
 "RT" = (
 /obj/machinery/light/floor,
 /turf/open/floor/plating/airless,
-/area/ruin/moon/moonbase/refinery)
+/area/ruin/moon/moonbase)
 "RW" = (
 /turf/open/floor/carpet/blue,
 /area/ruin/moon/moonbase/dorms)
@@ -5038,7 +5085,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 5
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/airless,
 /area/ruin/moon/moonbase)
 "Tb" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -5154,9 +5201,6 @@
 /area/ruin/moon/moonbase/dorms)
 "TR" = (
 /obj/structure/platform/industrial,
-/obj/machinery/portable_atmospherics/canister{
-	icon_state = "orangews"
-	},
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8
 	},
@@ -5231,11 +5275,11 @@
 /obj/structure/railing,
 /obj/machinery/light/floor,
 /turf/open/floor/plating/airless,
-/area/ruin/moon/moonbase/refinery)
+/area/ruin/moon/moonbase)
 "US" = (
 /obj/machinery/mineral/electrolyzer_unloader,
 /turf/open/floor/plasteel/tech,
-/area/ruin/moon/moonbase/refinery)
+/area/ruin/moon/moonbase)
 "UY" = (
 /turf/open/floor/plating/asteroid/moon_coarse,
 /area/ruin/moon/moonbase)
@@ -5245,6 +5289,7 @@
 "Vb" = (
 /obj/structure/tank_dispenser,
 /obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/moonbase/engineering)
 "Vh" = (
@@ -5477,7 +5522,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/airless,
 /area/ruin/moon/moonbase)
 "WC" = (
 /obj/structure/platform/industrial{
@@ -5511,7 +5556,7 @@
 /turf/open/floor/plasteel/stairs{
 	dir = 4
 	},
-/area/ruin/moon/moonbase/refinery)
+/area/ruin/moon/moonbase)
 "WX" = (
 /obj/structure/girder,
 /turf/open/floor/plating/asteroid/moon_coarse/dark/lit,
@@ -5807,6 +5852,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/machinery/advanced_airlock_controller/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/moon/moonbase/refinery)
 "YX" = (
@@ -5845,13 +5891,14 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/airless,
 /area/ruin/moon/moonbase)
 "Zw" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer5,
+/obj/machinery/advanced_airlock_controller/directional/west,
 /turf/open/floor/pod/dark,
 /area/ruin/moon/moonbase/refinery)
 "ZC" = (
@@ -6877,7 +6924,7 @@ MS
 LB
 ZN
 aK
-tG
+Fe
 TR
 dn
 QL
@@ -7359,11 +7406,11 @@ fi
 fi
 fi
 fi
-Bw
+mk
 WW
 gm
 UR
-ZN
+vr
 Op
 Bf
 hi
@@ -7424,7 +7471,7 @@ fi
 fi
 fi
 IL
-ZN
+vr
 KX
 Bf
 Bf
@@ -7485,7 +7532,7 @@ fi
 fi
 fi
 IL
-ZN
+vr
 KX
 Bf
 XK
@@ -7546,7 +7593,7 @@ fi
 fi
 fi
 IL
-ZN
+vr
 Gu
 Bf
 OM
@@ -7607,7 +7654,7 @@ fi
 fi
 fi
 IL
-ZN
+vr
 Gu
 Bf
 Bf
@@ -7668,7 +7715,7 @@ fi
 fi
 fi
 cD
-ZN
+vr
 Gu
 fi
 fi
@@ -7729,7 +7776,7 @@ fi
 fi
 fi
 cD
-ZN
+vr
 Gu
 fi
 fi
@@ -7790,7 +7837,7 @@ fi
 fi
 fi
 IL
-ZN
+vr
 Gu
 fi
 fi
@@ -9093,7 +9140,7 @@ TN
 TN
 TN
 TN
-Fe
+ad
 TN
 TN
 TN
@@ -9391,15 +9438,15 @@ XD
 fi
 pN
 mk
+RT
 mk
 mk
 mk
+RT
 mk
 mk
 mk
-mk
-mk
-mk
+RT
 mk
 oG
 fi
@@ -9696,15 +9743,15 @@ fi
 fi
 pN
 mk
+RT
 mk
 mk
 mk
+RT
 mk
 mk
 mk
-mk
-mk
-mk
+RT
 mk
 oG
 fi
@@ -9818,7 +9865,7 @@ fi
 fi
 qK
 Zu
-vr
+DR
 DR
 DR
 DR
