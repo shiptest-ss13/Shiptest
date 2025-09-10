@@ -533,6 +533,11 @@
 	head = null
 	suit = /obj/item/clothing/suit/space/hardsuit/clip_spotter
 
+/datum/outfit/job/clip/minutemen/grunt/dressed/bombsuit
+	name = "CLIP Minutmemen - Minuteman (Bombsuit)"
+	suit = /obj/item/clothing/suit/space/hardsuit/bomb/clip
+	head = /obj/item/clothing/head/helmet/space/hardsuit/bomb/clip
+
 /datum/outfit/job/clip/minutemen/grunt/dressed/armed
 	name = "CLIP Minutemen - Minuteman (Armed - CM-82)"
 
