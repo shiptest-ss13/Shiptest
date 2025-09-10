@@ -63,7 +63,7 @@
 
 	if((emote_type & EMOTE_ANIMATED) && emote_length > 0)
 		var/image/I = image(overlay_icon, user, overlay_icon_state, ABOVE_MOB_LAYER, 0, overlay_x_offset, overlay_y_offset)
-		flick_overlay_base_view(I, user, emote_length)
+		user.flick_overlay_view(I, emote_length)
 
 	var/tmp_sound = get_sound(user)
 	if(tmp_sound && (!only_forced_audio || !intentional))

@@ -396,14 +396,6 @@ block( \
 
 	flick_overlay_global(passed_image, show_to, duration)
 
-/// Displays an image to clients that can see a target object.
-/proc/flick_overlay_base_view(image/I, atom/target, duration)
-	var/list/viewing = list()
-	for(var/mob/M as() in viewers(target))
-		if(M.client)
-			viewing += M.client
-	flick_overlay_global(I, viewing, duration)
-
 /**
  * Helper atom that copies an appearance and exists for a period
 */

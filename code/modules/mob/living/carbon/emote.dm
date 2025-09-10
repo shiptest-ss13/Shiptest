@@ -140,9 +140,6 @@
 	emote_length = 3 SECONDS
 	sound = 'sound/emotes/sweatdrop.ogg'
 
-/datum/emote/living/carbon/sweat/sweatdrop //This is entirely the same as sweat
-	key = "sweatdrop"
-
 /datum/emote/living/carbon/annoyed
 	key = "annoyed"
 	emote_type = EMOTE_ANIMATED | EMOTE_VISIBLE
