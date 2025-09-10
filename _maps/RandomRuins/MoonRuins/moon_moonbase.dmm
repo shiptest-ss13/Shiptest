@@ -81,14 +81,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/moon/moonbase/refinery)
-"aQ" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4{
-	dir = 10
-	},
-/turf/open/floor/plating,
-/area/ruin/moon/moonbase/engineering)
 "aT" = (
 /obj/structure/table/wood,
 /obj/machinery/recharger,
@@ -1032,6 +1024,14 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/pod/dark,
 /area/ruin/moon/moonbase/armory)
+"hI" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/moon/moonbase/engineering)
 "hO" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -1428,6 +1428,15 @@
 /obj/effect/mob_spawn/human/corpse/clip/minuteman,
 /turf/open/floor/plasteel/white,
 /area/ruin/moon/moonbase/cargo)
+"ln" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/ruin/moon/moonbase/engineering)
 "lo" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -2094,13 +2103,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/moonbase/dorms)
-"sl" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
-	dir = 1;
-	piping_layer = 4
-	},
-/turf/open/floor/engine/hull,
-/area/ruin/moon/moonbase/engineering)
 "so" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
@@ -2228,6 +2230,10 @@
 	input_dir = 4;
 	output_dir = 8
 	},
+/obj/machinery/conveyor{
+	dir = 8;
+	id = "conveyors"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase/refinery)
 "tN" = (
@@ -2269,15 +2275,6 @@
 	},
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/pod/dark,
-/area/ruin/moon/moonbase/engineering)
-"ug" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4{
-	dir = 5
-	},
-/turf/open/floor/plating,
 /area/ruin/moon/moonbase/engineering)
 "ul" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/corner{
@@ -3129,6 +3126,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/moon/moonbase)
+"Cg" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
+	piping_layer = 2
+	},
+/turf/open/floor/engine/hull,
+/area/ruin/moon/moonbase/engineering)
 "Ch" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/trimline/opaque/blue/line,
@@ -4744,6 +4747,13 @@
 	},
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/moon/moonbase)
+"Pu" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
+	dir = 1;
+	piping_layer = 4
+	},
+/turf/open/floor/engine/hull,
+/area/ruin/moon/moonbase/engineering)
 "Pz" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -4806,6 +4816,14 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/carpet,
 /area/ruin/moon/moonbase/refinery)
+"Qe" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/plating,
+/area/ruin/moon/moonbase/engineering)
 "Qm" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -4959,12 +4977,6 @@
 /obj/structure/closet/crate/engineering,
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/moonbase/cargo)
-"RA" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
-	piping_layer = 2
-	},
-/turf/open/floor/engine/hull,
-/area/ruin/moon/moonbase/engineering)
 "RB" = (
 /obj/structure/dresser,
 /obj/machinery/button/door{
@@ -5183,14 +5195,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase/refinery)
-"Ti" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/ruin/moon/moonbase/engineering)
 "Tk" = (
 /turf/template_noop,
 /area/template_noop)
@@ -6416,9 +6420,9 @@ fi
 fi
 fi
 fi
-RA
+Cg
 rG
-sl
+Pu
 fi
 fi
 fi
@@ -6603,7 +6607,7 @@ mI
 BI
 YX
 Ad
-ug
+ln
 YZ
 bM
 fi
@@ -6664,7 +6668,7 @@ Fb
 QT
 CZ
 WK
-aQ
+Qe
 bB
 bM
 fi
@@ -6847,7 +6851,7 @@ Qm
 QZ
 Tb
 Dd
-Ti
+hI
 eH
 bM
 fi
