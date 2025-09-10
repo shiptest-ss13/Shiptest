@@ -130,7 +130,7 @@
 /datum/emote/living/carbon/sweatdrop
 	key = "sweatdrop"
 	key_third_person = "sweatdrops"
-	message = "sweats"
+	message = "sweats."
 	emote_type = EMOTE_ANIMATED | EMOTE_VISIBLE
 	sound_volume = 25
 	vary = TRUE
