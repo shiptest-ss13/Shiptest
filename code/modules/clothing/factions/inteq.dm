@@ -372,6 +372,7 @@
 	vox_override_icon = 'icons/mob/clothing/faction/inteq/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/inteq/kepori.dmi'
 	glass_colour_type = /datum/client_colour/glass_colour/orange
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 
 // Mask
 
