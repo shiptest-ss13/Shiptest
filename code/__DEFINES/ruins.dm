@@ -30,6 +30,7 @@
 	RUINTYPE_BEACH,\
 	RUINTYPE_WASTE,\
 	RUINTYPE_YELLOW,\
+	RUINTYPE_MOON,\
 	RUINTYPE_EVERYTHING)
 
 /proc/ruintype_to_list(ruintype)
