@@ -519,15 +519,6 @@
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
-"dZ" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4{
-	dir = 5
-	},
-/turf/open/floor/plating,
-/area/ruin/moon/moonbase/engineering)
 "ec" = (
 /turf/open/floor/plating/asteroid/moon_coarse/dark/lit,
 /area/ruin/moon/moonbase)
@@ -1427,6 +1418,7 @@
 	dir = 1
 	},
 /obj/effect/mob_spawn/human/corpse/clip/minuteman,
+/obj/effect/mapping_helpers/chair/tim_buckley,
 /turf/open/floor/plasteel/white,
 /area/ruin/moon/moonbase/cargo)
 "lo" = (
@@ -2111,6 +2103,14 @@
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase)
+"sw" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/plating,
+/area/ruin/moon/moonbase/engineering)
 "sI" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/hardsuit/security/independent/frontier,
@@ -2250,12 +2250,6 @@
 	},
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/moon/moonbase)
-"tZ" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
-	piping_layer = 2
-	},
-/turf/open/floor/engine/hull,
-/area/ruin/moon/moonbase/engineering)
 "ua" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -2798,6 +2792,14 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/moon/moonbase/refinery)
+"zJ" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/moon/moonbase/engineering)
 "zK" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -2944,14 +2946,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase/refinery)
-"AV" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4{
-	dir = 10
-	},
-/turf/open/floor/plating,
-/area/ruin/moon/moonbase/engineering)
 "Bb" = (
 /obj/structure/table,
 /turf/open/floor/plasteel,
@@ -3167,13 +3161,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/moonbase/cargo)
-"Cw" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
-	dir = 1;
-	piping_layer = 4
-	},
-/turf/open/floor/engine/hull,
-/area/ruin/moon/moonbase/engineering)
 "Cy" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -4358,14 +4345,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/moon/moonbase)
-"MK" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/ruin/moon/moonbase/engineering)
 "ML" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -4924,6 +4903,13 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/moon/moonbase/engineering)
+"QW" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
+	dir = 1;
+	piping_layer = 4
+	},
+/turf/open/floor/engine/hull,
 /area/ruin/moon/moonbase/engineering)
 "QZ" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -5879,6 +5865,12 @@
 	},
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/moon/moonbase)
+"YD" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
+	piping_layer = 2
+	},
+/turf/open/floor/engine/hull,
+/area/ruin/moon/moonbase/engineering)
 "YE" = (
 /obj/structure/cable{
 	icon_state = "1-10"
@@ -5957,6 +5949,15 @@
 	dir = 1
 	},
 /turf/open/floor/engine/o2,
+/area/ruin/moon/moonbase/engineering)
+"Zd" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plating,
 /area/ruin/moon/moonbase/engineering)
 "Zm" = (
 /obj/machinery/door/airlock/external{
@@ -6420,9 +6421,9 @@ fi
 fi
 fi
 fi
-tZ
+YD
 rG
-Cw
+QW
 fi
 fi
 fi
@@ -6607,7 +6608,7 @@ mI
 BI
 YX
 Ad
-dZ
+Zd
 YZ
 bM
 fi
@@ -6668,7 +6669,7 @@ Fb
 QT
 CZ
 WK
-AV
+sw
 bB
 bM
 fi
@@ -6851,7 +6852,7 @@ Qm
 QZ
 Tb
 Dd
-MK
+zJ
 eH
 bM
 fi
