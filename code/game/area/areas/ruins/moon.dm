@@ -1,6 +1,5 @@
 /area/ruin/moon/moonbase
 	name = "CLIP-MELD Moonbase"
-	icon_state = "blue"
 
 /area/ruin/moon/moonbase/dorms
 	name = "Dormitory"
