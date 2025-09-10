@@ -223,6 +223,14 @@ LOCKED_SSU_HELPER(rd)
 	mask_type = /obj/item/clothing/mask/breath
 	storage_type = /obj/item/tank/internals/emergency_oxygen/engi
 
+/obj/machinery/suit_storage_unit/frontiersmen
+	name = "frontiersmen suit storage unit"
+	suit_type = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+	storage_type = /obj/item/tank/jetpack/oxygen
+	req_access = list(ACCESS_SECURITY)
+
+LOCKED_SSU_HELPER(frontiersmen)
+
 /obj/machinery/suit_storage_unit/independent/security
 	name = "security suit storage unit"
 	suit_type = /obj/item/clothing/suit/space/hardsuit/security/independent
