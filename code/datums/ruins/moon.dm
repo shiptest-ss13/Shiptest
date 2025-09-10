@@ -12,13 +12,12 @@
 		/datum/mission/ruin/signaled/drill/moonbase,
 	)
 
-/datum/map_template/ruin/rockplanet/somme
-	name = "Frontiersman Trench Complex"
-	description = "Frontiersmen have dug in like ticks to the planet's surface."
-	id = "rockplanet_somme"
-	suffix = "rockplanet_somme.dmm"
-/*	ruin_mission_types = list(
-		/datum/mission/ruin/signaled/kill/ross,
-		/datum/mission/ruin/missing_reporter,
+/datum/mission/ruin/signaled/drill/moonbase
+	name = "Root out Crystal Infestation"
+	desc = "N+S Logistics has lost contact with a recently established mining base. We believe that this base is located upon an extremely lucrative hydrogen-ice vein. \
+			Due to loss of contact, N+S has been unable to verify the existence of this vein. Please move to the site, locate the drilling system, and bring us our geological survey results. \
+			If an N+S team is still on site, please inform them that their communications system has been damaged, and that the next supply run will be in 3 weeks."
+	mission_limit = 1
+	faction = list(
+		/datum/faction/clip,
 	)
-*/
