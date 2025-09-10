@@ -62,6 +62,18 @@
 	display_name = "khaki pants"
 	path = /obj/item/clothing/under/pants/khaki
 
+/datum/gear/uniform/pants/pajamared
+	display_name = "red pajama pants"
+	path = /obj/item/clothing/under/pants/pajamared
+
+/datum/gear/uniform/pants/pajamablue
+	display_name = "blue pajama pants"
+	path = /obj/item/clothing/under/pants/pajamablue
+
+/datum/gear/uniform/pants/pajamagreen
+	display_name = "green pajama pants"
+	path = /obj/item/clothing/under/pants/pajamagreen
+
 /datum/gear/uniform/pants/tan
 	display_name = "tan pants"
 	path = /obj/item/clothing/under/pants/tan
