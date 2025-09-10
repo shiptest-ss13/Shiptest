@@ -171,18 +171,21 @@
 	desc = "A fine black linen suit jacket with blue markings and a Nanotrasen lapel pin. It has a strangely menacing aura."
 	icon_state = "suit_jacket"
 	item_state = "blackcloth"
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/nanotrasen/vest
 	name = "black hazard vest"
 	desc = "A thin black vest with reflective markings, worn to guarantee visibility when operating around industrial equipment or in dark or dusty conditions. Property of Nanotrasen, Inc."
 	icon_state = "engi_vest"
 	item_state = "blackcloth"
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/nanotrasen/vest/blue
 	name = "blue hazard vest"
 	desc = "A thin vest with reflective stripes, worn to guarantee visibility in dangerous conditions. The vest itself is an offensively bright shade of Nanotrasen Blue. Property of Nanotrasen, Inc."
 	icon_state = "atmos_vest"
 	item_state = "bluecloth"
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/toggle/nanotrasen
 	name = "officer's coat"
