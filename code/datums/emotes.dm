@@ -29,8 +29,7 @@
 	var/cooldown = 0.8 SECONDS
 	var/static/regex/stop_bypasser = regex(@"says|exclaims|yells|asks")
 
-		// Animated emote stuff
-	// ~~~~~~~~~~~~~~~~~~~
+	// Animated emote stuff
 
 	/// Animated emotes - Time to flick the overlay for in ticks, use SECONDS defines please.
 	var/emote_length
