@@ -216,14 +216,6 @@
 	contains = list(/obj/item/melee/baton/loaded)
 	crate_name = "stun baton crate"
 
-/datum/supply_pack/sec_supply/claymore
-	name = "C-10 Claymore Crate"
-	desc = "Contains one motion-activated directional mine, perfect for ambushing enemy infantry. Still debatably legal to sell!"
-	cost = 750
-	contains = list(/obj/item/paper/fluff/claymore,
-					/obj/item/mine/directional/claymore)
-	crate_name = "C-10 Claymore crate"
-
 /obj/item/paper/fluff/claymore
 	name = "PRODUCT USAGE GUIDE"
 	desc = "A dusty memo stamped with the Scarborough Arms logo."
