@@ -203,6 +203,10 @@
 	pixel_x = 12;
 	pixel_y = 12
 	},
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/oxygen_input{
+	dir = 1;
+	piping_layer = 4
+	},
 /turf/open/floor/engine/o2,
 /area/ruin/moon/moonbase/engineering)
 "bC" = (
@@ -602,6 +606,10 @@
 /obj/machinery/air_sensor/atmos/nitrogen_tank{
 	pixel_x = 12;
 	pixel_y = 12
+	},
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/nitrogen_input{
+	dir = 1;
+	piping_layer = 4
 	},
 /turf/open/floor/engine/n2,
 /area/ruin/moon/moonbase/engineering)
@@ -2031,6 +2039,12 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
 /turf/open/floor/engine/hull,
 /area/ruin/moon/moonbase/engineering)
 "rM" = (
@@ -2478,7 +2492,16 @@
 	dir = 5
 	},
 /obj/machinery/light/directional/south,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/dark,
+/area/ruin/moon/moonbase/engineering)
+"wr" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
+	piping_layer = 2
+	},
+/turf/open/floor/engine/hull,
 /area/ruin/moon/moonbase/engineering)
 "ws" = (
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
@@ -2808,6 +2831,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/moonbase/engineering)
 "Ae" = (
@@ -2961,6 +2985,9 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2{
 	dir = 10
 	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/moonbase/engineering)
 "By" = (
@@ -2986,8 +3013,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase/dorms)
 "BI" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2{
+	dir = 4;
+	piping_layer = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/moon/moonbase/engineering)
@@ -3182,6 +3210,7 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/moon/moonbase/engineering)
 "Db" = (
@@ -3199,6 +3228,9 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/east,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4{
+	dir = 10
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/moonbase/engineering)
 "De" = (
@@ -3650,6 +3682,15 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/moonbase/dorms)
+"Hs" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/ruin/moon/moonbase/engineering)
 "Hw" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -3713,6 +3754,13 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/dark,
+/area/ruin/moon/moonbase/engineering)
+"Ia" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
+	dir = 1;
+	piping_layer = 4
+	},
+/turf/open/floor/engine/hull,
 /area/ruin/moon/moonbase/engineering)
 "Ib" = (
 /obj/effect/turf_decal/industrial/warning,
@@ -4846,11 +4894,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase/refinery)
 "QT" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/moon/moonbase/engineering)
@@ -5330,6 +5378,14 @@
 	},
 /turf/open/floor/plating/asteroid/moon/lit/surface_craters,
 /area/ruin/moon/moonbase)
+"Vr" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/moon/moonbase/engineering)
 "Vv" = (
 /obj/structure/chair/office/light{
 	dir = 1
@@ -5548,6 +5604,9 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4{
+	dir = 5
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/moonbase/engineering)
 "WL" = (
@@ -5693,6 +5752,14 @@
 "XO" = (
 /turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/ruin/moon/moonbase/armory)
+"XU" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/plating,
+/area/ruin/moon/moonbase/engineering)
 "XV" = (
 /obj/effect/spawner/bunk_bed,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5876,6 +5943,7 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2{
 	dir = 6
 	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer4,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/moon/moonbase/engineering)
 "YZ" = (
@@ -6346,9 +6414,9 @@ fi
 fi
 fi
 fi
-fi
+wr
 rG
-fi
+Ia
 fi
 fi
 fi
@@ -6533,7 +6601,7 @@ mI
 BI
 YX
 Ad
-lc
+Hs
 YZ
 bM
 fi
@@ -6594,7 +6662,7 @@ Fb
 QT
 CZ
 WK
-vv
+XU
 bB
 bM
 fi
@@ -6777,7 +6845,7 @@ Qm
 QZ
 Tb
 Dd
-vv
+Vr
 eH
 bM
 fi
