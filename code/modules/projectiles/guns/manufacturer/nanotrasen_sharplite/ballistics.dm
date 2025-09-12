@@ -89,7 +89,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/champion)
 
 /obj/item/gun/ballistic/automatic/pistol/podium
 	name = "Advantage PH46 Podium"
-	desc ="A heavy pistol chambered in the high-velocity 4.6mm cartridge, designed to defeat common body armor. Despite the powerful cartridge, it is known to be surprisingly controllable, though not necessarily lightweight. Sold only to major corporate clients. "
+	desc ="A heavy pistol chambered in the high-velocity 4.6mm cartridge, designed to defeat common body armor. Despite the powerful cartridge, it is known to be surprisingly controllable, though not necessarily lightweight. Sold only to major corporate clients. Chambered in 4.6mm."
 
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
@@ -137,6 +137,18 @@ NO_MAG_GUN_HELPER(automatic/pistol/champion)
 	)
 
 NO_MAG_GUN_HELPER(automatic/pistol/podium)
+
+/obj/item/gun/ballistic/automatic/pistol/podium/inteq
+	name = "NEEDS NAME Inteq Podium"
+	desc = "NEEDS DESC. Chambered in 4.6mm."
+
+	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
+	icon_state = "podium_inteq"
+	item_state = "inteq_generic"
+
 
 /obj/item/ammo_box/magazine/m46_30_podium
 	name = "Podium magazine (4.6x30mm)"
