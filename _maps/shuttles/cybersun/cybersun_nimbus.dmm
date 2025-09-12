@@ -260,11 +260,6 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "zeva"
 	},
-/obj/docking_port/mobile{
-	launch_status = 0;
-	port_direction = 4;
-	preferred_direction = 4
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "eY" = (
@@ -957,6 +952,14 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
+"sj" = (
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 4;
+	preferred_direction = 4
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "sl" = (
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
@@ -3156,7 +3159,7 @@ LG
 Dr
 LG
 cX
-LG
+sj
 "}
 (12,1,1) = {"
 VI

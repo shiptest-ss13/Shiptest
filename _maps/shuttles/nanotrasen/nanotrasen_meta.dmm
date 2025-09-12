@@ -3581,6 +3581,18 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
+"CR" = (
+/obj/machinery/door/poddoor{
+	id = "meta_port"
+	},
+/obj/machinery/door/firedoor,
+/obj/docking_port/mobile{
+	dir = 2;
+	port_direction = 8;
+	preferred_direction = 4
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "De" = (
 /obj/machinery/door/poddoor{
 	id = "meta_port"
@@ -3880,13 +3892,6 @@
 	},
 /obj/machinery/door/airlock/external/glass{
 	dir = 8
-	},
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 4;
-	name = "Salvage Ship";
-	port_direction = 2;
-	preferred_direction = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -4619,7 +4624,8 @@
 	dwidth = 20;
 	height = 30;
 	name = "Meta Port Beam Dock";
-	width = 40
+	width = 40;
+	disable_on_owner_ship_dock = 1
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -6044,7 +6050,7 @@ aa
 "}
 (16,1,1) = {"
 Pw
-fm
+CR
 Vd
 hg
 ak

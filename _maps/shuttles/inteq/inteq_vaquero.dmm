@@ -572,6 +572,12 @@
 /obj/machinery/door/airlock/external{
 	dir = 4
 	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 4;
+	port_direction = 2;
+	preferred_direction = 4
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/external/dark)
 "fo" = (
@@ -2581,10 +2587,13 @@
 /area/ship/hallway/starboard)
 "vg" = (
 /obj/docking_port/stationary{
+	dheight = 1;
 	dir = 8;
+	disable_on_owner_ship_dock = 1;
 	dwidth = 15;
-	height = 15;
-	width = 30
+	height = 31;
+	name = "Vaquero Stern Dock";
+	width = 40
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -5270,12 +5279,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"SW" = (
-/obj/structure/catwalk,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/air_sensor/external,
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
 "Tc" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -5480,13 +5483,16 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/starboard)
 "UL" = (
-/obj/docking_port/mobile{
-	dir = 8;
-	launch_status = 0;
-	preferred_direction = 4
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 4;
+	dwidth = 15;
+	height = 31;
+	name = "Vaquero Forward Bow Dock";
+	width = 40
 	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/security/armory)
+/turf/template_noop,
+/area/template_noop)
 "UO" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 4
@@ -6263,14 +6269,14 @@ ww
 ww
 ww
 ww
-Hp
+ww
 ww
 ww
 ww
 vg
 ww
 ww
-Bl
+ww
 ww
 ww
 ww
@@ -6287,14 +6293,14 @@ Hn
 Yo
 Hn
 ww
-ox
+Hp
 ww
 iz
 Ai
 fl
 ad
 ww
-SW
+Bl
 ww
 Qy
 Ds
@@ -6990,10 +6996,34 @@ ww
 ww
 ww
 ww
-UL
+zY
 zY
 zY
 qX
+ww
+ww
+ww
+ww
+"}
+(32,1,1) = {"
+ww
+ww
+ww
+ww
+ww
+ww
+ww
+ww
+ww
+ww
+ww
+UL
+ww
+ww
+ww
+ww
+ww
+ww
 ww
 ww
 ww

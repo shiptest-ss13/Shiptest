@@ -1006,7 +1006,12 @@
 	dwidth = 15;
 	height = 30;
 	name = "Vagrant Forward Bow Dock";
-	width = 35
+	width = 35;
+	disable_on_owner_ship_dock = 1
+	},
+/obj/docking_port/mobile{
+	dir = 8;
+	preferred_direction = 4
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -1402,15 +1407,6 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/ship/roumain)
-"wO" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/docking_port/mobile{
-	dir = 2;
-	port_direction = 8;
-	preferred_direction = 4
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "wP" = (
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/wood/walnut,
@@ -3389,7 +3385,7 @@ bF
 "}
 (17,1,1) = {"
 bF
-wO
+Cb
 NW
 km
 NN
