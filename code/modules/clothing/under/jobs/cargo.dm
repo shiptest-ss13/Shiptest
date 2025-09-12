@@ -6,6 +6,7 @@
 /obj/item/clothing/under/rank/cargo/qm
 	name = "quartermaster's jumpsuit"
 	desc = "It's a jumpsuit worn by the quartermaster. It's specially designed to prevent back injuries caused by pushing paper."
+	roll_down = TRUE
 	icon_state = "qm"
 	item_state = "lb_suit"
 
@@ -15,7 +16,7 @@
 	icon_state = "qm_skirt"
 	item_state = "lb_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
+	roll_down = FALSE
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/cargo/tech
@@ -25,7 +26,7 @@
 	item_state = "lb_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
-	alt_covers_chest = TRUE
+	roll_down = TRUE
 
 /obj/item/clothing/under/rank/cargo/tech/skirt
 	name = "cargo technician's jumpskirt"
@@ -34,7 +35,7 @@
 	item_state = "lb_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
-	can_adjust = FALSE
+	roll_down = FALSE
 
 /obj/item/clothing/under/rank/cargo/miner
 	desc = "It's a snappy jumpsuit with a sturdy set of overalls. It is very dirty."
@@ -43,6 +44,7 @@
 	item_state = "miner"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 0)
 	resistance_flags = NONE
+	roll_down = TRUE
 	//supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/under/rank/cargo/miner/lavaland
@@ -50,7 +52,7 @@
 	name = "prospector jumpsuit"
 	icon_state = "explorer"
 	item_state = "explorer"
-	can_adjust = TRUE
+	roll_down = TRUE
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/under/rank/cargo/miner/hazard
@@ -59,6 +61,7 @@
 	icon_state = "hazard"
 	item_state = "hazard"
 	supports_variations = DIGITIGRADE_VARIATION
+	roll_down = TRUE
 
 /obj/item/clothing/under/rank/cargo/miner/lavaland/old
 	icon_state = "explorerold"
@@ -66,4 +69,4 @@
 	name = "prototype shaft miner's jumpsuit"
 	slowdown = 0.1
 	armor = list("melee" = 15, "bullet" = 5, "laser" = 5,"energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 80, "acid" = 0)
-	can_adjust = FALSE
+	roll_down = FALSE

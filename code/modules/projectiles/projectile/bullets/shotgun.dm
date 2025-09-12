@@ -1,7 +1,7 @@
 /obj/projectile/bullet/slug
 	name = "12g shotgun slug"
 	damage = 40
-	armour_penetration = -10
+	armour_penetration = 0
 	speed = BULLET_SPEED_SHOTGUN
 	bullet_identifier = "large slug"
 
@@ -27,7 +27,7 @@
 	damage = 5
 	paralyze = 100
 	stutter = 5
-	jitter = 20
+	jitter = 20 SECONDS
 	range = 7
 	icon_state = "spark"
 	color = "#FFFF00"
@@ -69,10 +69,10 @@
 	var/tile_dropoff_stamina = 1.5 //As above
 
 	var/ap_dropoff = 5
-	var/ap_dropoff_cutoff = -50
+	var/ap_dropoff_cutoff = -35
 
 	icon_state = "pellet"
-	armour_penetration = -30
+	armour_penetration = -20
 	speed = BULLET_SPEED_SHOTGUN
 	bullet_identifier = "pellet"
 

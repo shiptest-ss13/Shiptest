@@ -5,7 +5,7 @@
 /area/ruin/beach/complex //seems quite simple to me
 	name = "Cybersun Complex"
 	icon_state = "hallC"
-	ambientsounds = MAINTENANCE
+	ambience_index = AMBIENCE_MAINT
 
 /area/ruin/beach/complex/wall
 	name = "Cybersun Complex Exterior Wall"

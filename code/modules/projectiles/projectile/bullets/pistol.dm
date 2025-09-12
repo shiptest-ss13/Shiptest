@@ -2,7 +2,7 @@
 
 /obj/projectile/bullet/c22lr
 	name = ".22LR bullet"
-	damage = 16
+	damage = 20
 	armour_penetration = -40
 	ricochet_incidence_leeway = 20
 	ricochet_chance = 65
@@ -11,14 +11,14 @@
 
 /obj/projectile/bullet/c22lr/hp
 	name = ".22LR HP bullet"
-	damage = 22
+	damage = 24
 	armour_penetration = -50
 	ricochet_chance = 0
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/c22lr/ap
 	name = ".22LR armor piercing bullet"
-	damage = 15
+	damage = 18
 	armour_penetration = -20
 	ricochet_incidence_leeway = 20
 	ricochet_chance = 30
@@ -42,6 +42,7 @@
 	name = "9x18mm bullet"
 	damage = 20
 	armour_penetration = -20
+	embedding = list(embed_chance=15, fall_chance=3, jostle_chance=4, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.4, pain_mult=5, jostle_pain_mult=6, rip_time=10)
 	speed = BULLET_SPEED_HANDGUN
 	bullet_identifier = "small bullet"
 

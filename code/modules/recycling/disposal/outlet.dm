@@ -68,7 +68,7 @@
 
 /obj/structure/disposaloutlet/welder_act(mob/living/user, obj/item/I)
 	..()
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return TRUE
 
 	playsound(src, 'sound/items/welder2.ogg', 100, TRUE)

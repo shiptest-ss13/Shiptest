@@ -59,8 +59,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/last_everyone //No text for everyone spamming
 	var/last_noise //Also no honk spamming that's bad too
 	var/ttone = "beep" //The ringtone!
-	var/honkamt = 0 //How many honks left when infected with honk.exe
-	var/mimeamt = 0 //How many silence left when infected with mime.exe
 	var/note = "Congratulations, your station has chosen the Thinktronic 5230 Personal Data Assistant!" //Current note in the notepad function
 	var/notehtml = ""
 	var/notescanned = FALSE // True if what is in the notekeeper was from a paper.
@@ -227,7 +225,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 				dat += "Owner: [owner], [ownjob]<br>"
 
 				if(id)
-					dat += text("ID: <A href='?src=[REF(src)];choice=Authenticate'>[id ? "[id.registered_name], [id.assignment]" : "----------"]   <a href='?src=[REF(src)];choice=UpdateInfo'>[id ? "Update PDA Info" : ""]</a><br><br>")
+					dat += text("ID: <A href='byond://?src=[REF(src)];choice=Authenticate'>[id ? "[id.registered_name], [id.assignment]" : "----------"]   <a href='byond://?src=[REF(src)];choice=UpdateInfo'>[id ? "Update PDA Info" : ""]</a><br><br>")
 
 				dat += "[station_time_timestamp()]<br>"
 				dat += "[sector_datestamp()]<br>"
@@ -241,9 +239,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 				if(cartridge)
 					if(cartridge.access)
 						dat += "<h4>Job Specific Functions</h4>"
-						if(cartridge.access & CART_CLOWN)
-							dat += "<li>[PDAIMG(honk)]   <a href='byond://?src=[REF(src)];choice=Honk'>Honk Synthesizer</a></li>"
-							dat += "<li>[PDAIMG(honk)]   <a href='byond://?src=[REF(src)];choice=Trombone'>Sad Trombone</a></li>"
 						if(cartridge.access & CART_STATUS_DISPLAY)
 							dat += "<li>[PDAIMG(status)]   <a href='byond://?src=[REF(src)];choice=42'>Set Status Display</a></li>"
 						if(cartridge.access & CART_ENGINE)
@@ -261,8 +256,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 						dat += "<li><a href='byond://?src=[REF(src)];choice=54'>[PDAIMG(medbot)]Bots Access</a></li>"
 					if (cartridge.access & CART_JANITOR)
 						dat += "<li><a href='byond://?src=[REF(src)];choice=49'>[PDAIMG(bucket)]Custodial Locator</a></li>"
-					if(cartridge.access & CART_MIME)
-						dat += "<li><a href='byond://?src=[REF(src)];choice=55'>[PDAIMG(emoji)]Emoji Guidebook</a></li>"
 					if (istype(cartridge.radio))
 						dat += "<li><a href='byond://?src=[REF(src)];choice=40'>[PDAIMG(signaler)]Signaler System</a></li>"
 					if (cartridge.access & CART_NEWSCASTER)
@@ -468,10 +461,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 					scanmode = PDA_SCANNER_NONE
 				else if((!isnull(cartridge)) && (cartridge.access & CART_ENGINE))
 					scanmode = PDA_SCANNER_HALOGEN
-			if("Honk")
-				if(!(last_noise && world.time < last_noise + 20))
-					playsound(loc, 'sound/items/bikehorn.ogg', 50, 1)
-					last_noise = world.time
 			if("Trombone")
 				if(!(last_noise && world.time < last_noise + 20))
 					playsound(loc, 'sound/misc/sadtrombone.ogg', 50, 1)
@@ -582,10 +571,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 //EXTRA FUNCTIONS===================================
 
 	cut_overlay(icon_alert) //To clear message overlays.
-
-	if((honkamt > 0) && (prob(60)))//For clown virus.
-		honkamt--
-		playsound(src, 'sound/items/bikehorn.ogg', 30, TRUE)
 
 	if(U.machine == src && href_list["skiprefresh"]!="1")//Final safety.
 		attack_self(U)//It auto-closes the menu prior if the user is not in range and so on.
@@ -718,7 +703,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		var/hrefstart
 		var/hrefend
 		if (isAI(L))
-			hrefstart = "<a href='?src=[REF(L)];track=[html_encode(signal.data["name"])]'>"
+			hrefstart = "<a href='byond://?src=[REF(L)];track=[html_encode(signal.data["name"])]'>"
 			hrefend = "</a>"
 
 		if(signal.data["automated"])

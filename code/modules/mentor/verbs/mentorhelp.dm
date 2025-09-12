@@ -68,9 +68,9 @@
 	if(key)
 		if(include_link)
 			if(CONFIG_GET(flag/mentors_mobname_only))
-				. += "<a href='?mentor_msg=[REF(M)]'>"
+				. += "<a href='byond://?mentor_msg=[REF(M)]'>"
 			else
-				. += "<a href='?mentor_msg=[ckey]'>"
+				. += "<a href='byond://?mentor_msg=[ckey]'>"
 
 		if(C && C.holder && C.holder.fakekey)
 			. += "Administrator"

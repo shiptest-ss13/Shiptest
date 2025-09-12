@@ -63,7 +63,7 @@ Bonus
 				if(scramble_language && !current_language)	// Last part prevents rerolling language with small amounts of cure.
 					current_language = pick(subtypesof(/datum/language) - /datum/language/galactic_common)
 					H.add_blocked_language(subtypesof(/datum/language) - current_language, LANGUAGE_VOICECHANGE)
-					H.grant_language(current_language, TRUE, TRUE, LANGUAGE_VOICECHANGE)
+					H.grant_language(current_language, source=LANGUAGE_VOICECHANGE)
 
 /datum/symptom/voice_change/End(datum/disease/advance/A)
 	..()

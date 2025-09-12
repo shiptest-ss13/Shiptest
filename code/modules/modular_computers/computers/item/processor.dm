@@ -33,7 +33,7 @@
 	hardware_flag = machinery_computer.hardware_flag
 	max_hardware_size = machinery_computer.max_hardware_size
 	steel_sheet_cost = machinery_computer.steel_sheet_cost
-	obj_integrity = machinery_computer.obj_integrity
+	atom_integrity = machinery_computer.atom_integrity
 	max_integrity = machinery_computer.max_integrity
 	integrity_failure = machinery_computer.integrity_failure
 	base_active_power_usage = machinery_computer.base_active_power_usage
@@ -60,8 +60,8 @@
 /obj/item/modular_computer/processor/attack_ghost(mob/user)
 	ui_interact(user)
 
-/obj/item/modular_computer/processor/alert_call(datum/computer_file/program/caller, alerttext)
-	if(!caller || !caller.alert_able || caller.alert_silenced || !alerttext)
+/obj/item/modular_computer/processor/alert_call(datum/computer_file/program/call_source, alerttext)
+	if(!call_source || !call_source.alert_able || call_source.alert_silenced || !alerttext)
 		return
 	playsound(src, 'sound/machines/twobeep_high.ogg', 50, TRUE)
-	machinery_computer.visible_message(span_notice("The [src] displays a [caller.filedesc] notification: [alerttext]"))
+	machinery_computer.visible_message(span_notice("The [src] displays a [call_source.filedesc] notification: [alerttext]"))

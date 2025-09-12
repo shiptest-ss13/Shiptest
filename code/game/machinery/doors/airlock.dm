@@ -135,10 +135,10 @@
 	if(glass)
 		airlock_material = "glass"
 	if(security_level > AIRLOCK_SECURITY_METAL)
-		obj_integrity = normal_integrity * AIRLOCK_INTEGRITY_MULTIPLIER
+		atom_integrity = normal_integrity * AIRLOCK_INTEGRITY_MULTIPLIER
 		max_integrity = normal_integrity * AIRLOCK_INTEGRITY_MULTIPLIER
 	else
-		obj_integrity = normal_integrity
+		atom_integrity = normal_integrity
 		max_integrity = normal_integrity
 	if(damage_deflection == AIRLOCK_DAMAGE_DEFLECTION_N && security_level > AIRLOCK_SECURITY_METAL)
 		damage_deflection = AIRLOCK_DAMAGE_DEFLECTION_R
@@ -575,9 +575,9 @@
 				weld_overlay = get_airlock_overlay("welded", overlays_file)
 			if(seal)
 				seal_overlay = get_airlock_overlay("sealed", overlays_file)
-			if(obj_integrity < integrity_failure * max_integrity)
+			if(atom_integrity < integrity_failure * max_integrity)
 				damag_overlay = get_airlock_overlay("sparks_broken", overlays_file)
-			else if(obj_integrity < (0.75 * max_integrity))
+			else if(atom_integrity < (0.75 * max_integrity))
 				damag_overlay = get_airlock_overlay("sparks_damaged", overlays_file)
 			if(lights && hasPower())
 				if(locked)
@@ -605,9 +605,9 @@
 					panel_overlay = get_airlock_overlay("panel_closed_protected", overlays_file)
 				else
 					panel_overlay = get_airlock_overlay("panel_closed", overlays_file)
-			if(obj_integrity < integrity_failure * max_integrity)
+			if(atom_integrity < integrity_failure * max_integrity)
 				damag_overlay = get_airlock_overlay("sparks_broken", overlays_file)
-			else if(obj_integrity < (0.75 * max_integrity))
+			else if(atom_integrity < (0.75 * max_integrity))
 				damag_overlay = get_airlock_overlay("sparks_damaged", overlays_file)
 			if(welded)
 				weld_overlay = get_airlock_overlay("welded", overlays_file)
@@ -634,9 +634,9 @@
 					panel_overlay = get_airlock_overlay("panel_closed_protected", overlays_file)
 				else
 					panel_overlay = get_airlock_overlay("panel_closed", overlays_file)
-			if(obj_integrity < integrity_failure * max_integrity)
+			if(atom_integrity < integrity_failure * max_integrity)
 				damag_overlay = get_airlock_overlay("sparks_broken", overlays_file)
-			else if(obj_integrity < (0.75 * max_integrity))
+			else if(atom_integrity < (0.75 * max_integrity))
 				damag_overlay = get_airlock_overlay("sparks_damaged", overlays_file)
 			if(welded)
 				weld_overlay = get_airlock_overlay("welded", overlays_file)
@@ -674,7 +674,7 @@
 					panel_overlay = get_airlock_overlay("panel_open_protected", overlays_file)
 				else
 					panel_overlay = get_airlock_overlay("panel_open", overlays_file)
-			if(obj_integrity < (0.75 * max_integrity))
+			if(atom_integrity < (0.75 * max_integrity))
 				damag_overlay = get_airlock_overlay("sparks_open", overlays_file)
 			if(note)
 				note_overlay = get_airlock_overlay("[notetype]_open", note_overlay_file)
@@ -973,7 +973,7 @@
 					return
 			if(AIRLOCK_SECURITY_METAL)
 				if(C.tool_behaviour == TOOL_WELDER)
-					if(!C.tool_start_check(user, amount=2))
+					if(!C.tool_start_check(user, src, amount=2))
 						return
 					to_chat(user, span_notice("You begin cutting the panel's shielding..."))
 					if(C.use_tool(src, user, 40, volume=50, amount = 2))
@@ -1005,7 +1005,7 @@
 					return
 			if(AIRLOCK_SECURITY_PLASTEEL_I)
 				if(C.tool_behaviour == TOOL_WELDER)
-					if(!C.tool_start_check(user, amount=2))
+					if(!C.tool_start_check(user, src, amount=2))
 						return
 					to_chat(user, span_notice("You begin cutting the inner layer of shielding..."))
 					if(C.use_tool(src, user, 40, volume=50, amount=2))
@@ -1031,7 +1031,7 @@
 					return
 			if(AIRLOCK_SECURITY_PLASTEEL_O)
 				if(C.tool_behaviour == TOOL_WELDER)
-					if(!C.tool_start_check(user, amount=2))
+					if(!C.tool_start_check(user, src, amount=2))
 						return
 					to_chat(user, span_notice("You begin cutting the outer layer of shielding..."))
 					if(C.use_tool(src, user, 40, volume=50, amount=2))
@@ -1123,7 +1123,7 @@
 			to_chat(user, span_warning("[src] is blocked by a seal!"))
 			return
 		if(user.a_intent != INTENT_HELP)
-			if(!W.tool_start_check(user, amount=0))
+			if(!W.tool_start_check(user, src, amount=0))
 				return
 			user.visible_message(span_notice("[user] begins [welded ? "unwelding":"welding"] the airlock."), \
 							span_notice("You begin [welded ? "unwelding":"welding"] the airlock..."), \
@@ -1134,14 +1134,14 @@
 									span_notice("You [welded ? "weld the airlock shut":"unweld the airlock"]."))
 				update_appearance()
 		else
-			if(obj_integrity < max_integrity)
-				if(!W.tool_start_check(user, amount=0))
+			if(atom_integrity < max_integrity)
+				if(!W.tool_start_check(user, src, amount=0))
 					return
 				user.visible_message(span_notice("[user] begins welding the airlock."), \
 								span_notice("You begin repairing the airlock..."), \
 								span_hear("You hear welding."))
 				if(W.use_tool(src, user, 40, volume=50, extra_checks = CALLBACK(src, PROC_REF(weld_checks), W, user)))
-					obj_integrity = max_integrity
+					atom_integrity = max_integrity
 					set_machine_stat(machine_stat & ~BROKEN)
 					user.visible_message(span_notice("[user] finishes welding [src]."), \
 										span_notice("You finish repairing the airlock."))
@@ -1236,7 +1236,7 @@
 	. = ..()
 	if(.)
 		return FALSE
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return FALSE
 	var/decon_time = 5 SECONDS
 	if(welded)
@@ -1260,6 +1260,7 @@
 		if(obj_flags & EMAGGED)
 			return FALSE
 		use_power(50)
+		play_fov_effect(src, 6, "note")
 		playsound(src, doorOpen, 30, FALSE, mono_adj = TRUE)
 		if(closeOther != null && istype(closeOther, /obj/machinery/door/airlock/) && !closeOther.density)
 			closeOther.close()
@@ -1308,6 +1309,7 @@
 		if(obj_flags & EMAGGED)
 			return
 		use_power(50)
+		play_fov_effect(src, 6, "note")
 		playsound(src, doorClose, 30, FALSE, mono_adj = TRUE)
 	else
 		playsound(src, pry_close_sound, 30, TRUE, mono_adj = TRUE)
@@ -1473,7 +1475,7 @@
 
 /obj/machinery/door/airlock/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
 	. = ..()
-	if(obj_integrity < (0.75 * max_integrity))
+	if(atom_integrity < (0.75 * max_integrity))
 		update_appearance()
 
 
@@ -1497,7 +1499,7 @@
 
 		if(!disassembled)
 			if(A)
-				A.obj_integrity = A.max_integrity * 0.5
+				A.atom_integrity = A.max_integrity * 0.5
 		else if(obj_flags & EMAGGED)
 			if(user)
 				to_chat(user, span_warning("You discard the damaged electronics."))

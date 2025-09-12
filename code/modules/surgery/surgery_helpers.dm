@@ -113,11 +113,9 @@
 			to_chat(user, span_warning("You need to hold a [is_robotic ? "screwdriver" : "cautery"] in your active hand to stop [M]'s surgery!"))
 			return
 
-		if(ishuman(M))
-			var/mob/living/carbon/human/H = M
-			var/obj/item/bodypart/BP = H.get_bodypart(check_zone(S.location))
-			if(BP)
-				BP.adjust_bleeding(-3)
+		if(S.operated_bodypart)
+			S.operated_bodypart.generic_bleedstacks -= 5
+
 		M.surgeries -= S
 		user.visible_message(span_notice("[user] closes [M]'s [parse_zone(selected_zone)] with [close_tool] and stops the surgery."), \
 			span_notice("You close [M]'s [parse_zone(selected_zone)] with [close_tool] and stop the surgery."))

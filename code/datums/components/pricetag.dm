@@ -8,9 +8,9 @@
 	owner = _owner
 	if(_profit_ratio)
 		profit_ratio = _profit_ratio
-	RegisterSignal(parent, list(COMSIG_ITEM_SOLD), PROC_REF(split_profit))
-	RegisterSignal(parent, list(COMSIG_STRUCTURE_UNWRAPPED, COMSIG_ITEM_UNWRAPPED), PROC_REF(Unwrapped))
-	RegisterSignal(parent, list(COMSIG_ITEM_SPLIT_PROFIT, COMSIG_ITEM_SPLIT_PROFIT_DRY), PROC_REF(return_ratio))
+	RegisterSignal(parent, COMSIG_ITEM_SOLD, PROC_REF(split_profit))
+	RegisterSignals(parent, list(COMSIG_STRUCTURE_UNWRAPPED, COMSIG_ITEM_UNWRAPPED), PROC_REF(Unwrapped))
+	RegisterSignals(parent, list(COMSIG_ITEM_SPLIT_PROFIT, COMSIG_ITEM_SPLIT_PROFIT_DRY), PROC_REF(return_ratio))
 
 /datum/component/pricetag/proc/Unwrapped()
 	SIGNAL_HANDLER

@@ -1,0 +1,758 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"b" = (
+/obj/machinery/porta_turret/ship/inteq/light{
+	dir = 5;
+	id = "thunder_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"c" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"d" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/maintenance_hatch{
+	name = "Starboard Nacelle";
+	req_ship_access = 0
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"f" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/preopen{
+	id = "thunder_windows"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"g" = (
+/obj/machinery/light/floor,
+/obj/effect/turf_decal/trimline/opaque/yellow,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/bridge)
+"h" = (
+/turf/template_noop,
+/area/template_noop)
+"i" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 8
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/bridge)
+"j" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 8
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "thunder_windows";
+	dir = 4
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/bridge)
+"k" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating,
+/obj/structure/railing/thin/corner{
+	dir = 1
+	},
+/obj/structure/railing/thin/corner{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/bridge)
+"l" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/structure/chair/comfy/shuttle,
+/obj/effect/turf_decal/industrial/traffic,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"m" = (
+/obj/machinery/light/floor,
+/obj/effect/turf_decal/trimline/opaque/yellow,
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/bridge)
+"n" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/warning{
+	dir = 4
+	},
+/obj/machinery/holopad/emergency/command,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"o" = (
+/obj/structure/table/reinforced,
+/obj/item/radio/intercom/table{
+	dir = 1;
+	pixel_x = 15;
+	pixel_y = 3
+	},
+/obj/item/radio/intercom/wideband/table{
+	dir = 1;
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/obj/item/radio/intercom/directional/north{
+	freerange = 1;
+	freqlock = 1;
+	frequency = 1347;
+	name = "IRMG shortwave intercom";
+	pixel_x = 14
+	},
+/obj/machinery/button/door{
+	pixel_y = 21;
+	pixel_x = -11;
+	id = "thunder_windows";
+	name = "Window Shutters"
+	},
+/obj/machinery/button/door{
+	id = "thunder_lockpit";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Cockpit Lock";
+	pixel_y = 21
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"p" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-10"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"q" = (
+/obj/effect/turf_decal/box,
+/obj/machinery/light/small/directional/west,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
+	dir = 4
+	},
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"r" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/heavy,
+/obj/machinery/atmospherics/components/binary/pump/layer4{
+	dir = 4;
+	name = "Waste to Dock"
+	},
+/obj/machinery/atmospherics/components/binary/pump/layer2{
+	dir = 8;
+	name = "Distro to Shuttle"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/poddoor/preopen{
+	dir = 4;
+	id = "thunder_cargo"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/docking_port/mobile{
+	dir = 8;
+	name = "Thunder Interceptor";
+	preferred_direction = 8;
+	port_direction = 2
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/bridge)
+"s" = (
+/obj/structure/table/reinforced,
+/obj/machinery/jukebox/boombox{
+	pixel_x = 2;
+	pixel_y = 6
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = -9;
+	id = "thunder_cargo"
+	},
+/obj/machinery/turretid/ship{
+	pixel_y = 26;
+	id = "thunder_grid";
+	req_ship_access = 0;
+	req_access = null;
+	req_access_txt = "48"
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 8;
+	pixel_x = 19;
+	id = "thunder_cargo_field"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/cable/yellow{
+	icon_state = "6-10"
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 12
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/pen{
+	pixel_x = 6;
+	pixel_y = 2
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"t" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/ammo_casing/spent/pistol_brass,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/bridge)
+"u" = (
+/obj/effect/turf_decal/siding/thinplating/dark/end{
+	dir = 8
+	},
+/obj/machinery/light/floor{
+	pixel_x = 15
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-5"
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 8;
+	name = "Helm"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"v" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/machinery/computer/helm{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
+"w" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = -10
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"x" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/structure/chair/comfy/shuttle,
+/obj/machinery/computer/helm/viewscreen/directional/north{
+	pixel_x = 15
+	},
+/obj/effect/turf_decal/industrial/traffic,
+/obj/structure/railing/thin{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"y" = (
+/obj/effect/turf_decal/box,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/light/directional/north,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ship/bridge)
+"B" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plasteel/stairs{
+	dir = 1
+	},
+/area/ship/bridge)
+"D" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/heavy,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "thunder_cargo_field";
+	dir = 1
+	},
+/obj/machinery/door/poddoor/preopen{
+	dir = 4;
+	id = "thunder_cargo"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/bridge)
+"E" = (
+/obj/machinery/power/smes/engineering{
+	input_level = 5000;
+	output_level = 15000
+	},
+/obj/structure/sign/warning/electricshock{
+	pixel_x = 24;
+	pixel_y = -2
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable,
+/obj/structure/noticeboard{
+	dir = 1;
+	pixel_y = -25
+	},
+/obj/structure/extinguisher_cabinet/directional/east{
+	pixel_y = 10
+	},
+/obj/item/paper/fluff{
+	default_raw_text = "Artificer's Note: Remember to turn the input on the SMES down. Too high, and it'll leech a lot of power from the rest of the ship's systems.";
+	name = "paper note"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"F" = (
+/obj/structure/closet/secure_closet/wall/directional/south{
+	name = "pilot's locker";
+	req_access_txt = "48";
+	icon_state = "solgov_wall";
+	icon_door = "solgov_wall"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable/yellow,
+/obj/item/modular_computer/laptop/preset/civilian{
+	pixel_y = -5
+	},
+/obj/item/gps,
+/obj/item/oxygen_candle{
+	pixel_x = -10;
+	pixel_y = 5
+	},
+/obj/item/oxygen_candle{
+	pixel_x = -10
+	},
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"G" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/maintenance_hatch{
+	name = "Port Nacelle";
+	req_ship_access = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"H" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/sign/warning/electricshock{
+	pixel_y = -24;
+	pixel_x = 8
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"I" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/item/storage/toolbox/emergency/shuttle{
+	pixel_x = -8;
+	pixel_y = 15
+	},
+/obj/structure/sign/warning/electricshock{
+	pixel_y = 28;
+	pixel_x = 8
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/item/wrench,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"J" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/stairs,
+/area/ship/bridge)
+"K" = (
+/obj/effect/turf_decal/box,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/machinery/light/directional/south,
+/obj/structure/cable/yellow{
+	icon_state = "5-9"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/west{
+	req_ship_access = 0
+	},
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ship/bridge)
+"M" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/bridge)
+"O" = (
+/obj/machinery/porta_turret/ship/inteq/light{
+	dir = 10;
+	id = "thunder_grid"
+	},
+/obj/structure/sign/warning/securearea{
+	pixel_y = 28;
+	pixel_x = 8
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/bridge)
+"P" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "6-9"
+	},
+/obj/machinery/door/airlock/maintenance/external/glass{
+	dir = 4;
+	req_ship_access = 0;
+	name = "Cockpit";
+	id_tag = "thunder_lockpit"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"R" = (
+/obj/machinery/porta_turret/ship/inteq/light{
+	dir = 6;
+	id = "thunder_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"S" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 1
+	},
+/obj/structure/railing/thin{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/south{
+	pixel_x = 10
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"T" = (
+/obj/machinery/porta_turret/ship/inteq/light{
+	dir = 9;
+	id = "thunder_grid"
+	},
+/obj/structure/sign/warning/securearea{
+	pixel_y = -24;
+	pixel_x = 8
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/bridge)
+"U" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/preopen{
+	id = "thunder_windows";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"V" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/heavy,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "thunder_cargo_field"
+	},
+/obj/machinery/door/poddoor/preopen{
+	dir = 4;
+	id = "thunder_cargo"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/bridge)
+"Y" = (
+/obj/machinery/light/small/directional/west,
+/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/box,
+/obj/machinery/telecomms/relay/preset/inteq,
+/obj/item/multitool{
+	pixel_x = 8;
+	pixel_y = -5
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+
+(1,1,1) = {"
+h
+h
+h
+f
+U
+f
+h
+h
+h
+"}
+(2,1,1) = {"
+h
+h
+c
+f
+v
+f
+c
+h
+h
+"}
+(3,1,1) = {"
+h
+g
+a
+o
+u
+F
+a
+m
+h
+"}
+(4,1,1) = {"
+h
+T
+a
+s
+n
+E
+a
+O
+h
+"}
+(5,1,1) = {"
+c
+a
+a
+a
+P
+a
+a
+a
+c
+"}
+(6,1,1) = {"
+a
+q
+a
+y
+M
+K
+a
+Y
+a
+"}
+(7,1,1) = {"
+a
+I
+G
+B
+p
+J
+d
+H
+a
+"}
+(8,1,1) = {"
+a
+j
+a
+x
+k
+S
+a
+j
+a
+"}
+(9,1,1) = {"
+a
+i
+a
+l
+t
+w
+a
+i
+a
+"}
+(10,1,1) = {"
+h
+h
+b
+V
+r
+D
+R
+h
+h
+"}

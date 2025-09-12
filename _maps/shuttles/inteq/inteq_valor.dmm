@@ -537,6 +537,8 @@
 /obj/item/attachment/rail_light,
 /obj/item/attachment/rail_light,
 /obj/item/attachment/rail_light,
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "ey" = (
@@ -675,7 +677,7 @@
 	icon_door = "prisoner";
 	icon_state = "prisoner";
 	name = "shuttle pilot locker";
-	req_access = list(3)
+	req_access = list(48)
 	},
 /obj/item/clothing/head/beret/sec/inteq,
 /obj/item/clothing/head/soft/inteq,
@@ -2754,7 +2756,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals_central4{
 	dir = 1
 	},
-/obj/item/reagent_containers/food/snacks/hotdog,
+/obj/item/food/hotdog,
 /obj/effect/spawner/random/food_or_drink/donkpockets,
 /obj/effect/spawner/random/food_or_drink/donkpockets,
 /turf/open/floor/plasteel/dark,
@@ -3115,7 +3117,7 @@
 	pixel_x = 6;
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/food/snacks/burger/plain{
+/obj/item/food/burger/plain{
 	pixel_x = -4;
 	pixel_y = 3
 	},
@@ -4372,7 +4374,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/grunge{
-	req_access = list(3)
+	req_access = list(48)
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/office)
@@ -4529,8 +4531,6 @@
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/backpack/messenger/inteq,
 /obj/item/megaphone/command,
-/obj/item/clothing/under/syndicate/inteq/skirt,
-/obj/item/clothing/under/syndicate/inteq,
 /obj/item/clothing/suit/armor/hos/inteq,
 /obj/item/clothing/head/beret/sec/hos/inteq,
 /obj/structure/closet/secure_closet/wall/directional/west{
@@ -4545,6 +4545,10 @@
 /obj/item/stamp/inteq/vanguard,
 /obj/item/storage/box/ammo/a44roum,
 /obj/item/storage/guncase/pistol/pinscher,
+/obj/item/clothing/under/syndicate/inteq/honorable{
+	pixel_x = -5;
+	pixel_y = 1
+	},
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
 "Od" = (
@@ -4944,6 +4948,10 @@
 /obj/item/storage/box/hypospray/mkiii,
 /obj/item/stamp/inteq/corpsman,
 /obj/item/clothing/gloves/color/latex/nitrile/inteq,
+/obj/item/clothing/under/syndicate/inteq/honorable{
+	pixel_x = -5;
+	pixel_y = 1
+	},
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "RT" = (

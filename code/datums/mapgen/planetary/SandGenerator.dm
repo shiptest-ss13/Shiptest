@@ -94,7 +94,9 @@
 		/obj/structure/geyser/random = 8,
 		/obj/structure/vein/sand = 8,
 		/obj/structure/vein/sand/classtwo = 4,
+		/obj/structure/vein/sand/classtwo/rare = 2,
 		/obj/structure/vein/sand/classthree = 2,
+		/obj/structure/vein/sand/classthree/rare = 1,
 		/obj/effect/spawner/random/anomaly/sand = 1,
 		/obj/effect/greeble_spawner/whitesands/oasis = 1,
 	)

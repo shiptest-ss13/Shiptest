@@ -5,7 +5,6 @@
 	mob_overlay_icon = 'icons/mob/clothing/under/dresses/dress.dmi'
 	kepori_override_icon = 'icons/mob/clothing/under/dresses/dress_kepori.dmi'
 
-	can_adjust = FALSE
 	body_parts_covered = CHEST|GROIN
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
 
@@ -43,7 +42,7 @@
 	name = "one shoulder dress"
 	desc = "A modern black dress with only one shoulder strap. Comes with a matching pair of arm warmers."
 	icon_state = "one_shoulder_dress"
-	can_adjust = TRUE
+	roll_sleeves = TRUE
 
 /obj/item/clothing/under/dress/iko_ikssoal
 	name = "iko ikssoal"
@@ -54,7 +53,7 @@
 	name = "black skirt"
 	desc = "A black, casual skirt."
 	icon_state = "blackskirt"
-	can_adjust = TRUE
+	roll_down = TRUE
 
 /obj/item/clothing/under/dress/skirt/color/blue
 	name = "blue skirt"
@@ -83,8 +82,7 @@
 	name = "black pinafore"
 	desc = "It's really just an apron that one wears over a shirt or dress. This one is black."
 	icon_state = "black_pinafore"
-	can_adjust = TRUE
-	alt_covers_chest = TRUE
+	roll_sleeves = TRUE
 
 /obj/item/clothing/under/dress/skirt/pinafore/maroon
 	name = "maroon pinafore"

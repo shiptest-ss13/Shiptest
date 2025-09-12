@@ -163,7 +163,7 @@
 			to_chat(user, span_boldannounce("You start skimming through [src], but you already know dronespeak."))
 		else
 			to_chat(user, span_boldannounce("You start skimming through [src], and suddenly the drone chittering makes sense."))
-			user.grant_language(/datum/language/drone, TRUE, TRUE, LANGUAGE_MIND)
+			user.grant_language(/datum/language/drone, source=LANGUAGE_MIND)
 		return
 
 	if(user.has_language(/datum/language/drone))
@@ -184,7 +184,7 @@
 			M.visible_message(span_danger("[user] beats [M] over the head with [src]!"), span_userdanger("[user] beats you over the head with [src]!"), span_hear("You hear smacking."))
 		else
 			M.visible_message(span_notice("[user] teaches [M] by beating [M.p_them()] over the head with [src]!"), span_boldnotice("As [user] hits you with [src], chitters resonate in your mind."), span_hear("You hear smacking."))
-			M.grant_language(/datum/language/drone, TRUE, TRUE, LANGUAGE_MIND)
+			M.grant_language(/datum/language/drone, source=LANGUAGE_MIND)
 		return
 
 /obj/structure/fluff/oldturret

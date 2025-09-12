@@ -18,6 +18,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.attack_hand_interact = TRUE
+	STR.pocket_openable = TRUE
 	STR.max_w_class = WEIGHT_CLASS_SMALL
 	STR.max_items = 2
 	STR.max_combined_w_class = 24
@@ -47,7 +48,6 @@
 		/obj/item/stack/medical/mesh,
 		/obj/item/stack/medical/ointment,
 		/obj/item/stack/medical/splint,
-		/obj/item/stack/medical/structure,
 		/obj/item/storage/pill_bottle,
 		/obj/item/reagent_containers/pill,
 		/obj/item/reagent_containers/syringe,
@@ -113,11 +113,13 @@
 		/obj/item/t_scanner,
 		/obj/item/analyzer,
 		/obj/item/geiger_counter,
-		/obj/item/stack/medical/structure,
 		/obj/item/extinguisher/mini,
 		/obj/item/toy/crayon/spraycan,
 		/obj/item/stack/marker_beacon,
-		/obj/item/clothing/gloves
+		/obj/item/clothing/gloves,
+		/obj/item/stack/tape/industrial,
+		/obj/item/clothing/glasses/welding,
+		/obj/item/bodycamera
 		))
 
 /obj/item/storage/pouch/engi/PopulateContents()
@@ -174,5 +176,6 @@
 		/obj/item/toy/crayon/spraycan,
 		/obj/item/stack/marker_beacon,
 		/obj/item/reagent_containers/glass/rag,
-		/obj/item/taperecorder
+		/obj/item/taperecorder,
+		/obj/item/bodycamera
 		))

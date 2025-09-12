@@ -51,13 +51,16 @@
 
 	/// The percentage of the item's value which is shaved off after each unit is sold, compounding multiplicatively. This recovers over time.
 	/// If items are sold in bulk (i.e., 2 or 3 or 10 at a time), the total payout is the same as if they were sold individually, before rounding.
-	/// Even without any items previously sold, the sale price may be slightly smaller than the "base" price, due to the math attempting to remain
+	/// Even without any items previously sold, the sale cost may be slightly smaller than the "base" cost, due to the math attempting to remain
 	/// correct even when less than a whole unit is sold.
-	/// If set to 0, the price is static.
+	/// If set to 0, the cost is static.
 	var/elasticity_coeff = 0.01
-	/// The amount of time it takes for the sale price of the export to recover from a single unit sold.
-	/// If set to 0, the price will never recover.
+	/// The amount of time it takes for the sale cost of the export to recover from a single unit sold.
+	/// If set to 0, the cost will never recover.
 	var/recovery_ds = 5 MINUTES
+
+	///what's the least this item can go for
+	var/sell_floor = 0
 
 	var/list/export_types = list()	// Type of the exported object. If none, the export datum is considered base type.
 	var/include_subtypes = TRUE		// Set to FALSE to make the datum apply only to a strict type.
@@ -89,10 +92,10 @@
 		// definite integral from (old amount sold) to (new amount sold) of the cost function.
 		// this applies even when the amount being sold is one unit, decreasing it slightly,
 		// so that selling even half a unit twice is no more effective than selling the whole unit, ignoring rounding.
-		return round(
+		return max(sell_floor, round(
 			(true_cost/log(1 - elasticity_coeff)) * ((1 - elasticity_coeff)**(amount) - 1),
 			1
-		)
+		))
 	else
 		return round(cost * amount, 1)
 
@@ -106,6 +109,8 @@
 	if(!is_type_in_typecache(O, export_types))
 		return FALSE
 	if(include_subtypes && is_type_in_typecache(O, exclude_types))
+		return FALSE
+	if(!get_amount(O))
 		return FALSE
 	if(!get_cost(O, apply_elastic))
 		return FALSE
@@ -144,6 +149,6 @@
 
 /datum/export/proc/get_payout_text()
 	if(true_cost != cost)
-		return "[round(true_cost, cost/1000)]/[cost]"
+		return "[max(sell_floor,round(true_cost, cost/1000))]/[cost]"
 	else
 		return "[true_cost]"

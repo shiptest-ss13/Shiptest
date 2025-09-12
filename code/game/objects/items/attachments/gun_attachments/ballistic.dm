@@ -28,6 +28,7 @@
 	return examine_list
 
 /obj/item/gun/ballistic/shotgun/underbarrel
+	bad_type = /obj/item/gun/ballistic/shotgun/underbarrel
 	name = "underbarrel ballistic gun"
 	desc = "You shouldnt be seeing this."
 	semi_auto = FALSE
@@ -53,6 +54,7 @@
 	weapon_type = /obj/item/gun/ballistic/shotgun/underbarrel/grenadelauncher
 
 /obj/item/gun/ballistic/shotgun/underbarrel/grenadelauncher
+	bad_type = /obj/item/gun/ballistic/shotgun/underbarrel/grenadelauncher
 	name = "underbarrel grenade launcher"
 	fire_sound = 'sound/weapons/gun/general/grenade_launch.ogg'
 	always_chambers = TRUE

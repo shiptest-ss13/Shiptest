@@ -37,6 +37,9 @@
 	/// Whether or not the overmap object is currently docking.
 	var/docking
 
+	/// Whether this can attempt to dock to the special ports on the outpost
+	var/outpost_special_dock_perms = FALSE
+
 	/// Current overmap we are apart of.
 	var/datum/overmap_star_system/current_overmap
 	/// List of all datums docked in this datum.
@@ -196,7 +199,6 @@
 	// Updates the token with the new position.
 	token.abstract_move(OVERMAP_TOKEN_TURF(x, y, current_overmap))
 	SEND_SIGNAL(src, COMSIG_OVERMAP_MOVED, old_x, old_y)
-	SEND_SIGNAL(src, COMSIG_OVERMAP_MOVE_SELF, src)
 	return TRUE
 
 /**
@@ -371,7 +373,7 @@
 	return FALSE
 
 /datum/overmap/ship/controlled/do_hail(mob/living/user, datum/overmap/interact_target)
-	if(!interact_target)
+	if(!interact_target || interact_target==src)
 		return "Invalid Target."
 	var/input = stripped_input(user, "Please choose a message to hail the target with.", "Hailing Vessel")
 	if(!input)

@@ -73,7 +73,7 @@
 	data["delivery_methods"] = list()
 	if(market)
 		for(var/delivery in market.shipping)
-			data["delivery_methods"] += list(list("name" = delivery, "price" = market.shipping[delivery]))
+			data["delivery_methods"] += list(list("name" = delivery, "cost" = market.shipping[delivery]))
 	data["money"] = money
 	data["buying"] = buying
 	data["items"] = list()
@@ -86,8 +86,8 @@
 					data["items"] += list(list(
 						"id" = I.type,
 						"name" = I.name,
-						"cost" = I.price,
-						"amount" = I.unlimited ? "INF" : I.stock,
+						"cost" = I.cost,
+						"amount" = I.stock == INFINITY ? "INF" : I.stock,
 						"desc" = I.desc || I.name
 					))
 	return data
@@ -162,6 +162,7 @@
 	result = /obj/item/blackmarket_uplink
 	time = 30
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER, TOOL_MULTITOOL)
+	blacklist = list(/obj/item/radio/headset, /obj/item/radio/intercom)
 	reqs = list(
 		/obj/item/stock_parts/scanning_module = 1,
 		/obj/item/stack/cable_coil = 15,

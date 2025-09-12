@@ -1,5 +1,5 @@
 /datum/supply_pack/armor
-	group = "Armor"
+	category = "Armor"
 	crate_type = /obj/structure/closet/crate/secure
 
 
@@ -90,12 +90,14 @@
 	faction_locked = TRUE
 
 //gezena
-/datum/supply_pack/armor/pgf_armor
-	name = "Raksha-plate Crate"
-	desc = "One set of standard issue Raksha-plate armor, highly protective and very mobile. The helmet is adjustable for horns."
+/datum/supply_pack/armor/pgf_marine_armor
+	name = "Gezenan Composite Armor Crate"
+	desc = "One set of standard issue AR-98 body armor, highly protective and quite mobile. Comes with a matching L-98 respirator."
 	cost = 1500
 	contains = list(/obj/item/clothing/suit/armor/gezena/marine,
-					/obj/item/clothing/head/helmet/gezena)
+					/obj/item/clothing/head/helmet/gezena,
+					/obj/item/clothing/glasses/sunglasses/pgf,
+					/obj/item/clothing/mask/breath/pgfmask)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/pgf

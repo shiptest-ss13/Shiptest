@@ -50,9 +50,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "aj" = (
-/obj/machinery/power/shuttle/engine/electric/premium{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric/premium,
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
 	dir = 1
@@ -85,24 +83,21 @@
 /area/ship/bridge)
 "al" = (
 /obj/structure/table/chem,
-/obj/item/reagent_containers/glass/bottle/bicaridine{
+/obj/item/reagent_containers/glass/bottle/indomide{
 	pixel_x = 7;
 	pixel_y = 14
 	},
-/obj/item/reagent_containers/glass/bottle/antitoxin{
-	pixel_x = -4;
-	pixel_y = 10
-	},
-/obj/item/reagent_containers/glass/bottle/kelotane{
-	pixel_x = 4;
-	pixel_y = 7
-	},
+/obj/item/reagent_containers/glass/bottle/charcoal,
 /obj/item/reagent_containers/glass/bottle/dexalin{
 	pixel_x = -3;
 	pixel_y = 2
 	},
 /obj/item/reagent_containers/syringe{
 	pixel_x = 8
+	},
+/obj/item/reagent_containers/glass/bottle/alvitane{
+	pixel_x = 4;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -237,7 +232,6 @@
 /area/ship/bridge)
 "gi" = (
 /obj/item/storage/case/surgery{
-	pixel_x = 0;
 	pixel_y = 3
 	},
 /obj/structure/table/chem,
@@ -434,9 +428,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "DW" = (
-/obj/machinery/power/shuttle/engine/electric/premium{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric/premium,
 /obj/structure/window/reinforced{
 	dir = 1
 	},

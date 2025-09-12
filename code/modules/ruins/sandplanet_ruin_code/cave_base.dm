@@ -8,26 +8,15 @@
 /obj/item/grenade/c4/satchel_charge/cave_base/Initialize()
 	. = ..()
 	AddElement(/datum/element/undertile, TRAIT_T_RAY_VISIBLE, INVISIBILITY_OBSERVER, use_anchor = TRUE)
-	wires.attach_assembly_init(/obj/item/assembly/signaler/preset/cave_base)
-
-/obj/item/assembly_holder/premade/cave_base
-	a_left = /obj/item/assembly/signaler/preset/cave_base
-	a_right = /obj/item/assembly/prox_sensor/preset/cave_base
+	wires.attach_assembly_init(/obj/item/assembly/prox_sensor/preset/cave_base)
 
 /obj/item/grenade/c4/cave_base
+	det_time = 5
 
 /obj/item/grenade/c4/cave_base/Initialize()
 	. = ..()
 	AddElement(/datum/element/undertile, TRAIT_T_RAY_VISIBLE, INVISIBILITY_OBSERVER, use_anchor = TRUE)
-	wires.attach_assembly_init(/obj/item/assembly/voice/preset/cave_base)
-
-/obj/item/assembly/signaler/preset/cave_base
-	code = 44
-	frequency = 1451
-
-/obj/item/assembly/voice/preset/cave_base
-	mode = 1
-	recorded = "Goodbye~"
+	wires.attach_assembly_init(/obj/item/assembly/prox_sensor/preset/cave_base)
 
 /obj/item/assembly/prox_sensor/preset/cave_base
 
@@ -39,15 +28,24 @@
 	network = list("ForwardPost")
 
 //turret
-/obj/machinery/porta_turret/cave_base
+/obj/machinery/porta_turret/ruin/cave_base
+	name = "high-gain laser cannon"
+	desc = "A completely novel design, one you're fairly certain you have never seen before. Seems to fire laser bolts in triplicate."
 	max_integrity = 100
-	faction = list("turret", "Forward_Ops_Post")
+	faction = list(FACTION_TURRET, "Forward_Ops_Post")
 	stun_projectile = /obj/projectile/beam/laser/heavylaser
 	stun_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
 	lethal_projectile = /obj/projectile/beam/laser/heavylaser
 	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
 	turret_flags = TURRET_FLAG_HOSTILE
 	turret_respects_id = FALSE
+	integrity_failure = 0
+	scan_range = 16
+	shot_delay = 50
+	reaction_time = 15
+	burst_delay = 7
+	burst_size = 3
+
 
 //gut wrenching content
 

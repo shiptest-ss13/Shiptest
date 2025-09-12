@@ -67,7 +67,7 @@
 /obj/machinery/pdapainter/attackby(obj/item/O, mob/user, params)
 	if(machine_stat & BROKEN)
 		if(O.tool_behaviour == TOOL_WELDER && user.a_intent != INTENT_HARM)
-			if(!O.tool_start_check(user, amount=0))
+			if(!O.tool_start_check(user, src, amount=0))
 				return
 			user.visible_message(span_notice("[user] is repairing [src]."), \
 							span_notice("You begin repairing [src]..."), \
@@ -77,7 +77,7 @@
 					return
 				to_chat(user, span_notice("You repair [src]."))
 				set_machine_stat(machine_stat & ~BROKEN)
-				obj_integrity = max_integrity
+				atom_integrity = max_integrity
 				update_appearance()
 
 		else
@@ -101,7 +101,7 @@
 		return ..()
 
 /obj/machinery/pdapainter/deconstruct(disassembled = TRUE)
-	obj_break()
+	atom_break()
 
 /obj/machinery/pdapainter/attack_hand(mob/user)
 	. = ..()

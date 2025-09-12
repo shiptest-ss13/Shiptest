@@ -17,6 +17,7 @@
 	attack_verb_continuous = "bites"
 	attack_verb_simple = "bite"
 	attack_sound = 'sound/weapons/bite.ogg'
+	sharpness = SHARP_POINTY
 
 	//Their "ranged" ability is burrowing
 	ranged = TRUE
@@ -108,5 +109,5 @@
 
 /obj/effect/temp_visual/burrow_sand_splash
 	icon = 'icons/effects/effects.dmi'
-	icon_state = "splash"
+	icon_state = "explosionOLD"
 	color = "#dbc56b"

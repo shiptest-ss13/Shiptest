@@ -21,6 +21,11 @@
 	UnregisterSignal(registered_item, mission_main_signal)
 	remove_bound(registered_item)
 
+/datum/mission/ruin/signaled/remove_bound(atom/movable/bound)
+	if(bound == setpiece_item)
+		setpiece_item = null
+	return ..()
+
 /obj/effect/landmark/mission_poi/main/drill
 
 /datum/mission/ruin/signaled/drill
@@ -72,11 +77,14 @@
 
 	if(num_current == num_wanted)
 		SEND_SIGNAL(src, COMSIG_DRILL_SAMPLES_DONE)
+		say("Required samples gathered, shutting down!")
+		if(active)
+			stop_mining()
 
 /obj/machinery/drill/mission/ruin
 	name = "industrial grade mining drill"
 	desc = "A large scale laser drill. It's able to mine vast amounts of minerals from near-surface ore pockets, this one is designed for mining outposts."
-	mission_class = 3
+	mission_class = 4
 	num_wanted = 10
 
 /obj/item/drill_readout

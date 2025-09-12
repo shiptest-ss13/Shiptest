@@ -75,8 +75,8 @@
 
 //flags for alternate styles: These are hard sprited so don't set this if you didn't put the effort in
 #define NORMAL_STYLE 0
-#define ALT_STYLE 1
-#define DIGITIGRADE_STYLE 2
+#define ALT_STYLE 1 // rolled down/alt uniform
+#define ROLLED_STYLE 2 // rolled sleeves
 
 //This system takes priority over Sprite Sheets.
 #define NO_VARIATION (1<<0)
@@ -159,7 +159,8 @@ GLOBAL_LIST_INIT(security_vest_allowed, typecacheof(list(
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals/emergency_oxygen,
-	/obj/item/tank/internals/plasmaman)))
+	/obj/item/tank/internals/plasmaman,
+	/obj/item/melee/sledgehammer)))
 
 GLOBAL_LIST_INIT(security_wintercoat_allowed, typecacheof(list(
 	/obj/item/ammo_box,

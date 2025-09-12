@@ -22,7 +22,7 @@
 	icon_state = list("dot" = 4,"cross" = 1,"curl" = 1)
 	width = 64
 	height = 96
-	count = 500
+	count = 100
 	spawning = 5
 	lifespan = 3 SECONDS
 	fade = 1 SECONDS
@@ -37,8 +37,9 @@
 /particles/embers/lava
 	width = 700
 	height = 700
-	gradient = list(LIGHT_COLOR_FLARE, LIGHT_COLOR_FLARE , COLOR_ALMOST_BLACK)
+	gradient = list(LIGHT_COLOR_FLARE, LIGHT_COLOR_FLARE, COLOR_ALMOST_BLACK)
 	spawning = 1
+	count = 10
 
 /particles/lava
 	width = 700

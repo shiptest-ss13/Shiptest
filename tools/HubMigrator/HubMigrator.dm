@@ -3,8 +3,6 @@
 #define MEDAL_PULSE 			"Jackpot"
 #define MEDAL_TIMEWASTE 		"Overextended The Joke"
 #define MEDAL_RODSUPLEX 		"Feat of Strength"
-#define MEDAL_CLOWNCARKING 		"Round and Full"
-#define MEDAL_THANKSALOT 		"The Best Driver"
 #define MEDAL_HELBITALJANKEN	"Hel-bent on Winning"
 #define MEDAL_MATERIALCRAFT 	"Getting an Upgrade"
 
@@ -53,8 +51,6 @@
 						MEDAL_PULSE,
 						MEDAL_TIMEWASTE,
 						MEDAL_RODSUPLEX,
-						MEDAL_CLOWNCARKING,
-						MEDAL_THANKSALOT,
 						MEDAL_HELBITALJANKEN,
 						MEDAL_MATERIALCRAFT,
 						BOSS_MEDAL_ANY,

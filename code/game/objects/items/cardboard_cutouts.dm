@@ -17,8 +17,6 @@
 	. = ..()
 	possible_appearances = sortList(list(
 		"Assistant" = image(icon = src.icon, icon_state = "cutout_greytide"),
-		"Clown" = image(icon = src.icon, icon_state = "cutout_clown"),
-		"Mime" = image(icon = src.icon, icon_state = "cutout_mime"),
 		"Traitor" = image(icon = src.icon, icon_state = "cutout_traitor"),
 		"Nuke Op" = image(icon = src.icon, icon_state = "cutout_fluke"),
 		"Cultist" = image(icon = src.icon, icon_state = "cutout_cultist"),
@@ -104,7 +102,7 @@
 	var/new_appearance = show_radial_menu(user, src, possible_appearances, custom_check = CALLBACK(src, PROC_REF(check_menu), user, crayon), radius = 36, require_near = TRUE)
 	if(!new_appearance)
 		return FALSE
-	if(!do_after(user, 10, src, progress = TRUE))
+	if(!do_after(user, 10, src, show_progress = TRUE))
 		return FALSE
 	if(!check_menu(user, crayon))
 		return FALSE
@@ -120,14 +118,6 @@
 			name = "[pick(GLOB.first_names_male)] [pick(GLOB.last_names)]"
 			desc = "A cardboat cutout of an assistant."
 			icon_state = "cutout_greytide"
-		if("Clown")
-			name = pick(GLOB.clown_names)
-			desc = "A cardboard cutout of a clown. You get the feeling that it should be in a corner."
-			icon_state = "cutout_clown"
-		if("Mime")
-			name = pick(GLOB.mime_names)
-			desc = "...(A cardboard cutout of a mime.)"
-			icon_state = "cutout_mime"
 		if("Traitor")
 			name = "[pick("Unknown", "Captain")]"
 			desc = "A cardboard cutout of a traitor."

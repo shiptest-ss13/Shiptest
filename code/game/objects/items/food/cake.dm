@@ -33,7 +33,7 @@
 
 /obj/item/food/cake/plain
 	name = "plain cake"
-	desc = "A plain cake, not a lie." //Many of the cakes seem to follow this desc scheme, so I am going to try and put either a hint about its contents, or a fun fact. Lets try to follow this.
+	desc = "A plain cake without frosting or fillings. Still sweet and fluffy."
 	icon_state = "plaincake"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 30,
@@ -52,7 +52,7 @@
 
 /obj/item/food/cake/carrot
 	name = "carrot cake"
-	desc = "Scientifically proven to improve eyesight! Not a lie."
+	desc = "Scientifically proven to improve eyesight!"
 	icon_state = "carrotcake"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 20,
@@ -65,7 +65,7 @@
 
 /obj/item/food/cakeslice/carrot
 	name = "carrot cake slice"
-	desc = "Carrotty slice of Carrot Cake, carrots are good for your eyes! Also not a lie."
+	desc = "Carrotty slice of Carrot Cake, carrots are good for your eyes!"
 	icon_state = "carrotcake_slice"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
@@ -75,34 +75,9 @@
 	tastes = list("cake" = 5, "sweetness" = 2, "carrot" = 1)
 	foodtypes = GRAIN | DAIRY | VEGETABLES | SUGAR
 
-/obj/item/food/cake/brain
-	name = "brain cake"
-	desc = "Yeah... its actually made out of brain. I wish it were a lie."
-	icon_state = "braincake"
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 15,
-		/datum/reagent/medicine/mannitol = 10,
-		/datum/reagent/consumable/nutriment/vitamin = 5
-	)
-	tastes = list("cake" = 5, "sweetness" = 2, "brains" = 1)
-	foodtypes = GRAIN | DAIRY | MEAT | GROSS | SUGAR
-	slice_type = /obj/item/food/cakeslice/brain
-
-/obj/item/food/cakeslice/brain
-	name = "brain cake slice"
-	desc = "Lemme tell you something about prions. THEY'RE DELICIOUS. A terrifying not-lie."
-	icon_state = "braincakeslice"
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 4,
-		/datum/reagent/medicine/mannitol = 2,
-		/datum/reagent/consumable/nutriment/vitamin = 1
-	)
-	tastes = list("cake" = 5, "sweetness" = 2, "brains" = 1)
-	foodtypes = GRAIN | DAIRY | MEAT | GROSS | SUGAR
-
 /obj/item/food/cake/cheese
 	name = "cheese cake"
-	desc = "DANGEROUSLY cheesy."
+	desc = "A rich cake with a flaky crust and a filling of soft cheese."
 	icon_state = "cheesecake"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 20,
@@ -201,7 +176,7 @@
 
 /obj/item/food/cake/birthday
 	name = "birthday cake"
-	desc = "Happy Birthday little clown..."
+	desc = "Happy Birthday..."
 	icon_state = "birthdaycake"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 20,
@@ -224,62 +199,9 @@
 	tastes = list("cake" = 5, "sweetness" = 1)
 	foodtypes = GRAIN | DAIRY | JUNKFOOD | SUGAR
 
-/obj/item/food/cake/birthday/energy
-	name = "energy cake"
-	desc = "Just enough calories for a whole nuclear operative squad."
-	icon_state = "energycake"
-	force = 5
-	hitsound = 'sound/weapons/blade1.ogg'
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 10,
-		/datum/reagent/consumable/sprinkles = 10,
-		/datum/reagent/consumable/nutriment/vitamin = 5,
-		/datum/reagent/consumable/pacfuel = 10,
-		/datum/reagent/consumable/liquidelectricity = 10
-	)
-	tastes = list("cake" = 3, "a Vlad's Salad" = 1)
-	slice_type = /obj/item/food/cakeslice/birthday/energy
-
-/obj/item/food/cake/birthday/energy/proc/energy_bite(mob/living/user)
-	to_chat(user, "<font color='red' size='5'>As you eat the cake, you accidentally hurt yourself on the embedded energy sword!</font>")
-	user.apply_damage(30, BURN, BODY_ZONE_HEAD) // ITs an ENERGY sword, so it burns, duh
-	playsound(user, 'sound/weapons/blade1.ogg', 5, TRUE)
-
-/obj/item/food/cake/birthday/energy/attack(mob/living/target_mob, mob/living/user)
-	. = ..()
-	if(HAS_TRAIT(user, TRAIT_PACIFISM) && target_mob != user) //Prevents pacifists from attacking others directly
-		return
-	energy_bite(target_mob, user)
-
-/obj/item/food/cakeslice/birthday/energy
-	name = "energy cake slice"
-	desc = "For the traitor on the go."
-	icon_state = "energycakeslice"
-	force = 2
-	hitsound = 'sound/weapons/blade1.ogg'
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 4,
-		/datum/reagent/consumable/sprinkles = 2,
-		/datum/reagent/consumable/nutriment/vitamin = 1,
-		/datum/reagent/consumable/pacfuel = 2,
-		/datum/reagent/consumable/liquidelectricity = 2
-	)
-	tastes = list("cake" = 3, "a Vlad's Salad" = 1)
-
-/obj/item/food/cakeslice/birthday/energy/proc/energy_bite(mob/living/user)
-	to_chat(user, "<font color='red' size='5'>As you eat the cake slice, you accidentally hurt yourself on the embedded energy dagger!</font>")
-	user.apply_damage(18, BURN, BODY_ZONE_HEAD)
-	playsound(user, 'sound/weapons/blade1.ogg', 5, TRUE)
-
-/obj/item/food/cakeslice/birthday/energy/attack(mob/living/target_mob, mob/living/user)
-	. = ..()
-	if(HAS_TRAIT(user, TRAIT_PACIFISM) && target_mob != user) //Prevents pacifists from attacking others directly
-		return
-	energy_bite(target_mob, user)
-
 /obj/item/food/cake/apple
 	name = "apple cake"
-	desc = "A cake centred with Apple."
+	desc = "A cake centered with Apple."
 	icon_state = "applecake"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 20,
@@ -363,12 +285,11 @@
 
 /obj/item/food/cake/holy_cake
 	name = "angel food cake"
-	desc = "A cake made for angels and chaplains alike! Contains holy water."
+	desc = "A spongy cage with a hefty cream frosting."
 	icon_state = "holy_cake"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 1,
-		/datum/reagent/consumable/nutriment/vitamin = 3,
-		/datum/reagent/water/holywater = 10
+		/datum/reagent/consumable/nutriment/vitamin = 3
 	)
 	tastes = list("cake" = 5, "sweetness" = 1, "clouds" = 1)
 	foodtypes = GRAIN | DAIRY | SUGAR
@@ -457,31 +378,6 @@
 		/datum/reagent/consumable/vanilla = 3
 	)
 	tastes = list("cake" = 1, "sugar" = 1, "vanilla" = 10)
-	foodtypes = GRAIN | SUGAR | DAIRY
-
-/obj/item/food/cake/clown_cake
-	name = "clown cake"
-	desc = "A funny cake with a clown face on it."
-	icon_state = "clowncake"
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 20,
-		/datum/reagent/consumable/nutriment/vitamin = 5,
-		/datum/reagent/consumable/banana = 15
-	)
-	tastes = list("cake" = 1, "sugar" = 1, "joy" = 10)
-	foodtypes = GRAIN | SUGAR | DAIRY
-	slice_type = /obj/item/food/cakeslice/clown_slice
-
-/obj/item/food/cakeslice/clown_slice
-	name = "clown cake slice"
-	desc = "A slice of bad jokes, and silly props."
-	icon_state = "clowncake_slice"
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 4,
-		/datum/reagent/consumable/nutriment/vitamin = 1,
-		/datum/reagent/consumable/banana = 3
-	)
-	tastes = list("cake" = 1, "sugar" = 1, "joy" = 10)
 	foodtypes = GRAIN | SUGAR | DAIRY
 
 /obj/item/food/cake/trumpet

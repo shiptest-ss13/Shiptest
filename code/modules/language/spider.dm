@@ -10,6 +10,6 @@
 
 	icon_state = "spider"
 
-/datum/language/rachnidian/scramble(input)
+/datum/language/rachnidian/scramble_sentence(input)
 	. = prob(65) ? "<i>wiff</i>" : "<i>thump</i>"
 	. += (copytext(input, length(input)) == "?") ? "?" : "!"

@@ -64,7 +64,7 @@
 	base_icon_state = "rusty_reinforced_wall"
 	smoothing_flags = SMOOTH_BITMASK
 	hardness = 15
-	integrity = 1000
+	atom_integrity = 1000
 	min_dam = 5
 
 /turf/closed/wall/r_wall/rust/yesdiag

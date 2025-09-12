@@ -5,7 +5,6 @@
 /obj/item/clothing/under/misc/pj
 	name = "\improper PJs"
 	desc = "A comfy set of sleepwear, for taking naps or being lazy instead of working."
-	can_adjust = FALSE
 	item_state = "w_suit"
 
 /obj/item/clothing/under/misc/pj/red
@@ -19,7 +18,6 @@
 	desc = "Motorcycle not included."
 	icon_state = "ek"
 	item_state = "ek"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/misc/adminsuit
 	name = "administrative cybernetic jumpsuit"
@@ -36,7 +34,6 @@
 	min_cold_protection_temperature = SPACE_SUIT_MIN_TEMP_PROTECT
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = SPACE_SUIT_MAX_TEMP_PROTECT
-	can_adjust = FALSE
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	cuttable = FALSE
 
@@ -45,7 +42,6 @@
 	desc = "An assistant's formal-wear. Why an assistant needs formal-wear is still unknown."
 	icon_state = "assistant_formal"
 	item_state = "gy_suit"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/plasmaman
 	name = "plasma envirosuit"
@@ -56,7 +52,6 @@
 	mob_overlay_icon = 'icons/mob/clothing/under/plasmaman.dmi'
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 0, "fire" = 95, "acid" = 95)
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	can_adjust = FALSE
 	strip_delay = 80
 	var/next_extinguish = 0
 	var/extinguish_cooldown = 100
@@ -112,7 +107,6 @@
 	desc = "A jumpsuit made from durathread. Its resilient fibres preserve it from certain destructive forces. These forces do not include bullets."
 	icon_state = "durathread"
 	item_state = "durathread"
-	can_adjust = FALSE
 	armor = list("melee" = 0, "laser" = 0, "fire" = 40, "acid" = 10, "bomb" = 0)
 	cuttable = FALSE
 
@@ -123,7 +117,7 @@
 	desc = "A somewhat uncomfortable suit designed to be as cheap as possible to manufacture."
 	icon_state = "utility"
 	item_state = "utility"
-	can_adjust = TRUE
+	roll_down = TRUE
 
 /obj/item/clothing/under/utility/skirt
 	name = "utility jumpskirt"
@@ -131,5 +125,29 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	icon_state = "utility_skirt"
 	item_state = "utility_skirt"
-	can_adjust = FALSE
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
+
+/obj/item/clothing/under/overalls
+	icon = 'icons/obj/clothing/under/misc.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/misc.dmi'
+	name = "denim overalls"
+	desc = "A durable pair of overalls with a removable white work shirt. Perfect for outdoor labor."
+	icon_state = "overalls"
+	item_state = "overalls"
+	roll_down = TRUE
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/under/overalls/black
+	name = "black overalls"
+	icon_state = "overalls_black"
+	item_state = "overalls_black"
+
+/obj/item/clothing/under/overalls/olive
+	name = "olive overalls"
+	icon_state = "overalls_olive"
+	item_state = "overalls_olive"
+
+/obj/item/clothing/under/overalls/brown
+	name = "brown overalls"
+	icon_state = "overalls_brown"
+	item_state = "overalls_brown"

@@ -332,8 +332,7 @@
 
 /obj/item/book/granter/spell/random/Initialize()
 	. = ..()
-	var/static/banned_spells = list(/obj/item/book/granter/spell/mimery_blockade)
-	var/real_type = pick(subtypesof(/obj/item/book/granter/spell) - banned_spells)
+	var/real_type = pick(subtypesof(/obj/item/book/granter/spell))
 	new real_type(loc)
 	return INITIALIZE_HINT_QDEL
 
@@ -447,7 +446,7 @@
 	desc = "A cook book that teaches you some more of the newest desserts. A best seller on Maxim."
 	crafting_recipe_types = list(
 		/datum/crafting_recipe/food/berrytart,
-		/datum/crafting_recipe/food/cocolavatart,
+		/datum/crafting_recipe/food/cocoalavatart,
 		/datum/crafting_recipe/food/vanillacake
 	)
 	icon_state = "cooking_learing_sweets"

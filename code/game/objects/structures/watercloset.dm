@@ -5,6 +5,8 @@
 	icon_state = "toilet00"
 	density = FALSE
 	anchored = TRUE
+	can_buckle = TRUE
+	buckle_lying = 0
 	var/open = FALSE			//if the lid is up
 	var/cistern = 0			//if the cistern bit is open
 	var/w_items = 0			//the combined w_class of all the items in the cistern
@@ -117,8 +119,8 @@
 	else if(istype(I, /obj/item/reagent_containers))
 		if (!open)
 			return
-		if(istype(I, /obj/item/reagent_containers/food/snacks/monkeycube))
-			var/obj/item/reagent_containers/food/snacks/monkeycube/cube = I
+		if(istype(I, /obj/item/food/monkeycube))
+			var/obj/item/food/monkeycube/cube = I
 			cube.Expand()
 			return
 		var/obj/item/reagent_containers/RG = I
@@ -126,6 +128,20 @@
 		to_chat(user, span_notice("You fill [RG] from [src]. Gross."))
 	else
 		return ..()
+
+/obj/structure/toilet/proc/handle_layer()
+	if(has_buckled_mobs() && dir == NORTH)
+		layer = ABOVE_MOB_LAYER
+	else
+		layer = OBJ_LAYER
+
+/obj/structure/toilet/post_buckle_mob(mob/living/M)
+	. = ..()
+	handle_layer()
+
+/obj/structure/toilet/post_unbuckle_mob()
+	. = ..()
+	handle_layer()
 
 /obj/structure/toilet/secret
 	var/obj/item/secret
@@ -155,7 +171,7 @@
 
 /obj/structure/urinal/Initialize()
 	. = ..()
-	hiddenitem = new /obj/item/reagent_containers/food/snacks/urinalcake
+	hiddenitem = new /obj/item/food/urinalcake
 
 /obj/structure/urinal/attack_hand(mob/user)
 	. = ..()
@@ -214,16 +230,19 @@
 		exposed = !exposed
 	return TRUE
 
-/obj/item/reagent_containers/food/snacks/urinalcake
+/obj/item/food/urinalcake
 	name = "urinal cake"
 	desc = "The noble urinal cake, protecting the people's pipes from the people's pee. Edibility is suggested to be low."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "urinalcake"
-	w_class = WEIGHT_CLASS_TINY
-	list_reagents = list(/datum/reagent/chlorine = 3, /datum/reagent/ammonia = 1)
-	foodtype = TOXIC | GROSS
+	w_class = WEIGHT_CLASS_SMALL
+	food_reagents = list(
+		/datum/reagent/chlorine = 3,
+		/datum/reagent/ammonia = 1
+	)
+	foodtypes = TOXIC | GROSS
 
-/obj/item/reagent_containers/food/snacks/urinalcake/attack_self(mob/living/user)
+/obj/item/food/urinalcake/attack_self(mob/living/user)
 	user.visible_message(span_notice("[user] squishes [src]!"), span_notice("You squish [src]."), "<i>You hear a squish.</i>")
 	icon_state = "urinalcake_squish"
 	addtimer(VARSET_CALLBACK(src, icon_state, "urinalcake"), 8)

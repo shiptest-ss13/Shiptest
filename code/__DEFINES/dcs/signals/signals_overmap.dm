@@ -4,8 +4,6 @@
 #define COMSIG_OVERMAP_MOVED "overmap_moved"
 /// From overmap move_overmaps(): (datum/overmap, old_x, old_y)
 #define COMSIG_OVERMAP_MOVE_SYSTEMS "overmap_moved_systems"
-/// From overmap Move(): (datum/overmap)
-#define COMSIG_OVERMAP_MOVE_SELF "overmap_move_self"
 /// From overmap Dock(): (datum/overmap)
 #define COMSIG_OVERMAP_DOCK "overmap_dock"
 /// From overmap Undock(): (datum/overmap)

@@ -10,6 +10,7 @@
 	name = "i demand"
 	desc = "You feel as if you should make a 'adminhelp' if you see one of these, along with a 'github' report. You don't really understand what this means though."
 	icon_state = "revolver"
+	bad_type = /obj/item/gun/ballistic/revolver
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/cylinder,
@@ -210,12 +211,12 @@
 		else
 			var/obj/item/ammo_box/attacking_box = attacking_obj
 			var/num_loaded = 0
-			var/num_to_load = magazine.max_ammo
 			var/list/ammo_list_no_empty = get_ammo_list(FALSE)
 			listclearnulls(ammo_list_no_empty)
+			var/num_to_load = magazine.max_ammo - LAZYLEN(ammo_list_no_empty) //get the number of empty bits
 
-			if(ammo_list_no_empty.len >= num_to_load)
-				to_chat(user, "<span class='warning'>There's no empty space in [src]!</span>")
+			if(!num_to_load)
+				to_chat(user, span_warning("There's no empty space in [src]!"))
 				return TRUE
 
 			if(!gate_loaded) //"normal" revolvers
@@ -223,7 +224,7 @@
 				for(var/obj/item/ammo_casing/casing_to_insert in attacking_box.stored_ammo)
 					if(!casing_to_insert || (magazine.caliber && casing_to_insert.caliber != magazine.caliber) || (!magazine.caliber && casing_to_insert.type != magazine.ammo_type))
 						break
-					var/doafter_time = 0.8 SECONDS
+					var/doafter_time = 0.5 SECONDS
 					if(magazine.instant_load && attacking_box.instant_load)
 						doafter_time = 0 SECONDS
 					if(!do_after(user, doafter_time, user))
@@ -232,7 +233,7 @@
 						break
 					else
 						num_loaded++
-						attacking_box.update_appearance()
+						attacking_box.update_ammo_count()
 						attacking_box.stored_ammo -= casing_to_insert
 					i++
 					if(i >= num_to_load)
@@ -249,7 +250,7 @@
 						doafter_time = 0 SECONDS
 					else
 						num_loaded++
-						attacking_box.update_appearance()
+						attacking_box.update_ammo_count()
 						attacking_box.stored_ammo -= casing_to_insert
 					if(!do_after(user, doafter_time, user))
 						break
@@ -263,8 +264,8 @@
 						break
 
 			if(num_loaded)
-				to_chat(user, "<span class='notice'>You load [num_loaded] [cartridge_wording]\s into [src].</span>")
-				attacking_box.update_appearance()
+				to_chat(user, span_notice("You load [num_loaded] [cartridge_wording]\s into [src]."))
+				attacking_box.update_ammo_count()
 				update_appearance()
 			return TRUE
 	else
@@ -460,7 +461,6 @@
 			playsound(src, 'sound/items/handling/ammobox_pickup.ogg', 20, FALSE)
 			return
 
-EMPTY_GUN_HELPER(revolver)
 EMPTY_GUN_HELPER(revolver/viper)
 
 /obj/item/gun/ballistic/revolver/mateba

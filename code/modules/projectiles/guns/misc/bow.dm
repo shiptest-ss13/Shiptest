@@ -4,6 +4,7 @@
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "bow"
 	item_state = "pipebow"
+	spawn_blacklisted = TRUE
 	load_sound = null
 	fire_sound = 'sound/weapons/bowfire.ogg'
 	slot_flags = ITEM_SLOT_BACK

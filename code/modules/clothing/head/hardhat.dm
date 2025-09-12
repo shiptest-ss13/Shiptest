@@ -20,8 +20,7 @@
 	icon_state = "hardhat_yellow"
 	light_color = "#FFCC66"
 	light_power = 0.8
-	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 20, "bio" = 10, "rad" = 20, "fire" = 100, "acid" = 50) // surprisingly robust against head trauma
-	flags_inv = 0
+	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 20, "bio" = 10, "rad" = 20, "fire" = 100, "acid" = 50, "wound" = 20)
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	clothing_flags = SNUG_FIT
 	resistance_flags = FIRE_PROOF
@@ -117,10 +116,6 @@
 
 /obj/item/clothing/head/hardhat/dblue
 	icon_state = "hardhat_dblue"
-	dog_fashion = null
-
-/obj/item/clothing/head/hardhat/solgov
-	icon_state = "hardhat_solgov"
 	dog_fashion = null
 
 /obj/item/clothing/head/hardhat/atmos

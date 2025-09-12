@@ -323,7 +323,7 @@
 
 /datum/chemical_reaction/bananahonk
 	results = list(/datum/reagent/consumable/ethanol/bananahonk = 2)
-	required_reagents = list(/datum/reagent/consumable/laughter = 1, /datum/reagent/consumable/cream = 1)
+	required_reagents = list(/datum/reagent/consumable/banana = 1, /datum/reagent/consumable/cream = 1, /datum/reagent/consumable/ice = 1)
 
 /datum/chemical_reaction/silencer
 	results = list(/datum/reagent/consumable/ethanol/silencer = 3)
@@ -443,7 +443,7 @@
 
 /datum/chemical_reaction/quintuplesec
 	results = list(/datum/reagent/consumable/ethanol/quintuple_sec = 15)
-	required_reagents = list(/datum/reagent/consumable/ethanol/quadruple_sec = 5, /datum/reagent/consumable/clownstears = 5, /datum/reagent/consumable/ethanol/syndicatebomb = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/quadruple_sec = 5, /datum/reagent/consumable/ethanol/creme_de_menthe = 5, /datum/reagent/consumable/ethanol/syndicatebomb = 5)
 	mix_message = "Judgement is upon you."
 	mix_sound = 'sound/items/airhorn2.ogg'
 
@@ -651,7 +651,7 @@
 
 /datum/chemical_reaction/molten_bubbles
 	results = list(/datum/reagent/consumable/molten = 30)
-	required_reagents = list(/datum/reagent/clf3 = 10, /datum/reagent/consumable/space_cola = 20, /datum/reagent/medicine/leporazine = 1, /datum/reagent/medicine/lavaland_extract = 1)
+	required_reagents = list(/datum/reagent/clf3 = 10, /datum/reagent/consumable/space_cola = 20, /datum/reagent/medicine/leporazine = 1, /datum/reagent/medicine/hunter_extract = 1)
 
 /datum/chemical_reaction/plasma_bubbles
 	results = list(/datum/reagent/consumable/molten/plasma_fizz = 3)

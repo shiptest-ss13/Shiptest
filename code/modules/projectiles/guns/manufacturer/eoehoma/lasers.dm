@@ -12,10 +12,10 @@
 	wield_delay = 0.2 SECONDS
 	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
-	spread = 2
-	spread_unwielded = 5
+	spread = 6
+	spread_unwielded = 10
 
-	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/eoehoma)
+	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/eoehoma, /obj/item/ammo_casing/energy/lasergun/eoehoma/heavy)
 	manufacturer = MANUFACTURER_EOEHOMA
 
 
@@ -69,11 +69,6 @@
 	ammo_x_offset = 4
 	charge_sections = 2
 	slot_flags = 0
-
-	unique_attachments = list(
-		/obj/item/attachment/scope,
-		/obj/item/attachment/long_scope,
-	)
 
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,

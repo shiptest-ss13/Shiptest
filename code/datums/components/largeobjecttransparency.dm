@@ -54,7 +54,7 @@
 	for(var/regist_tu in registered_turfs)
 		if(!regist_tu)
 			continue
-		RegisterSignal(regist_tu, list(COMSIG_ATOM_ENTERED, COMSIG_ATOM_CREATED), PROC_REF(object_enter))
+		RegisterSignals(regist_tu, list(COMSIG_ATOM_ENTERED, COMSIG_ATOM_CREATED), PROC_REF(object_enter))
 		RegisterSignal(regist_tu, COMSIG_ATOM_EXITED, PROC_REF(object_leave))
 		RegisterSignal(regist_tu, COMSIG_TURF_CHANGE, PROC_REF(on_turf_change))
 		for(var/thing in regist_tu)

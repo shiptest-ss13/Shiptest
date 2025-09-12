@@ -84,6 +84,10 @@
 	name = "Sleeveless Turtleneck (Greyscale)"
 	icon_state = "turtle_sleeveless"
 
+/datum/sprite_accessory/undershirt/turtle_smooth
+	name = "Smooth Turtleneck (Greyscale)"
+	icon_state = "turtle_smooth"
+
 /datum/sprite_accessory/undershirt/buttondown
 	name = "Button-down Shirt (Greyscale)"
 	icon_state = "button"
@@ -91,6 +95,18 @@
 /datum/sprite_accessory/undershirt/buttondown_short
 	name = "Short Sleeve Button-Down (Greyscale)"
 	icon_state = "button_short"
+
+/datum/sprite_accessory/undershirt/croptank
+	name = "Cropped Tank Top (Greyscale)"
+	icon_state = "croptank"
+
+/datum/sprite_accessory/undershirt/cropshort
+	name = "Cropped Short Sleeve (Greyscale)"
+	icon_state = "cropshortsleeve"
+
+/datum/sprite_accessory/undershirt/croptshirt
+	name = "Cropped T-shirt (Greyscale)"
+	icon_state = "croptshirt"
 
 /datum/sprite_accessory/undershirt/band
 	name = "T-Shirt (Band)"

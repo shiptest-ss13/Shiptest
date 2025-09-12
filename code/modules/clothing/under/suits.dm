@@ -1,7 +1,6 @@
 /obj/item/clothing/under/suit
 	icon = 'icons/obj/clothing/under/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/suits.dmi'
-	can_adjust = FALSE
 
 /obj/item/clothing/under/suit/white_on_white
 	name = "white suit"
@@ -43,14 +42,12 @@
 	desc = "A professional looking black suit. Ready for some serious law."
 	icon_state = "black_suit"
 	item_state = "black_suit"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/suit/black/skirt
 	name = "black suitskirt"
 	desc = "A professional black suitskirt. Nanotrasen Investigation Bureau approved!"
 	icon_state = "black_suit_skirt"
 	item_state = "black_suit_skirt"
-	alt_covers_chest = TRUE
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/suit/black_really

@@ -61,10 +61,6 @@
 /mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
-"bL" = (
-/obj/structure/flora/tree/dead/tall,
-/turf/open/floor/plating/grass/lava,
-/area/ruin/unpowered)
 "bT" = (
 /obj/structure/chair/plastic{
 	dir = 1
@@ -152,7 +148,9 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/obj/effect/landmark/mission_poi/main/blackbox,
+/obj/effect/landmark/mission_poi/main/blackbox{
+	mission_index = 2
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
 "db" = (
@@ -518,11 +516,13 @@
 	pixel_x = -4
 	},
 /obj/item/spacecash/bundle/loadsamoney,
-/obj/item/documents/syndicate,
 /obj/machinery/light/small/directional/north,
 /obj/item/folder/documents/syndicate/red,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
+	},
+/obj/effect/landmark/mission_poi/main{
+	type_to_spawn = /obj/item/documents/syndicate
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
@@ -620,7 +620,7 @@
 /area/ruin/unpowered/listening_post/engineering)
 "kB" = (
 /obj/structure/flora/tree/dead/tall,
-/turf/open/floor/plating/grass/lava/purple,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
 /area/ruin/unpowered)
 "lb" = (
 /obj/machinery/power/apc/auto_name/directional/west,
@@ -704,13 +704,9 @@
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
-"mp" = (
-/obj/structure/flora/ausbushes/sparsegrass/hell,
-/turf/open/floor/plating/grass/lava/purple,
-/area/ruin/unpowered)
 "mF" = (
 /obj/structure/flora/tree/dead/tall/grey,
-/turf/open/floor/plating/grass/lava,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
 /area/ruin/unpowered)
 "mG" = (
 /obj/structure/table/reinforced,
@@ -1176,7 +1172,7 @@
 /area/ruin/unpowered/listening_post/engineering)
 "tM" = (
 /obj/structure/flora/ausbushes/sparsegrass/hell,
-/turf/open/floor/plating/grass/lava/orange,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
 /area/ruin/unpowered)
 "tS" = (
 /turf/open/floor/hangar/plasteel/white,
@@ -1223,10 +1219,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
-"vC" = (
-/obj/structure/flora/ausbushes/grassybush/hell,
-/turf/open/floor/plating/grass/lava/orange,
-/area/ruin/unpowered)
 "vG" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -1317,7 +1309,7 @@
 /area/ruin/unpowered/listening_post/canteen)
 "xv" = (
 /obj/structure/flora/ausbushes/grassybush/hell,
-/turf/open/floor/plating/grass/lava/purple,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
 /area/ruin/unpowered)
 "xR" = (
 /obj/structure/table/reinforced,
@@ -1379,7 +1371,7 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
 "yN" = (
-/turf/open/floor/plating/grass/lava/purple,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
 /area/ruin/unpowered)
 "yZ" = (
 /obj/item/trash/can{
@@ -1576,10 +1568,6 @@
 /obj/machinery/door/window/eastright,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/unpowered/listening_post/operations)
-"BO" = (
-/obj/structure/flora/ausbushes/sparsegrass/hell,
-/turf/open/floor/plating/grass/lava,
-/area/ruin/unpowered)
 "Cx" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 4
@@ -1599,18 +1587,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/directional/west,
 /obj/structure/rack,
-/obj/item/reagent_containers/food/snacks/canned/beans{
+/obj/item/food/canned/beans{
 	pixel_y = 11;
 	pixel_x = 4
 	},
-/obj/item/reagent_containers/food/snacks/canned/beans{
+/obj/item/food/canned/beans{
 	pixel_y = 8;
 	pixel_x = -8
 	},
-/obj/item/reagent_containers/food/snacks/canned/peaches{
-	pixel_y = 7;
-	pixel_x = 7
-	},
+/obj/item/food/canned/peaches,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/canteen)
 "DE" = (
@@ -1968,10 +1953,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/canteen)
-"LI" = (
-/obj/structure/flora/tree/dead/barren,
-/turf/open/floor/plating/grass/lava/orange,
-/area/ruin/unpowered)
 "LV" = (
 /obj/structure/sign/warning/gasmask,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -2017,7 +1998,7 @@
 /area/ruin/unpowered/listening_post/operations)
 "MN" = (
 /obj/structure/flora/tree/dead/barren,
-/turf/open/floor/plating/grass/lava,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
 /area/ruin/unpowered)
 "MU" = (
 /obj/machinery/computer/security{
@@ -2250,9 +2231,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/commons)
-"QP" = (
-/turf/open/floor/plating/grass/lava/orange,
-/area/ruin/unpowered)
 "QS" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/arrow_ccw{
 	icon_state = "trimline";
@@ -2315,10 +2293,6 @@
 /obj/structure/sign/departments/medbay/alt,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/unpowered/listening_post)
-"Tp" = (
-/obj/structure/flora/ausbushes/grassybush/hell,
-/turf/open/floor/plating/grass/lava,
-/area/ruin/unpowered)
 "Ty" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -2364,9 +2338,6 @@
 /obj/item/clothing/suit/cybersun_suit,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/unpowered/listening_post/commons)
-"TS" = (
-/turf/open/floor/plating/grass/lava,
-/area/ruin/unpowered)
 "Ut" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/arrow_ccw{
 	icon_state = "trimline";
@@ -2385,7 +2356,7 @@
 "UB" = (
 /obj/structure/flora/ausbushes/sparsegrass/hell,
 /obj/structure/flora/ausbushes/sparsegrass/hell,
-/turf/open/floor/plating/grass/lava/orange,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
 /area/ruin/unpowered)
 "UV" = (
 /obj/structure/chair/office/light{
@@ -2477,7 +2448,7 @@
 /area/ruin/unpowered/listening_post)
 "Xi" = (
 /obj/structure/flora/ausbushes/fullgrass/hell,
-/turf/open/floor/plating/grass/lava,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
 /area/ruin/unpowered)
 "Xk" = (
 /obj/structure/cable{
@@ -2548,14 +2519,14 @@
 /area/ruin/unpowered/listening_post/operations)
 "YP" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/snacks/ration{
+/obj/item/food/ration{
 	pixel_x = -8;
 	pixel_y = 1
 	},
-/obj/item/reagent_containers/food/snacks/ration{
+/obj/item/food/ration{
 	pixel_y = 4
 	},
-/obj/item/reagent_containers/food/snacks/ration{
+/obj/item/food/ration{
 	pixel_y = 7;
 	pixel_x = -9
 	},
@@ -2671,14 +2642,14 @@ Ap
 Ap
 Ap
 Ap
-TS
-TS
+yN
+yN
 Xi
 Xi
 Xi
 Xi
 Xi
-TS
+yN
 Ap
 Ap
 qV
@@ -2694,9 +2665,9 @@ Ap
 Ap
 Ap
 Ap
-TS
-TS
-TS
+yN
+yN
+yN
 qV
 qV
 qV
@@ -2706,17 +2677,17 @@ qV
 Ap
 Ap
 Ap
-TS
-TS
-TS
-TS
+yN
+yN
+yN
+yN
 Xi
 Xi
 MN
 Xi
 Xi
 Xi
-TS
+yN
 Ap
 Pj
 Ap
@@ -2731,11 +2702,11 @@ Ap
 Ap
 dY
 Ap
-TS
-Tp
-BO
-BO
-TS
+yN
+xv
+tM
+tM
+yN
 qV
 qV
 "}
@@ -2743,8 +2714,8 @@ qV
 qV
 Ap
 Ap
-TS
-TS
+yN
+yN
 Xi
 Xi
 Xi
@@ -2752,7 +2723,7 @@ Xi
 Xi
 Xi
 Xi
-TS
+yN
 Ap
 Ap
 Ap
@@ -2770,10 +2741,10 @@ EB
 Ap
 EB
 Ap
-TS
+yN
 mF
-BO
-TS
+tM
+yN
 qV
 qV
 "}
@@ -2781,13 +2752,13 @@ qV
 qV
 Ap
 Ap
-TS
+yN
 Xi
 Xi
 Xi
-Tp
+xv
 Xi
-TS
+yN
 Ap
 Ap
 Ap
@@ -2810,8 +2781,8 @@ Ap
 Ap
 Ap
 Ap
-Tp
-TS
+xv
+yN
 qV
 qV
 "}
@@ -2822,8 +2793,8 @@ Xi
 Xi
 Xi
 Xi
-TS
-TS
+yN
+yN
 Ap
 Ap
 Ap
@@ -2856,10 +2827,10 @@ qV
 (8,1,1) = {"
 qV
 Ap
-TS
-TS
-TS
-TS
+yN
+yN
+yN
+yN
 Ap
 Ap
 Ap
@@ -3085,7 +3056,7 @@ qV
 qV
 qV
 Ap
-QP
+yN
 Ap
 Ap
 Ap
@@ -3113,7 +3084,7 @@ Mg
 xR
 LB
 Ap
-mp
+tM
 kB
 yN
 qV
@@ -3122,11 +3093,11 @@ qV
 (15,1,1) = {"
 qV
 qV
-QP
-QP
-QP
-QP
-QP
+yN
+yN
+yN
+yN
+yN
 Ap
 Ap
 Ta
@@ -3151,7 +3122,7 @@ wr
 YP
 LB
 Ap
-mp
+tM
 yN
 yN
 qV
@@ -3160,11 +3131,11 @@ qV
 (16,1,1) = {"
 qV
 qV
-QP
+yN
 tM
 tM
-QP
-QP
+yN
+yN
 Ap
 Ap
 Ta
@@ -3189,7 +3160,7 @@ Zd
 aU
 LB
 Ap
-mp
+tM
 yN
 Ap
 qV
@@ -3198,12 +3169,12 @@ qV
 (17,1,1) = {"
 qV
 qV
-QP
-QP
+yN
+yN
 tM
 tM
-QP
-QP
+yN
+yN
 Ap
 Ap
 Ta
@@ -3228,7 +3199,7 @@ eU
 zI
 Ta
 mh
-mp
+tM
 yN
 qV
 qV
@@ -3236,12 +3207,12 @@ qV
 (18,1,1) = {"
 qV
 qV
-QP
-QP
-QP
+yN
+yN
+yN
 tM
 tM
-QP
+yN
 Ap
 Ta
 Ta
@@ -3274,12 +3245,12 @@ qV
 (19,1,1) = {"
 qV
 qV
-QP
-QP
-LI
-QP
+yN
+yN
+MN
+yN
 tM
-QP
+yN
 Ap
 Ap
 Ta
@@ -3312,13 +3283,13 @@ qV
 (20,1,1) = {"
 qV
 qV
-QP
-QP
-QP
-vC
-QP
+yN
+yN
+yN
+xv
+yN
 tM
-QP
+yN
 Ap
 Ta
 Ta
@@ -3353,10 +3324,10 @@ qV
 Ap
 tM
 tM
-QP
-QP
-QP
-QP
+yN
+yN
+yN
+yN
 Ap
 Ta
 Ta
@@ -3389,12 +3360,12 @@ qV
 qV
 qV
 Ap
-QP
+yN
 tM
-QP
-LI
-vC
-QP
+yN
+MN
+xv
+yN
 Ap
 Ta
 Ta
@@ -3427,12 +3398,12 @@ qV
 qV
 Ap
 Ap
-QP
-QP
+yN
+yN
 tM
-QP
-QP
-QP
+yN
+yN
+yN
 Ap
 Ta
 Ta
@@ -3466,11 +3437,11 @@ qV
 Ap
 Ap
 Ap
-QP
+yN
 tM
-QP
-vC
-QP
+yN
+xv
+yN
 Ap
 Ap
 Ta
@@ -3504,11 +3475,11 @@ qV
 qV
 Ap
 Ap
-QP
-QP
+yN
+yN
 UB
-QP
-QP
+yN
+yN
 Ap
 Ap
 Ta
@@ -3543,9 +3514,9 @@ qV
 Pj
 Ap
 Ap
-QP
-QP
-QP
+yN
+yN
+yN
 Ap
 Ap
 Ap
@@ -3582,8 +3553,8 @@ Ap
 Ap
 Ap
 Ap
-QP
-QP
+yN
+yN
 Ap
 Ap
 Ap
@@ -3608,7 +3579,7 @@ FW
 hA
 GB
 Ta
-TS
+yN
 Ap
 qV
 qV
@@ -3646,8 +3617,8 @@ fl
 mf
 GB
 Ta
-TS
-TS
+yN
+yN
 qV
 qV
 "}
@@ -3684,8 +3655,8 @@ FW
 hA
 GB
 Ta
-Tp
-TS
+xv
+yN
 qV
 qV
 "}
@@ -3722,8 +3693,8 @@ GB
 GB
 GB
 Ta
-BO
-TS
+tM
+yN
 qV
 qV
 "}
@@ -3760,8 +3731,8 @@ GB
 Ta
 Ta
 Ta
-TS
-BO
+yN
+tM
 qV
 qV
 "}
@@ -3797,9 +3768,9 @@ Rb
 qq
 Ta
 Ta
-Tp
-TS
-BO
+xv
+yN
+tM
 qV
 qV
 "}
@@ -3816,9 +3787,9 @@ Ap
 Ap
 Ap
 yN
-mp
-mp
-mp
+tM
+tM
+tM
 yN
 yN
 Ap
@@ -3836,8 +3807,8 @@ Ap
 Ap
 Ap
 Ap
-bL
-BO
+kB
+tM
 qV
 qV
 "}
@@ -3853,11 +3824,11 @@ Ap
 Ap
 Ap
 yN
-mp
-mp
-mp
-mp
-mp
+tM
+tM
+tM
+tM
+tM
 yN
 Ap
 Ap
@@ -3875,7 +3846,7 @@ Ap
 Pj
 Ap
 Ap
-Tp
+xv
 qV
 qV
 "}
@@ -3891,8 +3862,8 @@ Ap
 Ap
 Ap
 yN
-mp
-mp
+tM
+tM
 xv
 yN
 Ap

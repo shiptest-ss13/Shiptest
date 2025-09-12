@@ -331,7 +331,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 
 		if(stat != DEAD && victim.stat != DEAD)
 
-			if(victim.reagents.has_reagent(/datum/reagent/consumable/sugar))
+			if(victim.has_reagent(/datum/reagent/consumable/sugar))
 				if(!docile || waketimerid)
 					if(controlling)
 						to_chat(victim, span_warning("You feel the soporific flow of sugar in your host's blood, lulling you into docility."))
@@ -454,8 +454,8 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	RemoveBorerActions()
 	GrantInfestActions()
 
-	if(src.mind && src.mind.language_holder && C.mind.language_holder)
-		src.mind.language_holder.copy_languages(C.mind.language_holder)
+	if(get_language_holder() && C.get_language_holder())
+		get_language_holder().copy_languages(C.get_language_holder())
 
 	log_game("[src]/([src.ckey]) has infested [victim]/([victim.ckey]")
 
@@ -484,7 +484,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	for(var/datum in typesof(/datum/borer_chem))
 		var/datum/borer_chem/C = new datum()
 		if(C.chem)
-			content += "<tr><td><a class='chem-select' href='?_src_=[text_ref(src)];src=[text_ref(src)];borer_use_chem=[C.chemname]'>[C.chemname] ([C.quantity]u, takes [C.chemuse] chemical)</a><p>[C.chem_desc]</p></td></tr>"
+			content += "<tr><td><a class='chem-select' href='byond://?_src_=[text_ref(src)];src=[text_ref(src)];borer_use_chem=[C.chemname]'>[C.chemname] ([C.quantity]u, takes [C.chemuse] chemical)</a><p>[C.chem_desc]</p></td></tr>"
 	content += "</table>"
 
 	var/html = get_html_template(content)
@@ -570,10 +570,9 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	if(controlling)
 		detach()
 
-	if(src.mind.language_holder)
-		var/datum/language_holder/language_holder = src.mind.language_holder
-		language_holder.remove_all_languages()
-		language_holder.grant_language(/datum/language/galactic_common)
+	if(get_language_holder())
+		get_language_holder().remove_all_languages()
+		get_language_holder().grant_language(/datum/language/galactic_common)
 
 	GrantBorerActions()
 	RemoveInfestActions()
@@ -637,7 +636,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 		to_chat(src, span_notice("You send a jolt of energy to your host, reviving them!"))
 		victim.grab_ghost(force = TRUE) //brings the host back, no eggscape
 		C.emote("gasp")
-		C.set_jitter(100)
+		C.set_timed_status_effect(200 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 
 /mob/living/simple_animal/borer/verb/bond_brain()
 	set category = "Borer"
@@ -1157,7 +1156,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	roundend_category = "borers"
 	antagpanel_category = "borer"
 	job_rank = ROLE_BORER
-	show_in_antagpanel = TRUE
+	show_in_antagpanel = FALSE
 	var/datum/team/borer/borer_team
 
 /datum/antagonist/borer/create_team(datum/team/borer/new_team)

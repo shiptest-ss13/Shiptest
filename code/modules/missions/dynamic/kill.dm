@@ -20,7 +20,7 @@
 	return mission_string
 
 /datum/mission/ruin/signaled/kill/frontiersmen
-	value = 4500
+	value = 2000
 	mission_limit = 3
 	mission_reward = list(
 		/obj/item/gun/ballistic/automatic/pistol/mauler,
@@ -30,7 +30,7 @@
 	//setpiece_item = /obj/item/clothing/neck/dogtag/frontier
 
 /datum/mission/ruin/signaled/kill/ramzi
-	value = 3000
+	value = 2500
 	mission_limit = 3
 	mission_reward = list(
 		/obj/item/gun/ballistic/automatic/smg/cobra,
@@ -40,7 +40,7 @@
 	//setpiece_item = /obj/item/clothing/neck/dogtag/ramzi
 
 /datum/mission/ruin/signaled/kill/syndi_docs
-	value = 5000
+	value = 3000
 	mission_limit = 1
 	faction = /datum/faction/syndicate
 	registered_type = /mob/living/simple_animal/hostile/human/nanotrasen/elite

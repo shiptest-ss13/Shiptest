@@ -85,8 +85,7 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
 	canSmoothWith = list(SMOOTH_GROUP_FLOOR_ASH, SMOOTH_GROUP_CLOSED_TURFS)
 	layer = HIGH_TURF_LAYER
-	slowdown = 1
-
+	slowdown = 0
 /turf/open/floor/plating/ashplanet/rocky
 	gender = PLURAL
 	name = "rocky ground"
@@ -106,7 +105,7 @@
 	name = "wet rocky ground"
 	smoothing_flags = NONE
 	icon_state = "wateryrock"
-	slowdown = 2
+	slowdown = 0
 	footstep = FOOTSTEP_FLOOR
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
 	clawfootstep = FOOTSTEP_HARD_CLAW
@@ -150,6 +149,7 @@
 	barefootstep = FOOTSTEP_ICE
 	clawfootstep = FOOTSTEP_ICE
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	flammability = -5
 
 /turf/open/floor/plating/ice/Initialize(mapload, inherited_virtual_z)
 	. = ..()
@@ -220,33 +220,6 @@
 
 /turf/open/floor/plating/snowed/smoothed/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-
-/turf/open/floor/plating/grass
-	name = "grass"
-	desc = "A patch of grass."
-	icon_state = "grass0"
-	base_icon_state = "grass"
-	bullet_bounce_sound = null
-	footstep = FOOTSTEP_GRASS
-	barefootstep = FOOTSTEP_GRASS
-	clawfootstep = FOOTSTEP_GRASS
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
-	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
-	layer = GRASS_TURF_LAYER
-	var/smooth_icon = 'icons/turf/floors/grass.dmi'
-
-/turf/open/floor/plating/grass/Initialize(mapload, inherited_virtual_z)
-	. = ..()
-	if(smoothing_flags)
-		var/matrix/translation = new
-		translation.Translate(-19, -19)
-		transform = translation
-		icon = smooth_icon
-
-/turf/open/floor/plating/grass/lavaland
-	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 
 /turf/open/floor/plating/sandy_dirt
 	gender = PLURAL

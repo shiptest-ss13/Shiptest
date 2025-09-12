@@ -8,7 +8,7 @@
 /datum/config_entry
 	var/name	//read-only, this is determined by the last portion of the derived entry type
 	var/config_entry_value
-	var/default	//read-only, just set value directly
+	var/default	//read-only, just set value directly. This is stupid. Port https://github.com/tgstation/tgstation/pull/59874
 
 	var/resident_file	//the file which this was loaded from, if any
 	var/modified = FALSE	//set to TRUE if the default has been overridden by a config entry

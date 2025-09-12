@@ -6,7 +6,7 @@
 	w_class = WEIGHT_CLASS_BULKY //no carrying these around, sorry :(
 	custom_materials = list(/datum/material/iron = 500)
 	/// Amount of wear removed from a gun on use
-	var/wear_reduction = 60
+	var/wear_reduction = 120
 	/// Number of times this gun fixer can be used
 	var/uses = 5
 
@@ -18,7 +18,7 @@
 /obj/item/gun_maint_kit/afterattack(atom/target, mob/user, proximity)
 	if(!proximity)
 		return
-	if(!uses)
+	if(uses <= 0)
 		to_chat(user, span_warning("[src] is out of uses!"))
 		return
 	var/obj/item/gun/ballistic/fixable = target

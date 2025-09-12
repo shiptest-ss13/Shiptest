@@ -32,4 +32,6 @@
 	var/datum/antagonist/changeling/changeling = mind.has_antag_datum(/datum/antagonist/changeling)
 	if(changeling)
 		changeling.regain_powers()
+
+	update_fov_client()
 	player_logged = FALSE

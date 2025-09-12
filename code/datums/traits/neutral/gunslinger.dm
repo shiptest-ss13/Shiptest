@@ -5,3 +5,4 @@
 	value = 0
 	gain_text = span_notice("The HP Shadow is greatest handgun ever made.")
 	lose_text = span_danger("...Who the hell would use such antiquated weapons in this year?")
+	detectable = FALSE

@@ -96,20 +96,20 @@
 				new buildstacktype(drop_location(), buildstackamount)
 			qdel(src)
 	else if(W.tool_behaviour == TOOL_WELDER)
-		if(obj_integrity < max_integrity)
-			if(!W.tool_start_check(user, amount=0))
+		if(atom_integrity < max_integrity)
+			if(!W.tool_start_check(user, src, amount=0))
 				return
 
 			user.visible_message(span_notice("[user] starts to repair [src]."),
 								span_notice("You begin repairing [src]..."),
 								span_hear("You hear welding."))
 			if(W.use_tool(src, user, 40, volume=40))
-				obj_integrity = max_integrity
+				atom_integrity = max_integrity
 				user.visible_message(span_notice("[user] repairs [src]."), \
 									span_notice("You finish repairing [src]."))
 
 		else if(!anchored)
-			if(!W.tool_start_check(user, amount=0))
+			if(!W.tool_start_check(user, src, amount=0))
 				return
 
 			user.visible_message(span_notice("[user] starts to weld [src] to the floor."),
@@ -119,7 +119,7 @@
 				set_anchored(TRUE)
 				to_chat(user, span_notice("You weld [src] to the floor."))
 		else
-			if(!W.tool_start_check(user, amount=0))
+			if(!W.tool_start_check(user, src, amount=0))
 				return
 
 			user.visible_message(span_notice("[user] starts to cut [src] free from the floor."),

@@ -45,6 +45,7 @@
 #define DYNAMIC_WORLD_ASTEROID "asteroid"
 #define DYNAMIC_WORLD_MINOR_PLANET "minor"
 #define DYNAMIC_WORLD_SPACERUIN "space"
+#define DYNAMIC_WORLD_SPACE_NO_RUIN "empty space"
 #define DYNAMIC_WORLD_GAS_GIANT "gas giant"
 #define DYNAMIC_WORLD_PLASMA_GIANT "plasma giant"
 
@@ -84,21 +85,13 @@
 
 // Converts ores to colors, meant for examining planets on the overmap
 #define ORES_TO_COLORS_LIST list(\
-		/obj/item/stack/ore/hematite = "#87423b",\
-		/obj/item/stack/ore/magnetite =  "#73737b",\
-		/obj/item/stack/ore/malachite = "#46b89b",\
-		/obj/item/stack/ore/sulfur = "#ede218",\
-		/obj/item/stack/ore/galena = "#596e67",\
-		/obj/item/stack/ore/proustite = "#593441",\
-		/obj/item/stack/ore/autunite = "#d2d46e",\
+		/obj/item/stack/ore/iron = "#87423b",\
+		/obj/item/stack/ore/silver = "#593441",\
+		/obj/item/stack/ore/uranium = "#d2d46e",\
 		/obj/item/stack/ore/gold = "#ffe88c",\
-		/obj/item/stack/ore/sulfur/pyrite = "#ede218",\
 		/obj/item/stack/ore/plasma =  "#dd4cc0",\
 		/obj/item/stack/ore/diamond = "#7a95c4",\
-		/obj/item/stack/ore/rutile = "#ab9a61",\
-		/obj/item/stack/ore/graphite = "#665b5b",\
-		/obj/item/stack/ore/graphite/coal = "#665b5b",\
-		/obj/item/stack/ore/quartzite = "#cfb4d1",\
+		/obj/item/stack/ore/titanium = "#ab9a61",\
 		)
 
 // Ship interactions with overmap objects and such.

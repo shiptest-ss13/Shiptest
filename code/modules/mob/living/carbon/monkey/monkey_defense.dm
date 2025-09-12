@@ -116,6 +116,18 @@
 			log_combat(M, src, "disarmed", "[I ? " removing \the [I]" : ""]")
 			updatehealth()
 
+//TG turned monkeys into carbons so im copy pasting attack_animal cause I dont care about this interaction that much.
+/mob/living/carbon/monkey/attack_basic_mob(mob/living/basic/user, list/modifiers)
+	. = ..()
+	if(.)
+		var/damage = rand(user.melee_damage_lower, user.melee_damage_upper)
+		var/dam_zone = dismembering_strike(user, pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
+		if(!dam_zone) //Dismemberment successful
+			return TRUE
+		var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
+		if(!affecting)
+			affecting = get_bodypart(BODY_ZONE_CHEST)
+		apply_damage(damage, user.melee_damage_type, affecting)
 
 /mob/living/carbon/monkey/attack_animal(mob/living/simple_animal/M)
 	. = ..()

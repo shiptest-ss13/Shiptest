@@ -309,7 +309,7 @@
 		return FALSE
 
 	if(machine_stat & BROKEN)
-		if(!I.tool_start_check(user, amount=0))
+		if(!I.tool_start_check(user, src, amount=0))
 			return TRUE
 		to_chat(user, span_notice("You begin cutting [src] apart..."))
 		if(I.use_tool(src, user, 30, volume=50))
@@ -319,7 +319,7 @@
 
 	return TRUE
 
-/obj/machinery/portable_atmospherics/canister/obj_break(damage_flag)
+/obj/machinery/portable_atmospherics/canister/atom_break(damage_flag)
 	. = ..()
 	if(!.)
 		return
@@ -331,7 +331,7 @@
 	T.assume_air(air_contents)
 	air_update_turf()
 
-	obj_break()
+	atom_break()
 	density = FALSE
 	playsound(src.loc, 'sound/effects/spray.ogg', 10, TRUE, -3)
 	investigate_log("was destroyed.", INVESTIGATE_ATMOS)

@@ -20,7 +20,7 @@
 	icon = 'icons/mob/gondolas.dmi'
 	icon_state = "gondola"
 	icon_living = "gondola"
-	loot = list(/obj/effect/decal/cleanable/blood/gibs, /obj/item/stack/sheet/animalhide/gondola = 1, /obj/item/reagent_containers/food/snacks/meat/slab/gondola = 1)
+	loot = list(/obj/effect/decal/cleanable/blood/gibs, /obj/item/stack/sheet/animalhide/gondola = 1)
 	//Gondolas aren't affected by cold.
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0

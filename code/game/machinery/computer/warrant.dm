@@ -13,7 +13,7 @@
 
 	var/list/dat = list("Logged in as: ")
 	if(authenticated)
-		dat += {"<a href='?src=[REF(src)];choice=Logout'>[authenticated]</a><hr>"}
+		dat += {"<a href='byond://?src=[REF(src)];choice=Logout'>[authenticated]</a><hr>"}
 		if(current)
 			var/background
 			var/notice = ""
@@ -59,7 +59,7 @@
 		else
 			dat += {"<span>** No security record found for this ID **</span>"}
 	else
-		dat += {"<a href='?src=[REF(src)];choice=Login'>------------</a><hr>"}
+		dat += {"<a href='byond://?src=[REF(src)];choice=Login'>------------</a><hr>"}
 
 	var/datum/browser/popup = new(user, "warrant", "Security Warrant Console", 600, 400)
 	popup.set_content(dat.Join())

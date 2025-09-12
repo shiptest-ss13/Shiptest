@@ -116,7 +116,6 @@
 	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(src)
 	if (gen_ship_access(ship))
 		return TRUE
-
 	if(!item)
 		return FALSE
 	var/obj/item/card/id/id = item?.GetID()
@@ -405,7 +404,7 @@
 
 /proc/get_all_jobs()
 	return list("Assistant", "Captain", "Head of Personnel", "Bartender", "Cook", "Botanist", "Quartermaster", "Cargo Technician",
-				"Shaft Miner", "Clown", "Mime", "Janitor", "Curator", "Lawyer", "Chaplain", "Chief Engineer", "Station Engineer",
+				"Shaft Miner", "Janitor", "Curator", "Lawyer", "Chaplain", "Chief Engineer", "Station Engineer",
 				"Atmospheric Technician", "Chief Medical Officer", "Medical Doctor", "Chemist", "Geneticist", "Virologist", "Paramedic", "Prisoner", "Psychologist", //WS Edit - Brig Phys / SolGov Rep
 				"Research Director", "Scientist", "Roboticist", "Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "SolGov Representative") //WS Edit - Brig Phys / SolGov Rep
 

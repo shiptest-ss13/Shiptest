@@ -2,6 +2,7 @@
 	projectile_type = /obj/projectile/ion
 	select_name = "ion"
 	fire_sound = 'sound/weapons/ionrifle.ogg'
+	delay = 66
 
 /obj/item/ammo_casing/energy/ion/cheap
 	e_cost = 833

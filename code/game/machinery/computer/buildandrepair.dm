@@ -20,7 +20,7 @@
 					state = 1
 				return
 			if(P.tool_behaviour == TOOL_WELDER)
-				if(!P.tool_start_check(user, amount=0))
+				if(!P.tool_start_check(user, src, amount=0))
 					return
 
 				to_chat(user, span_notice("You start deconstructing the frame..."))
@@ -75,7 +75,7 @@
 				update_appearance()
 				return
 			if(istype(P, /obj/item/stack/cable_coil))
-				if(!P.tool_start_check(user, amount=5))
+				if(!P.tool_start_check(user, src, amount=5))
 					return
 				to_chat(user, span_notice("You start adding cables to the frame..."))
 				if(P.use_tool(src, user, 20, volume=50, amount=5))
@@ -96,7 +96,7 @@
 				return
 
 			if(istype(P, /obj/item/stack/sheet/glass))
-				if(!P.tool_start_check(user, amount=2))
+				if(!P.tool_start_check(user, src, amount=2))
 					return
 				playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 				to_chat(user, span_notice("You start to put in the glass panel..."))

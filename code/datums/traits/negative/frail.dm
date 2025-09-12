@@ -1,8 +1,8 @@
 /datum/quirk/frail
 	name = "Frail"
-	desc = "Your bones might as well be made of glass! Your limbs can take less damage before they become disabled."
+	desc = "You have skin of paper and bones of glass! You suffer wounds much more easily than most."
 	value = -2
-	mob_traits = list(TRAIT_EASYLIMBDISABLE)
+	mob_traits = TRAIT_EASILY_WOUNDED
 	gain_text = span_danger("You feel frail.")
 	lose_text = span_notice("You feel sturdy again.")
-	medical_record_text = "Patient has unusually frail bones, recommend calcium-rich diet."
+	medical_record_text = "Patient is absurdly easy to injure. Please take all due dilligence to avoid possible malpractice suits."

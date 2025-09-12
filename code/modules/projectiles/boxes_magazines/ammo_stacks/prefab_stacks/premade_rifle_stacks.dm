@@ -169,10 +169,10 @@
 /obj/item/storage/box/ammo/a308
 	name = "box of .308 ammo"
 	desc = "A box of standard .308 ammo."
-	icon_state = "a308box"
-
-/obj/item/storage/box/ammo/a308/hunterspride
 	icon_state = "a308box-HP"
+
+/obj/item/storage/box/ammo/a308/inteq
+	icon_state = "a308box"
 
 /obj/item/storage/box/ammo/a308/PopulateContents()
 	var/static/items_inside = list(
@@ -186,7 +186,7 @@
 /obj/item/storage/box/ammo/a308/hp
 	name = "box of .308 HP ammo"
 	desc = "A box of standard .308 HP ammo."
-	icon_state = "a308box"
+	icon_state = "a308box-hp-hp"
 
 /obj/item/storage/box/ammo/a308/hp/PopulateContents()
 	var/static/items_inside = list(
@@ -200,7 +200,7 @@
 /obj/item/storage/box/ammo/a308/ap
 	name = "box of .308 AP ammo"
 	desc = "A box of standard .308 AP ammo."
-	icon_state = "a308box"
+	icon_state = "a308box-hp-ap"
 
 /obj/item/storage/box/ammo/a308/ap/PopulateContents()
 	var/static/items_inside = list(

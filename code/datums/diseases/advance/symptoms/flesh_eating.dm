@@ -60,10 +60,10 @@ Bonus
 	M.take_overall_damage(brute = get_damage, required_status = BODYTYPE_ORGANIC)
 	if(pain)
 		M.adjustStaminaLoss(get_damage * 2)
-	if(bleed)
-		if(ishuman(M))
-			var/mob/living/carbon/human/H = M
-			H.cause_bleeding(5 * power)
+	// if(bleed)
+	// 	if(ishuman(M)) //todo: wounds? do we even want this?
+	// 		var/mob/living/carbon/human/H = M
+	// 		H.cause_bleeding(5 * power)
 	return 1
 
 /*

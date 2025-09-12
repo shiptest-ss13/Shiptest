@@ -1,7 +1,5 @@
-
-
-/mob/living/carbon/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, break_modifier = 1, sharpness = FALSE)
-	SEND_SIGNAL(src, COMSIG_MOB_APPLY_DAMGE, damage, damagetype, def_zone)
+/mob/living/carbon/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE, attack_direction = null)
+	SEND_SIGNAL(src, COMSIG_MOB_APPLY_DAMAGE, damage, damagetype, def_zone)
 	var/hit_percent = (100-blocked)/100
 	if(!damage || (!forced && hit_percent <= 0))
 		return 0
@@ -21,26 +19,31 @@
 	switch(damagetype)
 		if(BRUTE)
 			if(BP)
-				if(BP.receive_damage(damage_amount, 0, break_modifier, sharpness = sharpness))
+				if(BP.receive_damage(damage_amount, 0, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness, attack_direction = attack_direction))
 					update_damage_overlays()
 			else //no bodypart, we deal damage with a more general method.
 				adjustBruteLoss(damage_amount, forced = forced)
 			if(stat <= HARD_CRIT)
 				shake_animation(damage_amount)
+
 		if(BURN)
 			if(BP)
-				if(BP.receive_damage(0, damage_amount, break_modifier, sharpness = sharpness))
+				if(BP.receive_damage(0, damage_amount, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness, attack_direction = attack_direction))
 					update_damage_overlays()
 			else
 				adjustFireLoss(damage_amount, forced = forced)
 			if(stat <= HARD_CRIT)
 				shake_animation(damage_amount)
+
 		if(TOX)
 			adjustToxLoss(damage_amount, forced = forced)
+
 		if(OXY)
 			adjustOxyLoss(damage_amount, forced = forced)
+
 		if(CLONE)
 			adjustCloneLoss(damage_amount, forced = forced)
+
 		if(STAMINA)
 			if(BP)
 				if(BP.receive_damage(0, 0, damage_amount))
@@ -160,15 +163,12 @@
 ////////////////////////////////////////////
 
 //Returns a list of damaged bodyparts
-//ignore_integrity shows limbs that can't be healed due to low integrity
-/mob/living/carbon/proc/get_damaged_bodyparts(brute = FALSE, burn = FALSE, stamina = FALSE, status, ignore_integrity = FALSE)
+/mob/living/carbon/proc/get_damaged_bodyparts(brute = FALSE, burn = FALSE, stamina = FALSE, status)
 	var/list/obj/item/bodypart/parts = list()
 	for(var/obj/item/bodypart/BP as anything in bodyparts)
 		if(status && !(BP.bodytype & status))
 			continue
 		if((brute && BP.brute_dam) || (burn && BP.burn_dam) || (stamina && BP.stamina_dam))
-			if (!ignore_integrity && BP.get_curable_damage() <= 0)
-				continue
 			parts += BP
 	return parts
 
@@ -179,6 +179,15 @@
 		if(status && !(BP.bodytype & status))
 			continue
 		if(BP.brute_dam + BP.burn_dam < BP.max_damage)
+			parts += BP
+	return parts
+
+///Returns a list of bodyparts with wounds (in case someone has a wound on an otherwise fully healed limb)
+/mob/living/carbon/proc/get_wounded_bodyparts(brute = FALSE, burn = FALSE, stamina = FALSE, status)
+	var/list/obj/item/bodypart/parts = list()
+	for(var/X in bodyparts)
+		var/obj/item/bodypart/BP = X
+		if(LAZYLEN(BP.wounds))
 			parts += BP
 	return parts
 
@@ -207,24 +216,13 @@
  *
  * It automatically updates health status
  */
-/mob/living/carbon/take_bodypart_damage(brute = 0, burn = 0, stamina = 0, updating_health = TRUE, required_status, check_armor = FALSE)
+/mob/living/carbon/take_bodypart_damage(brute = 0, burn = 0, stamina = 0, updating_health = TRUE, required_status, check_armor = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE)
 	var/list/obj/item/bodypart/parts = get_damageable_bodyparts(required_status)
 	if(!parts.len)
 		return
 	var/obj/item/bodypart/picked = pick(parts)
-	if(picked.receive_damage(brute, burn, stamina, check_armor ? run_armor_check(picked, (brute ? "melee" : burn ? "fire" : stamina ? "bullet" : null)) : FALSE))
+	if(picked.receive_damage(brute, burn, stamina,check_armor ? run_armor_check(picked, (brute ? "melee" : burn ? "fire" : stamina ? "bullet" : null)) : FALSE, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 		update_damage_overlays()
-
-///Fix integrity in MANY bodyparts, in random order
-/mob/living/carbon/heal_overall_integrity(amount = 0, required_status, updating_health = TRUE)
-	var/list/obj/item/bodypart/parts = get_damaged_bodyparts(required_status, FALSE)
-	var/update = NONE
-	while(parts.len && (amount > 0))
-		var/obj/item/bodypart/picked = pick(parts)
-		var/integrity_was = picked.integrity_loss
-		update |= picked.heal_integrity(amount, required_status, FALSE)
-		amount -= round(amount - (integrity_was - picked.integrity_loss), DAMAGE_PRECISION)
-		parts -= picked
 
 ///Heal MANY bodyparts, in random order
 /mob/living/carbon/heal_overall_damage(brute = 0, burn = 0, stamina = 0, required_status, updating_health = TRUE)
@@ -269,7 +267,7 @@
 		var/stamina_was = picked.stamina_dam
 
 
-		update |= picked.receive_damage(brute_per_part, burn_per_part, stamina_per_part, FALSE, required_status)
+		update |= picked.receive_damage(brute_per_part, burn_per_part, stamina_per_part, FALSE, required_status, wound_bonus = CANT_WOUND)
 
 		brute	= round(brute - (picked.brute_dam - brute_was), DAMAGE_PRECISION)
 		burn	= round(burn - (picked.burn_dam - burn_was), DAMAGE_PRECISION)
@@ -278,71 +276,8 @@
 		parts -= picked
 	if(updating_health)
 		updatehealth()
+
 	if(update)
 		update_damage_overlays()
+
 	update_stamina()
-
-/// Gets a list of bleeding bodyparts, argument ignore_staunched = are we actively bleeding (no treatment)
-/mob/living/carbon/proc/get_bleeding_parts(ignore_staunched = FALSE)
-	var/list/obj/item/bodypart/parts = list()
-	for(var/obj/item/bodypart/BP as anything in bodyparts)
-		if(BP.bleeding && (!ignore_staunched || !BP.GetComponent(/datum/component/bandage)))
-			parts += BP
-	return parts
-
-/// Gets a list of bandaged parts
-/mob/living/carbon/proc/get_bandaged_parts()
-	var/list/obj/item/bodypart/parts = list()
-	for(var/obj/item/bodypart/BP as anything in bodyparts)
-		if(BP.GetComponent(/datum/component/bandage))
-			parts += BP
-	return parts
-
-/// Apply bleeding to one random bodypart.
-/mob/living/carbon/proc/cause_bleeding(amt)
-	if(amt <= 0)
-		return
-	var/list/obj/item/bodypart/parts = bodyparts.Copy()
-	if(!length(parts))
-		return
-	var/obj/item/bodypart/part_in_question = pick(parts)
-	part_in_question.adjust_bleeding(amt)
-
-/// Heal bleeding from one random bodypart
-/mob/living/carbon/proc/heal_bleeding(amt)
-	if(amt <= 0)
-		return
-	var/list/obj/item/bodypart/parts = get_bleeding_parts()
-	if(!length(parts))
-		return
-	var/obj/item/bodypart/part_in_question = pick(parts)
-	part_in_question.adjust_bleeding(-amt)
-	var/bleed_calc = part_in_question.bleeding
-	return min(bleed_calc - part_in_question.bleeding, 0)
-
-/// Apply bleeding to all bodyparts
-/mob/living/carbon/proc/cause_overall_bleeding(amt)
-	if(amt <= 0)
-		return
-	var/list/obj/item/bodypart/parts = bodyparts.Copy()
-	while(length(parts))
-		var/obj/item/bodypart/part_in_question = pick(parts)
-		if(part_in_question.is_pseudopart)
-			parts -= part_in_question
-			continue
-		var/amount_to_take = min(part_in_question.bleeding, amt / length(parts))
-		part_in_question.adjust_bleeding(amount_to_take)
-		amt -= amount_to_take
-		parts -= part_in_question
-
-/// Heal bleeding from all bodyparts
-/mob/living/carbon/proc/heal_overall_bleeding(amt)
-	if(amt <= 0)
-		return
-	var/list/obj/item/bodypart/parts = get_bleeding_parts()
-	while(length(parts))
-		var/obj/item/bodypart/part_in_question = pick(parts)
-		var/amount_to_take = min(part_in_question.bleeding, amt / length(parts))
-		part_in_question.adjust_bleeding(-amount_to_take)
-		amt -= amount_to_take
-		parts -= part_in_question

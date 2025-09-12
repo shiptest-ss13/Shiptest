@@ -53,16 +53,27 @@ DEFINE_BITFIELD(smoothing_junction, list(
 #define DEFAULT_UNDERLAY_ICON 'icons/turf/floors.dmi'
 #define DEFAULT_UNDERLAY_ICON_STATE "plating"
 
-
-#define SET_ADJ_IN_DIR(source, junction, conn_junction, direction, direction_flag) \
+#define SET_ADJ_IN_DIR(source, src_area, junction, conn_junction, direction, direction_flag) \
 	do { \
 		var/turf/neighbor = get_step(source, direction); \
+		var/area/ship/source_area = src_area; \
+		var/area/ship/target_area = get_area(neighbor); \
 		if(!neighbor) { \
 			if(source.smoothing_flags & SMOOTH_BORDER) { \
 				junction |=  direction_flag; \
 				conn_junction |= direction_flag; \
+			continue; \
 			}; \
 		}; \
+		else if( \
+			((source_area.area_flags & SHIP_SMOOTHING) != (target_area.area_flags & SHIP_SMOOTHING)) || \
+			( \
+			((source_area.area_flags & SHIP_SMOOTHING) & (target_area.area_flags & SHIP_SMOOTHING)) && \
+			source_area.mobile_port != target_area.mobile_port \
+			) \
+			) { \
+				continue; \
+				}; \
 		else { \
 			if(!isnull(neighbor.smoothing_groups)) { \
 				for(var/target in source.canSmoothWith) { \
@@ -99,7 +110,6 @@ DEFINE_BITFIELD(smoothing_junction, list(
 		}; \
 	} while(FALSE)
 
-
 ///Scans all adjacent turfs to find targets to smooth with.
 /atom/proc/calculate_adjacencies()
 	. = NONE
@@ -107,8 +117,10 @@ DEFINE_BITFIELD(smoothing_junction, list(
 	if(!loc)
 		return
 
+	var/area/ship/src_area = get_area(src)
+
 	for(var/direction in GLOB.cardinals)
-		switch(find_type_in_direction(direction))
+		switch(find_type_in_direction(direction, src_area))
 			if(NULLTURF_BORDER)
 				if((smoothing_flags & SMOOTH_BORDER))
 					. |= direction //BYOND and smooth dirs are the same for cardinals
@@ -117,7 +129,7 @@ DEFINE_BITFIELD(smoothing_junction, list(
 
 	if(. & NORTH_JUNCTION)
 		if(. & WEST_JUNCTION)
-			switch(find_type_in_direction(NORTHWEST))
+			switch(find_type_in_direction(NORTHWEST, src_area))
 				if(NULLTURF_BORDER)
 					if((smoothing_flags & SMOOTH_BORDER))
 						. |= NORTHWEST_JUNCTION
@@ -125,7 +137,7 @@ DEFINE_BITFIELD(smoothing_junction, list(
 					. |= NORTHWEST_JUNCTION
 
 		if(. & EAST_JUNCTION)
-			switch(find_type_in_direction(NORTHEAST))
+			switch(find_type_in_direction(NORTHEAST, src_area))
 				if(NULLTURF_BORDER)
 					if((smoothing_flags & SMOOTH_BORDER))
 						. |= NORTHEAST_JUNCTION
@@ -134,7 +146,7 @@ DEFINE_BITFIELD(smoothing_junction, list(
 
 	if(. & SOUTH_JUNCTION)
 		if(. & WEST_JUNCTION)
-			switch(find_type_in_direction(SOUTHWEST))
+			switch(find_type_in_direction(SOUTHWEST, src_area))
 				if(NULLTURF_BORDER)
 					if((smoothing_flags & SMOOTH_BORDER))
 						. |= SOUTHWEST_JUNCTION
@@ -142,7 +154,7 @@ DEFINE_BITFIELD(smoothing_junction, list(
 					. |= SOUTHWEST_JUNCTION
 
 		if(. & EAST_JUNCTION)
-			switch(find_type_in_direction(SOUTHEAST))
+			switch(find_type_in_direction(SOUTHEAST, src_area))
 				if(NULLTURF_BORDER)
 					if((smoothing_flags & SMOOTH_BORDER))
 						. |= SOUTHEAST_JUNCTION
@@ -281,14 +293,21 @@ DEFINE_BITFIELD(smoothing_junction, list(
 
 
 ///Scans direction to find targets to smooth with.
-/atom/proc/find_type_in_direction(direction)
+/atom/proc/find_type_in_direction(direction, area/ship/source_area)
 	var/turf/target_turf = get_step(src, direction)
 	if(!target_turf)
 		return NULLTURF_BORDER
 
-	var/area/target_area = get_area(target_turf)
-	var/area/source_area = get_area(src)
-	if((source_area.area_limited_icon_smoothing || target_area.area_limited_icon_smoothing) && !istype(source_area, target_area.type) && !istype(target_area, source_area.type))
+	/*Special case for smoothing ships. They should only blend in their own areas, not elsewhere.
+	Note that smoothing is mostly done through the SET_ADJ_IN_DIR() macro, not here, which has the same exception.*/
+	var/area/ship/target_area = get_area(target_turf)
+
+	/*If one has SHIP_SMOOTHING and the other does not, no smoothing. Both areas need SHIP_SMOOTHING and then be of the same mobile port to tile together.
+	Bitmath is very fast. The only way to make this faster is if mobile_port was a global area variable, so then you can compare mobile_port without checking for SHIP_SMOOTHING.*/
+	if((source_area.area_flags & SHIP_SMOOTHING) != (target_area.area_flags & SHIP_SMOOTHING) || \
+		( \
+		((source_area.area_flags & SHIP_SMOOTHING) & (target_area.area_flags & SHIP_SMOOTHING)) && source_area.mobile_port != target_area.mobile_port \
+		))
 		return NO_ADJ_FOUND
 
 	if(isnull(canSmoothWith)) //special case in which it will only smooth with itself
@@ -325,9 +344,10 @@ DEFINE_BITFIELD(smoothing_junction, list(
 /atom/proc/bitmask_smooth()
 	var/new_junction = NONE
 	var/new_conn_junction = NONE
+	var/area/src_area = get_area(src) //Proc here and send out to optimize the rest of the calls.
 
 	for(var/direction in GLOB.cardinals) //Cardinal case first.
-		SET_ADJ_IN_DIR(src, new_junction, new_conn_junction, direction, direction)
+		SET_ADJ_IN_DIR(src, src_area, new_junction, new_conn_junction, direction, direction)
 
 	if(!(new_junction & (NORTH|SOUTH)) || !(new_junction & (EAST|WEST)))
 		set_smoothed_icon_state(new_junction)
@@ -337,17 +357,17 @@ DEFINE_BITFIELD(smoothing_junction, list(
 
 	if(new_junction & NORTH_JUNCTION)
 		if(new_junction & WEST_JUNCTION)
-			SET_ADJ_IN_DIR(src, new_junction, new_conn_junction, NORTHWEST, NORTHWEST_JUNCTION)
+			SET_ADJ_IN_DIR(src, src_area, new_junction, new_conn_junction, NORTHWEST, NORTHWEST_JUNCTION)
 
 		if(new_junction & EAST_JUNCTION)
-			SET_ADJ_IN_DIR(src, new_junction, new_conn_junction, NORTHEAST, NORTHEAST_JUNCTION)
+			SET_ADJ_IN_DIR(src, src_area, new_junction, new_conn_junction, NORTHEAST, NORTHEAST_JUNCTION)
 
 	if(new_junction & SOUTH_JUNCTION)
 		if(new_junction & WEST_JUNCTION)
-			SET_ADJ_IN_DIR(src, new_junction, new_conn_junction, SOUTHWEST, SOUTHWEST_JUNCTION)
+			SET_ADJ_IN_DIR(src, src_area, new_junction, new_conn_junction, SOUTHWEST, SOUTHWEST_JUNCTION)
 
 		if(new_junction & EAST_JUNCTION)
-			SET_ADJ_IN_DIR(src, new_junction, new_conn_junction, SOUTHEAST, SOUTHEAST_JUNCTION)
+			SET_ADJ_IN_DIR(src, src_area, new_junction, new_conn_junction, SOUTHEAST, SOUTHEAST_JUNCTION)
 
 	set_smoothed_icon_state(new_junction)
 	if(smoothing_flags & SMOOTH_CONNECTORS)

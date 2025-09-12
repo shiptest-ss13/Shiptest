@@ -407,7 +407,7 @@
 	..(gibbed)
 
 /mob/living/simple_animal/hostile/proc/summon_backup(distance, exact_faction_match)
-	do_alert_animation(src)
+	do_alert_animation()
 	playsound(loc, 'sound/machines/chime.ogg', 50, TRUE, -1)
 	var/atom/target_from = GET_TARGETS_FROM(src)
 	for(var/mob/living/simple_animal/hostile/M in oview(distance, target_from))
@@ -724,7 +724,7 @@
 		new /obj/effect/hotspot(T)
 		T.hotspot_expose(700,50,1)
 		if(ignite_turfs)
-			T.IgniteTurf(power,flame_color)
+			T.ignite_turf(power,flame_color)
 		for(var/mob/living/L in T.contents)
 			if((L in hit_list) || L == source)
 				continue

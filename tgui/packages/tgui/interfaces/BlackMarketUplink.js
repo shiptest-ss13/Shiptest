@@ -130,8 +130,8 @@ const ShipmentSelector = (props, context) => {
               <Box mt={1}>{method.description}</Box>
               <Button
                 mt={2}
-                content={formatMoney(method.price) + ' cr'}
-                disabled={money < method.price}
+                content={formatMoney(method.cost) + ' cr'}
+                disabled={money < method.cost}
                 onClick={() =>
                   act('buy', {
                     method: method.name,

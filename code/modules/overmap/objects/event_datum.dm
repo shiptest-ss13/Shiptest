@@ -97,8 +97,7 @@
 	)
 	var/primary_ores = list(\
 		/obj/item/stack/ore/plasma,
-		/obj/item/stack/ore/hematite,
-		/obj/item/stack/ore/malachite,
+		/obj/item/stack/ore/iron,
 		)
 
 /datum/overmap/event/meteor/alter_token_appearance()

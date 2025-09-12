@@ -204,12 +204,12 @@
 
 /datum/religion_sect/clockwork/on_conversion(mob/living/L)
 	..()
-	L.grant_language(/datum/language/ratvar, TRUE, TRUE, LANGUAGE_MIND)
+	L.grant_language(/datum/language/ratvar, source=LANGUAGE_MIND)
 	to_chat(L, span_boldnotice("The words of [GLOB.deity] fill your head!"))
 
 /datum/religion_sect/clockwork/sect_bless(mob/living/L, mob/living/user)
 	if(!L.has_language(/datum/language/ratvar, TRUE))
-		L.grant_language(/datum/language/ratvar, TRUE, TRUE, LANGUAGE_MIND)
+		L.grant_language(/datum/language/ratvar, source=LANGUAGE_MIND)
 		L.visible_message(span_notice("[user] enlightens [L] with the power of [GLOB.deity]!"))
 		to_chat(L, span_boldnotice("The words of [GLOB.deity] fill your head!"))
 

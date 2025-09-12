@@ -306,7 +306,7 @@
 
 	var/temp = "rune"
 	var/ascii = (length(drawing) == 1)
-	if(ascii && is_alpha(drawing))
+	if(ascii && is_lowercase_character(drawing))
 		temp = "letter"
 	else if(ascii && is_digit(drawing))
 		temp = "number"
@@ -505,15 +505,6 @@
 	reagent_contents = list(/datum/reagent/consumable/nutriment = 0.5,  /datum/reagent/colorful_reagent/powder/white/crayon = 1.5)
 	dye_color = DYE_WHITE
 
-/obj/item/toy/crayon/mime
-	icon_state = "crayonmime"
-	desc = "A very sad-looking crayon."
-	paint_color = "#FFFFFF"
-	crayon_color = "mime"
-	reagent_contents = list(/datum/reagent/consumable/nutriment = 0.5, /datum/reagent/colorful_reagent/powder/invisible = 1.5)
-	charges = -1
-	dye_color = DYE_MIME
-
 /obj/item/toy/crayon/rainbow
 	icon_state = "crayonrainbow"
 	paint_color = "#FFF000"
@@ -562,13 +553,9 @@
 /obj/item/storage/crayons/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/toy/crayon))
 		var/obj/item/toy/crayon/C = W
-		switch(C.crayon_color)
-			if("mime")
-				to_chat(usr, span_warning("This crayon is too sad to be contained in this box!"))
-				return
-			if("rainbow")
-				to_chat(usr, span_warning("This crayon is too powerful to be contained in this box!"))
-				return
+		if(C.crayon_color == "rainbow")
+			to_chat(usr, span_warning("This crayon is too powerful to be contained in this box!"))
+			return
 		if(istype(W, /obj/item/toy/crayon/spraycan))
 			to_chat(user, span_warning("Spraycans are not crayons!"))
 			return
@@ -652,7 +639,8 @@
 			C.blur_eyes(3)
 			C.blind_eyes(1)
 		if(C.get_eye_protection() <= 0) // no eye protection? ARGH IT BURNS. Warning: don't add a stun here. It's a roundstart item with some quirks.
-			C.apply_effects(eyeblur = 5, jitter = 10)
+			C.apply_effects(eyeblur = 5)
+			C.set_timed_status_effect(20 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 			flash_color(C, flash_color=paint_color, flash_time=40)
 		if(ishuman(C) && actually_paints)
 			var/mob/living/carbon/human/H = C
@@ -664,12 +652,12 @@
 
 		return
 
-	if(isobj(target) && !istype(target, /obj/effect/decal/cleanable/crayon/gang))
+
+	if(isobj(target) && !istype(target, /obj/effect/decal/cleanable/crayon/gang) && !istype(target, /obj/item/clothing))
 		if(actually_paints)
 			if(color_hex2num(paint_color) < 350 && !istype(target, /obj/structure/window) && !istype(target, /obj/effect/decal/cleanable/crayon)) //Colors too dark are rejected
 				to_chat(usr, span_warning("A color that dark on an object like this? Surely not..."))
 				return FALSE
-
 			target.add_atom_colour(paint_color, WASHABLE_COLOUR_PRIORITY)
 
 			if(istype(target, /obj/structure/window))
@@ -736,35 +724,6 @@
 	reagent_contents = list(/datum/reagent/clf3 = 1)
 	actually_paints = FALSE
 	paint_color = "#000000"
-
-/obj/item/toy/crayon/spraycan/lubecan
-	name = "slippery spraycan"
-	desc = "You can barely keep hold of this thing."
-	icon_state = "clowncan2_cap"
-	icon_capped = "clowncan2_cap"
-	icon_uncapped = "clowncan2"
-	use_overlays = FALSE
-
-	reagent_contents = list(/datum/reagent/lube = 1, /datum/reagent/consumable/banana = 1)
-	volume_multiplier = 5
-
-/obj/item/toy/crayon/spraycan/lubecan/isValidSurface(surface)
-	return istype(surface, /turf/open/floor)
-
-/obj/item/toy/crayon/spraycan/mimecan
-	name = "silent spraycan"
-	desc = "Art is best seen, not heard."
-	icon_state = "mimecan_cap"
-	icon_capped = "mimecan_cap"
-	icon_uncapped = "mimecan"
-	use_overlays = FALSE
-
-	can_change_colour = FALSE
-	paint_color = "#FFFFFF" //RGB
-
-	pre_noise = FALSE
-	post_noise = FALSE
-	reagent_contents = list(/datum/reagent/consumable/nothing = 1, /datum/reagent/toxin/mutetoxin = 1)
 
 /obj/item/toy/crayon/spraycan/infinite
 	name = "infinite spraycan"

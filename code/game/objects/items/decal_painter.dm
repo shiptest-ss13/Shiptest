@@ -58,15 +58,15 @@
 			<img style="-ms-interpolation-mode: nearest-neighbor;" src="floor.png" width=128 height=128 border=4>
 		</center>
 		<center>
-			<a href="?src=[UID()];cycleleft=1">&lt;-</a>
-			<a href="?src=[UID()];choose_state=1">Choose Style</a>
-			<a href="?src=[UID()];cycleright=1">-&gt;</a>
+			<a href="byond://?src=[UID()];cycleleft=1">&lt;-</a>
+			<a href="byond://?src=[UID()];choose_state=1">Choose Style</a>
+			<a href="byond://?src=[UID()];cycleright=1">-&gt;</a>
 		</center>
 		<div class='statusDisplay'>Style: [floor_state]</div>
 		<center>
-			<a href="?src=[UID()];cycledirleft=1">&lt;-</a>
-			<a href="?src=[UID()];choose_dir=1">Choose Direction</a>
-			<a href="?src=[UID()];cycledirright=1">-&gt;</a>
+			<a href="byond://?src=[UID()];cycledirleft=1">&lt;-</a>
+			<a href="byond://?src=[UID()];choose_dir=1">Choose Direction</a>
+			<a href="byond://?src=[UID()];cycledirright=1">-&gt;</a>
 		</center>
 		<div class='statusDisplay'>Direction: [dir2text(floor_dir)]</div>
 	"}
@@ -222,19 +222,19 @@
 			<img style="-ms-interpolation-mode: nearest-neighbor;" src="floor.png" width=128 height=128 border=4>
 		</center>
 		<center>
-			<a href="?src=[UID()];cycleleft=1">&lt;-</a>
-			<a href="?src=[UID()];choose_state=1">Choose Style</a>
-			<a href="?src=[UID()];cycleright=1">-&gt;</a>
+			<a href="byond://?src=[UID()];cycleleft=1">&lt;-</a>
+			<a href="byond://?src=[UID()];choose_state=1">Choose Style</a>
+			<a href="byond://?src=[UID()];cycleright=1">-&gt;</a>
 		</center>
 		<div class='statusDisplay'>Style: [decal_state]</div>
 		<center>
-			<a href="?src=[UID()];cycledirleft=1">&lt;-</a>
-			<a href="?src=[UID()];choose_dir=1">Choose Direction</a>
-			<a href="?src=[UID()];cycledirright=1">-&gt;</a>
+			<a href="byond://?src=[UID()];cycledirleft=1">&lt;-</a>
+			<a href="byond://?src=[UID()];choose_dir=1">Choose Direction</a>
+			<a href="byond://?src=[UID()];cycledirright=1">-&gt;</a>
 		</center>
 		<div class='statusDisplay'>Direction: [dir2text(decal_dir)]</div>
 		<center>
-			<a href="?src=[UID()];choose_color=1">Choose Color</a>
+			<a href="byond://?src=[UID()];choose_color=1">Choose Color</a>
 		</center>
 	"}
 

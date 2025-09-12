@@ -1,0 +1,39 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"faction": "/datum/faction/independent",
+	"prefix": "IMV",
+	"manufacturer": "Etherbor Lihmona Shipyards",
+	"map_name": "Atira-class Rescue Skiff",
+	"namelists": [
+		"NATURAL"
+	],
+	"map_short_name": "Atira-class",
+	"description": "A demiltarized emergency medical vessel based upon the 'Tearful Quasar' line of orbital patrol corvettes. As the design is fairly small, and the hull easy to modify, Lihoma Navy Yards has absolutely no issues placing the internals for an Atira-class inside, and selling the hull off to civilian purchasers. Those who operate the vessel tend to grow fond of it's turbine power generation system, and potential for upgrades that the engine array offers. Many an Atira has become a travelling pharmacy, or emergency response ship for small planetary governments in the Frontier.",
+	"tags": [
+		"RP Focus",
+		"Medical"
+	],
+	"starting_funds": 1000,
+	"map_path": "_maps/shuttles/independent/independent_atira.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Starship Engineer": {
+			"outfit": "/datum/outfit/job/independent/engineer",
+			"slots": 1
+		},
+		"Doctor": {
+			"outfit": "/datum/outfit/job/independent/doctor",
+			"slots": 1
+		},
+		"Crewman": {
+			"outfit": "/datum/outfit/job/independent/assistant",
+			"slots": 3
+		}
+	},
+	"enabled":true
+}

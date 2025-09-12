@@ -10,7 +10,7 @@
 	throwforce = 15
 	armour_penetration = 40
 	demolition_mod = 2
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	attack_cooldown = 12
@@ -19,6 +19,8 @@
 	pickup_sound = 'sound/weapons/melee/heavy_pickup.ogg'
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
 	resistance_flags = FIRE_PROOF
+	var/throw_min = 1
+	var/throw_max = 2
 
 /obj/item/melee/sledgehammer/ComponentInitialize()
 	. = ..()
@@ -58,7 +60,7 @@
 		return
 	var/atom/throw_target = get_edge_target_turf(target, user.dir)
 	if(!target.anchored)
-		target.throw_at(throw_target, rand(1,2), 2, user, gentle = TRUE)
+		target.throw_at(throw_target, rand(throw_min,throw_max), 2, user, gentle = TRUE)
 
 /obj/item/melee/sledgehammer/gorlex/afterattack(atom/A, mob/user, proximity)
 	. = ..()
@@ -67,8 +69,4 @@
 	if(HAS_TRAIT(src, TRAIT_WIELDED)) //destroys windows and grilles in one hit
 		if(istype(A, /obj/structure/window) || istype(A, /obj/structure/grille))
 			var/obj/structure/W = A
-			W.obj_destruction("axe")
-
-// its for dynamic gen mobs okay
-/obj/item/melee/sledgehammer/gorlex/pre_wielded
-	icon_state = "gorlex_sledgehammer_w"
+			W.atom_destruction("axe")

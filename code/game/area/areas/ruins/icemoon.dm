@@ -107,3 +107,87 @@
 /area/ruin/icemoon/tesla_lab/armory
 	name = "Armory"
 	icon_state = "armory"
+
+// training facility
+
+/area/ruin/icemoon/training_facility
+	name = "Ramzi Clique Training Facility"
+	icon_state = "hallC"
+
+/area/ruin/icemoon/training_facility/dorms
+	name = "Barracks"
+	icon_state = "crew_quarters"
+
+/area/ruin/icemoon/training_facility/armory
+	name = "Armory"
+	icon_state = "armory"
+
+/area/ruin/icemoon/training_facility/range
+	name = "Shooting Range"
+	icon_state = "security"
+
+/area/ruin/icemoon/training_facility/office_1
+	name = "Exowarrior Instructor's Office"
+	icon_state = "bridge"
+
+/area/ruin/icemoon/training_facility/office_2
+	name = "Career Sergeant's Office"
+	icon_state = "bridge"
+
+/area/ruin/icemoon/training_facility/medbay
+	name = "Medical Bay"
+
+/area/ruin/icemoon/training_facility/classroom
+	name = "Classroom"
+	icon_state = "purple"
+
+/area/ruin/icemoon/training_facility/central_hall
+	name = "Central Primary Hallway"
+
+/area/ruin/icemoon/training_facility/locker_room
+	name = "Locker Room"
+	icon_state = "red"
+
+/area/ruin/icemoon/training_facility/demo_course
+	name = "Explosives Course"
+	icon_state = "red"
+
+/area/ruin/icemoon/training_facility/cafeteria
+	name = "Cafeteria"
+
+/area/ruin/icemoon/training_facility/engineering
+	name = "Engineering"
+	icon_state = "engine"
+
+/area/ruin/icemoon/training_facility/killship
+	name = "Killhouse Bay"
+	requires_power = FALSE
+
+/area/ruin/icemoon/training_facility/killship/cargo
+	name = "Killhouse Cargo"
+	icon_state = "storage"
+
+/area/ruin/icemoon/training_facility/killship/crew
+	name = "Killhouse Crew Quarters"
+
+/area/ruin/icemoon/training_facility/killship/medical
+	name = "Killhouse Medical"
+
+/area/ruin/icemoon/training_facility/killship/bridge
+	name = "Killhouse CIC"
+
+/area/ruin/icemoon/training_facility/lobby
+	name = "Lobby"
+	icon_state = "green"
+
+/area/ruin/icemoon/training_facility/garage
+	name = "Loading Bay"
+	icon_state = "storage"
+
+/area/ruin/icemoon/training_facility/mech_garage
+	name = "Exosuit Garage"
+	icon_state = "security"
+
+/area/ruin/icemoon/training_facility/course
+	name = "Exosuit Training Course"
+	requires_power = FALSE

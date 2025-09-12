@@ -10,7 +10,7 @@
 /mob/living/carbon/alien
 	name = "alien"
 	icon = 'icons/mob/alien.dmi'
-	gender = FEMALE //All xenos are girls!!
+	gender = FEMALE //All xenos are girls!! //slay
 	dna = null
 	faction = list(ROLE_ALIEN)
 	ventcrawler = VENTCRAWLER_ALWAYS
@@ -19,7 +19,7 @@
 	verb_say = "hisses"
 	initial_language_holder = /datum/language_holder/alien
 	bubble_icon = "alien"
-	type_of_meat = /obj/item/reagent_containers/food/snacks/meat/slab/xeno
+	type_of_meat = /obj/item/food/meat/slab/xeno
 
 	var/has_fine_manipulation = FALSE
 

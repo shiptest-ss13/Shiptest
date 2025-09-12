@@ -46,11 +46,8 @@
 	ruin_type = RUINTYPE_LAVA
 	interference_power = 5
 
-	primary_ores = list(\
-		/obj/item/stack/ore/sulfur,
-		/obj/item/stack/ore/galena,
-		/obj/item/stack/ore/sulfur/pyrite,
-		/obj/item/stack/ore/magnetite,
+	primary_ores = list(
+		/obj/item/stack/ore/iron,
 		/obj/item/stack/ore/plasma,
 		)
 
@@ -68,9 +65,7 @@
 	ruin_type = RUINTYPE_ICE
 
 	primary_ores = list(\
-		/obj/item/stack/ore/malachite,
-		/obj/item/stack/ore/quartzite,
-		/obj/item/stack/ore/hematite,
+		/obj/item/stack/ore/iron,
 		/obj/item/stack/ore/gold,
 		)
 
@@ -81,14 +76,11 @@
 	icon_state = "jungle"
 	color = COLOR_LIME
 	mapgen = /datum/map_generator/planet_generator/jungle
-	default_baseturf = /turf/open/floor/plating/dirt/jungle
+	default_baseturf = /turf/open/floor/plating/asteroid/dirt/jungle
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_JUNGLE
 	primary_ores = list(\
-		/obj/item/stack/ore/graphite/coal,
-		/obj/item/stack/ore/malachite,
-		/obj/item/stack/ore/sulfur,
 		/obj/item/stack/ore/gold,
 		/obj/item/stack/ore/diamond, //this isnt very common, but it's more common here than every other planet, so i list it here
 		)
@@ -105,8 +97,7 @@
 	weather_controller_type = /datum/weather_controller/rockplanet
 	ruin_type = RUINTYPE_ROCK
 	primary_ores = list(\
-		/obj/item/stack/ore/hematite,
-		/obj/item/stack/ore/sulfur,
+		/obj/item/stack/ore/iron,
 		)
 
 /datum/planet_type/sand
@@ -121,9 +112,8 @@
 	weather_controller_type = /datum/weather_controller/desert
 	ruin_type = RUINTYPE_SAND
 	primary_ores = list(\
-		/obj/item/stack/ore/quartzite,
-		/obj/item/stack/ore/hematite,
-		/obj/item/stack/ore/rutile,
+		/obj/item/stack/ore/iron,
+		/obj/item/stack/ore/titanium,
 		)
 
 
@@ -139,8 +129,7 @@
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_BEACH
 	primary_ores = list(\
-		/obj/item/stack/ore/hematite,
-		/obj/item/stack/ore/malachite,
+		/obj/item/stack/ore/iron,
 		/obj/item/stack/ore/plasma,
 		)
 
@@ -172,11 +161,12 @@
 	weather_controller_type = null
 	ruin_type = null // asteroid ruins when
 	weight = 0
+#ifndef RUIN_PLACEMENT_TEST
 	selfloop = TRUE
+#endif
 	primary_ores = list(\
 		/obj/item/stack/ore/plasma,
-		/obj/item/stack/ore/hematite,
-		/obj/item/stack/ore/malachite,
+		/obj/item/stack/ore/iron,
 		)
 
 /datum/planet_type/spaceruin
@@ -185,11 +175,30 @@
 	planet = DYNAMIC_WORLD_SPACERUIN
 	icon_state = "signal_strange"
 	color = null
+	mapgen = /datum/map_generator/planet_generator/asteroid
+	default_baseturf = /turf/open/space
+	weather_controller_type = null
+	ruin_type = RUINTYPE_SPACE
+#ifndef RUIN_PLACEMENT_TEST
+	selfloop = TRUE
+#endif
+
+// empty space if you need to run a space ruin the old way or just need an empty clearing for whatever reason
+
+/datum/planet_type/space
+	name = "weak energy signal"
+	desc = "A very weak energy signal originating from space."
+	planet = DYNAMIC_WORLD_SPACE_NO_RUIN
+	icon_state = "signal_strange"
+	color = null
+	weight = 0
 	mapgen = /datum/map_generator/single_turf/space
 	default_baseturf = /turf/open/space
 	weather_controller_type = null
 	ruin_type = RUINTYPE_SPACE
+#ifndef RUIN_PLACEMENT_TEST
 	selfloop = TRUE
+#endif
 
 /datum/planet_type/waste
 	name = "waste disposal planetoid"
@@ -204,11 +213,9 @@
 	ruin_type = RUINTYPE_WASTE
 	interference_power = 5
 	primary_ores = list(\
-		/obj/item/stack/ore/sulfur,
-		/obj/item/stack/ore/hematite,
+		/obj/item/stack/ore/iron,
 		/obj/item/stack/ore/plasma,
-		/obj/item/stack/ore/autunite,
-		/obj/item/stack/ore/galena,
+		/obj/item/stack/ore/uranium,
 		)
 
 
@@ -256,8 +263,7 @@
 
 	primary_ores = list(\
 		/obj/item/stack/ore/plasma,
-		/obj/item/stack/ore/hematite,
-		/obj/item/stack/ore/malachite,
+		/obj/item/stack/ore/iron,
 		)
 
 /datum/planet_type/desert
@@ -273,10 +279,7 @@
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/plating/asteroid/desert/lit
 	weather_controller_type = /datum/weather_controller/desert_yellow
-	primary_ores = list(\
-		/obj/item/stack/ore/graphite/coal,
-		/obj/item/stack/ore/sulfur,
-		/obj/item/stack/ore/quartzite,
+	primary_ores = list(
 		/obj/item/stack/ore/gold,
 		)
 
@@ -296,9 +299,9 @@
 	interference_power = 100
 
 	primary_ores = list(\
-		/obj/item/stack/ore/autunite,
+		/obj/item/stack/ore/uranium,
 		/obj/item/stack/ore/plasma,
-		/obj/item/stack/ore/magnetite,
+		/obj/item/stack/ore/iron,
 		)
 
 /datum/planet_type/moon
@@ -315,9 +318,8 @@
 	weather_controller_type = null
 
 	primary_ores = list(\
-		/obj/item/stack/ore/quartzite,
-		/obj/item/stack/ore/hematite,
-		/obj/item/stack/ore/rutile,
+		/obj/item/stack/ore/iron,
+		/obj/item/stack/ore/titanium,
 		)
 
 /datum/planet_type/battlefield
@@ -330,7 +332,7 @@
 
 	ruin_type = RUINTYPE_BATTLEFIELD // minor 'planets' have no ruins
 	mapgen = /datum/map_generator/planet_generator/battlefield
-	default_baseturf = /turf/open/floor/plating/dirt/jungle/dark/lit/battlefield
+	default_baseturf = /turf/open/floor/plating/asteroid/dirt/battlefield
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/toxic
 

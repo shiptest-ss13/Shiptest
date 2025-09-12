@@ -117,6 +117,8 @@ There are several things that need to be remembered:
 			t_color = U.icon_state
 		if(U.adjusted == ALT_STYLE)
 			t_color = "[t_color]_d"
+		if(U.adjusted == ROLLED_STYLE)
+			t_color = "[t_color]_s"
 
 		///The final thing we overlay. Set on build_worn_icon.
 		var/mutable_appearance/uniform_overlay
@@ -127,6 +129,8 @@ There are several things that need to be remembered:
 		var/target_overlay = U.icon_state
 		if(U.adjusted == ALT_STYLE)
 			target_overlay = "[target_overlay]_d"
+		if(U.adjusted == ROLLED_STYLE)
+			target_overlay = "[target_overlay]_s"
 		/// Does this clothing need to be generated via greyscale?
 		var/handled_by_bodytype = FALSE
 
@@ -499,6 +503,9 @@ There are several things that need to be remembered:
 		var/obj/item/bodypart/head_bodypart = src.get_bodypart(BODY_ZONE_HEAD)
 		if((head_bodypart.bodytype & BODYTYPE_SNOUT) && (I.supports_variations & SNOUTED_VARIATION))
 			target_overlay = "[target_overlay]_snouted"
+
+		if((head_bodypart.bodytype & BODYTYPE_SNOUT_SMALL) && (I.supports_variations & SNOUTED_SMALL_VARIATION))
+			target_overlay = "[target_overlay]_snouted_small"
 
 		else if(dna.species.bodytype & BODYTYPE_VOX)
 			if(I.supports_variations & VOX_VARIATION)

@@ -13,6 +13,7 @@
 	icon = 'icons/obj/stack_objects.dmi'
 	gender = PLURAL
 	material_modifier = 0.01
+	max_integrity = 100
 	var/list/datum/stack_recipe/recipes
 	var/singular_name
 	var/amount = 1
@@ -338,7 +339,7 @@
 	update_weight()
 	return TRUE
 
-/obj/item/stack/tool_use_check(mob/living/user, amount)
+/obj/item/stack/tool_use_check(mob/living/user, atom/target, amount)
 	if(get_amount() < amount)
 		if(singular_name)
 			if(amount > 1)

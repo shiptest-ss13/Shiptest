@@ -224,6 +224,7 @@
 	name = "Solar's Best black coffee"
 	desc = "A cup of piping hot black coffee. Made from beans grown across the solar cantons for the caffeine that every spacer needs."
 	icon_state = "coffee"
+	icon = 'icons/obj/item/coffee.dmi'
 	list_reagents = list(/datum/reagent/consumable/coffee = 30)
 	spillable = TRUE
 	resistance_flags = FREEZE_PROOF
@@ -745,7 +746,7 @@
 	icon_state = "plasma"
 	list_reagents = list(/datum/reagent/consumable/molten/plasma_fizz = 50)
 
-/obj/item/reagent_containers/food/drinks/ration
+/obj/item/reagent_containers/food/drinks/ration //todo refactor/sort
 	name = "empty ration pouch"
 	desc = "If you ever wondered where air came from..."
 	list_reagents = list(/datum/reagent/oxygen = 6, /datum/reagent/nitrogen = 24)
@@ -778,6 +779,11 @@
 	return ..()
 
 /obj/item/reagent_containers/food/drinks/ration/pan_genezan_vodka
-	name = "Pan-Genezan vodka"
+	name = "Pan-Gezenan vodka"
 	desc = "Vodka made from the finest potatoes."
 	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 15)
+
+/obj/item/reagent_containers/food/drinks/ration/sososi_seta
+	name = "Sososi-Seta pouch"
+	desc = "A bitter spirit made with Tecetian flora. Best used as a digestive."
+	list_reagents = list(/datum/reagent/consumable/ethanol/sososeta = 15)

@@ -95,6 +95,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/spawner/structure)
 		pipe_astar_cost = 4\
 	)
 
+/obj/effect/spawner/structure/window/reinforced/indestructible
+	spawn_list = list(/obj/structure/grille/indestructible, /obj/structure/window/reinforced/fulltile/indestructible)
+
 /obj/effect/spawner/structure/window/hollow/reinforced
 	name = "hollow reinforced window spawner"
 	icon_state = "hrwindow_spawner_full"

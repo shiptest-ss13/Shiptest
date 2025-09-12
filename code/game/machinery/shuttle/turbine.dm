@@ -93,7 +93,7 @@
 	SSair.start_processing_machine(src, mapload)
 	locate_machinery()
 	if(!turbine)
-		obj_break()
+		atom_break()
 	return INITIALIZE_HINT_LATELOAD
 
 /obj/machinery/power/compressor/LateInitialize()
@@ -112,7 +112,7 @@
 		turbine.locate_machinery()
 	else
 		turbine = null
-		obj_break()
+		atom_break()
 
 /obj/machinery/power/compressor/RefreshParts()
 	var/E = 0
@@ -208,7 +208,7 @@
 	SSair.start_processing_machine(src, mapload)
 	locate_machinery()
 	if(!compressor)
-		obj_break()
+		atom_break()
 	connect_to_network()
 	return INITIALIZE_HINT_LATELOAD
 
@@ -237,7 +237,7 @@
 		compressor.locate_machinery()
 	else
 		compressor = null
-		obj_break()
+		atom_break()
 
 /obj/machinery/power/shuttle/engine/turbine/process(seconds_per_tick)
 	add_avail(lastgen) // add power in process() so it doesn't update power output separately from the rest of the powernet (bad)
@@ -313,7 +313,7 @@
 			to_chat(user, span_notice("Compressor connected."))
 		else
 			to_chat(user, span_alert("Compressor not connected."))
-			obj_break()
+			atom_break()
 		return
 
 	default_deconstruction_crowbar(I)
@@ -380,6 +380,11 @@
 	circuit = /obj/item/circuitboard/computer/turbine_computer
 	var/obj/machinery/power/compressor/compressor
 	var/id = 0
+
+/obj/machinery/computer/turbine_computer/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
 
 /obj/machinery/computer/turbine_computer/Initialize()
 	. = ..()

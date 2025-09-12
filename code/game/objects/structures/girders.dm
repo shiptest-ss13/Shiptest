@@ -5,7 +5,8 @@
 	anchored = TRUE
 	density = TRUE
 	var/state = GIRDER_NORMAL
-	var/girderpasschance = 20 // percentage chance that a projectile passes through the girder.
+	var/girderpasschance = 50 // percentage chance that a projectile passes through the girder.
+	var/unanchoredpasschance = 80 // provides worse cover while unanchored since it's loose and moving about
 	var/can_displace = TRUE //If the girder can be moved around by wrenching it
 	var/next_beep = 0 //Prevents spamming of the construction sound
 	max_integrity = 200
@@ -216,7 +217,7 @@
 	. = ..()
 	if(.)
 		return FALSE
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return FALSE
 	if(I.use_tool(src, user, 3 SECONDS, volume=0))
 		to_chat(user, span_warning("You cut apart \the [src]."), span_notice("You cut apart \the [src]."))
@@ -301,13 +302,21 @@
 
 /obj/structure/girder/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
-	if((mover.pass_flags & PASSGRILLE) || istype(mover, /obj/projectile))
-		return prob(girderpasschance)
+	var/pass_chance = anchored ? girderpasschance : unanchoredpasschance
+	if(istype(mover, /obj/projectile))
+		var/obj/projectile/proj = mover
+		if(proj.firer && Adjacent(proj.firer))
+			return TRUE
+		if(prob(pass_chance))
+			return TRUE
+		return FALSE
+	if((mover.pass_flags & PASSGRILLE))
+		return prob(pass_chance)
 
-/obj/structure/girder/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/caller)
+/obj/structure/girder/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
 	. = !density
-	if(istype(caller))
-		. = . || (caller.pass_flags & PASSGRILLE)
+	if(istype(requester))
+		. = . || (requester.pass_flags & PASSGRILLE)
 
 /obj/structure/girder/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -368,7 +377,7 @@
 /obj/structure/girder/bronze/attackby(obj/item/W, mob/living/user, params)
 	add_fingerprint(user)
 	if(W.tool_behaviour == TOOL_WELDER)
-		if(!W.tool_start_check(user, amount = 0))
+		if(!W.tool_start_check(user, src, amount = 0))
 			return
 		to_chat(user, span_notice("You start slicing apart [src]..."))
 		if(W.use_tool(src, user, 40, volume=50))

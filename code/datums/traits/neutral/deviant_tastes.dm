@@ -4,6 +4,7 @@
 	value = 0
 	gain_text = span_notice("You start craving something that tastes strange.")
 	lose_text = span_notice("You feel like eating normal food again.")
+	detectable = FALSE
 
 /datum/quirk/deviant_tastes/add()
 	var/mob/living/carbon/human/H = quirk_holder

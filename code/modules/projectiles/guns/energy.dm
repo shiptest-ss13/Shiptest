@@ -5,6 +5,8 @@
 	icon_state = "laser"
 	item_state = "spur"
 
+	bad_type = /obj/item/gun/energy
+
 	muzzleflash_iconstate = "muzzle_flash_laser"
 	light_color = COLOR_SOFT_RED
 
@@ -38,7 +40,6 @@
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
 		/obj/item/attachment/gun,
-		/obj/item/attachment/sling,
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,

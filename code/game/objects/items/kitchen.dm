@@ -73,6 +73,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("bashed", "battered", "bludgeoned", "thrashed", "whacked")
 	custom_price = 200
+	tool_behaviour = TOOL_ROLLINGPIN
 
 /obj/item/kitchen/spoon/plastic
 	name = "plastic spoon"

@@ -2,6 +2,7 @@
 	name = "shotgun"
 	desc = "You feel as if you should make a 'adminhelp' if you see one of these, along with a 'github' report. You don't really understand what this means though."
 	item_state = "shotgun"
+	bad_type = /obj/item/gun/ballistic/shotgun
 	fire_sound = 'sound/weapons/gun/shotgun/shot.ogg'
 	vary_fire_sound = FALSE
 	fire_sound_volume = 90
@@ -10,7 +11,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	force = 10
 	flags_1 =  CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot,
@@ -46,6 +47,47 @@
 	min_recoil = 0.1
 	wear_rate = 0
 
+	//in an ideal world this would be a component but I don't wanna untangle all the sleeps doors pull
+	///can this shotgun breach doors
+	var/door_breaching_weapon = TRUE
+
+/obj/item/gun/ballistic/shotgun/attack_obj(obj/O, mob/living/user)
+	if(door_breaching_weapon && istype(O, /obj/machinery/door/airlock))
+		var/obj/machinery/door/airlock/breaching = O
+		if(chambered && chambered.BB && !is_type_in_list(chambered, list(/obj/item/ammo_casing/shotgun/blank, /obj/item/ammo_casing/shotgun/beanbag, /obj/item/ammo_casing/shotgun/rubbershot)))
+			user.visible_message(
+				span_warning("[user] put the barrel of [src] to [breaching]'s electronics!"),
+				span_warning("You puts the barrel of [src] to [breaching]'s electronics, preparing to shred them!"),
+				span_warning("Metal brushes against metal")
+			)
+			if(do_after(user, 5 SECONDS, breaching))
+				if(process_fire(breaching, user, FALSE))
+					switch(breaching.security_level)
+						if(0)
+							EMPTY_BLOCK_GUARD
+						if (1) // thin metal plate. blast through it and create debris
+							var/obj/item/debris = new /obj/item/stack/ore/salvage/scrapmetal
+							debris.safe_throw_at(user, 2, 5, null, 1)
+							breaching.security_level = 0
+						if(2 to 6) //two shots to break
+							var/obj/item/debris = new /obj/item/stack/ore/salvage/scrapmetal
+							debris.safe_throw_at(user, 2, 5, null, 1)
+							breaching.security_level -= 3
+							breaching.security_level = max(breaching.security_level, 0)
+							return
+					if(!breaching.open())
+						update_icon(ALL, 1, 1)
+					//im not rewriting the behavior to do exactly what this does with a different name
+					breaching.obj_flags |= EMAGGED
+					breaching.lights = FALSE
+					breaching.locked = TRUE
+					breaching.loseMainPower()
+					breaching.loseBackupPower()
+					return TRUE
+				return FALSE
+			return FALSE
+	. = ..()
+
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	if(chambered && chambered.BB)
 		process_fire(user, user, FALSE)
@@ -59,6 +101,7 @@
 
 // Automatic Shotguns//
 /obj/item/gun/ballistic/shotgun/automatic
+	bad_type = /obj/item/gun/ballistic/shotgun/automatic
 	spread = 3
 	spread_unwielded = 15
 	recoil = 1
@@ -69,9 +112,9 @@
 
 	gunslinger_recoil_bonus = 1
 	wear_rate = 1
-	wear_minor_threshold = 30
-	wear_major_threshold = 90
-	wear_maximum = 150
+	wear_minor_threshold = 60
+	wear_major_threshold = 180
+	wear_maximum = 300
 
 //Dual Feed Shotgun
 
@@ -80,35 +123,40 @@
 	desc = "An advanced shotgun with two separate magazine tubes, allowing you to quickly toggle between ammo types."
 
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 
 	icon_state = "cycler"
+	item_state = "shotgun_combat"
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
 
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/tube
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/tube,
 	)
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	var/toggled = FALSE
 	var/obj/item/ammo_box/magazine/internal/shot/alternate_magazine
+	actions_types = list(/datum/action/item_action/toggle_tube)
+
 	semi_auto = TRUE
+	casing_ejector = TRUE
+
+	refused_attachments = list(/obj/item/attachment/gun)
+
+/obj/item/gun/ballistic/shotgun/automatic/dual_tube/secondary_action(user)
+	toggle_tube(user)
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/examine(mob/user)
 	. = ..()
-	. += span_notice("Alt-click to pump it.")
+	. += span_notice("Tube [toggled ? "B" : "A"] is currently loaded.")
+	. += "You can change the [src]'s tube by pressing the <b>secondary action</b> key. By default, this is <b>Shift + Space</b>"
 
-/obj/item/gun/ballistic/shotgun/automatic/dual_tube/Initialize()
+/obj/item/gun/ballistic/shotgun/automatic/dual_tube/Initialize(mapload, spawn_empty)
 	. = ..()
 	if (!alternate_magazine)
-		alternate_magazine = new default_ammo_type(src)
-
-/obj/item/gun/ballistic/shotgun/automatic/dual_tube/attack_self(mob/living/user)
-	if(!chambered && magazine.contents.len)
-		rack()
-	else
-		toggle_tube(user)
+		alternate_magazine = new default_ammo_type(src, spawn_empty)
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/proc/toggle_tube(mob/living/user)
 	var/current_mag = magazine
@@ -120,11 +168,18 @@
 		to_chat(user, span_notice("You switch to tube B."))
 	else
 		to_chat(user, span_notice("You switch to tube A."))
+	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
+	playsound(src, load_sound, load_sound_volume, load_sound_vary)
 
-/obj/item/gun/ballistic/shotgun/automatic/dual_tube/AltClick(mob/living/user)
-	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+/datum/action/item_action/toggle_tube
+	name = "Toggle Tube"
+
+/datum/action/item_action/toggle_tube/Trigger()
+	if(istype(target, /obj/item/gun/ballistic/shotgun/automatic/dual_tube))
+		var/obj/item/gun/ballistic/shotgun/automatic/dual_tube/shotty = target
+		shotty.toggle_tube(owner)
 		return
-	rack()
+	..()
 
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq
 	name = "\improper Mastiff Shotgun"
@@ -150,7 +205,8 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 	mob_overlay_icon = null
-
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
 	base_icon_state = "ishotgun"
 	icon_state = "ishotgun"
 	item_state = "ishotgun"

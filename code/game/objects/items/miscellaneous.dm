@@ -316,14 +316,14 @@
 	item_flags = NONE
 	force = 0
 	attack_verb = list("hit", "poked")
-	var/obj/item/reagent_containers/food/snacks/sausage/held_sausage
+	var/obj/item/food/sausage/held_sausage
 	var/static/list/ovens
 	var/on = FALSE
 	var/datum/beam/beam
 
 /obj/item/roastingstick/Initialize()
 	. = ..()
-	if (!ovens)
+	if(!ovens)
 		ovens = typecacheof(list(/obj/singularity, /obj/machinery/power/supermatter_crystal, /obj/structure/bonfire))
 
 /obj/item/roastingstick/attack_self(mob/user)
@@ -331,7 +331,7 @@
 	if(on)
 		extend(user)
 	else
-		if (held_sausage)
+		if(held_sausage)
 			to_chat(user, span_warning("You can't retract [src] while [held_sausage] is attached!"))
 			return
 		retract(user)
@@ -340,30 +340,31 @@
 	add_fingerprint(user)
 
 /obj/item/roastingstick/attackby(atom/target, mob/user)
-	..()
-	if (istype(target, /obj/item/reagent_containers/food/snacks/sausage))
-		if (!on)
+	. = ..()
+
+	if(istype(target, /obj/item/food/sausage))
+		if(!on)
 			to_chat(user, span_warning("You must extend [src] to attach anything to it!"))
 			return
-		if (held_sausage)
+		if(held_sausage)
 			to_chat(user, span_warning("[held_sausage] is already attached to [src]!"))
 			return
-		if (user.transferItemToLoc(target, src))
+		if(user.transferItemToLoc(target, src))
 			held_sausage = target
 		else
 			to_chat(user, span_warning("[target] doesn't seem to want to get on [src]!"))
 	update_appearance()
 
 /obj/item/roastingstick/attack_hand(mob/user)
-	..()
-	if (held_sausage)
+	. = ..()
+	if(held_sausage)
 		user.put_in_hands(held_sausage)
 		held_sausage = null
 	update_appearance()
 
 /obj/item/roastingstick/update_overlays()
 	. = ..()
-	if (held_sausage)
+	if(held_sausage)
 		. += mutable_appearance(icon, "roastingstick_sausage")
 
 /obj/item/roastingstick/proc/extend(user)

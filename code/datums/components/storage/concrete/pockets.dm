@@ -53,9 +53,6 @@
 /datum/component/storage/concrete/pockets/shoes/Initialize()
 	. = ..()
 
-/datum/component/storage/concrete/pockets/shoes/clown/Initialize()
-	. = ..()
-
 /datum/component/storage/concrete/pockets/pocketprotector
 	max_items = 3
 	max_w_class = WEIGHT_CLASS_TINY
@@ -93,6 +90,7 @@
 		/obj/item/clothing/glasses/hud/security/night,
 		/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 		/obj/item/clothing/glasses/sunglasses/ballistic,
+		/obj/item/clothing/glasses/sunglasses/pgf,
 		/obj/item/clothing/glasses/hud/security/sunglasses/ngr,
 		/obj/item/clothing/glasses/hud/security/sunglasses/hardliners,
 		/obj/item/ammo_casing,

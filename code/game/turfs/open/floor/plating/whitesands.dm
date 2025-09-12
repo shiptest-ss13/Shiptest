@@ -15,7 +15,7 @@
 	digResult = /obj/item/stack/ore/glass/whitesands
 	floor_variance = 83
 	max_icon_states = 5
-	slowdown = 1.05
+	slowdown = 0
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH)
@@ -180,6 +180,14 @@
 	light_range = 2
 	light_power = 0.6
 
+/turf/open/floor/concrete/slab_4/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+	light_color = COLOR_SANDPLANET_LIGHT
+
+/turf/open/floor/concrete/slab_4/whitesands/lit
+	light_range = 2
+	light_power = 0.6
+
 /turf/open/floor/plating/whitesands
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	light_color = COLOR_SANDPLANET_LIGHT
@@ -187,3 +195,14 @@
 /turf/open/floor/plating/whitesands/lit
 	light_range = 2
 	light_power = 0.6
+
+//stairs
+
+/turf/open/floor/plasteel/stairs/whitesand
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+	name = "exterior stairs"
+
+/turf/open/floor/plasteel/stairs/whitesand/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_SANDPLANET_LIGHT

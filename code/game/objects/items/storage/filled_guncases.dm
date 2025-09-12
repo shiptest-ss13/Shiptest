@@ -63,6 +63,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/vickland
 	mag_type = /obj/item/ammo_box/vickland_a8_50r
 
+/obj/item/storage/guncase/invictus
+	gun_type = /obj/item/gun/ballistic/automatic/assault/invictus
+	mag_type = /obj/item/ammo_box/magazine/invictus_308_mag
+
 /* Scarbourough */
 
 /obj/item/storage/guncase/pistol/a357
@@ -222,6 +226,9 @@
 	gun_type = /obj/item/gun/ballistic/automatic/smg/vector
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm
 
+/obj/item/storage/guncase/cycler
+	gun_type = /obj/item/gun/ballistic/shotgun/automatic/dual_tube
+
 /* Sharplite */
 
 /obj/item/storage/guncase/pistol/miniegun
@@ -278,9 +285,9 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/cm357
 	mag_type = /obj/item/ammo_box/magazine/cm357
 
-/obj/item/storage/guncase/cm1
+/obj/item/storage/guncase/ecm6
 	gun_type = /obj/item/gun/energy/kalix/clip
-	mag_type = /obj/item/stock_parts/cell/gun
+	mag_type = /obj/item/stock_parts/cell/gun/kalix
 
 /obj/item/storage/guncase/cm5
 	gun_type = /obj/item/gun/ballistic/automatic/smg/cm5
@@ -344,6 +351,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/hmg/rottweiler
 	mag_type = /obj/item/ammo_box/magazine/rottweiler_308_box
 
+/obj/item/storage/guncase/saluki
+	gun_type = /obj/item/gun/ballistic/automatic/marksman/f90/inteq
+	mag_type = /obj/item/ammo_box/magazine/f90
+
 /* idk */
 
 /obj/item/storage/guncase/pistol/disposable
@@ -363,6 +374,11 @@
 
 /obj/item/storage/guncase/energy/e10
 	gun_type = /obj/item/gun/energy/laser/e10
+
+/* Frontiersmen */
+/obj/item/storage/guncase/pounder
+	gun_type = /obj/item/gun/ballistic/automatic/smg/pounder
+	mag_type = /obj/item/ammo_box/magazine/c22lr_pounder_pan
 
 /* underbarrel guns */
 /obj/item/storage/guncase/underbarrel_shotgun

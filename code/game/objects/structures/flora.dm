@@ -3,7 +3,17 @@
 	max_integrity = 40
 	anchored = TRUE
 
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = -100, "acid" = 0) // 2x damage from fire
 	hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
+
+	/// How much fuel this provides to fires on its turf
+	var/fuel_power = 4
+
+/obj/structure/flora/fire_act(exposed_temperature, exposed_volume)
+	. = ..()
+	var/turf/open/plant_turf = get_turf(src)
+	if(isopenturf(plant_turf) && prob(plant_turf.flammability >= 1))
+		plant_turf.ignite_turf(fuel_power + plant_turf.flammability)
 
 /obj/structure/flora/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
@@ -24,6 +34,8 @@
 	layer = FLY_LAYER
 	var/log_amount = 10
 
+	fuel_power = 1 // trees are more resistant to fire and take much longer to burn
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 0)
 	hitsound_type = PROJECTILE_HITSOUND_WOOD
 
 /obj/structure/flora/tree/ComponentInitialize()
@@ -54,6 +66,8 @@
 	icon_state = "tree_stump"
 	density = FALSE
 	pixel_x = -16
+	fuel_power = 2 // it's dead
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
 
 	hitsound_type = PROJECTILE_HITSOUND_WOOD
 
@@ -129,6 +143,8 @@
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	desc = "A dead tree. How it died, you know not."
 	icon_state = "tree_1"
+	fuel_power = 2 // it's dead
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
 
 /obj/structure/flora/tree/dead/Initialize()
 	icon_state = "tree_[rand(1, 6)]"
@@ -819,7 +835,6 @@
 		/datum/reagent/toxin/acid/fluacid = -0.4,
 		/datum/reagent/toxin/plantbgone = -0.5,
 		/datum/reagent/napalm = -0.6,
-		/datum/reagent/hellwater = -1,
 		/datum/reagent/liquidgibs = -0.2,
 		/datum/reagent/consumable/ethanol/demonsblood = -0.8,
 		/datum/reagent/medicine/soulus = -0.2
@@ -882,7 +897,7 @@
 			else if (isliving(user))
 				var/mob/living/L = user
 				L.Immobilize(100, TRUE)
-				L.adjust_jitter(50)
+				L.set_timed_status_effect(100 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 				L.adjustToxLoss(66)
 		return 1
 	else ..()
@@ -943,7 +958,7 @@
 		var/luck = rand(1, 100)
 		if(karma > 100)
 			if(luck > 90)
-				L.reagents.add_reagent(/datum/reagent/medicine/omnizine, 5)
+				L.reagents.add_reagent(/datum/reagent/medicine/panacea, 5)
 			else if (luck > 50)
 				SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "treekarma", /datum/mood_event/better_tree, name)
 			else if (luck > 25)
@@ -1016,7 +1031,6 @@
 		/datum/reagent/toxin/acid/fluacid = -0.4,
 		/datum/reagent/toxin/plantbgone = -0.5,
 		/datum/reagent/napalm = -0.6,
-		/datum/reagent/hellwater = -1,
 		/datum/reagent/liquidgibs = -0.2,
 		/datum/reagent/consumable/ethanol/demonsblood = -0.8,
 		/datum/reagent/medicine/soulus = -0.2
@@ -1039,7 +1053,7 @@
 			reagents.clear_reagents()
 		if(health > 25)
 			if(prob(50))
-				var/obj/item/reagent_containers/food/snacks/grown/apple/apple = new(get_step(get_turf(src), apple_direction))
+				var/obj/item/food/grown/apple/apple = new(get_step(get_turf(src), apple_direction))
 				apple.name = "illestren Apple"
 				apple.desc = "You can grind this for bacteria."
 				apple.reagents.add_reagent(/datum/reagent/srm_bacteria, 10)

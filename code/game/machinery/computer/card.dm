@@ -182,7 +182,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		dat += "<tt><b>Crew Manifest:</b><br>Please use security record computer to modify entries.<br><br>"
 		for(var/datum/data/record/t in sortRecord(GLOB.data_core.general))
 			dat += {"[t.fields["name"]] - [t.fields["rank"]]<br>"}
-		dat += "<a href='?src=[REF(src)];choice=print'>Print</a><br><br><a href='?src=[REF(src)];choice=mode;mode_target=0'>Access ID modification console.</a><br></tt>"
+		dat += "<a href='byond://?src=[REF(src)];choice=print'>Print</a><br><br><a href='byond://?src=[REF(src)];choice=mode;mode_target=0'>Access ID modification console.</a><br></tt>"
 
 	else
 		var/list/header = list()
@@ -197,16 +197,16 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 
 		if(!authenticated)
 			header += {"<br><i>Please insert the cards into the slots</i><br>
-				Target: <a href='?src=[REF(src)];choice=inserted_modify_id'>[target_name]</a><br>
-				Confirm Identity: <a href='?src=[REF(src)];choice=inserted_scan_id'>[scan_name]</a><br>"}
+				Target: <a href='byond://?src=[REF(src)];choice=inserted_modify_id'>[target_name]</a><br>
+				Confirm Identity: <a href='byond://?src=[REF(src)];choice=inserted_scan_id'>[scan_name]</a><br>"}
 		else
 			header += {"<div align='center'><br>
-				Target: <a href='?src=[REF(src)];choice=inserted_modify_id'>Remove [target_name]</a> ||
-				Confirm Identity: <a href='?src=[REF(src)];choice=inserted_scan_id'>Remove [scan_name]</a><br>
-				<a href='?src=[REF(src)];choice=mode;mode_target=1'>Access Crew Manifest</a><br>
-				Unique Ship Access: [ship.unique_ship_access?"Enabled":"Disabled"] <a href='?src=[REF(src)];choice=toggle_unique_ship_access'>[ship.unique_ship_access?"Disable":"Enable"]</a><br>
-				Print Silicon Access Chip <a href='?src=[REF(src)];choice=print_silicon_access_chip'>Print</a></div>
-				<a href='?src=[REF(src)];choice=logout'>Log Out</a></div>"}
+				Target: <a href='byond://?src=[REF(src)];choice=inserted_modify_id'>Remove [target_name]</a> ||
+				Confirm Identity: <a href='byond://?src=[REF(src)];choice=inserted_scan_id'>Remove [scan_name]</a><br>
+				<a href='byond://?src=[REF(src)];choice=mode;mode_target=1'>Access Crew Manifest</a><br>
+				Unique Ship Access: [ship.unique_ship_access?"Enabled":"Disabled"] <a href='byond://?src=[REF(src)];choice=toggle_unique_ship_access'>[ship.unique_ship_access?"Disable":"Enable"]</a><br>
+				Print Silicon Access Chip <a href='byond://?src=[REF(src)];choice=print_silicon_access_chip'>Print</a></div>
+				<a href='byond://?src=[REF(src)];choice=logout'>Log Out</a></div>"}
 
 		header += "<hr>"
 
@@ -218,7 +218,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 			if (authenticated == AUTHENTICATED_ALL)
 				var/list/jobs_all = list()
 				for(var/job in (list("Unassigned") + get_jobs() + "Custom"))
-					jobs_all += "<a href='?src=[REF(src)];choice=assign;assign_target=[job]'>[replacetext(job, " ", "&nbsp;")]</a> " //make sure there isn't a line break in the middle of a job
+					jobs_all += "<a href='byond://?src=[REF(src)];choice=assign;assign_target=[job]'>[replacetext(job, " ", "&nbsp;")]</a> " //make sure there isn't a line break in the middle of a job
 				carddesc += {"<script type="text/javascript">
 									function markRed(){
 										var nameField = document.getElementById('namefield');
@@ -244,23 +244,23 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 					<b>registered age:</b> <input type='number' id='namefield' name='setage' value='[target_age]' style='width:50px; background-color:white;' onchange='markRed()'>
 					<input type='submit' value='Submit' onclick='markGreen()'>
 					</form>
-					<b>has ship access: [target_ship_access?"granted":"denied"]</b> <a href='?src=[REF(src)];choice=toggle_id_ship_access'>[target_ship_access?"Deny":"Grant"]</a>
+					<b>has ship access: [target_ship_access?"granted":"denied"]</b> <a href='byond://?src=[REF(src)];choice=toggle_id_ship_access'>[target_ship_access?"Deny":"Grant"]</a>
 					<b>Assignment:</b> "}
 
 				jobs += "<span id='alljobsslot'><a href='#' onclick='showAll()'>[target_rank]</a></span>" //CHECK THIS
 
 			else
 				carddesc += "<b>registered_name:</b> [target_owner]</span>"
-				jobs += "<b>Assignment:</b> [target_rank] (<a href='?src=[REF(src)];choice=demote'>Demote</a>)</span>"
+				jobs += "<b>Assignment:</b> [target_rank] (<a href='byond://?src=[REF(src)];choice=demote'>Demote</a>)</span>"
 
 			var/list/accesses = list()
 			if(istype(src, /obj/machinery/computer/card/centcom)) // REE
 				accesses += "<h5>Central Command:</h5>"
 				for(var/A in get_all_centcom_access())
 					if(A in inserted_modify_id.access)
-						accesses += "<a href='?src=[REF(src)];choice=access;access_target=[A];allowed=0'><font color=\"6bc473\">[replacetext(get_centcom_access_desc(A), " ", "&nbsp")]</font></a> "
+						accesses += "<a href='byond://?src=[REF(src)];choice=access;access_target=[A];allowed=0'><font color=\"6bc473\">[replacetext(get_centcom_access_desc(A), " ", "&nbsp")]</font></a> "
 					else
-						accesses += "<a href='?src=[REF(src)];choice=access;access_target=[A];allowed=1'>[replacetext(get_centcom_access_desc(A), " ", "&nbsp")]</a> "
+						accesses += "<a href='byond://?src=[REF(src)];choice=access;access_target=[A];allowed=1'>[replacetext(get_centcom_access_desc(A), " ", "&nbsp")]</a> "
 			else
 				accesses += {"<div align='center'><b>Access</b></div>
 					<table style='width:100%'>
@@ -276,17 +276,17 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 					accesses += "<td style='width:14%' valign='top'>"
 					for(var/A in get_region_accesses(i))
 						if(A in inserted_modify_id.access)
-							accesses += "<a href='?src=[REF(src)];choice=access;access_target=[A];allowed=0'><font color=\"6bc473\">[replacetext(get_access_desc(A), " ", "&nbsp")]</font></a> "
+							accesses += "<a href='byond://?src=[REF(src)];choice=access;access_target=[A];allowed=0'><font color=\"6bc473\">[replacetext(get_access_desc(A), " ", "&nbsp")]</font></a> "
 						else
-							accesses += "<a href='?src=[REF(src)];choice=access;access_target=[A];allowed=1'>[replacetext(get_access_desc(A), " ", "&nbsp")]</a> "
+							accesses += "<a href='byond://?src=[REF(src)];choice=access;access_target=[A];allowed=1'>[replacetext(get_access_desc(A), " ", "&nbsp")]</a> "
 						accesses += "<br>"
 					accesses += "</td>"
 				accesses += "</tr></table>"
 			body = "[carddesc.Join()]<br>[jobs.Join()]<br><br>[accesses.Join()]<hr>" //CHECK THIS
 
 		else if (!authenticated)
-			body = {"<a href='?src=[REF(src)];choice=auth'>Log In</a><br><hr>
-				<a href='?src=[REF(src)];choice=mode;mode_target=1'>Access Crew Manifest</a><br><hr>"}
+			body = {"<a href='byond://?src=[REF(src)];choice=auth'>Log In</a><br><hr>
+				<a href='byond://?src=[REF(src)];choice=mode;mode_target=1'>Access Crew Manifest</a><br><hr>"}
 
 		dat = list("<tt>", header.Join(), body, "<br></tt>")
 	var/datum/browser/popup = new(user, "id_com", src.name, 900, 620)

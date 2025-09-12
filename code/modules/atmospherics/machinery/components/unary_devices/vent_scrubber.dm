@@ -145,7 +145,7 @@
 		return FALSE
 
 	var/datum/gas_mixture/air_contents = airs[1]
-	if(!air_contents.return_pressure() >= 50 * ONE_ATMOSPHERE)
+	if(air_contents.return_pressure() >= 50 * ONE_ATMOSPHERE)
 		return FALSE
 
 	var/turf/location = loc
@@ -224,7 +224,7 @@
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/welder_act(mob/living/user, obj/item/I)
 	..()
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return TRUE
 	to_chat(user, span_notice("Now welding the scrubber."))
 	if(I.use_tool(src, user, 20, volume=50))

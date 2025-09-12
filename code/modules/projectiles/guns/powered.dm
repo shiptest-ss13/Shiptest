@@ -1,4 +1,5 @@
 /obj/item/gun/ballistic/automatic/powered
+	bad_type = /obj/item/gun/ballistic/automatic/powered
 	default_ammo_type = /obj/item/ammo_box/magazine/gauss
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/gauss,
@@ -21,7 +22,7 @@
 /obj/item/gun/ballistic/automatic/powered/examine(mob/user)
 	. = ..()
 	if(cell)
-		. += span_notice("[src]'s cell is [round(cell.charge / cell.maxcharge, 0.1) * 100]% full.")
+		. += "\The [name]'s cell has [cell.percent()]% charge remaining."
 	else
 		. += span_notice("[src] doesn't seem to have a cell!")
 
@@ -36,9 +37,9 @@
 		return FALSE
 	return ..()
 
-/obj/item/gun/ballistic/automatic/powered/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
+/obj/item/gun/ballistic/automatic/powered/before_firing(atom/target, mob/user)
 	var/obj/item/ammo_casing/caseless/gauss/shot = chambered
-	if(shot?.energy_cost)
+	if(shot.energy_cost)
 		cell.use(shot.energy_cost)
 	return ..()
 
