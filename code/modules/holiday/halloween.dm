@@ -54,7 +54,8 @@
 		return
 	else
 		var/mob/living/carbon/human/H = new(loc)
-		H.makeSkeleton()
+		ADD_TRAIT(H, TRAIT_DISFIGURED, TRAIT_GENERIC)
+		H.set_species(/datum/species/skeleton)
 		H.health = 1e5
 		insert(H)
 		trapped_mob = H
