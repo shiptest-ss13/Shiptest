@@ -43,7 +43,7 @@
 /datum/supply_pack/sec_supply/flashbangs
 	name = "Flashbang Crate"
 	desc = "Contains one flashbang for use in door breaching and riot control."
-	cost = 100
+	cost = 200
 	contains = list(/obj/item/grenade/flashbang)
 	crate_name = "flashbangs crate"
 
@@ -57,7 +57,7 @@
 /datum/supply_pack/sec_supply/teargas
 	name = "Teargas Grenade Crate"
 	desc = "Contains one teargas grenade for use in crowd dispersion and riot control."
-	cost = 100
+	cost = 200
 	contains = list(/obj/item/grenade/chem_grenade/teargas)
 	crate_name = "teargas grenades crate"
 
@@ -166,7 +166,7 @@
 /datum/supply_pack/sec_supply/frag_grenade
 	name = "Frag Grenade Crate"
 	desc = "Contains one fragmentation grenade. Better not let it go off in your hands."
-	cost = 250
+	cost = 500
 	contains = list(/obj/item/grenade/frag)
 	crate_name = "frag grenade crate"
 	crate_type = /obj/structure/closet/crate/secure/weapon
