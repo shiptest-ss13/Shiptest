@@ -1632,6 +1632,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/box,
 /obj/structure/railing,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = -12
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
 "lp" = (
@@ -1727,6 +1732,9 @@
 /obj/machinery/light/directional/south,
 /obj/item/radio/intercom/directional/west{
 	pixel_y = -5
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/office)
@@ -2851,9 +2859,6 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/inteqbrownlight/line,
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 8
-	},
 /obj/structure/closet/secure_closet/wall/directional/south{
 	icon_door = "med_wall";
 	req_access_txt = "5";
@@ -3279,6 +3284,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/equip)
 "vs" = (
@@ -3519,6 +3527,9 @@
 	pixel_y = 4
 	},
 /obj/item/reagent_scanner,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/office)
 "ws" = (
@@ -3645,9 +3656,6 @@
 /turf/open/floor/plating,
 /area/ship/hangar)
 "xj" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 8
-	},
 /obj/structure/chair/office/light{
 	dir = 8
 	},
@@ -4029,6 +4037,9 @@
 	pixel_y = 12
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/port)
 "zV" = (
@@ -4952,6 +4963,7 @@
 	pixel_y = 12
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
+/obj/structure/cable,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "FI" = (
@@ -5716,6 +5728,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -7002,6 +7017,9 @@
 	name = "Enforcer Ready Room";
 	req_access_txt = "1"
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/equip)
 "QU" = (
@@ -7107,6 +7125,9 @@
 	pixel_y = 22
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/equip)
 "RS" = (
@@ -7489,6 +7510,11 @@
 	dir = 5
 	},
 /obj/structure/closet/firecloset/wall/directional/north,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = -12
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/starboard)
 "TB" = (
@@ -7947,6 +7973,9 @@
 	pixel_x = -10;
 	pixel_y = 8
 	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/office)
 "VD" = (
@@ -8053,9 +8082,6 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/inteqbrownlight/line{
 	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 8
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4

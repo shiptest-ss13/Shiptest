@@ -268,7 +268,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
 	item_state = "space-inteq-pilot"
 	icon_state = "space-inteq-pilot"
-	desc = "A lightweight, unarmored space suit designed for exosuit and shuttle pilots. Special attachment points make mounting and dismounting from exosuits much easier."
+	desc = "A rich brown, lightweight spacesuit made of a fire retardant material. While uncumbersome, it has poor protection against extreme temperatures of either end. Utilized by exosuit and shuttle pilots of the IRMG."
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 60, "fire" = 80, "acid" = 75, "wound" = 5)
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | FAST_EMBARK
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
@@ -280,9 +280,11 @@
 	name = "inteq pilot helmet"
 	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
+	lefthand_file = 'icons/mob/inhands/faction/inteq/inteq_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/inteq/inteq_righthand.dmi'
 	item_state = "space-inteq-pilot"
 	icon_state = "space-inteq-pilot0"
-	desc = "A specialized space helmet designed for exosuit and shuttle pilots. Offers limited impact protection."
+	desc = "A specialized space helmet with a large gold visor, designed to provide maximum visibility while protecting from glare. While protective against low pressure environments, it does little against extreme temperatures of either end. Utilized by exosuit and shuttle pilots of the IRMG."
 	armor = list("melee" = 20, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 60, "fire" = 80, "acid" = 75, "wound" = 5)
 	visor_flags_inv = HIDEHAIR|HIDEEARS|HIDEFACE|HIDEFACIALHAIR|HIDEMASK
 	visor_flags = STOPSPRESSUREDAMAGE | ALLOWINTERNALS
