@@ -103,7 +103,7 @@
 /// Stops the above. Also not a comsig proc.
 /datum/element/movetype_handler/proc/stop_floating(atom/movable/target)
 	var/final_pixel_y = target.base_pixel_y
-	if(isliving(target)) //Living mobs also have a 'body_position_pixel_y_offset' variable that has to be taken into account here.
+	if(isliving(target))
 		var/mob/living/living_target = target
-		final_pixel_y += living_target.body_position_pixel_y_offset
+		final_pixel_y += living_target.get_standard_pixel_y_offset()
 	animate(target, pixel_y = final_pixel_y, time = 1 SECONDS)

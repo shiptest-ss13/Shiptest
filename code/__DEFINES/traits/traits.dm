@@ -286,16 +286,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_BYPASS_MEASURES "bypass_lagswitch_measures"
 /// This mob is able to use sign language over the radio.
 #define TRAIT_CAN_SIGN_ON_COMMS "can_sign_on_comms"
-
-///Movement type traits for movables. See elements/movetype_handler.dm
-#define TRAIT_MOVE_GROUND		"move_ground"
-#define TRAIT_MOVE_FLYING		"move_flying"
-#define TRAIT_MOVE_VENTCRAWLING	"move_ventcrawling"
-#define TRAIT_MOVE_FLOATING		"move_floating"
-#define TRAIT_MOVE_PHASING		"move_phasing"
-/// Disables the floating animation. See above.
-#define TRAIT_NO_FLOATING_ANIM		"no-floating-animation"
-
 //non-mob traits
 /// Used for limb-based paralysis, where replacing the limb will fix it.
 #define TRAIT_PARALYSIS "paralysis"
