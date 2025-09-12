@@ -33,6 +33,7 @@
 	pixel_x = -16
 	layer = FLY_LAYER
 	var/log_amount = 10
+	max_integrity = 200
 
 	fuel_power = 1 // trees are more resistant to fire and take much longer to burn
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 0)
@@ -808,7 +809,6 @@
 	icon_state = "churchtree"
 	desc = "A true earthen oak tree imported directly from the holy soil of earth. It's radiates a spiritual warmth that calms the soul."
 	pixel_x = -16
-	max_integrity = 200
 	bound_height = 64
 	var/karma = 0
 	var/mojorange = 4
@@ -1002,7 +1002,6 @@
 	icon_state = "churchtree"
 	desc = "A sturdy oak tree imported directly from Illestren the homeworld of the Saint-Roumain Militia. It contains a bacteria native to the planet. The soil was carfuly transfered from the same place it was planted. A apple tree branch has been grafted onto it. You could try watering it"
 	pixel_x = -16
-	max_integrity = 200
 	bound_height = 64
 	var/health = 0
 	var/lastcycle = 0
