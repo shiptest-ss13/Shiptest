@@ -37,6 +37,7 @@
 	signals_to_remove += GLOB.movement_type_removetrait_signals
 	UnregisterSignal(source, signals_to_remove)
 	paused_floating_anim_atoms -= source
+	attached_atoms -= source
 	stop_floating(source)
 	return ..()
 
