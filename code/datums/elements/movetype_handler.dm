@@ -29,7 +29,7 @@
 		float(movable_target)
 
 /datum/element/movetype_handler/Detach(datum/source)
-	UnregisterSignal(source, list(
+	UnregisterSignals(source, list(
 		GLOB.movement_type_addtrait_signals,
 		GLOB.movement_type_removetrait_signals,
 		SIGNAL_ADDTRAIT(TRAIT_NO_FLOATING_ANIM),
