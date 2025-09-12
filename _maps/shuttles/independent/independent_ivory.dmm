@@ -405,6 +405,18 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
+"eP" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 8;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 20;
+	height = 31;
+	name = "Ivory Stern Dock";
+	width = 40
+	},
+/turf/template_noop,
+/area/template_noop)
 "fa" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -1007,7 +1019,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/airless,
-/area/template_noop)
+/area/ship/external/dark)
 "qb" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden/layer4{
 	dir = 8
@@ -1146,12 +1158,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/starboard)
-"sg" = (
-/obj/structure/railing/corner{
-	dir = 1
-	},
-/turf/open/floor/plating/airless,
-/area/template_noop)
 "sn" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9;
@@ -1332,6 +1338,12 @@
 	color = "#777777"
 	},
 /area/ship/cargo)
+"vf" = (
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external/dark)
 "vg" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -1603,7 +1615,7 @@
 	preferred_direction = 4
 	},
 /turf/open/floor/plating/airless,
-/area/template_noop)
+/area/ship/external/dark)
 "Af" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#D2BC9D"
@@ -2343,18 +2355,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/port)
-"Pu" = (
-/obj/docking_port/stationary{
-	dheight = 1;
-	dir = 8;
-	disable_on_owner_ship_dock = 1;
-	dwidth = 20;
-	height = 31;
-	name = "Ivory Stern Dock";
-	width = 40
-	},
-/turf/template_noop,
-/area/template_noop)
 "PT" = (
 /obj/structure/closet/firecloset/wall/directional/south,
 /obj/effect/turf_decal/siding/wood{
@@ -2746,7 +2746,7 @@ hB
 hB
 hB
 hB
-Pu
+eP
 hB
 hB
 hB
@@ -2768,7 +2768,7 @@ hB
 tj
 iy
 IR
-sg
+vf
 Ab
 qa
 EZ
