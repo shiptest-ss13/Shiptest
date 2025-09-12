@@ -2587,20 +2587,6 @@
 /obj/machinery/light/directional/west,
 /obj/machinery/camera/autoname,
 /obj/item/gun/energy/sharplite/l201/l204,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
-/obj/item/gun/energy/laser,
-/obj/structure/guncloset,
-/obj/item/gun/ballistic/automatic/pistol/commander,
-/obj/item/gun/ballistic/automatic/smg/vector,
-/obj/machinery/camera/autoname,
-/obj/effect/turf_decal/trimline/opaque/vired/filled/line{
-	dir = 9
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Ko" = (
@@ -3067,37 +3053,7 @@
 /obj/item/stock_parts/cell/gun/sharplite,
 /obj/item/stock_parts/cell/gun/sharplite,
 /obj/item/stock_parts/cell/gun/sharplite/plus,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/closet/secure_closet/wall/directional/east{
-	icon_state = "sec_wall";
-	name = "Ammo Supplies"
-	},
-/obj/item/storage/box/ammo/c9mm,
-/obj/item/storage/box/ammo/c9mm,
-/obj/item/ammo_box/magazine/co9mm/empty,
-/obj/item/ammo_box/magazine/co9mm/empty,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun/upgraded,
-/obj/item/storage/box/ammo/c9mm,
-/obj/item/storage/box/ammo/c9mm,
-/obj/item/ammo_box/magazine/smgm9mm/empty,
-/obj/item/ammo_box/magazine/smgm9mm/empty,
 /obj/effect/turf_decal/trimline/opaque/vired/filled/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/opaque/vired/filled/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/black{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
