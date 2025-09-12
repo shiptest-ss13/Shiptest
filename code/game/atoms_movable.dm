@@ -39,10 +39,10 @@
 	var/list/acted_explosions	//for explosion dodging
 	var/datum/forced_movement/force_moving = null	//handled soley by forced_movement.dm
 	/**
-	  * In case you have multiple types, you automatically use the most useful one.
-	  * IE: Skating on ice, flippers on water, flying over chasm/space, etc.
-	  * I reccomend you use the movetype_handler system and not modify this directly, especially for living mobs.
-	  */
+	* In case you have multiple types, you automatically use the most useful one.
+	* IE: Skating on ice, flippers on water, flying over chasm/space, etc.
+	* I reccomend you use the movetype_handler system and not modify this directly, especially for living mobs.
+	*/
 	var/movement_type = GROUND
 	var/atom/movable/pulling
 	var/grab_state = 0
