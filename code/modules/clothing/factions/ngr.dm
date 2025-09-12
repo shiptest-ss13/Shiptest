@@ -244,6 +244,7 @@
 	icon = 'icons/obj/clothing/faction/ngr/eyes.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/eyes.dmi'
 	glass_colour_type = /datum/client_colour/glass_colour/green
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 
 //////////
 //Masks//
