@@ -367,9 +367,13 @@
 /obj/item/gun/energy/sharplite/x11
 	name = "X11 Advanced Stopping Pistol" //wayland is better
 	desc = "An advanced energy revolver with the capacity to shoot both disabler and lethal lasers, as well as futuristic safari nets."
-	icon_state = "bsgun"
-	item_state = "gun"
+	icon_state = "x11"
+	item_state = "nt_generic"
 	force = 7
+	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite/mini
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/sharplite/mini,
+	)
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite/hos, /obj/item/ammo_casing/energy/laser/sharplite/hos, /obj/item/ammo_casing/energy/trap)
 	ammo_x_offset = 1
 	shaded_charge = TRUE

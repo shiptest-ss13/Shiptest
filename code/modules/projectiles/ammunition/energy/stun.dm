@@ -36,7 +36,7 @@
 	e_cost = 625
 
 /obj/item/ammo_casing/energy/disabler/sharplite/hos
-	e_cost = 600
+	e_cost = 500
 
 /obj/item/ammo_casing/energy/disabler/scatter	//WS edit, scatter repathing
 	pellets = 3
