@@ -139,8 +139,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/champion)
 NO_MAG_GUN_HELPER(automatic/pistol/podium)
 
 /obj/item/gun/ballistic/automatic/pistol/podium/inteq
-	name = "NEEDS NAME Inteq Podium"
-	desc = "NEEDS DESC. Chambered in 4.6mm."
+	name = "P46 Schnauzer"
+	desc = "A modification of Nanotrasen's \"Podium\" line of pistols made by the IRMG. Typically issued to second line combatants due to the armor piercing potential of the 4.6mm cartridge. Just be careful around the snout. Chambered in 4.6mm."
 
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'

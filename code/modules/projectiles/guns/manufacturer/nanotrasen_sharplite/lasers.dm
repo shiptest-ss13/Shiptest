@@ -226,7 +226,7 @@
 
 
 /obj/item/gun/energy/sharplite/x46
-	name = "\improper SL X46 “Voltage” Variable Energy Blaster"
+	name = "\improper SL X46 “Amperage” Variable Energy Blaster"
 	desc = "A heavy, bulky weapon designed to fire multiple electroplasma or disabler bolts, not unlike a ballistic shotgun. Unlike most Sharplite electroplasma weapons, the Blaster's bolts are optimized for maximum impact at short range, and quickly lose cohesion over longer distances. The X46 is devastating in close quarters, and is the favorite weapon of Vigilitas breach teams."
 
 	icon_state = "x46"

@@ -113,6 +113,24 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/podium
+	name = "Advantage PH46 Podium Crate"
+	desc = "Contains a compact armor-piercing sidearm, chambered in 4.6mm. For NT employee use only."
+	cost = 1250
+	contains = list(/obj/item/storage/guncase/pistol/podium)
+	faction = /datum/faction/nt
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/podium_inteq
+	name = "P46 Schnauzer"
+	desc = "Contains a compact armor-piercing sidearm, chambered in 4.6mm."
+	cost = 1250
+	contains = list(/obj/item/storage/guncase/pistol/podium/inteq)
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/gun/pistolec
 	name = "Pistole 'C' Crate"
 	desc = "Contains a compact solarian-produced sidearm, chambered in 5.56mm HITP. Not to be confused with 5.56x42 CLIP."
