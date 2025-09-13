@@ -22,8 +22,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/default_color = "#FFFFFF"
 
 	var/bodytype = BODYTYPE_HUMANOID
-	///Whether or not the race has sexual characteristics (biological genders). At the moment this is only FALSE for skeletons and shadows
-	var/sexes = TRUE
 	///Minimum species_age
 	var/species_age_min = 18
 	///Maximum species age

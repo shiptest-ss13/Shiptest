@@ -156,8 +156,6 @@ GLOBAL_LIST_INIT(ai_core_display_screens, sortList(list(
 			input = pick(GLOB.ai_core_display_screens - "Random")
 		return "ai-[lowertext(input)]"
 
-GLOBAL_LIST_INIT(security_depts_prefs, sortList(list(SEC_DEPT_RANDOM, SEC_DEPT_NONE, SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, SEC_DEPT_SCIENCE, SEC_DEPT_SUPPLY)))
-
 	//Backpacks
 #define GBACKPACK "Grey Backpack"
 #define GSATCHEL "Grey Satchel"
@@ -183,12 +181,6 @@ GLOBAL_LIST_INIT(jumpsuitlist, list(PREF_SUIT, PREF_SKIRT, PREF_ALTSUIT, PREF_GR
 #define PREF_ALTEXOWEAR "Alternate Exowear"
 #define PREF_COATEXOWEAR "Departmental Winter Coat"
 GLOBAL_LIST_INIT(exowearlist, list(PREF_NOEXOWEAR, PREF_EXOWEAR, PREF_ALTEXOWEAR, PREF_COATEXOWEAR))
-
-//Uplink spawn loc
-#define UPLINK_PDA "PDA"
-#define UPLINK_RADIO "Radio"
-#define UPLINK_PEN "Pen" //like a real spy!
-GLOBAL_LIST_INIT(uplink_spawn_loc_list, list(UPLINK_PDA, UPLINK_RADIO, UPLINK_PEN))
 
 //favorite cigarette brand
 #define PREF_CIG_SPACE "Space Cigarettes"

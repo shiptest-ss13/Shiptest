@@ -429,7 +429,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["socks_color"], socks_color)
 	READ_FILE(S["backpack"], backpack)
 	READ_FILE(S["jumpsuit_style"], jumpsuit_style)
-	READ_FILE(S["uplink_loc"], uplink_spawn_loc)
 	READ_FILE(S["phobia"], phobia)
 	READ_FILE(S["generic_adjective"], generic_adjective)
 	READ_FILE(S["randomise"],  randomise)
@@ -494,7 +493,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		READ_FILE(S[savefile_slot_name], custom_names[custom_name_id])
 
 	READ_FILE(S["preferred_ai_core_display"], preferred_ai_core_display)
-	READ_FILE(S["prefered_security_department"], prefered_security_department)
 
 	//Preview outfit selection
 	READ_FILE(S["selected_outfit"], selected_outfit)
@@ -551,7 +549,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	backpack			= sanitize_inlist(backpack, GLOB.backpacklist, initial(backpack))
 	jumpsuit_style		= sanitize_inlist(jumpsuit_style, GLOB.jumpsuitlist, initial(jumpsuit_style))
 	exowear				= sanitize_inlist(exowear, GLOB.exowearlist, initial(exowear))
-	uplink_spawn_loc	= sanitize_inlist(uplink_spawn_loc, GLOB.uplink_spawn_loc_list, initial(uplink_spawn_loc))
 	fbp					= sanitize_integer(fbp, FALSE, TRUE, FALSE)
 	features["grad_style"]				= sanitize_inlist(features["grad_style"], GLOB.hair_gradients_list)
 	features["grad_color"]				= sanitize_hexcolor(features["grad_color"])
@@ -625,7 +622,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["socks"]						, socks)
 	WRITE_FILE(S["socks_color"]					, socks_color)
 	WRITE_FILE(S["backpack"]					, backpack)
-	WRITE_FILE(S["uplink_loc"]					, uplink_spawn_loc)
 	WRITE_FILE(S["randomise"]					, randomise)
 	WRITE_FILE(S["species"]						, pref_species.id)
 	WRITE_FILE(S["phobia"]						, phobia)
@@ -677,8 +673,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		WRITE_FILE(S[savefile_slot_name]		,custom_names[custom_name_id])
 	//AI cores
 	WRITE_FILE(S["preferred_ai_core_display"]	, preferred_ai_core_display)
-	//Deprecated department security stuff
-	WRITE_FILE(S["prefered_security_department"], prefered_security_department)
 	//Preview outfit selection
 	WRITE_FILE(S["selected_outfit"]				, selected_outfit)
 	//Quirks

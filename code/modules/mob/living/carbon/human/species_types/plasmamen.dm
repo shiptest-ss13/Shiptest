@@ -1,7 +1,6 @@
 /datum/species/plasmaman
 	name = "\improper Phorid"
 	id = SPECIES_PLASMAMAN
-	sexes = 0
 	meat = /obj/item/stack/sheet/mineral/plasma
 	species_traits = list(NOBLOOD, NOTRANSSTING, HAS_BONE)
 	// plasmemes get hard to wound since they only need a severe bone wound to dismember, but unlike skellies, they can't pop their bones back into place
