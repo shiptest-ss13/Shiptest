@@ -104,7 +104,7 @@
 /datum/blackmarket_item/ammo/saber_mag
 	name = "Saber 9x18mm SMG Magazines"
 	desc = "Magazines for use in the Saber 9x18mm SMG. No, they don't work as swords."
-	item = /obj/item/ammo_box/magazine/smgm9mm
+	item = /obj/item/ammo_box/magazine/m9mm_expedition
 
 	cost_min = 150
 	cost_max = 450

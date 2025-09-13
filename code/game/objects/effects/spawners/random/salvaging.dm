@@ -50,7 +50,7 @@
 	icon_state = "rubbershot"
 	loot = list(
 			/obj/item/stock_parts/cell/gun/upgraded = 5,
-			/obj/item/ammo_box/magazine/smgm9mm = 7,
+			/obj/item/ammo_box/magazine/m9mm_expedition = 7,
 		)
 
 /obj/effect/spawner/random/salvage/destructive_analyzer

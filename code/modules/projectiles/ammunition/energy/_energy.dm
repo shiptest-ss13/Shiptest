@@ -7,6 +7,5 @@
 	var/select_name = "energy"
 	resistance_flags = INDESTRUCTIBLE
 	fire_sound = 'sound/weapons/gun/laser/nt-fire.ogg'
-	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect/energy
 	heavy_metal = FALSE
 	delay = 5

@@ -463,7 +463,7 @@
 
 EMPTY_GUN_HELPER(revolver/viper)
 
-/obj/item/gun/ballistic/revolver/mateba
+/obj/item/gun/ballistic/revolver/rhino
 	name = "\improper Unica 6 auto-revolver"
 	desc = "A high-powered revolver with a unique auto-reloading system. Uses .357 ammo."
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'

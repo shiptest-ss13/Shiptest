@@ -77,9 +77,9 @@
 	if(istype(target, /obj/item/gun)) //checks if they really clicked on a gun
 		var/created_gun
 		if(istype(target, /obj/item/gun/energy/laser/captain/brazil)) //the gun that comes with the ruin
-			created_gun = /obj/item/gun/energy/e_gun/hos/brazil // hos gun with a fancy skin
+			created_gun = /obj/item/gun/energy/sharplite/x01/brazil // hos gun with a fancy skin
 		else if(istype(target, /obj/item/gun/energy/laser/captain)) //a actual antique gun, only on the skipper as of writing and a lavaland ruin
-			created_gun = /obj/item/gun/energy/e_gun/hos/brazil/true // hos gun with a fancy skin, but also recharging!!
+			created_gun = /obj/item/gun/energy/sharplite/x01/brazil/true // hos gun with a fancy skin, but also recharging!!
 		else
 			to_chat(user, span_warning("You can't upgrade this gun!.")) //wrong gun
 			return

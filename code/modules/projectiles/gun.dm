@@ -870,7 +870,7 @@
 /obj/item/gun/proc/calculate_recoil(mob/user, recoil_bonus = 0)
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 		recoil_bonus += gunslinger_recoil_bonus
-	return clamp(recoil_bonus, min_recoil , INFINITY)
+	return clamp(recoil_bonus, min_recoil, INFINITY)
 
 /obj/item/gun/proc/calculate_spread(mob/user, bonus_spread)
 	var/final_spread = 0

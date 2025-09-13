@@ -33,7 +33,7 @@
 /obj/item/gun/ballistic/automatic/pistol/commissar
 	name = "\improper Commissar"
 	desc = "A Nanotrasen-issue handgun, modified with a voice box to further enhance its effectiveness in troop discipline."
-	icon_state = "commander"
+	icon_state = "challenger"
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'

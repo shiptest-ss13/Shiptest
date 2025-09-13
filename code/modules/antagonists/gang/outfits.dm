@@ -61,7 +61,7 @@
 	/obj/item/storage/box/teargas = 1,
 	/obj/item/storage/box/flashbangs = 1,
 	/obj/item/shield/riot/tele = 1,
-	/obj/item/ammo_box/magazine/smgm9mm = 3)
+	/obj/item/ammo_box/magazine/m9mm_expedition = 3)
 
 /datum/outfit/families_police/beatcop/military
 	name = "Families: Space Military"
