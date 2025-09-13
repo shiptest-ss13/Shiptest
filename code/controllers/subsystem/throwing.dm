@@ -109,7 +109,6 @@ SUBSYSTEM_DEF(throwing)
 
 /datum/thrownthing/proc/tick()
 	var/atom/movable/AM = thrownthing
-	AM.setMovetype(AM.movement_type | THROWN)
 	if (!isturf(AM.loc) || !AM.throwing)
 		finalize()
 		return
@@ -177,7 +176,6 @@ SUBSYSTEM_DEF(throwing)
 	if(!thrownthing)
 		return
 	thrownthing.throwing = null
-	thrownthing.setMovetype(thrownthing.movement_type & ~THROWN)
 	if (!hit)
 		for (var/atom/movable/obstacle as anything in get_turf(thrownthing)) //looking for our target on the turf we land on.
 			if (obstacle == target)
