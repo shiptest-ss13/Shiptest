@@ -1,5 +1,3 @@
-import { round, toFixed } from 'common/math';
-import { useBackend } from '../backend';
 import {
   AnimatedNumber,
   Box,
@@ -7,12 +5,15 @@ import {
   LabeledList,
   NumberInput,
   Section,
-} from '../components';
+} from 'tgui-core/components';
+import { round, toFixed } from 'tgui-core/math';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 import { BeakerContents } from './common/BeakerContents';
 
-export const ChemHeater = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ChemHeater = (props) => {
+  const { act, data } = useBackend();
   const {
     targetTemp,
     isActive,
@@ -23,7 +24,7 @@ export const ChemHeater = (props, context) => {
     beakerContents = [],
   } = data;
   return (
-    <Window width={275} height={320} resizable>
+    <Window width={275} height={320}>
       <Window.Content scrollable>
         <Section
           title="Thermostat"
@@ -46,7 +47,7 @@ export const ChemHeater = (props, context) => {
                 value={round(targetTemp)}
                 minValue={0}
                 maxValue={1000}
-                onDrag={(e, value) =>
+                onDrag={(value) =>
                   act('temperature', {
                     target: value,
                   })

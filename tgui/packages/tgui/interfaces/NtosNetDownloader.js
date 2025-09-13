@@ -1,4 +1,3 @@
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
@@ -8,11 +7,13 @@ import {
   NoticeBox,
   ProgressBar,
   Section,
-} from '../components';
+} from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { NtosWindow } from '../layouts';
 
-export const NtosNetDownloader = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtosNetDownloader = (props) => {
+  const { act, data } = useBackend();
   const {
     PC_device_theme,
     disk_size,
@@ -23,7 +24,7 @@ export const NtosNetDownloader = (props, context) => {
     hackedavailable,
   } = data;
   return (
-    <NtosWindow theme={PC_device_theme} width={480} height={735} resizable>
+    <NtosWindow theme={PC_device_theme} width={480} height={735}>
       <NtosWindow.Content scrollable>
         {!!error && (
           <NoticeBox>
@@ -68,9 +69,9 @@ export const NtosNetDownloader = (props, context) => {
   );
 };
 
-const Program = (props, context) => {
+const Program = (props) => {
   const { program } = props;
-  const { act, data } = useBackend(context);
+  const { act, data } = useBackend();
   const {
     disk_size,
     disk_used,

@@ -1,5 +1,4 @@
 import { map } from 'common/collections';
-import { useBackend, useSharedState } from '../backend';
 import {
   Button,
   Flex,
@@ -7,19 +6,18 @@ import {
   NoticeBox,
   Section,
   Tabs,
-} from '../components';
+} from 'tgui-core/components';
+
+import { useBackend, useSharedState } from '../backend';
 import { Window } from '../layouts';
 
-export const NaniteProgramHub = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NaniteProgramHub = (props) => {
+  const { act, data } = useBackend();
   const { detail_view, disk, has_disk, has_program, programs = {} } = data;
-  const [selectedCategory, setSelectedCategory] = useSharedState(
-    context,
-    'category'
-  );
+  const [selectedCategory, setSelectedCategory] = useSharedState('category');
   const programsInCategory = (programs && programs[selectedCategory]) || [];
   return (
-    <Window width={500} height={700} resizable>
+    <Window width={500} height={700}>
       <Window.Content scrollable>
         <Section
           title="Program Disk"
@@ -76,7 +74,7 @@ export const NaniteProgramHub = (props, context) => {
             <Flex>
               <Flex.Item minWidth="110px">
                 <Tabs vertical>
-                  {map((cat_contents, category) => {
+                  {map(programs, (cat_contents, category) => {
                     const progs = cat_contents || [];
                     // Backend was sending stupid data that would have been
                     // annoying to fix
@@ -90,7 +88,7 @@ export const NaniteProgramHub = (props, context) => {
                         {tabLabel}
                       </Tabs.Tab>
                     );
-                  })(programs)}
+                  })}
                 </Tabs>
               </Flex.Item>
               <Flex.Item grow={1} basis={0}>

@@ -1,10 +1,11 @@
-import { Fragment } from 'inferno';
+import { Fragment } from 'react';
+import { Button, Input, Section, Stack } from 'tgui-core/components';
+
 import { useBackend, useLocalState } from '../backend';
-import { Button, Input, Section, Stack } from '../components';
 import { Window } from '../layouts';
 
-export const ChemFilterPane = (props, context) => {
-  const { act } = useBackend(context);
+export const ChemFilterPane = (props) => {
+  const { act } = useBackend();
   const { title, list, reagentName, onReagentInput } = props;
   const titleKey = title.toLowerCase();
   return (
@@ -50,13 +51,13 @@ export const ChemFilterPane = (props, context) => {
   );
 };
 
-export const ChemFilter = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ChemFilter = (props) => {
+  const { act, data } = useBackend();
   const { left = [], right = [] } = data;
-  const [leftName, setLeftName] = useLocalState(context, 'leftName', '');
-  const [rightName, setRightName] = useLocalState(context, 'rightName', '');
+  const [leftName, setLeftName] = useLocalState('leftName', '');
+  const [rightName, setRightName] = useLocalState('rightName', '');
   return (
-    <Window width={500} height={300} resizable>
+    <Window width={500} height={300}>
       <Window.Content scrollable>
         <Stack>
           <Stack.Item grow>
