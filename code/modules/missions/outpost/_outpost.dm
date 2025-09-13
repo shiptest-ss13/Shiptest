@@ -60,7 +60,7 @@
 		"value" = src.value,
 		"duration" = src.duration,
 		"remaining" = time_remaining,
-		"timeStr" = num2text(text2num(time2text(time_remaining, "hh")) - 20) + ":" + time2text(time_remaining, "mm:ss"),
+		"timeStr" = num2text(text2num(time2text(time_remaining, "hh")) + ":" + time2text(time_remaining, "mm:ss"),
 		"progressStr" = get_progress_string(),
 		"actStr" = act_str
 	)
