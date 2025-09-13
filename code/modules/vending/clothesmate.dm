@@ -106,6 +106,7 @@
 		/obj/item/clothing/shoes/laceup = 2,
 		/obj/item/clothing/shoes/sandal = 2,
 		/obj/item/clothing/shoes/jackboots = 2,
+		/obj/item/clothing/shoes/heels = 4,
 		/obj/item/clothing/suit/jacket/miljacket = 1,
 		/obj/item/clothing/suit/apron/purple_bartender = 2,
 		/obj/item/clothing/under/rank/civilian/bartender/purple = 2,
