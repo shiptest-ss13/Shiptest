@@ -33,10 +33,6 @@
 	pixel_y = -8;
 	pixel_x = -5
 	},
-/obj/item/clothing/gloves/combat{
-	pixel_y = -10;
-	pixel_x = 5
-	},
 /obj/item/clothing/head/beret/sec/inteq{
 	pixel_y = 5;
 	pixel_x = -5
@@ -50,8 +46,7 @@
 	},
 /obj/item/storage/pouch/engi,
 /obj/item/clothing/gloves/color/yellow{
-	pixel_y = -8;
-	pixel_x = -8
+	pixel_y = -8
 	},
 /obj/item/clothing/glasses/welding{
 	pixel_x = -4
@@ -61,6 +56,14 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/suit/hooded/wintercoat/security/inteq{
+	pixel_x = -8;
+	pixel_y = -4
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt{
+	pixel_x = 8;
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "aq" = (
@@ -2528,6 +2531,14 @@
 	dir = 6
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
+/obj/item/clothing/suit/hooded/wintercoat/security/inteq{
+	pixel_x = -8;
+	pixel_y = -4
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt{
+	pixel_x = 8;
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "uy" = (
@@ -4928,6 +4939,7 @@
 	pixel_x = -20;
 	pixel_y = -12
 	},
+/obj/item/reagent_containers/glass/beaker/large,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "Pn" = (

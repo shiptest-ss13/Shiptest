@@ -261,6 +261,74 @@
 	full_retraction = TRUE
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 
+// pilot softsuit
+/obj/item/clothing/suit/space/inteq/pilot
+	name = "inteq pilot space suit"
+	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
+	item_state = "space-inteq-pilot"
+	icon_state = "space-inteq-pilot"
+	desc = "A rich brown, lightweight spacesuit made of a fire retardant material. While uncumbersome, it has poor protection against extreme temperatures of either end. Utilized by exosuit and shuttle pilots of the IRMG."
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 60, "fire" = 80, "acid" = 75, "wound" = 5)
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | FAST_EMBARK
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+	slowdown = 0.2
+
+/obj/item/clothing/head/helmet/space/inteq/pilot
+	name = "inteq pilot helmet"
+	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
+	lefthand_file = 'icons/mob/inhands/faction/inteq/inteq_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/inteq/inteq_righthand.dmi'
+	item_state = "space-inteq-pilot"
+	icon_state = "space-inteq-pilot0"
+	desc = "A specialized space helmet with a large gold visor, designed to provide maximum visibility while protecting from glare. While protective against low pressure environments, it does little against extreme temperatures of either end. Utilized by exosuit and shuttle pilots of the IRMG."
+	armor = list("melee" = 20, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 60, "fire" = 80, "acid" = 75, "wound" = 5)
+	visor_flags_inv = HIDEHAIR|HIDEEARS|HIDEFACE|HIDEFACIALHAIR|HIDEMASK
+	visor_flags = STOPSPRESSUREDAMAGE | ALLOWINTERNALS | FLASH_PROTECTION_WELDER
+	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF
+
+	up = FALSE
+	actions_types = list(/datum/action/item_action/toggle_helmet)
+
+/obj/item/clothing/head/helmet/space/inteq/pilot/update_icon_state()
+	icon_state = "space-inteq-pilot[up]"
+	return ..()
+
+/obj/item/clothing/head/helmet/space/inteq/pilot/attack_self(mob/user) //toggle copied from indie pilot helm
+	if(!isturf(user.loc))
+		to_chat(user, span_warning("You cannot toggle your helmet while in this [user.loc]!") )
+		return
+	up = !up
+	if(!up || force)
+		to_chat(user, span_notice("You close your helmet's visor and breathing mask."))
+		gas_transfer_coefficient = initial(gas_transfer_coefficient)
+		permeability_coefficient = initial(permeability_coefficient)
+		clothing_flags |= visor_flags
+		flags_cover |= HEADCOVERSEYES | HEADCOVERSMOUTH
+		flags_inv |= visor_flags_inv
+		cold_protection |= HEAD
+	else
+		to_chat(user, span_notice("You open your helmet's visor and breathing mask."))
+		gas_transfer_coefficient = null
+		permeability_coefficient = null
+		clothing_flags &= ~visor_flags
+		flags_cover &= ~(HEADCOVERSEYES | HEADCOVERSMOUTH)
+		flags_inv &= ~visor_flags_inv
+		cold_protection &= ~HEAD
+	update_appearance()
+	playsound(src.loc, 'sound/mecha/mechmove03.ogg', 50, TRUE)
+	user.update_inv_head()
+	if(iscarbon(user))
+		var/mob/living/carbon/C = user
+		C.head_update(src, forced = 1)
+	for(var/X in actions)
+		var/datum/action/A = X
+		A.UpdateButtonIcon()
+
 // Headgear
 
 /obj/item/clothing/head/warden/inteq
