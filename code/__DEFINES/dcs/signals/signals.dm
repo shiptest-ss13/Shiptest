@@ -510,6 +510,8 @@
 #define COMSIG_MOB_PICKUP_ITEM "mob_pickup_item"
 ///from base of /mob/verb/pointed: (atom/A)
 #define COMSIG_MOB_POINTED "mob_pointed"
+///from base of mob/update_transform()
+#define COMSIG_LIVING_POST_UPDATE_TRANSFORM "living_post_update_transform"
 /// from mob/get_status_tab_items(): (list/items)
 #define COMSIG_MOB_GET_STATUS_TAB_ITEMS "mob_get_status_tab_items"
 ///from base of mob/living/resist() (/mob/living)
