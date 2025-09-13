@@ -158,6 +158,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/nanotrasen/suits.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/nanotrasen/nt_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/nanotrasen/nt_righthand.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
 
 /obj/item/clothing/suit/nanotrasen/medical_smock
 	name = "surgical smock"
