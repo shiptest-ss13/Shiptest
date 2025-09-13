@@ -97,7 +97,7 @@
 	if(duration)
 		var/old_dur = duration
 		var/dur_mod = duration * dur_mod_range
-		duration = round((rand(duration-dur_mod, duration+dur_mod)), 30 SECONDS)
+		duration = round(rand(duration-dur_mod, duration+dur_mod), 30 SECONDS)
 		value = value * (dur_value_scaling ? old_dur / duration : 1)
 	value = round(value, 50)
 

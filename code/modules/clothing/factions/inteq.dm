@@ -50,11 +50,11 @@
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/syndicate/inteq/honorable
-	name = "honorable vanguard turtleneck"
-	desc = "A midnight black turtleneck worn by honorable Vanguards of the IRMG."
+	name = "inteq midnight turtleneck"
+	desc = "A midnight black turtleneck worn by command of the IRMG."
 	icon_state = "inteq_honorable"
 	item_state = "inteq_honorable"
-	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
+	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/under/syndicate/inteq/sneaksuit
 	name = "inteq sneaksuit"
@@ -372,6 +372,7 @@
 	vox_override_icon = 'icons/mob/clothing/faction/inteq/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/inteq/kepori.dmi'
 	glass_colour_type = /datum/client_colour/glass_colour/orange
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 
 // Mask
 

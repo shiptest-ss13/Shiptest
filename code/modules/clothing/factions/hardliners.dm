@@ -228,6 +228,7 @@
 	icon = 'icons/obj/clothing/faction/hardliners/eyes.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/eyes.dmi'
 	glass_colour_type = /datum/client_colour/glass_colour/red
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 
 //////////
 //Belts//
