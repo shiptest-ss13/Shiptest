@@ -421,14 +421,14 @@
 	crate_name = "supermatter shard crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 
-/datum/supply_pack/machine/smartfridge_board
+/datum/supply_pack/machinery/smartfridge_board
 	name = "Smart Fridge Board"
 	desc = "A spacious alternative to the run-of-the-mill fridges that most vessels come pre-equipped with."
 	cost = 500
 	contains = list(/obj/item/circuitboard/machine/smartfridge)
 	crate_name = "smart fridge crate"
 
-/datum/supply_pack/machine/grinder_board
+/datum/supply_pack/machinery/grinder_board
 	name = "All-In-One Grinder Board"
 	desc = "Now YOU can find out: Will! It! Blend?!"
 	cost = 500

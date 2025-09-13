@@ -176,6 +176,17 @@
 	stock = 2
 	availability_prob = 20
 
+/datum/blackmarket_item/ammo/military_etherbor_cell
+	name = "military-grade Etherbor cell"
+	desc = "A military-grade Etherbor weapon cell. A surefire upgrade to the ones on the civilian market. Lime flavor!"
+	item = /obj/item/stock_parts/cell/gun/pgf
+
+	cost_min = 800
+	cost_max = 1200
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 40
+
 /datum/blackmarket_item/ammo/gauss_cell
 	name = "SolCon Weapon Cell"
 	desc = "A Solarian weapon cell, for powering their gauss weaponry."
@@ -244,7 +255,7 @@
 /datum/blackmarket_item/ammo/mauler_mag
 	name = "Mauler Magazine"
 	desc = "A 12 round 9x18mm magazine for the Mauler machine pistol."
-	item = /obj/item/ammo_box/magazine/m9mm_mauler
+	item = /obj/item/ammo_box/magazine/m9mm_mauler/extended
 
 	cost_min = 150
 	cost_max = 300
@@ -271,6 +282,17 @@
 	cost_min = 150
 	cost_max = 350
 	stock = 2
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/f4_magazine
+	name = "F4 Magazine"
+	desc = "10 round .308 magazine for use in the F4 rifle and it's predecessor, the F3."
+	item = /obj/item/ammo_box/magazine/f4_308
+
+	cost_min = 300
+	cost_max = 500
+	stock_min = 2
+	stock_max = 6
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/a4570hp

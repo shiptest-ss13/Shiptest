@@ -1,4 +1,8 @@
-/mob/living/carbon/human/say_mod(input, list/message_mods = list())
+/mob/living/carbon/human/say_mod(input, datum/language/message_language, list/message_mods = list())
+	if(!message_language)
+		message_language = get_selected_language()
+	if(initial(message_language?.flags) & SIGNED_LANGUAGE)
+		return ..()
 	var/obj/item/organ/tongue/T = src.getorganslot(ORGAN_SLOT_TONGUE)
 	if(T)
 		verb_say = T.say_mod
@@ -9,8 +13,7 @@
 		verb_yell = T.yell_mod
 	if(slurring)
 		return "slurs"
-	else
-		. = ..()
+	return ..()
 
 /mob/living/carbon/human/GetVoice(if_no_voice = get_generic_name())
 	if(istype(wear_mask, /obj/item/clothing/mask/chameleon))

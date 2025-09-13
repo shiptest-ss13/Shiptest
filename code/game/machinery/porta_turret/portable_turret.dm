@@ -321,19 +321,19 @@
 		return
 
 	if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP)
-		if(obj_integrity >= max_integrity)
+		if(atom_integrity >= max_integrity)
 			to_chat(user, span_warning("[src] is already in good condition!"))
 			return
 
 		to_chat(user, span_notice("You begin repairing [src]..."))
-		while(obj_integrity < max_integrity)
+		while(atom_integrity < max_integrity)
 			if(!I.use_tool(src, user, 4 SECONDS, 2, 50))
 				break
-			obj_integrity = max(obj_integrity + 20, max_integrity)
+			atom_integrity = max(atom_integrity + 20, max_integrity)
 			to_chat(user, span_notice("You repair [src]."))
 
-			if(obj_integrity > (max_integrity * integrity_failure) && (machine_stat & BROKEN))
-				obj_integrity = max_integrity
+			if(atom_integrity > (max_integrity * integrity_failure) && (machine_stat & BROKEN))
+				atom_integrity = max_integrity
 				set_machine_stat(machine_stat & ~BROKEN)
 				update_appearance(UPDATE_ICON_STATE)
 				check_should_process()
@@ -425,7 +425,7 @@
 
 /obj/machinery/porta_turret/take_damage(damage, damage_type = BRUTE, damage_flag = 0, sound_effect = 1)
 	. = ..()
-	if(!. || obj_integrity <= 0)
+	if(!. || atom_integrity <= 0)
 		return
 	//damage received
 	if(prob(30))
@@ -450,7 +450,7 @@
 		return
 	retaliate(user)
 
-/obj/machinery/porta_turret/obj_break(damage_flag)
+/obj/machinery/porta_turret/atom_break(damage_flag)
 	. = ..()
 	if(.)
 		power_change()
@@ -593,7 +593,7 @@
 			COOLDOWN_START(src, reaction_cooldown, reaction_time)
 
 			if(ishuman(target) || target.client)
-				target.do_alert_animation(target)
+				target.do_alert_animation()
 
 			return TRUE
 

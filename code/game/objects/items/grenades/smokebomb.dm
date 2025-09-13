@@ -1,6 +1,6 @@
 /obj/item/grenade/smokebomb
 	name = "smoke grenade"
-	desc = "A smoke grenade pattern, used to screen unit movements, and signal landing zones, widely used by military forces on the frontier and beyond."
+	desc = "A smoke grenade. Widely used by military forces on the frontier and beyond to screen unit movements and signal landing zones."
 	icon = 'icons/obj/grenade.dmi'
 	icon_state = "smokewhite"
 	item_state = "smoke"

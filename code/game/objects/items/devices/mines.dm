@@ -47,7 +47,7 @@
 /// mines have a small chance to be triggered by damage, but they take longer to explode
 /obj/item/mine/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir)
 	. = ..()
-	if(prob(35) & obj_integrity > 0)
+	if(prob(35) & atom_integrity > 0)
 		blast_delay = blast_delay * 2
 		trigger_mine()
 
@@ -110,7 +110,7 @@
 
 /// When something sets off a mine
 /obj/item/mine/proc/trigger_mine(atom/movable/triggerer)
-	if(obj_integrity <= 0 || triggered)//too busy detonating to detonate again
+	if(atom_integrity <= 0 || triggered)//too busy detonating to detonate again
 		return
 	if(triggerer)
 		triggerer.visible_message(span_danger("[icon2html(src, viewers(src))] [triggerer] sets off \the [src]. It's gonna blow!"), span_danger("[icon2html(src, viewers(src))] \The [src] activates."))
@@ -852,22 +852,3 @@ LIVE_MINE_HELPER(pressure/sound)
 		/obj/item/mine/pressure/explosive/shrapnel/live = 3,
 		/obj/item/mine/pressure/explosive/rad/live = 3,
 		/obj/item/mine/pressure/explosive/fire/live = 3)
-
-/obj/effect/spawner/minefield
-	name = "minefield spawner"
-	var/minerange = 9
-	var/minetype = /obj/item/mine/pressure/explosive/rusty/live
-
-/obj/effect/spawner/minefield/Initialize(mapload)
-	. = ..()
-	for(var/turf/open/T in view(minerange,loc))
-		if(prob(5))
-			new minetype(T)
-
-/obj/effect/spawner/minefield/random
-	name = "random minefield spawner"
-	minetype = /obj/effect/spawner/random/mine
-
-/obj/effect/spawner/minefield/manhack
-	name = "manhack field spawner"
-	minetype = /obj/item/mine/proximity/spawner/manhack/live

@@ -12,4 +12,4 @@
 /obj/item/organ/heart/gland/egg/activate()
 	owner.visible_message(span_alertalien("[owner] [pick(EGG_LAYING_MESSAGES)]"))
 	var/turf/T = owner.drop_location()
-	new /obj/item/reagent_containers/food/snacks/egg/gland(T)
+	new /obj/item/food/egg/gland(T)

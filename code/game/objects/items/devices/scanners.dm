@@ -13,8 +13,7 @@ GENE SCANNER
 // Describes the two modes of scanning available for health analyzers
 #define SCANMODE_HEALTH 0
 #define SCANMODE_CHEMICAL 1
-#define SCANNER_CONDENSED 0
-#define SCANNER_VERBOSE 1
+#define SCANNER_VERBOSE 2
 
 /obj/item/t_scanner
 	name = "\improper T-ray scanner"
@@ -102,15 +101,16 @@ GENE SCANNER
 
 /obj/item/healthanalyzer/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/machines/click.ogg', 50, TRUE)
-	scanmode = !scanmode
-	if(scanmode == 1)
-		balloon_alert(user, "scanning reagents")
-		icon_state = reagentmode
-		item_state = reagentmodeinhand
-	else
-		balloon_alert(user, "scanning health")
-		icon_state = healthmode
-		item_state = healthmodeinhand
+	scanmode = (scanmode + 1) % 2
+	switch(scanmode)
+		if(SCANMODE_HEALTH)
+			to_chat(user, span_notice("You switch the health analyzer to check physical health."))
+			icon_state = healthmode
+			item_state = healthmodeinhand
+		if(SCANMODE_CHEMICAL)
+			to_chat(user, span_notice("You switch the health analyzer to scan chemical contents."))
+			icon_state = reagentmode
+			item_state = reagentmodeinhand
 
 /obj/item/healthanalyzer/attack(mob/living/M, mob/living/carbon/human/user)
 	flick("[icon_state]-anim", src) //makes it so that it plays the scan animation upon scanning, including clumsy scanning
@@ -118,8 +118,11 @@ GENE SCANNER
 
 	// Clumsiness/brain damage check
 	if ((HAS_TRAIT(user, TRAIT_CLUMSY) || HAS_TRAIT(user, TRAIT_DUMB)) && prob(50))
-		user.visible_message(span_warning("[user] analyzes the floor's vitals!"), \
-							span_notice("You stupidly try to analyze the floor's vitals!"))
+		user.visible_message(
+			span_warning("[user] analyzes the floor's vitals!"),
+			span_notice("You stupidly try to analyze the floor's vitals!"),
+		)
+
 		to_chat(user, "[span_info("Analyzing results for The floor:\n\tOverall status: <b>Healthy</b>")]\
 					\n[span_info("Key: <font color='blue'>Suffocation</font>/<font color='green'>Toxin</font>/<font color='#FF8000'>Burn</font>/<font color='red'>Brute</font>")]\
 					\n[span_info("\tDamage specifics: <font color='blue'>0</font>-<font color='green'>0</font>-<font color='#FF8000'>0</font>-<font color='red'>0</font>")]\
@@ -131,11 +134,10 @@ GENE SCANNER
 
 	if(scanmode == SCANMODE_HEALTH)
 		healthscan(user, M, mode, advanced)
-	else
+	else if(scanmode == SCANMODE_CHEMICAL)
 		chemscan(user, M)
 
 	add_fingerprint(user)
-
 
 // Used by the PDA medical scanner too
 /proc/healthscan(mob/user, mob/living/M, mode = SCANNER_VERBOSE, advanced = FALSE, see_all_quirks = FALSE)
@@ -161,34 +163,51 @@ GENE SCANNER
 		if(H.undergoing_cardiac_arrest() && H.stat != DEAD)
 			render_list += "[span_alert("Subject suffering from heart attack: Apply defibrillation or other electric shock immediately!")]\n"
 
-	//WS begin - Borers
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
-		if(C.has_brain_worms() && (!C.reagents.has_reagent(/datum/reagent/medicine/spaceacillin) || advanced))
+		if(C.has_brain_worms() && (!C.has_reagent(/datum/reagent/medicine/spaceacillin) || advanced))
 			render_list += "[span_danger("Foreign organism detected in subject's cranium. Recommended treatment: Dosage of sucrose solution and removal of object via surgery.")]\n"
-	//WS end
 
 	render_list += "[span_info("Analyzing results for [M]:")]\n<span class='info ml-1'>Overall status: [mob_status]</span>\n"
 
 	// Damage descriptions
 	if(brute_loss > 10)
 		render_list += "<span class='alert ml-1'>[brute_loss > 50 ? "Severe" : "Minor"] tissue damage detected.</span>\n"
+
 	if(fire_loss > 10)
 		render_list += "<span class='alert ml-1'>[fire_loss > 50 ? "Severe" : "Minor"] burn damage detected.</span>\n"
+
 	if(oxy_loss > 10)
 		render_list += "<span class='info ml-1'>[span_alert("[oxy_loss > 50 ? "Severe" : "Minor"] oxygen deprivation detected.")]\n"
+
 	if(tox_loss > 10)
 		render_list += "<span class='alert ml-1'>[tox_loss > 50 ? "Severe" : "Minor"] amount of toxin damage detected.</span>\n"
+
 	if(M.getStaminaLoss())
 		render_list += "<span class='alert ml-1'>Subject appears to be suffering from fatigue.</span>\n"
 		if(advanced)
 			render_list += "<span class='info ml-1'>Fatigue Level: [M.getStaminaLoss()]%.</span>\n"
-	if (M.getCloneLoss())
+
+	if(M.getCloneLoss())
 		render_list += "<span class='alert ml-1'>Subject appears to have [M.getCloneLoss() > 30 ? "Severe" : "Minor"] cellular damage.</span>\n"
 		if(advanced)
 			render_list += "<span class='info ml-1'>Cellular Damage Level: [M.getCloneLoss()].</span>\n"
-	if (!M.getorgan(/obj/item/organ/brain))
+
+	if(!M.getorganslot(ORGAN_SLOT_BRAIN)) // brain not added to carbon/human check because it's funny to get to bully simple mobs
 		render_list += "<span class='alert ml-1'>Subject lacks a brain.</span>\n"
+
+	if(ishuman(M))
+		var/mob/living/carbon/human/the_dude = M
+		var/datum/species/the_dudes_species = the_dude.dna.species
+		if(!(NOBLOOD in the_dudes_species.species_traits) && !the_dude.getorganslot(ORGAN_SLOT_HEART))
+			render_list += "<span class='alert ml-1'>Subject lacks a heart.</span>\n"
+		if(!(TRAIT_NOBREATH in the_dudes_species.species_traits) && !the_dude.getorganslot(ORGAN_SLOT_LUNGS))
+			render_list += "<span class='alert ml-1'>Subject lacks lungs.</span>\n"
+		if(!(TRAIT_NOMETABOLISM in the_dudes_species.species_traits) && !the_dude.getorganslot(ORGAN_SLOT_LIVER))
+			render_list += "<span class='alert ml-1'>Subject lacks a liver.</span>\n"
+		if(!(NOSTOMACH in the_dudes_species.species_traits) && !the_dude.getorganslot(ORGAN_SLOT_STOMACH))
+			render_list += "<span class='alert ml-1'>Subject lacks a stomach.</span>\n"
+
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		if(LAZYLEN(C.get_traumas()))
@@ -200,6 +219,8 @@ GENE SCANNER
 						trauma_desc += "severe "
 					if(TRAUMA_RESILIENCE_LOBOTOMY)
 						trauma_desc += "deep-rooted "
+					if(TRAUMA_RESILIENCE_WOUND)
+						trauma_desc += "fracture-derived "
 					if(TRAUMA_RESILIENCE_MAGIC, TRAUMA_RESILIENCE_ABSOLUTE)
 						trauma_desc += "permanent "
 				trauma_desc += B.scan_desc
@@ -207,10 +228,11 @@ GENE SCANNER
 			render_list += "<span class='alert ml-1'>Cerebral traumas detected: subject appears to be suffering from [english_list(trauma_text)].</span>\n"
 		if(C.roundstart_quirks.len)
 			render_list += "<span class='info ml-1'>Subject has the following physiological traits: [C.get_trait_string(see_all=see_all_quirks)].</span>\n"
+
 	if(advanced)
 		render_list += "<span class='info ml-1'>Brain Activity Level: [(200 - M.getOrganLoss(ORGAN_SLOT_BRAIN))/2]%.</span>\n"
 
-	if (M.radiation)
+	if(M.radiation)
 		render_list += "<span class='alert ml-1'>Subject is "
 		switch(M.radiation)
 			if(0 to RAD_MOB_SAFE)
@@ -229,7 +251,7 @@ GENE SCANNER
 	// Body part damage report
 	if(iscarbon(M) && mode == SCANNER_VERBOSE)
 		var/mob/living/carbon/C = M
-		var/list/damaged = C.get_damaged_bodyparts(1,1,ignore_integrity=TRUE)
+		var/list/damaged = C.get_damaged_bodyparts(1,1)
 		if(length(damaged)>0 || oxy_loss>0 || tox_loss>0 || fire_loss>0)
 			var/dmgreport = "<span class='info ml-1'>General status:</span>\
 							<table class='ml-2'><tr><font face='Verdana'>\
@@ -319,18 +341,6 @@ GENE SCANNER
 		if(advanced && H.has_dna())
 			render_list += "<span class='info ml-1'>Genetic Stability: [H.dna.stability]%.</span>\n"
 
-		var/list/broken_stuff = list()
-		var/list/damaged_structure = list()
-		for(var/obj/item/bodypart/B in H.bodyparts)
-			if(B.bone_status >= BONE_FLAG_BROKEN)		// Checks if bone is broken or splinted
-				broken_stuff += B.plaintext_zone
-			if(B.integrity_loss)
-				damaged_structure += B.plaintext_zone
-		if(broken_stuff.len)
-			render_list += "\t[span_alert("Bone fractures detected. Subject's [english_list(broken_stuff)] [broken_stuff.len > 1 ? "require" : "requires"] surgical treatment!")]\n"
-		if(damaged_structure.len)
-			render_list+= "\t[span_alert("Structure rod damage detected. Subject's [english_list(damaged_structure)] [damaged_structure.len > 1 ? "rod require" : "rods requires"] replacement!")]\n"
-
 		// Species and body temperature
 		var/datum/species/S = H.dna.species
 		var/mutant = H.dna.check_mutation(HULK) \
@@ -355,6 +365,16 @@ GENE SCANNER
 		var/tdelta = round(world.time - M.timeofdeath)
 		render_list += "<span class='alert ml-1'><b>Subject died [DisplayTimeText(tdelta)] ago.</b></span>\n"
 
+// Wounds
+	if(iscarbon(M))
+		var/mob/living/carbon/C = M
+		var/list/wounded_parts = C.get_wounded_bodyparts()
+		for(var/obj/item/bodypart/wounded_part as anything in wounded_parts)
+			render_list += "<span class='alert ml-1'><b>Warning: Physical trauma[LAZYLEN(wounded_part.wounds) > 1? "s" : ""] detected in [wounded_part.name]</b>"
+			for(var/datum/wound/W as anything in wounded_part.wounds)
+				render_list += "<div class='ml-2'>Type: [W.name]\nSeverity: [W.severity_text()]\nRecommended Treatment: [W.treat_text]</div>\n"
+			render_list += "</span>"
+
 	for(var/thing in M.diseases)
 		var/datum/disease/D = thing
 		if(!(D.visibility_flags & HIDDEN_SCANNER))
@@ -369,7 +389,7 @@ GENE SCANNER
 		if(blood_id)
 			if(ishuman(C))
 				var/mob/living/carbon/human/H = C
-				if(LAZYLEN(H.get_bleeding_parts()))
+				if(H.is_bleeding())
 					render_list += "<span class='alert ml-1'><b>Subject is bleeding!</b></span>\n"
 			var/blood_percent =  round((C.blood_volume / BLOOD_VOLUME_NORMAL)*100)
 			var/blood_type = C.dna.blood_type.name
@@ -396,21 +416,52 @@ GENE SCANNER
 	// we handled the last <br> so we don't need handholding
 	to_chat(user, boxed_message(jointext(render_list, "")), trailing_newline = FALSE, type = MESSAGE_TYPE_INFO)
 
-/proc/chemscan(mob/living/user, mob/living/M)
-	if(istype(M) && M.reagents)
-		var/render_list = list()
-		if(M.reagents.reagent_list.len)
-			render_list += "<span class='notice ml-1'>Subject contains the following reagents:</span>\n"
-			for(var/datum/reagent/R in M.reagents.reagent_list)
-				render_list += "<span class='notice ml-2'>[round(R.volume, 0.001)] units of [R.name][R.overdosed == 1 ? "</span> - [span_boldannounce("OVERDOSING")]" : ".</span>"]\n"
+/proc/chemscan(mob/living/user, mob/living/target)
+	if(user.incapacitated())
+		return
+
+	if(istype(target) && target.reagents)
+		var/list/render_list = list() //The master list of readouts, including reagents in the blood/stomach, addictions, quirks, etc.
+		var/list/render_block = list() //A second block of readout strings. If this ends up empty after checking stomach/blood contents, we give the "empty" header.
+
+		// Blood reagents
+		if(target.reagents.reagent_list.len)
+			for(var/r in target.reagents.reagent_list)
+				var/datum/reagent/reagent = r
+				render_block += "<span class='notice ml-2'>[round(reagent.volume, 0.001)] units of [reagent.name][reagent.overdosed ? "</span> - [span_bolddanger("OVERDOSING")]" : ".</span>"]<br>"
+
+		if(!length(render_block)) //If no VISIBLY DISPLAYED reagents are present, we report as if there is nothing.
+			render_list += "<span class='notice ml-1'>Subject contains no reagents in their blood.</span><br>"
 		else
-			render_list += "<span class='notice ml-1'>Subject contains no reagents.</span>\n"
-		if(M.reagents.addiction_list.len)
-			render_list += "<span class='boldannounce ml-1'>Subject is addicted to the following reagents:</span>\n"
-			for(var/datum/reagent/R in M.reagents.addiction_list)
+			render_list += "<span class='notice ml-1'>Subject contains the following reagents in their blood:</span><br>"
+			render_list += render_block //Otherwise, we add the header, reagent readouts, and clear the readout block for use on the stomach.
+			render_block.Cut()
+
+		// Stomach reagents
+		var/obj/item/organ/stomach/belly = target.getorganslot(ORGAN_SLOT_STOMACH)
+		if(belly)
+			if(belly.reagents.reagent_list.len)
+				for(var/bile in belly.reagents.reagent_list)
+					var/datum/reagent/bit = bile
+					if(!belly.food_reagents[bit.type])
+						render_block += "<span class='notice ml-2'>[round(bit.volume, 0.001)] units of [bit.name][bit.overdosed ? "</span> - [span_bolddanger("OVERDOSING")]" : ".</span>"]<br>"
+					else
+						var/bit_vol = bit.volume - belly.food_reagents[bit.type]
+						if(bit_vol > 0)
+							render_block += "<span class='notice ml-2'>[round(bit_vol, 0.001)] units of [bit.name][bit.overdosed ? "</span> - [span_bolddanger("OVERDOSING")]" : ".</span>"]<br>"
+
+			if(!length(render_block))
+				render_list += "<span class='notice ml-1'>Subject contains no reagents in their stomach.</span><br>"
+			else
+				render_list += "<span class='notice ml-1'>Subject contains the following reagents in their stomach:</span><br>"
+				render_list += render_block
+
+		// Addictions
+		if(LAZYLEN(target.reagents.addiction_list.len))
+			render_list += "<span class='boldannounce ml-1'>Subject is addicted to the following types of drug:</span><br>"
+			for(var/datum/reagent/R in target.reagents.addiction_list)
 				render_list += "<span class='alert ml-2'>[R.name]</span>\n"
-		else
-			render_list += "<span class='notice ml-1'>Subject is not addicted to any reagents.</span>\n"
+
 		// we handled the last <br> so we don't need handholding
 		to_chat(user, boxed_message(jointext(render_list, "")), type = MESSAGE_TYPE_INFO)
 
@@ -464,6 +515,8 @@ GENE SCANNER
 /obj/item/analyzer/examine(mob/user)
 	. = ..()
 	. += span_notice("Alt-click [src] to activate the barometer function.")
+
+
 
 /obj/item/analyzer/attack_self(mob/user)
 	add_fingerprint(user)
@@ -842,5 +895,4 @@ GENE SCANNER
 
 #undef SCANMODE_HEALTH
 #undef SCANMODE_CHEMICAL
-#undef SCANNER_CONDENSED
 #undef SCANNER_VERBOSE

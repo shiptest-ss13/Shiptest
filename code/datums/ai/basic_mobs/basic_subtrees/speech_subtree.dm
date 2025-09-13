@@ -44,6 +44,13 @@
 	emote_hear = list("squeaks.")
 	emote_see = list("runs in a circle.", "shakes.")
 
+/datum/ai_planning_subtree/random_speech/cow
+	speech_chance = 1
+	speak = list("moo?","moo","MOOOOOO")
+	//sound = list('sound/mobs/non-humanoids/cow/cow.ogg')
+	emote_hear = list("brays.")
+	emote_see = list("shakes her head.")
+
 /datum/ai_planning_subtree/random_speech/bear
 	speech_chance = 5
 	emote_hear = list("rawrs.","grumbles.","grawls.", "stomps!")

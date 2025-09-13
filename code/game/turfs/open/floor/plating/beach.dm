@@ -2,8 +2,8 @@
 
 /turf/open/floor/plating/asteroid/sand
 	name = "sand"
-	icon = 'icons/misc/beach.dmi'
-	icon_state = "sand"
+	icon = 'icons/turf/floors/beachsand.dmi'
+	icon_state = "sand-255"
 	base_icon_state = "sand"
 	floor_variance = 83
 	max_icon_states = 5
@@ -20,6 +20,8 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH)
+	MAP_SWITCH(pixel_x = 0, pixel_x = -19)
+	MAP_SWITCH(pixel_y = 0, pixel_y = -19)
 	slowdown = 0
 
 
@@ -46,35 +48,23 @@
 	light_range = 2
 	light_power = 0.80
 
-/turf/open/floor/plating/grass/beach
+/turf/open/floor/plating/asteroid/dirt/grass/beach
 	baseturfs = /turf/open/floor/plating/asteroid/sand
 	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
 	light_color = COLOR_BEACHPLANET_LIGHT
 	planetary_atmos = TRUE
 
-/turf/open/floor/plating/grass/beach/lit
-	light_color = COLOR_BEACHPLANET_LIGHT
-	light_range = 2
-	light_power = 0.80
-
-/turf/open/floor/plating/grass/beach/dark
-	icon_state = "junglegrass"
-	base_icon_state = "junglegrass"
-	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
-
-/turf/open/floor/plating/grass/beach/dark/lit
-	light_range = 2
-	light_power = 0.80
-
-/turf/open/floor/plating/dirt/beach
+/turf/open/floor/plating/asteroid/dirt/grass/dark/beach
 	baseturfs = /turf/open/floor/plating/asteroid/sand
 	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
 	light_color = COLOR_BEACHPLANET_LIGHT
 	planetary_atmos = TRUE
 
-/turf/open/floor/plating/dirt/beach/lit
-	light_range = 2
-	light_power = 0.80
+/turf/open/floor/plating/asteroid/dirt/beach
+	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
+	light_color = COLOR_BEACHPLANET_LIGHT
+	planetary_atmos = TRUE
+	baseturfs = /turf/open/floor/plating/asteroid/dirt/beach
 
 /* non organic */
 

@@ -644,7 +644,7 @@
 /obj/item/reagent_containers/condiment/flour,
 /obj/item/food/grown/cabbage,
 /obj/item/food/grown/cabbage,
-/obj/item/reagent_containers/food/snacks/branrequests,
+/obj/item/food/branrequests,
 /obj/item/reagent_containers/condiment/enzyme,
 /obj/item/food/grown/tomato,
 /obj/item/food/grown/tomato,
@@ -1007,8 +1007,7 @@
 /area/ship/hallway/aft)
 "in" = (
 /obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 2
+	color = "#543C30"
 	},
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/wood/walnut,
@@ -2125,8 +2124,7 @@
 "sv" = (
 /obj/structure/fluff/hedge,
 /obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 2
+	color = "#543C30"
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
@@ -2192,8 +2190,7 @@
 /area/ship/crew/dorm/captain)
 "sX" = (
 /obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 2
+	color = "#543C30"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
@@ -2279,8 +2276,7 @@
 /area/ship/medical)
 "ux" = (
 /obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 2
+	color = "#543C30"
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
@@ -2294,9 +2290,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "uL" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
@@ -2718,8 +2712,7 @@
 /area/ship/crew/dorm/captain)
 "yA" = (
 /obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 2
+	color = "#543C30"
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/office)
@@ -2734,9 +2727,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "yF" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
@@ -3179,8 +3170,6 @@
 	name = "Mechanic's Locker"
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
-/obj/item/clothing/under/rank/engineering/engineer,
-/obj/item/storage/belt/utility,
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/clothing/head/hardhat/dblue,
 /obj/item/clothing/shoes/workboots,
@@ -3188,6 +3177,9 @@
 /obj/item/clothing/suit/toggle/industrial,
 /obj/item/storage/backpack/duffelbag/engineering,
 /obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/head/hardhat/orange,
+/obj/item/clothing/under/overalls/olive,
+/obj/item/storage/belt/utility/full/engi,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Ee" = (
@@ -3382,8 +3374,7 @@
 /area/ship/hallway/port)
 "Fv" = (
 /obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 2
+	color = "#543C30"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/computer/med_data/laptop{
@@ -4832,9 +4823,7 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/office)
 "Rj" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -5003,24 +4992,22 @@
 	pixel_x = -6;
 	pixel_y = 14
 	},
-/obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/thializid=30);
-	name = "thializid bottle";
-	pixel_x = 6;
-	pixel_y = 14
-	},
 /obj/item/reagent_containers/glass/bottle/atropine{
 	pixel_x = -6;
-	pixel_y = 8
-	},
-/obj/item/reagent_containers/glass/bottle/morphine{
-	pixel_x = 6;
 	pixel_y = 8
 	},
 /obj/item/storage/pill_bottle/mannitol{
 	pixel_x = -8
 	},
 /obj/item/storage/pill_bottle/mutadone,
+/obj/item/reagent_containers/glass/bottle/gjalrazine{
+	pixel_y = 14;
+	pixel_x = 6
+	},
+/obj/item/reagent_containers/glass/bottle/morphine{
+	pixel_x = 6;
+	pixel_y = 8
+	},
 /obj/item/storage/pill_bottle/penacid{
 	pixel_x = 8
 	},
@@ -5103,9 +5090,7 @@
 /turf/open/floor/carpet,
 /area/ship/crew/ccommons)
 "TZ" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -5270,7 +5255,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 4
 	},
-/obj/item/reagent_containers/food/snacks/chewable/lollipop,
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/office/lobby)
@@ -5745,8 +5729,7 @@
 /area/ship/hallway/aft)
 "ZQ" = (
 /obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 2
+	color = "#543C30"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/walnut,

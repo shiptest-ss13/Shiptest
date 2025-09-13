@@ -486,12 +486,14 @@
 	light_power = 0.5
 	light_range = 1
 	needs_sharp_harvest = FALSE
+	///Used for garden scan missions
+	var/mission_scanned = FALSE
 
 /obj/structure/flora/ash/garden/arid
-	name = "sandy garden"
+	name = "rock garden"
 	desc = "Beneath a bluff of soft silicate, a sheltered grove slumbers."
 	icon_state = "gardenarid"
-	harvested_name = "sandy garden"
+	harvested_name = "rock garden"
 	harvested_desc = "Beneath a bluff of soft silicate, a sheltered grove slumbered. Some desert wanderer seems to have picked it clean."
 	harvest = /obj/effect/spawner/random/food_or_drink/garden/arid
 	harvest_amount_high = 1

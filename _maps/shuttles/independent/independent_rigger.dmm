@@ -365,11 +365,7 @@
 	pixel_x = 8;
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/thializid=30);
-	name = "thializid bottle";
-	pixel_x = 5
-	},
+/obj/item/reagent_containers/glass/bottle/gjalrazine,
 /obj/item/reagent_containers/syringe{
 	pixel_x = 7
 	},
@@ -1628,10 +1624,12 @@
 	},
 /obj/item/storage/backpack/industrial,
 /obj/item/clothing/shoes/workboots,
-/obj/item/clothing/under/rank/engineering/engineer,
 /obj/item/clothing/suit/toggle/hazard,
 /obj/item/clothing/head/hardhat/dblue,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/item/storage/belt/utility/full/engi,
+/obj/item/clothing/under/overalls/olive,
+/obj/item/clothing/head/hardhat/orange,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "uy" = (
@@ -3902,15 +3900,15 @@
 	pixel_x = 5
 	},
 /obj/item/storage/cans/sixbeer,
-/obj/item/reagent_containers/food/snacks/canned/beans{
+/obj/item/food/canned/beans{
 	pixel_x = 2;
 	pixel_y = 3
 	},
-/obj/item/reagent_containers/food/snacks/canned/beans{
+/obj/item/food/canned/beans{
 	pixel_x = -5;
 	pixel_y = 3
 	},
-/obj/item/reagent_containers/food/snacks/canned/beans{
+/obj/item/food/canned/beans{
 	pixel_x = -2
 	},
 /obj/structure/closet/crate{
@@ -4484,7 +4482,6 @@
 /area/ship/hallway/central)
 "ZI" = (
 /obj/item/storage/case/surgery{
-	pixel_x = 0;
 	pixel_y = 3
 	},
 /obj/item/clothing/gloves/color/latex/nitrile,

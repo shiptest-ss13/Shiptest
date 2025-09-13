@@ -113,7 +113,7 @@
 		to_chat(user, span_notice("You fill [src] with [trans] units of the contents of [target]."))
 
 	//Something like a glass or a food item. Player probably wants to transfer TO it.
-	else if(target.is_drainable() || istype(target, /obj/item/reagent_containers/food/snacks))
+	else if(target.is_drainable() || istype(target, /obj/item/food))
 		if(!reagents.total_volume)
 			to_chat(user, span_warning("[src] is empty!"))
 			return
@@ -246,6 +246,8 @@
 		/datum/reagent/consumable/sugar = list("condi_sugar", "Sugar", "A packet of sugar. Used for sweetening, typically."),
 		/datum/reagent/consumable/astrotame = list("condi_astrotame", "Astrotame", "An artificial sweetener. Just be careful to not give yourself a headache with too much!"),
 		/datum/reagent/consumable/bbqsauce = list("condi_bbq", "BBQ sauce", "A sweet and savory packet of barbeque sauce. It's sticky!"),
+		/datum/reagent/consumable/creamer = list("condi_creamer", "Coffee Creamer", "A packet of coffee creamer. Better not to think about what they are making this from."),
+		/datum/reagent/consumable/chocolatepudding = list("condi_chocolate", "Chocolate Pudding", "A packet of chocolate pudding. The amount of sugar that's already there wasn't enough for you?"),
 		)
 
 /obj/item/reagent_containers/condiment/pack/create_reagents(max_vol, flags)
@@ -266,7 +268,7 @@
 		return
 
 	//You can tear the bag open above food to put the condiments on it, obviously.
-	if(istype(target, /obj/item/reagent_containers/food/snacks))
+	if(IS_EDIBLE(target))
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
 			to_chat(user, span_warning("You tear open [src], but [target] is stacked so high that it just drips off!") )
 			qdel(src)

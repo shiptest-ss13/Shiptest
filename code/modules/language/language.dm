@@ -92,12 +92,19 @@
 	*/
 	var/list/mutual_understanding
 
-	//our speech verbs
-	var/speech_verb = "says"          // 'says', 'hisses', 'farts'.
-	var/ask_verb = "asks"             // Used when sentence ends in a ?
-	var/exclaim_verb = "exclaims"     // Used when sentence ends in a !
-	var/whisper_verb = "whispers"     // Optional. When not specified speech_verb + quietly/softly is used instead.
-	var/sing_verb = "sings"			  // Used for singing.
+	/// Whether to use speech bubble tone indicators
+	var/use_tone_indicators = FALSE
+
+	/// Special speech bubble to use
+	var/bubble_override
+
+	// These override whichever speech verbs the speaker normally uses. (Example: "signs" instead of "hisses")
+	var/speech_verb		// 'says', 'hisses', 'farts'.
+	var/ask_verb		// Used when sentence ends in a ?
+	var/exclaim_verb	// Used when sentence ends in a !
+	var/yell_verb		// Used when sentence ends in a !!
+	var/whisper_verb	// Optional. When not specified speech_verb + quietly/softly is used instead.
+	var/sing_verb		// Used for singing.
 
 // Primarily for debugging, allows for easy iteration and testing of languages.
 /datum/language/vv_edit_var(var_name, var_value)
@@ -345,5 +352,11 @@
 
 	// If they're shouting, we're shouting
 	return (is_uppercase(input) && length_char(input) >= 2) ? uppertext(word) : word
+
+/**
+ * Called from mob/living/say()
+ */
+/datum/language/proc/on_say(atom/movable/speaker, message, bubble_type, list/spans = list(), datum/language/language = null)
+	return
 
 #undef SCRAMBLE_CACHE_LEN

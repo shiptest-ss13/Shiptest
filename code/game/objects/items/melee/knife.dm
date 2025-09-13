@@ -17,7 +17,8 @@
 	custom_materials = list(/datum/material/iron=12000)
 	attack_cooldown = LIGHT_WEAPON_CD
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	sharpness = IS_SHARP_ACCURATE
+	sharpness = SHARP_POINTY
+	wound_bonus = 15
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	item_flags = EYE_STAB
 	tool_behaviour = TOOL_KNIFE
@@ -47,7 +48,7 @@
 	throw_range = 5
 	custom_materials = list(/datum/material/plastic = 100)
 	attack_verb = list("prodded", "whiffed","scratched", "poked")
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	custom_price = 50
 	var/break_chance = 25
 
@@ -74,7 +75,7 @@
 	throw_range = 6
 	custom_materials = list(/datum/material/iron=4000)
 	attack_verb = list("prodded", "whiffed","rolled", "poked")
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 
 /obj/item/melee/knife/butcher
 	name = "butcher's cleaver"
@@ -169,7 +170,7 @@
 	flags_1 = CONDUCT_1
 	force = 3
 	w_class = WEIGHT_CLASS_SMALL
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 	throwforce = 5
 	throw_speed = 3
 	throw_range = 6
@@ -185,7 +186,7 @@
 		force_on = 20, \
 		throwforce_on = 23, \
 		throw_speed_on = 4, \
-		sharpness_on = IS_SHARP, \
+		sharpness_on = SHARP_EDGED, \
 		hitsound_on = 'sound/weapons/bladeslice.ogg', \
 		w_class_on = WEIGHT_CLASS_NORMAL, \
 		attack_verb_on = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut"), \

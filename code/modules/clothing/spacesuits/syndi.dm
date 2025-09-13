@@ -4,7 +4,7 @@
 	icon_state = "syndicate-helm"
 	item_state = "syndicate-helm"
 	desc = "An advanced, lightweight space helmet made of durable composites. Almost matches integrated hardsuit helmets for protection. Almost."
-	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15)
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/space/syndicate
@@ -13,7 +13,7 @@
 	item_state = "syndicate"
 	desc = "A space suit made of high-grade ballistic fabric with integrated armor plates. More compact than a normal space suit while almost matching powered hardsuits for protection. Almost."
 	w_class = WEIGHT_CLASS_NORMAL
-	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15)
 
 /obj/item/clothing/suit/space/syndicate/Initialize()
 	. = ..()
@@ -83,7 +83,7 @@
 	desc = "A worn, beaten up space suit composed of a flimsy, low-grade ballistic material. There are patches of ducttape covering extensive damage."
 	icon_state = "syndicate-ramzi-surplus"
 	item_state = "syndicate-ramzi-surplus"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 70)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 70, "wound" = 10)
 
 //GEC-graded
 /obj/item/clothing/head/helmet/space/syndicate/engie
@@ -91,7 +91,7 @@
 	icon_state = "syndicate-helm-engie"
 	item_state = "syndicate-helm-engie"
 	desc = "An advanced, lightweight space helmet made of fire and radiation-resistant materials, graded for use by the GEC."
-	armor = list("melee" = 30, "bullet" = 10, "laser" = 10, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75)
+	armor = list("melee" = 30, "bullet" = 10, "laser" = 10, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75, "wound" = 10)
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/suit/space/syndicate/engie
@@ -100,7 +100,7 @@
 	item_state = "syndicate-engie"
 	desc = "A space suit made of high-grade ballistic fabric with thermal and radiation shielding. More compact than a normal space suit, graded for use by the GEC."
 	siemens_coefficient = 0
-	armor = list("melee" = 30, "bullet" = 10, "laser" = 10, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75)
+	armor = list("melee" = 30, "bullet" = 10, "laser" = 10, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75, "wound" = 15)
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/tank/internals, /obj/item/t_scanner, /obj/item/construction/rcd, /obj/item/pipe_dispenser)
 	resistance_flags = FIRE_PROOF
 
@@ -108,9 +108,9 @@
 /obj/item/clothing/head/helmet/space/syndicate/surplus
 	name = "surplus space helmet"
 	desc = "A space helmet made of completely unremarkable plastics. Just a cheap imitation of better helmets."
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 70)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 70, "wound" = 10)
 
 /obj/item/clothing/suit/space/syndicate/surplus
 	name = "surplus space suit"
 	desc = "A space suit made of completely unremarkable fabrics with plastic plates to reduce bulk. Just a cheap imitation, but it's still as compact as its better counterparts."
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 70)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 70, "wound" = 10)

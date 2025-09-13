@@ -17,9 +17,9 @@
 
 /obj/item/food/pizza/make_processable()
 	if(slice_type)
-		AddElement(/datum/element/processable, TOOL_KNIFE, slice_type, 6, 3 SECONDS, table_required = TRUE, /*screentip_verb = "Slice"*/)
-		AddElement(/datum/element/processable, TOOL_SAW, slice_type, 6, 4.5 SECONDS, table_required = TRUE, /*screentip_verb = "Slice"*/)
-		AddElement(/datum/element/processable, TOOL_SCALPEL, slice_type, 6, 6 SECONDS, table_required = TRUE, /*screentip_verb = "Slice"*/)
+		AddElement(/datum/element/processable, TOOL_KNIFE, slice_type, 6, 3 SECONDS, table_required = TRUE)
+		AddElement(/datum/element/processable, TOOL_SAW, slice_type, 6, 4.5 SECONDS, table_required = TRUE)
+		AddElement(/datum/element/processable, TOOL_SCALPEL, slice_type, 6, 6 SECONDS, table_required = TRUE)
 
 //Slices
 /obj/item/food/pizzaslice
@@ -136,7 +136,7 @@
 		/datum/reagent/consumable/nutriment = 20,
 		/datum/reagent/consumable/nutriment/protein = 15,
 		/datum/reagent/consumable/tomatojuice = 6,
-		/datum/reagent/medicine/omnizine = 10,
+		/datum/reagent/medicine/panacea/effluvial = 10,
 		/datum/reagent/consumable/nutriment/vitamin = 5,
 	)
 	tastes = list("crust" = 1, "tomato" = 1, "cheese" = 1, "meat" = 1, "laziness" = 1)

@@ -43,7 +43,7 @@
 /datum/supply_pack/sec_supply/flashbangs
 	name = "Flashbang Crate"
 	desc = "Contains one flashbang for use in door breaching and riot control."
-	cost = 100
+	cost = 200
 	contains = list(/obj/item/grenade/flashbang)
 	crate_name = "flashbangs crate"
 
@@ -57,7 +57,7 @@
 /datum/supply_pack/sec_supply/teargas
 	name = "Teargas Grenade Crate"
 	desc = "Contains one teargas grenade for use in crowd dispersion and riot control."
-	cost = 100
+	cost = 200
 	contains = list(/obj/item/grenade/chem_grenade/teargas)
 	crate_name = "teargas grenades crate"
 
@@ -119,9 +119,9 @@
 */
 
 /datum/supply_pack/sec_supply/riotshields
-	name = "Riot Shield Crate"
-	desc = "Contains a riot shield, effective at holding back hostile fauna, xenofauna, or large crowds."
-	cost = 600
+	name = "Ballistic Shield Crate"
+	desc = "Contains a ballistic shield, effective at holding back hostile fauna, xenofauna, or large crowds."
+	cost = 1000
 	contains = list(/obj/item/shield/riot)
 	crate_name = "riot shield crate"
 
@@ -166,7 +166,7 @@
 /datum/supply_pack/sec_supply/frag_grenade
 	name = "Frag Grenade Crate"
 	desc = "Contains one fragmentation grenade. Better not let it go off in your hands."
-	cost = 250
+	cost = 500
 	contains = list(/obj/item/grenade/frag)
 	crate_name = "frag grenade crate"
 	crate_type = /obj/structure/closet/crate/secure/weapon
@@ -237,3 +237,20 @@
 	-When pressure releases, reach below device and lift via underside in one clean motion. Mounting legs will automatically retract. <br><br> \
 	-The device is now safe to handle. <br><br> \
 	-Safely stow device in secure, moisture-free location, away from fire and blunt force. "
+
+/*
+		Factional
+*/
+
+//gezena
+
+/datum/supply_pack/tools/pgfwebbing
+	name = "Gezenan Combat Webbing"
+	desc = "Contains a lightweight harness covered in pouches for use in carrying ammunition and tools."
+	cost = 500
+	contains = list(/obj/item/storage/belt/military/gezena)
+	crate_name = "webbing crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+

@@ -142,3 +142,11 @@
 /datum/gear/hat/flap
 	display_name = "flap cap, recolorable"
 	path = /obj/item/clothing/head/flap
+
+/datum/gear/hat/sunhat
+	display_name = "sun hat"
+	path = /obj/item/clothing/head/sunhat
+
+/datum/gear/hat/hairbow
+	display_name = "hairbow, recolorable"
+	path = /obj/item/clothing/head/hairbow

@@ -197,12 +197,27 @@ TURF_DECAL_COLOR_HELPER(transparent/cybersunteal, "#4C9C9C", 140)
 /obj/effect/turf_decal/industrial/warning/full
 	icon_state = "stripefull"
 
-
 /obj/effect/turf_decal/industrial/warning/cee
 	icon_state = "stripecee"
 
 /obj/effect/turf_decal/industrial/warning/fulltile
 	icon_state = "stripefulltile"
+
+/obj/effect/turf_decal/industrial/warning/green
+	color = null
+	icon_state = "stripe_green"
+
+/obj/effect/turf_decal/industrial/warning/green/corner
+	icon_state = "stripecorner_green"
+
+/obj/effect/turf_decal/industrial/warning/green/full
+	icon_state = "stripefull_green"
+
+/obj/effect/turf_decal/industrial/warning/green/cee
+	icon_state = "stripecee_green"
+
+/obj/effect/turf_decal/industrial/warning/green/fulltile
+	icon_state = "stripefulltile_green"
 
 /obj/effect/turf_decal/industrial/custodial
 	name = "custodial stripes"
@@ -713,6 +728,14 @@ TURF_DECAL_COLOR_HELPER(transparent/cybersunteal, "#4C9C9C", 140)
 /obj/effect/turf_decal/techfloor/hole/right
 	name = "hole right"
 	icon_state = "techfloor_hole_right"
+
+/obj/effect/turf_decal/stairs
+	name = "partial staircase"
+	icon_state = "half-stair"
+
+/obj/effect/turf_decal/stairs_wood
+	name = "partial wood staircase"
+	icon_state = "half-stair-wood"
 
 /obj/effect/turf_decal/stoneborder
 	name = "stone border"

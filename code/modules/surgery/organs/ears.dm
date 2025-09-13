@@ -238,6 +238,25 @@
 		ear_owner.dna.species.mutant_bodyparts -= "ears"
 		ear_owner.update_body()
 
+/obj/item/organ/ears/horse
+	name = "horse ears"
+
+/obj/item/organ/ears/horse/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
+	..()
+	if(istype(ear_owner))
+		color = ear_owner.hair_color
+		ear_owner.dna.species.mutant_bodyparts |= "ears"
+		ear_owner.dna.features["ears"] = "Horse"
+		ear_owner.update_body()
+
+/obj/item/organ/ears/horse/Remove(mob/living/carbon/human/ear_owner,  special = 0)
+	..()
+	if(istype(ear_owner))
+		color = ear_owner.hair_color
+		ear_owner.dna.features["ears"] = "None"
+		ear_owner.dna.species.mutant_bodyparts -= "ears"
+		ear_owner.update_body()
+
 /obj/item/organ/ears/elf
 	name = "elf ears"
 
@@ -276,14 +295,14 @@
 		return
 	switch(severity)
 		if(1)
-			owner.adjust_jitter(30)
-			owner.Dizzy(30)
+			owner.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+			owner.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			owner.Knockdown(200)
 			deaf = 30
 			to_chat(owner, span_warning("Your robotic ears are ringing, uselessly."))
 		if(2)
-			owner.adjust_jitter(15)
-			owner.Dizzy(15)
+			owner.set_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+			owner.set_timed_status_effect(3 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			owner.Knockdown(100)
 			to_chat(owner, span_warning("Your robotic ears buzz."))
 
@@ -304,13 +323,13 @@
 		return
 	switch(severity)
 		if(1)
-			owner.adjust_jitter(30)
-			owner.Dizzy(30)
+			owner.set_timed_status_effect(60 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
+			owner.set_timed_status_effect(60 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			owner.Knockdown(200)
 			deaf = 30
 			to_chat(owner, span_warning("Your robotic ears are ringing, uselessly."))
 		if(2)
-			owner.adjust_jitter(15)
-			owner.Dizzy(15)
+			owner.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+			owner.set_timed_status_effect(30 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			owner.Knockdown(100)
 			to_chat(owner, span_warning("Your robotic ears buzz."))

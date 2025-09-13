@@ -50,11 +50,8 @@
 
 	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
 	for(var/mob/living/carbon/carbon in orange(effectrange/2, src))
-		if(carbon.run_armor_check(attack_flag = "melee") >= 40)
-			carbon.break_random_bone()
-		if(carbon.run_armor_check(attack_flag = "melee") >= 60)
-			carbon.break_all_bones() //crunch
-		carbon.apply_damage(10, BRUTE)
+		var/target_armor = carbon.run_armor_check(attack_flag = "melee")
+		carbon.apply_damage(15, BRUTE, spread_damage = TRUE, wound_bonus = target_armor, bare_wound_bonus = 0, sharpness = 0)
 
 /obj/effect/anomaly/grav/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
@@ -75,11 +72,9 @@
 		boing = 0
 		if(iscarbon(Guy))
 			for(var/mob/living/carbon/carbon in range(0,src))
-				if(carbon.run_armor_check(attack_flag = "melee") >= 20)
-					carbon.break_random_bone()
-				else if(carbon.run_armor_check(attack_flag = "melee") >= 40)
-					carbon.break_all_bones() //crunch
-				carbon.apply_damage(10, BRUTE)
+				var/target_armor = carbon.run_armor_check(attack_flag = "melee")
+				carbon.apply_damage(15, BRUTE, spread_damage = TRUE, wound_bonus = target_armor, bare_wound_bonus = 0, sharpness = 0)
+
 
 /obj/effect/anomaly/grav/high
 	effectrange = 5
