@@ -284,6 +284,16 @@
 	stock = 2
 	availability_prob = 0
 
+/datum/blackmarket_item/ammo/cottonmouth
+	name = "Cottonmouth Magazine"
+	desc = "A 14 round magazine for the modified Cottonmouth machine pistol."
+	item = /obj/item/ammo_box/magazine/m10mm_cottonmouth
+
+	cost_min = 100
+	cost_max = 300
+	stock = 4
+	availability_prob = 0
+
 /datum/blackmarket_item/ammo/f4_magazine
 	name = "F4 Magazine"
 	desc = "10 round .308 magazine for use in the F4 rifle and it's predecessor, the F3."
