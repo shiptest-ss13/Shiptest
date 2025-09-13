@@ -7,7 +7,7 @@
 			Please anchor the drill in place and defend it until it has gathered enough samples. \
 			Operation of the core sampling drill is extremely dangerous, caution is advised. "
 	value = 2500
-	duration = 90 MINUTES
+	duration = 135 MINUTES
 	weight = 11
 
 	var/datum/planet_type/selected_planet
@@ -102,7 +102,7 @@
 	name = "Class 3 core sample mission"
 	value = 8000
 	weight = 5
-	duration = 120 MINUTES
+	duration = 180 MINUTES
 	class_wanted = 3
 	num_wanted = 8
 
@@ -116,7 +116,7 @@
 			Not much information on these planets are known, caution is advised. \
 			A punchcard will be provided to locate the planet, as it is impossible to find otherwise. "
 	value = 3000
-	duration = 90 MINUTES
+	duration = 135 MINUTES
 	weight = 4
 
 	available_planets = list(
@@ -164,7 +164,7 @@
 	name = "Class 3 rare core sample mission"
 	value = 6500
 	weight = 2
-	duration = 120 MINUTES
+	duration = 180 MINUTES
 	class_wanted = 3
 	num_wanted = 10
 	available_planets = list(
