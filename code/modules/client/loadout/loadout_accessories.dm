@@ -143,6 +143,10 @@
 	display_name = "face mask"
 	path = /obj/item/clothing/mask/breath/facemask
 
+/datum/gear/accessory/mask/halfmask
+	display_name = "half mask"
+	path = /obj/item/clothing/mask/gas/sechailer
+
 //Misc
 
 /datum/gear/accessory/waistcoat
