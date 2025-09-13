@@ -126,7 +126,7 @@
 	name = "P46 Schnauzer"
 	desc = "Contains a compact armor-piercing sidearm, chambered in 4.6mm."
 	cost = 1250
-	contains = list(/obj/item/storage/guncase/pistol/podium/inteq)
+	contains = list(/obj/item/storage/guncase/pistol/podium_inteq)
 	faction = /datum/faction/inteq
 	faction_discount = 0
 	faction_locked = TRUE
