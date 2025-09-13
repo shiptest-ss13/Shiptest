@@ -260,6 +260,15 @@
 
 		paper_note.show_through_camera(usr)
 
+	if(href_list["flavor_more"])
+		var/datum/component/flavor_text/ft = GetComponent(/datum/component/flavor_text)
+
+		if(!ft)
+			return
+
+		ft.ui_interact(usr)
+		return
+
 /mob/living/carbon/on_fall()
 	. = ..()
 	loc?.handle_fall(src)//it's loc so it doesn't call the mob's handle_fall which does nothing
@@ -1242,11 +1251,6 @@
 
 	return total_bleed_rate
 
-/mob/living/carbon/proc/update_flavor_text_feature(new_text)
-	if(!dna)
-		return
-	dna.features["flavor_text"] = new_text
-
 /// Returns whether or not the carbon should be able to be shocked
 /mob/living/carbon/proc/should_electrocute(power_source)
 	if (ismecha(loc))
@@ -1303,3 +1307,39 @@
 		set_lying_angle(pick(90, 270))
 	else
 		set_lying_angle(new_lying_angle)
+
+/mob/living/carbon/proc/set_flavor_text(new_text, new_portrait, new_source)
+	if(!new_text)
+		return
+
+	AddComponent(/datum/component/flavor_text, new_text, new_portrait, new_source)
+
+	flavor_text = new_text
+	flavor_text_html = parsemarkdown_basic(new_text)
+
+	var/list/split = splittext(flavor_text, "\n")
+	flavor_snip = replacetext(split[1], regex("\[_*#\]"), "")
+
+	if(length(flavor_snip) > MAX_SHORTFLAVOR_LEN)
+		flavor_snip = "[copytext(flavor_snip, 1, MAX_SHORTFLAVOR_LEN)]... <a href=\"byond://?src=[text_ref(src)];flavor_more=1\">More...</a>"
+	else if(length(flavor_text) > MAX_SHORTFLAVOR_LEN)
+		flavor_snip = "[flavor_snip] <a href=\"byond://?src=[text_ref(src)];flavor_more=1\">More...</a>"
+
+	if(findtext(new_portrait, /datum/component/flavor_text::flavortext_regex))
+		//TODO: remove once I decide whether to stick to the TGUI interface or not
+		flavor_text_html = "<div width=50%>[flavor_text_html]</div><img src='[new_portrait]' style='float: right' width=50%></img>"
+
+	if(dna)
+		dna.features["flavor_text"] = flavor_text
+		dna.features["flavor_portrait"] = new_portrait
+		dna.features["flavor_source"] = new_source
+
+/mob/living/carbon/proc/flavor_text_callback(user, new_text)
+	set_flavor_text(new_text, dna.features["flavor_portrait"], dna.features["flavor_source"])
+
+/mob/living/carbon/verb/change_flavor_text()
+	set name = "Change Flavor Text"
+	set category = "IC"
+	set desc = "Temporarily change your character's flavor text."
+
+	tgui_markdown(usr, "Flavor Text", CALLBACK(src, PROC_REF(flavor_text_callback)), flavor_text, MAX_FLAVOR_LEN, "A snippet of text shown when others examine you, describing what you may look like. This can also be used for OOC notes. The first line (up to 100 characters) will be shown directly on examine, while the rest will need to be opened in a separate window. THIS CHANGE IS TEMPORARY.", "Enter flavortext for [real_name].")
