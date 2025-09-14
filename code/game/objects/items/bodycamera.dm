@@ -1,3 +1,5 @@
+#define BODYCAM_UPDATE_BUFFER 1 SECONDS
+
 /obj/item/bodycamera
 	name = "body camera"
 	desc = "Ruggedized portable camera unit. Warranty void if exposed to space."
@@ -15,6 +17,9 @@
 	var/view_range = 5
 	var/busy = FALSE
 	var/can_transmit_across_z_levels = FALSE
+	var/updating = FALSE //portable camera camerachunk update
+	var/mob/tracked_mob //last mob that picked up the bodycamera. needed for cameranet updates
+	var/datum/movement_detector/tracker
 
 /obj/item/bodycamera/Initialize()
 	. = ..()
@@ -22,6 +27,7 @@
 		network -= i
 		network += lowertext(i)
 
+	tracker = new /datum/movement_detector(src, CALLBACK(src, PROC_REF(obj_move)))
 	GLOB.cameranet.cameras += src
 	GLOB.cameranet.addCamera(src)
 	c_tag = "Body Camera - " + random_string(4, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
@@ -31,6 +37,7 @@
 	if(can_use())
 		toggle_cam(null, 0) //kick anyone viewing out and remove from the camera chunks
 	GLOB.cameranet.cameras -= src
+	qdel(tracker)
 	return ..()
 
 /obj/item/bodycamera/examine(mob/user)
@@ -46,7 +53,7 @@
 	if(!user.CanReach(src))
 		return
 	if(do_after(user, 10, src, IGNORE_USER_LOC_CHANGE))
-		status = !status
+		toggle_cam(user)
 		if(status)
 			icon_state = "bodycamera-on"
 			playsound(user, 'sound/items/bodycamera_on.ogg', 23, FALSE)
@@ -97,7 +104,7 @@
 	src.view_range = num
 	GLOB.cameranet.updateVisibility(src, 0)
 
-/obj/item/bodycamera/proc/toggle_cam(mob/user, displaymessage = 1)
+/obj/item/bodycamera/proc/toggle_cam(mob/user)
 	status = !status
 	if(can_use())
 		GLOB.cameranet.addCamera(src)
@@ -107,6 +114,7 @@
 		if (isarea(myarea))
 			LAZYREMOVE(myarea.cameras, src)
 	GLOB.cameranet.updateChunk(x, y, z)
+	do_camera_update()
 	update_appearance() //update Initialize() if you remove this.
 
 	// now disconnect anyone using the camera
@@ -137,6 +145,25 @@
 	user.sight = SEE_BLACKNESS
 	user.see_in_dark = 2
 	return 1
+
+/obj/item/bodycamera/proc/obj_move()
+	SIGNAL_HANDLER
+
+	var/cam_location = src.loc
+	if(isturf(cam_location) || isatom(cam_location))
+		update_camera_location(cam_location)
+	return
+
+/obj/item/bodycamera/proc/do_camera_update(oldLoc)
+	if(oldLoc != get_turf(src)) //we want to make sure the camera source has actually moved before running expensive camera updates
+		GLOB.cameranet.updatePortableCamera(src)
+	updating = FALSE
+
+/obj/item/bodycamera/proc/update_camera_location(oldLoc)
+	oldLoc = get_turf(oldLoc)
+	if(!updating)
+		updating = TRUE
+		addtimer(CALLBACK(src, PROC_REF(do_camera_update), oldLoc), BODYCAM_UPDATE_BUFFER)
 
 /obj/item/paper/guides/bodycam
 	name = "Portable Camera Unit Users Guide"
@@ -248,3 +275,5 @@
 		for(var/obj/machinery/computer/security/telescreen/entertainment/TV in GLOB.machines)
 			TV.notify(TRUE, "[c_tag] is now live on [network[1]]!")
 			COOLDOWN_START(src, broadcast_announcement, 20 SECONDS)
+
+#undef BODYCAM_UPDATE_BUFFER

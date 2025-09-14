@@ -33,6 +33,7 @@
 	pixel_x = -16
 	layer = FLY_LAYER
 	var/log_amount = 10
+	max_integrity = 200
 
 	fuel_power = 1 // trees are more resistant to fire and take much longer to burn
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 0)
@@ -808,7 +809,6 @@
 	icon_state = "churchtree"
 	desc = "A true earthen oak tree imported directly from the holy soil of earth. It's radiates a spiritual warmth that calms the soul."
 	pixel_x = -16
-	max_integrity = 200
 	bound_height = 64
 	var/karma = 0
 	var/mojorange = 4
@@ -835,7 +835,6 @@
 		/datum/reagent/toxin/acid/fluacid = -0.4,
 		/datum/reagent/toxin/plantbgone = -0.5,
 		/datum/reagent/napalm = -0.6,
-		/datum/reagent/hellwater = -1,
 		/datum/reagent/liquidgibs = -0.2,
 		/datum/reagent/consumable/ethanol/demonsblood = -0.8,
 		/datum/reagent/medicine/soulus = -0.2
@@ -959,7 +958,7 @@
 		var/luck = rand(1, 100)
 		if(karma > 100)
 			if(luck > 90)
-				L.reagents.add_reagent(/datum/reagent/medicine/omnizine, 5)
+				L.reagents.add_reagent(/datum/reagent/medicine/panacea, 5)
 			else if (luck > 50)
 				SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "treekarma", /datum/mood_event/better_tree, name)
 			else if (luck > 25)
@@ -1003,7 +1002,6 @@
 	icon_state = "churchtree"
 	desc = "A sturdy oak tree imported directly from Illestren the homeworld of the Saint-Roumain Militia. It contains a bacteria native to the planet. The soil was carfuly transfered from the same place it was planted. A apple tree branch has been grafted onto it. You could try watering it"
 	pixel_x = -16
-	max_integrity = 200
 	bound_height = 64
 	var/health = 0
 	var/lastcycle = 0
@@ -1032,7 +1030,6 @@
 		/datum/reagent/toxin/acid/fluacid = -0.4,
 		/datum/reagent/toxin/plantbgone = -0.5,
 		/datum/reagent/napalm = -0.6,
-		/datum/reagent/hellwater = -1,
 		/datum/reagent/liquidgibs = -0.2,
 		/datum/reagent/consumable/ethanol/demonsblood = -0.8,
 		/datum/reagent/medicine/soulus = -0.2

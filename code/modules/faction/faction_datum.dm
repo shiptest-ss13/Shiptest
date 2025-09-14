@@ -29,7 +29,7 @@
 		contrast_color = "#[invert_hex(copytext_char(color, 2))]"
 	if(!background_color)
 		var/list/hsl = rgb2num(color, COLORSPACE_HSL)
-		background_color = rgb(hsl[1], min(hsl[2], 33), max(hsl[3], 66), space=COLORSPACE_HSL)
+		background_color = rgb(hsl[1], min(hsl[2], 50), max(hsl[3], 66), space=COLORSPACE_HSL)
 
 	//All subtypes of this faction, all subtypes of specifically allowed factions, and SPECIFICALLY the parent faction (no subtypes) are allowed.
 	//Try not to nest factions too deeply, yeah?
@@ -98,7 +98,7 @@
 	short_name = "INTEQ"
 	parent_faction = /datum/faction/inteq
 	prefixes = PREFIX_INTEQ
-	color = "#7E6641"
+	color = "#E6B93C"
 
 /datum/faction/clip
 	name = FACTION_CLIP
@@ -117,10 +117,12 @@
 /datum/faction/nt/ns_logi
 	name = FACTION_NS_LOGI
 	prefixes = PREFIX_NS_LOGI
+	color = "#FF6600"
 
 /datum/faction/nt/vigilitas
 	name = FACTION_VIGILITAS
 	prefixes = PREFIX_VIGILITAS
+	color = "#d40000"
 
 /datum/faction/frontiersmen
 	name = FACTION_FRONTIERSMEN
@@ -128,6 +130,7 @@
 	color = "#80735D"
 	check_prefix = FALSE
 	parent_faction = /datum/faction/frontiersmen
+	order = FACTION_SORT_ASPAWN
 
 /datum/faction/pgf
 	name = FACTION_PGF
@@ -152,3 +155,4 @@
 	prefixes = PREFIX_RAMZI
 	color = "#c45508"
 	check_prefix = FALSE
+	order = FACTION_SORT_ASPAWN

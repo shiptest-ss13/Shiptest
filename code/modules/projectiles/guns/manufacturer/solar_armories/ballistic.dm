@@ -1,4 +1,4 @@
-#define SOLAR_ATTACHMENTS list(/obj/item/attachment/laser_sight,/obj/item/attachment/rail_light,/obj/item/attachment/bayonet,/obj/item/attachment/energy_bayonet,/obj/item/attachment/scope,/obj/item/attachment/gun, /obj/item/attachment/sling)
+#define SOLAR_ATTACHMENTS list(/obj/item/attachment/laser_sight,/obj/item/attachment/rail_light,/obj/item/attachment/bayonet,/obj/item/attachment/energy_bayonet,/obj/item/attachment/scope,/obj/item/attachment/gun)
 #define SOLAR_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_SCOPE = 1, ATTACHMENT_SLOT_RAIL = 1)
 
 ///SOLAR ARMORIES
@@ -28,7 +28,7 @@
 		/obj/item/stock_parts/cell/gun/solgov,
 	)
 
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 	w_class = WEIGHT_CLASS_SMALL
 	fire_delay = 0.6 SECONDS //pistol, but heavy caliber.
 	show_magazine_on_sprite = FALSE
@@ -88,8 +88,6 @@
 
 	fire_select_icon_state_prefix = "caseless_"
 
-	slot_flags = ITEM_SLOT_BELT
-
 /obj/item/gun/ballistic/automatic/pistol/solgov/old
 	icon_state = "pistole-c-old"
 
@@ -122,12 +120,14 @@
 	manufacturer = MANUFACTURER_SOLARARMORIES
 	fire_select_icon_state_prefix = "pellet_"
 
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	valid_attachments = SOLAR_ATTACHMENTS
 	slot_available = SOLAR_ATTACH_SLOTS
 	//gauss doesn't explode so there's not light.
 	light_range = 0
+
+	doesnt_keep_bullet = TRUE
 
 
 /obj/item/gun/ballistic/automatic/powered/gauss/claris/suns
@@ -162,7 +162,7 @@
 	empty_indicator = FALSE
 	manufacturer = MANUFACTURER_SOLARARMORIES
 
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	valid_attachments = SOLAR_ATTACHMENTS
 	slot_available = SOLAR_ATTACH_SLOTS

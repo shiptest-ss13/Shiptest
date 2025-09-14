@@ -33,6 +33,19 @@
 		return
 	emote("scream")
 
+/mob/proc/force_pain_noise(power)
+	if(HAS_TRAIT(src, TRAIT_ANALGESIA))
+		power = power/4
+	if(HAS_TRAIT(src, TRAIT_PAIN_RESIST))
+		power = power/2
+	switch(power)
+		if(10 to 25)
+			emote("gasp")
+		if(25 to 50)
+			emote("groan")
+		if(50 to 100)
+			emote("scream")
+
 /mob/proc/force_manual_scream()
 	if(HAS_TRAIT(src, TRAIT_ANALGESIA))
 		return

@@ -31,7 +31,7 @@ export class AudioPlayer {
       this.node.playbackRate = this.options.pitch || 1;
       this.node.currentTime = this.options.start || 0;
       this.node.volume = this.volume;
-      this.node.play();
+      this.node.play()?.catch((error) => logger.log('playback error', error));
       for (let subscriber of this.onPlaySubscribers) {
         subscriber();
       }

@@ -43,8 +43,7 @@
 	name = "Independent - Assistant (Fancy)"
 
 	shoes = /obj/item/clothing/shoes/laceup
-	uniform = /obj/item/clothing/under/suit/charcoal
-	accessory = /obj/item/clothing/accessory/waistcoat
+	uniform = /obj/item/clothing/under/suit/black_really
 
 /datum/outfit/job/independent/assistant/pirate
 	name = "Independent - Assistant (Pirate)"

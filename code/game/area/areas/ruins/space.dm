@@ -285,3 +285,88 @@
 /area/ruin/space/has_grav/refuelingpost/starboard
 	name = "Refueling Post Starboard Hallway"
 	icon_state = "hallS"
+
+// VI Deepstorage
+
+/area/ruin/space/deepstorage
+	name = "VI Deepstorage Exterior"
+	icon_state = "panelsAP"
+	icon_state = "hallC"
+
+/area/ruin/space/shuttle1
+	name = "Frontiersmen Shuttle"
+	icon_state = "red"
+
+/area/ruin/space/shuttle2
+	name = "Frontiersmen Shuttle"
+	icon_state = "red"
+
+/area/ruin/space/shuttle3
+	name = "Frontiersmen Shuttle"
+	icon_state = "red"
+
+/area/ruin/space/has_grav/deepstorage/cargo
+	name = "VI Deepstorage Cargo"
+	icon_state = "storage"
+
+/area/ruin/space/has_grav/deepstorage/bathroom
+	name = "VI Deepstorage Bathroom"
+	icon_state = "toilet"
+
+/area/ruin/space/has_grav/deepstorage/hallway
+	name = "VI Deepstorage Lower Hallway"
+	icon_state = "hallS"
+
+/area/ruin/space/has_grav/deepstorage/hallway/upper
+	name = "VI Deepstorage Upper Hallway"
+	icon_state = "hallC"
+
+/area/ruin/space/has_grav/deepstorage/hallway/east
+	name = "VI Deepstorage Hallway"
+	icon_state = "hallF"
+
+/area/ruin/space/has_grav/deepstorage/lobby
+	name = "VI Deepstorage Lobby"
+	icon_state = "entry"
+
+/area/ruin/space/has_grav/deepstorage/lobby/med
+	name = "VI Deepstorage Medbay Lobby"
+	icon_state = "med"
+
+/area/ruin/space/has_grav/deepstorage/med
+	name = "VI Deepstorage Medbay"
+	icon_state = "surgery"
+
+/area/ruin/space/has_grav/deepstorage/overwatch
+	name = "VI Deepstorage Overwatch"
+	icon_state = "red"
+
+/area/ruin/space/has_grav/deepstorage/security
+	name = "VI Deepstorage Security"
+	icon_state = "security"
+
+/area/ruin/space/has_grav/deepstorage/crewquarters
+	name = "VI Deepstorage Crew Quarters"
+	icon_state = "crew_quarters"
+
+/area/ruin/space/has_grav/deepstorage/canteen
+	name = "VI Deepstorage Canteen"
+	icon_state = "kitchen"
+
+/area/ruin/space/has_grav/deepstorage/security/lobby
+	name = "VI Deepstorage Director Lobby"
+
+/area/ruin/space/has_grav/deepstorage/security/office
+	name = "VI Deepstorage Director Office"
+	icon_state = "bridge"
+
+/area/ruin/space/has_grav/deepstorage/security/bedroom
+	name = "VI Deepstorage Director Bedroom"
+	icon_state = "blue"
+
+/area/ruin/space/has_grav/deepstorage/security/vault
+	name = "VI Deepstorage Vault"
+
+/area/ruin/space/has_grav/deepstorage/engineering
+	name = "VI Deepstorage Engineering"
+	icon_state = "engine"

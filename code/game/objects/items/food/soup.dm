@@ -103,7 +103,7 @@
 		/datum/reagent/consumable/nutriment/protein = 2,
 		/datum/reagent/water = 5,
 		/datum/reagent/consumable/nutriment/vitamin = 9,
-		/datum/reagent/medicine/omnizine = 5
+		/datum/reagent/medicine/neoxanthin = 5
 	)
 	tastes = list("nettles" = 1)
 	foodtypes = VEGETABLES
@@ -128,7 +128,7 @@
 		/datum/reagent/consumable/capsaicin,
 		/datum/reagent/consumable/frostoil,
 		/datum/reagent/medicine/oculine,
-		/datum/reagent/medicine/omnizine,
+		/datum/reagent/medicine/panacea,
 		/datum/reagent/toxin,
 		/datum/reagent/toxin/slimejelly,
 		)
@@ -362,6 +362,18 @@
 	)
 	tastes = list("oats" = 1, "milk" = 1)
 	foodtypes = DAIRY | GRAIN | BREAKFAST
+
+/obj/item/food/soup/gumbo
+	name = "gumbo"
+	desc = "A specific form of stew consisting of a strongly flavored, thickened stock along with a celery, bell peppers, and onions. While gumbo also includes some specific inclusions for tradition, this one seems to lack both."
+	icon_state = "peasoup"
+	food_reagents = list(
+		/datum/reagent/consumable/capsaicin = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 3,
+		/datum/reagent/consumable/nutriment = 5,
+	)
+	tastes = list("savory meat and vegtables" = 1)
+	foodtypes = GRAIN | MEAT | VEGETABLES
 
 /obj/item/food/soup/miras_dola
 	name = "miras-dola"
