@@ -222,6 +222,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cp" = (
@@ -1967,9 +1970,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "mS" = (
@@ -3653,6 +3653,9 @@
 /area/ship/crew/office)
 "xn" = (
 /obj/effect/turf_decal/corner/opaque/yellow/full,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "xr" = (
@@ -4972,20 +4975,9 @@
 	dir = 1
 	},
 /obj/machinery/camera/autoname,
-/obj/structure/closet/emcloset/wall/directional/north,
-/obj/item/clothing/head/helmet/space/inteq{
-	pixel_x = 6;
-	pixel_y = 6
-	},
-/obj/item/clothing/head/helmet/space/inteq{
-	pixel_x = 6;
-	pixel_y = 6
-	},
-/obj/item/clothing/suit/space/inteq{
-	pixel_x = -6
-	},
-/obj/item/clothing/suit/space/inteq{
-	pixel_x = -6
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -6212,8 +6204,6 @@
 	pixel_y = 12
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable,
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
