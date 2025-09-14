@@ -14,7 +14,6 @@
 	strip_delay = 60
 	clothing_flags = SNUG_FIT
 	flags_cover = HEADCOVERSEYES
-	//flags_inv = HIDEHAIR // nah
 
 	equip_sound = 'sound/items/equip/armor_equip.ogg'
 	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
@@ -196,26 +195,6 @@
 	else
 		return
 
-/obj/item/clothing/head/helmet/sec
-	can_flashlight = TRUE
-	content_overlays = TRUE
-
-/obj/item/clothing/head/helmet/sec/attackby(obj/item/I, mob/user, params)
-	if(issignaler(I))
-		var/obj/item/assembly/signaler/S = I
-		if(attached_light) //Has a flashlight. Player must remove it, else it will be lost forever.
-			to_chat(user, span_warning("The mounted flashlight is in the way, remove it first!"))
-			return
-
-		if(S.secured)
-			qdel(S)
-			var/obj/item/bot_assembly/secbot/A = new
-			user.put_in_hands(A)
-			to_chat(user, span_notice("You add the signaler to the helmet."))
-			qdel(src)
-			return
-	return ..()
-
 /obj/item/clothing/head/helmet/bulletproof
 	name = "bulletproof helmet"
 	desc = "A bulletproof combat helmet that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent."
@@ -237,6 +216,7 @@
 /obj/item/clothing/head/helmet/old
 	name = "degrading helmet"
 	desc = "Standard issue security helmet. Due to degradation the helmet's visor obstructs the users ability to see long distances."
+	icon_state = "m10helm"
 	tint = 2
 
 /obj/item/clothing/head/helmet/blueshirt
@@ -328,12 +308,6 @@
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	custom_price = 350
-
-/obj/item/clothing/head/helmet/swat/nanotrasen
-	name = "\improper SWAT helmet"
-	desc = "An extremely robust, space-worthy helmet with the Nanotrasen logo emblazoned on the top."
-	icon_state = "swat"
-	item_state = "swat"
 
 /obj/item/clothing/head/helmet/thunderdome
 	name = "\improper Thunderdome helmet"
@@ -488,8 +462,8 @@
 	can_flashlight = TRUE
 	supports_variations = VOX_VARIATION
 
-/obj/item/clothing/head/helmet/bulletproof/m10
-	name = "\improper M10 pattern Helmet"
+/obj/item/clothing/head/helmet/m10
+	name = "\improper M-10 pattern Helmet"
 	desc = "A classic looking helmet, derived from numerous convergently-similar designs from all across inhabited space. A faded tag reads: 'The difference between an open-casket and closed-casket funeral. Wear on head for best results.'"
 	icon_state = "m10helm"
 	can_flashlight = TRUE

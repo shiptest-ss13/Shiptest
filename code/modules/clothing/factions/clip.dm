@@ -368,6 +368,14 @@
 
 	supports_variations = VOX_VARIATION
 
+/obj/item/clothing/head/helmet/m10/clip
+	name = "\improper Minutemen CM-10 Helmet"
+	desc = "A special, lightweight helmet issued to the Minutemen of the Confederated League Minutemen."
+	icon = 'icons/obj/clothing/faction/clip/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+	icon_state = "clip_m10"
+	can_flashlight = TRUE
+
 /obj/item/clothing/head/helmet/m10/clip_vc
 	name = "\improper Minutemen CM-12 Helmet"
 	desc = "A special, lightweight and padded helmet issued to Vehicle Crewmen of the Confederated League Minutemen. Features noise-reducing technology and a microphone that automatically connects with worn headsets. Hopefully protects you from bumpy rides."
