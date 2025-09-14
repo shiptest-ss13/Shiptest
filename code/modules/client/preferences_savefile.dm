@@ -505,6 +505,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//Quirks
 	READ_FILE(S["all_quirks"], all_quirks)
+	var/list/removed_quirks = list()
+	for(var/quirk_name in all_quirks.Copy())
+		if(!(quirk_name in SSquirks.quirks))
+			all_quirks.Remove(quirk_name)
+			removed_quirks.Add(quirk_name)
+	if(removed_quirks.len)
+		to_chat(parent, "Some of your previously selected quirks have been removed: [english_list(removed_quirks)].")
 
 	//Flavor Text
 	S["feature_flavor_text"]		>> features["flavor_text"]
