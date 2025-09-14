@@ -368,7 +368,7 @@
 
 	supports_variations = VOX_VARIATION
 
-/obj/item/clothing/head/helmet/bulletproof/m10/clip_vc
+/obj/item/clothing/head/helmet/m10/clip_vc
 	name = "\improper Minutemen CM-12 Helmet"
 	desc = "A special, lightweight and padded helmet issued to Vehicle Crewmen of the Confederated League Minutemen. Features noise-reducing technology and a microphone that automatically connects with worn headsets. Hopefully protects you from bumpy rides."
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
@@ -383,11 +383,11 @@
 
 	supports_variations = VOX_VARIATION
 
-/obj/item/clothing/head/helmet/bulletproof/m10/clip_vc/ComponentInitialize()
+/obj/item/clothing/head/helmet/m10/clip_vc/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_HEAD))
 
-/obj/item/clothing/head/helmet/bulletproof/m10/clip_correspondent
+/obj/item/clothing/head/helmet/m10/clip_correspondent
 	name = "CLIP war correspondent M10 Helmet"
 	desc = "A lightweight bulletproof helmet given to war correspondents of CLIP. Features a little attachment rail on the side where you can mount a flashlight. Keep your head down!"
 
