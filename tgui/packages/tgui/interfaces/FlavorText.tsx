@@ -24,7 +24,7 @@ export const FlavorText = (props, context) => {
   });
 
   return (
-    <Window title={data.characterName} width={500} height={300}>
+    <Window title={data.characterName} width={500} height={350}>
       <Window.Content>
         <Stack fill>
           {data.portraitUrl && (

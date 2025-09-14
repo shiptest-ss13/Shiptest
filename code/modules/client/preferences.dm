@@ -1755,8 +1755,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/url = input(user, "A URL to an image that will be shown when others examine you.", "Flavor Portrait", features["flavor_portrait"]) as text|null
 					if(isnull(url))
 						return
-					features["flavor_portrait"] = url
 
+					if(!findtext(url, /datum/component/flavor_text::flavortext_regex))
+						alert(user, "This is an invalid portrait link! Please either post your image to the Shiptest forums and link it from there, or use Gyazo or imgbb.")
+						return
+
+					features["flavor_portrait"] = url
 					var/source = input(user, "The name of the artist or other source for the specified image.", "Flavor Portrait", features["flavor_portrait_source"]) as text|null
 					if(isnull(source))
 						return
