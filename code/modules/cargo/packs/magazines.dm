@@ -123,6 +123,13 @@
 	cost = 250
 	faction = /datum/faction/syndicate/scarborough
 
+/datum/supply_pack/magazine/podium_mag
+	name = "Podium Magazine Crate"
+	desc = "Contains a 4.6x30mm magazine for the Podium and Schnauzer pistols, with a capacity of 12 rounds."
+	contains = list(/obj/item/ammo_box/magazine/m46_30_podium)
+	cost = 250
+	faction = /datum/faction/nt
+
 /datum/supply_pack/magazine/m10mm_mag
 	name = "Ringneck Magazine Crate"
 	desc = "Contains a 10x22mm magazine for the Ringneck pistol, with a capacity of eight rounds."

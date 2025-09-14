@@ -4415,16 +4415,16 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/south,
-/obj/item/storage/guncase/pistol/pinscher{
-	pixel_y = 10;
-	mag_count = 3
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/item/storage/guncase/pistol/podium_inteq{
+	pixel_x = 0;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm/captain)
@@ -7436,14 +7436,6 @@
 	pixel_x = 5;
 	pixel_y = -7
 	},
-/obj/item/storage/box/ammo/a44roum{
-	pixel_y = -4;
-	pixel_x = -9
-	},
-/obj/item/storage/box/ammo/a44roum{
-	pixel_y = -4;
-	pixel_x = -9
-	},
 /obj/item/storage/box/ammo/a12g_buckshot{
 	pixel_y = -1;
 	pixel_x = -6
@@ -7459,6 +7451,14 @@
 /obj/item/storage/box/ammo/a12g_slug{
 	pixel_y = 7;
 	pixel_x = -6
+	},
+/obj/item/storage/box/ammo/c46x30mm{
+	pixel_x = -7;
+	pixel_y = -3
+	},
+/obj/item/storage/box/ammo/c46x30mm{
+	pixel_x = -6;
+	pixel_y = -3
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)

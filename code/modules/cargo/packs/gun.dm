@@ -87,16 +87,6 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/pinscher
-	name = "Pinscher Heavy Pistol Crate"
-	desc = "Contains a heavy pistol manufactured by Serene Outdoors and modified to fit IRMG's standards. Chambered in .44 Roumain."
-	cost = 1250
-	contains = list(/obj/item/storage/guncase/pistol/pinscher)
-	crate_name = "pistol crate"
-	faction = /datum/faction/inteq
-	faction_discount = 0
-	faction_locked = TRUE
-
 /datum/supply_pack/gun/candors
 	name = "Candor Pistol Crate"
 	desc = "Contains a Candor pistol, the trusty sidearm of any spacer, produced by Hunter's Pride and chambered in .45 ACP."
@@ -184,6 +174,15 @@
 	cost = 1750
 	contains = list(/obj/item/storage/guncase/pistol/a357)
 	faction = /datum/faction/syndicate/scarborough
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/rhino
+	name = "Rhino Revolver Crate"
+	desc = "Contains a double-action Rhino Revolver, chambered in .357 magnum."
+	cost = 1750
+	contains = list(/obj/item/storage/guncase/pistol/rhino)
+	faction = /datum/faction/nt
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -408,7 +407,7 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/x46
-	name = "X46 'Voltage' Variable Energy Blaster Crate"
+	name = "X46 'Amperage' Variable Energy Blaster Crate"
 	desc = "Contains an energy-based shotgun equipped with dual kill/disable modes, ideal for short range. For NT employee use only."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/energy/ultima)

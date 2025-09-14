@@ -291,7 +291,7 @@
 	gun_type = /obj/item/gun/ballistic/automatic/pistol/champion
 	mag_type = /obj/item/ammo_box/magazine/co9mm
 
-/obj/item/storage/guncase/rhino
+/obj/item/storage/guncase/pistol/rhino
 	gun_type = /obj/item/gun/ballistic/revolver/rhino
 	mag_type = /obj/item/ammo_box/a357/empty
 

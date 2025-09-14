@@ -4115,17 +4115,16 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/item/storage/guncase/pistol/pinscher{
-	pixel_y = -10;
-	mag_count = 3;
-	pixel_x = 8
-	},
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 20;
 	pixel_y = 12
 	},
 /obj/item/clothing/under/syndicate/inteq/honorable,
+/obj/item/storage/guncase/pistol/podium_inteq{
+	pixel_x = 5;
+	pixel_y = -8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm/captain)
 "IN" = (
@@ -5006,14 +5005,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/obj/item/storage/box/ammo/a44roum{
-	pixel_y = -4;
-	pixel_x = 2
-	},
-/obj/item/storage/box/ammo/a44roum{
-	pixel_y = -4;
-	pixel_x = 2
-	},
 /obj/item/storage/toolbox/ammo/shotgun{
 	pixel_y = 7
 	},
@@ -5026,6 +5017,14 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/east,
+/obj/item/storage/box/ammo/c46x30mm{
+	pixel_x = 4;
+	pixel_y = -2
+	},
+/obj/item/storage/box/ammo/c46x30mm{
+	pixel_x = 6;
+	pixel_y = -2
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "QH" = (

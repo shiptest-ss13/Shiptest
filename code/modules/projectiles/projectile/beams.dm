@@ -172,6 +172,7 @@
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 
 	speed = 0.3
+	pass_flags = PASSGRILLE | PASSTABLE
 
 /obj/projectile/beam/weaker
 	damage = 10

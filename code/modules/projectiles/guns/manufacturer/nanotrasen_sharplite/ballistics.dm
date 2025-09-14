@@ -1,6 +1,6 @@
 /obj/item/gun/ballistic/automatic/pistol/challenger
 	name = "Advantage PS9 Challenger"
-	desc = "A lightweight semi-automatic 9mm pistol constructed largely of polymers, first adopted in FS 408 as VI's new standard sidearm in specific regions. Popular among new shooters for its low price point, forgiving recoil, and generous magazine capacity for its class. Chambered in 9x18mm."
+	desc = "A lightweight semi-automatic 9mm pistol constructed largely of polymers. Low price point, forgiving recoil, and generous magazine capacity for its class. Chambered in 9x18mm."
 	icon_state = "challenger"
 	item_state = "nt_generic"
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
@@ -43,7 +43,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger)
 
 /obj/item/gun/ballistic/automatic/pistol/champion
 	name = "Advantage PHB Champion"
-	desc = "A large, burst-fire machine pistol featuring an impressive recoil compensation assembly, making it substantially more stable and accurate than most machine pistols. Produced only for major Advantage clients. Judging by the markings, this PHB was produced specifically for Vigilitas Interstellar. Chambered in 9x18mm."
+	desc = "A large, burst-fire machine pistol featuring an impressive recoil compensation assembly, making it substantially more stable and accurate than most machine pistols. Chambered in 9x18mm."
 	icon_state = "champion"
 	item_state = "champion"
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
@@ -89,7 +89,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/champion)
 
 /obj/item/gun/ballistic/automatic/pistol/podium
 	name = "Advantage PH46 Podium"
-	desc ="A heavy pistol chambered in the high-velocity 4.6mm cartridge, designed to defeat common body armor. Despite the powerful cartridge, it is known to be surprisingly controllable, though not necessarily lightweight. Sold only to major corporate clients. Chambered in 4.6mm."
+	desc ="A heavy pistol chambered in the high-velocity 4.6mm cartridge, designed to defeat common body armor. Despite the powerful cartridge, it is known to be surprisingly controllable, though not necessarily lightweight. Chambered in 4.6mm."
 
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
@@ -223,7 +223,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 
 /obj/item/gun/ballistic/revolver/rhino
 	name = "Advantage Rhino"
-	desc = "A very famous high-powered semi-auto revolver. Designed by Nanotrasen Advantage for use in shooting competitions, it has ended up as the de-facto officer weapon of the Nanotrasen aliance. Chambered in .357."
+	desc = "A very famous high-powered semi-auto revolver, often used as the de-facto officer weapon of the Nanotrasen aliance. Chambered in .357."
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
@@ -300,7 +300,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 // /obj/item/gun/ballistic/automatic/smg/resolution
 /obj/item/gun/ballistic/automatic/smg/resolution
 	name = "\improper Advantage PD46 Resolution"
-	desc = "A surprisingly compact 4.6mm personal defense weapon with a very unusual design. Though somewhat awkward to reload, the PD46 has excellent shooting ergonomics and excellent accuracy for its class. This combined with its armor-penetrating cartridge and low price of entry have made it a weapon of choice for many spacers looking to dissuade pirates and other malefactors."
+	desc = "A surprisingly compact 4.6mm personal defense weapon with a very unusual design. Though somewhat awkward to reload, the PD46 has excellent shooting ergonomics and excellent accuracy for its class, combined with its armor-penetrating cartridge and low price of entry."
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
@@ -370,7 +370,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 
 /obj/item/gun/ballistic/automatic/smg/resolution/inteq
 	name = "\improper BDM-50 Akita"
-	desc = "An Advantage PD46, modified to Inteq's requirements and standards. As with many of IRMG's weapons, these were likely obtained by former Vigilitas personnel on their way out, as Advantage has no history of custom production runs for Inteq."
+	desc = "A seized Advantage PD46, modified to Inteq's requirements and standards. Awkward to reload, though has a powerful cartridge with good ergonomics and accuracy."
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
@@ -406,7 +406,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 
 /obj/item/gun/ballistic/shotgun/automatic/negotiator
 	name = "Advantage AST12 Negotiator"
-	desc = "A pump-action shotgun with a twin-tube design that allows the user to switch between two ammo types on demand, or simply double their available ammunition. Introduced alongside the PS9 as Advantage's flagship product, the AST12 has run into pervasive production issues that limit its availability."
+	desc = "A pump-action shotgun with a twin-tube design that allows the user to switch between two ammo types on demand, or simply double their available ammunition."
 
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'

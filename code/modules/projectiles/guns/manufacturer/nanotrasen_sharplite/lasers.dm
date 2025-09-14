@@ -30,7 +30,7 @@
 
 /obj/item/gun/energy/sharplite/x26
 	name = "SL X26 “Ohm” Variable Energy Pistol"
-	desc = "A compact energy pistol that can fire lethal electroplasma bolts or stamina-draining disabler bolts. The VEP (or, occasionally, \"veep\") is Sharplite's most popular product, practically ubiquitous wherever Sharplite products can be obtained - which is to say, everywhere."
+	desc = "A compact energy pistol that can fire lethal electroplasma bolts or stamina-draining disabler bolts."
 
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
@@ -62,7 +62,7 @@
 
 /obj/item/gun/energy/sharplite/x01
 	name = "SL X01 “Yari” Heavy Variable Pistol"
-	desc = "A bulky pistol that can fire devastating electroplasma bolts and disabler shots. An early Sharplite product noted for its unusual power output and prohibitive production costs. Small numbers are still produced as something of a prestige piece for Vigilitas field managers."
+	desc = "A bulky pistol that can fire devastating electroplasma bolts and disabler shots. An early Sharplite product notable for unusually strong power output."
 
 
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
@@ -101,7 +101,7 @@
 
 /obj/item/gun/energy/sharplite/l305
 	name = "\improper L305 “Rush” Tactical Plasma Gun"
-	desc = "A radical development on the X26 frame, fitted with a rapid-cycle plasma chamber and designed to produce sustained bursts of low-power electroplasma bolts. The Tac Plasma, as it is often called, serves a role analogous to ballistic sub-machine guns, and is similarly favored in close-quarters environments, especially by Vigilitas security and combat personnel."
+	desc = "A radical development on the X26 frame, fitted with a rapid-cycle plasma chamber and designed to produce sustained bursts of low-power electroplasma bolts."
 
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
@@ -138,7 +138,7 @@
 
 /obj/item/gun/energy/sharplite/l201
 	name = "SL L201 “Surge” Marksman Plasma Rifle"
-	desc = "A long rifle-sized electroplasma gun. Developed at the same time as the L204, the L201 is specialized for long-range shooting, with an extended focusing assembly that produces much higher projectile velocities and more powerful bolts at the cost of power usage."
+	desc = "A long rifle-sized electroplasma gun. Specialized for long-range shooting, with an extended focusing assembly that produces much higher projectile velocities and more powerful bolts at the cost of power usage."
 
 	icon_state = "l201"
 	item_state = "l201"
@@ -164,7 +164,7 @@
 
 /obj/item/gun/energy/sharplite/l201/l204
 	name = "SL L204 “Resistor” Plasma Rifle"
-	desc = "A rifle-sized, semi-automatic electroplasma gun known for its low price and surprisingly low energy usage. The L204 is common on civilian markets, and is a standby for homesteaders, miners, and other spacers looking to save on ammunition."
+	desc = "A rifle-sized, semi-automatic electroplasma gun known for its low price and surprisingly low energy usage."
 	icon_state = "l204"
 	item_state = "l204"
 
@@ -188,7 +188,7 @@
 
 /obj/item/gun/energy/sharplite/x12
 	name = "SL X12 “Volt” Variable Energy Carbine"
-	desc = "A short, somewhat hefty carbine that can fire electroplasma or disabler bolts. The X12's non-lethal capability has made it the standard weapon for Vigilitas guards in public-facing and low-threat postings where lethal force is not always appropriate, but the added visibility of a carbine is necessary."
+	desc = "A short, somewhat hefty carbine that can fire electroplasma or disabler bolts. Popular with security details with low-threat assignments."
 
 	icon_state = "x12"
 	item_state = "x12"
@@ -214,7 +214,7 @@
 
 /obj/item/gun/energy/sharplite/x12/inteq
 	name = "PP10 “Cadejo” Energy Carbine"
-	desc = "A Sharplite X12 VEC refinished in Inteq Risk Management Group colors. Like the base model, it fires lethal electroplasma or nonlethal disabler bolts. Typically issued to IRMG base guards and station security staff. The modifications appear to be largely cosmetic."
+	desc = "A Sharplite X12 VEC refinished in Inteq Risk Management Group colors. Like the base model, it fires lethal electroplasma or nonlethal disabler bolts. The modifications appear to be largely cosmetic."
 
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
@@ -227,7 +227,7 @@
 
 /obj/item/gun/energy/sharplite/x46
 	name = "\improper SL X46 “Amperage” Variable Energy Blaster"
-	desc = "A heavy, bulky weapon designed to fire multiple electroplasma or disabler bolts, not unlike a ballistic shotgun. Unlike most Sharplite electroplasma weapons, the Blaster's bolts are optimized for maximum impact at short range, and quickly lose cohesion over longer distances. The X46 is devastating in close quarters, and is the favorite weapon of Vigilitas breach teams."
+	desc = "A heavy, bulky weapon designed to fire multiple electroplasma or disabler bolts, not unlike a ballistic shotgun. Electroplasma speed tends to lessen the spread and increase effective range over conventional ballistic shotguns."
 
 	icon_state = "x46"
 	item_state = "x46"
@@ -283,7 +283,7 @@
 
 /obj/item/gun/energy/sharplite/al655
 	name = "SL AL655 “Hades” Assault Plasma Rifle"
-	desc = "A powerful electroplasma gun with a rapid repeater assembly and many capacitors. The APR rapidly fires heavy electroplasma bolts, and is the standard weapon of Vigilitas's paramilitary division. Its cost and power have made the APR somewhat exclusive, and it is rarely seen outside of big-budget corporate clients."
+	desc = "A powerful electroplasma gun with a rapid repeater assembly and many capacitors. The APR rapidly fires heavy electroplasma bolts."
 	icon_state = "al655"
 	item_state = "al655"
 
@@ -316,8 +316,7 @@
 
 /obj/item/gun/energy/sharplite/al655/inteq
 	name = "PP20 “Barghest” APR"
-	desc = "A Sharplite Assault Plasma Rifle refinished in Inteq Risk Management Group colors. A powerful weapon that can deliver rapid-fire, armor-penetrating electroplasma bolts. Most likely stolen by disgruntled Vigilitas employees at the end of the ICW or raided from a cache, as new APRs would be nearly impossible for IRMG to obtain under normal circumstances."
-
+	desc = "A Sharplite Assault Plasma Rifle refinished in Inteq Risk Management Group colors. A powerful weapon that can deliver rapid-fire, armor-penetrating electroplasma bolts."
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
@@ -329,7 +328,7 @@
 
 /obj/item/gun/energy/sharplite/al607
 	name = "SL AL607 “Sarissa” Plasma Accelerator"
-	desc = "A heavy electroplasma rifle with an extensive accelerator assembly, with an overall length almost comparable to the average Kepori height. Produces singular electroplasma bolts of impressive power and velocity that strike with enough force and precision to overwhelm most infantry defenses. Rarely used, even by Vigilitas paramilitary units"
+	desc = "A heavy electroplasma rifle with an extensive accelerator assembly, with an overall length almost comparable to the average Kepori height. Produces singular electroplasma bolts of impressive power and velocity that strike with enough force and precision to overwhelm most infantry defenses."
 	icon_state = "al607"
 	item_state = "al607"
 

@@ -1,4 +1,4 @@
-/obj/item/gun/energy/e_gun/
+/obj/item/gun/energy/e_gun
 	name = "energy rifle"
 	desc = "A basic hybrid energy gun with two settings: disable and kill."
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
