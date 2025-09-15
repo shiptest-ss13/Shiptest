@@ -25,7 +25,7 @@
 /obj/item/clothing/ears/earmuffs/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/earhealing)
-	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
+	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS), 3)
 
 /obj/item/clothing/ears/earmuffs/equipped(mob/user, slot)
 	. = ..()
