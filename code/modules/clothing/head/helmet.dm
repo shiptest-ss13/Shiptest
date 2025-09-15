@@ -90,7 +90,7 @@
 			flags_1 ^= visor_flags
 			flags_inv ^= visor_flags_inv
 			flags_cover ^= visor_flags_cover
-			icon_state = "[initial(icon_state)][up ? "up" : ""]"
+			icon_state = "[base_icon_state][up ? "-up" : ""]"
 			to_chat(user, span_notice("[up ? alt_toggle_message : toggle_message] \the [src]."))
 
 			user.update_inv_head()
@@ -228,13 +228,15 @@
 
 /obj/item/clothing/head/helmet/riot
 	name = "riot helmet"
-	desc = "It's a helmet specifically designed to protect against close range attacks."
+	desc = "A reinforced helmet meant for crowd control, with a bulletproof plexiglass visor to shield the face."
 	icon_state = "riot"
+	base_icon_state = "riot"
 	item_state = "helmet"
 	toggle_message = "You pull the visor down on"
 	alt_toggle_message = "You push the visor up on"
-	can_toggle = 1
-	armor = list("melee" = 50, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 80, "wound" = 30)
+	can_toggle = TRUE
+	armor = list("melee" = 40, "bullet" = 55, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50, "wound" = 20)
+	slowdown = 0.1
 	flags_inv = HIDEEARS|HIDEFACE
 	strip_delay = 80
 	actions_types = list(/datum/action/item_action/toggle)
@@ -243,6 +245,13 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 	dog_fashion = null
+	unique_reskin = list(
+		"None" = "riot",
+		"Desert" = "riot_desert",
+		"Woodland" = "riot_woodland",
+		"Snow" = "riot_snow",
+		)
+	unique_reskin_changes_base_icon_state = TRUE
 
 /obj/item/clothing/head/helmet/justice
 	name = "helmet of justice"

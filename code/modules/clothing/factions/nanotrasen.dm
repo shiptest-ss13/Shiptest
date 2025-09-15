@@ -336,6 +336,14 @@
 	icon = 'icons/obj/clothing/faction/nanotrasen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/nanotrasen/head.dmi'
 
+/obj/item/clothing/head/helmet/riot/nanotrasen
+	name = "\improper Vigilitas Riot Helmet"
+	desc = "A resistant riot helmet produced for security detail in Vigilitas, often deployed to quell rioters in corporate grounds."
+	icon = 'icons/obj/clothing/faction/nanotrasen/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/nanotrasen/head.dmi'
+	icon_state = "riot_nanotrasen"
+	base_icon_state = "riot_nanotrasen"
+
 /obj/item/clothing/head/nanotrasen/cap/supply
 	name = "brown softcap"
 	desc = "A brown cap with N+S Logistics' compass rose logo on the front. Issued to almost every N+S employee, although its wear is optional."

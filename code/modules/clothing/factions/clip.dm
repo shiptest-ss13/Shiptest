@@ -120,7 +120,6 @@
 /obj/item/clothing/suit/armor/riot/clip
 	name = "black riot suit"
 	desc = "A charcoal-painted suit of bulky, heavy armor designed for close-quarters fighting and riot control. The armor of choice for CLIP-BARD members, but used universally by CLIP. Helps the wearer resist shoving in close quarters."
-
 	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
 	icon_state = "riot_clip"
@@ -411,12 +410,11 @@
 
 /obj/item/clothing/head/helmet/riot/clip
 	name = "\improper Minutemen CM-13 Riot Helmet"
-	desc = "A sturdy blue helmet, made with close range fighting in mind. The foldable protective visor makes it CLIP-BARD's preferred helmet against hostile xenofauna."
-
+	desc = "A sturdy blue helmet, made with crowd control in mind. The foldable protective visor makes it CLIP-BARD's preferred helmet against hostile xenofauna."
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
 	icon_state = "riot_clip"
-
+	base_icon_state = "riot_clip"
 	supports_variations = SNOUTED_VARIATION
 
 // CLIP-GOLD
