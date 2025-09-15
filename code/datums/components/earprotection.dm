@@ -10,4 +10,4 @@
 	protection_amount = _protection_amount
 
 /datum/component/wearertargeting/earprotection/proc/reducebang(datum/source, list/reflist)
-	reflist[1] - protection_amount
+	reflist[1] = reflist[1] - protection_amount
