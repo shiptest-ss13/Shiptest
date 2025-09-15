@@ -44,8 +44,6 @@ SUBSYSTEM_DEF(overmap)
 	//if(length(tracked_star_systems) >= 1)
 	//	CRASH("Attempted to create more than 1 star system. Having mutiple star systems is not supported.")
 
-	if(length(tracked_star_systems) >= 1)
-		WARNING("Attempted to create more than 1 star system. Bugs may occur as this isn't very well supported, you have been warned")
 	tracked_star_systems += new_starsystem
 	return new_starsystem
 
