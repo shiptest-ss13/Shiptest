@@ -4,35 +4,12 @@
 	prefix = "_maps/RandomRuins/BeachRuins/"
 	ruin_type = RUINTYPE_BEACH
 
-/datum/map_template/ruin/beachplanet/crashedengie
-	name = "Crashed Engineer Ship"
-	id = "beach_crashed_engineer"
-	description = "An abandoned camp built by a crashed engineer"
-	suffix = "beach_crashed_engineer.dmm"
-	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_HAZARDOUS)
-	ruin_mission_types = list(/datum/mission/ruin/lost_axe)
-
-/datum/mission/ruin/lost_axe
-	name = "Axe Retrieval"
-	desc = "I recently lost a heirloom axe - produced by a very fine Syebenaltch Guild. I was unable to retrieve it when my vessel crashed, and I was rescued. Please bring it home to me."
-	mission_limit = 1
-	value = 1000
-	setpiece_item = /obj/item/melee/axe/fire
-
 /datum/map_template/ruin/beachplanet/ancient
 	name = "Ancient Danger"
 	id = "beach_ancient"
 	description = "As you draw near the ancient wall, a sense of foreboding overcomes you. You aren't sure why, but you feel this dusty structure may contain great dangers."
 	suffix = "beach_ancient_ruin.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
-
-/datum/map_template/ruin/beachplanet/scrapvillage
-	name = "Pirate Village"
-	id = "beach_pirate"
-	description = "A small pirate outpost formed from the remains of a wrecked shuttle."
-	suffix = "beach_pirate_crash.dmm"
-	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
-	ruin_mission_types = list(/datum/mission/ruin/signaled/kill/frontiersmen)
 
 /datum/map_template/ruin/beachplanet/treasurecove
 	name = "Treasure Cove"
@@ -41,6 +18,23 @@
 	suffix = "beach_treasure_cove.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
 	ruin_mission_types = list(/datum/mission/ruin/signaled/kill/frontiersmen)
+
+/datum/map_template/ruin/beachplanet/frontie_moat
+	name = "Frontiersman Moat"
+	id = "beach_frontie_moat"
+	description = "A frontiersman-built moat village. Not the worst place to live."
+	suffix = "beach_frontie_moat.dmm"
+	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
+	ruin_mission_types = list(/datum/mission/ruin/minutecorpse)
+
+/datum/mission/ruin/minutecorpse
+	name = "Bro's gone."
+	desc = "One of my pals, great person, recently enlisted into the minutemen as some vehicle dude or whatever. Said they were going on some scouting mission here, haven't heard a response from them in about a week. Think you could find out what happened, and get something for their family?"
+	value = 2250
+	mission_limit = 1
+	author = "A friend."
+	faction = /datum/faction/clip
+	setpiece_item = /mob/living/carbon/human
 
 /datum/map_template/ruin/beachplanet/frontiersmen_depot
 	name = "Frontiersmen Depot"
