@@ -58,6 +58,13 @@
 		/obj/item/ammo_box/magazine/skm_762_40,
 	)
 
+	unique_reskin = list(\
+		"SKM" = "skm",
+		"Polymer" = "skm_polymer",
+		"Black" = "skm_black",
+		)
+	unique_reskin_changes_inhand = TRUE
+
 	//truly a doohickey for every occasion
 	unique_attachments = list (
 		/obj/item/attachment/energy_bayonet,
