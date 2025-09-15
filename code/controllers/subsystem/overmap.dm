@@ -23,6 +23,9 @@ SUBSYSTEM_DEF(overmap)
 	/// The mandatory and default star system
 	var/datum/overmap_star_system/default_system
 
+	/// Some other shit
+	var/datum/overmap_star_system/wild
+
 	///Should events be processed
 	var/events_enabled = TRUE
 
@@ -56,14 +59,14 @@ SUBSYSTEM_DEF(overmap)
 	dynamic_encounters = list()
 	events = list()
 
-	default_system = create_new_star_system(new /datum/overmap_star_system/shiptest)
+	default_system = create_new_star_system(new /datum/overmap_star_system/safezone)
+	wild = create_new_star_system (new /datum/overmap_star_system/shiptest)
 	return ..()
 
 /datum/controller/subsystem/overmap/proc/spawn_new_star_system(datum/overmap_star_system/system_to_spawn=/datum/overmap_star_system)
 	if(istype(system_to_spawn))
 		return create_new_star_system(system_to_spawn)
 	return create_new_star_system(new system_to_spawn)
-
 
 /datum/controller/subsystem/overmap/fire()
 	for(var/datum/overmap_star_system/current_system as anything in tracked_star_systems)
@@ -1091,13 +1094,12 @@ SUBSYSTEM_DEF(overmap)
 
 //default shiptest overmap
 /datum/overmap_star_system/shiptest
-	has_outpost = TRUE
+	has_outpost = FALSE
 	can_be_selected_randomly = FALSE
 	encounters_refresh = TRUE
 
 /datum/overmap_star_system/shiptest/create_map()
 	. = ..()
-	set_station_name(starname)
 
 /datum/overmap_star_system/admin_sandbox
 	name = "Admin Sandbox"
