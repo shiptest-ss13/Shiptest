@@ -1111,7 +1111,7 @@ SUBSYSTEM_DEF(overmap)
 	secondary_structure_color = "#b154cf"
 
 	override_object_colors = TRUE
-	overmap_icon_state = "overmap_dark"
+	overmap_icon_state = "overmap"
 
 /datum/overmap_star_system/safezone/nt
 	name = "Nanotrasen Controlled - Persei-277"
