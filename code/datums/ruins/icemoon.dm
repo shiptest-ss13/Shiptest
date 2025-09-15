@@ -72,6 +72,26 @@
 /datum/map_template/ruin/icemoon/downed_transport
 	name = "Downed Transport"
 	id = "downed_transport"
-	description = "Tempfiller."
+	description = "There's been reports of a number of unmarked structures on a nearby ice world and what's more, a Gezenan transport just went missing in orbit."
 	suffix = "icemoon_downed_transport.dmm"
-	ruin_tags = list()
+	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
+	ruin_mission_types = list(
+		/datum/mission/ruin/site_investigation,
+		/datum/mission/ruin/blackbox/downed_transport
+	)
+
+/datum/mission/ruin/site_investigation
+	name = "Site Investigation"
+	desc = "Sent a prospecting team to set up on a nearby ice world a few months back and about a month ago they went off the radar. Fast forward two weeks and I find the bastards, two men short. Apparently they collapsed the mineshaft to 'keep it in', whatever that means. Go in there, check it out and figure out what the hell spooked em so bad. Oh, and bring me back some proof too."
+	value = 1500
+	mission_limit = 1
+	faction = /datum/faction/independent
+	setpiece_item = /obj/item/mob_trophy/legion_skull_crystal
+
+/datum/mission/ruin/blackbox/downed_transport
+	name = "Missing Transport Recovery"
+	author = "PGF Naval Command"
+	desc =  "Approximately one week ago, we lost communications with one of our transport shuttles, the Olak-4029, in orbit of a nearby ice world. Find the Olak-4029, determine the fate of it's crew, and if its too late for rescue, at least retrieve the black box recorder in return for a fair compensation."
+	value = 1500
+	mission_limit = 1
+	faction = /datum/faction/pgf

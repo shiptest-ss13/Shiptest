@@ -19,9 +19,7 @@
 /area/ruin/powered/icemoon/downed_transport/delapidated_cabin)
 "ae" = (
 /obj/machinery/power/grounding_rod,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "ag" = (
 /obj/effect/turf_decal/spline/fancy/transparent/green,
@@ -36,9 +34,7 @@
 	name = "shattered wood";
 	icon_state = "stick4"
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "ak" = (
 /obj/effect/turf_decal/etherbor/left{
@@ -137,15 +133,11 @@
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "bU" = (
 /obj/item/stack/ore/salvage/scrapmetal,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "bX" = (
 /turf/closed/indestructible/rock/schist,
@@ -161,9 +153,7 @@
 /obj/structure/cable{
 	icon_state = "1-10"
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "cs" = (
 /obj/effect/turf_decal/industrial/warning/dust,
@@ -180,7 +170,7 @@
 	pixel_y = -1;
 	color = 009696
 	},
-/turf/open/floor/plating/dirt/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/ruin/powered/icemoon/downed_transport/leaning_shack)
 "cA" = (
 /obj/structure/grille,
@@ -313,9 +303,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "dP" = (
 /obj/structure/window/plasma/reinforced{
@@ -420,9 +408,7 @@
 	pixel_y = 0;
 	pixel_x = -6
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "eo" = (
 /obj/machinery/power/terminal{
@@ -528,7 +514,8 @@
 "ff" = (
 /obj/effect/decal/cleanable/blood/drip{
 	pixel_x = 6;
-	pixel_y = 2
+	pixel_y = 2;
+	layer = 2.46
 	},
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
@@ -603,7 +590,7 @@
 /turf/open/floor/concrete/slab_1/icemoon,
 /area/ruin/unpowered/icemoon/downed_transport/security_office)
 "fR" = (
-/turf/open/floor/plating/dirt/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/ice/explored)
 "fS" = (
 /obj/effect/turf_decal/corner/opaque/grey/diagonal,
@@ -657,7 +644,7 @@
 "gn" = (
 /obj/effect/decal/cleanable/plastic,
 /obj/effect/decal/fakelattice,
-/turf/open/floor/plating/dirt/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "gr" = (
 /obj/structure/table/wood,
@@ -679,7 +666,7 @@
 /obj/item/melee/knife/butcher{
 	pixel_y = 13
 	},
-/turf/open/floor/plating/dirt/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/ruin/powered/icemoon/downed_transport/leaning_shack)
 "gy" = (
 /obj/structure/flora/tree/dead/tall{
@@ -702,7 +689,7 @@
 	pixel_y = -9;
 	pixel_x = 6
 	},
-/turf/open/floor/plating/dirt/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/ice/explored)
 "gP" = (
 /obj/structure/table/wood,
@@ -1064,9 +1051,7 @@
 "jj" = (
 /obj/item/stack/ore/salvage/scrapmetal,
 /obj/item/stack/ore/salvage/scrapmetal,
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "js" = (
 /obj/structure/flora/grass/brown,
@@ -1077,11 +1062,11 @@
 /obj/structure/cable{
 	icon_state = "0-10"
 	},
-/turf/open/floor/plating/dirt/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/ice/explored)
 "jy" = (
 /obj/machinery/portable_atmospherics/canister/hydrogen,
-/turf/open/floor/plating/dirt/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/ice/explored)
 "jC" = (
 /obj/structure/chair,
@@ -1180,9 +1165,7 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "jT" = (
-/obj/structure/sign/number/random{
-	dir = 1
-	},
+/obj/structure/sign/number,
 /turf/closed/wall/mineral/plastitanium,
 /area/overmap_encounter/planetoid/ice/explored)
 "ke" = (
@@ -1217,22 +1200,7 @@
 /obj/structure/bonfire/prelit{
 	layer = 3.07
 	},
-/obj/structure/railing/wood{
-	dir = 1;
-	layer = 3.06
-	},
-/obj/structure/railing/wood{
-	dir = 2
-	},
-/obj/structure/railing/wood{
-	dir = 4
-	},
-/obj/structure/railing/wood{
-	dir = 8
-	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "kp" = (
 /obj/effect/turf_decal/spline/plain/transparent/black{
@@ -1281,10 +1249,13 @@
 /obj/structure/chair/wood{
 	pixel_y = 1
 	},
-/mob/living/simple_animal/hostile/human/hermit/survivor,
-/turf/open/floor/plating/dirt{
-	light_range = 2
+/mob/living/simple_animal/hostile/human/hermit/survivor{
+	desc = "A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body."
 	},
+/obj/structure/railing/wood{
+	dir = 2
+	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "kA" = (
 /obj/structure/cable{
@@ -1344,9 +1315,7 @@
 /obj/structure/flora/stump{
 	color = 88888
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "ln" = (
 /obj/structure/chair/sofa/olive/old/right{
@@ -1392,9 +1361,7 @@
 	pixel_x = -1
 	},
 /obj/effect/decal/cleanable/glass/plastitanium,
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "lM" = (
 /turf/closed/wall/mineral/plastitanium,
@@ -1469,6 +1436,13 @@
 /obj/structure/curtain/bounty,
 /turf/open/floor/wood,
 /area/ruin/powered/icemoon/downed_transport/delapidated_cabin)
+"lZ" = (
+/obj/structure/railing/wood{
+	dir = 1;
+	layer = 3.06
+	},
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "mf" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
@@ -1498,9 +1472,7 @@
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "mm" = (
 /obj/machinery/light/directional/north,
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "mo" = (
 /obj/structure/table,
@@ -1509,6 +1481,10 @@
 /obj/item/clothing/glasses/welding{
 	pixel_y = 9;
 	pixel_x = 7
+	},
+/obj/item/wrench/crescent{
+	pixel_y = 0;
+	pixel_x = -14
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/icemoon/downed_transport/mining_power_station)
@@ -1636,10 +1612,10 @@
 /turf/open/floor/wood/icemoon,
 /area/ruin/powered/icemoon/downed_transport/delapidated_cabin)
 "nP" = (
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 1
+/obj/structure/flora/rock/pile/icy{
+	pixel_x = 6
 	},
+/turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "nY" = (
 /obj/effect/turf_decal/siding/wood,
@@ -1770,9 +1746,7 @@
 "pe" = (
 /obj/item/stack/sheet/mineral/wood,
 /obj/effect/spawner/random/food_or_drink/ration,
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "pf" = (
 /obj/effect/turf_decal/corner_steel_grid{
@@ -1812,9 +1786,7 @@
 /area/ruin/powered/icemoon/downed_transport/delapidated_cabin)
 "ps" = (
 /obj/effect/spawner/random/food_or_drink/ration,
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "pu" = (
 /obj/machinery/door/firedoor/border_only,
@@ -1837,7 +1809,9 @@
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "pC" = (
-/mob/living/simple_animal/hostile/human/hermit/survivor,
+/mob/living/simple_animal/hostile/human/hermit/survivor{
+	desc = "A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body."
+	},
 /obj/effect/decal/cleanable/blood/drip{
 	pixel_x = 1;
 	pixel_y = -6;
@@ -1848,7 +1822,7 @@
 	pixel_y = -1;
 	color = 009696
 	},
-/turf/open/floor/plating/dirt/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/ruin/powered/icemoon/downed_transport/leaning_shack)
 "pG" = (
 /obj/structure/cable{
@@ -1877,9 +1851,7 @@
 /area/ruin/powered/icemoon/downed_transport/delapidated_cabin)
 "pU" = (
 /obj/structure/flora/stump,
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "pV" = (
 /turf/closed/wall,
@@ -1905,7 +1877,7 @@
 /obj/effect/decal/cleanable/blood/gibs{
 	color = 009696
 	},
-/turf/open/floor/plating/dirt/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/ruin/powered/icemoon/downed_transport/leaning_shack)
 "qb" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -1938,13 +1910,11 @@
 	pixel_y = -10;
 	pixel_x = 7
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "qo" = (
 /obj/effect/decal/fakelattice,
-/turf/open/floor/plating/dirt/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/ice/explored)
 "qx" = (
 /obj/structure/cable/blue{
@@ -1987,9 +1957,7 @@
 "qV" = (
 /obj/item/stack/sheet/mineral/wood,
 /obj/item/food/energybar,
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "rd" = (
 /obj/structure/fence/corner{
@@ -2047,9 +2015,7 @@
 	pixel_x = 6
 	},
 /obj/effect/spawner/random/trash/mess,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "rY" = (
 /obj/effect/decal/cleanable/blood/footprints{
@@ -2082,15 +2048,11 @@
 /area/template_noop)
 "su" = (
 /obj/item/reagent_containers/food/drinks/waterbottle/large/empty,
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "sz" = (
 /obj/structure/fence/door,
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "sA" = (
 /obj/effect/turf_decal/corner_steel_grid{
@@ -2248,6 +2210,12 @@
 /mob/living/basic/bear/polar,
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/overmap_encounter/planetoid/cave/explored)
+"tK" = (
+/obj/structure/railing/corner/wood{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "tW" = (
 /obj/item/stack/medical/gauze,
 /obj/item/stock_parts/cell/gun/pgf{
@@ -2323,9 +2291,7 @@
 	pixel_y = 2;
 	pixel_x = 10
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "uA" = (
 /obj/item/light/tube/broken{
@@ -2356,9 +2322,10 @@
 	pixel_y = 1;
 	dir = 8
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
+/obj/structure/railing/wood{
+	dir = 8
 	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "uM" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -2469,9 +2436,7 @@
 	},
 /obj/effect/spawner/random/trash/mess,
 /obj/item/trash/syndi_cakes,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "vP" = (
 /obj/structure/flora/rock/pile/icy{
@@ -2490,9 +2455,7 @@
 /obj/structure/sign/warning/explosives{
 	pixel_y = 31
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "wh" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
@@ -2585,15 +2548,11 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/light/small/directional/west,
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "wW" = (
 /obj/item/food/energybar,
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "wY" = (
 /obj/structure/cable{
@@ -2717,10 +2676,11 @@
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "ym" = (
-/obj/item/stack/ore/salvage/scrapmetal,
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
+/obj/structure/flora/rock/pile/icy{
+	pixel_y = -1;
+	pixel_x = 8
 	},
+/turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "yo" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
@@ -2808,9 +2768,8 @@
 /obj/item/stack/cable_coil/cut/red{
 	pixel_y = -9
 	},
-/obj/item/taperecorder/preset/downed_transport{
-	name = "Cockpit Flight Recorder"
-	},
+/obj/item/blackbox,
+/obj/effect/landmark/mission_poi/main/blackbox,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "yG" = (
@@ -2834,9 +2793,7 @@
 /obj/effect/decal/cleanable/dirt{
 	light_range = 1
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 1
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "yT" = (
 /obj/structure/cable{
@@ -2869,9 +2826,7 @@
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "zg" = (
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "zi" = (
 /obj/machinery/light/directional/east,
@@ -2935,26 +2890,27 @@
 /obj/structure/closet/wall/blue/directional/south{
 	name = "Emergency EVA Closet"
 	},
-/obj/item/clothing/head/helmet/space/eva{
-	pixel_y = -5;
-	pixel_x = -7
-	},
-/obj/item/clothing/head/helmet/space/eva{
-	pixel_y = -5;
-	pixel_x = -7
-	},
-/obj/item/clothing/suit/space/eva{
-	pixel_y = 2;
-	pixel_x = 4
-	},
-/obj/item/clothing/suit/space/eva{
-	pixel_y = 2;
-	pixel_x = 4
-	},
 /obj/effect/decal/cleanable/glass/plastitanium,
+/obj/item/clothing/head/helmet/space/gezena{
+	pixel_x = -7;
+	pixel_y = -7
+	},
+/obj/item/clothing/head/helmet/space/gezena{
+	pixel_x = -7;
+	pixel_y = -7
+	},
+/obj/item/clothing/suit/space/gezena{
+	pixel_x = 7;
+	pixel_y = -6
+	},
+/obj/item/clothing/suit/space/gezena{
+	pixel_x = 7;
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "zT" = (
+/obj/machinery/space_heater,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
 "zW" = (
@@ -2972,9 +2928,7 @@
 	spawn_no_ammo = 1;
 	desc = "A disposable rocket-propelled grenade launcher loaded with a standard HE shell. This one has been spent."
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "zZ" = (
 /obj/structure/railing{
@@ -2987,11 +2941,16 @@
 	pixel_x = -2
 	},
 /obj/effect/decal/cleanable/glass/plastitanium,
+/obj/item/taperecorder/preset/downed_transport{
+	name = "Cockpit Flight Recorder"
+	},
 /turf/open/floor/plasteel/stairs,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "Ac" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/hermit/survivor,
+/mob/living/simple_animal/hostile/human/hermit/survivor{
+	desc = "A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body."
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "Am" = (
@@ -2999,9 +2958,7 @@
 	icon_state = "lavarocks2";
 	color = 16688
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "An" = (
 /obj/structure/salvageable/computer{
@@ -3058,9 +3015,12 @@
 /turf/open/floor/wood,
 /area/ruin/powered/icemoon/downed_transport/delapidated_cabin)
 "Bf" = (
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
+/obj/effect/decal/cleanable/blood/drip{
+	layer = 2.46;
+	pixel_y = 13;
+	pixel_x = 7
 	},
+/turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Bn" = (
 /obj/machinery/light/small/directional/south{
@@ -3076,9 +3036,7 @@
 	color = 16688
 	},
 /obj/item/food/energybar,
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Bv" = (
 /obj/structure/mirror{
@@ -3100,9 +3058,13 @@
 	pixel_y = -4;
 	pixel_x = -5
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice/explored)
+"BE" = (
+/obj/structure/railing/wood{
+	dir = 4
 	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "BH" = (
 /obj/effect/turf_decal/siding/wood{
@@ -3171,25 +3133,23 @@
 	pixel_y = -5;
 	pixel_x = 9
 	},
-/obj/item/clothing/head/beanie/blue{
-	pixel_y = 12;
-	pixel_x = -6
-	},
-/obj/item/clothing/head/beanie/blue{
+/obj/item/clothing/head/beanie/darkblue{
 	pixel_y = 12;
 	pixel_x = 6
 	},
-/obj/item/clothing/neck/scarf/blue{
-	pixel_y = -2;
-	pixel_x = -7
+/obj/item/clothing/head/beanie/darkblue{
+	pixel_y = 12;
+	pixel_x = -6
 	},
-/obj/item/clothing/neck/scarf/blue{
-	pixel_y = -2;
-	pixel_x = 7
+/obj/item/clothing/neck/scarf/darkblue{
+	pixel_x = -7;
+	pixel_y = -2
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
+/obj/item/clothing/neck/scarf/darkblue{
+	pixel_x = 7;
+	pixel_y = -2
 	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "CE" = (
 /obj/structure/railing/wood{
@@ -3264,9 +3224,7 @@
 	name = "shattered wood";
 	color = 49999
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Dy" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
@@ -3431,9 +3389,7 @@
 	icon_state = "tree_stump";
 	name = "stump"
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Eu" = (
 /obj/structure/table,
@@ -3476,8 +3432,9 @@
 /area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "EC" = (
 /obj/effect/decal/cleanable/blood/drip{
-	pixel_x = 14;
-	pixel_y = -6
+	pixel_x = -4;
+	pixel_y = -5;
+	layer = 2.46
 	},
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
@@ -3685,9 +3642,7 @@
 	pixel_y = 10;
 	pixel_x = -6
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "FK" = (
 /obj/structure/fence{
@@ -3761,7 +3716,7 @@
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "Gm" = (
 /obj/structure/salvageable/autolathe,
-/turf/open/floor/plating/dirt/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/ice/explored)
 "Gr" = (
 /obj/machinery/computer/security/retro{
@@ -3787,9 +3742,7 @@
 /obj/item/stack/cable_coil/cut/red{
 	pixel_y = -9
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Gv" = (
 /obj/effect/decal/cleanable/blood/drip,
@@ -3883,7 +3836,8 @@
 "HB" = (
 /obj/effect/decal/cleanable/blood/drip{
 	pixel_x = 12;
-	pixel_y = 19
+	pixel_y = 19;
+	layer = 2.46
 	},
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
@@ -3896,13 +3850,13 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/item/gun/energy/kalix/pistol/empty_cell{
-	pixel_y = 7;
-	pixel_x = -3
-	},
 /obj/item/stock_parts/cell/gun/kalix{
 	pixel_x = 5;
 	pixel_y = -1
+	},
+/obj/item/gun/energy/kalix/pistol{
+	pixel_y = 7;
+	pixel_x = -3
 	},
 /turf/open/floor/wood/icemoon,
 /area/ruin/powered/icemoon/downed_transport/delapidated_cabin)
@@ -3936,9 +3890,7 @@
 /area/overmap_encounter/planetoid/ice/explored)
 "HY" = (
 /obj/structure/closet/crate/trashcart,
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Id" = (
 /mob/living/basic/bear/polar,
@@ -3963,15 +3915,13 @@
 /obj/structure/frame/machine,
 /obj/item/stack/cable_coil/cut/red,
 /obj/effect/spawner/random/circuit/machine/common,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Il" = (
 /obj/machinery/door/airlock/wood{
 	dir = 4
 	},
-/turf/open/floor/plating/dirt/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/ruin/powered/icemoon/downed_transport/leaning_shack)
 "Iw" = (
 /turf/open/floor/plating/asteroid/icerock,
@@ -4050,7 +4000,7 @@
 	pixel_y = 7;
 	pixel_x = 3
 	},
-/turf/open/floor/plating/dirt/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/ruin/powered/icemoon/downed_transport/leaning_shack)
 "IP" = (
 /obj/structure/flora/driftlog{
@@ -4098,15 +4048,11 @@
 	pixel_y = -9
 	},
 /obj/effect/decal/fakelattice,
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 1
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "IY" = (
 /obj/structure/girder/reinforced,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Jc" = (
 /obj/structure/cable{
@@ -4124,13 +4070,11 @@
 	pixel_x = 11;
 	pixel_y = 1
 	},
-/turf/open/floor/plating/dirt/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/ice/explored)
 "Ji" = (
 /obj/machinery/portable_atmospherics/pump,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Jw" = (
 /obj/structure/cable{
@@ -4175,9 +4119,7 @@
 	icon_state = "lattice-127"
 	},
 /obj/effect/decal/cleanable/glass/plastitanium,
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 1
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "JH" = (
 /obj/structure/flora/tree/dead{
@@ -4204,9 +4146,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Kl" = (
 /obj/structure/grille,
@@ -4222,7 +4162,6 @@
 /area/ruin/unpowered/icemoon/downed_transport/crew_accomodations)
 "Ku" = (
 /obj/structure/closet/cabinet,
-/obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
@@ -4254,9 +4193,7 @@
 	pixel_x = 9;
 	pixel_y = 8
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "KE" = (
 /obj/effect/turf_decal/corner/opaque/grey/diagonal,
@@ -4387,9 +4324,7 @@
 	name = "shattered log";
 	color = 49999
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Mf" = (
 /obj/structure/fence/end{
@@ -4404,9 +4339,7 @@
 	icon_state = "stick1";
 	color = 99999
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Ml" = (
 /turf/open/floor/wood/icemoon{
@@ -4541,15 +4474,13 @@
 	pixel_x = 6;
 	pixel_y = 11
 	},
-/turf/open/floor/plating/dirt/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/ruin/powered/icemoon/downed_transport/leaning_shack)
 "Np" = (
 /obj/structure/flora/rock/pile{
 	color = 16688
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Nq" = (
 /obj/structure/closet/crate/wooden,
@@ -4557,9 +4488,7 @@
 /obj/item/reagent_containers/glass/concrete_bag,
 /obj/item/reagent_containers/glass/bucket,
 /obj/item/shovel,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Nu" = (
 /obj/effect/decal/cleanable/blood/drip{
@@ -4572,9 +4501,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/icemoon/downed_transport/crew_accomodations)
 "NL" = (
-/obj/effect/turf_decal/weather/snow{
-	dir = 4
-	},
+/obj/structure/flora/rock/icy,
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "NN" = (
@@ -4668,16 +4595,18 @@
 /obj/effect/mob_spawn/human/corpse/pgf/downed_copilot,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
+"Oq" = (
+/obj/effect/decal/cleanable/blood/drip{
+	layer = 2.46
+	},
+/turf/open/floor/plating/asteroid/snow/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "Oz" = (
 /obj/machinery/light/directional/east,
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "OD" = (
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "OM" = (
 /obj/structure/cable{
@@ -4687,7 +4616,7 @@
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
 "ON" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/shotgun,
 /turf/open/floor/wood/icemoon,
 /area/ruin/powered/icemoon/downed_transport/delapidated_cabin)
 "OO" = (
@@ -4751,6 +4680,12 @@
 "PS" = (
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/overmap_encounter/planetoid/cave/explored)
+"PV" = (
+/obj/structure/railing/corner/wood{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "PW" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
@@ -4811,9 +4746,7 @@
 /obj/effect/spawner/random/circuit/computer,
 /obj/item/stack/circuit_stack/full,
 /obj/structure/closet/crate/large,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "QA" = (
 /obj/structure/flora/tree/dead{
@@ -4858,9 +4791,7 @@
 /obj/structure/flora/rock{
 	color = 16688
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "QU" = (
 /obj/structure/chair/sofa/olive/old/left{
@@ -4882,6 +4813,13 @@
 	name = "mangled hard hat";
 	desc = "A standard flashlight fitted hardhat. Gouges deep enough to see light through have been torn into the protective plastic."
 	},
+/obj/item/mob_trophy/legion_skull_crystal{
+	desc = "The bare skull of an unfortunate miner. The crystals embedded within keep it frozen in a haunting, agonized scream.";
+	name = "miner's crystalized skull";
+	pixel_x = 5;
+	pixel_y = -2
+	},
+/obj/effect/landmark/mission_poi/main,
 /turf/open/floor/pod/dark,
 /area/ruin/unpowered/icemoon/downed_transport/the_descent)
 "QY" = (
@@ -4895,9 +4833,10 @@
 	pixel_x = 3;
 	pixel_y = 2
 	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
+/obj/structure/railing/corner/wood{
+	dir = 4
 	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Rf" = (
 /obj/structure/dresser{
@@ -4988,9 +4927,8 @@
 	pixel_x = -10;
 	pixel_y = 2
 	},
-/obj/item/paper{
-	pixel_y = 3;
-	pixel_x = 5
+/obj/item/clipboard{
+	pixel_x = 6
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/unpowered/icemoon/downed_transport/the_descent)
@@ -5040,15 +4978,13 @@
 	pixel_y = 2;
 	pixel_x = 6
 	},
-/turf/open/floor/plating/dirt/icemoon,
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "SB" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-12"
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "SO" = (
 /obj/structure/platform/wood{
@@ -5063,9 +4999,7 @@
 	pixel_y = 6;
 	color = 16688
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Tg" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5141,9 +5075,7 @@
 	name = "shattered wood";
 	icon_state = "stick3"
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "TJ" = (
 /obj/effect/turf_decal/spline/fancy/transparent/green,
@@ -5209,9 +5141,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/light/small/directional/west,
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "TZ" = (
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
@@ -5229,9 +5159,7 @@
 	pixel_y = 0;
 	pixel_x = -6
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Ue" = (
 /obj/structure/cable{
@@ -5486,6 +5414,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/dark,
 /area/ruin/unpowered/icemoon/downed_transport/the_descent)
+"Ww" = (
+/obj/structure/railing/corner/wood,
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "WG" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
@@ -5534,7 +5466,8 @@
 "Xn" = (
 /obj/effect/decal/cleanable/blood/drip{
 	pixel_x = 12;
-	pixel_y = 16
+	pixel_y = 16;
+	layer = 2.46
 	},
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
@@ -5560,9 +5493,7 @@
 /area/overmap_encounter/planetoid/ice/explored)
 "XK" = (
 /obj/item/stack/sheet/mineral/wood,
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "XL" = (
 /obj/effect/decal/cleanable/blood/footprints{
@@ -5618,7 +5549,7 @@
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "Ys" = (
 /obj/effect/decal/fakelattice,
-/turf/open/floor/plating/dirt/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "Yy" = (
 /turf/open/floor/plating/rust,
@@ -5767,9 +5698,7 @@
 	pixel_y = 13;
 	pixel_x = 11
 	},
-/turf/open/floor/plating/dirt/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "ZU" = (
 /obj/machinery/atmospherics/pipe/layer_manifold{
@@ -6248,8 +6177,8 @@ yu
 yu
 yu
 yu
-Bf
-Bf
+OD
+OD
 yu
 yu
 yu
@@ -6313,16 +6242,14 @@ yu
 yu
 fA
 yu
-Bf
+OD
 yu
-Bf
+OD
 yu
-Bf
-Bf
-Bf
-Bf
-yu
-yu
+OD
+OD
+OD
+OD
 yu
 yu
 yu
@@ -6333,9 +6260,11 @@ yu
 yu
 yu
 yu
+wu
 yu
 yu
-yu
+NL
+wu
 yu
 yu
 yu
@@ -6383,15 +6312,15 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
+OD
+OD
+OD
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
 yu
 yu
 yu
@@ -6445,7 +6374,7 @@ yu
 yu
 yu
 yu
-yu
+wu
 yu
 yu
 Ug
@@ -6453,15 +6382,15 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
 yu
 yu
 yu
@@ -6522,16 +6451,16 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
 pU
-Bf
+OD
 DB
 yu
 yu
@@ -6584,24 +6513,24 @@ yu
 yu
 yu
 yu
-yu
+NL
 yu
 yu
 ee
 yu
 yu
 yu
-Bf
-Bf
-Bf
+OD
+OD
+OD
 ll
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
+OD
 yu
 yu
 yu
@@ -6616,7 +6545,7 @@ yu
 yu
 GR
 yu
-yu
+wu
 yu
 yu
 yu
@@ -6660,19 +6589,19 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
 yu
 yu
 yu
@@ -6730,19 +6659,19 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
 Am
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
 yu
 yu
 yu
@@ -6796,23 +6725,23 @@ yu
 yu
 GR
 yu
-yu
+wu
 yu
 js
 yu
-Bf
-Bf
+OD
+OD
 pU
-Bf
+OD
 TC
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
 TC
-Bf
-Bf
+OD
+OD
 yu
 yu
 yu
@@ -6870,19 +6799,19 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
 Am
-Bf
-Bf
-Bf
+OD
+OD
+OD
 Mi
-Bf
-Bf
-Bf
+OD
+OD
+OD
 yu
 yu
 yu
@@ -6940,19 +6869,19 @@ yA
 yu
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
 Np
-Bf
-ym
-Bf
-Bf
+OD
+bU
+OD
+OD
 yu
 yu
 yu
@@ -7011,18 +6940,18 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
 Dw
-Bf
-Bf
-Bf
+OD
+OD
+OD
 Am
-Bf
-Bf
+OD
+OD
 yu
 yu
 yu
@@ -7081,18 +7010,18 @@ yu
 yu
 XE
 yu
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
 Np
-Bf
-Bf
+OD
+OD
 ah
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
 yu
 yu
 yu
@@ -7152,16 +7081,16 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-ym
-Bf
-Bf
-Bf
-ym
-Bf
+OD
+OD
+bU
+OD
+OD
+OD
+bU
+OD
 ll
-Bf
+OD
 yu
 yu
 yu
@@ -7187,7 +7116,7 @@ yu
 yu
 yu
 yu
-yu
+wu
 yu
 so
 so
@@ -7222,16 +7151,16 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
-ym
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+bU
+OD
+OD
+OD
+OD
 yu
 yu
 yu
@@ -7292,24 +7221,24 @@ yu
 yu
 Iz
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
 yu
 yu
 yu
 Ug
 yu
+NL
 yu
-yu
-yu
+wu
 yu
 ej
 jt
@@ -7326,7 +7255,7 @@ ee
 yu
 yu
 yu
-yu
+NL
 yu
 yu
 yu
@@ -7362,16 +7291,16 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
 yu
 yu
 yu
@@ -7433,20 +7362,20 @@ yu
 yu
 yu
 yu
-Bf
+OD
 ll
-Bf
+OD
 Me
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
 yu
 yu
 yu
 yu
-yu
+wu
 yu
 yu
 yu
@@ -7465,7 +7394,7 @@ yu
 yu
 yu
 yu
-yu
+wu
 yu
 yu
 yu
@@ -7503,14 +7432,14 @@ yu
 js
 yu
 yu
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
 ps
-Bf
-Bf
-Bf
+OD
+OD
+OD
 yu
 yu
 yu
@@ -7573,14 +7502,14 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
+OD
+OD
+OD
 XK
 zg
 XK
 Mi
-Bf
+OD
 yu
 yu
 yu
@@ -7644,13 +7573,13 @@ yu
 yu
 yu
 yu
-Bf
-Bf
+OD
+OD
 ps
 qV
 pU
-Bf
-Bf
+OD
+OD
 yu
 yu
 yu
@@ -7714,14 +7643,14 @@ Wq
 yu
 yu
 yu
-Bf
-Bf
-Bf
+OD
+OD
+OD
 ps
 wW
-Bf
-Bf
-Bf
+OD
+OD
+OD
 yu
 yu
 yu
@@ -7784,14 +7713,14 @@ yu
 yu
 yu
 yu
-Bf
-Bf
+OD
+OD
 su
 Bp
-ym
+bU
 pe
-Bf
-Bf
+OD
+OD
 yu
 yu
 yu
@@ -7820,7 +7749,7 @@ yu
 yu
 yu
 yu
-NL
+yu
 so
 so
 so
@@ -7854,14 +7783,14 @@ yu
 js
 yu
 yu
-Bf
-Bf
-Bf
+OD
+OD
+OD
 Dw
 QS
 su
-Bf
-Bf
+OD
+OD
 yu
 yu
 yu
@@ -7924,14 +7853,14 @@ yu
 yu
 yu
 yu
-Bf
-Bf
+OD
+OD
 wW
-Bf
-Bf
+OD
+OD
 Mi
-Bf
-Bf
+OD
+OD
 yu
 yu
 yu
@@ -7994,14 +7923,14 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-ym
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+bU
+OD
+OD
+OD
+OD
+OD
 yu
 yu
 yu
@@ -8064,14 +7993,14 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-ym
+OD
+OD
+OD
+OD
+bU
 Me
 ll
-Bf
+OD
 yu
 yu
 yu
@@ -8135,13 +8064,13 @@ yu
 XE
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
+OD
 yu
 yu
 yu
@@ -8156,8 +8085,8 @@ Ug
 yu
 yu
 OD
-OD
-OD
+Ww
+BE
 Rd
 yu
 yu
@@ -8205,13 +8134,13 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
+OD
 yu
 yu
 yu
@@ -8228,7 +8157,7 @@ yu
 OD
 kv
 ko
-OD
+lZ
 OD
 yu
 OD
@@ -8267,38 +8196,38 @@ yu
 yu
 yu
 yu
-yu
+wu
 Ug
-yu
-yu
-yu
-yu
-yu
-yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-yu
-yu
-yu
-yu
-yu
-yu
-yu
-yu
-yu
+ym
 yu
 yu
 yu
 yu
 yu
 OD
+OD
+OD
+OD
+OD
+OD
+OD
+yu
+yu
+yu
+yu
+yu
+yu
+yu
+yu
+yu
+yu
+yu
+yu
+yu
+yu
+tK
 uG
-OD
+PV
 OD
 yu
 yu
@@ -8345,12 +8274,12 @@ yu
 yu
 yu
 yu
-Bf
-Bf
+OD
+OD
 pU
-Bf
-Bf
-Bf
+OD
+OD
+OD
 yu
 yu
 yu
@@ -8408,18 +8337,18 @@ yu
 yu
 yu
 yu
+NL
+yu
+wu
 yu
 yu
 yu
-yu
-yu
-yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
 Et
 yu
 yu
@@ -8484,13 +8413,13 @@ yu
 XE
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
+OD
 yu
 yu
 yu
@@ -8554,13 +8483,13 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
 Dw
-Bf
-Bf
+OD
+OD
 IP
 yu
 yu
@@ -8624,13 +8553,13 @@ yu
 yu
 yu
 yu
-Bf
-Bf
+OD
+OD
 Np
-Bf
-ym
-Bf
-Bf
+OD
+bU
+OD
+OD
 yu
 yu
 yu
@@ -8694,13 +8623,13 @@ yu
 ee
 yu
 yu
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
 Am
-Bf
-Bf
+OD
+OD
 yu
 yu
 yu
@@ -8764,13 +8693,13 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
+OD
+OD
+OD
 Mi
 CC
-Bf
-Bf
+OD
+OD
 yu
 yu
 yu
@@ -8834,13 +8763,13 @@ yu
 yu
 yu
 yu
-Bf
-ym
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+bU
+OD
+OD
+OD
+OD
+OD
 yu
 yu
 yu
@@ -8904,13 +8833,13 @@ yu
 yu
 yu
 Et
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
 jj
-Bf
-Bf
+OD
+OD
 yu
 yu
 yu
@@ -8973,14 +8902,14 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
 yu
 yu
 yu
@@ -9043,13 +8972,13 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
+OD
+OD
+OD
 Me
-Bf
-Bf
-Bf
+OD
+OD
+OD
 yu
 yu
 yu
@@ -9112,14 +9041,14 @@ yu
 yu
 yA
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
 yu
 yu
 yu
@@ -9131,7 +9060,7 @@ yu
 yu
 yu
 yu
-yu
+wu
 yu
 yu
 yu
@@ -9182,14 +9111,14 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
 pU
-Bf
-Bf
+OD
+OD
 yu
 yu
 yu
@@ -9198,7 +9127,7 @@ yu
 yu
 js
 yu
-yu
+NL
 yu
 yu
 yu
@@ -9252,15 +9181,15 @@ yu
 yu
 XE
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
 yu
 yu
 XE
@@ -9322,15 +9251,15 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
 yu
 yu
 yu
@@ -9339,7 +9268,7 @@ yu
 yu
 yu
 yu
-yu
+wu
 yu
 yu
 yu
@@ -9392,15 +9321,15 @@ yu
 js
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
+OD
 QS
-Bf
+OD
 yu
 yu
 yu
@@ -9462,16 +9391,16 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
+OD
+OD
+OD
 Mi
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
 yu
 yu
 yu
@@ -9532,17 +9461,17 @@ GR
 yu
 yu
 yu
-Bf
-Bf
-Bf
+OD
+OD
+OD
 Np
-Bf
-Bf
-Bf
-Bf
-Bf
-ym
-Bf
+OD
+OD
+OD
+OD
+OD
+bU
+OD
 yu
 yu
 yu
@@ -9603,16 +9532,16 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
-ym
+OD
+OD
+OD
+bU
 Am
-Bf
-ym
-Bf
-Bf
-Bf
+OD
+bU
+OD
+OD
+OD
 yu
 yu
 yu
@@ -9630,7 +9559,7 @@ yu
 yu
 gE
 yu
-yu
+wu
 yu
 yu
 yu
@@ -9673,17 +9602,17 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
+OD
 ll
 yu
-Bf
-Bf
+OD
+OD
 yu
 yu
 yu
@@ -9743,17 +9672,17 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-ym
+OD
+OD
+bU
 Ta
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
 yu
-Bf
-Bf
+OD
+OD
 yu
 yu
 yu
@@ -9770,7 +9699,7 @@ yu
 mt
 yu
 yu
-yu
+NL
 yu
 yu
 yu
@@ -9813,18 +9742,18 @@ yu
 yu
 yu
 yu
-Bf
+OD
 ll
-Bf
+OD
 Dw
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
 yu
 yu
-Bf
-Bf
+OD
+OD
 yu
 yu
 yu
@@ -9883,18 +9812,18 @@ yu
 XE
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
 Me
-Bf
+OD
 yu
 yu
-Bf
-Bf
+OD
+OD
 yu
 yu
 yu
@@ -9953,22 +9882,22 @@ yu
 yu
 yu
 yu
-Bf
-Bf
+OD
+OD
 Bx
 XK
-Bf
-ym
-Bf
-Bf
+OD
+bU
+OD
+OD
 yu
 yu
 yu
-Bf
-Bf
-Bf
+OD
+OD
+OD
 yu
-Bf
+OD
 WX
 yu
 yu
@@ -9979,7 +9908,7 @@ yu
 yu
 yu
 XE
-yu
+wu
 yu
 yu
 yu
@@ -10023,22 +9952,22 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
+OD
+OD
+OD
 ui
 FH
-Bf
-Bf
+OD
+OD
 yu
 yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
 SB
 yu
 yu
@@ -10092,24 +10021,24 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
+OD
+OD
+OD
 Ub
 pU
-Bf
-Bf
-Bf
+OD
+OD
+OD
 yu
 js
 yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
 yu
 yu
 yu
@@ -10162,14 +10091,14 @@ yu
 yu
 Ug
 yu
-Bf
-Bf
+OD
+OD
 Mi
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
 yu
 yu
 yu
@@ -10177,8 +10106,8 @@ yu
 js
 yu
 yu
-Bf
-Bf
+OD
+OD
 yu
 yu
 yu
@@ -10232,14 +10161,14 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
 yu
 yu
 XE
@@ -10302,15 +10231,15 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
 yu
 yu
 yu
@@ -10372,15 +10301,15 @@ yu
 yu
 yu
 yu
-Bf
+OD
 ll
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
+OD
 yu
 yu
 yu
@@ -10442,15 +10371,15 @@ mt
 yu
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
 Me
-Bf
-Bf
+OD
+OD
 yu
 yu
 yu
@@ -10512,14 +10441,14 @@ yu
 yu
 yu
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
+OD
+OD
+OD
 pU
 yu
 yu
@@ -10581,16 +10510,16 @@ yu
 yu
 XE
 yu
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
 Gt
 Et
-Bf
-Bf
-Bf
+OD
+OD
+OD
 yu
 yu
 XE
@@ -10651,25 +10580,25 @@ yu
 yu
 yu
 yu
-Bf
+OD
 lD
 vI
 vI
 rD
-Bf
-Bf
-Bf
-ym
-Bf
+OD
+OD
+OD
+bU
+OD
 yu
 yu
 yu
 yu
 yu
+wu
 yu
 yu
-yu
-yu
+NL
 yu
 yu
 yu
@@ -10721,15 +10650,15 @@ yu
 yu
 yu
 yu
-Bf
+OD
 Ft
 xk
 ug
 Ty
-nP
+qo
 IV
 IV
-Bf
+OD
 yu
 yu
 yu
@@ -11132,7 +11061,7 @@ yu
 yu
 yu
 yu
-yu
+wu
 XE
 yu
 yu
@@ -11200,7 +11129,7 @@ yu
 yu
 yu
 yu
-yu
+NL
 yu
 yu
 yu
@@ -11339,7 +11268,7 @@ yu
 yu
 yu
 yu
-yu
+nP
 yu
 yu
 yu
@@ -11362,7 +11291,7 @@ jS
 VA
 vl
 yu
-Gv
+Oq
 yu
 yu
 yu
@@ -11573,7 +11502,7 @@ yu
 yu
 yu
 ke
-yu
+Bf
 yu
 yu
 yu
@@ -11601,7 +11530,7 @@ yu
 yu
 yu
 yu
-yu
+NL
 yu
 XE
 yu
@@ -11710,7 +11639,7 @@ EX
 Ft
 lM
 Wq
-yu
+NL
 yu
 yu
 yu
@@ -11740,10 +11669,10 @@ yu
 yu
 yu
 yu
+wu
 yu
 yu
-yu
-yu
+wu
 yu
 yu
 yu
@@ -12205,7 +12134,7 @@ Gc
 yu
 yu
 yu
-yu
+XL
 XQ
 Iw
 Iw
@@ -12228,13 +12157,13 @@ XQ
 fR
 fR
 fR
-Bf
+OD
 Oz
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
 CT
 yu
 yu
@@ -12304,7 +12233,7 @@ nA
 xT
 xT
 HY
-Bf
+OD
 CT
 yu
 yu
@@ -12374,7 +12303,7 @@ Rm
 dG
 Km
 Km
-Bf
+OD
 sN
 yu
 yu
@@ -12444,7 +12373,7 @@ Ek
 KE
 JB
 CW
-Bf
+OD
 CT
 yu
 yu
@@ -12584,7 +12513,7 @@ Nv
 fS
 sb
 Hl
-Bf
+OD
 CT
 yu
 yu
@@ -12654,7 +12583,7 @@ qO
 Ek
 Km
 xT
-Bf
+OD
 CT
 yu
 WQ
@@ -12723,8 +12652,8 @@ Km
 iE
 Ku
 Km
-Bf
-Bf
+OD
+OD
 CT
 yu
 Ug
@@ -12793,7 +12722,7 @@ Km
 Km
 Km
 Km
-Bf
+OD
 js
 sN
 yu
@@ -12860,13 +12789,13 @@ eB
 sM
 dk
 xT
-Bf
-Bf
-Bf
-Bf
-Bf
+OD
+OD
+OD
+OD
+OD
 sz
-Bf
+OD
 yu
 yu
 yu
@@ -12930,7 +12859,7 @@ aA
 ZZ
 Vh
 xT
-Bf
+OD
 hs
 hs
 hs
@@ -12995,7 +12924,7 @@ bJ
 bJ
 XQ
 fR
-xT
+Km
 xo
 YF
 HS
@@ -13006,7 +12935,7 @@ fl
 jK
 Jx
 hs
-Bf
+OD
 yu
 yu
 yu
@@ -13076,7 +13005,7 @@ Bv
 Tg
 YE
 hs
-Bf
+OD
 yu
 yu
 XE
@@ -13134,12 +13063,12 @@ bJ
 bJ
 bJ
 yu
-Bf
-Bf
+OD
+OD
 Km
 ix
 xT
-Bf
+OD
 bS
 hs
 hs
@@ -13205,7 +13134,7 @@ bJ
 kq
 OP
 qR
-Bf
+OD
 wQ
 dO
 TY
@@ -13216,7 +13145,7 @@ hs
 BP
 hP
 hs
-Bf
+OD
 yu
 yu
 yu
@@ -13277,7 +13206,7 @@ js
 Cy
 oe
 nk
-Bf
+OD
 yu
 yu
 XE
@@ -13488,7 +13417,7 @@ Zk
 nj
 zi
 gW
-Bf
+OD
 yw
 yw
 yw
@@ -13635,7 +13564,7 @@ fQ
 yw
 yu
 CT
-yu
+NL
 iv
 fo
 yu
@@ -14053,7 +13982,7 @@ yu
 yu
 yu
 XE
-yu
+wu
 yu
 yu
 yu

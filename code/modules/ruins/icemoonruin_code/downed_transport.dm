@@ -70,9 +70,9 @@
 		"\[03:49\] indignant elzuose man panics \"They fucking shot us, ma-!\"",
 		"\[03:51\] concerned sarathi man snaps \"I know they shot us, Uledhi!!!\"",
 		"\[03:54\] Controls and buttons clack with urgency.",
-		"\[03:56\] indignant elzuose man hastily relays \"HIT! HIT! PGFNV Te-Olazk, starboard engines are on fire-\"",
+		"\[03:56\] indignant elzuose man hastily relays \"HIT! HIT! PGFN Veseel Olak Four Zero Two Niner, starboard engines are on fire-\"",
 		"\[04:00\] concerned sarathi man hisses \"She's not pulling!\"",
-		"\[04:03\] indignant elzuose man shouts with a shaky voice \"Control systems are failing. Mayday, Mayday, Mayday! This is PGFNV Te-Olazk, Barrow-Class transport, struck by MANPADS and sustained heavy damage! Sector coordina-\"",
+		"\[04:03\] indignant elzuose man shouts with a shaky voice \"Control systems are failing. Mayday, Mayday, Mayday! This is Olak Four Zero Two Niner, Barrow-Class transport, struck by MANPADS and sustained heavy damage! Sector coordina-\"",
 		"\[04:08\] concerned sarathi man groans \"I'm gonna have to put it down.\"",
 		"\[04:11\] A chime plays.",
 		"\[04:15\] concerned sarathi man announces \"Brace, brace, brace, We're punching out!\"",
@@ -84,7 +84,7 @@
 		"\[04:39\] Loud electronic wooping",
 		"\[04:42\] electronic artificial woman states \"Terrain! Terrain! Pull up! Pull up!\"",
 		"\[04:46\] Engines go silent",
-		"\[04:50\] indignant elzuose man whispers breathily \"I don't wanna die...\"",
+		"\[04:49\] indignant elzuose man whispers breathily \"I don't wanna die...\"",
 		"\[04:52\] A thunderous crash, a deep rumble, and the sounds of splintering wood.",
 		"\[04:55\] Thrusters sputter to life and roar at full power.",
 		"\[04:59\] concerned sarathi man pleas quietly \"Come oonnnnn...\"",
@@ -93,7 +93,6 @@
 		"\[05:11\] A deafening smash of steel, splintering wood, and shattering glass before a sudden silence.",
 		"\[05:15\] Beams moan and come to rest with a thud.",
 		"\[05:20\] An eerie silence, with the gentle whistles of a passing breeze.",
-		"\[05:26\] End of Recording",
 	)
 	timestamp = list(
 	0,
@@ -172,7 +171,7 @@
 	279,
 	282,
 	286,
-	290,
+	289,
 	292,
 	295,
 	299,
@@ -181,7 +180,6 @@
 	311,
 	315,
 	320,
-	326,
 	)
 
 /datum/outfit/gezena/downed_pilot
@@ -195,7 +193,7 @@
 
 /datum/outfit/gezena/security/downed_copilot
 	name = "Co-Pilot (downed transport)"
-	head = /obj/item/clothing/head/gezena/flap
+	head = /obj/item/clothing/head/gezena/flap/engi
 	uniform = /obj/item/clothing/under/gezena
 	suit = /obj/item/clothing/suit/toggle/gezena
 	shoes = /obj/item/clothing/shoes/combat/gezena
@@ -206,6 +204,8 @@
 	name = "Skeleton Marine (downed transport)"
 	suit = /obj/item/clothing/suit/armor/gezena/marine
 	head = /obj/item/clothing/head/helmet/gezena
+	glasses = /obj/item/clothing/glasses/sunglasses/pgf
+	mask = /obj/item/clothing/mask/breath/pgfmask
 
 /obj/effect/mob_spawn/human/corpse/pgf/skeleton_marine
 	name = "Skeleton Marine Spawner"
