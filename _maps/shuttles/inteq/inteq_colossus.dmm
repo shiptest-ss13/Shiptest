@@ -1337,51 +1337,15 @@
 	req_access_txt = "1";
 	pixel_x = 5
 	},
-/obj/item/storage/belt/security/webbing/inteq{
-	pixel_y = 8;
-	pixel_x = -8
-	},
-/obj/item/storage/belt/security/webbing/inteq{
-	pixel_y = 8;
-	pixel_x = -8
-	},
 /obj/item/storage/belt/security/webbing/inteq/alt{
 	pixel_x = -8
 	},
 /obj/item/storage/belt/security/webbing/inteq/alt{
 	pixel_x = -8
 	},
-/obj/item/clothing/suit/armor/vest/bulletproof{
-	pixel_x = 8;
-	pixel_y = -4
-	},
-/obj/item/clothing/suit/armor/vest/bulletproof{
-	pixel_x = 8;
-	pixel_y = -4
-	},
-/obj/item/clothing/suit/armor/vest/bulletproof{
-	pixel_x = 8;
-	pixel_y = -4
-	},
-/obj/item/clothing/suit/armor/vest/alt{
-	pixel_x = 9;
-	pixel_y = -8
-	},
-/obj/item/clothing/suit/armor/vest/alt{
-	pixel_x = 9;
-	pixel_y = -8
-	},
 /obj/item/clothing/head/helmet/bulletproof/x11/inteq{
 	pixel_x = 8;
 	pixel_y = 8
-	},
-/obj/item/clothing/head/helmet/bulletproof/x11/inteq{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/helmet/m10/inteq{
-	pixel_x = 8;
-	pixel_y = 6
 	},
 /obj/item/clothing/head/helmet/m10/inteq{
 	pixel_x = 8;
@@ -1417,9 +1381,6 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
-	},
 /obj/structure/closet/secure_closet/wall/directional/north{
 	name = "armour locker";
 	icon_state = "sec_wall";
@@ -1435,12 +1396,6 @@
 	pixel_y = 8;
 	pixel_x = -8
 	},
-/obj/item/storage/belt/security/webbing/inteq/alt{
-	pixel_x = -8
-	},
-/obj/item/storage/belt/security/webbing/inteq/alt{
-	pixel_x = -8
-	},
 /obj/item/clothing/suit/armor/vest/bulletproof{
 	pixel_x = 8;
 	pixel_y = -4
@@ -1460,30 +1415,6 @@
 /obj/item/clothing/suit/armor/vest/alt{
 	pixel_x = 9;
 	pixel_y = -8
-	},
-/obj/item/clothing/gloves/combat{
-	pixel_y = -10;
-	pixel_x = -5
-	},
-/obj/item/clothing/gloves/combat{
-	pixel_y = -10;
-	pixel_x = -5
-	},
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq{
-	pixel_y = 10;
-	pixel_x = -4
-	},
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq{
-	pixel_y = 10;
-	pixel_x = -4
-	},
-/obj/item/radio/headset/alt{
-	pixel_x = 5;
-	pixel_y = 10
-	},
-/obj/item/radio/headset/alt{
-	pixel_x = 5;
-	pixel_y = 10
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/equip)
@@ -2186,66 +2117,18 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 6
 	},
-/obj/structure/chair/handrail{
-	dir = 8;
-	pixel_x = 2
-	},
 /obj/structure/closet/secure_closet/wall/directional/south{
 	icon_door = "sec_wall";
 	name = "enforcer's locker";
 	req_access_txt = "1";
 	icon_state = "sec_wall"
-	},
-/obj/item/storage/backpack/messenger/inteq,
-/obj/item/clothing/under/syndicate/inteq{
-	pixel_x = -5
-	},
-/obj/item/clothing/under/syndicate/inteq/skirt{
-	pixel_x = 5
-	},
-/obj/item/clothing/shoes/combat{
-	pixel_y = -8;
-	pixel_x = -5
-	},
-/obj/item/clothing/gloves/combat{
-	pixel_y = -10;
-	pixel_x = 5
-	},
-/obj/item/clothing/head/beret/sec/inteq{
-	pixel_y = 5;
-	pixel_x = -5
-	},
-/obj/item/clothing/head/soft/inteq{
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/item/clothing/mask/balaclava/inteq{
-	pixel_x = -5
-	},
-/obj/item/clothing/suit/armor/vest/alt{
-	pixel_x = 5
 	},
 /obj/item/clothing/head/helmet/m10/inteq{
 	pixel_y = 10
 	},
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/storage/belt/security/webbing/inteq,
-/obj/item/storage/belt/security/webbing/inteq/alt,
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 6
-	},
-/obj/effect/turf_decal/trimline/opaque/yellow/line{
-	dir = 6
-	},
 /obj/structure/chair/handrail{
 	dir = 8;
 	pixel_x = 2
-	},
-/obj/structure/closet/secure_closet/wall/directional/south{
-	icon_door = "sec_wall";
-	name = "enforcer's locker";
-	req_access_txt = "1";
-	icon_state = "sec_wall"
 	},
 /obj/item/storage/backpack/messenger/inteq,
 /obj/item/clothing/under/syndicate/inteq{
@@ -3714,62 +3597,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "ui" = (
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/opaque/yellow/line,
 /obj/structure/closet/secure_closet/wall/directional/south{
 	icon_door = "sec_wall";
 	name = "enforcer's locker";
 	req_access_txt = "1";
 	icon_state = "sec_wall"
-	},
-/obj/item/storage/backpack/messenger/inteq,
-/obj/item/clothing/under/syndicate/inteq{
-	pixel_x = -5
-	},
-/obj/item/clothing/under/syndicate/inteq/skirt{
-	pixel_x = 5
-	},
-/obj/item/clothing/shoes/combat{
-	pixel_y = -8;
-	pixel_x = -5
-	},
-/obj/item/clothing/gloves/combat{
-	pixel_y = -10;
-	pixel_x = 5
-	},
-/obj/item/clothing/head/beret/sec/inteq{
-	pixel_y = 5;
-	pixel_x = -5
-	},
-/obj/item/clothing/head/soft/inteq{
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/item/clothing/mask/balaclava/inteq{
-	pixel_x = -5
-	},
-/obj/item/clothing/suit/armor/vest/alt{
-	pixel_x = 5
 	},
 /obj/item/clothing/head/helmet/m10/inteq{
 	pixel_y = 10
-	},
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/storage/belt/security/webbing/inteq,
-/obj/item/storage/belt/security/webbing/inteq/alt,
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/opaque/yellow/line,
-/obj/structure/closet/secure_closet/wall/directional/south{
-	icon_door = "sec_wall";
-	name = "enforcer's locker";
-	req_access_txt = "1";
-	icon_state = "sec_wall"
 	},
 /obj/item/storage/backpack/messenger/inteq,
 /obj/item/clothing/under/syndicate/inteq{
@@ -3810,6 +3645,11 @@
 /obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt{
 	pixel_x = 8;
 	pixel_y = -4
+	},
+/obj/effect/turf_decal/trimline/opaque/yellow/line,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/equip)
@@ -7402,72 +7242,15 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Rv" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
-	},
-/obj/effect/turf_decal/trimline/opaque/yellow/line{
-	dir = 10
-	},
 /obj/structure/closet/secure_closet/wall/directional/south{
 	icon_door = "sec_wall";
 	name = "enforcer's locker";
 	req_access_txt = "1";
 	icon_state = "sec_wall"
-	},
-/obj/item/storage/backpack/messenger/inteq,
-/obj/item/clothing/under/syndicate/inteq{
-	pixel_x = -5
-	},
-/obj/item/clothing/under/syndicate/inteq/skirt{
-	pixel_x = 5
-	},
-/obj/item/clothing/shoes/combat{
-	pixel_y = -8;
-	pixel_x = -5
-	},
-/obj/item/clothing/gloves/combat{
-	pixel_y = -10;
-	pixel_x = 5
-	},
-/obj/item/clothing/head/beret/sec/inteq{
-	pixel_y = 5;
-	pixel_x = -5
-	},
-/obj/item/clothing/head/soft/inteq{
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/item/clothing/mask/balaclava/inteq{
-	pixel_x = -5
-	},
-/obj/item/clothing/suit/armor/vest/alt{
-	pixel_x = 5
 	},
 /obj/item/clothing/head/helmet/m10/inteq{
 	pixel_y = 10
 	},
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/storage/belt/security/webbing/inteq,
-/obj/item/storage/belt/security/webbing/inteq/alt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
-	},
-/obj/effect/turf_decal/trimline/opaque/yellow/line{
-	dir = 10
-	},
-/obj/structure/closet/secure_closet/wall/directional/south{
-	icon_door = "sec_wall";
-	name = "enforcer's locker";
-	req_access_txt = "1";
-	icon_state = "sec_wall"
-	},
 /obj/item/storage/backpack/messenger/inteq,
 /obj/item/clothing/under/syndicate/inteq{
 	pixel_x = -5
@@ -7500,7 +7283,6 @@
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 /obj/item/storage/belt/security/webbing/inteq,
 /obj/item/storage/belt/security/webbing/inteq/alt,
-/obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/suit/hooded/wintercoat/security/inteq{
 	pixel_x = -8;
 	pixel_y = -4
@@ -7509,6 +7291,17 @@
 	pixel_x = 8;
 	pixel_y = -4
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/equip)
 "RN" = (
