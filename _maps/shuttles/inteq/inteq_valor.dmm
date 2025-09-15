@@ -98,15 +98,6 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
-"bv" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/machinery/suit_storage_unit/inherit,
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/light/small/directional/north,
-/obj/item/clothing/suit/space/inteq,
-/obj/item/clothing/head/helmet/space/inteq,
-/turf/open/floor/plasteel,
-/area/ship/crew/office)
 "bx" = (
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/plasteel/mono/dark,
@@ -297,6 +288,17 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"dg" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/directional/north,
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/clothing/suit/space/inteq/pilot,
+/obj/item/clothing/head/helmet/space/inteq/pilot,
+/obj/item/clothing/mask/gas/inteq,
+/turf/open/floor/plasteel,
+/area/ship/crew/office)
 "dk" = (
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
@@ -672,25 +674,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/port)
-"fO" = (
-/obj/structure/closet/secure_closet{
-	icon_door = "prisoner";
-	icon_state = "prisoner";
-	name = "shuttle pilot locker";
-	req_access = list(48)
-	},
-/obj/item/clothing/head/beret/sec/inteq,
-/obj/item/clothing/head/soft/inteq,
-/obj/item/clothing/suit/armor/vest/alt,
-/obj/item/radio/headset/inteq,
-/obj/item/clothing/gloves/fingerless,
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/head/helmet/bulletproof/x11/inteq,
-/obj/item/clothing/mask/gas/inteq,
-/obj/item/radio/intercom/directional/north,
-/turf/open/floor/plasteel,
-/area/ship/crew/office)
 "gb" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 10
@@ -1081,33 +1064,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/medical/surgery)
-"jN" = (
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/yellow,
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 8
-	},
-/obj/machinery/airalarm/directional/east,
-/obj/structure/rack,
-/obj/item/storage/belt/security/webbing/inteq{
-	pixel_x = 6;
-	pixel_y = 8
-	},
-/obj/item/storage/belt/security/webbing/inteq{
-	pixel_x = 8;
-	pixel_y = 4
-	},
-/obj/item/clothing/head/helmet/m10/inteq{
-	pixel_x = -9;
-	pixel_y = 6
-	},
-/obj/item/clothing/head/helmet/m10/inteq{
-	pixel_x = -7
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
 "jQ" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/light/directional/east,
@@ -1717,6 +1673,25 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
+"oZ" = (
+/obj/structure/closet/secure_closet{
+	icon_door = "prisoner";
+	icon_state = "prisoner";
+	name = "shuttle pilot locker";
+	req_access = list(48)
+	},
+/obj/item/clothing/head/beret/sec/inteq,
+/obj/item/clothing/head/soft/inteq,
+/obj/item/clothing/suit/armor/vest/alt,
+/obj/item/radio/headset/inteq,
+/obj/item/clothing/gloves/fingerless,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+/obj/item/clothing/head/helmet/bulletproof/x11/inteq,
+/obj/item/clothing/mask/gas/inteq,
+/obj/item/radio/intercom/directional/north,
+/turf/open/floor/plasteel,
+/area/ship/crew/office)
 "pa" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4439,6 +4414,33 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/canteen)
+"Nt" = (
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/east,
+/obj/structure/rack,
+/obj/item/storage/belt/security/webbing/inteq{
+	pixel_x = 6;
+	pixel_y = 8
+	},
+/obj/item/storage/belt/security/webbing/inteq{
+	pixel_x = 8;
+	pixel_y = 4
+	},
+/obj/item/clothing/head/helmet/m10/inteq{
+	pixel_x = -9;
+	pixel_y = 6
+	},
+/obj/item/clothing/head/helmet/m10/inteq{
+	pixel_x = -7
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "NA" = (
 /obj/effect/turf_decal/trimline/opaque/brown/filled/warning,
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -6057,7 +6059,7 @@ SL
 (11,1,1) = {"
 Zu
 Rh
-jN
+Nt
 Zu
 uB
 ua
@@ -6188,7 +6190,7 @@ SL
 "}
 (15,1,1) = {"
 tZ
-fO
+oZ
 PJ
 tZ
 Qc
@@ -6221,7 +6223,7 @@ LI
 "}
 (16,1,1) = {"
 tZ
-bv
+dg
 wL
 ME
 iN
