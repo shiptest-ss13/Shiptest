@@ -1056,9 +1056,9 @@ SUBSYSTEM_DEF(overmap)
 	else
 		datum_to_edit.token.add_filter("gloweffect", 5, list("type"="drop_shadow", "color"= "#808080", "size"=2, "offset"=1))
 
-/datum/overmap_star_system/ngr
-	name = "Gorlex Controlled - Ecbatana"
-	starname = "Ecbatana"
+/datum/overmap_star_system/safezone/ngr
+	name = "Gorlex Controlled - Value of Public Works"
+	starname = "Value of Public Works"
 
 	//main colors, used for dockable terrestrials, and background
 	primary_color = "#d9ad82"
@@ -1071,6 +1071,63 @@ SUBSYSTEM_DEF(overmap)
 	//structure colors, used for ships and outposts/colonies
 	primary_structure_color = "#83db2b"
 	secondary_structure_color = "#21a52e"
+
+	override_object_colors = TRUE
+	overmap_icon_state = "overmap_dark"
+
+/datum/overmap_star_system/safezone/clip
+	name = "CLIP Controlled - High-Pier"
+	starname = "High-Pier"
+
+	//main colors, used for dockable terrestrials, and background
+	primary_color = "#6fa8de"
+	secondary_color = "#96b6d4"
+
+	//hazard colors, used for the overmap hazards and sun
+	hazard_primary_color = "#d5e3f0"
+	hazard_secondary_color = "#96a6b5"
+
+	//structure colors, used for ships and outposts/colonies
+	primary_structure_color = "#97dfe8"
+	secondary_structure_color = "#6fa8de"
+
+	override_object_colors = TRUE
+	overmap_icon_state = "overmap_dark"
+
+/datum/overmap_star_system/safezone/trifuge
+	name = "Independent - Minya"
+	starname = "Minya"
+
+	//main colors, used for dockable terrestrials, and background
+	primary_color = "#b1c9c3"
+	secondary_color = "#155352"
+
+	//hazard colors, used for the overmap hazards and sun
+	hazard_primary_color = "#d74200"
+	hazard_secondary_color = "#e99f10"
+
+	//structure colors, used for ships and outposts/colonies
+	primary_structure_color = "#ffffff"
+	secondary_structure_color = "#b154cf"
+
+	override_object_colors = TRUE
+	overmap_icon_state = "overmap_dark"
+
+/datum/overmap_star_system/safezone/nt
+	name = "Nanotrasen Controlled - Persei-277"
+	starname = "Persei-277"
+
+	//main colors, used for dockable terrestrials, and background
+	primary_color = "#7e8cd9"
+	secondary_color = "#152473"
+
+	//hazard colors, used for the overmap hazards and sun
+	hazard_primary_color = "#ededed"
+	hazard_secondary_color = "#8584a1"
+
+	//structure colors, used for ships and outposts/colonies
+	primary_structure_color = "#ffffff"
+	secondary_structure_color = "#ffffff"
 
 	override_object_colors = TRUE
 	overmap_icon_state = "overmap_dark"
