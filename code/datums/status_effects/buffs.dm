@@ -387,10 +387,7 @@
 	desc = "You're concealed and harder to hit with projectiles."
 	icon_state = "convulsing"
 
-/datum/status_effect/concealed/smoke
-	id = "smokey"
-
-/datum/status_effect/concealed/smoke/tick(seconds_per_tick)
+/datum/status_effect/concealed/tick(seconds_per_tick)
 	. = ..()
 	//look for smoke on tile
 	var/turf/smokey_tile = get_turf(owner)

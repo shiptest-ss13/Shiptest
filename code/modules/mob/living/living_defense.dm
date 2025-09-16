@@ -65,9 +65,7 @@
 	return on_hit_state ? BULLET_ACT_HIT : BULLET_ACT_BLOCK
 
 /mob/living/proc/check_concealment(obj/projectile/P)
-	var/datum/status_effect/concealed/concealment = has_status_effect(/datum/status_effect/concealed/smoke)
-	if(P.original == src)
-		return FALSE // we got directly targeted, and will be hit.
+	var/datum/status_effect/concealed/concealment = has_status_effect(/datum/status_effect/concealed)
 	if(P.thermal)
 		return FALSE // firer can see through smoke
 	if(concealment)
