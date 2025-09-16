@@ -379,13 +379,13 @@
 
 /datum/status_effect/concealed
 	id = "concealed"
-	var/concealment_power = 50
+	var/concealment_power = 75
 	alert_type = /atom/movable/screen/alert/status_effect/concealed
 
 /atom/movable/screen/alert/status_effect/concealed
 	name = "Concealed"
 	desc = "You're concealed and harder to hit with projectiles."
-	icon_state = "convulsing"
+	icon_state = "concealed"
 
 /datum/status_effect/concealed/tick(seconds_per_tick)
 	. = ..()
