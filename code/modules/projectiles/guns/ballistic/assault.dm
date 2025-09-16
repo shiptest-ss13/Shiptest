@@ -61,7 +61,7 @@
 	unique_reskin = list(\
 		"SKM" = "skm",
 		"Polymer" = "skm_polymer",
-		"Black" = "skm_black",
+		"Bright" = "skm_bright",
 		)
 	unique_reskin_changes_inhand = TRUE
 
