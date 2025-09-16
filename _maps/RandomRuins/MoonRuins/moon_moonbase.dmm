@@ -2673,16 +2673,6 @@
 /obj/item/gun/ballistic/automatic/pistol/mauler/regular,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/moonbase/armory)
-"yl" = (
-/obj/structure/girder{
-	icon = 'icons/effects/32x64.dmi';
-	icon_state = "crystal"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating/asteroid/moon_coarse/dark/lit,
-/area/ruin/moon/moonbase)
 "ym" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -3225,10 +3215,7 @@
 /obj/structure/platform/industrial/corner{
 	dir = 8
 	},
-/obj/structure/girder{
-	icon = 'icons/effects/32x64.dmi';
-	icon_state = "crystal"
-	},
+/obj/structure/flora/rock/crystal,
 /turf/open/floor/pod/rockplanet,
 /area/ruin/moon/moonbase)
 "CV" = (
@@ -5249,10 +5236,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/moon/moonbase/refinery)
 "TK" = (
-/obj/structure/girder{
-	icon = 'icons/effects/32x64.dmi';
-	icon_state = "crystal"
-	},
+/obj/structure/flora/rock/crystal,
 /turf/open/floor/plating/asteroid/moon_coarse/dark/lit,
 /area/ruin/moon/moonbase)
 "TN" = (
@@ -8922,7 +8906,7 @@ nn
 nn
 Rq
 eh
-yl
+eh
 eh
 eh
 VW
@@ -8983,7 +8967,7 @@ ec
 XY
 ec
 ec
-ec
+TK
 ec
 ec
 eM
