@@ -1105,3 +1105,15 @@
 
 /obj/effect/particle_emitter/Initialize(mapload, time)
 	. = ..()
+
+/obj/structure/flora/rock/crystal
+	icon_state = "crystal"
+	base_icon_state = "crystal"
+	desc = "A towering, obaque crystal. You could probably shave something off this."
+	icon = 'icons/effects/32x64.dmi'
+	resistance_flags = FIRE_PROOF
+	density = TRUE
+	max_integrity = 100
+	var/obj/item/stack/mineResult = /obj/item/strange_crystal
+
+	hitsound_type = PROJECTILE_HITSOUND_STONE
