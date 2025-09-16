@@ -959,9 +959,7 @@ SUBSYSTEM_DEF(overmap)
 	override_object_colors = TRUE
 	overmap_icon_state = "overmap"
 
-	dynamic_probabilities = list(
-		DYNAMIC_WORLD_BEACHPLANET = 0,
-		)
+	max_overmap_dynamic_events = 0
 
 /datum/overmap_star_system/zx_spectrum_pallete
 	//main colors, used for dockable terrestrials, and background
