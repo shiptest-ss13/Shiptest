@@ -1054,7 +1054,8 @@ SUBSYSTEM_DEF(overmap)
 
 /datum/overmap_star_system/safezone/ngr
 	name = "Gorlex Controlled - Value of Public Works"
-	starname = "Value of Public Works"
+	starname = "Ecbatana-48"
+	startype = /datum/overmap/star/dwarf
 	found_type = /datum/overmap/outpost/ngr_rock
 
 	//main colors, used for dockable terrestrials, and background
@@ -1074,7 +1075,8 @@ SUBSYSTEM_DEF(overmap)
 
 /datum/overmap_star_system/safezone/clip
 	name = "CLIP Controlled - High-Pier"
-	starname = "High-Pier"
+	starname = "Chana-391"
+	startype = /datum/overmap/star/dwarf/orange
 	found_type = /datum/overmap/outpost/clip_ocean
 
 	//main colors, used for dockable terrestrials, and background
@@ -1094,7 +1096,8 @@ SUBSYSTEM_DEF(overmap)
 
 /datum/overmap_star_system/safezone/trifuge
 	name = "Independent - Minya"
-	starname = "Minya"
+	starname = "Minya Fissure"
+	startype = /datum/overmap/star/singularity
 	found_type = /datum/overmap/outpost/indie_space
 
 	//main colors, used for dockable terrestrials, and background
@@ -1115,6 +1118,7 @@ SUBSYSTEM_DEF(overmap)
 /datum/overmap_star_system/safezone/nt
 	name = "Nanotrasen Controlled - Persei-277"
 	starname = "Persei-277"
+	startype = /datum/overmap/star/medium
 	found_type = /datum/overmap/outpost/nanotrasen_ice
 
 	//main colors, used for dockable terrestrials, and background
