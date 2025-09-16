@@ -655,8 +655,16 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/obj/structure/closet/secure_closet/empty/warden,
 /obj/machinery/light/directional/east,
+/obj/structure/rack,
+/obj/item/gun_maint_kit{
+	pixel_x = 0;
+	pixel_y = -2
+	},
+/obj/item/gun_maint_kit{
+	pixel_x = 0;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/moonbase/armory)
 "fo" = (
@@ -2669,7 +2677,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/item/gun/ballistic/shotgun/cm15,
 /obj/item/gun/ballistic/automatic/pistol/mauler/regular,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/moonbase/armory)

@@ -453,6 +453,18 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/neutured
 	weapon_drop_chance = 0
 
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/cm15
+	name = "Frontiersman Boss"
+	desc = "This Frontiersman moves with what could almost pass for discipline among the infamously ragtag terrorists. They leer at their underlings, a chrome combat shotgun within their hands."
+	rapid = 2
+	rapid_fire_delay = 7
+	retreat_distance = 4
+	minimum_distance = 3
+	casingtype = /obj/item/ammo_casing/shotgun/buckshot
+	shoot_point_blank = TRUE
+	l_hand = /obj/item/gun/ballistic/shotgun/cm15
+	weapon_drop_chance = 100
+
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle
 	name = "Frontiersman Commander"
 	desc = "This Frontiersman sways through the world with a deliberate cadence. Their eyes stay up as they search for a target, rubbing at the bolt of their rifle."
