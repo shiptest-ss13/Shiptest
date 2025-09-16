@@ -375,7 +375,7 @@ SUBSYSTEM_DEF(overmap)
 	if(!size)
 		size = CONFIG_GET(number/overmap_size)
 	if(!max_overmap_dynamic_events)
-		max_overmap_dynamic_events = CONFIG_GET(number/max_overmap_dynamic_events)
+		max_overmap_dynamic_events = isnull(max_overmap_dynamic_events)
 
 	overmap_container = new/list(size, size, 0)
 
@@ -1101,16 +1101,16 @@ SUBSYSTEM_DEF(overmap)
 	found_type = /datum/overmap/outpost/indie_space
 
 	//main colors, used for dockable terrestrials, and background
-	primary_color = "#b1c9c3"
-	secondary_color = "#155352"
+	primary_color = "#5e5e5e"
+	secondary_color = "#242424"
 
 	//hazard colors, used for the overmap hazards and sun
-	hazard_primary_color = "#d74200"
-	hazard_secondary_color = "#e99f10"
+	hazard_primary_color = "#7d4242"
+	hazard_secondary_color = "#4d3232"
 
 	//structure colors, used for ships and outposts/colonies
 	primary_structure_color = "#ffffff"
-	secondary_structure_color = "#b154cf"
+	secondary_structure_color = "#ffffff"
 
 	override_object_colors = TRUE
 	overmap_icon_state = "overmap"
@@ -1123,7 +1123,7 @@ SUBSYSTEM_DEF(overmap)
 
 	//main colors, used for dockable terrestrials, and background
 	primary_color = "#7e8cd9"
-	secondary_color = "#152473"
+	secondary_color = "#33324a"
 
 	//hazard colors, used for the overmap hazards and sun
 	hazard_primary_color = "#ededed"
@@ -1158,6 +1158,7 @@ SUBSYSTEM_DEF(overmap)
 	has_outpost = FALSE
 	can_be_selected_randomly = FALSE
 	encounters_refresh = TRUE
+	max_overmap_dynamic_events = 15
 
 /datum/overmap_star_system/shiptest/create_map()
 	. = ..()
