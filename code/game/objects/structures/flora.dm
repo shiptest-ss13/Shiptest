@@ -1114,6 +1114,6 @@
 	resistance_flags = FIRE_PROOF
 	density = TRUE
 	max_integrity = 100
-	mineResult = /obj/item/strange_crystal
+	mineResult = /obj/item/crystal_shard
 
 	hitsound_type = PROJECTILE_HITSOUND_STONE
