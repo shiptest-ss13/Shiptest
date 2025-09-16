@@ -141,7 +141,7 @@
 
 /obj/item/food/hotdog
 	name = "hotdog"
-	desc = "Hot and steamy hotdog weenie."
+	desc = "A sausage within a bun. Often grilled or boiled and served with ketchup."
 	icon_state = "hotdog"
 	bite_consumption = 3
 	food_reagents = list(

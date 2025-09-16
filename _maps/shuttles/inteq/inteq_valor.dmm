@@ -103,8 +103,10 @@
 /obj/machinery/suit_storage_unit/inherit,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light/small/directional/north,
-/obj/item/clothing/suit/space/inteq,
-/obj/item/clothing/head/helmet/space/inteq,
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/clothing/suit/space/inteq/pilot,
+/obj/item/clothing/head/helmet/space/inteq/pilot,
+/obj/item/clothing/mask/gas/inteq,
 /turf/open/floor/plasteel,
 /area/ship/crew/office)
 "bx" = (
@@ -4531,8 +4533,6 @@
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/backpack/messenger/inteq,
 /obj/item/megaphone/command,
-/obj/item/clothing/under/syndicate/inteq/skirt,
-/obj/item/clothing/under/syndicate/inteq,
 /obj/item/clothing/suit/armor/hos/inteq,
 /obj/item/clothing/head/beret/sec/hos/inteq,
 /obj/structure/closet/secure_closet/wall/directional/west{
@@ -4547,6 +4547,10 @@
 /obj/item/stamp/inteq/vanguard,
 /obj/item/storage/box/ammo/a44roum,
 /obj/item/storage/guncase/pistol/pinscher,
+/obj/item/clothing/under/syndicate/inteq/honorable{
+	pixel_x = -5;
+	pixel_y = 1
+	},
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
 "Od" = (
@@ -4946,6 +4950,10 @@
 /obj/item/storage/box/hypospray/mkiii,
 /obj/item/stamp/inteq/corpsman,
 /obj/item/clothing/gloves/color/latex/nitrile/inteq,
+/obj/item/clothing/under/syndicate/inteq/honorable{
+	pixel_x = -5;
+	pixel_y = 1
+	},
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "RT" = (

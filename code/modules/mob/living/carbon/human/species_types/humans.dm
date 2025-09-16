@@ -38,6 +38,8 @@
 			mutantears = /obj/item/organ/ears/rabbit/bent
 		if("Floppy Rabbit")
 			mutantears = /obj/item/organ/ears/rabbit/floppy
+		if("Horse")
+			mutantears = /obj/item/organ/ears/horse
 	switch(C.dna.features["tail_human"])
 		if("Cat")
 			mutant_organs |= /obj/item/organ/tail/cat
@@ -49,6 +51,8 @@
 			mutant_organs |= /obj/item/organ/tail/fox/alt
 		if("Rabbit")
 			mutant_organs |= /obj/item/organ/tail/rabbit
+		if("Horse")
+			mutant_organs |= /obj/item/organ/tail/horse
 
 	return ..()
 

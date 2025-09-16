@@ -84,6 +84,17 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/spacesuits/spacesuit/inteq/pilot
+	name = "Inteq Pilot Space Suit Crate"
+	desc = "Contains one lightweight suit designed for exosuit and shuttle pilots of the IRMG. While highly mobile, it offers poor protection against prolonged exposure to extreme temperatures of either end."
+	cost = 500
+	contains = list(/obj/item/clothing/suit/space/inteq/pilot,
+					/obj/item/clothing/head/helmet/space/inteq/pilot)
+	crate_name = "space suit crate"
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
 //solgov
 
 /datum/supply_pack/spacesuits/spacesuit/solgov
@@ -100,12 +111,23 @@
 //fucking gezena
 
 /datum/supply_pack/spacesuits/spacesuit/pgf
-	name = "Rakalla Crate"
-	desc = "Contains one Rakalla Suit. It provides robust-enough protection from the elements while being quite flexible."
+	name = "Rakalla Navy Utility Suit Crate"
+	desc = "Contains one Rakalla Utility Suit. The aging but beloved workhorse of Navy space operations."
 	cost = 600
 	contains = list(/obj/item/clothing/suit/space/gezena,
 					/obj/item/clothing/head/helmet/space/gezena)
 	crate_name = "rakalla suit crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/spacesuit/pgf/marine
+	name = "Lataka Composite Combat Suit Crate"
+	desc = "Contains one Lataka Combat Suit. The backbone of any Marine Corps space assault."
+	cost = 1000
+	contains = list(/obj/item/clothing/suit/space/gezena/marine,
+					/obj/item/clothing/head/helmet/space/gezena/marine)
+	crate_name = "lataka suit crate"
 	faction = /datum/faction/pgf
 	faction_discount = 0
 	faction_locked = TRUE

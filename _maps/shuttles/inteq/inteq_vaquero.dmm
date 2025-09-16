@@ -33,10 +33,6 @@
 	pixel_y = -8;
 	pixel_x = -5
 	},
-/obj/item/clothing/gloves/combat{
-	pixel_y = -10;
-	pixel_x = 5
-	},
 /obj/item/clothing/head/beret/sec/inteq{
 	pixel_y = 5;
 	pixel_x = -5
@@ -50,8 +46,7 @@
 	},
 /obj/item/storage/pouch/engi,
 /obj/item/clothing/gloves/color/yellow{
-	pixel_y = -8;
-	pixel_x = -8
+	pixel_y = -8
 	},
 /obj/item/clothing/glasses/welding{
 	pixel_x = -4
@@ -61,6 +56,14 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/suit/hooded/wintercoat/security/inteq{
+	pixel_x = -8;
+	pixel_y = -4
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt{
+	pixel_x = 8;
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "aq" = (
@@ -2528,6 +2531,14 @@
 	dir = 6
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
+/obj/item/clothing/suit/hooded/wintercoat/security/inteq{
+	pixel_x = -8;
+	pixel_y = -4
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt{
+	pixel_x = 8;
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "uy" = (
@@ -4075,12 +4086,6 @@
 	req_access_txt = "20"
 	},
 /obj/item/storage/backpack/messenger/inteq,
-/obj/item/clothing/under/syndicate/inteq{
-	pixel_x = -5
-	},
-/obj/item/clothing/under/syndicate/inteq/skirt{
-	pixel_x = 5
-	},
 /obj/item/clothing/shoes/combat{
 	pixel_y = -8;
 	pixel_x = -5
@@ -4131,6 +4136,7 @@
 	pixel_x = 20;
 	pixel_y = 12
 	},
+/obj/item/clothing/under/syndicate/inteq/honorable,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm/captain)
 "IN" = (
@@ -4933,6 +4939,7 @@
 	pixel_x = -20;
 	pixel_y = -12
 	},
+/obj/item/reagent_containers/glass/beaker/large,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "Pn" = (
@@ -5416,10 +5423,13 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/firealarm/directional/east{
-	pixel_y = 6
+	pixel_y = -4
 	},
 /obj/structure/extinguisher_cabinet/directional/east{
-	pixel_y = -6
+	pixel_y = -16
+	},
+/obj/machinery/light/small/directional/east{
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
@@ -5443,11 +5453,11 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/noticeboard{
 	dir = 1;
 	pixel_y = -25
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
 "Ul" = (
@@ -6096,7 +6106,7 @@
 	pixel_y = 22
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/east,
+/obj/machinery/computer/cryopod/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "Zh" = (
