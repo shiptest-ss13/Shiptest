@@ -129,6 +129,7 @@
 	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
 	hardsuit_type = "frontier"
+	supports_variations = NONE
 
 /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 	name = "\improper Frontiersmen hardsuit"
@@ -138,6 +139,7 @@
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/frontier
+	supports_variations = NONE
 
 /////////
 //Hats//
