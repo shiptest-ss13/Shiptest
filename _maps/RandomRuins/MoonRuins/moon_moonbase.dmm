@@ -171,9 +171,6 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/moon/moonbase/cargo)
-"bv" = (
-/turf/template_noop,
-/area/ruin/moon/moonbase)
 "bw" = (
 /obj/structure/flippedtable{
 	dir = 1
@@ -243,6 +240,9 @@
 "bQ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/effect/turf_decal/trimline/transparent/orange/warning{
+	dir = 10
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/moon/moonbase/cargo)
@@ -1367,7 +1367,11 @@
 /area/ruin/moon/moonbase/refinery)
 "kA" = (
 /obj/machinery/autolathe,
-/turf/open/floor/plasteel/tech/techmaint,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/transparent/orange/warning,
+/turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase/cargo)
 "kN" = (
 /obj/structure/railing/thin/corner,
@@ -1399,7 +1403,7 @@
 /area/ruin/moon/moonbase)
 "kZ" = (
 /obj/structure/grille,
-/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ruin/moon/moonbase/dorms)
 "lc" = (
@@ -1477,7 +1481,11 @@
 	},
 /obj/item/stack/packageWrap,
 /obj/item/stack/packageWrap,
-/turf/open/floor/plasteel/tech/techmaint,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/transparent/orange/warning,
+/turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase/cargo)
 "lS" = (
 /obj/machinery/computer/electrolyzer_console{
@@ -1922,10 +1930,6 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/moon/moonbase/armory)
-"qw" = (
-/obj/machinery/suit_storage_unit/inherit/industrial,
-/turf/open/floor/plating/asteroid/moon/lit/surface_craters,
-/area/ruin/moon/moonbase)
 "qy" = (
 /obj/structure/table,
 /obj/structure/bedsheetbin{
@@ -1959,7 +1963,7 @@
 /area/ruin/moon/moonbase/refinery)
 "qR" = (
 /obj/structure/grille,
-/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ruin/moon/moonbase/refinery)
 "qT" = (
@@ -2049,14 +2053,14 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase/refinery)
 "rG" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
+	},
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+	dir = 4
 	},
 /turf/open/floor/engine/hull,
 /area/ruin/moon/moonbase/engineering)
@@ -2066,7 +2070,11 @@
 /area/ruin/moon/moonbase)
 "rW" = (
 /obj/machinery/suit_storage_unit/inherit,
-/turf/open/floor/plasteel/tech/techmaint,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/transparent/orange/warning,
+/turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase/cargo)
 "rY" = (
 /obj/structure/toilet{
@@ -2155,10 +2163,10 @@
 /area/ruin/moon/moonbase/refinery)
 "sW" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/power/rtg/geothermal,
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
+/obj/machinery/power/rtg/advanced,
 /turf/open/floor/engine/hull,
 /area/ruin/moon/moonbase/engineering)
 "sZ" = (
@@ -2577,9 +2585,8 @@
 	},
 /area/ruin/moon/moonbase)
 "wO" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
-	dir = 1;
-	piping_layer = 4
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
+	dir = 1
 	},
 /turf/open/floor/engine/hull,
 /area/ruin/moon/moonbase/engineering)
@@ -2883,7 +2890,11 @@
 	pixel_x = 17;
 	pixel_y = 9
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/transparent/orange/warning,
+/turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase/cargo)
 "Ay" = (
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
@@ -3017,12 +3028,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/moonbase/engineering)
-"By" = (
-/obj/structure/platform/industrial{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/moon/lit/surface_craters,
-/area/ruin/moon/moonbase)
 "Bz" = (
 /obj/effect/turf_decal/siding/thinplating/corner{
 	dir = 4
@@ -3441,7 +3446,7 @@
 /obj/structure/platform/industrial{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/moon,
+/turf/open/floor/plating/asteroid/moon_coarse,
 /area/ruin/moon/moonbase)
 "Ez" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter,
@@ -3619,9 +3624,7 @@
 /turf/open/floor/pod/dark,
 /area/ruin/moon/moonbase/dorms)
 "GM" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
-	piping_layer = 2
-	},
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2,
 /turf/open/floor/engine/hull,
 /area/ruin/moon/moonbase/engineering)
 "GN" = (
@@ -3802,7 +3805,7 @@
 /area/ruin/moon/moonbase/armory)
 "Ig" = (
 /obj/structure/platform/industrial,
-/turf/open/floor/plating/asteroid/moon/lit/surface_craters,
+/turf/open/floor/plating/asteroid/moon_coarse,
 /area/ruin/moon/moonbase)
 "Ij" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/pounder/internals,
@@ -4229,7 +4232,7 @@
 /obj/structure/platform/industrial{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/moon,
+/turf/open/floor/plating/asteroid/moon_coarse,
 /area/ruin/moon/moonbase)
 "LJ" = (
 /obj/structure/grille,
@@ -4548,7 +4551,7 @@
 /obj/structure/platform/industrial{
 	dir = 10
 	},
-/turf/open/floor/plating/asteroid/moon/lit/surface_craters,
+/turf/open/floor/plating/asteroid/moon_coarse,
 /area/ruin/moon/moonbase)
 "NW" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
@@ -4696,7 +4699,7 @@
 /obj/structure/platform/industrial{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/moon,
+/turf/open/floor/plating/asteroid/moon_coarse,
 /area/ruin/moon/moonbase)
 "OR" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -5161,7 +5164,7 @@
 /obj/structure/platform/industrial{
 	dir = 6
 	},
-/turf/open/floor/plating/asteroid/moon/lit/surface_craters,
+/turf/open/floor/plating/asteroid/moon_coarse,
 /area/ruin/moon/moonbase)
 "ST" = (
 /obj/structure/chair{
@@ -5337,7 +5340,7 @@
 /obj/structure/platform/industrial{
 	dir = 9
 	},
-/turf/open/floor/plating/asteroid/moon/lit/surface_craters,
+/turf/open/floor/plating/asteroid/moon_coarse,
 /area/ruin/moon/moonbase)
 "Uo" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
@@ -5421,6 +5424,9 @@
 	dir = 4
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals,
+/obj/effect/turf_decal/trimline/transparent/orange/warning{
+	dir = 6
+	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/moon/moonbase/cargo)
 "Vy" = (
@@ -5769,7 +5775,7 @@
 /obj/structure/platform/industrial{
 	dir = 5
 	},
-/turf/open/floor/plating/asteroid/moon/lit/surface_craters,
+/turf/open/floor/plating/asteroid/moon_coarse,
 /area/ruin/moon/moonbase)
 "XK" = (
 /obj/machinery/light/small/directional/north,
@@ -5972,10 +5978,11 @@
 /area/ruin/moon/moonbase/engineering)
 "Zm" = (
 /obj/machinery/door/airlock/external{
-	dir = 8;
-	welded = 1
+	dir = 8
 	},
 /obj/structure/barricade/wooden/crude,
+/obj/effect/mapping_helpers/airlock/welded,
+/obj/effect/mapping_helpers/airlock/sealed,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/moonbase/refinery)
 "Zn" = (
@@ -7171,7 +7178,7 @@ Ig
 nu
 yM
 zp
-By
+ON
 fi
 fi
 bL
@@ -7218,8 +7225,8 @@ fi
 mk
 mk
 fi
-fi
-fi
+UY
+UY
 fi
 qF
 bM
@@ -7227,13 +7234,13 @@ Lh
 bM
 bM
 qF
-fi
+UY
 Ig
 VP
 VZ
 Se
-By
-fi
+ON
+UY
 fi
 fi
 Gk
@@ -7277,18 +7284,18 @@ Bf
 Bf
 Bf
 Bf
-ET
-ET
-ET
-ET
-ET
-ET
-ET
-ET
-ET
-ET
-ET
-ET
+Eu
+Eu
+Eu
+Eu
+Eu
+Eu
+Eu
+Eu
+Eu
+Eu
+Eu
+Eu
 SR
 vO
 VZ
@@ -7297,7 +7304,7 @@ XH
 SR
 vn
 wM
-By
+ON
 fi
 fi
 KR
@@ -7358,7 +7365,7 @@ tR
 hs
 tR
 Cd
-By
+ON
 KR
 KR
 KR
@@ -7419,8 +7426,8 @@ DH
 DH
 Hw
 Se
-By
-fi
+ON
+UY
 rp
 Fi
 Fi
@@ -7481,7 +7488,7 @@ Uo
 VZ
 Se
 ON
-fi
+UY
 Fi
 RB
 qC
@@ -7521,17 +7528,17 @@ Bf
 Bf
 Bf
 Bf
-fz
+LI
 NU
 NH
 iY
 Un
-fz
-fz
-fz
-fz
-fz
-fz
+LI
+LI
+LI
+LI
+LI
+LI
 NU
 nG
 PW
@@ -7541,8 +7548,8 @@ NU
 vO
 VZ
 fr
-By
-fi
+ON
+UY
 mi
 RW
 HT
@@ -7581,18 +7588,18 @@ YL
 Bf
 fi
 fi
+UY
+UY
 fi
 fi
 fi
 fi
 fi
+UY
 fi
 fi
-fi
-fi
-fi
-qw
-qw
+UY
+UY
 XO
 Wa
 HN
@@ -7602,7 +7609,7 @@ Ig
 vO
 VZ
 fr
-By
+ON
 KR
 Fi
 Wf
@@ -7663,7 +7670,7 @@ Ig
 vO
 VZ
 Se
-By
+ON
 KR
 kZ
 tp
@@ -7724,7 +7731,7 @@ Ig
 vO
 VZ
 Se
-By
+ON
 UY
 kZ
 fC
@@ -7740,7 +7747,7 @@ Ww
 Fi
 fi
 fi
-bv
+Tk
 "}
 (29,1,1) = {"
 Tk
@@ -7785,7 +7792,7 @@ Ig
 nu
 cv
 Se
-By
+ON
 UY
 xa
 ME
@@ -7801,7 +7808,7 @@ Fi
 rp
 fi
 fi
-bv
+Tk
 "}
 (30,1,1) = {"
 Tk
@@ -7846,7 +7853,7 @@ Ig
 vO
 VZ
 Se
-By
+ON
 KR
 kZ
 bw
@@ -7862,7 +7869,7 @@ Fi
 KR
 fi
 fi
-bv
+Tk
 "}
 (31,1,1) = {"
 Tk
@@ -7907,7 +7914,7 @@ Ig
 vO
 VZ
 Se
-By
+ON
 KR
 rp
 Fi
@@ -7923,7 +7930,7 @@ Fi
 UY
 fi
 fi
-bv
+Tk
 "}
 (32,1,1) = {"
 Tk
@@ -7968,7 +7975,7 @@ Ig
 vO
 VZ
 fr
-By
+ON
 KR
 fi
 Fi
@@ -7984,7 +7991,7 @@ Fi
 UY
 fi
 fi
-bv
+Tk
 "}
 (33,1,1) = {"
 Tk
@@ -8029,7 +8036,7 @@ Ig
 vO
 VZ
 fr
-By
+ON
 fi
 UY
 dC
@@ -8045,7 +8052,7 @@ Fi
 KR
 fi
 fi
-bv
+Tk
 "}
 (34,1,1) = {"
 fi
@@ -8090,8 +8097,8 @@ Ig
 vO
 VZ
 Se
-By
-fi
+ON
+UY
 UY
 Fi
 eB
@@ -8106,7 +8113,7 @@ Fi
 KR
 fi
 fi
-bv
+Tk
 "}
 (35,1,1) = {"
 fi
@@ -8152,7 +8159,7 @@ nu
 VZ
 Se
 XH
-ET
+Eu
 Eu
 rp
 Fi
@@ -8268,7 +8275,7 @@ Um
 ZC
 cq
 fi
-fi
+UY
 Ig
 vO
 Lk
@@ -8329,7 +8336,7 @@ rt
 jq
 cq
 fi
-fi
+UY
 Ig
 vO
 jS
@@ -8390,15 +8397,15 @@ UC
 cq
 XO
 fi
-fi
+UY
 Ig
 vO
 jS
 Se
 Un
-fz
-fz
-fz
+LI
+LI
+LI
 LI
 Fi
 Fi
@@ -8456,9 +8463,9 @@ Ig
 vO
 jS
 Se
-By
-fi
-fi
+ON
+UY
+UY
 XD
 KR
 KR
@@ -8512,13 +8519,13 @@ Rn
 Rn
 Rn
 lu
-ET
+Eu
 SR
 nu
 jS
 Se
-By
-fi
+ON
+UY
 XD
 ec
 ec
@@ -8578,7 +8585,7 @@ tR
 Mb
 jS
 fr
-By
+ON
 XD
 XD
 ec
@@ -8639,7 +8646,7 @@ DH
 DH
 ax
 Se
-By
+ON
 fi
 XD
 ec
@@ -8700,8 +8707,8 @@ JI
 Pr
 jd
 Se
-By
-fi
+ON
+UY
 fi
 XD
 ec
@@ -8756,14 +8763,14 @@ Rn
 Rn
 Rn
 lu
-fz
+LI
 NU
 vO
 jd
 Se
-By
-fi
-fi
+ON
+UY
+UY
 XD
 XD
 fi
@@ -8817,16 +8824,16 @@ gT
 Aq
 Rn
 fi
-fi
+UY
 Ig
 vO
 jd
 fr
 XH
-ET
-ET
-ET
-ET
+Eu
+Eu
+Eu
+Eu
 ET
 fi
 fi
@@ -9046,11 +9053,11 @@ fi
 lT
 fi
 fi
+UY
+UY
+UY
 fi
-fi
-fi
-fi
-fi
+UY
 lu
 pP
 uS
@@ -9061,16 +9068,16 @@ zP
 Rn
 lu
 fi
-fi
+UY
 Ig
 nu
 jd
 Se
 Un
-fz
-fz
-fz
-fz
+LI
+LI
+LI
+LI
 fz
 fi
 fi
@@ -9105,32 +9112,32 @@ eM
 fi
 fi
 lT
-ET
-ET
-ET
-ET
-ET
-ET
-ET
+Eu
+Eu
+Eu
+Eu
+Eu
+Eu
+Eu
 SR
 nu
 jf
 fr
 XH
-ET
-ET
-ET
-ET
-ET
-ET
+Eu
+Eu
+Eu
+Eu
+Eu
+Eu
 SR
 nu
 jd
 fr
-By
-fi
-fi
-fi
+ON
+UY
+UY
+UY
 fi
 XD
 XD
@@ -9188,9 +9195,9 @@ tR
 YB
 jd
 Se
-By
-fi
-fi
+ON
+UY
+UY
 fi
 fi
 ec
@@ -9249,9 +9256,9 @@ TN
 TN
 cp
 Se
-By
-fi
-fi
+ON
+UY
+UY
 fi
 XD
 ec
@@ -9310,7 +9317,7 @@ JI
 Wm
 Wm
 ul
-By
+ON
 fi
 fi
 XD
@@ -9349,29 +9356,29 @@ fi
 fi
 fi
 lT
-fz
-fz
-fz
-fz
-fz
-fz
-fz
+LI
+LI
+LI
+LI
+LI
+LI
+LI
 NU
 NH
 OL
 iY
 Un
-fz
-fz
-fz
-fz
-fz
-fz
-fz
+LI
+LI
+LI
+LI
+LI
+LI
+LI
 NU
 NH
 iY
-By
+ON
 fi
 fi
 fi
@@ -9413,8 +9420,8 @@ lT
 fi
 fi
 fi
-fi
-fi
+UY
+UY
 qK
 AA
 Ce
@@ -9428,8 +9435,8 @@ qV
 qV
 jx
 qK
-fi
-fi
+UY
+UY
 fi
 fi
 fi
