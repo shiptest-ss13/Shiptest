@@ -347,6 +347,8 @@ SUBSYSTEM_DEF(overmap)
 	//can our pallete be selected randomly roundstart? set to no for subtypes or if you dont change the pallete
 	var/can_be_selected_randomly = TRUE
 
+	var/found_type
+
 	COOLDOWN_DECLARE(dynamic_despawn_cooldown)
 
 /datum/overmap_star_system/New(generate_now=TRUE)
@@ -518,7 +520,6 @@ SUBSYSTEM_DEF(overmap)
 /datum/overmap_star_system/proc/spawn_outpost()
 	var/list/location = get_unused_overmap_square_in_radius(rand(4, round(size/5)))
 
-	var/datum/overmap/outpost/found_type
 	if(fexists(OUTPOST_OVERRIDE_FILEPATH))
 		var/file_text = trim_right(file2text(OUTPOST_OVERRIDE_FILEPATH)) // trim_right because there's often a trailing newline
 		var/datum/overmap/outpost/potential_type = text2path(file_text)
@@ -1058,6 +1059,7 @@ SUBSYSTEM_DEF(overmap)
 /datum/overmap_star_system/safezone/ngr
 	name = "Gorlex Controlled - Value of Public Works"
 	starname = "Value of Public Works"
+	found_type = /datum/overmap/outpost/ngr_rock
 
 	//main colors, used for dockable terrestrials, and background
 	primary_color = "#d9ad82"
@@ -1077,6 +1079,7 @@ SUBSYSTEM_DEF(overmap)
 /datum/overmap_star_system/safezone/clip
 	name = "CLIP Controlled - High-Pier"
 	starname = "High-Pier"
+	found_type = /datum/overmap/outpost/clip_ocean
 
 	//main colors, used for dockable terrestrials, and background
 	primary_color = "#6fa8de"
@@ -1096,6 +1099,7 @@ SUBSYSTEM_DEF(overmap)
 /datum/overmap_star_system/safezone/trifuge
 	name = "Independent - Minya"
 	starname = "Minya"
+	found_type = /datum/overmap/outpost/indie_space
 
 	//main colors, used for dockable terrestrials, and background
 	primary_color = "#b1c9c3"
@@ -1115,6 +1119,7 @@ SUBSYSTEM_DEF(overmap)
 /datum/overmap_star_system/safezone/nt
 	name = "Nanotrasen Controlled - Persei-277"
 	starname = "Persei-277"
+	found_type = /datum/overmap/outpost/nanotrasen_ice
 
 	//main colors, used for dockable terrestrials, and background
 	primary_color = "#7e8cd9"
