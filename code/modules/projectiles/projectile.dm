@@ -75,7 +75,8 @@
 	var/projectile_piercing = NONE
 	/// number of times we've pierced something. Incremented BEFORE bullet_act and on_hit proc!
 	var/pierces = 0
-
+	/// if the user has thermal vision and ignores concealment
+	var/thermal = FALSE
 	///Amount of deciseconds it takes for projectile to travel
 	var/speed = 0.8
 	///plus/minus modifier to projectile speed
@@ -194,6 +195,9 @@
 	. = ..()
 	decayedRange = range
 	speed = speed + speed_mod
+	if(firer)
+		if(firer.vis_flags & SEE_MOBS)
+			thermal = TRUE
 
 	if(embedding)
 		updateEmbedding()
@@ -530,6 +534,8 @@
 		var/mob/living/L = target
 		if(direct_target)
 			return TRUE
+		if(L.check_concealment(src))
+			return FALSE
 		// If target not able to use items, move and stand - or if they're just dead, pass over.
 		if(L.stat || (!hit_stunned_targets && HAS_TRAIT(L, TRAIT_IMMOBILIZED) && HAS_TRAIT(L, TRAIT_FLOORED) && HAS_TRAIT(L, TRAIT_HANDS_BLOCKED)))
 			return FALSE

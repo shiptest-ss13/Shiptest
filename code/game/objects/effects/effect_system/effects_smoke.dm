@@ -59,6 +59,7 @@
 		return 0
 	if(lifetime<1)
 		return 0
+	C.apply_status_effect(/datum/status_effect/concealed/smoke)
 	if(C.internal != null || C.has_smoke_protection())
 		return 0
 	if(C.smoke_delay)
