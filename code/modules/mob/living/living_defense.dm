@@ -66,14 +66,14 @@
 
 /mob/living/proc/check_concealment(obj/projectile/P)
 	var/datum/status_effect/concealed/concealment = has_status_effect(/datum/status_effect/concealed)
-	if(P.thermal)
-		return FALSE // firer can see through smoke
+	if(P.ignore_concealment)
+		return FALSE
 	if(concealment)
 		var/dist = get_dist(P, P.starting)
 		if(dist <= 1)
 			return FALSE // point blank, we get hit
 		else
-			var/dist_modifier = min((4 - dist), 1)
+			var/dist_modifier = max((4 - dist), 1)
 			if(prob((concealment.concealment_power/dist_modifier)))
 				return TRUE // we are concealed and the bullet misses
 	return FALSE
