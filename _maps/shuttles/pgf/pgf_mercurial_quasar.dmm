@@ -2412,13 +2412,6 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
 	},
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	name = "liberty docking port";
-	port_direction = 8;
-	preferred_direction = 4;
-	dir = 2
-	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
 	id = "quasar_port_holofield"
@@ -3237,8 +3230,17 @@
 /obj/docking_port/stationary{
 	dir = 2;
 	dwidth = 15;
-	height = 15;
-	width = 30
+	height = 31;
+	width = 30;
+	name = "Quasar Starboard Dock";
+	dheight = 1;
+	disable_on_owner_ship_dock = 1
+	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	port_direction = 8;
+	preferred_direction = 4;
+	dir = 2
 	},
 /turf/template_noop,
 /area/template_noop)

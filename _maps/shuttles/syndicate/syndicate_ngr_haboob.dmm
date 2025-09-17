@@ -783,7 +783,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "pj" = (
-/obj/structure/catwalk/over,
 /obj/docking_port/stationary{
 	dheight = 1;
 	disable_on_owner_ship_dock = 1;
@@ -792,7 +791,8 @@
 	name = "Haboob Beam Dock";
 	width = 40
 	},
-/turf/open/floor/plating,
+/obj/structure/catwalk/over,
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "po" = (
 /obj/structure/cable{
@@ -859,10 +859,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
-"qP" = (
-/obj/structure/catwalk/over,
-/turf/open/floor/plating,
-/area/ship/external/dark)
 "qZ" = (
 /obj/structure/chair/handrail,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -1375,7 +1371,7 @@
 	preferred_direction = 4
 	},
 /obj/structure/catwalk/over,
-/turf/open/floor/plating,
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "AZ" = (
 /obj/machinery/porta_turret/ship/ngr/light{
@@ -3113,7 +3109,7 @@ Fq
 or
 "}
 (20,1,1) = {"
-qP
+or
 Oy
 rW
 pZ
@@ -3130,7 +3126,7 @@ Dq
 wX
 "}
 (21,1,1) = {"
-qP
+or
 VD
 Cp
 Cp
@@ -3147,7 +3143,7 @@ Aa
 Fq
 "}
 (22,1,1) = {"
-qP
+or
 Fq
 Cp
 Qq
@@ -3164,7 +3160,7 @@ Aa
 Fq
 "}
 (23,1,1) = {"
-qP
+or
 Fq
 Cp
 xf
