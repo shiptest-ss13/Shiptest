@@ -1117,3 +1117,7 @@
 	mineResult = /obj/item/crystal_shard
 
 	hitsound_type = PROJECTILE_HITSOUND_STONE
+
+/obj/structure/flora/rock/crystal/Initialize()
+	. = ..()
+	icon_state = "[base_icon_state]"
