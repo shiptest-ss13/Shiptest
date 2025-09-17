@@ -24,7 +24,7 @@ SUBSYSTEM_DEF(overmap)
 	var/datum/overmap_star_system/default_system
 
 	/// The secondary star system that allows planet spawns
-	var/datum/overmap_star_system/wild
+	var/datum/overmap_star_system/wild_system
 
 	///Should events be processed
 	var/events_enabled = TRUE
