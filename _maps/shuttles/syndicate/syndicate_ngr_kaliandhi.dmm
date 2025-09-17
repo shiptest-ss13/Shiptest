@@ -534,9 +534,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "cB" = (
-/obj/structure/railing/corner{
-	dir = 7
-	},
+/obj/structure/railing/corner,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hangar)
 "cF" = (
@@ -948,7 +946,8 @@
 "fr" = (
 /obj/structure/closet/wall/red/directional/east{
 	name = "Operative's Locker";
-	req_access = list(1)
+	req_access = list(1);
+	secure = 1
 	},
 /obj/item/clothing/head/ngr,
 /obj/item/clothing/head/ngr/flap,
@@ -8321,12 +8320,13 @@
 /obj/item/clothing/head/ngr/flap,
 /obj/item/clothing/head/ngr,
 /obj/effect/turf_decal/corner/opaque/beige/mono,
-/obj/structure/closet/wall/red/directional/east{
-	name = "Operative's Locker";
-	req_access = list(1)
-	},
 /obj/effect/turf_decal/industrial/outline{
 	color = "#791500"
+	},
+/obj/structure/closet/wall/red/directional/east{
+	name = "Operative's Locker";
+	req_access = list(1);
+	secure = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
@@ -8990,6 +8990,12 @@
 	pixel_x = -7;
 	pixel_y = 21;
 	name = "Shuttle Dock Inner Door"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 3;
+	pixel_y = 20;
+	id = "karst_inner_holo";
+	name = "Inner Holofield"
 	},
 /turf/open/floor/plating,
 /area/ship/hangar)
