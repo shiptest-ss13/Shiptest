@@ -543,6 +543,10 @@
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
 
 	fire_sound = 'sound/weapons/gun/shotgun/brimstone.ogg'
+	load_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
 
 	icon_state = "slammer"
 	item_state = "slammer"
@@ -553,6 +557,9 @@
 	tac_reloads = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
+	show_magazine_on_sprite = TRUE
+	internal_magazine = FALSE
+	casing_ejector = TRUE
 
 	fire_delay = 0.1 SECONDS
 	rack_delay = 0.1 SECONDS
