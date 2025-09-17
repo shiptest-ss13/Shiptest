@@ -927,45 +927,64 @@ SUBSYSTEM_DEF(overmap)
 
 //exports current star system to json, mean to l oad with
 /datum/overmap_star_system/proc/export_to_json()
-	var/json_file = file("export.json")
 	var/list/file_data = list()
 	file_data["system_info"] =  list()
 	file_data["objects"] =  list()
 	var/list/system_data = file_data["system_info"]
 	var/list/objects_data = file_data["objects"]
 
-	var/list/ignore_descs_of = list(/datum/overmap/event)
-	var/list/ignore_names_of = list(/datum/overmap/event, /datum/overmap/dynamic)
+	var/list/save_names = list(/datum/overmap/outpost, /datum/overmap/static_object, /datum/overmap/dynamic)
 
 	system_data["name"] = name
 	system_data["starname"] = starname
 	system_data["startype"] = startype
 	system_data["size"] = size
 	system_data["max_overmap_dynamic_events"] = max_overmap_dynamic_events
-	system_data["has_outpost"] = has_outpost
 	system_data["faction"] = faction
 	system_data["dynamic_probabilities"] = dynamic_probabilities
 
 	for(var/datum/overmap/current_object as anything in overmap_objects)
+		//dont save limited lifetime events
+		if(current_object.death_time)
+			continue
 		var/count = (objects_data.len + 1)
 		objects_data["[current_object.type]_[count]"] = list()
 		var/list/current_data = objects_data["[count]"]
 		current_data["type"] = current_object.type
 
-		if(istype(current_object, /datum/overmap/dynamic))
-
-		if(!istype(current_object, /datum/overmap/event))
-		if(current_object.name != current_object::name)
-			current_data["name"] = current_object.name
-
-		if(!(current_object.datum_flags & DF_VAR_EDITED))
+		//if we arent an hazard, save the name and desc
+		if(istype(current_object, /datum/overmap/dynamic) || /datum/overmap/outpost || /datum/overmap/static_object)
+			if(current_object.name != current_object::name)
+				current_data["name"] = current_object.name
 			if(current_object.desc != current_object::desc)
 				current_data["desc"] = current_object.desc
+
+		//custom handling for dynamic events
+		if(istype(current_object, /datum/overmap/dynamic))
+			var/datum/overmap/dynamic/current_dynamic
+			current_data["force_encounter"] = current_dynamic.force_encounter ? current_dynamic.force_encounter : current_dynamic.planet.type
+			current_data["preserve_level"] = current_dynamic.preserve_level
+			current_data["planet_name"] = current_dynamic.planet_name
+			current_data["selected_ruin"] = current_dynamic.selected_ruin
+
+
+
 		current_data["X"] = current_object.x
 		current_data["y"] = current_object.y
 
-	message_admins("Wrote star system data to [json_file]")
+	var/json_file = file("data/exported-starsystem.json")
+	if(fexists(json_file))
+		fdel(json_file)
 	WRITE_FILE(json_file, json_encode(file_data, JSON_PRETTY_PRINT))
+	message_admins("Wrote star system data to [json_file]")
+
+	//sends the file via ftp
+	usr << ftp(json_file)
+	fdel(json_file)
+	alert("Area saved successfully.", "Action Successful!", "Ok")
+
+
+
 
 
 //meant to be a duplicate of default to be selectable in the spawn menu
