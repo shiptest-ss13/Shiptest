@@ -2021,7 +2021,10 @@
 /obj/structure/bed{
 	dir = 8
 	},
-/obj/item/bedsheet/black,
+/obj/item/bedsheet/black{
+	desc = "A soft, silky bedsheet.";
+	name = "ensign's bedsheet"
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm/commad)
 "kf" = (
@@ -2789,12 +2792,12 @@
 /area/ship/hallway/fore)
 "oU" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/structure/table/reinforced,
 /obj/structure/sink/chem{
 	dir = 4;
 	pixel_x = -10;
 	pixel_y = 4
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel,
 /area/ship/crew/office)
 "pa" = (
@@ -3467,13 +3470,42 @@
 /area/ship/crew/canteen)
 "sr" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/machinery/microwave{
-	pixel_y = 8
-	},
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/structure/table/reinforced,
+/obj/machinery/smartfridge,
+/obj/item/food/grown/siti,
+/obj/item/food/grown/sososi,
+/obj/item/food/grown/siti,
+/obj/item/food/grown/sososi,
+/obj/item/food/grown/sososi,
+/obj/item/food/grown/siti,
+/obj/item/food/grown/fara_li,
+/obj/item/food/grown/fara_li,
+/obj/item/food/grown/fara_li,
+/obj/item/food/meat/slab/miras,
+/obj/item/food/meat/slab/miras,
+/obj/item/food/meat/slab/miras,
+/obj/item/reagent_containers/condiment/tiris_sele,
+/obj/item/reagent_containers/condiment/tiris_milk,
+/obj/item/reagent_containers/condiment/tiris_milk,
+/obj/item/reagent_containers/condiment/tiris_milk,
+/obj/item/food/cheese/wheel/tiris,
+/obj/item/food/cheese/wheel/tiris,
+/obj/item/food/grown/dote_berries,
+/obj/item/food/grown/dote_berries,
+/obj/item/food/grown/dote_berries,
+/obj/item/food/meat/slab/tiris,
+/obj/item/food/grown/refa_li,
+/obj/item/food/grown/refa_li,
+/obj/item/food/grown/dote_berries,
+/obj/item/food/grown/refa_li,
+/obj/item/food/grown/refa_li,
+/obj/item/food/meat/slab/tiris,
+/obj/item/food/meat/slab/tiris,
+/obj/item/food/meat/slab/remes,
+/obj/item/food/meat/slab/remes,
+/obj/item/food/meat/slab/remes,
 /turf/open/floor/plasteel,
 /area/ship/crew/office)
 "sA" = (
@@ -3860,6 +3892,7 @@
 	},
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/structure/table/glass,
+/obj/item/food/loaded_miras_potato,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office)
 "ur" = (
@@ -3954,6 +3987,7 @@
 "uV" = (
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/structure/table,
+/obj/item/food/grilled_cheese_sandwich,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "vc" = (
@@ -8179,7 +8213,8 @@
 	},
 /obj/machinery/airalarm/directional/east,
 /obj/item/bedsheet/hos{
-	name = "republic captain's bedsheet"
+	name = "republic captain's bedsheet";
+	desc = "A coarse wool bedsheet. Surprisingly comfortable. In adversity we find strength."
 	},
 /obj/structure/bed{
 	dir = 8
@@ -9372,39 +9407,10 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/obj/machinery/smartfridge,
-/obj/item/food/meat/slab/remes,
-/obj/item/food/meat/slab/remes,
-/obj/item/food/meat/slab/remes,
-/obj/item/food/meat/slab/tiris,
-/obj/item/food/meat/slab/tiris,
-/obj/item/food/meat/slab/tiris,
-/obj/item/food/grown/refa_li,
-/obj/item/food/grown/refa_li,
-/obj/item/food/grown/refa_li,
-/obj/item/food/grown/refa_li,
-/obj/item/food/grown/dote_berries,
-/obj/item/food/grown/dote_berries,
-/obj/item/food/grown/dote_berries,
-/obj/item/food/grown/dote_berries,
-/obj/item/food/cheese/wheel/tiris,
-/obj/item/food/cheese/wheel/tiris,
-/obj/item/reagent_containers/condiment/tiris_milk,
-/obj/item/reagent_containers/condiment/tiris_milk,
-/obj/item/reagent_containers/condiment/tiris_milk,
-/obj/item/reagent_containers/condiment/tiris_sele,
-/obj/item/food/meat/slab/miras,
-/obj/item/food/meat/slab/miras,
-/obj/item/food/meat/slab/miras,
-/obj/item/food/grown/fara_li,
-/obj/item/food/grown/fara_li,
-/obj/item/food/grown/fara_li,
-/obj/item/food/grown/siti,
-/obj/item/food/grown/siti,
-/obj/item/food/grown/siti,
-/obj/item/food/grown/sososi,
-/obj/item/food/grown/sososi,
-/obj/item/food/grown/sososi,
+/obj/structure/table/reinforced,
+/obj/machinery/microwave{
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/office)
 "Xq" = (
