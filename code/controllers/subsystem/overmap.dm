@@ -925,6 +925,46 @@ SUBSYSTEM_DEF(overmap)
 
 	return list("x" = edge_x, "y" = edge_y)
 
+//exports current star system to json, mean to l oad with
+/datum/overmap_star_system/proc/export_to_json()
+	var/json_file = file("export.json")
+	var/list/file_data = list()
+	file_data["system_info"] =  list()
+	file_data["objects"] =  list()
+	var/list/system_data = file_data["system_info"]
+	var/list/objects_data = file_data["objects"]
+
+	var/list/ignore_descs_of = list(/datum/overmap/event)
+	var/list/ignore_names_of = list(/datum/overmap/event, /datum/overmap/dynamic)
+
+	system_data["name"] = name
+	system_data["starname"] = starname
+	system_data["startype"] = startype
+	system_data["size"] = size
+	system_data["max_overmap_dynamic_events"] = max_overmap_dynamic_events
+	system_data["has_outpost"] = has_outpost
+	system_data["faction"] = faction
+	system_data["dynamic_probabilities"] = dynamic_probabilities
+
+	for(var/datum/overmap/current_object as anything in overmap_objects)
+		var/count = (objects_data.len + 1)
+		objects_data["[count]"] = list()
+		var/list/current_data = objects_data["[count]"]
+
+		current_data["type"] = current_object.type
+		if(current_object.name != current_object::name)
+			current_data["name"] = current_object.name
+
+		if(!(current_object.datum_flags & DF_VAR_EDITED))
+			if(current_object.desc != current_object::desc)
+				current_data["desc"] = current_object.desc
+		current_data["X"] = current_object.x
+		current_data["y"] = current_object.y
+
+	message_admins("Wrote star system data to [json_file]")
+	WRITE_FILE(json_file, json_encode(file_data, JSON_PRETTY_PRINT))
+
+
 //meant to be a duplicate of default to be selectable in the spawn menu
 /datum/overmap_star_system/wilderness
 	can_be_selected_randomly = FALSE
