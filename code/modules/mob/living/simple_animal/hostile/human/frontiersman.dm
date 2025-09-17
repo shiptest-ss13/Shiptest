@@ -461,6 +461,7 @@
 	retreat_distance = 4
 	minimum_distance = 3
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
+	projectilesound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 	shoot_point_blank = TRUE
 	l_hand = /obj/item/gun/ballistic/shotgun/cm15
 	weapon_drop_chance = 100
