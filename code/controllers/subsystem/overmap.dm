@@ -348,7 +348,8 @@ SUBSYSTEM_DEF(overmap)
 	//can our pallete be selected randomly roundstart? set to no for subtypes or if you dont change the pallete
 	var/can_be_selected_randomly = TRUE
 
-	var/found_type
+	/// Datum type for the main outpost spawned here
+	var/default_outpost_type
 
 	COOLDOWN_DECLARE(dynamic_despawn_cooldown)
 
