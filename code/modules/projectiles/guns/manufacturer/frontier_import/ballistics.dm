@@ -536,6 +536,14 @@
 /obj/item/gun/ballistic/shotgun/automatic/slammer
 	name = "\improper Slammer"
 	desc = "WIP"
+
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+
+	fire_sound = 'sound/weapons/gun/shotgun/brimstone.ogg'
+
 	icon_state = "slammer"
 	item_state = "slammer"
 
