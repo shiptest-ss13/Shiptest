@@ -1690,9 +1690,6 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/moon/moonbase/cargo)
 "nZ" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer5{
-	dir = 10
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
@@ -2342,6 +2339,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/external,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer5,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/moonbase/refinery)
 "uM" = (
@@ -2719,6 +2717,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer5{
+	dir = 9
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/moon/moonbase/refinery)
 "yM" = (
@@ -2983,12 +2984,14 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/moon/moonbase/refinery)
 "Bg" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer5,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
 	},
 /obj/item/radio/intercom/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer5{
+	dir = 6
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/moon/moonbase/refinery)
 "Bl" = (
@@ -3841,6 +3844,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer5{
+	dir = 10
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/moon/moonbase/refinery)
@@ -5009,15 +5015,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
-"RN" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer5,
-/obj/machinery/door/poddoor/shutters{
-	id = "refinery-shutters"
-	},
-/turf/open/floor/plating/airless,
-/area/ruin/moon/moonbase/refinery)
 "RP" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -7329,7 +7326,7 @@ Qu
 VE
 pd
 nZ
-RN
+Bf
 Bg
 Zw
 pk
