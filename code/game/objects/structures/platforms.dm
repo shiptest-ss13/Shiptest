@@ -99,6 +99,23 @@
 	density = FALSE
 	climbable = FALSE
 
+/obj/structure/platform/ship_three/indestructible
+	icon_state = "ship2_platform_corners"
+	climbable = FALSE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
+/obj/structure/platform/ship_three/indestructible/CanPass(atom/movable/mover, border_dir)
+	. = ..()
+	if(border_dir & dir)
+		return . || mover.throwing || mover.movement_type & (FLYING | FLOATING)
+	return FALSE
+
+/obj/structure/platform/ship_three/corner/indestructible
+	icon_state = "ship3_platform_corners"
+	density = FALSE
+	climbable = FALSE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
 /obj/structure/platform/ship_four
 	icon_state = "ship4_platform"
 
