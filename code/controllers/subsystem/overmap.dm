@@ -948,10 +948,13 @@ SUBSYSTEM_DEF(overmap)
 
 	for(var/datum/overmap/current_object as anything in overmap_objects)
 		var/count = (objects_data.len + 1)
-		objects_data["[count]"] = list()
+		objects_data["[current_object.type]_[count]"] = list()
 		var/list/current_data = objects_data["[count]"]
-
 		current_data["type"] = current_object.type
+
+		if(istype(current_object, /datum/overmap/dynamic))
+
+		if(!istype(current_object, /datum/overmap/event))
 		if(current_object.name != current_object::name)
 			current_data["name"] = current_object.name
 
