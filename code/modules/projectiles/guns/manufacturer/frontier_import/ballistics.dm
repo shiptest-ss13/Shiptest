@@ -535,7 +535,7 @@
 
 /obj/item/gun/ballistic/shotgun/automatic/slammer
 	name = "\improper Slammer"
-	desc = "An unusual, dated weapon originating from Lanchester City. Often in the hands of pirates and eccentric indies, this shotgun is mag-fed and pump-action."
+	desc = "An unusual, dated riot shotgun originating from Lanchester City. Often in the hands of pirates and eccentric indies, this weapon is mag-fed and pump-action."
 
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
