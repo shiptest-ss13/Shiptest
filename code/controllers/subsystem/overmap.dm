@@ -1127,11 +1127,11 @@ SUBSYSTEM_DEF(overmap)
 
 	//hazard colors, used for the overmap hazards and sun
 	hazard_primary_color = "#ededed"
-	hazard_secondary_color = "#8584a1"
+	hazard_secondary_color = "#7f7db0"
 
 	//structure colors, used for ships and outposts/colonies
-	primary_structure_color = "#ffffff"
-	secondary_structure_color = "#ffffff"
+	primary_structure_color = "#4272db"
+	secondary_structure_color = "#38a0eb"
 
 	override_object_colors = TRUE
 	overmap_icon_state = "overmap_dark"
