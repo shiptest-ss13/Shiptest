@@ -3242,8 +3242,8 @@
 	preferred_direction = 4;
 	dir = 2
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "Re" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood{
@@ -3517,6 +3517,9 @@
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
+"Vv" = (
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "Vx" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
@@ -4226,7 +4229,7 @@ lS
 fB
 LD
 PB
-sB
+Vv
 "}
 (22,1,1) = {"
 qz
@@ -4258,7 +4261,7 @@ Hk
 Hk
 tV
 PB
-sB
+Vv
 "}
 (24,1,1) = {"
 Sr
