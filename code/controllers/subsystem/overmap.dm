@@ -59,8 +59,8 @@ SUBSYSTEM_DEF(overmap)
 
 	var/list/sector_types = pick(subtypesof(/datum/overmap_star_system/safezone))
 	default_system = create_new_star_system(new sector_types)
-	wild = create_new_star_system (new /datum/overmap_star_system/shiptest)
-	default_system.create_jump_point_link(wild, pick(GLOB.alldirs))
+	wild_system = create_new_star_system (new /datum/overmap_star_system/shiptest)
+	default_system.create_jump_point_link(wild_system, pick(GLOB.alldirs))
 	return ..()
 
 /datum/controller/subsystem/overmap/proc/spawn_new_star_system(datum/overmap_star_system/system_to_spawn=/datum/overmap_star_system)
@@ -528,17 +528,17 @@ SUBSYSTEM_DEF(overmap)
 		if(!potential_type || !ispath(potential_type, /datum/overmap/outpost))
 			stack_trace("SSovermap found an outpost override file at [OUTPOST_OVERRIDE_FILEPATH], but was unable to find the outpost type [potential_type]!")
 		else
-			found_type = potential_type
+			default_outpost_type = potential_type
 		fdel(OUTPOST_OVERRIDE_FILEPATH) // don't want it to affect 2 rounds in a row.
 
-	if(!found_type)
+	if(!default_outpost_type)
 		var/list/possible_types = subtypesof(/datum/overmap/outpost)
 		for(var/datum/overmap/outpost/outpost_type as anything in possible_types)
 			if(!initial(outpost_type.main_template))
 				possible_types -= outpost_type
-		found_type = pick(possible_types)
+		default_outpost_type = pick(possible_types)
 
-	var/datum/overmap/outpost/our_outpost = new found_type(location, src)
+	var/datum/overmap/outpost/our_outpost = new default_outpost_type(location, src)
 
 	//gets rid of nearby events that casue radio interference
 	for(var/direction as anything in GLOB.cardinals)
@@ -1058,7 +1058,7 @@ SUBSYSTEM_DEF(overmap)
 	name = "Gorlex Controlled - Value of Public Works"
 	starname = "Ecbatana"
 	startype = /datum/overmap/star/dwarf
-	found_type = /datum/overmap/outpost/ngr_rock
+	default_outpost_type = /datum/overmap/outpost/ngr_rock
 
 	//main colors, used for dockable terrestrials, and background
 	primary_color = "#d9ad82"
@@ -1079,7 +1079,7 @@ SUBSYSTEM_DEF(overmap)
 	name = "CLIP Controlled - High-Pier"
 	starname = "Chana"
 	startype = /datum/overmap/star/dwarf/orange
-	found_type = /datum/overmap/outpost/clip_ocean
+	default_outpost_type = /datum/overmap/outpost/clip_ocean
 
 	//main colors, used for dockable terrestrials, and background
 	primary_color = "#6fa8de"
@@ -1100,7 +1100,7 @@ SUBSYSTEM_DEF(overmap)
 	name = "Independent - Minya"
 	starname = "Aubaine"
 	startype = /datum/overmap/star/medium
-	found_type = /datum/overmap/outpost/indie_space
+	default_outpost_type = /datum/overmap/outpost/indie_space
 
 	//main colors, used for dockable terrestrials, and background
 	primary_color = "#5e5e5e"
@@ -1121,7 +1121,7 @@ SUBSYSTEM_DEF(overmap)
 	name = "Nanotrasen Controlled - Persei-277"
 	starname = "Persei-277"
 	startype = /datum/overmap/star/medium
-	found_type = /datum/overmap/outpost/nanotrasen_ice
+	default_outpost_type = /datum/overmap/outpost/nanotrasen_ice
 
 	//main colors, used for dockable terrestrials, and background
 	primary_color = "#7e8cd9"
