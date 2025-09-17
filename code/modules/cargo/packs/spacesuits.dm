@@ -84,6 +84,17 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/spacesuits/spacesuit/inteq/pilot
+	name = "Inteq Pilot Space Suit Crate"
+	desc = "Contains one lightweight suit designed for exosuit and shuttle pilots of the IRMG. While highly mobile, it offers poor protection against prolonged exposure to extreme temperatures of either end."
+	cost = 500
+	contains = list(/obj/item/clothing/suit/space/inteq/pilot,
+					/obj/item/clothing/head/helmet/space/inteq/pilot)
+	crate_name = "space suit crate"
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
 //solgov
 
 /datum/supply_pack/spacesuits/spacesuit/solgov

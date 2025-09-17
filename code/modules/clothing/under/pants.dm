@@ -107,3 +107,18 @@
 	name = "camo pants"
 	desc = "A pair of woodland camouflage pants. Probably not the best choice for deep space."
 	icon_state = "camopants"
+
+/obj/item/clothing/under/pants/pajamared
+	name = "camo pants"
+	desc = "A comfy pair of pajamas. Probably not the best for work attire."
+	icon_state = "pajamared"
+
+/obj/item/clothing/under/pants/pajamablue
+	name = "blue pajama pants"
+	desc = "A comfy pair of pajamas. Probably not the best for work attire."
+	icon_state = "pajamablue"
+
+/obj/item/clothing/under/pants/pajamagreen
+	name = "green pajama pants"
+	desc = "A comfy pair of pajamas. Probably not the best for work attire."
+	icon_state = "pajamagreen"
