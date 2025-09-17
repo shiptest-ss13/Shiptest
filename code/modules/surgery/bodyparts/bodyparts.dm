@@ -352,9 +352,14 @@
 	//back to our regularly scheduled program, we now actually apply damage if there's room below limb damage cap
 	var/can_inflict = max_damage - get_damage()
 	var/total_damage = brute + burn
+	var/leftover_brute = brute
+	var/leftover_burn = burn
 	if(total_damage > can_inflict && total_damage > 0) // TODO: the second part of this check should be removed once disabling is all done
 		brute = round(brute * (can_inflict / total_damage),DAMAGE_PRECISION)
 		burn = round(burn * (can_inflict / total_damage),DAMAGE_PRECISION)
+
+	leftover_brute = max(leftover_brute - brute, 0)
+	leftover_burn = max(leftover_burn - burn, 0)
 
 	if(can_inflict <= 0)
 		return FALSE
@@ -376,6 +381,11 @@
 				owner.update_stamina()
 				owner.stam_regen_start_time = world.time + STAMINA_REGEN_BLOCK_TIME
 				. = TRUE
+		// if we have any leftover damage, apply it our mob's torso
+		if(leftover_brute > 0)
+			owner.apply_damage(leftover_brute/2, BRUTE, BODY_ZONE_CHEST)
+		if(leftover_burn > 0)
+			owner.apply_damage(leftover_burn/2, burn, BODY_ZONE_CHEST)
 	return update_bodypart_damage_state() || .
 
 /// Allows us to roll for and apply a wound without actually dealing damage. Used for aggregate wounding power with pellet clouds
