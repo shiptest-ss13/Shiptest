@@ -319,9 +319,9 @@
 	pixel_x = 9;
 	pixel_y = -1
 	},
-/obj/item/gun/ballistic/automatic/assault/cm82{
-	pixel_y = 7;
-	pixel_x = -9
+/obj/item/gun/ballistic/automatic/smg/cm5{
+	pixel_x = -5;
+	pixel_y = 5
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/beach/treasure_cove)
@@ -1374,13 +1374,13 @@
 "ZO" = (
 /obj/structure/closet/body_bag,
 /obj/effect/mob_spawn/human/corpse/damaged,
-/obj/item/ammo_box/magazine/p16{
-	pixel_x = -7;
-	pixel_y = 2
-	},
 /obj/item/clothing/under/clip/officer,
 /obj/item/clothing/head/helmet/bulletproof/x11/clip,
 /obj/effect/decal/cleanable/blood/old,
+/obj/item/ammo_box/magazine/cm5_9mm{
+	pixel_x = -8;
+	pixel_y = -1
+	},
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 

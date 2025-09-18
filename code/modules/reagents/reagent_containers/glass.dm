@@ -197,13 +197,13 @@
 /obj/item/reagent_containers/glass/beaker/slime
 	list_reagents = list(/datum/reagent/toxin/slimejelly = 50)
 
-/obj/item/reagent_containers/glass/beaker/large/styptic
-	name = "styptic reserve tank"
-	list_reagents = list(/datum/reagent/medicine/styptic_powder = 50)
+/obj/item/reagent_containers/glass/beaker/large/hadrakine
+	name = "hadrakine reserve tank"
+	list_reagents = list(/datum/reagent/medicine/hadrakine = 50)
 
-/obj/item/reagent_containers/glass/beaker/large/silver_sulfadiazine
-	name = "silver sulfadiazine reserve tank"
-	list_reagents = list(/datum/reagent/medicine/silver_sulfadiazine = 50)
+/obj/item/reagent_containers/glass/beaker/large/quardexane
+	name = "quardexane reserve tank"
+	list_reagents = list(/datum/reagent/medicine/quardexane = 50)
 
 /obj/item/reagent_containers/glass/beaker/large/charcoal
 	name = "charcoal reserve tank"

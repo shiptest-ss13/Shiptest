@@ -169,6 +169,11 @@
 	item_state = "armor_correspondant"
 	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION_SAME_ICON_FILE
 
+/obj/item/clothing/suit/armor/vest/clip_correspondent/Initialize()
+	. = ..()
+	if(allowed)
+		allowed += list(/obj/item/bodycamera/broadcast_camera) // i mean. come on
+
 // biosuits
 
 /obj/item/clothing/suit/bio_suit/bard
@@ -566,10 +571,10 @@
 	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/medical/webbing/clip/prefilled/PopulateContents()
-	new /obj/item/reagent_containers/medigel/styptic(src)
-	new /obj/item/reagent_containers/medigel/styptic(src)
-	new /obj/item/reagent_containers/medigel/silver_sulf(src)
-	new /obj/item/reagent_containers/medigel/silver_sulf(src)
+	new /obj/item/reagent_containers/medigel/hadrakine(src)
+	new /obj/item/reagent_containers/medigel/hadrakine(src)
+	new /obj/item/reagent_containers/medigel/quardexane(src)
+	new /obj/item/reagent_containers/medigel/quardexane(src)
 	new /obj/item/reagent_containers/medigel/synthflesh(src)
 	new /obj/item/reagent_containers/medigel/synthflesh(src)
 	new /obj/item/stack/medical/splint(src)

@@ -62,3 +62,10 @@
 	icon_state = "bunny_floppy"
 	secondary_color = TRUE
 	color_src = HAIR
+
+/datum/sprite_accessory/ears/human/horse
+	icon = 'icons/mob/species/human/horse.dmi'
+	name = "Horse"
+	icon_state = "horse"
+	secondary_color = TRUE
+	color_src = HAIR

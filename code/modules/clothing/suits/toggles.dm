@@ -137,9 +137,13 @@
 	strip_delay = EQUIP_DELAY_COAT * 1.5
 
 /obj/item/clothing/suit/toggle/AltClick(mob/user)
-	. = ..()
 	if(!user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		return FALSE
+
+	. = SEND_SIGNAL(src, COMSIG_CLICK_ALT, user)
+	if(. & COMPONENT_CANCEL_CLICK_ALT)
+		return
+
 	if(unique_reskin && !current_skin)
 		reskin_obj(user)
 	else
