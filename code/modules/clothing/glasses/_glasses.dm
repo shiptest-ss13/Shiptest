@@ -417,6 +417,17 @@
 	item_state = "heat"
 	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 
+/obj/item/clothing/glasses/safety
+	name = "safety goggles"
+	desc = "A pair of goggles meant to protect your eyes from debris and irritants."
+	icon_state = "safety_skier"
+	item_state = "safety_skier"
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
+	unique_reskin = list(
+		"biker" = "safety_biker",
+		"skier" = "safety_skier",
+	)
+
 /obj/item/clothing/glasses/orange
 	name = "orange glasses"
 	desc = "A sweet pair of orange shades."
