@@ -423,6 +423,7 @@
 	icon_state = "safety_skier"
 	item_state = "safety_skier"
 	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
+	supports_variations = VOX_VARIATION
 	unique_reskin = list(
 		"biker" = "safety_biker",
 		"skier" = "safety_skier",
