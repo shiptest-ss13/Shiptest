@@ -266,7 +266,7 @@ SUBSYSTEM_DEF(overmap)
 			for(var/datum/overmap/nearby_obj as anything in our_overmap_object.current_overmap.overmap_container[newcords["x"]][newcords["y"]])
 				if(!istype(nearby_obj))
 					continue
-				interference_power += nearby_obj.interference_power / 5
+				interference_power += nearby_obj.interference_power / 9
 	return interference_power
 
 
