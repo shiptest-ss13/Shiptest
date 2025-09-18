@@ -100,7 +100,7 @@
 	climbable = FALSE
 
 /obj/structure/platform/ship_three/indestructible
-	icon_state = "ship2_platform_corners"
+	icon_state = "ship2_platform"
 	climbable = FALSE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
