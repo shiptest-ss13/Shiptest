@@ -87,6 +87,7 @@
 	desc = "A close-fitting tactical mask that can be connected to an air supply."
 	icon_state = "syndicate"
 	strip_delay = 60
+	supports_variations = SNOUTED_VARIATION
 
 /obj/item/clothing/mask/gas/syndicate/voicechanger
 	desc = "A close-fitting tactical mask that can be connected to an air supply. This one has an integrated voice changer."

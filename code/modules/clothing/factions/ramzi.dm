@@ -215,6 +215,7 @@
 	icon_state = "ramzi_gas"
 	item_state = "ramzi_gas"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	supports_variations = SNOUTED_VARIATION
 
 //////////
 //Neck//
