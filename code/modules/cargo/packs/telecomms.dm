@@ -135,7 +135,8 @@
 	desc = "A PDA packet inspection system. Great for verifying suspicions that your Second In Command is scheming. Or that the deckhands are kissing."
 	cost = 1000
 	contains = list(
-		/obj/item/circuitboard/computer/message_monitor
+		/obj/item/circuitboard/computer/message_monitor,
+		/obj/item/paper/monitor_pass
 	)
 
 /datum/supply_pack/tcomms/log_browser
