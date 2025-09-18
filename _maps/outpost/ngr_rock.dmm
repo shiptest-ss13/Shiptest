@@ -4129,8 +4129,6 @@
 /obj/item/reagent_containers/hypospray/medipen/tramal,
 /obj/item/reagent_containers/hypospray/medipen/tramal,
 /obj/item/reagent_containers/hypospray/medipen/tramal,
-/obj/item/reagent_containers/hypospray/medipen/stimpack,
-/obj/item/reagent_containers/hypospray/medipen/stimpack,
 /obj/machinery/light/directional/east,
 /obj/machinery/light_switch{
 	pixel_x = -7;
@@ -4377,42 +4375,18 @@
 	req_access_txt = "101";
 	anchored = 1
 	},
-/obj/item/storage/firstaid/brute{
-	pixel_x = -6;
-	pixel_y = -7
-	},
-/obj/item/storage/firstaid/brute{
-	pixel_x = -6;
-	pixel_y = -7
-	},
-/obj/item/storage/firstaid/fire{
-	pixel_x = 8;
-	pixel_y = -9
-	},
-/obj/item/storage/firstaid/fire{
-	pixel_x = 8;
-	pixel_y = -9
-	},
-/obj/item/storage/firstaid/advanced{
-	pixel_x = -9;
-	pixel_y = -1
-	},
-/obj/item/storage/firstaid/advanced{
-	pixel_x = -9;
-	pixel_y = -1
-	},
-/obj/item/storage/firstaid/toxin{
-	pixel_x = 9;
-	pixel_y = -3
-	},
-/obj/item/storage/firstaid/toxin{
-	pixel_x = 9;
-	pixel_y = -2
-	},
 /obj/effect/turf_decal/borderfloorblack/full,
 /obj/item/storage/firstaid/regular,
 /obj/item/storage/firstaid/regular,
 /obj/machinery/light/directional/east,
+/obj/item/storage/firstaid/advanced,
+/obj/item/storage/firstaid/advanced,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/fire,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "sb" = (
