@@ -11,6 +11,7 @@
 	desc = "Contains disassembled Silicon chassis within, with nearly all parts included! Cables not included."
 	cost = 1250
 	contains = list(/obj/item/robot_suit,
+					/obj/item/bodypart/head/robot,
 					/obj/item/bodypart/chest/robot,
 					/obj/item/bodypart/l_arm/robot,
 					/obj/item/bodypart/leg/left/robot,
