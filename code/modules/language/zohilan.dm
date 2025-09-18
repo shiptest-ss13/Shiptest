@@ -26,7 +26,7 @@
 	)
 	special_characters = list("'")
 	special_character_chance = 20
-	icon_state = "lizard"
+	icon_state = "lizard-blue"
 	default_priority = 90
 	mutual_understanding = list(
 		/datum/language/gezena_kalixcian = 90, // enough to sort of understand each other, but not perfectly

@@ -134,7 +134,8 @@
 
 /// Checks whether we should display the language icon to the passed hearer.
 /datum/language/proc/display_icon(atom/movable/hearer)
-	var/understands = hearer.has_language(src.type)
+	var/list/partial_understanding = hearer.get_partially_understood_languages()
+	var/understands = hearer.has_language(type) || (partial_understanding?[type] >= 50)
 	if((flags & LANGUAGE_HIDE_ICON_IF_UNDERSTOOD) && understands)
 		return FALSE
 	if((flags & LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD) && !understands)
