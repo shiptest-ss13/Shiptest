@@ -109,6 +109,20 @@
 	if(!isnull(user.getorgan(/obj/item/organ/tail)) || (isvox(user)))
 		return 'sound/voice/lizard/tailthump.ogg' //https://freesound.org/people/TylerAM/sounds/389665/
 
+/datum/emote/living/carbon/human/stomp
+	key = "stomp"
+	key_third_person = "stomps their foot"
+	message = "stomps their foot!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+
+/datum/emote/living/carbon/human/stomp/get_sound(mob/living/user)
+	if(ishuman(user))
+		if(!user.get_bodypart(BODY_ZONE_L_LEG) || !user.get_bodypart(BODY_ZONE_R_LEG))
+			return
+		else
+			return 'sound/voice/lizard/tailthump.ogg' //https://freesound.org/people/TylerAM/sounds/389665/
+
 /datum/emote/living/carbon/human/weh //lizard
 	key = "weh"
 	key_third_person = "lets out a weh"
