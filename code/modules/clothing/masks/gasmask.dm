@@ -10,7 +10,7 @@
 	permeability_coefficient = 0.01
 	flags_cover = MASKCOVERSEYES | MASKCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 	resistance_flags = NONE
-	supports_variations = KEPORI_VARIATION
+	supports_variations = KEPORI_VARIATION | SNOUTED_VARIATION
 
 	equip_sound = 'sound/items/equip/armor_equip.ogg'
 	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
