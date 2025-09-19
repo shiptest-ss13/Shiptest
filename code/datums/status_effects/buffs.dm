@@ -390,8 +390,6 @@
 /datum/status_effect/concealed/tick(seconds_per_tick)
 	. = ..()
 	//look for smoke on tile
-	var/turf/smokey_tile = get_turf(owner)
-	for(var/i in smokey_tile)
-		if(istype(i, /obj/effect/particle_effect/smoke))
-			return TRUE
+	if(locate(/obj/effect/particle_effect/smoke) in get_turf(owner))
+		return TRUE
 	qdel(src) // we didnt find any smoke, so remove status
