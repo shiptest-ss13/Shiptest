@@ -37,8 +37,8 @@
 
 /datum/supply_pack/armor/laser_armor
 	name = "Reflector Vest Crate"
-	desc = "Contains one vest made of highly reflective material. The armor piece diffuses a laser's energy by over half, as well as offering a good chance to reflect the laser entirely."
-	cost = 1500
+	desc = "Contains one vest made of highly reflective material. The armor piece diffuses a laser's energy by over half, but with limited protection against melee and ballistic weaponry."
+	cost = 1250
 	contains = list(/obj/item/clothing/suit/armor/laserproof)
 	crate_name = "reflector vest crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma

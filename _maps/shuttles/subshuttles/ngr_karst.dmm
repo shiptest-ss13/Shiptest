@@ -1,0 +1,800 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/machinery/light/floor{
+	icon_state = "floor-on"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
+"b" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "karstcharger"
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"c" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/filled/line,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"e" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"f" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"g" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"h" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "karst_bridge_shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"i" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2";
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"j" = (
+/obj/machinery/porta_turret/ship/ngr/light{
+	dir = 5;
+	id = "karstgrid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"k" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_cw{
+	dir = 4
+	},
+/obj/item/radio/intercom/wideband/directional/south{
+	pixel_x = 8;
+	pixel_y = -25
+	},
+/obj/item/radio/intercom/directional/south{
+	pixel_x = -11;
+	pixel_y = -29
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 8;
+	id = "karst_holofield";
+	pixel_x = 19;
+	pixel_y = 7;
+	name = "Aft Holofield"
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = 21;
+	pixel_y = -2;
+	id = "karst_droppod";
+	name = "Aft Door Controls"
+	},
+/obj/item/reagent_containers/food/drinks/coffee{
+	pixel_x = -8;
+	pixel_y = -2
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = 29;
+	pixel_y = -2;
+	id = "karst_back";
+	name = "Side Door Controls"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"l" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/poddoor{
+	id = "karst_back";
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"m" = (
+/obj/machinery/turretid/ship{
+	pixel_y = 24;
+	id = "karstgrid";
+	pixel_x = 0;
+	name = "Karst TCP";
+	req_access = list(1)
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 9
+	},
+/obj/machinery/holopad/secure,
+/obj/effect/turf_decal/industrial/outline{
+	color = "#791500"
+	},
+/obj/structure/chair/handrail,
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = -23;
+	pixel_y = -9;
+	id = "karst_bridge_shutters";
+	name = "Bridge Shutters"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"n" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"o" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"p" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 9
+	},
+/obj/item/clothing/under/syndicate/ngr/fatigues,
+/obj/item/clothing/head/helmet/ngr/swat,
+/obj/item/radio/headset/syndicate/alt,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/gloves/fingerless{
+	desc = "These make you feel like a better pilot than you are.";
+	name = "pilot's driving gloves"
+	},
+/obj/structure/closet/wall/red/directional/south{
+	name = "Pilot's Locker";
+	req_access = list(1)
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"q" = (
+/obj/structure/cable/yellow,
+/obj/machinery/telecomms/relay/preset/mining{
+	autolinkers = list("relay","hub");
+	freq_listening = list(1213);
+	id = "NGR Relay";
+	name = "NGR Relay";
+	network = "ngr_commnet"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"r" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 9
+	},
+/obj/machinery/computer/helm{
+	dir = 4;
+	layer = 3
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"s" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/chair/comfy/shuttle{
+	dir = 8;
+	name = "Helm"
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"t" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-8";
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 5
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 9
+	},
+/obj/machinery/button/door{
+	dir = 0;
+	pixel_x = -9;
+	pixel_y = 24;
+	id = "karstcharger";
+	name = "Charger Shutters"
+	},
+/obj/machinery/light_switch{
+	pixel_x = 0;
+	pixel_y = 23
+	},
+/obj/structure/chair/handrail,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"u" = (
+/obj/machinery/power/shuttle/engine/electric{
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 1
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/bridge)
+"w" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 5
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
+/obj/machinery/computer/helm/viewscreen/directional/north{
+	pixel_x = 22;
+	pixel_y = 1;
+	dir = 4;
+	name = "Karst Viewport"
+	},
+/obj/structure/chair/handrail,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"x" = (
+/obj/machinery/porta_turret/ship/ngr/light{
+	dir = 6;
+	id = "karstgrid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"y" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_ccw{
+	dir = 1
+	},
+/obj/machinery/light/directional/north,
+/obj/structure/chair/handrail,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"z" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/docking_port/mobile{
+	dir = 4;
+	launch_status = 0;
+	port_direction = 2;
+	preferred_direction = 4
+	},
+/obj/machinery/door/poddoor/preopen{
+	dir = 4;
+	id = "karst_droppod"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "karst_holofield"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"B" = (
+/obj/machinery/porta_turret/ship/ngr/heavy{
+	id = "karstgrid";
+	dir = 9
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"C" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/power/smes/engineering{
+	input_level = 10000
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"D" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"E" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"F" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"G" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 2
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "karstcharger"
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"H" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"I" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 9
+	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"J" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/machinery/door/airlock/maintenance/external/glass{
+	dir = 4;
+	req_ship_access = 0;
+	name = "Cockpit";
+	id_tag = "karst_cockpit";
+	req_access = list(1)
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"K" = (
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
+"L" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"M" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"N" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 6
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"P" = (
+/turf/template_noop,
+/area/template_noop)
+"Q" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_ccw{
+	dir = 4
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"R" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/corner/opaque/tan,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/filled/shrink_cw,
+/obj/machinery/light/directional/south,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"T" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/shuttle/engine/electric,
+/obj/structure/window/plasma/reinforced,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/bridge)
+"U" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line{
+	dir = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"V" = (
+/obj/machinery/porta_turret/ship/ngr/heavy{
+	id = "karstgrid";
+	dir = 10
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"W" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "karst_bridge_shutters"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"X" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/filled/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"Y" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/door/poddoor/preopen{
+	dir = 4;
+	id = "karst_droppod"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	dir = 1;
+	id = "karst_holofield";
+	locked = 1;
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"Z" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/bar/line,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+
+(1,1,1) = {"
+F
+a
+B
+z
+Y
+V
+a
+F
+"}
+(2,1,1) = {"
+F
+u
+F
+y
+R
+F
+T
+F
+"}
+(3,1,1) = {"
+F
+G
+L
+X
+c
+n
+b
+F
+"}
+(4,1,1) = {"
+F
+C
+g
+D
+i
+M
+q
+F
+"}
+(5,1,1) = {"
+f
+F
+t
+H
+Z
+I
+F
+f
+"}
+(6,1,1) = {"
+P
+F
+w
+U
+N
+o
+l
+P
+"}
+(7,1,1) = {"
+P
+F
+F
+J
+h
+W
+F
+P
+"}
+(8,1,1) = {"
+P
+F
+m
+e
+r
+p
+F
+P
+"}
+(9,1,1) = {"
+a
+F
+Q
+E
+s
+k
+F
+a
+"}
+(10,1,1) = {"
+K
+j
+F
+F
+F
+F
+x
+K
+"}

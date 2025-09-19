@@ -131,7 +131,7 @@
 		/obj/item/melee/classic_baton/telescopic=1,
 		/obj/item/modular_computer/tablet/preset/advanced = 1)
 
-	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/officer)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/x12, /obj/item/stamp/officer)
 
 /datum/outfit/job/clip/doctor
 	name = "CLIP - Doctor"
@@ -354,7 +354,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 
 	box = /obj/item/storage/box/survival/engineer
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/gun/ballistic/revolver/mateba=1)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/gun/ballistic/revolver/rhino=1)
 
 /datum/outfit/job/clip/minutemen/captain/general/admiral // for flavor, might remove outright
 	name = "CLIP Minutemen - Admiral"

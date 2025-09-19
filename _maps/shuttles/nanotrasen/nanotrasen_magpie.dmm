@@ -872,38 +872,6 @@
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/cryo)
-"np" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/closet/secure_closet/wall/directional/east{
-	icon_state = "sec_wall";
-	name = "Ammo Supplies"
-	},
-/obj/item/storage/box/ammo/c9mm,
-/obj/item/storage/box/ammo/c9mm,
-/obj/item/ammo_box/magazine/co9mm/empty,
-/obj/item/ammo_box/magazine/co9mm/empty,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun/upgraded,
-/obj/item/storage/box/ammo/c9mm,
-/obj/item/storage/box/ammo/c9mm,
-/obj/item/ammo_box/magazine/smgm9mm/empty,
-/obj/item/ammo_box/magazine/smgm9mm/empty,
-/obj/effect/turf_decal/trimline/opaque/vired/filled/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/opaque/vired/filled/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/black{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
 "nr" = (
 /obj/effect/turf_decal/borderfloor/corner{
 	dir = 4
@@ -1088,19 +1056,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/security)
-"sE" = (
-/obj/item/gun/energy/laser,
-/obj/structure/guncloset,
-/obj/item/gun/ballistic/automatic/pistol/commander,
-/obj/item/gun/ballistic/automatic/smg/vector,
-/obj/machinery/camera/autoname,
-/obj/effect/turf_decal/trimline/opaque/vired/filled/line{
-	dir = 9
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/north,
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
 "sI" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -1189,45 +1144,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
-"sX" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/obj/structure/closet/secure_closet/wall/directional/north{
-	icon_state = "solgov_wall";
-	populate = 0;
-	name = "Captain's Locker"
-	},
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
-/obj/item/clothing/accessory/medal/silver/security,
-/obj/item/clothing/under/nanotrasen/captain,
-/obj/item/clothing/under/nanotrasen/captain/skirt,
-/obj/item/clothing/gloves/color/captain/nt,
-/obj/item/clothing/head/nanotrasen/captain,
-/obj/item/clothing/head/nanotrasen/captain/peaked,
-/obj/item/clothing/suit/armor/nanotrasen/captain/parade,
-/obj/item/clothing/suit/armor/nanotrasen/captain,
-/obj/item/storage/belt/sabre,
-/obj/item/storage/backpack/captain,
-/obj/item/storage/backpack/satchel/cap,
-/obj/item/clothing/glasses/sunglasses,
-/obj/item/clothing/neck/cloak/nanotrasen,
-/obj/item/clothing/shoes/laceup,
-/obj/item/clothing/head/nanotrasen/beret,
-/obj/item/storage/backpack/duffelbag/captain,
-/obj/item/bedsheet/captain{
-	dir = 4;
-	pixel_x = -4;
-	pixel_y = 7
-	},
-/turf/open/floor/carpet/royalblue,
-/area/ship/crew/dorm/captain)
 "tf" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/engines/port)
@@ -1735,6 +1651,21 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm/captain)
+"yR" = (
+/obj/structure/guncloset,
+/obj/item/gun/ballistic/automatic/pistol/challenger,
+/obj/item/gun/ballistic/automatic/smg/expedition,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/vired/half{
+	dir = 8
+	},
+/obj/machinery/light/directional/west,
+/obj/machinery/camera/autoname,
+/obj/item/gun/energy/sharplite/l201/l204,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "yV" = (
 /obj/machinery/portable_atmospherics/scrubber,
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/line{
@@ -2386,38 +2317,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
-"GS" = (
-/obj/item/clothing/glasses/hud/security/sunglasses,
-/obj/item/reagent_containers/spray/pepper,
-/obj/item/melee/knife/survival,
-/obj/item/storage/belt/security,
-/obj/item/storage/box/handcuffs,
-/obj/item/clothing/glasses/sunglasses,
-/obj/item/clothing/head/nanotrasen/cap/security,
-/obj/item/clothing/gloves/color/black,
-/obj/item/clothing/under/nanotrasen/security,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/head/helmet/m10,
-/obj/item/clothing/suit/armor/nanotrasen/slim,
-/obj/item/clothing/suit/armor/nanotrasen,
-/obj/item/clothing/mask/gas/vigilitas,
-/obj/structure/closet/secure_closet/wall/directional/east{
-	icon_state = "sec_wall";
-	name = "Equipment"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
-	},
-/obj/item/storage/backpack/duffelbag/sec,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/effect/turf_decal/trimline/opaque/vired/filled/line{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
 "Hc" = (
 /obj/effect/turf_decal/siding/thinplating/corner,
 /obj/effect/turf_decal/borderfloor{
@@ -3105,6 +3004,33 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
+"Qm" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/closet/secure_closet/wall/directional/east{
+	icon_state = "sec_wall";
+	name = "Ammo Supplies"
+	},
+/obj/item/storage/box/ammo/c9mm,
+/obj/item/storage/box/ammo/c9mm,
+/obj/item/ammo_box/magazine/co9mm/empty,
+/obj/item/ammo_box/magazine/co9mm/empty,
+/obj/item/storage/box/ammo/c9mm,
+/obj/item/storage/box/ammo/c9mm,
+/obj/item/ammo_box/magazine/m9mm_expedition/empty,
+/obj/item/ammo_box/magazine/m9mm_expedition/empty,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite/plus,
+/obj/effect/turf_decal/trimline/opaque/vired/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "Qr" = (
 /obj/machinery/camera/autoname{
 	dir = 10
@@ -3185,6 +3111,38 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
+"So" = (
+/obj/item/clothing/glasses/hud/security/sunglasses,
+/obj/item/reagent_containers/spray/pepper,
+/obj/item/melee/knife/survival,
+/obj/item/storage/belt/security,
+/obj/item/storage/box/handcuffs,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/clothing/head/nanotrasen/cap/security,
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/under/nanotrasen/security,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/head/helmet/m10,
+/obj/item/clothing/suit/armor/nanotrasen/slim,
+/obj/item/clothing/suit/armor/nanotrasen,
+/obj/item/clothing/mask/gas/vigilitas,
+/obj/structure/closet/secure_closet/wall/directional/east{
+	icon_state = "sec_wall";
+	name = "Equipment"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/item/storage/backpack/duffelbag/sec,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/trimline/opaque/vired/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "SL" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/engines/starboard)
@@ -3320,6 +3278,47 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"TN" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/structure/closet/secure_closet/wall/directional/north{
+	icon_state = "solgov_wall";
+	populate = 0;
+	name = "Captain's Locker"
+	},
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/item/clothing/accessory/medal/silver/security,
+/obj/item/clothing/under/nanotrasen/captain,
+/obj/item/clothing/under/nanotrasen/captain/skirt,
+/obj/item/clothing/gloves/color/captain/nt,
+/obj/item/clothing/head/nanotrasen/captain,
+/obj/item/clothing/head/nanotrasen/captain/peaked,
+/obj/item/clothing/suit/armor/nanotrasen/captain/parade,
+/obj/item/clothing/suit/armor/nanotrasen/captain,
+/obj/item/storage/belt/sabre,
+/obj/item/storage/backpack/captain,
+/obj/item/storage/backpack/satchel/cap,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/clothing/neck/cloak/nanotrasen,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/head/nanotrasen/beret,
+/obj/item/storage/backpack/duffelbag/captain,
+/obj/item/bedsheet/captain{
+	dir = 4;
+	pixel_x = -4;
+	pixel_y = 7
+	},
+/obj/item/storage/box/ammo/a357,
+/obj/item/storage/guncase/pistol/rhino,
+/turf/open/floor/carpet/royalblue,
+/area/ship/crew/dorm/captain)
 "TT" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
@@ -4268,7 +4267,7 @@ cX
 Dj
 QR
 ry
-sE
+yR
 Tv
 BS
 Wf
@@ -4291,8 +4290,8 @@ cX
 VX
 Uy
 sC
-np
-GS
+Qm
+So
 tv
 ry
 Zl
@@ -4429,7 +4428,7 @@ Qk
 ve
 iS
 Kk
-sX
+TN
 sI
 uy
 Ag

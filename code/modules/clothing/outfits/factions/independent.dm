@@ -106,7 +106,7 @@
 
 	accessory = /obj/item/clothing/accessory/medal/gold/captain
 
-	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/captain)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/x12, /obj/item/stamp/captain)
 
 /datum/outfit/job/independent/captain/empty
 	name = "Independent - Captain (Naked)"
@@ -130,7 +130,7 @@
 
 	accessory = /obj/item/clothing/accessory/medal/gold/captain
 
-	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/captain)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/x12, /obj/item/stamp/captain)
 
 /datum/outfit/job/independent/captain/cheap //for Miskilamo ships
 	name = "Independent - Captain (Low Budget)"
@@ -229,7 +229,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/captain
 	courierbag = /obj/item/storage/backpack/messenger/com
 
-	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/officer)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/x12, /obj/item/stamp/officer)
 
 /datum/outfit/job/independent/hop/hunter
 	name = "Independent - Head of Personnel (Hunter)"
@@ -293,7 +293,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/sec
 	box = /obj/item/storage/box/survival/security
 
-	chameleon_extras = list(/obj/item/gun/energy/e_gun/hos, /obj/item/stamp/hos)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/x01, /obj/item/stamp/hos)
 
 /datum/outfit/job/independent/hos/merc
 	name = "Independent - Mercenary XO"

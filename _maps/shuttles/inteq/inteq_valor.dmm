@@ -98,6 +98,17 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
+"bv" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/directional/north,
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/clothing/suit/space/inteq/pilot,
+/obj/item/clothing/head/helmet/space/inteq/pilot,
+/obj/item/clothing/mask/gas/inteq,
+/turf/open/floor/plasteel,
+/area/ship/crew/office)
 "bx" = (
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/plasteel/mono/dark,
@@ -288,17 +299,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"dg" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/machinery/suit_storage_unit/inherit,
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/light/small/directional/north,
-/obj/item/tank/internals/oxygen/yellow,
-/obj/item/clothing/suit/space/inteq/pilot,
-/obj/item/clothing/head/helmet/space/inteq/pilot,
-/obj/item/clothing/mask/gas/inteq,
-/turf/open/floor/plasteel,
-/area/ship/crew/office)
 "dk" = (
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
@@ -1673,25 +1673,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
-"oZ" = (
-/obj/structure/closet/secure_closet{
-	icon_door = "prisoner";
-	icon_state = "prisoner";
-	name = "shuttle pilot locker";
-	req_access = list(48)
-	},
-/obj/item/clothing/head/beret/sec/inteq,
-/obj/item/clothing/head/soft/inteq,
-/obj/item/clothing/suit/armor/vest/alt,
-/obj/item/radio/headset/inteq,
-/obj/item/clothing/gloves/fingerless,
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/head/helmet/bulletproof/x11/inteq,
-/obj/item/clothing/mask/gas/inteq,
-/obj/item/radio/intercom/directional/north,
-/turf/open/floor/plasteel,
-/area/ship/crew/office)
 "pa" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2140,40 +2121,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/surgery)
-"sy" = (
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 8
-	},
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq/no_mag{
-	pixel_x = -4;
-	pixel_y = 8
-	},
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq/no_mag{
-	pixel_y = 4
-	},
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq/no_mag{
-	pixel_x = 4
-	},
-/obj/structure/closet/secure_closet/wall/directional/north{
-	icon_state = "sec_wall";
-	name = "weapons lockup";
-	req_access = list(1)
-	},
-/obj/structure/table,
-/obj/item/ammo_box/magazine/co9mm/rubber,
-/obj/item/ammo_box/magazine/co9mm/rubber,
-/obj/item/ammo_box/magazine/co9mm/rubber,
-/obj/item/ammo_box/magazine/co9mm,
-/obj/item/ammo_box/magazine/co9mm,
-/obj/item/ammo_box/magazine/co9mm,
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
 "sz" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
@@ -2359,6 +2306,25 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
+"us" = (
+/obj/structure/closet/secure_closet{
+	icon_door = "prisoner";
+	icon_state = "prisoner";
+	name = "shuttle pilot locker";
+	req_access = list(48)
+	},
+/obj/item/clothing/head/beret/sec/inteq,
+/obj/item/clothing/head/soft/inteq,
+/obj/item/clothing/suit/armor/vest/alt,
+/obj/item/radio/headset/inteq,
+/obj/item/clothing/gloves/fingerless,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+/obj/item/clothing/head/helmet/bulletproof/x11/inteq,
+/obj/item/clothing/mask/gas/inteq,
+/obj/item/radio/intercom/directional/north,
+/turf/open/floor/plasteel,
+/area/ship/crew/office)
 "ux" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2567,6 +2533,40 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
+"wJ" = (
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/item/gun/ballistic/automatic/pistol/challenger/inteq/no_mag{
+	pixel_x = -4;
+	pixel_y = 8
+	},
+/obj/item/gun/ballistic/automatic/pistol/challenger/inteq/no_mag{
+	pixel_y = 4
+	},
+/obj/item/gun/ballistic/automatic/pistol/challenger/inteq/no_mag{
+	pixel_x = 4
+	},
+/obj/structure/closet/secure_closet/wall/directional/north{
+	icon_state = "sec_wall";
+	name = "weapons lockup";
+	req_access = list(1)
+	},
+/obj/structure/table,
+/obj/item/ammo_box/magazine/co9mm/rubber,
+/obj/item/ammo_box/magazine/co9mm/rubber,
+/obj/item/ammo_box/magazine/co9mm/rubber,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "wL" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -4414,33 +4414,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/canteen)
-"Nt" = (
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/yellow,
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 8
-	},
-/obj/machinery/airalarm/directional/east,
-/obj/structure/rack,
-/obj/item/storage/belt/security/webbing/inteq{
-	pixel_x = 6;
-	pixel_y = 8
-	},
-/obj/item/storage/belt/security/webbing/inteq{
-	pixel_x = 8;
-	pixel_y = 4
-	},
-/obj/item/clothing/head/helmet/m10/inteq{
-	pixel_x = -9;
-	pixel_y = 6
-	},
-/obj/item/clothing/head/helmet/m10/inteq{
-	pixel_x = -7
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
 "NA" = (
 /obj/effect/turf_decal/trimline/opaque/brown/filled/warning,
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -4527,32 +4500,6 @@
 /obj/effect/turf_decal/trimline/opaque/brown/line,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
-"Oc" = (
-/obj/item/clothing/mask/balaclava/inteq,
-/obj/item/clothing/gloves/tackler/combat/insulated,
-/obj/item/clothing/shoes/combat,
-/obj/item/storage/backpack/messenger/inteq,
-/obj/item/megaphone/command,
-/obj/item/clothing/suit/armor/hos/inteq,
-/obj/item/clothing/head/beret/sec/hos/inteq,
-/obj/structure/closet/secure_closet/wall/directional/west{
-	icon_door = "solgov_wall";
-	icon_state = "solgov_wall";
-	name = "vanguard's locker";
-	req_access = list(58)
-	},
-/obj/item/storage/lockbox/medal/sec,
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/head/inteq_peaked,
-/obj/item/stamp/inteq/vanguard,
-/obj/item/storage/box/ammo/a44roum,
-/obj/item/storage/guncase/pistol/pinscher,
-/obj/item/clothing/under/syndicate/inteq/honorable{
-	pixel_x = -5;
-	pixel_y = 1
-	},
-/turf/open/floor/carpet/orange,
-/area/ship/bridge)
 "Od" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
@@ -5051,6 +4998,33 @@
 "Td" = (
 /turf/template_noop,
 /area/template_noop)
+"Tk" = (
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/east,
+/obj/structure/rack,
+/obj/item/storage/belt/security/webbing/inteq{
+	pixel_x = 6;
+	pixel_y = 8
+	},
+/obj/item/storage/belt/security/webbing/inteq{
+	pixel_x = 8;
+	pixel_y = 4
+	},
+/obj/item/clothing/head/helmet/m10/inteq{
+	pixel_x = -9;
+	pixel_y = 6
+	},
+/obj/item/clothing/head/helmet/m10/inteq{
+	pixel_x = -7
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "Tu" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/coffee{
@@ -5623,6 +5597,32 @@
 /obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
+"YP" = (
+/obj/item/clothing/mask/balaclava/inteq,
+/obj/item/clothing/gloves/tackler/combat/insulated,
+/obj/item/clothing/shoes/combat,
+/obj/item/storage/backpack/messenger/inteq,
+/obj/item/megaphone/command,
+/obj/item/clothing/suit/armor/hos/inteq,
+/obj/item/clothing/head/beret/sec/hos/inteq,
+/obj/structure/closet/secure_closet/wall/directional/west{
+	icon_door = "solgov_wall";
+	icon_state = "solgov_wall";
+	name = "vanguard's locker";
+	req_access = list(58)
+	},
+/obj/item/storage/lockbox/medal/sec,
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+/obj/item/clothing/head/inteq_peaked,
+/obj/item/stamp/inteq/vanguard,
+/obj/item/clothing/under/syndicate/inteq/honorable{
+	pixel_x = -5;
+	pixel_y = 1
+	},
+/obj/item/storage/guncase/pistol/podium_inteq,
+/obj/item/storage/box/ammo/c46x30mm,
+/turf/open/floor/carpet/orange,
+/area/ship/bridge)
 "YR" = (
 /obj/item/clothing/under/syndicate/inteq,
 /obj/item/clothing/under/syndicate/inteq,
@@ -5926,7 +5926,7 @@ rw
 "}
 (7,1,1) = {"
 Zu
-sy
+wJ
 BL
 Zu
 Sf
@@ -6059,7 +6059,7 @@ SL
 (11,1,1) = {"
 Zu
 Rh
-Nt
+Tk
 Zu
 uB
 ua
@@ -6190,7 +6190,7 @@ SL
 "}
 (15,1,1) = {"
 tZ
-oZ
+us
 PJ
 tZ
 Qc
@@ -6223,7 +6223,7 @@ LI
 "}
 (16,1,1) = {"
 tZ
-dg
+bv
 wL
 ME
 iN
@@ -6731,7 +6731,7 @@ Nn
 ni
 nk
 AG
-Oc
+YP
 ND
 RR
 Wo
