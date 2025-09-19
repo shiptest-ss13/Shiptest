@@ -20,7 +20,6 @@
 	var/updating = FALSE //portable camera camerachunk update
 	var/mob/tracked_mob //last mob that picked up the bodycamera. needed for cameranet updates
 	var/datum/movement_detector/tracker
-	interaction_flags_item = INTERACT_ITEM_ATTACK_HAND_PICKUP
 
 /obj/item/bodycamera/Initialize()
 	. = ..()
