@@ -395,21 +395,26 @@
 
 // gun power cell //
 /obj/item/stock_parts/cell/gun
-	name = "weapon power cell"
+	name = "eoehoma power cell"
+	desc = "A rechargeable weapon cell. While intended for Eoehoma laser weapons, these are compatable with various other manufactorer's designs, intentionally or not."
 	icon = 'icons/obj/power.dmi'
-	icon_state = "g-cell"
+	icon_state = "e-cell"
 	maxcharge = 10000
 	custom_materials = list(/datum/material/glass=60)
 	chargerate = 1500
 	rating = 0 //Makes it incompatible with RPED
 	blinky_light = FALSE
+	var/start_empty = FALSE //this really wasn't a var before?
 
-/obj/item/stock_parts/cell/gun/empty
-
-/obj/item/stock_parts/cell/gun/empty/Initialize()
+/obj/item/stock_parts/cell/gun/Initialize()
 	. = ..()
+	if(!start_empty)
+		return
 	charge = 0
 	update_appearance()
+
+/obj/item/stock_parts/cell/gun/empty
+	start_empty = TRUE
 
 /obj/item/stock_parts/cell/gun/update_overlays()
 	. = ..()
@@ -427,28 +432,25 @@
 	return .
 
 /obj/item/stock_parts/cell/gun/upgraded
-	name = "upgraded weapon power cell"
-	icon_state = "ug-cell"
+	name = "high-capacity eoehoma power cell"
+	desc = "A high capacity weapon cell. Intended for use in heavy weapons and the odd piece of personal gear."
+	icon_state = "e-class2-cell"
 	maxcharge = 20000
 	custom_materials = list(/datum/material/glass=300)
 	chargerate = 2000
 
-/obj/item/stock_parts/cell/gun/upgraded/empty/Initialize()
-	. = ..()
-	charge = 0
-	update_appearance()
+/obj/item/stock_parts/cell/gun/upgraded/empty
+	start_empty = TRUE
 
 /obj/item/stock_parts/cell/gun/mini
-	name = "miniature weapon power cell"
-	icon_state = "mg-cell"
+	name = "miniature eoehoma power cell"
+	icon_state = "e_mini-cell"
 	maxcharge = 5000
 	custom_materials = list(/datum/material/glass=300)
 	chargerate = 1000
 
-/obj/item/stock_parts/cell/gun/mini/empty/Initialize()
-	. = ..()
-	charge = 0
-	update_appearance()
+/obj/item/stock_parts/cell/gun/mini/empty
+	start_empty = TRUE
 
 /obj/item/stock_parts/cell/gun/solgov
 	name = "SolGov power cell"
@@ -462,10 +464,8 @@
 	chargerate = 5000
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/stock_parts/cell/gun/large/empty/Initialize()
-	. = ..()
-	charge = 0
-	update_appearance()
+/obj/item/stock_parts/cell/gun/large/empty
+	start_empty = TRUE
 
 /obj/item/stock_parts/cell/gun/kalix
 	name = "Etherbor EWC-5"
@@ -480,6 +480,40 @@
 	icon_state = "pgf-cell"
 	maxcharge = 20000 // 20 shots at 1000 energy per
 	chargerate = 2000
+
+
+
+/obj/item/stock_parts/cell/gun/sharplite
+	name = "Sharplite power cell"
+	desc = "A proprietary power cell primarily used by Sharplite weaponry. Nanotrasen's large market share has forced some weapon developers to include adapters for these cells"
+	icon = 'icons/obj/power.dmi'
+	icon_state = "nt-cell"
+
+/obj/item/stock_parts/cell/gun/sharplite/empty
+	start_empty = TRUE
+
+/obj/item/stock_parts/cell/gun/sharplite/plus
+	name = "Sharplite Plus power cell"
+	desc = "An high-capacity weapon cell used exclusively by Sharplite weaponry. They are a great improvement over the stock cell, and are frequently sought after by collectors, soldiers, and operators of heavy lasers alike."
+	icon_state = "nt_plus-cell"
+
+	maxcharge = 20000
+	custom_materials = list(/datum/material/glass=300)
+	chargerate = 2000
+
+/obj/item/stock_parts/cell/gun/sharplite/plus/empty
+	start_empty = TRUE
+
+/obj/item/stock_parts/cell/gun/sharplite/mini
+	name = "Sharplite Compact power cell"
+	desc = "A compact weapon cell used exclusively by Sharplite weaponry. It holds less charge and is intended for usage in energy handguns."
+	icon_state = "nt_mini-cell"
+	maxcharge = 7000
+	custom_materials = list(/datum/material/glass=300)
+	chargerate = 1000
+
+/obj/item/stock_parts/cell/gun/sharplite/mini/empty
+	start_empty = TRUE
 
 #undef CELL_DRAIN_TIME
 #undef CELL_POWER_GAIN

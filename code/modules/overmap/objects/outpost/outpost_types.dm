@@ -199,7 +199,7 @@
 	)
 
 /datum/overmap/outpost/clip_ocean
-	token_icon_state = "station_asteroid"
+	token_icon_state = "station_planet"
 	main_template = /datum/map_template/outpost/clip_ocean
 	elevator_template = /datum/map_template/outpost/elevator_clip
 	weather_controller_type = /datum/weather_controller/lush
