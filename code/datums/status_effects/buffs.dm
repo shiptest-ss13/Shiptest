@@ -381,6 +381,7 @@
 	id = "concealed"
 	var/concealment_power = 75
 	alert_type = /atom/movable/screen/alert/status_effect/concealed
+	tick_interval = 1
 
 /atom/movable/screen/alert/status_effect/concealed
 	name = "Concealed"
