@@ -256,7 +256,7 @@
 	if(!chambered && can_shoot())
 		process_chamber()	// If the gun was drained and then recharged, load a new shot.
 	..() //process the gunshot as normal
-	if(!latch_closed && prob(65)) //make the cell slide out if it's fired while the retainment clip is unlatched, with a 65% probability
+	if((!latch_closed && prob(65)) && (cell != null)) //make the cell slide out if it's fired while the retainment clip is unlatched, with a 65% probability
 		to_chat(user, span_warning("The [src]'s cell falls out!"))
 		eject_cell()
 	return
