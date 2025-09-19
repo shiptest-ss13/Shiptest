@@ -48,7 +48,7 @@
 	if(in_range(src, user))
 		. += span_notice("The camera is set to a nametag of '<b>[c_tag]</b>'.")
 		. += span_notice("The camera is set to transmit on the '<b>[network[1]]</b>' network.")
-		. += span_notice("It looks like you can modify the camera settings by using a <b>multitool</b> on it.")
+		. += span_notice("It looks like you can modify the camera settings by using it in your hand, or by using a <b>multitool</b> on it.")
 
 /obj/item/bodycamera/AltClick(mob/user)
 	. = ..()
@@ -118,7 +118,7 @@
 	if(istype(bodycamera_B, /obj/item/bodycamera))
 		var/obj/item/bodycamera/bodycamera2 = bodycamera_B
 		network = bodycamera2.network
-		to_chat(user, "You transfer the network of \the [bodycamera2.name] to \the [name]")
+		to_chat(user, "You tap the cameras together, transferring the network of \the [bodycamera2.name] to \the [name]")
 		return TRUE
 	..()
 
