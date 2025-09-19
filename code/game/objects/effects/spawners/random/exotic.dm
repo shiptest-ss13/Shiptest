@@ -62,6 +62,6 @@
 		/obj/item/gun/ballistic/automatic/pistol/ringneck = 8,
 		/obj/item/gun/ballistic/shotgun/automatic/m11 = 5,
 		/obj/item/gun/ballistic/automatic/pistol/spitter,
-		/obj/item/gun/ballistic/revolver/mateba
+		/obj/item/gun/ballistic/revolver/rhino
 	)
 
