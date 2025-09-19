@@ -9,8 +9,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	//non-preference stuff
 	var/muted = 0
-	var/last_ip
-	var/last_id
 
 	//game-preferences
 	var/lastchangelog = ""				//Saved changlog filesize to detect if there was a change
@@ -158,7 +156,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/alt_titles_preferences = list()
 	var/list/custom_names = list()
 	var/preferred_ai_core_display = "Blue"
-	var/prefered_security_department = SEC_DEPT_RANDOM
 	var/generic_adjective = "Unremarkable"
 	//Quirk list
 	var/list/all_quirks = list()
@@ -194,7 +191,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/pixel_size = 0
 	///What scaling method should we use?
 	var/scaling_method = "distort"
-	var/uplink_spawn_loc = UPLINK_PDA
 
 	var/list/exp = list()
 	var/list/menuoptions
@@ -362,7 +358,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			dat += "<b>Custom Job Preferences:</b><BR>"
 			dat += "<a href='byond://?_src_=prefs;preference=ai_core_icon;task=input'><b>Preferred AI Core Display:</b> [preferred_ai_core_display]</a><br>"
-			dat += "<a href='byond://?_src_=prefs;preference=sec_dept;task=input'><b>Preferred Security Department:</b> [prefered_security_department]</a><BR></td>"
 
 			dat += "</tr></table>"
 
@@ -373,8 +368,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<br><b>Jumpsuit Style:</b><BR><a href ='?_src_=prefs;preference=suit;task=input'>[jumpsuit_style]</a>"
 
 			dat += "<br><b>Outerwear Style:</b><BR><a href ='?_src_=prefs;preference=exo;task=input'>[exowear]</a>"
-
-			dat += "<br><b>Uplink Spawn Location:</b><BR><a href ='?_src_=prefs;preference=uplink_loc;task=input'>[uplink_spawn_loc]</a><BR></td>"
 
 		if(1) //Character Appearance
 			if(path)
@@ -2097,20 +2090,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_exo)
 						exowear = new_exo
 
-				if("uplink_loc")
-					var/new_loc = input(user, "Choose your character's traitor uplink spawn location:", "Character Preference") as null|anything in GLOB.uplink_spawn_loc_list
-					if(new_loc)
-						uplink_spawn_loc = new_loc
-
 				if("ai_core_icon")
 					var/ai_core_icon = input(user, "Choose your preferred AI core display screen:", "AI Core Display Screen Selection") as null|anything in GLOB.ai_core_display_screens
 					if(ai_core_icon)
 						preferred_ai_core_display = ai_core_icon
-
-				if("sec_dept")
-					var/department = input(user, "Choose your preferred security department:", "Security Departments") as null|anything in GLOB.security_depts_prefs
-					if(department)
-						prefered_security_department = department
 
 				if ("clientfps")
 					var/desiredfps = input(user, "Choose your desired fps. (0 = default, 60 FPS))", "Character Preference", clientfps)  as null|num //WS Edit - Client FPS Tweak -

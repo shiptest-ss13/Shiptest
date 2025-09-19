@@ -1,7 +1,6 @@
 /datum/species/ipc // im fucking lazy mk2 and cant get sprites to normally work
 	name = "\improper Positronic" //inherited from the real species, for health scanners and things
 	id = SPECIES_IPC
-	sexes = FALSE
 	species_age_min = 0
 	species_age_max = 300
 	species_traits = list(HAIR,NOTRANSSTING,NOEYESPRITES,NO_DNA_COPY,TRAIT_EASYDISMEMBER,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH) //all of these + whatever we inherit from the real species
