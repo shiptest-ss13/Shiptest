@@ -1153,8 +1153,8 @@
 	pixel_x = 9;
 	pixel_y = -4
 	},
-/obj/item/gun/energy/laser/empty_cell,
 /obj/machinery/light/directional/east,
+/obj/item/gun/energy/sharplite/l201/l204/empty_cell,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/mining_base/armory)
 "gn" = (
@@ -1492,10 +1492,7 @@
 	pixel_y = -9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/gun/energy/e_gun/nuclear{
-	pixel_x = -6;
-	pixel_y = 9
-	},
+/obj/item/gun/energy/sharplite/x26,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/mining_base/office)
 "if" = (
@@ -4274,14 +4271,14 @@
 /obj/structure/closet/wall/red/directional/west{
 	req_access_txt = "3"
 	},
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
 /obj/machinery/recharger{
 	pixel_x = 7;
 	pixel_y = 6
 	},
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/mining_base/armory)
 "xr" = (
@@ -4685,9 +4682,9 @@
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "zC" = (
-/obj/item/gun/energy/laser/empty_cell,
 /obj/effect/mob_spawn/human/corpse/ruin/ns_mine_miner/armored,
 /obj/effect/gibspawner/human/bodypartless,
+/obj/item/gun/energy/sharplite/l201/l204/empty_cell,
 /turf/open/floor/mineral/titanium/tiled/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "zG" = (
@@ -6877,7 +6874,7 @@
 /obj/structure/flippedtable{
 	dir = 1
 	},
-/obj/item/gun/energy/e_gun/hades{
+/obj/item/gun/energy/sharplite/al655{
 	spawn_no_ammo = 1
 	},
 /obj/structure/cable{
@@ -6917,7 +6914,7 @@
 "Mt" = (
 /obj/structure/guncloset,
 /obj/effect/turf_decal/box,
-/obj/item/gun/energy/laser/empty_cell,
+/obj/item/gun/energy/sharplite/l201/l204/empty_cell,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/mining_base/armory)
 "MA" = (
