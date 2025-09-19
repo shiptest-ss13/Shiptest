@@ -2,7 +2,7 @@
 	name = "Solarian International Standard"
 	desc = "The natural fusion of the Solarian languages that survived the Night Of Fire, which gradually coalesced into a single language."
 	key = "c"
-	flags = TONGUELESS_SPEECH | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD
+	flags = TONGUELESS_SPEECH | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD | ROUNDSTART_LANGUAGE
 	default_priority = 90
 	space_chance = 20
 	sentence_chance = 0
