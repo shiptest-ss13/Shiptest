@@ -148,14 +148,74 @@
 
 /datum/supply_pack/sec_supply/officer_sabre
 	name = "Officer's Sabre Crate"
-	desc = "Contains one finely crafted monomolecular sabre, for slicing and dicing in style."
+	desc = "Contains one finely crafted monomolecular sabre. For slicing and dicing in style."
 	cost = 750
 	contains = list(/obj/item/melee/sword/sabre)
 	crate_name = "officer's sabre crate"
 	faction = /datum/faction/nt
 	faction_discount = 0
 	faction_locked = TRUE
-	
+
+/datum/supply_pack/sec_supply/solarian_sabre
+	name = "Solarian Ceremonial Sabre Crate"
+	desc = "Contains one ceremonial Solarian sabre. To keep tradition alive. Stile quite sharp."
+	cost = 750
+	contains = list(/obj/item/melee/sword/sabre/solgov)
+	crate_name = "solarian ceremonial sabre crate"
+	faction = /datum/faction/solgov
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/sec_supply/suns_sabre
+	name = "SUNS Dueling Sabre Crate"
+	desc = "Contains a single solarian blade. For the academian."
+	cost = 750
+	contains = list(/obj/item/melee/sword/sabre/suns)
+	crate_name = "student's sabre crate"
+	faction = /datum/faction/syndicate/suns
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/sec_supply/suns_captain_sabre
+	name = "SUNS Sabre Crate"
+	desc = "Contains a elegant solarian blade. For the distinguished."
+	cost = 1000
+	contains = list(/obj/item/melee/sword/sabre/suns/captain)
+	crate_name = "suns captain sabre crate"
+	faction = /datum/faction/syndicate/suns
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/sec_supply/suns_cmo_sabre
+	name = "SUNS Cane Sabre Crate"
+	desc = "Contains a blade sheathed in a cane. For the diligent."
+	cost = 800
+	contains = list(/obj/item/melee/sword/sabre/suns/cmo)
+	crate_name = "student's sabre crate"
+	faction = /datum/faction/syndicate/suns
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/sec_supply/suns_telescopic_sabre
+	name = "SUNS Telescopic Sabre Crate"
+	desc = "Contains a finely crafted telescopic sabre. For the discreet."
+	cost = 600
+	contains = list(/obj/item/melee/sword/sabre/suns/telescopic)
+	crate_name = "telescopic sabre crate"
+	faction = /datum/faction/syndicate/suns
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/sec_supply/pgf_boarding_cutlass
+	name = "PGF Boarding Cutlass Crate"
+	desc = "Contains a finely crafted cutlass, issued to boarding parties of the Pan-Gezena Federation."
+	cost = 750
+	contains = list(/obj/item/melee/sword/sabre/pgf)
+	crate_name = "boarding cutlass crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/sec_supply/combatknives
 	name = "Combat Knife Crate"
 	desc = "Contains one high quality combat knife. For the sharper, and meaner, crew."
