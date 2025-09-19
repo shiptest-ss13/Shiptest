@@ -623,11 +623,7 @@
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/line{
 	dir = 10
 	},
-/obj/item/gun/energy/laser/scatter,
-/obj/item/gun/energy/laser,
-/obj/item/gun/energy/laser,
-/obj/item/gun/energy/laser,
-/obj/item/gun/energy/e_gun/mini,
+/obj/item/gun/energy/sharplite/x26,
 /obj/machinery/airalarm/directional/west,
 /obj/structure/extinguisher_cabinet/directional/north{
 	pixel_x = -6
@@ -636,6 +632,10 @@
 	pixel_x = 6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/gun/energy/sharplite/l201/l204,
+/obj/item/gun/energy/sharplite/l201/l204,
+/obj/item/gun/energy/sharplite/l201/l204,
+/obj/item/gun/energy/sharplite/x46,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
 "eu" = (
@@ -3171,40 +3171,6 @@
 	req_access_txt = "41";
 	name = "Equipment Locker"
 	},
-/obj/item/stock_parts/cell/gun/upgraded{
-	pixel_x = 8;
-	pixel_y = 5
-	},
-/obj/item/stock_parts/cell/gun/upgraded{
-	pixel_x = 8;
-	pixel_y = 5
-	},
-/obj/item/stock_parts/cell/gun{
-	pixel_y = 5
-	},
-/obj/item/stock_parts/cell/gun{
-	pixel_y = 5
-	},
-/obj/item/stock_parts/cell/gun{
-	pixel_y = 5
-	},
-/obj/item/stock_parts/cell/gun{
-	pixel_y = 5
-	},
-/obj/item/stock_parts/cell/gun{
-	pixel_y = 5
-	},
-/obj/item/stock_parts/cell/gun{
-	pixel_y = 5
-	},
-/obj/item/stock_parts/cell/gun/mini{
-	pixel_y = 4;
-	pixel_x = -8
-	},
-/obj/item/stock_parts/cell/gun/mini{
-	pixel_y = 4;
-	pixel_x = -8
-	},
 /obj/item/storage/pouch/ammo{
 	pixel_x = -8;
 	pixel_y = -10
@@ -3229,6 +3195,28 @@
 	pixel_y = 12
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite/plus{
+	pixel_x = 11;
+	pixel_y = 0
+	},
+/obj/item/stock_parts/cell/gun/sharplite/plus{
+	pixel_x = 11;
+	pixel_y = 0
+	},
+/obj/item/stock_parts/cell/gun/sharplite/mini{
+	pixel_x = -9;
+	pixel_y = 0
+	},
+/obj/item/stock_parts/cell/gun/sharplite/mini{
+	pixel_x = -9;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
 "wq" = (

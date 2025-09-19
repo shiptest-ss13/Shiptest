@@ -1543,8 +1543,6 @@
 	req_access_txt = "41"
 	},
 /obj/machinery/light/small/directional/west,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun/mini,
 /obj/item/clothing/suit/armor/nanotrasen/slim,
 /obj/machinery/light_switch{
 	dir = 4;
@@ -1557,14 +1555,10 @@
 	name = "Crew Window Lockdown";
 	id = "meta_crewwindows"
 	},
-/obj/item/gun/energy/disabler{
-	pixel_y = 6
-	},
-/obj/item/gun/energy/laser/retro,
-/obj/item/gun/energy/laser{
-	pixel_y = -5;
-	pixel_x = 2
-	},
+/obj/item/gun/energy/sharplite/l201/l204,
+/obj/item/gun/energy/sharplite/l201/l204,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "fO" = (
