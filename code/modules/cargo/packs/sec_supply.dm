@@ -146,6 +146,16 @@
 	contains = list(/obj/item/melee/sword/mass)
 	crate_name = "machete crate"
 
+/datum/supply_pack/sec_supply/officer_sabre
+	name = "Officer's Sabre Crate"
+	desc = "Contains one finely crafted monomolecular sabre, for slicing and dicing in style."
+	cost = 750
+	contains = list(/obj/item/melee/sword/sabre)
+	crate_name = "officer's sabre crate"
+	faction = /datum/faction/nt
+	faction_discount = 0
+	faction_locked = TRUE
+	
 /datum/supply_pack/sec_supply/combatknives
 	name = "Combat Knife Crate"
 	desc = "Contains one high quality combat knife. For the sharper, and meaner, crew."
