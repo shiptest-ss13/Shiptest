@@ -99,7 +99,7 @@
 		return
 	return ..()
 
-/obj/item/gun/ballistic/automatic/assault/e40/AltClick(mob/living/user)
+/obj/item/gun/ballistic/automatic/assault/e40/unique_action(mob/living/user)
 	var/current_firemode = gun_firemodes[firemode_index]
 	if(current_firemode == FIREMODE_OTHER)
 		if(secondary.latch_closed)
@@ -195,7 +195,7 @@
 /obj/item/gun/ballistic/automatic/assault/e40/examine(mob/user)
 	. = ..()
 	if(!secondary.internal_magazine)
-		. += "The cell retainment latch is [secondary.latch_closed ? span_green("CLOSED") : span_red("OPEN")]. Alt-Click to toggle the latch."
+		. += "The cell retainment latch is [secondary.latch_closed ? span_green("CLOSED") : span_red("OPEN")]. Use the Unique Action Key to toggle the latch while on laser mode. By default, this is <b>space</b>."
 	var/obj/item/ammo_casing/energy/shot = secondary.ammo_type[select]
 	if(secondary.cell)
 		. += "\The [name]'s cell has [secondary.cell.percent()]% charge remaining."
@@ -223,7 +223,7 @@
 	fire_delay = 0.2 SECONDS
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
-	latch_toggle_delay = 1.2 SECONDS
+	latch_toggle_delay = 0.6 SECONDS
 	valid_attachments = list()
 
 	spread_unwielded = 20
