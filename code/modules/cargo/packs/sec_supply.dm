@@ -150,7 +150,7 @@
 	name = "Officer's Sabre Crate"
 	desc = "Contains one finely crafted monomolecular sabre. For slicing and dicing in style."
 	cost = 750
-	contains = list(/obj/item/melee/sword/sabre)
+	contains = list(/obj/item/storage/belt/sabre)
 	crate_name = "officer's sabre crate"
 	faction = /datum/faction/nt
 	faction_discount = 0
