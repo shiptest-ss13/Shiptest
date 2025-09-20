@@ -289,7 +289,7 @@
 /datum/outfit/job/clip/correspondent/dressed
 	name = "CLIP - Military Correspondent (Dressed)"
 
-	head = /obj/item/clothing/head/helmet/bulletproof/m10/clip_correspondent
+	head = /obj/item/clothing/head/helmet/m10/clip_correspondent
 	suit = /obj/item/clothing/suit/armor/vest/clip_correspondent
 
 	belt = /obj/item/bodycamera/broadcast_camera
@@ -432,7 +432,7 @@
 /datum/outfit/job/clip/minutemen/vehicle_pilot/dressed
 	name = "CLIP Minutemen - Vehicle Pilot (Dressed)"
 
-	head = /obj/item/clothing/head/helmet/bulletproof/m10/clip_vc
+	head = /obj/item/clothing/head/helmet/m10/clip_vc
 	suit = /obj/item/clothing/suit/armor/vest/alt
 	glasses = /obj/item/clothing/glasses/hud/diagnostic
 
@@ -442,7 +442,7 @@
 	job_icon = "clip_mech3"
 
 	suit = /obj/item/clothing/suit/jacket/miljacket
-	head = /obj/item/clothing/head/helmet/bulletproof/m10/clip_vc
+	head = /obj/item/clothing/head/helmet/m10/clip_vc
 	glasses = /obj/item/clothing/glasses/hud/diagnostic/sunglasses
 
 /datum/outfit/job/clip/minutemen/vehicle_crew/coordinator

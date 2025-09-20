@@ -115,7 +115,7 @@
 /obj/structure/closet/secure_closet/clip/minutemen/correspondent/PopulateContents()
 	new /obj/item/clothing/under/clip/formal(src)
 	new /obj/item/clothing/shoes/workboots(src)
-	new /obj/item/clothing/head/helmet/bulletproof/m10/clip_correspondent(src)
+	new /obj/item/clothing/head/helmet/m10/clip_correspondent(src)
 	new /obj/item/clothing/suit/armor/vest/clip_correspondent(src)
 	new /obj/item/bodycamera/broadcast_camera(src)
 	new /obj/item/binoculars(src)

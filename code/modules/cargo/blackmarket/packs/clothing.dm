@@ -153,7 +153,7 @@
 	B.name = "Worn Duffelbag"
 	B.desc = "A beat up looking dufflebag."
 	new /obj/item/storage/belt/military(B)
-	new /obj/item/clothing/head/helmet/bulletproof/m10(B)
+	new /obj/item/clothing/head/helmet/m10(B)
 	new /obj/item/clothing/under/rank/security/officer/camo(B)
 	return B
 

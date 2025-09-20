@@ -1280,20 +1280,6 @@
 	},
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
-"oz" = (
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor2-old"
-	},
-/obj/item/gun/ballistic/automatic/pistol/challenger/inteq/no_mag,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 8
-	},
-/obj/item/ammo_box/magazine/co9mm/empty,
-/turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/tradepost/center)
 "oC" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/stack/sheet/mineral/sandbags,
@@ -3228,20 +3214,6 @@
 /mob/living/basic/hivebot/ranged,
 /turf/open/floor/concrete/pavement/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
-"IN" = (
-/obj/item/chair{
-	pixel_y = -4
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 1
-	},
-/obj/item/gun/ballistic/automatic/pistol/challenger/no_mag{
-	pixel_y = 8;
-	pixel_x = 10
-	},
-/obj/effect/mob_spawn/human/corpse/indie/manager,
-/turf/open/floor/wood/walnut,
-/area/ruin/wasteplanet/tradepost/center)
 "IY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_casing/spent,
@@ -3297,6 +3269,31 @@
 	},
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/barracks)
+"Jj" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor6-old"
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor5-old"
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor2-old"
+	},
+/obj/effect/mob_spawn/human/corpse/inteq/enforcer{
+	head = null;
+	husk = 1
+	},
+/obj/item/ammo_casing/spent,
+/obj/item/ammo_casing/spent,
+/obj/item/ammo_casing/spent,
+/obj/item/ammo_casing/spent,
+/obj/item/ammo_casing/spent,
+/obj/item/gun/ballistic/automatic/pistol/challenger/inteq/no_mag{
+	pixel_y = 4
+	},
+/obj/item/ammo_box/magazine/co9mm/empty,
+/turf/open/floor/concrete/pavement/wasteplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "Jk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_casing/spent,
@@ -3514,6 +3511,20 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/tradepost/warehouse)
+"KV" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor2-old"
+	},
+/obj/item/gun/ballistic/automatic/pistol/challenger/inteq/no_mag,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
+	},
+/obj/item/ammo_box/magazine/co9mm/empty,
+/turf/open/floor/plasteel/dark,
+/area/ruin/wasteplanet/tradepost/center)
 "KZ" = (
 /obj/machinery/button/door{
 	dir = 8;
@@ -3906,6 +3917,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/tradepost/barracks)
+"OR" = (
+/obj/item/clothing/head/helmet/m10/inteq{
+	pixel_y = 4;
+	pixel_x = 3
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "OV" = (
 /obj/item/stack/sheet/mineral/sandbags,
 /obj/effect/decal/cleanable/dirt,
@@ -4032,13 +4050,6 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/tradepost/center)
-"QR" = (
-/obj/item/clothing/head/helmet/inteq{
-	pixel_y = 4;
-	pixel_x = 3
-	},
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "QT" = (
 /obj/structure/flora/ash/glowshroom,
 /obj/item/ammo_casing/spent,
@@ -4234,31 +4245,6 @@
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/pod/light,
 /area/ruin/wasteplanet/tradepost)
-"Se" = (
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor6-old"
-	},
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor5-old"
-	},
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor2-old"
-	},
-/obj/effect/mob_spawn/human/corpse/inteq/enforcer{
-	head = null;
-	husk = 1
-	},
-/obj/item/ammo_casing/spent,
-/obj/item/ammo_casing/spent,
-/obj/item/ammo_casing/spent,
-/obj/item/ammo_casing/spent,
-/obj/item/ammo_casing/spent,
-/obj/item/gun/ballistic/automatic/pistol/challenger/inteq/no_mag{
-	pixel_y = 4
-	},
-/obj/item/ammo_box/magazine/co9mm/empty,
-/turf/open/floor/concrete/pavement/wasteplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "Si" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/flashlight/flare/burnt,
@@ -4436,6 +4422,20 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/dark,
+/area/ruin/wasteplanet/tradepost/center)
+"TU" = (
+/obj/item/chair{
+	pixel_y = -4
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 1
+	},
+/obj/item/gun/ballistic/automatic/pistol/challenger/no_mag{
+	pixel_y = 8;
+	pixel_x = 10
+	},
+/obj/effect/mob_spawn/human/corpse/indie/manager,
+/turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/tradepost/center)
 "Ud" = (
 /turf/closed/mineral/random/wasteplanet,
@@ -5592,7 +5592,7 @@ jy
 jy
 Xq
 WR
-Se
+Jj
 cW
 QB
 QB
@@ -5696,7 +5696,7 @@ vR
 bm
 jy
 jy
-QR
+OR
 QB
 Ry
 QZ
@@ -6841,7 +6841,7 @@ Ud
 Ud
 ez
 sS
-IN
+TU
 dD
 gI
 Gt
@@ -6955,7 +6955,7 @@ jD
 TT
 XY
 hD
-oz
+KV
 MU
 If
 If

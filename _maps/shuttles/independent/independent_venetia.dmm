@@ -383,6 +383,77 @@
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
+"ez" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/structure/closet/secure_closet/wall/directional/north{
+	name = "equipment locker";
+	icon_state = "sec_wall";
+	icon_door = "sec_wall";
+	req_access_txt = "1"
+	},
+/obj/item/gun_maint_kit{
+	pixel_y = -8;
+	pixel_x = 5
+	},
+/obj/item/gun_maint_kit{
+	pixel_y = -8;
+	pixel_x = 5
+	},
+/obj/item/storage/box/handcuffs{
+	pixel_x = -8;
+	pixel_y = -5
+	},
+/obj/item/storage/pouch/ammo{
+	pixel_x = 8;
+	pixel_y = -5
+	},
+/obj/item/storage/pouch/ammo{
+	pixel_x = 8;
+	pixel_y = -5
+	},
+/obj/item/attachment/rail_light{
+	pixel_x = -4;
+	pixel_y = -6
+	},
+/obj/item/attachment/rail_light{
+	pixel_x = -4;
+	pixel_y = -6
+	},
+/obj/item/melee/knife/survival,
+/obj/item/melee/knife/survival,
+/obj/item/reagent_containers/spray/pepper{
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/spray/pepper{
+	pixel_x = 8
+	},
+/obj/item/stock_parts/cell/gun/sharplite{
+	pixel_x = 1;
+	pixel_y = 11
+	},
+/obj/item/stock_parts/cell/gun/sharplite{
+	pixel_x = -4;
+	pixel_y = 10
+	},
+/obj/item/ammo_box/magazine/wt550m9{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/ammo_box/magazine/wt550m9{
+	pixel_x = -6;
+	pixel_y = 10
+	},
+/obj/item/storage/toolbox/ammo/c46{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/security/armory)
 "eL" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/border{
 	dir = 1
@@ -675,6 +746,31 @@
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
+"jw" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 4
+	},
+/obj/structure/guncloset{
+	anchored = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/light/directional/north,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/gun/energy/sharplite/x12/inteq{
+	pixel_x = 0;
+	pixel_y = -6
+	},
+/obj/item/gun/ballistic/automatic/smg/resolution/inteq,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/security/armory)
 "jC" = (
 /obj/machinery/computer/cargo{
 	icon_state = "computer-middle";
@@ -1179,6 +1275,55 @@
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"nu" = (
+/obj/effect/turf_decal/siding/thinplating/dark/end{
+	dir = 8
+	},
+/obj/structure/closet/secure_closet/wall/directional/south{
+	icon_door = "sec_wall";
+	name = "armor locker";
+	req_access_txt = "1";
+	icon_state = "sec_wall"
+	},
+/obj/item/clothing/suit/armor/vest/alt{
+	pixel_x = -8
+	},
+/obj/item/clothing/suit/armor/vest/alt{
+	pixel_x = 4
+	},
+/obj/item/clothing/head/helmet/m10/inteq{
+	pixel_x = -8;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/helmet/m10/inteq{
+	pixel_x = 4;
+	pixel_y = 8
+	},
+/obj/item/storage/belt/security/webbing/inteq{
+	pixel_x = -8
+	},
+/obj/item/storage/belt/security/webbing/inteq{
+	pixel_x = -8
+	},
+/obj/item/storage/belt/security/webbing/inteq/alt{
+	pixel_x = 4;
+	pixel_y = -2
+	},
+/obj/item/storage/belt/security/webbing/inteq/alt{
+	pixel_x = 4;
+	pixel_y = -2
+	},
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq{
+	pixel_y = -8
+	},
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq{
+	pixel_y = -8
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/security/armory)
 "nv" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3807,126 +3952,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
-"Ov" = (
-/obj/effect/turf_decal/siding/thinplating/dark/end{
-	dir = 8
-	},
-/obj/structure/closet/secure_closet/wall/directional/south{
-	icon_door = "sec_wall";
-	name = "armor locker";
-	req_access_txt = "1";
-	icon_state = "sec_wall"
-	},
-/obj/item/clothing/suit/armor/vest/alt{
-	pixel_x = -8
-	},
-/obj/item/clothing/suit/armor/vest/alt{
-	pixel_x = 4
-	},
-/obj/item/clothing/head/helmet/inteq{
-	pixel_x = -8;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/helmet/inteq{
-	pixel_x = 4;
-	pixel_y = 8
-	},
-/obj/item/storage/belt/security/webbing/inteq{
-	pixel_x = -8
-	},
-/obj/item/storage/belt/security/webbing/inteq{
-	pixel_x = -8
-	},
-/obj/item/storage/belt/security/webbing/inteq/alt{
-	pixel_x = 4;
-	pixel_y = -2
-	},
-/obj/item/storage/belt/security/webbing/inteq/alt{
-	pixel_x = 4;
-	pixel_y = -2
-	},
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq{
-	pixel_y = -8
-	},
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq{
-	pixel_y = -8
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/security/armory)
-"OT" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/obj/structure/closet/secure_closet/wall/directional/north{
-	name = "equipment locker";
-	icon_state = "sec_wall";
-	icon_door = "sec_wall";
-	req_access_txt = "1"
-	},
-/obj/item/gun_maint_kit{
-	pixel_y = -8;
-	pixel_x = 5
-	},
-/obj/item/gun_maint_kit{
-	pixel_y = -8;
-	pixel_x = 5
-	},
-/obj/item/storage/box/handcuffs{
-	pixel_x = -8;
-	pixel_y = -5
-	},
-/obj/item/storage/pouch/ammo{
-	pixel_x = 8;
-	pixel_y = -5
-	},
-/obj/item/storage/pouch/ammo{
-	pixel_x = 8;
-	pixel_y = -5
-	},
-/obj/item/attachment/rail_light{
-	pixel_x = -4;
-	pixel_y = -6
-	},
-/obj/item/attachment/rail_light{
-	pixel_x = -4;
-	pixel_y = -6
-	},
-/obj/item/melee/knife/survival,
-/obj/item/melee/knife/survival,
-/obj/item/reagent_containers/spray/pepper{
-	pixel_x = 8
-	},
-/obj/item/reagent_containers/spray/pepper{
-	pixel_x = 8
-	},
-/obj/item/stock_parts/cell/gun/sharplite{
-	pixel_x = 1;
-	pixel_y = 11
-	},
-/obj/item/stock_parts/cell/gun/sharplite{
-	pixel_x = -4;
-	pixel_y = 10
-	},
-/obj/item/ammo_box/magazine/wt550m9{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/item/ammo_box/magazine/wt550m9{
-	pixel_x = -6;
-	pixel_y = 10
-	},
-/obj/item/storage/toolbox/ammo/c46{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/security/armory)
 "Pa" = (
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 5
@@ -4796,31 +4821,6 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/starboard)
-"XN" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/obj/structure/window/reinforced/survival_pod{
-	dir = 4
-	},
-/obj/structure/guncloset{
-	anchored = 1
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/light/directional/north,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/gun/energy/sharplite/x12/inteq{
-	pixel_x = 0;
-	pixel_y = -6
-	},
-/obj/item/gun/ballistic/automatic/smg/resolution/inteq,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/security/armory)
 "XZ" = (
 /obj/structure/platform{
 	dir = 1
@@ -5436,8 +5436,8 @@ aY
 "}
 (12,1,1) = {"
 Xy
-OT
-Ov
+ez
+nu
 Xy
 vw
 Yz
@@ -5465,7 +5465,7 @@ aY
 "}
 (13,1,1) = {"
 Xy
-XN
+jw
 Us
 Xy
 Xy

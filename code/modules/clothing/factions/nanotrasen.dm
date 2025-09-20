@@ -323,6 +323,28 @@
 	icon_state = "cap_red"
 	item_state = "redcloth"
 
+/obj/item/clothing/head/helmet/m10/nanotrasen
+	name = "\improper Vigilitas Helmet"
+	desc = "A classic protective helmet utilized by Vigilitas, utilizing a M-10 pattern helmet with their color scheme!"
+	icon_state = "nt_m10helm"
+	icon = 'icons/obj/clothing/faction/nanotrasen/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/nanotrasen/head.dmi'
+
+/obj/item/clothing/head/helmet/bulletproof/x11/nanotrasen
+	name = "\improper Bulletproof Vigilitas Helmet"
+	desc = "A bulky bulletproof helmet in the X-11 pattern, utilized by Vigilitas and NT loss prevention!"
+	icon_state = "nt_x11helm"
+	icon = 'icons/obj/clothing/faction/nanotrasen/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/nanotrasen/head.dmi'
+
+/obj/item/clothing/head/helmet/riot/nanotrasen
+	name = "\improper Vigilitas Riot Helmet"
+	desc = "A resistant riot helmet produced for security detail in Vigilitas, often deployed to quell rioters in corporate grounds."
+	icon = 'icons/obj/clothing/faction/nanotrasen/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/nanotrasen/head.dmi'
+	icon_state = "riot_nanotrasen"
+	base_icon_state = "riot_nanotrasen"
+
 /obj/item/clothing/head/nanotrasen/cap/supply
 	name = "brown softcap"
 	desc = "A brown cap with N+S Logistics' compass rose logo on the front. Issued to almost every N+S employee, although its wear is optional."

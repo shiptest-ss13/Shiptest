@@ -393,25 +393,23 @@
 	icon_state = "inteq_honorable_beret"
 	supports_variations = VOX_VARIATION
 
-/obj/item/clothing/head/helmet/swat/inteq
-	name = "inteq SWAT helmet"
-	desc = "A robust and spaceworthy helmet with an opaque gold visor. There is an insignia on the earpad with the letters 'IRMG' on it."
+/obj/item/clothing/head/helmet/bulletproof/x11/inteq
+	name = "inteq X-11 helmet"
+	desc = "A robust bulletproof helmet utilizing the Bezuts-made X-11 format. There is an insignia on the earpad with the letters 'IRMG' on it."
 	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
-	icon_state = "inteq_swat"
+	icon_state = "inteq_x11helm"
 	item_state = "inteq_swat"
 	can_flashlight = TRUE
-	flags_inv = HIDEHAIR
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 	content_overlays = TRUE
 
-/obj/item/clothing/head/helmet/inteq
-	name = "inteq helmet"
-	desc = "A standard issue helmet in the colors of the IRMG. It doesn't feel special in any way."
+/obj/item/clothing/head/helmet/m10/inteq
+	name = "inteq M-10 helmet"
+	desc = "A standard issue M-10 helmet in the colors of the IRMG. It doesn't feel special in any way."
 	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
-	icon_state = "inteq_helmet"
-	icon_state = "inteq_helmet"
+	icon_state = "inteq_m10helm"
 	can_flashlight = TRUE
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/inteq/vox.dmi'
