@@ -11,6 +11,7 @@
 #define RUINTYPE_DESERT "Desert"
 #define RUINTYPE_WATER "Water"
 #define RUINTYPE_BATTLEFIELD "Battlefield"
+#define RUINTYPE_MOON "Moon"
 
 /// do not actually use this for your ruin type, this is for the ruintype_to_list proc
 #define RUINTYPE_EVERYTHING "Everything"
@@ -29,6 +30,7 @@
 	RUINTYPE_BEACH,\
 	RUINTYPE_WASTE,\
 	RUINTYPE_YELLOW,\
+	RUINTYPE_MOON,\
 	RUINTYPE_EVERYTHING)
 
 /proc/ruintype_to_list(ruintype)
