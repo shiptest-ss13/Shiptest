@@ -42,7 +42,7 @@
 	minbodytemp = 0
 	maxbodytemp = 1500
 	faction = list("carp", "mining")
-	movement_type = FLYING
+	is_flying_animal = TRUE
 	pressure_resistance = 200
 
 	var/random_color = TRUE //if the carp uses random coloring

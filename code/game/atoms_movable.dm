@@ -38,7 +38,11 @@
 	var/list/client_mobs_in_contents // This contains all the client mobs within this container
 	var/list/acted_explosions	//for explosion dodging
 	var/datum/forced_movement/force_moving = null	//handled soley by forced_movement.dm
-	///In case you have multiple types, you automatically use the most useful one. IE: Skating on ice, flippers on water, flying over chasm/space, etc. Should only be changed through setMovetype()
+	/**
+	* In case you have multiple types, you automatically use the most useful one.
+	* IE: Skating on ice, flippers on water, flying over chasm/space, etc.
+	* I reccomend you use the movetype_handler system and not modify this directly, especially for living mobs.
+	*/
 	var/movement_type = GROUND
 	var/atom/movable/pulling
 	var/grab_state = 0
@@ -770,13 +774,6 @@
 	for (var/atom/movable/AM as anything in src)
 		AM.on_z_change(old_z, new_z)
 
-///Proc to modify the movement_type and hook behavior associated with it changing.
-/atom/movable/proc/setMovetype(newval)
-	if(movement_type == newval)
-		return
-	. = movement_type
-	movement_type = newval
-
 /**
  * Called when a movable changes z-levels.
  *
@@ -1121,19 +1118,6 @@
 		return FALSE
 	LAZYADD(acted_explosions, ex_id)
 	return TRUE
-
-//TODO: Better floating
-/atom/movable/proc/float(on)
-	if(throwing)
-		return
-	if(on && !(movement_type & FLOATING))
-		animate(src, pixel_y = 2, time = 10, loop = -1, flags = ANIMATION_RELATIVE)
-		animate(pixel_y = -2, time = 10, loop = -1, flags = ANIMATION_RELATIVE)
-		setMovetype(movement_type | FLOATING)
-	else if (!on && (movement_type & FLOATING))
-		animate(src, pixel_y = initial(pixel_y), time = 10)
-		setMovetype(movement_type & ~FLOATING)
-
 
 /* Language procs
 * Unless you are doing something very specific, these are the ones you want to use.
