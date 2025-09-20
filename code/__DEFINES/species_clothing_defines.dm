@@ -1,5 +1,6 @@
 #define DIGITIGRADE_PATH 'icons/mob/species/misc/digitigrade.dmi'
 #define DIGITIGRADE_SHOES_PATH 'icons/mob/species/misc/digitigrade_shoes.dmi'
+#define DIGITIGRADE_ACCESSORY_PATH 'icons/mob/species/misc/digitigrade_accessory.dmi'
 #define DIGITIGRADE_SUIT_PATH 'icons/mob/species/misc/digitigrade_suits.dmi'
 
 ///HUMAN PATHS
@@ -19,6 +20,7 @@
 #define VOX_UNIFORM_PATH 'icons/mob/species/vox/onmob_uniform_vox.dmi'
 #define VOX_BACK_PATH 'icons/mob/species/vox/onmob_back_vox.dmi'
 #define VOX_SHOES_PATH 'icons/mob/species/vox/onmob_feet_vox.dmi'
+#define VOX_ACCESSORY_PATH 'icons/mob/species/vox/onmob_accessory_vox.dmi'
 #define VOX_SUIT_PATH 'icons/mob/species/vox/onmob_suit_vox.dmi'
 #define VOX_EARS_PATH 'icons/mob/species/vox/onmob_ears_vox.dmi'
 #define VOX_MASK_PATH 'icons/mob/species/vox/onmob_mask_vox.dmi'
@@ -35,6 +37,7 @@
 #define KEPORI_UNIFORM_PATH 'icons/mob/species/kepori/onmob_uniform_kepori.dmi'
 #define KEPORI_BACK_PATH 'icons/mob/species/kepori/onmob_back_kepori.dmi'
 #define KEPORI_SHOES_PATH 'icons/mob/species/kepori/onmob_feet_kepori.dmi'
+#define KEPORI_ACCESSORY_PATH 'icons/mob/species/kepori/onmob_accessory_kepori.dmi'
 #define KEPORI_SUIT_PATH 'icons/mob/species/kepori/onmob_suit_kepori.dmi'
 #define KEPORI_EARS_PATH 'icons/mob/species/kepori/onmob_ears_kepori.dmi'
 #define KEPORI_MASK_PATH 'icons/mob/species/kepori/onmob_mask_kepori.dmi'
