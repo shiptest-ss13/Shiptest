@@ -942,7 +942,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 			return TRUE
 	return FALSE
 
-/obj/machinery/airalarm/AltClick(mob/user)
+/obj/machinery/airalarm/attack_hand_secondary(mob/user, list/modifiers)
 	..()
 	if(!user.canUseTopic(src, !issilicon(user)) || !isturf(loc))
 		return
