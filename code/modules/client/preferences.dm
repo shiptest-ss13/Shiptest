@@ -2125,7 +2125,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(istype(pref_species, /datum/species/ipc))
 						selectAdj = input(user, "In one word, how would you describe your character's appereance?", "Character Preference", generic_adjective) as null|anything in GLOB.ipc_preference_adjectives
 					else
-						selectAdj = input(user, "In one word, how would you describe your character's appereance?", "Character Preference", generic_adjective) as null|anything in GLOB.preference_adjectives
+						selectAdj = input(user, "In one word, how would you describe your character's appereance?", "Character Preference", generic_adjective) as null|anything in GLOB.organic_preference_adjectives
 					if(selectAdj)
 						generic_adjective = selectAdj
 
