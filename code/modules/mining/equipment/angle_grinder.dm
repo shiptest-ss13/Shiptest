@@ -22,7 +22,7 @@
 	flags_1 = CONDUCT_1
 	force = 13
 	armour_penetration = 5
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_NORMAL
 	item_flags = ABSTRACT
 	attack_verb = list("lacerated", "ripped", "sliced", "sawed", "cut", "chopped", "diced")
 	hitsound = 'sound/weapons/anglegrinder.ogg'
@@ -119,7 +119,7 @@
 	force = 5
 	two_hand_force = 28
 	armour_penetration = 16
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_NORMAL
 	item_flags = ABSTRACT
 	attack_verb = list("lacerated", "ripped", "burned", "sliced", "cauterized", "seared", "diced")
 	hitsound = 'sound/weapons/blade1.ogg'
