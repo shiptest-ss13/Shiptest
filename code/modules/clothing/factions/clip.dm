@@ -169,6 +169,11 @@
 	item_state = "armor_correspondant"
 	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION_SAME_ICON_FILE
 
+/obj/item/clothing/suit/armor/vest/clip_correspondent/Initialize()
+	. = ..()
+	if(allowed)
+		allowed += list(/obj/item/bodycamera/broadcast_camera) // i mean. come on
+
 // biosuits
 
 /obj/item/clothing/suit/bio_suit/bard

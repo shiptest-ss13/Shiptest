@@ -247,14 +247,16 @@
 /datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
 	switch(rand(1,12))
-		if(1 to 4)
+		if(1 to 3)
 			for(var/i in 1 to rand(2,3))
 				. += capitalize(pick(GLOB.alphabet))
 			. += "-"
 			. += "[pick(rand(1,999))]"
-		if(4 to 9)
+		if(3 to 5)
+			. += "[pick(GLOB.planet_names)]"
+		if(5 to 7)
 			. += "[pick(GLOB.planet_names)] \Roman[rand(1,9)]"
-		if(10, 11)
+		if(8 to 11)
 			. += "[pick(GLOB.planet_prefixes)] [pick(GLOB.planet_names)]"
 		if(12)
 			. += "[capitalize(pick(GLOB.adjectives))] [pick(GLOB.planet_names)]"
