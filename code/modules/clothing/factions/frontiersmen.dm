@@ -243,6 +243,7 @@
 	icon = 'icons/obj/clothing/faction/frontiersmen/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/mask.dmi'
 	resistance_flags = FIRE_PROOF
+	supports_variations = SNOUTED_VARIATION
 
 //////////
 //Neck//
