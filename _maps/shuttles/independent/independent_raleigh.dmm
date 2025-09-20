@@ -2296,14 +2296,15 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "yZ" = (
-/obj/docking_port/mobile{
-	dir = 4;
-	name = "hunter shuttle";
-	port_direction = 2;
-	preferred_direction = 4
+/obj/docking_port/stationary{
+	dir = 8;
+	dwidth = 4;
+	height = 30;
+	width = 11;
+	name = "Raleigh Stern Dock"
 	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering/atmospherics)
+/turf/template_noop,
+/area/template_noop)
 "zc" = (
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 4
@@ -2633,14 +2634,14 @@
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm/captain)
 "CF" = (
-/obj/docking_port/stationary{
-	dir = 8;
-	dwidth = 4;
-	height = 15;
-	width = 11
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 4;
+	port_direction = 2;
+	preferred_direction = 4
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "CG" = (
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -4842,6 +4843,7 @@ OV
 OV
 OV
 OV
+ci
 OV
 OV
 OV
@@ -4856,8 +4858,7 @@ OV
 OV
 OV
 OV
-OV
-OV
+Cl
 OV
 OV
 OV
@@ -4882,6 +4883,9 @@ OV
 OV
 OV
 OV
+XG
+OV
+ci
 OV
 OV
 OV
@@ -4896,12 +4900,9 @@ OV
 OV
 OV
 OV
+Cl
 OV
-OV
-OV
-OV
-OV
-OV
+Cl
 OV
 OV
 OV
@@ -4924,26 +4925,26 @@ OV
 OV
 OV
 OV
+XG
+OV
+ci
+WD
+WD
 OV
 OV
 OV
 OV
 OV
+yZ
 OV
 OV
 OV
 OV
+WD
+lK
+Cl
 OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
+Cl
 OV
 OV
 OV
@@ -4966,258 +4967,6 @@ OV
 OV
 OV
 OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-"}
-(5,1,1) = {"
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-"}
-(6,1,1) = {"
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-"}
-(7,1,1) = {"
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-ci
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-yZ
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-"}
-(8,1,1) = {"
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-XG
-OV
-ci
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-Cl
-OV
-Cl
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-"}
-(9,1,1) = {"
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-XG
-OV
-ci
-WD
-WD
-OV
-OV
-OV
-OV
-OV
-CF
-OV
-OV
-OV
-OV
-WD
-lK
-Cl
-OV
-Cl
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-"}
-(10,1,1) = {"
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
 Wm
 XG
 XG
@@ -5227,7 +4976,7 @@ hN
 XG
 BH
 OV
-BH
+CF
 BH
 OV
 BH
@@ -5249,7 +4998,7 @@ OV
 OV
 OV
 "}
-(11,1,1) = {"
+(5,1,1) = {"
 OV
 OV
 OV
@@ -5291,7 +5040,7 @@ OV
 OV
 OV
 "}
-(12,1,1) = {"
+(6,1,1) = {"
 OV
 OV
 OV
@@ -5333,7 +5082,7 @@ OV
 OV
 OV
 "}
-(13,1,1) = {"
+(7,1,1) = {"
 OV
 OV
 OV
@@ -5375,7 +5124,7 @@ OV
 OV
 OV
 "}
-(14,1,1) = {"
+(8,1,1) = {"
 OV
 OV
 FK
@@ -5417,7 +5166,7 @@ Za
 OV
 OV
 "}
-(15,1,1) = {"
+(9,1,1) = {"
 OV
 OV
 WD
@@ -5459,7 +5208,7 @@ WD
 OV
 OV
 "}
-(16,1,1) = {"
+(10,1,1) = {"
 OV
 OV
 WD
@@ -5501,7 +5250,7 @@ WD
 OV
 OV
 "}
-(17,1,1) = {"
+(11,1,1) = {"
 OV
 Rz
 uW
@@ -5543,7 +5292,7 @@ bP
 bP
 OV
 "}
-(18,1,1) = {"
+(12,1,1) = {"
 OV
 WD
 uW
@@ -5585,7 +5334,7 @@ bP
 WD
 OV
 "}
-(19,1,1) = {"
+(13,1,1) = {"
 OV
 WD
 uW
@@ -5627,7 +5376,7 @@ bP
 WD
 OV
 "}
-(20,1,1) = {"
+(14,1,1) = {"
 Rz
 uW
 uW
@@ -5669,7 +5418,7 @@ bP
 bP
 ic
 "}
-(21,1,1) = {"
+(15,1,1) = {"
 OV
 FE
 If
@@ -5711,7 +5460,7 @@ PB
 bP
 OV
 "}
-(22,1,1) = {"
+(16,1,1) = {"
 OV
 FE
 xx
@@ -5753,7 +5502,7 @@ ql
 bF
 OV
 "}
-(23,1,1) = {"
+(17,1,1) = {"
 OV
 sP
 FE
@@ -5795,7 +5544,7 @@ bF
 ft
 OV
 "}
-(24,1,1) = {"
+(18,1,1) = {"
 OV
 OV
 sP
@@ -5837,7 +5586,7 @@ ft
 OV
 OV
 "}
-(25,1,1) = {"
+(19,1,1) = {"
 OV
 OV
 OV
@@ -5879,7 +5628,7 @@ OV
 OV
 OV
 "}
-(26,1,1) = {"
+(20,1,1) = {"
 OV
 OV
 OV
@@ -5921,7 +5670,7 @@ OV
 OV
 OV
 "}
-(27,1,1) = {"
+(21,1,1) = {"
 OV
 OV
 OV
@@ -5963,7 +5712,7 @@ OV
 OV
 OV
 "}
-(28,1,1) = {"
+(22,1,1) = {"
 OV
 OV
 OV
@@ -6005,7 +5754,7 @@ OV
 OV
 OV
 "}
-(29,1,1) = {"
+(23,1,1) = {"
 OV
 OV
 OV
@@ -6047,7 +5796,7 @@ OV
 OV
 OV
 "}
-(30,1,1) = {"
+(24,1,1) = {"
 OV
 OV
 OV
@@ -6089,7 +5838,7 @@ OV
 OV
 OV
 "}
-(31,1,1) = {"
+(25,1,1) = {"
 OV
 OV
 OV
@@ -6131,7 +5880,7 @@ OV
 OV
 OV
 "}
-(32,1,1) = {"
+(26,1,1) = {"
 OV
 OV
 OV
@@ -6173,7 +5922,7 @@ OV
 OV
 OV
 "}
-(33,1,1) = {"
+(27,1,1) = {"
 OV
 OV
 OV
@@ -6215,7 +5964,7 @@ OV
 OV
 OV
 "}
-(34,1,1) = {"
+(28,1,1) = {"
 OV
 OV
 OV
@@ -6257,7 +6006,7 @@ OV
 OV
 OV
 "}
-(35,1,1) = {"
+(29,1,1) = {"
 OV
 OV
 OV
@@ -6282,6 +6031,258 @@ qT
 qT
 qT
 qT
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+"}
+(30,1,1) = {"
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+"}
+(31,1,1) = {"
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+"}
+(32,1,1) = {"
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+"}
+(33,1,1) = {"
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+"}
+(34,1,1) = {"
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+"}
+(35,1,1) = {"
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
 OV
 OV
 OV
