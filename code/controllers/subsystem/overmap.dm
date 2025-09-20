@@ -60,7 +60,6 @@ SUBSYSTEM_DEF(overmap)
 	var/list/sector_types = pick(subtypesof(/datum/overmap_star_system/safezone))
 	default_system = create_new_star_system(new sector_types)
 	wild_system = create_new_star_system (new /datum/overmap_star_system/shiptest)
-	default_system.create_jump_point_link(wild_system, pick(GLOB.alldirs))
 	return ..()
 
 /datum/controller/subsystem/overmap/proc/spawn_new_star_system(datum/overmap_star_system/system_to_spawn=/datum/overmap_star_system)
@@ -344,7 +343,7 @@ SUBSYSTEM_DEF(overmap)
 	var/overmap_icon_state = "overmap_dark"
 
 	//Can players bluespace jump to this sector? Recommended to be FALSE if this is a punchcard or for some event
-	var/can_jump_to = FALSE
+	var/can_jump_to = TRUE
 	//can our pallete be selected randomly roundstart? set to no for subtypes or if you dont change the pallete
 	var/can_be_selected_randomly = TRUE
 
