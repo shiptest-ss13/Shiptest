@@ -963,6 +963,7 @@
 	color = "#791500"
 	},
 /obj/item/clothing/gloves/combat,
+/obj/item/storage/backpack/messenger/sec,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "fA" = (
@@ -1203,6 +1204,7 @@
 	mag_count = 3
 	},
 /obj/item/clothing/glasses/hud/security/sunglasses/ngr,
+/obj/item/storage/backpack/messenger/sec,
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm/captain)
 "gv" = (
@@ -3134,6 +3136,10 @@
 	pixel_y = 1
 	},
 /obj/machinery/light/directional/north,
+/obj/item/storage/box/ammo/c10mm{
+	pixel_y = -12;
+	pixel_x = 5
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "qy" = (
@@ -4049,6 +4055,7 @@
 /obj/item/storage/belt/military/assault,
 /obj/item/radio/headset/syndicate/alt/leader,
 /obj/item/clothing/glasses/hud/security/sunglasses/ngr,
+/obj/item/storage/backpack/messenger/sec,
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm/commad)
 "vh" = (
@@ -7097,8 +7104,11 @@
 	dir = 4
 	},
 /obj/item/clothing/glasses/sunglasses,
-/obj/item/storage/guncase/pistol/ringneck,
 /obj/item/clothing/glasses/hud/security/sunglasses/ngr,
+/obj/item/storage/guncase/pistol/pc76{
+	mag_count = 3
+	},
+/obj/item/storage/backpack/messenger/sec,
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm/commad)
 "MN" = (
@@ -7457,6 +7467,7 @@
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/gear_pack/anglegrinder,
+/obj/item/storage/backpack/duffelbag/engineering,
 /turf/open/floor/pod/dark,
 /area/ship/engineering)
 "Ob" = (
@@ -8370,6 +8381,7 @@
 	secure = 1
 	},
 /obj/item/clothing/gloves/combat,
+/obj/item/storage/backpack/messenger/sec,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "RX" = (
