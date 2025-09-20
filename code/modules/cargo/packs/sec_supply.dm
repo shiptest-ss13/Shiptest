@@ -160,7 +160,7 @@
 	name = "Solarian Ceremonial Sabre Crate"
 	desc = "Contains one ceremonial Solarian sabre. To keep tradition alive. Stile quite sharp."
 	cost = 750
-	contains = list(/obj/item/melee/sword/sabre/solgov)
+	contains = list(/obj/item/storage/belt/sabre/solgov)
 	crate_name = "solarian ceremonial sabre crate"
 	faction = /datum/faction/solgov
 	faction_discount = 0
@@ -170,7 +170,7 @@
 	name = "SUNS Dueling Sabre Crate"
 	desc = "Contains a single solarian blade. For the academian."
 	cost = 750
-	contains = list(/obj/item/melee/sword/sabre/suns)
+	contains = list(/obj/item/storage/belt/sabre/suns)
 	crate_name = "student's sabre crate"
 	faction = /datum/faction/syndicate/suns
 	faction_discount = 0
@@ -180,7 +180,7 @@
 	name = "SUNS Sabre Crate"
 	desc = "Contains a elegant solarian blade. For the distinguished."
 	cost = 1000
-	contains = list(/obj/item/melee/sword/sabre/suns/captain)
+	contains = list(/obj/item/storage/belt/sabre/suns/captain)
 	crate_name = "suns captain sabre crate"
 	faction = /datum/faction/syndicate/suns
 	faction_discount = 0
@@ -190,7 +190,7 @@
 	name = "SUNS Cane Sabre Crate"
 	desc = "Contains a blade sheathed in a cane. For the diligent."
 	cost = 800
-	contains = list(/obj/item/melee/sword/sabre/suns/cmo)
+	contains = list(/obj/item/storage/belt/sabre/suns/cmo)
 	crate_name = "student's sabre crate"
 	faction = /datum/faction/syndicate/suns
 	faction_discount = 0
@@ -210,7 +210,7 @@
 	name = "PGF Boarding Cutlass Crate"
 	desc = "Contains a finely crafted cutlass, issued to boarding parties of the Pan-Gezena Federation."
 	cost = 750
-	contains = list(/obj/item/melee/sword/sabre/pgf)
+	contains = list(/obj/item/storage/belt/sabre/pgf)
 	crate_name = "boarding cutlass crate"
 	faction = /datum/faction/pgf
 	faction_discount = 0
