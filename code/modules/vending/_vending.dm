@@ -188,7 +188,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 		build_inventory(premium, coin_records)
 
 	if(restock_hourly)
-		addtimer(CALLBACK(src, PROC_REF(refill_inventory_full)), 2 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+		addtimer(CALLBACK(src, PROC_REF(refill_inventory_full)), 60 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
 	slogan_list = splittext(product_slogans, ";")
 	// So not all machines speak at the exact same time.
