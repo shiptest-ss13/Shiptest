@@ -62,23 +62,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"bL" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "falmouth_cargo_blast";
-	name = "Cargo Bay Blast Door"
-	},
-/obj/docking_port/mobile{
-	dir = 4;
-	launch_status = 0;
-	port_direction = 2;
-	preferred_direction = 4
-	},
-/turf/open/floor/plasteel/patterned/ridged,
-/area/ship/cargo)
 "bO" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -195,10 +178,13 @@
 	dir = 8
 	},
 /obj/docking_port/stationary{
+	dheight = 1;
 	dir = 8;
-	dwidth = 15;
-	height = 15;
-	width = 30
+	dwidth = 20;
+	height = 30;
+	name = "Falmouth Stern Dock";
+	width = 40;
+	disable_on_owner_ship_dock = 1
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -1297,6 +1283,19 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
+"Cp" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 4;
+	port_direction = 2;
+	preferred_direction = 4;
+	launch_status = 0
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Dd" = (
 /obj/structure/closet/secure_closet/armorycage{
 	anchored = 1;
@@ -2404,8 +2403,10 @@
 /area/ship/cargo)
 "Vm" = (
 /obj/docking_port/stationary{
-	dwidth = 4;
-	height = 15;
+	dheight = 1;
+	dwidth = 3;
+	height = 30;
+	name = "Falmouth Port Dock";
 	width = 9
 	},
 /turf/template_noop,
@@ -2592,7 +2593,7 @@ ZY
 FF
 FS
 eC
-FS
+Cp
 FS
 HN
 ZY
@@ -2614,7 +2615,7 @@ et
 yV
 AR
 UE
-bL
+UE
 BT
 yV
 et

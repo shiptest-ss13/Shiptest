@@ -414,11 +414,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "cW" = (
-/obj/docking_port/mobile{
-	dir = 2;
-	port_direction = 8;
-	preferred_direction = 4
-	},
 /obj/machinery/camera/autoname,
 /obj/machinery/light/floor,
 /obj/item/radio/intercom/directional/north,
@@ -3963,6 +3958,13 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
+"BK" = (
+/obj/docking_port/mobile{
+	port_direction = 4;
+	preferred_direction = 4
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "BO" = (
 /obj/machinery/power/smes/shuttle/precharged,
 /obj/machinery/door/window/northleft{
@@ -8123,7 +8125,7 @@ gg
 (24,1,1) = {"
 zW
 zW
-zW
+wq
 QV
 gd
 KQ
@@ -8155,12 +8157,12 @@ uk
 Mg
 wh
 ww
-zW
+BK
 "}
 (25,1,1) = {"
 zW
 zW
-zW
+wq
 Gs
 HA
 TZ
@@ -8192,7 +8194,7 @@ CD
 Bl
 Bg
 wq
-zW
+wq
 "}
 (26,1,1) = {"
 zW

@@ -105,6 +105,17 @@
 	},
 /turf/open/floor/suns/grid,
 /area/ship/storage)
+"bw" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 4;
+	dwidth = 25;
+	height = 30;
+	name = "Mercury Port Bow Dock";
+	width = 41
+	},
+/turf/template_noop,
+/area/template_noop)
 "bI" = (
 /obj/structure/toilet{
 	dir = 8;
@@ -273,12 +284,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "ek" = (
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 8;
-	launch_status = 0;
-	preferred_direction = 4
-	},
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "mercurycargo"
@@ -692,9 +697,12 @@
 /area/ship/hallway/central)
 "lj" = (
 /obj/docking_port/stationary{
-	dwidth = 15;
-	width = 30;
-	height = 15
+	dheight = 1;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 20;
+	height = 30;
+	name = "Mercury Beam Dock";
+	width = 40
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -1365,6 +1373,19 @@
 "vL" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm)
+"vR" = (
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/external{
+	req_ship_access = 0
+	},
+/obj/docking_port/mobile{
+	dir = 2;
+	port_direction = 8;
+	preferred_direction = 4;
+	launch_status = 0
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/maintenance/fore)
 "wa" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521"
@@ -3775,7 +3796,7 @@ xZ
 "}
 (19,1,1) = {"
 lj
-nW
+vR
 XF
 YD
 dB
@@ -3999,7 +4020,7 @@ xr
 xr
 xr
 xr
-xr
+bw
 xr
 xr
 xr

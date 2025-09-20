@@ -657,7 +657,7 @@
 			return SHUTTLE_OUR_MOBILEDOCK_FORBIDS_DOCKING
 
 	//if the docking port has disable_on_owner_ship_dock set and the target ship is docked to something, don't land. very much don't land.
-	if(S.disable_on_owner_ship_dock && S.owner_ship.docked)
+	if(S.disable_on_owner_ship_dock && (!istype(S.owner_ship.docked, /obj/docking_port/stationary/transit)))
 		return SHUTTLE_TARGET_MOBILEDOCK_FORBIDS_DOCKING
 
 	for(var/turf/closed/indestructible/edgeturf as anything in return_ordered_turfs(S.x, S.y, S.z, S.dir))

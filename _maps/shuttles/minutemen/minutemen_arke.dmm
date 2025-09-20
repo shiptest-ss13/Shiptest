@@ -391,16 +391,6 @@
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
-"mR" = (
-/obj/docking_port/mobile{
-	dir = 2;
-	launch_status = 0;
-	port_direction = 8;
-	preferred_direction = 4;
-	name = "arke dock"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew)
 "na" = (
 /obj/machinery/button/door{
 	dir = 1;
@@ -708,11 +698,12 @@
 /area/ship/bridge)
 "tV" = (
 /obj/docking_port/stationary{
-	width = 30;
-	height = 15;
-	dwidth = 7;
-	name = "Arke External Airlock";
-	dir = 4
+	dheight = 1;
+	dir = 4;
+	dwidth = 15;
+	height = 30;
+	name = "Arke Forward Bow Dock";
+	width = 40
 	},
 /turf/template_noop,
 /area/space)
@@ -774,6 +765,10 @@
 "uW" = (
 /obj/machinery/door/airlock/external{
 	dir = 4
+	},
+/obj/docking_port/mobile{
+	dir = 8;
+	preferred_direction = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -1355,11 +1350,11 @@
 /area/ship/cargo)
 "Ly" = (
 /obj/docking_port/stationary{
-	width = 30;
+	width = 40;
 	height = 15;
 	dwidth = 1;
 	dheight = 3;
-	name = "Arke Cargo Bay"
+	name = "Arke Port Dock"
 	},
 /turf/template_noop,
 /area/space)
@@ -2055,7 +2050,7 @@ EK
 mD
 LX
 HU
-mR
+cP
 "}
 (12,1,1) = {"
 pS
