@@ -1,23 +1,24 @@
-import { useBackend, useLocalState } from '../backend';
 import {
-  Button,
-  LabeledList,
-  Section,
-  ProgressBar,
-  Flex,
   Box,
-  Table,
+  Button,
   Collapsible,
-  Input,
-  NumberInput,
   Dimmer,
+  Flex,
   Icon,
-} from '../components';
-import { Window } from '../layouts';
-import { capitalize } from 'common/string';
+  Input,
+  LabeledList,
+  NumberInput,
+  ProgressBar,
+  Section,
+  Table,
+} from 'tgui-core/components';
+import { capitalize } from 'tgui-core/string';
 
-export const Autolathe = (props, context) => {
-  const { act, data } = useBackend(context);
+import { useBackend, useLocalState } from '../backend';
+import { Window } from '../layouts';
+
+export const Autolathe = (props) => {
+  const { act, data } = useBackend();
   // Extract `health` and `color` variables from the `data` object.
   const {
     materialtotal,
@@ -29,12 +30,11 @@ export const Autolathe = (props, context) => {
     active,
   } = data;
   const [current_category, setCategory] = useLocalState(
-    context,
     'current_category',
-    'None'
+    'None',
   );
   const filteredmaterials = materials.filter(
-    (material) => material.mineral_amount > 0
+    (material) => material.mineral_amount > 0,
   );
   return (
     <Window title="Autolathe" theme="ntos_terminal" width={600} height={700}>
@@ -59,9 +59,9 @@ export const Autolathe = (props, context) => {
                 minValue={0}
                 maxValue={materialsmax}
                 ranges={{
-                  'good': [materialsmax * 0.85, materialsmax],
-                  'average': [materialsmax * 0.25, materialsmax * 0.85],
-                  'bad': [0, materialsmax * 0.25],
+                  good: [materialsmax * 0.85, materialsmax],
+                  average: [materialsmax * 0.25, materialsmax * 0.85],
+                  bad: [0, materialsmax * 0.25],
                 }}
               >
                 {materialtotal + '/' + materialsmax + ' cm³'}
@@ -246,14 +246,10 @@ export const Autolathe = (props, context) => {
   );
 };
 
-const MaterialRow = (props, context) => {
+const MaterialRow = (props) => {
   const { material, materialsmax, onRelease } = props;
 
-  const [amount, setAmount] = useLocalState(
-    context,
-    'amount' + material.name,
-    1
-  );
+  const [amount, setAmount] = useLocalState('amount' + material.name, 1);
 
   const amountAvailable = Math.floor(material.amount);
   return (
@@ -296,7 +292,7 @@ const MaterialRow = (props, context) => {
               minValue={1}
               maxValue={material.sheets_amount}
               value={amount}
-              onChange={(e, value) => setAmount(value)}
+              onChange={(value) => setAmount(value)}
             />
             <Button
               disabled={material.sheets_amount < 1}

@@ -1,13 +1,14 @@
 import { filter, sortBy } from 'common/collections';
-import { flow } from 'common/fp';
-import { toFixed } from 'common/math';
+import { LabeledList, ProgressBar, Section } from 'tgui-core/components';
+import { flow } from 'tgui-core/fp';
+import { toFixed } from 'tgui-core/math';
+
 import { useBackend } from '../backend';
-import { LabeledList, ProgressBar, Section } from '../components';
 import { getGasColor } from '../constants';
 import { NtosWindow } from '../layouts';
 
-export const NtosAtmos = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtosAtmos = (props) => {
+  const { act, data } = useBackend();
   const { AirTemp, AirPressure, AirData } = data;
   const gases = flow([
     filter((gas) => gas.percentage >= 0.01),
@@ -15,7 +16,7 @@ export const NtosAtmos = (props, context) => {
   ])(AirData || []);
   const gasMaxPercentage = Math.max(1, ...gases.map((gas) => gas.percentage));
   return (
-    <NtosWindow width={300} height={350} resizable>
+    <NtosWindow width={300} height={350}>
       <NtosWindow.Content scrollable>
         <Section>
           <LabeledList>
