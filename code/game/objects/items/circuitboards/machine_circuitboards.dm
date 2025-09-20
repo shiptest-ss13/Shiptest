@@ -104,10 +104,10 @@
 	build_path = /obj/machinery/telecomms/processor
 	req_components = list(
 		/obj/item/stock_parts/manipulator = 3,
+		/obj/item/stack/cable_coil = 2,
 		/obj/item/stock_parts/subspace/filter = 1,
 		/obj/item/stock_parts/subspace/treatment = 2,
 		/obj/item/stock_parts/subspace/analyzer = 1,
-		/obj/item/stack/cable_coil = 2,
 		/obj/item/stock_parts/subspace/amplifier = 1)
 
 /obj/item/circuitboard/machine/telecomms/receiver
@@ -127,7 +127,9 @@
 	req_components = list(
 		/obj/item/stock_parts/manipulator = 2,
 		/obj/item/stack/cable_coil = 2,
-		/obj/item/stock_parts/subspace/filter = 2)
+		/obj/item/stock_parts/subspace/filter = 2,
+		/obj/item/stock_parts/subspace/transmitter = 4
+		)
 
 /obj/item/circuitboard/machine/telecomms/server
 	name = "Telecommunication Server (Machine Board)"
