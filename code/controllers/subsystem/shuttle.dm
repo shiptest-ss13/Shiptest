@@ -60,7 +60,7 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/request_jump(modifier = 1)
 	jump_mode = BS_JUMP_CALLED
 	jump_timer = addtimer(CALLBACK(src, PROC_REF(initiate_jump)), jump_request_time * modifier, TIMER_STOPPABLE)
-	priority_announce("Mobile ships preparing for jump. ETD: [jump_request_time * modifier / (1 MINUTES)] minutes.", null, null, "Priority")
+	priority_announce("Mobile ships preparing for jump. ETD: [jump_request_time * modifier / (1 MINUTES)] minutes.", null, null, ANNOUNCEMENT_PRIORITY)
 
 /// Cancels a currently requested bluespace jump. Can only be done after the jump has been requested but before the jump has actually begun.
 /datum/controller/subsystem/shuttle/proc/cancel_jump()
@@ -68,7 +68,7 @@ SUBSYSTEM_DEF(shuttle)
 		return
 	deltimer(jump_timer)
 	jump_mode = BS_JUMP_IDLE
-	priority_announce("Bluespace jump cancelled.", null, null, "Priority")
+	priority_announce("Bluespace jump cancelled.", null, null, ANNOUNCEMENT_PRIORITY)
 
 /// Initiates a bluespace jump, ending the round after a delay of jump_completion_time deciseconds. This cannot be interrupted by conventional means.
 /datum/controller/subsystem/shuttle/proc/initiate_jump()
@@ -80,7 +80,7 @@ SUBSYSTEM_DEF(shuttle)
 		M.on_emergency_launch()
 
 	jump_timer = addtimer(VARSET_CALLBACK(src, jump_mode, BS_JUMP_COMPLETED), jump_completion_time, TIMER_STOPPABLE)
-	priority_announce("Jump initiated. ETA: [jump_completion_time / (1 MINUTES)] minutes.", null, null, "Priority")
+	priority_announce("Jump initiated. ETA: [jump_completion_time / (1 MINUTES)] minutes.", null, null, ANNOUNCEMENT_PRIORITY)
 
 	INVOKE_ASYNC(SSticker, TYPE_PROC_REF(/datum/controller/subsystem/ticker,poll_hearts))
 
