@@ -205,7 +205,7 @@
 	desc = "A member of the brutal Frontiersman terrorist fleet! Bedecked in military-grade armor, they swagger their shotgun about with a boldness uncommon even among other Frontiersmen."
 	icon_state = "frontiersmanrangedelite"
 	shoot_point_blank = TRUE
-	projectilesound = 'sound/weapons/gun/shotgun/shot.ogg'
+	projectilesound = 'sound/weapons/gun/shotgun/brimstone.ogg'
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper
 	r_hand = /obj/item/gun/ballistic/shotgun/brimstone
