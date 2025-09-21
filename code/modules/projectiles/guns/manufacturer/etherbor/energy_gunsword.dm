@@ -69,7 +69,7 @@
 	desc = "The Etherbor Industries VG-F3 is a further refinement of the antiquated beam volleygun concept. The first of its kind to find commercial success in the modern day, the VG-F3 has found a comfortable niche with law enforcement and home defense markets galaxy-wide."
 	icon_state = "kalixnock"
 	item_state = "kalixnock"
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 
 	modifystate = TRUE
 
@@ -121,7 +121,7 @@
 	desc = "Piggybacking off the success of the VG-F3, the Etherbor Industries VG-A5 Beam Volleygun was designed specifically for contract sale to the PGFMC. With the addition of a stronger capacitor and a forward grip, the VG-A5 has found itself popular among marine raiders for its ability to take control of tight spaces."
 	icon_state = "pgfnock"
 	item_state = "pgfnock"
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 
 	modifystate = TRUE
 
