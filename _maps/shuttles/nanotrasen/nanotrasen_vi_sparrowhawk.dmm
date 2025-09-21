@@ -361,10 +361,7 @@
 /area/ship/cargo)
 "dC" = (
 /obj/structure/window/reinforced,
-/obj/structure/closet/secure_closet/engineering_electrical{
-	req_access = list(11);
-	req_access_txt = "0"
-	},
+/obj/structure/closet/secure_closet/engineering_electrical,
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_x = 22
@@ -1266,14 +1263,14 @@
 /obj/effect/turf_decal/trimline/opaque/vired/filled/line{
 	dir = 5
 	},
-/obj/item/gun/energy/laser,
-/obj/item/gun/energy/laser/scatter/shotty,
 /obj/structure/window/plasma/reinforced{
 	dir = 1
 	},
 /obj/structure/guncloset{
 	req_access_txt = "3"
 	},
+/obj/item/gun/energy/sharplite/x46,
+/obj/item/gun/energy/sharplite/x12/empty_cell,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "rM" = (
@@ -1333,13 +1330,11 @@
 /obj/effect/turf_decal/trimline/opaque/vired/filled/line{
 	dir = 1
 	},
-/obj/item/gun/energy/e_gun/mini,
-/obj/item/gun/energy/e_gun/mini,
-/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
-/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
 /obj/structure/window/plasma/reinforced{
 	dir = 1
 	},
+/obj/item/gun/ballistic/automatic/pistol/challenger/no_mag,
+/obj/item/gun/ballistic/automatic/pistol/challenger/no_mag,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "sO" = (
@@ -1419,8 +1414,9 @@
 	pixel_y = 15
 	},
 /obj/item/storage/guncase/inherit,
-/obj/item/gun/energy/laser/captain/brazil,
-/obj/item/stock_parts/cell/gun,
+/obj/item/gun/energy/sharplite/x01,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/captain)
 "uE" = (
@@ -1667,7 +1663,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/table/reinforced,
 /obj/machinery/coffeemaker{
-	pixel_x = 0;
 	pixel_y = 7
 	},
 /turf/open/floor/plasteel,
@@ -1894,8 +1889,7 @@
 	dir = 4
 	},
 /obj/machinery/iv_drip{
-	pixel_x = -13;
-	pixel_y = 0
+	pixel_x = -13
 	},
 /obj/machinery/defibrillator_mount/loaded{
 	pixel_x = -25
@@ -3593,16 +3587,37 @@
 	icon_state = "sec_wall";
 	name = "ammunition locker"
 	},
-/obj/item/storage/box/ammo/c9mm,
-/obj/item/storage/box/ammo/c9mm,
-/obj/item/ammo_box/magazine/co9mm/empty,
-/obj/item/ammo_box/magazine/co9mm/empty,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun/mini,
-/obj/item/stock_parts/cell/gun/mini,
-/obj/item/storage/box/handcuffs,
-/obj/item/storage/box/handcuffs,
+/obj/item/storage/box/handcuffs{
+	pixel_y = -7
+	},
+/obj/item/storage/box/handcuffs{
+	pixel_y = -7
+	},
+/obj/item/ammo_box/magazine/co9mm/empty{
+	pixel_x = 12
+	},
+/obj/item/ammo_box/magazine/co9mm/empty{
+	pixel_x = 12
+	},
+/obj/item/ammo_box/magazine/co9mm/empty{
+	pixel_x = 12
+	},
+/obj/item/ammo_box/magazine/co9mm/empty{
+	pixel_x = 12
+	},
+/obj/item/stock_parts/cell/gun/sharplite{
+	pixel_y = 9
+	},
+/obj/item/stock_parts/cell/gun/sharplite{
+	pixel_y = 9
+	},
+/obj/item/storage/box/ammo/c9mm{
+	pixel_y = -8;
+	pixel_x = 8
+	},
+/obj/item/storage/box/ammo/c9mm{
+	pixel_x = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Yw" = (
