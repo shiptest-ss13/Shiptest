@@ -135,6 +135,7 @@ TURF_DECAL_COLOR_HELPER(opaque/solgovblue, "#2d2a4e", 255)
 TURF_DECAL_COLOR_HELPER(opaque/solgovgold, "#eeac2e", 255)
 TURF_DECAL_COLOR_HELPER(opaque/syndiered, "#730622", 255)
 TURF_DECAL_COLOR_HELPER(opaque/inteqbrown, "#4b2a18", 255)
+TURF_DECAL_COLOR_HELPER(opaque/inteqbrownlight, "#804433", 255)
 TURF_DECAL_COLOR_HELPER(opaque/cybersunteal, "#4C9C9C", 255)
 
 //transparent
@@ -164,6 +165,7 @@ TURF_DECAL_COLOR_HELPER(transparent/solgovblue, "#2d2a4e", 140)
 TURF_DECAL_COLOR_HELPER(transparent/solgovgold, "#eeac2e", 140)
 TURF_DECAL_COLOR_HELPER(transparent/syndiered, "#730622", 140)
 TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
+TURF_DECAL_COLOR_HELPER(transparent/inteqbrownlight, "#804433", 140)
 TURF_DECAL_COLOR_HELPER(transparent/cybersunteal, "#4C9C9C", 140)
 
 /obj/effect/turf_decal/spline/plain
@@ -197,12 +199,27 @@ TURF_DECAL_COLOR_HELPER(transparent/cybersunteal, "#4C9C9C", 140)
 /obj/effect/turf_decal/industrial/warning/full
 	icon_state = "stripefull"
 
-
 /obj/effect/turf_decal/industrial/warning/cee
 	icon_state = "stripecee"
 
 /obj/effect/turf_decal/industrial/warning/fulltile
 	icon_state = "stripefulltile"
+
+/obj/effect/turf_decal/industrial/warning/green
+	color = null
+	icon_state = "stripe_green"
+
+/obj/effect/turf_decal/industrial/warning/green/corner
+	icon_state = "stripecorner_green"
+
+/obj/effect/turf_decal/industrial/warning/green/full
+	icon_state = "stripefull_green"
+
+/obj/effect/turf_decal/industrial/warning/green/cee
+	icon_state = "stripecee_green"
+
+/obj/effect/turf_decal/industrial/warning/green/fulltile
+	icon_state = "stripefulltile_green"
 
 /obj/effect/turf_decal/industrial/custodial
 	name = "custodial stripes"

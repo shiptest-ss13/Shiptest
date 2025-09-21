@@ -41,6 +41,12 @@
 		"light brown hoodie" = "hoodielightbrown"
 	)
 
+
+/obj/item/clothing/suit/hooded/hoodie/update_appearance(updates)
+	. = ..()
+	if(isobj(hood))
+		hood.icon_state = base_icon_state
+
 /obj/item/clothing/head/hooded/hood
 	name = "hood"
 	desc = "A hood for your hoodie."

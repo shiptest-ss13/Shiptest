@@ -10,7 +10,7 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/nanotrasen/cap/security
 	suit = /obj/item/clothing/suit/armor/nanotrasen
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/commander
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/challenger
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
 	shoes = /obj/item/clothing/shoes/jackboots
 

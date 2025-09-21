@@ -173,7 +173,6 @@
 	icon_state = "none"
 
 //Ears are here because having frills+ears would overlap and be weird.
-
 /datum/sprite_accessory/frills/aquatic
 	name = "Aquatic"
 	icon_state = "aqua"
@@ -183,9 +182,16 @@
 	icon_state = "droopy"
 
 /datum/sprite_accessory/frills/ears
-	name = "Normal ears"
+	name = "Ears"
 	icon_state = "ears"
 
+/datum/sprite_accessory/frills/ears_long
+	name = "Ears (Long)"
+	icon_state = "long"
+
+/datum/sprite_accessory/frills/ears_curved
+	name = "Ears (curved)"
+	icon_state = "curved"
 //End ears
 
 /datum/sprite_accessory/frills/frillhawk

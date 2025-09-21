@@ -1493,7 +1493,7 @@
 	turret_flags = 62;
 	lethal = 1
 	},
-/turf/closed/wall/r_wall/syndicate,
+/turf/open/floor/engine/hull/rockplanet,
 /area/ruin/rockplanet/rust_base/mechbay)
 "oW" = (
 /obj/structure/cable{
@@ -1816,11 +1816,12 @@
 "rP" = (
 /obj/machinery/light/directional/south,
 /obj/structure/rack,
-/obj/item/storage/box/ammo/c9mm,
-/obj/item/storage/box/ammo/c9mm{
+/obj/effect/turf_decal/siding/thinplating,
+/obj/item/storage/box/ammo/c10mm,
+/obj/item/storage/box/ammo/c10mm{
+	pixel_x = 0;
 	pixel_y = 8
 	},
-/obj/effect/turf_decal/siding/thinplating,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)
 "rR" = (
@@ -2258,7 +2259,7 @@
 	turret_flags = 62;
 	lethal = 1
 	},
-/turf/closed/wall/r_wall/syndicate,
+/turf/open/floor/engine/hull/rockplanet,
 /area/ruin/rockplanet/rust_base/armory)
 "xq" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2491,13 +2492,12 @@
 "Av" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/rack,
-/obj/item/ammo_box/magazine/m9mm_rattlesnake{
-	pixel_x = 6
-	},
-/obj/item/ammo_box/magazine/m9mm_rattlesnake{
-	pixel_x = -3
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_box/magazine/m10mm_cottonmouth,
+/obj/item/ammo_box/magazine/m10mm_cottonmouth{
+	pixel_x = -10;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/rust_base/armory)
 "Ax" = (
@@ -2555,8 +2555,8 @@
 	dir = 1
 	},
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/pistol/rattlesnake,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonmouth,
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/rust_base/armory)
 "AZ" = (
