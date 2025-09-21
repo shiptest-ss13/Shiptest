@@ -1335,6 +1335,8 @@
 	},
 /obj/item/gun/ballistic/automatic/pistol/challenger/no_mag,
 /obj/item/gun/ballistic/automatic/pistol/challenger/no_mag,
+/obj/item/gun/energy/sharplite/x26/empty_cell,
+/obj/item/gun/energy/sharplite/x26/empty_cell,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "sO" = (
@@ -3617,6 +3619,18 @@
 	},
 /obj/item/storage/box/ammo/c9mm{
 	pixel_x = 8
+	},
+/obj/item/stock_parts/cell/gun/sharplite/plus{
+	pixel_x = -11;
+	pixel_y = 10
+	},
+/obj/item/stock_parts/cell/gun/sharplite/mini{
+	pixel_x = -9;
+	pixel_y = 10
+	},
+/obj/item/stock_parts/cell/gun/sharplite/mini{
+	pixel_x = -9;
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
