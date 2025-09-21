@@ -91,7 +91,7 @@
 	icon_state = "nanotrasenrangedsmg"
 	icon_living = "nanotrasenrangedsmg"
 	rapid = 5
-	rapid_fire_delay = 3
+	rapid_fire_delay = 2
 	casingtype = null
 	projectiletype = /obj/projectile/beam/weak/sharplite
 	r_hand = /obj/item/gun/energy/sharplite/l305
