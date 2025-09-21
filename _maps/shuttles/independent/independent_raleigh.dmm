@@ -335,12 +335,7 @@
 /area/ship/security/armory)
 "bQ" = (
 /obj/structure/chair/sofa/brown/old/corner/directional/north,
-/obj/structure/platform/wood{
-	dir = 10
-	},
-/obj/structure/railing/thin{
-	dir = 10
-	},
+/obj/structure/railing/thin,
 /turf/open/floor/wood/walnut,
 /area/ship/storage)
 "bV" = (
@@ -743,10 +738,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "hw" = (
-/obj/effect/turf_decal/stairs_wood{
-	dir = 5;
-	color = "#543C30"
-	},
+/obj/structure/chair/sofa/brown/old/directional/east,
 /turf/open/floor/wood/walnut,
 /area/ship/storage)
 "hy" = (
@@ -1073,6 +1065,7 @@
 /obj/effect/turf_decal/siding/black/corner{
 	dir = 4
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/dorm)
 "lF" = (
@@ -1394,6 +1387,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "nV" = (
@@ -1446,6 +1440,10 @@
 	dir = 6
 	},
 /obj/structure/railing/thin,
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "pA" = (
@@ -2218,14 +2216,8 @@
 /obj/structure/filingcabinet/double,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/electrical)
-"vr" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/template_noop)
 "vw" = (
 /obj/structure/chair/sofa/brown/old/left/directional/south,
-/obj/structure/platform/wood{
-	dir = 1
-	},
 /obj/machinery/computer/security/telescreen/entertainment{
 	pixel_x = 30
 	},
@@ -2666,7 +2658,6 @@
 /area/ship/hallway/central)
 "AS" = (
 /obj/structure/chair/sofa/brown/old/right/directional/north,
-/obj/structure/platform/wood,
 /obj/structure/railing/thin,
 /turf/open/floor/wood/walnut,
 /area/ship/storage)
@@ -3874,6 +3865,9 @@
 /obj/effect/turf_decal/siding/black/corner{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/dorm)
 "No" = (
@@ -4643,12 +4637,17 @@
 "VT" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/structure/chair/handrail,
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "VV" = (
 /obj/item/clothing/head/papersack/smiley{
 	pixel_y = 12;
 	pixel_x = 6
+	},
+/obj/item/reagent_containers/food/drinks/bottle/orangejuice{
+	pixel_y = 13;
+	pixel_x = -9
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/storage)
@@ -4691,12 +4690,6 @@
 /area/ship/engineering/atmospherics)
 "Wg" = (
 /obj/structure/chair/sofa/brown/old/corner/directional/east,
-/obj/structure/platform/wood{
-	dir = 9
-	},
-/obj/structure/railing/thin{
-	dir = 8
-	},
 /turf/open/floor/wood/walnut,
 /area/ship/storage)
 "Wm" = (
@@ -4827,6 +4820,7 @@
 	dir = 9
 	},
 /obj/structure/closet/crate/bin,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "XB" = (
@@ -6441,7 +6435,7 @@ OV
 OV
 OV
 YZ
-vr
+EI
 lN
 DM
 Vy
