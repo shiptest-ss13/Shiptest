@@ -2107,7 +2107,8 @@
 	dwidth = 15;
 	width = 30;
 	height = 15;
-	dir = 2
+	dir = 2;
+	name = "Junker Stern Dock"
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -2657,7 +2658,7 @@
 /obj/structure/window/reinforced/fulltile,
 /obj/docking_port/mobile{
 	launch_status = 0;
-	port_direction = 2
+	dir = 2
 	},
 /obj/structure/girder/reinforced,
 /turf/open/floor/plating,

@@ -3869,10 +3869,6 @@
 	icon_door = "sec_wall";
 	req_access_txt = "1"
 	},
-/obj/item/storage/toolbox/ammo/c10mm{
-	pixel_x = 6;
-	pixel_y = 4
-	},
 /obj/item/gun_maint_kit{
 	pixel_y = -8;
 	pixel_x = 5
@@ -3893,16 +3889,6 @@
 	pixel_x = 8;
 	pixel_y = -5
 	},
-/obj/item/ammo_box/magazine/smgm10mm{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/item/ammo_box/magazine/smgm10mm{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/item/ammo_box/magazine/m9mm_rattlesnake,
-/obj/item/ammo_box/magazine/m9mm_rattlesnake,
 /obj/item/attachment/rail_light{
 	pixel_x = -4;
 	pixel_y = -6
@@ -3919,9 +3905,25 @@
 /obj/item/reagent_containers/spray/pepper{
 	pixel_x = 8
 	},
-/obj/item/storage/toolbox/ammo/c9mm{
-	pixel_x = 9;
+/obj/item/stock_parts/cell/gun/sharplite{
+	pixel_x = 1;
+	pixel_y = 11
+	},
+/obj/item/stock_parts/cell/gun/sharplite{
+	pixel_x = -4;
 	pixel_y = 10
+	},
+/obj/item/ammo_box/magazine/wt550m9{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/ammo_box/magazine/wt550m9{
+	pixel_x = -6;
+	pixel_y = 10
+	},
+/obj/item/storage/toolbox/ammo/c46{
+	pixel_x = 8;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -4807,18 +4809,16 @@
 /obj/structure/guncloset{
 	anchored = 1
 	},
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq{
-	pixel_x = -7;
-	pixel_y = 3
-	},
-/obj/item/gun/ballistic/automatic/pistol/rattlesnake/inteq{
-	pixel_y = -6
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/gun/energy/sharplite/x12/inteq{
+	pixel_x = 0;
+	pixel_y = -6
+	},
+/obj/item/gun/ballistic/automatic/smg/resolution/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "XZ" = (
