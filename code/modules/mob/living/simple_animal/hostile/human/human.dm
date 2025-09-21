@@ -76,8 +76,13 @@
 			spread = our_gun.spread
 
 	if(ispath(armor_base, /obj/item/clothing))
+		//sigh. if only we could get the initial() value of list vars
+		var/obj/item/clothing/instance = new armor_base()
+		armor = instance.armor
+		qdel(instance)
 		//Reconstructing the armor from the list is definitly cheaper then creating the whole armor
-		armor = getArmor(arglist(armor_base::armor))
+		//It SHOULD be this.
+		//armor = getArmor(arglist(armor_base::armor))
 
 /mob/living/simple_animal/hostile/human/drop_loot()
 	. = ..()
