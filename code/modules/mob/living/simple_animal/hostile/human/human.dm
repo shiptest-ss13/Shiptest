@@ -36,7 +36,7 @@
 
 	footstep_type = FOOTSTEP_MOB_SHOE
 
-	faction = list("hermit")
+	faction = list(FACTION_ANTAG_HERMITS)
 
 	/// If we use stuff from dynamic human icon generation for loot
 	var/human_loot = TRUE
@@ -80,9 +80,6 @@
 		var/obj/item/clothing/instance = new armor_base()
 		armor = instance.armor
 		qdel(instance)
-		//Reconstructing the armor from the list is definitly cheaper then creating the whole armor
-		//It SHOULD be this.
-		//armor = getArmor(arglist(armor_base::armor))
 
 /mob/living/simple_animal/hostile/human/drop_loot()
 	. = ..()

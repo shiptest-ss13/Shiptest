@@ -1,3 +1,5 @@
+// Standard is snakeCase because I dont want to break maps
+
 /// Acts as a default faction for most violent creatures
 #define FACTION_HOSTILE "hostile"
 /// Acts as a default faction for most peaceful creatures
@@ -9,9 +11,9 @@
 
 //"Antag" factions
 // anything with these factions should be hostile to the average player.
-#define FACTION_ANTAG_SYNDICATE "Syndicate"
-#define FACTION_ANTAG_FRONTIERSMEN "Frontiersmen"
-#define FACTION_ANTAG_HERMITS "Hermit"
+#define FACTION_ANTAG_SYNDICATE "syndicate"
+#define FACTION_ANTAG_FRONTIERSMEN "frontiersmen"
+#define FACTION_ANTAG_HERMITS "hermit"
 
 //Player Factions
 #define FACTION_PLAYER_SYNDICATE "playerSyndicate"
