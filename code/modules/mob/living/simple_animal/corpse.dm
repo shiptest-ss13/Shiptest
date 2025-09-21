@@ -99,7 +99,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
 	ears = /obj/item/radio/headset/syndicate
-	belt = /obj/item/gun/ballistic/automatic/pistol/commander
+	belt = /obj/item/gun/ballistic/automatic/pistol/challenger
 	head = /obj/item/clothing/head/soft/cybersun/medical
 	id = /obj/item/card/id
 

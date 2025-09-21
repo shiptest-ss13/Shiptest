@@ -365,11 +365,7 @@
 	pixel_x = 8;
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/thializid=30);
-	name = "thializid bottle";
-	pixel_x = 5
-	},
+/obj/item/reagent_containers/glass/bottle/gjalrazine,
 /obj/item/reagent_containers/syringe{
 	pixel_x = 7
 	},
@@ -1071,7 +1067,7 @@
 /obj/item/storage/guncase/m12{
 	mag_count = 3
 	},
-/obj/item/gun/energy/e_gun/iot,
+/obj/item/gun/energy/sharplite/x46,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "mJ" = (
@@ -2078,7 +2074,7 @@
 "yo" = (
 /obj/docking_port/stationary{
 	dwidth = 7;
-	height = 15;
+	height = 30;
 	width = 14
 	},
 /turf/template_noop,
@@ -4220,8 +4216,8 @@
 	dir = 10
 	},
 /obj/item/storage/box/ammo/c22lr,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "WH" = (
@@ -4486,7 +4482,6 @@
 /area/ship/hallway/central)
 "ZI" = (
 /obj/item/storage/case/surgery{
-	pixel_x = 0;
 	pixel_y = 3
 	},
 /obj/item/clothing/gloves/color/latex/nitrile,

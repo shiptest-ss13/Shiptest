@@ -159,6 +159,21 @@
 	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
 
+/obj/item/clothing/suit/space/hardsuit/bomb/ngr
+	name = "NGR EOD hardsuit"
+	icon = 'icons/obj/clothing/faction/ngr/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
+	icon_state = "hardsuit-ngreod"
+	hardsuit_type = "ngreod"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/bomb/ngr
+
+/obj/item/clothing/head/helmet/space/hardsuit/bomb/ngr
+	name = "NGR EOD hardsuit helmet"
+	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
+	icon_state = "hardsuit0-ngreod"
+	hardsuit_type = "ngreod"
+
 /////////
 //Hats//
 ////////
@@ -229,6 +244,7 @@
 	icon = 'icons/obj/clothing/faction/ngr/eyes.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/eyes.dmi'
 	glass_colour_type = /datum/client_colour/glass_colour/green
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 
 //////////
 //Masks//

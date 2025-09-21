@@ -22,8 +22,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/default_color = "#FFFFFF"
 
 	var/bodytype = BODYTYPE_HUMANOID
-	///Whether or not the race has sexual characteristics (biological genders). At the moment this is only FALSE for skeletons and shadows
-	var/sexes = TRUE
 	///Minimum species_age
 	var/species_age_min = 18
 	///Maximum species age
@@ -571,10 +569,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	var/hair_hidden = FALSE //ignored if the matching dynamic_X_suffix is non-empty
 	var/facialhair_hidden = FALSE // ^
-
-	//for augmented heads
-	if(!IS_ORGANIC_LIMB(HD))
-		return
 
 	//we check if our hat or helmet hides our facial hair.
 	if(H.head)
@@ -1244,7 +1238,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				return FALSE
 			if(H.s_store && !swap)
 				return FALSE
+			if(HAS_TRAIT(I, TRAIT_FORCE_SUIT_STORAGE_ALWAYS))
+				return TRUE
 			if(HAS_TRAIT(I, TRAIT_FORCE_SUIT_STORAGE))
+				if(!H.w_uniform)
+					if(!disable_warning)
+						to_chat(H, span_warning("You need at least a uniform before you can attach this [I.name]!"))
+					return FALSE
 				return TRUE
 			if(!H.wear_suit)
 				if(!disable_warning)

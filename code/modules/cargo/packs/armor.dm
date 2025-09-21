@@ -37,8 +37,8 @@
 
 /datum/supply_pack/armor/laser_armor
 	name = "Reflector Vest Crate"
-	desc = "Contains one vest made of highly reflective material. The armor piece diffuses a laser's energy by over half, as well as offering a good chance to reflect the laser entirely."
-	cost = 1500
+	desc = "Contains one vest made of highly reflective material. The armor piece diffuses a laser's energy by over half, but with limited protection against melee and ballistic weaponry."
+	cost = 1250
 	contains = list(/obj/item/clothing/suit/armor/laserproof)
 	crate_name = "reflector vest crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
@@ -91,11 +91,13 @@
 
 //gezena
 /datum/supply_pack/armor/pgf_marine_armor
-	name = "Raksha-plate Crate"
-	desc = "One set of standard issue Raksha-plate armor, highly protective and very mobile. The helmet is adjustable for horns."
+	name = "Gezenan Composite Armor Crate"
+	desc = "One set of standard issue AR-98 body armor, highly protective and quite mobile. Comes with a matching L-98 respirator."
 	cost = 1500
 	contains = list(/obj/item/clothing/suit/armor/gezena/marine,
-					/obj/item/clothing/head/helmet/gezena)
+					/obj/item/clothing/head/helmet/gezena,
+					/obj/item/clothing/glasses/sunglasses/pgf,
+					/obj/item/clothing/mask/breath/pgfmask)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/pgf

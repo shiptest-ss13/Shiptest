@@ -266,6 +266,10 @@
 	name = "Feather"
 	icon_state = "hair_feather"
 
+/datum/sprite_accessory/hair/featherbang
+	name = "Feather (Bang)"
+	icon_state = "hair_featherbang"
+
 /datum/sprite_accessory/hair/father
 	name = "Father"
 	icon_state = "hair_father"

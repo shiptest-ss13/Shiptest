@@ -3015,7 +3015,7 @@
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/machinery/airalarm/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/gun/ballistic/automatic/smg/vector,
+/obj/item/gun/ballistic/automatic/smg/expedition,
 /turf/open/floor/plasteel/patterned,
 /area/ship/security)
 "zy" = (
@@ -4213,9 +4213,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
 	},
-/obj/item/gun/ballistic/automatic/pistol/commander,
-/obj/item/ammo_box/magazine/smgm9mm,
-/obj/item/ammo_box/magazine/smgm9mm,
+/obj/item/gun/ballistic/automatic/pistol/challenger,
+/obj/item/ammo_box/magazine/m9mm_expedition,
+/obj/item/ammo_box/magazine/m9mm_expedition,
 /obj/item/clothing/glasses/hud/security/sunglasses,
 /obj/item/cartridge/hos,
 /turf/open/floor/plasteel/dark,
@@ -4598,8 +4598,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
 	},
-/obj/item/gun/energy/laser,
-/obj/item/stock_parts/cell/gun,
 /obj/item/storage/belt/sabre,
 /obj/item/gun/energy/disabler/e60,
 /obj/structure/closet/wall/blue/directional/west{
@@ -4623,6 +4621,8 @@
 	pixel_x = 8;
 	pixel_y = -20
 	},
+/obj/item/storage/box/ammo/a357,
+/obj/item/storage/guncase/pistol/rhino,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/crewfour)
 "NW" = (

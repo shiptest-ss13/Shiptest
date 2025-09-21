@@ -79,10 +79,6 @@
 	pixel_y = 2;
 	pixel_x = 2
 	},
-/obj/item/clothing/suit/armor/gezena{
-	pixel_y = 1;
-	pixel_x = 2
-	},
 /obj/item/clothing/gloves/color/latex/nitrile{
 	pixel_x = 1;
 	pixel_y = -4
@@ -133,6 +129,7 @@
 	pixel_y = 7;
 	pixel_x = -3
 	},
+/obj/item/clothing/suit/armor/gezena/medic,
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical/surgery)
 "bw" = (
@@ -433,9 +430,14 @@
 	name = "engineer's locker"
 	},
 /obj/item/clothing/glasses/welding,
-/obj/item/clothing/suit/armor/gezena{
-	pixel_y = -4;
-	pixel_x = -11
+/obj/item/clothing/suit/armor/gezena/engi,
+/obj/item/clothing/head/gezena/engi{
+	pixel_y = -9;
+	pixel_x = -9
+	},
+/obj/item/clothing/head/gezena/flap/engi{
+	pixel_y = -7;
+	pixel_x = 9
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -1068,10 +1070,14 @@
 /area/ship/crew/ccommons)
 "jO" = (
 /obj/structure/guncloset,
-/obj/item/gun/energy/kalix/pistol,
-/obj/item/gun/energy/kalix/pistol,
+/obj/item/gun/energy/kalix/pistol{
+	pixel_y = 8
+	},
 /obj/item/gun/energy/kalix{
 	pixel_y = -8
+	},
+/obj/item/gun/energy/kalix/pistol{
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/rockvault,
 /area/ship/security/armory)
@@ -1888,6 +1894,7 @@
 /obj/item/tank/jetpack/oxygen/harness,
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/light/small/directional/west,
+/obj/item/tank/internals/oxygen/red,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "un" = (
@@ -1980,9 +1987,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/noticeboard{
-	pixel_y = 25
-	},
+/obj/machinery/computer/helm/viewscreen/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "vl" = (
@@ -2300,6 +2305,7 @@
 /obj/item/tank/jetpack/oxygen/harness,
 /obj/machinery/light/directional/east,
 /obj/machinery/firealarm/directional/north,
+/obj/item/tank/internals/oxygen/red,
 /turf/open/floor/plasteel/rockvault,
 /area/ship/security/armory)
 "yp" = (
@@ -2348,12 +2354,42 @@
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/clothing/mask/breath,
-/obj/item/clothing/mask/breath,
-/obj/item/clothing/mask/breath,
-/obj/item/clothing/mask/breath,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/breath/pgfmask{
+	pixel_y = -10
+	},
+/obj/item/clothing/mask/breath/pgfmask{
+	pixel_y = -10
+	},
+/obj/item/clothing/mask/breath/pgfmask{
+	pixel_y = -10
+	},
+/obj/item/clothing/mask/breath/pgfmask{
+	pixel_y = -10
+	},
+/obj/item/clothing/glasses/sunglasses/pgf{
+	pixel_y = 7
+	},
+/obj/item/clothing/glasses/sunglasses/pgf{
+	pixel_y = 7
+	},
+/obj/item/clothing/glasses/sunglasses/pgf{
+	pixel_y = 7
+	},
+/obj/item/clothing/glasses/sunglasses/pgf{
+	pixel_y = 7
+	},
+/obj/item/clothing/mask/breath/pgfmask{
+	pixel_y = -10
+	},
+/obj/item/clothing/mask/breath/pgfmask{
+	pixel_y = -10
+	},
+/obj/item/clothing/glasses/sunglasses/pgf{
+	pixel_y = 7
+	},
+/obj/item/clothing/glasses/sunglasses/pgf{
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "zz" = (
@@ -2475,10 +2511,6 @@
 	pixel_y = 2;
 	pixel_x = 2
 	},
-/obj/item/clothing/suit/armor/gezena{
-	pixel_y = 1;
-	pixel_x = 2
-	},
 /obj/item/clothing/gloves/color/latex/nitrile{
 	pixel_x = 1;
 	pixel_y = -4
@@ -2531,6 +2563,7 @@
 	pixel_y = 4;
 	pixel_x = -9
 	},
+/obj/item/clothing/suit/armor/gezena/medic,
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical/surgery)
 "Aj" = (
@@ -2725,6 +2758,18 @@
 "CY" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical/surgery)
+"Dg" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cth_cap"
+	},
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "Dt" = (
 /obj/effect/turf_decal/arrows,
 /obj/structure/sign/warning{
@@ -3051,6 +3096,8 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/item/radio/headset/pgf,
 /obj/item/radio/headset/pgf,
+/obj/item/clothing/head/gezena/flap,
+/obj/item/clothing/head/gezena/flap,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
 "HA" = (
@@ -3326,6 +3373,10 @@
 "JT" = (
 /obj/machinery/washing_machine,
 /obj/machinery/light/small/directional/east,
+/obj/structure/noticeboard{
+	pixel_y = -25;
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "JX" = (
@@ -3522,6 +3573,11 @@
 /area/ship/crew/dorm)
 "LF" = (
 /obj/effect/turf_decal/arrows,
+/obj/docking_port/mobile{
+	name = "cthonian dock";
+	port_direction = 4;
+	preferred_direction = 4
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "Ml" = (
@@ -3553,21 +3609,6 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/cargo)
-"Mq" = (
-/obj/effect/turf_decal/techfloor/orange,
-/obj/effect/turf_decal/techfloor/orange{
-	dir = 1
-	},
-/obj/machinery/door/poddoor{
-	id = "cth_bay"
-	},
-/obj/docking_port/mobile{
-	name = "cthonian dock";
-	port_direction = 4;
-	preferred_direction = 4
-	},
-/turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Mv" = (
 /obj/effect/turf_decal/corner_steel_grid{
@@ -3894,11 +3935,13 @@
 /area/ship/cargo)
 "RV" = (
 /obj/docking_port/stationary{
-	height = 15;
-	width = 15;
-	name = "cthonian exterior dock";
-	dwidth = 7;
-	dir = 2
+	dheight = 1;
+	dir = 2;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 9;
+	height = 31;
+	name = "Cthonian Starboard Dock";
+	width = 40
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -3982,6 +4025,7 @@
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 2
 	},
+/obj/item/tank/internals/oxygen/red,
 /turf/open/floor/engine/hull/interior,
 /area/ship/medical/surgery)
 "Td" = (
@@ -4104,33 +4148,68 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical/surgery)
 "UM" = (
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 4
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/item/clothing/suit/armor/gezena/captain,
-/obj/item/clothing/neck/cloak/gezena/captain,
-/obj/item/clothing/gloves/gezena/captain,
-/obj/item/clothing/shoes/combat/gezena{
-	pixel_y = -8;
-	pixel_x = 5
+/obj/structure/closet/secure_closet{
+	icon_state = "blueshield";
+	req_access = list(20);
+	name = "captain's locker"
 	},
-/obj/machinery/light/small/directional/west,
+/obj/item/storage/lockbox/medal{
+	pixel_y = -6;
+	pixel_x = null
+	},
 /obj/item/storage/backpack/satchel/cap{
-	pixel_y = -11;
+	pixel_y = -3;
 	pixel_x = -8
 	},
 /obj/item/storage/backpack/duffelbag/captain{
 	pixel_x = 6;
 	pixel_y = -5
 	},
-/obj/item/radio/headset/pgf/alt/captain,
-/obj/item/storage/lockbox/medal,
-/obj/item/radio/headset/pgf/captain,
-/obj/item/storage/belt/sabre,
-/obj/structure/closet/secure_closet/captains{
-	populate = 0
+/obj/item/clothing/head/gezena/flap/captain{
+	pixel_y = 8;
+	pixel_x = 8
 	},
-/obj/item/storage/guncase/pistol/kalixpistol,
+/obj/item/clothing/under/gezena/captain{
+	pixel_y = 2;
+	pixel_x = -8
+	},
+/obj/item/clothing/suit/armor/gezena/captain{
+	pixel_y = 2;
+	pixel_x = 8
+	},
+/obj/item/storage/guncase/pistol/kalixpistol{
+	pixel_y = -15;
+	pixel_x = -1
+	},
+/obj/item/clothing/shoes/combat/gezena{
+	pixel_y = -7;
+	pixel_x = -11
+	},
+/obj/item/clothing/neck/cloak/gezena/captain{
+	pixel_y = 2;
+	pixel_x = 3
+	},
+/obj/item/clothing/gloves/gezena/captain{
+	pixel_y = -10
+	},
+/obj/item/storage/belt/sabre/pgf{
+	pixel_y = -6;
+	pixel_x = -2
+	},
+/obj/item/radio/headset/pgf/alt/captain{
+	pixel_x = 10;
+	pixel_y = -4
+	},
+/obj/item/radio/headset/pgf/captain{
+	pixel_x = -10;
+	pixel_y = -8
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
+	},
 /obj/item/megaphone/command,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -4318,6 +4397,8 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/item/radio/headset/pgf,
 /obj/item/radio/headset/pgf,
+/obj/item/clothing/head/gezena,
+/obj/item/clothing/head/gezena,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
 "Xd" = (
@@ -5051,7 +5132,7 @@ cj
 Ob
 yY
 mG
-Mq
+DW
 LF
 RV
 "}
@@ -5240,7 +5321,7 @@ hQ
 jn
 fu
 UM
-TH
+Dg
 "}
 (36,1,1) = {"
 Ua

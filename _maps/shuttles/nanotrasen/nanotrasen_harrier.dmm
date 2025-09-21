@@ -2594,7 +2594,7 @@
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/storage/belt/sabre,
 /obj/machinery/light/small/directional/north,
-/obj/item/stock_parts/cell/gun,
+/obj/item/storage/box/ammo/a357,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm/dormtwo)
 "op" = (
@@ -3159,11 +3159,9 @@
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
 "sl" = (
-/obj/item/gun/energy/e_gun,
-/obj/structure/guncloset/ecase{
-	req_access_txt = "20"
-	},
 /obj/item/radio/intercom/directional/south,
+/obj/structure/rack,
+/obj/item/storage/guncase/pistol/rhino,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm/dormtwo)
 "sn" = (
@@ -3819,7 +3817,7 @@
 /obj/structure/guncloset{
 	req_access_txt = "2"
 	},
-/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
+/obj/item/gun/ballistic/automatic/pistol/challenger/no_mag,
 /obj/item/radio/intercom/directional/east,
 /obj/structure/sign/nanotrasen/vigilitas{
 	pixel_y = 32
@@ -3827,8 +3825,8 @@
 /obj/effect/turf_decal/trimline/opaque/vired/filled/warning{
 	dir = 8
 	},
-/obj/item/gun/energy/disabler,
-/obj/item/gun/energy/e_gun/smg,
+/obj/item/gun/energy/sharplite/l305,
+/obj/item/gun/energy/sharplite/x26,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "uZ" = (
@@ -3864,6 +3862,8 @@
 /obj/item/storage/box/ids,
 /obj/machinery/light/small/directional/south,
 /obj/item/storage/box/PDAs,
+/obj/item/gun/energy/sharplite/x12,
+/obj/item/stock_parts/cell/gun/sharplite,
 /turf/open/floor/carpet/blue,
 /area/ship/crew/dorm)
 "vj" = (
@@ -5318,7 +5318,9 @@
 /obj/effect/turf_decal/trimline/opaque/vired/line,
 /obj/item/storage/belt/security,
 /obj/item/melee/knife/survival,
-/obj/item/stock_parts/cell/gun,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite/mini,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "CN" = (

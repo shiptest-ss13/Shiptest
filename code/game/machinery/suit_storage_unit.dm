@@ -172,11 +172,10 @@ LOCKED_SSU_HELPER(mining/eva)
 
 LOCKED_SSU_HELPER(cmo)
 
-/obj/machinery/suit_storage_unit/rd
-	name = "RD's suit storage unit"
-	suit_type = /obj/item/clothing/suit/space/hardsuit/rd
+/obj/machinery/suit_storage_unit/bomb
+	name = "bomb suit storage unit"
+	suit_type = /obj/item/clothing/suit/space/hardsuit/bomb
 	mask_type = /obj/item/clothing/mask/breath
-	req_access = list(ACCESS_RD)
 
 LOCKED_SSU_HELPER(rd)
 
@@ -223,6 +222,14 @@ LOCKED_SSU_HELPER(rd)
 	helmet_type = /obj/item/clothing/head/helmet/space/solgov
 	mask_type = /obj/item/clothing/mask/breath
 	storage_type = /obj/item/tank/internals/emergency_oxygen/engi
+
+/obj/machinery/suit_storage_unit/frontiersmen
+	name = "frontiersmen suit storage unit"
+	suit_type = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+	storage_type = /obj/item/tank/jetpack/oxygen
+	req_access = list(ACCESS_SECURITY)
+
+LOCKED_SSU_HELPER(frontiersmen)
 
 /obj/machinery/suit_storage_unit/independent/security
 	name = "security suit storage unit"

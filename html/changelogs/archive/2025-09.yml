@@ -1,0 +1,163 @@
+2025-09-01:
+  Erikafox:
+  - bugfix: added proper sharpness values to ramzi melee mobs. they're evil now
+  meemofcourse:
+  - bugfix: Gun maintenance kits no longer have unlimited uses
+2025-09-02:
+  Luftkommando:
+  - rscadd: Added a new ruin, an entrenched Frontiersman group, to the Rock Planet
+      ruin pool.
+  - rscdel: Removed Budgetcuts from the ruin pool.
+2025-09-03:
+  thearbiber:
+  - rscadd: three new croptops
+2025-09-04:
+  Erikafox:
+  - rscadd: new chemicals, see pr 5162 on the git
+  - rscdel: remove hot potatoes
+  - rscdel: 3 eras of random chems, from libital to salicylic acid
+  Ratvarr:
+  - rscadd: The Leyak has a photocopier now. It also has it's indoor adjusted.
+  generalthrax:
+  - bugfix: Earmuffs and headphones now layer over hair
+  - rscadd: Added some misc supplies and changes to Arrowsong's ERT armoury and museum.
+      Comms to Arrowsong
+2025-09-05:
+  DIB-DOG:
+  - rscadd: Made new PGF items accessible
+  - bugfix: Adjusted PGF outfits and items
+  - imageadd: Added new PGF sprites
+  - imagedel: Removed redundant sprites
+  thearbiber:
+  - rscadd: insulated glove resprite
+2025-09-06:
+  Erikafox:
+  - bugfix: animals should stop erupting into gore fountains when you land
+  - bugfix: hermits will refrain from causing damage to your hull during landings
+  thearbiber:
+  - rscadd: short over eye resprite
+  thearbiber, generalthrax:
+  - rscadd: Athletic Shorts / Dolphin Shorts Resprite + Pink Shorts. Recolourables
+2025-09-07:
+  Erikafox:
+  - balance: ammo counters now go to the scope slot
+  - bugfix: subshuttles having absolutely bizarre interactions with overmap location
+  - rscadd: more randomgen planet / randomgen star names
+2025-09-09:
+  KOCMODECAHTHUK:
+  - bugfix: Feeding another character
+2025-09-10:
+  Ratvarr:
+  - bugfix: Magpie medical and security offices have been adjusted slightly for better
+      space use.
+  firebudgy:
+  - bugfix: Missing vox sprite states for some NT outerwear.
+  generalthrax:
+  - rscdel: Removed riot grenade underbarrel from cargo
+  - balance: Increased frag grenade and other auxiliary grenade costs slightly
+  - balance: Removed heavy explosive damage from Frags and devastation from Concussion
+      grenades
+2025-09-11:
+  Gristlebee:
+  - rscadd: Tortuga Touch Ups
+  MemeSnorfer:
+  - balance: Many goggles and other protective wear now seal your eyes from environmental
+      effects.
+  - rscadd: Horse genemods for humans
+  thearbiber:
+  - bugfix: wind on bombed starport
+  zimon9:
+  - rscadd: Added a few modified mesons to the Derecho
+2025-09-13:
+  MemeSnorfer:
+  - balance: Increased the health of trees to 200, from 40
+  Rug-Dealer:
+  - rscadd: AI eyes and advanced camera consoles can now see through body cameras.
+2025-09-14:
+  meemofcourse:
+  - rscadd: Atlas-class Remap
+  - rscadd: Overhead lattices and pipes
+  - rscadd: Persistent photo album for CLIP correspondents
+  - imageadd: Green hazard stripes
+  - code_imp: Subtypes for C-MM Captain, Bridge Officer, ComMed, Naval Engineer, and
+      Sergeant lockers
+  - code_imp: Subtypes for C-MM and CLIP uniform lockers
+  - code_imp: No mag subtype of CM-24
+  - code_imp: Repathed C-MM sergeant, engineer, gunner, and medic
+  - code_imp: C-MM correspondent vest can store broadcast camera
+  thearbiber:
+  - rscadd: touches up oneshoulder
+2025-09-15:
+  moffball19:
+  - rscadd: Nanotrasen Spaceworks has begun installing sinks in the latest productions
+      of the Kiwi-class
+  zimon9:
+  - rscadd: Added claymore exports
+  - rscdel: Removed claymore purchases
+2025-09-16:
+  firebudgy:
+  - bugfix: Certain NT Vox Sprites now should (actually) have sprites
+  generalthrax:
+  - rscadd: stomp emote
+  moffball19:
+  - rscadd: The IRMG has put additional funding towards medical facilities on their
+      Colossus-class, among other smaller amenities.
+  - rscadd: Inteq's pilots have been issued a new standard spacesuit.
+  rye-rice:
+  - rscadd: Arrowhead outpost gives the proper planetary outpost sprite
+  thearbiber:
+  - rscadd: resprites socks
+  - rscadd: Frontiersman Moat ruin
+  - rscdel: Crashed Engineer, Beach Pirate Crash
+  - balance: assault rifle on treasure trove replaced with an SMG
+  thgvr:
+  - rscadd: Added two new Sarathi frills (ears), curved and long
+  zimon9:
+  - rscadd: Added 50% more time to outpost mission contracts
+  - bugfix: Fixed mission timers not showing how many hours are left in a contract
+2025-09-17:
+  generalthrax:
+  - bugfix: fixes black pufferjacket icon issue
+2025-09-18:
+  Gristlebee:
+  - rscadd: NT and Ramzi fax offices.
+  rivercadaver, apogeesys:
+  - rscadd: the karst-class subshuttle
+  - balance: updated the Kali Andhi, including bodycams, a DMR instead of an AR, and
+      some flavor
+2025-09-19:
+  Erikafox:
+  - bugfix: 4.6 ammo box sprite
+  thearbiber:
+  - rscadd: resprites short over eye, emo fringe, short hair 2, feather
+  - rscadd: feather (bang)
+2025-09-20:
+  Erikafox:
+  - code_imp: fixed the register signal warning
+  FalloutFalcon:
+  - rscdel: Removed some old pref options that we dont use
+  - rscadd: Flavor text now uses a tgui text box and shows character limit
+  Rye-Rice:
+  - rscadd: Added a ammo type toggle button
+  - rscadd: Swapped latch interaction over to the unique action key
+  - rscdel: Removed intent requirement for attachments
+  generalthrax:
+  - rscadd: Moths now use humaniform as their prosthetic limb type (except for the
+      head)
+  moffball19:
+  - rscadd: Nanotrasen Spaceworks has begun installing sinks in the latest productions
+      of the Kiwi-class
+  'rye-rice, Imaginos16, Apogee-dev, ':
+  - rscadd: Nanotrasen Advantage
+  - rscadd: Sharplite Defence
+  - balance: Laserproof armor was given a slight buff in exchange for reflecting lasers
+      being much more rare
+  - rscdel: The Nanotrasen Gauss rifle is no longer in black market
+  - rscdel: A bunch of old R&D laser weapons
+  - rscdel: sabr
+  - bugfix: Some sound effects are no longer stereo
+  thearbiber, generalthrax:
+  - rscadd: Added MP-84m Cottonmouth, Ramzi Clique modified Rattlesnake, chambered
+      in 10mm. Obtainable from Blackmarket and Rustbase ruin.
+  - balance: Ramzi Clique Rustred pistol mobs now have a Cottonmouth instead of a
+      military Ringneck and fire in slow bursts of 2
