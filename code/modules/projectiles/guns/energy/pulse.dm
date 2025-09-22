@@ -38,7 +38,7 @@
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 	icon_state = "pulse_carbine"
 	item_state = null
 	internal_magazine = FALSE
@@ -71,7 +71,7 @@
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	w_class = WEIGHT_CLASS_SMALL
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 	icon_state = "pulse_pistol"
 	item_state = "gun"
 	default_ammo_type = /obj/item/stock_parts/cell/pulse/pistol

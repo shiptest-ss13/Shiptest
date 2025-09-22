@@ -3,6 +3,7 @@
 	desc = "Designed to be rail-mounted on a compatible firearm to provide increased accuracy and decreased spread."
 	icon_state = "laserpointer"
 
+	allow_icon_state_prefixes = TRUE
 	attach_features_flags = ATTACH_REMOVABLE_HAND|ATTACH_TOGGLE
 	pixel_shift_x = 1
 	pixel_shift_y = 4
@@ -21,3 +22,25 @@
 		gun.wield_delay += 0.3 SECONDS
 
 	playsound(user, toggled ? 'sound/weapons/magin.ogg' : 'sound/weapons/magout.ogg', 40, TRUE)
+
+/obj/item/attachment/laser_sight/on_beforefire(obj/item/gun/gun, atom/target, mob/user, list/params)
+	do_overlay(gun, target, user, params)
+	return FALSE
+
+
+/obj/item/attachment/laser_sight/proc/do_overlay(obj/item/gun/gun, atom/target, mob/user, list/params)
+	if(toggled) //copied from lsaer pointer code, dont kill me
+		var/targloc = get_turf(target)
+		var/image/laser_image = image('icons/obj/projectiles.dmi',targloc,"red_laser",10)
+		var/list/modifiers = params2list(params)
+		if(modifiers.len)
+			if(LAZYACCESS(modifiers, ICON_X))
+				laser_image.pixel_x = (text2num(LAZYACCESS(modifiers, ICON_X)) - 16)
+			if(LAZYACCESS(modifiers, ICON_Y))
+				laser_image.pixel_y = (text2num(LAZYACCESS(modifiers, ICON_Y)) - 16)
+		else
+			laser_image.pixel_x = target.pixel_x + rand(-5,5)
+			laser_image.pixel_y = target.pixel_y + rand(-5,5)
+		laser_image.layer = ABOVE_ALL_MOB_LAYER
+
+		flick_overlay_view(laser_image, targloc, 1 SECONDS)

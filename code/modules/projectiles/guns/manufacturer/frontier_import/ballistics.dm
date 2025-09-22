@@ -20,8 +20,8 @@
 
 	show_magazine_on_sprite = FALSE //hard coded
 
-	spread = 15
-	spread_unwielded = 30
+	spread = 24
+	spread_unwielded = 44
 	recoil = 1
 	recoil_unwielded = 3
 	safety_multiplier = 2 //this means its twice as safe right? //oh, god no.
@@ -160,6 +160,7 @@
 
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
+
 		/obj/item/attachment/foldable_stock/spitter
 	)
 

@@ -7,7 +7,7 @@
 	spawn_blacklisted = TRUE
 	load_sound = null
 	fire_sound = 'sound/weapons/bowfire.ogg'
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/bow
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/bow,

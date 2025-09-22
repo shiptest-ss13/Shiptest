@@ -1,6 +1,7 @@
 /obj/item/attachment/m17_barrel
 	name = "Model 17 barrel"
 	desc = "The barrel of an M17 'Micro Target'."
+	icon = 'icons/obj/guns/manufacturer/serene_outdoors/48x32.dmi'
 	icon_state = "m17_barrel"
 
 	slot = ATTACHMENT_SLOT_MUZZLE

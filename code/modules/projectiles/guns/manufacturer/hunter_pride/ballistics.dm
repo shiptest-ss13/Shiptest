@@ -716,6 +716,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 	unique_attachments = list(
 		/obj/item/attachment/scope,
 		/obj/item/attachment/long_scope,
+		/obj/item/attachment/muzzle_brake,
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,

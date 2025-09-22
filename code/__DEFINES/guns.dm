@@ -107,7 +107,7 @@
 #define DMR_SLOWDOWN 0.6
 #define SAW_SLOWDOWN 0.7
 #define SNIPER_SLOWDOWN 0.9
-#define HMG_SLOWDOWN 1
+#define HMG_SLOWDOWN 2
 #define AMR_SLOWDOWN 1
 
 
@@ -129,6 +129,7 @@
 #define COMSIG_ATTACHMENT_EXAMINE "attach-examine"
 #define COMSIG_ATTACHMENT_EXAMINE_MORE "attach-examine-more"
 #define COMSIG_ATTACHMENT_PRE_ATTACK "attach-pre-attack"
+#define COMSIG_ATTACHMENT_BEFORE_FIRING "attachment_before_firing"
 #define COMSIG_ATTACHMENT_AFTER_ATTACK "attach-after-attack"
 #define COMSIG_ATTACHMENT_ATTACK "attach-attacked"
 #define COMSIG_ATTACHMENT_WIELD "attach-wield"

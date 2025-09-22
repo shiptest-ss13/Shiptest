@@ -10,6 +10,8 @@
 	wield_slowdown = RIFLE_SLOWDOWN
 	aimed_wield_slowdown = RIFLE_AIM_SLOWDOWN
 
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+
 	zoom_amt = RIFLE_ZOOM
 
 	fire_delay = 0.2 SECONDS
@@ -25,10 +27,20 @@
 	gunslinger_recoil_bonus = 2
 	gunslinger_spread_bonus = 16
 
-	light_range = 2
+	light_range = 3
 	wear_minor_threshold = 200
 	wear_major_threshold = 600
 	wear_maximum = 1200
+
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/muzzle_brake,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/gun,
+		/obj/item/attachment/ammo_counter
+	)
 
 /obj/item/gun/ballistic/automatic/assault/skm
 	name = "\improper SKM-24"

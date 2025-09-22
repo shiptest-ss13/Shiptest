@@ -45,6 +45,13 @@
 	contains = list(/obj/item/attachment/silencer)
 	crate_name = "suppressor crate"
 
+/datum/supply_pack/attachment/brake
+	name = "Muzzle Brake Crate"
+	desc = "Contains a single muzzle brake to be mounted on a firearm."
+	cost = 300
+	contains = list(/obj/item/attachment/muzzle_brake)
+	crate_name = "suppressor crate"
+
 /datum/supply_pack/attachment/counter
 	name = "Ammo Counter Crate"
 	desc = "Contains a single ammo counter to mount on a firearm."

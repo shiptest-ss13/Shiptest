@@ -30,8 +30,13 @@
 	///Determines the amount of pixels to move the icon state for the overlay. in the y direction
 	var/pixel_shift_y = 16
 	/// Determines what layer the icon state for the overlay renders on.
-	var/render_layer = FLOAT_LAYER //inhands
-	var/render_plane = FLOAT_PLANE //world
+
+	///If true, then we allow guns to add a prefix to our icon state. If we dont have a set for all 3 "sizes", set this to FALSE please
+	var/allow_icon_state_prefixes = FALSE
+	/// Inhands
+	var/render_layer = FLOAT_LAYER
+	/// World
+	var/render_plane = FLOAT_PLANE
 
 	//Toggle modifers are handled seperatly
 	///Modifier applied to the parent
@@ -54,6 +59,7 @@
 		CALLBACK(src, PROC_REF(remove_attachment)), \
 		CALLBACK(src, PROC_REF(toggle_attachment)), \
 		CALLBACK(src, PROC_REF(on_preattack)), \
+		CALLBACK(src, PROC_REF(on_beforefire)), \
 		CALLBACK(src, PROC_REF(on_attacked)), \
 		CALLBACK(src, PROC_REF(on_unique_action)), \
 		CALLBACK(src, PROC_REF(on_ctrl_click)), \
@@ -101,6 +107,9 @@
 	return TRUE
 
 /obj/item/attachment/proc/on_preattack(obj/item/gun/gun, atom/target, mob/user, list/params)
+	return FALSE
+
+/obj/item/attachment/proc/on_beforefire(obj/item/gun/gun, atom/target, mob/user, list/params)
 	return FALSE
 
 /obj/item/attachment/proc/on_wield(obj/item/gun/gun, mob/user, list/params)

@@ -44,7 +44,6 @@
 
 	gunslinger_recoil_bonus = -1
 
-	min_recoil = 0.1
 	wear_rate = 0
 
 	//in an ideal world this would be a component but I don't wanna untangle all the sleeps doors pull
@@ -165,7 +164,7 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 	if(istype(A, /obj/item/stack/cable_coil) && !sawn_off)
 		var/obj/item/stack/cable_coil/C = A
 		if(C.use(10))
-			slot_flags = ITEM_SLOT_BACK
+			slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 			to_chat(user, span_notice("You tie the lengths of cable to the shotgun, making a sling."))
 			slung = TRUE
 			update_appearance()
