@@ -6,7 +6,7 @@
 	allow_icon_state_prefixes = TRUE
 	slot = ATTACHMENT_SLOT_MUZZLE
 	pixel_shift_x = 1
-	pixel_shift_y = 1
+	pixel_shift_y = 2
 	size_mod = 1
 	spread_mod = -2
 	spread_unwielded_mod = 4

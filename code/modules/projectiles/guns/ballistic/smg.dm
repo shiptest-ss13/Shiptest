@@ -13,6 +13,7 @@
 	zoom_amt = SMG_ZOOM
 	recoil_unwielded = 4
 	w_class = WEIGHT_CLASS_BULKY
+	//attachment_icon_overlay_prefix = "medium_"
 
 	light_range = 2
 

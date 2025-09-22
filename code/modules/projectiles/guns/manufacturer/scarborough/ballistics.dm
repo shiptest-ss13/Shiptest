@@ -447,8 +447,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 27,
-			"y" = 23,
+			"x" = 37,
+			"y" = 18,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
 			"x" = 28,
