@@ -80,6 +80,7 @@
 	desc = "A bulky set of stamped plasteel armor plates, coated with the intimidating grey of the Frontiersmen. If you have the time to inspect this vest, either you are about to die, or you have killed the one who wore it originally."
 	icon_state = "marine_frontier"
 	item_state = "armor"
+	armor = list("melee" = 35, "bullet" = 70, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50, "wound" = 40)
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
 
@@ -214,13 +215,13 @@
 	can_flashlight = TRUE
 	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 
-/obj/item/clothing/head/helmet/frontier
+/obj/item/clothing/head/helmet/heavy_frontier
 	name = "frontiersmen reinforced helmet"
 	desc = "A reinforced Frontiersmen X-11. The front plate has a small window to let the user see."
 	icon_state = "marine_frontier"
 	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
-	armor = list("melee" = 35, "bullet" = 55, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50, "wound" = 20)
+	armor = list("melee" = 35, "bullet" = 70, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50, "wound" = 40)
 	slowdown = 0.1
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	clothing_flags = STOPSPRESSUREDAMAGE | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
