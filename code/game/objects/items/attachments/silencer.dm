@@ -29,10 +29,6 @@
 	gun.light_power -= 1
 	return TRUE
 
-/obj/item/attachment/silencer/cobra
-	size_mod = 0
-	attach_features_flags = ATTACH_NO_SPRITE
-
 /obj/item/attachment/silencer/on_beforefire(obj/item/gun/gun, atom/target, mob/user, list/params)
 	gun.chambered.BB.alpha = 75
 	gun.chambered.BB.set_light_range(0)
