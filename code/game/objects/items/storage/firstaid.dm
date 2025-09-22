@@ -152,9 +152,10 @@
 	if(empty)
 		return
 	var/static/items_inside = list(
-		/obj/item/stack/medical/ointment = 2,
+		/obj/item/stack/medical/ointment = 1,
 		/obj/item/stack/medical/mesh = 1,
 		/obj/item/stack/medical/gauze = 1,
+		/obj/item/reagent_containers/medigel/quardexane = 1,
 		/obj/item/reagent_containers/pill/patch/alvitane = 1,
 		/obj/item/reagent_containers/hypospray/medipen/ysiltane = 1,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
