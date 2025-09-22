@@ -39,14 +39,17 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	for(var/i = 0; i < number; i++)
 		spawn_meteor(meteortypes)
 
-/proc/spawn_meteor(list/meteortypes, datum/virtual_level/vlevel, padding = MAP_EDGE_PAD)
+/proc/spawn_meteor(list/meteortypes, datum/virtual_level/vlevel, padding = MAP_EDGE_PAD, obj/docking_port/mobile/shuttle_port)
 	var/turf/pickedstart
 	var/turf/pickedgoal
 	var/max_i = 10//number of tries to spawn meteor.
 	while(!isspaceturf(pickedstart))
 		var/startSide = pick(GLOB.cardinals)
+		if(shuttle_port)
+			startSide = shuttle_port.preferred_direction
+
 		pickedstart = vlevel.get_side_turf(startSide, padding)
-		pickedgoal = vlevel.get_side_turf(REVERSE_DIR(startSide), padding)
+		pickedgoal = vlevel.get_side_turf(REVERSE_DIR(startSide), padding, TRUE)
 		max_i--
 		if(max_i<=0)
 			return
@@ -120,7 +123,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	for(var/atom/A in T)
 		if(A != src)
 			if(isliving(A))
-				A.visible_message("<span class='warning'>[src] slams into [A].</span>", "<span class='userdanger'>[src] slams into you!.</span>")
+				A.visible_message(span_warning("[src] slams into [A]."), span_userdanger("[src] slams into you!."))
 			switch(hitpwr)
 				if(EXPLODE_DEVASTATE)
 					SSexplosions.highobj += A
@@ -265,13 +268,20 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	hits = 2
 	heavy = 1
 	meteorsound = 'sound/effects/blobattack.ogg'
-	meteordrop = list(/obj/item/reagent_containers/food/snacks/meat/slab/human, /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant, /obj/item/organ/heart, /obj/item/organ/lungs, /obj/item/organ/tongue, /obj/item/organ/appendix/)
+	meteordrop = list(
+		/obj/item/food/meat/slab/human,
+		/obj/item/food/meat/slab/human/mutant,
+		/obj/item/organ/heart,
+		/obj/item/organ/lungs,
+		/obj/item/organ/tongue,
+		/obj/item/organ/appendix,
+		)
 	var/meteorgibs = /obj/effect/gibspawner/generic
 	threat = 2
 
 /obj/effect/meteor/meaty/Initialize()
 	for(var/path in meteordrop)
-		if(path == /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant)
+		if(path == /obj/item/food/meat/slab/human/mutant)
 			meteordrop -= path
 			meteordrop += pick(subtypesof(path))
 
@@ -297,7 +307,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 //Meaty Ore Xeno edition
 /obj/effect/meteor/meaty/xeno
 	color = "#5EFF00"
-	meteordrop = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno, /obj/item/organ/tongue/alien)
+	meteordrop = list(/obj/item/food/meat/slab/xeno, /obj/item/organ/tongue/alien)
 	meteorgibs = /obj/effect/gibspawner/xeno
 
 /obj/effect/meteor/meaty/xeno/Initialize()
@@ -371,7 +381,7 @@ GLOBAL_LIST_INIT(meteorsSPOOKY, list(/obj/effect/meteor/pumpkin))
 	hits = 10
 	heavy = 1
 	dropamt = 1
-	meteordrop = list(/obj/item/clothing/head/hardhat/pumpkinhead, /obj/item/reagent_containers/food/snacks/grown/pumpkin)
+	meteordrop = list(/obj/item/clothing/head/hardhat/pumpkinhead, /obj/item/food/grown/pumpkin)
 	threat = 100
 
 /obj/effect/meteor/pumpkin/Initialize()

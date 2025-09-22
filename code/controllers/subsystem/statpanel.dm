@@ -29,10 +29,11 @@ SUBSYSTEM_DEF(statpanels)
 			"\n",
 			"Local Sector Time: [SSticker.round_start_timeofday ? "[station_time_timestamp()] [sector_datestamp()]" : "The round hasn't started yet!"]",
 			"\n",
-			"Internal Round Timer: [SSticker.round_start_timeofday ? ROUND_TIME : "The round hasn't started yet!"]",
-			"Actual Round Timer: [SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY : "The round hasn't started yet!"]",
+			"Internal Round Timer: [SSticker.round_start_timeofday ? ROUND_TIME() : "The round hasn't started yet!"]",
+			"Actual Round Timer: [SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY() : "The round hasn't started yet!"]",
 			"\n",
-			"Playing/Connected: [get_active_player_count()]/[length(GLOB.clients)]"
+			"Playing/Connected: [get_active_player_count()]/[length(GLOB.clients)]",
+			"Crew Percentage/Ship Locking Cap: [SSovermap.ship_crew_percentage()]%/[SSovermap.ship_locking_percentage()]%"
 		)
 
 		if(SSshuttle.jump_mode != BS_JUMP_IDLE)
@@ -87,11 +88,15 @@ SUBSYSTEM_DEF(statpanels)
 			return
 
 /datum/controller/subsystem/statpanels/proc/set_status_tab(client/target)
+#if MIN_COMPILER_VERSION > 515
+	#warn 516 is most certainly out of beta, remove this beta notice if you haven't already
+#endif
+	var/static/list/beta_notice = list("", "You are on the BYOND 516, various UIs and such may be broken!", "Please report issues, and switch back to BYOND 515 if things are causing too many issues for you.")
 	if(!global_data)//statbrowser hasnt fired yet and we were called from immediate_send_stat_data()
 		return
 
 	target.stat_panel.send_message("update_stat", list(
-		"global_data" = global_data,
+		"global_data" = (target.byond_version < 516) ? global_data : (global_data + beta_notice),
 		"ping_str" = "Ping: [round(target.lastping, 1)]ms (Average: [round(target.avgping, 1)]ms)",
 		"other_str" = target.mob?.get_status_tab_items(),
 	))

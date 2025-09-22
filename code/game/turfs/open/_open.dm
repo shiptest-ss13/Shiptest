@@ -1,4 +1,3 @@
-#define IGNITE_TURF_CHANCE 30
 #define IGNITE_TURF_LOW_POWER 8
 #define IGNITE_TURF_HIGH_POWER 22
 
@@ -176,8 +175,8 @@
 	air_update_turf()
 
 /turf/open/temperature_expose()
-	if(prob(IGNITE_TURF_CHANCE))
-		IgniteTurf(rand(IGNITE_TURF_LOW_POWER,IGNITE_TURF_HIGH_POWER))
+	if(prob(flammability * 100))
+		ignite_turf(rand(IGNITE_TURF_LOW_POWER,IGNITE_TURF_HIGH_POWER))
 	return ..()
 
 /turf/open/proc/freon_gas_act()
@@ -220,7 +219,7 @@
 			if(C.m_intent == MOVE_INTENT_WALK && (lube&NO_SLIP_WHEN_WALKING))
 				return 0
 		if(!(lube&SLIDE_ICE))
-			to_chat(C, "<span class='notice'>You slipped[ O ? " on the [O.name]" : ""]!</span>")
+			to_chat(C, span_notice("You slipped[ O ? " on the [O.name]" : ""]!"))
 			playsound(C.loc, 'sound/misc/slip.ogg', 50, TRUE, -3)
 
 		SEND_SIGNAL(C, COMSIG_ON_CARBON_SLIP)
@@ -269,7 +268,10 @@
 		air.set_moles(GAS_O2, max(air.get_moles(GAS_O2)-(pulse_strength/2000),0))
 		air.adjust_moles(GAS_O3, pulse_strength/4000)
 
-/turf/open/IgniteTurf(power, fire_color)
+/turf/open/ignite_turf(power, fire_color)
+	. = ..()
+	if(. & SUPPRESS_FIRE)
+		return
 	if(turf_fire)
 		turf_fire.AddPower(power)
 		return
@@ -277,6 +279,17 @@
 		return
 	new /obj/effect/abstract/turf_fire(src, power, fire_color)
 
-#undef IGNITE_TURF_CHANCE
+/turf/open/extinguish_turf(cooling_power = 2)
+	if(!air)
+		return
+	if(!active_hotspot && !turf_fire)
+		return
+	air.set_temperature(max(min(air.return_temperature() - (cooling_power * 1000), air.return_temperature() / cooling_power), TCMB))
+	air.react(src)
+	if(active_hotspot)
+		qdel(active_hotspot)
+	if(turf_fire)
+		qdel(turf_fire)
+
 #undef IGNITE_TURF_LOW_POWER
 #undef IGNITE_TURF_HIGH_POWER

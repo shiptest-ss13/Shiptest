@@ -13,6 +13,7 @@
 	var/component_coeff = 1
 	var/datum/techweb/specialized/autounlocking/exofab/stored_research
 	var/linked_to_server = FALSE //if a server is linked to the exofab
+	var/output_direction = SOUTH //Which direction it will place the finished product.
 	var/part_set
 	var/datum/design/being_built
 	var/list/queue = list()
@@ -68,7 +69,7 @@
 /obj/machinery/mecha_part_fabricator/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Storing up to <b>[rmat.local_size]</b> material units.<br>Material consumption at <b>[component_coeff*100]%</b>.<br>Build time reduced by <b>[100-time_coeff*100]%</b>.</span>"
+		. += span_notice("The status display reads: Storing up to <b>[rmat.local_size]</b> material units.<br>Material consumption at <b>[component_coeff*100]%</b>.<br>Build time reduced by <b>[100-time_coeff*100]%</b>.")
 
 /obj/machinery/mecha_part_fabricator/emag_act()
 	if(obj_flags & EMAGGED)
@@ -92,8 +93,8 @@
 				continue
 			output += "<div class='part'>[output_part_info(D)]<br>"
 			if(check_resources(D))
-				output += "<a href='?src=[REF(src)];part=[D.id]'>Build</a> | "
-			output += "<a href='?src=[REF(src)];add_to_queue=[D.id]'>Add to queue</a><a href='?src=[REF(src)];part_desc=[D.id]'>?</a></div>"
+				output += "<a href='byond://?src=[REF(src)];command=build;part=[D.id]'>Build</a> | "
+			output += "<a href='byond://?src=[REF(src)];command=add;add_to_queue=[D.id]'>Add to queue</a><a href='byond://?src=[REF(src)];command=describe;part_desc=[D.id]'>?</a></div>"
 	return output
 
 /obj/machinery/mecha_part_fabricator/proc/output_part_info(datum/design/D)
@@ -115,14 +116,15 @@
 	output += "Security protocols: [(obj_flags & EMAGGED)? "<font color='red'>Disabled</font>" : "<font color='green'>Enabled</font>"]<br>"
 	output += "Linked to server: [(linked_to_server == FALSE)? "<font color='red'>Unlinked</font>" : "<font color='green'>Linked</font>"]<br>"
 	if (rmat.mat_container)
-		output += "<a href='?src=[REF(src)];screen=resources'><B>Material Amount:</B> [rmat.format_amount()]</A>"
+		output += "<a href='byond://?src=[REF(src)];command=change_screen;screen=resources'><B>Material Amount:</B> [rmat.format_amount()]</A>"
 	else
 		output += "<font color='red'>No material storage connected, please contact the quartermaster.</font>"
-	output += "<a href='?src=[REF(src)];screen=main'>Main Screen</a>"
+	output += "<a href='byond://?src=[REF(src)];command=change_screen;screen=direction'>Outputting: [uppertext(dir2text(output_direction))]</a>"
+	output += "<a href='byond://?src=[REF(src)];command=change_screen;screen=main'>Main Screen</a>"
 	output += "</div>"
 	output += "<form name='search' action='?src=[REF(src)]'>\
 	<input type='hidden' name='src' value='[REF(src)]'>\
-	<input type='hidden' name='search' value='to_search'>\
+	<input type='hidden' name='command' value='search'>\
 	<input type='text' name='to_search'>\
 	<input type='submit' value='Search'>\
 	</form><HR>"
@@ -151,9 +153,9 @@
 		var/amount = rmat.mat_container.materials[mat_id]
 		var/ref = REF(M)
 		output += "* [amount] of [M.name]: "
-		if(amount >= MINERAL_MATERIAL_AMOUNT) output += "<A href='?src=[REF(src)];remove_mat=1;material=[ref]'>Eject</A>"
-		if(amount >= MINERAL_MATERIAL_AMOUNT*5) output += "<A href='?src=[REF(src)];remove_mat=5;material=[ref]'>5x</A>"
-		if(amount >= MINERAL_MATERIAL_AMOUNT) output += "<A href='?src=[REF(src)];remove_mat=50;material=[ref]'>All</A>"
+		if(amount >= MINERAL_MATERIAL_AMOUNT) output += "<a href='byond://?src=[REF(src)];command=eject;remove_mat=1;material=[ref]'>Eject</A>"
+		if(amount >= MINERAL_MATERIAL_AMOUNT*5) output += "<a href='byond://?src=[REF(src)];command=eject;remove_mat=5;material=[ref]'>5x</A>"
+		if(amount >= MINERAL_MATERIAL_AMOUNT) output += "<a href='byond://?src=[REF(src)];command=eject;remove_mat=50;material=[ref]'>All</A>"
 		output += "<br>"
 	output += "</div>"
 	return output
@@ -173,8 +175,15 @@
 	for(var/datum/design/D in matching_designs)
 		output += "<div class='part'>[output_part_info(D)]<br>"
 		if(check_resources(D))
-			output += "<a href='?src=[REF(src)];part=[D.id]'>Build</a> | "
-		output += "<a href='?src=[REF(src)];add_to_queue=[D.id]'>Add to queue</a><a href='?src=[REF(src)];part_desc=[D.id]'>?</a></div>"
+			output += "<a href='byond://?src=[REF(src)];command=build;part=[D.id]'>Build</a> | "
+		output += "<a href='byond://?src=[REF(src)];command=add;add_to_queue=[D.id]'>Add to queue</a><a href='byond://?src=[REF(src)];command=describe;part_desc=[D.id]'>?</a></div>"
+	return output
+
+/obj/machinery/mecha_part_fabricator/proc/output_ui_direction()
+	var/output
+	output += "<h2>Output Direction:</h2>"
+	for(var/direction in GLOB.cardinals)
+		output += "<a href='byond://?src=[REF(src)];command=direction;new_direction=[direction]'>[uppertext(dir2text(direction))]</a>"
 	return output
 
 /obj/machinery/mecha_part_fabricator/proc/build_part(datum/design/D)
@@ -203,8 +212,13 @@
 	cut_overlay("fab-active")
 	desc = initial(desc)
 
-	var/location = get_step(src,(dir))
-	var/obj/item/I = new D.build_path(location)
+	var/placement_location = get_step(src, output_direction)
+	//This properly checks for density, so you can't output into fulltile windows and the like.
+	if(!placement_location || !get_step_to(src, placement_location)) //If we can't build in the proper direction, build on top of the unit.
+		say("Error! Product output direction is obstructed.")
+		placement_location = loc
+
+	var/obj/item/I = new D.build_path(placement_location)
 	I.material_flags |= MATERIAL_NO_EFFECTS //Find a better way to do this.
 	I.set_custom_materials(res_coef)
 	say("\The [I] is complete.")
@@ -269,12 +283,12 @@
 			var/obj/part = D.build_path
 			output += "<li[!check_resources(D)?" style='color: #f00;'":null]>"
 			output += initial(part.name) + " - "
-			output += "[i>1?"<a href='?src=[REF(src)];queue_move=-1;index=[i]' class='arrow'>&uarr;</a>":null] "
-			output += "[i<queue.len?"<a href='?src=[REF(src)];queue_move=+1;index=[i]' class='arrow'>&darr;</a>":null] "
-			output += "<a href='?src=[REF(src)];remove_from_queue=[i]'>Remove</a></li>"
+			output += "[i>1?"<a href='byond://?src=[REF(src)];command=move;queue_move=-1;index=[i]' class='arrow'>&uarr;</a>":null] "
+			output += "[i<queue.len?"<a href='byond://?src=[REF(src)];command=move;queue_move=+1;index=[i]' class='arrow'>&darr;</a>":null] "
+			output += "<a href='byond://?src=[REF(src)];command=remove;remove_from_queue=[i]'>Remove</a></li>"
 
 		output += "</ol>"
-		output += "<a href='?src=[REF(src)];process_queue=1'>Process queue</a> | <a href='?src=[REF(src)];clear_queue=1'>Clear queue</a>"
+		output += "<a href='byond://?src=[REF(src)];command=process_queue'>Process queue</a> | <a href='byond://?src=[REF(src)];command=clear_queue'>Clear queue</a>"
 	return output
 
 /obj/machinery/mecha_part_fabricator/proc/get_resource_cost_w_coeff(datum/design/D, datum/material/resource, roundto = 1)
@@ -287,10 +301,6 @@
 	. = ..()
 	var/dat, left_part
 	user.set_machine(src)
-	var/turf/exit = get_step(src,(dir))
-	if(exit.density)
-		say("Error! Part outlet is obstructed.")
-		return
 	if(temp)
 		left_part = temp
 	else if(being_built)
@@ -302,13 +312,15 @@
 		switch(screen)
 			if("main")
 				for(var/part_set in part_sets)
-					left_part += "<a href='?src=[REF(src)];part_set=[part_set]'>[part_set]</a> - <a href='?src=[REF(src)];partset_to_queue=[part_set]'>Add all parts to queue</a><br>"
+					left_part += "<a href='byond://?src=[REF(src)];command=category;part_set=[part_set]'>[part_set]</a> - <a href='byond://?src=[REF(src)];command=send_all;partset_to_queue=[part_set]'>Add all parts to queue</a><br>"
 			if("parts")
 				left_part += output_parts_list(part_set)
 			if("resources")
 				left_part += output_ui_materials()
 			if("search")
 				left_part += output_ui_search()
+			if("direction")
+				left_part += output_ui_direction()
 	dat = {"<html>
 			<head>
 			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
@@ -351,75 +363,79 @@
 /obj/machinery/mecha_part_fabricator/Topic(href, href_list)
 	if(..())
 		return
-	if(href_list["part_set"])
-		var/tpart_set = href_list["part_set"]
-		if(tpart_set)
-			if(tpart_set=="clear")
-				part_set = null
-			else
-				part_set = tpart_set
-				screen = "parts"
-	if(href_list["part"])
-		var/T = href_list["part"]
-		for(var/v in stored_research.researched_designs)
-			var/datum/design/D = SSresearch.techweb_design_by_id(v)
-			if(D.build_type & MECHFAB)
-				if(D.id == T)
-					if(!processing_queue)
-						build_part(D)
-					else
-						add_to_queue(D)
-					break
-	if(href_list["add_to_queue"])
-		var/T = href_list["add_to_queue"]
-		for(var/v in stored_research.researched_designs)
-			var/datum/design/D = SSresearch.techweb_design_by_id(v)
-			if(D.build_type & MECHFAB)
-				if(D.id == T)
-					add_to_queue(D)
-					break
-		return update_queue_on_page()
-	if(href_list["remove_from_queue"])
-		remove_from_queue(text2num(href_list["remove_from_queue"]))
-		return update_queue_on_page()
-	if(href_list["partset_to_queue"])
-		add_part_set_to_queue(href_list["partset_to_queue"])
-		return update_queue_on_page()
-	if(href_list["process_queue"])
-		INVOKE_ASYNC(src, PROC_REF(do_process_queue))
-	if(href_list["clear_temp"])
-		temp = null
-	if(href_list["screen"])
-		screen = href_list["screen"]
-	if(href_list["queue_move"] && href_list["index"])
-		var/index = text2num(href_list["index"])
-		var/new_index = index + text2num(href_list["queue_move"])
-		if(isnum(index) && isnum(new_index) && ISINTEGER(index) && ISINTEGER(new_index))
-			if(ISINRANGE(new_index,1,queue.len))
-				queue.Swap(index,new_index)
-		return update_queue_on_page()
-	if(href_list["clear_queue"])
-		queue = list()
-		return update_queue_on_page()
-	if(href_list["part_desc"])
-		var/T = href_list["part_desc"]
-		for(var/v in stored_research.researched_designs)
-			var/datum/design/D = SSresearch.techweb_design_by_id(v)
-			if(D.build_type & MECHFAB)
-				if(D.id == T)
-					var/obj/part = D.build_path
-					temp = {"<h1>[initial(part.name)] description:</h1>
-								[initial(part.desc)]<br>
-								<a href='?src=[REF(src)];clear_temp=1'>Return</a>
-								"}
-					break
-	if(href_list["search"]) //Search for designs with name matching pattern
-		search(href_list["to_search"])
-		screen = "search"
 
-	if(href_list["remove_mat"] && href_list["material"])
-		var/datum/material/Mat = locate(href_list["material"])
-		eject_sheets(Mat, text2num(href_list["remove_mat"]))
+	switch(href_list["command"])
+		if("category")
+			var/tpart_set = href_list["part_set"]
+			if(tpart_set)
+				if(tpart_set=="clear")
+					part_set = null
+				else
+					part_set = tpart_set
+					screen = "parts"
+		if("build")
+			var/T = href_list["part"]
+			for(var/v in stored_research.researched_designs)
+				var/datum/design/D = SSresearch.techweb_design_by_id(v)
+				if(D.build_type & MECHFAB)
+					if(D.id == T)
+						if(!processing_queue)
+							build_part(D)
+						else
+							add_to_queue(D)
+						break
+		if("add")
+			var/T = href_list["add_to_queue"]
+			for(var/v in stored_research.researched_designs)
+				var/datum/design/D = SSresearch.techweb_design_by_id(v)
+				if(D.build_type & MECHFAB)
+					if(D.id == T)
+						add_to_queue(D)
+						break
+			return update_queue_on_page()
+		if("remove")
+			remove_from_queue(text2num(href_list["remove_from_queue"]))
+			return update_queue_on_page()
+		if("send_all")
+			add_part_set_to_queue(href_list["partset_to_queue"])
+			return update_queue_on_page()
+		if("process_queue")
+			INVOKE_ASYNC(src, PROC_REF(do_process_queue))
+		if("clear_temp")
+			temp = null
+		if("change_screen")
+			screen = href_list["screen"]
+		if("move")
+			var/index = text2num(href_list["index"])
+			var/new_index = index + text2num(href_list["queue_move"])
+			if(isnum(index) && isnum(new_index) && ISINTEGER(index) && ISINTEGER(new_index))
+				if(ISINRANGE(new_index,1,queue.len))
+					queue.Swap(index,new_index)
+			return update_queue_on_page()
+		if("clear_queue")
+			queue = list()
+			return update_queue_on_page()
+		if("describe")
+			var/T = href_list["part_desc"]
+			for(var/v in stored_research.researched_designs)
+				var/datum/design/D = SSresearch.techweb_design_by_id(v)
+				if(D.build_type & MECHFAB)
+					if(D.id == T)
+						var/obj/part = D.build_path
+						temp = {"<h1>[initial(part.name)] description:</h1>
+									[initial(part.desc)]<br>
+									<a href='byond://?src=[REF(src)];command=clear_temp'>Return</a>
+									"}
+						break
+		if("search") //Search for designs with name matching pattern
+			search(href_list["to_search"])
+			screen = "search"
+		if("eject")
+			var/datum/material/Mat = locate(href_list["material"])
+			eject_sheets(Mat, text2num(href_list["remove_mat"]))
+		if("direction")
+			output_direction = text2num(href_list["new_direction"])
+			screen = "main"
 
 	updateUsrDialog()
 	return
@@ -471,10 +487,10 @@
 
 /obj/machinery/mecha_part_fabricator/proc/is_insertion_ready(mob/user)
 	if(panel_open)
-		to_chat(user, "<span class='warning'>You can't load [src] while it's opened!</span>")
+		to_chat(user, span_warning("You can't load [src] while it's opened!"))
 		return FALSE
 	if(being_built)
-		to_chat(user, "<span class='warning'>\The [src] is currently processing! Please wait until completion.</span>")
+		to_chat(user, span_warning("\The [src] is currently processing! Please wait until completion."))
 		return FALSE
 
 	return TRUE

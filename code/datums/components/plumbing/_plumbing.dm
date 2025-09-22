@@ -26,11 +26,11 @@
 	reagents = AM.reagents
 	turn_connects = _turn_connects
 
-	RegisterSignal(parent, list(COMSIG_MOVABLE_MOVED), PROC_REF(on_parent_moved))
-	RegisterSignal(parent, list(COMSIG_PARENT_PREQDELETED), PROC_REF(disable))
-	RegisterSignal(parent, list(COMSIG_OBJ_DEFAULT_UNFASTEN_WRENCH), PROC_REF(toggle_active))
-	RegisterSignal(parent, list(COMSIG_OBJ_HIDE), PROC_REF(hide))
-	RegisterSignal(parent, list(COMSIG_ATOM_UPDATE_OVERLAYS), PROC_REF(create_overlays)) //called by lateinit on startup
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(on_parent_moved))
+	RegisterSignal(parent, COMSIG_PARENT_PREQDELETED, PROC_REF(disable))
+	RegisterSignal(parent, COMSIG_OBJ_DEFAULT_UNFASTEN_WRENCH, PROC_REF(toggle_active))
+	RegisterSignal(parent, COMSIG_OBJ_HIDE, PROC_REF(hide))
+	RegisterSignal(parent, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(create_overlays)) //called by lateinit on startup
 
 	if(start)
 		//timer 0 so it can finish returning initialize, after which we're added to the parent.

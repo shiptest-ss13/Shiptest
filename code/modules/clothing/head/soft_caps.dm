@@ -196,20 +196,6 @@
 	unique_reskin = null
 	dog_fashion = null
 
-/obj/item/clothing/head/soft/inteq
-	name = "inteq utility cover"
-	desc = "A rich brown utility cover with the golden shield of the IRMG on it."
-	icon_state = "inteqsoft"
-	unique_reskin = null
-	dog_fashion = null
-
-/obj/item/clothing/head/soft/inteq/corpsman
-	name = "inteq corpsman utility cover"
-	desc = "A sterile white utility cover with a green cross emblazoned on it. Worn by the IRMG's support division Corpsmen."
-	icon_state = "inteqmedsoft"
-	unique_reskin = null
-	dog_fashion = null
-
 /obj/item/clothing/head/soft/utility_beige
 	name = "beige utility cover"
 	desc = "A flat beige utility cover, unbranded. Just the right color for those sandy planetoids."

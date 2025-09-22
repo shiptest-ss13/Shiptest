@@ -65,22 +65,22 @@
 	if(!buildable_sign)
 		return FALSE
 	user.visible_message(
-		"<span class='notice'>[user] starts removing [src]...</span>", \
-		"<span class='notice'>You start unfastening [src].</span>")
+		span_notice("[user] starts removing [src]..."), \
+		span_notice("You start unfastening [src]."))
 	I.play_tool_sound(src)
 	if(!I.use_tool(src, user, 4 SECONDS))
 		return TRUE
 	playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 	user.visible_message(
-		"<span class='notice'>[user] unfastens [src].</span>", \
-		"<span class='notice'>You unfasten [src].</span>")
+		span_notice("[user] unfastens [src]."), \
+		span_notice("You unfasten [src]."))
 	var/obj/item/sign/unwrenched_sign = new (get_turf(user))
 	if(type != /obj/structure/sign) //If it's still just a basic sign backing, we can (and should) skip some of the below variable transfers.
 		unwrenched_sign.name = name //Copy over the sign structure variables to the sign item we're creating when we unwrench a sign.
 		unwrenched_sign.desc = "[desc] It can be placed on a wall."
 		unwrenched_sign.icon_state = icon_state
 		unwrenched_sign.sign_path = type
-	unwrenched_sign.obj_integrity = obj_integrity //Transfer how damaged it is.
+	unwrenched_sign.update_integrity(atom_integrity) //Transfer how damaged it is.
 	unwrenched_sign.setDir(dir)
 	qdel(src) //The sign structure on the wall goes poof and only the sign item from unwrenching remains.
 	return TRUE
@@ -89,40 +89,40 @@
 	. = ..()
 	if(user.a_intent == INTENT_HARM)
 		return FALSE
-	if(obj_integrity == max_integrity)
-		to_chat(user, "<span class='warning'>This sign is already in perfect condition.</span>")
+	if(atom_integrity == max_integrity)
+		to_chat(user, span_warning("This sign is already in perfect condition."))
 		return TRUE
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return TRUE
 	user.visible_message(
-		"<span class='notice'>[user] starts repairing [src]...</span>", \
-		"<span class='notice'>You start repairing [src].</span>")
+		span_notice("[user] starts repairing [src]..."), \
+		span_notice("You start repairing [src]."))
 	if(!I.use_tool(src, user, 4 SECONDS, volume =50))
 		return TRUE
 	user.visible_message(
-		"<span class='notice'>[user] finishes repairing [src].</span>", \
-		"<span class='notice'>You finish repairing [src].</span>")
-	obj_integrity = max_integrity
+		span_notice("[user] finishes repairing [src]."), \
+		span_notice("You finish repairing [src]."))
+	atom_integrity = max_integrity
 	return TRUE
 
 /obj/item/sign/welder_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(user.a_intent == INTENT_HARM)
 		return FALSE
-	if(obj_integrity == max_integrity)
-		to_chat(user, "<span class='warning'>This sign is already in perfect condition.</span>")
+	if(atom_integrity == max_integrity)
+		to_chat(user, span_warning("This sign is already in perfect condition."))
 		return TRUE
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return TRUE
 	user.visible_message(
-		"<span class='notice'>[user] starts repairing [src]...</span>", \
-		"<span class='notice'>You start repairing [src].</span>")
+		span_notice("[user] starts repairing [src]..."), \
+		span_notice("You start repairing [src]."))
 	if(!I.use_tool(src, user, 4 SECONDS, volume =50))
 		return TRUE
 	user.visible_message(
-		"<span class='notice'>[user] finishes repairing [src].</span>", \
-		"<span class='notice'>You finish repairing [src].</span>")
-	obj_integrity = max_integrity
+		span_notice("[user] finishes repairing [src]."), \
+		span_notice("You finish repairing [src]."))
+	atom_integrity = max_integrity
 	return TRUE
 
 /obj/structure/sign/attackby(obj/item/I, mob/user, params)
@@ -135,11 +135,11 @@
 		if(!choice)
 			return
 		if(!Adjacent(user)) //Make sure user is adjacent still.
-			to_chat(user, "<span class='warning'>You need to stand next to the sign to change it!</span>")
+			to_chat(user, span_warning("You need to stand next to the sign to change it!"))
 			return
 		user.visible_message(
-			"<span class='notice'>[user] begins changing [src].</span>", \
-			"<span class='notice'>You begin changing [src].</span>")
+			span_notice("[user] begins changing [src]."), \
+			span_notice("You begin changing [src]."))
 		if(!do_after(user, 4 SECONDS, target = src)) //Small delay for changing signs instead of it being instant, so somebody could be shoved or stunned to prevent them from doing so.
 			return
 		var/sign_type = GLOB.editable_sign_types[choice]
@@ -149,11 +149,11 @@
 		var/obj/structure/sign/changedsign = new sign_type(get_turf(src))
 		changedsign.pixel_x = pixel_x
 		changedsign.pixel_y = pixel_y
-		changedsign.obj_integrity = obj_integrity
+		changedsign.atom_integrity = atom_integrity
 		qdel(src)
 		user.visible_message(
-			"<span class='notice'>[user] finishes changing the sign.</span>", \
-			"<span class='notice'>You finish changing the sign.</span>")
+			span_notice("[user] finishes changing the sign."), \
+			span_notice("You finish changing the sign."))
 		return
 	return ..()
 
@@ -167,11 +167,11 @@
 		if(!choice)
 			return
 		if(!Adjacent(user)) //Make sure user is adjacent still.
-			to_chat(user, "<span class='warning'>You need to stand next to the sign to change it!</span>")
+			to_chat(user, span_warning("You need to stand next to the sign to change it!"))
 			return
 		if(!choice)
 			return
-		user.visible_message("<span class='notice'>You begin changing [src].</span>")
+		user.visible_message(span_notice("You begin changing [src]."))
 		if(!do_after(user, 4 SECONDS, target = src))
 			return
 		var/obj/structure/sign/sign_type = GLOB.editable_sign_types[choice]
@@ -179,7 +179,7 @@
 		desc = "[initial(sign_type.desc)] It can be placed on a wall."
 		icon_state = initial(sign_type.icon_state)
 		sign_path = sign_type
-		user.visible_message("<span class='notice'>You finish changing the sign.</span>")
+		user.visible_message(span_notice("You finish changing the sign."))
 		return
 	return ..()
 
@@ -201,10 +201,10 @@
 	else if(dir & WEST)
 		placed_sign.pixel_x = -32
 	user.visible_message(
-		"<span class='notice'>[user] fastens [src] to [target_turf].</span>", \
-		"<span class='notice'>You attach the sign to [target_turf].</span>")
+		span_notice("[user] fastens [src] to [target_turf]."), \
+		span_notice("You attach the sign to [target_turf]."))
 	playsound(target_turf, 'sound/items/deconstruct.ogg', 50, TRUE)
-	placed_sign.obj_integrity = obj_integrity
+	placed_sign.update_integrity(atom_integrity)
 	placed_sign.setDir(turn(dir,180)) //SinguloStation13 Edit (Normally all wallframes's dir point away from the wall, not look into it when placed.)
 	qdel(src)
 

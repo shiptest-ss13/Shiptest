@@ -1,12 +1,12 @@
 /datum/outfit/job/gezena
 	name = "PGF - Base Outfit"
+	faction = FACTION_PLAYER_GEZENA
 	// faction_icon = "bg_pgf"
 
 /datum/outfit/job/gezena/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	if(visualsOnly)
 		return
-	H.faction |= list(FACTION_PLAYER_GEZENA)
 	H.grant_language(/datum/language/kalixcian_common)
 
 //Playable Roles (put in ships):
@@ -39,6 +39,7 @@
 	satchel = /obj/item/storage/backpack/satchel/eng
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
 	courierbag = /obj/item/storage/backpack/messenger/engi
+	box = /obj/item/storage/box/survival/engineer
 
 /datum/outfit/job/gezena/doctor
 	name = "PGF - Navy Doctor"
@@ -62,14 +63,14 @@
 	job_icon = "securityofficer"
 
 	uniform = /obj/item/clothing/under/gezena/marine
-	shoes = /obj/item/clothing/shoes/combat/gezena
+	shoes = /obj/item/clothing/shoes/combat/gezena/marine
 	neck = /obj/item/clothing/neck/cloak/gezena
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
 	courierbag = /obj/item/storage/backpack/messenger/sec
-	box = /obj/item/storage/box/survival/security
+	box = /obj/item/storage/box/survival/pgf
 
 /datum/outfit/job/gezena/security/sapper
 	name = "PGF - Marine Pioneer"
@@ -80,6 +81,21 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
 	courierbag = /obj/item/storage/backpack/messenger/engi
 
+/datum/outfit/job/gezena/cmo
+	name = "PGF - Medical Officer"
+	jobtype = /datum/job/cmo
+	job_icon = "chiefmedicalofficer"
+
+	uniform = /obj/item/clothing/under/gezena
+	shoes = /obj/item/clothing/shoes/combat/gezena
+	neck = /obj/item/clothing/neck/cloak/gezena/med
+
+	backpack = /obj/item/storage/backpack/medic
+	satchel = /obj/item/storage/backpack/satchel/med
+	duffelbag = /obj/item/storage/backpack/duffelbag/med
+	courierbag = /obj/item/storage/backpack/messenger/med
+	box = /obj/item/storage/box/survival/medical
+
 /datum/outfit/job/gezena/hos
 	name = "PGF - Marine Sergeant"
 	id_assignment = "Sergeant"
@@ -87,15 +103,14 @@
 	job_icon = "headofsecurity"
 
 	uniform = /obj/item/clothing/under/gezena/marine
-	head = /obj/item/clothing/head/gezena/marine/lead
-	shoes = /obj/item/clothing/shoes/combat/gezena
-	neck = /obj/item/clothing/neck/cloak/gezena/lead
+	shoes = /obj/item/clothing/shoes/combat/gezena/marine
+	neck = /obj/item/clothing/neck/cloak/gezena/command
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
 	courierbag = /obj/item/storage/backpack/messenger/sec
-	box = /obj/item/storage/box/survival/security
+	box = /obj/item/storage/box/survival/pgf
 
 /datum/outfit/job/gezena/hop
 	name = "PGF - Bridge Officer"
@@ -146,7 +161,7 @@
 
 	uniform = /obj/item/clothing/under/gezena
 	suit = /obj/item/clothing/suit/armor/gezena/engi
-	head = /obj/item/clothing/head/gezena
+	head = /obj/item/clothing/head/gezena/engi
 	belt = /obj/item/storage/belt/utility/full/engi
 	gloves = /obj/item/clothing/gloves/gezena/engi
 	shoes = /obj/item/clothing/shoes/combat/gezena
@@ -163,9 +178,9 @@
 	job_icon = "medicaldoctor"
 
 	uniform = /obj/item/clothing/under/gezena
-	suit = /obj/item/clothing/suit/armor/gezena
+	suit = /obj/item/clothing/suit/armor/gezena/medic
 	head = /obj/item/clothing/head/gezena/medic
-	gloves = /obj/item/clothing/gloves/gezena
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/med
 
@@ -185,15 +200,17 @@
 	head = /obj/item/clothing/head/helmet/gezena
 	belt = /obj/item/storage/belt/military/gezena
 	gloves = /obj/item/clothing/gloves/gezena/marine
-	shoes = /obj/item/clothing/shoes/combat/gezena
+	shoes = /obj/item/clothing/shoes/combat/gezena/marine
 	neck = /obj/item/clothing/neck/cloak/gezena
-	r_hand = /obj/item/gun/energy/kalix/pgf/heavy
+	r_hand = /obj/item/gun/energy/kalix/pgf/medium
+	mask = /obj/item/clothing/mask/breath/pgfmask
+	glasses = /obj/item/clothing/glasses/sunglasses/pgf
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
 	courierbag = /obj/item/storage/backpack/messenger/sec
-	box = /obj/item/storage/box/survival/security
+	box = /obj/item/storage/box/survival/pgf
 
 /datum/outfit/job/gezena/hos/geared
 	name = "PGF - Marine Sergeant - Equipped"
@@ -202,18 +219,20 @@
 
 	uniform = /obj/item/clothing/under/gezena/marine
 	suit = /obj/item/clothing/suit/armor/gezena/marine
-	head = /obj/item/clothing/head/gezena/marine/lead
+	head = /obj/item/clothing/head/helmet/gezena
 	belt = /obj/item/storage/belt/military/gezena
 	gloves = /obj/item/clothing/gloves/gezena/marine
-	shoes = /obj/item/clothing/shoes/combat/gezena
-	neck = /obj/item/clothing/neck/cloak/gezena/lead
-	r_hand = /obj/item/gun/energy/kalix/pgf
+	shoes = /obj/item/clothing/shoes/combat/gezena/marine
+	neck = /obj/item/clothing/neck/cloak/gezena/command
+	r_hand = /obj/item/gun/energy/kalix/pgf/heavy
+	mask = /obj/item/clothing/mask/breath/pgfmask
+	glasses = /obj/item/clothing/glasses/sunglasses/pgf
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
 	courierbag = /obj/item/storage/backpack/messenger/sec
-	box = /obj/item/storage/box/survival/security
+	box = /obj/item/storage/box/survival/pgf
 
 /datum/outfit/job/gezena/paramedic
 	name = "PGF - Marine Medic - Equipped"
@@ -225,9 +244,11 @@
 	head = /obj/item/clothing/head/helmet/gezena
 	belt = /obj/item/storage/belt/medical/gezena
 	gloves = /obj/item/clothing/gloves/gezena/marine
-	shoes = /obj/item/clothing/shoes/combat/gezena
+	shoes = /obj/item/clothing/shoes/combat/gezena/marine
 	neck = /obj/item/clothing/neck/cloak/gezena/med
 	r_hand = /obj/item/gun/energy/kalix/pgf
+	mask = /obj/item/clothing/mask/breath/pgfmask
+	glasses = /obj/item/clothing/glasses/sunglasses/pgf
 
 	backpack = /obj/item/storage/backpack/medic
 	satchel = /obj/item/storage/backpack/satchel/med

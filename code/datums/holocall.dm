@@ -46,11 +46,11 @@
 
 	var/call_start_time
 
-//creates a holocall made by `caller` from `calling_pad` to `callees`
-/datum/holocall/New(mob/living/caller, obj/machinery/holopad/calling_pad, list/callees, elevated_access = FALSE)
+//creates a holocall made by `requester` from `calling_pad` to `callees`
+/datum/holocall/New(mob/living/requester, obj/machinery/holopad/calling_pad, list/callees, elevated_access = FALSE)
 	call_start_time = world.time
-	user = caller
-	caller_location = get_area_name(caller)
+	user = requester
+	caller_location = get_area_name(requester)
 	calling_pad.outgoing_call = src
 	calling_holopad = calling_pad
 	dialed_holopads = list()
@@ -260,10 +260,10 @@
 			record.caller_image = holodiskOriginal.record.caller_image
 			record.entries = holodiskOriginal.record.entries.Copy()
 			record.language = holodiskOriginal.record.language
-			to_chat(user, "<span class='notice'>You copy the record from [holodiskOriginal] to [src] by connecting the ports!</span>")
+			to_chat(user, span_notice("You copy the record from [holodiskOriginal] to [src] by connecting the ports!"))
 			name = holodiskOriginal.name
 		else
-			to_chat(user, "<span class='warning'>[holodiskOriginal] has no record on it!</span>")
+			to_chat(user, span_warning("[holodiskOriginal] has no record on it!"))
 	..()
 
 /obj/item/disk/holodisk/proc/build_record()
@@ -328,14 +328,14 @@
 		unset_busy_human_dummy("HOLODISK_PRESET")
 
 /obj/item/disk/holodisk/example
-	preset_image_type = /datum/preset_holoimage/clown
+	preset_image_type = /datum/preset_holoimage/researcher
 	preset_record_text = {"
-	NAME Clown
+	NAME Guy Scienceman
 	DELAY 10
 	SAY Why did the chaplain cross the maint ?
 	DELAY 20
 	SAY He wanted to get to the other side!
-	SOUND clownstep
+	SOUND scream
 	DELAY 30
 	SAY Helped him get there!
 	DELAY 10
@@ -370,9 +370,6 @@
 
 /datum/preset_holoimage/corgi
 	nonhuman_mobtype = /mob/living/simple_animal/pet/dog/corgi
-
-/datum/preset_holoimage/clown
-	outfit_type = /datum/outfit/job/clown
 
 /datum/preset_holoimage/miner
 	outfit_type = /datum/outfit/job/miner

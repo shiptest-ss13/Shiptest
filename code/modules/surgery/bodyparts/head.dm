@@ -13,7 +13,10 @@
 	px_y = -8
 	stam_damage_coeff = 1
 	max_stamina_damage = 100
-	bone_break_threshold = 35 // Beefier bones
+	wound_resistance = 5
+	disabled_wound_penalty = 25
+	scars_covered_by_clothes = FALSE
+	grind_results = null
 
 	var/mob/living/brain/brainmob = null //The current occupant.
 	var/obj/item/organ/brain/brain = null //The brain organ
@@ -69,27 +72,27 @@
 	. = ..()
 	if(IS_ORGANIC_LIMB(src))
 		if(!brain)
-			. += "<span class='info'>The brain has been removed from [src].</span>"
+			. += span_info("The brain has been removed from [src].")
 		else if(brainmob?.health <= HEALTH_THRESHOLD_DEAD)
-			. += "<span class='info'>It's leaking some kind of... clear fluid? The brain inside must be in pretty bad shape.</span>"
+			. += span_info("It's leaking some kind of... clear fluid? The brain inside must be in pretty bad shape.")
 		else if(brainmob)
 			if(brainmob.get_ghost(FALSE, TRUE))
-				. += "<span class='info'>Its muscles are twitching slightly... It seems to have some life still in it.</span>"
+				. += span_info("Its muscles are twitching slightly... It seems to have some life still in it.")
 			else
-				. += "<span class='info'>It's completely lifeless. Perhaps there'll be a chance for them later.</span>"
+				. += span_info("It's completely lifeless. Perhaps there'll be a chance for them later.")
 		else if(brain?.decoy_override)
-			. += "<span class='info'>It's completely lifeless. Perhaps there'll be a chance for them later.</span>"
+			. += span_info("It's completely lifeless. Perhaps there'll be a chance for them later.")
 		else
-			. += "<span class='info'>It's completely lifeless.</span>"
+			. += span_info("It's completely lifeless.")
 
 		if(!eyes)
-			. += "<span class='info'>[real_name]'s eyes have been removed.</span>"
+			. += span_info("[real_name]'s eyes have been removed.")
 
 		if(!ears)
-			. += "<span class='info'>[real_name]'s ears have been removed.</span>"
+			. += span_info("[real_name]'s ears have been removed.")
 
 		if(!tongue)
-			. += "<span class='info'>[real_name]'s tongue has been removed.</span>"
+			. += span_info("[real_name]'s tongue has been removed.")
 
 
 /obj/item/bodypart/head/can_dismember()
@@ -104,14 +107,14 @@
 	for(var/obj/item/I in src)
 		if(I == brain)
 			if(user)
-				user.visible_message("<span class='warning'>[user] saws [src] open and pulls out a brain!</span>", "<span class='notice'>You saw [src] open and pull out a brain.</span>")
+				user.visible_message(span_warning("[user] saws [src] open and pulls out a brain!"), span_notice("You saw [src] open and pull out a brain."))
 			if(brainmob)
 				brainmob.container = null
 				brainmob.forceMove(brain)
 				brain.brainmob = brainmob
 				brainmob = null
 			if(violent_removal && prob(rand(80, 100))) //ghetto surgery can damage the brain.
-				to_chat(user, "<span class='warning'>[brain] was damaged in the process!</span>")
+				to_chat(user, span_warning("[brain] was damaged in the process!"))
 				brain.setOrganDamage(brain.maxHealth)
 			brain.forceMove(T)
 			brain = null

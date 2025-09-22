@@ -4,11 +4,6 @@
 	required_reagents = list(/datum/reagent/consumable/ethanol = 1, /datum/reagent/oxygen = 1, /datum/reagent/silver = 1)
 	required_temp = 420
 
-/datum/chemical_reaction/fentanyl
-	results = list(/datum/reagent/toxin/fentanyl = 1)
-	required_reagents = list(/datum/reagent/drug/space_drugs = 1)
-	required_temp = 674
-
 /datum/chemical_reaction/cyanide
 	results = list(/datum/reagent/toxin/cyanide = 3)
 	required_reagents = list(/datum/reagent/fuel/oil = 1, /datum/reagent/ammonia = 1, /datum/reagent/oxygen = 1)
@@ -77,22 +72,18 @@
 /datum/chemical_reaction/heparin
 	results = list(/datum/reagent/toxin/heparin = 4)
 	required_reagents = list(/datum/reagent/toxin/formaldehyde = 1, /datum/reagent/sodium = 1, /datum/reagent/chlorine = 1, /datum/reagent/lithium = 1)
-	mix_message = "<span class='danger'>The mixture thins and loses all color.</span>"
+	mix_message = span_danger("The mixture thins and loses all color.")
 
 /datum/chemical_reaction/rotatium
 	results = list(/datum/reagent/toxin/rotatium = 3)
-	required_reagents = list(/datum/reagent/toxin/mindbreaker = 1, /datum/reagent/teslium = 1, /datum/reagent/toxin/fentanyl = 1)
-	mix_message = "<span class='danger'>After sparks, fire, and the smell of mindbreaker, the mix is constantly spinning with no stop in sight.</span>"
+	required_reagents = list(/datum/reagent/toxin/mindbreaker = 1, /datum/reagent/teslium = 1, /datum/reagent/drug/methamphetamine = 1)
+	mix_message = span_danger("After sparks, fire, and the smell of mindbreaker, the mix is constantly spinning with no stop in sight.")
 
 /datum/chemical_reaction/anacea
 	results = list(/datum/reagent/toxin/anacea = 3)
 	required_reagents = list(/datum/reagent/medicine/haloperidol = 1, /datum/reagent/impedrezene = 1, /datum/reagent/uranium/radium = 1)
 
-/datum/chemical_reaction/mimesbane
-	results = list(/datum/reagent/toxin/mimesbane = 3)
-	required_reagents = list(/datum/reagent/uranium/radium = 1, /datum/reagent/toxin/mutetoxin = 1, /datum/reagent/consumable/nothing = 1)
-
 /datum/chemical_reaction/bonehurtingjuice
 	results = list(/datum/reagent/toxin/bonehurtingjuice = 5)
 	required_reagents = list(/datum/reagent/toxin/mutagen = 1, /datum/reagent/toxin/itching_powder = 3, /datum/reagent/consumable/milk = 1)
-	mix_message = "<span class='danger'>The mixture suddenly becomes clear and looks a lot like water. You feel a strong urge to drink it.</span>"
+	mix_message = span_danger("The mixture suddenly becomes clear and looks a lot like water. You feel a strong urge to drink it.")

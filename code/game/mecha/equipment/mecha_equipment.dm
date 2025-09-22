@@ -40,7 +40,7 @@
 		src.update_chassis_page()
 		log_message("[src] is destroyed.", LOG_MECHA)
 		if(chassis.occupant)
-			chassis.occupant_message("<span class='danger'>[src] is destroyed!</span>")
+			chassis.occupant_message(span_danger("[src] is destroyed!"))
 			chassis.occupant.playsound_local(chassis, destroy_sound, 50)
 		if(!detachable) //If we're a built-in nondetachable equipment, let's lock up the slot that we were in.
 			chassis.max_equip--
@@ -52,9 +52,9 @@
 		if(!user.temporarilyRemoveItemFromInventory(src))
 			return FALSE
 		attach(M)
-		user.visible_message("<span class='notice'>[user] attaches [src] to [M].</span>", "<span class='notice'>You attach [src] to [M].</span>")
+		user.visible_message(span_notice("[user] attaches [src] to [M]."), span_notice("You attach [src] to [M]."))
 		return TRUE
-	to_chat(user, "<span class='warning'>You are unable to attach [src] to [M]!</span>")
+	to_chat(user, span_warning("You are unable to attach [src] to [M]!"))
 	return FALSE
 
 /obj/item/mecha_parts/mecha_equipment/proc/get_equip_info()
@@ -64,7 +64,7 @@
 	if(chassis.selected == src)
 		txt += "<b>[src.name]</b>"
 	else if(selectable)
-		txt += "<a href='?src=[REF(chassis)];select_equip=[REF(src)]'>[src.name]</a>"
+		txt += "<a href='byond://?src=[REF(chassis)];select_equip=[REF(src)]'>[src.name]</a>"
 	else
 		txt += "[src.name]"
 
@@ -107,22 +107,24 @@
 /obj/item/mecha_parts/mecha_equipment/proc/do_after_cooldown(atom/target)
 	if(!chassis)
 		return
-	var/C = chassis.loc
 	set_ready_state(FALSE)
 	chassis.use_power(energy_drain)
-	. = do_after(chassis.occupant, equip_cooldown, target=target, extra_checks = CALLBACK(src, PROC_REF(check_do_after), target, C))
+	. = do_after(chassis.occupant, equip_cooldown, target=target, extra_checks = CALLBACK(src, PROC_REF(check_do_after), target))
 	set_ready_state(TRUE)
 
 /obj/item/mecha_parts/mecha_equipment/proc/do_after_mecha(atom/target, delay)
 	if(!chassis)
 		return
-	var/C = chassis.loc
-	. = do_after(chassis.occupant, delay, target=target, extra_checks = CALLBACK(src, PROC_REF(check_do_after), target, C))
+	return do_after(chassis.occupant, delay, target=target, extra_checks = CALLBACK(src, PROC_REF(check_do_after), target))
 
-/obj/item/mecha_parts/mecha_equipment/proc/check_do_after(atom/target, turf/chassis_turf)
-	. = TRUE
-	if(!chassis || 	chassis.loc != chassis_turf || src != chassis.selected || !(get_dir(chassis, target)&chassis.dir))
+/obj/item/mecha_parts/mecha_equipment/proc/check_do_after(atom/target)
+	if(!chassis)
 		return FALSE
+	if(src != chassis.selected)
+		return FALSE
+	if(target && !(get_dir(chassis, target)&chassis.dir))
+		return FALSE
+	return TRUE
 
 /obj/item/mecha_parts/mecha_equipment/proc/can_attach(obj/mecha/M)
 	if(M.equipment.len<M.max_equip)

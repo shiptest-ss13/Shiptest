@@ -14,7 +14,7 @@
 	fire_delay = 0.16 SECONDS
 
 	wield_delay = 0.7 SECONDS
-	wield_slowdown = LASER_RIFLE_SLOWDOWN
+	wield_slowdown = LASER_SMG_SLOWDOWN
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/kalix
 	allowed_ammo_types = list(
@@ -41,7 +41,7 @@
 	hitscan_light_color_override = LIGHT_COLOR_ELECTRIC_CYAN
 	muzzle_flash_color_override = LIGHT_COLOR_ELECTRIC_CYAN
 	impact_light_color_override = LIGHT_COLOR_ELECTRIC_CYAN
-	range = 10
+	range = 12
 	damage_constant = 0.8
 	damage = 25
 	armour_penetration = -10
@@ -57,6 +57,9 @@
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
+
+	wield_delay = 0.7 SECONDS
+	wield_slowdown = LASER_SMG_SLOWDOWN
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/pgf
 	allowed_ammo_types = list(
@@ -106,7 +109,6 @@
 
 	refused_attachments = list(
 		/obj/item/attachment/gun,
-		/obj/item/attachment/sling
 		)
 
 /obj/item/ammo_casing/energy/kalix/pistol
@@ -117,12 +119,34 @@
 /obj/item/gun/energy/kalix/pistol/empty_cell
 	spawn_no_ammo = TRUE
 
+/obj/item/gun/energy/kalix/pgf/medium
+	name = "Etherbor BGC-10"
+	desc = "Etherbor's answer to the PGFMC's request for a carbine style weapon; the BGC-10 offers greater accuracy and power than the BG-16, while being less cumbersome than the DMR mode equipped HBG series rifles."
+	icon_state = "pgfmedium"
+	item_state = "pgfmedium"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+
+	modifystate = TRUE
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
+	fire_delay = 0.2 SECONDS
+
+	wield_delay = 0.7 SECONDS
+	wield_slowdown = LASER_RIFLE_SLOWDOWN
+
+	spread = 0.5
+	spread_unwielded = 15
+
+	ammo_type = list(/obj/item/ammo_casing/energy/pgf/assault , /obj/item/ammo_casing/energy/disabler/hitscan)
+
 /obj/item/gun/energy/kalix/pgf/heavy
 	name = "Etherbor HBG-7"
 	desc = "The HBG-7 is the standard-issue rifle weapon of the PGF. It comes with a special DMR mode that has greater armor piercing for dealing with armored targets."
 	icon_state = "pgfheavy"
 	item_state = "pgfheavy"
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	modifystate = FALSE
 
@@ -152,7 +176,7 @@
 	impact_type = /obj/effect/projectile/impact/pgf/rifle
 	damage = 25 //bar
 	armour_penetration = 20
-	range = 12
+	range = 14
 	damage_constant = 0.9
 
 /obj/item/ammo_casing/energy/pgf/sniper

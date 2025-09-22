@@ -62,7 +62,9 @@
 
 	/// Adjective used in get_generic_name(), if any
 	var/generic_adjective
-	var/bleedsuppress = 0 //for stopping bloodloss body-wide
+
+	///For stopping bloodloss
+	var/bleedsuppress = 0
 
 	var/name_override //For temporary visible name changes
 

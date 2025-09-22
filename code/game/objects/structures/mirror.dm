@@ -12,7 +12,7 @@
 /obj/structure/mirror/Initialize(mapload)
 	. = ..()
 	if(icon_state == "mirror_broke" && !broken)
-		obj_break(null, mapload)
+		atom_break(null, mapload)
 
 /obj/structure/mirror/attack_hand(mob/user)
 	. = ..()
@@ -42,7 +42,7 @@
 		if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 			return	//no tele-grooming
 		if(HAS_TRAIT(H, TRAIT_BALD))
-			to_chat(H, "<span class='notice'>If only growing back hair were that easy for you...</span>")
+			to_chat(H, span_notice("If only growing back hair were that easy for you..."))
 		if(new_style)
 			H.hairstyle = new_style
 
@@ -53,7 +53,7 @@
 		return list()// no message spam
 	return ..()
 
-/obj/structure/mirror/obj_break(damage_flag, mapload)
+/obj/structure/mirror/atom_break(damage_flag, mapload)
 	if(!broken && !(flags_1 & NODECONSTRUCT_1))
 		icon_state = "mirror_broke"
 		if(!mapload)
@@ -61,6 +61,7 @@
 		if(desc == initial(desc))
 			desc = "Oh no, seven years of bad luck!"
 		broken = TRUE
+	. = ..()
 
 /obj/structure/mirror/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -76,12 +77,12 @@
 	if(!broken)
 		return TRUE
 
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return TRUE
 
-	to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")
+	to_chat(user, span_notice("You begin repairing [src]..."))
 	if(I.use_tool(src, user, 10, volume=50))
-		to_chat(user, "<span class='notice'>You repair [src].</span>")
+		to_chat(user, span_notice("You repair [src]."))
 		broken = 0
 		icon_state = initial(icon_state)
 		desc = initial(desc)
@@ -181,7 +182,7 @@
 						H.dna.features["mcolor"] = sanitize_hexcolor(new_mutantcolor)
 
 					else
-						to_chat(H, "<span class='notice'>Invalid color. Your color is not bright enough.</span>")
+						to_chat(H, span_notice("Invalid color. Your color is not bright enough."))
 
 				if(MUTCOLORS_SECONDARY in H.dna.species.species_traits)
 					var/new_secondary_mutantcolor = input(user, "Choose your secondary skin color:", "Race change","#" + H.dna.features["mcolor2"]) as color|null
@@ -192,7 +193,7 @@
 							H.dna.features["mcolor2"] = sanitize_hexcolor(new_secondary_mutantcolor)
 
 						else
-							to_chat(H, "<span class='notice'>Invalid color. Your secondary color is not bright enough.</span>")
+							to_chat(H, span_notice("Invalid color. Your secondary color is not bright enough."))
 
 			H.update_body()
 			H.update_hair()
@@ -207,7 +208,7 @@
 					if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 						return
 					H.gender = "female"
-					to_chat(H, "<span class='notice'>You trans your gender. You're now a woman.</span>")
+					to_chat(H, span_notice("You trans your gender. You're now a woman."))
 				else
 					return
 
@@ -216,7 +217,7 @@
 					if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 						return
 					H.gender = "male"
-					to_chat(H, "<span class='notice'>You trans your gender. You're now a man.</span>")
+					to_chat(H, span_notice("You trans your gender. You're now a man."))
 				else
 					return
 			H.dna.update_ui_block(DNA_GENDER_BLOCK)

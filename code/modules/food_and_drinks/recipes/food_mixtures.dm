@@ -16,7 +16,7 @@
 /datum/chemical_reaction/tofu/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/tofu(location)
+		new /obj/item/food/tofu(location)
 	return
 
 /datum/chemical_reaction/chocolate_bar
@@ -25,7 +25,7 @@
 /datum/chemical_reaction/chocolate_bar/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/chocolatebar(location)
+		new /obj/item/food/chocolatebar(location)
 	return
 
 /datum/chemical_reaction/chocolate_bar2
@@ -35,7 +35,7 @@
 /datum/chemical_reaction/chocolate_bar2/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/chocolatebar(location)
+		new /obj/item/food/chocolatebar(location)
 	return
 
 /datum/chemical_reaction/soysauce
@@ -66,7 +66,16 @@
 /datum/chemical_reaction/cheesewheel/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/store/cheesewheel(location)
+		new /obj/item/food/cheese/wheel(location)
+
+/datum/chemical_reaction/tiris_cheese
+	required_reagents = list(/datum/reagent/consumable/tiris_milk = 40)
+	required_catalysts = list(/datum/reagent/consumable/enzyme = 5)
+
+/datum/chemical_reaction/tiris_cheese/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/food/cheese/wheel/tiris(location)
 
 /datum/chemical_reaction/synthmeat
 	required_reagents = list(/datum/reagent/blood = 5, /datum/reagent/medicine/cryoxadone = 1)
@@ -75,7 +84,7 @@
 /datum/chemical_reaction/synthmeat/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/meat/slab/synthmeat(location)
+		new /obj/item/food/meat/slab/synthmeat(location)
 
 /datum/chemical_reaction/hot_ramen
 	results = list(/datum/reagent/consumable/hot_ramen = 3)
@@ -87,12 +96,12 @@
 
 /datum/chemical_reaction/imitationcarpmeat
 	required_reagents = list(/datum/reagent/toxin/carpotoxin = 5)
-	required_container = /obj/item/reagent_containers/food/snacks/tofu
+	required_container = /obj/item/food/tofu
 	mix_message = "The mixture becomes similar to carp meat."
 
 /datum/chemical_reaction/imitationcarpmeat/on_reaction(datum/reagents/holder)
 	var/location = get_turf(holder.my_atom)
-	new /obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation(location)
+	new /obj/item/food/fishmeat/carp/imitation(location)
 	if(holder && holder.my_atom)
 		qdel(holder.my_atom)
 
@@ -103,7 +112,7 @@
 /datum/chemical_reaction/dough/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/dough(location)
+		new /obj/item/food/dough(location)
 
 /datum/chemical_reaction/cakebatter
 	required_reagents = list(/datum/reagent/consumable/eggyolk = 15, /datum/reagent/consumable/flour = 15, /datum/reagent/consumable/sugar = 5)
@@ -112,7 +121,7 @@
 /datum/chemical_reaction/cakebatter/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/cakebatter(location)
+		new /obj/item/food/cakebatter(location)
 
 /datum/chemical_reaction/cakebatter/vegan
 	required_reagents = list(/datum/reagent/consumable/soymilk = 15, /datum/reagent/consumable/flour = 15, /datum/reagent/consumable/sugar = 5)
@@ -124,7 +133,7 @@
 
 /datum/chemical_reaction/ricebowl/on_reaction(datum/reagents/holder)
 	var/location = get_turf(holder.my_atom)
-	new /obj/item/reagent_containers/food/snacks/salad/ricebowl(location)
+	new /obj/item/food/salad/ricebowl(location)
 	if(holder && holder.my_atom)
 		qdel(holder.my_atom)
 

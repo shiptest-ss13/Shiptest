@@ -22,7 +22,7 @@
 	custom_materials = list(/datum/material/iron=1750, /datum/material/glass=400)
 	flash_protect = FLASH_PROTECTION_WELDER
 	tint = 2
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 60)
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 60, "wound" = 1)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
 	actions_types = list(/datum/action/item_action/toggle)
 	visor_flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
@@ -60,12 +60,12 @@
 		src.icon_state = "ushankaup"
 		src.item_state = "ushankaup"
 		earflaps = 0
-		to_chat(user, "<span class='notice'>You raise the ear flaps on the trapper.</span>")
+		to_chat(user, span_notice("You raise the ear flaps on the trapper."))
 	else
 		src.icon_state = "ushankadown"
 		src.item_state = "ushankadown"
 		earflaps = 1
-		to_chat(user, "<span class='notice'>You lower the ear flaps on the trapper.</span>")
+		to_chat(user, span_notice("You lower the ear flaps on the trapper."))
 
 /*
  * Pumpkin head
@@ -178,7 +178,7 @@
 		return
 	if(new_style && new_style != hairstyle)
 		hairstyle = new_style
-		user.visible_message("<span class='notice'>[user] changes \the [src]'s hairstyle to [new_style].</span>", "<span class='notice'>You change \the [src]'s hairstyle to [new_style].</span>")
+		user.visible_message(span_notice("[user] changes \the [src]'s hairstyle to [new_style]."), span_notice("You change \the [src]'s hairstyle to [new_style]."))
 	if(newcolor && newcolor != color) // only update if necessary
 		add_atom_colour(newcolor, FIXED_COLOUR_PRIORITY)
 	update_appearance()
@@ -186,7 +186,7 @@
 /obj/item/clothing/head/wig/afterattack(mob/living/carbon/human/target, mob/user)
 	. = ..()
 	if (istype(target) && (HAIR in target.dna.species.species_traits) && target.hairstyle != "Bald")
-		to_chat(user, "<span class='notice'>You adjust the [src] to look just like [target.name]'s [target.hairstyle].</span>")
+		to_chat(user, span_notice("You adjust the [src] to look just like [target.name]'s [target.hairstyle]."))
 		add_atom_colour("#[target.hair_color]", FIXED_COLOUR_PRIORITY)
 		hairstyle = target.hairstyle
 		update_appearance()

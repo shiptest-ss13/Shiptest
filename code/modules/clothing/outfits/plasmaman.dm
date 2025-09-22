@@ -196,22 +196,6 @@
 	uniform = /obj/item/clothing/under/plasmaman/hop
 	gloves = /obj/item/clothing/gloves/color/plasmaman/black
 
-/datum/outfit/plasmaman/mime
-	name = "Plasmamime"
-
-	head = /obj/item/clothing/head/helmet/space/plasmaman/mime
-	uniform = /obj/item/clothing/under/plasmaman/mime
-	mask = /obj/item/clothing/mask/gas/mime
-	gloves = /obj/item/clothing/gloves/color/plasmaman/white
-
-/datum/outfit/plasmaman/clown
-	name = "Plasmaclown"
-
-	head = /obj/item/clothing/head/helmet/space/plasmaman/clown
-	uniform = /obj/item/clothing/under/plasmaman/clown
-	mask = /obj/item/clothing/mask/gas/clown_hat
-	gloves = /obj/item/clothing/gloves/color/plasmaman/clown
-
 /datum/outfit/plasmaman/solgov //WS edit sgr
 	name = "Plasmasolgov"
 	head = /obj/item/clothing/head/helmet/space/plasmaman/solgov

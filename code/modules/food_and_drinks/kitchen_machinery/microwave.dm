@@ -60,20 +60,20 @@
 /obj/machinery/microwave/examine(mob/user)
 	. = ..()
 	if(!operating)
-		. += "<span class='notice'>Alt-click [src] to turn it on.</span>"
+		. += span_notice("Alt-click [src] to turn it on.")
 
 	if(!in_range(user, src) && !issilicon(user) && !isobserver(user))
-		. += "<span class='warning'>You're too far away to examine [src]'s contents and display!</span>"
+		. += span_warning("You're too far away to examine [src]'s contents and display!")
 		return
 	if(operating)
-		. += "<span class='notice'>\The [src] is operating.</span>"
+		. += span_notice("\The [src] is operating.")
 		return
 
 	if(length(ingredients))
 		if(issilicon(user))
-			. += "<span class='notice'>\The [src] camera shows:</span>"
+			. += span_notice("\The [src] camera shows:")
 		else
-			. += "<span class='notice'>\The [src] contains:</span>"
+			. += span_notice("\The [src] contains:")
 		var/list/items_counts = new
 		for(var/i in ingredients)
 			if(istype(i, /obj/item/stack))
@@ -83,14 +83,14 @@
 				var/atom/movable/AM = i
 				items_counts[AM.name]++
 		for(var/O in items_counts)
-			. += "<span class='notice'>- [items_counts[O]]x [O].</span>"
+			. += span_notice("- [items_counts[O]]x [O].")
 	else
-		. += "<span class='notice'>\The [src] is empty.</span>"
+		. += span_notice("\The [src] is empty.")
 
 	if(!(machine_stat & (NOPOWER|BROKEN)))
-		. += "<span class='notice'>The status display reads:</span>\n"+\
-		"<span class='notice'>- Capacity: <b>[max_n_of_items]</b> items.</span>\n"+\
-		"<span class='notice'>- Cook time reduced by <b>[(efficiency - 1) * 25]%</b>.</span>"
+		. += "[span_notice("The status display reads:")]\n"+\
+		"[span_notice("- Capacity: <b>[max_n_of_items]</b> items.")]\n"+\
+		span_notice("- Cook time reduced by <b>[(efficiency - 1) * 25]%</b>.")
 
 /obj/machinery/microwave/update_icon_state()
 	if(broken)
@@ -128,40 +128,44 @@
 		return TRUE
 
 	if(broken > 0)
-		to_chat(user, "<span class='warning'>It's broken!</span>")
+		to_chat(user, span_warning("It's broken!"))
 		return TRUE
 
 	if(istype(O, /obj/item/reagent_containers/spray) || istype(O, /obj/item/soap) || istype(O, /obj/item/reagent_containers/glass/rag))
 		return
 
 	if(dirty == 100) // The microwave is all dirty so can't be used!
-		to_chat(user, "<span class='warning'>\The [src] is dirty!</span>")
+		to_chat(user, span_warning("\The [src] is dirty!"))
 		return TRUE
 
 	if(istype(O, /obj/item/storage/bag/tray))
 		var/obj/item/storage/T = O
 		var/loaded = 0
-		for(var/obj/item/reagent_containers/food/snacks/S in T.contents)
+
+		for(var/obj/S in T.contents)
+			if(!IS_EDIBLE(S))
+				continue
 			if(ingredients.len >= max_n_of_items)
-				to_chat(user, "<span class='warning'>\The [src] is full, you can't put anything in!</span>")
+				to_chat(user, span_warning("\The [src] is full, you can't put anything in!"))
 				return TRUE
 			if(SEND_SIGNAL(T, COMSIG_TRY_STORAGE_TAKE, S, src))
 				loaded++
 				ingredients += S
+
 		if(loaded)
-			to_chat(user, "<span class='notice'>You insert [loaded] items into \the [src].</span>")
+			to_chat(user, span_notice("You insert [loaded] items into \the [src]."))
 		return
 
 	if(O.w_class <= WEIGHT_CLASS_NORMAL && !istype(O, /obj/item/storage) && user.a_intent == INTENT_HELP)
 		if(ingredients.len >= max_n_of_items)
-			to_chat(user, "<span class='warning'>\The [src] is full, you can't put anything in!</span>")
+			to_chat(user, span_warning("\The [src] is full, you can't put anything in!"))
 			return TRUE
 		if(!user.transferItemToLoc(O, src))
-			to_chat(user, "<span class='warning'>\The [O] is stuck to your hand!</span>")
+			to_chat(user, span_warning("\The [O] is stuck to your hand!"))
 			return FALSE
 
 		ingredients += O
-		user.visible_message("<span class='notice'>[user] adds \a [O] to \the [src].</span>", "<span class='notice'>You add [O] to \the [src].</span>")
+		user.visible_message(span_notice("[user] adds \a [O] to \the [src]."), span_notice("You add [O] to \the [src]."))
 		return
 
 	..()
@@ -169,9 +173,9 @@
 /obj/machinery/microwave/welder_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(broken == 1)
-		user.visible_message("<span class='notice'>[user] starts to fix part of \the [src].</span>", "<span class='notice'>You start to fix part of \the [src]...</span>")
+		user.visible_message(span_notice("[user] starts to fix part of \the [src]."), span_notice("You start to fix part of \the [src]..."))
 		if(I.use_tool(src, user, 20))
-			user.visible_message("<span class='notice'>[user] fixes \the [src].</span>", "<span class='notice'>You fix \the [src].</span>")
+			user.visible_message(span_notice("[user] fixes \the [src]."), span_notice("You fix \the [src]."))
 			broken = 0
 			update_appearance()
 			return TRUE
@@ -179,9 +183,9 @@
 /obj/machinery/microwave/wirecutter_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(broken == 2)
-		user.visible_message("<span class='notice'>[user] starts to fix part of \the [src].</span>", "<span class='notice'>You start to fix part of \the [src]...</span>")
+		user.visible_message(span_notice("[user] starts to fix part of \the [src]."), span_notice("You start to fix part of \the [src]..."))
 		if(I.use_tool(src, user, 20))
-			user.visible_message("<span class='notice'>[user] fixes part of \the [src].</span>", "<span class='notice'>You fix part of \the [src].</span>")
+			user.visible_message(span_notice("[user] fixes part of \the [src]."), span_notice("You fix part of \the [src]."))
 			broken = 1
 			update_appearance()
 			return TRUE
@@ -209,7 +213,7 @@
 		if(isAI(user))
 			examine(user)
 		else
-			to_chat(user, "<span class='warning'>\The [src] is empty.</span>")
+			to_chat(user, span_warning("\The [src] is empty."))
 		return
 
 	var/choice = show_radial_menu(user, src, isAI(user) ? ai_radial_options : radial_options, require_near = !issilicon(user))
@@ -259,7 +263,7 @@
 	start()
 
 /obj/machinery/microwave/proc/wzhzhzh()
-	visible_message("<span class='notice'>\The [src] turns on.</span>", null, "<span class='hear'>You hear a microwave humming.</span>")
+	visible_message(span_notice("\The [src] turns on."), null, span_hear("You hear a microwave humming."))
 	operating = TRUE
 
 	set_light(1.5)
@@ -267,7 +271,7 @@
 	update_appearance()
 
 /obj/machinery/microwave/proc/spark()
-	visible_message("<span class='warning'>Sparks fly around [src]!</span>")
+	visible_message(span_warning("Sparks fly around [src]!"))
 	var/datum/effect_system/spark_spread/s = new
 	s.set_up(2, 1, src)
 	s.start()
@@ -342,17 +346,12 @@
 	loop(MICROWAVE_NORMAL, 10)
 
 /obj/machinery/microwave/proc/muck_finish()
-	visible_message("<span class='warning'>\The [src] gets covered in muck!</span>")
+	visible_message(span_warning("\The [src] gets covered in muck!"))
 	set_idle_power()
 
 	dirty = 100
 	dirty_anim_playing = FALSE
 	operating = FALSE
-
-	for(var/obj/item/reagent_containers/food/snacks/S in src)
-		if(prob(50))
-			new /obj/item/reagent_containers/food/snacks/badrecipe(src)
-			qdel(S)
 
 	after_finish_loop()
 
@@ -366,7 +365,11 @@
 	desc = "A magnisium based ration heater. It can be used to heat up entrees and other food items. reaches the same temperature as a microwave with half the volume."
 	icon = 'icons/obj/food/ration.dmi'
 	icon_state = "ration_heater"
-	grind_results = list(/datum/reagent/iron = 10, /datum/reagent/water = 10, /datum/reagent/consumable/sodiumchloride = 5)
+	grind_results = list(
+		/datum/reagent/iron = 10,
+		/datum/reagent/water = 10,
+		/datum/reagent/consumable/sodiumchloride = 5,
+	)
 	heat = 3800
 	w_class = WEIGHT_CLASS_SMALL
 	var/obj/item/tocook = null
@@ -378,17 +381,17 @@
 	ration_overlay = mutable_appearance(icon, icon_state, LOW_ITEM_LAYER)
 
 /obj/item/ration_heater/afterattack(atom/target, mob/user, flag)
-	if(istype(target, /obj/item/reagent_containers/food) || istype(target, /obj/item/grown))
-		to_chat(user, "<span class='notice'>You start sliding \the [src] under the [target]...</span>")
+	if(istype(target, /obj/item/food) || istype(target, /obj/item/grown))
+		to_chat(user, span_notice("You start sliding \the [src] under the [target]..."))
+
 		if(do_after(user, 10))
 			tocook = target
 			RegisterSignal(tocook, COMSIG_PARENT_QDELETING, PROC_REF(clear_cooking))
 			target.add_overlay(ration_overlay)
 			addtimer(CALLBACK(src, PROC_REF(cook)), 100)
-			target.visible_message("<span class='notice'>\The [target] rapidly begins cooking...</span>")
+			target.visible_message(span_notice("\The [target] rapidly begins cooking..."))
 			playsound(src, 'sound/items/cig_light.ogg', 50, 1)
 			moveToNullspace()
-
 
 /obj/item/ration_heater/get_temperature()
 	if(!uses)
@@ -404,13 +407,15 @@
 /obj/item/ration_heater/proc/cook()
 	if(!QDELETED(tocook))
 		var/cookturf = get_turf(tocook)
-		tocook.visible_message("<span class='notice'>\The [src] lets out a final hiss...</span>")
+		tocook.visible_message(span_notice("\The [src] lets out a final hiss..."))
 		playsound(tocook, 'sound/items/cig_snuff.ogg', 50, 1)
-		if(istype(tocook, /obj/item/reagent_containers/food) || istype(tocook, /obj/item/grown))
-			tocook.visible_message("<span class='notice'>\The [tocook] is done warming up!</span>")
+
+		if(istype(tocook, /obj/item/food) || istype(tocook, /obj/item/grown))
+			tocook.visible_message(span_notice("\The [tocook] is done warming up!"))
 			tocook.microwave_act()
 			if(!QDELETED(tocook))
 				clear_cooking()
+
 		if(uses == 0)
 			qdel()
 		else
@@ -420,7 +425,7 @@
 /obj/item/ration_heater/examine(mob/user)
 	. = ..()
 	. += "It has [uses] uses left..."
-	. += "<span class='notice'>Examine rations to see which ones can be microwaved.</span>"
+	. += span_notice("Examine rations to see which ones can be microwaved.")
 
 #undef MICROWAVE_NORMAL
 #undef MICROWAVE_MUCK

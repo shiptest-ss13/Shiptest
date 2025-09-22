@@ -66,7 +66,7 @@
 			if(get_location_accessible(target, target_zone) || surgery.ignore_clothes)
 				initiate(user, target, target_zone, tool, surgery, try_to_fail)
 			else
-				to_chat(user, "<span class='warning'>You need to expose [target]'s [parse_zone(target_zone)] to perform surgery on it!</span>")
+				to_chat(user, span_warning("You need to expose [target]'s [parse_zone(target_zone)] to perform surgery on it!"))
 			return TRUE	//returns TRUE so we don't stab the guy in the dick or wherever.
 
 	if(repeatable)
@@ -145,9 +145,9 @@
 	return advance
 
 /datum/surgery_step/proc/preop(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>You begin to perform surgery on [target]...</span>",
-		"<span class='notice'>[user] begins to perform surgery on [target].</span>",
-		"<span class='notice'>[user] begins to perform surgery on [target].</span>")
+	display_results(user, target, span_notice("You begin to perform surgery on [target]..."),
+		span_notice("[user] begins to perform surgery on [target]."),
+		span_notice("[user] begins to perform surgery on [target]."))
 
 /datum/surgery_step/proc/play_preop_sound(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(!preop_sound)
@@ -164,9 +164,9 @@
 
 /datum/surgery_step/proc/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = TRUE)
 	if(default_display_results)
-		display_results(user, target, "<span class='notice'>You succeed.</span>",
-				"<span class='notice'>[user] succeeds!</span>",
-				"<span class='notice'>[user] finishes.</span>")
+		display_results(user, target, span_notice("You succeed."),
+				span_notice("[user] succeeds!"),
+				span_notice("[user] finishes."))
 	user?.mind.adjust_experience(/datum/skill/healing, round(experience_given))
 	return TRUE
 
@@ -193,9 +193,9 @@
 		if(75 to 99)
 			screwedmessage = " This is practically impossible in these conditions..."
 
-	display_results(user, target, "<span class='warning'>You screw up![screwedmessage]</span>",
-		"<span class='warning'>[user] screws up!</span>",
-		"<span class='notice'>[user] finishes.</span>", TRUE) //By default the patient will notice if the wrong thing has been cut
+	display_results(user, target, span_warning("You screw up![screwedmessage]"),
+		span_warning("[user] screws up!"),
+		span_notice("[user] finishes."), TRUE) //By default the patient will notice if the wrong thing has been cut
 	return FALSE
 
 /datum/surgery_step/proc/play_failure_sound(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -221,12 +221,12 @@
 	if(require_all_chems)
 		. = TRUE
 		for(var/R in chems_needed)
-			if(!target.reagents.has_reagent(R))
+			if(!target.has_reagent(R))
 				return FALSE
 	else
 		. = FALSE
 		for(var/R in chems_needed)
-			if(target.reagents.has_reagent(R))
+			if(target.has_reagent(R))
 				return TRUE
 
 /datum/surgery_step/proc/get_chem_list()
@@ -252,7 +252,7 @@
 /datum/surgery_step/proc/commit_malpractice(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/ouchie_mod = 1
 	var/fuckup_mod = 1
-	ouchie_mod *= clamp(1-target.drunkenness/SURGERY_DRUNK_MOD, 0, 1) // Drunkenness up to 40% (points? idk) will improve chances of avoiding horrible pain and suffering
+	ouchie_mod *= clamp(1-target.get_drunk_amount()/SURGERY_DRUNK_MOD, 0, 1) // Drunkenness up to 40% (points? idk) will improve chances of avoiding horrible pain and suffering
 	if(target.stat == UNCONSCIOUS) // Being "normally" asleep will SLIGHTLY improve your chances since it's intuitive behavior barring access to anything else
 		ouchie_mod *= target.getOxyLoss() >= 50 ? 0.6 : 0.8 // Being choked out will slightly improve chances on top of that. Emergent gameplay! (people already do this)
 	var/final_ouchie_chance = SURGERY_FUCKUP_CHANCE * ouchie_mod

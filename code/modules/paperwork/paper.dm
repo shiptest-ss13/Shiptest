@@ -352,8 +352,8 @@
 		return
 	. = TRUE
 	if(!bypass_clumsy && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(10) && Adjacent(user))
-		user.visible_message("<span class='warning'>[user] accidentally ignites [user.p_them()]self!</span>", \
-							"<span class='userdanger'>You miss [src] and accidentally light yourself on fire!</span>")
+		user.visible_message(span_warning("[user] accidentally ignites [user.p_them()]self!"), \
+							span_userdanger("You miss [src] and accidentally light yourself on fire!"))
 		if(user.is_holding(I)) //checking if they're holding it in case TK is involved
 			user.dropItemToGround(I)
 		user.adjust_fire_stacks(1)
@@ -380,6 +380,13 @@
 	var/writing_stats = istype(attacking_item) ? attacking_item.get_writing_implement_details() : null
 
 	if(!writing_stats)
+		if (attacking_item.sharpness > SHARP_NONE && !istype(src, /obj/item/paper/paperslip) && do_after(user, 5, src))
+			playsound(src.loc, 'sound/weapons/slash.ogg', 50, TRUE)
+			to_chat(user, span_notice("You neatly cut [src]."))
+			new /obj/item/paper/paperslip(get_turf(src))
+			new /obj/item/paper/paperslip(get_turf(src))
+			qdel(src)
+			return
 		ui_interact(user)
 		return ..()
 

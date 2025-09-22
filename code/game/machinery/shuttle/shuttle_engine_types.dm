@@ -124,7 +124,7 @@
 	///what portion of the mols in the attached heater to "burn"
 	var/fuel_consumption = 0.0125
 	//multiplier for thrust
-	thrust = 3
+	thrust = 8
 	//used by stockparts, efficiency_multiplier
 	var/consumption_multiplier = 1
 	//If this engine should create heat when burned.

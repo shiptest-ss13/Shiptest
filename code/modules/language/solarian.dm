@@ -4,7 +4,12 @@
 	key = "c"
 	flags = TONGUELESS_SPEECH | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD
 	default_priority = 90
-	space_chance = 40
+	space_chance = 20
+	sentence_chance = 0
+	between_word_sentence_chance = 0
+	between_word_space_chance = 60
+	additional_syllable_low = -1
+	additional_syllable_high = 2
 	syllables = list(
 		"und", "gros", "ver", "sic", "men", "die", "ich", "end", "auf", "ach", "ber",
 		"ste", "ung", "der", "das", "ein", "da", "de", "ch", "kau", "lin", "aud","en","er", //german-swiss syllables

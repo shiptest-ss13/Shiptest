@@ -8,8 +8,8 @@
 //cruft
 /obj/item/melee/proc/check_martial_counter(mob/living/carbon/human/target, mob/living/carbon/human/user)
 	if(target.check_block())
-		target.visible_message("<span class='danger'>[target.name] blocks [src] and twists [user]'s arm behind [user.p_their()] back!</span>",
-					"<span class='userdanger'>You block the attack!</span>")
+		target.visible_message(span_danger("[target.name] blocks [src] and twists [user]'s arm behind [user.p_their()] back!"),
+					span_userdanger("You block the attack!"))
 		user.Stun(40)
 		return TRUE
 
@@ -40,7 +40,7 @@
 	throwforce = 10
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 
 /obj/item/melee/synthetic_arm_blade/Initialize()
 	. = ..()
@@ -62,7 +62,7 @@
 	if(ishuman(target) && proximity_flag)
 		var/mob/living/carbon/human/H = target
 		H.drop_all_held_items()
-		H.visible_message("<span class='danger'>[user] disarms [H]!</span>", "<span class='userdanger'>[user] disarmed you!</span>")
+		H.visible_message(span_danger("[user] disarms [H]!"), span_userdanger("[user] disarmed you!"))
 
 /obj/item/melee/cleric_mace
 	name = "cleric mace"
@@ -94,12 +94,17 @@
 	item_state = "baseball_bat"
 	force = 12
 	throwforce = 12
+	wound_bonus = -10
 	attack_verb = list("beat", "smacked")
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 3.5)
 	w_class = WEIGHT_CLASS_HUGE
 	demolition_mod = 1.25
 	var/homerun_ready = FALSE
 	var/homerun_able = FALSE
+
+/obj/item/melee/baseball_bat/Initialize()
+	. = ..()
+	AddElement(/datum/element/kneecapping)
 
 /obj/item/melee/baseball_bat/homerun
 	name = "home run bat"
@@ -111,13 +116,13 @@
 		..()
 		return
 	if(homerun_ready)
-		to_chat(user, "<span class='warning'>You're already ready to do a home run!</span>")
+		to_chat(user, span_warning("You're already ready to do a home run!"))
 		..()
 		return
-	to_chat(user, "<span class='warning'>You begin gathering strength...</span>")
+	to_chat(user, span_warning("You begin gathering strength..."))
 	playsound(get_turf(src), 'sound/magic/lightning_chargeup.ogg', 65, TRUE)
 	if(do_after(user, 90, target = src))
-		to_chat(user, "<span class='userdanger'>You gather power! Time for a home run!</span>")
+		to_chat(user, span_userdanger("You gather power! Time for a home run!"))
 		homerun_ready = 1
 	..()
 
@@ -125,14 +130,15 @@
 	. = ..()
 	var/atom/throw_target = get_edge_target_turf(target, user.dir)
 	if(homerun_ready)
-		user.visible_message("<span class='userdanger'>It's a home run!</span>")
+		user.visible_message(span_userdanger("It's a home run!"))
 		target.throw_at(throw_target, rand(8,10), 14, user)
 		SSexplosions.medturf += throw_target
 		playsound(get_turf(src), 'sound/weapons/homerun.ogg', 100, TRUE)
 		homerun_ready = 0
 		return
 	else if(!target.anchored)
-		target.throw_at(throw_target, rand(1,2), 2, user, gentle = TRUE)
+		var/whack_speed = (prob(60) ? 1 : 3)
+		target.throw_at(throw_target, rand(1,2), whack_speed, user, gentle = TRUE)
 
 /obj/item/melee/baseball_bat/ablative
 	name = "metal baseball bat"
@@ -184,7 +190,7 @@
 	if(proximity_flag)
 		if(is_type_in_typecache(target, strong_against))
 			new /obj/effect/decal/cleanable/insectguts(target.drop_location())
-			to_chat(user, "<span class='warning'>You easily splat the [target].</span>")
+			to_chat(user, span_warning("You easily splat the [target]."))
 			if(istype(target, /mob/living/))
 				var/mob/living/bug = target
 				bug.death(1)
@@ -215,14 +221,14 @@
 		qdel(src)
 
 		user.put_in_hands(S)
-		to_chat(user, "<span class='notice'>You fasten the glass shard to the top of the rod with the cable.</span>")
+		to_chat(user, span_notice("You fasten the glass shard to the top of the rod with the cable."))
 
 	else if(istype(I, /obj/item/assembly/igniter) && !(HAS_TRAIT(I, TRAIT_NODROP)))
 		var/obj/item/melee/baton/cattleprod/P = new /obj/item/melee/baton/cattleprod
 
 		remove_item_from_storage(user)
 
-		to_chat(user, "<span class='notice'>You fasten [I] to the top of the rod with the cable.</span>")
+		to_chat(user, span_notice("You fasten [I] to the top of the rod with the cable."))
 
 		qdel(I)
 		qdel(src)
@@ -245,7 +251,7 @@
 	armour_penetration = 40
 
 	w_class = WEIGHT_CLASS_SMALL
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	custom_materials = list(/datum/material/iron=500, /datum/material/glass=500)
 	resistance_flags = FIRE_PROOF
 
@@ -258,7 +264,7 @@
 /obj/item/throwing_star/toy
 	name = "toy throwing star"
 	desc = "An aerodynamic disc strapped with adhesive for sticking to people, good for playing pranks and getting yourself killed by security."
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 	force = 0
 	throwforce = 0
 	embedding = list("pain_mult" = 0, "jostle_pain_mult" = 0, "embed_chance" = 100, "fall_chance" = 0)
@@ -287,8 +293,8 @@
 	throwforce = 0
 	throw_range = 0
 	throw_speed = 0
-	sharpness = IS_SHARP
-	attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
+	sharpness = SHARP_EDGED
+	attack_verb = list("sawed", "tore", "lacerated", "cut", "chopped", "diced")
 	hitsound = 'sound/weapons/chainsawhit.ogg'
 	tool_behaviour = TOOL_SAW
 	toolspeed = 1

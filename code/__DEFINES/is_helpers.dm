@@ -125,7 +125,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define ismouse(A) (istype(A, /mob/living/basic/mouse))
 
-#define iscow(A) (istype(A, /mob/living/simple_animal/cow))
+#define iscow(A) (istype(A, /mob/living/basic/cow))
 
 #define isslime(A) (istype(A, /mob/living/simple_animal/slime))
 
@@ -188,14 +188,6 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define isclothing(A) (istype(A, /obj/item/clothing))
 
 #define iscash(A) (istype(A, /obj/item/coin) || istype(A, /obj/item/spacecash) || istype(A, /obj/item/holochip))
-
-GLOBAL_LIST_INIT(pointed_types, typecacheof(list(
-	/obj/item/pen,
-	/obj/item/screwdriver,
-	/obj/item/reagent_containers/syringe,
-	/obj/item/kitchen/fork)))
-
-#define is_pointed(W) (is_type_in_typecache(W, GLOB.pointed_types))
 
 #define isbodypart(A) (istype(A, /obj/item/bodypart))
 

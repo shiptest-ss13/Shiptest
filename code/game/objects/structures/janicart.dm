@@ -22,12 +22,12 @@
 
 /obj/structure/janitorialcart/proc/wet_mop(obj/item/mop, mob/user)
 	if(reagents.total_volume < 1)
-		to_chat(user, "<span class='warning'>[src] is out of water!</span>")
+		to_chat(user, span_warning("[src] is out of water!"))
 		return 0
 	else
 		var/obj/item/mop/M = mop
 		reagents.trans_to(mop, M.mopcap, transfered_by = user)
-		to_chat(user, "<span class='notice'>You wet [mop] in [src].</span>")
+		to_chat(user, span_notice("You wet [mop] in [src]."))
 		playsound(loc, 'sound/effects/slosh.ogg', 25, TRUE)
 		return 1
 
@@ -35,12 +35,12 @@
 	if(!user.transferItemToLoc(I, src))
 		return
 	updateUsrDialog()
-	to_chat(user, "<span class='notice'>You put [I] into [src].</span>")
+	to_chat(user, span_notice("You put [I] into [src]."))
 	return
 
 
 /obj/structure/janitorialcart/attackby(obj/item/I, mob/user, params)
-	var/fail_msg = "<span class='warning'>There is already one of those in [src]!</span>"
+	var/fail_msg = span_warning("There is already one of those in [src]!")
 
 	if(istype(I, /obj/item/mop))
 		var/obj/item/mop/m=I
@@ -82,13 +82,13 @@
 			signs++
 			update_appearance()
 		else
-			to_chat(user, "<span class='warning'>[src] can't hold any more signs!</span>")
+			to_chat(user, span_warning("[src] can't hold any more signs!"))
 	else if(mybag)
 		mybag.attackby(I, user)
 	else if(I.tool_behaviour == TOOL_CROWBAR)
-		user.visible_message("<span class='notice'>[user] begins to empty the contents of [src].</span>", "<span class='notice'>You begin to empty the contents of [src]...</span>")
+		user.visible_message(span_notice("[user] begins to empty the contents of [src]."), span_notice("You begin to empty the contents of [src]..."))
 		if(I.use_tool(src, user, 30))
-			to_chat(usr, "<span class='notice'>You empty the contents of [src]'s bucket onto the floor.</span>")
+			to_chat(usr, span_notice("You empty the contents of [src]'s bucket onto the floor."))
 			reagents.expose(src.loc)
 			src.reagents.clear_reagents()
 	else
@@ -101,17 +101,17 @@
 	user.set_machine(src)
 	var/dat
 	if(mybag)
-		dat += "<a href='?src=[REF(src)];garbage=1'>[mybag.name]</a><br>"
+		dat += "<a href='byond://?src=[REF(src)];garbage=1'>[mybag.name]</a><br>"
 	if(mymop)
-		dat += "<a href='?src=[REF(src)];mop=1'>[mymop.name]</a><br>"
+		dat += "<a href='byond://?src=[REF(src)];mop=1'>[mymop.name]</a><br>"
 	if(mybroom)
-		dat += "<a href='?src=[REF(src)];broom=1'>[mybroom.name]</a><br>"
+		dat += "<a href='byond://?src=[REF(src)];broom=1'>[mybroom.name]</a><br>"
 	if(myspray)
-		dat += "<a href='?src=[REF(src)];spray=1'>[myspray.name]</a><br>"
+		dat += "<a href='byond://?src=[REF(src)];spray=1'>[myspray.name]</a><br>"
 	if(myreplacer)
-		dat += "<a href='?src=[REF(src)];replacer=1'>[myreplacer.name]</a><br>"
+		dat += "<a href='byond://?src=[REF(src)];replacer=1'>[myreplacer.name]</a><br>"
 	if(signs)
-		dat += "<a href='?src=[REF(src)];sign=1'>[signs] sign\s</a><br>"
+		dat += "<a href='byond://?src=[REF(src)];sign=1'>[signs] sign\s</a><br>"
 	var/datum/browser/popup = new(user, "janicart", name, 240, 160)
 	popup.set_content(dat)
 	popup.open()
@@ -126,34 +126,34 @@
 	if(href_list["garbage"])
 		if(mybag)
 			user.put_in_hands(mybag)
-			to_chat(user, "<span class='notice'>You take [mybag] from [src].</span>")
+			to_chat(user, span_notice("You take [mybag] from [src]."))
 			mybag = null
 	if(href_list["mop"])
 		if(mymop)
 			user.put_in_hands(mymop)
-			to_chat(user, "<span class='notice'>You take [mymop] from [src].</span>")
+			to_chat(user, span_notice("You take [mymop] from [src]."))
 			mymop = null
 	if(href_list["broom"])
 		if(mybroom)
 			user.put_in_hands(mybroom)
-			to_chat(user, "<span class='notice'>You take [mybroom] from [src].</span>")
+			to_chat(user, span_notice("You take [mybroom] from [src]."))
 			mybroom = null
 	if(href_list["spray"])
 		if(myspray)
 			user.put_in_hands(myspray)
-			to_chat(user, "<span class='notice'>You take [myspray] from [src].</span>")
+			to_chat(user, span_notice("You take [myspray] from [src]."))
 			myspray = null
 	if(href_list["replacer"])
 		if(myreplacer)
 			user.put_in_hands(myreplacer)
-			to_chat(user, "<span class='notice'>You take [myreplacer] from [src].</span>")
+			to_chat(user, span_notice("You take [myreplacer] from [src]."))
 			myreplacer = null
 	if(href_list["sign"])
 		if(signs)
 			var/obj/item/clothing/suit/caution/Sign = locate() in src
 			if(Sign)
 				user.put_in_hands(Sign)
-				to_chat(user, "<span class='notice'>You take \a [Sign] from [src].</span>")
+				to_chat(user, span_notice("You take \a [Sign] from [src]."))
 				signs--
 			else
 				WARNING("Signs ([signs]) didn't match contents")

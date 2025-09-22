@@ -1,3 +1,5 @@
+#define BODYCAM_UPDATE_BUFFER 1 SECONDS
+
 /obj/item/bodycamera
 	name = "body camera"
 	desc = "Ruggedized portable camera unit. Warranty void if exposed to space."
@@ -11,10 +13,13 @@
 	var/start_active = FALSE //If it ignores the random chance to start broken on round start
 	var/area/myarea = null
 	w_class = WEIGHT_CLASS_SMALL
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
 	var/view_range = 5
 	var/busy = FALSE
 	var/can_transmit_across_z_levels = FALSE
+	var/updating = FALSE //portable camera camerachunk update
+	var/mob/tracked_mob //last mob that picked up the bodycamera. needed for cameranet updates
+	var/datum/movement_detector/tracker
 
 /obj/item/bodycamera/Initialize()
 	. = ..()
@@ -22,6 +27,7 @@
 		network -= i
 		network += lowertext(i)
 
+	tracker = new /datum/movement_detector(src, CALLBACK(src, PROC_REF(obj_move)))
 	GLOB.cameranet.cameras += src
 	GLOB.cameranet.addCamera(src)
 	c_tag = "Body Camera - " + random_string(4, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
@@ -31,22 +37,23 @@
 	if(can_use())
 		toggle_cam(null, 0) //kick anyone viewing out and remove from the camera chunks
 	GLOB.cameranet.cameras -= src
+	qdel(tracker)
 	return ..()
 
 /obj/item/bodycamera/examine(mob/user)
 	. += ..()
-	. += "The camera is currently [status ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Alt-Click to toggle its status."
+	. += "The camera is currently [status ? span_green("ON") : span_red("OFF")]. Alt-Click to toggle its status."
 	if(in_range(src, user))
-		. += "<span class='notice'>The camera is set to a nametag of '<b>[c_tag]</b>'.</span>"
-		. += "<span class='notice'>The camera is set to transmit on the '<b>[network[1]]</b>' network.</span>"
-		. += "<span class='notice'>It looks like you can modify the camera settings by using a <b>multitool</b> on it.</span>"
+		. += span_notice("The camera is set to a nametag of '<b>[c_tag]</b>'.")
+		. += span_notice("The camera is set to transmit on the '<b>[network[1]]</b>' network.")
+		. += span_notice("It looks like you can modify the camera settings by using a <b>multitool</b> on it.")
 
 /obj/item/bodycamera/AltClick(mob/user)
 	. = ..()
 	if(!user.CanReach(src))
 		return
 	if(do_after(user, 10, src, IGNORE_USER_LOC_CHANGE))
-		status = !status
+		toggle_cam(user)
 		if(status)
 			icon_state = "bodycamera-on"
 			playsound(user, 'sound/items/bodycamera_on.ogg', 23, FALSE)
@@ -54,8 +61,8 @@
 			icon_state = "bodycamera-off"
 			playsound(user, 'sound/items/bodycamera_off.ogg', 23, FALSE)
 		user.visible_message(
-			span_notice("[user] turns [src] [status ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
-			span_notice("You turn [src] [status ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
+			span_notice("[user] turns [src] [status ? span_green("ON") : span_red("OFF")]."),
+			span_notice("You turn [src] [status ? span_green("ON") : span_red("OFF")]."),
 		update_appearance()
 		)
 
@@ -69,19 +76,19 @@
 		if("Modify the camera tag")
 			c_tag_addition = stripped_input(user, "Set a nametag for this camera. Ensure that it is no bigger than 32 characters long.", "Nametag Setup", max_length = 32)
 			set_name(c_tag_addition)
-			to_chat(user, "<span class='notice'>You set [src] nametag to '[c_tag]'.</span>")
+			to_chat(user, span_notice("You set [src] nametag to '[c_tag]'."))
 
 		if("Change the camera network")
 			network[1] = stripped_input(user, "Tune [src] to a specific network. Enter the network name and ensure that it is no bigger than 32 characters long. Network names are case sensitive.", "Network Tuning", max_length = 32)
-			to_chat(user, "<span class='notice'>You set [src] to transmit across the '[network[1]]' network.</span>")
+			to_chat(user, span_notice("You set [src] to transmit across the '[network[1]]' network."))
 
 		if("Save the network to the multitool buffer")
 			M.buffer = network[1]
-			to_chat(user, "<span class='notice'>You add network '[network[1]]' to the multitool's buffer.</span>")
+			to_chat(user, span_notice("You add network '[network[1]]' to the multitool's buffer."))
 
 		if("Transfer the buffered network to the camera")
 			network[1] = M.buffer
-			to_chat(user, "<span class='notice'>You tune [src] to transmit across the '[network[1]]' network using the saved data from the multiool's buffer.</span>")
+			to_chat(user, span_notice("You tune [src] to transmit across the '[network[1]]' network using the saved data from the multiool's buffer."))
 
 	return TRUE
 
@@ -97,7 +104,7 @@
 	src.view_range = num
 	GLOB.cameranet.updateVisibility(src, 0)
 
-/obj/item/bodycamera/proc/toggle_cam(mob/user, displaymessage = 1)
+/obj/item/bodycamera/proc/toggle_cam(mob/user)
 	status = !status
 	if(can_use())
 		GLOB.cameranet.addCamera(src)
@@ -107,6 +114,7 @@
 		if (isarea(myarea))
 			LAZYREMOVE(myarea.cameras, src)
 	GLOB.cameranet.updateChunk(x, y, z)
+	do_camera_update()
 	update_appearance() //update Initialize() if you remove this.
 
 	// now disconnect anyone using the camera
@@ -116,7 +124,7 @@
 		if (O.client.eye == src)
 			O.unset_machine()
 			O.reset_perspective(null)
-			to_chat(O, "<span class='warning'>The screen bursts into static!</span>")
+			to_chat(O, span_warning("The screen bursts into static!"))
 
 /obj/item/bodycamera/proc/can_use()
 	if(!status)
@@ -137,6 +145,25 @@
 	user.sight = SEE_BLACKNESS
 	user.see_in_dark = 2
 	return 1
+
+/obj/item/bodycamera/proc/obj_move()
+	SIGNAL_HANDLER
+
+	var/cam_location = src.loc
+	if(isturf(cam_location) || isatom(cam_location))
+		update_camera_location(cam_location)
+	return
+
+/obj/item/bodycamera/proc/do_camera_update(oldLoc)
+	if(oldLoc != get_turf(src)) //we want to make sure the camera source has actually moved before running expensive camera updates
+		GLOB.cameranet.updatePortableCamera(src)
+	updating = FALSE
+
+/obj/item/bodycamera/proc/update_camera_location(oldLoc)
+	oldLoc = get_turf(oldLoc)
+	if(!updating)
+		updating = TRUE
+		addtimer(CALLBACK(src, PROC_REF(do_camera_update), oldLoc), BODYCAM_UPDATE_BUFFER)
 
 /obj/item/paper/guides/bodycam
 	name = "Portable Camera Unit Users Guide"
@@ -212,8 +239,8 @@
 /obj/item/bodycamera/broadcast_camera/examine(mob/user)
 	. += ..()
 	if(in_range(src, user))
-		. += "<span class='notice'>You can access the Internal Radio by <b>interacting with harm intent</b>.</span>"
-		. += "<span class='notice'>You can also use <b>Unique Action (default space)</b> to toggle the microphone.</span>"
+		. += span_notice("You can access the Internal Radio by <b>interacting with harm intent</b>.")
+		. += span_notice("You can also use <b>Unique Action (default space)</b> to toggle the microphone.")
 
 /obj/item/bodycamera/broadcast_camera/set_name(camera_name)
 	if(camera_name != "")
@@ -246,5 +273,7 @@
 	. = ..()
 	if(status && COOLDOWN_FINISHED(src, broadcast_announcement))
 		for(var/obj/machinery/computer/security/telescreen/entertainment/TV in GLOB.machines)
-			TV.notify(TRUE, "[c_tag] is now live on [network]!")
+			TV.notify(TRUE, "[c_tag] is now live on [network[1]]!")
 			COOLDOWN_START(src, broadcast_announcement, 20 SECONDS)
+
+#undef BODYCAM_UPDATE_BUFFER

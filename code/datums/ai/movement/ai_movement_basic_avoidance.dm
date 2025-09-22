@@ -3,7 +3,7 @@
 	max_pathing_attempts = 10
 
 ///Put your movement behavior in here!
-/datum/ai_movement/basic_avoidance/process(delta_time)
+/datum/ai_movement/basic_avoidance/process(seconds_per_tick)
 	for(var/datum/ai_controller/controller as anything in moving_controllers)
 		if(!COOLDOWN_FINISHED(controller, movement_cooldown))
 			continue

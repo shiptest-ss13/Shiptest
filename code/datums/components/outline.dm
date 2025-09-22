@@ -29,7 +29,7 @@
 		permanent = perm
 
 /datum/component/outline/proc/OnExamine(datum/source, mob/user, atom/thing)
-	to_chat(user, "<span class='warning'>That outline is hideous!</span>")
+	to_chat(user, span_warning("That outline is hideous!"))
 
 /datum/component/outline/proc/OnAttackBy(datum/source, obj/item/I, mob/user, params)
 	if(!istype(I, /obj/item/soap))
@@ -37,7 +37,7 @@
 
 	var/obj/item/soap/S = I
 	var/clean_speedies = S.cleanspeed * min(user.mind.get_skill_modifier(/datum/skill/cleaning, SKILL_SPEED_MODIFIER)+0.1,1)
-	user.visible_message("<span class='notice'>[user] begins to scrub off the outlines surrounding [parent] with [S].</span>", "<span class='warning'>You begin to scrub out the outlines surrounding [parent] with [S]...</span>")
+	user.visible_message(span_notice("[user] begins to scrub off the outlines surrounding [parent] with [S]."), span_warning("You begin to scrub out the outlines surrounding [parent] with [S]..."))
 	if(do_after(user, clean_speedies, target = parent))
 		user?.mind.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
 		S.decreaseUses(user)

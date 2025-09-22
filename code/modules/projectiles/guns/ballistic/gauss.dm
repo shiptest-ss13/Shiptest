@@ -7,7 +7,7 @@
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	icon_state = "gauss"
 	item_state = "arg"
-	slot_flags = 0
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	default_ammo_type = /obj/item/ammo_box/magazine/gauss
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/gauss,
@@ -32,3 +32,4 @@
 	wield_slowdown = HEAVY_RIFLE_SLOWDOWN
 	wield_delay = 1 SECONDS
 	fire_select_icon_state_prefix = "pellet_"
+	wear_rate = 0 // magnetically accelerated, very little if any wear to the gun

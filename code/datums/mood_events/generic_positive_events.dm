@@ -87,7 +87,7 @@
 	timeout = 2 MINUTES
 
 /datum/mood_event/focused
-	description = span_nicegreen("I have a goal, and I will reach it, whatever it takes!") //Used for syndies, nukeops etc so they can focus on their goals
+	description = span_nicegreen("I have a goal, and I will reach it, whatever it takes!")//Used for syndies, nukeops etc so they can focus on their goals
 	mood_change = 4
 	hidden = TRUE
 
@@ -99,7 +99,7 @@
 	special_screen_replace = FALSE
 
 /datum/mood_event/creeping
-	description = span_greentext("The voices have released their hooks on my mind! I feel free again!") //creeps get it when they are around their obsession
+	description = span_greentext("The voices have released their hooks on my mind! I feel free again!")//creeps get it when they are around their obsession
 	mood_change = 18
 	timeout = 3 SECONDS
 	hidden = TRUE
@@ -108,10 +108,6 @@
 	description = span_nicegreen("VIVA LA REVOLUTION!")
 	mood_change = 3
 	hidden = TRUE
-
-/datum/mood_event/family_heirloom
-	description = span_nicegreen("My family heirloom is safe with me.")
-	mood_change = 1
 
 /datum/mood_event/rilena_fan
 	description = span_nicegreen("I love my RILENA merch!")
@@ -144,10 +140,6 @@
 	description = span_nicegreen("You are comforted by the presence of a holy person.")
 	mood_change = 3
 	timeout = 5 MINUTES
-
-/datum/mood_event/clownshoes
-	description = span_nicegreen("The shoes are a clown's legacy, I never want to take them off!")
-	mood_change = 5
 
 /datum/mood_event/sacrifice_good
 	description =span_nicegreen("The gods are pleased with this offering!")

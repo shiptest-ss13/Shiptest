@@ -32,25 +32,25 @@
 	var/dat
 	dat += "<br><b>STORED INGREDIENTS AND DRINKS</b><br><div class='statusDisplay'>"
 	dat += "Remaining glasses: [glasses]<br>"
-	dat += "Portion: <a href='?src=[REF(src)];portion=1'>[portion]</a><br>"
+	dat += "Portion: <a href='byond://?src=[REF(src)];portion=1'>[portion]</a><br>"
 	for(var/datum/reagent/R in reagents.reagent_list)
 		dat += "[R.name]: [R.volume] "
-		dat += "<a href='?src=[REF(src)];disposeI=[R.type]'>Purge</a>"
+		dat += "<a href='byond://?src=[REF(src)];disposeI=[R.type]'>Purge</a>"
 		if (glasses > 0)
-			dat += "<a href='?src=[REF(src)];pour=[R.type]'>Pour in a glass</a>"
-		dat += "<a href='?src=[REF(src)];mix=[R.type]'>Add to the mixer</a><br>"
+			dat += "<a href='byond://?src=[REF(src)];pour=[R.type]'>Pour in a glass</a>"
+		dat += "<a href='byond://?src=[REF(src)];mix=[R.type]'>Add to the mixer</a><br>"
 	dat += "</div><br><b>MIXER CONTENTS</b><br><div class='statusDisplay'>"
 	for(var/datum/reagent/R in mixer.reagents.reagent_list)
 		dat += "[R.name]: [R.volume] "
-		dat += "<a href='?src=[REF(src)];transfer=[R.type]'>Transfer back</a>"
+		dat += "<a href='byond://?src=[REF(src)];transfer=[R.type]'>Transfer back</a>"
 		if (glasses > 0)
-			dat += "<a href='?src=[REF(src)];m_pour=[R.type]'>Pour in a glass</a>"
+			dat += "<a href='byond://?src=[REF(src)];m_pour=[R.type]'>Pour in a glass</a>"
 		dat += "<br>"
 	dat += "</div><br><b>STORED FOOD</b><br><div class='statusDisplay'>"
 	for(var/V in stored_food)
 		if(stored_food[V] > 0)
-			dat += "<b>[V]: [stored_food[V]]</b> <a href='?src=[REF(src)];dispense=[V]'>Dispense</a><br>"
-	dat += "</div><br><a href='?src=[REF(src)];refresh=1'>Refresh</a> <a href='?src=[REF(src)];close=1'>Close</a>"
+			dat += "<b>[V]: [stored_food[V]]</b> <a href='byond://?src=[REF(src)];dispense=[V]'>Dispense</a><br>"
+	dat += "</div><br><a href='byond://?src=[REF(src)];refresh=1'>Refresh</a> <a href='byond://?src=[REF(src)];close=1'>Close</a>"
 
 	var/datum/browser/popup = new(user, "foodcart","Food Cart", 500, 350, src)
 	popup.set_content(dat)
@@ -68,12 +68,12 @@
 		if(!DG.reagents.total_volume) //glass is empty
 			qdel(DG)
 			glasses++
-			to_chat(user, "<span class='notice'>[src] accepts the drinking glass, sterilizing it.</span>")
-	else if(istype(O, /obj/item/reagent_containers/food/snacks))
+			to_chat(user, span_notice("[src] accepts the drinking glass, sterilizing it."))
+	else if(istype(O, /obj/item/food))
 		if(isFull())
-			to_chat(user, "<span class='warning'>[src] is at full capacity.</span>")
+			to_chat(user, span_warning("[src] is at full capacity."))
 		else
-			var/obj/item/reagent_containers/food/snacks/S = O
+			var/obj/item/food/S = O
 			if(!user.transferItemToLoc(S, src))
 				return
 			if(stored_food[sanitize(S.name)])
@@ -85,12 +85,14 @@
 		if(G.get_amount() >= 1)
 			G.use(1)
 			glasses += 4
-			to_chat(user, "<span class='notice'>[src] accepts a sheet of glass.</span>")
+			to_chat(user, span_notice("[src] accepts a sheet of glass."))
 	else if(istype(O, /obj/item/storage/bag/tray))
 		var/obj/item/storage/bag/tray/T = O
-		for(var/obj/item/reagent_containers/food/snacks/S in T.contents)
+		for(var/obj/S in T.contents)
+			if(!IS_EDIBLE(S))
+				continue
 			if(isFull())
-				to_chat(user, "<span class='warning'>[src] is at full capacity.</span>")
+				to_chat(user, span_warning("[src] is at full capacity."))
 				break
 			else
 				if(SEND_SIGNAL(T, COMSIG_TRY_STORAGE_TAKE, S, src))
@@ -129,7 +131,7 @@
 
 	if(href_list["pour"] || href_list["m_pour"])
 		if(glasses-- <= 0)
-			to_chat(usr, "<span class='warning'>There are no glasses left!</span>")
+			to_chat(usr, span_warning("There are no glasses left!"))
 			glasses = 0
 		else
 			var/obj/item/reagent_containers/food/drinks/drinkingglass/DG = new(loc)
@@ -140,11 +142,11 @@
 
 	if(href_list["mix"])
 		if(reagents.trans_id_to(mixer, href_list["mix"], portion) == 0)
-			to_chat(usr, "<span class='warning'>[mixer] is full!</span>")
+			to_chat(usr, span_warning("[mixer] is full!"))
 
 	if(href_list["transfer"])
 		if(mixer.reagents.trans_id_to(src, href_list["transfer"], portion) == 0)
-			to_chat(usr, "<span class='warning'>[src] is full!</span>")
+			to_chat(usr, span_warning("[src] is full!"))
 
 	updateDialog()
 

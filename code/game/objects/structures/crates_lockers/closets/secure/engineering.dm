@@ -65,10 +65,10 @@
 
 /obj/structure/closet/secure_closet/engineering_personal/PopulateContents()
 	..()
-	new /obj/item/stack/tape/industrial(src) //WS edit - Tape
-	new /obj/item/clothing/head/beret/eng(src) //WS edit - Berets
+	new /obj/item/stack/tape/industrial(src)
+	new /obj/item/clothing/head/beret/eng(src)
 	new /obj/item/clothing/head/safety_helmet(src)
-	new /obj/item/clothing/glasses/meson/prescription(src) //WS edit - Prescription HUDs
+	new /obj/item/clothing/glasses/meson/prescription(src)
 	new /obj/item/radio/headset/headset_eng(src)
 	new /obj/item/storage/toolbox/mechanical(src)
 	new /obj/item/tank/internals/emergency_oxygen/engi(src)

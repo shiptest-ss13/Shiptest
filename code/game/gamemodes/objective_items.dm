@@ -33,7 +33,7 @@
 
 /datum/objective_item/steal/hoslaser
 	name = "the head of security's personal laser gun."
-	targetitem = /obj/item/gun/energy/e_gun/hos
+	targetitem = /obj/item/gun/energy/sharplite/x01
 	difficulty = 10
 	excludefromjob = list("Head Of Security")
 
@@ -189,11 +189,6 @@
 	targetitem = /obj/item/pinpointer
 	difficulty = 10
 
-/datum/objective_item/special/aegun
-	name = "an advanced energy gun."
-	targetitem = /obj/item/gun/energy/e_gun/nuclear
-	difficulty = 10
-
 /datum/objective_item/special/ddrill
 	name = "a diamond drill."
 	targetitem = /obj/item/pickaxe/drill/diamonddrill
@@ -216,7 +211,7 @@
 
 /datum/objective_item/special/corgimeat
 	name = "a piece of corgi meat."
-	targetitem = /obj/item/reagent_containers/food/snacks/meat/slab/corgi
+	targetitem = /obj/item/food/meat/slab/corgi
 	difficulty = 5
 
 /datum/objective_item/stack/New()

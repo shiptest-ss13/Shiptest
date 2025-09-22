@@ -2364,15 +2364,15 @@
 /area/ship/crew/dorm/captain)
 "lf" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/snacks/chips{
+/obj/item/food/chips{
 	pixel_y = 2;
 	pixel_x = 7
 	},
-/obj/item/reagent_containers/food/snacks/chips{
+/obj/item/food/chips{
 	pixel_x = -6;
 	pixel_y = 9
 	},
-/obj/item/reagent_containers/food/snacks/no_raisin{
+/obj/item/food/no_raisin{
 	pixel_x = -3;
 	pixel_y = 4
 	},
@@ -3107,10 +3107,10 @@
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
-/obj/item/reagent_containers/food/snacks/dough,
-/obj/item/reagent_containers/food/snacks/dough,
-/obj/item/reagent_containers/food/snacks/dough,
-/obj/item/reagent_containers/food/snacks/dough,
+/obj/item/food/dough,
+/obj/item/food/dough,
+/obj/item/food/dough,
+/obj/item/food/dough,
 /obj/structure/sign/poster/contraband/space_cola{
 	pixel_x = 28
 	},
@@ -3658,7 +3658,7 @@
 /obj/item/clothing/under/clip/officer{
 	pixel_x = 13
 	},
-/obj/item/clothing/suit/toggle/lawyer/clip/fo{
+/obj/item/clothing/suit/toggle/lawyer/clip/command{
 	pixel_x = -13
 	},
 /obj/item/storage/backpack/satchel/sec/clip{
@@ -5715,7 +5715,7 @@
 /obj/item/clothing/head/clip/slouch/officer{
 	pixel_y = 13
 	},
-/obj/item/storage/guncase/cm1,
+/obj/item/storage/guncase/ecm6,
 /obj/item/clothing/shoes/jackboots,
 /turf/open/floor/carpet/blue,
 /area/ship/crew/dorm/captain)
@@ -6324,7 +6324,7 @@
 	pixel_y = 5;
 	pixel_x = -13
 	},
-/obj/item/reagent_containers/food/snacks/salad/fruit{
+/obj/item/food/salad/fruit{
 	pixel_y = 8;
 	pixel_x = 7
 	},
@@ -10137,7 +10137,6 @@
 /area/ship/engineering)
 "Uw" = (
 /obj/structure/closet/firecloset/wall/directional/west,
-/obj/item/storage/box/gum/happiness,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
 	},

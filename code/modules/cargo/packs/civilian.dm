@@ -1,5 +1,7 @@
 /datum/supply_pack/civilian
-	group = "Civilian & Decoration"
+	category = "Civilian & Decoration"
+	crate_name = "civilian supply crate"
+	crate_type = /obj/structure/closet/crate/wooden
 
 /*
 		Janitorial
@@ -35,6 +37,7 @@
 					/obj/item/clothing/shoes/galoshes)
 	crate_name = "janitorial cart crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /*
 		Bundles
@@ -143,6 +146,85 @@
 					/obj/item/flashlight/glowstick/pink)
 	crate_name = "party equipment crate"
 
+/datum/supply_pack/civilian/coffee_starter
+	name = "Personal Coffee Starter Kit"
+	desc = "If you're looking to get some coffee supply for your caffeine-starved bridge crew, this is the place to start. Contains three mugs, a coffee pot, and two coffee cartridges. Coffee machine not included."
+	cost = 500
+	contains = list(/obj/item/reagent_containers/food/drinks/mug,
+					/obj/item/reagent_containers/food/drinks/mug,
+					/obj/item/reagent_containers/food/drinks/mug,
+					/obj/item/reagent_containers/glass/coffeepot,
+					/obj/item/coffee_cartridge,
+					/obj/item/coffee_cartridge)
+	crate_name = "Basic Coffee Supply Crate"
+
+/datum/supply_pack/civilian/coffee_cartridge
+	name = "Solar's Best Coffee Cartridge Resupply"
+	desc = "Contains five coffee cartridges for your coffee machine, imported from Sol."
+	cost = 750
+	contains = list(/obj/item/coffee_cartridge,
+					/obj/item/coffee_cartridge,
+					/obj/item/coffee_cartridge,
+					/obj/item/coffee_cartridge,
+					/obj/item/coffee_cartridge)
+	crate_name = "Coffee Cartridge Supply Crate"
+
+/datum/supply_pack/civilian/coffee_cartridge_fancy
+	name = "Premium Coffee Cartridge Resupply"
+	desc = "Contains an assortment of five high-quality coffee cartridges."
+	cost = 1250
+	contains = list(/obj/item/coffee_cartridge/fancy,
+					/obj/item/coffee_cartridge/fancy,
+					/obj/item/coffee_cartridge/fancy,
+					/obj/item/coffee_cartridge/fancy,
+					/obj/item/coffee_cartridge/fancy)
+	crate_name = "Premium Coffee Supply Crate"
+
+/datum/supply_pack/civilian/coffeekit
+	name = "Coffee Shop Starter Crate"
+	desc = "All the basic equipment needed for enterprising coffee-selling spacefarers. Coffeemaker not included."
+	cost = 1250
+	contains = list(/obj/item/storage/box/coffeepack/robusta,
+					/obj/item/storage/box/coffeepack/arabica,
+					/obj/item/reagent_containers/glass/coffeepot,
+					/obj/item/storage/fancy/coffee_condi_display,
+					/obj/item/reagent_containers/food/drinks/bottle/cream,
+					/obj/item/reagent_containers/condiment/milk,
+					/obj/item/reagent_containers/condiment/soymilk,
+					/obj/item/reagent_containers/condiment/sugar,
+					/obj/item/reagent_containers/glass/bottle/syrup_bottle/caramel)
+	crate_name = "coffee equpment crate"
+
+/datum/supply_pack/civilian/coffeemaker
+	name = "Coffeemaker Crate"
+	desc = "Contains one pre-assembled Attention model coffeemaker."
+	cost = 1000
+	contains = list(/obj/machinery/coffeemaker)
+	crate_name = "coffeemaker crate"
+	crate_type = /obj/structure/closet/crate/large
+
+/datum/supply_pack/civilian/coffeemaker_premium
+	name = "Premium Coffeemaker Crate"
+	desc = "Contains one pre-assembled professional-grade Sirere model coffeemaker."
+	cost = 1500
+	contains = list(/obj/machinery/coffeemaker/premium)
+	crate_name = "premium coffeemaker crate"
+	crate_type = /obj/structure/closet/crate/large
+
+/datum/supply_pack/organic/syrup
+	name = "Coffee Syrups Box"
+	desc = "A packaged box of various syrups, perfect to make your delicious coffee even more diabetic."
+	cost = 1250
+	contains = list(/obj/item/reagent_containers/glass/bottle/syrup_bottle/caramel,
+					/obj/item/reagent_containers/glass/bottle/syrup_bottle/liqueur,
+					/obj/item/reagent_containers/glass/bottle/syrup_bottle/honey,
+					/obj/item/reagent_containers/glass/bottle/syrup_bottle/vanilla,
+					/obj/item/reagent_containers/glass/bottle/syrup_bottle/tea,
+					/obj/item/reagent_containers/glass/bottle/syrup_bottle/creme_de_cacao,
+					/obj/item/reagent_containers/glass/bottle/syrup_bottle/creme_de_menthe)
+	crate_name = "coffee syrups box"
+	crate_type = /obj/structure/closet/cardboard
+
 /datum/supply_pack/civilian/bigband
 	name = "Big Band Instrument Collection"
 	desc = "Get your demoralized crew movin' and groovin' with this fine collection! Contains nine different instruments!"
@@ -217,9 +299,8 @@
 /datum/supply_pack/civilian/noslipfloor
 	name = "High-traction Floor Tiles"
 	desc = "Make slipping a thing of the past with thirty industrial-grade anti-slip floortiles!"
-	cost = 1000
-	contains = list(/obj/item/stack/tile/noslip/thirty,
-					/obj/item/stack/tile/noslip/thirty)
+	cost = 500
+	contains = list(/obj/item/stack/tile/noslip/thirty)
 	crate_name = "high-traction floor tiles crate"
 
 /datum/supply_pack/civilian/jukebox
@@ -242,6 +323,12 @@
 	cost = 100
 	contains = list(/obj/item/storage/box/ids)
 
+/datum/supply_pack/civilian/bank_card_crate
+	name = "Box of Spare Bank Cards"
+	desc = "A box of spare IDs for replacing a lost bankcard."
+	cost = 100
+	contains = list(/obj/item/storage/box/bankcard)
+
 /datum/supply_pack/civilian/spare_clothes
 	name = "Spare Jumpsuits Crate"
 	desc = "Contains a spare set of utility jumpsuits and shoes for those unfortunate accidents." //how did we not have this before
@@ -251,7 +338,27 @@
 					/obj/item/clothing/shoes/sneakers/black,
 					/obj/item/clothing/shoes/sneakers/black)
 	crate_name = "spare jumpsuits crate"
-	crate_type = /obj/structure/closet/crate/wooden
+
+/datum/supply_pack/civilian/satchel
+	name = "Spare Satchel Crate"
+	desc = "Contains a spare backpack, for the intrepid traveller who managed to lose the last one."
+	cost = 50
+	contains = list(/obj/item/storage/backpack/satchel)
+	crate_name = "spare satchel crate"
+
+/datum/supply_pack/civilian/backpack
+	name = "Spare Backpack Crate"
+	desc = "Contains a spare backpack, for the starfarers who just can't keep track of where they took it off."
+	cost = 50
+	contains = list(/obj/item/storage/backpack)
+	crate_name = "spare backpack crate"
+
+/datum/supply_pack/civilian/duffels
+	name = "Spare Duffelbag Crate"
+	desc = "Contains a spare duffelbag. Ideal for carrying items across long distances."
+	cost = 50
+	contains = list(/obj/item/storage/backpack/duffelbag)
+	crate_name = "spare duffelbag crate"
 
 /datum/supply_pack/civilian/broadcast_camera
 	name = "Broadcast Camera Crate"

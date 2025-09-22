@@ -17,7 +17,8 @@
 	custom_materials = list(/datum/material/iron=12000)
 	attack_cooldown = LIGHT_WEAPON_CD
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	sharpness = IS_SHARP_ACCURATE
+	sharpness = SHARP_POINTY
+	wound_bonus = 15
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	item_flags = EYE_STAB
 	tool_behaviour = TOOL_KNIFE
@@ -47,21 +48,21 @@
 	throw_range = 5
 	custom_materials = list(/datum/material/plastic = 100)
 	attack_verb = list("prodded", "whiffed","scratched", "poked")
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	custom_price = 50
 	var/break_chance = 25
 
 /obj/item/melee/knife/plastic/afterattack(mob/living/carbon/user)
 	.=..()
 	if(prob(break_chance))
-		user.visible_message("<span class='danger'>[user]'s spoon snaps into tiny pieces in their hand.</span>")
+		user.visible_message(span_danger("[user]'s spoon snaps into tiny pieces in their hand."))
 		qdel(src)
 
 
 /obj/item/melee/knife/plastic/afterattack(mob/living/carbon/user)
 	.=..()
 	if(prob(break_chance))
-		user.visible_message("<span class='danger'>[user]'s knife snaps into tiny pieces in their hand.</span>")
+		user.visible_message(span_danger("[user]'s knife snaps into tiny pieces in their hand."))
 		qdel(src)
 
 /obj/item/melee/knife/pizza_cutter
@@ -74,7 +75,7 @@
 	throw_range = 6
 	custom_materials = list(/datum/material/iron=4000)
 	attack_verb = list("prodded", "whiffed","rolled", "poked")
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 
 /obj/item/melee/knife/butcher
 	name = "butcher's cleaver"
@@ -105,7 +106,7 @@
 	item_state = "combatknife"
 	desc = "A military combat utility survival knife."
 	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
-	force = 15
+	force = 20
 	throwforce = 20
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
 
@@ -115,7 +116,7 @@
 	item_state = "survivalknife"
 	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
 	desc = "A hunting grade survival knife."
-	force = 12
+	force = 15
 	throwforce = 15
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
 
@@ -169,7 +170,7 @@
 	flags_1 = CONDUCT_1
 	force = 3
 	w_class = WEIGHT_CLASS_SMALL
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 	throwforce = 5
 	throw_speed = 3
 	throw_range = 6
@@ -182,10 +183,10 @@
 	. = ..()
 	AddComponent( \
 		/datum/component/transforming, \
-		force_on = 14, \
-		throwforce_on = 20, \
+		force_on = 20, \
+		throwforce_on = 23, \
 		throw_speed_on = 4, \
-		sharpness_on = IS_SHARP, \
+		sharpness_on = SHARP_EDGED, \
 		hitsound_on = 'sound/weapons/bladeslice.ogg', \
 		w_class_on = WEIGHT_CLASS_NORMAL, \
 		attack_verb_on = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut"), \
@@ -198,7 +199,7 @@
 	icon_state = "letter_opener"
 	desc = "A military combat utility survival knife."
 	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
-	force = 10
+	force = 15
 	throwforce = 15
 	unique_reskin = list("Traditional" = "letter_opener",
 						"Boxcutter" = "letter_opener_b",

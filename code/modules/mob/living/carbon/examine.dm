@@ -9,9 +9,9 @@
 	. = list("<span class='info'>This is [icon2html(src, user)] \a <EM>[src]</EM>!")
 	var/list/obscured = check_obscured_slots()
 
-	if (handcuffed)
-		. += "<span class='warning'>[t_He] [t_is] [icon2html(handcuffed, user)] handcuffed!</span>"
-	if (head)
+	if(handcuffed)
+		. += span_warning("[t_He] [t_is] [icon2html(handcuffed, user)] handcuffed!")
+	if(head)
 		. += "[t_He] [t_is] wearing [head.get_examine_string(user)] on [t_his] head. "
 	if(wear_mask && !(ITEM_SLOT_MASK in obscured))
 		. += "[t_He] [t_is] wearing [wear_mask.get_examine_string(user)] on [t_his] face."
@@ -22,15 +22,16 @@
 		if(!(I.item_flags & ABSTRACT))
 			. += "[t_He] [t_is] holding [I.get_examine_string(user)] in [t_his] [get_held_index_name(get_held_index_of_item(I))]."
 
-	if (back)
+	if(back)
 		. += "[t_He] [t_has] [back.get_examine_string(user)] on [t_his] back."
+
 	var/appears_dead = 0
-	if (stat == DEAD)
+	if(stat == DEAD)
 		appears_dead = 1
 		if(getorgan(/obj/item/organ/brain))
-			. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive, with no signs of life.</span>"
+			. += span_deadsay("[t_He] [t_is] limp and unresponsive, with no signs of life.")
 		else if(get_bodypart(BODY_ZONE_HEAD))
-			. += "<span class='deadsay'>It appears that [t_his] brain is missing...</span>"
+			. += span_deadsay("It appears that [t_his] brain is missing...")
 
 	var/list/msg = list("<span class='warning'>")
 	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)
@@ -39,11 +40,16 @@
 		if(BP.bodypart_disabled)
 			disabled += BP
 		missing -= BP.body_zone
+
 		for(var/obj/item/I in BP.embedded_objects)
 			if(I.isEmbedHarmless())
-				msg += "<B>[t_He] [t_has] \a [icon2html(I, user)] [I] stuck to [t_his] [BP.name]!</B>\n"
+				msg += "<B>[t_He] [t_has] [icon2html(I, user)] \a [I] stuck to [t_his] [BP.name]!</B>\n"
 			else
-				msg += "<B>[t_He] [t_has] \a [icon2html(I, user)] [I] embedded in [t_his] [BP.name]!</B>\n"
+				msg += "<B>[t_He] [t_has] [icon2html(I, user)] \a [I] embedded in [t_his] [BP.name]!</B>\n"
+
+		for(var/i in BP.wounds)
+			var/datum/wound/W = i
+			msg += "[W.get_examine_description(user)]\n"
 
 	for(var/X in disabled)
 		var/obj/item/bodypart/BP = X
@@ -56,9 +62,9 @@
 
 	for(var/t in missing)
 		if(t==BODY_ZONE_HEAD)
-			msg += "<span class='deadsay'><B>[t_His] [parse_zone(t)] is missing!</B></span>\n"
+			msg += "[span_deadsay("<B>[t_His] [parse_zone(t)] is missing!</B>")]\n"
 			continue
-		msg += "<span class='warning'><B>[t_His] [parse_zone(t)] is missing!</B></span>\n"
+		msg += "[span_warning("<B>[t_His] [parse_zone(t)] is missing!</B>")]\n"
 
 
 	var/temp = getBruteLoss()
@@ -92,10 +98,16 @@
 	if(HAS_TRAIT(src, TRAIT_DUMB))
 		msg += "[t_He] seem[p_s()] to be clumsy and unable to think.\n"
 
-	if(fire_stacks > 0)
-		msg += "[t_He] [t_is] covered in something flammable.\n"
-	if(fire_stacks < 0)
-		msg += "[t_He] look[p_s()] a little soaked.\n"
+	switch(fire_stacks)
+		if(1 to INFINITY)
+			msg += "[t_He] [t_is] covered in something flammable.\n"
+		if(0)
+			EMPTY_BLOCK_GUARD
+		if(-15 to -1)
+			msg += "[t_He] look[p_s()] a little soaked.\n"
+		if(-20 to -15)
+			msg += "[t_He] look[p_s()] completely sopping.\n"
+
 
 	if(pulledby && pulledby.grab_state)
 		msg += "[t_He] [t_is] restrained by [pulledby]'s grip.\n"
@@ -142,3 +154,65 @@
 	. += "</span>"
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
+
+/mob/living/carbon/examine_more(mob/user)
+	. = ..()
+	var/msg = list(span_notice("<i>You examine [src] closer, and note the following...</i>"))
+	var/t_His = p_their(TRUE)
+	var/t_He = p_they(TRUE)
+	var/t_Has = p_have()
+
+	var/any_bodypart_damage = FALSE
+	for(var/X in bodyparts)
+		var/obj/item/bodypart/LB = X
+		if(LB.is_pseudopart)
+			continue
+		var/limb_max_damage = LB.max_damage
+		var/status = ""
+		var/brutedamage = round(LB.brute_dam/limb_max_damage*100)
+		var/burndamage = round(LB.burn_dam/limb_max_damage*100)
+		switch(brutedamage)
+			if(20 to 35)
+				status = LB.light_brute_msg
+			if(36 to 65)
+				status = LB.medium_brute_msg
+			if(66 to 100)
+				status += LB.heavy_brute_msg
+
+		if(burndamage >= 20 && status)
+			status += "and "
+		switch(burndamage)
+			if(20 to 35)
+				status += LB.light_burn_msg
+			if(36 to 65)
+				status += LB.medium_burn_msg
+			if(66 to 100)
+				status += LB.heavy_burn_msg
+
+		if(status)
+			any_bodypart_damage = TRUE
+			msg += "\t<span class='warning'>[t_His] [LB.name] is [status].</span>"
+
+		for(var/thing in LB.wounds)
+			any_bodypart_damage = TRUE
+			var/datum/wound/W = thing
+			switch(W.severity)
+				if(WOUND_SEVERITY_TRIVIAL)
+					msg += "\t<span class='warning'>[t_His] [LB.name] is suffering [W.a_or_from] [W.get_topic_name(user)].</span>"
+				if(WOUND_SEVERITY_MODERATE)
+					msg += "\t<span class='warning'>[t_His] [LB.name] is suffering [W.a_or_from] [W.get_topic_name(user)]!</span>"
+				if(WOUND_SEVERITY_SEVERE)
+					msg += "\t<span class='warning'><b>[t_His] [LB.name] is suffering [W.a_or_from] [W.get_topic_name(user)]!</b></span>"
+				if(WOUND_SEVERITY_CRITICAL)
+					msg += "\t<span class='warning'><b>[t_His] [LB.name] is suffering [W.a_or_from] [W.get_topic_name(user)]!!</b></span>"
+		if(LB.current_gauze)
+			var/datum/bodypart_aid/current_gauze = LB.current_gauze
+			msg += "\t<span class='notice'><i>[t_His] [LB.name] is [current_gauze.desc_prefix] with <a href='?src=[REF(current_gauze)];remove=1'>[current_gauze.get_description()]</a>.</i></span>"
+		if(LB.current_splint)
+			var/datum/bodypart_aid/current_splint = LB.current_splint
+			msg += "\t<span class='notice'><i>[t_His] [LB.name] is [current_splint.desc_prefix] with <a href='?src=[REF(current_splint)];remove=1'>[current_splint.get_description()]</a>.</i></span>"
+
+	if(!any_bodypart_damage)
+		msg += "\t<span class='smallnotice'><i>[t_He] [t_Has] no significantly damaged bodyparts.</i></span>"
+
+	return msg

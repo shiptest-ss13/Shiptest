@@ -59,7 +59,7 @@
 			H.dropItemToGround(bundle)
 			H.put_in_hands(src)
 			H.put_in_hands(bundle)
-		to_chat(user, "<span class='notice'>You add [value] credits worth of money to the bundle.<br>It now holds [bundle.value + value] credits.</span>")
+		to_chat(user, span_notice("You add [value] credits worth of money to the bundle.<br>It now holds [bundle.value + value] credits."))
 		bundle.transfer_value(bundle.value, src)
 
 /obj/item/spacecash/Destroy()
@@ -134,7 +134,7 @@
 		return
 
 	else if(!Adjacent(usr))
-		to_chat(usr, "<span class='warning'>You need to be in arm's reach for that!</span>")
+		to_chat(usr, span_warning("You need to be in arm's reach for that!"))
 		return
 
 	var/obj/item/spacecash/bundle/bundle = new(usr.loc)
@@ -149,7 +149,7 @@
 		return
 
 	else if(!Adjacent(user))
-		to_chat(user, "<span class='warning'>You need to be in arm's reach for that!</span>")
+		to_chat(user, span_warning("You need to be in arm's reach for that!"))
 		return
 
 	adjust_value(-cashamount)

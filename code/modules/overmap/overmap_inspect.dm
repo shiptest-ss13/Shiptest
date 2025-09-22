@@ -6,12 +6,20 @@
 	if(!check_rights(R_DEBUG))
 		return
 
-	SSovermap.overmap_container_view(usr)
+	var/datum/overmap_star_system/selected_system
+	if(length(SSovermap.tracked_star_systems) >= 1)
+		selected_system = tgui_input_list(usr, "Which star system do you want to view?", "Overmap View", SSovermap.tracked_star_systems)
+	else
+		selected_system = SSovermap.tracked_star_systems[1]
+	if(!selected_system)
+		return
+
+	selected_system.overmap_container_view(usr)
 
 /datum/overmap/ui_interact(mob/user, datum/tgui/ui)
 	. = ..()
-	//if(!check_rights(R_DEBUG))
-	//	return
+	if(!check_rights(R_DEBUG, FALSE))
+		return
 	if(user.client)
 		var/datum/overmap_inspect/overmap_inspect = new(src, user)
 		overmap_inspect.ui_interact(user)

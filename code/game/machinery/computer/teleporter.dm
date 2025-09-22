@@ -18,20 +18,31 @@
 	link_power_station()
 
 /obj/machinery/computer/teleporter/Destroy()
-	if (power_station)
+	if(power_station)
+		if(power_station.teleporter_hub) //Else the teleporter will stay on despite being non-functional.
+			power_station.engaged = FALSE
+			power_station.teleporter_hub.update_appearance()
+			calibrating = FALSE
+			power_station.update_appearance() //To make sure the appearance is reset here too.
 		power_station.teleporter_console = null
 		power_station = null
 	return ..()
 
 /obj/machinery/computer/teleporter/proc/link_power_station()
-	if(power_station)
-		return
-	for(var/direction in GLOB.cardinals)
-		power_station = locate(/obj/machinery/teleport/station, get_step(src, direction))
-		if(power_station)
-			power_station.link_console_and_hub()
-			break
-	return power_station
+	if(!power_station)
+		var/obj/machinery/teleport/hub/adjacent_hub
+		var/obj/machinery/teleport/station/unlinked_station
+		for(var/direction in GLOB.cardinals)
+			unlinked_station = locate(/obj/machinery/teleport/station, get_step(src, direction)) //Check for the power station first.
+			if(unlinked_station && unlinked_station.link_console_and_hub(unlinked_console = src))
+				power_station = unlinked_station
+				break
+
+			adjacent_hub = locate(/obj/machinery/teleport/hub, get_step(src, direction)) //Failing that, check for a hub with a linked power station.
+			if(adjacent_hub && adjacent_hub.power_station && !adjacent_hub.power_station.teleporter_console)
+				power_station = adjacent_hub.power_station
+				power_station.teleporter_console = src //Set it directly, easy.
+				break
 
 /obj/machinery/computer/teleporter/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -151,7 +162,7 @@
 				var/area/A = get_area(R)
 				L[avoid_assoc_duplicate_keys(A.name, areaindex)] = R
 		if(!L.len)
-			to_chat(user, "<span class='alert'>No active connected stations located.</span>")
+			to_chat(user, span_alert("No active connected stations located."))
 			return
 		var/desc = input("Please select a station to lock in.", "Locking Computer") as null|anything in sortList(L)
 		var/obj/machinery/teleport/station/target_station = L[desc]

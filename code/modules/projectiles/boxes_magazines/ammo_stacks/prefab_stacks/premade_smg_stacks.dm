@@ -55,6 +55,10 @@
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c46x30mm/rubber = 4)
 	generate_items_inside(items_inside,src)
 
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/c46x30mm/tesla
+	ammo_type = /obj/item/ammo_casing/c46x30mm/tesla
+	max_ammo = 20
+
 // 4.73x33mm caseless (Solar)
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c47x33mm
 	ammo_type = /obj/item/ammo_casing/caseless/c47x33mm
@@ -129,6 +133,7 @@
 // 5.7x39mm (Asp and Sidewinder)
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c57x39
+	max_ammo = 20
 	ammo_type = /obj/item/ammo_casing/c57x39mm
 
 /obj/item/storage/box/ammo/c57x39
