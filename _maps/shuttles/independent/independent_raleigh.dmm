@@ -171,15 +171,15 @@
 /obj/item/clothing/under/syndicate/camo{
 	pixel_x = 5
 	},
-/obj/item/clothing/head/helmet/m10{
+/obj/item/clothing/head/helmet/bulletproof/m10{
 	pixel_x = -4;
 	pixel_y = 11
 	},
-/obj/item/clothing/head/helmet/m10{
+/obj/item/clothing/head/helmet/bulletproof/m10{
 	pixel_x = -4;
 	pixel_y = 11
 	},
-/obj/item/clothing/head/helmet/m10{
+/obj/item/clothing/head/helmet/bulletproof/m10{
 	pixel_x = -4;
 	pixel_y = 11
 	},
@@ -1258,6 +1258,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"ov" = (
+/obj/docking_port/stationary{
+	dir = 8;
+	dwidth = 4;
+	height = 30;
+	width = 11;
+	name = "Raleigh Stern Dock"
+	},
+/turf/template_noop,
+/area/template_noop)
 "oJ" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew/ccommons)
@@ -1635,6 +1645,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
+"si" = (
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 4;
+	port_direction = 2;
+	preferred_direction = 4
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "sm" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -2295,15 +2314,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
-"yZ" = (
-/obj/docking_port/mobile{
-	dir = 4;
-	name = "hunter shuttle";
-	port_direction = 2;
-	preferred_direction = 4
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering/atmospherics)
 "zc" = (
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 4
@@ -2632,15 +2642,6 @@
 /obj/item/toy/plush/snakeplushie,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm/captain)
-"CF" = (
-/obj/docking_port/stationary{
-	dir = 8;
-	dwidth = 4;
-	height = 15;
-	width = 11
-	},
-/turf/template_noop,
-/area/template_noop)
 "CG" = (
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -4044,10 +4045,6 @@
 "Rz" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew/dorm)
-"RB" = (
-/obj/machinery/light/directional/south,
-/turf/open/floor/carpet,
-/area/ship/crew/ccommons)
 "Sb" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -4163,6 +4160,82 @@
 /obj/structure/table_frame,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
+"Tu" = (
+/obj/structure/table/reinforced,
+/obj/structure/closet/wall/red/directional/north{
+	name = "uniform closet";
+	req_access_txt = "1"
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = -2;
+	pixel_y = -7
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = -2;
+	pixel_y = -7
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = -2;
+	pixel_y = -7
+	},
+/obj/item/clothing/under/syndicate/camo{
+	pixel_x = 5
+	},
+/obj/item/clothing/under/syndicate/camo{
+	pixel_x = 5
+	},
+/obj/item/clothing/under/syndicate/camo{
+	pixel_x = 5
+	},
+/obj/item/clothing/head/helmet/m10{
+	pixel_x = -4;
+	pixel_y = 11
+	},
+/obj/item/clothing/head/helmet/m10{
+	pixel_x = -4;
+	pixel_y = 11
+	},
+/obj/item/clothing/head/helmet/m10{
+	pixel_x = -4;
+	pixel_y = 11
+	},
+/obj/item/clothing/suit/armor/vest/bulletproof{
+	pixel_x = -4;
+	pixel_y = 2
+	},
+/obj/item/clothing/suit/armor/vest/bulletproof{
+	pixel_x = -4;
+	pixel_y = 2
+	},
+/obj/item/clothing/suit/armor/vest/bulletproof{
+	pixel_x = -4;
+	pixel_y = 2
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 6
+	},
+/obj/item/clothing/gloves/fingerless,
+/obj/item/clothing/gloves/fingerless,
+/obj/item/clothing/gloves/fingerless,
+/obj/item/clothing/glasses/sunglasses/ballistic{
+	pixel_x = -3;
+	pixel_y = 5
+	},
+/obj/item/clothing/glasses/sunglasses/ballistic{
+	pixel_x = -3;
+	pixel_y = 5
+	},
+/obj/item/clothing/glasses/sunglasses/ballistic{
+	pixel_x = -3;
+	pixel_y = 5
+	},
+/obj/merge_conflict_marker{
+	name = "---Merge Conflict Marker---",
+	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/carpet,
+/area/ship/crew/ccommons)
 "TA" = (
 /obj/structure/table/wood,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -4842,6 +4915,7 @@ OV
 OV
 OV
 OV
+ci
 OV
 OV
 OV
@@ -4856,8 +4930,7 @@ OV
 OV
 OV
 OV
-OV
-OV
+Cl
 OV
 OV
 OV
@@ -4882,6 +4955,9 @@ OV
 OV
 OV
 OV
+XG
+OV
+ci
 OV
 OV
 OV
@@ -4896,12 +4972,9 @@ OV
 OV
 OV
 OV
+Cl
 OV
-OV
-OV
-OV
-OV
-OV
+Cl
 OV
 OV
 OV
@@ -4924,26 +4997,26 @@ OV
 OV
 OV
 OV
+XG
+OV
+ci
+WD
+WD
 OV
 OV
 OV
 OV
 OV
+ov
 OV
 OV
 OV
 OV
+WD
+lK
+Cl
 OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
+Cl
 OV
 OV
 OV
@@ -4966,258 +5039,6 @@ OV
 OV
 OV
 OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-"}
-(5,1,1) = {"
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-"}
-(6,1,1) = {"
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-"}
-(7,1,1) = {"
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-ci
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-yZ
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-"}
-(8,1,1) = {"
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-XG
-OV
-ci
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-Cl
-OV
-Cl
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-"}
-(9,1,1) = {"
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-XG
-OV
-ci
-WD
-WD
-OV
-OV
-OV
-OV
-OV
-CF
-OV
-OV
-OV
-OV
-WD
-lK
-Cl
-OV
-Cl
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-"}
-(10,1,1) = {"
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
 Wm
 XG
 XG
@@ -5227,7 +5048,7 @@ hN
 XG
 BH
 OV
-BH
+si
 BH
 OV
 BH
@@ -5249,7 +5070,7 @@ OV
 OV
 OV
 "}
-(11,1,1) = {"
+(5,1,1) = {"
 OV
 OV
 OV
@@ -5291,7 +5112,7 @@ OV
 OV
 OV
 "}
-(12,1,1) = {"
+(6,1,1) = {"
 OV
 OV
 OV
@@ -5333,7 +5154,7 @@ OV
 OV
 OV
 "}
-(13,1,1) = {"
+(7,1,1) = {"
 OV
 OV
 OV
@@ -5375,7 +5196,7 @@ OV
 OV
 OV
 "}
-(14,1,1) = {"
+(8,1,1) = {"
 OV
 OV
 FK
@@ -5417,7 +5238,7 @@ Za
 OV
 OV
 "}
-(15,1,1) = {"
+(9,1,1) = {"
 OV
 OV
 WD
@@ -5459,7 +5280,7 @@ WD
 OV
 OV
 "}
-(16,1,1) = {"
+(10,1,1) = {"
 OV
 OV
 WD
@@ -5501,7 +5322,7 @@ WD
 OV
 OV
 "}
-(17,1,1) = {"
+(11,1,1) = {"
 OV
 Rz
 uW
@@ -5543,7 +5364,7 @@ bP
 bP
 OV
 "}
-(18,1,1) = {"
+(12,1,1) = {"
 OV
 WD
 uW
@@ -5585,7 +5406,7 @@ bP
 WD
 OV
 "}
-(19,1,1) = {"
+(13,1,1) = {"
 OV
 WD
 uW
@@ -5627,7 +5448,7 @@ bP
 WD
 OV
 "}
-(20,1,1) = {"
+(14,1,1) = {"
 Rz
 uW
 uW
@@ -5669,7 +5490,7 @@ bP
 bP
 ic
 "}
-(21,1,1) = {"
+(15,1,1) = {"
 OV
 FE
 If
@@ -5711,7 +5532,7 @@ PB
 bP
 OV
 "}
-(22,1,1) = {"
+(16,1,1) = {"
 OV
 FE
 xx
@@ -5753,7 +5574,7 @@ ql
 bF
 OV
 "}
-(23,1,1) = {"
+(17,1,1) = {"
 OV
 sP
 FE
@@ -5795,7 +5616,7 @@ bF
 ft
 OV
 "}
-(24,1,1) = {"
+(18,1,1) = {"
 OV
 OV
 sP
@@ -5837,7 +5658,7 @@ ft
 OV
 OV
 "}
-(25,1,1) = {"
+(19,1,1) = {"
 OV
 OV
 OV
@@ -5879,7 +5700,7 @@ OV
 OV
 OV
 "}
-(26,1,1) = {"
+(20,1,1) = {"
 OV
 OV
 OV
@@ -5921,7 +5742,7 @@ OV
 OV
 OV
 "}
-(27,1,1) = {"
+(21,1,1) = {"
 OV
 OV
 OV
@@ -5953,7 +5774,7 @@ gC
 jj
 OL
 ls
-RB
+Tu
 hl
 oJ
 OV
@@ -5963,7 +5784,7 @@ OV
 OV
 OV
 "}
-(28,1,1) = {"
+(22,1,1) = {"
 OV
 OV
 OV
@@ -6005,7 +5826,7 @@ OV
 OV
 OV
 "}
-(29,1,1) = {"
+(23,1,1) = {"
 OV
 OV
 OV
@@ -6047,7 +5868,7 @@ OV
 OV
 OV
 "}
-(30,1,1) = {"
+(24,1,1) = {"
 OV
 OV
 OV
@@ -6089,7 +5910,7 @@ OV
 OV
 OV
 "}
-(31,1,1) = {"
+(25,1,1) = {"
 OV
 OV
 OV
@@ -6131,7 +5952,7 @@ OV
 OV
 OV
 "}
-(32,1,1) = {"
+(26,1,1) = {"
 OV
 OV
 OV
@@ -6173,7 +5994,7 @@ OV
 OV
 OV
 "}
-(33,1,1) = {"
+(27,1,1) = {"
 OV
 OV
 OV
@@ -6215,7 +6036,7 @@ OV
 OV
 OV
 "}
-(34,1,1) = {"
+(28,1,1) = {"
 OV
 OV
 OV
@@ -6257,7 +6078,7 @@ OV
 OV
 OV
 "}
-(35,1,1) = {"
+(29,1,1) = {"
 OV
 OV
 OV
@@ -6282,6 +6103,258 @@ qT
 qT
 qT
 qT
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+"}
+(30,1,1) = {"
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+"}
+(31,1,1) = {"
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+"}
+(32,1,1) = {"
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+"}
+(33,1,1) = {"
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+"}
+(34,1,1) = {"
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+"}
+(35,1,1) = {"
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
 OV
 OV
 OV
