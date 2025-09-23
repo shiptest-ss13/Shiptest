@@ -146,19 +146,9 @@
 	contains = list(/obj/item/melee/sword/mass)
 	crate_name = "machete crate"
 
-/datum/supply_pack/sec_supply/officer_sabre
-	name = "Officer's Sabre Crate"
-	desc = "Contains one finely crafted monomolecular sabre. For slicing and dicing in style."
-	cost = 750
-	contains = list(/obj/item/storage/belt/sabre)
-	crate_name = "officer's sabre crate"
-	faction = /datum/faction/nt
-	faction_discount = 0
-	faction_locked = TRUE
-
 /datum/supply_pack/sec_supply/solarian_sabre
 	name = "Solarian Ceremonial Sabre Crate"
-	desc = "Contains one ceremonial Solarian sabre. To keep tradition alive. Stile quite sharp."
+	desc = "Contains one ceremonial Solarian sabre. To keep tradition alive. Still quite sharp."
 	cost = 750
 	contains = list(/obj/item/storage/belt/sabre/solgov)
 	crate_name = "solarian ceremonial sabre crate"
@@ -172,16 +162,6 @@
 	cost = 750
 	contains = list(/obj/item/storage/belt/sabre/suns)
 	crate_name = "student's sabre crate"
-	faction = /datum/faction/syndicate/suns
-	faction_discount = 0
-	faction_locked = TRUE
-
-/datum/supply_pack/sec_supply/suns_captain_sabre
-	name = "SUNS Sabre Crate"
-	desc = "Contains a elegant solarian blade. For the distinguished."
-	cost = 1000
-	contains = list(/obj/item/storage/belt/sabre/suns/captain)
-	crate_name = "suns captain sabre crate"
 	faction = /datum/faction/syndicate/suns
 	faction_discount = 0
 	faction_locked = TRUE
