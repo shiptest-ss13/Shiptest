@@ -18,6 +18,7 @@
 	name = "HE Grenade"
 	desc = "A compact shrapnel grenade meant to devastate nearby organisms and cause some damage in the process. Pull pin and throw opposite direction."
 	icon_state = "concussion"
+	ex_dev = 0
 	ex_heavy = 2
 	ex_light = 3
 	ex_flame = 3
@@ -28,9 +29,9 @@
 	icon_state = "frag"
 	shrapnel_type = /obj/projectile/bullet/shrapnel
 	shrapnel_radius = 4
-	ex_heavy = 1
+	ex_heavy = 0
 	ex_light = 3
-	ex_flame = 4
+	ex_flame = 1
 
 /obj/item/grenade/frag/mega
 	name = "FRAG grenade"

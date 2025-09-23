@@ -41,7 +41,8 @@
 
 	accessory = /obj/item/clothing/accessory/medal/gold/captain
 
-	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/captain)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/x12, /obj/item/stamp/captain)
+
 
 /datum/outfit/job/nanotrasen/captain/ns
 	name = "Nanotrasen - Captain (N+S Logistics)"
@@ -75,6 +76,30 @@
 	belt = null
 
 	chameleon_extras = /obj/item/stamp/qm
+
+/datum/outfit/job/nanotrasen/captain/vi
+	name = "Nanotrasen - Captain (Vigilitas Interstellar)"
+
+	id = /obj/item/card/id/gold
+	head = /obj/item/clothing/head/nanotrasen/beret/security/command
+	uniform = /obj/item/clothing/under/nanotrasen/security/director
+	suit = /obj/item/clothing/suit/armor/nanotrasen/sec_director
+	alt_suit = null
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
+	shoes = /obj/item/clothing/shoes/combat
+	glasses = /obj/item/clothing/glasses/sunglasses
+	gloves = /obj/item/clothing/gloves/combat
+	ears = /obj/item/radio/headset/nanotrasen/alt/captain
+	neck = null
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
+
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/cap
+	duffelbag = /obj/item/storage/backpack/duffelbag/sec
+	courierbag = /obj/item/storage/backpack/messenger/sec
+	box = /obj/item/storage/box/survival/vi
+
+	chameleon_extras = /obj/item/stamp/nanotrasen/vigilitas/captain
 
 /datum/outfit/job/nanotrasen/captain/centcom
 	name = "Nanotrasen - Captain (Central Command)"
@@ -111,7 +136,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/com
 
 	chameleon_extras = list(
-						/obj/item/gun/energy/e_gun,
+						/obj/item/gun/energy/sharplite/x12,
 						/obj/item/stamp/nanotrasen/officer,
 						)
 
@@ -146,7 +171,32 @@
 
 	implants = list(/obj/item/implant/mindshield)
 
-	chameleon_extras = list(/obj/item/gun/energy/e_gun/hos, /obj/item/stamp/hos)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/x01, /obj/item/stamp/hos)
+
+/datum/outfit/job/nanotrasen/hos/vi
+	name = "Nanotrasen - Vigilitas Sergeant"
+
+	id = /obj/item/card/id/silver
+	ears = /obj/item/radio/headset/nanotrasen/alt
+	uniform = /obj/item/clothing/under/nanotrasen/security/director
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/combat
+	suit = null
+	alt_suit = null
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
+	gloves = /obj/item/clothing/gloves/combat
+	head = /obj/item/clothing/head/nanotrasen/beret/security/command
+	r_pocket = /obj/item/assembly/flash/handheld
+	l_pocket = /obj/item/restraints/handcuffs
+	backpack_contents = list(/obj/item/melee/classic_baton=1)
+
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/sec
+	courierbag = /obj/item/storage/backpack/messenger/sec
+	box = /obj/item/storage/box/survival/vi
+
+	chameleon_extras = /obj/item/stamp/nanotrasen/vigilitas/security
 
 // Security Officer
 /datum/outfit/job/nanotrasen/security
@@ -174,6 +224,28 @@
 
 	chameleon_extras = list(/obj/item/gun/energy/disabler, /obj/item/clothing/glasses/hud/security/sunglasses, /obj/item/clothing/head/helmet)
 	//The helmet is necessary because /obj/item/clothing/head/helmet/sec is overwritten in the chameleon list by the standard helmet, which has the same name and icon state
+
+/datum/outfit/job/nanotrasen/security/vi
+	name = "Nanotrasen - Security Officer (Vigilatis Interstellar)"
+	job_icon = "securityofficer"
+
+	ears = /obj/item/radio/headset/alt
+	uniform = /obj/item/clothing/under/nanotrasen/security
+	gloves = /obj/item/clothing/gloves/color/black
+	head = /obj/item/clothing/head/nanotrasen/cap/security
+	suit = null
+	alt_suit = null
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
+	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/restraints/handcuffs
+
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/sec
+	courierbag = /obj/item/storage/backpack/messenger/sec
+	box = /obj/item/storage/box/survival/vi
+
+	chameleon_extras = null
 
 /datum/outfit/job/nanotrasen/security/disarmed
 	name = "Nanotrasen - Security Officer (Disarmed)"

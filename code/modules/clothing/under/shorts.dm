@@ -6,8 +6,17 @@
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 	icon = 'icons/obj/clothing/under/shorts_pants.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/shorts_pants.dmi'
-	greyscale_colors = list(list(16, 11), list(16, 10), list(16, 9))
-	greyscale_icon_state = "shorts"
+	icon_state = "greyshorts"
+	unique_reskin = list("red athletic shorts" = "redshorts",
+						"green athletic shorts" = "greenshorts",
+						"blue athletic shorts" = "blueshorts",
+						"black athletic shorts" = "blackshorts",
+						"grey athletic shorts" = "greyshorts",
+						"purple athletic shorts" = "purpleshorts",
+						"pink athletic shorts" = "pinkshorts",
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
 
 /obj/item/clothing/under/shorts/red
 	name = "red athletic shorts"
@@ -33,6 +42,10 @@
 	name = "purple athletic shorts"
 	icon_state = "purpleshorts"
 
+/obj/item/clothing/under/shorts/pink
+	name = "pink athletic shorts"
+	icon_state = "pinkshorts"
+
 /obj/item/clothing/under/shorts/cookjorts
 	name = "grilling shorts"
 	desc = "For when all you want in life is to grill for god's sake!"
@@ -42,14 +55,16 @@
 	name = "jorts"
 	desc = "Jean shorts cut from denim."
 	icon_state = "jorts"
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/under/shorts/dolphin
 	name = "dolphin shorts"
 	desc = "Short shorts made for blistering hot days and athletic use."
 	icon_state = "dolphin"
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/under/shorts/explorer
 	name = "explorer shorts"
 	desc = "Bright khaki short shorts for higher humidity, hot planets."
 	icon_state = "explorers"
-
+	supports_variations = KEPORI_VARIATION

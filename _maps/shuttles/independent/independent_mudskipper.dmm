@@ -366,8 +366,8 @@
 /obj/item/bodybag,
 /obj/item/bodybag,
 /obj/item/pickaxe/mini,
-/obj/item/reagent_containers/pill/patch/styptic,
-/obj/item/reagent_containers/pill/patch/silver_sulf,
+/obj/item/reagent_containers/pill/patch/indomide,
+/obj/item/reagent_containers/pill/patch/alvitane,
 /obj/item/multitool,
 /obj/item/stack/marker_beacon/thirty,
 /obj/item/gear_pack/anglegrinder,
@@ -425,17 +425,16 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "ib" = (
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 8;
-	launch_status = 0;
-	preferred_direction = 4
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 4;
+	dwidth = 21;
+	height = 31;
+	name = "Mudskipper Forward Bow Dock";
+	width = 41
 	},
-/obj/effect/turf_decal/industrial/warning/dust{
-	dir = 4
-	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/cargo)
+/turf/template_noop,
+/area/template_noop)
 "ic" = (
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor4"
@@ -1384,6 +1383,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/aft)
+"BK" = (
+/obj/docking_port/mobile{
+	port_direction = 4;
+	preferred_direction = 4
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "BW" = (
 /obj/effect/turf_decal/box,
 /obj/effect/decal/cleanable/plastic,
@@ -1831,10 +1837,13 @@
 /area/ship/hallway/central)
 "MB" = (
 /obj/docking_port/stationary{
+	dheight = 1;
 	dir = 2;
-	dwidth = 15;
-	height = 15;
-	width = 30
+	disable_on_owner_ship_dock = 1;
+	dwidth = 10;
+	height = 31;
+	name = "Mudskipper Starboard Quarter Dock";
+	width = 40
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -2327,9 +2336,9 @@
 	},
 /obj/structure/guncloset,
 /obj/item/gun/energy/laser/e10,
-/obj/item/gun/energy/laser,
-/obj/item/gun/energy/laser,
 /obj/item/gun/energy/laser/e10,
+/obj/item/gun/energy/sharplite/l201/l204,
+/obj/item/gun/energy/sharplite/l201/l204,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Vo" = (
@@ -2527,16 +2536,20 @@
 	req_access = null
 	},
 /obj/item/stock_parts/cell/gun{
-	pixel_x = -6;
-	pixel_y = -3
-	},
-/obj/item/stock_parts/cell/gun{
-	pixel_x = -7;
-	pixel_y = 5
+	pixel_x = 9;
+	pixel_y = 6
 	},
 /obj/item/stock_parts/cell/gun/upgraded{
 	pixel_x = 8;
 	pixel_y = -4
+	},
+/obj/item/stock_parts/cell/gun/sharplite{
+	pixel_x = -4;
+	pixel_y = 4
+	},
+/obj/item/stock_parts/cell/gun/sharplite{
+	pixel_x = -4;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -2749,7 +2762,7 @@ BA
 Bn
 nx
 ee
-IU
+BK
 MB
 "}
 (9,1,1) = {"
@@ -3121,7 +3134,7 @@ hH
 hH
 Rk
 kY
-ib
+kY
 kY
 kY
 xE
@@ -3141,7 +3154,7 @@ hH
 Nl
 cs
 cs
-cs
+ib
 cs
 Xy
 hH

@@ -22,7 +22,7 @@
 	var/requires_poi = TRUE
 
 	/// The amount of time in which to complete the mission. Setting it to 0 will result in no time limit
-	var/duration = 1.5 HOURS
+	var/duration = 2 HOURS
 	/// Should mission value scale proportionally to the deviation from the mission's base duration?
 	var/dur_value_scaling = FALSE
 	/// The maximum deviation of the mission's true value from the base value, as a proportion.
