@@ -1427,12 +1427,19 @@
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "sl" = (
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 4;
+	port_direction = 2;
+	preferred_direction = 4
+	},
 /obj/docking_port/stationary{
-	width = 30;
-	height = 15;
+	width = 40;
+	height = 40;
 	dwidth = 7;
-	name = "Typhon Starboard Bay";
-	dir = 8
+	name = "Typhon Starboard Quarter Dock";
+	dir = 8;
+	disable_on_owner_ship_dock = 1
 	},
 /turf/open/floor/pod/light/external,
 /area/ship/external/dark)
@@ -3878,16 +3885,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
-"UW" = (
-/obj/docking_port/mobile{
-	dir = 2;
-	launch_status = 0;
-	port_direction = 8;
-	preferred_direction = 4;
-	name = "typhon dock"
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/engineering/engines/port)
 "Vc" = (
 /obj/structure/railing,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -3902,14 +3899,14 @@
 /area/ship/engineering)
 "Vf" = (
 /obj/docking_port/stationary{
-	width = 30;
-	height = 15;
-	dwidth = 7;
-	name = "Typhon Port Bay";
-	dir = 8
+	width = 6;
+	height = 20;
+	dwidth = 2;
+	name = "Typhon Forward Bow Dock";
+	dir = 4
 	},
-/turf/open/floor/pod/light/external,
-/area/ship/external/dark)
+/turf/template_noop,
+/area/template_noop)
 "Vz" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -4209,6 +4206,16 @@
 /obj/structure/sign/clip,
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/cargo)
+"ZL" = (
+/obj/docking_port/stationary{
+	width = 40;
+	height = 40;
+	dwidth = 7;
+	name = "Typhon Quarter Dock";
+	dir = 8
+	},
+/turf/open/floor/pod/light/external,
+/area/ship/external/dark)
 "ZP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/loading/stripes/white{
@@ -4272,136 +4279,8 @@ Bb
 Bb
 Bb
 Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-"}
-(3,1,1) = {"
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-"}
-(4,1,1) = {"
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-"}
-(5,1,1) = {"
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-"}
-(6,1,1) = {"
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
 KQ
-Vf
+ZL
 VV
 Bb
 Bb
@@ -4425,7 +4304,7 @@ Bb
 Bb
 Bb
 "}
-(7,1,1) = {"
+(3,1,1) = {"
 Bb
 Bb
 Bb
@@ -4457,7 +4336,7 @@ Bb
 Bb
 Bb
 "}
-(8,1,1) = {"
+(4,1,1) = {"
 Bb
 ib
 ib
@@ -4489,7 +4368,7 @@ ib
 ib
 Bb
 "}
-(9,1,1) = {"
+(5,1,1) = {"
 aT
 VX
 pq
@@ -4521,7 +4400,7 @@ qZ
 qZ
 Wt
 "}
-(10,1,1) = {"
+(6,1,1) = {"
 SE
 ts
 Ej
@@ -4553,7 +4432,7 @@ sG
 bB
 oB
 "}
-(11,1,1) = {"
+(7,1,1) = {"
 SE
 Id
 xg
@@ -4585,7 +4464,7 @@ YB
 jZ
 oB
 "}
-(12,1,1) = {"
+(8,1,1) = {"
 SE
 vS
 NK
@@ -4617,7 +4496,7 @@ bY
 qy
 oB
 "}
-(13,1,1) = {"
+(9,1,1) = {"
 SE
 eG
 Ml
@@ -4649,8 +4528,8 @@ Jj
 CN
 oB
 "}
-(14,1,1) = {"
-UW
+(10,1,1) = {"
+aT
 SE
 Ff
 SE
@@ -4681,7 +4560,7 @@ xs
 oB
 Wt
 "}
-(15,1,1) = {"
+(11,1,1) = {"
 Bb
 tI
 SE
@@ -4713,7 +4592,7 @@ oB
 kK
 Bb
 "}
-(16,1,1) = {"
+(12,1,1) = {"
 Bb
 Bb
 Bb
@@ -4745,7 +4624,7 @@ Bb
 Bb
 Bb
 "}
-(17,1,1) = {"
+(13,1,1) = {"
 Bb
 Bb
 Bb
@@ -4777,7 +4656,7 @@ Bb
 Bb
 Bb
 "}
-(18,1,1) = {"
+(14,1,1) = {"
 Bb
 Bb
 Bb
@@ -4809,7 +4688,7 @@ Bb
 Bb
 Bb
 "}
-(19,1,1) = {"
+(15,1,1) = {"
 Bb
 Bb
 Bb
@@ -4841,7 +4720,7 @@ Bb
 Bb
 Bb
 "}
-(20,1,1) = {"
+(16,1,1) = {"
 Bb
 Bb
 Bb
@@ -4873,7 +4752,7 @@ Bb
 Bb
 Bb
 "}
-(21,1,1) = {"
+(17,1,1) = {"
 Bb
 Bb
 Bb
@@ -4905,7 +4784,7 @@ Bb
 Bb
 Bb
 "}
-(22,1,1) = {"
+(18,1,1) = {"
 Bb
 Bb
 Bb
@@ -4937,7 +4816,7 @@ Bb
 Bb
 Bb
 "}
-(23,1,1) = {"
+(19,1,1) = {"
 Bb
 Bb
 Bb
@@ -4953,7 +4832,7 @@ Bf
 mb
 Bb
 Bb
-Bb
+Vf
 Bb
 mb
 BN
@@ -4969,7 +4848,7 @@ Bb
 Bb
 Bb
 "}
-(24,1,1) = {"
+(20,1,1) = {"
 Bb
 Bb
 Bb
@@ -5001,7 +4880,7 @@ Bb
 Bb
 Bb
 "}
-(25,1,1) = {"
+(21,1,1) = {"
 Bb
 Bb
 Bb
@@ -5033,7 +4912,7 @@ Bb
 Bb
 Bb
 "}
-(26,1,1) = {"
+(22,1,1) = {"
 Bb
 Bb
 Bb
@@ -5056,6 +4935,134 @@ Co
 UL
 UL
 xF
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+"}
+(23,1,1) = {"
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+"}
+(24,1,1) = {"
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+"}
+(25,1,1) = {"
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+"}
+(26,1,1) = {"
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
 Bb
 Bb
 Bb
