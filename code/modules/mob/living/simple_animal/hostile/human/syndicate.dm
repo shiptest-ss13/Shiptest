@@ -298,7 +298,7 @@
 	name = "New Gorlex Embezzler"
 	desc = "A sleazy official of the New Gorlex Republic, wearing a heavy officer coat. She looks around cautiously, a heavy pistol within her hands."
 	casingtype = /obj/item/ammo_casing/c57x39mm
-	l_hand = /obj/item/gun/ballistic/pistol/asp
+	l_hand = /obj/item/gun/ballistic/automatic/pistol/asp
 	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/officer/ngr
 
