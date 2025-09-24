@@ -56,7 +56,7 @@
 	name = "ERT - Saint-Roumain Hunter Doctor"
 	id_assignment = "Hunter Doctor"
 	job_icon = "srm_doctor"
-	jobtype = /datum/job/ert/doctor
+	jobtype = /datum/job/ert/med
 
 	uniform = /obj/item/clothing/under/suit/roumain
 	shoes = /obj/item/clothing/shoes/workboots/mining
