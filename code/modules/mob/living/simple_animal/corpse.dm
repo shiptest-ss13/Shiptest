@@ -27,6 +27,7 @@
 	id = /obj/item/card/id/syndicate
 
 /datum/outfit/ramzi/bulletproof
+	name = "Ramzi Clique Trooper"
 	suit = /obj/item/clothing/suit/armor/ramzi/bulletproof
 	head = /obj/item/clothing/head/helmet/ramzi/bulletproof
 	belt = /obj/item/storage/belt/security/webbing/ramzi/alt
