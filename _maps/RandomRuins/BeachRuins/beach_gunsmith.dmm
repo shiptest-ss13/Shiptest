@@ -133,10 +133,8 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith/workshop)
 "bq" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth{
-	stop_automated_movement = 1
-	},
-/turf/closed/mineral/random/beach,
+/obj/machinery/porta_turret/ruin/ramzi/light,
+/turf/closed/wall/concrete/reinforced,
 /area/ruin/beach/gunsmith)
 "bv" = (
 /obj/machinery/door/poddoor/shutters/preopen,
@@ -1203,6 +1201,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/stairs/left{
 	dir = 4
 	},
@@ -1618,7 +1619,6 @@
 	id = "bunkermoat";
 	random_sparks = 0
 	},
-/obj/machinery/light/dim/directional/west,
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "rt" = (
@@ -6096,7 +6096,7 @@ it
 ez
 JW
 JW
-bq
+Cm
 Cm
 Cm
 Cm
@@ -6140,7 +6140,7 @@ Gu
 Gu
 tT
 nE
-Gu
+bq
 it
 it
 it
