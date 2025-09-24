@@ -90,6 +90,7 @@
 	head = /obj/item/clothing/head/ngr
 	suit = /obj/item/clothing/suit/armor/ngr/lieutenant
 	glasses = null
+	neck = null
 	mob_gender = FEMALE
 	mob_species = /datum/species/human
 
