@@ -40,7 +40,7 @@
 	name = "Cave Gunsmith"
 	id = "beach_gunsmith"
 	description = "A decadent gunsmithing den jointly owned by an outfit of the Ramzi Clique and a corrupt NGR official. Hidden within a cave."
-	suffic = "beach_gunsmith.dmm"
+	suffix = "beach_gunsmith.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
 
 /datum/map_template/ruin/beachplanet/frontiersmen_depot
