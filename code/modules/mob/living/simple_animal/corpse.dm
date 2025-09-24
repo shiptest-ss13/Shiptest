@@ -27,7 +27,7 @@
 	id = /obj/item/card/id/syndicate
 
 /datum/outfit/ramzi/bulletproof
-	suit = /obj/item/clothing/suit/armor/bulletproof/ramzi
+	suit = /obj/item/clothing/suit/armor/ramzi/bulletproof
 	head = /obj/item/clothing/head/helmet/ramzi/bulletproof
 
 /obj/effect/mob_spawn/human/corpse/ramzi/trooper
