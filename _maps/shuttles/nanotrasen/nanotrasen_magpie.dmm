@@ -448,6 +448,9 @@
 	dir = 10
 	},
 /obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/clothing/suit/space/hardsuit/medical,
+/obj/item/clothing/mask/breath,
+/obj/item/tank/internals/oxygen,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "hf" = (
@@ -658,6 +661,7 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
 "je" = (
@@ -1086,6 +1090,9 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/borderfloor/corner,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "qH" = (
@@ -1423,6 +1430,15 @@
 	id = "magpie_grid"
 	},
 /turf/closed/wall/mineral/titanium,
+/area/ship/bridge)
+"uW" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "magpie_windows"
+	},
+/turf/open/floor/plating,
 /area/ship/bridge)
 "ve" = (
 /obj/effect/turf_decal/corner/opaque/ntblue/border{
@@ -1763,7 +1779,7 @@
 	pixel_y = -1
 	},
 /obj/item/cigbutt{
-	pixel_x = 3;
+	pixel_x = 2;
 	pixel_y = 6
 	},
 /obj/item/cigbutt,
@@ -1774,6 +1790,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
+	},
+/obj/item/toy/brokenradio{
+	pixel_x = 12;
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
@@ -1997,9 +2017,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
 	},
@@ -2011,6 +2028,7 @@
 /obj/effect/turf_decal/siding/white/end{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
 "Dj" = (
@@ -2208,9 +2226,12 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "ET" = (
-/obj/machinery/vending/cigarette,
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/corner_steel_grid/full,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
 "EY" = (
@@ -2770,13 +2791,15 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/white/end{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
@@ -2988,28 +3011,6 @@
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "Om" = (
-/obj/structure/table,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/item/clothing/mask/cigarette/rollie/cannabis{
-	pixel_x = -5;
-	pixel_y = 1
-	},
-/obj/item/clothing/mask/cigarette/syndicate{
-	pixel_x = 3;
-	pixel_y = 5
-	},
-/obj/item/storage/fancy/cigarettes/cigars{
-	pixel_x = -7;
-	pixel_y = 13
-	},
-/obj/item/storage/fancy/cigarettes/cigpack_candy{
-	pixel_x = 13;
-	pixel_y = 8
-	},
-/obj/item/toy/brokenradio{
-	pixel_x = 13;
-	pixel_y = -6
-	},
 /obj/structure/sign/poster/official/random{
 	pixel_x = -32
 	},
@@ -3017,6 +3018,9 @@
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 8
+	},
+/obj/machinery/vending/cigarette{
+	pixel_x = 2
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
@@ -3423,7 +3427,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
@@ -3461,23 +3467,17 @@
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "Vv" = (
-/obj/structure/chair/plastic{
-	dir = 8
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/sign/warning/nosmoking/circle{
 	icon_state = "smokingold";
 	pixel_y = 26;
 	name = "\improper SMOKING ALLOWED sign";
 	desc = "A warning sign which reads 'SMOKING ALLOWED'."
 	},
-/obj/item/cigbutt/roach{
-	pixel_x = -11;
-	pixel_y = -7
-	},
-/obj/effect/decal/cleanable/ash,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5
+	},
+/obj/machinery/vending/cola{
+	pixel_x = -3
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
@@ -4494,8 +4494,8 @@ Ag
 Ag
 Ag
 uV
-zz
-zz
+uW
+uW
 Kk
 IF
 fD
