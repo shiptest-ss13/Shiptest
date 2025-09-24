@@ -72,6 +72,8 @@
 	uniform = /obj/item/clothing/under/syndicate/ramzi/officer
 	suit = /obj/item/clothing/suit/armor/ramzi/officer
 	head = /obj/item/clothing/head/ramzi/beret
+	back = null
+	mask = null
 
 /obj/effect/mob_spawn/human/corpse/ramzi/officer
 	name = "Ramzi Clique Officer"

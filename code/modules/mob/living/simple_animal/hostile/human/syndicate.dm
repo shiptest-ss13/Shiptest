@@ -293,6 +293,7 @@
 	desc = "A deserter from the Gorlex Marauders turned pirate. She holds herself high, clad in well-taken care of officer garbs. She clutches a blackened revolver in her hands."
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/officer/beach
 	casingtype = /obj/item/ammo_casing/a357/match
+	mob_species = /datum/species/human
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/officer/ngr
 	name = "New Gorlex Embezzler"
@@ -301,6 +302,7 @@
 	l_hand = /obj/item/gun/ballistic/automatic/pistol/asp
 	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/officer/ngr
+	mob_species = /datum/species/human
 
 	armor_base = /obj/item/clothing/suit/armor/ngr/lieutenant
 
