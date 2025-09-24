@@ -258,6 +258,14 @@
 	rapid_melee = 1
 	l_hand =/obj/item/gun/ballistic/automatic/pistol/ringneck
 
+/mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth
+	name = "Ramzi Clique Operative"
+	desc = "A deserter from the Gorlex Marauders turned pirate. They warily glance around, a modified machinepistol held at the ready."
+	rapid = 2
+	rapid_fire_delay = 2
+	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
+	l_hand = /obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonmouth
+
 /mob/living/simple_animal/hostile/human/ramzi/ranged/smg
 	name = "Ramzi Clique Commando"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They scan the room with their submachinegun held at eye level, sweeping every corner."
