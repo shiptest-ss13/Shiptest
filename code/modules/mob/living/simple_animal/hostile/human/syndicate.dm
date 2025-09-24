@@ -353,7 +353,7 @@
 	casingtype = /obj/item/ammo_casing/a65clip
 	l_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
 
-/mob/living/simple_animal/hostile/human/frontier/ranged/sniper/sentry
+/mob/living/simple_animal/hostile/human/ramzi/ranged/sniper/sentry
 	vision_range = 14
 	aggro_vision_range = 14
 	minimum_distance = 14

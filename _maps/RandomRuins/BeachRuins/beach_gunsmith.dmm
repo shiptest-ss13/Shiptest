@@ -1337,6 +1337,18 @@
 /obj/machinery/atmospherics/components/unary/passive_vent/layer2{
 	dir = 1
 	},
+/obj/item/paper/fluff/ruins{
+	pixel_x = -11;
+	pixel_y = 5;
+	default_raw_text = <h1>TO DO:</h1> -Remind the new people that love is one of us <br> -Negotiate hydra shipment proceeds with love's boss <br> -See about getting a new salt supplier <br> -Plaster more warning signs by the explosives;
+	name = "To-Do List"
+	},
+/obj/item/paper/fluff/ruins{
+	pixel_x = -11;
+	pixel_y = -9;
+	default_raw_text = "remind rei to replace my damn stash floorboards by the south wall";
+	name = "reminder"
+	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/workshop)
 "oz" = (
@@ -2522,7 +2534,7 @@
 	pixel_x = 6;
 	pixel_y = 0
 	},
-/obj/item/paper/fluff/ruins{
+/obj/item/folder/documents/syndicate/ngr{
 	pixel_x = -7;
 	pixel_y = 0
 	},
@@ -3641,7 +3653,8 @@
 /obj/structure/table/wood,
 /obj/item/paper/crumpled{
 	pixel_x = 3;
-	pixel_y = 5
+	pixel_y = 5;
+	default_raw_text = "hey love. remember to be a little more careful moving the bookcase for the stash. gonna have to get rei to fix the floorboards again"
 	},
 /obj/item/desk_flag/trans{
 	pixel_x = -9;
