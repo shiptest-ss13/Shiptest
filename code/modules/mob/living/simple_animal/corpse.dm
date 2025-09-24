@@ -67,6 +67,28 @@
 	id_job = "Operative"
 	outfit = /datum/outfit/ramzi/stormtrooper
 
+/datum/outfit/ramzi/officer
+	name = "Ramzi Clique Officer"
+	uniform = /obj/item/clothing/under/syndicate/ramzi/officer
+	suit = /obj/item/clothing/suit/armor/ramzi/officer
+	head = /obj/item/clothing/head/ramzi/beret
+
+/obj/effect/mob_spawn/human/corpse/ramzi/officer
+	name = "Ramzi Clique Officer"
+	outfit = /datum/outfit/ramzi/officer
+
+/obj/effect/mob_spawn/human/corpse/ramzi/officer/beach
+	name = "Ramzi Clique Quartermaster"
+	mob_gender = FEMALE
+
+/obj/effect/mob_spawn/human/corpse/ramzi/officer/ngr
+	name = "Corrupt NGR Official"
+	uniform = /obj/item/clothing/under/syndicate/ngr/officer
+	head = /obj/item/clothing/head/ngr
+	suit = /obj/item/clothing/suit/armor/ngr/lieutenant
+	glasses = null
+	mob_gender = FEMALE
+
 /datum/outfit/ramzi/stormtrooper
 	name = "Ramzi Clique Trooper Corpse"
 	uniform = /obj/item/clothing/under/syndicate/ramzi/officer

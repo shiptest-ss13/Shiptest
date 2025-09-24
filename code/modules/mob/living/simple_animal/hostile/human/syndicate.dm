@@ -268,6 +268,42 @@
 	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
 	l_hand =/obj/item/gun/ballistic/automatic/smg/cobra
 
+/mob/living/simple_animal/hostile/human/ramzi/ranged/hydra
+	name = "Ramzi Clique Trooper"
+	desc = "A deserter from the Gorlex Marauders turned pirate. They scan the room with their assault rifle held at eye level, sweeping every corner."
+	rapid = 3
+	icon_state = "syndicate_hydra"
+	casingtype = /obj/item/ammo_casing/a556_42
+	l_hand = /obj/item/gun/ballistic/automatic/assault/hydra
+	projectilesound = 'sound/weapons/gun/rifle/hydra.ogg'
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/officer
+	name = "Ramzi Clique Quartermaster"
+	desc = "A deserter from the Gorlex Marauders turned pirate. They hold themselves high, clad in well-taken care of officer garbs. They clutch a blackened revolver in their hands."
+	icon_state = "syndicate_officer"
+	casingtype = /obj/item/ammo_casing/a357
+	l_hand = /obj/item/gun/ballistic/revolver/viper
+	projectilesound = 'sound/weapons/gun/revolver/viper.ogg'
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/officer
+
+	armor_base = /obj/item/clothing/suit/armor/ramzi/officer
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/officer/beach
+	name = "Ramzi Clique Quartermaster"
+	desc = "A deserter from the Gorlex Marauders turned pirate. She holds herself high, clad in well-taken care of officer garbs. She clutches a blackened revolver in her hands."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/officer/beach
+	casingtype = /obj/item/ammo_casing/a357/match
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/officer/ngr
+	name = "New Gorlex Embezzler"
+	desc = "A sleazy official of the New Gorlex Republic, wearing a heavy officer coat. She looks around cautiously, a heavy pistol within her hands."
+	casingtype = /obj/item/ammo_casing/c57x39mm
+	l_hand = /obj/item/gun/ballistic/pistol/asp
+	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/officer/ngr
+
+	armor_base = /obj/item/clothing/suit/armor/ngr/lieutenant
+
 /mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun
 	name = "Ramzi Clique Breacher"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They move low and quickly, heavy combat shotgun at the ready."
