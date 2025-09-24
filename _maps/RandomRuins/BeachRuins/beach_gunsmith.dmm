@@ -458,9 +458,6 @@
 /obj/machinery/light/dim/directional/south,
 /turf/open/water/beach/deep,
 /area/ruin/beach/gunsmith)
-"fe" = (
-/turf/template_noop,
-/area/ruin/beach/gunsmith)
 "fk" = (
 /turf/open/floor/carpet/green,
 /area/ruin/beach/gunsmith/crewquarters)
@@ -2532,6 +2529,9 @@
 	pixel_x = -7;
 	pixel_y = 0
 	},
+/obj/effect/landmark/mission_poi/main{
+	already_spawned = 1
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
 "BE" = (
@@ -4530,8 +4530,8 @@ pG
 pG
 pG
 pG
-fe
-fe
+pG
+pG
 Cm
 Cm
 pG
@@ -4578,8 +4578,8 @@ pG
 pG
 pG
 pG
-fe
-fe
+pG
+pG
 JW
 JW
 JW
@@ -4626,8 +4626,8 @@ pG
 pG
 pG
 pG
-fe
-fe
+pG
+pG
 JW
 JW
 JW
@@ -4675,7 +4675,7 @@ pG
 Cm
 Cm
 pG
-fe
+pG
 JW
 JW
 JW
