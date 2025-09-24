@@ -294,7 +294,6 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/officer/beach
 	casingtype = /obj/item/ammo_casing/a357/match
 	mob_species = /datum/species/human
-	mob_gender = FEMALE
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/officer/ngr
 	name = "New Gorlex Embezzler"
@@ -304,7 +303,6 @@
 	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/officer/ngr
 	mob_species = /datum/species/human
-	mob_gender = FEMALE
 
 	armor_base = /obj/item/clothing/suit/armor/ngr/lieutenant
 
