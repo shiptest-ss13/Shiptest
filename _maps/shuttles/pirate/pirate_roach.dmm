@@ -789,6 +789,51 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
+"kG" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1;
+	color = "#912a2a"
+	},
+/obj/structure/closet/wall/red/directional/north{
+	name = "Armor"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/item/clothing/suit/armor/ramzi{
+	pixel_x = -11;
+	pixel_y = -5
+	},
+/obj/item/clothing/suit/armor/ramzi{
+	pixel_x = -3;
+	pixel_y = -5
+	},
+/obj/item/clothing/suit/armor/ramzi/bulletproof{
+	pixel_x = 4;
+	pixel_y = -6
+	},
+/obj/item/clothing/suit/armor/ramzi/bulletproof{
+	pixel_x = 10;
+	pixel_y = -7
+	},
+/obj/item/clothing/head/helmet/m10/ramzi{
+	pixel_x = -12;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/helmet/m10/ramzi{
+	pixel_x = -4;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/helmet/bulletproof/x11/ramzi{
+	pixel_x = 4;
+	pixel_y = 6
+	},
+/obj/item/clothing/head/helmet/bulletproof/x11/ramzi{
+	pixel_x = 11;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/security/armory)
 "kK" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2343,51 +2388,6 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
-"EE" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1;
-	color = "#912a2a"
-	},
-/obj/structure/closet/wall/red/directional/north{
-	name = "Armor"
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 8
-	},
-/obj/item/clothing/suit/armor/ramzi{
-	pixel_x = -11;
-	pixel_y = -5
-	},
-/obj/item/clothing/suit/armor/ramzi{
-	pixel_x = -3;
-	pixel_y = -5
-	},
-/obj/item/clothing/suit/armor/ramzi/bulletproof{
-	pixel_x = 4;
-	pixel_y = -6
-	},
-/obj/item/clothing/suit/armor/ramzi/bulletproof{
-	pixel_x = 10;
-	pixel_y = -7
-	},
-/obj/item/clothing/head/helmet/ramzi{
-	pixel_x = -12;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/helmet/ramzi{
-	pixel_x = -4;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/helmet/ramzi/bulletproof{
-	pixel_x = 4;
-	pixel_y = 6
-	},
-/obj/item/clothing/head/helmet/ramzi/bulletproof{
-	pixel_x = 11;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/security/armory)
 "EK" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1;
@@ -2549,15 +2549,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
-"Hw" = (
-/obj/effect/turf_decal/trimline/opaque/syndiered/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/syndiered/border,
-/obj/structure/table/reinforced,
-/obj/machinery/fax/ramzi,
-/turf/open/floor/plasteel/tech,
-/area/ship/bridge)
 "HI" = (
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3684,6 +3675,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
+"SR" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered/border,
+/obj/structure/table/reinforced,
+/obj/machinery/fax/ramzi,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
 "Tn" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/engineering/engines/port)
@@ -4719,7 +4719,7 @@ AX
 qH
 aT
 zJ
-Hw
+SR
 ML
 af
 Ys
@@ -4916,7 +4916,7 @@ yf
 yf
 DS
 tM
-EE
+kG
 hq
 tM
 tM
