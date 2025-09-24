@@ -142,7 +142,7 @@
 /area/ruin/beach/gunsmith)
 "bv" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "shutters"
+	id = "storage"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -395,8 +395,7 @@
 /area/ruin/beach/gunsmith/kitchen)
 "dW" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "shutters";
-	name = "storage doors"
+	id = "storage"
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith/workshop)
@@ -2524,7 +2523,7 @@
 "zG" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
-/turf/closed/wall/concrete/reinforced,
+/turf/open/space/basic,
 /area/ruin/beach/gunsmith)
 "zK" = (
 /obj/structure/rack,
