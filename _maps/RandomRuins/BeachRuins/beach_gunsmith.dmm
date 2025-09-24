@@ -137,12 +137,9 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith/workshop)
 "bq" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete,
-/area/ruin/beach/gunsmith/electrical)
+/obj/machinery/porta_turret/ruin/ramzi/light,
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/beach/gunsmith)
 "bv" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "shutters"
@@ -196,6 +193,14 @@
 	},
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/ruin/beach/gunsmith/workshop)
+"cd" = (
+/obj/structure/railing/thin,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/tiles,
+/area/ruin/beach/gunsmith)
 "ce" = (
 /turf/closed/wall/concrete,
 /area/ruin/beach/gunsmith/workshop)
@@ -295,10 +300,6 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/dorms/officer)
-"cR" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_4,
-/area/ruin/beach/gunsmith)
 "cU" = (
 /obj/machinery/door/airlock,
 /obj/structure/cable{
@@ -510,13 +511,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith/kitchen)
-"fA" = (
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "bedroomshutters"
-	},
-/turf/open/floor/plating,
-/area/ruin/beach/gunsmith/dorms)
 "fI" = (
 /obj/structure/closet/secure_closet/armorycage,
 /obj/machinery/light/small/directional/south,
@@ -540,12 +534,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/beach/gunsmith/dorms/officer)
-"gh" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/walnut{
-	icon_state = "wood-broken"
-	},
-/area/ruin/beach/gunsmith)
 "gk" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -840,10 +828,6 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/gunsmith/electrical)
-"iR" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/walnut,
-/area/ruin/beach/gunsmith)
 "iT" = (
 /obj/structure/platform{
 	dir = 1
@@ -896,7 +880,6 @@
 "jp" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	dir = 8;
 	id = "bedroomshutters"
 	},
 /turf/open/floor/plating,
@@ -912,10 +895,6 @@
 /obj/structure/platform/wood,
 /turf/open/water/beach/deep,
 /area/ruin/beach/gunsmith)
-"jG" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/slab_3,
-/area/ruin/beach/gunsmith/electrical)
 "jI" = (
 /obj/structure/cable{
 	icon_state = "1-6"
@@ -967,14 +946,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/gunsmith/crewquarters)
-"jZ" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/light/small/directional/south,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/tiles,
-/area/ruin/beach/gunsmith)
 "kd" = (
 /obj/structure/table/reinforced,
 /obj/machinery/coffeemaker/premium,
@@ -1073,6 +1044,10 @@
 	},
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
+"kN" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_3,
+/area/ruin/beach/gunsmith/electrical)
 "kR" = (
 /turf/open/floor/concrete/tiles,
 /area/ruin/beach/gunsmith/kitchen)
@@ -1080,6 +1055,14 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/gunsmith/workshop)
+"kV" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/light/small/directional/south,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/tiles,
+/area/ruin/beach/gunsmith)
 "lb" = (
 /obj/structure/platform{
 	dir = 1
@@ -1172,13 +1155,6 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/dorms/officer)
-"mi" = (
-/obj/structure/chair/bench/beige{
-	dir = 1
-	},
-/obj/item/radio/intercom/directional/south,
-/turf/open/floor/carpet/green,
-/area/ruin/beach/gunsmith/crewquarters)
 "ml" = (
 /obj/structure/hazard_shutoff/electrical_shutoff{
 	id = "engineeringmoat"
@@ -1224,6 +1200,12 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/crewquarters)
+"mC" = (
+/obj/structure/railing,
+/obj/effect/turf_decal/techfloor,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/tiles,
+/area/ruin/beach/gunsmith/workshop)
 "mD" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4;
@@ -1236,14 +1218,6 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/beach/gunsmith/dorms)
-"mN" = (
-/obj/structure/barricade/sandbags,
-/obj/structure/railing/wood{
-	dir = 4
-	},
-/obj/item/radio/intercom/directional/north,
-/turf/open/floor/wood/walnut,
-/area/ruin/beach/gunsmith)
 "nb" = (
 /obj/structure/platform,
 /obj/structure/hazard/electrical/electrified_water{
@@ -1483,6 +1457,12 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/kitchen)
+"oT" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken"
+	},
+/area/ruin/beach/gunsmith)
 "oU" = (
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 4
@@ -1641,6 +1621,14 @@
 	},
 /turf/open/floor/concrete,
 /area/ruin/beach/gunsmith/electrical)
+"qv" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "bedroomshutters"
+	},
+/turf/open/floor/plating,
+/area/ruin/beach/gunsmith/dorms)
 "qw" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/item/reagent_containers/condiment/milk,
@@ -1856,12 +1844,12 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/beach/gunsmith/workshop)
-"te" = (
-/obj/machinery/porta_turret/ruin/ramzi/light,
-/turf/closed/wall/concrete/reinforced,
-/area/ruin/beach/gunsmith)
 "tf" = (
 /turf/open/floor/concrete/slab_4,
+/area/ruin/beach/gunsmith)
+"tg" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood/walnut,
 /area/ruin/beach/gunsmith)
 "tn" = (
 /obj/effect/turf_decal/corner_steel_grid{
@@ -2080,10 +2068,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/beach/gunsmith/kitchen)
-"vr" = (
-/obj/structure/extinguisher_cabinet/directional/west,
-/turf/open/floor/concrete/tiles,
-/area/ruin/beach/gunsmith/kitchen)
 "vy" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -2250,11 +2234,79 @@
 	},
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/ruin/beach/gunsmith)
+"xw" = (
+/obj/item/radio/intercom/directional/east,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/ruin/beach/gunsmith)
 "xC" = (
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken3"
 	},
 /area/ruin/beach/gunsmith)
+"xP" = (
+/obj/effect/turf_decal/corner/transparent/syndiered/border{
+	dir = 1
+	},
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/secure/weapon,
+/obj/item/clothing/suit/space/syndicate/ramzi{
+	pixel_x = -9;
+	pixel_y = -2
+	},
+/obj/item/clothing/suit/space/syndicate/ramzi{
+	pixel_x = -9;
+	pixel_y = -4
+	},
+/obj/item/clothing/suit/space/syndicate/ramzi{
+	pixel_x = -9;
+	pixel_y = -6
+	},
+/obj/item/clothing/head/helmet/space/syndicate/ramzi{
+	pixel_x = -11;
+	pixel_y = 6
+	},
+/obj/item/clothing/head/helmet/space/syndicate/ramzi{
+	pixel_x = -11;
+	pixel_y = 4
+	},
+/obj/item/clothing/head/helmet/space/syndicate/ramzi{
+	pixel_x = -11;
+	pixel_y = 2
+	},
+/obj/item/clothing/suit/space/syndicate/ramzi/surplus{
+	pixel_x = 5;
+	pixel_y = 0
+	},
+/obj/item/clothing/suit/space/syndicate/ramzi/surplus{
+	pixel_x = 5;
+	pixel_y = -2
+	},
+/obj/item/clothing/suit/space/syndicate/ramzi/surplus{
+	pixel_x = 5;
+	pixel_y = -4
+	},
+/obj/item/clothing/suit/space/syndicate/ramzi/surplus{
+	pixel_x = 5;
+	pixel_y = -6
+	},
+/obj/item/clothing/head/helmet/space/syndicate/ramzi/surplus{
+	pixel_x = 4;
+	pixel_y = 6
+	},
+/obj/item/clothing/head/helmet/space/syndicate/ramzi/surplus{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/clothing/head/helmet/space/syndicate/ramzi/surplus{
+	pixel_x = 4;
+	pixel_y = 2
+	},
+/obj/item/clothing/head/helmet/space/syndicate/ramzi/surplus{
+	pixel_x = 4;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/beach/gunsmith/workshop)
 "xU" = (
 /obj/structure/rack,
 /obj/item/clothing/gloves/color/yellow{
@@ -2473,10 +2525,6 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /turf/closed/wall/concrete/reinforced,
-/area/ruin/beach/gunsmith)
-"zH" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/tiles,
 /area/ruin/beach/gunsmith)
 "zK" = (
 /obj/structure/rack,
@@ -2763,6 +2811,10 @@
 	},
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/gunsmith/electrical)
+"Cd" = (
+/obj/structure/extinguisher_cabinet/directional/west,
+/turf/open/floor/concrete/tiles,
+/area/ruin/beach/gunsmith/kitchen)
 "Ch" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2771,6 +2823,10 @@
 	dir = 8
 	},
 /area/ruin/beach/gunsmith)
+"Cj" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/beach/gunsmith/workshop)
 "Cm" = (
 /turf/closed/mineral/random/beach,
 /area/ruin/beach/gunsmith)
@@ -2952,13 +3008,6 @@
 	},
 /turf/open/floor/concrete,
 /area/ruin/beach/gunsmith/electrical)
-"DN" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/walnut,
-/area/ruin/beach/gunsmith)
 "DV" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2970,6 +3019,13 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/beach/gunsmith/kitchen)
+"Em" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood/walnut,
+/area/ruin/beach/gunsmith)
 "EC" = (
 /obj/structure/cable{
 	icon_state = "1-10";
@@ -3310,6 +3366,13 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/beach/gunsmith/electrical)
+"II" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete,
+/area/ruin/beach/gunsmith/electrical)
 "IR" = (
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
@@ -3369,10 +3432,6 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/gunsmith/electrical)
-"JO" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/beach/gunsmith/workshop)
 "JW" = (
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/ruin/beach/gunsmith)
@@ -3705,10 +3764,6 @@
 "Pp" = (
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/gunsmith/electrical)
-"Pu" = (
-/obj/item/radio/intercom/directional/east,
-/turf/open/floor/plating/asteroid/dirt/beach,
-/area/ruin/beach/gunsmith)
 "PE" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10;
@@ -3748,6 +3803,10 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
+"PQ" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/tiles,
+/area/ruin/beach/gunsmith)
 "PS" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
@@ -3779,6 +3838,14 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/beach/gunsmith/dorms)
+"Qe" = (
+/obj/structure/barricade/sandbags,
+/obj/structure/railing/wood{
+	dir = 4
+	},
+/obj/item/radio/intercom/directional/north,
+/turf/open/floor/wood/walnut,
+/area/ruin/beach/gunsmith)
 "Qi" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521"
@@ -4275,12 +4342,13 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/beach/gunsmith/dorms)
-"UU" = (
-/obj/structure/railing,
-/obj/effect/turf_decal/techfloor,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/tiles,
-/area/ruin/beach/gunsmith/workshop)
+"UQ" = (
+/obj/structure/chair/bench/beige{
+	dir = 1
+	},
+/obj/item/radio/intercom/directional/south,
+/turf/open/floor/carpet/green,
+/area/ruin/beach/gunsmith/crewquarters)
 "UX" = (
 /turf/open/floor/plasteel/stairs/left{
 	dir = 4
@@ -4316,14 +4384,6 @@
 "VJ" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/beach/gunsmith/dorms)
-"VM" = (
-/obj/structure/railing/thin,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/tiles,
-/area/ruin/beach/gunsmith)
 "VS" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -4617,6 +4677,10 @@
 	random_sparks = 0
 	},
 /turf/open/water/beach/deep,
+/area/ruin/beach/gunsmith)
+"ZC" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_4,
 /area/ruin/beach/gunsmith)
 "ZI" = (
 /obj/effect/turf_decal/techfloor{
@@ -5001,7 +5065,7 @@ JW
 IR
 IR
 Ao
-iR
+tg
 Zb
 kL
 IR
@@ -5152,7 +5216,7 @@ qI
 Gu
 vj
 Zb
-iR
+tg
 Je
 Gu
 Vv
@@ -5301,7 +5365,7 @@ IR
 IR
 IR
 jD
-iR
+tg
 Zb
 Xi
 bZ
@@ -5312,12 +5376,12 @@ sQ
 sQ
 sQ
 ai
-gh
+oT
 Zb
 ZS
 it
 JW
-Pu
+xw
 JW
 pG
 pG
@@ -5355,14 +5419,14 @@ Zb
 Zb
 jm
 Zb
-iR
-iR
+tg
+tg
 Zb
 Zb
 Zb
 Zb
 Zb
-iR
+tg
 Zb
 ZS
 it
@@ -5409,11 +5473,11 @@ Sh
 Rl
 Sh
 Sh
-DN
+Em
 Sh
 gO
 Zb
-iR
+tg
 ZS
 it
 it
@@ -5437,9 +5501,9 @@ Cm
 Cm
 Cm
 xW
-cq
+xP
 tz
-JO
+Cj
 kz
 pg
 xW
@@ -5494,7 +5558,7 @@ yR
 Bd
 xW
 vy
-UU
+mC
 Rf
 sQ
 sQ
@@ -5547,7 +5611,7 @@ OP
 MA
 La
 Sh
-DN
+Em
 Sh
 Sh
 Sh
@@ -5600,7 +5664,7 @@ Zb
 jm
 xC
 Zb
-iR
+tg
 Zb
 fd
 Gu
@@ -5639,7 +5703,7 @@ Cm
 xW
 xW
 nB
-JO
+Cj
 wi
 cJ
 xW
@@ -5660,7 +5724,7 @@ Cm
 Cm
 IR
 Gu
-zH
+PQ
 Fc
 Gu
 it
@@ -5814,7 +5878,7 @@ HN
 VU
 qj
 FU
-cR
+ZC
 tf
 GK
 Gu
@@ -6014,7 +6078,7 @@ Aq
 oU
 vZ
 Gu
-mN
+Qe
 tt
 Up
 ZS
@@ -6111,7 +6175,7 @@ Cm
 Gu
 Gu
 Qb
-jZ
+kV
 Gu
 it
 it
@@ -6161,7 +6225,7 @@ Cm
 Gu
 xU
 Qb
-VM
+cd
 iT
 eC
 it
@@ -6187,7 +6251,7 @@ Cm
 Cm
 dD
 dD
-jG
+kN
 KA
 Pp
 dD
@@ -6237,7 +6301,7 @@ Cm
 Cm
 dD
 SR
-bq
+II
 Qm
 HT
 ub
@@ -6260,7 +6324,7 @@ Cm
 JW
 Gu
 yL
-zH
+PQ
 LO
 iT
 it
@@ -6290,7 +6354,7 @@ Pp
 Bu
 kn
 Bu
-jG
+kN
 dD
 Kq
 RF
@@ -6312,7 +6376,7 @@ Gu
 Gu
 tT
 nE
-te
+bq
 it
 it
 it
@@ -6339,7 +6403,7 @@ dD
 SR
 HT
 DM
-bq
+II
 ub
 dD
 Ad
@@ -6687,7 +6751,7 @@ Cm
 Cm
 dD
 SR
-bq
+II
 vL
 HT
 ub
@@ -6787,9 +6851,9 @@ Cm
 Cm
 dD
 SR
-bq
+II
 qr
-bq
+II
 ub
 dD
 PF
@@ -6807,7 +6871,7 @@ cr
 cU
 WK
 CZ
-mi
+UQ
 gs
 qw
 Yq
@@ -6837,7 +6901,7 @@ Cm
 Cm
 dD
 dD
-jG
+kN
 iE
 Pp
 dD
@@ -6901,8 +6965,8 @@ IR
 BU
 VJ
 VJ
-jp
-jp
+qv
+qv
 VJ
 gs
 gs
@@ -6962,7 +7026,7 @@ io
 WX
 FQ
 mq
-vr
+Cd
 oN
 lm
 CX
@@ -7048,7 +7112,7 @@ bW
 Gu
 IR
 IR
-fA
+jp
 oB
 Qd
 yk
