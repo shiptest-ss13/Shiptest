@@ -1340,7 +1340,7 @@
 /obj/item/paper/fluff/ruins{
 	pixel_x = -11;
 	pixel_y = 5;
-	default_raw_text = <h1>TO DO:</h1> -Remind the new people that love is one of us <br> -Negotiate hydra shipment proceeds with love's boss <br> -See about getting a new salt supplier <br> -Plaster more warning signs by the explosives;
+	default_raw_text = <h1>TODO:</h1>-Remindthenewpeoplethatloveisoneofus<br>-Negotiatehydrashipmentproceedswithlove'sboss<br>-Seeaboutgettinganewsaltsupplier<br>-Plastermorewarningsignsbytheexplosives;
 	name = "To-Do List"
 	},
 /obj/item/paper/fluff/ruins{
@@ -1609,11 +1609,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/gunsmith/workshop)
 "rb" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth{
-	stop_automated_movement = 1;
-	wander = 0
-	},
 /obj/machinery/light/small/directional/west,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth/scout,
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/gunsmith)
 "rc" = (
@@ -1881,11 +1878,8 @@
 /area/ruin/beach/gunsmith)
 "tL" = (
 /obj/structure/chair/stool,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/sniper{
-	stop_automated_movement = 1;
-	wander = 0
-	},
 /obj/machinery/light/small/directional/north,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/sniper/sentry,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/gunsmith)
 "tT" = (
@@ -3712,9 +3706,6 @@
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 4
-	},
-/obj/machinery/door/window/brigdoor/eastleft{
-	state_open = 1
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith/workshop)
