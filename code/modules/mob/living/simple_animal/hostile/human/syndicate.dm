@@ -267,6 +267,7 @@
 	l_hand = /obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonmouth
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth/scout
+	rapid = 1
 	vision_range = 10
 	aggro_vision_range = 10
 	minimum_distance = 10
