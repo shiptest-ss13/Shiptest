@@ -364,7 +364,7 @@
 
 /obj/structure/fluff/vehicle/update_icon(updates)
 	. = ..()
-	var/percentage = (obj_integrity / max_integrity) * 100
+	var/percentage = (atom_integrity / max_integrity) * 100
 	update_brightness()
 	if(last_damaged == percentage)
 		last_damaged = percentage

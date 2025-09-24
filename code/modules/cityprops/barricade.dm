@@ -34,7 +34,7 @@
 /obj/structure/barricade/concrete/update_icon_state()
 	. = ..()
 	var/damage_state
-	var/percentage = (obj_integrity / max_integrity) * 100
+	var/percentage = (atom_integrity / max_integrity) * 100
 	switch(percentage)
 		if(-INFINITY to 25)
 			damage_state = 3
