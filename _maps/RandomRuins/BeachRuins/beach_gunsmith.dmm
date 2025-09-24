@@ -1,8 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "af" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/border{
-	dir = 9
-	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
+/obj/machinery/light/floor,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
 "ai" = (
@@ -168,6 +167,10 @@
 	dir = 8
 	},
 /turf/open/floor/concrete/tiles,
+/area/ruin/beach/gunsmith)
+"bW" = (
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/plating/asteroid/sand/dense,
 /area/ruin/beach/gunsmith)
 "bZ" = (
 /obj/structure/platform/wood{
@@ -382,83 +385,15 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith/workshop)
 "ec" = (
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 10
+/obj/structure/platform/wood{
+	dir = 8
 	},
-/obj/effect/turf_decal/borderfloor{
-	dir = 1
+/obj/structure/hazard/electrical/electrified_water{
+	id = "engineeringmoat";
+	random_sparks = 0
 	},
-/obj/effect/turf_decal/trimline/opaque/red/line{
-	layer = 2.040
-	},
-/obj/structure/closet/secure_closet/personal,
-/obj/item/clothing/neck/shemagh/ramzi{
-	pixel_x = -8;
-	pixel_y = -5
-	},
-/obj/item/clothing/neck/shemagh/ramzi{
-	pixel_x = -8;
-	pixel_y = -7
-	},
-/obj/item/clothing/neck/shemagh/ramzi{
-	pixel_x = -8;
-	pixel_y = -9
-	},
-/obj/item/clothing/neck/shemagh/ramzi{
-	pixel_x = -8;
-	pixel_y = -11
-	},
-/obj/item/clothing/mask/breath/facemask{
-	pixel_x = -9;
-	pixel_y = 0
-	},
-/obj/item/clothing/mask/breath/facemask{
-	pixel_x = -9;
-	pixel_y = 3
-	},
-/obj/item/clothing/mask/breath/facemask{
-	pixel_x = -9;
-	pixel_y = 5
-	},
-/obj/item/clothing/mask/breath/facemask{
-	pixel_x = -9;
-	pixel_y = 7
-	},
-/obj/item/storage/belt/security/webbing/ramzi{
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/item/storage/belt/security/webbing/ramzi{
-	pixel_x = 5;
-	pixel_y = 3
-	},
-/obj/item/storage/belt/security/webbing/ramzi{
-	pixel_x = 5;
-	pixel_y = 1
-	},
-/obj/item/storage/belt/security/webbing/ramzi/alt{
-	pixel_x = 6;
-	pixel_y = -7
-	},
-/obj/item/storage/belt/security/webbing/ramzi/alt{
-	pixel_x = 6;
-	pixel_y = -9
-	},
-/obj/item/storage/belt/security/webbing/ramzi/alt{
-	pixel_x = 6;
-	pixel_y = -11
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/apc/auto_name/directional/south,
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_x = -12;
-	pixel_y = -16
-	},
-/turf/open/floor/plating,
-/area/ruin/beach/gunsmith/dorms)
+/turf/open/water/beach/deep,
+/area/ruin/beach/gunsmith)
 "eu" = (
 /obj/machinery/door/airlock/grunge{
 	dir = 4
@@ -472,11 +407,12 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/beach/gunsmith/dorms/officer)
 "ez" = (
-/obj/structure/platform/wood{
-	dir = 8
-	},
 /obj/structure/hazard/electrical/electrified_water{
-	id = "bunkermoat"
+	id = "bunkermoat";
+	random_sparks = 0
+	},
+/obj/structure/cable{
+	icon_state = "0-9"
 	},
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
@@ -485,6 +421,16 @@
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/dirt/beach,
+/area/ruin/beach/gunsmith)
+"eC" = (
+/obj/structure/cable{
+	icon_state = "0-5"
+	},
+/obj/structure/hazard/electrical/electrified_water{
+	id = "bunkermoat";
+	random_sparks = 0
+	},
+/turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "eD" = (
 /obj/machinery/door/airlock/security,
@@ -506,16 +452,15 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
 "fd" = (
-/obj/structure/chair/stool,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/sniper{
-	stop_automated_movement = 1
+/obj/structure/platform/wood{
+	dir = 1
 	},
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/concrete/slab_4,
+/obj/machinery/light/dim/directional/south,
+/turf/open/water/beach/deep,
 /area/ruin/beach/gunsmith)
 "fe" = (
-/turf/open/floor/plating/asteroid/dirt/grass/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/turf/template_noop,
+/area/ruin/beach/gunsmith)
 "fk" = (
 /turf/open/floor/carpet/green,
 /area/ruin/beach/gunsmith/crewquarters)
@@ -638,8 +583,15 @@
 /turf/open/floor/wood/maple,
 /area/ruin/beach/gunsmith/crewquarters)
 "ha" = (
+/obj/structure/hazard/electrical/electrified_water{
+	id = "bunkermoat";
+	random_sparks = 0
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/beach/gunsmith)
 "hl" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#D2BC9D"
@@ -773,7 +725,8 @@
 /area/ruin/beach/gunsmith/workshop)
 "it" = (
 /obj/structure/hazard/electrical/electrified_water{
-	id = "bunkermoat"
+	id = "bunkermoat";
+	random_sparks = 0
 	},
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
@@ -788,11 +741,57 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/beach/gunsmith/electrical)
 "iA" = (
-/obj/structure/hazard/electrical/electrified_water{
-	id = "engineeringmoat"
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
 	},
-/turf/open/water/beach/deep,
-/area/ruin/beach/gunsmith)
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 8;
+	layer = 2.040
+	},
+/obj/item/clothing/head/ramzi/beret{
+	pixel_x = -10;
+	pixel_y = 4
+	},
+/obj/item/clothing/head/ramzi{
+	pixel_x = -11;
+	pixel_y = 10
+	},
+/obj/item/clothing/suit/armor/ramzi/officer{
+	pixel_x = -10;
+	pixel_y = -5
+	},
+/obj/item/clothing/under/syndicate/ramzi/officer{
+	pixel_x = -10;
+	pixel_y = -12
+	},
+/obj/item/clothing/head/ngr{
+	pixel_x = 8;
+	pixel_y = 6
+	},
+/obj/item/clothing/suit/armor/ngr/lieutenant{
+	pixel_x = 9;
+	pixel_y = -5
+	},
+/obj/item/clothing/under/syndicate/ngr/officer{
+	pixel_x = 9;
+	pixel_y = -12
+	},
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/machinery/atmospherics/components/unary/passive_vent/layer2{
+	dir = 1
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 12
+	},
+/obj/structure/closet,
+/turf/open/floor/plasteel/dark,
+/area/ruin/beach/gunsmith/dorms/officer)
 "iE" = (
 /obj/machinery/power/rtg/advanced,
 /obj/structure/cable/yellow{
@@ -802,13 +801,14 @@
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/gunsmith/electrical)
 "iT" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/structure/platform{
+	dir = 1
 	},
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/plasteel/stairs/left{
-	dir = 4
+/obj/structure/hazard/electrical/electrified_water{
+	id = "bunkermoat";
+	random_sparks = 0
 	},
+/turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "iW" = (
 /obj/machinery/door/airlock/engineering{
@@ -960,10 +960,11 @@
 /area/ruin/beach/gunsmith/workshop)
 "km" = (
 /obj/structure/hazard/electrical/electrified_water{
-	id = "bunkermoat"
+	id = "bunkermoat";
+	random_sparks = 0
 	},
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "1-6"
 	},
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
@@ -1020,10 +1021,17 @@
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/gunsmith/workshop)
 "lb" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/border{
-	dir = 5
+/obj/structure/platform{
+	dir = 1
 	},
-/turf/open/floor/concrete/slab_1,
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/obj/structure/hazard/electrical/electrified_water{
+	id = "bunkermoat";
+	random_sparks = 0
+	},
+/turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "lm" = (
 /obj/effect/turf_decal/siding/wood{
@@ -1156,14 +1164,11 @@
 /area/ruin/beach/gunsmith/dorms)
 "nb" = (
 /obj/structure/platform,
-/obj/structure/platform/wood{
-	dir = 8;
-	layer = 3.07
-	},
 /obj/structure/hazard/electrical/electrified_water{
-	id = "engineeringmoat"
+	id = "engineeringmoat";
+	random_sparks = 0
 	},
-/turf/open/water/beach/deep,
+/turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "nm" = (
 /obj/structure/table/reinforced,
@@ -1198,11 +1203,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/gunsmith/workshop)
 "nE" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth{
-	stop_automated_movement = 1
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/wood/walnut,
+/turf/open/floor/plasteel/stairs/left{
+	dir = 4
+	},
 /area/ruin/beach/gunsmith)
 "nJ" = (
 /obj/structure/platform/wood{
@@ -1229,6 +1235,66 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/dorms/officer)
+"oe" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	layer = 2.040
+	},
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = 6;
+	pixel_y = -4
+	},
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = 6;
+	pixel_y = -6
+	},
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = 6;
+	pixel_y = -8
+	},
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = 6;
+	pixel_y = -10
+	},
+/obj/item/clothing/under/syndicate/ramzi/overalls{
+	pixel_x = -8;
+	pixel_y = -4
+	},
+/obj/item/clothing/under/syndicate/ramzi/overalls{
+	pixel_x = -8;
+	pixel_y = -6
+	},
+/obj/item/clothing/under/syndicate/ramzi/overalls{
+	pixel_x = -8;
+	pixel_y = -8
+	},
+/obj/item/clothing/under/syndicate/ramzi/overalls{
+	pixel_x = -8;
+	pixel_y = -10
+	},
+/obj/item/clothing/suit/ramzi{
+	pixel_x = 6;
+	pixel_y = 8
+	},
+/obj/item/clothing/suit/ramzi{
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/obj/item/clothing/suit/ramzi{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/machinery/atmospherics/components/unary/passive_vent/layer2{
+	dir = 1
+	},
+/obj/structure/closet,
+/turf/open/floor/plating,
+/area/ruin/beach/gunsmith/dorms)
 "ol" = (
 /obj/machinery/recharger{
 	pixel_x = -9;
@@ -1506,13 +1572,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
 "qI" = (
-/obj/structure/platform/wood{
-	dir = 9
-	},
-/obj/structure/hazard/electrical/electrified_water{
-	id = "bunkermoat"
-	},
-/obj/machinery/light/small/directional/east,
+/obj/machinery/light/dim/directional/south,
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "qS" = (
@@ -1536,13 +1596,23 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/gunsmith/workshop)
+"rb" = (
+/mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth{
+	stop_automated_movement = 1;
+	wander = 0
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/wood/walnut,
+/area/ruin/beach/gunsmith)
 "rc" = (
-/obj/structure/platform{
-	dir = 1
+/obj/structure/platform/wood{
+	dir = 5
 	},
 /obj/structure/hazard/electrical/electrified_water{
-	id = "bunkermoat"
+	id = "bunkermoat";
+	random_sparks = 0
 	},
+/obj/machinery/light/dim/directional/west,
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "rt" = (
@@ -1626,10 +1696,11 @@
 /area/ruin/beach/gunsmith)
 "sK" = (
 /obj/structure/platform/wood{
-	dir = 5
+	dir = 1
 	},
 /obj/structure/hazard/electrical/electrified_water{
-	id = "bunkermoat"
+	id = "engineeringmoat";
+	random_sparks = 0
 	},
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
@@ -1659,45 +1730,113 @@
 /turf/open/floor/plating,
 /area/ruin/beach/gunsmith/kitchen)
 "td" = (
-/obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/food/meat/slab,
-/obj/item/food/meat/slab,
-/obj/item/food/meat/slab,
-/obj/item/food/meat/slab,
-/obj/item/food/meat/slab/chicken,
-/obj/item/food/meat/slab/chicken,
-/obj/item/food/meat/slab/chicken,
-/obj/item/food/meat/slab/chicken,
-/obj/item/food/meat/slab/miras,
-/obj/item/food/meat/slab/miras,
-/obj/item/food/meat/slab/miras,
-/obj/item/food/meat/slab/miras,
-/obj/item/food/meat/slab/remes,
-/obj/item/food/meat/slab/remes,
-/obj/item/food/meat/slab/remes,
-/obj/item/food/meat/slab/remes,
-/obj/item/food/meat/slab/tiris,
-/obj/item/food/meat/slab/tiris,
-/obj/item/food/meat/slab/tiris,
-/obj/item/food/meat/slab/tiris,
-/obj/item/food/meat/rawcrab,
-/obj/item/food/meat/rawcrab,
-/obj/item/food/meat/rawcrab,
-/obj/item/food/meat/rawcrab,
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ruin/beach/gunsmith/kitchen)
+/obj/structure/rack,
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/item/storage/toolbox/ammo/c10mm{
+	pixel_x = 7;
+	pixel_y = 1
+	},
+/obj/item/storage/toolbox/ammo/c556{
+	pixel_x = 7;
+	pixel_y = 6
+	},
+/obj/item/gun_maint_kit{
+	pixel_x = -3;
+	pixel_y = 0
+	},
+/obj/item/gun_maint_kit{
+	pixel_x = -3;
+	pixel_y = 4
+	},
+/obj/item/gun_maint_kit{
+	pixel_x = -3;
+	pixel_y = 7
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/beach/gunsmith/workshop)
 "tf" = (
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/gunsmith)
 "tn" = (
-/obj/structure/platform/wood{
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
+	},
+/obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
-/obj/structure/hazard/electrical/electrified_water{
-	id = "engineeringmoat"
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	layer = 2.040
 	},
-/turf/open/water/beach,
-/area/ruin/beach/gunsmith)
+/obj/item/clothing/neck/shemagh/ramzi{
+	pixel_x = -8;
+	pixel_y = -5
+	},
+/obj/item/clothing/neck/shemagh/ramzi{
+	pixel_x = -8;
+	pixel_y = -7
+	},
+/obj/item/clothing/neck/shemagh/ramzi{
+	pixel_x = -8;
+	pixel_y = -9
+	},
+/obj/item/clothing/neck/shemagh/ramzi{
+	pixel_x = -8;
+	pixel_y = -11
+	},
+/obj/item/clothing/mask/breath/facemask{
+	pixel_x = -9;
+	pixel_y = 0
+	},
+/obj/item/clothing/mask/breath/facemask{
+	pixel_x = -9;
+	pixel_y = 3
+	},
+/obj/item/clothing/mask/breath/facemask{
+	pixel_x = -9;
+	pixel_y = 5
+	},
+/obj/item/clothing/mask/breath/facemask{
+	pixel_x = -9;
+	pixel_y = 7
+	},
+/obj/item/storage/belt/security/webbing/ramzi{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/item/storage/belt/security/webbing/ramzi{
+	pixel_x = 5;
+	pixel_y = 3
+	},
+/obj/item/storage/belt/security/webbing/ramzi{
+	pixel_x = 5;
+	pixel_y = 1
+	},
+/obj/item/storage/belt/security/webbing/ramzi/alt{
+	pixel_x = 6;
+	pixel_y = -7
+	},
+/obj/item/storage/belt/security/webbing/ramzi/alt{
+	pixel_x = 6;
+	pixel_y = -9
+	},
+/obj/item/storage/belt/security/webbing/ramzi/alt{
+	pixel_x = 6;
+	pixel_y = -11
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -12;
+	pixel_y = -16
+	},
+/obj/structure/closet,
+/turf/open/floor/plating,
+/area/ruin/beach/gunsmith/dorms)
 "tt" = (
 /obj/structure/barricade/sandbags,
 /obj/structure/railing/wood{
@@ -1729,13 +1868,13 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
 "tL" = (
-/obj/structure/hazard/electrical/electrified_water{
-	id = "bunkermoat"
+/obj/structure/chair/stool,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/sniper{
+	stop_automated_movement = 1;
+	wander = 0
 	},
-/obj/structure/cable{
-	icon_state = "1-5"
-	},
-/turf/open/water/beach,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/concrete/slab_4,
 /area/ruin/beach/gunsmith)
 "tT" = (
 /turf/open/floor/plasteel/stairs/right{
@@ -1772,12 +1911,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/beach/gunsmith/electrical)
 "ut" = (
-/obj/structure/hazard/electrical/electrified_water{
-	id = "bunkermoat"
-	},
-/obj/structure/cable{
-	icon_state = "1-6"
-	},
+/obj/machinery/light/dim/directional/east,
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "uz" = (
@@ -1819,40 +1953,10 @@
 /turf/open/floor/plating,
 /area/ruin/beach/gunsmith/workshop)
 "vj" = (
-/obj/structure/platform/ship_three{
-	dir = 1;
-	layer = 2.9
-	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = -17;
-	pixel_y = 16
-	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = -12;
-	pixel_y = 16
-	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = -7;
-	pixel_y = 16
-	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = -2;
-	pixel_y = 16
-	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = 3;
-	pixel_y = 16
-	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = 8;
-	pixel_y = 16
-	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = 13;
-	pixel_y = 16
-	},
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ruin/beach/gunsmith/kitchen)
+/obj/structure/platform/wood,
+/obj/machinery/light/dim/directional/north,
+/turf/open/water/beach,
+/area/ruin/beach/gunsmith)
 "vl" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1870,23 +1974,18 @@
 /turf/open/floor/concrete/tiles,
 /area/ruin/beach/gunsmith/workshop)
 "vH" = (
-/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
-	dir = 8
+/obj/structure/hazard/electrical/electrified_water{
+	id = "bunkermoat";
+	random_sparks = 0
 	},
-/obj/structure/table,
-/obj/item/spacecash/bundle/c1000{
-	pixel_x = 6;
-	pixel_y = 10
+/obj/structure/cable{
+	icon_state = "1-10";
+	layer = 3.1
 	},
-/obj/item/paper/fluff{
-	pixel_x = -7;
-	pixel_y = 1
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/item/stamp/ngr/ensign{
-	pixel_x = 6;
-	pixel_y = 0
-	},
-/turf/open/floor/concrete/slab_1,
+/turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "vI" = (
 /obj/effect/turf_decal/siding/wood{
@@ -1964,10 +2063,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/gunsmith/workshop)
 "ww" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/border{
-	dir = 10
+/obj/structure/hazard/electrical/electrified_water{
+	id = "bunkermoat";
+	random_sparks = 0
 	},
-/turf/open/floor/concrete/slab_1,
+/obj/structure/cable,
+/turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "wz" = (
 /obj/structure/platform/wood{
@@ -2058,11 +2159,19 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/gunsmith)
 "yb" = (
-/obj/structure/hazard/electrical/electrified_water{
-	id = "bunkermoat"
+/obj/structure/platform{
+	dir = 1
 	},
 /obj/structure/cable{
-	icon_state = "2-10"
+	icon_state = "1-10";
+	layer = 3.1
+	},
+/obj/structure/hazard/electrical/electrified_water{
+	id = "bunkermoat";
+	random_sparks = 0
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
@@ -2104,8 +2213,12 @@
 /turf/open/floor/concrete/tiles,
 /area/ruin/beach/gunsmith)
 "yj" = (
-/turf/open/floor/plating/asteroid/sand,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/obj/structure/hazard/electrical/electrified_water{
+	id = "engineeringmoat";
+	random_sparks = 0
+	},
+/turf/open/water/beach/deep,
+/area/ruin/beach/gunsmith)
 "yk" = (
 /turf/open/floor/wood/maple,
 /area/ruin/beach/gunsmith/dorms)
@@ -2171,11 +2284,12 @@
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/gunsmith/workshop)
 "zp" = (
-/obj/structure/platform/wood{
-	dir = 1
-	},
 /obj/structure/hazard/electrical/electrified_water{
-	id = "bunkermoat"
+	id = "bunkermoat";
+	random_sparks = 0
+	},
+/obj/structure/cable{
+	icon_state = "1-5"
 	},
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
@@ -2395,6 +2509,25 @@
 	},
 /turf/open/floor/carpet/green,
 /area/ruin/beach/gunsmith/crewquarters)
+"Bx" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
+	dir = 8
+	},
+/obj/structure/table,
+/obj/item/spacecash/bundle/c1000{
+	pixel_x = 6;
+	pixel_y = 10
+	},
+/obj/item/stamp/ngr/ensign{
+	pixel_x = 6;
+	pixel_y = 0
+	},
+/obj/item/paper/fluff/ruins{
+	pixel_x = -7;
+	pixel_y = 0
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/gunsmith)
 "BE" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave,
@@ -2542,10 +2675,11 @@
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/kitchen)
 "CS" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/border{
+/obj/structure/platform{
 	dir = 6
 	},
-/turf/open/floor/concrete/slab_1,
+/obj/machinery/light/dim/directional/north,
+/turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "CX" = (
 /obj/structure/table/reinforced,
@@ -2619,20 +2753,25 @@
 /turf/open/floor/wood/maple,
 /area/ruin/beach/gunsmith/crewquarters)
 "Dc" = (
-/obj/structure/cable{
-	icon_state = "4-10"
+/obj/structure/platform/wood/corner{
+	dir = 4
 	},
 /obj/structure/hazard/electrical/electrified_water{
-	id = "engineeringmoat"
+	id = "bunkermoat";
+	random_sparks = 0
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "Dp" = (
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "0-5"
 	},
 /obj/structure/hazard/electrical/electrified_water{
-	id = "engineeringmoat"
+	id = "engineeringmoat";
+	random_sparks = 0
 	},
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
@@ -2938,71 +3077,19 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
 "HD" = (
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 10
+/obj/structure/platform/wood{
+	dir = 6
 	},
-/obj/effect/turf_decal/borderfloor{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/red/line{
-	layer = 2.040
-	},
-/obj/structure/closet/secure_closet/personal,
-/obj/item/clothing/under/syndicate/ramzi{
-	pixel_x = 6;
-	pixel_y = -4
-	},
-/obj/item/clothing/under/syndicate/ramzi{
-	pixel_x = 6;
-	pixel_y = -6
-	},
-/obj/item/clothing/under/syndicate/ramzi{
-	pixel_x = 6;
-	pixel_y = -8
-	},
-/obj/item/clothing/under/syndicate/ramzi{
-	pixel_x = 6;
-	pixel_y = -10
-	},
-/obj/item/clothing/under/syndicate/ramzi/overalls{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/clothing/under/syndicate/ramzi/overalls{
-	pixel_x = -8;
-	pixel_y = -6
-	},
-/obj/item/clothing/under/syndicate/ramzi/overalls{
-	pixel_x = -8;
-	pixel_y = -8
-	},
-/obj/item/clothing/under/syndicate/ramzi/overalls{
-	pixel_x = -8;
-	pixel_y = -10
-	},
-/obj/item/clothing/suit/ramzi{
-	pixel_x = 6;
-	pixel_y = 8
-	},
-/obj/item/clothing/suit/ramzi{
-	pixel_x = 6;
-	pixel_y = 6
-	},
-/obj/item/clothing/suit/ramzi{
-	pixel_x = 6;
-	pixel_y = 4
-	},
-/obj/machinery/atmospherics/components/unary/passive_vent/layer2{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/ruin/beach/gunsmith/dorms)
+/obj/machinery/light/dim/directional/west,
+/turf/open/water/beach,
+/area/ruin/beach/gunsmith)
 "HJ" = (
-/obj/structure/cable{
-	icon_state = "0-5"
+/obj/structure/platform/wood{
+	dir = 4
 	},
 /obj/structure/hazard/electrical/electrified_water{
-	id = "bunkermoat"
+	id = "bunkermoat";
+	random_sparks = 0
 	},
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
@@ -3095,11 +3182,18 @@
 "IV" = (
 /turf/open/water/beach/deep,
 /area/ruin/beach/gunsmith)
+"Je" = (
+/obj/structure/platform/wood{
+	dir = 1
+	},
+/obj/machinery/light/dim/directional/south,
+/turf/open/water/beach,
+/area/ruin/beach/gunsmith)
 "Jf" = (
 /obj/structure/platform/wood{
 	dir = 10
 	},
-/obj/machinery/light/small/directional/east,
+/obj/machinery/light/dim/directional/east,
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "Jl" = (
@@ -3175,24 +3269,22 @@
 	},
 /area/ruin/beach/gunsmith)
 "Kq" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /obj/structure/hazard/electrical/electrified_water{
-	id = "bunkermoat"
-	},
-/obj/structure/cable{
-	icon_state = "1-10";
-	layer = 3.1
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
+	id = "engineeringmoat";
+	random_sparks = 0
 	},
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "Kt" = (
-/obj/structure/platform/wood{
-	dir = 4
-	},
 /obj/structure/hazard/electrical/electrified_water{
-	id = "bunkermoat"
+	id = "bunkermoat";
+	random_sparks = 0
+	},
+/obj/structure/cable{
+	icon_state = "2-10"
 	},
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
@@ -3303,8 +3395,12 @@
 /turf/open/floor/concrete/tiles,
 /area/ruin/beach/gunsmith/workshop)
 "MC" = (
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
 /obj/structure/hazard/electrical/electrified_water{
-	id = "engineeringmoat"
+	id = "engineeringmoat";
+	random_sparks = 0
 	},
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
@@ -3382,8 +3478,12 @@
 /turf/open/floor/plating,
 /area/ruin/beach/gunsmith/dorms/officer)
 "NS" = (
-/turf/open/floor/plating/asteroid/sand/dense,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 6
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/gunsmith)
 "Oh" = (
 /obj/effect/turf_decal/corner_steel_grid/full,
 /obj/effect/turf_decal/borderfloor/corner{
@@ -3491,11 +3591,10 @@
 /area/ruin/beach/gunsmith/workshop)
 "PM" = (
 /obj/structure/hazard/electrical/electrified_water{
-	id = "bunkermoat"
+	id = "engineeringmoat";
+	random_sparks = 0
 	},
-/obj/structure/cable{
-	icon_state = "5-8"
-	},
+/obj/machinery/light/dim/directional/north,
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "PP" = (
@@ -3595,19 +3694,29 @@
 /turf/open/floor/concrete,
 /area/ruin/beach/gunsmith/electrical)
 "Qn" = (
-/turf/open/floor/plating/asteroid/dirt/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/obj/structure/table/reinforced{
+	color = "#c1b6a5"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4
+	},
+/obj/machinery/door/window/brigdoor/eastleft{
+	state_open = 1
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/gunsmith/workshop)
 "Qt" = (
 /turf/open/floor/plasteel/stairs/left{
 	dir = 8
 	},
 /area/ruin/beach/gunsmith)
 "QF" = (
-/obj/structure/platform{
-	dir = 4
-	},
 /obj/structure/hazard/electrical/electrified_water{
-	id = "bunkermoat"
+	id = "bunkermoat";
+	random_sparks = 0
+	},
+/obj/structure/cable{
+	icon_state = "5-8"
 	},
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
@@ -3623,9 +3732,12 @@
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "QY" = (
-/obj/structure/platform,
+/obj/structure/platform/wood{
+	dir = 8
+	},
 /obj/structure/hazard/electrical/electrified_water{
-	id = "engineeringmoat"
+	id = "bunkermoat";
+	random_sparks = 0
 	},
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
@@ -3637,15 +3749,12 @@
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/dorms/officer)
 "Rb" = (
-/obj/structure/table/reinforced{
-	color = "#c1b6a5"
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 10
 	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	dir = 4
-	},
-/obj/machinery/door/window/brigdoor/eastleft,
+/obj/machinery/light/floor,
 /turf/open/floor/concrete/slab_1,
-/area/ruin/beach/gunsmith/workshop)
+/area/ruin/beach/gunsmith)
 "Rf" = (
 /obj/structure/platform{
 	dir = 5
@@ -3692,13 +3801,11 @@
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/gunsmith/workshop)
 "RF" = (
-/obj/structure/platform/wood{
-	dir = 8
-	},
 /obj/structure/hazard/electrical/electrified_water{
-	id = "engineeringmoat"
+	id = "engineeringmoat";
+	random_sparks = 0
 	},
-/turf/open/water/beach/deep,
+/turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "RM" = (
 /obj/effect/turf_decal/techfloor{
@@ -3804,17 +3911,16 @@
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/dorms/officer)
 "SQ" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/techfloor{
-	dir = 4
+/obj/structure/cable{
+	icon_state = "0-5"
 	},
-/obj/item/storage/toolbox/ammo/c10mm,
-/obj/item/storage/toolbox/ammo/c556{
-	pixel_x = 5;
-	pixel_y = 9
+/obj/structure/hazard/electrical/electrified_water{
+	id = "engineeringmoat";
+	random_sparks = 0
 	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/beach/gunsmith/workshop)
+/obj/machinery/light/dim/directional/south,
+/turf/open/water/beach,
+/area/ruin/beach/gunsmith)
 "SR" = (
 /obj/machinery/power/rtg/advanced,
 /obj/structure/cable/yellow{
@@ -3882,17 +3988,19 @@
 "Tn" = (
 /turf/open/floor/carpet/green,
 /area/ruin/beach/gunsmith/dorms/officer)
+"Tt" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 9
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/gunsmith)
 "Tu" = (
-/obj/structure/platform{
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
 	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "2-5"
-	},
-/obj/structure/hazard/electrical/electrified_water{
-	id = "bunkermoat"
-	},
-/turf/open/water/beach,
+/obj/machinery/light/floor,
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
 "Tv" = (
 /turf/open/floor/plasteel/stairs/wood/walnut/left{
@@ -3912,13 +4020,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/gunsmith/electrical)
 "TI" = (
-/obj/structure/cable{
-	icon_state = "0-5"
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 5
 	},
-/obj/structure/hazard/electrical/electrified_water{
-	id = "engineeringmoat"
-	},
-/turf/open/water/beach,
+/obj/machinery/light/floor,
+/turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
 "TN" = (
 /obj/effect/turf_decal/siding/wood/end{
@@ -4032,10 +4138,7 @@
 /turf/open/floor/carpet/green,
 /area/ruin/beach/gunsmith/dorms)
 "Vv" = (
-/obj/structure/hazard/electrical/electrified_water{
-	id = "bunkermoat"
-	},
-/obj/structure/cable,
+/obj/machinery/light/dim/directional/north,
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "VB" = (
@@ -4121,6 +4224,41 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/wood/maple,
 /area/ruin/beach/gunsmith/crewquarters)
+"WN" = (
+/obj/structure/platform/ship_three{
+	dir = 1;
+	layer = 2.9
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = -15;
+	pixel_y = 16
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = -10;
+	pixel_y = 16
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = -5;
+	pixel_y = 16
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = 0;
+	pixel_y = 16
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = 5;
+	pixel_y = 16
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = 10;
+	pixel_y = 16
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = 15;
+	pixel_y = 16
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/beach/gunsmith/kitchen)
 "WX" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/beach/gunsmith/kitchen)
@@ -4202,14 +4340,12 @@
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/workshop)
 "XV" = (
-/obj/structure/platform/wood/corner{
+/obj/structure/platform{
 	dir = 4
 	},
 /obj/structure/hazard/electrical/electrified_water{
-	id = "bunkermoat"
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
+	id = "bunkermoat";
+	random_sparks = 0
 	},
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
@@ -4227,19 +4363,36 @@
 /turf/open/floor/wood/maple,
 /area/ruin/beach/gunsmith/dorms)
 "Yq" = (
-/obj/structure/platform{
-	dir = 6
-	},
-/obj/machinery/light/small/directional/north,
-/turf/open/water/beach,
-/area/ruin/beach/gunsmith)
+/obj/structure/closet/secure_closet/freezer/fridge,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab/chicken,
+/obj/item/food/meat/slab/chicken,
+/obj/item/food/meat/slab/chicken,
+/obj/item/food/meat/slab/chicken,
+/obj/item/food/meat/slab/miras,
+/obj/item/food/meat/slab/miras,
+/obj/item/food/meat/slab/remes,
+/obj/item/food/meat/slab/remes,
+/obj/item/food/meat/slab/tiris,
+/obj/item/food/meat/slab/tiris,
+/obj/item/food/meat/rawcrab,
+/obj/item/food/meat/rawcrab,
+/obj/item/food/meat/rawcrab,
+/obj/item/food/meat/rawcrab,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/beach/gunsmith/kitchen)
 "YK" = (
+/obj/structure/platform/wood{
+	dir = 9
+	},
 /obj/structure/hazard/electrical/electrified_water{
-	id = "bunkermoat"
+	id = "bunkermoat";
+	random_sparks = 0
 	},
-/obj/structure/cable{
-	icon_state = "0-9"
-	},
+/obj/machinery/light/dim/directional/east,
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "YX" = (
@@ -4280,57 +4433,17 @@
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/crewquarters)
 "Zr" = (
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 9
-	},
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/opaque/red/line{
+/obj/structure/platform,
+/obj/structure/platform/wood{
 	dir = 8;
-	layer = 2.040
+	layer = 3.07
 	},
-/obj/structure/closet/secure_closet/personal,
-/obj/item/clothing/head/ramzi/beret{
-	pixel_x = -10;
-	pixel_y = 4
+/obj/structure/hazard/electrical/electrified_water{
+	id = "engineeringmoat";
+	random_sparks = 0
 	},
-/obj/item/clothing/head/ramzi{
-	pixel_x = -11;
-	pixel_y = 10
-	},
-/obj/item/clothing/suit/armor/ramzi/officer{
-	pixel_x = -10;
-	pixel_y = -5
-	},
-/obj/item/clothing/under/syndicate/ramzi/officer{
-	pixel_x = -10;
-	pixel_y = -12
-	},
-/obj/item/clothing/head/ngr{
-	pixel_x = 8;
-	pixel_y = 6
-	},
-/obj/item/clothing/suit/armor/ngr/lieutenant{
-	pixel_x = 9;
-	pixel_y = -5
-	},
-/obj/item/clothing/under/syndicate/ngr/officer{
-	pixel_x = 9;
-	pixel_y = -12
-	},
-/obj/structure/cable,
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/machinery/atmospherics/components/unary/passive_vent/layer2{
-	dir = 1
-	},
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -20;
-	pixel_y = 12
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/beach/gunsmith/dorms/officer)
+/turf/open/water/beach/deep,
+/area/ruin/beach/gunsmith)
 "ZI" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -4373,18 +4486,12 @@
 	},
 /area/ruin/beach/gunsmith/bathroom)
 "ZS" = (
-/obj/structure/platform{
+/obj/structure/platform/wood{
 	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "1-10";
-	layer = 3.1
-	},
 /obj/structure/hazard/electrical/electrified_water{
-	id = "bunkermoat"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
+	id = "bunkermoat";
+	random_sparks = 0
 	},
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
@@ -4419,11 +4526,10 @@ pG
 pG
 pG
 pG
-pG
-pG
-pG
-pG
-pG
+fe
+fe
+Cm
+Cm
 pG
 pG
 pG
@@ -4468,18 +4574,17 @@ pG
 pG
 pG
 pG
+fe
+fe
+JW
+JW
+JW
+Cm
+Cm
+Cm
 pG
 pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
+Cm
 pG
 pG
 pG
@@ -4517,20 +4622,19 @@ pG
 pG
 pG
 pG
-pG
 fe
 fe
-fe
-fe
-fe
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
+JW
+JW
+JW
+JW
+JW
+JW
+Cm
+Cm
+Cm
+Cm
+Cm
 pG
 pG
 pG
@@ -4559,31 +4663,30 @@ pG
 pG
 pG
 pG
+Cm
+Cm
+Cm
 pG
 pG
-pG
-pG
-pG
-pG
-pG
-pG
+Cm
+Cm
 pG
 fe
-fe
-fe
-fe
-fe
-fe
-fe
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
+JW
+JW
+JW
+JW
+JW
+JW
+JW
+JW
+JW
+JW
+JW
+Cm
+Cm
+Cm
+Cm
 pG
 pG
 pG
@@ -4598,211 +4701,6 @@ pG
 pG
 "}
 (5,1,1) = {"
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-fe
-fe
-fe
-fe
-fe
-fe
-JW
-JW
-Cm
-Cm
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-"}
-(6,1,1) = {"
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-fe
-fe
-fe
-fe
-fe
-fe
-JW
-JW
-JW
-JW
-JW
-Cm
-Cm
-Cm
-pG
-pG
-Cm
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-"}
-(7,1,1) = {"
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-fe
-fe
-fe
-fe
-fe
-JW
-JW
-JW
-JW
-JW
-JW
-JW
-JW
-Cm
-Cm
-Cm
-Cm
-Cm
-pG
-pG
-pG
-fe
-fe
-fe
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-"}
-(8,1,1) = {"
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-Cm
-Cm
-Cm
-pG
-fe
-Cm
-Cm
-fe
-JW
-JW
-JW
-JW
-JW
-JW
-JW
-JW
-JW
-JW
-JW
-JW
-Cm
-Cm
-Cm
-Cm
-fe
-fe
-fe
-fe
-fe
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-"}
-(9,1,1) = {"
-pG
 pG
 pG
 pG
@@ -4840,11 +4738,11 @@ Cm
 Cm
 Cm
 Cm
-fe
-fe
-fe
-fe
-fe
+pG
+pG
+pG
+pG
+pG
 pG
 pG
 pG
@@ -4852,8 +4750,7 @@ pG
 pG
 pG
 "}
-(10,1,1) = {"
-pG
+(6,1,1) = {"
 pG
 pG
 pG
@@ -4892,19 +4789,18 @@ Cm
 Cm
 Cm
 Cm
-fe
-fe
-fe
-fe
-fe
+pG
+pG
+pG
+pG
+pG
 pG
 pG
 pG
 pG
 pG
 "}
-(11,1,1) = {"
-pG
+(7,1,1) = {"
 pG
 pG
 pG
@@ -4944,18 +4840,17 @@ JW
 Cm
 Cm
 Cm
-fe
-fe
-fe
-fe
-fe
+pG
+pG
+pG
+pG
+pG
 pG
 pG
 pG
 pG
 "}
-(12,1,1) = {"
-pG
+(8,1,1) = {"
 pG
 pG
 pG
@@ -4996,17 +4891,16 @@ JW
 Cm
 Cm
 Cm
-fe
-fe
-fe
-fe
-fe
+pG
+pG
+pG
+pG
+pG
 pG
 pG
 pG
 "}
-(13,1,1) = {"
-pG
+(9,1,1) = {"
 pG
 pG
 pG
@@ -5046,18 +4940,17 @@ JW
 JW
 JW
 JW
-fe
-fe
-fe
-fe
-fe
-fe
+pG
+pG
+pG
+pG
+pG
+pG
 pG
 pG
 pG
 "}
-(14,1,1) = {"
-pG
+(10,1,1) = {"
 pG
 pG
 pG
@@ -5074,19 +4967,19 @@ Mb
 Pc
 aT
 xW
-SQ
+td
 BT
 xW
 JW
 IR
-IR
-IR
-Ao
+qI
+Gu
+vj
 Zb
 Zb
-kL
-IR
-IR
+Je
+Gu
+Vv
 IR
 IR
 Cm
@@ -5098,17 +4991,16 @@ JW
 JW
 JW
 JW
-fe
-fe
-fe
-fe
-fe
-fe
+pG
+pG
+pG
+pG
+pG
+pG
 pG
 pG
 "}
-(15,1,1) = {"
-pG
+(11,1,1) = {"
 pG
 pG
 pG
@@ -5150,16 +5042,15 @@ JW
 JW
 JW
 JW
-JW
-fe
-fe
-fe
-fe
+pG
+pG
+pG
+pG
+pG
 pG
 pG
 "}
-(16,1,1) = {"
-pG
+(12,1,1) = {"
 pG
 pG
 pG
@@ -5191,9 +5082,9 @@ IR
 IR
 IR
 IR
-IR
-IR
-IR
+qI
+Gu
+Vv
 Ao
 bB
 uV
@@ -5202,15 +5093,14 @@ JW
 JW
 JW
 JW
-Qn
-fe
-fe
-fe
-fe
+pG
+pG
+pG
+pG
+pG
 pG
 "}
-(17,1,1) = {"
-pG
+(13,1,1) = {"
 pG
 pG
 pG
@@ -5248,20 +5138,19 @@ sQ
 ai
 uz
 Zb
-zp
+ZS
 it
 JW
 JW
 JW
-fe
-fe
-fe
-fe
-fe
+pG
+pG
+pG
+pG
+pG
 pG
 "}
-(18,1,1) = {"
-pG
+(14,1,1) = {"
 pG
 pG
 pG
@@ -5299,20 +5188,19 @@ Zb
 Zb
 Zb
 Zb
-zp
+ZS
 it
 it
 JW
 JW
-fe
+pG
 Cm
 Cm
-fe
+pG
 pG
 pG
 "}
-(19,1,1) = {"
-pG
+(15,1,1) = {"
 pG
 pG
 pG
@@ -5329,7 +5217,7 @@ xW
 jc
 xW
 xW
-Rb
+Qn
 Ov
 xW
 xW
@@ -5350,7 +5238,7 @@ Sh
 gO
 Zb
 Zb
-zp
+ZS
 it
 it
 it
@@ -5358,12 +5246,11 @@ JW
 Cm
 Cm
 Cm
-fe
+pG
 pG
 pG
 "}
-(20,1,1) = {"
-pG
+(16,1,1) = {"
 pG
 pG
 pG
@@ -5399,9 +5286,9 @@ Xo
 Jf
 Zb
 HM
-qI
-ez
-XV
+YK
+QY
+Dc
 it
 it
 it
@@ -5413,8 +5300,7 @@ Cm
 pG
 pG
 "}
-(21,1,1) = {"
-pG
+(17,1,1) = {"
 pG
 pG
 pG
@@ -5452,7 +5338,7 @@ Qt
 Ch
 Gu
 it
-PM
+QF
 it
 it
 it
@@ -5464,8 +5350,7 @@ Cm
 pG
 pG
 "}
-(22,1,1) = {"
-pG
+(18,1,1) = {"
 pG
 pG
 pG
@@ -5501,9 +5386,9 @@ IR
 QX
 Qb
 LO
-Tu
-Kq
-tL
+lb
+vH
+zp
 it
 it
 Cm
@@ -5515,8 +5400,7 @@ Cm
 Cm
 pG
 "}
-(23,1,1) = {"
-pG
+(19,1,1) = {"
 pG
 pG
 pG
@@ -5542,8 +5426,8 @@ xC
 Zb
 Zb
 Zb
-jK
-IR
+fd
+Gu
 JW
 Cm
 Cm
@@ -5552,9 +5436,9 @@ IR
 QX
 Qb
 XB
-rc
-yb
-Vv
+iT
+Kt
+ww
 it
 Cm
 Cm
@@ -5566,12 +5450,11 @@ Cm
 Cm
 pG
 "}
-(24,1,1) = {"
+(20,1,1) = {"
 pG
 pG
 pG
 pG
-yj
 Cm
 Cm
 Cm
@@ -5605,8 +5488,8 @@ Qb
 Fc
 Gu
 it
-QF
-QF
+XV
+XV
 Gu
 Cm
 Cm
@@ -5617,12 +5500,11 @@ Cm
 Cm
 pG
 "}
-(25,1,1) = {"
+(21,1,1) = {"
 pG
 pG
 pG
-yj
-yj
+pG
 Cm
 Cm
 Cm
@@ -5668,12 +5550,11 @@ Cm
 Cm
 Cm
 "}
-(26,1,1) = {"
+(22,1,1) = {"
 pG
 pG
-yj
-yj
-yj
+pG
+pG
 Cm
 Cm
 Cm
@@ -5690,14 +5571,14 @@ Sf
 Sf
 xW
 fU
-af
+Tt
 sa
 dx
 tH
 tH
-vH
+Bx
 yH
-ww
+Rb
 Bj
 IR
 IR
@@ -5707,7 +5588,7 @@ DL
 Oh
 jj
 Gu
-fd
+tL
 tf
 Ql
 Gu
@@ -5719,12 +5600,11 @@ Cm
 Cm
 Cm
 "}
-(27,1,1) = {"
+(23,1,1) = {"
 pG
 pG
-yj
-yj
-NS
+pG
+pG
 Cm
 Cm
 Cm
@@ -5770,11 +5650,10 @@ Cm
 Cm
 Cm
 "}
-(28,1,1) = {"
+(24,1,1) = {"
 pG
-NS
-NS
-NS
+pG
+BU
 Cm
 Cm
 Cm
@@ -5788,7 +5667,7 @@ Cm
 Cm
 Cm
 IV
-IV
+Gu
 JW
 IV
 fU
@@ -5821,11 +5700,10 @@ Cm
 Cm
 pG
 "}
-(29,1,1) = {"
+(25,1,1) = {"
 pG
-ha
-ha
-ha
+pG
+IR
 Cm
 Cm
 BU
@@ -5872,12 +5750,11 @@ Cm
 Cm
 pG
 "}
-(30,1,1) = {"
-ha
-ha
-ha
-ha
-ha
+(26,1,1) = {"
+pG
+pG
+IR
+IR
 IR
 IR
 IR
@@ -5912,7 +5789,7 @@ VU
 qj
 FU
 Zb
-nE
+rb
 oL
 Gu
 Cm
@@ -5923,12 +5800,11 @@ Cm
 Cm
 pG
 "}
-(31,1,1) = {"
+(27,1,1) = {"
 pG
-NS
-NS
-NS
-ha
+pG
+BU
+IR
 IR
 IR
 IR
@@ -5940,19 +5816,19 @@ JW
 JW
 Cm
 JW
-RF
+ec
 Cm
 Cm
 Cm
 Ar
-uW
+Tu
 tf
 tf
 tf
 tf
 tf
 tf
-HZ
+af
 Bj
 IR
 IR
@@ -5965,7 +5841,7 @@ Gu
 tt
 tt
 Up
-zp
+ZS
 Cm
 Cm
 Cm
@@ -5974,12 +5850,11 @@ Cm
 pG
 pG
 "}
-(32,1,1) = {"
+(28,1,1) = {"
 pG
 pG
-yj
-NS
-NS
+BU
+BU
 BU
 BU
 BU
@@ -5989,13 +5864,13 @@ IR
 Ao
 JW
 xk
-tn
-MC
-MC
-iA
+sK
+RF
+RF
+yj
 Cm
 JW
-nb
+Zr
 uW
 tf
 tf
@@ -6013,9 +5888,9 @@ wV
 oz
 Gu
 Gu
-ez
-ez
-ez
+QY
+QY
+QY
 it
 it
 Cm
@@ -6025,12 +5900,11 @@ Cm
 Cm
 pG
 "}
-(33,1,1) = {"
+(29,1,1) = {"
 pG
-yj
-yj
-yj
-NS
+PF
+PF
+BU
 Cm
 BU
 PF
@@ -6040,13 +5914,13 @@ IR
 Ao
 xk
 JW
-tn
-MC
-MC
-MC
+sK
+RF
+RF
+RF
 JW
 JW
-QY
+nb
 uW
 tf
 tf
@@ -6076,11 +5950,10 @@ Cm
 pG
 pG
 "}
-(34,1,1) = {"
+(30,1,1) = {"
 pG
-yj
-yj
-yj
+PF
+PF
 Cm
 Cm
 Cm
@@ -6093,19 +5966,19 @@ dD
 dD
 dD
 JW
-MC
-MC
-iA
-iA
-QY
-uW
+RF
+RF
+yj
+yj
+nb
+Tu
 tf
 tf
 tf
 tf
 tf
 tf
-HZ
+af
 Bj
 Cm
 Cm
@@ -6113,8 +5986,8 @@ Gu
 xU
 Qb
 LO
-rc
-HJ
+iT
+eC
 it
 it
 it
@@ -6124,13 +5997,12 @@ Cm
 Cm
 Cm
 Cm
-fe
+pG
 pG
 "}
-(35,1,1) = {"
+(31,1,1) = {"
 pG
-yj
-yj
+PF
 Cm
 Cm
 Cm
@@ -6144,11 +6016,11 @@ KA
 Pp
 dD
 dD
-MC
-TI
-MC
-MC
-QY
+RF
+SQ
+Gu
+PM
+nb
 uW
 tf
 tf
@@ -6164,9 +6036,9 @@ Gu
 fQ
 DV
 SF
-ZS
+yb
+ha
 km
-ut
 it
 JW
 Cm
@@ -6174,13 +6046,12 @@ Cm
 Cm
 Cm
 Cm
-fe
-fe
+pG
+pG
 pG
 "}
-(36,1,1) = {"
+(32,1,1) = {"
 pG
-yj
 Cm
 Cm
 Cm
@@ -6195,11 +6066,11 @@ Qm
 HT
 ub
 dD
-Dc
 MC
-MC
-MC
-QY
+RF
+RF
+RF
+nb
 uW
 tf
 tf
@@ -6215,22 +6086,21 @@ Gu
 yL
 Qb
 LO
-rc
+iT
 it
 it
-YK
+ez
 JW
 JW
 bq
 Cm
 Cm
 Cm
-fe
-fe
+pG
+pG
 pG
 "}
-(37,1,1) = {"
-pG
+(33,1,1) = {"
 pG
 Cm
 Cm
@@ -6246,11 +6116,11 @@ kn
 Bu
 Pp
 dD
+Kq
+RF
 Dp
-MC
-TI
-MC
-QY
+RF
+nb
 uW
 tf
 tf
@@ -6265,7 +6135,7 @@ IR
 Gu
 Gu
 tT
-iT
+nE
 Gu
 it
 it
@@ -6275,13 +6145,12 @@ JW
 Cm
 Cm
 Cm
-fe
-fe
-fe
+pG
+pG
+pG
 pG
 "}
-(38,1,1) = {"
-pG
+(34,1,1) = {"
 pG
 Cm
 Cm
@@ -6299,9 +6168,9 @@ ub
 dD
 Ad
 eT
-MC
-MC
-QY
+RF
+RF
+nb
 PP
 tf
 tf
@@ -6314,25 +6183,24 @@ Bj
 IR
 JW
 Tb
-ai
+HD
 jm
 HM
-sK
-Kt
-Kt
+rc
+HJ
+HJ
 Tb
 JW
 JW
 JW
 Cm
-fe
-fe
-fe
-fe
+pG
+pG
+pG
+pG
 pG
 "}
-(39,1,1) = {"
-pG
+(35,1,1) = {"
 Cm
 Cm
 Cm
@@ -6352,15 +6220,15 @@ dD
 ml
 JW
 JW
-QY
-lb
+nb
+TI
 Hw
 uj
 uj
 uj
 uj
 Hw
-CS
+NS
 Bj
 JW
 JW
@@ -6375,15 +6243,14 @@ GU
 JW
 JW
 JW
-fe
-fe
-fe
-fe
-fe
+pG
+pG
+pG
+pG
+pG
 pG
 "}
-(40,1,1) = {"
-pG
+(36,1,1) = {"
 Cm
 Cm
 Cm
@@ -6426,15 +6293,14 @@ zv
 JW
 JW
 JW
-fe
-fe
-fe
-fe
-fe
+pG
+pG
+pG
+pG
+pG
 pG
 "}
-(41,1,1) = {"
-pG
+(37,1,1) = {"
 Cm
 Cm
 Cm
@@ -6477,15 +6343,14 @@ cI
 JW
 JW
 JW
-Qn
-fe
-fe
-fe
-fe
+JW
+pG
+pG
+pG
+pG
 pG
 "}
-(42,1,1) = {"
-pG
+(38,1,1) = {"
 pG
 Cm
 Cm
@@ -6528,15 +6393,14 @@ JW
 JW
 JW
 JW
-fe
-fe
-fe
-fe
+pG
+pG
+pG
+pG
 pG
 pG
 "}
-(43,1,1) = {"
-pG
+(39,1,1) = {"
 pG
 Cm
 Cm
@@ -6565,8 +6429,8 @@ QQ
 JW
 JW
 IR
+ut
 IR
-IR
 Cm
 Cm
 Cm
@@ -6579,15 +6443,14 @@ JW
 JW
 JW
 JW
-fe
-fe
-fe
-fe
+pG
+pG
+pG
+pG
 pG
 pG
 "}
-(44,1,1) = {"
-pG
+(40,1,1) = {"
 pG
 Cm
 Cm
@@ -6609,9 +6472,9 @@ JW
 JW
 JW
 IR
-IR
+qI
 Gu
-Yq
+CS
 KY
 Dr
 kw
@@ -6629,16 +6492,15 @@ Cm
 JW
 JW
 JW
-fe
-fe
-fe
-fe
-fe
+pG
+pG
+pG
+pG
+pG
 pG
 pG
 "}
-(45,1,1) = {"
-pG
+(41,1,1) = {"
 pG
 Cm
 Cm
@@ -6680,16 +6542,15 @@ JW
 JW
 JW
 JW
-fe
-fe
-fe
-fe
+pG
+pG
+pG
+pG
 pG
 pG
 pG
 "}
-(46,1,1) = {"
-pG
+(42,1,1) = {"
 pG
 Cm
 Cm
@@ -6731,16 +6592,15 @@ JW
 JW
 JW
 Cm
-Qn
-fe
-fe
-fe
+JW
+pG
+pG
+pG
 pG
 pG
 pG
 "}
-(47,1,1) = {"
-pG
+(43,1,1) = {"
 pG
 pG
 Cm
@@ -6774,7 +6634,7 @@ CZ
 GB
 gs
 qw
-td
+Yq
 nm
 WX
 JW
@@ -6783,15 +6643,14 @@ JW
 Cm
 Cm
 Cm
-fe
-fe
-fe
+pG
+pG
+pG
 pG
 pG
 pG
 "}
-(48,1,1) = {"
-pG
+(44,1,1) = {"
 pG
 pG
 pG
@@ -6824,7 +6683,7 @@ gZ
 ql
 yJ
 gs
-vj
+WN
 Ef
 RU
 WX
@@ -6834,15 +6693,14 @@ WX
 WX
 Cm
 Cm
-fe
+pG
 pG
 pG
 pG
 pG
 pG
 "}
-(49,1,1) = {"
-pG
+(45,1,1) = {"
 pG
 pG
 pG
@@ -6892,8 +6750,7 @@ pG
 pG
 pG
 "}
-(50,1,1) = {"
-pG
+(46,1,1) = {"
 pG
 pG
 pG
@@ -6943,8 +6800,7 @@ pG
 pG
 pG
 "}
-(51,1,1) = {"
-pG
+(47,1,1) = {"
 pG
 pG
 pG
@@ -6994,8 +6850,7 @@ pG
 pG
 pG
 "}
-(52,1,1) = {"
-pG
+(48,1,1) = {"
 pG
 pG
 pG
@@ -7013,8 +6868,8 @@ Cm
 Cm
 Cm
 BU
-BU
-BU
+bW
+Gu
 IR
 IR
 jp
@@ -7045,8 +6900,7 @@ pG
 pG
 pG
 "}
-(53,1,1) = {"
-pG
+(49,1,1) = {"
 pG
 pG
 pG
@@ -7073,7 +6927,7 @@ Cu
 pT
 mD
 hl
-ec
+tn
 VJ
 GJ
 Nl
@@ -7096,8 +6950,7 @@ pG
 pG
 pG
 "}
-(54,1,1) = {"
-pG
+(50,1,1) = {"
 pG
 pG
 pG
@@ -7124,7 +6977,7 @@ VJ
 Iq
 ib
 Yj
-HD
+oe
 VJ
 fk
 fk
@@ -7147,8 +7000,7 @@ pG
 pG
 pG
 "}
-(55,1,1) = {"
-pG
+(51,1,1) = {"
 pG
 pG
 pG
@@ -7198,8 +7050,7 @@ pG
 pG
 pG
 "}
-(56,1,1) = {"
-pG
+(52,1,1) = {"
 pG
 pG
 pG
@@ -7226,7 +7077,7 @@ lq
 yd
 lO
 fr
-Zr
+iA
 lq
 gs
 gs
@@ -7249,8 +7100,7 @@ pG
 pG
 pG
 "}
-(57,1,1) = {"
-pG
+(53,1,1) = {"
 pG
 pG
 pG
@@ -7300,8 +7150,7 @@ pG
 pG
 pG
 "}
-(58,1,1) = {"
-pG
+(54,1,1) = {"
 pG
 pG
 pG
@@ -7351,8 +7200,7 @@ pG
 pG
 pG
 "}
-(59,1,1) = {"
-pG
+(55,1,1) = {"
 pG
 pG
 pG
@@ -7402,8 +7250,7 @@ pG
 pG
 pG
 "}
-(60,1,1) = {"
-pG
+(56,1,1) = {"
 pG
 pG
 pG
@@ -7453,7 +7300,7 @@ pG
 pG
 pG
 "}
-(61,1,1) = {"
+(57,1,1) = {"
 pG
 pG
 pG
@@ -7463,12 +7310,11 @@ pG
 pG
 pG
 pG
-yj
-yj
-yj
+pG
+pG
 Cm
 Cm
-yj
+PF
 PF
 BU
 IR
@@ -7504,6 +7350,206 @@ pG
 pG
 pG
 "}
+(58,1,1) = {"
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+IR
+IR
+IR
+IR
+Cm
+Cm
+lq
+lq
+lq
+lq
+lq
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+"}
+(59,1,1) = {"
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+IR
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+"}
+(60,1,1) = {"
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+"}
+(61,1,1) = {"
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+pG
+"}
 (62,1,1) = {"
 pG
 pG
@@ -7515,33 +7561,6 @@ pG
 pG
 pG
 pG
-yj
-yj
-yj
-yj
-yj
-NS
-NS
-ha
-ha
-ha
-ha
-Cm
-Cm
-lq
-lq
-lq
-lq
-lq
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
 pG
 pG
 pG
@@ -7554,186 +7573,8 @@ pG
 pG
 pG
 pG
-"}
-(63,1,1) = {"
 pG
 pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-yj
-yj
-yj
-NS
-ha
-ha
-ha
-ha
-ha
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-"}
-(64,1,1) = {"
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-yj
-yj
-yj
-NS
-ha
-ha
-ha
-ha
-ha
-NS
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-"}
-(65,1,1) = {"
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-NS
-NS
-ha
-ha
-ha
-NS
-NS
-yj
-yj
-yj
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-Cm
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-"}
-(66,1,1) = {"
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-NS
-ha
-ha
-ha
-NS
-yj
-yj
-yj
-yj
-yj
 Cm
 Cm
 pG
@@ -7742,210 +7583,6 @@ Cm
 pG
 Cm
 Cm
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-"}
-(67,1,1) = {"
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-ha
-ha
-pG
-pG
-pG
-yj
-yj
-yj
-yj
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-"}
-(68,1,1) = {"
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-"}
-(69,1,1) = {"
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-"}
-(70,1,1) = {"
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
-pG
 pG
 pG
 pG

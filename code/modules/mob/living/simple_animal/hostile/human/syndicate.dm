@@ -266,6 +266,15 @@
 	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
 	l_hand = /obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonmouth
 
+/mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth/scout
+	vision_range = 10
+	aggro_vision_range = 10
+	minimum_distance = 10
+	stop_automated_movement = 1
+	wander = 0
+	retreat_distance = 0
+	environment_smash = 0
+
 /mob/living/simple_animal/hostile/human/ramzi/ranged/smg
 	name = "Ramzi Clique Commando"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They scan the room with their submachinegun held at eye level, sweeping every corner."
@@ -343,6 +352,15 @@
 	icon_living = "syndicate_shotgun"
 	casingtype = /obj/item/ammo_casing/a65clip
 	l_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/sniper/sentry
+	vision_range = 14
+	aggro_vision_range = 14
+	minimum_distance = 14
+	stop_automated_movement = 1
+	wander = 0
+	retreat_distance = 0
+	environment_smash = 0
 
 /* Space Ranged */
 
