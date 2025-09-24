@@ -79,6 +79,7 @@
 
 /obj/effect/mob_spawn/human/corpse/ramzi/officer/beach
 	name = "Ramzi Clique Quartermaster"
+	mob_species = /datum/species/human
 	mob_gender = FEMALE
 
 /obj/effect/mob_spawn/human/corpse/ramzi/officer/ngr
@@ -88,6 +89,7 @@
 	suit = /obj/item/clothing/suit/armor/ngr/lieutenant
 	glasses = null
 	mob_gender = FEMALE
+	mob_species = /datum/species/human
 
 /datum/outfit/ramzi/stormtrooper
 	name = "Ramzi Clique Trooper Corpse"
