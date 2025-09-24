@@ -11,6 +11,7 @@
 	stam_damage_coeff = 1
 	max_stamina_damage = 120
 	wound_resistance = 10
+	can_transfer_damage = FALSE
 	is_dimorphic = TRUE
 	var/obj/item/cavity_item
 	var/acceptable_bodytype = BODYTYPE_HUMANOID
