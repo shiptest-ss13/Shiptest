@@ -30,6 +30,7 @@
 	suit = /obj/item/clothing/suit/armor/ramzi/bulletproof
 	head = /obj/item/clothing/head/helmet/ramzi/bulletproof
 	belt = /obj/item/storage/belt/security/webbing/ramzi/alt
+	mask = /obj/item/clothing/mask/breath/facemask
 
 /obj/effect/mob_spawn/human/corpse/ramzi/trooper
 	name = "Ramzi Trooper"
