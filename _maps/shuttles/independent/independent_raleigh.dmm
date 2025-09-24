@@ -1388,7 +1388,7 @@
 /area/ship/crew/ccommons)
 "nO" = (
 /turf/open/floor/plating,
-/area/space)
+/area/ship/engineering/atmospherics)
 "nT" = (
 /obj/effect/turf_decal/stairs{
 	color = "#a3a2a0";
@@ -2435,8 +2435,36 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "yZ" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/space)
+/obj/structure/closet/crate{
+	name = "crate (New Uniforms)"
+	},
+/obj/item/clothing/under/pants/camo{
+	pixel_x = -9;
+	pixel_y = -8
+	},
+/obj/item/clothing/under/rank/security/officer/camo{
+	pixel_y = -8
+	},
+/obj/item/clothing/shoes/workboots{
+	pixel_y = -7;
+	pixel_x = 6
+	},
+/obj/item/clothing/under/rank/security/officer/camo{
+	pixel_y = -8
+	},
+/obj/item/clothing/under/rank/security/officer/camo{
+	pixel_y = -8
+	},
+/obj/item/clothing/under/pants/camo{
+	pixel_x = -9;
+	pixel_y = -8
+	},
+/obj/item/clothing/under/pants/camo{
+	pixel_x = -9;
+	pixel_y = -8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "zc" = (
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 4
@@ -2498,7 +2526,7 @@
 	pixel_y = -20
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/space)
+/area/ship/cargo)
 "zM" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -2975,7 +3003,7 @@
 	},
 /obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
-/area/space)
+/area/ship/engineering/atmospherics)
 "DQ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/visible{
 	dir = 8
@@ -2984,7 +3012,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/ship/engineering/atmospherics)
 "DR" = (
 /obj/structure/closet/cabinet{
 	anchored = 1
@@ -3108,7 +3136,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/space)
+/area/ship/cargo)
 "Eo" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -3696,7 +3724,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/ship/engineering/atmospherics)
 "JO" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable{
@@ -4175,7 +4203,7 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/space)
+/area/ship/cargo)
 "OV" = (
 /turf/template_noop,
 /area/template_noop)
@@ -4920,7 +4948,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/space)
+/area/ship/cargo)
 "Xm" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
@@ -5505,12 +5533,12 @@ OQ
 Em
 Xc
 zJ
-yZ
+XG
 DP
 JI
 DQ
 nO
-yZ
+Cl
 OV
 OV
 OV
@@ -5586,7 +5614,7 @@ kU
 ZB
 XG
 hs
-Md
+yZ
 Md
 Tm
 XG
