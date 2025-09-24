@@ -7,7 +7,6 @@
 /datum/species/spider
 	name = "Rachnid"
 	id = SPECIES_RACHNID
-	sexes = 0
 	default_color = "00FF00"
 	species_traits = list(LIPS, NOEYESPRITES, MUTCOLORS_PARTSONLY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
