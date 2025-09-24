@@ -225,21 +225,21 @@
 
 /proc/get_region_accesses_name(code)
 	switch(code)
-		if(0)
+		if(REGION_ACCESS_ALL)
 			return "All"
-		if(1) //station general
+		if(REGION_ACCESS_SERVICE) //station general
 			return "General"
-		if(2) //security
+		if(REGION_ACCESS_SEC) //security
 			return "Security"
-		if(3) //medbay
+		if(REGION_ACCESS_MED) //medbay
 			return "Medbay"
-		if(4) //research
+		if(REGION_ACCESS_SCI) //research
 			return "Research"
-		if(5) //engineering and maintenance
+		if(REGION_ACCESS_ENGI) //engineering and maintenance
 			return "Engineering"
-		if(6) //supply
+		if(REGION_ACCESS_ENGI) //supply
 			return "Supply"
-		if(7) //command
+		if(REGION_ACCESS_COMMAND) //command
 			return "Command"
 
 /proc/get_access_desc(A)
