@@ -218,6 +218,10 @@
 	name = "Mining Power Station"
 	icon_state = "storage"
 
+/area/ruin/unpowered/icemoon/downed_transport/atmospherics_shed
+	name = "Atmospherics Shed"
+	icon_state = "atmos"
+
 /area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room
 	name = "Mineshaft Prep Room"
 	icon_state = "mining"
@@ -225,6 +229,10 @@
 /area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft
 	name = "Abandoned Mineshaft"
 	icon_state = "mining"
+
+/area/ruin/unpowered/icemoon/downed_transport/barracks
+	name = "barracks"
+	icon_state = "crew_quarters"
 
 /area/ruin/unpowered/icemoon/downed_transport/crew_accomodations
 	name = "Crew Accomodations"
