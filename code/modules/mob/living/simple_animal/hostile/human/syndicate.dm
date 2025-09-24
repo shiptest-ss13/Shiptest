@@ -293,6 +293,7 @@
 	casingtype = /obj/item/ammo_casing/a556_42
 	l_hand = /obj/item/gun/ballistic/automatic/assault/hydra
 	projectilesound = 'sound/weapons/gun/rifle/hydra.ogg'
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/trooper
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/officer
 	name = "Ramzi Clique Quartermaster"

@@ -26,6 +26,14 @@
 	neck = /obj/item/clothing/neck/dogtag/ramzi
 	id = /obj/item/card/id/syndicate
 
+/datum/outfit/ramzi/bulletproof
+	suit = /obj/item/clothing/suit/armor/bulletproof/ramzi
+	head = /obj/item/clothing/head/helmet/ramzi/bulletproof
+
+/obj/effect/mob_spawn/human/corpse/ramzi/trooper
+	name = "Ramzi Trooper"
+	outfit = /datum/outfit/ramzi/bulletproof
+
 /obj/effect/mob_spawn/human/corpse/ramzi/space
 	name = "Ramzi Hardsuit"
 	outfit = /datum/outfit/ramzi/commando
