@@ -882,6 +882,15 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
+"ec" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech,
+/area/outpost/cargo)
 "ee" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /obj/structure/window/plasma/reinforced/plastitanium/indestructible,
@@ -1568,6 +1577,9 @@
 /obj/structure/filingcabinet/double{
 	dir = 1
 	},
+/obj/machinery/camera{
+	dir = 10
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo/office)
 "hg" = (
@@ -1766,6 +1778,9 @@
 	id = "cargo_holo";
 	locked = 1;
 	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
 	},
 /turf/open/floor/concrete/slab_1,
 /area/outpost/cargo)
@@ -2769,6 +2784,18 @@
 /obj/structure/chair/bench/grey/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
+"ly" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 9
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/outpost/cargo)
 "lB" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
@@ -3447,19 +3474,17 @@
 "oi" = (
 /obj/machinery/button/door{
 	pixel_y = 1;
-	id = "sec_monitor";
+	id = "cargo_bay";
 	name = "Cargo Bay";
 	pixel_x = 24;
 	req_one_access_txt = "101";
 	dir = 8
 	},
 /obj/machinery/button/shieldwallgen{
-	pixel_y = 12;
+	pixel_y = 11;
 	pixel_x = 23;
-	id = "cargo_holo"
-	},
-/obj/machinery/camera{
-	dir = 10
+	id = "cargo_holo";
+	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 6
@@ -3472,7 +3497,7 @@
 	},
 /obj/machinery/light_switch{
 	dir = 8;
-	pixel_x = 21;
+	pixel_x = 23;
 	pixel_y = -9
 	},
 /turf/open/floor/plasteel/dark,
@@ -6370,8 +6395,6 @@
 /area/outpost/hallway/central)
 "yT" = (
 /obj/effect/turf_decal/corner/opaque/red/mono,
-/obj/structure/chair,
-/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/canteen)
 "yU" = (
@@ -7118,6 +7141,18 @@
 	dir = 4
 	},
 /area/outpost/security/checkpoint)
+"BX" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/outpost/cargo)
 "BY" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -7389,6 +7424,9 @@
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo)
 "CY" = (
@@ -7424,6 +7462,19 @@
 /obj/structure/closet/cabinet,
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/bar)
+"Db" = (
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/industrial/outline{
+	color = "#791500"
+	},
+/obj/structure/crate_shelf/built{
+	capacity = 3
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/outpost/cargo)
 "Dc" = (
 /obj/effect/turf_decal/corner/opaque/tan,
 /obj/effect/turf_decal/borderfloorblack{
@@ -9087,6 +9138,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/outpost/security/checkpoint)
+"JZ" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/tech,
+/area/outpost/cargo)
 "Ka" = (
 /obj/structure/girder,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe,
@@ -9683,6 +9743,9 @@
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "cargo_holo";
 	locked = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
 	},
 /turf/open/floor/concrete/slab_1,
 /area/outpost/cargo)
@@ -10614,6 +10677,18 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/checkpoint)
+"QS" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/outpost/cargo)
 "QT" = (
 /obj/item/radio/intercom/directional/west,
 /obj/effect/turf_decal/techfloor,
@@ -11459,6 +11534,20 @@
 /obj/effect/turf_decal/siding/wideplating/dark,
 /turf/open/floor/plasteel/dark,
 /area/outpost/security)
+"UV" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/industrial/outline{
+	color = "#791500"
+	},
+/obj/structure/crate_shelf/built{
+	capacity = 3
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/outpost/cargo)
 "UX" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -18879,7 +18968,7 @@ bc
 eW
 xZ
 Qf
-Qf
+JZ
 Qf
 Qf
 Qf
@@ -18973,7 +19062,7 @@ bc
 eW
 fb
 ww
-Xj
+QS
 pD
 Xj
 qt
@@ -19067,7 +19156,7 @@ GH
 eW
 uE
 wU
-mn
+Db
 ya
 mn
 Pd
@@ -19083,7 +19172,7 @@ nP
 Og
 Bq
 Di
-Di
+yT
 Di
 wb
 zD
@@ -19161,7 +19250,7 @@ GH
 eW
 Nx
 pv
-ff
+UV
 Go
 ff
 JI
@@ -19255,7 +19344,7 @@ Em
 eW
 tQ
 ad
-cH
+ly
 FY
 cH
 On
@@ -19271,7 +19360,7 @@ Fl
 hW
 cv
 Di
-Di
+yT
 Di
 Id
 Qw
@@ -19349,8 +19438,8 @@ Em
 eW
 NG
 AX
-CW
-CW
+BX
+ec
 CW
 vy
 Cd
