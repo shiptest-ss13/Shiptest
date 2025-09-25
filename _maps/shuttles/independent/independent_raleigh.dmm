@@ -171,18 +171,6 @@
 /obj/item/clothing/under/syndicate/camo{
 	pixel_x = 5
 	},
-/obj/item/clothing/head/helmet/bulletproof/m10{
-	pixel_x = -4;
-	pixel_y = 11
-	},
-/obj/item/clothing/head/helmet/bulletproof/m10{
-	pixel_x = -4;
-	pixel_y = 11
-	},
-/obj/item/clothing/head/helmet/bulletproof/m10{
-	pixel_x = -4;
-	pixel_y = 11
-	},
 /obj/item/clothing/suit/armor/vest/bulletproof{
 	pixel_x = -4;
 	pixel_y = 2
@@ -213,6 +201,9 @@
 	pixel_x = -3;
 	pixel_y = 5
 	},
+/obj/item/clothing/head/helmet/bulletproof/x11,
+/obj/item/clothing/head/helmet/bulletproof/x11,
+/obj/item/clothing/head/helmet/bulletproof/x11,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "bi" = (
@@ -1258,6 +1249,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"ov" = (
+/obj/docking_port/stationary{
+	dir = 8;
+	dwidth = 4;
+	height = 30;
+	width = 11;
+	name = "Raleigh Stern Dock"
+	},
+/turf/template_noop,
+/area/template_noop)
 "oJ" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew/ccommons)
@@ -1635,6 +1636,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
+"si" = (
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 4;
+	port_direction = 2;
+	preferred_direction = 4
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "sm" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -2295,16 +2305,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
-"yZ" = (
-/obj/docking_port/stationary{
-	dir = 8;
-	dwidth = 4;
-	height = 30;
-	width = 11;
-	name = "Raleigh Stern Dock"
-	},
-/turf/template_noop,
-/area/template_noop)
 "zc" = (
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 4
@@ -2633,15 +2633,6 @@
 /obj/item/toy/plush/snakeplushie,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm/captain)
-"CF" = (
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 4;
-	port_direction = 2;
-	preferred_direction = 4
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "CG" = (
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -4045,10 +4036,6 @@
 "Rz" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew/dorm)
-"RB" = (
-/obj/machinery/light/directional/south,
-/turf/open/floor/carpet,
-/area/ship/crew/ccommons)
 "Sb" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -4164,6 +4151,10 @@
 /obj/structure/table_frame,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
+"Tu" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/carpet,
+/area/ship/crew/ccommons)
 "TA" = (
 /obj/structure/table/wood,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -4935,7 +4926,7 @@ OV
 OV
 OV
 OV
-yZ
+ov
 OV
 OV
 OV
@@ -4976,7 +4967,7 @@ hN
 XG
 BH
 OV
-CF
+si
 BH
 OV
 BH
@@ -5702,7 +5693,7 @@ gC
 jj
 OL
 ls
-RB
+Tu
 hl
 oJ
 OV

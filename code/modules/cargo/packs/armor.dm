@@ -12,7 +12,7 @@
 	desc = "One set of well-rounded body armor. The set includes a helmet and vest."
 	cost = 750
 	contains = list(/obj/item/clothing/suit/armor/vest,
-					/obj/item/clothing/head/helmet/sec)
+					/obj/item/clothing/head/helmet/m10)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 

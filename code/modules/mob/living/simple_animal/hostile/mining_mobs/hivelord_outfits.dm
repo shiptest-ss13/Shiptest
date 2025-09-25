@@ -436,7 +436,7 @@
 	if(prob(75))
 		shoes = /obj/item/clothing/shoes/jackboots
 	if(prob(75))
-		head = pick(/obj/item/clothing/head/helmet/sec, /obj/item/clothing/head/helmet/blueshirt, /obj/item/clothing/head/helmet/bulletproof)
+		head = pick(/obj/item/clothing/head/helmet/m10, /obj/item/clothing/head/helmet/blueshirt, /obj/item/clothing/head/helmet/bulletproof)
 	if(prob(75))
 		mask = /obj/item/clothing/mask/gas
 	if(prob(75))
