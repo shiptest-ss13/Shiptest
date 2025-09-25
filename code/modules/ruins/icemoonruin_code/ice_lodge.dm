@@ -15,7 +15,7 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer/internals/ice_lodge
 	armor_base = /obj/item/clothing/suit/armor/vest/marine/frontier
 	weapon_drop_chance = 0
-	species_spawner = /datum/species/vox
+	mob_species = /datum/species/vox
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer/internals/ice_lodge
 	mob_species = /datum/species/vox

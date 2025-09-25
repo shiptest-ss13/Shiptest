@@ -5,7 +5,7 @@
 
 	wallet = null
 
-	head = /obj/item/clothing/head/helmet/sec
+	head = /obj/item/clothing/head/helmet/m10
 	ears = /obj/item/radio/headset/alt
 	uniform = /obj/item/clothing/under/rank/security/officer
 	shoes = /obj/item/clothing/shoes/combat
@@ -156,7 +156,7 @@
 	glasses = /obj/item/clothing/glasses/hud/toggle/thermal
 	back = /obj/item/storage/backpack/security
 	suit_store = /obj/item/tank/internals/emergency_oxygen/double
-	belt = /obj/item/gun/ballistic/revolver/mateba
+	belt = /obj/item/gun/ballistic/revolver/rhino
 	ears = /obj/item/radio/headset/alt
 	r_hand = /obj/item/gun/energy/pulse
 
