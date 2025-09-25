@@ -92,7 +92,7 @@
 	name = "Missing Transport Recovery"
 	author = "PGF Naval Command"
 	desc =  "Approximately one week ago, we lost communications with one of our Barrow-class transport shuttles in orbit of a nearby ice world. Find the shuttle, determine the fate of it's crew, and if its too late for rescue, at least retrieve the black box recorder in return for a fair compensation."
-	value = 1250
+	value = 1500
 	mission_limit = 1
 	faction = /datum/faction/pgf
 	setpiece_item = /obj/item/blackbox
