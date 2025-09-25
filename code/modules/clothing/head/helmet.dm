@@ -478,6 +478,7 @@
 	can_flashlight = TRUE
 	dog_fashion = null
 	supports_variations = null
+	content_overlays = TRUE
 	unique_reskin = list(
 		"None" = "m10helm",
 		"Desert" = "m10helm_desert",
