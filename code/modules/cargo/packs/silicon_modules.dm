@@ -30,7 +30,7 @@
 
 /datum/supply_pack/silicon/boris
 	name = "B.O.R.I.S. Module"
-	desc = "Perfect for use by Silicon intelligence who desire a "On-hands" experience."
+	desc = "Perfect for use by Silicon intelligence who desire a \"On-hands\" experience."
 	cost = 250
 	contains = list(/obj/item/borg/upgrade/ai)
 
