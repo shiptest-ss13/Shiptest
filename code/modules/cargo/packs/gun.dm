@@ -37,8 +37,8 @@
 	crate_name = "pistol crate"
 
 /datum/supply_pack/gun/commanders
-	name = "Commander Pistol Crate"
-	desc = "Contains a double stacked Commander pistol, produced by Nanotrasen along with Vigilitas Interstellar and is chambered in 9x18mm."
+	name = "PS9 Challenger Pistol Crate"
+	desc = "Contains a double stacked Challenger pistol, produced by Nanotrasen Advantage. Chambered in 9x18mm."
 	cost = 750
 	contains = list(/obj/item/storage/guncase/pistol/commander)
 	faction = /datum/faction/nt
@@ -87,16 +87,6 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/pinscher
-	name = "Pinscher Heavy Pistol Crate"
-	desc = "Contains a heavy pistol manufactured by Serene Outdoors and modified to fit IRMG's standards. Chambered in .44 Roumain."
-	cost = 1250
-	contains = list(/obj/item/storage/guncase/pistol/pinscher)
-	crate_name = "pistol crate"
-	faction = /datum/faction/inteq
-	faction_discount = 0
-	faction_locked = TRUE
-
 /datum/supply_pack/gun/candors
 	name = "Candor Pistol Crate"
 	desc = "Contains a Candor pistol, the trusty sidearm of any spacer, produced by Hunter's Pride and chambered in .45 ACP."
@@ -110,6 +100,24 @@
 	cost = 1250
 	contains = list(/obj/item/storage/guncase/pistol/asp)
 	faction = /datum/faction/syndicate/scarborough
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/podium
+	name = "Advantage PH46 Podium Crate"
+	desc = "Contains a compact armor-piercing sidearm, chambered in 4.6mm. For NT employee use only."
+	cost = 1250
+	contains = list(/obj/item/storage/guncase/pistol/podium)
+	faction = /datum/faction/nt
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/podium_inteq
+	name = "P46 Schnauzer"
+	desc = "Contains a compact armor-piercing sidearm, chambered in 4.6mm."
+	cost = 1250
+	contains = list(/obj/item/storage/guncase/pistol/podium_inteq)
+	faction = /datum/faction/inteq
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -169,6 +177,15 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/rhino
+	name = "Rhino Revolver Crate"
+	desc = "Contains a double-action Rhino Revolver, chambered in .357 magnum."
+	cost = 1750
+	contains = list(/obj/item/storage/guncase/pistol/rhino)
+	faction = /datum/faction/nt
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/gun/ashhand
 	name = "Ashhand Hunting Revolver Crate"
 	desc = "Contains a single-action .45-70 hunting revolver manufactured by Hunter's Pride for use against the biggest game."
@@ -191,25 +208,35 @@
 		Energy
 */
 
-/datum/supply_pack/gun/laser
-	name = "Laser Gun Crate"
+/datum/supply_pack/gun/l201
+	name = "L201 'Surge' Marksman Plasma Rifle"
+	desc = "Contains a high-powered marksman laser. For NT employee use only."
+	cost = 3500
+	contains = list(/obj/item/storage/guncase/energy/l201)
+	crate_name = "dmr crate"
+	faction = /datum/faction/nt
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/l204
+	name = "L204 'Resistor' Plasma Rifle Crate"
 	desc = "Contains a lethal, high-energy laser gun."
-	cost = 1000
+	cost = 2000
 	contains = list(/obj/item/storage/guncase/energy/laser)
 	crate_name = "laser crate"
 	faction = /datum/faction/nt
 
 /datum/supply_pack/gun/mini_energy
-	name = "Mini Energy Gun Crate"
-	desc = "Contains a small, versatile energy gun, capable of firing both nonlethal and lethal blasts, but with a limited power cell."
-	cost = 500
+	name = "X26 'Ohm' Variable Energy Pistol Crate"
+	desc = "Contains a small, versatile energy gun, capable of firing both nonlethal and lethal blasts."
+	cost = 800
 	contains = list(/obj/item/storage/guncase/pistol/miniegun)
 	crate_name = "laser crate"
 	faction_discount = 20
 	faction = /datum/faction/nt
 
 /datum/supply_pack/gun/energy
-	name = "Energy Gun Crate"
+	name = "X12 'Volt' Variable Energy Carbine Crate"
 	desc = "Contains a versatile energy gun, capable of firing both nonlethal and lethal blasts of light."
 	cost = 1250
 	contains = list(/obj/item/storage/guncase/energy/egun)
@@ -296,6 +323,16 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/energy/cadejo
+	name = "PP10 'Cadejo' Energy Carbine"
+	desc = "Contains one refitted Sharplite X12 carbine, for IRMG use. Uses sharplite cells."
+	cost = 1250
+	contains = list(/obj/item/storage/guncase/cadejo)
+	crate_name = "beam carbine crate"
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
 /*
 		Shotguns
 */
@@ -369,9 +406,9 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/ultima
-	name = "E-SG 500 Energy Shotgun Crate"
-	desc = "Contains an energy-based shotgun equipped with dual kill/disable modes, ideal for short range. The on-board computer is notoriously unreliable. For NT employee use only."
+/datum/supply_pack/gun/x46
+	name = "X46 'Amperage' Variable Energy Blaster Crate"
+	desc = "Contains an energy-based shotgun equipped with dual kill/disable modes, ideal for short range. For NT employee use only."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/energy/ultima)
 	crate_name = "shotgun crate"
@@ -380,8 +417,8 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/cycler
-	name = "Cycler Shotgun Crate"
-	desc = "Contains an advanced shotgun with four round dual magazine tubes, allowing quick swapping between ammo types for increased versatility in the field. For NT employee use only."
+	name = "Advantage AST12 Negotiator"
+	desc = "Contains an advanced shotgun with five round dual magazine tubes. For NT employee use only."
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/cycler)
 	crate_name = "shotgun crate"
@@ -412,9 +449,9 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/vector
-	name = "Vector SMG Crate"
-	desc = "Contains a Vector PDW produced by Sharplite Defense and chambered in 9x18mm."
+/datum/supply_pack/gun/expedition
+	name = "SGL9 Expedition SMG Crate"
+	desc = "Contains a Expidition SMG produced by Nanotrasen Advantage. Chambered in 9x18mm."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/vector)
 	crate_name = "SMG crate"
@@ -432,28 +469,38 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/wt550
-	name = "WT-550 PDW Crate"
-	desc = "Contains a high-powered, automatic personal defense weapon chambered in 4.6x30mm."
+/datum/supply_pack/gun/resolution
+	name = "PD46 Resolution PDW Crate"
+	desc = "Contains a compact automatic personal defense weapon chambered in 4.6x30mm."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/wt550)
 	crate_name = "PDW crate"
 	faction_discount = 10
 	faction = /datum/faction/nt
 
-/datum/supply_pack/gun/saber
-	name = "SABR Prototype SMG Crate"
-	desc = "Contains a compact 9x18mm automatic SMG produced by NT Ballistics. For NT employee use only."
+/datum/supply_pack/gun/bdm50
+	name = "BDM-50 'Akita' PDW Crate"
+	desc = "Contains a compact Automatic personal defense weapon chambered in 4.6x30mm, in use by the IRMG."
+	cost = 3000
+	contains = list(/obj/item/storage/guncase/bdm50)
+	crate_name = "PDW crate"
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/champion
+	name = "PHB Champion Machinepistol Crate"
+	desc = "Contains a compact 9x18mm burst fire machine pistol produced by Nanotrasen advantage. For NT employee use only."
 	cost = 2500
 	contains = list(/obj/item/storage/guncase/saber)
-	crate_name = "SMG crate"
+	crate_name = "Machinepistol crate"
 	faction = /datum/faction/nt
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/etar
-	name = "E-TAR Dual-Mode Energy SMG Crate"
-	desc = "Contains a compact energy-based PDW platform, ideal for suppressing threats at mid-range. For NT employee use only."
+/datum/supply_pack/gun/l305
+	name = "L305 'Rush' Tactical Plasma Gun Crate"
+	desc = "Contains a compact energy-based SMG. For NT employee use only."
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/energy/etar)
 	crate_name = "SMG crate"
@@ -590,12 +637,22 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/hades
-	name = "SL AL-655 'Hades' energy rifle"
+	name = "AL655 Assault Plasma Rifle crate"
 	desc = "Contains a high-energy, automatic laser rifle. For NT employee use only."
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/hades)
 	crate_name = "laser crate"
 	faction = /datum/faction/nt
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/barghest
+	name = "PP20 'Barghest' APR Crate"
+	desc = "Contains a high-energy, automatic laser rifle. Refitted for IRMG use."
+	cost = 5000
+	contains = list(/obj/item/storage/guncase/barghest)
+	crate_name = "laser crate"
+	faction = /datum/faction/inteq
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -720,6 +777,8 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+//turn into l201
+/*
 /datum/supply_pack/gun/gauss
 	name = "Prototype Gauss Rifle"
 	desc = "Contains a high-powered prototype armor-piercing gauss rifle, operable with ferromagnetic pellets. For NT employee use only."
@@ -729,6 +788,7 @@
 	faction = /datum/faction/nt
 	faction_discount = 0
 	faction_locked = TRUE
+*/
 
 /datum/supply_pack/gun/claris
 	name = "Claris Gauss Rifle"
@@ -765,6 +825,16 @@
 	contains = list(/obj/item/storage/guncase/cmf90)
 	crate_name = "marksman rifle crate"
 	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/al607
+	name = "AL607 'Sarissa' Plasma Accelerator"
+	desc = "Contains a AL607 Laser Sniper. For NT employee use only."
+	cost = 4500
+	contains = list(/obj/item/storage/guncase/energy/al607)
+	crate_name = "sniper rifle crate"
+	faction = /datum/faction/nt
 	faction_discount = 0
 	faction_locked = TRUE
 
