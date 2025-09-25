@@ -182,7 +182,7 @@
 	320,
 	)
 
-/datum/outfit/gezena/downed_pilot
+/datum/outfit/downed_pilot
 	name = "Pilot (downed transport)"
 	uniform = /obj/item/clothing/under/gezena
 	suit = /obj/item/clothing/suit/toggle/gezena
@@ -191,7 +191,7 @@
 	ears = /obj/item/radio/headset/pgf/alt
 	glasses = /obj/item/clothing/glasses/orange
 
-/datum/outfit/gezena/security/downed_copilot
+/datum/outfit/downed_copilot
 	name = "Co-Pilot (downed transport)"
 	head = /obj/item/clothing/head/gezena/flap/engi
 	uniform = /obj/item/clothing/under/gezena
@@ -200,7 +200,7 @@
 	neck = /obj/item/clothing/neck/cloak/gezena/engi
 	ears = /obj/item/radio/headset/pgf/alt
 
-/datum/outfit/gezena/skeleton_marine
+/datum/outfit/skeleton_marine
 	name = "Skeleton Marine (downed transport)"
 	suit = /obj/item/clothing/suit/armor/gezena/marine
 	head = /obj/item/clothing/head/helmet/gezena
@@ -210,16 +210,16 @@
 /obj/effect/mob_spawn/human/corpse/pgf/skeleton_marine
 	name = "Skeleton Marine Spawner"
 	mob_species = /datum/species/skeleton
-	outfit = /datum/outfit/gezena/skeleton_marine
+	outfit = /datum/outfit/skeleton_marine
 
 /obj/effect/mob_spawn/human/corpse/pgf/downed_pilot
 	name = "Downed Pilot Spawner"
 	mob_species = /datum/species/lizard
-	outfit = /datum/outfit/gezena/downed_pilot
+	outfit = /datum/outfit/downed_pilot
 	mob_gender = MALE
 
 /obj/effect/mob_spawn/human/corpse/pgf/downed_copilot
 	name = "Downed Co-Pilot Spawner"
 	mob_species = /datum/species/elzuose
-	outfit = /datum/outfit/gezena/security/downed_copilot
+	outfit = /datum/outfit/downed_copilot
 	mob_gender = MALE
