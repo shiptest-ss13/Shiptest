@@ -6,7 +6,7 @@
 
 	wallet = null
 
-	head = /obj/item/clothing/head/helmet/inteq
+	head = /obj/item/clothing/head/helmet/m10/inteq
 	mask = /obj/item/clothing/mask/balaclava/inteq
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	uniform = /obj/item/clothing/under/syndicate/inteq
@@ -52,7 +52,7 @@
 	uniform = /obj/item/clothing/under/syndicate/inteq/artificer
 	belt = /obj/item/storage/belt/utility/full/engi
 	gloves = /obj/item/clothing/gloves/color/yellow
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/commander/inteq
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/challenger/inteq
 
 	backpack_contents = list(/obj/item/ammo_box/magazine/co9mm=2)
 
@@ -90,7 +90,7 @@
 	jobtype = /datum/job/hos
 	job_icon = "headofsecurity"
 
-	head = /obj/item/clothing/head/helmet/inteq
+	head = /obj/item/clothing/head/helmet/m10/inteq
 	ears = /obj/item/radio/headset/inteq/alt/captain
 	back = /obj/item/storage/backpack/messenger/inteq
 	belt = /obj/item/storage/belt/security/webbing/inteq/skm_carabine
@@ -123,7 +123,7 @@
 	ears = /obj/item/radio/headset/inteq/captain
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	r_pocket = /obj/item/restraints/handcuffs
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/commander/inteq
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/challenger/inteq
 
 	backpack_contents = list(/obj/item/gun/energy/taser)
 

@@ -43,7 +43,7 @@
 	if (prob(10))
 		belt = pick_weight(list(
 			/obj/item/gun/ballistic/automatic/pistol/candor = 2,
-			/obj/item/gun/ballistic/automatic/pistol/commander = 1,
+			/obj/item/gun/ballistic/automatic/pistol/challenger = 1,
 			/obj/item/gun/ballistic/automatic/pistol/ringneck = 1,
 			/obj/item/gun/ballistic/revolver/viper = 1,
 			/obj/item/gun/ballistic/revolver/firebrand = 1,
@@ -436,7 +436,7 @@
 	if(prob(75))
 		shoes = /obj/item/clothing/shoes/jackboots
 	if(prob(75))
-		head = pick(/obj/item/clothing/head/helmet/sec, /obj/item/clothing/head/helmet/blueshirt, /obj/item/clothing/head/helmet/bulletproof)
+		head = pick(/obj/item/clothing/head/helmet/m10, /obj/item/clothing/head/helmet/blueshirt, /obj/item/clothing/head/helmet/bulletproof)
 	if(prob(75))
 		mask = /obj/item/clothing/mask/gas
 	if(prob(75))
@@ -446,7 +446,7 @@
 	if(prob(75))
 		r_pocket = pick(/obj/item/flashlight/seclite, /obj/item/assembly/flash/handheld, /obj/item/restraints/handcuffs)
 	if(prob(50))
-		suit_store = pick(/obj/item/gun/energy/e_gun, /obj/item/gun/energy/e_gun/smg)
+		suit_store = pick(/obj/item/gun/energy/sharplite/x12, /obj/item/gun/energy/sharplite/l305)
 	for(var/i = 1 to 3)
 		if(prob(75))
 			backpack_contents += pick_weight(list(

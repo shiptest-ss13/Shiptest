@@ -21,6 +21,9 @@
 
 	fire_select_icon_state_prefix = "laser_"
 
+	///Ammotype index -- this is the currently selected ammo type
+	var/ammotype_index
+
 	default_ammo_type = /obj/item/stock_parts/cell/gun
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun,
@@ -33,7 +36,7 @@
 	tactical_reload_delay = 1.2 SECONDS
 
 	var/latch_closed = TRUE
-	var/latch_toggle_delay = 1.0 SECONDS
+	var/latch_toggle_delay = 0.6 SECONDS
 
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
@@ -83,6 +86,7 @@
 
 	if(default_ammo_type)
 		cell = new default_ammo_type(src, spawn_no_ammo)
+	build_ammotypes()
 	update_ammo_types()
 	recharge_newshot(TRUE)
 	if(selfcharge)
@@ -133,11 +137,6 @@
 		eject_cell(user)
 		return
 	return ..()
-
-/obj/item/gun/energy/unique_action(mob/living/user)
-	if(ammo_type.len > 1)
-		select_fire(user)
-		update_appearance()
 
 /obj/item/gun/energy/attackby(obj/item/A, mob/user, params)
 	if(..())
@@ -195,7 +194,7 @@
 			return TRUE
 	return FALSE
 
-/obj/item/gun/energy/AltClick(mob/living/user)
+/obj/item/gun/energy/unique_action(mob/living/user)
 	if(..())
 		return
 	if(!internal_magazine && latch_closed)
@@ -257,11 +256,58 @@
 	if(!chambered && can_shoot())
 		process_chamber()	// If the gun was drained and then recharged, load a new shot.
 	..() //process the gunshot as normal
-	if(!latch_closed && prob(65)) //make the cell slide out if it's fired while the retainment clip is unlatched, with a 65% probability
+	if((!latch_closed && prob(65)) && (cell != null)) //make the cell slide out if it's fired while the retainment clip is unlatched, with a 65% probability
 		to_chat(user, span_warning("The [src]'s cell falls out!"))
 		eject_cell()
 	return
 
+/obj/item/gun/energy/proc/build_ammotypes()
+	for(var/datum/action/item_action/toggle_ammotype/old_ammotype in actions)
+		old_ammotype.Destroy()
+	var/datum/action/item_action/our_action
+
+	if(ammo_type.len > 1)
+		our_action = new /datum/action/item_action/toggle_ammotype(src)
+
+		for(var/i=1, i <= ammo_type.len, i++)
+			if(default_ammo_type == ammo_type[i])
+				ammotype_index = i
+				if(our_action)
+					our_action.UpdateButtonIcon()
+				return
+		ammotype_index = 1
+
+/obj/item/gun/energy/ui_action_click(mob/user, actiontype)
+	if (istype(actiontype, /datum/action/item_action/toggle_ammotype))
+		select_fire(user)
+		update_appearance()
+	else
+		..()
+
+/datum/action/item_action/toggle_ammotype/UpdateButtonIcon(status_only = FALSE, force = FALSE)
+	var/obj/item/gun/energy/our_gun = target
+	var/obj/item/ammo_casing/energy/shot = our_gun.ammo_type[our_gun.select]
+	var/current_ammotype = shot.select_name
+
+	var/manufacturer_prefix = "fallback"
+	if (our_gun.manufacturer == MANUFACTURER_EOEHOMA)
+		manufacturer_prefix = "eoehoma"
+	else if (our_gun.manufacturer == MANUFACTURER_SHARPLITE_NEW)
+		manufacturer_prefix = "sharplite"
+	else if (our_gun.manufacturer == MANUFACTURER_PGF)
+		manufacturer_prefix = "etherbor"
+	else
+		current_ammotype = "fallback"
+
+	current_ammotype = lowertext(current_ammotype)
+
+	// A list of all ammotypes that have icons for them
+	if (!(current_ammotype in list("kill", "disable", "overcharge", "stun", "ion", "energy", "ar", "dmr")))
+		current_ammotype = "fallback"
+
+	button_icon_state = "[manufacturer_prefix]["_laser_"][current_ammotype]"
+
+	return ..()
 
 /obj/item/gun/energy/proc/select_fire(mob/living/user)
 	select++
@@ -385,10 +431,10 @@
 /obj/item/gun/energy/examine(mob/user)
 	. = ..()
 	if(!internal_magazine)
-		. += "The cell retainment latch is [latch_closed ? span_green("CLOSED") : span_red("OPEN")]. Alt-Click to toggle the latch."
+		. += "The cell retainment latch is [latch_closed ? span_green("CLOSED") : span_red("OPEN")]. Press the Unique Action Key to toggle the latch. By default, this is <b>space</b>."
 	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
 	if(ammo_type.len > 1)
-		. += "You can switch firemodes by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
+		. += "You can switch ammo modes by pressing the <b>Ammo Toggle</b> button."
 	if(cell)
 		. += "\The [name]'s cell has [cell.percent()]% charge remaining."
 		. += "\The [name] has [round(cell.charge/shot.e_cost)] shots remaining on <b>[shot.select_name]</b> mode."
