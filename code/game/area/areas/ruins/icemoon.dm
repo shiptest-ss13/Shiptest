@@ -231,7 +231,7 @@
 	icon_state = "mining"
 
 /area/ruin/unpowered/icemoon/downed_transport/barracks
-	name = "barracks"
+	name = "Barracks"
 	icon_state = "crew_quarters"
 
 /area/ruin/unpowered/icemoon/downed_transport/crew_accomodations
