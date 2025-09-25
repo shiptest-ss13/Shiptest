@@ -120,7 +120,6 @@
 /obj/item/clothing/suit/armor/riot/clip
 	name = "black riot suit"
 	desc = "A charcoal-painted suit of bulky, heavy armor designed for close-quarters fighting and riot control. The armor of choice for CLIP-BARD members, but used universally by CLIP. Helps the wearer resist shoving in close quarters."
-
 	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
 	icon_state = "riot_clip"
@@ -368,7 +367,15 @@
 
 	supports_variations = VOX_VARIATION
 
-/obj/item/clothing/head/helmet/bulletproof/m10/clip_vc
+/obj/item/clothing/head/helmet/m10/clip
+	name = "\improper Minutemen CM-10 Helmet"
+	desc = "A special, lightweight helmet issued to the Minutemen of the Confederated League Minutemen."
+	icon = 'icons/obj/clothing/faction/clip/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+	icon_state = "clip_m10"
+	can_flashlight = TRUE
+
+/obj/item/clothing/head/helmet/m10/clip_vc
 	name = "\improper Minutemen CM-12 Helmet"
 	desc = "A special, lightweight and padded helmet issued to Vehicle Crewmen of the Confederated League Minutemen. Features noise-reducing technology and a microphone that automatically connects with worn headsets. Hopefully protects you from bumpy rides."
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
@@ -383,11 +390,11 @@
 
 	supports_variations = VOX_VARIATION
 
-/obj/item/clothing/head/helmet/bulletproof/m10/clip_vc/ComponentInitialize()
+/obj/item/clothing/head/helmet/m10/clip_vc/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_HEAD))
 
-/obj/item/clothing/head/helmet/bulletproof/m10/clip_correspondent
+/obj/item/clothing/head/helmet/m10/clip_correspondent
 	name = "CLIP war correspondent M10 Helmet"
 	desc = "A lightweight bulletproof helmet given to war correspondents of CLIP. Features a little attachment rail on the side where you can mount a flashlight. Keep your head down!"
 
@@ -403,12 +410,11 @@
 
 /obj/item/clothing/head/helmet/riot/clip
 	name = "\improper Minutemen CM-13 Riot Helmet"
-	desc = "A sturdy blue helmet, made with close range fighting in mind. The foldable protective visor makes it CLIP-BARD's preferred helmet against hostile xenofauna."
-
+	desc = "A sturdy blue helmet, made with crowd control in mind. The foldable protective visor makes it CLIP-BARD's preferred helmet against hostile xenofauna."
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
 	icon_state = "riot_clip"
-
+	base_icon_state = "riot_clip"
 	supports_variations = SNOUTED_VARIATION
 
 // CLIP-GOLD
