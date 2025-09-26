@@ -904,10 +904,6 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/unpowered/icemoon/downed_transport/the_descent)
-"hi" = (
-/obj/structure/flora/stump
-/turf/open/floor/plating/asteroid/snow/lit,
-/area/overmap_encounter/planetoid/ice/explored)
 "hk" = (
 /obj/machinery/space_heater,
 /obj/effect/turf_decal/spline/fancy/opaque/grey,
@@ -1373,8 +1369,6 @@
 	},
 /area/overmap_encounter/planetoid/ice/explored)
 "kt" = (
-/obj/structure/flora/rock
-/turf/open/floor/plating/asteroid/icerock,
 /area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "kv" = (
 /obj/structure/chair/wood{
@@ -1464,7 +1458,11 @@
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "ll" = (
-/obj/structure/flora/stump
+/obj/structure/flora/rock{
+	icon_state = "basalt2";
+	pixel_x = 5;
+	pixel_y = 6
+	},
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "ln" = (
@@ -2019,7 +2017,7 @@
 /obj/structure/flora/rock{
 	icon_state = "basalt2";
 	pixel_x = 5;
-	pixel_y = 6;
+	pixel_y = 6
 	},
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
@@ -3462,11 +3460,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/icemoon,
 /area/ruin/unpowered/icemoon/downed_transport/the_descent)
-"Bp" = (
-/obj/structure/flora/rock/pile
-/obj/item/food/energybar,
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/overmap_encounter/planetoid/ice/explored)
 "Bv" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel{
@@ -3650,18 +3643,18 @@
 "Dp" = (
 /obj/effect/decal/cleanable/blood/drip{
 	pixel_x = 16;
-	pixel_y = 12;
+	pixel_y = 12
 	},
 /obj/effect/decal/cleanable/blood/drip{
 	pixel_x = 19;
-	pixel_y = 2;
+	pixel_y = 2
 	},
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Dw" = (
 /obj/structure/flora/driftwood{
 	pixel_y = 0;
-	name = "shattered wood";
+	name = "shattered wood"
 	},
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
@@ -4829,7 +4822,7 @@
 "Me" = (
 /obj/structure/flora/driftlog{
 	pixel_y = 0;
-	name = "shattered log";
+	name = "shattered log"
 	},
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
@@ -5000,7 +4993,7 @@
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/powered/icemoon/downed_transport/leaning_shack)
 "Np" = (
-/obj/structure/flora/rock/pile
+/obj/structure/flora/rock,
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Nq" = (
@@ -5369,10 +5362,6 @@
 /obj/effect/decal/cleanable/glass/strange,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icemoon/downed_transport/mining_power_station)
-"QS" = (
-/obj/structure/flora/rock
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/overmap_encounter/planetoid/ice/explored)
 "QU" = (
 /obj/structure/chair/sofa/olive/old/left{
 	dir = 4
@@ -6683,7 +6672,7 @@ yu
 Ug
 OD
 yu
-hi
+yu
 yu
 yu
 yu
@@ -7030,8 +7019,8 @@ yu
 OD
 OD
 OD
-ll
 OD
+Np
 OD
 OD
 OD
@@ -7243,7 +7232,7 @@ OD
 TC
 OD
 OD
-OD
+pU
 OD
 OD
 TC
@@ -7384,7 +7373,7 @@ OD
 OD
 OD
 OD
-Np
+OD
 OD
 bU
 OD
@@ -7521,7 +7510,7 @@ OD
 OD
 OD
 OD
-Np
+OD
 OD
 OD
 ah
@@ -7596,7 +7585,7 @@ OD
 OD
 bU
 OD
-ll
+OD
 OD
 yu
 yu
@@ -7660,7 +7649,7 @@ yu
 yu
 yu
 OD
-ll
+OD
 OD
 Me
 OD
@@ -7873,7 +7862,7 @@ yu
 OD
 OD
 su
-Bp
+OD
 bU
 pe
 OD
@@ -7944,7 +7933,7 @@ OD
 OD
 OD
 Dw
-QS
+OD
 su
 OD
 OD
@@ -8156,7 +8145,7 @@ OD
 OD
 bU
 Me
-ll
+OD
 OD
 yu
 yu
@@ -8223,7 +8212,7 @@ yu
 yu
 OD
 OD
-OD
+ll
 OD
 OD
 OD
@@ -8712,7 +8701,7 @@ yu
 yu
 OD
 OD
-Np
+OD
 OD
 bU
 OD
@@ -8781,7 +8770,7 @@ ee
 yu
 yu
 OD
-OD
+pU
 OD
 OD
 Am
@@ -9270,7 +9259,7 @@ yu
 yu
 OD
 OD
-OD
+Np
 OD
 OD
 pU
@@ -9479,13 +9468,13 @@ js
 yu
 yu
 OD
+pU
 OD
 OD
 OD
 OD
 OD
 OD
-QS
 OD
 yu
 yu
@@ -9621,7 +9610,7 @@ yu
 OD
 OD
 OD
-Np
+OD
 OD
 OD
 OD
@@ -9766,7 +9755,7 @@ OD
 OD
 OD
 OD
-ll
+OD
 yu
 OD
 OD
@@ -9832,15 +9821,15 @@ yu
 OD
 OD
 bU
-Ta
 OD
 OD
 OD
-OD
-yu
 OD
 OD
 yu
+OD
+OD
+ee
 yu
 yu
 yu
@@ -9900,10 +9889,10 @@ yu
 yu
 yu
 OD
-ll
+OD
 OD
 Dw
-OD
+Ta
 OD
 OD
 OD
@@ -10459,7 +10448,7 @@ yu
 yu
 yu
 OD
-ll
+Ta
 OD
 Am
 OD
@@ -10606,7 +10595,7 @@ OD
 OD
 OD
 OD
-pU
+Et
 yu
 yu
 yu
@@ -10673,7 +10662,7 @@ OD
 OD
 OD
 Gt
-Et
+pU
 OD
 OD
 OD
