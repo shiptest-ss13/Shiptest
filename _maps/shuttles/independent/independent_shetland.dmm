@@ -612,6 +612,10 @@
 /obj/effect/turf_decal/corner/transparent/lightgrey/half,
 /obj/effect/turf_decal/corner/transparent/solgovblue/border,
 /obj/structure/table/glass,
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_y = -32
+	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/white,
 /area/space)
 "gF" = (
@@ -1994,6 +1998,12 @@
 /obj/item/stock_parts/cell/gun{
 	pixel_x = 12
 	},
+/obj/item/stock_parts/cell/gun{
+	pixel_x = 12
+	},
+/obj/item/stock_parts/cell/gun{
+	pixel_x = 12
+	},
 /obj/machinery/button/door{
 	dir = 4;
 	pixel_x = -20;
@@ -2342,9 +2352,7 @@
 /obj/effect/turf_decal/trimline/transparent/solgovblue/filled/line{
 	dir = 5
 	},
-/obj/structure/closet/crate/bin{
-	pixel_x = 4
-	},
+/obj/machinery/smartfridge/bloodbank/preloaded,
 /turf/open/floor/plasteel/white,
 /area/space)
 "xT" = (
@@ -2642,6 +2650,9 @@
 /obj/effect/turf_decal/trimline/transparent/solgovblue/filled/line{
 	dir = 6
 	},
+/obj/item/kirbyplants/fullysynthetic{
+	pixel_x = 11
+	},
 /turf/open/floor/plasteel/white,
 /area/space)
 "BL" = (
@@ -2838,6 +2849,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/transparent/solgovblue/filled/line,
+/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/white,
 /area/space)
 "Ee" = (
@@ -4218,21 +4230,23 @@
 	req_access_txt = "1";
 	icon_state = "sec_wall"
 	},
-/obj/item/clothing/head/helmet/bulletproof/m10{
-	pixel_x = -8;
-	pixel_y = 2
+/obj/item/clothing/suit/armor/vest/alt{
+	pixel_x = -8
 	},
 /obj/item/clothing/suit/armor/vest{
 	pixel_x = -8;
 	pixel_y = -8
 	},
-/obj/item/clothing/suit/armor/vest{
-	pixel_x = -8;
-	pixel_y = -8
+/obj/item/clothing/head/helmet/m10{
+	pixel_y = 8
+	},
+/obj/item/clothing/head/helmet/m10{
+	pixel_y = 8;
+	pixel_x = 8
 	},
 /obj/item/storage/belt/military{
 	pixel_x = 4;
-	pixel_y = -7
+	pixel_y = -4
 	},
 /obj/item/clothing/glasses/sunglasses/ballistic{
 	pixel_x = 8
@@ -6045,7 +6059,7 @@ rL
 Pg
 Pg
 vH
-JJ
+NP
 DJ
 lV
 rI
