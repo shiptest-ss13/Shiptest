@@ -3468,10 +3468,6 @@
 	icon_state = "tiled_dark"
 	},
 /area/ruin/unpowered/icemoon/downed_transport/crew_accomodations)
-"Bw" = (
-/mob/living/simple_animal/hostile/asteroid/old_demon,
-/turf/closed/wall/mineral/wood,
-/area/ruin/powered/icemoon/downed_transport/delapidated_cabin)
 "Bx" = (
 /obj/item/stack/sheet/mineral/wood,
 /obj/item/paper/crumpled/fluff{
@@ -5425,6 +5421,12 @@
 	icon_state = "conc_slab_1"
 	},
 /area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
+"Rh" = (
+/obj/structure/catwalk/over,
+/obj/effect/decal/cleanable/glass/strange,
+/mob/living/simple_animal/hostile/asteroid/ice_demon,
+/turf/open/floor/plating,
+/area/ruin/unpowered/icemoon/downed_transport/mining_power_station)
 "Rm" = (
 /turf/closed/wall/mineral/titanium/survival/pod,
 /area/ruin/unpowered/icemoon/downed_transport/bathhouse)
@@ -6133,12 +6135,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
-"Xm" = (
-/obj/structure/catwalk/over,
-/obj/effect/decal/cleanable/glass/strange,
-/mob/living/simple_animal/hostile/asteroid/ice_demon,
-/turf/open/floor/plating,
-/area/ruin/unpowered/icemoon/downed_transport/mining_power_station)
 "Xn" = (
 /obj/effect/decal/cleanable/blood/drip{
 	pixel_x = 12;
@@ -8035,7 +8031,7 @@ ej
 qS
 Dz
 Dz
-Bw
+ej
 HX
 yu
 OD
@@ -13687,7 +13683,7 @@ Om
 Hd
 kY
 dp
-Xm
+Rh
 ua
 ot
 jP
