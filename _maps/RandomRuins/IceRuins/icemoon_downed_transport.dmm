@@ -119,6 +119,10 @@
 	},
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
+"aN" = (
+/obj/item/toy/crayon/spraycan,
+/turf/open/floor/plating/asteroid/snow/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "aS" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -432,13 +436,8 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/apc/auto_name/directional/east{
-	pixel_x = 26;
-	pixel_y = -2;
-	start_charge = 0
-	},
 /obj/machinery/light_switch{
-	pixel_y = 9;
+	pixel_y = 11;
 	dir = 8;
 	pixel_x = 20
 	},
@@ -449,6 +448,9 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/power/apc/auto_name/directional/east{
+	start_charge = 0
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "ed" = (
@@ -931,7 +933,6 @@
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/overmap_encounter/planetoid/cave/explored)
 "hx" = (
-/obj/structure/table/reinforced,
 /obj/structure/table/reinforced,
 /obj/item/paper_bin{
 	pixel_x = -7;
@@ -1517,7 +1518,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "lD" = (
-/obj/structure/grille,
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
@@ -3073,10 +3073,6 @@
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
-"yc" = (
-/obj/item/toy/crayon/spraycan,
-/turf/open/floor/plating/asteroid/snow/lit,
-/area/overmap_encounter/planetoid/ice/explored)
 "ym" = (
 /obj/structure/flora/rock/pile/icy{
 	pixel_y = -1;
@@ -3299,10 +3295,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/machinery/power/apc/auto_name/directional/east{
-	pixel_x = 26;
-	start_charge = 0
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -3325,6 +3317,9 @@
 /obj/item/clothing/suit/space/gezena{
 	pixel_x = 7;
 	pixel_y = -6
+	},
+/obj/machinery/power/apc/auto_name/directional/east{
+	start_charge = 0
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
@@ -4086,7 +4081,6 @@
 	},
 /area/ruin/unpowered/icemoon/downed_transport/security_office)
 "FD" = (
-/obj/structure/table/reinforced,
 /obj/structure/table/reinforced,
 /obj/item/radio/weather_monitor{
 	pixel_y = 15;
@@ -13323,7 +13317,7 @@ UM
 ch
 YD
 fL
-yc
+aN
 yu
 Nv
 CT
