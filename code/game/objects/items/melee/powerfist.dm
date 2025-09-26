@@ -55,8 +55,6 @@
 	overcharge =! overcharge
 	to_chat(user, span_boldwarning("Overcharge [overcharge ? "engaged" : "disabled"]"))
 
-
-
 /obj/item/melee/powerfist/CtrlClick(mob/user)
 	. = ..()
 	playsound(src, 'sound/machines/switch3.ogg', 60, TRUE)
