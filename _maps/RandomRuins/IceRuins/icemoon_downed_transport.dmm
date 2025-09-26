@@ -1575,6 +1575,30 @@
 	pixel_y = 2;
 	pixel_x = 6
 	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "r";
+	pixel_x = -9;
+	pixel_y = 31;
+	paint_colour = "#FF3333"
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "n";
+	pixel_x = 6;
+	pixel_y = 32;
+	paint_colour = "#FF3333"
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "c";
+	pixel_y = 19;
+	pixel_x = -11;
+	paint_colour = "#FF3333"
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "k";
+	pixel_x = 2;
+	pixel_y = 20;
+	paint_colour = "#FF3333"
+	},
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "lV" = (
@@ -2327,6 +2351,40 @@
 	icon_state = "monotile_light"
 	},
 /area/ruin/unpowered/icemoon/downed_transport/crew_accomodations)
+"sd" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 2;
+	pixel_y = 15
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "t";
+	pixel_y = 32;
+	pixel_x = -4;
+	paint_colour = "#FF3333"
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "u";
+	pixel_y = 32;
+	pixel_x = 9;
+	paint_colour = "#FF3333"
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "b";
+	pixel_x = -2;
+	pixel_y = 18;
+	paint_colour = "#FF3333"
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "a";
+	pixel_y = 20;
+	pixel_x = 10;
+	paint_colour = "#FF3333"
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "sn" = (
 /obj/machinery/door/airlock/engineering{
 	dir = 2
@@ -13199,7 +13257,7 @@ XQ
 XQ
 bJ
 bX
-Ht
+sd
 EW
 KI
 oI
