@@ -848,7 +848,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/asteroid/ice_demon,
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal,
 /turf/open/floor/pod/dark,
 /area/ruin/unpowered/icemoon/downed_transport/the_descent)
 "gY" = (
@@ -1369,6 +1369,8 @@
 	},
 /area/overmap_encounter/planetoid/ice/explored)
 "kt" = (
+/obj/structure/flora/rock,
+/turf/open/floor/plating/asteroid/icerock,
 /area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "kv" = (
 /obj/structure/chair/wood{
@@ -1422,7 +1424,6 @@
 /obj/structure/cable{
 	icon_state = "6-9"
 	},
-/mob/living/simple_animal/hostile/asteroid/ice_demon,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icemoon/downed_transport/mining_power_station)
 "kZ" = (
@@ -2994,6 +2995,7 @@
 	},
 /obj/item/reagent_containers/glass/bucket,
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/asteroid/ice_demon,
 /turf/open/floor/wood/icemoon{
 	icon_state = "wood-broken"
 	},
@@ -3466,6 +3468,10 @@
 	icon_state = "tiled_dark"
 	},
 /area/ruin/unpowered/icemoon/downed_transport/crew_accomodations)
+"Bw" = (
+/mob/living/simple_animal/hostile/asteroid/old_demon,
+/turf/closed/wall/mineral/wood,
+/area/ruin/powered/icemoon/downed_transport/delapidated_cabin)
 "Bx" = (
 /obj/item/stack/sheet/mineral/wood,
 /obj/item/paper/crumpled/fluff{
@@ -3765,6 +3771,7 @@
 	pixel_x = 15
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/asteroid/ice_demon,
 /turf/open/floor/plating/asteroid/icerock/smooth,
 /area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "Ed" = (
@@ -3914,7 +3921,6 @@
 	pixel_y = 0;
 	pixel_x = 15
 	},
-/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal,
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "EV" = (
@@ -4078,7 +4084,7 @@
 /area/ruin/unpowered/icemoon/downed_transport/security_office)
 "FF" = (
 /obj/structure/catwalk/over,
-/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal,
+/mob/living/simple_animal/hostile/asteroid/old_demon,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icemoon/downed_transport/mining_power_station)
 "FH" = (
@@ -4970,7 +4976,6 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 2
 	},
-/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal,
 /turf/open/floor/pod/dark,
 /area/ruin/unpowered/icemoon/downed_transport/the_descent)
 "Ni" = (
@@ -5472,6 +5477,7 @@
 	},
 /obj/effect/decal/cleanable/glass/strange,
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/asteroid/ice_demon,
 /turf/open/floor/pod/dark,
 /area/ruin/unpowered/icemoon/downed_transport/the_descent)
 "RO" = (
@@ -5484,7 +5490,6 @@
 	pixel_x = -15
 	},
 /obj/effect/decal/cleanable/glass/strange,
-/mob/living/simple_animal/hostile/asteroid/ice_demon,
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "RR" = (
@@ -6128,6 +6133,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
+"Xm" = (
+/obj/structure/catwalk/over,
+/obj/effect/decal/cleanable/glass/strange,
+/mob/living/simple_animal/hostile/asteroid/ice_demon,
+/turf/open/floor/plating,
+/area/ruin/unpowered/icemoon/downed_transport/mining_power_station)
 "Xn" = (
 /obj/effect/decal/cleanable/blood/drip{
 	pixel_x = 12;
@@ -8024,7 +8035,7 @@ ej
 qS
 Dz
 Dz
-ej
+Bw
 HX
 yu
 OD
@@ -13676,7 +13687,7 @@ Om
 Hd
 kY
 dp
-dp
+Xm
 ua
 ot
 jP
