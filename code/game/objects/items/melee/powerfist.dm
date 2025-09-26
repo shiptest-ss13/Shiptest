@@ -15,43 +15,73 @@
 	hitsound = 'sound/weapons/resonator_blast.ogg'
 	pickup_sound = 'sound/weapons/melee/general_pickup.ogg'
 	wound_bonus = 10
+	armour_penetration = -10
 	bare_wound_bonus = 20
 	attack_cooldown = HEAVY_WEAPON_CD
-	var/power_level = 1
+	var/power_level = 0
 	var/overcharge = FALSE
 	var/charge_per_attack = 1000
 	var/cell_override = /obj/item/stock_parts/cell/high
 
 /obj/item/melee/powerfist/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/cell, cell_override, CALLBACK(src, PROC_REF(switched_off)))
+	AddComponent(/datum/component/cell, cell_override)
+
+/obj/item/melee/powerfist/examine()
+	. = ..()
+	. += span_notice("[power_level] of 3 power bars are filled in")
+	if(overcharge)
+		. += span_warning("Sparks are coming off it!")
 
 /obj/item/melee/powerfist/attack_self(mob/user)
-	power_level = (power_level+1)%4
-	//range of 25 (off) to 40 (lv3)
-	force = 25+power_level*5
+	set_power_level(user, (power_level+1)%4)
+
+
+/obj/item/melee/powerfist/proc/set_power_level(mob/user, new_power_level, forced=FALSE)
 	playsound(src, 'sound/machines/click.ogg', 60, TRUE)
-	to_chat(user, span_notice("You tweak \the [src]'s charge to [power_level]."))
+	power_level = new_power_level
+	switch(power_level)
+		if(0)
+			to_chat(user, span_warning("[forced ? "[src] disables itself" : "You disable [src]"]."))
+			hitsound = list('sound/weapons/melee/heavyblunt_hit1.ogg', 'sound/weapons/melee/heavyblunt_hit2.ogg', 'sound/weapons/melee/heavyblunt_hit3.ogg')
+			overcharge = FALSE
+		if(1,2)
+			to_chat(user, span_warning("[forced ? "[src] sets itself" : "You tune [src]"] to setting [power_level]."))
+			hitsound = 'sound/weapons/resonator_blast.ogg'
+		if(3)
+			to_chat(user, span_warning("[forced ? "[src] sets itself" : "You tune [src]" ] to setting [power_level]. Maximum force."))
 
-
-/obj/item/melee/powerfist/multitool_act(mob/living/user, mob/living/user)
+/obj/item/melee/powerfist/multitool_act(mob/living/user, obj/item/I)
 	overcharge =! overcharge
-	to_chat(user, span_warning("Overcharge toggled"))
+	to_chat(user, span_boldwarning("Overcharge [overcharge ? "engaged" : "disabled"]"))
 
+/obj/item/melee/powerfist/CtrlClick(mob/user)
+	. = ..()
+	if(HAS_TRAIT_FROM(src, TRAIT_NODROP, "powerfist"))
+		REMOVE_TRAIT(src, TRAIT_NODROP, "powerfist")
+	else
+		ADD_TRAIT(src, TRAIT_NODROP, "powerfist")
+	if(ismob(loc))
+		to_chat(loc, span_notice("[src] is now [HAS_TRAIT_FROM(src, TRAIT_NODROP, "powerfist") ? "locked" : "unlocked"]."))
 
 /obj/item/melee/powerfist/attack(mob/living/target, mob/living/user)
 	. = ..()
+	if(!power_level)
+		return
 	var/power_use_amount = charge_per_attack * power_level
 	if(overcharge)
 		power_use_amount += 6000
-	if(!item_use_power(power_use_amount) & COMPONENT_POWER_SUCCESS)
+	if((item_use_power(power_use_amount) & COMPONENT_POWER_SUCCESS))
 		if(overcharge)
 			target.apply_damage((power_level*10), BRUTE, wound_bonus = 20)
-			user.apply_damage(power_level*4, BRUTE,  wound_bonus = 40)
+			user.apply_damage(5+power_level*5, BRUTE, def_zone = check_zone(user.get_active_hand()), wound_bonus = 40)
 			do_sparks(5, TRUE, src)
 		else
 			target.apply_damage((power_level * 5), BRUTE, wound_bonus = 20)
 		var/atom/throw_target = get_edge_target_turf(target, get_dir(src, get_step_away(target, src)))
-		target.throw_at(throw_target, 1 * power_level, 0.5 + (power_level / 2), gentle = !overcharge)
+		target.throw_at(throw_target, 1 * power_level, 2, gentle = !overcharge)
+	else
+		set_power_level(user, 0, TRUE)
+
 
 	return
