@@ -553,6 +553,9 @@
 
 	manufacturer = MANUFACTURER_IMPORT
 
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
+
 	semi_auto = FALSE
 	tac_reloads = TRUE
 	weapon_weight = WEAPON_MEDIUM
