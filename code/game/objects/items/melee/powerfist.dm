@@ -55,8 +55,11 @@
 	overcharge =! overcharge
 	to_chat(user, span_boldwarning("Overcharge [overcharge ? "engaged" : "disabled"]"))
 
+
+
 /obj/item/melee/powerfist/CtrlClick(mob/user)
 	. = ..()
+	playsound(src, 'sound/machines/switch3.ogg', 60, TRUE)
 	if(HAS_TRAIT_FROM(src, TRAIT_NODROP, "powerfist"))
 		REMOVE_TRAIT(src, TRAIT_NODROP, "powerfist")
 	else
