@@ -1,7 +1,7 @@
 
 /obj/item/plasmacutter
 	name = "plasma cutter"
-	desc = "A high powered engineering tool used for "
+	desc = "A high powered engineering tool used for everything from hull slicing to industrial revolts. This particular model has an adjustable lens capable of welding, cutting, and firing energetic bursts."
 	icon = 'icons/obj/guns/energy.dmi'
 	icon_state = "plasmacutter"
 	item_state = "plasmacutter"
