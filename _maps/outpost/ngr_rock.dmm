@@ -3545,12 +3545,6 @@
 /obj/structure/window/plasma/reinforced/plastitanium/indestructible,
 /turf/open/floor/plating,
 /area/outpost/security/checkpoint)
-"or" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/closed/indestructible/plastitanium/nodiagnonal,
-/area/outpost/crew/canteen)
 "ov" = (
 /obj/structure/railing{
 	dir = 1
@@ -6591,6 +6585,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
@@ -10737,6 +10734,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/hallway/central)
+"QV" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/closed/indestructible/plastitanium/nodiagnonal,
+/area/outpost/crew/canteen)
 "QX" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on,
 /turf/open/floor/engine/air,
@@ -19516,7 +19519,7 @@ eW
 Tk
 Tk
 Tk
-or
+QV
 nz
 np
 xG
