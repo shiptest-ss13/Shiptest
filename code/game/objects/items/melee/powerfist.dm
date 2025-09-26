@@ -25,17 +25,21 @@
 
 /obj/item/melee/powerfist/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/cell, cell_override)
+	AddComponent(/datum/component/cell, cell_override, _has_cell_overlays=FALSE)
+	update_appearance()
 
 /obj/item/melee/powerfist/examine()
 	. = ..()
-	. += span_notice("[power_level] of 3 power bars are filled in")
+	. += span_notice("It is currently set to power level [power_level]!")
 	if(overcharge)
 		. += span_warning("Sparks are coming off it!")
 
 /obj/item/melee/powerfist/attack_self(mob/user)
 	set_power_level(user, (power_level+1)%4)
 
+/obj/item/melee/powerfist/AltClick(mob/user)
+	. = ..()
+	update_overlays()
 
 /obj/item/melee/powerfist/proc/set_power_level(mob/user, new_power_level, forced=FALSE)
 	playsound(src, 'sound/machines/click.ogg', 60, TRUE)
@@ -65,6 +69,19 @@
 	if(ismob(loc))
 		to_chat(loc, span_notice("[src] is now [HAS_TRAIT_FROM(src, TRAIT_NODROP, "powerfist") ? "locked" : "unlocked"]."))
 
+/obj/item/melee/powerfist/update_overlays()
+	. = ..()
+	var/datum/component/cell/our_cell = GetComponent(/datum/component/cell)
+	var/charge = our_cell.inserted_cell.percent()
+	if(!our_cell.inserted_cell)
+		return
+	if(charge > 66)
+		. += "powerfist-3"
+	else if(charge > 20)
+		. += "powerfist-2"
+	else
+		. += "powerfist-1"
+
 /obj/item/melee/powerfist/attack(mob/living/target, mob/living/user)
 	. = ..()
 	if(!power_level)
@@ -83,6 +100,5 @@
 		target.throw_at(throw_target, 1 * power_level, 2, gentle = !overcharge)
 	else
 		set_power_level(user, 0, TRUE)
-
 
 	return
