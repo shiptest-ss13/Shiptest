@@ -48,7 +48,6 @@
 	icon_state = "l";
 	pixel_y = 26;
 	pixel_x = 6;
-	color = "#FF3333";
 	paint_colour = "#FF3333"
 	},
 /turf/open/floor/plating/asteroid/snow/lit,
@@ -236,7 +235,7 @@
 	pixel_x = -6
 	},
 /obj/effect/decal/cleanable/blood{
-	pixel_y = -1;
+	pixel_y = -1
 	},
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/powered/icemoon/downed_transport/leaning_shack)
@@ -272,7 +271,7 @@
 	dir = 2;
 	pixel_y = -32
 	},
-/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4{
 	dir = 4
 	},
 /turf/open/floor/concrete/icemoon{
@@ -340,11 +339,11 @@
 /turf/open/floor/carpet/blue,
 /area/ruin/unpowered/icemoon/downed_transport/barracks)
 "dm" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/visible{
-	dir = 6
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
 	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2{
+	dir = 6
 	},
 /turf/open/floor/concrete/icemoon{
 	icon_state = "conc_slab_1"
@@ -684,12 +683,7 @@
 	icon_state = "e";
 	pixel_x = -3;
 	pixel_y = 25;
-	color = "#FF3333";
 	paint_colour = "#FF3333"
-	},
-/obj/item/toy/crayon/spraycan{
-	paint_colour = "#FF3333";
-	color = "#FF3333"
 	},
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
@@ -956,7 +950,7 @@
 	},
 /area/ruin/unpowered/icemoon/downed_transport/security_office)
 "hz" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber{
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
 	dir = 1
 	},
 /turf/open/floor/concrete/icemoon{
@@ -1172,7 +1166,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/concrete{
@@ -1460,7 +1453,7 @@
 /area/overmap_encounter/planetoid/ice/explored)
 "lg" = (
 /obj/effect/turf_decal/box,
-/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4{
 	dir = 4
 	},
 /turf/open/floor/concrete/icemoon{
@@ -1610,7 +1603,7 @@
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "me" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2{
 	dir = 10
 	},
 /turf/open/floor/concrete/icemoon{
@@ -2082,11 +2075,11 @@
 	},
 /obj/effect/decal/cleanable/blood/drip{
 	pixel_x = 1;
-	pixel_y = -6;
+	pixel_y = -6
 	},
 /obj/effect/decal/cleanable/blood/drip{
 	pixel_x = 21;
-	pixel_y = -1;
+	pixel_y = -1
 	},
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/powered/icemoon/downed_transport/leaning_shack)
@@ -2174,8 +2167,7 @@
 	pixel_x = 30;
 	desc = "It's weird and goosssss"
 	},
-/obj/effect/decal/cleanable/blood/gibs{
-	},
+/obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/powered/icemoon/downed_transport/leaning_shack)
 "qb" = (
@@ -2269,7 +2261,6 @@
 	icon_state = "e";
 	pixel_x = -6;
 	pixel_y = 25;
-	color = "#FF3333";
 	paint_colour = "#FF3333"
 	},
 /turf/open/floor/plating/asteroid/snow/lit,
@@ -2399,14 +2390,12 @@
 	icon_state = "a";
 	pixel_y = 26;
 	pixel_x = -15;
-	color = "#FF3333";
 	paint_colour = "#FF3333"
 	},
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "v";
 	pixel_y = 25;
 	pixel_x = 4;
-	color = "#FF3333";
 	paint_colour = "#FF3333"
 	},
 /turf/open/floor/plating/asteroid/snow/lit,
@@ -2900,11 +2889,11 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
+/obj/machinery/power/smes/shuttle,
 /obj/machinery/door/poddoor/preopen{
 	dir = 4;
-	id = s
+	id = "barrow_port_nacelle"
 	},
-/obj/machinery/power/smes/shuttle,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "wE" = (
@@ -3084,6 +3073,10 @@
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
+"yc" = (
+/obj/item/toy/crayon/spraycan,
+/turf/open/floor/plating/asteroid/snow/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "ym" = (
 /obj/structure/flora/rock/pile/icy{
 	pixel_y = -1;
@@ -3337,9 +3330,6 @@
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "zN" = (
 /obj/machinery/atmospherics/components/binary/pump/on/layer2,
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 1
-	},
 /obj/structure/closet/wall/orange/directional/east{
 	name = "tool cabinet"
 	},
@@ -3351,6 +3341,7 @@
 	pixel_x = 6;
 	pixel_y = -3
 	},
+/obj/machinery/atmospherics/components/binary/pump/on/layer4,
 /turf/open/floor/concrete/icemoon{
 	icon_state = "conc_slab_3"
 	},
@@ -5017,7 +5008,7 @@
 	},
 /obj/effect/decal/cleanable/blood/drip{
 	pixel_x = 11;
-	pixel_y = 11;
+	pixel_y = 11
 	},
 /obj/item/clothing/neck/cloak/gezena{
 	pixel_y = 3;
@@ -5070,10 +5061,10 @@
 /turf/closed/wall/rust,
 /area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room)
 "NT" = (
-/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+/obj/machinery/portable_atmospherics/canister/air,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
 	dir = 1
 	},
-/obj/machinery/portable_atmospherics/canister/air,
 /turf/open/floor/concrete/icemoon{
 	icon_state = "conc_slab_1"
 	},
@@ -5497,7 +5488,7 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "RG" = (
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2,
-/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4{
 	dir = 9
 	},
 /turf/open/floor/concrete/icemoon{
@@ -5982,7 +5973,7 @@
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Vm" = (
-/obj/machinery/atmospherics/components/trinary/mixer{
+/obj/machinery/atmospherics/components/trinary/mixer/layer2{
 	dir = 4
 	},
 /turf/open/floor/concrete/icemoon{
@@ -13332,7 +13323,7 @@ UM
 ch
 YD
 fL
-yu
+yc
 yu
 Nv
 CT
