@@ -37,7 +37,7 @@
 	id = "plasmacutter"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 1500, /datum/material/glass = 500, /datum/material/plasma = 400)
-	build_path = /obj/item/gun/energy/plasmacutter
+	build_path = /obj/item/plasmacutter
 	category = list("Mining Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
@@ -47,7 +47,7 @@
 	id = "plasmacutter_adv"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 3000, /datum/material/glass = 1000, /datum/material/plasma = 2000, /datum/material/gold = 500)
-	build_path = /obj/item/gun/energy/plasmacutter/adv
+	build_path = /obj/item/plasmacutter/adv
 	category = list("Mining Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
