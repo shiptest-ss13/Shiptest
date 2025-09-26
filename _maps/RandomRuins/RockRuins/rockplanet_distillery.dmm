@@ -766,6 +766,13 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ruin/rockplanet/distillery/shuttle)
+"js" = (
+/obj/effect/turf_decal/industrial/outline/red,
+/obj/structure/guncloset,
+/obj/item/gun/ballistic/rifle/illestren/factory,
+/obj/item/gun/ballistic/automatic/pistol/challenger,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/rockplanet/distillery/office)
 "jE" = (
 /obj/structure/catwalk/over,
 /turf/closed/mineral/random/rockplanet,
@@ -2175,13 +2182,6 @@
 "yS" = (
 /turf/closed/wall/r_wall/rust,
 /area/ruin/rockplanet/distillery/crew)
-"yW" = (
-/obj/effect/turf_decal/industrial/outline/red,
-/obj/structure/guncloset,
-/obj/item/gun/ballistic/rifle/illestren/factory,
-/obj/item/gun/ballistic/automatic/pistol/challenger,
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ruin/rockplanet/distillery/office)
 "ze" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rockplanet/lit{
@@ -3573,22 +3573,6 @@
 /obj/structure/chair/sofa/brown/old/left/directional/north,
 /turf/open/floor/plasteel/patterned/brushed/rockplanet,
 /area/ruin/rockplanet/distillery/saloon)
-"OV" = (
-/obj/structure/closet/secure_closet{
-	icon_state = "armory";
-	name = "armor locker"
-	},
-/obj/effect/turf_decal/industrial/outline/red,
-/obj/item/clothing/suit/armor/vest,
-/obj/item/clothing/suit/armor/vest,
-/obj/item/clothing/suit/armor/vest,
-/obj/item/clothing/head/helmet/swat/nanotrasen,
-/obj/item/clothing/head/helmet/swat/nanotrasen,
-/obj/item/clothing/suit/armor/frontier,
-/obj/item/clothing/head/beret/sec/frontier,
-/obj/item/clothing/gloves/combat,
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ruin/rockplanet/distillery/office)
 "Pl" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/line{
 	dir = 8
@@ -4383,6 +4367,22 @@
 	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals
 	},
 /turf/open/floor/wood,
+/area/ruin/rockplanet/distillery/office)
+"Xr" = (
+/obj/structure/closet/secure_closet{
+	icon_state = "armory";
+	name = "armor locker"
+	},
+/obj/effect/turf_decal/industrial/outline/red,
+/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/head/helmet/bulletproof/x11/nanotrasen,
+/obj/item/clothing/head/helmet/bulletproof/x11/nanotrasen,
+/obj/item/clothing/suit/armor/frontier,
+/obj/item/clothing/head/beret/sec/frontier,
+/obj/item/clothing/gloves/combat,
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/distillery/office)
 "XD" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -5810,7 +5810,7 @@ hY
 SF
 Ja
 ql
-OV
+Xr
 RR
 aS
 Go
@@ -5857,7 +5857,7 @@ hY
 KA
 KA
 cp
-yW
+js
 RR
 kQ
 eF
