@@ -1,21 +1,21 @@
-/client/proc/set_next_overmap()
+/client/proc/set_next_outpost()
 	set category = "Server"
-	set name = "Set Next Overmap"
+	set name = "Set Next Outpost"
 
-	var/list/choices = subtypesof(/datum/overmap_star_system/safezone)
-	var/chosen = input("Select the overmap type to use next. Some overmaps may not be intended for regular play!", "Select Overmap") as null|anything in choices
-	if(!chosen || !ispath(chosen, /datum/overmap_star_system/safezone))
+	var/list/choices = subtypesof(/datum/overmap/outpost)
+	var/chosen = input("Select the outpost type to use next. Some outposts may not be intended for regular play!", "Select Outpost") as null|anything in choices
+	if(!chosen || !ispath(chosen, /datum/overmap/outpost))
 		return
 
-	message_admins("[key_name_admin(usr)] is changing the overmap to [chosen]")
-	log_admin("[key_name(usr)] is changing the overmap to [chosen]")
+	message_admins("[key_name_admin(usr)] is changing the outpost to [chosen]")
+	log_admin("[key_name(usr)] is changing the outpost to [chosen]")
 
 	if(fexists(OUTPOST_OVERRIDE_FILEPATH))
 		fdel(OUTPOST_OVERRIDE_FILEPATH)
 	var/result = text2file("[chosen]", OUTPOST_OVERRIDE_FILEPATH)
 
 	if(result)
-		message_admins("[key_name_admin(usr)] has changed the overmap to [chosen]")
+		message_admins("[key_name_admin(usr)] has changed the outpost to [chosen]")
 
 /client/proc/spawn_outpost()
 	set name = "Spawn Outpost"
