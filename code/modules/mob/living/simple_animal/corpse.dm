@@ -29,7 +29,7 @@
 /datum/outfit/ramzi/bulletproof
 	name = "Ramzi Clique Trooper"
 	suit = /obj/item/clothing/suit/armor/ramzi/bulletproof
-	head = /obj/item/clothing/head/helmet/ramzi/bulletproof
+	head = /obj/item/clothing/head/helmet/bulletproof/x11/ramzi
 	belt = /obj/item/storage/belt/security/webbing/ramzi/alt
 	mask = /obj/item/clothing/mask/breath/facemask
 	neck = /obj/item/clothing/neck/shemagh/ramzi
