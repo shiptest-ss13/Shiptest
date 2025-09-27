@@ -4,7 +4,7 @@
 
 	burst_size = 2
 	actions_types = list()
-	fire_delay = 0.13 SECONDS
+	fire_delay = 0.1 SECONDS
 
 	spread = 6
 	spread_unwielded = 10
