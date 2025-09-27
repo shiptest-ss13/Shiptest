@@ -254,7 +254,10 @@
 	dir = 8
 	},
 /obj/structure/table,
-/obj/machinery/recharger,
+/obj/machinery/recharger{
+	pixel_x = -7;
+	pixel_y = 2
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
 "cI" = (
@@ -1149,7 +1152,9 @@
 /area/ruin/beach/gunsmith/dorms/officer)
 "ml" = (
 /obj/structure/hazard_shutoff/electrical_shutoff{
-	id = "engineeringmoat"
+	id = "engineeringmoat";
+	pixel_x = 0;
+	pixel_y = 10
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1887,14 +1892,6 @@
 	},
 /obj/item/storage/belt/security/webbing/ramzi{
 	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/item/storage/belt/security/webbing/ramzi{
-	pixel_x = 5;
-	pixel_y = 3
-	},
-/obj/item/storage/belt/security/webbing/ramzi{
-	pixel_x = 5;
 	pixel_y = 1
 	},
 /obj/item/storage/belt/security/webbing/ramzi/alt{
@@ -1904,10 +1901,6 @@
 /obj/item/storage/belt/security/webbing/ramzi/alt{
 	pixel_x = 6;
 	pixel_y = -9
-	},
-/obj/item/storage/belt/security/webbing/ramzi/alt{
-	pixel_x = 6;
-	pixel_y = -11
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -2237,30 +2230,6 @@
 	},
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate/secure/weapon,
-/obj/item/clothing/suit/space/syndicate/ramzi{
-	pixel_x = -9;
-	pixel_y = -2
-	},
-/obj/item/clothing/suit/space/syndicate/ramzi{
-	pixel_x = -9;
-	pixel_y = -4
-	},
-/obj/item/clothing/suit/space/syndicate/ramzi{
-	pixel_x = -9;
-	pixel_y = -6
-	},
-/obj/item/clothing/head/helmet/space/syndicate/ramzi{
-	pixel_x = -11;
-	pixel_y = 6
-	},
-/obj/item/clothing/head/helmet/space/syndicate/ramzi{
-	pixel_x = -11;
-	pixel_y = 4
-	},
-/obj/item/clothing/head/helmet/space/syndicate/ramzi{
-	pixel_x = -11;
-	pixel_y = 2
-	},
 /obj/item/clothing/suit/space/syndicate/ramzi/surplus{
 	pixel_x = 5;
 	pixel_y = 0
@@ -2273,10 +2242,6 @@
 	pixel_x = 5;
 	pixel_y = -4
 	},
-/obj/item/clothing/suit/space/syndicate/ramzi/surplus{
-	pixel_x = 5;
-	pixel_y = -6
-	},
 /obj/item/clothing/head/helmet/space/syndicate/ramzi/surplus{
 	pixel_x = 4;
 	pixel_y = 6
@@ -2288,10 +2253,6 @@
 /obj/item/clothing/head/helmet/space/syndicate/ramzi/surplus{
 	pixel_x = 4;
 	pixel_y = 2
-	},
-/obj/item/clothing/head/helmet/space/syndicate/ramzi/surplus{
-	pixel_x = 4;
-	pixel_y = 0
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/beach/gunsmith/workshop)
@@ -2399,7 +2360,9 @@
 "yL" = (
 /obj/structure/salvageable/machine,
 /obj/structure/hazard_shutoff/electrical_shutoff{
-	id = "bunkermoat"
+	id = "bunkermoat";
+	pixel_x = 0;
+	pixel_y = 9
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
@@ -2692,7 +2655,10 @@
 /area/ruin/beach/gunsmith)
 "BE" = (
 /obj/structure/table/reinforced,
-/obj/machinery/microwave,
+/obj/machinery/microwave{
+	pixel_x = 0;
+	pixel_y = 5
+	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 9;
 	color = "#332521"
@@ -2833,6 +2799,22 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/carpet/green,
 /area/ruin/beach/gunsmith/dorms)
+"CB" = (
+/obj/structure/closet/crate/secure/weapon,
+/obj/item/clothing/suit/space/hardsuit/syndi/ramzi{
+	pixel_x = -8;
+	pixel_y = 6
+	},
+/obj/item/clothing/suit/space/hardsuit/syndi/ramzi{
+	pixel_x = -8;
+	pixel_y = 4
+	},
+/obj/item/clothing/suit/space/hardsuit/syndi/ramzi{
+	pixel_x = -8;
+	pixel_y = 2
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/beach/gunsmith/workshop)
 "CN" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9;
@@ -3192,40 +3174,28 @@
 /area/ruin/beach/gunsmith/dorms/officer)
 "Hd" = (
 /obj/structure/closet/crate/secure/weapon,
-/obj/item/clothing/suit/space/hardsuit/syndi/ramzi{
-	pixel_x = -8;
-	pixel_y = 2
-	},
-/obj/item/clothing/suit/space/hardsuit/syndi/ramzi{
-	pixel_x = -8;
-	pixel_y = 4
-	},
-/obj/item/clothing/suit/space/hardsuit/syndi/ramzi{
-	pixel_x = -8;
-	pixel_y = 6
-	},
 /obj/item/clothing/suit/armor/ramzi{
-	pixel_x = 0;
+	pixel_x = -7;
 	pixel_y = -3
 	},
 /obj/item/clothing/suit/armor/ramzi{
-	pixel_x = 0;
+	pixel_x = -7;
 	pixel_y = -6
 	},
 /obj/item/clothing/suit/armor/ramzi/bulletproof{
-	pixel_x = 0;
+	pixel_x = -7;
 	pixel_y = 1
 	},
-/obj/item/clothing/head/helmet/ramzi{
-	pixel_x = 8;
-	pixel_y = -3
+/obj/item/clothing/head/helmet/bulletproof/x11/ramzi{
+	pixel_x = 3;
+	pixel_y = -6
 	},
-/obj/item/clothing/head/helmet/ramzi{
-	pixel_x = 8;
-	pixel_y = 1
+/obj/item/clothing/head/helmet/m10/ramzi{
+	pixel_x = 3;
+	pixel_y = 0
 	},
-/obj/item/clothing/head/helmet/ramzi/bulletproof{
-	pixel_x = 8;
+/obj/item/clothing/head/helmet/m10/ramzi{
+	pixel_x = 3;
 	pixel_y = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -5590,7 +5560,7 @@ Cm
 Cm
 xW
 kf
-nB
+CB
 vi
 hA
 qV
