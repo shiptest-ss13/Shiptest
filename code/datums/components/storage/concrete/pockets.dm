@@ -82,6 +82,7 @@
 	set_holdable(list(
 		/obj/item/clothing/glasses/cold,
 		/obj/item/clothing/glasses/heat,
+		/obj/item/clothing/glasses/safety,
 		/obj/item/clothing/glasses/welding,
 		/obj/item/clothing/glasses/meson,
 		/obj/item/clothing/glasses/thermal,
