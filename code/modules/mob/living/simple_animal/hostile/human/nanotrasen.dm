@@ -31,21 +31,21 @@
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/smg
 	name = "\improper Vigilitas Watch"
-	desc = "A member of Vigilitas Interstellar, their eyes scan the horizon for motion, tracking flutters of the world with a WT-550."
+	desc = "A member of Vigilitas Interstellar, their eyes scan the horizon for motion, tracking flutters of the world with a Resolution PDW."
 	icon_state = "nanotrasenrangedsmg"
 	icon_living = "nanotrasenrangedsmg"
 	rapid = 3
 	casingtype = /obj/item/ammo_casing/c46x30mm
 	r_hand = /obj/item/gun/ballistic/automatic/smg/resolution
-	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
+	projectilesound = 'sound/weapons/gun/smg/resolution.ogg'
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/shotgun
 	name = "\improper Vigilitas Pointman"
-	desc = "A member of Vigilitas Interstellar, posture low to the ground. Their palms tightly grip onto the body of an HP Hellfire, ready to slam-fire."
+	desc = "A member of Vigilitas Interstellar, posture low to the ground. Their palms tightly grip onto the body of a Negotiator shotgun, ready to fire."
 	icon_state = "nanotrasenrangedsmg"
 	icon_living = "nanotrasenrangedsmg"
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
-	r_hand = /obj/item/gun/ballistic/shotgun/hellfire
+	r_hand = /obj/item/gun/ballistic/shotgun/automatic/negotiator
 	rapid = 1
 	projectilesound = 'sound/weapons/gun/shotgun/shot.ogg'
 
@@ -58,7 +58,7 @@
 	rapid_fire_delay = 7
 	casingtype = null
 	projectiletype = /obj/projectile/beam/laser/sharplite
-	r_hand = /obj/item/gun/energy/laser
+	r_hand = /obj/item/gun/energy/sharplite/l201/l204
 	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/laser/space
@@ -91,7 +91,7 @@
 	icon_state = "nanotrasenrangedsmg"
 	icon_living = "nanotrasenrangedsmg"
 	rapid = 5
-	rapid_fire_delay = 3
+	rapid_fire_delay = 2
 	casingtype = null
 	projectiletype = /obj/projectile/beam/weak/sharplite
 	r_hand = /obj/item/gun/energy/sharplite/l305
@@ -196,5 +196,5 @@
 	minbodytemp = 0
 	casingtype = /obj/item/ammo_casing/energy/laser/shotgun/sharplite
 	projectiletype = null
-	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
+	projectilesound = 'sound/weapons/gun/laser/nt-fire_light.ogg'
 	r_hand = /obj/item/gun/energy/sharplite/x46
