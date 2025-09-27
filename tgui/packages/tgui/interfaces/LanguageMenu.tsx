@@ -70,6 +70,7 @@ const LangUnderstandIcon = (props: LanguageProps) => {
             borderBottom: '2px dotted rgba(255, 255, 255, 0.8)',
           }}
         >
+          <Icon name="brain" color="average" mr={1} />
           {language.partial_understanding}%
         </Box>
       </Tooltip>

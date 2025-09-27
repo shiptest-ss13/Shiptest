@@ -128,5 +128,16 @@
 #define PROSTHETIC_AMPUTATED "amputated"
 #define PROSTHETIC_ROBOTIC "prosthetic"
 
+/// You cannot speak or understand this language whatsoever.
+#define LANGUAGE_UNKNOWN "Unknown (0)"
+/// You cannot speak this language, but can recognize some of the words.
+#define LANGUAGE_RECOGNIZED "Recognized (1)"
+/// You are familiar with this language enough to sort of speak it, but cannot understand it very well.
+#define LANGUAGE_FAMILIAR "Familiar (2)"
+/// You are fluent in this language, and can both understand and speak it perfectly.
+#define LANGUAGE_FLUENT "Fluent (3)"
+/// Maximum number of additional languages that can be selected.
+#define MAX_LANGUAGE_POINTS 4
+
 #define NOT_SYNTHETIC FALSE
 #define IS_SYNTHETIC TRUE
