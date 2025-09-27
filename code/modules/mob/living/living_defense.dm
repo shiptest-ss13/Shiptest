@@ -51,6 +51,8 @@
 	return BULLET_ACT_HIT
 
 /mob/living/bullet_act(obj/projectile/P, def_zone, piercing_hit = FALSE)
+	if(check_concealment(P))
+		return BULLET_ACT_FORCE_PIERCE
 	var/armor = run_armor_check(def_zone, P.flag, P.armour_penetration, silent = TRUE)
 	var/on_hit_state = P.on_hit(src, armor, piercing_hit)
 	if(!P.nodamage && on_hit_state != BULLET_ACT_BLOCK && !QDELETED(src)) //QDELETED literally just for the instagib rifle. Yeah.
@@ -61,6 +63,20 @@
 		if(P.dismemberment)
 			check_projectile_dismemberment(P, def_zone)
 	return on_hit_state ? BULLET_ACT_HIT : BULLET_ACT_BLOCK
+
+/mob/living/proc/check_concealment(obj/projectile/P)
+	var/datum/status_effect/concealed/concealment = has_status_effect(/datum/status_effect/concealed)
+	if(P.ignore_concealment)
+		return FALSE
+	if(concealment)
+		var/dist = get_dist(P, P.starting)
+		if(dist <= 1)
+			return FALSE // point blank, we get hit
+		else
+			var/dist_modifier = max((4 - dist), 1)
+			if(prob((concealment.concealment_power/dist_modifier)))
+				return TRUE // we are concealed and the bullet misses
+	return FALSE
 
 /mob/living/proc/check_projectile_dismemberment(obj/projectile/P, def_zone)
 	return 0
