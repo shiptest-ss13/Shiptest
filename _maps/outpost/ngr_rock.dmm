@@ -3441,7 +3441,6 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/security/checkpoint)
 "ob" = (
-/obj/machinery/light/floor/hangar,
 /obj/machinery/airalarm/directional/west,
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -8140,7 +8139,6 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/operations)
 "FP" = (
-/obj/machinery/light/floor/hangar,
 /obj/machinery/power/apc/away{
 	dir = 8
 	},
@@ -10247,6 +10245,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 4
 	},
+/obj/machinery/light/floor/hangar,
 /turf/open/floor/plasteel/tech,
 /area/outpost/operations)
 "Ov" = (
@@ -10734,12 +10733,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/hallway/central)
-"QV" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/closed/indestructible/plastitanium/nodiagnonal,
-/area/outpost/crew/canteen)
 "QX" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on,
 /turf/open/floor/engine/air,
@@ -11833,6 +11826,12 @@
 	color = "#555555";
 	dir = 1
 	},
+/area/outpost/crew/canteen)
+"Wm" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/closed/indestructible/plastitanium/nodiagnonal,
 /area/outpost/crew/canteen)
 "Wn" = (
 /obj/structure/chair/plastic,
@@ -19519,7 +19518,7 @@ eW
 Tk
 Tk
 Tk
-QV
+Wm
 nz
 np
 xG
