@@ -21,7 +21,7 @@
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	ears = /obj/item/radio/headset/alt
 	mask = /obj/item/clothing/mask/gas/ramzi
-	head = /obj/item/clothing/head/helmet/ramzi
+	head = /obj/item/clothing/head/helmet/m10/ramzi
 	back = /obj/item/storage/backpack
 	neck = /obj/item/clothing/neck/dogtag/ramzi
 	id = /obj/item/card/id/syndicate
@@ -212,7 +212,7 @@
 /datum/outfit/vigilitas/trooper
 	name = "VI Trooper"
 	gloves = /obj/item/clothing/gloves/combat
-	head = /obj/item/clothing/head/helmet/sec
+	head = /obj/item/clothing/head/helmet/m10
 	back = /obj/item/storage/backpack/security
 
 /obj/effect/mob_spawn/human/corpse/vigilitas_trooper
@@ -329,3 +329,9 @@
 	name = "PGF Captain"
 	id_job = "Captain"
 	outfit = /datum/outfit/job/gezena/captain
+
+/* clip ig */
+
+/obj/effect/mob_spawn/human/corpse/clip/bombsuitguy
+	name = "CLIP Bombsuit Spawner"
+	outfit = /datum/outfit/job/clip/minutemen/grunt/dressed/bombsuit
