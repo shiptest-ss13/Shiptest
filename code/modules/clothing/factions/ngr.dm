@@ -61,6 +61,12 @@
 	icon_state = "ngr_foreman"
 	item_state = "blackcloth"
 
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_COAT
+	equip_delay_other = EQUIP_DELAY_COAT * 1.5
+	strip_delay = EQUIP_DELAY_COAT * 1.5
+
 /obj/item/clothing/suit/ngr/smock
 	name = "blood red smock"
 	desc = "A blood-red surgical smock typically worn by field medics of the New Gorlex Republic. It hides red blood really well!"
