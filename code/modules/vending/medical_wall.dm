@@ -11,6 +11,7 @@
 	default_price = 50
 	extra_price = 100
 	tiltable = FALSE
+	restock_hourly = TRUE
 	light_mask = "wallmed-light-mask"
 
 	products = list(
