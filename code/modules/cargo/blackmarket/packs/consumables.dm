@@ -326,7 +326,7 @@
 
 /datum/blackmarket_item/consumable/horse_pills
 	name = "Strider patches"
-	desc = "Fun lil story, yeah? We were screwin off in a backcounty race, watchin some people run it out. One of em popped some patches beforehand. Managed to easily outrun the rest. We managed to find em and get in with the supplier. Supposed to help ya move fast. Keep your muscles workin when they might burst."
+	desc = "Fun lil story, yeah? We were screwin off in a backcounty race, watchin some horse girls run it out. One of em popped some patches beforehand. Managed to easily outrun the rest. We managed to find em and get in with the supplier. Supposed to help ya move fast. Keep your muscles workin when they might burst."
 	item = /obj/item/storage/pill_bottle/strider
 	cost_min = 700
 	cost_max = 1500
