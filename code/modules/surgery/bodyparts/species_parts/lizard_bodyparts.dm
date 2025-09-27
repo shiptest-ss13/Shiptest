@@ -8,10 +8,10 @@
 
 /obj/item/bodypart/chest/lizard
 	icon = 'icons/mob/species/lizard/bodyparts.dmi'
-	icon_state = "sarathi_chest"
+	icon_state = "sarathi_chest_m"
 	uses_mutcolor = TRUE
 	limb_id = SPECIES_SARATHI
-	is_dimorphic = FALSE
+	is_dimorphic = TRUE
 
 /obj/item/bodypart/l_arm/lizard
 	icon = 'icons/mob/species/lizard/bodyparts.dmi'
