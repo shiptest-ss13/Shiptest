@@ -2594,7 +2594,7 @@
 	a_intent = "help";
 	desc = "A small goliath pup. Its tendrils have not yet fully grown. Someone, somehow, has managed to fit a large dog collar around its neck.";
 	environment_smash = 0;
-	faction = list("neutral","playerSyndicate");
+	faction = list("neutral","New Gorlex Republic");
 	mob_size = 2;
 	move_resist = 1000;
 	name = "David";
@@ -3047,6 +3047,11 @@
 /area/ship/hallway/aft)
 "zB" = (
 /obj/machinery/door/airlock/external,
+/obj/docking_port/mobile{
+	dir = 2;
+	port_direction = 8;
+	preferred_direction = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "zC" = (
@@ -4050,7 +4055,9 @@
 /obj/docking_port/stationary{
 	dwidth = 15;
 	height = 30;
-	width = 30
+	width = 30;
+	disable_on_owner_ship_dock = 1;
+	name = "Derecho Beam Dock"
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -5687,7 +5694,8 @@
 	dir = 4;
 	dwidth = 4;
 	height = 30;
-	width = 7
+	width = 7;
+	name = "Derecho Forward Bow Dock"
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -5716,12 +5724,6 @@
 	picked_color = "Lime"
 	},
 /obj/structure/catwalk/over,
-/obj/docking_port/mobile{
-	dir = 4;
-	launch_status = 0;
-	port_direction = 2;
-	preferred_direction = 4
-	},
 /turf/open/floor/plating,
 /area/ship/external/dark)
 "Xx" = (
