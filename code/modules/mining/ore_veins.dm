@@ -42,7 +42,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
 		)
 	var/spawn_text = "emerges from"
-	var/faction = list("hostile","mining")
+	var/faction = list(FACTION_HOSTILE, FACTION_MINING)
 	var/spawn_sound = list('sound/effects/break_stone.ogg')
 	var/spawner_type = /datum/component/spawner
 

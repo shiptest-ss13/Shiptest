@@ -99,7 +99,7 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	unsuitable_atmos_damage = 0
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
-	faction = list("hostile","vines","plants")
+	faction = list(FACTION_HOSTILE,"vines","plants")
 	initial_language_holder = /datum/language_holder/venus
 	del_on_death = TRUE
 	/// A list of all the plant's vines

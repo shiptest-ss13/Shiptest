@@ -11,7 +11,7 @@
 // anything with these factions should be hostile to the average player.
 #define FACTION_ANTAG_SYNDICATE "Syndicate"
 #define FACTION_ANTAG_FRONTIERSMEN "Frontiersmen"
-#define FACTION_ANTAG_HERMITS "Hermit"
+#define FACTION_ANTAG_HERMITS "hermit"
 
 //Player Factions
 #define FACTION_PLAYER_SYNDICATE "playerSyndicate"
