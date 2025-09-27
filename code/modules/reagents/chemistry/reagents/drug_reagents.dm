@@ -674,8 +674,8 @@
 	description = "A stimulant cocktail devised for usage in long-haul environments. Temporarily rebinds muscles, and forces contractions to allow the user to force motion from an otherwise disabled limb."
 	reagent_state = LIQUID
 	color = "#5a360e"
-	overdose_threshold = 21
-	addiction_threshold = 16
+	overdose_threshold = 16
+	addiction_threshold = 15
 	metabolization_rate = 0.1
 	taste_description = "an apple coated in glue"
 
