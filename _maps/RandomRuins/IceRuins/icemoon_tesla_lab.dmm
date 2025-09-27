@@ -904,6 +904,7 @@
 	},
 /obj/effect/spawner/random/trash/mess,
 /obj/machinery/airalarm/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/icemoon/tesla_lab/armory)
 "dP" = (
@@ -4834,18 +4835,13 @@
 /obj/effect/turf_decal/trimline/transparent/blue/warning{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/transparent/blue/filled/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/transparent/blue/filled/corner{
+/obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/thinplating/dark/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating/dark/corner{
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/icemoon/tesla_lab/armory)
 "tU" = (
@@ -8679,20 +8675,18 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/dorms)
 "IG" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line,
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/structure/cabinet/oneshot{
-	dir = 4;
-	pixel_x = -24
-	},
+/obj/structure/rack,
+/obj/effect/turf_decal/trimline/transparent/blue/filled,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech/grid,
+/obj/item/storage/backpack/duffelbag/syndie/c4{
+	pixel_x = 0;
+	pixel_y = 7
+	},
+/obj/structure/sign/poster/clip/bard{
+	pixel_x = -32;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/ruin/icemoon/tesla_lab/armory)
 "IH" = (
 /obj/structure/flippedtable,

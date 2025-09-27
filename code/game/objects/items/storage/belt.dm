@@ -508,8 +508,8 @@
 
 /obj/item/storage/belt/military/mako/PopulateContents()
 	. = ..()
-	new /obj/item/ammo_casing/caseless/rocket/a70mm/hedp(src)
-	new /obj/item/ammo_casing/caseless/rocket/a70mm/hedp(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
 	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
 	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
 	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
