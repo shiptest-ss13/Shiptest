@@ -413,6 +413,7 @@
 	color = "#FAFAFA"
 	overdose_threshold = 20
 	addiction_threshold = 11
+	metabolization_rate = 0.2
 	taste_description = "a burst of energy"
 
 /datum/reagent/drug/finobranc/on_mob_metabolize(mob/living/L)
