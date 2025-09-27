@@ -1411,6 +1411,7 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 
 /mob/living
 	var/ssd_indicator = FALSE
+	var/ignore_SSD = FALSE
 	var/lastclienttime = 0
 
 /mob/living/proc/set_ssd_indicator(state)
@@ -1429,7 +1430,8 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 /mob/living/Logout()
 	. = ..()
 	lastclienttime = world.time
-	set_ssd_indicator(TRUE)
+	if(!ignore_SSD)
+		set_ssd_indicator(TRUE)
 
 /mob/living/vv_get_header()
 	. = ..()
