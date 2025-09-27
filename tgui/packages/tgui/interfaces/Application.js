@@ -1,11 +1,12 @@
+import { Button, Stack, TextArea } from 'tgui-core/components';
+
 import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
-import { Button, TextArea, Stack } from '../components';
 
-export const Application = (props, context) => {
-  const { act, data } = useBackend(context);
-  const [message, setMessage] = useLocalState(context, 'message', '');
-  const [showCkey, setShowCkey] = useLocalState(context, 'showCkey', false);
+export const Application = (props) => {
+  const { act, data } = useBackend();
+  const [message, setMessage] = useLocalState('message', '');
+  const [showCkey, setShowCkey] = useLocalState('showCkey', false);
   const { ship_name, player_name } = data;
 
   return (
@@ -13,7 +14,6 @@ export const Application = (props, context) => {
       title={ship_name + ' application as ' + player_name}
       width={500}
       height={600}
-      resizable
     >
       <Window.Content>
         <Stack fill vertical>

@@ -230,7 +230,7 @@
 		M << browse_rsc(picture.picture_image, "pda_photo.png")
 		M << browse("<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>PDA Photo</title></head>" \
 		+ "<body style='overflow:hidden;margin:0;text-align:center'>" \
-		+ "<img src='pda_photo.png' width='192' style='-ms-interpolation-mode:nearest-neighbor' />" \
+		+ "<img src='pda_photo.png' width='192' style='image-rendering:pixelated' />" \
 		+ "</body></html>", "window=pdaphoto;size=[picture.psize_x]x[picture.psize_y];can-close=true")
 		onclose(M, "pdaphoto")
 

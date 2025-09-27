@@ -1,19 +1,20 @@
-import { useBackend, useSharedState } from '../backend';
 import {
   Box,
   Button,
   Dimmer,
   Icon,
   LabeledList,
-  Stack,
   Section,
+  Stack,
   Tabs,
-} from '../components';
-import { capitalize } from 'common/string';
+} from 'tgui-core/components';
+import { capitalize } from 'tgui-core/string';
+
+import { useBackend, useSharedState } from '../backend';
 import { Window } from '../layouts';
 
-export const Limbgrower = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Limbgrower = (props) => {
+  const { act, data } = useBackend();
   const {
     reagents = [],
     total_reagents,
@@ -21,13 +22,9 @@ export const Limbgrower = (props, context) => {
     categories = [],
     busy,
   } = data;
-  const [tab, setTab] = useSharedState(
-    context,
-    'category',
-    categories[0]?.name
-  );
+  const [tab, setTab] = useSharedState('category', categories[0]?.name);
   const designList = categories.find(
-    (category) => category.name === tab
+    (category) => category.name === tab,
   )?.designs;
 
   return (
@@ -37,7 +34,6 @@ export const Limbgrower = (props, context) => {
       height={
         Math.max(460, 195 + categories.length * 23) + reagents.length * 25
       }
-      resizable
     >
       {!!busy && (
         <Dimmer fontSize="32px">

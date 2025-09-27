@@ -1,6 +1,3 @@
-import { classes } from 'common/react';
-import { createSearch } from 'common/string';
-import { useBackend, useLocalState } from '../backend';
 import {
   Box,
   Button,
@@ -13,17 +10,21 @@ import {
   Section,
   Table,
   Tabs,
-} from '../components';
-import { formatMoney } from '../format';
+} from 'tgui-core/components';
+import { formatMoney } from 'tgui-core/format';
+import { classes } from 'tgui-core/react';
+import { createSearch } from 'tgui-core/string';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
 const MAX_SEARCH_RESULTS = 25;
 
-export const Biogenerator = (props, context) => {
-  const { data } = useBackend(context);
+export const Biogenerator = (props) => {
+  const { data } = useBackend();
   const { beaker, processing } = data;
   return (
-    <Window width={550} height={380} resizable>
+    <Window width={550} height={380}>
       {!!processing && (
         <Dimmer fontSize="32px">
           <Icon name="cog" spin={1} />
@@ -38,14 +39,13 @@ export const Biogenerator = (props, context) => {
   );
 };
 
-export const BiogeneratorContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const BiogeneratorContent = (props) => {
+  const { act, data } = useBackend();
   const { biomass, can_process, categories = [] } = data;
-  const [searchText, setSearchText] = useLocalState(context, 'searchText', '');
+  const [searchText, setSearchText] = useLocalState('searchText', '');
   const [selectedCategory, setSelectedCategory] = useLocalState(
-    context,
     'category',
-    categories[0]?.name
+    categories[0]?.name,
   );
   const testSearch = createSearch(searchText, (item) => {
     return item.name;
@@ -119,17 +119,13 @@ export const BiogeneratorContent = (props, context) => {
   );
 };
 
-const ItemList = (props, context) => {
-  const { act } = useBackend(context);
-  const [hoveredItem, setHoveredItem] = useLocalState(
-    context,
-    'hoveredItem',
-    {}
-  );
+const ItemList = (props) => {
+  const { act } = useBackend();
+  const [hoveredItem, setHoveredItem] = useLocalState('hoveredItem', {});
   const hoveredCost = hoveredItem.cost || 0;
   // Append extra hover data to items
   const items = props.items.map((item) => {
-    const [amount, setAmount] = useLocalState(context, 'amount' + item.name, 1);
+    const [amount, setAmount] = useLocalState('amount' + item.name, 1);
     const notSameItem = hoveredItem.name !== item.name;
     const notEnoughHovered =
       props.biomass - hoveredCost * hoveredItem.amount < item.cost * amount;
@@ -159,7 +155,7 @@ const ItemList = (props, context) => {
           width="35px"
           minValue={1}
           maxValue={10}
-          onChange={(e, value) => item.setAmount(value)}
+          onChange={(value) => item.setAmount(value)}
         />
       </Table.Cell>
       <Table.Cell collapsing>
