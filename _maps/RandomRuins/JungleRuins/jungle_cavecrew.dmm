@@ -1389,6 +1389,8 @@
 /obj/item/storage/box/ammo/a4570,
 /obj/item/storage/box/ammo/a12g_buckshot,
 /obj/item/storage/box/ammo/a12g_buckshot,
+/obj/item/ammo_box/magazine/m12g_slammer,
+/obj/item/ammo_box/magazine/m12g_slammer,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew/security)
 "sj" = (
@@ -1603,13 +1605,14 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
-/obj/item/gun/ballistic/shotgun/automatic/m11{
-	pixel_y = 5
-	},
 /obj/item/gun/ballistic/revolver/ashhand{
 	pixel_y = -1
 	},
 /obj/item/gun/ballistic/rifle/illestren/sawn,
+/obj/item/gun/ballistic/shotgun/automatic/slammer{
+	pixel_x = 0;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew/security)
 "vg" = (

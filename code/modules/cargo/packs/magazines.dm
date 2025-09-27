@@ -365,6 +365,12 @@
 	cost = 1200
 	faction = /datum/faction/syndicate/scarborough
 
+/datum/supply_pack/magazine/slammer
+	name = "Slammer Magazine Crate"
+	desc = "Contains a 6-round 12ga magazine for the Slammer shotgun."
+	contains = list(/obj/item/ammo_box/magazine/m12g_slammer)
+	cost = 300
+
 /* energy weapons */
 
 /datum/supply_pack/magazine/guncell
