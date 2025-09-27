@@ -1,7 +1,7 @@
 /datum/outfit/job/solgov/ert
 	name = "ERT - SolGov Sonnensöldner"
 	id_assignment = "Sonnensöldner"
-	jobtype = /datum/job/officer
+	jobtype = /datum/job/ert/sec
 	job_icon = "sonnensoldner"
 
 	wallet = null
@@ -22,7 +22,7 @@
 /datum/outfit/job/solgov/ert/inspector
 	name = "ERT - SolGov Inspector"
 	id_assignment = "Inspector"
-	jobtype = /datum/job/head_of_personnel
+	jobtype = /datum/job/ert/commander
 	job_icon = "solgovrepresentative"
 
 	uniform = /obj/item/clothing/under/solgov/formal

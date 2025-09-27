@@ -1,6 +1,6 @@
 /datum/outfit/job/nanotrasen/ert
 	name = "ERT - Nanotrasen Vigilitas Security Officer"
-	jobtype = /datum/job/officer
+	jobtype = /datum/job/ert/sec
 	job_icon = "securityofficer"
 
 	wallet = null
@@ -28,6 +28,7 @@
 	name = "ERT - Nanotrasen CentCom Inspector"
 	id_assignment = "Inspector"
 	job_icon = "centcom"
+	jobtype = /datum/job/ert/commander
 
 	head = null
 	uniform = /obj/item/clothing/under/rank/centcom/official
@@ -50,7 +51,7 @@
 
 /datum/outfit/job/nanotrasen/ert/leader
 	name = "ERT - Nanotrasen Vigilitas Security Corporal"
-	jobtype = /datum/job/hos
+	jobtype = /datum/job/ert/commander
 	job_icon = "lieutenant"
 
 	ears = /obj/item/radio/headset/headset_sec/alt
