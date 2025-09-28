@@ -490,7 +490,7 @@
 		drugged.physiology.do_after_speed -= 0.4
 		drugged.physiology.damage_resistance += 10
 		drugged.physiology.hunger_mod += 1
-		drugged.recoil_effect /= 2
+		drugged.recoil_effect *= 0.6
 		drugged.impact_effect /= 2
 
 /datum/reagent/drug/combat_drug/on_mob_end_metabolize(mob/living/L)
@@ -502,7 +502,7 @@
 		drugged.physiology.do_after_speed += 0.4
 		drugged.physiology.damage_resistance -= 10
 		drugged.physiology.hunger_mod -= 1
-		drugged.recoil_effect *= 2
+		drugged.recoil_effect /= 0.6
 		drugged.impact_effect *= 2
 
 /datum/reagent/drug/combat_drug/on_mob_life(mob/living/carbon/M)
