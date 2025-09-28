@@ -905,6 +905,15 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/presawn)
 		item_state = "flamingarrow_factory_sawn"
 		mob_overlay_state = item_state
 
+//pre sawn off Factoryyy flaming arrow
+/obj/item/gun/ballistic/shotgun/flamingarrow/factory/presawn/Initialize(mapload, spawn_empty)
+    . = ..()
+    sawoff(TRUE)
+/obj/item/gun/ballistic/shotgun/flamingarrow/factory/presawn
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/winchester/presawn
+
+EMPTY_GUN_HELPER(shotgun/flamingarrow/factory/presawn)
+
 /obj/item/gun/ballistic/shotgun/flamingarrow/bolt
 	name = "HP Flaming Bolt"
 	desc = "A sturdy, excellently-made lever-action rifle. This one appears to be a genuine antique, kept in incredibly good condition despite its advanced age. Chambered in .38."
