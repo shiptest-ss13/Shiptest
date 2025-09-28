@@ -263,7 +263,7 @@
 	var/obj/item/storage/backpack/duffelbag/syndie/B = ..()
 	B.name = "Spacesuit Duffelbag"
 	B.desc = "It has a Coalition logo stamped on the front."
-	var/suit_color = pick(list("white-red", "blue", "beige", "worn", "worn_surplus", "yellow", "surplus"))
+	var/suit_color = pick(list("white_red", "blue", "beige", "worn", "worn_surplus", "yellow", "surplus"))
 
 	switch(suit_color)
 		if("white_red")
