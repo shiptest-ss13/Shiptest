@@ -1746,6 +1746,13 @@
 	},
 /turf/open/floor/concrete/tiles,
 /area/ruin/beach/gunsmith)
+"rA" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/gunsmith)
 "rN" = (
 /obj/structure/platform{
 	dir = 5
@@ -2370,6 +2377,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
 "yJ" = (
@@ -3702,6 +3710,11 @@
 /obj/machinery/light/floor,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
+"NW" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/gunsmith)
 "Oh" = (
 /obj/effect/turf_decal/corner_steel_grid/full,
 /obj/effect/turf_decal/borderfloor/corner{
@@ -4230,6 +4243,7 @@
 	dir = 9
 	},
 /obj/machinery/light/floor,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
 "Tu" = (
@@ -5916,12 +5930,12 @@ IV
 IR
 fU
 PP
-tf
+ZC
 zF
 tf
+ZC
 tf
-tf
-tf
+ZC
 jb
 Bj
 IR
@@ -5966,12 +5980,12 @@ JW
 IV
 fU
 uW
+ZC
 tf
 tf
-tf
-tf
+ZC
 zF
-tf
+ZC
 HZ
 Bj
 IR
@@ -6016,12 +6030,12 @@ Cm
 JW
 yQ
 uW
+ZC
 tf
 tf
 tf
-tf
-tf
-tf
+ZC
+ZC
 HZ
 Bj
 IR
@@ -6116,11 +6130,11 @@ Cm
 Cm
 Ar
 Tu
+ZC
 tf
 tf
 tf
-tf
-tf
+ZC
 tf
 af
 Bj
@@ -6167,11 +6181,11 @@ JW
 Zr
 uW
 tf
+ZC
 tf
 tf
-tf
-tf
-tf
+ZC
+ZC
 HZ
 Bj
 JW
@@ -6217,11 +6231,11 @@ JW
 nb
 uW
 tf
+ZC
+ZC
 tf
-tf
-tf
-tf
-tf
+ZC
+ZC
 HZ
 Bj
 JW
@@ -6270,7 +6284,7 @@ tf
 tf
 tf
 tf
-tf
+ZC
 tf
 af
 Bj
@@ -6315,8 +6329,8 @@ SQ
 Gu
 PM
 nb
-uW
-tf
+rA
+ZC
 tf
 tf
 tf
@@ -6366,13 +6380,13 @@ RF
 RF
 nb
 uW
+ZC
 tf
 tf
+ZC
 tf
 tf
-tf
-tf
-HZ
+NW
 Bj
 Cm
 JW
@@ -6417,7 +6431,7 @@ RF
 nb
 uW
 tf
-tf
+ZC
 tf
 tf
 tf
@@ -6469,9 +6483,9 @@ PP
 tf
 tf
 tf
-tf
-tf
-tf
+ZC
+ZC
+ZC
 jb
 Bj
 IR
