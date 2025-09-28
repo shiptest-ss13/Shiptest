@@ -85,7 +85,7 @@
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
 		drugged.physiology.damage_resistance += 5
-		drugged.physiology.impact_effect /= 2
+		drugged.impact_effect /= 2
 
 /datum/reagent/medicine/morphine/on_mob_end_metabolize(mob/living/L)
 	REMOVE_TRAIT(L, TRAIT_PAIN_RESIST, type)
