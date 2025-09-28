@@ -198,6 +198,10 @@
 	name = "Delapidated Cabin"
 	icon_state = "green"
 
+/area/ruin/powered/icemoon/downed_transport/ramshackle_workroom
+	name = "Ramshackle Workroom"
+	icon_state = "yellow"
+
 /area/ruin/powered/icemoon/downed_transport/leaning_shack
 	name = "Leaning Shack"
 	icon_state = "red"
