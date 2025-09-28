@@ -228,7 +228,9 @@
 		/obj/item/plunger,
 		/obj/item/reagent_containers/spray,
 		/obj/item/shears,
-		/obj/item/bodycamera
+		/obj/item/bodycamera,
+		/obj/item/bonesetter,
+		/obj/item/stack/sticky_tape/surgical
 		))
 
 /obj/item/storage/belt/medical/paramedic/PopulateContents()

@@ -62,23 +62,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"bL" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "falmouth_cargo_blast";
-	name = "Cargo Bay Blast Door"
-	},
-/obj/docking_port/mobile{
-	dir = 4;
-	launch_status = 0;
-	port_direction = 2;
-	preferred_direction = 4
-	},
-/turf/open/floor/plasteel/patterned/ridged,
-/area/ship/cargo)
 "bO" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -190,18 +173,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
-"eC" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/obj/docking_port/stationary{
-	dir = 8;
-	dwidth = 15;
-	height = 15;
-	width = 30
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "eJ" = (
 /obj/machinery/door/airlock/command{
 	dir = 1;
@@ -224,6 +195,34 @@
 /obj/structure/falsewall,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
+"fr" = (
+/obj/structure/closet/secure_closet/security{
+	anchored = 1;
+	can_be_unanchored = 1;
+	name = "security detail's locker";
+	populate = 0
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/item/storage/backpack/security,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/under/syndicate/camo,
+/obj/item/clothing/gloves/fingerless,
+/obj/item/clothing/head/cowboy/sec,
+/obj/item/clothing/head/soft/utility_olive,
+/obj/item/clothing/head/beanie/black,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/storage/belt/security/military/frontiersmen,
+/obj/item/clothing/suit/armor/vest/security,
+/obj/item/clothing/head/helmet/m10,
+/obj/item/melee/knife/survival,
+/obj/item/clothing/mask/gas,
+/obj/item/storage/guncase/buckmaster,
+/obj/effect/turf_decal/corner/opaque/grey/half,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/fore)
 "fu" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable{
@@ -561,6 +560,34 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engines/port)
+"pY" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 8;
+	dwidth = 20;
+	height = 30;
+	name = "Falmouth Stern Dock";
+	width = 40;
+	disable_on_owner_ship_dock = 1
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
+"qg" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 4;
+	port_direction = 2;
+	preferred_direction = 4;
+	launch_status = 0
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "qj" = (
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -979,6 +1006,16 @@
 /obj/effect/spawner/random/trash/cigbutt,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
+"zK" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dwidth = 3;
+	height = 30;
+	name = "Falmouth Port Dock";
+	width = 9
+	},
+/turf/template_noop,
+/area/template_noop)
 "zP" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/atmospherics/pipe/simple/dark/visible/layer1{
@@ -1563,34 +1600,6 @@
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
-"Gn" = (
-/obj/structure/closet/secure_closet/security{
-	anchored = 1;
-	can_be_unanchored = 1;
-	name = "security detail's locker";
-	populate = 0
-	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/item/storage/backpack/security,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/under/syndicate/camo,
-/obj/item/clothing/gloves/fingerless,
-/obj/item/clothing/head/cowboy/sec,
-/obj/item/clothing/head/soft/utility_olive,
-/obj/item/clothing/head/beanie/black,
-/obj/item/clothing/glasses/sunglasses,
-/obj/item/storage/belt/security/military/frontiersmen,
-/obj/item/clothing/suit/armor/vest/security,
-/obj/item/clothing/head/helmet/sec,
-/obj/item/melee/knife/survival,
-/obj/item/clothing/mask/gas,
-/obj/item/storage/guncase/buckmaster,
-/obj/effect/turf_decal/corner/opaque/grey/half,
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/fore)
 "Go" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2402,14 +2411,6 @@
 "Va" = (
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"Vm" = (
-/obj/docking_port/stationary{
-	dwidth = 4;
-	height = 15;
-	width = 9
-	},
-/turf/template_noop,
-/area/template_noop)
 "VQ" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2591,8 +2592,8 @@ ZY
 ZY
 FF
 FS
-eC
-FS
+pY
+qg
 FS
 HN
 ZY
@@ -2614,7 +2615,7 @@ et
 yV
 AR
 UE
-bL
+UE
 BT
 yV
 et
@@ -2916,7 +2917,7 @@ ZY
 ZY
 ZY
 ZY
-Vm
+zK
 Gx
 BL
 VQ
@@ -3162,7 +3163,7 @@ ZY
 ZY
 ZY
 Qy
-Gn
+fr
 OJ
 Go
 Dd
