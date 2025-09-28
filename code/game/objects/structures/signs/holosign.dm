@@ -179,8 +179,21 @@
 	never_random = TRUE
 	cycle_posters = FALSE
 
+/obj/machinery/holosign/blockade
+	name = "holosign - Attention Exitting Vessels"
+	desc_add = "Attention Spacer Visitors!\n Due to the ongoing blockade by the CLIP CMM:\n\
+	All vessels attempting to exit back into CLIP space from the May Thrace Sector route WILL be intercepted and arrested. Any goods coming from that route are intercepted and confescated\n\
+	Attempting to exit or visit from that route may result in being shot down by clip.\n\
+	We have attempted diplomatic talks in order to resolve this situation yet it remains unsolved. The siutation will also severely affect prices of local goods.\n\
+	We apologize for the situation, but it is out of our control"
+	icon_state = "blockade"
+	light_color = COLOR_ASSEMBLY_WHITE
+	never_random = TRUE
+	cycle_posters = FALSE
+
 /obj/machinery/holosign/random
 	name = "randomized holosign"
+	icon_state = "random"
 	never_random = TRUE
 	random_basetype = /obj/machinery/holosign
 	random_type = POSTER_SUBTYPES
