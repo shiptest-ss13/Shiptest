@@ -85,7 +85,7 @@
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
 		drugged.physiology.damage_resistance += 5
-		drugged.physiology.recoil_effect /= 2
+		drugged.physiology.impact_effect /= 2
 
 /datum/reagent/medicine/morphine/on_mob_end_metabolize(mob/living/L)
 	REMOVE_TRAIT(L, TRAIT_PAIN_RESIST, type)
@@ -93,7 +93,7 @@
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
 		drugged.physiology.damage_resistance -= 5
-		drugged.recoil_effect *= 2
+		drugged.impact_effect *= 2
 	..()
 
 /datum/reagent/medicine/morphine/on_mob_life(mob/living/carbon/M)
@@ -172,7 +172,7 @@
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
 		drugged.physiology.damage_resistance += 15
-		drugged.recoil_effect /= 4
+		drugged.impact_effect /= 4
 
 /datum/reagent/medicine/dimorlin/on_mob_end_metabolize(mob/living/L)
 	REMOVE_TRAIT(L, TRAIT_ANALGESIA, type)
@@ -183,7 +183,7 @@
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
 		drugged.physiology.damage_resistance -= 15
-		drugged.recoil_effect *= 4
+		drugged.impact_effect *= 4
 	..()
 
 /datum/reagent/medicine/dimorlin/on_mob_life(mob/living/carbon/C)
