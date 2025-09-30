@@ -3731,7 +3731,8 @@
 /area/ruin/beach/gunsmith)
 "Oi" = (
 /obj/machinery/door/airlock{
-	dir = 4
+	dir = 4;
+	id_tag = "gunsmithbathroom"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4788,6 +4789,13 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/north,
+/obj/machinery/button/door{
+	pixel_x = -10;
+	pixel_y = 20;
+	id = "gunsmithbathroom";
+	normaldoorcontrol = 1;
+	name = "bathroom lock"
+	},
 /turf/open/floor/carpet/black{
 	name = "bathroom mat"
 	},
