@@ -1182,15 +1182,14 @@
 	},
 /obj/structure/table,
 /obj/machinery/light/small/directional/south{
-	pixel_x = 11;
-	pixel_y = -29
+	pixel_x = 13;
+	pixel_y = -28
 	},
 /obj/structure/bedsheetbin,
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/firealarm/directional/south,
 /obj/machinery/button/door{
 	pixel_x = -21;
 	pixel_y = -13;
@@ -1199,6 +1198,7 @@
 	id = "mudskipperbathroom";
 	normaldoorcontrol = 1
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/crew/toilet)
 "xE" = (
