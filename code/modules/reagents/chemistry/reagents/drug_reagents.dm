@@ -242,7 +242,8 @@
 		for(var/i = 0, i < 8, i++)
 			step(M, pick(GLOB.cardinals))
 	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
+	if(prob(1))
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	..()
 
 /datum/reagent/drug/mammoth/addiction_act_stage2(mob/living/M)
@@ -252,7 +253,8 @@
 			step(M, pick(GLOB.cardinals))
 	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
+	if(prob(5))
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	..()
 
 /datum/reagent/drug/mammoth/addiction_act_stage3(mob/living/M)
@@ -262,7 +264,8 @@
 			step(M, pick(GLOB.cardinals))
 	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	M.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
+	if(prob(5))
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	..()
 
 /datum/reagent/drug/mammoth/addiction_act_stage4(mob/living/carbon/human/M)
@@ -272,8 +275,9 @@
 			step(M, pick(GLOB.cardinals))
 	M.set_timed_status_effect(120 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	M.set_timed_status_effect(100 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	M.adjustToxLoss(5, 0)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
+	if(prob(10))
+		M.adjustToxLoss(3, 0)
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	..()
 	. = 1
 

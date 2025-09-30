@@ -377,7 +377,11 @@
 
 	switch(confirm)
 		if("Yes")
-			create_distress_beacon(overmap_location)
+			var/distress_message = input(src, "Input any information you'd like attached with the distress signal.", "Distress Signal Message")
+			if(distress_message)
+				create_distress_beacon(overmap_location, distress_message)
+			else
+				create_distress_beacon(overmap_location)
 		if("No")
 			return
 
@@ -404,7 +408,11 @@
 
 	switch(confirm)
 		if("Yes")
-			create_distress_beacon(overmap_location)
+			var/distress_message = input(src, "Input any information you'd like attached with the distress signal.", "Distress Signal Message")
+			if(distress_message)
+				create_distress_beacon(overmap_location, distress_message)
+			else
+				create_distress_beacon(overmap_location)
 		if("No")
 			return
 
