@@ -1196,7 +1196,8 @@
 	pixel_y = -13;
 	dir = 4;
 	name = "bathroom lock";
-	id = "mudskipperbathroom"
+	id = "mudskipperbathroom";
+	normaldoorcontrol = 1
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/toilet)
@@ -2409,7 +2410,9 @@
 	},
 /obj/structure/table,
 /obj/structure/sink/kitchen{
-	dir = 1
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = 0
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
