@@ -1077,7 +1077,7 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 	if (!dna?.species)
 		return
 
-	var/obj/item/bodypart/HD = get_bodypart("head")
+	var/obj/item/bodypart/head/HD = get_bodypart(BODY_ZONE_HEAD)
 
 	if (!istype(HD))
 		return
@@ -1095,7 +1095,7 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 			add_overlay(lip_overlay)
 
 		// eyes
-		if(!(NOEYESPRITES in dna.species.species_traits))
+		if(HD.draw_eyes)
 			var/obj/item/organ/eyes/E = getorganslot(ORGAN_SLOT_EYES)
 			var/mutable_appearance/eye_overlay
 			if(!E)
