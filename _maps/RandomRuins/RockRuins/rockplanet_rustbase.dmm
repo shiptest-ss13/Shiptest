@@ -674,14 +674,6 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/hallway)
-"hg" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 1
-	},
-/obj/item/clothing/head/helmet/ramzi/bulletproof,
-/turf/open/floor/plasteel/tech,
-/area/ruin/rockplanet/rust_base/armory)
 "hL" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -1067,6 +1059,16 @@
 /obj/structure/flora/junglebush/c,
 /turf/open/floor/plating/asteroid/dirt/rockplanet,
 /area/ruin/rockplanet/rust_base)
+"kO" = (
+/obj/machinery/porta_turret/ship/ramzi/light{
+	dir = 4;
+	id = "rustguns";
+	turret_respects_id = 0;
+	turret_flags = 62;
+	lethal = 1
+	},
+/turf/open/floor/engine/hull/rockplanet,
+/area/ruin/rockplanet/rust_base/mechbay)
 "kU" = (
 /obj/machinery/mech_bay_recharge_port{
 	dir = 8
@@ -1441,6 +1443,15 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway)
+"ou" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/rack,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonmouth,
+/turf/open/floor/plasteel/mono,
+/area/ruin/rockplanet/rust_base/armory)
 "oC" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -1485,16 +1496,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)
-"oU" = (
-/obj/machinery/porta_turret/ship/ramzi/light{
-	dir = 4;
-	id = "rustguns";
-	turret_respects_id = 0;
-	turret_flags = 62;
-	lethal = 1
-	},
-/turf/open/floor/engine/hull/rockplanet,
-/area/ruin/rockplanet/rust_base/mechbay)
 "oW" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -1813,17 +1814,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/bridge)
-"rP" = (
-/obj/machinery/light/directional/south,
-/obj/structure/rack,
-/obj/effect/turf_decal/siding/thinplating,
-/obj/item/storage/box/ammo/c10mm,
-/obj/item/storage/box/ammo/c10mm{
-	pixel_x = 0;
-	pixel_y = 8
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/rockplanet/rust_base/armory)
 "rR" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 10
@@ -2251,16 +2241,6 @@
 "xm" = (
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/hallway2)
-"xp" = (
-/obj/machinery/porta_turret/ship/ramzi/light{
-	dir = 4;
-	id = "rustguns";
-	turret_respects_id = 0;
-	turret_flags = 62;
-	lethal = 1
-	},
-/turf/open/floor/engine/hull/rockplanet,
-/area/ruin/rockplanet/rust_base/armory)
 "xq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4{
@@ -2489,17 +2469,6 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/engine_one)
-"Av" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/structure/rack,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_box/magazine/m10mm_cottonmouth,
-/obj/item/ammo_box/magazine/m10mm_cottonmouth{
-	pixel_x = -10;
-	pixel_y = 0
-	},
-/turf/open/floor/plasteel/mono,
-/area/ruin/rockplanet/rust_base/armory)
 "Ax" = (
 /obj/machinery/light/small/directional/north,
 /obj/effect/turf_decal/siding/thinplating{
@@ -2550,15 +2519,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/rust_base/hallway2)
-"AV" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/structure/rack,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonmouth,
-/turf/open/floor/plasteel/mono,
-/area/ruin/rockplanet/rust_base/armory)
 "AZ" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable{
@@ -3297,6 +3257,17 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/hallway)
+"HU" = (
+/obj/machinery/light/directional/south,
+/obj/structure/rack,
+/obj/effect/turf_decal/siding/thinplating,
+/obj/item/storage/box/ammo/c10mm,
+/obj/item/storage/box/ammo/c10mm{
+	pixel_x = 0;
+	pixel_y = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/rust_base/armory)
 "HX" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3484,6 +3455,17 @@
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/engine_one)
+"Kf" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/rack,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_box/magazine/m10mm_cottonmouth,
+/obj/item/ammo_box/magazine/m10mm_cottonmouth{
+	pixel_x = -10;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/rockplanet/rust_base/armory)
 "Kr" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -4205,6 +4187,24 @@
 /obj/item/ammo_box/magazine/m12g_bulldog/empty,
 /turf/open/floor/plasteel/white,
 /area/ruin/rockplanet/rust_base/bridge)
+"RD" = (
+/obj/machinery/porta_turret/ship/ramzi/light{
+	dir = 4;
+	id = "rustguns";
+	turret_respects_id = 0;
+	turret_flags = 62;
+	lethal = 1
+	},
+/turf/open/floor/engine/hull/rockplanet,
+/area/ruin/rockplanet/rust_base/armory)
+"RN" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/item/clothing/head/helmet/bulletproof/x11/ramzi,
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/rust_base/armory)
 "RR" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -6641,7 +6641,7 @@ aN
 aN
 aN
 rn
-hg
+RN
 Pm
 Vx
 tk
@@ -6688,7 +6688,7 @@ Pm
 tk
 tk
 pD
-rP
+HU
 rn
 aN
 aN
@@ -6769,8 +6769,8 @@ aN
 rn
 tk
 ON
-AV
-Av
+ou
+Kf
 mG
 Vg
 rn
@@ -6892,14 +6892,14 @@ aN
 aN
 aN
 ST
-xp
+RD
 iQ
 CP
 qN
 JL
 Ss
 iQ
-xp
+RD
 aN
 aN
 aN
@@ -6910,14 +6910,14 @@ GG
 aN
 aN
 MN
-oU
+kO
 Cd
 oL
 UG
 MG
 CK
 Cd
-oU
+kO
 MN
 aN
 aN

@@ -551,9 +551,12 @@
 /area/ship/bridge)
 "ie" = (
 /obj/docking_port/stationary{
-	width = 30;
-	height = 15;
-	dwidth = 15
+	dheight = 1;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 4;
+	height = 30;
+	name = "Vagrant Port Dock";
+	width = 40
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -990,6 +993,25 @@
 "oO" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
 	dir = 4
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
+"pl" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 4;
+	dwidth = 15;
+	height = 30;
+	name = "Vagrant Forward Bow Dock";
+	width = 35;
+	disable_on_owner_ship_dock = 1
+	},
+/obj/docking_port/mobile{
+	dir = 8;
+	preferred_direction = 4
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -1886,14 +1908,6 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/wet/safe,
 /area/ship/roumain)
-"Go" = (
-/obj/docking_port/mobile{
-	dir = 2;
-	preferred_direction = 4;
-	port_direction = 8
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "Gu" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/flora/grass/rockplanet/dead,
@@ -3715,10 +3729,10 @@ bF
 jM
 OJ
 OJ
+pl
 OJ
 OJ
-OJ
-Go
+jM
 bF
 bF
 bF

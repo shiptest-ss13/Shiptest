@@ -245,7 +245,6 @@
 	to_chat(_human, span_notice("You feel more energized as your shine comes back."))
 
 /datum/species/elzuose/proc/handle_charge(mob/living/carbon/human/_human)
-	brutemod = 1.25
 	switch(get_charge(_human))
 		if(ELZUOSE_CHARGE_NONE to ELZUOSE_CHARGE_LOWPOWER)
 			if(get_charge(_human) == ELZUOSE_CHARGE_NONE)

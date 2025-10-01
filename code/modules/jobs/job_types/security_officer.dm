@@ -26,7 +26,7 @@
 	ears = /obj/item/radio/headset/alt
 	uniform = /obj/item/clothing/under/rank/security/officer
 	gloves = /obj/item/clothing/gloves/color/black
-	head = /obj/item/clothing/head/helmet/sec
+	head = /obj/item/clothing/head/helmet/m10
 	suit = /obj/item/clothing/suit/armor/vest
 	alt_suit = /obj/item/clothing/suit/armor/vest/security/officer
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security //WS Edit - Alt Uniforms
@@ -44,4 +44,4 @@
 	implants = list(/obj/item/implant/mindshield)
 
 	chameleon_extras = list(/obj/item/gun/energy/disabler, /obj/item/clothing/glasses/hud/security/sunglasses, /obj/item/clothing/head/helmet)
-	//The helmet is necessary because /obj/item/clothing/head/helmet/sec is overwritten in the chameleon list by the standard helmet, which has the same name and icon state
+	//The helmet is necessary because /obj/item/clothing/head/helmet/m10 is overwritten in the chameleon list by the standard helmet, which has the same name and icon state
