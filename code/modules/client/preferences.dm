@@ -441,7 +441,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<span style='border: 1px solid #161616; background-color: #[features["ethcolor"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='byond://?_src_=prefs;preference=color_ethereal;task=input'>Change</a><BR>"
 
 			var/obj/item/bodypart/head/spec_head = pref_species.species_head
-			if((EYECOLOR in pref_species.species_traits) && initial(spec_head.draw_eyes))
+			if(initial(spec_head.draw_eyes) && initial(spec_head.greyscale_eyes))
 
 				dat += "<h3>Eye Color</h3>"
 				dat += "<span style='border: 1px solid #161616; background-color: #[eye_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='byond://?_src_=prefs;preference=eyes;task=input'>Change</a>"

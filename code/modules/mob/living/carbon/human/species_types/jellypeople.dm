@@ -3,7 +3,7 @@
 	name = "\improper Jellyperson"
 	id = SPECIES_JELLYPERSON
 	default_color = "00FF90"
-	species_traits = list(MUTCOLORS,EYECOLOR,NOBLOOD,HAIR,FACEHAIR,HAS_FLESH)
+	species_traits = list(MUTCOLORS,NOBLOOD,HAIR,FACEHAIR,HAS_FLESH)
 	inherent_traits = list(TRAIT_TOXINLOVER)
 	hair_color = "mutcolor"
 	hair_alpha = 150
@@ -219,7 +219,7 @@
 	name = "Slimeperson"
 	id = SPECIES_SLIMEPERSON
 	default_color = "00FFFF"
-	species_traits = list(MUTCOLORS,EYECOLOR,HAIR,FACEHAIR,NOBLOOD)
+	species_traits = list(MUTCOLORS,HAIR,FACEHAIR,NOBLOOD)
 	hair_color = "mutcolor"
 	hair_alpha = 150
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | RACE_SWAP | ERT_SPAWN

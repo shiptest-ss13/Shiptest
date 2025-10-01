@@ -1102,7 +1102,7 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 				eye_overlay = mutable_appearance('icons/mob/human_face.dmi', "eyes_missing", -BODY_LAYER)
 			else
 				eye_overlay = mutable_appearance('icons/mob/human_face.dmi', E.eye_icon_state, -BODY_LAYER)
-			if((EYECOLOR in dna.species.species_traits) && E)
+			if(HD.greyscale_eyes && E)
 				eye_overlay.color = "#" + eye_color
 			add_overlay(eye_overlay)
 

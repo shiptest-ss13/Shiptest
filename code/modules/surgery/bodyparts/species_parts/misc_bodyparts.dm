@@ -2,6 +2,7 @@
 /obj/item/bodypart/head/snail
 	limb_id = "snail"
 	is_dimorphic = FALSE
+	greyscale_eyes = FALSE
 
 /obj/item/bodypart/chest/snail
 	limb_id = "snail"
@@ -94,6 +95,7 @@
 	limb_id = "zombie"
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
+	greyscale_eyes = FALSE
 
 /obj/item/bodypart/chest/zombie
 	limb_id = "zombie"
@@ -198,6 +200,7 @@
 	limb_id = "skeleton"
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
+	greyscale_eyes = FALSE
 
 /obj/item/bodypart/chest/skeleton
 	limb_id = "skeleton"

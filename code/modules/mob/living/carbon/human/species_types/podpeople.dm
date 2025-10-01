@@ -3,7 +3,7 @@
 	name = "\improper Podperson"
 	id = SPECIES_POD
 	default_color = "59CE00"
-	species_traits = list(MUTCOLORS,EYECOLOR,SCLERA)
+	species_traits = list(MUTCOLORS,SCLERA)
 	inherent_traits = list(
 		TRAIT_ALWAYS_CLEAN,
 		TRAIT_PLANT_SAFE,
