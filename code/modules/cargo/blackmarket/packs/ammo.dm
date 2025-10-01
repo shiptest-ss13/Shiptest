@@ -104,7 +104,7 @@
 /datum/blackmarket_item/ammo/saber_mag
 	name = "Saber 9x18mm SMG Magazines"
 	desc = "Magazines for use in the Saber 9x18mm SMG. No, they don't work as swords."
-	item = /obj/item/ammo_box/magazine/smgm9mm
+	item = /obj/item/ammo_box/magazine/m9mm_expedition
 
 	cost_min = 150
 	cost_max = 450
@@ -282,6 +282,16 @@
 	cost_min = 150
 	cost_max = 350
 	stock = 2
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/cottonmouth
+	name = "Cottonmouth Magazine"
+	desc = "A 14 round magazine for the modified Cottonmouth machine pistol."
+	item = /obj/item/ammo_box/magazine/m10mm_cottonmouth
+
+	cost_min = 100
+	cost_max = 300
+	stock = 4
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/f4_magazine

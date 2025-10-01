@@ -181,7 +181,7 @@
 	icon_state = "ramzi_major"
 	item_state = "ramzi_major"
 
-/obj/item/clothing/head/helmet/ramzi
+/obj/item/clothing/head/helmet/m10/ramzi
 	name = "\improper Ramzi Clique M-10 helmet"
 	desc = "A cheaper helmet utilized by the Ramzi Clique, often handed out to less valuable combatants."
 	icon = 'icons/obj/clothing/faction/ramzi/head.dmi'
@@ -192,7 +192,7 @@
 	can_flashlight = TRUE
 	content_overlays = TRUE
 
-/obj/item/clothing/head/helmet/ramzi/bulletproof
+/obj/item/clothing/head/helmet/bulletproof/x11/ramzi
 	name = "\improper Ramzi Clique X-11 helmet"
 	desc = "A durable bulletproof helmet, often handed out to more reliable Ramzi assets."
 	icon = 'icons/obj/clothing/faction/ramzi/head.dmi'

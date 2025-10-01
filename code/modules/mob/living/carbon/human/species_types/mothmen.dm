@@ -30,6 +30,12 @@
 	species_l_leg = /obj/item/bodypart/leg/left/moth
 	species_r_leg = /obj/item/bodypart/leg/right/moth
 
+	species_robotic_chest = /obj/item/bodypart/chest/robot/human
+	species_robotic_l_arm = /obj/item/bodypart/l_arm/robot/surplus/human
+	species_robotic_r_arm = /obj/item/bodypart/r_arm/robot/surplus/human
+	species_robotic_l_leg = /obj/item/bodypart/leg/left/robot/surplus/human
+	species_robotic_r_leg = /obj/item/bodypart/leg/right/robot/surplus/human
+
 	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 5
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 5
 

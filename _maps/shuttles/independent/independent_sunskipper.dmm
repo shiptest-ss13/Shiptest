@@ -330,6 +330,16 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
+"du" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dwidth = 20;
+	height = 30;
+	name = "Sunskipper Port Beam Dock";
+	width = 40
+	},
+/turf/template_noop,
+/area/template_noop)
 "dv" = (
 /obj/machinery/light/directional/east,
 /obj/effect/turf_decal/siding/wood{
@@ -773,6 +783,11 @@
 /obj/effect/turf_decal/siding/wood/end{
 	color = "#543C30";
 	dir = 4
+	},
+/obj/docking_port/mobile{
+	dir = 8;
+	launch_status = 0;
+	preferred_direction = 4
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/office/lobby)
@@ -3217,11 +3232,6 @@
 	id = "sunskipper_holo";
 	locked = 1
 	},
-/obj/docking_port/mobile{
-	dir = 2;
-	port_direction = 8;
-	preferred_direction = 4
-	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/office/lobby)
 "Ns" = (
@@ -4089,10 +4099,13 @@
 /area/ship/crew/office/lobby)
 "Yl" = (
 /obj/docking_port/stationary{
-	dwidth = 7;
-	width = 30;
-	height = 15;
-	dir = 4
+	dheight = 1;
+	dir = 4;
+	dwidth = 25;
+	height = 30;
+	name = "Sunskipper Forward Bow Dock";
+	width = 41;
+	disable_on_owner_ship_dock = 1
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -4885,7 +4898,7 @@ Pa
 (27,1,1) = {"
 Pa
 Pa
-Pa
+du
 UV
 id
 bG

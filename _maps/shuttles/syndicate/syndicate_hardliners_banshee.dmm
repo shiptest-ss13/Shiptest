@@ -210,21 +210,6 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
-"eE" = (
-/obj/structure/catwalk,
-/obj/structure/marker_beacon{
-	picked_color = "Lime"
-	},
-/obj/docking_port/mobile{
-	callTime = 250;
-	dir = 2;
-	launch_status = 0;
-	name = "Salvage Clipper";
-	port_direction = 8;
-	preferred_direction = 4
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external/dark)
 "eK" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
@@ -449,6 +434,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
+"ju" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 4;
+	dwidth = 20;
+	height = 30;
+	name = "Banshee Forward Bow Dock";
+	width = 40;
+	disable_on_owner_ship_dock = 1
+	},
+/turf/template_noop,
+/area/template_noop)
 "kj" = (
 /obj/machinery/door/airlock/external/glass,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -851,6 +848,17 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"pt" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 2;
+	dwidth = 3;
+	height = 31;
+	name = "Banshee Starboard Dock";
+	width = 8
+	},
+/turf/template_noop,
+/area/template_noop)
 "pM" = (
 /turf/template_noop,
 /area/template_noop)
@@ -1469,6 +1477,11 @@
 /area/ship/cargo)
 "DY" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/docking_port/mobile{
+	dir = 8;
+	launch_status = 0;
+	preferred_direction = 4
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "Ee" = (
@@ -1554,18 +1567,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
-"FX" = (
-/obj/structure/catwalk,
-/obj/effect/decal/cleanable/dirt,
-/obj/docking_port/stationary{
-	dir = 2;
-	dwidth = 7;
-	height = 15;
-	name = "Banshee airlock dock";
-	width = 30
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external/dark)
 "Ga" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3217,7 +3218,7 @@ KP
 iY
 iY
 iY
-eE
+uG
 pM
 pM
 pM
@@ -3366,7 +3367,7 @@ iT
 lS
 bv
 MU
-pM
+pt
 pM
 pM
 pM
@@ -3390,7 +3391,7 @@ Rt
 kj
 uH
 YZ
-FX
+MU
 pM
 pM
 pM
@@ -3660,7 +3661,7 @@ pM
 pM
 pM
 pM
-pM
+ju
 pM
 pM
 pM
