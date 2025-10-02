@@ -338,13 +338,6 @@
 /obj/effect/decal/cleanable/glass/strange,
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
-"di" = (
-/mob/living/basic/bear/polar,
-/obj/effect/decal/cleanable/blood/footprints{
-	icon_state = "blood2"
-	},
-/turf/open/floor/plating/asteroid/icerock/cracked,
-/area/overmap_encounter/planetoid/cave/explored)
 "dk" = (
 /obj/effect/spawner/bunk_bed,
 /obj/structure/curtain/cloth/grey,
@@ -865,7 +858,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal,
 /turf/open/floor/pod/dark,
 /area/ruin/unpowered/icemoon/downed_transport/the_descent)
 "gY" = (
@@ -1262,7 +1254,6 @@
 	icon_state = "4-8"
 	},
 /obj/structure/catwalk/over/plated_catwalk,
-/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "jK" = (
@@ -2647,9 +2638,9 @@
 /area/overmap_encounter/planetoid/ice/explored)
 "tW" = (
 /obj/item/stack/medical/gauze,
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = 10;
-	pixel_y = -6
+/obj/item/stock_parts/cell/gun/pgf/empty{
+	pixel_y = -6;
+	pixel_x = 6
 	},
 /turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -3094,7 +3085,6 @@
 	},
 /obj/item/reagent_containers/glass/bucket,
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/asteroid/ice_demon,
 /turf/open/floor/wood/icemoon{
 	icon_state = "wood-broken"
 	},
@@ -3126,6 +3116,9 @@
 "xP" = (
 /obj/machinery/light/broken/directional/north,
 /obj/effect/decal/cleanable/glass/plastitanium,
+/mob/living/simple_animal/hostile/human/hermit/survivor{
+	desc = "A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body."
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "xS" = (
@@ -3473,9 +3466,6 @@
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "Ac" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/hermit/survivor{
-	desc = "A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body."
-	},
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "Ag" = (
@@ -3866,7 +3856,6 @@
 	pixel_x = 15
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/asteroid/ice_demon,
 /turf/open/floor/plating/asteroid/icerock/smooth,
 /area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "Ed" = (
@@ -3908,6 +3897,7 @@
 	},
 /obj/effect/decal/cleanable/glass/strange,
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal,
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "Et" = (
@@ -4410,6 +4400,7 @@
 	pixel_x = 15
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/asteroid/ice_demon,
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft)
 "HB" = (
@@ -5346,9 +5337,8 @@
 	pixel_x = 27
 	},
 /obj/effect/mob_spawn/human/corpse/pgf/skeleton_marine,
-/obj/item/gun/energy/kalix/pgf/medium{
-	pixel_y = -11;
-	pixel_x = -2
+/obj/item/gun/energy/kalix/pgf/medium/empty_cell{
+	pixel_y = -11
 	},
 /turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -6226,6 +6216,7 @@
 	},
 /obj/effect/decal/cleanable/glass/strange,
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal,
 /turf/open/floor/pod/dark,
 /area/ruin/unpowered/icemoon/downed_transport/the_descent)
 "Ww" = (
@@ -6397,6 +6388,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "Ys" = (
@@ -11892,7 +11884,7 @@ XQ
 bJ
 bJ
 eR
-eR
+qQ
 hm
 bJ
 bJ
@@ -11962,7 +11954,7 @@ bJ
 bJ
 eR
 eR
-di
+rY
 PS
 pY
 bJ
@@ -12726,8 +12718,8 @@ XQ
 bJ
 bJ
 bJ
-Iw
 Id
+Iw
 Iw
 bJ
 bJ
