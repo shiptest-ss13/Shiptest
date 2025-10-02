@@ -106,7 +106,7 @@
 
 	accessory = /obj/item/clothing/accessory/medal/gold/captain
 
-	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/captain)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/x12, /obj/item/stamp/captain)
 
 /datum/outfit/job/independent/captain/empty
 	name = "Independent - Captain (Naked)"
@@ -130,7 +130,7 @@
 
 	accessory = /obj/item/clothing/accessory/medal/gold/captain
 
-	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/captain)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/x12, /obj/item/stamp/captain)
 
 /datum/outfit/job/independent/captain/cheap //for Miskilamo ships
 	name = "Independent - Captain (Low Budget)"
@@ -229,7 +229,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/captain
 	courierbag = /obj/item/storage/backpack/messenger/com
 
-	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/officer)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/x12, /obj/item/stamp/officer)
 
 /datum/outfit/job/independent/hop/hunter
 	name = "Independent - Head of Personnel (Hunter)"
@@ -293,7 +293,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/sec
 	box = /obj/item/storage/box/survival/security
 
-	chameleon_extras = list(/obj/item/gun/energy/e_gun/hos, /obj/item/stamp/hos)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/x01, /obj/item/stamp/hos)
 
 /datum/outfit/job/independent/hos/merc
 	name = "Independent - Mercenary XO"
@@ -337,7 +337,7 @@
 	ears = /obj/item/radio/headset/alt
 	uniform = /obj/item/clothing/under/rank/security/officer
 	gloves = /obj/item/clothing/gloves/color/black
-	head = /obj/item/clothing/head/helmet/sec
+	head = /obj/item/clothing/head/helmet/m10
 	suit = /obj/item/clothing/suit/armor/vest/alt
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -351,7 +351,7 @@
 	box = /obj/item/storage/box/survival/security
 
 	chameleon_extras = list(/obj/item/gun/energy/disabler, /obj/item/clothing/glasses/hud/security/sunglasses, /obj/item/clothing/head/helmet)
-	//The helmet is necessary because /obj/item/clothing/head/helmet/sec is overwritten in the chameleon list by the standard helmet, which has the same name and icon state
+	//The helmet is necessary because /obj/item/clothing/head/helmet/m10 is overwritten in the chameleon list by the standard helmet, which has the same name and icon state
 
 /datum/outfit/job/independent/security/disarmed //No armor, no pocket handcuffs.
 	name = "Independent - Security Officer (Disarmed)"
@@ -371,7 +371,7 @@
 	name = "Independent - Security Officer (Mercenary)"
 	id_assignment = "Trooper"
 
-	uniform = /obj/item/clothing/under/syndicate/camo
+	uniform = /obj/item/clothing/under/rank/security/officer/camo
 	gloves = /obj/item/clothing/gloves/fingerless
 	head = null
 	suit = null

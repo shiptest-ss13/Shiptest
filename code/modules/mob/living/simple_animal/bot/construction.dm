@@ -283,7 +283,7 @@
 
 			else if(I.tool_behaviour == TOOL_SCREWDRIVER) //deconstruct
 				new /obj/item/assembly/signaler(Tsec)
-				new /obj/item/clothing/head/helmet/sec(Tsec)
+				new /obj/item/clothing/head/helmet/m10(Tsec)
 				to_chat(user, span_notice("You disconnect the signaler from the helmet."))
 				qdel(src)
 

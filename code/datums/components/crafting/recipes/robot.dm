@@ -18,7 +18,7 @@
 	name = "Secbot"
 	result = /mob/living/simple_animal/bot/secbot
 	reqs = list(/obj/item/assembly/signaler = 1,
-				/obj/item/clothing/head/helmet/sec = 1,
+				/obj/item/clothing/head/helmet/m10 = 1,
 				/obj/item/melee/baton = 1,
 				/obj/item/assembly/prox_sensor = 1,
 				/obj/item/bodypart/r_arm/robot = 1)
