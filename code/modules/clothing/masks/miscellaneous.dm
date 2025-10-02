@@ -28,6 +28,7 @@
 	desc = "A sterile mask designed to help prevent the spread of diseases."
 	icon_state = "sterile"
 	item_state = "sterile"
+	supports_variations = SNOUTED_VARIATION | KEPORI_VARIATION | VOX_VARIATION
 	w_class = WEIGHT_CLASS_TINY
 	flags_inv = HIDEFACE
 	flags_cover = MASKCOVERSMOUTH
