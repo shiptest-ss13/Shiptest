@@ -10,7 +10,7 @@
 	maturation = 5
 	production = 5
 	yield = 2
-	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
+	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
 	icon_grow = "cabbage-grow"
 	icon_dead = "cabbage-dead"
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
