@@ -12,7 +12,7 @@
 	var/spawn_time = 30 SECONDS
 	var/mob_types = list(/mob/living/simple_animal/hostile/carp)
 	var/spawn_text = "emerges from"
-	var/faction = list("hostile")
+	var/faction = list(FACTION_HOSTILE)
 	var/spawn_sound = list('sound/effects/break_stone.ogg')
 	var/spawner_type = /datum/component/spawner
 	var/spawn_distance_min = 1
