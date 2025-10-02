@@ -126,16 +126,17 @@
 /turf/closed/wall/r_wall,
 /area/ruin/moon/hideout)
 "bK" = (
-/obj/effect/turf_decal/trimline/opaque/red/line{
-	dir = 5;
-	layer = 2.040
+/obj/structure/filingcabinet/double/grey{
+	dir = 4;
+	pixel_x = -9;
+	density = 0
 	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 5
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 9
 	},
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/moon/hideout/fortress)
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/tech,
+/area/ruin/moon/hideout/command)
 "bL" = (
 /obj/structure/closet/wall/red/directional/east,
 /obj/effect/turf_decal/corner_steel_grid{
@@ -244,6 +245,21 @@
 /obj/effect/turf_decal/corner/transparent/red/diagonal,
 /turf/open/floor/hangar/plasteel/dark,
 /area/ruin/moon/hideout/canteen)
+"dd" = (
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/structure/table,
+/obj/item/cigbutt{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/cigbutt/roach{
+	pixel_x = -6;
+	pixel_y = 9
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/hideout/fortress)
 "do" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -330,19 +346,11 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ruin/moon/hideout)
 "en" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/plating,
-/area/ruin/moon/hideout/engineering)
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/hideout/fortress)
 "ep" = (
 /turf/closed/mineral/random/moon,
 /area/ruin/moon/hideout)
@@ -881,7 +889,7 @@
 "kf" = (
 /obj/item/flashlight/flare/burnt,
 /turf/open/floor/plating/asteroid/moon_coarse/lit,
-/area/overmap_encounter/planetoid/moon)
+/area/ruin/moon/hideout/exterior)
 "km" = (
 /obj/machinery/porta_turret/ruin/ramzi,
 /obj/structure/catwalk/over/plated_catwalk,
@@ -970,7 +978,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/moon/lit,
-/area/overmap_encounter/planetoid/moon)
+/area/ruin/moon/hideout/exterior)
 "lJ" = (
 /obj/item/storage/cans/sixbeer{
 	pixel_x = 0;
@@ -1197,7 +1205,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/moon/lit,
-/area/overmap_encounter/planetoid/moon)
+/area/ruin/moon/hideout/exterior)
 "oo" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1251,7 +1259,9 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout/canteen)
 "oF" = (
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
+	},
 /obj/item/ammo_box/magazine/boomslang/empty,
 /obj/item/ammo_box/magazine/boomslang/empty,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -1357,7 +1367,7 @@
 	color = "#474747"
 	},
 /turf/open/floor/plating/asteroid/moon_coarse/lit,
-/area/overmap_encounter/planetoid/moon)
+/area/ruin/moon/hideout/exterior)
 "pI" = (
 /obj/effect/turf_decal/trimline/opaque/red/line,
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -1515,7 +1525,7 @@
 "rx" = (
 /obj/structure/platform/industrial/corner,
 /turf/open/floor/plating/asteroid/moon/lit,
-/area/overmap_encounter/planetoid/moon)
+/area/ruin/moon/hideout/exterior)
 "ry" = (
 /obj/structure/poddoor_assembly/shutters,
 /turf/open/floor/concrete/reinforced,
@@ -1623,15 +1633,15 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/hideout/fortress)
 "sq" = (
-/obj/effect/turf_decal/borderfloor/full,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 8;
+	layer = 2.040
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
 	},
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/plasteel,
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout/fortress)
 "sr" = (
 /obj/machinery/camera/autoname{
@@ -1704,16 +1714,13 @@
 /turf/open/floor/hangar/plasteel/dark,
 /area/ruin/moon/hideout/canteen)
 "sT" = (
-/obj/effect/turf_decal/trimline/opaque/red/line{
-	dir = 8;
-	layer = 2.040
+/obj/effect/turf_decal/steeldecal/steel_decals_central1,
+/obj/machinery/shower{
+	dir = 1
 	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 8
-	},
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/moon/hideout/fortress)
+/mob/living/simple_animal/hostile/human/ramzi/civilian/towel,
+/turf/open/floor/plasteel/showroomfloor,
+/area/ruin/moon/hideout/bathroom)
 "sZ" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
@@ -1769,7 +1776,7 @@
 "tV" = (
 /obj/structure/platform/industrial,
 /turf/open/floor/plating/asteroid/moon/lit,
-/area/overmap_encounter/planetoid/moon)
+/area/ruin/moon/hideout/exterior)
 "tZ" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -2043,12 +2050,6 @@
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/moon/hideout)
-"xB" = (
-/obj/effect/turf_decal/trimline/opaque/red/line,
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/moon/hideout/fortress)
 "xL" = (
 /obj/item/radio/intercom/directional/south,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2413,9 +2414,20 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/hideout/fortress)
+"AV" = (
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 5;
+	layer = 2.040
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 5
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/hideout/fortress)
 "Bb" = (
 /turf/closed/mineral/random/moon,
-/area/overmap_encounter/planetoid/moon)
+/area/ruin/moon/hideout/exterior)
 "Bf" = (
 /obj/structure/chair,
 /turf/open/floor/plasteel/mono,
@@ -2530,7 +2542,7 @@
 /area/ruin/moon/hideout/engineering)
 "CM" = (
 /turf/open/floor/plating/asteroid/moon/lit/surface_craters,
-/area/overmap_encounter/planetoid/moon)
+/area/ruin/moon/hideout/exterior)
 "CN" = (
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor7-old"
@@ -2652,7 +2664,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/moon/lit,
-/area/overmap_encounter/planetoid/moon)
+/area/ruin/moon/hideout/exterior)
 "Es" = (
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate{
@@ -2671,27 +2683,10 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/moon/hideout/fortress)
 "Et" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/airlock/command{
-	dir = 4;
-	name = "Office"
-	},
+/obj/structure/tank_dispenser,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/moon/hideout/command)
+/area/ruin/moon/hideout)
 "Ev" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2893,17 +2888,19 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/hideout/bathroom)
 "GS" = (
-/obj/structure/filingcabinet/double/grey{
-	dir = 4;
-	pixel_x = -9;
-	density = 0
+/obj/structure/railing{
+	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/syndiered/line{
-	dir = 9
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/power/terminal{
+	dir = 1
 	},
-/obj/machinery/light/directional/west,
-/turf/open/floor/plasteel/tech,
-/area/ruin/moon/hideout/command)
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plating,
+/area/ruin/moon/hideout/engineering)
 "Hd" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -2978,7 +2975,7 @@
 /area/ruin/moon/hideout)
 "HJ" = (
 /turf/open/floor/plating/asteroid/moon_coarse/lit/surface_craters,
-/area/overmap_encounter/planetoid/moon)
+/area/ruin/moon/hideout/exterior)
 "HK" = (
 /obj/structure/filingcabinet/double/grey{
 	pixel_x = 0;
@@ -3017,6 +3014,17 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout)
+"Ig" = (
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 4;
+	layer = 2.040
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/hideout/fortress)
 "Ii" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/northleft,
@@ -3056,13 +3064,19 @@
 /turf/open/floor/plasteel,
 /area/ruin/moon/hideout/dorms/one)
 "IW" = (
-/obj/effect/turf_decal/steeldecal/steel_decals_central1,
-/obj/machinery/shower{
-	dir = 1
+/obj/item/storage/cans/sixbeer{
+	pixel_x = 0;
+	pixel_y = -4
 	},
-/mob/living/simple_animal/hostile/human/ramzi/civilian/towel,
-/turf/open/floor/plasteel/showroomfloor,
-/area/ruin/moon/hideout/bathroom)
+/obj/item/storage/cans/sixbeer{
+	pixel_x = 0;
+	pixel_y = 4
+	},
+/obj/item/storage/cans/sixbeer,
+/obj/structure/rack,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/moon/hideout/canteen)
 "Jb" = (
 /obj/machinery/vending/cola/starkist,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -3164,20 +3178,10 @@
 /turf/open/floor/plating,
 /area/ruin/moon/hideout/engineering)
 "JU" = (
-/obj/effect/turf_decal/trimline/opaque/red/line,
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/structure/table,
-/obj/item/cigbutt{
-	pixel_x = 4;
-	pixel_y = 4
-	},
-/obj/item/cigbutt/roach{
-	pixel_x = -6;
-	pixel_y = 9
-	},
-/obj/machinery/light/directional/north,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/moon/hideout/fortress)
+/obj/structure/tank_dispenser,
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/moon/hideout)
 "JX" = (
 /obj/structure/sink{
 	pixel_x = 0;
@@ -3283,7 +3287,7 @@
 	pixel_y = -6
 	},
 /turf/open/floor/plating/asteroid/moon_coarse/lit/surface_craters,
-/area/overmap_encounter/planetoid/moon)
+/area/ruin/moon/hideout/exterior)
 "KY" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -3296,7 +3300,7 @@
 /area/ruin/moon/hideout/fortress)
 "Ld" = (
 /turf/open/floor/plating/asteroid/moon/lit,
-/area/overmap_encounter/planetoid/moon)
+/area/ruin/moon/hideout/exterior)
 "Ln" = (
 /turf/closed/wall/r_wall,
 /area/ruin/moon/hideout/bathroom)
@@ -3682,11 +3686,6 @@
 /obj/effect/turf_decal/atmos/nitrogen,
 /turf/open/floor/engine/n2,
 /area/ruin/moon/hideout/engineering)
-"Qv" = (
-/obj/structure/tank_dispenser,
-/obj/machinery/light/directional/east,
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/moon/hideout)
 "QA" = (
 /obj/structure/chair,
 /turf/open/floor/plasteel/mono,
@@ -3696,7 +3695,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/moon/lit,
-/area/overmap_encounter/planetoid/moon)
+/area/ruin/moon/hideout/exterior)
 "QV" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -3830,15 +3829,15 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/moon/hideout/dorms)
 "Sy" = (
-/obj/effect/turf_decal/trimline/opaque/red/line{
-	dir = 4;
-	layer = 2.040
+/obj/effect/turf_decal/borderfloor/full,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
 	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
 	},
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/plasteel/patterned/grid/dark,
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plasteel,
 /area/ruin/moon/hideout/fortress)
 "SG" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -3886,12 +3885,29 @@
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/moon/lit,
-/area/overmap_encounter/planetoid/moon)
+/area/ruin/moon/hideout/exterior)
 "Tj" = (
-/obj/structure/tank_dispenser,
-/obj/machinery/light/directional/west,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/airlock/command{
+	dir = 4;
+	name = "Office"
+	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/moon/hideout)
+/area/ruin/moon/hideout/command)
 "Tn" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5
@@ -3988,7 +4004,7 @@
 "Ul" = (
 /obj/item/flashlight/flare/burnt,
 /turf/open/floor/plating/asteroid/moon/lit,
-/area/overmap_encounter/planetoid/moon)
+/area/ruin/moon/hideout/exterior)
 "Up" = (
 /obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 9;
@@ -4238,13 +4254,13 @@
 /area/ruin/moon/hideout/command)
 "Wu" = (
 /turf/open/floor/plating/asteroid/moon_coarse/lit,
-/area/overmap_encounter/planetoid/moon)
+/area/ruin/moon/hideout/exterior)
 "Wy" = (
 /obj/structure/platform/industrial/corner{
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/moon/lit,
-/area/overmap_encounter/planetoid/moon)
+/area/ruin/moon/hideout/exterior)
 "WA" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -4549,20 +4565,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/hideout/dorms/three)
-"Zr" = (
-/obj/item/storage/cans/sixbeer{
-	pixel_x = 0;
-	pixel_y = -4
-	},
-/obj/item/storage/cans/sixbeer{
-	pixel_x = 0;
-	pixel_y = 4
-	},
-/obj/item/storage/cans/sixbeer,
-/obj/structure/rack,
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/plasteel/freezer,
-/area/ruin/moon/hideout/canteen)
 "Zv" = (
 /obj/effect/spawner/bunk_bed,
 /obj/machinery/light/small/directional/north,
@@ -4635,14 +4637,6 @@ CA
 CA
 CA
 CA
-Ld
-Ld
-Ld
-CA
-CA
-Ld
-Ld
-Ld
 CA
 CA
 CA
@@ -4658,7 +4652,18 @@ Ld
 Ld
 Ld
 Ld
-CA
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
 "}
 (2,1,1) = {"
 CA
@@ -4699,30 +4704,33 @@ CA
 CA
 CA
 CA
-Ld
-Ld
-Ld
-Ld
-Ld
-CM
-Ld
-Ld
-Ld
 CA
 CA
 CA
-rx
-Ep
-Ep
-Ep
-Ep
-Ep
-Ep
-Ep
-Ep
-Ep
-QQ
-CA
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
 "}
 (3,1,1) = {"
 CA
@@ -4748,45 +4756,48 @@ CA
 CA
 CA
 CA
-ep
-ep
-CA
-CA
-ep
-ep
-ep
-ep
-ep
 CA
 CA
 CA
 CA
-ep
-Ld
-Ld
-CM
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-ep
-ep
+CA
+CA
+CA
 CA
 Ld
-tV
-Wu
-Wu
-Wu
-Wu
-Wu
-Wu
-Wu
-Wu
-Wu
-Tg
-CA
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
 "}
 (4,1,1) = {"
 CA
@@ -4806,25 +4817,159 @@ CA
 CA
 CA
 CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
 Ld
 Ld
 Ld
 Ld
 Ld
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+CM
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+rx
+Ep
+Ep
+Ep
+Ep
+Ep
+Ep
+Ep
+Ep
+Ep
+QQ
+Ld
+Ld
+Ld
+Ld
+"}
+(5,1,1) = {"
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
 ep
 ep
 CA
 CA
+ep
+ep
+ep
+ep
+ep
+Ld
+Ld
+Ld
+Ld
+ep
+Ld
+Ld
+CM
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+ep
+ep
+Ld
+Ld
+tV
+Wu
+Wu
+Wu
+Wu
+Wu
+Wu
+Wu
+Wu
+Wu
+Tg
+Ld
+Ld
+Ld
+Ld
+"}
+(6,1,1) = {"
 CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+Ld
+Ld
+Ld
+Ld
+Ld
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+Ld
+Ld
+Ld
 ep
 ep
 ep
@@ -4851,8 +4996,11 @@ Wu
 Wu
 Tg
 Ld
+Ld
+Ld
+Ld
 "}
-(5,1,1) = {"
+(7,1,1) = {"
 CA
 CA
 CA
@@ -4915,8 +5063,11 @@ Wu
 Wu
 Tg
 Ld
+Ld
+Ld
+Ld
 "}
-(6,1,1) = {"
+(8,1,1) = {"
 CA
 CA
 CA
@@ -4979,8 +5130,11 @@ Wu
 Wu
 Tg
 Ld
+Ld
+Ld
+Ld
 "}
-(7,1,1) = {"
+(9,1,1) = {"
 CA
 CA
 CA
@@ -5043,8 +5197,11 @@ Wu
 Wu
 Tg
 Ld
+Ld
+Ld
+Ld
 "}
-(8,1,1) = {"
+(10,1,1) = {"
 CA
 CA
 CA
@@ -5107,8 +5264,11 @@ Wu
 Wu
 Tg
 Ld
+Ld
+Ld
+Ld
 "}
-(9,1,1) = {"
+(11,1,1) = {"
 CA
 CA
 CA
@@ -5171,8 +5331,11 @@ Wu
 Wu
 Tg
 Ld
+Ld
+Ld
+Ld
 "}
-(10,1,1) = {"
+(12,1,1) = {"
 CA
 CA
 CA
@@ -5203,7 +5366,7 @@ jW
 Sg
 Ln
 xO
-IW
+sT
 Ln
 ep
 ep
@@ -5235,8 +5398,11 @@ Wu
 Wu
 Tg
 Ld
+Ld
+Ld
+Ld
 "}
-(11,1,1) = {"
+(13,1,1) = {"
 CA
 CA
 Ld
@@ -5299,8 +5465,11 @@ Wu
 Wu
 Tg
 Ld
+Ld
+Ld
+Ld
 "}
-(12,1,1) = {"
+(14,1,1) = {"
 CA
 CA
 Ld
@@ -5363,8 +5532,11 @@ Wu
 Wu
 Tg
 Ld
+Ld
+Ld
+Ld
 "}
-(13,1,1) = {"
+(15,1,1) = {"
 CA
 CA
 Ld
@@ -5427,8 +5599,11 @@ Wu
 Wu
 Tg
 Ld
+Ld
+Ld
+Ld
 "}
-(14,1,1) = {"
+(16,1,1) = {"
 CA
 CA
 Ld
@@ -5491,8 +5666,11 @@ Wu
 Wu
 Tg
 Ld
+Ld
+Ld
+Ld
 "}
-(15,1,1) = {"
+(17,1,1) = {"
 CA
 ep
 ep
@@ -5555,8 +5733,11 @@ Wu
 Wu
 Tg
 Ld
+Ld
+Ld
+Ld
 "}
-(16,1,1) = {"
+(18,1,1) = {"
 CA
 CA
 ep
@@ -5619,8 +5800,11 @@ Wu
 Wu
 Tg
 Ld
+Ld
+Ld
+Ld
 "}
-(17,1,1) = {"
+(19,1,1) = {"
 CA
 CA
 ep
@@ -5683,8 +5867,11 @@ nZ
 nZ
 Wy
 Ld
+Ld
+Ld
+Ld
 "}
-(18,1,1) = {"
+(20,1,1) = {"
 CA
 ep
 ep
@@ -5747,8 +5934,11 @@ Ld
 Ld
 Ld
 Ld
+Ld
+Ld
+Ld
 "}
-(19,1,1) = {"
+(21,1,1) = {"
 CA
 ep
 ep
@@ -5811,8 +6001,11 @@ Ld
 Ld
 Ld
 Ld
+Ld
+Ld
+Ld
 "}
-(20,1,1) = {"
+(22,1,1) = {"
 CA
 ep
 ep
@@ -5875,8 +6068,11 @@ Ld
 Ld
 Ld
 Ld
+Ld
+Ld
+CA
 "}
-(21,1,1) = {"
+(23,1,1) = {"
 ep
 ep
 ep
@@ -5889,12 +6085,12 @@ Fj
 Fj
 Fj
 Fj
-JU
+dd
 Ru
 Bt
 Rt
 Xn
-bK
+AV
 Xo
 lv
 Mv
@@ -5938,9 +6134,12 @@ Ld
 Ld
 Ld
 Ld
+Ld
+CA
+CA
 CA
 "}
-(22,1,1) = {"
+(24,1,1) = {"
 ep
 ep
 ep
@@ -5985,7 +6184,7 @@ xL
 bE
 bE
 OS
-Tj
+JU
 OS
 bE
 bE
@@ -6002,9 +6201,12 @@ Ul
 CM
 Ld
 Ld
+Ld
+CA
+CA
 CA
 "}
-(23,1,1) = {"
+(25,1,1) = {"
 ep
 ep
 ep
@@ -6066,9 +6268,12 @@ Ld
 Ld
 Ld
 Ld
+Ld
+CA
+CA
 CA
 "}
-(24,1,1) = {"
+(26,1,1) = {"
 ep
 ep
 ep
@@ -6130,9 +6335,12 @@ Ld
 Ld
 CM
 Ld
+Ld
+Ld
+CA
 CA
 "}
-(25,1,1) = {"
+(27,1,1) = {"
 ep
 ep
 ep
@@ -6146,7 +6354,7 @@ yC
 oq
 oq
 oq
-Et
+Tj
 oq
 oq
 qs
@@ -6194,9 +6402,12 @@ Ld
 Ld
 Ld
 Ld
+Ld
+Ld
+CA
 CA
 "}
-(26,1,1) = {"
+(28,1,1) = {"
 CA
 ep
 ep
@@ -6209,14 +6420,14 @@ ep
 ep
 oq
 QX
-GS
+bK
 Qd
 sJ
 oq
-xB
+en
 LT
 KP
-Sy
+Ig
 sI
 Js
 FZ
@@ -6241,7 +6452,7 @@ ag
 bE
 bE
 OS
-Qv
+Et
 OS
 bE
 bE
@@ -6258,9 +6469,12 @@ Ld
 Ld
 CM
 Ld
+Ld
+Ld
+CA
 CA
 "}
-(27,1,1) = {"
+(29,1,1) = {"
 CA
 ep
 ep
@@ -6323,8 +6537,11 @@ Ld
 Ld
 Ld
 CA
+CA
+CA
+CA
 "}
-(28,1,1) = {"
+(30,1,1) = {"
 CA
 ep
 ep
@@ -6387,8 +6604,11 @@ Ld
 Ld
 Ld
 CA
+CA
+CA
+CA
 "}
-(29,1,1) = {"
+(31,1,1) = {"
 CA
 CA
 ep
@@ -6451,8 +6671,11 @@ Ld
 Ld
 Ld
 CA
+CA
+CA
+CA
 "}
-(30,1,1) = {"
+(32,1,1) = {"
 CA
 CA
 ep
@@ -6469,10 +6692,10 @@ oq
 oq
 oq
 oq
-xB
+en
 Yz
 Up
-sT
+sq
 sI
 Js
 dP
@@ -6515,8 +6738,11 @@ Ld
 Ld
 Ld
 CA
+CA
+CA
+CA
 "}
-(31,1,1) = {"
+(33,1,1) = {"
 CA
 CA
 ep
@@ -6579,8 +6805,11 @@ Ld
 Ld
 Ld
 CA
+CA
+CA
+CA
 "}
-(32,1,1) = {"
+(34,1,1) = {"
 CA
 CA
 ep
@@ -6643,8 +6872,11 @@ Ld
 Ld
 CA
 CA
+CA
+CA
+CA
 "}
-(33,1,1) = {"
+(35,1,1) = {"
 CA
 ep
 ep
@@ -6662,7 +6894,7 @@ sH
 DI
 sI
 us
-sq
+Sy
 WA
 AE
 yP
@@ -6707,8 +6939,11 @@ Ld
 Ld
 CA
 CA
+CA
+CA
+CA
 "}
-(34,1,1) = {"
+(36,1,1) = {"
 CA
 ep
 ep
@@ -6771,8 +7006,11 @@ Ld
 Ld
 CA
 CA
+CA
+CA
+CA
 "}
-(35,1,1) = {"
+(37,1,1) = {"
 CA
 ep
 ep
@@ -6835,8 +7073,11 @@ Ld
 Ld
 CA
 CA
+CA
+CA
+CA
 "}
-(36,1,1) = {"
+(38,1,1) = {"
 CA
 ep
 ep
@@ -6899,8 +7140,11 @@ Ld
 CA
 CA
 CA
+CA
+CA
+CA
 "}
-(37,1,1) = {"
+(39,1,1) = {"
 CA
 ep
 ep
@@ -6963,8 +7207,11 @@ Ld
 CA
 CA
 CA
+CA
+CA
+CA
 "}
-(38,1,1) = {"
+(40,1,1) = {"
 CA
 ep
 ep
@@ -7027,8 +7274,11 @@ Ld
 CA
 CA
 CA
+CA
+CA
+CA
 "}
-(39,1,1) = {"
+(41,1,1) = {"
 CA
 ep
 ep
@@ -7091,8 +7341,11 @@ Ld
 CA
 CA
 CA
+CA
+CA
+CA
 "}
-(40,1,1) = {"
+(42,1,1) = {"
 CA
 ep
 ep
@@ -7155,8 +7408,11 @@ CA
 CA
 CA
 CA
+CA
+CA
+CA
 "}
-(41,1,1) = {"
+(43,1,1) = {"
 CA
 ep
 ep
@@ -7180,7 +7436,7 @@ bE
 ep
 ep
 NZ
-Zr
+IW
 lJ
 NZ
 xV
@@ -7193,7 +7449,7 @@ ep
 CJ
 CJ
 vd
-en
+GS
 zv
 CJ
 CJ
@@ -7214,13 +7470,16 @@ Ld
 Ld
 Ld
 Ld
+Ld
+CA
+CA
 CA
 CA
 CA
 CA
 CA
 "}
-(42,1,1) = {"
+(44,1,1) = {"
 CA
 ep
 ep
@@ -7278,13 +7537,16 @@ Ld
 Ld
 Ld
 Ld
+Ld
+CA
+CA
 CA
 CA
 CA
 CA
 CA
 "}
-(43,1,1) = {"
+(45,1,1) = {"
 CA
 ep
 ep
@@ -7341,6 +7603,9 @@ Ld
 Ld
 Ld
 Ld
+Ld
+Ld
+CA
 CA
 CA
 CA
@@ -7348,7 +7613,7 @@ CA
 CA
 CA
 "}
-(44,1,1) = {"
+(46,1,1) = {"
 CA
 ep
 ep
@@ -7405,6 +7670,9 @@ Ld
 Ld
 Ld
 Ld
+Ld
+Ld
+CA
 CA
 CA
 CA
@@ -7412,7 +7680,7 @@ CA
 CA
 CA
 "}
-(45,1,1) = {"
+(47,1,1) = {"
 CA
 CA
 ep
@@ -7469,6 +7737,9 @@ Ld
 Ld
 Ld
 Ld
+Ld
+Ld
+CA
 CA
 CA
 CA
@@ -7476,7 +7747,7 @@ CA
 CA
 CA
 "}
-(46,1,1) = {"
+(48,1,1) = {"
 CA
 CA
 ep
@@ -7533,6 +7804,9 @@ Ld
 Ld
 Ld
 Ld
+Ld
+Ld
+CA
 CA
 CA
 CA
@@ -7540,7 +7814,7 @@ CA
 CA
 CA
 "}
-(47,1,1) = {"
+(49,1,1) = {"
 CA
 CA
 ep
@@ -7596,6 +7870,9 @@ Ld
 Ld
 Ld
 Ld
+Ld
+Ld
+Ld
 CA
 CA
 CA
@@ -7604,7 +7881,7 @@ CA
 CA
 CA
 "}
-(48,1,1) = {"
+(50,1,1) = {"
 CA
 CA
 CA
@@ -7660,6 +7937,9 @@ Ld
 Ld
 Ld
 Ld
+Ld
+Ld
+Ld
 CA
 CA
 CA
@@ -7668,7 +7948,7 @@ CA
 CA
 CA
 "}
-(49,1,1) = {"
+(51,1,1) = {"
 CA
 CA
 CA
@@ -7724,6 +8004,9 @@ Ld
 Ld
 Ld
 Ld
+Ld
+Ld
+Ld
 CA
 CA
 CA
@@ -7732,7 +8015,7 @@ CA
 CA
 CA
 "}
-(50,1,1) = {"
+(52,1,1) = {"
 CA
 CA
 CA
@@ -7788,6 +8071,9 @@ Ld
 Ld
 Ld
 Ld
+Ld
+Ld
+Ld
 CA
 CA
 CA
@@ -7796,7 +8082,7 @@ CA
 CA
 CA
 "}
-(51,1,1) = {"
+(53,1,1) = {"
 CA
 CA
 CA
@@ -7852,6 +8138,9 @@ ep
 ep
 Ld
 Ld
+Ld
+Ld
+CA
 CA
 CA
 CA
@@ -7860,7 +8149,7 @@ CA
 CA
 CA
 "}
-(52,1,1) = {"
+(54,1,1) = {"
 CA
 CA
 CA
@@ -7916,134 +8205,9 @@ ep
 Ld
 Ld
 Ld
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-"}
-(53,1,1) = {"
-CA
-CA
-CA
-CA
-ep
-ep
-CA
-CA
-CA
-CA
-Bb
-Wu
-Wu
-Wu
-Wu
-Ld
 Ld
 Ld
 CA
-CA
-CA
-CA
-CA
-CA
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-bE
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-"}
-(54,1,1) = {"
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-Wu
-Wu
-Bb
-Bb
-Ld
-Ld
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-ep
-ep
-bE
-bE
-bE
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-CA
-CA
-ep
-ep
-ep
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
 CA
 CA
 CA
@@ -8057,26 +8221,20 @@ CA
 CA
 CA
 CA
+ep
+ep
 CA
 CA
 CA
 CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
+Bb
+Wu
+Wu
+Wu
+Wu
+Ld
+Ld
+Ld
 CA
 CA
 CA
@@ -8091,14 +8249,23 @@ ep
 ep
 ep
 ep
+bE
 ep
 ep
 ep
 ep
-CA
-CA
-CA
-CA
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
 Ld
 Ld
 Ld
@@ -8107,7 +8274,7 @@ Ld
 Ld
 Ld
 Ld
-Ld
+CA
 CA
 CA
 CA
@@ -8127,6 +8294,140 @@ CA
 CA
 CA
 CA
+Wu
+Wu
+Bb
+Bb
+Ld
+Ld
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+ep
+ep
+bE
+bE
+bE
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+CA
+CA
+ep
+ep
+ep
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+"}
+(57,1,1) = {"
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+CA
+CA
+CA
+CA
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+"}
+(58,1,1) = {"
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
 CA
 CA
 CA
@@ -8163,6 +8464,9 @@ CA
 CA
 CA
 CA
+Ld
+Ld
+Ld
 Ld
 Ld
 Ld
