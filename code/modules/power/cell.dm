@@ -475,7 +475,7 @@
 	chargerate = 1750
 
 /obj/item/stock_parts/cell/gun/kalix/empty
-  start_empty = TRUE
+	start_empty = TRUE
 
 /obj/item/stock_parts/cell/gun/pgf
 	name = "Etherbor EWC-6m"
@@ -485,7 +485,7 @@
 	chargerate = 2000
 
 /obj/item/stock_parts/cell/gun/pgf/empty
-  start_empty = TRUE
+	start_empty = TRUE
 
 /obj/item/stock_parts/cell/gun/sharplite
 	name = "Sharplite power cell"
