@@ -126,8 +126,16 @@
 /turf/closed/wall/r_wall,
 /area/ruin/moon/hideout)
 "bK" = (
-/turf/open/floor/plating/asteroid/moon_coarse/dark,
-/area/overmap_encounter/planetoid/moon/explored)
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 5;
+	layer = 2.040
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 5
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/hideout/fortress)
 "bL" = (
 /obj/structure/closet/wall/red/directional/east,
 /obj/effect/turf_decal/corner_steel_grid{
@@ -1696,27 +1704,19 @@
 /turf/open/floor/hangar/plasteel/dark,
 /area/ruin/moon/hideout/canteen)
 "sT" = (
-/obj/item/storage/cans/sixbeer{
-	pixel_x = 0;
-	pixel_y = -4
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 8;
+	layer = 2.040
 	},
-/obj/item/storage/cans/sixbeer{
-	pixel_x = 0;
-	pixel_y = 4
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
 	},
-/obj/item/storage/cans/sixbeer,
-/obj/structure/rack,
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/plasteel/freezer,
-/area/ruin/moon/hideout/canteen)
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/hideout/fortress)
 "sZ" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
-/area/ruin/moon/hideout)
-"tk" = (
-/obj/structure/tank_dispenser,
-/obj/machinery/light/directional/west,
-/turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/hideout)
 "tt" = (
 /obj/structure/poddoor_assembly/shutters,
@@ -1822,12 +1822,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/moon/hideout/dorms/two)
-"uz" = (
-/obj/effect/turf_decal/trimline/opaque/red/line,
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/moon/hideout/fortress)
 "uD" = (
 /obj/structure/table/wood/poker,
 /obj/item/toy/cards/deck/cas/black{
@@ -2049,6 +2043,12 @@
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/moon/hideout)
+"xB" = (
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/hideout/fortress)
 "xL" = (
 /obj/item/radio/intercom/directional/south,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -3442,16 +3442,8 @@
 /turf/open/floor/plating,
 /area/ruin/moon/hideout/engineering)
 "NC" = (
-/obj/effect/turf_decal/trimline/opaque/red/line{
-	dir = 5;
-	layer = 2.040
-	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 5
-	},
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/moon/hideout/fortress)
+/turf/open/floor/plating/asteroid/moon_coarse/dark,
+/area/overmap_encounter/planetoid/moon/explored)
 "NL" = (
 /obj/item/ammo_casing/spent/slug{
 	pixel_x = -4;
@@ -3690,6 +3682,11 @@
 /obj/effect/turf_decal/atmos/nitrogen,
 /turf/open/floor/engine/n2,
 /area/ruin/moon/hideout/engineering)
+"Qv" = (
+/obj/structure/tank_dispenser,
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/moon/hideout)
 "QA" = (
 /obj/structure/chair,
 /turf/open/floor/plasteel/mono,
@@ -3892,7 +3889,7 @@
 /area/overmap_encounter/planetoid/moon)
 "Tj" = (
 /obj/structure/tank_dispenser,
-/obj/machinery/light/directional/east,
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/hideout)
 "Tn" = (
@@ -4187,17 +4184,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plating,
-/area/ruin/moon/hideout/fortress)
-"VP" = (
-/obj/effect/turf_decal/trimline/opaque/red/line{
-	dir = 8;
-	layer = 2.040
-	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 8
-	},
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout/fortress)
 "VS" = (
 /obj/machinery/power/apc/auto_name/directional/south,
@@ -4563,6 +4549,20 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/hideout/dorms/three)
+"Zr" = (
+/obj/item/storage/cans/sixbeer{
+	pixel_x = 0;
+	pixel_y = -4
+	},
+/obj/item/storage/cans/sixbeer{
+	pixel_x = 0;
+	pixel_y = 4
+	},
+/obj/item/storage/cans/sixbeer,
+/obj/structure/rack,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/moon/hideout/canteen)
 "Zv" = (
 /obj/effect/spawner/bunk_bed,
 /obj/machinery/light/small/directional/north,
@@ -5865,7 +5865,7 @@ ep
 ep
 ep
 ep
-bK
+NC
 Wu
 KS
 Wu
@@ -5894,7 +5894,7 @@ Ru
 Bt
 Rt
 Xn
-NC
+bK
 Xo
 lv
 Mv
@@ -5927,10 +5927,10 @@ bE
 bE
 bE
 bE
-bK
-bK
-bK
-bK
+NC
+NC
+NC
+NC
 Wu
 Wu
 Ld
@@ -5985,16 +5985,16 @@ xL
 bE
 bE
 OS
-tk
+Tj
 OS
 bE
 bE
 mn
 Ex
-bK
-bK
-bK
-bK
+NC
+NC
+NC
+NC
 Wu
 Wu
 Ld
@@ -6055,10 +6055,10 @@ ps
 xo
 UD
 Jo
-bK
-bK
-bK
-bK
+NC
+NC
+NC
+NC
 Wu
 Wu
 Wu
@@ -6119,10 +6119,10 @@ Oc
 pT
 Qo
 jv
-bK
-bK
-bK
-bK
+NC
+NC
+NC
+NC
 Wu
 Wu
 Wu
@@ -6183,10 +6183,10 @@ ON
 PB
 UD
 Jo
-bK
-bK
-bK
-bK
+NC
+NC
+NC
+NC
 kf
 Wu
 Wu
@@ -6213,7 +6213,7 @@ GS
 Qd
 sJ
 oq
-uz
+xB
 LT
 KP
 Sy
@@ -6241,17 +6241,17 @@ ag
 bE
 bE
 OS
-Tj
+Qv
 OS
 bE
 bE
 zN
 Oa
-bK
+NC
 ep
-bK
-bK
-bK
+NC
+NC
+NC
 Wu
 Wu
 Ld
@@ -6314,8 +6314,8 @@ bE
 ep
 ep
 ep
-bK
-bK
+NC
+NC
 ep
 ep
 Ld
@@ -6469,10 +6469,10 @@ oq
 oq
 oq
 oq
-uz
+xB
 Yz
 Up
-VP
+sT
 sI
 Js
 dP
@@ -7180,7 +7180,7 @@ bE
 ep
 ep
 NZ
-sT
+Zr
 lJ
 NZ
 xV
@@ -7979,7 +7979,7 @@ Ld
 Ld
 Ld
 Ld
-CA
+Ld
 CA
 CA
 CA
@@ -8037,13 +8037,13 @@ CA
 ep
 ep
 ep
-CA
-CA
-CA
-CA
-CA
-CA
-CA
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
 CA
 CA
 CA
@@ -8099,15 +8099,15 @@ CA
 CA
 CA
 CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
 CA
 CA
 CA
@@ -8163,14 +8163,14 @@ CA
 CA
 CA
 CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
 CA
 CA
 CA
