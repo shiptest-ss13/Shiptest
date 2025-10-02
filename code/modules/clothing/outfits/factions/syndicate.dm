@@ -51,9 +51,9 @@
 	alt_uniform = /obj/item/clothing/under/syndicate/hardliners/jumpsuit
 
 /datum/outfit/job/syndicate/assistant/ngr
-	name = "Syndicate - Ancillary (New Gorlex Republic)"
+	name = "Syndicate - Crewman (New Gorlex Republic)"
 	faction = FACTION_NGR
-	id_assignment = "Ancillary"
+	id_assignment = "Crewman"
 
 	head = /obj/item/clothing/head/ngr
 	uniform = /obj/item/clothing/under/syndicate/ngr
