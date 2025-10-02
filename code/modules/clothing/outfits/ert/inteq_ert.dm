@@ -1,12 +1,12 @@
 /datum/outfit/job/inteq/ert
 	name = "ERT - Inteq Rifleman"
 	id_assignment = "Enforcer"
-	jobtype = /datum/job/officer
+	jobtype = /datum/job/ert/sec
 	job_icon = "securityofficer"
 
 	wallet = null
 
-	head = /obj/item/clothing/head/helmet/inteq
+	head = /obj/item/clothing/head/helmet/m10/inteq
 	mask = /obj/item/clothing/mask/balaclava/inteq
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	uniform = /obj/item/clothing/under/syndicate/inteq
@@ -45,7 +45,7 @@
 /datum/outfit/job/inteq/ert/engineer
 	name = "ERT - Inteq Artificer"
 	id_assignment = "Artificer"
-	jobtype = /datum/job/engineer
+	jobtype = /datum/job/ert/engi
 	job_icon = "stationengineer"
 
 	head = /obj/item/clothing/head/soft/inteq
@@ -65,7 +65,7 @@
 /datum/outfit/job/inteq/ert/medic
 	name = "ERT - Inteq Corpsman"
 	id_assignment = "Corpsman"
-	jobtype = /datum/job/paramedic
+	jobtype = /datum/job/ert/med
 	job_icon = "paramedic"
 
 	head = /obj/item/clothing/head/soft/inteq/corpsman
@@ -87,10 +87,10 @@
 /datum/outfit/job/inteq/ert/leader
 	name = "ERT - Inteq Vanguard"
 	id_assignment = "Vanguard"
-	jobtype = /datum/job/hos
+	jobtype = /datum/job/ert/commander
 	job_icon = "headofsecurity"
 
-	head = /obj/item/clothing/head/helmet/inteq
+	head = /obj/item/clothing/head/helmet/m10/inteq
 	ears = /obj/item/radio/headset/inteq/alt/captain
 	back = /obj/item/storage/backpack/messenger/inteq
 	belt = /obj/item/storage/belt/security/webbing/inteq/skm_carabine
@@ -110,7 +110,7 @@
 /datum/outfit/job/inteq/ert/honor_guard
 	name = "ERT - Inteq Honor Guard"
 	id_assignment = "Guardsman"
-	jobtype = /datum/job/officer
+	jobtype = /datum/job/ert/commander
 	job_icon = "inteq"
 
 	uniform = /obj/item/clothing/under/syndicate/inteq
@@ -131,7 +131,7 @@
 /datum/outfit/job/inteq/ert/inspector
 	name = "ERT - Inteq Mothership Investigator"
 	id_assignment = "Investigator"
-	jobtype = /datum/job/head_of_personnel
+	jobtype = /datum/job/ert/commander
 	job_icon = "inteq"
 
 	uniform = /obj/item/clothing/under/syndicate/inteq
