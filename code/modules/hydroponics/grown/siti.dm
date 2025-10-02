@@ -9,6 +9,7 @@
 	lifespan = 20
 	maturation = 5
 	production = 5
+	growthstages = 1
 	yield = 2
 	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
 	icon_grow = "cabbage-grow"
