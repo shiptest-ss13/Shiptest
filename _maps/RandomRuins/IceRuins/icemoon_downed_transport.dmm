@@ -546,9 +546,8 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/poddoor/preopen{
-	id = "barrow_windows";
-	dir = 1
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "barrow_windows"
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
@@ -644,9 +643,6 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/poddoor/preopen{
-	id = "barrow_windows"
-	},
 /obj/item/shard/plastitanium{
 	pixel_y = 2;
 	pixel_x = 2
@@ -656,6 +652,9 @@
 	pixel_x = -6
 	},
 /obj/effect/decal/cleanable/glass/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "barrow_windows"
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "fo" = (
@@ -2090,15 +2089,15 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/preopen{
-	id = "barrow_windows"
-	},
 /obj/structure/grille/broken,
 /obj/item/shard/plastitanium{
 	pixel_y = -2;
 	pixel_x = -3
 	},
 /obj/effect/decal/cleanable/glass/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "barrow_windows"
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle)
 "pw" = (
@@ -2213,7 +2212,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/preopen{
+/obj/machinery/door/poddoor/shutters/preopen{
 	id = "barrow_bridge"
 	},
 /turf/open/floor/plating,
