@@ -1390,14 +1390,10 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "oY" = (
-/obj/structure/crate_shelf,
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
 /obj/effect/turf_decal/box/corners,
-/obj/item/radio/intercom/directional/east,
-/obj/structure/closet/crate,
-/obj/item/stack/sheet/mineral/wood/twentyfive,
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
@@ -2132,14 +2128,6 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "vi" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 4
-	},
-/obj/effect/turf_decal/box/corners{
-	dir = 1
-	},
-/obj/machinery/light/directional/east,
-/obj/machinery/grill/unwrenched,
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 1
 	},
@@ -4033,6 +4021,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/grill/unwrenched,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Od" = (
