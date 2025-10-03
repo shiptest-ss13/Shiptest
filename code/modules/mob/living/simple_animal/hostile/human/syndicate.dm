@@ -165,7 +165,7 @@
 /mob/living/simple_animal/hostile/human/ramzi/melee/space/soft
 	name = "Ramzi Clique Infiltrator"
 	desc = "A deserter from the Gorlex Marauders turned pirate. A softsuit's gauntlets hold a shard of polished steel in an veteran's guard."
-	r_hand = /obj/item/melee/knife/combat
+	l_hand = /obj/item/melee/knife/combat
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space/soft
 	armor_base = /obj/item/clothing/suit/space/syndicate/ramzi
 
@@ -174,7 +174,7 @@
 	desc = "A deserter from the Gorlex Marauders turned pirate. Rust silhouttes a well-maintained machete, swinging around their hip."
 	attack_verb_continuous = "cuts"
 	attack_verb_simple = "cut"
-	r_hand = /obj/item/melee/sword/mass
+	l_hand = /obj/item/melee/sword/mass
 	sharpness = SHARP_EDGED
 	melee_damage_lower = 25
 	melee_damage_upper = 25
@@ -342,7 +342,7 @@
 	desc = "A deserter from the Gorlex Marauders turned pirate. A painted skull grimaces on their helmet as they sweep their submachinegun across the room, scanning for threats."
 	icon_state = "syndicate_space_smg"
 	icon_living = "syndicate_space_smg"
-	r_hand = /obj/item/gun/ballistic/automatic/smg/cobra
+	l_hand = /obj/item/gun/ballistic/automatic/smg/cobra
 	projectilesound = 'sound/weapons/gun/smg/cobra.ogg'
 	rapid = 3
 	casingtype = /obj/item/ammo_casing/c45
@@ -446,9 +446,9 @@
 	aggro_vision_range = 14
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
-	casingtype = /obj/item/ammo_casing/a65clip
-	l_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
-	projectilesound = 'sound/weapons/gun/sniper/cmf90.ogg'
+	casingtype = /obj/item/ammo_casing/p50
+	l_hand = /obj/item/gun/ballistic/automatic/marksman/taipan
+	projectilesound = 'sound/weapons/gun/sniper/shot.ogg'
 
 ///////////////Misc////////////
 
