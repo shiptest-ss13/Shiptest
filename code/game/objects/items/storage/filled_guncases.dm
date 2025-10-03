@@ -414,6 +414,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/hmg/skm_lmg
 	mag_type = /obj/item/ammo_box/magazine/skm_762_40/drum
 
+/obj/item/storage/guncase/slammer
+	gun_type = /obj/item/gun/ballistic/shotgun/automatic/slammer
+	mag_type = /obj/item/ammo_box/magazine/m12g_slammer
+
 /* Eoehoma */
 
 /obj/item/storage/guncase/energy/e10
