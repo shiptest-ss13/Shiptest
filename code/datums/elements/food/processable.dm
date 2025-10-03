@@ -61,7 +61,7 @@
 		if(result_gender == PLURAL)
 			examine_list += span_notice("It can be turned into [amount_created] [result_name] with <b>[tool_desc]</b>!")
 		else
-			examine_list += span_notice("It can be turned into [amount_created] [result_name][plural_s(result_name)] with <b>[tool_desc]</b>!")"
+			examine_list += span_notice("It can be turned into [amount_created] [result_name][plural_s(result_name)] with <b>[tool_desc]</b>!")
 
 	else
 		if(result_gender == PLURAL)
