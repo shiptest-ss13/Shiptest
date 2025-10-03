@@ -676,7 +676,7 @@
 	color = "#5a360e"
 	overdose_threshold = 16
 	addiction_threshold = 15
-	metabolization_rate = 0.1
+	metabolization_rate = 0.2
 	taste_description = "an apple coated in glue"
 
 /datum/reagent/drug/cinesia/on_mob_metabolize(mob/living/L)
