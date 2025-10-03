@@ -186,6 +186,26 @@
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
+"bI" = (
+/obj/effect/turf_decal/corner/opaque/red/border{
+	dir = 9
+	},
+/obj/structure/closet/secure_closet/security,
+/obj/item/stock_parts/cell/gun,
+/obj/item/stock_parts/cell/gun,
+/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/head/helmet/m10,
+/obj/item/clothing/glasses/hud/security/sunglasses,
+/obj/item/radio/headset/headset_sec/alt,
+/obj/item/restraints/handcuffs,
+/obj/item/flashlight/seclite,
+/obj/machinery/button/door{
+	id = "sec";
+	pixel_y = 22;
+	name = "Security Lockdown"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/adminstrative)
 "bQ" = (
 /obj/effect/turf_decal/trimline/opaque/lime/corner,
 /obj/structure/cable/yellow{
@@ -196,10 +216,6 @@
 /obj/item/ammo_casing/spent,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
-"bV" = (
-/obj/structure/flora/ausbushes/sparsegrass/hell,
-/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
-/area/overmap_encounter/planetoid/lava/explored)
 "ca" = (
 /obj/effect/turf_decal/trimline/opaque/beige/warning,
 /turf/open/floor/plasteel/dark,
@@ -375,10 +391,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/cave/explored)
-"do" = (
-/obj/structure/flora/ausbushes/genericbush/hell,
-/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
-/area/overmap_encounter/planetoid/lava/explored)
 "du" = (
 /obj/item/ammo_casing/spent/pistol_steel,
 /turf/open/floor/plasteel/dark/lava,
@@ -621,6 +633,10 @@
 	},
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
+"gg" = (
+/obj/structure/flora/tree/dead/barren,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
+/area/overmap_encounter/planetoid/lava/explored)
 "gj" = (
 /obj/item/radio/intercom/directional/north,
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
@@ -706,10 +722,6 @@
 /obj/item/storage/box/ingredients/vegetarian,
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/adminstrative)
-"gS" = (
-/obj/structure/flora/ausbushes/ywflowers/hell,
-/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
-/area/overmap_encounter/planetoid/lava/explored)
 "gT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_casing/c9mm{
@@ -851,20 +863,16 @@
 	},
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
+"ip" = (
+/obj/structure/flora/ausbushes/ywflowers/hell,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
+/area/overmap_encounter/planetoid/lava/explored)
 "iE" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /turf/open/floor/concrete/lava,
 /area/overmap_encounter/planetoid/lava/explored)
-"iL" = (
-/obj/item/plate,
-/obj/item/trash/can/food/beans{
-	pixel_x = -4;
-	pixel_y = 7
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/lavaland/factory/warehouse)
 "iP" = (
 /turf/closed/wall/r_wall,
 /area/ruin/lavaland/factory/warehouse)
@@ -1098,6 +1106,10 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/lavaland/factory/adminstrative)
+"kD" = (
+/obj/structure/flora/tree/dead/hell,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
+/area/overmap_encounter/planetoid/lava/explored)
 "kG" = (
 /obj/effect/decal/cleanable/ash/large,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
@@ -1142,14 +1154,6 @@
 /obj/effect/mob_spawn/human/corpse/ramzi,
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/manager_office)
-"lf" = (
-/obj/effect/turf_decal/corner/opaque/red/border{
-	dir = 5
-	},
-/obj/structure/guncloset,
-/obj/item/gun/energy/e_gun,
-/turf/open/floor/plasteel/dark,
-/area/ruin/lavaland/factory/adminstrative)
 "lj" = (
 /obj/effect/turf_decal/corner/opaque/bar,
 /obj/effect/turf_decal/corner/opaque/bar{
@@ -1387,11 +1391,6 @@
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
 /turf/open/floor/plasteel/mono,
 /area/ruin/lavaland/factory/warehouse)
-"nH" = (
-/obj/structure/flippedtable,
-/obj/item/gun/energy/e_gun,
-/turf/open/floor/plasteel/white,
-/area/ruin/lavaland/factory/lobby)
 "nK" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -1643,6 +1642,10 @@
 	},
 /turf/open/floor/concrete/slab_1/lava,
 /area/overmap_encounter/planetoid/lava/explored)
+"pw" = (
+/obj/structure/flora/rock/pile,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
+/area/overmap_encounter/planetoid/lava/explored)
 "pH" = (
 /obj/effect/turf_decal/corner/opaque/ntblue,
 /obj/effect/turf_decal/corner/opaque/ntblue{
@@ -1835,6 +1838,11 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/adminstrative)
+"rk" = (
+/obj/structure/flippedtable,
+/obj/item/gun/energy/sharplite/x12,
+/turf/open/floor/plasteel/white,
+/area/ruin/lavaland/factory/lobby)
 "rF" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
@@ -1931,10 +1939,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/lavaland/factory/warehouse)
-"sC" = (
-/obj/structure/flora/ausbushes/fullgrass/hell,
-/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
-/area/overmap_encounter/planetoid/lava/explored)
 "sD" = (
 /obj/effect/turf_decal/road/stop{
 	dir = 8;
@@ -1965,26 +1969,6 @@
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/mono,
 /area/ruin/lavaland/factory/warehouse)
-"sQ" = (
-/obj/effect/turf_decal/corner/opaque/red/border{
-	dir = 9
-	},
-/obj/structure/closet/secure_closet/security,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
-/obj/item/clothing/suit/armor/vest,
-/obj/item/clothing/head/helmet/sec,
-/obj/item/clothing/glasses/hud/security/sunglasses,
-/obj/item/radio/headset/headset_sec/alt,
-/obj/item/restraints/handcuffs,
-/obj/item/flashlight/seclite,
-/obj/machinery/button/door{
-	id = "sec";
-	pixel_y = 22;
-	name = "Security Lockdown"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/lavaland/factory/adminstrative)
 "sT" = (
 /obj/structure/sink{
 	pixel_y = 10
@@ -2105,6 +2089,9 @@
 	dir = 8
 	},
 /turf/open/floor/concrete/lava,
+/area/overmap_encounter/planetoid/lava/explored)
+"tV" = (
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
 /area/overmap_encounter/planetoid/lava/explored)
 "ub" = (
 /obj/item/reagent_containers/hypospray/medipen/stimpack{
@@ -2346,6 +2333,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
+"wi" = (
+/obj/structure/flora/ausbushes/genericbush/hell,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
+/area/overmap_encounter/planetoid/lava/explored)
 "wk" = (
 /obj/effect/turf_decal/trimline/opaque/beige/corner{
 	dir = 4
@@ -2556,6 +2547,16 @@
 "yQ" = (
 /turf/closed/indestructible/titanium,
 /area/ruin/lavaland/factory/manager_office)
+"yR" = (
+/obj/effect/turf_decal/trimline/opaque/lime/warning{
+	dir = 1
+	},
+/obj/item/ammo_box/magazine/m9mm_expedition{
+	start_empty = 1
+	},
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/saber,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/dorms)
 "yU" = (
 /obj/structure/table/wood,
 /obj/machinery/microwave,
@@ -2575,6 +2576,10 @@
 	},
 /turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/adminstrative)
+"zg" = (
+/obj/structure/flora/ausbushes/fernybush/hell,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
+/area/overmap_encounter/planetoid/lava/explored)
 "zh" = (
 /obj/effect/decal/cleanable/glass,
 /obj/machinery/light/broken/directional/north,
@@ -2613,16 +2618,6 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ruin/lavaland/factory/warehouse)
-"zz" = (
-/obj/effect/turf_decal/trimline/opaque/lime/warning{
-	dir = 1
-	},
-/obj/item/ammo_box/magazine/smgm9mm{
-	start_empty = 1
-	},
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/saber,
-/turf/open/floor/plasteel/dark,
-/area/ruin/lavaland/factory/dorms)
 "zC" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable/yellow{
@@ -2655,10 +2650,6 @@
 /obj/machinery/light/built/directional/north,
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
-"zK" = (
-/obj/structure/flora/tree/dead/hell,
-/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
-/area/overmap_encounter/planetoid/lava/explored)
 "zO" = (
 /obj/effect/decal/cleanable/glass,
 /obj/structure/table_frame,
@@ -2763,6 +2754,11 @@
 	},
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
+"AY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/gun/ballistic/automatic/pistol/challenger/no_mag,
+/turf/open/floor/plasteel/white/lava,
+/area/overmap_encounter/planetoid/lava/explored)
 "Ba" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable/yellow{
@@ -2845,9 +2841,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/lavaland/factory/adminstrative)
-"BN" = (
-/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
-/area/overmap_encounter/planetoid/lava/explored)
 "Cc" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
@@ -2873,6 +2866,10 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/manager_office)
+"Cu" = (
+/obj/structure/flora/ausbushes/hell,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
+/area/overmap_encounter/planetoid/lava/explored)
 "CG" = (
 /turf/open/floor/plating/rust/lava,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -3049,10 +3046,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/adminstrative)
-"EH" = (
-/obj/structure/flora/rock/hell,
-/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
-/area/overmap_encounter/planetoid/lava/explored)
+"EF" = (
+/obj/item/plate,
+/obj/item/trash/can/food/beans{
+	pixel_x = -4;
+	pixel_y = 7
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/lavaland/factory/warehouse)
 "EK" = (
 /obj/structure/closet/secure_closet/personal,
 /obj/effect/turf_decal/corner/opaque/ntblue,
@@ -3159,10 +3160,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
-"FO" = (
-/obj/structure/flora/ausbushes/grassybush/hell,
-/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
-/area/overmap_encounter/planetoid/lava/explored)
 "FY" = (
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 9
@@ -3256,6 +3253,10 @@
 /obj/item/trash/chips,
 /turf/open/floor/plasteel/tech,
 /area/ruin/lavaland/factory/warehouse)
+"GJ" = (
+/obj/structure/flora/ausbushes/fullgrass/hell,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
+/area/overmap_encounter/planetoid/lava/explored)
 "GK" = (
 /obj/machinery/door/airlock/outpost,
 /turf/open/floor/plasteel/dark,
@@ -3305,6 +3306,10 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/manager_office)
+"GT" = (
+/obj/structure/flora/ausbushes/grassybush/hell,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
+/area/overmap_encounter/planetoid/lava/explored)
 "Ha" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -3443,10 +3448,6 @@
 "In" = (
 /turf/open/floor/concrete/lava,
 /area/overmap_encounter/planetoid/lava/explored)
-"Io" = (
-/obj/structure/flora/tree/dead/barren,
-/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
-/area/overmap_encounter/planetoid/lava/explored)
 "Iz" = (
 /obj/machinery/modular_computer/console/preset/command{
 	dir = 1
@@ -3522,10 +3523,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/warehouse)
-"Ji" = (
-/obj/structure/flora/rock/pile,
-/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
-/area/overmap_encounter/planetoid/lava/explored)
 "Jk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/mecha_wreckage/ripley,
@@ -3631,6 +3628,18 @@
 "KX" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/lavaland/factory/manager_office)
+"KZ" = (
+/obj/structure/closet/secure_closet/quartermaster{
+	populate = 0
+	},
+/obj/machinery/light/dim/directional/north,
+/obj/item/clipboard,
+/obj/item/storage/box/shipping,
+/obj/item/clothing/suit/space/hardsuit/mining/heavy,
+/obj/item/gun/energy/sharplite/x26,
+/obj/item/stock_parts/cell/gun/mini,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/manager_office)
 "La" = (
 /obj/structure/flora/ausbushes/sparsegrass/hell,
 /turf/open/floor/plating/asteroid/purple/lit,
@@ -3669,6 +3678,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
 /area/ruin/lavaland/factory/warehouse)
+"LI" = (
+/obj/structure/flora/ausbushes/sparsegrass/hell,
+/obj/structure/flora/rock/pile,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
+/area/overmap_encounter/planetoid/lava/explored)
 "LK" = (
 /obj/effect/turf_decal/industrial/stand_clear,
 /obj/effect/turf_decal/industrial/warning{
@@ -3853,6 +3867,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
+"Nc" = (
+/obj/effect/turf_decal/corner/opaque/red/border{
+	dir = 5
+	},
+/obj/structure/guncloset,
+/obj/item/gun/energy/sharplite/x12,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/adminstrative)
+"Ne" = (
+/obj/structure/flora/tree/dead/tall,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
+/area/overmap_encounter/planetoid/lava/explored)
 "Nj" = (
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -4147,6 +4173,10 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/lavaland/factory/warehouse)
+"Qw" = (
+/obj/structure/flora/rock/hell,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
+/area/overmap_encounter/planetoid/lava/explored)
 "QA" = (
 /obj/item/folder/yellow{
 	pixel_x = -7;
@@ -4225,11 +4255,6 @@
 	dir = 4
 	},
 /turf/open/floor/concrete/pavement/lava,
-/area/overmap_encounter/planetoid/lava/explored)
-"Rr" = (
-/obj/structure/flora/ausbushes/sparsegrass/hell,
-/obj/structure/flora/rock/pile,
-/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
 /area/overmap_encounter/planetoid/lava/explored)
 "Rv" = (
 /obj/effect/decal/cleanable/dirt,
@@ -4341,10 +4366,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/adminstrative)
-"Sr" = (
-/obj/structure/flora/ausbushes/fernybush/hell,
-/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
-/area/overmap_encounter/planetoid/lava/explored)
 "Su" = (
 /obj/effect/turf_decal/trimline/opaque/beige/corner{
 	dir = 8
@@ -4573,18 +4594,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white/lava,
 /area/overmap_encounter/planetoid/lava/explored)
-"Ut" = (
-/obj/structure/closet/secure_closet/quartermaster{
-	populate = 0
-	},
-/obj/machinery/light/dim/directional/north,
-/obj/item/clipboard,
-/obj/item/storage/box/shipping,
-/obj/item/clothing/suit/space/hardsuit/mining/heavy,
-/obj/item/gun/energy/e_gun/mini,
-/obj/item/stock_parts/cell/gun/mini,
-/turf/open/floor/plasteel/dark,
-/area/ruin/lavaland/factory/manager_office)
+"Uu" = (
+/obj/structure/flora/ausbushes/sparsegrass/hell,
+/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
+/area/overmap_encounter/planetoid/lava/explored)
 "Uz" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -4597,10 +4610,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white/lava,
-/area/overmap_encounter/planetoid/lava/explored)
-"UE" = (
-/obj/structure/flora/tree/dead/tall,
-/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
 /area/overmap_encounter/planetoid/lava/explored)
 "UF" = (
 /obj/effect/mapping_helpers/airlock/locked,
@@ -4725,11 +4734,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
-"VL" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
-/turf/open/floor/plasteel/white/lava,
-/area/overmap_encounter/planetoid/lava/explored)
 "VN" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -4856,10 +4860,6 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/lavaland/factory/lobby)
-"XI" = (
-/obj/structure/flora/ausbushes/hell,
-/turf/open/floor/plating/asteroid/dirt/grass/lavaland,
-/area/overmap_encounter/planetoid/lava/explored)
 "XM" = (
 /obj/machinery/newscaster/directional/west,
 /obj/structure/noticeboard/staff{
@@ -5168,11 +5168,11 @@ fE
 fE
 fE
 fE
-sC
-BN
-BN
+GJ
+tV
+tV
 fE
-BN
+tV
 fE
 fE
 fE
@@ -5222,21 +5222,21 @@ fE
 MH
 MH
 MH
-BN
-BN
-BN
-BN
-sC
-FO
-BN
-BN
-BN
-XI
-BN
-BN
-gS
-BN
-BN
+tV
+tV
+tV
+tV
+GJ
+GT
+tV
+tV
+tV
+Cu
+tV
+tV
+ip
+tV
+tV
 fE
 An
 tg
@@ -5277,21 +5277,21 @@ MH
 MH
 MH
 MH
-Ji
-gS
-BN
-Io
-BN
-BN
-do
-BN
-BN
-BN
-BN
-sC
-bV
-sC
-BN
+pw
+ip
+tV
+gg
+tV
+tV
+wi
+tV
+tV
+tV
+tV
+GJ
+Uu
+GJ
+tV
 An
 AE
 In
@@ -5303,9 +5303,9 @@ In
 In
 sp
 An
-BN
-XI
-BN
+tV
+Cu
+tV
 fE
 fE
 fE
@@ -5339,13 +5339,13 @@ Zc
 Zc
 Zc
 Zc
-Rr
-sC
-BN
-Ji
-Sr
-BN
-do
+LI
+GJ
+tV
+pw
+zg
+tV
+wi
 An
 AE
 In
@@ -5357,11 +5357,11 @@ In
 In
 sp
 An
-sC
-BN
-bV
-BN
-BN
+GJ
+tV
+Uu
+tV
+tV
 fE
 fE
 fE
@@ -5394,12 +5394,12 @@ Zc
 jG
 Zc
 Zc
-bV
-BN
-BN
-BN
-UE
-sC
+Uu
+tV
+tV
+tV
+Ne
+GJ
 An
 tg
 In
@@ -5411,11 +5411,11 @@ In
 In
 fq
 An
-sC
-do
-sC
-BN
-gS
+GJ
+wi
+GJ
+tV
+ip
 fE
 fE
 fE
@@ -5448,12 +5448,12 @@ us
 kB
 dl
 Zc
-gS
-BN
-do
-EH
-bV
-sC
+ip
+tV
+wi
+Qw
+Uu
+GJ
 pt
 Nj
 Uz
@@ -5465,12 +5465,12 @@ Uz
 Uz
 kY
 An
-EH
-sC
-bV
-BN
-Sr
-BN
+Qw
+GJ
+Uu
+tV
+zg
+tV
 fE
 fE
 fE
@@ -5506,8 +5506,8 @@ Zc
 Zc
 Zc
 Zc
-BN
-sC
+tV
+GJ
 US
 GO
 av
@@ -5519,12 +5519,12 @@ GO
 GO
 GO
 US
-bV
-sC
-bV
-BN
-Ji
-BN
+Uu
+GJ
+Uu
+tV
+pw
+tV
 fE
 fE
 fE
@@ -5556,28 +5556,28 @@ SK
 Df
 lB
 Zc
-sQ
+bI
 jf
 EC
 Zc
-BN
-Sr
-BN
+tV
+zg
+tV
 pV
 Ba
 nK
-sC
-BN
-FO
-gS
-BN
-BN
-BN
-BN
+GJ
+tV
+GT
+ip
+tV
+tV
+tV
+tV
 xb
-bV
-FO
-BN
+Uu
+GT
+tV
 NM
 fE
 fE
@@ -5614,13 +5614,13 @@ pI
 Ac
 Fv
 Zc
-sC
-BN
-BN
+GJ
+tV
+tV
 VO
 nD
 nK
-zK
+kD
 iP
 iP
 iP
@@ -5664,13 +5664,13 @@ lw
 IX
 Sq
 Zc
-lf
+Nc
 jx
 ex
 Zc
-sC
-BN
-XI
+GJ
+tV
+Cu
 VO
 nD
 nK
@@ -5722,9 +5722,9 @@ Zc
 Zc
 Zc
 Zc
-Ji
-BN
-sC
+pw
+tV
+GJ
 VO
 nD
 nK
@@ -5776,9 +5776,9 @@ FY
 Uj
 Pv
 Zc
-zK
-BN
-BN
+kD
+tV
+tV
 VO
 Jt
 qm
@@ -5830,9 +5830,9 @@ Bd
 Ac
 oc
 Zc
-Sr
-BN
-BN
+zg
+tV
+tV
 VO
 Jt
 KK
@@ -5884,9 +5884,9 @@ Xp
 nT
 Zn
 Zc
-bV
-BN
-BN
+Uu
+tV
+tV
 VO
 Jt
 KK
@@ -5939,8 +5939,8 @@ BA
 OO
 Zc
 jQ
-sC
-sC
+GJ
+GJ
 VO
 nD
 qm
@@ -5994,7 +5994,7 @@ LX
 bi
 jQ
 jQ
-EH
+Qw
 VO
 nD
 nK
@@ -6067,8 +6067,8 @@ iP
 NM
 NM
 NM
-BN
-BN
+tV
+tV
 "}
 (19,1,1) = {"
 fE
@@ -6119,10 +6119,10 @@ iP
 Ij
 iP
 iP
-BN
+tV
 NM
-BN
-gS
+tV
+ip
 "}
 (20,1,1) = {"
 fE
@@ -6174,9 +6174,9 @@ TG
 iP
 iP
 iP
-gS
-BN
-BN
+ip
+tV
+tV
 "}
 (21,1,1) = {"
 MH
@@ -6207,7 +6207,7 @@ KX
 nm
 hf
 fr
-nH
+rk
 Om
 Om
 Km
@@ -6229,8 +6229,8 @@ bE
 xj
 iP
 iP
-bV
-BN
+Uu
+tV
 "}
 (22,1,1) = {"
 fE
@@ -6279,12 +6279,12 @@ Ho
 vv
 iP
 eE
-iL
+EF
 qP
 zx
 iP
-XI
-BN
+Cu
+tV
 "}
 (23,1,1) = {"
 MH
@@ -6337,8 +6337,8 @@ Gp
 Pg
 Be
 iP
-bV
-BN
+Uu
+tV
 "}
 (24,1,1) = {"
 fE
@@ -6391,8 +6391,8 @@ fc
 AP
 Ev
 iP
-BN
-BN
+tV
+tV
 "}
 (25,1,1) = {"
 fE
@@ -6445,8 +6445,8 @@ iP
 iP
 iP
 iP
-BN
-do
+tV
+wi
 "}
 (26,1,1) = {"
 fE
@@ -6483,7 +6483,7 @@ Lb
 pb
 pb
 Ci
-VL
+AY
 gT
 Yp
 io
@@ -6498,9 +6498,9 @@ sU
 Zx
 sU
 sU
-FO
-Io
-BN
+GT
+gg
+tV
 "}
 (27,1,1) = {"
 fE
@@ -6552,9 +6552,9 @@ Tg
 Tg
 dk
 ji
-sC
-sC
-BN
+GJ
+GJ
+tV
 "}
 (28,1,1) = {"
 fE
@@ -6606,9 +6606,9 @@ Il
 Il
 Zx
 qV
-sC
-sC
-BN
+GJ
+GJ
+tV
 "}
 (29,1,1) = {"
 fE
@@ -6660,9 +6660,9 @@ ZS
 ZS
 hZ
 bd
-BN
-do
-BN
+tV
+wi
+tV
 "}
 (30,1,1) = {"
 fE
@@ -6715,8 +6715,8 @@ ZN
 nf
 bd
 bd
-gS
-BN
+ip
+tV
 "}
 (31,1,1) = {"
 fE
@@ -6770,7 +6770,7 @@ nf
 Oe
 Oe
 bd
-BN
+tV
 "}
 (32,1,1) = {"
 fE
@@ -6981,7 +6981,7 @@ qe
 NP
 CG
 SL
-Ut
+KZ
 so
 ha
 Iz
@@ -7339,7 +7339,7 @@ MH
 MH
 sZ
 YJ
-zz
+yR
 nA
 YJ
 sZ

@@ -5,7 +5,7 @@
 	mission = "Carry out your contract."
 	rename_team = "Inteq Assault Team"
 	polldesc = "an Inteq assault team"
-	ert_template = /datum/map_template/shuttle/subshuttles/anvil
+	ert_template = /datum/map_template/shuttle/subshuttles/javelin
 
 /datum/ert/inteq/eva
 	leader_role = /datum/antagonist/ert/inteq/leader/eva

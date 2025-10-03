@@ -72,7 +72,7 @@
 			if (RADIO_CHANNEL_SYNDICATE)
 				sender = input("From what faction?", "Syndicate") as null|anything in list("Liberation Front Leadership", "Gorlex Republic Military Command", "Cybersun Industries", "the Student-Union of Naturalistic Sciences")
 			if (RADIO_CHANNEL_MINUTEMEN)
-				sender = input("From what division?", "Minutemen") as null|anything in list("the Colonial League Minutemen", "the Galactic Optium Labor Divison", "the Biohazard Assesment and Removal Division")
+				sender = input("From what division?", "Minutemen") as null|anything in list("the Confederated League", "the Galactic Optium Labor Divison", "the Biohazard Assesment and Removal Division")
 			if (RADIO_CHANNEL_INTEQ)
 				sender = "Inteq Risk Management"
 			if ("Outpost")
@@ -377,7 +377,11 @@
 
 	switch(confirm)
 		if("Yes")
-			create_distress_beacon(overmap_location)
+			var/distress_message = input(src, "Input any information you'd like attached with the distress signal.", "Distress Signal Message")
+			if(distress_message)
+				create_distress_beacon(overmap_location, distress_message)
+			else
+				create_distress_beacon(overmap_location)
 		if("No")
 			return
 
@@ -404,7 +408,11 @@
 
 	switch(confirm)
 		if("Yes")
-			create_distress_beacon(overmap_location)
+			var/distress_message = input(src, "Input any information you'd like attached with the distress signal.", "Distress Signal Message")
+			if(distress_message)
+				create_distress_beacon(overmap_location, distress_message)
+			else
+				create_distress_beacon(overmap_location)
 		if("No")
 			return
 

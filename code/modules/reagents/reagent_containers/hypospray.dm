@@ -75,7 +75,7 @@
 
 
 /obj/item/reagent_containers/hypospray/CMO
-	list_reagents = list(/datum/reagent/medicine/omnizine = 30)
+	list_reagents = list(/datum/reagent/medicine/panacea = 30)
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 //combat
@@ -88,20 +88,7 @@
 	icon_state = "combat_hypo"
 	volume = 90
 	ignore_flags = 1 // So they can heal their comrades.
-	list_reagents = list(/datum/reagent/medicine/epinephrine = 30, /datum/reagent/medicine/omnizine = 30, /datum/reagent/medicine/leporazine = 15, /datum/reagent/medicine/atropine = 15)
-
-/obj/item/reagent_containers/hypospray/combat/nanites
-	name = "experimental combat stimulant injector"
-	desc = "A modified air-needle autoinjector for use in combat situations. Prefilled with experimental medical nanites and a stimulant for rapid healing and a combat boost."
-	item_state = "nanite_hypo"
-	icon_state = "nanite_hypo"
-	base_icon_state = "nanite_hypo"
-	volume = 100
-	list_reagents = list(/datum/reagent/medicine/adminordrazine/quantum_heal = 80, /datum/reagent/medicine/synaptizine = 20)
-
-/obj/item/reagent_containers/hypospray/combat/nanites/update_icon_state()
-	icon_state = "[base_icon_state][(reagents.total_volume > 0) ? null : 0]"
-	return ..()
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 30, /datum/reagent/medicine/panacea = 30, /datum/reagent/medicine/leporazine = 15, /datum/reagent/medicine/atropine = 15)
 
 //MediPens
 
@@ -153,28 +140,13 @@
 	amount_per_transfer_from_this = 20
 	list_reagents = list(/datum/reagent/medicine/ephedrine = 10, /datum/reagent/consumable/coffee = 10)
 
-/obj/item/reagent_containers/hypospray/medipen/stimpack/traitor
-	desc = "A modified stimulants autoinjector for use in combat situations. Has a mild healing effect."
-	list_reagents = list(/datum/reagent/medicine/stimulants = 10, /datum/reagent/medicine/omnizine = 10)
-
-//watered down traitor stim
 /obj/item/reagent_containers/hypospray/medipen/stimpack/crisis
 	name = "crisis stimpack"
 	icon_state = "stimpen"
 	item_state = "stimpen"
 	base_icon_state = "stimpen"
 	desc = "A modified stimulant autoinjector, containing a cocktail of potent nerve excitants and long-release healing chemicals. Designed for use in emergency situations where medical help may be hours or days away."
-	list_reagents = list(/datum/reagent/medicine/stimulants = 5, /datum/reagent/medicine/ephedrine = 5, /datum/reagent/medicine/omnizine = 15)
-
-/obj/item/reagent_containers/hypospray/medipen/stimulants
-	name = "stimulant medipen"
-	desc = "Contains a very large amount of an incredibly powerful stimulant, vastly increasing your movement speed and reducing stuns by a very large amount for around five minutes. Do not take if pregnant."
-	icon_state = "syndipen"
-	item_state = "tbpen"
-	base_icon_state = "syndipen"
-	volume = 50
-	amount_per_transfer_from_this = 50
-	list_reagents = list(/datum/reagent/medicine/stimulants = 50)
+	list_reagents = list(/datum/reagent/medicine/stimulants = 5, /datum/reagent/medicine/ephedrine = 5, /datum/reagent/medicine/panacea = 15)
 
 /obj/item/reagent_containers/hypospray/medipen/morphine
 	name = "morphine medipen"
@@ -188,13 +160,29 @@
 	list_reagents = list(/datum/reagent/medicine/tramal = 10)
 	custom_price = 25
 
-/obj/item/reagent_containers/hypospray/medipen/oxandrolone
-	name = "oxandrolone medipen"
-	desc = "A autoinjector containing oxandrolone, used to treat severe burns."
+/obj/item/reagent_containers/hypospray/medipen/silfrine
+	name = "silfrine medipen"
+	desc = "A autoinjector containing silfrine, used to near-instantly reknit hewn flesh."
+	icon_state = "salpen"
+	item_state = "salpen"
+	base_icon_state = "salpen"
+	list_reagents = list(/datum/reagent/medicine/silfrine = 10)
+
+/obj/item/reagent_containers/hypospray/medipen/ysiltane
+	name = "ysiltane medipen"
+	desc = "A autoinjector containing ysiltane, used to rapidly clear up widespread surface-level burning."
 	icon_state = "oxapen"
 	item_state = "oxapen"
 	base_icon_state = "oxapen"
-	list_reagents = list(/datum/reagent/medicine/oxandrolone = 10)
+	list_reagents = list(/datum/reagent/medicine/ysiltane = 10)
+
+/obj/item/reagent_containers/hypospray/medipen/gjalrazine
+	name = "gjalrazine medipen"
+	desc = "A autoinjector containing Gjalrazine, used to purge the body of toxic after effects."
+	icon_state = "penacid"
+	item_state = "penacid"
+	base_icon_state = "penacid"
+	list_reagents = list(/datum/reagent/medicine/gjalrazine = 10)
 
 /obj/item/reagent_containers/hypospray/medipen/penacid
 	name = "pentetic acid medipen"
@@ -203,14 +191,6 @@
 	item_state = "penacid"
 	base_icon_state = "penacid"
 	list_reagents = list(/datum/reagent/medicine/pen_acid = 10)
-
-/obj/item/reagent_containers/hypospray/medipen/salacid
-	name = "salicylic acid medipen"
-	desc = "A autoinjector containing salicylic acid, used to treat severe brute damage."
-	icon_state = "salacid"
-	item_state = "salacid"
-	base_icon_state = "salacid"
-	list_reagents = list(/datum/reagent/medicine/sal_acid = 10)
 
 /obj/item/reagent_containers/hypospray/medipen/salbutamol
 	name = "salbutamol medipen"
@@ -305,10 +285,10 @@
 	amount_per_transfer_from_this = 10
 	custom_price = 25
 
-/obj/item/reagent_containers/hypospray/medipen/tricord
-	name = "tricordrazine injector"
-	desc = "An injector filled with tricordrazine, a mildly effective healing agent."
-	list_reagents = list(/datum/reagent/medicine/tricordrazine = 15)
+/obj/item/reagent_containers/hypospray/medipen/cureall
+	name = "cureall injector"
+	desc = "An injector filled with cureall, a mildly effective healing agent."
+	list_reagents = list(/datum/reagent/medicine/cureall = 15)
 	volume = 15
 	amount_per_transfer_from_this = 15
 	icon_state = "morphen"
@@ -345,7 +325,7 @@
 /obj/item/reagent_containers/hypospray/medipen/combat_drug
 	name = "combat cocktail"
 	desc = "An injector filled with a potent combat drug mixture. Straight from the Shoal."
-	list_reagents = list(/datum/reagent/drug/combat_drug = 6, /datum/reagent/medicine/bicaridinep = 6, /datum/reagent/medicine/dermaline = 6)
+	list_reagents = list(/datum/reagent/drug/combat_drug = 6, /datum/reagent/medicine/silfrine = 6, /datum/reagent/medicine/ysiltane = 6)
 	volume = 18
 	amount_per_transfer_from_this = 18
 	icon_state = "syndipen"
@@ -370,6 +350,16 @@
 	icon_state = "syndipen"
 	base_icon_state = "syndipen"
 	item_state = "syndipen"
+
+/obj/item/reagent_containers/hypospray/medipen/netzach
+	name = "\improper Nesah injector"
+	desc = "A combat injector filled with a tightly curated mixture of regenerative compounds. \"The Fearlessness To Go Forward\" is etched in small text opposite the activator."
+	list_reagents = list(/datum/reagent/medicine/silfrine = 10, /datum/reagent/medicine/ysiltane = 10, /datum/reagent/drug/aranesp = 10, /datum/reagent/medicine/morphine = 10)
+	volume = 40
+	amount_per_transfer_from_this = 40
+	icon_state = "penacid"
+	base_icon_state = "penacid"
+	item_state = "penacid"
 
 /obj/item/reagent_containers/hypospray/medipen/placebatol
 	name = "prescription medipen"
@@ -412,19 +402,19 @@
 	var/penetrates = TRUE
 
 /obj/item/hypospray/mkii/brute
-	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/bicaridine
+	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/indomide
 
 /obj/item/hypospray/mkii/toxin
-	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/antitoxin
+	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/pancrazine
 
 /obj/item/hypospray/mkii/oxygen
 	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/dexalin
 
 /obj/item/hypospray/mkii/burn
-	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/kelotane
+	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/alvitane
 
-/obj/item/hypospray/mkii/tricord
-	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/tricord
+/obj/item/hypospray/mkii/cureall
+	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/cureall
 
 /obj/item/hypospray/mkii/mkiii
 	name = "hypospray mk.III"
@@ -691,7 +681,7 @@
 	custom_price = 500
 	volume = 35
 	amount_per_transfer_from_this = 36
-	list_reagents = list(/datum/reagent/medicine/epinephrine = 5.5, /datum/reagent/medicine/lavaland_extract = 3, /datum/reagent/drug/methamphetamine = 2, /datum/reagent/medicine/morphine = 0.5, /datum/reagent/medicine/leporazine = 6, /datum/reagent/medicine/salglu_solution = 8, /datum/reagent/medicine/oxandrolone = 5, /datum/reagent/medicine/sal_acid = 5)
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 5.5, /datum/reagent/medicine/hunter_extract = 3, /datum/reagent/drug/methamphetamine = 2, /datum/reagent/medicine/morphine = 0.5, /datum/reagent/medicine/leporazine = 6, /datum/reagent/medicine/salglu_solution = 8, /datum/reagent/medicine/ysiltane = 5, /datum/reagent/medicine/silfrine = 5)
 
 #undef HYPO_SPRAY
 #undef HYPO_INJECT

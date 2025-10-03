@@ -617,7 +617,7 @@
 	results = list(/datum/reagent/consumable/ethanol/trickwine/ash_wine = 5)
 	required_reagents = list(/datum/reagent/consumable/ethanol/absinthe = 3, /datum/reagent/ash = 1, /datum/reagent/drug/mushroomhallucinogen = 1)
 	required_container = /obj/structure/fermenting_barrel/distiller
-	mix_sound ='sound/weather/ashstorm/inside/weak_end.ogg'
+	mix_sound ='sound/weather/ashstorm/outside/weak_end.ogg'
 
 /datum/chemical_reaction/ice_wine
 	results = list(/datum/reagent/consumable/ethanol/trickwine/ice_wine = 5)
@@ -651,7 +651,7 @@
 
 /datum/chemical_reaction/molten_bubbles
 	results = list(/datum/reagent/consumable/molten = 30)
-	required_reagents = list(/datum/reagent/clf3 = 10, /datum/reagent/consumable/space_cola = 20, /datum/reagent/medicine/leporazine = 1, /datum/reagent/medicine/lavaland_extract = 1)
+	required_reagents = list(/datum/reagent/clf3 = 10, /datum/reagent/consumable/space_cola = 20, /datum/reagent/medicine/leporazine = 1, /datum/reagent/medicine/hunter_extract = 1)
 
 /datum/chemical_reaction/plasma_bubbles
 	results = list(/datum/reagent/consumable/molten/plasma_fizz = 3)

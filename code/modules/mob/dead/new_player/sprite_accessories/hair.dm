@@ -266,6 +266,10 @@
 	name = "Feather"
 	icon_state = "hair_feather"
 
+/datum/sprite_accessory/hair/featherbang
+	name = "Feather (Bang)"
+	icon_state = "hair_featherbang"
+
 /datum/sprite_accessory/hair/father
 	name = "Father"
 	icon_state = "hair_father"
@@ -385,6 +389,10 @@
 /datum/sprite_accessory/hair/longbun
 	name = "Long Bun"
 	icon_state = "hair_longbun"
+
+/datum/sprite_accessory/hair/halfbun
+	name = "Long Bun (Half)"
+	icon_state = "hair_longerbun"
 
 /datum/sprite_accessory/hair/longbangs
 	name = "Long Bangs"
@@ -718,6 +726,10 @@
 /datum/sprite_accessory/hair/twintails
 	name = "Twintails"
 	icon_state = "hair_twintail"
+
+/datum/sprite_accessory/hair/twintailslong
+	name = "Twintails (Long)"
+	icon_state = "hair_twintaillong"
 
 /datum/sprite_accessory/hair/ruby
 	name = "Ruby"

@@ -1,7 +1,6 @@
 /datum/species/abductor
 	name = "\improper Abductor"
 	id = SPECIES_ABDUCTOR
-	sexes = FALSE
 	species_traits = list(NOBLOOD,NOEYESPRITES)
 	inherent_traits = list(TRAIT_VIRUSIMMUNE,TRAIT_CHUNKYFINGERS,TRAIT_NOHUNGER,TRAIT_NOBREATH)
 	mutanttongue = /obj/item/organ/tongue/abductor

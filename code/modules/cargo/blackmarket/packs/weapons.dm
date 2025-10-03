@@ -42,6 +42,22 @@
 	stock_max = 3
 	availability_prob = 30
 
+/datum/blackmarket_item/weapon/blastinghammer
+	name = "Blasting Hammer"
+	desc = "Have you ever thought: \"Man, my 20 pound sledgehammer isn't crushing skulls well enough.\" No? Well, our friends in the Ramzi Clique have solved this issue anyways and made it everyone else's problem. This baby loads 12g blanks as propollent to really make that swing a home run. Just don't put a live shell in, yeah?"
+	item = /obj/item/storage/backpack/duffelbag/syndie
+
+	cost_min = 4000
+	cost_max = 6000
+	stock = 1
+	availability_prob = 15
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/weapon/blastinghammer/spawn_item(loc)
+	var/obj/item/storage/backpack/duffelbag/syndie/B = ..()
+	new /obj/item/gun/ballistic/shotgun/blasting_hammer(B)
+	new /obj/item/storage/box/ammo/a12g_blank(B)
+	return B
 /datum/blackmarket_item/weapon/spikeshield
 	name = "Spiked Ballistic Shield"
 	desc = "Be the ancient warrior you always wanted to be. Block bullets and impale your enemies."
@@ -60,6 +76,16 @@
 	cost_max = 4000
 	stock_max = 2
 	availability_prob = 50
+
+/datum/blackmarket_item/weapon/cutlass
+	name = "Gezenan Boarding Cutlass"
+	desc = "A mass produced fighting blade fresh from the belt of some poor sailor. It's got some mean weight to it."
+	item = /obj/item/storage/belt/sabre/pgf
+
+	cost_min = 1000
+	cost_max = 1750
+	stock = 1
+	availability_prob = 25
 
 /datum/blackmarket_item/weapon/sabre
 	name = "SUNS Dueling Sabre"
@@ -275,6 +301,16 @@
 	stock_max = 2
 	availability_prob = 25
 
+/datum/blackmarket_item/weapon/guncase/vga5
+	name = "VG-A5 Beam Gun"
+	desc = "So you've seen those quad burst Etherbor Volleyguns? Well this thing has a quintuple burst! That means five!"
+	item = /obj/item/gun/energy/kalix/pgf/nock
+
+	cost_min = 3500
+	cost_max = 5000
+	stock = 2
+	availability_prob = 20
+
 /datum/blackmarket_item/weapon/guncase/bg_16
 	name = "BG-16 Beam Gun"
 	desc = "Not satisfied by Etherbor's civilian offerings? Try this military grade one we found!"
@@ -347,21 +383,10 @@
 	stock_max = 3
 	availability_prob = 30
 
-/datum/blackmarket_item/weapon/guncase/proto_gauss
-	name = "Prototype Gauss Rifle"
-	desc = "A prototype gauss rifle made by Nanotrasen. Perfect for making swiss cheese out of people. Chambered in ferromagnetic pellets."
-	item = /obj/item/gun/ballistic/automatic/powered/gauss
-	pair_item = list(/datum/blackmarket_item/ammo/proto_gauss_mag)
-
-	cost_min = 1500
-	cost_max = 3500
-	stock = 2
-	availability_prob = 25
-
 /datum/blackmarket_item/weapon/guncase/cycler
 	name = "Cycler Shotgun"
 	desc = "Perpetuate the cycle of violence with this dual feed shotgun! Has two built in 4 shell magazine tubes that can be swapped at the press of a button!"
-	item = /obj/item/gun/ballistic/shotgun/automatic/dual_tube
+	item = /obj/item/gun/ballistic/shotgun/automatic/negotiator
 	gun_unloaded = FALSE
 	mag_number = 0
 
@@ -423,6 +448,18 @@
 	cost_max = 2000
 	stock = 1
 	availability_prob = 35
+
+/datum/blackmarket_item/weapon/guncase/cottonmouth
+	name = "MP-84m Cottonmouth Machinepistol"
+	desc = "Ramzi suppliers been rechambering a buncha Rattlesnakes into 10x22mm. Ol' nine ain't cutting it anymore. Kicks a liiiiiiittle bit worse aaaand it's just a two burst, but it'll suit ya well."
+	item = /obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonmouth
+	pair_item = list(/datum/blackmarket_item/ammo/cottonmouth)
+
+	cost_min = 1500
+	cost_max = 2250
+	stock_min = 1
+	stock_max = 2
+	availability_prob = 30
 
 /datum/blackmarket_item/weapon/guncase/f3
 	name = "F3 Marksman Rifle"
