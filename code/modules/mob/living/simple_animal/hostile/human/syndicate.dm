@@ -500,7 +500,7 @@
 	minbodytemp = 0
 	maxbodytemp = 1000
 	mob_size = MOB_SIZE_TINY
-	movement_type = FLYING
+	is_flying_animal = TRUE
 	limb_destroyer = 1
 	speak_emote = list("states")
 	bubble_icon = "syndibot"

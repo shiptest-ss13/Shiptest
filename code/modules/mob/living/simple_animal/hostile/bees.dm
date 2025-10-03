@@ -46,7 +46,7 @@
 	density = FALSE
 	mob_size = MOB_SIZE_TINY
 	mob_biotypes = MOB_ORGANIC|MOB_BUG
-	movement_type = FLYING
+	is_flying_animal = TRUE
 	search_objects = 1 //have to find those plant trays!
 
 	//Spaceborn beings don't get hurt by space
