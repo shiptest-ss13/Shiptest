@@ -39,7 +39,7 @@
 
 /obj/item/melee/powerfist/AltClick(mob/user)
 	. = ..()
-	update_overlays()
+	update_appearance()
 
 /obj/item/melee/powerfist/proc/set_power_level(mob/user, new_power_level, forced=FALSE)
 	playsound(src, 'sound/machines/click.ogg', 60, TRUE)
@@ -54,6 +54,7 @@
 			hitsound = 'sound/weapons/resonator_blast.ogg'
 		if(3)
 			to_chat(user, span_warning("[forced ? "[src] sets itself" : "You tune [src]" ] to setting [power_level]. Maximum force."))
+	update_appearance()
 
 /obj/item/melee/powerfist/multitool_act(mob/living/user, obj/item/I)
 	overcharge =! overcharge
@@ -61,7 +62,7 @@
 
 /obj/item/melee/powerfist/CtrlClick(mob/user)
 	. = ..()
-	playsound(src, 'sound/machines/switch3.ogg', 60, TRUE)
+	playsound(src, 'sound/machines/switch3.ogg', 25, TRUE)
 	if(HAS_TRAIT_FROM(src, TRAIT_NODROP, "powerfist"))
 		REMOVE_TRAIT(src, TRAIT_NODROP, "powerfist")
 	else
@@ -72,9 +73,9 @@
 /obj/item/melee/powerfist/update_overlays()
 	. = ..()
 	var/datum/component/cell/our_cell = GetComponent(/datum/component/cell)
-	var/charge = our_cell.inserted_cell.percent()
 	if(!our_cell.inserted_cell)
-		return
+		return cut_overlays()
+	var/charge = our_cell.inserted_cell.percent()
 	if(charge > 66)
 		. += "powerfist-3"
 	else if(charge > 20)
