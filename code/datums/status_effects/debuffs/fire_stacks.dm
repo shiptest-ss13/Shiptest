@@ -152,7 +152,6 @@
 
 	var/datum/gas_mixture/air = owner.loc.return_air() // Check if we're standing in an oxygenless environment
 	if(air.get_moles(GAS_O2) < 1)
-		extinguish_mob() //If there's no oxygen in the tile we're on, put out the fire
 		return TRUE
 
 	var/turf/location = get_turf(src)
@@ -198,7 +197,7 @@
 		victim.adjust_bodytemperature(5.5 * delta_time)
 		return
 
-	victim.adjust_bodytemperature((BODYTEMP_HEATING_MAX + (stacks * 12)) * 0.5 * delta_time)
+	victim.adjust_bodytemperature((victim.species.bodytemp_heating_rate_max + (stacks * 12)) * 0.5 * delta_time)
 	SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "on_fire", /datum/mood_event/on_fire)
 
 /**
