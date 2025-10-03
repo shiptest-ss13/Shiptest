@@ -267,7 +267,7 @@ SUBSYSTEM_DEF(overmap)
 				if(!istype(nearby_obj))
 					continue
 				interference_power += nearby_obj.interference_power / 5
-	return interference_power
+	return max(interference_power,0)
 
 
 /////////////////////////////////////////////////////////////////////

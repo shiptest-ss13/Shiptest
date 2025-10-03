@@ -22,7 +22,7 @@
 	speak_emote = list("chitters")
 
 	basic_mob_flags = DEL_ON_DEATH
-	faction = list("hostile")
+	faction = list(FACTION_HOSTILE)
 
 	unsuitable_atmos_damage = 0
 	minimum_survivable_temperature = 270
