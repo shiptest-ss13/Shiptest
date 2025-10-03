@@ -86,7 +86,8 @@
 /obj/item/food/uncooked_rice
 	name = "uncooked rice"
 	desc = "A clump of raw rice."
-	icon_state = "uncooked_rice"
+	icon = 'icons/obj/food/soupsalad.dmi'
+	icon_state = "ricebowl"
 	food_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	tastes = list("rice" = 1)
 	foodtypes = GRAIN | RAW
@@ -97,6 +98,7 @@
 /obj/item/food/boiled_rice
 	name = "boiled rice"
 	desc = "A warm bowl of steamed white rice."
+	icon = 'icons/obj/food/soupsalad.dmi'
 	icon_state = "boiledrice"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
