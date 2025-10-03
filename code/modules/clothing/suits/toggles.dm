@@ -73,8 +73,6 @@
 		icon_state = "[base_icon_state]_t"
 	else
 		icon_state = base_icon_state
-	if(isobj(hood))
-		hood.icon_state = base_icon_state
 	. = ..()
 
 /obj/item/clothing/suit/hooded/dropped()
