@@ -63,10 +63,6 @@ There are several things that need to be remembered:
 	remove_overlay(BODY_LAYER)
 	dna.species.handle_body(src)
 
-/mob/living/carbon/human/update_fire()
-	..((fire_stacks > HUMAN_FIRE_STACK_ICON_NUM) ? "Standing" : "Generic_mob_burning")
-
-
 /* --------------------------------------- */
 //For legacy support.
 /mob/living/carbon/human/regenerate_icons()

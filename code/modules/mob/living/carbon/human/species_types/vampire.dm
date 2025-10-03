@@ -51,7 +51,7 @@
 		to_chat(C, span_warning("You don't belong here!"))
 		C.adjustFireLoss(20)
 		C.adjust_fire_stacks(6)
-		C.IgniteMob()
+		C.ignite_mob()
 
 /obj/item/organ/tongue/vampire
 	name = "vampire tongue"

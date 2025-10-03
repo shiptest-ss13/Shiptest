@@ -203,7 +203,7 @@
 			L.adjustFireLoss(20 * seconds_per_tick)
 			if(L) //mobs turning into object corpses could get deleted here.
 				L.adjust_fire_stacks(20 * seconds_per_tick)
-				L.IgniteMob()
+				L.ignite_mob()
 
 /turf/open/lava/smooth
 	name = "lava"
