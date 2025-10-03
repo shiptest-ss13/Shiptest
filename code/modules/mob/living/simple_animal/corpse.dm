@@ -64,7 +64,9 @@
 	head = null
 	suit = /obj/item/towel/full
 	back = null
-
+	id = null
+	shoes = null
+	gloves = null
 
 /datum/outfit/ramzi/soft/surplus
 	name = "Ramzi Clique Softsuit Surplus"

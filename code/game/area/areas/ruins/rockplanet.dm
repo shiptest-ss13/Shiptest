@@ -131,7 +131,7 @@
 	icon_state = "hallP"
 
 /area/ruin/rockplanet/rust_base/bridge
-	name = "ISV  Bridge"
+	name = "ISV Rust Base Bridge"
 	icon_state = "bridge"
 
 /area/ruin/rockplanet/rust_base/armory
