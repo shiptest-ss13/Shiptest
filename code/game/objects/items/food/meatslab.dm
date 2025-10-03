@@ -31,8 +31,8 @@
 /obj/item/food/meat/slab/synthmeat
 	name = "synthmeat"
 	desc = "A synthetic slab of... ethical* meat?"
-	foodtypes = RAW | MEAT // If it looks like a duck, quacks like a duck, its probably...
-	
+	foodtypes = RAW | MEAT
+
 /obj/item/food/meat/slab/synthmeat/make_grillable()
 	AddComponent(/datum/component/grillable, /obj/item/food/meat/steak/synth, rand(30 SECONDS, 90 SECONDS), TRUE, TRUE)
 

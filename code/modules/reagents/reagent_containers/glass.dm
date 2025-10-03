@@ -46,7 +46,6 @@
 				span_danger("[user] attempts to feed [M] something from [src]."),
 				span_userdanger("[user] attempts to feed you something from [src]."),
 			)
-	
 			if(!do_after(user, target = M))
 				return
 
