@@ -52,7 +52,7 @@
 	result = /obj/item/food/pizza/dank/raw
 	subcategory = CAT_PIZZA
 
-/datum/crafting_recipe/food/sassysagepizza
+/datum/crafting_recipe/food/sausagepizza
 	name = "Sausage pizza"
 	reqs = list(
 		/obj/item/food/flatdough = 1,

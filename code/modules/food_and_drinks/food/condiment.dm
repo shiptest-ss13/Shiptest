@@ -135,7 +135,7 @@
 
 /obj/item/reagent_containers/food/condiment/enzyme/examine(mob/user)
 	. = ..()
-	var/datum/chemical_reaction/recipe = GLOB.chemical_reactions_list[/datum/chemical_reaction/food/cheesewheel]
+	var/datum/chemical_reaction/recipe = GLOB.chemical_reactions_list[/datum/chemical_reaction/cheesewheel]
 	var/milk_required = recipe.required_reagents[/datum/reagent/consumable/milk]
 	var/enzyme_required = recipe.required_catalysts[/datum/reagent/consumable/enzyme]
 
@@ -150,7 +150,7 @@
 
 /obj/item/reagent_containers/food/condiment/sugar/examine(mob/user)
 	. = ..()
-	var/datum/chemical_reaction/recipe = GLOB.chemical_reactions_list[/datum/chemical_reaction/food/cakebatter]
+	var/datum/chemical_reaction/recipe = GLOB.chemical_reactions_list[/datum/chemical_reaction/cakebatter]
 	var/flour_required = recipe.required_reagents[/datum/reagent/consumable/flour]
 	var/eggyolk_required = recipe.required_reagents[/datum/reagent/consumable/eggyolk]
 	var/sugar_required = recipe.required_reagents[/datum/reagent/consumable/sugar]
@@ -201,7 +201,7 @@
 
 /obj/item/reagent_containers/food/condiment/milk/examine(mob/user)
 	. = ..()
-	var/datum/chemical_reaction/recipe = GLOB.chemical_reactions_list[/datum/chemical_reaction/food/cheesewheel]
+	var/datum/chemical_reaction/recipe = GLOB.chemical_reactions_list[/datum/chemical_reaction/cheesewheel]
 	var/milk_required = recipe.required_reagents[/datum/reagent/consumable/milk]
 	var/enzyme_required = recipe.required_catalysts[/datum/reagent/consumable/enzyme]
 	. += "<span class='notice'>[milk_required] milk, [enzyme_required] enzyme will make cheese.</span>"
@@ -218,7 +218,7 @@
 
 /obj/item/reagent_containers/food/condiment/tiris_milk/examine(mob/user)
 	. = ..()
-	var/datum/chemical_reaction/recipe = GLOB.chemical_reactions_list[/datum/chemical_reaction/food/cheesewheel]
+	var/datum/chemical_reaction/recipe = GLOB.chemical_reactions_list[/datum/chemical_reaction/cheesewheel]
 	var/milk_required = recipe.required_reagents[/datum/reagent/consumable/tiris_milk]
 	var/enzyme_required = recipe.required_catalysts[/datum/reagent/consumable/enzyme]
 	. += "<span class='notice'>[milk_required] tiris milk, [enzyme_required] enzyme will make cheese.</span>"

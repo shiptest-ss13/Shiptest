@@ -205,7 +205,7 @@
 	slice_type = /obj/item/food/pizzaslice/sausage
 
 /obj/item/food/pizza/sausage/raw
-	name = "raw sassysage pizza"
+	name = "raw sausage pizza"
 	icon_state = "sassysagepizza_raw"
 	foodtypes =  GRAIN | VEGETABLES | DAIRY | MEAT | RAW
 	slice_type = null

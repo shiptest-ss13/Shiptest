@@ -34,7 +34,7 @@
 	start_sound = 'sound/machines/oven/oven_loop_start.ogg'
 	start_length = 12
 	mid_sounds = list('sound/machines/oven/oven_loop_mid.ogg' = 1)
-	mid_length = 13
+	mid_length = 14
 	end_sound = 'sound/machines/oven/oven_loop_end.ogg'
 	volume = 100
 	falloff_exponent = 4
@@ -49,7 +49,7 @@
 
 /datum/looping_sound/grill
 	mid_sounds = list('sound/machines/grill/grillsizzle.ogg' = 1)
-	mid_length = 18
+	mid_length = 19
 	volume = 40
 
 /datum/looping_sound/deep_fryer

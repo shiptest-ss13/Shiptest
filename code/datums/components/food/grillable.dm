@@ -84,19 +84,16 @@
 	if(!current_cook_time) //Not grilled yet
 		if(positive_result)
 			if(initial(cook_result.name) == PLURAL)
-				examine_list += span_notice("[parent] can be [span_bold("grilled")] into some [initial(cook_result.name)].")
-			else
-				examine_list += span_notice("[parent] can be [span_bold("grilled")] into \a [initial(cook_result.name)].")
+				examine_list += span_notice("It can be <b>grilled</b>.")
 		return
 
 	if(positive_result)
 		if(current_cook_time <= required_cook_time * 0.75)
-			examine_list += span_notice("[parent] probably needs to be cooked a bit longer!")
+			examine_list += span_danger("It needs to be cooked a bit longer!")
 		else if(current_cook_time <= required_cook_time)
-			examine_list += span_notice("[parent] seems to be almost finished cooking!")
+			examine_list += span_danger("It is almost done cooking!")
 	else
-		examine_list += span_danger("[parent] should probably not be put on the grill.")
-
+		examine_list += span_nicegreen("It looks perfectly cooked.")
 ///Ran when an object moves from the grill
 /datum/component/grillable/proc/on_moved(atom/A, atom/OldLoc, Dir, Forced)
 	SIGNAL_HANDLER

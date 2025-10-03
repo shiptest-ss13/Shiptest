@@ -10,7 +10,7 @@
 
 /obj/machinery/oven
 	name = "oven"
-	desc = "Why do they call it oven when you of in the cold food of out hot eat the food?"
+	desc = "An industrial electric oven."
 	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "oven_off"
 	base_icon_state = "oven"
@@ -34,10 +34,8 @@
 
 /obj/machinery/oven/Initialize(mapload)
 	. = ..()
-	oven_loop = new(src)
-
-	if(mapload)
-		add_tray_to_oven(new /obj/item/plate/oven_tray(src)) //Start with a tray
+	oven_loop = new(list(src), FALSE)
+	add_tray_to_oven(new /obj/item/plate/oven_tray(src)) //Start with a tray
 
 /obj/machinery/oven/Destroy()
 	QDEL_NULL(oven_loop)

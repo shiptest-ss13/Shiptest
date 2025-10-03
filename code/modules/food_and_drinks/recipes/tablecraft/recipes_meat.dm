@@ -392,7 +392,7 @@
 /datum/crafting_recipe/food/gumbo
 	name = "Gumbo"
 	reqs = list(
-		/obj/item/food/salad/boiledrice = 1,
+		/obj/item/food/boiled_rice = 1,
 		/obj/item/food/grown/peas = 1,
 		/obj/item/food/grown/chili = 1,
 		/obj/item/food/meat/cutlet = 1

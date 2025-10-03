@@ -322,7 +322,7 @@
 
 /obj/item/food/raw_patty
 	name = "raw patty"
-	desc = "I'm.....NOT REAAADDYY."
+	desc = "A raw patty of minced meat."
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "raw_patty"
 	food_reagents = list(/datum/reagent/consumable/nutriment/protein = 2)
@@ -351,7 +351,7 @@
 
 /obj/item/food/patty
 	name = "patty"
-	desc = "The nanotrasen patty is the patty for you and me!"
+	desc = "A cooked patty of minced meat."
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "patty"
 	food_reagents = list(/datum/reagent/consumable/nutriment/protein = 2)

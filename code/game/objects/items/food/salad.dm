@@ -7,11 +7,11 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 7,
-		/datum/reagent/consumable/nutriment/vitamin = 2
+		/datum/reagent/consumable/nutriment/vitamin = 2,
 	)
 	tastes = list("leaves" = 1)
 	foodtypes = VEGETABLES
-	eatverbs = list("devour","nibble","gnaw","gobble","chomp") //who the fuck gnaws and devours on a salad
+	eatverbs = list("devour","nibble","gnaw","gobble","chomp") //who the fuck gnaws and devours on a salad //me i do
 
 /obj/item/food/salad/aesirsalad
 	name = "\improper Aesir salad"
@@ -20,7 +20,7 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 8,
 		/datum/reagent/medicine/panacea = 10,
-		/datum/reagent/consumable/nutriment/vitamin = 12
+		/datum/reagent/consumable/nutriment/vitamin = 12,
 	)
 	tastes = list("leaves" = 1)
 	foodtypes = VEGETABLES | FRUIT
@@ -31,7 +31,7 @@
 	icon_state = "herbsalad"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 8,
-		/datum/reagent/consumable/nutriment/vitamin = 6
+		/datum/reagent/consumable/nutriment/vitamin = 6,
 	)
 	tastes = list("leaves" = 1, "apple" = 1)
 	foodtypes = VEGETABLES | FRUIT
@@ -44,7 +44,7 @@
 		/datum/reagent/consumable/nutriment = 5,
 		/datum/reagent/consumable/nutriment/protein = 5,
 		/datum/reagent/consumable/doctor_delight = 8,
-		/datum/reagent/consumable/nutriment/vitamin = 6
+		/datum/reagent/consumable/nutriment/vitamin = 6,
 	)
 	tastes = list("leaves" = 1, "potato" = 1, "meat" = 1, "valids" = 1)
 	foodtypes = VEGETABLES | MEAT | FRIED | FRUIT
@@ -55,7 +55,7 @@
 	icon_state = "fruitsalad"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 9,
-		/datum/reagent/consumable/nutriment/vitamin = 5
+		/datum/reagent/consumable/nutriment/vitamin = 5,
 	)
 	tastes = list("fruit" = 1)
 	foodtypes = FRUIT
@@ -67,7 +67,7 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 11,
 		/datum/reagent/consumable/banana = 5,
-		/datum/reagent/consumable/nutriment/vitamin = 7
+		/datum/reagent/consumable/nutriment/vitamin = 7,
 	)
 	tastes = list("fruit" = 1, "the jungle" = 1)
 	foodtypes = FRUIT
@@ -78,7 +78,7 @@
 	icon_state = "citrusdelight"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 11,
-		/datum/reagent/consumable/nutriment/vitamin = 7
+		/datum/reagent/consumable/nutriment/vitamin = 7,
 	)
 	tastes = list("sourness" = 1, "leaves" = 1)
 	foodtypes = FRUIT
@@ -100,7 +100,7 @@
 	icon_state = "boiledrice"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
-		/datum/reagent/consumable/nutriment/vitamin = 2
+		/datum/reagent/consumable/nutriment/vitamin = 2,
 	)
 	tastes = list("rice" = 1)
 	foodtypes = GRAIN | BREAKFAST
@@ -112,7 +112,7 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 8,
 		/datum/reagent/consumable/sugar = 3,
-		/datum/reagent/consumable/nutriment/vitamin = 3
+		/datum/reagent/consumable/nutriment/vitamin = 3,
 	)
 	tastes = list("rice" = 1, "sweetness" = 1)
 	foodtypes = GRAIN | DAIRY | SUGAR
@@ -124,7 +124,7 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
 		/datum/reagent/consumable/nutriment/protein = 6,
-		/datum/reagent/consumable/nutriment/vitamin = 3
+		/datum/reagent/consumable/nutriment/vitamin = 3,
 	)
 	tastes = list("rice" = 1, "meat" = 1)
 	foodtypes = GRAIN | MEAT
@@ -136,7 +136,7 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 8,
 		/datum/reagent/consumable/nutriment/protein = 2,
-		/datum/reagent/consumable/nutriment/vitamin = 4
+		/datum/reagent/consumable/nutriment/vitamin = 4,
 	)
 	tastes = list("rice" = 1, "egg" = 1)
 	foodtypes = GRAIN | MEAT

@@ -23,7 +23,7 @@
 
 /obj/machinery/griddle/Initialize()
 	. = ..()
-	grill_loop = new(src, FALSE)
+	grill_loop = new(list(src), FALSE)
 	RegisterSignal(src, COMSIG_ATOM_EXPOSE_REAGENT, PROC_REF(on_expose_reagent))
 
 /obj/machinery/griddle/Destroy()
