@@ -4,7 +4,6 @@
 #define DRILL_BASIC 1
 #define DRILL_HARDENED 2
 
-
 /obj/item/mecha_parts/mecha_equipment/drill
 	name = "exosuit drill"
 	desc = "Equipment for engineering and combat exosuits. This is the drill that'll pierce the heavens!"
@@ -17,7 +16,7 @@
 	toolspeed = 0.9
 	var/drill_delay = 7
 	var/drill_level = DRILL_BASIC
-	wall_decon_damage = 100
+	wall_decon_damage = 50
 
 /obj/item/mecha_parts/mecha_equipment/drill/Initialize()
 	. = ..()
@@ -170,8 +169,7 @@
 	drill_level = DRILL_HARDENED
 	force = 15
 	toolspeed = 0.7
-	wall_decon_damage = 300
-
+	wall_decon_damage = 100
 
 /obj/item/mecha_parts/mecha_equipment/mining_scanner
 	name = "exosuit mining scanner"
