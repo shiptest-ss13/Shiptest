@@ -1,7 +1,7 @@
 /datum/species/abductor
 	name = "\improper Abductor"
 	id = SPECIES_ABDUCTOR
-	species_traits = list(NOBLOOD,NOEYESPRITES)
+	species_traits = list(NOBLOOD)
 	inherent_traits = list(TRAIT_VIRUSIMMUNE,TRAIT_CHUNKYFINGERS,TRAIT_NOHUNGER,TRAIT_NOBREATH)
 	mutanttongue = /obj/item/organ/tongue/abductor
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN

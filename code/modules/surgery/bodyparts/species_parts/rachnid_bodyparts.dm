@@ -3,6 +3,7 @@
 	limb_id = SPECIES_RACHNID
 	should_draw_greyscale = FALSE
 	overlay_icon_state = TRUE
+	draw_eyes = FALSE
 
 /obj/item/bodypart/chest/rachnid
 	static_icon = 'icons/mob/species/rachnid/bodyparts.dmi'
