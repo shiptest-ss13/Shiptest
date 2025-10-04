@@ -197,6 +197,7 @@
 		return
 	if(method == TOUCH)
 		M.adjust_wet_stacks(1*reac_volume)
+		M.extinguish_mob()
 	if(method == VAPOR)
 		M.adjust_wet_stacks(0.5*reac_volume)
 	..()
