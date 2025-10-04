@@ -196,9 +196,9 @@
 	if(!istype(M))
 		return
 	if(method == TOUCH)
+		M.adjust_wet_stacks(1*reac_volume)
+	if(method == VAPOR)
 		M.adjust_wet_stacks(0.5*reac_volume)
-	if(method == SMOKE)
-		M.adjust_wet_stacks(0.1*reac_volume)
 	..()
 
 ///For weird backwards situations where water manages to get added to trays nutrients, as opposed to being snowflaked away like usual.
