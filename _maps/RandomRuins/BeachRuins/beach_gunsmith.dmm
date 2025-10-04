@@ -682,28 +682,48 @@
 	},
 /obj/structure/closet/secure_closet/armorycage,
 /obj/item/stack/ore/salvage/scrapmetal/twenty{
-	pixel_x = 0;
-	pixel_y = 1
+	pixel_x = -6;
+	pixel_y = 3
 	},
 /obj/item/stack/ore/salvage/scrapmetal/twenty{
-	pixel_x = 1;
-	pixel_y = 9
+	pixel_x = -5;
+	pixel_y = 11
 	},
 /obj/item/stack/ore/salvage/scrapsilver/five{
-	pixel_x = -8;
+	pixel_x = -11;
 	pixel_y = -3
 	},
 /obj/item/stack/ore/salvage/scrapsilver/five{
-	pixel_x = -9;
+	pixel_x = -11;
 	pixel_y = 1
 	},
 /obj/item/stack/ore/salvage/scrapsilver/five{
-	pixel_x = -8;
+	pixel_x = -11;
 	pixel_y = 6
 	},
 /obj/item/stack/ore/salvage/scrapsilver/five{
-	pixel_x = -8;
+	pixel_x = -11;
+	pixel_y = 12
+	},
+/obj/item/weaponcrafting/receiver{
+	pixel_x = 8;
+	pixel_y = 3
+	},
+/obj/item/weaponcrafting/receiver{
+	pixel_x = 8;
+	pixel_y = 7
+	},
+/obj/item/weaponcrafting/receiver{
+	pixel_x = 8;
 	pixel_y = 11
+	},
+/obj/item/weaponcrafting/stock{
+	pixel_x = 6;
+	pixel_y = -7
+	},
+/obj/item/weaponcrafting/stock{
+	pixel_x = 6;
+	pixel_y = -10
 	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/gunsmith/workshop)
@@ -3214,7 +3234,6 @@
 "Hb" = (
 /obj/structure/safe/floor,
 /obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
 /turf/open/floor/plating,
 /area/ruin/beach/gunsmith/dorms/officer)
 "Hd" = (
@@ -4079,6 +4098,10 @@
 /obj/item/stack/ore/salvage/scrapmetal{
 	pixel_x = 0;
 	pixel_y = 13
+	},
+/obj/item/weaponcrafting/stock{
+	pixel_x = -8;
+	pixel_y = -7
 	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/gunsmith/workshop)
