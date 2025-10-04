@@ -478,29 +478,8 @@
 
 // INTEQ SPRINTER TYPE 2
 
-/obj/item/bodypart/head/ipc/sprinter_v2
+/obj/item/bodypart/head/ipc/sprinter/type_2
 	icon_state = "inteqsprinter2_head"
-	limb_id = "inteqsprinter2"
-	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-
-/obj/item/bodypart/chest/ipc/sprinter_v2
-	icon_state = "inteqsprinter2_chest"
-	limb_id = "inteqsprinter2"
-
-/obj/item/bodypart/l_arm/ipc/sprinter_v2
-	icon_state = "inteqsprinter2_l_arm"
-	limb_id = "inteqsprinter2"
-
-/obj/item/bodypart/r_arm/ipc/sprinter_v2
-	icon_state = "inteqsprinter2_r_arm"
-	limb_id = "inteqsprinter2"
-
-/obj/item/bodypart/leg/left/ipc/sprinter_v2
-	icon_state = "inteqsprinter2_l_leg"
-	limb_id = "inteqsprinter2"
-
-/obj/item/bodypart/leg/right/ipc/sprinter_v2
-	icon_state = "inteqsprinter2_r_leg"
 	limb_id = "inteqsprinter2"
 
 // MAXIM SEEKER

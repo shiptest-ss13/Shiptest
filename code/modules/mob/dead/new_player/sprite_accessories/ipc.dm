@@ -466,12 +466,12 @@
 /datum/sprite_accessory/ipc_chassis/sprinter_v2
 	name = "Inteq Mothership 'Sprinter' Type 2"
 	chassis_bodyparts = list(
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/sprinter_v2,
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/sprinter_v2,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/sprinter_v2,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/sprinter_v2,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/sprinter_v2,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/sprinter_v2,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/sprinter/type_2,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/sprinter,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/sprinter,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/sprinter,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/sprinter,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/sprinter,
 	)
 
 /datum/sprite_accessory/ipc_chassis/seeker
