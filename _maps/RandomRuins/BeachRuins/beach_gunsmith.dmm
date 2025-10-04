@@ -2611,10 +2611,11 @@
 	pixel_x = -4;
 	pixel_y = -4
 	},
-/obj/item/storage/toolbox/ammo/c65,
 /obj/effect/turf_decal/corner/transparent/syndiered/border{
 	dir = 6
 	},
+/obj/item/storage/box/ammo/a65clip,
+/obj/item/storage/box/ammo/a65clip,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/beach/gunsmith/workshop)
 "AC" = (
@@ -3079,12 +3080,12 @@
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/ruin/beach/gunsmith)
 "FI" = (
-/obj/item/pickaxe/drill/jackhammer{
-	pixel_x = 5;
-	pixel_y = 14
-	},
 /obj/effect/decal/cleanable/oil/streak,
 /obj/machinery/atmospherics/components/unary/passive_vent/layer2,
+/obj/item/pickaxe/drill/jackhammer/old{
+	pixel_x = 9;
+	pixel_y = 15
+	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/gunsmith/workshop)
 "FQ" = (
