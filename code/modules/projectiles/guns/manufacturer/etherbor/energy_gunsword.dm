@@ -245,6 +245,9 @@
 
 	ammo_type = list(/obj/item/ammo_casing/energy/pgf/assault, /obj/item/ammo_casing/energy/disabler/hitscan/heavy)
 
+/obj/item/gun/energy/kalix/pgf/medium/empty_cell
+	spawn_no_ammo = TRUE
+
 /obj/item/gun/energy/kalix/pgf/heavy
 	name = "\improper Etherbor HBG-7"
 	desc = "The HBG-7 is the standard-issue rifle weapon of the PGF. It comes with a special DMR mode that has greater armor piercing for dealing with armored targets."
@@ -266,6 +269,9 @@
 	spread_unwielded = 20
 
 	ammo_type = list(/obj/item/ammo_casing/energy/pgf/assault, /obj/item/ammo_casing/energy/pgf/sniper)
+
+/obj/item/gun/energy/kalix/pgf/heavy/empty_cell
+	spawn_no_ammo = TRUE
 
 /obj/item/ammo_casing/energy/pgf/assault
 	select_name  = "AR"
@@ -315,3 +321,6 @@
 
 	wield_slowdown = LASER_SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
+
+/obj/item/gun/energy/kalix/pgf/heavy/sniper
+	spawn_no_ammo = TRUE
