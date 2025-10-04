@@ -2,28 +2,75 @@
  * This is the proc that handles the order of an item_attack.
  *
  * The order of procs called is:
- * * [/atom/proc/tool_act] on the target. If it returns TRUE, the chain will be stopped.
+ * * [/atom/proc/tool_act] on the target. If it returns TOOL_ACT_TOOLTYPE_SUCCESS or TOOL_ACT_SIGNAL_BLOCKING, the chain will be stopped.
  * * [/obj/item/proc/pre_attack] on src. If this returns TRUE, the chain will be stopped.
  * * [/atom/proc/attackby] on the target. If it returns TRUE, the chain will be stopped.
  * * [/obj/item/proc/afterattack]. The return value does not matter.
  */
 /obj/item/proc/melee_attack_chain(mob/user, atom/target, params)
-	if(tool_behaviour && target.tool_act(user, src, tool_behaviour))
-		return
-	if(pre_attack(target, user, params))
-		return
-	if(target.attackby(src,user, params))
-		return
+	var/is_right_clicking = LAZYACCESS(params2list(params), RIGHT_CLICK)
+
+	if(tool_behaviour && (target.tool_act(user, src, tool_behaviour, is_right_clicking)))
+		return TRUE
+
+	var/pre_attack_result
+	if (is_right_clicking)
+		switch (pre_attack_secondary(target, user, params))
+			if (SECONDARY_ATTACK_CALL_NORMAL)
+				pre_attack_result = pre_attack(target, user, params)
+			if (SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+				return TRUE
+			if (SECONDARY_ATTACK_CONTINUE_CHAIN)
+				// Normal behavior
+			else
+				CRASH("pre_attack_secondary must return an SECONDARY_ATTACK_* define, please consult code/__DEFINES/combat.dm")
+	else
+		pre_attack_result = pre_attack(target, user, params)
+
+	if(pre_attack_result)
+		return TRUE
+
+	var/attackby_result
+
+	if (is_right_clicking)
+		switch (target.attackby_secondary(src, user, params))
+			if (SECONDARY_ATTACK_CALL_NORMAL)
+				attackby_result = target.attackby(src, user, params)
+			if (SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+				return TRUE
+			if (SECONDARY_ATTACK_CONTINUE_CHAIN)
+				// Normal behavior
+			else
+				CRASH("attackby_secondary must return an SECONDARY_ATTACK_* define, please consult code/__DEFINES/combat.dm")
+	else
+		attackby_result = target.attackby(src, user, params)
+
+	if (attackby_result)
+		return TRUE
+
 	if(QDELETED(src) || QDELETED(target))
 		attack_qdeleted(target, user, TRUE, params)
-		return
-	afterattack(target, user, TRUE, params)
+		return TRUE
+
+	if (is_right_clicking)
+		var/after_attack_secondary_result = afterattack_secondary(target, user, TRUE, params)
+
+		// There's no chain left to continue at this point, so CANCEL_ATTACK_CHAIN and CONTINUE_CHAIN are functionally the same.
+		if (after_attack_secondary_result == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN || after_attack_secondary_result == SECONDARY_ATTACK_CONTINUE_CHAIN)
+			return TRUE
+
+	return afterattack(target, user, TRUE, params)
 
 /// Called when the item is in the active hand, and clicked; alternately, there is an 'activate held object' verb or you can hit pagedown.
-/obj/item/proc/attack_self(mob/user)
-	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK_SELF, user) & COMPONENT_NO_INTERACT)
-		return
+/obj/item/proc/attack_self(mob/user, modifiers)
+	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK_SELF, user) & COMPONENT_CANCEL_ATTACK_CHAIN)
+		return TRUE
 	interact(user)
+
+/// Called when the item is in the active hand, and right-clicked. Intended for alternate or opposite functions, such as lowering reagent transfer amount. At the moment, there is no verb or hotkey.
+/obj/item/proc/attack_self_secondary(mob/user, modifiers)
+	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK_SELF_SECONDARY, user) & COMPONENT_CANCEL_ATTACK_CHAIN)
+		return TRUE
 
 /**
  * Called on the item before it hits something
@@ -40,6 +87,17 @@
 		return TRUE
 	return FALSE //return TRUE to avoid calling attackby after this proc does stuff
 
+/obj/item/proc/pre_attack_secondary(atom/target, mob/living/user, params)
+	var/signal_result = SEND_SIGNAL(src, COMSIG_ITEM_PRE_ATTACK_SECONDARY, target, user, params)
+
+	if(signal_result & COMPONENT_SECONDARY_CANCEL_ATTACK_CHAIN)
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
+	if(signal_result & COMPONENT_SECONDARY_CONTINUE_ATTACK_CHAIN)
+		return SECONDARY_ATTACK_CONTINUE_CHAIN
+
+	return SECONDARY_ATTACK_CALL_NORMAL
+
 /**
  * Called on an object being hit by an item
  *
@@ -54,6 +112,27 @@
 	if(SEND_SIGNAL(src, COMSIG_PARENT_ATTACKBY, W, user, params) & COMPONENT_NO_AFTERATTACK)
 		return TRUE
 	return FALSE
+
+/**
+ * Called on an object being right-clicked on by an item
+ *
+ * Arguments:
+ * * obj/item/weapon - The item hitting this atom
+ * * mob/user - The wielder of this item
+ * * params - click params such as alt/shift etc
+ *
+ * See: [/obj/item/proc/melee_attack_chain]
+ */
+/atom/proc/attackby_secondary(obj/item/weapon, mob/user, params)
+	var/signal_result = SEND_SIGNAL(src, COMSIG_PARENT_ATTACKBY_SECONDARY, weapon, user, params)
+
+	if(signal_result & COMPONENT_SECONDARY_CANCEL_ATTACK_CHAIN)
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
+	if(signal_result & COMPONENT_SECONDARY_CONTINUE_ATTACK_CHAIN)
+		return SECONDARY_ATTACK_CONTINUE_CHAIN
+
+	return SECONDARY_ATTACK_CALL_NORMAL
 
 /obj/attackby(obj/item/I, mob/living/user, params)
 	return ..() || ((obj_flags & CAN_BE_HIT) && I.attack_obj(src, user))
@@ -215,6 +294,18 @@
 /obj/item/proc/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	SEND_SIGNAL(src, COMSIG_ITEM_AFTERATTACK, target, user, proximity_flag, click_parameters)
 	SEND_SIGNAL(user, COMSIG_MOB_ITEM_AFTERATTACK, target, user, proximity_flag, click_parameters)
+
+/**
+ * Called at the end of the attack chain if the user right-clicked.
+ *
+ * Arguments:
+ * * atom/target - The thing that was hit
+ * * mob/user - The mob doing the hitting
+ * * proximity_flag - is 1 if this afterattack was called on something adjacent, in your square, or on your person.
+ * * click_parameters - is the params string from byond [/atom/proc/Click] code, see that documentation.
+ */
+/obj/item/proc/afterattack_secondary(atom/target, mob/user, proximity_flag, click_parameters)
+	return SECONDARY_ATTACK_CALL_NORMAL
 
 /// Called if the target gets deleted by our attack
 /obj/item/proc/attack_qdeleted(atom/target, mob/user, proximity_flag, click_parameters)
