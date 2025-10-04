@@ -295,6 +295,7 @@
 	l_hand = /obj/item/gun/ballistic/automatic/assault/hydra
 	projectilesound = 'sound/weapons/gun/rifle/hydra.ogg'
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/trooper
+	armor_base = /obj/item/clothing/suit/armor/ramzi/bulletproof
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/officer
 	name = "Ramzi Clique Quartermaster"
