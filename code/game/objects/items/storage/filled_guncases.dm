@@ -155,8 +155,16 @@
 	gun_type = /obj/item/gun/energy/kalix
 	mag_type = /obj/item/stock_parts/cell/gun/kalix
 
+/obj/item/storage/guncase/energy/kalixnock
+	gun_type = /obj/item/gun/energy/kalix/nock
+	mag_type = /obj/item/stock_parts/cell/gun/kalix
+
 /obj/item/storage/guncase/energy/bg16
 	gun_type = /obj/item/gun/energy/kalix/pgf
+	mag_type = /obj/item/stock_parts/cell/gun/pgf
+
+/obj/item/storage/guncase/energy/vga5
+	gun_type = /obj/item/gun/energy/kalix/pgf/nock
 	mag_type = /obj/item/stock_parts/cell/gun/pgf
 
 /obj/item/storage/guncase/energy/bgc10
@@ -405,6 +413,10 @@
 /obj/item/storage/guncase/skm_lmg
 	gun_type = /obj/item/gun/ballistic/automatic/hmg/skm_lmg
 	mag_type = /obj/item/ammo_box/magazine/skm_762_40/drum
+
+/obj/item/storage/guncase/slammer
+	gun_type = /obj/item/gun/ballistic/shotgun/automatic/slammer
+	mag_type = /obj/item/ammo_box/magazine/m12g_slammer
 
 /* Eoehoma */
 
