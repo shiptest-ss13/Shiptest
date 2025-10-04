@@ -807,7 +807,8 @@
 	if(!P.nodamage && on_hit_state != BULLET_ACT_BLOCK && !QDELETED(src)) //QDELETED literally just for the instagib rifle. Yeah.
 		var/attack_direction = get_dir(P.starting, src)
 		apply_damage(P.damage, P.damage_type, def_zone, armor, sharpness = P.sharpness, attack_direction = attack_direction)
-		recoil_camera(src, clamp((P.damage-armor)/4,0.5,10), clamp((P.damage-armor)/4,0.5,10), P.damage/8, P.Angle)
+		var/impact_intensity = (P.damage/8) * impact_effect
+		recoil_camera(src, clamp((P.damage-armor)/4,0.5,10), clamp((P.damage-armor)/4,0.5,10), impact_intensity, P.Angle)
 		apply_effects(P.stun, P.knockdown, P.unconscious, P.irradiate, P.slur, P.stutter, P.eyeblur, P.drowsy, armor, P.stamina, P.jitter, P.paralyze, P.immobilize)
 
 		if(P.dismemberment)

@@ -200,6 +200,7 @@
 	ADD_TRAIT(L, TRAIT_STUNIMMUNE, type)
 	ADD_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
 	L.AddComponent(/datum/component/tackler, stamina_cost= 25, base_knockdown= 2 SECONDS, range=6, speed=1, skill_mod=2)
+	L.impact_effect /= 10
 	if(iscarbon(L))
 		var/mob/living/carbon/C = L
 		rage = new()
@@ -209,6 +210,7 @@
 	REMOVE_TRAIT(L, TRAIT_VERY_HARDLY_WOUNDED, /datum/reagent/drug/mammoth)
 	REMOVE_TRAIT(L, TRAIT_STUNIMMUNE, type)
 	REMOVE_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
+	L.impact_effect *= 10
 	if(L.GetComponent(/datum/component/tackler))
 		qdel(L.GetComponent(/datum/component/tackler))
 	if(rage)
@@ -488,6 +490,8 @@
 		drugged.physiology.do_after_speed -= 0.4
 		drugged.physiology.damage_resistance += 10
 		drugged.physiology.hunger_mod += 1
+		drugged.recoil_effect *= 0.6
+		drugged.impact_effect /= 2
 
 /datum/reagent/drug/combat_drug/on_mob_end_metabolize(mob/living/L)
 	..()
@@ -498,6 +502,8 @@
 		drugged.physiology.do_after_speed += 0.4
 		drugged.physiology.damage_resistance -= 10
 		drugged.physiology.hunger_mod -= 1
+		drugged.recoil_effect /= 0.6
+		drugged.impact_effect *= 2
 
 /datum/reagent/drug/combat_drug/on_mob_life(mob/living/carbon/M)
 	..()

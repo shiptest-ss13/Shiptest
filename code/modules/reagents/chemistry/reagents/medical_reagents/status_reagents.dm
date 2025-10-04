@@ -212,9 +212,11 @@
 /datum/reagent/medicine/psicodine/on_mob_metabolize(mob/living/L)
 	..()
 	ADD_TRAIT(L, TRAIT_FEARLESS, type)
+	L.recoil_effect *= 0.8
 
 /datum/reagent/medicine/psicodine/on_mob_end_metabolize(mob/living/L)
 	REMOVE_TRAIT(L, TRAIT_FEARLESS, type)
+	L.recoil_effect /= 0.8
 	..()
 
 /datum/reagent/medicine/psicodine/on_mob_life(mob/living/carbon/M)

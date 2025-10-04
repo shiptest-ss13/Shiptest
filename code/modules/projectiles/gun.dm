@@ -867,9 +867,10 @@
 /obj/item/gun/proc/before_firing(atom/target,mob/user)
 	return
 
-/obj/item/gun/proc/calculate_recoil(mob/user, recoil_bonus = 0)
+/obj/item/gun/proc/calculate_recoil(mob/living/user, recoil_bonus = 0)
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 		recoil_bonus += gunslinger_recoil_bonus
+	recoil_bonus *= user.recoil_effect
 	return clamp(recoil_bonus, min_recoil, INFINITY)
 
 /obj/item/gun/proc/calculate_spread(mob/user, bonus_spread)
