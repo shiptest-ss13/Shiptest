@@ -293,7 +293,7 @@
 		to_chat(M, span_notice("[high_message]"))
 	M.adjustStaminaLoss(-18, 0)
 	M.adjustToxLoss(0.5, 0)
-	if(prob(50))
+	if(prob(35))
 		M.losebreath++
 		M.adjustOxyLoss(1, 0)
 	..()
