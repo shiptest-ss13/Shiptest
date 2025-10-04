@@ -313,6 +313,7 @@
 	weight = 20
 
 	mapgen = /datum/map_generator/planet_generator/moon
+	ruin_type = RUINTYPE_MOON
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/plating/asteroid/moon/lit
 	weather_controller_type = null
