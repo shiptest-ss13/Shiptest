@@ -6,7 +6,6 @@ These items take a specific time to eat, and can do most of the things our origi
 Behavior that's still missing from this component that original food items had that should either be put into seperate components or somewhere else:
 	Components:
 	Drying component (jerky etc)
-	Customizable component (custom pizzas etc)
 	Processable component (Slicing and cooking behavior essentialy, making it go from item A to B when conditions are met.)
 	Microwavability component
 	Frying component
@@ -50,7 +49,7 @@ Behavior that's still missing from this component that original food items had t
 	///The flavortext for taste
 	var/list/tastes
 	///The type of atom this creates when the object is microwaved.
-	var/microwaved_type
+	var/atom/microwaved_type
 
 	//TEMP VAR, filling is nonfunctional because newfood isnt customizable yet
 	var/filling_color
@@ -83,12 +82,15 @@ Behavior that's still missing from this component that original food items had t
 	RegisterSignal(parent, COMSIG_ATOM_CHECKPARTS, PROC_REF(on_craft))
 	RegisterSignal(parent, COMSIG_ATOM_CREATEDBY_PROCESSING, PROC_REF(on_processed))
 	RegisterSignal(parent, COMSIG_ITEM_MICROWAVE_COOKED, PROC_REF(on_microwave_cooked))
+	RegisterSignal(parent, COMSIG_FOOD_INGREDIENT_ADDED, PROC_REF(edible_ingredient_added))
 	RegisterSignal(parent, COMSIG_EDIBLE_ON_COMPOST, PROC_REF(compost))
 
 	if(isitem(parent))
 		RegisterSignal(parent, COMSIG_ITEM_ATTACK, PROC_REF(use_from_hand))
+		RegisterSignal(parent, COMSIG_GRILL_FOOD, PROC_REF(grill_food))
 		RegisterSignal(parent, COMSIG_ITEM_FRIED, PROC_REF(on_fried))
 		RegisterSignal(parent, COMSIG_ITEM_MICROWAVE_ACT, PROC_REF(on_microwaved))
+		RegisterSignal(parent, COMSIG_ITEM_USED_AS_INGREDIENT, PROC_REF(used_to_customize))
 
 		var/obj/item/item = parent
 		if (!item.grind_results)
@@ -162,6 +164,9 @@ Behavior that's still missing from this component that original food items had t
 /datum/component/edible/proc/examine(datum/source, mob/user, list/examine_list)
 	SIGNAL_HANDLER
 
+	if(microwaved_type)
+		examine_list += "[parent] could be <b>microwaved</b> into [initial(microwaved_type.name)]!"
+
 	if(!(food_flags & FOOD_IN_CONTAINER))
 		switch(bitecount)
 			if(0)
@@ -178,12 +183,38 @@ Behavior that's still missing from this component that original food items had t
 
 	return TryToEat(M, user)
 
-/datum/component/edible/proc/on_fried(fry_object)
+/datum/component/edible/proc/on_fried(datum/source, atom/fry_object)
 	SIGNAL_HANDLER
+
 	var/atom/our_atom = parent
+	fry_object.reagents.maximum_volume = our_atom.reagents.maximum_volume
 	our_atom.reagents.trans_to(fry_object, our_atom.reagents.total_volume)
+
 	qdel(our_atom)
 	return COMSIG_FRYING_HANDLED
+
+
+/datum/component/edible/proc/grill_food(datum/source, atom/fry_object, grill_time)
+	SIGNAL_HANDLER
+
+	var/atom/this_food = parent
+
+	switch(grill_time) //no 0-20 to prevent spam
+		if(20 to 30)
+			this_food.name = "lightly-grilled [this_food.name]"
+			this_food.desc = "[this_food.desc] It's been lightly grilled."
+		if(30 to 80)
+			this_food.name = "grilled [this_food.name]"
+			this_food.desc = "[this_food.desc] It's been grilled."
+			foodtypes |= FRIED
+		if(80 to 100)
+			this_food.name = "heavily grilled [this_food.name]"
+			this_food.desc = "[this_food.desc] It's been heavily grilled."
+			foodtypes |= FRIED
+		if(100 to INFINITY) //grill marks reach max alpha
+			this_food.name = "Powerfully Grilled [this_food.name]"
+			this_food.desc = "A [this_food.name]. Reminds you of your wife, wait, no, it's prettier!"
+			foodtypes |= FRIED
 
 ///Called when food is created through processing (Usually this means it was sliced). We use this to pass the OG items reagents.
 /datum/component/edible/proc/on_processed(datum/source, atom/original_atom, list/chosen_processing_option)
@@ -193,14 +224,16 @@ Behavior that's still missing from this component that original food items had t
 		return
 
 	var/atom/this_food = parent
-	var/reagents_for_slice = chosen_processing_option[TOOL_PROCESSING_AMOUNT]
 
-	this_food.create_reagents(volume) //Make sure we have a reagent container
+	//Make sure we have a reagent container large enough to fit the original atom's reagents.
+	volume = max(volume, ROUND_UP(original_atom.reagents.maximum_volume / chosen_processing_option[TOOL_PROCESSING_AMOUNT]))
 
-	original_atom.reagents.trans_to(this_food, reagents_for_slice)
+	this_food.create_reagents(volume)
+	original_atom.reagents.copy_to(this_food, original_atom.reagents.total_volume, 1 / chosen_processing_option[TOOL_PROCESSING_AMOUNT])
 
 	if(original_atom.name != initial(original_atom.name))
 		this_food.name = "slice of [original_atom.name]"
+
 	if(original_atom.desc != initial(original_atom.desc))
 		this_food.desc = "[original_atom.desc]"
 
@@ -210,28 +243,17 @@ Behavior that's still missing from this component that original food items had t
 
 	var/atom/this_food = parent
 
-	this_food.reagents.clear_reagents()
+	this_food.reagents.multiply_reagents(CRAFTED_FOOD_BASE_REAGENT_MODIFIER)
+	this_food.reagents.maximum_volume *= CRAFTED_FOOD_BASE_REAGENT_MODIFIER
 
-	for(var/obj/item/crafted_part in this_food.contents)
-		crafted_part.reagents?.trans_to(this_food.reagents, crafted_part.reagents.maximum_volume, CRAFTED_FOOD_INGREDIENT_REAGENT_MODIFIER)
+	for(var/obj/item/food/crafted_part in parts_list)
+		if(!crafted_part.reagents)
+			continue
 
-	var/list/objects_to_delete = list()
+		this_food.reagents.maximum_volume += crafted_part.reagents.maximum_volume * CRAFTED_FOOD_INGREDIENT_REAGENT_MODIFIER
+		crafted_part.reagents.trans_to(this_food.reagents, crafted_part.reagents.maximum_volume, CRAFTED_FOOD_INGREDIENT_REAGENT_MODIFIER)
 
-	// Remove all non recipe objects from the contents
-	for(var/content_object in this_food.contents)
-		for(var/recipe_object in recipe.real_parts)
-			if(istype(content_object, recipe_object))
-				continue
-		objects_to_delete += content_object
-
-	QDEL_LIST(objects_to_delete)
-
-	for(var/r_id in initial_reagents)
-		var/amount = initial_reagents[r_id] * CRAFTED_FOOD_BASE_REAGENT_MODIFIER
-		if(r_id == /datum/reagent/consumable/nutriment || r_id == /datum/reagent/consumable/nutriment/vitamin)
-			this_food.reagents.add_reagent(r_id, amount, tastes)
-		else
-			this_food.reagents.add_reagent(r_id, amount)
+	this_food.reagents.maximum_volume = ROUND_UP(this_food.reagents.maximum_volume) // Just because I like whole numbers for this.
 
 	SSblackbox.record_feedback("tally", "food_made", 1, type)
 
@@ -262,17 +284,9 @@ Behavior that's still missing from this component that original food items had t
 	SIGNAL_HANDLER
 
 	var/atom/this_food = parent
-
-	this_food.reagents.clear_reagents()
+	this_food.reagents.multiply_reagents(cooking_efficiency * CRAFTED_FOOD_BASE_REAGENT_MODIFIER)
 
 	source_item.reagents?.trans_to(this_food, source_item.reagents.total_volume)
-
-	for(var/r_id in initial_reagents)
-		var/amount = initial_reagents[r_id] * cooking_efficiency * CRAFTED_FOOD_BASE_REAGENT_MODIFIER
-		if(r_id == /datum/reagent/consumable/nutriment || r_id == /datum/reagent/consumable/nutriment/vitamin)
-			this_food.reagents.add_reagent(r_id, amount, tastes)
-		else
-			this_food.reagents.add_reagent(r_id, amount)
 
 ///Makes sure the thing hasn't been destroyed or fully eaten to prevent eating phantom edibles
 /datum/component/edible/proc/IsFoodGone(atom/owner, mob/living/feeder)
@@ -496,3 +510,20 @@ Behavior that's still missing from this component that original food items had t
 		var/satisfaction_text = pick("burps from enjoyment.", "yaps for more!", "woofs twice.", "looks at the area where \the [parent] was.")
 		L.manual_emote(satisfaction_text)
 		qdel(parent)
+
+///Response to being used to customize something
+/datum/component/edible/proc/used_to_customize(datum/source, atom/customized)
+	SIGNAL_HANDLER
+
+	SEND_SIGNAL(customized, COMSIG_FOOD_INGREDIENT_ADDED, src)
+
+///Response to an edible ingredient being added to parent.
+/datum/component/edible/proc/edible_ingredient_added(datum/source, datum/component/edible/ingredient)
+	SIGNAL_HANDLER
+
+	var/datum/component/edible/E = ingredient
+	if (LAZYLEN(E.tastes))
+		tastes = tastes.Copy()
+		for (var/t in E.tastes)
+			tastes[t] += E.tastes[t]
+	foodtypes |= E.foodtypes

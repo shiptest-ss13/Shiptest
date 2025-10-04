@@ -7,7 +7,7 @@
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
 	src.permanent = perm
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(OnExamine))
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
 	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(OnAttackBy))
 	RegisterSignal(parent, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(OnClean))
 
@@ -28,7 +28,7 @@
 	else
 		permanent = perm
 
-/datum/component/outline/proc/OnExamine(datum/source, mob/user, atom/thing)
+/datum/component/outline/proc/on_examine(datum/source, mob/user, atom/thing)
 	to_chat(user, span_warning("That outline is hideous!"))
 
 /datum/component/outline/proc/OnAttackBy(datum/source, obj/item/I, mob/user, params)

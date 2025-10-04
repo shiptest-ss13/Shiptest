@@ -298,17 +298,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"bf" = (
-/obj/docking_port/stationary{
-	dheight = 1;
-	dir = 2;
-	dwidth = 20;
-	height = 30;
-	name = "Meta Starboard Beam Dock";
-	width = 40
-	},
-/turf/template_noop,
-/area/template_noop)
 "bh" = (
 /obj/effect/turf_decal/corner/opaque/nsorange/border{
 	dir = 6
@@ -1091,13 +1080,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
-"dl" = (
-/obj/structure/sink/kitchen{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/turf/open/floor/plasteel/white,
-/area/ship/crew)
 "dp" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -1175,15 +1157,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
-"dK" = (
-/obj/machinery/power/smes/engineering{
-	charge = 1e+006
-	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "dL" = (
 /obj/effect/turf_decal/industrial/hatch/orange,
 /obj/structure/closet/firecloset/full{
@@ -1398,26 +1371,6 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/plating,
 /area/ship/cargo)
-"er" = (
-/obj/effect/turf_decal/corner/opaque/nsorange/half,
-/obj/structure/table,
-/obj/item/paper_bin/carbon{
-	pixel_y = 4;
-	pixel_x = 5
-	},
-/obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
-/obj/item/folder/blue{
-	pixel_y = 3;
-	pixel_x = -10
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/crew/office/lobby)
 "eu" = (
 /obj/effect/turf_decal/trimline/opaque/nsorange/warning{
 	dir = 1
@@ -1536,33 +1489,6 @@
 /obj/effect/turf_decal/ntspaceworks_big/three,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"fN" = (
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	can_be_unanchored = 1;
-	icon_state = "sec";
-	name = "firearm locker";
-	req_access_txt = "41"
-	},
-/obj/machinery/light/small/directional/west,
-/obj/item/clothing/suit/armor/nanotrasen/slim,
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -21;
-	pixel_y = -10
-	},
-/obj/machinery/button/door{
-	pixel_y = 24;
-	pixel_x = 8;
-	name = "Crew Window Lockdown";
-	id = "meta_crewwindows"
-	},
-/obj/item/gun/energy/sharplite/l201/l204,
-/obj/item/gun/energy/sharplite/l201/l204,
-/obj/item/stock_parts/cell/gun/sharplite,
-/obj/item/stock_parts/cell/gun/sharplite,
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "fO" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-22";
@@ -1615,6 +1541,18 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
+"hb" = (
+/obj/structure/sink/kitchen{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/machinery/jukebox/boombox{
+	pixel_y = 9;
+	pixel_x = -7;
+	layer = 2.91
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/crew)
 "he" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/shoes/sneakers/black{
@@ -1766,12 +1704,32 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"iR" = (
+/obj/structure/closet/firecloset/full{
+	anchored = 1
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering)
 "iU" = (
 /obj/effect/turf_decal/trimline/opaque/nsorange/line{
 	dir = 10
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
+"iY" = (
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "starboard_holofield";
+	locked = 1
+	},
+/obj/machinery/door/poddoor{
+	id = "meta_starboard"
+	},
+/obj/structure/cable,
+/obj/machinery/door/firedoor,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "jb" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
@@ -1980,18 +1938,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
-"ld" = (
-/obj/structure/closet/crate/bin,
-/obj/item/trash/chips{
-	pixel_x = -4
-	},
-/obj/item/reagent_containers/food/drinks/soda_cans/vimukti{
-	pixel_x = 3;
-	pixel_y = -5
-	},
-/obj/item/trash/plate,
-/turf/open/floor/carpet/nanoweave/orange,
-/area/ship/crew)
 "le" = (
 /obj/effect/turf_decal/box/white/corners,
 /obj/structure/closet/crate/engineering,
@@ -2115,18 +2061,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/office/lobby)
-"mi" = (
-/obj/docking_port/stationary{
-	dheight = 1;
-	dir = 8;
-	disable_on_owner_ship_dock = 1;
-	dwidth = 4;
-	height = 31;
-	name = "Meta Stern Dock";
-	width = 9
-	},
-/turf/template_noop,
-/area/template_noop)
 "mk" = (
 /obj/structure/cable/yellow,
 /obj/machinery/power/terminal{
@@ -2154,13 +2088,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm/dormtwo)
-"mt" = (
-/obj/structure/table,
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/machinery/jukebox/boombox,
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/plasteel/white,
-/area/ship/crew)
 "mw" = (
 /obj/effect/turf_decal/trimline/opaque/nsorange/line,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2465,6 +2392,18 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew)
+"qn" = (
+/obj/machinery/door/poddoor{
+	id = "meta_port"
+	},
+/obj/machinery/door/firedoor,
+/obj/docking_port/mobile{
+	dir = 2;
+	port_direction = 8;
+	preferred_direction = 4
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "qs" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2759,6 +2698,19 @@
 	id = "meta-turrets"
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/cargo)
+"tG" = (
+/obj/machinery/door/poddoor{
+	id = "meta_starboard"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "starboard_holofield";
+	locked = 1
+	},
+/obj/structure/cable,
+/obj/machinery/door/firedoor,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "tS" = (
 /obj/structure/cable{
@@ -3347,6 +3299,17 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/dormtwo)
+"zu" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dwidth = 20;
+	height = 30;
+	name = "Meta Port Beam Dock";
+	width = 40;
+	disable_on_owner_ship_dock = 1
+	},
+/turf/template_noop,
+/area/template_noop)
 "zw" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -3394,6 +3357,17 @@
 	},
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ship/crew)
+"zX" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 2;
+	dwidth = 20;
+	height = 30;
+	name = "Meta Starboard Beam Dock";
+	width = 40
+	},
+/turf/template_noop,
+/area/template_noop)
 "Ac" = (
 /obj/effect/turf_decal/corner/opaque/nsorange/half{
 	dir = 1
@@ -3575,18 +3549,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
-"CR" = (
-/obj/machinery/door/poddoor{
-	id = "meta_port"
-	},
-/obj/machinery/door/firedoor,
-/obj/docking_port/mobile{
-	dir = 2;
-	port_direction = 8;
-	preferred_direction = 4
-	},
-/turf/open/floor/plating,
-/area/ship/cargo)
 "De" = (
 /obj/machinery/door/poddoor{
 	id = "meta_port"
@@ -3605,13 +3567,6 @@
 "Dm" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm/dormtwo)
-"Ds" = (
-/obj/structure/closet/firecloset/full{
-	anchored = 1
-	},
-/obj/effect/turf_decal/industrial/outline/yellow,
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering)
 "Du" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3742,6 +3697,18 @@
 	dir = 1
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/engineering)
+"FK" = (
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
+/obj/machinery/door/airlock/external/glass{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "FR" = (
@@ -3877,18 +3844,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"GN" = (
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
-/obj/machinery/door/airlock/external/glass{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "Ha" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3936,21 +3891,6 @@
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"Hv" = (
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 8;
-	id = "starboard_holofield";
-	locked = 1
-	},
-/obj/machinery/door/poddoor{
-	id = "meta_starboard"
-	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
-/obj/machinery/door/firedoor,
-/turf/open/floor/plating,
-/area/ship/cargo)
 "HH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -4006,11 +3946,26 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
+"Ih" = (
+/obj/machinery/power/smes/engineering{
+	charge = 2e+006
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Il" = (
 /obj/effect/turf_decal/industrial/stand_clear,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"Iq" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/emcloset/anchored,
+/obj/item/flashlight/flare,
+/obj/item/flashlight/flare,
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering)
 "IE" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4036,6 +3991,33 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/office/lobby)
+"IN" = (
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	can_be_unanchored = 1;
+	icon_state = "sec";
+	name = "firearm locker";
+	req_access_txt = "41"
+	},
+/obj/machinery/light/small/directional/west,
+/obj/item/clothing/suit/armor/nanotrasen/slim,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -21;
+	pixel_y = -10
+	},
+/obj/machinery/button/door{
+	pixel_y = 24;
+	pixel_x = 8;
+	name = "Crew Window Lockdown";
+	id = "meta_crewwindows"
+	},
+/obj/item/gun/energy/sharplite/l201/l204,
+/obj/item/gun/energy/sharplite/l201/l204,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "IR" = (
 /obj/structure/chair/bench/orange/directional/south,
 /obj/effect/turf_decal/corner/transparent/nsorange/border{
@@ -4113,6 +4095,13 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/dormtwo)
+"JK" = (
+/obj/machinery/power/smes/engineering{
+	charge = 1e+006
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "JR" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -4144,6 +4133,15 @@
 /obj/machinery/portable_atmospherics/scrubber,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
+/area/ship/engineering)
+"KZ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "La" = (
 /obj/structure/filingcabinet/chestdrawer{
@@ -4288,21 +4286,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/yew,
 /area/ship/crew)
-"Mf" = (
-/obj/machinery/door/poddoor{
-	id = "meta_starboard"
-	},
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 4;
-	id = "starboard_holofield";
-	locked = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
-/obj/machinery/door/firedoor,
-/turf/open/floor/plating,
-/area/ship/cargo)
 "Mg" = (
 /obj/effect/turf_decal/corner/transparent/neutral/full,
 /obj/structure/cable{
@@ -4601,28 +4584,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
-"Pk" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
-	dir = 2;
-	name = "atmos waste outlet injector"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "Po" = (
 /obj/structure/chair/bench/orange/directional/west,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/office/lobby)
-"Pw" = (
-/obj/docking_port/stationary{
-	dheight = 1;
-	dwidth = 20;
-	height = 30;
-	name = "Meta Port Beam Dock";
-	width = 40;
-	disable_on_owner_ship_dock = 1
-	},
-/turf/template_noop,
-/area/template_noop)
 "PL" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
@@ -4692,6 +4657,17 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/yew,
 /area/ship/crew)
+"QY" = (
+/obj/structure/closet/crate/bin,
+/obj/item/trash/chips{
+	pixel_x = -4
+	},
+/obj/item/reagent_containers/food/drinks/soda_cans/vimukti{
+	pixel_x = 3;
+	pixel_y = -5
+	},
+/turf/open/floor/carpet/nanoweave/orange,
+/area/ship/crew)
 "Rf" = (
 /obj/structure/table,
 /obj/item/paper_bin{
@@ -4750,6 +4726,12 @@
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/office/lobby)
+"Ry" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/machinery/light/small/directional/east,
+/obj/machinery/griddle,
+/turf/open/floor/plasteel/white,
+/area/ship/crew)
 "RL" = (
 /obj/effect/turf_decal/siding/thinplating/dark/end{
 	dir = 4
@@ -4846,15 +4828,6 @@
 /obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/office/lobby)
-"Sm" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering)
 "Sq" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10;
@@ -4981,15 +4954,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
-"TG" = (
-/obj/machinery/power/smes/engineering{
-	charge = 2e+006
-	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "TM" = (
 /obj/item/toy/crayon/spraycan{
 	pixel_x = 12;
@@ -5247,6 +5211,18 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
+"VI" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 8;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 4;
+	height = 31;
+	name = "Meta Stern Dock";
+	width = 9
+	},
+/turf/template_noop,
+/area/template_noop)
 "VN" = (
 /obj/machinery/door/airlock{
 	dir = 4;
@@ -5315,6 +5291,30 @@
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /turf/open/floor/plasteel/white,
 /area/ship/crew)
+"WB" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
+	name = "atmos waste outlet injector"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
+"WD" = (
+/obj/effect/turf_decal/corner/opaque/nsorange/half,
+/obj/structure/table,
+/obj/item/paper_bin/carbon{
+	pixel_y = 4;
+	pixel_x = 5
+	},
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable,
+/obj/item/folder/blue{
+	pixel_y = 3;
+	pixel_x = -10
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/crew/office/lobby)
 "WK" = (
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters{
 	dir = 1
@@ -5620,14 +5620,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
-"ZS" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/emcloset/anchored,
-/obj/item/flashlight/flare,
-/obj/item/flashlight/flare,
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering)
 "ZZ" = (
 /obj/structure/table/wood,
 /obj/machinery/fax/nanotrasen{
@@ -5677,7 +5669,7 @@ aa
 aa
 aa
 aa
-mi
+VI
 aa
 aa
 aa
@@ -5704,7 +5696,7 @@ ab
 aa
 ac
 NY
-GN
+FK
 NY
 ac
 aa
@@ -5731,8 +5723,8 @@ ac
 ac
 ac
 bH
-Sm
-ZS
+KZ
+Iq
 ac
 ac
 ac
@@ -5740,7 +5732,7 @@ ac
 Xn
 cY
 el
-TG
+Ih
 ac
 aa
 aa
@@ -5759,7 +5751,7 @@ TM
 ac
 ej
 zq
-Ds
+iR
 Mj
 cJ
 sx
@@ -5794,7 +5786,7 @@ Mj
 Vi
 bj
 fX
-dK
+JK
 ac
 aa
 aa
@@ -5910,7 +5902,7 @@ aa
 (11,1,1) = {"
 aa
 aa
-Pk
+WB
 jb
 RS
 aE
@@ -6012,7 +6004,7 @@ tS
 ZE
 PV
 sr
-Mf
+tG
 aa
 "}
 (15,1,1) = {"
@@ -6043,8 +6035,8 @@ Rk
 aa
 "}
 (16,1,1) = {"
-Pw
-CR
+zu
+qn
 Vd
 hg
 ak
@@ -6067,7 +6059,7 @@ zi
 fv
 yX
 Rk
-bf
+zX
 "}
 (17,1,1) = {"
 aa
@@ -6120,7 +6112,7 @@ di
 cv
 Nu
 jD
-Hv
+iY
 aa
 "}
 (19,1,1) = {"
@@ -6386,7 +6378,7 @@ mJ
 IR
 vX
 id
-ld
+QY
 dX
 ai
 aa
@@ -6511,9 +6503,9 @@ FW
 aB
 Fh
 yT
-er
+WD
 bQ
-fN
+IN
 EQ
 rC
 bQ
@@ -6571,8 +6563,8 @@ ch
 wm
 RM
 bQ
-mt
-dl
+Ry
+hb
 gt
 Xt
 ai

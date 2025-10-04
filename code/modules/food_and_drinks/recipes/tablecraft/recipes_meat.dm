@@ -73,7 +73,7 @@
 	name = "Spicy sushi roll"
 	reqs = list(
 		/obj/item/food/grown/seaweed/sheet = 1,
-		/obj/item/food/salad/boiledrice = 1,
+		/obj/item/food/boiled_rice = 1,
 		/obj/item/food/fishmeat = 1,
 		/obj/item/food/grown/chili = 1,
 		/obj/item/food/grown/onion = 1
@@ -94,7 +94,7 @@
 	name = "Nigiri sushi"
 	reqs = list(
 		/obj/item/food/grown/seaweed/sheet = 1,
-		/obj/item/food/salad/boiledrice = 1,
+		/obj/item/food/boiled_rice = 1,
 		/obj/item/food/fishmeat = 1,
 		/datum/reagent/consumable/soysauce = 2
 	)
@@ -158,10 +158,10 @@
 /datum/crafting_recipe/food/sausage
 	name = "Sausage"
 	reqs = list(
-		/obj/item/food/meatball = 1,
-		/obj/item/food/meat/cutlet = 2
+		/obj/item/food/raw_meatball  = 1,
+		/obj/item/food/meat/rawcutlet = 2
 	)
-	result = /obj/item/food/sausage
+	result = /obj/item/food/raw_sausage
 	subcategory = CAT_MEAT
 
 /datum/crafting_recipe/food/tiris_dote
@@ -170,7 +170,7 @@
 		/obj/item/food/grown/dote_berries = 1,
 		/obj/item/food/meat/rawcutlet/tiris = 2
 	)
-	result = /obj/item/food/sausage/tiris_dote
+	result = /obj/item/food/sausage/tiris_dote //convert to raw - sprites
 	subcategory = CAT_MEAT
 
 /datum/crafting_recipe/food/tiris_refa
@@ -179,7 +179,7 @@
 		/obj/item/food/grown/refa_li = 1,
 		/obj/item/food/meat/rawcutlet/tiris = 2
 	)
-	result = /obj/item/food/sausage/tiris_refa
+	result = /obj/item/food/sausage/tiris_refa //convert to raw - sprites
 	subcategory = CAT_MEAT
 
 /datum/crafting_recipe/food/tirila_li
@@ -373,7 +373,7 @@
 /datum/crafting_recipe/food/ricepork
 	name = "Rice and Pork"
 	reqs = list(
-		/obj/item/food/salad/boiledrice = 1,
+		/obj/item/food/boiled_rice = 1,
 		/obj/item/food/meat/cutlet = 2
 	)
 	result = /obj/item/food/salad/ricepork
@@ -392,7 +392,7 @@
 /datum/crafting_recipe/food/gumbo
 	name = "Gumbo"
 	reqs = list(
-		/obj/item/food/salad/boiledrice = 1,
+		/obj/item/food/boiled_rice = 1,
 		/obj/item/food/grown/peas = 1,
 		/obj/item/food/grown/chili = 1,
 		/obj/item/food/meat/cutlet = 1
@@ -404,7 +404,7 @@
 	name = "Fish fry"
 	reqs = list(
 		/obj/item/food/grown/corn = 1,
-		/obj/item/food/grown/peas =1,
+		/obj/item/food/grown/peas = 1,
 		/obj/item/food/fishmeat = 1
 	)
 	result = /obj/item/food/fishfry

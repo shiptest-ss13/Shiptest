@@ -15,7 +15,6 @@
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	burnmod = 1.25
 	heatmod = 1.5
-	meat = /obj/item/food/meat/slab/human/mutant/plant
 	disliked_food = MEAT | DAIRY
 	liked_food = VEGETABLES | FRUIT | GRAIN | CLOTH //cannibals apparentely
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | ERT_SPAWN
