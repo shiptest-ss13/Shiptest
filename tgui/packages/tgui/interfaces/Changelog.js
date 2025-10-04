@@ -1,6 +1,6 @@
-import { classes } from 'common/react';
-import { useBackend } from '../backend';
-import { Component, Fragment } from 'inferno';
+import dateformat from 'dateformat';
+import yaml from 'js-yaml';
+import { Component, Fragment } from 'react';
 import {
   Box,
   Button,
@@ -9,11 +9,12 @@ import {
   Section,
   Stack,
   Table,
-} from '../components';
-import { Window } from '../layouts';
+} from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
+
 import { resolveAsset } from '../assets';
-import dateformat from 'dateformat';
-import yaml from 'js-yaml';
+import { useBackend } from '../backend';
+import { Window } from '../layouts';
 
 const icons = {
   bugfix: { icon: 'bug', color: 'green' },
@@ -64,13 +65,13 @@ export class Changelog extends Component {
   }
 
   getData = (date, attemptNumber = 1) => {
-    const { act } = useBackend(this.context);
+    const { act } = useBackend();
     const self = this;
     const maxAttempts = 6;
 
     if (attemptNumber > maxAttempts) {
       return this.setData(
-        'Failed to load data after ' + maxAttempts + ' attempts'
+        'Failed to load data after ' + maxAttempts + ' attempts',
       );
     }
 
@@ -96,11 +97,11 @@ export class Changelog extends Component {
   componentDidMount() {
     const {
       data: { dates = [] },
-    } = useBackend(this.context);
+    } = useBackend();
 
     if (dates) {
       dates.forEach((date) =>
-        this.dateChoices.push(dateformat(date, 'mmmm yyyy', true))
+        this.dateChoices.push(dateformat(date, 'mmmm yyyy', true)),
       );
       this.setSelectedDate(this.dateChoices[0]);
       this.getData(dates[0]);
@@ -111,7 +112,7 @@ export class Changelog extends Component {
     const { data, selectedDate, selectedIndex } = this.state;
     const {
       data: { dates },
-    } = useBackend(this.context);
+    } = useBackend();
     const { dateChoices } = this;
 
     const dateDropdown = dateChoices.length > 0 && (
@@ -130,7 +131,7 @@ export class Changelog extends Component {
               window.scrollTo(
                 0,
                 document.body.scrollHeight ||
-                  document.documentElement.scrollHeight
+                  document.documentElement.scrollHeight,
               );
               return this.getData(dates[index]);
             }}
@@ -149,7 +150,7 @@ export class Changelog extends Component {
               window.scrollTo(
                 0,
                 document.body.scrollHeight ||
-                  document.documentElement.scrollHeight
+                  document.documentElement.scrollHeight,
               );
               return this.getData(dates[index]);
             }}
@@ -171,7 +172,7 @@ export class Changelog extends Component {
               window.scrollTo(
                 0,
                 document.body.scrollHeight ||
-                  document.documentElement.scrollHeight
+                  document.documentElement.scrollHeight,
               );
               return this.getData(dates[index]);
             }}

@@ -1,15 +1,14 @@
-import { useBackend } from '../../backend';
-
 import {
-  Button,
-  Box,
-  Section,
-  LabeledList,
   AnimatedNumber,
-} from '../../components';
-import { Window } from '../../layouts';
+  Box,
+  Button,
+  LabeledList,
+  Section,
+} from 'tgui-core/components';
+import { decodeHtmlEntities } from 'tgui-core/string';
 
-import { decodeHtmlEntities } from 'common/string';
+import { useBackend } from '../../backend';
+import { Window } from '../../layouts';
 
 export type OvermapData = {
   admin_rights: Boolean;
@@ -30,8 +29,8 @@ type NameAndRef = {
   ref: string;
 };
 
-export const OvermapInspect = (props, context) => {
-  const { act, data } = useBackend<OvermapData>(context);
+export const OvermapInspect = (props) => {
+  const { act, data } = useBackend<OvermapData>();
   const { admin_rights, name, ascii, desc, x, y, dockedTo, docked = [] } = data;
 
   return (

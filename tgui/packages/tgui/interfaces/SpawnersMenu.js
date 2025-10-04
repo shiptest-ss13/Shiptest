@@ -1,12 +1,13 @@
+import { Box, Button, Section } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Box, Button, Section } from '../components';
 import { Window } from '../layouts';
 
-export const SpawnersMenu = (props, context) => {
-  const { act, data } = useBackend(context);
+export const SpawnersMenu = (props) => {
+  const { act, data } = useBackend();
   const spawners = data.spawners || [];
   return (
-    <Window title="Spawners Menu" width={700} height={600} resizable>
+    <Window title="Spawners Menu" width={700} height={600}>
       <Window.Content scrollable>
         <Section>
           {spawners.map((spawner) => (

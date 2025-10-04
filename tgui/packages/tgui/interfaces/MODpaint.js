@@ -1,15 +1,16 @@
-import { useBackend } from '../backend';
 import {
   Box,
-  Stack,
-  Section,
-  ByondUi,
-  Slider,
-  Flex,
   Button,
-} from '../components';
+  ByondUi,
+  Flex,
+  Section,
+  Slider,
+  Stack,
+} from 'tgui-core/components';
+import { capitalize } from 'tgui-core/string';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
-import { capitalize } from 'common/string';
 
 const colorToMatrix = (param) => {
   switch (param) {
@@ -54,8 +55,8 @@ const displayText = (param) => {
   }
 };
 
-export const MODpaint = (props, context) => {
-  const { act, data } = useBackend(context);
+export const MODpaint = (props) => {
+  const { act, data } = useBackend();
   const { mapRef, currentColor } = data;
   const [
     [rr, rg, rb, ra],
