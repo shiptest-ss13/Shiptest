@@ -2,6 +2,7 @@
 /datum/element/processable
 	element_flags = ELEMENT_BESPOKE
 	id_arg_index = 2
+
 	///The type of atom this creates when the processing recipe is used.
 	var/atom/result_atom_type
 	///The tool behaviour for this processing recipe
@@ -42,7 +43,7 @@
 		var/found_tray = locate(/obj/item/storage/bag/tray) in found_location
 
 		if(!found_turf && !istype(found_location, /obj/item/storage/bag/tray) || found_turf && !(found_table || found_tray))
-			to_chat(user, span_notice("You cannot make [initial(result_atom_type.name)] here! You need a table or at least a tray."))
+			to_chat(user, span_notice("Can't make [initial(result_atom_type.name)] here! You need a cutting surface."))
 			return
 
 	mutable_recipes += list(list(TOOL_PROCESSING_RESULT = result_atom_type, TOOL_PROCESSING_AMOUNT = amount_created, TOOL_PROCESSING_TIME = time_to_process))
@@ -55,16 +56,15 @@
 	var/result_gender = initial(result_atom_type.gender)
 	var/tool_desc = tool_behaviour_name(tool_behaviour)
 
-	// I admit, this is a lot of lines for very minor changes in the strings
-	// but at least it's readable?
+	//todo, there needs to be some edits here or with food processors/that stuff to work better with this component. examines wont show recipes using that
 	if(amount_created > 1)
 		if(result_gender == PLURAL)
-			examine_list += span_notice("It can be turned into [amount_created] [result_name] with <b>[tool_desc]</b>!")
+			examine_list += span_notice("It can be turned into <b>[amount_created] [result_name]</b> with <b>[tool_desc]</b>.")
 		else
-			examine_list += span_notice("It can be turned into [amount_created] [result_name][plural_s(result_name)] with <b>[tool_desc]</b>!")
+			examine_list += span_notice("It can be turned into <b>[amount_created] [result_name][plural_s(result_name)]</b> with <b>[tool_desc]</b>.")
 
 	else
 		if(result_gender == PLURAL)
-			examine_list += span_notice("It can be turned into some [result_name] with <b>[tool_desc]</b>!")
+			examine_list += span_notice("It can be turned into some <b>[result_name]</b> with <b>[tool_desc]</b>.")
 		else
-			examine_list += span_notice("It can be turned into \a [result_name] with <b>[tool_desc]</b>!")
+			examine_list += span_notice("It can be turned into \a <b>[result_name]</b> with <b>[tool_desc]</b>.")

@@ -1,17 +1,15 @@
 /datum/component/grillable
-	dupe_mode = COMPONENT_DUPE_UNIQUE_PASSARGS // So you can change grill results with various cookstuffs
+	dupe_mode = COMPONENT_DUPE_UNIQUE_PASSARGS //So you can change grill results with various cookstuffs
 	///Result atom type of grilling this object
 	var/atom/cook_result
 	///Amount of time required to cook the food
 	var/required_cook_time = 2 MINUTES
-	///Is this a positive grill result?
-	var/positive_result = TRUE
-
 	///Time spent cooking so far
 	var/current_cook_time = 0
-
 	///Are we currently grilling?
 	var/currently_grilling = FALSE
+	///Is this a positive grill result?
+	var/positive_result = TRUE
 
 	///Do we use the large steam sprite?
 	var/use_large_steam_sprite = FALSE
@@ -54,7 +52,6 @@
 	else if(!currently_grilling) //We havn't started grilling yet
 		start_grilling(used_grill)
 
-
 ///Ran when an object starts grilling on something
 /datum/component/grillable/proc/start_grilling(atom/grill_source)
 	currently_grilling = TRUE
@@ -72,7 +69,12 @@
 	grilled_result.pixel_x = original_object.pixel_x
 	grilled_result.pixel_y = original_object.pixel_y
 
-	grill_source.visible_message("<span class='[positive_result ? "notice" : "warning"]'>[parent] turns into \a [grilled_result]!</span>")
+	//blind feedback will be important for stuff like this
+	grill_source.visible_message(
+		"<span class='[positive_result ? "nicegreen" : "boldwarning"]'>[parent] turns into \a [grilled_result]!</span>",
+		blind_message = span_notice("Something smells [positive_result ? "great" : "awful"]."),
+	)
+
 	SEND_SIGNAL(parent, COMSIG_GRILL_COMPLETED, grilled_result)
 	currently_grilling = FALSE
 	qdel(parent)
@@ -84,7 +86,7 @@
 	if(!current_cook_time) //Not grilled yet
 		if(positive_result)
 			if(initial(cook_result.name) == PLURAL)
-				examine_list += span_notice("It can be <b>grilled</b>.")
+				examine_list += span_notice("It can be <b>grilled</b>.") 
 		return
 
 	if(positive_result)
@@ -94,6 +96,7 @@
 			examine_list += span_danger("It is almost done cooking!")
 	else
 		examine_list += span_nicegreen("It looks perfectly cooked.")
+
 ///Ran when an object moves from the grill
 /datum/component/grillable/proc/on_moved(atom/A, atom/OldLoc, Dir, Forced)
 	SIGNAL_HANDLER
