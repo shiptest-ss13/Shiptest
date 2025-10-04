@@ -961,7 +961,7 @@
 		nova.size = inputed
 
 		inputed = input(usr, "Choose Maximum amount of Dynamic Events", "Spawn Overmap", nova.max_overmap_dynamic_events) as num
-		if(!inputed)
+		if(isnull(inputed))
 			QDEL_NULL(nova)
 			return
 		nova.max_overmap_dynamic_events = inputed
