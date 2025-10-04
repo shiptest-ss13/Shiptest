@@ -4,7 +4,7 @@
 /obj/item/seeds/dote_berries
 	name = "pack of dote berry seeds"
 	desc = "These seeds grow into dote berry bushes."
-	icon_state = ""
+	icon_state = "seed-dote"
 	species = "berry"
 	plantname = "dote bush"
 	product = /obj/item/food/grown/dote_berries

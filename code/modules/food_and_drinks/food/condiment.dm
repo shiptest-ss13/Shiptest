@@ -189,7 +189,7 @@
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
-	list_reagents = list(/datum/reagent/consumable/milk = 50)
+	list_reagents = list(/datum/reagent/consumable/tiris_milk = 50)
 
 /obj/item/reagent_containers/condiment/flour
 	name = "flour sack"
