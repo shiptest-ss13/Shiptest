@@ -699,8 +699,8 @@
 
 /datum/reagent/drug/cinesia/on_mob_life(mob/living/carbon/M)
 	..()
-	M.adjustStaminaLoss(-20, 0)
-	M.adjustBruteLoss(-2, 0)
+	M.adjustStaminaLoss(-10, 0)
+	M.adjustBruteLoss(-1, 0)
 	if(prob(10))
 		M.playsound_local(get_turf(M), 'sound/health/slowbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 
