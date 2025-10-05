@@ -961,7 +961,7 @@
 		nova.size = inputed
 
 		inputed = input(usr, "Choose Maximum amount of Dynamic Events", "Spawn Overmap", nova.max_overmap_dynamic_events) as num
-		if(!inputed)
+		if(isnull(inputed))
 			QDEL_NULL(nova)
 			return
 		nova.max_overmap_dynamic_events = inputed
@@ -1344,6 +1344,8 @@
 	var/source = "adminabuse"
 	switch(add_or_remove)
 		if("Add") //Not doing source choosing here intentionally to make this bit faster to use, you can always vv it.
+			if(GLOB.movement_type_trait_to_flag[chosen_trait]) //include the required element.
+				D.AddElement(/datum/element/movetype_handler)
 			ADD_TRAIT(D,chosen_trait,source)
 		if("Remove")
 			var/specific = input("All or specific source ?", "Trait Remove/Add") as null|anything in list("All","Specific")

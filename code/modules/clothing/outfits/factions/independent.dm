@@ -371,7 +371,7 @@
 	name = "Independent - Security Officer (Mercenary)"
 	id_assignment = "Trooper"
 
-	uniform = /obj/item/clothing/under/syndicate/camo
+	uniform = /obj/item/clothing/under/rank/security/officer/camo
 	gloves = /obj/item/clothing/gloves/fingerless
 	head = null
 	suit = null

@@ -73,6 +73,9 @@ GLOBAL_VAR(restart_counter)
 	if(NO_INIT_PARAMETER in params)
 		return
 
+	// Init the debugger first so we can debug Master
+	Debugger = new
+
 	Master.Initialize(10, FALSE, TRUE)
 
 	#ifdef UNIT_TESTS
@@ -270,6 +273,7 @@ GLOBAL_VAR(restart_counter)
 		if(do_hard_reboot)
 			log_world("World hard rebooted at [time_stamp()]")
 			shutdown_logging() // See comment below.
+			QDEL_NULL(Debugger)
 			TgsEndProcess()
 
 	log_world("World rebooted at [time_stamp()]")
@@ -280,9 +284,7 @@ GLOBAL_VAR(restart_counter)
 
 /world/Del()
 	shutdown_logging() // makes sure the thread is closed before end, else we terminate
-	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
-	if (debug_server)
-		call_ext(debug_server, "auxtools_shutdown")()
+	QDEL_NULL(Debugger)
 	..()
 
 /world/proc/update_status()

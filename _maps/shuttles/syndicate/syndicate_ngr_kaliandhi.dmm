@@ -963,6 +963,7 @@
 	color = "#791500"
 	},
 /obj/item/clothing/gloves/combat,
+/obj/item/storage/backpack/messenger/sec,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "fA" = (
@@ -1202,6 +1203,8 @@
 /obj/item/storage/guncase/pistol/a357{
 	mag_count = 3
 	},
+/obj/item/clothing/glasses/hud/security/sunglasses/ngr,
+/obj/item/storage/backpack/messenger/sec,
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm/captain)
 "gv" = (
@@ -1766,20 +1769,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/button{
-	id = "kalicargostar";
-	name = "Starboard Blast Doors";
-	dir = 4;
-	pixel_x = -10;
-	pixel_y = -3
-	},
-/obj/machinery/button{
-	pixel_x = -10;
-	pixel_y = 9;
-	id = "kalicargoport";
-	name = "Portside Blast Doors";
-	dir = 4
-	},
 /obj/machinery/button/shieldwallgen{
 	id = "kali_entrance_holo_port";
 	pixel_x = 3;
@@ -1792,6 +1781,20 @@
 	pixel_x = 3;
 	pixel_y = -5;
 	name = "Starboard Holofield";
+	dir = 4
+	},
+/obj/machinery/button/door{
+	id = "kalicargoport";
+	pixel_x = -10;
+	pixel_y = 10;
+	name = "Portside Blast Doors";
+	dir = 4
+	},
+/obj/machinery/button/door{
+	name = "Starboard Blast Doors";
+	pixel_x = -10;
+	pixel_y = -4;
+	id = "kalicargostar";
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -3789,7 +3792,8 @@
 	color = "#791500"
 	},
 /obj/structure/railing{
-	dir = 9
+	dir = 9;
+	layer = 2.89
 	},
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plasteel/dark,
@@ -4046,6 +4050,8 @@
 	},
 /obj/item/storage/belt/military/assault,
 /obj/item/radio/headset/syndicate/alt/leader,
+/obj/item/clothing/glasses/hud/security/sunglasses/ngr,
+/obj/item/storage/backpack/messenger/sec,
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm/commad)
 "vh" = (
@@ -5208,6 +5214,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/extinguisher_cabinet/directional/west,
+/obj/machinery/atmospherics/pipe/simple/yellow/hidden,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "BY" = (
@@ -7094,6 +7101,8 @@
 	dir = 4
 	},
 /obj/item/clothing/glasses/sunglasses,
+/obj/item/clothing/glasses/hud/security/sunglasses/ngr,
+/obj/item/storage/backpack/messenger/sec,
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm/commad)
 "MN" = (
@@ -7451,6 +7460,8 @@
 /obj/machinery/firealarm/directional/south,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/clothing/gloves/color/yellow,
+/obj/item/gear_pack/anglegrinder,
+/obj/item/storage/backpack/duffelbag/engineering,
 /turf/open/floor/pod/dark,
 /area/ship/engineering)
 "Ob" = (
@@ -8364,6 +8375,7 @@
 	secure = 1
 	},
 /obj/item/clothing/gloves/combat,
+/obj/item/storage/backpack/messenger/sec,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "RX" = (
@@ -8777,6 +8789,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/yellow/hidden,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "UD" = (
@@ -9618,8 +9631,14 @@
 /area/ship/crew/canteen)
 "Yr" = (
 /obj/structure/rack,
-/obj/item/stack/sheet/glass/twenty,
-/obj/item/stack/sheet/metal/twenty,
+/obj/item/stack/sheet/glass/twenty{
+	pixel_x = 4;
+	pixel_y = 3
+	},
+/obj/item/stack/sheet/metal/twenty{
+	pixel_y = 2;
+	pixel_x = -2
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "Yu" = (

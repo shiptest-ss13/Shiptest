@@ -502,7 +502,7 @@
 	spread_chance = 50
 	chain_rate = 4
 	safe_speed = 7
-	interference_power = 5
+	interference_power = 0
 	meteor_types = list(
 		/obj/effect/meteor/dust=3,
 	)

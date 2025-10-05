@@ -199,7 +199,7 @@
 			else
 				log_details["name"] = "[name]▸"
 			if(interference_level)
-				var/temp_message = Gibberish(message, TRUE, interference_level)
+				var/temp_message = Gibberish(message, TRUE, interference_level/2) //max interference level should have a 50% garble chance
 				log_details["message"] = "\"[html_decode(temp_message)]\""
 			else
 				log_details["message"] = "\"[html_decode(message)]\""

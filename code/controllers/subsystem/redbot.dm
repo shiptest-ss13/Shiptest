@@ -8,7 +8,8 @@ SUBSYSTEM_DEF(redbot)
 	var/round_id = GLOB.round_id
 	if(config && bot_ip)
 		var/query = "http://[bot_ip]/?serverStart=1&roundID=[round_id]&key=[comms_key]"
-		world.Export(query)
+		ASYNC //Dont hold up acctually imprtant things
+			world.Export(query)
 	return ..()
 
 /datum/controller/subsystem/redbot/proc/send_discord_message(channel, message, priority_type)
@@ -24,4 +25,5 @@ SUBSYSTEM_DEF(redbot)
 	data["key"] = CONFIG_GET(string/comms_key)
 	data["announce_channel"] = channel
 	data["announce"] = message
-	world.Export("http://[bot_ip]/?[list2params(data)]")
+	ASYNC //Dont hold up acctually imprtant things
+		world.Export("http://[bot_ip]/?[list2params(data)]")
