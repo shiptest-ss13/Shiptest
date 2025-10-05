@@ -64,6 +64,8 @@
 	var/stamina_dam = 0
 	var/max_stamina_damage = 0
 	var/max_damage = 0
+	// whether this can transfer damage to the main body once this hits max damage
+	var/can_transfer_damage = TRUE
 
 	///Gradually increases while burning when at full damage, destroys the limb when at 100
 	var/cremation_progress = 0
@@ -352,9 +354,15 @@
 	//back to our regularly scheduled program, we now actually apply damage if there's room below limb damage cap
 	var/can_inflict = max_damage - get_damage()
 	var/total_damage = brute + burn
+	var/leftover_brute = brute
+	var/leftover_burn = burn
+	var/leftover_stam = stamina
 	if(total_damage > can_inflict && total_damage > 0) // TODO: the second part of this check should be removed once disabling is all done
 		brute = round(brute * (can_inflict / total_damage),DAMAGE_PRECISION)
 		burn = round(burn * (can_inflict / total_damage),DAMAGE_PRECISION)
+
+	leftover_brute = max(leftover_brute - brute, 0)
+	leftover_burn = max(leftover_burn - burn, 0)
 
 	if(can_inflict <= 0)
 		return FALSE
@@ -365,7 +373,9 @@
 
 	//We've dealt the physical damages, if there's room lets apply the stamina damage.
 	if(stamina)
-		set_stamina_dam(stamina_dam + round(clamp(stamina, 0, max_stamina_damage - stamina_dam), DAMAGE_PRECISION))
+		var/stamina_cap = max_stamina_damage - stamina_dam
+		leftover_stam = stamina - max((stamina_cap), 0)
+		set_stamina_dam(stamina_dam + round(clamp(stamina, 0, stamina_cap), DAMAGE_PRECISION))
 
 	if(owner)
 		if(can_be_disabled)
@@ -376,6 +386,14 @@
 				owner.update_stamina()
 				owner.stam_regen_start_time = world.time + STAMINA_REGEN_BLOCK_TIME
 				. = TRUE
+		// if we have any leftover damage, apply it our mob's torso
+		if(can_transfer_damage && !is_pseudopart)
+			if(leftover_brute > 0)
+				owner.apply_damage(leftover_brute/2, BRUTE, BODY_ZONE_CHEST)
+			if(leftover_burn > 0)
+				owner.apply_damage(leftover_burn/2, BURN, BODY_ZONE_CHEST)
+			if(leftover_stam > 0) // stamina damage has a better transfer rate, as we're "tiring out" our target.
+				owner.apply_damage(leftover_stam, STAMINA)
 	return update_bodypart_damage_state() || .
 
 /// Allows us to roll for and apply a wound without actually dealing damage. Used for aggregate wounding power with pellet clouds

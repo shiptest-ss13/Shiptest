@@ -129,7 +129,7 @@
 	return 1
 
 /// applies multiple effects at once via [/mob/living/proc/apply_effect]
-/mob/living/proc/apply_effects(stun = 0, knockdown = 0, unconscious = 0, irradiate = 0, slur = 0, stutter = 0, eyeblur = 0, drowsy = 0, blocked = 0, stamina = 0, jitter = 0, paralyze = 0, immobilize = 0)
+/mob/living/proc/apply_effects(stun = 0, knockdown = 0, unconscious = 0, irradiate = 0, slur = 0, stutter = 0, eyeblur = 0, drowsy = 0, blocked = 0, stamina = 0, jitter = 0, paralyze = 0, immobilize = 0, def_zone = null)
 	if(blocked >= 100)
 		return FALSE
 	if(stun)
@@ -153,7 +153,7 @@
 	if(drowsy)
 		apply_effect(drowsy, EFFECT_DROWSY, blocked)
 	if(stamina)
-		apply_damage(stamina, STAMINA, null, blocked)
+		apply_damage(stamina, STAMINA, def_zone, blocked)
 	if(jitter && (status_flags & CANSTUN) && !HAS_TRAIT(src, TRAIT_STUNIMMUNE))
 		adjust_timed_status_effect(jitter, /datum/status_effect/jitter)
 	return TRUE
