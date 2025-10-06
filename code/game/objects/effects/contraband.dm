@@ -847,6 +847,11 @@
 	desc = "A decommisioned poster that uses Safety Pill(TM?) to promote less-than-legal chemicals. This is one of the reasons Nanotrasen stopped outsourcing their posters. It's partially signed by 'AspEv'."
 	icon_state = "poster_moth_pill"
 
+	/obj/structure/sign/poster/contraband/radiofreefrontier
+	name = "RFF"
+	desc = "An amateur, slapdash poster for the 'Radio Free Frontier', a pirate radio station ran from the Shoal and maintained through the collective power of thousands of bored layabouts, vagabonds, and script-kiddies setting up signal amplifiers across Frontier space."
+	icon_state = "poster-radio_RFF"
+
 //SolGov poster pool. expect a focus on solarian based products and places. Expect these on solgov ships
 /obj/structure/sign/poster/solgov
 	poster_item_name = "solarian poster"
@@ -1132,6 +1137,27 @@
 	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_7
 	icon_state = "rolled_poster"
 
+/obj/structure/sign/poster/radio/random
+	name = "random radio station poster"
+	icon_state = "random_radio"
+	never_random = TRUE
+	random_basetype = /obj/structure/sign/poster/radio
+	random_type = POSTER_SUBTYPES
+
+	/obj/structure/sign/poster/radio/icf
+	name = "ICF"
+	desc = "A poster for the 'Independent Collected Frequencies', a rough network of unionized radio stations in the Frontier."
+	icon_state = "poster-radio_ICF"
+
+	/obj/structure/sign/poster/radio/arf
+	name = "ARF"
+	desc = "A poster for New Gorlex's 'All Republic First', a hybrid talk-show radio station. It's host is famous for her fluffy ears and cheerful demeanor, earning her the moniker 'Bitch Gorlex' from antiestablishment spacers."
+	icon_state = "poster-radio_ARF"
+
+	/obj/structure/sign/poster/radio/vkxs
+	name = "VKXS"
+	desc = "A poster advertizing the PGF's 'Voice of Kalixcis' radio station. It offers patriotic hymns, homeland nostalgia, and the only true democratic commentary on Frontier events."
+	icon_state = "poster-radio_VKXS"
 
 #undef PLACE_SPEED
 #undef POSTER_SUBTYPES
