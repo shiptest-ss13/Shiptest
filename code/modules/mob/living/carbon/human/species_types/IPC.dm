@@ -46,6 +46,7 @@
 	/// The last screen used when the IPC died.
 	var/saved_screen
 	var/datum/action/innate/change_screen/change_screen
+	var/datum/action/innate/change_eye_color/change_eye_color
 	var/has_screen = TRUE //do we have a screen. Used to determine if we mess with the screen or not
 
 /datum/species/ipc/random_name(unique)
@@ -69,15 +70,21 @@
 		var/mob/living/carbon/human/H = C
 		if(!change_screen)
 			var/datum/species/ipc/species_datum = H.dna.species
+			var/datum/sprite_accessory/ipc_chassis/chassis_datum = GLOB.ipc_chassis_list[H.dna.features["ipc_chassis"]]
 			if(species_datum?.has_screen)
 				change_screen = new
 				change_screen.Grant(H)
+			else if (chassis_datum?.use_eyes)
+				change_eye_color = new
+				change_eye_color.Grant(H)
 		C.RegisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, TYPE_PROC_REF(/mob/living/carbon, charge))
 
 /datum/species/ipc/on_species_loss(mob/living/carbon/C)
 	. = ..()
 	if(change_screen)
 		change_screen.Remove(C)
+	if(change_eye_color)
+		change_eye_color.Remove(C)
 	C.UnregisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT)
 
 /datum/species/ipc/spec_death(gibbed, mob/living/carbon/C)
@@ -118,6 +125,25 @@
 	if(!species_datum.has_screen)
 		return
 	H.dna.features["ipc_screen"] = screen_choice
+	H.eye_color = sanitize_hexcolor(color_choice)
+	H.update_body()
+
+/datum/action/innate/change_eye_color
+	name = "Change Eye Color"
+	check_flags = AB_CHECK_CONSCIOUS
+	icon_icon = 'icons/mob/actions/actions_silicon.dmi'
+	button_icon_state = "change_eye_color"
+
+/datum/action/innate/change_eye_color/Activate()
+	var/color_choice = input(usr, "Which color do you want your eyes to be?", "Color Change") as null | color
+	if(!color_choice)
+		return
+	if(!ishuman(owner))
+		return
+	var/mob/living/carbon/human/H = owner
+	var/datum/species/ipc/species_datum = H.dna.species
+	if(!species_datum)
+		return
 	H.eye_color = sanitize_hexcolor(color_choice)
 	H.update_body()
 
