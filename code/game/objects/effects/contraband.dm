@@ -1064,6 +1064,7 @@
 	name = "random official poster"
 	random_basetype = /obj/structure/sign/poster/pgf
 	icon_state = "random_pgf"
+	never_random = TRUE
 	random_type = POSTER_SUBTYPES
 
 /obj/structure/sign/poster/pgf/marine

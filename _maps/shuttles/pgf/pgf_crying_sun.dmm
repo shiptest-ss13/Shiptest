@@ -3999,9 +3999,7 @@
 /obj/machinery/camera/autoname{
 	dir = 10
 	},
-/obj/structure/sign/poster/pgf/random{
-	pixel_y = -30
-	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Gb" = (
@@ -5354,7 +5352,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/item/radio/intercom/directional/south,
+/obj/structure/sign/poster/pgf/random{
+	pixel_y = -30
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Qa" = (
