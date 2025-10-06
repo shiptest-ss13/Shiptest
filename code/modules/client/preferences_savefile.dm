@@ -434,7 +434,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["randomise"],  randomise)
 	READ_FILE(S["body_size"], features["body_size"])
 	READ_FILE(S["prosthetic_limbs"], prosthetic_limbs)
-	prosthetic_limbs ||= list(BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
+	prosthetic_limbs ||= list(BODY_ZONE_HEAD = PROSTHETIC_NORMAL, BODY_ZONE_CHEST = PROSTHETIC_NORMAL, BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
+	for(var/zone in list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
+		if(!prosthetic_limbs[zone])
+			prosthetic_limbs[zone] = PROSTHETIC_NORMAL // necessary to prevent old savefiles from breaking the interface
 	READ_FILE(S["learned_languages"], learned_languages)
 	if(!learned_languages?.len) init_learned_languages()
 	READ_FILE(S["native_language"], native_language)

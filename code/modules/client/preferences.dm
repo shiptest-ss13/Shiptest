@@ -146,10 +146,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"Other" = "plural"
 						)
 	var/list/prosthetic_limbs = list(
+							BODY_ZONE_HEAD = PROSTHETIC_NORMAL,
+							BODY_ZONE_CHEST = PROSTHETIC_NORMAL,
 							BODY_ZONE_L_ARM = PROSTHETIC_NORMAL,
 							BODY_ZONE_R_ARM = PROSTHETIC_NORMAL,
 							BODY_ZONE_L_LEG = PROSTHETIC_NORMAL,
-							BODY_ZONE_R_LEG = PROSTHETIC_NORMAL
+							BODY_ZONE_R_LEG = PROSTHETIC_NORMAL,
 						)
 	var/fbp = FALSE
 	var/phobia = "spiders"
@@ -936,18 +938,20 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				mutant_category = 0
 			dat += "</tr></table>"
 
-			dat += "<h3>Prosthetic Limbs</h3>"
+			var/metal_skin = fbp || pref_species.inherent_biotypes & MOB_ROBOTIC
+			dat += metal_skin ? "<h3>Chassis Customization</h3>" : "<h3>Prosthetic Limbs</h3>"
 			dat += "<a href='byond://?_src_=prefs;preference=fbp'>Full Body Prosthesis: [fbp ? "Yes" : "No"]</a><br>"
 
-			if(!fbp)
-				dat += "<a href='byond://?_src_=prefs;preference=toggle_random;random_type=[RANDOM_PROSTHETIC]'>Random Prosthetic: [(randomise[RANDOM_PROSTHETIC]) ? "Yes" : "No"]</a><br>"
+			dat += "<a href='byond://?_src_=prefs;preference=toggle_random;random_type=[RANDOM_PROSTHETIC]'>Random Prosthetic: [(randomise[RANDOM_PROSTHETIC]) ? "Yes" : "No"]</a><br>"
 
-				dat += "<table>"
-				for(var/index in prosthetic_limbs)
-					var/bodypart_name = parse_zone(index)
-					dat += "<tr><td><b>[bodypart_name]:</b></td>"
-					dat += "<td><a href='byond://?_src_=prefs;preference=limbs;customize_limb=[index]'>[prosthetic_limbs[index]]</a></td></tr>"
-				dat += "</table><br>"
+			dat += "<table>"
+			for(var/index in prosthetic_limbs)
+				if(!metal_skin && (index == BODY_ZONE_CHEST || index == BODY_ZONE_HEAD))
+					continue
+				var/bodypart_name = parse_zone(index)
+				dat += "<tr><td><b>[bodypart_name]:</b></td>"
+				dat += "<td><a href='byond://?_src_=prefs;preference=limbs;customize_limb=[index]'>[prosthetic_limbs[index]]</a></td></tr>"
+			dat += "</table><br>"
 
 		if(2) //Loadout
 			if(path)
@@ -2224,7 +2228,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("limbs")
 					if(href_list["customize_limb"])
 						var/limb = href_list["customize_limb"]
-						var/status = input(user, "You are modifying your [parse_zone(limb)], what should it be changed to?", "Character Preference", prosthetic_limbs[limb]) as null|anything in list(PROSTHETIC_NORMAL,PROSTHETIC_ROBOTIC,PROSTHETIC_AMPUTATED)
+						var/list/limb_options = list(PROSTHETIC_NORMAL, PROSTHETIC_ROBOTIC, PROSTHETIC_AMPUTATED)
+						for(var/chassis in GLOB.ipc_chassis_list)
+							limb_options.Add(chassis)
+						var/status = input(user, "You are modifying your [parse_zone(limb)], what should it be changed to?", "Character Preference", prosthetic_limbs[limb]) in limb_options
 						if(status)
 							prosthetic_limbs[limb] = status
 
@@ -2604,9 +2611,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						old_part.drop_limb(TRUE)
 						qdel(old_part)
 					character.regenerate_limb(pros_limb, robotic = TRUE)
+				else
+					var/datum/sprite_accessory/ipc_chassis/limb_style = GLOB.ipc_chassis_list[prosthetic_limbs[pros_limb]]
+					var/obj/item/bodypart/new_part = limb_style.chassis_bodyparts[old_part.body_zone]
+					new_part = new new_part()
+					if(old_part)
+						old_part.drop_limb(TRUE)
+						qdel(old_part)
+					new_part.replace_limb(character, TRUE)
+					new_part.update_limb(is_creating = TRUE)
 
-	if(pref_species.id == "ipc") // If triggered, vox and kepori arms do not spawn in but ipcs sprites break without it as the code for setting the right prosthetics for them is in set_species().
-		character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
+	//if(pref_species.id == "ipc") // If triggered, vox and kepori arms do not spawn in but ipcs sprites break without it as the code for setting the right prosthetics for them is in set_species().
+		//character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
 	//Because of how set_species replaces all bodyparts with new ones, hair needs to be set AFTER species.
 	character.dna.real_name = character.real_name
 	character.generic_adjective = generic_adjective
