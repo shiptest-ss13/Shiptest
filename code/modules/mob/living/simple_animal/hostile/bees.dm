@@ -41,12 +41,11 @@
 	obj_damage = 0
 	ventcrawler = VENTCRAWLER_ALWAYS
 	environment_smash = ENVIRONMENT_SMASH_NONE
-	mouse_opacity = MOUSE_OPACITY_OPAQUE
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
 	density = FALSE
 	mob_size = MOB_SIZE_TINY
 	mob_biotypes = MOB_ORGANIC|MOB_BUG
-	movement_type = FLYING
+	is_flying_animal = TRUE
 	search_objects = 1 //have to find those plant trays!
 
 	//Spaceborn beings don't get hurt by space
@@ -66,6 +65,7 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
 	generate_bee_visuals()
+	AddComponent(/datum/component/clickbox, x_offset = -2, y_offset = -2)
 	AddComponent(/datum/component/swarming)
 
 /mob/living/simple_animal/hostile/poison/bees/Destroy()
