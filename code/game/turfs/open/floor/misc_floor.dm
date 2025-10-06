@@ -173,7 +173,7 @@
 /turf/open/floor/plating/rust/plasma
 	initial_gas_mix = "plasma=104;TEMP=293.15"
 
-/turf/open/floor/plasting/rust/airless
+/turf/open/floor/plating/rust/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/plasteel/telecomms_floor
