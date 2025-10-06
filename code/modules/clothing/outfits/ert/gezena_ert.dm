@@ -27,11 +27,12 @@
 	suit_store = /obj/item/gun/energy/kalix/pgf/heavy
 
 /datum/outfit/job/gezena/ert/engineer
-	name = "ERT - PGF Marine Combat Engineer"
-	id_assignment = "Marine Combat Engineer"
+	name = "ERT - PGF Marine Pioneer"
+	id_assignment = "Marine Pioneer"
 
 	suit_store = /obj/item/gun/energy/kalix/pgf
 	belt = /obj/item/storage/belt/military/gezena/engineer
+	neck = /obj/item/clothing/neck/cloak/gezena/engi
 
 /datum/outfit/job/gezena/ert/medic
 	name = "ERT - PGF Marine Medic"

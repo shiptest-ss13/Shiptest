@@ -65,6 +65,11 @@
 	poster_type = /obj/structure/sign/poster/rilena/random
 	icon_state = "rolled_rilena"
 
+/obj/item/poster/random_pgf
+	name = "random pgf poster"
+	poster_type = /obj/structure/sign/poster/pgf/random
+	icon_state = "rolled_poster"
+
 // The poster sign/structure
 
 /obj/structure/sign/poster
@@ -410,11 +415,6 @@
 	name = "The Griffin"
 	desc = "The Griffin commands you to be the worst you can be. Will you?"
 	icon_state = "poster_griffin"
-
-/obj/structure/sign/poster/contraband/pgf
-	name = "PGF Marine"
-	desc = "This poster depicts a PGF marine with a E-40. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
-	icon_state = "poster_pgf"
 
 /obj/structure/sign/poster/contraband/free_drone
 	name = "Free Drone"
@@ -1053,6 +1053,57 @@
 	name = "Timeline"
 	desc = "A RILENA: LMR poster split in two to represent the series' disregard for conventional timeline aspects."
 	icon_state = "poster-rilena_timeline"
+
+//PGF recruitment diversity posters.
+/obj/structure/sign/poster/pgf
+	poster_item_name = "pgf poster"
+	poster_item_desc = "A poster that is produced by the armed forces of the PGF. It comes with adhesive backing, for easy pinning to any vertical surface."
+	poster_item_icon_state = "rolled_legit"
+
+/obj/structure/sign/poster/pgf/random
+	name = "random official poster"
+	random_basetype = /obj/structure/sign/poster/pgf
+	random_type = POSTER_SUBTYPES
+
+/obj/structure/sign/poster/pgf/marine
+	name = "PGF Marine"
+	desc = "This poster depicts a human PGF Marine armed with a BGC-10. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster_pgf_marine"
+
+/obj/structure/sign/poster/pgf/sergeant
+	name = "PGF Marine Sergeant"
+	desc = "This poster depicts a sarathi PGF Marine sergeant armed with a HBG-7. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster_pgf_sergeant"
+
+	/obj/structure/sign/poster/pgf/corpsman
+	name = "PGF Marine Corpsman"
+	desc = "This poster depicts an elzuose PGF Marine corpsman. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster_pgf_corpsman"
+
+	/obj/structure/sign/poster/pgf/pioneer
+	name = "PGF Marine Pioneer"
+	desc = "This poster depicts a vox PGF Marine pioneer with armed with a VG-A5. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster_pgf_pioneer"
+
+	/obj/structure/sign/poster/pgf/captain
+	name = "PGF Navy Captain"
+	desc = "This poster depicts a kepori PGF Navy captain. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster_pgf_captain"
+
+	/obj/structure/sign/poster/pgf/engineer
+	name = "PGF Navy Engineer"
+	desc = "This poster depicts a synthetic PGF Navy engineer. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster_pgf_engineer"
+
+	/obj/structure/sign/poster/pgf/officer
+	name = "PGF Navy Officer"
+	desc = "This poster depicts a rachnid PGF Navy officer. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster_pgf_officer"
+
+	/obj/structure/sign/poster/pgf/choose
+	name = "Choose Your Path"
+	desc = "This poster depicts a sarathi split between PGF Marine Corps and Navy dress. \"Fight with the Pan-Gezena Federation and choose your own path!\""
+	icon_state = "poster_pgf_choose"
 
 //PGF Mission Accomplished
 /obj/structure/sign/poster/pgf/mission_accomplished_1
