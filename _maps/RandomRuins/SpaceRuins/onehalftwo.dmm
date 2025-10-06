@@ -14,6 +14,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/machinery/light/dim/directional/west,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "aI" = (
@@ -318,7 +319,12 @@
 "dz" = (
 /obj/effect/decal/cleanable/robot_debris,
 /obj/item/stock_parts/cell/crap,
-/obj/machinery/light/broken/directional/east,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/armory)
 "dA" = (
@@ -485,6 +491,14 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/refuelingsolars)
+"fC" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
 "fP" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/plasteel/dark,
@@ -633,9 +647,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
@@ -646,6 +657,7 @@
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/refuelingpost/lower)
 "hd" = (
@@ -674,6 +686,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
@@ -787,12 +802,14 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/space/has_grav/refuelingpost/lower)
 "iv" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 4;
-	welded = 1
-	},
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/space/has_grav/refuelingpost/lower)
@@ -808,8 +825,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/refuelingpost/engineering)
 "iF" = (
-/obj/machinery/power/apc/auto_name/directional/east,
-/obj/structure/cable/yellow,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "iG" = (
@@ -1034,6 +1050,7 @@
 "ku" = (
 /obj/structure/catwalk,
 /obj/item/shard,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/airless,
 /area/ruin/space/refuelingsolars)
 "kC" = (
@@ -1097,6 +1114,10 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/space/has_grav/refuelingpost/upper)
+"kW" = (
+/obj/structure/grille/broken,
+/turf/open/floor/plating,
+/area/ruin/space)
 "lc" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 4
@@ -1344,6 +1365,9 @@
 	dir = 4
 	},
 /obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "oZ" = (
@@ -1675,6 +1699,9 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
+"sk" = (
+/turf/open/floor/plating,
+/area/ruin/space)
 "sm" = (
 /obj/structure/girder,
 /obj/item/stack/ore/salvage/scraptitanium,
@@ -1817,7 +1844,6 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/refuelingpost/dorms)
 "tD" = (
-/obj/machinery/door/airlock/public,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -2127,9 +2153,6 @@
 	dir = 1
 	},
 /obj/item/ammo_casing/spent/slug/buck,
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
 /turf/open/floor/plasteel/tech/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "xD" = (
@@ -2277,6 +2300,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "ze" = (
@@ -2307,28 +2334,10 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "zt" = (
-/obj/machinery/door/airlock/security{
-	dir = 8;
-	name = "Security";
-	welded = 1
-	},
-/obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/tech/grid,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/space/has_grav/refuelingpost/armory)
 "zL" = (
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
@@ -2336,6 +2345,10 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/space/has_grav/refuelingpost/lower)
+"zZ" = (
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ruin/space)
 "Aj" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/reagent_dispensers/watertank,
@@ -2485,6 +2498,15 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/refuelingpost/bridge)
+"Cy" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
 "CE" = (
 /obj/effect/turf_decal/trimline/opaque/ntblue/line{
 	dir = 9
@@ -2759,6 +2781,11 @@
 "Gq" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/space/has_grav/refuelingpost/cargo)
+"Gs" = (
+/obj/structure/grille/broken,
+/obj/item/stack/ore/glass,
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
 "Gu" = (
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/refuelingpost/dorms)
@@ -3026,9 +3053,6 @@
 "Jm" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/border,
 /mob/living/basic/hivebot,
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
 /turf/open/floor/plasteel/tech/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "Jn" = (
@@ -3414,9 +3438,6 @@
 	dir = 4
 	},
 /obj/structure/cable/yellow{
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -3592,12 +3613,14 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/machinery/light/dim/directional/east,
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/white,
@@ -3613,20 +3636,22 @@
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 1
 	},
+/obj/machinery/light/dim/directional/west,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "Qb" = (
 /obj/effect/turf_decal/trimline/opaque/vired/line,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/firealarm/directional/south,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/machinery/light/broken/directional/east,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/armory)
@@ -3662,13 +3687,15 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/refuelingpost/cargo)
 "QQ" = (
-/obj/machinery/door/airlock/public,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/corner{
 	dir = 1
+	},
+/obj/machinery/door/airlock/glass_large{
+	name = "Cargo Bay"
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
@@ -3736,6 +3763,27 @@
 /obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/refuelingpost/dorms)
+"Rf" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/airlock/security{
+	dir = 8;
+	name = "Security";
+	welded = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/has_grav/refuelingpost/armory)
 "Rr" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -3912,17 +3960,15 @@
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "Tk" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
 	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4;
+	welded = 1
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/space/has_grav/refuelingpost/lower)
@@ -4245,6 +4291,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
@@ -5570,7 +5619,7 @@ qh
 xD
 YH
 CI
-Ow
+fC
 nT
 NI
 nT
@@ -5792,7 +5841,7 @@ kN
 YT
 YT
 jR
-YT
+Rf
 zt
 CI
 oW
@@ -5892,7 +5941,7 @@ ZK
 ZK
 VY
 VY
-ZK
+Cy
 aV
 YY
 yi
@@ -6377,7 +6426,7 @@ kD
 sO
 ji
 sO
-yS
+Gs
 kD
 kD
 kD
@@ -6424,7 +6473,7 @@ ze
 sO
 yS
 XT
-XT
+kW
 XT
 XT
 XT
@@ -6469,7 +6518,7 @@ sO
 sO
 yS
 XT
-XT
+zZ
 XT
 XT
 XT
@@ -6556,7 +6605,7 @@ nk
 kD
 XT
 XT
-XT
+sk
 XT
 XT
 XT
@@ -6601,8 +6650,8 @@ kD
 kD
 XT
 XT
-XT
-XT
+zZ
+zZ
 XT
 XT
 XT
