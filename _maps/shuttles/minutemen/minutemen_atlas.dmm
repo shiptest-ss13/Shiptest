@@ -2785,7 +2785,9 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped,
+/obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped{
+	piping_layer = 2
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "ux" = (
@@ -2944,7 +2946,8 @@
 /area/ship/cargo)
 "vy" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/o2{
-	dir = 1
+	dir = 1;
+	piping_layer = 2
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech,
@@ -4923,7 +4926,8 @@
 /area/ship/engineering)
 "Kh" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/n2{
-	dir = 1
+	dir = 1;
+	piping_layer = 2
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech,
