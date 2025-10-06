@@ -38,6 +38,13 @@
 	icon_state = "ramzi_worker"
 	item_state = "blackcloth"
 
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_COAT
+	equip_delay_other = EQUIP_DELAY_COAT * 1.5
+	strip_delay = EQUIP_DELAY_COAT * 1.5
+
+
 /obj/item/clothing/suit/ramzi/smock
 	name = "maroon smock"
 	desc = "A shabby smock, it's straps barely held on. It's hard to tell if the color due to aging or bloodstains."
@@ -181,7 +188,7 @@
 	icon_state = "ramzi_major"
 	item_state = "ramzi_major"
 
-/obj/item/clothing/head/helmet/ramzi
+/obj/item/clothing/head/helmet/m10/ramzi
 	name = "\improper Ramzi Clique M-10 helmet"
 	desc = "A cheaper helmet utilized by the Ramzi Clique, often handed out to less valuable combatants."
 	icon = 'icons/obj/clothing/faction/ramzi/head.dmi'
@@ -192,7 +199,7 @@
 	can_flashlight = TRUE
 	content_overlays = TRUE
 
-/obj/item/clothing/head/helmet/ramzi/bulletproof
+/obj/item/clothing/head/helmet/bulletproof/x11/ramzi
 	name = "\improper Ramzi Clique X-11 helmet"
 	desc = "A durable bulletproof helmet, often handed out to more reliable Ramzi assets."
 	icon = 'icons/obj/clothing/faction/ramzi/head.dmi'
@@ -215,6 +222,7 @@
 	icon_state = "ramzi_gas"
 	item_state = "ramzi_gas"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	supports_variations = SNOUTED_VARIATION
 
 //////////
 //Neck//

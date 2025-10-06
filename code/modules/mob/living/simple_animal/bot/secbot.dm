@@ -448,7 +448,7 @@ Auto Patrol: []"},
 				new /obj/item/bodypart/leg/right/robot(Tsec)
 		if(prob(25))//50% chance for a helmet OR vest
 			if(prob(50))
-				new /obj/item/clothing/head/helmet(Tsec)
+				new /obj/item/clothing/head/helmet/m10(Tsec)
 			else
 				new /obj/item/clothing/suit/armor/vest(Tsec)
 	else

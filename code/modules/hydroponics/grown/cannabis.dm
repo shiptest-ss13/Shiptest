@@ -17,7 +17,7 @@
 						/obj/item/seeds/cannabis/death,
 						/obj/item/seeds/cannabis/white,
 						/obj/item/seeds/cannabis/ultimate)
-	reagents_add = list(/datum/reagent/drug/space_drugs = 0.15, /datum/reagent/toxin/lipolicide = 0.35) // gives u the munchies
+	reagents_add = list(/datum/reagent/drug/retukemi = 0.5) // gives u the munchies
 
 /obj/item/seeds/cannabis/rainbow
 	name = "pack of rainbow weed seeds"
@@ -27,7 +27,7 @@
 	plantname = "Rainbow Weed"
 	product = /obj/item/food/grown/cannabis/rainbow
 	mutatelist = list()
-	reagents_add = list(/datum/reagent/colorful_reagent = 0.05, /datum/reagent/medicine/psicodine = 0.03, /datum/reagent/drug/happiness = 0.1, /datum/reagent/toxin/mindbreaker = 0.1, /datum/reagent/toxin/lipolicide = 0.15)
+	reagents_add = list(/datum/reagent/colorful_reagent = 0.05, /datum/reagent/medicine/psicodine = 0.03, /datum/reagent/drug/happiness = 0.1, /datum/reagent/drug/retukemi = 0.25)
 	rarity = 40
 	research = PLANT_RESEARCH_TIER_2
 
@@ -39,7 +39,7 @@
 	plantname = "Deathweed"
 	product = /obj/item/food/grown/cannabis/death
 	mutatelist = list()
-	reagents_add = list(/datum/reagent/toxin/cyanide = 0.35, /datum/reagent/drug/space_drugs = 0.15, /datum/reagent/toxin/lipolicide = 0.15)
+	reagents_add = list(/datum/reagent/toxin/cyanide = 0.35, /datum/reagent/drug/retukemi = 0.3)
 	rarity = 40
 	research = PLANT_RESEARCH_TIER_2
 
@@ -51,7 +51,7 @@
 	plantname = "Lifeweed"
 	product = /obj/item/food/grown/cannabis/white
 	mutatelist = list()
-	reagents_add = list(/datum/reagent/medicine/panacea = 0.35, /datum/reagent/drug/space_drugs = 0.15, /datum/reagent/toxin/lipolicide = 0.15)
+	reagents_add = list(/datum/reagent/medicine/panacea = 0.35, /datum/reagent/drug/retukemi = 0.3)
 	rarity = 40
 	research = PLANT_RESEARCH_TIER_3
 

@@ -22,7 +22,7 @@
 	equip_delay_self = EQUIP_DELAY_SUIT
 	equip_delay_other = EQUIP_DELAY_SUIT * 1.5
 	strip_delay = EQUIP_DELAY_SUIT * 1.5
-	equip_self_flags = null
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT | EQUIP_SLOWDOWN
 
 /obj/item/clothing/suit/armor/Initialize()
 	. = ..()
@@ -61,6 +61,12 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 	slowdown = 0 //one day...
+	unique_reskin = list(
+		"None" = "marine_light",
+		"Desert" = "marine_light_desert",
+		"Woodland" = "marine_light_woodland",
+		"Snow" = "marine_light_snow",
+		)
 
 /obj/item/clothing/suit/armor/vest/marine/medium
 	name = "medium tactical armor vest"
@@ -70,6 +76,12 @@
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	armor = list("melee" = 35, "bullet" = 50, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50, "wound" = 30)
 	slowdown = 0.4
+	unique_reskin = list(
+		"None" = "marine_medium",
+		"Desert" = "marine_medium_desert",
+		"Woodland" = "marine_medium_woodland",
+		"Snow" = "marine_medium_snow",
+		)
 
 /obj/item/clothing/suit/armor/vest/marine/heavy
 	name = "heavy tactical armor vest"
@@ -79,6 +91,12 @@
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 55, "energy" = 25, "bomb" = 50, "bio" = 75, "fire" = 40, "acid" = 50, "wound" = 40)
 	slowdown = 0.8
+	unique_reskin = list(
+		"None" = "marine_heavy",
+		"Desert" = "marine_heavy_desert",
+		"Woodland" = "marine_heavy_woodland",
+		"Snow" = "marine_heavy_snow",
+		)
 
 /obj/item/clothing/suit/armor/vest/old
 	name = "degrading armor vest"

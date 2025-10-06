@@ -128,30 +128,48 @@
 /obj/item/clothing/under/proc/attach_accessory(obj/item/I, mob/user, notifyAttach = 1)
 	. = FALSE
 	if(istype(I, /obj/item/clothing/accessory))
-		var/obj/item/clothing/accessory/A = I
+		var/obj/item/clothing/accessory/accessory = I
 		if(attached_accessory)
 			if(user)
 				to_chat(user, span_warning("[src] already has an accessory."))
 			return
 		else
 
-			if(!A.can_attach_accessory(src, user)) //Make sure the suit has a place to put the accessory.
+			if(!accessory.can_attach_accessory(src, user)) //Make sure the suit has a place to put the accessory.
 				return
 			if(user && !user.temporarilyRemoveItemFromInventory(I))
 				return
-			if(!A.attach(src, user))
+			if(!accessory.attach(src, user))
 				return
 
 			if(user && notifyAttach)
-				to_chat(user, span_notice("You attach [I] to [src]."))
-
-			var/accessory_color = attached_accessory.icon_state
-			accessory_overlay = mutable_appearance(attached_accessory.mob_overlay_icon, "[accessory_color]")
-			accessory_overlay.alpha = attached_accessory.alpha
-			accessory_overlay.color = attached_accessory.color
+				to_chat(user, span_notice("You attach [accessory] to [src]."))
 
 			if(ishuman(loc))
 				var/mob/living/carbon/human/H = loc
+				var/accessory_state = accessory.icon_state
+				var/icon_file = accessory.mob_overlay_icon
+
+				if((H.dna.species.bodytype & BODYTYPE_DIGITIGRADE) && ((accessory.supports_variations & DIGITIGRADE_VARIATION) || (accessory.supports_variations & DIGITIGRADE_VARIATION_SAME_ICON_FILE)))
+					icon_file = DIGITIGRADE_ACCESSORY_PATH
+					if((accessory.supports_variations & DIGITIGRADE_VARIATION_SAME_ICON_FILE))
+						icon_file = accessory.mob_overlay_icon
+						accessory_state = "[accessory_state]_digi"
+
+				else if((H.dna.species.bodytype & BODYTYPE_VOX) && (accessory.supports_variations & VOX_VARIATION))
+					icon_file = VOX_ACCESSORY_PATH
+					if(accessory.vox_override_icon)
+						icon_file = accessory.vox_override_icon
+
+				else if((H.dna.species.bodytype & BODYTYPE_KEPORI) && (accessory.supports_variations & KEPORI_VARIATION))
+					icon_file = KEPORI_ACCESSORY_PATH
+					if(accessory.kepori_override_icon)
+						icon_file = accessory.kepori_override_icon
+
+				accessory_overlay = mutable_appearance(icon_file, "[accessory_state]")
+				accessory_overlay.alpha = attached_accessory.alpha
+				accessory_overlay.color = attached_accessory.color
+
 				H.update_inv_w_uniform()
 				H.update_inv_wear_suit()
 
@@ -164,12 +182,12 @@
 		return
 
 	if(attached_accessory)
-		var/obj/item/clothing/accessory/A = attached_accessory
+		var/obj/item/clothing/accessory/accessory = attached_accessory
 		attached_accessory.detach(src, user)
-		if(user.put_in_hands(A))
-			to_chat(user, span_notice("You detach [A] from [src]."))
+		if(user.put_in_hands(accessory))
+			to_chat(user, span_notice("You detach [accessory] from [src]."))
 		else
-			to_chat(user, span_notice("You detach [A] from [src] and it falls on the floor."))
+			to_chat(user, span_notice("You detach [accessory] from [src] and it falls on the floor."))
 
 		if(ishuman(loc))
 			var/mob/living/carbon/human/H = loc

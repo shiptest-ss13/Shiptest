@@ -211,12 +211,13 @@
 
 /obj/item/ammo_casing/energy/disabler/hitscan
 	projectile_type = /obj/projectile/beam/hitscan/disabler
-	e_cost = 833
+	e_cost = 666
 
 /obj/projectile/beam/hitscan/disabler
 	name = "disabler beam"
 	icon_state = "omnilaser"
 	hitscan = TRUE
+	range = 12
 	damage = 20
 	armour_penetration = -20
 	damage_type = STAMINA
@@ -241,7 +242,12 @@
 	impact_light_range = 2.5
 	impact_light_color_override = COLOR_CYAN
 
+/obj/item/ammo_casing/energy/disabler/hitscan/heavy
+	projectile_type = /obj/projectile/beam/hitscan/disabler/heavy
+	e_cost = 1000
+
 /obj/projectile/beam/hitscan/disabler/heavy
+	range = 15
 	damage = 30
 	armour_penetration = -10
 

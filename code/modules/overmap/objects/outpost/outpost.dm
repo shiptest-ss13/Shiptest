@@ -2,6 +2,7 @@
 	name = "outpost"
 	char_rep = "T"
 	token_icon_state = "outpost_small"
+	interference_power = -50
 
 	interaction_options = list(INTERACTION_OVERMAP_DOCK, INTERACTION_OVERMAP_QUICKDOCK)
 

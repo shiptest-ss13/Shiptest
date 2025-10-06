@@ -19,6 +19,7 @@
 /datum/sprite_accessory/body_markings/lbelly
 	name = "Light Belly"
 	icon_state = "lbelly"
+	gender_specific = TRUE
 
 /datum/sprite_accessory/body_markings/cracks
 	name = "Cracks"

@@ -165,7 +165,7 @@
 /mob/living/simple_animal/hostile/human/ramzi/melee/space/soft
 	name = "Ramzi Clique Infiltrator"
 	desc = "A deserter from the Gorlex Marauders turned pirate. A softsuit's gauntlets hold a shard of polished steel in an veteran's guard."
-	r_hand = /obj/item/melee/knife/combat
+	l_hand = /obj/item/melee/knife/combat
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space/soft
 	armor_base = /obj/item/clothing/suit/space/syndicate/ramzi
 
@@ -174,7 +174,7 @@
 	desc = "A deserter from the Gorlex Marauders turned pirate. Rust silhouttes a well-maintained machete, swinging around their hip."
 	attack_verb_continuous = "cuts"
 	attack_verb_simple = "cut"
-	r_hand = /obj/item/melee/sword/mass
+	l_hand = /obj/item/melee/sword/mass
 	sharpness = SHARP_EDGED
 	melee_damage_lower = 25
 	melee_damage_upper = 25
@@ -265,7 +265,7 @@
 	icon_state = "syndicate_smg"
 	icon_living = "syndicate_smg"
 	casingtype = /obj/item/ammo_casing/c45
-	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
+	projectilesound = 'sound/weapons/gun/smg/cobra.ogg'
 	l_hand =/obj/item/gun/ballistic/automatic/smg/cobra
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun
@@ -278,6 +278,7 @@
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot //buckshot fired in a two-round burst. This will two-tap unarmored players.
+	projectilesound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 	l_hand =/obj/item/gun/ballistic/shotgun/automatic/bulldog
 	shoot_point_blank = TRUE
 
@@ -296,6 +297,7 @@
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
 	casingtype = /obj/item/ammo_casing/a65clip
+	projectilesound = 'sound/weapons/gun/sniper/cmf90.ogg'
 	l_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
 
 /* Space Ranged */
@@ -310,7 +312,6 @@
 	maxbodytemp = 1000
 	speed = 1
 	rapid = 2
-	rapid_fire_delay = 2
 	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space
@@ -330,6 +331,9 @@
 	minbodytemp = 0
 	maxbodytemp = 1000
 	speed = 1
+	projectilesound = 'sound/weapons/gun/pistol/shot.ogg'
+	rapid = 1
+	l_hand = /obj/item/gun/ballistic/automatic/pistol/ringneck
 	armor_base = /obj/item/clothing/suit/space/syndicate/ramzi
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space/soft
 
@@ -338,7 +342,8 @@
 	desc = "A deserter from the Gorlex Marauders turned pirate. A painted skull grimaces on their helmet as they sweep their submachinegun across the room, scanning for threats."
 	icon_state = "syndicate_space_smg"
 	icon_living = "syndicate_space_smg"
-	r_hand = /obj/item/gun/ballistic/automatic/smg/cobra
+	l_hand = /obj/item/gun/ballistic/automatic/smg/cobra
+	projectilesound = 'sound/weapons/gun/smg/cobra.ogg'
 	rapid = 3
 	casingtype = /obj/item/ammo_casing/c45
 
@@ -347,7 +352,8 @@
 	desc = "A deserter from the Gorlex Marauders turned pirate. Green hardsuit optics glint as they sweep their submachinegun across the room, scanning for threats."
 	icon_state = "syndicate_space_smg"
 	icon_living = "syndicate_space_smg"
-	l_hand =/obj/item/gun/ballistic/automatic/smg/cobra
+	l_hand = /obj/item/gun/ballistic/automatic/smg/cobra
+	projectilesound = 'sound/weapons/gun/smg/cobra.ogg'
 	rapid = 3
 	casingtype = /obj/item/ammo_casing/c45
 
@@ -358,7 +364,8 @@
 	icon_living = "syndicate_space_shotgun"
 	name = "Ramzi Clique Commando"
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
-	l_hand =/obj/item/gun/ballistic/shotgun/automatic/bulldog
+	l_hand = /obj/item/gun/ballistic/shotgun/automatic/bulldog
+	projectilesound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 	rapid = 2
 	rapid_fire_delay = 6
 	retreat_distance = 2
@@ -375,6 +382,7 @@
 	icon_living = "syndicate__space_shotgun"
 	casingtype = /obj/item/ammo_casing/a65clip
 	l_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
+	projectilesound = 'sound/weapons/gun/sniper/cmf90.ogg'
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun/incendiary
 	name = "Ramzi Clique Boiler"
@@ -406,6 +414,7 @@
 	rapid = 4
 	rapid_fire_delay = 1.5
 	casingtype = /obj/item/ammo_casing/c57x39mm
+	projectilesound = 'sound/weapons/gun/smg/sidewinder.ogg'
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun
 	name = "Ramzi Clique Executioner"
@@ -415,6 +424,7 @@
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	l_hand = /obj/item/gun/ballistic/shotgun/automatic/bulldog
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
+	projectilesound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 	rapid = 3
 	rapid_fire_delay = 5
 	retreat_distance = 2
@@ -436,8 +446,9 @@
 	aggro_vision_range = 14
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
-	casingtype = /obj/item/ammo_casing/a65clip
-	l_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
+	casingtype = /obj/item/ammo_casing/p50
+	l_hand = /obj/item/gun/ballistic/automatic/marksman/taipan
+	projectilesound = 'sound/weapons/gun/sniper/shot.ogg'
 
 ///////////////Misc////////////
 
@@ -489,7 +500,7 @@
 	minbodytemp = 0
 	maxbodytemp = 1000
 	mob_size = MOB_SIZE_TINY
-	movement_type = FLYING
+	is_flying_animal = TRUE
 	limb_destroyer = 1
 	speak_emote = list("states")
 	bubble_icon = "syndibot"
