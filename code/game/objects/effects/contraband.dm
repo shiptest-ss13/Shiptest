@@ -1153,7 +1153,7 @@
 
 /obj/structure/sign/poster/radio/arf
 	name = "ARF"
-	desc = "A poster for New Gorlex's 'All Republic First', a hybrid talk-show radio station. It's host is famous for her fluffy ears and cheerful demeanor, earning her the moniker 'Bitch Gorlex' from antiestablishment spacers."
+	desc = "A poster for New Gorlex's 'All Republic First', a hybrid talk-show radio station. It's host is famous for her fluffy ears and cheerful demeanor."
 	icon_state = "poster-radio_ARF"
 
 /obj/structure/sign/poster/radio/vkxs
