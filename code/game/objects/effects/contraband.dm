@@ -849,7 +849,7 @@
 
 	/obj/structure/sign/poster/contraband/radiofreefrontier
 	name = "RFF"
-	desc = "An amateur, slapdash poster for the 'Radio Free Frontier', a pirate radio station ran from the Shoal and maintained through the collective power of thousands of bored layabouts, vagabonds, and script-kiddies setting up signal amplifiers across Frontier space."
+	desc = "An amateur, slapdash poster for the 'Radio Free Frontier', a pirate radio station ran from the Shoal and maintained through the collective power of thousands of layabouts, vagabonds, and script-kiddies setting up signal amplifiers across Frontier space."
 	icon_state = "poster-radio_RFF"
 
 //SolGov poster pool. expect a focus on solarian based products and places. Expect these on solgov ships
@@ -1137,6 +1137,8 @@
 	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_7
 	icon_state = "rolled_poster"
 
+	// radio posters, try not to use the random poster unless it's on an indie ship, because it could be weird to have a VI assault craft with a New Gorlex radio poster
+
 /obj/structure/sign/poster/radio/random
 	name = "random radio station poster"
 	icon_state = "random_radio"
@@ -1144,21 +1146,40 @@
 	random_basetype = /obj/structure/sign/poster/radio
 	random_type = POSTER_SUBTYPES
 
-	/obj/structure/sign/poster/radio/icf
+/obj/structure/sign/poster/radio/icf
 	name = "ICF"
 	desc = "A poster for the 'Independent Collected Frequencies', a rough network of unionized radio stations in the Frontier."
 	icon_state = "poster-radio_ICF"
 
-	/obj/structure/sign/poster/radio/arf
+/obj/structure/sign/poster/radio/arf
 	name = "ARF"
 	desc = "A poster for New Gorlex's 'All Republic First', a hybrid talk-show radio station. It's host is famous for her fluffy ears and cheerful demeanor, earning her the moniker 'Bitch Gorlex' from antiestablishment spacers."
 	icon_state = "poster-radio_ARF"
 
-	/obj/structure/sign/poster/radio/vkxs
+/obj/structure/sign/poster/radio/vkxs
 	name = "VKXS"
 	desc = "A poster advertizing the PGF's 'Voice of Kalixcis' radio station. It offers patriotic hymns, homeland nostalgia, and the only true democratic commentary on Frontier events."
 	icon_state = "poster-radio_VKXS"
 
+/obj/structure/sign/poster/radio/lt101
+	name = "LT101"
+	desc = "A poster for CLIP's Luna-Town 101 radio broadcast. Provides weather and emergency information hourly, and some post-war new wave in between."
+	icon_state = "poster-radio_LT101"
+
+/obj/structure/sign/poster/radio/soft
+	name = "SOFT"
+	desc = "A poster for the easy-listening radio station SOFT. The background to many a summertime tryst in Frontier space."
+	icon_state = "poster-radio_SOFT"
+
+/obj/structure/sign/poster/radio/orn
+	name = "ORN"
+	desc = "A poster for Outpost Radio Network, ran out of Installation Trifuge in Independent space. This station plays mostly spacer folk tunes."
+	icon_state = "poster-radio_ORN"
+
+/obj/structure/sign/poster/radio/ntra
+	name = "NTRA"
+	desc = "A Nanotrasen Radio poster. Despite all that's happened, communication is still NT's game, and the airwaves are just another Frontier to establish market dominance in."
+	icon_state = "poster-radio_NTRA"
 #undef PLACE_SPEED
 #undef POSTER_SUBTYPES
 #undef POSTER_LIST
