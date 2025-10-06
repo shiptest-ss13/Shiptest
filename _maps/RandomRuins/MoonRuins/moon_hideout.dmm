@@ -88,18 +88,12 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/moon/hideout/fortress)
 "bv" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/machinery/atmospherics/pipe/simple/cyan/visible,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer4{
+	dir = 9
 	},
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 20;
-	pixel_y = -1
-	},
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/moon/hideout/dorms/one)
+/turf/closed/wall/r_wall,
+/area/ruin/moon/hideout/engineering)
 "bx" = (
 /obj/effect/turf_decal/borderfloor/full,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -186,21 +180,28 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/item/clothing/under/syndicate/ramzi/overalls,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/head/ramzi/flap,
+/obj/item/clothing/head/ramzi,
+/obj/item/clothing/shoes/workboots,
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/hideout/dorms/five)
 "cn" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1,
+/obj/machinery/door/poddoor{
+	id = "ramzimoongate2"
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "1-4"
 	},
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 20;
-	pixel_y = -1
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/moon/hideout/dorms/two)
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ruin/moon/hideout)
 "co" = (
 /obj/structure/closet/secure_closet/freezer/fridge{
 	populate = 0
@@ -247,6 +248,11 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/item/clothing/head/ramzi/flap,
+/obj/item/clothing/head/ramzi,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/under/syndicate/ramzi,
+/obj/item/clothing/shoes/workboots,
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/hideout/dorms/four)
 "cV" = (
@@ -405,7 +411,7 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout/fortress)
 "ep" = (
-/turf/closed/mineral/random/moon,
+/turf/closed/mineral/random/moon/safe,
 /area/ruin/moon/hideout)
 "es" = (
 /obj/effect/turf_decal/borderfloor/corner,
@@ -575,6 +581,29 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout/dorms)
+"gK" = (
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 4;
+	layer = 2.040
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/structure/closet/crate/trashcart/laundry,
+/obj/item/towel{
+	pixel_x = -4;
+	pixel_y = 2
+	},
+/obj/item/towel{
+	pixel_x = 6;
+	pixel_y = 0
+	},
+/obj/item/towel{
+	pixel_x = -3;
+	pixel_y = -3
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/hideout/fortress)
 "gM" = (
 /obj/structure/cable{
 	icon_state = "6-9"
@@ -642,11 +671,14 @@
 "hI" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 4;
+	dir = 8;
 	id = "ramzimoonholo2"
 	},
 /obj/machinery/door/poddoor{
 	id = "ramzimoongate2"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/moon/hideout)
@@ -725,15 +757,19 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout)
 "il" = (
-/obj/effect/turf_decal/trimline/opaque/red/corner{
-	dir = 4
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/poddoor{
+	id = "ramzimoongate"
 	},
-/obj/effect/turf_decal/siding/thinplating/dark/corner{
-	dir = 4
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "ramzimoonholo"
 	},
-/obj/structure/closet/crate/trashcart,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/moon/hideout/fortress)
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ruin/moon/hideout)
 "im" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -984,6 +1020,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonmouth,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/hideout/fortress)
 "la" = (
@@ -1114,14 +1151,19 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ruin/moon/hideout)
 "ms" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 10
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 4
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = -1
 	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/moon/hideout/bathroom/officer)
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/hideout/dorms/two)
 "mt" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
@@ -1181,17 +1223,19 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/moon/hideout/engineering)
 "mL" = (
-/obj/effect/turf_decal/borderfloor/corner{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/trimline/opaque/red/line{
-	dir = 6;
-	layer = 2.040
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = -1
 	},
-/obj/structure/closet/crate/trashcart/laundry,
-/obj/machinery/light/small/directional/east,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/moon/hideout/dorms)
+/area/ruin/moon/hideout/dorms/one)
 "mO" = (
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plating/asteroid/snow/safe,
@@ -1227,6 +1271,11 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/item/clothing/head/ramzi/flap,
+/obj/item/clothing/head/ramzi,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
+/obj/item/clothing/shoes/workboots,
 /turf/open/floor/carpet/red,
 /area/ruin/moon/hideout/dorms/three)
 "ne" = (
@@ -1249,16 +1298,19 @@
 /turf/open/floor/plating,
 /area/ruin/moon/hideout/fortress)
 "nG" = (
-/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1,
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 4
+/obj/structure/closet/secure_closet/engineering_personal{
+	req_access = null;
+	populate = 0
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ruin/moon/hideout)
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/storage/belt/utility/full,
+/obj/item/clothing/head/hardhat/ramzi,
+/obj/item/clothing/under/syndicate/ramzi,
+/obj/item/clothing/suit/ramzi,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/glasses/welding,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/moon/hideout/engineering)
 "nN" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -1355,8 +1407,8 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/obj/item/ammo_box/magazine/m57_39_sidewinder/empty,
-/obj/item/ammo_box/magazine/m57_39_sidewinder/empty,
+/obj/item/ammo_box/magazine/m10mm_cottonmouth,
+/obj/item/ammo_box/magazine/m10mm_cottonmouth,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/hideout/fortress)
 "oK" = (
@@ -1506,13 +1558,15 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout/dorms)
 "pT" = (
-/obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1,
-/obj/machinery/door/poddoor{
-	id = "ramzimoongate"
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 10
 	},
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ruin/moon/hideout)
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/moon/hideout/bathroom/officer)
 "pY" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -2072,25 +2126,31 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout/fortress)
 "wa" = (
-/obj/effect/turf_decal/borderfloor/corner{
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer4{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/red/line{
-	dir = 10;
-	layer = 2.040
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plating/rust,
+/area/ruin/moon/hideout/engineering)
+"wh" = (
+/obj/effect/turf_decal/trimline/opaque/red/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 4
 	},
 /obj/structure/closet/crate/trashcart,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/moon/hideout/dorms)
-"wh" = (
-/obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1,
-/obj/machinery/door/poddoor{
-	id = "ramzimoongate2"
+/obj/item/trash/candle,
+/obj/item/trash/candy,
+/obj/item/trash/energybar{
+	pixel_x = -3;
+	pixel_y = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ruin/moon/hideout)
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/hideout/fortress)
 "wl" = (
 /obj/machinery/washing_machine{
 	pixel_x = 7;
@@ -2104,11 +2164,18 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/moon/hideout/bathroom)
 "wp" = (
-/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1,
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/poddoor{
+	id = "ramzimoongate"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "ramzimoonholo"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/moon/hideout)
 "ww" = (
 /obj/effect/turf_decal/trimline/opaque/red/line{
@@ -2158,6 +2225,11 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/light/small/directional/east,
+/obj/item/clothing/head/ramzi/flap,
+/obj/item/clothing/head/ramzi,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/under/syndicate/ramzi,
+/obj/item/clothing/shoes/workboots,
 /turf/open/floor/carpet/red,
 /area/ruin/moon/hideout/dorms/four)
 "xm" = (
@@ -2171,12 +2243,15 @@
 /area/ruin/moon/hideout/fortress)
 "xo" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/door/poddoor{
-	id = "ramzimoongate"
-	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
-	id = "ramzimoonholo"
+	id = "ramzimoonholo2"
+	},
+/obj/machinery/door/poddoor{
+	id = "ramzimoongate2"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/moon/hideout)
@@ -2266,6 +2341,11 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/item/clothing/under/syndicate/ramzi,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/head/ramzi/flap,
+/obj/item/clothing/head/ramzi,
+/obj/item/clothing/shoes/workboots,
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/hideout/dorms/five)
 "yC" = (
@@ -2386,6 +2466,7 @@
 	dir = 4;
 	piping_layer = 4
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plating/rust,
 /area/ruin/moon/hideout/engineering)
 "zN" = (
@@ -2570,7 +2651,7 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout/fortress)
 "Bb" = (
-/turf/closed/mineral/random/moon,
+/turf/closed/mineral/random/moon/safe,
 /area/ruin/moon/hideout/exterior)
 "Bf" = (
 /obj/structure/chair,
@@ -2757,13 +2838,15 @@
 /turf/closed/wall/r_wall,
 /area/ruin/moon/hideout/dorms/four)
 "Dr" = (
-/obj/structure/closet/secure_closet/engineering_personal{
-	req_access = null;
-	populate = 0
+/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1,
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/item/clothing/gloves/color/yellow,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/moon/hideout/engineering)
+/turf/open/floor/plating,
+/area/ruin/moon/hideout)
 "DI" = (
 /obj/structure/railing{
 	dir = 8
@@ -2936,19 +3019,21 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/moon/hideout/engineering)
 "ES" = (
-/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
-	dir = 6
+/obj/effect/turf_decal/borderfloor/corner{
+	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
-/obj/structure/cable{
-	icon_state = "1-4"
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 10;
+	layer = 2.040
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/structure/closet/crate/trashcart,
+/obj/item/trash/can/food/beans,
+/obj/item/trash/can/food/peaches{
+	pixel_x = 6;
+	pixel_y = 0
 	},
-/turf/open/floor/concrete/reinforced,
-/area/ruin/moon/hideout)
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/hideout/dorms)
 "EY" = (
 /obj/effect/turf_decal/siding/black{
 	dir = 1
@@ -2969,22 +3054,30 @@
 "Ff" = (
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1,
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ruin/moon/hideout)
 "Fj" = (
 /turf/closed/wall/r_wall,
 /area/ruin/moon/hideout/dorms/five)
 "Fv" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/visible{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer4{
+/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1,
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/plating/rust,
-/area/ruin/moon/hideout/engineering)
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/moon/hideout)
 "Fy" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -3401,14 +3494,22 @@
 /turf/open/floor/plasteel/mono,
 /area/ruin/moon/hideout/canteen)
 "Kk" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/atmospherics/pipe/simple/cyan/visible,
-/obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer4{
-	dir = 9
+/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
+	dir = 6
 	},
-/turf/open/floor/plating,
-/area/ruin/moon/hideout/engineering)
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/moon/hideout)
 "Ko" = (
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/concrete/reinforced,
@@ -3475,15 +3576,15 @@
 /turf/closed/wall/r_wall,
 /area/ruin/moon/hideout/bathroom)
 "Lz" = (
-/obj/effect/turf_decal/trimline/opaque/red/line{
-	dir = 4;
-	layer = 2.040
+/obj/structure/crate_shelf,
+/obj/effect/turf_decal/box,
+/obj/structure/closet/crate{
+	name = "spare material"
 	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
-	},
-/obj/structure/closet/crate/trashcart/laundry,
-/turf/open/floor/plasteel/patterned/grid/dark,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/plasteel/fifty,
+/obj/item/stack/rods/fifty,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/moon/hideout/fortress)
 "LE" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3522,11 +3623,8 @@
 "Mr" = (
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1,
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/ruin/moon/hideout)
@@ -3681,10 +3779,25 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ruin/moon/hideout)
 "Oc" = (
-/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1,
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating,
-/area/ruin/moon/hideout)
+/obj/effect/turf_decal/borderfloor/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 6;
+	layer = 2.040
+	},
+/obj/structure/closet/crate/trashcart/laundry,
+/obj/machinery/light/small/directional/east,
+/obj/item/towel{
+	pixel_x = 6;
+	pixel_y = 5
+	},
+/obj/item/towel{
+	pixel_x = 0;
+	pixel_y = -3
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/hideout/dorms)
 "Oj" = (
 /obj/effect/turf_decal/siding/black/corner{
 	dir = 4
@@ -3798,16 +3911,11 @@
 /turf/open/floor/plasteel/mono,
 /area/ruin/moon/hideout)
 "PB" = (
-/obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/door/poddoor{
-	id = "ramzimoongate"
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 5
 	},
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 8;
-	id = "ramzimoonholo"
-	},
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ruin/moon/hideout)
+/turf/closed/wall/r_wall,
+/area/ruin/moon/hideout/engineering)
 "PD" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -3984,15 +4092,18 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/hideout/dorms/one)
 "RK" = (
-/obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 8;
-	id = "ramzimoonholo2"
+/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1,
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
 	},
-/obj/machinery/door/poddoor{
-	id = "ramzimoongate2"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
 	},
-/turf/open/floor/engine/hull/reinforced/interior,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
 /area/ruin/moon/hideout)
 "RL" = (
 /obj/machinery/door/firedoor/border_only,
@@ -4084,6 +4195,11 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/head/ramzi/flap,
+/obj/item/clothing/head/ramzi,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
+/obj/item/clothing/shoes/workboots,
 /turf/open/floor/carpet/red,
 /area/ruin/moon/hideout/dorms/three)
 "SZ" = (
@@ -4595,13 +4711,19 @@
 /turf/open/floor/hangar/plasteel/dark,
 /area/ruin/moon/hideout/canteen)
 "Yc" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/atmospherics/pipe/simple/cyan/visible{
-	dir = 5
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1,
+/obj/machinery/door/poddoor{
+	id = "ramzimoongate"
 	},
-/turf/open/floor/plating,
-/area/ruin/moon/hideout/engineering)
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ruin/moon/hideout)
 "Yd" = (
 /obj/structure/table/reinforced,
 /obj/item/gun/ballistic/shotgun/blasting_hammer,
@@ -4887,29 +5009,33 @@ CA
 CA
 CA
 CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
 Ld
 Ld
 Ld
 Ld
 Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
 "}
 (2,1,1) = {"
 CA
@@ -4953,6 +5079,12 @@ CA
 CA
 CA
 CA
+CA
+CA
+CA
+CA
+CA
+CA
 Ld
 Ld
 Ld
@@ -4967,16 +5099,14 @@ Ld
 Ld
 Ld
 Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
 "}
 (3,1,1) = {"
 CA
@@ -5010,6 +5140,19 @@ CA
 CA
 CA
 CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
 Ld
 Ld
 Ld
@@ -5033,19 +5176,154 @@ Ld
 Ld
 Ld
 Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
+CA
+CA
 "}
 (4,1,1) = {"
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+CA
+"}
+(5,1,1) = {"
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+Ld
+CA
+"}
+(6,1,1) = {"
+CA
+CA
 CA
 CA
 CA
@@ -5111,8 +5389,12 @@ Ld
 Ld
 Ld
 Ld
+Ld
+CA
 "}
-(5,1,1) = {"
+(7,1,1) = {"
+CA
+CA
 CA
 CA
 CA
@@ -5178,8 +5460,12 @@ Ld
 Ld
 Ld
 Ld
+Ld
+CA
 "}
-(6,1,1) = {"
+(8,1,1) = {"
+CA
+CA
 CA
 CA
 CA
@@ -5245,8 +5531,12 @@ Ld
 Ld
 Ld
 Ld
+Ld
+CA
 "}
-(7,1,1) = {"
+(9,1,1) = {"
+CA
+CA
 CA
 CA
 CA
@@ -5312,8 +5602,12 @@ Ld
 Ld
 Ld
 Ld
+Ld
+CA
 "}
-(8,1,1) = {"
+(10,1,1) = {"
+CA
+CA
 CA
 CA
 CA
@@ -5379,8 +5673,12 @@ Ld
 Ld
 Ld
 Ld
+Ld
+CA
 "}
-(9,1,1) = {"
+(11,1,1) = {"
+CA
+CA
 CA
 CA
 CA
@@ -5446,8 +5744,12 @@ Ld
 Ld
 Ld
 Ld
+Ld
+CA
 "}
-(10,1,1) = {"
+(12,1,1) = {"
+CA
+CA
 CA
 CA
 CA
@@ -5513,8 +5815,12 @@ Ld
 Ld
 Ld
 Ld
+Ld
+CA
 "}
-(11,1,1) = {"
+(13,1,1) = {"
+CA
+CA
 CA
 CA
 CA
@@ -5580,8 +5886,12 @@ Ld
 Ld
 Ld
 Ld
+Ld
+CA
 "}
-(12,1,1) = {"
+(14,1,1) = {"
+CA
+CA
 CA
 CA
 CA
@@ -5647,8 +5957,12 @@ Ld
 Ld
 Ld
 Ld
+Ld
+CA
 "}
-(13,1,1) = {"
+(15,1,1) = {"
+CA
+CA
 CA
 CA
 Ld
@@ -5714,8 +6028,12 @@ Ld
 Ld
 Ld
 Ld
+Ld
+CA
 "}
-(14,1,1) = {"
+(16,1,1) = {"
+CA
+CA
 CA
 CA
 Ld
@@ -5781,8 +6099,12 @@ Ld
 Ld
 Ld
 Ld
+Ld
+CA
 "}
-(15,1,1) = {"
+(17,1,1) = {"
+CA
+CA
 CA
 CA
 Ld
@@ -5847,9 +6169,13 @@ Tg
 Ld
 Ld
 Ld
-Ld
+CA
+CA
+CA
 "}
-(16,1,1) = {"
+(18,1,1) = {"
+CA
+CA
 CA
 CA
 Ld
@@ -5879,7 +6205,7 @@ JY
 UR
 Xq
 ie
-wa
+ES
 ne
 ep
 ep
@@ -5914,9 +6240,13 @@ Tg
 Ld
 Ld
 Ld
-Ld
+CA
+CA
+CA
 "}
-(17,1,1) = {"
+(19,1,1) = {"
+CA
+CA
 CA
 ep
 ep
@@ -5946,7 +6276,7 @@ fE
 rG
 bh
 Zf
-mL
+Oc
 ne
 ep
 ep
@@ -5982,8 +6312,12 @@ Ld
 Ld
 Ld
 Ld
+CA
+CA
 "}
-(18,1,1) = {"
+(20,1,1) = {"
+CA
+CA
 CA
 CA
 ep
@@ -6049,8 +6383,12 @@ Ld
 Ld
 Ld
 Ld
+CA
+CA
 "}
-(19,1,1) = {"
+(21,1,1) = {"
+CA
+CA
 CA
 CA
 ep
@@ -6116,8 +6454,12 @@ Ld
 Ld
 Ld
 Ld
+CA
+CA
 "}
-(20,1,1) = {"
+(22,1,1) = {"
+CA
+CA
 CA
 ep
 ep
@@ -6130,12 +6472,12 @@ Fj
 Fj
 oV
 Fj
-Lz
+gK
 Qr
-il
+wh
 qb
 FC
-ms
+pT
 qb
 ep
 ep
@@ -6154,7 +6496,7 @@ rk
 QA
 pJ
 do
-bv
+mL
 RF
 BZ
 uk
@@ -6183,8 +6525,12 @@ Ld
 Ld
 Ld
 Ld
+CA
+CA
 "}
-(21,1,1) = {"
+(23,1,1) = {"
+CA
+CA
 CA
 ep
 ep
@@ -6250,8 +6596,12 @@ Ld
 Ld
 Ld
 Ld
+CA
+CA
 "}
-(22,1,1) = {"
+(24,1,1) = {"
+CA
+CA
 CA
 ep
 ep
@@ -6317,8 +6667,12 @@ Ld
 Ld
 Ld
 CA
+CA
+CA
 "}
-(23,1,1) = {"
+(25,1,1) = {"
+CA
+CA
 ep
 ep
 ep
@@ -6384,8 +6738,12 @@ Ld
 CA
 CA
 CA
+CA
+CA
 "}
-(24,1,1) = {"
+(26,1,1) = {"
+CA
+CA
 ep
 ep
 ep
@@ -6451,8 +6809,12 @@ Ld
 CA
 CA
 CA
+CA
+CA
 "}
-(25,1,1) = {"
+(27,1,1) = {"
+CA
+CA
 ep
 ep
 ep
@@ -6494,13 +6856,13 @@ Rl
 Js
 Js
 qf
-hI
+xo
 TB
 ig
 jx
 ig
 ps
-xo
+wp
 UD
 Jo
 NC
@@ -6518,8 +6880,12 @@ Ld
 CA
 CA
 CA
+CA
+CA
 "}
-(26,1,1) = {"
+(28,1,1) = {"
+CA
+CA
 ep
 ep
 ep
@@ -6560,14 +6926,14 @@ uk
 iY
 uk
 BZ
-ES
-wh
+Kk
+cn
+Dr
+Fv
 Ff
-nG
-wp
+RK
 Mr
-Oc
-pT
+Yc
 Qo
 jv
 NC
@@ -6585,8 +6951,12 @@ Ld
 Ld
 CA
 CA
+CA
+CA
 "}
-(27,1,1) = {"
+(29,1,1) = {"
+CA
+CA
 ep
 ep
 ep
@@ -6628,13 +6998,13 @@ ep
 Js
 pZ
 lf
-RK
+hI
 Ee
 Hs
 ww
 Hs
 ON
-PB
+il
 UD
 Jo
 NC
@@ -6652,8 +7022,12 @@ Ld
 Ld
 CA
 CA
+CA
+CA
 "}
-(28,1,1) = {"
+(30,1,1) = {"
+CA
+CA
 CA
 ep
 ep
@@ -6719,8 +7093,12 @@ Ld
 Ld
 CA
 CA
+CA
+CA
 "}
-(29,1,1) = {"
+(31,1,1) = {"
+CA
+CA
 CA
 ep
 ep
@@ -6786,8 +7164,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(30,1,1) = {"
+(32,1,1) = {"
+CA
+CA
 CA
 ep
 ep
@@ -6853,8 +7235,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(31,1,1) = {"
+(33,1,1) = {"
+CA
+CA
 CA
 CA
 ep
@@ -6920,8 +7306,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(32,1,1) = {"
+(34,1,1) = {"
+CA
+CA
 CA
 CA
 ep
@@ -6987,8 +7377,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(33,1,1) = {"
+(35,1,1) = {"
+CA
+CA
 CA
 CA
 ep
@@ -7054,8 +7448,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(34,1,1) = {"
+(36,1,1) = {"
+CA
+CA
 CA
 CA
 ep
@@ -7121,8 +7519,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(35,1,1) = {"
+(37,1,1) = {"
+CA
+CA
 CA
 ep
 ep
@@ -7188,8 +7590,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(36,1,1) = {"
+(38,1,1) = {"
+CA
+CA
 CA
 ep
 ep
@@ -7226,7 +7632,7 @@ Bk
 Bf
 HT
 Zj
-cn
+ms
 Bu
 BZ
 BZ
@@ -7255,8 +7661,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(37,1,1) = {"
+(39,1,1) = {"
+CA
+CA
 CA
 ep
 ep
@@ -7278,7 +7688,7 @@ sf
 oF
 sI
 qp
-AH
+Lz
 bl
 fn
 sI
@@ -7322,8 +7732,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(38,1,1) = {"
+(40,1,1) = {"
+CA
+CA
 CA
 ep
 ep
@@ -7389,8 +7803,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(39,1,1) = {"
+(41,1,1) = {"
+CA
+CA
 CA
 ep
 ep
@@ -7456,8 +7874,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(40,1,1) = {"
+(42,1,1) = {"
+CA
+CA
 CA
 ep
 ep
@@ -7523,8 +7945,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(41,1,1) = {"
+(43,1,1) = {"
+CA
+CA
 CA
 ep
 ep
@@ -7590,8 +8016,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(42,1,1) = {"
+(44,1,1) = {"
+CA
+CA
 CA
 ep
 ep
@@ -7657,8 +8087,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(43,1,1) = {"
+(45,1,1) = {"
+CA
+CA
 CA
 ep
 ep
@@ -7724,8 +8158,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(44,1,1) = {"
+(46,1,1) = {"
+CA
+CA
 CA
 ep
 ep
@@ -7760,7 +8198,7 @@ NZ
 ep
 ep
 CJ
-Dr
+nG
 Pm
 xG
 IO
@@ -7791,8 +8229,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(45,1,1) = {"
+(47,1,1) = {"
+CA
+CA
 CA
 ep
 ep
@@ -7858,8 +8300,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(46,1,1) = {"
+(48,1,1) = {"
+CA
+CA
 CA
 ep
 ep
@@ -7925,8 +8371,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(47,1,1) = {"
+(49,1,1) = {"
+CA
+CA
 CA
 CA
 ep
@@ -7992,8 +8442,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(48,1,1) = {"
+(50,1,1) = {"
+CA
+CA
 CA
 CA
 ep
@@ -8059,8 +8513,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(49,1,1) = {"
+(51,1,1) = {"
+CA
+CA
 CA
 CA
 ep
@@ -8126,8 +8584,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(50,1,1) = {"
+(52,1,1) = {"
+CA
+CA
 CA
 CA
 CA
@@ -8163,10 +8625,10 @@ ep
 ep
 CJ
 eU
-Yc
-Fv
+PB
+wa
 zG
-Kk
+bv
 Dj
 CJ
 ep
@@ -8193,8 +8655,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(51,1,1) = {"
+(53,1,1) = {"
+CA
+CA
 CA
 CA
 CA
@@ -8260,8 +8726,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(52,1,1) = {"
+(54,1,1) = {"
+CA
+CA
 CA
 CA
 CA
@@ -8327,8 +8797,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(53,1,1) = {"
+(55,1,1) = {"
+CA
+CA
 CA
 CA
 CA
@@ -8394,8 +8868,12 @@ CA
 CA
 CA
 CA
+CA
+CA
 "}
-(54,1,1) = {"
+(56,1,1) = {"
+CA
+CA
 CA
 CA
 CA
@@ -8461,138 +8939,6 @@ CA
 CA
 CA
 CA
-"}
-(55,1,1) = {"
-CA
-CA
-CA
-CA
-ep
-ep
-CA
-CA
-CA
-CA
-Bb
-Wu
-Wu
-Wu
-Wu
-Ld
-Ld
-Ld
-CA
-CA
-CA
-CA
-CA
-CA
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-bE
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-"}
-(56,1,1) = {"
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-Wu
-Wu
-Bb
-Bb
-Ld
-Ld
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-ep
-ep
-bE
-bE
-bE
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-CA
-CA
-ep
-ep
-ep
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-CA
-CA
-CA
-CA
-CA
-CA
 CA
 CA
 "}
@@ -8603,24 +8949,20 @@ CA
 CA
 CA
 CA
+ep
+ep
 CA
 CA
 CA
 CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
+Bb
+Wu
+Wu
+Wu
+Wu
+Ld
+Ld
+Ld
 CA
 CA
 CA
@@ -8635,25 +8977,33 @@ ep
 ep
 ep
 ep
+bE
 ep
 ep
 ep
 ep
-CA
-CA
-CA
-CA
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
 Ld
 Ld
 Ld
 Ld
 Ld
 Ld
-Ld
-Ld
-Ld
-Ld
-Ld
+CA
+CA
 CA
 CA
 CA
@@ -8676,6 +9026,150 @@ CA
 CA
 CA
 CA
+Wu
+Wu
+Bb
+Bb
+Ld
+Ld
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+ep
+ep
+bE
+bE
+bE
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+CA
+CA
+ep
+ep
+ep
+ep
+ep
+ep
+Ld
+Ld
+Ld
+Ld
+Ld
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+"}
+(59,1,1) = {"
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+Ld
+Ld
+Ld
+Ld
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+"}
+(60,1,1) = {"
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
 CA
 CA
 CA
@@ -8710,17 +9204,19 @@ CA
 CA
 CA
 CA
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
-Ld
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
 CA
 CA
 CA
