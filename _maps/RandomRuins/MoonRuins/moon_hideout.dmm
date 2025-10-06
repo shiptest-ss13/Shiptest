@@ -4659,7 +4659,8 @@
 /area/ruin/moon/hideout/fortress)
 "Xo" = (
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/sniper{
-	weapon_drop_chance = 100
+	weapon_drop_chance = 100;
+	wander = 0
 	},
 /obj/effect/turf_decal/trimline/opaque/red/corner{
 	dir = 4
