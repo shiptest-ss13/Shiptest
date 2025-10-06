@@ -1549,6 +1549,18 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/pgf_wreck/cargo)
+"je" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 5
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/lime{
+	dir = 1
+	},
+/obj/structure/sign/poster/pgf/random{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/space/pgf_wreck)
 "jl" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
@@ -1911,9 +1923,6 @@
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/lime{
 	dir = 1
-	},
-/obj/structure/sign/poster/contraband/pgf{
-	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
@@ -6370,6 +6379,9 @@
 	},
 /obj/effect/turf_decal/corner/opaque/lime/mono,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/pgf/random{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/space/pgf_wreck)
 "Ka" = (
@@ -11723,7 +11735,7 @@ av
 GI
 fG
 sM
-Sr
+je
 gr
 sM
 Hi

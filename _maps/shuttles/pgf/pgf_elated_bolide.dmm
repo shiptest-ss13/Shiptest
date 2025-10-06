@@ -660,9 +660,6 @@
 /obj/machinery/microwave{
 	pixel_y = 7
 	},
-/obj/structure/sign/poster/contraband/pgf{
-	pixel_x = -28
-	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/ccommons)
 "eC" = (
@@ -2592,10 +2589,6 @@
 /area/ship/hallway/fore)
 "pu" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/sign/poster/contraband/pgf{
-	pixel_x = 28;
-	pixel_y = -30
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "pB" = (
@@ -4953,6 +4946,9 @@
 	},
 /obj/structure/railing,
 /obj/structure/pitgrate,
+/obj/structure/sign/poster/pgf/random{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/hallway/central)
 "EC" = (
