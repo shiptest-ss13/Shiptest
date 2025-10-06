@@ -1180,6 +1180,12 @@
 	name = "NTRA"
 	desc = "A Nanotrasen Radio poster. Despite all that's happened, communication is still NT's game, and the airwaves are just another Frontier to establish market dominance in."
 	icon_state = "poster-radio_NTRA"
+
+/obj/structure/sign/poster/radio/pris
+	name = "PRIS"
+	desc = "A poster for PRIS, an independent electronic music station run by a collection of university students from the Frontier."
+	icon_state = "poster-radio_PRIS"
+
 #undef PLACE_SPEED
 #undef POSTER_SUBTYPES
 #undef POSTER_LIST
