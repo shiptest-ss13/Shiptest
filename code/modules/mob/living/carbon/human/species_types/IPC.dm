@@ -131,8 +131,8 @@
 /datum/action/innate/change_eye_color
 	name = "Change Eye Color"
 	check_flags = AB_CHECK_CONSCIOUS
-	icon_icon = 'icons/mob/actions/actions_silicon.dmi'
-	button_icon_state = "change_eye_color"
+	icon_icon = 'icons/obj/surgery.dmi'
+	button_icon_state = "robotic_eyes"
 
 /datum/action/innate/change_eye_color/Activate()
 	var/color_choice = input(usr, "Which color do you want your eyes to be?", "Color Change") as null | color
