@@ -657,9 +657,7 @@
 "fi" = (
 /obj/effect/turf_decal/corner/transparent/blue/mono,
 /obj/structure/table/chem,
-/obj/item/storage/case/surgery{
-	pixel_y = 4
-	},
+/obj/item/storage/firstaid/medical,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "fj" = (
@@ -3621,8 +3619,12 @@
 	pixel_y = 23
 	},
 /obj/item/gun/ballistic/automatic/pistol/cm23/no_mag{
-	pixel_x = -5;
-	pixel_y = -1
+	pixel_x = -6;
+	pixel_y = 5
+	},
+/obj/item/gun/ballistic/shotgun/cm15/no_mag{
+	pixel_x = -11;
+	pixel_y = 15
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
@@ -4409,14 +4411,12 @@
 /obj/item/roller,
 /obj/item/roller,
 /obj/item/roller,
-/obj/item/storage/firstaid/medical,
-/obj/item/storage/firstaid/regular,
-/obj/item/storage/firstaid/brute,
 /obj/item/reagent_containers/glass/bottle/formaldehyde,
 /obj/effect/mapping_helpers/crate_shelve,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "FR" = (
@@ -5038,7 +5038,9 @@
 /obj/item/melee/sword/mass,
 /obj/machinery/airalarm/directional/north,
 /obj/item/attachment/rail_light,
-/obj/item/storage/guncase/pistol/cm70,
+/obj/item/storage/guncase/pistol/cm70{
+	mag_count = 3
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "Ln" = (
