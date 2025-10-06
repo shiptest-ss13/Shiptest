@@ -44,7 +44,7 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lavaland
 	ruin_type = RUINTYPE_LAVA
-	interference_power = 5
+	interference_power = 0
 
 	primary_ores = list(
 		/obj/item/stack/ore/iron,
@@ -211,7 +211,7 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/chlorine
 	ruin_type = RUINTYPE_WASTE
-	interference_power = 5
+	interference_power = 0
 	primary_ores = list(\
 		/obj/item/stack/ore/iron,
 		/obj/item/stack/ore/plasma,
@@ -313,6 +313,7 @@
 	weight = 20
 
 	mapgen = /datum/map_generator/planet_generator/moon
+	ruin_type = RUINTYPE_MOON
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/plating/asteroid/moon/lit
 	weather_controller_type = null

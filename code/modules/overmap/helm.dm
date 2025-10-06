@@ -48,12 +48,8 @@
 	icon_state = "computer-solgov"
 	deconpath = /obj/structure/frame/computer/solgov
 
-/datum/config_entry/number/bluespace_jump_wait
-	default = 5 MINUTES
-
 /obj/machinery/computer/helm/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
-	jump_allowed = world.time + CONFIG_GET(number/bluespace_jump_wait)
 	ntnet_relay = new(src)
 
 /obj/machinery/computer/helm/examine(mob/user)
@@ -69,10 +65,6 @@
 		return
 	if(current_ship.docked_to || current_ship.docking)
 		say("Bluespace Jump Calibration detected interference in the local area.")
-		return
-	if(world.time < jump_allowed)
-		var/jump_wait = DisplayTimeText(jump_allowed - world.time)
-		say("Bluespace Jump Calibration is currently recharging. ETA: [jump_wait].")
 		return
 	message_admins("[ADMIN_LOOKUPFLW(usr)] has initiated a bluespace jump in [ADMIN_VERBOSEJMP(src)]")
 	jump_timer = addtimer(CALLBACK(src, PROC_REF(jump_sequence), TRUE), JUMP_CHARGEUP_TIME, TIMER_STOPPABLE)
