@@ -394,6 +394,13 @@
 	cost = 3000
 	crate_name = "shotgun crate"
 
+/datum/supply_pack/gun/slammer
+	name = "Slammer Shotgun Crate"
+	desc = "For when you need to deal with a 6-hooligan riot. Contains a mag-fed pump shotgun, with a 6-round capacity."
+	cost = 3000
+	contains = list(/obj/item/storage/guncase/slammer)
+	crate_name = "shotgun crate"
+
 /datum/supply_pack/gun/bulldog
 	name = "Bulldog Shotgun Crate"
 	desc = "An automatic shotgun chambered in 12ga produced by Scarborough Arms for exclusive use by licensed buyers. Comes with 8-round box magazines."
