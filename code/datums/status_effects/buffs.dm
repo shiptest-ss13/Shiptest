@@ -376,3 +376,21 @@
 	owner.cut_overlay(overcharge)
 	owner.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/equipment_speedmod)
 	owner.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/gun)
+
+/datum/status_effect/concealed
+	id = "concealed"
+	var/concealment_power = 75
+	alert_type = /atom/movable/screen/alert/status_effect/concealed
+	tick_interval = 1
+
+/atom/movable/screen/alert/status_effect/concealed
+	name = "Concealed"
+	desc = "You're concealed and harder to hit with projectiles."
+	icon_state = "concealed"
+
+/datum/status_effect/concealed/tick(seconds_per_tick)
+	. = ..()
+	//look for smoke on tile
+	if(locate(/obj/effect/particle_effect/smoke) in get_turf(owner))
+		return TRUE
+	qdel(src) // we didnt find any smoke, so remove status

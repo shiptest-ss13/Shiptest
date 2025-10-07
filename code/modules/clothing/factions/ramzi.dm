@@ -38,6 +38,13 @@
 	icon_state = "ramzi_worker"
 	item_state = "blackcloth"
 
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_COAT
+	equip_delay_other = EQUIP_DELAY_COAT * 1.5
+	strip_delay = EQUIP_DELAY_COAT * 1.5
+
+
 /obj/item/clothing/suit/ramzi/smock
 	name = "maroon smock"
 	desc = "A shabby smock, it's straps barely held on. It's hard to tell if the color due to aging or bloodstains."
