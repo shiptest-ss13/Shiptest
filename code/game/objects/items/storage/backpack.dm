@@ -261,6 +261,12 @@
 	icon_state = "satchel-sec"
 	item_state = "satchel-sec"
 
+/obj/item/storage/backpack/satchel/gez
+	name = "marine satchel"
+	desc = "A satchel in PGFMC green. Stylish and rugged, just like you."
+	icon_state = "satchel-gez"
+	item_state = "satchel-gez"
+
 /obj/item/storage/backpack/satchel/explorer
 	name = "explorer satchel"
 	desc = "A robust satchel for stashing your loot."
