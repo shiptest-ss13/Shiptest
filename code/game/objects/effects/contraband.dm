@@ -547,6 +547,11 @@
 	desc = "Captain Cardinal would like to remind you that the left of the ship is port, and the right of the ship is starBIRD! Get it, right?"
 	icon_state = "poster-cardinal-2"
 
+/obj/structure/sign/poster/contraband/bigass_horns
+	name = "Bigass Horns"
+	desc = "This poster depicts a trio of PGF sailors. The elzuose's horns are sticking up through the text block. \"Get your bigass horns out of the caption!\""
+	icon_state = "poster-pgf_bigass-horns"
+
 //beginning of Nanotrasen approved posters. Expect corprate propaganda and motavation. You will usually only see this on Nanotrasen ships and stations
 /obj/structure/sign/poster/official
 	poster_item_name = "motivational poster"
@@ -1063,7 +1068,7 @@
 /obj/structure/sign/poster/pgf/random
 	name = "random official poster"
 	random_basetype = /obj/structure/sign/poster/pgf
-	icon_state = "random_pgf"
+	icon_state = "poster-pgf_random"
 	never_random = TRUE
 	random_type = POSTER_SUBTYPES
 
@@ -1106,6 +1111,16 @@
 	name = "Choose Your Path"
 	desc = "This poster depicts a sarathi split between PGF Marine Corps and Navy dress. \"Fight with the Pan-Gezena Federation and choose your own path!\""
 	icon_state = "poster-pgf_choose"
+
+/obj/structure/sign/poster/pgf/hero
+	name = "How About You"
+	desc = "This poster depicts a Vox marine stepping forward from between two silhouettes. \"Heroes don't back down and neither do Marines. How about you?\""
+	icon_state = "poster-pgf_hero"
+
+/obj/structure/sign/poster/pgf/together
+	name = "In It Together"
+	desc = "This poster depicts a trio of PGF sailors. \"All together now!\""
+	icon_state = "poster-pgf_together"
 
 //PGF Mission Accomplished
 /obj/structure/sign/poster/pgf/mission_accomplished_1
