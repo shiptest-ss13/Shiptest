@@ -532,3 +532,64 @@
 	ammo_type = /obj/item/ammo_casing/caseless/rocket/hedp
 	caliber = "84mm"
 	max_ammo = 1
+
+/obj/item/gun/ballistic/shotgun/automatic/slammer
+	name = "\improper Slammer"
+	desc = "An unusual, dated riot shotgun originating from Lanchester City. Often in the hands of pirates and eccentric indies, this weapon is mag-fed and pump-action."
+
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+
+	fire_sound = 'sound/weapons/gun/shotgun/brimstone.ogg'
+	load_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
+
+	icon_state = "slammer"
+	item_state = "slammer"
+
+	manufacturer = MANUFACTURER_IMPORT
+
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
+
+	semi_auto = FALSE
+	tac_reloads = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	show_magazine_on_sprite = TRUE
+	internal_magazine = FALSE
+	casing_ejector = TRUE
+
+	fire_delay = 0.1 SECONDS
+	rack_delay = 0.1 SECONDS
+
+	default_ammo_type = /obj/item/ammo_box/magazine/m12g_slammer
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m12g_slammer,
+	)
+
+	spread = 3
+	spread_unwielded = 10
+
+	recoil = 2
+	recoil_unwielded = 6
+
+	wield_slowdown = SHOTGUN_SLOWDOWN
+	wield_delay = 0.4 SECONDS
+
+/obj/item/ammo_box/magazine/m12g_slammer
+	name = "slammer box magazine (12g buckshot)"
+	desc = "A single-stack, 6-round box magazine for the Slammer shotgun and it's derivatives."
+	icon_state = "slammer_mag-1"
+	base_icon_state = "slammer_mag"
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	caliber = "12ga"
+	max_ammo = 6
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/m12g_slammer/empty
+	start_empty = TRUE

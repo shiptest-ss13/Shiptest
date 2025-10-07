@@ -34,6 +34,12 @@
 	loot = list(/obj/item/organ/regenerative_core)
 	var/brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood
 	var/difficulty = 1
+	var/has_clickbox = TRUE
+
+/mob/living/simple_animal/hostile/asteroid/hivelord/Initialize()
+	. = ..()
+	if(has_clickbox)
+		AddComponent(/datum/component/clickbox, icon_state = "hivelord", max_scale = INFINITY, dead_state = "hivelord_dead") //they writhe so much.
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/OpenFire(the_target)
 	if(world.time >= ranged_cooldown)
@@ -68,7 +74,6 @@
 	icon_aggro = "Hivelordbrood"
 	icon_dead = "Hivelordbrood"
 	icon_gib = "syndicate_gib"
-	mouse_opacity = MOUSE_OPACITY_OPAQUE
 	move_to_delay = 1
 	friendly_verb_continuous = "buzzes near"
 	friendly_verb_simple = "buzz near"
@@ -76,7 +81,7 @@
 	speed = 3
 	maxHealth = 1
 	health = 1
-	movement_type = FLYING
+	is_flying_animal = TRUE
 	harm_intent_damage = 5
 	melee_damage_lower = 2
 	melee_damage_upper = 2
@@ -91,12 +96,15 @@
 	density = FALSE
 	del_on_death = 1
 	var/mob/source
+	var/clickbox_state = "hivelord"
+	var/clickbox_max_scale = INFINITY
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/Initialize(_source)
 	. = ..()
 	source = source
 	addtimer(CALLBACK(src, PROC_REF(death)), 100)
 	AddComponent(/datum/component/swarming)
+	AddComponent(/datum/component/clickbox, icon_state = clickbox_state, max_scale = clickbox_max_scale)
 
 //Legion
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion
@@ -127,6 +135,7 @@
 	var/dwarf_mob = FALSE
 	var/mob_to_spawn //if this legion is suppossed to spawn a specific mob
 	var/mob/living/carbon/human/stored_mob
+	has_clickbox = FALSE
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/death(gibbed)
 	move_force = MOVE_FORCE_DEFAULT
@@ -215,6 +224,8 @@
 	stat_attack = SOFT_CRIT
 	robust_searching = 1
 	var/can_infest_dead = FALSE
+	clickbox_state = "sphere"
+	clickbox_max_scale = 2
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/staff
 	name = "emaciated legion"
