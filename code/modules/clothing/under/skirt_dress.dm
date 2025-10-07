@@ -120,3 +120,29 @@
 	desc = "A breezy white dress."
 	icon_state = "white_dress"
 	item_state = "white_dress"
+
+/obj/item/clothing/under/dress/overall_dress
+	name = "overall dress"
+	desc = "A pair of overalls, with a skirt in place of pants."
+	icon_state = "overall_dress"
+	roll_sleeves = TRUE
+
+/obj/item/clothing/under/dress/overall_dress/white
+	name = "white overall dress"
+	icon_state = "overall_dresswhite"
+
+/obj/item/clothing/under/dress/overall_dress/denim
+	name = "denim overall dress"
+	icon_state = "overall_dressdenim"
+
+/obj/item/clothing/under/dress/overall_dress/black
+	name = "black overall dress"
+	icon_state = "overall_dressblack"
+
+/obj/item/clothing/under/dress/overall_dress/brown
+	name = "brown overall dress"
+	icon_state = "overall_dressbrown"
+
+/obj/item/clothing/under/dress/overall_dress/olive
+	name = "olive overall dress"
+	icon_state = "overall_dressolive"
