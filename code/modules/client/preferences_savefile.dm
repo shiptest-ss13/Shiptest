@@ -435,6 +435,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["body_size"], features["body_size"])
 	READ_FILE(S["prosthetic_limbs"], prosthetic_limbs)
 	prosthetic_limbs ||= list(BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
+	READ_FILE(S["learned_languages"], learned_languages)
+	if(!learned_languages?.len) init_learned_languages()
+	READ_FILE(S["native_language"], native_language)
+	native_language ||= /datum/language/galactic_common
 	READ_FILE(S["feature_mcolor"], features["mcolor"])
 	READ_FILE(S["feature_mcolor2"], features["mcolor2"])
 	READ_FILE(S["feature_ethcolor"], features["ethcolor"])
@@ -499,6 +503,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//Quirks
 	READ_FILE(S["all_quirks"], all_quirks)
+	var/list/removed_quirks = list()
+	for(var/quirk_name in all_quirks.Copy())
+		if(!(quirk_name in SSquirks.quirks))
+			all_quirks.Remove(quirk_name)
+			removed_quirks.Add(quirk_name)
+	if(removed_quirks.len)
+		to_chat(parent, "Some of your previously selected quirks have been removed: [english_list(removed_quirks)].")
 
 	//Flavor Text
 	S["feature_flavor_text"]		>> features["flavor_text"]
@@ -628,6 +639,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["generic_adjective"]			, generic_adjective)
 	WRITE_FILE(S["body_size"]					, features["body_size"])
 	WRITE_FILE(S["prosthetic_limbs"]			, prosthetic_limbs)
+	WRITE_FILE(S["learned_languages"]			, learned_languages)
+	WRITE_FILE(S["native_language"]				, native_language)
 	WRITE_FILE(S["feature_mcolor"]				, features["mcolor"])
 	WRITE_FILE(S["feature_mcolor2"]				, features["mcolor2"])
 	WRITE_FILE(S["feature_ethcolor"]			, features["ethcolor"])

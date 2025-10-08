@@ -276,6 +276,24 @@
 	crate_name = "beam gun crate"
 	faction = /datum/faction/pgf
 
+/datum/supply_pack/gun/laser/kalix/nock
+	name = "Etherbor VG-F3 Beam Volleygun Crate"
+	desc = "Contains a single VG-F3 Beam Volleygun, a civilian-grade volleygun developed in the PGF, manufactured by Etherbor Industries."
+	cost = 3000
+	contains = list(/obj/item/storage/guncase/energy/kalixnock)
+	crate_name = "beam volleygun crate"
+	faction = /datum/faction/pgf
+
+/datum/supply_pack/gun/laser/vga5
+	name = "Etherbor VG-A5 Beam Volleygun Crate"
+	desc = "Contains a single VG-A5 Beam Volleygun, a military-grade volleygun developed in the PGF and manufactured by Etherbor Industries for use within the Marine Corps."
+	cost = 4000
+	contains = list(/obj/item/storage/guncase/energy/vga5)
+	crate_name = "beam volleygun crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/gun/laser/bg16
 	name = "Etherbor BG-16 Beam Gun Crate"
 	desc = "Contains a single BG-16 Beam Gun, a military-grade automatic developed in the PGF and manufactured by Etherbor Industries for use within the Marine Corps."
@@ -374,6 +392,13 @@
 	desc = "For when you need to deal with 7 hooligans and can't be arsed to pump. Contains a semi-auto shotgun with a 7-round capacity."
 	contains = list(/obj/item/storage/guncase/buckmaster)
 	cost = 3000
+	crate_name = "shotgun crate"
+
+/datum/supply_pack/gun/slammer
+	name = "Slammer Shotgun Crate"
+	desc = "For when you need to deal with a 6-hooligan riot. Contains a mag-fed pump shotgun, with a 6-round capacity."
+	cost = 3000
+	contains = list(/obj/item/storage/guncase/slammer)
 	crate_name = "shotgun crate"
 
 /datum/supply_pack/gun/bulldog
