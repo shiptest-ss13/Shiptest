@@ -1,0 +1,47 @@
+	{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Puppis-class Patrol Craft",
+	"prefix": "CMSV",
+	"manufacturer": "Lanchester Shipyards",
+	"namelists": ["GENERAL", "CLIP MINUTEMEN", "NATURAL_AGGRESSIVE"],
+	"description": "The Puppis-class is a newer addition to the CMM's roster of ships. It's design focuses on general aid to other vessels and colonies, quick response, patrols, and smooth flying with its vast amount of engines. Typically lightly geared, their presence announces either scouting or aid from the CMM.",
+	"tags": [
+		"Combat",
+		"Generalist",
+		"Response"
+	],
+	"map_short_name": "Puppis-class",
+	"faction": "/datum/faction/clip",
+	"starting_funds": 2000,
+	"map_path": "_maps/shuttles/minutemen/minutemen_puppis.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/clip/minutemen/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Team Sergeant": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt/lead",
+			"officer": true,
+			"slots": 1
+		},
+		"Combat Medic": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt/medic",
+			"slots": 1
+		},
+		"Naval Engineer": {
+			"outfit": "/datum/outfit/job/clip/minutemen/engineer",
+			"slots": 1
+		},
+		"Minuteman": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt",
+			"slots": 1
+		},
+		"Reservist": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt/reserve",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}
