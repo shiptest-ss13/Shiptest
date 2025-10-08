@@ -1185,7 +1185,8 @@
 	pixel_x = -20;
 	pixel_y = -9;
 	id = "officelock";
-	name = "bedroom lock <3"
+	name = "bedroom lock <3";
+	specialfunctions = 4
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/dorms/officer)
@@ -4813,7 +4814,8 @@
 	pixel_y = 20;
 	id = "gunsmithbathroom";
 	normaldoorcontrol = 1;
-	name = "bathroom lock"
+	name = "bathroom lock";
+	specialfunctions = 4
 	},
 /turf/open/floor/carpet/black{
 	name = "bathroom mat"
