@@ -149,7 +149,7 @@
 /datum/supply_pack/civilian/coffee_starter
 	name = "Personal Coffee Starter Kit"
 	desc = "If you're looking to get some coffee supply for your caffeine-starved bridge crew, this is the place to start. Contains three mugs, a coffee pot, and two coffee cartridges. Coffee machine not included."
-	cost = 500
+	cost = 100
 	contains = list(/obj/item/reagent_containers/food/drinks/mug,
 					/obj/item/reagent_containers/food/drinks/mug,
 					/obj/item/reagent_containers/food/drinks/mug,
@@ -161,7 +161,7 @@
 /datum/supply_pack/civilian/coffee_cartridge
 	name = "Solar's Best Coffee Cartridge Resupply"
 	desc = "Contains five coffee cartridges for your coffee machine, imported from Sol."
-	cost = 750
+	cost = 200
 	contains = list(/obj/item/coffee_cartridge,
 					/obj/item/coffee_cartridge,
 					/obj/item/coffee_cartridge,
@@ -172,7 +172,7 @@
 /datum/supply_pack/civilian/coffee_cartridge_fancy
 	name = "Premium Coffee Cartridge Resupply"
 	desc = "Contains an assortment of five high-quality coffee cartridges."
-	cost = 1250
+	cost = 400
 	contains = list(/obj/item/coffee_cartridge/fancy,
 					/obj/item/coffee_cartridge/fancy,
 					/obj/item/coffee_cartridge/fancy,
@@ -183,7 +183,7 @@
 /datum/supply_pack/civilian/coffeekit
 	name = "Coffee Shop Starter Crate"
 	desc = "All the basic equipment needed for enterprising coffee-selling spacefarers. Coffeemaker not included."
-	cost = 1250
+	cost = 400
 	contains = list(/obj/item/storage/box/coffeepack/robusta,
 					/obj/item/storage/box/coffeepack/arabica,
 					/obj/item/reagent_containers/glass/coffeepot,
@@ -214,7 +214,7 @@
 /datum/supply_pack/organic/syrup
 	name = "Coffee Syrups Box"
 	desc = "A packaged box of various syrups, perfect to make your delicious coffee even more diabetic."
-	cost = 1250
+	cost = 250
 	contains = list(/obj/item/reagent_containers/glass/bottle/syrup_bottle/caramel,
 					/obj/item/reagent_containers/glass/bottle/syrup_bottle/liqueur,
 					/obj/item/reagent_containers/glass/bottle/syrup_bottle/honey,
