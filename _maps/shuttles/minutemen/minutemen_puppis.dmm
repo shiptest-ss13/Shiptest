@@ -141,6 +141,7 @@
 /obj/effect/turf_decal/industrial/warning/green/fulltile,
 /obj/structure/closet/secure_closet/clip/minutemen/engineer,
 /obj/machinery/light/directional/east,
+/obj/item/crowbar/power,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
 "bM" = (
@@ -214,13 +215,6 @@
 	},
 /turf/template_noop,
 /area/template_noop)
-"cf" = (
-/obj/machinery/porta_turret/ship/clip{
-	dir = 8;
-	id = "Puppisgun"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering/engines/port)
 "cg" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/computer/cargo{
@@ -232,7 +226,8 @@
 /obj/machinery/button/door{
 	pixel_x = 8;
 	pixel_y = 21;
-	id = "puppis_cargo"
+	id = "puppis_cargo";
+	name = "cargo door button"
 	},
 /obj/machinery/button/shieldwallgen{
 	pixel_x = -3;
@@ -356,13 +351,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
-"do" = (
-/obj/machinery/porta_turret/ship/clip/heavy{
-	dir = 4;
-	id = "Puppisgun"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/security/armory)
 "dt" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /turf/open/floor/plating,
@@ -374,6 +362,10 @@
 	},
 /obj/structure/window/plasma/reinforced{
 	dir = 8
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "pup_engine3"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -1002,13 +994,6 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
-"ld" = (
-/obj/machinery/porta_turret/ship/clip/heavy{
-	dir = 4;
-	id = "Puppisgun"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/cargo)
 "lj" = (
 /obj/structure/rack,
 /obj/item/mop{
@@ -1157,6 +1142,13 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
+"mn" = (
+/obj/machinery/porta_turret/ship/clip/heavy{
+	dir = 4;
+	id = "Puppisgun"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/security/armory)
 "mo" = (
 /obj/effect/turf_decal/industrial/warning/green/fulltile,
 /obj/structure/rack,
@@ -1323,6 +1315,13 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
+"nD" = (
+/obj/machinery/porta_turret/ship/clip/heavy{
+	dir = 4;
+	id = "Puppisgun"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/cargo)
 "nP" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1637,6 +1636,13 @@
 "qL" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/central)
+"qW" = (
+/obj/machinery/porta_turret/ship/clip{
+	dir = 8;
+	id = "Puppisgun"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering/engines/port)
 "rd" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 1
@@ -1682,6 +1688,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"ry" = (
+/obj/machinery/porta_turret/ship/clip{
+	dir = 8;
+	id = "Puppisgun"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering/engines/starboard)
 "rD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1739,13 +1752,6 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
-"sk" = (
-/obj/machinery/porta_turret/ship/clip{
-	dir = 6;
-	id = "Puppisgun"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew/toilet)
 "st" = (
 /obj/effect/turf_decal/industrial/warning/green{
 	dir = 4
@@ -2208,7 +2214,7 @@
 	},
 /obj/machinery/door/poddoor{
 	dir = 4;
-	id = "bunnyengine2"
+	id = "pup_engine2"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -2219,13 +2225,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
-"yt" = (
-/obj/machinery/porta_turret/ship/clip{
-	dir = 8;
-	id = "Puppisgun"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering/engines/starboard)
 "yu" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
@@ -2314,7 +2313,7 @@
 	},
 /obj/machinery/door/poddoor{
 	dir = 4;
-	id = "bunnyengine1"
+	id = "pup_engine1"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -2804,6 +2803,12 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/button/door{
+	pixel_x = 8;
+	pixel_y = 21;
+	id = "pup_engine4";
+	name = "thruster shields"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "DZ" = (
@@ -3212,6 +3217,13 @@
 /obj/machinery/cell_charger,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
+"IL" = (
+/obj/machinery/porta_turret/ship/clip{
+	dir = 6;
+	id = "Puppisgun"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/toilet)
 "Jg" = (
 /obj/effect/turf_decal/trimline/transparent/blue/warning,
 /obj/item/storage/box/flares{
@@ -3508,6 +3520,13 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
+"LN" = (
+/obj/machinery/porta_turret/ship/clip{
+	dir = 5;
+	id = "Puppisgun"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/dorm/captain)
 "LW" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
@@ -3627,13 +3646,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
-"MS" = (
-/obj/machinery/porta_turret/ship/clip{
-	dir = 5;
-	id = "Puppisgun"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew/dorm/captain)
 "MU" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
@@ -3846,16 +3858,12 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
 "NK" = (
-/obj/machinery/suit_storage_unit/industrial{
-	suit_type = /obj/item/clothing/suit/space/eva;
-	helmet_type = /obj/item/clothing/head/helmet/space/eva;
-	mask_type = /obj/item/clothing/mask/breath
-	},
 /obj/effect/turf_decal/industrial/warning/green/fulltile,
 /obj/item/clothing/mask/gas/clip,
 /obj/item/clothing/head/helmet/space/light/engineer,
 /obj/item/clothing/suit/space/engineer,
 /obj/item/tank/jetpack/carbondioxide,
+/obj/machinery/suit_storage_unit/inherit/industrial,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
 "NU" = (
@@ -4183,6 +4191,19 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
+"RP" = (
+/obj/effect/turf_decal/siding/black{
+	dir = 4
+	},
+/obj/machinery/button/door{
+	pixel_x = -5;
+	pixel_y = -21;
+	dir = 1;
+	id = "pup_engine2";
+	name = "thruster shields"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engines/port)
 "RZ" = (
 /obj/effect/turf_decal/trimline/transparent/beige/filled/warning{
 	dir = 8
@@ -4349,6 +4370,10 @@
 	},
 /obj/structure/window/plasma/reinforced{
 	dir = 8
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "pup_engine4"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -4596,6 +4621,22 @@
 "UV" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/ccommons)
+"Vl" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/button/door{
+	pixel_x = -5;
+	pixel_y = -21;
+	dir = 1;
+	id = "pup_engine3";
+	name = "thruster shields"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "Vw" = (
 /obj/structure/closet/secure_closet/wall/directional/north{
 	icon_door = "med_wall";
@@ -4918,6 +4959,13 @@
 	dir = 5
 	},
 /obj/machinery/portable_atmospherics/pump,
+/obj/machinery/button/door{
+	pixel_x = -5;
+	pixel_y = -21;
+	dir = 1;
+	id = "pup_engine1";
+	name = "thruster shields"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "Zv" = (
@@ -5081,7 +5129,7 @@ oi
 oi
 oi
 oi
-cf
+qW
 pM
 Qe
 Ii
@@ -5093,7 +5141,7 @@ oE
 oE
 ac
 sG
-yt
+ry
 oi
 oi
 oi
@@ -5153,7 +5201,7 @@ Ye
 CW
 dt
 Pa
-QV
+RP
 UV
 ww
 Fa
@@ -5416,7 +5464,7 @@ oi
 oi
 oi
 oi
-MS
+LN
 cj
 ia
 nY
@@ -5430,7 +5478,7 @@ pX
 em
 CS
 pX
-sk
+IL
 oi
 oi
 oi
@@ -5576,7 +5624,7 @@ qL
 hH
 pq
 mD
-mD
+Vl
 hH
 "}
 (23,1,1) = {"
@@ -5848,7 +5896,7 @@ oi
 oi
 oi
 oi
-ld
+nD
 sX
 xY
 pR
@@ -5862,7 +5910,7 @@ Eu
 Eu
 Eu
 Eu
-do
+mn
 oi
 oi
 oi
