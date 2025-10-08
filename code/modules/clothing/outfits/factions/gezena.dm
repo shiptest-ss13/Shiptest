@@ -18,6 +18,7 @@
 	name = "PGF - Bridge Crew"
 	id_assignment = "Helmsman"
 	jobtype = /datum/job/head_of_personnel
+	neck = /obj/item/clothing/neck/cloak/gezena/command
 
 /datum/outfit/job/gezena/engineer
 	name = "PGF - Navy Engineer"
