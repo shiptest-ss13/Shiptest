@@ -1050,6 +1050,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/machinery/holopad/secure,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "lQ" = (
@@ -1333,12 +1334,12 @@
 /area/ship/maintenance/starboard)
 "nR" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/fax/clip,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "nT" = (
@@ -4149,6 +4150,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
+/obj/machinery/holopad/secure,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
 "Rz" = (
