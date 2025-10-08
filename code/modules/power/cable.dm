@@ -538,7 +538,7 @@ GLOBAL_LIST_INIT(cable_coil_recipes, list(new/datum/stack_recipe("cable restrain
 	if(!istype(H))
 		return ..()
 
-	if(!target.is_exposed(user, TRUE, user.zone_selected))
+	if(!H.is_exposed(user, TRUE, user.zone_selected))
 		return TRUE
 
 	var/obj/item/bodypart/affecting = H.get_bodypart(check_zone(user.zone_selected))
