@@ -74,7 +74,6 @@
 	return TRUE
 
 /obj/item/reagent_containers/glass/bottle/syrup_bottle/AltClick(mob/user)
-	cap_on = !cap_on
 	if(!cap_on)
 		icon_state = "syrup_open"
 		to_chat(user, span_notice("You remove the pump cap."))
