@@ -357,12 +357,21 @@
 */
 
 /datum/supply_pack/food/grill
-	name = "Grilling Starter Kit"
-	desc = "Sometimes the stresses of the world are too much to bear. Some times, for God's sake, you just want to grill. This crate is for those times."
+	name = "Griddle Construction Kit"
+	desc = "DIY cooking has never been easier!"
 	cost = 1000
-	contains = list(/obj/machinery/grill/unwrenched)
-	crate_name = "grilling starter kit crate"
-	crate_type = /obj/structure/closet/crate/large
+	contains = list(/obj/item/circuitboard/machine/griddle)
+	crate_name = "griddle circuit board crate"
+	crate_type = /obj/structure/closet/crate
+	no_bundle = TRUE
+
+/datum/supply_pack/food/oven
+	name = "Oven Construction Kit"
+	desc = "DIY cooking has never been easier!"
+	cost = 1500
+	contains = list(/obj/item/circuitboard/machine/oven)
+	crate_name = "griddle circuit board crate"
+	crate_type = /obj/structure/closet/crate
 	no_bundle = TRUE
 
 /*
