@@ -446,6 +446,14 @@
 	aggro_vision_range = 14
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
+	rapid = 1
+	casingtype = /obj/item/ammo_casing/a65clip
+	l_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
+	projectilesound = 'sound/weapons/gun/sniper/cmf90.ogg'
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/sniper/taipan
+	icon_living = "syndicate_shotgun"
+	rapid = 1
 	casingtype = /obj/item/ammo_casing/p50
 	l_hand = /obj/item/gun/ballistic/automatic/marksman/taipan
 	projectilesound = 'sound/weapons/gun/sniper/shot.ogg'
