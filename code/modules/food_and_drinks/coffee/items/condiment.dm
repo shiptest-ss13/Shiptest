@@ -8,7 +8,6 @@
 /obj/item/reagent_containers/condiment/pack/creamer
 	name = "coffee creamer pack"
 	desc = "Better not to think about what they are making this from."
-	icon = 'icons/obj/item/coffee.dmi'
 	icon_state = "condi_creamer"
 	volume = 5
 	list_reagents = list(/datum/reagent/consumable/creamer = 5)
@@ -17,7 +16,6 @@
 /obj/item/reagent_containers/condiment/pack/chocolate
 	name = "chocolate sprinkle pack"
 	desc = "The amount of sugar that's already there wasn't enough for you?"
-	icon = 'icons/obj/item/coffee.dmi'
 	icon_state = "condi_chocolate"
 	list_reagents = list(/datum/reagent/consumable/chocolatepudding = 10)
 
