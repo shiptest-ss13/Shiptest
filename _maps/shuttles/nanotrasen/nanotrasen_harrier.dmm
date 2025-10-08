@@ -596,6 +596,23 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/medical)
+"dl" = (
+/obj/structure/closet/secure_closet/captains{
+	populate = 0
+	},
+/obj/machinery/firealarm/directional/west,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/under/nanotrasen/captain,
+/obj/item/clothing/suit/armor/nanotrasen/captain/parade,
+/obj/item/clothing/neck/cloak/nanotrasen,
+/obj/item/storage/backpack/captain,
+/obj/item/clothing/head/nanotrasen/captain/peaked,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/storage/belt/sabre,
+/obj/machinery/light/small/directional/north,
+/obj/item/storage/box/ammo/a357,
+/turf/open/floor/carpet/royalblue,
+/area/ship/crew/dorm/dormtwo)
 "do" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1940,24 +1957,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
-"km" = (
-/obj/structure/closet/secure_closet/armory1{
-	populate = 0;
-	req_access = list(2)
-	},
-/obj/machinery/airalarm/directional/east,
-/obj/item/clothing/suit/armor/nanotrasen,
-/obj/item/clothing/suit/armor/nanotrasen/slim,
-/obj/item/clothing/head/helmet/sec,
-/obj/item/clothing/head/helmet/sec,
-/obj/effect/turf_decal/trimline/opaque/vired/filled/warning{
-	dir = 8
-	},
-/obj/machinery/light/small/directional/south,
-/obj/item/clothing/mask/gas/vigilitas,
-/obj/item/clothing/mask/gas/vigilitas,
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
 "kn" = (
 /obj/structure/cable{
 	icon_state = "6-9"
@@ -2192,6 +2191,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
+"lz" = (
+/obj/item/radio/intercom/directional/south,
+/obj/structure/rack,
+/obj/item/storage/guncase/pistol/rhino,
+/turf/open/floor/carpet/royalblue,
+/area/ship/crew/dorm/dormtwo)
 "lA" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2524,6 +2529,36 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/janitor)
+"nP" = (
+/obj/structure/closet/secure_closet/security{
+	populate = 0;
+	req_access = list(2)
+	},
+/obj/structure/sign/poster/retro/lasergun_new{
+	pixel_x = 32
+	},
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/under/nanotrasen/security,
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/head/nanotrasen/cap/security,
+/obj/item/clothing/head/nanotrasen/beret/security,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/storage/backpack/security,
+/obj/item/storage/box/handcuffs,
+/obj/item/reagent_containers/spray/pepper,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/storage/box/ammo/c9mm,
+/obj/item/storage/box/ammo/c9mm,
+/obj/item/storage/box/ammo/c9mm_rubber,
+/obj/effect/turf_decal/trimline/opaque/vired/line,
+/obj/item/storage/belt/security,
+/obj/item/melee/knife/survival,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite/mini,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "nQ" = (
 /obj/structure/chair/comfy/blue/corpo{
 	dir = 8
@@ -2533,6 +2568,25 @@
 	},
 /turf/open/floor/carpet/executive,
 /area/ship/crew/law_office)
+"nT" = (
+/obj/structure/closet/secure_closet/head_of_personnel{
+	populate = 0
+	},
+/obj/machinery/firealarm/directional/west,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/under/nanotrasen/officer,
+/obj/item/clothing/suit/toggle/nanotrasen,
+/obj/item/clothing/head/nanotrasen/officer,
+/obj/item/clothing/head/nanotrasen/beret,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/storage/backpack/satchel/leather,
+/obj/item/storage/box/ids,
+/obj/machinery/light/small/directional/south,
+/obj/item/storage/box/PDAs,
+/obj/item/gun/energy/sharplite/x12,
+/obj/item/stock_parts/cell/gun/sharplite,
+/turf/open/floor/carpet/blue,
+/area/ship/crew/dorm)
 "nZ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2580,23 +2634,6 @@
 "ok" = (
 /turf/closed/wall/mineral/titanium/exterior,
 /area/ship/engineering/engine)
-"ol" = (
-/obj/structure/closet/secure_closet/captains{
-	populate = 0
-	},
-/obj/machinery/firealarm/directional/west,
-/obj/item/clothing/shoes/laceup,
-/obj/item/clothing/under/nanotrasen/captain,
-/obj/item/clothing/suit/armor/nanotrasen/captain/parade,
-/obj/item/clothing/neck/cloak/nanotrasen,
-/obj/item/storage/backpack/captain,
-/obj/item/clothing/head/nanotrasen/captain/peaked,
-/obj/item/clothing/glasses/sunglasses,
-/obj/item/storage/belt/sabre,
-/obj/machinery/light/small/directional/north,
-/obj/item/storage/box/ammo/a357,
-/turf/open/floor/carpet/royalblue,
-/area/ship/crew/dorm/dormtwo)
 "op" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave,
@@ -3158,12 +3195,6 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
-"sl" = (
-/obj/item/radio/intercom/directional/south,
-/obj/structure/rack,
-/obj/item/storage/guncase/pistol/rhino,
-/turf/open/floor/carpet/royalblue,
-/area/ship/crew/dorm/dormtwo)
 "sn" = (
 /obj/structure/chair/comfy/blue/corpo/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
@@ -3813,22 +3844,6 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/atmospherics)
-"uX" = (
-/obj/structure/guncloset{
-	req_access_txt = "2"
-	},
-/obj/item/gun/ballistic/automatic/pistol/challenger/no_mag,
-/obj/item/radio/intercom/directional/east,
-/obj/structure/sign/nanotrasen/vigilitas{
-	pixel_y = 32
-	},
-/obj/effect/turf_decal/trimline/opaque/vired/filled/warning{
-	dir = 8
-	},
-/obj/item/gun/energy/sharplite/l305,
-/obj/item/gun/energy/sharplite/x26,
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
 "uZ" = (
 /obj/structure/sign/nanotrasen,
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -3847,25 +3862,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/storage/eva)
-"vd" = (
-/obj/structure/closet/secure_closet/head_of_personnel{
-	populate = 0
-	},
-/obj/machinery/firealarm/directional/west,
-/obj/item/clothing/shoes/laceup,
-/obj/item/clothing/under/nanotrasen/officer,
-/obj/item/clothing/suit/toggle/nanotrasen,
-/obj/item/clothing/head/nanotrasen/officer,
-/obj/item/clothing/head/nanotrasen/beret,
-/obj/item/clothing/glasses/sunglasses,
-/obj/item/storage/backpack/satchel/leather,
-/obj/item/storage/box/ids,
-/obj/machinery/light/small/directional/south,
-/obj/item/storage/box/PDAs,
-/obj/item/gun/energy/sharplite/x12,
-/obj/item/stock_parts/cell/gun/sharplite,
-/turf/open/floor/carpet/blue,
-/area/ship/crew/dorm)
 "vj" = (
 /obj/structure/disposalpipe/sorting/mail{
 	dir = 4;
@@ -5293,36 +5289,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
-"CK" = (
-/obj/structure/closet/secure_closet/security{
-	populate = 0;
-	req_access = list(2)
-	},
-/obj/structure/sign/poster/retro/lasergun_new{
-	pixel_x = 32
-	},
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/under/nanotrasen/security,
-/obj/item/clothing/gloves/color/black,
-/obj/item/clothing/head/nanotrasen/cap/security,
-/obj/item/clothing/head/nanotrasen/beret/security,
-/obj/item/clothing/glasses/sunglasses,
-/obj/item/storage/backpack/security,
-/obj/item/storage/box/handcuffs,
-/obj/item/reagent_containers/spray/pepper,
-/obj/item/ammo_box/magazine/co9mm,
-/obj/item/ammo_box/magazine/co9mm,
-/obj/item/storage/box/ammo/c9mm,
-/obj/item/storage/box/ammo/c9mm,
-/obj/item/storage/box/ammo/c9mm_rubber,
-/obj/effect/turf_decal/trimline/opaque/vired/line,
-/obj/item/storage/belt/security,
-/obj/item/melee/knife/survival,
-/obj/item/stock_parts/cell/gun/sharplite,
-/obj/item/stock_parts/cell/gun/sharplite,
-/obj/item/stock_parts/cell/gun/sharplite/mini,
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
 "CN" = (
 /obj/machinery/conveyor{
 	dir = 1;
@@ -7076,6 +7042,24 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering)
+"Mr" = (
+/obj/structure/closet/secure_closet/armory1{
+	populate = 0;
+	req_access = list(2)
+	},
+/obj/machinery/airalarm/directional/east,
+/obj/item/clothing/suit/armor/nanotrasen,
+/obj/item/clothing/suit/armor/nanotrasen/slim,
+/obj/item/clothing/head/helmet/m10,
+/obj/item/clothing/head/helmet/m10,
+/obj/effect/turf_decal/trimline/opaque/vired/filled/warning{
+	dir = 8
+	},
+/obj/machinery/light/small/directional/south,
+/obj/item/clothing/mask/gas/vigilitas,
+/obj/item/clothing/mask/gas/vigilitas,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "Ms" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -8965,6 +8949,22 @@
 "Vv" = (
 /turf/closed/wall/mineral/titanium/interior,
 /area/ship/hallway/port)
+"Vx" = (
+/obj/structure/guncloset{
+	req_access_txt = "2"
+	},
+/obj/item/gun/ballistic/automatic/pistol/challenger/no_mag,
+/obj/item/radio/intercom/directional/east,
+/obj/structure/sign/nanotrasen/vigilitas{
+	pixel_y = 32
+	},
+/obj/effect/turf_decal/trimline/opaque/vired/filled/warning{
+	dir = 8
+	},
+/obj/item/gun/energy/sharplite/l305,
+/obj/item/gun/energy/sharplite/x26,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "VA" = (
 /obj/structure/chair/office{
 	dir = 1
@@ -10152,7 +10152,7 @@ CW
 zC
 MT
 hI
-vd
+nT
 hY
 wM
 hY
@@ -10160,7 +10160,7 @@ gn
 hY
 qJ
 hY
-ol
+dl
 oU
 HI
 TI
@@ -10240,7 +10240,7 @@ NQ
 hY
 Cn
 sy
-sl
+lz
 TI
 lX
 Ax
@@ -10640,7 +10640,7 @@ Zf
 pF
 Pn
 uc
-CK
+nP
 tI
 MZ
 "}
@@ -10677,8 +10677,8 @@ MZ
 MZ
 gk
 Zf
-uX
-km
+Vx
+Mr
 Zf
 gk
 MZ

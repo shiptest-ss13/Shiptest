@@ -145,7 +145,7 @@
 /obj/structure/closet/secure_closet/security/PopulateContents()
 	..()
 	new /obj/item/clothing/suit/armor/vest(src)
-	new /obj/item/clothing/head/helmet/sec(src)
+	new /obj/item/clothing/head/helmet/m10(src)
 	new /obj/item/radio/headset/headset_sec(src)
 	new /obj/item/radio/headset/headset_sec/alt(src)
 	//WS begin - Prescription HUDs
@@ -345,7 +345,7 @@
 /obj/structure/closet/secure_closet/labor_camp_security/PopulateContents()
 	..()
 	new /obj/item/clothing/suit/armor/vest(src)
-	new /obj/item/clothing/head/helmet/sec(src)
+	new /obj/item/clothing/head/helmet/m10(src)
 	new /obj/item/clothing/under/rank/security/officer(src)
 	new /obj/item/clothing/under/rank/security/officer/skirt(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses(src)

@@ -802,12 +802,15 @@
 		REMOVE_TRAIT(src, TRAIT_KNOCKEDOUT, OXYLOSS_TRAIT)
 
 /mob/living/carbon/bullet_act(obj/projectile/P, def_zone, piercing_hit = FALSE)
+	if(check_concealment(P))
+		return BULLET_ACT_FORCE_PIERCE
 	var/armor = run_armor_check(def_zone, P.flag, P.armour_penetration, silent = TRUE)
 	var/on_hit_state = P.on_hit(src, armor, piercing_hit)
 	if(!P.nodamage && on_hit_state != BULLET_ACT_BLOCK && !QDELETED(src)) //QDELETED literally just for the instagib rifle. Yeah.
 		var/attack_direction = get_dir(P.starting, src)
 		apply_damage(P.damage, P.damage_type, def_zone, armor, sharpness = P.sharpness, attack_direction = attack_direction)
-		recoil_camera(src, clamp((P.damage-armor)/4,0.5,10), clamp((P.damage-armor)/4,0.5,10), P.damage/8, P.Angle)
+		var/impact_intensity = (P.damage/8) * impact_effect
+		recoil_camera(src, clamp((P.damage-armor)/4,0.5,10), clamp((P.damage-armor)/4,0.5,10), impact_intensity, P.Angle)
 		apply_effects(P.stun, P.knockdown, P.unconscious, P.irradiate, P.slur, P.stutter, P.eyeblur, P.drowsy, armor, P.stamina, P.jitter, P.paralyze, P.immobilize)
 
 		if(P.dismemberment)

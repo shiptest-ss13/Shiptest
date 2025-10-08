@@ -55,6 +55,10 @@
 	display_name = "heat goggles"
 	path = /obj/item/clothing/glasses/heat
 
+/datum/gear/eyewear/glasses/safety
+	display_name = "safety goggles"
+	path = /obj/item/clothing/glasses/safety
+
 /datum/gear/eyewear/glasses/orange
 	display_name = "orange sunglasses"
 	path = /obj/item/clothing/glasses/orange

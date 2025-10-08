@@ -1,11 +1,11 @@
 /datum/outfit/job/independent/ert
 	name = "ERT - Independent Security Officer"
-	jobtype = /datum/job/officer
+	jobtype = /datum/job/ert/sec
 	job_icon = "securityofficer"
 
 	wallet = null
 
-	head = /obj/item/clothing/head/helmet/sec
+	head = /obj/item/clothing/head/helmet/m10
 	ears = /obj/item/radio/headset/alt
 	uniform = /obj/item/clothing/under/rank/security/officer
 	shoes = /obj/item/clothing/shoes/combat
@@ -17,7 +17,7 @@
 
 /datum/outfit/job/independent/ert/emt
 	name = "ERT - Independent Paramedic"
-	jobtype = /datum/job/paramedic
+	jobtype = /datum/job/ert/med
 	job_icon = "paramedic"
 
 	head = /obj/item/clothing/head/soft/paramedic
@@ -41,7 +41,7 @@
 
 /datum/outfit/job/independent/ert/firefighter
 	name = "ERT - Independent Firefighter (Standard)"
-	jobtype = /datum/job/atmos
+	jobtype = /datum/job/ert/engi
 	job_icon = "atmospherictechnician"
 
 	head = /obj/item/clothing/head/hardhat/red
@@ -65,7 +65,7 @@
 
 /datum/outfit/job/independent/ert/firefighter/medic
 	name = "ERT - Independent Firefighter (Medic)"
-	jobtype = /datum/job/paramedic
+	jobtype = /datum/job/ert/med
 	job_icon = "paramedic"
 
 	mask = /obj/item/clothing/mask/breath/medical
@@ -79,7 +79,7 @@
 
 /datum/outfit/job/independent/ert/firefighter/leader
 	name = "ERT - Independent Firefighter (Group Captain)"
-	jobtype = /datum/job/chief_engineer
+	jobtype = /datum/job/ert/commander
 	job_icon = "chiefengineer"
 
 	suit = /obj/item/clothing/suit/space/hardsuit/engine
@@ -98,7 +98,7 @@
 
 /datum/outfit/job/independent/ert/technician
 	name = "ERT - Independent Technician"
-	jobtype = /datum/job/engineer
+	jobtype = /datum/job/ert/engi
 	job_icon = "stationengineer"
 
 	head = /obj/item/clothing/head/hardhat
@@ -115,6 +115,7 @@
 
 /datum/outfit/job/independent/ert/pizza
 	name = "ERT - Independent Pizza Delivery Worker"
+	jobtype = /datum/job/ert
 
 	uniform = /obj/item/clothing/under/suit/burgundy
 	neck = /obj/item/clothing/neck/tie/red
@@ -128,7 +129,7 @@
 
 /datum/outfit/job/independent/ert/janitor
 	name = "ERT - Independent Sanitation Technician"
-	jobtype = /datum/job/janitor
+	jobtype = /datum/job/ert
 	job_icon = "janitor"
 
 	uniform = /obj/item/clothing/under/rank/civilian/janitor
@@ -145,6 +146,7 @@
 	job_icon = "deathsquad"
 	faction_icon = null
 	id_assignment = "Commando" // i mean. if you have enough time to look at a dsquaddie's id card. why not
+	jobtype = /datum/job/ert/commander
 
 	head = null
 	uniform = /obj/item/clothing/under/rank/security/officer/military

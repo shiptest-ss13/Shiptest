@@ -98,6 +98,13 @@
 	icon_state = "unnamed_crystal"
 	grind_results = list(/datum/reagent/crystal_reagent = 4)
 
+/obj/item/crystal_shard
+	name = "crystal shard"
+	icon = 'icons/obj/lavaland/artefacts.dmi'
+	desc = "A wing with a terminal infection of the strange crystals."
+	icon_state = "watcher_wing_crystal"
+	grind_results = list(/datum/reagent/crystal_reagent = 25)
+
 /obj/item/strange_crystal/attackby(obj/item/item, mob/user, params)
 	. = ..()
 	if(!istype(item, /obj/item/melee/knife))

@@ -597,6 +597,9 @@
 	light_power = 1
 	light_color = "#FFFFFF" // should look liminal, due to moons lighting
 
+/area/overmap_encounter/planetoid/moon/explored
+	area_flags = VALID_TERRITORY
+
 /area/overmap_encounter/planetoid/asteroid
 	name = "\improper Asteroid Field"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY

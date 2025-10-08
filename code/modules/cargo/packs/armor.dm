@@ -12,7 +12,7 @@
 	desc = "One set of well-rounded body armor. The set includes a helmet and vest."
 	cost = 750
 	contains = list(/obj/item/clothing/suit/armor/vest,
-					/obj/item/clothing/head/helmet/sec)
+					/obj/item/clothing/head/helmet/m10)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
@@ -57,7 +57,7 @@
 	desc = "One set of well-rounded medium tactical body armor. Plates are attached to the vest and cover the limbs. The set includes a helmet and chestpiece."
 	cost = 3000
 	contains = list(/obj/item/clothing/suit/armor/vest/marine/medium,
-					/obj/item/clothing/head/helmet/bulletproof/x11)
+					/obj/item/clothing/head/helmet/riot)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 

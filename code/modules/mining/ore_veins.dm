@@ -42,7 +42,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
 		)
 	var/spawn_text = "emerges from"
-	var/faction = list("hostile","mining")
+	var/faction = list(FACTION_HOSTILE, FACTION_MINING)
 	var/spawn_sound = list('sound/effects/break_stone.ogg')
 	var/spawner_type = /datum/component/spawner
 
@@ -627,6 +627,28 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	max_mobs = 3
 	spawn_time = 8 SECONDS
 
+/obj/structure/vein/moon/classfour
+	mining_charges = 15
+	vein_class = 4
+	drop_rate_amount_min = 30
+	drop_rate_amount_max = 40
+
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/goliath = 10,
+		/mob/living/simple_animal/hostile/asteroid/basilisk = 30,
+		/mob/living/simple_animal/hostile/asteroid/hivelord = 30,
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
+		/mob/living/simple_animal/hostile/carp/megacarp = 20,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal = 5,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal = 5,
+		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten = 5,
+		)
+	ore_list = list(
+		/obj/item/stack/ore/ice = 10
+		)
+
+	max_mobs = 6
+	spawn_time = 8 SECONDS
 
 //Desert planets, since they actually have their own mobs we use those
 
