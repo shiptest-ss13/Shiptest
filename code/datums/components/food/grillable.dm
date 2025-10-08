@@ -86,7 +86,7 @@
 	if(!current_cook_time) //Not grilled yet
 		if(positive_result)
 			if(initial(cook_result.name) == PLURAL)
-				examine_list += span_notice("It can be <b>grilled</b>.") 
+				examine_list += span_notice("It can be <b>grilled</b>.")
 		return
 
 	if(positive_result)
