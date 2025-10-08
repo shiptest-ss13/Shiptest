@@ -141,16 +141,19 @@
 /area/ruin/moon/hideout/command)
 "bL" = (
 /obj/structure/closet/wall/red/directional/east,
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 10
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/head/ramzi/flap,
+/obj/item/clothing/head/ramzi,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
+/obj/item/clothing/shoes/workboots,
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout/dorms/one)
 "bP" = (
 /obj/effect/spawner/bunk_bed{
@@ -1124,6 +1127,12 @@
 /obj/structure/rack,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/moon/hideout/canteen)
+"lS" = (
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/hideout/fortress)
 "lT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -2014,17 +2023,20 @@
 /turf/open/floor/plating,
 /area/ruin/moon/hideout/engineering)
 "ux" = (
-/obj/structure/closet/wall/red/directional/west,
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 10
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/head/ramzi/flap,
+/obj/item/clothing/head/ramzi,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
+/obj/item/clothing/shoes/workboots,
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
+/obj/structure/closet/wall/red/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout/dorms/two)
 "uD" = (
 /obj/structure/table/wood/poker,
@@ -3039,6 +3051,17 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/moon/hideout/engineering)
+"EQ" = (
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 6;
+	layer = 2.040
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 6
+	},
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/hideout/fortress)
 "ES" = (
 /obj/effect/turf_decal/borderfloor/corner{
 	dir = 4
@@ -3311,6 +3334,17 @@
 /obj/machinery/door/window/brigdoor/northleft,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/moon/hideout/fortress)
+"Ir" = (
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 5;
+	layer = 2.040
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 5
+	},
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/moon/hideout/fortress)
 "IA" = (
 /obj/machinery/suit_storage_unit/inherit,
 /turf/open/floor/plasteel/tech/grid,
@@ -3332,17 +3366,20 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/hideout/engineering)
 "IV" = (
-/obj/structure/closet/wall/red/directional/west,
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 10
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/head/ramzi/flap,
+/obj/item/clothing/head/ramzi,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
+/obj/item/clothing/shoes/workboots,
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
+/obj/structure/closet/wall/red/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout/dorms/one)
 "IW" = (
 /obj/item/storage/cans/sixbeer{
@@ -4373,6 +4410,7 @@
 	dir = 9;
 	layer = 2.041
 	},
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout/fortress)
 "Us" = (
@@ -4891,17 +4929,19 @@
 /area/ruin/moon/hideout/dorms)
 "Zh" = (
 /obj/structure/closet/wall/red/directional/east,
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 10
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/head/ramzi/flap,
+/obj/item/clothing/head/ramzi,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
+/obj/item/clothing/shoes/workboots,
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/moon/hideout/dorms/two)
 "Zj" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -6995,7 +7035,7 @@ oq
 Tj
 oq
 oq
-qs
+lS
 dH
 sm
 lv
@@ -7421,7 +7461,7 @@ jG
 PL
 xS
 sI
-Rt
+EQ
 Yz
 gS
 sI
@@ -7494,7 +7534,7 @@ VI
 ev
 VI
 KE
-KP
+Ir
 sI
 Xa
 AH
