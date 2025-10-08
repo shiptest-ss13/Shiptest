@@ -411,6 +411,7 @@
 /obj/effect/turf_decal/industrial/warning/green/corner{
 	dir = 4
 	},
+/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "ee" = (
@@ -1301,6 +1302,13 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
+"nD" = (
+/obj/effect/decal/fakelattice{
+	icon_state = "lattice-23"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "nP" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1644,10 +1652,7 @@
 	dir = 6
 	},
 /obj/effect/turf_decal/industrial/warning/green/fulltile,
-/obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/head/helmet/space/syndicate/blue,
-/obj/item/clothing/suit/space/syndicate/blue,
-/obj/item/clothing/mask/gas/clip,
+/obj/structure/tank_dispenser,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "rx" = (
@@ -2009,13 +2014,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"ws" = (
-/obj/effect/decal/fakelattice{
-	icon_state = "lattice-23"
-	},
-/obj/structure/catwalk/over,
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
 "ww" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 9
@@ -2595,6 +2593,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/structure/closet/crate/trashcart,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
 "Cm" = (
@@ -4990,8 +4989,11 @@
 /obj/structure/railing/thin{
 	dir = 4
 	},
-/obj/structure/tank_dispenser,
 /obj/effect/turf_decal/industrial/warning/green/fulltile,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/suit/space/syndicate/blue,
+/obj/item/clothing/head/helmet/space/syndicate/blue,
+/obj/item/clothing/mask/gas/clip,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "ZZ" = (
@@ -5396,7 +5398,7 @@ oi
 oi
 oi
 oi
-ws
+nD
 cj
 cj
 cj
@@ -5410,7 +5412,7 @@ pX
 pX
 pX
 pX
-ws
+nD
 oi
 oi
 oi
@@ -5420,7 +5422,7 @@ oi
 oi
 oi
 oi
-ws
+nD
 oi
 ol
 Cj
@@ -5434,7 +5436,7 @@ KR
 kb
 hF
 oi
-ws
+nD
 oi
 oi
 oi
@@ -5444,8 +5446,8 @@ oi
 oi
 oi
 oi
-ws
-ws
+nD
+nD
 ol
 Uv
 tL
@@ -5458,7 +5460,7 @@ UB
 sc
 kD
 PU
-ws
+nD
 oi
 oi
 oi
@@ -5469,7 +5471,7 @@ Jz
 eC
 eC
 Jz
-ws
+nD
 pu
 Vw
 jh
@@ -5481,7 +5483,7 @@ rd
 Aw
 Ot
 qL
-ws
+nD
 hH
 ee
 ee
