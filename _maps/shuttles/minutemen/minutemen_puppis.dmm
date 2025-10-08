@@ -128,13 +128,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
-"bl" = (
-/obj/machinery/porta_turret/ship/clip{
-	dir = 5;
-	id = "Puppisgun"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew/dorm/captain)
 "bw" = (
 /obj/structure/chair{
 	dir = 8
@@ -221,6 +214,13 @@
 	},
 /turf/template_noop,
 /area/template_noop)
+"cf" = (
+/obj/machinery/porta_turret/ship/clip{
+	dir = 8;
+	id = "Puppisgun"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering/engines/port)
 "cg" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/computer/cargo{
@@ -356,6 +356,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
+"do" = (
+/obj/machinery/porta_turret/ship/clip/heavy{
+	dir = 4;
+	id = "Puppisgun"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/security/armory)
 "dt" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /turf/open/floor/plating,
@@ -995,6 +1002,13 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
+"ld" = (
+/obj/machinery/porta_turret/ship/clip/heavy{
+	dir = 4;
+	id = "Puppisgun"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/cargo)
 "lj" = (
 /obj/structure/rack,
 /obj/item/mop{
@@ -1725,6 +1739,13 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
+"sk" = (
+/obj/machinery/porta_turret/ship/clip{
+	dir = 6;
+	id = "Puppisgun"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/toilet)
 "st" = (
 /obj/effect/turf_decal/industrial/warning/green{
 	dir = 4
@@ -1756,7 +1777,7 @@
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-23"
 	},
-/obj/structure/lattice/catwalk,
+/obj/structure/catwalk/over,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "sG" = (
@@ -1785,13 +1806,6 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
-"sT" = (
-/obj/machinery/porta_turret/ship/clip{
-	dir = 6;
-	id = "Puppisgun"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew/toilet)
 "sX" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
@@ -1868,7 +1882,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/structure/lattice/catwalk,
+/obj/structure/catwalk/over,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "uC" = (
@@ -1996,13 +2010,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
-"vK" = (
-/obj/machinery/porta_turret/ship/clip/heavy{
-	dir = 4;
-	id = "Puppisgun"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/cargo)
 "vV" = (
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /obj/structure/table/reinforced,
@@ -2212,6 +2219,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
+"yt" = (
+/obj/machinery/porta_turret/ship/clip{
+	dir = 8;
+	id = "Puppisgun"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering/engines/starboard)
 "yu" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
@@ -2248,13 +2262,6 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
-"zo" = (
-/obj/machinery/porta_turret/ship/clip{
-	dir = 8;
-	id = "Puppisgun"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering/engines/port)
 "zp" = (
 /obj/effect/turf_decal/trimline/opaque/blue/warning{
 	dir = 8
@@ -3620,6 +3627,13 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
+"MS" = (
+/obj/machinery/porta_turret/ship/clip{
+	dir = 5;
+	id = "Puppisgun"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/dorm/captain)
 "MU" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
@@ -3859,13 +3873,6 @@
 	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
-"Od" = (
-/obj/machinery/porta_turret/ship/clip/heavy{
-	dir = 4;
-	id = "Puppisgun"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/security/armory)
 "Oe" = (
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /obj/effect/turf_decal/siding/white/corner,
@@ -4130,13 +4137,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
-"QZ" = (
-/obj/machinery/porta_turret/ship/clip{
-	dir = 8;
-	id = "Puppisgun"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering/engines/starboard)
 "Rb" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
@@ -4147,7 +4147,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
 "Rz" = (
-/obj/structure/lattice/catwalk,
+/obj/structure/catwalk/over,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "RD" = (
@@ -4312,7 +4312,7 @@
 /area/ship/bridge)
 "SE" = (
 /obj/machinery/air_sensor/external,
-/obj/structure/lattice/catwalk,
+/obj/structure/catwalk/over,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "SN" = (
@@ -4848,13 +4848,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
-"XE" = (
-/obj/effect/decal/fakelattice{
-	icon_state = "lattice-23"
-	},
-/obj/structure/catwalk/over,
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
 "Yc" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5{
@@ -5088,7 +5081,7 @@ oi
 oi
 oi
 oi
-zo
+cf
 pM
 Qe
 Ii
@@ -5100,7 +5093,7 @@ oE
 oE
 ac
 sG
-QZ
+yt
 oi
 oi
 oi
@@ -5423,7 +5416,7 @@ oi
 oi
 oi
 oi
-bl
+MS
 cj
 ia
 nY
@@ -5437,7 +5430,7 @@ pX
 em
 CS
 pX
-sT
+sk
 oi
 oi
 oi
@@ -5447,7 +5440,7 @@ oi
 oi
 oi
 oi
-XE
+sE
 cj
 cj
 cj
@@ -5461,7 +5454,7 @@ pX
 pX
 pX
 pX
-XE
+sE
 oi
 oi
 oi
@@ -5471,7 +5464,7 @@ oi
 oi
 oi
 oi
-XE
+sE
 oi
 ol
 Cj
@@ -5485,7 +5478,7 @@ KR
 kb
 hF
 oi
-XE
+sE
 oi
 oi
 oi
@@ -5495,8 +5488,8 @@ oi
 oi
 oi
 oi
-XE
-XE
+sE
+sE
 ol
 Uv
 tL
@@ -5509,7 +5502,7 @@ UB
 sc
 kD
 PU
-XE
+sE
 oi
 oi
 oi
@@ -5520,7 +5513,7 @@ Jz
 eC
 eC
 Jz
-XE
+sE
 pu
 Vw
 jh
@@ -5532,7 +5525,7 @@ rd
 Aw
 Ot
 qL
-XE
+sE
 hH
 ee
 ee
@@ -5855,7 +5848,7 @@ oi
 oi
 oi
 oi
-vK
+ld
 sX
 xY
 pR
@@ -5869,7 +5862,7 @@ Eu
 Eu
 Eu
 Eu
-Od
+do
 oi
 oi
 oi
