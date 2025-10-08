@@ -98,6 +98,9 @@
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix/nock, /obj/item/ammo_casing/energy/disabler/hitscan/kalix/nock)
 
+/obj/item/gun/energy/kalix/nock/empty_cell
+	spawn_no_ammo = TRUE
+
 /obj/projectile/beam/hitscan/kalix/pgf/nock
 	name = "concentrated energy beam"
 	damage_constant = 0.8
@@ -149,6 +152,9 @@
 		/obj/item/stock_parts/cell/gun/kalix,
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pgf/nock, /obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/nock)
+
+/obj/item/gun/energy/kalix/pgf/nock/empty_cell
+	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/kalix/empty_cell
 	spawn_no_ammo = TRUE
