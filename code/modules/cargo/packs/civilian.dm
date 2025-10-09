@@ -198,7 +198,7 @@
 /datum/supply_pack/civilian/coffeemaker
 	name = "Coffeemaker Crate"
 	desc = "Contains one pre-assembled Attention model coffeemaker."
-	cost = 1000
+	cost = 750
 	contains = list(/obj/machinery/coffeemaker)
 	crate_name = "coffeemaker crate"
 	crate_type = /obj/structure/closet/crate/large
@@ -206,7 +206,7 @@
 /datum/supply_pack/civilian/coffeemaker_premium
 	name = "Premium Coffeemaker Crate"
 	desc = "Contains one pre-assembled professional-grade Sirere model coffeemaker."
-	cost = 1500
+	cost = 1000
 	contains = list(/obj/machinery/coffeemaker/premium)
 	crate_name = "premium coffeemaker crate"
 	crate_type = /obj/structure/closet/crate/large
