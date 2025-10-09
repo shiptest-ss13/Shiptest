@@ -1221,6 +1221,7 @@
 	pixel_y = 14;
 	pixel_x = 7
 	},
+/obj/item/clothing/glasses/welding,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "jv" = (
@@ -2095,6 +2096,7 @@
 	pixel_y = 14;
 	pixel_x = 7
 	},
+/obj/item/clothing/glasses/welding,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "ra" = (
@@ -6829,10 +6831,12 @@
 	pixel_x = -5
 	},
 /obj/item/weldingtool/largetank{
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = -9
 	},
 /obj/item/weldingtool/largetank{
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = -10
 	},
 /obj/item/multitool{
 	pixel_y = -6;
@@ -6841,22 +6845,6 @@
 /obj/item/multitool{
 	pixel_y = -6;
 	pixel_x = -8
-	},
-/obj/item/holosign_creator/atmos{
-	pixel_x = -2;
-	pixel_y = -8
-	},
-/obj/item/holosign_creator/atmos{
-	pixel_x = -2;
-	pixel_y = -11
-	},
-/obj/item/holosign_creator/engineering{
-	pixel_x = 9;
-	pixel_y = -7
-	},
-/obj/item/holosign_creator/engineering{
-	pixel_x = 9;
-	pixel_y = -11
 	},
 /obj/item/geiger_counter{
 	pixel_y = 10;
