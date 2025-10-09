@@ -36,6 +36,25 @@
 	faction = /datum/faction/clip
 	setpiece_item = /mob/living/carbon/human
 
+/datum/map_template/ruin/beachplanet/gunsmith
+	name = "Cave Gunsmith"
+	id = "beach_gunsmith"
+	description = "A decadent gunsmithing den jointly owned by an outfit of the Ramzi Clique and a corrupt NGR official. Hidden within a cave."
+	suffix = "beach_gunsmith.dmm"
+	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
+	ruin_mission_types = list(
+		/datum/mission/ruin/ngrdocs,
+	)
+
+/datum/mission/ruin/ngrdocs
+	name = "Investigate Suspicious Site"
+	desc = "The New Gorlex Republic is suspicious of a nearby site, many missing Scarborough surplus shipments has been traced back to what is suspected to be a Ramzi Clique hideout. Find any manifests and secure them at the local outpost. Expect entrenched resistance, few in number."
+	author = "New Gorlex Republic Customs"
+	faction = /datum/faction/syndicate/ngr
+	value = 1250
+	mission_limit = 1
+	setpiece_item = /obj/item/documents/syndicate/ngr
+
 /datum/map_template/ruin/beachplanet/frontiersmen_depot
 	name = "Frontiersmen Depot"
 	id = "beach_bunkers"
