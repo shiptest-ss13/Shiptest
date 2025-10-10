@@ -553,6 +553,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "eW" = (
@@ -581,6 +584,9 @@
 	pixel_x = 3;
 	pixel_y = -21;
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
@@ -654,9 +660,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -790,7 +793,7 @@
 	dir = 10
 	},
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "2-8"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
@@ -822,7 +825,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
-	icon_state = "1-4"
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -1298,6 +1301,9 @@
 	dir = 4;
 	name = "Cargo"
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "mV" = (
@@ -1390,12 +1396,12 @@
 /area/ship/crew/dorm/captain)
 "oc" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/machinery/suit_storage_unit/industrial{
-	suit_type = /obj/item/clothing/suit/space/eva;
-	helmet_type = /obj/item/clothing/head/helmet/space/eva;
-	mask_type = /obj/item/clothing/mask/breath
-	},
 /obj/effect/turf_decal/industrial/warning/green/fulltile,
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/clothing/suit/space/eva,
+/obj/item/clothing/head/helmet/space/eva,
+/obj/item/clothing/mask/breath,
+/obj/item/tank/internals/emergency_oxygen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "oi" = (
@@ -1656,7 +1662,7 @@
 "rh" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
-	icon_state = "4-9"
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
@@ -1777,6 +1783,7 @@
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer4{
 	dir = 6
 	},
+/obj/machinery/meter/atmos,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "sE" = (
@@ -2146,6 +2153,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/light/directional/west,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "xt" = (
@@ -2298,12 +2311,6 @@
 	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
 /obj/machinery/airalarm/directional/north,
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "zL" = (
@@ -2754,6 +2761,7 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 10
 	},
+/obj/machinery/meter/atmos,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Da" = (
@@ -3009,9 +3017,6 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/research/glass{
 	dir = 4;
@@ -3654,6 +3659,9 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "Nj" = (
@@ -3776,6 +3784,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -3977,6 +3988,7 @@
 "Pa" = (
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden,
 /obj/effect/turf_decal/siding/black/corner,
+/obj/machinery/meter/atmos,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Pd" = (
@@ -4068,10 +4080,7 @@
 	dir = 8
 	},
 /obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "6-8"
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
@@ -4969,6 +4978,7 @@
 	id = "pup_engine1";
 	name = "thruster shields"
 	},
+/obj/machinery/meter/atmos,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "Zv" = (
