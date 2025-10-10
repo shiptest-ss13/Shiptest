@@ -30,6 +30,14 @@
 	crate_name = "engineering space suit crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 
+/datum/supply_pack/spacesuits/armored_spacesuit
+	name = "Armored Space Suit Crate"
+	desc = "Contains one lightly armored softsuit, able to protect against the smaller day-to-day hazards."
+	cost = 1000
+	contains = list(/obj/item/clothing/suit/space/syndicate/generic,
+					/obj/item/clothing/head/helmet/space/syndicate/generic)
+	crate_name = "armored softsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma
 //syndicate
 
 /datum/supply_pack/spacesuits/armored_spacesuit
