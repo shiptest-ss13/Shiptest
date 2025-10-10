@@ -74,6 +74,9 @@
 /obj/machinery/atmospherics/pipe/manifold/purple/hidden/layer5{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	dir = 1
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "aW" = (
@@ -417,17 +420,11 @@
 /turf/open/floor/plasteel/tech/grid/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "en" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters/preopen{
-	dir = 4;
-	id = "refuelingbridge"
-	},
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 4
-	},
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/refuelingpost/bridge)
+/obj/effect/turf_decal/rechargefloor,
+/obj/mecha/working/ripley/mkii,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/space/has_grav/refuelingpost/cargo)
 "eq" = (
 /obj/structure/chair/comfy/blue/corpo/directional/west,
 /obj/effect/turf_decal/trimline/opaque/ntblue/line{
@@ -613,7 +610,7 @@
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 5
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
@@ -632,7 +629,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/patterned,
 /area/ruin/space/has_grav/refuelingpost/upper)
 "gt" = (
 /obj/machinery/conveyor{
@@ -1231,6 +1228,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer5,
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	dir = 1
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "lj" = (
@@ -1315,6 +1315,9 @@
 	id = "fuelingholo"
 	},
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer5{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 9
 	},
 /turf/open/floor/plating/airless,
@@ -1484,6 +1487,9 @@
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer5{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	dir = 4
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "oK" = (
@@ -1639,11 +1645,17 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/refuelingpost/cargo)
 "qf" = (
-/obj/effect/turf_decal/rechargefloor,
-/obj/mecha/working/ripley/mkii,
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/space/has_grav/refuelingpost/cargo)
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "refuelingbridge"
+	},
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/bridge)
 "qh" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1870,11 +1882,11 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/obj/structure/extinguisher_cabinet/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4;
 	welded = 1
 	},
+/obj/structure/closet/emcloset/anchored,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "sm" = (
@@ -2021,6 +2033,9 @@
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer5{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	dir = 4
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "tB" = (
@@ -2071,6 +2086,10 @@
 /obj/structure/table/reinforced,
 /obj/machinery/cell_charger,
 /turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"uH" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on,
+/turf/open/floor/engine/air,
 /area/ruin/space/has_grav/refuelingpost/engineering)
 "uJ" = (
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2,
@@ -2228,12 +2247,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/cargo)
 "wr" = (
-/obj/effect/turf_decal/corner/transparent/ntblue/half,
 /obj/machinery/atmospherics/components/unary/outlet_injector{
 	name = "Emergency Repressurization"
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/turf/open/floor/plasteel/white/plasma,
+/turf/open/floor/plasteel/mono/white/plasma,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "wu" = (
 /obj/item/stack/tile/plasteel/dark,
@@ -2434,12 +2452,6 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/nsorange/line,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/refuelingpost/cargo)
-"xW" = (
-/obj/machinery/mech_bay_recharge_port{
-	dir = 8
-	},
-/turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/has_grav/refuelingpost/cargo)
 "yc" = (
 /obj/structure/lattice,
@@ -2664,6 +2676,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer5,
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	dir = 1
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "BA" = (
@@ -3133,9 +3148,11 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "Ha" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on,
-/turf/open/floor/engine/air,
-/area/ruin/space/has_grav/refuelingpost/engineering)
+/obj/machinery/mech_bay_recharge_port{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/space/has_grav/refuelingpost/cargo)
 "Hb" = (
 /obj/effect/decal/cleanable/robot_debris,
 /obj/item/stock_parts/micro_laser/high,
@@ -3365,10 +3382,6 @@
 /turf/open/floor/plasteel/tech/grid/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "IV" = (
-/obj/effect/turf_decal/borderfloorblack/corner,
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 9
-	},
 /obj/structure/sign/warning{
 	pixel_x = 0;
 	pixel_y = 26
@@ -3378,7 +3391,7 @@
 	name = "Emergency Repressurization"
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/turf/open/floor/plasteel/airless,
+/turf/open/floor/plasteel/mono/dark/airless,
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "IY" = (
 /turf/open/floor/plasteel/mono,
@@ -3580,11 +3593,16 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "KB" = (
+/obj/structure/extinguisher_cabinet/directional/west,
+/obj/machinery/atmospherics/components/unary/outlet_injector{
+	dir = 4;
+	name = "Emergency Repressurization"
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/obj/structure/closet/emcloset/anchored,
-/turf/open/floor/plasteel/patterned/grid,
+/turf/open/floor/plasteel/mono/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "KE" = (
 /obj/machinery/power/apc/auto_name/directional/east,
@@ -3782,6 +3800,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer5,
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	dir = 1
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "MB" = (
@@ -4169,6 +4190,9 @@
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer5{
 	dir = 5
 	},
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	dir = 4
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "QS" = (
@@ -4283,11 +4307,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/unary/outlet_injector{
-	dir = 8;
-	name = "Emergency Repressurization"
-	},
-/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/structure/sign/warning{
 	pixel_x = 32;
 	pixel_y = 2
@@ -4327,6 +4346,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer5{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
@@ -4376,6 +4398,9 @@
 	},
 /obj/machinery/light/floor,
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer5{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
@@ -4827,7 +4852,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/green/hidden,
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "VV" = (
@@ -6426,7 +6453,7 @@ XT
 XT
 kD
 PJ
-Ha
+uH
 Ko
 RI
 uJ
@@ -6926,7 +6953,7 @@ du
 cL
 JG
 Gb
-en
+qf
 aW
 Gb
 xl
@@ -7374,7 +7401,7 @@ ry
 fr
 fr
 Gq
-qf
+en
 Ww
 pf
 Qk
@@ -7423,7 +7450,7 @@ sO
 MW
 fr
 Gq
-xW
+Ha
 FB
 Gq
 Gq
