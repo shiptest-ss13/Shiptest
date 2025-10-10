@@ -598,13 +598,15 @@
 	pixel_x = -6;
 	pixel_y = -21;
 	dir = 1;
-	id = "pup_bridge"
+	id = "pup_bridge";
+	name = "privacy lock"
 	},
 /obj/machinery/button/door{
 	pixel_x = 6;
 	pixel_y = -21;
 	dir = 1;
-	id = "puppis_window"
+	id = "puppis_window";
+	name = "window control"
 	},
 /obj/item/radio/intercom/table{
 	pixel_x = -10;
@@ -3568,7 +3570,6 @@
 	populate = 0
 	},
 /obj/item/clothing/under/clip/medic,
-/obj/item/storage/belt/medical/webbing/clip,
 /obj/item/pinpointer/crew,
 /obj/item/sensor_device,
 /obj/item/clothing/gloves/color/latex/nitrile/clip{
