@@ -217,7 +217,7 @@
 			<tr>
 			<td>Department of<br>Navy Issuances</td>
 			<td style="padding-top:%">
-			<b>Emergency Triage<br> General Personnel Notice</b>
+			<b>Emergency Triage<br> Medical Personnel Notice</b>
 			</td>
 			<td>03 - 09 - 505</td>
 			</tr>
@@ -225,8 +225,8 @@
 			<font>
 			<hr>
 			<div style=/"margin-left:5%;margin-right:5%/"><strong>UNDERSTANDING EMERGENCY MEDICAL TRIAGE:</strong><br><br>
-			<b>PREFACE:</b> In the occurance of a mass casualty event, you may find the of your assigned medical suite innadequate. In this situation, understanding and using proper triage techniques is a nessecity.<br><br>
-			<b>DIRECTING ASSISTANCE:</b> In a mass casualty situation, you as a medical provider are almost certain to be overwhelmed, but you <u>CANNOT</u> allow this to interrupt your ability to direct and provide care. Take volunteers and issue orders to idle hands when possible to lighten your load. "Walking wounded" may be directed to render self-aid and assist in buying you time for more critically injured casualties. Every little bit can add up to saving a life.<br><br>
+			<b>PREFACE:</b> In the occurence of a mass casualty event, you may find the accommodations of your assigned medical suite innadequate. In this situation, understanding and using proper triage techniques is a nessecity.<br><br>
+			<b>DIRECTING ASSISTANCE:</b> In a mass casualty situation, you as a medical provider are almost certain to be overwhelmed, but you <u>CANNOT</u> allow this to interrupt your ability to direct and provide care. Take volunteers and issue orders to idle hands when possible to help lighten your load. "Walking wounded" may be directed to render self-aid and assist in buying you time for more critically injured casualties. Every little bit can add up to saving a life.<br><br>
 			<b>IMMEDIATE-RED:</b> Casualties who are Critically injured and are likely to succumb to their wounds quickly, but may be saved by immediate medical intervention should be marked <u>RED</u> and be prioritized for care over other casualties until stabilized.<br><br>
 			<b>DELAYED-ORANGE:</b> Casualties who are severely injured, but are unlikely to succumb to their wounds quickly should be marked <u>ORANGE</u> and be stabilized as soon as possible once <u>IMMEDIATE</u> concern casualties have been stabilized.<br><br>
 			<b>MINOR-YELLOW:</b> Casualties who are injured, but their wounds are not immediately life threatening should be marked <u>YELLOW</u> and be directed to render self care or assist with the first aid of others until both <u>IMMEDIATE</u> and <u>DELAYED</u> casualties have been stabilized.
