@@ -329,6 +329,30 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/spacesuits/clip
+	name = "CLIP softsuit crate"
+	desc = "Contains one civilian-grade CLIP softsuit."
+	cost = 500
+	contains = list(/obj/item/clothing/suit/space/clip,
+					/obj/item/clothing/head/helmet/space/clip)
+	crate_name = "CLIP softsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/science
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/clip_armored
+	name = "CLIP armored softsuit crate"
+	desc = "Contains one civilian-grade CLIP armored softsuit."
+	cost = 1000
+	contains = list(/obj/item/clothing/suit/space/clip/armored,
+					/obj/item/clothing/head/helmet/space/clip/armored)
+	crate_name = "CLIP armored softsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/science
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/spacesuits/eod_clip
 	name = "CMM EOD Hardsuit Crate"
 	desc = "Contains one EOD hardsuit, to provide safety with explosives."
