@@ -570,7 +570,7 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 	spread_unwielded = 35
 	recoil = 2
 	recoil_unwielded = 10
-	wield_slowdown = SNIPER_SLOWDOWN
+	wield_slowdown = BOOMSLANG_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
