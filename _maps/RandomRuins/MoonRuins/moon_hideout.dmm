@@ -1043,6 +1043,11 @@
 /obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonmouth,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/hideout/fortress)
+"kW" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ruin/moon/hideout/fortress)
 "la" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
@@ -1112,7 +1117,7 @@
 /obj/structure/platform/industrial/corner{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/moon/lit,
+/turf/open/floor/concrete/pavement/airless,
 /area/ruin/moon/hideout/exterior)
 "lJ" = (
 /obj/item/storage/cans/sixbeer{
@@ -1369,7 +1374,7 @@
 /obj/structure/platform/industrial{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/moon/lit,
+/turf/open/floor/concrete/pavement/airless,
 /area/ruin/moon/hideout/exterior)
 "oo" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1524,7 +1529,8 @@
 	pixel_x = 21;
 	pixel_y = 2;
 	dir = 8;
-	name = "Shutter Control"
+	name = "Shutter Control";
+	id = "fortresswall"
 	},
 /turf/open/floor/concrete/reinforced,
 /area/ruin/moon/hideout)
@@ -1702,7 +1708,7 @@
 /area/ruin/moon/hideout/engineering)
 "rx" = (
 /obj/structure/platform/industrial/corner,
-/turf/open/floor/plating/asteroid/moon/lit,
+/turf/open/floor/concrete/pavement/airless,
 /area/ruin/moon/hideout/exterior)
 "ry" = (
 /obj/structure/poddoor_assembly/shutters,
@@ -1919,11 +1925,13 @@
 /turf/open/floor/plating,
 /area/ruin/moon/hideout)
 "tt" = (
-/obj/structure/poddoor_assembly/shutters,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "fortresswall"
 	},
 /turf/open/floor/concrete/reinforced,
 /area/ruin/moon/hideout)
@@ -1968,7 +1976,7 @@
 /area/ruin/moon/hideout/fortress)
 "tV" = (
 /obj/structure/platform/industrial,
-/turf/open/floor/plating/asteroid/moon/lit,
+/turf/open/floor/concrete/pavement/airless,
 /area/ruin/moon/hideout/exterior)
 "tZ" = (
 /obj/structure/grille,
@@ -2941,7 +2949,7 @@
 /obj/structure/platform/industrial{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/moon/lit,
+/turf/open/floor/concrete/pavement/airless,
 /area/ruin/moon/hideout/exterior)
 "Es" = (
 /obj/structure/crate_shelf,
@@ -3203,6 +3211,9 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plating,
 /area/ruin/moon/hideout/engineering)
+"GU" = (
+/turf/open/floor/plating/asteroid/moon/lit,
+/area/ruin/moon/hideout)
 "Hd" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -4073,7 +4084,7 @@
 /obj/structure/platform/industrial/corner{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/moon/lit,
+/turf/open/floor/concrete/pavement/airless,
 /area/ruin/moon/hideout/exterior)
 "QV" = (
 /obj/machinery/door/firedoor/border_only,
@@ -4134,6 +4145,16 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/moon/hideout)
+"RE" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "Cargo"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/moon/hideout/fortress)
 "RF" = (
 /obj/machinery/door/airlock/external{
 	name = "Reserve Dormitory"
@@ -4279,7 +4300,7 @@
 /obj/structure/platform/industrial{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/moon/lit,
+/turf/open/floor/concrete/pavement/airless,
 /area/ruin/moon/hideout/exterior)
 "Tj" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -4661,7 +4682,7 @@
 /obj/structure/platform/industrial/corner{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/moon/lit,
+/turf/open/floor/concrete/pavement/airless,
 /area/ruin/moon/hideout/exterior)
 "WA" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -5017,6 +5038,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/hideout/command)
+"ZX" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "fortresswall"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/moon/hideout)
 "ZZ" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -6571,7 +6598,7 @@ ep
 ep
 ep
 ep
-ep
+GU
 Ld
 Ld
 Ld
@@ -7256,7 +7283,7 @@ sI
 KF
 gM
 ep
-ry
+ZX
 Js
 ep
 jd
@@ -7541,7 +7568,7 @@ AH
 iO
 AH
 sI
-Mc
+ep
 ep
 LE
 ef
@@ -7611,9 +7638,9 @@ yP
 ud
 nN
 me
-sI
+kW
 ep
-ep
+Js
 jd
 pZ
 Mc
@@ -7682,9 +7709,9 @@ hl
 ZZ
 ZZ
 iy
-sI
-ep
-Mc
+RE
+Js
+Js
 jd
 pZ
 Mc
@@ -7753,9 +7780,9 @@ qp
 Lz
 bl
 fn
-sI
-Mc
-Mc
+kW
+Js
+Js
 jd
 vx
 bE
