@@ -344,6 +344,10 @@
 	pixel_y = 9;
 	pixel_x = -6
 	},
+/obj/item/stack/medical/splint/twelve{
+	pixel_y = 2;
+	pixel_x = 3
+	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical)
 "dE" = (
@@ -472,6 +476,10 @@
 /obj/item/bodycamera{
 	pixel_y = -10;
 	pixel_x = -5
+	},
+/obj/item/megaphone/command{
+	pixel_y = -13;
+	pixel_x = 2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -1612,7 +1620,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals_central7{
 	dir = 8
 	},
-/turf/open/floor/plasteel/telecomms_floor/tatmos,
+/turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "pX" = (
 /obj/effect/turf_decal/techfloor/orange{
@@ -1623,7 +1631,7 @@
 	},
 /obj/machinery/door/airlock{
 	dir = 4;
-	name = "Restroom";
+	name = "Head";
 	id_tag = "cth_b1"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -1635,7 +1643,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
 "qh" = (
-/turf/open/floor/plasteel/telecomms_floor/tatmos,
+/turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "qm" = (
 /obj/effect/turf_decal/techfloor{
@@ -1943,10 +1951,6 @@
 /obj/item/clipboard{
 	pixel_x = -11;
 	pixel_y = -4
-	},
-/obj/item/folder/pgf/empty_sheets{
-	pixel_x = -3;
-	pixel_y = -6
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -2264,7 +2268,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/open/floor/plasteel/telecomms_floor/tatmos,
+/turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "xK" = (
 /obj/structure/sign/warning/coldtemp,
@@ -2429,7 +2433,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plasteel/telecomms_floor/tatmos,
+/turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "zI" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -3375,6 +3379,7 @@
 	pixel_y = -25;
 	dir = 1
 	},
+/obj/item/paper/fluff/ship/pgf/triage,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "JX" = (
@@ -3514,7 +3519,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/open/floor/plasteel/telecomms_floor/tatmos,
+/turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "Lc" = (
 /obj/machinery/telecomms/hub{
@@ -4211,7 +4216,6 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
 	},
-/obj/item/megaphone/command,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "US" = (
