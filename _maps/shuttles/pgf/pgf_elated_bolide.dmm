@@ -133,6 +133,23 @@
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/crew/office)
+"aT" = (
+/obj/machinery/computer/telecomms/monitor{
+	network = "pgf_commnet";
+	dir = 4;
+	icon_state = "computer-left"
+	},
+/obj/structure/extinguisher_cabinet/directional/west{
+	pixel_y = -6
+	},
+/obj/machinery/firealarm/directional/west{
+	pixel_y = 6
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono,
+/area/ship/engineering/communications)
 "be" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Port Engines";
@@ -781,11 +798,26 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "ft" = (
-/obj/structure/reagent_dispensers/water_cooler,
-/obj/effect/turf_decal/corner/opaque/lime/diagonal,
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/plasteel/white,
-/area/ship/crew/ccommons)
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/techfloor/orange,
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/airlock/command{
+	dir = 2;
+	name = "Communications";
+	req_one_access = list(20, 57, 58, 10)
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering/communications)
 "fy" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm/captain)
@@ -1521,11 +1553,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "jB" = (
-/obj/structure/table,
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 10
-	},
-/turf/open/floor/plasteel/mono/dark,
+/obj/structure/reagent_dispensers/water_cooler,
+/obj/effect/turf_decal/corner/opaque/lime/diagonal,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plasteel/white,
 /area/ship/crew/ccommons)
 "jE" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -1573,6 +1604,29 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/port)
+"jR" = (
+/obj/machinery/telecomms/processor/preset_five{
+	id = "PGF Communications Processor";
+	network = "pgf_commnet"
+	},
+/turf/open/floor/circuit/telecomms,
+/area/ship/engineering/communications)
+"jT" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/green/corner,
+/obj/effect/turf_decal/spline/fancy/opaque/green{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/ccommons)
 "jZ" = (
 /obj/structure/table,
 /obj/structure/bedsheetbin{
@@ -1965,21 +2019,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
-"mR" = (
-/obj/structure/table/reinforced,
-/obj/item/radio/intercom/wideband/table{
-	dir = 1;
-	pixel_x = -13;
-	pixel_y = 4
-	},
-/obj/item/radio/intercom/table{
-	dir = 1;
-	pixel_x = 5;
-	pixel_y = 4
-	},
-/obj/machinery/newscaster/directional/north,
-/turf/open/floor/plasteel/mono,
-/area/ship/engineering/communications)
 "mW" = (
 /obj/structure/table/chem,
 /obj/item/storage/firstaid/regular{
@@ -2444,22 +2483,11 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "oV" = (
-/obj/machinery/computer/telecomms/monitor{
-	network = "pgf_commnet";
-	dir = 4;
-	icon_state = "computer-left"
+/obj/effect/turf_decal/spline/fancy/opaque/lime{
+	dir = 1
 	},
-/obj/structure/extinguisher_cabinet/directional/west{
-	pixel_y = -6
-	},
-/obj/machinery/firealarm/directional/west{
-	pixel_y = 6
-	},
-/obj/effect/turf_decal/borderfloor{
-	dir = 8
-	},
-/turf/open/floor/plasteel/mono,
-/area/ship/engineering/communications)
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/ccommons)
 "oY" = (
 /turf/template_noop,
 /area/template_noop)
@@ -4110,18 +4138,9 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Ae" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/green/corner,
-/obj/effect/turf_decal/spline/fancy/opaque/green{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
+/obj/structure/table,
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
@@ -5475,13 +5494,6 @@
 /obj/effect/landmark/start/head_of_security,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
-"Gw" = (
-/obj/machinery/telecomms/processor/preset_five{
-	id = "PGF Communications Processor";
-	network = "pgf_commnet"
-	},
-/turf/open/floor/circuit/telecomms,
-/area/ship/engineering/communications)
 "GD" = (
 /obj/machinery/atmospherics/components/trinary/mixer/flipped,
 /obj/effect/turf_decal/spline/fancy/opaque/black/corner{
@@ -6271,31 +6283,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/port)
 "KM" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/effect/turf_decal/techfloor/orange,
-/obj/effect/turf_decal/techfloor/orange{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/airlock/command{
-	dir = 2;
-	name = "Communications";
-	req_one_access = list(20, 57, 58, 10)
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/engineering/communications)
+/obj/structure/table,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/ccommons)
 "KQ" = (
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/effect/turf_decal/steeldecal/steel_decals_central6,
@@ -8326,12 +8316,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/hallway/fore)
-"XY" = (
-/obj/effect/turf_decal/spline/fancy/opaque/lime{
-	dir = 1
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/ccommons)
 "Yb" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -8342,9 +8326,20 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "Yg" = (
-/obj/structure/table,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/ccommons)
+/obj/structure/table/reinforced,
+/obj/item/radio/intercom/wideband/table{
+	dir = 1;
+	pixel_x = -13;
+	pixel_y = 4
+	},
+/obj/item/radio/intercom/table{
+	dir = 1;
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/machinery/newscaster/directional/north,
+/turf/open/floor/plasteel/mono,
+/area/ship/engineering/communications)
 "Yi" = (
 /obj/structure/platform/ship_three{
 	dir = 1
@@ -8435,19 +8430,11 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "YQ" = (
-/obj/machinery/button/door{
-	dir = 8;
-	id = "bolide_airlock";
-	name = "airlock shutters";
-	pixel_x = 21;
-	pixel_y = -8
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 2
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel/mono,
-/area/ship/engineering/communications)
+/obj/effect/spawner/random/vending/snack,
+/obj/effect/turf_decal/corner/opaque/lime/diagonal,
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plasteel/white,
+/area/ship/crew/ccommons)
 "YS" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
@@ -8714,11 +8701,19 @@
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
 "ZZ" = (
-/obj/effect/spawner/random/vending/snack,
-/obj/effect/turf_decal/corner/opaque/lime/diagonal,
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/plasteel/white,
-/area/ship/crew/ccommons)
+/obj/machinery/button/door{
+	dir = 8;
+	id = "bolide_airlock";
+	name = "airlock shutters";
+	pixel_x = 21;
+	pixel_y = -8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 2
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/mono,
+/area/ship/engineering/communications)
 
 (1,1,1) = {"
 oY
@@ -9594,12 +9589,12 @@ ym
 oY
 oY
 js
-Gw
+jR
 KA
 MP
 js
-ft
-XY
+jB
+oV
 Fr
 rZ
 rZ
@@ -9627,13 +9622,13 @@ Lw
 nk
 fU
 js
-ZZ
-XY
-Yg
-Yg
-Yg
-jB
+YQ
+oV
+KM
+KM
+KM
 Ae
+jT
 aK
 dq
 xA
@@ -9687,10 +9682,10 @@ Ov
 Iw
 js
 JJ
-Yg
-Yg
-Yg
-jB
+KM
+KM
+KM
+Ae
 nM
 Oz
 AY
@@ -9741,9 +9736,9 @@ oY
 js
 ol
 Jv
-oV
+aT
 Jx
-KM
+ft
 LS
 BG
 Je
@@ -9768,9 +9763,9 @@ oY
 oY
 oY
 js
-mR
+Yg
 fW
-YQ
+ZZ
 iz
 fy
 fy
