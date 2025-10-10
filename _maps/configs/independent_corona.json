@@ -22,17 +22,17 @@
 	"limit": 1,
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/independent/captain",
+			"outfit": "/datum/outfit/job/independent/captain/gown",
 			"officer": true,
 			"slots": 1
 		},
 		"Mechanic": {
-			"outfit": "/datum/outfit/job/independent/engineer",
+			"outfit": "/datum/outfit/job/independent/engineer/gown",
 			"slots": 1
 		},
-		"Deckhand": {
-			"outfit": "/datum/outfit/job/independent/assistant/fancy",
-			"slots": 2
+		"Passenger": {
+			"outfit": "/datum/outfit/job/independent/assistant/gown",
+			"slots": 3
 		}
 	},
 	"enabled": true
