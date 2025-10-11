@@ -164,7 +164,7 @@
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pgf/nock, /obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/nock)
 
-	/obj/item/gun/energy/kalix/pgf/nock/empty_cell
+/obj/item/gun/energy/kalix/pgf/nock/empty_cell
 	spawn_no_ammo = TRUE
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/pgf,
