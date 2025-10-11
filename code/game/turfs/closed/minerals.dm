@@ -128,7 +128,7 @@
 		return FALSE
 
 /turf/closed/mineral/proc/gets_drilled(user, give_exp = FALSE, slag_chance = 0)
-	if (mineralType && (mineralAmt > 0))
+	if(mineralType && (mineralAmt > 0))
 		//oops, you ruined the ore
 		if(prob(slag_chance))
 			new /obj/item/stack/ore/slag(src,mineralAmt)
@@ -137,16 +137,10 @@
 			new mineralType(src, mineralAmt)
 			if(ishuman(user))
 				SSblackbox.record_feedback("tally", "ore_mined", mineralAmt, mineralType)
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		if(give_exp)
-			if (mineralType && (mineralAmt > 0))
-				H.mind.adjust_experience(/datum/skill/mining, initial(mineralType.mine_experience) * mineralAmt)
-			else
-				H.mind.adjust_experience(/datum/skill/mining, 4)
 
 	for(var/obj/effect/temp_visual/mining_overlay/M in src)
 		qdel(M)
+
 	var/flags = NONE
 	if(defer_change) // TODO: make the defer change var a var for any changeturf flag
 		flags = CHANGETURF_DEFER_CHANGE
@@ -642,55 +636,6 @@
 	baseturfs = /turf/open/floor/plating/asteroid/icerock
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	defer_change = TRUE
-
-/turf/closed/mineral/strong
-	name = "Very strong rock"
-	desc = "Seems to be stronger than the other rocks in the area. Only a master of mining techniques could destroy this."
-	environment_type = "basalt"
-	turf_type = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
-	baseturfs = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
-	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
-	defer_change = 1
-	smooth_icon = 'icons/turf/walls/rock_wall.dmi'
-	base_icon_state = "rock_wall"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-
-/turf/closed/mineral/strong/attackby(obj/item/I, mob/user, params)
-	if(!ishuman(user))
-		to_chat(usr, span_warning("Only a more advanced species could break a rock such as this one!"))
-		return FALSE
-	var/mob/living/carbon/human/H = user
-	if(H.mind.get_skill_level(/datum/skill/mining) >= SKILL_LEVEL_MASTER)
-		. = ..()
-	else
-		to_chat(usr, span_warning("The rock seems to be too strong to destroy. Maybe I can break it once I become a master miner."))
-
-
-/turf/closed/mineral/strong/gets_drilled(mob/user)
-	if(!ishuman(user))
-		return // see attackby
-	var/mob/living/carbon/human/H = user
-	if(!(H.mind.get_skill_level(/datum/skill/mining) >= SKILL_LEVEL_MASTER))
-		return
-	drop_ores()
-	H.client.give_award(/datum/award/achievement/skill/legendary_miner, H)
-	var/flags = NONE
-	if(defer_change) // TODO: make the defer change var a var for any changeturf flag
-		flags = CHANGETURF_DEFER_CHANGE
-	ScrapeAway(flags=flags)
-	addtimer(CALLBACK(src, PROC_REF(AfterChange)), 1, TIMER_UNIQUE)
-	playsound(src, 'sound/effects/break_stone.ogg', 50, TRUE) //beautiful destruction
-	H.mind.adjust_experience(/datum/skill/mining, 100) //yay!
-
-/turf/closed/mineral/strong/proc/drop_ores()
-	new /obj/item/stack/sheet/mineral/hidden/hellstone(src, 5)
-
-/turf/closed/mineral/strong/acid_melt()
-	return
-
-/turf/closed/mineral/strong/ex_act(severity, target)
-	return
-
 
 /turf/closed/mineral/iron/whitesands
 	icon = 'icons/turf/walls/ws_walls.dmi'

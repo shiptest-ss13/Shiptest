@@ -489,10 +489,9 @@
 	//NC.mergeConnectedNetworksOnTurf()
 	last_piece = NC
 	return 1
-//WS Edit End - Readded from Smartwire Revert
 
 /obj/item/mecha_parts/mecha_equipment/salvage_saw
-	name = "109-C Salvage Saw"
+	name = "109-C salvage saw"
 	desc = "Equipment for cutting open walls and airlocks."
 	icon_state = "mecha_saw"
 	equip_cooldown = 5
@@ -502,9 +501,10 @@
 	harmful = TRUE
 	tool_behaviour = TOOL_DECONSTRUCT
 	toolspeed = 0.3
-	wall_decon_damage = 400
+	wall_decon_damage = 125
 	hitsound = 'sound/weapons/anglegrinder.ogg'
 	usesound = 'sound/weapons/anglegrinder.ogg'
+
 	var/datum/effect_system/spark_spread/spark_system
 
 /obj/item/mecha_parts/mecha_equipment/salvage_saw/can_attach(obj/mecha/M as obj)
