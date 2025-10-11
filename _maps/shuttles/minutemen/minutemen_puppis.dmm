@@ -361,6 +361,7 @@
 /area/ship/engineering/engines/port)
 "dt" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/obj/machinery/meter/atmos,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "dE" = (
@@ -581,8 +582,8 @@
 	dir = 9
 	},
 /obj/machinery/light_switch{
-	pixel_x = 3;
-	pixel_y = -21;
+	pixel_x = -10;
+	pixel_y = -20;
 	dir = 1
 	},
 /obj/structure/cable{
@@ -1783,7 +1784,6 @@
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer4{
 	dir = 6
 	},
-/obj/machinery/meter/atmos,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "sE" = (
@@ -2761,7 +2761,6 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 10
 	},
-/obj/machinery/meter/atmos,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Da" = (
@@ -3669,6 +3668,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer4,
+/obj/machinery/meter/atmos,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "Ns" = (
@@ -3988,7 +3988,6 @@
 "Pa" = (
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden,
 /obj/effect/turf_decal/siding/black/corner,
-/obj/machinery/meter/atmos,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Pd" = (
@@ -4225,11 +4224,6 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/machinery/door/airlock/command/glass{
-	dir = 8;
-	name = "Bridge";
-	req_one_access = list(19, 3)
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -4238,6 +4232,11 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/command{
+	dir = 8;
+	req_one_access = list(19, 3);
+	name = "Bridge"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -4978,7 +4977,6 @@
 	id = "pup_engine1";
 	name = "thruster shields"
 	},
-/obj/machinery/meter/atmos,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "Zv" = (
