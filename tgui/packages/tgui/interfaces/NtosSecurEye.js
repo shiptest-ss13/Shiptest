@@ -1,19 +1,20 @@
+import { Button, ByondUi } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Button, ByondUi } from '../components';
 import { NtosWindow } from '../layouts';
 import {
+  CameraConsoleContent,
   prevNextCamera,
   selectCameras,
-  CameraConsoleContent,
 } from './CameraConsole';
 
-export const NtosSecurEye = (props, context) => {
-  const { act, data, config } = useBackend(context);
+export const NtosSecurEye = (props) => {
+  const { act, data, config } = useBackend();
   const { PC_device_theme, mapRef, activeCamera } = data;
   const cameras = selectCameras(data.cameras);
   const [prevCameraName, nextCameraName] = prevNextCamera(
     cameras,
-    activeCamera
+    activeCamera,
   );
   return (
     <NtosWindow width={800} height={600} theme={PC_device_theme}>

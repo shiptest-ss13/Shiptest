@@ -4,52 +4,35 @@
  * @license MIT
  */
 
-import { clamp01 } from 'common/math';
+import { Box, Button, Input, Section, Stack } from 'tgui-core/components';
+import { KEY_DOWN, KEY_ENTER, KEY_SPACE, KEY_UP } from 'tgui-core/keycodes';
+import { clamp01 } from 'tgui-core/math';
+
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, Section, Input, Stack } from '../components';
-import { KEY_DOWN, KEY_UP, KEY_ENTER, KEY_SPACE } from 'common/keycodes';
 import { Window } from '../layouts';
 
 let lastScrollTime = 0;
 
-export const ListInput = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ListInput = (props) => {
+  const { act, data } = useBackend();
   const { title, message, buttons, timeout } = data;
 
   // Search
-  const [showSearchBar, setShowSearchBar] = useLocalState(
-    context,
-    'search_bar',
-    false
-  );
+  const [showSearchBar, setShowSearchBar] = useLocalState('search_bar', false);
   const [displayedArray, setDisplayedArray] = useLocalState(
-    context,
     'displayed_array',
-    buttons
+    buttons,
   );
 
   // KeyPress
-  const [searchArray, setSearchArray] = useLocalState(
-    context,
-    'search_array',
-    []
-  );
-  const [searchIndex, setSearchIndex] = useLocalState(
-    context,
-    'search_index',
-    0
-  );
-  const [lastCharCode, setLastCharCode] = useLocalState(
-    context,
-    'last_char_code',
-    null
-  );
+  const [searchArray, setSearchArray] = useLocalState('search_array', []);
+  const [searchIndex, setSearchIndex] = useLocalState('search_index', 0);
+  const [lastCharCode, setLastCharCode] = useLocalState('last_char_code', null);
 
   // Selected Button
   const [selectedButton, setSelectedButton] = useLocalState(
-    context,
     'selected_button',
-    buttons[0]
+    buttons[0],
   );
 
   const handleKeyDown = (e) => {
@@ -97,7 +80,7 @@ export const ListInput = (props, context) => {
       }
     } else {
       const resultArray = displayedArray.filter(
-        (value) => value.substring(0, 1).toLowerCase() === charCode
+        (value) => value.substring(0, 1).toLowerCase() === charCode,
       );
 
       if (resultArray.length > 0) {
@@ -115,7 +98,7 @@ export const ListInput = (props, context) => {
   };
 
   return (
-    <Window title={title} width={325} height={325} resizable>
+    <Window title={title} width={325} height={325}>
       {timeout !== undefined && <Loader value={timeout} />}
       <Window.Content>
         <Stack fill vertical>
@@ -171,8 +154,8 @@ export const ListInput = (props, context) => {
                   setDisplayedArray(
                     buttons.filter(
                       (val) =>
-                        val.toLowerCase().search(value.toLowerCase()) !== -1
-                    )
+                        val.toLowerCase().search(value.toLowerCase()) !== -1,
+                    ),
                   )
                 }
               />

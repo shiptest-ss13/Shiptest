@@ -1,17 +1,18 @@
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
-  Grid,
+  Flex,
   LabeledList,
   NumberInput,
   ProgressBar,
   Section,
-} from '../components';
+} from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
-export const SolarControl = (props, context) => {
-  const { act, data } = useBackend(context);
+export const SolarControl = (props) => {
+  const { act, data } = useBackend();
   const {
     generated,
     generated_ratio,
@@ -35,8 +36,8 @@ export const SolarControl = (props, context) => {
             />
           }
         >
-          <Grid>
-            <Grid.Column>
+          <Flex>
+            <Flex.Column>
               <LabeledList>
                 <LabeledList.Item
                   label="Solar tracker"
@@ -51,8 +52,8 @@ export const SolarControl = (props, context) => {
                   {connected_panels}
                 </LabeledList.Item>
               </LabeledList>
-            </Grid.Column>
-            <Grid.Column size={1.5}>
+            </Flex.Column>
+            <Flex.Column size={1.5}>
               <LabeledList>
                 <LabeledList.Item label="Power output">
                   <ProgressBar
@@ -69,8 +70,8 @@ export const SolarControl = (props, context) => {
                   </ProgressBar>
                 </LabeledList.Item>
               </LabeledList>
-            </Grid.Column>
-          </Grid>
+            </Flex.Column>
+          </Flex>
         </Section>
         <Section title="Controls">
           <LabeledList>
@@ -105,7 +106,7 @@ export const SolarControl = (props, context) => {
                   minValue={-360}
                   maxValue={+720}
                   value={azimuth_current}
-                  onDrag={(e, value) => act('azimuth', { value })}
+                  onDrag={(value) => act('azimuth', { value })}
                 />
               )}
               {tracking_state === 1 && (
@@ -121,7 +122,7 @@ export const SolarControl = (props, context) => {
                     const sign = Math.sign(rate) > 0 ? '+' : '-';
                     return sign + Math.abs(rate);
                   }}
-                  onDrag={(e, value) => act('azimuth_rate', { value })}
+                  onDrag={(value) => act('azimuth_rate', { value })}
                 />
               )}
               {tracking_state === 2 && (
