@@ -13,3 +13,5 @@
 	species_r_arm = /obj/item/bodypart/r_arm/monkey
 	species_l_leg = /obj/item/bodypart/leg/left/monkey
 	species_r_leg = /obj/item/bodypart/leg/right/monkey
+
+	fire_overlay = "monkey_burning"

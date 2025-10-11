@@ -42,7 +42,7 @@
 		cooked.adjust_bodytemperature(heatpwr)
 		if(prob(35))
 			cooked.adjust_fire_stacks(15)
-			cooked.IgniteMob()
+			cooked.ignite_mob()
 		else
 			if(cooked.on_fire)
 				cooked.adjust_fire_stacks(10)

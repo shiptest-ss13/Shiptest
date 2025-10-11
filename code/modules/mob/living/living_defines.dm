@@ -80,8 +80,9 @@
 
 	var/tod = null /// Time of death
 
-	var/on_fire = 0 ///The "Are we on fire?" var
-	var/fire_stacks = 0 ///Tracks how many stacks of fire we have on, max is usually 20
+	/// Helper vars for quick access to firestacks, these should be updated every time firestacks are adjusted
+	var/on_fire = FALSE
+	var/fire_stacks = 0
 
 	var/holder = null //The holder for blood crawling
 	var/ventcrawler = 0 //0 No vent crawling, 1 vent crawling in the nude, 2 vent crawling always

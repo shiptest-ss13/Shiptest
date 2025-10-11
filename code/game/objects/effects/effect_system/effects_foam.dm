@@ -73,8 +73,8 @@
 /obj/effect/particle_effect/foam/firefighting/foam_mob(mob/living/L)
 	if(!istype(L))
 		return
-	L.adjust_fire_stacks(-2)
-	L.ExtinguishMob()
+	L.adjust_wet_stacks(2)
+	L.extinguish_mob()
 
 /obj/effect/particle_effect/foam/firefighting/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	return
@@ -363,7 +363,7 @@
 				U.update_appearance()
 				U.visible_message(span_danger("[U] sealed shut!"))
 		for(var/mob/living/L in O)
-			L.ExtinguishMob()
+			L.extinguish_mob()
 		for(var/obj/item/Item in O)
 			Item.extinguish()
 
