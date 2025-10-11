@@ -800,6 +800,9 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 		)
 	)
 
+/obj/item/gun/ballistic/shotgun/cm15/no_mag
+	default_ammo_type = FALSE
+
 /obj/item/gun/ballistic/shotgun/cm15/incendiary
 	default_ammo_type = /obj/item/ammo_box/magazine/cm15_12g/incendiary
 
