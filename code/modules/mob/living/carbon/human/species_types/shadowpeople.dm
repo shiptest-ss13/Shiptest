@@ -6,7 +6,7 @@
 	name = "???"
 	id = SPECIES_SHADOW
 	meat = /obj/item/food/meat/slab/human/mutant/shadow
-	species_traits = list(NOBLOOD,NOEYESPRITES)
+	species_traits = list(NOBLOOD)
 	inherent_traits = list(TRAIT_RADIMMUNE,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH)
 	inherent_factions = list("faithless")
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC
@@ -35,7 +35,7 @@
 	id = "nightmare"
 	burnmod = 1.5
 	no_equip = list(ITEM_SLOT_MASK, ITEM_SLOT_OCLOTHING, ITEM_SLOT_GLOVES, ITEM_SLOT_FEET, ITEM_SLOT_ICLOTHING, ITEM_SLOT_SUITSTORE)
-	species_traits = list(NOBLOOD,NO_UNDERWEAR,NO_DNA_COPY,NOTRANSSTING,NOEYESPRITES)
+	species_traits = list(NOBLOOD,NO_UNDERWEAR,NO_DNA_COPY,NOTRANSSTING)
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_NOBREATH,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_CHUNKYFINGERS,TRAIT_RADIMMUNE,TRAIT_VIRUSIMMUNE,TRAIT_PIERCEIMMUNE,TRAIT_NODISMEMBER,TRAIT_NOHUNGER)
 	mutanteyes = /obj/item/organ/eyes/night_vision/nightmare
 	mutantheart = /obj/item/organ/heart/nightmare

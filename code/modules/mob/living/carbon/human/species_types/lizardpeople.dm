@@ -4,7 +4,7 @@
 	id = SPECIES_SARATHI
 	default_color = "00FF00"
 	species_age_max = 175
-	species_traits = list(MUTCOLORS, EYECOLOR, LIPS, SCLERA, EMOTE_OVERLAY, MUTCOLORS_SECONDARY, HAS_FLESH, HAS_BONE)
+	species_traits = list(MUTCOLORS, LIPS, SCLERA, EMOTE_OVERLAY, MUTCOLORS_SECONDARY, HAS_FLESH, HAS_BONE)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
 	mutant_bodyparts = list("tail_lizard", "face_markings", "frills", "horns", "spines", "body_markings", "legs")
 	mutanttongue = /obj/item/organ/tongue/lizard
@@ -118,7 +118,7 @@ Lizard subspecies: ASHWALKERS
 	name = "Ash Walker"
 	id = SPECIES_ASHWALKER
 	examine_limb_id = SPECIES_SARATHI
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS, NO_UNDERWEAR)
+	species_traits = list(MUTCOLORS,LIPS, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_CHUNKYFINGERS,TRAIT_NOBREATH)
 	species_language_holder = /datum/language_holder/lizard/ash
 	digitigrade_customization = DIGITIGRADE_FORCED
@@ -129,7 +129,7 @@ Lizard subspecies: ASHWALKERS
 	name = "Kobold"
 	id = SPECIES_KOBOLD
 	examine_limb_id = SPECIES_SARATHI
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS, NO_UNDERWEAR)
+	species_traits = list(MUTCOLORS,LIPS, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_CHUNKYFINGERS,TRAIT_NOBREATH)
 	species_language_holder = /datum/language_holder/lizard/ash
 

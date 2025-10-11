@@ -688,7 +688,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			standing += lip_overlay
 
 		// eyes
-		if(!(NOEYESPRITES in species_traits))
+		if(HD.draw_eyes)
 			var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 			var/mutable_appearance/eye_overlay
 			var/mutable_appearance/sclera_overlay
@@ -704,7 +704,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 						eye_overlay = mutable_appearance(species_eye_path || 'icons/mob/human_face.dmi', eyes.eye_icon_state, -BODYPARTS_LAYER)
 						sclera_overlay = mutable_appearance('icons/mob/human_face.dmi', eyes.sclera_icon_state, -BODYPARTS_LAYER)
 
-					if((EYECOLOR in species_traits) && eyes)
+					if(HD.greyscale_eyes && eyes)
 						eye_overlay.color = "#" + H.eye_color
 
 					if((SCLERA in species_traits) && eyes)
@@ -843,7 +843,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			bodyparts_to_add -= "ears"
 
 	if("ipc_screen" in mutant_bodyparts)
-		if(!H.dna.features["ipc_screen"] || H.dna.features["ipc_screen"] == "None" || (H.wear_mask && (H.wear_mask.flags_inv & HIDEEYES)) || !HD)
+		if(!H.dna.features["ipc_screen"] || H.dna.features["ipc_screen"] == "None" || (H.wear_mask && (H.wear_mask.flags_inv & HIDEEYES)) || !HD || !(HD.bodytype & BODYTYPE_BOXHEAD))
 			bodyparts_to_add -= "ipc_screen"
 
 	if("ipc_antenna" in mutant_bodyparts)
