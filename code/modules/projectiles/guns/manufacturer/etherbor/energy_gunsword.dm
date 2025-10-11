@@ -247,6 +247,10 @@
 
 /obj/item/gun/energy/kalix/pgf/medium/empty_cell
 	spawn_no_ammo = TRUE
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix,
+	)
 
 /obj/item/gun/energy/kalix/pgf/heavy
 	name = "\improper Etherbor HBG-7"
