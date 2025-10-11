@@ -22,7 +22,7 @@
 	lefthand_file = 'icons/mob/inhands/misc/sheets_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/sheets_righthand.dmi'
 
-/obj/item/reagent_containers/glass/chem_jug/AltClick(mob/user)
+/obj/item/reagent_containers/glass/chem_jug/attack_self_secondary(mob/user)
 	. = ..()
 	if(tamper && !cap_on)
 		tamper = FALSE

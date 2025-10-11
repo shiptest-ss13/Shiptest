@@ -85,7 +85,7 @@
 		det_time = newtime
 		to_chat(user, "Timer set for [det_time] seconds.")
 
-/obj/item/grenade/c4/afterattack(atom/movable/AM, mob/user, flag)
+/obj/item/grenade/c4/afterattack_secondary(atom/movable/AM, mob/user, flag)
 	. = ..()
 	aim_dir = get_dir(user,AM)
 	if(!flag)
