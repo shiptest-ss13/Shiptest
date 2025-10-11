@@ -52,14 +52,6 @@
 "bd" = (
 /turf/closed/wall/mineral/snow,
 /area/ruin/unpowered/crashed_holemaker)
-"bi" = (
-/obj/effect/turf_decal/snow,
-/obj/machinery/firealarm/directional/east,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating/icemoon,
-/area/ruin/unpowered/crashed_holemaker)
 "bj" = (
 /obj/machinery/door/airlock/glass_large{
 	name = "Theatre"
@@ -67,14 +59,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet,
 /area/ruin/unpowered/crashed_holemaker)
+"bm" = (
+/obj/effect/decal/cleanable/glass,
+/obj/structure/grille/broken,
+/obj/effect/turf_decal/snow,
+/turf/open/floor/plating/icemoon,
+/area/ruin/unpowered/crashed_holemaker)
 "br" = (
 /obj/structure/bookcase/random/fiction,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/ruin/unpowered/crashed_holemaker)
-"bC" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/snow,
-/turf/open/floor/plating,
 /area/ruin/unpowered/crashed_holemaker)
 "bU" = (
 /obj/machinery/door/firedoor/closed,
@@ -83,12 +76,6 @@
 "bZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ruin/unpowered/crashed_holemaker)
-"ca" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood{
-	icon_state = "wood-broken3"
-	},
 /area/ruin/unpowered/crashed_holemaker)
 "ch" = (
 /obj/item/stack/sheet/mineral/wood,
@@ -125,23 +112,6 @@
 /mob/living/simple_animal/hostile/poison/giant_spider/hunter/ice,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/crashed_holemaker)
-"cA" = (
-/obj/structure/window/spawner/west,
-/obj/structure/displaycase_chassis,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood,
-/area/ruin/unpowered/crashed_holemaker)
-"cG" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/power/port_gen/pacman,
-/obj/structure/cable/orange{
-	icon_state = "4-10"
-	},
-/obj/structure/cable/orange{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/crashed_holemaker)
 "cI" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 6
@@ -169,11 +139,27 @@
 /obj/effect/landmark/mission_poi/main,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/crashed_holemaker)
+"cR" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable/orange{
+	icon_state = "4-10"
+	},
+/obj/structure/cable/orange{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered/crashed_holemaker)
 "cS" = (
 /obj/structure/table/wood,
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
+/area/ruin/unpowered/crashed_holemaker)
+"cU" = (
+/obj/machinery/newscaster/directional/north,
+/obj/structure/bed/dogbed,
+/turf/open/floor/plating/asteroid/snow/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
 "cV" = (
 /obj/machinery/door/airlock/command/glass{
@@ -202,6 +188,15 @@
 /obj/item/stack/sheet/mineral/wood,
 /turf/open/floor/wood,
 /area/ruin/unpowered/crashed_holemaker)
+"dO" = (
+/obj/effect/turf_decal/snow,
+/obj/machinery/light/broken/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/icemoon,
+/area/ruin/unpowered/crashed_holemaker)
 "eg" = (
 /obj/effect/turf_decal/corner/opaque/black/diagonal{
 	dir = 4
@@ -211,14 +206,6 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/crashed_holemaker)
-"ek" = (
-/obj/structure/window/reinforced/spawner,
-/obj/structure/window/reinforced/spawner/west,
-/obj/effect/decal/cleanable/glass,
-/obj/item/shard,
-/obj/item/paper_bin,
-/turf/open/floor/plating/asteroid/snow/ice/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
 "ey" = (
 /obj/structure/chair/office/dark{
@@ -242,6 +229,16 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
+"eF" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/orange{
+	icon_state = "5-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered/crashed_holemaker)
 "eG" = (
 /obj/item/stack/tile/plasteel,
 /turf/open/floor/plating,
@@ -258,6 +255,12 @@
 "eL" = (
 /turf/open/floor/plating/asteroid/snow/ice/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
+"eM" = (
+/obj/effect/turf_decal/snow,
+/obj/machinery/light/broken/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/icemoon,
+/area/ruin/unpowered/crashed_holemaker)
 "eP" = (
 /obj/effect/turf_decal/chapel{
 	dir = 1
@@ -265,18 +268,13 @@
 /obj/item/stack/sheet/mineral/wood,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/crashed_holemaker)
-"eT" = (
-/obj/effect/decal/cleanable/glass,
-/obj/item/shard,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
+"eV" = (
+/obj/effect/turf_decal/snow,
+/obj/structure/frame/computer{
+	dir = 4
 	},
-/obj/structure/window/spawner,
-/obj/structure/cable/orange{
-	icon_state = "4-9"
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/crashed_holemaker)
+/turf/open/floor/pod,
+/area/overmap_encounter/planetoid/cave/explored)
 "fn" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
@@ -333,6 +331,15 @@
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/wood,
 /area/ruin/unpowered/crashed_holemaker)
+"gm" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/obj/structure/displaycase_chassis,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/crashed_holemaker)
 "gF" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/suit_storage_unit/open,
@@ -366,6 +373,11 @@
 /obj/item/stack/sheet/mineral/snow,
 /turf/open/floor/plating/asteroid/snow/ice/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
+"hy" = (
+/obj/structure/bookcase/random/reference,
+/obj/machinery/light/broken/directional/east,
+/turf/open/floor/wood,
+/area/ruin/unpowered/crashed_holemaker)
 "hO" = (
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plating/snowed/smoothed/icemoon,
@@ -390,15 +402,6 @@
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/crashed_holemaker)
-"it" = (
-/obj/item/stack/tile/plasteel,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/effect/turf_decal/snow,
-/turf/open/floor/plating,
-/area/ruin/unpowered/crashed_holemaker)
 "iw" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
@@ -407,6 +410,13 @@
 	dir = 4
 	},
 /turf/open/floor/plastic,
+/area/ruin/unpowered/crashed_holemaker)
+"iz" = (
+/obj/machinery/light/broken/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood{
+	icon_state = "wood-broken3"
+	},
 /area/ruin/unpowered/crashed_holemaker)
 "iM" = (
 /obj/effect/turf_decal/chapel{
@@ -418,11 +428,6 @@
 	},
 /obj/effect/spawner/random/bedsheet/double,
 /turf/open/floor/plasteel/dark,
-/area/ruin/unpowered/crashed_holemaker)
-"iN" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood,
 /area/ruin/unpowered/crashed_holemaker)
 "iS" = (
 /obj/item/shard,
@@ -463,6 +468,11 @@
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/crashed_holemaker)
+"js" = (
+/obj/machinery/light/broken/directional/east,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/icemoon,
+/area/ruin/unpowered/crashed_holemaker)
 "jz" = (
 /obj/structure/bed,
 /obj/item/bedsheet/captain,
@@ -500,13 +510,6 @@
 	dir = 4
 	},
 /turf/open/floor/plastic,
-/area/ruin/unpowered/crashed_holemaker)
-"jU" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/effect/decal/cleanable/blood/footprints,
-/turf/open/floor/plasteel/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
 "jW" = (
 /obj/structure/bookcase/random/nonfiction,
@@ -548,20 +551,9 @@
 	},
 /turf/open/floor/plating/asteroid/snow/ice/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
-"kt" = (
-/obj/effect/turf_decal/snow,
-/obj/item/cane,
-/turf/open/floor/plasteel/icemoon,
-/area/ruin/unpowered/crashed_holemaker)
 "kz" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
-/area/ruin/unpowered/crashed_holemaker)
-"kF" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/machinery/light/broken/directional/north,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood,
 /area/ruin/unpowered/crashed_holemaker)
 "kH" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -589,6 +581,15 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/wood,
 /area/ruin/unpowered/crashed_holemaker)
+"lc" = (
+/obj/item/shard,
+/obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/orange{
+	icon_state = "6-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered/crashed_holemaker)
 "lm" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/toilet{
@@ -605,17 +606,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/random/structure/crate_abandoned,
 /turf/open/floor/plating,
-/area/ruin/unpowered/crashed_holemaker)
-"lu" = (
-/obj/effect/turf_decal/snow,
-/obj/item/stack/tile/plasteel,
-/turf/open/floor/plating/icemoon,
-/area/ruin/unpowered/crashed_holemaker)
-"lN" = (
-/obj/effect/turf_decal/trimline/transparent/ntblue/arrow_ccw,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/chair/comfy/orange/directional/west,
-/turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/unpowered/crashed_holemaker)
 "lO" = (
 /obj/effect/turf_decal/ntspaceworks_small/right,
@@ -657,11 +647,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/crashed_holemaker)
-"md" = (
-/obj/structure/window/spawner/west,
-/obj/structure/window/spawner,
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/ruin/unpowered/crashed_holemaker)
 "mn" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 9
@@ -672,15 +657,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/crashed_holemaker)
-"ms" = (
-/obj/effect/turf_decal/snow,
-/obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/plating,
-/area/ruin/unpowered/crashed_holemaker)
-"mu" = (
-/obj/effect/turf_decal/snow,
-/turf/open/floor/plating/icemoon,
-/area/overmap_encounter/planetoid/cave/explored)
 "mx" = (
 /obj/effect/turf_decal/trimline/opaque/ntblue/corner,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -696,16 +672,6 @@
 "mA" = (
 /obj/machinery/vending/boozeomat/all_access,
 /turf/open/floor/plating,
-/area/ruin/unpowered/crashed_holemaker)
-"mO" = (
-/obj/effect/decal/cleanable/glass,
-/obj/item/wrench,
-/obj/effect/turf_decal/corner/opaque/green/border,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
 "mU" = (
 /obj/effect/turf_decal/spline/fancy/transparent/neutral{
@@ -753,13 +719,6 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/wood,
 /area/ruin/unpowered/crashed_holemaker)
-"nO" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/icemoon,
-/area/ruin/unpowered/crashed_holemaker)
 "nW" = (
 /turf/template_noop,
 /area/template_noop)
@@ -773,11 +732,19 @@
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
-"oj" = (
-/obj/effect/decal/cleanable/glass,
-/obj/structure/grille/broken,
+"od" = (
 /obj/effect/turf_decal/snow,
-/turf/open/floor/plating/icemoon,
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/turf/open/floor/pod,
+/area/overmap_encounter/planetoid/cave/explored)
+"ok" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
 "or" = (
 /obj/effect/turf_decal/borderfloor{
@@ -809,11 +776,6 @@
 /obj/effect/turf_decal/snow,
 /turf/open/floor/wood,
 /area/ruin/unpowered/crashed_holemaker)
-"pl" = (
-/obj/structure/window/reinforced/spawner/east,
-/obj/effect/decal/cleanable/glass,
-/turf/open/floor/plating/asteroid/snow/ice/icemoon,
-/area/ruin/unpowered/crashed_holemaker)
 "pn" = (
 /obj/structure/girder/reinforced,
 /turf/open/floor/plating/asteroid/snow/icemoon,
@@ -825,35 +787,19 @@
 	icon_state = "wood-broken6"
 	},
 /area/ruin/unpowered/crashed_holemaker)
-"pz" = (
-/obj/effect/turf_decal/trimline/transparent/ntblue/arrow_ccw{
-	dir = 10
-	},
-/obj/effect/turf_decal/borderfloor,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/extinguisher/mini/empty,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/unpowered/crashed_holemaker)
 "pF" = (
 /obj/effect/turf_decal/snow,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/unpowered/crashed_holemaker)
-"pL" = (
-/obj/effect/turf_decal/snow,
-/obj/item/stack/cable_coil/cut/yellow,
-/turf/open/floor/plating/icemoon,
-/area/overmap_encounter/planetoid/cave/explored)
+"pK" = (
+/obj/structure/window/reinforced/spawner/north,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating/asteroid/snow/ice/icemoon,
+/area/ruin/unpowered/crashed_holemaker)
 "pV" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/open/floor/plating,
-/area/ruin/unpowered/crashed_holemaker)
-"qa" = (
-/obj/structure/window/reinforced/spawner/east,
-/obj/structure/window/reinforced/spawner,
-/obj/item/shard,
-/obj/effect/decal/cleanable/glass,
-/turf/open/floor/plating/asteroid/snow/ice/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
 "qo" = (
 /obj/effect/turf_decal/borderfloor{
@@ -872,6 +818,16 @@
 "qr" = (
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
+"qD" = (
+/obj/effect/decal/cleanable/glass,
+/obj/item/wrench,
+/obj/effect/turf_decal/corner/opaque/green/border,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/icemoon,
+/area/ruin/unpowered/crashed_holemaker)
 "qF" = (
 /turf/closed/wall/mineral/titanium/survival,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -895,6 +851,11 @@
 	dir = 1
 	},
 /turf/open/floor/wood,
+/area/ruin/unpowered/crashed_holemaker)
+"rh" = (
+/obj/effect/turf_decal/snow,
+/obj/item/stack/tile/plasteel,
+/turf/open/floor/plating/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
 "rk" = (
 /obj/item/stack/tile/wood,
@@ -932,6 +893,14 @@
 /obj/structure/fluff/broken_flooring,
 /turf/open/floor/plating,
 /area/ruin/unpowered/crashed_holemaker)
+"rC" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/item/stack/sheet/animalhide/corgi,
+/obj/structure/closet/secure_closet/freezer,
+/turf/open/floor/wood,
+/area/ruin/unpowered/crashed_holemaker)
 "rL" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
@@ -956,14 +925,17 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/crashed_holemaker)
-"rW" = (
-/obj/effect/turf_decal/snow,
-/obj/machinery/light/broken/directional/west,
-/obj/effect/decal/cleanable/dirt/dust,
+"rZ" = (
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard,
 /obj/structure/cable/yellow{
-	icon_state = "1-2"
+	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/icemoon,
+/obj/structure/window/spawner,
+/obj/structure/cable/orange{
+	icon_state = "4-9"
+	},
+/turf/open/floor/plating,
 /area/ruin/unpowered/crashed_holemaker)
 "sd" = (
 /obj/structure/rack,
@@ -990,6 +962,20 @@
 /obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
+"sR" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/machinery/light/broken/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/unpowered/crashed_holemaker)
+"sZ" = (
+/obj/effect/turf_decal/snow,
+/obj/machinery/firealarm/directional/east,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/icemoon,
+/area/ruin/unpowered/crashed_holemaker)
 "td" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/flashlight/lamp/green{
@@ -999,13 +985,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/royalblue,
 /area/ruin/unpowered/crashed_holemaker)
+"tg" = (
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
+/area/ruin/unpowered/crashed_holemaker)
 "tm" = (
 /turf/open/floor/plating/icemoon,
-/area/ruin/unpowered/crashed_holemaker)
-"tt" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/storage/toolbox/electrical,
-/turf/open/floor/plasteel/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
 "ty" = (
 /obj/structure/loom,
@@ -1046,6 +1032,12 @@
 	icon_state = "wood-broken6"
 	},
 /area/ruin/unpowered/crashed_holemaker)
+"ug" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood{
+	icon_state = "wood-broken3"
+	},
+/area/ruin/unpowered/crashed_holemaker)
 "uh" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
@@ -1083,13 +1075,6 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
-/area/ruin/unpowered/crashed_holemaker)
-"uK" = (
-/obj/machinery/airalarm/directional/north,
-/obj/effect/turf_decal/trimline/transparent/ntblue/corner{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/unpowered/crashed_holemaker)
 "uL" = (
 /obj/effect/turf_decal/borderfloor/full,
@@ -1163,11 +1148,11 @@
 /obj/structure/frame/computer/retro,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/crashed_holemaker)
-"vT" = (
-/obj/effect/turf_decal/siding/wood,
-/turf/open/floor/wood{
-	icon_state = "wood-broken4"
-	},
+"vM" = (
+/obj/effect/decal/cleanable/glass,
+/obj/effect/turf_decal/trimline/transparent/ntblue/arrow_ccw,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/unpowered/crashed_holemaker)
 "vU" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -1200,12 +1185,21 @@
 /obj/effect/turf_decal/spline/fancy/transparent/neutral,
 /turf/open/floor/plastic,
 /area/ruin/unpowered/crashed_holemaker)
+"wK" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/unpowered/crashed_holemaker)
 "xd" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/table_frame/wood,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/crashed_holemaker)
+"xf" = (
+/obj/effect/turf_decal/snow,
+/turf/open/floor/plating/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "xs" = (
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 4
@@ -1255,6 +1249,21 @@
 "ya" = (
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plating/asteroid/snow/icemoon,
+/area/ruin/unpowered/crashed_holemaker)
+"ym" = (
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/plate,
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
+/area/ruin/unpowered/crashed_holemaker)
+"yo" = (
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/window/reinforced/spawner/north,
+/obj/effect/decal/cleanable/glass,
+/obj/item/stack/tile/plasteel,
+/turf/open/floor/plating/asteroid/snow/ice/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
 "yp" = (
 /obj/machinery/door/firedoor/border_only/closed{
@@ -1312,23 +1321,12 @@
 /obj/effect/spawner/random/structure/crate_abandoned,
 /turf/open/floor/plating,
 /area/ruin/unpowered/crashed_holemaker)
-"zh" = (
-/obj/effect/decal/cleanable/glass,
-/obj/machinery/hydroponics/constructable,
-/obj/effect/turf_decal/snow,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/icemoon,
-/area/ruin/unpowered/crashed_holemaker)
 "zs" = (
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/crashed_holemaker)
-"zy" = (
+"zD" = (
 /obj/effect/turf_decal/snow,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating/icemoon,
+/turf/open/floor/plating,
 /area/ruin/unpowered/crashed_holemaker)
 "zE" = (
 /obj/effect/turf_decal/borderfloor{
@@ -1344,21 +1342,6 @@
 	pixel_y = 12
 	},
 /turf/open/floor/plastic,
-/area/ruin/unpowered/crashed_holemaker)
-"Ab" = (
-/obj/effect/turf_decal/trimline/transparent/ntblue/arrow_ccw,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/unpowered/crashed_holemaker)
-"Af" = (
-/obj/effect/turf_decal/corner/opaque/green/bordercorner,
-/obj/effect/turf_decal/snow,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/item/pen,
-/turf/open/floor/plasteel/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
 "An" = (
 /obj/effect/turf_decal/borderfloor/full,
@@ -1389,14 +1372,6 @@
 /obj/item/stack/sheet/plasteel,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/unpowered/crashed_holemaker)
-"AH" = (
-/obj/effect/turf_decal/siding/wood/corner,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/trash/plate,
-/turf/open/floor/wood{
-	icon_state = "wood-broken5"
-	},
-/area/ruin/unpowered/crashed_holemaker)
 "AQ" = (
 /obj/effect/turf_decal/borderfloorblack/full,
 /obj/machinery/door/airlock/public/glass{
@@ -1404,6 +1379,13 @@
 	name = "Bar"
 	},
 /turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/crashed_holemaker)
+"AV" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/blood/footprints,
+/turf/open/floor/plasteel/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
 "Bf" = (
 /obj/effect/turf_decal/siding/wood{
@@ -1456,6 +1438,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
+"BV" = (
+/obj/item/stack/tile/plasteel,
+/obj/effect/turf_decal/snow,
+/turf/open/floor/plating/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "BY" = (
 /obj/effect/turf_decal/corner/opaque/bar/diagonal,
 /obj/effect/turf_decal/snow,
@@ -1472,11 +1459,6 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/icemoon,
-/area/ruin/unpowered/crashed_holemaker)
-"Cb" = (
-/obj/machinery/firealarm/directional/north,
-/obj/item/pet_carrier,
-/turf/open/floor/plating/asteroid/snow/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
 "Ch" = (
 /obj/structure/salvageable/seed,
@@ -1497,6 +1479,11 @@
 "Cz" = (
 /turf/closed/mineral/random/snow,
 /area/overmap_encounter/planetoid/cave/explored)
+"CA" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/storage/toolbox/electrical,
+/turf/open/floor/plasteel/icemoon,
+/area/ruin/unpowered/crashed_holemaker)
 "CH" = (
 /obj/item/storage/toolbox/mechanical,
 /turf/open/floor/wood,
@@ -1534,6 +1521,11 @@
 /obj/effect/mapping_helpers/airlock/abandoned,
 /turf/open/floor/plating,
 /area/ruin/unpowered/crashed_holemaker)
+"DK" = (
+/obj/effect/turf_decal/trimline/transparent/ntblue/arrow_ccw,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/unpowered/crashed_holemaker)
 "DR" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/turf_decal/spline/fancy/transparent/ntblue,
@@ -1559,11 +1551,6 @@
 /obj/structure/chair/stool/bar,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/crashed_holemaker)
-"Ep" = (
-/obj/machinery/newscaster/directional/north,
-/obj/structure/bed/dogbed,
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/ruin/unpowered/crashed_holemaker)
 "Ey" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
@@ -1585,6 +1572,13 @@
 /obj/item/radio/intercom/directional/south,
 /obj/structure/table,
 /turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/crashed_holemaker)
+"EL" = (
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner,
+/obj/item/shard,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating/asteroid/snow/ice/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
 "ET" = (
 /obj/effect/turf_decal/borderfloor{
@@ -1611,10 +1605,24 @@
 "Fg" = (
 /turf/closed/mineral/random/snow,
 /area/ruin/unpowered/crashed_holemaker)
-"Fr" = (
-/turf/open/floor/wood{
-	icon_state = "wood-broken5"
+"Fj" = (
+/obj/effect/turf_decal/trimline/transparent/ntblue/arrow_ccw{
+	dir = 6
 	},
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing/wood,
+/obj/structure/table,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/unpowered/crashed_holemaker)
+"Fk" = (
+/obj/effect/turf_decal/trimline/transparent/ntblue/arrow_ccw{
+	dir = 10
+	},
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/extinguisher/mini/empty,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/unpowered/crashed_holemaker)
 "FA" = (
 /obj/effect/turf_decal/borderfloor{
@@ -1632,6 +1640,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/space_heater,
 /turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/crashed_holemaker)
+"FL" = (
+/obj/effect/turf_decal/trimline/transparent/ntblue/corner,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table,
+/obj/item/modular_computer/laptop/preset/civilian,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/unpowered/crashed_holemaker)
 "Gp" = (
 /obj/effect/turf_decal/borderfloor{
@@ -1717,6 +1732,13 @@
 /obj/item/broken_bottle,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/crashed_holemaker)
+"HS" = (
+/obj/effect/decal/cleanable/glass,
+/obj/machinery/hydroponics/constructable,
+/obj/effect/turf_decal/snow,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/icemoon,
+/area/ruin/unpowered/crashed_holemaker)
 "HV" = (
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 4
@@ -1766,11 +1788,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plastic,
 /area/ruin/unpowered/crashed_holemaker)
-"Jk" = (
-/turf/open/floor/wood{
-	icon_state = "wood-broken3"
-	},
-/area/ruin/unpowered/crashed_holemaker)
 "Jo" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -1778,6 +1795,11 @@
 /obj/structure/rack,
 /obj/item/toy/plush/blahaj,
 /turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/crashed_holemaker)
+"JA" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/snow,
+/turf/open/floor/plating,
 /area/ruin/unpowered/crashed_holemaker)
 "JK" = (
 /obj/effect/decal/cleanable/glass,
@@ -1808,6 +1830,15 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/icemoon,
+/area/ruin/unpowered/crashed_holemaker)
+"Ka" = (
+/obj/item/stack/tile/plasteel,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/snow,
+/turf/open/floor/plating,
 /area/ruin/unpowered/crashed_holemaker)
 "Kd" = (
 /obj/structure/chair/office/dark{
@@ -1843,15 +1874,12 @@
 	},
 /turf/open/floor/plasteel/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
-"KV" = (
+"KP" = (
+/obj/structure/bookcase/random/religion,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
+/turf/open/floor/wood{
+	icon_state = "wood-broken7"
 	},
-/obj/structure/cable/orange{
-	icon_state = "5-8"
-	},
-/turf/open/floor/plating,
 /area/ruin/unpowered/crashed_holemaker)
 "KW" = (
 /obj/effect/mob_spawn/human/bartender/husked,
@@ -1869,6 +1897,17 @@
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/crashed_holemaker)
+"Ln" = (
+/obj/item/wallframe/firealarm,
+/turf/open/floor/wood{
+	icon_state = "wood-broken4"
+	},
+/area/ruin/unpowered/crashed_holemaker)
+"Lu" = (
+/obj/structure/window/reinforced/spawner/east,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating/asteroid/snow/ice/icemoon,
+/area/ruin/unpowered/crashed_holemaker)
 "LK" = (
 /obj/structure/grille/broken,
 /turf/open/floor/plating/snowed/smoothed/icemoon,
@@ -1884,6 +1923,11 @@
 /obj/effect/turf_decal/snow,
 /turf/open/floor/wood,
 /area/ruin/unpowered/crashed_holemaker)
+"LX" = (
+/obj/structure/window/spawner/west,
+/obj/structure/window/spawner,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/ruin/unpowered/crashed_holemaker)
 "Ml" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
@@ -1893,31 +1937,24 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/crashed_holemaker)
-"Mu" = (
-/obj/effect/turf_decal/snow,
-/obj/structure/frame/computer{
-	dir = 4
-	},
-/turf/open/floor/pod,
-/area/overmap_encounter/planetoid/cave/explored)
 "MA" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
 	},
 /turf/open/floor/plasteel/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
-"MH" = (
-/obj/effect/turf_decal/snow,
-/obj/item/stack/tile/plasteel,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable/yellow,
-/turf/open/floor/plating/icemoon,
-/area/ruin/unpowered/crashed_holemaker)
 "MR" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/turf_decal/spline/fancy/transparent/ntblue,
 /obj/effect/turf_decal/snow,
 /turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/crashed_holemaker)
+"MW" = (
+/obj/effect/turf_decal/snow,
+/obj/item/stack/tile/plasteel,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/yellow,
+/turf/open/floor/plating/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
 "MX" = (
 /obj/structure/table/reinforced,
@@ -1957,27 +1994,10 @@
 /obj/effect/mapping_helpers/airlock/abandoned,
 /turf/open/floor/plating,
 /area/ruin/unpowered/crashed_holemaker)
-"ND" = (
-/obj/effect/turf_decal/snow,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
-/turf/open/floor/plasteel/icemoon,
-/area/ruin/unpowered/crashed_holemaker)
 "NP" = (
 /obj/structure/girder,
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
-"Oe" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 10
-	},
-/obj/structure/displaycase_chassis,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/airalarm/directional/east,
-/turf/open/floor/plasteel/dark,
-/area/ruin/unpowered/crashed_holemaker)
 "OA" = (
 /obj/item/stack/tile/plasteel,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2000,10 +2020,27 @@
 /obj/item/cane,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/crashed_holemaker)
+"OM" = (
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood{
+	icon_state = "wood-broken4"
+	},
+/area/ruin/unpowered/crashed_holemaker)
 "OO" = (
 /obj/item/stack/ore/salvage/scrapgold,
 /turf/open/floor/plating/asteroid/snow/ice/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
+"OP" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/machinery/door/airlock/public/glass{
+	dir = 4;
+	name = "Library"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/unpowered/crashed_holemaker)
 "Pa" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
@@ -2052,15 +2089,19 @@
 /obj/item/stack/tile/wood,
 /turf/open/floor/plating,
 /area/ruin/unpowered/crashed_holemaker)
+"Po" = (
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/west,
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard,
+/obj/item/paper_bin,
+/turf/open/floor/plating/asteroid/snow/ice/icemoon,
+/area/ruin/unpowered/crashed_holemaker)
 "Ps" = (
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plating/asteroid/snow/ice/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
-"Pw" = (
-/obj/effect/turf_decal/snow,
-/turf/open/floor/plating,
-/area/ruin/unpowered/crashed_holemaker)
-"PC" = (
+"Pv" = (
 /obj/effect/turf_decal/snow,
 /turf/open/floor/plasteel/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -2070,26 +2111,12 @@
 	icon_state = "wood-broken7"
 	},
 /area/ruin/unpowered/crashed_holemaker)
-"PL" = (
-/obj/structure/window/reinforced/spawner/west,
-/obj/structure/window/reinforced/spawner/north,
-/obj/effect/decal/cleanable/glass,
-/obj/item/stack/tile/plasteel,
-/turf/open/floor/plating/asteroid/snow/ice/icemoon,
-/area/ruin/unpowered/crashed_holemaker)
 "PM" = (
 /obj/effect/turf_decal/corner/opaque/black/diagonal{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
-/area/ruin/unpowered/crashed_holemaker)
-"Qc" = (
-/obj/structure/bookcase/random/religion,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood{
-	icon_state = "wood-broken7"
-	},
 /area/ruin/unpowered/crashed_holemaker)
 "Qd" = (
 /obj/effect/turf_decal/borderfloor{
@@ -2103,6 +2130,14 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/crashed_holemaker)
+"Qh" = (
+/obj/effect/turf_decal/snow,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
 "Qw" = (
 /obj/effect/turf_decal/snow,
@@ -2125,17 +2160,6 @@
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/plastic,
 /area/ruin/unpowered/crashed_holemaker)
-"QS" = (
-/obj/machinery/light/broken/directional/east,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/icemoon,
-/area/ruin/unpowered/crashed_holemaker)
-"Rd" = (
-/obj/effect/decal/cleanable/glass,
-/obj/effect/turf_decal/trimline/transparent/ntblue/arrow_ccw,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/unpowered/crashed_holemaker)
 "Rh" = (
 /obj/machinery/door/firedoor/closed,
 /obj/structure/cable/yellow{
@@ -2147,6 +2171,14 @@
 /obj/structure/extinguisher_cabinet/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
+/area/ruin/unpowered/crashed_holemaker)
+"Ro" = (
+/obj/effect/turf_decal/snow,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
 "Ru" = (
 /obj/effect/turf_decal/corner/opaque/blue/diagonal{
@@ -2174,6 +2206,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
+"RJ" = (
+/obj/effect/turf_decal/snow,
+/obj/item/stack/cable_coil/cut/yellow,
+/turf/open/floor/plating/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "RL" = (
 /obj/effect/spawner/random/vending/snack,
 /obj/effect/turf_decal/spline/fancy/transparent/neutral/corner{
@@ -2181,17 +2218,17 @@
 	},
 /turf/open/floor/plasteel/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
-"RT" = (
-/obj/item/wallframe/firealarm,
-/turf/open/floor/wood{
-	icon_state = "wood-broken4"
-	},
-/area/ruin/unpowered/crashed_holemaker)
 "Sd" = (
 /obj/effect/turf_decal/chapel,
 /obj/machinery/light/broken/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/crashed_holemaker)
+"Sg" = (
+/obj/effect/turf_decal/trimline/transparent/ntblue/arrow_ccw,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/comfy/orange/directional/west,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/unpowered/crashed_holemaker)
 "Sj" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -2239,11 +2276,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/unpowered/crashed_holemaker)
-"Td" = (
-/obj/item/stack/tile/plasteel,
-/obj/effect/turf_decal/snow,
-/turf/open/floor/plating/icemoon,
-/area/overmap_encounter/planetoid/cave/explored)
 "Tm" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
@@ -2276,11 +2308,6 @@
 /obj/item/stack/ore/salvage/scrapsilver,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/unpowered/crashed_holemaker)
-"Tt" = (
-/obj/structure/window/reinforced/spawner/north,
-/obj/effect/decal/cleanable/glass,
-/turf/open/floor/plating/asteroid/snow/ice/icemoon,
-/area/ruin/unpowered/crashed_holemaker)
 "Tu" = (
 /obj/effect/turf_decal/borderfloor/full,
 /obj/machinery/door/airlock{
@@ -2304,16 +2331,6 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/crashed_holemaker)
-"TB" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/item/food/meat/slab/corgi,
-/obj/item/food/meat/slab/corgi,
-/obj/item/stack/sheet/animalhide/corgi,
-/obj/structure/closet/secure_closet/freezer,
-/turf/open/floor/wood,
-/area/ruin/unpowered/crashed_holemaker)
 "TH" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -2321,6 +2338,21 @@
 /obj/structure/chair/comfy/blue/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
+/area/ruin/unpowered/crashed_holemaker)
+"TM" = (
+/obj/effect/turf_decal/corner/opaque/green/bordercorner,
+/obj/effect/turf_decal/snow,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/item/pen,
+/turf/open/floor/plasteel/icemoon,
+/area/ruin/unpowered/crashed_holemaker)
+"TP" = (
+/turf/open/floor/wood{
+	icon_state = "wood-broken3"
+	},
 /area/ruin/unpowered/crashed_holemaker)
 "TT" = (
 /obj/structure/grille/broken,
@@ -2356,13 +2388,6 @@
 /obj/item/stack/sheet/mineral/wood,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/crashed_holemaker)
-"UA" = (
-/obj/effect/turf_decal/snow,
-/obj/structure/chair/comfy/shuttle{
-	dir = 1
-	},
-/turf/open/floor/pod,
-/area/overmap_encounter/planetoid/cave/explored)
 "UC" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable/yellow{
@@ -2395,26 +2420,15 @@
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
-"Va" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/obj/machinery/door/airlock/public/glass{
-	dir = 4;
-	name = "Library"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood,
-/area/ruin/unpowered/crashed_holemaker)
-"Vf" = (
-/obj/effect/turf_decal/trimline/transparent/ntblue/corner,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table,
-/obj/item/modular_computer/laptop/preset/civilian,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/unpowered/crashed_holemaker)
 "Vg" = (
 /turf/open/floor/wood,
+/area/ruin/unpowered/crashed_holemaker)
+"Vk" = (
+/obj/machinery/airalarm/directional/north,
+/obj/effect/turf_decal/trimline/transparent/ntblue/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/unpowered/crashed_holemaker)
 "Vo" = (
 /obj/effect/turf_decal/spline/fancy/transparent/neutral{
@@ -2464,11 +2478,15 @@
 /obj/item/stack/sheet/mineral/wood,
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
-"Ws" = (
+"Wf" = (
+/obj/machinery/firealarm/directional/north,
+/obj/item/pet_carrier,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/ruin/unpowered/crashed_holemaker)
+"Wk" = (
 /obj/effect/turf_decal/snow,
-/obj/machinery/light/broken/directional/west,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/icemoon,
+/obj/item/cane,
+/turf/open/floor/plasteel/icemoon,
 /area/ruin/unpowered/crashed_holemaker)
 "WD" = (
 /obj/machinery/light/small/broken/directional/east,
@@ -2541,25 +2559,16 @@
 /obj/structure/girder,
 /turf/open/floor/plating/asteroid/snow/ice/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
-"XY" = (
-/obj/effect/turf_decal/trimline/transparent/ntblue/arrow_ccw{
-	dir = 6
-	},
-/obj/effect/turf_decal/borderfloor,
+"XV" = (
+/obj/structure/window/spawner/west,
+/obj/structure/displaycase_chassis,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/railing/wood,
-/obj/structure/table,
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/wood,
 /area/ruin/unpowered/crashed_holemaker)
 "XZ" = (
 /obj/structure/bookcase/random/adult,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/newscaster/directional/west,
-/turf/open/floor/wood,
-/area/ruin/unpowered/crashed_holemaker)
-"Yb" = (
-/obj/structure/bookcase/random/reference,
-/obj/machinery/light/broken/directional/east,
 /turf/open/floor/wood,
 /area/ruin/unpowered/crashed_holemaker)
 "Yk" = (
@@ -2610,21 +2619,10 @@
 /obj/effect/spawner/structure/window/reinforced/shutters,
 /turf/open/floor/plating,
 /area/ruin/unpowered/crashed_holemaker)
-"Zy" = (
-/obj/item/shard,
-/obj/effect/decal/cleanable/glass,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable/orange{
-	icon_state = "6-8"
-	},
+"ZD" = (
+/obj/effect/turf_decal/snow,
+/obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plating,
-/area/ruin/unpowered/crashed_holemaker)
-"ZB" = (
-/obj/machinery/light/broken/directional/south,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood{
-	icon_state = "wood-broken3"
-	},
 /area/ruin/unpowered/crashed_holemaker)
 "ZJ" = (
 /obj/effect/turf_decal/siding/wood,
@@ -3044,11 +3042,11 @@ Ph
 Zj
 ZK
 Ke
-kt
+Wk
 VW
 vg
-Ws
-lu
+eM
+rh
 wx
 eL
 wx
@@ -3084,8 +3082,8 @@ Zj
 bZ
 pV
 vg
-ND
-bi
+Ro
+sZ
 vg
 eL
 wx
@@ -3162,7 +3160,7 @@ Zj
 vd
 vd
 vc
-KV
+eF
 vd
 Ps
 wx
@@ -3198,14 +3196,14 @@ jp
 VD
 uO
 Zj
-Vf
-XY
-cG
-Af
+FL
+Fj
+cR
+TM
 vd
-mu
+xf
 eL
-Td
+BV
 hO
 qr
 WU
@@ -3233,19 +3231,19 @@ Cz
 Cz
 Zj
 vr
-AH
+ym
 Pn
-TB
+rC
 kz
-lN
-PL
-Zy
+Sg
+yo
+lc
 xJ
-Tt
+pK
 qr
 eL
-PC
-PC
+Pv
+Pv
 qr
 qr
 eL
@@ -3272,16 +3270,16 @@ Cz
 Cz
 Ph
 Ke
-kF
+sR
 mx
 nA
 kz
-Ab
-Tt
-tt
-eT
-pl
-mu
+DK
+pK
+CA
+rZ
+Lu
+xf
 wx
 qr
 wx
@@ -3310,17 +3308,17 @@ Cz
 Cz
 Cz
 Zj
-Ep
-iN
+cU
+wK
 yN
 Gx
 ac
-Rd
-qa
-zh
+vM
+EL
+HS
 KF
 bd
-mu
+xf
 Ps
 eL
 eD
@@ -3349,16 +3347,16 @@ Cz
 Cz
 Cz
 Ph
-Cb
-vT
+Wf
+OM
 CZ
 HY
 Zj
-uK
-pz
+Vk
+Fk
 vg
-mO
-ek
+qD
+Po
 YV
 qr
 qr
@@ -3486,7 +3484,7 @@ Nz
 kz
 eL
 qF
-Mu
+eV
 qF
 SF
 eL
@@ -3525,7 +3523,7 @@ aE
 vd
 eL
 NP
-UA
+od
 qF
 eL
 eL
@@ -3662,7 +3660,7 @@ WU
 wx
 qq
 vg
-RT
+Ln
 uI
 XC
 Zj
@@ -3702,7 +3700,7 @@ wx
 vg
 yE
 fO
-Fr
+tg
 LQ
 Ph
 IZ
@@ -3739,8 +3737,8 @@ Cz
 Cz
 wx
 Zj
-cA
-Jk
+XV
+TP
 td
 tN
 Ph
@@ -3757,7 +3755,7 @@ xs
 fD
 HV
 Ke
-oj
+bm
 Ke
 eL
 eL
@@ -3941,21 +3939,21 @@ jz
 Zj
 bZ
 pV
-Pw
+zD
 OA
-jU
+AV
 ya
-it
+Ka
 vg
-nO
+ok
 vg
 Uj
-rW
+dO
 Qw
 vg
 vg
-zy
-MH
+Qh
+MW
 eL
 eL
 eL
@@ -3981,13 +3979,13 @@ Zj
 DG
 Ke
 vg
-bC
+JA
 VW
-QS
+js
 UT
-ms
+ZD
 nd
-bC
+JA
 VW
 vg
 wC
@@ -3995,7 +3993,7 @@ vg
 vg
 vg
 wx
-pL
+RJ
 eL
 eL
 eL
@@ -4020,7 +4018,7 @@ jW
 Vg
 Ke
 XE
-Va
+OP
 LK
 Ke
 vd
@@ -4059,7 +4057,7 @@ VD
 bZ
 VD
 vg
-ca
+ug
 vg
 RA
 br
@@ -4093,8 +4091,8 @@ Cz
 Cz
 Ph
 Ph
-Yb
-Qc
+hy
+KP
 RA
 bZ
 Sz
@@ -4133,13 +4131,13 @@ Cz
 Cz
 Ph
 Zj
-md
-Oe
+LX
+gm
 Vg
 hP
 VD
 rk
-ZB
+iz
 Ke
 vd
 mb

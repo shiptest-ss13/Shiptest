@@ -1211,6 +1211,27 @@
 	req_components = list(/obj/item/stock_parts/micro_laser = 1)
 	needs_anchored = FALSE
 
+/obj/item/circuitboard/machine/griddle
+	name = "circuit board (Griddle)"
+	icon_state = "service"
+	build_path = /obj/machinery/griddle
+	req_components = list(
+		/obj/item/stack/sheet/mineral/titanium = 1,
+		/obj/item/assembly/igniter = 1,
+		/obj/item/stack/cable_coil = 2,
+		/obj/item/stock_parts/micro_laser = 1,
+	)
+
+/obj/item/circuitboard/machine/oven
+	name = "circuit board (Oven)"
+	icon_state = "service"
+	build_path = /obj/machinery/oven
+	req_components = list(
+		/obj/item/stack/sheet/mineral/titanium = 1,
+		/obj/item/assembly/igniter = 1,
+		/obj/item/stack/cable_coil = 2,
+		/obj/item/stock_parts/micro_laser = 1,
+	)
 
 /obj/item/circuitboard/machine/dish_drive
 	name = "Dish Drive (Machine Board)"

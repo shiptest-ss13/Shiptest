@@ -405,8 +405,16 @@
 	name = "Serving Tray"
 	id = "servingtray"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 3000)
+	materials = list(/datum/material/iron = 5000)
 	build_path = /obj/item/storage/bag/tray
+	category = list("initial","Dinnerware")
+
+/datum/design/plate
+	name = "Plate"
+	id = "plate"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 2000)
+	build_path = /obj/item/plate
 	category = list("initial","Dinnerware")
 
 /datum/design/cafeteria_tray

@@ -59,6 +59,14 @@
 	foodtypes = GROSS
 	w_class = WEIGHT_CLASS_SMALL
 
+/obj/item/food/badrecipe/Initialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_ITEM_GRILLED,  PROC_REF(OnGrill))
+
+///Prevents grilling burnt shit from well, burning.
+/obj/item/food/badrecipe/proc/OnGrill()
+	return COMPONENT_HANDLED_GRILLING
+
 /obj/item/food/badrecipe/burn()
 	if(QDELETED(src))
 		return
@@ -68,6 +76,10 @@
 	if(resistance_flags & ON_FIRE)
 		SSfire_burning.processing -= src
 	qdel(src)
+
+// We override the parent procs here to prevent burned messes from cooking into burned messes.
+/obj/item/food/badrecipe/make_grillable()
+	return
 
 /obj/item/food/spidereggs
 	name = "spider eggs"

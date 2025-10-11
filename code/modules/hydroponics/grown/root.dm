@@ -25,14 +25,15 @@
 	wine_power = 30
 
 /obj/item/food/grown/carrot/attackby(obj/item/I, mob/user, params)
+	/*
 	if(I.get_sharpness())
 		to_chat(user, span_notice("You sharpen the carrot into a shiv with [I]."))
 		var/obj/item/melee/knife/shiv/carrot/Shiv = new /obj/item/melee/knife/shiv/carrot
 		remove_item_from_storage(user)
 		qdel(src)
 		user.put_in_hands(Shiv)
-	else
-		return ..()
+	else */
+	return ..()
 
 // Parsnip
 /obj/item/seeds/carrot/parsnip
