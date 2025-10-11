@@ -46,6 +46,13 @@
 	damage = 25
 	armour_penetration = -10
 
+/obj/item/gun/energy/kalix/empty_cell
+	spawn_no_ammo = TRUE
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix,
+	)
+
 /obj/projectile/beam/hitscan/kalix/nock
 	name = "concentrated energy beam"
 	damage_constant = 0.8
@@ -97,6 +104,13 @@
 		/obj/item/stock_parts/cell/gun/kalix,
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix/nock, /obj/item/ammo_casing/energy/disabler/hitscan/kalix/nock)
+
+/obj/item/gun/energy/kalix/nock/empty_cell
+	spawn_no_ammo = TRUE
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix,
+	)
 
 /obj/projectile/beam/hitscan/kalix/pgf/nock
 	name = "concentrated energy beam"
@@ -150,8 +164,12 @@
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pgf/nock, /obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/nock)
 
-/obj/item/gun/energy/kalix/empty_cell
+	/obj/item/gun/energy/kalix/pgf/nock/empty_cell
 	spawn_no_ammo = TRUE
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix,
+	)
 
 /obj/item/gun/energy/kalix/pgf
 	name = "\improper Etherbor BG-16"
@@ -171,6 +189,13 @@
 		/obj/item/stock_parts/cell/gun/kalix,
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pgf , /obj/item/ammo_casing/energy/disabler/hitscan)
+
+/obj/item/gun/energy/kalix/pgf/empty_cell
+	spawn_no_ammo = TRUE
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix,
+	)
 
 /obj/projectile/beam/hitscan/kalix/pgf
 	name = "concentrated energy beam"
@@ -222,6 +247,10 @@
 
 /obj/item/gun/energy/kalix/pistol/empty_cell
 	spawn_no_ammo = TRUE
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix,
+	)
 
 /obj/item/gun/energy/kalix/pgf/medium
 	name = "\improper Etherbor BGC-10"
@@ -276,6 +305,10 @@
 
 /obj/item/gun/energy/kalix/pgf/heavy/empty_cell
 	spawn_no_ammo = TRUE
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix,
+	)
 
 /obj/item/ammo_casing/energy/pgf/assault
 	select_name  = "AR"
@@ -326,5 +359,9 @@
 	wield_slowdown = LASER_SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 
-/obj/item/gun/energy/kalix/pgf/heavy/sniper
+/obj/item/gun/energy/kalix/pgf/heavy/sniper/empty_cell
 	spawn_no_ammo = TRUE
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix,
+	)
