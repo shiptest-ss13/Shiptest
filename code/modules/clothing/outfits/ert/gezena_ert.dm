@@ -30,7 +30,7 @@
 	name = "ERT - PGF Marine Pioneer"
 	id_assignment = "Marine Pioneer"
 
-	suit_store = /obj/item/gun/energy/kalix/pgf
+	suit_store = /obj/item/gun/energy/kalix/pgf/nock
 	belt = /obj/item/storage/belt/military/gezena/engineer
 	neck = /obj/item/clothing/neck/cloak/gezena/engi
 
