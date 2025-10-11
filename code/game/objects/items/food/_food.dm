@@ -49,6 +49,7 @@
 		eatverbs = string_list(eatverbs)
 	make_edible()
 	make_processable()
+	make_dryable()
 	make_leave_trash()
 
 ///This proc adds the edible component, overwrite this if you for some reason want to change some specific args like callbacks.
