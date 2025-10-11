@@ -754,9 +754,6 @@
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
-/obj/effect/turf_decal/industrial/shutoff{
-	dir = 8
-	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "hR" = (
@@ -792,6 +789,7 @@
 	pixel_x = 6;
 	pixel_y = 24
 	},
+/obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "il" = (
@@ -1171,6 +1169,7 @@
 	dir = 8;
 	pixel_x = 2
 	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/cryo)
 "nk" = (
@@ -2010,6 +2009,10 @@
 /obj/item/hand_labeler_refill{
 	pixel_x = 8
 	},
+/obj/item/stack/tape{
+	pixel_x = -6;
+	pixel_y = -7
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "yz" = (
@@ -2471,6 +2474,10 @@
 	name = "Window Control"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/storage/briefcase{
+	pixel_y = 10;
+	pixel_x = 3
+	},
 /turf/open/floor/wood/maple,
 /area/ship/crew/dorm)
 "CG" = (
@@ -3989,6 +3996,7 @@
 	pixel_x = 4;
 	pixel_y = -5
 	},
+/obj/item/razor,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/toilet)
 "Ru" = (
