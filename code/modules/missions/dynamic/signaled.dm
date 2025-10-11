@@ -1,13 +1,12 @@
 /datum/mission/ruin/signaled
 	var/registered_type
-	var/atom/movable/registered_item
 	/// What signal will spawn the required item
 	var/mission_main_signal
 
 /datum/mission/ruin/signaled/spawn_main_piece(obj/effect/landmark/mission_poi/mission_poi)
-	registered_item = mission_poi.use_poi(registered_type, src)
+	var/atom/movable/registered_item = mission_poi.use_poi(registered_type, src)
 	if(isatom(registered_item))
-		registered_item = set_bound(registered_item, null, FALSE, TRUE)
+		set_bound(registered_item, null, FALSE, TRUE)
 		RegisterSignal(registered_item, mission_main_signal, PROC_REF(on_signaled))
 	else
 		stack_trace("[src] did not generate a required item.")
@@ -20,11 +19,6 @@
 	set_bound(required_item, null, FALSE, TRUE)
 	UnregisterSignal(registered_item, mission_main_signal)
 	remove_bound(registered_item)
-
-/datum/mission/ruin/signaled/remove_bound(atom/movable/bound)
-	if(bound == setpiece_item)
-		setpiece_item = null
-	return ..()
 
 /obj/effect/landmark/mission_poi/main/drill
 
