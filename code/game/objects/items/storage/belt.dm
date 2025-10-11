@@ -486,7 +486,7 @@
 		/obj/item/gun/energy/kalix/pistol,
 		))
 	STR.exception_hold = exception_cache
-	STR.max_w_class = WEIGHT_CLASS_SMALL
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.can_hold_max_of_items = typecacheof(list(
 		/obj/item/gun = 1,
 	))
