@@ -143,7 +143,7 @@
 	desc = "An elegant weapon, its monomolecular edge is capable of cutting through flesh and bone with ease."
 	icon_state = "sabre"
 	item_state = "sabre"
-	force = 25
+	force = 23
 	throwforce = 10
 	block_chance = 30
 	armour_penetration = 75
