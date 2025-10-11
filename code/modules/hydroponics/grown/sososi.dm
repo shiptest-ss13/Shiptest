@@ -3,7 +3,7 @@
 /obj/item/seeds/sososi
 	name = "pack of sososi seeds"
 	desc = "These seeds grow into sososi plants."
-	icon_state = ""
+	icon_state = "seed-sososi"
 	species = "sososi"
 	plantname = "sososi plant"
 	product = /obj/item/food/grown/sososi
