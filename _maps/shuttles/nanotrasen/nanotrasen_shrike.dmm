@@ -1270,6 +1270,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
 	},
+/obj/structure/cable{
+	icon_state = "5-10"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "qa" = (
@@ -2260,6 +2263,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Ch" = (
@@ -4577,14 +4583,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "YQ" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/vired/half{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-10"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
