@@ -37,8 +37,8 @@
 	desc = "Pull the pin, count to three, and throw for best results."
 	item = /obj/item/grenade/frag
 
-	cost_min = 100
-	cost_max = 500
+	cost_min = 600
+	cost_max = 1000
 	stock_min = 3
 	stock_max = 5
 	availability_prob = 40
