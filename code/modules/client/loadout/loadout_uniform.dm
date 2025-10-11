@@ -239,6 +239,30 @@
 	display_name = "skirt, black"
 	path = /obj/item/clothing/under/dress/skirt/color
 
+/datum/gear/uniform/dress/overall_dress
+	display_name = "overall dress, navy"
+	path = /obj/item/clothing/under/dress/overall_dress
+
+/datum/gear/uniform/dress/overall_dress/white
+	display_name = "overall dress, white"
+	path = /obj/item/clothing/under/dress/overall_dress/white
+
+/datum/gear/uniform/dress/overall_dress/denim
+	display_name = "overall dress, denim"
+	path = /obj/item/clothing/under/dress/overall_dress/denim
+
+/datum/gear/uniform/dress/overall_dress/black
+	display_name = "overall dress, black"
+	path = /obj/item/clothing/under/dress/overall_dress/black
+
+/datum/gear/uniform/dress/overall_dress/brown
+	display_name = "overall dress, brown"
+	path = /obj/item/clothing/under/dress/overall_dress/brown
+
+/datum/gear/uniform/dress/overall_dress/olive
+	display_name = "overall dress, olive"
+	path = /obj/item/clothing/under/dress/overall_dress/olive
+
 /datum/gear/uniform/dress/black_pinafore
 
 	display_name = "pinafore, black"
@@ -276,6 +300,7 @@
 /datum/gear/uniform/suit/dress_suit/skirt
 	display_name = "dress-suitskirt, navy"
 	path = /obj/item/clothing/under/suit/dresssuit/skirt
+
 
 // Overalls
 
