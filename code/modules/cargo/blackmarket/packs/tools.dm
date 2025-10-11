@@ -150,7 +150,7 @@
 /datum/blackmarket_item/tool/adv_cutter
 	name = "Advanced Plasmacutter"
 	desc = "These technically aren't meant to be released to the public yet, but let's just say we managed to get our hands on an advance sample."
-	item = /obj/item/gun/energy/plasmacutter/adv
+	item = /obj/item/plasmacutter/adv
 
 	cost_min = 2750
 	cost_max = 3750
