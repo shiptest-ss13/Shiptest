@@ -478,3 +478,7 @@
 		if (server.decryptkey)
 			print(server)
 			break
+
+/obj/item/paper/monitor_pass
+	name = "default password"
+	default_raw_text = "<center><h2>Server Password</h2></center><br>The new message monitor password is 'password'. Change the password to a more secure one."
