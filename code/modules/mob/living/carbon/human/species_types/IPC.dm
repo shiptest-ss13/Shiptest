@@ -144,6 +144,8 @@
 	var/datum/species/ipc/species_datum = H.dna.species
 	if(!species_datum)
 		return
+	if(species_datum.has_screen)
+		return
 	H.eye_color = sanitize_hexcolor(color_choice)
 	H.update_body()
 
