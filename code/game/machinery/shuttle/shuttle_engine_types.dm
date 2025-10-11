@@ -205,6 +205,10 @@
 	icon_state_closed = "burst"
 	icon_state_open = "burst_open"
 	thrust = 10
+	//used by stockparts, efficiency_multiplier
+	var/efficiency_multiplier = 1
+	//used by stockparts, thrust multiplier
+	var/thrust_multiplier = 1
 	///Amount, in kilojoules, needed for a full burn.
 	var/power_per_burn = 50000
 
@@ -245,6 +249,16 @@
 	charge = 1e6
 
 
+/obj/machinery/power/shuttle/engine/electric/RefreshParts()
+	var/installed_capacitors = 0
+	var/installed_lasers = 0
+	for(var/obj/item/stock_parts/capacitor/C in component_parts)
+		installed_capacitors += C.rating
+	for(var/obj/item/stock_parts/micro_laser/L in component_parts)
+		installed_lasers += L.rating
+	efficiency_multiplier = installed_capacitors
+	thrust_multiplier = installed_lasers
+
 /obj/machinery/power/shuttle/engine/electric/update_engine()
 	. = ..()
 	if(!.)
@@ -259,9 +273,16 @@
 
 /obj/machinery/power/shuttle/engine/electric/burn_engine(percentage = 100, seconds_per_tick)
 	. = ..()
-	var/true_percentage = min(newavail() / power_per_burn, percentage / 100)
-	add_delayedload(power_per_burn * true_percentage)
-	return thrust * true_percentage
+
+	//calculates the power efficiency of the engine based on the parts installed in it
+	var/updated_power_per_burn = (power_per_burn * (1 - (0.08 * (efficiency_multiplier - 3))))
+
+	//calculates the updated thrust of the engine based on the parts installed in it
+	var/updated_thrust = (thrust * (thrust_multiplier / 3))
+
+	var/true_percentage = min(newavail() / updated_power_per_burn, percentage / 100)
+	add_delayedload(updated_power_per_burn * true_percentage)
+	return updated_thrust * true_percentage
 
 /obj/machinery/power/shuttle/engine/electric/return_fuel()
 	if(length(powernet?.nodes) == 2)
