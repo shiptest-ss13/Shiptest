@@ -277,7 +277,7 @@
 	//calculates the power efficiency of the engine based on the parts installed in it
 	var/updated_power_per_burn = (power_per_burn * (1 - (0.08 * (efficiency_multiplier - 3))))
 
-	//calculated the updated thrust of the engine based on the parts installed in it
+	//calculates the updated thrust of the engine based on the parts installed in it
 	var/updated_thrust = (thrust * (thrust_multiplier / 3))
 
 	var/true_percentage = min(newavail() / updated_power_per_burn, percentage / 100)
