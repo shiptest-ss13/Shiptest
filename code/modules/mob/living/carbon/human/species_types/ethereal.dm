@@ -74,9 +74,13 @@
 
 	//The following code is literally only to make admin-spawned ethereals not be black.
 	_carbon.dna.features["mcolor"] = _carbon.dna.features["ethcolor"] //Ethcolor and Mut color are both dogshit and will be replaced
-	for(var/obj/item/bodypart/BP as anything in _carbon.bodyparts)
-		if(BP.limb_id == SPECIES_ELZUOSE)
-			BP.update_limb(is_creating = TRUE)
+	var/obj/item/bodypart/body_part
+	for(var/zone in _carbon.bodyparts)
+		body_part = _carbon.bodyparts[zone]
+		if(!body_part)
+			continue
+		if(body_part.limb_id == SPECIES_ELZUOSE)
+			body_part.update_limb(is_creating = TRUE)
 
 /datum/species/elzuose/on_species_loss(mob/living/carbon/human/_carbon, datum/species/new_species, pref_load)
 	UnregisterSignal(_carbon, COMSIG_ATOM_EMP_ACT)
@@ -188,10 +192,13 @@
 	else
 		ethereal_light.set_light_on(FALSE)
 		fixed_mut_color = rgb(128,128,128)
-
-	for(var/obj/item/bodypart/parts_to_update as anything in _human.bodyparts)
-		parts_to_update.species_color = fixed_mut_color
-		parts_to_update.update_limb()
+	var/obj/item/bodypart/body_part
+	for(var/zone in _human.bodyparts)
+		body_part = _human.bodyparts[zone]
+		if(!body_part)
+			continue
+		body_part.species_color = fixed_mut_color
+		body_part.update_limb()
 
 	_human.update_body()
 	_human.update_hair()

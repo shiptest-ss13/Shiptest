@@ -2228,8 +2228,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("limbs")
 					if(href_list["customize_limb"])
 						var/limb = href_list["customize_limb"]
-						var/list/limb_options = list(PROSTHETIC_NORMAL, PROSTHETIC_ROBOTIC, PROSTHETIC_AMPUTATED)
+						var/list/limb_options = list(PROSTHETIC_NORMAL, PROSTHETIC_ROBOTIC)
+						if(limb != BODY_ZONE_CHEST && limb != BODY_ZONE_HEAD)
+							limb_options.Add(PROSTHETIC_AMPUTATED) // starting without a head or chest causes instant death, must be disallowed
+						var/datum/sprite_accessory/ipc_chassis/limb_style
+						var/obj/item/bodypart/part_candidate
 						for(var/chassis in GLOB.ipc_chassis_list)
+							limb_style = GLOB.ipc_chassis_list[chassis]
+							part_candidate = limb_style.chassis_bodyparts[limb]
+							if(!(pref_species.bodytype & initial(part_candidate.bodytype))) // don't allow vox and kepori to select limbs that aren't compatible
+								continue
 							limb_options.Add(chassis)
 						var/status = input(user, "You are modifying your [parse_zone(limb)], what should it be changed to?", "Character Preference", prosthetic_limbs[limb]) in limb_options
 						if(status)
@@ -2591,38 +2599,35 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.dna.features = features.Copy()
 	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE, robotic = fbp)
 
-	if(!fbp)
-		for(var/pros_limb in prosthetic_limbs)
-			var/obj/item/bodypart/old_part = character.get_bodypart(pros_limb)
-			if(old_part)
-				icon_updates = TRUE
-			switch(prosthetic_limbs[pros_limb])
-				if(PROSTHETIC_NORMAL)
-					if(old_part)
-						old_part.drop_limb(TRUE)
-						qdel(old_part)
-					character.regenerate_limb(pros_limb)
-				if(PROSTHETIC_AMPUTATED)
-					if(old_part)
-						old_part.drop_limb(TRUE)
-						qdel(old_part)
-				if(PROSTHETIC_ROBOTIC)
-					if(old_part)
-						old_part.drop_limb(TRUE)
-						qdel(old_part)
-					character.regenerate_limb(pros_limb, robotic = TRUE)
-				else
-					var/datum/sprite_accessory/ipc_chassis/limb_style = GLOB.ipc_chassis_list[prosthetic_limbs[pros_limb]]
-					var/obj/item/bodypart/new_part = limb_style.chassis_bodyparts[old_part.body_zone]
-					new_part = new new_part()
-					if(old_part)
-						old_part.drop_limb(TRUE)
-						qdel(old_part)
-					new_part.replace_limb(character, TRUE)
-					new_part.update_limb(is_creating = TRUE)
+	for(var/pros_limb in prosthetic_limbs)
+		var/obj/item/bodypart/old_part = character.get_bodypart(pros_limb)
+		if(old_part)
+			icon_updates = TRUE
+		switch(prosthetic_limbs[pros_limb])
+			if(PROSTHETIC_NORMAL)
+				continue
+			if(PROSTHETIC_AMPUTATED)
+				if(pros_limb == BODY_ZONE_CHEST || pros_limb == BODY_ZONE_HEAD)
+					stack_trace("[parent] somehow had their [parse_zone(pros_limb)] set to [PROSTHETIC_AMPUTATED]!")
+					prosthetic_limbs[pros_limb] = PROSTHETIC_NORMAL
+					continue
+				if(old_part)
+					qdel(old_part)
+			if(PROSTHETIC_ROBOTIC)
+				if(fbp)
+					continue
+				character.regenerate_limb(pros_limb, robotic = TRUE)
+				if(old_part)
+					qdel(old_part)
+			else
+				var/datum/sprite_accessory/ipc_chassis/limb_style = GLOB.ipc_chassis_list[prosthetic_limbs[pros_limb]]
+				var/obj/item/bodypart/new_part = limb_style.chassis_bodyparts[pros_limb]
+				new_part = new new_part()
+				new_part.replace_limb(character, TRUE)
+				new_part.update_limb(is_creating = TRUE)
+				if(old_part)
+					qdel(old_part)
 
-	//if(pref_species.id == "ipc") // If triggered, vox and kepori arms do not spawn in but ipcs sprites break without it as the code for setting the right prosthetics for them is in set_species().
-		//character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
 	//Because of how set_species replaces all bodyparts with new ones, hair needs to be set AFTER species.
 	character.dna.real_name = character.real_name
 	character.generic_adjective = generic_adjective

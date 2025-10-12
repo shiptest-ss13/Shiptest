@@ -400,8 +400,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	new_species ||= C.dna.species //If no new species is provided, assume its src.
 	//Note for future: Potentionally add a new C.dna.species() to build a template species for more accurate limb replacement
 
-	for(var/obj/item/bodypart/old_part as anything in C.bodyparts)
-		var/obj/item/bodypart/new_part = C.new_body_part(old_part.body_zone, robotic, FALSE, new_species)
+	var/obj/item/bodypart/old_part
+	for(var/zone in C.bodyparts)
+		old_part = C.bodyparts[zone]
+		if(!old_part)
+			continue
+		var/obj/item/bodypart/new_part = C.new_body_part(zone, robotic, FALSE, new_species)
 		new_part.brute_dam = old_part.brute_dam
 		new_part.burn_dam = old_part.burn_dam
 		new_part.replace_limb(C, TRUE)
@@ -461,7 +465,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				C.put_in_hands(new mutanthands())
 
 	if(NOMOUTH in species_traits)
-		for(var/obj/item/bodypart/head/head in C.bodyparts)
+		for(var/obj/item/bodypart/head/head in C.get_all_bodyparts())
 			head.mouth = FALSE
 
 	if(SCLERA in species_traits)
@@ -512,7 +516,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		C.dna.blood_type = random_blood_type()
 
 	if(NOMOUTH in species_traits)
-		for(var/obj/item/bodypart/head/head in C.bodyparts)
+		for(var/obj/item/bodypart/head/head in C.get_all_bodyparts())
 			head.mouth = TRUE
 
 	for(var/X in inherent_traits)
@@ -886,9 +890,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			suit_compatible = TRUE
 
 		var/show_digitigrade = suit_compatible && (uniform_compatible || H.wear_suit?.flags_inv & HIDEJUMPSUIT) //If the uniform is hidden, it doesnt matter if its compatible
-		for(var/obj/item/bodypart/BP as anything in H.bodyparts)
-			if(BP.bodytype & BODYTYPE_DIGITIGRADE)
-				BP.plantigrade_forced = !show_digitigrade
+		var/obj/item/bodypart/body_part
+		for(var/zone in H.bodyparts)
+			body_part = H.bodyparts[zone]
+			if(!body_part)
+				continue
+			if(body_part.bodytype & BODYTYPE_DIGITIGRADE)
+				body_part.plantigrade_forced = !show_digitigrade
 
 	///End digi handling
 
@@ -1646,7 +1654,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	var/hit_area
 	if(!affecting) //Something went wrong. Maybe the limb is missing?
-		affecting = H.bodyparts[1]
+		affecting = H.get_first_available_bodypart()
 
 	hit_area = affecting.name
 	var/def_zone = affecting.body_zone
@@ -1737,7 +1745,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				def_zone = ran_zone(def_zone)
 			BP = H.get_bodypart(check_zone(def_zone))
 			if(!BP)
-				BP = H.bodyparts[1]
+				BP = H.get_first_available_bodypart()
 
 	switch(damagetype)
 		if(BRUTE)

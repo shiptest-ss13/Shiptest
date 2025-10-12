@@ -83,7 +83,7 @@
 ///limb removal. The "special" argument is used for swapping a limb with a new one without the effects of losing a limb kicking in.
 /obj/item/bodypart/proc/drop_limb(special, dismembered)
 	if(!owner)
-		return
+		CRASH("drop_limb called on a bodypart with no owner!")
 	var/atom/Tsec = owner.drop_location()
 
 	SEND_SIGNAL(owner, COMSIG_CARBON_REMOVE_LIMB, src, dismembered)
@@ -290,7 +290,8 @@
 			var/obj/item/I = X
 			owner.dropItemToGround(I, force = TRUE)
 
-	qdel(owner.GetComponent(/datum/component/creamed)) //clean creampie overlay
+	if(owner)
+		qdel(owner.GetComponent(/datum/component/creamed)) //clean creampie overlay
 
 	//Handle dental implants
 	for(var/datum/action/item_action/hands_free/activate_pill/AP in owner.actions)
@@ -426,8 +427,12 @@
 		return
 	//This codeblock makes sure that the owner's bodytype flags match the flags of all of it's parts.
 	var/all_limb_flags
-	for(var/obj/item/bodypart/BP as anything in C.bodyparts)
-		all_limb_flags =  all_limb_flags | BP.bodytype
+	var/obj/item/bodypart/body_part
+	for(var/zone in C.bodyparts)
+		body_part = C.bodyparts[zone]
+		if(!body_part)
+			continue
+		all_limb_flags =  all_limb_flags | body_part.bodytype
 
 	C.dna.species.bodytype = all_limb_flags
 

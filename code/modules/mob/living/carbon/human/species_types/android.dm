@@ -11,16 +11,10 @@
 	reagent_tag = PROCESS_SYNTHETIC
 	species_gibs = "robotic"
 	attack_sound = 'sound/items/trayhit1.ogg'
+	species_head = /obj/item/bodypart/head/robot
+	species_chest = /obj/item/bodypart/chest/robot
+	species_l_arm = /obj/item/bodypart/l_arm/robot
+	species_r_arm = /obj/item/bodypart/r_arm/robot
+	species_l_leg = /obj/item/bodypart/leg/left/robot
+	species_r_leg = /obj/item/bodypart/leg/right/robot
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
-
-/datum/species/android/on_species_gain(mob/living/carbon/C)
-	. = ..()
-	for(var/X in C.bodyparts)
-		var/obj/item/bodypart/O = X
-		O.change_bodypart_status(BODYTYPE_ROBOTIC, FALSE, TRUE)
-
-/datum/species/android/on_species_loss(mob/living/carbon/C)
-	. = ..()
-	for(var/X in C.bodyparts)
-		var/obj/item/bodypart/O = X
-		O.change_bodypart_status(BODYTYPE_ORGANIC,FALSE, TRUE)
