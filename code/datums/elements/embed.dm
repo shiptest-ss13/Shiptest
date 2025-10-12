@@ -178,7 +178,7 @@
 	if(iscarbon(target))
 		victim = target
 		if(!hit_zone)
-			limb = victim.get_first_available_bodypart()
+			limb = victim.get_random_bodypart()
 			hit_zone = limb.body_zone
 	else if(isbodypart(target))
 		limb = target
