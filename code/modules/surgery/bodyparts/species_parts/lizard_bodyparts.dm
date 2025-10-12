@@ -11,7 +11,6 @@
 	icon_state = "sarathi_chest_m"
 	uses_mutcolor = TRUE
 	limb_id = SPECIES_SARATHI
-	is_dimorphic = TRUE
 
 /obj/item/bodypart/l_arm/lizard
 	icon = 'icons/mob/species/lizard/bodyparts.dmi'
