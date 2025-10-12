@@ -2000,6 +2000,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/newscaster/directional/west{
+	pixel_x = -30;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "vJ" = (
@@ -2026,6 +2030,7 @@
 "vV" = (
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /obj/structure/table/reinforced,
+/obj/machinery/newscaster/directional/east,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
 "wd" = (
@@ -4777,6 +4782,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/machinery/computer/cryopod/directional/south,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/crew/cryo)
 "Wx" = (
@@ -4823,6 +4829,14 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
+"WQ" = (
+/obj/effect/turf_decal/corner/transparent/blue/full,
+/obj/structure/chair{
+	dir = 8
+	},
+/obj/machinery/newscaster/directional/north,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/ccommons)
 "WX" = (
 /obj/effect/turf_decal/trimline/transparent/blue/warning{
 	dir = 1
@@ -5298,7 +5312,7 @@ mt
 Ye
 Ye
 Ye
-Iv
+WQ
 Iv
 xw
 Gq
