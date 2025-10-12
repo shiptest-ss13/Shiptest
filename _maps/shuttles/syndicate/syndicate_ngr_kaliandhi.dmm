@@ -946,29 +946,6 @@
 "fo" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/engines/port)
-"fr" = (
-/obj/structure/closet/wall/red/directional/east{
-	name = "Operative's Locker";
-	req_access = list(1);
-	secure = 1
-	},
-/obj/item/clothing/head/ngr,
-/obj/item/clothing/head/ngr/flap,
-/obj/item/clothing/neck/shemagh/ngr,
-/obj/item/clothing/mask/breath/ngr,
-/obj/item/clothing/mask/balaclava/ngr,
-/obj/item/clothing/suit/hooded/wintercoat/security/ngr,
-/obj/item/clothing/under/syndicate/ngr,
-/obj/item/clothing/shoes/combat,
-/obj/item/storage/backpack,
-/obj/effect/turf_decal/corner/opaque/beige/mono,
-/obj/effect/turf_decal/industrial/outline{
-	color = "#791500"
-	},
-/obj/item/clothing/gloves/combat,
-/obj/item/storage/backpack/messenger/sec,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/security)
 "fA" = (
 /obj/structure/railing{
 	dir = 4
@@ -3216,6 +3193,7 @@
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 5
 	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "rd" = (
@@ -4310,6 +4288,13 @@
 	dir = 4;
 	pixel_x = -19;
 	pixel_y = -7
+	},
+/obj/structure/closet/crate/bin,
+/obj/machinery/power/apc/auto_name/directional/west{
+	pixel_y = 6
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
@@ -5800,22 +5785,26 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
 "EN" = (
-/obj/effect/turf_decal/corner/opaque/tan/mono,
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 9
+/obj/item/clothing/head/ngr,
+/obj/item/clothing/head/ngr/flap,
+/obj/item/clothing/neck/shemagh/ngr,
+/obj/item/clothing/mask/breath/ngr,
+/obj/item/clothing/mask/balaclava/ngr,
+/obj/item/clothing/suit/hooded/wintercoat/security/ngr,
+/obj/item/clothing/under/syndicate/ngr,
+/obj/item/clothing/shoes/combat,
+/obj/item/storage/backpack,
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/industrial/outline{
+	color = "#791500"
 	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/security)
-"ER" = (
-/obj/effect/turf_decal/corner/opaque/red/mono,
-/obj/effect/turf_decal/corner/opaque/tan/half{
-	dir = 1
+/obj/item/clothing/gloves/combat,
+/obj/item/storage/backpack/messenger/sec,
+/obj/structure/closet/wall/red/directional/west{
+	name = "Operative's Locker";
+	req_access = list(1);
+	secure = 1
 	},
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 1
-	},
-/obj/machinery/light/directional/south,
-/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "EY" = (
@@ -6704,11 +6693,26 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hangar)
 "JU" = (
-/obj/effect/turf_decal/corner/opaque/tan/mono,
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 9
+/obj/item/storage/backpack,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/under/syndicate/ngr,
+/obj/item/clothing/suit/hooded/wintercoat/security/ngr,
+/obj/item/clothing/mask/balaclava/ngr,
+/obj/item/clothing/mask/breath/ngr,
+/obj/item/clothing/neck/shemagh/ngr,
+/obj/item/clothing/head/ngr/flap,
+/obj/item/clothing/head/ngr,
+/obj/effect/turf_decal/corner/opaque/beige/mono,
+/obj/effect/turf_decal/industrial/outline{
+	color = "#791500"
 	},
-/obj/machinery/airalarm/directional/west,
+/obj/item/clothing/gloves/combat,
+/obj/item/storage/backpack/messenger/sec,
+/obj/structure/closet/wall/red/directional/west{
+	name = "Operative's Locker";
+	req_access = list(1);
+	secure = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "JW" = (
@@ -8341,26 +8345,13 @@
 /turf/open/floor/carpet/red,
 /area/ship/crew)
 "RW" = (
-/obj/item/storage/backpack,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/under/syndicate/ngr,
-/obj/item/clothing/suit/hooded/wintercoat/security/ngr,
-/obj/item/clothing/mask/balaclava/ngr,
-/obj/item/clothing/mask/breath/ngr,
-/obj/item/clothing/neck/shemagh/ngr,
-/obj/item/clothing/head/ngr/flap,
-/obj/item/clothing/head/ngr,
-/obj/effect/turf_decal/corner/opaque/beige/mono,
-/obj/effect/turf_decal/industrial/outline{
-	color = "#791500"
+/obj/effect/turf_decal/corner/opaque/tan/mono,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
 	},
-/obj/structure/closet/wall/red/directional/east{
-	name = "Operative's Locker";
-	req_access = list(1);
-	secure = 1
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 9
 	},
-/obj/item/clothing/gloves/combat,
-/obj/item/storage/backpack/messenger/sec,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "RX" = (
@@ -8939,6 +8930,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
@@ -10993,7 +10987,7 @@ Vw
 dK
 JU
 EN
-ER
+JU
 tX
 GH
 Rc
@@ -11145,7 +11139,7 @@ UN
 Oe
 qX
 RW
-fr
+RW
 RW
 cF
 an
