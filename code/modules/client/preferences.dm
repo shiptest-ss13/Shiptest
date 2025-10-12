@@ -2623,6 +2623,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				var/datum/sprite_accessory/ipc_chassis/limb_style = GLOB.ipc_chassis_list[prosthetic_limbs[pros_limb]]
 				var/obj/item/bodypart/new_part = limb_style.chassis_bodyparts[pros_limb]
 				new_part = new new_part()
+				if(!(new_part.bodytype & pref_species.bodytype))
+					stack_trace("[parent] had [limb_style.name] selected, which isn't compatible with [pref_species.name]!")
+					prosthetic_limbs[pros_limb] = PROSTHETIC_NORMAL
+					continue
 				new_part.replace_limb(character, TRUE)
 				new_part.update_limb(is_creating = TRUE)
 				if(old_part)
