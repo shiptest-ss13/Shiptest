@@ -948,7 +948,7 @@
 	dir = 6
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/security/armory)
+/area/ship/hangar)
 "fA" = (
 /obj/structure/railing{
 	dir = 4
@@ -4293,17 +4293,15 @@
 	dir = 4
 	},
 /obj/machinery/light/dim/directional/north,
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -19;
-	pixel_y = -7
-	},
 /obj/structure/closet/crate/bin,
-/obj/machinery/power/apc/auto_name/directional/west{
-	pixel_y = 6
-	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = -12
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
@@ -5824,7 +5822,7 @@
 	dir = 6
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/hangar)
+/area/ship/security/armory)
 "EY" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/engineering)
@@ -11164,8 +11162,8 @@ RW
 RW
 cF
 an
-fr
-fr
+ER
+ER
 mf
 tX
 tX
@@ -11192,7 +11190,7 @@ DK
 DK
 DK
 DK
-ER
+fr
 JK
 Bn
 tX
@@ -11223,7 +11221,7 @@ DK
 Yg
 Yg
 lL
-ER
+fr
 ui
 vl
 tX
