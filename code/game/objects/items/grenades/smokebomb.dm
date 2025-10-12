@@ -4,7 +4,6 @@
 	icon = 'icons/obj/grenade.dmi'
 	icon_state = "smokewhite"
 	item_state = "smoke"
-	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 
 ///Here we generate some smoke and also damage blobs??? for some reason. Honestly not sure why we do that.

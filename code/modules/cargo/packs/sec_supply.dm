@@ -216,7 +216,7 @@
 /datum/supply_pack/sec_supply/frag_grenade
 	name = "Frag Grenade Crate"
 	desc = "Contains one fragmentation grenade. Better not let it go off in your hands."
-	cost = 750
+	cost = 500
 	contains = list(/obj/item/grenade/frag)
 	crate_name = "frag grenade crate"
 	crate_type = /obj/structure/closet/crate/secure/weapon
