@@ -553,6 +553,9 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner/opaque/tan/half{
+	dir = 8
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "cJ" = (
@@ -2186,9 +2189,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/tan/mono,
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 6
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "lf" = (
@@ -3203,6 +3203,9 @@
 	dir = 5
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 8
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "rd" = (
@@ -8367,6 +8370,9 @@
 /obj/effect/turf_decal/corner/opaque/tan/mono,
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 6
+	},
+/obj/effect/turf_decal/corner/opaque/tan/half{
+	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
