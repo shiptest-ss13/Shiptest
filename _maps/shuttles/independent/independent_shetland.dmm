@@ -637,6 +637,12 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
+"gi" = (
+/obj/machinery/atmospherics/components/binary/pump/layer1{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/space)
 "gk" = (
 /obj/effect/turf_decal/corner/transparent/tan{
 	dir = 10
@@ -1495,7 +1501,8 @@
 /area/space)
 "oH" = (
 /obj/machinery/atmospherics/components/binary/circulator/flipped{
-	dir = 1
+	dir = 1;
+	piping_layer = 1
 	},
 /turf/open/floor/plating,
 /area/space)
@@ -2640,11 +2647,11 @@
 /turf/open/floor/plasteel/tech,
 /area/space)
 "ym" = (
-/obj/machinery/atmospherics/components/binary/valve{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 4
+	},
+/obj/machinery/atmospherics/components/binary/pump/layer5{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/space)
@@ -4572,6 +4579,9 @@
 /turf/open/floor/plasteel/dark,
 /area/space)
 "PW" = (
+/obj/machinery/atmospherics/components/binary/valve/layer5{
+	dir = 4
+	},
 /turf/open/floor/plating/rust,
 /area/space)
 "Qb" = (
@@ -4681,7 +4691,9 @@
 /turf/open/floor/plasteel,
 /area/space)
 "QS" = (
-/obj/machinery/atmospherics/components/binary/circulator/cold/flipped,
+/obj/machinery/atmospherics/components/binary/circulator/cold/flipped{
+	piping_layer = 5
+	},
 /turf/open/floor/plating,
 /area/space)
 "QV" = (
@@ -5510,6 +5522,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
+"Wi" = (
+/obj/machinery/atmospherics/components/binary/valve/layer1{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/space)
 "Wy" = (
 /obj/effect/decal/cleanable/glass,
 /obj/item/shard{
@@ -6074,7 +6092,7 @@ Lu
 gz
 PW
 BR
-OC
+gi
 qh
 oX
 oX
@@ -6148,7 +6166,7 @@ EJ
 mI
 ym
 BR
-BR
+Wi
 Zn
 oX
 oX
