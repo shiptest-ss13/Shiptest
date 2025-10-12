@@ -188,6 +188,8 @@
 	icon_state = "pgf-sabre"
 	block_chance = 15
 	force = 28
+	demolition_mod = 1.25
+	attack_cooldown = 6
 
 /obj/item/melee/sword/sabre/suns/telescopic
 	name = "telescopic sabre"
