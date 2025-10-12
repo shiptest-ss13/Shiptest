@@ -550,9 +550,6 @@
 	},
 /obj/effect/turf_decal/corner/opaque/tan/mono,
 /obj/effect/turf_decal/corner/opaque/tan{
-	dir = 9
-	},
-/obj/effect/turf_decal/corner/opaque/tan{
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -946,6 +943,12 @@
 "fo" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/engines/port)
+"fr" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/security/armory)
 "fA" = (
 /obj/structure/railing{
 	dir = 4
@@ -1976,6 +1979,9 @@
 /obj/structure/railing/corner{
 	dir = 4
 	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hangar)
 "kd" = (
@@ -2293,6 +2299,9 @@
 	name = "lattice construction crate"
 	},
 /obj/item/stack/rods/twentyfive,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hangar)
 "lP" = (
@@ -5029,6 +5038,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hangar)
 "Bq" = (
@@ -5807,6 +5819,12 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
+"ER" = (
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/hangar)
 "EY" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/engineering)
@@ -6689,6 +6707,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hangar)
@@ -8349,9 +8370,6 @@
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 6
 	},
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 9
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "RX" = (
@@ -9809,6 +9827,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 6
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hangar)
 "Zo" = (
@@ -11143,8 +11164,8 @@ RW
 RW
 cF
 an
-tX
-tX
+fr
+fr
 mf
 tX
 tX
@@ -11171,7 +11192,7 @@ DK
 DK
 DK
 DK
-DK
+ER
 JK
 Bn
 tX
@@ -11202,7 +11223,7 @@ DK
 Yg
 Yg
 lL
-DK
+ER
 ui
 vl
 tX
