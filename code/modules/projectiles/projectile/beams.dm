@@ -84,7 +84,7 @@
 
 /obj/projectile/beam/laser/sharplite/sniper
 	icon_state = "nt_laser_sniper"
-	damage = 35
+	damage = 40
 	armour_penetration = 30
 	speed = 0.2
 	wound_bonus = 0
@@ -96,17 +96,16 @@
 	pass_flags = PASSTABLE | PASSGRILLE //does not go through glass
 
 /obj/projectile/beam/laser/eoehoma
-	icon_state = "heavylaser"
+	icon_state = "eoehoma_laser"
 	damage = 35
 	armour_penetration = 0
 	speed = 0.8
 
 /obj/projectile/beam/laser/eoehoma/wasp
-	icon_state = "heavylaser"
 	damage = 30
 
 /obj/projectile/beam/laser/eoehoma/heavy
-	icon_state = "heavylaser"
+	icon_state = "eoehoma_laser_heavy"
 	damage = 60
 	knockdown = 50
 	armour_penetration = 20
@@ -118,13 +117,27 @@
 	return BULLET_ACT_HIT
 
 /obj/projectile/beam/laser/assault
-	icon_state = "heavylaser"
+	icon_state = "eoehoma_laser_heavy"
 	damage = 25
 	armour_penetration = 20
 
+/obj/projectile/beam/laser/assault/mining
+	armour_penetration = 30
+
+/obj/projectile/beam/laser/eoehoma/mining/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(!isclosedturf(target))
+		return BULLET_ACT_HIT
+	if(ismineralturf(target))
+		damage *= 4
+	else//wall destryoing niche?
+		damage *= 2
+
+	return BULLET_ACT_HIT
+
 /obj/projectile/beam/laser/heavylaser
 	name = "heavy laser"
-	icon_state = "heavylaser"
+	icon_state = "eoehoma_laser_heavy"
 	damage = 40
 	tracer_type = /obj/effect/projectile/tracer/heavy_laser
 	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
@@ -205,13 +218,13 @@
 
 /obj/projectile/beam/laser/slug
 	name = "laser slug"
-	icon_state = "heavylaser"
+	icon_state = "eoehoma_laser_heavy"
 	damage = 20
 	armour_penetration = 40
 
 /obj/projectile/beam/scatter
 	name = "laser pellet"
-	icon_state = "scatterlaser"
+	icon_state = "eoehoma_laser_light"
 	damage = 5
 	range = 7
 

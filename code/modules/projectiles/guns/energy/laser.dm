@@ -91,16 +91,6 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter, /obj/item/ammo_casing/energy/laser/slug)
 	manufacturer = MANUFACTURER_NONE
 
-/obj/item/gun/energy/laser/scatter/shotty
-	name = "energy shotgun"
-	icon = 'icons/obj/guns/projectile.dmi'
-	icon_state = "cshotgun"
-	item_state = "shotgun"
-	desc = "A combat shotgun gutted and refitted with an internal laser system. Can switch between taser and scattered disabler shots."
-	shaded_charge = FALSE
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter, /obj/item/ammo_casing/energy/electrode)
-	manufacturer = MANUFACTURER_NONE
-
 ///Laser Cannon
 
 /obj/item/gun/energy/lasercannon

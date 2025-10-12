@@ -91,6 +91,8 @@
 	recharge_newshot(TRUE)
 	if(selfcharge)
 		START_PROCESSING(SSobj, src)
+	if(!base_icon_state)
+		base_icon_state = src::icon_state
 	update_appearance()
 
 /obj/item/gun/energy/ComponentInitialize()
@@ -329,7 +331,7 @@
 		return ..()
 	var/ratio = get_charge_ratio()
 	var/new_item_state = ""
-	new_item_state = initial(icon_state)
+	new_item_state = "[base_icon_state || src::icon_state]"
 	if(modifystate)
 		var/obj/item/ammo_casing/energy/shot = ammo_type[select]
 		new_item_state += "[shot.select_name]"
@@ -342,7 +344,7 @@
 	if(!automatic_charge_overlays || QDELETED(src))
 		return
 	// Every time I see code this "flexible", a kitten fucking dies //it got worse
-	//todo: refactor this a bit to allow showing of charge on a gun's cell
+
 	var/overlay_icon_state = "[icon_state]_charge"
 	var/obj/item/ammo_casing/energy/shot = ammo_type[modifystate ? select : 1]
 	var/ratio = get_charge_ratio()

@@ -1002,7 +1002,6 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 	default_firemode = FIREMODE_SEMIAUTO
 
 	unique_attachments = list(
-		/obj/item/attachment/alof,
 		/obj/item/attachment/scope,
 		/obj/item/attachment/long_scope)
 

@@ -24,6 +24,11 @@
 	projectile_type = /obj/projectile/beam/laser/eoehoma
 	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
 
+
+/obj/item/ammo_casing/energy/laser/eoehoma/mining
+	projectile_type = /obj/projectile/beam/laser/eoehoma/mining
+	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
+
 /obj/projectile/beam/laser/eoehoma/hermit // Used for the Hermits with E-11 because apparently you can only set it on projectile for simple mobs? That's fun!
 	spread = 30
 
@@ -63,12 +68,12 @@
 	projectile_type = /obj/projectile/beam/laser/sharplite/sniper
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 	delay = 1.3 SECONDS
-	e_cost = 2000 // 5 per regular cell 10 per upgraded cell
+	e_cost = 2600 // 3 per regular cell 7 per upgraded cell
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/lasergun/eoehoma
 	projectile_type = /obj/projectile/beam/laser/eoehoma
-	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
+	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
 	e_cost = 1428
 	delay = 0.3 SECONDS
 
@@ -121,7 +126,8 @@
 	pellets = 10
 	variance = 40
 	e_cost = 1598 //12 shots upgraded cell, 6 with normal cell
-	select_name = "scatter"
+	select_name = "kill"
+	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
 
 /obj/item/ammo_casing/energy/laser/shotgun
 	projectile_type = /obj/projectile/beam/weak/shotgun

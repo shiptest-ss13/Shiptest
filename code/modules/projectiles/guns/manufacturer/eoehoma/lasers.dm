@@ -41,6 +41,37 @@
 	spawn_no_ammo = TRUE
 
 
+/obj/item/gun/energy/laser/e20
+	name = "E-20 mining emitter"
+
+	desc = "A basic mining tool that fires concentrated bolts of light, which easily cause flesh, stone, and metal to yield. The extremely antiquated design is well documented and studied, leading to various modifications and upgrade kits to the 'platform' over the years."
+	icon = 'icons/obj/guns/manufacturer/eoehoma/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/eoehoma/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/eoehoma/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/eoehoma/onmob.dmi'
+
+	icon_state = "e20"
+	item_state = "e20"
+
+	w_class = WEIGHT_CLASS_BULKY
+	custom_materials = list(/datum/material/iron=2000)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma/mining)
+	ammo_x_offset = 1
+	shaded_charge = TRUE
+	supports_variations = VOX_VARIATION
+	manufacturer = MANUFACTURER_EOEHOMA
+
+	wield_delay = 0.6 SECONDS
+	wield_slowdown = HEAVY_LASER_RIFLE_SLOWDOWN
+
+	valid_attachments = list(
+		/obj/item/attachment/e20mod,
+	)
+
+	spread = 0
+	spread_unwielded = 10
+
+
 /obj/item/gun/energy/laser/e50
 	name = "E-50 energy emitter"
 	desc = "A heavy and extremely powerful laser. Sets targets on fire and kicks ass, but it uses a massive amount of energy per shot and is generally awkward to handle."
