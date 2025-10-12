@@ -180,6 +180,12 @@
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
 	set_light(4)
 
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/space/sentry
+	stop_automated_movement = 1
+	wander = 0
+	retreat_distance = 0
+	environment_smash = 0
+
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals
 	icon_state = "frontiersmanrangedrifle_mask"
 	atmos_requirements = IMMUNE_ATMOS_REQS
@@ -205,11 +211,25 @@
 	desc = "A member of the brutal Frontiersman terrorist fleet! Bedecked in military-grade armor, they swagger their shotgun about with a boldness uncommon even among other Frontiersmen."
 	icon_state = "frontiersmanrangedelite"
 	shoot_point_blank = TRUE
-	projectilesound = 'sound/weapons/gun/shotgun/shot.ogg'
+	projectilesound = 'sound/weapons/gun/shotgun/brimstone.ogg'
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper
-	r_hand = /obj/item/gun/ballistic/shotgun/brimstone
+	r_hand = /obj/item/gun/ballistic/shotgun/automatic/slammer
 	armor_base = /obj/item/clothing/suit/armor/vest/frontier
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter
+	name = "Frontiersmen Runner"
+	desc = "A quick-footed member of the brutal Frontiersmen terrorist fleet! This one wields a boxy submachine gun in one hand."
+	rapid = 8
+	rapid_fire_delay = 1
+	retreat_distance = 4
+	minimum_distance = 4
+	projectilesound = 'sound/weapons/gun/smg/spitter.ogg'
+	casingtype = /obj/item/ammo_casing/c9mm
+	r_hand = /obj/item/gun/ballistic/automatic/pistol/spitter
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter/neutered
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/space
 	icon_state = "frontiersmanrangedelite_mask"
@@ -224,6 +244,20 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
 	set_light(4)
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/space/spitter
+	name = "Frontiersmen Runner"
+	desc = "A quick-footed member of the brutal Frontiersmen terrorist fleet! This one clutches a boxy submachine gun with the bulky gauntlets of their grey hardsuit."
+	rapid = 8
+	rapid_fire_delay = 1
+	retreat_distance = 4
+	minimum_distance = 4
+	projectilesound = 'sound/weapons/gun/smg/spitter.ogg'
+	casingtype = /obj/item/ammo_casing/c9mm
+	r_hand = /obj/item/gun/ballistic/automatic/pistol/spitter
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/space/spitter/neutered
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals
 	icon_state = "frontiersmanrangedelite_mask"
@@ -441,6 +475,19 @@
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/neutured
 	weapon_drop_chance = 0
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/cm15
+	name = "Frontiersman Boss"
+	desc = "This Frontiersman moves with what could almost pass for discipline among the infamously ragtag terrorists. They leer at their underlings, a chrome combat shotgun within their hands."
+	rapid = 2
+	rapid_fire_delay = 7
+	retreat_distance = 4
+	minimum_distance = 3
+	casingtype = /obj/item/ammo_casing/shotgun/buckshot
+	projectilesound = 'sound/weapons/gun/shotgun/bulldog.ogg'
+	shoot_point_blank = TRUE
+	r_hand = /obj/item/gun/ballistic/shotgun/cm15
+	weapon_drop_chance = 100
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle
 	name = "Frontiersman Commander"

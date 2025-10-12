@@ -756,7 +756,8 @@
 "gK" = (
 /obj/machinery/mineral/processing_unit_console{
 	machinedir = 2;
-	pixel_y = 26
+	pixel_y = 26;
+	dist = 3
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -2594,7 +2595,7 @@
 	a_intent = "help";
 	desc = "A small goliath pup. Its tendrils have not yet fully grown. Someone, somehow, has managed to fit a large dog collar around its neck.";
 	environment_smash = 0;
-	faction = list("neutral","playerSyndicate");
+	faction = list("neutral","New Gorlex Republic");
 	mob_size = 2;
 	move_resist = 1000;
 	name = "David";

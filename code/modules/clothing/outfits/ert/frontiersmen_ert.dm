@@ -1,6 +1,6 @@
 /datum/outfit/job/frontiersmen/ert //most basic of grunts
 	name = "ERT - Frontiersman Basic"
-	jobtype = /datum/job/officer
+	jobtype = /datum/job/ert/sec
 
 	head = /obj/item/clothing/head/beret/sec/frontier
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
@@ -11,7 +11,6 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	ears = /obj/item/radio/headset/pirate/alt
 	back = /obj/item/storage/backpack
-	id = null // lol
 	wallet = null
 
 	box = /obj/item/storage/box/survival/frontier
@@ -186,6 +185,7 @@
 
 /datum/outfit/job/frontiersmen/ert/leader
 	name = "ERT - Frontiersman Officer"
+	jobtype = /datum/job/ert/commander
 
 	uniform = /obj/item/clothing/under/frontiersmen/officer
 	head = /obj/item/clothing/head/beret/sec/frontier/officer
@@ -221,6 +221,7 @@
 
 /datum/outfit/job/frontiersmen/ert/medic
 	name = "ERT - Frontiersman Medic"
+	jobtype = /datum/job/ert/med
 
 	head = /obj/item/clothing/head/frontier
 	back = /obj/item/storage/backpack/medic
@@ -246,6 +247,7 @@
 
 /datum/outfit/job/frontiersmen/ert/engineer
 	name = "ERT - Frontiersman Engineer"
+	jobtype = /datum/job/ert/engi
 
 	back = /obj/item/storage/backpack/industrial
 	belt = /obj/item/storage/belt/utility/full
