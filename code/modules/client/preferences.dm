@@ -2605,32 +2605,37 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			icon_updates = TRUE
 		switch(prosthetic_limbs[pros_limb])
 			if(PROSTHETIC_NORMAL)
-				continue
+				if(old_part)
+					old_part.drop_limb(TRUE)
+					qdel(old_part)
+				character.regenerate_limb(pros_limb, robotic = fbp)
 			if(PROSTHETIC_AMPUTATED)
+				if(old_part)
+					old_part.drop_limb(TRUE)
+					qdel(old_part)
 				if(pros_limb == BODY_ZONE_CHEST || pros_limb == BODY_ZONE_HEAD)
 					stack_trace("[parent] somehow had their [parse_zone(pros_limb)] set to [PROSTHETIC_AMPUTATED]!")
 					prosthetic_limbs[pros_limb] = PROSTHETIC_NORMAL
-					continue
-				if(old_part)
-					qdel(old_part)
+					character.regenerate_limb(pros_limb, robotic = fbp)
 			if(PROSTHETIC_ROBOTIC)
-				if(fbp)
-					continue
-				character.regenerate_limb(pros_limb, robotic = TRUE)
 				if(old_part)
+					old_part.drop_limb(TRUE)
 					qdel(old_part)
+				character.regenerate_limb(pros_limb, robotic = TRUE)
 			else
 				var/datum/sprite_accessory/ipc_chassis/limb_style = GLOB.ipc_chassis_list[prosthetic_limbs[pros_limb]]
 				var/obj/item/bodypart/new_part = limb_style.chassis_bodyparts[pros_limb]
 				new_part = new new_part()
+				if(old_part)
+					old_part.drop_limb(TRUE)
+					qdel(old_part)
 				if(!(new_part.bodytype & pref_species.bodytype))
 					stack_trace("[parent] had [limb_style.name] selected, which isn't compatible with [pref_species.name]!")
 					prosthetic_limbs[pros_limb] = PROSTHETIC_NORMAL
+					character.regenerate_limb(pros_limb, robotic = fbp)
 					continue
 				new_part.replace_limb(character, TRUE)
 				new_part.update_limb(is_creating = TRUE)
-				if(old_part)
-					qdel(old_part)
 
 	//Because of how set_species replaces all bodyparts with new ones, hair needs to be set AFTER species.
 	character.dna.real_name = character.real_name
