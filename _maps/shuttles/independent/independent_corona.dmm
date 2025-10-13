@@ -195,6 +195,9 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/starboard)
+"cY" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/engineering)
 "da" = (
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
@@ -1527,6 +1530,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
+"rb" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew/dorm/captain)
 "rf" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
@@ -2213,6 +2219,9 @@
 	dir = 8
 	},
 /area/ship/cargo)
+"Ab" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/bridge)
 "Ag" = (
 /obj/structure/cable/cyan{
 	icon_state = "1-8"
@@ -3167,6 +3176,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plating,
+/area/ship/external/dark)
+"KI" = (
+/turf/closed/wall/mineral/titanium,
 /area/ship/external/dark)
 "KO" = (
 /obj/structure/table/wood/reinforced,
@@ -5336,7 +5348,7 @@ KT
 Pm
 fa
 Pm
-Pm
+KI
 mT
 mT
 "}
@@ -5372,7 +5384,7 @@ bb
 bb
 Pm
 Pm
-Pm
+KI
 mT
 mT
 mT
@@ -5384,7 +5396,7 @@ mT
 mT
 mT
 mT
-uW
+rb
 hr
 aE
 iD
@@ -5406,7 +5418,7 @@ Oy
 ST
 yz
 bb
-bb
+cY
 mT
 mT
 mT
@@ -5984,13 +5996,13 @@ mT
 mT
 mT
 mT
-fq
+Ab
 IP
 cn
 RB
 hn
 IP
-fq
+Ab
 mT
 mT
 mT
@@ -6059,11 +6071,11 @@ mT
 mT
 mT
 mT
-fq
+Ab
 IP
 Dl
 IP
-fq
+Ab
 mT
 mT
 mT
