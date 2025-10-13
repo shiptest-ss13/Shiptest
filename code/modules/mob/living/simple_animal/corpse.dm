@@ -27,11 +27,12 @@
 	id = /obj/item/card/id/syndicate
 
 /datum/outfit/ramzi/bulletproof
-	name = "Ramzi Clique Trooper"
+	name = "Ramzi Clique Rifleman"
 	suit = /obj/item/clothing/suit/armor/ramzi/bulletproof
 	head = /obj/item/clothing/head/helmet/bulletproof/x11/ramzi
 	belt = /obj/item/storage/belt/security/webbing/ramzi/alt
 	mask = /obj/item/clothing/mask/breath/facemask
+	eyes = /obj/item/clothing/glasses/hud/security/sunglasses/ramzi
 	neck = /obj/item/clothing/neck/shemagh/ramzi
 
 /obj/effect/mob_spawn/human/corpse/ramzi/trooper
