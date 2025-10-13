@@ -198,7 +198,7 @@
 /datum/supply_pack/gun/cm357
 	name = "CM-357 Automag Pistol Crate"
 	desc = "Contains a magazine-fed .357 handgun, produced for the CLIP-BARD division and available for requisition in small numbers to the Minutemen."
-	cost = 3000
+	cost = 1750
 	contains = list(/obj/item/storage/guncase/pistol/cm357)
 	faction = /datum/faction/clip
 	faction_discount = 0
