@@ -473,7 +473,7 @@
 	rapid = 3
 	casingtype = /obj/item/ammo_casing/c45
 
-/mob/living/simple_animal/hostile/human/ramzi/ranged/smg/sidewinder
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg/sidewinder
 	desc = "A deserter from the Gorlex Marauders turned pirate. Green hardsuit optics glint as they sweep their PDW across the room, scanning for threats."
 	l_hand = /obj/item/gun/ballistic/automatic/smg/sidewinder
 	rapid = 3
