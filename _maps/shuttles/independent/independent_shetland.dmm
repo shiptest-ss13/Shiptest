@@ -60,6 +60,7 @@
 /obj/effect/turf_decal/corner/transparent/tan/full,
 /obj/effect/turf_decal/corner/transparent/inteqbrown/full,
 /obj/effect/turf_decal/industrial/hatch/orange,
+/obj/item/clothing/suit/hooded/wintercoat/engineering,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "aN" = (
@@ -268,15 +269,12 @@
 /turf/open/floor/plasteel/dark,
 /area/space)
 "ce" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 1
-	},
-/obj/effect/turf_decal/box/corners{
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/atmospherics/pipe/layer_manifold/visible{
 	dir = 4
 	},
-/obj/effect/turf_decal/borderfloorblack,
-/obj/machinery/computer/atmos_control/ship/shetland,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/space)
 "cj" = (
 /obj/effect/turf_decal/corner/transparent/beige{
@@ -732,6 +730,11 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 4
 	},
+/obj/machinery/button/ignition/incinerator/atmos{
+	dir = 4;
+	pixel_x = -19;
+	pixel_y = 12
+	},
 /turf/open/floor/plating/rust,
 /area/space)
 "gB" = (
@@ -926,8 +929,13 @@
 /turf/open/floor/plasteel/white,
 /area/space)
 "hX" = (
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030;
+	dir = 9
+	},
+/obj/effect/turf_decal/box/corners,
 /obj/structure/reagent_dispensers/watertank,
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "ib" = (
 /obj/effect/turf_decal/borderfloor{
@@ -1522,6 +1530,7 @@
 	dir = 1;
 	piping_layer = 1
 	},
+/obj/effect/turf_decal/industrial/hatch/orange,
 /turf/open/floor/plating,
 /area/space)
 "oK" = (
@@ -1638,15 +1647,10 @@
 /turf/open/floor/plasteel/dark,
 /area/space)
 "pX" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 1
-	},
-/obj/effect/turf_decal/box/corners{
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 4
 	},
-/obj/effect/turf_decal/borderfloorblack,
-/obj/structure/table/reinforced,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/engine/vacuum,
 /area/space)
 "qb" = (
 /obj/effect/landmark/start/shaft_miner,
@@ -2438,6 +2442,7 @@
 /obj/item/clothing/neck/shemagh/black,
 /obj/item/clothing/glasses/meson,
 /obj/item/storage/belt/mining/alt,
+/obj/item/clothing/suit/hooded/wintercoat/miner,
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
 "vX" = (
@@ -2502,6 +2507,7 @@
 	pixel_y = -8;
 	pixel_x = 4
 	},
+/obj/item/clothing/suit/hooded/wintercoat/security,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "wr" = (
@@ -2540,6 +2546,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/space)
 "wW" = (
+/obj/effect/turf_decal/industrial/outline/orange,
 /obj/machinery/pipedispenser,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/space)
@@ -3079,6 +3086,7 @@
 /obj/item/clothing/head/caphat{
 	pixel_y = 9
 	},
+/obj/item/clothing/suit/hooded/wintercoat/captain,
 /turf/open/floor/wood/walnut,
 /area/space)
 "Ca" = (
@@ -3098,6 +3106,17 @@
 	pixel_x = -10;
 	pixel_y = 7
 	},
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"Cc" = (
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030;
+	dir = 1
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/effect/turf_decal/box/corners,
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
 "Ci" = (
@@ -3230,9 +3249,6 @@
 /turf/open/floor/carpet,
 /area/space)
 "Dw" = (
-/obj/machinery/air_sensor/atmos/incinerator_tank{
-	id_tag = "nemo_incinerator_sensor"
-	},
 /obj/machinery/igniter/incinerator_atmos,
 /obj/item/toy/plush/moth/punished{
 	pixel_y = 5
@@ -3240,6 +3256,9 @@
 /obj/item/clothing/mask/cigarette{
 	pixel_x = -4;
 	pixel_y = 10
+	},
+/obj/machinery/air_sensor/ship/shetland/burn{
+	pixel_y = 17
 	},
 /turf/open/floor/engine/vacuum,
 /area/space)
@@ -3656,8 +3675,16 @@
 /turf/open/floor/plasteel/white,
 /area/space)
 "GR" = (
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030;
+	dir = 1
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/effect/turf_decal/box/corners,
 /obj/structure/reagent_dispensers/foamtank,
-/turf/open/floor/plasteel/patterned/grid/dark,
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "GS" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
@@ -3797,6 +3824,7 @@
 /obj/item/clothing/gloves/color/latex/nitrile/clip,
 /obj/item/clothing/head/frontier,
 /obj/item/storage/belt/medical/webbing/frontiersmen,
+/obj/item/clothing/suit/hooded/wintercoat/medical,
 /turf/open/floor/plasteel/mono/white,
 /area/space)
 "IO" = (
@@ -3806,8 +3834,14 @@
 /turf/open/floor/plating,
 /area/space)
 "Jl" = (
-/obj/machinery/atmospherics/components/binary/pump,
-/turf/open/space/basic,
+/obj/effect/turf_decal/borderfloorblack{
+	layer = 2.030;
+	dir = 5
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "Jt" = (
 /obj/machinery/computer/atmos_control/ship/shetland{
@@ -3964,6 +3998,9 @@
 /turf/open/floor/plasteel/white,
 /area/space)
 "Km" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/incinerator_input{
+	dir = 4
+	},
 /turf/open/floor/engine/vacuum,
 /area/space)
 "Kn" = (
@@ -4171,6 +4208,7 @@
 	pixel_x = -14;
 	pixel_y = 20
 	},
+/obj/item/clothing/suit/apron/chef,
 /turf/open/floor/plasteel/lightgrey,
 /area/space)
 "LK" = (
@@ -4389,6 +4427,7 @@
 /obj/item/clothing/neck/shemagh/black,
 /obj/item/clothing/glasses/meson,
 /obj/item/storage/belt/mining/alt,
+/obj/item/clothing/suit/hooded/wintercoat/miner,
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
 "Nb" = (
@@ -4436,6 +4475,7 @@
 /obj/machinery/power/generator{
 	dir = 8
 	},
+/obj/effect/turf_decal/industrial/outline/orange,
 /turf/open/floor/plating,
 /area/space)
 "NP" = (
@@ -4774,6 +4814,7 @@
 /obj/machinery/atmospherics/components/binary/circulator/cold/flipped{
 	piping_layer = 5
 	},
+/obj/effect/turf_decal/industrial/hatch/orange,
 /turf/open/floor/plating,
 /area/space)
 "QV" = (
@@ -5034,7 +5075,7 @@
 	name = "empty canister crate"
 	},
 /obj/machinery/portable_atmospherics/canister,
-/obj/item/storage/backpack/satchel/flat/empty,
+/obj/item/storage/backpack/satchel/flat/shetland,
 /turf/open/floor/plating,
 /area/space)
 "SI" = (
@@ -5391,15 +5432,10 @@
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Ul" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 1
-	},
-/obj/effect/turf_decal/box/corners{
+/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
 	dir = 4
 	},
-/obj/effect/turf_decal/borderfloorblack,
-/obj/machinery/computer/monitor,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/space)
 "Up" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -5575,6 +5611,7 @@
 	pixel_y = -8
 	},
 /obj/item/clothing/neck/scarf/darkblue,
+/obj/item/clothing/suit/hooded/wintercoat/captain,
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken2"
 	},
@@ -6038,7 +6075,7 @@ fW
 fW
 fW
 fW
-pX
+fW
 fW
 fW
 fW
@@ -6075,7 +6112,7 @@ fW
 fW
 fW
 fW
-pX
+fW
 fW
 fW
 fW
@@ -6112,7 +6149,7 @@ fW
 fW
 fW
 fW
-Ul
+fW
 fW
 fW
 fW
@@ -6124,7 +6161,7 @@ bv
 bv
 Km
 Dw
-Km
+pX
 bv
 CN
 bv
@@ -6149,7 +6186,7 @@ fW
 fW
 fW
 fW
-ce
+fW
 fW
 fW
 fW
@@ -6159,9 +6196,9 @@ bv
 Jt
 bc
 bv
+ce
 Lx
-Lx
-Lx
+ce
 bv
 qk
 eH
@@ -6202,7 +6239,7 @@ gi
 qh
 oX
 oX
-oX
+Cc
 bv
 Kb
 Kb
@@ -6239,7 +6276,7 @@ oH
 Ik
 Pj
 oX
-wW
+Jl
 Pg
 Yh
 Yh
@@ -6276,7 +6313,7 @@ Wi
 Zn
 oX
 oX
-oX
+wW
 OU
 vj
 Cs
@@ -6309,7 +6346,7 @@ EJ
 NE
 Sl
 BR
-BR
+Ul
 XC
 Sv
 oX
@@ -6479,7 +6516,7 @@ fW
 fW
 fW
 fW
-Jl
+fW
 fW
 bv
 bv
