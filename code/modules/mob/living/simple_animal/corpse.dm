@@ -34,6 +34,8 @@
 	name = "Ramzi Clique Space Corpse"
 	uniform = /obj/item/clothing/under/syndicate/ramzi
 	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
+	mask = /obj/item/clothing/mask/breath/facemask
+	eyes = /obj/item/clothing/glasses/hud/security/sunglasses/ramzi
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 	back = /obj/item/tank/jetpack/oxygen
 	r_pocket = /obj/item/tank/internals/emergency_oxygen
@@ -72,7 +74,8 @@
 	uniform = /obj/item/clothing/under/syndicate/ramzi/officer
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi/elite
-	mask = /obj/item/clothing/mask/gas/ramzi
+	mask = /obj/item/clothing/mask/breath/facemask
+	eyes = /obj/item/clothing/glasses/hud/security/sunglasses/ramzi
 	back = /obj/item/tank/jetpack/oxygen/harness
 
 /datum/outfit/syndicatecaptaincorpse
