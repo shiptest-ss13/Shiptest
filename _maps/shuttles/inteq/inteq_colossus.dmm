@@ -2319,9 +2319,22 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
+/obj/item/chair/plastic{
+	pixel_y = 12;
+	pixel_x = -2
+	},
+/obj/item/chair/plastic{
+	pixel_y = 6
+	},
+/obj/item/chair/plastic{
+	pixel_y = 14
+	},
+/obj/item/chair/plastic{
+	pixel_y = 10
+	},
 /obj/item/towel{
-	pixel_x = -5;
-	pixel_y = 4
+	pixel_x = 8;
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -3112,19 +3125,14 @@
 /area/ship/crew)
 "uf" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
-/obj/effect/turf_decal/corner_techfloor_grid{
-	dir = 9
-	},
-/obj/effect/turf_decal/box/corners{
-	dir = 1
-	},
-/obj/effect/turf_decal/box/corners{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner_techfloor_grid,
 /obj/effect/turf_decal/box/corners,
 /obj/structure/cable/yellow{
 	icon_state = "4-10"
+	},
+/obj/item/t_scanner{
+	pixel_x = -8;
+	pixel_y = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -8751,7 +8759,7 @@
 	pixel_y = -15
 	},
 /obj/item/paper/fluff{
-	default_raw_text = "Artificer's Note: If the powergrid seems drawn suspiciously thin, check the Thunder shuttle's SMES input setting.";
+	default_raw_text = "Artificer's Note: If the powergrid seems drawn suspiciously thin, check the SMES input settings. One is dedicated to the Thunder shuttle, which should be kept on a low input.";
 	name = "paper note";
 	pixel_x = 10
 	},
