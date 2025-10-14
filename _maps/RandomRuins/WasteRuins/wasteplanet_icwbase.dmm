@@ -370,7 +370,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer2{
 	dir = 1
 	},
-/obj/machinery/fax/frontiersmen,
+/obj/machinery/fax/ruin,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cic)
 "bz" = (
@@ -733,9 +733,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/circuit/red/anim,
 /area/ruin/wasteplanet/wasteplanet_icwbase/vault)
-"cP" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
 "cR" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 10
@@ -5227,6 +5224,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
+"ux" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
 "uA" = (
 /obj/structure/fluff/oldturret,
 /turf/closed/wall/mineral/plastitanium,
@@ -8025,7 +8025,7 @@
 "Gg" = (
 /obj/structure/closet/crate/grave/loot,
 /obj/effect/mob_spawn/human/corpse/vigilitas_private,
-/obj/item/gun/energy/e_gun/smg,
+/obj/item/gun/energy/sharplite/l305,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/ruin/wasteplanet/wasteplanet_icwbase/TURRETS)
 "Gi" = (
@@ -12094,7 +12094,7 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/hab)
 "WH" = (
 /obj/structure/closet/crate/grave/loot,
-/obj/item/gun/energy/e_gun/smg,
+/obj/item/gun/energy/sharplite/l305,
 /obj/effect/mob_spawn/human/corpse/vigilitas_private,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/ruin/wasteplanet/wasteplanet_icwbase/TURRETS)
@@ -13582,11 +13582,11 @@ gw
 Nx
 rb
 wg
-cP
-cP
-cP
-cP
-cP
+ux
+ux
+ux
+ux
+ux
 wg
 hy
 Nx
@@ -13642,13 +13642,13 @@ Nx
 Nx
 Nx
 LI
-cP
+ux
 Zs
 pu
 CX
 Ys
 Tu
-cP
+ux
 jk
 Nx
 Nx
@@ -13703,13 +13703,13 @@ tD
 Nx
 Nx
 kH
-cP
+ux
 NC
 OO
 nt
 Jz
 NC
-cP
+ux
 gZ
 Nx
 Nx
@@ -13764,13 +13764,13 @@ Nx
 Nx
 Nx
 kH
-cP
+ux
 xZ
 Ep
 EZ
 ph
 xm
-cP
+ux
 gZ
 Nx
 Nx
@@ -13825,13 +13825,13 @@ Nx
 Nx
 Nx
 kH
-cP
+ux
 YT
 il
 Jq
 lJ
 nf
-cP
+ux
 gZ
 Nx
 Nx
@@ -13886,13 +13886,13 @@ Nx
 Nx
 Nx
 LI
-cP
+ux
 nx
 TF
 On
 bc
 Lw
-cP
+ux
 aB
 Nx
 gD
@@ -13947,11 +13947,11 @@ Nx
 Nx
 Nx
 kH
-cP
+ux
 uV
-cP
+ux
 ZF
-cP
+ux
 wL
 wg
 gZ
@@ -14010,9 +14010,9 @@ wT
 hv
 Mo
 fZ
-cP
+ux
 oa
-cP
+ux
 yR
 SD
 BJ
@@ -14071,9 +14071,9 @@ KA
 KA
 KA
 tC
-cP
+ux
 kY
-cP
+ux
 Tw
 Nx
 nk

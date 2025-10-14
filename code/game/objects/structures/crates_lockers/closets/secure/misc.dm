@@ -17,7 +17,7 @@
 	else
 		new /obj/item/ammo_box/a357(src)
 		new /obj/item/ammo_box/a357(src)
-		new /obj/item/gun/ballistic/revolver/mateba(src)
+		new /obj/item/gun/ballistic/revolver/rhino(src)
 
 /obj/structure/closet/secure_closet/ertSec
 	name = "emergency response team security locker"

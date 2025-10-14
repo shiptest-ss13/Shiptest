@@ -152,11 +152,12 @@
 	if(empty)
 		return
 	var/static/items_inside = list(
-		/obj/item/stack/medical/ointment = 2,
+		/obj/item/stack/medical/ointment = 1,
 		/obj/item/stack/medical/mesh = 1,
 		/obj/item/stack/medical/gauze = 1,
-		/obj/item/reagent_containers/pill/patch/silver_sulf = 1,
-		/obj/item/reagent_containers/hypospray/medipen/oxandrolone = 1,
+		/obj/item/reagent_containers/medigel/quardexane = 1,
+		/obj/item/reagent_containers/pill/patch/alvitane = 1,
+		/obj/item/reagent_containers/hypospray/medipen/ysiltane = 1,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
 		/obj/item/reagent_containers/hypospray/medipen/ekit = 1,
 	)
@@ -175,9 +176,9 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/storage/pill_bottle/charcoal/less = 1,
-		/obj/item/reagent_containers/syringe/thializid = 3,
+		/obj/item/reagent_containers/syringe/pancrazine = 3,
 		/obj/item/storage/pill_bottle/potassiodide = 1,
-		/obj/item/reagent_containers/hypospray/medipen/penacid = 1,
+		/obj/item/reagent_containers/hypospray/medipen/gjalrazine = 1,
 	)
 	generate_items_inside(items_inside,src)
 
@@ -211,7 +212,7 @@
 	if(empty)
 		return
 	var/static/items_inside = list(
-		/obj/item/reagent_containers/syringe/perfluorodecalin = 3,
+		/obj/item/reagent_containers/syringe/dexalin = 3,
 		/obj/item/reagent_containers/hypospray/medipen/salbutamol = 1,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
 		/obj/item/storage/pill_bottle/iron = 1,
@@ -231,13 +232,13 @@
 	if(empty)
 		return
 	var/static/items_inside = list(
-		/obj/item/reagent_containers/pill/patch/styptic = 1,
-		/obj/item/storage/pill_bottle/trophazole = 1,
+		/obj/item/reagent_containers/medigel/hadrakine = 1,
+		/obj/item/storage/pill_bottle/indomide = 1,
 		/obj/item/stack/medical/bone_gel = 1,
 		/obj/item/stack/sticky_tape/surgical = 1,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/stack/medical/splint = 1,
-		/obj/item/reagent_containers/hypospray/medipen/salacid = 1,
+		/obj/item/reagent_containers/hypospray/medipen/silfrine = 1,
 		/obj/item/reagent_containers/hypospray/medipen/ekit = 1,
 	)
 	generate_items_inside(items_inside,src)
@@ -287,10 +288,10 @@
 	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/defibrillator/compact/combat/loaded(src)
 	new /obj/item/reagent_containers/hypospray/combat(src)
-	new /obj/item/reagent_containers/pill/patch/styptic(src)
-	new /obj/item/reagent_containers/pill/patch/styptic(src)
-	new /obj/item/reagent_containers/pill/patch/silver_sulf(src)
-	new /obj/item/reagent_containers/pill/patch/silver_sulf(src)
+	new /obj/item/reagent_containers/hypospray/medipen/ysiltane(src)
+	new /obj/item/reagent_containers/hypospray/medipen/ysiltane(src)
+	new /obj/item/reagent_containers/hypospray/medipen/silfrine(src)
+	new /obj/item/reagent_containers/hypospray/medipen/silfrine(src)
 	new /obj/item/clothing/glasses/hud/health/night(src)
 
 //medibot assembly
@@ -406,15 +407,6 @@
 	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/stimulant(src)
 
-/obj/item/storage/pill_bottle/mining
-	name = "bottle of patches"
-	desc = "Contains patches used to treat brute and burn damage."
-
-/obj/item/storage/pill_bottle/mining/PopulateContents()
-	new /obj/item/reagent_containers/pill/patch/silver_sulf(src)
-	for(var/i in 1 to 3)
-		new /obj/item/reagent_containers/pill/patch/styptic(src)
-
 /obj/item/storage/pill_bottle/zoom
 	name = "suspicious pill bottle"
 	desc = "The label is pretty old and almost unreadable, you recognize some chemical compounds."
@@ -489,13 +481,13 @@
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/pill/floorpill(src)
 
-/obj/item/storage/pill_bottle/trophazole
-	name = "bottle of trophazole pills"
+/obj/item/storage/pill_bottle/indomide
+	name = "bottle of indomide pills"
 	desc = "Contains pills used to treat brute damage.The tag in the bottle states 'Eat before ingesting'."
 
-/obj/item/storage/pill_bottle/trophazole/PopulateContents()
+/obj/item/storage/pill_bottle/indomide/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/reagent_containers/pill/trophazole(src)
+		new /obj/item/reagent_containers/pill/indomide(src)
 
 /obj/item/storage/pill_bottle/licarb
 	name = "bottle of lithium carbonate pills"
@@ -515,7 +507,7 @@
 		new /obj/item/reagent_containers/pill/finobranc(src)
 
 /obj/item/storage/pill_bottle/stardrop
-	name = "bottle of stardrop capsules"
+	name = "bottle of stardrop patches"
 	desc = "Contains vision-enhancing patches."
 	custom_price = 300
 
@@ -524,7 +516,7 @@
 		new /obj/item/reagent_containers/pill/patch/stardrop(src)
 
 /obj/item/storage/pill_bottle/starlight
-	name = "bottle of starlight capsules"
+	name = "bottle of starlight patches"
 	desc = "Contains vision-enhancing patches."
 
 /obj/item/storage/pill_bottle/starlight/PopulateContents()

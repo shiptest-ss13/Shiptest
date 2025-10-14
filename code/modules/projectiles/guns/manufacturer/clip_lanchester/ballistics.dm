@@ -443,7 +443,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	spread_unwielded = 35
 	recoil = 2
 	recoil_unwielded = 10
-	wield_slowdown = SNIPER_SLOWDOWN
+	wield_slowdown = LIGHT_SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 
 	slot_available = list(
@@ -555,6 +555,8 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 
 	fire_select_icon_state_prefix = "clip_"
 	adjust_fire_select_icon_state_on_safety = TRUE
+
+NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 
 /obj/item/gun/ballistic/automatic/hmg/cm40
 	name = "\improper CM-40"

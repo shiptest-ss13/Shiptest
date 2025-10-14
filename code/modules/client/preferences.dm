@@ -9,8 +9,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	//non-preference stuff
 	var/muted = 0
-	var/last_ip
-	var/last_id
 
 	//game-preferences
 	var/lastchangelog = ""				//Saved changlog filesize to detect if there was a change
@@ -158,13 +156,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/alt_titles_preferences = list()
 	var/list/custom_names = list()
 	var/preferred_ai_core_display = "Blue"
-	var/prefered_security_department = SEC_DEPT_RANDOM
 	var/generic_adjective = "Unremarkable"
 	//Quirk list
 	var/list/all_quirks = list()
 
 	//Job preferences 2.0 - indexed by job title , no key or value implies never
 	var/list/job_preferences = list()
+
+	/// Languages this character knows besides their native language.
+	var/list/learned_languages = list()
+
+	/// This character's native language.
+	var/datum/language/native_language = /datum/language/galactic_common
+
+	/// Associated list with language levels of understanding and their point costs.
+	var/static/list/language_level_costs = list(LANGUAGE_UNKNOWN = 0, LANGUAGE_RECOGNIZED = 1, LANGUAGE_FAMILIAR = 2, LANGUAGE_FLUENT = 3)
 
 	// 0 = character settings, 1 = game preferences
 	var/current_tab = 0
@@ -194,7 +200,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/pixel_size = 0
 	///What scaling method should we use?
 	var/scaling_method = "distort"
-	var/uplink_spawn_loc = UPLINK_PDA
 
 	var/list/exp = list()
 	var/list/menuoptions
@@ -362,7 +367,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			dat += "<b>Custom Job Preferences:</b><BR>"
 			dat += "<a href='byond://?_src_=prefs;preference=ai_core_icon;task=input'><b>Preferred AI Core Display:</b> [preferred_ai_core_display]</a><br>"
-			dat += "<a href='byond://?_src_=prefs;preference=sec_dept;task=input'><b>Preferred Security Department:</b> [prefered_security_department]</a><BR></td>"
+
+			dat += "<td><h2>Languages</h2><table>"
+			dat += "<tr><td><b>[get_language_point_balance()]</b> points left.</td></tr>"
+			dat += "<tr><td><a href='byond://?_src_=prefs;preference=native_language;task=input'><b>Native Language: </b>[initial(native_language.name)]</a></td></tr>"
+			if(!learned_languages?.len)
+				init_learned_languages()
+			for(var/datum/language/lang_type as anything in learned_languages)
+				if(lang_type == native_language)
+					continue
+				dat += "<tr><td><b>[initial(lang_type.name)]: </b></td>"
+				dat += "<td><a href='byond://?_src_=prefs;preference=learned_language;task=input;language=[REF(GLOB.language_datum_instances[lang_type])]'>[learned_languages[lang_type]]</a></td></tr>"
+			dat += "<tr><td><a href='byond://?_src_=prefs;preference=reset_languages;task=input'>Reset Languages</a></td></tr></table></td>"
 
 			dat += "</tr></table>"
 
@@ -373,8 +389,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<br><b>Jumpsuit Style:</b><BR><a href ='?_src_=prefs;preference=suit;task=input'>[jumpsuit_style]</a>"
 
 			dat += "<br><b>Outerwear Style:</b><BR><a href ='?_src_=prefs;preference=exo;task=input'>[exowear]</a>"
-
-			dat += "<br><b>Uplink Spawn Location:</b><BR><a href ='?_src_=prefs;preference=uplink_loc;task=input'>[uplink_spawn_loc]</a><BR></td>"
 
 		if(1) //Character Appearance
 			if(path)
@@ -1506,6 +1520,24 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		if(SSquirks.quirk_points[q] > 0)
 			.++
 
+/datum/preferences/proc/init_learned_languages()
+	learned_languages = list()
+	for(var/datum/language/lang_type as anything in subtypesof(/datum/language))
+		if(initial(lang_type.flags) & ROUNDSTART_LANGUAGE)
+			learned_languages[lang_type] = LANGUAGE_UNKNOWN
+
+/datum/preferences/proc/get_language_point_balance()
+	var/points_balance = MAX_LANGUAGE_POINTS
+	for(var/datum/language/lang_type as anything in learned_languages)
+		if(lang_type == native_language)
+			continue // this should happen but just in case
+		points_balance -= language_level_costs[learned_languages[lang_type]]
+	if("Trilingual" in all_quirks)
+		points_balance += 2
+	if("Monolingual" in all_quirks)
+		points_balance -= 2
+	return points_balance
+
 /datum/preferences/Topic(href, href_list, hsrc)			//yeah, gotta do this I guess..
 	. = ..()
 	if(href_list["close"])
@@ -1722,7 +1754,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						age = clamp(round(text2num(new_age)), pref_species.species_age_min, pref_species.species_age_max)
 
 				if("flavor_text")
-					var/msg = stripped_multiline_input(usr, "A snippet of text shown when others examine you, describing what you may look like. This can also be used for OOC notes.", "Flavor Text", html_decode(features["flavor_text"]), MAX_FLAVOR_LEN, TRUE)
+					var/msg = tgui_input_text(usr, "A snippet of text shown when others examine you, describing what you may look like. This can also be used for OOC notes.", "Flavor Text", html_decode(features["flavor_text"]), MAX_FLAVOR_LEN, TRUE)
 					if(msg) //WS edit - "Cancel" does not clear flavor text
 						features["flavor_text"] = msg
 
@@ -2097,20 +2129,38 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_exo)
 						exowear = new_exo
 
-				if("uplink_loc")
-					var/new_loc = input(user, "Choose your character's traitor uplink spawn location:", "Character Preference") as null|anything in GLOB.uplink_spawn_loc_list
-					if(new_loc)
-						uplink_spawn_loc = new_loc
-
 				if("ai_core_icon")
 					var/ai_core_icon = input(user, "Choose your preferred AI core display screen:", "AI Core Display Screen Selection") as null|anything in GLOB.ai_core_display_screens
 					if(ai_core_icon)
 						preferred_ai_core_display = ai_core_icon
 
-				if("sec_dept")
-					var/department = input(user, "Choose your preferred security department:", "Security Departments") as null|anything in GLOB.security_depts_prefs
-					if(department)
-						prefered_security_department = department
+				if("native_language")
+					var/list/language_list = list()
+					for(var/datum/language/lang_type as anything in learned_languages)
+						language_list[initial(lang_type.name)] = lang_type
+					var/datum/language/new_lang = language_list[tgui_input_list(user, "Select a native language:", "Native Language", language_list)]
+					if(ispath(new_lang, /datum/language) && (initial(new_lang.flags) & ROUNDSTART_LANGUAGE)) // double-check to prevent exploits to gain codespeak or something as a native language
+						native_language = new_lang
+						learned_languages[new_lang] = LANGUAGE_UNKNOWN
+
+				if("learned_language")
+					var/datum/language/selected_lang = locate(href_list["language"])
+					if(selected_lang.type == native_language) // wuh oh
+						CRASH("[usr] attempted to change level of understanding for [selected_lang] despite it being their native language!")
+					if(selected_lang && (selected_lang.flags & ROUNDSTART_LANGUAGE)) // no using html exploits to learn codespeak
+						var/understanding = tgui_input_list(user, "Select level of understanding:", "Learn Language", language_level_costs)
+						if(!understanding)
+							return
+						if(!(understanding in language_level_costs))
+							CRASH("[usr] attempted to set level of understanding for [selected_lang.type] to \"[understanding]\"")
+						var/old_value = learned_languages[selected_lang.type]
+						learned_languages[selected_lang.type] = understanding
+						if(get_language_point_balance() < 0 && understanding != LANGUAGE_UNKNOWN) // in case something breaks REAL bad, you can still disable languages to fix it
+							learned_languages[selected_lang.type] = old_value
+							to_chat(usr, span_warning("You don't have enough language points!"))
+
+				if("reset_languages")
+					init_learned_languages()
 
 				if ("clientfps")
 					var/desiredfps = input(user, "Choose your desired fps. (0 = default, 60 FPS))", "Character Preference", clientfps)  as null|num //WS Edit - Client FPS Tweak -
@@ -2142,7 +2192,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(istype(pref_species, /datum/species/ipc))
 						selectAdj = input(user, "In one word, how would you describe your character's appereance?", "Character Preference", generic_adjective) as null|anything in GLOB.ipc_preference_adjectives
 					else
-						selectAdj = input(user, "In one word, how would you describe your character's appereance?", "Character Preference", generic_adjective) as null|anything in GLOB.preference_adjectives
+						selectAdj = input(user, "In one word, how would you describe your character's appereance?", "Character Preference", generic_adjective) as null|anything in GLOB.organic_preference_adjectives
 					if(selectAdj)
 						generic_adjective = selectAdj
 
@@ -2576,6 +2626,26 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		character.update_hair()
 		character.update_body_parts(TRUE)
 	character.dna.update_body_size()
+
+	if(!character_setup && get_language_point_balance() < 0)
+		init_learned_languages() // no exploits allowed
+	character.grant_language(native_language)
+	character.get_language_holder().selected_language = native_language
+	for(var/datum/language/lang_type as anything in learned_languages)
+		if(lang_type == native_language)
+			continue
+		switch(learned_languages[lang_type])
+			if(LANGUAGE_FLUENT)
+				character.grant_language(lang_type)
+			if(LANGUAGE_FAMILIAR)
+				character.grant_language(lang_type, SPOKEN_LANGUAGE)
+				character.remove_language(lang_type, UNDERSTOOD_LANGUAGE)
+				character.grant_partial_language(lang_type, 80)
+			if(LANGUAGE_RECOGNIZED)
+				character.remove_language(lang_type)
+				character.grant_partial_language(lang_type, 40)
+			if(LANGUAGE_UNKNOWN)
+				character.remove_language(lang_type)
 
 /datum/preferences/proc/get_default_name(name_id)
 	switch(name_id)
