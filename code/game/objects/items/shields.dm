@@ -237,6 +237,8 @@
 /obj/item/shield/riot/heavy
 	name = "heavy ballistic shield"
 	desc = "A heavy shield designed to keep everything behind it safe from any due harm. Use 10 plasteel to repair."
+	icon_state = "heavy"
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 
 	// It's a heavy shield. So it'll obviously weigh more, but it can certainly take more of a beating; as well as dish out some
 	slowdown = 1.75
@@ -261,6 +263,9 @@
 /obj/item/shield/riot/heavy/proc/on_wield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
+
+	if(!do_after(user, 30, target= src))
+		return
 	block_chance = 90
 	slowdown = 3.20 // This is a huge block of plasteel that will block most attacks. You shouldn't be running forward with an SKM spraying and praying
 
