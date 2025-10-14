@@ -58,16 +58,6 @@
 	new /obj/item/gun/ballistic/shotgun/blasting_hammer(B)
 	new /obj/item/storage/box/ammo/a12g_blank(B)
 	return B
-/datum/blackmarket_item/weapon/spikeshield
-	name = "Spiked Ballistic Shield"
-	desc = "Be the ancient warrior you always wanted to be. Block bullets and impale your enemies."
-	item = /obj/item/shield/riot/spike
-
-	cost_min = 1000
-	cost_max = 1500
-	stock_max = 2
-	availability_prob = 50
-
 /datum/blackmarket_item/weapon/powerfist
 	name = "Powerfist"
 	desc = "Need a bit more... omph in your right hook? This gas operated powerfist will put you in the heavyweight."

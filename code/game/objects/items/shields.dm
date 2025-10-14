@@ -253,10 +253,10 @@
 	AddComponent(/datum/component/two_handed)
 /// triggered on wield of two handed item
 /obj/item/shield/riot/heavy/proc/on_wield(obj/item/source, mob/user)
-	if(do_after(user, 30, target = src))
+	if(!do_after(user, 30, target = src))
 		return
 	force = 20
-	slowdown = 1.60
+	slowdown = 2.10
 	block_chance = 90
 	to_chat(user, span_notice("You hold onto the shield with both hands."))
 

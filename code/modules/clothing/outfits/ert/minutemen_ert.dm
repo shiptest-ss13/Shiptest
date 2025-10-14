@@ -202,10 +202,10 @@
 	backpack_contents = null
 	box = null
 
-	backpack = /obj/item/shield/riot/flash
-	duffelbag = /obj/item/shield/riot/flash
-	courierbag = /obj/item/shield/riot/flash
-	satchel = /obj/item/shield/riot/flash
+	backpack = /obj/item/shield/riot
+	duffelbag = /obj/item/shield/riot
+	courierbag = /obj/item/shield/riot
+	satchel = /obj/item/shield/riot
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/hardsuit
 	name = "ERT - CLIP Minutemen - Minuteman (Spotter Hardsuit)"
