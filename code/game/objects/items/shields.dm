@@ -239,11 +239,11 @@
 	desc = "A heavy shield designed to keep everything behind it safe from any due harm. Use 10 plasteel to repair."
 
 	// It's a heavy shield. So it'll obviously weigh more, but it can certainly take more of a beating; as well as dish out some
-	slowdown = 1.35
-	drag_slowdown = 1.35
+	slowdown = 1.75
+	drag_slowdown = 1.75
 	throwforce = 10
 	throw_range = 2
-	max_integrity = 800
+	max_integrity = 1000
 	force = 10
 	block_chance = 60
 	armor = list("melee" = 70, "bullet" = 70, "laser" = 70, "energy" = 0, "bomb" = 50, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 80)
@@ -255,22 +255,19 @@
 
 /obj/item/shield/riot/heavy/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed)
+	AddComponent(/datum/component/two_handed, force_unwielded = 10, force_wielded = 20)
 
 /// triggered on wield of two handed item
 /obj/item/shield/riot/heavy/proc/on_wield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
-	to_chat(user, span_notice("You hold onto the [src] with both hands."))
-	force = 20
 	block_chance = 90
-	slowdown = 2.50
+	slowdown = 3.20 // This is a huge block of plasteel that will block most attacks. You shouldn't be running forward with an SKM spraying and praying
 
 /// triggered on unwield of two handed item
 /obj/item/shield/riot/heavy/proc/on_unwield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
-	force = 10
 	block_chance = 60
-	slowdown = 1.35
+	slowdown = 1.75
 #undef BATON_BASH_COOLDOWN
