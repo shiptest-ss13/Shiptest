@@ -235,7 +235,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/shield/riot/heavy
-	name = "Heavy ballistic shield"
+	name = "heavy ballistic shield"
 	desc = "A heavy shield designed to keep everything behind it safe from any due harm. Use 10 plasteel to repair."
 
 	// It's a heavy shield. So it'll obviously weigh more, but it can certainly take more of a beating; as well as dish out some
@@ -248,22 +248,29 @@
 	block_chance = 60
 	armor = list("melee" = 70, "bullet" = 70, "laser" = 70, "energy" = 0, "bomb" = 50, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 80)
 
+/obj/item/shield/riot/heavy/Initialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
+
 /obj/item/shield/riot/heavy/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed)
+
 /// triggered on wield of two handed item
 /obj/item/shield/riot/heavy/proc/on_wield(obj/item/source, mob/user)
-	if(!do_after(user, 30, target = src))
-		return
+	SIGNAL_HANDLER
+
+	to_chat(user, span_notice("You hold onto the [src] with both hands."))
 	force = 20
-	slowdown = 2.10
 	block_chance = 90
-	to_chat(user, span_notice("You hold onto the shield with both hands."))
+	slowdown = 2.50
 
 /// triggered on unwield of two handed item
 /obj/item/shield/riot/heavy/proc/on_unwield(obj/item/source, mob/user)
+	SIGNAL_HANDLER
+
 	force = 10
 	block_chance = 60
 	slowdown = 1.35
-
 #undef BATON_BASH_COOLDOWN
