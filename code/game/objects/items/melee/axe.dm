@@ -16,10 +16,10 @@
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
 	resistance_flags = FIRE_PROOF
-	wound_bonus = -15
+	wound_bonus = 0
 	bare_wound_bonus = 20
 	species_exception = list(/datum/species/kepori)
-	var/force_wielded = 25
+	var/force_wielded = 35
 
 /obj/item/melee/axe/ComponentInitialize()
 	. = ..()
@@ -51,3 +51,22 @@
 	desc = "A large, vicious axe crafted out of several sharpened bone plates and crudely tied together. Made of monsters, by killing monsters, for killing monsters."
 	icon_state = "bone_axe"
 	base_icon_state = "bone_axe"
+
+/obj/item/melee/boarding_axe
+	name = "boarding axe"
+	desc = ""
+	icon = 'icons/obj/weapon/axe.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	force = 25
+	throwforce = 20
+	demolition_mod = 2
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
+	attack_cooldown = HEAVY_WEAPON_CD
+	attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
+	hitsound = list('sound/weapons/melee/heavyaxe_hit1.ogg', 'sound/weapons/melee/heavyaxe_hit2.ogg')
+	pickup_sound = 'sound/weapons/melee/heavy_pickup.ogg'
+	sharpness = SHARP_EDGED
+	bare_wound_bonus = 20
