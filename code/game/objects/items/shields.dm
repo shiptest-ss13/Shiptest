@@ -101,32 +101,6 @@
 			slowdown = 1.25
 			drag_slowdown = 1.25
 
-/obj/item/shield/riot/spike
-	name = "spike shield"
-	desc = "A ballistic shield adept at blocking blunt objects and bullets, adorned with a vicious spike. Use 10 plasteel to repair"
-	icon_state = "spike"
-	force = 24
-	attack_verb = list("stabbed", "gashed")
-	hitsound = 'sound/weapons/bladeslice.ogg'
-
-/obj/item/shield/riot/roman
-	name = "\improper Roman shield"
-	desc = "Bears an inscription on the inside: <i>\"Romanes venio domus\"</i>."
-	icon_state = "roman_shield"
-	item_state = "roman_shield"
-	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
-	transparent = FALSE
-	custom_materials = list(/datum/material/iron=8500)
-	max_integrity = 65
-
-/obj/item/shield/riot/roman/fake
-	desc = "Bears an inscription on the inside: <i>\"Romanes venio domus\"</i>. It appears to be a bit flimsy."
-	block_chance = 0
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	max_integrity = 30
-	recoil_bonus = 0 //it's PLASTIC
-
 /obj/item/shield/riot/buckler
 	name = "wooden buckler"
 	desc = "A medieval wooden buckler."
@@ -152,73 +126,6 @@
 	if(isliving(loc))
 		loc.balloon_alert(loc, "shield broken!")
 	return ..()
-
-/obj/item/shield/riot/flash
-	name = "strobe shield"
-	desc = "A shield with a built in, high intensity light capable of blinding and disorienting suspects. Takes regular handheld flashes as bulbs. Use 10 plasteel to repair."
-	icon_state = "flashshield"
-	item_state = "flashshield"
-	var/obj/item/assembly/flash/handheld/embedded_flash
-
-/obj/item/shield/riot/flash/Initialize()
-	. = ..()
-	embedded_flash = new(src)
-
-/obj/item/shield/riot/flash/ComponentInitialize()
-	. = .. ()
-	AddElement(/datum/element/update_icon_updates_onmob)
-
-/obj/item/shield/riot/flash/attack(mob/living/M, mob/user)
-	. =  embedded_flash.attack(M, user)
-	update_appearance()
-
-/obj/item/shield/riot/flash/attack_self(mob/living/carbon/user)
-	. = embedded_flash.attack_self(user)
-	update_appearance()
-
-/obj/item/shield/riot/flash/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	. = ..()
-	if (. && !embedded_flash.burnt_out)
-		embedded_flash.activate()
-		update_appearance()
-
-/obj/item/shield/riot/flash/attackby(obj/item/W, mob/user)
-	if(istype(W, /obj/item/assembly/flash/handheld))
-		var/obj/item/assembly/flash/handheld/flash = W
-		if(flash.burnt_out)
-			to_chat(user, span_warning("No sense replacing it with a broken bulb!"))
-			return
-		else
-			to_chat(user, span_notice("You begin to replace the bulb..."))
-			if(do_after(user, 20, target = user))
-				if(flash.burnt_out || !flash || QDELETED(flash))
-					return
-				playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
-				qdel(embedded_flash)
-				embedded_flash = flash
-				flash.forceMove(src)
-				update_appearance()
-				return
-	..()
-
-/obj/item/shield/riot/flash/emp_act(severity)
-	. = ..()
-	embedded_flash.emp_act(severity)
-	update_appearance()
-
-/obj/item/shield/riot/flash/update_icon_state()
-	if(!embedded_flash || embedded_flash.burnt_out)
-		icon_state = "ballistic"
-		item_state = "ballistic"
-	else
-		icon_state = "flashshield"
-		item_state = "flashshield"
-	return ..()
-
-/obj/item/shield/riot/flash/examine(mob/user)
-	. = ..()
-	if (embedded_flash?.burnt_out)
-		. += span_info("The mounted bulb has burnt out. You can try replacing it with a new one.")
 
 /obj/item/shield/energy
 	name = "energy combat shield"
@@ -326,5 +233,37 @@
 	block_chance = 25
 	max_integrity = 70
 	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/shield/riot/heavy
+	name = "Heavy ballistic shield"
+	desc = "A heavy shield designed to keep everything behind it safe from any due harm. Use 10 plasteel to repair."
+
+	// It's a heavy shield. So it'll obviously weigh more, but it can certainly take more of a beating; as well as dish out some
+	slowdown = 1.35
+	drag_slowdown = 1.35
+	throwforce = 10
+	throw_range = 2
+	max_integrity = 800
+	force = 10
+	block_chance = 60
+	armor = list("melee" = 70, "bullet" = 70, "laser" = 70, "energy" = 0, "bomb" = 50, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 80)
+
+/obj/item/shield/riot/heavy/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed)
+/// triggered on wield of two handed item
+/obj/item/shield/riot/heavy/proc/on_wield(obj/item/source, mob/user)
+	if(do_after(user, 30, target = src))
+		return
+	force = 20
+	slowdown = 1.60
+	block_chance = 90
+	to_chat(user, span_notice("You hold onto the shield with both hands."))
+
+/// triggered on unwield of two handed item
+/obj/item/shield/riot/heavy/proc/on_unwield(obj/item/source, mob/user)
+	force = 10
+	block_chance = 60
+	slowdown = 1.35
 
 #undef BATON_BASH_COOLDOWN
