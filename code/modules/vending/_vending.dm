@@ -167,6 +167,9 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	/// used for narcing on underages
 	var/obj/item/radio/Radio
 
+	/// restocks venders every hour if this is true
+	var/restock_hourly = FALSE
+
 /**
 	* Initialize the vending machine
 	*
@@ -183,6 +186,9 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 		build_inventory(products, product_records)
 		build_inventory(contraband, hidden_records)
 		build_inventory(premium, coin_records)
+
+	if(restock_hourly)
+		addtimer(CALLBACK(src, PROC_REF(refill_inventory_full)), 60 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
 	slogan_list = splittext(product_slogans, ";")
 	// So not all machines speak at the exact same time.
@@ -341,6 +347,12 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 			productlist[record.product_path] -= diff
 			record.amount += diff
 			. += diff
+
+/obj/machinery/vending/proc/refill_inventory_full()
+	refill_inventory(products, product_records)
+	refill_inventory(contraband, hidden_records)
+	refill_inventory(premium, coin_records)
+
 /**
 	* Set up a refill canister that matches this machines products
 	*
