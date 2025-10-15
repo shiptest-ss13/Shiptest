@@ -34,7 +34,7 @@
 
 /datum/blackmarket_item/weapon/boarding_axe
 	name = "Boarding Axe"
-	desc = "Boughta stash of these demolition axes offa pretty lady comin from Lanchester. Cute tattoos. Handed em over for some food anna ride to Trifuge. Poor soul. Things cut through metal as easy as flesh, though."
+	desc = "Boughta stash of these demolition axes offa pretty lady comin from Lanchester. Cute tattoos. Handed em over for some food anna ride to Trifuge. Poor soul. Things hack through metal as easy as flesh, though."
 	item = /obj/item/melee/boarding_axe
 
 	cost_min = 1000

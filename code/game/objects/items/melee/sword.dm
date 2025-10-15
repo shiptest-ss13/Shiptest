@@ -139,7 +139,7 @@
 	toolspeed = 1.5 //slower than a real saw
 
 /obj/item/melee/sword/kukri
-	name = "kukri"
+	name = "kukri sword"
 	desc = "A well-made titanium kukri. A knife with a curve ideal for rapid cuts and chops."
 	icon_state = "kukri"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK

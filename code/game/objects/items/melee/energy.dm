@@ -384,7 +384,7 @@
 		icon_state = "[base_icon_state]-on"
 		item_state = "[base_icon_state]-on"
 		damtype = FIRE
-		armour_penetration = 40
+		armour_penetration = 60
 	else
 		icon_state = base_icon_state
 		item_state = base_icon_state

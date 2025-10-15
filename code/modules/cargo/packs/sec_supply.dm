@@ -204,7 +204,7 @@
 	crate_name = "combat knife crate"
 
 /datum/supply_pack/sec_supply/clip_kukri
-	name = "Kukri Crate"
+	name = "Kukri Sword Crate"
 	desc = "Contains a well-made titanium kukri manufactured on Serene. Intended for Minuteman use."
 	cost = 750
 	contains = list(/obj/item/storage/belt/sabre/kukri)
