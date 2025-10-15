@@ -200,6 +200,7 @@
 	ADD_TRAIT(L, TRAIT_STUNIMMUNE, type)
 	ADD_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
 	L.AddComponent(/datum/component/tackler, stamina_cost= 25, base_knockdown= 2 SECONDS, range=6, speed=1, skill_mod=2)
+	L.impact_effect /= 10
 	if(iscarbon(L))
 		var/mob/living/carbon/C = L
 		rage = new()
@@ -209,6 +210,7 @@
 	REMOVE_TRAIT(L, TRAIT_VERY_HARDLY_WOUNDED, /datum/reagent/drug/mammoth)
 	REMOVE_TRAIT(L, TRAIT_STUNIMMUNE, type)
 	REMOVE_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
+	L.impact_effect *= 10
 	if(L.GetComponent(/datum/component/tackler))
 		qdel(L.GetComponent(/datum/component/tackler))
 	if(rage)
@@ -293,7 +295,7 @@
 		to_chat(M, span_notice("[high_message]"))
 	M.adjustStaminaLoss(-18, 0)
 	M.adjustToxLoss(0.5, 0)
-	if(prob(50))
+	if(prob(35))
 		M.losebreath++
 		M.adjustOxyLoss(1, 0)
 	..()
@@ -413,6 +415,7 @@
 	color = "#FAFAFA"
 	overdose_threshold = 20
 	addiction_threshold = 11
+	metabolization_rate = 0.2
 	taste_description = "a burst of energy"
 
 /datum/reagent/drug/finobranc/on_mob_metabolize(mob/living/L)
@@ -488,6 +491,8 @@
 		drugged.physiology.do_after_speed -= 0.4
 		drugged.physiology.damage_resistance += 10
 		drugged.physiology.hunger_mod += 1
+		drugged.recoil_effect *= 0.6
+		drugged.impact_effect /= 2
 
 /datum/reagent/drug/combat_drug/on_mob_end_metabolize(mob/living/L)
 	..()
@@ -498,6 +503,8 @@
 		drugged.physiology.do_after_speed += 0.4
 		drugged.physiology.damage_resistance -= 10
 		drugged.physiology.hunger_mod -= 1
+		drugged.recoil_effect /= 0.6
+		drugged.impact_effect *= 2
 
 /datum/reagent/drug/combat_drug/on_mob_life(mob/living/carbon/M)
 	..()

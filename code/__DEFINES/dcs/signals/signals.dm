@@ -209,6 +209,9 @@
 ///from base of atom/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
 #define COMSIG_ATOM_HITBY "atom_hitby"
 
+///When the transform or an atom is varedited through vv topic.
+#define COMSIG_ATOM_VV_MODIFY_TRANSFORM "atom_vv_modify_transform"
+
 /// from base of /atom/movable/proc/on_virtual_z_change():  (new_virtual_z, old_virtual_z)
 #define COMSIG_ATOM_VIRTUAL_Z_CHANGE "atom_virtual_z_change"
 
@@ -510,6 +513,8 @@
 #define COMSIG_MOB_PICKUP_ITEM "mob_pickup_item"
 ///from base of /mob/verb/pointed: (atom/A)
 #define COMSIG_MOB_POINTED "mob_pointed"
+///from base of mob/update_transform()
+#define COMSIG_LIVING_POST_UPDATE_TRANSFORM "living_post_update_transform"
 /// from mob/get_status_tab_items(): (list/items)
 #define COMSIG_MOB_GET_STATUS_TAB_ITEMS "mob_get_status_tab_items"
 ///from base of mob/living/resist() (/mob/living)
