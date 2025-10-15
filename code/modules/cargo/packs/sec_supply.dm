@@ -158,7 +158,7 @@
 
 /datum/supply_pack/sec_supply/suns_sabre
 	name = "SUNS Dueling Sabre Crate"
-	desc = "Contains a single solarian blade. For the academian."
+	desc = "Contains a single dueling sabre, intended for resolving conflicts among students."
 	cost = 750
 	contains = list(/obj/item/storage/belt/sabre/suns)
 	crate_name = "student's sabre crate"
@@ -168,7 +168,7 @@
 
 /datum/supply_pack/sec_supply/suns_cmo_sabre
 	name = "SUNS Cane Sabre Crate"
-	desc = "Contains a blade sheathed in a cane. For the diligent."
+	desc = "Contains a blade sheathed in a cane. "
 	cost = 800
 	contains = list(/obj/item/storage/belt/sabre/suns/cmo)
 	crate_name = "student's sabre crate"
@@ -178,7 +178,7 @@
 
 /datum/supply_pack/sec_supply/suns_telescopic_sabre
 	name = "SUNS Telescopic Sabre Crate"
-	desc = "Contains a finely crafted telescopic sabre. For the discreet."
+	desc = "Contains a finely crafted telescopic sabre, ideal for those with discerning tastes"
 	cost = 600
 	contains = list(/obj/item/melee/sword/sabre/suns/telescopic)
 	crate_name = "telescopic sabre crate"
@@ -188,7 +188,7 @@
 
 /datum/supply_pack/sec_supply/pgf_boarding_cutlass
 	name = "PGF Boarding Cutlass Crate"
-	desc = "Contains a finely crafted cutlass, issued to boarding parties of the Pan-Gezena Federation."
+	desc = "Contains a finely crafted cutlass, issued to boarding parties of the Pan-Gezenan Federation."
 	cost = 750
 	contains = list(/obj/item/storage/belt/sabre/pgf)
 	crate_name = "boarding cutlass crate"
@@ -202,6 +202,16 @@
 	cost = 350
 	contains = list(/obj/item/melee/knife/combat)
 	crate_name = "combat knife crate"
+
+/datum/supply_pack/sec_supply/clip_kukri
+	name = "Kukri Crate"
+	desc = "Contains a well-made titanium kukri manufactured on Serene. Intended for Minuteman use."
+	cost = 750
+	contains = list(/obj/item/storage/belt/sabre/kukri)
+	crate_name = "kukri crate"
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/sec_supply/flamethrower
 	name = "Flamethrower Crate"

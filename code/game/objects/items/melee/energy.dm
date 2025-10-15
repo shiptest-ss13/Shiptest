@@ -309,3 +309,67 @@
 /obj/item/melee/energy/ctf/solgov
 	armour_penetration = 40
 	active_force = 34 //desword grade, but 0 blocking
+
+/obj/item/melee/energy/flyssa
+	name = "energy flyssa"
+	desc = ""
+	icon_state = "flyssa"
+	item_state = "flyssa"
+
+	hitsound = ""
+	pickup_sound = ""
+
+	throwforce = 5
+	active_throwforce = 20
+	force = 10
+	active_force = 35
+	wound_bonus = -30
+	bare_wound_bonus = -10
+	armour_penetration = 40
+
+	var/charge_per_attack = 1000
+	var/cell_override = /obj/item/stock_parts/cell/high
+	var/power_use_amount = 200
+
+/obj/item/melee/energy/flyssa/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/cell, cell_override, _has_cell_overlays=FALSE)
+	RegisterSignal(src, COMSIG_TRANSFORMING_PRE_TRANSFORM, PROC_REF(check_power))
+	update_appearance()
+
+/obj/item/melee/energy/flyssa/AltClick(mob/user)
+	. = ..()
+	update_appearance()
+
+/obj/item/melee/energy/flyssa/update_overlays()
+	. = ..()
+	var/datum/component/cell/our_cell = GetComponent(/datum/component/cell)
+	if(!our_cell.inserted_cell)
+		return cut_overlays()
+	var/charge = our_cell.inserted_cell.percent()
+	switch(charge)
+		if(100 to 86)
+			. += "flyssa-1"
+		if(85 to 70)
+			. += "flyssa-2"
+		if(69 to 55)
+			. += "flyssa-3"
+		if(54 to 40)
+			. += "flyssa-4"
+		if(39 to 25)
+			. += "flyssa-5"
+		if(25 to 0)
+			. += "flyssa-6"
+
+/obj/item/melee/energy/flyssa/proc/check_power()
+	if(!(item_use_power(power_use_amount) & COMPONENT_POWER_SUCCESS))
+		return COMPONENT_BLOCK_TRANSFORM
+
+/obj/item/melee/energy/flyssa/process(seconds_per_tick)
+	if(!(item_use_power(power_use_amount) & COMPONENT_POWER_SUCCESS))
+		SEND_SIGNAL(src, COMSIG_ITEM_FORCE_TRANSFORM, "no_power")
+	. = ..()
+
+/obj/item/melee/flyssa/attack(mob/living/target, mob/living/user)
+	. = ..()
+	return

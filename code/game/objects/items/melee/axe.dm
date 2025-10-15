@@ -1,9 +1,9 @@
 /obj/item/melee/axe
-	icon = 'icons/obj/weapon/axe.dmi'
+	icon = 'icons/obj/weapon/axes/axe.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
-	force = 5
+	force = 10
 	throwforce = 15
 	demolition_mod = 1.25
 	w_class = WEIGHT_CLASS_BULKY
@@ -44,7 +44,7 @@
 	desc = "Truly, the weapon of a madman. Who would think to fight fire with an axe?"
 	icon_state = "fireaxe"
 	base_icon_state = "fireaxe"
-	force_wielded = 30
+	force_wielded = 35
 
 /obj/item/melee/axe/bone  // Blatant imitation of the fireaxe, but made out of bone.
 	name = "bone axe"
@@ -54,19 +54,21 @@
 
 /obj/item/melee/boarding_axe
 	name = "boarding axe"
-	desc = ""
-	icon = 'icons/obj/weapon/axe.dmi'
+	desc = "A slab of sharpened plasteel with a treated wood handle, wrapped in green polymer. Hacks apart flesh and metal with equal ease."
+	icon = 'icons/obj/weapon/axes/axe.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
-	force = 25
-	throwforce = 20
-	demolition_mod = 2
+	world_file = 'icons/obj/weapon/axes/axe_world.dmi' //im an axe girl
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
-	attack_cooldown = HEAVY_WEAPON_CD
+	attack_cooldown = CLICK_CD_MELEE
 	attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
 	hitsound = list('sound/weapons/melee/heavyaxe_hit1.ogg', 'sound/weapons/melee/heavyaxe_hit2.ogg')
 	pickup_sound = 'sound/weapons/melee/heavy_pickup.ogg'
 	sharpness = SHARP_EDGED
-	bare_wound_bonus = 20
+	force = 25
+	armour_penetration = 10
+	throwforce = 20
+	demolition_mod = 2
+	bare_wound_bonus = 10
