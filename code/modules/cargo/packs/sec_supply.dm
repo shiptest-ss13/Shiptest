@@ -213,6 +213,26 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/sec_supply/cybersun_flyssa
+	name = "Energy Flyssa Crate"
+	desc = "Contains a lathed, verified, and readied Energy Flyssa. Corporate recommends owning a recharger to accompany."
+	cost = 750
+	contains = list(/obj/item/melee/energy/flyssa)
+	crate_name = "energy flyssa crate"
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/sec_supply/hardliner_flyssa
+	name = "Energy Flyssa Crate"
+	desc = "Contains a lathed, verified, and readied Energy Flyssa. This is one of the assets you need to be careful to not lose."
+	cost = 750
+	contains = list(/obj/item/melee/energy/flyssa)
+	crate_name = "energy flyssa crate"
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = -50
+	faction_locked = TRUE
+
 /datum/supply_pack/sec_supply/flamethrower
 	name = "Flamethrower Crate"
 	desc = "Contains one flamethrower. Point the nozzle away from anything important."
