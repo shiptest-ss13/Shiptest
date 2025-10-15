@@ -58,8 +58,11 @@
 	icon = 'icons/obj/weapon/axes/axe.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/belt.dmi'
 	world_file = 'icons/obj/weapon/axes/axe_world.dmi' //im an axe girl
+	icon_state = "boarding_axe"
+	item_state = "boarding_axe"
+	base_icon_state = "boarding_axe"
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 	attack_cooldown = CLICK_CD_MELEE

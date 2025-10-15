@@ -141,9 +141,7 @@
 /obj/item/melee/sword/kukri
 	name = "kukri"
 	desc = "A well-made titanium kukri. A knife with a curve ideal for rapid cuts and chops."
-	pickup_sound =  'sound/items/unsheath.ogg'
-	drop_sound = 'sound/items/handling/metal_drop.ogg'
-	hitsound = 'sound/weapons/bladeslice.ogg'
+	icon_state = "kukri"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
 	resistance_flags = FIRE_PROOF
