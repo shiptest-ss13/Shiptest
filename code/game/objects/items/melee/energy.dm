@@ -324,9 +324,9 @@
 	active_throwforce = 20
 	force = 10
 	active_force = 35
-	wound_bonus = -30
+	wound_bonus = -35
 	bare_wound_bonus = -10
-	armour_penetration = 40
+	armour_penetration = -20
 
 	active_hitsound = 'sound/weapons/blade1.ogg'
 

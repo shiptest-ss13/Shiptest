@@ -229,7 +229,7 @@
 	cost = 750
 	contains = list(/obj/item/melee/energy/flyssa)
 	crate_name = "energy flyssa crate"
-	faction = /datum/faction/syndicate/cybersun
+	faction = /datum/faction/syndicate/hardliners
 	faction_discount = -50
 	faction_locked = TRUE
 
