@@ -20,6 +20,11 @@
 	var/integrity = 3
 	var/volume = 70
 
+	//Alert variables
+	var/warning_alert = FALSE
+	var/critical_warning_alert = FALSE
+	var/empty_alert = FALSE
+
 	supports_variations = VOX_VARIATION
 
 /obj/item/tank/ui_action_click(mob/user)
@@ -221,6 +226,7 @@
 	//Allow for reactions
 	air_contents.react()
 	check_status()
+	pressure_alerts()
 
 /obj/item/tank/proc/check_status()
 	//Handle exploding, leaking, and rupturing of the tank
@@ -270,3 +276,29 @@
 
 	else if(integrity < 3)
 		integrity++
+
+// adjusts sprites and issues text alerts depending on tank pressure
+/obj/item/tank/proc/pressure_alerts()
+
+	if(!air_contents)
+		return 0
+
+	var/pressure = air_contents.return_pressure()
+
+	if((pressure < (5 * ONE_ATMOSPHERE)) && !warning_alert)
+		warning_alert = TRUE
+		playsound(src, 'sound/machines/twobeep_high.ogg', 30, FALSE)
+		say("Tank is at [pressure] kPa! Pressure low!")
+
+	if((pressure < (2 * ONE_ATMOSPHERE)) && !critical_warning_alert)
+		critical_warning_alert = TRUE
+		playsound(src, 'sound/machines/triple_beep.ogg', 30, TRUE)
+		say("Tank is at [pressure] kPa! Pressure critically low!")
+
+	if((pressure < (0.5 * ONE_ATMOSPHERE)) && !empty_alert)
+		empty_alert = TRUE
+		playsound(src, 'sound/machines/twobeep_high.ogg', 30, FALSE)
+		playsound(src, 'sound/machines/beep.ogg', 30, FALSE)
+		say("Tank is empty! Replacement recommended!")
+
+
