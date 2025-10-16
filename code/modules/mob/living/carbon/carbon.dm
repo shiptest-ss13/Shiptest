@@ -1003,7 +1003,10 @@
 
 ///Proc to hook behavior on bodypart removals.
 /mob/living/carbon/proc/remove_bodypart(obj/item/bodypart/old_bodypart)
-	bodyparts[old_bodypart.body_zone] = null // order of the bodypart list must be preserved to prevent layering issues
+	var/removed_zone = old_bodypart.body_zone
+	bodyparts[removed_zone] = null // order of the bodypart list must be preserved to prevent layering issues
+	if(!(removed_zone in dna?.species.species_limbs))
+		bodyparts -= removed_zone
 
 	if(old_bodypart.body_part & LEGS)
 		set_num_legs(num_legs - 1)

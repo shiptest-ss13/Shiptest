@@ -150,17 +150,17 @@
 
 	var/list/msg = list()
 
-	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+	var/list/missing = list()
 	var/list/disabled = list()
 
 	var/obj/item/bodypart/body_part
 	for(var/zone in bodyparts)
 		body_part = bodyparts[zone]
 		if(!body_part)
+			missing += zone
 			continue
 		if(body_part.bodypart_disabled)
 			disabled += body_part
-		missing -= zone
 
 		for(var/obj/item/I in body_part.embedded_objects)
 			if(I.isEmbedHarmless())

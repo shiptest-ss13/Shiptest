@@ -34,16 +34,16 @@
 			. += span_deadsay("It appears that [t_his] brain is missing...")
 
 	var/list/msg = list("<span class='warning'>")
-	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)
+	var/list/missing = list()
 	var/list/disabled = list()
 	var/obj/item/bodypart/limb
 	for(var/zone in bodyparts)
 		limb = bodyparts[zone]
 		if(!limb)
+			missing += zone
 			continue
 		if(limb.bodypart_disabled)
 			disabled += limb
-		missing -= limb.body_zone
 
 		for(var/obj/item/I in limb.embedded_objects)
 			if(I.isEmbedHarmless())

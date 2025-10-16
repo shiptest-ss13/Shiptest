@@ -390,13 +390,14 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			QDEL_NULL(old)
 		I.Insert(C)
 
-/datum/species/proc/replace_body(mob/living/carbon/C, datum/species/new_species, robotic = FALSE)
+/datum/species/proc/replace_body(mob/living/carbon/C, datum/species/old_species, datum/species/new_species, robotic = FALSE)
 	new_species ||= C.dna.species //If no new species is provided, assume its src.
 	//Note for future: Potentionally add a new C.dna.species() to build a template species for more accurate limb replacement
 
 	var/obj/item/bodypart/old_part
-	var/list/all_zones = C.bodyparts.Copy()
-	all_zones |= new_species.species_limbs
+	var/list/all_zones = new_species.species_limbs
+	if(old_species)
+		all_zones |= old_species.species_limbs
 	for(var/zone in all_zones)
 		old_part = C.bodyparts[zone]
 		if(!old_part && (zone in C.bodyparts)) // if the old species has a bodypart by default but it's missing, don't replace it
@@ -420,7 +421,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	* Produces a [COMSIG_SPECIES_GAIN] signal.
 	* Arguments:
 	* * C - Carbon, this is whoever became the new species.
-	* * old_species - The species that the carbon used to be before becoming this race, used for regenerating organs.
+	* * old_species - The species that the carbon used to be before becoming this race, used for regenerating organs and limbs
 	* * pref_load - Preferences to be loaded from character setup, loads in preferred mutant things like bodyparts, digilegs, skin color, etc.
 */
 /datum/species/proc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load, robotic = FALSE)
@@ -441,7 +442,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(C.hud_used)
 		C.hud_used.update_locked_slots()
 
-	replace_body(C, robotic = robotic)
+	replace_body(C, old_species, robotic = robotic)
 
 	C.mob_biotypes = inherent_biotypes
 
