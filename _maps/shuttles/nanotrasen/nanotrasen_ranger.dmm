@@ -146,16 +146,16 @@
 /obj/structure/closet/crate/secure/gear{
 	name = "Ammunition Crate"
 	},
-/obj/item/ammo_box/magazine/smgm9mm{
+/obj/item/ammo_box/magazine/m9mm_expedition{
 	pixel_x = 11
 	},
-/obj/item/ammo_box/magazine/smgm9mm{
+/obj/item/ammo_box/magazine/m9mm_expedition{
 	pixel_x = 11
 	},
-/obj/item/ammo_box/magazine/smgm9mm{
+/obj/item/ammo_box/magazine/m9mm_expedition{
 	pixel_x = 11
 	},
-/obj/item/ammo_box/magazine/smgm9mm{
+/obj/item/ammo_box/magazine/m9mm_expedition{
 	pixel_x = 11
 	},
 /obj/item/ammo_box/magazine/co9mm,
@@ -414,11 +414,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "cW" = (
-/obj/docking_port/mobile{
-	dir = 2;
-	port_direction = 8;
-	preferred_direction = 4
-	},
 /obj/machinery/camera/autoname,
 /obj/machinery/light/floor,
 /obj/item/radio/intercom/directional/north,
@@ -1931,13 +1926,13 @@
 	pixel_x = -2;
 	pixel_y = 13
 	},
-/obj/item/stock_parts/cell/gun,
 /obj/effect/turf_decal/corner/opaque/syndiered/three_quarters{
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 1
 	},
+/obj/item/stock_parts/cell/gun/sharplite,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/equip)
 "nh" = (
@@ -3963,6 +3958,13 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
+"BK" = (
+/obj/docking_port/mobile{
+	port_direction = 4;
+	preferred_direction = 4
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "BO" = (
 /obj/machinery/power/smes/shuttle/precharged,
 /obj/machinery/door/window/northleft{
@@ -5744,9 +5746,8 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/item/stock_parts/cell/gun,
 /obj/item/flashlight/seclite,
-/obj/item/storage/guncase/energy/egun,
+/obj/item/storage/guncase/x01,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
 "Oc" = (
@@ -8124,7 +8125,7 @@ gg
 (24,1,1) = {"
 zW
 zW
-zW
+wq
 QV
 gd
 KQ
@@ -8156,12 +8157,12 @@ uk
 Mg
 wh
 ww
-zW
+BK
 "}
 (25,1,1) = {"
 zW
 zW
-zW
+wq
 Gs
 HA
 TZ
@@ -8193,7 +8194,7 @@ CD
 Bl
 Bg
 wq
-zW
+wq
 "}
 (26,1,1) = {"
 zW

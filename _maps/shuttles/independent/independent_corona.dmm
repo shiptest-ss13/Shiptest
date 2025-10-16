@@ -139,13 +139,6 @@
 	dir = 4;
 	color = "#FFFFFF"
 	},
-/obj/docking_port/mobile{
-	dir = 4;
-	name = "Tourer";
-	launch_status = 0;
-	port_direction = 2;
-	preferred_direction = 4
-	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "dK" = (
@@ -1110,6 +1103,11 @@
 	dir = 9
 	},
 /obj/structure/railing,
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 4;
+	preferred_direction = 4
+	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "yy" = (
@@ -1543,6 +1541,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
+"CZ" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 8;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 15;
+	height = 31;
+	name = "Corona Stern Dock";
+	width = 40
+	},
+/turf/template_noop,
+/area/template_noop)
 "Dl" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 8
@@ -2129,16 +2139,21 @@
 /obj/item/gun/energy/kalix/pistol/empty_cell{
 	pixel_y = 8
 	},
-/obj/item/gun/energy/kalix/pistol/empty_cell,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/gun/energy/kalix/nock{
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "On" = (
 /obj/docking_port/stationary{
+	dheight = 1;
 	dir = 2;
-	dwidth = 15;
-	height = 15;
-	width = 30
+	dwidth = 20;
+	height = 30;
+	name = "Corona Starboard Beam Dock";
+	width = 40;
+	disable_on_owner_ship_dock = 1
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -2995,7 +3010,7 @@ XO
 XO
 XO
 XO
-XO
+CZ
 XO
 XO
 XO

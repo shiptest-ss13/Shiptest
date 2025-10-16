@@ -1076,9 +1076,7 @@
 /obj/item/gun/energy/kalix{
 	pixel_y = -8
 	},
-/obj/item/gun/energy/kalix/pistol{
-	pixel_y = 0
-	},
+/obj/item/gun/energy/kalix/nock,
 /turf/open/floor/plasteel/rockvault,
 /area/ship/security/armory)
 "jQ" = (
@@ -2201,6 +2199,18 @@
 /obj/item/stock_parts/cell/gun/kalix{
 	pixel_x = -9;
 	pixel_y = -1
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -9;
+	pixel_y = 4
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -9;
+	pixel_y = -1
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -9;
+	pixel_y = 9
 	},
 /obj/item/stock_parts/cell/gun/kalix{
 	pixel_x = -9;
@@ -3573,6 +3583,11 @@
 /area/ship/crew/dorm)
 "LF" = (
 /obj/effect/turf_decal/arrows,
+/obj/docking_port/mobile{
+	name = "cthonian dock";
+	port_direction = 4;
+	preferred_direction = 4
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "Ml" = (
@@ -3604,21 +3619,6 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/cargo)
-"Mq" = (
-/obj/effect/turf_decal/techfloor/orange,
-/obj/effect/turf_decal/techfloor/orange{
-	dir = 1
-	},
-/obj/machinery/door/poddoor{
-	id = "cth_bay"
-	},
-/obj/docking_port/mobile{
-	name = "cthonian dock";
-	port_direction = 4;
-	preferred_direction = 4
-	},
-/turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Mv" = (
 /obj/effect/turf_decal/corner_steel_grid{
@@ -3945,11 +3945,13 @@
 /area/ship/cargo)
 "RV" = (
 /obj/docking_port/stationary{
-	height = 15;
-	width = 15;
-	name = "cthonian exterior dock";
-	dwidth = 7;
-	dir = 2
+	dheight = 1;
+	dir = 2;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 9;
+	height = 31;
+	name = "Cthonian Starboard Dock";
+	width = 40
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -5140,7 +5142,7 @@ cj
 Ob
 yY
 mG
-Mq
+DW
 LF
 RV
 "}

@@ -222,7 +222,7 @@ GLOBAL_LIST_INIT(skin_tones, sortList(list(
 	if(isipc(H))
 		return pick(GLOB.ipc_preference_adjectives)
 	else
-		return pick(GLOB.preference_adjectives)
+		return pick(GLOB.organic_preference_adjectives)
 
 GLOBAL_LIST_EMPTY(species_list)
 

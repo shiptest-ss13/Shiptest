@@ -429,13 +429,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["socks_color"], socks_color)
 	READ_FILE(S["backpack"], backpack)
 	READ_FILE(S["jumpsuit_style"], jumpsuit_style)
-	READ_FILE(S["uplink_loc"], uplink_spawn_loc)
 	READ_FILE(S["phobia"], phobia)
 	READ_FILE(S["generic_adjective"], generic_adjective)
 	READ_FILE(S["randomise"],  randomise)
 	READ_FILE(S["body_size"], features["body_size"])
 	READ_FILE(S["prosthetic_limbs"], prosthetic_limbs)
 	prosthetic_limbs ||= list(BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
+	READ_FILE(S["learned_languages"], learned_languages)
+	if(!learned_languages?.len) init_learned_languages()
+	READ_FILE(S["native_language"], native_language)
+	native_language ||= /datum/language/galactic_common
 	READ_FILE(S["feature_mcolor"], features["mcolor"])
 	READ_FILE(S["feature_mcolor2"], features["mcolor2"])
 	READ_FILE(S["feature_ethcolor"], features["ethcolor"])
@@ -494,13 +497,19 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		READ_FILE(S[savefile_slot_name], custom_names[custom_name_id])
 
 	READ_FILE(S["preferred_ai_core_display"], preferred_ai_core_display)
-	READ_FILE(S["prefered_security_department"], prefered_security_department)
 
 	//Preview outfit selection
 	READ_FILE(S["selected_outfit"], selected_outfit)
 
 	//Quirks
 	READ_FILE(S["all_quirks"], all_quirks)
+	var/list/removed_quirks = list()
+	for(var/quirk_name in all_quirks.Copy())
+		if(!(quirk_name in SSquirks.quirks))
+			all_quirks.Remove(quirk_name)
+			removed_quirks.Add(quirk_name)
+	if(removed_quirks.len)
+		to_chat(parent, "Some of your previously selected quirks have been removed: [english_list(removed_quirks)].")
 
 	//Flavor Text
 	S["feature_flavor_text"]		>> features["flavor_text"]
@@ -551,7 +560,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	backpack			= sanitize_inlist(backpack, GLOB.backpacklist, initial(backpack))
 	jumpsuit_style		= sanitize_inlist(jumpsuit_style, GLOB.jumpsuitlist, initial(jumpsuit_style))
 	exowear				= sanitize_inlist(exowear, GLOB.exowearlist, initial(exowear))
-	uplink_spawn_loc	= sanitize_inlist(uplink_spawn_loc, GLOB.uplink_spawn_loc_list, initial(uplink_spawn_loc))
 	fbp					= sanitize_integer(fbp, FALSE, TRUE, FALSE)
 	features["grad_style"]				= sanitize_inlist(features["grad_style"], GLOB.hair_gradients_list)
 	features["grad_color"]				= sanitize_hexcolor(features["grad_color"])
@@ -625,13 +633,14 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["socks"]						, socks)
 	WRITE_FILE(S["socks_color"]					, socks_color)
 	WRITE_FILE(S["backpack"]					, backpack)
-	WRITE_FILE(S["uplink_loc"]					, uplink_spawn_loc)
 	WRITE_FILE(S["randomise"]					, randomise)
 	WRITE_FILE(S["species"]						, pref_species.id)
 	WRITE_FILE(S["phobia"]						, phobia)
 	WRITE_FILE(S["generic_adjective"]			, generic_adjective)
 	WRITE_FILE(S["body_size"]					, features["body_size"])
 	WRITE_FILE(S["prosthetic_limbs"]			, prosthetic_limbs)
+	WRITE_FILE(S["learned_languages"]			, learned_languages)
+	WRITE_FILE(S["native_language"]				, native_language)
 	WRITE_FILE(S["feature_mcolor"]				, features["mcolor"])
 	WRITE_FILE(S["feature_mcolor2"]				, features["mcolor2"])
 	WRITE_FILE(S["feature_ethcolor"]			, features["ethcolor"])
@@ -677,8 +686,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		WRITE_FILE(S[savefile_slot_name]		,custom_names[custom_name_id])
 	//AI cores
 	WRITE_FILE(S["preferred_ai_core_display"]	, preferred_ai_core_display)
-	//Deprecated department security stuff
-	WRITE_FILE(S["prefered_security_department"], prefered_security_department)
 	//Preview outfit selection
 	WRITE_FILE(S["selected_outfit"]				, selected_outfit)
 	//Quirks

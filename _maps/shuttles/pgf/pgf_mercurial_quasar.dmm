@@ -2412,13 +2412,6 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
 	},
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	name = "liberty docking port";
-	port_direction = 8;
-	preferred_direction = 4;
-	dir = 2
-	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
 	id = "quasar_port_holofield"
@@ -3237,11 +3230,20 @@
 /obj/docking_port/stationary{
 	dir = 2;
 	dwidth = 15;
-	height = 15;
-	width = 30
+	height = 31;
+	width = 30;
+	name = "Quasar Starboard Dock";
+	dheight = 1;
+	disable_on_owner_ship_dock = 1
 	},
-/turf/template_noop,
-/area/template_noop)
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	port_direction = 8;
+	preferred_direction = 4;
+	dir = 2
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "Re" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood{
@@ -3449,8 +3451,8 @@
 /obj/item/gun/energy/kalix/pistol{
 	pixel_y = -8
 	},
-/obj/item/gun/energy/kalix/pgf{
-	pixel_y = 0
+/obj/item/gun/energy/kalix/pgf/nock{
+	pixel_y = -1
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -3515,6 +3517,9 @@
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
+"Vv" = (
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "Vx" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
@@ -4224,7 +4229,7 @@ lS
 fB
 LD
 PB
-sB
+Vv
 "}
 (22,1,1) = {"
 qz
@@ -4256,7 +4261,7 @@ Hk
 Hk
 tV
 PB
-sB
+Vv
 "}
 (24,1,1) = {"
 Sr

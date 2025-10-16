@@ -21,7 +21,6 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	species_language_holder = /datum/language_holder/ethereal
 	inherent_traits = list(TRAIT_NOHUNGER)
-	sexes = FALSE //no fetish content allowed
 	toxic_food = NONE
 	// Body temperature for ethereals is much higher then humans as they like hotter environments
 	bodytemp_normal = (HUMAN_BODYTEMP_NORMAL + 50)
@@ -246,7 +245,6 @@
 	to_chat(_human, span_notice("You feel more energized as your shine comes back."))
 
 /datum/species/elzuose/proc/handle_charge(mob/living/carbon/human/_human)
-	brutemod = 1.25
 	switch(get_charge(_human))
 		if(ELZUOSE_CHARGE_NONE to ELZUOSE_CHARGE_LOWPOWER)
 			if(get_charge(_human) == ELZUOSE_CHARGE_NONE)
