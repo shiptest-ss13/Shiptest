@@ -301,6 +301,16 @@
 	stock_max = 2
 	availability_prob = 25
 
+/datum/blackmarket_item/weapon/guncase/vga5
+	name = "VG-A5 Beam Gun"
+	desc = "So you've seen those quad burst Etherbor Volleyguns? Well this thing has a quintuple burst! That means five!"
+	item = /obj/item/gun/energy/kalix/pgf/nock
+
+	cost_min = 3500
+	cost_max = 5000
+	stock = 2
+	availability_prob = 20
+
 /datum/blackmarket_item/weapon/guncase/bg_16
 	name = "BG-16 Beam Gun"
 	desc = "Not satisfied by Etherbor's civilian offerings? Try this military grade one we found!"
