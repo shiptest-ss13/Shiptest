@@ -50,19 +50,23 @@
 
 	bodytype = BODYTYPE_KEPORI
 
-	species_chest = /obj/item/bodypart/chest/kepori
-	species_head = /obj/item/bodypart/head/kepori
-	species_l_arm = /obj/item/bodypart/l_arm/kepori
-	species_r_arm = /obj/item/bodypart/r_arm/kepori
-	species_l_leg = /obj/item/bodypart/leg/left/kepori
-	species_r_leg = /obj/item/bodypart/leg/right/kepori
+	species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/kepori,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/kepori,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/kepori,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/kepori,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/kepori,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/kepori,
+	)
 
-	species_robotic_chest = /obj/item/bodypart/chest/robot/kepori
-	species_robotic_head = /obj/item/bodypart/head/robot/kepori
-	species_robotic_l_arm = /obj/item/bodypart/l_arm/robot/surplus/kepori
-	species_robotic_r_arm = /obj/item/bodypart/r_arm/robot/surplus/kepori
-	species_robotic_l_leg = /obj/item/bodypart/leg/left/robot/surplus/kepori
-	species_robotic_r_leg = /obj/item/bodypart/leg/right/robot/surplus/kepori
+	species_robotic_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/robot/kepori,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/robot/kepori,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/robot/surplus/kepori,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot/surplus/kepori,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus/kepori,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus/kepori,
+	)
 
 	robotic_eyes = /obj/item/organ/eyes/robotic/kepori
 

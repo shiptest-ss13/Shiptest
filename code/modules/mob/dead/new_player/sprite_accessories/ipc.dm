@@ -297,6 +297,7 @@
 	icon = null
 	icon_state = "who cares fuck you" // In order to pull the chassis correctly, we need AN icon_state(see line 36-39). It doesn't have to be useful, because it isn't used.
 	color_src = 0
+	/// Associated list of bodyparts by zone.
 	var/list/chassis_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc,
@@ -305,6 +306,8 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc,
 	)
+	/// Associated list of features granted by this chassis and their default values.
+	var/list/chassis_features = list()
 
 /datum/sprite_accessory/ipc_chassis/morpheus
 	name = "Morpheus Cyberkinetics (Custom)"

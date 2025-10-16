@@ -11,10 +11,23 @@
 	reagent_tag = PROCESS_SYNTHETIC
 	species_gibs = "robotic"
 	attack_sound = 'sound/items/trayhit1.ogg'
-	species_head = /obj/item/bodypart/head/robot
-	species_chest = /obj/item/bodypart/chest/robot
-	species_l_arm = /obj/item/bodypart/l_arm/robot
-	species_r_arm = /obj/item/bodypart/r_arm/robot
-	species_l_leg = /obj/item/bodypart/leg/left/robot
-	species_r_leg = /obj/item/bodypart/leg/right/robot
+
+	species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/robot,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/robot,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/robot,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot,
+	)
+
+	species_robotic_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/robot,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/robot,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/robot/surplus,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot/surplus,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus,
+	)
+
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN

@@ -28,12 +28,15 @@
 	var/web_ready = TRUE
 	var/spinner_rate = 75
 
-	species_chest = /obj/item/bodypart/chest/rachnid
-	species_head = /obj/item/bodypart/head/rachnid
-	species_l_arm = /obj/item/bodypart/l_arm/rachnid
-	species_r_arm = /obj/item/bodypart/r_arm/rachnid
-	species_l_leg = /obj/item/bodypart/leg/left/rachnid
-	species_r_leg = /obj/item/bodypart/leg/right/rachnid
+	// TODO - add more arms
+	species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/rachnid,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/rachnid,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/rachnid,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/rachnid,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/rachnid,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/rachnid,
+	)
 
 /datum/species/spider/random_name(gender,unique,lastname)
 	if(unique)

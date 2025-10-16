@@ -39,8 +39,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	///This is used for children, it will determine their default limb ID for use of examine. See examine.dm.
 	var/examine_limb_id
-	///Never, Optional, or Forced digi legs?
-	var/digitigrade_customization = DIGITIGRADE_NEVER
 
 	///The gradient style used for the mob's hair.
 	var/grad_style
@@ -219,26 +217,25 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/changesource_flags = NONE
 	var/loreblurb = "Description not provided. Yell at a coder. Also, please look into cooking fajitas. That stuff is amazing."
 
-	//K-Limbs. If a species doesn't have their own limb types. Do not override this, use the K-Limbs overrides at the top of the species datum.
-	var/obj/item/bodypart/species_chest = /obj/item/bodypart/chest
-	var/obj/item/bodypart/species_head = /obj/item/bodypart/head
-	var/obj/item/bodypart/species_l_arm = /obj/item/bodypart/l_arm
-	var/obj/item/bodypart/species_r_arm = /obj/item/bodypart/r_arm
-	var/obj/item/bodypart/species_r_leg = /obj/item/bodypart/leg/right
-	var/obj/item/bodypart/species_l_leg = /obj/item/bodypart/leg/left
+	/// Default bodyparts for this species.
+	var/list/obj/item/bodypart/species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left,
+	)
 
-	var/obj/item/bodypart/species_digi_l_leg = /obj/item/bodypart/leg/left/lizard/digitigrade
-	var/obj/item/bodypart/species_digi_r_leg = /obj/item/bodypart/leg/right/lizard/digitigrade
-
-	var/obj/item/bodypart/species_robotic_chest = /obj/item/bodypart/chest/robot
-	var/obj/item/bodypart/species_robotic_head = /obj/item/bodypart/head/robot
-	var/obj/item/bodypart/species_robotic_l_arm = /obj/item/bodypart/l_arm/robot/surplus
-	var/obj/item/bodypart/species_robotic_r_arm = /obj/item/bodypart/r_arm/robot/surplus
-	var/obj/item/bodypart/species_robotic_l_leg = /obj/item/bodypart/leg/left/robot/surplus
-	var/obj/item/bodypart/species_robotic_r_leg = /obj/item/bodypart/leg/right/robot/surplus
-
-	var/obj/item/bodypart/species_robotic_digi_l_leg = /obj/item/bodypart/leg/left/robot/surplus/lizard/digitigrade
-	var/obj/item/bodypart/species_robotic_digi_r_leg = /obj/item/bodypart/leg/right/robot/surplus/lizard/digitigrade
+	/// Default robotic bodyparts for this species.
+	var/list/obj/item/bodypart/species_robotic_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/robot,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/robot,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/robot/surplus,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot/surplus,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus,
+	)
 
 	var/obj/item/organ/heart/robotic_heart = /obj/item/organ/heart/cybernetic
 	var/obj/item/organ/lungs/robotic_lungs = /obj/item/organ/lungs/cybernetic
@@ -393,24 +390,28 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			QDEL_NULL(old)
 		I.Insert(C)
 
-/datum/species/proc/is_digitigrade(mob/living/carbon/leg_haver)
-	return (digitigrade_customization == DIGITIGRADE_OPTIONAL && leg_haver.dna.features["legs"] == "Digitigrade Legs") || digitigrade_customization == DIGITIGRADE_FORCED
-
 /datum/species/proc/replace_body(mob/living/carbon/C, datum/species/new_species, robotic = FALSE)
 	new_species ||= C.dna.species //If no new species is provided, assume its src.
 	//Note for future: Potentionally add a new C.dna.species() to build a template species for more accurate limb replacement
 
 	var/obj/item/bodypart/old_part
-	for(var/zone in C.bodyparts)
+	var/list/all_zones = C.bodyparts.Copy()
+	all_zones |= new_species.species_limbs
+	for(var/zone in all_zones)
 		old_part = C.bodyparts[zone]
-		if(!old_part)
+		if(!old_part && (zone in C.bodyparts)) // if the old species has a bodypart by default but it's missing, don't replace it
 			continue
 		var/obj/item/bodypart/new_part = C.new_body_part(zone, robotic, FALSE, new_species)
-		new_part.brute_dam = old_part.brute_dam
-		new_part.burn_dam = old_part.burn_dam
-		new_part.replace_limb(C, TRUE)
-		new_part.update_limb(is_creating = TRUE)
-		qdel(old_part)
+		if(new_part)
+			new_part.replace_limb(C, TRUE)
+			if(old_part)
+				new_part.brute_dam = old_part.brute_dam
+				new_part.burn_dam = old_part.burn_dam
+				qdel(old_part)
+			new_part.update_limb(is_creating = TRUE)
+		else if(old_part)
+			old_part.drop_limb(TRUE)
+			qdel(old_part)
 
 /**
 	* Proc called when a carbon becomes this species.
@@ -942,8 +943,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.wings_list[H.dna.features["wings"]]
 				if("wingsopen")
 					S = GLOB.wings_open_list[H.dna.features["wings"]]
-				if("legs")
-					S = GLOB.legs_list[H.dna.features["legs"]]
 				if("moth_wings")
 					S = GLOB.moth_wings_list[H.dna.features["moth_wings"]]
 				if("moth_fluff")

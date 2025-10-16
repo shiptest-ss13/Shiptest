@@ -442,11 +442,11 @@
 
 /mob/living/carbon/regenerate_limbs(noheal = FALSE, list/excluded_zones = list(), robotic = FALSE)
 	. = ..()
-	var/list/zone_list = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)
+	var/list/zone_list = bodyparts.Copy()
 	if(length(excluded_zones))
 		zone_list -= excluded_zones
-	for(var/Z in zone_list)
-		. += regenerate_limb(Z, noheal, robotic)
+	for(var/zone in zone_list)
+		. += regenerate_limb(zone, noheal, robotic)
 
 /mob/living/proc/regenerate_limb(limb_zone, noheal, robotic = FALSE)
 	return

@@ -2,7 +2,7 @@
 	static_icon = 'icons/mob/species/ipc/bodyparts.dmi'
 	icon = 'icons/mob/species/ipc/bodyparts.dmi'
 	icon_state = "synth_head"
-	limb_id = "synth" //Overriden in /species/ipc/replace_body()
+	limb_id = "synth"
 	dynamic_rename = FALSE
 	draw_eyes = FALSE
 	is_dimorphic = FALSE

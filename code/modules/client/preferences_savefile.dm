@@ -451,7 +451,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_lizard_frills"], features["frills"])
 	READ_FILE(S["feature_lizard_spines"], features["spines"])
 	READ_FILE(S["feature_lizard_body_markings"], features["body_markings"])
-	READ_FILE(S["feature_lizard_legs"], features["legs"])
 	READ_FILE(S["feature_moth_wings"], features["moth_wings"])
 	READ_FILE(S["feature_moth_markings"], features["moth_markings"])
 
@@ -578,7 +577,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["frills"]					= sanitize_inlist(features["frills"], GLOB.frills_list)
 	features["spines"]					= sanitize_inlist(features["spines"], GLOB.spines_list)
 	features["body_markings"]			= sanitize_inlist(features["body_markings"], GLOB.body_markings_list)
-	features["feature_lizard_legs"]		= sanitize_inlist(features["legs"], GLOB.legs_list, "Normal Legs")
 	features["moth_wings"]				= sanitize_inlist(features["moth_wings"], GLOB.moth_wings_list, "Plain")
 	features["moth_fluff"]				= sanitize_inlist(features["moth_fluff"], GLOB.moth_fluff_list, "Plain")
 	features["spider_legs"] 			= sanitize_inlist(features["spider_legs"], GLOB.spider_legs_list, "Plain")
@@ -655,7 +653,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_lizard_frills"]		, features["frills"])
 	WRITE_FILE(S["feature_lizard_spines"]		, features["spines"])
 	WRITE_FILE(S["feature_lizard_body_markings"], features["body_markings"])
-	WRITE_FILE(S["feature_lizard_legs"]			, features["legs"])
 	WRITE_FILE(S["feature_moth_wings"]			, features["moth_wings"])
 	WRITE_FILE(S["feature_moth_markings"]		, features["moth_markings"])
 	WRITE_FILE(S["jumpsuit_style"]				, jumpsuit_style)

@@ -23,18 +23,23 @@
 	has_innate_wings = TRUE
 	deathsound = 'sound/voice/moth/moth_a.ogg'
 
-	species_chest = /obj/item/bodypart/chest/moth
-	species_head = /obj/item/bodypart/head/moth
-	species_l_arm = /obj/item/bodypart/l_arm/moth
-	species_r_arm = /obj/item/bodypart/r_arm/moth
-	species_l_leg = /obj/item/bodypart/leg/left/moth
-	species_r_leg = /obj/item/bodypart/leg/right/moth
+	species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/moth,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/moth,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/moth,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/moth,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/moth,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/moth,
+	)
 
-	species_robotic_chest = /obj/item/bodypart/chest/robot/human
-	species_robotic_l_arm = /obj/item/bodypart/l_arm/robot/surplus/human
-	species_robotic_r_arm = /obj/item/bodypart/r_arm/robot/surplus/human
-	species_robotic_l_leg = /obj/item/bodypart/leg/left/robot/surplus/human
-	species_robotic_r_leg = /obj/item/bodypart/leg/right/robot/surplus/human
+	species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/robot/human,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/robot,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/robot/surplus/human,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot/surplus/human,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus/human,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus/human,
+	)
 
 	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 5
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 5

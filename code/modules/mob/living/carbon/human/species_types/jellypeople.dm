@@ -26,12 +26,14 @@
 	ass_image = 'icons/ass/assslime.png'
 	loreblurb = "Slime, itself a slime-mold like organism of unknown origin, is capable of both mutating existing biological organisms into slime, retaining most of the structure and mind of the original, and forming quick-learning gestalts capable of mimicking existing beings, including animals and humanoids. The blood of slimepeople is toxic, and the properties of poisonous and poison-healing substances are inverted for them."
 
-	species_chest = /obj/item/bodypart/chest/jelly
-	species_head = /obj/item/bodypart/head/jelly
-	species_l_arm = /obj/item/bodypart/l_arm/jelly
-	species_r_arm = /obj/item/bodypart/r_arm/jelly
-	species_l_leg = /obj/item/bodypart/leg/left/jelly
-	species_r_leg = /obj/item/bodypart/leg/right/jelly
+	species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/jelly,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/jelly,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/jelly,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/jelly,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/jelly,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/jelly,
+	)
 
 /datum/species/jelly/on_species_loss(mob/living/carbon/C)
 	if(regenerate_limbs)
@@ -227,12 +229,14 @@
 	var/list/mob/living/carbon/bodies
 	var/datum/action/innate/swap_body/swap_body
 
-	species_chest = /obj/item/bodypart/chest/slime
-	species_head = /obj/item/bodypart/head/slime
-	species_l_arm = /obj/item/bodypart/l_arm/slime
-	species_r_arm = /obj/item/bodypart/r_arm/slime
-	species_l_leg = /obj/item/bodypart/leg/left/slime
-	species_r_leg = /obj/item/bodypart/leg/right/slime
+	species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/slime,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/slime,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/slime,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/slime,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/slime,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/slime,
+	)
 
 /datum/species/jelly/slime/on_species_loss(mob/living/carbon/C)
 	if(slime_split)

@@ -36,12 +36,14 @@
 	Just as easy to repair as they are to destroy, they might just get their last laugh in as you're choking on neurotoxins. Beep Boop."
 	ass_image = 'icons/ass/assmachine.png'
 
-	species_chest = /obj/item/bodypart/chest/ipc
-	species_head = /obj/item/bodypart/head/ipc
-	species_l_arm = /obj/item/bodypart/l_arm/ipc
-	species_r_arm = /obj/item/bodypart/r_arm/ipc
-	species_l_leg = /obj/item/bodypart/leg/left/ipc
-	species_r_leg = /obj/item/bodypart/leg/right/ipc
+	species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc,
+	)
 
 	/// The last screen used when the IPC died.
 	var/saved_screen
@@ -239,12 +241,16 @@
 /datum/species/ipc/replace_body(mob/living/carbon/C, datum/species/new_species, robotic)
 	var/datum/sprite_accessory/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[C.dna.features["ipc_chassis"]]
 	if(chassis_of_choice)
-		species_head = chassis_of_choice.chassis_bodyparts[BODY_ZONE_HEAD]
-		species_chest = chassis_of_choice.chassis_bodyparts[BODY_ZONE_CHEST]
-		species_l_arm = chassis_of_choice.chassis_bodyparts[BODY_ZONE_L_ARM]
-		species_r_arm = chassis_of_choice.chassis_bodyparts[BODY_ZONE_R_ARM]
-		species_l_leg = chassis_of_choice.chassis_bodyparts[BODY_ZONE_L_LEG]
-		species_r_leg = chassis_of_choice.chassis_bodyparts[BODY_ZONE_R_LEG]
+		qdel(species_limbs)
+		species_limbs = chassis_of_choice.chassis_bodyparts.Copy() // elegant.
+		var/obj/item/bodypart/chest/new_chest = species_limbs[BODY_ZONE_CHEST]
+		if(new_chest)
+			bodytype = initial(new_chest.acceptable_bodytype)
+		else
+			stack_trace("[chassis_of_choice.type] had no chest bodypart!")
+		for(var/feature in chassis_of_choice.chassis_features)
+			mutant_bodyparts |= feature
+			default_features[feature] = chassis_of_choice.chassis_features[feature]
 	else // in case of fuckery
 		stack_trace("Invalid IPC chassis: [C.dna.features["ipc_chassis"]]")
 	return ..()

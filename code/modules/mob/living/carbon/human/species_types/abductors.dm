@@ -7,12 +7,14 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	ass_image = 'icons/ass/assgrey.png'
 
-	species_chest = /obj/item/bodypart/chest/abductor
-	species_head = /obj/item/bodypart/head/abductor
-	species_l_arm = /obj/item/bodypart/l_arm/abductor
-	species_r_arm = /obj/item/bodypart/r_arm/abductor
-	species_l_leg = /obj/item/bodypart/leg/left/abductor
-	species_r_leg = /obj/item/bodypart/leg/right/abductor
+	species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/abductor,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/abductor,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/abductor,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/abductor,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/abductor,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/abductor,
+	)
 
 /datum/species/abductor/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	. = ..()
