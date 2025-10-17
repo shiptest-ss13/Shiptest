@@ -9,7 +9,6 @@
 	name = "meat"
 	desc = "A slab of meat."
 	icon_state = "meat"
-	//dried_type = /obj/item/food//sosjerky/healthy
 	microwaved_type = /obj/item/food/meat/steak/plain
 	bite_consumption = 3
 	food_reagents = list(
@@ -25,6 +24,9 @@
 /obj/item/food/meat/slab/make_microwaveable()
 	AddElement(/datum/element/microwavable, /obj/item/food/meat/steak/plain)
 */
+
+/obj/item/food/meat/slab/make_dryable()
+	AddElement(/datum/element/dryable, /obj/item/food/sosjerky/healthy)
 
 /obj/item/food/meat/slab/make_processable()
 	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/meat/rawcutlet/plain, 3, 30)

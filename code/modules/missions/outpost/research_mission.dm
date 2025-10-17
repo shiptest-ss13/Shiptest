@@ -104,7 +104,7 @@
 	weight = 2
 	storm_value = 100
 	objective_type = /datum/overmap/event/rad
-
+/*
 /datum/mission/outpost/research/ion
 	name = "Ion storm research mission"
 	desc = "requires data on the behavior of electromagnetic storms in the system for an ongoing study. \
@@ -114,7 +114,7 @@
 	weight = 2
 	storm_value = 100
 	objective_type = /datum/overmap/event/emp
-
+*/
 /datum/mission/outpost/research/flare
 	name = "Solar flare field research mission"
 	desc = "requires data on the behavior of solar flares in the system for an ongoing study. \
