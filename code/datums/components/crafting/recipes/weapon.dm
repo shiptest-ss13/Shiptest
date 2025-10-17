@@ -10,10 +10,6 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
-/datum/crafting_recipe/strobeshield/New()
-	..()
-	blacklist |= subtypesof(/obj/item/shield/riot/)
-
 /datum/crafting_recipe/molotov
 	name = "Molotov"
 	result = /obj/item/reagent_containers/food/drinks/molotov

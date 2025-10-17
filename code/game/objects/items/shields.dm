@@ -1,7 +1,7 @@
 #define BATON_BASH_COOLDOWN (3 SECONDS)
 
 /obj/item/shield
-	name = "shield"
+	name = "Shield"
 	icon = 'icons/obj/shields.dmi'
 	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
@@ -30,6 +30,10 @@
 	var/shield_bash_sound = 'sound/effects/shieldbash.ogg'
 	var/recoil_bonus = -2
 	var/broken = FALSE
+	// material used to repair
+	var/repair_material = /obj/item/stack/sheet/plasteel
+	// whether or not it is repairable
+	var/is_repairable = TRUE
 
 /obj/item/shield/proc/on_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
 	take_damage(damage)
@@ -67,42 +71,39 @@
 	if(.)
 		on_block(owner, hitby, attack_text, damage, attack_type, damage_type)
 
-/obj/item/shield/riot
-	name = "ballistic shield"
-	desc = "A shield adept at blocking blunt objects and bullets from connecting with the torso of the shield wielder. Use 10 plasteel to repair."
-	icon_state = "ballistic"
-	custom_materials = list(/datum/material/iron=8500)
-
-	force = 15
-	max_integrity = 600
-	block_chance = 60
-	integrity_failure = 0.1
-	material_flags = MATERIAL_NO_EFFECTS
-
-/obj/item/shield/riot/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/melee/baton))
-		if(COOLDOWN_FINISHED(src, baton_bash))
-			user.visible_message(span_warning("[user] bashes [src] with [W]!"))
-			playsound(src, shield_bash_sound, 50, TRUE)
-			COOLDOWN_START(src, baton_bash, BATON_BASH_COOLDOWN)
-	else if(istype(W, /obj/item/stack/sheet/plasteel))
+/obj/item/shield/proc/repair(attacking_item, obj/item/stack/sheet, user)
+	if (attacking_item == repair_material)
 		if (atom_integrity >= max_integrity)
 			to_chat(user, span_warning("[src] is already in perfect condition."))
-		while(atom_integrity < max_integrity)
-			if(!do_after(user, 30, target= src))
-				return
-			var/obj/item/stack/sheet/plasteel/T = W
-			T.use(10)
-			atom_integrity = max_integrity
-			to_chat(user, span_notice("You repair [src] with [T]."))
-			name = src::name
-			broken = FALSE
-			block_chance = 60
-			slowdown = 1.25
-			drag_slowdown = 1.25
+			while(atom_integrity < max_integrity)
+				if(!do_after(user, 30, target= src))
+					return
+				var/obj/item/stack/sheet/material_used = attacking_item
+				material_used.use(10)
+				atom_integrity = max_integrity
+				to_chat(user, span_notice("You repair [src] with [material_used]."))
+				name = src::name
+				broken = FALSE
+				block_chance = 60
+				slowdown = 1.25
+				drag_slowdown = 1.25
+	else
+		to_chat(user, span_warning("[src] isn't made of this material!"))
 
-/obj/item/shield/riot/buckler
-	name = "wooden buckler"
+/obj/item/shield/attackby(obj/item/attacking_item, mob/user, params)
+	if(istype(attacking_item, /obj/item/melee/baton))
+		if(COOLDOWN_FINISHED(src, baton_bash))
+			user.visible_message(span_warning("[user] bashes [src] with [attacking_item]!"))
+			playsound(src, shield_bash_sound, 50, TRUE)
+			COOLDOWN_START(src, baton_bash, BATON_BASH_COOLDOWN)
+	else if(istype(attacking_item, /obj/item/stack/sheet))
+		if(is_repairable == TRUE)
+			repair(attacking_item, /obj/item/stack/sheet, user)
+		else
+			to_chat(user, span_warning("[src] cannot be repaired!"))
+
+/obj/item/shield/buckler
+	name = "Wooden buckler"
 	desc = "A medieval wooden buckler."
 	icon_state = "buckler"
 	item_state = "buckler"
@@ -117,10 +118,11 @@
 	max_integrity = 55
 	integrity_failure = 0.2
 	w_class = WEIGHT_CLASS_NORMAL
+	repair_material = /obj/item/stack/sheet/mineral/wood
 	var/shield_break_leftover = /obj/item/stack/sheet/mineral/wood
 	var/shield_break_sound = 'sound/effects/bang.ogg'
 
-/obj/item/shield/riot/buckler/atom_destruction(damage_flag)
+/obj/item/shield/buckler/atom_destruction(damage_flag)
 	playsound(src, shield_break_sound, 50)
 	new shield_break_leftover(get_turf(src))
 	if(isliving(loc))
@@ -128,7 +130,7 @@
 	return ..()
 
 /obj/item/shield/energy
-	name = "energy combat shield"
+	name = "Energy combat shield"
 	desc = "A shield that reflects almost all energy projectiles, but is useless against physical attacks. It can be retracted, expanded, and stored anywhere."
 	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
@@ -140,6 +142,7 @@
 	throw_speed = 3
 	base_icon_state = "eshield" // [base_icon_state]1 for expanded, [base_icon_state]0 for contracted
 	breakable_by_damage = FALSE
+	is_repairable = FALSE
 	var/on_force = 10
 	var/on_throwforce = 8
 	var/on_throw_speed = 2
@@ -179,8 +182,8 @@
 		to_chat(user, span_notice("[src] can now be concealed."))
 	add_fingerprint(user)
 
-/obj/item/shield/riot/tele
-	name = "telescopic shield"
+/obj/item/shield/tele
+	name = "Telescopic shield"
 	desc = "An advanced riot shield made of lightweight materials that collapses for easy storage."
 	icon_state = "teleriot0"
 	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
@@ -191,15 +194,20 @@
 	throwforce = 3
 	throw_speed = 3
 	throw_range = 4
+	max_integrity = 300
+	block_chance = 50
+	slowdown = 1
+	drag_slowdown = 1
+	repair_material = /obj/item/stack/sheet/rglass
 	w_class = WEIGHT_CLASS_NORMAL
 	var/active = 0
 
-/obj/item/shield/riot/tele/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/shield/tele/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(active)
 		return ..()
 	return 0
 
-/obj/item/shield/riot/tele/attack_self(mob/living/user)
+/obj/item/shield/tele/attack_self(mob/living/user)
 	active = !active
 	icon_state = "teleriot[active]"
 	playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, TRUE)
@@ -220,7 +228,7 @@
 		to_chat(user, span_notice("[src] can now be concealed."))
 	add_fingerprint(user)
 
-/obj/item/shield/riot/goliath
+/obj/item/shield/goliath
 	name = "Goliath shield"
 	desc = "A shield made from interwoven plates of goliath hide."
 	icon_state = "goliath_shield"
@@ -232,10 +240,11 @@
 	transparent = FALSE
 	block_chance = 25
 	max_integrity = 70
+	repair_material = /obj/item/stack/sheet/animalhide/goliath_hide
 	w_class = WEIGHT_CLASS_BULKY
 
-/obj/item/shield/riot/heavy
-	name = "heavy ballistic shield"
+/obj/item/shield/heavy
+	name = "Heavy ballistic shield"
 	desc = "A heavy shield designed to keep everything behind it safe from any due harm. Use 10 plasteel to repair."
 	icon_state = "heavy"
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
@@ -245,32 +254,30 @@
 	drag_slowdown = 1.75
 	throwforce = 10
 	throw_range = 2
-	max_integrity = 1000
+	max_integrity = 800
 	force = 10
 	block_chance = 60
 	armor = list("melee" = 70, "bullet" = 70, "laser" = 70, "energy" = 0, "bomb" = 50, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 80)
 
-/obj/item/shield/riot/heavy/Initialize()
+/obj/item/shield/heavy/Initialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
-/obj/item/shield/riot/heavy/ComponentInitialize()
+/obj/item/shield/heavy/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded = 10, force_wielded = 20)
 
 /// triggered on wield of two handed item
-/obj/item/shield/riot/heavy/proc/on_wield(obj/item/source, mob/user)
+/obj/item/shield/heavy/proc/on_wield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
+	block_chance = 85
+	slowdown = 3.50 // This is a huge block of plasteel that will block most attacks. You shouldn't be running forward with an SKM spraying and praying
 
-	if(!do_after(user, 30, target= src))
-		return
-	block_chance = 90
-	slowdown = 3.20 // This is a huge block of plasteel that will block most attacks. You shouldn't be running forward with an SKM spraying and praying
 
 /// triggered on unwield of two handed item
-/obj/item/shield/riot/heavy/proc/on_unwield(obj/item/source, mob/user)
+/obj/item/shield/heavy/proc/on_unwield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
 	block_chance = 60
