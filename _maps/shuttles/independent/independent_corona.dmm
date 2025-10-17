@@ -830,7 +830,7 @@
 	pixel_y = 15;
 	pixel_x = 10
 	},
-/turf/open/floor/grass/ship,
+/turf/open/floor/grass/ship/smoothplasteel,
 /area/ship/hallway/port)
 "ix" = (
 /obj/machinery/computer/cargo{
@@ -880,7 +880,7 @@
 	layer = 2.8
 	},
 /obj/machinery/hydroponics/wooden,
-/turf/open/floor/grass/ship,
+/turf/open/floor/grass/ship/smoothplasteel,
 /area/ship/hallway/port)
 "iL" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
@@ -1391,7 +1391,6 @@
 /obj/item/decal_painter,
 /obj/item/floor_painter,
 /obj/item/airlock_painter,
-/obj/item/weldingtool/electric,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
@@ -2828,7 +2827,7 @@
 	dir = 8;
 	pixel_x = 2
 	},
-/turf/open/floor/grass/ship,
+/turf/open/floor/grass/ship/smoothplasteel,
 /area/ship/hallway/port)
 "GZ" = (
 /obj/structure/closet/secure_closet/engineering_personal{
@@ -2905,6 +2904,8 @@
 /obj/structure/cable/cyan{
 	icon_state = "0-2"
 	},
+/obj/item/trash/mirastin,
+/obj/item/shard,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen/kitchen)
 "Hr" = (
@@ -4546,7 +4547,7 @@
 	dir = 8;
 	name = "Window Control"
 	},
-/turf/open/floor/grass/ship,
+/turf/open/floor/grass/ship/smoothplasteel,
 /area/ship/hallway/port)
 "WR" = (
 /obj/structure/railing{
