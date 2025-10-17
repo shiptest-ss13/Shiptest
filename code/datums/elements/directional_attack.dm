@@ -34,10 +34,11 @@
 	if(!turf_to_check || !source.Adjacent(turf_to_check))
 		return
 
-	var/mob/living/target_mob = locate() in turf_to_check
-	if(!target_mob || source.faction == target_mob.faction || target_mob.stat == DEAD)
+	var/mob/living/target_mob
+	for(target_mob in turf_to_check)
+		if(!target_mob || target_mob.stat == DEAD)
+			continue
+		//This is here to undo the +1 the click on the distant turf adds so we can click the mob near us
+		source.next_click = world.time - 1
+		INVOKE_ASYNC(source, TYPE_PROC_REF(/mob, ClickOn), target_mob, turf_to_check, click_params)
 		return
-
-	//This is here to undo the +1 the click on the distant turf adds so we can click the mob near us
-	source.next_click = world.time - 1
-	INVOKE_ASYNC(source, TYPE_PROC_REF(/mob, ClickOn), target_mob, turf_to_check, click_params)
