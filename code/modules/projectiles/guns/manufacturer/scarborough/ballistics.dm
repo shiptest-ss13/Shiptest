@@ -609,7 +609,7 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 	spread_unwielded = 35
 	recoil = 2
 	recoil_unwielded = 10
-	wield_slowdown = SNIPER_SLOWDOWN
+	wield_slowdown = LIGHT_SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
@@ -699,6 +699,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 	actions_types = list()
 	show_magazine_on_sprite = TRUE
 	manufacturer = MANUFACTURER_SCARBOROUGH
+	wield_slowdown = AMR_SLOWDOWN
 
 	show_ammo_capacity_on_magazine_sprite = TRUE
 

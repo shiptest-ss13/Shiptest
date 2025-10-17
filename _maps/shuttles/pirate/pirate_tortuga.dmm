@@ -936,6 +936,10 @@
 	pixel_y = 0;
 	pixel_x = 10
 	},
+/obj/item/storage/toolbox/ammo/shotgun{
+	pixel_x = 0;
+	pixel_y = 9
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "iD" = (
@@ -3134,6 +3138,7 @@
 	name = "Deck Boss' Locker";
 	req_access_txt = "3"
 	},
+/obj/item/storage/guncase/slammer,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "DF" = (
