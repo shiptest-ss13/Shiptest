@@ -40,7 +40,7 @@
 	UnregisterSignal(parent, list(COMSIG_ITEM_BAKED, COMSIG_PARENT_EXAMINE))
 
 ///Ran every time an item is baked by something
-/datum/component/bakeable/proc/on_bake(datum/source, atom/used_oven, seconds_per_tick = 1)
+/datum/component/bakeable/proc/on_bake(datum/source, atom/used_oven, seconds_per_tick = SSMACHINES_DT)
 	SIGNAL_HANDLER
 
 	. = COMPONENT_HANDLED_BAKING

@@ -32,8 +32,8 @@
 	food_flags = FOOD_FINGER_FOOD
 	w_class = WEIGHT_CLASS_SMALL
 
-	/// What type of donk pocket we're warmed into via baking or microwaving.
-	//var/warm_type = /obj/item/food/donkpocket/warm
+	/// What type of donk pocket we've warmed into via microwaving.
+	var/microwaved_type = /obj/item/food/donkpocket/warm
 	/// The lower end for how long it takes to bake
 	var/baking_time_short = 25 SECONDS
 	/// The upper end for how long it takes to bake
@@ -84,8 +84,6 @@
 	)
 	tastes = list("meat" = 2, "dough" = 2, "spice" = 1)
 	foodtypes = GRAIN
-
-	//warm_type = /obj/item/food/donkpocket/warm/spicy
 	microwaved_type = /obj/item/food/donkpocket/warm/spicy
 
 /obj/item/food/donkpocket/warm/spicy
@@ -112,8 +110,6 @@
 	)
 	tastes = list("meat" = 2, "dough" = 2, "soy sauce" = 2)
 	foodtypes = GRAIN
-
-	//warm_type = /obj/item/food/donkpocket/warm/teriyaki
 	microwaved_type = /obj/item/food/donkpocket/warm/teriyaki
 
 /obj/item/food/donkpocket/warm/teriyaki
@@ -140,8 +136,6 @@
 	)
 	tastes = list("meat" = 2, "dough" = 2, "cheese"= 2)
 	foodtypes = GRAIN
-
-	//warm_type = /obj/item/food/donkpocket/warm/pizza
 	microwaved_type = /obj/item/food/donkpocket/warm/pizza
 
 /obj/item/food/donkpocket/warm/pizza
@@ -167,8 +161,6 @@
 	)
 	tastes = list("dough" = 2, "jam" = 2)
 	foodtypes = GRAIN
-
-	//warm_type = /obj/item/food/donkpocket/warm/berry
 	microwaved_type = /obj/item/food/donkpocket/warm/berry
 
 /obj/item/food/donkpocket/warm/berry
