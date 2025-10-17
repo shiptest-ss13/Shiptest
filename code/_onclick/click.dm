@@ -155,6 +155,8 @@
 		if(W)
 			W.melee_attack_chain(src, A, params)
 		else
+			if(ismob(A))
+				changeNext_move(CLICK_CD_MELEE)
 			UnarmedAttack(A, TRUE)
 	else
 		if(W)

@@ -1625,8 +1625,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	SEND_SIGNAL(M, COMSIG_MOB_ATTACK_HAND, M, H, attacker_style)
 
-	M.changeNext_move(CLICK_CD_MELEE)
-
 	switch(M.a_intent)
 		if("help")
 			help(M, H, attacker_style)
