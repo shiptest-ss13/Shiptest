@@ -67,6 +67,11 @@
 		final_block_chance = 100
 	if(isobj(hitby))
 		var/obj/pointy = hitby
+		//9mm 10-30 - ap thresh = -40
+		//57 10+20 - ap thresh  = 10
+		//5556 12.5+30 - ap thresh = 22.5
+		//6.5 20+80 - ap thresh = 80
+		var/chance_to_pen = (damage*0.5 + pointy.armour_penetration*1.5) - ap_threshold
 		if(pointy.armour_penetration > ap_threshold)
 			take_damage(armour_penetration, damage_type)
 			to_chat(owner, span_warning("Your shield is penetrated by [hitby]!"))
