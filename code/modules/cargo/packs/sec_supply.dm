@@ -216,7 +216,7 @@
 /datum/supply_pack/sec_supply/cybersun_flyssa
 	name = "Energy Flyssa Crate"
 	desc = "Contains a lathed, verified, and readied Energy Flyssa. Corporate recommends owning a recharger to accompany."
-	cost = 750
+	cost = 1500
 	contains = list(/obj/item/melee/energy/flyssa)
 	crate_name = "energy flyssa crate"
 	faction = /datum/faction/syndicate/cybersun
@@ -226,7 +226,7 @@
 /datum/supply_pack/sec_supply/hardliner_flyssa
 	name = "Energy Flyssa Crate"
 	desc = "Contains a lathed, verified, and readied Energy Flyssa. This is one of the assets you need to be careful to not lose."
-	cost = 750
+	cost = 1500
 	contains = list(/obj/item/melee/energy/flyssa)
 	crate_name = "energy flyssa crate"
 	faction = /datum/faction/syndicate/hardliners
