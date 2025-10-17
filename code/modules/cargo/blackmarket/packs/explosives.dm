@@ -26,8 +26,8 @@
 	desc = "These high explosive grenades are sure to get some bang for your buck."
 	item = /obj/item/grenade/syndieminibomb/concussion
 
-	cost_min = 100
-	cost_max = 500
+	cost_min = 400
+	cost_max = 800
 	stock_min = 2
 	stock_max = 5
 	availability_prob = 25
@@ -37,8 +37,8 @@
 	desc = "Pull the pin, count to three, and throw for best results."
 	item = /obj/item/grenade/frag
 
-	cost_min = 100
-	cost_max = 500
+	cost_min = 300
+	cost_max = 700
 	stock_min = 3
 	stock_max = 5
 	availability_prob = 40
