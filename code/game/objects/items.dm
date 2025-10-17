@@ -143,7 +143,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	/// How much clothing is slowing you down. Negative values speeds you up
 	var/slowdown = 0
 	///percentage of armour effectiveness to remove
-	var/armour_penetration = 0
+	armour_penetration = 0
 	///What objects the suit storage can store
 	var/list/allowed = null
 	///In deciseconds, how long an item takes to equip; counts only for normal clothing slots, not pockets etc.
