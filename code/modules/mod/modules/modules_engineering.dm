@@ -1,24 +1,3 @@
-//Engineering modules for MODsuits
-
-///Welding Protection - Makes the helmet protect from flashes and welding.
-/obj/item/mod/module/welding
-	name = "MOD welding protection module"
-	desc = "A module installed into the visor of the suit, this projects a \
-		polarized, holographic overlay in front of the user's eyes. It's rated high enough for \
-		immunity against extremities such as spot and arc welding, solar eclipses, and handheld flashlights."
-	icon_state = "welding"
-	complexity = 1
-	incompatible_modules = list(/obj/item/mod/module/welding, /obj/item/mod/module/armor_booster)
-	overlay_state_inactive = "module_welding"
-
-/obj/item/mod/module/welding/on_suit_activation()
-	mod.helmet.flash_protect = FLASH_PROTECTION_WELDER
-
-/obj/item/mod/module/welding/on_suit_deactivation(deleting = FALSE)
-	if(deleting)
-		return
-	mod.helmet.flash_protect = initial(mod.helmet.flash_protect)
-
 ///T-Ray Scan - Scans the terrain for undertile objects.
 /obj/item/mod/module/t_ray
 	name = "MOD t-ray scan module"
@@ -90,7 +69,7 @@
 	incompatible_modules = list(/obj/item/mod/module/tether)
 	cooldown_time = 1.5 SECONDS
 
-/obj/item/mod/module/tether/on_use()
+/obj/item/mod/module/tether/used()
 	if(mod.wearer.has_gravity(get_turf(src)))
 		to_chat(mod.wearer,span_warning("The tether flops uselessly to the ground in the gravity!"))
 		playsound(src, 'sound/weapons/gun/general/dry_fire.ogg', 25, TRUE)
