@@ -10,6 +10,7 @@
 	desc = "A slab of raw meat."
 	icon_state = "meat"
 	//dried_type = /obj/item/food//sosjerky/healthy
+	microwaved_type = /obj/item/food/meat/steak/plain
 	bite_consumption = 3
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment/protein = 6,
@@ -20,8 +21,10 @@
 	///Legacy code, handles the coloring of the overlay of the cutlets made from this.
 	var/slab_color = "#FF0000"
 
-/obj/item/food/meat/slab/make_grillable()
-	AddComponent(/datum/component/grillable, /obj/item/food/meat/steak/plain, rand(30 SECONDS, 90 SECONDS), TRUE, TRUE)
+/*
+/obj/item/food/meat/slab/make_microwaveable()
+	AddElement(/datum/element/microwavable, /obj/item/food/meat/steak/plain)
+*/
 
 /obj/item/food/meat/slab/make_processable()
 	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/meat/rawcutlet/plain, 3, 30)

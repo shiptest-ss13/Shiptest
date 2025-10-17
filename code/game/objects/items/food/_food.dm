@@ -49,6 +49,7 @@
 		eatverbs = string_list(eatverbs)
 	make_edible()
 	make_processable()
+	make_dryable()
 	make_leave_trash()
 	make_grillable()
 	make_bakeable()
