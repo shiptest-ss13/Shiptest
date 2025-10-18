@@ -257,8 +257,9 @@ Like its parent but can be applied to carbon mobs instead of clothing items
 		return
 
 	// Find any leg of our human and add that to the footprint, instead of the default which is to just add the human type
-	for(var/X in wielder.bodyparts)
-		var/obj/item/bodypart/affecting = X
+	var/obj/item/bodypart/affecting
+	for(var/zone in wielder.bodyparts)
+		affecting = wielder.bodyparts[zone]
 		if(affecting.body_part == LEG_RIGHT || affecting.body_part == LEG_LEFT)
 			if(!affecting.bodypart_disabled)
 				FP.species_types |= affecting.limb_id

@@ -151,10 +151,14 @@
 		return
 
 	var/list/parts = list()
-	for(var/obj/item/bodypart/BP as anything in C.bodyparts)
-		if(BP.body_part != HEAD && BP.body_part != CHEST)
-			if(BP.dismemberable)
-				parts += BP
+	var/obj/item/bodypart/limb
+	for(var/zone as anything in C.bodyparts)
+		limb = C.bodyparts[zone]
+		if(!limb)
+			continue
+		if(limb.body_part != HEAD && limb.body_part != CHEST)
+			if(limb.dismemberable)
+				parts += limb
 	if(!parts.len)
 		to_chat(usr, span_notice("You can't shed any more limbs!"))
 		return

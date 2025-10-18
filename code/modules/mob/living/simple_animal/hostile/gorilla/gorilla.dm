@@ -51,11 +51,14 @@
 	if(iscarbon(the_target))
 		var/mob/living/carbon/C = the_target
 		if(C.stat >= UNCONSCIOUS)
-			for(var/X in C.bodyparts)
-				var/obj/item/bodypart/BP = X
-				if(BP.body_part != HEAD && BP.body_part != CHEST)
-					if(BP.dismemberable)
-						parts += BP
+			var/obj/item/bodypart/body_part
+			for(var/zone in C.bodyparts)
+				body_part = C.bodyparts[zone]
+				if(!body_part)
+					continue
+				if(!(body_part.body_part & CHEST|HEAD))
+					if(body_part.dismemberable)
+						parts += body_part
 			return parts
 
 /mob/living/simple_animal/hostile/gorilla/AttackingTarget()

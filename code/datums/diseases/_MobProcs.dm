@@ -137,7 +137,7 @@
 			return FALSE
 
 	for(var/thing in D.required_organs)
-		if(!((locate(thing) in bodyparts) || (locate(thing) in internal_organs)))
+		if(!((locate(thing) in get_all_bodyparts()) || (locate(thing) in internal_organs)))
 			return FALSE
 	return ..()
 

@@ -29,6 +29,8 @@
 	var/is_dimorphic = FALSE
 	///Greyscale draw color
 	var/draw_color
+	///Should it automatically rename itself based on limb_id and body_zone?
+	var/dynamic_rename = TRUE
 
 	/// The icon state of the limb's overlay, colored with a different color
 	var/overlay_icon_state
@@ -142,7 +144,8 @@
 
 /obj/item/bodypart/Initialize()
 	. = ..()
-	name = "[limb_id] [parse_zone(body_zone)]"
+	if(dynamic_rename)
+		name = "[limb_id] [parse_zone(body_zone)]"
 	update_icon_dropped()
 
 	if(!IS_ORGANIC_LIMB(src))

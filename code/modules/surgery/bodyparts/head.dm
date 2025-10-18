@@ -42,6 +42,11 @@
 
 	var/mouth = TRUE
 
+	///Whether to show eyes, or lack thereof
+	var/draw_eyes = TRUE
+	///Uses greyscale coloring for eyes
+	var/greyscale_eyes = TRUE
+
 /obj/item/bodypart/head/Destroy()
 	QDEL_NULL(brainmob) //order is sensitive, see warning in handle_atom_del() below
 	QDEL_NULL(brain)

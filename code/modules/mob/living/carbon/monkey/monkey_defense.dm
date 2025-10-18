@@ -201,10 +201,14 @@
 	//attempt to dismember bodyparts
 	if(severity <= 2)
 		var/max_limb_loss = round(4/severity) //so you don't lose four limbs at severity 3.
-		for(var/obj/item/bodypart/BP as anything in bodyparts)
-			if(prob(50/severity) && BP.body_zone != BODY_ZONE_CHEST)
-				BP.brute_dam = BP.max_damage
-				BP.dismember()
+		var/obj/item/bodypart/body_part
+		for(var/zone in bodyparts)
+			body_part = bodyparts[zone]
+			if(!body_part)
+				continue
+			if(prob(50/severity) && zone != BODY_ZONE_CHEST)
+				body_part.brute_dam = body_part.max_damage
+				body_part.dismember()
 				max_limb_loss--
 				if(!max_limb_loss)
 					break

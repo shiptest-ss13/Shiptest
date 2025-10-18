@@ -743,7 +743,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 		to_chat(src, span_warning("You need 75 chems to punish your host."))
 		return
 
-	var/limb = pick(victim.bodyparts)
+	var/limb = victim.get_random_bodypart()
 	limb = parse_zone(limb)
 	victim.apply_damage(50, STAMINA, limb)
 
