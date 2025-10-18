@@ -45,44 +45,12 @@
 	name = "AI Core Board"
 	desc = "The future is now! Become one with your ship with this AI core board! (Some assembly required.)"
 	item = /obj/item/circuitboard/aicore
-	pair_item = list(/datum/blackmarket_item/tech/boris, /datum/blackmarket_item/tech/mmi, /datum/blackmarket_item/tech/borg)
 
 	cost_min = 5000
 	cost_max = 7000
 	stock = 1
 	availability_prob = 10
 	spawn_weighting = FALSE
-
-/datum/blackmarket_item/tech/boris
-	name = "B.O.R.I.S Module"
-	desc = "A Bluespace Optimi-blah blah blah, I'm bored already. This module will convert a cyborg frame into an AI compatible shell."
-	item = /obj/item/borg/upgrade/ai
-
-	cost_min = 100
-	cost_max = 250
-	stock = 3
-	availability_prob = 0
-
-/datum/blackmarket_item/tech/mmi
-	name = "Man Machine Interface"
-	desc = "Transcend the weakness of your flesh with this man machine interface, compatible with AIs, Cyborgs and Mechs!"
-	item = /obj/item/mmi
-
-	cost_min = 250
-	cost_max = 750
-	stock = 3
-	availability_prob = 0
-
-/datum/blackmarket_item/tech/borg
-	name = "Cyborg Construction Kit"
-	desc = "This durable and verastile cyborg frame is capable of fufilling a number of roles and survive situations that would kill the average person. Brain sold seperately."
-	item = /obj/structure/closet/crate/cyborg
-	pair_item = list(/datum/blackmarket_item/tech/boris, /datum/blackmarket_item/tech/mmi)
-
-	cost_min = 1000
-	cost_max = 2000
-	stock = 3
-	availability_prob = 40
 
 /datum/blackmarket_item/tech/t4_capacitor
 	name = "Quadratic Capacitor"
