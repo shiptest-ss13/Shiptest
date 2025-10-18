@@ -1,0 +1,47 @@
+	{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Puppis-class Multirole Corvette",
+	"prefix": "CMSV",
+	"manufacturer": "Lanchester Shipyards",
+	"namelists": ["GENERAL", "CLIP MINUTEMEN", "NATURAL_AGGRESSIVE"],
+	"description": "A design drafted for the Colonial Minutemen in a post-ICW Frontier - with the first launched in 501 FSC, the Puppis-class Multirole Corvette is a well equipped, nimble, and easy to adapt to changing situations. The above-average crew accommodations make it a popular assignment, while the cargo holds and typical gear allotment enable deployment on everything from standard patrol to delivering humanitarian aid. Multiple vectored engine blocks ensure that nary a captain will complain about its mobility. The sight of a Puppis-class burning into atmosphere is a sign that CLIP is here to stay",
+	"tags": [
+		"Combat",
+		"Generalist",
+		"Response"
+	],
+	"map_short_name": "Puppis-class",
+	"faction": "/datum/faction/clip",
+	"starting_funds": 2000,
+	"map_path": "_maps/shuttles/minutemen/minutemen_puppis.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/clip/minutemen/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Team Sergeant": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt/lead",
+			"officer": true,
+			"slots": 1
+		},
+		"Combat Medic": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt/medic",
+			"slots": 1
+		},
+		"Naval Engineer": {
+			"outfit": "/datum/outfit/job/clip/minutemen/engineer",
+			"slots": 1
+		},
+		"Minuteman": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt",
+			"slots": 1
+		},
+		"Reservist": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt/reserve",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}
