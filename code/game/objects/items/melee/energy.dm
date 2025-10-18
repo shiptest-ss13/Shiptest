@@ -328,6 +328,8 @@
 	bare_wound_bonus = -10
 	armour_penetration = -20
 
+	w_class = WEIGHT_CLASS_NORMAL
+
 	active_hitsound = 'sound/weapons/blade1.ogg'
 
 	var/cell_override = /obj/item/stock_parts/cell/high
@@ -375,6 +377,7 @@
 /obj/item/melee/energy/flyssa/process(seconds_per_tick)
 	if(!(item_use_power(power_use_amount) & COMPONENT_POWER_SUCCESS))
 		SEND_SIGNAL(src, COMSIG_ITEM_FORCE_TRANSFORM, "no_power")
+		on_transform()
 		playsound(src, 'sound/weapons/saberoff.ogg', 35)
 		STOP_PROCESSING(SSobj, src)
 	. = ..()
