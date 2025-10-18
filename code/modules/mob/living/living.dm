@@ -17,6 +17,7 @@
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
+	AddElement(/datum/element/directional_attack)
 	update_fov()
 
 /mob/living/ComponentInitialize()
