@@ -18,6 +18,7 @@
 	name = "PGF - Bridge Crew"
 	id_assignment = "Helmsman"
 	jobtype = /datum/job/head_of_personnel
+	neck = /obj/item/clothing/neck/cloak/gezena/command
 
 /datum/outfit/job/gezena/engineer
 	name = "PGF - Navy Engineer"
@@ -70,6 +71,7 @@
 	name = "PGF - Marine Pioneer"
 	id_assignment = "Marine Pioneer"
 
+	neck = /obj/item/clothing/neck/cloak/gezena/engi
 	backpack = /obj/item/storage/backpack/industrial
 	satchel = /obj/item/storage/backpack/satchel/eng
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering

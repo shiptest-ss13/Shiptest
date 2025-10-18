@@ -1610,6 +1610,9 @@
 /obj/structure/chair/handrail{
 	dir = 2
 	},
+/obj/structure/sign/poster/pgf/random{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "tV" = (
@@ -3441,9 +3444,6 @@
 	},
 /obj/structure/rack,
 /obj/machinery/light/small/directional/west,
-/obj/structure/sign/poster/contraband/pgf{
-	pixel_y = 32
-	},
 /obj/effect/turf_decal/corner/opaque/neutral/full,
 /obj/item/gun/energy/kalix/pgf{
 	pixel_y = 6
@@ -3453,6 +3453,9 @@
 	},
 /obj/item/gun/energy/kalix/pgf/nock{
 	pixel_y = -1
+	},
+/obj/structure/sign/poster/pgf/marine{
+	pixel_y = 32
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
