@@ -702,6 +702,12 @@
 /obj/structure/extinguisher_cabinet/directional/east{
 	pixel_y = -7
 	},
+/obj/structure/noticeboard{
+	pixel_y = -25;
+	dir = 1
+	},
+/obj/item/paper/fluff/ship/pgf/lifesaving,
+/obj/item/paper/fluff/ship/pgf/triage,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
 "gX" = (
@@ -2253,6 +2259,10 @@
 	pixel_x = -10;
 	pixel_y = 0
 	},
+/obj/item/stack/medical/splint/twelve{
+	pixel_y = 2;
+	pixel_x = 3
+	},
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
 "EZ" = (
@@ -2736,6 +2746,9 @@
 	pixel_y = -10;
 	pixel_x = 1
 	},
+/obj/item/radio/headset/pgf/alt,
+/obj/item/radio/headset/pgf/alt,
+/obj/item/radio/headset/pgf/alt,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Ju" = (
@@ -2885,6 +2898,10 @@
 /obj/item/binoculars{
 	pixel_y = 3;
 	pixel_x = -1
+	},
+/obj/item/megaphone/command{
+	pixel_x = -5;
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -3994,7 +4011,7 @@ sB
 (7,1,1) = {"
 sB
 sB
-fY
+ZV
 ZV
 ZV
 ZV
