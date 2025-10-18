@@ -1,7 +1,4 @@
 import { sortBy } from 'common/collections';
-import { flow } from 'common/fp';
-import { toFixed } from 'common/math';
-import { useBackend } from '../backend';
 import {
   Button,
   LabeledList,
@@ -9,15 +6,19 @@ import {
   Section,
   Stack,
   Table,
-} from '../components';
+} from 'tgui-core/components';
+import { flow } from 'tgui-core/fp';
+import { toFixed } from 'tgui-core/math';
+
+import { useBackend } from '../backend';
 import { getGasColor } from '../constants';
 import { NtosWindow } from '../layouts';
 
 const logScale = (value) => Math.log2(16 + Math.max(0, value)) - 4;
 
-export const NtosSupermatterMonitor = (props, context) => {
+export const NtosSupermatterMonitor = (props) => {
   return (
-    <NtosWindow width={600} height={350} resizable>
+    <NtosWindow width={600} height={350}>
       <NtosWindow.Content scrollable>
         <NtosSupermatterMonitorContent />
       </NtosWindow.Content>
@@ -25,8 +26,8 @@ export const NtosSupermatterMonitor = (props, context) => {
   );
 };
 
-export const NtosSupermatterMonitorContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtosSupermatterMonitorContent = (props) => {
+  const { act, data } = useBackend();
   const { active, SM_integrity, SM_power, SM_ambienttemp, SM_ambientpressure } =
     data;
   if (!active) {
@@ -129,8 +130,8 @@ export const NtosSupermatterMonitorContent = (props, context) => {
   );
 };
 
-const SupermatterList = (props, context) => {
-  const { act, data } = useBackend(context);
+const SupermatterList = (props) => {
+  const { act, data } = useBackend();
   const { supermatters = [] } = data;
   return (
     <Section

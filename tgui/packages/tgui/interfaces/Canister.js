@@ -1,5 +1,3 @@
-import { toFixed } from 'common/math';
-import { useBackend } from '../backend';
 import {
   AnimatedNumber,
   Box,
@@ -12,8 +10,11 @@ import {
   RoundGauge,
   Section,
   Tooltip,
-} from '../components';
-import { formatSiUnit } from '../format';
+} from 'tgui-core/components';
+import { formatSiUnit } from 'tgui-core/format';
+import { toFixed } from 'tgui-core/math';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 const formatPressure = (value) => {
@@ -23,8 +24,8 @@ const formatPressure = (value) => {
   return formatSiUnit(value * 1000, 1, 'Pa');
 };
 
-export const Canister = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Canister = (props) => {
+  const { act, data } = useBackend();
   const {
     portConnected,
     tankPressure,
@@ -179,12 +180,12 @@ export const Canister = (props, context) => {
                       maxValue={holdingTankFragPressure * 1.15}
                       alertAfter={holdingTankLeakPressure}
                       ranges={{
-                        'good': [0, holdingTankLeakPressure],
-                        'average': [
+                        good: [0, holdingTankLeakPressure],
+                        average: [
                           holdingTankLeakPressure,
                           holdingTankFragPressure,
                         ],
-                        'bad': [
+                        bad: [
                           holdingTankFragPressure,
                           holdingTankFragPressure * 1.15,
                         ],

@@ -1,9 +1,10 @@
+import { Box, Button, Section } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Box, Button, Section } from '../components';
 import { Window } from '../layouts';
 
-export const KeycardAuth = (props, context) => {
-  const { act, data } = useBackend(context);
+export const KeycardAuth = (props) => {
+  const { act, data } = useBackend();
   return (
     <Window width={375} height={125}>
       <Window.Content>
