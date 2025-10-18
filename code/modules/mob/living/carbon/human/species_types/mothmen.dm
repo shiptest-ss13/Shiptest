@@ -32,7 +32,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/moth,
 	)
 
-	species_limbs = list(
+	species_robotic_limbs = list(
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/robot/human,
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/robot,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/robot/surplus/human,
