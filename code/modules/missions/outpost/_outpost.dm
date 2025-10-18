@@ -3,7 +3,7 @@
 
 /datum/mission/outpost/New(_outpost)
 	source_outpost = _outpost
-	RegisterSignal(mission_location, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
+	RegisterSignal(source_outpost, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
 	return ..()
 
 /datum/mission/outpost/Destroy()

@@ -1,6 +1,6 @@
 /datum/species/skeleton
 	// 2spooky
-	name = "\improper Spooky Scary Skeleton"
+	name = "\improper Skeleton"
 	id = SPECIES_SKELETON
 	meat = /obj/item/food/meat/slab/human/mutant/skeleton
 	species_traits = list(NOBLOOD, HAS_BONE, NOHUSK)

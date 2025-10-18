@@ -426,6 +426,12 @@
 	volume = 50
 	list_reagents = list(/datum/reagent/medicine/gjalrazine = 50)
 
+/obj/item/reagent_containers/glass/bottle/cureall
+	name = "cureall bottle"
+	desc = "A small bottle. Contains cureall, used to treat small amounts of brute, burn, and toxins."
+	volume = 50
+	list_reagents = list(/datum/reagent/medicine/cureall = 50)
+
 /obj/item/reagent_containers/glass/bottle/epinephrine/sleeper
 	cap_on = FALSE
 

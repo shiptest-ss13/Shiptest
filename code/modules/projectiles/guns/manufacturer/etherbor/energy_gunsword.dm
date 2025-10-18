@@ -46,6 +46,13 @@
 	damage = 25
 	armour_penetration = -10
 
+/obj/item/gun/energy/kalix/empty_cell
+	spawn_no_ammo = TRUE
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix,
+	)
+
 /obj/projectile/beam/hitscan/kalix/nock
 	name = "concentrated energy beam"
 	damage_constant = 0.8
@@ -100,6 +107,10 @@
 
 /obj/item/gun/energy/kalix/nock/empty_cell
 	spawn_no_ammo = TRUE
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix,
+	)
 
 /obj/projectile/beam/hitscan/kalix/pgf/nock
 	name = "concentrated energy beam"
@@ -155,9 +166,10 @@
 
 /obj/item/gun/energy/kalix/pgf/nock/empty_cell
 	spawn_no_ammo = TRUE
-
-/obj/item/gun/energy/kalix/empty_cell
-	spawn_no_ammo = TRUE
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix,
+	)
 
 /obj/item/gun/energy/kalix/pgf
 	name = "\improper Etherbor BG-16"
@@ -177,6 +189,13 @@
 		/obj/item/stock_parts/cell/gun/kalix,
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pgf , /obj/item/ammo_casing/energy/disabler/hitscan)
+
+/obj/item/gun/energy/kalix/pgf/empty_cell
+	spawn_no_ammo = TRUE
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix,
+	)
 
 /obj/projectile/beam/hitscan/kalix/pgf
 	name = "concentrated energy beam"
@@ -228,6 +247,10 @@
 
 /obj/item/gun/energy/kalix/pistol/empty_cell
 	spawn_no_ammo = TRUE
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix,
+	)
 
 /obj/item/gun/energy/kalix/pgf/medium
 	name = "\improper Etherbor BGC-10"
@@ -251,6 +274,13 @@
 
 	ammo_type = list(/obj/item/ammo_casing/energy/pgf/assault, /obj/item/ammo_casing/energy/disabler/hitscan/heavy)
 
+/obj/item/gun/energy/kalix/pgf/medium/empty_cell
+	spawn_no_ammo = TRUE
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix,
+	)
+
 /obj/item/gun/energy/kalix/pgf/heavy
 	name = "\improper Etherbor HBG-7"
 	desc = "The HBG-7 is the standard-issue rifle weapon of the PGF. It comes with a special DMR mode that has greater armor piercing for dealing with armored targets."
@@ -272,6 +302,13 @@
 	spread_unwielded = 20
 
 	ammo_type = list(/obj/item/ammo_casing/energy/pgf/assault, /obj/item/ammo_casing/energy/pgf/sniper)
+
+/obj/item/gun/energy/kalix/pgf/heavy/empty_cell
+	spawn_no_ammo = TRUE
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix,
+	)
 
 /obj/item/ammo_casing/energy/pgf/assault
 	select_name  = "AR"
@@ -321,3 +358,10 @@
 
 	wield_slowdown = LASER_SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
+
+/obj/item/gun/energy/kalix/pgf/heavy/sniper/empty_cell
+	spawn_no_ammo = TRUE
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix,
+	)
