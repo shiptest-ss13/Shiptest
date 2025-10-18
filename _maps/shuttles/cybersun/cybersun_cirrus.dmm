@@ -461,6 +461,10 @@
 "dd" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/syndiered/mono,
+/obj/machinery/recharger{
+	pixel_x = -5;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/storage/equip)
 "df" = (
@@ -4529,6 +4533,10 @@
 	pixel_x = -5;
 	pixel_y = -5
 	},
+/obj/item/melee/energy/flyssa{
+	pixel_x = 3;
+	pixel_y = -2
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/storage/equip)
 "LB" = (
@@ -5883,6 +5891,10 @@
 /obj/item/storage/box/ammo/c45_rubber{
 	pixel_x = -5;
 	pixel_y = -5
+	},
+/obj/item/melee/energy/flyssa{
+	pixel_x = 3;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/storage/equip)
