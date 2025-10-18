@@ -903,8 +903,6 @@
 /area/ship/bridge)
 "mr" = (
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/eva,
-/obj/item/clothing/head/helmet/space/eva,
 /obj/item/clothing/mask/breath,
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -920,6 +918,8 @@
 /obj/structure/sign/warning/vacuum/external{
 	pixel_x = 32
 	},
+/obj/item/clothing/suit/space/syndicate/generic,
+/obj/item/clothing/head/helmet/space/syndicate/generic,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "mz" = (

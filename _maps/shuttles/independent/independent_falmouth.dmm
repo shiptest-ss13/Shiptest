@@ -897,7 +897,11 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/machinery/suit_storage_unit/standard_unit,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/suit/space/syndicate/generic,
+/obj/item/clothing/head/helmet/space/syndicate/generic,
+/obj/item/clothing/mask/gas,
+/obj/item/tank/internals/oxygen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "xh" = (
@@ -2523,10 +2527,16 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "Yi" = (
+/obj/machinery/suit_storage_unit/inherit/locked{
+	req_access_txt = "1"
+	},
+/obj/item/clothing/suit/space/syndicate/generic,
+/obj/item/clothing/head/helmet/space/syndicate/generic,
+/obj/item/clothing/mask/gas,
 /obj/effect/turf_decal/borderfloor{
 	dir = 10
 	},
-/obj/machinery/suit_storage_unit/standard_unit,
+/obj/item/tank/internals/oxygen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "YF" = (
