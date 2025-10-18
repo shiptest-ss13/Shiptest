@@ -10,7 +10,6 @@
 	attack_verb = "burn"
 	attack_sound = 'sound/weapons/etherealhit.ogg'
 	miss_sound = 'sound/weapons/etherealmiss.ogg'
-	meat = /obj/item/food/meat/slab/human/mutant/ethereal
 	mutantstomach = /obj/item/organ/stomach/ethereal
 	mutanttongue = /obj/item/organ/tongue/ethereal
 	siemens_coeff = 0.5 //They thrive on energy

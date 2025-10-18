@@ -2,7 +2,7 @@
 /obj/machinery/processor
 	name = "food processor"
 	desc = "An industrial grinder used to process meat and other foods. Keep hands clear of intake area while operating."
-	icon = 'icons/obj/kitchen.dmi'
+	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "processor1"
 	layer = BELOW_OBJ_LAYER
 	density = TRUE
@@ -27,10 +27,12 @@
 		. += span_notice("The status display reads: Outputting <b>[rating_amount]</b> item(s) at <b>[rating_speed*100]%</b> speed.")
 
 /obj/machinery/processor/proc/process_food(datum/food_processor_process/recipe, atom/movable/what)
-	if (recipe.output && loc && !QDELETED(src))
-		for(var/i = 0, i < (rating_amount * recipe.multiplier), i++)
+	if(recipe.output && loc && !QDELETED(src))
+		var/cached_multiplier = (recipe.food_multiplier * rating_amount)
+		for(var/i in 1 to cached_multiplier)
 			new recipe.output(drop_location())
-	if (ismob(what))
+
+	if(ismob(what))
 		var/mob/themob = what
 		themob.gib(TRUE,TRUE,TRUE)
 	else

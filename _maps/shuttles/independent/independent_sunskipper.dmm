@@ -330,16 +330,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
-"du" = (
-/obj/docking_port/stationary{
-	dheight = 1;
-	dwidth = 20;
-	height = 30;
-	name = "Sunskipper Port Beam Dock";
-	width = 40
-	},
-/turf/template_noop,
-/area/template_noop)
 "dv" = (
 /obj/machinery/light/directional/east,
 /obj/effect/turf_decal/siding/wood{
@@ -498,19 +488,6 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
-"eK" = (
-/obj/structure/table/reinforced,
-/obj/item/cutting_board{
-	pixel_x = -5;
-	pixel_y = 5;
-	anchored = 1
-	},
-/obj/item/melee/knife/kitchen{
-	pixel_x = -11;
-	pixel_y = 9
-	},
-/turf/open/floor/plasteel/mono/white,
-/area/ship/crew/canteen/kitchen)
 "eM" = (
 /obj/structure/chair/wood{
 	dir = 4
@@ -652,25 +629,18 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
-"gC" = (
-/obj/structure/table/reinforced,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/item/reagent_containers/glass/mortar/metal{
-	pixel_y = 8
-	},
-/obj/item/pestle{
-	pixel_y = 6;
-	pixel_x = -13
-	},
-/turf/open/floor/plasteel/mono/white,
-/area/ship/crew/canteen/kitchen)
 "gE" = (
 /obj/machinery/firealarm/directional/north,
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/directional/west,
 /obj/machinery/jukebox/boombox,
+/turf/open/floor/plasteel/mono,
+/area/ship/crew/canteen/kitchen)
+"gH" = (
+/obj/structure/cable/orange{
+	icon_state = "5-10"
+	},
+/obj/machinery/griddle,
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
 "gU" = (
@@ -682,6 +652,10 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
+"he" = (
+/obj/machinery/oven,
+/turf/open/floor/plasteel/mono/white,
+/area/ship/crew/canteen/kitchen)
 "hh" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	color = "#543C30";
@@ -775,22 +749,6 @@
 /obj/item/storage/pill_bottle/dice/hazard,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
-"ip" = (
-/obj/machinery/door/airlock/external{
-	dir = 4;
-	req_ship_access = 0
-	},
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#543C30";
-	dir = 4
-	},
-/obj/docking_port/mobile{
-	dir = 8;
-	launch_status = 0;
-	preferred_direction = 4
-	},
-/turf/open/floor/wood/walnut,
-/area/ship/crew/office/lobby)
 "iC" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -1024,6 +982,23 @@
 /obj/item/clothing/gloves/color/yellow,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
+"lU" = (
+/obj/structure/table/reinforced,
+/obj/structure/cable/orange{
+	icon_state = "5-10"
+	},
+/obj/machinery/reagentgrinder{
+	pixel_y = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/item/melee/knife/kitchen{
+	pixel_x = -11;
+	pixel_y = 9
+	},
+/turf/open/floor/plasteel/mono,
+/area/ship/crew/canteen/kitchen)
 "mk" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2117,13 +2092,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
-"xT" = (
-/obj/structure/cable/orange{
-	icon_state = "5-10"
-	},
-/obj/structure/table/reinforced,
-/turf/open/floor/plasteel/mono,
-/area/ship/crew/canteen/kitchen)
 "xW" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -2265,6 +2233,32 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
+"yT" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/dept/cargo{
+	dir = 4
+	},
+/obj/structure/closet/crate/wooden{
+	name = "hunting gear crate"
+	},
+/obj/item/storage/guncase/m12,
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/obj/item/melee/knife/hunting,
+/obj/item/melee/knife/hunting,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/head/hardhat/orange,
+/obj/item/clothing/head/hardhat/orange,
+/obj/effect/mapping_helpers/crate_shelve,
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "zj" = (
 /obj/structure/table/wood/reinforced,
 /obj/effect/turf_decal/siding/wood{
@@ -2540,6 +2534,22 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/office/lobby)
+"BV" = (
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	req_ship_access = 0
+	},
+/obj/effect/turf_decal/siding/wood/end{
+	color = "#543C30";
+	dir = 4
+	},
+/obj/docking_port/mobile{
+	dir = 8;
+	launch_status = 0;
+	preferred_direction = 4
+	},
+/turf/open/floor/wood/walnut,
+/area/ship/crew/office/lobby)
 "Ce" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
@@ -2722,6 +2732,16 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
+"Fo" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dwidth = 20;
+	height = 30;
+	name = "Sunskipper Port Beam Dock";
+	width = 40
+	},
+/turf/template_noop,
+/area/template_noop)
 "Fw" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -3096,6 +3116,23 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
+"KN" = (
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	icon_state = "0-2"
+	},
+/obj/machinery/door/poddoor{
+	id = "sunskipper_entrance"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "sunskipper_holo";
+	locked = 1
+	},
+/turf/open/floor/carpet/red_gold,
+/area/ship/crew/office/lobby)
 "KV" = (
 /obj/machinery/photocopier,
 /turf/open/floor/carpet/red,
@@ -3217,23 +3254,6 @@
 "Nk" = (
 /turf/closed/wall,
 /area/ship/bridge)
-"Np" = (
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 8
-	},
-/obj/structure/cable/green{
-	icon_state = "0-2"
-	},
-/obj/machinery/door/poddoor{
-	id = "sunskipper_entrance"
-	},
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 4;
-	id = "sunskipper_holo";
-	locked = 1
-	},
-/turf/open/floor/carpet/red_gold,
-/area/ship/crew/office/lobby)
 "Ns" = (
 /obj/structure/fluff/hedge/opaque,
 /obj/structure/railing/wood{
@@ -3335,19 +3355,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
-"OS" = (
-/obj/structure/table/reinforced,
-/obj/structure/cable/orange{
-	icon_state = "5-10"
-	},
-/obj/machinery/reagentgrinder{
-	pixel_y = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/turf/open/floor/plasteel/mono,
-/area/ship/crew/canteen/kitchen)
 "OU" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6;
@@ -3635,7 +3642,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/grill,
+/obj/machinery/griddle,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
 "QG" = (
@@ -3714,6 +3721,18 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
+"RM" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 4;
+	dwidth = 25;
+	height = 30;
+	name = "Sunskipper Forward Bow Dock";
+	width = 41;
+	disable_on_owner_ship_dock = 1
+	},
+/turf/template_noop,
+/area/template_noop)
 "RR" = (
 /obj/item/mop,
 /obj/item/pushbroom,
@@ -3746,6 +3765,25 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
+"St" = (
+/obj/structure/table/reinforced,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/item/reagent_containers/glass/mortar/metal{
+	pixel_y = 8
+	},
+/obj/item/pestle{
+	pixel_y = 6;
+	pixel_x = -13
+	},
+/obj/item/cutting_board{
+	pixel_x = -5;
+	pixel_y = 5;
+	anchored = 1
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/crew/canteen/kitchen)
 "SH" = (
 /obj/structure/chair/stool/bar{
 	dir = 1
@@ -4097,44 +4135,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/office/lobby)
-"Yl" = (
-/obj/docking_port/stationary{
-	dheight = 1;
-	dir = 4;
-	dwidth = 25;
-	height = 30;
-	name = "Sunskipper Forward Bow Dock";
-	width = 41;
-	disable_on_owner_ship_dock = 1
-	},
-/turf/template_noop,
-/area/template_noop)
-"Yx" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/dept/cargo{
-	dir = 4
-	},
-/obj/structure/closet/crate/wooden{
-	name = "hunting gear crate"
-	},
-/obj/item/storage/guncase/m12,
-/obj/item/pickaxe,
-/obj/item/pickaxe,
-/obj/item/melee/knife/hunting,
-/obj/item/melee/knife/hunting,
-/obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/head/hardhat/orange,
-/obj/item/clothing/head/hardhat/orange,
-/obj/effect/mapping_helpers/crate_shelve,
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
 "YN" = (
 /obj/effect/landmark/start/cook,
 /turf/template_noop,
@@ -4558,8 +4558,8 @@ iS
 vY
 Nk
 ul
-gC
-xT
+St
+gH
 pb
 Qc
 ZX
@@ -4581,8 +4581,8 @@ Cu
 Nk
 Nk
 FK
-OS
-eK
+lU
+he
 vH
 Xz
 ds
@@ -4832,7 +4832,7 @@ Pa
 EJ
 jo
 hS
-Yx
+yT
 kW
 uj
 HK
@@ -4876,7 +4876,7 @@ Pa
 Pa
 Pa
 Pa
-Np
+KN
 bb
 Ye
 cn
@@ -4898,7 +4898,7 @@ Pa
 (27,1,1) = {"
 Pa
 Pa
-du
+Fo
 UV
 id
 bG
@@ -5015,7 +5015,7 @@ Pa
 Pa
 Pa
 vw
-ip
+BV
 rM
 vw
 Pa
@@ -5038,7 +5038,7 @@ Pa
 Pa
 Pa
 Pa
-Yl
+RM
 Pa
 Pa
 Pa

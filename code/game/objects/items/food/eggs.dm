@@ -20,48 +20,49 @@
 	desc = "An egg from a terran chicken, the most successful of egg-laying domesticated animals."
 	icon = 'icons/obj/food/egg.dmi'
 	icon_state = "egg"
+	item_state = "egg"
 	food_reagents = list(
-		/datum/reagent/consumable/eggyolk = 5
+		/datum/reagent/consumable/eggyolk = 5,
+		/datum/reagent/consumable/eggwhite = 4,
 	)
 	microwaved_type = /obj/item/food/boiledegg
 	foodtypes = MEAT | RAW
 	w_class = WEIGHT_CLASS_TINY
 
-/*
-/obj/item/food/egg/make_microwaveable()
-	AddElement(/datum/element/microwavable, /obj/item/food/boiledegg)
-*/
+/obj/item/food/egg/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+	. = ..()
+	if(!istype(target, /obj/machinery/griddle))
+		return
+
+	var/atom/broken_egg = new /obj/item/food/rawegg(target.loc)
+	broken_egg.pixel_x = pixel_x
+	broken_egg.pixel_y = pixel_y
+	playsound(get_turf(user), 'sound/items/sheath.ogg', 40, TRUE)
+	reagents.copy_to(broken_egg,reagents.total_volume)
+
+	var/obj/machinery/griddle/hit_griddle = target
+	hit_griddle.AddToGrill(broken_egg, user)
+	target.visible_message(
+		span_notice("[user] cracks [src] open."),
+		span_notice("You crack [src] open."),
+		span_notice("You hear a crack."),
+	)
+	qdel(src)
+
+/obj/item/food/egg/make_bakeable()
+	AddComponent(/datum/component/bakeable, /obj/item/food/boiledegg, rand(15 SECONDS, 20 SECONDS), TRUE, TRUE)
 
 /obj/item/food/egg/gland
 	desc = "An egg from... something other than a chicken. It doesn't look right."
 
-// /obj/item/food/egg/gland/Initialize(mapload)
-// 	. = ..()
-// 	reagents.add_reagent(get_random_reagent_id(CHEMICAL_RNG_GENERAL), 15)
-
-// 	var/color = mix_color_from_reagents(reagents.reagent_list)
-// 	add_atom_colour(color, FIXED_COLOUR_PRIORITY)
-
 /obj/item/food/egg/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-	if(!..()) //was it caught by a mob?
-		var/turf/T = get_turf(hit_atom)
-		new/obj/effect/decal/cleanable/food/egg_smudge(T)
-		// reagents.reaction(hit_atom, TOUCH)
-		qdel(src)
+	if (..()) // was it caught by a mob?
+		return
 
-/obj/item/food/egg/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/toy/crayon))
-		var/obj/item/toy/crayon/C = W
-		var/clr = C.crayon_color
-
-		if(!(clr in list("blue", "green", "mime", "orange", "purple", "rainbow", "red", "yellow")))
-			to_chat(usr, span_notice("[src] refuses to take on this colour!"))
-			return
-
-		to_chat(usr, span_notice("You colour [src] with [W]."))
-		icon_state = "egg-[clr]"
-	else
-		..()
+	var/turf/T = get_turf(hit_atom)
+	new/obj/effect/decal/cleanable/food/egg_smudge(T)
+	reagents.expose(hit_atom, TOUCH)
+	qdel(src)
 
 /obj/item/food/egg/blue
 	icon_state = "egg-blue"
@@ -94,11 +95,27 @@
 	icon_state = "friedegg"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment/protein = 6,
-		/datum/reagent/consumable/nutriment/vitamin = 1
+		/datum/reagent/consumable/eggyolk = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 2,
 	)
 	bite_consumption = 1
 	tastes = list("egg" = 4, "salt" = 1, "pepper" = 1)
 	foodtypes = MEAT | FRIED | BREAKFAST
+
+/obj/item/food/rawegg
+	name = "raw egg"
+	desc = "Supposedly good for you, if you can stomach it. Better fried."
+	icon = 'icons/obj/food/egg.dmi'
+	icon_state = "rawegg"
+	food_reagents = list() //Receives all reagents from its whole egg counterpart
+	bite_consumption = 1
+	tastes = list("raw egg" = 6, "sliminess" = 1)
+	eatverbs = list("gulp down")
+	foodtypes = MEAT | RAW
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/food/rawegg/make_grillable()
+	AddComponent(/datum/component/grillable, /obj/item/food/friedegg, rand(20 SECONDS, 35 SECONDS), TRUE, FALSE)
 
 /obj/item/food/boiledegg
 	name = "boiled egg"
@@ -119,7 +136,6 @@
 	desc = "An ancient term that roughly translates into \"beaten eggs with cheese\", originating from Terra. Essentially a well-beaten egg mixed with cheese before frying in a pan."
 	icon = 'icons/obj/food/egg.dmi'
 	icon_state = "omelette"
-	trash_type = /obj/item/trash/plate
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment/protein = 10,
 		/datum/reagent/consumable/nutriment/vitamin = 3
@@ -157,7 +173,6 @@
 		/datum/reagent/consumable/nutriment/protein = 6,
 		/datum/reagent/consumable/nutriment = 3
 	)
-	trash_type = /obj/item/trash/plate
 	w_class = WEIGHT_CLASS_SMALL
 	tastes = list("egg" = 1, "bacon" = 1, "bun" = 1)
 	foodtypes = MEAT | BREAKFAST | GRAIN

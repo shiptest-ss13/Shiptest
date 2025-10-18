@@ -18,32 +18,34 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 //FLAGS BITMASK
 
 /// conducts electricity (metal etc.)
-#define CONDUCT_1 (1<<5)
+#define CONDUCT_1 (1<<1)
 /// For machines and structures that should not break into parts, eg, holodeck stuff
-#define NODECONSTRUCT_1 (1<<7)
+#define NODECONSTRUCT_1 (1<<2)
 /// item has priority to check when entering or leaving
-#define ON_BORDER_1 (1<<8)
-//Whether or not this atom shows screentips when hovered over
-#define NO_SCREENTIPS_1 (1<<9)
+#define ON_BORDER_1 (1<<3)
+/// Whether or not this atom shows screentips when hovered over
+#define NO_SCREENTIPS_1 (1<<4)
 /// Prevent clicking things below it on the same turf eg. doors/ fulltile windows
-#define PREVENT_CLICK_UNDER_1 (1<<10)
-#define HOLOGRAM_1 (1<<11)
+#define PREVENT_CLICK_UNDER_1 (1<<5)
+#define HOLOGRAM_1 (1<<6)
 /// Prevents mobs from getting chainshocked by teslas and the supermatter
-#define SHOCKED_1 (1<<12)
-///Whether /atom/Initialize() has already run for the object
-#define INITIALIZED_1 (1<<13)
+#define SHOCKED_1 (1<<7)
+/// Whether /atom/Initialize() has already run for the object
+#define INITIALIZED_1 (1<<8)
 /// was this spawned by an admin? used for stat tracking stuff.
-#define ADMIN_SPAWNED_1 (1<<14)
+#define ADMIN_SPAWNED_1 (1<<9)
 /// should not get harmed if this gets caught by an explosion?
-#define PREVENT_CONTENTS_EXPLOSION_1 (1<<15)
+#define PREVENT_CONTENTS_EXPLOSION_1 (1<<10)
 /// should the contents of this atom be acted upon
-#define RAD_PROTECT_CONTENTS_1 (1 << 16)
+#define RAD_PROTECT_CONTENTS_1 (1<<11)
 /// should this object be allowed to be contaminated
-#define RAD_NO_CONTAMINATE_1 (1 << 17)
+#define RAD_NO_CONTAMINATE_1 (1<<12)
+/// Is this atom on top of another atom, and as such has click priority?
+#define IS_ONTOP_1 (1<<13)
 ///Use when this shouldn't be obscured by large icons, like trees.
-#define SHOW_BEHIND_LARGE_ICONS_1 (1<<18)
+#define SHOW_BEHIND_LARGE_ICONS_1 (1<<14)
 /// Should we use the initial icon for display? Mostly used by overlay only objects
-#define HTML_USE_INITAL_ICON_1 (1<<19)
+#define HTML_USE_INITAL_ICON_1 (1<<15)
 
 // Update flags for [/atom/proc/update_appearance]
 /// Update the atom's name
@@ -60,7 +62,6 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define UPDATE_SMOOTHING (1<<5)
 /// Update the atom's icon
 #define UPDATE_ICON (UPDATE_ICON_STATE|UPDATE_OVERLAYS)
-
 
 //turf-only flags
 #define NOJAUNT_1 (1<<0)
