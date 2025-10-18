@@ -486,6 +486,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/cable/yellow{
+	icon_state = "9-10"
+	},
 /obj/machinery/door/airlock/grunge{
 	name = "Starboard Nacelle"
 	},
@@ -1239,6 +1242,9 @@
 	pixel_x = 6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	icon_state = "1-6"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar)
 "jR" = (
@@ -1509,9 +1515,6 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
 /turf/open/floor/plating,
 /area/ship/hangar)
 "kP" = (
@@ -1694,6 +1697,9 @@
 	},
 /obj/item/radio/intercom/directional/north,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	icon_state = "2-5"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar)
 "ly" = (
@@ -1951,6 +1957,9 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/structure/cable/yellow{
+	icon_state = "5-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "mP" = (
@@ -1972,6 +1981,27 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"mQ" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/machinery/suit_storage_unit/inherit{
+	req_access_txt = "10";
+	name = "artificer's suit storage unit";
+	locked = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/item/tank/jetpack/carbondioxide,
+/obj/item/clothing/suit/space/inteq,
+/obj/item/clothing/head/helmet/space/inteq,
+/obj/item/clothing/mask/gas/inteq,
+/obj/structure/cable/yellow{
+	icon_state = "1-6"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/hangar)
 "mS" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
@@ -2289,9 +2319,22 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
+/obj/item/chair/plastic{
+	pixel_y = 12;
+	pixel_x = -2
+	},
+/obj/item/chair/plastic{
+	pixel_y = 6
+	},
+/obj/item/chair/plastic{
+	pixel_y = 14
+	},
+/obj/item/chair/plastic{
+	pixel_y = 10
+	},
 /obj/item/towel{
-	pixel_x = -5;
-	pixel_y = 4
+	pixel_x = 8;
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -2375,7 +2418,7 @@
 	dir = 8
 	},
 /obj/structure/cable/yellow{
-	icon_state = "4-8"
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hangar)
@@ -2652,6 +2695,9 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 10
+	},
+/obj/structure/cable/yellow{
+	icon_state = "5-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/starboard)
@@ -3079,17 +3125,16 @@
 /area/ship/crew)
 "uf" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
-/obj/effect/turf_decal/corner_techfloor_grid{
-	dir = 9
-	},
-/obj/effect/turf_decal/box/corners{
-	dir = 1
-	},
-/obj/effect/turf_decal/box/corners{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner_techfloor_grid,
 /obj/effect/turf_decal/box/corners,
+/obj/structure/cable/yellow{
+	icon_state = "4-10"
+	},
+/obj/item/t_scanner{
+	pixel_x = -8;
+	pixel_y = 8
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "uh" = (
@@ -3157,13 +3202,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "uo" = (
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/yellow,
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
@@ -3173,6 +3211,9 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
+	dir = 6
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "uy" = (
@@ -4016,9 +4057,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "zr" = (
@@ -4739,6 +4777,20 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/engineering/engines/starboard)
+"Dy" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "9-10"
+	},
+/turf/open/floor/plating,
+/area/ship/hangar)
 "DC" = (
 /obj/structure/chair{
 	dir = 4
@@ -5369,6 +5421,9 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	icon_state = "4-10"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Hj" = (
@@ -5737,10 +5792,6 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/hangar)
 "JL" = (
-/obj/effect/turf_decal/corner/opaque/yellow,
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
@@ -5749,6 +5800,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "JO" = (
@@ -5842,6 +5894,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "9-10"
 	},
 /obj/machinery/door/airlock/grunge{
 	name = "Artificer Gear Room"
@@ -6269,6 +6324,9 @@
 	dir = 4;
 	name = "Engineering";
 	req_access_txt = "10"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "5-9"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
@@ -7475,6 +7533,9 @@
 	pixel_x = 20;
 	pixel_y = -12
 	},
+/obj/structure/cable/yellow{
+	icon_state = "6-10"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/starboard)
 "TB" = (
@@ -7638,9 +7699,6 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "TV" = (
@@ -7790,9 +7848,15 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/machinery/power/smes/engineering,
-/obj/structure/cable,
+/obj/machinery/power/smes/engineering{
+	input_level = 5000;
+	output_level = 15000;
+	name = "shuttle power storage unit"
+	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "0-5"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "UR" = (
@@ -7808,6 +7872,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
@@ -7880,6 +7947,9 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hangar)
@@ -8163,6 +8233,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/structure/cable/yellow{
+	icon_state = "5-6"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hangar)
 "WV" = (
@@ -8206,6 +8279,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing{
 	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "5-10"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -8684,7 +8760,7 @@
 	pixel_y = -15
 	},
 /obj/item/paper/fluff{
-	default_raw_text = "Artificer's Note: If the powergrid seems drawn suspiciously thin, check the Thunder shuttle's SMES input setting.";
+	default_raw_text = "Artificer's Note: If the powergrid seems drawn suspiciously thin, check the SMES input settings. One is dedicated to the Thunder shuttle, which should be kept on a low input.";
 	name = "paper note";
 	pixel_x = 10
 	},
@@ -9209,7 +9285,7 @@ uP
 PC
 pX
 Vn
-Ka
+mQ
 Ka
 WP
 Rg
@@ -9241,7 +9317,7 @@ xd
 kO
 xd
 qs
-xd
+Dy
 xd
 dM
 WI
