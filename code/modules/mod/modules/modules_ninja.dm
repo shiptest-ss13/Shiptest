@@ -76,31 +76,6 @@
 	use_power_cost = DEFAULT_CHARGE_DRAIN * 5
 	cooldown_time = 3 SECONDS
 
-///Camera Vision - Prevents flashes, blocks tracking.
-/obj/item/mod/module/welding/camera_vision
-	name = "MOD camera vision module"
-	desc = "A module installed into the suit's helmet. This specialized piece of technology is built for subterfuge, \
-		replacing the standard visor with a nanotech display; capable of displaying specialized imagery at \
-		just the right frequency to jam all known forms of camera tracking and facial recognition, \
-		as well as automatically dimming incoming flashes of light to protect the user's eyes. Become the unseen."
-	icon_state = "welding_camera"
-	removable = FALSE
-	complexity = 0
-	overlay_state_inactive = null
-
-/obj/item/mod/module/welding/camera_vision/on_suit_activation()
-	. = ..()
-	RegisterSignal(mod.wearer, COMSIG_LIVING_CAN_TRACK, PROC_REF(can_track))
-
-/obj/item/mod/module/welding/camera_vision/on_suit_deactivation(deleting = FALSE)
-	. = ..()
-	UnregisterSignal(mod.wearer, COMSIG_LIVING_CAN_TRACK)
-
-/obj/item/mod/module/welding/camera_vision/proc/can_track(datum/source, mob/user)
-	SIGNAL_HANDLER
-
-	return COMPONENT_CANT_TRACK
-
 //Ninja Star Dispenser - Dispenses ninja stars.
 /obj/item/mod/module/dispenser/ninja
 	name = "MOD ninja star dispenser module"
@@ -178,7 +153,7 @@
 /obj/item/mod/module/weapon_recall/on_suit_deactivation(deleting = FALSE)
 	REMOVE_TRAIT(mod.wearer, TRAIT_NOGUNS, MOD_TRAIT)
 
-/obj/item/mod/module/weapon_recall/on_use()
+/obj/item/mod/module/weapon_recall/used()
 	. = ..()
 	if(!.)
 		return
@@ -277,54 +252,13 @@
 	use_power_cost = DEFAULT_CHARGE_DRAIN * 10
 	cooldown_time = 8 SECONDS
 
-/obj/item/mod/module/emp_shield/pulse/on_use()
+/obj/item/mod/module/emp_shield/pulse/used()
 	. = ..()
 	if(!.)
 		return
 	playsound(src, 'sound/effects/empulse.ogg', 60, TRUE)
 	empulse(src, heavy_range = 4, light_range = 6)
 	drain_power(use_power_cost)
-
-///Status Readout - Puts a lot of information including health, nutrition, fingerprints, temperature to the suit TGUI.
-/obj/item/mod/module/status_readout
-	name = "MOD status readout module"
-	desc = "A once-common module, this technology went unfortunately out of fashion; \
-		and right into the arachnid grip of the Spider Clan. This hooks into the suit's spine, \
-		capable of capturing and displaying all possible biometric data of the wearer; sleep, nutrition, fitness, fingerprints, \
-		and even useful information such as their overall health and wellness."
-	icon_state = "status"
-	complexity = 1
-	use_power_cost = DEFAULT_CHARGE_DRAIN * 0.1
-	incompatible_modules = list(/obj/item/mod/module/status_readout)
-	tgui_id = "status_readout"
-
-/obj/item/mod/module/status_readout/add_ui_data()
-	. = ..()
-	.["statustime"] = station_time_timestamp()
-	.["statusid"] = GLOB.round_id
-	.["statushealth"] = mod.wearer?.health || 0
-	.["statusmaxhealth"] = mod.wearer?.getMaxHealth() || 0
-	.["statusbrute"] = mod.wearer?.getBruteLoss() || 0
-	.["statusburn"] = mod.wearer?.getFireLoss() || 0
-	.["statustoxin"] = mod.wearer?.getToxLoss() || 0
-	.["statusoxy"] = mod.wearer?.getOxyLoss() || 0
-	.["statustemp"] = mod.wearer?.bodytemperature || 0
-	.["statusnutrition"] = mod.wearer?.nutrition || 0
-	//.["statusfingerprints"] = mod.wearer ? md5(mod.wearer.dna.unique_identity) : null
-	.["statusdna"] = mod.wearer?.dna.unique_enzymes
-	.["statusviruses"] = null
-	if(!length(mod.wearer?.diseases))
-		return
-	var/list/viruses = list()
-	for(var/datum/disease/virus as anything in mod.wearer.diseases)
-		var/list/virus_data = list()
-		virus_data["name"] = virus.name
-		virus_data["type"] = virus.spread_text
-		virus_data["stage"] = virus.stage
-		virus_data["maxstage"] = virus.max_stages
-		virus_data["cure"] = virus.cure_text
-		viruses += list(virus_data)
-	.["statusviruses"] = viruses
 
 ///Energy Net - Ensnares enemies in a net that prevents movement.
 /obj/item/mod/module/energy_net
@@ -389,7 +323,7 @@
 	create_reagents(reagent_required_amount)
 	reagents.add_reagent(reagent_required, reagent_required_amount)
 
-/obj/item/mod/module/adrenaline_boost/on_use()
+/obj/item/mod/module/adrenaline_boost/used()
 	if(!reagents.has_reagent(reagent_required, reagent_required_amount))
 		balloon_alert(mod.wearer, "no charge!")
 		return

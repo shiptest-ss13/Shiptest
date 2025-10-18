@@ -51,6 +51,8 @@
 	var/allowed_in_phaseout = FALSE
 	/// If we're allowed to use this module while the suit is disabled.
 	var/allowed_inactive = FALSE
+	/// A list of slots required in the suit to work. Formatted like list(x|y, z, ...) where either x or y are required and z is required.
+	var/list/required_slots = list()
 	/// Timer for the cooldown
 	COOLDOWN_DECLARE(cooldown_timer)
 
@@ -77,27 +79,54 @@
 
 /obj/item/mod/module/examine(mob/user)
 	. = ..()
+	if(length(required_slots))
+		var/list/slot_strings = list()
+		for(var/slot in required_slots)
+			var/list/slot_list = parse_slot_flags(slot)
+			slot_strings += (length(slot_list) == 1 ? "" : "one of ") + english_list(slot_list, and_text = " or ")
+		. += span_notice("Requires the MOD unit to have the following slots: [english_list(slot_strings)]")
 	if(HAS_TRAIT(user, TRAIT_DIAGNOSTIC_HUD))
 		. += span_notice("Complexity level: [complexity]")
 
+/// Looks through the MODsuit's parts to see if it has the parts required to support this module
+/obj/item/mod/module/proc/has_required_parts(list/parts, need_extended = FALSE)
+	if(!length(required_slots))
+		return TRUE
+	var/total_slot_flags = NONE
+	for(var/part_slot in parts)
+		if(need_extended)
+			var/datum/mod_part/part_datum = parts[part_slot]
+			if(part_datum.part_item.loc == mod)
+				continue
+		total_slot_flags |= text2num(part_slot)
+	var/list/needed_slots = required_slots.Copy()
+	for(var/needed_slot in needed_slots)
+		if(!(needed_slot & total_slot_flags))
+			break
+		needed_slots -= needed_slot
+	return !length(needed_slots)
 
 /// Called when the module is selected from the TGUI, radial or the action button
 /obj/item/mod/module/proc/on_select()
+	if(!mod.wearer)
+		if(ismob(mod.loc))
+			balloon_alert(mod.loc, "not equipped!")
+		return
 	if(((!mod.active || mod.activating) && !allowed_inactive) || module_type == MODULE_PASSIVE)
 		if(mod.wearer)
 			to_chat(mod.wearer,span_warning("The module can't be activated right now!"))
 		return
 	if(module_type != MODULE_USABLE)
 		if(active)
-			on_deactivation()
+			deactivate()
 		else
-			on_activation()
+			activate()
 	else
-		on_use()
+		used()
 	SEND_SIGNAL(mod, COMSIG_MOD_MODULE_SELECTED, src)
 
 /// Called when the module is activated
-/obj/item/mod/module/proc/on_activation()
+/obj/item/mod/module/proc/activate()
 	if(!COOLDOWN_FINISHED(src, cooldown_timer))
 		to_chat(mod.wearer,span_warning("\The [src] is on cooldown!"))
 		return FALSE
@@ -111,7 +140,7 @@
 	if(SEND_SIGNAL(src, COMSIG_MODULE_TRIGGERED) & MOD_ABORT_USE)
 		return FALSE
 	if(module_type == MODULE_ACTIVE)
-		if(mod.selected_module && !mod.selected_module.on_deactivation(display_message = FALSE))
+		if(mod.selected_module && !mod.selected_module.deactivate(display_message = FALSE))
 			return FALSE
 		mod.selected_module = src
 		if(toolset)
@@ -133,6 +162,7 @@
 	COOLDOWN_START(src, cooldown_timer, cooldown_time)
 	mod.wearer.update_inv_back(mod.slot_flags)
 	SEND_SIGNAL(src, COMSIG_MODULE_ACTIVATED)
+	on_activation()
 	return TRUE
 
 /obj/item/mod/module/ui_action_click()
@@ -165,7 +195,7 @@
 		return TRUE
 
 /// Called when the module is deactivated
-/obj/item/mod/module/proc/on_deactivation(display_message = TRUE, deleting = FALSE)
+/obj/item/mod/module/proc/deactivate(display_message = TRUE, deleting = FALSE)
 	active = FALSE
 	if(module_type == MODULE_ACTIVE)
 		mod.selected_module = null
@@ -180,10 +210,11 @@
 			used_signal = null
 	mod.wearer.update_inv_back(mod.slot_flags)
 	SEND_SIGNAL(src, COMSIG_MODULE_DEACTIVATED)
+	on_deactivation(display_message = TRUE, deleting = FALSE)
 	return TRUE
 
 /// Called when the module is used
-/obj/item/mod/module/proc/on_use()
+/obj/item/mod/module/proc/used()
 	if(!COOLDOWN_FINISHED(src, cooldown_timer))
 		to_chat(mod.wearer,span_warning("\The [src] is on cooldown!"))
 		return FALSE
@@ -200,6 +231,7 @@
 	addtimer(CALLBACK(mod.wearer, TYPE_PROC_REF(/mob, update_inv_back), mod.slot_flags), cooldown_time+1) //need to run it a bit after the cooldown starts to avoid conflicts
 	mod.wearer.update_inv_back(mod.slot_flags)
 	SEND_SIGNAL(src, COMSIG_MODULE_USED)
+	on_use()
 	return TRUE
 
 /// Called when an activated module without a device is used
@@ -207,7 +239,7 @@
 	if(mod.wearer.incapacitated(IGNORE_GRAB))
 		return FALSE
 	mod.wearer.face_atom(target)
-	if(!on_use())
+	if(!used())
 		return FALSE
 	return TRUE
 
@@ -221,12 +253,24 @@
 /obj/item/mod/module/proc/on_process(seconds_per_tick)
 	if(active)
 		if(!drain_power(active_power_cost * seconds_per_tick))
-			on_deactivation()
+			deactivate()
 			return FALSE
 		on_active_process(seconds_per_tick)
 	else
 		drain_power(idle_power_cost * seconds_per_tick)
 	return TRUE
+
+/// Called from the module's activate()
+/obj/item/mod/module/proc/on_activation()
+	return
+
+/// Called from the module's deactivate()
+/obj/item/mod/module/proc/on_deactivation(display_message = TRUE, deleting = FALSE)
+	return
+
+/// Called from the module's used()
+/obj/item/mod/module/proc/on_use()
+	return
 
 /// Called on the MODsuit's process if it is an active module
 /obj/item/mod/module/proc/on_active_process(seconds_per_tick)
@@ -299,7 +343,7 @@
 	if(part.loc == mod.wearer)
 		return
 	if(part == device)
-		on_deactivation(display_message = FALSE)
+		deactivate(display_message = FALSE)
 
 /// Called when the device gets deleted on active modules
 /obj/item/mod/module/proc/on_device_deletion(datum/source)
@@ -353,7 +397,7 @@
 
 	if(user.get_active_held_item() != device)
 		return
-	on_deactivation()
+	deactivate()
 	return COMSIG_KB_ACTIVATED
 
 ///Anomaly Locked - Causes the module to not function without an anomaly.
