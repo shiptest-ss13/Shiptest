@@ -204,3 +204,80 @@
 	toolspeed = 0.8
 	attack_verb = list("bashed", "bludgeoned", "spooned", "scooped")
 	sharpness = SHARP_NONE
+
+/obj/item/trench_tool
+	name = "entrenching tool"
+	desc = "The multi-purpose tool you always needed."
+	icon = 'icons/obj/mining.dmi'
+	icon_state = "trench_tool"
+	inhand_icon_state = "trench_tool"
+	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
+	obj_flags = CONDUCTS_ELECTRICITY
+	force = 15
+	throwforce = 6
+	w_class = WEIGHT_CLASS_SMALL
+	toolspeed = 0.75
+	usesound = 'sound/items/ratchet.ogg'
+	attack_verb_continuous = list("bashes", "bludgeons", "thrashes", "whacks")
+	attack_verb_simple = list("bash", "bludgeon", "thrash", "whack")
+	wound_bonus = 10
+
+/obj/item/trench_tool/get_all_tool_behaviours()
+	return list(TOOL_MINING, TOOL_SHOVEL)
+
+/obj/item/trench_tool/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/update_icon_updates_onmob)
+	AddElement(/datum/element/gravedigger)
+
+/obj/item/trench_tool/examine(mob/user)
+	. = ..()
+	. += span_notice("Use in hand to switch configuration.")
+	. += span_notice("It functions as a [tool_behaviour] tool.")
+
+/obj/item/trench_tool/update_icon_state()
+	. = ..()
+	switch(tool_behaviour)
+		if(TOOL_SHOVEL)
+			icon_state = inhand_icon_state = "[initial(icon_state)]_shovel"
+		if(TOOL_MINING)
+			icon_state = inhand_icon_state = "[initial(icon_state)]_pick"
+
+/obj/item/trench_tool/attack_self(mob/user, modifiers)
+	. = ..()
+	if(!user)
+		return
+	var/list/tool_list = list(
+		"Shovel" = image(icon = icon, icon_state = "trench_tool_shovel"),
+		"Pick" = image(icon = icon, icon_state = "trench_tool_pick"),
+		)
+	var/tool_result = show_radial_menu(user, src, tool_list, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)
+	if(!check_menu(user) || !tool_result)
+		return
+	switch(tool_result)
+		if("Shovel")
+			tool_behaviour = TOOL_SHOVEL
+			sharpness = SHARP_EDGED
+			toolspeed = 0.25
+			update_weight_class(WEIGHT_CLASS_NORMAL)
+			usesound = 'sound/effects/shovel_dig.ogg'
+			attack_verb_continuous = list("slashes", "impales", "stabs", "slices")
+			attack_verb_simple = list("slash", "impale", "stab", "slice")
+		if("Pick")
+			tool_behaviour = TOOL_MINING
+			sharpness = SHARP_POINTY
+			toolspeed = 0.5
+			update_weight_class(WEIGHT_CLASS_NORMAL)
+			usesound = 'sound/effects/picaxe1.ogg'
+			attack_verb_continuous = list("hits", "pierces", "slices", "attacks")
+			attack_verb_simple = list("hit", "pierce", "slice", "attack")
+	playsound(src, 'sound/items/ratchet.ogg', 50, vary = TRUE)
+	update_appearance(UPDATE_ICON)
+
+/obj/item/trench_tool/proc/check_menu(mob/user)
+	if(!istype(user))
+		return FALSE
+	if(user.incapacitated() || !user.Adjacent(src))
+		return FALSE
+	return TRUE
