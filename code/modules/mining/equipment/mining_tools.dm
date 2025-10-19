@@ -207,20 +207,17 @@
 
 /obj/item/trench_tool
 	name = "entrenching tool"
-	desc = "The multi-purpose tool you always needed."
+	desc = "A dual-purpose excavation tool in black and red, serving as both a powerful bladed shovel and a pickaxe. Manufactured by the New Gorlex Republic."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "trench_tool"
-	inhand_icon_state = "trench_tool"
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
-	obj_flags = CONDUCTS_ELECTRICITY
 	force = 15
 	throwforce = 6
 	w_class = WEIGHT_CLASS_SMALL
 	toolspeed = 0.75
 	usesound = 'sound/items/ratchet.ogg'
-	attack_verb_continuous = list("bashes", "bludgeons", "thrashes", "whacks")
-	attack_verb_simple = list("bash", "bludgeon", "thrash", "whack")
+	attack_verb = list("bashed", "bludgeoned", "thrashed", "whacked")
 	wound_bonus = 10
 
 /obj/item/trench_tool/get_all_tool_behaviours()
@@ -229,7 +226,6 @@
 /obj/item/trench_tool/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/update_icon_updates_onmob)
-	AddElement(/datum/element/gravedigger)
 
 /obj/item/trench_tool/examine(mob/user)
 	. = ..()
@@ -240,17 +236,17 @@
 	. = ..()
 	switch(tool_behaviour)
 		if(TOOL_SHOVEL)
-			icon_state = inhand_icon_state = "[initial(icon_state)]_shovel"
+			icon_state = "[initial(icon_state)]_shovel"
 		if(TOOL_MINING)
-			icon_state = inhand_icon_state = "[initial(icon_state)]_pick"
+			icon_state = "[initial(icon_state)]_pick"
 
 /obj/item/trench_tool/attack_self(mob/user, modifiers)
 	. = ..()
 	if(!user)
 		return
 	var/list/tool_list = list(
-		"Shovel" = image(icon = icon, icon_state = "trench_tool_shovel"),
-		"Pick" = image(icon = icon, icon_state = "trench_tool_pick"),
+		"Shovel" = image(icon = icon, icon_state = "[initial(icon_state)]_shovel"),
+		"Pick" = image(icon = icon, icon_state = "[initial(icon_state)]_pick"),
 		)
 	var/tool_result = show_radial_menu(user, src, tool_list, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)
 	if(!check_menu(user) || !tool_result)
@@ -262,16 +258,14 @@
 			toolspeed = 0.25
 			update_weight_class(WEIGHT_CLASS_NORMAL)
 			usesound = 'sound/effects/shovel_dig.ogg'
-			attack_verb_continuous = list("slashes", "impales", "stabs", "slices")
-			attack_verb_simple = list("slash", "impale", "stab", "slice")
+			attack_verb = list("slashed", "impaled", "stabbed", "sliced")
 		if("Pick")
 			tool_behaviour = TOOL_MINING
 			sharpness = SHARP_POINTY
 			toolspeed = 0.5
 			update_weight_class(WEIGHT_CLASS_NORMAL)
 			usesound = 'sound/effects/picaxe1.ogg'
-			attack_verb_continuous = list("hits", "pierces", "slices", "attacks")
-			attack_verb_simple = list("hit", "pierce", "slice", "attack")
+			attack_verb = list("hits", "pierced", "sliced", "attacked")
 	playsound(src, 'sound/items/ratchet.ogg', 50, vary = TRUE)
 	update_appearance(UPDATE_ICON)
 
@@ -281,3 +275,9 @@
 	if(user.incapacitated() || !user.Adjacent(src))
 		return FALSE
 	return TRUE
+
+/obj/item/trench_tool/gezena
+	name = "entrenching tool"
+	desc = "A dual-purpose excavation tool in green, serving as both a powerful bladed shovel and a pickaxe. In use by the Pan-Gezenan Federation."
+	icon_state = "trench_tool_gezena"
+
