@@ -424,6 +424,7 @@
 		/obj/item/bodycamera,
 		/obj/item/binoculars,
 		/obj/item/tank/internals/emergency_oxygen,
+		/obj/item/trench_tool,
 		))
 
 
