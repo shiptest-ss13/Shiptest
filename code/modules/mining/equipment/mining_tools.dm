@@ -214,14 +214,13 @@
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	force = 15
 	throwforce = 6
-	w_class = WEIGHT_CLASS_SMALL
-	toolspeed = 0.75
-	usesound = 'sound/items/ratchet.ogg'
-	attack_verb = list("bashed", "bludgeoned", "thrashed", "whacked")
+	tool_behaviour = TOOL_MINING
+	w_class = WEIGHT_CLASS_NORMAL
+	sharpness = SHARP_POINTY
+	toolspeed = 0.5
+	usesound = 'sound/effects/picaxe1.ogg'
+	attack_verb = list("hits", "pierced", "sliced", "attacked")
 	wound_bonus = 10
-
-/obj/item/trench_tool/get_all_tool_behaviours()
-	return list(TOOL_MINING, TOOL_SHOVEL)
 
 /obj/item/trench_tool/Initialize(mapload)
 	. = ..()
@@ -238,7 +237,7 @@
 		if(TOOL_SHOVEL)
 			icon_state = "[initial(icon_state)]_shovel"
 		if(TOOL_MINING)
-			icon_state = "[initial(icon_state)]_pick"
+			icon_state = "[initial(icon_state)]"
 
 /obj/item/trench_tool/attack_self(mob/user, modifiers)
 	. = ..()
@@ -246,7 +245,7 @@
 		return
 	var/list/tool_list = list(
 		"Shovel" = image(icon = icon, icon_state = "[initial(icon_state)]_shovel"),
-		"Pick" = image(icon = icon, icon_state = "[initial(icon_state)]_pick"),
+		"Pick" = image(icon = icon, icon_state = "[initial(icon_state)]"),
 		)
 	var/tool_result = show_radial_menu(user, src, tool_list, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)
 	if(!check_menu(user) || !tool_result)
@@ -256,14 +255,12 @@
 			tool_behaviour = TOOL_SHOVEL
 			sharpness = SHARP_EDGED
 			toolspeed = 0.25
-			update_weight_class(WEIGHT_CLASS_NORMAL)
 			usesound = 'sound/effects/shovel_dig.ogg'
 			attack_verb = list("slashed", "impaled", "stabbed", "sliced")
 		if("Pick")
 			tool_behaviour = TOOL_MINING
 			sharpness = SHARP_POINTY
 			toolspeed = 0.5
-			update_weight_class(WEIGHT_CLASS_NORMAL)
 			usesound = 'sound/effects/picaxe1.ogg'
 			attack_verb = list("hits", "pierced", "sliced", "attacked")
 	playsound(src, 'sound/items/ratchet.ogg', 50, vary = TRUE)
