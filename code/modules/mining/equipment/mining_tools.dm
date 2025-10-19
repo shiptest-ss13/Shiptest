@@ -224,6 +224,7 @@
 	toolspeed = 0.5
 	usesound = 'sound/effects/picaxe1.ogg'
 	attack_verb = list("hits", "pierced", "sliced", "attacked")
+	hitsound = 'sound/weapons/bladeslice.ogg'
 	wound_bonus = 5
 
 /obj/item/trench_tool/Initialize(mapload)

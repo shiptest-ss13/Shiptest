@@ -84,7 +84,8 @@
 		/obj/item/clothing/head/welding, //WS end
 		/obj/item/gun/energy/plasmacutter,
 		/obj/item/bodycamera,
-		/obj/item/stack/tape/industrial
+		/obj/item/stack/tape/industrial,
+		/obj/item/trench_tool,
 		))
 
 /obj/item/storage/belt/utility/chief
