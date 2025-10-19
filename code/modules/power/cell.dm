@@ -475,6 +475,9 @@
 	maxcharge = 12750 // 15 shots at 850 energy per
 	chargerate = 1750
 
+/obj/item/stock_parts/cell/gun/kalix/empty
+	start_empty = TRUE
+
 /obj/item/stock_parts/cell/gun/pgf
 	name = "Etherbor EWC-6m"
 	desc = "Exclusive only to the PGF military, the EWC-6m is an Etherbor energy weapon cell designed for military-grade use, including expanded capacity and output."
@@ -482,7 +485,8 @@
 	maxcharge = 20000 // 20 shots at 1000 energy per
 	chargerate = 2000
 
-
+/obj/item/stock_parts/cell/gun/pgf/empty
+	start_empty = TRUE
 
 /obj/item/stock_parts/cell/gun/sharplite
 	name = "Sharplite power cell"
