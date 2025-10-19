@@ -214,13 +214,17 @@
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	force = 15
 	throwforce = 6
+	armour_penetration = 15
 	tool_behaviour = TOOL_MINING
+	slot_flags = ITEM_SLOT_BELT
+	demolition_mod = 1.15
+	wall_decon_damage = MINERAL_WALL_INTEGRITY
 	w_class = WEIGHT_CLASS_NORMAL
 	sharpness = SHARP_POINTY
 	toolspeed = 0.5
 	usesound = 'sound/effects/picaxe1.ogg'
 	attack_verb = list("hits", "pierced", "sliced", "attacked")
-	wound_bonus = 10
+	wound_bonus = 5
 
 /obj/item/trench_tool/Initialize(mapload)
 	. = ..()
@@ -257,12 +261,21 @@
 			toolspeed = 0.25
 			usesound = 'sound/effects/shovel_dig.ogg'
 			attack_verb = list("slashed", "impaled", "stabbed", "sliced")
+			force = 20
+			wound_bonus = 5
+			bare_wound_bonus = 10
+			armour_penetration = 0
 		if("Pick")
 			tool_behaviour = TOOL_MINING
 			sharpness = SHARP_POINTY
 			toolspeed = 0.5
 			usesound = 'sound/effects/picaxe1.ogg'
 			attack_verb = list("hits", "pierced", "sliced", "attacked")
+			force = 15
+			wound_bonus = 5
+			demolition_mod = 1.15
+			wall_decon_damage = MINERAL_WALL_INTEGRITY
+			armour_penetration = 15
 	playsound(src, 'sound/items/ratchet.ogg', 50, vary = TRUE)
 	update_appearance(UPDATE_ICON)
 
