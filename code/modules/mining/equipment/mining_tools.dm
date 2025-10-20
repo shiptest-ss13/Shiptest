@@ -215,6 +215,7 @@
 	force = 15
 	throwforce = 6
 	armour_penetration = 15
+	wound_bonus = 5
 	tool_behaviour = TOOL_MINING
 	slot_flags = ITEM_SLOT_BELT
 	demolition_mod = 1.15
