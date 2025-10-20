@@ -216,7 +216,7 @@
 
 /obj/item/clothing/mask/gas/roumain
 	name = "leather gas mask"
-	desc = "An odd gas mask utilized by the saint-roumain milita"
+	desc = "A gas mask utilized by the saint-roumain milita, with an odd bug-like appearance. The filters are unconventional to most modern ones, using special herbs and material to filter out gas."
 	icon = 'icons/obj/clothing/faction/srm/mask.dmi'
 	icon_state = "rouma_gas"
 	mob_overlay_icon = 'icons/mob/clothing/faction/srm/mask.dmi'
