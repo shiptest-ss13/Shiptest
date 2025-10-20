@@ -2300,14 +2300,6 @@
 	pixel_x = 13;
 	pixel_y = 6
 	},
-/obj/item/melee/sword/mass{
-	pixel_x = -3;
-	pixel_y = 6
-	},
-/obj/item/melee/sword/mass{
-	pixel_x = -9;
-	pixel_y = 6
-	},
 /obj/item/melee/knife/survival{
 	pixel_x = 8;
 	pixel_y = 6
@@ -2339,6 +2331,14 @@
 /obj/item/melee/knife/survival{
 	pixel_x = 8;
 	pixel_y = 6
+	},
+/obj/item/trench_tool/gezena{
+	pixel_x = -1;
+	pixel_y = 6
+	},
+/obj/item/trench_tool/gezena{
+	pixel_x = -3;
+	pixel_y = 9
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -6132,23 +6132,32 @@
 	dir = 10
 	},
 /obj/item/crowbar/large{
-	pixel_x = 7
+	pixel_x = -1;
+	pixel_y = 1
 	},
-/obj/item/crowbar/large,
-/obj/item/crowbar/large,
 /obj/item/crowbar/large{
-	pixel_x = -8
+	pixel_x = -2;
+	pixel_y = 2
 	},
-/obj/item/shovel{
-	pixel_y = -4
+/obj/item/crowbar/large{
+	pixel_x = -4;
+	pixel_y = 3
 	},
-/obj/item/shovel{
-	pixel_x = 11;
-	pixel_y = -7
+/obj/item/crowbar/large{
+	pixel_x = -6;
+	pixel_y = 6
 	},
-/obj/item/shovel{
+/obj/item/trench_tool/gezena{
+	pixel_x = 10;
+	pixel_y = -2
+	},
+/obj/item/trench_tool/gezena{
+	pixel_x = 8;
+	pixel_y = 0
+	},
+/obj/item/trench_tool/gezena{
 	pixel_x = 6;
-	pixel_y = -5
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/port)
