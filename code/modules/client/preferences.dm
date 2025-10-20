@@ -143,7 +143,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/friendlyGenders = list(
 							"Male" = "male",
 							"Female" = "female",
-							"Other" = "plural"
+							"Other" = "plural",
+							"None" = "neuter"
 						)
 	var/list/prosthetic_limbs = list(
 							BODY_ZONE_L_ARM = PROSTHETIC_NORMAL,
@@ -332,6 +333,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dispGender = "Male"
 				else if(gender == FEMALE)
 					dispGender = "Female"
+				else if(gender == NEUTER)
+					dispGender = "None"
 				else
 					dispGender = "Other"
 				dat += "<b>Gender:</b> <a href='byond://?_src_=prefs;preference=gender'>[dispGender]</a>"
