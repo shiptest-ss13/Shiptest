@@ -10,6 +10,28 @@
 	icon = 'icons/obj/clothing/faction/srm/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/srm/uniforms.dmi'
 	supports_variations = KEPORI_VARIATION
+	roll_sleeves = TRUE
+
+/obj/item/clothing/under/suit/roumain/alt
+	name = "saint-roumain's worksuit"
+	desc = "A simple pair of leather overalls designed for the hardworking hunters of the Saint-Roumain Militia."
+	icon_state = "rouma_alt"
+	item_state = "rouma_alt"
+	icon = 'icons/obj/clothing/faction/srm/uniforms.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/srm/uniforms.dmi'
+	supports_variations = null
+	roll_sleeves = null
+
+/obj/item/clothing/under/suit/roumain/montagne
+	name = "montagne's worksuit"
+	desc = "A fancy, hard wearing suit designed for the Montagnes of the Saint-Roumain Militia."
+	icon_state = "rouma_mon"
+	item_state = "rouma_mon"
+	icon = 'icons/obj/clothing/faction/srm/uniforms.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/srm/uniforms.dmi'
+	supports_variations = null
+	roll_sleeves = TRUE
+	roll_down = TRUE
 
 //////////////////
 //Armored suits//
@@ -57,6 +79,16 @@
 	desc = "A set of ashy-grey robes made from hard leather, adorned with gold trims. Its rough finish after a near-char and application of aromatics is heavily favored for the ecclesiastical sect of the Church of Saint Roumain, a living reminder of the Ashen Huntsman himself."
 	icon_state = "armor_rouma_flamebearer"
 	supports_variations = KEPORI_VARIATION
+
+/obj/item/clothing/suit/armor/roumain/plate
+	name = "saint-roumain chestplate"
+	desc = "A finely smithed chestplate, placed over a thick coat. provides above-average protection of the chest for any hunters who don it. While protective, due to its composition, it is quite cumbersome."
+	icon_state = "armor_rouma_plate"
+	item_state = "armoralt"
+	body_parts_covered = CHEST|GROIN
+	armor = list("melee" = 60, "bullet" = 45, "laser" = 20, "energy" = 50, "bomb" = 50, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20)
+	supports_variations = null
+	slowdown = 0.4
 
 /obj/item/clothing/suit/armor/roumain/colligne
 	name = "saint-roumain colligne coat"
@@ -152,6 +184,14 @@
 	icon_state = "rouma_montagne_hat"
 	supports_variations = KEPORI_VARIATION
 
+/obj/item/clothing/head/helmet/roumain
+	name = "hunter's sallet"
+	desc = "A well-made sallet with excellent coverage. It fits suprisingly snug."
+	armor = list("melee" = 60, "bullet" = 45, "laser" = 20, "energy" = 50, "bomb" = 50, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20)
+	icon_state = "rouma_helm"
+	icon = 'icons/obj/clothing/faction/srm/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/srm/head.dmi'
+
 ///////////////
 //Accessories//
 ///////////////
@@ -163,3 +203,14 @@
 	icon = 'icons/obj/clothing/faction/srm/accessory.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/srm/accessory.dmi'
 	minimize_when_attached = TRUE
+
+/////////
+//mask//
+////////
+
+/obj/item/clothing/mask/gas/roumain
+	name = "roumain waistcoat"
+	desc = "A warm, red wool waistcoat, worn by any member of the Church of Saint Roumain, though heavily favored by Machinists for the added warmth given to their rather breezy outfit."
+	icon = 'icons/obj/clothing/faction/srm/mask.dmi'
+	icon_state = "rouma_gas"
+	mob_overlay_icon = 'icons/mob/clothing/faction/srm/mask.dmi'
