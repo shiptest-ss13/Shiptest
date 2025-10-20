@@ -345,6 +345,7 @@ SUBSYSTEM_DEF(explosions)
 				if(istype(A, /mob/living))
 					items -= A				// Because GetAllContents returns the mob too, resulting in double damage
 			for(var/O in items)
+				//have this pass a list
 				var/atom/A = O
 				if(!QDELETED(A))
 					switch(dist)
@@ -516,6 +517,7 @@ SUBSYSTEM_DEF(explosions)
 		currentpart = SSEXPLOSIONS_THROWS
 
 		timer = TICK_USAGE_REAL
+		//make this take list
 		var/list/high_obj = highobj
 		highobj = list()
 		for(var/obj/O as anything in high_obj)
