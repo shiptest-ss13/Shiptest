@@ -173,7 +173,7 @@
 	desc = "One hand-stitched duster with a heavy plate and helmet for a proud Roumainian to charge into the fray."
 	cost = 1500
 	contains = list(/obj/item/clothing/suit/armor/roumain/plate,
-					/obj/item/clothing/head/helmet/roumain)
+					/obj/item/clothing/head/helmet/roumain/plate)
 	crate_name = "heavy duster crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/srm

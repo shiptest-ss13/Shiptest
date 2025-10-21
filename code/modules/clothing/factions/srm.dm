@@ -192,12 +192,19 @@
 
 /obj/item/clothing/head/helmet/roumain
 	name = "hunter's kettle"
-	desc = "A kettle sallet manufactured by the SRM, it is typically only worn when head protection is absolutely necessary."
+	desc = "A kettle sallet manufactured by the SRM, usually only worn when head protection is absolutely necessary."
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 35, "bomb" = 35, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20)
 	icon_state = "rouma_helm"
 	icon = 'icons/obj/clothing/faction/srm/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/srm/head.dmi'
 
+/obj/item/clothing/head/helmet/roumain/plate
+	name = "hunter's heavy kettle"
+	desc = "A kettle face-mask combo manufactured by the SRM, boasting above-average protection. Typically reserved for quarries capable of more than biting."
+	armor = list("melee" = 60, "bullet" = 45, "laser" = 20, "energy" = 50, "bomb" = 50, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 20)
+	icon_state = "rouma_heavy"
+	icon = 'icons/obj/clothing/faction/srm/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/srm/head.dmi'
 ///////////////
 //Accessories//
 ///////////////
