@@ -74,19 +74,19 @@
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
-/obj/item/stock_parts/cell/gun/upgraded,
 /obj/structure/safe,
 /obj/effect/landmark/mission_poi/main{
 	type_to_spawn = /obj/item/documents/nanotrasen;
 	spawn_in_containter = 1
 	},
+/obj/item/stock_parts/cell/gun/sharplite/plus,
 /turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/manager_office)
 "aW" = (
-/obj/machinery/door/airlock/outpost,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/hatch,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/cave/explored)
 "bd" = (
@@ -3240,7 +3240,7 @@
 /turf/open/floor/plating/asteroid/dirt/grass/lavaland,
 /area/overmap_encounter/planetoid/lava/explored)
 "GK" = (
-/obj/machinery/door/airlock/outpost,
+/obj/machinery/door/airlock/hatch,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/cave/explored)
 "GL" = (
@@ -3767,8 +3767,6 @@
 	dir = 9
 	},
 /obj/structure/closet/secure_closet/security,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
 /obj/item/clothing/suit/armor/vest,
 /obj/item/clothing/head/helmet/m10,
 /obj/item/clothing/glasses/hud/security/sunglasses,
@@ -3780,6 +3778,8 @@
 	pixel_y = 22;
 	name = "Security Lockdown"
 	},
+/obj/item/stock_parts/cell/gun/sharplite,
+/obj/item/stock_parts/cell/gun/sharplite,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/adminstrative)
 "MC" = (
