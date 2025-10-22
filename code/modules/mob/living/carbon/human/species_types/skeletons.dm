@@ -1,6 +1,6 @@
 /datum/species/skeleton
 	// 2spooky
-	name = "\improper Spooky Scary Skeleton"
+	name = "\improper Skeleton"
 	id = SPECIES_SKELETON
 	species_traits = list(NOBLOOD, HAS_BONE, NOHUSK)
 	inherent_traits = list(TRAIT_NOMETABOLISM,TRAIT_TOXIMMUNE,TRAIT_RESISTHEAT,TRAIT_NOBREATH,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE,\
