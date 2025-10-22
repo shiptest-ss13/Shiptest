@@ -20,6 +20,8 @@
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/kalix,
 		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix/empty,
+		/obj/item/stock_parts/cell/gun/pgf/empty,
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix, /obj/item/ammo_casing/energy/disabler/hitscan)
 
@@ -49,8 +51,10 @@
 /obj/item/gun/energy/kalix/empty_cell
 	spawn_no_ammo = TRUE
 	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/pgf,
 		/obj/item/stock_parts/cell/gun/kalix,
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix/empty,
+		/obj/item/stock_parts/cell/gun/pgf/empty,
 	)
 
 /obj/projectile/beam/hitscan/kalix/nock
@@ -100,16 +104,20 @@
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/kalix
 	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/pgf,
 		/obj/item/stock_parts/cell/gun/kalix,
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix/empty,
+		/obj/item/stock_parts/cell/gun/pgf/empty,
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix/nock, /obj/item/ammo_casing/energy/disabler/hitscan/kalix/nock)
 
 /obj/item/gun/energy/kalix/nock/empty_cell
 	spawn_no_ammo = TRUE
 	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/pgf,
 		/obj/item/stock_parts/cell/gun/kalix,
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix/empty,
+		/obj/item/stock_parts/cell/gun/pgf/empty,
 	)
 
 /obj/projectile/beam/hitscan/kalix/pgf/nock
@@ -159,16 +167,20 @@
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/pgf
 	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/pgf,
 		/obj/item/stock_parts/cell/gun/kalix,
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix/empty,
+		/obj/item/stock_parts/cell/gun/pgf/empty,
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pgf/nock, /obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/nock)
 
 /obj/item/gun/energy/kalix/pgf/nock/empty_cell
 	spawn_no_ammo = TRUE
 	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/pgf,
 		/obj/item/stock_parts/cell/gun/kalix,
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix/empty,
+		/obj/item/stock_parts/cell/gun/pgf/empty,
 	)
 
 /obj/item/gun/energy/kalix/pgf
@@ -185,16 +197,20 @@
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/pgf
 	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/pgf,
 		/obj/item/stock_parts/cell/gun/kalix,
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix/empty,
+		/obj/item/stock_parts/cell/gun/pgf/empty,
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pgf , /obj/item/ammo_casing/energy/disabler/hitscan)
 
 /obj/item/gun/energy/kalix/pgf/empty_cell
 	spawn_no_ammo = TRUE
 	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/pgf,
 		/obj/item/stock_parts/cell/gun/kalix,
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix/empty,
+		/obj/item/stock_parts/cell/gun/pgf/empty,
 	)
 
 /obj/projectile/beam/hitscan/kalix/pgf
@@ -230,6 +246,8 @@
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/kalix,
 		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix/empty,
+		/obj/item/stock_parts/cell/gun/pgf/empty,
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pistol)
 
@@ -248,8 +266,10 @@
 /obj/item/gun/energy/kalix/pistol/empty_cell
 	spawn_no_ammo = TRUE
 	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/pgf,
 		/obj/item/stock_parts/cell/gun/kalix,
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix/empty,
+		/obj/item/stock_parts/cell/gun/pgf/empty,
 	)
 
 /obj/item/gun/energy/kalix/pgf/medium
@@ -277,8 +297,10 @@
 /obj/item/gun/energy/kalix/pgf/medium/empty_cell
 	spawn_no_ammo = TRUE
 	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/pgf,
 		/obj/item/stock_parts/cell/gun/kalix,
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix/empty,
+		/obj/item/stock_parts/cell/gun/pgf/empty,
 	)
 
 /obj/item/gun/energy/kalix/pgf/heavy
@@ -306,8 +328,10 @@
 /obj/item/gun/energy/kalix/pgf/heavy/empty_cell
 	spawn_no_ammo = TRUE
 	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/pgf,
 		/obj/item/stock_parts/cell/gun/kalix,
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix/empty,
+		/obj/item/stock_parts/cell/gun/pgf/empty,
 	)
 
 /obj/item/ammo_casing/energy/pgf/assault
@@ -362,6 +386,8 @@
 /obj/item/gun/energy/kalix/pgf/heavy/sniper/empty_cell
 	spawn_no_ammo = TRUE
 	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/pgf,
 		/obj/item/stock_parts/cell/gun/kalix,
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix/empty,
+		/obj/item/stock_parts/cell/gun/pgf/empty,
 	)
