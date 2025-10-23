@@ -259,12 +259,13 @@
  * * priority - Priority used when sorting the filter.
  * * params - Parameters of the filter.
  */
-/datum/proc/add_filter(name, priority, list/params)
+/datum/proc/add_filter(name, priority, list/params, update = TRUE)
 	LAZYINITLIST(filter_data)
 	var/list/copied_parameters = params.Copy()
 	copied_parameters["priority"] = priority
 	filter_data[name] = copied_parameters
-	update_filters()
+	if(update)
+		update_filters()
 
 /// Reapplies all the filters.
 /datum/proc/update_filters()
@@ -279,14 +280,27 @@
 		atom_cast.filters += filter(arglist(arguments))
 	UNSETEMPTY(filter_data)
 
+///A version of add_filter that takes a list of filters to add rather than being individual, to limit calls to update_filters().
+
+/datum/proc/add_filters(list/list/filters, update = TRUE)
+	LAZYINITLIST(filter_data)
+	for(var/list/individual_filter as anything in filters)
+		var/list/params = individual_filter["params"]
+		var/list/copied_parameters = params.Copy()
+		copied_parameters["priority"] = individual_filter["priority"]
+		filter_data[individual_filter["name"]] = copied_parameters
+	if(update)
+		update_filters()
+
 /** Update a filter's parameter to the new one. If the filter doesnt exist we won't do anything.
  *
  * Arguments:
  * * name - Filter name
  * * new_params - New parameters of the filter
  * * overwrite - TRUE means we replace the parameter list completely. FALSE means we only replace the things on new_params.
+ * * update - TRUE means we automatically call update_filters() afterwards. This should be FALSE if you're going to be doing other filter changes next.
  */
-/datum/proc/modify_filter(name, list/new_params, overwrite = FALSE)
+/datum/proc/modify_filter(name, list/new_params, overwrite = FALSE, update = TRUE)
 	var/filter = get_filter(name)
 	if(!filter)
 		return
@@ -295,7 +309,8 @@
 	else
 		for(var/thing in new_params)
 			filter_data[name][thing] = new_params[thing]
-	update_filters()
+	if(update)
+		update_filters()
 
 /** Update a filter's parameter and animate this change. If the filter doesnt exist we won't do anything.
  * Basically a [datum/proc/modify_filter] call but with animations. Unmodified filter parameters are kept.
@@ -335,16 +350,20 @@
 	return filter_data?.Find(name)
 
 /// Removes the passed filter, or multiple filters, if supplied with a list.
-/datum/proc/remove_filter(name_or_names)
+/datum/proc/remove_filter(name_or_names, update = TRUE)
 	if(!filter_data)
 		return
 
 	var/list/names = islist(name_or_names) ? name_or_names : list(name_or_names)
 
+	. = FALSE
 	for(var/name in names)
 		if(filter_data[name])
 			filter_data -= name
-	update_filters()
+			. = TRUE
+	if(. && update)
+		update_filters()
+	return .
 
 /datum/proc/clear_filters()
 	ASSERT(isatom(src) || istype(src, /image))

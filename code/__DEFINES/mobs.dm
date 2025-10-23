@@ -459,12 +459,13 @@
 // - They do not start at 0 for futureproofing
 // - They skip numbers for futureproofing as well
 // Otherwise they are completely arbitrary
-#define HUMAN_HEIGHT_DWARF 2
-#define HUMAN_HEIGHT_SHORTEST 4
-#define HUMAN_HEIGHT_SHORT 6
-#define HUMAN_HEIGHT_MEDIUM 8
-#define HUMAN_HEIGHT_TALL 10
-#define HUMAN_HEIGHT_TALLEST 12
+#define HUMAN_HEIGHT_DWARF 6
+#define HUMAN_HEIGHT_SHORTEST 8
+#define HUMAN_HEIGHT_SHORT 10
+#define HUMAN_HEIGHT_MEDIUM 12
+#define HUMAN_HEIGHT_TALL 14
+#define HUMAN_HEIGHT_TALLER 16
+#define HUMAN_HEIGHT_TALLEST 18
 
 /// Assoc list of all heights, cast to strings, to """"tuples"""""
 /// The first """tuple""" index is the upper body offset
@@ -475,44 +476,45 @@ GLOBAL_LIST_INIT(human_heights_to_offsets, list(
 	"[HUMAN_HEIGHT_SHORT]" = list(-1, -1),
 	"[HUMAN_HEIGHT_MEDIUM]" = list(0, 0),
 	"[HUMAN_HEIGHT_TALL]" = list(1, 1),
-	"[HUMAN_HEIGHT_TALLEST]" = list(2, 2),
+	"[HUMAN_HEIGHT_TALLER]" = list(2, 1),
+	"[HUMAN_HEIGHT_TALLEST]" = list(3, 3),
 ))
 
-//Human Overlays Indexes/////////
-#define TOTAL_LAYERS 34 //KEEP THIS UP-TO-DATE OR SHIT WILL BREAK ;_;
-#define MUTATIONS_LAYER 33 //mutations. Tk headglows, cold resistance glow, etc
-#define HANDS_UNDER_BODY_LAYER 32 //Held items that render underneath the user due to perspective
-#define BODY_BEHIND_LAYER 31 //certain mutantrace features (tail when looking south) that must appear behind the body parts
-#define BODYPARTS_LOW_LAYER 30 //Layer for bodyparts that should appear behind every other bodypart - Mostly, legs when facing WEST or EAST
-#define BODYPARTS_LAYER 29 //Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
-#define BODY_ADJ_LAYER 28 //certain mutantrace features (snout, body markings) that must appear above the body parts
-#define BODY_LAYER 27 //underwear, undershirts, socks, eyes, lips(makeup)
-#define FRONT_MUTATIONS_LAYER 26 //mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
-#define DAMAGE_LAYER 25 //damage indicators (cuts and burns)
-#define UNIFORM_LAYER 24
-#define ID_LAYER 23 //lmao at the idiot who put both ids and hands on the same layer
-#define BODYPARTS_HIGH_LAYER 22
-#define GLOVES_LAYER 21
-#define SHOES_LAYER 20
-#define EARS_LAYER 19
-#define SPLINT_LAYER 18 //WS Edit - breakable bones
-#define SUIT_LAYER 17
-#define GLASSES_LAYER 16
-#define BELT_LAYER 15 //Possible make this an overlay of somethign required to wear a belt?
-#define SUIT_STORE_LAYER 14
-#define NECK_LAYER 13
-#define BACK_LAYER 12
-#define HAIR_LAYER 11 //TODO: make part of head layer?
-#define FACEMASK_LAYER 10
-#define HEAD_LAYER 9
-#define HANDCUFF_LAYER 8
-#define LEGCUFF_LAYER 7
-#define HANDS_LAYER 6
-#define BODY_FRONT_LAYER 5
-#define ABOVE_BODY_FRONT_HEAD_LAYER 4
-#define ABOVE_BODY_FRONT_GLASSES_LAYER 3
-#define HALO_LAYER 2 //blood cult ascended halo, because there's currently no better solution for adding/removing
+//Human Overlays Indexes//
+#define MUTATIONS_LAYER 32 //mutations. Tk headglows, cold resistance glow, etc
+#define HANDS_UNDER_BODY_LAYER 31 //Held items that render underneath the user due to perspective
+#define BODY_BEHIND_LAYER 30 //certain mutantrace features (tail when looking south) that must appear behind the body parts
+#define BODYPARTS_LOW_LAYER 29 //Layer for bodyparts that should appear behind every other bodypart - Mostly, legs when facing WEST or EAST
+#define BODYPARTS_LAYER 28 //Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
+#define BODY_ADJ_LAYER 27 //certain mutantrace features (face markings, body markings) that must appear above the body parts
+#define BODY_LAYER 26 //underwear, undershirts, socks, eyes, lips(makeup)
+#define FRONT_MUTATIONS_LAYER 25 //mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
+#define DAMAGE_LAYER 24 //damage indicators (cuts and burns)
+#define UNIFORM_LAYER 23
+#define BANDAGE_LAYER 22 //For bandages and splints
+#define ID_LAYER 21 //lmao at the idiot who put both ids and hands on the same layer
+#define BODYPARTS_HIGH_LAYER 20
+#define GLOVES_LAYER 19
+#define SHOES_LAYER 18
+#define EARS_LAYER 17
+#define SPLINT_LAYER 16
+#define SUIT_LAYER 15
+#define GLASSES_LAYER 14
+#define BELT_LAYER 13 //Possible make this an overlay of somethign required to wear a belt?
+#define SUIT_STORE_LAYER 12
+#define NECK_LAYER 11
+#define BACK_LAYER 10
+#define HAIR_LAYER 9 //TODO: make part of head layer?
+#define FACEMASK_LAYER 8
+#define HEAD_LAYER 7
+#define HANDCUFF_LAYER 6
+#define LEGCUFF_LAYER 5
+#define HANDS_LAYER 4
+#define BODY_FRONT_LAYER 3
+/// Bleeding wound icons
+#define WOUND_LAYER 2
 #define FIRE_LAYER 1 //If you're on fire
+#define TOTAL_LAYERS 32 //KEEP THIS UP-TO-DATE OR SHIT WILL BREAK ;_;
 
 #define UPPER_BODY "upper body"
 #define LOWER_BODY "lower body"
@@ -533,10 +535,7 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 	// Everything below looks fine with or without a filter, so we can skip it and just offset
 	// (In practice they'd be fine if they got a filter but we can optimize a bit by not.)
 	"[GLASSES_LAYER]" = UPPER_BODY,
-	"[ABOVE_BODY_FRONT_GLASSES_LAYER]" = UPPER_BODY, // currently unused
-	"[ABOVE_BODY_FRONT_HEAD_LAYER]" = UPPER_BODY, // only used for head stuff
 	"[GLOVES_LAYER]" = LOWER_BODY,
-	"[HALO_LAYER]" = UPPER_BODY, // above the head
 	"[HANDCUFF_LAYER]" = LOWER_BODY,
 	//"[ID_CARD_LAYER]" = UPPER_BODY, // unused
 	"[ID_LAYER]" = UPPER_BODY,
