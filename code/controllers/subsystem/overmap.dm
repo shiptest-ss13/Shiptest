@@ -23,6 +23,9 @@ SUBSYSTEM_DEF(overmap)
 	/// The mandatory and default star system
 	var/datum/overmap_star_system/default_system
 
+	/// The secondary star system that allows planet spawns
+	var/datum/overmap_star_system/wild_system
+
 	///Should events be processed
 	var/events_enabled = TRUE
 
@@ -41,8 +44,6 @@ SUBSYSTEM_DEF(overmap)
 	//if(length(tracked_star_systems) >= 1)
 	//	CRASH("Attempted to create more than 1 star system. Having mutiple star systems is not supported.")
 
-	if(length(tracked_star_systems) >= 1)
-		WARNING("Attempted to create more than 1 star system. Bugs may occur as this isn't very well supported, you have been warned")
 	tracked_star_systems += new_starsystem
 	return new_starsystem
 
@@ -56,14 +57,15 @@ SUBSYSTEM_DEF(overmap)
 	dynamic_encounters = list()
 	events = list()
 
-	default_system = create_new_star_system(new /datum/overmap_star_system/shiptest)
+	var/list/sector_types = pick(subtypesof(/datum/overmap_star_system/safezone))
+	default_system = create_new_star_system(new sector_types)
+	wild_system = create_new_star_system (new /datum/overmap_star_system/shiptest)
 	return ..()
 
 /datum/controller/subsystem/overmap/proc/spawn_new_star_system(datum/overmap_star_system/system_to_spawn=/datum/overmap_star_system)
 	if(istype(system_to_spawn))
 		return create_new_star_system(system_to_spawn)
 	return create_new_star_system(new system_to_spawn)
-
 
 /datum/controller/subsystem/overmap/fire()
 	for(var/datum/overmap_star_system/current_system as anything in tracked_star_systems)
@@ -266,8 +268,8 @@ SUBSYSTEM_DEF(overmap)
 			for(var/datum/overmap/nearby_obj as anything in our_overmap_object.current_overmap.overmap_container[newcords["x"]][newcords["y"]])
 				if(!istype(nearby_obj))
 					continue
-				interference_power += nearby_obj.interference_power / 5
-	return interference_power
+				interference_power += nearby_obj.interference_power / 8
+		return max(interference_power,0)
 
 
 /////////////////////////////////////////////////////////////////////
@@ -345,6 +347,9 @@ SUBSYSTEM_DEF(overmap)
 	//can our pallete be selected randomly roundstart? set to no for subtypes or if you dont change the pallete
 	var/can_be_selected_randomly = TRUE
 
+	/// Datum type for the main outpost spawned here
+	var/default_outpost_type
+
 	COOLDOWN_DECLARE(dynamic_despawn_cooldown)
 
 /datum/overmap_star_system/New(generate_now=TRUE)
@@ -371,7 +376,7 @@ SUBSYSTEM_DEF(overmap)
 	if(!size)
 		size = CONFIG_GET(number/overmap_size)
 	if(!max_overmap_dynamic_events)
-		max_overmap_dynamic_events = CONFIG_GET(number/max_overmap_dynamic_events)
+		max_overmap_dynamic_events = isnull(max_overmap_dynamic_events)
 
 	overmap_container = new/list(size, size, 0)
 
@@ -516,24 +521,23 @@ SUBSYSTEM_DEF(overmap)
 /datum/overmap_star_system/proc/spawn_outpost()
 	var/list/location = get_unused_overmap_square_in_radius(rand(4, round(size/5)))
 
-	var/datum/overmap/outpost/found_type
 	if(fexists(OUTPOST_OVERRIDE_FILEPATH))
 		var/file_text = trim_right(file2text(OUTPOST_OVERRIDE_FILEPATH)) // trim_right because there's often a trailing newline
 		var/datum/overmap/outpost/potential_type = text2path(file_text)
 		if(!potential_type || !ispath(potential_type, /datum/overmap/outpost))
 			stack_trace("SSovermap found an outpost override file at [OUTPOST_OVERRIDE_FILEPATH], but was unable to find the outpost type [potential_type]!")
 		else
-			found_type = potential_type
+			default_outpost_type = potential_type
 		fdel(OUTPOST_OVERRIDE_FILEPATH) // don't want it to affect 2 rounds in a row.
 
-	if(!found_type)
+	if(!default_outpost_type)
 		var/list/possible_types = subtypesof(/datum/overmap/outpost)
 		for(var/datum/overmap/outpost/outpost_type as anything in possible_types)
 			if(!initial(outpost_type.main_template))
 				possible_types -= outpost_type
-		found_type = pick(possible_types)
+		default_outpost_type = pick(possible_types)
 
-	var/datum/overmap/outpost/our_outpost = new found_type(location, src)
+	var/datum/overmap/outpost/our_outpost = new default_outpost_type(location, src)
 
 	//gets rid of nearby events that casue radio interference
 	for(var/direction as anything in GLOB.cardinals)
@@ -956,11 +960,7 @@ SUBSYSTEM_DEF(overmap)
 	override_object_colors = TRUE
 	overmap_icon_state = "overmap"
 
-	dynamic_probabilities = list(\
-		DYNAMIC_WORLD_BEACHPLANET = 10,
-		DYNAMIC_WORLD_SPACERUIN = 5,
-		DYNAMIC_WORLD_MOON = 20,
-		)
+	max_overmap_dynamic_events = 0
 
 /datum/overmap_star_system/zx_spectrum_pallete
 	//main colors, used for dockable terrestrials, and background
@@ -1053,9 +1053,11 @@ SUBSYSTEM_DEF(overmap)
 	else
 		datum_to_edit.token.add_filter("gloweffect", 5, list("type"="drop_shadow", "color"= "#808080", "size"=2, "offset"=1))
 
-/datum/overmap_star_system/ngr
-	name = "Gorlex Controlled - Ecbatana"
+/datum/overmap_star_system/safezone/ngr
+	name = "Gorlex Controlled - Value of Public Works"
 	starname = "Ecbatana"
+	startype = /datum/overmap/star/dwarf
+	default_outpost_type = /datum/overmap/outpost/ngr_rock
 
 	//main colors, used for dockable terrestrials, and background
 	primary_color = "#d9ad82"
@@ -1068,6 +1070,69 @@ SUBSYSTEM_DEF(overmap)
 	//structure colors, used for ships and outposts/colonies
 	primary_structure_color = "#83db2b"
 	secondary_structure_color = "#21a52e"
+
+	override_object_colors = TRUE
+	overmap_icon_state = "overmap_dark"
+
+/datum/overmap_star_system/safezone/clip
+	name = "CLIP Controlled - High-Pier"
+	starname = "Chana"
+	startype = /datum/overmap/star/dwarf/orange
+	default_outpost_type = /datum/overmap/outpost/clip_ocean
+
+	//main colors, used for dockable terrestrials, and background
+	primary_color = "#6fa8de"
+	secondary_color = "#96b6d4"
+
+	//hazard colors, used for the overmap hazards and sun
+	hazard_primary_color = "#d5e3f0"
+	hazard_secondary_color = "#96a6b5"
+
+	//structure colors, used for ships and outposts/colonies
+	primary_structure_color = "#97dfe8"
+	secondary_structure_color = "#6fa8de"
+
+	override_object_colors = TRUE
+	overmap_icon_state = "overmap_dark"
+
+/datum/overmap_star_system/safezone/trifuge
+	name = "Independent - Minya"
+	starname = "Aubaine"
+	startype = /datum/overmap/star/medium
+	default_outpost_type = /datum/overmap/outpost/indie_space
+
+	//main colors, used for dockable terrestrials, and background
+	primary_color = "#5e5e5e"
+	secondary_color = "#242424"
+
+	//hazard colors, used for the overmap hazards and sun
+	hazard_primary_color = "#b56060"
+	hazard_secondary_color = "#824242"
+
+	//structure colors, used for ships and outposts/colonies
+	primary_structure_color = "#ffffff"
+	secondary_structure_color = "#ffffff"
+
+	override_object_colors = TRUE
+	overmap_icon_state = "overmap"
+
+/datum/overmap_star_system/safezone/nt
+	name = "Nanotrasen Controlled - Persei-277"
+	starname = "Persei-277"
+	startype = /datum/overmap/star/medium
+	default_outpost_type = /datum/overmap/outpost/nanotrasen_ice
+
+	//main colors, used for dockable terrestrials, and background
+	primary_color = "#7e8cd9"
+	secondary_color = "#33324a"
+
+	//hazard colors, used for the overmap hazards and sun
+	hazard_primary_color = "#ededed"
+	hazard_secondary_color = "#7f7db0"
+
+	//structure colors, used for ships and outposts/colonies
+	primary_structure_color = "#4272db"
+	secondary_structure_color = "#38a0eb"
 
 	override_object_colors = TRUE
 	overmap_icon_state = "overmap_dark"
@@ -1091,13 +1156,13 @@ SUBSYSTEM_DEF(overmap)
 
 //default shiptest overmap
 /datum/overmap_star_system/shiptest
-	has_outpost = TRUE
+	has_outpost = FALSE
 	can_be_selected_randomly = FALSE
 	encounters_refresh = TRUE
+	max_overmap_dynamic_events = 15
 
 /datum/overmap_star_system/shiptest/create_map()
 	. = ..()
-	set_station_name(starname)
 
 /datum/overmap_star_system/admin_sandbox
 	name = "Admin Sandbox"

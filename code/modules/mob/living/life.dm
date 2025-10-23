@@ -7,9 +7,6 @@
 
 	SEND_SIGNAL(src, COMSIG_LIVING_LIFE, seconds_per_tick, times_fired)
 
-	if((movement_type & FLYING) && !(movement_type & FLOATING))	//TODO: Better floating
-		float(on = TRUE)
-
 	if (client)
 		var/turf/T = get_turf(src)
 		if(!T)

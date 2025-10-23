@@ -25,7 +25,7 @@
 		if(.) //not dead
 			handle_blood()
 
-		if(isLivingSSD()) // If you're disconnected, you're going to sleep
+		if(isLivingSSD() && !ignore_SSD) // If you're disconnected, you're going to sleep
 			if(trunc((world.time - lastclienttime) / (3 MINUTES)) > 0) // After a three minute grace period, your character will fall asleep
 				if(AmountSleeping() < 20)
 					AdjustSleeping(20) // Adjust every 10 seconds
@@ -305,8 +305,12 @@
 	if(stam_regen_start_time <= world.time)
 		if(HAS_TRAIT_FROM(src, TRAIT_INCAPACITATED, STAMINA))
 			. |= BODYPART_LIFE_UPDATE_HEALTH //make sure we remove the stamcrit
-	for(var/obj/item/bodypart/BP as anything in bodyparts)
-		. |= BP.on_life()
+	var/obj/item/bodypart/limb
+	for(var/zone in bodyparts)
+		limb = bodyparts[zone]
+		if(!limb)
+			continue
+		. |= limb.on_life()
 
 /mob/living/carbon/proc/handle_organs()
 	if(stat != DEAD)

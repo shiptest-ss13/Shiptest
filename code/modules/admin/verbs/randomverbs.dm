@@ -961,7 +961,7 @@
 		nova.size = inputed
 
 		inputed = input(usr, "Choose Maximum amount of Dynamic Events", "Spawn Overmap", nova.max_overmap_dynamic_events) as num
-		if(!inputed)
+		if(isnull(inputed))
 			QDEL_NULL(nova)
 			return
 		nova.max_overmap_dynamic_events = inputed
@@ -1167,8 +1167,11 @@
 				to_chat(usr, span_warning("This must be used on a carbon mob."), confidential = TRUE)
 				return
 			var/mob/living/carbon/C = target
-			for(var/i in C.bodyparts)
-				var/obj/item/bodypart/squish_part = i
+			var/obj/item/bodypart/squish_part
+			for(var/zone in C.bodyparts)
+				squish_part = C.bodyparts[zone]
+				if(!squish_part)
+					continue
 				var/type_wound = pick(list(/datum/wound/blunt/severe, /datum/wound/blunt/severe, /datum/wound/blunt/moderate))
 				squish_part.force_wound_upwards(type_wound, smited=TRUE)
 
@@ -1177,8 +1180,11 @@
 				to_chat(usr, span_warning("This must be used on a carbon mob."), confidential = TRUE)
 				return
 			var/mob/living/carbon/C = target
-			for(var/i in C.bodyparts)
-				var/obj/item/bodypart/slice_part = i
+			var/obj/item/bodypart/slice_part
+			for(var/zone in C.bodyparts)
+				slice_part = C.bodyparts[zone]
+				if(!slice_part)
+					continue
 				var/type_wound = pick(list(/datum/wound/slash/critical, /datum/wound/slash/moderate))
 				slice_part.force_wound_upwards(type_wound, smited=TRUE)
 				type_wound = pick(list(/datum/wound/slash/critical, /datum/wound/slash/moderate))
@@ -1219,8 +1225,11 @@
 
 			dude.Immobilize(5 SECONDS)
 			for(var/wound_bonus_rep in 1 to repetitions)
-				for(var/i in dude.bodyparts)
-					var/obj/item/bodypart/slice_part = i
+				var/obj/item/bodypart/slice_part
+				for(var/zone in dude.bodyparts)
+					slice_part = dude.bodyparts[zone]
+					if(!slice_part)
+						continue
 					var/shots_this_limb = 0
 					for(var/t in shuffle(open_adj_turfs))
 						var/turf/iter_turf = t
@@ -1344,6 +1353,8 @@
 	var/source = "adminabuse"
 	switch(add_or_remove)
 		if("Add") //Not doing source choosing here intentionally to make this bit faster to use, you can always vv it.
+			if(GLOB.movement_type_trait_to_flag[chosen_trait]) //include the required element.
+				D.AddElement(/datum/element/movetype_handler)
 			ADD_TRAIT(D,chosen_trait,source)
 		if("Remove")
 			var/specific = input("All or specific source ?", "Trait Remove/Add") as null|anything in list("All","Specific")

@@ -20,6 +20,8 @@
 	var/check_prefix = TRUE
 	/// Sorting order for factions
 	var/order = FACTION_SORT_DEFAULT
+	/// Whether or not this faction is hidden from the autowiki ships table (see: Unknown, used for ruins but has no ships)
+	var/wiki_hidden = FALSE
 
 /datum/faction/New()
 	if(!short_name)
@@ -143,7 +145,7 @@
 /datum/faction/independent
 	name = FACTION_INDEPENDENT
 	short_name = "IND"
-	parent_faction =  /datum/faction/independent
+	parent_faction = /datum/faction/independent
 	prefixes = PREFIX_INDEPENDENT
 	color = "#A0A0A0"
 	order = FACTION_SORT_INDEPENDENT
@@ -151,8 +153,18 @@
 /datum/faction/ramzi
 	name = FACTION_RAMZI
 	short_name = "RAM"
-	parent_faction =  /datum/faction/ramzi
+	parent_faction = /datum/faction/ramzi
 	prefixes = PREFIX_RAMZI
 	color = "#c45508"
 	check_prefix = FALSE
 	order = FACTION_SORT_ASPAWN
+
+/datum/faction/unknown
+	name = FACTION_UNKNOWN
+	short_name = "???"
+	parent_faction = /datum/faction/unknown
+	prefixes = PREFIX_NONE
+	color = "#504c4c"
+	check_prefix = FALSE
+	order = FACTION_SORT_ASPAWN
+	wiki_hidden = TRUE

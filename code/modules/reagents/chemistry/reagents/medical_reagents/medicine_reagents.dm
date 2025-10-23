@@ -22,7 +22,7 @@
 	var/passive_bleed_modifier = 1.2
 
 /datum/reagent/medicine/indomide/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-1*REM, 0)
+	M.adjustBruteLoss(-1.5*REM, 0)
 	..()
 	. = 1
 
@@ -55,7 +55,7 @@
 	var/mob/living/carbon/victim = M
 
 	if(prob(5))
-		var/obj/item/bodypart/open_sore = pick(victim.bodyparts)
+		var/obj/item/bodypart/open_sore = victim.get_random_bodypart()
 		if(IS_ORGANIC_LIMB(open_sore))
 			open_sore.force_wound_upwards(/datum/wound/slash/moderate)
 		M.emote("gasps")
@@ -183,7 +183,7 @@
 
 /datum/reagent/medicine/silfrine/on_mob_life(mob/living/carbon/M)
 	var/effectiveness_multiplier = clamp(M.getBruteLoss()/75, 0.3, 1.5)
-	var/brute_heal = effectiveness_multiplier * REM * -4
+	var/brute_heal = effectiveness_multiplier * REM * -8
 	M.adjustBruteLoss(brute_heal, 0)
 	..()
 	. = 1
@@ -470,7 +470,8 @@
 
 /datum/reagent/medicine/gjalrazine/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-3*REM, 0)
-	M.adjust_disgust(1)
+	if(prob(25))
+		M.adjust_disgust(1)
 	. = 1
 	..()
 
@@ -482,7 +483,7 @@
 			to_chat(M, "Your stomach cramps!")
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 		M.adjustToxLoss(-reac_volume*4)
-		M.adjust_disgust(50)
+		M.set_disgust(30)
 		M.set_timed_status_effect(5 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 
 /datum/reagent/medicine/gjalrazine/overdose_process(mob/living/M)

@@ -34,31 +34,37 @@
 			. += span_deadsay("It appears that [t_his] brain is missing...")
 
 	var/list/msg = list("<span class='warning'>")
-	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)
+	var/list/missing = list()
 	var/list/disabled = list()
-	for(var/obj/item/bodypart/BP as anything in bodyparts)
-		if(BP.bodypart_disabled)
-			disabled += BP
-		missing -= BP.body_zone
+	var/obj/item/bodypart/limb
+	for(var/zone in bodyparts)
+		limb = bodyparts[zone]
+		if(!limb)
+			missing += zone
+			continue
+		if(limb.bodypart_disabled)
+			disabled += limb
 
-		for(var/obj/item/I in BP.embedded_objects)
+		for(var/obj/item/I in limb.embedded_objects)
 			if(I.isEmbedHarmless())
-				msg += "<B>[t_He] [t_has] [icon2html(I, user)] \a [I] stuck to [t_his] [BP.name]!</B>\n"
+				msg += "<B>[t_He] [t_has] [icon2html(I, user)] \a [I] stuck to [t_his] [limb.name]!</B>\n"
 			else
-				msg += "<B>[t_He] [t_has] [icon2html(I, user)] \a [I] embedded in [t_his] [BP.name]!</B>\n"
+				msg += "<B>[t_He] [t_has] [icon2html(I, user)] \a [I] embedded in [t_his] [limb.name]!</B>\n"
 
-		for(var/i in BP.wounds)
+		for(var/i in limb.wounds)
 			var/datum/wound/W = i
 			msg += "[W.get_examine_description(user)]\n"
 
-	for(var/X in disabled)
-		var/obj/item/bodypart/BP = X
+	for(var/zone in bodyparts)
+		limb = bodyparts[zone]
+		if(!limb)
+			continue
 		var/damage_text
-		if(!(BP.get_damage(include_stamina = FALSE) >= BP.max_damage)) //Stamina is disabling the limb
+		if(!(limb.get_damage(include_stamina = FALSE) >= limb.max_damage)) //Stamina is disabling the limb
 			damage_text = "limp and lifeless"
 		else
-			damage_text = (BP.brute_dam >= BP.burn_dam) ? BP.heavy_brute_msg : BP.heavy_burn_msg
-		msg += "<B>[capitalize(t_his)] [BP.name] is [damage_text]!</B>\n"
+			damage_text = (limb.brute_dam >= limb.burn_dam) ? limb.heavy_brute_msg : limb.heavy_burn_msg
+		msg += "<B>[capitalize(t_his)] [limb.name] is [damage_text]!</B>\n"
 
 	for(var/t in missing)
 		if(t==BODY_ZONE_HEAD)
@@ -163,54 +169,57 @@
 	var/t_Has = p_have()
 
 	var/any_bodypart_damage = FALSE
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/LB = X
-		if(LB.is_pseudopart)
+	var/obj/item/bodypart/limb
+	for(var/zone in bodyparts)
+		limb = bodyparts[zone]
+		if(!limb)
 			continue
-		var/limb_max_damage = LB.max_damage
+		if(limb.is_pseudopart)
+			continue
+		var/limb_max_damage = limb.max_damage
 		var/status = ""
-		var/brutedamage = round(LB.brute_dam/limb_max_damage*100)
-		var/burndamage = round(LB.burn_dam/limb_max_damage*100)
+		var/brutedamage = round(limb.brute_dam/limb_max_damage*100)
+		var/burndamage = round(limb.burn_dam/limb_max_damage*100)
 		switch(brutedamage)
 			if(20 to 35)
-				status = LB.light_brute_msg
+				status = limb.light_brute_msg
 			if(36 to 65)
-				status = LB.medium_brute_msg
+				status = limb.medium_brute_msg
 			if(66 to 100)
-				status += LB.heavy_brute_msg
+				status += limb.heavy_brute_msg
 
 		if(burndamage >= 20 && status)
 			status += "and "
 		switch(burndamage)
 			if(20 to 35)
-				status += LB.light_burn_msg
+				status += limb.light_burn_msg
 			if(36 to 65)
-				status += LB.medium_burn_msg
+				status += limb.medium_burn_msg
 			if(66 to 100)
-				status += LB.heavy_burn_msg
+				status += limb.heavy_burn_msg
 
 		if(status)
 			any_bodypart_damage = TRUE
-			msg += "\t<span class='warning'>[t_His] [LB.name] is [status].</span>"
+			msg += "\t<span class='warning'>[t_His] [limb.name] is [status].</span>"
 
-		for(var/thing in LB.wounds)
+		for(var/thing in limb.wounds)
 			any_bodypart_damage = TRUE
 			var/datum/wound/W = thing
 			switch(W.severity)
 				if(WOUND_SEVERITY_TRIVIAL)
-					msg += "\t<span class='warning'>[t_His] [LB.name] is suffering [W.a_or_from] [W.get_topic_name(user)].</span>"
+					msg += "\t<span class='warning'>[t_His] [limb.name] is suffering [W.a_or_from] [W.get_topic_name(user)].</span>"
 				if(WOUND_SEVERITY_MODERATE)
-					msg += "\t<span class='warning'>[t_His] [LB.name] is suffering [W.a_or_from] [W.get_topic_name(user)]!</span>"
+					msg += "\t<span class='warning'>[t_His] [limb.name] is suffering [W.a_or_from] [W.get_topic_name(user)]!</span>"
 				if(WOUND_SEVERITY_SEVERE)
-					msg += "\t<span class='warning'><b>[t_His] [LB.name] is suffering [W.a_or_from] [W.get_topic_name(user)]!</b></span>"
+					msg += "\t<span class='warning'><b>[t_His] [limb.name] is suffering [W.a_or_from] [W.get_topic_name(user)]!</b></span>"
 				if(WOUND_SEVERITY_CRITICAL)
-					msg += "\t<span class='warning'><b>[t_His] [LB.name] is suffering [W.a_or_from] [W.get_topic_name(user)]!!</b></span>"
-		if(LB.current_gauze)
-			var/datum/bodypart_aid/current_gauze = LB.current_gauze
-			msg += "\t<span class='notice'><i>[t_His] [LB.name] is [current_gauze.desc_prefix] with <a href='?src=[REF(current_gauze)];remove=1'>[current_gauze.get_description()]</a>.</i></span>"
-		if(LB.current_splint)
-			var/datum/bodypart_aid/current_splint = LB.current_splint
-			msg += "\t<span class='notice'><i>[t_His] [LB.name] is [current_splint.desc_prefix] with <a href='?src=[REF(current_splint)];remove=1'>[current_splint.get_description()]</a>.</i></span>"
+					msg += "\t<span class='warning'><b>[t_His] [limb.name] is suffering [W.a_or_from] [W.get_topic_name(user)]!!</b></span>"
+		if(limb.current_gauze)
+			var/datum/bodypart_aid/current_gauze = limb.current_gauze
+			msg += "\t<span class='notice'><i>[t_His] [limb.name] is [current_gauze.desc_prefix] with <a href='?src=[REF(current_gauze)];remove=1'>[current_gauze.get_description()]</a>.</i></span>"
+		if(limb.current_splint)
+			var/datum/bodypart_aid/current_splint = limb.current_splint
+			msg += "\t<span class='notice'><i>[t_His] [limb.name] is [current_splint.desc_prefix] with <a href='?src=[REF(current_splint)];remove=1'>[current_splint.get_description()]</a>.</i></span>"
 
 	if(!any_bodypart_damage)
 		msg += "\t<span class='smallnotice'><i>[t_He] [t_Has] no significantly damaged bodyparts.</i></span>"

@@ -1,8 +1,7 @@
 /datum/species/skeleton
 	// 2spooky
-	name = "\improper Spooky Scary Skeleton"
+	name = "\improper Skeleton"
 	id = SPECIES_SKELETON
-	meat = /obj/item/food/meat/slab/human/mutant/skeleton
 	species_traits = list(NOBLOOD, HAS_BONE, NOHUSK)
 	inherent_traits = list(TRAIT_NOMETABOLISM,TRAIT_TOXIMMUNE,TRAIT_RESISTHEAT,TRAIT_NOBREATH,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE,\
 	TRAIT_GENELESS,TRAIT_PIERCEIMMUNE,TRAIT_NOHUNGER,TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_FAKEDEATH,TRAIT_XENO_IMMUNE,TRAIT_NOCLONELOSS)
@@ -15,12 +14,14 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | ERT_SPAWN
 	species_language_holder = /datum/language_holder/skeleton
 
-	species_chest = /obj/item/bodypart/chest/skeleton
-	species_head = /obj/item/bodypart/head/skeleton
-	species_l_arm = /obj/item/bodypart/l_arm/skeleton
-	species_r_arm = /obj/item/bodypart/r_arm/skeleton
-	species_l_leg = /obj/item/bodypart/leg/left/skeleton
-	species_r_leg = /obj/item/bodypart/leg/right/skeleton
+	species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/skeleton,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/skeleton,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/skeleton,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/skeleton,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/skeleton,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/skeleton,
+	)
 
 //Can still metabolize milk through meme magic
 /datum/species/skeleton/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
