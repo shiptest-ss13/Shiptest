@@ -7,6 +7,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/port)
+"aF" = (
+/obj/effect/turf_decal/corner/opaque/lightgrey/mono,
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "bb" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
@@ -376,6 +383,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
+"eX" = (
+/obj/effect/turf_decal/corner/opaque/lightgrey/mono,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "fa" = (
 /obj/effect/turf_decal/box/white,
 /obj/machinery/suit_storage_unit/inherit,
@@ -449,6 +464,9 @@
 /area/ship/bridge)
 "fs" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
+/obj/structure/railing{
+	dir = 4
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "fA" = (
@@ -757,6 +775,9 @@
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
+/obj/structure/railing{
+	dir = 5
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "hR" = (
@@ -888,6 +909,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
+/obj/structure/railing{
+	dir = 1
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "jd" = (
@@ -1014,9 +1038,20 @@
 "kd" = (
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen/kitchen)
+"kq" = (
+/obj/effect/turf_decal/corner/opaque/lightgrey/mono,
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "kZ" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
 /obj/machinery/light/floor,
+/obj/structure/railing{
+	dir = 5
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "la" = (
@@ -1106,6 +1141,9 @@
 	picked_color = "Lime"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing{
+	dir = 5
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "mE" = (
@@ -1180,6 +1218,7 @@
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
 /obj/machinery/light/floor,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "nG" = (
@@ -1204,6 +1243,7 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
 	dir = 1
 	},
+/obj/structure/railing/corner,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "nT" = (
@@ -1708,6 +1748,9 @@
 	pixel_y = 11;
 	pixel_x = 8
 	},
+/obj/structure/railing{
+	dir = 4
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "uu" = (
@@ -1953,6 +1996,14 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ship/bridge)
+"yp" = (
+/obj/effect/turf_decal/corner/opaque/lightgrey/mono,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "yr" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#D2BC9D";
@@ -2077,6 +2128,16 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ship/bridge)
+"yX" = (
+/obj/effect/turf_decal/corner/opaque/lightgrey/mono,
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "yY" = (
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 9
@@ -2323,6 +2384,14 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
+"Bg" = (
+/obj/effect/turf_decal/corner/opaque/lightgrey/mono,
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
+/obj/structure/railing{
+	dir = 5
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "Bk" = (
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 6
@@ -2374,6 +2443,21 @@
 	},
 /turf/open/floor/plasteel/stairs/mid,
 /area/ship/engineering)
+"BW" = (
+/obj/effect/turf_decal/corner/opaque/lightgrey/mono,
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 6
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
+"Cf" = (
+/obj/effect/turf_decal/corner/opaque/lightgrey/mono,
+/obj/structure/railing/corner,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "Cj" = (
 /obj/structure/railing,
 /obj/structure/cable/cyan{
@@ -2616,6 +2700,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing{
+	dir = 6
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "EN" = (
@@ -2738,6 +2825,9 @@
 "Gh" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
+/obj/structure/railing/corner{
+	dir = 4
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "Gn" = (
@@ -3166,6 +3256,9 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing/corner{
+	dir = 4
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "Ku" = (
@@ -3400,6 +3493,14 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-9"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
+"Nu" = (
+/obj/effect/turf_decal/corner/opaque/lightgrey/mono,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing/corner{
+	dir = 4
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
@@ -4299,6 +4400,9 @@
 /obj/structure/marker_beacon{
 	picked_color = "Lime"
 	},
+/obj/structure/railing{
+	dir = 1
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "Ue" = (
@@ -4602,6 +4706,14 @@
 	picked_color = "Burgundy"
 	},
 /turf/open/floor/engine/hull,
+/area/ship/external/dark)
+"Xw" = (
+/obj/effect/turf_decal/corner/opaque/lightgrey/mono,
+/obj/machinery/light/floor,
+/obj/structure/railing{
+	dir = 6
+	},
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "XB" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -4957,9 +5069,9 @@ mT
 mT
 JP
 rP
+Cf
 fs
-fs
-nM
+yX
 fs
 rX
 PG
@@ -4967,9 +5079,9 @@ hH
 jM
 rX
 ut
-Gh
+kq
 fs
-fs
+aF
 IR
 FU
 mT
@@ -4994,7 +5106,7 @@ JP
 rP
 nM
 fs
-kZ
+Xw
 mT
 mT
 rX
@@ -5027,8 +5139,8 @@ mT
 mT
 JP
 rP
-fs
-UE
+Cf
+eX
 EB
 mT
 mT
@@ -5045,9 +5157,9 @@ mT
 mT
 mT
 mT
-Gh
+Bg
 fs
-UE
+Nu
 IR
 FU
 mT
@@ -5064,7 +5176,7 @@ JP
 rP
 nM
 fs
-kZ
+Xw
 mT
 mT
 mT
@@ -5097,9 +5209,9 @@ mT
 mT
 gQ
 rP
+Cf
 fs
-fs
-nM
+BW
 mT
 mT
 mT
@@ -5124,7 +5236,7 @@ mT
 mT
 mT
 hL
-Zn
+yp
 Kn
 IR
 zs
