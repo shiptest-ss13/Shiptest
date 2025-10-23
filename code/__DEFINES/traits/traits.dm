@@ -363,19 +363,20 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_DRYABLE "trait_dryable"
 ///Trait for dried items
 #define TRAIT_DRIED "trait_dried"
-/// Trait for customizable reagent holder
-//#define TRAIT_CUSTOMIZABLE_REAGENT_HOLDER "customizable_reagent_holder"
-/// Trait for allowing an item that isn't food into the customizable reagent holder
-//#define TRAIT_ODD_CUSTOMIZABLE_FOOD_INGREDIENT "odd_customizable_food_ingredient"
 
-/// Trait granted by lipstick
+///Trait for customizable reagent holder
+#define TRAIT_CUSTOMIZABLE_REAGENT_HOLDER "customizable_reagent_holder"
+///Trait for allowing an item that isn't food into the customizable reagent holder
+#define TRAIT_ODD_CUSTOMIZABLE_FOOD_INGREDIENT "odd_customizable_food_ingredient"
+
+///Trait granted by lipstick
 #define LIPSTICK_TRAIT "lipstick_trait"
 
-// Bone breaking traits. Don't actually do anything(?)
+//Bone breaking traits. Don't actually do anything(?)
 #define TRAIT_NOBREAK "no_break"
 #define TRAIT_ALLBREAK "all_break"
 
-// common trait sources
+//common trait sources
 #define TRAIT_GENERIC "generic"
 #define GENERIC_ITEM_TRAIT "generic_item"
 #define UNCONSCIOUS_TRAIT "unconscious"

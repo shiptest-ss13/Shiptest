@@ -487,9 +487,16 @@
 /datum/reagent/consumable/eggyolk
 	name = "Egg Yolk"
 	description = "It's full of protein."
-	nutriment_factor = 3 * REAGENTS_METABOLISM
+	nutriment_factor = 4 * REAGENTS_METABOLISM
 	color = "#FFB500"
 	taste_description = "egg"
+
+/datum/reagent/consumable/eggwhite
+	name = "Egg White"
+	description = "It's full of even more protein."
+	nutriment_factor = 1.5 * REAGENTS_METABOLISM
+	color = "#fffdf7"
+	taste_description = "bland egg"
 
 /datum/reagent/consumable/corn_starch
 	name = "Corn Starch"
@@ -596,7 +603,6 @@
 
 ////Lavaland Flora Reagents////
 
-
 /datum/reagent/consumable/entpoly
 	name = "Entropic Polypnium"
 	description = "An ichor, derived from a certain mushroom, makes for a bad time."
@@ -615,7 +621,6 @@
 		M.blur_eyes(5)
 		. = TRUE
 	..()
-
 
 /datum/reagent/consumable/tinlux
 	name = "Tinea Luxor"
@@ -646,7 +651,6 @@
 	LAZYREMOVE(mobs_affected, living_holder)
 	if(mob_light_obj)
 		qdel(mob_light_obj)
-
 
 /datum/reagent/consumable/vitfro
 	name = "Vitrium Froth"
@@ -820,3 +824,16 @@
 	name = "Tiris-Sale"
 	nutriment_factor = 1 * REAGENTS_METABOLISM
 	taste_description = "bloody piercing umami"
+
+/datum/reagent/consumable/pancakebatter
+	name = "pancake batter"
+	description = "A very milky batter. 5 units of this on the griddle makes a mean pancake."
+	taste_description = "milky batter"
+	color = "#fccc98"
+
+/datum/reagent/consumable/whipped_cream
+	name = "Whipped Cream"
+	description = "A white fluffy cream made from whipping cream at intense speed."
+	color = "#efeff0"
+	nutriment_factor = 4
+	taste_description = "fluffy sweet cream"

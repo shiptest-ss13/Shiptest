@@ -240,7 +240,6 @@
 "cc" = (
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine{
-	pixel_y = 0;
 	pixel_x = -32
 	},
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
@@ -446,7 +445,6 @@
 	pixel_y = 7
 	},
 /obj/item/spacecash/bundle/c5{
-	pixel_y = 0;
 	pixel_x = 9
 	},
 /obj/item/spacecash/bundle/c5{
@@ -951,7 +949,7 @@
 "iD" = (
 /obj/structure/table/reinforced,
 /obj/item/cutting_board,
-/obj/item/food/meat/slab/human/mutant/zombie,
+/obj/item/food/meat/slab,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/powered/hunts/canteen)
 "iH" = (
@@ -1654,11 +1652,9 @@
 "oR" = (
 /obj/structure/rack,
 /obj/item/clothing/head/soft/utility_olive{
-	pixel_y = 0;
 	pixel_x = -11
 	},
 /obj/item/clothing/head/soft/utility_olive{
-	pixel_y = 0;
 	pixel_x = 6
 	},
 /turf/open/floor/carpet/royalblack/jungleplanet,
@@ -1808,7 +1804,6 @@
 /obj/effect/spawner/random/trash/garbage,
 /obj/effect/spawner/random/trash/garbage,
 /obj/structure/spacevine{
-	pixel_y = 0;
 	pixel_x = -32
 	},
 /turf/open/floor/wood/jungleplanet,
@@ -1901,7 +1896,6 @@
 /obj/effect/spawner/random/trash/garbage,
 /obj/effect/spawner/random/trash/garbage,
 /obj/effect/spawner/random/trash/garbage,
-/obj/item/food/meat/slab/human/mutant/skeleton,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/powered/hunts/canteen)
 "qY" = (
@@ -1972,7 +1966,6 @@
 	dir = 8
 	},
 /obj/structure/spacevine{
-	pixel_y = 0;
 	pixel_x = -32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2017,8 +2010,7 @@
 "rJ" = (
 /obj/structure/table/reinforced,
 /obj/item/table_bell{
-	pixel_x = 7;
-	pixel_y = 0
+	pixel_x = 7
 	},
 /obj/item/storage/bag/tray{
 	pixel_y = 12;
@@ -2715,11 +2707,9 @@
 "wT" = (
 /obj/structure/rack,
 /obj/item/clothing/under/syndicate/camo{
-	pixel_y = 0;
 	pixel_x = -7
 	},
 /obj/item/clothing/under/syndicate/camo{
-	pixel_y = 0;
 	pixel_x = 7
 	},
 /turf/open/floor/carpet/royalblack/jungleplanet,
@@ -2783,7 +2773,6 @@
 	},
 /obj/structure/spacevine,
 /obj/structure/spacevine{
-	pixel_y = 0;
 	pixel_x = -32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3802,15 +3791,12 @@
 "FJ" = (
 /obj/structure/rack,
 /obj/item/ammo_box/magazine/m12_sporter/empty{
-	pixel_y = 0;
 	pixel_x = -7
 	},
 /obj/item/ammo_box/magazine/m12_sporter/empty{
-	pixel_y = 0;
 	pixel_x = -2
 	},
 /obj/item/ammo_box/magazine/m12_sporter/empty{
-	pixel_y = 0;
 	pixel_x = 4
 	},
 /turf/open/floor/wood/ebony,
@@ -4010,7 +3996,6 @@
 	icon_state = "1-2"
 	},
 /obj/structure/spacevine{
-	pixel_y = 0;
 	pixel_x = -32
 	},
 /turf/open/floor/wood/jungleplanet,
@@ -4178,7 +4163,6 @@
 "IJ" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine{
-	pixel_y = 0;
 	pixel_x = -32
 	},
 /turf/open/floor/wood/jungleplanet,
@@ -4391,15 +4375,12 @@
 /obj/structure/rack,
 /obj/structure/rack,
 /obj/item/clothing/under/pants/camo{
-	pixel_y = 0;
 	pixel_x = -9
 	},
 /obj/item/clothing/under/pants/camo{
-	pixel_y = 0;
 	pixel_x = 4
 	},
 /obj/structure/sign/poster/official/foam_force_ad{
-	pixel_y = 0;
 	pixel_x = -32
 	},
 /turf/open/floor/carpet/royalblack/jungleplanet,
@@ -4990,7 +4971,6 @@
 "PJ" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine{
-	pixel_y = 0;
 	pixel_x = -32
 	},
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
@@ -5341,7 +5321,6 @@
 	pixel_y = 10
 	},
 /obj/item/spacecash/bundle/c5{
-	pixel_y = 0;
 	pixel_x = 9
 	},
 /turf/open/water/jungle/lit,
@@ -5585,7 +5564,6 @@
 "Uh" = (
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine{
-	pixel_y = 0;
 	pixel_x = -32
 	},
 /obj/structure/spacevine/dense{
@@ -5651,7 +5629,6 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "US" = (
 /obj/structure/spacevine{
-	pixel_y = 0;
 	pixel_x = -32
 	},
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
@@ -5706,9 +5683,7 @@
 /obj/item/spacecash/bundle/smallrand,
 /obj/machinery/light/small/broken/directional/west,
 /obj/effect/decal/cleanable/blood,
-/obj/effect/decal/cleanable/blood{
-	pixel_y = 0
-	},
+/obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor3";
 	pixel_y = 28
@@ -5942,7 +5917,6 @@
 	icon_state = "1-2"
 	},
 /obj/structure/spacevine{
-	pixel_y = 0;
 	pixel_x = -32
 	},
 /turf/open/floor/wood/jungleplanet,
@@ -6016,7 +5990,7 @@
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "XA" = (
-/obj/machinery/grill,
+/obj/machinery/griddle,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/powered/hunts/canteen)
 "XC" = (

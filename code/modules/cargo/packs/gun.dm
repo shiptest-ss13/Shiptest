@@ -72,7 +72,7 @@
 /datum/supply_pack/gun/cm70
 	name = "CM-70 Machinepistol Crate"
 	desc = "Contains a 9x18mm machinepistol produced proudly within Lanchester City. Confederated Minuteman issue only."
-	cost = 2500
+	cost = 2000
 	contains = list(/obj/item/storage/guncase/pistol/cm70)
 	faction = /datum/faction/clip
 	faction_discount = 0
@@ -497,7 +497,7 @@
 /datum/supply_pack/gun/resolution
 	name = "PD46 Resolution PDW Crate"
 	desc = "Contains a compact automatic personal defense weapon chambered in 4.6x30mm."
-	cost = 3000
+	cost = 3500
 	contains = list(/obj/item/storage/guncase/wt550)
 	crate_name = "PDW crate"
 	faction_discount = 10
@@ -506,7 +506,7 @@
 /datum/supply_pack/gun/bdm50
 	name = "BDM-50 'Akita' PDW Crate"
 	desc = "Contains a compact Automatic personal defense weapon chambered in 4.6x30mm, in use by the IRMG."
-	cost = 3000
+	cost = 3500
 	contains = list(/obj/item/storage/guncase/bdm50)
 	crate_name = "PDW crate"
 	faction = /datum/faction/inteq
@@ -516,7 +516,7 @@
 /datum/supply_pack/gun/champion
 	name = "PHB Champion Machinepistol Crate"
 	desc = "Contains a compact 9x18mm burst fire machine pistol produced by Nanotrasen advantage. For NT employee use only."
-	cost = 2500
+	cost = 2000
 	contains = list(/obj/item/storage/guncase/saber)
 	crate_name = "Machinepistol crate"
 	faction = /datum/faction/nt
@@ -546,7 +546,7 @@
 /datum/supply_pack/gun/rattlesnake
 	name = "Rattlesnake Machinepistol Crate"
 	desc = "Contains an automatic machinepistol produced by Scarborough Arms, chambered in 9x18mm."
-	cost = 2500
+	cost = 2000
 	contains = list(/obj/item/storage/guncase/rattlesnake)
 	crate_name = "Machinepistol crate"
 	faction = /datum/faction/syndicate/scarborough
@@ -556,7 +556,7 @@
 /datum/supply_pack/gun/kingsnake
 	name = "Kingsnake Machinepistol Crate"
 	desc = "Contains an automatic machinepistol chambered in 9x18mm, painted in the brown-and-gold of Inteq."
-	cost = 2500
+	cost = 2000
 	contains = list(/obj/item/storage/guncase/kingsnake)
 	crate_name = "Machinepistol crate"
 	faction = /datum/faction/inteq
@@ -576,7 +576,7 @@
 /datum/supply_pack/gun/sidewinder
 	name = "Sidewinder SMG Crate"
 	desc = "Contains a Sidewinder PDW produced by Scarborough Arms and chambered in 5.7mm for armor-piercing capabilities."
-	cost = 3000
+	cost = 3500
 	contains = list(/obj/item/storage/guncase/sidewinder)
 	crate_name = "SMG crate"
 	faction = /datum/faction/syndicate/scarborough

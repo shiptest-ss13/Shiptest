@@ -320,6 +320,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 	manufacturer = MANUFACTURER_NANOTRASEN_OLD
 	fire_sound = 'sound/weapons/gun/smg/resolution.ogg'
 
+	fire_delay = 0.13 SECONDS
+
 	spread = 7
 	spread_unwielded = 10
 
