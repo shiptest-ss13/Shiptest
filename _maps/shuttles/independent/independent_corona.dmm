@@ -1634,6 +1634,11 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/structure/closet/crate/bin{
+	pixel_x = -4
+	},
+/obj/item/trash/mirastin,
+/obj/item/shard,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen/kitchen)
 "sS" = (
@@ -2044,66 +2049,20 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/engineering/engines/starboard)
 "yL" = (
-/obj/structure/table/chem,
-/obj/structure/sink/chem{
-	pixel_y = 4
-	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/reagent_containers/glass/maunamug{
-	pixel_x = 10;
-	pixel_y = 0
-	},
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5;
 	layer = 2.030
 	},
+/obj/machinery/griddle,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen/kitchen)
 "yP" = (
-/obj/structure/closet/secure_closet/freezer{
-	anchored = 1;
-	locked = 0;
-	name = "fridge"
-	},
-/obj/item/reagent_containers/condiment/sugar{
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/condiment/rice,
-/obj/item/reagent_containers/condiment/flour{
-	pixel_y = -5
-	},
-/obj/item/reagent_containers/condiment/flour{
-	pixel_y = -5
-	},
-/obj/item/reagent_containers/condiment/milk{
-	pixel_x = -5;
-	pixel_y = -5
-	},
-/obj/item/reagent_containers/condiment/soymilk{
-	pixel_x = 5;
-	pixel_y = -5
-	},
-/obj/item/reagent_containers/condiment/enzyme,
-/obj/item/storage/fancy/egg_box,
-/obj/item/food/meat/slab,
-/obj/item/food/meat/slab,
-/obj/item/food/meat/slab,
-/obj/item/food/meat/slab,
-/obj/item/food/grown/cabbage,
-/obj/item/food/grown/cabbage,
-/obj/item/food/grown/tomato,
-/obj/item/food/grown/tomato,
-/obj/item/food/grown/grapes,
-/obj/item/food/cake/chocolate,
-/obj/item/food/sundae,
-/obj/item/food/vegetariansushiroll,
-/obj/item/food/spicyfiletsushiroll,
-/obj/item/food/nigiri_sushi,
-/obj/item/shovel/spoon,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5;
 	layer = 2.030
 	},
+/obj/machinery/oven,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen/kitchen)
 "yR" = (
@@ -2895,9 +2854,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "Hq" = (
-/obj/structure/closet/crate/bin{
-	pixel_x = -4
-	},
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -20;
@@ -2907,8 +2863,48 @@
 /obj/structure/cable/cyan{
 	icon_state = "0-2"
 	},
-/obj/item/trash/mirastin,
-/obj/item/shard,
+/obj/structure/closet/secure_closet/freezer{
+	anchored = 1;
+	locked = 0;
+	name = "fridge"
+	},
+/obj/item/reagent_containers/condiment/sugar{
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/condiment/rice,
+/obj/item/reagent_containers/condiment/flour{
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/condiment/flour{
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/condiment/milk{
+	pixel_x = -5;
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/condiment/soymilk{
+	pixel_x = 5;
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/storage/fancy/egg_box,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab/remes,
+/obj/item/food/meat/slab/tiris,
+/obj/item/food/grown/cabbage,
+/obj/item/food/grown/cabbage,
+/obj/item/food/grown/tomato,
+/obj/item/food/grown/tomato,
+/obj/item/food/grown/dotu_fime,
+/obj/item/food/grown/dotu_fime,
+/obj/item/food/cake/chocolate,
+/obj/item/food/sundae,
+/obj/item/food/vegetariansushiroll,
+/obj/item/food/spicyfiletsushiroll,
+/obj/item/food/nigiri_sushi,
+/obj/item/food/tiris_apple,
+/obj/item/shovel/spoon,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen/kitchen)
 "Hr" = (
