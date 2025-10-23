@@ -74,12 +74,12 @@
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
-/obj/item/stock_parts/cell/gun/upgraded,
 /obj/structure/safe,
 /obj/effect/landmark/mission_poi/main{
 	type_to_spawn = /obj/item/documents/nanotrasen;
 	spawn_in_containter = 1
 	},
+/obj/item/stock_parts/cell/gun/sharplite/plus,
 /turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/manager_office)
 "aW" = (
@@ -186,6 +186,26 @@
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
+"bI" = (
+/obj/effect/turf_decal/corner/opaque/red/border{
+	dir = 9
+	},
+/obj/structure/closet/secure_closet/security,
+/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/head/helmet/m10,
+/obj/item/clothing/glasses/hud/security/sunglasses,
+/obj/item/radio/headset/headset_sec/alt,
+/obj/item/restraints/handcuffs,
+/obj/item/flashlight/seclite,
+/obj/machinery/button/door{
+	id = "sec";
+	pixel_y = 22;
+	name = "Security Lockdown"
+	},
+/obj/item/stock_parts/cell/gun/sharplite/empty,
+/obj/item/stock_parts/cell/gun/sharplite/empty,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/adminstrative)
 "bQ" = (
 /obj/effect/turf_decal/trimline/opaque/lime/corner,
 /obj/structure/cable/yellow{
@@ -569,7 +589,7 @@
 /obj/effect/turf_decal/ntlogo{
 	dir = 4
 	},
-/obj/item/stock_parts/cell/gun/empty,
+/obj/item/stock_parts/cell/gun/sharplite/empty,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/lobby)
 "fs" = (
@@ -1340,11 +1360,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/lavaland/factory/lobby)
-"nr" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/gun/ballistic/automatic/pistol/challenger/no_mag,
-/turf/open/floor/plasteel/white/lava,
-/area/overmap_encounter/planetoid/lava/explored)
 "nv" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable/yellow{
@@ -1649,18 +1664,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/adminstrative)
-"pK" = (
-/obj/structure/closet/secure_closet/quartermaster{
-	populate = 0
-	},
-/obj/machinery/light/dim/directional/north,
-/obj/item/clipboard,
-/obj/item/storage/box/shipping,
-/obj/item/clothing/suit/space/hardsuit/mining/heavy,
-/obj/item/gun/energy/sharplite/x26,
-/obj/item/stock_parts/cell/gun/mini,
-/turf/open/floor/plasteel/dark,
-/area/ruin/lavaland/factory/manager_office)
 "pL" = (
 /obj/effect/turf_decal/trimline/opaque/beige/warning{
 	dir = 8
@@ -1835,6 +1838,11 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/adminstrative)
+"rk" = (
+/obj/structure/flippedtable,
+/obj/item/gun/energy/sharplite/x12,
+/turf/open/floor/plasteel/white,
+/area/ruin/lavaland/factory/lobby)
 "rF" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
@@ -2539,6 +2547,16 @@
 "yQ" = (
 /turf/closed/indestructible/titanium,
 /area/ruin/lavaland/factory/manager_office)
+"yR" = (
+/obj/effect/turf_decal/trimline/opaque/lime/warning{
+	dir = 1
+	},
+/obj/item/ammo_box/magazine/m9mm_expedition{
+	start_empty = 1
+	},
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/saber,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/dorms)
 "yU" = (
 /obj/structure/table/wood,
 /obj/machinery/microwave,
@@ -2736,6 +2754,11 @@
 	},
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
+"AY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/gun/ballistic/automatic/pistol/challenger/no_mag,
+/turf/open/floor/plasteel/white/lava,
+/area/overmap_encounter/planetoid/lava/explored)
 "Ba" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable/yellow{
@@ -2847,11 +2870,6 @@
 /obj/structure/flora/ausbushes/hell,
 /turf/open/floor/plating/asteroid/dirt/grass/lavaland,
 /area/overmap_encounter/planetoid/lava/explored)
-"Cw" = (
-/obj/structure/flippedtable,
-/obj/item/gun/energy/sharplite/x12,
-/turf/open/floor/plasteel/white,
-/area/ruin/lavaland/factory/lobby)
 "CG" = (
 /turf/open/floor/plating/rust/lava,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -3028,6 +3046,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/adminstrative)
+"EF" = (
+/obj/item/plate,
+/obj/item/trash/can/food/beans{
+	pixel_x = -4;
+	pixel_y = 7
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/lavaland/factory/warehouse)
 "EK" = (
 /obj/structure/closet/secure_closet/personal,
 /obj/effect/turf_decal/corner/opaque/ntblue,
@@ -3097,14 +3123,6 @@
 	pixel_x = -2
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/lavaland/factory/warehouse)
-"Fs" = (
-/obj/item/trash/plate,
-/obj/item/trash/can/food/beans{
-	pixel_x = -4;
-	pixel_y = 7
-	},
-/turf/open/floor/plasteel/tech,
 /area/ruin/lavaland/factory/warehouse)
 "Fv" = (
 /obj/effect/turf_decal/corner/opaque/red/border,
@@ -3607,18 +3625,20 @@
 /obj/item/stack/rods,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
-"KU" = (
-/obj/effect/turf_decal/trimline/opaque/lime/warning{
-	dir = 1
-	},
-/obj/item/ammo_box/magazine/m9mm_expedition{
-	start_empty = 1
-	},
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/saber,
-/turf/open/floor/plasteel/dark,
-/area/ruin/lavaland/factory/dorms)
 "KX" = (
 /turf/closed/wall/mineral/titanium,
+/area/ruin/lavaland/factory/manager_office)
+"KZ" = (
+/obj/structure/closet/secure_closet/quartermaster{
+	populate = 0
+	},
+/obj/machinery/light/dim/directional/north,
+/obj/item/clipboard,
+/obj/item/storage/box/shipping,
+/obj/item/clothing/suit/space/hardsuit/mining/heavy,
+/obj/item/gun/energy/sharplite/x26,
+/obj/item/stock_parts/cell/gun/sharplite/mini,
+/turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/manager_office)
 "La" = (
 /obj/structure/flora/ausbushes/sparsegrass/hell,
@@ -3762,26 +3782,6 @@
 /obj/structure/salvageable/computer,
 /turf/open/floor/plasteel/dark/lava,
 /area/overmap_encounter/planetoid/cave/explored)
-"Mw" = (
-/obj/effect/turf_decal/corner/opaque/red/border{
-	dir = 9
-	},
-/obj/structure/closet/secure_closet/security,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
-/obj/item/clothing/suit/armor/vest,
-/obj/item/clothing/head/helmet/m10,
-/obj/item/clothing/glasses/hud/security/sunglasses,
-/obj/item/radio/headset/headset_sec/alt,
-/obj/item/restraints/handcuffs,
-/obj/item/flashlight/seclite,
-/obj/machinery/button/door{
-	id = "sec";
-	pixel_y = 22;
-	name = "Security Lockdown"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/lavaland/factory/adminstrative)
 "MC" = (
 /obj/effect/turf_decal/trimline/opaque/beige/warning{
 	dir = 4
@@ -3867,6 +3867,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
+"Nc" = (
+/obj/effect/turf_decal/corner/opaque/red/border{
+	dir = 5
+	},
+/obj/structure/guncloset,
+/obj/item/gun/energy/sharplite/x12,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/adminstrative)
 "Ne" = (
 /obj/structure/flora/tree/dead/tall,
 /turf/open/floor/plating/asteroid/dirt/grass/lavaland,
@@ -4890,14 +4898,6 @@
 /obj/effect/mob_spawn/human/corpse/ramzi,
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
-"Yn" = (
-/obj/effect/turf_decal/corner/opaque/red/border{
-	dir = 5
-	},
-/obj/structure/guncloset,
-/obj/item/gun/energy/sharplite/x12,
-/turf/open/floor/plasteel/dark,
-/area/ruin/lavaland/factory/adminstrative)
 "Yo" = (
 /obj/machinery/light/directional/west,
 /obj/item/chair,
@@ -5556,7 +5556,7 @@ SK
 Df
 lB
 Zc
-Mw
+bI
 jf
 EC
 Zc
@@ -5664,7 +5664,7 @@ lw
 IX
 Sq
 Zc
-Yn
+Nc
 jx
 ex
 Zc
@@ -6207,7 +6207,7 @@ KX
 nm
 hf
 fr
-Cw
+rk
 Om
 Om
 Km
@@ -6279,7 +6279,7 @@ Ho
 vv
 iP
 eE
-Fs
+EF
 qP
 zx
 iP
@@ -6483,7 +6483,7 @@ Lb
 pb
 pb
 Ci
-nr
+AY
 gT
 Yp
 io
@@ -6981,7 +6981,7 @@ qe
 NP
 CG
 SL
-pK
+KZ
 so
 ha
 Iz
@@ -7339,7 +7339,7 @@ MH
 MH
 sZ
 YJ
-KU
+yR
 nA
 YJ
 sZ
