@@ -25,11 +25,19 @@
 /datum/looping_sound/generator
 	start_sound = 'sound/machines/generator/generator_start.ogg'
 	start_length = 4
-	mid_sounds = list('sound/machines/generator/generator_mid1.ogg'=1, 'sound/machines/generator/generator_mid2.ogg'=1, 'sound/machines/generator/generator_mid3.ogg'=1)
+	mid_sounds = list('sound/machines/generator/generator_mid1.ogg'= 1, 'sound/machines/generator/generator_mid2.ogg'= 1, 'sound/machines/generator/generator_mid3.ogg'= 1)
 	mid_length = 4
 	end_sound = 'sound/machines/generator/generator_end.ogg'
 	volume = 40
 
+/datum/looping_sound/oven
+	start_sound = 'sound/machines/oven/oven_loop_start.ogg'
+	start_length = 12
+	mid_sounds = list('sound/machines/oven/oven_loop_mid.ogg' = 1)
+	mid_length = 14
+	end_sound = 'sound/machines/oven/oven_loop_end.ogg'
+	volume = 100
+	falloff_exponent = 4
 
 /datum/looping_sound/deep_fryer
 	start_sound = 'sound/machines/fryer/deep_fryer_immerse.ogg' //my immersions
@@ -40,6 +48,11 @@
 	volume = 15
 
 /datum/looping_sound/grill
+	mid_sounds = list('sound/machines/grill/grillsizzle.ogg' = 1)
+	mid_length = 19
+	volume = 40
+
+/datum/looping_sound/deep_fryer
 	mid_length = 2
 	mid_sounds = list('sound/machines/fryer/deep_fryer_1.ogg' = 1, 'sound/machines/fryer/deep_fryer_2.ogg' = 1)
 	volume = 10
