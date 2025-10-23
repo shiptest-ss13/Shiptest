@@ -1,4 +1,4 @@
-s//Human Overlay Index Shortcuts for alternate_worn_layer, layers
+//Human Overlay Index Shortcuts for alternate_worn_layer, layers
 //Because I *KNOW* somebody will think layer+1 means "above"
 //IT DOESN'T OK, IT MEANS "UNDER"
 #define UNDER_SUIT_LAYER (SUIT_LAYER+1)
