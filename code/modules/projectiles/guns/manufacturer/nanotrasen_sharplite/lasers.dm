@@ -173,6 +173,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/sharplite)
 
 	zoomable = FALSE
+	zoom_amt = PISTOL_ZOOM
 	wield_slowdown = SMG_SLOWDOWN
 	aimed_wield_slowdown = LONG_RIFLE_AIM_SLOWDOWN
 	wield_delay = 0.4 SECONDS
