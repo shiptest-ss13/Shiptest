@@ -775,7 +775,7 @@
 	turf_type = /turf/open/floor/plating/asteroid/whitesands/lit
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried/lit
 
-/turf/closed/mineral/random/high_chance
+/turf/closed/mineral/random/high_chance/whitesands
 	icon = 'icons/turf/walls/ws_walls.dmi'
 	icon_state = "smoothrocks-0"
 	smooth_icon = 'icons/turf/walls/ws_walls.dmi'

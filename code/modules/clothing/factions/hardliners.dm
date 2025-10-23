@@ -44,6 +44,13 @@
 	item_state = "whitecloth"
 	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
 
+	equip_sound = 'sound/items/equip/cloth_equip.ogg'
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_COAT
+	equip_delay_other = EQUIP_DELAY_COAT * 1.5
+	strip_delay = EQUIP_DELAY_COAT * 1.5
+
 /obj/item/clothing/suit/hazardvest/hardliners
 	name = "blood-red hazard vest"
 	desc = "A white high-visibility vest, worn by mechanics associated with Hardliners. Safety first!"
@@ -110,6 +117,13 @@
 	blood_overlay_type = "coat"
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	togglename = "buttons"
+
+	equipping_sound = EQUIP_SOUND_MED_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_MED_GENERIC
+	equip_delay_self = EQUIP_DELAY_SUIT
+	equip_delay_other = EQUIP_DELAY_SUIT * 1.5
+	strip_delay = EQUIP_DELAY_SUIT * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT | EQUIP_SLOWDOWN
 
 /obj/item/clothing/suit/toggle/armor/vest/hardliners/Initialize()
 	. = ..()

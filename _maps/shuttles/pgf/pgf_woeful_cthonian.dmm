@@ -139,7 +139,7 @@
 "bQ" = (
 /obj/structure/table,
 /obj/machinery/light/directional/south,
-/obj/item/food/toastedsandwich{
+/obj/item/food/grilled_cheese_sandwich{
 	pixel_y = 8;
 	pixel_x = -3
 	},
@@ -1076,9 +1076,7 @@
 /obj/item/gun/energy/kalix{
 	pixel_y = -8
 	},
-/obj/item/gun/energy/kalix/pistol{
-	pixel_y = 0
-	},
+/obj/item/gun/energy/kalix/nock,
 /turf/open/floor/plasteel/rockvault,
 /area/ship/security/armory)
 "jQ" = (
@@ -2201,6 +2199,18 @@
 /obj/item/stock_parts/cell/gun/kalix{
 	pixel_x = -9;
 	pixel_y = -1
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -9;
+	pixel_y = 4
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -9;
+	pixel_y = -1
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -9;
+	pixel_y = 9
 	},
 /obj/item/stock_parts/cell/gun/kalix{
 	pixel_x = -9;

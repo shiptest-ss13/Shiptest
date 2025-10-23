@@ -25,7 +25,7 @@
 		if(.) //not dead
 			handle_blood()
 
-		if(isLivingSSD()) // If you're disconnected, you're going to sleep
+		if(isLivingSSD() && !ignore_SSD) // If you're disconnected, you're going to sleep
 			if(trunc((world.time - lastclienttime) / (3 MINUTES)) > 0) // After a three minute grace period, your character will fall asleep
 				if(AmountSleeping() < 20)
 					AdjustSleeping(20) // Adjust every 10 seconds
