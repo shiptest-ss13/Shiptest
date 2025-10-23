@@ -85,7 +85,7 @@
 	if(H.put_in_hands(N))
 		to_chat(H, span_notice("You ignite a small flame in your mouth."))
 		var/obj/item/organ/stomach/belly = owner.getorganslot(ORGAN_SLOT_STOMACH)
-		belly.reagents.del_reagent(/datum/reagent/fuel,4)
+		belly.reagents.remove_reagent(/datum/reagent/fuel,4)
 	else
 		qdel(N)
 		to_chat(H, span_warning("You don't have any free hands."))
