@@ -74,12 +74,12 @@
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
-/obj/item/stock_parts/cell/gun/upgraded,
 /obj/structure/safe,
 /obj/effect/landmark/mission_poi/main{
 	type_to_spawn = /obj/item/documents/nanotrasen;
 	spawn_in_containter = 1
 	},
+/obj/item/stock_parts/cell/gun/sharplite/plus,
 /turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/manager_office)
 "aW" = (
@@ -191,8 +191,6 @@
 	dir = 9
 	},
 /obj/structure/closet/secure_closet/security,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
 /obj/item/clothing/suit/armor/vest,
 /obj/item/clothing/head/helmet/m10,
 /obj/item/clothing/glasses/hud/security/sunglasses,
@@ -204,6 +202,8 @@
 	pixel_y = 22;
 	name = "Security Lockdown"
 	},
+/obj/item/stock_parts/cell/gun/sharplite/empty,
+/obj/item/stock_parts/cell/gun/sharplite/empty,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/adminstrative)
 "bQ" = (
@@ -589,7 +589,7 @@
 /obj/effect/turf_decal/ntlogo{
 	dir = 4
 	},
-/obj/item/stock_parts/cell/gun/empty,
+/obj/item/stock_parts/cell/gun/sharplite/empty,
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/lobby)
 "fs" = (
@@ -3637,7 +3637,7 @@
 /obj/item/storage/box/shipping,
 /obj/item/clothing/suit/space/hardsuit/mining/heavy,
 /obj/item/gun/energy/sharplite/x26,
-/obj/item/stock_parts/cell/gun/mini,
+/obj/item/stock_parts/cell/gun/sharplite/mini,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/manager_office)
 "La" = (
