@@ -20,7 +20,9 @@
 	icon_state = "concussion"
 	ex_dev = 0
 	ex_heavy = 2
+	heavy_damage = 2
 	ex_light = 3
+	light_damage = 1
 	ex_flame = 3
 
 /obj/item/grenade/frag

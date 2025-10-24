@@ -455,7 +455,7 @@
 		..()
 
 
-/mob/living/carbon/human/ex_act(severity, target, origin, light_dam = 30, light_item_dam = 50, heavy_dam = 100, heavy_item_dam = 200)
+/mob/living/carbon/human/ex_act(severity, target, origin, light_dam = 40, light_item_dam = 45, heavy_dam = 200, heavy_item_dam = 75)
 	if(TRAIT_BOMBIMMUNE in dna.species.species_traits)
 		return
 	..()
@@ -476,8 +476,8 @@
 		if (EXPLODE_DEVASTATE)
 			if(bomb_armor < EXPLODE_GIB_THRESHOLD) //gibs the mob if their bomb armor is lower than EXPLODE_GIB_THRESHOLD
 				for(var/I in contents)
-					var/list/to_explode = list(I,light_damage,light_item_damage,heavy_damage,heavy_item_damage)
 					var/atom/A = I
+					var/list/to_explode = list(A,light_dam,light_item_dam,heavy_dam,heavy_item_dam)
 					if(!QDELETED(A))
 						switch(severity)
 							if(EXPLODE_DEVASTATE)
@@ -495,25 +495,25 @@
 				damage_clothes(400 - bomb_armor, BRUTE, "bomb")
 
 		if (EXPLODE_HEAVY)
-			brute_loss = 35
-			burn_loss = 35
+			brute_loss = heavy_dam/2
+			burn_loss = heavy_dam/2
 			if(bomb_armor)
 				brute_loss = 20*(2 - round(bomb_armor*0.01, 0.05))
 				burn_loss = brute_loss				//damage gets reduced from 120 to up to 60 combined brute+burn
 			intensity = 2
 			ear_damage = 30
 			deafness_power = 120
-			damage_clothes(max(rand(90,150) - bomb_armor, 0), BRUTE, "bomb")
+			damage_clothes(max(heavy_item_dam - bomb_armor, 0), BRUTE, "bomb")
 			Unconscious(20)							//short amount of time for follow up attacks against elusive enemies like wizards
 			Knockdown(200 - (bomb_armor * 1.6)) 	//between ~4 and ~20 seconds of knockdown depending on bomb armor
 
 		if(EXPLODE_LIGHT)
-			brute_loss = 20
-			burn_loss = 20
+			brute_loss = light_dam/2
+			burn_loss = light_dam/2
 			if(bomb_armor)
 				brute_loss = 15*(2 - round(bomb_armor*0.01, 0.05))
 				burn_loss = bruteloss
-			damage_clothes(max(rand(10,90) - bomb_armor, 0), BRUTE, "bomb")
+			damage_clothes(max(light_item_dam - bomb_armor, 0), BRUTE, "bomb")
 			intensity = 1.5
 			ear_damage = 15
 			deafness_power = 60
