@@ -122,3 +122,31 @@
 2025-10-23:
   DIB-DOG:
   - bugfix: Empty Etherbor cells can fit in Etherbor guns like they should.
+2025-10-24:
+  FalloutFalcon, xenomni:
+  - rscadd: Silly snow monkeys, sprites done by xenomni
+  Gristlebee:
+  - bugfix: Wrecked Factory gun cells and doors
+  SapphicOverload:
+  - rscadd: IPC frames and prosthetic limbs can now be fully customized
+  - bugfix: Fixed bodyparts layering incorrectly
+  - rscdel: Removed non-digitigrade sarathi for the sake of less evil code
+  - refactor: Refactored bodyparts code to allow for species with more or fewer limbs
+      than normal
+  - refactor: Refactored IPC chassis code
+  - imagedel: Removed redundant IPC chassis sprites
+  SomeguyManperson:
+  - bugfix: sarathi can once again do oral pyrotechnics
+  generalthrax:
+  - bugfix: fixed M10 and X11 helmets from reskinning to be invisible
+  - rscadd: You can now buy mini sharplite cells off cargo for 300
+  thearbiber:
+  - bugfix: arrowsong bounty room layout
+  thgvr:
+  - rscadd: Changed a lot of cooking recipes away from the microwave
+  - rscadd: Griddles and Ovens
+  - rscadd: You can crack eggs onto a griddle
+  - rscadd: Pancake batter, pour onto griddles
+  - tweak: Many dough recipes (pizza, bread, etc) now require ovens
+  - tweak: Many food-related items will show information on how to process them in
+      the description.
