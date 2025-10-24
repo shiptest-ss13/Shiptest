@@ -60,3 +60,9 @@
 	mix_message = "The mixture concentrates into itself, taking on a deep coloration!"
 	required_temp = 150
 	is_cold_recipe = TRUE
+
+/datum/chemical_reaction/cinesia
+	results = list(/datum/reagent/drug/cinesia = 6)
+	required_reagents = list(/datum/reagent/phenol = 1, /datum/reagent/medicine/ephedrine = 2)
+	mix_message = "The mixture rapidly takes on a brown coloration!"
+	required_temp = 347
