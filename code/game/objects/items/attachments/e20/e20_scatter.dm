@@ -63,7 +63,7 @@
 	desc = "A mod for the E-20 that overclocks the plasma emitters, causing the resulting blast to be extremely damaging. Related to the E-50, and may even contain parts from it."
 
 	icon_state = "e20_heavy"
-	gun_icon_state = "e20_scatter"
+	gun_icon_state = "e20_heavy"
 	add_desc = "It seems to have been modified with an overclock mod, making the weapon extremely damaging in exchange for extreme inefficency"
 
 	allow_icon_state_prefixes = TRUE
@@ -96,9 +96,9 @@
 	name = "E-20 Rapid Efficency mod"
 	desc = "A mod for the E-20 that makes the plasma heater less powerful, causing the resulting blast to be less damaging. Related to the E-50, and may even contain parts from it."
 
-	icon_state = "e20_heavy"
-	gun_icon_state = "e20_scatter"
-	add_desc = "It seems to have been modified with an overclock mod, making the weapon extremely damaging in exchange for extreme inefficency"
+	icon_state = "e20_efficency"
+	gun_icon_state = "e20_efficency"
+	add_desc = "It seems to have been modified with an less powerful emitter, making the weapon more effiecnt in exchange for less damage, along with losing its mining effects"
 
 	allow_icon_state_prefixes = TRUE
 	slot = ATTACHMENT_SLOT_MUZZLE
@@ -107,16 +107,16 @@
 	spread_unwielded_mod = 10
 	wield_delay = 0.1 SECONDS
 
-/obj/item/attachment/e20mod/heavy/apply_attachment(obj/item/gun/gun, mob/user)
+/obj/item/attachment/e20mod/efficency/apply_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
 	var/obj/item/gun/energy/laser/e20/our_gun = gun
-	our_gun.ammo_type = list(/obj/item/ammo_casing/energy/lasergun/eoehoma/heavy)
+	our_gun.ammo_type = list(/obj/item/ammo_casing/energy/lasergun/eoehoma/wasp)
 	our_gun.update_ammo_types()
 	gun.chambered = null
 	our_gun.recharge_newshot()
 	gun.update_appearance()
 
-/obj/item/attachment/e20mod/heavy/remove_attachment(obj/item/gun/gun, mob/user)
+/obj/item/attachment/e20mod/efficency/remove_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
 	var/obj/item/gun/energy/laser/e20/our_gun = gun
 	our_gun.ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma/mining)
