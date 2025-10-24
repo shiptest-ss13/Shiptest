@@ -86,6 +86,8 @@ GLOBAL_LIST_EMPTY(dummy_mob_list)
 		GLOB.dummy_mob_list -= dummy
 		qdel(dummy)
 
+
+/*
 // To speed up the preference menu, we apply 1 filter to the entire mob
 /mob/living/carbon/human/dummy/regenerate_icons()
 	. = ..()
@@ -96,7 +98,6 @@ GLOBAL_LIST_EMPTY(dummy_mob_list)
 		return ..()
 
 // Not necessary with above
-/*
 /mob/living/carbon/human/dummy/apply_height_offsets(image/appearance, upper_torso)
 	return
 */
