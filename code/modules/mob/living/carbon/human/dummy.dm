@@ -96,6 +96,7 @@ GLOBAL_LIST_EMPTY(dummy_mob_list)
 		return ..()
 
 // Not necessary with above
+/*
 /mob/living/carbon/human/dummy/apply_height_offsets(image/appearance, upper_torso)
 	return
-
+*/
