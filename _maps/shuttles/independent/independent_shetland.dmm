@@ -693,11 +693,17 @@
 /turf/closed/wall/r_wall,
 /area/ship/crew/janitor)
 "fX" = (
-/obj/structure/filingcabinet/double,
 /obj/effect/turf_decal/corner/opaque/black,
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 8
 	},
+/obj/machinery/suit_storage_unit/inherit/locked{
+	req_access_txt = "1"
+	},
+/obj/item/clothing/suit/space/syndicate/generic,
+/obj/item/clothing/head/helmet/space/syndicate/generic,
+/obj/item/tank/jetpack/oxygen/security,
+/obj/item/clothing/mask/gas,
 /turf/open/floor/plasteel/grimy,
 /area/ship/security)
 "fY" = (
@@ -1818,13 +1824,13 @@
 	req_access_txt = "1";
 	req_ship_access = 1
 	},
-/obj/item/clothing/head/helmet,
 /obj/effect/turf_decal/box,
 /obj/item/clothing/glasses/cheapsuns,
 /obj/item/melee/classic_baton,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/suit/armor/vest,
 /obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/head/helmet/m10,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "pX" = (
