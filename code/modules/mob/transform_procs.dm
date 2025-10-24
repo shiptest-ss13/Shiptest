@@ -346,7 +346,7 @@
 /mob/living/carbon/human/AIize(transfer_after = TRUE, client/preference_source)
 	if (notransform)
 		return
-	for(var/t in bodyparts)
+	for(var/t in get_all_bodyparts())
 		qdel(t)
 
 	return ..()
@@ -409,7 +409,7 @@
 	regenerate_icons()
 	icon = null
 	invisibility = INVISIBILITY_MAXIMUM
-	for(var/t in bodyparts)
+	for(var/t in get_all_bodyparts())
 		qdel(t)
 
 	var/mob/living/silicon/robot/R = new /mob/living/silicon/robot(loc)
@@ -453,7 +453,7 @@
 	regenerate_icons()
 	icon = null
 	invisibility = INVISIBILITY_MAXIMUM
-	for(var/t in bodyparts)
+	for(var/t in get_all_bodyparts())
 		qdel(t)
 
 	var/alien_caste = pick("Hunter","Sentinel","Drone")
@@ -484,7 +484,7 @@
 	regenerate_icons()
 	icon = null
 	invisibility = INVISIBILITY_MAXIMUM
-	for(var/t in bodyparts)
+	for(var/t in get_all_bodyparts())
 		qdel(t)
 
 	var/mob/living/simple_animal/slime/new_slime
@@ -516,7 +516,7 @@
 	regenerate_icons()
 	icon = null
 	invisibility = INVISIBILITY_MAXIMUM
-	for(var/t in bodyparts)	//this really should not be necessary
+	for(var/t in get_all_bodyparts())	//this really should not be necessary
 		qdel(t)
 
 	var/mob/living/simple_animal/pet/dog/corgi/new_corgi = new /mob/living/simple_animal/pet/dog/corgi (loc)
@@ -570,7 +570,7 @@
 	icon = null
 	invisibility = INVISIBILITY_MAXIMUM
 
-	for(var/t in bodyparts)
+	for(var/t in get_all_bodyparts())
 		qdel(t)
 
 	var/mob/new_mob = new mobpath(src.loc)
