@@ -209,11 +209,6 @@
 	targetitem = /obj/item/laser_pointer
 	difficulty = 5
 
-/datum/objective_item/special/corgimeat
-	name = "a piece of corgi meat."
-	targetitem = /obj/item/food/meat/slab/corgi
-	difficulty = 5
-
 /datum/objective_item/stack/New()
 	..()
 	if(TargetExists())

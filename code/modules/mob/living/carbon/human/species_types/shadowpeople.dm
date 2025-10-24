@@ -5,7 +5,6 @@
 	// Humans cursed to stay in the darkness, lest their life forces drain. They regain health in shadow and die in light.
 	name = "???"
 	id = SPECIES_SHADOW
-	meat = /obj/item/food/meat/slab/human/mutant/shadow
 	species_traits = list(NOBLOOD)
 	inherent_traits = list(TRAIT_RADIMMUNE,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH)
 	inherent_factions = list("faithless")
