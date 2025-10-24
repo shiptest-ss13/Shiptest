@@ -214,7 +214,7 @@
 
 /mob/living/carbon/human/Topic(href, href_list)
 	if(href_list["embedded_object"] && usr.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
-		var/obj/item/bodypart/L = locate(href_list["embedded_limb"]) in bodyparts
+		var/obj/item/bodypart/L = locate(href_list["embedded_limb"]) in get_all_bodyparts()
 		if(!L)
 			return
 		var/obj/item/I = locate(href_list["embedded_object"]) in L.embedded_objects
@@ -308,10 +308,14 @@
 					return
 				var/span = "notice"
 				var/status = ""
+				var/obj/item/bodypart/body_part
 				if(getBruteLoss())
 					to_chat(usr, "<b>Physical trauma analysis:</b>")
-					for(var/obj/item/bodypart/BP as anything in bodyparts)
-						var/brutedamage = BP.brute_dam
+					for(var/zone in bodyparts)
+						body_part = bodyparts[zone]
+						if(!body_part)
+							continue
+						var/brutedamage = body_part.brute_dam
 						if(brutedamage > 0)
 							status = "received minor physical injuries."
 							span = "notice"
@@ -322,11 +326,14 @@
 							status = "sustained major trauma!"
 							span = "userdanger"
 						if(brutedamage)
-							to_chat(usr, "<span class='[span]'>[BP] appears to have [status]</span>")
+							to_chat(usr, "<span class='[span]'>[body_part] appears to have [status]</span>")
 				if(getFireLoss())
 					to_chat(usr, "<b>Analysis of skin burns:</b>")
-					for(var/obj/item/bodypart/BP as anything in bodyparts)
-						var/burndamage = BP.burn_dam
+					for(var/zone in bodyparts)
+						body_part = bodyparts[zone]
+						if(!body_part)
+							continue
+						var/burndamage = body_part.burn_dam
 						if(burndamage > 0)
 							status = "signs of minor burns."
 							span = "notice"
@@ -337,7 +344,7 @@
 							status = "major burns!"
 							span = "userdanger"
 						if(burndamage)
-							to_chat(usr, "<span class='[span]'>[BP] appears to have [status]</span>")
+							to_chat(usr, "<span class='[span]'>[body_part] appears to have [status]</span>")
 				if(getOxyLoss())
 					to_chat(usr, span_danger("Patient has signs of suffocation, emergency treatment may be required!"))
 				if(getToxLoss() > 20)
@@ -863,14 +870,18 @@
 			hud_used.healthdoll.cut_overlays()
 			if(stat != DEAD)
 				hud_used.healthdoll.icon_state = "healthdoll_OVERLAY"
-				for(var/obj/item/bodypart/BP as anything in bodyparts)
+				var/obj/item/bodypart/body_part
+				for(var/zone in bodyparts)
+					body_part = bodyparts[zone]
+					if(!body_part)
+						continue
 					var/numbing_wound = FALSE
-					for(var/datum/wound/W in BP.wounds)
+					for(var/datum/wound/W in body_part.wounds)
 						if(W.wound_type == WOUND_BURN)
 							numbing_wound = TRUE
 
-					var/damage = BP.burn_dam + BP.brute_dam
-					var/comparison = (BP.max_damage/5)
+					var/damage = body_part.burn_dam + body_part.brute_dam
+					var/comparison = (body_part.max_damage/5)
 					var/icon_num = 0
 					if(damage)
 						icon_num = 1
@@ -885,7 +896,7 @@
 					if(hal_screwyhud == SCREWYHUD_HEALTHY || numbing_wound)
 						icon_num = 0
 					if(icon_num)
-						hud_used.healthdoll.add_overlay(mutable_appearance('icons/hud/screen_gen.dmi', "[BP.body_zone][icon_num]"))
+						hud_used.healthdoll.add_overlay(mutable_appearance('icons/hud/screen_gen.dmi', "[zone][icon_num]"))
 				for(var/t in get_missing_limbs()) //Missing limbs
 					hud_used.healthdoll.add_overlay(mutable_appearance('icons/hud/screen_gen.dmi', "[t]6"))
 				for(var/t in get_disabled_limbs()) //Disabled limbs

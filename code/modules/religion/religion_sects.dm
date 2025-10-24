@@ -97,9 +97,12 @@
 	if(!ishuman(L))
 		return FALSE
 	var/mob/living/carbon/human/H = L
-	for(var/X in H.bodyparts)
-		var/obj/item/bodypart/BP = X
-		if(BODYTYPE_ROBOTIC in BP.bodytype)
+	var/obj/item/bodypart/body_part
+	for(var/zone in H.bodyparts)
+		body_part = H.bodyparts[zone]
+		if(!body_part)
+			continue
+		if(BODYTYPE_ROBOTIC in body_part.bodytype)
 			to_chat(user, span_warning("[GLOB.deity] refuses to heal this metallic taint!"))
 			return TRUE
 
@@ -107,8 +110,7 @@
 	var/list/hurt_limbs = H.get_damaged_bodyparts(1, 1, null, BODYTYPE_ORGANIC)
 
 	if(hurt_limbs.len)
-		for(var/X in hurt_limbs)
-			var/obj/item/bodypart/affecting = X
+		for(var/obj/item/bodypart/affecting as anything in hurt_limbs)
 			if(affecting.heal_damage(heal_amt, heal_amt, null, BODYTYPE_ORGANIC))
 				H.update_damage_overlays()
 		H.visible_message(span_notice("[user] heals [H] with the power of [GLOB.deity]!"))

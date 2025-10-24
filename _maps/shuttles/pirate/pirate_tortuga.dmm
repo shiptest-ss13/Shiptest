@@ -738,6 +738,29 @@
 /obj/structure/chair/comfy/grey/old/directional/south,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/crewtwo)
+"gO" = (
+/obj/structure/rack,
+/obj/item/storage/toolbox/ammo/c9mm{
+	pixel_x = -10;
+	pixel_y = 10
+	},
+/obj/item/storage/toolbox/ammo/a308{
+	pixel_x = -10
+	},
+/obj/item/storage/toolbox/ammo/c9mm{
+	pixel_x = 10;
+	pixel_y = 10
+	},
+/obj/item/storage/toolbox/ammo/a308{
+	pixel_y = 0;
+	pixel_x = 10
+	},
+/obj/item/storage/toolbox/ammo/shotgun{
+	pixel_x = 0;
+	pixel_y = 9
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/security/armory)
 "gQ" = (
 /obj/machinery/firealarm/directional/east,
 /obj/structure/table,
@@ -919,29 +942,6 @@
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
-"iB" = (
-/obj/structure/rack,
-/obj/item/storage/toolbox/ammo/c9mm{
-	pixel_x = -10;
-	pixel_y = 10
-	},
-/obj/item/storage/toolbox/ammo/a308{
-	pixel_x = -10
-	},
-/obj/item/storage/toolbox/ammo/c9mm{
-	pixel_x = 10;
-	pixel_y = 10
-	},
-/obj/item/storage/toolbox/ammo/a308{
-	pixel_y = 0;
-	pixel_x = 10
-	},
-/obj/item/storage/toolbox/ammo/shotgun{
-	pixel_x = 0;
-	pixel_y = 9
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ship/security/armory)
 "iD" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -3118,29 +3118,6 @@
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
-"Dw" = (
-/obj/machinery/light/directional/north,
-/obj/item/storage/pouch/squad,
-/obj/item/clothing/suit/armor/vest/marine/frontier,
-/obj/item/clothing/head/helmet/frontier,
-/obj/item/megaphone,
-/obj/item/clothing/under/frontiersmen/officer{
-	pixel_x = -5
-	},
-/obj/item/clothing/shoes/jackboots{
-	pixel_y = -13
-	},
-/obj/item/clothing/head/beret/sec/frontier/officer,
-/obj/item/radio/headset/pirate/alt,
-/obj/item/binoculars,
-/obj/structure/closet/secure_closet{
-	icon_state = "hos";
-	name = "Deck Boss' Locker";
-	req_access_txt = "3"
-	},
-/obj/item/storage/guncase/slammer,
-/turf/open/floor/plasteel/tech,
-/area/ship/bridge)
 "DF" = (
 /obj/structure/cable/yellow{
 	icon_state = "6-8"
@@ -3814,6 +3791,29 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
+"IF" = (
+/obj/machinery/light/directional/north,
+/obj/item/storage/pouch/squad,
+/obj/item/clothing/suit/armor/vest/marine/frontier,
+/obj/item/clothing/head/helmet/frontier,
+/obj/item/megaphone,
+/obj/item/clothing/under/frontiersmen/officer{
+	pixel_x = -5
+	},
+/obj/item/clothing/shoes/jackboots{
+	pixel_y = -13
+	},
+/obj/item/clothing/head/beret/sec/frontier/officer,
+/obj/item/radio/headset/pirate/alt,
+/obj/item/binoculars,
+/obj/structure/closet/secure_closet{
+	icon_state = "hos";
+	name = "Deck Boss' Locker";
+	req_access_txt = "3"
+	},
+/obj/item/storage/guncase/slammer,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
 "II" = (
 /obj/machinery/door/airlock/hatch,
 /obj/structure/cable/yellow{
@@ -4021,6 +4021,12 @@
 	id = "watchdog_cargo"
 	},
 /turf/open/floor/plating,
+/area/ship/cargo)
+"KE" = (
+/obj/machinery/griddle,
+/obj/machinery/light/directional/east,
+/obj/effect/decal/cleanable/wrapping,
+/turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "KM" = (
 /obj/structure/railing{
@@ -5003,12 +5009,6 @@
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/crewtwo)
-"Su" = (
-/obj/machinery/grill,
-/obj/machinery/light/directional/east,
-/obj/effect/decal/cleanable/wrapping,
-/turf/open/floor/plasteel/mono,
-/area/ship/cargo)
 "Sv" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -6600,7 +6600,7 @@ Xs
 fj
 aT
 bx
-Su
+KE
 wQ
 fU
 hC
@@ -6922,7 +6922,7 @@ yj
 iW
 Po
 Vt
-iB
+gO
 gD
 yH
 FP
@@ -7112,7 +7112,7 @@ fE
 YE
 ah
 ah
-Dw
+IF
 VH
 qT
 gB

@@ -3,6 +3,7 @@
 	limb_id = SPECIES_PLASMAMAN
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
+	greyscale_eyes = FALSE
 
 /obj/item/bodypart/chest/plasmaman
 	static_icon = 'icons/mob/species/plasmaman/bodyparts.dmi'

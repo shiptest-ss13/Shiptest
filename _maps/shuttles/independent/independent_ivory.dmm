@@ -6,44 +6,6 @@
 /obj/machinery/light/floor,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
-"ao" = (
-/obj/structure/closet/secure_closet{
-	icon_state = "cabinet";
-	name = "captain's wardobe";
-	req_access_txt = "20";
-	close_sound = 'sound/machines/wooden_closet_close.ogg';
-	open_sound = 'sound/machines/wooden_closet_open.ogg';
-	desc = "It's a card-locked cabinet.";
-	anchored = 1
-	},
-/obj/item/storage/backpack/satchel/cap,
-/obj/item/storage/backpack/captain,
-/obj/item/clothing/under/rank/command/captain,
-/obj/item/clothing/under/rank/command/captain/skirt,
-/obj/item/clothing/shoes/laceup{
-	pixel_y = -13;
-	pixel_x = -6
-	},
-/obj/item/clothing/suit/jacket/miljacket,
-/obj/item/clothing/gloves/fingerless,
-/obj/item/clothing/head/caphat,
-/obj/item/clothing/shoes/jackboots{
-	pixel_y = -7;
-	pixel_x = 8
-	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable/green{
-	icon_state = "0-4"
-	},
-/obj/machinery/light_switch{
-	pixel_x = 12;
-	pixel_y = 20
-	},
-/obj/machinery/light/directional/west,
-/turf/open/floor/suns/hatch{
-	color = "#792f27"
-	},
-/area/ship/crew/dorm/captain)
 "as" = (
 /turf/open/floor/wood/maple,
 /area/ship/crew/ccommons)
@@ -208,6 +170,44 @@
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
+"cr" = (
+/obj/structure/closet/secure_closet{
+	icon_state = "cabinet";
+	name = "captain's wardobe";
+	req_access_txt = "20";
+	close_sound = 'sound/machines/wooden_closet_close.ogg';
+	open_sound = 'sound/machines/wooden_closet_open.ogg';
+	desc = "It's a card-locked cabinet.";
+	anchored = 1
+	},
+/obj/item/storage/backpack/satchel/cap,
+/obj/item/storage/backpack/captain,
+/obj/item/clothing/under/rank/command/captain,
+/obj/item/clothing/under/rank/command/captain/skirt,
+/obj/item/clothing/shoes/laceup{
+	pixel_y = -13;
+	pixel_x = -6
+	},
+/obj/item/clothing/suit/jacket/miljacket,
+/obj/item/clothing/gloves/fingerless,
+/obj/item/clothing/head/caphat,
+/obj/item/clothing/shoes/jackboots{
+	pixel_y = -7;
+	pixel_x = 8
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable/green{
+	icon_state = "0-4"
+	},
+/obj/machinery/light_switch{
+	pixel_x = 12;
+	pixel_y = 20
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/suns/hatch{
+	color = "#792f27"
+	},
+/area/ship/crew/dorm/captain)
 "cC" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew)
@@ -301,6 +301,13 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ship/crew/dorm/captain)
+"ek" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8;
+	color = "#FFFFFF"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "es" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/light_switch{
@@ -405,18 +412,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
-"eP" = (
-/obj/docking_port/stationary{
-	dheight = 1;
-	dir = 8;
-	disable_on_owner_ship_dock = 1;
-	dwidth = 20;
-	height = 31;
-	name = "Ivory Stern Dock";
-	width = 40
-	},
-/turf/template_noop,
-/area/template_noop)
 "fa" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -613,6 +608,18 @@
 "iC" = (
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
+"iO" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 8;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 20;
+	height = 31;
+	name = "Ivory Stern Dock";
+	width = 40
+	},
+/turf/template_noop,
+/area/template_noop)
 "iT" = (
 /obj/structure/table/reinforced,
 /obj/machinery/fax/indie{
@@ -858,34 +865,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
-"nI" = (
-/obj/structure/table/chem{
-	name = "kitchen counter"
-	},
-/obj/item/cutting_board{
-	pixel_y = 1;
-	anchored = 1;
-	pixel_x = 7
-	},
-/obj/item/melee/knife/kitchen{
-	pixel_y = 2;
-	pixel_x = 4
-	},
-/obj/effect/turf_decal/corner/opaque/black/diagonal,
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_y = 8;
-	pixel_x = -7
-	},
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_y = 1;
-	pixel_x = -7
-	},
-/obj/item/reagent_containers/condiment/enzyme{
-	pixel_x = -14;
-	pixel_y = 5
-	},
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/crew/ccommons)
 "nL" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -1014,9 +993,6 @@
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
 /area/ship/bridge)
-"qa" = (
-/turf/open/floor/plating/airless,
-/area/ship/external/dark)
 "qb" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden/layer4{
 	dir = 8
@@ -1165,13 +1141,6 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/crewtwo)
-"sv" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8;
-	color = "#FFFFFF"
-	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
 "sA" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -1421,6 +1390,16 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/engineering/engines/starboard)
+"xb" = (
+/obj/effect/turf_decal/corner/opaque/black/diagonal,
+/obj/machinery/oven,
+/obj/machinery/reagentgrinder{
+	pixel_y = 20;
+	pixel_x = -8;
+	layer = 3.22
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/crew/ccommons)
 "xo" = (
 /obj/effect/turf_decal/corner_steel_grid,
 /obj/effect/turf_decal/techfloor{
@@ -1442,6 +1421,11 @@
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
+/area/ship/crew/ccommons)
+"yh" = (
+/obj/effect/turf_decal/corner/opaque/black/diagonal,
+/obj/machinery/griddle,
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
 "yz" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1598,15 +1582,6 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engines/port)
-"Ab" = (
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 4;
-	port_direction = 2;
-	preferred_direction = 4
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external/dark)
 "Af" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#D2BC9D"
@@ -1926,6 +1901,41 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ship/crew)
+"Fm" = (
+/obj/structure/table/chem{
+	name = "kitchen counter"
+	},
+/obj/item/cutting_board{
+	pixel_y = 1;
+	anchored = 1;
+	pixel_x = 7
+	},
+/obj/item/melee/knife/kitchen{
+	pixel_y = 2;
+	pixel_x = 4
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_y = 8;
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_y = 1;
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/condiment/enzyme{
+	pixel_x = -14;
+	pixel_y = 5
+	},
+/obj/item/kitchen/rollingpin{
+	pixel_y = 2;
+	pixel_x = 10
+	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = 14;
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/crew/ccommons)
 "Fr" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -2169,25 +2179,6 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ship/crew)
-"KU" = (
-/obj/structure/table/chem{
-	name = "kitchen counter"
-	},
-/obj/machinery/reagentgrinder{
-	pixel_y = 17;
-	pixel_x = -7;
-	layer = 3.22
-	},
-/obj/effect/turf_decal/corner/opaque/black/diagonal,
-/obj/item/reagent_containers/glass/rag{
-	pixel_x = 10
-	},
-/obj/item/kitchen/rollingpin{
-	pixel_y = 3;
-	pixel_x = 6
-	},
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/crew/ccommons)
 "Ls" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden/layer4,
 /obj/structure/chair/handrail{
@@ -2244,6 +2235,9 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ship/crew/ccommons)
+"MT" = (
+/turf/open/floor/plating/airless,
+/area/ship/external/dark)
 "NG" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/crewtwo)
@@ -2504,6 +2498,15 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew)
+"Tj" = (
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 4;
+	port_direction = 2;
+	preferred_direction = 4
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external/dark)
 "TP" = (
 /obj/structure/table/glass,
 /obj/item/toy/cards/deck/syndicate{
@@ -2737,7 +2740,7 @@ hB
 hB
 hB
 hB
-eP
+iO
 hB
 hB
 hB
@@ -2759,9 +2762,9 @@ hB
 tj
 iy
 IR
-qa
-Ab
-qa
+MT
+Tj
+MT
 EZ
 iy
 tj
@@ -2782,7 +2785,7 @@ cj
 iy
 iy
 mp
-sv
+ek
 Hd
 mh
 uz
@@ -3011,7 +3014,7 @@ hB
 yg
 xq
 Cl
-HQ
+Fm
 HK
 aZ
 as
@@ -3032,7 +3035,7 @@ hB
 hB
 hB
 yg
-KU
+xb
 Dm
 HQ
 aL
@@ -3055,7 +3058,7 @@ hB
 hB
 hB
 yg
-nI
+yh
 Cl
 HQ
 HK
@@ -3200,7 +3203,7 @@ eu
 bv
 Af
 jL
-ao
+cr
 Xg
 pa
 vg

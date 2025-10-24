@@ -218,16 +218,17 @@
 	density = TRUE //Density is originally false so the pod doesn't block anything while it's still falling through the air
 	for (var/mob/living/target_living in turf_underneath)
 		if (iscarbon(target_living)) //If effectLimb is true (which means we pop limbs off when we hit people):
+			var/mob/living/carbon/carbon_target_mob = target_living
+			var/list/mob_bodyparts = carbon_target_mob.get_all_bodyparts()
 			if (effectLimb)
-				var/mob/living/carbon/carbon_target_mob = target_living
-				for (var/bp in carbon_target_mob.bodyparts) //Look at the bodyparts in our poor mob beneath our pod as it lands
-					var/obj/item/bodypart/bodypart = bp
-					if(bodypart.body_part != HEAD && bodypart.body_part != CHEST)//we dont want to kill him, just teach em a lesson!
-						if (bodypart.dismemberable)
-							bodypart.dismember() //Using the power of flextape i've sawed this man's limb in half!
-							break
+				for (var/obj/item/bodypart/bodypart as anything in mob_bodyparts) //Look at the bodyparts in our poor mob beneath our pod as it lands
+					if(bodypart.body_part & HEAD|CHEST)//we dont want to kill him, just teach em a lesson!
+						continue
+					if(!bodypart.dismemberable)
+						bodypart.dismember() //Using the power of flextape i've sawed this man's limb in half!
+						mob_bodyparts -= bodypart
+						break
 			if (effectOrgans) //effectOrgans means remove every organ in our mob
-				var/mob/living/carbon/carbon_target_mob = target_living
 				for(var/organ in carbon_target_mob.internal_organs)
 					var/destination = get_edge_target_turf(turf_underneath, pick(GLOB.alldirs)) //Pick a random direction to toss them in
 					var/obj/item/organ/organ_to_yeet = organ
@@ -235,8 +236,7 @@
 					organ_to_yeet.forceMove(turf_underneath) //Move the organ outta the body
 					organ_to_yeet.throw_at(destination, 2, 3) //Thow the organ at a random tile 3 spots away
 					sleep(1)
-				for (var/bp in carbon_target_mob.bodyparts) //Look at the bodyparts in our poor mob beneath our pod as it lands
-					var/obj/item/bodypart/bodypart = bp
+				for (var/obj/item/bodypart/bodypart in mob_bodyparts) //Look at the bodyparts in our poor mob beneath our pod as it lands
 					var/destination = get_edge_target_turf(turf_underneath, pick(GLOB.alldirs))
 					if (bodypart.dismemberable)
 						bodypart.dismember() //Using the power of flextape i've sawed this man's bodypart in half!

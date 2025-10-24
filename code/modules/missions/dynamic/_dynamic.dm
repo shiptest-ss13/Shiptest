@@ -107,13 +107,9 @@
 			can_turn_in = TRUE
 			break
 
-	var/location_x
-	var/location_y
-	var/location_name
+	var/datum/overmap/mission_location = mission_local_weakref.resolve()
 	if(mission_location)
-		location_x = mission_location.x
-		location_y = mission_location.y
-		location_name = mission_location.name
+		update_mission_info(mission_location)
 
 	. += list(
 		"ref" = REF(src),
@@ -122,9 +118,9 @@
 		"desc" = src.desc,
 		"reward" = src.reward_flavortext(),
 		"faction" = SSfactions.faction_name(src.faction),
-		"location" = "X[location_x]/Y[location_y]: [location_name]",
-		"x" = location_x,
-		"y" = location_y,
+		"location" = "X[local_x]/Y[local_y]: [local_name]",
+		"x" = local_x,
+		"y" = local_y,
 		"timeIssued" = time2text(station_time() - time_issued, "mm"),
 		"duration" = src.duration,
 		"remaining" = time_remaining,
