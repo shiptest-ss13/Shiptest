@@ -157,6 +157,15 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/icemoon/lodge/residential)
+"bZ" = (
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "danger";
+	pixel_x = 4;
+	pixel_y = -1;
+	paint_colour = "#FF0000"
+	},
+/turf/open/floor/concrete/slab_3/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "ca" = (
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -265,6 +274,13 @@
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken6"
 	},
+/area/ruin/powered/icemoon/lodge/mainhall)
+"dW" = (
+/obj/structure/table/wood,
+/obj/item/plate{
+	pixel_x = -6
+	},
+/turf/open/floor/carpet/black,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "dZ" = (
 /obj/structure/closet/cabinet{
@@ -437,6 +453,10 @@
 "gI" = (
 /turf/closed/indestructible/wood,
 /area/ruin/powered/icemoon/lodge/gear_room)
+"gP" = (
+/obj/item/toy/crayon/spraycan,
+/turf/open/floor/concrete/slab_3/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "gR" = (
 /obj/structure/chair/pew{
 	dir = 1
@@ -582,6 +602,10 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/mainhall)
+"jJ" = (
+/obj/item/target/syndicate,
+/turf/open/floor/concrete/slab_3/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "jM" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/glass/filter{
@@ -618,30 +642,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/cellar)
-"jS" = (
-/obj/effect/turf_decal/spline/fancy/wood{
-	dir = 1
-	},
-/obj/item/trash/plate{
-	pixel_y = 8;
-	pixel_x = 10
-	},
-/obj/item/trash/plate{
-	pixel_y = 10;
-	pixel_x = 10
-	},
-/obj/item/trash/plate{
-	pixel_y = 12;
-	pixel_x = 10
-	},
-/obj/item/trash/plate{
-	pixel_y = 14;
-	pixel_x = 10
-	},
-/obj/effect/decal/cleanable/garbage,
-/obj/effect/decal/cleanable/insectguts,
-/turf/open/floor/wood/mahogany,
-/area/ruin/powered/icemoon/lodge/mainhall)
 "ka" = (
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 1
@@ -705,6 +705,12 @@
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/grass/ship/jungle,
 /area/ruin/powered/icemoon/lodge/residential)
+"lw" = (
+/obj/structure/railing{
+	layer = 3.1
+	},
+/turf/open/floor/concrete/slab_3/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "lE" = (
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 10
@@ -814,12 +820,6 @@
 /obj/item/stack/sheet/cotton/durathread,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
-"mL" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/open/floor/concrete/slab_3/icemoon,
-/area/overmap_encounter/planetoid/cave/explored)
 "nc" = (
 /obj/effect/turf_decal/stoneborder,
 /obj/effect/turf_decal/stoneborder{
@@ -878,15 +878,6 @@
 /obj/machinery/fax/ruin,
 /turf/open/floor/carpet/red_gold,
 /area/ruin/powered/icemoon/lodge/montagne_office)
-"nr" = (
-/obj/effect/decal/cleanable/crayon{
-	icon_state = "nay";
-	pixel_y = -8;
-	pixel_x = 8;
-	paint_colour = "#FF0000"
-	},
-/turf/open/floor/concrete/slab_3/icemoon,
-/area/overmap_encounter/planetoid/cave/explored)
 "nD" = (
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 1
@@ -917,6 +908,13 @@
 "oC" = (
 /turf/open/floor/carpet,
 /area/ruin/powered/icemoon/lodge/residential)
+"oF" = (
+/obj/structure/table/greyscale,
+/obj/item/ammo_box/magazine/illestren_a850r/empty{
+	pixel_x = 6
+	},
+/turf/open/floor/concrete/slab_3/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "oT" = (
 /obj/structure/flora/ash/garden/frigid,
 /turf/open/floor/plating/asteroid/snow/icemoon,
@@ -1050,10 +1048,6 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/gear_room)
-"qg" = (
-/obj/structure/table/greyscale,
-/turf/open/floor/concrete/slab_3/icemoon,
-/area/overmap_encounter/planetoid/cave/explored)
 "qr" = (
 /obj/item/target/alien,
 /turf/open/floor/concrete/slab_3/icemoon,
@@ -1169,11 +1163,6 @@
 	},
 /turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/cave/explored)
-"rT" = (
-/obj/item/trash/popcorn,
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/concrete/slab_3/icemoon,
-/area/overmap_encounter/planetoid/cave/explored)
 "rW" = (
 /obj/structure/chair/wood/wings{
 	dir = 4
@@ -1225,6 +1214,12 @@
 /obj/item/clothing/neck/stethoscope,
 /turf/open/floor/plating/rust,
 /area/ruin/powered/icemoon/lodge/residential)
+"sw" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_3/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "sx" = (
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 4
@@ -1241,6 +1236,13 @@
 	},
 /turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/cave/explored)
+"sL" = (
+/obj/structure/table/wood,
+/obj/item/plate{
+	pixel_y = 12
+	},
+/turf/open/floor/carpet/black,
+/area/ruin/powered/icemoon/lodge/mainhall)
 "sO" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -1368,14 +1370,6 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/residential)
-"tW" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered{
-	minimum_distance = 2;
-	retreat_distance = 2;
-	check_friendly_fire = 1
-	},
-/turf/open/floor/concrete/slab_3/icemoon,
-/area/overmap_encounter/planetoid/cave/explored)
 "tX" = (
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 8
@@ -1547,12 +1541,6 @@
 /turf/open/floor/wood/ebony/icemoon{
 	icon_state = "wood-broken6"
 	},
-/area/overmap_encounter/planetoid/cave/explored)
-"wt" = (
-/obj/structure/railing{
-	layer = 3.1
-	},
-/turf/open/floor/concrete/slab_3/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "wy" = (
 /obj/structure/chair/stool{
@@ -1757,16 +1745,6 @@
 /obj/item/trash/can/food/beans{
 	pixel_x = 6;
 	pixel_y = 3
-	},
-/turf/open/floor/carpet/black,
-/area/ruin/powered/icemoon/lodge/mainhall)
-"Ag" = (
-/obj/structure/table/wood,
-/obj/item/trash/plate{
-	pixel_y = 12
-	},
-/obj/item/food/meat/slab/human/mutant/skeleton{
-	pixel_y = 12
 	},
 /turf/open/floor/carpet/black,
 /area/ruin/powered/icemoon/lodge/mainhall)
@@ -2011,6 +1989,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/mainhall)
+"Dt" = (
+/obj/structure/table/greyscale,
+/turf/open/floor/concrete/slab_3/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "DA" = (
 /obj/structure/railing/wood{
 	dir = 4
@@ -2237,6 +2219,15 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/residential)
+"HL" = (
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "nay";
+	pixel_y = -8;
+	pixel_x = 8;
+	paint_colour = "#FF0000"
+	},
+/turf/open/floor/concrete/slab_3/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "HO" = (
 /obj/structure/windoor_assembly{
 	dir = 4;
@@ -2295,13 +2286,6 @@
 /obj/item/shovel,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
-"Ix" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered{
-	check_friendly_fire = 1;
-	minimum_distance = 3
-	},
-/turf/open/floor/concrete/slab_3/icemoon,
-/area/overmap_encounter/planetoid/cave/explored)
 "II" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -2529,15 +2513,6 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/mainhall)
-"MR" = (
-/obj/effect/decal/cleanable/crayon{
-	icon_state = "danger";
-	pixel_x = 4;
-	pixel_y = -1;
-	paint_colour = "#FF0000"
-	},
-/turf/open/floor/concrete/slab_3/icemoon,
-/area/overmap_encounter/planetoid/cave/explored)
 "Nc" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
@@ -2670,6 +2645,14 @@
 	icon_state = "skull";
 	pixel_x = 4;
 	pixel_y = -1
+	},
+/turf/open/floor/concrete/slab_3/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
+"Or" = (
+/mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered{
+	minimum_distance = 2;
+	retreat_distance = 2;
+	check_friendly_fire = 1
 	},
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -2821,6 +2804,13 @@
 /obj/item/toy/plush/kari,
 /turf/open/floor/carpet/red_gold,
 /area/ruin/powered/icemoon/lodge/montagne_office)
+"Rf" = (
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered{
+	check_friendly_fire = 1;
+	minimum_distance = 3
+	},
+/turf/open/floor/concrete/slab_3/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "Rg" = (
 /obj/structure/flora/ash/leaf_shroom,
 /turf/open/floor/plating/asteroid/icerock/cracked,
@@ -2940,6 +2930,30 @@
 "To" = (
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/floor/wood/ebony,
+/area/ruin/powered/icemoon/lodge/mainhall)
+"TF" = (
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 1
+	},
+/obj/item/plate{
+	pixel_y = 8;
+	pixel_x = 10
+	},
+/obj/item/plate{
+	pixel_y = 10;
+	pixel_x = 10
+	},
+/obj/item/plate{
+	pixel_y = 12;
+	pixel_x = 10
+	},
+/obj/item/plate{
+	pixel_y = 14;
+	pixel_x = 10
+	},
+/obj/effect/decal/cleanable/garbage,
+/obj/effect/decal/cleanable/insectguts,
+/turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "TL" = (
 /obj/structure/closet/cabinet{
@@ -3116,6 +3130,11 @@
 /obj/structure/curtain/cloth/fancy,
 /turf/open/floor/plating,
 /area/ruin/powered/icemoon/lodge/montagne_office)
+"Wt" = (
+/obj/item/trash/popcorn,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/concrete/slab_3/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "Wv" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/dirt,
@@ -3304,10 +3323,6 @@
 /obj/machinery/smartfridge/drying_rack,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/residential)
-"YG" = (
-/obj/item/toy/crayon/spraycan,
-/turf/open/floor/concrete/slab_3/icemoon,
-/area/overmap_encounter/planetoid/cave/explored)
 "Za" = (
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -3342,16 +3357,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
-"Zo" = (
-/obj/structure/table/wood,
-/obj/item/trash/plate{
-	pixel_x = -6
-	},
-/obj/item/food/meat/slab/human/mutant/zombie{
-	pixel_x = -6
-	},
-/turf/open/floor/carpet/black,
-/area/ruin/powered/icemoon/lodge/mainhall)
 "Zp" = (
 /obj/effect/turf_decal/siding/brown{
 	dir = 5
@@ -3369,10 +3374,6 @@
 	icon_state = "wood-broken2"
 	},
 /area/ruin/powered/icemoon/lodge/residential)
-"ZG" = (
-/obj/item/target/syndicate,
-/turf/open/floor/concrete/slab_3/icemoon,
-/area/overmap_encounter/planetoid/cave/explored)
 "ZX" = (
 /obj/effect/turf_decal/spline/fancy/wood/corner,
 /obj/effect/turf_decal/spline/fancy/wood/corner{
@@ -3384,13 +3385,6 @@
 	icon_state = "wood-broken3"
 	},
 /area/ruin/powered/icemoon/lodge/mainhall)
-"ZZ" = (
-/obj/structure/table/greyscale,
-/obj/item/ammo_box/magazine/illestren_a850r/empty{
-	pixel_x = 6
-	},
-/turf/open/floor/concrete/slab_3/icemoon,
-/area/overmap_encounter/planetoid/cave/explored)
 
 (1,1,1) = {"
 Gy
@@ -4596,9 +4590,9 @@ ca
 Za
 Za
 Za
-tW
+Or
 Nu
-Ix
+Rf
 Za
 BQ
 Za
@@ -4647,9 +4641,9 @@ ca
 Za
 gs
 sG
-ZZ
+oF
 QO
-qg
+Dt
 PA
 gs
 oT
@@ -4829,8 +4823,8 @@ yE
 ik
 Mw
 kq
-Ag
-Zo
+sL
+dW
 zX
 fF
 aJ
@@ -4855,7 +4849,7 @@ ca
 ca
 ca
 PA
-YG
+gP
 NN
 ca
 Hl
@@ -4878,7 +4872,7 @@ Hl
 yE
 nS
 KH
-jS
+TF
 aJ
 tN
 PE
@@ -4901,11 +4895,11 @@ ca
 ca
 ca
 ca
-MR
+bZ
 ca
 xL
 NN
-nr
+HL
 NN
 ca
 ca
@@ -5003,14 +4997,14 @@ ca
 ca
 Za
 Za
-wt
+lw
 qr
 ca
 ca
-mL
+sw
 Za
 Za
-rT
+Wt
 gR
 Hl
 Hl
@@ -5057,7 +5051,7 @@ oT
 da
 ca
 WS
-ZG
+jJ
 PA
 LM
 Za

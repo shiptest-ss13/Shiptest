@@ -169,10 +169,8 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/garage)
 "aO" = (
-/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech,
-/obj/mecha/combat/gygax/dark/ramzi{
-	name = "\improper 515 EX 'Hammer Down'"
-	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
+/obj/structure/mecha_wreckage/gygax/dark,
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/ruin/icemoon/training_facility/course)
 "aP" = (
@@ -5768,7 +5766,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/wood,
-/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
@@ -5778,7 +5776,7 @@
 /obj/structure/chair/greyscale{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/icemoon/training_facility/classroom)
@@ -6438,7 +6436,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},

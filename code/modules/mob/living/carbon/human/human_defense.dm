@@ -460,6 +460,9 @@
 	var/brute_loss = 0
 	var/burn_loss = 0
 	var/bomb_armor = getarmor(null, "bomb")
+	var/intensity = 1
+	var/ear_damage = 0
+	var/deafness_power = 0
 
 //200 max knockdown for EXPLODE_HEAVY
 //160 max knockdown for EXPLODE_LIGHT
@@ -487,27 +490,32 @@
 				damage_clothes(400 - bomb_armor, BRUTE, "bomb")
 
 		if (EXPLODE_HEAVY)
-			brute_loss = 50
-			burn_loss = 50
+			brute_loss = 35
+			burn_loss = 35
 			if(bomb_armor)
-				brute_loss = 25*(2 - round(bomb_armor*0.01, 0.05))
+				brute_loss = 20*(2 - round(bomb_armor*0.01, 0.05))
 				burn_loss = brute_loss				//damage gets reduced from 120 to up to 60 combined brute+burn
-			damage_clothes(200 - bomb_armor, BRUTE, "bomb")
-			if (!istype(ears, /obj/item/clothing/ears/earmuffs))
-				adjustEarDamage(30, 120)
+			intensity = 2
+			ear_damage = 30
+			deafness_power = 120
+			damage_clothes(max(rand(90,150) - bomb_armor, 0), BRUTE, "bomb")
 			Unconscious(20)							//short amount of time for follow up attacks against elusive enemies like wizards
 			Knockdown(200 - (bomb_armor * 1.6)) 	//between ~4 and ~20 seconds of knockdown depending on bomb armor
 
 		if(EXPLODE_LIGHT)
-			brute_loss = 30
+			brute_loss = 20
+			burn_loss = 20
 			if(bomb_armor)
 				brute_loss = 15*(2 - round(bomb_armor*0.01, 0.05))
-			damage_clothes(max(50 - bomb_armor, 0), BRUTE, "bomb")
-			if (!istype(ears, /obj/item/clothing/ears/earmuffs))
-				adjustEarDamage(15,60)
+				burn_loss = bruteloss
+			damage_clothes(max(rand(10,90) - bomb_armor, 0), BRUTE, "bomb")
+			intensity = 1.5
+			ear_damage = 15
+			deafness_power = 60
 			Knockdown(160 - (bomb_armor * 1.6))		//100 bomb armor will prevent knockdown altogether
 
 	take_overall_damage(brute_loss,burn_loss)
+	soundbang_act(intensity, 0, ear_damage, deafness_power)
 
 	//attempt to dismember bodyparts
 	if(severity <= 2 || !bomb_armor)

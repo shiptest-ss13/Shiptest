@@ -18,6 +18,7 @@ Featuring:
 
 */
 
+///dont use these, they are super broken
 /mob/living/simple_animal/hostile/human/ramzi/mecha_pilot
 	name = "Ramzi Clique Exowarrior"
 	desc = "A highly-trained pilot of the Clique, specialized in Exosuit operations."
@@ -60,14 +61,12 @@ Featuring:
 	icon_state = "nanotrasen"
 	faction = list("nanotrasen")
 
-
 /mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/Initialize()
 	. = ..()
 	if(spawn_mecha_type)
 		var/obj/mecha/M = new spawn_mecha_type (get_turf(src))
 		if(istype(M))
 			INVOKE_ASYNC(src, PROC_REF(enter_mecha), M)
-
 
 /mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/proc/enter_mecha(obj/mecha/M)
 	if(!M)
