@@ -265,10 +265,6 @@ Turf and target are separate in case you want to teleport some distance from a t
 			switch(role)
 				if("human")
 					newname = random_unique_name(gender)
-				if("clown")
-					newname = pick(GLOB.clown_names)
-				if("mime")
-					newname = pick(GLOB.mime_names)
 				if("ai")
 					newname = pick(GLOB.ai_names)
 				else
@@ -683,7 +679,7 @@ GLOBAL_LIST_INIT(WALLITEMS, typecacheof(list(
 	/obj/machinery/computer/security/telescreen, /obj/machinery/embedded_controller/radio/simple_vent_controller,
 	/obj/item/storage/secure/safe, /obj/machinery/door_timer, /obj/machinery/flasher, /obj/machinery/keycard_auth,
 	/obj/structure/mirror, /obj/structure/cabinet, /obj/machinery/computer/security/telescreen/entertainment,
-	/obj/structure/sign/picture_frame, /obj/machinery/bounty_board
+	/obj/structure/sign/picture_frame, /obj/machinery/mission_viewer, /obj/machinery/turretid
 	)))
 
 GLOBAL_LIST_INIT(WALLITEMS_EXTERNAL, typecacheof(list(
@@ -1373,29 +1369,27 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 
 	if(!LAZYLEN(allowed_food)) //it's static so we only ever do this once
 		var/list/blocked = list(
-		/obj/item/food/spaghetti,
-		/obj/item/food/bread,
-		/obj/item/food/breadslice,
-		/obj/item/food/cake,
-		/obj/item/food/cakeslice,
-		/obj/item/reagent_containers/food/snacks/store,
-		/obj/item/reagent_containers/food/snacks/pie,
-		/obj/item/reagent_containers/food/snacks/kebab,
-		/obj/item/reagent_containers/food/snacks/pizza,
-		/obj/item/reagent_containers/food/snacks/pizzaslice,
-		/obj/item/reagent_containers/food/snacks/salad,
-		/obj/item/reagent_containers/food/snacks/meat,
-		/obj/item/reagent_containers/food/snacks/meat/slab,
-		/obj/item/reagent_containers/food/snacks/soup,
-		/obj/item/reagent_containers/food/snacks/grown,
-		/obj/item/reagent_containers/food/snacks/grown/mushroom,
-		/obj/item/food/deepfryholder,
-		/obj/item/reagent_containers/food/snacks/clothing,
-		/obj/item/reagent_containers/food/snacks/grown/shell, //base types
-		/obj/item/food/bread,
-		/obj/item/reagent_containers/food/snacks/grown/nettle
+			/obj/item/food/spaghetti,
+			/obj/item/food/bread,
+			/obj/item/food/breadslice,
+			/obj/item/food/cake,
+			/obj/item/food/cakeslice,
+			/obj/item/food/pie,
+			/obj/item/food/kebab,
+			/obj/item/food/pizza,
+			/obj/item/food/pizzaslice,
+			/obj/item/food/salad,
+			/obj/item/food/meat,
+			/obj/item/food/meat/slab,
+			/obj/item/food/soup,
+			/obj/item/food/grown,
+			/obj/item/food/grown/mushroom,
+			/obj/item/food/deepfryholder,
+			/obj/item/food/clothing,
+			/obj/item/food/grown/shell,
+			/obj/item/food/bread,
+			/obj/item/food/grown/nettle,
 		)
-		blocked |= typesof(/obj/item/reagent_containers/food/snacks/customizable)
 
 		var/list/unfiltered_allowed_food = subtypesof(/obj/item/food) - blocked
 		for(var/obj/item/food/food as anything in unfiltered_allowed_food)
@@ -1479,6 +1473,41 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	set waitfor = FALSE
 	return call(source, proctype)(arglist(arguments))
 
+/proc/filled_turfs(atom/center, radius = 3, type = "circle", include_edge = TRUE)
+	var/turf/center_turf = get_turf(center)
+	if(radius < 0 || !center)
+		return
+	if(radius == 0)
+		return list(center_turf)
+
+	var/list/directions
+	switch(type)
+		if("square")
+			directions = GLOB.alldirs
+		if("circle")
+			directions = GLOB.cardinals
+
+	var/list/results = list(center_turf)
+	var/list/turfs_to_check = list()
+	turfs_to_check += center_turf
+	for(var/i = radius; i > 0; i--)
+		for(var/X in turfs_to_check)
+			var/turf/T = X
+			for(var/direction in directions)
+				var/turf/AdjT = get_step(T, direction)
+				if(!AdjT)
+					continue
+				if (AdjT in results) // Ignore existing turfs
+					continue
+				if(AdjT.density)
+					if(include_edge)
+						results += AdjT
+					continue
+
+				turfs_to_check += AdjT
+				results += AdjT
+	return results
+
 #define TURF_FROM_COORDS_LIST(List) (locate(List[1], List[2], List[3]))
 
 /proc/normalize_dir_to_cardinals(dir)
@@ -1491,3 +1520,11 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	if(dir & WEST)
 		return WEST
 	return 0
+
+/proc/flame_radius(turf/epicenter, radius = 1, power = 5, fire_color = "red")
+	if(!isturf(epicenter))
+		CRASH("flame_radius used without a valid turf parameter")
+	radius = clamp(radius, 1, 50) //Sanitize inputs
+
+	for(var/turf/turf_to_flame as anything in filled_turfs(epicenter, radius, "circle"))
+		turf_to_flame.ignite_turf(power, fire_color)

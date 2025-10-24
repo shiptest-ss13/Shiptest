@@ -46,7 +46,7 @@
 		new /obj/effect/decal/cleanable/wrapping(get_turf(M))
 		qdel(src)
 	else
-		to_chat(M, "<span class='notice'>[uses] use[uses > 1 ? "s" : ""] remaining on the [src].</span>")
+		to_chat(M, span_notice("[uses] use[uses > 1 ? "s" : ""] remaining on the [src]."))
 
 /obj/item/choice_beacon/proc/spawn_option(obj/choice,mob/living/M)
 	new choice(get_turf(M))
@@ -209,10 +209,10 @@
 	var/mob/living/joe = user
 
 	if(joe in mob_mobs) //Only one nickname fuckhead
-		to_chat(joe, "<span class='warning'>You have already been initiated into the mafioso life.</span>")
+		to_chat(joe, span_warning("You have already been initiated into the mafioso life."))
 		return
 
-	to_chat(joe, "<span class='notice'>As you burn the picture, a nickname comes to mind...</span>")
+	to_chat(joe, span_notice("As you burn the picture, a nickname comes to mind..."))
 	var/nickname = stripped_input(joe, "Pick a nickname", "Mafioso Nicknames", null, NICKNAME_CAP, TRUE)
 	nickname = reject_bad_name(nickname, max_length = NICKNAME_CAP, ascii_only = TRUE)
 	if(!nickname)
@@ -227,7 +227,7 @@
 	used_up = TRUE
 	mob_mobs += joe
 	joe.say("My soul will burn like this saint if I betray my family. I enter alive and I will have to get out dead.", forced = /obj/item/virgin_mary)
-	to_chat(joe, "<span class='userdanger'>Being inducted into the mafia does not grant antagonist status.</span>")
+	to_chat(joe, span_userdanger("Being inducted into the mafia does not grant antagonist status."))
 
 #undef NICKNAME_CAP
 
@@ -248,59 +248,51 @@
 	return ouija_spaghetti_list
 
 //rare and valulable gems- designed to eventually be used for archeology, or to be given as opposed to money as loot. Auctioned off at export, or kept as a trophy.
+/obj/item/gem
+	icon = 'icons/obj/gems.dmi'
+	w_class = WEIGHT_CLASS_SMALL
+
 /obj/item/gem/rupee
 	name = "\improper Ruperium Crystal"
 	desc = "An exotic crystalline compound rarely found all over the frontier of known space. Has few practical uses, but the resonating properties it possesses make it highly valued in the creation of designer instruments."
-	icon = 'icons/obj/gems.dmi'
 	icon_state = "rupee"
-	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/gem/fdiamond
 	name = "\improper Frost Diamond"
 	desc = "A rare form of crystalline carbon, most commonly found in the inner stone of crashed comets. Though asteroid mining long devalued more common forms of diamond, this one remains exclusive."
-	icon = 'icons/obj/gems.dmi'
 	icon_state = "diamond"
-	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/gem/amber
 	name = "\improper Draconic Amber"
 	desc = "The final decompositional result of a dragon's white-hot blood. Cherished by inner-world gemcutters for its soft warmth and faint glow."
-	icon = 'icons/obj/gems.dmi'
 	icon_state = "amber"
 	light_range = 2
 	light_power = 2
 	light_color = "#FFBF00"
-	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/gem/bloodstone
 	name = "\improper Ichorium"
 	desc = "A strange substance, known to coalesce in the presence of otherwordly phenomena. Could probably fetch a good price for this."
-	icon = 'icons/obj/gems.dmi'
 	icon_state = "red"
 	light_range = 2
 	light_power = 3
 	light_color = "#800000"
-	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/gem/phoron
 	name = "\improper Stabilized Phoron"
 	desc = "When under incredible pressure during formation, plasma crystal is occasionally known to transform into this substance. Famed both for exceptional durability and uncommon beauty."
-	icon = 'icons/obj/gems.dmi'
 	icon_state = "phoron"
 	light_range = 2
 	light_power = 2
 	light_color = "#62326a"
-	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/gem/void
 	name = "\improper Null Crystal"
 	desc = "A shard of stellar energy, shaped into crystal. These strange objects occasionally appear spontaneously in the deepest, darkest depths of space. Despite it's incredible value, it seems far lighter than it should be."
-	icon = 'icons/obj/gems.dmi'
 	icon_state ="void"
 	light_range = 2
 	light_power = 1
 	light_color = "#4785a4"
-	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/phone
 	name = "red phone"
@@ -324,14 +316,14 @@
 	item_flags = NONE
 	force = 0
 	attack_verb = list("hit", "poked")
-	var/obj/item/reagent_containers/food/snacks/sausage/held_sausage
+	var/obj/item/food/sausage/held_sausage
 	var/static/list/ovens
 	var/on = FALSE
 	var/datum/beam/beam
 
 /obj/item/roastingstick/Initialize()
 	. = ..()
-	if (!ovens)
+	if(!ovens)
 		ovens = typecacheof(list(/obj/singularity, /obj/machinery/power/supermatter_crystal, /obj/structure/bonfire))
 
 /obj/item/roastingstick/attack_self(mob/user)
@@ -339,8 +331,8 @@
 	if(on)
 		extend(user)
 	else
-		if (held_sausage)
-			to_chat(user, "<span class='warning'>You can't retract [src] while [held_sausage] is attached!</span>")
+		if(held_sausage)
+			to_chat(user, span_warning("You can't retract [src] while [held_sausage] is attached!"))
 			return
 		retract(user)
 
@@ -348,40 +340,41 @@
 	add_fingerprint(user)
 
 /obj/item/roastingstick/attackby(atom/target, mob/user)
-	..()
-	if (istype(target, /obj/item/reagent_containers/food/snacks/sausage))
-		if (!on)
-			to_chat(user, "<span class='warning'>You must extend [src] to attach anything to it!</span>")
+	. = ..()
+
+	if(istype(target, /obj/item/food/sausage))
+		if(!on)
+			to_chat(user, span_warning("You must extend [src] to attach anything to it!"))
 			return
-		if (held_sausage)
-			to_chat(user, "<span class='warning'>[held_sausage] is already attached to [src]!</span>")
+		if(held_sausage)
+			to_chat(user, span_warning("[held_sausage] is already attached to [src]!"))
 			return
-		if (user.transferItemToLoc(target, src))
+		if(user.transferItemToLoc(target, src))
 			held_sausage = target
 		else
-			to_chat(user, "<span class='warning'>[target] doesn't seem to want to get on [src]!</span>")
+			to_chat(user, span_warning("[target] doesn't seem to want to get on [src]!"))
 	update_appearance()
 
 /obj/item/roastingstick/attack_hand(mob/user)
-	..()
-	if (held_sausage)
+	. = ..()
+	if(held_sausage)
 		user.put_in_hands(held_sausage)
 		held_sausage = null
 	update_appearance()
 
 /obj/item/roastingstick/update_overlays()
 	. = ..()
-	if (held_sausage)
+	if(held_sausage)
 		. += mutable_appearance(icon, "roastingstick_sausage")
 
 /obj/item/roastingstick/proc/extend(user)
-	to_chat(user, "<span class='warning'>You extend [src].</span>")
+	to_chat(user, span_warning("You extend [src]."))
 	icon_state = "roastingstick_1"
 	item_state = "nullrod"
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/roastingstick/proc/retract(user)
-	to_chat(user, "<span class='notice'>You collapse [src].</span>")
+	to_chat(user, span_notice("You collapse [src]."))
 	icon_state = "roastingstick_0"
 	item_state = null
 	w_class = WEIGHT_CLASS_SMALL
@@ -397,14 +390,14 @@
 		return
 	if (is_type_in_typecache(target, ovens))
 		if (held_sausage && held_sausage.roasted)
-			to_chat(src, "<span class='warning'>Your [held_sausage] has already been cooked!</span>")
+			to_chat(src, span_warning("Your [held_sausage] has already been cooked!"))
 			return
 		if (istype(target, /obj/singularity) && get_dist(user, target) < 10)
-			to_chat(user, "<span class='notice'>You send [held_sausage] towards [target].</span>")
+			to_chat(user, span_notice("You send [held_sausage] towards [target]."))
 			playsound(src, 'sound/items/rped.ogg', 50, TRUE)
 			beam = user.Beam(target,icon_state="rped_upgrade",time=100)
 		else if (user.Adjacent(target))
-			to_chat(user, "<span class='notice'>You extend [src] towards [target].</span>")
+			to_chat(user, span_notice("You extend [src] towards [target]."))
 			playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, TRUE)
 		else
 			return
@@ -415,7 +408,7 @@
 			playsound(src, 'sound/weapons/batonextend.ogg', 50, TRUE)
 
 /obj/item/roastingstick/proc/finish_roasting(user, atom/target)
-	to_chat(user, "<span class='notice'>You finish roasting [held_sausage].</span>")
+	to_chat(user, span_notice("You finish roasting [held_sausage]."))
 	playsound(src,'sound/items/welder2.ogg',50,TRUE)
 	held_sausage.add_atom_colour(rgb(103,63,24), FIXED_COLOUR_PRIORITY)
 	held_sausage.name = "[target.name]-roasted [held_sausage.name]"
@@ -504,7 +497,7 @@
 /obj/item/extendohand/attack(atom/M, mob/living/carbon/human/user)
 	var/dist = get_dist(M, user)
 	if(dist < min_reach)
-		to_chat(user, "<span class='warning'>[M] is too close to use [src] on.</span>")
+		to_chat(user, span_warning("[M] is too close to use [src] on."))
 		return
 	M.attack_hand(user)
 

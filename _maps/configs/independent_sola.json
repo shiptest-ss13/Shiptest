@@ -1,0 +1,46 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Sola-class Hunting Vessel",
+	"map_short_name": "Sola-class",
+	"description": "The Sola-class is an Ihejirika design made for lengthy voyages across space. Due to that intent, the Sola is equipped with commodious living spaces as well as a set of solar panels that help its power management. In recent years, the vessel has made its way into the public market, becoming a popular choice for commercial hunters who make good use of the substantial amount of cold storage the vessel offers as well as its rather formidable armory.",
+	"tags": [
+		"Hunting",
+		"Generalist"
+	],
+	"map_path": "_maps/shuttles/independent/independent_sola.dmm",
+	"namelists": ["GENERAL", "BEASTS", "NATURAL_AGGRESSIVE"],
+	"faction": "/datum/faction/independent",
+	"prefix": "SV",
+	"manufacturer": "Ihejirika Civ. Manufacturing",
+	"starting_funds": 1500,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain",
+			"slots": 1,
+			"officer": true
+		},
+		"Lead Hunter": {
+			"outfit": "/datum/outfit/job/independent/hop/hunter",
+			"slots": 1,
+			"officer": true
+		},
+		"Hunter": {
+			"outfit": "/datum/outfit/job/independent/hunter",
+			"slots": 1
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/independent/doctor",
+			"slots": 1
+		},
+
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/independent/engineer",
+			"slots": 1
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/independent/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}

@@ -50,7 +50,7 @@
 	if(!ishuman(user))
 		return
 	used_wrench.play_tool_sound(user)
-	to_chat(user, "<span class='notice'>You start undeploying the [src]...</span>")
+	to_chat(user, span_notice("You start undeploying the [src]..."))
 	if(!do_after(user, undeploy_time))
 		return
 	var/obj/undeployed_object = new spawned_on_undeploy(src)

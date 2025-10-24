@@ -28,17 +28,17 @@
 		tamper = FALSE
 		cap_overlay = mutable_appearance(icon, tamper_cap_icon_state)
 		playsound(src, 'sound/items/poster_ripped.ogg', 50, 1)
-		to_chat(user, "<span class='notice'>You rip the tamper seal off of [src].</span>")
+		to_chat(user, span_notice("You rip the tamper seal off of [src]."))
 
 /obj/item/reagent_containers/glass/chem_jug/examine(mob/user)
 	. = ..()
 	if(tamper)
 		if(!cap_on)
-			. += "<span class='info'>The tamper seal hasn't been applied yet.</span>"
+			. += span_info("The tamper seal hasn't been applied yet.")
 			return
-		. += "<span class='green'>The tamper seal is <b>intact</b>.</span>"
+		. += span_green("The tamper seal is <b>intact</b>.")
 	else
-		. += "<span class='warning'>The tamper seal is <b>broken</b>.</span>"
+		. += span_warning("The tamper seal is <b>broken</b>.")
 
 
 /obj/item/reagent_containers/glass/chem_jug/SplashReagents(atom/target, thrown = FALSE)
@@ -51,8 +51,8 @@
 		var/mob/M = target
 		var/R
 		playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
-		target.visible_message("<span class='danger'>[M] is splashed with something!</span>", \
-						"<span class='userdanger'>[M] is splashed with something!</span>")
+		target.visible_message(span_danger("[M] is splashed with something!"), \
+						span_userdanger("[M] is splashed with something!"))
 		for(var/datum/reagent/A in reagents.reagent_list)
 			R += "[A.type]  ([num2text(A.volume)]),"
 
@@ -61,7 +61,7 @@
 		reagents.expose(target, TOUCH, 0.3)
 
 	else if(bartender_check(target) && thrown)
-		visible_message("<span class='notice'>[src] lands onto the [target.name] without spilling a single drop.</span>")
+		visible_message(span_notice("[src] lands onto the [target.name] without spilling a single drop."))
 		return
 
 	else
@@ -70,7 +70,7 @@
 			log_game("[key_name(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [AREACOORD(target)].")
 			message_admins("[ADMIN_LOOKUPFLW(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [ADMIN_VERBOSEJMP(target)].")
 		playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
-		visible_message("<span class='notice'>[src] spills its contents all over [target].</span>")
+		visible_message(span_notice("[src] spills its contents all over [target]."))
 		reagents.expose(target, TOUCH, 0.3)
 		if(QDELETED(src))
 			return
@@ -172,3 +172,23 @@
 /obj/item/reagent_containers/glass/chem_jug/hexacrete
 	name = "chemical jug (hexacrete)"
 	list_reagents = list(/datum/reagent/concrete/hexacrete = 150)
+
+/obj/item/reagent_containers/glass/chem_jug/eznutriment
+	name = "chemical jug (E-Z-Nutrient)"
+	list_reagents = list(/datum/reagent/plantnutriment/eznutriment = 150)
+
+/obj/item/reagent_containers/glass/chem_jug/left4zednutriment
+	name = "chemical jug (Left 4 Zed)"
+	list_reagents = list(/datum/reagent/plantnutriment/left4zednutriment = 150)
+
+/obj/item/reagent_containers/glass/chem_jug/robustharvestnutriment
+	name = "chemical jug (Robust Harvest)"
+	list_reagents = list(/datum/reagent/plantnutriment/robustharvestnutriment = 150)
+
+/obj/item/reagent_containers/glass/chem_jug/endurogrow
+	name = "chemical jug (Enduro Grow)"
+	list_reagents = list(/datum/reagent/plantnutriment/endurogrow = 150)
+
+/obj/item/reagent_containers/glass/chem_jug/liquidearthquake
+	name = "chemical jug (Liquid Earthquake)"
+	list_reagents = list(/datum/reagent/plantnutriment/liquidearthquake = 150)

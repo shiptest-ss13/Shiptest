@@ -15,8 +15,10 @@
 	throw_speed = 3
 	throw_range = 6
 	custom_materials = list(/datum/material/iron=12000)
+	attack_cooldown = LIGHT_WEAPON_CD
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	sharpness = IS_SHARP_ACCURATE
+	sharpness = SHARP_POINTY
+	wound_bonus = 15
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	item_flags = EYE_STAB
 	tool_behaviour = TOOL_KNIFE
@@ -46,21 +48,21 @@
 	throw_range = 5
 	custom_materials = list(/datum/material/plastic = 100)
 	attack_verb = list("prodded", "whiffed","scratched", "poked")
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	custom_price = 50
 	var/break_chance = 25
 
 /obj/item/melee/knife/plastic/afterattack(mob/living/carbon/user)
 	.=..()
 	if(prob(break_chance))
-		user.visible_message("<span class='danger'>[user]'s spoon snaps into tiny pieces in their hand.</span>")
+		user.visible_message(span_danger("[user]'s spoon snaps into tiny pieces in their hand."))
 		qdel(src)
 
 
 /obj/item/melee/knife/plastic/afterattack(mob/living/carbon/user)
 	.=..()
 	if(prob(break_chance))
-		user.visible_message("<span class='danger'>[user]'s knife snaps into tiny pieces in their hand.</span>")
+		user.visible_message(span_danger("[user]'s knife snaps into tiny pieces in their hand."))
 		qdel(src)
 
 /obj/item/melee/knife/pizza_cutter
@@ -73,7 +75,7 @@
 	throw_range = 6
 	custom_materials = list(/datum/material/iron=4000)
 	attack_verb = list("prodded", "whiffed","rolled", "poked")
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 
 /obj/item/melee/knife/butcher
 	name = "butcher's cleaver"
@@ -84,6 +86,7 @@
 	force = 15
 	throwforce = 10
 	custom_materials = list(/datum/material/iron=18000)
+	attack_cooldown = CLICK_CD_MELEE
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_price = 600
@@ -125,7 +128,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	desc = "A sharpened bone. The bare minimum in survival."
 	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
-	force = 15
+	force = 10
 	throwforce = 15
 	custom_materials = null
 
@@ -148,14 +151,15 @@
 	attack_verb = list("shanked", "shivved")
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	custom_materials = list(/datum/material/glass=400)
-
+/*
 /obj/item/melee/knife/shiv/carrot
 	name = "carrot shiv"
 	icon_state = "carrotshiv"
 	item_state = "carrotshiv"
-	icon = 'icons/obj/kitchen.dmi'
+	icon = 'icons/obj/machines/kitchen.dmi'
 	desc = "Unlike other carrots, you should probably keep this far away from your eyes."
 	custom_materials = null
+*/
 
 /obj/item/melee/knife/switchblade
 	name = "switchblade"
@@ -167,7 +171,7 @@
 	flags_1 = CONDUCT_1
 	force = 3
 	w_class = WEIGHT_CLASS_SMALL
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 	throwforce = 5
 	throw_speed = 3
 	throw_range = 6
@@ -183,7 +187,7 @@
 		force_on = 20, \
 		throwforce_on = 23, \
 		throw_speed_on = 4, \
-		sharpness_on = IS_SHARP, \
+		sharpness_on = SHARP_EDGED, \
 		hitsound_on = 'sound/weapons/bladeslice.ogg', \
 		w_class_on = WEIGHT_CLASS_NORMAL, \
 		attack_verb_on = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut"), \

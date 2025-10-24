@@ -1,24 +1,3 @@
-/* How it works:
-The shuttle arrives at CentCom dock and calls sell(), which recursively loops through all the shuttle contents that are unanchored.
-
-Each object in the loop is checked for applies_to() of various export datums, except the invalid ones.
-*/
-
-/* The rule in figuring out item export cost:
-Export cost of goods in the shipping crate must be always equal or lower than:
-	packcage cost - crate cost - manifest cost
-Crate cost is 500cr for a regular plasteel crate and 100cr for a large wooden one. Manifest cost is always 200cr.
-This is to avoid easy cargo points dupes.
-
-Credit dupes that require a lot of manual work shouldn't be removed, unless they yield too much profit for too little work.
-For example, if some player buys metal and glass sheets and uses them to make and sell reinforced glass:
-
-100 glass + 50 metal -> 100 reinforced glass
-(1500cr -> 1600cr)
-
-then the player gets the profit from selling his own wasted time.
-*/
-
 // Simple holder datum to pass export results around
 /datum/export_report
 	var/list/exported_atoms = list()	//names of atoms sold/deleted by export
@@ -27,10 +6,7 @@ then the player gets the profit from selling his own wasted time.
 	var/list/exported_atoms_ref = list()	//if they're not deleted they go in here for use.
 
 // external_report works as "transaction" object, pass same one in if you're doing more than one export in single go
-/proc/export_item_and_contents(atom/movable/AM, allowed_categories = EXPORT_CARGO, apply_elastic = TRUE, delete_unsold = TRUE, dry_run=FALSE, datum/export_report/external_report)
-	if(!GLOB.exports_list.len)
-		setupExports()
-
+/proc/export_item_and_contents(atom/movable/AM, apply_elastic = TRUE, delete_unsold = TRUE, dry_run=FALSE, datum/export_report/external_report)
 	var/profit_ratio = 1 //Percentage that gets sent to the seller, rest goes to cargo.
 
 	var/list/contents = AM.GetAllContents()
@@ -47,11 +23,11 @@ then the player gets the profit from selling his own wasted time.
 		if(QDELETED(thing))
 			continue
 
-		for(var/datum/export/E in GLOB.exports_list)
+		for(var/datum/export/E in GLOB.outpost_exports)
 			if(!E)
 				continue
-			if(E.applies_to(thing, allowed_categories, apply_elastic))
-				sold = E.sell_object(thing, report, dry_run, allowed_categories , apply_elastic, profit_ratio)
+			if(E.applies_to(thing, apply_elastic))
+				sold = E.sell_object(thing, report, dry_run , apply_elastic, profit_ratio)
 				report.exported_atoms += " [thing.name]"
 				if(!QDELETED(thing))
 					report.exported_atoms_ref += thing
@@ -65,24 +41,35 @@ then the player gets the profit from selling his own wasted time.
 	return report
 
 /datum/export
-	var/unit_name = ""				// Unit name. Only used in "Received [total_amount] [name]s [message]." message
-	var/message = ""
-	var/cost = 1					// Cost of item, in cargo credits. Must not alow for infinite price dupes, see above.
-	var/k_elasticity = 1/30			//coefficient used in marginal price calculation that roughly corresponds to the inverse of price elasticity, or "quantity elasticity"
+	var/unit_name = ""
+	var/desc = ""
+	/// The base amount of money gained when selling a "unit" of this item, as determined by get_amount().
+	/// The actual sale value may change if this export has elasticity, and is controlled by the variable true_cost.
+	var/cost = 1
+	/// The "actual" sale cost of the item, including the current value as altered by elasticity.
+	var/true_cost
+
+	/// The percentage of the item's value which is shaved off after each unit is sold, compounding multiplicatively. This recovers over time.
+	/// If items are sold in bulk (i.e., 2 or 3 or 10 at a time), the total payout is the same as if they were sold individually, before rounding.
+	/// Even without any items previously sold, the sale cost may be slightly smaller than the "base" cost, due to the math attempting to remain
+	/// correct even when less than a whole unit is sold.
+	/// If set to 0, the cost is static.
+	var/elasticity_coeff = 0.01
+	/// The amount of time it takes for the sale cost of the export to recover from a single unit sold.
+	/// If set to 0, the cost will never recover.
+	var/recovery_ds = 5 MINUTES
+
+	///what's the least this item can go for
+	var/sell_floor = 0
+
 	var/list/export_types = list()	// Type of the exported object. If none, the export datum is considered base type.
 	var/include_subtypes = TRUE		// Set to FALSE to make the datum apply only to a strict type.
 	var/list/exclude_types = list()	// Types excluded from export
 
-	//cost includes elasticity, this does not.
-	var/init_cost
-
-	//All these need to be present in export call parameter for this to apply.
-	var/export_category = EXPORT_CARGO
-
 /datum/export/New()
 	..()
-	START_PROCESSING(SSprocessing, src)
-	init_cost = cost
+	true_cost = cost
+
 	export_types = typecacheof(export_types, FALSE, !include_subtypes)
 	exclude_types = typecacheof(exclude_types)
 
@@ -90,113 +77,78 @@ then the player gets the profit from selling his own wasted time.
 	STOP_PROCESSING(SSprocessing, src)
 	return ..()
 
-/datum/export/process(seconds_per_tick)
-	. = ..()
-	if(!k_elasticity)
+/datum/export/process(seconds_per_tick = 2)
+	if(!elasticity_coeff || !recovery_ds)
 		return PROCESS_KILL
-	cost *= NUM_E**(k_elasticity * (1/30))
-	if(cost > init_cost)
-		cost = init_cost
+	true_cost *= (1 - elasticity_coeff)**(-1 * seconds_per_tick/(recovery_ds))
+	if(true_cost > cost)
+		true_cost = cost
+		return PROCESS_KILL
 
 // Checks the cost. 0 cost items are skipped in export.
-/datum/export/proc/get_cost(obj/O, allowed_categories = NONE, apply_elastic = TRUE)
+/datum/export/proc/get_cost(obj/O, apply_elastic = TRUE)
 	var/amount = get_amount(O)
-	if(apply_elastic)
-		if(k_elasticity!=0)
-			return round((cost/k_elasticity) * (1 - NUM_E**(-1 * k_elasticity * amount)))	//anti-derivative of the marginal cost function
-		else
-			return round(cost * amount)	//alternative form derived from L'Hopital to avoid division by 0
+	if(apply_elastic && elasticity_coeff != 0)
+		// definite integral from (old amount sold) to (new amount sold) of the cost function.
+		// this applies even when the amount being sold is one unit, decreasing it slightly,
+		// so that selling even half a unit twice is no more effective than selling the whole unit, ignoring rounding.
+		return max(sell_floor, round(
+			(true_cost/log(1 - elasticity_coeff)) * ((1 - elasticity_coeff)**(amount) - 1),
+			1
+		))
 	else
-		return round(init_cost * amount)
+		return round(cost * amount, 1)
 
 // Checks the amount of exportable in object. Credits in the bill, sheets in the stack, etc.
 // Usually acts as a multiplier for a cost, so item that has 0 amount will be skipped in export.
 /datum/export/proc/get_amount(obj/O)
 	return 1
 
-// Checks if the item is fit for export datum.
-/datum/export/proc/applies_to(obj/O, allowed_categories = NONE, apply_elastic = TRUE)
-	if((allowed_categories & export_category) != export_category)
-		return FALSE
+// Checks if the atom is fit for export datum.
+/datum/export/proc/applies_to(obj/O, apply_elastic = TRUE)
 	if(!is_type_in_typecache(O, export_types))
 		return FALSE
 	if(include_subtypes && is_type_in_typecache(O, exclude_types))
 		return FALSE
-	if(!get_cost(O, allowed_categories , apply_elastic))
+	if(!get_amount(O))
+		return FALSE
+	if(!get_cost(O, apply_elastic))
 		return FALSE
 	if(O.flags_1 & HOLOGRAM_1)
 		return FALSE
 	return TRUE
 
-/**
-	* Calculates the exact export value of the object, while factoring in all the relivant variables.
-	*
-	* Called only once, when the object is actually sold by the datum.
-	* Adds item's cost and amount to the current export cycle.
-	* get_cost, get_amount and applies_to do not neccesary mean a successful sale.
-	*
-	*/
-/datum/export/proc/sell_object(obj/O, datum/export_report/report, dry_run = TRUE, allowed_categories = EXPORT_CARGO , apply_elastic = TRUE)
+/datum/export/proc/sell_object(obj/O, dry_run = TRUE, apply_elastic = TRUE)
 	///This is the value of the object, as derived from export datums.
-	var/the_cost = get_cost(O, allowed_categories , apply_elastic)
+	var/the_cost = get_cost(O, apply_elastic)
 	///Quantity of the object in question.
 	var/amount = get_amount(O)
 	///Utilized in the pricetag component. Splits the object's profit when it has a pricetag by the specified amount.
 	var/profit_ratio = 0
 
-	if(amount <=0 || the_cost <=0)
-		return FALSE
-	if(dry_run == FALSE)
-		if(SEND_SIGNAL(O, COMSIG_ITEM_SOLD, item_value = get_cost(O, allowed_categories , apply_elastic)) & COMSIG_ITEM_SPLIT_VALUE)
-			profit_ratio = SEND_SIGNAL(O, COMSIG_ITEM_SPLIT_PROFIT_DRY)
-			the_cost = the_cost * ((100 - profit_ratio) * 0.01)
-	else
-		profit_ratio = SEND_SIGNAL(O, COMSIG_ITEM_SPLIT_PROFIT)
-		the_cost = the_cost * ((100 - profit_ratio) * 0.01)
-	report.total_value[src] += the_cost
+	if(amount <= 0 || the_cost <= 0)
+		return null
 
-	if(istype(O, /datum/export/material))
-		report.total_amount[src] += amount*MINERAL_MATERIAL_AMOUNT
-	else
-		report.total_amount[src] += amount
+	profit_ratio = SEND_SIGNAL(O, COMSIG_ITEM_SPLIT_PROFIT)
+	the_cost = the_cost * ((100 - profit_ratio) * 0.01)
 
 	if(!dry_run)
 		if(apply_elastic)
-			cost *= NUM_E**(-1*k_elasticity*amount)		//marginal cost modifier
+			true_cost *= (1 - elasticity_coeff)**amount
 		SSblackbox.record_feedback("nested tally", "export_sold_cost", 1, list("[O.type]", "[the_cost]"))
-	return TRUE
+		SSblackbox.record_feedback("tally", "export_sold_cost_total", the_cost, O.type)
+	if(true_cost != cost)
+		START_PROCESSING(SSprocessing, src)
+	return the_cost
 
-// Total printout for the cargo console.
-// Called before the end of current export cycle.
-// It must always return something if the datum adds or removes any credts.
-/datum/export/proc/total_printout(datum/export_report/ex, notes = TRUE)
-	if(!ex.total_amount[src] || !ex.total_value[src])
-		return ""
+/datum/export/proc/calc_total_payout(atoms_list = list())
+	var/total_payout = 0
+	for(var/atom/priced_atom in atoms_list)
+		total_payout += get_cost(priced_atom)
+	return total_payout
 
-	var/total_value = ex.total_value[src]
-	var/total_amount = ex.total_amount[src]
-
-	var/msg = "[total_value] credits: Received [total_amount] "
-	if(total_value > 0)
-		msg = "+" + msg
-
-	if(unit_name)
-		msg += unit_name
-		if(total_amount > 1)
-			msg += "s"
-		if(message)
-			msg += " "
-
-	if(message)
-		msg += message
-
-	msg += "."
-	return msg
-
-GLOBAL_LIST_EMPTY(exports_list)
-
-/proc/setupExports()
-	for(var/subtype in subtypesof(/datum/export))
-		var/datum/export/E = new subtype
-		if(E.export_types && E.export_types.len) // Exports without a type are invalid/base types
-			GLOB.exports_list += E
+/datum/export/proc/get_payout_text()
+	if(true_cost != cost)
+		return "[max(sell_floor,round(true_cost, cost/1000))]/[cost]"
+	else
+		return "[true_cost]"

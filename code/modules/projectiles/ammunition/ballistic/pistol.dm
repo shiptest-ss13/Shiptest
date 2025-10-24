@@ -1,67 +1,69 @@
-// 10mm (Ringneck)
+// 10x22mm (Ringneck)
 
 /obj/item/ammo_casing/c10mm
-	name = "10mm bullet casing"
-	desc = "A 10mm bullet casing."
+	name = "10x22mm bullet casing"
+	desc = "A 10x22mm bullet casing."
 	icon_state = "pistol-steel"
-	caliber = "10mm"
+	caliber = "10x22mm"
 	projectile_type = /obj/projectile/bullet/c10mm
 
 /obj/item/ammo_casing/c10mm/surplus
-	name = "10mm surplus bullet casing"
-	desc = "A 10mm surplus bullet casing."
+	name = "10x22mm surplus bullet casing"
+	desc = "A 10x22mm surplus bullet casing."
 	bullet_skin = "surplus"
 	projectile_type = /obj/projectile/bullet/c10mm/surplus
+	wear_modifier = 2
 
 /obj/item/ammo_casing/c10mm/ap
-	name = "10mm armor-piercing bullet casing"
-	desc = "A 10mm armor-piercing bullet casing."
+	name = "10x22mm armor-piercing bullet casing"
+	desc = "A 10x22mm armor-piercing bullet casing."
 	bullet_skin = "ap"
 	projectile_type = /obj/projectile/bullet/c10mm/ap
 
 /obj/item/ammo_casing/c10mm/hp
-	name = "10mm hollow point bullet casing"
-	desc = "A 10mm hollow point bullet casing."
+	name = "10x22mm hollow point bullet casing"
+	desc = "A 10x22mm hollow point bullet casing."
 	projectile_type = /obj/projectile/bullet/c10mm/hp
 	bullet_skin = "hollow"
 
 /obj/item/ammo_casing/c10mm/rubber
-	name = "10mm rubber bullet casing"
-	desc = "A 10mm rubber bullet casing."
+	name = "10x22mm rubber bullet casing"
+	desc = "A 10x22mm rubber bullet casing."
 	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/c10mm/rubber
 
-// 9mm (Commander + SABR)
+// 9x18mm (Commander + SABR)
 
 /obj/item/ammo_casing/c9mm
-	name = "9mm bullet casing"
-	desc = "A 9mm bullet casing."
+	name = "9x18mm bullet casing"
+	desc = "A 9x18mm bullet casing."
 	icon_state = "pistol-brass"
-	caliber = "9mm"
+	caliber = "9x18mm"
 	projectile_type = /obj/projectile/bullet/c9mm
 	stack_size = 15
 
 /obj/item/ammo_casing/c9mm/surplus
-	name = "9mm surplus bullet casing"
-	desc = "A 9mm surplus bullet casing."
+	name = "9x18mm surplus bullet casing"
+	desc = "A 9x18mm surplus bullet casing."
 	bullet_skin = "surplus"
 	projectile_type = /obj/projectile/bullet/c9mm/surplus
+	wear_modifier = 2
 
 /obj/item/ammo_casing/c9mm/ap
-	name = "9mm armor-piercing bullet casing"
-	desc = "A 9mm armor-piercing bullet casing."
+	name = "9x18mm armor-piercing bullet casing"
+	desc = "A 9x18mm armor-piercing bullet casing."
 	bullet_skin = "ap"
 	projectile_type = /obj/projectile/bullet/c9mm/ap
 
 /obj/item/ammo_casing/c9mm/hp
-	name = "9mm hollow point bullet casing"
-	desc = "A 9mm hollow point bullet casing."
+	name = "9x18mm hollow point bullet casing"
+	desc = "A 9x18mm hollow point bullet casing."
 	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/c9mm/hp
 
 /obj/item/ammo_casing/c9mm/rubber
-	name = "9mm rubber bullet casing"
-	desc = "A 9mm rubber bullet casing."
+	name = "9x18mm rubber bullet casing"
+	desc = "A 9x18mm rubber bullet casing."
 	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/c9mm/rubber
 
@@ -80,6 +82,7 @@
 	desc = "A .45 surplus bullet casing."
 	bullet_skin = "surplus"
 	projectile_type = /obj/projectile/bullet/c45/surplus
+	wear_modifier = 2
 
 /obj/item/ammo_casing/c45/ap
 	name = ".45 armor-piercing bullet casing"

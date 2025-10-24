@@ -61,7 +61,7 @@
 
 /obj/machinery/door/keycard
 	name = "locked door"
-	desc = "This door only opens when a keycard is swiped. It looks virtually indestructable."
+	desc = "This door only opens when a keycard is swiped. It looks virtually indestructible."
 	icon = 'icons/obj/doors/doorpuzzle.dmi'
 	icon_state = "door_closed"
 	explosion_block = 3
@@ -92,14 +92,14 @@
 	if(istype(I,/obj/item/keycard))
 		var/obj/item/keycard/key = I
 		if((!puzzle_id || puzzle_id == key.puzzle_id)  && density)
-			to_chat(user, "<span class='notice'>The door rattles, and slides opens.</span>")
+			to_chat(user, span_notice("The door rattles, and slides opens."))
 			open()
 			return
 		else if(puzzle_id != key.puzzle_id)
-			to_chat(user, "<span class='notice'>[src] shakes. This must not be the right key.</span>")
+			to_chat(user, span_notice("[src] shakes. This must not be the right key."))
 			return
 		else
-			to_chat(user, "<span class='notice'>This door doesn't appear to close.</span>")
+			to_chat(user, span_notice("This door doesn't appear to close."))
 			return
 
 //Test doors. Gives admins a few doors to use quickly should they so choose.
@@ -191,7 +191,7 @@
 	trigger_delay = 10
 	protected = TRUE
 	resistance_flags = INDESTRUCTIBLE | FIRE_PROOF | ACID_PROOF | LAVA_PROOF
-	var/reward = /obj/item/reagent_containers/food/snacks/cookie
+	var/reward = /obj/item/food/cookie
 	var/claimed = FALSE
 
 /obj/item/pressure_plate/hologrid/Initialize()
@@ -207,7 +207,7 @@
 /obj/item/pressure_plate/hologrid/examine(mob/user)
 	. = ..()
 	if(claimed)
-		. += "<span class='notice'>This one appears to be spent already.</span>"
+		. += span_notice("This one appears to be spent already.")
 
 /obj/item/pressure_plate/hologrid/trigger()
 	if(!claimed)

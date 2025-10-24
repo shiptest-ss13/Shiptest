@@ -77,9 +77,9 @@
 
 /obj/item/card/emag/borg/examine()
 	. = ..()
-	. += "<span class='notice'> Capable of interchanging between electromagnetic, electrical, & screw turning functionality.</span>"
+	. += span_notice(" Capable of interchanging between electromagnetic, electrical, & screw turning functionality.")
 	if(uses_left > -1)
-		. += "<span class='notice'> It has [uses_left] charge\s left.</span>"
+		. += span_notice(" It has [uses_left] charge\s left.")
 
 /obj/item/card/emag/limited
 	name = "limited cryptographic sequencer"
@@ -90,17 +90,17 @@
 	playsound(get_turf(user), 'sound/items/change_drill.ogg', 50, TRUE)
 	if(tool_behaviour == NONE)
 		tool_behaviour = TOOL_SCREWDRIVER
-		to_chat(user, "<span class='notice'>You extend the screwdriver within the [src].</span>")
+		to_chat(user, span_notice("You extend the screwdriver within the [src]."))
 		icon_state = "inf_screwdriver"
 		emag_on = FALSE
 	else if(tool_behaviour == TOOL_SCREWDRIVER)
 		tool_behaviour = TOOL_MULTITOOL
-		to_chat(user, "<span class='notice'>You prime the multitool attachment of the [src].</span>")
+		to_chat(user, span_notice("You prime the multitool attachment of the [src]."))
 		icon_state = "inf_multi"
 		emag_on = FALSE
 	else
 		tool_behaviour = NONE
-		to_chat(user, "<span class='notice'>You enable the electromagnetic hacking system of the [src].</span>")
+		to_chat(user, span_notice("You enable the electromagnetic hacking system of the [src]."))
 		icon_state = "inf_emag"
 		emag_on = TRUE
 
@@ -148,7 +148,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	slot_flags = ITEM_SLOT_ID
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
-	resistance_flags = FIRE_PROOF | ACID_PROOF
+	resistance_flags = FIRE_PROOF | ACID_PROOF | INDESTRUCTIBLE
 	var/list/access = list()
 	var/list/ship_access = list()
 	var/registered_name = null // The name registered_name on the card
@@ -160,6 +160,7 @@
 	var/registered_age = 18 // default age for ss13 players
 	var/job_icon
 	var/faction_icon
+	var/officer = FALSE // Whether the ID belongs to an officer, set in /datum/job/proc/equip
 
 /obj/item/card/id/Initialize(mapload)
 	. = ..()
@@ -201,20 +202,18 @@
 		. += "[registered_name]"
 	if(registered_age)
 		. += "<B>AGE:</B>"
-		. += "[registered_age] years old [(registered_age < AGE_MINOR) ? "There's a holographic stripe that reads <b><span class='danger'>'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'</span></b> along the bottom of the card." : ""]"
+		. += "[registered_age] years old [(registered_age < AGE_MINOR) ? "There's a holographic stripe that reads <b>[span_danger("'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'")]</b> along the bottom of the card." : ""]"
 	if(length(ship_access))
-		. += "<B>SHIP ACCESS:</B>"
-
 		var/list/ship_factions = list()
-		for(var/datum/overmap/ship/controlled/ship in ship_access)
-			var/faction = ship.get_faction()
-			if(!(faction in ship_factions))
-				ship_factions += faction
-		. += "<B>[ship_factions.Join(", ")]</B>"
-
 		var/list/ship_names = list()
 		for(var/datum/overmap/ship/controlled/ship in ship_access)
+			ship_factions |= ship.source_template.faction.name
 			ship_names += ship.name
+
+		. += "<B>FACTION ACCESS:</B>"
+		. += "[ship_factions.Join(", ")]"
+
+		. += "<B>SHIP ACCESS:</B>"
 		. += "[ship_names.Join(", ")]"
 
 /obj/item/card/id/GetAccess()
@@ -271,7 +270,7 @@
 // Finds the referenced ship in the list
 /obj/item/card/id/proc/has_ship_access(datum/overmap/ship/controlled/ship)
 	if (ship)
-		return ship_access.Find(ship)
+		return ship in ship_access
 
 /*
 Usage:
@@ -322,7 +321,7 @@ update_label()
 		src.access |= I.access
 		if(isliving(user) && user.mind)
 			if(user.mind.special_role || anyone)
-				to_chat(usr, "<span class='notice'>The card's microscanners activate as you pass it over the ID, copying its access.</span>")
+				to_chat(usr, span_notice("The card's microscanners activate as you pass it over the ID, copying its access."))
 
 /obj/item/card/id/syndicate/attack_self(mob/user)
 	if(isliving(user) && user.mind)
@@ -360,7 +359,7 @@ update_label()
 			assignment = target_occupation
 			update_label()
 			forged = TRUE
-			to_chat(user, "<span class='notice'>You successfully forge the ID card.</span>")
+			to_chat(user, span_notice("You successfully forge the ID card."))
 			log_game("[key_name(user)] has forged \the [initial(name)] with name \"[registered_name]\" and occupation \"[assignment]\".")
 
 			return
@@ -372,7 +371,7 @@ update_label()
 			log_game("[key_name(user)] has reset \the [initial(name)] named \"[src]\" to default.")
 			update_label()
 			forged = FALSE
-			to_chat(user, "<span class='notice'>You successfully reset the ID card.</span>")
+			to_chat(user, span_notice("You successfully reset the ID card."))
 			return
 	return ..()
 
@@ -500,13 +499,6 @@ update_label()
 	access = get_all_accesses()
 	. = ..()
 
-/obj/item/card/id/ert/clown
-	icon_state = "ert_clown"
-
-/obj/item/card/id/ert/clown/Initialize()
-	access = get_all_accesses()
-	. = ..()
-
 /obj/item/card/id/ert/deathsquad
 	desc = "An access card colored in black and red."
 	icon_state = "deathsquad" //NO NO SIR DEATH SQUADS ARENT A PART OF NANOTRASEN AT ALL
@@ -538,7 +530,7 @@ update_label()
 	registered_age = null
 
 /obj/item/card/id/prisoner/attack_self(mob/user)
-	to_chat(usr, "<span class='notice'>You have accumulated [points] out of the [goal] points you need for freedom.</span>")
+	to_chat(usr, span_notice("You have accumulated [points] out of the [goal] points you need for freedom."))
 
 /obj/item/card/id/prisoner/one
 	name = "Prisoner #13-001"

@@ -8,7 +8,7 @@
 	drop_sound = 'sound/items/handling/knife3_drop.ogg'
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 	slot = ATTACHMENT_SLOT_MUZZLE
 	attach_features_flags = ATTACH_TOGGLE | ATTACH_REMOVABLE_HAND
 
@@ -36,7 +36,7 @@
 	. = ..()
 	set_light_on(toggled)
 	update_icon()
-	sharpness = toggled ? IS_SHARP_ACCURATE : IS_BLUNT
+	sharpness = toggled ? SHARP_POINTY : SHARP_NONE
 	force = toggled ? 19 : 3
 	throwforce = toggled ? 14 : 2
 

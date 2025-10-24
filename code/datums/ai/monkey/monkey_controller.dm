@@ -21,13 +21,15 @@ have ways of interacting with a specific mob and control it.
 		BB_MONKEY_GUN_WORKED = TRUE,
 		BB_MONKEY_NEXT_HUNGRY = 0
 	)
+	idle_behavior = /datum/idle_behavior/idle_monkey
+
 /datum/ai_controller/monkey/angry
 
 /datum/ai_controller/monkey/angry/TryPossessPawn(atom/new_pawn)
 	. = ..()
 	if(. & AI_CONTROLLER_INCOMPATIBLE)
 		return
-	blackboard[BB_MONKEY_AGRESSIVE] = TRUE //Angry cunt
+	set_blackboard_key(BB_MONKEY_AGRESSIVE, TRUE) //Angry cunt
 
 /datum/ai_controller/monkey/TryPossessPawn(atom/new_pawn)
 	if(!isliving(new_pawn))
@@ -36,23 +38,24 @@ have ways of interacting with a specific mob and control it.
 	blackboard[BB_MONKEY_NEXT_HUNGRY] = world.time + rand(0, 300)
 
 	var/mob/living/living_pawn = new_pawn
-	RegisterSignal(new_pawn, COMSIG_PARENT_ATTACKBY, PROC_REF(on_attackby))
-	RegisterSignal(new_pawn, COMSIG_ATOM_ATTACK_HAND, PROC_REF(on_attack_hand))
-	RegisterSignal(new_pawn, COMSIG_ATOM_ATTACK_PAW, PROC_REF(on_attack_paw))
-	RegisterSignal(new_pawn, COMSIG_ATOM_BULLET_ACT, PROC_REF(on_bullet_act))
-	RegisterSignal(new_pawn, COMSIG_ATOM_HITBY, PROC_REF(on_hitby))
+	living_pawn.AddElement(/datum/element/relay_attackers)
+	RegisterSignal(new_pawn, COMSIG_ATOM_WAS_ATTACKED, PROC_REF(on_attacked))
 	RegisterSignal(new_pawn, COMSIG_LIVING_START_PULL, PROC_REF(on_startpulling))
 	RegisterSignal(new_pawn, COMSIG_LIVING_TRY_SYRINGE, PROC_REF(on_try_syringe))
-	RegisterSignal(new_pawn, COMSIG_ATOM_HULK_ATTACK, PROC_REF(on_attack_hulk))
 	RegisterSignal(new_pawn, COMSIG_CARBON_CUFF_ATTEMPTED, PROC_REF(on_attempt_cuff))
 	RegisterSignal(new_pawn, COMSIG_MOB_MOVESPEED_UPDATED, PROC_REF(update_movespeed))
-	RegisterSignal(new_pawn, COMSIG_FOOD_EATEN, PROC_REF(on_eat))
+
 	movement_delay = living_pawn.cached_multiplicative_slowdown
 	return ..() //Run parent at end
 
 /datum/ai_controller/monkey/UnpossessPawn(destroy)
-	UnregisterSignal(pawn, list(COMSIG_PARENT_ATTACKBY, COMSIG_ATOM_ATTACK_HAND, COMSIG_ATOM_ATTACK_PAW, COMSIG_ATOM_BULLET_ACT, COMSIG_ATOM_HITBY, COMSIG_LIVING_START_PULL,\
-	COMSIG_LIVING_TRY_SYRINGE, COMSIG_ATOM_HULK_ATTACK, COMSIG_CARBON_CUFF_ATTEMPTED, COMSIG_MOB_MOVESPEED_UPDATED))
+	UnregisterSignal(pawn, list(
+		COMSIG_ATOM_WAS_ATTACKED,
+		COMSIG_LIVING_START_PULL,
+		COMSIG_LIVING_TRY_SYRINGE,
+		COMSIG_CARBON_CUFF_ATTEMPTED,
+		COMSIG_MOB_MOVESPEED_UPDATED,
+	))
 	return ..() //Run parent at end
 
 /datum/ai_controller/monkey/able_to_run()
@@ -66,8 +69,8 @@ have ways of interacting with a specific mob and control it.
 /datum/ai_controller/monkey/proc/TryFindWeapon()
 	var/mob/living/living_pawn = pawn
 
-	if(!locate(/obj/item) in living_pawn.held_items)
-		blackboard[BB_MONKEY_BEST_FORCE_FOUND] = 0
+	if(!(locate(/obj/item) in living_pawn.held_items))
+		set_blackboard_key(BB_MONKEY_BEST_FORCE_FOUND, 0)
 
 	if(blackboard[BB_MONKEY_GUN_NEURONS_ACTIVATED] && (locate(/obj/item/gun) in living_pawn.held_items))
 		// We have a gun, what could we possibly want?
@@ -91,7 +94,7 @@ have ways of interacting with a specific mob and control it.
 	if(!weapon || (weapon in living_pawn.held_items))
 		return FALSE
 
-	blackboard[BB_MONKEY_PICKUPTARGET] = weapon
+	set_blackboard_key(BB_MONKEY_PICKUPTARGET, weapon)
 	current_movement_target = weapon
 	if(pickpocket)
 		LAZYADD(current_behaviors, GET_AI_BEHAVIOR(/datum/ai_behavior/monkey_equip/pickpocket))
@@ -155,7 +158,7 @@ have ways of interacting with a specific mob and control it.
 				continue
 			living_pawn.dropItemToGround(held)
 
-		AddBehavior(/datum/ai_behavior/consume, pick(food_candidates))
+		queue_behavior(/datum/ai_behavior/consume, pick(food_candidates))
 		return TRUE
 
 /datum/ai_controller/monkey/proc/IsEdible(obj/item/thing)
@@ -167,57 +170,15 @@ have ways of interacting with a specific mob and control it.
 			return TRUE
 	return FALSE
 
-//When idle just kinda fuck around.
-/datum/ai_controller/monkey/PerformIdleBehavior(seconds_per_tick)
-	var/mob/living/living_pawn = pawn
-
-	if(SPT_PROB(25, seconds_per_tick) && (living_pawn.mobility_flags & MOBILITY_MOVE) && isturf(living_pawn.loc) && !living_pawn.pulledby)
-		step(living_pawn, pick(GLOB.cardinals))
-	else if(SPT_PROB(5, seconds_per_tick))
-		INVOKE_ASYNC(living_pawn, TYPE_PROC_REF(/mob, emote), pick("screech"))
-	else if(SPT_PROB(1, seconds_per_tick))
-		INVOKE_ASYNC(living_pawn, TYPE_PROC_REF(/mob, emote), pick("scratch","jump","roll","tail"))
-
 ///Reactive events to being hit
 /datum/ai_controller/monkey/proc/retaliate(mob/living/L)
 	var/list/enemies = blackboard[BB_MONKEY_ENEMIES]
 	enemies[L] += MONKEY_HATRED_AMOUNT
 
-/datum/ai_controller/monkey/proc/on_attackby(datum/source, obj/item/I, mob/user)
+/datum/ai_controller/monkey/proc/on_attacked(datum/source, mob/attacker)
 	SIGNAL_HANDLER
-	if(I.force && I.damtype != STAMINA)
-		retaliate(user)
-
-/datum/ai_controller/monkey/proc/on_attack_hand(datum/source, mob/living/L)
-	SIGNAL_HANDLER
-	if(L.a_intent == INTENT_HARM && prob(MONKEY_RETALIATE_HARM_PROB))
-		retaliate(L)
-	else if(L.a_intent == INTENT_DISARM && prob(MONKEY_RETALIATE_DISARM_PROB))
-		retaliate(L)
-
-/datum/ai_controller/monkey/proc/on_attack_paw(datum/source, mob/living/L)
-	SIGNAL_HANDLER
-	if(L.a_intent == INTENT_HARM && prob(MONKEY_RETALIATE_HARM_PROB))
-		retaliate(L)
-	else if(L.a_intent == INTENT_DISARM && prob(MONKEY_RETALIATE_DISARM_PROB))
-		retaliate(L)
-
-/datum/ai_controller/monkey/proc/on_bullet_act(datum/source, obj/projectile/Proj)
-	SIGNAL_HANDLER
-	var/mob/living/living_pawn = pawn
-	if(istype(Proj , /obj/projectile/beam)||istype(Proj, /obj/projectile/bullet))
-		if((Proj.damage_type == BURN) || (Proj.damage_type == BRUTE))
-			if(!Proj.nodamage && Proj.damage < living_pawn.health && isliving(Proj.firer))
-				retaliate(Proj.firer)
-
-/datum/ai_controller/monkey/proc/on_hitby(datum/source, atom/movable/AM, skipcatch = FALSE, hitpush = TRUE, blocked = FALSE, datum/thrownthing/throwingdatum)
-	SIGNAL_HANDLER
-	if(istype(AM, /obj/item))
-		var/mob/living/living_pawn = pawn
-		var/obj/item/I = AM
-		if(I.throwforce < living_pawn.health && ishuman(I.thrownby))
-			var/mob/living/carbon/human/H = I.thrownby
-			retaliate(H)
+	if(prob(MONKEY_RETALIATE_PROB))
+		retaliate(attacker)
 
 /datum/ai_controller/monkey/proc/on_startpulling(datum/source, atom/movable/puller, state, force)
 	SIGNAL_HANDLER
@@ -231,10 +192,6 @@ have ways of interacting with a specific mob and control it.
 	// chance of monkey retaliation
 	if(prob(MONKEY_SYRINGE_RETALIATION_PROB))
 		retaliate(user)
-
-/datum/ai_controller/monkey/proc/on_attack_hulk(datum/source, mob/user)
-	SIGNAL_HANDLER
-	retaliate(user)
 
 /datum/ai_controller/monkey/proc/on_attempt_cuff(datum/source, mob/user)
 	SIGNAL_HANDLER

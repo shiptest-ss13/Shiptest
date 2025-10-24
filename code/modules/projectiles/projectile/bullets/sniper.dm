@@ -39,10 +39,10 @@
 	knockdown = 0
 	breakthings = FALSE
 
-//6.5x57mm CLIP (F90)
+//6.5mm CLIP (F90, Boomslang)
 
 /obj/projectile/bullet/a65clip
-	name = "6.5x57mm CLIP bullet"
+	name = "6.5mm CLIP bullet"
 	stamina = 10
 	damage = 40
 	armour_penetration = 50
@@ -62,7 +62,7 @@
 
 //this should only exist on the big ass turrets. don't fucking give players this.
 /obj/projectile/bullet/a65clip/rubber //"rubber"
-	name = "6.5x57mm CLIP rubber bullet"
+	name = "6.5mm CLIP rubber bullet"
 	damage = 10
 	stamina = 40
 	speed_mod = BULLET_SPEED_RUBBER_MOD
@@ -72,8 +72,9 @@
 
 /obj/projectile/bullet/a858
 	name = "8x58mm caseless bullet"
-	damage = 40
-	armour_penetration = 45
+	damage = 45
+	stamina = 10
+	armour_penetration = 50
 	speed = BULLET_SPEED_SNIPER
 	bullet_identifier = "huge bullet"
 
@@ -87,7 +88,7 @@
 
 /obj/projectile/bullet/a300
 	name = ".300 Magnum bullet"
-	damage = 45
+	damage = 50
 	stamina = 10
 	armour_penetration = 40
 	speed = BULLET_SPEED_RIFLE

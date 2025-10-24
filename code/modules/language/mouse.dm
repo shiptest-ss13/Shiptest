@@ -7,6 +7,7 @@
 	key = "l"
 	flags = NO_STUTTER | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD | LANGUAGE_HIDE_ICON_IF_UNDERSTOOD
 
-/datum/language/mouse/scramble(input)
+/datum/language/mouse/scramble_sentence(input, list/mutual_languages)
+	. = ..()
 	. = "Squeak"
 	. += (copytext(input, length(input)) == "?") ? "?" : "!"

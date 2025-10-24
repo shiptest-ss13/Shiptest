@@ -26,9 +26,9 @@
 	extra_price = 700
 
 	var/voucher_items = list(
-		"NT-E-Rifle" = /obj/item/gun/energy/e_gun,
-		"E-TAR SMG" = /obj/item/gun/energy/e_gun/smg,
-		"E-SG 500" = /obj/item/gun/energy/e_gun/iot)
+		"NT-E-Rifle" = /obj/item/gun/energy/sharplite/x12,
+		"E-TAR SMG" = /obj/item/gun/energy/sharplite/l305,
+		"E-SG 500" = /obj/item/gun/energy/sharplite/x46)
 
 /obj/machinery/vending/security/pre_throw(obj/item/I)
 	if(istype(I, /obj/item/grenade))
@@ -104,7 +104,7 @@
 	contraband = list()
 	premium = list()
 	voucher_items = list(
-		"Tactical Energy Gun" = /obj/item/gun/energy/e_gun/hades,
+		"Tactical Energy Gun" = /obj/item/gun/energy/sharplite/al655,
 		"Combat Shotgun" = /obj/item/gun/ballistic/shotgun/automatic/m11)
 
 /obj/machinery/vending/security/marine/syndicate
@@ -154,10 +154,10 @@
 		)
 
 	voucher_items = list(
-		"SL AL-655 Energy Rifle" = /obj/item/gun/energy/e_gun/hades,
-		"NT-E-Rifle" = /obj/item/gun/energy/e_gun,
-		"E-TAR SMG" = /obj/item/gun/energy/e_gun/smg,
-		"E-SG 500" = /obj/item/gun/energy/e_gun/iot)
+		"SL AL-655 Energy Rifle" = /obj/item/gun/energy/sharplite/al655,
+		"NT-E-Rifle" = /obj/item/gun/energy/sharplite/x12,
+		"E-TAR SMG" = /obj/item/gun/energy/sharplite/l305,
+		"E-SG 500" = /obj/item/gun/energy/sharplite/x46)
 /obj/item/gun_voucher
 	name = "security weapon voucher"
 	desc = "A token used to redeem guns from the SecTech vendor."

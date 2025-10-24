@@ -64,8 +64,8 @@
 		var/mob/living/A = the_target
 		if(istype(the_target, /mob/living/simple_animal/hostile/regalrat) && A.stat == CONSCIOUS)
 			return TRUE
-		if(istype(the_target, /mob/living/simple_animal/hostile/rat) && A.stat == CONSCIOUS)
-			var/mob/living/simple_animal/hostile/rat/R = the_target
+		if(istype(the_target, /mob/living/basic/mouse/rat) && A.stat == CONSCIOUS)
+			var/mob/living/basic/mouse/rat/R = the_target
 			if(R.faction_check_mob(src, TRUE))
 				return FALSE
 			else
@@ -74,14 +74,14 @@
 
 /mob/living/simple_animal/hostile/regalrat/examine(mob/user)
 	. = ..()
-	if(istype(user,/mob/living/simple_animal/hostile/rat))
-		var/mob/living/simple_animal/hostile/rat/ratself = user
+	if(istype(user,/mob/living/basic/mouse/rat))
+		var/mob/living/basic/mouse/rat/ratself = user
 		if(ratself.faction_check_mob(src, TRUE))
-			. += "<span class='notice'>This is your king. Long live his majesty!</span>"
+			. += span_notice("This is your king. Long live his majesty!")
 		else
-			. += "<span class='warning'>This is a false king! Strike him down!</span>"
+			. += span_warning("This is a false king! Strike him down!")
 	else if(istype(user,/mob/living/simple_animal/hostile/regalrat))
-		. += "<span class='warning'>Who is this foolish false king? This will not stand!</span>"
+		. += span_warning("Who is this foolish false king? This will not stand!")
 
 /**
  *This action creates trash, money, dirt, and cheese.
@@ -102,19 +102,19 @@
 	var/loot = rand(1,100)
 	switch(loot)
 		if(1 to 5)
-			to_chat(owner, "<span class='notice'>Score! You find some cheese!</span>")
-			new /obj/item/reagent_containers/food/snacks/cheesewedge(T)
+			to_chat(owner, span_notice("Score! You find some cheese!"))
+			new /obj/item/food/cheese/wedge(T)
 		if(6 to 10)
-			to_chat(owner, "<span class='notice'>You find some leftover coins. More for the royal treasury!</span>")
+			to_chat(owner, span_notice("You find some leftover coins. More for the royal treasury!"))
 			for(var/i = 1 to rand(1,3))
 				new /obj/effect/spawner/random/entertainment/coin(T)
 		if(11 to 40)
 			var/pickedtrash = pick(GLOB.trash_loot)
-			to_chat(owner, "<span class='notice'>You just find more garbage and dirt. Lovely, but beneath you now.</span>")
+			to_chat(owner, span_notice("You just find more garbage and dirt. Lovely, but beneath you now."))
 			new /obj/effect/decal/cleanable/dirt(T)
 			new pickedtrash(T)
 		if(41 to 100)
-			to_chat(owner, "<span class='notice'>Drat. Nothing.</span>")
+			to_chat(owner, span_notice("Drat. Nothing."))
 			new /obj/effect/decal/cleanable/dirt(T)
 	StartCooldown()
 
@@ -137,8 +137,8 @@
 		return
 	var/cap = CONFIG_GET(number/ratcap)
 	var/something_from_nothing = FALSE
-	for(var/mob/living/simple_animal/mouse/M in oview(owner, 5))
-		var/mob/living/simple_animal/hostile/rat/new_rat = new(get_turf(M))
+	for(var/mob/living/basic/mouse/M in oview(owner, 5))
+		var/mob/living/basic/mouse/rat/new_rat = new(get_turf(M))
 		something_from_nothing = TRUE
 		if(M.mind && M.stat == CONSCIOUS)
 			M.mind.transfer_to(new_rat)
@@ -148,93 +148,10 @@
 		qdel(M)
 	if(!something_from_nothing)
 		if(LAZYLEN(SSmobs.cheeserats) >= cap)
-			to_chat(owner,"<span class='warning'>There's too many mice in this sector to beckon a new one! Find them first!</span>")
+			to_chat(owner,span_warning("There's too many mice in this sector to beckon a new one! Find them first!"))
 			return
-		new /mob/living/simple_animal/mouse(owner.loc)
-		owner.visible_message("<span class='warning'>[owner] commands a mouse to its side!</span>")
+		new /mob/living/basic/mouse(owner.loc)
+		owner.visible_message(span_warning("[owner] commands a mouse to its side!"))
 	else
-		owner.visible_message("<span class='warning'>[owner] commands its army to action, mutating them into rats!</span>")
+		owner.visible_message(span_warning("[owner] commands its army to action, mutating them into rats!"))
 	StartCooldown()
-
-/mob/living/simple_animal/hostile/rat
-	name = "rat"
-	desc = "It's a nasty, ugly, evil, disease-ridden rodent with anger issues."
-	icon_state = "mouse_gray"
-	icon_living = "mouse_gray"
-	icon_dead = "mouse_gray_dead"
-	speak = list("Skree!","SKREEE!","Squeak?")
-	speak_emote = list("squeaks")
-	emote_hear = list("Hisses.")
-	emote_see = list("runs in a circle.", "stands on its hind legs.")
-	melee_damage_lower = 3
-	melee_damage_upper = 5
-	obj_damage = 5
-	speak_chance = 1
-	turns_per_move = 5
-	see_in_dark = 6
-	maxHealth = 15
-	health = 15
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mouse = 1)
-	density = FALSE
-	ventcrawler = VENTCRAWLER_ALWAYS
-	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
-	mob_size = MOB_SIZE_TINY
-	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	faction = list("rat")
-
-/mob/living/simple_animal/hostile/rat/Initialize()
-	. = ..()
-	SSmobs.cheeserats += src
-
-/mob/living/simple_animal/hostile/rat/Destroy()
-	SSmobs.cheeserats -= src
-	return ..()
-
-/mob/living/simple_animal/hostile/rat/examine(mob/user)
-	. = ..()
-	if(istype(user,/mob/living/simple_animal/hostile/rat))
-		var/mob/living/simple_animal/hostile/rat/ratself = user
-		if(ratself.faction_check_mob(src, TRUE))
-			. += "<span class='notice'>You both serve the same king.</span>"
-		else
-			. += "<span class='warning'>This fool serves a different king!</span>"
-	else if(istype(user,/mob/living/simple_animal/hostile/regalrat))
-		var/mob/living/simple_animal/hostile/regalrat/ratking = user
-		if(ratking.faction_check_mob(src, TRUE))
-			. += "<span class='notice'>This rat serves under you.</span>"
-		else
-			. += "<span class='warning'>This peasant serves a different king! Strike him down!</span>"
-
-/mob/living/simple_animal/hostile/rat/CanAttack(atom/the_target)
-	if(istype(the_target,/mob/living/simple_animal))
-		var/mob/living/A = the_target
-		if(istype(the_target, /mob/living/simple_animal/hostile/regalrat) && A.stat == CONSCIOUS)
-			var/mob/living/simple_animal/hostile/regalrat/ratking = the_target
-			if(ratking.faction_check_mob(src, TRUE))
-				return FALSE
-			else
-				return TRUE
-		if(istype(the_target, /mob/living/simple_animal/hostile/rat) && A.stat == CONSCIOUS)
-			var/mob/living/simple_animal/hostile/rat/R = the_target
-			if(R.faction_check_mob(src, TRUE))
-				return FALSE
-			else
-				return TRUE
-	return ..()
-
-/mob/living/simple_animal/hostile/rat/handle_automated_action()
-	. = ..()
-	if(prob(40))
-		var/turf/open/floor/F = get_turf(src)
-		if(istype(F) && !F.intact)
-			var/obj/structure/cable/C = locate() in F
-			if(C && prob(15))
-				if(C.avail())
-					visible_message("<span class='warning'>[src] chews through the [C]. It's toast!</span>")
-					playsound(src, 'sound/effects/sparks2.ogg', 100, TRUE)
-					C.deconstruct()
-					death()
-			else if(C && C.avail())
-				visible_message("<span class='warning'>[src] chews through the [C]. It looks unharmed!</span>")
-				playsound(src, 'sound/effects/sparks2.ogg', 100, TRUE)
-				C.deconstruct()

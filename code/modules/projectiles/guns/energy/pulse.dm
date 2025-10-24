@@ -11,7 +11,7 @@
 	force = 10
 	modifystate = TRUE
 	flags_1 =  CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse, /obj/item/ammo_casing/energy/laser)
 	internal_magazine = TRUE //prevents you from giving it an OP cell - WS Edit
 	default_ammo_type = /obj/item/stock_parts/cell/pulse
@@ -84,6 +84,7 @@
 /obj/item/gun/energy/pulse/destroyer
 	name = "pulse destroyer"
 	desc = "A heavy-duty energy rifle built for pure destruction."
+	spawn_blacklisted = TRUE
 	default_ammo_type = /obj/item/stock_parts/cell/infinite
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/infinite,
@@ -91,4 +92,4 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse)
 
 /obj/item/gun/energy/pulse/destroyer/attack_self(mob/living/user)
-	to_chat(user, "<span class='danger'>[src.name] has three settings, and they are all DESTROY.</span>")
+	to_chat(user, span_danger("[src.name] has three settings, and they are all DESTROY."))

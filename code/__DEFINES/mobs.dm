@@ -28,13 +28,6 @@
 #define BLOOD_VOLUME_BAD 224
 #define BLOOD_VOLUME_SURVIVE 122
 
-// Bloodloss
-#define BLOOD_LOSS_MAXIMUM 30
-#define BLOOD_LOSS_DAMAGE_MAXIMUM 2
-#define BLOOD_LOSS_DAMAGE_BASE 0.013
-#define BLOOD_CAUTERIZATION_RATIO 10
-#define BLOOD_CAUTERIZATION_DAMAGE_RATIO 300
-
 //Sizes of mobs, used by mob/living/var/mob_size
 #define MOB_SIZE_TINY 0
 #define MOB_SIZE_SMALL 1
@@ -52,16 +45,32 @@
 #define BLOODCRAWL_EAT 2 /// crawling+mob devour
 
 //Mob bio-types flags
-#define MOB_ORGANIC 1 << 0
-#define MOB_MINERAL 1 << 1
-#define MOB_ROBOTIC 1 << 2
-#define MOB_UNDEAD 1 << 3
-#define MOB_HUMANOID 1 << 4
-#define MOB_BUG 1 << 5
-#define MOB_BEAST 1 << 6
-#define MOB_EPIC 1 << 7 //megafauna
-#define MOB_REPTILE 1 << 8
-#define MOB_SPIRIT 1 << 9
+///The mob is organic, can heal from medical sutures.
+#define MOB_ORGANIC (1 << 0)
+///The mob is of a rocky make, most likely a golem. Iron within, iron without!
+#define MOB_MINERAL (1 << 1)
+///The mob is a synthetic lifeform, like station borgs.
+#define MOB_ROBOTIC (1 << 2)
+///The mob is an shambling undead corpse. Or a halloween species. Pick your poison.
+#define MOB_UNDEAD (1 << 3)
+///The mob is a human-sized human-like human-creature.
+#define MOB_HUMANOID (1 << 4)
+///The mob is a bug/insect/arachnid/some other kind of scuttly thing.
+#define MOB_BUG (1 << 5)
+///The mob is a wild animal. Domestication may apply.
+#define MOB_BEAST (1 << 6)
+///The mob is some kind of a creature that should be exempt from certain **fun** interactions for balance reasons, i.e. megafauna or a headslug.
+#define MOB_SPECIAL (1 << 7)
+///The mob is some kind of a scaly reptile creature
+#define MOB_REPTILE (1 << 8)
+///The mob is a spooky phantasm or an evil ghast of such nature.
+#define MOB_SPIRIT (1 << 9)
+///The mob is a plant-based species, benefitting from light but suffering from darkness and plantkillers.
+#define MOB_PLANT (1 << 10)
+///The mob is fish or water-related.
+#define MOB_AQUATIC (1 << 11)
+///The mob is a crustacean. Like crabs. Or lobsters.
+#define MOB_CRUSTACEAN (1 << 12)
 
 //Organ defines for carbon mobs
 #define ORGAN_ORGANIC 1
@@ -178,14 +187,16 @@
 #define TRAUMA_RESILIENCE_BASIC 1 //Curable with chems
 #define TRAUMA_RESILIENCE_SURGERY 2 //Curable with brain surgery
 #define TRAUMA_RESILIENCE_LOBOTOMY 3 //Curable with lobotomy
-#define TRAUMA_RESILIENCE_MAGIC 4 //Curable only with magic
-#define TRAUMA_RESILIENCE_ABSOLUTE 5 //This is here to stay
+#define TRAUMA_RESILIENCE_WOUND 4 //Curable by healing the head wound
+#define TRAUMA_RESILIENCE_MAGIC 5 //Curable only with magic
+#define TRAUMA_RESILIENCE_ABSOLUTE 6 //This is here to stay
 
 //Limit of traumas for each resilience tier
 #define TRAUMA_LIMIT_BASIC 3
 #define TRAUMA_LIMIT_SURGERY 2
 #define TRAUMA_LIMIT_LOBOTOMY 3
 #define TRAUMA_LIMIT_MAGIC 3
+#define TRAUMA_LIMIT_WOUND 2
 #define TRAUMA_LIMIT_ABSOLUTE INFINITY
 
 #define BRAIN_DAMAGE_INTEGRITY_MULTIPLIER 0.5
@@ -310,7 +321,7 @@
 #define SLIDE (1<<1)
 #define GALOSHES_DONT_HELP (1<<2)
 #define SLIDE_ICE (1<<3)
-#define SLIP_WHEN_CRAWLING (1<<4) //clown planet ruin
+#define SLIP_WHEN_CRAWLING (1<<4)
 
 #define MAX_CHICKENS 50
 
@@ -324,6 +335,8 @@
 #define SHOCK_ILLUSION (1 << 2)
 ///The shock doesn't stun.
 #define SHOCK_NOSTUN (1 << 3)
+/// No default message is sent from the shock
+#define SHOCK_SUPPRESS_MESSAGE (1 << 4)
 
 #define INCORPOREAL_MOVE_BASIC 1 /// normal movement, see: [/mob/living/var/incorporeal_move]
 #define INCORPOREAL_MOVE_SHADOW 2 /// leaves a trail of shadows
@@ -371,7 +384,7 @@
 
 // Roundstart trait system
 
-#define MAX_QUIRKS 6 //The maximum amount of quirks one character can have at roundstart
+#define MAX_QUIRKS 4 //The maximum amount of quirks one character can have at roundstart
 
 // AI Toggles
 #define AI_CAMERA_LUMINOSITY 5
@@ -443,6 +456,17 @@
 
 //Saves a proc call, life is suffering. If who has no targets_from var, we assume it's just who
 #define GET_TARGETS_FROM(who) (who.targets_from ? who.get_targets_from() : who)
+
+///Squash flags. For squashable component
+///Whether or not the squashing requires the squashed mob to be lying down
+#define SQUASHED_SHOULD_BE_DOWN (1<<0)
+///Whether or not to gib when the squashed mob is moved over
+#define SQUASHED_SHOULD_BE_GIBBED (1<<0)
+
+/// Default minimum body temperature mobs can exist in before taking damage
+#define NPC_DEFAULT_MIN_TEMP 250
+/// Default maximum body temperature mobs can exist in before taking damage
+#define NPC_DEFAULT_MAX_TEMP 350
 
 /// In dynamic human icon gen we don't replace the held item.
 #define NO_REPLACE 0

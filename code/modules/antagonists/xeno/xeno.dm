@@ -9,7 +9,7 @@
 //Simply lists them.
 /datum/team/xeno/roundend_report()
 	var/list/parts = list()
-	parts += "<span class='header'>The [name] were:</span>"
+	parts += span_header("The [name] were:")
 	parts += printplayerlist(members)
 	return "<div class='panel redborder'>[parts.Join("<br>")]</div>"
 

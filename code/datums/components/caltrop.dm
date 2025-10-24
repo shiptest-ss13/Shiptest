@@ -56,7 +56,7 @@
 			return
 
 		//move these next two down a level if you add more mobs to this.
-		if(H.is_flying() || H.is_floating()) //check if they are able to pass over us
+		if(H.movement_type & (FLOATING|FLYING)) //check if they are able to pass over us
 			return							//gravity checking only our parent would prevent us from triggering they're using magboots / other gravity assisting items that would cause them to still touch us.
 		if(H.buckled) //if they're buckled to something, that something should be checked instead.
 			return
@@ -85,22 +85,22 @@
 			if(!H.incapacitated(ignore_restraints = TRUE))
 				if(haslightstep)
 					H.visible_message(
-						"<span class='danger'>[H] carefully steps on [A].</span>",
-						"<span class='danger'>You carefully step on [A], but it still hurts!</span>"
+						span_danger("[H] carefully steps on [A]."),
+						span_danger("You carefully step on [A], but it still hurts!")
 					)
 				else
 					H.visible_message(
-						"<span class='danger'>[H] steps on [A].</span>",
-						"<span class='userdanger'>You step on [A]!</span>"
+						span_danger("[H] steps on [A]."),
+						span_userdanger("You step on [A]!")
 					)
 			else
 				H.visible_message(
-					"<span class='danger'>[H] slides on [A]!</span>",
-					"<span class='userdanger'>You slide on [A]!</span>"
+					span_danger("[H] slides on [A]!"),
+					span_userdanger("You slide on [A]!")
 				)
 
 			cooldown = world.time
-		H.apply_damage(damage, BRUTE, picked_def_zone)
+		H.apply_damage(damage, BRUTE, picked_def_zone, wound_bonus = CANT_WOUND)
 		if(!haslightstep)
 			H.Paralyze(60) //EndWS edit - caltrops don't paralyze people with light step
 		if(H.pulledby)								//WS Edit Begin - Being pulled over caltrops is logged

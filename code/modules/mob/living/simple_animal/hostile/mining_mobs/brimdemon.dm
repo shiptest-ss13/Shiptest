@@ -27,8 +27,9 @@
 	attack_verb_continuous = "bites"
 	attack_verb_simple = "bite"
 	attack_sound = 'sound/weapons/bite.ogg'
+	sharpness = SHARP_POINTY
 	//attack_vis_effect = ATTACK_EFFECT_BITE
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/effect/decal/cleanable/brimdust = 1)
+	butcher_results = list(/obj/item/food/meat/slab = 2, /obj/effect/decal/cleanable/brimdust = 1)
 	loot = list()
 	robust_searching = TRUE
 	footstep_type = FOOTSTEP_MOB_CLAW
@@ -37,7 +38,7 @@
 	light_color = LIGHT_COLOR_BLOOD_MAGIC
 	light_power = 5
 	light_range = 1.4
-	//mob_trophy = /obj/item/mob_trophy/brimdemon_fang
+	mob_trophy = /obj/item/mob_trophy/brimdemon_fang
 	/// Are we charging/firing? If yes stops our movement.
 	var/firing = FALSE
 	/// A list of all the beam parts.
@@ -84,11 +85,11 @@
 /mob/living/simple_animal/hostile/asteroid/brimdemon/OpenFire()
 	if(firing)
 		balloon_alert(src, "already firing!")
-		to_chat(src, "<span class='warning'>You're already firing!.</span>")
+		to_chat(src, span_warning("You're already firing!."))
 		return
 	if(!COOLDOWN_FINISHED(src, ranged_cooldown))
 		balloon_alert(src, "on cooldown!")
-		to_chat(src, "<span class='warning'>You're on cooldown!.</span>")
+		to_chat(src, span_warning("You're on cooldown!."))
 		return
 	firing = TRUE
 	set_dir_on_move = FALSE
@@ -97,7 +98,7 @@
 	add_overlay("brimdemon_telegraph_dir")
 	visible_message(span_danger("[src] starts charging!"))
 	balloon_alert(src, "charging...")
-	to_chat(src, "<span class='warning'>You begin to charge up...</span>")
+	to_chat(src, span_warning("You begin to charge up..."))
 	fire_laser()
 	COOLDOWN_START(src, ranged_cooldown, ranged_cooldown_time)
 

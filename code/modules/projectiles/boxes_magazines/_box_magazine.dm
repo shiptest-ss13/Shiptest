@@ -62,8 +62,9 @@
  * Arguments:
  * load_type - if you want to specify a specific ammo casing type to load, enter the path here, otherwise it'll use the basic [/obj/item/ammo_box/var/ammo_type]. Must be a compatible round
  * starting - Relevant for revolver cylinders, if FALSE then we mind the nulls that represent the empty cylinders (since those nulls don't exist yet if we haven't initialized when this is TRUE)
+ * amount - the amount of bullets we're putting in the mag. Otherwise fill it to full if unspecified
  */
-/obj/item/ammo_box/proc/top_off(load_type, starting=FALSE)
+/obj/item/ammo_box/proc/top_off(load_type, starting=FALSE, amount)
 	if(!load_type) //this check comes first so not defining an argument means we just go with default ammo
 		load_type = ammo_type
 
@@ -72,7 +73,11 @@
 		stack_trace("Tried loading unsupported ammocasing type [load_type] into ammo box [type].")
 		return
 
-	for(var/i = max(1, stored_ammo.len), i <= max_ammo, i++)
+	var/num_to_load = max_ammo
+	if(amount)
+		num_to_load = amount
+
+	for(var/i = max(1, stored_ammo.len), i <= num_to_load, i++)
 		stored_ammo += new round_check(src)
 
 /obj/item/ammo_box/Destroy()
@@ -170,7 +175,7 @@
 			num_loaded++
 			update_ammo_count()
 	if(num_loaded)
-		to_chat(user, "<span class='notice'>You load [num_loaded] cartridge\s into \the [to_load]!</span>")
+		to_chat(user, span_notice("You load [num_loaded] cartridge\s into \the [to_load]!"))
 	return
 
 /obj/item/ammo_box/attack_self(mob/user)

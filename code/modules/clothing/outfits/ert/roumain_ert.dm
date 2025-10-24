@@ -1,7 +1,7 @@
 /datum/outfit/job/roumain/ert
 	name = "ERT - Saint-Roumain Hunter" // flaming arrow and shadow
 	id_assignment = "Hunter"
-	jobtype = /datum/job/officer
+	jobtype = /datum/job/ert/sec
 	job_icon = "srm_hunter"
 
 	wallet = null
@@ -42,7 +42,7 @@
 
 	l_pocket = /obj/item/ammo_box/magazine/m45
 
-	backpack_contents = list(/obj/item/ammo_box/vickland_a308 = 6, /obj/item/storage/box/ammo/a308, /obj/item/ammo_box/magazine/m45 = 2)
+	backpack_contents = list(/obj/item/ammo_box/vickland_a8_50r = 6, /obj/item/storage/box/ammo/a8_50r, /obj/item/ammo_box/magazine/m45 = 2)
 
 /datum/outfit/job/roumain/ert/scout
 	name = "ERT - Saint-Roumain Hunter (Scout)" // scout and detective special
@@ -56,7 +56,7 @@
 	name = "ERT - Saint-Roumain Hunter Doctor"
 	id_assignment = "Hunter Doctor"
 	job_icon = "srm_doctor"
-	jobtype = /datum/job/doctor
+	jobtype = /datum/job/ert/med
 
 	uniform = /obj/item/clothing/under/suit/roumain
 	shoes = /obj/item/clothing/shoes/workboots/mining
@@ -70,7 +70,7 @@
 	name = "ERT - Saint-Roumain Machinist"
 	id_assignment = "Machinist"
 	job_icon = "srm_machinist"
-	jobtype = /datum/job/engineer
+	jobtype = /datum/job/ert/engi
 
 	uniform = /obj/item/clothing/under/suit/roumain
 	alt_uniform = null
@@ -88,7 +88,7 @@
 	name = "ERT - Saint-Roumain Hunter Montagne" // flaming bolt and montagne
 	id_assignment = "Hunter Montagne"
 	job_icon = "srm_montagne"
-	jobtype = /datum/job/captain
+	jobtype = /datum/job/ert/commander
 
 	ears = /obj/item/radio/headset/headset_com/alt
 	uniform = /obj/item/clothing/under/suit/roumain
@@ -117,7 +117,7 @@
 	name = "ERT - Saint-Roumain Hunter Colligne" // double barrel and ashhand
 	id_assignment = "Hunter Colligne"
 	job_icon = "srm_colligne"
-	jobtype = /datum/job/head_of_personnel
+	jobtype = /datum/job/ert/commander
 
 	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/suit/roumain

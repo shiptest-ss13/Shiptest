@@ -1,5 +1,6 @@
 //ATMOS
 //stuff you should probably leave well alone!
+#define MOLES 1
 /// kPa*L/(K*mol)
 #define R_IDEAL_GAS_EQUATION 8.31
 /// kPa
@@ -220,6 +221,7 @@
 #define ATMOS_TANK_AIRMIX "o2=2644;n2=10580;TEMP=293.15"
 #define ATMOS_TANK_FUEL "o2=33000;plasma=66000;TEMP=293.15"
 #define ATMOS_TANK_HYDROGEN_FUEL "o2=33000;h2=66000;TEMP=293.15"
+#define ATMOS_TANK_PLASMAHALF "plasma=6000;TEMP=293.15"
 
 //PLANETARY
 /// what pressure you have to be under to increase the effect of equipment meant for lavaland
@@ -237,9 +239,9 @@
 
 
 //ATMOS MIX IDS
-
-
-
+#define DESERT_DEFAULT_ATMOS "o2=20;n2=80;TEMP=313.15" //TEMP UNTIL  CRASHING STOPS
+//#define DESERT_DEFAULT_ATMOS "DESERT_ATMOS"
+#define SHROUDED_DEFAULT_ATMOS "SHROUDED_ATMOS"
 
 //ATMOSIA GAS MONITOR TAGS
 #define ATMOS_GAS_MONITOR_INPUT_O2 "o2_in"
@@ -351,7 +353,7 @@
 
 // odors
 #define GAS_ODOR_CHEMICAL list(\
-	span_notice("It smells fainly like space cleaner."),\
+	span_notice("It smells faintly like space cleaner."),\
 	span_danger("It smells like chemicals."),\
 	span_danger("There's a strong smell in the air, like chlorine."),\
 	span_userdanger("The smell burns the inside of your nose! It's unbearable!"))

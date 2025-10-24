@@ -1,3 +1,7 @@
+// the following defines are used for [/datum/component/pellet_cloud/var/list/wound_info_by_part] to store the damage, wound_bonus, and bw_bonus for each bodypart hit
+#define CLOUD_POSITION_DAMAGE 1
+#define CLOUD_POSITION_W_BONUS 2
+#define CLOUD_POSITION_BW_BONUS 3
 
 		//This component is used when you want to create a bunch of shrapnel or projectiles (say, shrapnel from a fragmentation grenade, or buckshot from a shotgun) from a central point,
 		//without necessarily printing a separate message for every single impact. This component should be instantiated right when you need it (like the moment of firing), then activated
@@ -28,6 +32,10 @@
 	var/list/pellets = list()
 	/// An associated list with the atom hit as the key and how many pellets they've eaten for the value, for printing aggregate messages
 	var/list/targets_hit = list()
+
+	/// Another associated list for hit bodyparts on carbons so we can track how much wounding potential we have for each bodypart
+	var/list/wound_info_by_part = list()
+
 	/// LAZY LIST. For grenades, any /mob/living's the grenade is moved onto, see [/datum/component/pellet_cloud/proc/handle_martyrs()]
 	var/list/bodies
 	/// For grenades, tracking people who die covering a grenade for achievement purposes, see [/datum/component/pellet_cloud/proc/handle_martyrs()]
@@ -64,6 +72,7 @@
 	purple_hearts = null
 	pellets = null
 	targets_hit = null
+	wound_info_by_part = null
 	LAZYNULL(bodies)
 	return ..()
 
@@ -97,8 +106,10 @@
 	if(!zone_override)
 		zone_override = shooter.zone_selected
 
-	// things like mouth executions and gunpoints can multiply the damage of projectiles, so this makes sure those effects are applied to each pellet instead of just one
+	// things like mouth executions and gunpoints can multiply the damage and wounds of projectiles, so this makes sure those effects are applied to each pellet instead of just one
 	var/original_damage = shell.BB.damage
+	var/original_wb = shell.BB.wound_bonus
+	var/original_bwb = shell.BB.bare_wound_bonus
 
 	for(var/i in 1 to num_pellets)
 		shell.ready_proj(target, user, SUPPRESSED_VERY, zone_override, fired_from)
@@ -111,36 +122,44 @@
 		RegisterSignal(shell.BB, COMSIG_PROJECTILE_SELF_ON_HIT, PROC_REF(pellet_hit))
 		RegisterSignals(shell.BB, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PARENT_QDELETING), PROC_REF(pellet_range))
 		shell.BB.damage = original_damage
+		shell.BB.wound_bonus = original_wb
+		shell.BB.bare_wound_bonus = original_bwb
 		pellets += shell.BB
+
 		var/turf/current_loc = get_turf(fired_from)
-		if (!istype(target_loc) || !istype(current_loc) || !(shell.BB))
+		if(!istype(target_loc) || !istype(current_loc) || !(shell.BB))
 			return
+
 		INVOKE_ASYNC(shell, TYPE_PROC_REF(/obj/item/ammo_casing, throw_proj), target, target_loc, shooter, params, spread, fired_from)
 
 		if(i != num_pellets)
 			shell.newshot()
 
-//create_blast_pellets() is for when we have a central point we want to shred the surroundings of with a ring of shrapnel, namely frag grenades and landmines.
-
-//Note that grenades have extra handling for someone throwing themselves/being thrown on top of it, see [/datum/component/pellet_cloud/proc/handle_martyrs]
-//Landmines just have a small check for [/obj/item/mine/pressure/explosive/shrapnel/var/shred_triggerer], and spawn extra shrapnel for them if so
-
-//Arguments:
-////O- Our parent, the thing making the shrapnel obviously (grenade or landmine)
-////punishable_triggerer- For grenade lances or people who step on the landmines (if we shred the triggerer), we spawn extra shrapnel for them in addition to the normal spread
-//
+/**
+ * create_blast_pellets() is for when we have a central point we want to shred the surroundings of with a ring of shrapnel, namely frag grenades and landmines.
+ *
+ * Note that grenades have extra handling for someone throwing themselves/being thrown on top of it, see [/datum/component/pellet_cloud/proc/handle_martyrs]
+ * Landmines just have a small check for [/obj/effect/mine/shrapnel/var/shred_triggerer], and spawn extra shrapnel for them if so
+ *
+ * Arguments:
+ * * O- Our parent, the thing making the shrapnel obviously (grenade or landmine)
+ * * punishable_triggerer- For grenade lances or people who step on the landmines (if we shred the triggerer), we spawn extra shrapnel for them in addition to the normal spread
+ */
 /datum/component/pellet_cloud/proc/create_blast_pellets(obj/O, mob/living/punishable_triggerer)
+	SIGNAL_HANDLER
+
 	var/atom/A = parent
 
 	if(isgrenade(parent)) // handle_martyrs can reduce the radius and thus the number of pellets we produce if someone dives on top of a frag grenade
-		handle_martyrs(punishable_triggerer) // note that we can modify radius in this proc
+		INVOKE_ASYNC(src, PROC_REF(handle_martyrs), punishable_triggerer) // note that we can modify radius in this proc
+
 	else if(istype(parent, /obj/item/mine/pressure/explosive))
 		var/obj/item/mine/pressure/explosive/triggered_mine = parent
 		if(triggered_mine.shred_triggerer && istype(punishable_triggerer)) // free shrapnel for the idiot who stepped on it if we're a mine that shreds the triggerer
 			pellet_delta += radius // so they don't count against the later total
 			if(punishable_triggerer.loc == triggered_mine.loc)//only trigger this if they're actually on the tile
 				for(var/i in 1 to radius)
-					pew(punishable_triggerer, TRUE)
+					INVOKE_ASYNC(src, PROC_REF(pew), punishable_triggerer, TRUE)
 
 	if(radius < 1)
 		return
@@ -150,7 +169,7 @@
 
 	for(var/T in all_the_turfs_were_gonna_lacerate)
 		var/turf/shootat_turf = T
-		pew(shootat_turf)
+		INVOKE_ASYNC(src, PROC_REF(pew), shootat_turf)
 
 
 // handle_martyrs() is used for grenades that shoot shrapnel to check if anyone threw themselves/were thrown on top of the grenade, thus absorbing a good chunk of the shrapnel
@@ -164,11 +183,10 @@
 /datum/component/pellet_cloud/proc/handle_martyrs(mob/living/punishable_triggerer)
 	var/magnitude_absorbed
 	var/list/martyrs = list()
-
 	var/self_harm_radius_mult = 3
 
 	if(punishable_triggerer && prob(60))
-		to_chat(punishable_triggerer, "<span class='userdanger'>Your plan to whack someone with a grenade on a stick backfires on you, literally!</span>")
+		to_chat(punishable_triggerer, span_userdanger("Your plan to whack someone with a grenade on a stick backfires on you, literally!"))
 		self_harm_radius_mult = 1 // we'll still give the guy who got hit some extra shredding, but not 3*radius
 		pellet_delta += radius
 		for(var/i in 1 to radius)
@@ -185,13 +203,13 @@
 	for(var/M in martyrs)
 		var/mob/living/martyr = M
 		if(radius > 4)
-			martyr.visible_message("<b><span class='danger'>[martyr] heroically covers \the [parent] with [martyr.p_their()] body, absorbing a load of the shrapnel!</span></b>", "<span class='userdanger'>You heroically cover \the [parent] with your body, absorbing a load of the shrapnel!</span>")
+			martyr.visible_message("<b>[span_danger("[martyr] heroically covers \the [parent] with [martyr.p_their()] body, absorbing a load of the shrapnel!")]</b>", span_userdanger("You heroically cover \the [parent] with your body, absorbing a load of the shrapnel!"))
 			magnitude_absorbed += round(radius * 0.5)
 		else if(radius >= 2)
-			martyr.visible_message("<b><span class='danger'>[martyr] heroically covers \the [parent] with [martyr.p_their()] body, absorbing some of the shrapnel!</span></b>", "<span class='userdanger'>You heroically cover \the [parent] with your body, absorbing some of the shrapnel!</span>")
+			martyr.visible_message("<b>[span_danger("[martyr] heroically covers \the [parent] with [martyr.p_their()] body, absorbing some of the shrapnel!")]</b>", span_userdanger("You heroically cover \the [parent] with your body, absorbing some of the shrapnel!"))
 			magnitude_absorbed += 2
 		else
-			martyr.visible_message("<b><span class='danger'>[martyr] heroically covers \the [parent] with [martyr.p_their()] body, snuffing out the shrapnel!</span></b>", "<span class='userdanger'>You heroically cover \the [parent] with your body, snuffing out the shrapnel!</span>")
+			martyr.visible_message("<b>[span_danger("[martyr] heroically covers \the [parent] with [martyr.p_their()] body, snuffing out the shrapnel!")]</b>", span_userdanger("You heroically cover \the [parent] with your body, snuffing out the shrapnel!"))
 			magnitude_absorbed = radius
 
 		var/pellets_absorbed = (radius ** 2) - ((radius - magnitude_absorbed - 1) ** 2)
@@ -209,12 +227,28 @@
 			break
 
 ///One of our pellets hit something, record what it was and check if we're done (terminated == num_pellets)
-/datum/component/pellet_cloud/proc/pellet_hit(obj/projectile/P, atom/movable/firer, atom/target, Angle)
+/datum/component/pellet_cloud/proc/pellet_hit(obj/projectile/P, atom/movable/firer, atom/target, Angle, hit_zone)
 	SIGNAL_HANDLER
 
 	pellets -= P
 	terminated++
 	hits++
+	var/obj/item/bodypart/hit_part
+	if(iscarbon(target) && hit_zone)
+		var/mob/living/carbon/hit_carbon = target
+		hit_part = hit_carbon.get_bodypart(hit_zone)
+		if(hit_part)
+			target = hit_part
+			if(P.wound_bonus != CANT_WOUND) // handle wounding
+				// unfortunately, due to how pellet clouds handle finalizing only after every pellet is accounted for, that also means there might be a short delay in dealing wounds if one pellet goes wide
+				// while buckshot may reach a target or miss it all in one tick, we also have to account for possible ricochets that may take a bit longer to hit the target
+				if(isnull(wound_info_by_part[hit_part]))
+					wound_info_by_part[hit_part] = list(0, 0, 0)
+				wound_info_by_part[hit_part][CLOUD_POSITION_DAMAGE] += P.damage // these account for decay
+				wound_info_by_part[hit_part][CLOUD_POSITION_W_BONUS] += P.wound_bonus
+				wound_info_by_part[hit_part][CLOUD_POSITION_BW_BONUS] += P.bare_wound_bonus
+				P.wound_bonus = CANT_WOUND // actual wounding will be handled aggregate
+
 	targets_hit[target]++
 	if(targets_hit[target] == 1)
 		RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(on_target_qdel), override=TRUE)
@@ -245,9 +279,10 @@
 	P.suppressed = SUPPRESSED_VERY // set the projectiles to make no message so we can do our own aggregate message
 	P.preparePixelProjectile(target, parent)
 	RegisterSignal(P, COMSIG_PROJECTILE_SELF_ON_HIT, PROC_REF(pellet_hit))
-	RegisterSignal(P, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PARENT_QDELETING), PROC_REF(pellet_range))
+	RegisterSignals(P, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PARENT_QDELETING), PROC_REF(pellet_range))
 	pellets += P
 	P.fire()
+
 	if(landmine_victim)
 		P.process_hit(get_turf(target), target)
 
@@ -259,12 +294,24 @@
 	for(var/atom/target in targets_hit)
 		var/num_hits = targets_hit[target]
 		UnregisterSignal(target, COMSIG_PARENT_QDELETING)
+		var/obj/item/bodypart/hit_part
+		if(isbodypart(target))
+			hit_part = target
+			target = hit_part.owner
+			if(wound_info_by_part[hit_part] && (initial(P.damage_type) == BRUTE || initial(P.damage_type) == BURN)) // so a cloud of disablers that deal stamina don't inadvertently end up causing burn wounds)
+				var/damage_dealt = wound_info_by_part[hit_part][CLOUD_POSITION_DAMAGE]
+				var/w_bonus = wound_info_by_part[hit_part][CLOUD_POSITION_W_BONUS]
+				var/bw_bonus = wound_info_by_part[hit_part][CLOUD_POSITION_BW_BONUS]
+				var/wound_type = (initial(P.damage_type) == BRUTE) ? WOUND_BLUNT : WOUND_BURN // sharpness is handled in the wound rolling
+				wound_info_by_part[hit_part] = null
+				hit_part.painless_wound_roll(wound_type, damage_dealt, w_bonus, bw_bonus, initial(P.sharpness))
+
 		if(num_hits > 1)
-			target.visible_message("<span class='danger'>[target] is hit by [num_hits] [proj_name]s!</span>", null, null, COMBAT_MESSAGE_RANGE, target)
-			to_chat(target, "<span class='userdanger'>You're hit by [num_hits] [proj_name]s!</span>")
+			target.visible_message(span_danger("[target] is hit by [num_hits] [proj_name]s[hit_part ? " in the [hit_part.name]" : ""]!"), null, null, COMBAT_MESSAGE_RANGE, target)
+			to_chat(target, span_userdanger("You're hit by [num_hits] [proj_name]s[hit_part ? " in the [hit_part.name]" : ""]!"))
 		else
-			target.visible_message("<span class='danger'>[target] is hit by a [proj_name]!</span>", null, null, COMBAT_MESSAGE_RANGE, target)
-			to_chat(target, "<span class='userdanger'>You're hit by \a [proj_name]\s!</span>")
+			target.visible_message(span_danger("[target] is hit by a [proj_name][hit_part ? " in the [hit_part.name]" : ""]!"), null, null, COMBAT_MESSAGE_RANGE, target)
+			to_chat(target, span_userdanger("You're hit by a [proj_name][hit_part ? " in the [hit_part.name]" : ""]!"))
 
 	for(var/M in purple_hearts)
 		var/mob/living/martyr = M
@@ -328,3 +375,7 @@
 	targets_hit -= target
 	LAZYREMOVE(bodies, target)
 	LAZYREMOVE(purple_hearts, target)
+
+#undef CLOUD_POSITION_DAMAGE
+#undef CLOUD_POSITION_W_BONUS
+#undef CLOUD_POSITION_BW_BONUS

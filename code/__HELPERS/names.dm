@@ -21,6 +21,11 @@
 		. += pick(syllables)
 	. = capitalize(.)
 
+/proc/spider_name()
+	. = pick(GLOB.spider_names)
+	for (var/x = rand(0,4) to 0 step -1)
+		. += "'[pick(GLOB.spider_names)]"
+
 GLOBAL_VAR(command_name)
 /proc/command_name()
 	if (GLOB.command_name)
@@ -72,9 +77,9 @@ GLOBAL_VAR(command_name)
 		name = ""
 
 	// Prefix
-	var/holiday_name = pick(SSevents.holidays)
+	var/holiday_name = pick(GLOB.holidays)
 	if(holiday_name)
-		var/datum/holiday/holiday = SSevents.holidays[holiday_name]
+		var/datum/holiday/holiday = GLOB.holidays[holiday_name]
 		if(istype(holiday, /datum/holiday/friday_thirteenth))
 			random = 13
 		name = holiday.getStationPrefix()
@@ -229,3 +234,51 @@ GLOBAL_DATUM(syndicate_code_response_regex, /regex)
 				. += "."
 			else
 				. += ", "
+
+/**
+ * returns an ic name of the tool needed
+ * Arguments:
+ * * tool_behaviour: the tool described!
+ */
+/proc/tool_behaviour_name(tool_behaviour)
+	switch(tool_behaviour)
+		if(TOOL_CROWBAR)
+			return "a crowbar"
+		if(TOOL_MULTITOOL)
+			return "a multitool"
+		if(TOOL_SCREWDRIVER)
+			return "a screwdriver"
+		if(TOOL_WIRECUTTER)
+			return "a pair of wirecutters"
+		if(TOOL_WRENCH)
+			return "a wrench"
+		if(TOOL_WELDER)
+			return "a welder"
+		if(TOOL_ANALYZER)
+			return "an analyzer tool"
+		if(TOOL_MINING)
+			return "a mining implement"
+		if(TOOL_SHOVEL)
+			return "a digging tool"
+		if(TOOL_RETRACTOR)
+			return "a retractor"
+		if(TOOL_HEMOSTAT)
+			return "something to clamp bleeding"
+		if(TOOL_CAUTERY)
+			return "a cautery"
+		if(TOOL_DRILL)
+			return "a drilling tool"
+		if(TOOL_SCALPEL)
+			return "a fine cutting tool"
+		if(TOOL_SAW)
+			return "a saw"
+		if(TOOL_BONESET)
+			return "a bone setter"
+		if(TOOL_KNIFE)
+			return "a cutting tool"
+		if(TOOL_BLOODFILTER)
+			return "a blood filter"
+		if(TOOL_ROLLINGPIN)
+			return "a rolling pin"
+		else
+			return "something mysterious (Please report this bug)"

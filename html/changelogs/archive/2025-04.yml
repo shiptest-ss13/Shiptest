@@ -1,0 +1,368 @@
+2025-04-01:
+  Apogee-dev:
+  - balance: SRM's Vickland has been rechambered to 8mm Illestren.
+  FalloutFalcon:
+  - rscadd: Dynamic missions should reach the max mission count quicker
+  - rscdel: Players go no longer open the overmap inspector, it was designed for admins
+  - bugfix: Overmap inspect is now formated better and santizes desc html
+  - rscadd: Mission critical things are now valid for orbit menu
+  - rscadd: Ships now show up higher on this list
+  Gristlebee:
+  - rscadd: Guncases can be printed in the autolathe,
+  Overteh:
+  - code_imp: adds the same digging action to the exosuit drills as the hand picks/drills
+  - bugfix: fixed missing zoom_out_amt = 2 of Woodsman, removed attachment scope slot
+      of Vickland
+  Rug-Dealer:
+  - rscadd: Spraycans are now acquirable as roundstart gear
+  - balance: Spraycans and crayons now have 60 charges, up from 30
+  - rscdel: Removes all mention of the tagger perk
+  Sadhorizon:
+  - rscadd: E-11-wielding hermits started roaming the sand worlds.
+  - tweak: Minor tweaks to the E-11 Manufactory ruin.
+  - balance: Tweaked some numbers on the E-11 hermit.
+  - imageadd: Updated the E-11 hermit sprites with current in-hands.
+  SomeguyManperson:
+  - bugfix: ore veins will no longer have extractable amounts of NOTHING
+  - balance: ammo costs have been modified Slightly. Most of them are significantly
+      cheaper.
+  - balance: Rifle ammo crates with two boxes now only have one box, so the cost to
+      refill one is manageable.
+  - balance: Specialist ammo costs cut from 100% premium to 25% premium. Now you might
+      actually use them for something that isn't a bit!
+  firebudgy:
+  - balance: You can now smelt 10x as fast at furnaces.
+2025-04-02:
+  Sadhorizon:
+  - rscdel: Colored decals are no longer rainbow on April Fools.
+  SomeguyManperson:
+  - balance: ion thrusters are now sold as boards instead of the whole machine, and
+      can actually be sold now
+2025-04-04:
+  Gristlebee:
+  - balance: Reduces weapon drop chance on human simple mobs.
+2025-04-05:
+  Gristlebee:
+  - bugfix: Viscerator factions
+  - bugfix: Scrapstation missions have the right indexes
+  MemeSnorfer:
+  - rscadd: KM-05 Rottweiler machine gun to Inteq cargo catalogue
+  generalthrax:
+  - bugfix: Riggs recycling now properly has a gasmixer
+2025-04-06:
+  FalloutFalcon:
+  - rscadd: placeholder sprite for 8x58 box
+  - bugfix: 8x58 is no longer labeled as .300
+  SomeguyManperson:
+  - rscadd: Dense smoke powder reagent, functions the same as normal smoke but you
+      can't see through it. 3 smoke powder + 1 carbon for 4 units
+  - balance: chemical grenade smoke is by-default transparent enough to see through!
+  firebudgy:
+  - balance: Talos has been reworked to contain a mech bay for servicing Ripley-class
+      mechs. Batteries not included.
+  - rscadd: New toy mech - the Inteq Gygax Modification.
+  generalthrax:
+  - bugfix: Frontie distillery turret is now a spitter and is no longer destroyed
+      by the fronties
+  thearbiber:
+  - rscadd: Added ship
+2025-04-07:
+  Erikafox:
+  - rscadd: you can now climb railings you're on the same tile of to climb over them
+  FalloutFalcon:
+  - rscadd: basic stack trace if a ruin has a bad file path.
+  - bugfix: stops missions from qdeling players, i hope
+  Gristlebee:
+  - rscadd: Debug outfit is better.
+  - rscadd: Ice Lodge Touch ups
+  - rscadd: Commander Tiyak
+  - rscadd: Dynamic Humans support non-human species.
+  SomeguyManperson:
+  - rscadd: guns can jam now! Keep an eye on your arm's condition, if it says it can
+      malfunction, it might fail to load a round while firing.
+  - rscadd: there's a new item in the security section of cargo, which can be used
+      to repair gun condition.
+  - balance: surplus rounds no longer deal reduced damage, instead doubling the rate
+      at which condition is lost.
+  - balance: some guns gain wear faster or slower than others in their category. If
+      it's made out of scraps and duct tape, it's probably  faster, if it's hunter's
+      pride, slower.
+  generalthrax:
+  - rscadd: Added Surgical Disks with T2 and T3 surgeries to the game
+  - rscadd: Most medical ships now have T3 disks, ships with operating consoles but
+      are not medical ships got T2
+  - rscadd: Atoll now has an operating console
+  - rscadd: Cybersun bioware disk to the Cirrus
+  - rscadd: Most ruins with operating consoles now have either T2 or a T3 disk
+  - balance: LMG bipod deployment takes 0.5 seconds instead of 2
+  stiel0248:
+  - rscadd: the ruin
+  thgvr:
+  - rscadd: Added a handful of kepori hardsuit sprites
+2025-04-08:
+  Erikafox:
+  - bugfix: removes a random rack event from the nimbus
+  Ical92:
+  - bugfix: Model 'H' Gauss Pistols can now properly be purchased
+  - bugfix: wire terminals are now properly underfloor
+  - refactor: refactors solar controllers as computers
+  - bugfix: IDs can be inserted/removed from unanchoredEHFs beaconds
+  Slim-Pickems:
+  - bugfix: Shoulder holster are now able to fit disablers.
+2025-04-09:
+  FalloutFalcon:
+  - code_imp: removes a stray verb call from the status tab
+  Rug-Dealer:
+  - balance: Duffelbags no longer slow you down when worn.
+  Sadhorizon:
+  - rscadd: Added the Typhon-class Light Exosuit Carrier
+  - rscadd: Added a non-concealed weapon bay mech module.
+  - imageadd: Added dark steel tiles as a turf.
+  generalthrax:
+  - rscadd: Added guthen pet and bed to the Mudskipper in the crew dorm
+2025-04-10:
+  Apogee-dev:
+  - bugfix: 10mm and 9mm cartridges now use the proper metric name format
+  - bugfix: 6.5mm CLIP renamed to 7.5x64mm CLIP
+2025-04-11:
+  generalthrax:
+  - bugfix: Sweet Potato repathed letting you make yaki imo properly
+  - balance: Landmine bounties have depleted landmine spawns on all but wasteworlds,
+      entirely. For real, this time.
+2025-04-12:
+  Zevotech:
+  - rscdel: Removed the elite kill mission from lavaland_buried_shrine
+2025-04-13:
+  Erikafox:
+  - bugfix: The corona/nimbus/cirrus washing machines will no longer randomly become
+      dense.
+  FalloutFalcon:
+  - bugfix: ship locking works again
+  Ical92:
+  - rscadd: outpost comunications console now has a purchase cart
+  - rscadd: outpost cargo is now bundled when applicable
+  generalthrax:
+  - balance: Butter now requires 5 milk instead of 15
+2025-04-14:
+  FalloutFalcon:
+  - rscdel: beats in deciseconds of a song is no longer player facing
+  - rscdel: handful of other jukebox cruft cleanup things
+  - code_imp: rustg version bump to 3.6
+  - refactor: can now determine its own length and cache it, used in jukeboxes so
+      we dont have to add it in the title.
+  firebudgy:
+  - bugfix: Jungle Bunker tiles now have the correct atmos.
+  kaylexis:
+  - rscadd: added medical area to rock outpost
+  - rscadd: potted plants to rock outpost
+  - rscadd: altered bounty pad locations
+2025-04-15:
+  Zevotech:
+  - bugfix: readds the remapped meta class
+  ? ryerice, Imaginos16, spooky, Horizon, Nebula (presumably), MarkSuckerberg, thgvr,
+    Erikafox, Nitha(emotional support), Latentish, The Playerbase
+  : - rscadd: New Overmap resprite
+    - rscadd: Most if not all planets have gotten a resprite
+    - rscadd: Some new missions.
+    - rscadd: These missions might lead you to a "new" planet...
+    - rscadd: Overmap Mechanics have been overhauled
+    - rscadd: Interactions; you can now choose where exactly to dock and how to dock.
+    - rscadd: Suns should be actually dangerous to go near
+    - rscadd: Suns are actually dangerous
+    - rscadd: See https://github.com/shiptest-ss13/Shiptest/pull/3868 for more
+    - rscadd: Radio interference based on radio's location on the overmap. For example,
+        moving next to an nebula might scramble your radio messages. A Telecoms setup
+        with reduce this significantly.
+    - rscadd: New Ore Overhaul
+    - rscadd: Some temperature changes missed by the temp pr should be addressed
+    - balance: Fauna balance should be slightly better now
+    - tweak: Helm consoles should tell you why you cant dock, rather than staying
+        silent on an error.
+    - bugfix: Carbon monoxide should work better now.
+    - code_imp: Framework for ship to ship docking
+    - code_imp: Overmap code is much more modular and robust now.
+    - rscdel: Removes cryosickness
+    - balance: Explosions, acid and electrocute acts all do alot less damage.
+2025-04-16:
+  Ical92:
+  - rscdel: Removed the Bubble-class
+  Sadhorizon:
+  - rscdel: Bone axe and bone sword are no longer craftable.
+  SomeguyManperson:
+  - balance: certain enemies at the end of ruins are now significantly more likely
+      to drop their guns
+  - bugfix: skm fronties no longer have silly loot lists including a guaranteed skm.
+      sorry!
+  generalthrax:
+  - bugfix: Evidence bags show up in autolathes for real
+  - balance: Evidence bags are now 100 plastic instead of 500
+  iimurpyh:
+  - bugfix: Removes Rachnid names from outpost name pool due to TGUI bugs
+2025-04-17:
+  Gristlebee:
+  - rscadd: Dynamic mission objectives can now properly start inside containers
+  - bugfix: Wrecked Factory and Scrapstation retrieval missions
+  SapphicOverload:
+  - bugfix: Fixed exosuit radios being unusable
+  - rscadd: Exosuit radios can be talked into directly using .z
+  - rscadd: exosuit salvage saw now has the angle grinder sound effect when used,
+      instead of nothing
+  - balance: salvage saw no longer locks your exosuit in place
+  - bugfix: fixed salvage saw's action not being canceled properly when moving/turning/swapping
+  - bugfix: fixed salvage saw not being able to deconstruct certain things it's supposed
+      to
+  SomeguyManperson:
+  - bugfix: cables should work now.
+2025-04-18:
+  Erikafox:
+  - bugfix: pouches can now be quick-opened from your pockets
+  FalloutFalcon:
+  - rscdel: AI no longer dream of electric sheep
+  Gristlebee:
+  - bugfix: Unpowered turrets no longer turn invisible.
+  Rug-Dealer:
+  - admin: Admin AI interact should no longer cause runtimes.
+  SomeguyManperson:
+  - bugfix: this somehow hasn't stopped anything from working yet so I don't think
+      it's player-facing
+  - bugfix: the wield channel will no longer fail if you move
+  generalthrax:
+  - bugfix: Mercury jellysandwich can now be eaten
+  - balance: Spitter changed to be 0.8 wear rate instead of 2
+2025-04-19:
+  Burning02:
+  - spellcheck: Swaps the caliber mentioned in Ramzi Shock Troopers description
+  DrCrawler:
+  - balance: Fractures now rely more on received damage and the force of the attack.
+  Erikafox:
+  - balance: pad bounties can now have a set minimum value
+  - balance: materials now deprecate value faster when sold
+  - balance: reduced payment from all missions (ruin and outpost)
+  - balance: storm missions now pay a different dividend per storm.
+  - balance: slightly reduced value of ice to credit transactions (2:5 to 3:10)
+  - rscadd: An unknown faction's stupid secret cave base has been improved. You can
+      find it on sand worlds. You may explode.
+  FalloutFalcon:
+  - code_imp: some cleanup for planet spawning
+  - spellcheck: indestructible not indestructable
+  FalloutFalcon, too many TG station contributers to name:
+  - refactor: buncha refactors to events and holidays from tgstation
+  meemofcourse:
+  - rscadd: Coffee machines, coffeepots, coffee cups, and other coffee stuff
+2025-04-20:
+  Gristlebee:
+  - rscadd: Improvised buckshot can be autolathe printed
+  - balance: buckshot costs 350.
+  - balance: Rubbershot costs 350
+  - balance: Blanks costs 110.
+  - balance: Shotgun slugs have 0 AP
+  MemeSnorfer:
+  - balance: Atomizes many cargo crates. This means many cargo purchases will be contain
+      less duplicate items, but with lower proportional prices!
+  thearbiber:
+  - balance: Replaces the HBG7 with the unscoped version on the crying sun
+2025-04-21:
+  Erikafox:
+  - bugfix: you can no longer random gain carbon monoxide poisoning
+2025-04-23:
+  Burning02:
+  - bugfix: The "Retrieve War Medal" contract will now have you retrieve the proper
+      medal
+2025-04-24:
+  Erikafox:
+  - rscadd: you can use a wrench to unanchor a safe, and very slowly drag it somewhere.
+  - bugfix: you can now grind safes again
+  Rug-Dealer:
+  - rscadd: New signer neutral quirk, allowing you to speak other languages... but
+      signed! Everyone is able to understand sign language regardless of whether they
+      have the quirk or not as long as they can understand the base language.
+  - rscadd: Mute negative quirk. Prevents you from speaking (but not signing).
+  - bugfix: Deafness quirk is now select-able.
+  SapphicOverload:
+  - rscadd: Being unable to see color prevents being able to see the color of wires
+  - bugfix: Fixed monochromacy's effects not being removed when losing the quirk
+  firebudgy:
+  - rscadd: Icemoon Training Facility, operated and controlled by the Ramzi Clique.
+  - balance: Exosuit Pilot AI should now eject at around 20% integrity remaining.
+  generalthrax:
+  - rscadd: E10 uses heavylaser projectile appearance and some slightly changed sounds
+  - bugfix: Gorlex turrets are no longer a separate faction from their crews
+  meemofcourse:
+  - spellcheck: Rewrote a majority of the descriptions of CLIP clothing items
+  - rscadd: Switched a few items around in CLIP outfits
+  - rscdel: CLIP and C-MM Chemist outfit
+  - balance: CLIP Patroller hardsuits can now have guns, oxy tanks and ammo in their
+      suit storage slot
+2025-04-25:
+  FalloutFalcon:
+  - bugfix: few invisible sprites are now fixed
+2025-04-26:
+  DIB-DOG:
+  - bugfix: Fixed the BGC-10 sprite
+  Erikafox:
+  - bugfix: drills now put their parts in a spare hand before putting them on the
+      ground.
+  FalloutFalcon:
+  - balance: devastating explosions should kill everything again.
+  - balance: light and heavy explosions now have a wider range again
+  - bugfix: nachos shouldn't have any issues related to crafting anymore
+  Ical92:
+  - rscadd: end of round BSJ no longer affects docked ships
+  JohnFulpWillard, Nikotheguydude, Erika (ported):
+  - balance: Jousting now works on anything you're buckled to, not just Cyborgs.
+  - balance: Spears need to travel a longer distance to joust now.
+  - balance: Jousting's knockdown and damage now only gets stronger after you've traveled
+      the minimum tiles needed to joust.
+  MeeMOfCourse, RawBread:
+  - imageadd: You can now roll up your sleeves when wearing Minutemen Fatigues. Rejoice.
+  - imageadd: The Minuteman X-11 Helmet is now visible when held on your hands.
+  Rug-Dealer:
+  - rscadd: Oxygen candles! Stocked in emergency (red) toolboxes or purchasable from
+      the outpost; simply pull the cord and place to quickly re-oxygenate rooms.
+  SapphicOverload:
+  - rscadd: turf fires can now spread to other tiles based on said tile's flammability
+  - rscadd: grass tiles turn to dirt tiles when burning for long enough
+  - rscadd: fire extinguishers now put out fires on top of things the particles bump
+      into
+  - rscadd: cigarettes on the ground now have a small chance to ignite flammable turfs
+  - rscadd: rain puts out turf fires
+  - bugfix: fixed dirt tiles looking like metal plating after being burned by turf
+      fires
+  - bugfix: fixed extinguishers not being able to put out turf fires sometimes
+  - refactor: refactored extinguishers and extinguishing fires to be more sane and
+      use less duplicate code
+  - code_imp: turf fires give off fewer particles to reduce client-side lag when a
+      lot of fires are on screen
+  - code_imp: firefighting foam prevents hotspots and turf fires from being created
+      instead of having to repeatedly clear them every process tick
+  generalthrax:
+  - balance: SAW has mildly adjusted spread and has some hefty recoil now
+  thearbiber:
+  - bugfix: removes the extra groin pixel on humans
+2025-04-27:
+  meemofcourse:
+  - code_imp: Accessories icons are no-longer hardcoded to one file
+  - code_imp: Moves SolGov and Inteq clothing into a different file
+  thearbiber:
+  - rscadd: Resprites the indie mining/engi space suits
+2025-04-28:
+  SapphicOverload:
+  - bugfix: Fixed melee weapons not applying armor penetration when damaging objects
+  - bugfix: Fixed exosuit directional armor not working
+2025-04-29:
+  Erikafox:
+  - rscadd: Shrouded drills now regularly spawn monsters.
+2025-04-30:
+  Erikafox:
+  - bugfix: the booze missions specify what you're supposed to get better.
+  FalloutFalcon:
+  - bugfix: turrets should shoot angry rats and other basic mobs.
+  Gristlebee:
+  - bugfix: Jungle turf atmos
+  Ical92:
+  - admin: improves distress beacon creation by making the list searchable
+  - admin: added create-distress-signal-here
+  - admin: moved distress beacon verbs to Event->Overmap
+  generalthrax:
+  - bugfix: Fixed Zohil Temaki roll crafting typo + fixed recipe taking carp instead
+      of any fish

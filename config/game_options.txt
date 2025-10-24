@@ -213,12 +213,18 @@ DYNAMIC_CONFIG_ENABLED
 ALLOW_RANDOM_EVENTS
 
 ## Multiplier for earliest start time of dangerous events.
-## Set to 0 to make dangerous events avaliable from round start.
+## Set to 0 to make dangerous events available from round start.
 EVENTS_MIN_TIME_MUL 1
 
 ## Multiplier for minimal player count (players = alive non-AFK humans) for dangerous events to start.
-## Set to 0 to make dangerous events avaliable for all populations.
+## Set to 0 to make dangerous events available for all populations.
 EVENTS_MIN_PLAYERS_MUL 1
+
+## The lower bound, in deciseconds, for how soon another random event can be scheduled.
+EVENTS_FREQUENCY_LOWER 18000
+
+## The upper bound, in deciseconds, for how soon another random event can be scheduled.
+EVENTS_FREQUENCY_UPPER 36000
 
 
 ## AI ###
@@ -494,8 +500,8 @@ MAX_OVERMAP_EVENT_CLUSTERS 6
 ## Put the maximum amount of overmap events here
 MAX_OVERMAP_EVENTS 50
 
-## Put the maximum amount of dynamic overmap locations here
-MAX_OVERMAP_DYNAMIC_EVENTS 10
+## Put the maximum amount of dynamic (runtime loaded) overmap locations here
+MAX_OVERMAP_DYNAMIC_EVENTS 15
 
 ## Size of the overmap squared
 OVERMAP_SIZE 12
@@ -506,6 +512,9 @@ OVERMAP_GENERATOR_TYPE solar_system
 
 ## Size of overmap encounters, vertical and width with a 3 tile border
 OVERMAP_ENCOUNTER_SIZE 127
+
+## Max dynamic mission count active per ship
+MAX_DYNAMIC_MISSIONS 0.66
 
 ## The time required before a ship is allowed to bluespace jump. -1 disables it entirely
 ## In deciseconds, valid values are -1 to INFINITY
@@ -520,3 +529,6 @@ AUTH_ADMIN_TESTING
 ## HEART COMMENDATIONS ###
 ## Uncomment this if you'd like to enable commendation pollings for this percentage of players near the end of the round (5% suggested)
 COMMENDATION_PERCENT_POLL 0.05
+
+## Whether native FoV is enabled for all people.
+#NATIVE_FOV

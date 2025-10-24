@@ -4,7 +4,7 @@
 	name = "Computer Design ( NULL ENTRY )"
 	desc = "I promise this doesn't give you syndicate goodies!"
 	build_type = IMPRINTER
-	materials = list(/datum/material/glass = 1000)
+	materials = list(/datum/material/glass = 250)
 
 /datum/design/board/arcade_battle
 	name = "Computer Design (Battle Arcade Machine)"
@@ -182,13 +182,6 @@
 	category = list("Computer Boards")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
 
-/datum/design/board/bounty
-	name = "Computer Design (Bounty Console)"
-	desc = "Allows for the construction of circuit boards used to build a Bounty Console."
-	id = "bounty"
-	build_path = /obj/item/circuitboard/computer/bounty
-	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/board/mining
 	name = "Computer Design (Outpost Status Display)"
@@ -197,14 +190,6 @@
 	build_path = /obj/item/circuitboard/computer/mining
 	category = list("Computer Boards")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SECURITY
-
-/datum/design/board/selling
-	name = "Computer Design (Cargo Hold Control Terminal)"
-	desc = "Allows for the construction of circuit boards used to build a Cargo Hold Control Terminal."
-	id = "selling_console"
-	build_path = /obj/item/circuitboard/computer/selling_pad_control
-	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/board/comm_monitor
 	name = "Computer Design (Telecommunications Monitoring Console)"

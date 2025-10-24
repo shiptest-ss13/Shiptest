@@ -25,9 +25,10 @@
 	var/has_sensor = HAS_SENSORS // For the crew computer
 	var/random_sensor = TRUE
 	var/sensor_mode = NO_SENSORS
-	var/can_adjust = TRUE
+	var/roll_down = FALSE
+	var/roll_sleeves = FALSE
 	var/adjusted = NORMAL_STYLE
-	var/alt_covers_chest = FALSE // for adjusted/rolled-down jumpsuits, FALSE = exposes chest and arms, TRUE = exposes arms only
+	var/alt_covers_chest = FALSE // for rolled-down jumpsuits, FALSE = exposes chest and arms, TRUE = does not expose any part
 	var/obj/item/clothing/accessory/attached_accessory
 	var/mutable_appearance/accessory_overlay
 	var/freshly_laundered = FALSE
@@ -55,7 +56,7 @@
 		var/obj/item/stack/cable_coil/C = I
 		C.use(1)
 		has_sensor = HAS_SENSORS
-		to_chat(user,"<span class='notice'>You repair the suit sensors on [src] with [C].</span>")
+		to_chat(user,span_notice("You repair the suit sensors on [src] with [C]."))
 		return 1
 	if(attached_accessory && ispath(attached_accessory.pocket_storage_component_path) && loc == user)
 		attached_accessory.attackby(I,user)
@@ -63,7 +64,7 @@
 	if(!attach_accessory(I, user))
 		return ..()
 
-/obj/item/clothing/under/update_clothes_damaged_state(damaging = TRUE)
+/obj/item/clothing/under/update_clothes_damaged_state(damaged_state = CLOTHING_DAMAGED)
 	..()
 	if(ismob(loc))
 		var/mob/M = loc
@@ -78,6 +79,10 @@
 		sensor_mode = pick(SENSOR_OFF, SENSOR_LIVING, SENSOR_LIVING, SENSOR_VITALS, SENSOR_VITALS, SENSOR_VITALS, SENSOR_COORDS, SENSOR_COORDS)
 	if(!(body_parts_covered & LEGS) && greyscale_icon_state == "under")
 		greyscale_icon_state = "under_skirt"
+	if(!roll_down)
+		verbs -= /obj/item/clothing/under/verb/jumpsuit_rolldown
+	if(!roll_sleeves)
+		verbs -= /obj/item/clothing/under/verb/jumpsuit_rollsleeves
 
 /obj/item/clothing/under/emp_act()
 	. = ..()
@@ -85,7 +90,7 @@
 		sensor_mode = pick(SENSOR_OFF, SENSOR_OFF, SENSOR_OFF, SENSOR_LIVING, SENSOR_LIVING, SENSOR_VITALS, SENSOR_VITALS, SENSOR_COORDS)
 		if(ismob(loc))
 			var/mob/M = loc
-			to_chat(M,"<span class='warning'>The sensors on the [src] change rapidly!</span>")
+			to_chat(M,span_warning("The sensors on the [src] change rapidly!"))
 
 /obj/item/clothing/under/visual_equipped(mob/user, slot)
 	..()
@@ -123,30 +128,48 @@
 /obj/item/clothing/under/proc/attach_accessory(obj/item/I, mob/user, notifyAttach = 1)
 	. = FALSE
 	if(istype(I, /obj/item/clothing/accessory))
-		var/obj/item/clothing/accessory/A = I
+		var/obj/item/clothing/accessory/accessory = I
 		if(attached_accessory)
 			if(user)
-				to_chat(user, "<span class='warning'>[src] already has an accessory.</span>")
+				to_chat(user, span_warning("[src] already has an accessory."))
 			return
 		else
 
-			if(!A.can_attach_accessory(src, user)) //Make sure the suit has a place to put the accessory.
+			if(!accessory.can_attach_accessory(src, user)) //Make sure the suit has a place to put the accessory.
 				return
 			if(user && !user.temporarilyRemoveItemFromInventory(I))
 				return
-			if(!A.attach(src, user))
+			if(!accessory.attach(src, user))
 				return
 
 			if(user && notifyAttach)
-				to_chat(user, "<span class='notice'>You attach [I] to [src].</span>")
-
-			var/accessory_color = attached_accessory.icon_state
-			accessory_overlay = mutable_appearance('icons/mob/clothing/accessories.dmi', "[accessory_color]")
-			accessory_overlay.alpha = attached_accessory.alpha
-			accessory_overlay.color = attached_accessory.color
+				to_chat(user, span_notice("You attach [accessory] to [src]."))
 
 			if(ishuman(loc))
 				var/mob/living/carbon/human/H = loc
+				var/accessory_state = accessory.icon_state
+				var/icon_file = accessory.mob_overlay_icon
+
+				if((H.dna.species.bodytype & BODYTYPE_DIGITIGRADE) && ((accessory.supports_variations & DIGITIGRADE_VARIATION) || (accessory.supports_variations & DIGITIGRADE_VARIATION_SAME_ICON_FILE)))
+					icon_file = DIGITIGRADE_ACCESSORY_PATH
+					if((accessory.supports_variations & DIGITIGRADE_VARIATION_SAME_ICON_FILE))
+						icon_file = accessory.mob_overlay_icon
+						accessory_state = "[accessory_state]_digi"
+
+				else if((H.dna.species.bodytype & BODYTYPE_VOX) && (accessory.supports_variations & VOX_VARIATION))
+					icon_file = VOX_ACCESSORY_PATH
+					if(accessory.vox_override_icon)
+						icon_file = accessory.vox_override_icon
+
+				else if((H.dna.species.bodytype & BODYTYPE_KEPORI) && (accessory.supports_variations & KEPORI_VARIATION))
+					icon_file = KEPORI_ACCESSORY_PATH
+					if(accessory.kepori_override_icon)
+						icon_file = accessory.kepori_override_icon
+
+				accessory_overlay = mutable_appearance(icon_file, "[accessory_state]")
+				accessory_overlay.alpha = attached_accessory.alpha
+				accessory_overlay.color = attached_accessory.color
+
 				H.update_inv_w_uniform()
 				H.update_inv_wear_suit()
 
@@ -159,12 +182,12 @@
 		return
 
 	if(attached_accessory)
-		var/obj/item/clothing/accessory/A = attached_accessory
+		var/obj/item/clothing/accessory/accessory = attached_accessory
 		attached_accessory.detach(src, user)
-		if(user.put_in_hands(A))
-			to_chat(user, "<span class='notice'>You detach [A] from [src].</span>")
+		if(user.put_in_hands(accessory))
+			to_chat(user, span_notice("You detach [accessory] from [src]."))
 		else
-			to_chat(user, "<span class='notice'>You detach [A] from [src] and it falls on the floor.</span>")
+			to_chat(user, span_notice("You detach [accessory] from [src] and it falls on the floor."))
 
 		if(ishuman(loc))
 			var/mob/living/carbon/human/H = loc
@@ -176,11 +199,11 @@
 	. = ..()
 	if(freshly_laundered)
 		. += "It looks fresh and clean."
-	if(can_adjust)
-		if(adjusted == ALT_STYLE)
-			. += "Alt-click on [src] to wear it normally."
+	if(roll_down)
+		if(adjusted == ROLLED_STYLE)
+			. += "Alt-click on [src] to roll your suit back up."
 		else
-			. += "Alt-click on [src] to wear it casually."
+			. += "Alt-click on [src] to roll your suit down."
 	if (has_sensor == BROKEN_SENSORS)
 		. += "Its sensors appear to be shorted out."
 	else if(has_sensor > NO_SENSORS)

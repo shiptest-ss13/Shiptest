@@ -54,28 +54,24 @@
 /obj/structure/catwalk/examine(mob/user)
 	. = ..()
 	if(!(resistance_flags & INDESTRUCTIBLE))
-		. += "<span class='notice'>The supporting rods look like they could be <b>welded</b>.</span>"
+		. += span_notice("The supporting rods look like they could be <b>welded</b>.")
 
 /obj/structure/catwalk/attackby(obj/item/C, mob/user, params)
-	if((C.tool_behaviour == TOOL_WELDER || C.tool_behaviour == TOOL_DECONSTRUCT) && !(resistance_flags & INDESTRUCTIBLE))
-		to_chat(user, "<span class='notice'>You slice off [src]</span>")
-		deconstruct()
-		return
 	if(C.tool_behaviour == TOOL_CROWBAR && plated_tile)
 		hatch_open = !hatch_open
 		if(hatch_open)
 			C.play_tool_sound(src, 100)
-			to_chat(user, "<span class='notice'>You pry open \the [src]'s maintenance hatch.</span>")
+			to_chat(user, span_notice("You pry open \the [src]'s maintenance hatch."))
 		else
 			playsound(src, 'sound/items/Deconstruct.ogg', 100, 2)
-			to_chat(user, "<span class='notice'>You shut \the [src]'s maintenance hatch.</span>")
+			to_chat(user, span_notice("You shut \the [src]'s maintenance hatch."))
 		update_appearance()
 		return
 	if(istype(C, /obj/item/stack/tile) && !plated_tile)
 		var/obj/item/stack/tile/plasteel/ST = C
-		to_chat(user, "<span class='notice'>Placing tile...</span>")
+		to_chat(user, span_notice("Placing tile..."))
 		if(do_after(user, 30, target = src))
-			to_chat(user, "<span class='notice'>You plate \the [src]</span>")
+			to_chat(user, span_notice("You plate \the [src]"))
 			name = "plated catwalk"
 			src.add_fingerprint(user)
 			if(ST.use(1))
@@ -83,6 +79,20 @@
 				update_appearance()
 		return
 	return ..()
+
+/obj/structure/catwalk/deconstruct_act(mob/living/user, obj/item/tool)
+	if(..())
+		return TRUE
+	to_chat(user, span_notice("You slice off [src]"))
+	deconstruct()
+	return TRUE
+
+/obj/structure/catwalk/welder_act(mob/living/user, obj/item/tool)
+	if(..() || (resistance_flags & INDESTRUCTIBLE))
+		return TRUE
+	to_chat(user, span_notice("You slice off [src]"))
+	deconstruct()
+	return TRUE
 
 /obj/structure/catwalk/Move(atom/newloc)
 	var/turf/T = loc

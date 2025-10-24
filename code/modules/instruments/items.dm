@@ -28,7 +28,7 @@
 
 /obj/item/instrument/attack_self(mob/user)
 	if(!user.IsAdvancedToolUser())
-		to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
+		to_chat(user, span_warning("You don't have the dexterity to do this!"))
 		return TRUE
 	interact(user)
 
@@ -72,13 +72,15 @@
 	name = "headphones"
 	desc = "Unce unce unce unce. Boop!"
 	icon = 'icons/obj/clothing/accessories.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/ears.dmi'
 	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
 	icon_state = "headphones"
-	item_state = "earmuffs"
+	item_state = "headphones"
 	slot_flags = ITEM_SLOT_EARS | ITEM_SLOT_HEAD
 	force = 0
 	w_class = WEIGHT_CLASS_SMALL
+	alternate_worn_layer = UNDER_HEAD_LAYER
 	custom_price = 125
 	instrument_range = 1
 
@@ -244,7 +246,7 @@
 
 /obj/item/instrument/harmonica/proc/handle_speech(datum/source, list/speech_args)
 	if(song.playing && ismob(loc))
-		to_chat(loc, "<span class='warning'>You stop playing the harmonica to talk...</span>")
+		to_chat(loc, span_warning("You stop playing the harmonica to talk..."))
 		song.playing = FALSE
 
 /obj/item/instrument/harmonica/equipped(mob/M, slot)

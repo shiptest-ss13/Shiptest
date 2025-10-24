@@ -15,13 +15,24 @@
 	var/prefix = null
 	var/suffix = null
 
+	/// The faction that used to own this before any current inhabitents (frontiersmen, spiders). Defaults to current_owner
+	var/real_owner
+	/// The current faction that controls the ruin, likely a hostile faction or unknown
+	var/current_owner = /datum/faction/unknown
+
 	var/ruin_type
 	var/ruin_tags = list()
+
+	var/ruin_mission_types
 
 /datum/map_template/ruin/New()
 	if(!name && id)
 		name = id
 
-	mappath = prefix + suffix
-	..(path = mappath)
+	if(!real_owner)
+		real_owner = current_owner
 
+	mappath = prefix + suffix
+	if(!findtext(mappath, ".dmm"))
+		stack_trace("[src] has a mappath with no .dmm in it. Its mappath is: [mappath].")
+	..(path = mappath)

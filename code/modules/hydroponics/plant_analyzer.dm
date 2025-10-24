@@ -37,7 +37,7 @@
 		change_target(target, user)
 
 /obj/item/plant_analyzer/proc/can_scan_target(atom/target)
-	if(istype(target, /obj/machinery/hydroponics) || istype(target, /obj/item/seeds) || istype(target, /obj/item/reagent_containers/food/snacks/grown))
+	if(istype(target, /obj/machinery/hydroponics) || istype(target, /obj/item/seeds) || istype(target, /obj/item/food/grown))
 		return TRUE
 
 /obj/item/plant_analyzer/ui_interact(mob/user, datum/tgui/ui)
@@ -55,7 +55,7 @@
 
 	var/obj/machinery/hydroponics/tray
 	var/obj/item/seeds/my_seed
-	var/obj/item/reagent_containers/food/snacks/grown/product
+	var/obj/item/food/grown/product
 
 	var/temp_seed = FALSE
 	var/temp_product = FALSE
@@ -75,13 +75,13 @@
 	else if(istype(scan_target, /obj/item/seeds))
 		my_seed = scan_target
 
-	else if(istype(scan_target, /obj/item/reagent_containers/food/snacks/grown))
+	else if(istype(scan_target, /obj/item/food/grown))
 		product = scan_target
 
 	if(product && !my_seed)
 		my_seed = product.seed
 
-	if(my_seed && !product && ispath(my_seed.product, /obj/item/reagent_containers/food/snacks/grown))
+	if(my_seed && !product && ispath(my_seed.product, /obj/item/food/grown))
 		product = new my_seed.product
 		temp_product = TRUE
 
@@ -89,8 +89,8 @@
 		data["tray"] = tray.get_tgui_info()
 	if(my_seed)
 		data["seed"] = my_seed.get_tgui_info()
-	if(product)
-		data["seed"] += product.get_tgui_info()
+	//if(product)
+	//	data["seed"] += product.get_tgui_info() todo make fallcon fix this
 
 	if(temp_seed)
 		qdel(my_seed)

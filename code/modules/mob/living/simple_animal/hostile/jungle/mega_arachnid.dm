@@ -10,8 +10,8 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BUG
 	melee_damage_lower = 30
 	melee_damage_upper = 30
-	maxHealth = 300
-	health = 300
+	maxHealth = 200
+	health = 200
 	speed = 1
 	ranged = 1
 	pixel_x = -16
