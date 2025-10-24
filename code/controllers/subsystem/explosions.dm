@@ -164,7 +164,7 @@ SUBSYSTEM_DEF(explosions)
 // 5 explosion power is a (0, 1, 3) explosion.
 // 1 explosion power is a (0, 0, 1) explosion.
 
-/proc/explosion(atom/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog = TRUE, ignorecap = FALSE, flame_range = 0, silent = FALSE, smoke = FALSE, gentle = FALSE, light_dam, light_item_dam, heavy_dam, heavy_item_dam)
+/proc/explosion(atom/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog = TRUE, ignorecap = FALSE, flame_range = 0, silent = FALSE, smoke = FALSE, gentle = FALSE, light_dam = 40, light_item_dam = 10, heavy_dam = 80, heavy_item_dam = 20)
 	. = SSexplosions.explode(arglist(args))
 
 #define CREAK_DELAY 5 SECONDS //Time taken for the creak to play after explosion, if applicable.
@@ -177,7 +177,7 @@ SUBSYSTEM_DEF(explosions)
 #define FREQ_UPPER 40 //The upper limit for the randomly selected frequency.
 #define FREQ_LOWER 25 //The lower of the above.
 
-/datum/controller/subsystem/explosions/proc/explode(atom/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog, ignorecap, flame_range, silent, smoke, gentle)
+/datum/controller/subsystem/explosions/proc/explode(atom/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog, ignorecap, flame_range, silent, smoke, gentle, light_dam, light_item_dam, heavy_dam, heavy_item_dam)
 	epicenter = get_turf(epicenter)
 	if(!epicenter)
 		return
@@ -193,6 +193,11 @@ SUBSYSTEM_DEF(explosions)
 	var/orig_light_range = light_impact_range
 
 	var/orig_max_distance = max(devastation_range, heavy_impact_range, light_impact_range, flash_range, flame_range)
+
+	var/light_damage = light_dam
+	var/heavy_damage = heavy_dam
+	var/heavy_item_damage = heavy_item_dam
+	var/light_item_damage = light_item_dam
 
 	//Zlevel specific bomb cap multiplier
 	var/cap_multiplier = epicenter.virtual_level_trait(ZTRAIT_BOMBCAP_MULTIPLIER)
@@ -346,15 +351,16 @@ SUBSYSTEM_DEF(explosions)
 					items -= A				// Because GetAllContents returns the mob too, resulting in double damage
 			for(var/O in items)
 				//have this pass a list
+				var/list/to_explode = list(O,light_damage,light_item_damage,heavy_damage,heavy_item_damage)
 				var/atom/A = O
 				if(!QDELETED(A))
 					switch(dist)
 						if(EXPLODE_DEVASTATE)
-							SSexplosions.highobj += A
+							SSexplosions.highobj += to_explode
 						if(EXPLODE_HEAVY)
-							SSexplosions.medobj += A
+							SSexplosions.medobj += to_explode
 						if(EXPLODE_LIGHT)
-							SSexplosions.lowobj += A
+							SSexplosions.lowobj += to_explode
 		switch(dist)
 			if(EXPLODE_DEVASTATE)
 				SSexplosions.highturf += T
@@ -520,25 +526,37 @@ SUBSYSTEM_DEF(explosions)
 		//make this take list
 		var/list/high_obj = highobj
 		highobj = list()
-		for(var/obj/O as anything in high_obj)
+		// for(var/obj/O as anything in high_obj)
+		// 	if(!QDELETED(O))
+		// 		O.ex_act(EXPLODE_DEVASTATE)
+		for(var/list/explodey in high_obj)
+			var/obj/O = explodey[0]
 			if(!QDELETED(O))
-				O.ex_act(EXPLODE_DEVASTATE)
+				O.ex_act(EXPLODE_DEVASTATE, explodey[1],explodey[2],explodey[3],explodey[4])
 		cost_highobj = MC_AVERAGE(cost_highobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 		timer = TICK_USAGE_REAL
 		var/list/med_obj = medobj
 		medobj = list()
-		for(var/obj/O as anything in med_obj)
+		// for(var/obj/O as anything in med_obj)
+		// 	if(!QDELETED(O))
+		// 		O.ex_act(EXPLODE_HEAVY)
+		for(var/list/explodey in med_obj)
+			var/obj/O = explodey[0]
 			if(!QDELETED(O))
-				O.ex_act(EXPLODE_HEAVY)
+				O.ex_act(EXPLODE_HEAVY, explodey[1],explodey[2],explodey[3],explodey[4])
 		cost_medobj = MC_AVERAGE(cost_medobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 		timer = TICK_USAGE_REAL
 		var/list/low_obj = lowobj
 		lowobj = list()
-		for(var/obj/O as anything in low_obj)
+		// for(var/obj/O as anything in low_obj)
+		// 	if(!QDELETED(O))
+		// 		O.ex_act(EXPLODE_LIGHT)
+		for(var/list/explodey in low_obj)
+			var/obj/O = explodey[0]
 			if(!QDELETED(O))
-				O.ex_act(EXPLODE_LIGHT)
+				O.ex_act(EXPLODE_LIGHT, explodey[1],explodey[2],explodey[3],explodey[4])
 		cost_lowobj = MC_AVERAGE(cost_lowobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 

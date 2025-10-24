@@ -451,7 +451,7 @@
 		..()
 
 
-/mob/living/carbon/human/ex_act(severity, target, origin)
+/mob/living/carbon/human/ex_act(severity, target, origin, light_dam = 30, light_item_dam = 50, heavy_dam = 100, heavy_item_dam = 200)
 	if(TRAIT_BOMBIMMUNE in dna.species.species_traits)
 		return
 	..()
@@ -469,15 +469,16 @@
 		if (EXPLODE_DEVASTATE)
 			if(bomb_armor < EXPLODE_GIB_THRESHOLD) //gibs the mob if their bomb armor is lower than EXPLODE_GIB_THRESHOLD
 				for(var/I in contents)
+					var/list/to_explode = list(I,light_damage,light_item_damage,heavy_damage,heavy_item_damage)
 					var/atom/A = I
 					if(!QDELETED(A))
 						switch(severity)
 							if(EXPLODE_DEVASTATE)
-								SSexplosions.highobj += A
+								SSexplosions.highobj += to_explode
 							if(EXPLODE_HEAVY)
-								SSexplosions.medobj += A
+								SSexplosions.medobj += to_explode
 							if(EXPLODE_LIGHT)
-								SSexplosions.lowobj += A
+								SSexplosions.lowobj += to_explode
 				gib()
 				return
 			else
