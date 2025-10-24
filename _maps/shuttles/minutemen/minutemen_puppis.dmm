@@ -160,8 +160,7 @@
 	capacity = 2
 	},
 /obj/structure/closet/crate/radiation{
-	name = "fuel crate";
-	anchored = 1
+	name = "fuel crate"
 	},
 /obj/item/stack/sheet/mineral/plasma/ten,
 /obj/item/stack/sheet/mineral/uranium/five,
@@ -853,6 +852,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
+"iN" = (
+/obj/structure/catwalk/over,
+/obj/effect/decal/fakelattice{
+	icon_state = "lattice-75"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "jh" = (
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /obj/effect/turf_decal/siding/white{
@@ -1733,7 +1739,9 @@
 /obj/structure/railing{
 	dir = 10
 	},
-/obj/machinery/power/port_gen/pacman/super,
+/obj/machinery/power/port_gen/pacman/super{
+	anchored = 1
+	},
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -1791,10 +1799,8 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "sE" = (
-/obj/effect/decal/fakelattice{
-	icon_state = "lattice-23"
-	},
 /obj/structure/catwalk/over,
+/obj/effect/decal/fakelattice,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "sG" = (
@@ -2257,13 +2263,14 @@
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
 "yx" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/computer/atmos_control/external{
 	dir = 1;
 	icon_state = "computer-left";
 	pixel_x = 0;
-	pixel_y = 0
+	pixel_y = 0;
+	sensors = list("puppis_external" = "External Atmospherics Monitoring")
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/engines/starboard)
 "yK" = (
@@ -2779,6 +2786,7 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 10
 	},
+/obj/machinery/space_heater,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Da" = (
@@ -3532,7 +3540,9 @@
 /area/ship/security/armory)
 "LK" = (
 /obj/structure/railing,
-/obj/machinery/power/port_gen/pacman,
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
 /obj/machinery/power/terminal{
 	dir = 4
 	},
@@ -4080,14 +4090,12 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
 "PU" = (
-/obj/effect/decal/fakelattice{
-	icon_state = "lattice-23"
-	},
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	dir = 1;
 	piping_layer = 5
 	},
 /obj/structure/catwalk/over,
+/obj/effect/decal/fakelattice,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "Qe" = (
@@ -4369,7 +4377,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "SE" = (
-/obj/machinery/air_sensor/external,
+/obj/machinery/air_sensor/external{
+	id_tag = "puppis_external"
+	},
 /obj/structure/catwalk/over,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
@@ -5933,9 +5943,9 @@ ur
 lG
 NU
 sX
-sE
-sE
-sE
+iN
+iN
+iN
 Eu
 Li
 WH
