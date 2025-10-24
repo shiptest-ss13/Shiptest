@@ -74,7 +74,7 @@
 		var/chance_to_pen = (damage*0.5 + pointy.armour_penetration*1.5) - ap_threshold
 		if(prob(chance_to_pen))
 			take_damage(armour_penetration, damage_type)
-			to_chat(owner, span_warning("Your shield is penetrated by [hitby]!"))
+			to_chat(owner, span_boldwarning("Your shield is penetrated by [hitby]!"))
 			return FALSE
 	. = ..()
 	if(.)
