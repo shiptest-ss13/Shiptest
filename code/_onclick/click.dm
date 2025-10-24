@@ -160,6 +160,8 @@
 			UnarmedAttack(A, TRUE)
 	else
 		if(W)
+			if(W.pre_attack(A, src, params))
+				return
 			var/proximity = A.Adjacent(src)
 			if(!proximity || !A.attackby(W, src, params))
 				W.afterattack(A, src, proximity, params)
