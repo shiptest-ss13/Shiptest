@@ -40,6 +40,10 @@
 
 	flags = GAS_FLAG_DANGEROUS
 
+	fire_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST
+	fire_products = list(GAS_CO2 = 1)
+	fire_burn_rate = 2
+
 	fusion_power = 0
 	enthalpy = -110500
 
@@ -210,7 +214,7 @@
 	fusion_power = 0
 	fire_products = list(GAS_CHLORINE = 1, GAS_H2O = 0.5)
 	enthalpy = 63000
-	fire_burn_rate = 1
+	fire_burn_rate = 2
 	fire_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST
 
 /datum/gas/sulfur_dioxide
@@ -253,9 +257,9 @@
 	color = "#ffe"
 	gas_overlay = "nitrous_oxide"
 	fusion_power = 0
-	fire_products = list(GAS_N2 = 0.2, GAS_H2O = 0.8)
+	fire_products = list(GAS_N2 = 0.5, GAS_H2O = 1.5)
 	enthalpy = -46000
-	fire_burn_rate = 0.2
+	fire_burn_rate = (4 / 3)
 
 	odor = GAS_ODOR_CHEMICAL
 	odor_emotes = TRUE
