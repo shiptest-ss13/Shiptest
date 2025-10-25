@@ -82,6 +82,13 @@
 	belt = /obj/item/reagent_scanner
 	backpack_contents = list(/obj/item/book/manual/wiki/chemistry=1)
 
+/datum/outfit/job/independent/assistant/gown
+	name = "Independent - Assistant (Gown)"
+
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	dcoat = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+
 // Captain
 
 /datum/outfit/job/independent/captain
@@ -207,6 +214,25 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 	head = null
 	accessory = null
+
+/datum/outfit/job/independent/captain/gown
+	name = "Independent - Captain (Gown)"
+
+	gloves = null
+	ears = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	suit = null
+	dcoat = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+	head = null
+	backpack_contents = null
+
+	accessory = null
+
+	backpack = /obj/item/storage/backpack/captain
+	satchel = /obj/item/storage/backpack/satchel/cap
+	duffelbag = /obj/item/storage/backpack/duffelbag/captain
+	courierbag = /obj/item/storage/backpack/messenger/com
 
 // Head of Personnel
 
@@ -447,6 +473,19 @@
 	gloves = /obj/item/clothing/gloves/color/red/insulated
 
 	implants = list(/obj/item/implant/radio)
+
+/datum/outfit/job/independent/engineer/gown
+	name = "Independent - Engineer (Gown)"
+
+	gloves = null
+	ears = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	alt_uniform = null
+	suit = null
+	dcoat = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+	head = null
+	backpack_contents = null
 
 // Warden
 
