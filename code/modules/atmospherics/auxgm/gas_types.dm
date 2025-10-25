@@ -239,7 +239,7 @@
 	fusion_power = 0
 	fire_products = list(GAS_H2O = 2, GAS_CO2 = 1)
 	enthalpy = -74600
-	fire_burn_rate = 2
+	fire_burn_rate = 0.5
 	fire_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST - 50
 
 /datum/gas/ammonia
