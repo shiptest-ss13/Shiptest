@@ -1628,6 +1628,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		H.visible_message(span_warning("[M] attempts to touch [H]!"), \
 						span_danger("[M] attempts to touch you!"), span_hear("You hear a swoosh!"), COMBAT_MESSAGE_RANGE, M)
 		to_chat(M, span_warning("You attempt to touch [H]!"))
+		M.changeNext_move(CLICK_CD_BLOCKED)
 		return 0
 
 	SEND_SIGNAL(M, COMSIG_MOB_ATTACK_HAND, M, H, attacker_style)
