@@ -4,7 +4,7 @@
 #define JUMP_STATE_FIRING 3
 #define JUMP_STATE_FINALIZED 4
 #define JUMP_CHARGE_DELAY (7 SECONDS)
-#define JUMP_CHARGEUP_TIME (1 MINUTES)
+#define JUMP_CHARGEUP_TIME (20 SECONDS)
 
 /obj/machinery/computer/helm
 	name = "helm control console"
@@ -69,11 +69,11 @@
 	message_admins("[ADMIN_LOOKUPFLW(usr)] has initiated a bluespace jump in [ADMIN_VERBOSEJMP(src)]")
 	jump_timer = addtimer(CALLBACK(src, PROC_REF(jump_sequence), TRUE), JUMP_CHARGEUP_TIME, TIMER_STOPPABLE)
 	if(new_system)
-		priority_announce("Bluespace jump calibration to destination [new_system.name] initialized. Calibration completion in [JUMP_CHARGEUP_TIME/600] minutes.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+		priority_announce("Bluespace jump calibration to destination [new_system.name] initialized. Calibration completion in [JUMP_CHARGEUP_TIME/10] seconds.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
 		jump_destination = new_system
 		jump_coords = newpos
 	else
-		priority_announce("Bluespace jump calibration initialized. Exitting Frontier. Calibration completion in [JUMP_CHARGEUP_TIME/600] minutes.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+		priority_announce("Bluespace jump calibration initialized. Exitting Frontier. Calibration completion in [JUMP_CHARGEUP_TIME/10] seconds.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
 
 	calibrating = TRUE
 	return TRUE
