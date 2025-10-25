@@ -238,6 +238,20 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/ramzi/neck.dmi'
 
 //////////
+//Neck//
+/////////
+
+/obj/item/clothing/glasses/hud/security/sunglasses/ramzi
+	name = "ramzi modified mesons"
+	desc = "A modified version of battered optical meson scanners, with a flash-proof tint and a shoddily-integrated security HUD, disabling the meson functionality."
+	icon_state = "ramzi_goggles"
+	item_state = "ramzi_goggles"
+	icon = 'icons/obj/clothing/faction/ramzi/eyes.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ramzi/eyes.dmi'
+	glass_colour_type = /datum/client_colour/glass_colour/orange
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
+
+//////////
 //Belts//
 /////////
 
@@ -248,6 +262,25 @@
 	item_state = "ramzi_webbing"
 	icon = 'icons/obj/clothing/faction/ramzi/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ramzi/belt.dmi'
+
+/obj/item/storage/belt/security/webbing/ramzi/hydra/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/m556_42_hydra(src)
+
+/obj/item/storage/belt/security/webbing/ramzi/mako/PopulateContents()
+	. = ..()
+	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
+
+/obj/item/storage/belt/security/webbing/ramzi/bulldog_mixed/PopulateContents()
+	. = ..()
+	new /obj/item/ammo_box/magazine/m12g_bulldog/drum/bioterror(src) // you only get ONE this one is nasty
+	new /obj/item/ammo_box/magazine/m12g_bulldog/drum/slug(src)
+	new /obj/item/ammo_box/magazine/m12g_bulldog/drum/slug(src)
+	new /obj/item/ammo_box/magazine/m12g_bulldog/drum(src)
 
 /obj/item/storage/belt/security/webbing/ramzi/alt
 	name = "Ramzi Clique drop pouch harness"
