@@ -103,7 +103,7 @@
 									span_warning("[L] lets out panicked gasps as [L.p_their()] [NB] melts down to the bone!"),
 									span_userdanger("You gasp in shock as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!"))
 						if(!plasma_parts.len && !robo_parts.len) //a person with no potential organic limbs left AND no robotic limbs, time to turn them into a plasmaman
-							PP.IgniteMob()
+							PP.ignite_mob()
 							PP.set_species(/datum/species/plasmaman)
 							PP.visible_message(
 								span_warning("[L] bursts into a brilliant purple flame as [L.p_their()] entire body is that of a skeleton!"),

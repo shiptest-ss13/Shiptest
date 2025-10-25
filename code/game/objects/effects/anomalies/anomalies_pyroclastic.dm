@@ -19,7 +19,7 @@
 
 	for(var/mob/living/carbon/nearby in range(effectrange/2, src))
 		nearby.fire_stacks += 3
-		nearby.IgniteMob()
+		nearby.ignite_mob()
 		visible_message("<span class='warning'>[src] lets out a flare, igniting [nearby]!")
 
 
@@ -34,7 +34,7 @@
 	if(iscarbon(AM))
 		var/mob/living/carbon/onfire
 		onfire.fire_stacks += 3
-		onfire.IgniteMob()
+		onfire.ignite_mob()
 
 /obj/effect/anomaly/pyro/detonate()
 	INVOKE_ASYNC(src, PROC_REF(makepyroslime))

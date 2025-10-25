@@ -78,12 +78,12 @@
 // Status effect process. Handles adjusting it's duration and ticks.
 // If you're adding processed effects, put them in [proc/tick]
 // instead of extending / overriding ththe process() proc.
-/datum/status_effect/process(seconds_per_tick)
+/datum/status_effect/process(seconds_per_tick, times_fired)
 	if(QDELETED(owner))
 		qdel(src)
 		return
 	if(tick_interval < world.time)
-		tick(seconds_per_tick)
+		tick(seconds_per_tick, times_fired)
 		tick_interval = world.time + initial(tick_interval)
 	if(duration != -1 && duration < world.time)
 		qdel(src)
@@ -99,7 +99,7 @@
 	return null
 
 /// Called every tick from process().
-/datum/status_effect/proc/tick(seconds_per_tick)
+/datum/status_effect/proc/tick(seconds_per_tick, times_fired)
 	return
 
 /// Called whenever the buff expires or is removed (qdeleted)
@@ -162,50 +162,6 @@
 		return
 
 	qdel(src)
-
-/mob/living/proc/apply_status_effect(effect, ...) //applies a given status effect to this mob, returning the effect if it was successful
-	. = FALSE
-	var/datum/status_effect/S1 = effect
-	LAZYINITLIST(status_effects)
-	for(var/datum/status_effect/S in status_effects)
-		if(S.id == initial(S1.id) && S.status_type)
-			if(S.status_type == STATUS_EFFECT_REPLACE)
-				S.be_replaced()
-			else if(S.status_type == STATUS_EFFECT_REFRESH)
-				S.refresh()
-				return
-			else
-				return
-	var/list/arguments = args.Copy()
-	arguments[1] = src
-	S1 = new effect(arguments)
-	. = S1
-
-/mob/living/proc/remove_status_effect(effect, ...) //removes all of a given status effect from this mob, returning TRUE if at least one was removed
-	. = FALSE
-	var/list/arguments = args.Copy(2)
-	if(status_effects)
-		var/datum/status_effect/S1 = effect
-		for(var/datum/status_effect/S in status_effects)
-			if(initial(S1.id) == S.id && S.before_remove(arguments))
-				qdel(S)
-				. = TRUE
-
-/mob/living/proc/has_status_effect(effect) //returns the effect if the mob calling the proc owns the given status effect
-	. = FALSE
-	if(status_effects)
-		var/datum/status_effect/S1 = effect
-		for(var/datum/status_effect/S in status_effects)
-			if(initial(S1.id) == S.id)
-				return S
-
-/mob/living/proc/has_status_effect_list(effect) //returns a list of effects with matching IDs that the mod owns; use for effects there can be multiple of
-	. = list()
-	if(status_effects)
-		var/datum/status_effect/S1 = effect
-		for(var/datum/status_effect/S in status_effects)
-			if(initial(S1.id) == S.id)
-				. += S
 
 //////////////////////
 // STACKING EFFECTS //

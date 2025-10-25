@@ -292,18 +292,28 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 	desc = "You're getting crushed by high gravity, picking up items and movement will be slowed. You'll also accumulate brute damage!"
 	icon_state = "paralysis"
 
+//rest of these should be alerts eventually today tho. lazy.
+#define ALERT_FIRE "fire"
+
 /atom/movable/screen/alert/fire
 	name = "On Fire"
 	desc = "You're on fire. Stop, drop and roll to put the fire out or move to a vacuum area."
 	icon_state = "fire"
 
 /atom/movable/screen/alert/fire/Click()
-	var/mob/living/L = usr
-	if(!istype(L) || !L.can_resist() || L != owner)
-		return
-	L.changeNext_move(CLICK_CD_RESIST)
-	if(L.mobility_flags & MOBILITY_MOVE)
-		return L.resist_fire() //I just want to start a flame in your hearrrrrrtttttt.
+	. = ..()
+	if(!.)
+		return FALSE
+
+	var/mob/living/living_owner = owner
+	if(!living_owner.can_resist())
+		return FALSE
+
+	living_owner.changeNext_move(CLICK_CD_RESIST)
+	if(!(living_owner.mobility_flags & MOBILITY_MOVE))
+		return FALSE
+
+	return living_owner.resist_fire()
 
 /atom/movable/screen/alert/give // information set when the give alert is made
 	icon_state = "default"

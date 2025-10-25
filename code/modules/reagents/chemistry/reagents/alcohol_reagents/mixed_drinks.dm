@@ -1771,7 +1771,7 @@
 /datum/reagent/consumable/ethanol/bullethell/on_mob_life(mob/living/carbon/M) //rarely sets you on fire
 	if (prob(5))
 		M.adjust_fire_stacks(1)
-		M.IgniteMob()
+		M.ignite_mob()
 	..()
 
 /datum/reagent/consumable/ethanol/homesick
