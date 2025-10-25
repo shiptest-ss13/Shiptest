@@ -543,8 +543,11 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 						visible_message(span_danger("[C]'s spinal cord is obliterated with a sickening crunch!"), ignored_mobs = list(C))
 						C.gain_trauma(/datum/brain_trauma/severe/paralysis/paraplegic)
 					if(5) // limb squish!
-						for(var/i in C.bodyparts)
-							var/obj/item/bodypart/squish_part = i
+						var/obj/item/bodypart/squish_part
+						for(var/zone in C.bodyparts)
+							squish_part = C.bodyparts[zone]
+							if(!squish_part)
+								continue
 							if(IS_ORGANIC_LIMB(squish_part))
 								var/type_wound = pick(list(/datum/wound/blunt/severe, /datum/wound/blunt/moderate))
 								squish_part.force_wound_upwards(type_wound)
