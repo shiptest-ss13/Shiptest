@@ -1,10 +1,11 @@
-import { decodeHtmlEntities } from 'common/string';
+import { Box, Button, Flex, LabeledList, Section } from 'tgui-core/components';
+import { decodeHtmlEntities } from 'tgui-core/string';
+
 import { useBackend } from '../backend';
-import { Box, Button, Grid, LabeledList, Section } from '../components';
 import { Window } from '../layouts';
 
-export const EngravedMessage = (props, context) => {
-  const { act, data } = useBackend(context);
+export const EngravedMessage = (props) => {
+  const { act, data } = useBackend();
   const {
     admin_mode,
     creator_key,
@@ -18,14 +19,14 @@ export const EngravedMessage = (props, context) => {
     realdate,
   } = data;
   return (
-    <Window width={600} height={300} resizable>
+    <Window width={600} height={300}>
       <Window.Content scrollable>
         <Section>
           <Box bold textAlign="center" fontSize="20px" mb={2}>
             {decodeHtmlEntities(hidden_message)}
           </Box>
-          <Grid>
-            <Grid.Column>
+          <Flex>
+            <Flex.Column>
               <Button
                 fluid
                 icon="arrow-up"
@@ -37,8 +38,8 @@ export const EngravedMessage = (props, context) => {
                 lineHeight="24px"
                 onClick={() => act('like')}
               />
-            </Grid.Column>
-            <Grid.Column>
+            </Flex.Column>
+            <Flex.Column>
               <Button
                 fluid
                 icon="circle"
@@ -49,8 +50,8 @@ export const EngravedMessage = (props, context) => {
                 lineHeight="24px"
                 onClick={() => act('neutral')}
               />
-            </Grid.Column>
-            <Grid.Column>
+            </Flex.Column>
+            <Flex.Column>
               <Button
                 fluid
                 icon="arrow-down"
@@ -62,8 +63,8 @@ export const EngravedMessage = (props, context) => {
                 lineHeight="24px"
                 onClick={() => act('dislike')}
               />
-            </Grid.Column>
-          </Grid>
+            </Flex.Column>
+          </Flex>
         </Section>
         <Section>
           <LabeledList>

@@ -1,5 +1,3 @@
-import { toFixed } from 'common/math';
-import { useBackend, useLocalState } from '../backend';
 import {
   Button,
   Flex,
@@ -7,7 +5,10 @@ import {
   NoticeBox,
   RoundGauge,
   Section,
-} from '../components';
+} from 'tgui-core/components';
+import { toFixed } from 'tgui-core/math';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
 const TAB2NAME = [
@@ -40,8 +41,8 @@ const TAB2NAME = [
 const lineHeightNormal = 2.79;
 const lineHeightDebug = 6;
 
-const DebuggingTab = (props, context) => {
-  const { act } = useBackend(context);
+const DebuggingTab = (props) => {
+  const { act } = useBackend();
   return (
     <Flex
       grow={1}
@@ -75,8 +76,8 @@ const DebuggingTab = (props, context) => {
   );
 };
 
-const HelpfulTab = (props, context) => {
-  const { act } = useBackend(context);
+const HelpfulTab = (props) => {
+  const { act } = useBackend();
   return (
     <Flex direction="column" mb={-0.75} mx={-0.5}>
       <Flex
@@ -245,8 +246,8 @@ const HelpfulTab = (props, context) => {
   );
 };
 
-const FunTab = (props, context) => {
-  const { act } = useBackend(context);
+const FunTab = (props) => {
+  const { act } = useBackend();
   return (
     <Flex direction="column" mb={-0.75} mx={-0.5} textAlign="center">
       <Flex
@@ -387,8 +388,8 @@ const FunTab = (props, context) => {
   );
 };
 
-const FunForYouTab = (props, context) => {
-  const { act } = useBackend(context);
+const FunForYouTab = (props) => {
+  const { act } = useBackend();
   return (
     <Flex
       grow={1}
@@ -510,10 +511,10 @@ const FunForYouTab = (props, context) => {
   );
 };
 
-export const Secrets = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Secrets = (props) => {
+  const { act, data } = useBackend();
   const { is_debugger, is_funmin } = data;
-  const [tabIndex, setTabIndex] = useLocalState(context, 'tab-index', 2);
+  const [tabIndex, setTabIndex] = useLocalState('tab-index', 2);
   const TabComponent = TAB2NAME[tabIndex - 1].component();
   return (
     <Window title="Secrets Panel" width={500} height={485}>
@@ -600,9 +601,9 @@ export const Secrets = (props, context) => {
                         maxValue={100}
                         alertAfter={100 * 0.7}
                         ranges={{
-                          'good': [-2, 100 * 0.25],
-                          'average': [100 * 0.25, 100 * 0.75],
-                          'bad': [100 * 0.75, 100],
+                          good: [-2, 100 * 0.25],
+                          average: [100 * 0.25, 100 * 0.75],
+                          bad: [100 * 0.75, 100],
                         }}
                         format={(value) => toFixed(value) + '%'}
                       />

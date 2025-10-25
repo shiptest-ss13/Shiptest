@@ -1,17 +1,18 @@
-import { toTitleCase } from 'common/string';
-import { useBackend } from '../backend';
+import { sortBy } from 'common/collections';
 import {
   AnimatedNumber,
   Box,
   Button,
   LabeledList,
   Section,
-} from '../components';
-import { Window } from '../layouts';
-import { sortBy } from 'common/collections';
+} from 'tgui-core/components';
+import { toTitleCase } from 'tgui-core/string';
 
-export const PortableChemMixer = (props, context) => {
-  const { act, data } = useBackend(context);
+import { useBackend } from '../backend';
+import { Window } from '../layouts';
+
+export const PortableChemMixer = (props) => {
+  const { act, data } = useBackend();
   const recording = !!data.recordingRecipe;
   const beakerTransferAmounts = data.beakerTransferAmounts || [];
   const beakerContents =
@@ -25,7 +26,7 @@ export const PortableChemMixer = (props, context) => {
     [];
   const chemicals = sortBy((chem) => chem.title)(data.chemicals);
   return (
-    <Window width={645} height={550} resizable>
+    <Window width={645} height={550}>
       <Window.Content scrollable>
         <Section
           title="Dispense"

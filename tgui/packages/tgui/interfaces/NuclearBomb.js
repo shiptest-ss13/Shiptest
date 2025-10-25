@@ -1,14 +1,15 @@
-import { classes } from 'common/react';
+import { Box, Button, Flex, Icon } from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
+
 import { useBackend } from '../backend';
-import { Box, Button, Flex, Grid, Icon } from '../components';
 import { Window } from '../layouts';
 
 // This ui is so many manual overrides and !important tags
 // and hand made width sets that changing pretty much anything
 // is going to require a lot of tweaking it get it looking correct again
 // I'm sorry, but it looks bangin
-const NukeKeypad = (props, context) => {
-  const { act } = useBackend(context);
+const NukeKeypad = (props) => {
+  const { act } = useBackend();
   const keypadKeys = [
     ['1', '4', '7', 'C'],
     ['2', '5', '8', '0'],
@@ -16,9 +17,9 @@ const NukeKeypad = (props, context) => {
   ];
   return (
     <Box width="185px">
-      <Grid width="1px">
+      <Flex width="1px">
         {keypadKeys.map((keyColumn) => (
-          <Grid.Column key={keyColumn[0]}>
+          <Flex.Column key={keyColumn[0]}>
             {keyColumn.map((key) => (
               <Button
                 fluid
@@ -38,15 +39,15 @@ const NukeKeypad = (props, context) => {
                 onClick={() => act('keypad', { digit: key })}
               />
             ))}
-          </Grid.Column>
+          </Flex.Column>
         ))}
-      </Grid>
+      </Flex>
     </Box>
   );
 };
 
-export const NuclearBomb = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NuclearBomb = (props) => {
+  const { act, data } = useBackend();
   const { anchored, disk_present, status1, status2 } = data;
   return (
     <Window width={350} height={442} theme="retro">

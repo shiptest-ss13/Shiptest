@@ -1,9 +1,15 @@
+import {
+  Button,
+  LabeledList,
+  NumberInput,
+  Section,
+} from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Button, LabeledList, NumberInput, Section } from '../components';
 import { Window } from '../layouts';
 
-export const AtmosMixer = (props, context) => {
-  const { act, data } = useBackend(context);
+export const AtmosMixer = (props) => {
+  const { act, data } = useBackend();
   return (
     <Window width={370} height={165}>
       <Window.Content>
@@ -26,7 +32,7 @@ export const AtmosMixer = (props, context) => {
                 minValue={0}
                 maxValue={4500}
                 step={10}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('pressure', {
                     pressure: value,
                   })
@@ -53,7 +59,7 @@ export const AtmosMixer = (props, context) => {
                 minValue={0}
                 maxValue={100}
                 stepPixelSize={2}
-                onDrag={(e, value) =>
+                onDrag={(value) =>
                   act('node1', {
                     concentration: value,
                   })
@@ -69,7 +75,7 @@ export const AtmosMixer = (props, context) => {
                 minValue={0}
                 maxValue={100}
                 stepPixelSize={2}
-                onDrag={(e, value) =>
+                onDrag={(value) =>
                   act('node2', {
                     concentration: value,
                   })

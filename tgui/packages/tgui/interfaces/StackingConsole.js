@@ -1,12 +1,13 @@
+import { Button, LabeledList, NoticeBox, Section } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Button, LabeledList, NoticeBox, Section } from '../components';
 import { Window } from '../layouts';
 
-export const StackingConsole = (props, context) => {
-  const { act, data } = useBackend(context);
+export const StackingConsole = (props) => {
+  const { act, data } = useBackend();
   const { machine } = data;
   return (
-    <Window width={320} height={340} resizable>
+    <Window width={320} height={340}>
       <Window.Content scrollable>
         {!machine ? (
           <NoticeBox>No connected stacking machine</NoticeBox>
@@ -18,8 +19,8 @@ export const StackingConsole = (props, context) => {
   );
 };
 
-export const StackingConsoleContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const StackingConsoleContent = (props) => {
+  const { act, data } = useBackend();
   const { stacking_amount, contents = [] } = data;
   return (
     <>

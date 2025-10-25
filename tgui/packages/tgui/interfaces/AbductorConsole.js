@@ -1,12 +1,19 @@
+import {
+  Button,
+  LabeledList,
+  NoticeBox,
+  Section,
+  Tabs,
+} from 'tgui-core/components';
+
 import { useBackend, useSharedState } from '../backend';
-import { Button, LabeledList, NoticeBox, Section, Tabs } from '../components';
 import { Window } from '../layouts';
 import { GenericUplink } from './Uplink';
 
-export const AbductorConsole = (props, context) => {
-  const [tab, setTab] = useSharedState(context, 'tab', 1);
+export const AbductorConsole = (props) => {
+  const [tab, setTab] = useSharedState('tab', 1);
   return (
-    <Window theme="abductor" width={600} height={532} resizable>
+    <Window theme="abductor" width={600} height={532}>
       <Window.Content scrollable>
         <Tabs>
           <Tabs.Tab
@@ -38,8 +45,8 @@ export const AbductorConsole = (props, context) => {
   );
 };
 
-const Abductsoft = (props, context) => {
-  const { act, data } = useBackend(context);
+const Abductsoft = (props) => {
+  const { act, data } = useBackend();
   const { experiment, points, credits } = data;
 
   if (!experiment) {
@@ -60,8 +67,8 @@ const Abductsoft = (props, context) => {
   );
 };
 
-const EmergencyTeleporter = (props, context) => {
-  const { act, data } = useBackend(context);
+const EmergencyTeleporter = (props) => {
+  const { act, data } = useBackend();
   const { pad, gizmo } = data;
 
   if (!pad) {
@@ -94,8 +101,8 @@ const EmergencyTeleporter = (props, context) => {
   );
 };
 
-const VestSettings = (props, context) => {
-  const { act, data } = useBackend(context);
+const VestSettings = (props) => {
+  const { act, data } = useBackend();
   const { vest, vest_mode, vest_lock } = data;
 
   if (!vest) {

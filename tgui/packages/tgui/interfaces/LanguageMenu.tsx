@@ -6,8 +6,8 @@ import {
   Stack,
   Table,
   Tooltip,
-} from '../components';
-import { BooleanLike } from 'common/react';
+} from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
 
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
@@ -51,8 +51,8 @@ const LangSpeakIcon = (props: LanguagePropsPassRest) => {
             ? 'good' // could speak and can speak
             : 'bad' // could speak but cannot speak
           : language.can_speak
-          ? 'average' // could not speak but can speak
-          : 'grey' // could not speak and cannot speak
+            ? 'average' // could not speak but can speak
+            : 'grey' // could not speak and cannot speak
       }
       {...rest}
     />
@@ -97,8 +97,8 @@ const LanguageNameAndDesc = (props: LanguageProps) => {
   );
 };
 
-const LanguageRow = (props: LanguageProps, context) => {
-  const { act, data } = useBackend<Data>(context);
+const LanguageRow = (props: LanguageProps) => {
+  const { act, data } = useBackend<Data>();
   const { is_living, admin_mode } = data;
   const { language } = props;
 
@@ -152,8 +152,8 @@ const LanguageRow = (props: LanguageProps, context) => {
               language.is_default
                 ? 'good'
                 : language.could_speak && language.can_speak
-                ? 'grey'
-                : 'transparent'
+                  ? 'grey'
+                  : 'transparent'
             }
             onClick={() =>
               act('select_default', {
@@ -191,8 +191,8 @@ const LanguageRow = (props: LanguageProps, context) => {
   );
 };
 
-const OmnitongueToggle = (props, context) => {
-  const { act, data } = useBackend<Data>(context);
+const OmnitongueToggle = (props) => {
+  const { act, data } = useBackend<Data>();
   const { omnitongue } = data;
   return (
     <Button
@@ -206,8 +206,8 @@ const OmnitongueToggle = (props, context) => {
   );
 };
 
-export const LanguageMenu = (props, context) => {
-  const { data } = useBackend<Data>(context);
+export const LanguageMenu = (props) => {
+  const { data } = useBackend<Data>();
   const { admin_mode, is_living, languages } = data;
 
   // only show languages we can speak OR understand, UNLESS we're an admin
@@ -218,12 +218,12 @@ export const LanguageMenu = (props, context) => {
         admin_mode ||
         language.can_speak ||
         language.can_understand ||
-        language.partial_understanding > 0
+        language.partial_understanding > 0,
     )
     .sort(
       (a, b) =>
         ((a.can_speak ? 1 : 0) - (b.can_speak ? 1 : 0)) * -2 +
-        (a.name > b.name ? 1 : 0)
+        (a.name > b.name ? 1 : 0),
     );
 
   return (
@@ -232,7 +232,7 @@ export const LanguageMenu = (props, context) => {
       width={admin_mode ? 700 : 500}
       height={Math.min(
         shown_languages.length * 25 + (admin_mode ? 100 : 70),
-        500
+        500,
       )}
     >
       <Window.Content>

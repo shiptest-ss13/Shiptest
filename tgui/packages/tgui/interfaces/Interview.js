@@ -1,15 +1,16 @@
 import {
-  Button,
-  TextArea,
-  Section,
   BlockQuote,
+  Button,
   NoticeBox,
-} from '../components';
-import { Window } from '../layouts';
-import { useBackend } from '../backend';
+  Section,
+  TextArea,
+} from 'tgui-core/components';
 
-export const Interview = (props, context) => {
-  const { act, data } = useBackend(context);
+import { useBackend } from '../backend';
+import { Window } from '../layouts';
+
+export const Interview = (props) => {
+  const { act, data } = useBackend();
   const {
     welcome_message,
     questions,
