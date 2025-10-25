@@ -82,33 +82,6 @@
 	overlay_state_active = "module_jetpackadv_on"
 	full_speed = TRUE
 
-///Eating Apparatus - Lets the user eat/drink with the suit on.
-/obj/item/mod/module/mouthhole
-	name = "MOD eating apparatus module"
-	desc = "A favorite by Miners, this modification to the helmet utilizes a nanotechnology barrier infront of the mouth \
-		to allow eating and drinking while retaining protection and atmosphere. However, it won't free you from masks, \
-		and it will do nothing to improve the taste of a goliath steak."
-	icon_state = "apparatus"
-	complexity = 1
-	incompatible_modules = list(/obj/item/mod/module/mouthhole)
-	overlay_state_inactive = "module_apparatus"
-	/// Former flags of the helmet.
-	var/former_flags = NONE
-	/// Former visor flags of the helmet.
-	var/former_visor_flags = NONE
-
-/obj/item/mod/module/mouthhole/on_install()
-	former_flags = mod.helmet.flags_cover
-	former_visor_flags = mod.helmet.visor_flags_cover
-	mod.helmet.flags_cover &= ~HEADCOVERSMOUTH|PEPPERPROOF
-	mod.helmet.visor_flags_cover &= ~HEADCOVERSMOUTH|PEPPERPROOF
-
-/obj/item/mod/module/mouthhole/on_uninstall(deleting = FALSE)
-	if(deleting)
-		return
-	mod.helmet.flags_cover |= former_flags
-	mod.helmet.visor_flags_cover |= former_visor_flags
-
 ///EMP Shield - Protects the suit from EMPs.
 /obj/item/mod/module/emp_shield
 	name = "MOD EMP shield module"
@@ -204,7 +177,7 @@
 	/// Time it takes for us to dispense.
 	var/dispense_time = 0 SECONDS
 
-/obj/item/mod/module/dispenser/on_use()
+/obj/item/mod/module/dispenser/used()
 	. = ..()
 	if(!.)
 		return
@@ -275,7 +248,7 @@
 	UnregisterSignal(mod, COMSIG_ATOM_EMP_ACT)
 	UnregisterSignal(mod, COMSIG_ATOM_EMAG_ACT)
 
-/obj/item/mod/module/dna_lock/on_use()
+/obj/item/mod/module/dna_lock/used()
 	. = ..()
 	if(!.)
 		return
@@ -343,94 +316,3 @@
 
 /obj/item/mod/module/plasma_stabilizer/on_unequip()
 	REMOVE_TRAIT(mod.wearer, TRAIT_NOSELFIGNITION_HEAD_ONLY, MOD_TRAIT)
-
-
-//Finally, https://pipe.miroware.io/5b52ba1d94357d5d623f74aa/mspfa/Nuke%20Ops/Panels/0648.gif can be real:
-///Hat Stabilizer - Allows displaying a hat over the MOD-helmet, à la plasmamen helmets.
-/obj/item/mod/module/hat_stabilizer
-	name = "MOD hat stabilizer module"
-	desc = "A simple set of deployable stands, directly atop one's head; \
-		these will deploy under a select few hats to keep them from falling off, allowing them to be worn atop the sealed helmet. \
-		You still need to take the hat off your head while the helmet deploys, though. \
-		This is a must-have for Nanotrasen Captains, enabling them to show off their authoritative hat even while in their MODsuit."
-	icon_state = "hat_holder"
-	incompatible_modules = list(/obj/item/mod/module/hat_stabilizer)
-	/*Intentionally left inheriting 0 complexity and removable = TRUE;
-	even though it comes inbuilt into the Magnate/Corporate MODS and spawns in maints, I like the idea of stealing them*/
-	/// Currently "stored" hat. No armor or function will be inherited, ONLY the icon.
-	var/obj/item/clothing/head/attached_hat
-	/// Whitelist of attachable hats, read note in Initialize() below this line
-	var/static/list/attachable_hats_list
-
-/obj/item/mod/module/hat_stabilizer/Initialize(mapload)
-	. = ..()
-	attachable_hats_list = typecacheof(
-	//List of attachable hats. Make sure these and their subtypes are all tested, so they dont appear janky.
-	//This list should also be gimmicky, so captains can have fun. I.E. the Santahat, Pirate hat, Tophat, Chefhat...
-	//Yes, I said it, the captain should have fun.
-		list(
-			/obj/item/clothing/head/caphat,
-			/obj/item/clothing/head/crown,
-			/obj/item/clothing/head/centhat,
-			/obj/item/clothing/head/pirate,
-			/obj/item/clothing/head/santa,
-			/obj/item/clothing/head/kitty,
-			/obj/item/clothing/head/festive,
-			/obj/item/clothing/head/that,
-			/obj/item/clothing/head/nursehat,
-			/obj/item/clothing/head/chefhat,
-			/obj/item/clothing/head/papersack,
-			))
-
-/obj/item/mod/module/hat_stabilizer/on_suit_activation()
-	RegisterSignal(mod.helmet, COMSIG_PARENT_EXAMINE, PROC_REF(add_examine))
-	RegisterSignal(mod.helmet, COMSIG_PARENT_ATTACKBY, PROC_REF(place_hat))
-	RegisterSignal(mod.helmet, COMSIG_CLICK_ALT, PROC_REF(remove_hat))
-
-/obj/item/mod/module/hat_stabilizer/on_suit_deactivation(deleting = FALSE)
-	if(deleting)
-		return
-	if(attached_hat)	//knock off the helmet if its on their head. Or, technically, auto-rightclick it for them; that way it saves us code, AND gives them the bubble
-		remove_hat(src, mod.wearer)
-	UnregisterSignal(mod.helmet, COMSIG_PARENT_EXAMINE)
-	UnregisterSignal(mod.helmet, COMSIG_PARENT_ATTACKBY)
-	UnregisterSignal(mod.helmet, COMSIG_CLICK_ALT)
-
-/obj/item/mod/module/hat_stabilizer/proc/add_examine(datum/source, mob/user, list/base_examine)
-	SIGNAL_HANDLER
-	if(attached_hat)
-		base_examine += span_notice("There's \a [attached_hat] placed on the helmet. Alt-click to remove it.")
-	else
-		base_examine += span_notice("There's nothing placed on the helmet. Yet.")
-
-/obj/item/mod/module/hat_stabilizer/proc/place_hat(datum/source, obj/item/hitting_item, mob/user)
-	SIGNAL_HANDLER
-	if(!istype(hitting_item, /obj/item/clothing/head))
-		return
-	if(!mod.active)
-		to_chat(user,span_warning("The suit must be active!"))
-		return
-	if(!is_type_in_typecache(hitting_item, attachable_hats_list))
-		to_chat(user,span_warning("This hat won't fit!"))
-		return
-	if(attached_hat)
-		to_chat(user,span_warning("There's a hat already attached!"))
-		return
-	if(mod.wearer.transferItemToLoc(hitting_item, src, force = FALSE, silent = TRUE))
-		attached_hat = hitting_item
-		to_chat(user,span_notice("You attached the hat, alt-click to remove"))
-		mod.wearer.update_inv_back(mod.slot_flags)
-
-/obj/item/mod/module/hat_stabilizer/generate_worn_overlay()
-	. = ..()
-	if(attached_hat)
-		. += attached_hat.build_worn_icon(default_layer = ABOVE_MOB_LAYER, default_icon_file = 'icons/mob/clothing/head.dmi')
-
-/obj/item/mod/module/hat_stabilizer/proc/remove_hat(datum/source, mob/user)
-	SIGNAL_HANDLER
-	. = SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-	if(!attached_hat)
-		return
-	attached_hat.forceMove(drop_location())
-	attached_hat = null
-	mod.wearer.update_inv_back(mod.slot_flags)

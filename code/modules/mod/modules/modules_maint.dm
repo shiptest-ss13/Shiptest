@@ -66,7 +66,7 @@
 	incompatible_modules = list(/obj/item/mod/module/balloon)
 	cooldown_time = 15 SECONDS
 
-/obj/item/mod/module/balloon/on_use()
+/obj/item/mod/module/balloon/used()
 	. = ..()
 	if(!.)
 		return
@@ -92,7 +92,7 @@
 	/// The total number of sheets created by this MOD. The more sheets, them more likely they set on fire.
 	var/num_sheets_dispensed = 0
 
-/obj/item/mod/module/paper_dispenser/on_use()
+/obj/item/mod/module/paper_dispenser/used()
 	. = ..()
 	if(!.)
 		return

@@ -11,14 +11,15 @@
 
 	bad_type = /obj/structure
 
-	///is this assigned the climbable element on init?
+	///Is this assigned the climbable element on init?
 	var/climbable = FALSE
 	///How long it takes to climb this object
 	var/climb_time = 2 SECONDS
 	///How long the climber is stunned after climbing this object
 	var/climb_stun = 0
 
-	var/broken = 0 //similar to machinery's stat BROKEN
+	///Similar to machinery's stat BROKEN
+	var/broken = 0
 
 /obj/structure/Initialize()
 	if (!armor)
@@ -74,4 +75,4 @@
 			return  "It appears heavily damaged."
 		if(0 to 25)
 			if(!broken)
-				return  span_warning("It's falling apart!")
+				return span_warning("It's falling apart!")

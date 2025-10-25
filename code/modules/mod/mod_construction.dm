@@ -64,18 +64,6 @@
 	desc = "[desc] [used_theme.desc]"
 	icon_state = "[used_theme.default_skin]-plating"
 
-/obj/item/mod/construction/plating/engineering
-	theme = /datum/mod_theme/engineering
-
-/obj/item/mod/construction/plating/atmospheric
-	theme = /datum/mod_theme/atmospheric
-
-/obj/item/mod/construction/plating/medical
-	theme = /datum/mod_theme/medical
-
-/obj/item/mod/construction/plating/security
-	theme = /datum/mod_theme/security
-
 #define START_STEP "start"
 #define CORE_STEP "core"
 #define SCREWED_CORE_STEP "screwed_core"
