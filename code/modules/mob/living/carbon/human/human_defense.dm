@@ -13,8 +13,12 @@
 		//If a specific bodypart is targetted, check how that bodypart is protected and return the value.
 
 	//If you don't specify a bodypart, it checks ALL your bodyparts for protection, and averages out the values
-	for(var/obj/item/bodypart/BP as anything in bodyparts)
-		armorval += checkarmor(BP, type)
+	var/obj/item/bodypart/body_part
+	for(var/zone in bodyparts)
+		body_part = bodyparts[zone]
+		if(!body_part)
+			continue
+		armorval += checkarmor(body_part, type)
 		organnum++
 	return (armorval/max(organnum, 1))
 
@@ -460,6 +464,9 @@
 	var/brute_loss = 0
 	var/burn_loss = 0
 	var/bomb_armor = getarmor(null, "bomb")
+	var/intensity = 1
+	var/ear_damage = 0
+	var/deafness_power = 0
 
 //200 max knockdown for EXPLODE_HEAVY
 //160 max knockdown for EXPLODE_LIGHT
@@ -487,35 +494,44 @@
 				damage_clothes(400 - bomb_armor, BRUTE, "bomb")
 
 		if (EXPLODE_HEAVY)
-			brute_loss = 50
-			burn_loss = 50
+			brute_loss = 35
+			burn_loss = 35
 			if(bomb_armor)
-				brute_loss = 25*(2 - round(bomb_armor*0.01, 0.05))
+				brute_loss = 20*(2 - round(bomb_armor*0.01, 0.05))
 				burn_loss = brute_loss				//damage gets reduced from 120 to up to 60 combined brute+burn
-			damage_clothes(200 - bomb_armor, BRUTE, "bomb")
-			if (!istype(ears, /obj/item/clothing/ears/earmuffs))
-				adjustEarDamage(30, 120)
+			intensity = 2
+			ear_damage = 30
+			deafness_power = 120
+			damage_clothes(max(rand(90,150) - bomb_armor, 0), BRUTE, "bomb")
 			Unconscious(20)							//short amount of time for follow up attacks against elusive enemies like wizards
 			Knockdown(200 - (bomb_armor * 1.6)) 	//between ~4 and ~20 seconds of knockdown depending on bomb armor
 
 		if(EXPLODE_LIGHT)
-			brute_loss = 30
+			brute_loss = 20
+			burn_loss = 20
 			if(bomb_armor)
 				brute_loss = 15*(2 - round(bomb_armor*0.01, 0.05))
-			damage_clothes(max(50 - bomb_armor, 0), BRUTE, "bomb")
-			if (!istype(ears, /obj/item/clothing/ears/earmuffs))
-				adjustEarDamage(15,60)
+				burn_loss = bruteloss
+			damage_clothes(max(rand(10,90) - bomb_armor, 0), BRUTE, "bomb")
+			intensity = 1.5
+			ear_damage = 15
+			deafness_power = 60
 			Knockdown(160 - (bomb_armor * 1.6))		//100 bomb armor will prevent knockdown altogether
 
 	take_overall_damage(brute_loss,burn_loss)
+	soundbang_act(intensity, 0, ear_damage, deafness_power)
 
 	//attempt to dismember bodyparts
 	if(severity <= 2 || !bomb_armor)
 		var/max_limb_loss = round(4/severity) //so you don't lose four limbs at severity 3.
-		for(var/obj/item/bodypart/BP as anything in bodyparts)
-			if(prob(50/severity) && !prob(getarmor(BP, "bomb")) && BP.body_zone != BODY_ZONE_HEAD && BP.body_zone != BODY_ZONE_CHEST)
-				BP.brute_dam = BP.max_damage
-				BP.dismember()
+		var/obj/item/bodypart/body_part
+		for(var/zone in bodyparts)
+			body_part = bodyparts[zone]
+			if(!body_part)
+				continue
+			if(prob(50/severity) && !prob(getarmor(body_part, "bomb")) && !(body_part.body_part & CHEST|HEAD))
+				body_part.brute_dam = body_part.max_damage
+				body_part.dismember()
 				max_limb_loss--
 				if(!max_limb_loss)
 					break
@@ -567,21 +583,25 @@
 	if(. & EMP_PROTECT_CONTENTS)
 		return
 	var/informed = FALSE
-	for(var/obj/item/bodypart/L as anything in bodyparts)
-		if(!IS_ORGANIC_LIMB(L))
+	var/obj/item/bodypart/body_part
+	for(var/zone in bodyparts)
+		body_part = bodyparts[zone]
+		if(!body_part)
+			continue
+		if(!IS_ORGANIC_LIMB(body_part))
 			if(!informed && !HAS_TRAIT(src, TRAIT_ANALGESIA))
 				to_chat(src, span_userdanger("You feel a sharp pain as your robotic limbs overload."))
 				informed = TRUE
 			switch(severity)
 				if(1)
-					L.receive_damage(0,5,5)
+					body_part.receive_damage(0,5,5)
 					Paralyze(2 SECONDS)
 				if(2)
-					L.receive_damage(0,1,5)
+					body_part.receive_damage(0,1,5)
 					Knockdown(2 SECONDS)
-			if(HAS_TRAIT(L, TRAIT_EASYDISMEMBER) && L.body_zone != "chest")
+			if(HAS_TRAIT(body_part, TRAIT_EASYDISMEMBER) && zone != BODY_ZONE_CHEST)
 				if(prob(20))
-					L.dismember(BRUTE)
+					body_part.dismember(BRUTE)
 
 /mob/living/carbon/human/acid_act(acidpwr, acid_volume, bodyzone_hit) //todo: update this to utilize check_obscured_slots() //and make sure it's check_obscured_slots(TRUE) to stop aciding through visors etc
 	var/list/damaged = list()
@@ -756,19 +776,23 @@
 
 	combined_msg += span_notice("<b>You check yourself for injuries.</b>")
 
-	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+	var/list/missing = list()
 
-	for(var/obj/item/bodypart/LB as anything in bodyparts)
-		missing -= LB.body_zone
-		if(LB.is_pseudopart) //don't show injury text for fake bodyparts; ie chainsaw arms or synthetic armblades
+	var/obj/item/bodypart/body_part
+	for(var/zone in bodyparts)
+		body_part = bodyparts[zone]
+		if(!body_part)
+			missing += zone
+			continue
+		if(body_part.is_pseudopart) //don't show injury text for fake bodyparts; ie chainsaw arms or synthetic armblades
 			continue
 		var/self_aware = FALSE
 		if(HAS_TRAIT(src, TRAIT_SELF_AWARE))
 			self_aware = TRUE
-		var/limb_max_damage = LB.max_damage
+		var/limb_max_damage = body_part.max_damage
 		var/status = ""
-		var/brutedamage = LB.brute_dam
-		var/burndamage = LB.burn_dam
+		var/brutedamage = body_part.brute_dam
+		var/burndamage = body_part.burn_dam
 		if(hallucination)
 			if(prob(30))
 				brutedamage += rand(30,40)
@@ -782,20 +806,20 @@
 
 		else
 			if(brutedamage > 0)
-				status = LB.light_brute_msg
+				status = body_part.light_brute_msg
 			if(brutedamage > (limb_max_damage*0.4))
-				status = LB.medium_brute_msg
+				status = body_part.medium_brute_msg
 			if(brutedamage > (limb_max_damage*0.8))
-				status = LB.heavy_brute_msg
+				status = body_part.heavy_brute_msg
 			if(brutedamage > 0 && burndamage > 0)
 				status += " and "
 
 			if(burndamage > (limb_max_damage*0.8))
-				status += LB.heavy_burn_msg
+				status += body_part.heavy_burn_msg
 			else if(burndamage > (limb_max_damage*0.2))
-				status += LB.medium_burn_msg
+				status += body_part.medium_burn_msg
 			else if(burndamage > 0)
-				status += LB.light_burn_msg
+				status += body_part.light_burn_msg
 
 			if(status == "")
 				status = "OK"
@@ -803,50 +827,52 @@
 		if(status == "OK" || status == "no damage")
 			no_damage = TRUE
 		var/isdisabled = ""
-		if(LB.bodypart_disabled)
+		if(body_part.bodypart_disabled)
 			isdisabled = " is disabled"
 			if(no_damage)
 				isdisabled += " but otherwise"
 			else
 				isdisabled += " and"
-		combined_msg += "\t <span class='[no_damage ? "notice" : "warning"]'>Your [LB.name][isdisabled][self_aware ? " has " : " is "][status].</span>"
+		combined_msg += "\t <span class='[no_damage ? "notice" : "warning"]'>Your [body_part.name][isdisabled][self_aware ? " has " : " is "][status].</span>"
 
-		for(var/thing in LB.wounds)
+		for(var/thing in body_part.wounds)
 			var/datum/wound/W = thing
 			var/msg
 			switch(W.severity)
 				if(WOUND_SEVERITY_TRIVIAL)
-					msg = "\t <span class='danger'>Your [LB.name] is suffering [W.a_or_from] [W.get_topic_name(src)].</span>"
+					msg = "\t <span class='danger'>Your [body_part.name] is suffering [W.a_or_from] [W.get_topic_name(src)].</span>"
 				if(WOUND_SEVERITY_MODERATE)
-					msg = "\t <span class='warning'>Your [LB.name] is suffering [W.a_or_from] [W.get_topic_name(src)]!</span>"
+					msg = "\t <span class='warning'>Your [body_part.name] is suffering [W.a_or_from] [W.get_topic_name(src)]!</span>"
 				if(WOUND_SEVERITY_SEVERE)
-					msg = "\t <span class='warning'><b>Your [LB.name] is suffering [W.a_or_from] [W.get_topic_name(src)]!</b></span>"
+					msg = "\t <span class='warning'><b>Your [body_part.name] is suffering [W.a_or_from] [W.get_topic_name(src)]!</b></span>"
 				if(WOUND_SEVERITY_CRITICAL)
-					msg = "\t <span class='warning'><b>Your [LB.name] is suffering [W.a_or_from] [W.get_topic_name(src)]!!</b></span>"
+					msg = "\t <span class='warning'><b>Your [body_part.name] is suffering [W.a_or_from] [W.get_topic_name(src)]!!</b></span>"
 			combined_msg += msg
 
-		if(LB.current_gauze)
-			var/datum/bodypart_aid/current_gauze = LB.current_gauze
-			combined_msg += "\t <span class='notice'>Your [LB.name] is [current_gauze.desc_prefix] with <a href='?src=[REF(current_gauze)];remove=1'>[current_gauze.get_description()]</a>.</span>"
-		if(LB.current_splint)
-			var/datum/bodypart_aid/current_splint = LB.current_splint
-			combined_msg += "\t <span class='notice'>Your [LB.name] is [current_splint.desc_prefix] with <a href='?src=[REF(current_splint)];remove=1'>[current_splint.get_description()]</a>.</span>"
+		if(body_part.current_gauze)
+			var/datum/bodypart_aid/current_gauze = body_part.current_gauze
+			combined_msg += "\t <span class='notice'>Your [body_part.name] is [current_gauze.desc_prefix] with <a href='?src=[REF(current_gauze)];remove=1'>[current_gauze.get_description()]</a>.</span>"
+		if(body_part.current_splint)
+			var/datum/bodypart_aid/current_splint = body_part.current_splint
+			combined_msg += "\t <span class='notice'>Your [body_part.name] is [current_splint.desc_prefix] with <a href='?src=[REF(current_splint)];remove=1'>[current_splint.get_description()]</a>.</span>"
 
-		for(var/obj/item/I in LB.embedded_objects)
+		for(var/obj/item/I in body_part.embedded_objects)
 			if(I.isEmbedHarmless())
-				combined_msg += "\t <a href='byond://?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] stuck to your [LB.name]!</a>"
+				combined_msg += "\t <a href='byond://?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(body_part)]' class='warning'>There is \a [I] stuck to your [body_part.name]!</a>"
 			else
-				combined_msg += "\t <a href='byond://?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] embedded in your [LB.name]!</a>"
+				combined_msg += "\t <a href='byond://?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(body_part)]' class='warning'>There is \a [I] embedded in your [body_part.name]!</a>"
 
 	for(var/t in missing)
 		combined_msg += span_boldannounce("Your [parse_zone(t)] is missing!</span>")
 
 	if(is_bleeding())
 		var/list/obj/item/bodypart/bleeding_limbs = list()
-		for(var/i in bodyparts)
-			var/obj/item/bodypart/BP = i
-			if(BP.get_part_bleed_rate())
-				bleeding_limbs += BP
+		for(var/zone in bodyparts)
+			body_part = bodyparts[zone]
+			if(!body_part)
+				continue
+			if(body_part.get_part_bleed_rate())
+				bleeding_limbs += body_part
 
 		var/num_bleeds = LAZYLEN(bleeding_limbs)
 		var/bleed_text = "<span class='danger'>You are bleeding from your"

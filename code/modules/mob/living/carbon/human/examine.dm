@@ -52,9 +52,14 @@
 	//suit/armor
 	if(wear_suit)
 		. += "[t_He] [t_is] wearing [wear_suit.get_examine_string(user)]."
-		//suit/armor storage
-		if(s_store && !(ITEM_SLOT_SUITSTORE in obscured))
+	//suit/armor storage
+	if(s_store && !(ITEM_SLOT_SUITSTORE in obscured))
+		if(wear_suit)
 			. += "[t_He] [t_is] carrying [s_store.get_examine_string(user)] on [t_his] [wear_suit.name]."
+		else if(w_uniform && !(ITEM_SLOT_ICLOTHING in obscured))
+			. += "[t_He] [t_is] carrying [s_store.get_examine_string(user)] on [t_his] [w_uniform.name]."
+		else
+			. += "[t_He] [t_is] carrying [s_store.get_examine_string(user)]."
 	//back
 	if(back)
 		. += "[t_He] [t_has] [back.get_examine_string(user)] on [t_his] back."
@@ -131,8 +136,6 @@
 			just_sleeping = TRUE
 
 		if(!just_sleeping)
-			if(hellbound)
-				. += span_warning("[t_His] soul seems to have been ripped out of [t_his] body. Revival is impossible.")
 			. += ""
 			if(getorgan(/obj/item/organ/brain) && !key && !get_ghost(FALSE, TRUE))
 				. += span_deadsay("[t_He] [t_is] limp and unresponsive; there are no signs of life and [t_he] won't be coming back...")
@@ -147,13 +150,17 @@
 
 	var/list/msg = list()
 
-	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+	var/list/missing = list()
 	var/list/disabled = list()
 
-	for(var/obj/item/bodypart/body_part as anything in bodyparts)
+	var/obj/item/bodypart/body_part
+	for(var/zone in bodyparts)
+		body_part = bodyparts[zone]
+		if(!body_part)
+			missing += zone
+			continue
 		if(body_part.bodypart_disabled)
 			disabled += body_part
-		missing -= body_part.body_zone
 
 		for(var/obj/item/I in body_part.embedded_objects)
 			if(I.isEmbedHarmless())
@@ -166,7 +173,7 @@
 			msg += "[iter_wound.get_examine_description(user)]\n"
 
 	for(var/X in disabled)
-		var/obj/item/bodypart/body_part = X
+		body_part = X
 		var/damage_text
 		if(HAS_TRAIT(body_part, TRAIT_DISABLED_BY_WOUND))
 			continue // skip if it's disabled by a wound (cuz we'll be able to see the bone sticking out!)
@@ -197,9 +204,12 @@
 	else if(l_limbs_missing >= 2 && r_limbs_missing >= 2)
 		msg += "[t_He] [p_do()]n't seem all there.\n"
 
-	for(var/obj/item/bodypart/BP as anything in bodyparts)
-		if(BP.limb_id != (dna.species.examine_limb_id ? dna.species.examine_limb_id : dna.species.id))
-			msg += "[span_info("[t_He] [t_has] \an [BP.name].")]\n"
+	for(var/zone in bodyparts)
+		body_part = bodyparts[zone]
+		if(!body_part)
+			continue
+		if(body_part.limb_id != (dna.species.examine_limb_id ? dna.species.examine_limb_id : dna.species.id))
+			msg += "[span_info("[t_He] [t_has] \an [body_part.name].")]\n"
 
 	if(!(user == src && src.hal_screwyhud == SCREWYHUD_HEALTHY)) //fake healthy
 		if(temp)
@@ -269,8 +279,10 @@
 		var/list/obj/item/bodypart/bleeding_limbs = list()
 		var/list/obj/item/bodypart/grasped_limbs = list()
 
-		for(var/i in bodyparts)
-			var/obj/item/bodypart/body_part = i
+		for(var/zone in bodyparts)
+			body_part = bodyparts[zone]
+			if(!body_part)
+				continue
 			if(body_part.get_part_bleed_rate())
 				bleeding_limbs += body_part
 			if(body_part.grasped_by)
@@ -289,7 +301,7 @@
 				bleed_text += " [bleeding_limbs[1].name][num_bleeds == 2 ? " and [bleeding_limbs[2].name]" : ""]"
 			if(3 to INFINITY)
 				for(var/i in 1 to (num_bleeds - 1))
-					var/obj/item/bodypart/body_part = bleeding_limbs[i]
+					body_part = bleeding_limbs[i]
 					bleed_text += " [body_part.name],"
 				bleed_text += " and [bleeding_limbs[num_bleeds].name]"
 

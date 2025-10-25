@@ -783,13 +783,17 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "pj" = (
-/obj/docking_port{
-	dwidth = 3;
-	width = 6;
-	height = 15
+/obj/docking_port/stationary{
+	dheight = 1;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 2;
+	height = 30;
+	name = "Haboob Beam Dock";
+	width = 40
 	},
-/turf/template_noop,
-/area/template_noop)
+/obj/structure/catwalk/over,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "po" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1361,13 +1365,12 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "AQ" = (
-/obj/structure/catwalk/over,
 /obj/docking_port/mobile{
 	dir = 2;
 	port_direction = 8;
-	preferred_direction = 4;
-	launch_status = 0
+	preferred_direction = 4
 	},
+/obj/structure/catwalk/over,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "AZ" = (
@@ -1755,6 +1758,17 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/dorm)
+"JN" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 4;
+	dwidth = 2;
+	height = 31;
+	name = "Haboob Starboard Bow Dock";
+	width = 5
+	},
+/turf/template_noop,
+/area/template_noop)
 "JP" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 5
@@ -3075,7 +3089,7 @@ UO
 kG
 HF
 HO
-AQ
+or
 "}
 (19,1,1) = {"
 Oy
@@ -3095,7 +3109,7 @@ Fq
 or
 "}
 (20,1,1) = {"
-Fq
+or
 Oy
 rW
 pZ
@@ -3112,7 +3126,7 @@ Dq
 wX
 "}
 (21,1,1) = {"
-Fq
+or
 VD
 Cp
 Cp
@@ -3129,7 +3143,7 @@ Aa
 Fq
 "}
 (22,1,1) = {"
-Fq
+or
 Fq
 Cp
 Qq
@@ -3146,7 +3160,7 @@ Aa
 Fq
 "}
 (23,1,1) = {"
-Fq
+or
 Fq
 Cp
 xf
@@ -3163,7 +3177,7 @@ Aa
 Fq
 "}
 (24,1,1) = {"
-Fq
+AQ
 pj
 cj
 Om
@@ -3257,7 +3271,7 @@ Ph
 si
 Fq
 Fq
-Fq
+JN
 Fq
 Fq
 Aa

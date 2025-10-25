@@ -650,15 +650,6 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
-/datum/techweb_node/radioactive_weapons
-	id = "radioactive_weapons"
-	display_name = "Radioactive Weaponry"
-	description = "Weapons using radioactive technology."
-	prereq_ids = list("adv_engi", "adv_weaponry")
-	design_ids = list("nuclear_gun")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-	export_price = 5000
-
 /datum/techweb_node/medical_weapons
 	id = "medical_weapons"
 	display_name = "Medical Weaponry"

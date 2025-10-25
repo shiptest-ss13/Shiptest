@@ -86,10 +86,6 @@
 	name = "Bowlcut"
 	icon_state = "hair_bowlcut"
 
-/datum/sprite_accessory/hair/bowlcut2
-	name = "Bowlcut 2"
-	icon_state = "hair_bowlcut2"
-
 /datum/sprite_accessory/hair/ponytail_braided
 	name = "Ponytail (Braided)"
 	icon_state = "hair_braid2"
@@ -230,10 +226,6 @@
 	name = "Egg"
 	icon_state = "hair_egg"
 
-/datum/sprite_accessory/hair/eight
-	name = "Eight"
-	icon_state = "hair_eight"
-
 /datum/sprite_accessory/hair/emo
 	name = "Emo"
 	icon_state = "hair_emo"
@@ -265,6 +257,10 @@
 /datum/sprite_accessory/hair/feather
 	name = "Feather"
 	icon_state = "hair_feather"
+
+/datum/sprite_accessory/hair/featherbang
+	name = "Feather (Bang)"
+	icon_state = "hair_featherbang"
 
 /datum/sprite_accessory/hair/father
 	name = "Father"
@@ -497,10 +493,6 @@
 /datum/sprite_accessory/hair/pixie
 	name = "Pixie Cut"
 	icon_state = "hair_pixie"
-
-/datum/sprite_accessory/hair/pompadour
-	name = "Pompadour"
-	icon_state = "hair_pompadour"
 
 /datum/sprite_accessory/hair/bigpompadour
 	name = "Pompadour (Big)"

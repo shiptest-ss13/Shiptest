@@ -61,6 +61,12 @@
 	icon_state = "ngr_foreman"
 	item_state = "blackcloth"
 
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_COAT
+	equip_delay_other = EQUIP_DELAY_COAT * 1.5
+	strip_delay = EQUIP_DELAY_COAT * 1.5
+
 /obj/item/clothing/suit/ngr/smock
 	name = "blood red smock"
 	desc = "A blood-red surgical smock typically worn by field medics of the New Gorlex Republic. It hides red blood really well!"
@@ -159,6 +165,21 @@
 	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
 
+/obj/item/clothing/suit/space/hardsuit/bomb/ngr
+	name = "NGR EOD hardsuit"
+	icon = 'icons/obj/clothing/faction/ngr/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
+	icon_state = "hardsuit-ngreod"
+	hardsuit_type = "ngreod"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/bomb/ngr
+
+/obj/item/clothing/head/helmet/space/hardsuit/bomb/ngr
+	name = "NGR EOD hardsuit helmet"
+	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
+	icon_state = "hardsuit0-ngreod"
+	hardsuit_type = "ngreod"
+
 /////////
 //Hats//
 ////////
@@ -229,6 +250,7 @@
 	icon = 'icons/obj/clothing/faction/ngr/eyes.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/eyes.dmi'
 	glass_colour_type = /datum/client_colour/glass_colour/green
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 
 //////////
 //Masks//

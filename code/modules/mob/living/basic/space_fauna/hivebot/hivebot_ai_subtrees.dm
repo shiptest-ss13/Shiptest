@@ -93,5 +93,12 @@
 	hunt_range = 12
 	hunt_chance = 20
 
+/datum/ai_planning_subtree/find_and_hunt_target/salvage_machines/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
+	. = ..()
+	if(istype(controller.pawn, /mob/living/basic/hivebot))
+		var/mob/living/basic/hivebot/our_bot = controller.pawn
+		if(our_bot.growth >= our_bot.growth_cap)
+			return
+
 /datum/ai_planning_subtree/attack_obstacle_in_path/hivebot
 	attack_behaviour = /datum/ai_behavior/attack_obstructions/hivebot

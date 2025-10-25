@@ -54,8 +54,6 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/frills, GLOB.frills_list)
 	if(!GLOB.spines_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/spines, GLOB.spines_list)
-	if(!GLOB.legs_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/legs, GLOB.legs_list)
 	if(!GLOB.body_markings_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/body_markings, GLOB.body_markings_list)
 	if(!GLOB.wings_list.len)
@@ -111,7 +109,6 @@
 		"kepori_head_feathers" = pick(GLOB.kepori_head_feathers_list),
 		"kepori_feathers" = pick(GLOB.kepori_feathers_list),
 		"kepori_tail_feathers" = pick(GLOB.kepori_tail_feathers_list),
-		"legs" = "Normal Legs",
 		"mcolor" = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
 		"mcolor2" = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
 		"moth_fluff" = pick(GLOB.moth_fluff_list),
@@ -222,7 +219,7 @@ GLOBAL_LIST_INIT(skin_tones, sortList(list(
 	if(isipc(H))
 		return pick(GLOB.ipc_preference_adjectives)
 	else
-		return pick(GLOB.preference_adjectives)
+		return pick(GLOB.organic_preference_adjectives)
 
 GLOBAL_LIST_EMPTY(species_list)
 

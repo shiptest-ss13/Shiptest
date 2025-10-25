@@ -73,7 +73,7 @@
 	name = ""
 	desc = ""
 	value = 1500
-	duration = 60 MINUTES
+	duration = 90 MINUTES
 	weight = 6
 	container_type = /obj/structure/closet/mob_capture
 	objective_type = /mob/living/simple_animal/hostile/asteroid/goliath

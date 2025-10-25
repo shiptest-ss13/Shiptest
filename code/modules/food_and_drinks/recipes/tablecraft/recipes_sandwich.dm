@@ -15,7 +15,7 @@
 		/obj/item/food/breadslice/plain = 2,
 		/obj/item/food/cheese/wedge = 2
 	)
-	result = /obj/item/food/grilled_cheese_sandwich
+	result = /obj/item/food/cheese_sandwich
 	subcategory = CAT_SANDWICH
 
 /datum/crafting_recipe/food/slimesandwich
@@ -63,4 +63,14 @@
 		/obj/item/food/grown/tomato = 1
 	)
 	result = /obj/item/food/blt
+	subcategory = CAT_SANDWICH
+
+/datum/crafting_recipe/food/hotdog
+	name = "Hotdog"
+	reqs = list(
+		/obj/item/food/bun = 1,
+		/obj/item/food/sausage = 1,
+		/datum/reagent/consumable/ketchup = 5
+	)
+	result = /obj/item/food/hotdog
 	subcategory = CAT_SANDWICH

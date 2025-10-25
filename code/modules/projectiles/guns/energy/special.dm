@@ -8,7 +8,7 @@
 	ammo_y_offset = 2
 	w_class = WEIGHT_CLASS_BULKY
 	flags_1 =  CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	ammo_type = list(/obj/item/ammo_casing/energy/ion)
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 

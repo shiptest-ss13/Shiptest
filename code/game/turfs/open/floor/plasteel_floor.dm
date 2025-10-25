@@ -62,6 +62,8 @@
 	initial_gas_mix = ATMOS_TANK_PLASMAHALF
 /turf/open/floor/plasteel/mono/dark/plasma
 	initial_gas_mix = ATMOS_TANK_PLASMAHALF
+/turf/open/floor/plasteel/mono/airless
+	initial_gas_mix = AIRLESS_ATMOS
 /turf/open/floor/plasteel/mono/white/airless
 	initial_gas_mix = AIRLESS_ATMOS
 /turf/open/floor/plasteel/mono/dark/airless

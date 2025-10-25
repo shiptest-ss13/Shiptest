@@ -89,7 +89,7 @@
 	add_atom_colour("#66400f", FIXED_COLOUR_PRIORITY)
 
 /datum/biome/jungle/battlefield
-	open_turf_types = list(/turf/open/floor/plating/dirt/jungle/dark/lit/battlefield = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/battlefield = 1)
 	flora_spawn_list = list(
 		/obj/structure/flora/tree/dead/tall = 3,
 		/obj/structure/flora/rock = 1,
@@ -102,7 +102,7 @@
 
 /datum/biome/jungle/battlefield/dense
 	flora_spawn_chance = 80
-	open_turf_types = list(/turf/open/floor/plating/dirt/jungle/dark/lit/battlefield = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/battlefield = 1)
 	flora_spawn_list = list(
 		/obj/structure/flora/tree/dead/tall = 10,
 		/obj/structure/flora/rock = 1,
@@ -114,7 +114,7 @@
 	mob_spawn_chance = 0
 
 /datum/biome/mudlands/battlefield
-	open_turf_types = list(/turf/open/floor/plating/dirt/jungle/dark/lit/battlefield = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/battlefield = 1)
 	flora_spawn_list = list(
 		/obj/structure/flora/rock = 1,
 		/obj/structure/spacevine/dead = 5,
@@ -131,7 +131,7 @@
 
 //cave
 /datum/biome/cave/desert/battlefield
-	open_turf_types = list(/turf/open/floor/plating/dirt/jungle = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/battlefield = 1)
 	closed_turf_types = list(/turf/closed/mineral/random/jungle = 1)
 	flora_spawn_chance = 4
 	flora_spawn_list = list(/obj/structure/flora/rock/beach = 1, /obj/structure/flora/rock/asteroid = 6)

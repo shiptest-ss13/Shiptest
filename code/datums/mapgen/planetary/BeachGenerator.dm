@@ -81,7 +81,7 @@
 	)
 
 /datum/biome/grass
-	open_turf_types = list(/turf/open/floor/plating/grass/beach/lit  = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/grass/beach  = 1)
 	flora_spawn_list = list(
 		/obj/structure/flora/tree/jungle = 1,
 		/obj/structure/flora/ausbushes/brflowers = 1,
@@ -108,7 +108,7 @@
 		/mob/living/simple_animal/butterfly = 1,
 		/mob/living/simple_animal/chicken/rabbit = 1,
 		/mob/living/basic/mouse = 1,
-		/mob/living/simple_animal/cow = 1,
+		/mob/living/basic/cow = 1,
 		/mob/living/simple_animal/deer = 1
 	)
 	mob_spawn_chance = 1
@@ -211,7 +211,7 @@
 
 /datum/biome/beach_jungle
 	flora_spawn_chance = 100
-	open_turf_types = list(/turf/open/floor/plating/grass/beach/lit = 1, /turf/open/floor/plating/dirt/beach/lit = 9)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/grass/beach = 1, /turf/open/floor/plating/asteroid/dirt/beach = 9)
 	flora_spawn_list = list(
 		/obj/structure/flora/grass/jungle = 1,
 		/obj/structure/flora/grass/jungle/b = 1,

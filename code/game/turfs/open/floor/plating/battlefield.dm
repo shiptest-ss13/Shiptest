@@ -21,8 +21,8 @@
 	light_range = 2
 	light_power = 1
 
-/turf/open/floor/plating/dirt/jungle/dark/lit/battlefield
-	baseturfs = /turf/open/floor/plating/dirt/jungle/dark/lit/battlefield
+/turf/open/floor/plating/asteroid/dirt/battlefield
+	baseturfs = /turf/open/floor/plating/asteroid/dirt/battlefield
 	light_color = COLOR_FOGGY_LIGHT
 	light_range = 2
 	light_power = 1

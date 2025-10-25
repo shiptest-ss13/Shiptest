@@ -85,15 +85,14 @@
 	name = "Exotic Meat Crate"
 	desc = "The best cuts in the whole sector. Probably."
 	cost = 500
-	contains = list(/obj/item/food/meat/slab/human/mutant/slime,
-					/obj/item/food/meat/slab/killertomato,
+	contains = list(/obj/item/food/meat/slab/killertomato,
 					/obj/item/food/meat/slab/bear,
 					/obj/item/food/meat/slab/xeno,
 					/obj/item/food/meat/slab/spider,
 					/obj/item/food/meat/slab/penguin,
 					/obj/item/food/spiderleg,
 					/obj/item/food/fishmeat/carp,
-					/obj/item/food/meat/slab/human,
+					/obj/item/food/meat/slab,
 	)
 	crate_name = "meat crate"
 	crate_type = /obj/structure/closet/crate/freezer
@@ -358,12 +357,21 @@
 */
 
 /datum/supply_pack/food/grill
-	name = "Grilling Starter Kit"
-	desc = "Sometimes the stresses of the world are too much to bear. Some times, for God's sake, you just want to grill. This crate is for those times."
+	name = "Griddle Construction Kit"
+	desc = "DIY cooking has never been easier!"
 	cost = 1000
-	contains = list(/obj/machinery/grill/unwrenched)
-	crate_name = "grilling starter kit crate"
-	crate_type = /obj/structure/closet/crate/large
+	contains = list(/obj/item/circuitboard/machine/griddle)
+	crate_name = "griddle circuit board crate"
+	crate_type = /obj/structure/closet/crate
+	no_bundle = TRUE
+
+/datum/supply_pack/food/oven
+	name = "Oven Construction Kit"
+	desc = "DIY cooking has never been easier!"
+	cost = 1500
+	contains = list(/obj/item/circuitboard/machine/oven)
+	crate_name = "griddle circuit board crate"
+	crate_type = /obj/structure/closet/crate
 	no_bundle = TRUE
 
 /*
@@ -622,4 +630,20 @@
 		/obj/item/reagent_containers/condiment/tiris_milk,
 		/obj/item/reagent_containers/condiment/tiris_milk,
 		/obj/item/reagent_containers/condiment/tiris_milk,
+	)
+
+/datum/supply_pack/food/ingredients_basic/tiris_sele
+	name = "Tiris Sele Crate"
+	desc = "A gentle blood sauce made from a Tiris."
+	cost = 20
+	contains = list(
+		/obj/item/reagent_containers/condiment/tiris_sele
+	)
+
+/datum/supply_pack/food/ingredients_basic/tiris_sale
+	name = "Tiris Sale Crate"
+	desc = "A strong blood sauce made from a Tiris."
+	cost = 20
+	contains = list(
+		/obj/item/reagent_containers/condiment/tiris_sale
 	)

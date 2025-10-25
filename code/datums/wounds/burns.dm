@@ -227,9 +227,20 @@
 			to_chat(user, span_warning("You need to open [mesh_check] first."))
 			return
 		ointmentmesh(mesh_check, user)
-e
+
 /datum/wound/burn/on_synthflesh(amount)
 	flesh_healing += amount * 0.5 // 20u patch will heal 10 flesh standard
+
+/// When a -tane chem is applied to the victim, we call this.
+/datum/wound/burn/on_tane(amount)
+	if(amount > 10 && severity <= WOUND_SEVERITY_SEVERE)
+		qdel(src)
+		return
+
+	flesh_healing += amount * 0.25
+	sanitization += amount * 0.1
+	return
+
 
 // we don't even care about first degree burns, straight to second
 /datum/wound/burn/moderate

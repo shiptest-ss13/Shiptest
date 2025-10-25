@@ -61,18 +61,6 @@
 	item_state = "purplebartenderapron"
 	body_parts_covered = CHEST|GROIN|LEGS
 
-/obj/item/clothing/suit/syndicatefake
-	name = "black and red space suit replica"
-	icon = 'icons/obj/clothing/suits/spacesuits.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/suits/spacesuits.dmi'
-	icon_state = "syndicate-black-red"
-	item_state = "syndicate-black-red"
-	desc = "A plastic replica of the Syndicate space suit. You'll look just like a real murderous Syndicate agent in this! This is a toy, it is not made for use in space!"
-	w_class = WEIGHT_CLASS_NORMAL
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/toy)
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
-	resistance_flags = NONE
-
 /obj/item/clothing/suit/toggle/owlwings
 	name = "owl cloak"
 	desc = "A soft brown cloak made of synthetic feathers. Soft to the touch, stylish, and a 2 meter wing span that will drive the ladies mad."
@@ -246,6 +234,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	cold_protection = CHEST|GROIN|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	supports_variations = KEPORI_VARIATION
 
 	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
 	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
@@ -276,22 +265,6 @@
 	desc = "A long, supple leather coat. Ideal for protecting its wearer from rain, sun, dust, and paperwork."
 	icon_state = "duster_command"
 	item_state = "duster_command"
-
-/obj/item/clothing/suit/jacket/puffer
-	name = "puffer jacket"
-	desc = "A thick jacket with a rubbery, water-resistant shell."
-	icon_state = "pufferjacket"
-	item_state = "hostrench"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 50, "rad" = 0, "fire" = 0, "acid" = 0)
-
-/obj/item/clothing/suit/jacket/puffer/vest
-	name = "puffer vest"
-	desc = "A thick vest with a rubbery, water-resistant shell."
-	icon_state = "puffervest"
-	item_state = "armor"
-	body_parts_covered = CHEST|GROIN
-	cold_protection = CHEST|GROIN
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 30, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/jacket/miljacket
 	name = "military jacket"

@@ -4,19 +4,18 @@
 	id = SPECIES_SARATHI
 	default_color = "00FF00"
 	species_age_max = 175
-	species_traits = list(MUTCOLORS, EYECOLOR, LIPS, SCLERA, EMOTE_OVERLAY, MUTCOLORS_SECONDARY, HAS_FLESH, HAS_BONE)
+	species_traits = list(MUTCOLORS, LIPS, SCLERA, EMOTE_OVERLAY, MUTCOLORS_SECONDARY, HAS_FLESH, HAS_BONE)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
-	mutant_bodyparts = list("tail_lizard", "face_markings", "frills", "horns", "spines", "body_markings", "legs")
+	mutant_bodyparts = list("tail_lizard", "face_markings", "frills", "horns", "spines", "body_markings")
 	mutanttongue = /obj/item/organ/tongue/lizard
 	mutant_organs = list(/obj/item/organ/tail/lizard)
 	coldmod = 1.5
 	heatmod = 0.67
-	default_features = list("mcolor" = "0F0", "tail_lizard" = "Smooth", "face_markings" = "None", "horns" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", "legs" = "Normal Legs", "body_size" = "Normal")
+	default_features = list("mcolor" = "0F0", "tail_lizard" = "Smooth", "face_markings" = "None", "horns" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", "body_size" = "Normal")
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
-	meat = /obj/item/food/meat/slab/human/mutant/lizard
 	skinned_type = /obj/item/stack/sheet/animalhide/lizard
 	exotic_bloodtype = "L"
 	disliked_food = GRAIN | DAIRY | CLOTH | GROSS
@@ -24,24 +23,27 @@
 	deathsound = 'sound/voice/lizard/deathsound.ogg'
 	wings_icons = list("Dragon")
 	species_language_holder = /datum/language_holder/lizard
-	digitigrade_customization = DIGITIGRADE_OPTIONAL
 	mutanteyes = /obj/item/organ/eyes/lizard
 	sclera_color = "#fffec4"
 	blush_color = COLOR_BLUSH_TEAL
 
-	species_chest = /obj/item/bodypart/chest/lizard
-	species_head = /obj/item/bodypart/head/lizard
-	species_l_arm = /obj/item/bodypart/l_arm/lizard
-	species_r_arm = /obj/item/bodypart/r_arm/lizard
-	species_l_leg = /obj/item/bodypart/leg/left/lizard
-	species_r_leg = /obj/item/bodypart/leg/right/lizard
+	species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/lizard,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/lizard,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/lizard,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/lizard,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/lizard/digitigrade,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/lizard/digitigrade,
+	)
 
-	species_robotic_chest = /obj/item/bodypart/chest/robot/lizard
-	species_robotic_head = /obj/item/bodypart/head/robot/lizard
-	species_robotic_l_arm = /obj/item/bodypart/l_arm/robot/surplus/lizard
-	species_robotic_r_arm = /obj/item/bodypart/r_arm/robot/surplus/lizard
-	species_robotic_l_leg = /obj/item/bodypart/leg/left/robot/surplus/lizard
-	species_robotic_r_leg = /obj/item/bodypart/leg/right/robot/surplus/lizard
+	species_robotic_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/robot/lizard,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/robot/lizard,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/robot/surplus/lizard,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot/surplus/lizard,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus/lizard/digitigrade,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus/lizard/digitigrade,
+	)
 
 	robotic_eyes = /obj/item/organ/eyes/robotic/lizard
 
@@ -84,15 +86,16 @@
 	var/obj/item/lighter/liz/N = new(H)
 	if(H.put_in_hands(N))
 		to_chat(H, span_notice("You ignite a small flame in your mouth."))
-		H.reagents.del_reagent(/datum/reagent/fuel,4)
+		var/obj/item/organ/stomach/belly = owner.getorganslot(ORGAN_SLOT_STOMACH)
+		belly.reagents.remove_reagent(/datum/reagent/fuel,4)
 	else
 		qdel(N)
 		to_chat(H, span_warning("You don't have any free hands."))
 
 /datum/action/innate/liz_lighter/IsAvailable()
 	if(..())
-		var/mob/living/carbon/human/H = owner
-		if(H.reagents && H.reagents.has_reagent(/datum/reagent/fuel,4))
+		var/obj/item/organ/stomach/belly = owner.getorganslot(ORGAN_SLOT_STOMACH)
+		if(belly && belly.reagents.has_reagent(/datum/reagent/fuel, 4))
 			return TRUE
 		return FALSE
 
@@ -118,10 +121,9 @@ Lizard subspecies: ASHWALKERS
 	name = "Ash Walker"
 	id = SPECIES_ASHWALKER
 	examine_limb_id = SPECIES_SARATHI
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS, NO_UNDERWEAR)
+	species_traits = list(MUTCOLORS,LIPS, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_CHUNKYFINGERS,TRAIT_NOBREATH)
 	species_language_holder = /datum/language_holder/lizard/ash
-	digitigrade_customization = DIGITIGRADE_FORCED
 
 //WS Edit Start - Kobold
 //Ashwalker subspecies: KOBOLD
@@ -129,7 +131,7 @@ Lizard subspecies: ASHWALKERS
 	name = "Kobold"
 	id = SPECIES_KOBOLD
 	examine_limb_id = SPECIES_SARATHI
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS, NO_UNDERWEAR)
+	species_traits = list(MUTCOLORS,LIPS, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_CHUNKYFINGERS,TRAIT_NOBREATH)
 	species_language_holder = /datum/language_holder/lizard/ash
 

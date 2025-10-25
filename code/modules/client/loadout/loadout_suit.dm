@@ -31,10 +31,6 @@
 	display_name = "military jacket"
 	path = /obj/item/clothing/suit/jacket/miljacket
 
-/datum/gear/suit/jacket/puffer
-	display_name = "puffer jacket"
-	path = /obj/item/clothing/suit/jacket/puffer
-
 /datum/gear/suit/jacket/gothcoat
 	display_name = "goth jacket"
 	path = /obj/item/clothing/suit/gothcoat
@@ -79,6 +75,13 @@
 	display_name = "windbreaker, colorable"
 	path = /obj/item/clothing/suit/toggle/windbreaker
 
+/datum/gear/suit/jacket/pufferjacket
+	display_name = "pufferjacket, colorable"
+	path = /obj/item/clothing/suit/toggle/pufferjacket
+
+/datum/gear/suit/jacket/puffervest
+	display_name = "puffervest, colorable"
+	path = /obj/item/clothing/suit/toggle/puffervest
 //Suspenders
 /datum/gear/suit/suspenders
 	subtype_path = /datum/gear/suit/suspenders

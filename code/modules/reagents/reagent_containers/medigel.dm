@@ -74,17 +74,17 @@
 		reagents.trans_to(M, amount_per_transfer_from_this, transfered_by = user, method = apply_type)
 	return
 
-/obj/item/reagent_containers/medigel/styptic
-	name = "medical gel (styptic powder)"
-	desc = "A medical gel applicator bottle, designed for precision application, with an unscrewable cap. This one contains styptic powder, for treating cuts and bruises."
+/obj/item/reagent_containers/medigel/hadrakine
+	name = "medical gel (hadrakine powder)"
+	desc = "A medical gel applicator bottle, designed for precision application, with an unscrewable cap. This one contains hadrakine powder, for treating cuts and bruises."
 	icon_state = "brutegel"
-	list_reagents = list(/datum/reagent/medicine/styptic_powder = 60)
+	list_reagents = list(/datum/reagent/medicine/hadrakine = 60)
 
-/obj/item/reagent_containers/medigel/silver_sulf
-	name = "medical gel (silver sulfadiazine)"
-	desc = "A medical gel applicator bottle, designed for precision application, with an unscrewable cap. This one contains silver sulfadiazine, useful for treating burns."
+/obj/item/reagent_containers/medigel/quardexane
+	name = "medical gel (quardexane)"
+	desc = "A medical gel applicator bottle, designed for precision application, with an unscrewable cap. This one contains quardexane, useful for treating burns."
 	icon_state = "burngel"
-	list_reagents = list(/datum/reagent/medicine/silver_sulfadiazine = 60)
+	list_reagents = list(/datum/reagent/medicine/quardexane = 60)
 
 /obj/item/reagent_containers/medigel/synthflesh
 	name = "medical gel (synthflesh)"

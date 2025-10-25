@@ -504,6 +504,9 @@ There are several things that need to be remembered:
 		if((head_bodypart.bodytype & BODYTYPE_SNOUT) && (I.supports_variations & SNOUTED_VARIATION))
 			target_overlay = "[target_overlay]_snouted"
 
+		if((head_bodypart.bodytype & BODYTYPE_SNOUT_SMALL) && (I.supports_variations & SNOUTED_SMALL_VARIATION))
+			target_overlay = "[target_overlay]_snouted_small"
+
 		else if(dna.species.bodytype & BODYTYPE_VOX)
 			if(I.supports_variations & VOX_VARIATION)
 				icon_file = VOX_HEAD_PATH
@@ -1074,7 +1077,7 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 	if (!dna?.species)
 		return
 
-	var/obj/item/bodypart/HD = get_bodypart("head")
+	var/obj/item/bodypart/head/HD = get_bodypart(BODY_ZONE_HEAD)
 
 	if (!istype(HD))
 		return
@@ -1092,14 +1095,14 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 			add_overlay(lip_overlay)
 
 		// eyes
-		if(!(NOEYESPRITES in dna.species.species_traits))
+		if(HD.draw_eyes)
 			var/obj/item/organ/eyes/E = getorganslot(ORGAN_SLOT_EYES)
 			var/mutable_appearance/eye_overlay
 			if(!E)
 				eye_overlay = mutable_appearance('icons/mob/human_face.dmi', "eyes_missing", -BODY_LAYER)
 			else
 				eye_overlay = mutable_appearance('icons/mob/human_face.dmi', E.eye_icon_state, -BODY_LAYER)
-			if((EYECOLOR in dna.species.species_traits) && E)
+			if(HD.greyscale_eyes && E)
 				eye_overlay.color = "#" + eye_color
 			add_overlay(eye_overlay)
 

@@ -222,6 +222,11 @@
 	name = "Toggle Firemode"
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 
+/datum/action/item_action/toggle_ammotype
+	name = "Toggle Energy Mode"
+	icon_icon = 'icons/mob/actions/actions_items.dmi'
+
+
 /datum/action/item_action/rcl_col
 	name = "Change Cable Color"
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
@@ -402,6 +407,14 @@
 	..()
 	name = "Adjust [target.name]"
 	button.name = name
+
+/datum/action/item_action/adjust_earmuffs
+	name = "Adjust Earmuffs"
+
+/datum/action/item_action/adjust_earmuffs/Trigger()
+	if(istype(target, /obj/item/clothing/ears/earmuffs))
+		var/obj/item/clothing/ears/earmuffs/muffs = target
+		muffs.adjust(owner)
 
 /datum/action/item_action/switch_hud
 	name = "Switch HUD"

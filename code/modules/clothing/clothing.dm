@@ -299,6 +299,8 @@
 		var/mob/M = loc
 		to_chat(M, span_warning("Your [name] starts to fall apart!"))
 
+	. = ..()
+
 //This mostly exists so subtypes can call appriopriate update icon calls on the wearer.
 /obj/item/clothing/proc/update_clothes_damaged_state(damaging = TRUE)
 	if(damaging)

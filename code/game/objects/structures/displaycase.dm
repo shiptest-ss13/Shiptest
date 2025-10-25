@@ -77,6 +77,7 @@
 		playsound(src, "shatter", 70, TRUE)
 		update_appearance()
 		trigger_alarm()
+	. = ..()
 
 /obj/structure/displaycase/proc/trigger_alarm()
 	//Activate Anti-theft
@@ -567,6 +568,7 @@
 		playsound(src, "shatter", 70, TRUE)
 		update_appearance()
 		trigger_alarm() //In case it's given an alarm anyway.
+	. = ..()
 
 /obj/structure/displaycase/forsale/kitchen
 	desc = "A display case with an ID-card swiper. Use your ID to purchase the contents. Meant for the bartender and chef."

@@ -3,7 +3,7 @@
 	name = "\improper Podperson"
 	id = SPECIES_POD
 	default_color = "59CE00"
-	species_traits = list(MUTCOLORS,EYECOLOR,SCLERA)
+	species_traits = list(MUTCOLORS,SCLERA)
 	inherent_traits = list(
 		TRAIT_ALWAYS_CLEAN,
 		TRAIT_PLANT_SAFE,
@@ -15,18 +15,19 @@
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	burnmod = 1.25
 	heatmod = 1.5
-	meat = /obj/item/food/meat/slab/human/mutant/plant
 	disliked_food = MEAT | DAIRY
 	liked_food = VEGETABLES | FRUIT | GRAIN | CLOTH //cannibals apparentely
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | ERT_SPAWN
 	species_language_holder = /datum/language_holder/plant
 
-	species_chest = /obj/item/bodypart/chest/pod
-	species_head = /obj/item/bodypart/head/pod
-	species_l_arm = /obj/item/bodypart/l_arm/pod
-	species_r_arm = /obj/item/bodypart/r_arm/pod
-	species_l_leg = /obj/item/bodypart/leg/left/pod
-	species_r_leg = /obj/item/bodypart/leg/right/pod
+	species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/pod,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/pod,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/pod,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/pod,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/pod,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/pod,
+	)
 
 /datum/species/pod/spec_life(mob/living/carbon/human/H)
 	if(H.stat == DEAD)

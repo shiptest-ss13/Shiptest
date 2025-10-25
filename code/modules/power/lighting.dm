@@ -346,14 +346,15 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 
 /obj/machinery/light/LateInitialize()
 	. = ..()
+	var/area/A = get_area(src.loc)
 	switch(fitting)
 		if("tube")
 			brightness = 8
-			if(prob(2))
+			if(prob(2) && !(A.area_flags & NO_RANDOM_LIGHT_BREAKAGE))
 				break_light_tube(1)
 		if("bulb")
 			brightness = 4
-			if(prob(5))
+			if(prob(5) && !(A.area_flags & NO_RANDOM_LIGHT_BREAKAGE))
 				break_light_tube(1)
 	addtimer(CALLBACK(src, PROC_REF(update), 0), 1)
 
@@ -920,7 +921,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 	if(!isliving(AM))
 		return
 	var/mob/living/L = AM
-	if(istype(L) && !(L.is_flying() || L.is_floating() || L.buckled))
+	if(!(L.movement_type & (FLYING|FLOATING)) || L.buckled)
 		playsound(src, 'sound/effects/glass_step.ogg', HAS_TRAIT(L, TRAIT_LIGHT_STEP) ? 30 : 50, TRUE)
 		if(status == LIGHT_BURNED || status == LIGHT_OK)
 			shatter()

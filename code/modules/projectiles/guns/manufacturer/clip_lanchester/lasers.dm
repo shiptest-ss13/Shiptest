@@ -17,8 +17,10 @@
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/kalix
 	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/pgf,
 		/obj/item/stock_parts/cell/gun/kalix,
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix/empty,
+		/obj/item/stock_parts/cell/gun/pgf/empty,
 	)
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix, /obj/item/ammo_casing/energy/disabler/hitscan)
 

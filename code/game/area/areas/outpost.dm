@@ -3,7 +3,7 @@
 /area/outpost
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	has_gravity = STANDARD_GRAVITY
-	area_flags = VALID_TERRITORY | NOTELEPORT // not unique, in case multiple outposts get loaded. all derivatives should also be NOTELEPORT
+	area_flags = VALID_TERRITORY | NOTELEPORT | NO_RANDOM_LIGHT_BREAKAGE // not unique, in case multiple outposts get loaded. all derivatives should also be NOTELEPORT
 	flags_1 = CAN_BE_DIRTY_1
 	sound_environment = SOUND_AREA_STANDARD_STATION
 	lighting_colour_tube = "#ffce99"
@@ -212,6 +212,11 @@
 	sound_environment = SOUND_ENVIRONMENT_CAVE
 	ambience_index = AMBIENCE_SPOOKY
 	allow_weather = TRUE
+
+/area/outpost/exterior/ocean
+	name = "Walkway"
+	sound_environment = SOUND_ENVIRONMENT_FOREST
+	ambience_index = AMBIENCE_BEACH
 
 // this might be redundant with /area/space/nearstation. unsure; use with caution?
 /area/outpost/external

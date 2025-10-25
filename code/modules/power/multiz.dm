@@ -14,6 +14,7 @@
 	var/obj/machinery/power/deck_relay/above ///The relay that's above us (for bridging powernets)
 	anchored = TRUE
 	density = FALSE
+	resistance_flags = INDESTRUCTIBLE
 
 /obj/machinery/power/deck_relay/examine(mob/user)
 	. += ..()
@@ -60,9 +61,6 @@
 		playsound(loc, 'sound/effects/glassbr3.ogg', 100, TRUE)
 		icon_state = "cablerelay-broken"
 		broken_status = RELAY_ADD_CABLE
-
-/obj/machinery/power/deck_relay/atom_destruction()
-	return //this shouldn't break under usual means
 
 /obj/machinery/power/deck_relay/Destroy()
 	break_connections()

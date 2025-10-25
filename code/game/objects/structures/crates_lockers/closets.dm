@@ -250,6 +250,7 @@
 /obj/structure/closet/atom_break(damage_flag)
 	if(!broken && !(flags_1 & NODECONSTRUCT_1))
 		bust_open()
+	. = ..()
 
 /obj/structure/closet/attackby(obj/item/W, mob/user, params)
 	if(user in src)
