@@ -1724,12 +1724,24 @@
 	pixel_x = -5;
 	pixel_y = -1
 	},
-/obj/machinery/cell_charger{
-	pixel_y = 6;
-	pixel_x = 1
-	},
 /obj/effect/turf_decal/corner/transparent/cybersunteal/half{
 	dir = 8
+	},
+/obj/item/melee/energy/flyssa{
+	pixel_x = 7;
+	pixel_y = -4
+	},
+/obj/item/melee/energy/flyssa{
+	pixel_x = 4;
+	pixel_y = -1
+	},
+/obj/machinery/recharger{
+	pixel_x = -2;
+	pixel_y = 4
+	},
+/obj/machinery/recharger{
+	pixel_x = -5;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)

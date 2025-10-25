@@ -309,3 +309,88 @@
 /obj/item/melee/energy/ctf/solgov
 	armour_penetration = 40
 	active_force = 34 //desword grade, but 0 blocking
+
+/obj/item/melee/energy/flyssa
+	name = "energy flyssa"
+	desc = "Also known as a static-field flyssa, a powerful energy field is generated at the edge of a microforged filament, creating unheard of cutting power."
+	icon_state = "flyssa"
+	base_icon_state = "flyssa"
+	item_state = "flyssa"
+
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+
+	throwforce = 5
+	active_throwforce = 20
+	force = 10
+	active_force = 35
+	wound_bonus = -35
+	bare_wound_bonus = -10
+	armour_penetration = -20
+
+	w_class = WEIGHT_CLASS_NORMAL
+
+	active_hitsound = 'sound/weapons/blade1.ogg'
+
+	var/cell_override = /obj/item/stock_parts/cell/high
+	power_use_amount = 200
+
+/obj/item/melee/energy/flyssa/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/cell, cell_override, _cell_can_be_removed=FALSE, _has_cell_overlays=FALSE)
+	RegisterSignal(src, COMSIG_TRANSFORMING_PRE_TRANSFORM, PROC_REF(check_power))
+	update_appearance()
+
+/obj/item/melee/energy/flyssa/AltClick(mob/user)
+	. = ..()
+	update_appearance()
+
+/obj/item/melee/energy/flyssa/get_cell()
+	var/datum/component/cell/our_cell = GetComponent(/datum/component/cell)
+	return our_cell.inserted_cell
+
+/obj/item/melee/energy/flyssa/update_overlays()
+	. = ..()
+	var/datum/component/cell/our_cell = GetComponent(/datum/component/cell)
+	if(!our_cell.inserted_cell)
+		return cut_overlays()
+	var/charge = our_cell.inserted_cell.percent()
+	switch(charge)
+		if(86 to 100)
+			. += "flyssa-1"
+		if(70 to 85)
+			. += "flyssa-2"
+		if(55 to 69)
+			. += "flyssa-3"
+		if(40 to 54)
+			. += "flyssa-4"
+		if(25 to 39)
+			. += "flyssa-5"
+		if(0 to 25)
+			. += "flyssa-6"
+
+/obj/item/melee/energy/flyssa/proc/check_power()
+	if(!(item_use_power(power_use_amount) & COMPONENT_POWER_SUCCESS))
+		playsound(src, 'sound/machines/button1.ogg', 10)
+		return COMPONENT_BLOCK_TRANSFORM
+
+/obj/item/melee/energy/flyssa/process(seconds_per_tick)
+	if(!(item_use_power(power_use_amount) & COMPONENT_POWER_SUCCESS))
+		SEND_SIGNAL(src, COMSIG_ITEM_FORCE_TRANSFORM, "no_power")
+		on_transform()
+		playsound(src, 'sound/weapons/saberoff.ogg', 35)
+		STOP_PROCESSING(SSobj, src)
+	. = ..()
+
+/obj/item/melee/energy/flyssa/on_transform(obj/item/source, mob/user, active)
+	if(active)
+		icon_state = "[base_icon_state]-on"
+		item_state = "[base_icon_state]-on"
+		damtype = FIRE
+		armour_penetration = 60
+	else
+		icon_state = base_icon_state
+		item_state = base_icon_state
+		damtype = BRUTE
+		armour_penetration = -20
+	. = ..()
