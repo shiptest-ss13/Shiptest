@@ -203,6 +203,9 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/moon/hideout)
 "co" = (
@@ -955,7 +958,9 @@
 /area/ruin/moon/hideout/canteen)
 "jF" = (
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
-/turf/open/floor/plating/asteroid/snow/safe,
+/turf/open/floor/plating/asteroid/snow/safe{
+	planetary_atmos = 0
+	},
 /area/ruin/moon/hideout)
 "jG" = (
 /mob/living/simple_animal/hostile/human/ramzi/melee/space/soft/machete,
@@ -1269,7 +1274,9 @@
 /area/ruin/moon/hideout/dorms/one)
 "mO" = (
 /obj/machinery/light/small/directional/south,
-/turf/open/floor/plating/asteroid/snow/safe,
+/turf/open/floor/plating/asteroid/snow/safe{
+	planetary_atmos = 0
+	},
 /area/ruin/moon/hideout)
 "mQ" = (
 /obj/effect/turf_decal/trimline/opaque/red/line{
@@ -1859,6 +1866,9 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating,
 /area/ruin/moon/hideout/engineering)
 "sH" = (
@@ -1897,7 +1907,9 @@
 /area/ruin/moon/hideout/dorms/officer)
 "sQ" = (
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space,
-/turf/open/floor/plating/asteroid/snow/safe,
+/turf/open/floor/plating/asteroid/snow/safe{
+	planetary_atmos = 0
+	},
 /area/ruin/moon/hideout)
 "sR" = (
 /obj/machinery/light/small/directional/west,
@@ -2061,7 +2073,9 @@
 /area/ruin/moon/hideout/dorms/officer)
 "uQ" = (
 /obj/machinery/light/small/directional/north,
-/turf/open/floor/plating/asteroid/snow/safe,
+/turf/open/floor/plating/asteroid/snow/safe{
+	planetary_atmos = 0
+	},
 /area/ruin/moon/hideout)
 "vd" = (
 /obj/machinery/power/smes/engineering,
@@ -2545,7 +2559,9 @@
 /area/ruin/moon/hideout)
 "zZ" = (
 /obj/structure/barricade/sandbags,
-/turf/open/floor/plating/asteroid/snow/safe,
+/turf/open/floor/plating/asteroid/snow/safe{
+	planetary_atmos = 0
+	},
 /area/ruin/moon/hideout)
 "Ac" = (
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
@@ -3687,7 +3703,9 @@
 /turf/open/floor/carpet/red,
 /area/ruin/moon/hideout/dorms/officer)
 "Mc" = (
-/turf/open/floor/plating/asteroid/snow/safe,
+/turf/open/floor/plating/asteroid/snow/safe{
+	planetary_atmos = 0
+	},
 /area/ruin/moon/hideout)
 "Mr" = (
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1,
@@ -4634,6 +4652,9 @@
 /obj/structure/extinguisher_cabinet/directional/west{
 	pixel_x = -28;
 	pixel_y = -7
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/hideout/engineering)
