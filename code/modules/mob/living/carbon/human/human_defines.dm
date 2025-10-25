@@ -83,3 +83,6 @@
 	var/obj/effect/abstract/particle_holder/blood_particle
 
 	COOLDOWN_DECLARE(bloodloss_message)
+
+	/// Height of the mob
+	VAR_PROTECTED/mob_height = HUMAN_HEIGHT_MEDIUM
