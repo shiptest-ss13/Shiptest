@@ -507,30 +507,6 @@
 	stock_max = 2
 	availability_prob = 20
 
-/datum/blackmarket_item/weapon/guncase/oneshot
-	name = "Hammer Launcher"
-	desc = "A one-shot solution to a myriad amount of problems, ranging from Exosuits to obnoxious neighbors. Contains one ready-to-fire 84mm HE rocket. "
-	item = /obj/item/gun/ballistic/rocketlauncher/oneshot
-	mag_number = 0
-	gun_unloaded = FALSE
-
-	cost_min = 3000
-	cost_max = 4500
-	stock_min = 1
-	stock_max = 5
-	availability_prob = 25
-
-/datum/blackmarket_item/weapon/guncase/oneshot/hedp
-	name = "Hammer-DP Launcher"
-	desc = "A one-shot solution to a myriad amount of problems, ranging from Exosuits to obnoxious neighbors. Contains one ready-to-fire 84mm HEDP rocket. "
-	item = /obj/item/gun/ballistic/rocketlauncher/oneshot/hedp
-
-	cost_min = 4000
-	cost_max = 6000
-	stock_min = 1
-	stock_max = 5
-	availability_prob = 10
-
 /datum/blackmarket_item/weapon/guncase/skm_lmg
 	name = "SKM-24u Light Machinegun"
 	desc = "Your regular rifles not have enough oomph for you? This SKM-24 was converted with help from a 'liberated' CM-40 parts shipment into a light machinegun, ready to blow away whatever you point it at. Increased firerate makes it buck like a mule, so keep that bipod on the ground. Drums sold separately!"
