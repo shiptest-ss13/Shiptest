@@ -359,7 +359,6 @@
 		combustion_chamber.clear()
 		return 0 // no mass == no force
 	var/exhaust_velocity = combustion_chamber.return_pressure() * combustion_chamber.total_moles() / exhaust_mass
-	visible_message("Isp: [exhaust_velocity], g: [exhaust_mass], kPa: [combustion_chamber.return_pressure()], K: [combustion_chamber.return_temperature()]")
 
 	var/turf/ejection_turf = get_step(get_turf(thruster), turn(thruster.dir, 180))
 	ejection_turf.assume_air(combustion_chamber)
