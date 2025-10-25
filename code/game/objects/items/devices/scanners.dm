@@ -654,6 +654,7 @@ GENE SCANNER
 
 		var/total_moles = air_contents.total_moles()
 		var/pressure = air_contents.return_pressure()
+		var/mass = air_contents.return_mass()
 		var/volume = air_contents.return_volume() //could just do mixture.volume... but safety, I guess?
 		var/temperature = air_contents.return_temperature()
 		var/cached_scan_results = air_contents.analyzer_results
@@ -663,7 +664,9 @@ GENE SCANNER
 			render_list += "[span_notice("Moles: [round(total_moles, 0.01)] mol")]\
 							\n[span_notice("Volume: [volume] L")]\
 							\n[span_notice("Pressure: [round(pressure,0.01)] kPa")]\
-							\n[span_notice("Temperature: [round(temperature - T0C,0.01)] &deg;C ([round(temperature, 0.01)] K)")]"
+							\n[span_notice("Temperature: [round(temperature - T0C,0.01)] &deg;C ([round(temperature, 0.01)] K)")]\
+							\n[span_notice("Mass: [round(mass, 0.01)] g")]\
+							\n[span_notice("Density: [round(mass / volume, 0.01)] g/L")]"
 			//WS End
 
 			for(var/id in air_contents.get_gases())

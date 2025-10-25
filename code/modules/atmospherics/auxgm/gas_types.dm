@@ -1,6 +1,7 @@
 /datum/gas/oxygen
 	id = GAS_O2
 	specific_heat = 30
+	molar_mass = 32
 	name = "Oxygen"
 	oxidation_temperature = T0C - 100 // it checks max of this and fire temperature, so rarely will things spontaneously combust
 	breath_alert_info = list(
@@ -17,6 +18,7 @@
 /datum/gas/nitrogen
 	id = GAS_N2
 	specific_heat = 30
+	molar_mass = 28
 	name = "Nitrogen"
 	breath_alert_info = list(
 		not_enough_alert = list(
@@ -32,6 +34,7 @@
 /datum/gas/carbon_monoxide
 	id = GAS_CO
 	specific_heat = 30
+	molar_mass = 28
 	name = "Carbon Monoxide"
 	breath_results = GAS_CO
 
@@ -43,6 +46,7 @@
 /datum/gas/carbon_dioxide //what the fuck is this?
 	id = GAS_CO2
 	specific_heat = 30
+	molar_mass = 44
 	name = "Carbon Dioxide"
 	breath_results = GAS_O2
 	breath_alert_info = list(
@@ -61,6 +65,7 @@
 /datum/gas/plasma
 	id = GAS_PLASMA
 	specific_heat = 200
+	molar_mass = 126
 	name = "Plasma"
 	gas_overlay = "plasma"
 	moles_visible = MOLES_GAS_VISIBLE
@@ -87,6 +92,7 @@
 /datum/gas/water_vapor
 	id = GAS_H2O
 	specific_heat = 75
+	molar_mass = 18
 	name = "Water Vapor"
 	gas_overlay = "water_vapor"
 	moles_visible = MOLES_GAS_VISIBLE
@@ -98,6 +104,7 @@
 /datum/gas/nitrous_oxide
 	id = GAS_NITROUS
 	specific_heat = 40
+	molar_mass = 44
 	name = "Nitrous Oxide"
 	gas_overlay = "nitrous_oxide"
 	moles_visible = MOLES_GAS_VISIBLE * 2
@@ -110,13 +117,13 @@
 /datum/gas/tritium
 	id = GAS_TRITIUM
 	specific_heat = 10
+	molar_mass = 6
 	name = "Tritium"
 	gas_overlay = "tritium"
 	moles_visible = MOLES_GAS_VISIBLE
 	flags = GAS_FLAG_DANGEROUS
 	fusion_power = 1
 	fire_products = list(GAS_H2O = 1)
-	enthalpy = 300000
 	fire_burn_rate = 2
 	fire_radiation_released = 50 // arbitrary number, basically 60 moles of trit burning will just barely start to harm you
 	fire_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST - 50
@@ -124,6 +131,7 @@
 /datum/gas/bz //remove from atmospheres // https://en.wikipedia.org/wiki/3-Quinuclidinyl_benzilate not sure why we have this
 	id = GAS_BZ
 	specific_heat = 20
+	molar_mass = 337
 	name = "BZ"
 	flags = GAS_FLAG_DANGEROUS
 	fusion_power = 8
@@ -132,6 +140,7 @@
 /datum/gas/ozone
 	id = GAS_O3
 	specific_heat = 30
+	molar_mass = 48
 	name = "Ozone"
 	gas_overlay = "water_vapor"
 	moles_visible = MOLES_GAS_VISIBLE
@@ -148,6 +157,7 @@
 /datum/gas/argon
 	id = GAS_ARGON
 	specific_heat = 20
+	molar_mass = 40
 	name = "Argon"
 	gas_overlay = "water_vapor"
 	oxidation_rate = -1
@@ -156,6 +166,7 @@
 /datum/gas/freon
 	id = GAS_FREON
 	specific_heat = 600
+	molar_mass = 408 // 2x plasma + 1x co2 + 1/3x bz
 	name = "Freon"
 	gas_overlay = "freon"
 	moles_visible = MOLES_GAS_VISIBLE *30
@@ -164,19 +175,20 @@
 /datum/gas/hydrogen
 	id = GAS_HYDROGEN
 	specific_heat = 10
+	molar_mass = 2
 	name = "Hydrogen"
 	flags = GAS_FLAG_DANGEROUS
 	//moles_visible = MOLES_GAS_VISIBLE
 	color = "#ffe"
 	fusion_power = 0
 	fire_products = list(GAS_H2O = 1)
-	enthalpy = FIRE_HYDROGEN_ENERGY_RELEASED
 	fire_burn_rate = 2
 	fire_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST - 50
 
 /datum/gas/chlorine
 	id = GAS_CHLORINE
 	specific_heat = 30
+	molar_mass = 69 // yes, really
 	name = "Chlorine"
 	flags = GAS_FLAG_DANGEROUS
 	moles_visible = MOLES_GAS_VISIBLE * 5
@@ -189,6 +201,7 @@
 /datum/gas/hydrogen_chloride
 	id = GAS_HYDROGEN_CHLORIDE
 	specific_heat = 40
+	molar_mass = 36
 	name = "Hydrogen Chloride"
 	flags = GAS_FLAG_DANGEROUS
 	moles_visible = MOLES_GAS_VISIBLE * 2
@@ -203,6 +216,7 @@
 /datum/gas/sulfur_dioxide
 	id = GAS_SO2
 	specific_heat = 22
+	molar_mass = 64
 	name = "Sulfur Dioxide"
 	flags = GAS_FLAG_DANGEROUS
 	moles_visible = MOLES_GAS_VISIBLE * 60
@@ -217,12 +231,13 @@
 /datum/gas/methane
 	id = GAS_METHANE
 	specific_heat = 35
+	molar_mass = 16
 	name = "Methane"
 	flags = GAS_FLAG_DANGEROUS
 	//moles_visible = MOLES_GAS_VISIBLE
 	color = "#ffe"
 	fusion_power = 0
-	fire_products = list(GAS_H2O = 0.5, GAS_HYDROGEN = 1)
+	fire_products = list(GAS_H2O = 2, GAS_CO2 = 1)
 	enthalpy = -74600
 	fire_burn_rate = 2
 	fire_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST - 50
@@ -231,6 +246,7 @@
 	id = GAS_AMMONIA
 
 	specific_heat = 100 //used as a coolant
+	molar_mass = 17
 	name = "Ammonia"
 	flags = GAS_FLAG_DANGEROUS
 	moles_visible = MOLES_GAS_VISIBLE
