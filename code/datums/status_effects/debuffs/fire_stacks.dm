@@ -232,6 +232,8 @@
 	SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, "on_fire")
 	SEND_SIGNAL(owner, COMSIG_LIVING_EXTINGUISHED, owner)
 	cache_stacks()
+	for(var/obj/item/equipped in (owner.get_equipped_items(TRUE)))
+		equipped.extinguish()
 	update_overlay()
 
 /datum/status_effect/fire_handler/fire_stacks/on_remove()
