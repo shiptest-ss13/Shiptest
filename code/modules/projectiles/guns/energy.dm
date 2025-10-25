@@ -197,6 +197,7 @@
 /obj/item/gun/energy/unique_action(mob/living/user)
 	if(..())
 		return
+
 	if(!internal_magazine && latch_closed)
 		to_chat(user, span_notice("You start to unlatch the [src]'s power cell retainment clip..."))
 		if(do_after(user, latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
@@ -205,10 +206,10 @@
 			tac_reloads = TRUE
 			latch_closed = FALSE
 			update_appearance()
+
 	else if(!internal_magazine && !latch_closed)
-		// if(!cell && is_attachment_in_contents_list())
-		// 	return ..() //should bring up the attachment menu if attachments are added. If none are added, it just does leaves the latch open
 		to_chat(user, span_warning("You start to latch the [src]'s power cell retainment clip..."))
+
 		if (do_after(user, latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
 			to_chat(user, span_notice("You latch the [src]'s power cell retainment clip " + span_green("CLOSED") + "."))
 			playsound(src, 'sound/items/taperecorder/taperecorder_close.ogg', 50, FALSE)
