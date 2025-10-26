@@ -73,8 +73,6 @@
 		icon_state = "[base_icon_state]_t"
 	else
 		icon_state = base_icon_state
-	if(isobj(hood))
-		hood.icon_state = base_icon_state
 	. = ..()
 
 /obj/item/clothing/suit/hooded/dropped()
@@ -144,7 +142,6 @@
 	return TRUE
 
 /obj/item/clothing/suit/toggle/AltClick(mob/user)
-	. = ..()
 	if(!user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		return FALSE
 

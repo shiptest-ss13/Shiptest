@@ -14,7 +14,6 @@
 	strip_delay = 60
 	clothing_flags = SNUG_FIT
 	flags_cover = HEADCOVERSEYES
-	//flags_inv = HIDEHAIR // nah
 
 	equip_sound = 'sound/items/equip/armor_equip.ogg'
 	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
@@ -91,7 +90,7 @@
 			flags_1 ^= visor_flags
 			flags_inv ^= visor_flags_inv
 			flags_cover ^= visor_flags_cover
-			icon_state = "[initial(icon_state)][up ? "up" : ""]"
+			icon_state = "[base_icon_state][up ? "-up" : ""]"
 			to_chat(user, span_notice("[up ? alt_toggle_message : toggle_message] \the [src]."))
 
 			user.update_inv_head()
@@ -196,26 +195,6 @@
 	else
 		return
 
-/obj/item/clothing/head/helmet/sec
-	can_flashlight = TRUE
-	content_overlays = TRUE
-
-/obj/item/clothing/head/helmet/sec/attackby(obj/item/I, mob/user, params)
-	if(issignaler(I))
-		var/obj/item/assembly/signaler/S = I
-		if(attached_light) //Has a flashlight. Player must remove it, else it will be lost forever.
-			to_chat(user, span_warning("The mounted flashlight is in the way, remove it first!"))
-			return
-
-		if(S.secured)
-			qdel(S)
-			var/obj/item/bot_assembly/secbot/A = new
-			user.put_in_hands(A)
-			to_chat(user, span_notice("You add the signaler to the helmet."))
-			qdel(src)
-			return
-	return ..()
-
 /obj/item/clothing/head/helmet/bulletproof
 	name = "bulletproof helmet"
 	desc = "A bulletproof combat helmet that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent."
@@ -237,6 +216,7 @@
 /obj/item/clothing/head/helmet/old
 	name = "degrading helmet"
 	desc = "Standard issue security helmet. Due to degradation the helmet's visor obstructs the users ability to see long distances."
+	icon_state = "m10helm"
 	tint = 2
 
 /obj/item/clothing/head/helmet/blueshirt
@@ -248,13 +228,15 @@
 
 /obj/item/clothing/head/helmet/riot
 	name = "riot helmet"
-	desc = "It's a helmet specifically designed to protect against close range attacks."
+	desc = "A reinforced helmet meant for crowd control, with a bulletproof plexiglass visor to shield the face."
 	icon_state = "riot"
+	base_icon_state = "riot"
 	item_state = "helmet"
 	toggle_message = "You pull the visor down on"
 	alt_toggle_message = "You push the visor up on"
-	can_toggle = 1
-	armor = list("melee" = 50, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 80, "wound" = 30)
+	can_toggle = TRUE
+	armor = list("melee" = 40, "bullet" = 55, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50, "wound" = 20)
+	slowdown = 0.1
 	flags_inv = HIDEEARS|HIDEFACE
 	strip_delay = 80
 	actions_types = list(/datum/action/item_action/toggle)
@@ -263,6 +245,13 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 	dog_fashion = null
+	unique_reskin = list(
+		"None" = "riot",
+		"Desert" = "riot_desert",
+		"Woodland" = "riot_woodland",
+		"Snow" = "riot_snow",
+		)
+	unique_reskin_changes_base_icon_state = TRUE
 
 /obj/item/clothing/head/helmet/justice
 	name = "helmet of justice"
@@ -328,12 +317,6 @@
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	custom_price = 350
-
-/obj/item/clothing/head/helmet/swat/nanotrasen
-	name = "\improper SWAT helmet"
-	desc = "An extremely robust, space-worthy helmet with the Nanotrasen logo emblazoned on the top."
-	icon_state = "swat"
-	item_state = "swat"
 
 /obj/item/clothing/head/helmet/thunderdome
 	name = "\improper Thunderdome helmet"
@@ -488,13 +471,14 @@
 	can_flashlight = TRUE
 	supports_variations = VOX_VARIATION
 
-/obj/item/clothing/head/helmet/bulletproof/m10
-	name = "\improper M10 pattern Helmet"
+/obj/item/clothing/head/helmet/m10
+	name = "\improper M-10 pattern Helmet"
 	desc = "A classic looking helmet, derived from numerous convergently-similar designs from all across inhabited space. A faded tag reads: 'The difference between an open-casket and closed-casket funeral. Wear on head for best results.'"
 	icon_state = "m10helm"
 	can_flashlight = TRUE
 	dog_fashion = null
 	supports_variations = null
+	content_overlays = TRUE
 	unique_reskin = list(
 		"None" = "m10helm",
 		"Desert" = "m10helm_desert",

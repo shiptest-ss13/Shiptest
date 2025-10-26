@@ -50,7 +50,7 @@
 	icon_state = "rubbershot"
 	loot = list(
 			/obj/item/stock_parts/cell/gun/upgraded = 5,
-			/obj/item/ammo_box/magazine/smgm9mm = 7,
+			/obj/item/ammo_box/magazine/m9mm_expedition = 7,
 		)
 
 /obj/effect/spawner/random/salvage/destructive_analyzer
@@ -61,7 +61,7 @@
 			/obj/item/clothing/gloves/combat = 200,
 			/obj/item/clothing/head/chameleon = 200,
 			/obj/item/pen/sleepy = 200,
-			/obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 100,
+			/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis = 100,
 			/obj/item/grenade/c4 = 100,
 
 			/obj/item/wrench/syndie = 30,

@@ -775,7 +775,7 @@
 	turf_type = /turf/open/floor/plating/asteroid/whitesands/lit
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried/lit
 
-/turf/closed/mineral/random/high_chance
+/turf/closed/mineral/random/high_chance/whitesands
 	icon = 'icons/turf/walls/ws_walls.dmi'
 	icon_state = "smoothrocks-0"
 	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
@@ -815,8 +815,8 @@
 	base_icon_state = "jungle_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
 	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
-	turf_type = /turf/open/floor/plating/dirt/jungle
-	baseturfs = /turf/open/floor/plating/dirt/jungle
+	turf_type = /turf/open/floor/plating/asteroid/dirt/jungle
+	baseturfs = /turf/open/floor/plating/asteroid/dirt/jungle
 
 	mineralChance = 16
 

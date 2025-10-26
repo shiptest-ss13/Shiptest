@@ -1,5 +1,5 @@
 //IMPORTANT: Multiple animate() calls do not stack well, so try to do them all at once if you can.
-/mob/living/carbon/update_transform()
+/mob/living/carbon/perform_update_transform()
 	var/matrix/ntransform = matrix(transform) //aka transform.Copy()
 	var/final_pixel_y = pixel_y
 	var/final_dir = dir
@@ -21,8 +21,8 @@
 		resize = RESIZE_DEFAULT_SIZE
 
 	if(changed)
+		SEND_SIGNAL(src, COMSIG_PAUSE_FLOATING_ANIM, 0.3 SECONDS)
 		animate(src, transform = ntransform, time = (lying_prev == 0 || lying_angle == 0) ? 2 : 0, pixel_y = final_pixel_y, dir = final_dir, easing = (EASE_IN|EASE_OUT))
-		setMovetype(movement_type & ~FLOATING)  // If we were without gravity, the bouncing animation got stopped, so we make sure we restart it in next life().
 
 /mob/living/carbon
 	var/list/overlays_standing[TOTAL_LAYERS]
@@ -100,16 +100,19 @@
 	var/mutable_appearance/damage_overlay = mutable_appearance('icons/mob/dam_mob.dmi', "blank", -DAMAGE_LAYER)
 	overlays_standing[DAMAGE_LAYER] = damage_overlay
 
-	for(var/obj/item/bodypart/BP as anything in bodyparts)
-		if(BP.dmg_overlay_type)
-			if(BP.brutestate)
-				var/image/brute_overlay = image(BP.dmg_overlay_icon, "[BP.dmg_overlay_type]_[BP.body_zone]_[BP.brutestate]0")
-				if(BP.use_damage_color)
-					brute_overlay.color = BP.damage_color
-				damage_overlay.add_overlay(brute_overlay)
-			if(BP.burnstate)
-				var/image/burn_overlay = image(BP.dmg_overlay_icon, "[BP.dmg_overlay_type]_[BP.body_zone]_[BP.burnstate]0")
-				damage_overlay.add_overlay(burn_overlay)
+	var/obj/item/bodypart/limb
+	for(var/zone in bodyparts)
+		limb = bodyparts[zone]
+		if(!limb?.dmg_overlay_type)
+			continue
+		if(limb.brutestate)
+			var/image/brute_overlay = image(limb.dmg_overlay_icon, "[limb.dmg_overlay_type]_[limb.body_zone]_[limb.brutestate]0")
+			if(limb.use_damage_color)
+				brute_overlay.color = limb.damage_color
+			damage_overlay.add_overlay(brute_overlay)
+		if(limb.burnstate)
+			var/image/burn_overlay = image(limb.dmg_overlay_icon, "[limb.dmg_overlay_type]_[limb.body_zone]_[limb.burnstate]0")
+			damage_overlay.add_overlay(burn_overlay)
 
 	apply_overlay(DAMAGE_LAYER)
 
@@ -119,10 +122,14 @@
 	var/mutable_appearance/wound_overlay = mutable_appearance('icons/mob/bleed_overlays.dmi', "blank", -WOUND_LAYER)//todo: species bleeding overlays. gr
 	overlays_standing[WOUND_LAYER] = wound_overlay
 
-	for(var/obj/item/bodypart/iter_part as anything in bodyparts)
-		if(iter_part.bleed_overlay_icon)
-			wound_overlay.color = iter_part.damage_color
-			wound_overlay.add_overlay(iter_part.bleed_overlay_icon)
+	var/obj/item/bodypart/limb
+	for(var/zone in bodyparts)
+		limb = bodyparts[zone]
+		if(!limb)
+			continue
+		if(limb.bleed_overlay_icon)
+			wound_overlay.color = limb.damage_color
+			wound_overlay.add_overlay(limb.bleed_overlay_icon)
 
 	apply_overlay(WOUND_LAYER)
 
@@ -239,12 +246,16 @@
 	update_damage_overlays()
 	var/list/needs_update = list()
 	var/limb_count_update = FALSE
-	for(var/obj/item/bodypart/BP as anything in bodyparts)
-		BP.update_limb(is_creating = update_limb_data) //Update limb actually doesn't do much, get_limb_icon is the cpu eater.
-		var/old_key = icon_render_keys?[BP.body_zone]
-		icon_render_keys[BP.body_zone] = (BP.is_husked) ? BP.generate_husk_key().Join() : BP.generate_icon_key().Join()
-		if(!(icon_render_keys[BP.body_zone] == old_key))
-			needs_update += BP
+	var/obj/item/bodypart/limb
+	for(var/zone in bodyparts)
+		limb = bodyparts[zone]
+		if(!limb)
+			continue
+		limb.update_limb(is_creating = update_limb_data) //Update limb actually doesn't do much, get_limb_icon is the cpu eater.
+		var/old_key = icon_render_keys?[limb.body_zone]
+		icon_render_keys[limb.body_zone] = (limb.is_husked) ? limb.generate_husk_key().Join() : limb.generate_icon_key().Join()
+		if(!(icon_render_keys[zone] == old_key))
+			needs_update += limb
 
 
 	var/list/missing_bodyparts = get_missing_limbs()
@@ -258,13 +269,16 @@
 
 	//GENERATE NEW LIMBS
 	var/list/new_limbs = list()
-	for(var/obj/item/bodypart/BP as anything in bodyparts)
-		if(BP in needs_update)
-			var/bp_icon = BP.get_limb_icon()
+	for(var/zone in bodyparts)
+		limb = bodyparts[zone]
+		if(!limb)
+			continue
+		if(limb in needs_update)
+			var/bp_icon = limb.get_limb_icon()
 			new_limbs += bp_icon
-			limb_icon_cache[icon_render_keys[BP.body_zone]] = bp_icon
+			limb_icon_cache[icon_render_keys[zone]] = bp_icon
 		else
-			new_limbs += limb_icon_cache[icon_render_keys[BP.body_zone]]
+			new_limbs += limb_icon_cache[icon_render_keys[zone]]
 
 	remove_overlay(BODYPARTS_LAYER)
 
@@ -425,16 +439,20 @@ GLOBAL_LIST_EMPTY(masked_leg_icons_cache)
 	var/mutable_appearance/overlays = mutable_appearance('icons/mob/bandage_overlays.dmi', "", -BANDAGE_LAYER)
 	overlays_standing[BANDAGE_LAYER] = overlays
 
-	for(var/obj/item/bodypart/BP as anything in bodyparts)
-		if(BP.current_gauze && BP.current_gauze.overlay_prefix)
-			var/bp_suffix = BP.body_zone
-			if(BP.bodytype & BODYTYPE_DIGITIGRADE)
+	var/obj/item/bodypart/limb
+	for(var/zone in bodyparts)
+		limb = bodyparts[zone]
+		if(!limb)
+			continue
+		if(limb.current_gauze && limb.current_gauze.overlay_prefix)
+			var/bp_suffix = zone
+			if(limb.bodytype & BODYTYPE_DIGITIGRADE)
 				bp_suffix += "_digitigrade"
-			overlays.add_overlay("[BP.current_gauze.overlay_prefix]_[bp_suffix]")
-		if(BP.current_splint && BP.current_splint.overlay_prefix)
-			var/bp_suffix = BP.body_zone
-			if(BP.bodytype & BODYTYPE_DIGITIGRADE)
+			overlays.add_overlay("[limb.current_gauze.overlay_prefix]_[bp_suffix]")
+		if(limb.current_splint && limb.current_splint.overlay_prefix)
+			var/bp_suffix = zone
+			if(limb.bodytype & BODYTYPE_DIGITIGRADE)
 				bp_suffix += "_digitigrade"
-			overlays.add_overlay("[BP.current_splint.overlay_prefix]_[bp_suffix]")
+			overlays.add_overlay("[limb.current_splint.overlay_prefix]_[bp_suffix]")
 
 	apply_overlay(BANDAGE_LAYER)

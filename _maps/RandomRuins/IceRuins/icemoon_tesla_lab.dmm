@@ -5258,7 +5258,7 @@
 	pixel_y = 5;
 	pixel_x = -5
 	},
-/obj/item/reagent_containers/pill/trophazole{
+/obj/item/reagent_containers/pill/indomide{
 	pixel_x = 11;
 	pixel_y = -10
 	},
@@ -6092,9 +6092,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/containment)
 "yC" = (
+/obj/effect/turf_decal/box{
+	color = "#75A2BB"
+	},
+/obj/item/clothing/head/helmet/space/clip,
+/obj/item/clothing/suit/space/clip,
+/obj/item/tank/internals/oxygen,
+/obj/item/clothing/mask/gas/clip,
 /obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/clothing/head/helmet/space/syndicate/blue,
-/obj/item/clothing/suit/space/syndicate/blue,
 /turf/open/floor/engine/hull/interior,
 /area/ruin/icemoon/tesla_lab/engineering)
 "yD" = (
@@ -7237,7 +7242,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
-/obj/item/clothing/head/helmet/bulletproof/m10/clip_vc{
+/obj/item/clothing/head/helmet/m10/clip_vc{
 	pixel_y = 8;
 	pixel_x = -8
 	},
@@ -7935,7 +7940,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/cargo_hall)
 "FV" = (
-/obj/item/clothing/head/helmet/bulletproof/m10/clip_vc{
+/obj/item/clothing/head/helmet/m10/clip_vc{
 	pixel_y = 1;
 	pixel_x = 5
 	},
