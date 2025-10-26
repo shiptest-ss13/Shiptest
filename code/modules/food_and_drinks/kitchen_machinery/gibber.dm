@@ -1,7 +1,7 @@
 /obj/machinery/gibber
 	name = "gibber"
 	desc = "The name isn't descriptive enough?"
-	icon = 'icons/obj/kitchen.dmi'
+	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "grinder"
 	density = TRUE
 	use_power = IDLE_POWER_USE
@@ -157,7 +157,7 @@
 		sourcejob = gibee.job
 	var/sourcenutriment = mob_occupant.nutrition / 15
 	var/gibtype = /obj/effect/decal/cleanable/blood/gibs
-	var/typeofmeat = /obj/item/food/meat/slab/human
+	var/typeofmeat = /obj/item/food/meat/slab
 	var/typeofskin
 
 	var/obj/item/food/meat/slab/allmeat[meat_produced]
