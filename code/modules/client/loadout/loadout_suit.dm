@@ -37,15 +37,15 @@
 
 /datum/gear/suit/jacket/burgundy
 	display_name = "suit jacket, burgundy"
-	path = /obj/item/clothing/suit/toggle/lawyer/burgundy
+	path = /obj/item/clothing/suit/lawyer/burgundy
 
 /datum/gear/suit/jacket/navy
 	display_name = "suit jacket, navy"
-	path = /obj/item/clothing/suit/toggle/lawyer/navy
+	path = /obj/item/clothing/suit/lawyer/navy
 
 /datum/gear/suit/jacket/charcoal
 	display_name = "suit jacket, charcoal"
-	path = /obj/item/clothing/suit/toggle/lawyer/charcoal
+	path = /obj/item/clothing/suit/lawyer/charcoal
 
 /datum/gear/suit/jacket/hoodie_black
 	display_name = "hoodie, recolorable"
