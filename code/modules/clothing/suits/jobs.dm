@@ -142,25 +142,27 @@
 	icon_state = "suitjacket_purp"
 	item_state = "suitjacket_purp"
 
-/obj/item/clothing/suit/toggle/lawyer/black
+/obj/item/clothing/suit/lawyer
 	name = "black suit jacket"
 	desc = "A professional suit jacket."
 	icon_state = "suitjacket_black"
 	item_state = "ro_suit"
+	blood_overlay_type = "coat"
+	body_parts_covered = CHEST|ARMS
 
-/obj/item/clothing/suit/toggle/lawyer/burgundy
+/obj/item/clothing/suit/lawyer/burgundy
 	name = "burgundy suit jacket"
 	desc = "A burgundy suit jacket. Makes you want to psychoanalyze."
 	icon_state = "suitjacket_burgundy"
 	item_state = "suitjacket_burgundy"
 
-/obj/item/clothing/suit/toggle/lawyer/navy
+/obj/item/clothing/suit/lawyer/navy
 	name = "navy suit jacket"
 	desc = "An orderly dress jacket."
 	icon_state = "suitjacket_navy"
 	item_state = "suitjacket_navy"
 
-/obj/item/clothing/suit/toggle/lawyer/charcoal
+/obj/item/clothing/suit/lawyer/charcoal
 	name = "charcoal suit jacket"
 	desc = "An enterprising dress jacket."
 	icon_state = "suitjacket_charcoal"
