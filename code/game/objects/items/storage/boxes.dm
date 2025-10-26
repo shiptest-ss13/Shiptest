@@ -623,16 +623,6 @@
 	for(var/i in 1 to 7)
 		new	/obj/item/restraints/handcuffs/alien(src)
 
-/obj/item/storage/box/fakesyndiesuit
-	name = "boxed space suit and helmet"
-	desc = "A sleek, sturdy box used to hold replica spacesuits."
-	icon_state = "syndiebox"
-	illustration = "syndiesuit"
-
-/obj/item/storage/box/fakesyndiesuit/PopulateContents()
-	new /obj/item/clothing/head/syndicatefake(src)
-	new /obj/item/clothing/suit/syndicatefake(src)
-
 /obj/item/storage/box/mousetraps
 	name = "box of Pest-B-Gon mousetraps"
 	desc = span_alert("Keep out of reach of children.")
@@ -1070,7 +1060,6 @@
 	new /obj/item/food/spidereggs(src)
 	new /obj/item/food/fishmeat/carp(src)
 	new /obj/item/food/meat/slab/xeno(src)
-	new /obj/item/food/meat/slab/corgi(src)
 	new /obj/item/food/meatball(src)
 
 /obj/item/storage/box/ingredients/exotic
