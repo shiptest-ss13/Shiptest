@@ -437,13 +437,11 @@
 		if(toggle_rolldown())
 			return TRUE
 
-
 /obj/item/clothing/under/CtrlClick(mob/user)
 	if(..())
 		return 1
 	if(attached_accessory)
 		remove_accessory(user)
-
 
 /obj/item/clothing/under/verb/jumpsuit_rollsleeves()
 	set name = "Roll Up/Down Sleeves"
