@@ -241,7 +241,7 @@
 ///called on /living when someone is pulled (mob/living/puller)
 #define COMSIG_LIVING_GET_PULLED "living_start_pulled"
 ///from base of mob/living/set_body_position(): (new_position, old_position)
-#define COMSIG_LIVING_SET_BODY_POSITION  "living_set_body_position"
+#define COMSIG_LIVING_SET_BODY_POSITION "living_set_body_position"
 
 /////////////////
 //from base of area/Entered(): (/area). Sent to "area-sensitive" movables, see __DEFINES/traits.dm for info.
