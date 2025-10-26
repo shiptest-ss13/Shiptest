@@ -1202,11 +1202,6 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 
 	return fire_status.ignite()
 
-/mob/living/proc/update_fire()
-	var/datum/status_effect/fire_handler/fire_handler = has_status_effect(/datum/status_effect/fire_handler)
-	if(fire_handler)
-		fire_handler.update_overlay()
-
 /**
  * Extinguish all fire on the mob
  *
@@ -1311,20 +1306,18 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 	ignite_mob()
 
 /**
-* Sets fire overlay of the mob.
-*
-* Vars:
-* * stacks: Current amount of fire_stacks
-* * on_fire: If we're lit on fire
-* * last_icon_state: Holds last fire overlay icon state, used for optimization
-* * suffix: Suffix for the fire icon state for special fire types
-*
-* This should return last_icon_state for the fire status efect
-*/
+ * Gets the fire overlay to use for this mob
+ *
+ * Args:
+ * * stacks: Current amount of fire_stacks
+ * * on_fire: If we're lit on fire
+ *
+ * Return a mutable appearance, the overlay that will be applied.
+ */
 
-
-/mob/living/proc/update_fire_overlay(stacks, on_fire, last_icon_state, suffix = "")
-	return last_icon_state
+/mob/living/proc/get_fire_overlay(stacks, on_fire)
+	RETURN_TYPE(/mutable_appearance)
+	return null
 
 /**
 * Handles effects happening when mob is on normal fire

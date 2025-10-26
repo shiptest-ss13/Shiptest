@@ -44,7 +44,7 @@
 	update_inv_hands()
 	update_inv_handcuffed()
 	update_inv_legcuffed()
-	update_fire()
+	update_appearance(UPDATE_OVERLAYS)
 	update_body_parts()
 
 

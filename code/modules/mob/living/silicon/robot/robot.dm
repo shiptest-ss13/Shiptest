@@ -466,7 +466,7 @@
 		var/mutable_appearance/head_overlay = hat.build_worn_icon(default_layer = 20, default_icon_file = 'icons/mob/clothing/head.dmi')
 		head_overlay.pixel_y += hat_offset
 		add_overlay(head_overlay)
-	update_fire()
+	update_appearance(UPDATE_OVERLAYS)
 
 /mob/living/silicon/robot/proc/self_destruct()
 	if(emagged)
@@ -1154,22 +1154,16 @@
 		program.force_full_update()
 
 
-/mob/living/silicon/robot/update_fire_overlay(stacks, on_fire, last_icon_state, suffix = "")
-	var/fire_icon = "generic_burning[suffix]"
+/mob/living/silicon/robot/get_fire_overlay(stacks, on_fire)
+	var/fire_icon = "generic_fire"
 
 	if(!GLOB.fire_appearances[fire_icon])
-		var/mutable_appearance/new_fire_overlay = mutable_appearance('icons/mob/onfire.dmi', fire_icon, -FIRE_LAYER)
-		new_fire_overlay.appearance_flags = RESET_COLOR
+		var/mutable_appearance/new_fire_overlay = mutable_appearance(
+			'icons/mob/onfire.dmi',
+			fire_icon,
+			-HIGHEST_LAYER,
+			appearance_flags = RESET_COLOR,
+		)
 		GLOB.fire_appearances[fire_icon] = new_fire_overlay
 
-	if(stacks && on_fire)
-		if(last_icon_state == fire_icon)
-			return last_icon_state
-		add_overlay(GLOB.fire_appearances[fire_icon])
-		return fire_icon
-
-	if(!last_icon_state)
-		return last_icon_state
-
-	cut_overlay(GLOB.fire_appearances[fire_icon])
-	return null
+	return GLOB.fire_appearances[fire_icon]

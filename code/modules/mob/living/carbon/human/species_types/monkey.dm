@@ -16,4 +16,4 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/monkey,
 	)
 
-	fire_overlay = "monkey_burning"
+	fire_overlay = "monkey"

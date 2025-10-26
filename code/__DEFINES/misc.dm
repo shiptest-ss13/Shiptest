@@ -31,7 +31,8 @@
 #define BODY_FRONT_LAYER 3
 /// Bleeding wound icons
 #define WOUND_LAYER 2
-#define FIRE_LAYER 1 //If you're on fire
+/// The highest most layer for mob overlays. Unused
+#define HIGHEST_LAYER 1
 #define TOTAL_LAYERS 32 //KEEP THIS UP-TO-DATE OR SHIT WILL BREAK ;_;
 
 //Human Overlay Index Shortcuts for alternate_worn_layer, layers

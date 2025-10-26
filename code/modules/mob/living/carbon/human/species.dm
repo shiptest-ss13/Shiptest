@@ -168,7 +168,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/bodytemp_environment_change = 0
 
 	/// The icon_state of the fire overlay added when sufficently ablaze and standing. see onfire.dmi
-	var/fire_overlay = "human_burning"
+	var/fire_overlay = "human"
 
 	///Does our species have colors for its' damage overlays?
 	var/use_damage_color = TRUE

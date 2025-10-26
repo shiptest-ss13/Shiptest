@@ -7,7 +7,7 @@
 	/// Current amount of stacks we have
 	var/stacks
 	/// Maximum of stacks that we could possibly get
-	var/stack_limit = 20
+	var/stack_limit = MAX_FIRE_STACKS
 	/// What status effect types do we remove uppon being applied. These are just deleted without any deduction from our or their stacks when forced.
 	var/list/enemy_types
 	/// What status effect types do we merge into if they exist. Ignored when forced.
@@ -111,12 +111,7 @@
 		owner.clear_alert(ALERT_FIRE)
 	else if(!was_on_fire && owner.on_fire)
 		owner.throw_alert(ALERT_FIRE, /atom/movable/screen/alert/fire)
-
-/**
- * Used to update owner's effect overlay
- */
-
-/datum/status_effect/fire_handler/proc/update_overlay()
+	owner.update_appearance(UPDATE_OVERLAYS)
 
 /datum/status_effect/fire_handler/fire_stacks
 	id = "fire_stacks" //fire_stacks and wet_stacks should have different IDs or else has_status_effect won't work
@@ -130,8 +125,6 @@
 	var/datum/weakref/firelight_ref
 	/// Type of mob light emitter we use when on fire
 	var/firelight_type = /obj/effect/dummy/lighting_obj/moblight/fire
-	/// Stores current fire overlay icon state, for optimisation purposes
-	var/last_icon_state
 
 /datum/status_effect/fire_handler/fire_stacks/tick(seconds_per_tick, times_fired)
 	if(stacks <= 0)
@@ -156,7 +149,6 @@
 		return TRUE
 
 	deal_damage(seconds_per_tick, times_fired)
-	update_overlay()
 
 /**
  * Proc that handles damage dealing and all special effects
@@ -218,7 +210,7 @@
 
 	SEND_SIGNAL(owner, COMSIG_LIVING_IGNITED, owner)
 	cache_stacks()
-	update_overlay()
+	owner.update_overlays()
 
 /**
  * Handles mob extinguishing, should be the only way to set on_fire to FALSE
@@ -234,16 +226,11 @@
 	cache_stacks()
 	for(var/obj/item/equipped in (owner.get_equipped_items(TRUE)))
 		equipped.extinguish()
-	update_overlay()
 
 /datum/status_effect/fire_handler/fire_stacks/on_remove()
 	if(on_fire)
 		extinguish()
 	set_stacks(0)
-	update_overlay()
-
-/datum/status_effect/fire_handler/fire_stacks/update_overlay()
-	last_icon_state = owner.update_fire_overlay(stacks, on_fire, last_icon_state)
 
 /datum/status_effect/fire_handler/fire_stacks/get_examine_text()
 	switch(stacks)
@@ -253,7 +240,20 @@
 
 /datum/status_effect/fire_handler/fire_stacks/on_apply()
 	. = ..()
-	update_overlay()
+	RegisterSignal(owner, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(add_fire_overlay))
+	owner.update_appearance(UPDATE_OVERLAYS)
+
+/datum/status_effect/fire_handler/fire_stacks/proc/add_fire_overlay(mob/living/source, list/overlays)
+	SIGNAL_HANDLER
+
+	if(stacks <= 0 || !on_fire)
+		return
+
+	var/mutable_appearance/created_overlay = owner.get_fire_overlay(stacks, on_fire)
+	if(isnull(created_overlay))
+		return
+
+	overlays |= created_overlay
 
 /datum/status_effect/fire_handler/wet_stacks
 	id = "wet_stacks"

@@ -185,7 +185,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_SNOWSTORM_IMMUNE "snow_immunity"
 #define TRAIT_ASHSTORM_IMMUNE "ash_immunity"
 #define TRAIT_SANDSTORM_IMMUNE "sand_immunity"
-#define TRAIT_PERMANENTLY_ONFIRE "alwaysonfire"
+/// Mobs that have this trait cannot be extinguished
+#define TRAIT_NO_EXTINGUISH "no_extinguish"
 #define TRAIT_NOFIRE "nonflammable"
 #define TRAIT_NOFIRE_SPREAD "nofirespread"
 /// Prevents plasmamen from self-igniting if only their helmet is missing
