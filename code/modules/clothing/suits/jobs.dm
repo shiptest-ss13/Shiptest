@@ -145,6 +145,7 @@
 /obj/item/clothing/suit/lawyer
 	name = "black suit jacket"
 	desc = "A professional suit jacket."
+	icon = 'icons/mob/clothing/suits/toggle.dmi'
 	icon_state = "suitjacket_black"
 	item_state = "ro_suit"
 	blood_overlay_type = "coat"
