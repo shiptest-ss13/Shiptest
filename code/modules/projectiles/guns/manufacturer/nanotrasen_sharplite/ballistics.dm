@@ -73,6 +73,15 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger)
 		ATTACHMENT_SLOT_RAIL = 1,
 	)
 
+		slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 40,
+			"y" = 21,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 24,
+			"y" = 12,
+
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
 	fire_delay = 0.4 SECONDS
@@ -124,15 +133,11 @@ NO_MAG_GUN_HELPER(automatic/pistol/champion)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 32,
-			"y" = 23,
-		),
-		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 15,
-			"y" = 26,
+			"y" = 17,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 23,
-			"y" = 19,
+			"x" = 22,
+			"y" = 11,
 		)
 	)
 
@@ -269,6 +274,20 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 	weapon_weight = WEAPON_LIGHT
 	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
 
+		slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 43,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 33,
+			"y" = 13,
+		)
+	)
 
 /obj/item/ammo_box/magazine/m9mm_expedition
 	name = "expedition submachinegun magazine (9x18mm)"
@@ -346,12 +365,12 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 32,
-			"y" = 23,
+			"x" = 40,
+			"y" = 18,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 27,
-			"y" = 17,
+			"x" = 29,
+			"y" = 11,
 		),
 		ATTACHMENT_SLOT_STOCK = list(
 			"x" = 17,

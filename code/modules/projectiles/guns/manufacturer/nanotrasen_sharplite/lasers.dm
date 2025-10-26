@@ -135,6 +135,16 @@
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
+	slot_available = list(
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 35,
+			"y" = 12,
+		),
+	)
 
 /obj/item/gun/energy/sharplite/l201
 	name = "SL L201 “Surge” Marksman Plasma Rifle"
@@ -162,6 +172,17 @@
 	spread = 0
 	spread_unwielded = 12
 
+	slot_available = list(
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 38,
+			"y" = 9,
+		),
+	)
+
 /obj/item/gun/energy/sharplite/l201/l204
 	name = "SL L204 “Resistor” Plasma Rifle"
 	desc = "A rifle-sized, semi-automatic electroplasma gun known for its low price and surprisingly low energy usage."
@@ -180,6 +201,17 @@
 
 	spread = 2
 	spread_unwielded = 10
+
+	slot_available = list(
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 33,
+			"y" = 11,
+		),
+	)
 
 /obj/item/gun/energy/sharplite/l201/l204/empty_cell
 	spawn_no_ammo = TRUE
@@ -209,6 +241,17 @@
 
 	spread = 2
 	spread_unwielded = 10
+
+	slot_available = list(
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 32,
+			"y" = 12,
+		),
+	)
 
 /obj/item/gun/energy/sharplite/x12/empty_cell
 	spawn_no_ammo = TRUE
@@ -257,6 +300,17 @@
 
 	zoom_amt = SHOTGUN_ZOOM
 
+	slot_available = list(
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 36,
+			"y" = 6,
+		),
+	)
+
 /obj/item/gun/energy/sharplite/x46/zeta
 	name = "\improper SL X-45"
 	desc = "A very old looking X-46, it has no stock or much decoration, and it is from before... Hey! What's this screen next to the mode select button?"
@@ -281,6 +335,17 @@
 	if(!integratedNTOS)
 		return
 	integratedNTOS.interact(user)
+
+	slot_available = list(
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 23,
+			"y" = 8,
+		),
+	)
 
 /obj/item/gun/energy/sharplite/al655
 	name = "SL AL655 “Hades” Assault Plasma Rifle"
@@ -314,6 +379,17 @@
 	wield_delay = 0.7 SECONDS
 	wield_slowdown = HEAVY_LASER_RIFLE_SLOWDOWN
 	spread_unwielded = 20
+
+	slot_available = list(
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 35,
+			"y" = 7,
+		),
+	)
 
 /obj/item/gun/energy/sharplite/al655/inteq
 	name = "PP20 “Barghest” APR"
@@ -363,6 +439,16 @@
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
 	zoom_out_amt = 5
 
+	slot_available = list(
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 34,
+			"y" = 11,
+		),
+	)
 
 /obj/item/gun/energy/sharplite/x11
 	name = "X11 Advanced Stopping Pistol" //wayland is better
@@ -377,6 +463,16 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite/hos, /obj/item/ammo_casing/energy/laser/sharplite/hos, /obj/item/ammo_casing/energy/trap)
 	ammo_x_offset = 1
 	shaded_charge = TRUE
+	slot_available = list(
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 25,
+			"y" = 11,
+		),
+	)
 
 /obj/item/gun/energy/laser/retro
 	name ="SL L104"
