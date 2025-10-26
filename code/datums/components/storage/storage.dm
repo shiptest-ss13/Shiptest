@@ -123,6 +123,7 @@
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
 
 	RegisterSignal(parent, COMSIG_CLICK_ALT, PROC_REF(on_alt_click))
+	RegisterSignal(parent, COMSIG_CLICK_RIGHT, PROC_REF(on_right_click))
 	RegisterSignal(parent, COMSIG_MOUSEDROP_ONTO, PROC_REF(mousedrop_onto))
 	RegisterSignal(parent, COMSIG_MOUSEDROPPED_ONTO, PROC_REF(mousedrop_receive))
 
@@ -819,9 +820,9 @@
 /datum/component/storage/proc/on_alt_click(datum/source, mob/user)
 	SIGNAL_HANDLER
 
-	INVOKE_ASYNC(src, PROC_REF(on_alt_click_async), source, user)
+/datum/component/storage/proc/on_right_click(datum/source, mob/user)
+	SIGNAL_HANDLER
 
-/datum/component/storage/proc/on_alt_click_async(datum/source, mob/user)
 	if(!isliving(user) || !user.CanReach(parent) || user.incapacitated())
 		return
 	if(!access_check(user))
@@ -830,6 +831,7 @@
 		to_chat(user, span_warning("[parent] seems to be [locked_flavor]!"))
 		return
 
+	. = COMPONENT_CANCEL_CLICK_RIGHT
 	var/atom/A = parent
 	if(!quickdraw)
 		A.add_fingerprint(user)
