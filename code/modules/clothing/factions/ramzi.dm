@@ -198,6 +198,7 @@
 	item_state = "ramzi_m10"
 	can_flashlight = TRUE
 	content_overlays = TRUE
+	unique_reskin = null
 
 /obj/item/clothing/head/helmet/bulletproof/x11/ramzi
 	name = "\improper Ramzi Clique X-11 helmet"
@@ -209,6 +210,7 @@
 	item_state = "ramzi_x11"
 	can_flashlight = TRUE
 	content_overlays = TRUE
+	unique_reskin = null
 
 //////////
 //Masks//
