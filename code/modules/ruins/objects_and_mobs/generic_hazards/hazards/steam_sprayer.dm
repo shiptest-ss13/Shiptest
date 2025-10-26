@@ -27,7 +27,7 @@
 //emits steam every 10-20 seconds
 /obj/structure/hazard/spray/steam/dangerous/random
 	name = "invisible evil steam"
-	icon_state = "hazardg"
+	icon_state = "hazard"
 	invisibility = 60
 	random_steam = TRUE //needed
 	random_min = 5 SECONDS
