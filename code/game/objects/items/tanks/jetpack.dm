@@ -210,10 +210,8 @@
 		return
 	var/mob/living/carbon/human/H = user
 
-	//Cascades down a priority list, taking air from first the active internal tank, then the suit storage, then the back, the belt, the left pocket and the right pocket
-	if(H.internal)
-		tank = H.internal
-	else if(istype(H.back, /obj/item/tank))
+	//Cascades down a priority list, taking air from first the suit storage slot, then the back, the belt, the left pocket and the right pocket
+	if(istype(H.back, /obj/item/tank))
 		tank = H.back
 	else if(istype(H.s_store, /obj/item/tank))
 		tank = H.s_store
