@@ -172,7 +172,7 @@
 
 /obj/item/tank/jetpack/suit
 	name = "hardsuit jetpack upgrade"
-	desc = "A modular, compact set of thrusters designed to integrate with a hardsuit. It draws propellant from an active air line, or if one is not available, an external air tank."
+	desc = "A modular, compact set of thrusters designed to integrate with a hardsuit. It draws propellant from an external air tank."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "jetpack_upgrade"
 	item_state = "jetpack-black"
