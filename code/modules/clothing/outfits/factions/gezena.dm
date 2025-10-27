@@ -18,6 +18,7 @@
 	name = "PGF - Bridge Crew"
 	id_assignment = "Helmsman"
 	jobtype = /datum/job/head_of_personnel
+	uniform = /obj/item/clothing/under/gezena/officer
 	neck = /obj/item/clothing/neck/cloak/gezena/command
 
 /datum/outfit/job/gezena/engineer
@@ -82,7 +83,7 @@
 	jobtype = /datum/job/cmo
 	job_icon = "chiefmedicalofficer"
 
-	uniform = /obj/item/clothing/under/gezena
+	uniform = /obj/item/clothing/under/gezena/officer
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/med
 
@@ -113,7 +114,7 @@
 	jobtype = /datum/job/head_of_personnel
 	job_icon = "headofpersonnel"
 
-	uniform = /obj/item/clothing/under/gezena
+	uniform = /obj/item/clothing/under/gezena/officer
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/command
 
@@ -257,7 +258,7 @@
 	jobtype = /datum/job/head_of_personnel
 	job_icon = "headofpersonnel"
 
-	uniform = /obj/item/clothing/under/gezena
+	uniform = /obj/item/clothing/under/gezena/officer
 	suit = /obj/item/clothing/suit/armor/gezena
 	head = /obj/item/clothing/head/gezena
 	gloves = /obj/item/clothing/gloves/gezena

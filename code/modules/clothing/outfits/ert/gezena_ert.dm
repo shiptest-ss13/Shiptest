@@ -78,7 +78,7 @@
 
 	head = /obj/item/clothing/head/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/command
-	uniform = /obj/item/clothing/under/gezena
+	uniform = /obj/item/clothing/under/gezena/officer
 	suit = /obj/item/clothing/suit/armor/gezena
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	suit_store = null
