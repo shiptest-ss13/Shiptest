@@ -354,7 +354,7 @@
 /obj/item/reagent_containers/hypospray/medipen/netzach
 	name = "\improper Nesah injector"
 	desc = "A combat injector filled with a tightly curated mixture of regenerative compounds. \"The Fearlessness To Go Forward\" is etched in small text opposite the activator."
-	list_reagents = list(/datum/reagent/medicine/silfrine = 10, /datum/reagent/medicine/ysiltane = 10, /datum/reagent/drug/aranesp = 10, /datum/reagent/medicine/morphine = 10)
+	list_reagents = list(/datum/reagent/medicine/silfrine = 10, /datum/reagent/medicine/ysiltane = 10, /datum/reagent/drug/cinesia = 10, /datum/reagent/medicine/morphine = 10)
 	volume = 40
 	amount_per_transfer_from_this = 40
 	icon_state = "penacid"

@@ -133,6 +133,14 @@
 	icon_state = "enzyme"
 	list_reagents = list(/datum/reagent/consumable/enzyme = 50)
 
+/obj/item/reagent_containers/food/condiment/enzyme/examine(mob/user)
+	. = ..()
+	var/datum/chemical_reaction/recipe = GLOB.chemical_reactions_list[/datum/chemical_reaction/cheesewheel]
+	var/milk_required = recipe.required_reagents[/datum/reagent/consumable/milk]
+	var/enzyme_required = recipe.required_catalysts[/datum/reagent/consumable/enzyme]
+
+	. += span_notice("[milk_required] milk, [enzyme_required] enzyme will make cheese.")
+
 /obj/item/reagent_containers/condiment/sugar
 	name = "sugar sack"
 	desc = "A bag of sugar. Used for sweetening, typically. There's nothing stopping you from eating it straight..."
@@ -140,8 +148,17 @@
 	item_state = "flour"
 	list_reagents = list(/datum/reagent/consumable/sugar = 50)
 
-/obj/item/reagent_containers/condiment/saltshaker		//Separate from above since it's a small shaker rather then
-	name = "salt shaker"											//	a large one.
+/obj/item/reagent_containers/food/condiment/sugar/examine(mob/user)
+	. = ..()
+	var/datum/chemical_reaction/recipe = GLOB.chemical_reactions_list[/datum/chemical_reaction/cakebatter]
+	var/flour_required = recipe.required_reagents[/datum/reagent/consumable/flour]
+	var/eggyolk_required = recipe.required_reagents[/datum/reagent/consumable/eggyolk]
+	var/sugar_required = recipe.required_reagents[/datum/reagent/consumable/sugar]
+
+	. += span_notice(">[flour_required] flour, [eggyolk_required] egg yolk (or soy milk), [sugar_required] sugar makes cake dough. You can make pie dough from it.")
+
+/obj/item/reagent_containers/condiment/saltshaker// Separate from above since it's a small shaker rather then
+	name = "salt shaker" //a large one.
 	desc = "A shaker full of salt. Make sure the cap is on tight!"
 	icon_state = "saltshakersmall"
 	icon_empty = "emptyshaker"
@@ -182,6 +199,14 @@
 	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
 	list_reagents = list(/datum/reagent/consumable/milk = 50)
 
+/obj/item/reagent_containers/food/condiment/milk/examine(mob/user)
+	. = ..()
+	var/datum/chemical_reaction/recipe = GLOB.chemical_reactions_list[/datum/chemical_reaction/cheesewheel]
+	var/milk_required = recipe.required_reagents[/datum/reagent/consumable/milk]
+	var/enzyme_required = recipe.required_catalysts[/datum/reagent/consumable/enzyme]
+	. += "<span class='notice'>[milk_required] milk, [enzyme_required] enzyme will make cheese.</span>"
+	. += "<span class='warning'>Remember, the enzyme isn't used up, so return it to the bottle.</span>"
+
 /obj/item/reagent_containers/condiment/tiris_milk
 	name = "Dimidiso's Tiris"
 	desc = "Prepackaged Tiris milk made from pastures within CLIP space. The flavor is usually too strong for humans to drink straight."
@@ -189,7 +214,15 @@
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
-	list_reagents = list(/datum/reagent/consumable/milk = 50)
+	list_reagents = list(/datum/reagent/consumable/tiris_milk = 50)
+
+/obj/item/reagent_containers/food/condiment/tiris_milk/examine(mob/user)
+	. = ..()
+	var/datum/chemical_reaction/recipe = GLOB.chemical_reactions_list[/datum/chemical_reaction/cheesewheel]
+	var/milk_required = recipe.required_reagents[/datum/reagent/consumable/tiris_milk]
+	var/enzyme_required = recipe.required_catalysts[/datum/reagent/consumable/enzyme]
+	. += "<span class='notice'>[milk_required] tiris milk, [enzyme_required] enzyme will make cheese.</span>"
+	. += "<span class='warning'>Remember, the enzyme isn't used up, so return it to the bottle.</span>"
 
 /obj/item/reagent_containers/condiment/flour
 	name = "flour sack"
@@ -358,7 +391,7 @@
 	list_reagents = list(/datum/reagent/consumable/tiris_sele = 50)
 
 /obj/item/reagent_containers/condiment/tiris_sale
-	name = "tiris sele"
+	name = "tiris sale"
 	desc = "A reduction made from the blood of a Tiris and a mixture of savory herbs. The flavor is very intense, and best used to augment a dish."
 	icon_state = "tiris-sauce"
 	list_reagents = list(/datum/reagent/consumable/tiris_sale = 50)
