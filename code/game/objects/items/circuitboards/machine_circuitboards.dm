@@ -1450,6 +1450,12 @@
 	req_components = list(/obj/item/stock_parts/capacitor = 2,
 		/obj/item/stock_parts/micro_laser = 2)
 
+/obj/item/circuitboard/machine/shuttle/engine/electric/premium
+	name = "High Performance Ion Thruster (Machine Board)"
+	build_path = /obj/machinery/power/shuttle/engine/electric/premium
+	req_components = list(/obj/item/stock_parts/capacitor/super = 3,
+		/obj/item/stock_parts/micro_laser/ultra = 3)
+
 /obj/item/circuitboard/machine/shuttle/engine/expulsion
 	name = "Expulsion Thruster (Machine Board)"
 	build_path = /obj/machinery/power/shuttle/engine/fueled/expulsion

@@ -221,8 +221,9 @@
 /obj/machinery/power/shuttle/engine/electric/premium
 	name = "high performance ion thruster"
 	desc = "An expensive variant of a standard ion thruster, using highest quality components in order to achieve much better performance."
-	thrust = 30
-	power_per_burn = 65000
+	circuit = /obj/item/circuitboard/machine/shuttle/engine/electric/premium
+	thrust = 10
+	power_per_burn = 50000
 
 /obj/machinery/power/smes/shuttle
 	name = "electric engine precharger"
