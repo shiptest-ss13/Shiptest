@@ -443,7 +443,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	spread_unwielded = 35
 	recoil = 2
 	recoil_unwielded = 10
-	wield_slowdown = SNIPER_SLOWDOWN
+	wield_slowdown = LIGHT_SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 
 	slot_available = list(
@@ -799,6 +799,9 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 			"y" = 25,
 		)
 	)
+
+/obj/item/gun/ballistic/shotgun/cm15/no_mag
+	default_ammo_type = FALSE
 
 /obj/item/gun/ballistic/shotgun/cm15/incendiary
 	default_ammo_type = /obj/item/ammo_box/magazine/cm15_12g/incendiary

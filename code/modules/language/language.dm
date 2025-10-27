@@ -285,10 +285,10 @@
 		var/base_word = strip_outer_punctuation(word)
 		var/raw_hash = md5("[lowertext(base_word)]/[GLOB.round_id]")
 		if(translate_prob > 0)
-			// the probability of managing to understand a word is based on how common it is (+10%, -15%)
-			// 1000 words in the list, so words outside the list are just treated as "the 1250th most common word"
-			var/commonness = GLOB.most_common_words[lowertext(base_word)] || 1250
-			translate_prob += (10 * (1 - (min(commonness, 1250) / 500)))
+			// the probability of managing to understand a word is based on how common it is (+10%, -5%)
+			// 1000 words in the list, so words outside the list are just treated as "the 1500th most common word"
+			var/commonness = GLOB.most_common_words[lowertext(base_word)] || 1500
+			translate_prob += (10 * (1 - (min(commonness, 1500) / 1000)))
 			if(HASH_PROB(translate_prob, raw_hash, 1))
 				scrambled_words += word
 				translated_index += FALSE

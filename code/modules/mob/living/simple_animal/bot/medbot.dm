@@ -447,9 +447,12 @@
 		return FALSE	//welp too late for them!
 
 	var/can_inject = FALSE
-	for(var/X in C.bodyparts)
-		var/obj/item/bodypart/part = X
-		if(IS_ORGANIC_LIMB(part))
+	var/obj/item/bodypart/body_part
+	for(var/zone in C.bodyparts)
+		body_part = C.bodyparts[zone]
+		if(!body_part)
+			continue
+		if(IS_ORGANIC_LIMB(body_part))
 			can_inject = TRUE
 	if(!can_inject)
 		return 0

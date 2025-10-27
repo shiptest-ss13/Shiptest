@@ -51,7 +51,7 @@
 /datum/mission/ruin/pgf_captain
 	name = "MIA Vessel Investigation"
 	desc = "The recovery beacon for a PFGN vessel that went missing on patrol has activated. Intellegence suggests they may have been assaulted by pirates. Recover the vessel captain's body and you will be compensated for your services."
-	author = "PGFN Naval Command"
+	author = "PGF Naval Command"
 	value = 1500
 	mission_limit = 1
 	faction = /datum/faction/pgf

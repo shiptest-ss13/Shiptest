@@ -408,6 +408,14 @@
 	name = "Adjust [target.name]"
 	button.name = name
 
+/datum/action/item_action/adjust_earmuffs
+	name = "Adjust Earmuffs"
+
+/datum/action/item_action/adjust_earmuffs/Trigger()
+	if(istype(target, /obj/item/clothing/ears/earmuffs))
+		var/obj/item/clothing/ears/earmuffs/muffs = target
+		muffs.adjust(owner)
+
 /datum/action/item_action/switch_hud
 	name = "Switch HUD"
 
