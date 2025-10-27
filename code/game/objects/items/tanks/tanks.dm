@@ -228,6 +228,35 @@
 	check_status()
 	pressure_alerts()
 
+/obj/item/tank/update_overlays()
+	. = ..()
+	var/status_overlay_icon_state
+	var/pressure = air_contents.return_pressure()
+
+	if((pressure > (5 * ONE_ATMOSPHERE)))
+		status_overlay_icon_state = "status_nominal"
+
+	else if((pressure < (5 * ONE_ATMOSPHERE)) && pressure > (2 * ONE_ATMOSPHERE))
+		status_overlay_icon_state = "status_warning"
+
+	else if((pressure < (2 * ONE_ATMOSPHERE)) && pressure > (0.5 * ONE_ATMOSPHERE))
+		status_overlay_icon_state = "status_alert"
+
+	else if((pressure < (0.75 * ONE_ATMOSPHERE)))
+		status_overlay_icon_state = "status_critical"
+
+	var/mutable_appearance/status_overlay = mutable_appearance(icon, status_overlay_icon_state)
+	if(istype(src, /obj/item/tank/internals/emergency_oxygen/engi))
+		status_overlay.pixel_x = 1
+		status_overlay.pixel_y = 1
+		overlays += status_overlay
+	else if(istype(src, /obj/item/tank/internals/emergency_oxygen/double))
+		status_overlay.pixel_x = 3
+		status_overlay.pixel_y = 4
+		overlays += status_overlay
+	else if(istype(src, /obj/item/tank/internals/emergency_oxygen))
+		overlays += status_overlay
+
 /obj/item/tank/proc/check_status()
 	//Handle exploding, leaking, and rupturing of the tank
 
@@ -280,10 +309,21 @@
 // adjusts sprites and issues text alerts depending on tank pressure
 /obj/item/tank/proc/pressure_alerts()
 
-	if(!air_contents)
+	var/pressure = air_contents.return_pressure()
+
+	if(istype(src, /obj/item/tank/jetpack))
 		return 0
 
-	var/pressure = air_contents.return_pressure()
+	if(!air_contents || pressure == 0)
+		warning_alert = TRUE
+		critical_warning_alert = TRUE
+		empty_alert = TRUE
+		return 0
+
+	if((pressure > (5 * ONE_ATMOSPHERE)))
+		warning_alert = FALSE
+		critical_warning_alert = FALSE
+		empty_alert = FALSE
 
 	if((pressure < (5 * ONE_ATMOSPHERE)) && !warning_alert)
 		warning_alert = TRUE
@@ -295,10 +335,10 @@
 		playsound(src, 'sound/machines/triple_beep.ogg', 30, TRUE)
 		say("Tank is at [pressure] kPa! Pressure critically low!")
 
-	if((pressure < (0.5 * ONE_ATMOSPHERE)) && !empty_alert)
+	if((pressure < (0.75 * ONE_ATMOSPHERE)) && !empty_alert)
 		empty_alert = TRUE
 		playsound(src, 'sound/machines/twobeep_high.ogg', 30, FALSE)
 		playsound(src, 'sound/machines/beep.ogg', 30, FALSE)
 		say("Tank is empty! Replacement recommended!")
 
-
+	update_overlays()
