@@ -644,10 +644,18 @@
 	category = list("initial", "Medical", "Medical Designs")
 
 /datum/design/chemical_bottle
-	name = "Glass Bottle"
+	name = "Bottle"
 	id = "bottle"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/glass = 300)
+	build_path = /obj/item/reagent_containers/glass/bottle
+	category = list("initial", "Medical", "Medical Designs")
+
+/datum/design/medigel
+	name = "Medical Gel"
+	id = "medigel"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 650)
 	build_path = /obj/item/reagent_containers/glass/bottle
 	category = list("initial", "Medical", "Medical Designs")
 
