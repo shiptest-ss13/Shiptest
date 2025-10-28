@@ -386,7 +386,7 @@ GENE SCANNER
 	var/obj/item/organ/lungs/lungs = M.getorganslot(ORGAN_SLOT_LUNGS)
 	if (lungs)
 		var/initial_pressure_mult = lungs::received_pressure_mult
-		if (lungs.received_pressure_mult != initial_pressure_mult)
+		if (abs(lungs.received_pressure_mult - initial_pressure_mult) > 0.01)
 			var/tooltip
 			var/dilation_text
 			var/beginning_text = "Lung Dilation: "

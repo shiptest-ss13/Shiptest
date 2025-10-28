@@ -256,8 +256,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 				var/obj/item/organ/lungs/L = C.getorganslot(ORGAN_SLOT_LUNGS)
 				if(L && !(L.organ_flags & ORGAN_SYNTHETIC))
 					C.adjustOrganLoss(ORGAN_SLOT_LUNGS, lung_harm)
-				if(!reagents.trans_to(C, to_smoke, method = INHALE))
-					reagents.remove_any(to_smoke)
+				reagents.remove_any(to_smoke)
 				return
 		reagents.remove_any(to_smoke)
 

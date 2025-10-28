@@ -226,9 +226,10 @@
 	var/list/breath_reagents = GLOB.gas_data.breath_reagents
 	for(var/gas in breath.get_gases())
 		if(gas in breath_reagents)
-			var/datum/reagent/R = breath_reagents[gas]
-			H.reagents.add_reagent(R, breath.get_moles(gas) * 2) // 2 represents molarity of O2, we don't have citadel molarity
-			mole_adjustments[gas] = (gas in mole_adjustments) ? mole_adjustments[gas] - breath.get_moles(gas) : -breath.get_moles(gas)
+			var/datum/reagent/breath_reagent = new breath_reagents[gas]
+			var/breath_moles = breath.get_moles(gas)
+			breath_reagent.expose_mob(H, INHALE, breath_moles * 2) // 2 represents molarity of O2, we don't have citadel molarity
+			mole_adjustments[gas] = (gas in mole_adjustments) ? mole_adjustments[gas] - breath_moles : -breath_moles
 
 	if(can_smell)
 		handle_smell(breath, H)

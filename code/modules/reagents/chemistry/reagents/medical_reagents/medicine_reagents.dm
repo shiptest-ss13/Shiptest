@@ -522,7 +522,7 @@
 	taste_description = "bitter and salty air"
 	overdose_threshold = 30
 	color = "#8df5f0"
-	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	//chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 	/// The decrement we will apply to the received_pressure_mult of our targets lungs.

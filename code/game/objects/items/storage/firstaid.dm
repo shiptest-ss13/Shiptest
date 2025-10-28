@@ -213,7 +213,7 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/syringe/dexalin = 3,
-		/obj/item/reagent_containers/hypospray/medipen/salbutamol = 1,
+		/obj/item/inhaler/salbutamol = 1,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
 		/obj/item/storage/pill_bottle/iron = 1,
 		/obj/item/reagent_containers/hypospray/medipen/blood_loss = 2,

@@ -252,9 +252,9 @@
 		for(var/atom/movable/AM in T)
 			if(AM.type == src.type)
 				continue
-			reagents.expose(AM, INHALE, fraction)
+			reagents.expose(AM, TOUCH, fraction)
 
-		reagents.expose(T, INHALE, fraction)
+		reagents.expose(T, TOUCH, fraction)
 		return 1
 
 /obj/effect/particle_effect/smoke/chem/smoke_mob(mob/living/carbon/M, seconds_per_tick = SSOBJ_DT)
@@ -266,7 +266,6 @@
 	if(C.internal != null || C.has_smoke_protection())
 		return 0
 	var/fraction = 1/initial(lifetime)
-	reagents.copy_to(C, fraction*reagents.total_volume)
 	reagents.expose(M, INHALE, fraction)
 	SEND_SIGNAL(C, COMSIG_CARBON_EXPOSED_TO_SMOKE, seconds_per_tick)
 	return TRUE
@@ -334,6 +333,7 @@
 		S.spread_smoke() //calling process right now so the smoke immediately attacks mobs.
 
 /datum/effect_system/smoke_spread/chem/cigarette
+	effect_type = /obj/effect/particle_effect/smoke/chem/cigarette
 	fixed_color = "#aaaaaa"
 
 /datum/effect_system/smoke_spread/chem/cigarette/set_up(datum/reagents/carry = null, transfer_amount = 1, radius = 1, loca, silent = FALSE)
@@ -346,9 +346,6 @@
 
 /datum/effect_system/smoke_spread/chem/thin
 	effect_type = /obj/effect/particle_effect/smoke/chem/thin
-
-/datum/effect_system/smoke_spread/chem/cigarette
-	effect_type = /obj/effect/particle_effect/smoke/chem/cigarette
 
 /////////////////////////////////////////////
 // Transparent smoke
