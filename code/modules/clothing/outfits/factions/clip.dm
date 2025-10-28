@@ -604,6 +604,9 @@
 
 	accessory = /obj/item/clothing/accessory/armband/medblue
 
+/datum/outfit/job/clip/minutemen/grunt/medic/secaccess
+	jobtype = /datum/job/officer
+
 /datum/outfit/job/clip/minutemen/grunt/medic/dressed
 	name = "CLIP Minutemen - Combat Medic (Dressed)"
 
