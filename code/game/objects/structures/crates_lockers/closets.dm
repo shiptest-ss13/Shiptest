@@ -406,6 +406,12 @@
 	if(!toggle(user))
 		togglelock(user)
 
+/obj/structure/closet/attack_hand_secondary(mob/user, modifiers)
+	if(!user.canUseTopic(src, BE_CLOSE) || !isturf(loc))
+		return
+	if(!opened && secure)
+		togglelock(user)
+	return TRUE
 
 /obj/structure/closet/attack_paw(mob/user)
 	return attack_hand(user)
@@ -475,15 +481,6 @@
 	locked = FALSE //applies to critter crates and secure lockers only
 	broken = TRUE //applies to secure lockers only
 	open()
-
-/obj/structure/closet/AltClick(mob/user)
-	..()
-	if(!user.canUseTopic(src, BE_CLOSE) || !isturf(loc))
-		return
-	if(opened || !secure)
-		return
-	else
-		togglelock(user)
 
 /obj/structure/closet/proc/togglelock(mob/living/user, silent)
 	if(secure && !broken)
