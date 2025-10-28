@@ -651,14 +651,6 @@
 	build_path = /obj/item/reagent_containers/glass/bottle
 	category = list("initial", "Medical", "Medical Designs")
 
-/datum/design/medigel
-	name = "Medical Gel"
-	id = "medigel"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/plastic = 500, /datum/material/iron = 200)
-	build_path = /obj/item/reagent_containers/medigel
-	category = list("initial", "Medical", "Medical Designs")
-
 /datum/design/chem_jug
 	name = "Chemical Jug"
 	id = "chem_jug"

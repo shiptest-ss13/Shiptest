@@ -160,6 +160,13 @@
 	contains = list(/obj/item/storage/box/medipens)
 	crate_name = "epinephrine medipen crate"
 
+/datum/supply_pack/medical/medigel_crate
+	name = "Empty Medical Gel Crate"
+	desc = "Contains a box of seven empty medical gels, for applying your own chemical mixes."
+	cost = 700
+	contains = list(/obj/item/storage/box/medigels)
+	crate_name = "empty medical gel crate"
+
 /* Hypospray supplies */
 
 /datum/supply_pack/medical/mkii_hypo
