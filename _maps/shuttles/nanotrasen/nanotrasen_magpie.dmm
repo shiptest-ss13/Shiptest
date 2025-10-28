@@ -1,27 +1,17 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"ac" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "magpie_overlook_window"
-	},
-/turf/open/floor/plating,
-/area/space)
 "av" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/space)
 "ax" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "magpie_officehall_window";
+	desc = 1
 	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "magpie_portthruster"
-	},
-/turf/open/floor/engine/hull/reinforced/interior,
+/turf/open/floor/plating,
 /area/space)
 "aC" = (
 /obj/effect/turf_decal/corner/opaque/ntbluelight{
@@ -43,6 +33,19 @@
 	name = "Airlock Lockdown"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"aN" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	dir = 4
+	},
+/obj/structure/cable/white{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/white{
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating,
 /area/space)
 "aO" = (
 /obj/effect/turf_decal/corner/opaque/ntbluelight{
@@ -142,6 +145,22 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
+/area/space)
+"bu" = (
+/obj/effect/turf_decal/corner/opaque/ntbluelight{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/opaque/white/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/white,
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = -6
+	},
+/obj/machinery/firealarm/directional/north{
+	pixel_x = 6
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "bx" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -290,10 +309,6 @@
 	},
 /turf/open/floor/plating,
 /area/space)
-"cA" = (
-/obj/machinery/holopad,
-/turf/open/floor/suns/hatch/walnut,
-/area/space)
 "cC" = (
 /obj/structure/closet/wall/directional/east,
 /obj/item/clothing/under/nanotrasen{
@@ -380,19 +395,6 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/space)
-"eO" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "magpie_starthruster"
-	},
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/space)
 "eY" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/sign/warning/electricshock{
@@ -458,6 +460,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
+"fq" = (
+/obj/machinery/atmospherics/components/binary/temperature_gate,
+/turf/open/space/basic,
+/area/space)
 "fD" = (
 /obj/effect/turf_decal/corner/transparent/blue/mono,
 /obj/effect/turf_decal/corner/transparent/white/mono,
@@ -477,6 +483,15 @@
 	pixel_y = -6
 	},
 /turf/open/floor/plasteel/mono,
+/area/space)
+"fJ" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "magpie_office_window";
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/space)
 "fL" = (
 /obj/effect/turf_decal/corner/transparent/blue/mono,
@@ -505,49 +520,16 @@
 	pixel_x = 21;
 	dir = 8;
 	id = "magpie_medbay_window";
-	name = "Window Control"
-	},
-/turf/open/floor/plasteel/mono,
-/area/space)
-"fM" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	id = "magpie_officehall_window";
-	desc = 1
-	},
-/turf/open/floor/plating,
-/area/space)
-"fO" = (
-/obj/machinery/door/airlock/mining{
-	name = "N+S Miner Equipment Room";
-	id_tag = "magpie_miner_room"
-	},
-/obj/effect/mapping_helpers/airlock/locked,
-/turf/open/space/basic,
-/area/space)
-"fX" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
-	dir = 10
-	},
-/obj/effect/turf_decal/trimline/opaque/white/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/white{
-	dir = 1
+	name = "External Window Control"
 	},
 /obj/machinery/button/door{
-	pixel_y = -21;
-	pixel_x = -7;
-	id = "magpie_vi_office";
-	normaldoorcontrol = 1;
-	specialfunctions = 4;
-	name = "Security Office Bolt Control";
-	req_access_txt = "1";
-	dir = 1;
-	req_ship_access = 1
+	pixel_y = 2;
+	pixel_x = 21;
+	dir = 8;
+	id = "magpie_medbayhall_window";
+	name = "Hallway Window Control"
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/mono,
 /area/space)
 "gh" = (
 /obj/effect/turf_decal/corner/opaque/ntbluelight{
@@ -653,6 +635,13 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/space)
+"hc" = (
+/obj/machinery/door/airlock/command{
+	id_tag = "magpie_office";
+	dir = 4
+	},
+/turf/open/space/basic,
+/area/space)
 "hf" = (
 /obj/structure/sign/nanotrasen{
 	pixel_x = 32
@@ -734,14 +723,6 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/carpet/royalblue,
-/area/space)
-"hP" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	id = "magpie_dorm_window"
-	},
-/turf/open/floor/plating,
 /area/space)
 "ic" = (
 /obj/effect/turf_decal/borderfloor{
@@ -860,26 +841,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
-"iV" = (
-/obj/machinery/door/airlock/medical{
-	dir = 4;
-	name = "Medbay"
-	},
-/turf/open/space/basic,
-/area/space)
-"iW" = (
-/obj/machinery/atmospherics/pipe/simple/purple/hidden{
-	dir = 4
-	},
-/obj/structure/cable/white{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/white{
-	icon_state = "2-8"
-	},
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating,
-/area/space)
 "je" = (
 /obj/structure/dresser{
 	dir = 4;
@@ -894,6 +855,21 @@
 	pixel_x = -5
 	},
 /turf/open/floor/wood/walnut,
+/area/space)
+"ji" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/heavy,
+/obj/structure/cable/white{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "magpie_holofield"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "magpie_cargo"
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "jj" = (
 /obj/machinery/atmospherics/components/binary/valve{
@@ -922,14 +898,6 @@
 	},
 /obj/structure/chair/comfy/orange/directional/west,
 /turf/open/floor/carpet/nanoweave,
-/area/space)
-"ju" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	id = "magpie_medbay_window"
-	},
-/turf/open/floor/plating,
 /area/space)
 "jw" = (
 /obj/effect/turf_decal/siding/white{
@@ -1106,35 +1074,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
-"kN" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
-	dir = 5
-	},
-/obj/effect/turf_decal/trimline/opaque/white/corner{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/white,
-/obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = -6
-	},
-/obj/machinery/firealarm/directional/north{
-	pixel_x = 6
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/space)
-"lc" = (
-/obj/machinery/atmospherics/pipe/simple/purple/hidden{
-	dir = 4
-	},
-/obj/structure/cable/white{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/white{
-	icon_state = "1-4"
-	},
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating,
-/area/space)
 "ld" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/effect/turf_decal/borderfloor{
@@ -1182,6 +1121,9 @@
 	pixel_x = 7
 	},
 /turf/open/floor/plasteel,
+/area/space)
+"lx" = (
+/turf/closed/wall/mineral/titanium,
 /area/space)
 "lz" = (
 /obj/effect/turf_decal/corner/opaque/white{
@@ -1378,6 +1320,29 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
+"oQ" = (
+/obj/structure/chair/office/dark{
+	dir = 4
+	},
+/obj/machinery/button/door{
+	pixel_y = -11;
+	pixel_x = -21;
+	id = "magpie_office";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bolt Control";
+	dir = 4;
+	req_access_txt = "19"
+	},
+/turf/open/floor/carpet/nanoweave,
+/area/space)
+"oW" = (
+/obj/machinery/door/airlock/atmos{
+	dir = 4;
+	name = "Portside Nacelle Atmospherics"
+	},
+/turf/open/space/basic,
+/area/space)
 "ph" = (
 /obj/effect/turf_decal/siding/white,
 /turf/open/floor/plasteel/mono,
@@ -1440,6 +1405,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
+"pD" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "magpie_office_window"
+	},
+/turf/open/floor/plating,
+/area/space)
 "pH" = (
 /obj/effect/turf_decal/borderfloor/full{
 	layer = 2.030
@@ -1496,20 +1469,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
-"qh" = (
-/obj/machinery/atmospherics/pipe/simple/purple/hidden{
-	dir = 4
-	},
-/obj/structure/cable/white{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/white{
-	icon_state = "2-8"
-	},
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/airalarm/directional/north,
-/turf/open/floor/plating,
-/area/space)
 "qi" = (
 /obj/structure/cable/white{
 	icon_state = "4-8"
@@ -1549,22 +1508,6 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable/white,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/space)
-"qB" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	id = "magpie_office_window";
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/space)
-"qF" = (
-/obj/machinery/door/airlock/freezer{
-	name = "Bathroom";
-	id_tag = "magpie_bathroom"
-	},
-/turf/open/space/basic,
 /area/space)
 "qH" = (
 /obj/machinery/power/shuttle/engine/electric{
@@ -1688,14 +1631,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
-"rN" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	id = "magpie_medbay_window";
-	dir = 4
+"rS" = (
+/obj/machinery/door/airlock/medical{
+	dir = 4;
+	name = "Medbay"
 	},
-/turf/open/floor/plating,
+/turf/open/space/basic,
 /area/space)
 "rZ" = (
 /obj/structure/table/reinforced,
@@ -1706,15 +1647,6 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/space)
-"sj" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	id = "magpie_bridgehall_window";
-	dir = 4
-	},
-/turf/open/floor/plating,
 /area/space)
 "sC" = (
 /obj/effect/turf_decal/corner/opaque/ntbluelight{
@@ -1811,6 +1743,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"td" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "magpie_dorm_window"
+	},
+/turf/open/floor/plating,
+/area/space)
 "tf" = (
 /obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/ntbluelight{
@@ -1836,6 +1776,14 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
+/area/space)
+"tj" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "magpie_miner_window"
+	},
+/turf/open/floor/plating,
 /area/space)
 "tk" = (
 /obj/effect/turf_decal/borderfloor/full{
@@ -1899,6 +1847,21 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/white/warning,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"tI" = (
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/opaque/black/filled/warning{
+	dir = 8
+	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = -6
+	},
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = 6
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "tU" = (
 /obj/effect/turf_decal/corner/opaque/white{
@@ -2079,9 +2042,30 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
+"vi" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "magpie_bridge_window";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/space)
 "vw" = (
 /obj/machinery/atmospherics/pipe/simple/purple/hidden{
 	dir = 4
+	},
+/turf/open/floor/plating,
+/area/space)
+"vx" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "magpie_portnac_window";
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/space)
@@ -2118,6 +2102,29 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
+/area/space)
+"vK" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "magpie_bridgehall_window";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/space)
+"vL" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	dir = 4
+	},
+/obj/structure/cable/white{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/white{
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/plating,
 /area/space)
 "wp" = (
 /obj/machinery/firealarm/directional/south{
@@ -2360,30 +2367,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
-"ys" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	id = "magpie_office_window"
-	},
-/turf/open/floor/plating,
-/area/space)
-"yO" = (
-/obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/door/firedoor/heavy,
-/obj/structure/cable/white{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 1;
-	id = "magpie_holofield"
-	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "magpie_cargo"
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/space)
 "yV" = (
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/siding/wood{
@@ -2398,6 +2381,19 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
+/area/space)
+"yZ" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "magpie_portthruster"
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
 /area/space)
 "za" = (
 /obj/effect/turf_decal/siding/white{
@@ -2421,6 +2417,14 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
+/area/space)
+"zy" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "magpie_kitchen_window"
+	},
+/turf/open/floor/plating,
 /area/space)
 "zz" = (
 /obj/machinery/vending/cigarette,
@@ -2522,16 +2526,17 @@
 	},
 /turf/open/floor/plasteel/lightgrey,
 /area/space)
-"Ap" = (
-/turf/open/floor/plasteel/patterned/grid,
-/area/space)
-"Ar" = (
+"Ao" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "magpie_security_window"
+	dir = 4;
+	id = "magpie_overlook_window"
 	},
 /turf/open/floor/plating,
+/area/space)
+"Ap" = (
+/turf/open/floor/plasteel/patterned/grid,
 /area/space)
 "AE" = (
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters{
@@ -2554,14 +2559,6 @@
 /turf/open/floor/plasteel/stairs/left{
 	dir = 1
 	},
-/area/space)
-"Ba" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	id = "magpie_airlock"
-	},
-/turf/open/floor/plating,
 /area/space)
 "Bp" = (
 /obj/effect/turf_decal/corner/opaque/ntbluelight{
@@ -2628,6 +2625,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 1;
 	id = "magpie_holofield"
 	},
 /obj/machinery/door/poddoor{
@@ -2693,14 +2691,6 @@
 	},
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
-"Cn" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	id = "magpie_bridge_window"
-	},
-/turf/open/floor/plating,
 /area/space)
 "Co" = (
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer4{
@@ -2818,9 +2808,12 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/obj/item/toner,
-/obj/item/toner{
-	pixel_y = -3
+/obj/item/bodycamera{
+	pixel_y = 5;
+	pixel_x = -9
+	},
+/obj/item/bodycamera{
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
@@ -2855,6 +2848,15 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/space)
+"Dz" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "magpie_medbay_window";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/space)
 "DE" = (
 /obj/structure/cable/white{
 	icon_state = "1-8"
@@ -2882,6 +2884,14 @@
 	},
 /obj/structure/chair/handrail,
 /turf/open/floor/plasteel/tech,
+/area/space)
+"DN" = (
+/obj/machinery/door/airlock/mining{
+	name = "N+S Equipment Room";
+	id_tag = "magpie_miner_room"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/space/basic,
 /area/space)
 "DW" = (
 /obj/effect/turf_decal/corner/opaque/blue/mono,
@@ -2951,15 +2961,6 @@
 	name = "Hallway Window Control"
 	},
 /turf/open/floor/suns/hatch/walnut,
-/area/space)
-"Er" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	id = "magpie_bridge_window";
-	dir = 4
-	},
-/turf/open/floor/plating,
 /area/space)
 "Et" = (
 /obj/effect/turf_decal/borderfloor,
@@ -3042,6 +3043,14 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/space)
+"Fh" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "magpie_medbay_window"
+	},
+/turf/open/floor/plating,
+/area/space)
 "Fj" = (
 /obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 8
@@ -3074,7 +3083,7 @@
 	id = "magpie_miner_room";
 	normaldoorcontrol = 1;
 	specialfunctions = 4;
-	name = "Miner Equipment Room Bolt Control";
+	name = "N+S Equipment Room Bolt Control";
 	req_access_txt = "1";
 	dir = 1;
 	req_ship_access = 1
@@ -3179,14 +3188,6 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/space)
-"Go" = (
-/obj/machinery/door/airlock/security{
-	name = "Vigilitas Security Office";
-	id_tag = "magpie_vi_office"
-	},
-/obj/effect/mapping_helpers/airlock/locked,
-/turf/open/space/basic,
-/area/space)
 "Gt" = (
 /obj/structure/table/glass,
 /obj/item/reagent_containers/food/drinks/coffee/empty{
@@ -3255,12 +3256,9 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
-"HB" = (
-/obj/machinery/door/airlock/command{
-	id_tag = "magpie_office";
-	dir = 4
-	},
-/turf/open/space/basic,
+"HA" = (
+/obj/machinery/holopad,
+/turf/open/floor/suns/hatch/walnut,
 /area/space)
 "HD" = (
 /obj/effect/turf_decal/borderfloor/full{
@@ -3594,20 +3592,25 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"Jw" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	dir = 4
+	},
+/obj/structure/cable/white{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/white{
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating,
+/area/space)
 "JJ" = (
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/machinery/atmospherics/components/unary/tank/nitrogen{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/space)
-"Kg" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	id = "magpie_miner_window"
-	},
-/turf/open/floor/plating,
 /area/space)
 "Kk" = (
 /obj/effect/turf_decal/corner/transparent/blue/full,
@@ -3631,6 +3634,10 @@
 /obj/item/pen{
 	pixel_x = -5;
 	pixel_y = 4
+	},
+/obj/item/paper/guides/bodycam{
+	pixel_x = 10;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
@@ -3677,6 +3684,7 @@
 	pixel_y = 4;
 	pixel_x = -4
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
 "KO" = (
@@ -3727,11 +3735,11 @@
 /obj/structure/guncloset{
 	anchored = 1
 	},
-/obj/item/gun/ballistic/automatic/smg/expedition{
+/obj/item/gun/ballistic/automatic/smg/expedition/no_mag{
 	pixel_x = -5;
 	pixel_y = 5
 	},
-/obj/item/gun/energy/sharplite/l201/l204/empty_cell{
+/obj/item/gun/energy/sharplite/x12/empty_cell{
 	pixel_x = -4
 	},
 /obj/item/gun/ballistic/automatic/pistol/challenger/no_mag{
@@ -3879,6 +3887,16 @@
 	name = "External Window Control"
 	},
 /turf/open/floor/plasteel/tech/grid,
+/area/space)
+"My" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "magpie_medbayhall_window";
+	desc = 1;
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/space)
 "MK" = (
 /obj/effect/spawner/bunk_bed{
@@ -4132,22 +4150,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/space)
-"OP" = (
-/obj/structure/chair/office/dark{
-	dir = 4
-	},
-/obj/machinery/button/door{
-	pixel_y = -11;
-	pixel_x = -21;
-	id = "magpie_office";
-	normaldoorcontrol = 1;
-	specialfunctions = 4;
-	name = "Bolt Control";
-	dir = 4;
-	req_access_txt = "19"
-	},
-/turf/open/floor/carpet/nanoweave,
-/area/space)
 "OR" = (
 /obj/structure/table,
 /obj/item/paper_bin/construction{
@@ -4168,6 +4170,10 @@
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
+	},
+/obj/item/toner,
+/obj/item/toner{
+	pixel_y = -3
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
@@ -4282,9 +4288,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
-"PV" = (
-/turf/closed/wall/mineral/titanium,
-/area/space)
 "Qk" = (
 /obj/effect/turf_decal/industrial/hatch/blue,
 /obj/machinery/power/port_gen/pacman{
@@ -4316,6 +4319,14 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/carpet/royalblue,
+/area/space)
+"QF" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "magpie_airlock"
+	},
+/turf/open/floor/plating,
 /area/space)
 "QH" = (
 /obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped{
@@ -4372,15 +4383,6 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
 /area/space)
-"Rc" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	id = "magpie_portnac_window";
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/space)
 "Re" = (
 /obj/effect/turf_decal/corner/transparent/blue/mono,
 /obj/effect/turf_decal/corner/transparent/white/mono,
@@ -4410,6 +4412,16 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/space)
+"Rj" = (
+/obj/effect/turf_decal/siding/white,
+/obj/machinery/firealarm/directional/south{
+	pixel_x = -6
+	},
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = 6
+	},
+/turf/open/floor/plasteel/mono,
+/area/space)
 "Rz" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/firedoor/border_only{
@@ -4419,37 +4431,12 @@
 /obj/machinery/atmospherics/pipe/simple/purple/hidden,
 /turf/open/floor/plasteel/tech,
 /area/space)
-"Sb" = (
-/obj/effect/turf_decal/corner/opaque/blue{
-	dir = 9
-	},
-/obj/effect/turf_decal/trimline/opaque/black/filled/warning{
-	dir = 8
-	},
-/obj/machinery/firealarm/directional/south{
-	pixel_x = -6
-	},
-/obj/structure/extinguisher_cabinet/directional/south{
-	pixel_x = 6
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/space)
 "Sn" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 4
 	},
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
-"Sw" = (
-/obj/effect/turf_decal/siding/white,
-/obj/machinery/firealarm/directional/south{
-	pixel_x = -6
-	},
-/obj/structure/extinguisher_cabinet/directional/south{
-	pixel_x = 6
-	},
-/turf/open/floor/plasteel/mono,
 /area/space)
 "Sz" = (
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer4,
@@ -4730,6 +4717,21 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/space)
+"VN" = (
+/obj/machinery/door/airlock/security{
+	name = "Vigilitas Security Office";
+	id_tag = "magpie_vi_office"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/space/basic,
+/area/space)
+"VR" = (
+/obj/machinery/door/airlock/freezer{
+	name = "Bathroom";
+	id_tag = "magpie_bathroom"
+	},
+/turf/open/space/basic,
+/area/space)
 "VS" = (
 /obj/structure/dresser,
 /obj/structure/window/reinforced/tinted/frosted{
@@ -4812,19 +4814,12 @@
 	},
 /obj/machinery/door/poddoor{
 	dir = 4;
-	id = "magpie_portthruster"
+	id = "magpie_starthruster"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/space)
 "Wx" = (
 /turf/open/floor/suns/hatch/walnut,
-/area/space)
-"WL" = (
-/obj/machinery/door/airlock/engineering{
-	dir = 4;
-	name = "Starboard Nacelle Engineering"
-	},
-/turf/open/space/basic,
 /area/space)
 "WR" = (
 /obj/effect/turf_decal/siding/white{
@@ -4880,6 +4875,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
+"Xm" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "magpie_bridge_window"
+	},
+/turf/open/floor/plating,
+/area/space)
 "Xu" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -4909,6 +4912,13 @@
 /obj/effect/turf_decal/siding/white/corner,
 /turf/open/floor/plasteel/mono,
 /area/space)
+"XD" = (
+/obj/machinery/door/airlock/engineering{
+	dir = 4;
+	name = "Starboard Nacelle Engineering"
+	},
+/turf/open/space/basic,
+/area/space)
 "XE" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -4919,6 +4929,16 @@
 /obj/structure/railing,
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/tech/grid,
+/area/space)
+"XJ" = (
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "magpie_portthruster"
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
 /area/space)
 "XL" = (
 /obj/structure/chair/comfy/shuttle{
@@ -5021,13 +5041,6 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/space)
-"Ys" = (
-/obj/machinery/door/airlock/atmos{
-	dir = 4;
-	name = "Portside Nacelle Atmospherics"
-	},
-/turf/open/space/basic,
-/area/space)
 "YE" = (
 /obj/structure/cable/white{
 	icon_state = "4-8"
@@ -5106,14 +5119,6 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/space)
-"ZA" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters{
-	id = "magpie_kitchen_window"
-	},
-/turf/open/floor/plating,
-/area/space)
 "ZD" = (
 /obj/effect/turf_decal/corner/opaque/ntbluelight{
 	dir = 5
@@ -5141,6 +5146,37 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"ZR" = (
+/obj/effect/turf_decal/corner/opaque/ntbluelight{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/opaque/white/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/machinery/button/door{
+	pixel_y = -21;
+	pixel_x = -7;
+	id = "magpie_vi_office";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Vigilitas Security Office Bolt Control";
+	req_access_txt = "1";
+	dir = 1;
+	req_ship_access = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"ZS" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "magpie_security_window"
+	},
+/turf/open/floor/plating,
 /area/space)
 "ZU" = (
 /obj/effect/turf_decal/corner/opaque/ntbluelight{
@@ -5215,7 +5251,7 @@ qH
 bx
 qH
 bx
-ax
+XJ
 bx
 Yj
 Yj
@@ -5236,25 +5272,25 @@ Yj
 (4,1,1) = {"
 Yj
 bx
-Ws
+yZ
 bx
-Ws
-bx
-jj
-bx
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
-Yj
+yZ
 bx
 jj
 bx
-eO
+Yj
+Yj
+Yj
+Yj
+Yj
+Yj
+Yj
 bx
-eO
+jj
+bx
+Ws
+bx
+Ws
 bx
 Yj
 "}
@@ -5344,9 +5380,9 @@ bx
 IM
 Yj
 Yj
-Ys
+oW
 Yj
-WL
+XD
 Yj
 Yj
 IM
@@ -5394,7 +5430,7 @@ bx
 IM
 Yj
 Yj
-Yj
+fq
 Yj
 Yj
 Yj
@@ -5413,10 +5449,10 @@ Yj
 bx
 UR
 FE
-Sb
+tI
 bx
 bx
-Rc
+vx
 bx
 Yj
 Yj
@@ -5424,7 +5460,7 @@ Yj
 Yj
 Yj
 bx
-Rc
+vx
 bx
 bx
 yp
@@ -5515,22 +5551,22 @@ bI
 cQ
 Wp
 bx
-kN
+bu
 TT
 bx
 bx
-BE
+ji
 Zi
-yO
+BE
 bx
 bx
 Dm
 aC
-Ba
+QF
 oy
 Tb
 Ti
-Ba
+QF
 Yj
 "}
 (16,1,1) = {"
@@ -5541,7 +5577,7 @@ rw
 aZ
 Et
 qR
-lc
+Jw
 bx
 Zy
 mP
@@ -5549,7 +5585,7 @@ mM
 Jk
 Iw
 bx
-iW
+aN
 xR
 ld
 xG
@@ -5566,7 +5602,7 @@ XE
 jw
 bx
 ZJ
-lc
+Jw
 bx
 jJ
 tU
@@ -5574,7 +5610,7 @@ Sn
 Hc
 EG
 bx
-qh
+vL
 qk
 bx
 bx
@@ -5651,7 +5687,7 @@ Ko
 NA
 EL
 HU
-Kg
+tj
 ic
 Ai
 sR
@@ -5660,7 +5696,7 @@ Yj
 "}
 (21,1,1) = {"
 Yj
-hP
+td
 bm
 fd
 nZ
@@ -5669,9 +5705,9 @@ qR
 nE
 bx
 bx
-ac
-ac
-ac
+Ao
+Ao
+Ao
 bx
 bx
 zI
@@ -5685,7 +5721,7 @@ Yj
 "}
 (22,1,1) = {"
 Yj
-hP
+td
 Vi
 wD
 jB
@@ -5751,7 +5787,7 @@ Wf
 bx
 zI
 Tk
-Ar
+ZS
 Ug
 fe
 CA
@@ -5800,7 +5836,7 @@ hh
 Gg
 wV
 SR
-fX
+ZR
 bx
 bL
 sW
@@ -5810,7 +5846,7 @@ Yj
 "}
 (27,1,1) = {"
 Yj
-PV
+lx
 bx
 HZ
 xf
@@ -5830,13 +5866,13 @@ bx
 BI
 LD
 bx
-PV
+lx
 Yj
 "}
 (28,1,1) = {"
 Yj
 Yj
-PV
+lx
 bx
 bx
 bx
@@ -5846,15 +5882,15 @@ bx
 bx
 zz
 Iv
-Sw
+Rj
 bx
 bx
 Rg
-Um
+My
 bx
 bx
 bx
-PV
+lx
 Yj
 Yj
 "}
@@ -5865,10 +5901,10 @@ Yj
 Yj
 bx
 aV
-OP
+oQ
 NP
 zM
-fM
+ax
 ve
 Iv
 ph
@@ -5885,15 +5921,15 @@ Yj
 "}
 (30,1,1) = {"
 Yj
-qF
+VR
 Yj
 Yj
 bx
 IF
 Gt
-cA
+HA
 GG
-fM
+ax
 XN
 Iv
 ph
@@ -5905,7 +5941,7 @@ Jm
 bx
 Yj
 Yj
-fO
+DN
 Yj
 "}
 (31,1,1) = {"
@@ -5913,12 +5949,12 @@ Yj
 Yj
 Yj
 Yj
-ys
+pD
 xd
 xd
 Wx
 xg
-fM
+ax
 nA
 Iv
 ph
@@ -5927,7 +5963,7 @@ LE
 Lq
 Ia
 Re
-ju
+Fh
 Yj
 Yj
 Yj
@@ -5935,15 +5971,15 @@ Yj
 "}
 (32,1,1) = {"
 Yj
-HB
+hc
 Yj
 Yj
-ys
-qB
+pD
+fJ
 Pq
 Eo
 uV
-fM
+ax
 aO
 QO
 Zl
@@ -5951,11 +5987,11 @@ bx
 fD
 fL
 kj
-rN
-ju
+Dz
+Fh
 Yj
 Yj
-Go
+VN
 Yj
 "}
 (33,1,1) = {"
@@ -5964,8 +6000,8 @@ Yj
 Yj
 Yj
 Yj
-qB
-qB
+fJ
+fJ
 bx
 bx
 bx
@@ -5975,8 +6011,8 @@ Um
 bx
 bx
 bx
-rN
-rN
+Dz
+Dz
 Yj
 Yj
 Yj
@@ -6016,7 +6052,7 @@ Yj
 Yj
 Yj
 Yj
-ZA
+zy
 fj
 Xe
 Xe
@@ -6024,7 +6060,7 @@ Iv
 ph
 Ek
 mh
-ZA
+zy
 Yj
 Yj
 Yj
@@ -6041,7 +6077,7 @@ Yj
 Yj
 Yj
 Yj
-ZA
+zy
 oF
 Xe
 zv
@@ -6049,13 +6085,13 @@ za
 pJ
 ks
 TE
-ZA
+zy
 Yj
 Yj
 Yj
 Yj
 Yj
-iV
+rS
 Yj
 "}
 (37,1,1) = {"
@@ -6066,7 +6102,7 @@ Yj
 Yj
 Yj
 Yj
-ZA
+zy
 Ln
 Xe
 TZ
@@ -6074,7 +6110,7 @@ ce
 FL
 tf
 mA
-ZA
+zy
 Yj
 Yj
 Yj
@@ -6122,8 +6158,8 @@ bx
 bx
 bx
 EY
-sj
-sj
+vK
+vK
 bx
 Yj
 Yj
@@ -6216,15 +6252,15 @@ Yj
 Yj
 Yj
 Yj
-PV
-Cn
+lx
+Xm
 Pm
 tW
 bx
 if
 Xu
-Cn
-PV
+Xm
+lx
 Yj
 Yj
 Yj
@@ -6242,13 +6278,13 @@ Yj
 Yj
 Yj
 Yj
-Cn
-Er
-Er
+Xm
+vi
+vi
 bx
-Er
-Er
-Cn
+vi
+vi
+Xm
 Yj
 Yj
 Yj
