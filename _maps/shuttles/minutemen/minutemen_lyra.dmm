@@ -487,6 +487,16 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
+"ef" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/warning{
+	dir = 8
+	},
+/obj/item/radio/intercom/directional/west,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "ek" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/trimline/transparent/blue/filled,
@@ -745,11 +755,6 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engine)
-"gG" = (
-/obj/structure/catwalk/over,
-/obj/item/radio/intercom/directional/south,
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
 "gI" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/trimline/transparent/blue/line,
@@ -805,16 +810,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
-"hz" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/opaque/blue/warning{
-	dir = 8
-	},
-/obj/item/radio/intercom/directional/west,
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
 "hA" = (
 /obj/effect/turf_decal/corner/transparent/blue/mono,
 /obj/structure/table/optable,
@@ -2730,6 +2725,17 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
+"wj" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/warning,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/item/radio/intercom/directional/south,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "wm" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 4
@@ -5512,6 +5518,11 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
+"VP" = (
+/obj/structure/catwalk/over,
+/obj/item/radio/intercom/directional/south,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "VQ" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 1
@@ -5660,17 +5671,6 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
-"Xm" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/blue/warning,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 1
-	},
-/obj/item/radio/intercom/directional/south,
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
 "XC" = (
 /obj/machinery/portable_atmospherics/scrubber,
 /obj/effect/turf_decal/trimline/transparent/blue/warning,
@@ -5786,7 +5786,8 @@
 /area/ship/cargo)
 "Ze" = (
 /obj/structure/closet/secure_closet/clip/minutemen/combat_medic{
-	populate = 0
+	populate = 0;
+	req_access = list(1)
 	},
 /obj/item/clothing/under/clip/medic,
 /obj/item/pinpointer/crew,
@@ -6382,7 +6383,7 @@ Gr
 Gr
 oV
 yf
-Xm
+wj
 Np
 yF
 Ve
@@ -6501,7 +6502,7 @@ pz
 IN
 xO
 qj
-hz
+ef
 Uq
 lQ
 XH
@@ -6648,7 +6649,7 @@ rD
 (26,1,1) = {"
 rD
 rD
-gG
+VP
 pj
 Ka
 Yw
