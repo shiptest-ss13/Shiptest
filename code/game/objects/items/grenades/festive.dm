@@ -115,5 +115,3 @@
 	var/explosion_loc = get_turf(src)
 	resolve()
 	explosion(explosion_loc,-1,-1,2)
-
-

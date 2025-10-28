@@ -2,7 +2,7 @@
 	. = ..()
 	if(!.)
 		return
-	adjustBruteLoss(15)
+	apply_damage(15, BRUTE, wound_bonus=10)
 	var/hitverb = "hit"
 	if(mob_size < MOB_SIZE_LARGE)
 		safe_throw_at(get_edge_target_turf(src, get_dir(user, src)), 2, 1, user)

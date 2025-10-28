@@ -58,21 +58,6 @@
 	SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, "dumb")
 	..()
 
-/datum/brain_trauma/mild/speech_impediment
-	name = "Speech Impediment"
-	desc = "Patient is unable to form coherent sentences."
-	scan_desc = "communication disorder"
-	gain_text = span_danger("You can't seem to form any coherent thoughts!")
-	lose_text = span_danger("Your mind feels more clear.")
-
-/datum/brain_trauma/mild/speech_impediment/on_gain()
-	ADD_TRAIT(owner, TRAIT_UNINTELLIGIBLE_SPEECH, TRAUMA_TRAIT)
-	..()
-
-/datum/brain_trauma/mild/speech_impediment/on_lose()
-	REMOVE_TRAIT(owner, TRAIT_UNINTELLIGIBLE_SPEECH, TRAUMA_TRAIT)
-	..()
-
 /datum/brain_trauma/mild/concussion
 	name = "Concussion"
 	desc = "Patient's brain is concussed."
@@ -86,7 +71,7 @@
 			if(1)
 				owner.vomit()
 			if(2,3)
-				owner.dizziness += 10
+				owner.adjust_timed_status_effect(20 SECONDS, /datum/status_effect/dizziness)
 			if(4,5)
 				owner.confused += 10
 				owner.blur_eyes(10)
@@ -183,87 +168,8 @@
 		owner.emote("cough")
 	..()
 
-/datum/brain_trauma/mild/expressive_aphasia
-	name = "Expressive Aphasia"
-	desc = "Patient is affected by partial loss of speech leading to a reduced vocabulary."
-	scan_desc = "inability to form complex sentences"
-	gain_text = span_warning("You lose your grasp on complex words.")
-	lose_text = span_notice("You feel your vocabulary returning to normal again.")
-
-	var/static/list/common_words = world.file2list("strings/1000_most_common.txt")
-
-/datum/brain_trauma/mild/expressive_aphasia/handle_speech(datum/source, list/speech_args)
-	var/message = speech_args[SPEECH_MESSAGE]
-	if(message)
-		var/list/message_split = splittext(message, " ")
-		var/list/new_message = list()
-
-		for(var/word in message_split)
-			var/suffix = ""
-			var/suffix_foundon = 0
-			for(var/potential_suffix in list("." , "," , ";" , "!" , ":" , "?"))
-				suffix_foundon = findtext(word, potential_suffix, -length(potential_suffix))
-				if(suffix_foundon)
-					suffix = potential_suffix
-					break
-
-			if(suffix_foundon)
-				word = copytext(word, 1, suffix_foundon)
-			word = html_decode(word)
-
-			if(lowertext(word) in common_words)
-				new_message += word + suffix
-			else
-				if(prob(30) && message_split.len > 2)
-					new_message += pick("uh","erm")
-					break
-				else
-					var/list/charlist = text2charlist(word)
-					charlist.len = round(charlist.len * 0.5, 1)
-					shuffle_inplace(charlist)
-					new_message += jointext(charlist, "") + suffix
-
-		message = jointext(new_message, " ")
-
-	speech_args[SPEECH_MESSAGE] = trim(message)
-
-/datum/brain_trauma/mild/mind_echo
-	name = "Mind Echo"
-	desc = "Patient's language neurons do not terminate properly, causing previous speech patterns to occasionally resurface spontaneously."
-	scan_desc = "looping neural pattern"
-	gain_text = span_warning("You feel a faint echo of your thoughts...")
-	lose_text = span_notice("The faint echo fades away.")
-	var/list/hear_dejavu = list()
-	var/list/speak_dejavu = list()
-
-/datum/brain_trauma/mild/mind_echo/handle_hearing(datum/source, list/hearing_args)
-	if(owner == hearing_args[HEARING_SPEAKER])
-		return
-	if(hear_dejavu.len >= 5)
-		if(prob(25))
-			var/deja_vu = pick_n_take(hear_dejavu)
-			var/static/regex/quoted_spoken_message = regex("\".+\"", "gi")
-			hearing_args[HEARING_RAW_MESSAGE] = quoted_spoken_message.Replace(hearing_args[HEARING_RAW_MESSAGE], "\"[deja_vu]\"") //Quotes included to avoid cases where someone says part of their name
-			return
-	if(hear_dejavu.len >= 15)
-		if(prob(50))
-			popleft(hear_dejavu) //Remove the oldest
-			hear_dejavu += hearing_args[HEARING_RAW_MESSAGE]
-	else
-		hear_dejavu += hearing_args[HEARING_RAW_MESSAGE]
-
-/datum/brain_trauma/mild/mind_echo/handle_speech(datum/source, list/speech_args)
-	if(speak_dejavu.len >= 5)
-		if(prob(25))
-			var/deja_vu = pick_n_take(speak_dejavu)
-			speech_args[SPEECH_MESSAGE] = deja_vu
-			return
-	if(speak_dejavu.len >= 15)
-		if(prob(50))
-			popleft(speak_dejavu) //Remove the oldest
-			speak_dejavu += speech_args[SPEECH_MESSAGE]
-	else
-		speak_dejavu += speech_args[SPEECH_MESSAGE]
+///Commented out until I make it a status effect (probably next week)
+/*
 
 /datum/brain_trauma/mild/monoxide_poisoning_stage1
 	name = "Stage 1 Carbon Monoxide Poisoning"
@@ -352,7 +258,7 @@
 			if(1)
 				owner.vomit()
 			if(2,3)
-				owner.dizziness += 10
+				owner.owner.adjust_timed_status_effect(20 SECONDS, /datum/status_effect/dizziness)
 			if(4,5)
 				owner.confused += 10
 				owner.blur_eyes(10)
@@ -366,3 +272,4 @@
 				owner.Unconscious(80)
 
 	..()
+*/

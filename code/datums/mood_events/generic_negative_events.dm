@@ -2,10 +2,6 @@
 	description = span_warning("I guess my antics have finally caught up with me.")
 	mood_change = -1
 
-/datum/mood_event/broken_vow //Used for when mimes break their vow of silence
-	description = span_boldwarning("I have brought shame upon my name, and betrayed my fellow mimes by breaking our sacred vow...")
-	mood_change = -8
-
 /datum/mood_event/on_fire
 	description = span_boldwarning("I'M ON FIRE!!!")
 	mood_change = -12
@@ -117,6 +113,11 @@
 	description = span_warning("I just threw up all over myself. This is disgusting.")
 	mood_change = -4
 	timeout = 3 MINUTES
+
+/datum/mood_event/uncomfortable_medicine
+	description = span_warning("Medicine may be good for me, but right now I feel worse.")
+	mood_change = -3
+	timeout = 120 SECONDS
 
 /datum/mood_event/painful_medicine
 	description = span_warning("Medicine may be good for me but right now it stings like hell.")

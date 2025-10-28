@@ -1,4 +1,15 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"au" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 4;
+	dwidth = 15;
+	height = 30;
+	name = "Arke Forward Bow Dock";
+	width = 40
+	},
+/turf/template_noop,
+/area/space)
 "aD" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -161,10 +172,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
-/obj/machinery/door/poddoor/shutters{
-	dir = 8;
-	id = "arke_engi_lockdown"
-	},
 /turf/open/floor/plating,
 /area/ship/external/dark)
 "fg" = (
@@ -204,6 +211,7 @@
 /obj/item/clothing/head/clip/slouch,
 /obj/item/clothing/shoes/laceup,
 /obj/item/storage/backpack/satchel/cap,
+/obj/item/clothing/accessory/clip_formal_overshirt,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "hu" = (
@@ -257,6 +265,14 @@
 /obj/item/clothing/under/clip/medic,
 /obj/item/clothing/under/clip,
 /obj/item/clothing/under/clip,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/head/soft/utility_navy,
+/obj/item/clothing/head/soft/utility_navy,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/suit/hooded/wintercoat,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "jr" = (
@@ -299,48 +315,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
-"kg" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 8
-	},
-/obj/structure/table/reinforced,
-/obj/machinery/door/window/brigdoor/northleft{
-	req_access = list(1)
-	},
-/obj/item/clothing/suit/armor/vest{
-	pixel_y = 3
-	},
-/obj/item/clothing/suit/armor/vest{
-	pixel_y = 3
-	},
-/obj/item/clothing/head/helmet/bulletproof/m10{
-	pixel_y = 1
-	},
-/obj/item/clothing/head/helmet/bulletproof/m10{
-	pixel_y = 1
-	},
-/obj/item/storage/box/ammo/c10mm{
-	pixel_y = -3
-	},
-/obj/item/storage/box/ammo/c10mm{
-	pixel_y = -3
-	},
-/obj/item/reagent_containers/spray/pepper{
-	pixel_y = 3;
-	pixel_x = 9
-	},
-/obj/item/reagent_containers/spray/pepper{
-	pixel_y = 3;
-	pixel_x = 9
-	},
-/turf/open/floor/pod/dark,
-/area/ship/cargo)
 "lm" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
@@ -371,6 +345,16 @@
 	dir = 4
 	},
 /area/ship/engineering)
+"lV" = (
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
+/obj/docking_port/mobile{
+	dir = 8;
+	preferred_direction = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "mD" = (
 /obj/effect/spawner/bunk_bed,
 /obj/structure/curtain/cloth,
@@ -386,16 +370,6 @@
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
-"mR" = (
-/obj/docking_port/mobile{
-	dir = 2;
-	launch_status = 0;
-	port_direction = 8;
-	preferred_direction = 4;
-	name = "arke dock"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew)
 "na" = (
 /obj/machinery/button/door{
 	dir = 1;
@@ -584,6 +558,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"rt" = (
+/obj/docking_port/stationary{
+	width = 40;
+	height = 15;
+	dwidth = 1;
+	dheight = 3;
+	name = "Arke Port Dock"
+	},
+/turf/template_noop,
+/area/space)
 "ru" = (
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate,
@@ -701,16 +685,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"tV" = (
-/obj/docking_port/stationary{
-	width = 30;
-	height = 15;
-	dwidth = 7;
-	name = "Arke External Airlock";
-	dir = 4
-	},
-/turf/template_noop,
-/area/space)
 "tY" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -766,12 +740,6 @@
 /obj/item/melee/knife/kitchen,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
-"uW" = (
-/obj/machinery/door/airlock/external{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/cargo)
 "ve" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Bathroom";
@@ -827,6 +795,15 @@
 	dir = 6
 	},
 /obj/machinery/light/directional/south,
+/obj/structure/filingcabinet/chestdrawer{
+	pixel_x = 6;
+	dir = 8;
+	density = 0
+	},
+/obj/item/folder/yellow,
+/obj/item/folder/white,
+/obj/item/pen,
+/obj/item/pen,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "wF" = (
@@ -865,6 +842,48 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
+/area/ship/cargo)
+"xA" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/brigdoor/northleft{
+	req_access = list(1)
+	},
+/obj/item/clothing/suit/armor/vest{
+	pixel_y = 3
+	},
+/obj/item/clothing/suit/armor/vest{
+	pixel_y = 3
+	},
+/obj/item/clothing/head/helmet/m10{
+	pixel_y = 1
+	},
+/obj/item/clothing/head/helmet/m10{
+	pixel_y = 1
+	},
+/obj/item/storage/box/ammo/c10mm{
+	pixel_y = -3
+	},
+/obj/item/storage/box/ammo/c10mm{
+	pixel_y = -3
+	},
+/obj/item/reagent_containers/spray/pepper{
+	pixel_y = 3;
+	pixel_x = 9
+	},
+/obj/item/reagent_containers/spray/pepper{
+	pixel_y = 3;
+	pixel_x = 9
+	},
+/turf/open/floor/pod/dark,
 /area/ship/cargo)
 "yu" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -939,7 +958,11 @@
 /obj/effect/turf_decal/box{
 	color = "#75A2BB"
 	},
-/obj/machinery/suit_storage_unit/standard_unit,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/tank/internals/oxygen,
+/obj/item/clothing/mask/gas/clip,
+/obj/item/clothing/suit/space/clip/armored,
+/obj/item/clothing/head/helmet/space/clip/armored,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "AP" = (
@@ -1147,6 +1170,10 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 8;
+	id = "arke_engi_lockdown"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Gw" = (
@@ -1335,16 +1362,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
-"Ly" = (
-/obj/docking_port/stationary{
-	width = 30;
-	height = 15;
-	dwidth = 1;
-	dheight = 3;
-	name = "Arke Cargo Bay"
-	},
-/turf/template_noop,
-/area/space)
 "LX" = (
 /obj/structure/dresser{
 	dir = 8
@@ -1452,7 +1469,13 @@
 /obj/effect/turf_decal/box{
 	color = "#75A2BB"
 	},
-/obj/machinery/suit_storage_unit/standard_unit,
+/obj/machinery/suit_storage_unit/inherit{
+	name = "engineering suit storage unit"
+	},
+/obj/item/clothing/head/helmet/space/clip,
+/obj/item/clothing/suit/space/clip,
+/obj/item/tank/internals/oxygen,
+/obj/item/clothing/mask/gas/clip,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Oy" = (
@@ -1708,7 +1731,7 @@
 	pixel_y = 9
 	},
 /obj/structure/table/reinforced,
-/obj/item/stamp/clip{
+/obj/item/stamp/clip/land{
 	pixel_x = -8;
 	pixel_y = -6
 	},
@@ -2037,7 +2060,7 @@ EK
 mD
 LX
 HU
-mR
+cP
 "}
 (12,1,1) = {"
 pS
@@ -2071,7 +2094,7 @@ DP
 "}
 (14,1,1) = {"
 es
-Ly
+rt
 cu
 zs
 KX
@@ -2152,7 +2175,7 @@ lm
 lm
 SD
 MK
-kg
+xA
 lm
 pt
 Xl
@@ -2255,7 +2278,7 @@ es
 es
 es
 DB
-uW
+lV
 lm
 es
 bF
@@ -2270,7 +2293,7 @@ es
 es
 es
 es
-tV
+au
 es
 es
 es

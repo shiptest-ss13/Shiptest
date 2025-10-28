@@ -53,7 +53,7 @@
 	. = ..()
 	if(isliving(target))
 		var/mob/living/living_target = target
-		living_target.adjust_jitter(5)
+		living_target.set_timed_status_effect(10 SECONDS, /datum/status_effect/jitter)
 
 /obj/projectile/temp/basilisk/heated
 	name = "energy blast"
@@ -220,7 +220,7 @@
 	speak_emote = list("telepathically cries")
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	stat_attack = UNCONSCIOUS
-	movement_type = FLYING
+	is_flying_animal = TRUE
 	robust_searching = 1
 	attack_same = TRUE		// So we'll fight basilisks
 	mob_trophy = /obj/item/mob_trophy/watcher_wing

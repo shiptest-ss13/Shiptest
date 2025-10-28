@@ -59,7 +59,7 @@
 			if(!L.stat)
 				if(!L.incapacitated(ignore_restraints = 1))
 					L.face_atom(src)
-				L.do_alert_animation(L)
+				L.do_alert_animation()
 		playsound(loc, 'sound/machines/chime.ogg', 50, FALSE, -5)
 
 /// Does the MGS ! animation

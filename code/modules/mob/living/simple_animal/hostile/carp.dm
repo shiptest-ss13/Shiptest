@@ -34,6 +34,7 @@
 	attack_verb_continuous = "bites"
 	attack_verb_simple = "bite"
 	attack_sound = 'sound/weapons/bite.ogg'
+	sharpness = SHARP_POINTY
 	speak_emote = list("gnashes")
 
 	//Space carp aren't affected by cold.
@@ -41,7 +42,7 @@
 	minbodytemp = 0
 	maxbodytemp = 1500
 	faction = list("carp", "mining")
-	movement_type = FLYING
+	is_flying_animal = TRUE
 	pressure_resistance = 200
 
 	var/random_color = TRUE //if the carp uses random coloring

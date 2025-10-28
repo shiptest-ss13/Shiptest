@@ -11,7 +11,7 @@
 /obj/projectile/bullet/csour
 	damage = 0
 	stamina = 60
-	jitter = 30
+	jitter = 30 SECONDS
 	stutter = 10
 	slur = 10
 	knockdown = 5

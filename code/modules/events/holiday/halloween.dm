@@ -39,13 +39,13 @@
 /obj/effect/spawner/random/food_or_drink/mexapix
 	spawn_loot_count = 5
 	loot = list(
-			/obj/item/reagent_containers/food/snacks/sucrika = 10,
+			/obj/item/food/sucrika = 10,
 			/obj/effect/spawner/random/entertainment/mexapix_trinkets = 2,
 			/obj/item/food/cookie/sugar/spookyskull = 1,
-			/obj/item/reagent_containers/food/snacks/candy_corn = 1,
-			/obj/item/reagent_containers/food/snacks/candy = 1,
-			/obj/item/reagent_containers/food/snacks/candiedapple = 1,
-			/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
+			/obj/item/food/candy_corn = 1,
+			/obj/item/food/candy = 1,
+			/obj/item/food/candiedapple = 1,
+			/obj/item/food/chocolatebar = 1,
 		)
 
 /obj/effect/spawner/random/entertainment/mexapix_trinkets
@@ -93,8 +93,8 @@
 		/obj/item/storage/box/papersack/mexapix_candy,
 		/obj/item/storage/box/papersack/mexapix_candy,
 		/obj/item/storage/box/papersack/mexapix_candy,
-		/obj/item/reagent_containers/food/drinks/bottle/koerbalk,
-		/obj/item/reagent_containers/food/drinks/bottle/koerbalk,
+		/obj/item/food/drinks/bottle/koerbalk,
+		/obj/item/food/drinks/bottle/koerbalk,
 	)
 
 /obj/item/leaves
@@ -108,38 +108,38 @@
 	taste_description = "fermented indigenous nuts and herbs"
 	boozepwr = 5
 
-/obj/item/reagent_containers/food/drinks/bottle/koerbalk
+/obj/item/food/drinks/bottle/koerbalk
 	name = "bottle of koerbalk"
 	desc = "A bottle of koerbalk produced by a CLIP firm."
 	icon_state = "mintbottle"
-	list_reagents = list(/datum/reagent/consumable/ethanol/koerbalk = 50)
+	food_reagents = list(/datum/reagent/consumable/ethanol/koerbalk = 50)
 	var/mixing_sticks_left = 5
 
-/obj/item/reagent_containers/food/drinks/bottle/koerbalk/examine(mob/user)
+/obj/item/food/drinks/bottle/koerbalk/examine(mob/user)
 	. = ..()
 	. += "It has [mixing_sticks_left] mixing sticks attached to the side of the container"
 	. += "You can <b>Ctrl-Click</b> [src] to remove one."
 
-/obj/item/reagent_containers/food/drinks/bottle/koerbalk/CtrlClick(mob/user)
+/obj/item/food/drinks/bottle/koerbalk/CtrlClick(mob/user)
 	. = ..()
 	if(isliving(user) && in_range(src, user))
 		if(mixing_sticks_left > 0)
 			mixing_sticks_left--
 			to_chat(user, "You pull off a suger encrusted stick from the side of [src].")
 			var/turf/local_turf = get_turf(src)
-			var/obj/item/reagent_containers/food/snacks/chewable/mixing_stick/pulled_stick = new(local_turf)
+			var/obj/item/food/chewable/mixing_stick/pulled_stick = new(local_turf)
 			if(!user.put_in_hands(pulled_stick))
 				to_chat(user, "You fumble as [pulled_stick] falls to the ground.")
 
-/obj/item/reagent_containers/food/snacks/chewable/mixing_stick
+/obj/item/food/chewable/mixing_stick
 	name = "koerbalk mixing stick"
 	icon = 'icons/obj/halloween_items.dmi'
 	icon_state = "mixstick_sugar_white"
 	item_state = "lollipop_stick"
 	desc = "Encrusted in sugar."
-	list_reagents = list(/datum/reagent/consumable/sugar = 10)
+	food_reagents = list(/datum/reagent/consumable/sugar = 10)
 	custom_materials = list(/datum/material/wood = 20)
-	foodtype = SUGAR
+	foodtypes = SUGAR
 	w_class = WEIGHT_CLASS_TINY
 	force = 0
 
@@ -150,7 +150,7 @@
 		/obj/item/food/grown = 5,
 		/datum/reagent/consumable/ethanol/wine = 10
 	)
-	result = /obj/item/reagent_containers/food/brextak_uncooked
+	result = /obj/item/food/brextak_uncooked
 	subcategory = CAT_MEAT
 
 /datum/crafting_recipe/food/brextak_big
@@ -160,64 +160,64 @@
 		/obj/item/food/grown = 20,
 		/datum/reagent/consumable/ethanol/wine = 40
 	)
-	result = /obj/item/reagent_containers/food/brextak_uncooked/big
+	result = /obj/item/food/brextak_uncooked/big
 	subcategory = CAT_MEAT
 
-/obj/item/reagent_containers/food/snacks/brextak
+/obj/item/food/brextak
 	name = "brextak"
 	desc = "A slow-roasted dish prepared with red meat, wine and various root vegetables in a ceramic dish over low heat for several hours."
 	icon_state = "shepherds_pie"
 	icon = 'icons/obj/halloween_items.dmi'
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 5)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 50)
-	slice_path = /obj/item/reagent_containers/food/snacks/brextak/slice
-	slices_num = 5
-	filling_color = "#FA8072"
+	//bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 5)
+	food_reagents = list(/datum/reagent/consumable/nutriment = 50)
+	//slice_path = /obj/item/food/brextak/slice
+	//slices_num = 5
+	//filling_color = "#FA8072"
 	tastes = list("mexapix" = 1)
-	foodtype = MEAT | VEGETABLES | ALCOHOL
+	foodtypes = MEAT | VEGETABLES | ALCOHOL
 	resistance_flags = FIRE_PROOF
 
-/obj/item/reagent_containers/food/brextak_uncooked
+/obj/item/food/brextak_uncooked
 	name = "uncooked brextak"
 	icon_state = "shepherds_pie"
 	icon = 'icons/obj/halloween_items.dmi'
-	list_reagents = list()
-	foodtype = RAW
-	var/obj/item/cooked_type = /obj/item/reagent_containers/food/snacks/brextak
+	food_reagents = list()
+	foodtypes = RAW
+	var/obj/item/cooked_type = /obj/item/food/brextak
 
-/obj/item/reagent_containers/food/brextak_uncooked/burn()
+/obj/item/food/brextak_uncooked/burn()
 	visible_message(span_notice("[src] finishes cooking!"))
 	new cooked_type(loc)
 	qdel(src)
 
-/obj/item/reagent_containers/food/snacks/brextak/big
+/obj/item/food/brextak/big
 	name = "communal brextak"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 150)
-	slices_num = 20
+	food_reagents = list(/datum/reagent/consumable/nutriment = 150)
+	//slices_num = 20
 	w_class = WEIGHT_CLASS_BULKY
-	bitesize = 20
-	volume = 200
+	//bitesize = 20
+	//volume = 200
 
-/obj/item/reagent_containers/food/brextak_uncooked/big
+/obj/item/food/brextak_uncooked/big
 	name = "uncooked communal brextak"
-	cooked_type = /obj/item/reagent_containers/food/snacks/brextak/big
+	cooked_type = /obj/item/food/brextak/big
 
-/obj/item/reagent_containers/food/snacks/brextak/slice
+/obj/item/food/brextak/slice
 	name = "slice of brextak"
 	icon_state = "shepherds_pie_slice"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
-	slice_path = null
+	food_reagents = list(/datum/reagent/consumable/nutriment = 10)
+	//slice_path = null
 	resistance_flags = NONE
 
-/obj/item/reagent_containers/food/snacks/sucrika
+/obj/item/food/sucrika
 	name = "sucrika"
 	desc = "Boiled, dryed, and candied. A mix of various fruits and nuts, which are wrapped in wax paper and eaten as snacks throughout the day as part of Mexapix"
 	icon_state = "sucrika"
 	icon = 'icons/obj/halloween_items.dmi'
-	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/sugar = 2)
-	filling_color = "#FF8C00"
+	food_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/sugar = 2)
+	//filling_color = "#FF8C00"
 	tastes = list("nuts" = 1, "dried fruits" = 1)
-	foodtype = FRUIT | SUGAR
+	foodtypes = FRUIT | SUGAR
 	w_class = WEIGHT_CLASS_TINY
 
 //A debug item

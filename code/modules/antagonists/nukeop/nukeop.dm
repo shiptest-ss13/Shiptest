@@ -2,6 +2,7 @@
 	name = "Nuclear Operative"
 	roundend_category = "syndicate operatives" //just in case
 	antagpanel_category = "NukeOp"
+	show_in_antagpanel = FALSE
 	job_rank = ROLE_OPERATIVE
 	antag_hud_type = ANTAG_HUD_OPS
 	antag_hud_name = "synd"

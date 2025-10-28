@@ -173,6 +173,9 @@
 /turf/open/floor/plating/rust/plasma
 	initial_gas_mix = "plasma=104;TEMP=293.15"
 
+/turf/open/floor/plating/rust/airless
+	initial_gas_mix = AIRLESS_ATMOS
+
 /turf/open/floor/plasteel/telecomms_floor
 	icon_state = "tcomms"
 	base_icon_state = "tcomms"
@@ -223,9 +226,12 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
+	MAP_SWITCH(pixel_x = 0, pixel_x = -19)
+	MAP_SWITCH(pixel_y = 0, pixel_y = -19)
 	layer = HIGH_TURF_LAYER
 	icon_state = "grass-255"
 	base_icon_state = "grass"
+	icon = 'icons/turf/floors/grass.dmi'
 	var/smooth_icon = 'icons/turf/floors/grass.dmi'
 	baseturfs = /turf/open/floor/ship/dirt
 
@@ -243,6 +249,7 @@
 	icon_state = "grass-255"
 	base_icon_state = "grass"
 	baseturfs = /turf/open/floor/ship/dirt/dark
+	icon = 'icons/turf/floors/junglegrass.dmi'
 	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
 
 /turf/open/floor/plating/ship/water

@@ -339,11 +339,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	chem_volume = 60
 	smoketime = 2 * 60
 	smoke_all = TRUE
-	list_reagents = list(/datum/reagent/drug/nicotine = 10, /datum/reagent/medicine/omnizine = 15)
-
-/obj/item/clothing/mask/cigarette/xeno
-	desc = "A Xeno Filtered brand cigarette."
-	list_reagents = list (/datum/reagent/drug/nicotine = 20, /datum/reagent/medicine/regen_jelly = 15)
+	list_reagents = list(/datum/reagent/drug/nicotine = 10, /datum/reagent/medicine/panacea = 15)
 
 // Rollies.
 
@@ -386,12 +382,10 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_off = "candyoff" //make sure to add positional sprites in icons/obj/cigarettes.dmi if you add more.
 	item_state = "candyoff"
 	icon_state = "candyoff"
-	type_butt = /obj/item/reagent_containers/food/snacks/candy_trash
 	list_reagents = list(/datum/reagent/consumable/sugar = 10, /datum/reagent/consumable/caramel = 10)
 
 /obj/item/clothing/mask/cigarette/candy/nicotine
 	desc = "For all ages*! Doesn't contain any* amount of nicotine. Health and safety risks can be read on the tip of the cigarette."
-	type_butt = /obj/item/reagent_containers/food/snacks/candy_trash/nicotine
 	list_reagents = list(/datum/reagent/consumable/sugar = 10, /datum/reagent/consumable/caramel = 10, /datum/reagent/drug/nicotine = 20) //oh no!
 	smoke_all = TRUE //timmy's not getting out of this one
 
@@ -746,7 +740,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	heat = 3000 //Blue flame!
 	light_color = LIGHT_COLOR_CYAN
 	overlay_state = "slime"
-	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/medicine/pyroxadone = 5)
+	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5)
 
 /obj/item/lighter/clockwork
 	name = "bronze zippo"

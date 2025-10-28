@@ -447,9 +447,12 @@
 		return FALSE	//welp too late for them!
 
 	var/can_inject = FALSE
-	for(var/X in C.bodyparts)
-		var/obj/item/bodypart/part = X
-		if(IS_ORGANIC_LIMB(part))
+	var/obj/item/bodypart/body_part
+	for(var/zone in C.bodyparts)
+		body_part = C.bodyparts[zone]
+		if(!body_part)
+			continue
+		if(IS_ORGANIC_LIMB(body_part))
 			can_inject = TRUE
 	if(!can_inject)
 		return 0
@@ -564,7 +567,7 @@
 			treatment_method = TOX
 
 		if(!treatment_method && emagged != 2) //If they don't need any of that they're probably cured!
-			if(C.maxHealth - C.health < heal_threshold)
+			if(C.maxHealth - C.get_organic_health() < heal_threshold)
 				to_chat(src, span_notice("[C] is healthy! Your programming prevents you from injecting anyone without at least [heal_threshold] damage of any one type ([heal_threshold + 5] for oxygen damage.)"))
 			var/list/messagevoice = list("All patched up!" = 'sound/voice/medbot/patchedup.ogg',"An apple a day keeps me away." = 'sound/voice/medbot/apple.ogg',"Feel better soon!" = 'sound/voice/medbot/feelbetter.ogg')
 			var/message = pick(messagevoice)

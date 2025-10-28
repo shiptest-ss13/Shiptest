@@ -142,8 +142,18 @@
 	///What kind of footstep this mob should have. Null if it shouldn't have any.
 	var/footstep_type
 
-	/// Base armor value on this mob for running armor checks
-	var/datum/armor/armor
+	///How much wounding power it has
+	var/wound_bonus = 5
+	///How much bare wounding power it has
+	var/bare_wound_bonus = 0
+	///If the attacks from this are sharp
+	var/sharpness = SHARP_NONE
+	///Generic flags
+	var/simple_mob_flags = NONE
+
+	///If the creature should have an innate TRAIT_MOVE_FLYING trait added on init that is also toggled off/on on death/revival.
+	var/is_flying_animal = FALSE
+
 
 
 /mob/living/simple_animal/Initialize(mapload)
@@ -163,6 +173,8 @@
 		stack_trace("Simple animal being instantiated in nullspace")
 	if(dextrous)
 		AddComponent(/datum/component/personal_crafting)
+	if(is_flying_animal)
+		ADD_TRAIT(src, TRAIT_MOVE_FLYING, ROUNDSTART_TRAIT)
 	if(footstep_type)
 		AddComponent(/datum/component/footstep, footstep_type)
 
@@ -181,6 +193,16 @@
 		QDEL_NULL(access_card)
 
 	return ..()
+
+/mob/living/simple_animal/vv_edit_var(var_name, var_value)
+	. = ..()
+	switch(var_name)
+		if(NAMEOF(src, is_flying_animal))
+			if(stat != DEAD)
+				if(!is_flying_animal)
+					REMOVE_TRAIT(src, TRAIT_MOVE_FLYING, ROUNDSTART_TRAIT)
+				else
+					ADD_TRAIT(src, TRAIT_MOVE_FLYING, ROUNDSTART_TRAIT)
 
 /mob/living/simple_animal/getarmor(def_zone, type)
 	if(armor)
@@ -201,10 +223,6 @@
 			tamed(user)
 		else
 			tame_chance += bonus_tame_chance
-
-///Extra effects to add when the mob is tamed, such as adding a riding component
-/mob/living/simple_animal/proc/tamed(whomst)
-	return
 
 /mob/living/simple_animal/examine(mob/user)
 	. = ..()
@@ -398,7 +416,6 @@
 			new i(loc)
 
 /mob/living/simple_animal/death(gibbed)
-	movement_type &= ~FLYING
 	if(nest)
 		nest.spawned_mobs -= src
 		nest = null
@@ -415,6 +432,8 @@
 		del_on_death = FALSE
 		qdel(src)
 	else
+		if(is_flying_animal)
+			REMOVE_TRAIT(src, TRAIT_MOVE_FLYING, ROUNDSTART_TRAIT)
 		health = 0
 		icon_state = icon_dead
 		if(flip_on_death)
@@ -456,7 +475,8 @@
 	icon = initial(icon)
 	icon_state = icon_living
 	density = initial(density)
-	setMovetype(initial(movement_type))
+	if(is_flying_animal)
+		ADD_TRAIT(src, TRAIT_MOVE_FLYING, ROUNDSTART_TRAIT)
 
 
 /mob/living/simple_animal/proc/make_babies() // <3 <3 <3
@@ -517,19 +537,6 @@
 	else
 		REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, RESTING_TRAIT)
 	return ..()
-
-
-/mob/living/simple_animal/update_transform()
-	var/matrix/ntransform = matrix(transform) //aka transform.Copy()
-	var/changed = FALSE
-
-	if(resize != RESIZE_DEFAULT_SIZE)
-		changed = TRUE
-		ntransform.Scale(resize)
-		resize = RESIZE_DEFAULT_SIZE
-
-	if(changed)
-		animate(src, transform = ntransform, time = 2, easing = EASE_IN|EASE_OUT)
 
 /mob/living/simple_animal/proc/sentience_act() //Called when a simple animal gains sentience via gold slime potion
 	toggle_ai(AI_OFF) // To prevent any weirdness.

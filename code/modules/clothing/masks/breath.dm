@@ -5,6 +5,7 @@
 	item_state = "m_mask"
 	body_parts_covered = 0
 	clothing_flags = ALLOWINTERNALS //WS Port - Cit Internals
+	supports_variations = SNOUTED_VARIATION | KEPORI_VARIATION | VOX_VARIATION
 	visor_flags = ALLOWINTERNALS
 	w_class = WEIGHT_CLASS_SMALL
 	gas_transfer_coefficient = 0.1
@@ -43,3 +44,13 @@
 	item_state = "m_mask"
 	permeability_coefficient = 0.01
 	equip_delay_other = 10
+	supports_variations = SNOUTED_VARIATION | KEPORI_VARIATION | VOX_VARIATION
+
+/obj/item/clothing/mask/breath/facemask
+	name = "face mask"
+	desc = "A face mask that covers the nose, mouth and neck of those who wear it. It can be connected to an air supply."
+	icon_state = "facemask"
+	item_state = "facemask"
+	mob_overlay_icon = 'icons/mob/clothing/mask.dmi'
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | KEPORI_VARIATION
+	alternate_worn_layer = BELT_LAYER

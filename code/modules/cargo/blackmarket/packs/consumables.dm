@@ -1,26 +1,15 @@
 /datum/blackmarket_item/consumable
 	category = "Consumables"
 
-/datum/blackmarket_item/consumable/donk_pocket_box
-	name = "Box of Donk Pockets"
-	desc = "A well packaged box containing the favourite snack of every spacefarer."
-	item = /obj/effect/spawner/random/food_or_drink/donkpockets
-
-	stock_min = 2
-	stock_max = 5
-	cost_min = 325
-	cost_max = 400
-	availability_prob = 80
-
 /datum/blackmarket_item/consumable/suspicious_pills
 	name = "Bottle of Suspicious Pills"
 	desc = "A random cocktail of luxury drugs that are sure to put a smile on your face!"
 	item = /obj/item/storage/pill_bottle
 
-	stock_min = 4
-	stock_max = 6
 	cost_min = 50
 	cost_max = 300
+	stock_min = 4
+	stock_max = 6
 	availability_prob = 50
 
 /datum/blackmarket_item/consumable/suspicious_pills/spawn_item(loc)
@@ -36,10 +25,9 @@
 	desc = "The Russian Roulette of the Maintenance Tunnels."
 	item = /obj/item/reagent_containers/pill/floorpill
 
-	stock_min = 5
-	stock_max = 35
-	cost_min = 10
-	cost_max = 60
+	cost_min = 5
+	cost_max = 15
+	stock = INFINITY
 	availability_prob = 50
 
 /datum/blackmarket_item/consumable/cannabis
@@ -47,26 +35,26 @@
 	desc = "Homegrown cannabis, fresh off the garden just for your pleasure!"
 	item = /obj/item/food/grown/cannabis
 
-	stock_min = 4
-	stock_max = 6
 	cost_min = 50
 	cost_max = 300
+	stock_min = 4
+	stock_max = 6
 	availability_prob = 50
 
 /datum/blackmarket_item/consumable/syndie_cigs
 	name = "Syndicate Cigarettes"
-	desc = "Who said smoking was bad for you? These omnizine laced cigarettes will have you feeling like a million bucks!"
+	desc = "Who said smoking was bad for you? These Panacea laced cigarettes will have you feeling like a million bucks!"
 	item = /obj/item/storage/fancy/cigarettes/cigpack_syndicate
 
-	stock_min = 4
-	stock_max = 6
 	cost_min = 50
 	cost_max = 300
+	stock_min = 4
+	stock_max = 6
 	availability_prob = 50
 
 /datum/blackmarket_item/consumable/trickwine
 	name = "Trickwine"
-	desc = "The SRM keeps the recipes for their trickwines a closely guarded secret. The Hunters carrying those bottles? Less so."
+	desc = "The SRM keeps the recipes for their trickwines closely guarded. The Hunters carrying those bottles? Less so."
 	item = /datum/reagent/consumable/ethanol/trickwine/ash_wine
 
 	cost_min = 300
@@ -89,7 +77,7 @@
 /datum/blackmarket_item/consumable/stimpack
 	name = "Stimpack"
 	desc = "A quick inject medipen loaded with a cocktail of powerful stimulants. Side effects may include nasuea, heartburn, constipation, weight loss, increased blood pressure, kidney stones, liver damage, mood swings, mania, anemia, weight gain, total organ failure, runny nose and minor retinal irritation."
-	item = /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor
+	item = /obj/item/reagent_containers/hypospray/medipen/stimpack/crisis
 
 	stock_min = 4
 	stock_max = 6
@@ -113,8 +101,8 @@
 	desc = "Cyanide, a tried and true classic for all your poisoning needs."
 	item = /obj/item/reagent_containers/glass/bottle/cyanide
 
-	cost_min = 200
-	cost_max = 400
+	cost_min = 100
+	cost_max = 200
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 30
@@ -124,8 +112,8 @@
 	desc = "Sodium Thiopental, a potent and fast acting sedative for any occasion."
 	item = /obj/item/reagent_containers/glass/bottle/sodium_thiopental
 
-	cost_min = 250
-	cost_max = 600
+	cost_min = 100
+	cost_max = 250
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 30
@@ -135,22 +123,11 @@
 	desc = "A slow acting, but nearly undetectable poison. For the dignified assassin."
 	item = /obj/item/reagent_containers/glass/bottle/amanitin
 
-	cost_min = 300
-	cost_max =  600
+	cost_min = 150
+	cost_max = 250
 	stock_max = 2
 	stock_max = 4
 	availability_prob = 30
-
-/datum/blackmarket_item/consumable/gumballs
-	name = "Gumball"
-	desc = "Looking for a sweet treat? These gumballs are sure to satisfy."
-	item = /obj/item/reagent_containers/food/snacks/gumball
-
-	cost_min = 10
-	cost_max = 20
-	stock_min = 10
-	stock_max = 20
-	availability_prob = 80
 
 /datum/blackmarket_item/consumable/xeno_corpse
 	name = "Xenomorph Corpse"
@@ -164,9 +141,11 @@
 	spawn_weighting = FALSE
 
 /datum/blackmarket_item/consumable/xeno_corpse/spawn_item(loc)
-	var/mob/living/simple_animal/hostile/alien = ..()
-	alien.stat = DEAD
-	return new alien(loc)
+	var/mob/living/simple_animal/hostile/alien/corpse = ..()
+	if(prob(95))
+		corpse.stat = DEAD
+		corpse.density = FALSE
+	return new corpse(loc)
 
 /datum/blackmarket_item/consumable/berries
 	name = "Berries"
@@ -192,8 +171,8 @@
 	desc = "PGF military surplus rations. What's in them? Who knows. Surprise is the spice of life after all."
 	item = /obj/effect/spawner/random/food_or_drink/ration
 
-	cost_min = 150
-	cost_max = 300
+	cost_min = 40
+	cost_max = 100
 	availability_prob = 80
 	stock = INFINITY
 
@@ -315,6 +294,16 @@
 	availability_prob = 30
 	spawn_weighting = FALSE
 
+/datum/blackmarket_item/consumable/nesah
+	name = "Nesah Injector"
+	desc = "Other day some dude with black hair called us up and started talkin about some grand plan. Grand plan to sell merch, we assume, because he offloaded way too fuckin many of these injectors. Our chems guy said it's just a healing injector, so go fuckin wild. "
+	item = /obj/item/reagent_containers/hypospray/medipen/netzach
+	cost_min = 500
+	cost_max = 1000
+	stock_max = 12
+	availability_prob = 50
+	spawn_weighting = FALSE
+
 /datum/blackmarket_item/consumable/finobranc
 	name = "Finobranc Tablets"
 	desc = "So get this, I know a Solarian Tgirl over the intranet, and we're chatting, and she sends me these things to try. I figure, hell yeah, try them, and got 5 days work done in one day. Now I'm sellin them. Miracle product I tell ya"
@@ -333,4 +322,14 @@
 	cost_max = 2000
 	stock_max = 3
 	availability_prob = 10
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/consumable/horse_pills
+	name = "Strider patches"
+	desc = "Fun lil story, yeah? We were screwin off in a backcounty race, watchin some horse girls run it out. One of em popped some patches beforehand. Managed to easily outrun the rest. We managed to find em and get in with the supplier. Supposed to help ya move fast. Keep your muscles workin when they might burst."
+	item = /obj/item/storage/pill_bottle/strider
+	cost_min = 700
+	cost_max = 1500
+	stock_max = 6
+	availability_prob = 40
 	spawn_weighting = FALSE

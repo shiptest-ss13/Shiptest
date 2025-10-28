@@ -61,7 +61,6 @@
 	key = "moan"
 	key_third_person = "moans"
 	message = "moans!"
-	message_mime = "appears to moan!"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/roll
@@ -127,6 +126,30 @@
 	key = "wink"
 	key_third_person = "winks"
 	message = "winks."
+
+/datum/emote/living/carbon/sweat
+	key = "sweat"
+	key_third_person = "sweatdrops"
+	message = "sweats."
+	emote_type = EMOTE_ANIMATED | EMOTE_VISIBLE
+	sound_volume = 25
+	vary = TRUE
+	overlay_icon_state = "sweatdrop"
+	overlay_x_offset = 10
+	overlay_y_offset = 10
+	emote_length = 3 SECONDS
+	sound = 'sound/emotes/sweatdrop.ogg'
+
+/datum/emote/living/carbon/annoyed
+	key = "annoyed"
+	emote_type = EMOTE_ANIMATED | EMOTE_VISIBLE
+	sound_volume = 25
+	vary = TRUE
+	overlay_icon_state = "annoyed"
+	overlay_x_offset = 10
+	overlay_y_offset = 10
+	emote_length = 6 SECONDS
+	sound = 'sound/emotes/annoyed.ogg'
 
 /datum/emote/living/carbon/circle
 	key = "circle"

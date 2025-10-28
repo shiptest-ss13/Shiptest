@@ -55,6 +55,10 @@
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c46x30mm/rubber = 4)
 	generate_items_inside(items_inside,src)
 
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/c46x30mm/tesla
+	ammo_type = /obj/item/ammo_casing/c46x30mm/tesla
+	max_ammo = 20
+
 // 4.73x33mm caseless (Solar)
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c47x33mm
 	ammo_type = /obj/item/ammo_casing/caseless/c47x33mm
@@ -76,6 +80,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c556mm/surplus
 	ammo_type = /obj/item/ammo_casing/caseless/c556mm/surplus
+	custom_materials = list(/datum/material/iron = 4000)
 
 /obj/item/storage/box/ammo/c556mm_surplus
 	name = "box of surplus 5.56mm HITP caseless ammo"

@@ -9,7 +9,10 @@
 	stable_population = 3
 	average_size = 30
 	average_weight = 500
-	favorite_bait = list(/obj/item/reagent_containers/food/snacks/bait/worm)
+	favorite_bait = list(/obj/item/food/bait/worm)
+
+/obj/item/fish/goldfish/outpost
+	feeding_frequency = 8 HOURS
 
 /obj/item/fish/angelfish
 	name = "angelfish"
@@ -22,6 +25,9 @@
 	average_weight = 500
 	stable_population = 3
 
+/obj/item/fish/angelfish/outpost
+	feeding_frequency = 8 HOURS
+
 /obj/item/fish/guppy
 	name = "guppy"
 	desc = "Guppy is also known as rainbow fish because of the brightly colored body and fins."
@@ -33,6 +39,9 @@
 	average_size = 30
 	average_weight = 500
 	stable_population = 6
+
+/obj/item/fish/guppy/outpost
+	feeding_frequency = 8 HOURS
 
 /obj/item/fish/plasmatetra
 	name = "plasma tetra"
@@ -159,7 +168,7 @@
 	average_size = 30
 	average_weight = 500
 	stable_population = 3
-	disliked_bait = list(/obj/item/reagent_containers/food/snacks/bait/worm, /obj/item/reagent_containers/food/snacks/bait/doughball)
+	disliked_bait = list(/obj/item/food/bait/worm, /obj/item/food/bait/doughball)
 	fish_ai_type = FISH_AI_ZIPPY
 
 	fishing_difficulty_modifier = 10
@@ -282,7 +291,7 @@
 	random_case_rarity = FISH_RARITY_RARE
 	required_fluid_type = AQUARIUM_FLUID_FRESHWATER
 	stable_population = 10 //set by New, but this is the default config value
-	fillet_type = /obj/item/food/meat/slab/human/mutant/zombie
+	fillet_type = /obj/item/food/meat/slab
 
 	fish_ai_type = FISH_AI_ZIPPY
 	favorite_bait = list(

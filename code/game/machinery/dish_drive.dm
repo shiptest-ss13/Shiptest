@@ -3,7 +3,7 @@
 	desc = "A culinary marvel that uses matter-to-energy conversion to store dishes and shards. Convenient! \
 	Additional features include a vacuum function to suck in nearby dishes, and an automatic transfer beam that empties its contents into nearby disposal bins every now and then. \
 	Or you can just drop your plates on the floor, like civilized folk."
-	icon = 'icons/obj/kitchen.dmi'
+	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "synthesizer"
 	idle_power_usage = IDLE_DRAW_MINIMAL //lower
 	active_power_usage = ACTIVE_DRAW_MINIMAL //lower ingame because stockparts
@@ -11,7 +11,6 @@
 	circuit = /obj/item/circuitboard/machine/dish_drive
 	pass_flags = PASSTABLE
 	var/static/list/collectable_items = list(/obj/item/trash/waffles,
-		/obj/item/trash/plate,
 		/obj/item/trash/tray,
 		/obj/item/reagent_containers/glass/bowl,
 		/obj/item/reagent_containers/food/drinks/drinkingglass,
@@ -19,7 +18,6 @@
 		/obj/item/shard,
 		/obj/item/broken_bottle)
 	var/static/list/disposable_items = list(/obj/item/trash/waffles,
-		/obj/item/trash/plate,
 		/obj/item/trash/tray,
 		/obj/item/shard,
 		/obj/item/broken_bottle)

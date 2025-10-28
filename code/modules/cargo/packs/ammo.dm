@@ -378,16 +378,16 @@
 
 /* 7.5x64 */
 
-/datum/supply_pack/ammo/a75clip_box
-	name = "7.5x64mm CLIP Ammo Box Crate"
-	desc = "Contains a twenty-round 7.5x64mm CLIP ammo box for various sniper rifles such as the CM-F90 and the Boomslang series."
-	contains = list(/obj/item/storage/box/ammo/a75clip)
+/datum/supply_pack/ammo/a65clip_box
+	name = "6.5mm CLIP Ammo Box Crate"
+	desc = "Contains a twenty-round 6.5mm CLIP ammo box for various sniper rifles such as the CM-F90 and the Boomslang series."
+	contains = list(/obj/item/storage/box/ammo/a65clip)
 	cost = 200 //4 ammo efficiency at 40 damage
 
-/datum/supply_pack/ammo/a75clip_trackers
-	name = "7.5x64mm CLIP Tracker Shell Crate"
-	desc = "Contains a 10-round 7.5x64mm CLIP tracker box for various sniper rifles such as the CM-F90 and the Boomslang series."
-	contains = list(/obj/item/storage/box/ammo/a75clip/trac)
+/datum/supply_pack/ammo/a65clip_trackers
+	name = "6.5mm CLIP Tracker Shell Crate"
+	desc = "Contains a 10-round 6.5mm CLIP tracker box for various sniper rifles such as the CM-F90 and the Boomslang series."
+	contains = list(/obj/item/storage/box/ammo/a65clip/trac)
 	cost = 250
 
 /* 8x58 */
@@ -411,15 +411,15 @@
 
 /datum/supply_pack/ammo/ferropelletboxcrate
 	name = "Ferromagnetic Pellet Box Crate"
-	desc = "Contains a 48-round ferromagnetic pellet ammo box for gauss guns such as the Claris."
+	desc = "Contains a 88-round ferromagnetic pellet ammo box for gauss guns such as the Claris."
 	contains = list(/obj/item/storage/box/ammo/ferropellet)
-	cost = 210 //5.7 ammo efficiency at 25 damage
+	cost = 250 //5.7 ammo efficiency at 25 damage
 
 /datum/supply_pack/ammo/hcpellets
 	name = "High Conductivity Pellet Box Crate"
 	desc = "Contains a 48-round high conductivity pellet ammo box for gauss guns such as the Claris."
 	contains = list(/obj/item/storage/box/ammo/ferropellet/hc)
-	cost = 260
+	cost = 310
 
 /* ferroslugs */
 
@@ -439,12 +439,12 @@
 
 /datum/supply_pack/ammo/ferrolanceboxcrate
 	name = "Ferromagnetic Lance Box Crate"
-	desc = "Contains a 48-round box for high-powered gauss guns such as the GAR assault rifle."
+	desc = "Contains a 60-round box for high-powered gauss guns such as the GAR assault rifle."
 	contains = list(/obj/item/storage/box/ammo/ferrolance)
-	cost = 285 //5 ammo efficiency at 30 damage
+	cost = 300 //5 ammo efficiency at 30 damage - I don't know how this formula works so I just eyeballed it to be on par with 556CLIP
 
-/datum/supply_pack/ammo/ferrolanceboxcrate
+/datum/supply_pack/ammo/ferrolanceboxcrate_hc
 	name = "High Conductivity Lance Box Crate"
-	desc = "Contains a 48-round box for high-powered gauss guns such as the GAR assault rifle."
+	desc = "Contains a 60-round box for high-powered gauss guns such as the GAR assault rifle."
 	contains = list(/obj/item/storage/box/ammo/ferrolance/hc)
-	cost = 360
+	cost = 380

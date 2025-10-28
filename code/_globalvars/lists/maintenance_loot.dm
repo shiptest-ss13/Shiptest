@@ -23,7 +23,6 @@ GLOBAL_LIST_INIT(trash_loot, list(//junk: useless, very easy to get, or ghetto c
 		/obj/item/trash/chips = 1,
 		/obj/item/trash/popcorn = 1,
 		/obj/item/trash/sosjerky = 1,
-		/obj/item/trash/plate = 1,
 		/obj/item/trash/pistachios = 1,
 
 		/obj/item/poster/random_contraband = 1,
@@ -46,7 +45,7 @@ GLOBAL_LIST_INIT(trash_loot, list(//junk: useless, very easy to get, or ghetto c
 		/obj/item/camera_film = 1,
 		/obj/item/light/bulb = 1,
 		/obj/item/light/tube = 1,
-		/obj/item/reagent_containers/food/snacks/urinalcake = 1,
+		/obj/item/food/urinalcake = 1,
 
 		/obj/item/airlock_painter = 1,
 		/obj/item/rack_parts = 1,
@@ -222,8 +221,7 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 		) = 8,
 
 	list(//food
-		/obj/item/reagent_containers/food/snacks/canned/peaches/maint = 1,
-		/obj/item/storage/box/gum/happiness = 1,
+		/obj/item/food/canned/peaches/maint = 1,
 		/obj/item/storage/box/donkpockets = 1,
 		list(//Donk Varieties
 			/obj/item/storage/box/donkpockets/donkpocketspicy = 1,

@@ -5,11 +5,13 @@
 #define FACTION_RAT "rat"
 #define FACTION_TURRET "turret"
 #define FACTION_MINING "mining"
+#define FACTION_HIVEBOT "hivebot"
 
 //"Antag" factions
 // anything with these factions should be hostile to the average player.
 #define FACTION_ANTAG_SYNDICATE "Syndicate"
 #define FACTION_ANTAG_FRONTIERSMEN "Frontiersmen"
+#define FACTION_ANTAG_HERMITS "hermit"
 
 //Player Factions
 #define FACTION_PLAYER_SYNDICATE "playerSyndicate"

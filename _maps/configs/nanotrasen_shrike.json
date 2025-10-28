@@ -1,0 +1,49 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"prefix": "VISV",
+	"manufacturer": "Nanotrasen Spaceworks",
+	"map_name": "Shrike-class Fast Response Vessel",
+	"faction": "/datum/faction/nt/vigilitas",
+	"namelists": [
+		"NANOTRASEN",
+		"NATURAL_AGGRESSIVE",
+		"WEAPONS"
+	],
+	"map_short_name": "Shrike-class",
+	"description": "A new class of vessel fresh from Nanotrasen Shipworks, the Shrike-class is purpose-built for Vigilitas Interstellar's Fast Response Teams. The hull is considered under-armed by most people, which is an acceptable trade for Vigilitas as it narrowly circumvents several Core World treaties on militarized private assets, reducing the legal overhead of manufacturing. The small size also allows rapid deployment into conflict areas. The designs strengths have lead to its quick adoption by Vigilitas for both Core and Frontier operations.",
+	"tags": [
+		"Combat",
+		"RP Focus"
+	],
+	"starting_funds": 3000,
+	"tranist_x_offset": -5,
+	"tranist_y_offset": 5,
+	"map_path": "_maps/shuttles/nanotrasen/nanotrasen_shrike.dmm",
+	"token_icon_state": "ship_generic",
+	"limit": 1,
+	"job_slots": {
+		"Security Director": {
+			"outfit": "/datum/outfit/job/nanotrasen/captain/vi",
+			"officer": true,
+			"slots": 1
+		},
+		"Sergeant": {
+			"outfit": "/datum/outfit/job/nanotrasen/hos/vi",
+			"officer": true,
+			"slots": 1
+		},
+		"Vigilitas Officer": {
+			"outfit": "/datum/outfit/job/nanotrasen/security/vi",
+			"slots": 2
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/nanotrasen/engineer",
+			"slots": 1
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/nanotrasen/assistant",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

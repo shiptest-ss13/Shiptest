@@ -405,8 +405,16 @@
 	name = "Serving Tray"
 	id = "servingtray"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 3000)
+	materials = list(/datum/material/iron = 5000)
 	build_path = /obj/item/storage/bag/tray
+	category = list("initial","Dinnerware")
+
+/datum/design/plate
+	name = "Plate"
+	id = "plate"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 2000)
+	build_path = /obj/item/plate
 	category = list("initial","Dinnerware")
 
 /datum/design/cafeteria_tray
@@ -591,6 +599,15 @@
 	build_type = PROTOLATHE
 	materials = list(/datum/material/silver = 5000, /datum/material/glass = 2500)
 	build_path = /obj/item/hemostat
+	category = list("initial", "Medical", "Tool Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/bonesetter
+	name = "Bonesetter"
+	id = "bonesetter"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 1000)
+	build_path = /obj/item/bonesetter
 	category = list("initial", "Medical", "Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
@@ -832,7 +849,7 @@
 	name = "Ammo Box (.38 surplus)"
 	id = "c38_surplus"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 15000)
+	materials = list(/datum/material/iron = 16000)
 	build_path = /obj/item/storage/box/ammo/c38_surplus
 	category = list("initial", "Security", "Ammo")
 
@@ -872,7 +889,7 @@
 	name = "Ammo Box (10x22mm surplus)"
 	id = "c10mm-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 15000)
+	materials = list(/datum/material/iron = 16000)
 	build_path = /obj/item/storage/box/ammo/c10mm_surplus
 	category = list("initial", "Security", "Ammo")
 
@@ -880,7 +897,7 @@
 	name = "Ammo Box (.45 surplus)"
 	id = "c45-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 15000)
+	materials = list(/datum/material/iron = 16000)
 	build_path = /obj/item/storage/box/ammo/c45_surplus
 	category = list("initial", "Security", "Ammo")
 
@@ -888,7 +905,7 @@
 	name = "Ammo Box (9x18mm surplus)"
 	id = "c9mm-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 15000)
+	materials = list(/datum/material/iron = 16000)
 	build_path = /obj/item/storage/box/ammo/c9mm_surplus
 	category = list("initial", "Security", "Ammo")
 
@@ -896,7 +913,7 @@
 	name = "Ammo Box (surplus 5.56mm HITP caseless)"
 	id = "c556mmHITP-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 15000)
+	materials = list(/datum/material/iron = 16000)
 	build_path = /obj/item/storage/box/ammo/c556mm_surplus
 	category = list("initial", "Security", "Ammo")
 
@@ -1260,6 +1277,15 @@
 	materials = list(/datum/material/iron = 100, /datum/material/glass = 50)
 	build_path = /obj/item/assembly/control
 	category = list("initial","Misc")
+
+/datum/design/sticky_tape/surgical
+	name = "Surgical Tape"
+	id = "surgical_tape"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/plastic = 500)
+	build_path = /obj/item/stack/sticky_tape/surgical
+	category = list("initial", "Medical")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/holofield_control
 	name = "Holofield Controller"

@@ -7,9 +7,6 @@
 
 	SEND_SIGNAL(src, COMSIG_LIVING_LIFE, seconds_per_tick, times_fired)
 
-	if((movement_type & FLYING) && !(movement_type & FLOATING))	//TODO: Better floating
-		float(on = TRUE)
-
 	if (client)
 		var/turf/T = get_turf(src)
 		if(!T)
@@ -36,6 +33,8 @@
 			handle_breathing(seconds_per_tick, times_fired)
 
 		handle_diseases()// DEAD check is in the proc itself; we want it to spread even if the mob is dead, but to handle its disease-y properties only if you're not.
+
+		handle_wounds()
 
 		if (QDELETED(src)) // diseases can qdel the mob via transformations
 			return
@@ -74,6 +73,9 @@
 	return
 
 /mob/living/proc/handle_diseases()
+	return
+
+/mob/living/proc/handle_wounds()
 	return
 
 /mob/living/proc/handle_random_events()

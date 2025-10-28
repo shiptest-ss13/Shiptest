@@ -60,20 +60,19 @@
 			var/mob/living/carbon/H = hood.loc
 			H.transferItemToLoc(hood, src, TRUE)
 			H.update_inv_wear_suit()
+			update_appearance()
+			H.regenerate_icons()
 		else
 			hood.forceMove(src)
 		for(var/X in actions)
 			var/datum/action/A = X
 			A.UpdateButtonIcon()
-	//Might need an update aperance here
 
 /obj/item/clothing/suit/hooded/update_appearance(updates)
 	if(suittoggled)
 		icon_state = "[base_icon_state]_t"
 	else
 		icon_state = base_icon_state
-	if(isobj(hood))
-		hood.icon_state = base_icon_state
 	. = ..()
 
 /obj/item/clothing/suit/hooded/dropped()
@@ -93,10 +92,11 @@
 			else if(H.equip_to_slot_if_possible(hood,ITEM_SLOT_HEAD,0,0,1))
 				suittoggled = TRUE
 				H.update_inv_wear_suit()
+				update_appearance()
+				H.regenerate_icons()
 				for(var/X in actions)
 					var/datum/action/A = X
 					A.UpdateButtonIcon()
-				//Might need an update aperance here
 	else
 		remove_hood()
 
@@ -137,6 +137,11 @@
 /obj/item/clothing/suit/toggle/AltClick(mob/user)
 	if(!user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		return FALSE
+
+	. = SEND_SIGNAL(src, COMSIG_CLICK_ALT, user)
+	if(. & COMPONENT_CANCEL_CLICK_ALT)
+		return
+
 	if(unique_reskin && !current_skin)
 		reskin_obj(user)
 	else

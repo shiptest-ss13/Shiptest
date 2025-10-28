@@ -78,7 +78,7 @@ would spawn and follow the beaker, even if it is carried or thrown.
 	if(isnull(step))
 		return
 
-	ref.forceMove(step)
+	step_towards(ref, step)
 
 	if(steps)
 		addtimer(CALLBACK(src, PROC_REF(scoot), direction, ref, steps - 1), 5)

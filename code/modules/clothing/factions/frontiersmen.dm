@@ -51,6 +51,12 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
 	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
 
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_COAT
+	equip_delay_other = EQUIP_DELAY_COAT * 1.5
+	strip_delay = EQUIP_DELAY_COAT * 1.5
+
 //////////////////
 //Armored suits//
 /////////////////
@@ -93,7 +99,7 @@
 	icon_state = "frontier_coat"
 	item_state = "frontier_coat"
 	blood_overlay_type = "coat"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
 
@@ -103,7 +109,7 @@
 	icon_state = "frontier_fireproof_suit"
 	supports_variations = VOX_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/frontiersmen/vox.dmi'
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100, "wound" = 10)
 	w_class = WEIGHT_CLASS_BULKY
 	gas_transfer_coefficient = 0.9
 	permeability_coefficient = 0.5
@@ -220,7 +226,7 @@
 	icon_state = "marine_frontier"
 	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
-	armor = list("melee" = 35, "bullet" = 55, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 55, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50, "wound" = 20)
 	slowdown = 0.1
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	clothing_flags = STOPSPRESSUREDAMAGE | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
@@ -243,6 +249,7 @@
 	icon = 'icons/obj/clothing/faction/frontiersmen/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/mask.dmi'
 	resistance_flags = FIRE_PROOF
+	supports_variations = SNOUTED_VARIATION
 
 //////////
 //Neck//
@@ -290,6 +297,10 @@
 		new /obj/item/reagent_containers/glass/beaker/large/napalm(src)
 	new /obj/item/grenade/frag(src)
 
+/obj/item/storage/belt/security/military/frontiersmen/wasp_ammo/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/stock_parts/cell/gun(src)
+	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/medical/webbing/frontiersmen
 	name = "leather medical bandolier"
@@ -310,9 +321,9 @@
 	update_appearance()
 
 /obj/item/storage/belt/medical/webbing/frontiersmen/combat/PopulateContents()
-	new /obj/item/reagent_containers/hypospray/medipen/stimulants(src)
-	new /obj/item/reagent_containers/hypospray/medipen/stimulants(src)
-	new /obj/item/reagent_containers/medigel/silver_sulf(src)
-	new /obj/item/reagent_containers/medigel/styptic(src)
+	new /obj/item/reagent_containers/hypospray/medipen/combat_drug(src)
+	new /obj/item/reagent_containers/hypospray/medipen/combat_drug(src)
+	new /obj/item/reagent_containers/medigel/quardexane(src)
+	new /obj/item/reagent_containers/medigel/hadrakine(src)
 	new /obj/item/stack/medical/gauze/twelve(src)
 	new /obj/item/stack/medical/splint(src)

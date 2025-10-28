@@ -20,7 +20,6 @@
 	icon_state = "inteq_skirt"
 	item_state = "bl_suit"
 	has_sensor = HAS_SENSORS
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
 
@@ -51,11 +50,19 @@
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/syndicate/inteq/honorable
-	name = "honorable vanguard turtleneck"
-	desc = "A midnight black turtleneck worn by honorable Vanguards of the IRMG."
+	name = "inteq midnight turtleneck"
+	desc = "A midnight black turtleneck worn by command of the IRMG."
 	icon_state = "inteq_honorable"
 	item_state = "inteq_honorable"
-	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
+	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION | VOX_VARIATION
+
+/obj/item/clothing/under/syndicate/inteq/sneaksuit
+	name = "inteq sneaksuit"
+	desc = "A tactical sneaksuit developed for usage in the IRMG's covert elements. Maximizes stealth by minimizing friction."
+	icon_state = "inteq_sneak"
+	item_state = "inteq_sneak"
+	roll_sleeves = FALSE
+	roll_down = TRUE
 
 // Oversuits // can someone like. change the vanguard and maa armors to be subtypes of armor/inteq. please
 
@@ -66,7 +73,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
 	icon_state = "armor_inteq_battlecoat"
 	item_state = "inteq_battlecoat"
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/inteq/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/inteq/kepori.dmi'
 
@@ -75,7 +82,7 @@
 	desc = "A sleek black coat with snow white fur trims made to order for honorable vanguards of the IRMG. It feels even tougher than the typical battlecoat."
 	icon_state = "armor_inteq_honorable_battlecoat"
 	item_state = "inteq_honorable_battlecoat"
-	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
+	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90, "wound" = 20)
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/suit/armor/vest/security/warden/inteq
@@ -83,7 +90,9 @@
 	desc = "A brown armored coat with a bulletproof vest over it, usually worn by the Master At Arms of the IRMG."
 	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/inteq/kepori.dmi'
 	icon_state = "maacoat"
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/suit/armor/inteq/corpsman
 	name = "inteq corpsman vest"
@@ -156,7 +165,7 @@
 	item_state = "space-inteq"
 	icon_state = "space-inteq"
 	slowdown = 0.8
-	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 10)
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/clothing/head/helmet/space/inteq
@@ -166,7 +175,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
 	item_state = "space-inteq"
 	icon_state = "space-inteq"
-	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 10)
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/clothing/head/helmet/space/hardsuit/security/inteq
@@ -177,7 +186,7 @@
 	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
 	hardsuit_type = "inteq"
-	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 	supports_variations = SNOUTED_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/security/inteq
@@ -189,13 +198,50 @@
 	item_state = "hardsuit-inteq"
 	hardsuit_type = "inteq"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/inteq
-	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/suit/space/hardsuit/bomb/inteq
+	name = "Inteq EOD hardsuit"
+	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
+	icon_state = "hardsuit-inteqeod"
+	hardsuit_type = "inteqeod"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/bomb/inteq
+
+/obj/item/clothing/head/helmet/space/hardsuit/bomb/inteq
+	name = "Inteq EOD hardsuit helmet"
+	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
+	icon_state = "hardsuit0-inteqeod"
+	hardsuit_type = "inteqeod"
+
+//Boulder Hardsuit
+/obj/item/clothing/suit/space/hardsuit/security/inteq/boulder
+	name = "Boulder hardsuit"
+	desc = "An extreme EOD-suit modification created by a group of unsupervised IRMG artificers, a few nights, and far too much Vimukti. The ingenuity of the conversion, as well as relatively low production cost has lead it to adaptation by the IRMG. Extreme bulk guaranteed."
+	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
+	icon_state = "hardsuit-boulder"
+	hardsuit_type = "boulder"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/inteq/boulder
+	slowdown = 1.5
+	armor = list("melee" = 60, "bullet" = 70, "laser" = 50, "energy" = 40, "bomb" = 100, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 50)
+
+/obj/item/clothing/head/helmet/space/hardsuit/security/inteq/boulder
+	name = "Boulder hardsuit helmet"
+	desc = "A modified EOD helmet, with extra plating and a more durable visor."
+	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
+	icon_state = "hardsuit0-boulder"
+	hardsuit_type = "boulder"
+	armor = list("melee" = 60, "bullet" = 70, "laser" = 50, "energy" = 40, "bomb" = 100, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 50)
 
 //Pointman Hardsuit
 /obj/item/clothing/suit/space/hardsuit/syndi/inteq
 	name = "pointman hardsuit"
-	desc = "One of Inteq's strudiest and finest combat armors. It is in EVA mode. Retrofitted by the IRMG."
-	alt_desc = "One of Inteq's strudiest and finest combat armors. It is in travel mode. Retrofitted by the IRMG."
+	desc = "One of Inteq's sturdiest and finest combat armors. It is in EVA mode. Retrofitted by the IRMG."
+	alt_desc = "One of Inteq's sturdiest and finest combat armors. It is in travel mode. Retrofitted by the IRMG."
 	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
 	icon_state = "hardsuit1-pointman"
@@ -206,14 +252,82 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/inteq
 	name = "pointman hardsuit helmet"
-	desc = "One of Inteq's strudiest and finest combat armors. It is in EVA mode. Retrofitted by the IRMG."
-	alt_desc = "One of Inteq's strudiest and finest combat armors. It is in travel mode. Retrofitted by the IRMG."
+	desc = "One of Inteq's sturdiest and finest combat armors. It is in EVA mode. Retrofitted by the IRMG."
+	alt_desc = "One of Inteq's sturdiest and finest combat armors. It is in travel mode. Retrofitted by the IRMG."
 	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
 	icon_state = "hardsuit1-pointman"
 	hardsuit_type = "pointman"
 	full_retraction = TRUE
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+
+// pilot softsuit
+/obj/item/clothing/suit/space/inteq/pilot
+	name = "inteq pilot space suit"
+	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
+	item_state = "space-inteq-pilot"
+	icon_state = "space-inteq-pilot"
+	desc = "A rich brown, lightweight spacesuit made of a fire retardant material. While uncumbersome, it has poor protection against extreme temperatures of either end. Utilized by exosuit and shuttle pilots of the IRMG."
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 60, "fire" = 80, "acid" = 75, "wound" = 5)
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | FAST_EMBARK
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+	slowdown = 0.2
+
+/obj/item/clothing/head/helmet/space/inteq/pilot
+	name = "inteq pilot helmet"
+	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
+	lefthand_file = 'icons/mob/inhands/faction/inteq/inteq_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/inteq/inteq_righthand.dmi'
+	item_state = "space-inteq-pilot"
+	icon_state = "space-inteq-pilot0"
+	desc = "A specialized space helmet with a large gold visor, designed to provide maximum visibility while protecting from glare. While protective against low pressure environments, it does little against extreme temperatures of either end. Utilized by exosuit and shuttle pilots of the IRMG."
+	armor = list("melee" = 20, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 60, "fire" = 80, "acid" = 75, "wound" = 5)
+	visor_flags_inv = HIDEHAIR|HIDEEARS|HIDEFACE|HIDEFACIALHAIR|HIDEMASK
+	visor_flags = STOPSPRESSUREDAMAGE | ALLOWINTERNALS | FLASH_PROTECTION_WELDER
+	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF
+
+	up = FALSE
+	actions_types = list(/datum/action/item_action/toggle_helmet)
+
+/obj/item/clothing/head/helmet/space/inteq/pilot/update_icon_state()
+	icon_state = "space-inteq-pilot[up]"
+	return ..()
+
+/obj/item/clothing/head/helmet/space/inteq/pilot/attack_self(mob/user) //toggle copied from indie pilot helm
+	if(!isturf(user.loc))
+		to_chat(user, span_warning("You cannot toggle your helmet while in this [user.loc]!") )
+		return
+	up = !up
+	if(!up || force)
+		to_chat(user, span_notice("You close your helmet's visor and breathing mask."))
+		gas_transfer_coefficient = initial(gas_transfer_coefficient)
+		permeability_coefficient = initial(permeability_coefficient)
+		clothing_flags |= visor_flags
+		flags_cover |= HEADCOVERSEYES | HEADCOVERSMOUTH
+		flags_inv |= visor_flags_inv
+		cold_protection |= HEAD
+	else
+		to_chat(user, span_notice("You open your helmet's visor and breathing mask."))
+		gas_transfer_coefficient = null
+		permeability_coefficient = null
+		clothing_flags &= ~visor_flags
+		flags_cover &= ~(HEADCOVERSEYES | HEADCOVERSMOUTH)
+		flags_inv &= ~visor_flags_inv
+		cold_protection &= ~HEAD
+	update_appearance()
+	playsound(src.loc, 'sound/mecha/mechmove03.ogg', 50, TRUE)
+	user.update_inv_head()
+	if(iscarbon(user))
+		var/mob/living/carbon/C = user
+		C.head_update(src, forced = 1)
+	for(var/X in actions)
+		var/datum/action/A = X
+		A.UpdateButtonIcon()
 
 // Headgear
 
@@ -279,36 +393,36 @@
 	icon_state = "inteq_honorable_beret"
 	supports_variations = VOX_VARIATION
 
-/obj/item/clothing/head/helmet/swat/inteq
-	name = "inteq SWAT helmet"
-	desc = "A robust and spaceworthy helmet with an opaque gold visor. There is an insignia on the earpad with the letters 'IRMG' on it."
+/obj/item/clothing/head/helmet/bulletproof/x11/inteq
+	name = "inteq X-11 helmet"
+	desc = "A robust bulletproof helmet utilizing the Bezuts-made X-11 format. There is an insignia on the earpad with the letters 'IRMG' on it."
 	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
-	icon_state = "inteq_swat"
+	icon_state = "inteq_x11helm"
 	item_state = "inteq_swat"
 	can_flashlight = TRUE
-	flags_inv = HIDEHAIR
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 	content_overlays = TRUE
+	unique_reskin = null
 
-/obj/item/clothing/head/helmet/inteq
-	name = "inteq helmet"
-	desc = "A standard issue helmet in the colors of the IRMG. It doesn't feel special in any way."
+/obj/item/clothing/head/helmet/m10/inteq
+	name = "inteq M-10 helmet"
+	desc = "A standard issue M-10 helmet in the colors of the IRMG. It doesn't feel special in any way."
 	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
-	icon_state = "inteq_helmet"
-	icon_state = "inteq_helmet"
+	icon_state = "inteq_m10helm"
 	can_flashlight = TRUE
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/inteq/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/inteq/kepori.dmi'
 	content_overlays = TRUE
+	unique_reskin = null
 
 // Gloves
 
 /obj/item/clothing/gloves/color/latex/nitrile/inteq
 	name = "green nitrile gloves"
-	desc = "Thick sterile gloves that reach up to the elbows, colored in a pine green shade. Transfers combat medic knowledge into the user via nanochips."
+	desc = "Thick sterile gloves that reach up to the wrists, colored in a pine green shade. Transfers combat medic knowledge into the user via nanochips."
 	icon = 'icons/obj/clothing/faction/inteq/gloves.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/gloves.dmi'
 	icon_state = "nitrile_inteq"
@@ -326,6 +440,7 @@
 	vox_override_icon = 'icons/mob/clothing/faction/inteq/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/inteq/kepori.dmi'
 	glass_colour_type = /datum/client_colour/glass_colour/orange
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 
 // Mask
 
@@ -348,7 +463,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/mask.dmi'
 	icon_state = "inteq_balaclava"
 	item_state = "inteq_balaclava"
-	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/inteq/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/inteq/kepori.dmi'
 
@@ -394,7 +509,7 @@
 	desc = "A harness with a bunch of pouches attached to them emblazoned in the colors of the IRMG, can hold security gear."
 	icon_state = "inteq_droppouch"
 	item_state = "inteq_droppouch"
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/inteq/vox.dmi'
 
 /obj/item/storage/belt/security/webbing/inteq/alt/bulldog/PopulateContents()

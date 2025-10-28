@@ -10,7 +10,7 @@
 /datum/supply_pack/attachment/rail_light
 	name = "Tactical Rail Light Crate"
 	desc = "Contains a single rail light to be mounted on a firearm."
-	cost = 100
+	cost = 75
 	contains = list(/obj/item/attachment/rail_light)
 	crate_name = "rail light crate"
 
@@ -51,13 +51,6 @@
 	cost = 100
 	contains = list(/obj/item/attachment/ammo_counter)
 	crate_name = "ammo counter crate"
-
-/datum/supply_pack/attachment/sling
-	name = "Shoulder Sling Crate"
-	desc = "Contains a single shoulder sling to be mounted on a firearm for easy carrying without armor holsters. Only compatible with longarms."
-	cost = 250
-	contains = list(/obj/item/attachment/sling)
-	crate_name = "shoulder sling crate"
 
 /datum/supply_pack/attachment/scope
 	name = "Scope Crate"
@@ -100,13 +93,6 @@
 	cost = 750
 	contains = list(/obj/item/storage/guncase/energy/underbarrel_e_gun)
 	crate_name = "underbarrel energy gun crate"
-
-/datum/supply_pack/attachment/riot_launcher
-	name = "Underbarrel Riot Grenade Launcher Crate"
-	desc = "Contains a single shot underbarrel riot grenade launcher to be mounted on a firearm."
-	cost = 750
-	contains = list(/obj/item/storage/guncase/underbarrel_riot_grenade)
-	crate_name = "underbarrel riot grenade launcher crate"
 
 /datum/supply_pack/attachment/flare
 	name = "Underbarrel Flare Gun Crate"

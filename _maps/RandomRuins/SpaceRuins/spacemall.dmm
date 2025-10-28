@@ -29,7 +29,7 @@
 "ai" = (
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark,
-/obj/item/trash/plate,
+/obj/item/plate,
 /obj/item/food/hotdog,
 /obj/structure/table,
 /turf/open/floor/plasteel,
@@ -68,7 +68,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 9
 	},
-/obj/item/gun/ballistic/automatic/pistol/commander/no_mag{
+/obj/item/gun/ballistic/automatic/pistol/challenger/no_mag{
 	pixel_y = 5;
 	pixel_x = 10
 	},
@@ -273,7 +273,7 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "aX" = (
 /obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/plating/grass,
+/turf/open/floor/plating/asteroid/dirt/grass/dark,
 /area/ruin/space/has_grav/spacemall/dorms)
 "aZ" = (
 /obj/machinery/door/airlock,
@@ -313,7 +313,7 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "bm" = (
 /obj/structure/flora/junglebush/c,
-/turf/open/floor/plating/grass,
+/turf/open/floor/plating/asteroid/dirt/grass/dark,
 /area/ruin/space/has_grav/spacemall)
 "bo" = (
 /obj/machinery/light/small/directional/north,
@@ -399,9 +399,7 @@
 /area/ruin/space/has_grav/spacemall/maint)
 "bC" = (
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
-/obj/machinery/light/broken/directional/west{
-	icon_state = "tube-broken"
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall)
 "bH" = (
@@ -1686,7 +1684,7 @@
 /area/ruin/space/has_grav/spacemall/shop2)
 "gK" = (
 /obj/structure/flora/junglebush/b,
-/turf/open/floor/plating/grass,
+/turf/open/floor/plating/asteroid/dirt/grass/dark,
 /area/ruin/space/has_grav/spacemall)
 "gL" = (
 /obj/effect/turf_decal/siding/wood{
@@ -2234,7 +2232,7 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "iL" = (
 /obj/structure/flora/grass/jungle/b,
-/turf/open/floor/plating/grass,
+/turf/open/floor/plating/asteroid/dirt/grass/dark,
 /area/ruin/space/has_grav/spacemall)
 "iM" = (
 /obj/effect/decal/remains/human,
@@ -2463,7 +2461,7 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 4
 	},
-/obj/item/trash/plate,
+/obj/item/plate,
 /obj/item/food/burger,
 /obj/structure/table,
 /turf/open/floor/plasteel,
@@ -2486,7 +2484,7 @@
 /area/ruin/space/has_grav/spacemall)
 "jC" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/plating/grass,
+/turf/open/floor/plating/asteroid/dirt/grass/dark,
 /area/ruin/space/has_grav/spacemall)
 "jE" = (
 /obj/structure/window/reinforced/spawner{
@@ -3071,7 +3069,7 @@
 /area/ruin/space/has_grav/spacemall)
 "lP" = (
 /obj/structure/flora/grass/jungle/b,
-/turf/open/floor/plating/grass,
+/turf/open/floor/plating/asteroid/dirt/grass/dark,
 /area/ruin/space/has_grav/spacemall/dorms)
 "lR" = (
 /obj/structure/table/glass,
@@ -3393,6 +3391,9 @@
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall)
+"nl" = (
+/turf/template_noop,
+/area/template_noop)
 "nn" = (
 /obj/structure/railing/wood{
 	icon_state = "railing_corner";
@@ -4016,12 +4017,12 @@
 /area/ruin/space/has_grav/spacemall)
 "pC" = (
 /obj/structure/flora/ausbushes/palebush,
-/turf/open/floor/plating/grass,
+/turf/open/floor/plating/asteroid/dirt/grass/dark,
 /area/ruin/space/has_grav/spacemall)
 "pE" = (
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark,
-/obj/item/trash/plate,
+/obj/item/plate,
 /obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
@@ -4458,10 +4459,10 @@
 /area/ruin/space/has_grav/spacemall)
 "qH" = (
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
-/obj/item/food/meat/slab/human/mutant/spider{
+/obj/item/food/meat/slab{
 	pixel_y = 6
 	},
-/obj/item/food/meat/slab/human/mutant/spider,
+/obj/item/food/meat/slab,
 /obj/structure/table,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall/dorms)
@@ -5486,7 +5487,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/shop)
 "uu" = (
-/obj/item/trash/plate,
+/obj/item/plate,
 /obj/structure/railing,
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark{
@@ -6131,7 +6132,7 @@
 /area/ruin/space/has_grav/spacemall/maint)
 "xd" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/plating/grass,
+/turf/open/floor/plating/asteroid/dirt/grass/dark,
 /area/ruin/space/has_grav/spacemall)
 "xe" = (
 /obj/effect/turf_decal/siding/wood,
@@ -6695,7 +6696,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
 "ze" = (
-/turf/open/floor/plating/grass,
+/turf/open/floor/plating/asteroid/dirt/grass/dark,
 /area/ruin/space/has_grav/spacemall)
 "zf" = (
 /obj/structure/flora/junglebush/b,
@@ -6754,7 +6755,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/trash/plate,
+/obj/item/plate,
 /obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
@@ -6819,14 +6820,12 @@
 /obj/item/clothing/mask/spooky/frog,
 /obj/item/clothing/mask/fakemoustache,
 /obj/item/clothing/mask/fakemoustache/italian,
-/obj/item/clothing/mask/fakemoustache/sticky,
 /obj/item/clothing/mask/gas,
 /obj/item/clothing/mask/gas/owl_mask,
 /obj/item/clothing/mask/gas/plaguedoctor,
 /obj/item/clothing/mask/gas/tiki_mask,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/clothing/mask/spooky/horsehead,
-/obj/item/clothing/mask/spamton,
 /obj/item/clothing/mask/spooky/pig,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
@@ -7178,9 +7177,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
-/obj/machinery/light/broken/directional/west{
-	icon_state = "tube-broken"
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall)
 "Bg" = (
@@ -7344,7 +7341,7 @@
 	},
 /obj/effect/decal/cleanable/plasma,
 /obj/structure/table/wood,
-/obj/item/trash/plate{
+/obj/item/plate{
 	pixel_x = 7
 	},
 /obj/item/organ/liver{
@@ -8216,7 +8213,7 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "EW" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/plating/grass,
+/turf/open/floor/plating/asteroid/dirt/grass/dark,
 /area/ruin/space/has_grav/spacemall/dorms)
 "EZ" = (
 /obj/structure/cable{
@@ -8494,7 +8491,7 @@
 /area/ruin/space/has_grav/spacemall/maint)
 "FZ" = (
 /obj/structure/flora/junglebush,
-/turf/open/floor/plating/grass,
+/turf/open/floor/plating/asteroid/dirt/grass/dark,
 /area/ruin/space/has_grav/spacemall)
 "Gb" = (
 /obj/structure/disposalpipe/segment{
@@ -8601,7 +8598,7 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "Gw" = (
 /obj/structure/flora/tree/jungle/small,
-/turf/open/floor/plating/grass,
+/turf/open/floor/plating/asteroid/dirt/grass/dark,
 /area/ruin/space/has_grav/spacemall)
 "Gx" = (
 /obj/effect/turf_decal/corner/transparent/lime{
@@ -9332,7 +9329,7 @@
 /area/ruin/space/has_grav/spacemall)
 "Jh" = (
 /obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/plating/grass,
+/turf/open/floor/plating/asteroid/dirt/grass/dark,
 /area/ruin/space/has_grav/spacemall)
 "Jk" = (
 /obj/structure/rack,
@@ -9403,7 +9400,7 @@
 /area/ruin/space/has_grav/spacemall/shop2)
 "JC" = (
 /obj/structure/flora/ausbushes/leafybush,
-/turf/open/floor/plating/grass,
+/turf/open/floor/plating/asteroid/dirt/grass/dark,
 /area/ruin/space/has_grav/spacemall)
 "JF" = (
 /obj/effect/turf_decal/corner/transparent/red/diagonal,
@@ -9511,8 +9508,8 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
 "Kh" = (
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space/basic,
+/area/ruin/space)
 "Kj" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
@@ -9767,7 +9764,7 @@
 /area/ruin/space/has_grav/spacemall/maint)
 "Lh" = (
 /obj/structure/table/reinforced,
-/obj/item/gun/ballistic/automatic/pistol/commander/no_mag{
+/obj/item/gun/ballistic/automatic/pistol/challenger/no_mag{
 	pixel_y = 5;
 	pixel_x = 2
 	},
@@ -9913,7 +9910,6 @@
 /obj/effect/turf_decal/road/line/transparent/solgovblue,
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
 /obj/structure/rack,
-/obj/item/hot_potato/harmless/toy,
 /obj/item/toy/talking/AI,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop2)
@@ -10276,7 +10272,7 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
 	},
-/obj/item/trash/plate,
+/obj/item/plate,
 /obj/item/organ/lungs,
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -10658,10 +10654,11 @@
 /obj/item/reagent_containers/glass/beaker/synthflesh,
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
 /obj/item/storage/firstaid/toxin,
-/obj/item/storage/firstaid{
+/obj/item/storage/firstaid/regular{
 	pixel_y = -5
 	},
 /obj/item/storage/firstaid/regular{
+	pixel_x = 0;
 	pixel_y = -5
 	},
 /turf/open/floor/plasteel/white,
@@ -11389,7 +11386,7 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "QN" = (
 /obj/structure/flora/junglebush/large,
-/turf/open/floor/plating/grass,
+/turf/open/floor/plating/asteroid/dirt/grass/dark,
 /area/ruin/space/has_grav/spacemall)
 "QO" = (
 /obj/item/melee/duelenergy/saber/toy,
@@ -11622,7 +11619,7 @@
 /area/ruin/space/has_grav/spacemall/shop)
 "RJ" = (
 /obj/structure/flora/ausbushes,
-/turf/open/floor/plating/grass,
+/turf/open/floor/plating/asteroid/dirt/grass/dark,
 /area/ruin/space/has_grav/spacemall)
 "RL" = (
 /obj/effect/turf_decal/corner/transparent/solgovgold/three_quarters,
@@ -11875,9 +11872,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 2
-	},
+/obj/effect/turf_decal/siding/wood,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -12293,7 +12288,7 @@
 /area/ruin/space/has_grav/spacemall/maint)
 "Uq" = (
 /obj/structure/flora/junglebush/c,
-/turf/open/floor/plating/grass,
+/turf/open/floor/plating/asteroid/dirt/grass/dark,
 /area/ruin/space/has_grav/spacemall/dorms)
 "Us" = (
 /obj/effect/turf_decal/trimline/opaque/solgovblue/arrow_cw,
@@ -12433,7 +12428,7 @@
 /area/ruin/space/has_grav/spacemall/shop)
 "UP" = (
 /obj/structure/flora/junglebush/b,
-/turf/open/floor/plating/grass,
+/turf/open/floor/plating/asteroid/dirt/grass/dark,
 /area/ruin/space/has_grav/spacemall/dorms)
 "UQ" = (
 /obj/machinery/door/window,
@@ -12613,9 +12608,7 @@
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/spacemall/maint)
 "Vw" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -12803,9 +12796,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "Wi" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/shuttle)
 "Wj" = (
@@ -13063,7 +13054,7 @@
 /area/ruin/space/has_grav/spacemall/maint)
 "Xk" = (
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/plating/grass,
+/turf/open/floor/plating/asteroid/dirt/grass/dark,
 /area/ruin/space/has_grav/spacemall)
 "Xo" = (
 /obj/structure/disposalpipe/junction/yjunction{
@@ -13744,6 +13735,38 @@
 /area/ruin/space/has_grav/spacemall/shop)
 
 (1,1,1) = {"
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+nl
+nl
+nl
+Kh
+Kh
+Kh
+nl
+nl
 Kh
 Kh
 Kh
@@ -13755,49 +13778,207 @@ Kh
 Kh
 Kh
 Kh
-Kh
-Kh
-Kh
-Kh
-Kh
-Kh
-Kh
-Kh
-bw
-bw
-bw
-bw
-bw
-bw
-bw
-bw
-bw
-bw
-bw
-bw
-bw
-bw
-bw
-bw
-bw
-bw
-bw
-Kh
-Kh
-Kh
-Kh
-Kh
-Kh
-Kh
-Kh
-Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
 "}
 (2,1,1) = {"
+nl
+nl
+nl
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
 Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+nl
+nl
+nl
+Kh
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+"}
+(3,1,1) = {"
+nl
+nl
+nl
+nl
+nl
+nl
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+"}
+(4,1,1) = {"
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+bw
+bw
+bw
+bw
+bw
+bw
+bw
+bw
+bw
+bw
+bw
+bw
+bw
+bw
+bw
+bw
+bw
+bw
+bw
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+nl
+nl
+nl
+nl
+nl
+"}
+(5,1,1) = {"
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -13842,8 +14023,17 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(3,1,1) = {"
+(6,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -13891,9 +14081,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(4,1,1) = {"
+(7,1,1) = {"
+nl
+nl
+nl
+Kh
 Kh
 Kh
 Kh
@@ -13942,8 +14141,17 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(5,1,1) = {"
+(8,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -13992,8 +14200,17 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(6,1,1) = {"
+(9,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -14041,9 +14258,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(7,1,1) = {"
+(10,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -14091,9 +14317,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(8,1,1) = {"
+(11,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -14142,8 +14377,17 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(9,1,1) = {"
+(12,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -14192,8 +14436,17 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(10,1,1) = {"
+(13,1,1) = {"
+nl
+nl
+nl
+Kh
 Kh
 Kh
 Kh
@@ -14242,8 +14495,17 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(11,1,1) = {"
+(14,1,1) = {"
+nl
+nl
+Kh
+Kh
 Kh
 Kh
 Kh
@@ -14292,8 +14554,17 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(12,1,1) = {"
+(15,1,1) = {"
+nl
+nl
+nl
+Kh
 Kh
 Kh
 Kh
@@ -14341,9 +14612,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(13,1,1) = {"
+(16,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -14391,9 +14671,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(14,1,1) = {"
+(17,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -14441,9 +14730,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(15,1,1) = {"
+(18,1,1) = {"
+nl
+nl
+nl
+Kh
 Kh
 Kh
 Kh
@@ -14492,8 +14790,17 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(16,1,1) = {"
+(19,1,1) = {"
+nl
+nl
+nl
+Kh
 Kh
 Kh
 Kh
@@ -14542,8 +14849,17 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(17,1,1) = {"
+(20,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -14591,9 +14907,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(18,1,1) = {"
+(21,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -14642,8 +14967,17 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(19,1,1) = {"
+(22,1,1) = {"
+nl
+nl
+nl
+Kh
 Kh
 Kh
 Kh
@@ -14692,8 +15026,17 @@ RQ
 UX
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(20,1,1) = {"
+(23,1,1) = {"
+nl
+nl
+Kh
+Kh
 Kh
 Kh
 Kh
@@ -14742,8 +15085,17 @@ ZJ
 bP
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(21,1,1) = {"
+(24,1,1) = {"
+nl
+Kh
+Kh
+Kh
 Kh
 Kh
 Kh
@@ -14792,8 +15144,17 @@ UW
 pH
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(22,1,1) = {"
+(25,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -14842,8 +15203,17 @@ UW
 bP
 Kh
 Kh
+Kh
+Kh
+nl
+nl
+nl
 "}
-(23,1,1) = {"
+(26,1,1) = {"
+nl
+nl
+nl
+Kh
 Kh
 Kh
 Kh
@@ -14892,8 +15262,17 @@ UW
 pH
 Kh
 Kh
+Kh
+Kh
+nl
+nl
+nl
 "}
-(24,1,1) = {"
+(27,1,1) = {"
+nl
+Kh
+Kh
+Kh
 Kh
 Kh
 Os
@@ -14942,8 +15321,17 @@ VO
 bP
 Kh
 Kh
+Kh
+Kh
+Kh
+nl
+nl
 "}
-(25,1,1) = {"
+(28,1,1) = {"
+nl
+nl
+Kh
+Kh
 Kh
 Os
 Os
@@ -14992,8 +15380,17 @@ Wf
 bP
 Os
 Kh
+Kh
+Kh
+Kh
+nl
+nl
 "}
-(26,1,1) = {"
+(29,1,1) = {"
+nl
+Kh
+Kh
+Kh
 Os
 Os
 UW
@@ -15042,8 +15439,17 @@ rq
 rf
 Os
 Os
+Kh
+Kh
+Kh
+Kh
+nl
 "}
-(27,1,1) = {"
+(30,1,1) = {"
+nl
+Kh
+Kh
+Kh
 Os
 UW
 dO
@@ -15092,8 +15498,17 @@ yS
 HB
 rf
 Os
+Kh
+Kh
+Kh
+Kh
+nl
 "}
-(28,1,1) = {"
+(31,1,1) = {"
+nl
+nl
+Kh
+Kh
 Os
 UW
 qO
@@ -15142,8 +15557,17 @@ TG
 rf
 rf
 Os
+Kh
+Kh
+Kh
+Kh
+nl
 "}
-(29,1,1) = {"
+(32,1,1) = {"
+nl
+nl
+Kh
+Kh
 Os
 UW
 XT
@@ -15192,8 +15616,17 @@ hu
 rf
 Mn
 Os
+Kh
+Kh
+Kh
+nl
+nl
 "}
-(30,1,1) = {"
+(33,1,1) = {"
+nl
+Kh
+Kh
+Kh
 Os
 UW
 LK
@@ -15242,8 +15675,17 @@ jU
 fy
 DA
 Os
+Kh
+Kh
+Kh
+nl
+nl
 "}
-(31,1,1) = {"
+(34,1,1) = {"
+nl
+Kh
+Kh
+Kh
 Os
 UW
 UW
@@ -15292,8 +15734,17 @@ IV
 bu
 rf
 Os
+Kh
+Kh
+Kh
+nl
+nl
 "}
-(32,1,1) = {"
+(35,1,1) = {"
+nl
+Kh
+Kh
+Kh
 Os
 Os
 UW
@@ -15342,8 +15793,17 @@ jz
 fE
 Os
 Os
+Kh
+Kh
+Kh
+Kh
+nl
 "}
-(33,1,1) = {"
+(36,1,1) = {"
+nl
+Kh
+Kh
+Kh
 Kh
 Os
 Os
@@ -15392,8 +15852,17 @@ TG
 Os
 Os
 Kh
+Kh
+Kh
+Kh
+Kh
+Kh
 "}
-(34,1,1) = {"
+(37,1,1) = {"
+nl
+nl
+Kh
+Kh
 Kh
 Kh
 Os
@@ -15442,8 +15911,17 @@ vF
 Os
 Kh
 Kh
+Kh
+Kh
+nl
+nl
+nl
 "}
-(35,1,1) = {"
+(38,1,1) = {"
+nl
+nl
+Kh
+Kh
 Kh
 Kh
 Kh
@@ -15492,8 +15970,17 @@ vF
 Kh
 Kh
 Kh
+Kh
+Kh
+nl
+nl
+nl
 "}
-(36,1,1) = {"
+(39,1,1) = {"
+nl
+nl
+Kh
+Kh
 Kh
 Kh
 Kh
@@ -15542,8 +16029,17 @@ qK
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(37,1,1) = {"
+(40,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -15592,8 +16088,17 @@ qK
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(38,1,1) = {"
+(41,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -15641,9 +16146,18 @@ sy
 qK
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(39,1,1) = {"
+(42,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -15691,9 +16205,18 @@ tC
 Hv
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(40,1,1) = {"
+(43,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -15742,8 +16265,17 @@ Hv
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(41,1,1) = {"
+(44,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -15791,9 +16323,18 @@ BW
 Hv
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(42,1,1) = {"
+(45,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -15842,8 +16383,17 @@ Hv
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(43,1,1) = {"
+(46,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -15892,9 +16442,18 @@ qK
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(44,1,1) = {"
-Kh
+(47,1,1) = {"
+nl
+nl
+nl
+nl
+nl
 Kh
 Kh
 qK
@@ -15941,10 +16500,19 @@ qK
 qK
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(45,1,1) = {"
-Kh
+(48,1,1) = {"
+nl
+nl
+nl
+nl
+nl
 Kh
 Kh
 Oz
@@ -15991,9 +16559,18 @@ qK
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(46,1,1) = {"
+(49,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -16042,8 +16619,17 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(47,1,1) = {"
+(50,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -16091,9 +16677,18 @@ Hv
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(48,1,1) = {"
+(51,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -16142,8 +16737,17 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(49,1,1) = {"
+(52,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -16191,10 +16795,19 @@ Hv
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(50,1,1) = {"
-Kh
+(53,1,1) = {"
+nl
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -16241,10 +16854,19 @@ qK
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(51,1,1) = {"
-Kh
+(54,1,1) = {"
+nl
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -16292,8 +16914,17 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(52,1,1) = {"
+(55,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -16341,9 +16972,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(53,1,1) = {"
+(56,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -16391,9 +17031,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(54,1,1) = {"
+(57,1,1) = {"
+nl
+nl
+nl
+Kh
 Kh
 Kh
 Kh
@@ -16441,9 +17090,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(55,1,1) = {"
+(58,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -16492,8 +17150,17 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(56,1,1) = {"
+(59,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -16540,10 +17207,19 @@ Hv
 Kh
 Kh
 Kh
-Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(57,1,1) = {"
+(60,1,1) = {"
+nl
+nl
+nl
+Kh
 Kh
 Kh
 Kh
@@ -16590,10 +17266,19 @@ qK
 Kh
 Kh
 Kh
-Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(58,1,1) = {"
+(61,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -16641,9 +17326,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(59,1,1) = {"
+(62,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -16692,8 +17386,17 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(60,1,1) = {"
+(63,1,1) = {"
+nl
+nl
+nl
+Kh
 Kh
 Kh
 Kh
@@ -16741,9 +17444,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(61,1,1) = {"
+(64,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -16791,9 +17503,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(62,1,1) = {"
+(65,1,1) = {"
+nl
+nl
+nl
+Kh
 Kh
 Kh
 Kh
@@ -16842,8 +17563,17 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(63,1,1) = {"
+(66,1,1) = {"
+nl
+nl
+nl
+Kh
 Kh
 Kh
 Kh
@@ -16891,9 +17621,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(64,1,1) = {"
+(67,1,1) = {"
+nl
+nl
+nl
+Kh
 Kh
 Kh
 Kh
@@ -16941,9 +17680,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(65,1,1) = {"
+(68,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -16991,9 +17739,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(66,1,1) = {"
+(69,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -17042,8 +17799,17 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(67,1,1) = {"
+(70,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -17091,9 +17857,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(68,1,1) = {"
+(71,1,1) = {"
+nl
+nl
+nl
+Kh
 Kh
 Kh
 Kh
@@ -17141,9 +17916,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(69,1,1) = {"
+(72,1,1) = {"
+nl
+nl
+nl
+Kh
 Kh
 Kh
 Kh
@@ -17190,10 +17974,19 @@ Kh
 Kh
 Kh
 Kh
-Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(70,1,1) = {"
+(73,1,1) = {"
+nl
+nl
+nl
+Kh
 Kh
 Kh
 Kh
@@ -17240,10 +18033,19 @@ Kh
 Kh
 Kh
 Kh
-Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(71,1,1) = {"
+(74,1,1) = {"
+nl
+nl
+nl
+Kh
 Kh
 Kh
 Kh
@@ -17289,11 +18091,20 @@ qK
 Kh
 Kh
 Kh
-Kh
-Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(72,1,1) = {"
+(75,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -17341,9 +18152,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(73,1,1) = {"
+(76,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -17391,9 +18211,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(74,1,1) = {"
+(77,1,1) = {"
+nl
+nl
+nl
+Kh
 Kh
 Kh
 Kh
@@ -17442,8 +18271,17 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(75,1,1) = {"
+(78,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -17492,8 +18330,17 @@ Kh
 Kh
 Kh
 Kh
+Kh
+nl
+nl
+nl
+nl
 "}
-(76,1,1) = {"
+(79,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -17542,8 +18389,17 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(77,1,1) = {"
+(80,1,1) = {"
+nl
+nl
+nl
+Kh
 Kh
 Kh
 Kh
@@ -17592,8 +18448,17 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(78,1,1) = {"
+(81,1,1) = {"
+nl
+nl
+nl
+Kh
 Kh
 Kh
 Kh
@@ -17641,9 +18506,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(79,1,1) = {"
+(82,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -17691,9 +18565,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(80,1,1) = {"
+(83,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -17742,9 +18625,18 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(81,1,1) = {"
-Kh
+(84,1,1) = {"
+nl
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -17792,8 +18684,17 @@ Kh
 Kh
 Kh
 Kh
+Kh
+nl
+nl
+nl
+nl
 "}
-(82,1,1) = {"
+(85,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -17842,9 +18743,18 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
 "}
-(83,1,1) = {"
-Kh
+(86,1,1) = {"
+nl
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -17891,9 +18801,18 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(84,1,1) = {"
+(87,1,1) = {"
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -17941,12 +18860,21 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(85,1,1) = {"
-Kh
-Kh
-Kh
+(88,1,1) = {"
+nl
+nl
+nl
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -17991,13 +18919,22 @@ Kh
 Kh
 Kh
 Kh
-Kh
+nl
+nl
+nl
+nl
+nl
+nl
 "}
-(86,1,1) = {"
-Kh
-Kh
-Kh
-Kh
+(89,1,1) = {"
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
 Kh
 Kh
 Kh
@@ -18040,6 +18977,247 @@ Kh
 Kh
 Kh
 Kh
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+"}
+(90,1,1) = {"
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
 Kh
 Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+nl
+nl
+nl
+nl
+nl
+nl
+"}
+(91,1,1) = {"
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+nl
+nl
+nl
+Kh
+nl
+nl
+nl
+Kh
+Kh
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+"}
+(92,1,1) = {"
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+Kh
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+"}
+(93,1,1) = {"
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+Kh
+nl
+nl
+Kh
+nl
+nl
+nl
+nl
+Kh
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
+nl
 "}

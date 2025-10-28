@@ -147,6 +147,31 @@ multiple modular subtrees with behaviors
 		return FALSE
 	return TRUE
 
+///Can this pawn interact with objects?
+/datum/ai_controller/proc/ai_can_interact()
+	SHOULD_CALL_PARENT(TRUE)
+	return !QDELETED(pawn)
+
+///Interact with objects
+/datum/ai_controller/proc/ai_interact(target, desired_intent, list/modifiers)
+	if(!ai_can_interact())
+		return FALSE
+
+	var/atom/final_target = isdatum(target) ? target : blackboard[target] //incase we got a blackboard key instead
+
+	if(QDELETED(final_target))
+		return FALSE
+	var/params = list2params(modifiers)
+	var/mob/living/living_pawn = pawn
+	if(isnull(desired_intent))
+		living_pawn.ClickOn(final_target, params)
+		return TRUE
+
+	var/old_intent = living_pawn.a_intent
+	living_pawn.a_intent = desired_intent
+	living_pawn.ClickOn(final_target, params)
+	living_pawn.a_intent = old_intent
+	return TRUE
 
 ///Runs any actions that are currently running
 /datum/ai_controller/process(seconds_per_tick)
@@ -161,13 +186,12 @@ multiple modular subtrees with behaviors
 		CancelActions()
 		return
 
-	for(var/i in current_behaviors)
-		var/datum/ai_behavior/current_behavior = i
+	for(var/datum/ai_behavior/current_behavior as anything in current_behaviors)
 
 		// Convert the current behaviour action cooldown to realtime seconds from deciseconds.current_behavior
 		// Then pick the max of this and the seconds_per_tick passed to ai_controller.process()
 		// Action cooldowns cannot happen faster than seconds_per_tick, so seconds_per_tick should be the value used in this scenario.
-		var/action_seconds_per_tick = max(current_behavior.action_cooldown * 0.1, seconds_per_tick)
+		var/action_seconds_per_tick = max(current_behavior.get_cooldown(src) * 0.1, seconds_per_tick)
 
 		if(current_behavior.behavior_flags & AI_BEHAVIOR_REQUIRE_MOVEMENT) //Might need to move closer
 			if(!current_movement_target)
@@ -248,7 +272,18 @@ multiple modular subtrees with behaviors
 	var/list/stored_arguments = behavior_args[behavior.type]
 	if(stored_arguments)
 		arguments += stored_arguments
-	behavior.perform(arglist(arguments))
+
+	var/process_flags = behavior.perform(arglist(arguments))
+	if(process_flags & AI_BEHAVIOR_DELAY)
+		behavior_cooldowns[behavior] = world.time + behavior.get_cooldown(src)
+	if(process_flags & AI_BEHAVIOR_FAILED)
+		arguments[1] = src
+		arguments[2] = FALSE
+		behavior.finish_action(arglist(arguments))
+	else if (process_flags & AI_BEHAVIOR_SUCCEEDED)
+		arguments[1] = src
+		arguments[2] = TRUE
+		behavior.finish_action(arglist(arguments))
 
 /datum/ai_controller/proc/CancelActions()
 	if(!LAZYLEN(current_behaviors))
@@ -288,6 +323,15 @@ multiple modular subtrees with behaviors
 		if(iter_behavior.required_distance < minimum_distance)
 			minimum_distance = iter_behavior.required_distance
 	return minimum_distance
+
+/// Returns true if we have a blackboard key with the provided key and it is not qdeleting
+/datum/ai_controller/proc/blackboard_key_exists(key)
+	var/datum/key_value = blackboard[key]
+	if (isdatum(key_value))
+		return !QDELETED(key_value)
+	if (islist(key_value))
+		return length(key_value) > 0
+	return !!key_value
 
 /**
  * Used to manage references to datum by AI controllers
@@ -339,6 +383,9 @@ multiple modular subtrees with behaviors
 	// Assume it is an error when trying to set a value overtop a list
 	if(islist(blackboard[key]))
 		CRASH("set_blackboard_key attempting to set a blackboard value to key [key] when it's a list!")
+	// Don't do anything if it's already got this value
+	if (blackboard[key] == thing)
+		return
 
 	// Clear existing values
 	if(!isnull(blackboard[key]))
@@ -346,6 +393,7 @@ multiple modular subtrees with behaviors
 
 	TRACK_AI_DATUM_TARGET(thing, key)
 	blackboard[key] = thing
+	post_blackboard_key_set(key)
 
 /**
  * Sets the key at index thing to the passed value
@@ -359,9 +407,13 @@ multiple modular subtrees with behaviors
 /datum/ai_controller/proc/set_blackboard_key_assoc(key, thing, value)
 	if(!islist(blackboard[key]))
 		CRASH("set_blackboard_key_assoc called on non-list key [key]!")
+	// Don't do anything if it's already got this value
+	if (blackboard[key][thing] == value)
+		return
 	TRACK_AI_DATUM_TARGET(thing, key)
 	TRACK_AI_DATUM_TARGET(value, key)
 	blackboard[key][thing] = value
+	post_blackboard_key_set(key)
 
 /**
  * Similar to [proc/set_blackboard_key_assoc] but operates under the assumption the key is a lazylist (so it will create a list)
@@ -373,9 +425,21 @@ multiple modular subtrees with behaviors
  */
 /datum/ai_controller/proc/set_blackboard_key_assoc_lazylist(key, thing, value)
 	LAZYINITLIST(blackboard[key])
+	// Don't do anything if it's already got this value
+	if (blackboard[key][thing] == value)
+		return
 	TRACK_AI_DATUM_TARGET(thing, key)
 	TRACK_AI_DATUM_TARGET(value, key)
 	blackboard[key][thing] = value
+	post_blackboard_key_set(key)
+
+/**
+* Called after we set a blackboard key, forwards signal information.
+*/
+/datum/ai_controller/proc/post_blackboard_key_set(key)
+	if (isnull(pawn))
+		return
+	SEND_SIGNAL(pawn, COMSIG_AI_BLACKBOARD_KEY_SET(key))
 
 /**
  * Adds the passed "thing" to the associated key
@@ -465,6 +529,9 @@ multiple modular subtrees with behaviors
 /datum/ai_controller/proc/clear_blackboard_key(key)
 	CLEAR_AI_DATUM_TARGET(blackboard[key], key)
 	blackboard[key] = null
+	if(isnull(pawn))
+		return
+	SEND_SIGNAL(pawn, COMSIG_AI_BLACKBOARD_KEY_CLEARED(key))
 
 /**
  * Remove the passed thing from the associated blackboard key

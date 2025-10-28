@@ -112,11 +112,14 @@
 		owner.fireloss *= 10
 		if(iscarbon(owner))
 			var/mob/living/carbon/C = owner
-			for(var/X in C.bodyparts)
-				var/obj/item/bodypart/BP = X
-				BP.max_damage *= 10
-				BP.brute_dam *= 10
-				BP.burn_dam *= 10
+			var/obj/item/bodypart/limb
+			for(var/zone in C.bodyparts)
+				limb = C.bodyparts[zone]
+				if(!limb)
+					continue
+				limb.max_damage *= 10
+				limb.brute_dam *= 10
+				limb.burn_dam *= 10
 		owner.toxloss *= 10
 		owner.oxyloss *= 10
 		owner.cloneloss *= 10
@@ -196,11 +199,14 @@
 	owner.fireloss *= 0.1
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
-		for(var/X in C.bodyparts)
-			var/obj/item/bodypart/BP = X
-			BP.brute_dam *= 0.1
-			BP.burn_dam *= 0.1
-			BP.max_damage /= 10
+		var/obj/item/bodypart/limb
+		for(var/zone in C.bodyparts)
+			limb = C.bodyparts[zone]
+			if(!limb)
+				continue
+			limb.brute_dam *= 0.1
+			limb.burn_dam *= 0.1
+			limb.max_damage /= 10
 	owner.toxloss *= 0.1
 	owner.oxyloss *= 0.1
 	owner.cloneloss *= 0.1
@@ -278,107 +284,6 @@
 	. = ..()
 	STOP_PROCESSING(SSprocessing, src)
 
-//Hippocratic Oath: Applied when the Rod of Asclepius is activated.
-/datum/status_effect/hippocraticOath
-	id = "Hippocratic Oath"
-	status_type = STATUS_EFFECT_UNIQUE
-	duration = -1
-	tick_interval = 25
-	examine_text = span_notice("They seem to have an aura of healing and helpfulness about them.")
-	alert_type = null
-	var/hand
-	var/deathTick = 0
-
-/datum/status_effect/hippocraticOath/on_apply()
-	//Makes the user passive, it's in their oath not to harm!
-	ADD_TRAIT(owner, TRAIT_PACIFISM, "hippocraticOath")
-	var/datum/atom_hud/H = GLOB.huds[DATA_HUD_MEDICAL_ADVANCED]
-	H.add_hud_to(owner)
-	return ..()
-
-/datum/status_effect/hippocraticOath/on_remove()
-	REMOVE_TRAIT(owner, TRAIT_PACIFISM, "hippocraticOath")
-	var/datum/atom_hud/H = GLOB.huds[DATA_HUD_MEDICAL_ADVANCED]
-	H.remove_hud_from(owner)
-
-/datum/status_effect/hippocraticOath/tick()
-	if(owner.stat == DEAD)
-		if(deathTick < 4)
-			deathTick += 1
-		else
-			consume_owner()
-	else
-		if(iscarbon(owner))
-			var/mob/living/carbon/itemUser = owner
-			var/obj/item/heldItem = itemUser.get_item_for_held_index(hand)
-			if(heldItem == null || heldItem.type != /obj/item/rod_of_asclepius) //Checks to make sure the rod is still in their hand
-				var/obj/item/rod_of_asclepius/newRod = new(itemUser.loc)
-				newRod.activated()
-				if(!itemUser.has_hand_for_held_index(hand))
-					//If user does not have the corresponding hand anymore, give them one and return the rod to their hand
-					if(((hand % 2) == 0))
-						var/obj/item/bodypart/L = itemUser.new_body_part(BODY_ZONE_R_ARM, FALSE, FALSE)
-						if(L.attach_limb(itemUser))
-							itemUser.put_in_hand(newRod, hand, forced = TRUE)
-						else
-							qdel(L)
-							consume_owner() //we can't regrow, abort abort
-							return
-					else
-						var/obj/item/bodypart/L = itemUser.new_body_part(BODY_ZONE_L_ARM, FALSE, FALSE)
-						if(L.attach_limb(itemUser))
-							itemUser.put_in_hand(newRod, hand, forced = TRUE)
-						else
-							qdel(L)
-							consume_owner() //see above comment
-							return
-					to_chat(itemUser, span_notice("Your arm suddenly grows back with the Rod of Asclepius still attached!"))
-				else
-					//Otherwise get rid of whatever else is in their hand and return the rod to said hand
-					itemUser.put_in_hand(newRod, hand, forced = TRUE)
-					to_chat(itemUser, span_notice("The Rod of Asclepius suddenly grows back out of your arm!"))
-			//Because a servant of medicines stops at nothing to help others, lets keep them on their toes and give them an additional boost.
-			if(itemUser.health < itemUser.maxHealth)
-				new /obj/effect/temp_visual/heal(get_turf(itemUser), "#375637")
-			itemUser.adjustBruteLoss(-1.5)
-			itemUser.adjustFireLoss(-1.5)
-			itemUser.adjustToxLoss(-1.5, forced = TRUE) //Because Slime People are people too
-			itemUser.adjustOxyLoss(-1.5)
-			itemUser.adjustStaminaLoss(-1.5)
-			itemUser.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1.5)
-			itemUser.adjustCloneLoss(-0.5) //Becasue apparently clone damage is the bastion of all health
-		//Heal all those around you, unbiased
-		for(var/mob/living/L in view(7, owner))
-			if(L.health < L.maxHealth)
-				new /obj/effect/temp_visual/heal(get_turf(L), "#375637")
-			if(iscarbon(L))
-				L.adjustBruteLoss(-3.5)
-				L.adjustFireLoss(-3.5)
-				L.adjustToxLoss(-3.5, forced = TRUE) //Because Slime People are people too
-				L.adjustOxyLoss(-3.5)
-				L.adjustStaminaLoss(-3.5)
-				L.adjustOrganLoss(ORGAN_SLOT_BRAIN, -3.5)
-				L.adjustCloneLoss(-1) //Becasue apparently clone damage is the bastion of all health
-			else if(issilicon(L))
-				L.adjustBruteLoss(-3.5)
-				L.adjustFireLoss(-3.5)
-			else if(isanimal(L))
-				var/mob/living/simple_animal/SM = L
-				SM.adjustHealth(-3.5, forced = TRUE)
-
-/datum/status_effect/hippocraticOath/proc/consume_owner()
-	owner.visible_message(span_notice("[owner]'s soul is absorbed into the rod, relieving the previous snake of its duty."))
-	var/mob/living/simple_animal/hostile/retaliate/poison/snake/healSnake = new(owner.loc)
-	var/list/chems = list(/datum/reagent/medicine/sal_acid, /datum/reagent/medicine/c2/convermol, /datum/reagent/medicine/oxandrolone)
-	healSnake.poison_type = pick(chems)
-	healSnake.name = "Asclepius's Snake"
-	healSnake.real_name = "Asclepius's Snake"
-	healSnake.desc = "A mystical snake previously trapped upon the Rod of Asclepius, now freed of its burden. Unlike the average snake, its bites contain chemicals with minor healing properties."
-	new /obj/effect/decal/cleanable/ash(owner.loc)
-	new /obj/item/rod_of_asclepius(owner.loc)
-	qdel(owner)
-
-
 /datum/status_effect/good_music
 	id = "Good Music"
 	alert_type = null
@@ -388,8 +293,8 @@
 
 /datum/status_effect/good_music/tick()
 	if(owner.can_hear())
-		owner.dizziness = max(0, owner.dizziness - 2)
-		owner.adjust_jitter(owner.jitteriness - 2, max = 0)
+		owner.adjust_timed_status_effect(-4 SECONDS, /datum/status_effect/dizziness)
+		owner.adjust_timed_status_effect(-4 SECONDS, /datum/status_effect/jitter)
 		owner.confused = max(0, owner.confused - 1)
 		SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "goodmusic", /datum/mood_event/goodmusic)
 
@@ -419,7 +324,11 @@
 /datum/status_effect/antimagic
 	id = "antimagic"
 	duration = 10 SECONDS
-	examine_text = span_notice("They seem to be covered in a dull, grey aura.")
+
+
+/datum/status_effect/antimagic/get_examine_text()
+	return span_notice("They seem to be covered in a dull, grey aura.")
+
 
 /datum/status_effect/antimagic/on_apply()
 	owner.visible_message(span_notice("[owner] is coated with a dull aura!"))
@@ -473,3 +382,21 @@
 	owner.cut_overlay(overcharge)
 	owner.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/equipment_speedmod)
 	owner.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/gun)
+
+/datum/status_effect/concealed
+	id = "concealed"
+	var/concealment_power = 75
+	alert_type = /atom/movable/screen/alert/status_effect/concealed
+	tick_interval = 1
+
+/atom/movable/screen/alert/status_effect/concealed
+	name = "Concealed"
+	desc = "You're concealed and harder to hit with projectiles."
+	icon_state = "concealed"
+
+/datum/status_effect/concealed/tick(seconds_per_tick)
+	. = ..()
+	//look for smoke on tile
+	if(locate(/obj/effect/particle_effect/smoke) in get_turf(owner))
+		return TRUE
+	qdel(src) // we didnt find any smoke, so remove status

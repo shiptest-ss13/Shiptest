@@ -27,13 +27,13 @@
 
 /obj/structure/barricade/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_WELDER && user.a_intent != INTENT_HARM && bar_material == METAL)
-		if(obj_integrity < max_integrity)
+		if(atom_integrity < max_integrity)
 			if(!I.tool_start_check(user, src, amount=0))
 				return
 
 			to_chat(user, span_notice("You begin repairing [src]..."))
 			if(I.use_tool(src, user, 40, volume=40))
-				obj_integrity = clamp(obj_integrity + 20, 0, max_integrity)
+				atom_integrity = clamp(atom_integrity + 20, 0, max_integrity)
 	else
 		return ..()
 
@@ -62,6 +62,11 @@
 	icon_state = "woodenbarricade"
 	bar_material = WOOD
 	var/drop_amount = 3
+	var/crowbar_time = 4 SECONDS
+
+/obj/structure/barricade/wooden/examine(mob/user)
+	. = ..()
+	. += span_notice("You could use a crowbar to pry it apart.")
 
 /obj/structure/barricade/wooden/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/stack/sheet/mineral/wood))
@@ -90,6 +95,26 @@
 		deconstruct()
 		return TRUE
 
+/obj/structure/barricade/wooden/crowbar_act(mob/user, obj/item/tool)
+	if(..())
+		return TRUE
+	. = FALSE
+
+	user.visible_message(
+		span_warning("[user] tears the barricade apart."),
+		span_notice("You start prying boards off the barricade..."),
+		span_hear("You hear sounds of wood crashing on the floor.")
+	)
+	if(tool.use_tool(src, user, crowbar_time, volume=100))
+		playsound(loc, 'sound/effects/plank_fall.ogg', 100, vary = TRUE)
+		to_chat(user, span_notice("You disassemble the barricade."))
+		var/obj/item/stack/sheet/mineral/wood/M = new (loc, drop_amount)
+		if (!QDELETED(M)) // might be a stack that's been merged
+			M.add_fingerprint(user)
+		qdel(src)
+	return TRUE
+
+
 /obj/structure/barricade/wooden/crude
 	name = "crude plank barricade"
 	desc = "This space is blocked off by a crude assortment of planks."
@@ -97,6 +122,7 @@
 	drop_amount = 1
 	max_integrity = 50
 	proj_pass_rate = 65
+	crowbar_time = 2 SECONDS
 
 /obj/structure/barricade/wooden/crude/snow
 	desc = "This space is blocked off by a crude assortment of planks. It seems to be covered in a layer of snow."
@@ -215,7 +241,7 @@
 			var/turf/target_turf2 = get_step(src, WEST)
 			if(!target_turf2.is_blocked_turf())
 				new /obj/structure/barricade/security(target_turf2)
-	qdel(src)
+	resolve()
 
 /obj/item/grenade/barrier/ui_action_click(mob/user)
 	toggle_mode(user)

@@ -109,7 +109,7 @@
 
 /datum/plant_gene/core/potency
 	name = "Potency"
-	value = 10
+	value = 25
 
 /datum/plant_gene/core/potency/apply_stat(obj/item/seeds/S)
 	S.potency = value

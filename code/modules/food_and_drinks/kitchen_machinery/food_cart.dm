@@ -5,7 +5,7 @@
 /obj/machinery/food_cart
 	name = "food cart"
 	desc = "New generation hot dog stand."
-	icon = 'icons/obj/kitchen.dmi'
+	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "foodcart"
 	density = TRUE
 	anchored = FALSE
@@ -69,11 +69,11 @@
 			qdel(DG)
 			glasses++
 			to_chat(user, span_notice("[src] accepts the drinking glass, sterilizing it."))
-	else if(istype(O, /obj/item/reagent_containers/food/snacks))
+	else if(istype(O, /obj/item/food))
 		if(isFull())
 			to_chat(user, span_warning("[src] is at full capacity."))
 		else
-			var/obj/item/reagent_containers/food/snacks/S = O
+			var/obj/item/food/S = O
 			if(!user.transferItemToLoc(S, src))
 				return
 			if(stored_food[sanitize(S.name)])

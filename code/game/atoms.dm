@@ -22,9 +22,9 @@
 	var/flags_ricochet = NONE
 
 	///When a projectile tries to ricochet off this atom, the projectile ricochet chance is multiplied by this
-	var/ricochet_chance_mod = 1
+	var/receive_ricochet_chance_mod = 1
 	///When a projectile ricochets off this atom, it deals the normal damage * this modifier to this atom
-	var/ricochet_damage_mod = 0.33
+	var/receive_ricochet_damage_coeff = 0.33
 
 	///Reagents holder
 	var/datum/reagents/reagents = null
@@ -272,6 +272,16 @@
 	custom_materials = null //Null the list to prepare for applying the materials properly
 	set_custom_materials(temp_list)
 
+	if(uses_integrity)
+		if (islist(armor))
+			armor = getArmor(arglist(armor))
+		else if (!armor)
+			armor = getArmor()
+		else if (!istype(armor, /datum/armor))
+			stack_trace("Invalid type [armor.type] found in .armor during /obj Initialize()")
+		if(atom_integrity == null)
+			atom_integrity = max_integrity
+
 	ComponentInitialize()
 	InitializeAIController()
 
@@ -400,22 +410,24 @@
  */
 /atom/proc/CheckParts(list/parts_list, datum/crafting_recipe/R)
 	SEND_SIGNAL(src, COMSIG_ATOM_CHECKPARTS, parts_list, R)
-	if(parts_list)
-		for(var/A in parts_list)
-			if(istype(A, /datum/reagent))
-				if(!reagents)
-					reagents = new()
-				reagents.reagent_list.Add(A)
-				reagents.conditional_update()
-			else if(ismovable(A))
-				var/atom/movable/M = A
-				if(isliving(M.loc))
-					var/mob/living/L = M.loc
-					L.transferItemToLoc(M, src)
-				else
-					M.forceMove(src)
-				SEND_SIGNAL(M, COMSIG_ATOM_USED_IN_CRAFT, src)
-		parts_list.Cut()
+	if(!parts_list)
+		return
+
+	for(var/A in parts_list)
+		if(istype(A, /datum/reagent))
+			if(!reagents)
+				reagents = new()
+			reagents.reagent_list.Add(A)
+			reagents.conditional_update()
+		else if(ismovable(A))
+			var/atom/movable/M = A
+			if(isliving(M.loc))
+				var/mob/living/L = M.loc
+				L.transferItemToLoc(M, src)
+			else
+				M.forceMove(src)
+			SEND_SIGNAL(M, COMSIG_ATOM_USED_IN_CRAFT, src)
+	parts_list.Cut()
 
 ///Take air from the passed in gas mixture datum
 /atom/proc/assume_air(datum/gas_mixture/giver)
@@ -1140,21 +1152,28 @@
 	if(href_list[VV_HK_MODIFY_TRANSFORM] && check_rights(R_VAREDIT))
 		var/result = input(usr, "Choose the transformation to apply","Transform Mod") as null|anything in list("Scale","Translate","Rotate")
 		var/matrix/M = transform
+		if(!result)
+			return
 		switch(result)
 			if("Scale")
 				var/x = input(usr, "Choose x mod","Transform Mod") as null|num
 				var/y = input(usr, "Choose y mod","Transform Mod") as null|num
-				if(!isnull(x) && !isnull(y))
-					transform = M.Scale(x,y)
+				if(isnull(x) || isnull(y))
+					return
+				transform = M.Scale(x,y)
 			if("Translate")
-				var/x = input(usr, "Choose x mod","Transform Mod") as null|num
-				var/y = input(usr, "Choose y mod","Transform Mod") as null|num
-				if(!isnull(x) && !isnull(y))
-					transform = M.Translate(x,y)
+				var/x = input(usr, "Choose x mod (negative = left, positive = right)","Transform Mod") as null|num
+				var/y = input(usr, "Choose y mod (negative = down, positive = up)","Transform Mod") as null|num
+				if(isnull(x) || isnull(y))
+					return
+				transform = M.Translate(x,y)
 			if("Rotate")
 				var/angle = input(usr, "Choose angle to rotate","Transform Mod") as null|num
-				if(!isnull(angle))
-					transform = M.Turn(angle)
+				if(isnull(angle))
+					return
+				transform = M.Turn(angle)
+
+		SEND_SIGNAL(src, COMSIG_ATOM_VV_MODIFY_TRANSFORM)
 	if(href_list[VV_HK_AUTO_RENAME] && check_rights(R_VAREDIT))
 		var/newname = input(usr, "What do you want to rename this to?", "Automatic Rename") as null|text
 		if(newname)
@@ -1280,14 +1299,13 @@
 
 	StartProcessingAtom(user, I, choices_to_options[pick])
 
-
 /atom/proc/StartProcessingAtom(mob/living/user, obj/item/process_item, list/chosen_option)
 	var/processing_time = chosen_option[TOOL_PROCESSING_TIME]
 	to_chat(user, span_notice("You start working on [src]"))
 
-	if(process_item.use_tool(src, user, processing_time, volume=50))
+	if(process_item.use_tool(src, user, processing_time, volume = 50))
 		var/atom/atom_to_create = chosen_option[TOOL_PROCESSING_RESULT]
-		//var/list/atom/created_atoms = list() //Customfood
+		var/list/atom/created_atoms = list()
 		var/amount_to_create = chosen_option[TOOL_PROCESSING_AMOUNT]
 		for(var/i = 1 to amount_to_create)
 			var/atom/created_atom = new atom_to_create(drop_location())
@@ -1297,8 +1315,9 @@
 				created_atom.pixel_x += rand(-8,8)
 				created_atom.pixel_y += rand(-8,8)
 			created_atom.OnCreatedFromProcessing(user, process_item, chosen_option, src)
+
 		to_chat(user, span_notice("You manage to create [chosen_option[TOOL_PROCESSING_AMOUNT]] [initial(atom_to_create.gender) == PLURAL ? "[initial(atom_to_create.name)]" : "[initial(atom_to_create.name)][plural_s(initial(atom_to_create.name))]"] from [src]."))
-		//SEND_SIGNAL(src, COMSIG_ATOM_PROCESSED, user, process_item, created_atoms) //Custom food
+		SEND_SIGNAL(src, COMSIG_ATOM_PROCESSED, user, process_item, created_atoms)
 		UsedforProcessing(user, process_item, chosen_option)
 		return
 
@@ -1633,6 +1652,10 @@
 					max_grav = max(SG.active,max_grav)
 		return max_grav
 
+///Called after the atom is 'tamed' for type-specific operations, Usually called by the tameable component but also other things.
+/atom/proc/tamed(mob/living/tamer, obj/item/food)
+	return
+
 /**
  * Called when a mob examines (shift click or verb) this atom twice (or more) within EXAMINE_MORE_TIME (default 1.5 seconds)
  *
@@ -1759,3 +1782,36 @@
 /atom/proc/InitializeAIController()
 	if(ai_controller)
 		ai_controller = new ai_controller(src)
+
+/**
+ * log_wound() is for when someone is *attacked* and suffers a wound. Note that this only captures wounds from damage, so smites/forced wounds aren't logged, as well as demotions like cuts scabbing over
+ *
+ * Note that this has no info on the attack that dealt the wound: information about where damage came from isn't passed to the bodypart's damaged proc. When in doubt, check the attack log for attacks at that same time
+ * TODO later: Add logging for healed wounds, though that will require some rewriting of healing code to prevent admin heals from spamming the logs. Not high priority
+ *
+ * Arguments:
+ * * victim- The guy who got wounded
+ * * suffered_wound- The wound, already applied, that we're logging. It has to already be attached so we can get the limb from it
+ * * dealt_damage- How much damage is associated with the attack that dealt with this wound.
+ * * dealt_wound_bonus- The wound_bonus, if one was specified, of the wounding attack
+ * * dealt_bare_wound_bonus- The bare_wound_bonus, if one was specified *and applied*, of the wounding attack. Not shown if armor was present
+ * * base_roll- Base wounding ability of an attack is a random number from 1 to (dealt_damage ** WOUND_DAMAGE_EXPONENT). This is the number that was rolled in there, before mods
+ */
+/proc/log_wound(atom/victim, datum/wound/suffered_wound, dealt_damage, dealt_wound_bonus, dealt_bare_wound_bonus, base_roll)
+	if(QDELETED(victim) || !suffered_wound)
+		return
+	var/message = "has suffered: [suffered_wound][suffered_wound.limb ? " to [suffered_wound.limb.name]" : null]"// maybe indicate if it's a promote/demote?
+
+	if(dealt_damage)
+		message += " | Damage: [dealt_damage]"
+		// The base roll is useful since it can show how lucky someone got with the given attack. For example, dealing a cut
+		if(base_roll)
+			message += " (rolled [base_roll]/[dealt_damage ** WOUND_DAMAGE_EXPONENT])"
+
+	if(dealt_wound_bonus)
+		message += " | WB: [dealt_wound_bonus]"
+
+	if(dealt_bare_wound_bonus)
+		message += " | BWB: [dealt_bare_wound_bonus]"
+
+	victim.log_message(message, LOG_ATTACK, color="blue")

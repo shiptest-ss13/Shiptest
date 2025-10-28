@@ -151,7 +151,7 @@
 	desc = "A plasmaman containment helmet designed for security officers, protecting them from being flashed and burning alive, alongside other undesirables."
 	icon_state = "security_envirohelm"
 	item_state = "security_envirohelm"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 0, "fire" = 100, "acid" = 75) // WS Edit - plasmeme command helmets buff- made it match sec helmet
+	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 0, "fire" = 100, "acid" = 75, "wound" = 10) // WS Edit - plasmeme command helmets buff- made it match sec helmet
 
 /obj/item/clothing/head/helmet/space/plasmaman/security/warden
 	name = "warden's plasma envirosuit helmet"
@@ -268,28 +268,12 @@
 	icon_state = "janitor_envirohelm"
 	item_state = "janitor_envirohelm"
 
-/obj/item/clothing/head/helmet/space/plasmaman/mime
-	name = "mime envirosuit helmet"
-	desc = "The make-up is painted on, it's a miracle it doesn't chip. It's not very colourful."
-	icon_state = "mime_envirohelm"
-	item_state = "mime_envirohelm"
-	visor_icon = "mime_envisor"
-
-/obj/item/clothing/head/helmet/space/plasmaman/clown
-	name = "clown envirosuit helmet"
-	desc = "The make-up is painted on, it's a miracle it doesn't chip. <i>'HONK!'</i>"
-	icon_state = "clown_envirohelm"
-	item_state = "clown_envirohelm"
-	visor_icon = "clown_envisor"
-	smile_state = "clown_smile"
-
-// WS BEGIN - plasmeme command helmets buff start
 /obj/item/clothing/head/helmet/space/plasmaman/command
 	name = "captains envirosuit helmet"
 	desc = "An envirosuit helmet made for the most important plasmaman of them all."
 	icon_state = "command_envirohelm"
 	item_state = "command_envirohelm"
-	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 60, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 100, "acid" = 75)
+	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 60, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 100, "acid" = 75, "wound" = 10)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT //this needed to be added a long fucking time ago
@@ -299,7 +283,7 @@
 	desc = "An envirosuit helmet made for the tutored plasmaman."
 	icon_state = "ce_envirohelm"
 	item_state = "ce_envirohelm"
-	armor = list("melee" = 40, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 75)
+	armor = list("melee" = 40, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 75, "wound" = 10)
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 
 /obj/item/clothing/head/helmet/space/plasmaman/cmo
@@ -307,21 +291,21 @@
 	desc = "An envirosuit helmet made for the taxed plasmaman."
 	icon_state = "cmo_envirohelm"
 	item_state = "cmo_envirohelm"
-	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 75)
+	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 75, "wound" = 10)
 
 /obj/item/clothing/head/helmet/space/plasmaman/security/hos
 	name = "head of securitys helmet"
 	desc = "An envirosuit helmet made for the right and honorable plasmaman."
 	icon_state = "hos_envirohelm"
 	item_state = "hos_envirohelm"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 100, "acid" = 75)
+	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 100, "acid" = 75, "wound" = 10)
 
 /obj/item/clothing/head/helmet/space/plasmaman/rd
 	name = "research directors envirosuit helmet"
 	desc = "An envirosuit helmet made for the erudite plasmaman."
 	icon_state = "rd_envirohelm"
 	item_state = "rd_envirohelm"
-	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 75)
+	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 75, "wound" = 10)
 	var/explosion_detection_dist = 21
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SCAN_REAGENTS | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS //WS Port - Cit Internals
 	actions_types = list(/datum/action/item_action/toggle_helmet_light, /datum/action/item_action/toggle_research_scanner)

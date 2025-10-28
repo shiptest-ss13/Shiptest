@@ -88,6 +88,7 @@
 #include "gun_sanity.dm"
 #include "keybinding_init.dm"
 #include "machine_disassembly.dm"
+#include "medical_wounds.dm"
 #include "open_air.dm"
 #include "outfit_sanity.dm"
 #include "overmap.dm"

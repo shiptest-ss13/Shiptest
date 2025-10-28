@@ -1,0 +1,377 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"b" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered/bordercorner{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/transparent/yellow/filled/warning{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"c" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"e" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/structure/railing/thin,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"g" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"k" = (
+/obj/machinery/porta_turret/ship/ramzi/light{
+	dir = 10;
+	id = "bonnieguns"
+	},
+/turf/closed/indestructible/plastitanium/nodiagnonal,
+/area/ship/bridge)
+"l" = (
+/obj/machinery/power/shuttle/engine/electric,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/bridge)
+"n" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 1;
+	id = "bonniefield"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "bonnieblast"
+	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 8;
+	launch_status = 0;
+	preferred_direction = 4
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/bridge)
+"p" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable,
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/internals{
+	populate = 0;
+	name = "EVA crate"
+	},
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/suit/space/hardsuit/syndi/ramzi,
+/obj/item/tank/internals/emergency_oxygen/double,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"r" = (
+/obj/machinery/computer/helm{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	pixel_x = 4;
+	pixel_y = 23;
+	name = "blast door control";
+	id = "bonnieblast"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = -6;
+	pixel_y = 21;
+	id = "bonniefield"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/item/radio/intercom/wideband/directional/east,
+/obj/structure/railing/thin,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"s" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border,
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"v" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered/bordercorner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/transparent/yellow/filled/warning{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"w" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "bonniefield"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "bonnieblast"
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/bridge)
+"y" = (
+/turf/closed/indestructible/plastitanium,
+/area/ship/bridge)
+"A" = (
+/turf/closed/indestructible/plastitanium/nodiagnonal,
+/area/ship/bridge)
+"C" = (
+/obj/machinery/suit_storage_unit/inherit,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"D" = (
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 4
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 8;
+	pixel_x = 6;
+	pixel_y = 0
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"H" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"J" = (
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"K" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered/border,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"L" = (
+/obj/machinery/porta_turret/ship/ramzi/light{
+	dir = 9;
+	id = "bonnieguns"
+	},
+/turf/closed/indestructible/plastitanium/nodiagnonal,
+/area/ship/bridge)
+"M" = (
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/door/poddoor/preopen{
+	dir = 4;
+	id = "bonnieengine"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"N" = (
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = -1;
+	name = "engine shutters";
+	id = "bonnieengine"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner,
+/obj/machinery/holopad/secure,
+/obj/machinery/light_switch{
+	pixel_x = -19;
+	pixel_y = 9;
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"O" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"T" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/machinery/turretid/ship{
+	pixel_x = -26;
+	pixel_y = 0;
+	id = "bonnieguns"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"U" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border,
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"V" = (
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
+"X" = (
+/turf/template_noop,
+/area/template_noop)
+"Y" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-5"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "5-6"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+
+(1,1,1) = {"
+X
+L
+V
+V
+V
+k
+X
+"}
+(2,1,1) = {"
+A
+A
+A
+l
+A
+A
+A
+"}
+(3,1,1) = {"
+A
+J
+A
+M
+A
+C
+A
+"}
+(4,1,1) = {"
+A
+a
+N
+Y
+T
+D
+A
+"}
+(5,1,1) = {"
+A
+H
+e
+c
+s
+p
+A
+"}
+(6,1,1) = {"
+y
+A
+r
+O
+U
+A
+y
+"}
+(7,1,1) = {"
+X
+y
+A
+g
+K
+A
+X
+"}
+(8,1,1) = {"
+X
+X
+A
+b
+v
+A
+X
+"}
+(9,1,1) = {"
+X
+X
+A
+w
+n
+A
+X
+"}

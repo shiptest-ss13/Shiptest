@@ -191,3 +191,61 @@
 /area/ruin/icemoon/training_facility/course
 	name = "Exosuit Training Course"
 	requires_power = FALSE
+
+// downed transport
+
+/area/ruin/powered/icemoon/downed_transport/delapidated_cabin
+	name = "Delapidated Cabin"
+	icon_state = "green"
+
+/area/ruin/powered/icemoon/downed_transport/ramshackle_workroom
+	name = "Ramshackle Workroom"
+	icon_state = "yellow"
+
+/area/ruin/powered/icemoon/downed_transport/leaning_shack
+	name = "Leaning Shack"
+	icon_state = "red"
+
+/area/ruin/powered/icemoon/downed_transport/outhouse
+	name = "Outhouse"
+	icon_state = "blue"
+
+/area/ruin/unpowered/icemoon/downed_transport/crashed_shuttle
+	name = "Crashed Shuttle"
+	icon_state = "yellow"
+
+/area/ruin/unpowered/icemoon/downed_transport/the_descent
+	name = "The Descent"
+	icon_state = "mining"
+
+/area/ruin/unpowered/icemoon/downed_transport/mining_power_station
+	name = "Mining Power Station"
+	icon_state = "storage"
+
+/area/ruin/unpowered/icemoon/downed_transport/atmospherics_shed
+	name = "Atmospherics Shed"
+	icon_state = "atmos"
+
+/area/ruin/unpowered/icemoon/downed_transport/mineshaft_prep_room
+	name = "Mineshaft Prep Room"
+	icon_state = "mining"
+
+/area/ruin/unpowered/icemoon/downed_transport/abandoned_mineshaft
+	name = "Abandoned Mineshaft"
+	icon_state = "mining"
+
+/area/ruin/unpowered/icemoon/downed_transport/barracks
+	name = "Barracks"
+	icon_state = "crew_quarters"
+
+/area/ruin/unpowered/icemoon/downed_transport/crew_accomodations
+	name = "Crew Accomodations"
+	icon_state = "crew_quarters"
+
+/area/ruin/unpowered/icemoon/downed_transport/bathhouse
+	name = "Bathhouse"
+	icon_state = "crew_quarters"
+
+/area/ruin/unpowered/icemoon/downed_transport/security_office
+	name = "Security Office"
+	icon_state = "security"

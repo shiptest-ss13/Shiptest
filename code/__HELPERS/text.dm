@@ -939,3 +939,9 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 	if(lowercase_regex.Find(input))
 		return FALSE
 	return TRUE
+
+/**
+ * stuff like `copytext(input, length(input))` will trim the last character of the input,
+ * because DM does it so it copies until the char BEFORE the `end` arg, so we need to bump `end` by 1 in these cases.
+ */
+#define PREVENT_CHARACTER_TRIM_LOSS(integer) (integer + 1)

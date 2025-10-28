@@ -48,7 +48,6 @@
 	var/linglink
 	var/datum/martial_art/martial_art
 	var/static/default_martial_art = new/datum/martial_art
-	var/miming = FALSE // Mime's vow of silence
 	var/list/antag_datums
 	var/antag_hud_icon_state = null //this mind's ANTAG_HUD should have this icon_state
 	var/datum/atom_hud/antag/antag_hud = null //this mind's antag HUD
@@ -381,22 +380,11 @@
 
 	var/obj/item/uplink_loc
 
-	if(traitor_mob.client && traitor_mob.client.prefs)
-		switch(traitor_mob.client.prefs.uplink_spawn_loc)
-			if(UPLINK_PDA)
-				uplink_loc = PDA
-				if(!uplink_loc)
-					uplink_loc = R
-				if(!uplink_loc)
-					uplink_loc = P
-			if(UPLINK_RADIO)
-				uplink_loc = R
-				if(!uplink_loc)
-					uplink_loc = PDA
-				if(!uplink_loc)
-					uplink_loc = P
-			if(UPLINK_PEN)
-				uplink_loc = P
+	uplink_loc = PDA
+	if(!uplink_loc)
+		uplink_loc = R
+	if(!uplink_loc)
+		uplink_loc = P
 
 	if(!uplink_loc) // We've looked everywhere, let's just give you a pen
 		if(istype(traitor_mob.back,/obj/item/storage)) //ok buddy you better have a backpack!
@@ -684,10 +672,6 @@
 /datum/mind/proc/make_Traitor()
 	if(!(has_antag_datum(/datum/antagonist/traitor)))
 		add_antag_datum(/datum/antagonist/traitor)
-
-/datum/mind/proc/make_Contractor_Support()
-	if(!(has_antag_datum(/datum/antagonist/traitor/contractor_support)))
-		add_antag_datum(/datum/antagonist/traitor/contractor_support)
 
 /datum/mind/proc/make_Changeling()
 	var/datum/antagonist/changeling/C = has_antag_datum(/datum/antagonist/changeling)

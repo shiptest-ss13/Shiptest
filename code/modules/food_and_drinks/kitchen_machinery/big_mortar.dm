@@ -1,5 +1,3 @@
-#define LARGE_MORTAR_STAMINA_MINIMUM 50 //What is the amount of stam damage that we prevent mortar use at
-#define LARGE_MORTAR_STAMINA_USE 70 //How much stam damage is given to people when the mortar is used
 #define MORTAR_CONTAINER (DRAINABLE | TRANSPARENT)
 
 /obj/structure/large_mortar
@@ -87,10 +85,6 @@
 			balloon_alert(user, "nothing to grind")
 			return
 
-		if(user.getStaminaLoss() > LARGE_MORTAR_STAMINA_MINIMUM)
-			balloon_alert(user, "too tired")
-			return
-
 		var/list/choose_options = list(
 			"Grind" = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_grind"),
 			"Juice" = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_juice")
@@ -105,7 +99,6 @@
 			balloon_alert(user, "stopped grinding")
 			return
 
-		user.adjustStaminaLoss(LARGE_MORTAR_STAMINA_USE) //This is a bit more tiring than a normal sized mortar and pestle
 		switch(picked_option)
 			if("Juice")
 				for(var/obj/item/target_item as anything in contents)
@@ -156,8 +149,6 @@
 	to_chat(user, span_notice("You break [to_be_ground] into powder."))
 	QDEL_NULL(to_be_ground)
 
-#undef LARGE_MORTAR_STAMINA_MINIMUM
-#undef LARGE_MORTAR_STAMINA_USE
 #undef MORTAR_CONTAINER
 
 GLOBAL_LIST_INIT(big_mortar_recipe, list(

@@ -61,6 +61,10 @@ Difficulty: Very Hard
 		/datum/action/innate/megafauna_attack/alternating_cardinals)
 	small_sprite_type = /datum/action/small_sprite/megafauna/colossus
 
+/mob/living/simple_animal/hostile/megafauna/colossus/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NO_FLOATING_ANIM, ROUNDSTART_TRAIT) //we don't want this guy to float, messes up his animations.
+
 /datum/action/innate/megafauna_attack/spiral_attack
 	name = "Spiral Shots"
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
@@ -463,21 +467,6 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 /obj/machinery/anomalous_crystal/ex_act()
 	ActivationReaction(null, ACTIVATE_BOMB)
 
-/obj/machinery/anomalous_crystal/honk //Strips and equips you as a clown. I apologize for nothing
-	observer_desc = "This crystal strips and equips its targets as clowns."
-	possible_methods = list(ACTIVATE_MOB_BUMP, ACTIVATE_SPEECH)
-	activation_sound = 'sound/items/bikehorn.ogg'
-
-/obj/machinery/anomalous_crystal/honk/ActivationReaction(mob/user)
-	if(..() && ishuman(user) && !(user in affected_targets))
-		var/mob/living/carbon/human/H = user
-		for(var/obj/item/W in H)
-			H.dropItemToGround(W)
-		var/datum/job/clown/C = new /datum/job/clown()
-		C.equip(H)
-		qdel(C)
-		affected_targets.Add(H)
-
 /obj/machinery/anomalous_crystal/theme_warp //Warps the area you're in to look like a new one
 	observer_desc = "This crystal warps the area around it to a theme."
 	activation_method = ACTIVATE_TOUCH
@@ -656,7 +645,7 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 	friendly_verb_continuous = "taps"
 	friendly_verb_simple = "tap"
 	density = FALSE
-	movement_type = FLYING
+	is_flying_animal = TRUE
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
 	ventcrawler = VENTCRAWLER_ALWAYS
 	mob_size = MOB_SIZE_TINY

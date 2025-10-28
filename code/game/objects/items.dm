@@ -171,13 +171,13 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	mouse_drag_pointer = MOUSE_ACTIVE_POINTER
 
 	///Does it embed and if yes, what kind of embed
-	var/list/embedding = NONE
+	var/list/embedding
 
 	///for flags such as [GLASSESCOVERSEYES]
 	var/flags_cover = 0
 	var/heat = 0
-	///All items with sharpness of IS_SHARP or higher will automatically get the butchering component.
-	var/sharpness = IS_BLUNT
+	///All items with sharpness of SHARP_EDGED or higher will automatically get the butchering component.
+	var/sharpness = SHARP_NONE
 
 	///How a tool acts when you use it on something, such as wirecutters cutting wires while multitools measure power
 	var/tool_behaviour = NONE
@@ -369,32 +369,34 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	. = ..()
 
 	if(unique_reskin && !current_skin)
-		. += span_notice("Alt-click it to reskin it.")
+		. += span_notice("<b>Alt-click</b> it to reskin it.")
 
-	. += "[gender == PLURAL ? "They are" : "It is"] a [weightclass2text(w_class)] item."
+	. += span_notice("[gender == PLURAL ? "They are" : "It is"] a <b>[weightclass2text(w_class)]</b> item.")
 
 	if(resistance_flags & INDESTRUCTIBLE)
-		. += "[src] seems extremely robust! It'll probably withstand anything that could happen to it!"
+		. += span_notice("[src] looks incredibly tough. No way to get through this.")
 	else
 		if(resistance_flags & LAVA_PROOF)
-			. += "[src] is made of an extremely heat-resistant material, it'd probably be able to withstand lava!"
+			. += span_notice("[src] is made of <b>lava-resistant</b> materials.")
 		if(resistance_flags & (ACID_PROOF | UNACIDABLE))
-			. += "[src] looks pretty robust! It'd probably be able to withstand acid!"
+			. += span_notice("[src] is made of <b>acid-resistant</b> materials.")
 		if(resistance_flags & FREEZE_PROOF)
-			. += "[src] is made of cold-resistant materials."
+			. += span_notice("[src] is made of <b>cold-resistant</b> materials.")
 		if(resistance_flags & FIRE_PROOF)
-			. += "[src] is made of fire-retardant materials."
+			. += span_notice("[src] is made of <b>fire-resistant</b> materials.")
 
 	if(!user.research_scanner)
 		return
 
+	//what even is all this garbage
 	/// Research prospects, including boostable nodes and point values. Deliver to a console to know whether the boosts have already been used.
 	var/list/research_msg = list("<font color='purple'>Research prospects:</font> ")
 	///Separator between the items on the list
 	var/sep = ""
 	///Nodes that can be boosted
 	var/list/boostable_nodes = techweb_item_boost_check(src)
-	if (boostable_nodes)
+
+	if(boostable_nodes)
 		for(var/id in boostable_nodes)
 			var/datum/techweb_node/node = SSresearch.techweb_node_by_id(id)
 			if(!node)
@@ -403,16 +405,16 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			research_msg += node.display_name
 			sep = ", "
 	var/list/points = techweb_item_point_check(src)
-	if (length(points))
+	if(length(points))
 		sep = ", "
 		research_msg += techweb_point_display_generic(points)
 
-	if (!sep) // nothing was shown
+	if(!sep) // nothing was shown
 		research_msg += "None"
 
-	// Extractable materials. Only shows the names, not the amounts.
+	//Extractable materials. Only shows the names, not the amounts.
 	research_msg += ".<br><font color='purple'>Extractable materials:</font> "
-	if (length(custom_materials))
+	if(length(custom_materials))
 		sep = ""
 		for(var/mat in custom_materials)
 			research_msg += sep
@@ -863,11 +865,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/get_sharpness()
 	return sharpness
 
-/obj/item/proc/get_dismemberment_chance(obj/item/bodypart/affecting)
-	if(affecting.can_dismember(src))
-		if((sharpness || damtype == BURN || (damtype == BRUTE && (affecting.owner.dna && affecting.owner.dna.species && (TRAIT_EASYDISMEMBER in affecting.owner.dna.species.species_traits)))) && w_class >= WEIGHT_CLASS_NORMAL && force >= 10)
-			. = force * (affecting.get_damage() / affecting.max_damage)
-
 /obj/item/proc/get_dismember_sound()
 	if(damtype == BURN)
 		. = 'sound/weapons/sear.ogg'
@@ -1136,7 +1133,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	// if w_volume is 0 you fucked up.
 	return w_volume || AUTO_SCALE_VOLUME(w_class)
 
-/obj/item/proc/embedded(mob/living/carbon/human/embedded_mob)
+/obj/item/proc/embedded(atom/embedded_target)
 	return
 
 /obj/item/proc/unembedded()
@@ -1156,11 +1153,10 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(embedding)
 		return !isnull(embedding["pain_mult"]) && !isnull(embedding["jostle_pain_mult"]) && embedding["pain_mult"] == 0 && embedding["jostle_pain_mult"] == 0
 
-///In case we want to do something special (like self delete) upon failing to embed in something, return true
+///In case we want to do something special (like self delete) upon failing to embed in something
 /obj/item/proc/failedEmbed()
 	if(item_flags & DROPDEL)
-		QDEL_NULL(src)
-		return TRUE
+		qdel(src)
 
 ///Called by the carbon throw_item() proc. Returns null if the item negates the throw, or a reference to the thing to suffer the throw else.
 /obj/item/proc/on_thrown(mob/living/carbon/user, atom/target)
@@ -1177,18 +1173,21 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
  *
  * Really, this is used mostly with projectiles with shrapnel payloads, from [/datum/element/embed/proc/checkEmbedProjectile], and called on said shrapnel. Mostly acts as an intermediate between different embed elements.
  *
+ * Returns TRUE if it embedded successfully, nothing otherwise
+ *
  * Arguments:
- * * target- Either a body part, a carbon, or a closed turf. What are we hitting?
- * * forced- Do we want this to go through 100%?
+ * * target - Either a body part or a carbon. What are we hitting?
+ * * forced - Do we want this to go through 100%?
  */
-/obj/item/proc/tryEmbed(atom/target, forced=FALSE, silent=FALSE)
+/obj/item/proc/tryEmbed(atom/target, forced = FALSE)
 	if(!isbodypart(target) && !iscarbon(target))
 		return
-	if(!forced && !LAZYLEN(embedding))
-		return
 
-	if(SEND_SIGNAL(src, COMSIG_EMBED_TRY_FORCE, target, forced, silent))
-		return TRUE
+	if(!forced && !LAZYLEN(embedding))
+		return NONE
+
+	if(SEND_SIGNAL(src, COMSIG_EMBED_TRY_FORCE, target = target, forced = forced))
+		return COMPONENT_EMBED_SUCCESS
 	failedEmbed()
 
 ///For when you want to disable an item's embedding capabilities (like transforming weapons and such), this proc will detach any active embed elements from it.
@@ -1212,8 +1211,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		impact_pain_mult = (!isnull(embedding["impact_pain_mult"]) ? embedding["impact_pain_mult"] : EMBEDDED_IMPACT_PAIN_MULTIPLIER),\
 		jostle_chance = (!isnull(embedding["jostle_chance"]) ? embedding["jostle_chance"] : EMBEDDED_JOSTLE_CHANCE),\
 		jostle_pain_mult = (!isnull(embedding["jostle_pain_mult"]) ? embedding["jostle_pain_mult"] : EMBEDDED_JOSTLE_PAIN_MULTIPLIER),\
-		pain_stam_pct = (!isnull(embedding["pain_stam_pct"]) ? embedding["pain_stam_pct"] : EMBEDDED_PAIN_STAM_PCT),\
-		embed_chance_turf_mod = (!isnull(embedding["embed_chance_turf_mod"]) ? embedding["embed_chance_turf_mod"] : EMBED_CHANCE_TURF_MOD))
+		pain_stam_pct = (!isnull(embedding["pain_stam_pct"]) ? embedding["pain_stam_pct"] : EMBEDDED_PAIN_STAM_PCT))
 	return TRUE
 
 // Update icons if this is being carried by a mob
@@ -1318,15 +1316,19 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/on_accidental_consumption(mob/living/carbon/victim, mob/living/carbon/user, obj/item/source_item, discover_after = TRUE)
 	if(get_sharpness() && force >= 5) //if we've got something sharp with a decent force (ie, not plastic)
 		INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, force_scream))
-		victim.visible_message(span_warning("[victim] looks like [victim.p_theyve()] just bit something they shouldn't have!"), \
-							span_boldwarning("OH GOD! Was that a crunch? That didn't feel good at all!!"))
+		victim.visible_message(
+			span_warning("[victim] looks like [victim.p_theyve()] just bit something they shouldn't have!"),
+			span_boldwarning("OH GOD! Was that a crunch? That didn't feel good at all!!"),
+		)
 
 		victim.apply_damage(max(15, force), BRUTE, BODY_ZONE_HEAD)
 		victim.losebreath += 2
+
 		if(tryEmbed(victim.get_bodypart(BODY_ZONE_CHEST), forced = TRUE)) //and if it embeds successfully in their chest, cause a lot of pain
-			victim.apply_damage(max(25, force*1.5), BRUTE, BODY_ZONE_CHEST)
+			victim.apply_damage(max(25, force * 1.5), BRUTE, BODY_ZONE_CHEST)
 			victim.losebreath += 6
 			discover_after = FALSE
+
 		if(QDELETED(src)) // in case trying to embed it caused its deletion (say, if it's DROPDEL)
 			return
 		source_item?.reagents?.add_reagent(/datum/reagent/blood, 2)
