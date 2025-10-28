@@ -93,8 +93,8 @@
 		/obj/item/storage/box/papersack/mexapix_candy,
 		/obj/item/storage/box/papersack/mexapix_candy,
 		/obj/item/storage/box/papersack/mexapix_candy,
-		/obj/item/food/drinks/bottle/koerbalk,
-		/obj/item/food/drinks/bottle/koerbalk,
+		/obj/item/reagent_containers/food/drinks/bottle/koerbalk,
+		/obj/item/reagent_containers/food/drinks/bottle/koerbalk,
 	)
 
 /obj/item/leaves
@@ -108,24 +108,24 @@
 	taste_description = "fermented indigenous nuts and herbs"
 	boozepwr = 5
 
-/obj/item/food/drinks/bottle/koerbalk
+/obj/item/reagent_containers/food/drinks/bottle/koerbalk
 	name = "bottle of koerbalk"
 	desc = "A bottle of koerbalk produced by a CLIP firm."
 	icon_state = "mintbottle"
-	food_reagents = list(/datum/reagent/consumable/ethanol/koerbalk = 50)
+	list_reagents = list(/datum/reagent/consumable/ethanol/koerbalk = 50)
 	var/mixing_sticks_left = 5
 
-/obj/item/food/drinks/bottle/koerbalk/examine(mob/user)
+/obj/item/reagent_containers/food/drinks/bottle/koerbalk/examine(mob/user)
 	. = ..()
 	. += "It has [mixing_sticks_left] mixing sticks attached to the side of the container"
 	. += "You can <b>Ctrl-Click</b> [src] to remove one."
 
-/obj/item/food/drinks/bottle/koerbalk/CtrlClick(mob/user)
+/obj/item/reagent_containers/food/drinks/bottle/koerbalk/CtrlClick(mob/user)
 	. = ..()
-	if(isliving(user) && in_range(src, user))
+	if(isliving(user) && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		if(mixing_sticks_left > 0)
 			mixing_sticks_left--
-			to_chat(user, "You pull off a suger encrusted stick from the side of [src].")
+			to_chat(user, "You pull off a sugar encrusted stick from the side of [src].")
 			var/turf/local_turf = get_turf(src)
 			var/obj/item/food/chewable/mixing_stick/pulled_stick = new(local_turf)
 			if(!user.put_in_hands(pulled_stick))
@@ -176,7 +176,7 @@
 	var/slice_num = 5
 
 /obj/item/food/brextak/make_processable()
-	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/brextak/slice, sline_num, 5 SECONDS, table_required = TRUE, /*screentip_verb = "Slice"*/)
+	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/brextak/slice, slice_num, 5 SECONDS, table_required = TRUE, /*screentip_verb = "Slice"*/)
 
 /obj/item/food/brextak_uncooked
 	name = "uncooked brextak"
@@ -201,7 +201,7 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 150)
 	w_class = WEIGHT_CLASS_BULKY
 	max_volume = 200
-	slices_num = 20
+	slice_num = 20
 
 /obj/item/food/brextak_uncooked/big
 	name = "uncooked communal brextak"
@@ -214,7 +214,7 @@
 	//slice_path = null
 	resistance_flags = NONE
 
-/obj/item/food/brextak/make_processable()
+/obj/item/food/brextak/slice/make_processable()
 	return
 
 /obj/item/food/sucrika

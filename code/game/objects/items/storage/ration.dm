@@ -321,7 +321,7 @@
 		/obj/item/food/ration/side/vegan_crackers = 1,
 		/obj/item/food/ration/snack/oatmeal_cookie = 1,
 		/obj/item/food/ration/condiment/hot_cheese_spread = 1,
-		/obj/item/food/ration/pack/lemonade_beverage_suger_free = 1,
+		/obj/item/food/ration/pack/lemonade_beverage_sugar_free = 1,
 		/obj/item/ration_heater = 1
 		)
 	generate_items_inside(items_inside, src)
