@@ -381,6 +381,7 @@
 					else
 						new /obj/item/clothing/accessory/tooth_armlet/plastic(backpack)
 			if("Dia de Los Muertos")
+				to_chat(humanc, span_notice("You brought a skeleton mask in your bag."))
 				if(backpack)
 					new /obj/effect/spawner/random/clothing/day_of_dead(backpack)
 
