@@ -168,14 +168,15 @@
 	desc = "A slow-roasted dish prepared with red meat, wine and various root vegetables in a ceramic dish over low heat for several hours."
 	icon_state = "shepherds_pie"
 	icon = 'icons/obj/halloween_items.dmi'
-	//bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 5)
 	food_reagents = list(/datum/reagent/consumable/nutriment = 50)
-	//slice_path = /obj/item/food/brextak/slice
-	//slices_num = 5
 	//filling_color = "#FA8072"
 	tastes = list("mexapix" = 1)
 	foodtypes = MEAT | VEGETABLES | ALCOHOL
 	resistance_flags = FIRE_PROOF
+	var/slice_num = 5
+
+/obj/item/food/brextak/make_processable()
+	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/brextak/slice, sline_num, 5 SECONDS, table_required = TRUE, /*screentip_verb = "Slice"*/)
 
 /obj/item/food/brextak_uncooked
 	name = "uncooked brextak"
@@ -185,18 +186,22 @@
 	foodtypes = RAW
 	var/obj/item/cooked_type = /obj/item/food/brextak
 
+/obj/item/food/brextak_uncooked/make_bakeable()
+	AddComponent(/datum/component/bakeable, cooked_type, rand(30 SECONDS, 45 SECONDS), TRUE, TRUE)
+
+/* Is this required anymore?
 /obj/item/food/brextak_uncooked/burn()
 	visible_message(span_notice("[src] finishes cooking!"))
 	new cooked_type(loc)
 	qdel(src)
+*/
 
 /obj/item/food/brextak/big
 	name = "communal brextak"
 	food_reagents = list(/datum/reagent/consumable/nutriment = 150)
-	//slices_num = 20
 	w_class = WEIGHT_CLASS_BULKY
-	//bitesize = 20
-	//volume = 200
+	max_volume = 200
+	slices_num = 20
 
 /obj/item/food/brextak_uncooked/big
 	name = "uncooked communal brextak"
@@ -208,6 +213,9 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 10)
 	//slice_path = null
 	resistance_flags = NONE
+
+/obj/item/food/brextak/make_processable()
+	return
 
 /obj/item/food/sucrika
 	name = "sucrika"
