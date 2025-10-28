@@ -350,6 +350,8 @@
 
 #define GAS_FLAG_DANGEROUS (1<<0)
 #define GAS_FLAG_BREATH_PROC (1<<1)
+/// Can cause asthma attacks
+#define GAS_FLAG_IRRITANT (1<<2)
 
 // odors
 #define GAS_ODOR_CHEMICAL list(\

@@ -133,12 +133,16 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/smoke_all = FALSE /// Should we smoke all of the chems in the cig before it runs out. Splits each puff to take a portion of the overall chems so by the end you'll always have consumed all of the chems inside.
 	var/list/list_reagents = list(/datum/reagent/drug/nicotine = 15)
 	var/lung_harm = 0.1 //How bad it is for you
+	/// The smoke effect system, used to force nearby mobs to inhale secondhand smoke
+	var/datum/effect_system/smoke_spread/chem/cigarette/secondhand_smoke
 
 /obj/item/clothing/mask/cigarette/Initialize()
 	. = ..()
 	create_reagents(chem_volume, INJECTABLE | NO_REACT)
 	if(list_reagents)
 		reagents.add_reagent_list(list_reagents)
+		secondhand_smoke = new()
+		secondhand_smoke.attach(src)
 	if(starts_lit)
 		light()
 	AddComponent(/datum/component/knockoff,90,list(BODY_ZONE_PRECISE_MOUTH),list(ITEM_SLOT_MASK))//90% to knock off when wearing a mask
@@ -246,11 +250,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 				if (smoke_all)
 					to_smoke = reagents.total_volume / (smoketime / dragtime)
 
-				reagents.expose(C, INGEST, fraction)
+				reagents.expose(C, INHALE, fraction)
+				secondhand_smoke.set_up(reagents, to_smoke, 3, src, silent = TRUE)
+				secondhand_smoke.start()
 				var/obj/item/organ/lungs/L = C.getorganslot(ORGAN_SLOT_LUNGS)
 				if(L && !(L.organ_flags & ORGAN_SYNTHETIC))
 					C.adjustOrganLoss(ORGAN_SLOT_LUNGS, lung_harm)
-				if(!reagents.trans_to(C, to_smoke))
+				if(!reagents.trans_to(C, to_smoke, method = INHALE))
 					reagents.remove_any(to_smoke)
 				return
 		reagents.remove_any(to_smoke)

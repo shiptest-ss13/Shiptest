@@ -114,55 +114,64 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 /atom/movable/screen/alert/not_enough_oxy
 	name = "Choking (No O2)"
 	desc = "You're not getting enough oxygen. Find some good air before you pass out! The box in your backpack has an oxygen tank and breath mask in it."
-	icon_state = "not_enough_oxy"
+	icon_state = ALERT_NOT_ENOUGH_OXYGEN
 
 /atom/movable/screen/alert/too_much_oxy
 	name = "Choking (O2)"
 	desc = "There's too much oxygen in the air, and you're breathing it in! Find some good air before you pass out!"
-	icon_state = "too_much_oxy"
+	icon_state = ALERT_TOO_MUCH_OXYGEN
 
 /atom/movable/screen/alert/not_enough_nitro
 	name = "Choking (No N2)"
 	desc = "You're not getting enough nitrogen. Find some good air before you pass out!"
-	icon_state = "not_enough_nitro"
+	icon_state = ALERT_NOT_ENOUGH_NITRO
 
 /atom/movable/screen/alert/too_much_nitro
 	name = "Choking (N2)"
 	desc = "There's too much nitrogen in the air, and you're breathing it in! Find some good air before you pass out!"
-	icon_state = "too_much_nitro"
+	icon_state = ALERT_TOO_MUCH_NITRO
 
 /atom/movable/screen/alert/not_enough_co2
 	name = "Choking (No CO2)"
 	desc = "You're not getting enough carbon dioxide. Find some good air before you pass out!"
-	icon_state = "not_enough_co2"
+	icon_state = ALERT_NOT_ENOUGH_CO2
 
 /atom/movable/screen/alert/too_much_co2
 	name = "Choking (CO2)"
 	desc = "There's too much carbon dioxide in the air, and you're breathing it in! Find some good air before you pass out!"
-	icon_state = "too_much_co2"
+	icon_state = ALERT_TOO_MUCH_CO2
 
 /atom/movable/screen/alert/not_enough_tox
 	name = "Choking (No Plasma)"
 	desc = "You're not getting enough plasma. Find some good air before you pass out!"
-	icon_state = "not_enough_tox"
+	icon_state = ALERT_NOT_ENOUGH_PLASMA
 
 /atom/movable/screen/alert/too_much_tox
 	name = "Choking (Plasma)"
 	desc = "There's highly flammable, toxic plasma in the air and you're breathing it in. Find some fresh air. The box in your backpack has an oxygen tank and gas mask in it."
-	icon_state = "too_much_tox"
+	icon_state = ALERT_TOO_MUCH_PLASMA
 
 /atom/movable/screen/alert/not_enough_n2o
 	name = "Choking (No N2O)"
 	desc = "You're not getting enough N2O. Find some good air before you pass out!"
-	icon_state = "not_enough_n2o"
+	icon_state = ALERT_NOT_ENOUGH_N2O
 
 /atom/movable/screen/alert/too_much_n2o
 	name = "Choking (N2O)"
 	desc = "There's semi-toxic sleeping gas in the air and you're breathing it in. Find some fresh air. The box in your backpack has an oxygen tank and gas mask in it."
-	icon_state = "too_much_n2o"
+	icon_state = ALERT_TOO_MUCH_N2O
 
 //End gas alerts
 
+/atom/movable/screen/alert/bronchodilated
+	name = "Bronchodilated"
+	desc = "You feel like your lungs are larger than usual! You're taking deeper breaths!"
+	icon_state = ALERT_BRONCHODILATION
+
+/atom/movable/screen/alert/bronchoconstricted
+	name = "Bronchocontracted"
+	desc = "You feel like your lungs are smaller than usual! You might need a higher pressure environment/internals to breathe!"
+	icon_state = ALERT_BRONCHOCONSTRICTION
 
 /atom/movable/screen/alert/hungry
 	name = "Hungry"

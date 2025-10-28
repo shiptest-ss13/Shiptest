@@ -141,6 +141,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_CRITICAL_CONDITION "critical-condition"
 /// Doesn't miss attacks
 #define TRAIT_PERFECT_ATTACKER "perfect_attacker"
+/// Is in stasis
+#define TRAIT_STASIS "stasis"
 #define TRAIT_BLIND "blind"
 #define TRAIT_DEAF "deaf"
 #define TRAIT_MUTE "mute"

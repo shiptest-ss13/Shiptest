@@ -382,6 +382,30 @@ GENE SCANNER
 			<div class='ml-2'>Name: [D.name].\nType: [D.spread_text].\nStage: [D.stage]/[D.max_stages].\nPossible Cure: [D.cure_text]</div>\
 			</span>" // divs do not need extra linebreak
 
+	// Lungs
+	var/obj/item/organ/lungs/lungs = M.getorganslot(ORGAN_SLOT_LUNGS)
+	if (lungs)
+		var/initial_pressure_mult = lungs::received_pressure_mult
+		if (lungs.received_pressure_mult != initial_pressure_mult)
+			var/tooltip
+			var/dilation_text
+			var/beginning_text = "Lung Dilation: "
+			if (lungs.received_pressure_mult > initial_pressure_mult) // higher than usual
+				beginning_text = span_blue("<b>[beginning_text]</b>")
+				dilation_text = span_blue("[(lungs.received_pressure_mult * 100) - 100]%")
+				tooltip = "Subject's lungs are dilated and breathing more air than usual. Increases the effects of inhaled gases."
+			else
+				beginning_text = span_danger("<b>Lung Constriction: </b>")
+				if (lungs.received_pressure_mult <= 0) // lethal
+					dilation_text = span_bolddanger("[100 - (lungs.received_pressure_mult * 100)]%")
+					tooltip = "Subject's lungs are completely shut. Subject is unable to breathe and requires emergency surgery. If asthmatic, perform asthmatic bypass surgery and adminster salbutamol inhalant. Otherwise, replace lungs."
+				else
+					dilation_text = span_danger("[100 - (lungs.received_pressure_mult * 100)]%")
+					tooltip = "Subject's lungs are partially shut. If unable to breathe, administer a high-pressure internals tank or replace lungs. If asthmatic, inhaled salbutamol or bypass surgery will likely help."
+
+			var/lung_message = beginning_text + conditional_tooltip(dilation_text, tooltip, TRUE)
+			render_list += lung_message
+
 	// Blood Level
 	if(M.has_dna())
 		var/mob/living/carbon/C = M

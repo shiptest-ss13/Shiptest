@@ -52,6 +52,10 @@
 	var/BZ_brain_damage_min = 1
 	var/gas_stimulation_min = 0.002 //Nitryl, Stimulum and Freon
 
+	/// All incoming breaths will have their pressure multiplied against this. Higher values allow more air to be breathed at once,
+	/// while lower values can cause suffocation in low pressure environments.
+	var/received_pressure_mult = 1
+
 	var/cold_message = "your face freezing and an icicle forming"
 	var/chilly_message = "chilly air"
 	var/chlly_threshold = T20C-20
@@ -82,6 +86,11 @@
 /obj/item/organ/lungs/New()
 	. = ..()
 	populate_gas_info()
+
+/obj/item/organ/lungs/Insert(mob/living/carbon/M, special, drop_if_replaced)
+	. = ..()
+	if(.)
+		update_bronchodilation_alerts()
 
 /obj/item/organ/lungs/proc/populate_gas_info()
 	gas_min[breathing_class] = safe_breath_min
@@ -125,9 +134,11 @@
 			H.throw_alert(alert_category, alert_type)
 		return FALSE
 
-	#define PP_MOLES(X) ((X / total_moles) * pressure)
+	#define PP_MOLES(X) ((X / total_moles) * pressure * received_pressure_mult)
 
 	#define PP(air, gas) PP_MOLES(air.get_moles(gas))
+
+	SEND_SIGNAL(H, COMSIG_CARBON_INHALED_GAS, breath, received_pressure_mult)
 
 	var/gas_breathed = 0
 
@@ -194,7 +205,7 @@
 			alert_category = breathing_class.high_alert_category
 			alert_type = breathing_class.high_alert_datum
 			danger_reagent = breathing_class.danger_reagent
-			found_pp = breathing_class.get_effective_pp(breath)
+			found_pp = breathing_class.get_effective_pp(breath) * received_pressure_mult
 		else
 			danger_reagent = danger_reagents[entry]
 			if(entry in breath_alert_info)
@@ -522,6 +533,38 @@
 
 	// The air you breathe out should match your body temperature
 	breath.set_temperature(breather.bodytemperature)
+
+/// Adjusting proc for [received_pressure_mult]. Updates bronchodilation alerts.
+/obj/item/organ/lungs/proc/adjust_received_pressure_mult(adjustment)
+	received_pressure_mult = max(received_pressure_mult + adjustment, 0)
+	update_bronchodilation_alerts()
+
+/// Setter proc for [received_pressure_mult]. Updates bronchodilation alerts.
+/obj/item/organ/lungs/proc/set_received_pressure_mult(new_value)
+	received_pressure_mult = max(new_value, 0)
+	update_bronchodilation_alerts()
+
+#define LUNG_CAPACITY_ALERT_BUFFER 0.003
+/// Depending on [received_pressure_mult], gives either a bronchocontraction or bronchoconstriction alert to our owner (if we have one), or clears the alert
+/// if [received_pressure_mult] is near 1.
+/obj/item/organ/lungs/proc/update_bronchodilation_alerts()
+	if (!owner)
+		return
+
+	var/initial_value = initial(received_pressure_mult)
+
+	// you wont really notice if youre only breathing a bit more or a bit less
+	var/dilated = (received_pressure_mult > (initial_value + LUNG_CAPACITY_ALERT_BUFFER))
+	var/constricted = (received_pressure_mult < (initial_value - LUNG_CAPACITY_ALERT_BUFFER))
+
+	if (dilated)
+		owner.throw_alert(ALERT_BRONCHODILATION, /atom/movable/screen/alert/bronchodilated)
+	else if (constricted)
+		owner.throw_alert(ALERT_BRONCHODILATION, /atom/movable/screen/alert/bronchoconstricted)
+	else
+		owner.clear_alert(ALERT_BRONCHODILATION)
+
+#undef LUNG_CAPACITY_ALERT_BUFFER
 
 /obj/item/organ/lungs/on_life()
 	. = ..()
