@@ -190,7 +190,7 @@
 		else
 			H.failed_last_breath = FALSE
 			if(H.health >= H.crit_threshold)
-				H.adjustOxyLoss(-breathModifier)
+				H.adjustOxyLoss(-breathModifier * received_pressure_mult)
 			if(alert_category)
 				H.clear_alert(alert_category)
 	var/list/danger_reagents = GLOB.gas_data.breath_reagents_dangerous

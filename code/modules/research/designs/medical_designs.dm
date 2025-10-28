@@ -90,26 +90,6 @@
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
-/datum/design/inhaler
-	name = "Inhaler"
-	desc = "A small device capable of administering short bursts of aerosolized chemicals. Requires a canister to function."
-	id = "inhaler"
-	build_path = /obj/item/inhaler/medical
-	build_type = PROTOLATHE | AUTOLATHE
-	materials = list(/datum/material/plastic = 100)
-	category = list("Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-
-/datum/design/inhaler_canister
-	name = "Inhaler Canister"
-	desc = "A small canister filled with aerosolized reagents for use in a inhaler."
-	id = "inhaler_canister"
-	build_path = /obj/item/reagent_containers/inhaler_canister
-	build_type = PROTOLATHE | AUTOLATHE
-	materials = list(/datum/material/iron = 200)
-	category = list("Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-
 /datum/design/bluespacebodybag
 	name = "Bluespace Body Bag"
 	desc = "A bluespace body bag, powered by experimental bluespace technology. It can hold loads of bodies and the largest of creatures."
