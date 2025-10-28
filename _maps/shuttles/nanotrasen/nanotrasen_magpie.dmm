@@ -762,6 +762,8 @@
 /obj/structure/cable/white{
 	icon_state = "1-2"
 	},
+/obj/machinery/holopad,
+/obj/item/disk/holodisk/ship/magpie/supplynotice,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/space)
 "iq" = (
@@ -4540,6 +4542,11 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
+"TB" = (
+/obj/machinery/holopad,
+/obj/item/disk/holodisk/ship/magpie/securitynotice,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "TE" = (
 /obj/structure/chair/bench/blue{
 	dir = 4
@@ -5814,7 +5821,7 @@ SN
 aU
 Yq
 lz
-Uy
+TB
 CI
 bx
 Yj
