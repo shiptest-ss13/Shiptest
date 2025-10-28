@@ -358,8 +358,9 @@
 		return
 
 	if(GLOB.holidays[HALLOWEEN])
+		var/datum/holiday/holiday_datum = GLOB.holidays[HALLOWEEN]
 		to_chat(humanc, span_big("Happy Halloween! You can choose which holiday your character celebrates."))
-		to_chat(humanc, span_notice("Read up about Mexapix <a href=\"https://hackmd.io/D-9st3kxThm93WlUY7gKig\">Here!</a><br>Dia de Los Muretos does not have lore atm!"))
+		to_chat(humanc, span_notice("Read up about Mexapix <a href=\"[holiday_datum.read_up_link]\">Here!</a><br>Dia de Los Muretos does not have lore atm!"))
 
 		var/list/choices = list()
 		choices["Kalixican Mexapix"] = icon('icons/obj/halloween_items.dmi', "tooth_armlet")
@@ -384,8 +385,9 @@
 					new /obj/effect/spawner/random/clothing/day_of_dead(backpack)
 
 	if(GLOB.holidays[CATACLYSM_DAY])
+		var/datum/holiday/holiday_datum = GLOB.holidays[CATACLYSM_DAY]
 		to_chat(humanc, span_big("It's Cataclysm Day! You can choose how your character celebrates."))
-		to_chat(humanc, span_notice("Read up about Cataclysm Day <a href=\"https://shiptest.net/wiki/Cataclysm_Day\">Here: https://shiptest.net/wiki/Cataclysm_Day</a>"))
+		to_chat(humanc, span_notice("Read up about Cataclysm Day <a href=\"[holiday_datum.read_up_link]\">Here: [holiday_datum.read_up_link]</a>"))
 
 		var/list/choices = list()
 		choices["SRM Fasting Rations"] = icon('icons/obj/clothing/faction/srm/head.dmi', "rouma_hat")
