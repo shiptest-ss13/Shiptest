@@ -56,7 +56,7 @@
 	SOUND keyboard
 	DELAY 30
 	SAY You're collecting resources and performing extra vehicular labour at behest of our clients.
-	DELAY 30
+	DELAY 40
 	SAY This means at minimum, excavating fuel for the ship's generators, supplying the engineer with material for their projects, and carrying out general outside work.
 	DELAY 40
 	SAY You'll often be one of the first pair of boots outside the vessel, so it's critical you can take care of yourself.
