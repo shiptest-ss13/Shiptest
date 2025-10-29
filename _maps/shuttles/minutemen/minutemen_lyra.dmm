@@ -940,7 +940,7 @@
 "ie" = (
 /obj/machinery/computer/atmos_control{
 	dir = 1;
-	sensors = list("lyra_sensor" = "Turbine Chamber", "lyra_oxy" = "Oxygen Tank", "lyra_hydro" = "Hydrogen Tank", "lyra_air" = "Air Mixture"s);
+	sensors = list("lyra_sensor" = "Turbine Chamber", "lyra_oxy" = "Oxygen Tank", "lyra_hydro" = "Hydrogen Tank", "lyra_air" = "Air Mixture");
 	icon_state = "computer-left"
 	},
 /obj/structure/railing,
@@ -2064,11 +2064,6 @@
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
-"qY" = (
-/obj/structure/catwalk/over,
-/obj/item/radio/intercom/directional/south,
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
 "ra" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 8
@@ -3874,6 +3869,16 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
+"FB" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/warning{
+	dir = 8
+	},
+/obj/item/radio/intercom/directional/west,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "FI" = (
 /obj/effect/turf_decal/corner/opaque/mauve/border{
 	dir = 8
@@ -4768,17 +4773,6 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
-"Oe" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/blue/warning,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 1
-	},
-/obj/item/radio/intercom/directional/south,
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
 "Oi" = (
 /obj/effect/turf_decal/industrial/warning/green{
 	dir = 1
@@ -4903,6 +4897,17 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/north,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
+"PL" = (
+/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/warning,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "PS" = (
@@ -5661,16 +5666,6 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
-"Xj" = (
-/obj/effect/turf_decal/trimline/transparent/blue/filled/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/opaque/blue/warning{
-	dir = 8
-	},
-/obj/item/radio/intercom/directional/west,
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
 "XC" = (
 /obj/machinery/portable_atmospherics/scrubber,
 /obj/effect/turf_decal/trimline/transparent/blue/warning,
@@ -5870,6 +5865,11 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"ZP" = (
+/obj/structure/catwalk/over,
+/obj/item/radio/intercom/directional/south,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 
 (1,1,1) = {"
 rD
@@ -6383,7 +6383,7 @@ Gr
 Gr
 oV
 yf
-Oe
+PL
 Np
 yF
 Ve
@@ -6502,7 +6502,7 @@ pz
 IN
 xO
 qj
-Xj
+FB
 Uq
 lQ
 XH
@@ -6649,7 +6649,7 @@ rD
 (26,1,1) = {"
 rD
 rD
-qY
+ZP
 pj
 Ka
 Yw
