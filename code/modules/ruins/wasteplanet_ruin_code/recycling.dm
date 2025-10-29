@@ -1,7 +1,33 @@
-/obj/item/paper/crumpled/fluff/ruin/wasteplanet
-	name = "\improper Big Problem"
-	default_raw_text = "whoevers reading this, somethings gone wrong big time. Our supply vessel is 2 weeks late, supplies are running low and I haven't seen the captain in days, the lieutenant keeps entering and leaving their building in a hurry, and I've noticed some of our radiation supplies are missing. I'm going to go confront him later, consider this my last words if he thinks it's desertion and shoots me."
+/obj/effect/mob_spawn/human/corpse/ramzi/commando/pristine
+	name = "Ramzi Clique Pristine Commando"
+	id_job = "Operative"
+	outfit = /datum/outfit/ramzi/commando/pristine
+	mob_gender = FEMALE
 
-/obj/item/paper/crumpled/fluff/ruin/wasteplanet
-	name = "\improper Shit's gone sideways"
-	default_raw_text = "Some dumb fuck locked Tcomms down just as the Lieutenant decided we're all on the execution list! Drill is a piece of shit and wont work, and I don't want to risk damaging the equipment with the X4, I'm gonna try to get into the Security team's base and hit the button for the vault doors, heard we had a special salvage saw stored there..."
+/datum/outfit/ramzi/commando/pristine
+	name = "Ramzi Clique Pristine Commando"
+	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi
+	suit = /obj/item/clothing/suit/space/hardsuit/syndi
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/pristine/hydra
+	name = "Lieutenant Ophilia"
+	desc = "An imposing deserter from the Gorlex Marauders turned pirate. Dressed in Ruby-Red that shines in your eyes, almost too brightly to see the raising of her assault rifle."
+	rapid = 5
+	icon_state = "syndicate_stormtrooper_shotgun"
+	casingtype = /obj/item/ammo_casing/a556_42
+	l_hand = /obj/item/gun/ballistic/automatic/assault/hydra
+	projectilesound = 'sound/weapons/gun/rifle/hydra.ogg'
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/commando/pristine
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
+
+	minimum_distance = 7
+	vision_range = 12
+	aggro_vision_range = 14
+	weapon_drop_chance = 100
+
+/mob/living/simple_animal/hostile/human/ramzi/melee/atmos_tech
+	name = "Ramzi Clique Atmospheric Technician"
+	desc = "An imposing deserter from the Gorlex Marauders turned pirate. This one has a axe, and appears very very unhappy to see you."
+	l_hand = /obj/item/melee/axe/fire
+	weapon_drop_chance = 100
+
