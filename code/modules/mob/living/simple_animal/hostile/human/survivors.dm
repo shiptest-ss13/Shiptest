@@ -286,6 +286,9 @@
 	desc = "A blood-red silhouette leveling a wicked battle rifle in your direction. Their suit is worn and damaged, yet still armored. Their stance is trained, alert, unlike many of wanderers nearby."
 	rapid = 4
 	rapid_fire_delay = 3
+	ranged = 1
+	retreat_distance = 5
+	minimum_distance = 5
 	icon_state = "syndicate_hydra"
 	casingtype = /obj/item/ammo_casing/a308
 	l_hand = /obj/item/gun/ballistic/automatic/assault/invictus/old
