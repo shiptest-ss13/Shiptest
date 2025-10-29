@@ -23,7 +23,6 @@ GLOBAL_LIST_INIT(trash_loot, list(//junk: useless, very easy to get, or ghetto c
 		/obj/item/trash/chips = 1,
 		/obj/item/trash/popcorn = 1,
 		/obj/item/trash/sosjerky = 1,
-		/obj/item/trash/plate = 1,
 		/obj/item/trash/pistachios = 1,
 
 		/obj/item/poster/random_contraband = 1,
@@ -242,7 +241,6 @@ GLOBAL_LIST_INIT(oddity_loot, list(//oddity: strange or crazy items
 		/obj/item/clothing/suit/space/hardsuit/carp/old = 1,
 		/obj/item/clothing/suit/armor/reactive/repulse = 1,
 		/obj/item/melee/axe/fire = 1,
-		/obj/item/gun/ballistic/rocketlauncher/oneshot = 1,
 		/mob/living/simple_animal/crab = 1,
 		/obj/item/melee/baton/boomerang = 1,
 		/obj/item/circular_saw/best = 1,

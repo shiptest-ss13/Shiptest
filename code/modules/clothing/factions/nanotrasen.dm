@@ -336,6 +336,7 @@
 	icon_state = "nt_m10helm"
 	icon = 'icons/obj/clothing/faction/nanotrasen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/nanotrasen/head.dmi'
+	unique_reskin = null
 
 /obj/item/clothing/head/helmet/bulletproof/x11/nanotrasen
 	name = "\improper Bulletproof Vigilitas Helmet"
@@ -343,6 +344,7 @@
 	icon_state = "nt_x11helm"
 	icon = 'icons/obj/clothing/faction/nanotrasen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/nanotrasen/head.dmi'
+	unique_reskin = null
 
 /obj/item/clothing/head/helmet/riot/nanotrasen
 	name = "\improper Vigilitas Riot Helmet"

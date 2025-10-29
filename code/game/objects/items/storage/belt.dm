@@ -328,6 +328,7 @@
 		/obj/item/gun/ballistic/automatic/pistol,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/gun/energy/laser,
+		/obj/item/gun/energy/sharplite/x26,
 		/obj/item/gun/energy/disabler,
 		/obj/item/gun/energy/kalix/pistol,
 		))
@@ -482,6 +483,7 @@
 		/obj/item/gun/ballistic/automatic/pistol,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/gun/energy/laser,
+		/obj/item/gun/energy/sharplite/x26,
 		/obj/item/gun/energy/disabler,
 		/obj/item/gun/energy/kalix/pistol,
 		))
@@ -508,8 +510,8 @@
 
 /obj/item/storage/belt/military/mako/PopulateContents()
 	. = ..()
-	new /obj/item/ammo_casing/caseless/rocket/a70mm/hedp(src)
-	new /obj/item/ammo_casing/caseless/rocket/a70mm/hedp(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
+	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
 	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
 	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
 	new /obj/item/ammo_casing/caseless/rocket/a70mm(src)
@@ -918,3 +920,11 @@
 	icon_state = "pgf-scabbard"
 	item_state = "pgf-scabbard"
 	sabre_type = /obj/item/melee/sword/sabre/pgf
+
+/obj/item/storage/belt/sabre/kukri
+	name = "kukri sheath"
+	desc = "A piece of solid, treated leather. Don't pull the kukri out unless you're itching for a fight."
+	base_icon_state = "sheath_kukri"
+	icon_state = "sheath_kukri"
+	item_state = "sheath_kukri"
+	sabre_type = /obj/item/melee/sword/kukri

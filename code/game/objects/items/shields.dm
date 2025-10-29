@@ -22,6 +22,8 @@
 	uses_integrity = TRUE
 	/// makes beam projectiles pass through the shield
 	var/transparent = FALSE
+	/// threshold where armor piercing works
+	var/ap_threshold = 20
 	/// if the shield will break by sustaining damage
 	var/breakable_by_damage = TRUE
 	/// baton bash cooldown
@@ -74,6 +76,17 @@
 		final_block_chance += 30
 	if(attack_type == LEAP_ATTACK)
 		final_block_chance = 100
+	if(isobj(hitby))
+		var/obj/pointy = hitby
+		//9mm 10-30 - ap thresh = -40
+		//57 10+20 - ap thresh  = 10
+		//5556 12.5+30 - ap thresh = 22.5
+		//6.5 20+80 - ap thresh = 80
+		var/chance_to_pen = (damage*0.5 + pointy.armour_penetration*1.5) - ap_threshold
+		if(prob(chance_to_pen))
+			take_damage(armour_penetration, damage_type)
+			to_chat(owner, span_boldwarning("Your shield is penetrated by [hitby]!"))
+			return FALSE
 	. = ..()
 	if(.)
 		on_block(owner, hitby, attack_text, damage, attack_type, damage_type)

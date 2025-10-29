@@ -932,6 +932,7 @@
 	},
 /obj/structure/closet/wall/orange/directional/north,
 /obj/effect/turf_decal/siding/white,
+/obj/item/clothing/glasses/welding,
 /turf/open/floor/plasteel,
 /area/ship/engineering/engines/starboard)
 "lB" = (
@@ -1199,6 +1200,7 @@
 	color = "#FF6600"
 	},
 /obj/item/stack/sheet/metal/twenty,
+/obj/item/stack/sheet/glass/twenty,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "pi" = (
@@ -1267,6 +1269,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "5-10"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1432,7 +1437,6 @@
 	pixel_x = 7
 	},
 /obj/item/stock_parts/cell/gun/sharplite/plus{
-	pixel_x = 0;
 	pixel_y = 7
 	},
 /obj/item/stock_parts/cell/gun/sharplite{
@@ -1472,6 +1476,7 @@
 /obj/item/clothing/mask/gas,
 /obj/item/clothing/suit/space/eva,
 /obj/effect/decal/cleanable/cobweb,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "su" = (
@@ -1525,6 +1530,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/starboard)
 "tj" = (
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "tr" = (
@@ -1568,7 +1574,7 @@
 "tB" = (
 /obj/structure/chair/handrail,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/radio/intercom/directional/north,
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "tG" = (
@@ -2086,6 +2092,9 @@
 	pixel_x = 4
 	},
 /obj/item/kitchen/rollingpin,
+/obj/structure/sink/chem{
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 "zM" = (
@@ -2253,6 +2262,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Ch" = (
@@ -2473,7 +2485,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
-/obj/machinery/grill,
+/obj/machinery/griddle,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 "Eo" = (
@@ -2608,6 +2620,12 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 8
 	},
+/obj/item/storage/belt/security,
+/obj/item/melee/knife/combat,
+/obj/item/clothing/suit/armor/nanotrasen{
+	pixel_x = -8
+	},
+/obj/item/clothing/suit/armor/nanotrasen/slim,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "FV" = (
@@ -3140,6 +3158,12 @@
 /obj/item/reagent_containers/syringe,
 /obj/effect/turf_decal/siding/white,
 /obj/machinery/firealarm/directional/east,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/box/bodybags,
+/obj/item/tank/internals/anesthetic,
+/obj/item/clothing/mask/breath/medical,
+/obj/item/roller,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "LL" = (
@@ -3160,8 +3184,7 @@
 	pixel_y = 8
 	},
 /obj/machinery/door/window/brigdoor/eastright{
-	dir = 8;
-	req_access_txt = "3"
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -3871,19 +3894,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Sm" = (
-/obj/structure/closet/crate,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/toy/plush/lizardplushie,
 /obj/effect/turf_decal/siding/white,
+/obj/structure/closet/crate/rations,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Sn" = (
@@ -4559,14 +4572,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "YQ" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/vired/half{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-10"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -4605,7 +4618,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
-/obj/machinery/grill,
+/obj/machinery/griddle,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 "Zp" = (
