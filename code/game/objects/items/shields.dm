@@ -88,7 +88,7 @@
 			to_chat(owner, span_boldwarning("Your shield is penetrated by [hitby]!"))
 			return FALSE
 	. = ..()
-	if(.)
+	if(. && broken != TRUE)
 		on_block(owner, hitby, attack_text, damage, attack_type, damage_type)
 
 /obj/item/shield/proc/repair(attacking_item, obj/item/stack/sheet, user)
@@ -269,6 +269,7 @@
 	force = 10
 	block_chance = 60
 	standard_block_chance = 60
+	ap_threshold = 30
 	armor = list("melee" = 70, "bullet" = 70, "laser" = 70, "energy" = 0, "bomb" = 50, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 80)
 
 /obj/item/shield/heavy/Initialize()
@@ -284,9 +285,8 @@
 /obj/item/shield/heavy/proc/on_wield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
-	if(broken == TRUE)
-		to_chat(user, span_notice("You can't wield a broken shield!"))
-	else if(do_after(user, 30, user, IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE, TRUE))
+	if(broken != TRUE)
+		if(do_after(user, 30, user, IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE, TRUE))
 		block_chance = 85
 		slowdown = 3.50	// This is a huge block of plasteel that will block most attacks. You shouldn't be running forward with an SKM spraying and praying
 
@@ -295,7 +295,8 @@
 /obj/item/shield/heavy/proc/on_unwield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
-	block_chance = 60
-	slowdown = 1.75
+	if(broken != TRUE)
+		block_chance = 60
+		slowdown = 1.75
 
 #undef BATON_BASH_COOLDOWN
