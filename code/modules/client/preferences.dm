@@ -142,7 +142,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/friendlyGenders = list(
 							"Male" = "male",
 							"Female" = "female",
-							"Other" = "plural"
+							"Other" = "plural",
+							"None" = "neuter"
 						)
 	var/list/prosthetic_limbs = list(
 							BODY_ZONE_HEAD = PROSTHETIC_NORMAL,
@@ -199,8 +200,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/widescreenpref = FALSE
 	///What size should pixels be displayed as? 0 is strech to fit
 	var/pixel_size = 0
-	///What scaling method should we use?
-	var/scaling_method = "distort"
+	///What scaling method should we use? Distort = Nearest Neighbor
+	var/scaling_method = SCALING_METHOD_DISTORT
 
 	var/list/exp = list()
 	var/list/menuoptions
@@ -333,6 +334,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dispGender = "Male"
 				else if(gender == FEMALE)
 					dispGender = "Female"
+				else if(gender == NEUTER)
+					dispGender = "None"
 				else
 					dispGender = "Other"
 				dat += "<b>Gender:</b> <a href='byond://?_src_=prefs;preference=gender'>[dispGender]</a>"
@@ -1097,12 +1100,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Pixel Scaling:</b> <a href='byond://?_src_=prefs;preference=pixel_size'>[(button_name) ? "Pixel Perfect [button_name]x" : "Stretch to fit"]</a><br>"
 
 			switch(scaling_method)
-				if(SCALING_METHOD_NORMAL)
-					button_name = "Nearest Neighbor"
 				if(SCALING_METHOD_DISTORT)
+					button_name = "Nearest Neighbor"
+				if(SCALING_METHOD_NORMAL)
 					button_name = "Point Sampling"
 				if(SCALING_METHOD_BLUR)
 					button_name = "Bilinear"
+
 			dat += "<b>Scaling Method:</b> <a href='byond://?_src_=prefs;preference=scaling_method'>[button_name]</a><br>"
 
 			dat += "</td><td width='300px' height='300px' valign='top'>"

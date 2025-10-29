@@ -18,6 +18,7 @@
 	armour_penetration = -10
 	bare_wound_bonus = 20
 	attack_cooldown = HEAVY_WEAPON_CD
+	pickup_sound = 'sound/weapons/melee/powerfist_pickup.ogg'
 	var/power_level = 0
 	var/overcharge = FALSE
 	var/charge_per_attack = 1000
