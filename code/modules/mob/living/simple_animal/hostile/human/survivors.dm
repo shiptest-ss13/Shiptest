@@ -281,6 +281,17 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/hooded/survivor_hood
 
+/mob/living/simple_animal/hostile/human/hermit/mayor
+	name = "The Mayor"
+	desc = "A blood-red silhouette leveling a wicked battle rifle in your direction. Their suit is worn and damaged, yet still armored. Their stance is trained, alert, unlike many of wanderers nearby."
+	rapid = 3
+	icon_state = "syndicate_hydra"
+	casingtype = /obj/item/ammo_casing/a308
+	l_hand = /obj/item/gun/ballistic/automatic/assault/hydra
+	projectilesound = 'sound/weapons/gun/rifle/hydra.ogg'
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/trooper
+	armor_base = /obj/item/clothing/suit/armor/ramzi/bulletproof
+
 /datum/outfit/hermit/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	if(visualsOnly)
