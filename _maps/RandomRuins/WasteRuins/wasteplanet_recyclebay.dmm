@@ -24,7 +24,6 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -34,9 +33,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/recycle_bay/eva)
 "ax" = (
@@ -668,9 +665,6 @@
 	icon_state = "0-4"
 	},
 /obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -721,8 +715,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/recycle_bay/atmospherics)
 "fQ" = (
-/obj/machinery/conveyor/inverted{
-	dir = 4
+/obj/machinery/conveyor{
+	dir = 8
 	},
 /obj/structure/railing/thin,
 /obj/machinery/mineral/unloading_machine{
@@ -1051,9 +1045,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -1359,13 +1350,7 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/structure/cable{
 	icon_state = "0-2"
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -1375,6 +1360,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/recycle_bay/telecommunications)
@@ -3731,9 +3719,6 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -4002,7 +3987,6 @@
 /area/ruin/wasteplanet/recycle_bay/dorms)
 "FT" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -4245,8 +4229,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/security_dorms)
 "Hq" = (
-/obj/machinery/conveyor/inverted{
-	dir = 8
+/obj/machinery/conveyor{
+	dir = 4
 	},
 /obj/structure/railing/thin,
 /turf/open/floor/plating/rust,
@@ -5181,9 +5165,6 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -5543,9 +5524,6 @@
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "recycleholo"
 	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/recycle_bay/eva)
 "SK" = (
@@ -5786,7 +5764,6 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/structure/cable,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
@@ -5815,8 +5792,8 @@
 /turf/open/floor/plating/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "VJ" = (
-/obj/machinery/conveyor/inverted{
-	dir = 4
+/obj/machinery/conveyor{
+	dir = 8
 	},
 /obj/structure/railing/thin,
 /obj/machinery/light/directional/north,
