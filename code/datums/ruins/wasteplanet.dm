@@ -101,4 +101,14 @@
 	id = "wasteplanet_recyclebay"
 	suffix = "wasteplanet_recyclebay.dmm"
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
-
+	ruin_mission_types = list(
+		/datum/mission/ruin/wasteplanet/nuclear
+	)
+/datum/mission/ruin/wasteplanet/nuclear
+	name = "Retrieve deactived nuclear warhead"
+	desc = "Internal Affairs has tracked down a missing warhead to a site located within the local sector, due to personal constraints, and a lack of adequate transport, we are delegating the task of recovery to local captains. Expect heavy resistance."
+	author = "New Gorlex Republic Internal Affairs"
+	value = 6500
+	mission_limit = 1
+	faction = /datum/faction/syndicate/ngr
+	setpiece_item = /obj/machinery/nuclearbomb/syndicate

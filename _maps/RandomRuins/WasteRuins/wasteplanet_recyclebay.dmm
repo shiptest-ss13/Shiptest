@@ -2410,7 +2410,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/dorms)
 "sN" = (
-/obj/machinery/nuclearbomb/syndicate,
+/obj/effect/landmark/mission_poi{
+	type_to_spawn = bomb/syndicate;
+	already_spawned = 1
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/recycle_bay/vault)
 "sO" = (

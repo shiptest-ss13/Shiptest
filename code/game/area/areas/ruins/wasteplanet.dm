@@ -143,3 +143,54 @@
 /area/ruin/wasteplanet/facility/southwing
 	name = "South Wing"
 	icon_state = "amaint"
+
+//Recycle Bay
+
+/area/ruin/wasteplanet/recycle_bay/atmospherics
+	name = "Recycle Bay Atmospherics"
+	icon_state = "atmos"
+
+/area/ruin/wasteplanet/recycle_bay/dorms
+	name = "Recycle Bay Dormatory"
+	icon_state = "crew_quarters"
+
+/area/ruin/wasteplanet/recycle_bay/security
+	name = "Recycle Bay Security Office"
+	icon_state = "security"
+
+/area/ruin/wasteplanet/recycle_bay/armory
+	name = "Recycle Bay Armory"
+	icon_state = "armory"
+
+/area/ruin/wasteplanet/recycle_bay/officers
+	name = "Recycle Bay Officers Lounge"
+	icon_state = "red"
+
+/area/ruin/wasteplanet/recycle_bay/engineering
+	name = "Recycle Bay Engineering"
+	icon_state = "engine"
+
+/area/ruin/wasteplanet/recycle_bay/security_dorms
+	name = "Recycle Bay Security Dorms"
+	icon_state = "blue"
+
+/area/ruin/wasteplanet/recycle_bay/electrical
+	name = "Recycle Bay Electrical"
+	icon_state = "engine_smes"
+
+/area/ruin/wasteplanet/recycle_bay/telecommunications
+	name = "Recycle Bay Telecommunications"
+	icon_state = "tcomsatcham"
+
+/area/ruin/wasteplanet/recycle_bay/eva
+	name = "Recycle Bay EVA"
+	icon_state = "eva"
+
+/area/ruin/wasteplanet/recycle_bay/salvage_bay
+	name = "Recycle Bay Salvage Area"
+	icon_state = "disposal"
+
+/area/ruin/wasteplanet/recycle_bay/vault
+	name = "Recycle Bay Vault"
+	icon_state = "cargo_bay"
+
