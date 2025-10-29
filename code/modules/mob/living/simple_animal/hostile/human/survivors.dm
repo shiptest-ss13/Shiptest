@@ -284,13 +284,39 @@
 /mob/living/simple_animal/hostile/human/hermit/mayor
 	name = "The Mayor"
 	desc = "A blood-red silhouette leveling a wicked battle rifle in your direction. Their suit is worn and damaged, yet still armored. Their stance is trained, alert, unlike many of wanderers nearby."
-	rapid = 3
+	rapid = 4
+	rapid_fire_delay = 3
 	icon_state = "syndicate_hydra"
 	casingtype = /obj/item/ammo_casing/a308
 	l_hand = /obj/item/gun/ballistic/automatic/assault/invictus/old
 	projectilesound = 'sound/weapons/gun/hmg/hmg.ogg'
-	mob_spawner =
-	armor_base =
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/mayor
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/old
+	weapon_drop_chance = 100
+
+/mob/living/simple_animal/hostile/human/hermit/mayor/Aggro()
+	..()
+	summon_backup(10)
+	say("TO ME!!")
+
+/datum/outfit/mayor
+	name = "The Mayor"
+
+	uniform = /obj/item/clothing/under/syndicate
+	suit = /obj/item/clothing/suit/space/hardsuit/syndi/old
+	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi/old
+	mask = /obj/item/clothing/mask/breath/facemask
+	glasses = /obj/item/clothing/glasses/safety
+	belt = /obj/item/storage/belt/security/military/frontiersmen
+	shoes = /obj/item/clothing/shoes/combat
+	gloves =  /obj/item/clothing/gloves/combat
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
+	back = /obj/item/storage/backpack
+	ears = /obj/item/radio/headset/alt
+
+/obj/effect/mob_spawn/human/corpse/damaged/mayor
+	name = "The Mayor"
+	outfit = /datum/outfit/mayor
 
 /datum/outfit/hermit/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()

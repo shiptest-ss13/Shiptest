@@ -92,6 +92,13 @@
 	burst_interval = 0.3 SECONDS
 	avoid_friendly_fire = TRUE
 
+/datum/ai_behavior/basic_ranged_attack/hivebot_core/frontier
+	required_distance = 5
+	action_cooldown = 6 SECONDS
+	shots = 25
+	burst_interval = 0.05 SECONDS
+	avoid_friendly_fire = TRUE
+
 /datum/ai_behavior/attack_obstructions/hivebot
 	can_attack_dense_objects = TRUE
 	action_cooldown = 1 SECONDS
