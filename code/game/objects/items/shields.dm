@@ -287,8 +287,8 @@
 
 	if(broken != TRUE)
 		if(do_after(user, 30, user, IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE, TRUE))
-		block_chance = 85
-		slowdown = 3.50	// This is a huge block of plasteel that will block most attacks. You shouldn't be running forward with an SKM spraying and praying
+			block_chance = 85
+			slowdown = 3.50	// This is a huge block of plasteel that will block most attacks. You shouldn't be running forward with an SKM spraying and praying
 
 
 /// triggered on unwield of two handed item
