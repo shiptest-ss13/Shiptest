@@ -129,7 +129,7 @@
 	calibre = /obj/item/ammo_casing/c9mm
 	firing_sound = 'sound/weapons/gun/smg/spitter.ogg'
 	faction = list(FACTION_FRONTIERSMEN)
-	ai_controller = /datum/ai_controller/basic_controller/hivebot/ranged/frontier
+	ai_controller = /datum/ai_controller/basic_controller/hivebot/ranged
 
 	aggro_quips = list("CODE 87-22!!",
 	"SLAVED TO SYSTEM!!",
