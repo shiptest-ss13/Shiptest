@@ -127,8 +127,8 @@
 
 /obj/item/storage/firstaid/ancient
 	icon = 'icons/obj/storage.dmi'
-	icon_state = "firstaid"
-	desc = "A first aid kit with the ability to heal common types of injuries."
+	icon_state = "firstaid_old"
+	desc = "A basic first aid kit. It looks a little old..."
 
 /obj/item/storage/firstaid/ancient/PopulateContents()
 	if(empty)
@@ -166,7 +166,7 @@
 //Toxin kit
 /obj/item/storage/firstaid/toxin
 	name = "toxin treatment kit"
-	desc = "Used to treat toxic blood content and radiation poisoning."
+	desc = "A specialized medical kit for treating severe blood toxins."
 	icon_state = "antitoxin"
 	item_state = "firstaid-toxin"
 	damagetype_healed = TOX
@@ -185,7 +185,7 @@
 //Rad kit
 /obj/item/storage/firstaid/radiation
 	name = "radiation treatment kit"
-	desc = "Used to treat severe radiation poisoning."
+	desc = "A specialized medical kit for treating radiation poisoning."
 	icon_state = "radiation"
 	item_state = "firstaid-ointment" //its yellow
 	damagetype_healed = TOX
@@ -203,7 +203,7 @@
 //Oxy kit
 /obj/item/storage/firstaid/o2
 	name = "oxygen deprivation treatment kit"
-	desc = "A box full of oxygen goodies."
+	desc = "A specialized medical kit for treating suffocation and blood loss."
 	icon_state = "o2"
 	item_state = "firstaid-o2"
 	damagetype_healed = OXY
@@ -223,7 +223,7 @@
 //Brute kit
 /obj/item/storage/firstaid/brute
 	name = "brute trauma treatment kit"
-	desc = "A first aid kit for when you get toolboxed."
+	desc = "A specialized medical kit for treating severe bruises."
 	icon_state = "brute"
 	item_state = "firstaid-brute"
 	damagetype_healed = BRUTE
@@ -246,9 +246,9 @@
 //Advanced kit
 /obj/item/storage/firstaid/advanced
 	name = "advanced first aid kit"
-	desc = "An advanced kit to help deal with advanced wounds."
-	icon_state = "radfirstaid"
-	item_state = "firstaid-rad"
+	desc = "A specialized medical kit full of advanced medicine for treating most types of wounds."
+	icon_state = "firstaid_advanced"
+	item_state = "firstaid-advanced"
 	custom_premium_price = 1100
 
 /obj/item/storage/firstaid/advanced/ComponentInitialize()
@@ -271,9 +271,31 @@
 	)
 	generate_items_inside(items_inside,src)
 
+/obj/item/storage/firstaid/roumain
+	name = "Roumain first aid kit"
+	desc = "A first aid kit full of natural medicine commonly used amongst the followers of the Ashen Huntsman."
+	icon_state = "firstaid_srm"
+	item_state = "firstaid-srm"
+	custom_premium_price = 1100
+
+/obj/item/storage/firstaid/roumain/PopulateContents()
+	if(empty)
+		return
+	var/static/list/items_inside = list(
+		/obj/item/healthanalyzer = 1,
+		/obj/item/food/grown/ash_flora/puce = 1,
+		/obj/item/reagent_containers/glass/mortar = 1,
+		/obj/item/reagent_containers/glass/bowl/mushroom_bowl = 1,
+		/obj/item/pestle = 1,
+		/obj/item/food/grown/ash_flora/cactus_fruit = 3,
+		/obj/item/food/meat/slab/bear = 3,
+		/obj/item/food/grown/ash_flora/mushroom_leaf = 3,
+	)
+	generate_items_inside(items_inside, src)
+
 /obj/item/storage/firstaid/tactical
 	name = "combat medical kit"
-	desc = "This one's red."
+	desc = "A rare medical kit full of powerful tools to keep soldiers fighting."
 	icon_state = "bezerk"
 
 /obj/item/storage/firstaid/tactical/ComponentInitialize()
@@ -332,7 +354,7 @@
 	desc = "It's an airtight container for storing medication."
 	icon_state = "pill_canister"
 	icon = 'icons/obj/chemical/medicine.dmi'
-	item_state = "contsolid"
+	item_state = "pillbottle"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
