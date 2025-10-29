@@ -43,7 +43,6 @@
 		output += "|[escape_value(reagent.description)]\n"
 		output += "|data-sort-value=[reagent.metabolization_rate]|[reagent.metabolization_rate] units per tick\n"
 		output += "|[reagent.overdose_threshold || "data-sort-value=0|N/A"]\n"
-		output += "|[reagent.addiction_threshold || "data-sort-value=0|N/A"]\n"
 		output += "|-\n"
 
 	output += "|}\n"

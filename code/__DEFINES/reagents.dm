@@ -67,3 +67,14 @@ GLOBAL_LIST_INIT(base_reagents, list(
 	/datum/reagent/water,
 	/datum/reagent/fuel
 ))
+
+///Minimum requirement for addiction buzz to be met
+#define MIN_ADDICTION_REAGENT_AMOUNT 2
+#define MAX_ADDICTION_POINTS 1000
+
+///Addiction start/ends
+#define WITHDRAWAL_STAGE1_START_CYCLE 1
+#define WITHDRAWAL_STAGE1_END_CYCLE 60
+#define WITHDRAWAL_STAGE2_START_CYCLE 61
+#define WITHDRAWAL_STAGE2_END_CYCLE 120
+#define WITHDRAWAL_STAGE3_START_CYCLE 121

@@ -457,10 +457,12 @@ GENE SCANNER
 				render_list += render_block
 
 		// Addictions
-		if(LAZYLEN(target.reagents.addiction_list.len))
-			render_list += "<span class='boldannounce ml-1'>Subject is addicted to the following types of drug:</span><br>"
-			for(var/datum/reagent/R in target.reagents.addiction_list)
-				render_list += "<span class='alert ml-2'>[R.name]</span>\n"
+		if(LAZYLEN(target.mind.active_addictions))
+			render_list += "<span class='boldannounce ml-1'>Subject is addicted to the following types of drug:</span>\n"
+			for(var/datum/addiction/addiction_type as anything in target.mind.active_addictions)
+				render_list += "<span class='alert ml-2'>[initial(addiction_type.name)]</span>\n"
+		else
+			render_list += "<span class='notice ml-1'>Subject is not addicted to any types of drug.</span>\n"
 
 		// we handled the last <br> so we don't need handholding
 		to_chat(user, boxed_message(jointext(render_list, "")), type = MESSAGE_TYPE_INFO)

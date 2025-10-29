@@ -32,7 +32,10 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		list("Trilingual", "Monolingual"),
 	)
 
-	species_blacklist = list("Blood Deficiency" = list(SPECIES_IPC, SPECIES_JELLYPERSON, SPECIES_PLASMAMAN, SPECIES_VAMPIRE))
+	species_blacklist = list(
+		"Blood Deficiency" = list(SPECIES_IPC, SPECIES_JELLYPERSON, SPECIES_PLASMAMAN, SPECIES_VAMPIRE),
+		"Smoker" = list(SPECIES_IPC)
+		)
 
 	for(var/client/client in GLOB.clients)
 		client?.prefs.check_quirk_compatibility()

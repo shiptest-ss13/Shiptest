@@ -306,7 +306,7 @@ GLOBAL_LIST_EMPTY(species_list)
 			return
 		LAZYSET(user.do_afters, interaction_key, current_interaction_count + 1)
 
-	delay *= user.do_after_coefficent()
+	delay *= user.cached_multiplicative_actions_slowdown
 
 	var/datum/progressbar/progbar = new(user, delay, target || user, timed_action_flags, extra_checks, show_progress)
 	var/datum/cogbar/cog
@@ -331,10 +331,6 @@ GLOBAL_LIST_EMPTY(species_list)
 
 	if(interaction_key)
 		LAZYREMOVE(user.do_afters, interaction_key)
-
-/mob/proc/do_after_coefficent() // This gets added to the delay on a do_after, default 1
-	. = 1
-	return
 
 /proc/is_species(A, species_datum)
 	. = FALSE

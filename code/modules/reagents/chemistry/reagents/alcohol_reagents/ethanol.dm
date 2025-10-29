@@ -12,6 +12,10 @@
 	var/boozepwr = 65 //Higher numbers equal higher hardness, higher hardness equals more intense alcohol poisoning
 	accelerant_quality = 5
 
+/datum/reagent/consumable/ethanol/New()
+	addiction_types = list(/datum/addiction/alcohol = 0.05 * boozepwr)
+	return ..()
+
 /datum/reagent/consumable/ethanol/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	. = ..()
 	if(chems.has_reagent(src, 1))

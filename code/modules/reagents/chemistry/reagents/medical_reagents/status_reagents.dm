@@ -243,7 +243,7 @@
 	color = "#D2FFFA"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
-	addiction_threshold = 25
+	addiction_types = list(/datum/addiction/stimulants = 4) //1.6 per 2 seconds
 
 /datum/reagent/medicine/ephedrine/on_mob_metabolize(mob/living/L)
 	..()
@@ -282,51 +282,3 @@
 		M.losebreath++
 		. = 1
 	return TRUE
-
-/datum/reagent/medicine/ephedrine/addiction_act_stage1(mob/living/M)
-	if(prob(3) && iscarbon(M))
-		M.visible_message(span_danger("[M] starts having a seizure!"), span_userdanger("You have a seizure!"))
-		M.Unconscious(100)
-		M.set_timed_status_effect(120 SECONDS, /datum/status_effect/jitter)
-
-	if(prob(33))
-		M.adjustToxLoss(2*REM, 0)
-		M.losebreath += 2
-		. = 1
-	..()
-
-/datum/reagent/medicine/ephedrine/addiction_act_stage2(mob/living/M)
-	if(prob(6) && iscarbon(M))
-		M.visible_message(span_danger("[M] starts having a seizure!"), span_userdanger("You have a seizure!"))
-		M.Unconscious(100)
-		M.set_timed_status_effect(240 SECONDS, /datum/status_effect/jitter)
-
-	if(prob(33))
-		M.adjustToxLoss(3*REM, 0)
-		M.losebreath += 3
-		. = 1
-	..()
-
-/datum/reagent/medicine/ephedrine/addiction_act_stage3(mob/living/M)
-	if(prob(12) && iscarbon(M))
-		M.visible_message(span_danger("[M] starts having a seizure!"), span_userdanger("You have a seizure!"))
-		M.Unconscious(100)
-		M.set_timed_status_effect(300 SECONDS, /datum/status_effect/jitter)
-
-	if(prob(33))
-		M.adjustToxLoss(4*REM, 0)
-		M.losebreath += 4
-		. = 1
-	..()
-
-/datum/reagent/medicine/ephedrine/addiction_act_stage4(mob/living/M)
-	if(prob(24) && iscarbon(M))
-		M.visible_message(span_danger("[M] starts having a seizure!"), span_userdanger("You have a seizure!"))
-		M.Unconscious(100)
-		M.set_timed_status_effect(300 SECONDS, /datum/status_effect/jitter)
-
-	if(prob(33))
-		M.adjustToxLoss(5*REM, 0)
-		M.losebreath += 5
-		. = 1
-	..()

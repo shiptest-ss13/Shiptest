@@ -1884,7 +1884,7 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 		var/howfuck = rand(8,16)
 		AdjustParalyzed(howfuck)
 		AdjustKnockdown(howfuck)
-		set_timed_status_effect(300 SECONDS, /datum/status_effect/jitter)
+
 
 /**
  * Sets the mob's speed variable and then calls update_living_varspeed().

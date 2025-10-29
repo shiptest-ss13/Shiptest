@@ -492,8 +492,13 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define MOOD_COMPONENT_TRAIT "mood_component"
 
 #define TRAIT_CANT_RIDE "cant_ride"
-#define TRAIT_BLOODY_MESS "bloody_mess" //from heparin, makes open bleeding wounds rapidly spill more blood
-#define TRAIT_COAGULATING "coagulating" //from coagulant reagents, this doesn't affect the bleeding itself but does affect the bleed warning messages
+//from anti-coagulant reagents, makes open bleeding wounds rapidly spill more blood
+#define TRAIT_BLOODY_MESS "bloody_mess"
+//from coagulant reagents, this doesn't affect the bleeding itself but does affect the bleed warning messages
+#define TRAIT_COAGULATING "coagulating"
+/// From anti-convulsant medication against seizures.
+#define TRAIT_ANTICONVULSANT "anticonvulsant"
+
 #define TRAIT_NOBLEED "nobleed" //This carbon doesn't bleed
 
 #define TRAIT_FORCED_STANDING "forcedstanding"

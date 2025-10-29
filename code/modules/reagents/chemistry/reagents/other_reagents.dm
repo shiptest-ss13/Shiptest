@@ -856,6 +856,7 @@
 	glass_desc = "Unless you're an industrial tool, this is probably not safe for consumption."
 	process_flags = ORGANIC | SYNTHETIC
 	accelerant_quality = 10
+	addiction_types = list(/datum/addiction/alcohol = 4)
 
 /datum/reagent/fuel/expose_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with welding fuel to make them easy to ignite!
 	if((method == TOUCH || method == SMOKE) || method == VAPOR)
@@ -931,6 +932,7 @@
 	description = "Impedrezene is a narcotic that impedes one's ability by slowing down the higher brain cell functions."
 	color = "#E07DDD" // pink = happy = dumb
 	taste_description = "numbness"
+	addiction_types = list(/datum/addiction/opiods = 10)
 
 /datum/reagent/impedrezene/on_mob_life(mob/living/carbon/M)
 	M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
@@ -1173,29 +1175,6 @@
 
 */
 
-/datum/reagent/stimulum
-	name = "Stimulum"
-	description = "An unstable experimental gas that greatly increases the energy of those that inhale it." //WS Edit -- No longer references toxin damage.
-	reagent_state = GAS
-	metabolization_rate = REAGENTS_METABOLISM * 0.5 // Because stimulum/nitryl/freon are handled through gas breathing, metabolism must be lower for breathcode to keep up
-	color = "E1A116"
-	taste_description = "sourness"
-
-/datum/reagent/stimulum/on_mob_metabolize(mob/living/L)
-	..()
-	ADD_TRAIT(L, TRAIT_STUNIMMUNE, type)
-	ADD_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
-
-/datum/reagent/stimulum/on_mob_end_metabolize(mob/living/L)
-	REMOVE_TRAIT(L, TRAIT_STUNIMMUNE, type)
-	REMOVE_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
-	..()
-
-/datum/reagent/stimulum/on_mob_life(mob/living/carbon/M)
-	M.adjustStaminaLoss(-2*REM, 0)
-	//M.adjustToxLoss(current_cycle*0.1*REM, 0) // 1 toxin damage per cycle at cycle 10 //WS Edit -- Stimulum no longer hurts you
-	..()
-
 /datum/reagent/nitryl
 	name = "Nitryl"
 	description = "A highly reactive gas that makes you feel faster."
@@ -1425,6 +1404,7 @@
 	color = "#2D2D2D"
 	taste_description = "oil"
 	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
+	addiction_types = null
 
 /datum/reagent/stable_plasma
 	name = "Stable Plasma"
@@ -2336,7 +2316,7 @@
 	M.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	if(prob(0.1) && ishuman(M))
 		var/mob/living/carbon/human/H = M
-		H.seizure()
+		H.apply_status_effect(STATUS_EFFECT_SEIZURE)
 		H.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(2, 4))
 	if(prob(7))
 		to_chat(M, span_warning("[pick(dose_messages)]"))
@@ -2347,9 +2327,7 @@
 		overdosed = FALSE
 		return
 
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living, seizure)), rand(1 SECONDS, 5 SECONDS))
+	M.apply_status_effect(STATUS_EFFECT_SEIZURE)
 
 /datum/reagent/three_eye/overdose_process(mob/living/M)
 	. = ..()
