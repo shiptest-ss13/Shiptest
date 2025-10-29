@@ -287,10 +287,10 @@
 	rapid = 3
 	icon_state = "syndicate_hydra"
 	casingtype = /obj/item/ammo_casing/a308
-	l_hand = /obj/item/gun/ballistic/automatic/assault/hydra
-	projectilesound = 'sound/weapons/gun/rifle/hydra.ogg'
-	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/trooper
-	armor_base = /obj/item/clothing/suit/armor/ramzi/bulletproof
+	l_hand = /obj/item/gun/ballistic/automatic/assault/invictus/old
+	projectilesound = 'sound/weapons/gun/hmg/hmg.ogg'
+	mob_spawner =
+	armor_base =
 
 /datum/outfit/hermit/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
