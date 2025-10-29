@@ -10,7 +10,7 @@
 	///Messages for each stage of addictions.
 	var/list/withdrawal_stage_messages = list()
 	///Rates at which you lose addiction (in units/second) if you are not on the drug at that time per stage
-	var/addiction_loss_per_stage = list(0.5, 0.5, 1, 1.5)
+	var/addiction_loss_per_stage = list(0.2, 0.2, 0.4, 0.6)
 	///Rate at which high sanity helps addiction loss
 	var/high_sanity_addiction_loss = 2
 
@@ -45,7 +45,7 @@
 	to_chat(victim_mind.current, "<span class='notice'>You feel like you've gotten over your need for drugs.</span>")
 	LAZYREMOVE(victim_mind.active_addictions, type)
 
-/datum/addiction/proc/process_addiction(mob/living/carbon/affected_carbon, delta_time = 2)
+/datum/addiction/proc/process_addiction(mob/living/carbon/affected_carbon, seconds_per_tick)
 	var/current_addiction_cycle = LAZYACCESS(affected_carbon.mind.active_addictions, type) //If this is null, we're not addicted
 	var/on_drug_of_this_addiction = FALSE
 	for(var/datum/reagent/possible_drug as anything in affected_carbon.reagents.reagent_list) //Go through the drugs in our system
@@ -69,7 +69,7 @@
 			withdrawal_stage = 0
 
 	if(!on_drug_of_this_addiction)
-		if(affected_carbon.mind.remove_addiction_points(type, addiction_loss_per_stage[withdrawal_stage + 1] * delta_time)) //If true was returned, we lost the addiction!
+		if(affected_carbon.mind.remove_addiction_points(type, addiction_loss_per_stage[withdrawal_stage + 1] * seconds_per_tick)) //If true was returned, we lost the addiction!
 			return
 
 	if(!current_addiction_cycle) //Dont do the effects if were not on drugs
@@ -86,13 +86,13 @@
 	///One cycle is 2 seconds
 	switch(withdrawal_stage)
 		if(1)
-			withdrawal_stage_1_process(affected_carbon, delta_time)
+			withdrawal_stage_1_process(affected_carbon, seconds_per_tick)
 		if(2)
-			withdrawal_stage_2_process(affected_carbon, delta_time)
+			withdrawal_stage_2_process(affected_carbon, seconds_per_tick)
 		if(3)
-			withdrawal_stage_3_process(affected_carbon, delta_time)
+			withdrawal_stage_3_process(affected_carbon, seconds_per_tick)
 
-	LAZYADDASSOC(affected_carbon.mind.active_addictions, type, 1 * delta_time) //Next cycle!
+	LAZYADDASSOC(affected_carbon.mind.active_addictions, type, 1 * seconds_per_tick) //Next cycle!
 
 /// Called when addiction enters stage 1
 /datum/addiction/proc/withdrawal_enters_stage_1(mob/living/carbon/affected_carbon)

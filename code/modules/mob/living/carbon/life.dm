@@ -1,4 +1,4 @@
-/mob/living/carbon/Life()
+/mob/living/carbon/Life(seconds_per_tick = SSMOBS_DT)
 	set invisibility = 0
 
 	if(notransform)
@@ -56,7 +56,7 @@
 	if(mind)
 		for(var/key in mind.addiction_points)
 			var/datum/addiction/addiction = SSaddiction.all_addictions[key]
-			addiction.process_addiction(src)
+			addiction.process_addiction(src, seconds_per_tick)
 
 	if(stat != DEAD)
 		return 1

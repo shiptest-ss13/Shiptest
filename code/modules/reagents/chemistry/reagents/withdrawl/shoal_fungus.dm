@@ -4,8 +4,7 @@
 
 /datum/addiction/shoal/withdrawal_stage_1_process(mob/living/carbon/affected_carbon, seconds_per_tick)
 	. = ..()
-	if(SPT_PROB(5, seconds_per_tick))
-		affected_carbon.blur_eyes(5 SECONDS)
+	affected_carbon.blur_eyes(5)
 
 /datum/addiction/shoal/withdrawal_stage_2_process(mob/living/carbon/affected_carbon, seconds_per_tick)
 	. = ..()
@@ -17,10 +16,12 @@
 			affected_carbon.dropItemToGround(held_item)
 			to_chat(affected_carbon, span_notice("Your hands flinch and you drop what you were holding!"))
 
+/datum/addiction/shoal/withdrawal_enters_stage_3(mob/living/carbon/affected_carbon)
+	. = ..()
+	affected_carbon.apply_status_effect(STATUS_EFFECT_HIGHBLOODPRESSURE)
+
 /datum/addiction/shoal/withdrawal_stage_3_process(mob/living/carbon/affected_carbon, seconds_per_tick)
 	. = ..()
-
-	affected_carbon.apply_status_effect(STATUS_EFFECT_HIGHBLOODPRESSURE)
 
 	affected_carbon.set_timed_status_effect(5 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 
