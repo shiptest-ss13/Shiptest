@@ -102,7 +102,7 @@
 		SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "embedded", /datum/mood_event/embedded)
 
 	if(damage > 0)
-		var/armor = victim.run_armor_check(limb.body_zone, MELEE, weapon.armour_penetration, "Your armor has protected your [limb.name].", "Your armor has softened a hit to your [limb.name].",I.armour_penetration)
+		var/armor = victim.run_armor_check(limb.body_zone, MELEE, weapon.armour_penetration, "Your armor has protected your [limb.name].", "Your armor has softened a hit to your [limb.name].")
 		limb.receive_damage(brute=(1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage, blocked=armor, wound_bonus = I.wound_bonus, bare_wound_bonus = I.bare_wound_bonus, sharpness = I.get_sharpness())
 
 /datum/component/embedded/Destroy()
@@ -218,8 +218,8 @@
 	if(harmful)
 		var/damage = weapon.w_class * remove_pain_mult
 		// It hurts to rip it out, get surgery you dingus. unlike the others, this CAN wound + increase slash bloodflow
-		limb.receive_damage(brute = (1 - pain_stam_pct) * damage, stamina = pain_stam_pct * damage, sharpness = SHARP_EDGED)
-		victim.force_scream()
+		var/scream_power = limb.receive_damage(brute = (1 - pain_stam_pct) * damage, stamina = pain_stam_pct * damage, sharpness = SHARP_EDGED)
+		victim.force_pain_noise(scream_power)
 
 	victim.visible_message(
 		span_notice("[victim] successfully rips [weapon] [harmful ? "out" : "off"] of [victim.p_their()] [limb.name]!"),

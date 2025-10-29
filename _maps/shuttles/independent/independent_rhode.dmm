@@ -573,18 +573,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"nB" = (
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 8;
-	launch_status = 0;
-	preferred_direction = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/turf/open/floor/engine/hull,
-/area/ship/cargo)
 "nV" = (
 /obj/structure/closet/crate/internals,
 /obj/item/tank/internals/emergency_oxygen,
@@ -843,9 +831,12 @@
 /area/ship/engineering/engines)
 "rO" = (
 /obj/docking_port/stationary{
-	dwidth = 15;
-	width = 30;
-	height = 15
+	dheight = 1;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 20;
+	height = 30;
+	name = "Rhode Port Beam Dock";
+	width = 40
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -1016,11 +1007,12 @@
 /area/ship/engineering/engines)
 "wa" = (
 /obj/docking_port/stationary{
-	dwidth = 15;
-	width = 30;
-	height = 15;
+	dheight = 1;
 	dir = 4;
-	disable_on_owner_ship_dock = 1
+	dwidth = 21;
+	height = 31;
+	name = "Rhode Starboard Bow Dock";
+	width = 41
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -1081,6 +1073,11 @@
 /obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/docking_port/mobile{
+	dir = 2;
+	port_direction = 8;
+	preferred_direction = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "yP" = (
@@ -1395,7 +1392,7 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Eu" = (
-/obj/machinery/grill,
+/obj/machinery/griddle,
 /obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/glass,
 /obj/effect/turf_decal/corner/transparent/beige/full,
@@ -2839,7 +2836,7 @@ Sv
 Sv
 BE
 SP
-nB
+SP
 SP
 SP
 Ov

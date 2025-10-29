@@ -272,19 +272,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
-"ek" = (
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 8;
-	launch_status = 0;
-	preferred_direction = 4
-	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "mercurycargo"
-	},
-/turf/open/floor/engine,
-/area/ship/cargo)
 "el" = (
 /obj/machinery/firealarm/directional/north,
 /obj/structure/cable{
@@ -465,6 +452,17 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/fore)
+"hu" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 4;
+	dwidth = 25;
+	height = 30;
+	name = "Mercury Port Bow Dock";
+	width = 41
+	},
+/turf/template_noop,
+/area/template_noop)
 "hx" = (
 /obj/structure/window/plasma/reinforced/fulltile,
 /obj/structure/grille,
@@ -690,14 +688,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
-"lj" = (
-/obj/docking_port/stationary{
-	dwidth = 15;
-	width = 30;
-	height = 15
-	},
-/turf/template_noop,
-/area/template_noop)
 "lm" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -768,6 +758,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
+"mX" = (
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "mercurycargo"
+	},
+/turf/open/floor/engine,
+/area/ship/cargo)
 "nk" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/crate_shelf,
@@ -1101,14 +1098,6 @@
 	},
 /turf/open/floor/suns/grid,
 /area/ship/bridge)
-"sg" = (
-/obj/structure/table/wood,
-/obj/item/food/toastedsandwich{
-	pixel_x = 0;
-	pixel_y = 17
-	},
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/crew/canteen)
 "st" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -1384,6 +1373,19 @@
 	color = "#543C30"
 	},
 /area/ship/crew/dorm/captain)
+"wc" = (
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/external{
+	req_ship_access = 0
+	},
+/obj/docking_port/mobile{
+	dir = 2;
+	port_direction = 8;
+	preferred_direction = 4;
+	launch_status = 0
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/maintenance/fore)
 "wg" = (
 /obj/structure/closet/secure_closet/engineering_personal{
 	name = "ship engineer's personal locker";
@@ -2425,6 +2427,17 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"Mj" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 20;
+	height = 30;
+	name = "Mercury Beam Dock";
+	width = 40
+	},
+/turf/template_noop,
+/area/template_noop)
 "Mx" = (
 /obj/effect/turf_decal/borderfloorwhite{
 	dir = 1
@@ -2682,6 +2695,14 @@
 	color = "#543C30"
 	},
 /area/ship/crew/dorm/captain)
+"Pc" = (
+/obj/structure/table/wood,
+/obj/item/food/grilled_cheese_sandwich{
+	pixel_x = 0;
+	pixel_y = 17
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/crew/canteen)
 "Pr" = (
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/structure/window/plasma/reinforced{
@@ -3774,8 +3795,8 @@ dt
 xZ
 "}
 (19,1,1) = {"
-lj
-nW
+Mj
+wc
 XF
 YD
 dB
@@ -3790,7 +3811,7 @@ td
 JM
 jo
 Gi
-sg
+Pc
 Nh
 "}
 (20,1,1) = {"
@@ -3979,7 +4000,7 @@ xr
 xr
 Yu
 GB
-ek
+mX
 OS
 Ek
 xr
@@ -3999,7 +4020,7 @@ xr
 xr
 xr
 xr
-xr
+hu
 xr
 xr
 xr

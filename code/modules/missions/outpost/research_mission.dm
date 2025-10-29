@@ -4,7 +4,7 @@
 			Please anchor the attached sensor array to your ship and fly it through the storms. \
 			It must be powered to collect the data. "
 	value = 1850 // base value, before adding bonus for number of things to fly through
-	duration = 60 MINUTES
+	duration = 90 MINUTES
 	weight = 8
 
 	var/datum/overmap/objective_type = /datum/overmap/event/electric
@@ -104,7 +104,7 @@
 	weight = 2
 	storm_value = 100
 	objective_type = /datum/overmap/event/rad
-
+/*
 /datum/mission/outpost/research/ion
 	name = "Ion storm research mission"
 	desc = "requires data on the behavior of electromagnetic storms in the system for an ongoing study. \
@@ -114,7 +114,7 @@
 	weight = 2
 	storm_value = 100
 	objective_type = /datum/overmap/event/emp
-
+*/
 /datum/mission/outpost/research/flare
 	name = "Solar flare field research mission"
 	desc = "requires data on the behavior of solar flares in the system for an ongoing study. \

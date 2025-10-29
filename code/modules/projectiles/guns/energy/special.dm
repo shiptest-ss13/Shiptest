@@ -8,7 +8,7 @@
 	ammo_y_offset = 2
 	w_class = WEIGHT_CLASS_BULKY
 	flags_1 =  CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	ammo_type = list(/obj/item/ammo_casing/energy/ion)
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
@@ -196,6 +196,8 @@
 	var/obj/item/bodypart/attackedLimb = target.get_bodypart(check_zone(user.zone_selected))
 	if(!attackedLimb || IS_ORGANIC_LIMB(attackedLimb) || (user.a_intent == INTENT_HARM))
 		return ..()
+	if(!target.is_exposed(user, TRUE, user.zone_selected))
+		return TRUE
 	if(!tool_start_check(user, amount = 1))
 		return TRUE
 	user.visible_message(span_notice("[user] starts to fix some of the dents on [target]'s [parse_zone(attackedLimb.body_zone)]."),

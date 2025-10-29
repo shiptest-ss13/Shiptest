@@ -124,7 +124,7 @@
 		/datum/reagent/toxin = 1,
 		/datum/reagent/iron = 10,
 		/datum/reagent/consumable/sugar = 5,
-		/datum/reagent/medicine/omnizine = 2,
+		/datum/reagent/medicine/panacea = 2,
 	) //lollipop, but vitamins = toxins
 	tastes = list("cobwebs" = 1, "sugar" = 2)
 	foodtypes = JUNKFOOD | SUGAR //| BUGS

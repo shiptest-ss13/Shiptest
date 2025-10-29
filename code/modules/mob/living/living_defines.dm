@@ -124,8 +124,6 @@
 	var/list/guaranteed_butcher_results = null ///these will always be yielded from butchering
 	var/butcher_difficulty = 0 ///effectiveness prob. is modified negatively by this amount; positive numbers make it more difficult, negative ones make it easier
 
-	var/hellbound = 0 ///People who've signed infernal contracts are unrevivable.
-
 	var/list/weather_immunities = list()
 
 	var/stun_absorption = null ///converted to a list of stun absorption sources this mob has when one is added
@@ -192,6 +190,11 @@
 	var/native_fov = FOV_90_DEGREES
 	/// Lazy list of FOV traits that will apply a FOV view when handled.
 	var/list/fov_traits
+
+	///how much recoil do we experience when shooting. Ideally some.
+	var/recoil_effect = 1 //i hate guncode
+	///how much recoil do we experience from being shot. Ideally some.
+	var/impact_effect = 1
 
 	/// World time of the last time this mob heard a radio crackle, to reduce spamminess.
 	COOLDOWN_DECLARE(radio_crackle_cooldown)

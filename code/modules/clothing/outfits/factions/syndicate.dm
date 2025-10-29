@@ -54,9 +54,9 @@
 	phorid_outfit = /datum/outfit/plasmaman/hardliner
 
 /datum/outfit/job/syndicate/assistant/ngr
-	name = "Syndicate - Initiate (New Gorlex Republic)"
+	name = "Syndicate - Crewman (New Gorlex Republic)"
 	faction = FACTION_NGR
-	id_assignment = "Initiate"
+	id_assignment = "Crewman"
 
 	head = /obj/item/clothing/head/ngr
 	uniform = /obj/item/clothing/under/syndicate/ngr
@@ -975,6 +975,12 @@
 	head = /obj/item/clothing/head/helmet/ngr/swat
 
 	phorid_outfit = /datum/outfit/plasmaman/ngr
+
+/datum/outfit/job/syndicate/security/ngr/pilot/skivvies
+	name = "Syndicate - Pilot Jumpsuit (New Gorlex Republic)"
+	head = null
+	l_pocket = null
+	r_pocket = null
 
 /datum/outfit/job/syndicate/security/twink
 	name = "Syndicate - Operative (Twinkleshine)"

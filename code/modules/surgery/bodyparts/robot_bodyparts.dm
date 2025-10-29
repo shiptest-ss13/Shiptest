@@ -316,7 +316,7 @@
 	static_icon = 'icons/mob/augmentation/surplus_augments.dmi'
 	brute_reduction = 0
 	burn_reduction = 0
-	max_damage = 20
+	max_damage = 50
 
 /obj/item/bodypart/r_arm/robot/surplus
 	name = "surplus prosthetic right arm"
@@ -324,7 +324,7 @@
 	static_icon = 'icons/mob/augmentation/surplus_augments.dmi'
 	brute_reduction = 0
 	burn_reduction = 0
-	max_damage = 20
+	max_damage = 50
 
 /obj/item/bodypart/leg/left/robot/surplus
 	name = "surplus prosthetic left leg"
@@ -332,7 +332,7 @@
 	static_icon = 'icons/mob/augmentation/surplus_augments.dmi'
 	brute_reduction = 0
 	burn_reduction = 0
-	max_damage = 20
+	max_damage = 50
 
 /obj/item/bodypart/leg/right/robot/surplus
 	name = "surplus prosthetic right leg"
@@ -340,7 +340,7 @@
 	static_icon = 'icons/mob/augmentation/surplus_augments.dmi'
 	brute_reduction = 0
 	burn_reduction = 0
-	max_damage = 20
+	max_damage = 50
 
 // Lizard Robotic (Synths)
 /obj/item/bodypart/chest/robot/lizard
@@ -532,6 +532,59 @@
 	name = "surplus prosthetic vox right leg"
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
 	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+
+//Human Robotic
+/obj/item/bodypart/chest/robot/human
+	name = "prosthetic human chest"
+	static_icon = 'icons/mob/augmentation/augments_human.dmi'
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	acceptable_bodytype = BODYTYPE_HUMANOID
+
+/obj/item/bodypart/head/robot/human
+	name = "prosthetic human head"
+	static_icon = 'icons/mob/augmentation/augments_human.dmi'
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/l_arm/robot/human
+	name = "surplus prosthetic human left arm"
+	static_icon = 'icons/mob/augmentation/augments_human.dmi'
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/r_arm/robot/human
+	name = "surplus prosthetic human right arm"
+	static_icon = 'icons/mob/augmentation/augments_human.dmi'
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/left/robot/human
+	name = "surplus prosthetic human left leg"
+	static_icon = 'icons/mob/augmentation/augments_human.dmi'
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/right/robot/human
+	name = "surplus prosthetic human right leg"
+	static_icon = 'icons/mob/augmentation/augments_human.dmi'
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+//Surplus Human Robotic
+/obj/item/bodypart/l_arm/robot/surplus/human
+	name = "prosthetic human left arm"
+	static_icon = 'icons/mob/augmentation/augments_human.dmi'
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/r_arm/robot/surplus/human
+	name = "prosthetic human right arm"
+	static_icon = 'icons/mob/augmentation/augments_human.dmi'
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/left/robot/surplus/human
+	name = "prosthetic human left leg"
+	static_icon = 'icons/mob/augmentation/augments_human.dmi'
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/right/robot/surplus/human
+	name = "prosthetic human right leg"
+	static_icon = 'icons/mob/augmentation/augments_human.dmi'
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 #undef ROBOTIC_LIGHT_BRUTE_MSG
 #undef ROBOTIC_MEDIUM_BRUTE_MSG

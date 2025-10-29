@@ -56,7 +56,7 @@
 	desc = ""
 	value = 1500
 	weight = 10
-	duration = 60 MINUTES
+	duration = 90 MINUTES
 	scanner_type = /obj/item/survey_handheld
 	objective_type = /obj/structure/flora/ash/garden
 	num_wanted = 12
@@ -110,7 +110,7 @@
 	value = 2500
 	objective_type = /obj/structure/geyser
 	scanner_type = /obj/item/survey_handheld/elite
-	duration = 60 MINUTES
+	duration = 90 MINUTES
 	weight = 4
 
 	num_wanted = 1

@@ -185,8 +185,29 @@
 
 	phorid_outfit = /datum/outfit/plasmaman/security
 
-	chameleon_extras = list(/obj/item/gun/energy/disabler, /obj/item/clothing/glasses/hud/security/sunglasses, /obj/item/clothing/head/helmet)
-	//The helmet is necessary because /obj/item/clothing/head/helmet/sec is overwritten in the chameleon list by the standard helmet, which has the same name and icon state
+	chameleon_extras = list(/obj/item/gun/energy/disabler, /obj/item/clothing/glasses/hud/security/sunglasses)
+
+/datum/outfit/job/nanotrasen/security/vi
+	name = "Nanotrasen - Security Officer (Vigilatis Interstellar)"
+	job_icon = "securityofficer"
+
+	ears = /obj/item/radio/headset/alt
+	uniform = /obj/item/clothing/under/nanotrasen/security
+	gloves = /obj/item/clothing/gloves/color/black
+	head = /obj/item/clothing/head/nanotrasen/cap/security
+	suit = null
+	alt_suit = null
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
+	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/restraints/handcuffs
+
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/sec
+	courierbag = /obj/item/storage/backpack/messenger/sec
+	box = /obj/item/storage/box/survival/vi
+
+	chameleon_extras = null
 
 /datum/outfit/job/nanotrasen/security/disarmed
 	name = "Nanotrasen - Security Officer (Disarmed)"

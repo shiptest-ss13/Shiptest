@@ -19,6 +19,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	name = "item"
 	icon = 'icons/obj/items.dmi'
 	blocks_emissive = EMISSIVE_BLOCK_GENERIC
+	///percentage of armour effectiveness to remove
+	armour_penetration = 0
 	///icon state name for inhand overlays
 	var/item_state = null
 	///Icon file for left hand inhand overlays
@@ -142,8 +144,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/siemens_coefficient = 1
 	/// How much clothing is slowing you down. Negative values speeds you up
 	var/slowdown = 0
-	///percentage of armour effectiveness to remove
-	var/armour_penetration = 0
 	///What objects the suit storage can store
 	var/list/allowed = null
 	///In deciseconds, how long an item takes to equip; counts only for normal clothing slots, not pockets etc.
@@ -369,32 +369,34 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	. = ..()
 
 	if(unique_reskin && !current_skin)
-		. += span_notice("Alt-click it to reskin it.")
+		. += span_notice("<b>Alt-click</b> it to reskin it.")
 
-	. += "[gender == PLURAL ? "They are" : "It is"] a [weightclass2text(w_class)] item."
+	. += span_notice("[gender == PLURAL ? "They are" : "It is"] a <b>[weightclass2text(w_class)]</b> item.")
 
 	if(resistance_flags & INDESTRUCTIBLE)
-		. += "[src] seems extremely robust! It'll probably withstand anything that could happen to it!"
+		. += span_notice("[src] looks incredibly tough. No way to get through this.")
 	else
 		if(resistance_flags & LAVA_PROOF)
-			. += "[src] is made of an extremely heat-resistant material, it'd probably be able to withstand lava!"
+			. += span_notice("[src] is made of <b>lava-resistant</b> materials.")
 		if(resistance_flags & (ACID_PROOF | UNACIDABLE))
-			. += "[src] looks pretty robust! It'd probably be able to withstand acid!"
+			. += span_notice("[src] is made of <b>acid-resistant</b> materials.")
 		if(resistance_flags & FREEZE_PROOF)
-			. += "[src] is made of cold-resistant materials."
+			. += span_notice("[src] is made of <b>cold-resistant</b> materials.")
 		if(resistance_flags & FIRE_PROOF)
-			. += "[src] is made of fire-retardant materials."
+			. += span_notice("[src] is made of <b>fire-resistant</b> materials.")
 
 	if(!user.research_scanner)
 		return
 
+	//what even is all this garbage
 	/// Research prospects, including boostable nodes and point values. Deliver to a console to know whether the boosts have already been used.
 	var/list/research_msg = list("<font color='purple'>Research prospects:</font> ")
 	///Separator between the items on the list
 	var/sep = ""
 	///Nodes that can be boosted
 	var/list/boostable_nodes = techweb_item_boost_check(src)
-	if (boostable_nodes)
+
+	if(boostable_nodes)
 		for(var/id in boostable_nodes)
 			var/datum/techweb_node/node = SSresearch.techweb_node_by_id(id)
 			if(!node)
@@ -403,16 +405,16 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			research_msg += node.display_name
 			sep = ", "
 	var/list/points = techweb_item_point_check(src)
-	if (length(points))
+	if(length(points))
 		sep = ", "
 		research_msg += techweb_point_display_generic(points)
 
-	if (!sep) // nothing was shown
+	if(!sep) // nothing was shown
 		research_msg += "None"
 
-	// Extractable materials. Only shows the names, not the amounts.
+	//Extractable materials. Only shows the names, not the amounts.
 	research_msg += ".<br><font color='purple'>Extractable materials:</font> "
-	if (length(custom_materials))
+	if(length(custom_materials))
 		sep = ""
 		for(var/mat in custom_materials)
 			research_msg += sep

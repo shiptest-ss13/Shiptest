@@ -38,6 +38,8 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	mask = /obj/item/clothing/mask/balaclava/inteq
 	suit = /obj/item/clothing/suit/armor/hos/inteq
+	uniform = /obj/item/clothing/under/syndicate/inteq/honorable
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
 	belt = /obj/item/storage/belt/security/webbing/inteq
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/inteq/alt/captain
@@ -74,6 +76,10 @@
 	ears = /obj/item/radio/headset/inteq/alt/captain
 	belt = /obj/item/storage/belt/military/assault
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/m20_auto_elite/inteq
+	l_pocket = /obj/item/ammo_box/magazine/m20_auto_elite
+	r_pocket = /obj/item/ammo_box/magazine/m20_auto_elite
 
 ///Chief Engineer
 
@@ -132,7 +138,7 @@
 	job_icon = "securityofficer"
 
 	ears = /obj/item/radio/headset/alt
-	head = /obj/item/clothing/head/helmet/inteq
+	head = /obj/item/clothing/head/helmet/m10/inteq
 	suit = /obj/item/clothing/suit/armor/vest/alt
 	belt = /obj/item/storage/belt/security/webbing/inteq
 	mask = /obj/item/clothing/mask/balaclava/inteq
@@ -199,6 +205,7 @@
 
 	ears = /obj/item/radio/headset/inteq/alt
 	head = /obj/item/clothing/head/warden/inteq
+	uniform = /obj/item/clothing/under/syndicate/inteq/honorable
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	mask = /obj/item/clothing/mask/balaclava/inteq
 	belt = /obj/item/storage/belt/military/assault

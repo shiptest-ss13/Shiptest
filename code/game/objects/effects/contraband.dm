@@ -787,7 +787,7 @@
 
 /obj/structure/sign/poster/retro/radio
 	name = "Radio"
-	desc = "A poster advertising one of Nanotrasen's earliest products, a radio. One of its main selling points was a integrated OS and two way automatic translation for Solarian Common, and Kalixcian Common, which made it a smash hit. This thing is ancient."
+	desc = "A poster advertising one of Nanotrasen's earliest products, a radio. One of its main selling points was a integrated OS and two way automatic translation for Solarian Common and Gezenan, which made it a smash hit. This thing is ancient."
 	icon_state = "poster-radio70_retro"
 
 //Safety moth posters, credit to AspEv for the art which the below posters are based on and to Ayy-Robotics for the sprites.
@@ -1132,6 +1132,104 @@
 	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_7
 	icon_state = "rolled_poster"
 
+// dont use random radio anywhere but indies or else it might throw up radio gorlex on a PGF ship
+
+/obj/structure/sign/poster/contraband/radiofreefrontier
+	name = "RFF"
+	desc = "An amateur, slapdash poster for the 'Radio Free Frontier', a pirate radio station ran from the Shoal and maintained through the collective power of thousands of layabouts, vagabonds, and script-kiddies setting up signal amplifiers across Frontier space."
+	icon_state = "poster-radio_RFF"
+
+/obj/item/poster/radiofreefrontier
+	name = "RFF Poster"
+	poster_type = /obj/structure/sign/poster/contraband/radiofreefrontier
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/random
+	name = "random radio station poster"
+	icon_state = "random_radio"
+	never_random = TRUE
+	random_basetype = /obj/structure/sign/poster/radio
+	random_type = POSTER_SUBTYPES
+
+/obj/structure/sign/poster/radio/icf
+	name = "ICF"
+	desc = "A poster for the 'Independent Collected Frequencies', a rough network of unionized radio stations in the Frontier."
+	icon_state = "poster-radio_ICF"
+
+/obj/item/poster/icf
+	name = "ICF poster"
+	poster_type = /obj/structure/sign/poster/radio/icf
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/arf
+	name = "ARF"
+	desc = "A poster for New Gorlex's 'All Republic First', a hybrid talk-show radio station. It's host is famous for her fluffy ears and cheerful demeanor."
+	icon_state = "poster-radio_ARF"
+
+/obj/item/poster/arf
+	name = "ARF poster"
+	poster_type = /obj/structure/sign/poster/radio/arf
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/vkxs
+	name = "VKXS"
+	desc = "A poster advertizing the PGF's 'Voice of Kalixcis' radio station. It offers patriotic hymns, homeland nostalgia, and the only true democratic commentary on Frontier events."
+	icon_state = "poster-radio_VKXS"
+
+/obj/item/poster/vkxs
+	name = "VKXS poster"
+	poster_type = /obj/structure/sign/poster/radio/vkxs
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/lt101
+	name = "LT101"
+	desc = "A poster for CLIP's Luna-Town 101 radio broadcast. Provides weather and emergency information hourly, and some post-war new wave in between."
+	icon_state = "poster-radio_LT101"
+
+/obj/item/poster/lt101
+	name = "LT101 poster"
+	poster_type = /obj/structure/sign/poster/radio/lt101
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/soft
+	name = "SOFT"
+	desc = "A poster for the easy-listening radio station SOFT. The background to many a summertime tryst in Frontier space."
+	icon_state = "poster-radio_SOFT"
+
+/obj/item/poster/soft
+	name = "SOFT poster"
+	poster_type = /obj/structure/sign/poster/radio/soft
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/orn
+	name = "ORN"
+	desc = "A poster for Outpost Radio Network, ran out of Installation Trifuge in Independent space. This station plays mostly spacer folk tunes."
+	icon_state = "poster-radio_ORN"
+
+/obj/item/poster/soft
+	name = "ORN poster"
+	poster_type = /obj/structure/sign/poster/radio/orn
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/ntra
+	name = "NTRA"
+	desc = "A Nanotrasen Radio poster. Despite all that's happened, communication is still NT's game, and the airwaves are just another Frontier to establish market dominance in."
+	icon_state = "poster-radio_NTRA"
+
+/obj/item/poster/ntra
+	name = "NTRA poster"
+	poster_type = /obj/structure/sign/poster/radio/ntra
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/pris
+	name = "PRIS"
+	desc = "A poster for PRIS, an independent electronic music station run by a collection of university students from the Frontier."
+	icon_state = "poster-radio_PRIS"
+
+/obj/item/poster/pris
+	name = "PRIS poster"
+	poster_type = /obj/structure/sign/poster/radio/pris
+	icon_state = "rolled_poster"
 
 #undef PLACE_SPEED
 #undef POSTER_SUBTYPES

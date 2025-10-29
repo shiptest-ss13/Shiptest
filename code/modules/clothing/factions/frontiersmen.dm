@@ -51,6 +51,12 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
 	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
 
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_COAT
+	equip_delay_other = EQUIP_DELAY_COAT * 1.5
+	strip_delay = EQUIP_DELAY_COAT * 1.5
+
 //////////////////
 //Armored suits//
 /////////////////
@@ -243,6 +249,7 @@
 	icon = 'icons/obj/clothing/faction/frontiersmen/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/mask.dmi'
 	resistance_flags = FIRE_PROOF
+	supports_variations = SNOUTED_VARIATION
 
 //////////
 //Neck//
@@ -314,9 +321,9 @@
 	update_appearance()
 
 /obj/item/storage/belt/medical/webbing/frontiersmen/combat/PopulateContents()
-	new /obj/item/reagent_containers/hypospray/medipen/stimulants(src)
-	new /obj/item/reagent_containers/hypospray/medipen/stimulants(src)
-	new /obj/item/reagent_containers/medigel/silver_sulf(src)
-	new /obj/item/reagent_containers/medigel/styptic(src)
+	new /obj/item/reagent_containers/hypospray/medipen/combat_drug(src)
+	new /obj/item/reagent_containers/hypospray/medipen/combat_drug(src)
+	new /obj/item/reagent_containers/medigel/quardexane(src)
+	new /obj/item/reagent_containers/medigel/hadrakine(src)
 	new /obj/item/stack/medical/gauze/twelve(src)
 	new /obj/item/stack/medical/splint(src)

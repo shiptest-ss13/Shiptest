@@ -43,7 +43,7 @@
 /datum/supply_pack/sec_supply/flashbangs
 	name = "Flashbang Crate"
 	desc = "Contains one flashbang for use in door breaching and riot control."
-	cost = 100
+	cost = 200
 	contains = list(/obj/item/grenade/flashbang)
 	crate_name = "flashbangs crate"
 
@@ -57,7 +57,7 @@
 /datum/supply_pack/sec_supply/teargas
 	name = "Teargas Grenade Crate"
 	desc = "Contains one teargas grenade for use in crowd dispersion and riot control."
-	cost = 100
+	cost = 200
 	contains = list(/obj/item/grenade/chem_grenade/teargas)
 	crate_name = "teargas grenades crate"
 
@@ -146,12 +146,92 @@
 	contains = list(/obj/item/melee/sword/mass)
 	crate_name = "machete crate"
 
+/datum/supply_pack/sec_supply/solarian_sabre
+	name = "Solarian Ceremonial Sabre Crate"
+	desc = "Contains one ceremonial Solarian sabre. To keep tradition alive. Still quite sharp."
+	cost = 750
+	contains = list(/obj/item/storage/belt/sabre/solgov)
+	crate_name = "solarian ceremonial sabre crate"
+	faction = /datum/faction/solgov
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/sec_supply/suns_sabre
+	name = "SUNS Dueling Sabre Crate"
+	desc = "Contains a single dueling sabre, intended for resolving conflicts among students."
+	cost = 750
+	contains = list(/obj/item/storage/belt/sabre/suns)
+	crate_name = "student's sabre crate"
+	faction = /datum/faction/syndicate/suns
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/sec_supply/suns_cmo_sabre
+	name = "SUNS Cane Sabre Crate"
+	desc = "Contains a blade sheathed in a cane. "
+	cost = 800
+	contains = list(/obj/item/storage/belt/sabre/suns/cmo)
+	crate_name = "student's sabre crate"
+	faction = /datum/faction/syndicate/suns
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/sec_supply/suns_telescopic_sabre
+	name = "SUNS Telescopic Sabre Crate"
+	desc = "Contains a finely crafted telescopic sabre, ideal for those with discerning tastes"
+	cost = 600
+	contains = list(/obj/item/melee/sword/sabre/suns/telescopic)
+	crate_name = "telescopic sabre crate"
+	faction = /datum/faction/syndicate/suns
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/sec_supply/pgf_boarding_cutlass
+	name = "PGF Boarding Cutlass Crate"
+	desc = "Contains a finely crafted cutlass, issued to boarding parties of the Pan-Gezenan Federation."
+	cost = 750
+	contains = list(/obj/item/storage/belt/sabre/pgf)
+	crate_name = "boarding cutlass crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/sec_supply/combatknives
 	name = "Combat Knife Crate"
 	desc = "Contains one high quality combat knife. For the sharper, and meaner, crew."
 	cost = 350
 	contains = list(/obj/item/melee/knife/combat)
 	crate_name = "combat knife crate"
+
+/datum/supply_pack/sec_supply/clip_kukri
+	name = "Kukri Sword Crate"
+	desc = "Contains a well-made titanium kukri manufactured on Serene. Intended for Minuteman use."
+	cost = 750
+	contains = list(/obj/item/storage/belt/sabre/kukri)
+	crate_name = "kukri crate"
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/sec_supply/cybersun_flyssa
+	name = "Energy Flyssa Crate"
+	desc = "Contains a lathed, verified, and readied Energy Flyssa. Corporate recommends owning a recharger to accompany."
+	cost = 1500
+	contains = list(/obj/item/melee/energy/flyssa)
+	crate_name = "energy flyssa crate"
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/sec_supply/hardliner_flyssa
+	name = "Energy Flyssa Crate"
+	desc = "Contains a lathed, verified, and readied Energy Flyssa. This is one of the assets you need to be careful to not lose."
+	cost = 1500
+	contains = list(/obj/item/melee/energy/flyssa)
+	crate_name = "energy flyssa crate"
+	faction = /datum/faction/syndicate/hardliners
+	faction_discount = -50
+	faction_locked = TRUE
 
 /datum/supply_pack/sec_supply/flamethrower
 	name = "Flamethrower Crate"
@@ -166,7 +246,7 @@
 /datum/supply_pack/sec_supply/frag_grenade
 	name = "Frag Grenade Crate"
 	desc = "Contains one fragmentation grenade. Better not let it go off in your hands."
-	cost = 250
+	cost = 500
 	contains = list(/obj/item/grenade/frag)
 	crate_name = "frag grenade crate"
 	crate_type = /obj/structure/closet/crate/secure/weapon
@@ -215,25 +295,19 @@
 	cost = 2500
 	contains = list(/obj/item/melee/baton/loaded)
 	crate_name = "stun baton crate"
+/*
+		Factional
+*/
 
-/datum/supply_pack/sec_supply/claymore
-	name = "C-10 Claymore Crate"
-	desc = "Contains one motion-activated directional mine, perfect for ambushing enemy infantry. Still debatably legal to sell!"
-	cost = 750
-	contains = list(/obj/item/paper/fluff/claymore,
-					/obj/item/mine/directional/claymore)
-	crate_name = "C-10 Claymore crate"
+//gezena
 
-/obj/item/paper/fluff/claymore
-	name = "PRODUCT USAGE GUIDE"
-	desc = "A dusty memo stamped with the Scarborough Arms logo."
-	default_raw_text = "<b>ASSEMBLY:</b><br><br>\
-	-Deploy mounting legs and emplace device. Front should be placed in direction of enemy egress, no more then three meters from intended target area.<br><br> \
-	-<b>INFORM ALLIES OF PLACEMENT LOCATION.</b><br><br> \
-	-Wait for arming sequence to complete.<br><br> \
-	-Enjoy hands-free area denial, courtesy of Scarborough Arms.<br><br><br> \
-	<b>DISASSEMBLY & STORAGE:</b><br><br>\
-	-Insert screwdriver into arming pin access and turn 180 degrees. There will be considerable resistance. <b>DO NOT Step onto or in front of device.</b><br><br> \
-	-When pressure releases, reach below device and lift via underside in one clean motion. Mounting legs will automatically retract. <br><br> \
-	-The device is now safe to handle. <br><br> \
-	-Safely stow device in secure, moisture-free location, away from fire and blunt force. "
+/datum/supply_pack/tools/pgfwebbing
+	name = "Gezenan Combat Webbing"
+	desc = "Contains a lightweight harness covered in pouches for use in carrying ammunition and tools."
+	cost = 500
+	contains = list(/obj/item/storage/belt/military/gezena)
+	crate_name = "webbing crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+

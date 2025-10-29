@@ -23,7 +23,8 @@
 		/obj/item/gun/ballistic/automatic/powered,
 		/obj/item/gun/ballistic/automatic/assault/e40,
 		/obj/item/attachment/gun/energy,
-		/obj/item/stock_parts/cell/gun
+		/obj/item/stock_parts/cell/gun,
+		/obj/item/melee/energy/flyssa
 		))
 
 /obj/machinery/recharger/RefreshParts()
@@ -119,15 +120,15 @@
 
 	add_fingerprint(user)
 	if(charging)
-		charging.update_appearance()
 		charging.forceMove(drop_location())
+		charging.update_appearance()
 		user.put_in_hands(charging)
 		setCharging(null)
 
 /obj/machinery/recharger/attack_tk(mob/user)
 	if(charging)
-		charging.update_appearance()
 		charging.forceMove(drop_location())
+		charging.update_appearance()
 		setCharging(null)
 
 /obj/machinery/recharger/process(seconds_per_tick)

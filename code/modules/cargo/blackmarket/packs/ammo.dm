@@ -104,7 +104,7 @@
 /datum/blackmarket_item/ammo/saber_mag
 	name = "Saber 9x18mm SMG Magazines"
 	desc = "Magazines for use in the Saber 9x18mm SMG. No, they don't work as swords."
-	item = /obj/item/ammo_box/magazine/smgm9mm
+	item = /obj/item/ammo_box/magazine/m9mm_expedition
 
 	cost_min = 150
 	cost_max = 450
@@ -176,6 +176,17 @@
 	stock = 2
 	availability_prob = 20
 
+/datum/blackmarket_item/ammo/military_etherbor_cell
+	name = "military-grade Etherbor cell"
+	desc = "A military-grade Etherbor weapon cell. A surefire upgrade to the ones on the civilian market. Lime flavor!"
+	item = /obj/item/stock_parts/cell/gun/pgf
+
+	cost_min = 800
+	cost_max = 1200
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 40
+
 /datum/blackmarket_item/ammo/gauss_cell
 	name = "SolCon Weapon Cell"
 	desc = "A Solarian weapon cell, for powering their gauss weaponry."
@@ -188,7 +199,7 @@
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/damaged_cell
-	name = "Discount Advanced Weapon Power Cells"
+	name = "Discount Advanced Eoehoma Power Cells"
 	desc = "These cells got a little banged up during a raid by GOLD authorities, but they still should be safe to use. They probably won't explode. In theory."
 	item = /obj/item/stock_parts/cell/gun/upgraded
 
@@ -209,7 +220,7 @@
 	return damaged_cell
 
 /datum/blackmarket_item/ammo/advanced_weapon_cell
-	name = "Upgraded Weapon Power Cells"
+	name = "Upgraded Eoehoma Power Cells"
 	desc = "These upgraded weapon powercells come with twice the capacity of the standard cells, and quality checked to make sure they won't explode!"
 	item = /obj/item/stock_parts/cell/gun/upgraded
 
@@ -271,6 +282,16 @@
 	cost_min = 150
 	cost_max = 350
 	stock = 2
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/cottonmouth
+	name = "Cottonmouth Magazine"
+	desc = "A 14 round magazine for the modified Cottonmouth machine pistol."
+	item = /obj/item/ammo_box/magazine/m10mm_cottonmouth
+
+	cost_min = 100
+	cost_max = 300
+	stock = 4
 	availability_prob = 0
 
 /datum/blackmarket_item/ammo/f4_magazine
