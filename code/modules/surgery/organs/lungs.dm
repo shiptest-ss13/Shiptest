@@ -223,13 +223,20 @@
 				H.throw_alert(alert_category, alert_type)
 		else if(alert_category)
 			H.clear_alert(alert_category)
+
+	var/inflammatory_kpa = 0
 	var/list/breath_reagents = GLOB.gas_data.breath_reagents
 	for(var/gas in breath.get_gases())
+		var/breath_moles = breath.get_moles(gas)
+		if(GLOB.gas_data.flags[gas] & GAS_FLAG_IRRITANT)
+			inflammatory_kpa += PP_MOLES(breath_moles)
 		if(gas in breath_reagents)
 			var/datum/reagent/breath_reagent = new breath_reagents[gas]
-			var/breath_moles = breath.get_moles(gas)
 			breath_reagent.expose_mob(H, INHALE, breath_moles * 2) // 2 represents molarity of O2, we don't have citadel molarity
 			mole_adjustments[gas] = (gas in mole_adjustments) ? mole_adjustments[gas] - breath_moles : -breath_moles
+
+	if(inflammatory_kpa)
+		H.adjust_lung_inflammation(inflammatory_kpa * (HAS_TRAIT(H, TRAIT_ASTHMATIC) ? 10 : 2))
 
 	if(can_smell)
 		handle_smell(breath, H)
@@ -542,6 +549,8 @@
 
 /// Setter proc for [received_pressure_mult]. Updates bronchodilation alerts.
 /obj/item/organ/lungs/proc/set_received_pressure_mult(new_value)
+	if(new_value <= 0 && received_pressure_mult > 0)
+		ADD_TRAIT(owner, TRAIT)
 	received_pressure_mult = max(new_value, 0)
 	update_bronchodilation_alerts()
 

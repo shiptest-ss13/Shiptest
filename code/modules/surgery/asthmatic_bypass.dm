@@ -101,10 +101,10 @@
 
 /// Reduces the asthmatic's inflammation by [inflammation_reduction]. Called by both success and failure.
 /datum/surgery_step/expand_windpipe/proc/reduce_inflammation(mob/user, mob/living/target, obj/item/tool, datum/surgery/surgery)
-	var/datum/quirk/asthma/asthma_quirk = locate(/datum/quirk/asthma) in target.roundstart_quirks
-	if (isnull(asthma_quirk))
-		qdel(surgery) // not really an error cause quirks can get removed during surgery?
+	var/datum/status_effect/lung_inflammation/inflammation = target.has_status_effect(/datum/status_effect/lung_inflammation)
+	if (isnull(inflammation))
+		qdel(surgery) // not really an error cause status effects can get removed during surgery?
 		return FALSE
 
-	asthma_quirk.adjust_inflammation(-inflammation_reduction)
+	inflammation.adjust_inflammation(-inflammation_reduction)
 	return TRUE

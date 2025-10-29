@@ -53,7 +53,7 @@
 	time_to_start_remission = world.time + rand(min_time_til_remission, max_time_til_remission)
 
 /datum/disease/asthma_attack/try_infect(mob/living/infectee, make_copy)
-	if (!get_asthma_quirk())
+	if (!HAS_TRAIT(infectee, TRAIT_ASTHMATIC))
 		return FALSE
 	if (HAS_TRAIT(infectee, TRAIT_NOBREATH))
 		return FALSE
@@ -64,13 +64,6 @@
 /datum/disease/asthma_attack/proc/suffix_name()
 	name += " ([severity_to_suffix[severity]])"
 
-/// Returns the asthma quirk of our victim. As we can only be applied to asthmatics, this should never return null.
-/datum/disease/asthma_attack/proc/get_asthma_quirk(mob/living/target = affected_mob)
-	RETURN_TYPE(/datum/quirk/asthma)
-	target ||= affected_mob
-
-	return (locate(/datum/quirk/asthma) in target.roundstart_quirks)
-
 /datum/disease/asthma_attack/stage_act(seconds_per_tick, times_fired)
 	. = ..()
 	if (!.)
@@ -80,10 +73,9 @@
 		cure()
 		return FALSE
 
-	var/datum/quirk/asthma/asthma_quirk = get_asthma_quirk()
 	var/inflammation = stage_to_inflammation_per_second["[stage]"]
 	if (inflammation)
-		asthma_quirk.adjust_inflammation(inflammation * seconds_per_tick)
+		affected_mob.adjust_lung_inflammation(inflammation * seconds_per_tick)
 
 	if (!(world.time >= time_to_start_remission))
 		return
@@ -249,8 +241,7 @@
 			wheeze_chance = 0
 			if (SPT_PROB(10, seconds_per_tick))
 				affected_mob.emote("gag")
-			var/datum/quirk/asthma/asthma_quirk = get_asthma_quirk()
-			asthma_quirk.adjust_inflammation(INFINITY)
+			affected_mob.adjust_lung_inflammation(INFINITY)
 
 	if (SPT_PROB(wheeze_chance, seconds_per_tick))
 		affected_mob.emote("wheeze")

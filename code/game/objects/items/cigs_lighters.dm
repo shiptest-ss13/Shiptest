@@ -148,6 +148,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	AddComponent(/datum/component/knockoff,90,list(BODY_ZONE_PRECISE_MOUTH),list(ITEM_SLOT_MASK))//90% to knock off when wearing a mask
 
 /obj/item/clothing/mask/cigarette/Destroy()
+	qdel(secondhand_smoke)
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 

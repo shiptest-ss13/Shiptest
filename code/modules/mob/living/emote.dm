@@ -105,6 +105,7 @@
 	key = "wheeze"
 	key_third_person = "wheezes"
 	message = "wheezes!"
+	stat_allowed = SOFT_CRIT
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/dance
