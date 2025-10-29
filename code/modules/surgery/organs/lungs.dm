@@ -549,8 +549,6 @@
 
 /// Setter proc for [received_pressure_mult]. Updates bronchodilation alerts.
 /obj/item/organ/lungs/proc/set_received_pressure_mult(new_value)
-	if(new_value <= 0 && received_pressure_mult > 0)
-		ADD_TRAIT(owner, TRAIT)
 	received_pressure_mult = max(new_value, 0)
 	update_bronchodilation_alerts()
 
