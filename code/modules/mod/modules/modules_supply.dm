@@ -18,7 +18,7 @@
 	. = ..()
 	AddComponent(/datum/component/gps/item, "MOD0", TRUE)
 
-/obj/item/mod/module/gps/on_use()
+/obj/item/mod/module/gps/used()
 	. = ..()
 	if(!.)
 		return
@@ -174,7 +174,7 @@
 	ore.forceMove(src)
 	ores += ore
 
-/obj/item/mod/module/orebag/on_use()
+/obj/item/mod/module/orebag/used()
 	. = ..()
 	if(!.)
 		return
