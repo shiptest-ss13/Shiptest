@@ -961,10 +961,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/security)
-"iY" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/r_wall,
-/area/ruin/wasteplanet/recycle_bay/security_dorms)
 "iZ" = (
 /obj/structure/platform/industrial,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
@@ -1010,6 +1006,9 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/recycle_bay/security)
+"jD" = (
+/turf/open/floor/plasteel/dark,
+/area/ruin/wasteplanet/recycle_bay/security_dorms)
 "jE" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
@@ -1775,10 +1774,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/recycle_bay/security)
-"qI" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/rust/wasteplanet,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
 "qK" = (
 /obj/structure/table,
 /obj/item/cigbutt/roach{
@@ -1820,9 +1815,6 @@
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/recycle_bay/atmospherics)
-"qU" = (
-/turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/recycle_bay/security_dorms)
 "qV" = (
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/recycle_bay/eva)
@@ -3082,17 +3074,7 @@
 /area/ruin/wasteplanet/recycle_bay/officers)
 "BI" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating/wasteplanet/lit,
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "BL" = (
 /obj/effect/turf_decal/techfloor/orange{
@@ -4852,6 +4834,20 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/dorms)
+"RF" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "RO" = (
 /obj/machinery/conveyor_switch/oneway,
 /turf/open/floor/plasteel/dark,
@@ -7424,7 +7420,7 @@ Nh
 Nh
 sO
 sO
-iY
+sf
 sf
 uq
 uq
@@ -7465,7 +7461,7 @@ sg
 yy
 Ya
 VM
-Wi
+BI
 Wi
 Wi
 Wi
@@ -7816,8 +7812,8 @@ ZQ
 lD
 rP
 yC
-qU
-qU
+jD
+jD
 gE
 sO
 co
@@ -8440,7 +8436,7 @@ IN
 ed
 kf
 kf
-qI
+kf
 VM
 Wi
 Wi
@@ -8748,7 +8744,7 @@ ls
 Wi
 Wi
 Ao
-BI
+RF
 HI
 Wi
 Wi
@@ -9057,7 +9053,7 @@ vq
 ls
 HI
 Ao
-BI
+RF
 VM
 Wi
 vA
@@ -9291,7 +9287,7 @@ Wi
 Wi
 Wi
 ba
-BI
+RF
 HI
 Wi
 ls
@@ -9369,7 +9365,7 @@ Wi
 Wi
 Wi
 ba
-BI
+RF
 VM
 VM
 DT
