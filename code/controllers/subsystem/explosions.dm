@@ -177,7 +177,7 @@ SUBSYSTEM_DEF(explosions)
 #define FREQ_UPPER 40 //The upper limit for the randomly selected frequency.
 #define FREQ_LOWER 25 //The lower of the above.
 
-/datum/controller/subsystem/explosions/proc/explode(atom/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog, ignorecap, flame_range, silent, smoke, gentle, light_dam, light_item_dam, heavy_dam, heavy_item_dam)
+/datum/controller/subsystem/explosions/proc/explode(atom/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog, ignorecap, flame_range, silent, smoke, gentle, light_dam = 1, light_item_dam = 1, heavy_dam = 1, heavy_item_dam = 1)
 	epicenter = get_turf(epicenter)
 	if(!epicenter)
 		return
@@ -529,11 +529,13 @@ SUBSYSTEM_DEF(explosions)
 		// for(var/obj/O as anything in high_obj)
 		// 	if(!QDELETED(O))
 		// 		O.ex_act(EXPLODE_DEVASTATE)
-		for(var/list/explodey as anything in high_obj)
-			var/obj/O = explodey[0]
-			if(!QDELETED(O))
-				O.ex_act(EXPLODE_DEVASTATE, explodey[1],explodey[2],explodey[3],explodey[4])
-				//QDEL_LIST(explodey)
+		for(var/exploded as anything in high_obj)
+			if(islist(exploded))
+				var/list/explodey = exploded
+				var/obj/O = explodey[0]
+				if(!QDELETED(O))
+					O.ex_act(EXPLODE_DEVASTATE, explodey[1],explodey[2],explodey[3],explodey[4])
+					//QDEL_LIST(explodey)
 		cost_highobj = MC_AVERAGE(cost_highobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 		timer = TICK_USAGE_REAL
@@ -543,11 +545,13 @@ SUBSYSTEM_DEF(explosions)
 		// 	if(!QDELETED(O))
 		// 		O.ex_act(EXPLODE_HEAVY)
 		// think im casting too high, cut list
-		for(var/list/explodey as anything in med_obj)
-			var/obj/O = explodey[0]
-			if(!QDELETED(O))
-				O.ex_act(EXPLODE_HEAVY, explodey[1],explodey[2],explodey[3],explodey[4])
-				//QDEL_LIST(explodey)
+		for(var/exploded as anything in med_obj)
+			if(islist(exploded))
+				var/list/explodey = exploded
+				var/obj/O = explodey[0]
+				if(!QDELETED(O))
+					O.ex_act(EXPLODE_HEAVY, explodey[1],explodey[2],explodey[3],explodey[4])
+					//QDEL_LIST(explodey)
 		cost_medobj = MC_AVERAGE(cost_medobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 		timer = TICK_USAGE_REAL
@@ -556,11 +560,13 @@ SUBSYSTEM_DEF(explosions)
 		// for(var/obj/O as anything in low_obj)
 		// 	if(!QDELETED(O))
 		// 		O.ex_act(EXPLODE_LIGHT)
-		for(var/list/explodey as anything in low_obj)
-			var/obj/O = explodey[0]
-			if(!QDELETED(O))
-				O.ex_act(EXPLODE_LIGHT, explodey[1],explodey[2],explodey[3],explodey[4])
-				//QDEL_LIST(explodey)
+		for(var/exploded as anything in low_obj)
+			if(islist(exploded))
+				var/list/explodey = exploded
+				var/obj/O = explodey[0]
+				if(!QDELETED(O))
+					O.ex_act(EXPLODE_LIGHT, explodey[1],explodey[2],explodey[3],explodey[4])
+					//QDEL_LIST(explodey)
 		cost_lowobj = MC_AVERAGE(cost_lowobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 
