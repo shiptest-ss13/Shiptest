@@ -92,7 +92,7 @@ ids don't work for slipping
 /obj/structure/hazard/floor/proc/floor_checks(mob/living/carbon/target)
 	if(!ishuman(target))
 		return TRUE
-	if(target.is_flying() || target.is_floating())
+	if(!(target.movement_type & (FLYING|FLOATING)))
 		return TRUE
 	if(target.buckled) //if you're in an office chair with an extinguisher, that's funny. you go girl.
 		return TRUE

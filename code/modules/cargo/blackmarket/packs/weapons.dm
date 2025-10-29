@@ -32,6 +32,16 @@
 	stock_max = 3
 	availability_prob = 40
 
+/datum/blackmarket_item/weapon/boarding_axe
+	name = "Boarding Axe"
+	desc = "Boughta stash of these demolition axes offa pretty lady comin from Lanchester. Cute tattoos. Handed em over for some food anna ride to Trifuge. Poor soul. Things hack through metal as easy as flesh, though."
+	item = /obj/item/melee/boarding_axe
+
+	cost_min = 1000
+	cost_max = 1750
+	stock_max = 2
+	availability_prob = 40
+
 /datum/blackmarket_item/weapon/sledgehammer
 	name = "Breaching Sledgehammer"
 	desc = "A Clique outfit had to ditch a lot of equipment to evade a Gezenan assault. This little piece breaks legs and walls like no other. You want in?"
@@ -70,10 +80,10 @@
 
 /datum/blackmarket_item/weapon/powerfist
 	name = "Powerfist"
-	desc = "Need a bit more... omph in your right hook? This gas operated powerfist will put you in the heavyweight."
+	desc = "Lookin to give a fisting someone'll remember? This electrically assisted powerfist'll slam em in the face hard enough they won't ever forget. Unless they black out an' forget it."
 	item = /obj/item/melee/powerfist
-	cost_min = 1500
-	cost_max = 4000
+	cost_min = 1000
+	cost_max = 3000
 	stock_max = 2
 	availability_prob = 50
 
@@ -301,6 +311,16 @@
 	stock_max = 2
 	availability_prob = 25
 
+/datum/blackmarket_item/weapon/guncase/vga5
+	name = "VG-A5 Beam Gun"
+	desc = "So you've seen those quad burst Etherbor Volleyguns? Well this thing has a quintuple burst! That means five!"
+	item = /obj/item/gun/energy/kalix/pgf/nock
+
+	cost_min = 3500
+	cost_max = 5000
+	stock = 2
+	availability_prob = 20
+
 /datum/blackmarket_item/weapon/guncase/bg_16
 	name = "BG-16 Beam Gun"
 	desc = "Not satisfied by Etherbor's civilian offerings? Try this military grade one we found!"
@@ -496,30 +516,6 @@
 	cost_max = 3500
 	stock_max = 2
 	availability_prob = 20
-
-/datum/blackmarket_item/weapon/guncase/oneshot
-	name = "Hammer Launcher"
-	desc = "A one-shot solution to a myriad amount of problems, ranging from Exosuits to obnoxious neighbors. Contains one ready-to-fire 84mm HE rocket. "
-	item = /obj/item/gun/ballistic/rocketlauncher/oneshot
-	mag_number = 0
-	gun_unloaded = FALSE
-
-	cost_min = 3000
-	cost_max = 4500
-	stock_min = 1
-	stock_max = 5
-	availability_prob = 25
-
-/datum/blackmarket_item/weapon/guncase/oneshot/hedp
-	name = "Hammer-DP Launcher"
-	desc = "A one-shot solution to a myriad amount of problems, ranging from Exosuits to obnoxious neighbors. Contains one ready-to-fire 84mm HEDP rocket. "
-	item = /obj/item/gun/ballistic/rocketlauncher/oneshot/hedp
-
-	cost_min = 4000
-	cost_max = 6000
-	stock_min = 1
-	stock_max = 5
-	availability_prob = 10
 
 /datum/blackmarket_item/weapon/guncase/skm_lmg
 	name = "SKM-24u Light Machinegun"

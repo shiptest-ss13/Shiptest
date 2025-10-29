@@ -201,7 +201,7 @@
 	id = /obj/item/card/id
 	gloves = /obj/item/clothing/gloves/color/white
 	uniform = /obj/item/clothing/under/rank/security/detective/grey
-	suit = /obj/item/clothing/suit/toggle/lawyer/charcoal
+	suit = /obj/item/clothing/suit/lawyer/charcoal
 	neck = /obj/item/clothing/neck/tie/black
 	dcoat = null
 	glasses = /obj/item/clothing/glasses/sunglasses
@@ -371,7 +371,7 @@
 	name = "Independent - Security Officer (Mercenary)"
 	id_assignment = "Trooper"
 
-	uniform = /obj/item/clothing/under/syndicate/camo
+	uniform = /obj/item/clothing/under/rank/security/officer/camo
 	gloves = /obj/item/clothing/gloves/fingerless
 	head = null
 	suit = null

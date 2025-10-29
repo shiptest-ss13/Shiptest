@@ -146,12 +146,92 @@
 	contains = list(/obj/item/melee/sword/mass)
 	crate_name = "machete crate"
 
+/datum/supply_pack/sec_supply/solarian_sabre
+	name = "Solarian Ceremonial Sabre Crate"
+	desc = "Contains one ceremonial Solarian sabre. To keep tradition alive. Still quite sharp."
+	cost = 750
+	contains = list(/obj/item/storage/belt/sabre/solgov)
+	crate_name = "solarian ceremonial sabre crate"
+	faction = /datum/faction/solgov
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/sec_supply/suns_sabre
+	name = "SUNS Dueling Sabre Crate"
+	desc = "Contains a single dueling sabre, intended for resolving conflicts among students."
+	cost = 750
+	contains = list(/obj/item/storage/belt/sabre/suns)
+	crate_name = "student's sabre crate"
+	faction = /datum/faction/syndicate/suns
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/sec_supply/suns_cmo_sabre
+	name = "SUNS Cane Sabre Crate"
+	desc = "Contains a blade sheathed in a cane. "
+	cost = 800
+	contains = list(/obj/item/storage/belt/sabre/suns/cmo)
+	crate_name = "student's sabre crate"
+	faction = /datum/faction/syndicate/suns
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/sec_supply/suns_telescopic_sabre
+	name = "SUNS Telescopic Sabre Crate"
+	desc = "Contains a finely crafted telescopic sabre, ideal for those with discerning tastes"
+	cost = 600
+	contains = list(/obj/item/melee/sword/sabre/suns/telescopic)
+	crate_name = "telescopic sabre crate"
+	faction = /datum/faction/syndicate/suns
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/sec_supply/pgf_boarding_cutlass
+	name = "PGF Boarding Cutlass Crate"
+	desc = "Contains a finely crafted cutlass, issued to boarding parties of the Pan-Gezenan Federation."
+	cost = 750
+	contains = list(/obj/item/storage/belt/sabre/pgf)
+	crate_name = "boarding cutlass crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/sec_supply/combatknives
 	name = "Combat Knife Crate"
 	desc = "Contains one high quality combat knife. For the sharper, and meaner, crew."
 	cost = 350
 	contains = list(/obj/item/melee/knife/combat)
 	crate_name = "combat knife crate"
+
+/datum/supply_pack/sec_supply/clip_kukri
+	name = "Kukri Sword Crate"
+	desc = "Contains a well-made titanium kukri manufactured on Serene. Intended for Minuteman use."
+	cost = 750
+	contains = list(/obj/item/storage/belt/sabre/kukri)
+	crate_name = "kukri crate"
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/sec_supply/cybersun_flyssa
+	name = "Energy Flyssa Crate"
+	desc = "Contains a lathed, verified, and readied Energy Flyssa. Corporate recommends owning a recharger to accompany."
+	cost = 1500
+	contains = list(/obj/item/melee/energy/flyssa)
+	crate_name = "energy flyssa crate"
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/sec_supply/hardliner_flyssa
+	name = "Energy Flyssa Crate"
+	desc = "Contains a lathed, verified, and readied Energy Flyssa. This is one of the assets you need to be careful to not lose."
+	cost = 1500
+	contains = list(/obj/item/melee/energy/flyssa)
+	crate_name = "energy flyssa crate"
+	faction = /datum/faction/syndicate/hardliners
+	faction_discount = -50
+	faction_locked = TRUE
 
 /datum/supply_pack/sec_supply/flamethrower
 	name = "Flamethrower Crate"

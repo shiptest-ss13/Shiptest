@@ -82,6 +82,7 @@
 	set_holdable(list(
 		/obj/item/clothing/glasses/cold,
 		/obj/item/clothing/glasses/heat,
+		/obj/item/clothing/glasses/safety,
 		/obj/item/clothing/glasses/welding,
 		/obj/item/clothing/glasses/meson,
 		/obj/item/clothing/glasses/thermal,
@@ -93,6 +94,7 @@
 		/obj/item/clothing/glasses/sunglasses/pgf,
 		/obj/item/clothing/glasses/hud/security/sunglasses/ngr,
 		/obj/item/clothing/glasses/hud/security/sunglasses/hardliners,
+		/obj/item/clothing/glasses/hud/security/sunglasses/ramzi,
 		/obj/item/ammo_casing,
 		/obj/item/ammo_box/magazine/illestren_a850r,
 		/obj/item/bodycamera,
@@ -111,7 +113,7 @@
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/gun/energy/laser,
 		/obj/item/gun/energy/disabler,
-		/obj/item/gun/energy/sharplite/x12,
+		/obj/item/gun/energy/sharplite/x26,
 		/obj/item/gun/energy/kalix/pistol,
 		/obj/item/stock_parts/cell/gun,
 		/obj/item/ammo_box)) // this doesnt let you put hades into holsters trust me

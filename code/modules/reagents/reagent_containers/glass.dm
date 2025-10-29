@@ -21,8 +21,10 @@
 
 	if(user.a_intent == INTENT_HARM)
 		var/R
-		M.visible_message(span_danger("[user] splashes the contents of [src] onto [M]!"), \
-						span_userdanger("[user] splashes the contents of [src] onto you!"))
+		M.visible_message(
+			span_danger("[user] splashes the contents of [src] onto [M]!"),
+			span_userdanger("[user] splashes the contents of [src] onto you!"),
+		)
 		if(reagents)
 			for(var/datum/reagent/A in reagents.reagent_list)
 				R += "[A] ([num2text(A.volume)]),"
@@ -31,24 +33,33 @@
 			log_combat(thrownby, target, "splashed (thrown) [english_list(reagents.reagent_list)]")
 			message_admins("[ADMIN_LOOKUPFLW(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] at [ADMIN_VERBOSEJMP(target)].")
 			playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
+
 		reagents.expose(M, TOUCH)
 		log_combat(user, M, "splashed", R)
 		reagents.clear_reagents()
 	else
 		if(!canconsume(M, user))
 			return
+
 		if(M != user)
-			M.visible_message(span_danger("[user] attempts to feed [M] something from [src]."), \
-						span_userdanger("[user] attempts to feed you something from [src]."))
+			M.visible_message(
+				span_danger("[user] attempts to feed [M] something from [src]."),
+				span_userdanger("[user] attempts to feed you something from [src]."),
+			)
 			if(!do_after(user, target = M))
 				return
+
 			if(!reagents || !reagents.total_volume)
 				return // The drink might be empty after the delay, such as by spam-feeding
-			M.visible_message(span_danger("[user] feeds [M] something from [src]."), \
-						span_userdanger("[user] feeds you something from [src]."))
+
+			M.visible_message(
+				span_danger("[user] feeds [M] something from [src]."),
+				span_userdanger("[user] feeds you something from [src]."),
+			)
 			log_combat(user, M, "fed", reagents.log_list())
 		else
 			to_chat(user, span_notice("You swallow a gulp of [src]."))
+
 		addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), M, 5, TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
 		playsound(M.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
 
@@ -90,8 +101,10 @@
 			if(INTENT_DISARM)
 				attempt_pour(target, user)
 			if(INTENT_HARM)
-				user.visible_message(span_danger("[user] splashes the contents of [src] onto [target]!"), \
-									span_notice("You splash the contents of [src] onto [target]."))
+				user.visible_message(
+					span_danger("[user] splashes the contents of [src] onto [target]!"),
+					span_notice("You splash the contents of [src] onto [target]."),
+				)
 				reagents.expose(target, TOUCH)
 				reagents.clear_reagents()
 				playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
@@ -113,7 +126,6 @@
 				qdel(E)
 			return
 	..()
-
 
 /obj/item/reagent_containers/glass/beaker
 	name = "beaker"

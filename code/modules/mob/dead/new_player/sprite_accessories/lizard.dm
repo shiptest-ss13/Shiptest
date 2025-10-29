@@ -19,6 +19,7 @@
 /datum/sprite_accessory/body_markings/lbelly
 	name = "Light Belly"
 	icon_state = "lbelly"
+	gender_specific = TRUE
 
 /datum/sprite_accessory/body_markings/cracks
 	name = "Cracks"
@@ -269,14 +270,3 @@
 /datum/sprite_accessory/spines_animated/aquatic
 	name = "Aquatic"
 	icon_state = "aqua"
-
-//Leg stuff, no better place to put it, no point in a legs.dm file
-
-/datum/sprite_accessory/legs 	//legs are a special case, they aren't actually sprite_accessories but are updated with them.
-	icon = null					//These datums exist for selecting legs on preference, and little else
-
-/datum/sprite_accessory/legs/none
-	name = "Normal Legs"
-
-/datum/sprite_accessory/legs/digitigrade_lizard
-	name = "Digitigrade Legs"

@@ -214,7 +214,7 @@
 
 /mob/living/carbon/human/Topic(href, href_list)
 	if(href_list["embedded_object"] && usr.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
-		var/obj/item/bodypart/L = locate(href_list["embedded_limb"]) in bodyparts
+		var/obj/item/bodypart/L = locate(href_list["embedded_limb"]) in get_all_bodyparts()
 		if(!L)
 			return
 		var/obj/item/I = locate(href_list["embedded_object"]) in L.embedded_objects
@@ -308,10 +308,14 @@
 					return
 				var/span = "notice"
 				var/status = ""
+				var/obj/item/bodypart/body_part
 				if(getBruteLoss())
 					to_chat(usr, "<b>Physical trauma analysis:</b>")
-					for(var/obj/item/bodypart/BP as anything in bodyparts)
-						var/brutedamage = BP.brute_dam
+					for(var/zone in bodyparts)
+						body_part = bodyparts[zone]
+						if(!body_part)
+							continue
+						var/brutedamage = body_part.brute_dam
 						if(brutedamage > 0)
 							status = "received minor physical injuries."
 							span = "notice"
@@ -322,11 +326,14 @@
 							status = "sustained major trauma!"
 							span = "userdanger"
 						if(brutedamage)
-							to_chat(usr, "<span class='[span]'>[BP] appears to have [status]</span>")
+							to_chat(usr, "<span class='[span]'>[body_part] appears to have [status]</span>")
 				if(getFireLoss())
 					to_chat(usr, "<b>Analysis of skin burns:</b>")
-					for(var/obj/item/bodypart/BP as anything in bodyparts)
-						var/burndamage = BP.burn_dam
+					for(var/zone in bodyparts)
+						body_part = bodyparts[zone]
+						if(!body_part)
+							continue
+						var/burndamage = body_part.burn_dam
 						if(burndamage > 0)
 							status = "signs of minor burns."
 							span = "notice"
@@ -337,7 +344,7 @@
 							status = "major burns!"
 							span = "userdanger"
 						if(burndamage)
-							to_chat(usr, "<span class='[span]'>[BP] appears to have [status]</span>")
+							to_chat(usr, "<span class='[span]'>[body_part] appears to have [status]</span>")
 				if(getOxyLoss())
 					to_chat(usr, span_danger("Patient has signs of suffocation, emergency treatment may be required!"))
 				if(getToxLoss() > 20)
@@ -492,6 +499,31 @@
 
 /mob/living/carbon/human/proc/canUseHUD()
 	return (mobility_flags & MOBILITY_USE)
+
+//ohh god this'll need to be reworked into a zone-by-zone selection, rather than just "are yuor jorts thick"
+
+/mob/living/carbon/human/proc/is_exposed(mob/user, error_msg, target_zone)
+	. = TRUE // Default to returning true.
+	if(user && !target_zone)
+		target_zone = user.zone_selected
+
+	// If targeting the head, see if the head item is thin enough.
+	// If targeting anything else, see if the wear suit is thin enough.
+	if(above_neck(target_zone))
+		if(head && istype(head, /obj/item/clothing))
+			var/obj/item/clothing/CH = head
+			if (CH.clothing_flags & THICKMATERIAL)
+				. = FALSE
+	else
+		if(wear_suit && istype(wear_suit, /obj/item/clothing))
+			var/obj/item/clothing/CS = wear_suit
+			if (CS.clothing_flags & THICKMATERIAL)
+				. = FALSE
+
+	if(!. && error_msg && user)
+		// Might need re-wording.
+		to_chat(user, span_alert("There is no exposed flesh or thin material [above_neck(target_zone) ? "on [p_their()] head" : "on [p_their()] body"]."))
+
 
 /mob/living/carbon/human/can_inject(mob/user, error_msg, target_zone, penetrate_thick = FALSE, ignore_species = FALSE)
 	. = TRUE // Default to returning true.
@@ -863,14 +895,18 @@
 			hud_used.healthdoll.cut_overlays()
 			if(stat != DEAD)
 				hud_used.healthdoll.icon_state = "healthdoll_OVERLAY"
-				for(var/obj/item/bodypart/BP as anything in bodyparts)
+				var/obj/item/bodypart/body_part
+				for(var/zone in bodyparts)
+					body_part = bodyparts[zone]
+					if(!body_part)
+						continue
 					var/numbing_wound = FALSE
-					for(var/datum/wound/W in BP.wounds)
+					for(var/datum/wound/W in body_part.wounds)
 						if(W.wound_type == WOUND_BURN)
 							numbing_wound = TRUE
 
-					var/damage = BP.burn_dam + BP.brute_dam
-					var/comparison = (BP.max_damage/5)
+					var/damage = body_part.burn_dam + body_part.brute_dam
+					var/comparison = (body_part.max_damage/5)
 					var/icon_num = 0
 					if(damage)
 						icon_num = 1
@@ -885,7 +921,7 @@
 					if(hal_screwyhud == SCREWYHUD_HEALTHY || numbing_wound)
 						icon_num = 0
 					if(icon_num)
-						hud_used.healthdoll.add_overlay(mutable_appearance('icons/hud/screen_gen.dmi', "[BP.body_zone][icon_num]"))
+						hud_used.healthdoll.add_overlay(mutable_appearance('icons/hud/screen_gen.dmi', "[zone][icon_num]"))
 				for(var/t in get_missing_limbs()) //Missing limbs
 					hud_used.healthdoll.add_overlay(mutable_appearance('icons/hud/screen_gen.dmi', "[t]6"))
 				for(var/t in get_disabled_limbs()) //Disabled limbs
@@ -911,11 +947,6 @@
 /mob/living/carbon/human/can_hold_items()
 	return TRUE
 
-/mob/living/carbon/human/update_gravity(has_gravity,override = 0)
-	if(dna && dna.species) //prevents a runtime while a human is being monkeyfied
-		override = dna.species.override_float
-	..()
-
 /mob/living/carbon/human/vomit(lost_nutrition = 10, blood = FALSE, stun = TRUE, distance = 1, message = TRUE, toxic = FALSE, harm = TRUE, force = FALSE, purge = FALSE)
 	if(blood && (NOBLOOD in dna.species.species_traits) && !HAS_TRAIT(src, TRAIT_TOXINLOVER))
 		if(message)
@@ -925,6 +956,28 @@
 			Immobilize(30)
 		return 1
 	..()
+
+
+/mob/living/carbon/human/vv_edit_var(var_name, var_value)
+	if(var_name == NAMEOF(src, mob_height))
+		var/static/list/heights = list(
+			HUMAN_HEIGHT_SHORTEST,
+			HUMAN_HEIGHT_SHORT,
+			HUMAN_HEIGHT_MEDIUM,
+			HUMAN_HEIGHT_TALL,
+			HUMAN_HEIGHT_TALLER,
+			HUMAN_HEIGHT_TALLEST
+		)
+		if(!(var_value in heights))
+			return
+
+		. = set_mob_height(var_value)
+
+	if(!isnull(.))
+		datum_flags |= DF_VAR_EDITED
+		return
+
+	return ..()
 
 /mob/living/carbon/human/vv_get_dropdown()
 	. = ..()

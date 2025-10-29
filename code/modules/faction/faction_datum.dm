@@ -8,6 +8,8 @@
 	var/list/prefixes
 	/// List/Typecache of factions that this faction is allowed to interact with. Non-recursive.
 	var/list/allowed_factions = list()
+	/// The official language of this faction. Galactic Common by default.
+	var/official_language = /datum/language/galactic_common
 	/// Theme color for this faction, currently only used for the wiki
 	var/color = "#ffffff"
 	/// Contrast color for this faction, used for links on the wiki
@@ -18,6 +20,8 @@
 	var/check_prefix = TRUE
 	/// Sorting order for factions
 	var/order = FACTION_SORT_DEFAULT
+	/// Whether or not this faction is hidden from the autowiki ships table (see: Unknown, used for ruins but has no ships)
+	var/wiki_hidden = FALSE
 
 /datum/faction/New()
 	if(!short_name)
@@ -68,6 +72,7 @@
 /datum/faction/syndicate/suns
 	name = FACTION_SUNS
 	short_name = "SUNS"
+	official_language = /datum/language/solarian_international
 	prefixes = PREFIX_SUNS
 	color = "#CD94D3"
 
@@ -79,6 +84,7 @@
 /datum/faction/solgov
 	name = FACTION_SOLCON
 	parent_faction = /datum/faction/solgov
+	official_language = /datum/language/solarian_international
 	prefixes = PREFIX_SOLCON
 	color = "#444e5f"
 
@@ -132,13 +138,14 @@
 	name = FACTION_PGF
 	short_name = "PGF"
 	parent_faction = /datum/faction/pgf
+	official_language = /datum/language/gezena_kalixcian
 	prefixes = PREFIX_PGF
 	color = "#359829"
 
 /datum/faction/independent
 	name = FACTION_INDEPENDENT
 	short_name = "IND"
-	parent_faction =  /datum/faction/independent
+	parent_faction = /datum/faction/independent
 	prefixes = PREFIX_INDEPENDENT
 	color = "#A0A0A0"
 	order = FACTION_SORT_INDEPENDENT
@@ -146,8 +153,18 @@
 /datum/faction/ramzi
 	name = FACTION_RAMZI
 	short_name = "RAM"
-	parent_faction =  /datum/faction/ramzi
+	parent_faction = /datum/faction/ramzi
 	prefixes = PREFIX_RAMZI
 	color = "#c45508"
 	check_prefix = FALSE
 	order = FACTION_SORT_ASPAWN
+
+/datum/faction/unknown
+	name = FACTION_UNKNOWN
+	short_name = "???"
+	parent_faction = /datum/faction/unknown
+	prefixes = PREFIX_NONE
+	color = "#504c4c"
+	check_prefix = FALSE
+	order = FACTION_SORT_ASPAWN
+	wiki_hidden = TRUE

@@ -200,6 +200,7 @@
 	ADD_TRAIT(L, TRAIT_STUNIMMUNE, type)
 	ADD_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
 	L.AddComponent(/datum/component/tackler, stamina_cost= 25, base_knockdown= 2 SECONDS, range=6, speed=1, skill_mod=2)
+	L.impact_effect /= 10
 	if(iscarbon(L))
 		var/mob/living/carbon/C = L
 		rage = new()
@@ -209,6 +210,7 @@
 	REMOVE_TRAIT(L, TRAIT_VERY_HARDLY_WOUNDED, /datum/reagent/drug/mammoth)
 	REMOVE_TRAIT(L, TRAIT_STUNIMMUNE, type)
 	REMOVE_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
+	L.impact_effect *= 10
 	if(L.GetComponent(/datum/component/tackler))
 		qdel(L.GetComponent(/datum/component/tackler))
 	if(rage)
@@ -242,7 +244,8 @@
 		for(var/i = 0, i < 8, i++)
 			step(M, pick(GLOB.cardinals))
 	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
+	if(prob(1))
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	..()
 
 /datum/reagent/drug/mammoth/addiction_act_stage2(mob/living/M)
@@ -252,7 +255,8 @@
 			step(M, pick(GLOB.cardinals))
 	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
+	if(prob(5))
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	..()
 
 /datum/reagent/drug/mammoth/addiction_act_stage3(mob/living/M)
@@ -262,7 +266,8 @@
 			step(M, pick(GLOB.cardinals))
 	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	M.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
+	if(prob(5))
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	..()
 
 /datum/reagent/drug/mammoth/addiction_act_stage4(mob/living/carbon/human/M)
@@ -272,8 +277,9 @@
 			step(M, pick(GLOB.cardinals))
 	M.set_timed_status_effect(120 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	M.set_timed_status_effect(100 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
-	M.adjustToxLoss(5, 0)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
+	if(prob(10))
+		M.adjustToxLoss(3, 0)
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	..()
 	. = 1
 
@@ -289,7 +295,7 @@
 		to_chat(M, span_notice("[high_message]"))
 	M.adjustStaminaLoss(-18, 0)
 	M.adjustToxLoss(0.5, 0)
-	if(prob(50))
+	if(prob(35))
 		M.losebreath++
 		M.adjustOxyLoss(1, 0)
 	..()
@@ -409,6 +415,7 @@
 	color = "#FAFAFA"
 	overdose_threshold = 20
 	addiction_threshold = 11
+	metabolization_rate = 0.2
 	taste_description = "a burst of energy"
 
 /datum/reagent/drug/finobranc/on_mob_metabolize(mob/living/L)
@@ -484,6 +491,8 @@
 		drugged.physiology.do_after_speed -= 0.4
 		drugged.physiology.damage_resistance += 10
 		drugged.physiology.hunger_mod += 1
+		drugged.recoil_effect *= 0.6
+		drugged.impact_effect /= 2
 
 /datum/reagent/drug/combat_drug/on_mob_end_metabolize(mob/living/L)
 	..()
@@ -494,6 +503,8 @@
 		drugged.physiology.do_after_speed += 0.4
 		drugged.physiology.damage_resistance -= 10
 		drugged.physiology.hunger_mod -= 1
+		drugged.recoil_effect /= 0.6
+		drugged.impact_effect *= 2
 
 /datum/reagent/drug/combat_drug/on_mob_life(mob/living/carbon/M)
 	..()
@@ -667,4 +678,59 @@
 /datum/reagent/drug/placebatol/on_mob_life(mob/living/carbon/M)
 	if(prob(3))
 		to_chat(M, span_notice("[pick("You feel better.", "You feel normal.", "You feel stable.")]")) //normal pills
+	..()
+
+/datum/reagent/drug/cinesia
+	name = "Cinesia"
+	description = "A stimulant cocktail devised for usage in long-haul environments. Temporarily rebinds muscles, and forces contractions to allow the user to force motion from an otherwise disabled limb."
+	reagent_state = LIQUID
+	color = "#5a360e"
+	overdose_threshold = 16
+	addiction_threshold = 15
+	metabolization_rate = 0.2
+	taste_description = "an apple coated in glue"
+
+/datum/reagent/drug/cinesia/on_mob_metabolize(mob/living/L)
+	..()
+	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_medium, name)
+	ADD_TRAIT(L, TRAIT_NOLIMBDISABLE, /datum/reagent/drug/cinesia)
+	L.playsound_local(get_turf(L), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
+	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/cinesia)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.hunger_mod += 1
+
+/datum/reagent/drug/cinesia/on_mob_end_metabolize(mob/living/L)
+	..()
+	REMOVE_TRAIT(L, TRAIT_NOLIMBDISABLE, /datum/reagent/drug/cinesia)
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/cinesia)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.hunger_mod -= 1
+
+/datum/reagent/drug/cinesia/on_mob_life(mob/living/carbon/M)
+	..()
+	M.adjustStaminaLoss(-10, 0)
+	M.adjustBruteLoss(-1, 0)
+	if(prob(10))
+		M.playsound_local(get_turf(M), 'sound/health/slowbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
+
+/datum/reagent/drug/cinesia/overdose_process(mob/living/M)
+	M.adjustOrganLoss(ORGAN_SLOT_HEART, 2)
+	if(prob(20))
+		var/obj/item/bodypart/muscle_seizure = M.get_bodypart(pick(BODY_ZONE_L_ARM,BODY_ZONE_L_LEG, BODY_ZONE_R_ARM, BODY_ZONE_R_LEG))
+		if(muscle_seizure)
+			var/datum/wound/muscle/moderate/my_arm_explode = new
+			my_arm_explode.apply_wound(muscle_seizure)
+	if(prob(10))
+		M.drop_all_held_items()
+	..()
+
+/datum/reagent/drug/cinesia/addiction_act_stage3(mob/living/M)
+	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+	..()
+
+/datum/reagent/drug/cinesia/addiction_act_stage4(mob/living/carbon/human/M)
+	M.apply_status_effect(/datum/status_effect/stagger)
+	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()

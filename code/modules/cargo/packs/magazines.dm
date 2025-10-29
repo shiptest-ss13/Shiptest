@@ -365,6 +365,12 @@
 	cost = 1200
 	faction = /datum/faction/syndicate/scarborough
 
+/datum/supply_pack/magazine/slammer
+	name = "Slammer Magazine Crate"
+	desc = "Contains a 6-round 12ga magazine for the Slammer shotgun."
+	contains = list(/obj/item/ammo_box/magazine/m12g_slammer)
+	cost = 300
+
 /* energy weapons */
 
 /datum/supply_pack/magazine/guncell
@@ -389,6 +395,14 @@
 	faction = /datum/faction/nt
 	faction_discount = 30
 	cost = 700
+
+/datum/supply_pack/magazine/tinyguncell
+	name = "Sharplite Mini Power Cell"
+	desc = "Contains a proprietary weapon cell, compatible with the Ohm self-defence pistol."
+	contains = list(/obj/item/stock_parts/cell/gun/sharplite/mini)
+	faction = /datum/faction/nt
+	faction_discount = 30
+	cost = 300
 
 /datum/supply_pack/magazine/upgradedguncell
 	name = "Sharplite Plus Proprietary Weapon Cell"
