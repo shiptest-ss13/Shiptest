@@ -244,6 +244,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"bQ" = (
+/obj/structure/platform/ship_three/indestructible{
+	dir = 10
+	},
+/obj/structure/railing/thin{
+	dir = 8
+	},
+/turf/open/space/basic,
+/area/space)
 "bR" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#D2BC9D"
@@ -369,10 +378,11 @@
 /turf/open/floor/plasteel/mono/white,
 /area/space)
 "cM" = (
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 8
+/obj/machinery/disposal/bin,
+/obj/effect/turf_decal/industrial/warning/fulltile{
+	color = "#FFFFFF"
 	},
-/turf/open/floor/plasteel/patterned/brushed,
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "cT" = (
 /obj/structure/railing/thin{
@@ -873,10 +883,18 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "gA" = (
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 6
-	},
+/obj/machinery/power/smes/engineering,
 /turf/open/space/basic,
+/area/space)
+"gD" = (
+/obj/effect/turf_decal/corner/opaque/white/half{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/lightgrey/half{
+	dir = 1
+	},
+/obj/structure/railing/thin,
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "gE" = (
 /obj/effect/turf_decal/corner/transparent/cybersunteal/half{
@@ -1286,15 +1304,10 @@
 /turf/open/floor/suns/dark/plain,
 /area/space)
 "kA" = (
-/obj/structure/urinal{
-	dir = 8;
-	pixel_x = 16;
-	pixel_y = -2
+/obj/structure/platform/ship_three/corner/indestructible{
+	dir = 4
 	},
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 8
-	},
-/turf/open/floor/plasteel/patterned/brushed,
+/turf/open/space/basic,
 /area/space)
 "kC" = (
 /obj/structure/filingcabinet/double,
@@ -1309,6 +1322,10 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/patterned/brushed,
+/area/space)
+"kG" = (
+/obj/machinery/power/ship_gravity,
+/turf/open/space/basic,
 /area/space)
 "kH" = (
 /turf/open/floor/plasteel,
@@ -1615,6 +1632,10 @@
 	dir = 6
 	},
 /obj/structure/closet/secure_closet/armorycage,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "mO" = (
@@ -3655,6 +3676,13 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/space)
+"BO" = (
+/obj/machinery/door/airlock/medical{
+	dir = 4;
+	name = "Medical Bay"
+	},
+/turf/closed/wall/mineral/titanium,
+/area/space)
 "BP" = (
 /obj/structure/rack,
 /turf/open/floor/plasteel/mono/dark,
@@ -3998,6 +4026,13 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/brushed,
+/area/space)
+"DZ" = (
+/obj/structure/platform/ship_three/indestructible,
+/obj/structure/platform/ship_three/corner/indestructible{
+	dir = 4
+	},
+/turf/open/space/basic,
 /area/space)
 "Ea" = (
 /obj/effect/turf_decal/siding/wood{
@@ -4945,6 +4980,18 @@
 /obj/structure/chair/sofa/red/corpo/left/directional/west,
 /turf/open/floor/suns/hatch/maple,
 /area/space)
+"Lm" = (
+/obj/structure/railing/thin{
+	dir = 4
+	},
+/obj/structure/platform/ship_three/indestructible{
+	dir = 5
+	},
+/obj/structure/railing/thin{
+	dir = 4
+	},
+/turf/open/space/basic,
+/area/space)
 "Ln" = (
 /obj/structure/chair/sofa/blue/corpo/corner/directional/west,
 /turf/open/floor/suns/hatch/mahogany,
@@ -5413,10 +5460,9 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/space)
 "PM" = (
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 9
-	},
-/turf/open/space/basic,
+/obj/effect/turf_decal/corner/transparent/cybersunteal/half,
+/obj/structure/railing/thin,
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "PN" = (
 /obj/effect/turf_decal/corner/opaque/cybersunteal/border{
@@ -6332,6 +6378,8 @@
 	dir = 6
 	},
 /obj/structure/guncloset,
+/obj/item/gun/ballistic/automatic/smg/cobra,
+/obj/item/gun/ballistic/automatic/smg/cobra,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "WS" = (
@@ -6617,6 +6665,11 @@
 /obj/machinery/vending/coffee,
 /turf/open/floor/suns/dark/plain,
 /area/space)
+"YO" = (
+/obj/machinery/disposal/bin,
+/obj/structure/railing/thin,
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
 "YQ" = (
 /obj/structure/closet/secure_closet/armorycage,
 /obj/effect/turf_decal/industrial/fire,
@@ -6673,6 +6726,10 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
+/area/space)
+"Za" = (
+/obj/machinery/gravity_generator/main/station/admin,
+/turf/open/space/basic,
 /area/space)
 "Zc" = (
 /obj/structure/urinal{
@@ -10416,15 +10473,15 @@ Rz
 Rz
 Rz
 Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
+Zd
+iY
+iY
+iY
+iY
+iY
+iY
+iY
+hz
 Rz
 Rz
 Rz
@@ -10541,11 +10598,11 @@ Rz
 Rz
 Rz
 Rz
-Rz
-Rz
-Rz
-Rz
-Rz
+Zd
+iY
+iY
+iY
+MO
 qN
 Yy
 Yy
@@ -10553,7 +10610,7 @@ Yy
 Yy
 Yy
 Yy
-Rz
+fB
 Rz
 Rz
 Rz
@@ -10670,7 +10727,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 Yy
 Yy
 qN
@@ -10682,7 +10739,7 @@ ZR
 ZR
 ZR
 Yy
-Rz
+fB
 Rz
 Rz
 Rz
@@ -10799,7 +10856,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 Yy
 OG
 OG
@@ -10811,7 +10868,7 @@ YK
 pT
 ZR
 Yy
-Rz
+fB
 Rz
 Rz
 Rz
@@ -10928,7 +10985,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 Yy
 fY
 OG
@@ -10940,7 +10997,7 @@ Cz
 tR
 ZR
 Yy
-Rz
+fB
 Rz
 Rz
 Rz
@@ -11056,8 +11113,8 @@ Rz
 Rz
 Rz
 Rz
-Rz
-Rz
+Zd
+MO
 Yy
 YR
 OG
@@ -11069,8 +11126,8 @@ Cz
 Ue
 qN
 qN
-Rz
-Rz
+cv
+hz
 Rz
 Rz
 Rz
@@ -11112,9 +11169,9 @@ Ht
 sG
 qN
 Rz
-yd
-yd
-yd
+Rz
+Rz
+Rz
 Rz
 Rz
 Rz
@@ -11185,7 +11242,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 qN
 qN
 qN
@@ -11199,7 +11256,7 @@ OG
 OG
 qN
 qN
-Rz
+fB
 Rz
 Rz
 Rz
@@ -11241,9 +11298,9 @@ Ht
 Xz
 qN
 Rz
-Ht
-Ht
-yd
+Rz
+Rz
+Rz
 Rz
 Rz
 Rz
@@ -11314,7 +11371,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 Yy
 LF
 OG
@@ -11328,7 +11385,7 @@ Cz
 OG
 vc
 Yy
-Rz
+fB
 Rz
 Rz
 Rz
@@ -11370,9 +11427,9 @@ Ht
 Xz
 qN
 Rz
-Ht
-Ht
-yd
+Rz
+Rz
+Rz
 Rz
 Rz
 Rz
@@ -11443,7 +11500,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 Yy
 YR
 OG
@@ -11457,7 +11514,7 @@ Cz
 OG
 tR
 Yy
-Rz
+fB
 Rz
 Rz
 Rz
@@ -11499,9 +11556,9 @@ Ht
 Xz
 qN
 Rz
-Ht
-Ht
-yd
+Rz
+Rz
+Rz
 Rz
 Rz
 Rz
@@ -11572,7 +11629,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 Yy
 Zm
 OG
@@ -11586,7 +11643,7 @@ Cz
 OG
 Ue
 Yy
-Rz
+fB
 Rz
 Rz
 Rz
@@ -11628,8 +11685,8 @@ Ht
 jR
 qN
 Rz
-kA
-cM
+Rz
+Rz
 Rz
 Rz
 Rz
@@ -11701,7 +11758,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 qN
 qN
 qN
@@ -11715,8 +11772,8 @@ OG
 OG
 qN
 qN
-Rz
-Rz
+cv
+hz
 Rz
 Rz
 Rz
@@ -11757,8 +11814,8 @@ Ht
 Ht
 qN
 Rz
-qN
-qN
+Rz
+Rz
 Rz
 Rz
 Rz
@@ -11830,8 +11887,8 @@ Rz
 Rz
 Rz
 Rz
-Rz
-Rz
+QT
+hW
 Yy
 YR
 OG
@@ -11845,8 +11902,8 @@ qN
 qN
 qN
 qN
-Rz
-Rz
+cv
+hz
 Rz
 Rz
 Rz
@@ -11883,7 +11940,7 @@ qN
 qN
 qN
 qN
-qN
+PB
 qN
 Rz
 Rz
@@ -11960,7 +12017,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 Yy
 QM
 OG
@@ -11975,7 +12032,7 @@ bw
 Fk
 qN
 qN
-iY
+cv
 iY
 iY
 iY
@@ -12089,7 +12146,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 Yy
 OG
 OG
@@ -12218,7 +12275,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 Yy
 qN
 qN
@@ -12347,8 +12404,8 @@ Rz
 Rz
 Rz
 Rz
-Rz
-Rz
+QT
+hW
 qN
 DN
 Co
@@ -12362,7 +12419,7 @@ qN
 Fk
 qN
 qN
-Fr
+Yz
 Fr
 Fr
 Fr
@@ -12424,7 +12481,7 @@ Rz
 Rz
 Rz
 ir
-Rz
+cv
 Rz
 Rz
 Rz
@@ -12477,7 +12534,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 Yy
 eG
 Co
@@ -12491,7 +12548,7 @@ qN
 PB
 qN
 qN
-qN
+fB
 Rz
 Rz
 Rz
@@ -12554,7 +12611,7 @@ Rz
 Rz
 ir
 ir
-Rz
+fB
 Rz
 Rz
 Rz
@@ -12606,7 +12663,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 Yy
 PL
 Co
@@ -12620,7 +12677,7 @@ qN
 yd
 pW
 qN
-Rz
+fB
 Rz
 Rz
 Rz
@@ -12683,7 +12740,7 @@ Rz
 Rz
 Rz
 ir
-Rz
+fB
 Rz
 Rz
 Rz
@@ -12734,8 +12791,8 @@ Rz
 Rz
 Rz
 Rz
-Rz
-Rz
+Zd
+MO
 qN
 Ir
 Co
@@ -12749,9 +12806,9 @@ qN
 uc
 qa
 qN
-Rz
-Rz
-Rz
+cv
+iY
+hz
 Rz
 Rz
 Rz
@@ -12765,7 +12822,7 @@ Ff
 fB
 Rz
 Rz
-qN
+Yy
 Fk
 Fk
 Fk
@@ -12812,7 +12869,7 @@ Rz
 Rz
 Rz
 ir
-Rz
+fB
 Rz
 Rz
 Rz
@@ -12863,7 +12920,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 qN
 qN
 Ir
@@ -12880,7 +12937,7 @@ qN
 qN
 qN
 qN
-Rz
+fB
 Rz
 Rz
 Rz
@@ -12917,17 +12974,17 @@ qN
 qN
 qN
 qN
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
+Yz
+Fr
+Fr
+Fr
+Fr
+Fr
+Fr
+Fr
+Fr
+Fr
+hW
 qN
 bo
 qN
@@ -12941,7 +12998,7 @@ Rz
 Rz
 Rz
 ir
-Rz
+fB
 Rz
 Rz
 Rz
@@ -12992,7 +13049,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 qN
 UM
 ED
@@ -13009,12 +13066,12 @@ Zc
 Bi
 pB
 qN
-Rz
-Rz
+fB
+Zd
 iY
 iY
 iY
-Rz
+hz
 Rz
 Rz
 oW
@@ -13042,6 +13099,7 @@ eT
 qN
 qN
 qN
+Yz
 Rz
 Rz
 Rz
@@ -13055,8 +13113,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
-Rz
+oW
 qN
 Fk
 Fk
@@ -13070,7 +13127,7 @@ Rz
 Rz
 Rz
 ir
-Rz
+fB
 Rz
 Rz
 Rz
@@ -13121,7 +13178,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 Yy
 mh
 ou
@@ -13138,13 +13195,13 @@ Ht
 Ht
 Ht
 qN
-Rz
+da
 MO
 qN
 qN
 qN
 cv
-Rz
+hz
 Rz
 oW
 lG
@@ -13170,6 +13227,8 @@ bO
 bO
 yU
 qN
+qN
+cv
 Rz
 Rz
 Rz
@@ -13183,9 +13242,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
-Rz
-Rz
+oW
 qN
 Fk
 Fk
@@ -13199,7 +13256,7 @@ Rz
 Rz
 Rz
 ir
-Rz
+fB
 Rz
 Rz
 Rz
@@ -13250,7 +13307,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 Yy
 yd
 Co
@@ -13270,7 +13327,7 @@ qN
 Jd
 qN
 qN
-Rz
+kG
 qN
 qN
 fB
@@ -13301,6 +13358,7 @@ rT
 qN
 qN
 qN
+fB
 Rz
 Rz
 Rz
@@ -13313,8 +13371,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
-Rz
+oW
 qN
 qN
 qN
@@ -13328,7 +13385,7 @@ Rz
 Rz
 Rz
 ir
-Rz
+fB
 Rz
 Rz
 Rz
@@ -13379,7 +13436,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 Yy
 yd
 Co
@@ -13430,7 +13487,7 @@ rT
 ZR
 ZR
 Yy
-fB
+da
 iY
 iY
 iY
@@ -13441,12 +13498,12 @@ iY
 iY
 iY
 iY
+hz
 Rz
-Rz
-Rz
-Rz
-Rz
-Rz
+QT
+Fr
+Fr
+hW
 qN
 Rz
 Rz
@@ -13457,7 +13514,7 @@ Rz
 Rz
 ir
 ir
-Rz
+fB
 Rz
 Rz
 Rz
@@ -13508,7 +13565,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 Yy
 yd
 vC
@@ -13523,9 +13580,9 @@ qN
 uc
 pW
 qN
-Rz
-Rz
-oW
+Yz
+Fr
+DZ
 qN
 Rz
 Rz
@@ -13575,7 +13632,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 qN
 Pf
 qN
@@ -13585,7 +13642,7 @@ Rz
 Rz
 ir
 ir
-Rz
+Yz
 Rz
 Rz
 Rz
@@ -13637,7 +13694,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 qN
 qN
 qN
@@ -13652,8 +13709,8 @@ qN
 yd
 qa
 qN
-Rz
-Rz
+cv
+hz
 oW
 qN
 qN
@@ -13704,16 +13761,16 @@ Wi
 Wi
 Wi
 Wi
-Rz
-Rz
+QT
+es
 iG
 iG
-iG
-Rz
-Rz
-Rz
-Rz
-Rz
+Xt
+Yz
+Fr
+Fr
+Fr
+Fr
 Rz
 Rz
 Rz
@@ -13766,7 +13823,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 qN
 Dq
 CB
@@ -13782,7 +13839,7 @@ qN
 qN
 qN
 qN
-Wi
+CQ
 Dm
 qN
 Rz
@@ -13834,11 +13891,11 @@ Wi
 Wi
 Wi
 Rz
-Rz
+NH
 Mc
 ZP
-Rk
-Rz
+gD
+fB
 Rz
 Rz
 Rz
@@ -13895,7 +13952,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 qN
 vr
 Ht
@@ -13908,10 +13965,10 @@ Co
 Co
 Cz
 qN
-Rz
 qN
-Rz
-Rz
+qN
+Yz
+kA
 oW
 qN
 Rz
@@ -13963,11 +14020,11 @@ Rz
 Rz
 Rz
 Rz
-Rz
+NH
 Mc
 ZP
-Rk
-Rz
+gD
+fB
 Rz
 Rz
 Rz
@@ -14021,10 +14078,10 @@ Rz
 Rz
 Rz
 Rz
-Rz
-Rz
-Rz
-Rz
+Zd
+iY
+iY
+MO
 qN
 cF
 cA
@@ -14037,9 +14094,9 @@ Co
 Co
 vh
 qN
-Rz
-Rz
-Rz
+Yz
+Fr
+kA
 Rz
 oW
 qN
@@ -14092,11 +14149,11 @@ Wi
 Wi
 Wi
 Rz
-Rz
+NH
 Mc
 ZP
-Rk
-Rz
+gD
+fB
 Rz
 Rz
 Rz
@@ -14149,8 +14206,8 @@ Rz
 Rz
 Rz
 Rz
-Rz
-Rz
+Zd
+MO
 Yy
 Yy
 qN
@@ -14166,17 +14223,17 @@ Co
 Co
 Cz
 qN
+fB
 Rz
 Rz
 Rz
-Rz
-Rz
+QT
 hW
 lG
 NV
 Ff
 Yz
-Rz
+kA
 Rz
 oW
 lG
@@ -14221,7 +14278,7 @@ Wi
 Wi
 Wi
 Rz
-Rz
+NH
 Mc
 ZP
 Rk
@@ -14278,7 +14335,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 Yy
 Yy
 UU
@@ -14295,8 +14352,8 @@ Co
 Co
 vh
 qN
-Rz
-Rz
+cv
+hz
 Rz
 Rz
 Rz
@@ -14350,12 +14407,12 @@ Rz
 Rz
 Rz
 Rz
-Rz
+NH
 Mc
 ZP
 Rk
-aC
-Rz
+YO
+fB
 Rz
 Rz
 Rz
@@ -14407,7 +14464,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 Yy
 Pd
 gy
@@ -14425,7 +14482,7 @@ wD
 Cz
 qN
 qN
-iY
+cv
 iY
 iY
 iY
@@ -14479,12 +14536,12 @@ Rz
 Rz
 Rz
 Rz
-Rz
+NH
 Mc
 ZP
 Rk
-iG
-Rz
+Xt
+fB
 Rz
 Rz
 Rz
@@ -14536,7 +14593,7 @@ Rz
 Rz
 ND
 Rz
-Rz
+oW
 Yy
 Fg
 gy
@@ -14608,12 +14665,12 @@ Rz
 Rz
 Rz
 Rz
-Rz
+NH
 Mc
 ZP
 Rk
-iG
-Rz
+Xt
+fB
 Rz
 Rz
 Rz
@@ -14665,7 +14722,7 @@ Rz
 Rz
 nn
 Rz
-Rz
+oW
 Yy
 JV
 gy
@@ -14719,7 +14776,7 @@ qN
 Rz
 Rz
 Yy
-Rz
+Yz
 oW
 Os
 VJ
@@ -14737,7 +14794,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+NH
 Mc
 ZP
 Rk
@@ -14794,7 +14851,7 @@ Rz
 Rz
 NS
 Rz
-Rz
+oW
 Yy
 JV
 bi
@@ -14848,7 +14905,7 @@ Rz
 Rz
 Rz
 Yy
-Rz
+fB
 oW
 Os
 mQ
@@ -14866,11 +14923,11 @@ Rz
 Rz
 Rz
 Rz
-Rz
+NH
 Mc
 ZP
-Rk
-Rz
+gD
+fB
 Rz
 Rz
 Rz
@@ -14923,7 +14980,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 Yy
 Pd
 OG
@@ -14977,7 +15034,7 @@ Rz
 Rz
 Rz
 Yy
-Rz
+fB
 oW
 Os
 Os
@@ -14995,11 +15052,11 @@ Rz
 Rz
 Rz
 Rz
-Rz
+NH
 Mc
 ZP
-Rk
-Rz
+gD
+fB
 Rz
 Rz
 Rz
@@ -15052,7 +15109,7 @@ Rz
 Rz
 Rz
 Rz
-Rz
+oW
 Yy
 Zz
 UL
@@ -15106,7 +15163,7 @@ hc
 Rz
 Rz
 Yy
-Rz
+fB
 Rz
 Fr
 Fr
@@ -15118,17 +15175,17 @@ Yz
 Fr
 Fr
 Fr
+kA
 Rz
 Rz
 Rz
 Rz
 Rz
-Rz
-Rz
+NH
 Mc
 ZP
-Rk
-Rz
+gD
+fB
 Rz
 Rz
 Rz
@@ -15176,12 +15233,12 @@ Rz
 Rz
 Rz
 Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-Rz
+Zd
+iY
+iY
+iY
+iY
+MO
 qN
 qN
 qN
@@ -15235,7 +15292,7 @@ Rz
 Rz
 Rz
 Yy
-Rz
+fB
 Rz
 Rz
 Rz
@@ -15253,11 +15310,11 @@ Rz
 Rz
 Rz
 Rz
-Rz
+NH
 Mc
 ZP
-Rk
-Rz
+gD
+fB
 Rz
 Rz
 Rz
@@ -15301,17 +15358,17 @@ Rz
 Rz
 "}
 (67,1,1) = {"
-Rz
-Rz
-Rz
-Rz
-Rz
+iY
+iY
+iY
+iY
+MO
 qN
 qN
 qN
 qN
-Rz
-Rz
+qN
+qN
 qN
 iG
 aC
@@ -15364,7 +15421,7 @@ Yy
 Yy
 Yy
 qN
-au
+Lm
 au
 au
 au
@@ -15387,14 +15444,14 @@ Mc
 ZP
 Rk
 qN
-iY
-iY
-iY
-iY
-iY
-iY
-iY
-iY
+au
+au
+au
+au
+au
+au
+au
+au
 ir
 ir
 ir
@@ -15439,8 +15496,8 @@ qN
 ah
 ah
 qN
-qN
-qN
+Rz
+Rz
 qN
 ih
 ih
@@ -16113,13 +16170,13 @@ oE
 ZP
 mA
 qN
-Fr
-Fr
-Fr
-Fr
-Fr
-Fr
-hW
+Oy
+Oy
+Oy
+Oy
+Oy
+Oy
+bQ
 qN
 Yy
 Yy
@@ -16148,13 +16205,13 @@ qN
 gd
 qN
 qN
-Fr
-Fr
-Fr
-Fr
-Fr
-Fr
-Fr
+Oy
+Oy
+Oy
+Oy
+Oy
+Oy
+Oy
 qN
 Gi
 Mc
@@ -16162,13 +16219,13 @@ ZP
 Rk
 rT
 qN
-Fr
-Fr
-Fr
-Fr
-Fr
-Fr
-Fr
+Oy
+Oy
+Oy
+Oy
+Oy
+Oy
+Oy
 ir
 ir
 Cz
@@ -16284,12 +16341,12 @@ Rz
 Rz
 Rz
 Rz
-oW
+NH
 Gi
 Mc
 ZP
 Rk
-rT
+PM
 fB
 Rz
 Rz
@@ -16413,12 +16470,12 @@ Rz
 Rz
 Rz
 Rz
-oW
+NH
 Gi
 Mc
 ZP
 Rk
-rT
+PM
 fB
 Rz
 Rz
@@ -16499,11 +16556,11 @@ VY
 oE
 ZP
 qI
-fB
-Rz
-Rz
-Rz
-Rz
+cv
+iY
+iY
+iY
+iY
 Rz
 Rz
 oW
@@ -16542,12 +16599,12 @@ Rz
 Rz
 Rz
 Rz
-oW
+NH
 Gi
 Mc
 ZP
 Rk
-rT
+PM
 fB
 Rz
 Rz
@@ -16633,7 +16690,7 @@ Yy
 Yy
 Yy
 qN
-Rz
+cv
 Rz
 oW
 Yy
@@ -16671,12 +16728,12 @@ Rz
 Rz
 Rz
 Rz
-oW
+NH
 Gi
 Mc
 ZP
 Rk
-rT
+PM
 fB
 Rz
 Rz
@@ -16756,14 +16813,14 @@ Rz
 Yy
 oE
 ZP
-Rk
+MS
 qN
 Rz
 Rz
 Rz
 qN
 qN
-Rz
+fB
 oW
 Yy
 Yy
@@ -16805,7 +16862,7 @@ Gi
 Mc
 ZP
 Rk
-rT
+PM
 fB
 Rz
 Rz
@@ -16885,14 +16942,14 @@ Rz
 Yy
 oE
 ZP
-pj
-Rz
+MS
+qN
 Rz
 Rz
 Rz
 Rz
 Yy
-Rz
+fB
 QT
 hW
 Yy
@@ -16934,7 +16991,7 @@ Gi
 Mc
 ZP
 Rk
-rT
+PM
 fB
 Rz
 Rz
@@ -17014,14 +17071,14 @@ Rz
 Pf
 mO
 ZP
-Rk
+pj
 Rz
 Rz
 Rz
 Rz
 Rz
 Yy
-Rz
+fB
 Rz
 QT
 Fr
@@ -17063,7 +17120,7 @@ Gi
 Mc
 ZP
 Rk
-rT
+PM
 fB
 Rz
 Rz
@@ -17143,14 +17200,14 @@ Rz
 Pf
 mO
 ZP
-Rk
-Rz
+MS
+qN
 Rz
 Rz
 Rz
 Rz
 Yy
-Rz
+fB
 Rz
 Rz
 Rz
@@ -17192,7 +17249,7 @@ Gi
 Mc
 ZP
 Rk
-rT
+PM
 fB
 Rz
 Rz
@@ -17272,14 +17329,14 @@ Rz
 Yy
 oE
 ZP
-pj
-Rz
+MS
+qN
 Rz
 Rz
 Rz
 Rz
 Yy
-Rz
+fB
 Rz
 Rz
 Rz
@@ -17401,14 +17458,14 @@ Rz
 Yy
 oE
 ZP
-Rk
-qN
-Rz
-Rz
-Rz
+MS
 qN
 qN
-Rz
+qN
+qN
+qN
+qN
+fB
 Rz
 Rz
 Rz
@@ -17532,11 +17589,11 @@ oE
 ZP
 MS
 qN
+CW
+rj
+SO
 qN
-qN
-qN
-qN
-Rz
+Yz
 Rz
 Rz
 Rz
@@ -17661,11 +17718,11 @@ oE
 ZP
 MS
 qN
-CW
-rj
-SO
-qN
-Rz
+px
+px
+px
+Yy
+fB
 Rz
 Rz
 Rz
@@ -17788,13 +17845,13 @@ Co
 Yy
 oE
 ZP
-Rk
-qN
-PM
-PM
-PM
+pj
+uS
+Ht
+Ht
+Ht
 Yy
-Rz
+fB
 Rz
 Rz
 Rz
@@ -17914,16 +17971,16 @@ qN
 XK
 Co
 Co
-Pf
+uS
 mO
 ZP
-Rk
-Rz
-Rz
-Rz
-Rz
+MS
+qN
+cM
+Ht
+Ht
 Yy
-Rz
+fB
 Rz
 Rz
 Rz
@@ -18046,13 +18103,13 @@ Co
 Yy
 oE
 ZP
-Rk
-Rz
-Rz
-Rz
-Rz
+pj
+uS
+Ht
+Ht
+Ht
 Yy
-Rz
+fB
 Rz
 Rz
 Rz
@@ -18175,13 +18232,13 @@ Co
 Yy
 oE
 ZP
-Rk
+MS
 qN
-gA
-gA
-gA
+Ic
+Ic
+Ic
 Yy
-Rz
+fB
 Rz
 Rz
 Rz
@@ -18310,7 +18367,7 @@ GD
 Pf
 SO
 qN
-Rz
+fB
 Rz
 Rz
 Rz
@@ -18434,12 +18491,12 @@ qN
 nl
 ch
 On
-qN
+BO
 qN
 PB
 qN
 qN
-Rz
+fB
 Rz
 Rz
 Rz
@@ -18567,7 +18624,7 @@ qN
 du
 Fk
 qN
-Rz
+Yz
 Rz
 Rz
 Rz
@@ -18696,7 +18753,7 @@ qN
 Ja
 Fk
 qN
-Rz
+fB
 Rz
 Rz
 Rz
@@ -18825,7 +18882,7 @@ bw
 Fk
 Fk
 qN
-Rz
+cv
 Rz
 Rz
 Rz
@@ -18955,7 +19012,7 @@ qN
 bo
 qN
 qN
-iY
+cv
 iY
 iY
 iY
@@ -19225,7 +19282,7 @@ NV
 qN
 Rz
 Rz
-Yy
+qN
 Rz
 Rz
 Rz
@@ -19357,8 +19414,8 @@ Rz
 Yy
 Rz
 Rz
-Rz
-Rz
+gA
+gA
 qN
 NV
 Ff
@@ -19610,8 +19667,8 @@ Rz
 lG
 NV
 qN
-qN
-qN
+Rz
+Rz
 qN
 Rz
 Rz
@@ -19736,16 +19793,16 @@ Rz
 Rz
 Rz
 Rz
-lG
-NV
+Rz
+Rz
+qN
+qN
+qN
 qN
 Rz
 Rz
-Yy
 Rz
-Rz
-Rz
-Rz
+Za
 qN
 NV
 Ff
@@ -19870,7 +19927,7 @@ NV
 qN
 Rz
 Rz
-Yy
+qN
 Rz
 Rz
 Rz
@@ -19994,8 +20051,8 @@ Rz
 Rz
 Rz
 Rz
-Rz
-Rz
+lG
+NV
 qN
 Rz
 Rz
@@ -20005,8 +20062,8 @@ Rz
 Rz
 Rz
 qN
-Rz
-Rz
+NV
+Ff
 Rz
 Rz
 Rz
@@ -20123,19 +20180,19 @@ Rz
 Rz
 Rz
 Rz
-Rz
-Rz
+lG
+NV
 qN
 Rz
 Rz
 Yy
 Rz
 Rz
-Rz
-Rz
+gA
+gA
 qN
-Rz
-Rz
+NV
+Ff
 Rz
 Rz
 Rz
@@ -20252,19 +20309,19 @@ Rz
 Rz
 Rz
 Rz
-Rz
-Rz
-qN
-qN
-qN
-qN
-qN
-Rz
-qN
-qN
+lG
+NV
 qN
 Rz
 Rz
+qN
+Rz
+Rz
+Rz
+Rz
+qN
+NV
+Ff
 Rz
 Rz
 Rz
@@ -20383,15 +20440,15 @@ Rz
 Rz
 lG
 NV
-NV
-NV
-NV
-NV
-NV
-NV
-NV
-NV
-NV
+qN
+qN
+qN
+qN
+qN
+Rz
+qN
+qN
+qN
 NV
 Ff
 Rz
@@ -20639,19 +20696,19 @@ Rz
 Rz
 Rz
 Rz
-sS
-hI
-hI
-hI
-hI
+lG
 NV
 NV
 NV
-hI
-hI
-hI
-hI
-JB
+NV
+NV
+NV
+NV
+NV
+NV
+NV
+NV
+Ff
 Rz
 Rz
 Rz
@@ -20768,19 +20825,19 @@ Rz
 Rz
 Rz
 Rz
-Rz
-Rz
-Rz
-Rz
-Rz
-kM
+sS
+hI
+hI
+hI
+hI
 NV
-Ix
-Rz
-Rz
-Rz
-Rz
-Rz
+NV
+NV
+hI
+hI
+hI
+hI
+JB
 Rz
 Rz
 Rz
@@ -21805,9 +21862,9 @@ Rz
 Rz
 Rz
 Rz
-Rz
-Rz
-Rz
+kM
+NV
+Ix
 Rz
 Rz
 Rz
