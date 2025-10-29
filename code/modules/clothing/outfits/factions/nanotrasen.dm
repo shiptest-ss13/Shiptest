@@ -27,7 +27,7 @@
 	gloves = /obj/item/clothing/gloves/color/captain/nt
 	ears = /obj/item/radio/headset/nanotrasen/captain
 	uniform = /obj/item/clothing/under/nanotrasen/captain
-	skirt_uniform = /obj/item/clothing/under/nanotrasen/captain/skirt
+	alt_uniform = /obj/item/clothing/under/nanotrasen/captain/skirt
 	suit = /obj/item/clothing/suit/armor/nanotrasen/captain
 	alt_suit = /obj/item/clothing/suit/armor/nanotrasen/captain/parade
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
@@ -80,13 +80,36 @@
 
 	chameleon_extras = /obj/item/stamp/qm
 
+/datum/outfit/job/nanotrasen/captain/vi
+	name = "Nanotrasen - Captain (Vigilitas Interstellar)"
+
+	id = /obj/item/card/id/gold
+	head = /obj/item/clothing/head/nanotrasen/beret/security/command
+	uniform = /obj/item/clothing/under/nanotrasen/security/director
+	skirt_uniform = null
+	suit = /obj/item/clothing/suit/armor/nanotrasen/sec_director
+	alt_suit = null
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
+	shoes = /obj/item/clothing/shoes/combat
+	glasses = /obj/item/clothing/glasses/sunglasses
+	gloves = /obj/item/clothing/gloves/combat
+	ears = /obj/item/radio/headset/nanotrasen/alt/captain
+	neck = null
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
+
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/cap
+	duffelbag = /obj/item/storage/backpack/duffelbag/sec
+	courierbag = /obj/item/storage/backpack/messenger/sec
+	box = /obj/item/storage/box/survival/vi
+
+	chameleon_extras = /obj/item/stamp/nanotrasen/vigilitas/captain
+
 /datum/outfit/job/nanotrasen/captain/centcom
 	name = "Nanotrasen - Captain (Central Command)"
 
 	uniform = /obj/item/clothing/under/rank/centcom/officer
 	skirt_uniform = /obj/item/clothing/under/rank/centcom/officer_skirt
-	suit = null
-	alt_suit = null
 	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/centhat
 
@@ -120,7 +143,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/com
 
 	chameleon_extras = list(
-						/obj/item/gun/sharplite/x12,
+						/obj/item/gun/energy/sharplite/x12,
 						/obj/item/stamp/nanotrasen/officer,
 						)
 
@@ -134,6 +157,7 @@
 	belt = /obj/item/pda/heads/hos
 	ears = /obj/item/radio/headset/nanotrasen/alt
 	uniform = /obj/item/clothing/under/nanotrasen/security/director
+	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/armor/nanotrasen/slim
 	alt_suit = /obj/item/clothing/suit/armor/nanotrasen/sec_director
@@ -144,6 +168,7 @@
 	suit_store = null
 	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
+	backpack_contents = list(/obj/item/melee/classic_baton=1)
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
@@ -151,13 +176,36 @@
 	courierbag = /obj/item/storage/backpack/messenger/sec
 	box = /obj/item/storage/box/survival/security
 
-	backpack_contents = list(/obj/item/melee/classic_baton=1)
-
 	phorid_outfit = /datum/outfit/plasmaman/hos
 
 	implants = list(/obj/item/implant/mindshield)
 
 	chameleon_extras = list(/obj/item/gun/energy/sharplite/x01, /obj/item/stamp/hos)
+
+/datum/outfit/job/nanotrasen/hos/vi
+	name = "Nanotrasen - Vigilitas Sergeant"
+
+	id = /obj/item/card/id/silver
+	ears = /obj/item/radio/headset/nanotrasen/alt
+	uniform = /obj/item/clothing/under/nanotrasen/security/director
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/combat
+	suit = null
+	alt_suit = null
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
+	gloves = /obj/item/clothing/gloves/combat
+	head = /obj/item/clothing/head/nanotrasen/beret/security/command
+	r_pocket = /obj/item/assembly/flash/handheld
+	l_pocket = /obj/item/restraints/handcuffs
+	backpack_contents = list(/obj/item/melee/classic_baton=1)
+
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/sec
+	courierbag = /obj/item/storage/backpack/messenger/sec
+	box = /obj/item/storage/box/survival/vi
+
+	chameleon_extras = /obj/item/stamp/nanotrasen/vigilitas/security
 
 // Security Officer
 /datum/outfit/job/nanotrasen/security
@@ -235,6 +283,7 @@
 	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
 	suit_store = null
+	backpack_contents = list(/obj/item/melee/classic_baton)
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
@@ -243,8 +292,6 @@
 	box = /obj/item/storage/box/survival/security
 
 	phorid_outfit = /datum/outfit/plasmaman/warden
-
-	backpack_contents = list(/obj/item/melee/classic_baton)
 
 	chameleon_extras = /obj/item/gun/ballistic/shotgun/automatic/m11
 
@@ -257,6 +304,7 @@
 	jobtype = /datum/job/engineer
 
 	belt = /obj/item/storage/belt/utility/full/engi
+	l_pocket = /obj/item/pda/engineering
 	ears = /obj/item/radio/headset/headset_eng
 	uniform = /obj/item/clothing/under/nanotrasen/engineering
 	head = /obj/item/clothing/head/hardhat/nanotrasen
@@ -264,7 +312,6 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
 	shoes = /obj/item/clothing/shoes/workboots
 	r_pocket = /obj/item/t_scanner
-	l_pocket = /obj/item/pda/engineering
 
 	backpack = /obj/item/storage/backpack/industrial
 	satchel = /obj/item/storage/backpack/satchel/eng
@@ -349,10 +396,9 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
 	courierbag = /obj/item/storage/backpack/messenger/engi
 	box = /obj/item/storage/box/survival/engineer
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
 	phorid_outfit = /datum/outfit/plasmaman/atmospherics
-
-	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
 // Brig Physician
 
@@ -369,8 +415,7 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/brig_phys
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
 	head = /obj/item/clothing/head/soft/sec/brig_phys
-
-	phorid_outfit = /datum/outfit/plasmaman/secmed
+	implants = list(/obj/item/implant/mindshield)
 
 // Supply //
 
@@ -388,9 +433,10 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 	l_hand = /obj/item/clipboard
 
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
+
 	phorid_outfit = /datum/outfit/plasmaman/cargo
 
-	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
 	chameleon_extras = /obj/item/stamp/qm
 
 //Lead Miner
@@ -545,9 +591,9 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
 	courierbag = /obj/item/storage/backpack/messenger/med
 
-	phorid_outfit = /datum/outfit/plasmaman/medical
-
 	box = /obj/item/storage/box/survival/medical
+
+	phorid_outfit = /datum/outfit/plasmaman/medical
 
 // Paramedic
 /datum/outfit/job/nanotrasen/paramedic
@@ -571,9 +617,10 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
 	courierbag = /obj/item/storage/backpack/messenger/para
 
-	phorid_outfit = /datum/outfit/plasmaman/paramedic
 
 	box = /obj/item/storage/box/survival/medical
+
+	phorid_outfit = /datum/outfit/plasmaman/paramedic
 
 	chameleon_extras = /obj/item/gun/syringe
 
@@ -600,9 +647,9 @@
 
 	box = /obj/item/storage/box/survival/medical
 
-	chameleon_extras = /obj/item/gun/syringe
-
 	phorid_outfit = /datum/outfit/plasmaman/paramedic
+
+	chameleon_extras = /obj/item/gun/syringe
 
 // Civilian //
 
