@@ -120,14 +120,14 @@
 
 /datum/supply_pack/sec_supply/heavyshields
 	name = "Heavy Ballistic Shield Crate"
-	desc = "Contains a heavy ballistic shield, effective at holding back hostile fauna, xenofauna, or large crowds."
+	desc = "Contains a heavy ballistic shield, very effective at protecting the user from light arms fire. Can struggle against stronger firepower."
 	cost = 1200
 	contains = list(/obj/item/shield/heavy)
 	crate_name = "riot shield crate"
 
 /datum/supply_pack/sec_supply/telescopicshields
 	name = "Telescopic Riot Shield Crate"
-	desc = "Contains a telescopic riot shield, effective at holding back hostile fauna, xenofauna, or large crowds in tight spaces."
+	desc = "Contains a telescopic riot shield, effective at protecting the user in close quarters combat. Assuming a gun isn't involved of course."
 	cost = 750
 	contains = list(/obj/item/shield/tele)
 	crate_name = "riot shield crate"
