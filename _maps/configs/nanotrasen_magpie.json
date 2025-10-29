@@ -13,39 +13,39 @@
 	"map_short_name": "Magpie-class",
 	"map_path": "_maps/shuttles/nanotrasen/nanotrasen_magpie.dmm",
 	"token_icon_state": "ship_generic",
-	"description": "Often referred to as the \"sister\" of the Harrier-class, the Magpie-class is similar in age, having been recommissioned for deep frontier surveys and other host of actives, often being that of finding former Nanotrasen sites for restoration or deconstruction by N&S.",
+	"description": "aaa.",
 	"tags": ["Generalist"],
-	"limit": 2,
-	"starting_funds": 1500,
+	"limit": 1,
+	"starting_funds": 2000,
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/nanotrasen/captain",
+			"outfit": "/datum/outfit/job/nanotrasen/captain/empty",
 			"officer": true,
 			"slots": 1
 		},
 		"First Officer": {
-			"outfit": "/datum/outfit/job/nanotrasen/hop",
+			"outfit": "/datum/outfit/job/nanotrasen/hop/empty",
 			"officer": true,
 			"slots": 1
 		},
 		"Security Officer": {
-			"outfit": "/datum/outfit/job/nanotrasen/security/disarmed",
+			"outfit": "/datum/outfit/job/nanotrasen/security/empty",
 			"slots": 1
 		},
 		"Medical Doctor": {
-			"outfit": "/datum/outfit/job/nanotrasen/doctor",
+			"outfit": "/datum/outfit/job/nanotrasen/doctor/empty",
 			"slots": 1
 		},
 		"Engineer": {
-			"outfit": "/datum/outfit/job/nanotrasen/engineer",
+			"outfit": "/datum/outfit/job/nanotrasen/engineer/empty",
 			"slots": 1
 		},
-		"Field Miner": {
-			"outfit": "/datum/outfit/job/nanotrasen/miner/no_equipment",
+		"Miner": {
+			"outfit": "/datum/outfit/job/nanotrasen/miner/empty",
 			"slots": 1
 		},
 		"Assistant": {
-			"outfit": "/datum/outfit/job/nanotrasen/assistant",
+			"outfit": "/datum/outfit/job/nanotrasen/assistant/empty",
 			"slots": 1
 		}
 	},

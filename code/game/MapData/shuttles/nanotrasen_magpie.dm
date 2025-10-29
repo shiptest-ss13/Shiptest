@@ -51,19 +51,19 @@
 	NAME N+S Supply Director
 	DELAY 10
 	SAY Morning, afternoon, or evening, Miner. This is your supply director speaking, welcome to your jobsite equipment room.
-	DELAY 30
+	DELAY 40
 	SAY Quick rundown of your job here again.
 	SOUND keyboard
-	DELAY 20
+	DELAY 30
 	SAY You're collecting resources and performing extra vehicular labour at behest of our clients.
 	DELAY 30
 	SAY This means at minimum, excavating fuel for the ship's generators, supplying the engineer with material for their projects, and carrying out general outside work.
 	DELAY 40
 	SAY You'll often be one of the first pair of boots outside the vessel, so it's critical you can take care of yourself.
-	DELAY 30
+	DELAY 40
 	SAY Inside this room are your tools of the trade. Make use of them and refer to the safety posters for further guidance.
 	SOUND keyboard
-	DELAY 30
-	SAY Good luck, Miner, out.
+	DELAY 40
+	SAY Good luck, Miner, director out.
 	DELAY 30
 	"}
