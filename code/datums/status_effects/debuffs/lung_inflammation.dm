@@ -56,6 +56,9 @@
 	if (inhaled_salbutamol > 0)
 		adjust_inflammation(-(salbutamol_inflammation_reduction * seconds_per_tick))
 
+	else if(!inflammation)
+		qdel(src) // only delete itself after the salbutamol is depleted, else it'll be wasted if the status gets applied again right after
+
 /// Setter proc for [inflammation]. Adjusts the amount by lung health, adjusts pressure mult, gives feedback messages if silent is FALSE.
 /datum/status_effect/lung_inflammation/proc/adjust_inflammation(amount, silent = FALSE)
 	var/old_inflammation = inflammation
@@ -78,8 +81,6 @@
 
 		if (!silent)
 			INVOKE_ASYNC(src, PROC_REF(do_inflammation_change_feedback), difference)
-	else if(!inflammation) // only remove it if it hasn't changed to avoid spamming alerts
-		qdel(src)
 
 /// Setter proc for [inhaled_salbutamol]. Adjusts inflammation immediately.
 /datum/status_effect/lung_inflammation/proc/adjust_salbutamol_levels(adjustment)

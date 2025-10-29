@@ -13,6 +13,9 @@
 	/// The amount of inflammation we will receive when our owner breathes smoke.
 	var/inflammation_on_smoke = 7.5
 
+	/// Inflammation caused per point of stamina damage on the owner.
+	var/inflammation_on_stamina = 0.05
+
 	/// The current asthma attack trying to kill our owner.
 	var/datum/disease/asthma_attack/current_attack
 	/// Can we cause an asthma attack?
@@ -86,6 +89,10 @@
 
 	if(quirk_holder.reagents.has_reagent(/datum/reagent/medicine/salbutamol))
 		return
+
+	var/stamina_dam = quirk_holder.getStaminaLoss()
+	if (stamina_dam > 0)
+		quirk_holder.adjust_lung_inflammation(inflammation_on_stamina * stamina_dam * seconds_per_tick)
 
 	// asthma attacks dont happen if theres no client, because they can just kill you and some need immediate response
 	if (quirk_holder.client && isnull(current_attack) && COOLDOWN_FINISHED(src, next_attack_cooldown) && SPT_PROB(chance_for_attack_to_happen_per_second, seconds_per_tick))

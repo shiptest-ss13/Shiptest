@@ -505,6 +505,8 @@
 			if(prob(sqrt(breath_effect_prob) * 6))
 				to_chat(breather, span_warning("You feel [chilly_message] in your [name]."))
 		if(breath_temperature < chlly_threshold)
+			if(HAS_TRAIT(breather, TRAIT_ASTHMATIC)) // cold air typically causes problems in my experience
+				breather.adjust_lung_inflammation(round(1 + (chlly_threshold - breath_temperature) / 30, 0.1))
 			if(breath_effect_prob)
 				// Breathing into your mask, no particle. We can add fogged up glasses later
 				if(breather.is_mouth_covered())
@@ -544,11 +546,14 @@
 
 /// Adjusting proc for [received_pressure_mult]. Updates bronchodilation alerts.
 /obj/item/organ/lungs/proc/adjust_received_pressure_mult(adjustment)
-	received_pressure_mult = max(received_pressure_mult + adjustment, 0)
-	update_bronchodilation_alerts()
+	set_received_pressure_mult(received_pressure_mult + adjustment)
 
 /// Setter proc for [received_pressure_mult]. Updates bronchodilation alerts.
 /obj/item/organ/lungs/proc/set_received_pressure_mult(new_value)
+	if(new_value <= 0 && received_pressure_mult > 0)
+		ADD_TRAIT(owner, TRAIT_MUTE, ALERT_BRONCHOCONSTRICTION)
+	else if(new_value > 0 && received_pressure_mult <= 0)
+		REMOVE_TRAIT(owner, TRAIT_MUTE, ALERT_BRONCHOCONSTRICTION)
 	received_pressure_mult = max(new_value, 0)
 	update_bronchodilation_alerts()
 

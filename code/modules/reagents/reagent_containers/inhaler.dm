@@ -73,7 +73,7 @@
 	if (!isliving(interacting_with))
 		return ..() // default behavior
 	if (!can_puff(target_mob, user))
-		return NONE
+		return TRUE
 
 	var/puff_timer = 0
 
@@ -110,9 +110,9 @@
 		if (pre_use_target_message)
 			to_chat(target_mob, pre_use_target_message)
 		if (!do_after(user, puff_timer, src))
-			return NONE
+			return TRUE
 		if (!can_puff(target_mob, user)) // sanity
-			return NONE
+			return TRUE
 
 	user.visible_message(post_use_visible_message, ignored_mobs = list(user, target_mob))
 	to_chat(user, post_use_self_message)
@@ -120,6 +120,7 @@
 		to_chat(target_mob, post_use_target_message)
 
 	canister.puff(user, target_mob)
+	return TRUE
 
 /obj/item/inhaler/attack_self(mob/user, modifiers)
 	try_remove_canister(user, modifiers)
