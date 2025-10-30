@@ -2558,16 +2558,16 @@
 	dir = 4;
 	pixel_x = -30
 	},
-/obj/item/storage/fancy/donut_box{
-	pixel_x = 9;
-	pixel_y = -5
-	},
 /obj/item/reagent_containers/condiment/saltshaker{
 	pixel_y = 10;
 	pixel_x = -6
 	},
 /obj/item/reagent_containers/condiment/peppermill{
 	pixel_y = 10
+	},
+/obj/machinery/jukebox/boombox{
+	pixel_x = -3;
+	pixel_y = 17
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -2808,10 +2808,6 @@
 /obj/item/desk_flag/gezena{
 	pixel_x = 16;
 	pixel_y = -10
-	},
-/obj/item/storage/crayons{
-	pixel_y = 3;
-	pixel_x = -1
 	},
 /obj/effect/turf_decal/corner/opaque/lime/mono,
 /obj/structure/sign/flag/gezena{
@@ -3330,37 +3326,9 @@
 "BB" = (
 /obj/structure/table/wood,
 /obj/effect/turf_decal/corner/opaque/lime/mono,
-/obj/item/kitchen/fork/plastic{
-	pixel_x = 9;
-	pixel_y = 5
-	},
-/obj/item/kitchen/fork/plastic{
-	pixel_x = 7;
-	pixel_y = 5
-	},
-/obj/item/kitchen/fork/plastic{
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/item/kitchen/fork/plastic{
-	pixel_x = 3;
-	pixel_y = 5
-	},
-/obj/item/melee/knife/plastic{
-	pixel_y = 5;
-	pixel_x = -1
-	},
-/obj/item/melee/knife/plastic{
-	pixel_y = 5;
-	pixel_x = -3
-	},
-/obj/item/melee/knife/plastic{
-	pixel_y = 5;
-	pixel_x = -5
-	},
-/obj/item/melee/knife/plastic{
-	pixel_y = 5;
-	pixel_x = -7
+/obj/item/storage/fancy/donut_box{
+	pixel_x = -16;
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -3711,9 +3679,6 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "EA" = (
-/obj/structure/sign/poster/contraband/pgf{
-	pixel_y = 32
-	},
 /obj/structure/chair{
 	dir = 4
 	},
@@ -3723,6 +3688,9 @@
 /obj/item/radio/intercom/directional/west,
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/corner{
 	dir = 4
+	},
+/obj/structure/sign/poster/pgf/sergeant{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -4024,7 +3992,6 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/lime,
-/obj/structure/table/wood,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -4032,11 +3999,7 @@
 /obj/machinery/camera/autoname{
 	dir = 10
 	},
-/obj/item/reagent_containers/food/drinks/coffee{
-	pixel_x = -4;
-	pixel_y = 13
-	},
-/obj/item/newspaper,
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Gb" = (
@@ -4485,7 +4448,6 @@
 "Kn" = (
 /obj/structure/table/wood,
 /obj/effect/turf_decal/corner/opaque/lime/mono,
-/obj/machinery/jukebox/boombox,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Ko" = (
@@ -5384,16 +5346,15 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/lime,
-/obj/structure/chair{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/item/radio/intercom/directional/south,
+/obj/structure/sign/poster/pgf/random{
+	pixel_y = -30
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Qa" = (
@@ -6497,9 +6458,6 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/lime,
-/obj/structure/chair{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},

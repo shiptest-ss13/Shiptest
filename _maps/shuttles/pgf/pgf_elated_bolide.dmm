@@ -696,9 +696,6 @@
 /obj/machinery/microwave{
 	pixel_y = 7
 	},
-/obj/structure/sign/poster/contraband/pgf{
-	pixel_x = -28
-	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/ccommons)
 "eC" = (
@@ -2886,10 +2883,6 @@
 /area/ship/hallway/fore)
 "pu" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/sign/poster/contraband/pgf{
-	pixel_x = 28;
-	pixel_y = -30
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "pB" = (
@@ -4128,6 +4121,10 @@
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 1
 	},
+/obj/structure/sign/poster/pgf/pioneer{
+	pixel_y = 0;
+	pixel_x = 28
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
 "xw" = (
@@ -5090,12 +5087,11 @@
 /area/ship/security)
 "Dy" = (
 /obj/structure/tank_dispenser/oxygen,
-/obj/machinery/light_switch{
-	pixel_x = 11;
-	pixel_y = 21
-	},
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
 	dir = 1
+	},
+/obj/structure/noticeboard{
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -5229,6 +5225,9 @@
 	},
 /obj/structure/railing,
 /obj/structure/pitgrate,
+/obj/structure/sign/poster/pgf/random{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/hallway/central)
 "EC" = (
@@ -5921,6 +5920,11 @@
 /obj/machinery/firealarm/directional/east,
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
 	dir = 1
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 12
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -6700,9 +6704,6 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/east,
-/obj/structure/noticeboard{
-	pixel_y = 25
-	},
 /obj/item/clothing/suit/space/gezena/marine,
 /obj/item/clothing/head/helmet/space/gezena/marine,
 /obj/item/clothing/mask/breath/pgfmask,
