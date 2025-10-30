@@ -119,21 +119,6 @@
 	. = ..()
 	AddComponent(/datum/component/knockback, 1, FALSE, FALSE)
 
-//The fist of justice
-/obj/item/pickaxe/drill/jackhammer/brigador
-	name = "mechanized fist"
-	desc = "A reinforced hydraulic punching apparatus. Capable of smashing through walls, mineral aggregate, and unfortunate opponents."
-	force = 35
-	armour_penetration = 25//yours is the fist that will pierce the heavens
-	toolspeed = 0.3 //slower than the sonic
-	icon_state = "powerfist"
-	icon = 'icons/obj/items_cyborg.dmi'
-	attack_verb = list("uppercut", "sucker-punched", "hammered", "pummeled", "jabbed")
-
-/obj/item/pickaxe/drill/jackhammer/brigador/melee_attack_chain(mob/user, atom/target, params)
-	..()
-	user.changeNext_move(CLICK_CD_MELEE * 0.7)
-
 /obj/item/pickaxe/improvised
 	name = "improvised pickaxe"
 	desc = "A pickaxe made with a knife and crowbar taped together, how does it not break?"
