@@ -293,6 +293,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "ce" = (
@@ -520,6 +521,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
 	dir = 4
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/starboard)
 "eg" = (
@@ -544,6 +546,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
 	dir = 4
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/starboard)
 "ez" = (
@@ -1848,6 +1851,9 @@
 /obj/structure/cable/white{
 	icon_state = "1-8"
 	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo/starboard)
 "nd" = (
@@ -2248,6 +2254,10 @@
 /obj/structure/cable/white,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/starboard)
+"qm" = (
+/obj/machinery/air_sensor/external,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "qH" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
@@ -2620,6 +2630,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "tr" = (
@@ -2714,10 +2727,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
-"tT" = (
-/obj/machinery/air_sensor/external,
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
 "tU" = (
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 10
@@ -2939,6 +2948,9 @@
 	icon_state = "guy";
 	pixel_x = -10
 	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "vx" = (
@@ -3062,6 +3074,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "wD" = (
@@ -3183,13 +3198,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/starboard)
-"xD" = (
-/obj/structure/sign/number/random{
-	color = "Black";
-	pixel_y = -8
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/cargo/starboard)
 "xG" = (
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/light_switch{
@@ -3397,6 +3405,13 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
+"zH" = (
+/obj/structure/sign/number/random{
+	color = "Black";
+	pixel_y = -8
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/security)
 "zI" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -3548,6 +3563,7 @@
 	pixel_y = 32
 	},
 /obj/item/radio/intercom/directional/south,
+/obj/structure/chair/handrail,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "AE" = (
@@ -4045,6 +4061,9 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
 	dir = 4
 	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/port)
 "DW" = (
@@ -4516,6 +4535,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "HE" = (
@@ -5064,6 +5086,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
+"KL" = (
+/obj/effect/turf_decal/siding/white,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono,
+/area/ship/hallway/central)
 "KO" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/firedoor/border_only{
@@ -5346,6 +5375,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm/commad)
+"Mu" = (
+/obj/structure/sign/number/random{
+	color = "Black";
+	pixel_y = -8
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/cargo/starboard)
 "My" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -6207,6 +6243,9 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
 	dir = 4
 	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/port)
 "Ti" = (
@@ -6244,13 +6283,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/starboard)
-"Tr" = (
-/obj/structure/sign/number/random{
-	color = "Black";
-	pixel_y = -8
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/security)
 "Tv" = (
 /obj/effect/turf_decal/industrial/outline/blue,
 /obj/machinery/atmospherics/components/unary/tank/oxygen{
@@ -7278,7 +7310,7 @@ hc
 hc
 hc
 hc
-tT
+qm
 fq
 SL
 vJ
@@ -7609,7 +7641,7 @@ XD
 gp
 BY
 qb
-xD
+Mu
 hc
 "}
 (22,1,1) = {"
@@ -7634,7 +7666,7 @@ VN
 VN
 VN
 VN
-Tr
+zH
 hc
 "}
 (23,1,1) = {"
@@ -7659,7 +7691,7 @@ VN
 Ag
 NZ
 Pl
-Tr
+zH
 hc
 "}
 (24,1,1) = {"
@@ -7684,7 +7716,7 @@ ZS
 Ug
 fe
 CA
-Tr
+zH
 hc
 "}
 (25,1,1) = {"
@@ -7800,7 +7832,7 @@ zM
 ax
 ve
 rV
-Xy
+KL
 DG
 sI
 uy
