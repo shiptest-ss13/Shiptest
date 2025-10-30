@@ -629,11 +629,11 @@
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM
 	toxpwr = 0
 
-/datum/reagent/medicine/sodium_thiopental/on_mob_add(mob/living/L, amount)
+/datum/reagent/toxin/sodium_thiopental/on_mob_add(mob/living/L, amount)
 	. = ..()
 	ADD_TRAIT(L, TRAIT_ANTICONVULSANT, name)
 
-/datum/reagent/medicine/sodium_thiopental/on_mob_delete(mob/living/L)
+/datum/reagent/toxin/sodium_thiopental/on_mob_delete(mob/living/L)
 	. = ..()
 	REMOVE_TRAIT(L, TRAIT_ANTICONVULSANT, name)
 
