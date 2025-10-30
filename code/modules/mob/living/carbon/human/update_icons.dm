@@ -974,9 +974,16 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 
 */
 // Note: if handled_by_bodytype is TRUE before calling this, it makes species use greyscale
-/obj/item/proc/build_worn_icon(default_layer = 0, default_icon_file = null, isinhands = FALSE, override_state = null, override_file = null, datum/species/mob_species = null, direction = null)
+/obj/item/proc/build_worn_icon(
+	default_layer = 0,
+	default_icon_file = null,
+	isinhands = FALSE,
+	override_state = null,
+	override_file = null,
+	datum/species/mob_species = null,
+	direction = null,
+	)
 
-	// WS Edit Start - Worn Icon State
 	var/t_state
 	if(override_state)
 		t_state = override_state
@@ -995,19 +1002,19 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 	if(!standing)
 		standing = mutable_appearance(file2use, t_state, -layer2use)
 
-	// WS Edit End - Worn Icon State
+	var/width = isinhands ? inhand_x_dimension : worn_x_dimension
+	var/height = isinhands ? inhand_y_dimension : worn_y_dimension
+	standing = center_image(standing, width, height)
+
 	//Get the overlays for this item when it's being worn
 	//eg: ammo counters, primed grenade flashes, etc.
 	var/list/worn_overlays = worn_overlays(isinhands, file2use)
 	if(length(worn_overlays))
-		if(mob_species && ("[layer2use]" in mob_species.offset_clothing))
-			var/list/new_overlays = list()
-			for(var/mutable_appearance/overlay in worn_overlays)
-				new_overlays += wear_species_version(overlay.icon, overlay.icon_state, layer2use, mob_species)
-			worn_overlays = new_overlays
-		standing.overlays.Add(worn_overlays)
-
-	standing = center_image(standing, isinhands ? inhand_x_dimension : worn_x_dimension, isinhands ? inhand_y_dimension : worn_y_dimension)
+		if (width != 32 || height != 32)
+			for (var/image/overlay in worn_overlays)
+				overlay.pixel_x -= standing.pixel_x
+				overlay.pixel_y -= standing.pixel_y
+		standing.overlays += worn_overlays
 
 	//Handle held offsets
 	if(isinhands)
@@ -1077,7 +1084,7 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 	if (!dna?.species)
 		return
 
-	var/obj/item/bodypart/HD = get_bodypart("head")
+	var/obj/item/bodypart/head/HD = get_bodypart(BODY_ZONE_HEAD)
 
 	if (!istype(HD))
 		return
@@ -1095,14 +1102,14 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 			add_overlay(lip_overlay)
 
 		// eyes
-		if(!(NOEYESPRITES in dna.species.species_traits))
+		if(HD.draw_eyes)
 			var/obj/item/organ/eyes/E = getorganslot(ORGAN_SLOT_EYES)
 			var/mutable_appearance/eye_overlay
 			if(!E)
 				eye_overlay = mutable_appearance('icons/mob/human_face.dmi', "eyes_missing", -BODY_LAYER)
 			else
 				eye_overlay = mutable_appearance('icons/mob/human_face.dmi', E.eye_icon_state, -BODY_LAYER)
-			if((EYECOLOR in dna.species.species_traits) && E)
+			if(HD.greyscale_eyes && E)
 				eye_overlay.color = "#" + eye_color
 			add_overlay(eye_overlay)
 
@@ -1110,3 +1117,178 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 
 	update_inv_head()
 	update_inv_wear_mask()
+
+// Hooks into human apply overlay so that we can modify all overlays applied through standing overlays to our height system.
+// Some of our overlays will be passed through a displacement filter to make our mob look taller or shorter.
+// Some overlays can't be displaced as they're too close to the edge of the sprite or cross the middle point in a weird way.
+// So instead we have to pass them through an offset, which is close enough to look good.
+/mob/living/carbon/human/apply_overlay(cache_index)
+	if(get_mob_height() == HUMAN_HEIGHT_MEDIUM && cache_index != MUTATIONS_LAYER && cache_index != FRONT_MUTATIONS_LAYER)
+		return ..()
+
+	var/raw_applied = overlays_standing[cache_index]
+	var/string_form_index = num2text(cache_index)
+	var/offset_type = GLOB.layers_to_offset[string_form_index]
+	if(isnull(offset_type))
+		if(islist(raw_applied))
+			for(var/image/applied_appearance in raw_applied)
+				apply_height_filters(applied_appearance)
+		else if(isimage(raw_applied))
+			apply_height_filters(raw_applied)
+	else
+		if(islist(raw_applied))
+			for(var/image/applied_appearance in raw_applied)
+				apply_height_offsets(applied_appearance, offset_type)
+		else if(isimage(raw_applied))
+			apply_height_offsets(raw_applied, offset_type)
+
+	return ..()
+
+/**
+ * Used in some circumstances where appearances can get cut off from the mob sprite from being too tall
+ *
+ * upper_torso is to specify whether the appearance is locate in the upper half of the mob rather than the lower half,
+ * higher up things (hats for example) need to be offset more due to the location of the filter displacement
+ */
+
+/mob/living/carbon/human/proc/apply_height_offsets(image/appearance, upper_torso)
+	var/height_to_use = num2text(mob_height)
+	var/final_offset = 0
+	switch(upper_torso)
+		if(UPPER_BODY)
+			final_offset = GLOB.human_heights_to_offsets[height_to_use][1]
+		if(LOWER_BODY)
+			final_offset = GLOB.human_heights_to_offsets[height_to_use][2]
+		else
+			return
+
+	appearance.pixel_y += final_offset
+	return appearance
+
+/**
+ * Applies a filter to an appearance according to mob height
+ */
+/mob/living/carbon/human/proc/apply_height_filters(image/appearance, only_apply_in_prefs = FALSE, parent_adjust_y=0)
+	// Pick a displacement mask depending on the height of the icon, ?x48 icons are used for features which would otherwise get clipped when tall players use them
+	// Note: Due to how this system works it's okay to use a mask which is wider than the appearence but NOT okay if the mask is thinner, taller or shorter
+	var/dims = get_icon_dimensions(appearance.icon)
+	var/icon_width = dims["width"]
+	var/icon_height = dims["height"]
+
+	var/mask_icon = 'icons/effects/cut.dmi'
+	if(icon_width != 0 && icon_height != 0)
+		if(icon_height == 48 && icon_width <= 96)
+			mask_icon = 'icons/effects/cut_96x48.dmi'
+		else if(icon_height == 64 && icon_width <= 64)
+			mask_icon = 'icons/effects/cut_64x64.dmi'
+		else if(icon_height == 48 && icon_width <= 48)
+			mask_icon = 'icons/effects/cut_48x48.dmi'
+		else if(icon_height != 32 || icon_width > 32)
+			stack_trace("Bad dimensions (w[icon_width],h[icon_height]) for icon '[appearance.icon]'")
+
+	// Move the filter up if the image has been moved down, and vice versa
+	var/adjust_y = -appearance.pixel_y - parent_adjust_y
+
+	var/static/list/cached_masks = list()
+	var/list/masks = cached_masks[mask_icon]
+	if(isnull(masks))
+		cached_masks[mask_icon] = masks = list(
+			icon(mask_icon, "Cut1"),
+			icon(mask_icon, "Cut2"),
+			icon(mask_icon, "Cut3"),
+			icon(mask_icon, "Cut4"),
+			icon(mask_icon, "Cut5"),
+		)
+	var/icon/cut_torso_mask = masks[1]
+	var/icon/cut_legs_mask = masks[2]
+	var/icon/lengthen_torso_mask = masks[3]
+	var/icon/lengthen_legs_mask = masks[4]
+	var/icon/lengthen_ankles_mask = masks[5]
+
+	var/should_update = appearance.remove_filter(list(
+		"Cut_Torso",
+		"Cut_Legs",
+		"Lengthen_Ankles",
+		"Lengthen_Legs",
+		"Lengthen_Torso",
+		"Gnome_Cut_Torso",
+		"Gnome_Cut_Legs",
+	), update = FALSE) // note: the add_filter(s) calls after this will call update_filters on their own. so by not calling it here, we avoid calling it twice.
+
+	switch(mob_height)
+		// Don't set this one directly, use TRAIT_DWARF
+		if(HUMAN_HEIGHT_DWARF)
+			appearance.add_filters(list(
+				list(
+					"name" = "Gnome_Cut_Torso",
+					"priority" = 1,
+					"params" = displacement_map_filter(cut_torso_mask, x = 0, y = adjust_y, size = 2),
+				),
+				list(
+					"name" = "Gnome_Cut_Legs",
+					"priority" = 1,
+					"params" = displacement_map_filter(cut_legs_mask, x = 0, y = adjust_y, size = 3),
+				),
+			))
+		if(HUMAN_HEIGHT_SHORTEST)
+			appearance.add_filters(list(
+				list(
+					"name" = "Cut_Torso",
+					"priority" = 1,
+					"params" = displacement_map_filter(cut_torso_mask, x = 0, y = adjust_y, size = 1),
+				),
+				list(
+					"name" = "Cut_Legs",
+					"priority" = 1,
+					"params" = displacement_map_filter(cut_legs_mask, x = 0, y = adjust_y, size = 1),
+				),
+			))
+		if(HUMAN_HEIGHT_SHORT)
+			appearance.add_filter("Cut_Legs", 1, displacement_map_filter(cut_legs_mask, x = 0, y = adjust_y, size = 1))
+		if(HUMAN_HEIGHT_TALL)
+			appearance.add_filter("Lengthen_Legs", 1, displacement_map_filter(lengthen_legs_mask, x = 0, y = adjust_y, size = 1))
+		if(HUMAN_HEIGHT_TALLER)
+			appearance.add_filters(list(
+				list(
+					"name" = "Lengthen_Torso",
+					"priority" = 1,
+					"params" = displacement_map_filter(lengthen_torso_mask, x = 0, y = adjust_y, size = 1),
+				),
+				list(
+					"name" = "Lengthen_Legs",
+					"priority" = 1,
+					"params" = displacement_map_filter(lengthen_legs_mask, x = 0, y = adjust_y, size = 1),
+				),
+			))
+		if(HUMAN_HEIGHT_TALLEST)
+			appearance.add_filters(list(
+				list(
+					"name" = "Lengthen_Torso",
+					"priority" = 1,
+					"params" = displacement_map_filter(lengthen_torso_mask, x = 0, y = adjust_y, size = 1),
+				),
+				list(
+					"name" = "Lengthen_Legs",
+					"priority" = 1,
+					"params" = displacement_map_filter(lengthen_legs_mask, x = 0, y = adjust_y, size = 1),
+				),
+				list(
+					"name" = "Lengthen_Ankles",
+					"priority" = 1,
+					"params" = displacement_map_filter(lengthen_ankles_mask, x = 0, y = adjust_y, size = 1),
+				),
+			))
+		else
+			// as we don't add any filters - we need to make sure to run update_filters ourselves, as we didn't update during our previous remove_filter, and any other case would've ran it at the end of add_filter(s)
+			if(should_update)
+				appearance.update_filters()
+
+	// Kinda gross but because many humans overlays do not use KEEP_TOGETHER we need to manually propogate the filter
+	// Otherwise overlays, such as worn overlays on icons, won't have the filter "applied", and the effect kinda breaks
+	if(!(appearance.appearance_flags & KEEP_TOGETHER))
+		for(var/image/overlay in list() + appearance.underlays + appearance.overlays)
+			apply_height_filters(overlay, parent_adjust_y=adjust_y)
+
+	return appearance
+
+#undef RESOLVE_ICON_STATE

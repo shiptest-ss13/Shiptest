@@ -7,9 +7,11 @@
 	changesource_flags = MIRROR_BADMIN
 	use_damage_color = FALSE
 
-	species_chest = /obj/item/bodypart/chest/monkey
-	species_head = /obj/item/bodypart/head/monkey
-	species_l_arm = /obj/item/bodypart/l_arm/monkey
-	species_r_arm = /obj/item/bodypart/r_arm/monkey
-	species_l_leg = /obj/item/bodypart/leg/left/monkey
-	species_r_leg = /obj/item/bodypart/leg/right/monkey
+	species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/monkey,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/monkey,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/monkey,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/monkey,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/monkey,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/monkey,
+	)
