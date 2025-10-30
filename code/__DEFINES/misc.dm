@@ -1,3 +1,27 @@
+//Security levels
+#define SEC_LEVEL_GREEN 0
+#define SEC_LEVEL_BLUE 1
+#define SEC_LEVEL_RED 2
+#define SEC_LEVEL_DELTA 3
+
+//some arbitrary defines to be used by self-pruning global lists. (see master_controller)
+#define PROCESS_KILL 26	//Used to trigger removal from a processing list
+
+#define TRANSITIONEDGE 7 //Distance from edge to move to another z-level
+
+#define BE_CLOSE TRUE //in the case of a silicon, to select if they need to be next to the atom
+#define NO_DEXTERITY TRUE	//if other mobs (monkeys, aliens, etc) can use this // I had to change 20+ files because some non-dnd-playing fuckchumbis can't spell "dexterity"
+#define NO_TK TRUE
+//used by canUseTopic()
+
+//singularity defines
+#define STAGE_ONE 1
+#define STAGE_TWO 3
+#define STAGE_THREE 5
+#define STAGE_FOUR 7
+#define STAGE_FIVE 9
+#define STAGE_SIX 11 //From supermatter shard
+
 //SSticker.current_state values
 #define GAME_STATE_STARTUP 0
 #define GAME_STATE_PREGAME 1
