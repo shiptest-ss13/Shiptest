@@ -10,7 +10,7 @@
 	///Messages for each stage of addictions.
 	var/list/withdrawal_stage_messages = list()
 	///Rates at which you lose addiction (in units/second) if you are not on the drug at that time per stage
-	var/addiction_loss_per_stage = list(0.2, 0.2, 0.4, 0.6)
+	var/addiction_loss_per_stage = list(0.5, 0.5, 1, 1.5)
 	///Rate at which high sanity helps addiction loss
 	var/high_sanity_addiction_loss = 2
 
