@@ -98,7 +98,7 @@
 	volume = 6
 	w_class = WEIGHT_CLASS_SMALL //thanks i forgot this
 
-/obj/item/tank/internals/plasmaman/belt/full/populate_gas()
+/obj/item/tank/internals/plasmaman/belt/populate_gas()
 	air_contents.set_moles(GAS_PLASMA, (10*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
 
 /obj/item/tank/internals/plasmaman/belt/empty/populate_gas()
