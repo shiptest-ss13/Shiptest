@@ -584,12 +584,14 @@
 "ft" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/table/reinforced,
-/obj/item/megaphone/command{
-	pixel_x = 10
-	},
-/obj/machinery/recharger,
 /obj/effect/turf_decal/techfloor{
 	dir = 4
+	},
+/obj/item/radio/intercom/wideband/table{
+	dir = 4
+	},
+/obj/item/megaphone/command{
+	pixel_x = 10
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -2479,6 +2481,7 @@
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
+/obj/structure/railing/corner,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "vt" = (
@@ -2614,7 +2617,8 @@
 	pixel_y = 8
 	},
 /obj/item/phone{
-	pixel_y = -4
+	pixel_y = -4;
+	pixel_x = -3
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -2748,19 +2752,10 @@
 /area/ship/engineering/engine)
 "xr" = (
 /obj/structure/table/reinforced,
+/obj/machinery/recharger,
 /obj/item/paper_bin{
-	pixel_y = 5
-	},
-/obj/item/folder/blue{
-	pixel_y = 5
-	},
-/obj/item/pen/red{
-	pixel_x = 3;
-	pixel_y = 5
-	},
-/obj/item/pen/blue{
-	pixel_x = -3;
-	pixel_y = 5
+	pixel_x = 12;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -3145,12 +3140,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "Aj" = (
-/obj/structure/table/reinforced,
-/obj/item/radio/intercom/wideband/table{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "5-9"
+	},
+/obj/machinery/modular_computer/console/preset/command{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -4430,6 +4424,9 @@
 /area/ship/engineering/atmospherics)
 "LG" = (
 /obj/machinery/holopad/emergency/command,
+/obj/structure/railing{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "LJ" = (
@@ -5257,10 +5254,13 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/janitor)
 "SQ" = (
+/obj/structure/railing,
 /obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plasteel/stairs{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "SR" = (
 /turf/closed/wall/r_wall/yesdiag,
@@ -5516,6 +5516,20 @@
 /obj/machinery/light/small/directional/south,
 /obj/structure/filingcabinet/double/grey,
 /obj/effect/turf_decal/techfloor,
+/obj/item/pen/red{
+	pixel_x = 3;
+	pixel_y = 5
+	},
+/obj/item/pen/blue{
+	pixel_x = -3;
+	pixel_y = 5
+	},
+/obj/item/folder/blue{
+	pixel_y = 5
+	},
+/obj/item/folder/red,
+/obj/item/folder/white,
+/obj/item/folder,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Vp" = (
@@ -5640,6 +5654,9 @@
 /area/ship/bridge)
 "Wa" = (
 /obj/structure/railing,
+/obj/structure/railing/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Wb" = (
@@ -5773,11 +5790,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/port)
-"WX" = (
-/turf/open/floor/plasteel/stairs{
-	dir = 8
-	},
-/area/ship/bridge)
 "Xg" = (
 /obj/structure/extinguisher_cabinet/directional/south,
 /obj/structure/chair/handrail{
@@ -7327,9 +7339,9 @@ OU
 EC
 wz
 nE
-WX
-Aj
 wM
+Aj
+SQ
 FE
 Vg
 EC
@@ -7356,7 +7368,7 @@ EC
 wt
 VZ
 EN
-SQ
+VZ
 VZ
 VZ
 aH
