@@ -150,7 +150,7 @@
 	moles_visible = MOLES_GAS_VISIBLE
 	color = "#a1a1e6"
 	oxidation_temperature = T0C - 100 // it checks max of this and fire temperature, so rarely will things spontaneously combust
-	oxidation_rate = 3
+	oxidation_rate = 1.5
 	enthalpy = 142000
 
 	odor = GAS_ODOR_CHEMICAL
