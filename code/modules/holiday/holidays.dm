@@ -401,7 +401,7 @@
 	begin_month = OCTOBER
 	end_day = 2
 	end_month = NOVEMBER
-	read_up_link = "https://hackmd.io/D-9st3kxThm93WlUY7gKig"
+	read_up_link = "https://shiptest.net/wiki/Mexapix"
 
 /datum/holiday/halloween/greet()
 	return "Have a spooky Halloween! In-universe, enjoy your <a href=\"[read_up_link]\">Mexapix</a> and Dia de Los Muertos."
