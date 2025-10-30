@@ -113,6 +113,12 @@
 	cost = 1500
 	contains = list(/obj/item/tank/jetpack/oxygen/harness)
 
+/datum/supply_pack/tools/jetpack/suit
+	name = "Hardsuit Jetpack Upgrade Crate"
+	desc = "A standardized jetpack attachment designed for direct integration with hardsuits. For when every gram matters."
+	cost = 2000
+	contains = list(/obj/item/tank/jetpack/suit)
+
 /datum/supply_pack/tools/anglegrinder
 	name = "Angle Grinder"
 	desc = "Contains one angle grinder pack, a tool used for quick structure deconstruction and salvaging"
