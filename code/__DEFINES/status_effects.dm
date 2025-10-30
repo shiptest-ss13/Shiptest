@@ -94,31 +94,43 @@
 #define STATUS_EFFECT_CONVULSING /datum/status_effect/convulsing
 
 #define STATUS_EFFECT_NECROPOLIS_CURSE /datum/status_effect/necropolis_curse
-#define STATUS_EFFECT_HIVEMIND_CURSE /datum/status_effect/necropolis_curse/hivemind
 #define CURSE_BLINDING 1 //makes the edges of the target's screen obscured
 #define CURSE_SPAWNING 2 //spawns creatures that attack the target only
 #define CURSE_WASTING 4 //causes gradual damage
 #define CURSE_GRASPING 8 //hands reach out from the sides of the screen, doing damage and stunning if they hit the target
 
-#define STATUS_EFFECT_KINDLE /datum/status_effect/kindle //A knockdown reduced by 1 second for every 3 points of damage the target takes.
-
-#define STATUS_EFFECT_ICHORIAL_STAIN /datum/status_effect/ichorial_stain //Prevents a servant from being revived by vitality matrices for one minute.
-
 #define STATUS_EFFECT_GONBOLAPACIFY /datum/status_effect/gonbolaPacify //Gives the user gondola traits while the gonbola is attached to them.
 
-#define STATUS_EFFECT_SPASMS /datum/status_effect/spasms //causes random muscle spasms
+//causes random muscle spasms
+#define STATUS_EFFECT_SPASMS /datum/status_effect/spasms
 
-#define STATUS_EFFECT_DNA_MELT /datum/status_effect/dna_melt //usually does something horrible to you when you hit 100 genetic instability
+//usually does something horrible to you when you hit 100 genetic instability
+#define STATUS_EFFECT_DNA_MELT /datum/status_effect/dna_melt
 
-#define STATUS_EFFECT_GO_AWAY /datum/status_effect/go_away //makes you launch through walls in a single direction for a while
+//makes you launch through walls in a single direction for a while
+#define STATUS_EFFECT_GO_AWAY /datum/status_effect/go_away
 
-#define STATUS_EFFECT_STASIS /datum/status_effect/grouped/stasis //Halts biological functions like bleeding, chemical processing, blood regeneration, walking, etc
+//Halts biological functions like bleeding, chemical processing, blood regeneration, walking, etc
+#define STATUS_EFFECT_STASIS /datum/status_effect/grouped/stasis
 
-#define STATUS_EFFECT_FAKE_VIRUS /datum/status_effect/fake_virus //gives you fluff messages for cough, sneeze, headache, etc but without an actual virus
+//gives you fluff messages for cough, sneeze, headache, etc but without an actual virus
+#define STATUS_EFFECT_FAKE_VIRUS /datum/status_effect/fake_virus
 
-#define STATUS_EFFECT_LIMP /datum/status_effect/limp //For when you have a busted leg (or two!) and want additional slowdown when walking on that leg
+///For when you have a busted leg (or two!) and want additional slowdown when walking on that leg
+#define STATUS_EFFECT_LIMP /datum/status_effect/limp
 
-#define STATUS_EFFECT_METAB_FROZEN /datum/status_effect/metab_frozen // Affected cannot process chems
+/// Affected cannot process chems
+#define STATUS_EFFECT_METAB_FROZEN /datum/status_effect/metab_frozen
+
+///Raises click cooldowns for everything you do.
+#define STATUS_EFFECT_WOOZY /datum/status_effect/woozy
+
+///Makes you bleed harder
+#define STATUS_EFFECT_HIGHBLOODPRESSURE /datum/status_effect/high_blood_pressure
+
+
+/// makes you seize up. reminds me of this video https://www.youtube.com/watch?v=wvkHIZg_954
+#define STATUS_EFFECT_SEIZURE /datum/status_effect/seizure
 
 //Incapacitated status effect flags
 /// If the incapacitated status effect will ignore a mob in restraints (handcuffs)
