@@ -67,6 +67,4 @@
 	icon_state = "explorerold"
 	desc = "A standardized NT jumpsuit line, designed to protect the fragile and profitable bodies of the shaft-charting explorers Nanotrasen Resource Operations favoured in the closing years of their golden age. Slightly encumbering, due to heavy protective padding."
 	name = "prototype shaft miner's jumpsuit"
-	slowdown = 0.1
-	armor = list("melee" = 15, "bullet" = 5, "laser" = 5,"energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 80, "acid" = 0)
 	roll_down = FALSE
