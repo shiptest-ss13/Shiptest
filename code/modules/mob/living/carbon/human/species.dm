@@ -48,6 +48,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/sclera_color = "#e8e8e8"
 	/// The color used for blush overlay
 	var/blush_color = COLOR_BLUSH_PINK
+	///If the species is allowed to use height filters.
+	var/use_height = TRUE
 	///Does the species use skintones or not? As of now only used by humans.
 	var/use_skintones = FALSE
 	///If your race bleeds something other than bog standard blood, change this to reagent id. For example, ethereals bleed liquid electricity.
@@ -71,7 +73,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	///What languages this species can understand and say. Use a [language holder datum][/datum/language_holder] in this var.
 	var/species_language_holder = /datum/language_holder
 	/// Default mutant bodyparts for this species. Don't forget to set one for every mutant bodypart you allow this species to have.
-	var/list/default_features = list("body_size" = "Normal")
+	var/list/default_features = list()
 	/// Visible CURRENT bodyparts that are unique to a species. DO NOT USE THIS AS A LIST OF ALL POSSIBLE BODYPARTS AS IT WILL FUCK SHIT UP! Changes to this list for non-species specific bodyparts (ie cat ears and tails) should be assigned at organ level if possible. Layer hiding is handled by [datum/species/handle_mutant_bodyparts()] below.
 	var/list/mutant_bodyparts = list()
 	///Internal organs that are unique to this race, like a tail.
@@ -1631,6 +1633,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		H.visible_message(span_warning("[M] attempts to touch [H]!"), \
 						span_danger("[M] attempts to touch you!"), span_hear("You hear a swoosh!"), COMBAT_MESSAGE_RANGE, M)
 		to_chat(M, span_warning("You attempt to touch [H]!"))
+		M.changeNext_move(CLICK_CD_BLOCKED)
 		return 0
 
 	SEND_SIGNAL(M, COMSIG_MOB_ATTACK_HAND, M, H, attacker_style)
