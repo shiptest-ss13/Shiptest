@@ -388,6 +388,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/recycle_bay/security)
+"eh" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "ei" = (
 /obj/machinery/shower{
 	dir = 1
@@ -800,6 +804,12 @@
 /obj/item/storage/firstaid/toxin,
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/recycle_bay/dorms)
+"gO" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/wasteplanet/recycle_bay/engineering)
 "gR" = (
 /obj/structure/platform/industrial{
 	dir = 1
@@ -1546,6 +1556,19 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/recycle_bay/vault)
+"nY" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "oa" = (
 /obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2139,9 +2162,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/dorms)
 "sN" = (
-/obj/effect/landmark/mission_poi{
-	type_to_spawn = /obj/machinery/nuclearbomb/syndicate
-	},
+/obj/effect/landmark/mission_poi/main,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/recycle_bay/vault)
 "sO" = (
@@ -2943,19 +2964,6 @@
 	},
 /turf/open/floor/carpet/green,
 /area/ruin/wasteplanet/recycle_bay/officers)
-"Ao" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating/wasteplanet/lit,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Az" = (
 /turf/closed/wall/r_wall/rust,
 /area/ruin/wasteplanet/recycle_bay/vault)
@@ -3074,7 +3082,17 @@
 /area/ruin/wasteplanet/recycle_bay/officers)
 "BI" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "BL" = (
 /obj/effect/turf_decal/techfloor/orange{
@@ -4834,20 +4852,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/dorms)
-"RF" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating/wasteplanet/lit,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
 "RO" = (
 /obj/machinery/conveyor_switch/oneway,
 /turf/open/floor/plasteel/dark,
@@ -5395,12 +5399,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/recycle_bay/eva)
-"Xj" = (
-/obj/machinery/door/airlock/hatch{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/wasteplanet/recycle_bay/engineering)
 "Xk" = (
 /obj/effect/turf_decal/trimline/opaque/white/warning{
 	pixel_y = 0
@@ -7461,7 +7459,7 @@ sg
 yy
 Ya
 VM
-BI
+eh
 Wi
 Wi
 Wi
@@ -8743,8 +8741,8 @@ Wi
 ls
 Wi
 Wi
-Ao
-RF
+nY
+BI
 HI
 Wi
 Wi
@@ -9052,8 +9050,8 @@ Um
 vq
 ls
 HI
-Ao
-RF
+nY
+BI
 VM
 Wi
 vA
@@ -9273,8 +9271,8 @@ Wi
 Pl
 pR
 pR
-Xj
-Xj
+gO
+gO
 pR
 Xe
 dR
@@ -9287,7 +9285,7 @@ Wi
 Wi
 Wi
 ba
-RF
+BI
 HI
 Wi
 ls
@@ -9365,7 +9363,7 @@ Wi
 Wi
 Wi
 ba
-RF
+BI
 VM
 VM
 DT
