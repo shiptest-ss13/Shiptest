@@ -14,15 +14,14 @@
 
 /datum/addiction/stimulants/withdrawal_stage_2_process(mob/living/carbon/affected_carbon)
 	. = ..()
-	affected_carbon.apply_status_effect(STATUS_EFFECT_WOOZY)
 	affected_carbon.blur_eyes(10)
-
 
 /datum/addiction/stimulants/withdrawal_enters_stage_3(mob/living/carbon/affected_carbon)
 	. = ..()
+	affected_carbon.overlay_fullscreen("stars", /atom/movable/screen/fullscreen/stars)
 	affected_carbon.blur_eyes(20)
-
 
 /datum/addiction/stimulants/lose_addiction(datum/mind/victim_mind)
 	. = ..()
 	victim_mind.current.remove_status_effect(STATUS_EFFECT_WOOZY)
+	victim_mind.current.clear_fullscreen("stars")
