@@ -1152,3 +1152,182 @@
 	var/datum/computer_file/program/robotact/program = modularInterface.get_robotact()
 	if(program)
 		program.force_full_update()
+
+/datum/action/innate/brain_undeployment
+	name = "Disconnect from shell"
+	desc = "Stop controlling your shell and resume normal core operations."
+	button_icon = 'icons/mob/actions/actions_AI.dmi'
+	button_icon_state = "ai_core"
+
+/datum/action/innate/brain_undeployment/Trigger(trigger_flags)
+	if(!..())
+		return FALSE
+	var/obj/item/organ/brain/cybernetic/ai/shell_to_disconnect = owner.getorgan (/obj/item/organ/brain/cybernetic/ai)
+	if(!istype(shell_to_disconnect))
+		return FALSE
+
+	shell_to_disconnect.undeploy()
+	return TRUE
+
+/obj/item/organ/brain/cybernetic/ai
+	name = "remote uplink positronic frame controller"
+	desc = "Can be inserted into an I.P.C. without a controlling positronic brain to allow stationary positronic interface cores to control it."
+	icon = 'icons/obj/assemblies.dmi' ///so its not a fucking brain
+	icon_state = "posibrain"
+	base_icon_state = "posibrain"
+	zone = BODY_ZONE_CHEST
+	status = ORGAN_ROBOTIC
+	organ_flags = ORGAN_SYNTHETIC
+	/// if connected, our AI
+	var/mob/living/silicon/ai/mainframe
+	/// action for undeployment
+	var/datum/action/innate/brain_undeployment/undeployment_action = new
+	/// "assigned" AI, set when connected to and locked until you multitool the RUPFC
+	var/mob/living/silicon/ai/linked_mainframe = null
+
+/obj/item/organ/brain/cybernetic/ai/Destroy()
+	. = ..()
+	undeploy()
+	mainframe = null
+	QDEL_NULL(undeployment_action)
+
+/obj/item/organ/brain/cybernetic/ai/on_mob_insert(mob/living/carbon/brain_owner, special, movement_flags)
+	. = ..()
+	ADD_TRAIT(brain_owner, TRAIT_BINARY_RADIO, ORGAN_TRAIT)
+	RegisterSignal(brain_owner, COMSIG_LIVING_HEALTH_UPDATE, PROC_REF(update_med_hud_status))
+	RegisterSignal(brain_owner, COMSIG_CLICK, PROC_REF(owner_clicked))
+	RegisterSignal(brain_owner, COMSIG_MOB_GET_STATUS_TAB_ITEMS, PROC_REF(get_status_tab_item))
+	RegisterSignal(brain_owner, COMSIG_CARBON_GAIN_ORGAN, PROC_REF(on_organ_gain))
+	RegisterSignal(brain_owner, COMSIG_MOB_DEATH, PROC_REF(shell_death))
+
+/obj/item/organ/brain/cybernetic/ai/on_mob_remove(mob/living/carbon/organ_owner, special, movement_flags)
+	undeploy()
+	. = ..()
+	UnregisterSignal(organ_owner, list(COMSIG_LIVING_HEALTH_UPDATE, COMSIG_CLICK, COMSIG_MOB_GET_STATUS_TAB_ITEMS))
+	REMOVE_TRAIT(organ_owner, TRAIT_BINARY_RADIO, ORGAN_TRAIT)
+
+/obj/item/organ/brain/cybernetic/ai/proc/get_status_tab_item(mob/living/source, list/items)
+	SIGNAL_HANDLER
+	if(!mainframe)
+		return
+	items += mainframe.get_status_tab_items()
+
+/obj/item/organ/brain/cybernetic/ai/proc/update_med_hud_status(mob/living/mob_parent)
+	SIGNAL_HANDLER
+	var/image/holder = mob_parent.hud_list?[STATUS_HUD]
+	if(isnull(holder))
+		return
+	var/icon/size_check = icon(mob_parent.icon, mob_parent.icon_state, mob_parent.dir)
+	holder.pixel_y = size_check.Height() - 32
+	if(mob_parent.stat == DEAD || HAS_TRAIT(mob_parent, TRAIT_FAKEDEATH) || isnull(mainframe))
+		holder.icon_state = "huddead2"
+		holder.pixel_x = -8 // new icon states? nuh uh
+	else
+		holder.icon_state = "hudtrackingai"
+		holder.pixel_x = -16
+
+// no thoughts only wifi
+/obj/item/organ/brain/cybernetic/ai/can_gain_trauma(datum/brain_trauma/trauma, resilience, natural_gain = FALSE)
+	return FALSE
+
+/obj/item/organ/brain/cybernetic/ai/proc/owner_clicked(datum/source, atom/location, control, params, mob/user)
+	SIGNAL_HANDLER
+	if(!isAI(user))
+		return
+	var/list/lines = list()
+	lines += span_bold("[owner]")
+	lines += "Frame is currently [!HAS_TRAIT(owner, TRAIT_INCAPACITATED) ? "functional" : "incapacitated"]"
+	lines += "Estimated frame integrity: [owner.health]"
+	if(is_sufficiently_augmented())
+		lines += "<a href='byond://?src=[REF(src)];ai_take_control=[REF(user)]'>[span_boldnotice("Take control?")]</a><br>"
+	else
+		lines += span_warning("Frame unable to be interfaced with, unable to enter remote uplink status.")
+
+	to_chat(user, boxed_message(jointext(lines, "\n")), type = MESSAGE_TYPE_INFO)
+
+/obj/item/organ/brain/cybernetic/ai/Topic(href, href_list)
+	..()
+	if(!href_list["ai_take_control"] || !is_sufficiently_augmented())
+		return
+	var/mob/living/silicon/ai/AI = locate(href_list["ai_take_control"]) in GLOB.silicon_mobs
+	if(isnull(AI))
+		return
+	/*if(AI.controlled_equipment)
+		to_chat(AI, span_warning("You are already loaded into an onboard computer!"))
+		return*/   ///this is because we do not have key parts of this and i dont wanna break the rest of this
+	if(!GLOB.cameranet.checkCameraVis(owner))
+		to_chat(AI, span_warning("Frame is no longer near active cameras."))
+		return
+	if(!isturf(AI.loc))
+		to_chat(AI, span_warning("You aren't in your core!"))
+		return
+	if(owner.stat == DEAD)
+		to_chat(AI, span_warning("Frame is currently offline."))
+		return
+	if(mainframe) //set to null during undeploy()
+		to_chat(AI, span_warning("Frame already has an active link."))
+		return
+	if(!(linked_mainframe == null || linked_mainframe == AI))
+		to_chat(AI, span_warning("Frame is not assigned to you."))
+		return
+	AI.deployed_shell = owner
+	deploy_init(AI)
+	AI.mind.transfer_to(owner)
+
+/obj/item/organ/brain/cybernetic/ai/proc/deploy_init(mob/living/silicon/ai/AI)
+	//todo camera maybe
+	mainframe = AI
+	linked_mainframe = AI
+	RegisterSignal(AI, PROC_REF(ai_deleted))
+	undeployment_action.Grant(owner)
+	update_med_hud_status(owner)
+	to_chat(owner, span_bold("You are operating through a remote uplink system to this frame, and remain the same mind."))
+
+/obj/item/organ/brain/cybernetic/ai/proc/undeploy(datum/source)
+	SIGNAL_HANDLER
+	if(!owner?.mind || !mainframe)
+		return
+	mainframe.redeploy_action.Remove(mainframe)
+	mainframe.redeploy_action.last_used_shell = null
+	owner.mind.transfer_to(mainframe)
+	mainframe.deployed_shell = null
+	undeployment_action.Remove(owner)
+	if(mainframe.laws)
+		mainframe.laws.show_laws(mainframe)
+	if(mainframe.eyeobj)
+		mainframe.eyeobj.setLoc(get_turf(owner))
+	mainframe = null
+	update_med_hud_status(owner)
+
+/obj/item/organ/brain/cybernetic/ai/proc/is_sufficiently_augmented()
+	var/mob/living/carbon/carb_owner = owner
+	. = TRUE
+	if(isipc(carb_owner))
+		return
+	else
+		return FALSE
+
+/obj/item/organ/brain/cybernetic/ai/proc/on_organ_gain(datum/source, obj/item/organ/new_organ, special)
+	SIGNAL_HANDLER
+	if(!is_sufficiently_augmented())
+		to_chat(owner, span_danger("Connection failure. Invalid interface detected."))
+		undeploy()
+
+/obj/item/organ/brain/cybernetic/ai/proc/ai_deleted(datum/source)
+	SIGNAL_HANDLER
+	to_chat(owner, span_danger("Your core has been rendered inoperable..."))
+	undeploy()
+
+/obj/item/organ/brain/cybernetic/ai/proc/shell_death(datum/source)
+	SIGNAL_HANDLER
+	to_chat(owner, span_danger("WARN: Remote frame has missed [rand(1,4)] health check(s). Restoring to core functions."))
+	undeploy()
+
+/obj/item/organ/brain/cybernetic/ai/multitool_act(mob/living/user, obj/item/multitool/tool)
+	..()
+	if(!Adjacent(user))
+		return
+
+	to_chat(user, span_info("You reset the assigned AI."))
+	linked_mainframe = null
+	return TRUE
