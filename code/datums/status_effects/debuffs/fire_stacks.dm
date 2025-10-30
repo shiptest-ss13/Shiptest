@@ -179,14 +179,29 @@
 	var/mob/living/carbon/human/victim = owner
 	var/thermal_protection = victim.get_thermal_protection()
 
-	if(thermal_protection >= FIRE_IMMUNITY_MAX_TEMP_PROTECT && !no_protection)
-		return
-
-	if(thermal_protection >= FIRE_SUIT_MAX_TEMP_PROTECT && !no_protection)
-		victim.adjust_bodytemperature(5.5 * seconds_per_tick)
-		return
+	if(!no_protection)
+		if(thermal_protection >= FIRE_IMMUNITY_MAX_TEMP_PROTECT)
+			return
+		if(thermal_protection >= FIRE_SUIT_MAX_TEMP_PROTECT)
+			victim.adjust_bodytemperature(5.5 * seconds_per_tick)
+			return
 
 	victim.adjust_bodytemperature((victim.dna.species.bodytemp_heating_rate_max + (stacks * 12)) * 0.5 * seconds_per_tick)
+	victim.apply_damage((stacks * 0.5), FIRE, spread_damage = TRUE)
+	if(SPT_PROB(20, seconds_per_tick))
+		var/obj/item/bodypart/it_burns = victim.get_bodypart(pick(BODY_ZONE_L_ARM,BODY_ZONE_L_LEG, BODY_ZONE_R_ARM, BODY_ZONE_R_LEG, BODY_ZONE_CHEST, BODY_ZONE_HEAD))
+		if(it_burns)
+			var/datum/wound/burn_injury
+			switch(stacks)
+				if(1 to 3)
+					EMPTY_BLOCK_GUARD
+				if(3 to 7)
+					burn_injury = new /datum/wound/burn/moderate
+				if(7 to 14)
+					burn_injury = new /datum/wound/burn/severe
+				if(14 to 20)
+					burn_injury = new /datum/wound/burn/critical
+			burn_injury.apply_wound(it_burns)
 	SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "on_fire", /datum/mood_event/on_fire)
 
 /**
