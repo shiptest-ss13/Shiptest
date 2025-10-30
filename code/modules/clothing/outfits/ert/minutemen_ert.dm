@@ -169,10 +169,10 @@
 	backpack_contents = null
 	box = null
 
-	backpack = /obj/item/shield/tele
-	duffelbag = /obj/item/shield/tele
-	courierbag = /obj/item/shield/tele
-	satchel = /obj/item/shield/tele
+	backpack = /obj/item/shield/heavy
+	duffelbag = /obj/item/shield/heavy
+	courierbag = /obj/item/shield/heavy
+	satchel = /obj/item/shield/heavy
 
 /datum/outfit/job/clip/minutemen/military_police/leader
 	name = "ERT - C-MM Chief Military Police"
@@ -202,10 +202,10 @@
 	backpack_contents = null
 	box = null
 
-	backpack = /obj/item/shield/tele
-	duffelbag = /obj/item/shield/tele
-	courierbag = /obj/item/shield/tele
-	satchel = /obj/item/shield/tele
+	backpack = /obj/item/shield/heavy
+	duffelbag = /obj/item/shield/heavy
+	courierbag = /obj/item/shield/heavy
+	satchel = /obj/item/shield/heavy
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/hardsuit
 	name = "ERT - CLIP Minutemen - Minuteman (Spotter Hardsuit)"
