@@ -1,8 +1,8 @@
 import { sortBy } from 'common/collections';
-import { flow } from 'common/fp';
-import { toTitleCase } from 'common/string';
+import { Button, Section, Table } from 'tgui-core/components';
+import { toTitleCase } from 'tgui-core/string';
+
 import { useBackend } from '../backend';
-import { Button, Section, Table } from '../components';
 import { Window } from '../layouts';
 
 /**
@@ -37,14 +37,14 @@ const createSeeds = (seedStrings) => {
     obj.name = toTitleCase(obj.name.replace('pack of ', ''));
     return obj;
   });
-  return flow([sortBy((item) => item.name)])(objs);
+  return sortBy(objs || [], (item) => item.name);
 };
 
-export const SeedExtractor = (props, context) => {
-  const { act, data } = useBackend(context);
+export const SeedExtractor = (props) => {
+  const { act, data } = useBackend();
   const seeds = createSeeds(data.seeds);
   return (
-    <Window width={1000} height={400} resizable>
+    <Window width={1000} height={400}>
       <Window.Content scrollable>
         <Section title="Stored seeds:">
           <Table cellpadding="3" textAlign="center">

@@ -1,10 +1,16 @@
+import {
+  Box,
+  Button,
+  LabeledList,
+  ProgressBar,
+  Section,
+} from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Box, Button, LabeledList, ProgressBar, Section } from '../components';
-import { LabeledListItem } from '../components/LabeledList';
 import { Window } from '../layouts';
 
-export const SatelliteControl = (props, context) => {
-  const { act, data } = useBackend(context);
+export const SatelliteControl = (props) => {
+  const { act, data } = useBackend();
   const satellites = data.satellites || [];
   return (
     <Window width={400} height={305}>
@@ -12,7 +18,7 @@ export const SatelliteControl = (props, context) => {
         {data.meteor_shield && (
           <Section>
             <LabeledList>
-              <LabeledListItem label="Coverage">
+              <LabeledList.Item label="Coverage">
                 <ProgressBar
                   value={
                     data.meteor_shield_coverage /
@@ -29,7 +35,7 @@ export const SatelliteControl = (props, context) => {
                     bad: [-Infinity, 0.3],
                   }}
                 />
-              </LabeledListItem>
+              </LabeledList.Item>
             </LabeledList>
           </Section>
         )}

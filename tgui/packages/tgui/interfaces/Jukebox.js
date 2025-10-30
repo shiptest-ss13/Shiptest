@@ -1,21 +1,21 @@
 import { sortBy } from 'common/collections';
-import { flow } from 'common/fp';
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
   Dropdown,
-  Section,
   Knob,
   LabeledControls,
   LabeledList,
-} from '../components';
+  Section,
+} from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
-export const Jukebox = (props, context) => {
-  const { act, data } = useBackend(context);
-  const { active, track_selected, track_length, volume } = data;
-  const songs = flow([sortBy((song) => song.name)])(data.songs || []);
+export const Jukebox = (props) => {
+  const { act, data } = useBackend();
+  const { active, track_selected, track_length, volume, songs } = data;
+  const songs_sorted = sortBy(songs, (song) => song.name);
   return (
     <Window width={370} height={313}>
       <Window.Content>
@@ -35,8 +35,8 @@ export const Jukebox = (props, context) => {
               <Dropdown
                 overflow-y="scroll"
                 width="240px"
-                options={songs.map((song) => song.name)}
-                disabled={active}
+                options={songs_sorted.map((song) => song.name)}
+                disabled={!!active}
                 selected={track_selected || 'Select a Track'}
                 onSelected={(value) =>
                   act('select_track', {

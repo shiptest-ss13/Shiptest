@@ -1,6 +1,7 @@
 import { sortBy } from 'common/collections';
+import { Box, Flex, ProgressBar, Section, Table } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Box, Flex, ProgressBar, Section, Table } from '../components';
 import { Window } from '../layouts';
 
 const JOB_REPORT_MENU_FAIL_REASON_TRACKING_DISABLED = 1;
@@ -37,8 +38,8 @@ const PlaytimeSection = (props) => {
 
                   <Flex.Item>
                     {(playtime / 60).toLocaleString(undefined, {
-                      'minimumFractionDigits': 1,
-                      'maximumFractionDigits': 1,
+                      minimumFractionDigits: 1,
+                      maximumFractionDigits: 1,
                     })}
                     h
                   </Flex.Item>
@@ -52,8 +53,8 @@ const PlaytimeSection = (props) => {
   );
 };
 
-export const TrackedPlaytime = (props, context) => {
-  const { data } = useBackend(context);
+export const TrackedPlaytime = (props) => {
+  const { data } = useBackend();
   const {
     failReason,
     jobPlaytimes,
@@ -64,7 +65,7 @@ export const TrackedPlaytime = (props, context) => {
   } = data;
 
   return (
-    <Window title="Tracked Playtime" width={550} height={650} resizable>
+    <Window title="Tracked Playtime" width={550} height={650}>
       <Window.Content scrollable>
         {(failReason &&
           ((failReason === JOB_REPORT_MENU_FAIL_REASON_TRACKING_DISABLED && (
@@ -77,8 +78,8 @@ export const TrackedPlaytime = (props, context) => {
             <Section title="Total">
               <PlaytimeSection
                 playtimes={{
-                  'Ghost': ghostTime,
-                  'Living': livingTime,
+                  Ghost: ghostTime,
+                  Living: livingTime,
                 }}
               />
             </Section>

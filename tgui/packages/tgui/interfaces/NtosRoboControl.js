@@ -1,22 +1,23 @@
-import { useBackend } from '../backend';
 import {
   Button,
   LabeledList,
   ProgressBar,
   Section,
   Stack,
-} from '../components';
+} from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { NtosWindow } from '../layouts';
 
 const getMuleByRef = (mules, ref) => {
   return mules?.find((mule) => mule.mule_ref === ref);
 };
 
-export const NtosRoboControl = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtosRoboControl = (props) => {
+  const { act, data } = useBackend();
   const { bots, id_owner, has_id } = data;
   return (
-    <NtosWindow width={550} height={550} resizable>
+    <NtosWindow width={550} height={550}>
       <NtosWindow.Content scrollable>
         <Section title="Robot Control Console">
           <LabeledList>
@@ -44,9 +45,9 @@ export const NtosRoboControl = (props, context) => {
   );
 };
 
-const RobotInfo = (props, context) => {
+const RobotInfo = (props) => {
   const { robot } = props;
-  const { act, data } = useBackend(context);
+  const { act, data } = useBackend();
   const mules = data.mules || [];
   // Get a mule object
   const mule = !!robot.mule_check && getMuleByRef(mules, robot.bot_ref);

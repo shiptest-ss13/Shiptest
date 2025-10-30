@@ -1,11 +1,12 @@
+import { Button, Section } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Button, Section } from '../components';
 import { Window } from '../layouts';
 
-export const BrigTimer = (props, context) => {
-  const { act, data } = useBackend(context);
+export const BrigTimer = (props) => {
+  const { act, data } = useBackend();
   return (
-    <Window width={300} height={138} resizable>
+    <Window width={300} height={138}>
       <Window.Content scrollable>
         <Section
           title="Cell Timer"

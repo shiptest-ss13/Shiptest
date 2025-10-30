@@ -1,15 +1,16 @@
-import { useBackend } from '../backend';
+import { sortBy } from 'common/collections';
 import {
   AnimatedNumber,
   Box,
-  Section,
-  LabeledList,
   Button,
+  LabeledList,
   ProgressBar,
-} from '../components';
+  Section,
+} from 'tgui-core/components';
+import { toFixed } from 'tgui-core/math';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
-import { sortBy } from 'common/collections';
-import { toFixed } from 'common/math';
 
 const damageTypes = [
   {
@@ -30,13 +31,13 @@ const damageTypes = [
   },
 ];
 
-export const Sleeper = (props, context) => {
-  const { act, data } = useBackend(context);
-  const chemicals = sortBy((chem) => chem.title)(data.chemicals);
+export const Sleeper = (props) => {
+  const { act, data } = useBackend();
+  const chemicals = sortBy(data.chemicals, (chem) => chem.title);
   const transferAmounts = data.transferAmounts || [];
   const { open, occupant = {}, occupied, stasis, canStasis, cell = {} } = data;
   return (
-    <Window width={495} height={550} resizable>
+    <Window width={495} height={550}>
       <Window.Content scrollable>
         <Section
           title={occupant.name ? occupant.name : 'No Occupant'}
