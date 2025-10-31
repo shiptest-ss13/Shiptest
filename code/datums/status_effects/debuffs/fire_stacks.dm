@@ -187,7 +187,7 @@
 			return
 
 	victim.adjust_bodytemperature((victim.dna.species.bodytemp_heating_rate_max + (stacks * 12)) * 0.5 * seconds_per_tick)
-	victim.apply_damage((stacks * 0.5), FIRE, spread_damage = TRUE)
+	victim.apply_damage((stacks * 0.5), FIRE, blocked = victim.run_armor_check(null, "fire", armour_penetration=stacks*5, silent=TRUE), spread_damage = TRUE)
 	if(SPT_PROB(20, seconds_per_tick))
 		var/obj/item/bodypart/it_burns = victim.get_bodypart(pick(BODY_ZONE_L_ARM,BODY_ZONE_L_LEG, BODY_ZONE_R_ARM, BODY_ZONE_R_LEG, BODY_ZONE_CHEST, BODY_ZONE_HEAD))
 		if(it_burns)
