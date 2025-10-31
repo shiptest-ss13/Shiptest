@@ -20,7 +20,10 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/commando/pristine
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
 
-	minimum_distance = 7
+	minimum_distance = 2
+	rapid_fire_delay = 6
+	retreat_distance = 2
+	shoot_point_blank = TRUE
 	vision_range = 12
 	aggro_vision_range = 14
 	weapon_drop_chance = 100
