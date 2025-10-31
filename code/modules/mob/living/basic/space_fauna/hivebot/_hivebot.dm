@@ -84,7 +84,7 @@
 	AddComponent(/datum/component/aggro_speech, phrase_list = aggro_quips, phrase_chance = 30)
 	if(!ranged_attacker)
 		return
-	AddComponent(/datum/component/ranged_attacks, calibre, null, firing_sound, firing_spread = spread)
+	AddComponent(/datum/component/ranged_attacks, calibre, null, firing_sound, spread = firing_spread)
 
 /mob/living/basic/hivebot/death(gibbed)
 	do_sparks(n = 3, c = TRUE, source = src)
