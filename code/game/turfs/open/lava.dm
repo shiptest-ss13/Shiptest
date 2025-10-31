@@ -30,6 +30,8 @@
 
 /turf/open/lava/Destroy()
 	. = ..()
+	for(var/mob/living/leaving_mob in contents)
+		leaving_mob.RemoveElement(/datum/element/perma_fire_overlay)
 	if(isatom(particle_emitter))
 		QDEL_NULL(particle_emitter)
 
@@ -56,13 +58,13 @@
 	. = ..()
 	if(burn_stuff(AM))
 		START_PROCESSING(SSobj, src)
+	if(isliving(AM))
+		AM.AddElement(/datum/element/perma_fire_overlay)
 
 /turf/open/lava/Exited(atom/movable/Obj, atom/newloc)
 	. = ..()
-	if(isliving(Obj))
-		var/mob/living/L = Obj
-		if(!islava(newloc) && !L.on_fire)
-			L.update_fire()
+	if(isliving(Obj) && !islava(Obj.loc))
+		Obj.RemoveElement(/datum/element/perma_fire_overlay)
 
 /turf/open/lava/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
 	if(burn_stuff(AM))
@@ -187,7 +189,7 @@
 					continue
 
 			if(!L.on_fire)
-				L.update_fire()
+				L.update_appearance(UPDATE_OVERLAYS)
 
 			if(iscarbon(L))
 				var/mob/living/carbon/C = L
@@ -203,7 +205,7 @@
 			L.adjustFireLoss(20 * seconds_per_tick)
 			if(L) //mobs turning into object corpses could get deleted here.
 				L.adjust_fire_stacks(20 * seconds_per_tick)
-				L.IgniteMob()
+				L.ignite_mob()
 
 /turf/open/lava/smooth
 	name = "lava"

@@ -480,7 +480,6 @@ GLOBAL_LIST_INIT(human_heights_to_offsets, list(
 	"[HUMAN_HEIGHT_TALLEST]" = list(3, 3),
 ))
 
-//Human Overlays Indexes//
 #define MUTATIONS_LAYER 32 //mutations. Tk headglows, cold resistance glow, etc
 #define HANDS_UNDER_BODY_LAYER 31 //Held items that render underneath the user due to perspective
 #define BODY_BEHIND_LAYER 30 //certain mutantrace features (tail when looking south) that must appear behind the body parts
@@ -513,8 +512,19 @@ GLOBAL_LIST_INIT(human_heights_to_offsets, list(
 #define BODY_FRONT_LAYER 3
 /// Bleeding wound icons
 #define WOUND_LAYER 2
-#define FIRE_LAYER 1 //If you're on fire
+/// The highest most layer for mob overlays. Unused
+#define HIGHEST_LAYER 1
 #define TOTAL_LAYERS 32 //KEEP THIS UP-TO-DATE OR SHIT WILL BREAK ;_;
+
+//Human Overlay Index Shortcuts for alternate_worn_layer, layers
+//Because I *KNOW* somebody will think layer+1 means "above"
+//IT DOESN'T OK, IT MEANS "UNDER"
+#define UNDER_SUIT_LAYER (SUIT_LAYER+1)
+#define UNDER_HEAD_LAYER (HEAD_LAYER+1)
+
+//AND -1 MEANS "ABOVE", OK?, OK!?!
+#define ABOVE_SHOES_LAYER (SHOES_LAYER-1)
+#define ABOVE_BODY_FRONT_LAYER (BODY_FRONT_LAYER-1)
 
 #define UPPER_BODY "upper body"
 #define LOWER_BODY "lower body"

@@ -134,7 +134,7 @@
 	var/old_heat_capacity = cached_air.heat_capacity()
 
 	var/burn_rate = TURF_FIRE_BURN_RATE_BASE + fire_power * TURF_FIRE_BURN_RATE_PER_POWER
-	burn_rate = max(oxy, burn_rate)
+	burn_rate = min(oxy, burn_rate)
 
 	cached_air.adjust_moles(GAS_O2, -burn_rate)
 
