@@ -220,6 +220,18 @@
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
+"bn" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/item/stack/ore/salvage/scrapmetal{
+	pixel_x = -5;
+	pixel_y = 9
+	},
+/obj/item/weaponcrafting/stock,
+/turf/open/floor/concrete/slab_4/whitesands,
+/area/ruin/whitesands/settlement/fortress)
 "bq" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals,
 /turf/open/floor/plating/asteroid/whitesands/lit,
@@ -370,6 +382,7 @@
 /turf/open/floor/wood/maple,
 /area/ruin/whitesands/settlement/blackmarket)
 "cs" = (
+/obj/machinery/light/directional/west,
 /turf/open/floor/carpet,
 /area/ruin/whitesands/settlement/roboticist)
 "ct" = (
@@ -512,16 +525,10 @@
 	pixel_x = -10;
 	pixel_y = -2
 	},
-/obj/item/food/grown/ash_flora/cactus_fruit,
-/obj/item/food/grown/ash_flora/cactus_fruit,
-/obj/item/food/grown/ash_flora/cactus_fruit{
-	pixel_x = -7;
-	pixel_y = -11
-	},
-/obj/item/food/grown/ash_flora/cactus_fruit{
-	pixel_x = 11;
-	pixel_y = -10
-	},
+/obj/structure/flora/ash/cacti,
+/obj/structure/flora/ash/cacti,
+/obj/structure/flora/ash/cacti,
+/obj/structure/flora/ash/cacti,
 /obj/item/food/grown/ash_flora/mushroom_leaf,
 /obj/item/food/grown/ash_flora/mushroom_leaf{
 	pixel_x = 6;
@@ -720,6 +727,7 @@
 	color = "#D2BC9D"
 	},
 /obj/machinery/atmospherics/components/unary/passive_vent,
+/obj/machinery/light/directional/north,
 /turf/open/floor/wood/maple,
 /area/ruin/whitesands/settlement/blackmarket)
 "ec" = (
@@ -793,6 +801,10 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ruin/whitesands/settlement/shuttle_one)
+"ew" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/stairs/wood/maple/right,
+/area/ruin/whitesands/settlement/butcher)
 "eA" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -966,6 +978,10 @@
 /area/ruin/whitesands/settlement/fortress)
 "fR" = (
 /obj/structure/table/wood,
+/obj/item/paper_bin/bundlenatural{
+	pixel_x = 0;
+	pixel_y = 8
+	},
 /turf/open/floor/carpet/black,
 /area/ruin/whitesands/settlement/fortress)
 "fT" = (
@@ -1142,6 +1158,7 @@
 	anchored = 1;
 	welded = 1
 	},
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/guardshouse)
 "gP" = (
@@ -1163,6 +1180,19 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/fortress)
+"gS" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#D2BC9D"
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/east,
+/turf/open/floor/wood/maple,
+/area/ruin/whitesands/settlement/butcher)
 "gT" = (
 /obj/effect/spawner/bunk_bed,
 /turf/open/floor/carpet/green,
@@ -1204,6 +1234,15 @@
 	icon_state = "wood-broken"
 	},
 /area/overmap_encounter/planetoid/sand/explored)
+"hb" = (
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/secure/weapon,
+/obj/item/storage/box/ammo/c9mm_surplus,
+/obj/item/storage/box/ammo/c9mm_surplus,
+/obj/item/storage/box/ammo/c9mm_surplus,
+/obj/item/storage/box/ammo/c9mm_surplus,
+/turf/open/floor/concrete/slab_4/whitesands,
+/area/ruin/whitesands/settlement/fortress)
 "hi" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1285,6 +1324,12 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/settlement/butcher)
+"hF" = (
+/obj/machinery/light/directional/west,
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken"
+	},
+/area/ruin/whitesands/settlement/fortress)
 "hG" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -1379,6 +1424,7 @@
 	pixel_x = 10;
 	pixel_y = 4
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/ruin/whitesands/settlement/granary)
 "hW" = (
@@ -1539,7 +1585,7 @@
 /area/ruin/whitesands/settlement/butcher)
 "iQ" = (
 /obj/structure/platform/wood/corner,
-/obj/item/food/grown/ash_flora/cactus_fruit,
+/obj/structure/flora/ash/cacti,
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "iR" = (
@@ -1906,6 +1952,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plating,
 /area/ruin/whitesands/settlement/roboticist)
 "jM" = (
@@ -1928,6 +1975,7 @@
 	color = "#D2BC9D";
 	dir = 1
 	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken2"
 	},
@@ -2000,6 +2048,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
+/obj/item/clothing/glasses/welding,
 /turf/open/floor/concrete/slab_4/whitesands,
 /area/ruin/whitesands/settlement/fortress)
 "km" = (
@@ -2112,7 +2161,7 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/doctor)
 "kB" = (
-/obj/item/food/grown/ash_flora/cactus_fruit,
+/obj/structure/flora/ash/cacti,
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "kC" = (
@@ -2576,6 +2625,7 @@
 	color = "#543C30";
 	dir = 6
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken"
 	},
@@ -2594,6 +2644,7 @@
 /area/ruin/whitesands/settlement/fortress)
 "mV" = (
 /obj/effect/turf_decal/borderfloor,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating,
 /area/ruin/whitesands/settlement/butcher)
 "mZ" = (
@@ -2737,6 +2788,7 @@
 	color = "#543C30";
 	dir = 2
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken"
 	},
@@ -3095,6 +3147,7 @@
 	pixel_y = -7
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
@@ -3180,6 +3233,7 @@
 	color = "#543C30";
 	dir = 2
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken2"
 	},
@@ -3196,6 +3250,11 @@
 	icon_state = "platingdmg3"
 	},
 /area/ruin/whitesands/settlement/rancher)
+"qc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/west,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/whitesands/settlement/doctor)
 "qe" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -3332,7 +3391,7 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/doctor)
 "qt" = (
-/obj/item/food/grown/ash_flora/cactus_fruit,
+/obj/structure/flora/ash/cacti,
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/sand/explored)
 "qu" = (
@@ -3360,6 +3419,19 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/guardshouse)
+"qE" = (
+/obj/structure/table/reinforced,
+/obj/item/stack/ore/salvage/scrapmetal{
+	pixel_x = -5;
+	pixel_y = 9
+	},
+/obj/item/stock_parts/micro_laser,
+/obj/item/weaponcrafting/receiver{
+	pixel_x = 5;
+	pixel_y = 7
+	},
+/turf/open/floor/concrete/slab_4/whitesands,
+/area/ruin/whitesands/settlement/fortress)
 "qH" = (
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
@@ -3420,6 +3492,11 @@
 	icon_state = "panelscorched"
 	},
 /area/ruin/whitesands/settlement/fortress)
+"rf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/west,
+/turf/open/floor/concrete/slab_4/whitesands,
+/area/ruin/whitesands/settlement/fortress)
 "rh" = (
 /obj/effect/decal/cleanable/blood,
 /obj/item/ammo_casing/spent/pistol_brass,
@@ -3475,6 +3552,7 @@
 "rC" = (
 /obj/effect/turf_decal/borderfloorblack,
 /obj/structure/rack,
+/obj/item/gun_maint_kit,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/whitesands/settlement/fortress)
 "rG" = (
@@ -3807,6 +3885,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/concrete,
 /area/ruin/whitesands/settlement/blackmarket)
 "tr" = (
@@ -3974,6 +4053,11 @@
 "uq" = (
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/ruin/whitesands/settlement/greenhouse)
+"ur" = (
+/obj/effect/spawner/bunk_bed,
+/obj/machinery/light/directional/east,
+/turf/open/floor/carpet/green,
+/area/ruin/whitesands/settlement/fortress)
 "ut" = (
 /obj/structure/table,
 /obj/item/modular_computer/laptop/preset,
@@ -4095,16 +4179,10 @@
 	pixel_x = -7;
 	pixel_y = -4
 	},
-/obj/item/food/grown/ash_flora/cactus_fruit,
-/obj/item/food/grown/ash_flora/cactus_fruit,
-/obj/item/food/grown/ash_flora/cactus_fruit{
-	pixel_x = 8;
-	pixel_y = 1
-	},
-/obj/item/food/grown/ash_flora/cactus_fruit{
-	pixel_x = 4;
-	pixel_y = 4
-	},
+/obj/structure/flora/ash/cacti,
+/obj/structure/flora/ash/cacti,
+/obj/structure/flora/ash/cacti,
+/obj/structure/flora/ash/cacti,
 /obj/item/food/grown/ash_flora/mushroom_leaf{
 	pixel_x = -5;
 	pixel_y = -1
@@ -4145,8 +4223,16 @@
 /obj/machinery/atmospherics/components/unary/passive_vent{
 	dir = 1
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating,
 /area/ruin/whitesands/settlement/blackmarket)
+"vb" = (
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/secure/weapon,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/turf/open/floor/concrete/slab_4/whitesands,
+/area/ruin/whitesands/settlement/fortress)
 "ve" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4171,6 +4257,10 @@
 	},
 /turf/open/floor/concrete/tiles,
 /area/ruin/whitesands/settlement/butcher)
+"vs" = (
+/obj/machinery/light/directional/west,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/settlement/fortress)
 "vu" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -4205,6 +4295,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/guardshouse)
 "vE" = (
@@ -4347,6 +4438,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/settlement/fortress)
 "ws" = (
@@ -4363,6 +4455,7 @@
 	dir = 8;
 	color = "#543C30"
 	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken"
 	},
@@ -4429,6 +4522,7 @@
 	pixel_x = -7;
 	pixel_y = 13
 	},
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/concrete/tiles,
 /area/ruin/whitesands/settlement/guardshouse)
 "wF" = (
@@ -4578,7 +4672,7 @@
 /turf/open/floor/concrete/tiles,
 /area/ruin/whitesands/settlement/butcher)
 "xJ" = (
-/obj/item/food/grown/ash_flora/cactus_fruit,
+/obj/structure/flora/ash/cacti,
 /obj/structure/platform/wood/corner,
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -4656,6 +4750,10 @@
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/item/ammo_casing/spent/rifle_brass,
+/obj/item/binoculars{
+	pixel_x = 0;
+	pixel_y = 3
+	},
 /turf/open/floor/carpet/black,
 /area/ruin/whitesands/settlement/fortress)
 "yh" = (
@@ -4872,6 +4970,12 @@
 "zn" = (
 /obj/machinery/hydroponics/wooden,
 /obj/item/food/grown/wheat,
+/turf/open/floor/plating/asteroid/whitesands/grass/lit,
+/area/ruin/whitesands/settlement/greenhouse)
+"zo" = (
+/obj/machinery/hydroponics/wooden,
+/obj/item/food/grown/wheat,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/ruin/whitesands/settlement/greenhouse)
 "zs" = (
@@ -5160,6 +5264,7 @@
 "As" = (
 /obj/structure/bed/double,
 /obj/item/bedsheet/double/red,
+/obj/machinery/light/directional/north,
 /turf/open/floor/carpet,
 /area/ruin/whitesands/settlement/fortress)
 "Au" = (
@@ -5183,6 +5288,10 @@
 /area/ruin/whitesands/settlement/greenhouse)
 "Aw" = (
 /obj/structure/table/wood,
+/obj/item/toy/nuke{
+	pixel_x = 0;
+	pixel_y = 2
+	},
 /turf/open/floor/carpet,
 /area/ruin/whitesands/settlement/fortress)
 "Ax" = (
@@ -5418,6 +5527,7 @@
 /obj/machinery/atmospherics/components/unary/passive_vent{
 	dir = 1
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/whitesands/settlement/fortress)
 "BP" = (
@@ -5443,6 +5553,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/settlement/fortress)
 "BY" = (
@@ -5515,12 +5626,31 @@
 "Cj" = (
 /turf/open/floor/concrete/tiles,
 /area/ruin/whitesands/settlement/doctor)
+"Cl" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/structure/rack,
+/obj/item/ammo_box/a762_stripper/empty,
+/obj/item/ammo_box/a762_stripper/empty{
+	pixel_x = 4;
+	pixel_y = 8
+	},
+/obj/item/ammo_box/a762_stripper/empty{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/ammo_box/a762_stripper/empty{
+	pixel_x = -9;
+	pixel_y = 2
+	},
+/turf/open/floor/concrete/slab_2,
+/area/ruin/whitesands/settlement/fortress)
 "Cm" = (
 /obj/effect/turf_decal/siding/wood/end{
 	color = "#D2BC9D";
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/north,
 /turf/open/floor/wood/maple,
 /area/ruin/whitesands/settlement/doctor)
 "Cn" = (
@@ -5552,6 +5682,7 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/residence)
 "Cz" = (
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken"
 	},
@@ -5621,6 +5752,12 @@
 	},
 /turf/open/floor/concrete/pavement/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
+"CZ" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/structure/rack,
+/obj/item/storage/box/stockparts/basic,
+/turf/open/floor/concrete/slab_2,
+/area/ruin/whitesands/settlement/fortress)
 "Da" = (
 /obj/structure/flora/rock,
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
@@ -5680,13 +5817,10 @@
 	pixel_x = 8;
 	pixel_y = 5
 	},
-/obj/item/food/grown/ash_flora/cactus_fruit,
-/obj/item/food/grown/ash_flora/cactus_fruit,
-/obj/item/food/grown/ash_flora/cactus_fruit,
-/obj/item/food/grown/ash_flora/cactus_fruit{
-	pixel_x = -8;
-	pixel_y = 5
-	},
+/obj/structure/flora/ash/cacti,
+/obj/structure/flora/ash/cacti,
+/obj/structure/flora/ash/cacti,
+/obj/structure/flora/ash/cacti,
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/pen)
 "Dm" = (
@@ -5800,6 +5934,14 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/whitesands/settlement/greenhouse)
+"DO" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 10
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/settlement/fortress)
 "DP" = (
 /obj/structure/chair/plastic{
 	dir = 4;
@@ -5886,7 +6028,7 @@
 /turf/open/floor/engine/hull/interior,
 /area/ruin/whitesands/settlement/shuttle_two)
 "El" = (
-/obj/item/food/grown/ash_flora/cactus_fruit,
+/obj/structure/flora/ash/cacti,
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Eo" = (
@@ -6128,6 +6270,12 @@
 	},
 /turf/open/floor/concrete/tiles,
 /area/ruin/whitesands/settlement/rancher)
+"Fj" = (
+/obj/machinery/hydroponics/wooden,
+/obj/structure/flora/ash/cacti,
+/obj/machinery/light/directional/east,
+/turf/open/floor/plating/asteroid/whitesands/grass/lit,
+/area/ruin/whitesands/settlement/greenhouse)
 "Fl" = (
 /obj/item/stack/rods/ten{
 	pixel_x = 11;
@@ -6165,6 +6313,7 @@
 	color = "#332521"
 	},
 /obj/structure/fluff/hedge,
+/obj/machinery/light/directional/east,
 /turf/open/floor/wood/ebony,
 /area/ruin/whitesands/settlement/fortress)
 "Fv" = (
@@ -6259,16 +6408,10 @@
 	pixel_x = 6;
 	pixel_y = 6
 	},
-/obj/item/food/grown/ash_flora/cactus_fruit,
-/obj/item/food/grown/ash_flora/cactus_fruit,
-/obj/item/food/grown/ash_flora/cactus_fruit{
-	pixel_x = 11;
-	pixel_y = 9
-	},
-/obj/item/food/grown/ash_flora/cactus_fruit{
-	pixel_x = -6;
-	pixel_y = 8
-	},
+/obj/structure/flora/ash/cacti,
+/obj/structure/flora/ash/cacti,
+/obj/structure/flora/ash/cacti,
+/obj/structure/flora/ash/cacti,
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/pen)
 "FP" = (
@@ -6319,6 +6462,13 @@
 	},
 /turf/open/floor/concrete/tiles,
 /area/ruin/whitesands/settlement/butcher)
+"FZ" = (
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/secure/weapon,
+/obj/item/storage/box/ammo/a762_40,
+/obj/item/storage/box/ammo/a762_40,
+/turf/open/floor/concrete/slab_4/whitesands,
+/area/ruin/whitesands/settlement/fortress)
 "Ga" = (
 /obj/structure/barricade/sandbags,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -6398,6 +6548,7 @@
 	color = "#332521"
 	},
 /obj/structure/fluff/hedge,
+/obj/machinery/light/directional/west,
 /turf/open/floor/wood/ebony,
 /area/ruin/whitesands/settlement/fortress)
 "Gr" = (
@@ -6558,9 +6709,12 @@
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Hp" = (
-/obj/item/food/grown/ash_flora/cactus_fruit,
-/turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/overmap_encounter/planetoid/sand/explored)
+/obj/effect/turf_decal/trimline/transparent/lightgrey/line{
+	dir = 8
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/settlement/guardshouse)
 "Hr" = (
 /turf/closed/wall/mineral/sandstone,
 /area/ruin/whitesands/settlement/granary)
@@ -6743,7 +6897,7 @@
 /area/ruin/whitesands/settlement/fortress)
 "Ir" = (
 /obj/item/ammo_casing/spent/pistol_brass,
-/obj/item/food/grown/ash_flora/cactus_fruit,
+/obj/structure/flora/ash/cacti,
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Is" = (
@@ -6773,6 +6927,10 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/whitesands/settlement/doctor)
+"IB" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/settlement/fortress)
 "ID" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -6790,6 +6948,7 @@
 "IE" = (
 /obj/effect/decal/cleanable/ash,
 /obj/effect/abstract/turf_fire/magical,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken2"
 	},
@@ -6940,6 +7099,7 @@
 	color = "#543C30";
 	dir = 6
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/residence)
 "Jx" = (
@@ -7255,6 +7415,7 @@
 	color = "#543C30";
 	dir = 10
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/doctor)
 "Lf" = (
@@ -7366,7 +7527,7 @@
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/item/ammo_casing/spent/pistol_brass,
-/obj/item/food/grown/ash_flora/cactus_fruit,
+/obj/structure/flora/ash/cacti,
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Mb" = (
@@ -7620,6 +7781,10 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/roboticist)
+"Np" = (
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/concrete/tiles,
+/area/ruin/whitesands/settlement)
 "Nq" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -7931,7 +8096,7 @@
 /area/ruin/whitesands/settlement/butcher)
 "Pw" = (
 /obj/machinery/hydroponics/wooden,
-/obj/item/food/grown/ash_flora/cactus_fruit,
+/obj/structure/flora/ash/cacti,
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/ruin/whitesands/settlement/greenhouse)
 "Px" = (
@@ -8086,6 +8251,7 @@
 "Qd" = (
 /obj/structure/closet/secure_closet/armorycage,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/gun/ballistic/automatic/zip_pistol,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/settlement/fortress)
 "Qg" = (
@@ -8116,8 +8282,10 @@
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Qp" = (
-/turf/template_noop,
-/area/overmap_encounter/planetoid/sand/explored)
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/east,
+/turf/open/floor/wood/walnut,
+/area/ruin/whitesands/settlement/fortress)
 "Qt" = (
 /turf/closed/wall/mineral/sandstone,
 /area/ruin/whitesands/settlement/pen)
@@ -8373,6 +8541,8 @@
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/item/gavelblock,
+/obj/item/gavelhammer,
 /turf/open/floor/carpet/black,
 /area/ruin/whitesands/settlement/fortress)
 "RQ" = (
@@ -8422,7 +8592,7 @@
 /area/ruin/whitesands/settlement/roboticist)
 "Sb" = (
 /obj/item/ammo_casing/spent/pistol_brass,
-/obj/item/food/grown/ash_flora/cactus_fruit,
+/obj/structure/flora/ash/cacti,
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Sc" = (
@@ -8678,6 +8848,14 @@
 /area/ruin/whitesands/settlement/fortress)
 "SZ" = (
 /obj/structure/table/reinforced,
+/obj/item/stack/sheet/plasteel/five{
+	pixel_x = -1;
+	pixel_y = 11
+	},
+/obj/item/weldingtool{
+	pixel_x = 10;
+	pixel_y = 5
+	},
 /turf/open/floor/concrete/slab_4/whitesands,
 /area/ruin/whitesands/settlement/fortress)
 "Ta" = (
@@ -8730,6 +8908,7 @@
 	color = "#543C30";
 	dir = 5
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/residence)
 "Tp" = (
@@ -8915,6 +9094,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/east,
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/roboticist)
 "UE" = (
@@ -9331,6 +9511,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
 	},
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/settlement/guardshouse)
 "Xd" = (
@@ -9374,6 +9555,7 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/west,
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken"
 	},
@@ -9471,6 +9653,7 @@
 /obj/machinery/atmospherics/components/unary/passive_vent{
 	dir = 8
 	},
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/guardshouse)
 "Xx" = (
@@ -10482,7 +10665,7 @@ QE
 Fv
 BP
 Fz
-MW
+Np
 Fv
 QE
 QE
@@ -10748,7 +10931,7 @@ VF
 SU
 SU
 SU
-Qp
+SU
 lf
 lf
 Nh
@@ -10828,7 +11011,7 @@ VF
 VF
 SU
 SU
-Qp
+SU
 Zj
 SU
 SU
@@ -11087,7 +11270,7 @@ QE
 Fv
 SP
 Fz
-MW
+Np
 Fv
 QE
 QE
@@ -11308,11 +11491,11 @@ SU
 Mi
 Av
 zn
-zn
+zo
 cA
 hK
 tC
-Pw
+Fj
 Pw
 Av
 Mi
@@ -12229,7 +12412,7 @@ Tu
 fj
 kL
 AM
-oD
+qc
 qu
 bg
 jj
@@ -12770,7 +12953,7 @@ Zj
 hy
 XA
 Uo
-zd
+ew
 zd
 jB
 Tk
@@ -13130,7 +13313,7 @@ Qb
 Qb
 Qb
 VF
-zs
+VF
 Zj
 GF
 VF
@@ -13161,8 +13344,8 @@ Fv
 Qb
 Qb
 Hh
-SZ
-sc
+qE
+rf
 Pz
 SZ
 Hh
@@ -13243,7 +13426,7 @@ Fv
 Fv
 Qb
 Hh
-kl
+bn
 qn
 QH
 kl
@@ -13262,7 +13445,7 @@ OQ
 JY
 mx
 SV
-Am
+gS
 KG
 OQ
 AC
@@ -13332,7 +13515,7 @@ Hh
 Hh
 Kf
 yZ
-Gl
+vb
 gk
 Hh
 Qb
@@ -13497,7 +13680,7 @@ rC
 Ve
 yZ
 Gl
-Gl
+hb
 Hh
 Qb
 Zj
@@ -13536,7 +13719,7 @@ jQ
 uA
 ym
 Zj
-kB
+VF
 Qb
 Zj
 Zj
@@ -13656,10 +13839,10 @@ cw
 lu
 GV
 SX
-VW
+hF
 vX
 Rv
-vX
+vs
 JC
 Rj
 Hh
@@ -13785,7 +13968,7 @@ jQ
 hR
 VF
 SU
-El
+SU
 SU
 mO
 Ne
@@ -13867,7 +14050,7 @@ Ge
 zs
 Zj
 Zj
-Hp
+Zj
 SU
 mO
 Wt
@@ -14140,7 +14323,7 @@ Hh
 bI
 jT
 eN
-pe
+DO
 Hh
 Zv
 ic
@@ -14476,10 +14659,10 @@ mn
 aJ
 vX
 WZ
-vX
+IB
 IV
 Rv
-GV
+Qp
 JC
 QY
 re
@@ -14641,10 +14824,10 @@ Hh
 Hh
 EQ
 Hh
-rC
+CZ
 Ve
 yZ
-Gl
+FZ
 Gl
 Hh
 Qb
@@ -14723,7 +14906,7 @@ yE
 xy
 gJ
 Hh
-rC
+Cl
 IX
 ou
 sc
@@ -14904,7 +15087,7 @@ Wa
 Wa
 Wa
 lo
-Wa
+Hp
 hP
 Um
 qo
@@ -14966,7 +15149,7 @@ Qb
 Qb
 Hh
 yE
-Wn
+ur
 dt
 MX
 Hh

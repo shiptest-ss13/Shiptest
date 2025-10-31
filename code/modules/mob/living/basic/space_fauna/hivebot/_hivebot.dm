@@ -131,7 +131,7 @@
 	calibre = /obj/item/ammo_casing/c9mm
 	hivebot_spread = 15
 	firing_sound = 'sound/weapons/gun/smg/spitter.ogg'
-	faction = list(FACTION_FRONTIERSMEN)
+	faction = list(FACTION_ANTAG_FRONTIERSMEN)
 	ai_controller = /datum/ai_controller/basic_controller/hivebot/ranged/frontier
 
 	aggro_quips = list("CODE 87-22!!",
@@ -191,7 +191,7 @@
 	hivebot_spread = 24
 	firing_sound = 'sound/weapons/gun/smg/pounder.ogg'
 	ai_controller = /datum/ai_controller/basic_controller/hivebot/ranged/core/frontier
-	faction = list(FACTION_FRONTIERSMEN)
+	faction = list(FACTION_ANTAG_FRONTIERSMEN)
 
 	death_loot = list(/obj/effect/decal/cleanable/robot_debris,/obj/effect/spawner/random/waste/hivebot/more,
 		/obj/effect/spawner/random/waste/hivebot/part/superheavy, /obj/effect/spawner/random/waste/hivebot/part/heavy,
