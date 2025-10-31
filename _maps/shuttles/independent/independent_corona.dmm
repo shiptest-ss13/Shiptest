@@ -1650,6 +1650,10 @@
 	pixel_y = 8;
 	pixel_x = -4
 	},
+/obj/item/food/sashimi{
+	pixel_x = 15;
+	pixel_y = 4
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/ccommons)
 "sJ" = (
@@ -2380,7 +2384,8 @@
 	},
 /obj/machinery/door/airlock/public/glass{
 	dir = 4;
-	name = "Common Room"
+	name = "Common Room";
+	req_ship_access = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
@@ -2601,10 +2606,23 @@
 /obj/item/food/bread/plain{
 	pixel_y = -5
 	},
+/obj/item/food/bun,
+/obj/item/food/bun,
 /obj/item/storage/box/coffeepack/arabica,
 /obj/item/storage/box/coffeepack/robusta{
 	pixel_y = -5
 	},
+/obj/item/plate/large,
+/obj/item/plate,
+/obj/item/plate,
+/obj/item/plate,
+/obj/item/plate,
+/obj/item/plate,
+/obj/item/plate,
+/obj/item/plate/small,
+/obj/item/plate/small,
+/obj/item/plate/small,
+/obj/item/plate/small,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen/kitchen)
 "CZ" = (
@@ -2995,6 +3013,7 @@
 /obj/item/food/nigiri_sushi,
 /obj/item/food/tiris_apple,
 /obj/item/shovel/spoon,
+/obj/item/food/grown/grapes,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen/kitchen)
 "Hr" = (
@@ -3062,7 +3081,8 @@
 	dir = 4
 	},
 /obj/structure/closet/crate/hydroponics{
-	name = "beach recreation crate"
+	name = "beach recreation crate";
+	desc = "All you need for some fun in the sun."
 	},
 /obj/item/chair/plastic,
 /obj/item/chair/plastic,
@@ -3467,10 +3487,6 @@
 /obj/item/reagent_containers/food/drinks/bottle/sake{
 	pixel_x = 8;
 	pixel_y = 7
-	},
-/obj/item/food/grown/grapes{
-	pixel_y = 8;
-	pixel_x = -8
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
 	pixel_y = 15;
@@ -4777,7 +4793,8 @@
 	},
 /obj/machinery/door/airlock/public/glass{
 	dir = 4;
-	name = "Kitchen"
+	name = "Kitchen";
+	req_ship_access = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen/kitchen)
