@@ -52,6 +52,9 @@
 	var/calibre = /obj/item/ammo_casing/c10mm
 	///what does a hivebot shooting sound like
 	var/firing_sound = 'sound/weapons/gun/pistol/shot.ogg'
+	///how much spread does this thing fire with
+	var/firing_spread = 4
+
 
 	/// How much extra max health can this hivebot get from scrap?
 	var/growth_cap = 100
@@ -81,7 +84,7 @@
 	AddComponent(/datum/component/aggro_speech, phrase_list = aggro_quips, phrase_chance = 30)
 	if(!ranged_attacker)
 		return
-	AddComponent(/datum/component/ranged_attacks, calibre, null, firing_sound)
+	AddComponent(/datum/component/ranged_attacks, calibre, null, firing_sound, firing_spread = spread)
 
 /mob/living/basic/hivebot/death(gibbed)
 	do_sparks(n = 3, c = TRUE, source = src)
