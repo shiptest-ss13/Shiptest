@@ -40,6 +40,15 @@
 		/datum/ai_planning_subtree/hive_communicate,
 	)
 
+/datum/ai_controller/basic_controller/hivebot/ranged/frontier
+	planning_subtrees = list(
+		/datum/ai_planning_subtree/simple_find_target,
+		//replace with ranged skirmish in follow-up PR
+		/datum/ai_planning_subtree/basic_ranged_attack_subtree/hivebot_frontier,
+		/datum/ai_planning_subtree/attack_obstacle_in_path/hivebot,
+		/datum/ai_planning_subtree/hive_communicate,
+	)
+
 /datum/ai_controller/basic_controller/hivebot/ranged/core
 	planning_subtrees = list(
 		/datum/ai_planning_subtree/simple_find_target,
@@ -69,6 +78,9 @@
 
 /datum/ai_planning_subtree/basic_ranged_attack_subtree/hivebot
 	ranged_attack_behavior = /datum/ai_behavior/basic_ranged_attack/hivebot
+
+/datum/ai_planning_subtree/basic_ranged_attack_subtree/hivebot_frontier
+	ranged_attack_behavior = /datum/ai_behavior/basic_ranged_attack/hivebot_frontier
 
 /datum/ai_planning_subtree/hive_communicate
 	///chance to go and relay message
