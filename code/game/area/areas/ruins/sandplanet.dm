@@ -86,6 +86,11 @@
 	name = "Greenhouse"
 	icon_state = "hydro"
 
+/area/ruin/whitesands/settlement/pen
+	name = "Goliath Pen"
+	icon_state = "hydro"
+	always_unpowered = FALSE
+
 /area/ruin/whitesands/settlement/granary
 	name = "Granary"
 	icon_state = "kitchen"
