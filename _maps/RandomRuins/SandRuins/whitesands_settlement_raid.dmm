@@ -367,7 +367,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/open/floor/wood/maple,
+/turf/open/floor/wood/maple/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "cs" = (
 /obj/machinery/light/directional/west,
@@ -568,11 +568,11 @@
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "do" = (
-/obj/machinery/door/airlock/wood{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
+	},
+/obj/structure/door_assembly/door_assembly_wood{
+	dir = 8
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/whitesands/settlement/blackmarket)
@@ -7012,7 +7012,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
 	},
-/turf/open/floor/wood/maple,
+/turf/open/floor/wood/maple/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "Ji" = (
 /obj/item/stack/sheet/mineral/wood{

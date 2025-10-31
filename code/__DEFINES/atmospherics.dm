@@ -222,6 +222,7 @@
 #define ATMOS_TANK_FUEL "o2=33000;plasma=66000;TEMP=293.15"
 #define ATMOS_TANK_HYDROGEN_FUEL "o2=33000;h2=66000;TEMP=293.15"
 #define ATMOS_TANK_PLASMAHALF "plasma=6000;TEMP=293.15"
+#define CHLORINATED_ATMOS "o2=22;n2=82;cl2=24;TEMP=293.15"
 
 //PLANETARY
 /// what pressure you have to be under to increase the effect of equipment meant for lavaland
