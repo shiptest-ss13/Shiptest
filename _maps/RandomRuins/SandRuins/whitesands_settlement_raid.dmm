@@ -443,7 +443,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/turf/open/floor/concrete/tiles,
+/turf/open/floor/concrete/tiles/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "cG" = (
 /obj/item/chair/plastic,
@@ -573,7 +573,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/structure/door_assembly/door_assembly_wood{
+/obj/machinery/door/airlock/wood{
 	dir = 8
 	},
 /turf/open/floor/concrete/slab_1,
@@ -792,7 +792,7 @@
 	pixel_x = -21;
 	pixel_y = -13
 	},
-/turf/open/floor/concrete/tiles,
+/turf/open/floor/concrete/tiles/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "ev" = (
 /obj/machinery/power/shuttle/engine/electric{
@@ -1433,7 +1433,7 @@
 	pixel_x = -8;
 	pixel_y = 14
 	},
-/turf/open/floor/concrete/tiles,
+/turf/open/floor/concrete/tiles/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "ia" = (
 /obj/machinery/door/airlock/wood,
@@ -1600,7 +1600,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/open/floor/wood/walnut,
+/turf/open/floor/wood/walnut/chlorine{
+	icon_state = "wood-broken"
+	},
 /area/ruin/whitesands/settlement/blackmarket)
 "iT" = (
 /obj/structure/window/reinforced{
@@ -2439,7 +2441,7 @@
 	},
 /obj/effect/decal/cleanable/blood/drip,
 /obj/structure/closet/secure_closet/cabinet,
-/turf/open/floor/wood/walnut{
+/turf/open/floor/wood/walnut/chlorine{
 	icon_state = "wood-broken"
 	},
 /area/ruin/whitesands/settlement/blackmarket)
@@ -2979,7 +2981,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/wood/walnut,
+/turf/open/floor/wood/walnut/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "oI" = (
 /obj/effect/turf_decal/siding/wood/end{
@@ -4715,7 +4717,7 @@
 /obj/machinery/atmospherics/components/unary/passive_vent{
 	dir = 1
 	},
-/turf/open/floor/concrete/tiles,
+/turf/open/floor/concrete/tiles/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "ye" = (
 /obj/structure/table/wood,
@@ -4998,7 +5000,9 @@
 	pixel_y = -6
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/walnut,
+/turf/open/floor/wood/walnut/chlorine{
+	icon_state = "wood-broken"
+	},
 /area/ruin/whitesands/settlement/blackmarket)
 "zz" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
@@ -5331,7 +5335,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
-/turf/open/floor/concrete/tiles,
+/turf/open/floor/concrete/tiles/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "AM" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -6840,7 +6844,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/turf/open/floor/concrete/tiles,
+/turf/open/floor/concrete/tiles/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "If" = (
 /obj/effect/turf_decal/siding/wood{
@@ -6958,7 +6962,7 @@
 	pixel_x = 8;
 	pixel_y = 7
 	},
-/turf/open/floor/concrete/tiles,
+/turf/open/floor/concrete/tiles/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "IV" = (
 /obj/item/chair/plastic,
@@ -9227,7 +9231,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/wood/walnut,
+/turf/open/floor/wood/walnut/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "Vx" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -9567,9 +9571,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/west,
-/turf/open/floor/wood/walnut{
-	icon_state = "wood-broken"
-	},
+/turf/open/floor/wood/walnut/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "Xq" = (
 /obj/effect/mob_spawn/human/corpse/damaged/whitesands,
@@ -9693,7 +9695,9 @@
 	pixel_y = 10
 	},
 /obj/effect/decal/cleanable/blood,
-/turf/open/floor/wood/walnut,
+/turf/open/floor/wood/walnut/chlorine{
+	icon_state = "wood-broken"
+	},
 /area/ruin/whitesands/settlement/blackmarket)
 "Xz" = (
 /turf/open/floor/concrete/slab_3/icemoon,
