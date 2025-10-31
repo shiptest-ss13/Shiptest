@@ -752,6 +752,14 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/carpet/black,
 /area/ruin/whitesands/settlement/residence)
+"ed" = (
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/secure/weapon,
+/obj/item/ammo_box/magazine/skm_46_30,
+/obj/item/ammo_box/magazine/skm_46_30,
+/obj/item/ammo_box/magazine/skm_46_30,
+/turf/open/floor/concrete/slab_4/whitesands,
+/area/ruin/whitesands/settlement/fortress)
 "eg" = (
 /obj/structure/girder,
 /obj/item/stack/sheet/mineral/wood,
@@ -1558,10 +1566,13 @@
 /turf/open/floor/wood/maple,
 /area/ruin/whitesands/settlement/guardshouse)
 "iL" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
-/turf/open/floor/plating,
-/area/ruin/whitesands/settlement/fortress)
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "iP" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#D2BC9D"
@@ -2320,6 +2331,12 @@
 	},
 /turf/open/floor/carpet,
 /area/ruin/whitesands/settlement/fortress)
+"lh" = (
+/obj/structure/platform/wood/corner{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/whitesands/lit/smooth,
+/area/overmap_encounter/planetoid/sand/explored)
 "lk" = (
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer/internals,
 /obj/effect/decal/cleanable/blood,
@@ -2403,6 +2420,12 @@
 /obj/item/chair/plastic,
 /turf/open/floor/engine/hull/interior,
 /area/ruin/whitesands/settlement/shuttle_two)
+"lx" = (
+/obj/effect/mob_spawn/human/corpse/damaged/whitesands,
+/obj/effect/decal/cleanable/blood,
+/obj/item/ammo_casing/spent/pistol_brass,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "ly" = (
 /obj/structure/curtain/cloth,
 /obj/structure/barricade/wooden,
@@ -2467,6 +2490,11 @@
 /obj/structure/platform/wood/corner,
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/overmap_encounter/planetoid/sand/explored)
+"lW" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
+/turf/open/floor/plating,
+/area/ruin/whitesands/settlement/fortress)
 "lZ" = (
 /obj/structure/chair/plastic,
 /obj/effect/turf_decal/siding/wood{
@@ -2773,12 +2801,6 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/whitesands/settlement/butcher)
-"nJ" = (
-/obj/effect/turf_decal/trimline/transparent/lightgrey/line,
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
-/turf/open/floor/plasteel/dark,
-/area/ruin/whitesands/settlement/fortress)
 "nM" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	color = "#543C30";
@@ -2970,12 +2992,9 @@
 /turf/open/floor/concrete/slab_4,
 /area/ruin/whitesands/settlement/doctor)
 "oF" = (
-/obj/item/ammo_casing/spent/pistol_brass,
-/obj/item/ammo_casing/spent/pistol_brass,
-/obj/item/ammo_casing/spent/pistol_brass,
-/obj/item/ammo_casing/spent/pistol_brass,
-/obj/item/ammo_casing/spent/pistol_brass,
-/turf/open/floor/plating/asteroid/whitesands/lit,
+/obj/effect/mob_spawn/human/corpse/damaged/whitesands,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "oG" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -3094,12 +3113,6 @@
 /obj/item/food/meat/slab/goliath,
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/ruin/whitesands/settlement/butcher)
-"pl" = (
-/obj/effect/decal/cleanable/blood,
-/obj/item/ammo_casing/spent/pistol_brass,
-/obj/item/ammo_casing/spent/pistol_brass,
-/turf/open/floor/plating/asteroid/whitesands/grass/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "pm" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
@@ -3626,11 +3639,6 @@
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/asteroid/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
-"rZ" = (
-/obj/structure/flora/ash/cacti,
-/obj/item/ammo_casing/spent/pistol_brass,
-/turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "sa" = (
 /obj/effect/turf_decal/siding/wood{
@@ -5634,11 +5642,6 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/whitesands/settlement/fortress)
-"Ct" = (
-/obj/effect/mob_spawn/human/corpse/damaged/whitesands,
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Cv" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
@@ -5701,6 +5704,12 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/turf/open/floor/plating/asteroid/whitesands/grass/lit,
+/area/overmap_encounter/planetoid/sand/explored)
+"CT" = (
+/obj/effect/mob_spawn/human/corpse/damaged/whitesands,
+/obj/effect/decal/cleanable/blood,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "CU" = (
@@ -7407,11 +7416,11 @@
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/ruin/whitesands/settlement/butcher)
 "Lc" = (
-/obj/effect/mob_spawn/human/corpse/damaged/whitesands,
-/obj/effect/decal/cleanable/blood,
-/obj/item/ammo_casing/spent/pistol_brass,
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
+/obj/effect/turf_decal/trimline/transparent/lightgrey/line,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/settlement/fortress)
 "Ld" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	color = "#543C30";
@@ -7585,12 +7594,6 @@
 	},
 /turf/open/floor/concrete/tiles,
 /area/ruin/whitesands/settlement)
-"Mk" = (
-/obj/effect/mob_spawn/human/corpse/damaged/whitesands,
-/obj/effect/decal/cleanable/blood,
-/obj/item/ammo_casing/spent/pistol_brass,
-/turf/open/floor/plating/asteroid/whitesands/grass/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Mn" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -8545,6 +8548,11 @@
 	icon_state = "wood-broken"
 	},
 /area/ruin/whitesands/settlement/doctor)
+"RG" = (
+/obj/structure/flora/ash/cacti,
+/obj/item/ammo_casing/spent/pistol_brass,
+/turf/open/floor/plating/asteroid/whitesands/grass/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "RJ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/carpet/black,
@@ -8926,12 +8934,6 @@
 "Tk" = (
 /turf/open/floor/concrete/pavement/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
-"Tn" = (
-/obj/structure/platform/wood/corner{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/whitesands/lit/smooth,
-/area/overmap_encounter/planetoid/sand/explored)
 "To" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -8996,6 +8998,10 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/ruin/whitesands/settlement/butcher)
+"TD" = (
+/obj/structure/curtain/cloth,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/whitesands/settlement/guardshouse)
 "TI" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -9847,9 +9853,11 @@
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "YA" = (
-/obj/structure/curtain/cloth,
-/turf/open/floor/concrete/slab_1,
-/area/ruin/whitesands/settlement/guardshouse)
+/obj/effect/decal/cleanable/blood,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/turf/open/floor/plating/asteroid/whitesands/grass/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "YB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/west,
@@ -11876,7 +11884,7 @@ Tk
 SU
 Zj
 zT
-Ct
+oF
 Zj
 SU
 SU
@@ -12618,8 +12626,8 @@ VO
 Ci
 Tk
 Ci
-rZ
-pl
+RG
+YA
 Xe
 lT
 fj
@@ -12697,11 +12705,11 @@ DK
 pv
 Xq
 zT
-oF
+iL
 uA
 jQ
 hR
-Mk
+CT
 hD
 Sf
 fj
@@ -12779,7 +12787,7 @@ DK
 Ex
 SU
 Xe
-Lc
+lx
 SU
 ZC
 VF
@@ -13427,7 +13435,7 @@ Tk
 Zj
 if
 KF
-Tn
+lh
 VF
 VF
 Yu
@@ -13640,7 +13648,7 @@ Qb
 Qb
 Hh
 Qd
-iL
+lW
 Ve
 Hh
 gQ
@@ -13727,7 +13735,7 @@ EQ
 Hh
 gQ
 Ve
-nJ
+Lc
 Gl
 OP
 Hh
@@ -14875,7 +14883,7 @@ EQ
 Hh
 rC
 Ve
-nJ
+Lc
 xu
 Gl
 Hh
@@ -15040,7 +15048,7 @@ Hh
 Hh
 Kf
 yZ
-Gl
+ed
 Gl
 Hh
 Qb
@@ -15137,7 +15145,7 @@ Wa
 Wa
 lo
 Wa
-YA
+TD
 Um
 qo
 Zi
