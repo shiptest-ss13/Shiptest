@@ -1067,8 +1067,10 @@
 /obj/structure/marker_beacon{
 	picked_color = "Teal"
 	},
-/obj/item/radio/intercom/directional/east,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/nanotrasen{
+	pixel_x = 28
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "hg" = (
@@ -4787,8 +4789,20 @@
 /obj/structure/extinguisher_cabinet/directional/south{
 	pixel_x = 6
 	},
-/obj/item/radio/intercom/directional/west,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/shieldwallgen{
+	pixel_y = -6;
+	pixel_x = -20;
+	dir = 4;
+	id = "magpie_holofield"
+	},
+/obj/machinery/button/door{
+	pixel_y = 4;
+	pixel_x = -21;
+	name = "Cargo Door Control";
+	dir = 4;
+	id = "magpie_cargo"
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "IA" = (
@@ -5413,17 +5427,15 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "Nm" = (
-/obj/structure/sign/nanotrasen{
-	pixel_x = 32
-	},
 /obj/effect/turf_decal/industrial/warning/dust/corner,
 /obj/machinery/camera/autoname{
-	dir = 9
+	dir = 8
 	},
 /obj/structure/marker_beacon{
 	picked_color = "Teal"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "Np" = (
@@ -7042,6 +7054,7 @@
 /obj/structure/sign/poster/official/safety_internals{
 	pixel_y = 32
 	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "ZD" = (
