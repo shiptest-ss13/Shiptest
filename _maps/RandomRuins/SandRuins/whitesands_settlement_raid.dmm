@@ -251,7 +251,9 @@
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "bC" = (
-/turf/open/floor/wood/maple,
+/turf/open/floor/wood/maple/chlorine{
+	icon_state = "wood-broken"
+	},
 /area/ruin/whitesands/settlement/blackmarket)
 "bE" = (
 /obj/structure/platform{
@@ -278,9 +280,7 @@
 	dir = 4;
 	color = "#D2BC9D"
 	},
-/turf/open/floor/wood/maple{
-	icon_state = "wood-broken"
-	},
+/turf/open/floor/wood/maple/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "bI" = (
 /obj/structure/dresser,
@@ -367,7 +367,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/open/floor/wood/maple/chlorine,
+/turf/open/floor/wood/maple/chlorine{
+	icon_state = "wood-broken2"
+	},
 /area/ruin/whitesands/settlement/blackmarket)
 "cs" = (
 /obj/machinery/light/directional/west,
@@ -457,7 +459,7 @@
 	color = "#D2BC9D";
 	dir = 10
 	},
-/turf/open/floor/wood/maple,
+/turf/open/floor/wood/maple/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "cL" = (
 /obj/machinery/atmospherics/components/unary/passive_vent{
@@ -728,7 +730,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/passive_vent,
 /obj/machinery/light/directional/north,
-/turf/open/floor/wood/maple,
+/turf/open/floor/wood/maple/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "ec" = (
 /obj/item/ammo_casing/spent/pistol_brass,
@@ -1472,7 +1474,7 @@
 	},
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/maple,
+/turf/open/floor/wood/maple/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "in" = (
 /obj/structure/girder,
@@ -1741,7 +1743,7 @@
 	dir = 1;
 	color = "#D2BC9D"
 	},
-/turf/open/floor/wood/maple,
+/turf/open/floor/wood/maple/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "js" = (
 /obj/effect/turf_decal/siding/wood{
@@ -2942,7 +2944,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/open/floor/wood/maple,
+/turf/open/floor/wood/maple/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "oC" = (
 /obj/machinery/door/airlock/wood{
@@ -3173,7 +3175,7 @@
 	pixel_x = -10;
 	pixel_y = -5
 	},
-/turf/open/floor/wood/maple,
+/turf/open/floor/wood/maple/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "pM" = (
 /obj/effect/turf_decal/siding/wood{
@@ -3204,8 +3206,8 @@
 	color = "#D2BC9D";
 	dir = 8
 	},
-/turf/open/floor/wood/maple{
-	icon_state = "wood-broken"
+/turf/open/floor/wood/maple/chlorine{
+	icon_state = "wood-broken2"
 	},
 /area/ruin/whitesands/settlement/blackmarket)
 "pQ" = (
@@ -3223,9 +3225,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
 	},
-/turf/open/floor/wood/maple{
-	icon_state = "wood-broken"
-	},
+/turf/open/floor/wood/maple/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "pT" = (
 /obj/structure/cable{
@@ -3358,7 +3358,7 @@
 	pixel_x = 11;
 	pixel_y = 10
 	},
-/turf/open/floor/plating,
+/turf/open/floor/wood/maple/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "ql" = (
 /obj/structure/railing/corner/wood,
@@ -3533,7 +3533,7 @@
 	color = "#D2BC9D";
 	dir = 9
 	},
-/turf/open/floor/wood/maple{
+/turf/open/floor/wood/maple/chlorine{
 	icon_state = "wood-broken"
 	},
 /area/ruin/whitesands/settlement/blackmarket)
@@ -4341,8 +4341,8 @@
 /turf/open/floor/carpet,
 /area/ruin/whitesands/settlement/fortress)
 "vV" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/hunter,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter/sentry,
 /turf/open/floor/concrete/tiles,
 /area/ruin/whitesands/settlement)
 "vX" = (
@@ -4846,9 +4846,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
-/turf/open/floor/wood/maple{
-	icon_state = "wood-broken"
-	},
+/turf/open/floor/wood/maple/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "yT" = (
 /mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
@@ -6281,7 +6279,7 @@
 /turf/closed/wall/mineral/sandstone,
 /area/ruin/whitesands/settlement)
 "Fz" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/hunter,
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter/sentry,
 /turf/open/floor/concrete/tiles,
 /area/ruin/whitesands/settlement)
 "FB" = (
@@ -6471,7 +6469,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/open/floor/wood/maple,
+/turf/open/floor/wood/maple/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "Gj" = (
 /obj/structure/platform/corner{
@@ -6746,7 +6744,7 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/maple,
+/turf/open/floor/wood/maple/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "HA" = (
 /obj/structure/cable{
@@ -7239,7 +7237,7 @@
 	color = "#D2BC9D"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/maple{
+/turf/open/floor/wood/maple/chlorine{
 	icon_state = "wood-broken"
 	},
 /area/ruin/whitesands/settlement/blackmarket)
@@ -7252,7 +7250,7 @@
 	dir = 1;
 	color = "#D2BC9D"
 	},
-/turf/open/floor/wood/maple{
+/turf/open/floor/wood/maple/chlorine{
 	icon_state = "wood-broken"
 	},
 /area/ruin/whitesands/settlement/blackmarket)
@@ -8064,7 +8062,9 @@
 "Pl" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/maple,
+/turf/open/floor/wood/maple/chlorine{
+	icon_state = "wood-broken"
+	},
 /area/ruin/whitesands/settlement/blackmarket)
 "Pm" = (
 /obj/structure/platform/corner{
@@ -8261,7 +8261,9 @@
 	color = "#D2BC9D"
 	},
 /obj/structure/closet/crate,
-/turf/open/floor/wood/maple,
+/turf/open/floor/wood/maple/chlorine{
+	icon_state = "wood-broken2"
+	},
 /area/ruin/whitesands/settlement/blackmarket)
 "Qm" = (
 /obj/structure/window/reinforced/fulltile,
@@ -8590,9 +8592,7 @@
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Sc" = (
-/turf/open/floor/wood/maple{
-	icon_state = "wood-broken"
-	},
+/turf/open/floor/wood/maple/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "Sf" = (
 /obj/effect/abstract/turf_fire/magical,
@@ -8735,7 +8735,7 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/maple,
+/turf/open/floor/wood/maple/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "SF" = (
 /obj/item/ammo_casing/spent/rifle_brass,
@@ -8813,9 +8813,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
 	},
-/turf/open/floor/wood/maple{
-	icon_state = "wood-broken"
-	},
+/turf/open/floor/wood/maple/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "SU" = (
 /turf/open/floor/plating/asteroid/whitesands/lit,
@@ -10002,7 +10000,9 @@
 	color = "#D2BC9D"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/maple,
+/turf/open/floor/wood/maple/chlorine{
+	icon_state = "wood-broken"
+	},
 /area/ruin/whitesands/settlement/blackmarket)
 "Zy" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -10117,7 +10117,9 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/open/floor/wood/maple,
+/turf/open/floor/wood/maple/chlorine{
+	icon_state = "wood-broken2"
+	},
 /area/ruin/whitesands/settlement/blackmarket)
 "ZU" = (
 /obj/item/stack/sheet/mineral/wood,
