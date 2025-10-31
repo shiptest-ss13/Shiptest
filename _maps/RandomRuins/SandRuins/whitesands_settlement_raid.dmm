@@ -422,7 +422,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/concrete/slab_3/icemoon,
+/turf/open/floor/concrete/slab_3,
 /area/ruin/whitesands/settlement/granary)
 "cD" = (
 /obj/effect/turf_decal/techfloor{
@@ -1407,7 +1407,7 @@
 	pixel_y = 4
 	},
 /obj/machinery/light/directional/east,
-/turf/open/floor/concrete/slab_3/icemoon,
+/turf/open/floor/concrete/slab_3,
 /area/ruin/whitesands/settlement/granary)
 "hV" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1437,7 +1437,6 @@
 /area/ruin/whitesands/settlement/blackmarket)
 "ia" = (
 /obj/machinery/door/airlock/wood,
-/obj/effect/mapping_helpers/airlock/sealed,
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/ruin/whitesands/settlement/pen)
 "ic" = (
@@ -2362,7 +2361,7 @@
 /mob/living/simple_animal/hostile/asteroid/goliath/beast{
 	health = 0;
 	stat = 4;
-	icon_state = "goliath_dead";
+	icon_state = "ws_goliath_dead";
 	density = 0
 	},
 /obj/effect/decal/cleanable/blood/gibs/old,
@@ -2630,7 +2629,6 @@
 /area/ruin/whitesands/settlement/doctor)
 "mO" = (
 /obj/machinery/door/airlock/wood,
-/obj/effect/mapping_helpers/airlock/sealed,
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/ruin/whitesands/settlement/pen)
 "mQ" = (
@@ -3607,7 +3605,7 @@
 	name = "Tasting The Eras";
 	desc = "An odd, old cookbook, describing archaic recipes from the distant pasts of many civilizations."
 	},
-/turf/open/floor/concrete/slab_3/icemoon,
+/turf/open/floor/concrete/slab_3,
 /area/ruin/whitesands/settlement/granary)
 "rR" = (
 /obj/structure/cable{
@@ -3683,7 +3681,7 @@
 	pixel_x = 12;
 	pixel_y = -5
 	},
-/turf/open/floor/concrete/slab_3/icemoon,
+/turf/open/floor/concrete/slab_3,
 /area/ruin/whitesands/settlement/granary)
 "sk" = (
 /obj/structure/platform,
@@ -4821,7 +4819,6 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "yC" = (
 /obj/structure/bed/dogbed,
-/mob/living/simple_animal/hostile/asteroid/goliath/beast,
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
 	dir = 2
@@ -4829,6 +4826,9 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	color = "#543C30";
 	dir = 1
+	},
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands{
+	faction = list("neutral")
 	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken"
@@ -5232,7 +5232,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
-/turf/open/floor/concrete/slab_3/icemoon,
+/turf/open/floor/concrete/slab_3,
 /area/ruin/whitesands/settlement/granary)
 "Al" = (
 /obj/structure/fence{
@@ -6280,7 +6280,7 @@
 	pixel_x = 11;
 	pixel_y = -8
 	},
-/turf/open/floor/concrete/slab_3/icemoon,
+/turf/open/floor/concrete/slab_3,
 /area/ruin/whitesands/settlement/granary)
 "Fn" = (
 /obj/structure/platform{
@@ -7181,9 +7181,7 @@
 /obj/structure/railing/thin{
 	dir = 8
 	},
-/obj/structure/platform/corner{
-	dir = 9
-	},
+/obj/structure/platform/corner,
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "JY" = (
@@ -7269,6 +7267,11 @@
 	},
 /area/ruin/whitesands/settlement/rancher)
 "Kj" = (
+/obj/structure/filingcabinet/double{
+	dir = 4;
+	pixel_x = -10;
+	pixel_y = 0
+	},
 /turf/open/floor/wood/ebony,
 /area/ruin/whitesands/settlement/fortress)
 "Kk" = (
@@ -7856,7 +7859,7 @@
 	pixel_x = 0;
 	pixel_y = 8
 	},
-/turf/open/floor/concrete/slab_3/icemoon,
+/turf/open/floor/concrete/slab_3,
 /area/ruin/whitesands/settlement/granary)
 "NE" = (
 /obj/structure/fermenting_barrel,
@@ -8295,6 +8298,23 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "Qh" = (
 /obj/structure/table/wood,
+/obj/item/paper_bin/bundlenatural{
+	pixel_x = -5;
+	pixel_y = 8
+	},
+/obj/item/pen{
+	pixel_x = 3;
+	pixel_y = 13
+	},
+/obj/item/pen/charcoal{
+	pixel_x = 7;
+	pixel_y = 14
+	},
+/obj/item/paper/crumpled/fluff/ruin{
+	pixel_x = 5;
+	pixel_y = 0;
+	default_raw_text = "Stores for winter should be enough. I hope so. The nearby travelers have told me that the coming winter chills are the coldest this planet has ever seen. I worry. This settlement had stood for eight years. We will not die from starvation. But even with our supplies, I worry again. Spacers have been circling us. Hungry, I am sure. I do not want to fend them off, but I will if I must." "
+	},
 /turf/open/floor/wood/ebony,
 /area/ruin/whitesands/settlement/fortress)
 "Qi" = (
@@ -8642,7 +8662,7 @@
 	pixel_y = 0;
 	id = "granary"
 	},
-/turf/open/floor/concrete/slab_3/icemoon,
+/turf/open/floor/concrete/slab_3,
 /area/ruin/whitesands/settlement/granary)
 "Sf" = (
 /obj/effect/abstract/turf_fire/magical,
@@ -8847,7 +8867,7 @@
 /mob/living/simple_animal/hostile/asteroid/goliath/beast{
 	health = 0;
 	stat = 4;
-	icon_state = "goliath_dead";
+	icon_state = "ws_goliath_dead";
 	density = 0
 	},
 /obj/effect/decal/cleanable/blood/gibs/old,
@@ -8971,12 +8991,6 @@
 /mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
 /turf/open/floor/plating,
 /area/ruin/whitesands/settlement/fortress)
-"Tu" = (
-/obj/structure/platform/corner{
-	dir = 9
-	},
-/turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Tv" = (
 /obj/structure/flora/rock,
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
@@ -9752,7 +9766,7 @@
 	},
 /area/ruin/whitesands/settlement/blackmarket)
 "Xz" = (
-/turf/open/floor/concrete/slab_3/icemoon,
+/turf/open/floor/concrete/slab_3,
 /area/ruin/whitesands/settlement/granary)
 "XA" = (
 /obj/effect/decal/cleanable/dirt,
@@ -12486,7 +12500,7 @@ Qn
 VF
 SU
 Zj
-Tu
+Td
 fj
 kL
 AM

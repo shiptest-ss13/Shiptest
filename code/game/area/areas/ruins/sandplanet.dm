@@ -79,7 +79,7 @@
 //Settlement Raid
 
 /area/ruin/whitesands/settlement
-	name = "Hermit Settlement"
+	name = "Planetoid Cavern"
 	icon_state = "green"
 
 /area/ruin/whitesands/settlement/greenhouse

@@ -94,7 +94,7 @@
 
 /datum/ai_behavior/basic_ranged_attack/hivebot_core/frontier
 	required_distance = 6
-	action_cooldown = 6 SECONDS
+	action_cooldown = 4 SECONDS
 	shots = 25
 	burst_interval = 0.07 SECONDS
 	avoid_friendly_fire = TRUE
