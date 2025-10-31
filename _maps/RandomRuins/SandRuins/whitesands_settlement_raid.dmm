@@ -220,12 +220,6 @@
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
-"bn" = (
-/obj/structure/platform{
-	dir = 4
-	},
-/turf/open/floor/plating/asteroid/whitesands/lit/smooth,
-/area/overmap_encounter/planetoid/sand/explored)
 "bq" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals,
 /turf/open/floor/plating/asteroid/whitesands/lit,
@@ -517,10 +511,6 @@
 	pixel_x = -10;
 	pixel_y = -2
 	},
-/obj/structure/flora/ash/cacti,
-/obj/structure/flora/ash/cacti,
-/obj/structure/flora/ash/cacti,
-/obj/structure/flora/ash/cacti,
 /obj/item/food/grown/ash_flora/mushroom_leaf,
 /obj/item/food/grown/ash_flora/mushroom_leaf{
 	pixel_x = 6;
@@ -952,7 +942,7 @@
 	},
 /area/ruin/whitesands/settlement/guardshouse)
 "fH" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/wasp/internals,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter,
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "fI" = (
@@ -1954,8 +1944,10 @@
 /turf/open/floor/plating,
 /area/ruin/whitesands/settlement/roboticist)
 "jM" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter,
-/turf/open/floor/plating/asteroid/whitesands/lit,
+/obj/structure/platform{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/whitesands/lit/smooth,
 /area/overmap_encounter/planetoid/sand/explored)
 "jO" = (
 /obj/structure/window/reinforced/fulltile,
@@ -2438,6 +2430,12 @@
 /mob/living/simple_animal/hostile/human/hermit/ranged/e11,
 /turf/open/floor/plating,
 /area/ruin/whitesands/settlement/doctor)
+"lJ" = (
+/mob/living/simple_animal/hostile/human/hermit/mayor{
+	wander = 0
+	},
+/turf/open/floor/carpet,
+/area/ruin/whitesands/settlement/fortress)
 "lM" = (
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 2;
@@ -4003,8 +4001,8 @@
 /turf/open/floor/concrete/tiles,
 /area/ruin/whitesands/settlement/butcher)
 "ud" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/shotgun,
-/turf/open/floor/plating/asteroid/whitesands/lit,
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/concrete,
 /area/overmap_encounter/planetoid/sand/explored)
 "uf" = (
 /obj/effect/abstract/turf_fire/magical,
@@ -4170,10 +4168,6 @@
 	pixel_x = -7;
 	pixel_y = -4
 	},
-/obj/structure/flora/ash/cacti,
-/obj/structure/flora/ash/cacti,
-/obj/structure/flora/ash/cacti,
-/obj/structure/flora/ash/cacti,
 /obj/item/food/grown/ash_flora/mushroom_leaf{
 	pixel_x = -5;
 	pixel_y = -1
@@ -5784,10 +5778,19 @@
 	pixel_x = 8;
 	pixel_y = 5
 	},
-/obj/structure/flora/ash/cacti,
-/obj/structure/flora/ash/cacti,
-/obj/structure/flora/ash/cacti,
-/obj/structure/flora/ash/cacti,
+/obj/item/food/grown/ash_flora/cactus_fruit,
+/obj/item/food/grown/ash_flora/cactus_fruit{
+	pixel_x = 7;
+	pixel_y = 3
+	},
+/obj/item/food/grown/ash_flora/cactus_fruit{
+	pixel_x = -11;
+	pixel_y = -2
+	},
+/obj/item/food/grown/ash_flora/cactus_fruit{
+	pixel_x = -6;
+	pixel_y = 6
+	},
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/pen)
 "Dm" = (
@@ -6372,10 +6375,19 @@
 	pixel_x = 6;
 	pixel_y = 6
 	},
-/obj/structure/flora/ash/cacti,
-/obj/structure/flora/ash/cacti,
-/obj/structure/flora/ash/cacti,
-/obj/structure/flora/ash/cacti,
+/obj/item/food/grown/ash_flora/cactus_fruit,
+/obj/item/food/grown/ash_flora/cactus_fruit{
+	pixel_x = -7;
+	pixel_y = -5
+	},
+/obj/item/food/grown/ash_flora/cactus_fruit{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/obj/item/food/grown/ash_flora/cactus_fruit{
+	pixel_x = -7;
+	pixel_y = 7
+	},
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/pen)
 "FP" = (
@@ -8018,7 +8030,7 @@
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "OU" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/shotgun,
+/mob/living/simple_animal/hostile/human/frontier/ranged/wasp/internals,
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "OY" = (
@@ -8792,9 +8804,10 @@
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/ruin/whitesands/settlement/butcher)
 "SS" = (
-/mob/living/simple_animal/hostile/human/hermit/mayor,
-/turf/open/floor/carpet,
-/area/ruin/whitesands/settlement/fortress)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/concrete,
+/area/overmap_encounter/planetoid/sand/explored)
 "ST" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
@@ -10496,8 +10509,8 @@ SU
 SU
 SU
 ZQ
-bn
-bn
+jM
+jM
 AQ
 SU
 SU
@@ -10766,7 +10779,7 @@ QE
 QE
 QE
 QE
-Nh
+ud
 Es
 lf
 SU
@@ -11015,7 +11028,7 @@ lf
 lf
 Hp
 Nh
-Nh
+ud
 oj
 SU
 SU
@@ -11101,8 +11114,8 @@ QE
 QE
 QE
 ZQ
-bn
-bn
+jM
+jM
 AQ
 SU
 SU
@@ -12713,7 +12726,7 @@ KM
 SU
 Zj
 SU
-Zj
+Xe
 if
 DK
 DK
@@ -12795,7 +12808,7 @@ aX
 VF
 SU
 SU
-OU
+nw
 Zj
 Td
 DK
@@ -14096,7 +14109,7 @@ Zj
 VF
 Zj
 VF
-ud
+SU
 Wc
 Lj
 zT
@@ -14181,7 +14194,7 @@ Tk
 Tk
 Je
 PW
-Tk
+JZ
 Tk
 Tk
 SU
@@ -14327,8 +14340,8 @@ ye
 NF
 vU
 lg
-SS
 jT
+lJ
 am
 MD
 vX
@@ -14349,7 +14362,7 @@ Zj
 Zj
 hQ
 Tk
-jM
+SU
 Zj
 Zj
 cR
@@ -14431,7 +14444,7 @@ Wc
 SU
 zT
 Oo
-Zj
+fH
 Zj
 VF
 CR
@@ -14593,8 +14606,8 @@ Zj
 TY
 cd
 VF
-VF
 CJ
+VF
 VF
 SU
 SU
@@ -14683,7 +14696,7 @@ Ii
 xD
 mG
 Zj
-fH
+Zj
 Zj
 SU
 SU
@@ -14847,7 +14860,7 @@ zF
 hP
 hP
 YR
-VF
+OU
 Zj
 VF
 VF
@@ -16581,11 +16594,11 @@ QE
 QE
 QE
 QE
-Nh
-Nh
-Hp
+ud
 Nh
 Hp
+Nh
+SS
 DI
 QE
 QE

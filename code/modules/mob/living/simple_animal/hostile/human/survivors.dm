@@ -89,6 +89,16 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/gun/ballistic/rifle/polymer
 
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter/sentry
+	name = "Hermit Sentry"
+	vision_range = 10
+	aggro_vision_range = 10
+	minimum_distance = 10
+	stop_automated_movement = 1
+	wander = 0
+	retreat_distance = 0
+	environment_smash = 0
+
 /mob/living/simple_animal/hostile/human/hermit/ranged/shotgun
 	name = "Hermit Pursuer"
 	desc ="A wild-eyed figure wielding a makeshift shotgun. The expression through their cloudy visor is fierce, and they're poised to sprint."
