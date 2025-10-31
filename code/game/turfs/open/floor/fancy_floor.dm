@@ -27,6 +27,9 @@
 /turf/open/floor/wood/maple
 	color = WOOD_COLOR_PALE
 
+/turf/open/floor/wood/maple/chlorine
+	initial_gas_mix = CHLORINATED_ATMOS
+
 /turf/open/floor/wood/ebony
 	color = WOOD_COLOR_BLACK
 

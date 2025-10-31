@@ -942,9 +942,11 @@
 	},
 /area/ruin/whitesands/settlement/guardshouse)
 "fH" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter,
-/turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/overmap_encounter/planetoid/sand/explored)
+/mob/living/simple_animal/hostile/human/hermit/mayor{
+	wander = 0
+	},
+/turf/open/floor/carpet,
+/area/ruin/whitesands/settlement/fortress)
 "fI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/east,
@@ -1944,10 +1946,8 @@
 /turf/open/floor/plating,
 /area/ruin/whitesands/settlement/roboticist)
 "jM" = (
-/obj/structure/platform{
-	dir = 4
-	},
-/turf/open/floor/plating/asteroid/whitesands/lit/smooth,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter,
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "jO" = (
 /obj/structure/window/reinforced/fulltile,
@@ -2430,12 +2430,6 @@
 /mob/living/simple_animal/hostile/human/hermit/ranged/e11,
 /turf/open/floor/plating,
 /area/ruin/whitesands/settlement/doctor)
-"lJ" = (
-/mob/living/simple_animal/hostile/human/hermit/mayor{
-	wander = 0
-	},
-/turf/open/floor/carpet,
-/area/ruin/whitesands/settlement/fortress)
 "lM" = (
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 2;
@@ -7347,6 +7341,11 @@
 	},
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/overmap_encounter/planetoid/sand/explored)
+"KJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/concrete,
+/area/overmap_encounter/planetoid/sand/explored)
 "KK" = (
 /obj/item/chair/wood,
 /obj/effect/decal/cleanable/blood/drip,
@@ -8030,8 +8029,9 @@
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "OU" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/wasp/internals,
-/turf/open/floor/plating/asteroid/whitesands/grass/lit,
+/obj/effect/mob_spawn/human/corpse/damaged/whitesands,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/concrete/pavement/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "OY" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals,
@@ -8804,9 +8804,10 @@
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/ruin/whitesands/settlement/butcher)
 "SS" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/destructible/tribal_torch/lit,
-/turf/open/floor/concrete,
+/obj/structure/platform{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/whitesands/lit/smooth,
 /area/overmap_encounter/planetoid/sand/explored)
 "ST" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -9484,6 +9485,10 @@
 "WN" = (
 /obj/structure/platform/wood/corner,
 /obj/effect/abstract/turf_fire/magical,
+/turf/open/floor/plating/asteroid/whitesands/grass/lit,
+/area/overmap_encounter/planetoid/sand/explored)
+"WO" = (
+/mob/living/simple_animal/hostile/human/frontier/ranged/wasp/internals,
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "WQ" = (
@@ -10509,8 +10514,8 @@ SU
 SU
 SU
 ZQ
-jM
-jM
+SS
+SS
 AQ
 SU
 SU
@@ -11114,8 +11119,8 @@ QE
 QE
 QE
 ZQ
-jM
-jM
+SS
+SS
 AQ
 SU
 SU
@@ -14194,7 +14199,7 @@ Tk
 Tk
 Je
 PW
-JZ
+OU
 Tk
 Tk
 SU
@@ -14341,7 +14346,7 @@ NF
 vU
 lg
 jT
-lJ
+fH
 am
 MD
 vX
@@ -14444,7 +14449,7 @@ Wc
 SU
 zT
 Oo
-fH
+jM
 Zj
 VF
 CR
@@ -14860,7 +14865,7 @@ zF
 hP
 hP
 YR
-OU
+WO
 Zj
 VF
 VF
@@ -16598,7 +16603,7 @@ ud
 Nh
 Hp
 Nh
-SS
+KJ
 DI
 QE
 QE
