@@ -2936,9 +2936,9 @@
 	name = "equipment locker";
 	req_access = list(1)
 	},
-/obj/item/attachment/gun/riot{
-	pixel_x = 4;
-	pixel_y = 1
+/obj/item/attachment/gun/energy/e_gun{
+	pixel_x = 3;
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -4286,6 +4286,10 @@
 	icon_state = "0-2"
 	},
 /obj/item/radio/intercom/directional/west,
+/obj/item/flashlight/lamp{
+	pixel_x = 5;
+	pixel_y = 10
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/dormfour)
 "HI" = (
@@ -5062,6 +5066,10 @@
 	icon_state = "0-2"
 	},
 /obj/item/radio/intercom/directional/east,
+/obj/item/flashlight/lamp/green{
+	pixel_x = 6;
+	pixel_y = 11
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/dormtwo)
 "Oc" = (
