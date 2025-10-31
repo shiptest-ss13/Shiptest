@@ -124,7 +124,7 @@
 	icon_state = "sec"
 
 /area/ruin/whitesands/settlement/fortress
-	name = "Mayor's Fortress
+	name = "Mayor's Fortress"
 	icon_state = "armory"
 
 /area/ruin/whitesands/settlement/shuttle_one
