@@ -125,20 +125,19 @@
 
 /mob/living/basic/hivebot/strong/frontier
 	name = "hijacked heavy hivebot"
-	desc = "A towering scrap-clad monolith. Hatred radiates out from the sensors that adorn it, a thin steel plate proclaiming 'FREE THE FRONTIER' around its front."
+	desc = "A towering scrap-clad monolith. Hatred radiates out from the sensors that adorn it, a thin steel plate proclaiming 'FREE THE FRONTIER' around its front. Integrated Spitters are attached to its sides."
 	calibre = /obj/item/ammo_casing/c9mm
 	firing_sound = 'sound/weapons/gun/smg/spitter.ogg'
 	faction = list(FACTION_FRONTIERSMEN)
 	ai_controller = /datum/ai_controller/basic_controller/hivebot/ranged
 
 	aggro_quips = list("CODE 87-22!!",
-	"SLAVED TO SYSTEM!!",
-	"DEFENDING AREA!!",
+	"SLAVED TO CLIP!!",
+	"DEFENDING THE FRONTIER!!",
 	"CONTACT MADE!!",
-	"ERADICATE HOSTILES!!",
-	"RECEIVING COURSE!!",
+	"FREE THE FRONTIER!!",
 	"TARGET LOCKED!!",
-	"CANNON ARMED!!",
+	"SPITTER ARMED!!",
 	)
 
 /mob/living/basic/hivebot/core //slave to the system
