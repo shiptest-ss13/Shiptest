@@ -42,6 +42,9 @@
 /mob/living/simple_animal/hostile/human/hermit/survivor/passive
 	name = "Hermit Villager"
 	desc = "A panicked, wild figure, wearing tattered mining equipment and frozen in fear. They regard you with cautiously, shrinking away as to not be seen."
+	r_hand = null
+	melee_damage_lower = 5
+	melee_damage_upper = 5
 	faction = list(FACTION_ANTAG_HERMITS, FACTION_NEUTRAL)
 
 /mob/living/simple_animal/hostile/human/hermit/survivor/lunatic
