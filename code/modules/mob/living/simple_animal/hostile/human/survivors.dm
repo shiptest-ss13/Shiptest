@@ -307,7 +307,7 @@
 
 /mob/living/simple_animal/hostile/human/hermit/mayor/Aggro()
 	..()
-	summon_backup(10)
+	summon_backup(15)
 	say("TO ME!!")
 
 /datum/outfit/mayor
