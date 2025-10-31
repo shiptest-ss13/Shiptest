@@ -938,12 +938,12 @@
 	dir = 8
 	},
 /obj/item/storage/toolbox/ammo/c10mm{
-	pixel_x = -9;
-	pixel_y = -2
+	pixel_x = -7;
+	pixel_y = 20
 	},
 /obj/item/storage/toolbox/ammo/a308{
-	pixel_x = 4;
-	pixel_y = 5
+	pixel_x = 6;
+	pixel_y = 20
 	},
 /obj/structure/closet/secure_closet/wall/directional/north{
 	name = "ammo locker";
@@ -952,6 +952,10 @@
 	req_access_txt = "1";
 	pixel_x = -2;
 	pixel_y = 29
+	},
+/obj/item/storage/toolbox/ammo/c9mm{
+	pixel_x = -2;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
