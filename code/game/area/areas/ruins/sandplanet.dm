@@ -101,7 +101,7 @@
 
 /area/ruin/whitesands/settlement/doctor
 	name = "Doctor Home"
-	icon_state = "med"
+	icon_state = "surgery"
 
 /area/ruin/whitesands/settlement/roboticist
 	name = "Sand House"
@@ -121,7 +121,7 @@
 
 /area/ruin/whitesands/settlement/guardshouse
 	name = "Guard Barracks"
-	icon_state = "sec"
+	icon_state = "security"
 
 /area/ruin/whitesands/settlement/fortress
 	name = "Mayor's Fortress"
