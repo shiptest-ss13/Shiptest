@@ -115,6 +115,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/ebony,
 /area/ruin/whitesands/settlement/fortress)
+"aE" = (
+/obj/effect/decal/cleanable/blood,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/turf/open/floor/plating/asteroid/whitesands/grass/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "aG" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -1558,12 +1564,10 @@
 /turf/open/floor/wood/maple,
 /area/ruin/whitesands/settlement/guardshouse)
 "iL" = (
-/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
-/obj/effect/turf_decal/trimline/transparent/lightgrey/line{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/whitesands/settlement/fortress)
+/obj/structure/flora/ash/cacti,
+/obj/item/ammo_casing/spent/pistol_brass,
+/turf/open/floor/plating/asteroid/whitesands/grass/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "iP" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#D2BC9D"
@@ -2899,7 +2903,6 @@
 /turf/open/floor/wood/maple,
 /area/ruin/whitesands/settlement/guardshouse)
 "ou" = (
-/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
 /obj/effect/turf_decal/trimline/transparent/lightgrey/line,
 /obj/machinery/atmospherics/components/unary/passive_vent{
 	dir = 1
@@ -4376,6 +4379,12 @@
 /obj/structure/bonfire/prelit,
 /turf/open/floor/concrete/tiles,
 /area/ruin/whitesands/settlement/butcher)
+"wg" = (
+/obj/effect/turf_decal/trimline/transparent/lightgrey/line,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/settlement/fortress)
 "wh" = (
 /turf/template_noop,
 /area/template_noop)
@@ -4595,6 +4604,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken"
 	},
@@ -4851,7 +4861,6 @@
 /turf/open/floor/wood/maple/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
 "yT" = (
-/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
 /obj/effect/turf_decal/siding/wood{
 	color = "#D2BC9D";
 	dir = 1
@@ -6576,6 +6585,11 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/settlement/guardshouse)
+"GL" = (
+/obj/effect/mob_spawn/human/corpse/damaged/whitesands,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "GN" = (
 /obj/structure/railing/thin/corner{
 	dir = 4
@@ -7993,6 +8007,12 @@
 /obj/effect/abstract/turf_fire/magical,
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/rancher)
+"OA" = (
+/obj/effect/mob_spawn/human/corpse/damaged/whitesands,
+/obj/effect/decal/cleanable/blood,
+/obj/item/ammo_casing/spent/pistol_brass,
+/turf/open/floor/plating/asteroid/whitesands/grass/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "OG" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -8741,6 +8761,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/maple/chlorine,
 /area/ruin/whitesands/settlement/blackmarket)
+"SE" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
+/turf/open/floor/plating,
+/area/ruin/whitesands/settlement/fortress)
 "SF" = (
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/item/ammo_casing/spent/rifle_brass,
@@ -9713,6 +9738,12 @@
 /obj/structure/railing/wood,
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/ruin/whitesands/settlement/pen)
+"XF" = (
+/obj/effect/mob_spawn/human/corpse/damaged/whitesands,
+/obj/effect/decal/cleanable/blood,
+/obj/item/ammo_casing/spent/pistol_brass,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "XK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood/end{
@@ -9818,7 +9849,11 @@
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "YA" = (
-/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "YB" = (
@@ -11846,8 +11881,8 @@ Tk
 Tk
 SU
 Zj
-SU
-mS
+zT
+GL
 Zj
 SU
 SU
@@ -11930,7 +11965,7 @@ Zj
 Tk
 Tk
 Tk
-SU
+zT
 SU
 SU
 VF
@@ -12008,11 +12043,11 @@ Tk
 SU
 Zj
 SU
-SU
+zT
 SU
 SU
 Tk
-JZ
+OU
 Zj
 SU
 VF
@@ -12090,8 +12125,8 @@ SU
 SU
 SU
 SU
-YA
-SU
+Xq
+zT
 SU
 El
 SU
@@ -12424,7 +12459,7 @@ Zj
 Tk
 SU
 Zj
-Zj
+Qn
 VF
 SU
 Zj
@@ -12506,8 +12541,8 @@ UR
 SU
 Tk
 VO
-Zj
-VF
+Qn
+hR
 VF
 SU
 Bp
@@ -12586,11 +12621,11 @@ Vz
 VF
 SU
 VO
-SU
+Ci
 Tk
-SU
-kB
-EA
+Ci
+iL
+aE
 Xe
 lT
 fj
@@ -12668,11 +12703,11 @@ DK
 pv
 Xq
 zT
-SU
-SU
-SU
-VF
-nw
+YA
+uA
+jQ
+hR
+OA
 hD
 Sf
 fj
@@ -12750,9 +12785,9 @@ DK
 Ex
 SU
 Xe
-Xq
+XF
 SU
-VF
+ZC
 VF
 zs
 Zj
@@ -12830,12 +12865,12 @@ jK
 PC
 DK
 AQ
-Zj
+Qn
+uA
+Xn
 SU
-Tk
-SU
-SU
-VF
+Ci
+wT
 VF
 NZ
 VF
@@ -12914,11 +12949,11 @@ jO
 Fn
 Zj
 SU
-Tk
-Zj
+Xn
+fv
 SU
-jQ
-hR
+Ci
+ZC
 VF
 VF
 Qb
@@ -13529,7 +13564,7 @@ Qb
 Qb
 Hh
 Jc
-iL
+Jc
 NL
 Hh
 Hh
@@ -13611,7 +13646,7 @@ Qb
 Qb
 Hh
 Qd
-Kf
+SE
 Ve
 Hh
 gQ
@@ -13698,7 +13733,7 @@ EQ
 Hh
 gQ
 Ve
-yZ
+wg
 Gl
 OP
 Hh
@@ -14846,7 +14881,7 @@ EQ
 Hh
 rC
 Ve
-yZ
+wg
 xu
 Gl
 Hh
