@@ -36,6 +36,10 @@
 	light_power = 0.6
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/lit
 
+/turf/open/floor/plating/asteroid/whitesands/lit/smooth
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH, SMOOTH_GROUP_FLOOR_HEXACRETE)
+
 /turf/open/floor/plating/asteroid/whitesands/rocky
 	has_footsteps = FALSE
 
