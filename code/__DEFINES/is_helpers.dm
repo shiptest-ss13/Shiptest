@@ -6,6 +6,8 @@
 
 #define isdatum(thing) (istype(thing, /datum))
 
+#define isimage(thing) (istype(thing, /image))
+
 #define isweakref(D) (istype(D, /datum/weakref))
 
 #define isgenerator(A) (istype(A, /generator))
