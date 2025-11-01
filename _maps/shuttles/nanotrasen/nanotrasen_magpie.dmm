@@ -1874,13 +1874,17 @@
 	pixel_y = 2;
 	pixel_x = 2
 	},
-/obj/item/stock_parts/cell/high{
-	pixel_x = -15
-	},
 /obj/effect/turf_decal/box/white,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/contraband/hacking_guide{
 	pixel_y = -32
+	},
+/obj/item/stock_parts/micro_laser/high{
+	pixel_x = -15;
+	pixel_y = 8
+	},
+/obj/item/stock_parts/cell/high{
+	pixel_x = -15
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
