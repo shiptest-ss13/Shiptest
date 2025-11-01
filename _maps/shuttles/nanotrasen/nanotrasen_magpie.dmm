@@ -2206,9 +2206,9 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/airalarm/directional/south,
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 25
+/obj/machinery/computer/helm/viewscreen/directional/east{
+	layer = 2.7;
+	pixel_y = 2
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/ore{
@@ -5781,9 +5781,9 @@
 	dir = 10
 	},
 /obj/structure/table/reinforced,
-/obj/structure/noticeboard{
-	dir = 4;
-	pixel_x = -25
+/obj/machinery/computer/helm/viewscreen/directional/west{
+	layer = 2.7;
+	pixel_y = 2
 	},
 /obj/item/flashlight/lamp{
 	pixel_x = -6;
@@ -6401,6 +6401,7 @@
 /obj/item/pen/red{
 	pixel_y = -6
 	},
+/obj/item/camera,
 /obj/item/disk/holodisk/ship/magpie/securitynotice,
 /obj/item/stamp/nanotrasen/vigilitas,
 /turf/open/floor/plasteel/dark,
