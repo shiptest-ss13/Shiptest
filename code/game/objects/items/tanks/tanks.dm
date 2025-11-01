@@ -330,7 +330,7 @@
 			warning_alert = FALSE
 			critical_warning_alert = FALSE
 			empty_alert = FALSE
-		if(((2 * ONE_ATMOSPHERE) to (5 * ONE_ATMOSPHERE)))
+		if((2 * ONE_ATMOSPHERE) to (5 * ONE_ATMOSPHERE))
 			if(!warning_alert)
 				warning_alert = TRUE
 				playsound(src, 'sound/machines/twobeep_high.ogg', 30, FALSE)
