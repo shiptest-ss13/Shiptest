@@ -2094,10 +2094,13 @@
 /obj/item/clothing/neck/cloak/nanotrasen,
 /obj/item/radio/headset/nanotrasen,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/item/pda/heads/head_of_personnel,
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
 	dir = 1
+	},
+/obj/item/melee/classic_baton/telescopic,
+/obj/item/pda/heads/head_of_personnel{
+	pixel_x = 8
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/commad)
@@ -4047,6 +4050,16 @@
 	},
 /obj/effect/turf_decal/number/four,
 /obj/item/storage/part_replacer,
+/obj/item/clothing/glasses/welding{
+	pixel_y = 4
+	},
+/obj/item/clothing/glasses/meson/engine,
+/obj/item/storage/belt/utility/full/engi{
+	pixel_y = -4
+	},
+/obj/item/clothing/gloves/color/yellow{
+	pixel_y = -10
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "DN" = (
@@ -4662,7 +4675,9 @@
 	},
 /obj/item/radio/headset/nanotrasen/captain,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/item/pda/captain,
+/obj/item/pda/captain{
+	pixel_x = 8
+	},
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
 	dir = 1
@@ -5674,12 +5689,7 @@
 	pixel_y = -7;
 	pixel_x = 5
 	},
-/obj/item/clothing/gloves/color/yellow{
-	pixel_x = -5;
-	pixel_y = -10
-	},
 /obj/item/clothing/gloves/color/black{
-	pixel_x = 5;
 	pixel_y = -10
 	},
 /obj/item/clothing/suit/nanotrasen/vest{
@@ -5695,13 +5705,6 @@
 /obj/item/clothing/head/hardhat/nanotrasen/blue{
 	pixel_x = 4;
 	pixel_y = 8
-	},
-/obj/item/clothing/glasses/meson/engine,
-/obj/item/clothing/glasses/welding{
-	pixel_y = 4
-	},
-/obj/item/storage/belt/utility/full/engi{
-	pixel_y = -4
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
