@@ -1,52 +1,51 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
-	"map_name": "Magpie-class Exploration Frigate",
+	"map_name": "Magpie-class Exploration Craft",
 	"prefix": "NTSV",
 	"manufacturer": "Nanotrasen Spaceworks",
 	"faction": "/datum/faction/nt",
 	"namelists": [
 		"NANOTRASEN",
 		"SPACE",
-		"MYTHOLOGICAL",
-		"WEAPONS"
+		"MYTHOLOGICAL"
 	],
 	"map_short_name": "Magpie-class",
 	"map_path": "_maps/shuttles/nanotrasen/nanotrasen_magpie.dmm",
 	"token_icon_state": "ship_generic",
-	"description": "Often referred to as the \"sister\" of the Harrier-class, the Magpie-class is similar in age, having been recommissioned for deep frontier surveys and other host of actives, often being that of finding former Nanotrasen sites for restoration or deconstruction by N&S.",
+	"description": "First designed in FS-464 as a cheap, multi-role workhorse for the company's colonies; the Magpie entered mass-production two years later, becoming a familiar sight in the Frontier as a civilian craft found in the hands of both Nanotrasen and civilian purchasers. Post-ICW, the Magpie has been co-opted for use as a general exploration vessel in the company's effort to recoup their losses in the conflict. It's received an updated design to enable longer-range voyages, sacrificing passenger space for work facilities and receiving an overhauled sensor system. Popular among the corporation's logisticians for it's high cost efficiency, crews of this vessel are treated to inexpensive accommodations; featuring a shared dorm space, stocked kitchen with appliances, and a workaday meeting office. This hull is widely remembered in the public eye for a series of holosign advertisements targeting core world audiences, which depicted families of various nationalities being transported to an idealistic, company-world suburb.",
 	"tags": ["Generalist"],
-	"limit": 2,
-	"starting_funds": 1500,
+	"limit": 1,
+	"starting_funds": 2500,
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/nanotrasen/captain",
+			"outfit": "/datum/outfit/job/nanotrasen/captain/empty",
 			"officer": true,
 			"slots": 1
 		},
 		"First Officer": {
-			"outfit": "/datum/outfit/job/nanotrasen/hop",
+			"outfit": "/datum/outfit/job/nanotrasen/hop/empty",
 			"officer": true,
 			"slots": 1
 		},
 		"Security Officer": {
-			"outfit": "/datum/outfit/job/nanotrasen/security/disarmed",
+			"outfit": "/datum/outfit/job/nanotrasen/security/empty",
 			"slots": 1
 		},
 		"Medical Doctor": {
-			"outfit": "/datum/outfit/job/nanotrasen/doctor",
+			"outfit": "/datum/outfit/job/nanotrasen/doctor/empty",
 			"slots": 1
 		},
 		"Engineer": {
-			"outfit": "/datum/outfit/job/nanotrasen/engineer",
+			"outfit": "/datum/outfit/job/nanotrasen/engineer/empty",
 			"slots": 1
 		},
-		"Field Miner": {
-			"outfit": "/datum/outfit/job/nanotrasen/miner/no_equipment",
+		"Miner": {
+			"outfit": "/datum/outfit/job/nanotrasen/miner/empty",
 			"slots": 1
 		},
 		"Assistant": {
-			"outfit": "/datum/outfit/job/nanotrasen/assistant",
-			"slots": 1
+			"outfit": "/datum/outfit/job/nanotrasen/assistant/empty",
+			"slots": 2
 		}
 	},
 	"enabled": true
