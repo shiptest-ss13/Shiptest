@@ -839,6 +839,27 @@
 /obj/structure/closet/secure_closet/cabinet{
 	anchored = 1
 	},
+/obj/item/clothing/suit/hooded/survivor/green{
+	pixel_x = -9;
+	pixel_y = -1
+	},
+/obj/item/clothing/suit/hooded/survivor/green{
+	pixel_x = -5;
+	pixel_y = 6
+	},
+/obj/item/clothing/suit/hooded/survivor{
+	pixel_x = -7;
+	pixel_y = 10
+	},
+/obj/item/clothing/shoes/workboots/mining,
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = -3;
+	pixel_y = -7
+	},
+/obj/item/spacecash/bundle/smallrand{
+	pixel_x = 6;
+	pixel_y = 8
+	},
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/guardshouse)
 "eI" = (
@@ -1167,6 +1188,27 @@
 	anchored = 1
 	},
 /obj/machinery/light/dim/directional/north,
+/obj/item/clothing/suit/hooded/survivor{
+	pixel_x = -7;
+	pixel_y = -1
+	},
+/obj/item/clothing/suit/hooded/survivor{
+	pixel_x = -3;
+	pixel_y = 5
+	},
+/obj/item/clothing/suit/hooded/survivor/brown{
+	pixel_x = -6;
+	pixel_y = 8
+	},
+/obj/item/clothing/shoes/workboots/mining,
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = -2;
+	pixel_y = -7
+	},
+/obj/item/spacecash/bundle/smallrand{
+	pixel_x = 5;
+	pixel_y = 9
+	},
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/guardshouse)
 "gP" = (
@@ -2029,16 +2071,40 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/guardshouse)
 "kk" = (
-/obj/structure/guncloset,
+/obj/structure/closet/secure_closet/cabinet,
 /obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 8
+	dir = 1
 	},
-/obj/item/gun/ballistic/rifle/polymer,
-/obj/item/gun/ballistic/rifle/polymer,
-/obj/item/gun/ballistic/rifle/polymer,
-/obj/item/gun/ballistic/automatic/smg/skm_carbine,
-/turf/open/floor/concrete/slab_4/whitesands,
-/area/ruin/whitesands/settlement/guardshouse)
+/obj/item/clothing/suit/hooded/survivor{
+	pixel_x = 0;
+	pixel_y = 10
+	},
+/obj/item/clothing/suit/hooded/survivor{
+	pixel_x = -4;
+	pixel_y = 8
+	},
+/obj/item/clothing/suit/hooded/survivor/green{
+	pixel_x = -7;
+	pixel_y = 6
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = 1;
+	pixel_y = -2
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = 2;
+	pixel_y = 6
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = -8;
+	pixel_y = -1
+	},
+/obj/item/spacecash/bundle/pocketchange{
+	pixel_x = 5;
+	pixel_y = 8
+	},
+/turf/open/floor/concrete/tiles,
+/area/ruin/whitesands/settlement/fortress)
 "kl" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -2443,6 +2509,30 @@
 	},
 /obj/effect/decal/cleanable/blood/drip,
 /obj/structure/closet/secure_closet/cabinet,
+/obj/item/clothing/suit/hooded/survivor/brown{
+	pixel_x = -9;
+	pixel_y = 9
+	},
+/obj/item/clothing/suit/hooded/survivor/green{
+	pixel_x = -9;
+	pixel_y = 5
+	},
+/obj/item/clothing/suit/hooded/survivor/green{
+	pixel_x = -9;
+	pixel_y = 0
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = 3;
+	pixel_y = 5
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = 2;
+	pixel_y = 11
+	},
+/obj/item/spacecash/bundle/smallrand{
+	pixel_x = 3;
+	pixel_y = -4
+	},
 /turf/open/floor/wood/walnut/chlorine{
 	icon_state = "wood-broken"
 	},
@@ -2747,6 +2837,34 @@
 /obj/effect/turf_decal/borderfloor,
 /obj/structure/closet/secure_closet/cabinet,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/suit/hooded/survivor/yellow{
+	pixel_x = 5;
+	pixel_y = 7
+	},
+/obj/item/clothing/suit/hooded/survivor/yellow{
+	pixel_x = -5;
+	pixel_y = 12
+	},
+/obj/item/clothing/suit/hooded/survivor/brown{
+	pixel_x = -8;
+	pixel_y = 8
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = -6;
+	pixel_y = -8
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = -11;
+	pixel_y = 0
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = -10;
+	pixel_y = -3
+	},
+/obj/item/spacecash/bundle/smallrand{
+	pixel_x = 8;
+	pixel_y = -5
+	},
 /turf/open/floor/concrete/tiles,
 /area/ruin/whitesands/settlement/butcher)
 "nE" = (
@@ -2804,6 +2922,15 @@
 "nX" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
+	},
+/obj/item/clothing/suit/hooded/survivor,
+/obj/item/clothing/suit/hooded/survivor/brown{
+	pixel_x = 18;
+	pixel_y = -1
+	},
+/obj/item/clothing/suit/hooded/survivor/green{
+	pixel_x = 15;
+	pixel_y = -9
 	},
 /turf/open/floor/concrete/tiles,
 /area/ruin/whitesands/settlement/butcher)
@@ -4451,6 +4578,23 @@
 	},
 /obj/machinery/light/broken/directional/west,
 /obj/structure/closet/secure_closet/cabinet,
+/obj/item/clothing/suit/hooded/survivor/brown{
+	pixel_x = 0;
+	pixel_y = 10
+	},
+/obj/item/clothing/suit/hooded/survivor/jermit{
+	pixel_x = -9;
+	pixel_y = 5
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = -11;
+	pixel_y = -6
+	},
+/obj/item/spacecash/bundle/pocketchange,
+/obj/item/spacecash/bundle/pocketchange{
+	pixel_x = 4;
+	pixel_y = -7
+	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken"
 	},
@@ -4470,6 +4614,11 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/guncloset,
+/obj/item/gun/ballistic/rifle/polymer,
+/obj/item/gun/ballistic/rifle/polymer,
+/obj/item/gun/ballistic/rifle/polymer,
+/obj/item/gun/ballistic/automatic/smg/skm_carbine,
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken3"
 	},
@@ -5873,6 +6022,34 @@
 	anchored = 1;
 	welded = 1
 	},
+/obj/item/clothing/suit/hooded/survivor/green{
+	pixel_x = 9;
+	pixel_y = 8
+	},
+/obj/item/clothing/suit/hooded/survivor/jermit{
+	pixel_x = 1;
+	pixel_y = 8
+	},
+/obj/item/clothing/suit/hooded/survivor/yellow{
+	pixel_x = -8;
+	pixel_y = 8
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = -9;
+	pixel_y = -2
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = -9;
+	pixel_y = -5
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = -8;
+	pixel_y = -8
+	},
+/obj/item/spacecash/bundle/smallrand{
+	pixel_x = 6;
+	pixel_y = -5
+	},
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken"
 	},
@@ -5936,6 +6113,25 @@
 	},
 /obj/effect/turf_decal/siding/wood{
 	color = "#D2BC9D"
+	},
+/obj/item/clothing/suit/hooded/survivor/brown{
+	pixel_x = -6;
+	pixel_y = -3
+	},
+/obj/item/clothing/suit/hooded/survivor{
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/obj/item/clothing/suit/hooded/survivor/green{
+	pixel_x = -7;
+	pixel_y = 5
+	},
+/obj/item/clothing/shoes/workboots/mining,
+/obj/item/clothing/shoes/workboots/mining,
+/obj/item/spacecash/bundle/pocketchange,
+/obj/item/spacecash/bundle/pocketchange{
+	pixel_x = 4;
+	pixel_y = -8
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/whitesands/settlement/roboticist)
@@ -6174,6 +6370,31 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
+	},
+/obj/item/clothing/suit/hooded/survivor{
+	pixel_x = 9;
+	pixel_y = 9
+	},
+/obj/item/clothing/suit/hooded/survivor/brown{
+	pixel_x = 0;
+	pixel_y = 7
+	},
+/obj/item/clothing/suit/hooded/survivor/jermit{
+	pixel_x = -7;
+	pixel_y = 5
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = -12;
+	pixel_y = -1
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = -10;
+	pixel_y = -10
+	},
+/obj/item/spacecash/bundle/pocketchange,
+/obj/item/spacecash/bundle/pocketchange{
+	pixel_x = 9;
+	pixel_y = -5
 	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/settlement/residence)
@@ -7743,6 +7964,27 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/item/clothing/suit/hooded/survivor{
+	pixel_x = -1;
+	pixel_y = 9
+	},
+/obj/item/clothing/suit/hooded/survivor/brown{
+	pixel_x = -7;
+	pixel_y = 8
+	},
+/obj/item/clothing/suit/hooded/survivor/brown{
+	pixel_x = -8;
+	pixel_y = 5
+	},
+/obj/item/clothing/shoes/workboots/mining,
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = -7;
+	pixel_y = -3
+	},
+/obj/item/spacecash/bundle/pocketchange{
+	pixel_x = 3;
+	pixel_y = 6
+	},
 /turf/open/floor/concrete/tiles,
 /area/ruin/whitesands/settlement/fortress)
 "MY" = (
@@ -7827,6 +8069,10 @@
 	},
 /obj/machinery/atmospherics/components/unary/passive_vent{
 	dir = 8
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = 10;
+	pixel_y = 13
 	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken"
@@ -9801,6 +10047,26 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/spacecash/bundle/pocketchange{
+	pixel_x = 11;
+	pixel_y = -6
+	},
+/obj/item/clothing/suit/hooded/survivor{
+	pixel_x = 1;
+	pixel_y = 8
+	},
+/obj/item/clothing/suit/hooded/survivor/brown{
+	pixel_x = -4;
+	pixel_y = 9
+	},
+/obj/item/clothing/suit/hooded/survivor/green{
+	pixel_x = -8;
+	pixel_y = 6
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_x = -6;
+	pixel_y = -6
+	},
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/residence)
 "XS" = (
@@ -15247,7 +15513,7 @@ Hh
 yE
 iA
 dt
-MX
+kk
 Hh
 Hh
 Hh
@@ -15265,7 +15531,7 @@ pX
 Uc
 Zd
 tt
-kk
+pX
 hP
 Xc
 zR
