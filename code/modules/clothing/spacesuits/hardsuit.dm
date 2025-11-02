@@ -460,6 +460,7 @@
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 	slowdown = 1
 	jetpack = null
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/old
 	name = "worn blood-red hardsuit helmet"
@@ -468,6 +469,7 @@
 	icon_state = "hardsuit1-old"
 	item_state = "old_syndie_helm"
 	hardsuit_type = "old"
+	supports_variations = KEPORI_VARIATION
 
 //Elite Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite
