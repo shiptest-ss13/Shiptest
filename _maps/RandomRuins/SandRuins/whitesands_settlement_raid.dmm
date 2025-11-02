@@ -398,7 +398,9 @@
 /turf/open/floor/concrete/tiles,
 /area/ruin/whitesands/settlement)
 "cz" = (
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
+	},
 /obj/item/storage/box/ammo/c9mm_surplus,
 /obj/item/storage/box/ammo/c9mm_surplus,
 /obj/item/storage/box/ammo/c9mm_surplus,
@@ -2138,7 +2140,9 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/whitesands/settlement/doctor)
 "kq" = (
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
+	},
 /obj/item/storage/toolbox/ammo/a308{
 	pixel_x = -5;
 	pixel_y = -5
@@ -10271,7 +10275,9 @@
 /turf/open/floor/wood/maple,
 /area/ruin/whitesands/settlement/greenhouse)
 "Zd" = (
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
+	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
