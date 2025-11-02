@@ -48,6 +48,14 @@
 	cost = 500
 	contains = list(/obj/item/storage/firstaid/radiation)
 
+/datum/supply_pack/medical/firstaidroumain_single
+	name = "Roumain Medical Kit Single-Pack"
+	desc = "Contains one first aid kit filled with natural medicine commonly used by the Saint-Roumain Militia."
+	cost = 400
+	contains = list(/obj/item/storage/firstaid/roumain)
+	faction = /datum/faction/srm
+	faction_discount = 10
+
 /*
 		Tools
 */
