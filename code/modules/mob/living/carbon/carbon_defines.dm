@@ -51,12 +51,12 @@
 
 	var/list/icon_render_keys = list()
 	var/list/bodyparts = list(
-		/obj/item/bodypart/chest,
-		/obj/item/bodypart/head,
-		/obj/item/bodypart/l_arm,
-		/obj/item/bodypart/r_arm,
-		/obj/item/bodypart/leg/right,
-		/obj/item/bodypart/leg/left
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left
 	)
 
 	var/list/hand_bodyparts = list() ///a collection of arms (or actually whatever the fug /bodyparts you monsters use to wreck my systems)
