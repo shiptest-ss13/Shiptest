@@ -1451,10 +1451,13 @@
 		/obj/item/stock_parts/micro_laser = 2)
 
 /obj/item/circuitboard/machine/shuttle/engine/electric/premium
-	name = "High Performance Ion Thruster (Machine Board)"
+	name = "Ion Thruster (Machine Board)"
 	build_path = /obj/machinery/power/shuttle/engine/electric/premium
-	req_components = list(/obj/item/stock_parts/capacitor/super = 3,
-		/obj/item/stock_parts/micro_laser/ultra = 3)
+	// this makes maploaded engines of this type start with T3 parts
+	def_components = list(
+		/obj/item/stock_parts/capacitor = /obj/item/stock_parts/capacitor/super,
+		/obj/item/stock_parts/micro_laser = /obj/item/stock_parts/micro_laser/ultra
+		)
 
 /obj/item/circuitboard/machine/shuttle/engine/expulsion
 	name = "Expulsion Thruster (Machine Board)"

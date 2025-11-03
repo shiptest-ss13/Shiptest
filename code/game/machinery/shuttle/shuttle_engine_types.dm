@@ -218,12 +218,9 @@
 	thrust = 2
 	power_per_burn = 70000
 
+// This thruster is the same as a standard thruster, but it starts with T3 parts
 /obj/machinery/power/shuttle/engine/electric/premium
-	name = "high performance ion thruster"
-	desc = "An expensive variant of a standard ion thruster, using highest quality components in order to achieve much better performance."
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/electric/premium
-	thrust = 10
-	power_per_burn = 50000
 
 /obj/machinery/power/smes/shuttle
 	name = "electric engine precharger"
