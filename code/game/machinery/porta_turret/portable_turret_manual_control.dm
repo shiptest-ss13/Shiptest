@@ -48,7 +48,7 @@
 		return FALSE
 	if(remote_controller)
 		if(warning_message)
-			to_chat(remote_controller, "<span class='warning'>Your uplink to [src] has been severed!</span>")
+			to_chat(remote_controller, span_warning("Your uplink to [src] has been severed!"))
 		quit_action.Remove(remote_controller)
 		toggle_action.Remove(remote_controller)
 		remote_controller.click_intercept = null
@@ -57,12 +57,12 @@
 	remote_controller = null
 	return TRUE
 
-/obj/machinery/porta_turret/proc/InterceptClickOn(mob/living/caller, params, atom/A)
+/obj/machinery/porta_turret/proc/InterceptClickOn(mob/living/clicker, params, atom/A)
 	if(!manual_control)
 		return FALSE
-	if(!can_interact(caller))
+	if(!can_interact(clicker))
 		remove_control()
 		return FALSE
-	log_combat(caller,A,"fired with manual turret control at")
+	log_combat(clicker,A,"fired with manual turret control at")
 	target(A)
 	return TRUE

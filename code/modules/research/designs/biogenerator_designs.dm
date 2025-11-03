@@ -63,7 +63,7 @@
 	id = "mcube"
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass= 250)
-	build_path = /obj/item/reagent_containers/food/snacks/monkeycube
+	build_path = /obj/item/food/monkeycube
 	category = list("initial","Food")
 
 /datum/design/ez_nut   //easy nut :)
@@ -186,14 +186,6 @@
 	build_path = /obj/item/clothing/accessory/holster
 	category = list("initial","Organic Materials")
 
-/datum/design/rice_hat
-	name = "Rice Hat"
-	id = "rice_hat"
-	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass= 300)
-	build_path = /obj/item/clothing/head/rice_hat
-	category = list("initial","Organic Materials")
-
 /datum/design/rngplant
 	name = "SYNTHESIS"
 	id = "rngplant"
@@ -223,5 +215,5 @@
 	id = "seaweedsheet"
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass = 60)
-	build_path = /obj/item/reagent_containers/food/snacks/grown/seaweed/sheet
+	build_path = /obj/item/food/grown/seaweed
 	category = list("initial","Food")

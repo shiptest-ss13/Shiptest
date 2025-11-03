@@ -1,6 +1,7 @@
 /datum/supply_pack/canister
-	group = "Gas Canisters"
+	category = "Gas Canisters"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /*
 		Canisters

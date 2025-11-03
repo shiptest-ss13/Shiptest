@@ -261,12 +261,7 @@ or something covering your eyes."
 	var/mob/living/L = usr
 	if(L != owner)
 		return
-	to_chat(L, "<span class='mind_control'>[command]</span>")
-
-/atom/movable/screen/alert/drunk //Not implemented
-	name = "Drunk"
-	desc = "All that alcohol you've been drinking is impairing your speech, motor skills, and mental cognition. Make sure to act like it."
-	icon_state = "drunk"
+	to_chat(L, span_mind_control("[command]"))
 
 /atom/movable/screen/alert/embeddedobject
 	name = "Embedded Object"
@@ -336,7 +331,7 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 	RegisterSignal(taker, COMSIG_MOVABLE_MOVED, PROC_REF(check_in_range), override = TRUE) //Override to prevent runtimes when people offer a item multiple times
 
 /atom/movable/screen/alert/give/proc/removeAlert()
-	to_chat(owner, "<span class='warning'>You moved out of range of [offerer]!</span>")
+	to_chat(owner, span_warning("You moved out of range of [offerer]!"))
 	owner.clear_alert("[offerer]")
 
 /atom/movable/screen/alert/give/Click(location, control, params)
@@ -687,7 +682,7 @@ so as to remain in compliance with the most up-to-date laws."
 		return
 	var/list/modifiers = params2list(params)
 	if(LAZYACCESS(modifiers, SHIFT_CLICK)) // screen objects don't do the normal Click() stuff so we'll cheat
-		to_chat(usr, "<span class='boldnotice'>[name]</span> - <span class='info'>[desc]</span>")
+		to_chat(usr, span_boldnotice("[name]</span> - <span class='info'>[desc]"))
 		return
 	if(usr != owner)
 		return

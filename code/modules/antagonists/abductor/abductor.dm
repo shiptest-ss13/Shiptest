@@ -22,7 +22,7 @@
 	outfit = /datum/outfit/abductor/agent
 	landmark_type = /obj/effect/landmark/abductor/agent
 	greet_text = "Use your stealth technology and equipment to incapacitate humans for your scientist to retrieve."
-	show_in_antagpanel = TRUE
+	show_in_antagpanel = FALSE
 
 /datum/antagonist/abductor/scientist
 	name = "Abductor Scientist"
@@ -30,7 +30,7 @@
 	outfit = /datum/outfit/abductor/scientist
 	landmark_type = /obj/effect/landmark/abductor/scientist
 	greet_text = "Use your experimental console and surgical equipment to monitor your agent and experiment upon abducted humans."
-	show_in_antagpanel = TRUE
+	show_in_antagpanel = FALSE
 
 /datum/antagonist/abductor/scientist/onemanteam
 	name = "Abductor Solo"
@@ -56,15 +56,15 @@
 
 /datum/antagonist/abductor/on_removal()
 	if(owner.current)
-		to_chat(owner.current,"<span class='userdanger'>You are no longer the [owner.special_role]!</span>")
+		to_chat(owner.current,span_userdanger("You are no longer the [owner.special_role]!"))
 	owner.special_role = null
 	REMOVE_TRAIT(owner, TRAIT_ABDUCTOR_TRAINING, ABDUCTOR_ANTAGONIST)
 	return ..()
 
 /datum/antagonist/abductor/greet()
-	to_chat(owner.current, "<span class='notice'>You are the [owner.special_role]!</span>")
-	to_chat(owner.current, "<span class='notice'>With the help of your teammate, kidnap and experiment on unsuspecting sapient lifeforms!</span>")
-	to_chat(owner.current, "<span class='notice'>[greet_text]</span>")
+	to_chat(owner.current, span_notice("You are the [owner.special_role]!"))
+	to_chat(owner.current, span_notice("With the help of your teammate, kidnap and experiment on unsuspecting sapient lifeforms!"))
+	to_chat(owner.current, span_notice("[greet_text]"))
 	owner.announce_objectives()
 
 /datum/antagonist/abductor/proc/finalize_abductor()
@@ -116,7 +116,7 @@
 
 /datum/antagonist/abductor/proc/admin_equip(mob/admin)
 	if(!ishuman(owner.current))
-		to_chat(admin, "<span class='warning'>This only works on humans!</span>")
+		to_chat(admin, span_warning("This only works on humans!"))
 		return
 	var/mob/living/carbon/human/H = owner.current
 	var/gear = alert(admin,"Agent or Scientist Gear","Gear","Agent","Scientist")
@@ -158,7 +158,7 @@
 	else
 		result += "<span class='redtext big'>[name] team failed its mission.</span>"
 
-	result += "<span class='header'>The abductors of [name] were:</span>"
+	result += span_header("The abductors of [name] were:")
 	for(var/datum/mind/abductor_mind in members)
 		result += printplayer(abductor_mind)
 	result += printobjectives(objectives)
@@ -177,8 +177,8 @@
 	. = ..()
 
 /datum/antagonist/abductee/greet()
-	to_chat(owner, "<span class='warning'><b>Your mind snaps!</b></span>")
-	to_chat(owner, "<big><span class='warning'><b>You can't remember how you got here...</b></span></big>")
+	to_chat(owner, span_warning("<b>Your mind snaps!</b>"))
+	to_chat(owner, "<big>[span_warning("<b>You can't remember how you got here...</b>")]</big>")
 	owner.announce_objectives()
 
 /datum/antagonist/abductee/proc/give_objective()

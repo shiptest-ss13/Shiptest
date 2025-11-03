@@ -62,7 +62,9 @@
 
 	/// Adjective used in get_generic_name(), if any
 	var/generic_adjective
-	var/bleedsuppress = 0 //for stopping bloodloss body-wide
+
+	///For stopping bloodloss
+	var/bleedsuppress = 0
 
 	var/name_override //For temporary visible name changes
 
@@ -81,3 +83,6 @@
 	var/obj/effect/abstract/particle_holder/blood_particle
 
 	COOLDOWN_DECLARE(bloodloss_message)
+
+	/// Height of the mob
+	VAR_PROTECTED/mob_height = HUMAN_HEIGHT_MEDIUM

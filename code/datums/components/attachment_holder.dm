@@ -85,13 +85,8 @@
 /datum/component/attachment_holder/proc/handle_alt_click(obj/item/parent, mob/user)
 	SIGNAL_HANDLER
 
-	if(user.a_intent == INTENT_HARM)
-		INVOKE_ASYNC(src, PROC_REF(handle_detach), parent, user)
-		return TRUE
-	else
-		for(var/obj/item/attach as anything in attachments)
-			if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_ALT_CLICK, parent, user))
-				return TRUE
+	INVOKE_ASYNC(src, PROC_REF(handle_detach), parent, user)
+	return TRUE
 
 /datum/component/attachment_holder/proc/handle_ctrl_click(obj/item/parent, mob/user)
 	SIGNAL_HANDLER
@@ -149,10 +144,10 @@
 /datum/component/attachment_holder/proc/do_detach(obj/item/attachment, mob/user)
 	var/slot = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_GET_SLOT)
 	slot = attachment_slot_from_bflag(slot)
-	if(slot in slot_room)
-		slot_room[slot]++
 	. = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_DETACH, parent, user)
 	if(.)
+		if(slot in slot_room)
+			slot_room[slot]++
 		attachments -= attachment
 		var/atom/parent = src.parent
 		parent.update_icon()

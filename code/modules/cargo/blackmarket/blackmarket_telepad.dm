@@ -61,7 +61,7 @@
 	if(istype(O, /obj/item/blackmarket_uplink))
 		var/obj/item/blackmarket_uplink/uplink = O
 		uplink.target = src
-		to_chat(user, "<span class='notice'>[src] linked to [O].</span>")
+		to_chat(user, span_notice("[src] linked to [O]."))
 		return TRUE
 
 	return ..()

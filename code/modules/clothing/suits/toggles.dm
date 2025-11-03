@@ -60,20 +60,19 @@
 			var/mob/living/carbon/H = hood.loc
 			H.transferItemToLoc(hood, src, TRUE)
 			H.update_inv_wear_suit()
+			update_appearance()
+			H.regenerate_icons()
 		else
 			hood.forceMove(src)
 		for(var/X in actions)
 			var/datum/action/A = X
 			A.UpdateButtonIcon()
-	//Might need an update aperance here
 
 /obj/item/clothing/suit/hooded/update_appearance(updates)
 	if(suittoggled)
 		icon_state = "[base_icon_state]_t"
 	else
 		icon_state = base_icon_state
-	if(isobj(hood))
-		hood.icon_state = base_icon_state
 	. = ..()
 
 /obj/item/clothing/suit/hooded/dropped()
@@ -85,18 +84,19 @@
 		if(ishuman(src.loc))
 			var/mob/living/carbon/human/H = src.loc
 			if(H.wear_suit != src)
-				to_chat(H, "<span class='warning'>You must be wearing [src] to put up the hood!</span>")
+				to_chat(H, span_warning("You must be wearing [src] to put up the hood!"))
 				return
 			if(H.head)
-				to_chat(H, "<span class='warning'>You're already wearing something on your head!</span>")
+				to_chat(H, span_warning("You're already wearing something on your head!"))
 				return
 			else if(H.equip_to_slot_if_possible(hood,ITEM_SLOT_HEAD,0,0,1))
 				suittoggled = TRUE
 				H.update_inv_wear_suit()
+				update_appearance()
+				H.regenerate_icons()
 				for(var/X in actions)
 					var/datum/action/A = X
 					A.UpdateButtonIcon()
-				//Might need an update aperance here
 	else
 		remove_hood()
 
@@ -137,6 +137,11 @@
 /obj/item/clothing/suit/toggle/AltClick(mob/user)
 	if(!user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		return FALSE
+
+	. = SEND_SIGNAL(src, COMSIG_CLICK_ALT, user)
+	if(. & COMPONENT_CANCEL_CLICK_ALT)
+		return
+
 	if(unique_reskin && !current_skin)
 		reskin_obj(user)
 	else
@@ -152,7 +157,7 @@
 	if(!can_use(usr))
 		return 0
 
-	to_chat(usr, "<span class='notice'>You toggle [src]'s [togglename].</span>")
+	to_chat(usr, span_notice("You toggle [src]'s [togglename]."))
 	if(src.suittoggled)
 		src.icon_state = "[initial(icon_state)]"
 		src.suittoggled = FALSE
@@ -215,7 +220,7 @@
 			helmet.attack_self(H)
 		H.transferItemToLoc(helmet, src, TRUE)
 		H.update_inv_wear_suit()
-		to_chat(H, "<span class='notice'>The helmet on the hardsuit disengages.</span>")
+		to_chat(H, span_notice("The helmet on the hardsuit disengages."))
 		playsound(src.loc, 'sound/mecha/mechmove03.ogg', 50, TRUE)
 	else
 		helmet.forceMove(src)
@@ -229,18 +234,18 @@
 	if(!helmettype)
 		return
 	if(!helmet)
-		to_chat(H, "<span class='warning'>The helmet's lightbulb seems to be damaged! You'll need a replacement bulb.</span>")
+		to_chat(H, span_warning("The helmet's lightbulb seems to be damaged! You'll need a replacement bulb."))
 		return
 	if(!suittoggled)
 		if(ishuman(src.loc))
 			if(H.wear_suit != src)
-				to_chat(H, "<span class='warning'>You must be wearing [src] to engage the helmet!</span>")
+				to_chat(H, span_warning("You must be wearing [src] to engage the helmet!"))
 				return
 			if(H.head)
-				to_chat(H, "<span class='warning'>You're already wearing something on your head!</span>")
+				to_chat(H, span_warning("You're already wearing something on your head!"))
 				return
 			else if(H.equip_to_slot_if_possible(helmet,ITEM_SLOT_HEAD,0,0,1))
-				to_chat(H, "<span class='notice'>You engage the helmet on the hardsuit.</span>")
+				to_chat(H, span_notice("You engage the helmet on the hardsuit."))
 				suittoggled = TRUE
 				H.update_inv_wear_suit()
 				playsound(src.loc, 'sound/mecha/mechmove03.ogg', 50, TRUE)

@@ -53,10 +53,18 @@
 
 /atom/proc/get_overmap_location()
 	var/datum/map_zone/our_zone = get_map_zone()
-	for(var/datum/overmap/dynamic/overmap_object in SSovermap.overmap_objects)
-		if(!istype(overmap_object))
+	for(var/datum/overmap/dynamic/dynamic_object in SSovermap.overmap_objects)
+		if(!istype(dynamic_object))
 			continue
-		if(!overmap_object.mapzone)
+		if(!dynamic_object.mapzone)
 			continue
-		if(overmap_object.mapzone == our_zone)
-			return overmap_object
+		if(dynamic_object.mapzone == our_zone)
+			return dynamic_object
+	// Outposts need to be special and have a mapzone but not be dynamic, fun! Searches those here
+	for(var/datum/overmap/outpost/outpost in SSovermap.outposts)
+		if(!istype(outpost))
+			continue
+		if(!outpost.mapzone)
+			continue
+		if(outpost.mapzone == our_zone)
+			return outpost

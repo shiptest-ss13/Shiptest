@@ -1,7 +1,7 @@
 /datum/round_event_control/falsealarm
-	name 			= "False Alarm"
-	typepath 		= /datum/round_event/falsealarm
-	weight			= 20
+	name = "False Alarm"
+	typepath = /datum/round_event/falsealarm
+	weight = 0
 	max_occurrences = 5
 	var/forced_type //Admin abuse
 
@@ -20,12 +20,12 @@
 
 	forced_type = input(usr, "Select the scare.","False event") as null|anything in sortNames(possible_types)
 
-/datum/round_event_control/falsealarm/canSpawnEvent(players_amt, gamemode)
+/datum/round_event_control/falsealarm/can_spawn_event(players_amt, gamemode)
 	return ..() && length(gather_false_events())
 
 /datum/round_event/falsealarm
-	announceWhen	= 0
-	endWhen			= 1
+	announce_when = 0
+	end_when = 1
 	fakeable = FALSE
 
 /datum/round_event/falsealarm/announce(fake)
@@ -53,7 +53,7 @@
 	for(var/datum/round_event_control/E in SSevents.control)
 		if(istype(E, /datum/round_event_control/falsealarm))
 			continue
-		if(!E.canSpawnEvent(players_amt, gamemode))
+		if(!E.can_spawn_event(players_amt, gamemode))
 			continue
 
 		var/datum/round_event/event = E.typepath

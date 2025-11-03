@@ -15,19 +15,19 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 	braintype = "Android"
 	var/autoping = TRUE ///If it pings on creation immediately
 	///Message sent to the user when polling ghosts
-	var/begin_activation_message = "<span class='notice'>You carefully locate the manual activation switch and start the positronic brain's boot process.</span>"
+	var/begin_activation_message = span_notice("You carefully locate the manual activation switch and start the positronic brain's boot process.")
 	///Message sent as a visible message on success
-	var/success_message = "<span class='notice'>The positronic brain pings, and its lights start flashing. Success!</span>"
+	var/success_message = span_notice("The positronic brain pings, and its lights start flashing. Success!")
 	///Message sent as a visible message on failure
-	var/fail_message = "<span class='notice'>The positronic brain buzzes quietly, and the golden lights fade away. Perhaps you could try again?</span>"
+	var/fail_message = span_notice("The positronic brain buzzes quietly, and the golden lights fade away. Perhaps you could try again?")
 	///Role assigned to the newly created mind
 	var/new_role = "Positronic Brain"
 	///Visible message sent when a player possesses the brain
-	var/new_mob_message = "<span class='notice'>The positronic brain chimes quietly.</span>"
+	var/new_mob_message = span_notice("The positronic brain chimes quietly.")
 	///Examine message when the posibrain has no mob
-	var/dead_message = "<span class='deadsay'>It appears to be completely inactive. The reset light is blinking.</span>"
+	var/dead_message = span_deadsay("It appears to be completely inactive. The reset light is blinking.")
 	///Examine message when the posibrain cannot poll ghosts due to cooldown
-	var/recharge_message = "<span class='warning'>The positronic brain isn't ready to activate again yet! Give it some time to recharge.</span>"
+	var/recharge_message = span_warning("The positronic brain isn't ready to activate again yet! Give it some time to recharge.")
 	var/list/possible_names ///One of these names is randomly picked as the posibrain's name on possession. If left blank, it will use the global posibrain names
 	var/picked_name ///Picked posibrain name
 
@@ -67,7 +67,7 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE))
 		return
 	if(input_seed)
-		to_chat(user, "<span class='notice'>You set the personality seed to \"[input_seed]\".</span>")
+		to_chat(user, span_notice("You set the personality seed to \"[input_seed]\"."))
 		ask_role = input_seed
 		update_appearance()
 
@@ -130,7 +130,7 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 	if(QDELETED(brainmob))
 		return
 	if(is_occupied()) //Prevents hostile takeover if two ghosts get the prompt or link for the same brain.
-		to_chat(candidate, "<span class='warning'>This [name] was taken over before you could get to it! Perhaps it might be available later?</span>")
+		to_chat(candidate, span_warning("This [name] was taken over before you could get to it! Perhaps it might be available later?"))
 		return FALSE
 	if(candidate.mind && !isobserver(candidate))
 		candidate.mind.transfer_to(brainmob)
@@ -158,12 +158,12 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 				if(!brainmob.client)
 					. += "It appears to be in stand-by mode." //afk
 			if(DEAD)
-				. += "<span class='deadsay'>It appears to be completely inactive.</span>"
+				. += span_deadsay("It appears to be completely inactive.")
 	else
 		. += "[dead_message]"
 		if(ask_role)
-			. += "<span class='notice'>Current consciousness seed: \"[ask_role]\"</span>"
-		. += "<span class='boldnotice'>Alt-click to set a consciousness seed, specifying what [src] will be used for. This can help generate a personality interested in that role.</span>"
+			. += span_notice("Current consciousness seed: \"[ask_role]\"")
+		. += span_boldnotice("Alt-click to set a consciousness seed, specifying what [src] will be used for. This can help generate a personality interested in that role.")
 
 /obj/item/mmi/posibrain/Initialize()
 	. = ..()

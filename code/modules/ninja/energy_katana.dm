@@ -22,7 +22,7 @@
 
 /obj/item/melee/sword/energy_katana/attack_self(mob/user)
 	dash_toggled = !dash_toggled
-	to_chat(user, "<span class='notice'>You [dash_toggled ? "enable" : "disable"] the dash function on [src].</span>")
+	to_chat(user, span_notice("You [dash_toggled ? "enable" : "disable"] the dash function on [src]."))
 
 /obj/item/melee/sword/energy_katana/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
@@ -84,7 +84,7 @@
 			msg = "Your Energy Katana lands at your feet!"
 
 	if(msg)
-		to_chat(user, "<span class='notice'>[msg]</span>")
+		to_chat(user, span_notice("[msg]"))
 
 
 /obj/item/melee/sword/energy_katana/Destroy()

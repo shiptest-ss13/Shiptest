@@ -151,7 +151,7 @@
 		return
 
 	//Standard reach turf to turf or reaching inside storage
-	if(CanReach(A,W))
+	if(CanReach(A, W))
 		//WS edit - Swingable objects
 		if(W?.swing_type && a_intent != INTENT_HELP)
 			W.swing_attack(src, A)
@@ -160,15 +160,20 @@
 		else
 			if(ismob(A))
 				changeNext_move(CLICK_CD_MELEE)
-			UnarmedAttack(A,1)
+			UnarmedAttack(A, TRUE)
 	else
 		if(W)
-			if(W.pre_attack(A,src,params))
+			if(W.pre_attack(A, src, params))
 				return
-			else
-				W.afterattack(A,src,0,params)
+			var/proximity = A.Adjacent(src)
+			if(!proximity || !A.attackby(W, src, params))
+				W.afterattack(A, src, proximity, params)
+				RangedAttack(A, params)
 		else
-			RangedAttack(A,params)
+			if(A.Adjacent(src))
+				A.attack_hand(src)
+			else
+				RangedAttack(A, params)
 
 /// Is the atom obscured by a PREVENT_CLICK_UNDER_1 object above it
 /atom/proc/IsObscured()
@@ -207,11 +212,12 @@
 			if(closed[target] || isarea(target))  // avoid infinity situations
 				continue
 			closed[target] = TRUE
-			if(isturf(target) || isturf(target.loc) || (target in direct_access)) //Directly accessible atoms
+
+			if(isturf(target) || isturf(target.loc) || (target in direct_access) || (ismovable(target) && target.flags_1 & IS_ONTOP_1)) //Directly accessible atoms
 				if(Adjacent(target) || (tool && CheckToolReach(src, target, tool.reach * reach_multiplier))) //Adjacent or reaching attacks
 					return TRUE
 
-			if (!target.loc)
+			if(!target.loc)
 				continue
 
 			if(!(SEND_SIGNAL(target.loc, COMSIG_ATOM_CANREACH, next) & COMPONENT_BLOCK_REACH))

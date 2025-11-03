@@ -1,5 +1,5 @@
 /datum/mission/ruin
-	value = 2000
+	value = 1500
 	duration = null
 	desc = "Find my pages. (Please report if you cannot locate pages)"
 	location_specific = TRUE
@@ -28,8 +28,11 @@
 /datum/mission/ruin/spawn_mission_details(datum/overmap/dynamic/planet)
 	if(isnull(mission_index))
 		stack_trace("[src] does not have a mission index!")
-	for(var/obj/effect/landmark/mission_poi/mission_poi in planet.spawned_mission_pois)
+	for(var/datum/weakref/poi_ref in planet.spawned_mission_pois)
+		var/obj/effect/landmark/mission_poi/mission_poi = poi_ref.resolve()
 		use_poi(mission_poi, planet)
+		if(QDELETED(mission_poi))
+			planet.spawned_mission_pois -= poi_ref
 
 	spawn_custom_details(planet)
 
@@ -55,6 +58,12 @@
 		if(isatom(poi_result))
 			poi_result.AddComponent(/datum/component/mission_important, MISSION_IMPORTANCE_RELEVENT, src)
 
+/datum/mission/ruin/on_planet_load(datum/overmap/dynamic/planet)
+	. = ..()
+	if(!length(bound_atoms))
+		if(specific_item)
+			stack_trace("Somehow [src] ran on_planet_load and has no bound atoms still, this likely means its failed to find any valid pois to spawn? Contact Fallcon.")
+
 /datum/mission/ruin/proc/spawn_main_piece(obj/effect/landmark/mission_poi/mission_poi, datum/overmap/dynamic/planet)
 	required_item =	mission_poi.use_poi(setpiece_item, src)
 	if(isatom(required_item))
@@ -67,8 +76,15 @@
 /datum/mission/ruin/proc/spawn_custom_details(datum/overmap/dynamic/planet)
 	return
 
+/datum/mission/ruin/remove_bound(atom/movable/bound)
+	if(bound == required_item)
+		required_item = null
+	return ..()
+
 /datum/mission/ruin/can_turn_in(atom/movable/item_to_check)
-	if(istype(required_item) && specific_item)
+	if(specific_item)
+		if(!isatom(required_item))
+			return FALSE
 		if(item_to_check == required_item)
 			return TRUE
 	else
@@ -91,13 +107,9 @@
 			can_turn_in = TRUE
 			break
 
-	var/location_x
-	var/location_y
-	var/location_name
+	var/datum/overmap/mission_location = mission_local_weakref.resolve()
 	if(mission_location)
-		location_x = mission_location.x
-		location_y = mission_location.y
-		location_name = mission_location.name
+		update_mission_info(mission_location)
 
 	. += list(
 		"ref" = REF(src),
@@ -106,9 +118,9 @@
 		"desc" = src.desc,
 		"reward" = src.reward_flavortext(),
 		"faction" = SSfactions.faction_name(src.faction),
-		"location" = "X[location_x]/Y[location_y]: [location_name]",
-		"x" = location_x,
-		"y" = location_y,
+		"location" = "X[local_x]/Y[local_y]: [local_name]",
+		"x" = local_x,
+		"y" = local_y,
 		"timeIssued" = time2text(station_time() - time_issued, "mm"),
 		"duration" = src.duration,
 		"remaining" = time_remaining,

@@ -120,8 +120,8 @@
 	// currently unused.
 	if(do_crush)
 		for(var/mob/living/crushed in destination.contents)
-			crushed.visible_message("<span class='danger'>[src] crushes [crushed]!</span>", \
-						"<span class='userdanger'>You are crushed by [src]!</span>")
+			crushed.visible_message(span_danger("[src] crushes [crushed]!"), \
+						span_userdanger("You are crushed by [src]!"))
 
 			log_game("[src] ([REF(src)]) crushed [key_name(crushed)] at [AREACOORD(src)], user [usr].")
 			message_admins("[src] crushed [ADMIN_LOOKUPFLW(crushed)] at [ADMIN_VERBOSEJMP(crushed)]!")

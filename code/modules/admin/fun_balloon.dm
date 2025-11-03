@@ -27,7 +27,7 @@
 	return
 
 /obj/effect/fun_balloon/proc/pop()
-	visible_message("<span class='notice'>[src] pops!</span>")
+	visible_message(span_notice("[src] pops!"))
 	playsound(get_turf(src), 'sound/items/party_horn.ogg', 50, TRUE, -1)
 	qdel(src)
 
@@ -53,12 +53,12 @@
 		bodies += M
 
 	var/question = "Would you like to be [group_name]?"
-	var/list/candidates = pollCandidatesForMobs(question, ROLE_PAI, null, FALSE, 100, bodies)
+	var/list/candidates = pollCandidatesForMobs(question, null, null, FALSE, 100, bodies)
 	while(LAZYLEN(candidates) && LAZYLEN(bodies))
 		var/mob/dead/observer/C = pick_n_take(candidates)
 		var/mob/living/body = pick_n_take(bodies)
 
-		to_chat(body, "<span class='warning'>Your mob has been taken over by a ghost!</span>", confidential = TRUE)
+		to_chat(body, span_warning("Your mob has been taken over by a ghost!"), confidential = TRUE)
 		message_admins("[key_name_admin(C)] has taken control of ([key_name_admin(body)])")
 		body.ghostize(0)
 		body.key = C.key
@@ -74,7 +74,7 @@
 		var/turf/T = find_safe_turf()
 		new /obj/effect/temp_visual/gravpush(get_turf(M))
 		M.forceMove(T)
-		to_chat(M, "<span class='notice'>Pop!</span>", confidential = TRUE)
+		to_chat(M, span_notice("Pop!"), confidential = TRUE)
 
 //Arena
 
@@ -94,7 +94,7 @@
 
 	var/mob/living/L = AM
 	if(L.pulling && istype(L.pulling, /obj/item/bodypart/head))
-		to_chat(L, "<span class='notice'>Your offering is accepted. You may pass.</span>", confidential = TRUE)
+		to_chat(L, span_notice("Your offering is accepted. You may pass."), confidential = TRUE)
 		qdel(L.pulling)
 		var/turf/LA = get_turf(pick(warp_points))
 		L.forceMove(LA)
@@ -103,7 +103,7 @@
 		for(var/obj/item/chainsaw/doomslayer/chainsaw in L)
 			qdel(chainsaw)
 	else
-		to_chat(L, "<span class='warning'>You are not yet worthy of passing. Drag a severed head to the barrier to be allowed entry to the hall of champions.</span>", confidential = TRUE)
+		to_chat(L, span_warning("You are not yet worthy of passing. Drag a severed head to the barrier to be allowed entry to the hall of champions."), confidential = TRUE)
 
 /obj/effect/landmark/shuttle_arena_safe
 	name = "hall of champions"

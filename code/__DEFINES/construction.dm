@@ -63,7 +63,11 @@
 //windows affected by Nar'Sie turn this color.
 #define NARSIE_WINDOW_COLOUR "#7D1919"
 
-//The amount of materials you get from a sheet of mineral like iron/diamond/glass etc
+//The amount of materials you get from scrap
+#define SCRAP_MATERIAL_AMOUNT 750
+//The amount of materials you get from a ore/sheet
+#define ORE_MATERIAL_AMOUNT 1000
+//The amount of materials you get from a ingot of mineral like iron/diamond/glass etc
 #define MINERAL_MATERIAL_AMOUNT 2000
 //The maximum size of a stack object.
 #define MAX_STACK_SIZE 50
@@ -86,6 +90,9 @@
 #define CAT_EGG "Egg-Based Food"
 #define CAT_MEAT "Meats"
 #define CAT_MISCFOOD "Misc. Food"
+#define CAT_TORTILLA "Tortilla"
+#define CAT_CANDIED "Candied"
+#define CAT_DONUT "Donuts"
 #define CAT_PASTRY "Pastries"
 #define CAT_PIE "Pies"
 #define CAT_PIZZA "Pizzas"

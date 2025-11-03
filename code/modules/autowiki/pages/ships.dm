@@ -54,7 +54,7 @@
 			officers += crew[job]
 		output += crew[job]
 
-	return "[length(crew)] ([officers] officer[length(officers) != 1 ? "s" : ""])"
+	return "[output] ([officers] officer[officers != 1 ? "s" : ""])"
 
 /datum/autowiki/ship/proc/format_crew_list(list/crew)
 	var/output = ""

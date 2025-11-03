@@ -123,11 +123,11 @@
 	return ..()
 
 
-/obj/item/taperecorder/Hear(message, atom/movable/speaker, message_langs, raw_message, radio_freq, spans, list/message_mods = list())
+/obj/item/taperecorder/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, spans, list/message_mods = list())
 	. = ..()
 	if(mytape && recording)
 		mytape.timestamp += mytape.used_capacity
-		mytape.storedinfo += "\[[time2text(mytape.used_capacity * 10,"mm:ss")]\] [message]"
+		mytape.storedinfo += "\[[time2text(mytape.used_capacity * 10,"mm:ss")]\] [speaker.GetVoice()] [speaker.say_mod(raw_message, message_language, message_mods)], \"[raw_message]\""
 
 /obj/item/taperecorder/verb/record()
 	set name = "Start Recording"
@@ -172,7 +172,7 @@
 		mytape.timestamp += mytape.used_capacity
 		mytape.storedinfo += "\[[time2text(mytape.used_capacity * 10,"mm:ss")]\] Recording stopped."
 		playsound(src, 'sound/items/taperecorder/taperecorder_stop.ogg', 50, FALSE)
-		to_chat(usr, "<span class='notice'>Recording stopped.</span>")
+		to_chat(usr, span_notice("Recording stopped."))
 		return
 	else if(playing)
 		playing = 0
@@ -198,7 +198,7 @@
 	playing = 1
 	update_appearance()
 	playsound(src, 'sound/items/taperecorder/taperecorder_play.ogg', 50, FALSE)
-	to_chat(usr, "<span class='notice'>Playing started.</span>")
+	to_chat(usr, span_notice("Playing started."))
 	var/used = mytape.used_capacity	//to stop runtimes when you eject the tape
 	var/max = mytape.max_capacity
 	for(var/i = 1, used <= max, sleep(10 * playsleepseconds))

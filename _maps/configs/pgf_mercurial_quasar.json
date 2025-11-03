@@ -1,0 +1,46 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"faction": "/datum/faction/pgf",
+	"prefix": "PGFN",
+	"manufacturer": "Etherbor Lihmona Shipyards",
+	"map_name": "Mercurial Quasar-class Rapid Reconnaissance Corvette",
+	"namelists": [
+		"PGF"
+	],
+	"map_short_name": "M. Quasar-class",
+	"description": "A reliable reconnaissance vessel manufactured by Etherbor's PGFN Lihmona Navy Shipyard, the Mercurial Quasar was built to serve as a forward scouting and ambush clearing craft for larger fleet formations. Heavily armed for it's size with an impressive point defense suite and a powerful propulsion system, the Mercurial Quasar has the power it needs to get out of a bad situation in one piece. Despite it's light equipment load, with three on board marines and a highly cross trained crew, the Mercurial Quasar makes for an extremely flexible force multiplier on the frontier." ,
+	"tags": [
+		"Combat",
+		"Exploration",
+		"RP Focus"
+	],
+	"starting_funds": 3000,
+	"map_path": "_maps/shuttles/pgf/pgf_mercurial_quasar.dmm",
+	"token_icon_state": "ship_small_generic",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/gezena/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Navy Engineer": {
+			"outfit": "/datum/outfit/job/gezena/engineer",
+			"slots": 1
+		},
+		"Hospital Corpsman": {
+			"outfit": "/datum/outfit/job/gezena/doctor",
+			"slots": 1
+		},
+		"Marine Lieutenant": {
+			"outfit": "/datum/outfit/job/gezena/hos",
+			"officer": true,
+			"slots": 1
+		},
+		"Marine": {
+			"outfit": "/datum/outfit/job/gezena/security",
+			"slots": 2
+		}
+	},
+	"enabled":true
+}

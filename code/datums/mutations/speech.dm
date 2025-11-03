@@ -5,7 +5,7 @@
 	name = "Nervousness"
 	desc = "Causes the holder to stutter."
 	quality = MINOR_NEGATIVE
-	text_gain_indication = "<span class='danger'>You feel nervous.</span>"
+	text_gain_indication = span_danger("You feel nervous.")
 
 /datum/mutation/human/nervousness/on_life()
 	if(prob(10))
@@ -16,8 +16,8 @@
 	name = "Wacky"
 	desc = "You are not a clown. You are the entire circus."
 	quality = MINOR_NEGATIVE
-	text_gain_indication = "<span class='sans'>You feel an off sensation in your voicebox.</span>"
-	text_lose_indication = "<span class='notice'>The off sensation passes.</span>"
+	text_gain_indication = span_sans("You feel an off sensation in your voicebox.")
+	text_lose_indication = span_notice("The off sensation passes.")
 
 /datum/mutation/human/wacky/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -38,8 +38,8 @@
 	name = "Mute"
 	desc = "Completely inhibits the vocal section of the brain."
 	quality = NEGATIVE
-	text_gain_indication = "<span class='danger'>You feel unable to express yourself at all.</span>"
-	text_lose_indication = "<span class='danger'>You feel able to speak freely again.</span>"
+	text_gain_indication = span_danger("You feel unable to express yourself at all.")
+	text_lose_indication = span_danger("You feel able to speak freely again.")
 
 /datum/mutation/human/mute/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -55,8 +55,8 @@
 	name = "Unintelligible"
 	desc = "Partially inhibits the vocal center of the brain, severely distorting speech."
 	quality = NEGATIVE
-	text_gain_indication = "<span class='danger'>You can't seem to form any coherent thoughts!</span>"
-	text_lose_indication = "<span class='danger'>Your mind feels more clear.</span>"
+	text_gain_indication = span_danger("You can't seem to form any coherent thoughts!")
+	text_lose_indication = span_danger("Your mind feels more clear.")
 
 /datum/mutation/human/unintelligible/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -73,5 +73,5 @@
 	desc = "A common mutation that severely decreases intelligence."
 	quality = NEGATIVE
 	locked = TRUE
-	text_gain_indication = "<span class='notice'>You feel...totally chill, man!</span>"
-	text_lose_indication = "<span class='notice'>You feel like you have a better sense of time.</span>"
+	text_gain_indication = span_notice("You feel...totally chill, man!")
+	text_lose_indication = span_notice("You feel like you have a better sense of time.")

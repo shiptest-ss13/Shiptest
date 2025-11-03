@@ -2,6 +2,7 @@
 	name = "jumpsuit"
 	desc = "A standard issue colored jumpsuit. Variety is the spice of life!"
 	dying_key = DYE_REGISTRY_UNDER
+	roll_down = TRUE
 	icon = 'icons/obj/clothing/under/color.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/color.dmi'
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
@@ -28,7 +29,7 @@
 /obj/item/clothing/under/color/jumpskirt
 	name = "jumpskirt"
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = TRUE
+	roll_down = TRUE
 	icon_state = "black_skirt"
 	unique_reskin = list("black jumpskirt" = "black_skirt",
 						"grey jumpskirt" = "grey_skirt",

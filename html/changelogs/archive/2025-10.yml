@@ -1,0 +1,215 @@
+2025-10-01:
+  FslashN:
+  - rscadd: You can now insert GPS units into the command pouch.
+  generalthrax:
+  - bugfix: elder no longer has an empty medkit. instead it has a full one
+2025-10-02:
+  DIB-DOG:
+  - rscadd: Added some new snouted mask sprites
+  Gristlebee:
+  - bugfix: high chance mineral turfs
+  - bugfix: ERT access
+  - rscdel: Ramzi ert microbomb
+2025-10-03:
+  Erikafox:
+  - bugfix: verbs should now load on reconnect
+  FalloutFalcon:
+  - bugfix: simple hostile humans should now have armor again
+  - bugfix: redbot should no longer stall init super hard
+  generalthrax:
+  - bugfix: Red pajama pants now have the correct name
+2025-10-04:
+  Erikafox:
+  - bugfix: certain ramzi will no longer duel wield at you
+  Gristlebee:
+  - rscadd: ignore_SSD var
+  SomeguyManperson:
+  - rscadd: outposts now generate an aura of reduced radio interference
+  thearbiber, generalthrax:
+  - rscadd: Added Slammer shotgun to cargo for 3000 credits. 6 round mag pump-action,
+      above average recoil, high fire-rate.
+  - rscadd: Frontiersmen Doorkickers now use this shotgun. No stat change
+2025-10-05:
+  zimon9:
+  - rscadd: Added a bunch of equipment to the Kali Andhi
+  - bugfix: fixed a few buttons and a mismatched layer
+  - bugfix: fixed missing pipes to the combustion engines in the Kali Andhi
+2025-10-06:
+  Crystal1Blitz:
+  - rscadd: Swords to factional cargo
+  Erikafox:
+  - balance: reduces chance of aranesp oxyloss
+  - bugfix: hailing/holopad sanitization
+  - balance: finobranc metabolizes half as fast
+  - balance: gjalrazine, indomide, silfrine buffed
+  Ratvarr:
+  - rscadd: Ferromagnetic Lances BACK into cargo.
+  - balance: Solarian guns now have better rates of cell decrease, namely the GAR,
+      which can fire 3 standard magazines, or 2 HC magazines.
+  - balance: 'Ferromagnetic rounds now stack better and reasonably. Slugs: 10; Lance:
+      16; Pellets: 22, now you can load your guns actually with a reasonable amount
+      of boxes!'
+  - bugfix: Solarian HC box sprites
+  generalthrax:
+  - rscadd: Second overmap containing the outpost that you spawn in, along with standard
+      shiptest overmap (no outpost)
+  - rscadd: High-Pier system (CLIP), Value of Public Works system (NGR), Minya system
+      (Indie), Persei-277 system (NT)
+  - rscadd: Outposts now spawn only in their corresponding system
+  - rscadd: Jump between these two sectors with a 1 minute timer with bluespace jump
+  - rscdel: Removed 20 minute "No-Jump" cooldown
+  - balance: Buckshot AP is now -10 compared to -20. Dropoff maxes out at -25
+  zimon9:
+  - rscadd: Reflavored Initiates to be Crewmen
+2025-10-08:
+  thgvr:
+  - rscdel: removed mech pilots from icemoon training center
+2025-10-10:
+  generalthrax:
+  - bugfix: Fixed the Falmouth starboard nacelle having no atmos
+  zimon9:
+  - bugfix: fixed the Derecho's smelter console so that it links to the smelter at
+      init
+2025-10-11:
+  Erikafox:
+  - balance: ramzi rusted sniper no longer double-taps
+  generalthrax:
+  - bugfix: fixed a bunch of coffeepot and condiment sprites and allows you to close
+      syrup bottles
+  - balance: significantly decreased the price of coffee supplies
+  - balance: Shuffled around some PDW / Machine pistol prices, decreased SMG fire
+      delay, proper slowdowns for certain longrifles
+  - balance: Scout recoil increased
+  - balance: Boomslang and F90 slows you less
+2025-10-12:
+  moffball19:
+  - rscdel: disables ion storm spawning
+  thearbiber:
+  - rscadd: resprites pigtails
+2025-10-16:
+  PositiveEntropy, Spookywastaken/Spookytwirl:
+  - rscdel: Certain duplicate hair styles have been erased.
+  - imageadd: A variety of hairs have been resprited!
+2025-10-17:
+  Erikafox:
+  - bugfix: Reinforced walls will no longer downgrade to the last deconstruction state
+      upon being deconstructed
+  Gristlebee:
+  - rscadd: Earmuffs are togglable
+  - rscadd: Hearing protection levels
+  - rscdel: Earmuff ear healing
+  - balance: Explosion damage and hearing damage
+  generalthrax:
+  - bugfix: stuff like tiris cheese and jerky can actually be dried
+2025-10-18:
+  Burning02:
+  - rscadd: Added more medical supplies to the Shrike, along with finally adding glass
+      and a sink.
+  FalloutFalcon:
+  - bugfix: possible fix to mission hard dels
+  generalthrax:
+  - rscadd: Added a more robust atmospherics and recycling to the Atlas
+  - balance: Downgraded Atlas armoury to be more inline with similar ships, along
+      with medbay losing the surgical kit for hypospray
+  - bugfix: Unusable .44 speedloaders no longer spawn with Shadows on ruins. Empty
+      medkits are now full, and E-20s should no longer spawn
+  - bugfix: Ohm can now fit in belt holsters
+  - rscadd: Added a small refueling area and an emergency pressurization line to onehalf
+  - balance: Onehalf turrets now have a clearer line of sight
+  zimon9:
+  - balance: made grenades on the black market have prices similar to their outpost
+      variants
+2025-10-23:
+  DIB-DOG:
+  - bugfix: Empty Etherbor cells can fit in Etherbor guns like they should.
+2025-10-24:
+  FalloutFalcon, xenomni:
+  - rscadd: Silly snow monkeys, sprites done by xenomni
+  Gristlebee:
+  - bugfix: Wrecked Factory gun cells and doors
+  SapphicOverload:
+  - rscadd: IPC frames and prosthetic limbs can now be fully customized
+  - bugfix: Fixed bodyparts layering incorrectly
+  - rscdel: Removed non-digitigrade sarathi for the sake of less evil code
+  - refactor: Refactored bodyparts code to allow for species with more or fewer limbs
+      than normal
+  - refactor: Refactored IPC chassis code
+  - imagedel: Removed redundant IPC chassis sprites
+  SomeguyManperson:
+  - bugfix: sarathi can once again do oral pyrotechnics
+  generalthrax:
+  - bugfix: fixed M10 and X11 helmets from reskinning to be invisible
+  - rscadd: You can now buy mini sharplite cells off cargo for 300
+  thearbiber:
+  - bugfix: arrowsong bounty room layout
+  thgvr:
+  - rscadd: Changed a lot of cooking recipes away from the microwave
+  - rscadd: Griddles and Ovens
+  - rscadd: You can crack eggs onto a griddle
+  - rscadd: Pancake batter, pour onto griddles
+  - tweak: Many dough recipes (pizza, bread, etc) now require ovens
+  - tweak: Many food-related items will show information on how to process them in
+      the description.
+2025-10-25:
+  Erikafox:
+  - rscadd: Strider patches. Movement enhancing compound now available at the Black
+      Market
+  - balance: nesah injectors now have cinesia rather than aranesp inside them
+  - rscadd: you can now buy tiris sele / tiris sale at the outpost
+  Goat:
+  - bugfix: removed random wall that was inside of a window on crashed starwalker
+  - bugfix: the shutters are no longer doubled up in the n+s rock planet mining facility
+      kitchen
+  SapphicOverload:
+  - balance: Slightly increased the effectiveness of partial understanding of languages
+  moffball19:
+  - rscadd: The Colossus-class's interceptor shuttle is now on it's own independent
+      power supply.
+  thearbiber:
+  - rscadd: clip softsuits, generic armored softsuit
+  - balance: adds generic armored softsuit to kilo, falmouth, and shetland
+  zimon9:
+  - rscadd: Added functionality for stock parts in electric engines
+2025-10-26:
+  thearbiber:
+  - rscadd: Puppis-class Patrol Craft
+2025-10-27:
+  Erikafox:
+  - rscadd: minor chronicle mapfixes
+  generalthrax:
+  - bugfix: Teceti meats can now be cooked on the griddle
+  - bugfix: Sweet Potato Soup recipe no longer gives you a single raw sweet potato
+2025-10-28:
+  generalthrax:
+  - bugfix: moonbase is no longer indestructible
+2025-10-29:
+  Erikafox:
+  - balance: Shields no longer block attacks that meet a sufficient AP threshold
+  - bugfix: telecomms packs in cargo now give proper amounts of parts
+  Erikafox, Memesnorfer:
+  - rscadd: Boarding Axes, Flyssas, and Kukris are now on frontiersman, cybersun,
+      and clip ships respectively
+  - balance: minor axe buff
+  - bugfix: cell component no longer tells you you can remove a cell if you can't
+  - bugfix: cell component irremovable cells now work
+  FslashN:
+  - bugfix: The black market now sells the correct shoulder holster.
+  MemeSnorfer:
+  - rscadd: Adjusted and added attachment offsets to various Sharplite/Advantage guns.
+  - rscadd: Added attachment slots to various Sharplite guns, as well as the Expedition
+      SMG.
+  Ratvarr:
+  - rscdel: Necropolis loot from players hands
+  firebudgy:
+  - balance: Rocket launchers are no longer player accessible.
+  - balance: Mako belts no longer have HEDP rockets.
+  thearbiber, generalthrax:
+  - rscadd: New burgundy, navy, charcoal suit sprites
+  zimon9:
+  - bugfix: fixes a metal dupe exploit
+2025-10-30:
+  Erika, Thgvr, Melbert, That REALLY Good Soda Flavor, FatFat, AndreyGusev, Soreon, Absolucy:
+  - rscadd: Height should now look better, with more options in prefs.
+  - rscadd: Dwarf mutation should look less horrible.
+  meemofcourse:
+  - imageadd: Tweaked icons and reskins of CLIP helmets

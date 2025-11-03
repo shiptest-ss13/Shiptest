@@ -4,6 +4,7 @@
 	name = "5.56x42mm CLIP bullet"
 	damage = 25
 	armour_penetration = 20
+	wound_bonus = -40
 	speed = BULLET_SPEED_RIFLE
 	bullet_identifier = "medium bullet"
 

@@ -27,7 +27,10 @@
 	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_RESTRAINED), PROC_REF(on_restrained_trait_gain))
 	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_RESTRAINED), PROC_REF(on_restrained_trait_loss))
 
-	RegisterSignal(src, list(
+	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_EYESCLOSED), PROC_REF(on_eyesclosed_trait_gain))
+	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_EYESCLOSED), PROC_REF(on_eyesclosed_trait_loss))
+
+	RegisterSignals(src, list(
 		SIGNAL_ADDTRAIT(TRAIT_CRITICAL_CONDITION),
 		SIGNAL_REMOVETRAIT(TRAIT_CRITICAL_CONDITION),
 
@@ -154,6 +157,18 @@
 	SIGNAL_HANDLER
 	REMOVE_TRAIT(src, TRAIT_HANDS_BLOCKED, TRAIT_RESTRAINED)
 
+/// Called when [TRAIT_EYESCLOSED] is added to the mob.
+/mob/living/proc/on_eyesclosed_trait_gain(datum/source)
+	SIGNAL_HANDLER
+	become_blind(TRAIT_EYESCLOSED)
+	update_body()
+
+/// Called when [TRAIT_EYESCLOSED] is removed from the mob.
+/mob/living/proc/on_eyesclosed_trait_loss(datum/source)
+	SIGNAL_HANDLER
+	cure_blind(TRAIT_EYESCLOSED)
+	update_body()
+
 
 /**
  * Called when traits that alter succumbing are added/removed.
@@ -166,3 +181,13 @@
 		throw_alert("succumb", /atom/movable/screen/alert/succumb)
 	else
 		clear_alert("succumb")
+
+///From [element/movetype_handler/on_movement_type_trait_gain()]
+/mob/living/proc/on_movement_type_flag_enabled(datum/source, trait)
+	SIGNAL_HANDLER
+	update_movespeed(FALSE)
+
+///From [element/movetype_handler/on_movement_type_trait_loss()]
+/mob/living/proc/on_movement_type_flag_disabled(datum/source, trait)
+	SIGNAL_HANDLER
+	update_movespeed(FALSE)

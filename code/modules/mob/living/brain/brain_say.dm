@@ -22,6 +22,6 @@
 /mob/living/brain/lingcheck()
 	return LINGHIVE_NONE
 
-/mob/living/brain/treat_message(message)
+/mob/living/brain/treat_message(message, datum/language/language)
 	message = capitalize(message)
 	return message
