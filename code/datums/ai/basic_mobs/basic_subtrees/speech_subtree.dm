@@ -55,3 +55,7 @@
 	speech_chance = 5
 	emote_hear = list("rawrs.","grumbles.","grawls.", "stomps!")
 	emote_see = list("stares ferociously.")
+
+/datum/ai_planning_subtree/random_speech/monkey
+	speech_chance = 1
+	emote_hear = list("chimpers.")

@@ -217,6 +217,44 @@
 	slowdown = 0.8
 
 //spacesuits
+/obj/item/clothing/suit/space/clip
+	name = "CLIP space suit"
+	icon_state = "space-clip"
+	item_state = "space-clip"
+	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
+	desc = "A popular suit manufactured by the colonial league, rated for hazardous, low-pressure environments and high temperature alike. Often worn by various workers and civilians hired by the league."
+	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 20, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75, "wound" = 10)
+	resistance_flags = FIRE_PROOF
+	siemens_coefficient = 0
+
+/obj/item/clothing/head/helmet/space/clip
+	name = "CLIP space helmet"
+	icon_state = "space-clip"
+	item_state = "space-clip"
+	icon = 'icons/obj/clothing/faction/clip/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+	desc = "A space helmet manufactured by the colonial league, rated for hazardous, low pressure environments and minor impacts. Often worn by various workers and civilians hired by the league."
+	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 20, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75, "wound" = 10)
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/suit/space/clip/armored
+	name = "CLIP armored space suit"
+	icon_state = "space-clip-armor"
+	item_state = "space-clip-armor"
+	desc = "An armored variant of the leagues civilian spacesuit, swapping fabrics and adding more plating. Often issued out to miners in hazardous locations, police forces, or reservists."
+	w_class = WEIGHT_CLASS_BULKY
+	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15)
+	resistance_flags = null
+
+/obj/item/clothing/head/helmet/space/clip/armored
+	name = "CLIP armored space helmet"
+	icon_state = "space-clip-armor"
+	item_state = "space-clip-armor"
+	desc = "An armored variant of the leagues civilian space helmet, swapping plating types. Often issued out to miners in hazardous locations, police forces, or reservists."
+	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15)
+	resistance_flags = null
+
 /obj/item/clothing/suit/space/hardsuit/clip_patroller
 	name = "\improper CM-410 'Patroller' EVA Hardsuit"
 	desc = "An older-issue CLIP hardsuit, adapted from an even older design. Widely utilized in reconnaissance duty and skirmishing due to its lightweight construction."

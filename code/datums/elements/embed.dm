@@ -90,7 +90,7 @@
 
 /// Actually sticks the object to a victim
 /datum/element/embed/proc/embed_object(obj/item/weapon, mob/living/carbon/victim, hit_zone, datum/thrownthing/throwingdatum)
-	var/obj/item/bodypart/limb = victim.get_bodypart(hit_zone) || pick(victim.bodyparts)
+	var/obj/item/bodypart/limb = victim.get_bodypart(hit_zone) || victim.get_random_bodypart()
 	victim.AddComponent(/datum/component/embedded,\
 		weapon,\
 		throwingdatum,\
@@ -178,7 +178,7 @@
 	if(iscarbon(target))
 		victim = target
 		if(!hit_zone)
-			limb = pick(victim.bodyparts)
+			limb = victim.get_random_bodypart()
 			hit_zone = limb.body_zone
 	else if(isbodypart(target))
 		limb = target

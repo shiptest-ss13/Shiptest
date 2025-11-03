@@ -4202,7 +4202,14 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
 	},
-/obj/item/clothing/head/helmet/bulletproof/x11/ramzi,
+/obj/item/clothing/head/helmet/bulletproof/x11/ramzi{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/clothing/glasses/hud/security/sunglasses/ramzi{
+	pixel_x = 2;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)
 "RR" = (

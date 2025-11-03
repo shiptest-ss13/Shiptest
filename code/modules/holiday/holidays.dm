@@ -189,7 +189,6 @@
 	name = "Cosmonautics Day"
 	begin_day = 12
 	begin_month = APRIL
-	drone_hat = /obj/item/clothing/head/syndicatefake
 
 /datum/holiday/spess/greet()
 	return "On this day over 600 years ago, Comrade Yuri Gagarin first ventured into space!"

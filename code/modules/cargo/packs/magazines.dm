@@ -396,6 +396,14 @@
 	faction_discount = 30
 	cost = 700
 
+/datum/supply_pack/magazine/tinyguncell
+	name = "Sharplite Mini Power Cell"
+	desc = "Contains a proprietary weapon cell, compatible with the Ohm self-defence pistol."
+	contains = list(/obj/item/stock_parts/cell/gun/sharplite/mini)
+	faction = /datum/faction/nt
+	faction_discount = 30
+	cost = 300
+
 /datum/supply_pack/magazine/upgradedguncell
 	name = "Sharplite Plus Proprietary Weapon Cell"
 	desc = "Contains an upgraded weapon cell, compatible with most Nanotrasen models. For NT use only."
