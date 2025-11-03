@@ -329,6 +329,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
+"gf" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border,
+/obj/effect/turf_decal/siding/black{
+	dir = 1
+	},
+/obj/item/radio/intercom/directional/south,
+/turf/open/floor/plasteel/mono/white,
+/area/ship/hallway/central)
 "go" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/atmospherics/pipe/layer_manifold,
@@ -1247,6 +1255,10 @@
 "tX" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "Bansheeenginewindow";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "uH" = (
@@ -1526,14 +1538,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
-"xU" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/border,
-/obj/effect/turf_decal/siding/black{
-	dir = 1
-	},
-/obj/item/radio/intercom/directional/south,
-/turf/open/floor/plasteel/mono/white,
-/area/ship/hallway/central)
 "xX" = (
 /obj/structure/marker_beacon{
 	picked_color = "Burgundy"
@@ -3557,7 +3561,7 @@ nI
 Nz
 QK
 nb
-xU
+gf
 Nv
 Wv
 UR
