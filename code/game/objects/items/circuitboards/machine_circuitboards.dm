@@ -1452,7 +1452,6 @@
 
 // Maploaded engines of this type function identically to standard ion engines, but they start with T3 parts
 /obj/item/circuitboard/machine/shuttle/engine/electric/premium
-	name = "Ion Thruster (Machine Board)"
 	build_path = /obj/machinery/power/shuttle/engine/electric/premium
 	def_components = list(
 		/obj/item/stock_parts/capacitor = /obj/item/stock_parts/capacitor/super,
