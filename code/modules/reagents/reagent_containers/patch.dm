@@ -54,3 +54,8 @@
 	name = "starlight patch"
 	desc = "A patch of a vision enhancing compound known as Starlight."
 	list_reagents = list(/datum/reagent/drug/stardrop/starlight = 10)
+
+/obj/item/reagent_containers/pill/patch/strider
+	name = "strider patch"
+	desc = "A patch made to give the user a burst of physical endurance."
+	list_reagents = list(/datum/reagent/drug/cinesia = 10, /datum/reagent/medicine/hadrakine = 5)

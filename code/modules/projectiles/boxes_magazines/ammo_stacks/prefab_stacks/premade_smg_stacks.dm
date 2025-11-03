@@ -80,6 +80,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c556mm/surplus
 	ammo_type = /obj/item/ammo_casing/caseless/c556mm/surplus
+	custom_materials = list(/datum/material/iron = 4000)
 
 /obj/item/storage/box/ammo/c556mm_surplus
 	name = "box of surplus 5.56mm HITP caseless ammo"

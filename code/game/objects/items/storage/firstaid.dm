@@ -523,6 +523,14 @@
 	for(var/i in 1 to 4)
 		new /obj/item/reagent_containers/pill/patch/starlight(src)
 
+/obj/item/storage/pill_bottle/strider
+	name = "bottle of strider patches"
+	desc = "Contains endurance-enhancing patches. The bottle is decorated with art of a heavily spliced human woman, galloping on 4 horse legs. A small caption reads \"GALLOP ON!\""
+
+/obj/item/storage/pill_bottle/strider/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/reagent_containers/pill/patch/strider(src)
+
 /obj/item/storage/pill_bottle/placebatol
 	name = "bottle of prescription pills"
 	desc = "Contains pills as prescribed. A tag reads: \"NO MEDICINAL EFFECT\"."

@@ -75,7 +75,11 @@
 	var/temp_bleed = 0
 	var/update_bleed_icons = FALSE
 	//Bleeding out
-	for(var/obj/item/bodypart/iter_part as anything in bodyparts)
+	var/obj/item/bodypart/iter_part
+	for(var/zone in bodyparts)
+		iter_part = bodyparts[zone]
+		if(!iter_part)
+			continue
 		var/iter_bleed_rate = iter_part.get_part_bleed_rate()
 		temp_bleed += iter_bleed_rate
 		iter_part.generic_bleedstacks = max(0, iter_part.generic_bleedstacks - 1)
@@ -92,7 +96,11 @@
 /// Has each bodypart update its bleed/wound overlay icon states. If any have changed, it has the owner update wound overlays and returns TRUE
 /mob/living/carbon/proc/update_bodypart_bleed_overlays()
 	var/update_bleed_icons
-	for(var/obj/item/bodypart/iter_part as anything in bodyparts)
+	var/obj/item/bodypart/iter_part
+	for(var/zone in bodyparts)
+		iter_part = bodyparts[zone]
+		if(iter_part)
+			continue
 		if(iter_part.update_part_wound_overlay())
 			update_bleed_icons = TRUE
 
@@ -120,8 +128,11 @@
 	if(!blood_volume)
 		return
 	var/bleed_amt = 0
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/iter_bodypart = X
+	var/obj/item/bodypart/iter_bodypart
+	for(var/zone in bodyparts)
+		iter_bodypart = bodyparts[zone]
+		if(!iter_bodypart)
+			continue
 		bleed_amt += iter_bodypart.get_part_bleed_rate()
 	return bleed_amt
 
@@ -219,9 +230,12 @@
 
 /mob/living/carbon/restore_blood()
 	blood_volume = BLOOD_VOLUME_NORMAL
-	for(var/i in bodyparts)
-		var/obj/item/bodypart/BP = i
-		BP.generic_bleedstacks = 0
+	var/obj/item/bodypart/limb
+	for(var/zone in bodyparts)
+		limb = bodyparts[zone]
+		if(!limb)
+			continue
+		limb.generic_bleedstacks = 0
 
 /****************************************************
 				BLOOD TRANSFERS

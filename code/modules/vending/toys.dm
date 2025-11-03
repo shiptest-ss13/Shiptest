@@ -15,8 +15,6 @@
 		/obj/item/storage/box/ammo/foam_darts = 20,
 		/obj/item/toy/foamblade = 10,
 		/obj/item/toy/balloon/syndicate = 10,
-		/obj/item/clothing/suit/syndicatefake = 5,
-		/obj/item/clothing/head/syndicatefake = 5,
 		/obj/item/gun/ballistic/shotgun/toy/crossbow = 10,
 		/obj/item/toy/katana = 10,
 		/obj/item/melee/duelenergy/saber/toy = 5)

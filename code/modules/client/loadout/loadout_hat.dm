@@ -131,6 +131,10 @@
 	display_name = "cowboy hat"
 	path = /obj/item/clothing/head/cowboy
 
+/datum/gear/hat/cowboyblack
+	display_name = "black cowboy hat"
+	path = /obj/item/clothing/head/cowboy/black
+
 /datum/gear/hat/trapper
 	display_name = "trapper hat"
 	path = /obj/item/clothing/head/trapper

@@ -739,11 +739,12 @@
 	},
 /obj/item/pen/fourcolor,
 /obj/item/folder{
-	pixel_y = 6;
-	pixel_x = 12
+	pixel_y = 5;
+	pixel_x = 8
 	},
 /obj/item/folder/syndicate{
-	pixel_x = 12
+	pixel_x = 8;
+	pixel_y = -1
 	},
 /obj/machinery/button/door{
 	id = "Bansheeprivacyshutters";
@@ -771,6 +772,9 @@
 	pixel_y = -3
 	},
 /obj/structure/table,
+/obj/machinery/recharger{
+	pixel_x = 12
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "os" = (
@@ -1911,6 +1915,7 @@
 	pixel_x = -7;
 	id = "Bansheeturrets"
 	},
+/obj/item/melee/energy/flyssa,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "KP" = (
