@@ -635,10 +635,20 @@
 		// attempt to move us where we currently are, it will get weird.
 			return SHUTTLE_ALREADY_DOCKED
 
-	if(S.adjust_dock_for_landing && intention_to_dock)
+	if(S.adjust_dock_for_landing)
 		if(S.is_adjusting_now)
 			return SHUTTLE_PORT_IS_ADJUSTING
-		S.adjust_dock_to_shuttle(src)
+		//since we width/height is more like a box where the ship can land IN, we can easily check if we can land here
+		if(height > S.height)
+			if (width > S.height && height > S.width)
+				return SHUTTLE_ADJUSTABLE_OUR_HEIGHT_TOO_LARGE
+		if(width > S.width)
+			if (height > S.width && width > S.height)
+				return SHUTTLE_ADJUSTABLE_OUR_WIDTH_TOO_LARGE
+		//hopefully that reduces the amount of procesing nesaary before running this proc's math
+		if(intention_to_dock)
+			S.adjust_dock_to_shuttle(src)
+
 
 	if(istype(S, /obj/docking_port/stationary/transit))
 		return SHUTTLE_CAN_DOCK
