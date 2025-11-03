@@ -1,29 +1,29 @@
 
 /datum/hud/proc/create_parallax(mob/viewmob)
 	var/mob/screenmob = viewmob || mymob
-	var/client/C = screenmob.client
+	var/client/current_client = screenmob.client
 	if (!apply_parallax_pref(viewmob)) //don't want shit computers to crash when specing someone with insane parallax, so use the viewer's pref
 		return
 
-	if(!length(C.parallax_layers_cached))
-		C.parallax_layers_cached = list()
-		C.parallax_layers_cached += new /atom/movable/screen/parallax_layer/layer_1(null, C.view)
-		C.parallax_layers_cached += new /atom/movable/screen/parallax_layer/layer_2(null, C.view)
-		C.parallax_layers_cached += new /atom/movable/screen/parallax_layer/planet(null, C.view)
+	if(!length(current_client.parallax_layers_cached))
+		current_client.parallax_layers_cached = list()
+		current_client.parallax_layers_cached += new /atom/movable/screen/parallax_layer/layer_1(null, current_client.view)
+		current_client.parallax_layers_cached += new /atom/movable/screen/parallax_layer/layer_2(null, current_client.view)
+		current_client.parallax_layers_cached += new /atom/movable/screen/parallax_layer/planet(null, current_client.view)
 		if(SSparallax.random_layer)
-			C.parallax_layers_cached += new SSparallax.random_layer
-		C.parallax_layers_cached += new /atom/movable/screen/parallax_layer/layer_3(null, C.view)
+			current_client.parallax_layers_cached += new SSparallax.random_layer
+		current_client.parallax_layers_cached += new /atom/movable/screen/parallax_layer/layer_3(null, current_client.view)
 
-	C.parallax_layers = C.parallax_layers_cached.Copy()
+	current_client.parallax_layers = current_client.parallax_layers_cached.Copy()
 
-	if (length(C.parallax_layers) > C.parallax_layers_max)
-		C.parallax_layers.len = C.parallax_layers_max
+	if (length(current_client.parallax_layers) > current_client.parallax_layers_max)
+		current_client.parallax_layers.len = current_client.parallax_layers_max
 
-	C.screen |= (C.parallax_layers)
+	current_client.screen |= (current_client.parallax_layers)
 	var/atom/movable/screen/plane_master/PM = screenmob.hud_used.plane_masters["[PLANE_SPACE]"]
 	if(screenmob != mymob)
-		C.screen -= locate(/atom/movable/screen/plane_master/parallax_white) in C.screen
-		C.screen += PM
+		current_client.screen -= locate(/atom/movable/screen/plane_master/parallax_white) in current_client.screen
+		current_client.screen += PM
 	PM.color = list(
 		0, 0, 0, 0,
 		0, 0, 0, 0,
@@ -35,14 +35,14 @@
 
 /datum/hud/proc/remove_parallax(mob/viewmob)
 	var/mob/screenmob = viewmob || mymob
-	var/client/C = screenmob.client
-	C.screen -= (C.parallax_layers_cached)
+	var/client/current_client = screenmob.client
+	current_client.screen -= (current_client.parallax_layers_cached)
 	var/atom/movable/screen/plane_master/PM = screenmob.hud_used.plane_masters["[PLANE_SPACE]"]
 	if(screenmob != mymob)
-		C.screen -= locate(/atom/movable/screen/plane_master/parallax_white) in C.screen
-		C.screen += PM
+		current_client.screen -= locate(/atom/movable/screen/plane_master/parallax_white) in current_client.screen
+		current_client.screen += PM
 	PM.color = initial(PM.color)
-	C.parallax_layers = null
+	current_client.parallax_layers = null
 
 /datum/hud/proc/apply_parallax_pref(mob/viewmob)
 	var/mob/screenmob = viewmob || mymob
@@ -50,33 +50,33 @@
 	if (SSlag_switch.measures[DISABLE_PARALLAX] && !HAS_TRAIT(viewmob, TRAIT_BYPASS_MEASURES))
 		return FALSE
 
-	var/client/C = screenmob.client
-	if(C.prefs)
-		var/pref = C.prefs.parallax
+	var/client/current_client = screenmob.client
+	if(current_client.prefs)
+		var/pref = current_client.prefs.parallax
 		if (isnull(pref))
 			pref = PARALLAX_HIGH
-		switch(C.prefs.parallax)
+		switch(current_client.prefs.parallax)
 			if (PARALLAX_INSANE)
-				C.parallax_throttle = PARALLAX_DELAY_DEFAULT
-				C.parallax_layers_max = 5
+				current_client.parallax_throttle = PARALLAX_DELAY_DEFAULT
+				current_client.parallax_layers_max = 5
 				return TRUE
 
 			if (PARALLAX_MED)
-				C.parallax_throttle = PARALLAX_DELAY_MED
-				C.parallax_layers_max = 3
+				current_client.parallax_throttle = PARALLAX_DELAY_MED
+				current_client.parallax_layers_max = 3
 				return TRUE
 
 			if (PARALLAX_LOW)
-				C.parallax_throttle = PARALLAX_DELAY_LOW
-				C.parallax_layers_max = 1
+				current_client.parallax_throttle = PARALLAX_DELAY_LOW
+				current_client.parallax_layers_max = 1
 				return TRUE
 
 			if (PARALLAX_DISABLE)
 				return FALSE
 
 	//This is high parallax.
-	C.parallax_throttle = PARALLAX_DELAY_DEFAULT
-	C.parallax_layers_max = 4
+	current_client.parallax_throttle = PARALLAX_DELAY_DEFAULT
+	current_client.parallax_layers_max = 4
 	return TRUE
 
 /datum/hud/proc/update_parallax_pref(mob/viewmob)
@@ -87,21 +87,21 @@
 // This sets which way the current shuttle is moving (returns true if the shuttle has stopped moving so the caller can append their animation)
 /datum/hud/proc/set_parallax_movedir(new_parallax_movedir, skip_windups)
 	. = FALSE
-	var/client/C = mymob.client
-	if(new_parallax_movedir == C.parallax_movedir)
+	var/client/current_client = mymob.client
+	if(new_parallax_movedir == current_client.parallax_movedir)
 		return
 	var/animatedir = new_parallax_movedir
 	if(new_parallax_movedir == FALSE)
 		var/animate_time = 0
-		for(var/thing in C.parallax_layers)
+		for(var/thing in current_client.parallax_layers)
 			var/atom/movable/screen/parallax_layer/L = thing
 			L.icon_state = initial(L.icon_state)
-			L.update_o(C.view)
+			L.update_o(current_client.view)
 			var/T = PARALLAX_LOOP_TIME / L.speed
 			if (T > animate_time)
 				animate_time = T
-		C.dont_animate_parallax = world.time + min(animate_time, PARALLAX_LOOP_TIME)
-		animatedir = C.parallax_movedir
+		current_client.dont_animate_parallax = world.time + min(animate_time, PARALLAX_LOOP_TIME)
+		animatedir = current_client.parallax_movedir
 
 	var/matrix/newtransform
 	switch(animatedir)
@@ -116,7 +116,7 @@
 
 	var/shortesttimer
 	if(!skip_windups)
-		for(var/thing in C.parallax_layers)
+		for(var/thing in current_client.parallax_layers)
 			var/atom/movable/screen/parallax_layer/L = thing
 
 			var/T = PARALLAX_LOOP_TIME / L.speed
@@ -130,21 +130,21 @@
 				L.transform = newtransform
 				animate(transform = matrix(), time = T) //queue up another animate so lag doesn't create a shutter
 
-	C.parallax_movedir = new_parallax_movedir
-	if (C.parallax_animate_timer)
-		deltimer(C.parallax_animate_timer)
-	var/datum/callback/CB = CALLBACK(src, PROC_REF(update_parallax_motionblur), C, animatedir, new_parallax_movedir, newtransform)
+	current_client.parallax_movedir = new_parallax_movedir
+	if (current_client.parallax_animate_timer)
+		deltimer(current_client.parallax_animate_timer)
+	var/datum/callback/CB = CALLBACK(src, PROC_REF(update_parallax_motionblur), current_client, animatedir, new_parallax_movedir, newtransform)
 	if(skip_windups)
 		CB.Invoke()
 	else
-		C.parallax_animate_timer = addtimer(CB, min(shortesttimer, PARALLAX_LOOP_TIME), TIMER_CLIENT_TIME|TIMER_STOPPABLE)
+		current_client.parallax_animate_timer = addtimer(CB, min(shortesttimer, PARALLAX_LOOP_TIME), TIMER_CLIENT_TIME|TIMER_STOPPABLE)
 
 
-/datum/hud/proc/update_parallax_motionblur(client/C, animatedir, new_parallax_movedir, matrix/newtransform)
-	if(!C)
+/datum/hud/proc/update_parallax_motionblur(client/current_client, animatedir, new_parallax_movedir, matrix/newtransform)
+	if(!current_client)
 		return
-	C.parallax_animate_timer = FALSE
-	for(var/thing in C.parallax_layers)
+	current_client.parallax_animate_timer = FALSE
+	for(var/thing in current_client.parallax_layers)
 		var/atom/movable/screen/parallax_layer/L = thing
 		if (!new_parallax_movedir)
 			animate(L)
@@ -155,7 +155,7 @@
 
 		if (newstate in icon_states(L.icon))
 			L.icon_state = newstate
-			L.update_o(C.view)
+			L.update_o(current_client.view)
 
 		L.transform = newtransform
 
@@ -163,8 +163,8 @@
 		animate(transform = matrix(), time = T)
 
 /datum/hud/proc/update_parallax()
-	var/client/C = mymob.client
-	var/turf/posobj = get_turf(C.eye)
+	var/client/current_client = mymob.client
+	var/turf/posobj = get_turf(current_client.eye)
 	if(!posobj)
 		return
 	var/area/areaobj = posobj.loc
@@ -173,30 +173,30 @@
 	set_parallax_movedir(areaobj.parallax_movedir, FALSE)
 
 	var/force
-	if(!C.previous_turf || (C.previous_turf.z != posobj.z))
-		C.previous_turf = posobj
+	if(!current_client.previous_turf || (current_client.previous_turf.z != posobj.z))
+		current_client.previous_turf = posobj
 		force = TRUE
 
-	if (!force && world.time < C.last_parallax_shift+C.parallax_throttle)
+	if (!force && world.time < current_client.last_parallax_shift+current_client.parallax_throttle)
 		return
 
 	//Doing it this way prevents parallax layers from "jumping" when you change Z-Levels.
-	var/offset_x = posobj.x - C.previous_turf.x
-	var/offset_y = posobj.y - C.previous_turf.y
+	var/offset_x = posobj.x - current_client.previous_turf.x
+	var/offset_y = posobj.y - current_client.previous_turf.y
 
 	if(!offset_x && !offset_y && !force)
 		return
 
-	var/last_delay = world.time - C.last_parallax_shift
-	last_delay = min(last_delay, C.parallax_throttle)
-	C.previous_turf = posobj
-	C.last_parallax_shift = world.time
+	var/last_delay = world.time - current_client.last_parallax_shift
+	last_delay = min(last_delay, current_client.parallax_throttle)
+	current_client.previous_turf = posobj
+	current_client.last_parallax_shift = world.time
 
-	for(var/thing in C.parallax_layers)
+	for(var/thing in current_client.parallax_layers)
 		var/atom/movable/screen/parallax_layer/L = thing
 		L.update_status(mymob)
-		if (L.view_sized != C.view)
-			L.update_o(C.view)
+		if (L.view_sized != current_client.view)
+			L.update_o(current_client.view)
 
 		var/change_x
 		var/change_y
@@ -220,7 +220,7 @@
 				L.offset_y += 480
 
 
-		if(!areaobj.parallax_movedir && C.dont_animate_parallax <= world.time && (offset_x || offset_y) && abs(offset_x) <= max(C.parallax_throttle/world.tick_lag+1,1) && abs(offset_y) <= max(C.parallax_throttle/world.tick_lag+1,1) && (round(abs(change_x)) > 1 || round(abs(change_y)) > 1))
+		if(!areaobj.parallax_movedir && current_client.dont_animate_parallax <= world.time && (offset_x || offset_y) && abs(offset_x) <= max(current_client.parallax_throttle/world.tick_lag+1,1) && abs(offset_y) <= max(current_client.parallax_throttle/world.tick_lag+1,1) && (round(abs(change_x)) > 1 || round(abs(change_y)) > 1))
 			L.transform = matrix(1, 0, offset_x*L.speed, 0, 1, offset_y*L.speed)
 			animate(L, transform=matrix(), time = last_delay)
 

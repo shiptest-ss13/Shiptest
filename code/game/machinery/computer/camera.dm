@@ -74,7 +74,7 @@
 	var/obj/item/multitool/M = I
 	if(M.buffer != null)
 		network = M.buffer
-		to_chat(user, "<span class='notice'>You input network '[M.buffer]' from the multitool's buffer into [src].</span>")
+		to_chat(user, span_notice("You input network '[M.buffer]' from the multitool's buffer into [src]."))
 	return
 
 /obj/machinery/computer/security/ui_interact(mob/user, datum/tgui/ui)
@@ -237,7 +237,7 @@
 		var/cam_location = active_camera_B.loc
 
 		// Is the camera in the following items? If so, let it transmit an image as normal
-		if((istype(cam_location, /obj/item/clothing/suit)) || (istype(cam_location, /obj/item/clothing/head/helmet)) || istype(cam_location, /obj/item/storage/belt))
+		if((istype(cam_location, /obj/item/clothing/suit)) || (istype(cam_location, /obj/item/clothing/head/helmet)) || istype(cam_location, /obj/item/storage/belt) || istype(cam_location, /obj/item/storage/pouch)) //Should probably be refactored into excluding backpacks and boots instead of the current whitelist if more places need to be added
 			cam_location = active_camera_B.loc.loc
 
 		// If we're not forcing an update for some reason and the cameras are in the same location,
@@ -380,7 +380,7 @@
 	desc = "A screen displaying various entertainment channels. I hope they have that new Gezenan sitcom on this."
 	icon = 'icons/obj/status_display.dmi'
 	icon_state = "entertainment_blank"
-	network = list("thunder")
+	network = list("IntraNet")
 	density = FALSE
 	circuit = null
 	interaction_flags_atom = NONE  // interact() is called by BigClick()
@@ -397,13 +397,9 @@
 
 	INVOKE_ASYNC(src, TYPE_PROC_REF(/atom, interact), usr)
 
-/obj/machinery/computer/security/telescreen/entertainment/proc/notify(on)
+/obj/machinery/computer/security/telescreen/entertainment/proc/notify(on, string="IntraNet is proud to present the latest in unique content!")
 	if(on && icon_state == icon_state_off)
-		say(pick(
-			"Feats of bravery live now at the thunderdome!",
-			"Two enter, one leaves! Tune in now!",
-			"Violence like you've never seen it before!",
-			"Spears! Camera! Action! LIVE NOW!"))
+		say(string)
 		icon_state = icon_state_on
 	else
 		icon_state = icon_state_off

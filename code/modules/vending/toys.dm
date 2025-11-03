@@ -15,11 +15,9 @@
 		/obj/item/storage/box/ammo/foam_darts = 20,
 		/obj/item/toy/foamblade = 10,
 		/obj/item/toy/balloon/syndicate = 10,
-		/obj/item/clothing/suit/syndicatefake = 5,
-		/obj/item/clothing/head/syndicatefake = 5,
 		/obj/item/gun/ballistic/shotgun/toy/crossbow = 10,
 		/obj/item/toy/katana = 10,
-		/obj/item/dualsaber/toy = 5)
+		/obj/item/melee/duelenergy/saber/toy = 5)
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	refill_canister = /obj/item/vending_refill/donksoft

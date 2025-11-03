@@ -41,10 +41,10 @@
 
 		dna.species.spec_life(src) // for mutantraces
 
-	//WS Begin - Broken bones
-	if(stat != DEAD)
-		handle_fractures()
-	//WS End
+	else
+		for(var/i in all_wounds)
+			var/datum/wound/iter_wound = i
+			iter_wound.on_stasis()
 
 	//Update our name based on whether our face is obscured/disfigured
 	name = get_visible_name()
@@ -338,28 +338,6 @@
 		Unconscious(80)
 	// Tissues die without blood circulation
 	adjustBruteLoss(2)
-
-/mob/living/carbon/human/proc/handle_fractures()
-	//this whole thing is hacky and WILL NOT work right with multiple hands
-	//you've been warned
-	var/obj/item/bodypart/L = get_bodypart("l_arm")
-	var/obj/item/bodypart/R = get_bodypart("r_arm")
-
-	if(istype(L) && L.bone_status == BONE_FLAG_BROKEN && held_items[1] && prob(30))
-		force_scream()
-		if(!HAS_TRAIT(src, TRAIT_ANALGESIA))
-			visible_message(span_warning("[src] screams and lets go of [held_items[1]] in pain."), span_userdanger("A horrible pain in your [parse_zone(L)] makes it impossible to hold [held_items[1]]!"))
-		else
-			visible_message(span_notice("[src] flinches and lets go of [held_items[1]]."),span_notice("A sudden weakness in your [parse_zone(L)] makes it impossible to grasp [held_items[1]]!"))
-		dropItemToGround(held_items[1])
-
-	if(istype(R) && R.bone_status == BONE_FLAG_BROKEN && held_items[2] && prob(30))
-		force_scream()
-		if(!HAS_TRAIT(src, TRAIT_ANALGESIA))
-			visible_message(span_warning("[src] screams and lets go of [held_items[1]] in pain."), span_userdanger("A horrible pain in your [parse_zone(R)] makes it impossible to hold [held_items[1]]!"))
-		else
-			visible_message(span_notice("[src] flinches and lets go of [held_items[1]]."),span_notice("A sudden weakness in your [parse_zone(R)] makes it impossible to grasp [held_items[1]]!"))
-		dropItemToGround(held_items[2])
 
 #undef THERMAL_PROTECTION_HEAD
 #undef THERMAL_PROTECTION_CHEST

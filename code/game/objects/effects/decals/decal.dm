@@ -9,7 +9,7 @@
 	. = ..()
 	if(NeverShouldHaveComeHere(loc))
 		if(mapload)
-			WARNING("[name] spawned in a bad turf ([loc]) at [AREACOORD(src)] in \the [get_area(src)]. \
+			log_mapping("[name] spawned in a bad turf ([loc]) at [AREACOORD(src)] in \the [get_area(src)]. \
 				Please remove it or allow it to pass NeverShouldHaveComeHere if it's intended.")
 		return INITIALIZE_HINT_QDEL
 	var/static/list/loc_connections = list(
@@ -18,7 +18,8 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/effect/decal/proc/NeverShouldHaveComeHere(turf/T)
-	return isclosedturf(T) || isgroundlessturf(T)
+	if(turf_loc_check)
+		return isclosedturf(T) || isgroundlessturf(T)
 
 /obj/effect/decal/ex_act(severity, target)
 	qdel(src)

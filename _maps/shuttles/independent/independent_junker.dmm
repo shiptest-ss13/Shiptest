@@ -83,11 +83,11 @@
 /area/ship/storage)
 "aN" = (
 /obj/structure/table/chem,
-/obj/item/reagent_containers/food/snacks/meat/slab{
+/obj/item/food/meat/slab{
 	pixel_y = 6;
 	pixel_x = -3
 	},
-/obj/item/reagent_containers/food/snacks/meat/slab{
+/obj/item/food/meat/slab{
 	pixel_x = 4;
 	pixel_y = 9
 	},
@@ -422,7 +422,7 @@
 	icon_state = "1-10"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/cockroach,
+/mob/living/basic/cockroach,
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
@@ -480,7 +480,7 @@
 	pixel_x = -10
 	},
 /obj/effect/decal/cleanable/cobweb,
-/mob/living/simple_animal/hostile/cockroach,
+/mob/living/basic/cockroach,
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken6"
 	},
@@ -604,9 +604,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/firedoor/border_only{
-	dir = 2
-	},
+/obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -640,7 +638,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/food/plant_smudge,
-/obj/item/reagent_containers/food/snacks/urinalcake{
+/obj/item/food/urinalcake{
 	pixel_y = -9;
 	pixel_x = -13
 	},
@@ -858,7 +856,7 @@
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/random/maintenance/three,
-/obj/item/reagent_containers/food/snacks/canned/peaches/maint,
+/obj/item/food/canned/peaches/maint,
 /turf/open/floor/plating,
 /area/ship/construction)
 "qt" = (
@@ -1070,7 +1068,7 @@
 /area/ship/bridge)
 "tw" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/mob/living/simple_animal/hostile/cockroach,
+/mob/living/basic/cockroach,
 /turf/open/floor/pod/dark,
 /area/ship/crew/canteen)
 "tB" = (
@@ -1143,7 +1141,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/cockroach,
+/mob/living/basic/cockroach,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -1499,7 +1497,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "AR" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
@@ -1592,14 +1589,14 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/syndicatefake,
-/obj/item/clothing/head/syndicatefake,
 /obj/machinery/light_switch{
 	pixel_x = 10;
 	pixel_y = 23
 	},
 /obj/effect/decal/cleanable/cobweb,
 /obj/machinery/light/dim/directional/west,
+/obj/item/clothing/head/helmet/space/eva,
+/obj/item/clothing/suit/space/eva,
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
 "Db" = (
@@ -1691,7 +1688,6 @@
 	},
 /area/ship/maintenance/starboard)
 "EH" = (
-/obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/r_wall,
 /area/ship/storage)
 "EM" = (
@@ -2111,7 +2107,8 @@
 	dwidth = 15;
 	width = 30;
 	height = 15;
-	dir = 2
+	dir = 2;
+	name = "Junker Stern Dock"
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -2125,10 +2122,10 @@
 	pixel_y = 7;
 	pixel_x = 3
 	},
-/obj/item/reagent_containers/food/snacks/donkpocket/warm{
+/obj/item/food/donkpocket/warm{
 	pixel_y = 14
 	},
-/obj/item/reagent_containers/food/snacks/donkpocket/warm/pizza{
+/obj/item/food/donkpocket/warm/pizza{
 	pixel_y = 11;
 	pixel_x = 5
 	},
@@ -2230,7 +2227,7 @@
 /obj/machinery/atmospherics/pipe/simple/purple/hidden{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/cockroach/glockroach,
+/mob/living/basic/cockroach/glockroach,
 /obj/effect/spawner/random/maintenance,
 /obj/machinery/light_switch{
 	dir = 8;
@@ -2495,7 +2492,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/cockroach,
+/mob/living/basic/cockroach,
 /turf/open/floor/plating/rust,
 /area/ship/construction)
 "Ww" = (
@@ -2528,7 +2525,7 @@
 	pixel_y = 16;
 	pixel_x = -4
 	},
-/obj/item/reagent_containers/food/snacks/cheesiehonkers{
+/obj/item/food/cheesiehonkers{
 	pixel_y = 5;
 	pixel_x = 6
 	},
@@ -2661,7 +2658,7 @@
 /obj/structure/window/reinforced/fulltile,
 /obj/docking_port/mobile{
 	launch_status = 0;
-	port_direction = 2
+	dir = 2
 	},
 /obj/structure/girder/reinforced,
 /turf/open/floor/plating,
@@ -2700,11 +2697,6 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ship/crew/office)
-"YS" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/blood/old,
-/turf/closed/wall/rust,
-/area/ship/construction)
 "YU" = (
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4
@@ -2966,7 +2958,7 @@ qc
 eS
 Ma
 ua
-YS
+IE
 yz
 Wv
 qm

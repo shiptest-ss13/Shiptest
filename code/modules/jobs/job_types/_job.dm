@@ -104,7 +104,7 @@
 	radio_help_message(living_mob)
 	//WS Begin - Wikilinks
 	if(wiki_page)
-		to_chat(living_mob, "<span class='notice'><a href=[CONFIG_GET(string/wikiurl)]/[wiki_page]>Wiki Page</a></span>")
+		to_chat(living_mob, span_notice("<a href=[CONFIG_GET(string/wikiurl)]/[wiki_page]>Wiki Page</a>"))
 	//WS End
 
 	var/related_policy = get_policy(name)
@@ -132,6 +132,10 @@
 		var/datum/bank_account/bank_account = new(H.real_name, H.age)
 		bank_account.adjust_money(officer ? 250 : 100, CREDIT_LOG_STARTING_MONEY) //just a little bit of money for you
 		H.account_id = bank_account.account_id
+
+		var/obj/item/card/id/idcard = H.get_idcard(TRUE)
+		if(idcard)
+			idcard.officer = officer
 
 	//Equip the rest of the gear
 	H.dna.species.before_equip_job(src, H, visualsOnly)
@@ -184,6 +188,7 @@
 	name = "Standard Gear"
 
 	var/datum/job/jobtype = null
+	var/faction
 
 	uniform = /obj/item/clothing/under/color/grey
 	wallet = /obj/item/storage/wallet
@@ -272,6 +277,9 @@
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source = null)
 	if(visualsOnly)
 		return
+
+	if(faction)
+		H.faction |= list(faction)
 
 	var/datum/job/J = GLOB.type_occupations[jobtype]
 	if(!J)

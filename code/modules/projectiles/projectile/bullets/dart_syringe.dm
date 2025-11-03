@@ -19,8 +19,8 @@
 			else
 				blocked = 100
 				target.visible_message(
-					"<span class='danger'>\The [src] is deflected!</span>", \
-					"<span class='userdanger'>You are protected against \the [src]!</span>")
+					span_danger("\The [src] is deflected!"), \
+					span_userdanger("You are protected against \the [src]!"))
 
 	..(target, blocked)
 	reagents.flags &= ~(NO_REACT)

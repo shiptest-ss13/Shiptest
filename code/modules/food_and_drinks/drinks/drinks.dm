@@ -20,31 +20,31 @@
 /obj/item/reagent_containers/food/drinks/attack(mob/living/M, mob/user, def_zone)
 
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, span_warning("[src] is empty!"))
 		return FALSE
 
 	if(!canconsume(M, user))
 		return FALSE
 
 	if (!is_drainable())
-		to_chat(user, "<span class='warning'>[src]'s lid hasn't been opened!</span>")
+		to_chat(user, span_warning("[src]'s lid hasn't been opened!"))
 		return FALSE
 
 	if(M == user)
-		user.visible_message("<span class='notice'>[user] swallows a gulp of [src].</span>", \
-			"<span class='notice'>You swallow a gulp of [src].</span>")
+		user.visible_message(span_notice("[user] swallows a gulp of [src]."), \
+			span_notice("You swallow a gulp of [src]."))
 		if(HAS_TRAIT(M, TRAIT_VORACIOUS))
 			M.changeNext_move(CLICK_CD_MELEE * 0.5) //chug! chug! chug!
 
 	else
-		M.visible_message("<span class='danger'>[user] attempts to feed [M] the contents of [src].</span>", \
-			"<span class='userdanger'>[user] attempts to feed you the contents of [src].</span>")
+		M.visible_message(span_danger("[user] attempts to feed [M] the contents of [src]."), \
+			span_userdanger("[user] attempts to feed you the contents of [src]."))
 		if(!do_after(user, target = M))
 			return
 		if(!reagents || !reagents.total_volume)
 			return // The drink might be empty after the delay, such as by spam-feeding
-		M.visible_message("<span class='danger'>[user] fed [M] the contents of [src].</span>", \
-			"<span class='userdanger'>[user] fed you the contents of [src].</span>")
+		M.visible_message(span_danger("[user] fed [M] the contents of [src]."), \
+			span_userdanger("[user] fed you the contents of [src]."))
 		log_combat(user, M, "fed", reagents.log_list())
 
 	var/fraction = min(gulp_size/reagents.total_volume, 1)
@@ -60,20 +60,20 @@
 
 	if(target.is_refillable()) //Something like a glass. Player probably wants to transfer TO it.
 		if(!is_drainable())
-			to_chat(user, "<span class='warning'>[src] isn't open!</span>")
+			to_chat(user, span_warning("[src] isn't open!"))
 			return
 
 		if(!reagents.total_volume)
-			to_chat(user, "<span class='warning'>[src] is empty.</span>")
+			to_chat(user, span_warning("[src] is empty."))
 			return
 
 		if(target.reagents.holder_full())
-			to_chat(user, "<span class='warning'>[target] is full.</span>")
+			to_chat(user, span_warning("[target] is full."))
 			return
 
 		var/refill = reagents.get_master_reagent_id()
 		var/trans = src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, "<span class='notice'>You transfer [trans] units of the solution to [target].</span>")
+		to_chat(user, span_notice("You transfer [trans] units of the solution to [target]."))
 		playsound(src, 'sound/items/glass_transfer.ogg', 50, 1)
 
 		if(iscyborg(user)) //Cyborg modules that include drinks automatically refill themselves, but drain the borg's cell
@@ -83,27 +83,27 @@
 
 	else if(target.is_drainable()) //A dispenser. Transfer FROM it TO us.
 		if (!is_refillable())
-			to_chat(user, "<span class='warning'>[src] isn't open!</span>")
+			to_chat(user, span_warning("[src] isn't open!"))
 			return
 
 		if(!target.reagents.total_volume)
-			to_chat(user, "<span class='warning'>[target] is empty.</span>")
+			to_chat(user, span_warning("[target] is empty."))
 			return
 
 		if(reagents.holder_full())
-			to_chat(user, "<span class='warning'>[src] is full.</span>")
+			to_chat(user, span_warning("[src] is full."))
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, "<span class='notice'>You fill [src] with [trans] units of the contents of [target].</span>")
+		to_chat(user, span_notice("You fill [src] with [trans] units of the contents of [target]."))
 
 	else if(reagents.total_volume && is_drainable())
 		switch(user.a_intent)
 			if(INTENT_HELP)
 				attempt_pour(target, user)
 			if(INTENT_HARM)
-				user.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [target]!</span>", \
-									"<span class='notice'>You splash the contents of [src] onto [target].</span>")
+				user.visible_message(span_danger("[user] splashes the contents of [src] onto [target]!"), \
+									span_notice("You splash the contents of [src] onto [target]."))
 				reagents.expose(target, TOUCH)
 				reagents.clear_reagents()
 				playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
@@ -112,7 +112,7 @@
 	var/hotness = I.get_temperature()
 	if(hotness && reagents)
 		reagents.expose_temperature(hotness)
-		to_chat(user, "<span class='notice'>You heat [name] with [I]!</span>")
+		to_chat(user, span_notice("You heat [name] with [I]!"))
 	..()
 
 /obj/item/reagent_containers/food/drinks/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
@@ -224,6 +224,7 @@
 	name = "Solar's Best black coffee"
 	desc = "A cup of piping hot black coffee. Made from beans grown across the solar cantons for the caffeine that every spacer needs."
 	icon_state = "coffee"
+	icon = 'icons/obj/item/coffee.dmi'
 	list_reagents = list(/datum/reagent/consumable/coffee = 30)
 	spillable = TRUE
 	resistance_flags = FREEZE_PROOF
@@ -315,7 +316,7 @@
 /obj/item/reagent_containers/food/drinks/waterbottle/attack(mob/target, mob/user, def_zone)
 	if(target && user.a_intent == INTENT_HARM)
 		if(!spillable)
-			to_chat(user, "<span class='warning'>[src] is closed!</span>")
+			to_chat(user, span_warning("[src] is closed!"))
 		else
 			SplashReagents(target)
 		return
@@ -327,7 +328,7 @@
 	. = ..()
 	if(!QDELETED(src) && !spillable && reagents.total_volume)
 		if(prob(flip_chance)) // landed upright
-			src.visible_message("<span class='notice'>[src] lands upright!</span>")
+			src.visible_message(span_notice("[src] lands upright!"))
 			if(throwingdatum.thrower)
 				SEND_SIGNAL(throwingdatum.thrower, COMSIG_ADD_MOOD_EVENT, "bottle_flip", /datum/mood_event/bottle_flip)
 		else // landed on it's side
@@ -365,7 +366,7 @@
 	var/datum/reagent/random_reagent = new reagent_id
 	list_reagents = list(random_reagent.type = 50)
 	. = ..()
-	desc +=  "<span class='notice'>The writing reads '[random_reagent.name]'.</span>"
+	desc +=  span_notice("The writing reads '[random_reagent.name]'.")
 	update_appearance()
 
 /obj/item/reagent_containers/food/drinks/beer
@@ -559,25 +560,12 @@
 	obj_flags = CAN_BE_HIT
 
 
-/obj/item/reagent_containers/food/drinks/soda_cans/random/Initialize()
-	..()
-	var/T = pick(subtypesof(/obj/item/reagent_containers/food/drinks/soda_cans) - /obj/item/reagent_containers/food/drinks/soda_cans/random)
-	new T(loc)
-	return INITIALIZE_HINT_QDEL
-
-/obj/item/reagent_containers/food/drinks/soda_cans/random/Initialize()
-	..()
-	var/T = pick(subtypesof(/obj/item/reagent_containers/food/drinks/soda_cans) - /obj/item/reagent_containers/food/drinks/soda_cans/random)
-	new T(loc)
-	return INITIALIZE_HINT_QDEL
-
-
 /obj/item/reagent_containers/food/drinks/soda_cans/attack(mob/M, mob/user)
 	if(istype(M, /mob/living/carbon) && !reagents.total_volume && user.a_intent == INTENT_HARM && user.zone_selected == BODY_ZONE_HEAD)
 		if(M == user)
-			user.visible_message("<span class='warning'>[user] crushes the can of [src] on [user.p_their()] forehead!</span>", "<span class='notice'>You crush the can of [src] on your forehead.</span>")
+			user.visible_message(span_warning("[user] crushes the can of [src] on [user.p_their()] forehead!"), span_notice("You crush the can of [src] on your forehead."))
 		else
-			user.visible_message("<span class='warning'>[user] crushes the can of [src] on [M]'s forehead!</span>", "<span class='notice'>You crush the can of [src] on [M]'s forehead.</span>")
+			user.visible_message(span_warning("[user] crushes the can of [src] on [M]'s forehead!"), span_notice("You crush the can of [src] on [M]'s forehead."))
 		playsound(M,'sound/weapons/pierce.ogg', rand(10,50), TRUE)
 		var/obj/item/trash/can/crushed_can = new /obj/item/trash/can(M.loc)
 		crushed_can.icon_state = icon_state
@@ -627,12 +615,12 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans/attacked_by(obj/item/I, mob/living/user)
 	if(I.sharpness && !pierced && user && user.a_intent != INTENT_HARM)
-		user.visible_message("<b>[user]</b> pierces [src] with [I].", "<span class='notice'>You pierce \the [src] with [I].</span>")
+		user.visible_message("<b>[user]</b> pierces [src] with [I].", span_notice("You pierce \the [src] with [I]."))
 		playsound(src, "can_open", 50, TRUE)
 		pierced = TRUE
 		return
 	else if(I.force)
-		user.visible_message("<b>[user]</b> crushes [src] with [I]! Party foul!", "<span class='warning'>You crush \the [src] with [I]! Party foul!</span>")
+		user.visible_message("<b>[user]</b> crushes [src] with [I]! Party foul!", span_warning("You crush \the [src] with [I]! Party foul!"))
 		playsound(src, "can_open", 50, TRUE)
 		var/obj/item/trash/can/crushed_can = new /obj/item/trash/can(src.loc)
 		crushed_can.icon_state = icon_state
@@ -758,7 +746,7 @@
 	icon_state = "plasma"
 	list_reagents = list(/datum/reagent/consumable/molten/plasma_fizz = 50)
 
-/obj/item/reagent_containers/food/drinks/ration
+/obj/item/reagent_containers/food/drinks/ration //todo refactor/sort
 	name = "empty ration pouch"
 	desc = "If you ever wondered where air came from..."
 	list_reagents = list(/datum/reagent/oxygen = 6, /datum/reagent/nitrogen = 24)
@@ -773,7 +761,7 @@
 	volume = 50
 
 /obj/item/reagent_containers/food/drinks/ration/proc/open_ration(mob/user)
-	to_chat(user, "<span class='notice'>You tear open \the [src].</span>")
+	to_chat(user, span_notice("You tear open \the [src]."))
 	playsound(user.loc, 'sound/items/glass_cap.ogg', 50)
 	reagents.flags |= OPENCONTAINER
 	spillable = TRUE
@@ -786,11 +774,16 @@
 
 /obj/item/reagent_containers/food/drinks/ration/attack(mob/living/M, mob/user, def_zone)
 	if (!is_drainable())
-		to_chat(user, "<span class='warning'>The [src] is sealed shut!</span>")
+		to_chat(user, span_warning("The [src] is sealed shut!"))
 		return 0
 	return ..()
 
 /obj/item/reagent_containers/food/drinks/ration/pan_genezan_vodka
-	name = "Pan-Genezan vodka"
+	name = "Pan-Gezenan vodka"
 	desc = "Vodka made from the finest potatoes."
 	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 15)
+
+/obj/item/reagent_containers/food/drinks/ration/sososi_seta
+	name = "Sososi-Seta pouch"
+	desc = "A bitter spirit made with Tecetian flora. Best used as a digestive."
+	list_reagents = list(/datum/reagent/consumable/ethanol/sososeta = 15)

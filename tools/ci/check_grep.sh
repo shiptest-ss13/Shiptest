@@ -49,8 +49,8 @@ section "map issues"
 part "TGM"
 if $grep -U '^".+" = \(.+\)' $map_files;	then
 	echo
-    echo -e "${RED}ERROR: Non-TGM formatted map detected. Please convert it using Map Merger!${NC}"
-    st=1
+	echo -e "${RED}ERROR: Non-TGM formatted map detected. Please convert it using Map Merger!${NC}"
+	st=1
 fi;
 part "comments"
 if $grep '//' $map_files | $grep -v '//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE' | $grep -v 'name|desc'; then
@@ -61,8 +61,8 @@ fi;
 part "iconstate tags"
 if $grep '^\ttag = "icon' $map_files;	then
 	echo
-    echo -e "${RED}ERROR: Tag vars from icon state generation detected in maps, please remove them.${NC}"
-    st=1
+	echo -e "${RED}ERROR: Tag vars from icon state generation detected in maps, please remove them.${NC}"
+	st=1
 fi;
 part "invalid map procs"
 if $grep '(new|newlist|icon|matrix|sound)\(.+\)' $map_files;	then
@@ -73,18 +73,28 @@ fi;
 part "common spelling mistakes"
 if $grep -i 'nanotransen' $map_files; then
 	echo
-    echo -e "${RED}ERROR: Misspelling(s) of Nanotrasen detected in maps, please remove the extra N(s).${NC}"
-    st=1
+	echo -e "${RED}ERROR: Misspelling(s) of Nanotrasen detected in maps, please remove the extra N(s).${NC}"
+	st=1
 fi;
 if $grep 'NanoTrasen' $map_files; then
 	echo
-    echo -e "${RED}ERROR: Misspelling(s) of Nanotrasen detected in maps, please uncapitalize the T(s).${NC}"
-    st=1
+	echo -e "${RED}ERROR: Misspelling(s) of Nanotrasen detected in maps, please uncapitalize the T(s).${NC}"
+	st=1
 fi;
 if $grep -i'centcomm' $map_files; then
 	echo
-    echo -e "${RED}ERROR: Misspelling(s) of CentCom detected in maps, please remove the extra M(s).${NC}"
-    st=1
+	echo -e "${RED}ERROR: Misspelling(s) of CentCom detected in maps, please remove the extra M(s).${NC}"
+	st=1
+fi;
+if $grep 'Solgov' $map_files; then
+	echo
+	echo -e "${RED}ERROR: Misspelling(s) of SolGov detected in maps, please capitalize the G(s).${NC}"
+	st=1
+fi;
+if $grep 'Solcon' $map_files; then
+	echo
+	echo -e "${RED}ERROR: Misspelling(s) of SolCon detected in maps, please capitalize the C(s).${NC}"
+	st=1
 fi;
 if $grep -- '-Class' $map_files; then
 	echo
@@ -96,14 +106,14 @@ section "whitespace issues"
 part "space indentation"
 if $grep '(^ {2})|(^ [^ * ])|(^    +)' $code_files; then
 	echo
-    echo -e "${RED}ERROR: Space indentation detected, please use tab indentation.${NC}"
-    st=1
+	echo -e "${RED}ERROR: Space indentation detected, please use tab indentation.${NC}"
+	st=1
 fi;
 part "mixed indentation"
 if $grep '^\t+ [^ *]' $code_files; then
 	echo
-    echo -e "${RED}ERROR: Mixed <tab><space> indentation detected, please stick to tab indentation.${NC}"
-    st=1
+	echo -e "${RED}ERROR: Mixed <tab><space> indentation detected, please stick to tab indentation.${NC}"
+	st=1
 fi;
 
 #section "unit tests"
@@ -174,54 +184,73 @@ fi;
 part "common spelling mistakes"
 if $grep -i 'centcomm' $code_files; then
 	echo
-    echo -e "${RED}ERROR: Misspelling(s) of CentCom detected in code, please remove the extra M(s).${NC}"
-    st=1
+	echo -e "${RED}ERROR: Misspelling(s) of CentCom detected in code, please remove the extra M(s).${NC}"
+	st=1
 fi;
 if $grep -ni 'nanotransen' $code_files; then
 	echo
-    echo -e "${RED}ERROR: Misspelling(s) of Nanotrasen detected in code, please remove the extra N(s).${NC}"
-    st=1
+	echo -e "${RED}ERROR: Misspelling(s) of Nanotrasen detected in code, please remove the extra N(s).${NC}"
+	st=1
 fi;
 if $grep 'NanoTrasen' $code_files; then
 	echo
-    echo -e "${RED}ERROR: Misspelling(s) of Nanotrasen detected in code, please uncapitalize the T(s).${NC}"
-    st=1
+	echo -e "${RED}ERROR: Misspelling(s) of Nanotrasen detected in code, please uncapitalize the T(s).${NC}"
+	st=1
+fi;
+if $grep 'Solgov' $code_files; then
+	echo
+	echo -e "${RED}ERROR: Misspelling(s) of SolGov detected in code, please capitalize the G(s).${NC}"
+	st=1
+fi;
+if $grep 'Solcon' $code_files; then
+	echo
+	echo -e "${RED}ERROR: Misspelling(s) of SolCon detected in code, please capitalize the C(s).${NC}"
+	st=1
+fi;
+if $grep 'indestructable' $code_files; then
+	echo
+	echo -e "${RED}ERROR: Misspelling(s) of indestructible detected in code, it is indestructIBLE not indestructABLE.${NC}"
+	st=1
 fi;
 
 part "map json sanity"
-for json in _maps/configs/*.json
-do
-    map_path=$(jq -r '.map_path' $json)
-	if [ ! -f $map_path ]
-	then
-		echo
-		echo -e "${RED}ERROR: Found an invalid file reference to $map_path in $json ${NC}"
-		st=1
-	fi
-done
+if command -v jq >/dev/null 2>&1; then
+	for json in _maps/configs/*.json
+	do
+		map_path=$(jq -r '.map_path' $json)
+		if [ ! -f $map_path ]
+		then
+			echo
+			echo -e "${RED}ERROR: Found an invalid file reference to $map_path in $json ${NC}"
+			st=1
+		fi
+	done
+else
+	echo -e "${RED}jq not found, skipping map json checks${NC}"
+fi
 
 part "updatepaths validity"
 missing_txt_lines=$(find tools/UpdatePaths/Scripts -type f ! -name "*.txt" | wc -l)
 if [ $missing_txt_lines -gt 0 ]; then
-    echo
-    echo -e "${RED}ERROR: Found an UpdatePaths File that doesn't end in .txt! Please add the proper file extension!${NC}"
-    st=1
+	echo
+	echo -e "${RED}ERROR: Found an UpdatePaths File that doesn't end in .txt! Please add the proper file extension!${NC}"
+	st=1
 fi;
 
 number_prefix_lines=$(find tools/UpdatePaths/Scripts -type f | wc -l)
 valid_number_prefix_lines=$(find tools/UpdatePaths/Scripts -type f | $grep -P "\d+_(.+)" | wc -l)
 if [ $valid_number_prefix_lines -ne $number_prefix_lines ]; then
-    echo
-    echo -e "${RED}ERROR: Detected an UpdatePaths File that doesn't start with the PR number! Please add the proper number prefix!${NC}"
-    st=1
+	echo
+	echo -e "${RED}ERROR: Detected an UpdatePaths File that doesn't start with the PR number! Please add the proper number prefix!${NC}"
+	st=1
 fi;
 
 section "515 Proc Syntax"
 part "proc ref syntax"
 if $grep '\.proc/' $code_x_515 ; then
-    echo
-    echo -e "${RED}ERROR: Outdated proc reference use detected in code, please use proc reference helpers.${NC}"
-    st=1
+	echo
+	echo -e "${RED}ERROR: Outdated proc reference use detected in code, please use proc reference helpers.${NC}"
+	st=1
 fi;
 
 if [ "$pcre2_support" -eq 1 ]; then
@@ -262,13 +291,13 @@ else
 fi
 
 if [ $st = 0 ]; then
-    echo
-    echo -e "${GREEN}No errors found using $grep!${NC}"
+	echo
+	echo -e "${GREEN}No errors found using $grep!${NC}"
 fi;
 
 if [ $st = 1 ]; then
-    echo
-    echo -e "${RED}Errors found, please fix them and try again.${NC}"
+	echo
+	echo -e "${RED}Errors found, please fix them and try again.${NC}"
 fi;
 
 exit $st

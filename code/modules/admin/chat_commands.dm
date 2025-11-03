@@ -56,7 +56,7 @@
 	embed.fields += new /datum/tgs_chat_embed/field("Interviews", "Open: [length(GLOB.interviews.open_interviews) - length(GLOB.interviews.interview_queue)]\nSubmitted: [length(GLOB.interviews.interview_queue)]\nClosed: [length(GLOB.interviews.closed_interviews)]")
 
 	embed.fields += new /datum/tgs_chat_embed/field("Mode", "[SSticker.mode ? SSticker.mode.name : "Not started"]")
-	embed.fields += new /datum/tgs_chat_embed/field("Round Time", ROUND_TIME)
+	embed.fields += new /datum/tgs_chat_embed/field("Round Time", ROUND_TIME())
 	embed.fields += new /datum/tgs_chat_embed/field("Time Dilation", "[round(SStime_track.time_dilation_current, 0.1)]% ([round(SStime_track.time_dilation_avg, 0.1)]% avg)")
 
 	for(var/datum/tgs_chat_embed/field/field as anything in embed.fields)
@@ -117,7 +117,7 @@
 	embed.fields += new /datum/tgs_chat_embed/field("Round", "[GLOB.round_id ? "Round #[GLOB.round_id]" : "Not started"]")
 	embed.fields += new /datum/tgs_chat_embed/field("Players", "[length(GLOB.player_list) || "No players"]")
 	embed.fields += new /datum/tgs_chat_embed/field("Admins", "[length(GLOB.admins) || "No admins"]")
-	embed.fields += new /datum/tgs_chat_embed/field("Round Time", ROUND_TIME)
+	embed.fields += new /datum/tgs_chat_embed/field("Round Time", ROUND_TIME())
 	embed.fields += new /datum/tgs_chat_embed/field("Time Dilation", "[round(SStime_track.time_dilation_current, 0.1)]% ([round(SStime_track.time_dilation_avg, 0.1)]% avg)")
 
 	for(var/datum/tgs_chat_embed/field/field as anything in embed.fields)

@@ -15,10 +15,10 @@
 	if(ishuman(L))
 		var/obj/item/bodypart/affecting = L.get_bodypart(check_zone(user.zone_selected))
 		if(!affecting)
-			to_chat(user, "<span class='warning'>The limb is missing!</span>")
+			to_chat(user, span_warning("The limb is missing!"))
 			return
 		if(!IS_ORGANIC_LIMB(affecting))
-			to_chat(user, "<span class='notice'>Medicine won't work on a robotic limb!</span>")
+			to_chat(user, span_notice("Medicine won't work on a robotic limb!"))
 			return
 	..()
 
@@ -27,16 +27,16 @@
 		return 0
 	return 1 // Masks were stopping people from "eating" patches. Thanks, inheritance.
 
-/obj/item/reagent_containers/pill/patch/styptic
-	name = "brute patch"
+/obj/item/reagent_containers/pill/patch/indomide
+	name = "indomide patch"
 	desc = "Helps with brute injuries."
-	list_reagents = list(/datum/reagent/medicine/styptic_powder = 20)
+	list_reagents = list(/datum/reagent/medicine/indomide = 20)
 	icon_state = "bandaid_brute"
 
-/obj/item/reagent_containers/pill/patch/silver_sulf
-	name = "burn patch"
+/obj/item/reagent_containers/pill/patch/alvitane
+	name = "alvitane patch"
 	desc = "Helps with burn injuries."
-	list_reagents = list(/datum/reagent/medicine/silver_sulfadiazine = 20)
+	list_reagents = list(/datum/reagent/medicine/alvitane = 20)
 	icon_state = "bandaid_burn"
 
 /obj/item/reagent_containers/pill/patch/synthflesh
@@ -44,3 +44,18 @@
 	desc = "Helps with brute and burn injuries."
 	list_reagents = list(/datum/reagent/medicine/synthflesh = 20)
 	icon_state = "bandaid_both"
+
+/obj/item/reagent_containers/pill/patch/stardrop
+	name = "stardrop patch"
+	desc = "A patch of a vision enhancing compound known as Stardrop."
+	list_reagents = list(/datum/reagent/drug/stardrop = 20)
+
+/obj/item/reagent_containers/pill/patch/starlight
+	name = "starlight patch"
+	desc = "A patch of a vision enhancing compound known as Starlight."
+	list_reagents = list(/datum/reagent/drug/stardrop/starlight = 10)
+
+/obj/item/reagent_containers/pill/patch/strider
+	name = "strider patch"
+	desc = "A patch made to give the user a burst of physical endurance."
+	list_reagents = list(/datum/reagent/drug/cinesia = 10, /datum/reagent/medicine/hadrakine = 5)

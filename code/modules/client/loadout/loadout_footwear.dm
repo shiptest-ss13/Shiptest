@@ -28,6 +28,11 @@
 /datum/gear/footwear/workboots
 	display_name = "work boots"
 	path = /obj/item/clothing/shoes/workboots
+
+/datum/gear/footwear/heels
+	display_name = "heels, recolorable"
+	path = /obj/item/clothing/shoes/heels
+
 //Sneakers
 
 /datum/gear/footwear/color

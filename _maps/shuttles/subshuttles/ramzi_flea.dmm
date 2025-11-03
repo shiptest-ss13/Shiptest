@@ -1,0 +1,619 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/clothing/suit/space/hardsuit/syndi/ramzi,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/clothing/mask/gas/ramzi,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"b" = (
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/machinery/porta_turret/ship/ramzi{
+	dir = 4;
+	id = "roachgun"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
+"c" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ship/bridge)
+"d" = (
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"f" = (
+/obj/machinery/computer/helm{
+	dir = 8
+	},
+/obj/machinery/power/terminal,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/turretid/ship{
+	pixel_x = 0;
+	pixel_y = 24;
+	id = "roachgun";
+	req_access = null
+	},
+/obj/machinery/light_switch{
+	pixel_x = -15;
+	pixel_y = 23
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"g" = (
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
+"h" = (
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/obj/machinery/porta_turret/ship/ramzi{
+	dir = 4;
+	id = "roachgun"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
+"i" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/light/directional/north,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"j" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "fleawindow";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"k" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/maintenance/external{
+	dir = 4;
+	name = "Helm"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"m" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"n" = (
+/obj/machinery/power/shuttle/engine/electric,
+/obj/structure/window/plasma/reinforced{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/bridge)
+"o" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ship/bridge)
+"p" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/holopad/secure,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"q" = (
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
+"r" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "fleawindow"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/window/plasma/reinforced,
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"s" = (
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	icon_state = "syndicate";
+	name = "pilot's closet"
+	},
+/obj/item/storage/toolbox/ammo/c9mm,
+/obj/item/storage/guncase/rattlesnake{
+	mag_count = 3
+	},
+/obj/item/storage/belt/military/assault{
+	pixel_x = 0;
+	pixel_y = -10
+	},
+/obj/item/clothing/shoes/workboots{
+	pixel_x = 0;
+	pixel_y = -9
+	},
+/obj/item/storage/toolbox/syndicate{
+	pixel_x = 0;
+	pixel_y = 12
+	},
+/obj/item/clothing/gloves/combat,
+/obj/item/radio/headset/syndicate/alt/leader,
+/obj/item/megaphone,
+/obj/item/clothing/under/syndicate/ramzi/officer,
+/obj/item/clothing/head/ramzi/beret,
+/obj/item/storage/belt/security/webbing/ramzi/alt,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"t" = (
+/obj/structure/rack,
+/obj/item/stack/sheet/mineral/sandbags,
+/obj/machinery/firealarm/directional/south,
+/obj/item/extinguisher/mini{
+	pixel_x = -11;
+	pixel_y = 8
+	},
+/obj/item/extinguisher/mini{
+	pixel_x = 2;
+	pixel_y = 8
+	},
+/obj/item/extinguisher/mini{
+	pixel_x = 10;
+	pixel_y = 8
+	},
+/obj/item/extinguisher/mini{
+	pixel_x = -5;
+	pixel_y = 8
+	},
+/obj/item/stack/sheet/mineral/sandbags,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"v" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"w" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner,
+/obj/machinery/light/floor/hangar,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/corner,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ship/bridge)
+"x" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 4
+	},
+/obj/machinery/light/floor/hangar,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/corner{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ship/bridge)
+"y" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/obj/structure/chair/handrail{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ship/bridge)
+"z" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"A" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/preopen{
+	dir = 4;
+	id = "fleablast"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "fleashield";
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"C" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"D" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ship/bridge)
+"G" = (
+/obj/structure/closet/crate,
+/obj/effect/mapping_helpers/crate_shelve,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ship/bridge)
+"H" = (
+/obj/machinery/power/shuttle/engine/electric,
+/obj/structure/window/plasma/reinforced,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/bridge)
+"J" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ship/bridge)
+"L" = (
+/obj/machinery/power/smes/engineering{
+	input_level = 5000
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"M" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "fleawindow"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"N" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"O" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/item/radio/intercom/wideband/directional/south{
+	pixel_x = 7;
+	pixel_y = -26
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 6
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_x = -7;
+	pixel_y = -20;
+	id = "fleawindow";
+	name = "shutter control"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"P" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "fleawindow"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 2
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 1
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"Q" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/machinery/light/directional/north,
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 20;
+	pixel_y = 7;
+	dir = 8;
+	id = "fleashield"
+	},
+/obj/structure/chair/comfy/shuttle,
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = -4;
+	id = "fleablast"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"R" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"S" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/docking_port/mobile{
+	dir = 4;
+	launch_status = 0;
+	port_direction = 2;
+	preferred_direction = 4
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "fleashield"
+	},
+/obj/machinery/door/poddoor/preopen{
+	dir = 4;
+	id = "fleablast"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"U" = (
+/turf/template_noop,
+/area/template_noop)
+"Y" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+
+(1,1,1) = {"
+U
+C
+S
+A
+C
+U
+"}
+(2,1,1) = {"
+n
+C
+x
+w
+C
+H
+"}
+(3,1,1) = {"
+P
+m
+o
+c
+v
+r
+"}
+(4,1,1) = {"
+C
+d
+G
+J
+t
+C
+"}
+(5,1,1) = {"
+C
+Q
+y
+D
+N
+C
+"}
+(6,1,1) = {"
+C
+C
+R
+k
+C
+C
+"}
+(7,1,1) = {"
+M
+a
+p
+Y
+s
+M
+"}
+(8,1,1) = {"
+C
+C
+i
+O
+C
+C
+"}
+(9,1,1) = {"
+g
+C
+f
+L
+C
+q
+"}
+(10,1,1) = {"
+g
+z
+j
+j
+z
+q
+"}
+(11,1,1) = {"
+g
+h
+U
+U
+b
+q
+"}
+(12,1,1) = {"
+g
+q
+U
+U
+g
+q
+"}
+(13,1,1) = {"
+U
+q
+U
+U
+g
+U
+"}

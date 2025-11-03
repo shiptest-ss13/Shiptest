@@ -15,10 +15,10 @@
 
 /datum/status_effect/trickwine
 	id = "trick_wine"
-	examine_text = span_notice("They seem to be affected by a trickwine.")
 	alert_type = /atom/movable/screen/alert/status_effect/trickwine
 	// Try to match normal reagent tick rate based on on_mob_life
 	tick_interval = 20
+	var/obj/effect/abstract/particle_holder/particle_generator
 	// Used to make icon for status_effect
 	var/flask_icon_state
 	var/flask_icon = 'icons/obj/drinks/drinks.dmi'
@@ -44,18 +44,28 @@
 		trickwine_alert.setup(trickwine_reagent)
 		trickwine_alert.desc = alert_desc
 
+
 /datum/status_effect/trickwine/on_apply()
 	owner.visible_message(span_notice("[owner] " + message_apply_others), span_notice(message_apply_self))
-	owner.add_filter(id, 2, drop_shadow_filter(x = 0, y = -1, size = 2, color = reagent_color))
 	if(trait)
 		ADD_TRAIT(owner, trait, id)
+	if(!particle_generator)
+		particle_generator = new(owner, /particles/trickwine_drunk, PARTICLE_ATTACH_MOB)
+		particle_generator.particles.color = reagent_color
 	return ..()
 
 /datum/status_effect/trickwine/on_remove()
 	owner.visible_message(span_notice("[owner] " + message_remove_others), span_notice(message_remove_self))
-	owner.remove_filter(id)
 	if(trait)
 		REMOVE_TRAIT(owner, trait, id)
+	if(particle_generator)
+		QDEL_NULL(particle_generator)
+
+/datum/status_effect/trickwine/get_examine_text()
+	if(trickwine_examine_text)
+		return span_notice(trickwine_examine_text)
+	else
+		return span_notice("SUBJECTPRONOUN seems to be affected by [src].")
 
 //////////
 // BUFF //
@@ -64,28 +74,12 @@
 	id = "trick_wine_buff"
 	alert_desc = "Your empowered a trickwine!"
 
-/datum/status_effect/trickwine/buff/on_creation(mob/living/new_owner, datum/reagent/consumable/ethanol/trickwine/trickwine_reagent)
-	. = ..()
-	if(trickwine_examine_text)
-		examine_text = span_notice(trickwine_examine_text)
-	else
-		examine_text = span_notice("SUBJECTPRONOUN seems to be affected by [trickwine_reagent.name].")
 
-////////////
 // DEBUFF //
 ////////////
 /datum/status_effect/trickwine/debuff
 	id = "trick_wine_debuff"
 	alert_desc = "Your weakened a trickwine!"
-
-/datum/status_effect/trickwine/debuff/on_creation(mob/living/new_owner, datum/reagent/consumable/ethanol/trickwine/trickwine_reagent, set_duration = null)
-	if(isnum(set_duration))
-		duration = set_duration
-	. = ..()
-	if(trickwine_examine_text)
-		examine_text = span_notice(trickwine_examine_text)
-	else
-		examine_text = span_notice("SUBJECTPRONOUN seems to be covered in [trickwine_reagent.name].")
 
 //////////////
 // REAGENTS //
@@ -95,6 +89,46 @@
 	name = "Trickwine"
 	var/datum/status_effect/trickwine/debuff_effect = null
 	var/datum/status_effect/trickwine/buff_effect = null
+	//the kind of ammo you get from dipping 38 in this
+	var/obj/item/ammo_casing/c38/dip_ammo_type = null
+	var/dip_consumption = 2
+
+/datum/reagent/consumable/ethanol/trickwine/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	. = ..()
+	if(!dip_ammo_type)
+		return
+	if(istype(I, /obj/item/ammo_casing/c38))
+		if(volume > dip_consumption)
+			var/obj/item/ammo_casing/c38/new_ammo = new dip_ammo_type(user.loc)
+			user.put_in_hands(new_ammo)
+			to_chat(user,span_notice("You dip \the [I] into the trickwine, suffusing it with the wine's effects."))
+			H.reagents.remove_reagent(src.type, dip_consumption)
+			qdel(I)
+			return TRUE
+		else
+			to_chat(user,span_warning("There's not enough trickwine left to soak \the [I]!"))
+			return FALSE
+
+	else if(istype(I, /obj/item/ammo_box/magazine/ammo_stack))
+		var/obj/item/ammo_box/magazine/ammo_stack/dip_stack = I
+		if(dip_stack.ammo_type == /obj/item/ammo_casing/c38)
+			var/trickwine_used = dip_consumption * dip_stack.ammo_count(FALSE)
+			if(volume > trickwine_used)
+				var/obj/item/ammo_box/magazine/ammo_stack/prefilled/new_stack
+				new_stack = new(user.loc, dip_stack.ammo_count(FALSE), dip_ammo_type)
+				user.put_in_hands(new_stack)
+				to_chat(user,span_notice("You dip \the [I] into the trickwine, suffusing it with the wine's effects."))
+				H.reagents.remove_reagent(src.type, trickwine_used)
+				qdel(I)
+				return TRUE
+			else
+				to_chat(user,span_warning("There's not enough trickwine left to soak \the [I]!"))
+				return FALSE
+		return FALSE
+	else
+		return FALSE
+
+
 
 /datum/reagent/consumable/ethanol/trickwine/on_mob_metabolize(mob/living/consumer)
 	if(buff_effect)
@@ -125,43 +159,44 @@
 	breakaway_flask_icon_state = "baflaskashwine"
 	buff_effect = /datum/status_effect/trickwine/buff/ash
 	debuff_effect = /datum/status_effect/trickwine/debuff/ash
+	dip_ammo_type = /obj/item/ammo_casing/c38/ashwine
 
 /datum/reagent/consumable/ethanol/trickwine/ash_wine/on_mob_life(mob/living/M)
 	var/high_message = pick("You feel far more devoted to the cause", "You feel like you should go on a hunt")
 	var/cleanse_message = pick("Divine light purifies you.", "You are purged of foul spirts.")
 	if(prob(10))
 		M.adjust_drugginess(5)
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	if(M.faction && ("roumain" in M.faction))
 		M.adjustToxLoss(-2)
 		if(prob(10))
-			to_chat(M, "<span class='notice'>[cleanse_message]</span>")
+			to_chat(M, span_notice("[cleanse_message]"))
 	return ..()
 
 /datum/status_effect/trickwine/buff/ash
 	id = "ash_wine_buff"
-	trickwine_examine_text = "SUBJECTPRONOUN seems to be filled with energy and devotion. There eyes are dialated and they seem to be twitching."
-	message_apply_others =  ""
-	message_apply_self = ""
-	message_remove_others = ""
-	message_remove_self = ""
-	alert_desc = ""
+	trickwine_examine_text = "SUBJECTPRONOUN is filled with energy and devotion! Their eyes are dialated and they are twitching."
+	//message_apply_others =  ""
+	//message_apply_self = ""
+	//message_remove_others = ""
+	//message_remove_self = ""
+	//alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/ash
 	id = "ash_wine_debuff"
-	trickwine_examine_text = "SUBJECTPRONOUN seems to be covered in a thin layer of ash. They seem to be twitching and jittery."
-	message_apply_others =  ""
-	message_apply_self = ""
-	message_remove_others = ""
-	message_remove_self = ""
-	alert_desc = ""
+	trickwine_examine_text = "SUBJECTPRONOUN is covered in a thin layer of ash. They are twitching and jittery."
+	//message_apply_others =  ""
+	//message_apply_self = ""
+	//message_remove_others = ""
+	//message_remove_self = ""
+	//alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/ash/tick()
 	switch(pick("jitter", "dizzy", "drug"))
 		if("jitter")
-			owner.adjust_jitter(3)
+			owner.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 		if("dizzy")
-			owner.Dizzy(2)
+			owner.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 		if("drug")
 			owner.adjust_drugginess(3)
 
@@ -176,32 +211,33 @@
 	breakaway_flask_icon_state = "baflaskicewine"
 	buff_effect = /datum/status_effect/trickwine/buff/ice
 	debuff_effect = /datum/status_effect/trickwine/debuff/ice
+	dip_ammo_type = /obj/item/ammo_casing/c38/iceblox
 
 /datum/reagent/consumable/ethanol/trickwine/ice_wine/on_mob_life(mob/living/M)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	M.adjustFireLoss(-0.25)
-	if(prob(10))
+	if(prob(5))
 		to_chat(M, span_notice("Sweat runs down your body."))
 	return ..()
 
 /datum/status_effect/trickwine/buff/ice
 	id = "ice_wine_buff"
-	trickwine_examine_text = ""
-	message_apply_others =  ""
-	message_apply_self = ""
-	message_remove_others = ""
-	message_remove_self = ""
-	alert_desc = ""
+	//trickwine_examine_text = ""
+	//message_apply_others =  ""
+	//message_apply_self = ""
+	//message_remove_others = ""
+	//message_remove_self = ""
+	//alert_desc = ""
 	trait = TRAIT_NOFIRE
 
 /datum/status_effect/trickwine/debuff/ice
 	id = "ice_wine_debuff"
-	trickwine_examine_text = ""
-	message_apply_others =  ""
-	message_apply_self = ""
-	message_remove_others = ""
-	message_remove_self = ""
-	alert_desc = ""
+	//trickwine_examine_text = ""
+	//message_apply_others =  ""
+	//message_apply_self = ""
+	//message_remove_others = ""
+	//message_remove_self = ""
+	//alert_desc = ""
 	var/icon/cube
 
 /datum/status_effect/trickwine/debuff/ice/on_apply()
@@ -234,6 +270,7 @@
 	breakaway_flask_icon_state = "baflaskshockwine"
 	buff_effect = /datum/status_effect/trickwine/buff/shock
 	debuff_effect = /datum/status_effect/trickwine/debuff/shock
+	dip_ammo_type = /obj/item/ammo_casing/c38/shock
 
 /datum/reagent/consumable/ethanol/trickwine/shock_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
@@ -249,7 +286,7 @@
 	message_apply_self = "You feel like a bolt of lightning!"
 	message_remove_others = "has lost their statis energy."
 	message_remove_self = "Inertia leaves your body!"
-	alert_desc = "You feel faster then lightning and cracking with energy! Your immune to shock damage and move faster!"
+	alert_desc = "You feel faster than lightning and cracking with energy! You are immune to shock damage and move faster!"
 	trait = TRAIT_SHOCKIMMUNE
 
 /datum/status_effect/trickwine/buff/shock/on_apply()
@@ -262,12 +299,12 @@
 
 /datum/status_effect/trickwine/debuff/shock
 	id = "shock_wine_debuff"
-	trickwine_examine_text = ""
-	message_apply_others =  ""
-	message_apply_self = ""
-	message_remove_others = ""
-	message_remove_self = ""
-	alert_desc = ""
+	//trickwine_examine_text = ""
+	//message_apply_others =  ""
+	//message_apply_self = ""
+	//message_remove_others = ""
+	//message_remove_self = ""
+	//alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/shock/tick()
 	if(rand(25))
@@ -284,71 +321,111 @@
 	breakaway_flask_icon_state = "baflaskhearthwine"
 	buff_effect = /datum/status_effect/trickwine/buff/hearth
 	debuff_effect = /datum/status_effect/trickwine/debuff/hearth
+	dip_ammo_type = /obj/item/ammo_casing/c38/hotshot
+	/// While this reagent is in our bloodstream, we reduce all bleeding by this factor
+	var/passive_bleed_modifier = 0.4
+	/// For tracking when we tell the person we're no longer bleeding
+	var/was_working
 
-//This needs a buff
+/datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_metabolize(mob/living/M)
+	ADD_TRAIT(M, TRAIT_COAGULATING, /datum/reagent/consumable/ethanol/trickwine/hearth_wine)
+	if(!ishuman(M))
+		return
+
+	var/mob/living/carbon/human/blood_boy = M
+	blood_boy.physiology?.bleed_mod *= passive_bleed_modifier
+	return ..()
+
+/datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_end_metabolize(mob/living/M)
+	REMOVE_TRAIT(M, TRAIT_COAGULATING, /datum/reagent/consumable/ethanol/trickwine/hearth_wine)
+	//should probably generic proc this at a later point. I'm probably gonna use it a bit
+	if(was_working)
+		to_chat(M, span_warning("The alcohol thickening your blood loses its effect!"))
+	if(!ishuman(M))
+		return
+
+	var/mob/living/carbon/human/blood_boy = M
+	blood_boy.physiology?.bleed_mod /= passive_bleed_modifier
+
+	return ..()
+
 /datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_life(mob/living/M)
 	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		H.heal_bleeding(0.25)
+	if(!ishuman(M))
+		return ..()
+	var/mob/living/carbon/guy_who_probably_got_shot = M
+	if(prob(20) && length(guy_who_probably_got_shot.all_wounds))
+		to_chat(M, span_warning("Your cuts and punctures sear for a second, before ceasing their bloody flow!"))
+		for(var/datum/wound/slash/cut in guy_who_probably_got_shot.all_wounds)
+			cut.remove_wound()
+		for(var/datum/wound/pierce/hole in guy_who_probably_got_shot.all_wounds)
+			hole.remove_wound()
+
+	if(prob(10) && length(guy_who_probably_got_shot.all_wounds))
+		to_chat(M, span_warning("Warmth blossoms across your body!"))
+		for(var/datum/wound/muscle/muscle_ouchie in guy_who_probably_got_shot.all_wounds)
+			muscle_ouchie.remove_wound()
+		for(var/obj/item/organ/O in guy_who_probably_got_shot.internal_organs)
+			O.damage = 0
 	return ..()
 
 /datum/status_effect/trickwine/buff/hearth
 	id = "hearth_wine_buff"
-	trickwine_examine_text = ""
-	message_apply_others =  ""
-	message_apply_self = ""
-	message_remove_others = ""
-	message_remove_self = ""
-	alert_desc = ""
+	//trickwine_examine_text = ""
+	//message_apply_others =  ""
+	//message_apply_self = ""
+	//message_remove_others = ""
+	//message_remove_self = ""
+	//alert_desc = ""
 	trait = TRAIT_RESISTCOLD
 
 /datum/status_effect/trickwine/debuff/hearth
 	id = "hearth_wine_debuff"
-	trickwine_examine_text = ""
-	message_apply_others =  ""
-	message_apply_self = ""
-	message_remove_others = ""
-	message_remove_self = ""
-	alert_desc = ""
+	//trickwine_examine_text = ""
+	//message_apply_others =  ""
+	//message_apply_self = ""
+	//message_remove_others = ""
+	//message_remove_self = ""
+	//alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/hearth/tick()
 	//owner.fire_act()
 	var/turf/owner_turf = get_turf(owner)
-	owner_turf.IgniteTurf(duration)
+	owner_turf.ignite_turf(duration)
 	//new /obj/effect/hotspot(owner_turf, 1)
 
 /datum/reagent/consumable/ethanol/trickwine/force_wine
 	name = "Forcewine"
-	description = "Creates a barrier on the skin that catches sharpnel and when reversed locks threats down with a barrier"
+	description = "Creates a barrier on the skin that catches shrapnel and when reversed locks threats down with a barrier"
 	color = "#709AAF"
 	boozepwr = 70
 	taste_description = "the strength of your convictions"
 	glass_name = "Forcewine"
-	glass_desc = "Creates a barrier on the skin that catches sharpnel and when reversed locks threats down with a barrier"
+	glass_desc = "Creates a barrier on the skin that catches shrapnel and when reversed locks threats down with a barrier"
 	breakaway_flask_icon_state = "baflaskforcewine"
 	buff_effect = /datum/status_effect/trickwine/buff/force
 	debuff_effect = /datum/status_effect/trickwine/debuff/force
+	dip_ammo_type = /obj/item/ammo_casing/c38/force
 
 /datum/status_effect/trickwine/buff/force
 	id = "force_wine_buff"
-	trickwine_examine_text = ""
+	//trickwine_examine_text = ""
 	message_apply_others =  "glows a dim grey aura."
-	message_apply_self = "You feel faster than lightning!"
+	//message_apply_self = "You feel faster than lightning!"
 	message_remove_others = "'s aura fades away."
-	message_remove_self = "You feel sluggish."
-	alert_desc = ""
+	//message_remove_self = "You feel sluggish."
+	//alert_desc = ""
 	// No shrapnel seems useful
 	trait = TRAIT_PIERCEIMMUNE
 
 /datum/status_effect/trickwine/debuff/force
 	id = "force_wine_debuff"
-	trickwine_examine_text = ""
-	message_apply_others =  ""
-	message_apply_self = ""
-	message_remove_others = ""
-	message_remove_self = ""
-	alert_desc = ""
+	//trickwine_examine_text = ""
+	//message_apply_others =  ""
+	//message_apply_self = ""
+	//message_remove_others = ""
+	//message_remove_self = ""
+	//alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/force/on_apply()
 	var/turf/turf = get_turf(owner)
@@ -361,25 +438,26 @@
 
 /datum/reagent/consumable/ethanol/trickwine/prism_wine
 	name = "Prismwine"
-	description = "A glittering brew utilized by members of the Saint-Roumain Militia, mixed to provide defense against the blasts and burns of foes and fauna alike. Softens targets against your own burns when thrown."
+	description = "A glittering brew utilized by members of the Saint-Roumain Militia, mixed to defend against the blasts and burns of foes and fauna alike. Softens targets against your own burns when thrown."
 	color = "#F0F0F0"
 	boozepwr = 70
 	taste_description = "the reflective quality of meditation"
 	glass_name = "Prismwine"
-	glass_desc = "A glittering brew utilized by members of the Saint-Roumain Militia, mixed to provide defense against the blasts and burns of foes and fauna alike. Softens targets against your own burns when thrown."
+	glass_desc = "A glittering brew utilized by members of the Saint-Roumain Militia, mixed to defend against the blasts and burns of foes and fauna alike. Softens targets against your own burns when thrown."
 	breakaway_flask_icon_state = "baflaskprismwine"
 	buff_effect = /datum/status_effect/trickwine/buff/prism
 	debuff_effect = /datum/status_effect/trickwine/debuff/prism
+	dip_ammo_type = /obj/item/ammo_casing/c38/dumdum
 
 #define MAX_REFLECTS 3
 /datum/status_effect/trickwine/buff/prism
 	id = "prism_wine_buff"
-	trickwine_examine_text = ""
-	message_apply_others =  ""
-	message_apply_self = ""
-	message_remove_others = ""
-	message_remove_self = ""
-	alert_desc = ""
+	//trickwine_examine_text = ""
+	//message_apply_others =  ""
+	//message_apply_self = ""
+	//message_remove_others = ""
+	//message_remove_self = ""
+	//alert_desc = ""
 	var/reflect_count = 0
 	var/recent_movement = FALSE
 
@@ -420,12 +498,12 @@
 
 /datum/status_effect/trickwine/debuff/prism
 	id = "prism_wine_debuff"
-	trickwine_examine_text = ""
-	message_apply_others =  ""
-	message_apply_self = ""
-	message_remove_others = ""
-	message_remove_self = ""
-	alert_desc = ""
+	//trickwine_examine_text = ""
+	//message_apply_others =  ""
+	//message_apply_self = ""
+	//message_remove_others = ""
+	//message_remove_self = ""
+	//alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/prism/on_apply()
 	if(ishuman(owner))

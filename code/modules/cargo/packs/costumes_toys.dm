@@ -1,5 +1,5 @@
 /datum/supply_pack/costumes_toys
-	group = "Costumes & Toys"
+	category = "Costumes & Toys"
 
 /*
 		Toys
@@ -110,7 +110,7 @@
 					/obj/item/clothing/suit/toggle/lawyer,
 					/obj/item/clothing/under/rank/civilian/lawyer/purpsuit,
 					/obj/item/clothing/suit/toggle/lawyer/purple,
-					/obj/item/clothing/suit/toggle/lawyer/black,
+					/obj/item/clothing/suit/lawyer/charcoal,
 					/obj/item/clothing/accessory/waistcoat,
 					/obj/item/clothing/neck/tie/blue,
 					/obj/item/clothing/neck/tie/red,

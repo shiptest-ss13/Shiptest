@@ -15,7 +15,7 @@
 	var/default_mutation_genes[DNA_MUTATION_BLOCKS] //List of the default genes from this mutation to allow DNA Scanner highlighting
 	var/stability = 100
 	var/scrambled = FALSE //Did we take something like mutagen? In that case we cant get our genes scanned to instantly cheese all the powers.
-	var/current_body_size = BODY_SIZE_NORMAL //This is a size multiplier, it starts at "1".
+	var/current_height_filter = HUMAN_HEIGHT_MEDIUM
 
 
 	var/delete_species = TRUE //Set to FALSE when a body is scanned by a cloner to fix #38875. WS Edit - Cloning
@@ -66,7 +66,9 @@
 	new_dna.features = features.Copy()
 	new_dna.species = new species.type
 	new_dna.real_name = real_name
-	new_dna.update_body_size() //Must come after features.Copy()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/human_holder = holder
+		human_holder.set_mob_height(current_height_filter)
 	new_dna.mutations = mutations.Copy()
 
 //See mutation.dm for what 'class' does. 'time' is time till it removes itself in decimals. 0 for no timer
@@ -243,17 +245,17 @@
 		if(alert)
 			switch(stability)
 				if(70 to 90)
-					message = "<span class='warning'>You shiver.</span>"
+					message = span_warning("You shiver.")
 				if(60 to 69)
-					message = "<span class='warning'>You feel cold.</span>"
+					message = span_warning("You feel cold.")
 				if(40 to 59)
-					message = "<span class='warning'>You feel sick.</span>"
+					message = span_warning("You feel sick.")
 				if(20 to 39)
-					message = "<span class='warning'>It feels like your skin is moving.</span>"
+					message = span_warning("It feels like your skin is moving.")
 				if(1 to 19)
-					message = "<span class='warning'>You can feel your cells burning.</span>"
+					message = span_warning("You can feel your cells burning.")
 				if(-INFINITY to 0)
-					message = "<span class='boldwarning'>You can feel your DNA exploding, we need to do something fast!</span>"
+					message = span_boldwarning("You can feel your DNA exploding, we need to do something fast!")
 		if(stability <= 0)
 			holder.apply_status_effect(STATUS_EFFECT_DNA_MELT)
 		if(message)
@@ -292,22 +294,6 @@
 	return
 
 /////////////////////////// DNA MOB-PROCS //////////////////////
-/datum/dna/proc/update_body_size()
-	if(!holder)
-		return
-	var/desired_size = GLOB.body_sizes[features["body_size"]]
-
-	if(desired_size == current_body_size)
-		return
-
-	if(!features["body_size"])
-		return
-
-	var/change_multiplier = desired_size / current_body_size
-	var/translate = ((change_multiplier-1) * 32) * 0.5
-	holder.transform = holder.transform.Scale(change_multiplier)
-	holder.transform = holder.transform.Translate(0, translate)
-	current_body_size = desired_size
 
 /mob/proc/set_species(datum/species/mrace, icon_update = 1)
 	return
@@ -350,7 +336,6 @@
 			qdel(language_holder)
 			var/species_holder = initial(mrace.species_language_holder)
 			language_holder = new species_holder(src)
-		update_atom_languages()
 
 /mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE, robotic = FALSE)
 	robotic ||= fbp
@@ -627,29 +612,23 @@
 	dna.remove_all_mutations()
 	dna.stability = 100
 	if(prob(max(70-instability,0)))
-		switch(rand(0,10)) //not complete and utter death
+		switch(rand(0,8)) //not complete and utter death
 			if(0)
 				monkeyize()
 			if(1)
 				gain_trauma(/datum/brain_trauma/severe/paralysis/paraplegic)
 				new/obj/vehicle/ridden/wheelchair(get_turf(src)) //don't buckle, because I can't imagine to plethora of things to go through that could otherwise break
-				to_chat(src, "<span class='warning'>My flesh turned into a wheelchair and I can't feel my legs.</span>")
+				to_chat(src, span_warning("My flesh turned into a wheelchair and I can't feel my legs."))
 			if(2)
 				corgize()
 			if(3)
-				to_chat(src, "<span class='notice'>Oh, I actually feel quite alright!</span>")
+				to_chat(src, span_notice("Oh, I actually feel quite alright!"))
 			if(4)
-				to_chat(src, "<span class='notice'>Oh, I actually feel quite alright!</span>") //you thought
+				to_chat(src, span_notice("Oh, I actually feel quite alright!")) //you thought
 				physiology.damage_resistance = -20000
 			if(5)
-				to_chat(src, "<span class='notice'>Oh, I actually feel quite alright!</span>")
-				reagents.add_reagent(/datum/reagent/aslimetoxin, 10)
-			if(6)
 				apply_status_effect(STATUS_EFFECT_GO_AWAY)
-			if(7)
-				to_chat(src, "<span class='notice'>Oh, I actually feel quite alright!</span>")
-				ForceContractDisease(new/datum/disease/decloning()) //slow acting, non-viral clone damage based GBS
-			if(8)
+			if(6)
 				var/list/elligible_organs = list()
 				for(var/obj/item/organ/O in internal_organs) //make sure we dont get an implant or cavity item
 					elligible_organs += O
@@ -657,11 +636,11 @@
 				if(elligible_organs.len)
 					var/obj/item/organ/O = pick(elligible_organs)
 					O.Remove(src)
-					visible_message("<span class='danger'>[src] vomits up their [O.name]!</span>", "<span class='danger'>You vomit up your [O.name]</span>") //no "vomit up your the heart"
+					visible_message(span_danger("[src] vomits up their [O.name]!"), span_danger("You vomit up your [O.name]")) //no "vomit up your the heart"
 					O.forceMove(drop_location())
-			if(9 to 10)
+			if(7 to 9)
 				ForceContractDisease(new/datum/disease/gastrolosis())
-				to_chat(src, "<span class='notice'>Oh, I actually feel quite alright!</span>")
+				to_chat(src, span_notice("Oh, I actually feel quite alright!"))
 	else
 		switch(rand(0,5))
 			if(0)
@@ -682,7 +661,7 @@
 				else
 					set_species(/datum/species/dullahan)
 			if(4)
-				visible_message("<span class='warning'>[src]'s skin melts off!</span>", "<span class='boldwarning'>Your skin melts off!</span>")
+				visible_message(span_warning("[src]'s skin melts off!"), span_boldwarning("Your skin melts off!"))
 				spawn_gibs()
 				set_species(/datum/species/skeleton)
 				if(prob(90))
@@ -690,7 +669,7 @@
 					if(mind)
 						mind.hasSoul = FALSE
 			if(5)
-				to_chat(src, "<span class='phobia'>LOOK UP!</span>")
+				to_chat(src, span_phobia("LOOK UP!"))
 				addtimer(CALLBACK(src, PROC_REF(something_horrible_mindmelt)), 30)
 
 
@@ -701,5 +680,5 @@
 			return
 		eyes.Remove(src)
 		qdel(eyes)
-		visible_message("<span class='notice'>[src] looks up and their eyes melt away!</span>", "<span class>='userdanger'>I understand now.</span>")
+		visible_message(span_notice("[src] looks up and their eyes melt away!"), "<span class>='userdanger'>I understand now.</span>")
 		addtimer(CALLBACK(src, PROC_REF(adjustOrganLoss), ORGAN_SLOT_BRAIN, 200), 20)

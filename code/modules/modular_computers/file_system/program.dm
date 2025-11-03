@@ -75,7 +75,7 @@
 /datum/computer_file/program/proc/is_supported_by_hardware(hardware_flag = 0, loud = 0, mob/user = null)
 	if(!(hardware_flag & usage_flags))
 		if(loud && computer && user)
-			to_chat(user, "<span class='danger'>\The [computer] flashes an \"Hardware Error - Incompatible software\" warning.</span>")
+			to_chat(user, span_danger("\The [computer] flashes an \"Hardware Error - Incompatible software\" warning."))
 		return 0
 	return 1
 
@@ -113,15 +113,16 @@
 	if(ishuman(user))
 		var/obj/item/card/id/D
 		var/obj/item/computer_hardware/card_slot/card_slot
-		if(computer && card_slot)
+		if(computer)
 			card_slot = computer.all_components[MC_CARD]
+		if(card_slot)
 			D = card_slot.GetID()
 		var/mob/living/carbon/human/h = user
 		var/obj/item/card/id/I = h.get_idcard(TRUE)
 
 		if(!I && !D)
 			if(loud)
-				to_chat(user, "<span class='danger'>\The [computer] flashes an \"RFID Error - Unable to scan ID\" warning.</span>")
+				to_chat(user, span_danger("\The [computer] flashes an \"RFID Error - Unable to scan ID\" warning."))
 			return FALSE
 
 		if(I)
@@ -131,7 +132,7 @@
 			if(access_to_check in D.GetAccess())
 				return TRUE
 		if(loud)
-			to_chat(user, "<span class='danger'>\The [computer] flashes an \"Access Denied\" warning.</span>")
+			to_chat(user, span_danger("\The [computer] flashes an \"Access Denied\" warning."))
 	return 0
 
 // This attempts to retrieve header data for UIs. If implementing completely new device of different type than existing ones

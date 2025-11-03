@@ -1,6 +1,7 @@
 export type Data = {
   points: number;
   outpostDocked: boolean;
+  blockade: boolean;
   onShip: boolean;
   numMissions: number;
   maxMissions: number;
@@ -17,10 +18,10 @@ export type Data = {
 
 export type Mission = {
   ref: string;
-  actStr: string;
   name: string;
   desc: string;
   progressStr: string;
+  actStr: string;
   value: number;
   remaining: number;
   duration: number;

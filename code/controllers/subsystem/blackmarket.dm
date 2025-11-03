@@ -57,7 +57,7 @@ SUBSYSTEM_DEF(blackmarket)
 
 				var/obj/machinery/ltsrbt/pad = purchase.uplink.target
 
-				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>[purchase.uplink] flashes a message noting that the order is being processed by [pad].</span>")
+				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), span_notice("[purchase.uplink] flashes a message noting that the order is being processed by [pad]."))
 
 				queued_purchases -= purchase
 				pad.add_to_queue(purchase)
@@ -82,7 +82,7 @@ SUBSYSTEM_DEF(blackmarket)
 
 				var/atom/movable/item = purchase.entry.spawn_item(pickedloc)
 				item.Move(get_step(pickedloc,get_dir(pickedloc,T)))
-				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>[purchase.uplink] flashes a message noting the order is being launched at your coordinates from [dir2text(startSide)].</span>")
+				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), span_notice("[purchase.uplink] flashes a message noting the order is being launched at your coordinates from [dir2text(startSide)]."))
 
 				queued_purchases -= purchase
 				qdel(purchase)
@@ -117,12 +117,12 @@ SUBSYSTEM_DEF(blackmarket)
 
 							//yippee, there's a viable turf for the package to land on
 							landing_turf = potential_open_turf
-							to_chat(recursive_loc_check(purchase.uplink.loc, /mob),"<span class='notice'>[purchase.uplink] flashes a message noting the order is being launched at a structure in your local area.</span>")
+							to_chat(recursive_loc_check(purchase.uplink.loc, /mob),span_notice("[purchase.uplink] flashes a message noting the order is being launched at a structure in your local area."))
 							break
 
 				if(!landing_turf)
 					landing_turf = zlevel.get_random_position_in_margin()
-					to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>[purchase.uplink] flashes a message that the pod was unable to reach it's designated landing spot, and has landed somewhere in the local area instead.</span>")
+					to_chat(recursive_loc_check(purchase.uplink.loc, /mob), span_notice("[purchase.uplink] flashes a message that the pod was unable to reach it's designated landing spot, and has landed somewhere in the local area instead."))
 
 				var/obj/structure/closet/supplypod/pod = new()
 				pod.setStyle(STYLE_BOX)

@@ -1,0 +1,52 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"faction": "/datum/faction/ramzi",
+	"prefix": "ISV",
+	"manufacturer": "Kasagi-Fischer Partnership",
+	"namelists": ["GORLEX",
+		"NATURAL_AGGRESSIVE",
+		"BEASTS",
+		"MERCANTILE",
+		"PIRATES"],
+	"map_name": "Roach-class Schooner Retrofit",
+	"map_short_name": "Roach-class",
+	"map_path": "_maps/shuttles/pirate/pirate_roach.dmm",
+	"map_id": "pirate_roach",
+	"description": "A somewhat standardized Ramzi modification of Kasagi-Fischer Partnership's Callao-class Schooner, the creation of a Roach-class usually involves the removal most of the vessel's safety features, valuable construction materials, and the installation of an armory and prisoner cell. However, the classifying modification of a Roach-class is the conversion of the bridge to a speedy boarding vessel. Due to minimal modifications of the external hull, the Roach is able to blend in with civilian traffic in sector, and launch swift, brutal attacks upon the Cell's target of choice.",
+	"tags": ["Combat", "Subshuttle"],
+	"limit": 1,
+	"job_slots": {
+		"Cell Leader": {
+			"outfit": "/datum/outfit/job/ramzi/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Sweeper Lead": {
+			"outfit": "/datum/outfit/job/ramzi/hos",
+			"officer": true,
+			"slots": 1
+		},
+		"Shuttle Chief": {
+			"outfit": "/datum/outfit/job/ramzi/pilot",
+			"officer": true,
+			"slots": 1
+		},
+		"Sawbones": {
+			"outfit": "/datum/outfit/job/ramzi/medic",
+			"slots": 1
+		},
+		"Motorman": {
+			"outfit": "/datum/outfit/job/ramzi/engineer",
+			"slots": 1
+		},
+		"Sweeper": {
+			"outfit": "/datum/outfit/job/ramzi/operative",
+			"slots": 2
+		},
+		"Runt": {
+			"outfit": "/datum/outfit/job/ramzi/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": false
+}

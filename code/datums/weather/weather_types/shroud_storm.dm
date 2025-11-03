@@ -2,17 +2,17 @@
 	name = "shroudstorm"
 	desc = "Zap."
 
-	telegraph_message = "<span class='danger'>You hear thunder in the distance, static electricity rising in the air, wind starts to pickup..</span>"
+	telegraph_message = span_danger("You hear thunder in the distance, static electricity rising in the air, wind starts to pickup..")
 	telegraph_duration = 300
 	telegraph_overlay = "electric_ash"
 
-	weather_message = "<span class='userdanger'><i>An electric storm is upon you! Seek shelter!</i></span>"
+	weather_message = span_userdanger("<i>An electric storm is upon you! Seek shelter!</i>")
 	weather_overlay = "electric_storm"
 	weather_duration_lower = 600
 	weather_duration_upper = 1500
 
 	end_duration = 100
-	end_message ="<span class='notice'>The storm dissipates.</span>"
+	end_message =span_notice("The storm dissipates.")
 	end_overlay = "electric_ash"
 
 	area_type = /area

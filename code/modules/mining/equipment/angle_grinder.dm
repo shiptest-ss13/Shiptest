@@ -38,24 +38,24 @@
 
 /obj/item/gear_handle/anglegrinder/tool_start_check(mob/living/user, amount)
 	if(!pack)
-		to_chat(user, "<span class='warning'>how do you not have a pack for this. what.</span>")
+		to_chat(user, span_warning("how do you not have a pack for this. what."))
 		return FALSE
 	if(!pack.cell)
-		to_chat(user, "<span class='warning'>You need a cell to start!</span>")
+		to_chat(user, span_warning("You need a cell to start!"))
 		return FALSE
 	var/obj/item/stock_parts/cell/cell = pack.get_cell()
 	if(cell.charge < usecost)
-		to_chat(user, "<span class='warning'>You need more charge to complete this task!</span>")
+		to_chat(user, span_warning("You need more charge to complete this task!"))
 		return FALSE
 	return TRUE
 
-/obj/item/gear_handle/anglegrinder/tool_use_check(mob/living/user, amount)
+/obj/item/gear_handle/anglegrinder/tool_use_check(mob/living/user, atom/target, amount)
 	if(!pack.cell)
 		return FALSE
 	if(pack.deductcharge(usecost))
 		return TRUE
 	else
-		to_chat(user, "<span class='warning'>You need more charge to complete this task!</span>")
+		to_chat(user, span_warning("You need more charge to complete this task!"))
 		return FALSE
 
 /obj/item/gear_handle/anglegrinder/use(used)
@@ -78,7 +78,7 @@
 
 	tool_behaviour = TOOL_DECONSTRUCT
 	wielded = TRUE
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	icon_state = "[initial(item_state)]-wield"
 	item_state = "[initial(item_state)]-wield"
 
@@ -91,10 +91,6 @@
 	sharpness = initial(sharpness)
 	icon_state = initial(icon_state)
 	item_state = initial(item_state)
-
-/obj/item/gear_handle/anglegrinder/get_dismemberment_chance()
-	if(wielded)
-		. = ..()
 
 /obj/item/gear_handle/anglegrinder/use_tool(atom/target, mob/living/user, delay, amount=1, volume=0, datum/callback/extra_checks)
 	if(adv)

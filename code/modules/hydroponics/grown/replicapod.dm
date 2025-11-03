@@ -46,10 +46,10 @@
 				quirks = B.data["quirks"]
 				sampleDNA = B.data["blood_DNA"]
 				contains_sample = TRUE
-				visible_message("<span class='notice'>The [src] is injected with a fresh blood sample.</span>")
+				visible_message(span_notice("The [src] is injected with a fresh blood sample."))
 				log_cloning("[key_name(mind)]'s cloning record was added to [src] at [AREACOORD(src)].")
 			else
-				visible_message("<span class='warning'>The [src] rejects the sample!</span>")
+				visible_message(span_warning("The [src] rejects the sample!"))
 
 	if(!reagents.has_reagent(/datum/reagent/blood))
 		mind = null
@@ -84,9 +84,6 @@
 				else
 					if(M.ckey == ckey && M.stat == DEAD)
 						make_podman = TRUE
-						if(isliving(M))
-							var/mob/living/L = M
-							make_podman = !L.hellbound
 						break
 		else //If the player has ghosted from his corpse before blood was drawn, his ckey is no longer attached to the mob, so we need to match up the cloned player through the mind key
 			for(var/mob/M in GLOB.player_list)
@@ -96,9 +93,6 @@
 						if(!O.can_reenter_corpse)
 							break
 					make_podman = TRUE
-					if(isliving(M))
-						var/mob/living/L = M
-						make_podman = !L.hellbound
 					ckey_holder = M.ckey
 					break
 

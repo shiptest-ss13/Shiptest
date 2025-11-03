@@ -38,9 +38,9 @@
 	. = ..()
 	// by this point it's guaranteed to be a concrete wall
 	var/turf/closed/wall/concrete/conc_wall = T
-	if(conc_wall.integrity != integrity || conc_wall.harden_lvl != harden_lvl)
+	if(conc_wall.atom_integrity != atom_integrity || conc_wall.harden_lvl != harden_lvl)
 		conc_wall.harden_lvl = harden_lvl
-		conc_wall.integrity = integrity
+		conc_wall.atom_integrity = atom_integrity
 		// very much not a fan of all the repetition here,
 		// but there's unfortunately no easy way around it
 		conc_wall.check_harden()
@@ -63,7 +63,7 @@
 // we use this to show integrity + drying percentage
 /turf/closed/wall/concrete/deconstruction_hints(mob/user)
 	. = list()
-	. += "<span class='notice'>[p_they(TRUE)] look[p_s()] like you could <b>smash</b> [p_them()].</span>"
+	. += span_notice("[p_they(TRUE)] look[p_s()] like you could <b>smash</b> [p_them()].")
 	switch(harden_lvl)
 		if(0.8 to 0.99)
 			. += "[p_they(TRUE)] look[p_s()] nearly dry."
@@ -75,8 +75,8 @@
 
 /turf/closed/wall/concrete/create_girder()
 	var/obj/girder = ..()
-	if(integrity < 0)
-		girder.take_damage(min(abs(integrity), 50))
+	if(atom_integrity < 0)
+		girder.take_damage(min(abs(atom_integrity), 50))
 	return girder
 
 /turf/closed/wall/concrete/proc/check_harden()
@@ -93,7 +93,7 @@
 /turf/closed/wall/concrete/update_stats()
 	.= .. ()
 	// explosion block is diminished on a damaged / soft wall
-	explosion_block = (integrity / max_integrity) * harden_lvl * initial(explosion_block)
+	explosion_block = (atom_integrity / max_integrity) * harden_lvl * initial(explosion_block)
 
 /turf/closed/wall/concrete/alter_integrity(damage)
 	// 8x as vulnerable when unhardened
@@ -105,8 +105,8 @@
 	M.do_attack_animation(src)
 	switch(M.damtype)
 		if(BRUTE)
-			M.visible_message("<span class='danger'>[M.name] hits [src]!</span>", \
-							"<span class='danger'>You hit [src]!</span>", null, COMBAT_MESSAGE_RANGE)
+			M.visible_message(span_danger("[M.name] hits [src]!"), \
+							span_danger("You hit [src]!"), null, COMBAT_MESSAGE_RANGE)
 			playsound(src, 'sound/weapons/punch4.ogg', 50, TRUE)
 			playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 			alter_integrity(M.force * -20)
@@ -123,7 +123,7 @@
 /turf/closed/wall/concrete/try_decon(obj/item/W, mob/user, turf/T)
 	return null
 
-/turf/closed/wall/concrete/get_item_damage(obj/item/I, t_min = min_dam)
+/turf/closed/wall/concrete/get_item_damage(obj/item/I, mob/user, t_min = min_dam)
 	t_min = min_dam / (1 + 7*(1-harden_lvl)) // drying walls are more vulnerable
 	. = .. ()
 
@@ -159,4 +159,4 @@
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 	else
 		playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
-		to_chat(M, "<span class='warning'>This wall is far too strong for you to destroy.</span>")
+		to_chat(M, span_warning("This wall is far too strong for you to destroy."))

@@ -19,7 +19,7 @@
 
 /client/proc/spawn_outpost()
 	set name = "Spawn Outpost"
-	set category = "Event.Spawning"
+	set category = "Event.Overmap"
 	set desc = "Spawns the selected /datum/overmap/outpost subtype."
 
 	if(!holder)
@@ -45,10 +45,18 @@
 				var/loc_y = input(usr, "Y overmap coordinate:") as num
 				location = list("x" = loc_x, "y" = loc_y)
 
+		var/datum/overmap_star_system/selected_system //the star system we are
+		if(length(SSovermap.tracked_star_systems) > 1)
+			selected_system = tgui_input_list(usr, "Which star system do you want to spawn it in?", "Spawn Planet/Ruin", SSovermap.tracked_star_systems)
+		else
+			selected_system = SSovermap.tracked_star_systems[1]
+		if(!selected_system)
+			return //if selected_system didnt get selected, we nope out, this is very bad
+
 		message_admins("[key_name_admin(usr)] is spawning the outpost [outpost_type]!")
 		log_admin("[key_name(usr)] is spawning the outpost [outpost_type]!")
 
-		var/datum/overmap/outpost/created = new outpost_type(location)
+		var/datum/overmap/outpost/created = new outpost_type(location, selected_system)
 
 		message_admins("[key_name_admin(usr)] has spawned the outpost [created] ([REF(created)], [created.type])!")
 		log_admin("[key_name(usr)] has spawned the outpost [created] ([REF(created)], [created.type])!")

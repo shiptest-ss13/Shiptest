@@ -34,7 +34,7 @@
 /obj/item/storage/box/ammo/a8_50r/match
 	name = "box of 8x50mm match ammo"
 	desc = "A box of standard 8x50mm ammo."
-	icon_state = "8x50mmbox"
+	icon_state = "8x50mmbox-match"
 
 /obj/item/storage/box/ammo/a8_50r/match/PopulateContents()
 	var/static/items_inside = list(
@@ -48,7 +48,7 @@
 /obj/item/storage/box/ammo/a8_50r/trac
 	name = "box of 8x50mm trac ammo"
 	desc = "A box of 8x50mm trackers."
-	icon_state = "8x50mmbox"
+	icon_state = "8x50mmbox-trac"
 
 /obj/item/storage/box/ammo/a8_50r/trac/PopulateContents()
 	var/static/items_inside = list(
@@ -78,7 +78,7 @@
 /obj/item/storage/box/ammo/a556_42/hp
 	name = "box of 5.56x42mm CLIP HP ammo"
 	desc = "A box of standard 5.56x42mm CLIP HP ammo."
-	icon_state = "a556_42box_big"
+	icon_state = "a556_42box_big-hp"
 
 /obj/item/storage/box/ammo/a556_42/hp/PopulateContents()
 	var/static/items_inside = list(
@@ -92,7 +92,7 @@
 /obj/item/storage/box/ammo/a556_42/ap
 	name = "box of 5.56x42mm CLIP AP ammo"
 	desc = "A box of standard 5.56x42mm CLIP AP ammo."
-	icon_state = "a556_42box_big"
+	icon_state = "a556_42box_big-ap"
 
 /obj/item/storage/box/ammo/a556_42/ap/PopulateContents()
 	var/static/items_inside = list(
@@ -125,7 +125,7 @@
 /obj/item/storage/box/ammo/a762_40/hp
 	name = "box of 7.62x40mm CLIP Hollow Point ammo"
 	desc = "A box of standard 7.62x40mm CLIP Hollow Point ammo."
-	icon_state = "a762_40box_big"
+	icon_state = "a762_40box_big-hp"
 
 /obj/item/storage/box/ammo/a762_40/hp/PopulateContents()
 	var/static/items_inside = list(
@@ -139,7 +139,7 @@
 /obj/item/storage/box/ammo/a762_40/ap
 	name = "box of 7.62x40mm CLIP Armour Piercing ammo"
 	desc = "A box of standard 7.62x40mm CLIP Armour Piercing ammo."
-	icon_state = "a762_40box_big"
+	icon_state = "a762_40box_big-ap"
 
 /obj/item/storage/box/ammo/a762_40/ap/PopulateContents()
 	var/static/items_inside = list(
@@ -153,7 +153,7 @@
 /obj/item/storage/box/ammo/a762_40/rubber
 	name = "box of 7.62x40mm CLIP rubber ammo"
 	desc = "A box of standard 7.62x40mm CLIP rubber ammo."
-	icon_state = "a762_40box_big"
+	icon_state = "a762_40box_big-rubbershot"
 
 /obj/item/storage/box/ammo/a762_40/rubber/PopulateContents()
 	var/static/items_inside = list(
@@ -169,10 +169,10 @@
 /obj/item/storage/box/ammo/a308
 	name = "box of .308 ammo"
 	desc = "A box of standard .308 ammo."
-	icon_state = "a308box"
-
-/obj/item/storage/box/ammo/a308/hunterspride
 	icon_state = "a308box-HP"
+
+/obj/item/storage/box/ammo/a308/inteq
+	icon_state = "a308box"
 
 /obj/item/storage/box/ammo/a308/PopulateContents()
 	var/static/items_inside = list(
@@ -186,7 +186,7 @@
 /obj/item/storage/box/ammo/a308/hp
 	name = "box of .308 HP ammo"
 	desc = "A box of standard .308 HP ammo."
-	icon_state = "a308box"
+	icon_state = "a308box-hp-hp"
 
 /obj/item/storage/box/ammo/a308/hp/PopulateContents()
 	var/static/items_inside = list(
@@ -200,7 +200,7 @@
 /obj/item/storage/box/ammo/a308/ap
 	name = "box of .308 AP ammo"
 	desc = "A box of standard .308 AP ammo."
-	icon_state = "a308box"
+	icon_state = "a308box-hp-ap"
 
 /obj/item/storage/box/ammo/a308/ap/PopulateContents()
 	var/static/items_inside = list(

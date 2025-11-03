@@ -200,6 +200,14 @@
 /datum/client_colour/monochrome/blind/permanent //For the permanently colorblind
 	priority = PRIORITY_ABSOLUTE
 
+/datum/client_colour/monochrome/New(mob/_owner)
+	. = ..()
+	ADD_TRAIT(_owner, TRAIT_COLORBLIND, REF(src))
+
+/datum/client_colour/monochrome/Destroy()
+	REMOVE_TRAIT(owner, TRAIT_COLORBLIND, REF(src))
+	return ..()
+
 /datum/client_colour/bloodlust
 	priority = PRIORITY_ABSOLUTE // Only anger.
 	colour = list(0,0,0,0,0,0,0,0,0,1,0,0) //pure red.

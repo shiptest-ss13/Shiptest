@@ -1005,6 +1005,19 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
+"kW" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/innards,
+/obj/structure/mecha_wreckage/gygax/dark{
+	name = "515 EX 'Lucky #2'"
+	},
+/obj/effect/landmark/mission_poi/main{
+	already_spawned = 1;
+	type_to_spawn = /obj/structure/mecha_wreckage/gygax/dark;
+	mission_index = 2
+	},
+/turf/open/floor/mech_bay_recharge_floor,
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "kZ" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 4
@@ -1450,7 +1463,7 @@
 /turf/open/floor/plating/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "qN" = (
-/obj/machinery/computer/rdconsole{
+/obj/structure/salvageable/computer{
 	dir = 1
 	},
 /obj/effect/turf_decal/box/white,
@@ -1884,6 +1897,23 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
+"vN" = (
+/obj/structure/table/reinforced,
+/obj/item/radio/intercom/directional/east,
+/obj/item/paperplane{
+	pixel_y = -3;
+	pixel_x = -5
+	},
+/obj/item/radio/intercom/directional/east,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 10
+	},
+/obj/item/documents/syndicate{
+	pixel_y = 4
+	},
+/obj/effect/landmark/mission_poi/main,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
 "vO" = (
 /obj/machinery/light/dim/directional/north,
 /obj/effect/decal/cleanable/blood/drip,
@@ -1912,19 +1942,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
-"vW" = (
-/obj/structure/table/reinforced,
-/obj/item/radio/intercom/directional/east,
-/obj/item/paperplane{
-	pixel_y = -3;
-	pixel_x = -5
-	},
-/obj/item/radio/intercom/directional/east,
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 10
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
 "wc" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -3092,12 +3109,6 @@
 "KG" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
-"KH" = (
-/obj/machinery/porta_turret/ruin/ramzi/light{
-	dir = 9
-	},
-/turf/closed/wall/concrete/reinforced,
-/area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
 "KI" = (
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 4
@@ -3423,7 +3434,7 @@
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
 "OY" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/snacks/donut/jelly/choco,
+/obj/item/food/donut/jelly/choco,
 /obj/effect/turf_decal/box/white,
 /obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/tech/grid,
@@ -3476,12 +3487,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/glasses/hud/diagnostic,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay1)
-"PW" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/blood/innards,
-/obj/mecha/combat/gygax/dark,
-/turf/open/floor/mech_bay_recharge_floor,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "Qe" = (
 /obj/structure/sign/warning/radiation,
@@ -4200,6 +4205,12 @@
 /obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
+"Zw" = (
+/obj/machinery/porta_turret/ruin/ramzi/light{
+	dir = 9
+	},
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
 "Zx" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning,
 /obj/effect/decal/cleanable/dirt,
@@ -4648,7 +4659,7 @@ eb
 tM
 Ww
 Sr
-KH
+Zw
 LX
 dR
 dR
@@ -4840,7 +4851,7 @@ eb
 hU
 gu
 cq
-KH
+Zw
 Yt
 Yt
 dR
@@ -5278,7 +5289,7 @@ kJ
 eb
 eb
 qJ
-KH
+Zw
 KG
 VG
 VJ
@@ -5580,7 +5591,7 @@ BJ
 RY
 kn
 NK
-PW
+kW
 lT
 Rg
 jI
@@ -5865,7 +5876,7 @@ Ur
 aX
 nF
 ey
-vW
+vN
 GM
 Hl
 nF

@@ -8,7 +8,10 @@
 	layer = ABOVE_MOB_LAYER
 	opacity = FALSE
 	pass_flags_self = LETPASSTHROW
+	flags_1 = ON_BORDER_1
 	var/table_type = /obj/structure/table
+	climbable = TRUE
+	climb_time = 1.5 SECONDS
 
 /obj/structure/flippedtable/Initialize()
 	. = ..()
@@ -20,7 +23,7 @@
 
 /obj/structure/flippedtable/examine(mob/user)
 	. = ..()
-	. += span_notice("You could right the [name] by control shift-clicking it.")
+	. += span_notice("You could right the [name] by <b>Control Shift-Clicking</b> it.")
 
 /obj/structure/flippedtable/proc/check_dir()
 	if(dir == NORTHEAST || dir == SOUTHEAST)
@@ -69,7 +72,7 @@
 	user.visible_message(span_danger("[user] starts flipping [src]!"), span_notice("You start flipping over the [src]!"))
 	if(do_after(user, max_integrity/4))
 		var/obj/structure/table/table_unflip = new table_type(src.loc)
-		table_unflip.obj_integrity = obj_integrity
+		table_unflip.update_integrity(atom_integrity)
 		user.visible_message(span_danger("[user] flips over the [src]!"), span_notice("You flip over the [src]!"))
 		playsound(src, 'sound/items/trayhit2.ogg', 100)
 		qdel(src)

@@ -1,11 +1,10 @@
 /datum/species/ipc // im fucking lazy mk2 and cant get sprites to normally work
 	name = "\improper Positronic" //inherited from the real species, for health scanners and things
 	id = SPECIES_IPC
-	sexes = FALSE
 	species_age_min = 0
 	species_age_max = 300
-	species_traits = list(NOTRANSSTING,NOEYESPRITES,NO_DNA_COPY,TRAIT_EASYDISMEMBER,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH,NO_BONES) //all of these + whatever we inherit from the real species
-	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_LIMBATTACHMENT, TRAIT_METALLIC)
+	species_traits = list(HAIR,NOTRANSSTING,NO_DNA_COPY,TRAIT_EASYDISMEMBER,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH) //all of these + whatever we inherit from the real species
+	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_LIMBATTACHMENT)
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
 	mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
 	mutanteyes = /obj/item/organ/eyes/robotic
@@ -18,14 +17,12 @@
 	mutantappendix = null
 	mutant_organs = list(/obj/item/organ/cyberimp/arm/power_cord)
 	mutant_bodyparts = list("ipc_screen", "ipc_antenna", "ipc_chassis", "ipc_tail", "ipc_brain")
-	default_features = list("mcolor" = "#7D7D7D", "ipc_screen" = "Static", "ipc_antenna" = "None", "ipc_chassis" = "Morpheus Cyberkinetics (Custom)", "ipc_tail" = "None", "ipc_brain" = "Posibrain", "body_size" = "Normal")
+	default_features = list("mcolor" = "#7D7D7D", "ipc_screen" = "Static", "ipc_antenna" = "None", "ipc_chassis" = "Morpheus Cyberkinetics (Custom)", "ipc_tail" = "None", "ipc_brain" = "Posibrain")
 	meat = /obj/item/stack/sheet/plasteel{amount = 5}
 	skinned_type = /obj/item/stack/sheet/metal{amount = 10}
 	exotic_bloodtype = "Coolant"
 	damage_overlay_type = "synth"
-	burnmod = 1.25
 	heatmod = 1.5
-	brutemod = 1
 	siemens_coeff = 1.5
 	reagent_tag = PROCESS_SYNTHETIC
 	species_gibs = "robotic"
@@ -39,12 +36,14 @@
 	Just as easy to repair as they are to destroy, they might just get their last laugh in as you're choking on neurotoxins. Beep Boop."
 	ass_image = 'icons/ass/assmachine.png'
 
-	species_chest = /obj/item/bodypart/chest/ipc
-	species_head = /obj/item/bodypart/head/ipc
-	species_l_arm = /obj/item/bodypart/l_arm/ipc
-	species_r_arm = /obj/item/bodypart/r_arm/ipc
-	species_l_leg = /obj/item/bodypart/leg/left/ipc
-	species_r_leg = /obj/item/bodypart/leg/right/ipc
+	species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc,
+	)
 
 	/// The last screen used when the IPC died.
 	var/saved_screen
@@ -65,6 +64,8 @@
 	)
 
 /datum/species/ipc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load) // Let's make that IPC actually robotic.
+	if(C.dna?.features["ipc_brain"] == "Man-Machine Interface")
+		mutantbrain = /obj/item/organ/brain/mmi_holder
 	. = ..()
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C
@@ -73,10 +74,6 @@
 			if(species_datum?.has_screen)
 				change_screen = new
 				change_screen.Grant(H)
-		if(H.dna.features["ipc_brain"] == "Man-Machine Interface")
-			mutantbrain = /obj/item/organ/brain/mmi_holder
-		else
-			mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
 		C.RegisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, TYPE_PROC_REF(/mob/living/carbon, charge))
 
 /datum/species/ipc/on_species_loss(mob/living/carbon/C)
@@ -139,11 +136,11 @@
 	var/mob/living/carbon/human/H = user
 	var/obj/item/organ/stomach/cell/battery = H.getorganslot(ORGAN_SLOT_STOMACH)
 	if(!battery)
-		to_chat(H, "<span class='warning'>You try to siphon energy from \the [target], but your power cell is gone!</span>")
+		to_chat(H, span_warning("You try to siphon energy from \the [target], but your power cell is gone!"))
 		return
 
 	if(istype(H) && H.nutrition >= NUTRITION_LEVEL_ALMOST_FULL)
-		to_chat(user, "<span class='warning'>You are already fully charged!</span>")
+		to_chat(user, span_warning("You are already fully charged!"))
 		return
 
 	if(istype(target, /obj/machinery/power/apc))
@@ -152,7 +149,7 @@
 			powerdraw_loop(A, H, TRUE)
 			return
 		else
-			to_chat(user, "<span class='warning'>There is not enough charge to draw from that APC.</span>")
+			to_chat(user, span_warning("There is not enough charge to draw from that APC."))
 			return
 
 	if(iselzuose(target))
@@ -162,11 +159,11 @@
 			powerdraw_loop(eth_stomach, H, FALSE)
 			return
 		else
-			to_chat(user, "<span class='warning'>There is not enough charge to draw from that being!</span>")
+			to_chat(user, span_warning("There is not enough charge to draw from that being!"))
 			return
 
 /obj/item/apc_powercord/proc/powerdraw_loop(atom/target, mob/living/carbon/human/H, apc_target)
-	H.visible_message("<span class='notice'>[H] inserts a power connector into the [target].</span>", "<span class='notice'>You begin to draw power from the [target].</span>")
+	H.visible_message(span_notice("[H] inserts a power connector into the [target]."), span_notice("You begin to draw power from the [target]."))
 	var/obj/item/organ/stomach/cell/battery = H.getorganslot(ORGAN_SLOT_STOMACH)
 	if(apc_target)
 		var/obj/machinery/power/apc/A = target
@@ -174,23 +171,23 @@
 			return
 		while(do_after(H, 10, target = A))
 			if(loc != H)
-				to_chat(H, "<span class='warning'>You must keep your connector out while charging!</span>")
+				to_chat(H, span_warning("You must keep your connector out while charging!"))
 				break
 			if(A.cell.charge == 0)
-				to_chat(H, "<span class='warning'>The [A] doesn't have enough charge to spare.</span>")
+				to_chat(H, span_warning("The [A] doesn't have enough charge to spare."))
 				break
 			A.charging = 1
 			if(A.cell.charge >= 500)
 				H.nutrition += 50
 				A.cell.charge -= 250
-				to_chat(H, "<span class='notice'>You siphon off some of the stored charge for your own use.</span>")
+				to_chat(H, span_notice("You siphon off some of the stored charge for your own use."))
 			else
 				H.nutrition += A.cell.charge/10
 				A.cell.charge = 0
-				to_chat(H, "<span class='notice'>You siphon off as much as the [A] can spare.</span>")
+				to_chat(H, span_notice("You siphon off as much as the [A] can spare."))
 				break
 			if(H.nutrition > NUTRITION_LEVEL_WELL_FED)
-				to_chat(H, "<span class='notice'>You are now fully charged.</span>")
+				to_chat(H, span_notice("You are now fully charged."))
 				break
 	else
 		var/obj/item/organ/stomach/ethereal/A = target
@@ -199,22 +196,22 @@
 		var/siphon_amt
 		while(do_after(H, 10, target = A.owner))
 			if(!battery)
-				to_chat(H, "<span class='warning'>You need a battery to recharge!</span>")
+				to_chat(H, span_warning("You need a battery to recharge!"))
 				break
 			if(loc != H)
-				to_chat(H, "<span class='warning'>You must keep your connector out while charging!</span>")
+				to_chat(H, span_warning("You must keep your connector out while charging!"))
 				break
 			if(A.crystal_charge == 0)
-				to_chat(H, "<span class='warning'>[A] is completely drained!</span>")
+				to_chat(H, span_warning("[A] is completely drained!"))
 				break
 			siphon_amt = A.crystal_charge <= (2 * ELZUOSE_CHARGE_SCALING_MULTIPLIER) ? A.crystal_charge : (2 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 			A.adjust_charge(-1 * siphon_amt)
 			H.nutrition += (siphon_amt)
 			if(H.nutrition > NUTRITION_LEVEL_WELL_FED)
-				to_chat(H, "<span class='notice'>You are now fully charged.</span>")
+				to_chat(H, span_notice("You are now fully charged."))
 				break
 
-	H.visible_message("<span class='notice'>[H] unplugs from the [target].</span>", "<span class='notice'>You unplug from the [target].</span>")
+	H.visible_message(span_notice("[H] unplugs from the [target]."), span_notice("You unplug from the [target]."))
 	return
 
 /datum/species/ipc/spec_life(mob/living/carbon/human/H)
@@ -222,7 +219,7 @@
 	if(H.health <= HEALTH_THRESHOLD_CRIT && H.stat != DEAD) // So they die eventually instead of being stuck in crit limbo.
 		H.adjustFireLoss(6) // After BODYTYPE_ROBOTIC resistance this is ~2/second
 		if(prob(5))
-			to_chat(H, "<span class='warning'>Alert: Internal temperature regulation systems offline; thermal damage sustained. Shutdown imminent.</span>")
+			to_chat(H, span_warning("Alert: Internal temperature regulation systems offline; thermal damage sustained. Shutdown imminent."))
 			H.visible_message("[H]'s cooling system fans stutter and stall. There is a faint, yet rapid beeping coming from inside their chassis.")
 
 
@@ -241,52 +238,22 @@
 	H.dna.features["ipc_screen"] = saved_screen
 	H.update_body()
 
-/datum/species/ipc/replace_body(mob/living/carbon/C, datum/species/new_species, robotic = FALSE)
-	..()
-
+/datum/species/ipc/replace_body(mob/living/carbon/C, datum/species/old_species, datum/species/new_species, robotic)
 	var/datum/sprite_accessory/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[C.dna.features["ipc_chassis"]]
-
-	if(chassis_of_choice.use_eyes)
-		LAZYREMOVE(species_traits, NOEYESPRITES)
-		LAZYADD(species_traits, EYECOLOR)
-		C.update_body()
-
-	if(!chassis_of_choice.has_screen)
-		has_screen = FALSE
-		C.dna.features["ipc_screen"] = null
-		C.update_body()
-
-	if(chassis_of_choice.is_digi)
-		digitigrade_customization = DIGITIGRADE_FORCED
-		bodytype = BODYTYPE_DIGITIGRADE
-
-	for(var/obj/item/bodypart/BP as anything in C.bodyparts) //Override bodypart data as necessary
-		if(BP.limb_id=="synth")
-			BP.uses_mutcolor = chassis_of_choice.color_src ? TRUE : FALSE
-
-			if(chassis_of_choice.icon)
-				BP.static_icon = chassis_of_choice.icon
-				BP.icon = chassis_of_choice.icon
-
-			if(chassis_of_choice.has_overlay)
-				BP.overlay_icon_state = TRUE
-
-			if(chassis_of_choice.is_digi)
-				if(istype(BP,/obj/item/bodypart/leg))
-					BP.bodytype |= BODYTYPE_DIGITIGRADE //i hate this so much
-
-			if(chassis_of_choice.has_snout)
-				if(istype(BP,/obj/item/bodypart/head))
-					BP.bodytype |= BODYTYPE_SNOUT //hate. hate. (tik tok tts)
-
-			if(BP.uses_mutcolor)
-				BP.should_draw_greyscale = TRUE
-				BP.species_color = C.dna?.features["mcolor"]
-				BP.species_secondary_color = C.dna?.features["mcolor2"]
-
-			BP.limb_id = chassis_of_choice.limbs_id
-			BP.name = "\improper[chassis_of_choice.name] [parse_zone(BP.body_zone)]"
-			BP.update_limb()
+	if(chassis_of_choice)
+		qdel(species_limbs)
+		species_limbs = chassis_of_choice.chassis_bodyparts.Copy() // elegant.
+		var/obj/item/bodypart/chest/new_chest = species_limbs[BODY_ZONE_CHEST]
+		if(new_chest)
+			bodytype = initial(new_chest.acceptable_bodytype)
+		else
+			stack_trace("[chassis_of_choice.type] had no chest bodypart!")
+		for(var/feature in chassis_of_choice.chassis_features)
+			mutant_bodyparts |= feature
+			default_features[feature] = chassis_of_choice.chassis_features[feature]
+	else // in case of fuckery
+		stack_trace("Invalid IPC chassis: [C.dna.features["ipc_chassis"]]")
+	return ..()
 
 /mob/living/carbon/proc/charge(datum/source, amount, repairs)
 	if(nutrition < NUTRITION_LEVEL_WELL_FED)

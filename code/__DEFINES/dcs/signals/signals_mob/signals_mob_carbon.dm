@@ -1,6 +1,3 @@
-/// from base of [/mob/living/changeNext_Move()] (next_move)
-#define COMSIG_LIVING_CHANGENEXT_MOVE "living_changenext_move"
-
 ///Called from /mob/living/carbon/help_shake_act, before any hugs have ocurred. (mob/living/helper)
 #define COMSIG_CARBON_PRE_HELP_ACT "carbon_pre_help"
 	/// Stops the rest of help act (hugging, etc) from occuring
@@ -23,9 +20,12 @@
 #define COMSIG_CARBON_LOSE_WOUND "carbon_lose_wound" //from /datum/wound/proc/remove_wound() (/mob/living/carbon/C, /datum/wound/W, /obj/item/bodypart/L)
 ///from base of /obj/item/bodypart/proc/attach_limb(): (new_limb, special) allows you to fail limb attachment
 #define COMSIG_CARBON_ATTACH_LIMB "carbon_attach_limb"
-#define COMSIG_CARBON_REMOVE_LIMB "carbon_remove_limb" //from base of /obj/item/bodypart/proc/drop_limb(lost_limb, dismembered)
-#define COMSIG_BODYPART_GAUZED "bodypart_gauzed" // from /obj/item/bodypart/proc/apply_gauze(/obj/item/stack/gauze)
-#define COMSIG_BODYPART_GAUZE_DESTROYED "bodypart_degauzed" // from [/obj/item/bodypart/proc/seep_gauze] when it runs out of absorption
+	#define COMPONENT_NO_ATTACH (1<<0)
+#define COMSIG_CARBON_REMOVE_LIMB "carbon_remove_limb" //from base of /obj/item/bodypart/proc/drop_limb(special, dismembered)
+#define COMSIG_BODYPART_GAUZED "bodypart_gauzed" // from /datum/bodypart_aid/gauze/New() //When a gauze is applied
+#define COMSIG_BODYPART_GAUZE_DESTROYED "bodypart_degauzed" // from /datum/bodypart_aid/gauze/Destroy() //When a gauze is removed
+#define COMSIG_BODYPART_SPLINTED "bodypart_splinted" // from /datum/bodypart_aid/splint/New() //When a splint is applied
+#define COMSIG_BODYPART_SPLINT_DESTROYED "bodypart_desplinted" // from /datum/bodypart_aid/gauze/Destroy() //When a splint is removed
 
 ///Called when someone attempts to cuff a carbon
 #define COMSIG_CARBON_CUFF_ATTEMPTED "carbon_attempt_cuff"

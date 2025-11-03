@@ -1,4 +1,5 @@
 /mob/living/carbon
+	bad_type = /mob/living/carbon
 	blood_volume = BLOOD_VOLUME_NORMAL
 	gender = MALE
 	pressure_resistance = 15
@@ -40,7 +41,7 @@
 
 	var/co2overloadtime = null
 	var/temperature_resistance = T0C+75
-	var/obj/item/reagent_containers/food/snacks/meat/slab/type_of_meat = /obj/item/reagent_containers/food/snacks/meat/slab
+	var/obj/item/food/meat/slab/type_of_meat = /obj/item/food/meat/slab
 
 	var/gib_type = /obj/effect/decal/cleanable/blood/gibs
 
@@ -50,12 +51,12 @@
 
 	var/list/icon_render_keys = list()
 	var/list/bodyparts = list(
-		/obj/item/bodypart/chest,
-		/obj/item/bodypart/head,
-		/obj/item/bodypart/l_arm,
-		/obj/item/bodypart/r_arm,
-		/obj/item/bodypart/leg/right,
-		/obj/item/bodypart/leg/left
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left
 	)
 
 	var/list/hand_bodyparts = list() ///a collection of arms (or actually whatever the fug /bodyparts you monsters use to wreck my systems)
@@ -70,10 +71,10 @@
 	var/obj/halitem
 	var/hal_screwyhud = SCREWYHUD_NONE
 	var/next_hallucination = 0
-	var/cpr_time = 1 ///CPR cooldown.
+	/// CPR cooldown.
+	var/cpr_time = 1
 	var/damageoverlaytemp = 0
 
-	var/drunkenness = 0 ///Overall drunkenness
 	var/stam_regen_start_time = 0 ///used to halt stamina regen temporarily
 
 	/// Protection (insulation) from the heat, Value 0-1 corresponding to the percentage of protection
@@ -84,13 +85,18 @@
 	/// Timer id of any transformation
 	var/transformation_timer
 
-	/// WS edit - moth dust when hugging
+	/// All of the wounds a carbon has afflicted throughout their limbs
+	var/list/all_wounds
+
+	/// Levels of moth dust
 	var/mothdust
 
-	///List of quirk cooldowns to track
+	/// List of quirk cooldowns to track
 	var/list/quirk_cooldown = list()
 	/// Timer to remove the dream_sequence timer when the mob is deleted
 	var/dream_timer
 
 	/// Can other carbons be shoved into this one to make it fall?
 	var/can_be_shoved_into = FALSE
+
+	COOLDOWN_DECLARE(bleeding_message_cd)

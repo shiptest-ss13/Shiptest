@@ -365,6 +365,14 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 	category = list ("Misc. Machinery")
 
+/datum/design/board/coffeemaker
+	name = "Machine Design (Coffeemaker)"
+	desc = "The circuit board for a coffeemaker."
+	id = "coffeemaker"
+	build_path = /obj/item/circuitboard/machine/coffeemaker
+	category = list("Misc. Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
+
 /datum/design/board/recycler
 	name = "Machine Design (Recycler Board)"
 	desc = "The circuit board for a recycler."
@@ -547,14 +555,6 @@
 	id = "ore_silo"
 	build_path = /obj/item/circuitboard/machine/ore_silo
 	category = list ("Research Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO
-
-/datum/design/board/selling_pad
-	name = "Machine Design (Cargo Hold Pad)"
-	desc = "The circuit board for a Cargo Hold Pad."
-	id = "selling_pad"
-	build_path = /obj/item/circuitboard/machine/selling_pad
-	category = list ("Misc. Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/board/paystand

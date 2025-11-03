@@ -198,7 +198,7 @@
 
 	var/obj/item/offered_item = get_active_held_item()
 	if(!offered_item)
-		to_chat(src, "<span class='warning'>You're not holding anything to give!</span>")
+		to_chat(src, span_warning("You're not holding anything to give!"))
 		return
 
 	if(has_status_effect(STATUS_EFFECT_OFFERING))
@@ -231,7 +231,7 @@
 		to_chat(src, span_warning("[offerer] is no longer holding the item they were offering!"))
 		return
 	if(!get_empty_held_indexes())
-		to_chat(src, "<span class='warning'>You have no empty hands!</span>")
+		to_chat(src, span_warning("You have no empty hands!"))
 		return
 
 	if(I.on_offer_taken(offerer, src)) // see if the item has special behavior for being accepted

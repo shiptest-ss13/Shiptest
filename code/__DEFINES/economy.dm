@@ -10,3 +10,6 @@
 #define CREDIT_LOG_SYNDICATE_CONTRACT "syndicate_contract"
 #define CREDIT_LOG_SELLING_PAD "selling_pad"
 
+#define	MISSION_REWARD_CASH "cash"
+#define	MISSION_REWARD_ITEMS "items"
+#define	MISSION_REWARD_REP "rep"
