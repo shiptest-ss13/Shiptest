@@ -1434,6 +1434,81 @@
 /obj/structure/closet/secure_closet/freezer/fridge{
 	populate = 0
 	},
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/item/food/mirasegg{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/obj/item/food/mirasegg{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/obj/item/food/mirasegg{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/obj/item/food/meat/slab/remes{
+	pixel_y = -5;
+	pixel_x = -5
+	},
+/obj/item/food/meat/slab/remes{
+	pixel_y = -5;
+	pixel_x = -5
+	},
+/obj/item/food/meat/slab/remes{
+	pixel_y = -5;
+	pixel_x = -5
+	},
+/obj/item/food/grown/refa_li{
+	pixel_x = 6;
+	pixel_y = -5
+	},
+/obj/item/food/grown/refa_li{
+	pixel_x = 6;
+	pixel_y = -5
+	},
+/obj/item/food/grown/refa_li{
+	pixel_x = 6;
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/condiment/flour{
+	pixel_x = 7;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/condiment/sugar{
+	pixel_x = 8;
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/condiment/rice{
+	pixel_x = 1;
+	pixel_y = -9
+	},
+/obj/item/food/fishmeat{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/food/fishmeat{
+	pixel_x = -8;
+	pixel_y = 2
+	},
+/obj/item/food/grown/seaweed/sheet{
+	pixel_x = -10;
+	pixel_y = -4
+	},
+/obj/item/food/grown/seaweed/sheet{
+	pixel_x = -11;
+	pixel_y = -7
+	},
+/obj/item/reagent_containers/condiment/milk{
+	pixel_x = -3;
+	pixel_y = -7
+	},
+/obj/item/reagent_containers/condiment/enzyme{
+	pixel_x = 5;
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "xG" = (
@@ -1451,6 +1526,14 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"xU" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border,
+/obj/effect/turf_decal/siding/black{
+	dir = 1
+	},
+/obj/item/radio/intercom/directional/south,
+/turf/open/floor/plasteel/mono/white,
+/area/ship/hallway/central)
 "xX" = (
 /obj/structure/marker_beacon{
 	picked_color = "Burgundy"
@@ -2540,14 +2623,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
-"OI" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/border,
-/obj/effect/turf_decal/siding/black{
-	dir = 1
-	},
-/obj/item/radio/intercom/directional/south,
-/turf/open/floor/plasteel/mono/white,
-/area/ship/hallway/central)
 "Pd" = (
 /obj/effect/turf_decal/siding/thinplating,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -3195,6 +3270,11 @@
 /obj/item/tank/jetpack/carbondioxide,
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 19;
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
 "Yk" = (
@@ -3477,7 +3557,7 @@ nI
 Nz
 QK
 nb
-OI
+xU
 Nv
 Wv
 UR
