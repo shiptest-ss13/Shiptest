@@ -11,7 +11,7 @@
 	species_traits = list(LIPS, MUTCOLORS_PARTSONLY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
 	mutant_bodyparts = list("spider_legs", "spider_spinneret")
-	default_features = list("spider_legs" = "Carapaced", "spider_spinneret" = "Plain", "body_size" = "Normal")
+	default_features = list("spider_legs" = "Carapaced", "spider_spinneret" = "Plain")
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
