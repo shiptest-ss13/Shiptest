@@ -249,6 +249,14 @@
 	if(user == src)
 		attack_message_local = "You [message_verb] yourself[message_hit_area] with [attacking_item]"
 
+	visible_message(
+		span_danger("[attack_message]"),
+		span_userdanger("[attack_message_local]"),
+		null,
+		COMBAT_MESSAGE_RANGE,
+	)
+	return 1
+
 /**
   * Does a swing depending on the object's swing_type var.
   * user - The mob swinging the object
@@ -305,13 +313,6 @@
 		T.swing_attack_act(user, src, effect_type, affected_turfs[turf], show_sweetspot, thing_to_not_hit, swing_speed * swing_num++)
 		playsound(src, swing_sfx, 25, TRUE, -1)
 
-	visible_message(
-		span_danger("[attack_message]"),
-		span_userdanger("[attack_message_local]"),
-		null,
-		COMBAT_MESSAGE_RANGE,
-	)
-	return 1
 
 /turf/proc/swing_attack_act(mob/living/user, obj/item/I, effect_type, damage_modifier = 1, show_sweetspot = TRUE, atom/thing_to_not_hit)
 //	if(user.CanReach(user, I, FALSE, 2)) //it doesnt work if this isnt commented out and im not sure if im too intrested in figuring out why it doesnt
