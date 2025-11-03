@@ -24,6 +24,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "aJ" = (
@@ -520,6 +521,7 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 9
 	},
+/obj/item/clothing/glasses/hud/security/sunglasses/hardliners,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "jf" = (
@@ -612,6 +614,7 @@
 /area/ship/cargo)
 "kS" = (
 /obj/machinery/hydroponics/wooden,
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "kV" = (
@@ -793,6 +796,7 @@
 	dir = 8
 	},
 /obj/structure/reagent_dispensers/fueltank,
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "ng" = (
@@ -883,6 +887,9 @@
 /area/ship/crew/canteen)
 "oi" = (
 /obj/machinery/power/shuttle/engine/electric,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/engine/hull,
 /area/ship/engineering)
 "oo" = (
@@ -898,6 +905,7 @@
 	pixel_x = 8;
 	pixel_y = 7
 	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "op" = (
@@ -1030,6 +1038,7 @@
 	pixel_x = -20;
 	pixel_y = -11
 	},
+/obj/item/clothing/glasses/hud/security/sunglasses/hardliners,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "ra" = (
@@ -1058,6 +1067,9 @@
 	dir = 4;
 	id = "Bansheeenginebay"
 	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "rp" = (
@@ -1077,6 +1089,7 @@
 /obj/machinery/power/smes/engineering,
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/structure/cable,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "ru" = (
@@ -1108,6 +1121,13 @@
 	},
 /obj/effect/turf_decal/trimline/transparent/syndiered/line,
 /obj/machinery/light/small/directional/west,
+/obj/item/folder/syndicate,
+/obj/item/folder/syndicate,
+/obj/item/folder/syndicate,
+/obj/item/pen,
+/obj/item/pen,
+/obj/item/pen,
+/obj/item/clipboard,
 /turf/open/floor/suns/hatch{
 	color = "#E6D2BA"
 	},
@@ -1514,6 +1534,7 @@
 /obj/item/clothing/head/helmet/space/syndicate/engie,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/tank/jetpack/carbondioxide,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "zj" = (
@@ -1538,6 +1559,16 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/light/small/directional/north,
+/obj/machinery/firealarm/directional/east{
+	pixel_x = 32;
+	pixel_y = 0
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = -11
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen)
 "zJ" = (
@@ -1552,6 +1583,9 @@
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "Bansheeenginebay"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -1596,6 +1630,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "AB" = (
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "AJ" = (
@@ -1874,6 +1909,7 @@
 /obj/structure/cable{
 	icon_state = "2-5"
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Fc" = (
@@ -1933,7 +1969,9 @@
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/glasses/welding,
 /obj/structure/closet/wall/orange/directional/south{
-	name = "mechanic's closet"
+	name = "mechanic's closet";
+	pixel_x = -4;
+	pixel_y = -28
 	},
 /obj/effect/turf_decal/industrial/warning{
 	color = "#FFFFFF";
@@ -2025,6 +2063,7 @@
 /obj/machinery/airalarm/directional/west,
 /obj/machinery/light/small/directional/south,
 /obj/item/storage/belt/security/webbing/hardliners,
+/obj/item/clothing/glasses/hud/security/sunglasses/hardliners,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/captain)
 "GA" = (
@@ -2501,12 +2540,32 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
+"OI" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border,
+/obj/effect/turf_decal/siding/black{
+	dir = 1
+	},
+/obj/item/radio/intercom/directional/south,
+/turf/open/floor/plasteel/mono/white,
+/area/ship/hallway/central)
 "Pd" = (
 /obj/effect/turf_decal/siding/thinplating,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Pe" = (
 /obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_x = 8;
+	pixel_y = 5
+	},
+/obj/item/pen{
+	pixel_x = 8;
+	pixel_y = 5
+	},
+/obj/item/stamp/hardliners{
+	pixel_x = -6;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "PA" = (
@@ -2840,6 +2899,10 @@
 	pixel_x = -20;
 	pixel_y = -9
 	},
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_x = -31;
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "UY" = (
@@ -2934,6 +2997,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Wv" = (
@@ -2959,6 +3023,7 @@
 	pixel_x = 9;
 	pixel_y = -12
 	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "WH" = (
@@ -3412,7 +3477,7 @@ nI
 Nz
 QK
 nb
-op
+OI
 Nv
 Wv
 UR
