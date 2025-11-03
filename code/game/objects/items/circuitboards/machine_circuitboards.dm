@@ -1450,7 +1450,7 @@
 	req_components = list(/obj/item/stock_parts/capacitor = 2,
 		/obj/item/stock_parts/micro_laser = 2)
 
-// Maploaded engines of this type start function identically to standard ion engines, but they start with T3 parts
+// Maploaded engines of this type function identically to standard ion engines, but they start with T3 parts
 /obj/item/circuitboard/machine/shuttle/engine/electric/premium
 	name = "Ion Thruster (Machine Board)"
 	build_path = /obj/machinery/power/shuttle/engine/electric/premium
