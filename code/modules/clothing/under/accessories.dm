@@ -109,6 +109,16 @@
 	minimize_when_attached = FALSE
 	attachment_slot = null
 
+/obj/item/clothing/accessory/waistcoat/brown
+	name = "brown waistcoat"
+	icon_state = "waistcoat_brown"
+	item_state = "det_suit"
+
+/obj/item/clothing/accessory/waistcoat/white
+	name = "white waistcoat"
+	icon_state = "waistcoat_white"
+	item_state = "det_suit"
+
 /obj/item/clothing/accessory/maidapron
 	name = "maid apron"
 	desc = "The best part of a maid costume."

@@ -61,18 +61,6 @@
 	item_state = "purplebartenderapron"
 	body_parts_covered = CHEST|GROIN|LEGS
 
-/obj/item/clothing/suit/syndicatefake
-	name = "black and red space suit replica"
-	icon = 'icons/obj/clothing/suits/spacesuits.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/suits/spacesuits.dmi'
-	icon_state = "syndicate-black-red"
-	item_state = "syndicate-black-red"
-	desc = "A plastic replica of the Syndicate space suit. You'll look just like a real murderous Syndicate agent in this! This is a toy, it is not made for use in space!"
-	w_class = WEIGHT_CLASS_NORMAL
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/toy)
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
-	resistance_flags = NONE
-
 /obj/item/clothing/suit/toggle/owlwings
 	name = "owl cloak"
 	desc = "A soft brown cloak made of synthetic feathers. Soft to the touch, stylish, and a 2 meter wing span that will drive the ladies mad."

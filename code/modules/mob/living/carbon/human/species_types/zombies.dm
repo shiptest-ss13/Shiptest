@@ -15,12 +15,14 @@
 	bodytemp_normal = T0C // They have no natural body heat, the environment regulates body temp
 	bodytemp_heat_damage_limit = FIRE_MINIMUM_TEMPERATURE_TO_EXIST // Take damage at fire temp
 
-	species_chest = /obj/item/bodypart/chest/zombie
-	species_head = /obj/item/bodypart/head/zombie
-	species_l_arm = /obj/item/bodypart/l_arm/zombie
-	species_r_arm = /obj/item/bodypart/r_arm/zombie
-	species_l_leg = /obj/item/bodypart/leg/left/zombie
-	species_r_leg = /obj/item/bodypart/leg/right/zombie
+	species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/zombie,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/zombie,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/zombie,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/zombie,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/zombie,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/zombie,
+	)
 
 /datum/species/zombie/infectious
 	name = "\improper Infectious Zombie"

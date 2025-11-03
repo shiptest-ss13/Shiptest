@@ -153,6 +153,15 @@
 	display_name = "waistcoat"
 	path = /obj/item/clothing/accessory/waistcoat
 	slot = null
+/datum/gear/accessory/waistcoatbrown
+	display_name = "brown waistcoat"
+	path = /obj/item/clothing/accessory/waistcoat/brown
+	slot = null
+
+/datum/gear/accessory/waistcoatwhite
+	display_name = "white waistcoat"
+	path = /obj/item/clothing/accessory/waistcoat/white
+	slot = null
 
 /datum/gear/accessory/stethoscope
 	display_name = "stethoscope"
