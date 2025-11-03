@@ -1,6 +1,9 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ak" = (
-/obj/effect/turf_decal/industrial/warning/dust{
+/obj/effect/turf_decal/trimline/opaque/ntbluelight/filled/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/white/filled/warning{
 	dir = 4
 	},
 /turf/open/floor/engine/hull/reinforced,
@@ -1061,16 +1064,19 @@
 /turf/template_noop,
 /area/template_noop)
 "hf" = (
-/obj/effect/turf_decal/industrial/warning/dust/corner{
-	dir = 4
-	},
 /obj/structure/marker_beacon{
 	picked_color = "Teal"
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/nanotrasen{
 	pixel_x = 28
 	},
+/obj/effect/turf_decal/trimline/opaque/ntbluelight/filled/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/white/corner{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "hg" = (
@@ -1401,7 +1407,10 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "jm" = (
-/obj/effect/turf_decal/industrial/warning/dust{
+/obj/effect/turf_decal/trimline/opaque/ntbluelight/filled/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/white/filled/warning{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -5443,15 +5452,16 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "Nm" = (
-/obj/effect/turf_decal/industrial/warning/dust/corner,
 /obj/machinery/camera/autoname{
 	dir = 8
 	},
 /obj/structure/marker_beacon{
 	picked_color = "Teal"
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/item/radio/intercom/directional/east,
+/obj/effect/turf_decal/trimline/opaque/ntbluelight/filled/corner,
+/obj/effect/turf_decal/trimline/opaque/white/corner,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "Np" = (
