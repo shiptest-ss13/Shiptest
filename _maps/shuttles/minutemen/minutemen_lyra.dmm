@@ -119,12 +119,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "aV" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile,
-/obj/machinery/door/poddoor/shutters{
-	id = "lyrawindow"
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
 	},
-/turf/open/floor/plating,
+/obj/structure/chair/handrail{
+	pixel_x = -1;
+	pixel_y = 2
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "bo" = (
 /obj/effect/turf_decal/industrial/warning/green{
@@ -709,6 +711,18 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
+"fN" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/obj/structure/chair/handrail{
+	pixel_x = 0;
+	pixel_y = 2
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security/armory)
 "fZ" = (
 /obj/structure/table/reinforced,
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -3303,6 +3317,14 @@
 /obj/effect/turf_decal/siding/white,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"At" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 4
+	},
+/obj/machinery/holopad/secure,
+/turf/open/floor/wood/walnut,
+/area/ship/crew/canteen)
 "Az" = (
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /turf/open/floor/plasteel/patterned/brushed,
@@ -4146,6 +4168,15 @@
 /obj/structure/chair/bench/blue,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
+"Gc" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	id = "lyrawindow";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "Gl" = (
 /obj/effect/turf_decal/stairs{
 	color = "#a3a2a0";
@@ -4516,7 +4547,6 @@
 	pixel_y = -28
 	},
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
-/obj/effect/turf_decal/siding/thinplating/dark,
 /obj/item/reagent_containers/food/drinks/beaglemug{
 	pixel_x = -8;
 	pixel_y = 3
@@ -5913,6 +5943,10 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/structure/chair/handrail{
+	pixel_x = 1;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Wm" = (
@@ -6140,6 +6174,7 @@
 /obj/effect/turf_decal/trimline/opaque/beige/filled/line{
 	dir = 4
 	},
+/obj/machinery/holopad/secure,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Yk" = (
@@ -6328,6 +6363,15 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
+/area/ship/medical)
+"ZW" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	id = "lyramedwindow";
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/ship/medical)
 
 (1,1,1) = {"
@@ -6799,7 +6843,7 @@ hE
 sh
 pw
 zq
-zq
+At
 zq
 BI
 OQ
@@ -6885,7 +6929,7 @@ Bo
 tH
 tX
 wW
-aV
+hE
 rD
 "}
 (19,1,1) = {"
@@ -6916,7 +6960,7 @@ dK
 Wj
 tX
 JN
-aV
+hE
 rD
 "}
 (20,1,1) = {"
@@ -6944,7 +6988,7 @@ je
 Np
 hW
 ek
-Wj
+fN
 IA
 hE
 hE
@@ -6975,7 +7019,7 @@ pC
 nl
 Hg
 zJ
-Wj
+aV
 tX
 oW
 hE
@@ -7326,7 +7370,7 @@ rD
 rD
 rD
 rD
-jB
+ZW
 jB
 kA
 EE
@@ -7348,7 +7392,7 @@ Cp
 AN
 Jl
 oG
-oG
+Gc
 rD
 rD
 rD
