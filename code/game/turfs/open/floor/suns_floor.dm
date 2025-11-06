@@ -47,6 +47,27 @@
 	floor_tile = /obj/item/stack/tile/suns/diagonal
 	flammability = 3
 
+/turf/open/floor/suns/diagonal/mahogany
+	color = WOOD_COLOR_RICH
+
+/turf/open/floor/suns/diagonal/maple
+	color = WOOD_COLOR_PALE
+
+/turf/open/floor/suns/diagonal/ebony
+	color = WOOD_COLOR_BLACK
+
+/turf/open/floor/suns/diagonal/walnut
+	color = WOOD_COLOR_CHOCOLATE
+
+/turf/open/floor/suns/diagonal/bamboo
+	color = WOOD_COLOR_PALE2
+
+/turf/open/floor/suns/diagonal/birch
+	color = WOOD_COLOR_PALE3
+
+/turf/open/floor/suns/diagonal/yew
+	color = WOOD_COLOR_YELLOW
+
 /turf/open/floor/suns/grid
 	name = "dark grid floor"
 	icon_state = "darkchunky"
