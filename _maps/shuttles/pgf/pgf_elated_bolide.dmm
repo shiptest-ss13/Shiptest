@@ -11,10 +11,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/stairs{
-	dir = 1;
-	icon = 'icons/obj/stairs.dmi'
-	},
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "au" = (
 /obj/machinery/computer/atmos_control/ship/bolide{
@@ -3356,9 +3353,6 @@
 /obj/effect/turf_decal/trimline/opaque/green/corner{
 	dir = 4
 	},
-/obj/structure/railing{
-	dir = 8
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "uR" = (
@@ -3945,7 +3939,7 @@
 /obj/item/storage/box/flares,
 /obj/item/storage/box/flares,
 /obj/structure/closet/crate{
-	name = "illumination"
+	name = "illumination crate"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
@@ -6566,9 +6560,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/box,
-/obj/item/wrench{
-	pixel_x = -8
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "MU" = (
@@ -8205,7 +8196,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "Xo" = (
-/obj/effect/turf_decal/trimline/opaque/green/filled,
+/obj/effect/turf_decal/trimline/opaque/green/filled{
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security)
 "Xr" = (
@@ -8527,10 +8520,6 @@
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
-	},
-/obj/item/multitool{
-	pixel_x = 2;
-	pixel_y = -9
 	},
 /obj/machinery/button/door{
 	id = "bolide_engine_1";
