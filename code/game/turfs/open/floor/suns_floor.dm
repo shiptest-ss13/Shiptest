@@ -20,6 +20,8 @@
 	floor_tile = /obj/item/stack/tile/suns/hatch
 	flammability = 3
 
+// hatched wood
+
 /turf/open/floor/suns/hatch/mahogany
 	color = WOOD_COLOR_RICH
 
@@ -40,6 +42,8 @@
 
 /turf/open/floor/suns/hatch/yew
 	color = WOOD_COLOR_YELLOW
+
+// diagonal wood
 
 /turf/open/floor/suns/diagonal
 	name = "diagonal wooden floor"
@@ -67,6 +71,13 @@
 
 /turf/open/floor/suns/diagonal/yew
 	color = WOOD_COLOR_YELLOW
+
+// wood subtypes
+
+/turf/open/floor/suns/diagonal/walnut/cold
+	initial_gas_mix = "o2=22;n2=82;TEMP=275.65" // normal air but 2.5 degrees
+
+// not wood
 
 /turf/open/floor/suns/grid
 	name = "dark grid floor"
