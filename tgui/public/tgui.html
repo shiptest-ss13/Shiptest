@@ -4,9 +4,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta charset="utf-8">
 
-<!-- Inlined metadata -->
-<meta id="tgui:windowId" content="[tgui:windowId]">
-<meta id="tgui:strictMode" content="[tgui:strictMode]">
+    <!-- Inlined metadata -->
+    <meta id="tgui:windowId" content="[tgui:windowId]" />
+    <meta id="tgui:strictMode" content="[tgui:strictMode]" />
+    <meta id="tgui:storagecdn" content="[tgui:storagecdn]" />
 
 <!-- Early setup -->
 <script type="text/javascript">
@@ -39,6 +40,7 @@
 
   // Expose inlined metadata
   Byond.windowId = parseMetaTag('tgui:windowId');
+  Byond.storageCdn = parseMetaTag('tgui:storagecdn');
 
   // Backwards compatibility
   window.__windowId__ = Byond.windowId;
