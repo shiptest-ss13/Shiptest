@@ -252,6 +252,24 @@
 	icon = 'icons/turf/floors/junglegrass.dmi'
 	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
 
+/turf/open/floor/grass/ship/jungle/dark
+	name = "jungle grass"
+	desc = "Greener on the other side."
+	icon_state = "grass-255"
+	base_icon_state = "grass"
+	baseturfs = /turf/open/floor/ship/dirt/dark
+	icon = 'icons/turf/floors/darkjunglegrass.dmi'
+	smooth_icon = 'icons/turf/floors/darkjunglegrass.dmi'
+
+/turf/open/floor/grass/ship/jungle/yellow
+	name = "jungle grass"
+	desc = "Greener on the other side."
+	icon_state = "grass-255"
+	base_icon_state = "grass"
+	baseturfs = /turf/open/floor/ship/dirt/dark
+	icon = 'icons/turf/floors/yellowgrass.dmi'
+	smooth_icon = 'icons/turf/floors/yellowgrass.dmi'
+
 /turf/open/floor/plating/ship/water
 	name = "water"
 	desc = "Shallow water."
