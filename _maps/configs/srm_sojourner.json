@@ -1,0 +1,53 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Sojourner-class Homesteader",
+	"faction": "/datum/faction/srm",
+	"prefix": "SRSV",
+	"namelists": [
+		"SAINT-ROUMAIN",
+		"BEASTS"
+	],
+	"map_short_name": "Sojourner-class",
+	"map_path": "_maps/shuttles/roumain/srm_sojourner.dmm",
+	"description": "placeholderrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+	"tags": [
+		"Botany",
+		"Combat",
+		"Generalist"
+	],
+	"map_id": "srm_sojourner",
+	"limit": 1,
+	"job_slots": {
+		"Hunter Montagne": {
+			"outfit": "/datum/outfit/job/roumain/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Hunter Colligne": {
+			"outfit": "/datum/outfit/job/roumain/hop",
+			"officer": true,
+			"slots": 1
+		},
+		"Flamebearer": {
+			"outfit": "/datum/outfit/job/roumain/flamebearer",
+			"slots": 1
+		},
+		"Hunter": {
+			"outfit": "/datum/outfit/job/roumain/security",
+			"slots": 1
+		},
+		"Hunter Doctor": {
+			"outfit": "/datum/outfit/job/roumain/doctor",
+			"slots": 1
+		},
+		"Machinist": {
+			"outfit": "/datum/outfit/job/roumain/engineer",
+			"slots": 1
+		},
+		"Shadow": {
+			"outfit": "/datum/outfit/job/roumain/assistant",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}
