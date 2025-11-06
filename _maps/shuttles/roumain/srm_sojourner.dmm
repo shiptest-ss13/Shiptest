@@ -142,9 +142,7 @@
 	color = "#543C30";
 	dir = 1
 	},
-/turf/open/floor/suns/diagonal{
-	color = "#543C30"
-	},
+/turf/open/floor/suns/diagonal/walnut,
 /area/space)
 "ch" = (
 /obj/structure/table/wood,
@@ -310,7 +308,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/cold,
 /area/space)
 "dO" = (
 /obj/effect/turf_decal/siding/wood{
@@ -374,7 +372,7 @@
 /obj/item/melee/knife/butcher{
 	pixel_y = 4
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/cold,
 /area/space)
 "fa" = (
 /obj/effect/turf_decal/siding/wood{
@@ -644,18 +642,14 @@
 	pixel_y = 10
 	},
 /obj/item/clothing/accessory/waistcoat/roumain,
-/turf/open/floor/suns/diagonal{
-	color = "#543C30"
-	},
+/turf/open/floor/suns/diagonal/walnut,
 /area/space)
 "jQ" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
 	dir = 4
 	},
-/turf/open/floor/suns/diagonal{
-	color = "#543C30"
-	},
+/turf/open/floor/suns/diagonal/walnut/cold,
 /area/space)
 "jW" = (
 /obj/effect/turf_decal/trimline/opaque/bar/arrow_cw{
@@ -670,9 +664,7 @@
 	dir = 4
 	},
 /obj/item/stack/sheet/animalhide/goliath_hide,
-/turf/open/floor/suns/diagonal{
-	color = "#543C30"
-	},
+/turf/open/floor/suns/diagonal/walnut/cold,
 /area/space)
 "kh" = (
 /obj/effect/turf_decal/box/red/corners{
@@ -784,7 +776,7 @@
 /obj/effect/decal/cleanable/blood/drip{
 	icon_state = "drip4"
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/cold,
 /area/space)
 "lc" = (
 /obj/machinery/power/smes/shuttle/precharged{
@@ -1356,9 +1348,14 @@
 	pixel_x = -12;
 	pixel_y = 20
 	},
-/turf/open/floor/suns/diagonal{
-	color = "#543C30"
+/turf/open/floor/suns/diagonal/walnut,
+/area/space)
+"qK" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 1
 	},
+/turf/open/floor/suns/diagonal/walnut,
 /area/space)
 "qQ" = (
 /obj/effect/turf_decal/siding/white,
@@ -1702,14 +1699,19 @@
 /obj/item/clothing/accessory/waistcoat/roumain,
 /turf/open/floor/plasteel/tech,
 /area/space)
+"uy" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 4
+	},
+/turf/open/floor/suns/diagonal/walnut,
+/area/space)
 "uS" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	color = "#543C30";
 	dir = 1
 	},
-/turf/open/floor/suns/diagonal{
-	color = "#543C30"
-	},
+/turf/open/floor/suns/diagonal/walnut/cold,
 /area/space)
 "vb" = (
 /obj/effect/turf_decal/box/red/corners{
@@ -1823,6 +1825,12 @@
 /obj/item/wirecutters,
 /turf/open/floor/plasteel/tech,
 /area/space)
+"wI" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30"
+	},
+/turf/open/floor/suns/diagonal/walnut/cold,
+/area/space)
 "wR" = (
 /obj/item/kirbyplants{
 	pixel_x = -8;
@@ -1842,9 +1850,7 @@
 	color = "#543C30";
 	dir = 6
 	},
-/turf/open/floor/suns/diagonal{
-	color = "#543C30"
-	},
+/turf/open/floor/suns/diagonal/walnut/cold,
 /area/space)
 "xY" = (
 /obj/structure/table/reinforced{
@@ -1880,9 +1886,7 @@
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30"
 	},
-/turf/open/floor/suns/diagonal{
-	color = "#543C30"
-	},
+/turf/open/floor/suns/diagonal/walnut,
 /area/space)
 "yt" = (
 /turf/closed/wall/r_wall/yesdiag,
@@ -1922,9 +1926,7 @@
 	color = "#543C30";
 	dir = 8
 	},
-/turf/open/floor/suns/diagonal{
-	color = "#543C30"
-	},
+/turf/open/floor/suns/diagonal/walnut/cold,
 /area/space)
 "zF" = (
 /obj/machinery/atmospherics/components/binary/valve{
@@ -1948,7 +1950,7 @@
 /obj/effect/decal/cleanable/blood/drip{
 	icon_state = "drip4"
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/cold,
 /area/space)
 "Ag" = (
 /obj/structure/closet/crate/freezer,
@@ -1975,7 +1977,7 @@
 /obj/item/food/grown/berries,
 /obj/item/food/grown/apple,
 /obj/item/food/grown/apple,
-/turf/open/floor/wood/ebony,
+/turf/open/floor/wood/ebony/cold,
 /area/space)
 "Am" = (
 /obj/effect/turf_decal/siding/white{
@@ -2030,7 +2032,7 @@
 /obj/item/food/meat/slab,
 /obj/item/food/meat/slab/chicken,
 /obj/item/food/meat/slab/chicken,
-/turf/open/floor/wood/ebony,
+/turf/open/floor/wood/ebony/cold,
 /area/space)
 "Cb" = (
 /obj/structure/chair/comfy/orange/old/alt/directional/west,
@@ -2212,7 +2214,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/warning{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/cold,
 /area/space)
 "Gp" = (
 /turf/open/floor/carpet,
@@ -2685,7 +2687,7 @@
 	pixel_y = 3;
 	pixel_x = 2
 	},
-/turf/open/floor/wood/ebony,
+/turf/open/floor/wood/ebony/cold,
 /area/space)
 "MJ" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -3038,7 +3040,7 @@
 	pixel_x = 8;
 	pixel_y = 8
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/cold,
 /area/space)
 "Qd" = (
 /obj/machinery/hydroponics/wooden,
@@ -3087,7 +3089,7 @@
 /obj/item/stock_parts/cell/high{
 	pixel_x = -7
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/cold,
 /area/space)
 "QP" = (
 /obj/structure/dresser{
@@ -3125,9 +3127,7 @@
 	color = "#543C30";
 	dir = 1
 	},
-/turf/open/floor/suns/diagonal{
-	color = "#543C30"
-	},
+/turf/open/floor/suns/diagonal/walnut/cold,
 /area/space)
 "RQ" = (
 /obj/structure/table/wood/reinforced,
@@ -3178,7 +3178,7 @@
 /obj/effect/decal/cleanable/blood/drip{
 	icon_state = "drip3"
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/cold,
 /area/space)
 "SE" = (
 /obj/item/cigbutt/roach,
@@ -3328,7 +3328,7 @@
 	color = "#332521";
 	dir = 4
 	},
-/turf/open/floor/wood/ebony,
+/turf/open/floor/wood/ebony/cold,
 /area/space)
 "Vl" = (
 /obj/structure/table/wood,
@@ -3430,9 +3430,7 @@
 	color = "#543C30";
 	dir = 4
 	},
-/turf/open/floor/suns/diagonal{
-	color = "#543C30"
-	},
+/turf/open/floor/suns/diagonal/walnut,
 /area/space)
 "WR" = (
 /obj/structure/closet/secure_closet/cabinet{
@@ -3554,7 +3552,7 @@
 /obj/effect/decal/cleanable/blood/drip{
 	icon_state = "drip1"
 	},
-/turf/open/floor/wood/ebony,
+/turf/open/floor/wood/ebony/cold,
 /area/space)
 "Za" = (
 /obj/effect/turf_decal/corner/opaque/black/half,
@@ -4178,7 +4176,7 @@ ny
 fv
 Zk
 lP
-jQ
+uy
 WA
 ys
 mS
@@ -4204,7 +4202,7 @@ IU
 PB
 Yy
 jF
-Rw
+qK
 ys
 FJ
 al
@@ -4229,7 +4227,7 @@ ZZ
 RQ
 Yy
 tj
-Rw
+qK
 ys
 mS
 mS
@@ -4305,7 +4303,7 @@ wa
 Yy
 BT
 Rw
-ys
+wI
 PX
 qa
 jr
@@ -4330,7 +4328,7 @@ Iu
 Yy
 Ag
 Rw
-ys
+wI
 eY
 qa
 jr
@@ -4355,7 +4353,7 @@ la
 lP
 zs
 uS
-ys
+wI
 Gh
 qa
 jr
