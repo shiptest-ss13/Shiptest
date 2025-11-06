@@ -241,6 +241,18 @@
 	sanitization += amount * 0.1
 	return
 
+//crystal reagent lets you reverse sepsis bcause sepsis sucks rn
+/datum/wound/proc/on_crystal(power)
+	if(power>=10)
+		strikes_to_lose_limb = min(strikes_to_lose_limb+1, 3)
+		victim.adjustCLoneLoss(2)
+	return
+
+//So does rezadone lets you reverse sepsis bcause sepsis sucks rn
+/datum/wound/proc/on_rezadone(power)
+	if(power>=10)
+		strikes_to_lose_limb = min(strikes_to_lose_limb+1, 3)
+	return
 
 // we don't even care about first degree burns, straight to second
 /datum/wound/burn/moderate

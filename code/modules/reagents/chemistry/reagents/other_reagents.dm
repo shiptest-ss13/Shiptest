@@ -2247,6 +2247,20 @@
 	taste_description = "sharp rocks"
 	var/healing = 2
 
+/datum/reagent/crystal_reagent/expose_mob(mob/living/M, method=TOUCH, reac_volume)
+	. = ..()
+	for(var/i in M.all_wounds)
+		var/datum/wound/iter_wound = i
+		iter_wound.on_crystal(reac_volume)
+	if(iscarbon(M))
+		var/mob/living/carbon/patient = M
+		if(reac_volume >= 5 && HAS_TRAIT_FROM(patient, TRAIT_HUSK, "burn") && patient.stat == DEAD)
+			patient.adjustFireLoss(-400)
+			patient.cure_husk("burn")
+			patient.visible_message(span_nicegreen("[patient]'s body shivers as the crystal enters them, seared flesh returning to normal coloration as crystals grow under it!"))
+			patient.AdjustCloneLoss(20)
+			patient.do_jitter_animation(200)
+
 /datum/reagent/crystal_reagent/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-healing*REM, 0)
 	M.adjustOxyLoss(-healing*REM, 0)
