@@ -52,14 +52,6 @@
 	new /obj/item/paper/fluff/ship/bolide/four(src)
 	update_appearance()
 
-/obj/item/folder/pgf/empty_sheets
-	name = "PGF Fax Templates"
-
-/obj/item/folder/pgf/empty_sheets/Initialize()
-	. = ..()
-	for(var/i in 1 to 7)
-		new /obj/item/paper/fluff/ship/bolide(src)
-
 /mob/living/simple_animal/pet/fox/bolide
 	name = "Saperzy"
 	desc = "A lovable rogue that scampered aboard during a readiness drill. Now an honorary marine."

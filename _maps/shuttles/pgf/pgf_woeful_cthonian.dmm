@@ -30,7 +30,6 @@
 	id = "cth_cap";
 	name = "shutter control"
 	},
-/obj/item/binoculars,
 /obj/item/desk_flag/gezena{
 	pixel_y = -1;
 	pixel_x = 9
@@ -1897,7 +1896,6 @@
 /obj/item/tank/jetpack/oxygen/harness,
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/light/small/directional/west,
-/obj/item/tank/internals/oxygen/red,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "un" = (
@@ -2156,13 +2154,9 @@
 /area/ship/crew/dorm)
 "wT" = (
 /obj/structure/table/wood,
-/obj/item/lighter{
-	pixel_y = 4;
-	pixel_x = -5
-	},
-/obj/item/storage/fancy/cigarettes/cigpack_robust{
-	pixel_x = 6;
-	pixel_y = 1
+/obj/machinery/jukebox/boombox{
+	pixel_y = 3;
+	pixel_x = -3
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
@@ -2313,7 +2307,6 @@
 /obj/item/tank/jetpack/oxygen/harness,
 /obj/machinery/light/directional/east,
 /obj/machinery/firealarm/directional/north,
-/obj/item/tank/internals/oxygen/red,
 /turf/open/floor/plasteel/rockvault,
 /area/ship/security/armory)
 "yp" = (
@@ -2486,10 +2479,6 @@
 	pixel_x = -6;
 	pixel_y = -9
 	},
-/obj/item/clothing/under/gezena{
-	pixel_x = -9;
-	pixel_y = -5
-	},
 /obj/item/clothing/shoes/combat/gezena{
 	pixel_x = 7;
 	pixel_y = -7
@@ -2505,17 +2494,9 @@
 	pixel_y = 2;
 	pixel_x = 2
 	},
-/obj/item/clothing/gloves/color/latex/nitrile{
-	pixel_x = 1;
-	pixel_y = -4
-	},
 /obj/item/flashlight/pen{
 	pixel_y = 0;
 	pixel_x = 11
-	},
-/obj/item/clothing/neck/stethoscope{
-	pixel_y = -1;
-	pixel_x = 4
 	},
 /obj/structure/closet/secure_closet/wall/directional/east{
 	icon_door = "med_wall";
@@ -2545,6 +2526,11 @@
 /obj/item/disk/surgery/t3{
 	pixel_y = 3
 	},
+/obj/item/clothing/under/gezena/officer,
+/obj/item/clothing/gloves/color/latex/nitrile{
+	pixel_x = 1;
+	pixel_y = -4
+	},
 /obj/item/clothing/suit/apron/surgical{
 	pixel_y = -7;
 	pixel_x = 1
@@ -2552,6 +2538,10 @@
 /obj/item/clothing/mask/surgical{
 	pixel_x = 1;
 	pixel_y = -8
+	},
+/obj/item/clothing/neck/stethoscope{
+	pixel_y = -1;
+	pixel_x = 4
 	},
 /obj/item/clothing/head/gezena/flap/medic{
 	pixel_y = 4;
@@ -3575,12 +3565,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/green/filled/line,
-/obj/item/paper/fluff/ship/cthonian,
-/obj/item/paper/fluff/ship/cthonian,
-/obj/item/paper/fluff/ship/cthonian,
-/obj/item/paper/fluff/ship/cthonian,
-/obj/item/paper/fluff/ship/cthonian,
-/obj/item/paper/fluff/ship/cthonian,
 /obj/item/taperecorder,
 /obj/item/tape/random,
 /obj/item/tape/random,
@@ -3595,6 +3579,10 @@
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/item/pen/fourcolor,
+/obj/item/pen,
+/obj/item/pen/blue,
+/obj/item/pen/red,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "Mv" = (
@@ -3751,15 +3739,15 @@
 	pixel_y = 4;
 	pixel_x = 6
 	},
-/obj/item/pen/fourcolor{
-	pixel_y = 6;
-	pixel_x = 5
-	},
 /obj/item/folder/pgf{
 	pixel_y = -2;
 	pixel_x = -6
 	},
 /obj/structure/railing,
+/obj/item/pen{
+	pixel_x = 6;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "Of" = (
@@ -4320,24 +4308,13 @@
 /area/ship/crew/ccommons)
 "Wh" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/coffee{
-	pixel_y = 12;
-	pixel_x = 10
-	},
-/obj/item/reagent_containers/food/drinks/coffee{
-	pixel_y = 1;
-	pixel_x = -7
-	},
-/obj/item/reagent_containers/food/drinks/coffee{
-	pixel_y = 12;
-	pixel_x = -4
-	},
-/obj/item/radio/old{
-	pixel_x = 6
-	},
 /obj/item/desk_flag/gezena{
-	pixel_y = -3;
-	pixel_x = 18
+	pixel_y = -1;
+	pixel_x = 17
+	},
+/obj/item/reagent_containers/food/drinks/coffee{
+	pixel_y = 7;
+	pixel_x = -6
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
@@ -4903,7 +4880,7 @@ ea
 Np
 Np
 Np
-Bz
+Np
 Ua
 "}
 (12,1,1) = {"
