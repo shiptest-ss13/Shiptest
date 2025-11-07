@@ -209,9 +209,6 @@
 /turf/open/floor/wood/ebony/whitesands
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 
-/turf/open/floor/concrete/slab_4/whitesands
-	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
-
 /turf/open/floor/plasteel/white/whitesands
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 
@@ -219,6 +216,9 @@
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/concrete/slab_1/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/slab_2/whitesands
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/plasteel/dark/whitesands
@@ -242,6 +242,8 @@
 /turf/open/floor/engine/hull/interior/whitesands
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 
+/turf/open/floor/engine/hull/reinforced/interior/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 
 //stairs
 
