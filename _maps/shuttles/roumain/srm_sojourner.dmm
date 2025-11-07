@@ -149,6 +149,13 @@
 	},
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/crew/office)
+"bk" = (
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/machinery/computer/cryopod/directional/south,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/cryo)
 "bn" = (
 /obj/effect/turf_decal/trimline/opaque/bar/filled/line,
 /obj/structure/cable/orange{
@@ -3390,6 +3397,14 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/wood/walnut,
 /area/ship/roumain)
+"CZ" = (
+/obj/structure/fermenting_barrel,
+/obj/effect/turf_decal/corner/opaque/bar{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech,
+/area/ship/storage/starboard)
 "Di" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
@@ -3962,14 +3977,6 @@
 /obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"Id" = (
-/obj/structure/fermenting_barrel,
-/obj/effect/turf_decal/corner/opaque/bar{
-	dir = 10
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech,
-/area/ship/storage/starboard)
 "Il" = (
 /obj/docking_port/stationary{
 	dir = 8;
@@ -4070,13 +4077,6 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/roumain)
-"Jl" = (
-/obj/machinery/cryopod{
-	dir = 4
-	},
-/obj/machinery/computer/cryopod/directional/south,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/cryo)
 "Jq" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -4084,6 +4084,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
+	},
+/obj/structure/chair/wood{
+	dir = 1
 	},
 /turf/open/floor/suns/diagonal/walnut,
 /area/ship/storage/starboard)
@@ -6397,7 +6400,7 @@ Gv
 uL
 WQ
 NW
-Jl
+bk
 oj
 wR
 bn
@@ -6757,7 +6760,7 @@ ON
 bY
 ys
 OQ
-Id
+CZ
 HJ
 jr
 jr
