@@ -305,8 +305,8 @@
 	rapid = 4
 	rapid_fire_delay = 3
 	ranged = 1
-	retreat_distance = 2
-	minimum_distance = 5
+	retreat_distance = 4
+	minimum_distance = 7
 	icon_state = "syndicate_hydra"
 	casingtype = /obj/item/ammo_casing/a308
 	l_hand = /obj/item/gun/ballistic/automatic/assault/invictus/old
