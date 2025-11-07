@@ -1397,6 +1397,11 @@
 "lC" = (
 /turf/open/floor/grass/ship/jungle/yellow,
 /area/ship/roumain)
+"lE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/helm/viewscreen/directional/west,
+/turf/open/floor/wood/walnut,
+/area/ship/roumain)
 "lH" = (
 /obj/structure/cable/orange{
 	icon_state = "2-8"
@@ -3351,6 +3356,13 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/bridge)
+"Cv" = (
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/machinery/computer/cryopod/directional/south,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/cryo)
 "CK" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/half,
 /obj/effect/turf_decal/corner/transparent/bar{
@@ -3635,14 +3647,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/cold,
 /area/ship/storage)
-"Gk" = (
-/obj/structure/fermenting_barrel,
-/obj/effect/turf_decal/corner/opaque/bar{
-	dir = 10
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech,
-/area/ship/storage/starboard)
 "Gp" = (
 /turf/open/floor/carpet,
 /area/ship/crew)
@@ -3967,10 +3971,10 @@
 /obj/item/clothing/suit/space,
 /obj/item/clothing/suit/space,
 /obj/item/clothing/suit/space,
-/obj/item/clothing/head/helmet/space/light,
-/obj/item/clothing/head/helmet/space/light,
-/obj/item/clothing/head/helmet/space/light,
-/obj/item/clothing/head/helmet/space/light,
+/obj/item/clothing/head/helmet/space,
+/obj/item/clothing/head/helmet/space,
+/obj/item/clothing/head/helmet/space,
+/obj/item/clothing/head/helmet/space,
 /obj/item/oxygen_candle{
 	pixel_x = 8
 	},
@@ -4643,13 +4647,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
-"NA" = (
-/obj/machinery/cryopod{
-	dir = 4
-	},
-/obj/machinery/computer/cryopod/directional/south,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/cryo)
 "NC" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -5015,11 +5012,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
-"Pn" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/computer/helm/viewscreen/directional/west,
-/turf/open/floor/wood/walnut,
-/area/ship/roumain)
 "Ps" = (
 /obj/structure/closet/secure_closet/cabinet{
 	anchored = 1;
@@ -5385,6 +5377,14 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm/commad)
+"Sa" = (
+/obj/structure/fermenting_barrel,
+/obj/effect/turf_decal/corner/opaque/bar{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech,
+/area/ship/storage/starboard)
 "Sc" = (
 /obj/effect/turf_decal/box/red/corners{
 	dir = 1
@@ -6416,7 +6416,7 @@ Gv
 uL
 WQ
 NW
-NA
+Cv
 oj
 wR
 bn
@@ -6516,7 +6516,7 @@ Bg
 vv
 Hq
 OY
-Pn
+lE
 IT
 CP
 eR
@@ -6776,7 +6776,7 @@ ON
 bY
 ys
 OQ
-Gk
+Sa
 HJ
 jr
 jr
