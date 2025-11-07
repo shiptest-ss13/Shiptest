@@ -243,7 +243,7 @@
 
 //crystal reagent lets you reverse sepsis bcause sepsis sucks rn
 /datum/wound/burn/on_crystal(power)
-	if(power>=10)
+	if(power>=5)
 		strikes_to_lose_limb = min(strikes_to_lose_limb+1, 3)
 		victim.adjustCLoneLoss(2)
 	return
