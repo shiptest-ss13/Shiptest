@@ -149,13 +149,6 @@
 	},
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/crew/office)
-"bk" = (
-/obj/machinery/cryopod{
-	dir = 4
-	},
-/obj/machinery/computer/cryopod/directional/south,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/cryo)
 "bn" = (
 /obj/effect/turf_decal/trimline/opaque/bar/filled/line,
 /obj/structure/cable/orange{
@@ -1763,7 +1756,10 @@
 /obj/item/seeds/cotton,
 /obj/item/seeds/tobacco,
 /obj/item/seeds/tobacco,
+/obj/item/seeds/wheat,
+/obj/item/seeds/wheat,
 /obj/item/seeds/cannabis,
+/obj/item/rollingpaper,
 /obj/item/rollingpaper,
 /obj/item/rollingpaper,
 /obj/item/rollingpaper,
@@ -2627,6 +2623,8 @@
 /obj/structure/sign/poster/contraband/peacemaker{
 	pixel_x = -32
 	},
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable/orange,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/equip)
 "uy" = (
@@ -2747,7 +2745,9 @@
 /obj/effect/turf_decal/box/red/corners{
 	dir = 8
 	},
-/obj/structure/closet/crate/critter,
+/obj/structure/closet/crate/critter{
+	name = "chicken crate"
+	},
 /obj/item/food/grown/wheat,
 /obj/item/food/grown/wheat,
 /obj/item/food/grown/wheat,
@@ -2820,6 +2820,10 @@
 /obj/item/stack/cable_coil/cut/orange{
 	pixel_y = 8;
 	pixel_x = -2
+	},
+/obj/machinery/computer/helm/viewscreen/directional/east{
+	layer = 2.7;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -3397,14 +3401,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/wood/walnut,
 /area/ship/roumain)
-"CZ" = (
-/obj/structure/fermenting_barrel,
-/obj/effect/turf_decal/corner/opaque/bar{
-	dir = 10
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech,
-/area/ship/storage/starboard)
 "Di" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
@@ -3639,6 +3635,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/cold,
 /area/ship/storage)
+"Gk" = (
+/obj/structure/fermenting_barrel,
+/obj/effect/turf_decal/corner/opaque/bar{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech,
+/area/ship/storage/starboard)
 "Gp" = (
 /turf/open/floor/carpet,
 /area/ship/crew)
@@ -4027,10 +4031,10 @@
 	color = "#543C30";
 	dir = 10
 	},
-/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable/orange{
-	icon_state = "0-4"
+	icon_state = "2-4"
 	},
+/obj/machinery/computer/helm/viewscreen/directional/west,
 /turf/open/floor/wood/walnut,
 /area/ship/storage/equip)
 "IH" = (
@@ -4639,6 +4643,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"NA" = (
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/machinery/computer/cryopod/directional/south,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/cryo)
 "NC" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -5004,6 +5015,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
+"Pn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/helm/viewscreen/directional/west,
+/turf/open/floor/wood/walnut,
+/area/ship/roumain)
 "Ps" = (
 /obj/structure/closet/secure_closet/cabinet{
 	anchored = 1;
@@ -6400,7 +6416,7 @@ Gv
 uL
 WQ
 NW
-bk
+NA
 oj
 wR
 bn
@@ -6500,7 +6516,7 @@ Bg
 vv
 Hq
 OY
-rD
+Pn
 IT
 CP
 eR
@@ -6760,7 +6776,7 @@ ON
 bY
 ys
 OQ
-CZ
+Gk
 HJ
 jr
 jr
