@@ -200,6 +200,49 @@
 	light_range = 2
 	light_power = 0.6
 
+/turf/open/floor/wood/maple/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/wood/walnut/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/wood/ebony/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/slab_4/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/white/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/tiles/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/slab_1/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/dark/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/carpet/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/carpet/black/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/carpet/green/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/patterned/brushed/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/pod/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/engine/hull/interior/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+
 //stairs
 
 /turf/open/floor/plasteel/stairs/whitesand
