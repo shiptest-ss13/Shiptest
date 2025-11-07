@@ -63,9 +63,6 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/contraband/red_rum{
-	pixel_y = -32
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/starboard)
 "am" = (
@@ -550,7 +547,7 @@
 	dir = 8
 	},
 /obj/structure/cable/orange{
-	icon_state = "2-8"
+	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -875,6 +872,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/birch,
 /area/ship/crew/dorm/commad)
+"hj" = (
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/machinery/computer/cryopod/directional/south,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/cryo)
 "hn" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -890,14 +894,6 @@
 "hw" = (
 /turf/closed/wall/r_wall,
 /area/ship/external/dark)
-"hJ" = (
-/obj/structure/fermenting_barrel,
-/obj/effect/turf_decal/corner/opaque/bar{
-	dir = 10
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech,
-/area/ship/storage/starboard)
 "iu" = (
 /obj/effect/turf_decal/box/red/corners{
 	dir = 1
@@ -2523,11 +2519,6 @@
 	},
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/external/dark)
-"tM" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/computer/helm/viewscreen/directional/west,
-/turf/open/floor/wood/walnut,
-/area/ship/roumain)
 "tR" = (
 /obj/effect/turf_decal/industrial/hatch/red,
 /obj/machinery/autolathe,
@@ -3071,6 +3062,9 @@
 	pixel_x = -20;
 	pixel_y = -11
 	},
+/obj/structure/cable/orange{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "zs" = (
@@ -3087,13 +3081,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/suns/diagonal/walnut/cold,
 /area/ship/storage)
-"zw" = (
-/obj/machinery/cryopod{
-	dir = 4
-	},
-/obj/machinery/computer/cryopod/directional/south,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/cryo)
 "zF" = (
 /obj/machinery/atmospherics/components/binary/valve{
 	dir = 4
@@ -3179,7 +3166,6 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 10
 	},
-/obj/structure/cable/orange,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/emcloset/wall/directional/west,
 /obj/item/clothing/suit/space/syndicate/generic/grey{
@@ -5213,6 +5199,22 @@
 /obj/structure/cable/orange,
 /turf/open/floor/plasteel/tech/cold,
 /area/ship/storage)
+"Qt" = (
+/obj/structure/fermenting_barrel,
+/obj/effect/turf_decal/corner/opaque/bar{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/contraband/red_rum{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage/starboard)
+"Qv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/helm/viewscreen/directional/west,
+/turf/open/floor/wood/walnut,
+/area/ship/roumain)
 "QK" = (
 /obj/effect/turf_decal/trimline/opaque/bar/filled/line,
 /obj/structure/cable/orange{
@@ -6416,7 +6418,7 @@ Gv
 uL
 WQ
 NW
-zw
+hj
 oj
 wR
 bn
@@ -6516,7 +6518,7 @@ Bg
 vv
 Hq
 OY
-tM
+Qv
 IT
 CP
 eR
@@ -6676,7 +6678,7 @@ jL
 qH
 ys
 LS
-al
+Qt
 HJ
 jr
 jr
@@ -6776,7 +6778,7 @@ ON
 bY
 ys
 OQ
-hJ
+al
 HJ
 jr
 jr
