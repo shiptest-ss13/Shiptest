@@ -290,6 +290,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 			"y" = 17,
 		)
 	)
+NO_MAG_GUN_HELPER(automatic/smg/expedition)
 
 /obj/item/ammo_box/magazine/m9mm_expedition
 	name = "expedition submachinegun magazine (9x18mm)"
