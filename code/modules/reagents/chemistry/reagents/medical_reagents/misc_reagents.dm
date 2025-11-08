@@ -162,11 +162,11 @@
 
 /datum/reagent/medicine/rezadone/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	. = ..()
-	for(var/i in M.all_wounds)
-		var/datum/wound/iter_wound = i
-		iter_wound.on_rezadone(power)
 	if(iscarbon(M))
 		var/mob/living/carbon/patient = M
+		for(var/i in patient.all_wounds)
+			var/datum/wound/iter_wound = i
+			iter_wound.on_rezadone(reac_volume)
 		if(reac_volume >= 5 && HAS_TRAIT_FROM(patient, TRAIT_HUSK, "burn") && patient.getFireLoss() < THRESHOLD_UNHUSK) //One carp yields 12u rezadone.
 			patient.cure_husk("burn")
 			patient.visible_message(span_nicegreen("[patient]'s body rapidly absorbs moisture from the enviroment, taking on a more healthy appearance."))
