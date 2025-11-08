@@ -1641,10 +1641,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "yl" = (
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/ship/crew/canteen)
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "yt" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 1
@@ -2790,8 +2788,10 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "PE" = (
-/turf/open/floor/plasteel/dark,
-/area/ship/cargo)
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ship/crew/canteen)
 "PL" = (
 /obj/structure/closet/secure_closet/armorycage{
 	anchored = 1;
@@ -3038,6 +3038,7 @@
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
+/obj/structure/closet/emcloset/wall/directional/east,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
 "SR" = (
@@ -3060,6 +3061,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/structure/closet/emcloset/wall/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "Tu" = (
@@ -3727,7 +3729,7 @@ Nz
 Qq
 In
 eL
-yl
+PE
 hL
 vy
 Av
@@ -4108,10 +4110,10 @@ Xa
 Xt
 dJ
 AB
-PE
+yl
 tJ
 sL
-PE
+yl
 Xi
 dJ
 Xt
