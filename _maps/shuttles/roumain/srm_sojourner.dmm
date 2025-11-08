@@ -1290,7 +1290,9 @@
 /obj/structure/table/reinforced{
 	color = "#a8b2b6"
 	},
-/obj/structure/closet/wall/directional/north,
+/obj/structure/closet/wall/directional/north{
+	name = "kitchen cabinet"
+	},
 /obj/item/plate,
 /obj/item/plate,
 /obj/item/plate,
@@ -2342,6 +2344,12 @@
 	dir = 4
 	},
 /obj/item/radio/intercom/directional/north,
+/obj/structure/extinguisher_cabinet/directional/west{
+	pixel_y = 6
+	},
+/obj/machinery/firealarm/directional/west{
+	pixel_y = -6
+	},
 /turf/open/floor/wood/birch,
 /area/ship/crew/dorm/commad)
 "so" = (
@@ -2802,6 +2810,12 @@
 /obj/effect/spawner/bunk_bed,
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/south{
+	pixel_x = -6
+	},
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = 6
+	},
 /turf/open/floor/wood/birch,
 /area/ship/crew/dorm)
 "wF" = (
@@ -3184,12 +3198,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/emcloset/wall/directional/west,
-/obj/item/clothing/suit/space/syndicate/generic/grey{
-	pixel_x = -8
-	},
-/obj/item/clothing/head/helmet/space/syndicate/generic{
-	pixel_y = -8
-	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Ap" = (
@@ -4368,9 +4376,7 @@
 /obj/item/bonesetter{
 	pixel_x = 2
 	},
-/obj/item/reagent_containers/syringe,
 /obj/item/reagent_containers/syringe/silfrine,
-/obj/item/gun/syringe/blowgun,
 /obj/item/storage/pill_bottle/iron{
 	pixel_y = -11;
 	pixel_x = 9
@@ -4378,6 +4384,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
+/obj/item/storage/box/syringes,
+/obj/item/gun/syringe/blowgun,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/office)
 "Lh" = (
