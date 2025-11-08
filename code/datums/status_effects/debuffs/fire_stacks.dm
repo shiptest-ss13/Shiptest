@@ -201,7 +201,8 @@
 					burn_injury = new /datum/wound/burn/severe
 				if(14 to 20)
 					burn_injury = new /datum/wound/burn/critical
-			burn_injury.apply_wound(it_burns)
+			if(burn_injury)
+				burn_injury.apply_wound(it_burns)
 	SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "on_fire", /datum/mood_event/on_fire)
 
 /**
