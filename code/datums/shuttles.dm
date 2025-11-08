@@ -496,7 +496,7 @@
 
 /datum/map_template/shuttle/subshuttles/karst
 	file_name = "ngr_karst"
-	name = "Karst-class Drop Pod"
+	name = "Karst-class Breaching Pod"
 	faction = /datum/faction/syndicate/ngr
 	token_icon_state = "ship_tiny_generic"
 	prefix = "NGRV"
