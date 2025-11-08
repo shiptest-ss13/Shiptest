@@ -2207,15 +2207,6 @@
 /area/ship/maintenance/port)
 "lj" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 9;
-	color = "#eeac2e"
-	},
-/obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/clothing/head/helmet/space/syndicate/surplus,
-/obj/item/clothing/suit/space/syndicate/surplus,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/clothing/mask/gas/syndicate,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "lq" = (
@@ -2824,14 +2815,14 @@
 /area/ship/crew)
 "pb" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/clothing/suit/space/syndicate/surplus,
-/obj/item/clothing/head/helmet/space/syndicate/surplus,
+/obj/item/clothing/mask/gas/syndicate,
 /obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/clothing/suit/space/syndicate/surplus,
 /obj/effect/turf_decal/industrial/warning{
-	dir = 8;
+	dir = 9;
 	color = "#eeac2e"
 	},
-/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate/surplus,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "pf" = (
