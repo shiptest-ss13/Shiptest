@@ -387,13 +387,6 @@
 	faction = /datum/faction/clip
 	prefix = "CMSV"
 
-/datum/map_template/shuttle/subshuttles/hestia
-	file_name = "minutemen_hestia"
-	name = "Hestia-class Emergency Shuttle"
-	token_icon_state = "ship_tiny_generic"
-	faction = /datum/faction/clip
-	prefix = "CLSV"
-
 /datum/map_template/shuttle/subshuttles/ancon
 	file_name = "nanotrasen_ancon"
 	name = "Nanotrasen Ancon-class Command Ship"
@@ -496,7 +489,7 @@
 
 /datum/map_template/shuttle/subshuttles/karst
 	file_name = "ngr_karst"
-	name = "Karst-class Drop Pod"
+	name = "Karst-class Breaching Pod"
 	faction = /datum/faction/syndicate/ngr
 	token_icon_state = "ship_tiny_generic"
 	prefix = "NGRV"
