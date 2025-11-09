@@ -1864,7 +1864,7 @@
 /obj/structure/closet/crate/secure/plasma{
 	req_access_txt = "10"
 	},
-/obj/item/stack/sheet/mineral/plasma/ten,
+/obj/item/stack/sheet/mineral/uranium/twenty,
 /obj/structure/sign/warning/electricshock{
 	pixel_x = 32;
 	pixel_y = 5
@@ -5035,9 +5035,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/external/dark)
 "Pf" = (
-/obj/machinery/power/port_gen/pacman{
-	anchored = 1
-	},
+/obj/machinery/power/port_gen/pacman/super,
 /obj/effect/turf_decal/corner/opaque/bar{
 	dir = 9
 	},
