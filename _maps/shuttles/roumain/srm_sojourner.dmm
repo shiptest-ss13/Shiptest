@@ -478,6 +478,7 @@
 /obj/item/stack/sheet/mineral/wood/fifty,
 /obj/item/stack/sheet/mineral/bamboo,
 /obj/item/stack/sheet/mineral/bamboo,
+/obj/item/stack/sheet/mineral/plasma/five,
 /obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -885,6 +886,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/railing/wood{
+	dir = 8
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/roumain)
 "hw" = (
@@ -923,6 +927,7 @@
 	pixel_y = -7
 	},
 /obj/effect/decal/cleanable/food/plant_smudge,
+/obj/structure/railing/corner/wood,
 /turf/open/floor/grass/ship/jungle/dark,
 /area/ship/roumain)
 "jb" = (
@@ -1398,6 +1403,9 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew)
 "lC" = (
+/obj/structure/railing/wood{
+	dir = 4
+	},
 /turf/open/floor/grass/ship/jungle/yellow,
 /area/ship/roumain)
 "lH" = (
@@ -1721,6 +1729,10 @@
 /obj/item/stack/tape/industrial/electrical{
 	pixel_y = -7
 	},
+/obj/item/assembly/signaler,
+/obj/item/assembly/signaler,
+/obj/item/assembly/signaler,
+/obj/item/storage/bag/construction,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "nr" = (
@@ -1736,6 +1748,9 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/railing/corner/wood{
+	dir = 4
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/roumain)
 "nF" = (
@@ -2769,14 +2784,6 @@
 /obj/effect/turf_decal/box/red/corners{
 	dir = 8
 	},
-/obj/structure/closet/crate/critter{
-	name = "chicken crate"
-	},
-/obj/item/food/grown/wheat,
-/obj/item/food/grown/wheat,
-/obj/item/food/grown/wheat,
-/mob/living/simple_animal/chicken,
-/mob/living/simple_animal/chick,
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -3517,6 +3524,9 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/structure/railing/corner/wood{
+	dir = 1
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/roumain)
 "Eh" = (
@@ -3887,6 +3897,9 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/railing/wood{
+	dir = 1
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/roumain)
 "Hx" = (
@@ -4034,6 +4047,14 @@
 /obj/effect/turf_decal/box/red/corners,
 /obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/critter{
+	name = "chicken crate"
+	},
+/obj/item/food/grown/wheat,
+/obj/item/food/grown/wheat,
+/obj/item/food/grown/wheat,
+/mob/living/simple_animal/chicken,
+/mob/living/simple_animal/chicken,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Iw" = (
@@ -5542,6 +5563,9 @@
 /obj/item/pickaxe/mini,
 /obj/item/pickaxe/mini,
 /obj/item/hatchet/wooden,
+/obj/item/melee/knife/hunting,
+/obj/item/melee/knife/hunting,
+/obj/item/melee/knife/hunting,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Tr" = (
@@ -5659,6 +5683,21 @@
 /area/ship/bridge)
 "Uq" = (
 /turf/open/floor/grass/ship/jungle/dark,
+/area/ship/roumain)
+"Us" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 8
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/railing/corner/wood{
+	dir = 8
+	},
+/turf/open/floor/wood/walnut,
 /area/ship/roumain)
 "Ut" = (
 /obj/effect/turf_decal/siding/wood{
@@ -5829,6 +5868,7 @@
 	pixel_y = 15;
 	pixel_x = -8
 	},
+/obj/structure/railing/wood,
 /turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "Wi" = (
@@ -6764,7 +6804,7 @@ yL
 kT
 MN
 ZO
-hn
+Us
 hn
 Eb
 ZZ
