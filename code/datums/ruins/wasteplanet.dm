@@ -101,6 +101,4 @@
 	id = "wasteplanet_recyclebay"
 	suffix = "wasteplanet_recyclebay.dmm"
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
-	ruin_mission_types = list(
-		/datum/mission/ruin/wasteplanet/nuclear
-	)
+
