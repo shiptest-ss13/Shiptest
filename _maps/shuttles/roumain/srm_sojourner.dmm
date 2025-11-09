@@ -1780,7 +1780,8 @@
 /obj/item/seeds/wheat,
 /obj/item/seeds/wheat,
 /obj/item/seeds/cannabis,
-/obj/item/rollingpaper,
+/obj/item/seeds/cocoapod,
+/obj/item/seeds/cocoapod,
 /obj/item/rollingpaper,
 /obj/item/rollingpaper,
 /obj/item/rollingpaper,
@@ -3193,6 +3194,9 @@
 /obj/item/food/grown/berries,
 /obj/item/food/grown/apple,
 /obj/item/food/grown/apple,
+/obj/item/food/grown/cocoapod,
+/obj/item/food/grown/cocoapod,
+/obj/item/food/grown/cocoapod,
 /obj/machinery/light_switch{
 	pixel_x = 11;
 	pixel_y = 20
@@ -5066,6 +5070,21 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
+"Pk" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 8
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/railing/corner/wood{
+	dir = 8
+	},
+/turf/open/floor/wood/walnut,
+/area/ship/roumain)
 "Ps" = (
 /obj/structure/closet/secure_closet/cabinet{
 	anchored = 1;
@@ -5683,21 +5702,6 @@
 /area/ship/bridge)
 "Uq" = (
 /turf/open/floor/grass/ship/jungle/dark,
-/area/ship/roumain)
-"Us" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 8
-	},
-/obj/structure/cable/orange{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/railing/corner/wood{
-	dir = 8
-	},
-/turf/open/floor/wood/walnut,
 /area/ship/roumain)
 "Ut" = (
 /obj/effect/turf_decal/siding/wood{
@@ -6804,7 +6808,7 @@ yL
 kT
 MN
 ZO
-Us
+Pk
 hn
 Eb
 ZZ
