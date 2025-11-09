@@ -33,11 +33,14 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/recycle_bay/eva)
 "ax" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 6
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
+	dir = 8
 	},
-/turf/open/floor/wood/walnut,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "ay" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
@@ -117,6 +120,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/salvage_bay)
+"bn" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table/greyscale,
+/turf/open/floor/wood/walnut,
+/area/ruin/wasteplanet/recycle_bay/officers)
 "br" = (
 /obj/effect/decal/cleanable/shreds,
 /obj/effect/decal/cleanable/shreds{
@@ -140,14 +148,12 @@
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/recycle_bay/atmospherics)
 "bA" = (
-/obj/effect/turf_decal/corner/opaque/green/diagonal{
-	dir = 1
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/turf/open/floor/plasteel/white,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "bB" = (
 /obj/machinery/suit_storage_unit/inherit,
@@ -271,6 +277,12 @@
 	dir = 1;
 	pixel_y = 1
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/engineering)
 "dc" = (
@@ -317,6 +329,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/dorms)
+"dt" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "dw" = (
 /obj/structure/chair/plastic{
 	pixel_y = 0;
@@ -380,6 +399,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun,
 /turf/open/floor/plating/wasteplanet/rust/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "ef" = (
@@ -465,9 +485,9 @@
 	locked = 0;
 	req_access = null
 	},
-/obj/item/ammo_box/magazine/m556_42_hydra/extended/empty,
-/obj/item/ammo_box/magazine/m556_42_hydra/extended/empty,
-/obj/item/ammo_box/magazine/m556_42_hydra/extended/empty,
+/obj/item/ammo_box/magazine/m556_42_hydra,
+/obj/item/ammo_box/magazine/m556_42_hydra,
+/obj/item/ammo_box/magazine/m556_42_hydra,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/armory)
 "eE" = (
@@ -578,13 +598,15 @@
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/recycle_bay/security)
 "fk" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 10
+/obj/effect/turf_decal/corner/opaque/green/diagonal{
+	dir = 4
 	},
-/turf/open/floor/wood/walnut{
-	icon_state = "wood-broken3"
+/obj/structure/table/greyscale,
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = 8;
+	pixel_y = 0
 	},
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "fm" = (
 /obj/effect/turf_decal/trimline/opaque/red/line{
@@ -687,18 +709,20 @@
 /turf/open/floor/plating/wasteplanet/rust/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "fZ" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#332521";
+/obj/effect/turf_decal/corner/opaque/green/diagonal{
 	dir = 4
 	},
-/turf/open/floor/wood/walnut{
-	color = "#543c30";
-	icon_state = "wood-broken4"
+/obj/effect/decal/cleanable/food/tomato_smudge,
+/obj/effect/decal/cleanable/food/flour,
+/turf/open/floor/plasteel/white,
+/area/ruin/wasteplanet/recycle_bay/officers)
+"gd" = (
+/obj/effect/turf_decal/corner/opaque/green/diagonal{
+	dir = 4
 	},
+/obj/structure/table/greyscale,
+/obj/item/reagent_containers/food/drinks/modglass,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "gf" = (
 /obj/structure/table,
@@ -910,6 +934,10 @@
 /area/ruin/wasteplanet/recycle_bay/salvage_bay)
 "ia" = (
 /obj/effect/decal/cleanable/oil/slippery,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "id" = (
@@ -939,6 +967,16 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/recycle_bay/officers)
+"it" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/structure/floodlight_frame,
+/obj/item/light/tube/broken,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "iv" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -990,14 +1028,27 @@
 /turf/open/floor/plasteel/tech/tcomms,
 /area/ruin/wasteplanet/recycle_bay/telecommunications)
 "iM" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth,
-/turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/recycle_bay/dorms)
+/obj/structure/fence,
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "iQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table/rolling,
+/turf/open/floor/plasteel/dark,
+/area/ruin/wasteplanet/recycle_bay/security)
+"iR" = (
+/obj/structure/closet/syndicate,
+/obj/item/clothing/suit/armor/ramzi,
+/obj/item/toy/plush/carpplushie,
+/obj/item/toy/plush/hornet,
+/obj/item/toy/plush/landmine{
+	pixel_x = 6;
+	pixel_y = -7
+	},
+/obj/item/toy/plush/moth{
+	pixel_x = -5;
+	pixel_y = -10
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/security)
 "iZ" = (
@@ -1009,12 +1060,10 @@
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "jc" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#332521";
-	dir = 1
-	},
-/turf/open/floor/wood/walnut,
-/area/ruin/wasteplanet/recycle_bay/officers)
+/obj/structure/flora/ash/glowshroom,
+/mob/living/basic/hivebot/ranged,
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "je" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1052,6 +1101,15 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/recycle_bay/security)
+"jy" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/wasteplanet/recycle_bay/engineering)
 "jE" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
@@ -1079,6 +1137,9 @@
 	dir = 10;
 	pixel_x = -1
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/engineering)
 "jM" = (
@@ -1093,6 +1154,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/recycle_bay/engineering)
@@ -1149,6 +1213,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/recycle_bay/engineering)
 "jZ" = (
@@ -1171,6 +1238,9 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "ki" = (
 /obj/machinery/power/port_gen/pacman/super,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/circuit/red,
 /area/ruin/wasteplanet/recycle_bay/engineering)
 "kj" = (
@@ -1267,6 +1337,23 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/security_dorms)
+"lf" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "li" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -1294,7 +1381,10 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/recycle_bay/telecommunications)
 "lq" = (
-/obj/machinery/power/smes,
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/engineering)
 "ls" = (
@@ -1383,13 +1473,14 @@
 /turf/open/floor/plasteel/stairs,
 /area/ruin/wasteplanet/recycle_bay/security_dorms)
 "lO" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 2
+/obj/effect/turf_decal/corner/opaque/green/diagonal{
+	dir = 4
 	},
-/turf/open/floor/wood/walnut{
-	icon_state = "wood-broken3"
-	},
+/obj/structure/table/greyscale,
+/obj/item/plate,
+/obj/machinery/light/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "lW" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
@@ -1405,15 +1496,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/recycle_bay/eva)
 "ms" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#332521";
-	dir = 1
+/obj/effect/turf_decal/corner/opaque/green/diagonal{
+	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#332521";
-	dir = 8
-	},
-/turf/open/floor/wood/walnut,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "mw" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1512,16 +1599,19 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/recycle_bay/atmospherics)
 "ni" = (
-/obj/effect/turf_decal/corner/opaque/green/diagonal{
-	dir = 1
+/obj/structure/filingcabinet/double{
+	dir = 4;
+	pixel_y = 0;
+	pixel_x = -10
 	},
-/obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/reagent_containers/food/drinks/bottle/absinthe/premium,
-/obj/item/reagent_containers/food/drinks/bottle/champagne,
-/obj/item/reagent_containers/food/drinks/bottle/dotusira,
-/obj/item/reagent_containers/food/drinks/bottle/sososeta,
-/obj/item/reagent_containers/food/drinks/bottle/sososeta,
-/turf/open/floor/plasteel/white,
+/obj/item/folder/blue,
+/obj/item/folder/documents/syndicate/blue,
+/obj/item/folder/documents/syndicate/red,
+/obj/item/folder/documents/syndicate/red,
+/obj/item/documents/syndicate{
+	desc = "\"Top Secret\" documents containing lists of manifests, requistion orders, and supply-line timetables for the Ramzi Fleet."
+	},
+/turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "nj" = (
 /obj/effect/turf_decal/siding/red{
@@ -1556,7 +1646,6 @@
 /obj/structure/closet/wall/red/directional/east,
 /obj/item/attachment/rail_light,
 /obj/item/attachment/rail_light,
-/obj/item/attachment/rail_light,
 /obj/item/attachment/scope{
 	pixel_x = 7;
 	pixel_y = 7
@@ -1586,11 +1675,12 @@
 /turf/closed/wall/rust,
 /area/ruin/wasteplanet/recycle_bay/atmospherics)
 "nR" = (
-/obj/effect/turf_decal/siding/wood/end{
-	dir = 1;
-	color = "#332521"
+/obj/effect/turf_decal/corner/opaque/green/diagonal{
+	dir = 4
 	},
-/turf/open/floor/wood/walnut,
+/obj/machinery/oven,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "nV" = (
 /obj/structure/crate_shelf/built,
@@ -1790,6 +1880,13 @@
 "pR" = (
 /turf/closed/wall,
 /area/ruin/wasteplanet/recycle_bay/engineering)
+"pX" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "qf" = (
 /obj/structure/sink{
 	pixel_y = 18
@@ -1803,6 +1900,22 @@
 /obj/machinery/telecomms/relay,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/wasteplanet/recycle_bay/telecommunications)
+"qi" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "qr" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
 	dir = 1
@@ -1911,9 +2024,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/recycle_bay/atmospherics)
 "rc" = (
-/obj/effect/turf_decal/corner/opaque/green/diagonal{
-	dir = 4
-	},
 /obj/structure/safe/floor,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c500,
@@ -1926,7 +2036,8 @@
 /obj/item/spacecash/bundle/c200,
 /obj/item/spacecash/bundle/c1000,
 /obj/machinery/light/directional/north,
-/turf/open/floor/plasteel/white,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "rd" = (
 /obj/structure/fluff/broken_flooring{
@@ -1975,6 +2086,13 @@
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/security_dorms)
+"ro" = (
+/obj/effect/turf_decal/corner/opaque/green/diagonal{
+	dir = 4
+	},
+/obj/structure/chair/wood,
+/turf/open/floor/plasteel/white,
+/area/ruin/wasteplanet/recycle_bay/officers)
 "rs" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -2123,9 +2241,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/recycle_bay/security)
 "rX" = (
-/obj/effect/turf_decal/corner/opaque/green/diagonal{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -2133,7 +2248,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/plasteel/white,
+/turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "rY" = (
 /obj/structure/fence{
@@ -2146,6 +2261,14 @@
 /obj/effect/turf_decal/techfloor/corner,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/recycle_bay/security)
+"sc" = (
+/obj/machinery/power/floodlight,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet/rust/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "se" = (
 /obj/effect/turf_decal/trimline/opaque/white/line{
 	dir = 1;
@@ -2224,14 +2347,21 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/dorms)
 "sN" = (
-/obj/effect/landmark/mission_poi/main{
-	type_to_spawn = /obj/machinery/nuclearbomb/syndicate
-	},
+/obj/machinery/nuclearbomb/syndicate,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/wasteplanet/recycle_bay/vault)
 "sO" = (
 /turf/closed/wall/r_wall/rust,
 /area/ruin/wasteplanet/recycle_bay/security_dorms)
+"sQ" = (
+/obj/structure/closet/syndicate,
+/obj/item/clothing/suit/armor/ramzi,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/head/beret/grey{
+	pixel_y = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/wasteplanet/recycle_bay/security)
 "sT" = (
 /obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 4;
@@ -2252,6 +2382,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/terminal{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/engineering)
@@ -2290,6 +2423,13 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
+"tk" = (
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating/wasteplanet/lit,
@@ -2339,6 +2479,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/recycle_bay/engineering)
@@ -2455,7 +2598,6 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/crate_shelve,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
@@ -2581,6 +2723,9 @@
 	pixel_y = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/engineering)
 "wh" = (
@@ -2588,12 +2733,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/salvage_bay)
 "wi" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 10
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/turf/open/floor/wood/walnut,
-/area/ruin/wasteplanet/recycle_bay/officers)
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet/rust/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "wo" = (
 /obj/effect/turf_decal/siding/red{
 	dir = 10;
@@ -2877,6 +3022,15 @@
 "ys" = (
 /obj/structure/closet/syndicate,
 /obj/item/clothing/suit/armor/ramzi,
+/obj/item/storage/pill_bottle/lsd{
+	pixel_x = -6;
+	pixel_y = -13
+	},
+/obj/item/photo{
+	pixel_x = 4;
+	pixel_y = -10;
+	desc = "A well preserved photograph, it shows a long stretch of forest taken from a vantage point...theres a series of numbers that are crossed out, going from 120 to 43.."
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/security)
 "yt" = (
@@ -2921,9 +3075,15 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/security)
 "yP" = (
-/obj/machinery/power/smes,
+/obj/machinery/power/smes/engineering,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/directional/north,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/engineering)
 "yQ" = (
@@ -2953,17 +3113,15 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/wasteplanet/recycle_bay/armory)
+"zs" = (
+/mob/living/basic/hivebot/mechanic,
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "zt" = (
-/obj/structure/table/greyscale,
-/obj/effect/turf_decal/corner/opaque/green/diagonal{
-	dir = 4
+/obj/machinery/modular_computer/console{
+	dir = 1
 	},
-/obj/machinery/coffeemaker/premium,
-/obj/item/storage/fancy/coffee_cart_rack{
-	pixel_x = 13;
-	pixel_y = 7
-	},
-/turf/open/floor/plasteel/white,
+/turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "zu" = (
 /turf/open/floor/plasteel/freezer,
@@ -2994,6 +3152,17 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/recycle_bay/eva)
+"zI" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet/rust/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
+"zO" = (
+/mob/living/basic/hivebot,
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "zQ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -3041,14 +3210,23 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"Al" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/tech,
+/area/ruin/wasteplanet/recycle_bay/officers)
 "Am" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 8
+/obj/effect/turf_decal/corner/opaque/green/diagonal{
+	dir = 4
 	},
-/turf/open/floor/wood/walnut{
-	icon_state = "wood-broken"
-	},
+/obj/machinery/light/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "Az" = (
 /turf/closed/wall/r_wall/rust,
@@ -3095,11 +3273,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/recycle_bay/security)
 "AR" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#332521";
-	dir = 8
+/obj/effect/turf_decal/corner/opaque/green/diagonal{
+	dir = 4
 	},
-/turf/open/floor/wood/walnut,
+/obj/structure/table/greyscale,
+/obj/item/plate,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "AS" = (
 /obj/structure/platform/industrial{
@@ -3273,12 +3452,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/recycle_bay/security)
 "Ci" = (
-/obj/structure/table/greyscale,
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
 	dir = 10
 	},
 /obj/machinery/light/directional/west,
+/obj/structure/table/greyscale,
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken3"
 	},
@@ -3388,6 +3567,13 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"Db" = (
+/obj/machinery/power/floodlight,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Dd" = (
 /obj/item/target,
 /turf/open/floor/plating,
@@ -3428,6 +3614,11 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/recycle_bay/dorms)
+"DA" = (
+/obj/structure/chair/sofa/red,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/officer,
+/turf/open/floor/carpet/green,
+/area/ruin/wasteplanet/recycle_bay/officers)
 "DC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -3581,6 +3772,10 @@
 /obj/effect/decal/cleanable/plasma,
 /obj/effect/decal/cleanable/plasma,
 /obj/effect/decal/cleanable/plasma,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "EH" = (
@@ -3591,6 +3786,9 @@
 "EI" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/recycle_bay/engineering)
@@ -3658,16 +3856,13 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/wasteplanet/recycle_bay/dorms)
 "Fk" = (
-/obj/effect/turf_decal/corner/opaque/green/diagonal{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/plasteel/white,
+/turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "Fm" = (
 /obj/effect/turf_decal/siding/wood{
@@ -3699,6 +3894,13 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/wasteplanet/recycle_bay/armory)
+"Fq" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/floodlight,
+/obj/structure/cable,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Fs" = (
 /obj/structure/fence{
 	dir = 4
@@ -3824,6 +4026,9 @@
 	pixel_x = 9;
 	pixel_y = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/engineering)
 "Gw" = (
@@ -3836,6 +4041,15 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/recycle_bay/telecommunications)
+"Gx" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet/rust/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Gy" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -3851,6 +4065,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "GF" = (
 /obj/machinery/power/rtg/advanced,
+/obj/structure/cable,
 /turf/open/floor/circuit/red,
 /area/ruin/wasteplanet/recycle_bay/engineering)
 "GH" = (
@@ -4012,11 +4227,14 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/wasteplanet/recycle_bay/dorms)
 "HW" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/corner/opaque/green/diagonal{
 	dir = 4
 	},
-/turf/open/floor/wood/walnut,
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "HX" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -4146,15 +4364,25 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/recycle_bay/security)
 "IY" = (
-/obj/structure/barricade/sandbags,
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/obj/machinery/power/floodlight,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet/rust/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Jd" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/security)
+"Jf" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Jj" = (
 /obj/structure/hazard/radioactive/stack,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
@@ -4171,6 +4399,13 @@
 	icon_state = "singular";
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/item/stack/cable_coil/cut/red{
+	pixel_x = 5;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/engineering)
 "JF" = (
@@ -4179,20 +4414,23 @@
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "JN" = (
-/turf/open/floor/wood/walnut{
-	icon_state = "wood-broken7"
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
-/area/ruin/wasteplanet/recycle_bay/officers)
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "JQ" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "JR" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 9
+/obj/effect/turf_decal/corner/opaque/green/diagonal{
+	dir = 4
 	},
-/turf/open/floor/wood/walnut,
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "JY" = (
 /obj/structure/table,
@@ -4212,7 +4450,6 @@
 	pixel_y = 10;
 	pixel_x = -3
 	},
-/mob/living/simple_animal/hostile/human/ramzi/melee,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/dorms)
 "Kj" = (
@@ -4225,6 +4462,21 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/recycle_bay/dorms)
+"Kl" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
+"Kq" = (
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Ks" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/stand_clear{
@@ -4299,6 +4551,14 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/recycle_bay/officers)
+"KN" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "KP" = (
 /obj/machinery/light/floor/hangar,
 /turf/open/floor/concrete/wasteplanet,
@@ -4366,6 +4626,10 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/recycle_bay/telecommunications)
+"Lr" = (
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Lv" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -4379,16 +4643,13 @@
 /turf/open/floor/plating/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Lx" = (
-/obj/effect/turf_decal/corner/opaque/green/diagonal{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/turf/open/floor/plasteel/white,
+/turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "LA" = (
 /obj/effect/turf_decal/siding/wood{
@@ -4430,11 +4691,15 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/recycle_bay/telecommunications)
 "LG" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 5
+/obj/machinery/coffeemaker/premium{
+	pixel_x = 7;
+	pixel_y = 7
 	},
-/turf/open/floor/wood/walnut,
+/obj/structure/table/greyscale,
+/obj/effect/turf_decal/corner/opaque/green/diagonal{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "LK" = (
 /obj/structure/hazard/radioactive/stack,
@@ -4512,7 +4777,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Mk" = (
 /obj/structure/closet/crate/secure,
-/obj/item/storage/box/syndie_kit/imp_storage,
+/obj/item/storage/box/syndie_kit/emp,
 /obj/machinery/light/directional/south,
 /turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/recycle_bay/vault)
@@ -4782,6 +5047,13 @@
 "Pc" = (
 /turf/open/floor/concrete/wasteplanet,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"Pf" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet/rust/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Pg" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -4819,14 +5091,28 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/dorms)
+"PG" = (
+/mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth,
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "PI" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
+/obj/effect/turf_decal/corner/opaque/green/diagonal{
 	dir = 4
 	},
-/turf/open/floor/wood/walnut{
-	icon_state = "wood-broken5"
-	},
+/obj/structure/closet/secure_closet/freezer/fridge,
+/obj/item/reagent_containers/food/drinks/bottle/absinthe/premium,
+/obj/item/reagent_containers/food/drinks/bottle/champagne,
+/obj/item/reagent_containers/food/drinks/bottle/dotusira,
+/obj/item/reagent_containers/food/drinks/bottle/sososeta,
+/obj/item/reagent_containers/food/drinks/bottle/sososeta,
+/obj/item/food/meat/rawcutlet,
+/obj/item/food/meat/rawcutlet,
+/obj/item/food/meat/rawcutlet,
+/obj/item/food/meat/rawcutlet,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "PN" = (
 /obj/effect/turf_decal/siding/red{
@@ -4849,8 +5135,15 @@
 	pixel_x = 2;
 	pixel_y = 1
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/engineering)
+"PT" = (
+/obj/machinery/power/floodlight,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "PX" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -4887,6 +5180,14 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/carpet/green,
 /area/ruin/wasteplanet/recycle_bay/officers)
+"Qo" = (
+/obj/machinery/power/floodlight,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Qr" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 8
@@ -4950,14 +5251,11 @@
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "QV" = (
-/obj/effect/turf_decal/corner/opaque/green/diagonal{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/turf/open/floor/plasteel/white,
+/turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "QW" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -4985,6 +5283,9 @@
 	},
 /obj/machinery/power/terminal{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/engineering)
@@ -5094,6 +5395,14 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/recycle_bay/officers)
+"Sw" = (
+/obj/effect/turf_decal/corner/opaque/green/diagonal{
+	dir = 4
+	},
+/obj/machinery/griddle,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/wasteplanet/recycle_bay/officers)
 "SB" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
 	dir = 6
@@ -5121,6 +5430,10 @@
 /obj/structure/closet/syndicate,
 /obj/machinery/light/directional/west,
 /obj/item/clothing/suit/armor/ramzi,
+/obj/item/reagent_containers/food/drinks/soda_cans/xeno_energy{
+	pixel_x = -9;
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/security)
 "SL" = (
@@ -5168,7 +5481,10 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Tj" = (
 /obj/effect/turf_decal/corner/opaque/green/diagonal{
-	dir = 1
+	dir = 4
+	},
+/obj/structure/chair/wood{
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/recycle_bay/officers)
@@ -5205,6 +5521,16 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/recycle_bay/eva)
+"Tx" = (
+/obj/effect/turf_decal/corner/opaque/green/diagonal{
+	dir = 4
+	},
+/obj/structure/table/greyscale,
+/obj/item/cutting_board,
+/obj/item/melee/knife,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/wasteplanet/recycle_bay/officers)
 "TF" = (
 /turf/open/floor/plasteel/stairs/left{
 	dir = 8
@@ -5346,22 +5672,49 @@
 /obj/structure/table_frame,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"Va" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Vf" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 1
-	},
-/turf/open/floor/wood/walnut,
-/area/ruin/wasteplanet/recycle_bay/officers)
-"Vm" = (
-/obj/structure/table/greyscale,
-/obj/effect/turf_decal/corner/opaque/green/diagonal{
-	dir = 1
-	},
 /obj/machinery/microwave{
 	pixel_y = 3
 	},
+/obj/structure/table/greyscale,
+/obj/effect/turf_decal/corner/opaque/green/diagonal{
+	dir = 4
+	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/white,
+/area/ruin/wasteplanet/recycle_bay/officers)
+"Vm" = (
+/obj/structure/table/greyscale,
+/obj/item/paper_bin{
+	pixel_x = 7;
+	pixel_y = 4
+	},
+/obj/item/pen/blue{
+	pixel_y = 3;
+	pixel_x = -2
+	},
+/obj/item/pen/fountain{
+	pixel_x = -4
+	},
+/obj/item/pen/red{
+	pixel_x = -7;
+	pixel_y = -2
+	},
+/turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "Vv" = (
 /obj/structure/guncloset,
@@ -5402,12 +5755,17 @@
 /area/ruin/wasteplanet/recycle_bay/eva)
 "VX" = (
 /obj/item/kirbyplants,
-/obj/effect/turf_decal/corner/opaque/green/diagonal{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/white,
+/turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/recycle_bay/officers)
+"Wb" = (
+/obj/machinery/power/floodlight,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Wd" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "recycle_armory"
@@ -5526,6 +5884,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/recycle_bay/security)
+"Wz" = (
+/mob/living/basic/hivebot/ranged,
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "WA" = (
 /obj/machinery/door/airlock/external/glass,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -5537,15 +5899,29 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/recycle_bay/officers)
+"WB" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "WI" = (
 /turf/closed/wall/r_wall/rust,
 /area/ruin/wasteplanet/recycle_bay/armory)
 "WJ" = (
-/obj/structure/table/greyscale,
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
 	dir = 8
 	},
+/obj/structure/table/greyscale,
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken5"
 	},
@@ -5570,6 +5946,14 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/salvage_bay)
+"Xb" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/wasteplanet/lit,
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "Xe" = (
 /turf/closed/wall,
 /area/ruin/wasteplanet/recycle_bay/telecommunications)
@@ -5677,6 +6061,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/recycle_bay/engineering)
 "XG" = (
@@ -5742,10 +6132,7 @@
 /turf/open/floor/plating/wasteplanet/rust/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Yb" = (
-/obj/structure/crate_shelf/built,
-/obj/structure/crate_shelf/built,
-/obj/structure/crate_shelf/built,
-/obj/structure/crate_shelf/built,
+/obj/structure/crate_shelf,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/armory)
 "Yc" = (
@@ -5764,6 +6151,9 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Yf" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/engineering)
 "Yj" = (
@@ -5848,11 +6238,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/dorms)
 "YO" = (
-/obj/effect/turf_decal/corner/opaque/green/diagonal{
-	dir = 1
-	},
 /obj/machinery/light/directional/east,
-/turf/open/floor/plasteel/white,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/comfy/beige,
+/turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/recycle_bay/officers)
 "YQ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -5989,6 +6378,12 @@
 	color = "#912a2a"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/engineering)
 "ZH" = (
@@ -5999,7 +6394,9 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "ZJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/ramzi/civilian,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/engineering)
 "ZN" = (
@@ -6477,7 +6874,7 @@ Wi
 HI
 HI
 Wi
-Wi
+Wz
 Wi
 Wi
 zE
@@ -6626,7 +7023,7 @@ Wi
 Wi
 Wi
 ls
-Wi
+Wz
 Wi
 Wi
 HI
@@ -6768,12 +7165,12 @@ Jj
 Jj
 ux
 vA
-Wi
+zO
 HI
 Wi
 HI
 ls
-vA
+jc
 Jj
 Jj
 Wi
@@ -6858,9 +7255,9 @@ WI
 WI
 WI
 WI
-Wi
-Wi
-Wi
+iM
+iM
+iM
 ul
 ep
 zu
@@ -6944,7 +7341,7 @@ Ss
 vU
 px
 cK
-iM
+Ng
 Ng
 FS
 FS
@@ -7000,10 +7397,10 @@ Wi
 ux
 Jj
 Nh
-ys
+sQ
 SK
 ys
-ys
+iR
 DU
 aR
 uH
@@ -7069,7 +7466,7 @@ Qi
 ls
 ls
 Wi
-Wi
+zO
 Wi
 Wi
 Wi
@@ -7521,7 +7918,7 @@ DE
 DE
 ls
 Wi
-Wi
+zO
 Wi
 Wi
 wF
@@ -7573,7 +7970,7 @@ sA
 Wi
 ct
 JQ
-IY
+JQ
 Pg
 VM
 Wi
@@ -7680,7 +8077,7 @@ Wi
 ls
 Wi
 Wi
-Wi
+Fs
 Wi
 Wi
 Wi
@@ -7755,9 +8152,9 @@ DE
 aC
 Wi
 Wi
-Wi
+zs
 HI
-HI
+rY
 Wi
 Wi
 HI
@@ -7791,7 +8188,7 @@ li
 lt
 fe
 zR
-fe
+lf
 Wk
 lt
 kS
@@ -7868,7 +8265,7 @@ lu
 HI
 ls
 VM
-ls
+wi
 HI
 DT
 ls
@@ -7935,9 +8332,9 @@ CR
 Wi
 Wi
 CR
-CR
+it
 ED
-EQ
+qi
 HI
 ls
 DT
@@ -7945,7 +8342,7 @@ Mq
 Wi
 Wi
 Wi
-Wi
+Qo
 Mq
 DT
 ej
@@ -7960,7 +8357,7 @@ kf
 HI
 HI
 VM
-Wi
+PT
 Wi
 Wi
 Wi
@@ -8095,10 +8492,10 @@ Yc
 VM
 VM
 Wi
-Wi
+PG
 Ig
 Qh
-Wi
+Lr
 Wi
 HI
 Mr
@@ -8175,7 +8572,7 @@ Wi
 Wi
 UX
 Wi
-Wi
+Kq
 Wi
 Mr
 Mr
@@ -8221,10 +8618,10 @@ DE
 DE
 pj
 rc
-Tj
-Ej
+hm
+hm
 rX
-Ej
+bn
 Vm
 pj
 Wi
@@ -8250,7 +8647,7 @@ Wi
 Wi
 ls
 Wi
-Wi
+jb
 Wi
 Wi
 Wi
@@ -8320,7 +8717,7 @@ Wi
 Wi
 li
 ru
-HI
+tk
 HI
 Wi
 Wi
@@ -8397,7 +8794,7 @@ Wi
 Ym
 lu
 HI
-HI
+tk
 HI
 Wi
 Wi
@@ -8459,10 +8856,10 @@ WJ
 Ci
 vB
 Tm
-Tm
+Al
 Ft
 Wi
-Wi
+Db
 HI
 ls
 ls
@@ -8474,7 +8871,7 @@ YQ
 Gy
 ls
 DE
-ls
+wi
 HI
 Wi
 Wi
@@ -8527,7 +8924,7 @@ zE
 aC
 DE
 pj
-kJ
+DA
 Zc
 dM
 LA
@@ -8539,7 +8936,7 @@ jE
 jE
 WA
 tw
-tw
+Va
 tw
 AY
 tw
@@ -8551,7 +8948,7 @@ Aa
 ej
 DE
 DE
-ls
+sc
 VM
 Wi
 Wi
@@ -8690,7 +9087,7 @@ Fm
 hP
 vB
 eE
-eE
+ax
 pj
 Wi
 Wi
@@ -8807,7 +9204,7 @@ GX
 DE
 DE
 DE
-Wi
+PT
 HI
 VM
 HK
@@ -8835,13 +9232,13 @@ zE
 DE
 DE
 Ft
-vB
-vB
+Sw
+ms
 JR
 ms
 Am
-wi
-vB
+Ej
+Tj
 pj
 Wi
 Wi
@@ -8914,9 +9311,9 @@ DE
 Ft
 nR
 fZ
-jc
-hm
-hm
+Ej
+ms
+ro
 AR
 fk
 Ft
@@ -8991,10 +9388,10 @@ zE
 pj
 pj
 Vf
-hm
-hm
-JN
-hm
+ms
+ms
+Ej
+gd
 lO
 pj
 Wi
@@ -9068,11 +9465,11 @@ zE
 zE
 pj
 LG
-HW
+Tx
 PI
+Ej
 HW
 HW
-ax
 pj
 ls
 Yp
@@ -9465,7 +9862,7 @@ Wi
 Pl
 pR
 pR
-gO
+jy
 gO
 pR
 Xe
@@ -9482,7 +9879,7 @@ ba
 BI
 HI
 Wi
-ls
+IY
 ls
 Pg
 HI
@@ -9493,7 +9890,7 @@ DE
 DE
 GX
 Wi
-Wi
+Wb
 HK
 Mh
 Wi
@@ -9559,7 +9956,7 @@ Wi
 ba
 BI
 VM
-VM
+KN
 DT
 DC
 HK
@@ -9567,10 +9964,10 @@ GX
 DE
 DE
 DE
-HI
-HI
-Mq
-ls
+dt
+pX
+Gx
+zI
 VM
 VN
 Wi
@@ -9636,15 +10033,15 @@ Wi
 Wi
 bc
 Lv
-tw
+WB
 Lv
 Yc
-VM
+JN
 VM
 GX
 DE
-HI
-VM
+dt
+Xb
 HK
 DT
 DT
@@ -9716,12 +10113,12 @@ HI
 Wi
 BR
 yt
-HI
-VM
+Jf
+JN
 ls
 ls
-VM
-VM
+Kl
+Fq
 Wi
 Wi
 Wi
@@ -9794,10 +10191,10 @@ UX
 xe
 QQ
 Wi
-HI
+Jf
 ia
-ls
-VM
+Pf
+Xb
 Wi
 Wi
 Yp
