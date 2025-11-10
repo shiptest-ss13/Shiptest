@@ -3170,7 +3170,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Ag" = (
-/obj/structure/closet/crate/freezer,
+/obj/structure/closet/crate/freezer{
+	name = "produce freezer"
+	},
 /obj/item/twenty_pounds_of_ice{
 	pixel_y = -6;
 	pixel_x = -6
@@ -3202,6 +3204,9 @@
 	pixel_y = 20
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/crate_shelf{
+	capacity = 2
+	},
 /turf/open/floor/wood/ebony/cold,
 /area/ship/storage)
 "Am" = (
@@ -3329,7 +3334,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "BT" = (
-/obj/structure/closet/crate/freezer,
+/obj/structure/closet/crate/freezer{
+	name = "meat freezer"
+	},
 /obj/item/twenty_pounds_of_ice{
 	pixel_y = -6;
 	pixel_x = -6
@@ -3350,6 +3357,9 @@
 /obj/item/food/meat/slab/chicken,
 /obj/item/food/meat/slab/chicken,
 /obj/machinery/light/small/directional/west,
+/obj/structure/crate_shelf{
+	capacity = 2
+	},
 /turf/open/floor/wood/ebony/cold,
 /area/ship/storage)
 "Cb" = (
@@ -4543,6 +4553,22 @@
 "Ml" = (
 /turf/closed/wall,
 /area/ship/engineering/engines/starboard)
+"Mp" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 1
+	},
+/obj/structure/closet/crate/freezer,
+/obj/item/twenty_pounds_of_ice{
+	pixel_y = -6;
+	pixel_x = -6
+	},
+/obj/item/twenty_pounds_of_ice{
+	pixel_y = -6;
+	pixel_x = 6
+	},
+/turf/open/floor/suns/diagonal/walnut/cold,
+/area/ship/storage)
 "My" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -5191,10 +5217,6 @@
 	pixel_y = 6;
 	pixel_x = -4
 	},
-/obj/item/stack/sheet/animalhide/goliath_hide{
-	pixel_x = 8;
-	pixel_y = 8
-	},
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -20;
@@ -5260,16 +5282,8 @@
 /obj/structure/table/reinforced{
 	color = "#a8b2b6"
 	},
-/obj/item/clothing/suit/apron/chef{
-	pixel_y = 6;
-	pixel_x = 15
-	},
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 1
-	},
-/obj/item/clothing/gloves/butchering{
-	pixel_y = 4;
-	pixel_x = 12
 	},
 /obj/item/stock_parts/cell/high{
 	pixel_x = -7
@@ -5396,6 +5410,15 @@
 	color = "#543C30";
 	dir = 1
 	},
+/obj/structure/closet/crate/freezer{
+	name = "animal byproduct freezer"
+	},
+/obj/item/stack/sheet/animalhide/goliath_hide,
+/obj/item/stack/sheet/animalhide/goliath_hide,
+/obj/item/stack/sheet/bone,
+/obj/item/stack/sheet/sinew/wolf,
+/obj/item/mob_trophy/wolf_ear,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/suns/diagonal/walnut/cold,
 /area/ship/storage)
 "RN" = (
@@ -5755,6 +5778,11 @@
 	dir = 4
 	},
 /obj/structure/chair/handrail,
+/obj/structure/closet/wall/directional/north{
+	name = "freezer cabinet"
+	},
+/obj/item/clothing/suit/apron/chef,
+/obj/item/clothing/gloves/butchering,
 /turf/open/floor/wood/ebony/cold,
 /area/ship/storage)
 "Vl" = (
@@ -6915,7 +6943,7 @@ qQ
 Iu
 Yy
 Ag
-Rw
+Mp
 wI
 eY
 qa
