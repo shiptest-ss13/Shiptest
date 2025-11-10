@@ -3460,7 +3460,7 @@
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 4
 	},
-/obj/structure/closet/secure_closet/wall/directional/east{
+/obj/structure/closet/wall/white/directional/east{
 	name = "kitchen cabinet"
 	},
 /obj/effect/decal/cleanable/food/egg_smudge,
@@ -5234,6 +5234,10 @@
 /obj/item/reagent_containers/hypospray/medipen/synap{
 	pixel_x = 12;
 	pixel_y = -8
+	},
+/obj/item/healthanalyzer,
+/obj/item/reagent_scanner{
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/equip)
@@ -7722,7 +7726,7 @@
 /area/ship/hallway/port)
 "Zp" = (
 /obj/machinery/door/window/westright,
-/obj/structure/closet/secure_closet/wall/directional/east{
+/obj/structure/closet/wall/white/directional/east{
 	name = "shower cabinet"
 	},
 /obj/item/soap/nanotrasen{
