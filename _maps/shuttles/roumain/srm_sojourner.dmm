@@ -482,6 +482,22 @@
 /obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"dC" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 1
+	},
+/obj/structure/closet/crate/freezer{
+	name = "animal byproduct freezer"
+	},
+/obj/item/stack/sheet/animalhide/goliath_hide,
+/obj/item/stack/sheet/animalhide/goliath_hide,
+/obj/item/stack/sheet/bone,
+/obj/item/stack/sheet/sinew/wolf,
+/obj/item/mob_trophy/wolf_ear,
+/obj/effect/mapping_helpers/crate_shelve,
+/turf/open/floor/suns/diagonal/walnut/cold,
+/area/ship/storage)
 "dE" = (
 /obj/structure/table/reinforced{
 	color = "#a8b2b6"
@@ -4503,22 +4519,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/starboard)
-"LV" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 1
-	},
-/obj/structure/closet/crate/freezer,
-/obj/item/twenty_pounds_of_ice{
-	pixel_y = -6;
-	pixel_x = -6
-	},
-/obj/item/twenty_pounds_of_ice{
-	pixel_y = -6;
-	pixel_x = 6
-	},
-/turf/open/floor/suns/diagonal/walnut/cold,
-/area/ship/storage)
 "Ma" = (
 /obj/effect/turf_decal/trimline/opaque/bar/filled/line,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -5415,15 +5415,15 @@
 	color = "#543C30";
 	dir = 1
 	},
-/obj/structure/closet/crate/freezer{
-	name = "animal byproduct freezer"
+/obj/structure/closet/crate/freezer,
+/obj/item/twenty_pounds_of_ice{
+	pixel_y = -6;
+	pixel_x = -6
 	},
-/obj/item/stack/sheet/animalhide/goliath_hide,
-/obj/item/stack/sheet/animalhide/goliath_hide,
-/obj/item/stack/sheet/bone,
-/obj/item/stack/sheet/sinew/wolf,
-/obj/item/mob_trophy/wolf_ear,
-/obj/effect/mapping_helpers/crate_shelve,
+/obj/item/twenty_pounds_of_ice{
+	pixel_y = -6;
+	pixel_x = 6
+	},
 /turf/open/floor/suns/diagonal/walnut/cold,
 /area/ship/storage)
 "RN" = (
@@ -5788,6 +5788,13 @@
 	},
 /obj/item/clothing/suit/apron/chef,
 /obj/item/clothing/gloves/butchering,
+/obj/item/hand_labeler{
+	pixel_y = -8
+	},
+/obj/item/hand_labeler_refill{
+	pixel_x = 12;
+	pixel_y = -10
+	},
 /turf/open/floor/wood/ebony/cold,
 /area/ship/storage)
 "Vl" = (
@@ -6923,7 +6930,7 @@ Am
 wa
 Yy
 BT
-Rw
+dC
 wI
 PX
 qa
@@ -6948,7 +6955,7 @@ qQ
 Iu
 Yy
 Ag
-LV
+Rw
 wI
 eY
 qa
