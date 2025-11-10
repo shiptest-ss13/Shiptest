@@ -281,22 +281,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/roumain)
-"cp" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 1
-	},
-/obj/structure/closet/crate/freezer{
-	name = "animal byproduct freezer"
-	},
-/obj/item/stack/sheet/animalhide/goliath_hide,
-/obj/item/stack/sheet/animalhide/goliath_hide,
-/obj/item/stack/sheet/bone,
-/obj/item/stack/sheet/sinew/wolf,
-/obj/item/mob_trophy/wolf_ear,
-/obj/effect/mapping_helpers/crate_shelve,
-/turf/open/floor/suns/diagonal/walnut/cold,
-/area/ship/storage)
 "cr" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -486,7 +470,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/closet/crate/engineering,
+/obj/structure/closet/crate/secure/plasma,
 /obj/item/stack/sheet/plasteel/five,
 /obj/item/stack/sheet/plasteel/five,
 /obj/item/stack/sheet/metal/five,
@@ -1893,9 +1877,7 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/power/terminal,
 /obj/structure/cable/green,
-/obj/structure/closet/crate/secure/plasma{
-	req_access_txt = "10"
-	},
+/obj/structure/closet/crate/radiation,
 /obj/item/stack/sheet/mineral/uranium/twenty,
 /obj/structure/sign/warning/electricshock{
 	pixel_x = 32;
@@ -4521,6 +4503,22 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/starboard)
+"LV" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 1
+	},
+/obj/structure/closet/crate/freezer,
+/obj/item/twenty_pounds_of_ice{
+	pixel_y = -6;
+	pixel_x = -6
+	},
+/obj/item/twenty_pounds_of_ice{
+	pixel_y = -6;
+	pixel_x = 6
+	},
+/turf/open/floor/suns/diagonal/walnut/cold,
+/area/ship/storage)
 "Ma" = (
 /obj/effect/turf_decal/trimline/opaque/bar/filled/line,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -5091,7 +5089,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/external/dark)
 "Pf" = (
-/obj/machinery/power/port_gen/pacman/super,
+/obj/machinery/power/port_gen/pacman/super{
+	anchored = 1
+	},
 /obj/effect/turf_decal/corner/opaque/bar{
 	dir = 9
 	},
@@ -5415,15 +5415,15 @@
 	color = "#543C30";
 	dir = 1
 	},
-/obj/structure/closet/crate/freezer,
-/obj/item/twenty_pounds_of_ice{
-	pixel_y = -6;
-	pixel_x = -6
+/obj/structure/closet/crate/freezer{
+	name = "animal byproduct freezer"
 	},
-/obj/item/twenty_pounds_of_ice{
-	pixel_y = -6;
-	pixel_x = 6
-	},
+/obj/item/stack/sheet/animalhide/goliath_hide,
+/obj/item/stack/sheet/animalhide/goliath_hide,
+/obj/item/stack/sheet/bone,
+/obj/item/stack/sheet/sinew/wolf,
+/obj/item/mob_trophy/wolf_ear,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/suns/diagonal/walnut/cold,
 /area/ship/storage)
 "RN" = (
@@ -6923,7 +6923,7 @@ Am
 wa
 Yy
 BT
-cp
+Rw
 wI
 PX
 qa
@@ -6948,7 +6948,7 @@ qQ
 Iu
 Yy
 Ag
-Rw
+LV
 wI
 eY
 qa
