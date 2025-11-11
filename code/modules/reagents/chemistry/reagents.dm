@@ -228,3 +228,9 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 		rs += "[R.name], [R.volume]"
 
 	return rs.Join(" | ")
+
+/// Should return a associative list where keys are taste descriptions and values are strength ratios
+/datum/reagent/proc/get_taste_description(mob/living/taster)
+	if(isnull(taster) || !HAS_TRAIT(taster, TRAIT_SENSITIVE_TONGUE))
+		return list("[taste_description]" = 1)
+	return list("[lowertext(name)]" = 1)

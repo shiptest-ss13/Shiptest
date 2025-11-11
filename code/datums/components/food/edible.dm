@@ -507,7 +507,7 @@ Behavior that's still missing from this component that original food items had t
 		L.manual_emote("nibbles away at \the [parent].")
 	bitecount++
 	. = COMPONENT_CANCEL_ATTACK_CHAIN
-	L.taste(owner.reagents) // why should carbons get all the fun?
+	L.taste_container(owner.reagents) // why should carbons get all the fun?
 	if(bitecount >= 5)
 		var/satisfaction_text = pick("burps from enjoyment.", "yaps for more!", "woofs twice.", "looks at the area where \the [parent] was.")
 		L.manual_emote(satisfaction_text)
