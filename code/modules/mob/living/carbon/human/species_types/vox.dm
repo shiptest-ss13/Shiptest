@@ -36,6 +36,7 @@
 
 	custom_overlay_icon = 'icons/mob/species/vox/vox_overlays.dmi'
 	damage_overlay_type = "vox"
+	fire_overlay = "generic"
 
 	species_limbs = list(
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/vox,
