@@ -17,7 +17,7 @@
 
 /obj/item/implant/tracking/bullet/Initialize()
 	. = ..()
-	timerid = https://github.com/tgstation/tgstation/pull/76214(src, lifespan)
+	timerid = QDEL_IN_STOPPABLE(src, lifespan)
 	AddComponent(/datum/component/gps/item, "*TRAC")
 
 /obj/item/implant/tracking/bullet/Destroy()
