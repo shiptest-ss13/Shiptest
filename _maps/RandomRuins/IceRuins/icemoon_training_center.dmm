@@ -169,10 +169,8 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/garage)
 "aO" = (
-/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech,
-/obj/mecha/combat/gygax/dark/ramzi{
-	name = "\improper 515 EX 'Hammer Down'"
-	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
+/obj/structure/mecha_wreckage/gygax/dark,
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/ruin/icemoon/training_facility/course)
 "aP" = (
@@ -2835,9 +2833,6 @@
 /area/ruin/icemoon/training_facility/range)
 "oc" = (
 /obj/structure/sign/poster/official/safety_eye_protection,
-/obj/item/clothing/glasses/sunglasses/ballistic{
-	pixel_y = -31
-	},
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/icemoon/training_facility/range)
 "od" = (
@@ -5768,7 +5763,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/wood,
-/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
@@ -5778,7 +5773,7 @@
 /obj/structure/chair/greyscale{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/icemoon/training_facility/classroom)
@@ -6438,7 +6433,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
@@ -6591,11 +6586,13 @@
 	pixel_x = -32
 	},
 /obj/structure/table/reinforced,
-/obj/item/clothing/glasses/sunglasses/ballistic{
-	pixel_y = -12
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 9
+	},
+/obj/item/clothing/glasses/hud/security/sunglasses/ramzi,
+/obj/item/clothing/glasses/hud/security/sunglasses/ramzi{
+	pixel_x = 0;
+	pixel_y = -14
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/range)
@@ -9455,12 +9452,13 @@
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/training_facility/cafeteria)
 "Ud" = (
-/obj/item/clothing/glasses/sunglasses/ballistic{
-	pixel_y = 8
-	},
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/techfloor{
 	dir = 8
+	},
+/obj/item/clothing/glasses/hud/security/sunglasses/ramzi{
+	pixel_x = 0;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/range)

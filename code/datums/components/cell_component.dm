@@ -34,7 +34,7 @@ The cells are removed from objects with the component through alt-click.
 	///Do we have cell overlays to be applied?
 	var/has_cell_overlays
 
-/datum/component/cell/Initialize(cell_override, _on_cell_removed, _power_use_amount, start_with_cell = TRUE, _cell_can_be_removed, _has_cell_overlays = TRUE)
+/datum/component/cell/Initialize(cell_override, _on_cell_removed, _power_use_amount, start_with_cell = TRUE, _cell_can_be_removed=TRUE, _has_cell_overlays = TRUE)
 	if(QDELETED(parent))
 		qdel(src)
 		return
@@ -54,8 +54,7 @@ The cells are removed from objects with the component through alt-click.
 	else
 		power_use_amount = equipment.power_use_amount
 
-	if(_cell_can_be_removed)
-		cell_can_be_removed = _cell_can_be_removed
+	cell_can_be_removed = _cell_can_be_removed
 
 	if(start_with_cell)
 		var/obj/item/stock_parts/cell/new_cell
@@ -135,7 +134,7 @@ The cells are removed from objects with the component through alt-click.
 	else
 		examine_list += span_notice("It has a [inserted_cell] inserted. \
 						The cell has <b>[inserted_cell.percent()]%</b> charge remaining. \
-						<b>Alt-click</b> to remove the cell.")
+						[cell_can_be_removed ? "<b>Alt-click</b> to remove the cell." : ""]")
 
 /// Handling of cell removal.
 /datum/component/cell/proc/remove_cell(datum/source, mob/user)

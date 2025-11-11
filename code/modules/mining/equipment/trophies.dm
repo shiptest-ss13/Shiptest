@@ -4,6 +4,7 @@
 	desc = "A strange spike with no usage."
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	icon_state = "tail_spike"
+	w_class = WEIGHT_CLASS_SMALL
 
 //legion
 /obj/item/mob_trophy/legion_skull

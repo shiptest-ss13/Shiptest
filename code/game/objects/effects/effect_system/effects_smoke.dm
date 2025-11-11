@@ -35,7 +35,6 @@
 	create_reagents(500)
 	START_PROCESSING(SSobj, src)
 
-
 /obj/effect/particle_effect/smoke/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	return ..()
@@ -59,6 +58,8 @@
 		return 0
 	if(lifetime<1)
 		return 0
+	if(opaque)
+		C.apply_status_effect(/datum/status_effect/concealed)
 	if(C.internal != null || C.has_smoke_protection())
 		return 0
 	if(C.smoke_delay)
@@ -187,7 +188,7 @@
 					U.update_appearance()
 					U.visible_message(span_danger("[U] is frozen shut!"))
 		for(var/mob/living/L in T)
-			L.ExtinguishMob()
+			L.extinguish_mob()
 		for(var/obj/item/Item in T)
 			Item.extinguish()
 

@@ -26,6 +26,19 @@
 	neck = /obj/item/clothing/neck/dogtag/ramzi
 	id = /obj/item/card/id/syndicate
 
+/datum/outfit/ramzi/bulletproof
+	name = "Ramzi Clique Rifleman"
+	suit = /obj/item/clothing/suit/armor/ramzi/bulletproof
+	head = /obj/item/clothing/head/helmet/bulletproof/x11/ramzi
+	belt = /obj/item/storage/belt/security/webbing/ramzi/alt
+	mask = /obj/item/clothing/mask/breath/facemask
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ramzi
+	neck = /obj/item/clothing/neck/shemagh/ramzi
+
+/obj/effect/mob_spawn/human/corpse/ramzi/trooper
+	name = "Ramzi Trooper"
+	outfit = /datum/outfit/ramzi/bulletproof
+
 /obj/effect/mob_spawn/human/corpse/ramzi/space
 	name = "Ramzi Hardsuit"
 	outfit = /datum/outfit/ramzi/commando
@@ -34,6 +47,8 @@
 	name = "Ramzi Clique Space Corpse"
 	uniform = /obj/item/clothing/under/syndicate/ramzi
 	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
+	mask = /obj/item/clothing/mask/breath/facemask
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ramzi
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 	back = /obj/item/tank/jetpack/oxygen
 	r_pocket = /obj/item/tank/internals/emergency_oxygen
@@ -67,12 +82,40 @@
 	id_job = "Operative"
 	outfit = /datum/outfit/ramzi/stormtrooper
 
+/datum/outfit/ramzi/officer
+	name = "Ramzi Clique Officer"
+	uniform = /obj/item/clothing/under/syndicate/ramzi/officer
+	suit = /obj/item/clothing/suit/armor/ramzi/officer
+	head = /obj/item/clothing/head/ramzi/beret
+	back = null
+	mask = /obj/item/clothing/mask/breath/facemask
+
+/obj/effect/mob_spawn/human/corpse/ramzi/officer
+	name = "Ramzi Clique Officer"
+	outfit = /datum/outfit/ramzi/officer
+
+/obj/effect/mob_spawn/human/corpse/ramzi/officer/beach
+	name = "Ramzi Clique Quartermaster"
+	mob_species = /datum/species/human
+	mob_gender = FEMALE
+
+/obj/effect/mob_spawn/human/corpse/ramzi/officer/ngr
+	name = "Corrupt NGR Official"
+	uniform = /obj/item/clothing/under/syndicate/ngr/officer
+	head = /obj/item/clothing/head/ngr
+	suit = /obj/item/clothing/suit/armor/ngr/lieutenant
+	glasses = null
+	neck = null
+	mob_gender = FEMALE
+	mob_species = /datum/species/human
+
 /datum/outfit/ramzi/stormtrooper
 	name = "Ramzi Clique Trooper Corpse"
 	uniform = /obj/item/clothing/under/syndicate/ramzi/officer
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi/elite
-	mask = /obj/item/clothing/mask/gas/ramzi
+	mask = /obj/item/clothing/mask/breath/facemask
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ramzi
 	back = /obj/item/tank/jetpack/oxygen/harness
 
 /datum/outfit/syndicatecaptaincorpse
