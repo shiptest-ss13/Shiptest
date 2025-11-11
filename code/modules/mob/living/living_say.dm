@@ -366,6 +366,8 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay_global), I, speech_bubble_recipients, 3 SECONDS)
 
 /mob/proc/binarycheck()
+	if(HAS_TRAIT(src, TRAIT_BINARY_RADIO))
+		return TRUE
 	return FALSE
 
 /mob/living/can_speak(message) //For use outside of Say()

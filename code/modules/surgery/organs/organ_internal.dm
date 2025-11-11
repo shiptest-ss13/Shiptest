@@ -73,6 +73,19 @@
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.Grant(M)
+	on_mob_insert(M, special, drop_if_replaced)
+	STOP_PROCESSING(SSobj, src)
+
+/// Called after the organ is inserted into a mob.
+/// Adds Traits, Actions, and Status Effects on the mob in which the organ is impanted.
+/// Override this proc to create unique side-effects for inserting your organ. Must be called by overrides.
+/obj/item/organ/proc/on_mob_insert(mob/living/carbon/organ_owner, special = FALSE, drop_if_replaced)
+	SHOULD_CALL_PARENT(TRUE)
+
+	if(!special)
+		organ_owner.hud_used?.update_locked_slots()
+	SEND_SIGNAL(organ_owner, COMSIG_CARBON_GAIN_ORGAN, src, special)
+
 	STOP_PROCESSING(SSobj, src)
 
 //Special is for instant replacement like autosurgeons
@@ -89,9 +102,49 @@
 		A.Remove(M)
 
 	SEND_SIGNAL(M, COMSIG_CARBON_LOSE_ORGAN, src)
+	on_mob_remove(M, special)
+	START_PROCESSING(SSobj, src)
+
+/// Called after the organ is removed from a mob.
+/// Removes Traits, Actions, and Status Effects on the mob in which the organ was impanted.
+/// Override this proc to create unique side-effects for removing your organ. Must be called by overrides.
+/obj/item/organ/proc/on_mob_remove(mob/living/carbon/organ_owner, special = FALSE)
+	SHOULD_CALL_PARENT(TRUE)
+
+	if(!iscarbon(organ_owner))
+		stack_trace("Organ removal should not be happening on non carbon mobs: [organ_owner]")
+
+	for(var/datum/action/action as anything in actions)
+		action.Remove(organ_owner)
+
+	SEND_SIGNAL(src, COMSIG_ORGAN_REMOVED, organ_owner)
+	SEND_SIGNAL(organ_owner, COMSIG_CARBON_LOSE_ORGAN, src, special)
+	if(!special)
+		organ_owner.hud_used?.update_locked_slots()
+
+	if((organ_flags & ORGAN_VITAL) && !special)
+		organ_owner.death()
 
 	START_PROCESSING(SSobj, src)
 
+	var/list/diseases = organ_owner.get_static_viruses()
+	if(!LAZYLEN(diseases))
+		return
+
+	var/list/datum/disease/diseases_to_add = list()
+	for(var/datum/disease/disease as anything in diseases)
+		// robotic organs are immune to disease unless 'inorganic biology' symptom is present
+		if(IS_ROBOTIC_ORGAN(src) && !(disease.infectable_biotypes & MOB_ROBOTIC))
+			continue
+
+		// admin or special viruses that should not be reproduced
+		if(disease.spread_flags & (DISEASE_SPREAD_SPECIAL | DISEASE_SPREAD_NON_CONTAGIOUS))
+			continue
+
+		diseases_to_add += disease
+
+	if(LAZYLEN(diseases_to_add))
+		AddComponent(/datum/component/infective, diseases_to_add)
 
 /obj/item/organ/proc/on_find(mob/living/finder)
 	return
