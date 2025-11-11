@@ -66,7 +66,7 @@
 		if(deleted || missing_addiction)
 			if(deleted)
 				reagent_instance = new reagent_type()
-			to_chat(quirk_holder, "<span class='danger'>You thought you kicked it, but you feel like you're falling back onto bad habits..</span>")
+			to_chat(quirk_holder, span_danger("You thought you kicked it, but you feel like you're falling back onto bad habits..")
 			for(var/addiction in reagent_instance.addiction_types)
 				H.mind.add_addiction_points(addiction, 1000) ///Max that shit out
 
