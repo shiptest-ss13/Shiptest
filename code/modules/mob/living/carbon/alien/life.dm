@@ -35,9 +35,3 @@
 
 /mob/living/carbon/alien/handle_changeling()
 	return
-
-/mob/living/carbon/alien/handle_fire()//Aliens on fire code
-	. = ..()
-	if(.) //if the mob isn't on fire anymore
-		return
-	adjust_bodytemperature(dna.species.bodytemp_heating_rate_max) //If you're on fire, you heat up!

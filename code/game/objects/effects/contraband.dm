@@ -65,6 +65,11 @@
 	poster_type = /obj/structure/sign/poster/rilena/random
 	icon_state = "rolled_rilena"
 
+/obj/item/poster/random_pgf
+	name = "random pgf poster"
+	poster_type = /obj/structure/sign/poster/pgf/random
+	icon_state = "rolled_poster"
+
 // The poster sign/structure
 
 /obj/structure/sign/poster
@@ -411,11 +416,6 @@
 	desc = "The Griffin commands you to be the worst you can be. Will you?"
 	icon_state = "poster_griffin"
 
-/obj/structure/sign/poster/contraband/pgf
-	name = "PGF Marine"
-	desc = "This poster depicts a PGF marine with a E-40. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
-	icon_state = "poster_pgf"
-
 /obj/structure/sign/poster/contraband/free_drone
 	name = "Free Drone"
 	desc = "This poster is advertising a seller selling a free syndidrone. It is so obviously a scam."
@@ -546,6 +546,11 @@
 	name = "Captain Cardinal Port and Starbird"
 	desc = "Captain Cardinal would like to remind you that the left of the ship is port, and the right of the ship is starBIRD! Get it, right?"
 	icon_state = "poster-cardinal-2"
+
+/obj/structure/sign/poster/contraband/bigass_horns
+	name = "Bigass Horns"
+	desc = "This poster depicts a trio of PGF sailors. The elzuose's horns are sticking up through the text block. \"Get your bigass horns out of the caption!\""
+	icon_state = "poster-pgf_bigass-horns"
 
 //beginning of Nanotrasen approved posters. Expect corprate propaganda and motavation. You will usually only see this on Nanotrasen ships and stations
 /obj/structure/sign/poster/official
@@ -1054,6 +1059,69 @@
 	desc = "A RILENA: LMR poster split in two to represent the series' disregard for conventional timeline aspects."
 	icon_state = "poster-rilena_timeline"
 
+//PGF recruitment diversity posters.
+/obj/structure/sign/poster/pgf
+	poster_item_name = "pgf poster"
+	poster_item_desc = "A poster that is produced by the armed forces of the PGF. It comes with adhesive backing, for easy pinning to any vertical surface."
+	poster_item_icon_state = "rolled_legit"
+
+/obj/structure/sign/poster/pgf/random
+	name = "random official poster"
+	random_basetype = /obj/structure/sign/poster/pgf
+	icon_state = "poster-pgf_random"
+	never_random = TRUE
+	random_type = POSTER_SUBTYPES
+
+/obj/structure/sign/poster/pgf/marine
+	name = "PGF Marine"
+	desc = "This poster depicts a human PGF Marine armed with a BGC-10. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster-pgf_marine"
+
+/obj/structure/sign/poster/pgf/sergeant
+	name = "PGF Marine Sergeant"
+	desc = "This poster depicts a sarathi PGF Marine sergeant armed with a HBG-7. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster-pgf_sergeant"
+
+/obj/structure/sign/poster/pgf/corpsman
+	name = "PGF Marine Corpsman"
+	desc = "This poster depicts an elzuose PGF Marine corpsman. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster-pgf_corpsman"
+
+/obj/structure/sign/poster/pgf/pioneer
+	name = "PGF Marine Pioneer"
+	desc = "This poster depicts a vox PGF Marine pioneer with armed with a VG-A5. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster-pgf_pioneer"
+
+/obj/structure/sign/poster/pgf/captain
+	name = "PGF Navy Captain"
+	desc = "This poster depicts a kepori PGF Navy captain. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster-pgf_captain"
+
+/obj/structure/sign/poster/pgf/engineer
+	name = "PGF Navy Engineer"
+	desc = "This poster depicts a synthetic PGF Navy engineer. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster-pgf_engineer"
+
+/obj/structure/sign/poster/pgf/officer
+	name = "PGF Navy Officer"
+	desc = "This poster depicts a rachnid PGF Navy officer. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster-pgf_officer"
+
+/obj/structure/sign/poster/pgf/choose
+	name = "Choose Your Path"
+	desc = "This poster depicts a sarathi split between PGF Marine Corps and Navy dress. \"Fight with the Pan-Gezena Federation and choose your own path!\""
+	icon_state = "poster-pgf_choose"
+
+/obj/structure/sign/poster/pgf/hero
+	name = "How About You"
+	desc = "This poster depicts a Vox marine stepping forward from between two silhouettes. \"Heroes don't back down and neither do Marines. How about you?\""
+	icon_state = "poster-pgf_hero"
+
+/obj/structure/sign/poster/pgf/together
+	name = "In It Together"
+	desc = "This poster depicts a trio of PGF sailors. \"All together now!\""
+	icon_state = "poster-pgf_together"
+
 //PGF Mission Accomplished
 /obj/structure/sign/poster/pgf/mission_accomplished_1
 	name = "MISSION ACCOMPLISHED! 1"
@@ -1132,6 +1200,104 @@
 	poster_type = /obj/structure/sign/poster/pgf/mission_accomplished_7
 	icon_state = "rolled_poster"
 
+// dont use random radio anywhere but indies or else it might throw up radio gorlex on a PGF ship
+
+/obj/structure/sign/poster/contraband/radiofreefrontier
+	name = "RFF"
+	desc = "An amateur, slapdash poster for the 'Radio Free Frontier', a pirate radio station ran from the Shoal and maintained through the collective power of thousands of layabouts, vagabonds, and script-kiddies setting up signal amplifiers across Frontier space."
+	icon_state = "poster-radio_RFF"
+
+/obj/item/poster/radiofreefrontier
+	name = "RFF Poster"
+	poster_type = /obj/structure/sign/poster/contraband/radiofreefrontier
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/random
+	name = "random radio station poster"
+	icon_state = "random_radio"
+	never_random = TRUE
+	random_basetype = /obj/structure/sign/poster/radio
+	random_type = POSTER_SUBTYPES
+
+/obj/structure/sign/poster/radio/icf
+	name = "ICF"
+	desc = "A poster for the 'Independent Collected Frequencies', a rough network of unionized radio stations in the Frontier."
+	icon_state = "poster-radio_ICF"
+
+/obj/item/poster/icf
+	name = "ICF poster"
+	poster_type = /obj/structure/sign/poster/radio/icf
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/arf
+	name = "ARF"
+	desc = "A poster for New Gorlex's 'All Republic First', a hybrid talk-show radio station. It's host is famous for her fluffy ears and cheerful demeanor."
+	icon_state = "poster-radio_ARF"
+
+/obj/item/poster/arf
+	name = "ARF poster"
+	poster_type = /obj/structure/sign/poster/radio/arf
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/vkxs
+	name = "VKXS"
+	desc = "A poster advertizing the PGF's 'Voice of Kalixcis' radio station. It offers patriotic hymns, homeland nostalgia, and the only true democratic commentary on Frontier events."
+	icon_state = "poster-radio_VKXS"
+
+/obj/item/poster/vkxs
+	name = "VKXS poster"
+	poster_type = /obj/structure/sign/poster/radio/vkxs
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/lt101
+	name = "LT101"
+	desc = "A poster for CLIP's Luna-Town 101 radio broadcast. Provides weather and emergency information hourly, and some post-war new wave in between."
+	icon_state = "poster-radio_LT101"
+
+/obj/item/poster/lt101
+	name = "LT101 poster"
+	poster_type = /obj/structure/sign/poster/radio/lt101
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/soft
+	name = "SOFT"
+	desc = "A poster for the easy-listening radio station SOFT. The background to many a summertime tryst in Frontier space."
+	icon_state = "poster-radio_SOFT"
+
+/obj/item/poster/soft
+	name = "SOFT poster"
+	poster_type = /obj/structure/sign/poster/radio/soft
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/orn
+	name = "ORN"
+	desc = "A poster for Outpost Radio Network, ran out of Installation Trifuge in Independent space. This station plays mostly spacer folk tunes."
+	icon_state = "poster-radio_ORN"
+
+/obj/item/poster/soft
+	name = "ORN poster"
+	poster_type = /obj/structure/sign/poster/radio/orn
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/ntra
+	name = "NTRA"
+	desc = "A Nanotrasen Radio poster. Despite all that's happened, communication is still NT's game, and the airwaves are just another Frontier to establish market dominance in."
+	icon_state = "poster-radio_NTRA"
+
+/obj/item/poster/ntra
+	name = "NTRA poster"
+	poster_type = /obj/structure/sign/poster/radio/ntra
+	icon_state = "rolled_poster"
+
+/obj/structure/sign/poster/radio/pris
+	name = "PRIS"
+	desc = "A poster for PRIS, an independent electronic music station run by a collection of university students from the Frontier."
+	icon_state = "poster-radio_PRIS"
+
+/obj/item/poster/pris
+	name = "PRIS poster"
+	poster_type = /obj/structure/sign/poster/radio/pris
+	icon_state = "rolled_poster"
 
 #undef PLACE_SPEED
 #undef POSTER_SUBTYPES
