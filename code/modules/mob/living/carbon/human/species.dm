@@ -1448,6 +1448,20 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(radiation > RAD_MOB_VOMIT && prob(RAD_MOB_VOMIT_PROB))
 		H.vomit(10, TRUE)
 
+	if(radiation > RAD_MOB_SICKNESS)
+		if(prob(15))
+			var/num = rand(1,4)
+			switch(num)
+				if(1)
+					to_chat(H, span_danger("You're finding it hard to keep standing."))
+				if(2)
+					to_chat(H, span_danger("You feel a pain in your head."))
+				if(3)
+					to_chat(H, span_danger("You feel sickly."))
+				if(4)
+					to_chat(H, span_danger("You feel like the world is spinning."))
+
+
 //////////////////
 // ATTACK PROCS //
 //////////////////
