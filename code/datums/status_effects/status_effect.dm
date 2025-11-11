@@ -82,7 +82,7 @@
 	if(QDELETED(owner))
 		qdel(src)
 		return
-	if(tick_interval <= 0)
+	if(tick_interval == 0)
 		tick(seconds_per_tick, times_fired)
 	else if(tick_interval < world.time)
 		var/initial_tick_interval = initial(tick_interval)
