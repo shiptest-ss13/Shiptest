@@ -18,8 +18,8 @@
 			"You suddenly feel extremely dizzy...",
 			"You cant think straight...",
 			"You can't move your face properly anymore..."
-		)])"
-	))
+		)]")
+	)
 	return TRUE
 
 /atom/movable/screen/alert/status_effect/seizure
