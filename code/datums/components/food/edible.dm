@@ -117,10 +117,12 @@ Behavior that's still missing from this component that original food items had t
 
 	for(var/rid in initial_reagents)
 		var/amount = initial_reagents[rid]
-		if(length(tastes) && (rid == /datum/reagent/consumable/nutriment || rid == /datum/reagent/consumable/nutriment/vitamin))
-			owner.reagents.add_reagent(rid, amount, tastes.Copy())
-		else
-			owner.reagents.add_reagent(rid, amount)
+		if(length(tastes) && ispath(rid, /datum/reagent/consumable/nutriment))
+			var/datum/reagent/consumable/nutriment/nid = rid
+			if(initial(nid.carry_food_tastes))
+				owner.reagents.add_reagent(rid, amount, tastes.Copy())
+				continue
+		owner.reagents.add_reagent(rid, amount)
 
 /datum/component/edible/InheritComponent(
 	datum/component/C,
