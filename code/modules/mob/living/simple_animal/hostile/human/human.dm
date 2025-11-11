@@ -122,7 +122,7 @@
 	if(projectile.damage_type==BRUTE)
 		if(prob((projectile.damage+projectile.wound_bonus)-armor.bullet))
 			spray_blood(projectile.dir, rand(1,3))
-	..()
+	return ..()
 
 /mob/living/simple_animal/hostile/human/proc/spray_blood(splatter_direction, splatter_strength = 3)
 	if(!isturf(loc))
