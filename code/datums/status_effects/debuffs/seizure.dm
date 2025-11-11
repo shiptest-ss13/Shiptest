@@ -13,12 +13,7 @@
 	owner.Paralyze(duration)
 	owner.visible_message(
 		span_warning("[owner] drops to the ground as [owner.p_they()] start seizing up."), \
-		span_warning("[pick(
-			"You can't collect your thoughts...",
-			"You suddenly feel extremely dizzy...",
-			"You cant think straight...",
-			"You can't move your face properly anymore..."
-		)]")
+		span_warning("[pick( "You can't collect your thoughts...", "You suddenly feel extremely dizzy...", "You cant think straight...", "You can't move your face properly anymore..." )]") \
 	)
 	return TRUE
 
