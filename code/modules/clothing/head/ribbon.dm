@@ -5,6 +5,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
 	icon_state = "ribbonblack"
 	item_state = "ribbonblack"
+	supports_variations = KEPORI_VARIATION
 	unique_reskin = list(
 		"white ribbon" = "ribbonwhite",
 		"grey ribbon" = "ribbongrey",

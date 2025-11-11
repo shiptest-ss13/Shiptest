@@ -5,6 +5,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
 	icon_state = "headbandwhite"
 	item_state = "headbandwhite"
+	supports_variations = KEPORI_VARIATION
 	unique_reskin = list(
 		"white headband" = "headbandwhite",
 		"grey headband" = "headbandgrey",
