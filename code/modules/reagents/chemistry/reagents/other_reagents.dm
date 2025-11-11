@@ -197,8 +197,8 @@
 		return
 	if(method == TOUCH || method == VAPOR)
 		M.adjust_fire_stacks(-(reac_volume / 10))
-		M.ExtinguishMob()
-	..()
+		M.extinguish_mob()
+	return ..()
 
 ///For weird backwards situations where water manages to get added to trays nutrients, as opposed to being snowflaked away like usual.
 /datum/reagent/water/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
