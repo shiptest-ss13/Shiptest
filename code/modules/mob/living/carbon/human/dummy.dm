@@ -146,3 +146,14 @@ GLOBAL_LIST_EMPTY(dummy_mob_list)
 /mob/living/carbon/human/consistent/slow
 
 #ifdef UNIT_TESTS
+//unit test dummies should be very fast with actions
+/mob/living/carbon/human/dummy/consistent/initialize_actionspeed()
+	add_or_update_variable_actionspeed_modifier(/datum/actionspeed_modifier/base, multiplicative_slowdown = -1)
+
+/mob/living/carbon/human/consistent/initialize_actionspeed()
+	add_or_update_variable_actionspeed_modifier(/datum/actionspeed_modifier/base, multiplicative_slowdown = -1)
+
+//this one gives us a small window of time for checks on asynced actions.
+/mob/living/carbon/human/consistent/slow/initialize_actionspeed()
+	add_or_update_variable_actionspeed_modifier(/datum/actionspeed_modifier/base, multiplicative_slowdown = 0.1)
+#endif
