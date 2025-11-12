@@ -535,6 +535,10 @@
 "dd" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/syndiered/mono,
+/obj/machinery/recharger{
+	pixel_y = 6;
+	pixel_x = -6
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/storage/equip)
 "df" = (
@@ -5090,6 +5094,10 @@
 	dir = 4
 	},
 /obj/structure/extinguisher_cabinet/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = 10;
+	pixel_y = 20
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "Pe" = (
@@ -5581,6 +5589,11 @@
 	},
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -20;
+	pixel_x = 12
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -6437,6 +6450,11 @@
 	},
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -20;
+	pixel_x = 11
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
