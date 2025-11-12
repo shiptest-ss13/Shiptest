@@ -80,7 +80,7 @@
 /obj/effect/decal/cleanable/proc/on_entered(datum/source, atom/movable/arrived, atom/old_loc, list/atom/old_locs)
 	SIGNAL_HANDLER
 
-	if(source.movement_type & MOVETYPES_NOT_TOUCHING_GROUND)
+	if(arrived.movement_type & MOVETYPES_NOT_TOUCHING_GROUND)
 		return
 
 	if(iscarbon(arrived) && blood_state && bloodiness > 40)
