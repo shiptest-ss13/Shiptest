@@ -419,14 +419,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 	icon_state = "cobra"
 	item_state = "cobra"
 
-	burst_size = 4
-	burst_delay = 0.8
-	fire_delay = 3.5
 	spread = 3
-
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
-	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst")
-	default_firemode = FIREMODE_SEMIAUTO
 
 	default_ammo_type = /obj/item/ammo_box/magazine/m45_cobra
 	allowed_ammo_types = list(
@@ -471,10 +464,13 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra)
 	icon_state = "cobra20"
 	item_state = "cobra20"
 
-	fire_delay = 1
+	burst_size = 4
+	burst_delay = 0.8
+	fire_delay = 3
+	spread = 2
 
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
-	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_FULLAUTO = "auto")
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst")
 	default_attachments = null
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
 	unique_attachments = null
