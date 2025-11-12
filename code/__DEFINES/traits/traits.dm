@@ -190,12 +190,14 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_LAVA_STOPPED "lava_stopped"
 ///Chasms will be safe to cross while they've this trait.
 #define TRAIT_CHASM_STOPPED "chasm_stopped"
+///The effects of the immerse element will be halted while this trait is present.
+#define TRAIT_IMMERSE_STOPPED "immerse_stopped"
+///The effects of acid turfs will be stopped while the trait is present
+#define TRAIT_ACID_STOPPED "immerse_stopped"
 ///Turf slowdown will be ignored when this trait is added to a turf.
 #define TRAIT_TURF_IGNORE_SLOWDOWN "turf_ignore_slowdown"
 ///Mobs won't slip on a wet turf while it has this trait
 #define TRAIT_TURF_IGNORE_SLIPPERY "turf_ignore_slippery"
-///The effects of the immerse element will be halted while this trait is present.
-#define TRAIT_IMMERSE_STOPPED "immerse_stopped"
 
 /// Mobs that have this trait cannot be extinguished
 #define TRAIT_NO_EXTINGUISH "no_extinguish"
