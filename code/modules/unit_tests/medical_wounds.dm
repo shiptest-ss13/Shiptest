@@ -85,4 +85,3 @@
 				threshold_penalty = actual_wound.threshold_penalty
 		i++
 		victim.fully_heal(TRUE) // should clear all wounds between types
- */
