@@ -77,7 +77,7 @@
 		AddElement(/datum/element/immerse, "immerse", 215)
 	if(burn_stuff(arrived))
 		START_PROCESSING(SSobj, src)
-	if(isliving(arrived) && !HAS_TRAIT(LAVA_STOPPED))
+	if(isliving(arrived) && !HAS_TRAIT(src, LAVA_STOPPED))
 		arrived.AddElement(/datum/element/perma_fire_overlay)
 
 /turf/open/lava/Exited(atom/movable/Obj, atom/newloc)
