@@ -2,7 +2,7 @@
 /datum/unit_test/burning
 
 /datum/unit_test/burning/Run()
-	var/mob/living/carbon/human/dummy = allocate(/mob/living/carbon/human/consistent)
+	var/mob/living/carbon/human/dummy = allocate(/mob/living/carbon/human/dummy/consistent)
 	var/initial_temp = dummy.bodytemperature
 	// Light this baby up
 	dummy.set_fire_stacks(20)
