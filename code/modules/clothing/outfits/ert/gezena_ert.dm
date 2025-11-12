@@ -27,11 +27,12 @@
 	suit_store = /obj/item/gun/energy/kalix/pgf/heavy
 
 /datum/outfit/job/gezena/ert/engineer
-	name = "ERT - PGF Marine Combat Engineer"
-	id_assignment = "Marine Combat Engineer"
+	name = "ERT - PGF Marine Pioneer"
+	id_assignment = "Marine Pioneer"
 
-	suit_store = /obj/item/gun/energy/kalix/pgf
+	suit_store = /obj/item/gun/energy/kalix/pgf/nock
 	belt = /obj/item/storage/belt/military/gezena/engineer
+	neck = /obj/item/clothing/neck/cloak/gezena/engi
 
 /datum/outfit/job/gezena/ert/medic
 	name = "ERT - PGF Marine Medic"
@@ -77,7 +78,7 @@
 
 	head = /obj/item/clothing/head/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/command
-	uniform = /obj/item/clothing/under/gezena
+	uniform = /obj/item/clothing/under/gezena/officer
 	suit = /obj/item/clothing/suit/armor/gezena
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	suit_store = null

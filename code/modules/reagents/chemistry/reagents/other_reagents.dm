@@ -195,9 +195,11 @@
 /datum/reagent/water/expose_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with water can help put them out!
 	if(!istype(M))
 		return
-	if(method == TOUCH || method == SMOKE)
-		M.adjust_fire_stacks(-(reac_volume / 10))
-		M.ExtinguishMob()
+	if(method == TOUCH)
+		M.adjust_wet_stacks(1*reac_volume)
+		M.extinguish_mob()
+	if(method == VAPOR)
+		M.adjust_wet_stacks(0.5*reac_volume)
 	..()
 
 ///For weird backwards situations where water manages to get added to trays nutrients, as opposed to being snowflaked away like usual.
@@ -2567,7 +2569,7 @@
 /datum/reagent/anti_radiation_foam/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method in list(TOUCH, VAPOR))
 		M.radiation = M.radiation - rand(max(M.radiation * 0.07, 0)) //get the hose
-		M.ExtinguishMob()
+		M.extinguish_mob()
 	..()
 
 
