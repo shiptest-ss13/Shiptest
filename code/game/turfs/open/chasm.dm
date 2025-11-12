@@ -14,7 +14,12 @@
 
 /turf/open/chasm/Initialize(mapload, inherited_virtual_z)
 	. = ..()
-	AddComponent(/datum/component/chasm, below())
+/*
+	apply_components(mapload)
+
+/turf/open/chasm/proc/apply_components(mapload)
+	AddComponent(/datum/component/chasm, GET_TURF_BELOW(src), mapload)
+*/
 
 /turf/open/chasm/examine(mob/user)
 	. = ..()

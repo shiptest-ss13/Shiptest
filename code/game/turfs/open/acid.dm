@@ -82,13 +82,7 @@
 		return
 
 /turf/open/water/acid/proc/is_safe_to_cross()
-	//if anything matching this typecache is found in the lava, we don't burn things
-	var/static/list/acid_safeties_typecache = typecacheof(list(/obj/structure/catwalk, /obj/structure/stone_tile, /obj/structure/lattice/))
-	var/list/found_safeties = typecache_filter_list(contents, acid_safeties_typecache)
-	for(var/obj/structure/stone_tile/stone_tile in found_safeties)
-		if(stone_tile.fallen)
-			LAZYREMOVE(found_safeties, stone_tile)
-	return LAZYLEN(found_safeties)
+	return HAS_TRAIT(src, TRAIT_ACID_STOPPED)
 
 
 /turf/open/water/acid/proc/melt_stuff(thing_to_melt)
