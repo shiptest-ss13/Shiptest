@@ -75,10 +75,9 @@
 	. = ..()
 	if(!immerse_added && !is_type_in_typecache(arrived, GLOB.immerse_ignored_movable))
 		AddElement(/datum/element/immerse, "immerse", 215)
+		immerse_added = TRUE
 	if(burn_stuff(arrived))
 		START_PROCESSING(SSobj, src)
-	if(isliving(arrived) && !HAS_TRAIT(src, TRAIT_LAVA_STOPPED))
-		arrived.AddElement(/datum/element/perma_fire_overlay)
 
 /turf/open/lava/Exited(atom/movable/Obj, atom/newloc)
 	. = ..()
@@ -229,6 +228,7 @@
 
 			L.adjustFireLoss(20 * seconds_per_tick)
 			if(L) //mobs turning into object corpses could get deleted here.
+				L.AddElement(/datum/element/perma_fire_overlay)
 				L.adjust_fire_stacks(20 * seconds_per_tick)
 				L.ignite_mob()
 
