@@ -165,12 +165,29 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "aW" = (
-/obj/structure/closet/secure_closet/wall/directional/south{
-	name = "doctor's locker";
-	req_access_txt = "33"
-	},
 /obj/effect/turf_decal/corner/opaque/cybersunteal/border{
 	dir = 4
+	},
+/obj/structure/closet/wall/directional/south,
+/obj/item/clipboard{
+	pixel_y = -6;
+	pixel_x = -7
+	},
+/obj/item/clipboard{
+	pixel_y = -6;
+	pixel_x = 6
+	},
+/obj/item/pen/fourcolor{
+	pixel_y = -7;
+	pixel_x = -5
+	},
+/obj/item/pen/fourcolor{
+	pixel_y = -7;
+	pixel_x = 4
+	},
+/obj/item/paper_bin{
+	pixel_y = 9;
+	pixel_x = 7
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -2929,6 +2946,11 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/warning{
 	dir = 4
 	},
+/obj/structure/noticeboard{
+	dir = 1;
+	pixel_y = -25;
+	name = "cargo manifest board"
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "vG" = (
@@ -4949,10 +4971,6 @@
 	dir = 4;
 	pixel_y = 15;
 	pixel_x = -14
-	},
-/obj/item/disk/surgery/cybersun{
-	pixel_x = 5;
-	pixel_y = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical/surgery)
