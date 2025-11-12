@@ -27,6 +27,12 @@
 	///The rate that the stomach will transfer reagents to the body
 	var/metabolism_efficiency = 0.1 // the lowest we should go is 0.05
 
+/obj/item/organ/stomach/Initialize()
+	. = ..()
+	//None edible organs do not get a reagent holder by default
+	if(!reagents)
+		create_reagents(reagent_vol)
+
 /obj/item/organ/stomach/on_life()
 	//Manage species digestion
 	if(istype(owner, /mob/living/carbon/human))
