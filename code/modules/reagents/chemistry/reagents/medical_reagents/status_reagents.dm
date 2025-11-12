@@ -190,7 +190,7 @@
 /datum/reagent/medicine/lithium_carbonate/on_mob_life(mob/living/carbon/M)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
 	if(!mood)
-		..()
+		return ..()
 	if(mood.sanity <= SANITY_GREAT)
 		mood.setSanity(min(mood.sanity+5, SANITY_GREAT))
 	..()
