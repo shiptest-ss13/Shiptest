@@ -7,7 +7,7 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 	loot = list()
-	stat_attack = HARD_CRIT
+	stat_attack = UNCONSCIOUS
 	atmos_requirements = NORMAL_ATMOS_REQS
 	faction = list(FACTION_ANTAG_FRONTIERSMEN)
 	footstep_type = FOOTSTEP_MOB_SHOE
