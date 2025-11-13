@@ -179,16 +179,6 @@
 /obj/structure/flora/tree/tall/whitesands,
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/overmap_encounter/planetoid/sand/explored)
-"ba" = (
-/obj/structure/platform{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/pounder/internals,
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "bg" = (
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 1
@@ -1602,7 +1592,9 @@
 "iL" = (
 /obj/effect/turf_decal/trimline/transparent/lightgrey/line,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
+/mob/living/simple_animal/hostile/human/hermit/survivor/brawler{
+	wander = 0
+	},
 /turf/open/floor/plasteel/dark/whitesands,
 /area/ruin/whitesands/settlement/fortress)
 "iP" = (
@@ -1988,7 +1980,7 @@
 	},
 /area/ruin/whitesands/settlement/roboticist)
 "jM" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter/internals,
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals,
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "jO" = (
@@ -2746,10 +2738,6 @@
 	},
 /turf/open/floor/carpet/whitesands,
 /area/ruin/whitesands/settlement/fortress)
-"mS" = (
-/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
-/turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "mV" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/machinery/light/directional/south,
@@ -3549,7 +3537,6 @@
 	color = "#D2BC9D";
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger,
 /turf/open/floor/wood/maple/whitesands,
 /area/ruin/whitesands/settlement/guardshouse)
 "qp" = (
@@ -4734,8 +4721,9 @@
 /turf/open/floor/concrete/tiles/whitesands,
 /area/ruin/whitesands/settlement/guardshouse)
 "xc" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals,
-/turf/open/floor/concrete/pavement/whitesands/lit,
+/obj/structure/platform,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "xf" = (
 /obj/structure/platform,
@@ -4792,7 +4780,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
+/mob/living/simple_animal/hostile/human/hermit/survivor/brawler{
+	wander = 0
+	},
 /turf/open/floor/wood/maple/whitesands,
 /area/ruin/whitesands/settlement/fortress)
 "xz" = (
@@ -6339,6 +6329,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/blood,
 /turf/open/floor/concrete/pavement/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "EE" = (
@@ -7140,6 +7131,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter/internals,
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Io" = (
@@ -7434,7 +7426,9 @@
 /turf/open/floor/concrete/tiles/whitesands,
 /area/ruin/whitesands/settlement/butcher)
 "JZ" = (
-/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
+/obj/effect/mob_spawn/human/corpse/damaged/whitesands,
+/obj/effect/decal/cleanable/blood,
+/mob/living/simple_animal/hostile/human/frontier/ranged/pounder/internals,
 /turf/open/floor/concrete/pavement/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Kb" = (
@@ -8341,7 +8335,8 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "OT" = (
 /obj/structure/platform,
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/obj/effect/mob_spawn/human/corpse/damaged/whitesands,
+/obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "OU" = (
@@ -8794,10 +8789,6 @@
 	},
 /turf/open/floor/concrete/tiles/whitesands,
 /area/ruin/whitesands/settlement/greenhouse)
-"Ro" = (
-/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
-/turf/open/floor/plating/asteroid/whitesands/grass/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Rp" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4;
@@ -9221,7 +9212,9 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger,
+/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger{
+	wander = 0
+	},
 /turf/open/floor/wood/walnut/whitesands,
 /area/ruin/whitesands/settlement/guardshouse)
 "Tg" = (
@@ -9266,7 +9259,9 @@
 /area/ruin/whitesands/settlement/butcher)
 "Tt" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/mob/living/simple_animal/hostile/human/hermit/survivor/brawler,
+/mob/living/simple_animal/hostile/human/hermit/survivor/brawler{
+	wander = 0
+	},
 /turf/open/floor/plating/whitesands,
 /area/ruin/whitesands/settlement/fortress)
 "Tv" = (
@@ -10315,6 +10310,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger{
+	wander = 0
+	},
 /turf/open/floor/wood/maple/whitesands,
 /area/ruin/whitesands/settlement/guardshouse)
 "Zj" = (
@@ -13110,7 +13108,7 @@ Tk
 Zj
 VF
 VF
-Bp
+xc
 jO
 wz
 YC
@@ -13569,8 +13567,8 @@ lr
 GG
 Tz
 vj
-ba
-Zj
+gD
+jM
 Tk
 Zj
 if
@@ -13727,7 +13725,7 @@ gD
 Tk
 Tk
 SU
-xc
+Tk
 Tk
 Tk
 SU
@@ -14481,8 +14479,8 @@ Mj
 sw
 Tk
 VF
-VF
-Ro
+EA
+nw
 Tk
 SU
 Zj
@@ -14561,13 +14559,13 @@ VF
 VF
 SU
 Zj
-mS
+CO
 Xk
 Wc
 SU
 zT
 Oo
-jM
+Zj
 Zj
 VF
 CR
@@ -14642,7 +14640,7 @@ SU
 dk
 aP
 SU
-VF
+CJ
 VF
 Zj
 VF
@@ -14719,7 +14717,7 @@ Zj
 TY
 cd
 VF
-CJ
+VF
 VF
 VF
 SU
