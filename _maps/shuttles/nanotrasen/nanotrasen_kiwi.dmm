@@ -119,8 +119,9 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/aft)
 "aR" = (
-/obj/machinery/suit_storage_unit/inherit/industrial{
-	name = "miner's industrial suit storage unit"
+/obj/machinery/suit_storage_unit/inherit/industrial/locked{
+	name = "miner's industrial suit storage unit";
+	req_access_txt = "48"
 	},
 /obj/structure/railing/thin{
 	dir = 8
@@ -223,8 +224,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/engineering{
-	name = "Engineering Office";
-	req_access_txt = "10"
+	name = "Engineering Office"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/engineering)
@@ -550,8 +550,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
 "dD" = (
-/obj/machinery/suit_storage_unit/inherit/industrial{
-	name = "paramedic's industrial suit storage unit"
+/obj/machinery/suit_storage_unit/inherit/industrial/locked{
+	name = "paramedic's industrial suit storage unit";
+	req_access_txt = "5"
 	},
 /obj/structure/railing/thin{
 	dir = 8
@@ -623,7 +624,6 @@
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/line{
 	dir = 10
 	},
-/obj/item/gun/energy/sharplite/x26,
 /obj/machinery/airalarm/directional/west,
 /obj/structure/extinguisher_cabinet/directional/north{
 	pixel_x = -6
@@ -632,6 +632,7 @@
 	pixel_x = 6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/gun/energy/sharplite/x26,
 /obj/item/gun/energy/sharplite/l201/l204,
 /obj/item/gun/energy/sharplite/l201/l204,
 /obj/item/gun/energy/sharplite/l201/l204,
@@ -2610,10 +2611,10 @@
 /obj/item/clothing/gloves/color/black{
 	pixel_y = -5
 	},
-/obj/item/clothing/glasses/heat,
-/obj/item/clothing/glasses/heat,
-/obj/item/clothing/glasses/heat,
-/obj/item/clothing/glasses/heat,
+/obj/item/clothing/glasses/safety,
+/obj/item/clothing/glasses/safety,
+/obj/item/clothing/glasses/safety,
+/obj/item/clothing/glasses/safety,
 /obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
@@ -4320,6 +4321,9 @@
 	pixel_x = -5;
 	pixel_y = 3
 	},
+/obj/item/bonesetter{
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
 "Em" = (
@@ -4700,8 +4704,9 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "HE" = (
-/obj/machinery/suit_storage_unit/inherit/industrial{
-	name = "lead miner's industrial suit storage unit"
+/obj/machinery/suit_storage_unit/inherit/industrial/locked{
+	name = "lead miner's industrial suit storage unit";
+	req_access_txt = "41"
 	},
 /obj/structure/railing/thin{
 	dir = 4
@@ -4862,8 +4867,9 @@
 /turf/open/floor/plasteel,
 /area/ship/science/workshop)
 "Im" = (
-/obj/machinery/suit_storage_unit/inherit/industrial{
-	name = "miner's industrial suit storage unit"
+/obj/machinery/suit_storage_unit/inherit/industrial/locked{
+	name = "miner's industrial suit storage unit";
+	req_access_txt = "48"
 	},
 /obj/structure/railing/thin{
 	dir = 8
@@ -5895,7 +5901,10 @@
 "Oy" = (
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/machinery/suit_storage_unit/inherit/industrial/locked{
+	name = "engineer's industrial suit storage unit";
+	req_access_txt = "10"
+	},
 /obj/item/tank/jetpack/carbondioxide,
 /obj/item/clothing/suit/space/hardsuit/engine,
 /obj/item/clothing/mask/gas/atmos,
