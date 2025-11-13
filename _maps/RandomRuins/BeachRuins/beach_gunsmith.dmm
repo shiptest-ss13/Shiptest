@@ -1226,6 +1226,53 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/gunsmith/electrical)
+"lt" = (
+/obj/structure/table/reinforced,
+/obj/structure/closet/secure_closet/wall/directional/south{
+	name = "kitchen cabinet"
+	},
+/obj/item/reagent_containers/condiment/flour{
+	pixel_x = -7;
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/condiment/flour{
+	pixel_x = -7;
+	pixel_y = -7
+	},
+/obj/item/reagent_containers/condiment/enzyme{
+	pixel_x = -11;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/condiment/sugar{
+	pixel_x = 11;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/condiment/rice{
+	pixel_x = 11;
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/condiment/rice{
+	pixel_x = 11;
+	pixel_y = -7
+	},
+/obj/item/reagent_containers/condiment/ketchup{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/condiment/mayonnaise{
+	pixel_x = 0;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/condiment/hotsauce{
+	pixel_x = -5;
+	pixel_y = 3
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 2
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/beach/gunsmith/kitchen)
 "lO" = (
 /obj/effect/turf_decal/siding/wood/end{
 	color = "#332521";
@@ -2329,13 +2376,6 @@
 	icon_state = "wood-broken3"
 	},
 /area/ruin/beach/gunsmith)
-"xE" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#332521"
-	},
-/turf/open/floor/wood/ebony,
-/area/ruin/beach/gunsmith/kitchen)
 "xP" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/border{
 	dir = 1
@@ -3091,14 +3131,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/beach/gunsmith/bathroom)
-"EN" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9;
-	color = "#332521"
-	},
-/obj/machinery/oven,
-/turf/open/floor/wood/ebony,
-/area/ruin/beach/gunsmith/kitchen)
 "Fc" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3161,6 +3193,13 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/ruin/beach/gunsmith/workshop)
+"Gn" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#332521"
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/beach/gunsmith/kitchen)
 "Gu" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/beach/gunsmith)
@@ -4479,53 +4518,6 @@
 	},
 /turf/open/floor/concrete/tiles,
 /area/ruin/beach/gunsmith)
-"VC" = (
-/obj/structure/table/reinforced,
-/obj/structure/closet/secure_closet/wall/directional/south{
-	name = "kitchen cabinet"
-	},
-/obj/item/reagent_containers/condiment/flour{
-	pixel_x = -7;
-	pixel_y = -5
-	},
-/obj/item/reagent_containers/condiment/flour{
-	pixel_x = -7;
-	pixel_y = -7
-	},
-/obj/item/reagent_containers/condiment/enzyme{
-	pixel_x = -11;
-	pixel_y = 3
-	},
-/obj/item/reagent_containers/condiment/sugar{
-	pixel_x = 11;
-	pixel_y = 7
-	},
-/obj/item/reagent_containers/condiment/rice{
-	pixel_x = 11;
-	pixel_y = -5
-	},
-/obj/item/reagent_containers/condiment/rice{
-	pixel_x = 11;
-	pixel_y = -7
-	},
-/obj/item/reagent_containers/condiment/ketchup{
-	pixel_x = 6;
-	pixel_y = 4
-	},
-/obj/item/reagent_containers/condiment/mayonnaise{
-	pixel_x = 0;
-	pixel_y = 4
-	},
-/obj/item/reagent_containers/condiment/hotsauce{
-	pixel_x = -5;
-	pixel_y = 3
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#332521";
-	dir = 2
-	},
-/turf/open/floor/wood/ebony,
-/area/ruin/beach/gunsmith/kitchen)
 "VJ" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/beach/gunsmith/dorms)
@@ -4837,6 +4829,14 @@
 	},
 /turf/open/water/beach/deep,
 /area/ruin/beach/gunsmith)
+"Zt" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9;
+	color = "#332521"
+	},
+/obj/machinery/oven,
+/turf/open/floor/wood/ebony,
+/area/ruin/beach/gunsmith/kitchen)
 "Zz" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
@@ -7051,9 +7051,9 @@ qw
 Yq
 nm
 WX
-LJ
-LJ
 WX
+LJ
+LJ
 WX
 Cm
 Cm
@@ -7101,8 +7101,8 @@ WN
 Ef
 RU
 WX
-EN
-xE
+Zt
+Gn
 Qk
 WX
 Cm
@@ -7153,7 +7153,7 @@ He
 WX
 BE
 ds
-VC
+lt
 WX
 Cm
 Cm
