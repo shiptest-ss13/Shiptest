@@ -1979,10 +1979,6 @@
 	icon_state = "platingdmg3"
 	},
 /area/ruin/whitesands/settlement/roboticist)
-"jM" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals,
-/turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "jO" = (
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/concrete/slab_1/whitesands,
@@ -2738,6 +2734,10 @@
 	},
 /turf/open/floor/carpet/whitesands,
 /area/ruin/whitesands/settlement/fortress)
+"mS" = (
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals,
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "mV" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/machinery/light/directional/south,
@@ -2876,6 +2876,9 @@
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/railing/thin/corner{
+	dir = 8
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -4720,11 +4723,6 @@
 /obj/structure/reagent_dispensers/servingdish,
 /turf/open/floor/concrete/tiles/whitesands,
 /area/ruin/whitesands/settlement/guardshouse)
-"xc" = (
-/obj/structure/platform,
-/obj/effect/decal/cleanable/blood,
-/turf/open/floor/plating/asteroid/whitesands/dried/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "xf" = (
 /obj/structure/platform,
 /turf/open/floor/plating/asteroid/whitesands/grass/lit,
@@ -4806,12 +4804,11 @@
 /obj/structure/platform/wood/corner{
 	dir = 1
 	},
-/obj/structure/railing/thin/corner{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/platform/wood,
+/obj/structure/railing/thin,
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "xD" = (
@@ -5625,13 +5622,7 @@
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Bt" = (
-/obj/structure/platform/wood{
-	dir = 8
-	},
-/obj/structure/railing/thin{
-	dir = 8
-	},
-/turf/open/floor/plating/asteroid/whitesands/grass/lit,
+/turf/open/floor/wood/maple/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
 "Bx" = (
 /obj/effect/turf_decal/siding/wood{
@@ -8789,6 +8780,11 @@
 	},
 /turf/open/floor/concrete/tiles/whitesands,
 /area/ruin/whitesands/settlement/greenhouse)
+"Ro" = (
+/obj/structure/platform,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "Rp" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4;
@@ -13108,7 +13104,7 @@ Tk
 Zj
 VF
 VF
-xc
+Ro
 jO
 wz
 YC
@@ -13568,7 +13564,7 @@ GG
 Tz
 vj
 gD
-jM
+mS
 Tk
 Zj
 if
