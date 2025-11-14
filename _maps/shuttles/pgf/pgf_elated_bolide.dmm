@@ -588,6 +588,7 @@
 	pixel_x = -20;
 	pixel_y = -11
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "dE" = (
@@ -643,6 +644,10 @@
 /obj/structure/table/reinforced,
 /obj/machinery/microwave{
 	pixel_y = 7
+	},
+/obj/structure/sign/poster/radio/vkxs{
+	pixel_y = 0;
+	pixel_x = -28
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/ccommons)
@@ -3022,9 +3027,6 @@
 "sT" = (
 /obj/effect/turf_decal/corner/opaque/purple/border{
 	dir = 1
-	},
-/obj/structure/sign/poster/rilena/timeline{
-	pixel_x = 28
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/vault,
@@ -5417,11 +5419,16 @@
 /area/ship/crew/ccommons)
 "GN" = (
 /obj/machinery/light/directional/north,
-/obj/machinery/firealarm/directional/west,
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/gezena,
 /obj/item/tank/internals/oxygen/red,
 /obj/item/clothing/head/helmet/space/gezena,
+/obj/machinery/firealarm/directional/west{
+	pixel_y = 6
+	},
+/obj/structure/extinguisher_cabinet/directional/west{
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/starboard)
 "GP" = (
@@ -5765,7 +5772,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/item/clothing/shoes/combat/gezena,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
 "Je" = (
@@ -6182,6 +6188,7 @@
 	pixel_y = 12
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "Lh" = (
@@ -7503,7 +7510,12 @@
 /obj/effect/turf_decal/spline/fancy/opaque/green{
 	dir = 9
 	},
-/obj/item/clothing/shoes/combat/gezena,
+/obj/machinery/firealarm/directional/west{
+	pixel_y = 2
+	},
+/obj/structure/extinguisher_cabinet/directional/west{
+	pixel_y = -10
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
 "TB" = (

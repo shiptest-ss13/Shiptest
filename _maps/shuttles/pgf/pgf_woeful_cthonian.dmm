@@ -222,7 +222,6 @@
 "cH" = (
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate/freezer/blood,
-/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
 "cQ" = (
@@ -716,7 +715,12 @@
 	pixel_x = -4;
 	pixel_y = -5
 	},
-/obj/machinery/firealarm/directional/north,
+/obj/machinery/firealarm/directional/north{
+	pixel_x = -6
+	},
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = 6
+	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical)
 "gu" = (
@@ -1078,7 +1082,7 @@
 	pixel_y = -8
 	},
 /obj/item/gun/energy/kalix/nock,
-/turf/open/floor/plasteel/rockvault,
+/turf/open/floor/vault,
 /area/ship/security/armory)
 "jQ" = (
 /obj/machinery/light/small/directional/east,
@@ -1172,7 +1176,7 @@
 	pixel_x = 9;
 	pixel_y = -2
 	},
-/turf/open/floor/plasteel/rockvault,
+/turf/open/floor/vault,
 /area/ship/security/armory)
 "kQ" = (
 /obj/structure/grille,
@@ -1262,6 +1266,9 @@
 	layer = 3.1;
 	pixel_y = -2
 	},
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = 6
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "lS" = (
@@ -1328,7 +1335,12 @@
 	},
 /obj/structure/chair/sofa/grey/corpo/right/directional/west,
 /obj/item/radio/intercom/directional/south,
-/obj/machinery/newscaster/directional/west,
+/obj/structure/extinguisher_cabinet/directional/west{
+	pixel_y = 7
+	},
+/obj/machinery/firealarm/directional/west{
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
 "my" = (
@@ -1720,11 +1732,12 @@
 /obj/effect/turf_decal/trimline/opaque/white/filled/line{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/opaque/green/filled/line{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/green/filled/corner,
+/obj/effect/turf_decal/trimline/opaque/white/filled/corner{
+	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
@@ -1745,17 +1758,17 @@
 	},
 /area/ship/engineering)
 "rm" = (
-/obj/effect/turf_decal/trimline/opaque/white/filled/line{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/opaque/green/filled/line{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/green/filled/line{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/opaque/white/filled/corner{
+	dir = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
@@ -1802,7 +1815,6 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/south,
-/obj/machinery/firealarm/directional/east,
 /obj/structure/closet/crate{
 	name = "ration crate"
 	},
@@ -2040,7 +2052,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals6,
-/obj/machinery/firealarm/directional/north,
+/obj/structure/sign/poster/radio/vkxs{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
 "vD" = (
@@ -2182,15 +2196,11 @@
 /obj/effect/turf_decal/trimline/opaque/white/filled/corner{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/opaque/green/filled/line{
-	dir = 5
-	},
 /obj/structure/table/reinforced,
 /obj/machinery/recharger{
 	pixel_y = 3;
 	pixel_x = 10
 	},
-/obj/machinery/computer/helm/viewscreen/directional/north,
 /obj/machinery/cell_charger{
 	pixel_y = 3;
 	pixel_x = -6
@@ -2219,6 +2229,17 @@
 	pixel_x = -9;
 	pixel_y = 4
 	},
+/obj/structure/closet/secure_closet/wall/directional/west{
+	icon_state = "sec_wall";
+	name = "cell locker";
+	dir = 1;
+	pixel_y = 28;
+	pixel_x = 0
+	},
+/obj/effect/turf_decal/trimline/opaque/green/filled/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/white/filled/corner,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "xf" = (
@@ -2316,8 +2337,19 @@
 /obj/item/clothing/head/helmet/space/gezena,
 /obj/item/tank/jetpack/oxygen/harness,
 /obj/machinery/light/directional/east,
-/obj/machinery/firealarm/directional/north,
-/turf/open/floor/plasteel/rockvault,
+/obj/effect/turf_decal/trimline/opaque/green/filled/line{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/opaque/white/filled/corner{
+	dir = 8
+	},
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = 6
+	},
+/obj/machinery/firealarm/directional/north{
+	pixel_x = -6
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "yp" = (
 /obj/machinery/cryopod,
@@ -2791,7 +2823,8 @@
 "DG" = (
 /obj/structure/closet/secure_closet/armory1{
 	name = "gear locker";
-	populate = 0
+	populate = 0;
+	req_access = null
 	},
 /obj/item/binoculars,
 /obj/item/binoculars,
@@ -2838,7 +2871,7 @@
 	pixel_x = -11;
 	pixel_y = -4
 	},
-/turf/open/floor/plasteel/rockvault,
+/turf/open/floor/vault,
 /area/ship/security/armory)
 "DJ" = (
 /obj/effect/turf_decal/corner_steel_grid{
@@ -3285,8 +3318,8 @@
 /area/ship/bridge)
 "Js" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/structure/extinguisher_cabinet/directional/east{
-	pixel_y = 1
+/obj/machinery/newscaster/directional/east{
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
@@ -3544,10 +3577,6 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/light_switch{
-	pixel_y = 23;
-	pixel_x = 12
-	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/effect/turf_decal/corner/opaque/green/half{
@@ -3712,7 +3741,12 @@
 /obj/effect/turf_decal/steeldecal/steel_decals6{
 	dir = 5
 	},
-/obj/structure/extinguisher_cabinet/directional/south,
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = -6
+	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = 6
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "NV" = (
@@ -3845,7 +3879,12 @@
 	pixel_y = -12;
 	pixel_x = -20
 	},
-/obj/machinery/firealarm/directional/west,
+/obj/machinery/firealarm/directional/west{
+	pixel_y = -2
+	},
+/obj/structure/extinguisher_cabinet/directional/west{
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "Qo" = (
@@ -3991,7 +4030,6 @@
 	pixel_x = 7
 	},
 /obj/effect/turf_decal/corner/opaque/green/bordercorner,
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/item/storage/fancy/egg_box,
 /obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = 3;
@@ -4699,6 +4737,7 @@
 	pixel_x = -11;
 	pixel_y = -19
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/stairs{
 	icon = 'icons/obj/stairs.dmi';
 	dir = 8

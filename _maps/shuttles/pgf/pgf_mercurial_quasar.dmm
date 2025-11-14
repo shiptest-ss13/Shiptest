@@ -1140,7 +1140,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/toilet)
 "nt" = (
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5
 	},
@@ -1149,6 +1148,12 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
+	},
+/obj/machinery/firealarm/directional/north{
+	pixel_x = -6
+	},
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = 6
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
@@ -3244,6 +3249,9 @@
 /obj/item/reagent_containers/food/drinks/waterbottle,
 /obj/item/storage/cans/sixsoda,
 /obj/item/storage/ration/beef_strips,
+/obj/structure/sign/poster/radio/vkxs{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "Rd" = (
