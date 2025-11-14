@@ -1,0 +1,39 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Aspo-class Signaller",
+	"faction": "/datum/faction/inteq",
+	"prefix": "IRMV",
+	"manufacturer": "Hardline Salvage and Mining",
+	"description": "placeholderrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+	"tags": [
+		"Generalist"
+	],
+	"namelists": [
+		"BEASTS",
+		"INTEQ"
+	],
+	"map_short_name": "Aspo-class",
+	"map_path": "_maps/shuttles/inteq/inteq_Aspo.dmm",
+	"token_icon_state": "ship_small_generic",
+	"limit": 1,
+	"job_slots": {
+		"Vanguard": {
+			"outfit": "/datum/outfit/job/inteq/captain/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Artificer": {
+			"outfit": "/datum/outfit/job/inteq/engineer/empty",
+			"slots": 1
+		},
+		"Enforcer": {
+			"outfit": "/datum/outfit/job/inteq/security/empty",
+			"slots": 1
+		},
+		"Auxiliary": {
+			"outfit": "/datum/outfit/job/inteq/assistant",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}
