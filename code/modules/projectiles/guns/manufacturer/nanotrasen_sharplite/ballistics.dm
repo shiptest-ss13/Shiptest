@@ -155,6 +155,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/podium)
 	icon_state = "podium_inteq"
 	item_state = "inteq_generic"
 
+NO_MAG_GUN_HELPER(automatic/pistol/podium/inteq)
 
 /obj/item/ammo_box/magazine/m46_30_podium
 	name = "Podium magazine (4.6x30mm)"
@@ -408,6 +409,8 @@ NO_MAG_GUN_HELPER(automatic/smg/expedition)
 		/obj/item/attachment/silencer,
 		/obj/item/attachment/foldable_stock/resolution_inteq
 	)
+
+NO_MAG_GUN_HELPER(automatic/smg/resolution/inteq)
 
 /obj/item/ammo_box/magazine/wt550m9
 	name = "Resolution magazine (4.6x30mm)"
