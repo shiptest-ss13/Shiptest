@@ -24,13 +24,13 @@
 	/// Whether the immerse element has been added yet or not
 	var/immerse_added = FALSE
 	/**
-	 * Variables used for the swimming tile element. If TRUE, we pass these values to the element.
-	 * - is_swimming_tile: Whether or not we add the element to this tile.
-	 * - stamina_entry_cost: how much stamina it costs to enter the swimming tile, and for each move into a tile
-	 * - ticking_stamina_cost: How much stamina is lost for staying in the water.
-	 * - ticking_oxy_damage: How much oxygen is lost per tick when drowning in water. Also determines how many breathes are lost.
-	 * - exhaust_swimmer_prob: The likelihood that someone suffers stamina damage when entering a swimming tile.
-	 */
+	* Variables used for the swimming tile element. If TRUE, we pass these values to the element.
+	* - is_swimming_tile: Whether or not we add the element to this tile.
+	* - stamina_entry_cost: how much stamina it costs to enter the swimming tile, and for each move into a tile
+	* - ticking_stamina_cost: How much stamina is lost for staying in the water.
+	* - ticking_oxy_damage: How much oxygen is lost per tick when drowning in water. Also determines how many breathes are lost.
+	* - exhaust_swimmer_prob: The likelihood that someone suffers stamina damage when entering a swimming tile.
+	*/
 	var/is_swimming_tile = FALSE
 	var/stamina_entry_cost = 7
 	var/ticking_stamina_cost = 5

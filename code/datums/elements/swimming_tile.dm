@@ -123,7 +123,7 @@
 
 	//if (!HAS_TRAIT(owner, TRAIT_SWIMMER))
 	//var/athletics_skill =  (owner.mind?.get_skill_level(/datum/skill/athletics) || 1) - 1
-	owner.apply_damage(clamp((effective_stamina_per_interval ) * gravity_modifier, 1, 100), STAMINA)
+	owner.apply_damage(clamp((effective_stamina_per_interval) * gravity_modifier, 1, 100), STAMINA)
 
 	// You might not be swimming but you can breathe
 	if (HAS_TRAIT(owner, TRAIT_NOBREATH) || (owner.mob_size >= MOB_SIZE_HUMAN && owner.body_position == STANDING_UP))
