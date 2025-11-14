@@ -90,7 +90,6 @@
 #include "component_tests.dm"
 #include "connect_loc.dm"
 #include "dcs_check_list_arguments.dm"
-#include "focus_only_tests.dm"
 #include "biome_lists.dm"
 #include "emoting.dm"
 #include "gun_sanity.dm"
