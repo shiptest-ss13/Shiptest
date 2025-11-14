@@ -11,7 +11,7 @@
  */
 /datum/element/atmos_requirements
 	element_flags = ELEMENT_BESPOKE|ELEMENT_DETACH
-	id_arg_index = 2
+	argument_hash_start_idx = 2
 	var/list/atmos_requirements
 	var/unsuitable_atmos_damage
 

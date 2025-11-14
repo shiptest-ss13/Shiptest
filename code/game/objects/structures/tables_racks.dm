@@ -641,10 +641,10 @@
 
 /obj/structure/table/optable/proc/set_patient(new_patient)
 	if(patient)
-		UnregisterSignal(patient, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(patient, COMSIG_QDELETING)
 	patient = new_patient
 	if(patient)
-		RegisterSignal(patient, COMSIG_PARENT_QDELETING, PROC_REF(patient_deleted))
+		RegisterSignal(patient, COMSIG_QDELETING, PROC_REF(patient_deleted))
 
 /obj/structure/table/optable/proc/patient_deleted(datum/source)
 	SIGNAL_HANDLER

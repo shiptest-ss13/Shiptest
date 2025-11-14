@@ -160,11 +160,11 @@
 		examine_texts += span_notice("The next storm is inbound in [DisplayTimeText(time_until_next)].")
 
 /datum/component/weather_announcer/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
+	RegisterSignal(parent, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
 
 /datum/component/weather_announcer/UnregisterFromParent()
 	.=..()
-	UnregisterSignal(parent, COMSIG_PARENT_EXAMINE)
+	UnregisterSignal(parent, COMSIG_ATOM_EXAMINE)
 
 #undef WEATHER_ALERT_CLEAR
 #undef WEATHER_ALERT_INCOMING
