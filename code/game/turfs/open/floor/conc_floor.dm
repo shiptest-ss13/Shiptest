@@ -293,3 +293,7 @@
 	shape_types = list(
 		/turf/open/floor/concrete/pavement,
 	)
+
+
+/turf/open/floor/concrete/pavement/airless
+	initial_gas_mix = AIRLESS_ATMOS

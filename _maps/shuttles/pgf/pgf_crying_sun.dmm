@@ -2590,9 +2590,9 @@
 /obj/item/reagent_containers/condiment/peppermill{
 	pixel_y = 10
 	},
-/obj/item/storage/fancy/donut_box{
-	pixel_x = 17;
-	pixel_y = 6
+/obj/machinery/jukebox/boombox{
+	pixel_x = -3;
+	pixel_y = 17
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -3360,6 +3360,10 @@
 "BB" = (
 /obj/structure/table/wood,
 /obj/effect/turf_decal/corner/opaque/lime/mono,
+/obj/item/storage/fancy/donut_box{
+	pixel_x = -16;
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "BJ" = (
@@ -3695,9 +3699,6 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "EA" = (
-/obj/structure/sign/poster/contraband/pgf{
-	pixel_y = 32
-	},
 /obj/structure/chair{
 	dir = 4
 	},
@@ -3705,6 +3706,12 @@
 	dir = 8
 	},
 /obj/item/radio/intercom/directional/west,
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/corner{
+	dir = 4
+	},
+/obj/structure/sign/poster/pgf/sergeant{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "EC" = (
@@ -4459,7 +4466,6 @@
 "Kn" = (
 /obj/structure/table/wood,
 /obj/effect/turf_decal/corner/opaque/lime/mono,
-/obj/machinery/jukebox/boombox,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Ko" = (
@@ -5337,6 +5343,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/structure/sign/poster/pgf/random{
+	pixel_y = -30
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)

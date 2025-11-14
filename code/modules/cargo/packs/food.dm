@@ -171,6 +171,17 @@
 					/obj/item/food/grown/carrot,
 	)
 
+/datum/supply_pack/food/ingredients_basic/cabbage
+	name = "Cabbage Crate"
+	desc = "Crate containing five cabbages."
+	cost = 75
+	contains = list(/obj/item/food/grown/cabbage,
+					/obj/item/food/grown/cabbage,
+					/obj/item/food/grown/cabbage,
+					/obj/item/food/grown/cabbage,
+					/obj/item/food/grown/cabbage,
+	)
+
 /datum/supply_pack/food/ingredients_basic/chanterelle
 	name = "Chanterelle Crate"
 	desc = "Crate containing five chanterelle mushrooms."
@@ -630,4 +641,20 @@
 		/obj/item/reagent_containers/condiment/tiris_milk,
 		/obj/item/reagent_containers/condiment/tiris_milk,
 		/obj/item/reagent_containers/condiment/tiris_milk,
+	)
+
+/datum/supply_pack/food/ingredients_basic/tiris_sele
+	name = "Tiris Sele Crate"
+	desc = "A gentle blood sauce made from a Tiris."
+	cost = 20
+	contains = list(
+		/obj/item/reagent_containers/condiment/tiris_sele
+	)
+
+/datum/supply_pack/food/ingredients_basic/tiris_sale
+	name = "Tiris Sale Crate"
+	desc = "A strong blood sauce made from a Tiris."
+	cost = 20
+	contains = list(
+		/obj/item/reagent_containers/condiment/tiris_sale
 	)
