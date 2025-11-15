@@ -461,7 +461,7 @@
 		return
 
 	if(method == INGEST)
-		taste(source)
+		taste_list(reagents)
 
 	var/touch_protection = (method == VAPOR) ? get_permeability_protection() : 0
 	for(var/reagent in reagents)

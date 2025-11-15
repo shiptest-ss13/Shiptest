@@ -27,7 +27,7 @@
 	var/low_threshold_cleared
 
 	var/useable = TRUE
-	var/list/food_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	var/list/food_reagents = list(/datum/reagent/consumable/nutriment/organ_tissue = 5)
 	var/vital = 0
 	//Was this organ implanted/inserted/etc, if true will not be removed during species change.
 	var/external = FALSE
