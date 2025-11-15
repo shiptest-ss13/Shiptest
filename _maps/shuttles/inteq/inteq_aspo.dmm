@@ -230,6 +230,10 @@
 	pixel_x = 8;
 	pixel_y = -4
 	},
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/communications)
 "fH" = (
@@ -594,11 +598,10 @@
 /obj/item/clothing/suit/space/inteq,
 /obj/item/clothing/head/helmet/space/inteq,
 /obj/item/clothing/mask/gas/inteq,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/airalarm/directional/east,
+/obj/structure/noticeboard{
+	pixel_y = 28
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/communications)
 "kj" = (
@@ -1076,7 +1079,6 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/effect/turf_decal/number/right_five,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
@@ -1086,7 +1088,7 @@
 	},
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/number/right_five,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "qJ" = (
@@ -1627,11 +1629,19 @@
 	network = list("ss13");
 	desc = "A telescreen that connects to the ship's security camera network."
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/paper_bin{
+	pixel_x = -7;
+	pixel_y = -5
+	},
+/obj/item/pen{
+	pixel_x = -7;
+	pixel_y = -5
+	},
 /obj/item/radio/headset/inteq/alt{
 	pixel_x = 6;
 	pixel_y = -5
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/communications)
 "zY" = (
@@ -2039,6 +2049,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/communications)
 "FG" = (
@@ -2200,6 +2213,16 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/plate/small{
+	pixel_x = 4;
+	pixel_y = 8
+	},
+/obj/item/food/pizzaslice/meat{
+	pixel_y = 12;
+	pixel_x = 4;
+	name = "cold meatpizza slice";
+	desc = "A nutritious slice of meatpizza. It's gone cold from being left out."
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "HU" = (
@@ -2796,9 +2819,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/communications)
 "NW" = (
@@ -3361,6 +3381,7 @@
 /obj/item/kitchen/rollingpin{
 	pixel_x = 8
 	},
+/obj/item/melee/knife/pizza_cutter,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "Wb" = (
@@ -3543,45 +3564,51 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/item/reagent_containers/food/drinks/waterbottle/large{
-	pixel_x = 8
-	},
-/obj/item/reagent_containers/food/drinks/waterbottle/large{
-	pixel_x = 8
-	},
-/obj/item/reagent_containers/food/drinks/waterbottle/large{
-	pixel_x = 8
-	},
-/obj/item/reagent_containers/food/drinks/waterbottle/large{
-	pixel_x = 8
-	},
-/obj/item/reagent_containers/food/drinks/waterbottle{
-	pixel_y = -5
-	},
-/obj/item/reagent_containers/food/drinks/waterbottle{
-	pixel_y = -5
-	},
-/obj/item/reagent_containers/food/drinks/waterbottle{
-	pixel_y = -5
-	},
-/obj/item/reagent_containers/food/drinks/waterbottle{
-	pixel_y = -5
-	},
-/obj/item/reagent_containers/food/drinks/waterbottle{
-	pixel_y = -5
-	},
-/obj/item/reagent_containers/food/drinks/waterbottle{
-	pixel_y = -5
-	},
 /obj/structure/sink/kitchen{
 	pixel_y = 21;
 	layer = 2.709
+	},
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/item/storage/ration/assorted_salted_offal,
+/obj/item/storage/ration/elbow_macaroni,
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
