@@ -221,7 +221,7 @@
 /datum/supply_pack/gun/l204
 	name = "L204 'Resistor' Plasma Rifle Crate"
 	desc = "Contains a lethal, high-energy laser gun."
-	cost = 2000
+	cost = 1000
 	contains = list(/obj/item/storage/guncase/energy/laser)
 	crate_name = "laser crate"
 	faction = /datum/faction/nt
