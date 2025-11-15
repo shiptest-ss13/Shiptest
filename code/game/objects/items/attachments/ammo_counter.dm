@@ -19,7 +19,7 @@
 			ammo_gun.ammo_counter = TRUE
 			gun.empty_alarm_sound = alarm_sound_path
 			var/datum/component/ammo_hud/counter/our_counter = gun.AddComponent(/datum/component/ammo_hud/counter)
-			our_counter.wake_up(user = user)
+			our_counter.wake_up()
 			return TRUE
 		to_chat(user, span_notice("[gun] already has an ammo counter installed!"))
 		return FALSE
@@ -39,14 +39,18 @@
 /obj/item/attachment/ammo_counter/attack_self(mob/user)
 	. = ..()
 	playsound(src, 'sound/items/flashlight_on.ogg', 25)
+	var/datum/component/attachment/attachment_component = GetComponent(/datum/component/attachment)
 	if(slot == src::slot)
 		slot = ATTACHMENT_SLOT_RAIL
+		attachment_component.slot = ATTACHMENT_SLOT_RAIL
 	else
 		slot = src::slot
+		attachment_component.slot = src::slot
 	to_chat(user, span_notice("You adjust [src] to fit on a gun's [slot]."))
 
 /obj/item/attachment/ammo_counter/toggle_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
+
 	if(gun::empty_alarm)
 		return
 	gun.empty_alarm = !gun.empty_alarm
