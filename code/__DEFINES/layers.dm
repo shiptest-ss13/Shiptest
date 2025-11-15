@@ -203,3 +203,6 @@
 #define ADMIN_POPUP_LAYER 1
 
 #define SPLASHSCREEN_RENDER_TARGET "SPLASHSCREEN_PLANE"
+
+///Plane master controller keys
+#define PLANE_MASTERS_GAME "plane_masters_game"

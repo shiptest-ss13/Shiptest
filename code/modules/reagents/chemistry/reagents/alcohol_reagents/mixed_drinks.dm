@@ -39,7 +39,7 @@
 	boozepwr = 80
 	quality = DRINK_GOOD
 	overdose_threshold = 60
-	addiction_threshold = 30
+	addiction_types = list(/datum/addiction/alcohol = 4, /datum/addiction/shoal = 10)
 	taste_description = "oily syrup"
 	glass_icon_state = "vimukti_glass"
 	glass_name = "glass of Vimukti"
@@ -84,7 +84,7 @@
 			M.emote("scream")
 
 	if(prob(3) && iscarbon(M))
-		M.seizure()
+		M.apply_status_effect(STATUS_EFFECT_SEIZURE)
 
 	if(prob(1) && iscarbon(M))
 		var/datum/disease/D = new /datum/disease/heart_failure

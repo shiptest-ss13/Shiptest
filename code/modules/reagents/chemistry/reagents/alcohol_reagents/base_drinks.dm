@@ -180,6 +180,7 @@
 	glass_icon_state = "glass_brown2"
 	glass_name = "Hooch"
 	glass_desc = "You can't help but feel like you'd rather drink anything else right now, just from looking at it."
+	addiction_types = list(/datum/addiction/alcohol = 5)
 
 /datum/reagent/consumable/ethanol/hooch/on_mob_life(mob/living/carbon/M)
 	if(M.mind && M.mind.assigned_role == "Assistant")
