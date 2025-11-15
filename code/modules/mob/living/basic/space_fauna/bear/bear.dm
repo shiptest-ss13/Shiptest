@@ -153,9 +153,8 @@
 
 /mob/living/basic/bear/polar/Initialize(mapload)
 	. = ..()
-	var/list/death_loot = list(mob_trophy)
-	if(length(death_loot) && prob(trophy_drop_mod))
-		AddElement(/datum/element/death_drops, death_loot)
+	if(mob_trophy && prob(trophy_drop_mod))
+		AddElement(/datum/element/death_drops, list(mob_trophy))
 
 /mob/living/basic/bear/polar/death(gibbed)
 	move_force = MOVE_FORCE_DEFAULT
