@@ -1,7 +1,7 @@
 //include unit test files in this module in this ifdef
 //Keep this sorted alphabetically
 
-#ifdef UNIT_TESTS
+#if defined(UNIT_TESTS) || defined(SPACEMAN_DMM)
 
 /// For advanced cases, fail unconditionally but don't return (so a test can return multiple results)
 #define TEST_FAIL(reason) (Fail(reason || "No reason", __FILE__, __LINE__))
