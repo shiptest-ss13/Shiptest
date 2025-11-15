@@ -174,9 +174,7 @@
 	var/list/req_tech_surgeries = list(
 		/datum/surgery/healing/brute/upgraded/femto,
 		/datum/surgery/healing/burn/upgraded/femto,
-		/datum/surgery/healing/combo/upgraded,
-		/datum/surgery/advanced/pacify,
-		/datum/surgery/advanced/lobotomy)
+		/datum/surgery/healing/combo/upgraded)
 	for(var/i in req_tech_surgeries)
 		var/datum/surgery/beep = i
 		if(initial(beep.requires_tech))
