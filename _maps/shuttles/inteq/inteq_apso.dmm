@@ -1638,6 +1638,10 @@
 	pixel_x = -7;
 	pixel_y = -5
 	},
+/obj/item/encryptionkey/headset_com{
+	pixel_y = -3;
+	pixel_x = 3
+	},
 /obj/item/radio/headset/inteq/alt{
 	pixel_x = 6;
 	pixel_y = -5
@@ -1806,7 +1810,7 @@
 "Cg" = (
 /obj/machinery/telecomms/server/presets/inteq{
 	network = "irmg_commnet";
-	freq_listening = list(1347, 1459, 1353)
+	freq_listening = list(1347, 1353)
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 5
