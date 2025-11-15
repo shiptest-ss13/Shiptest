@@ -349,7 +349,7 @@
 	icon_state = "marker"
 	flick(retract,src)
 	deltimer(timerid)
-	timerid = QDEL_IN(src, 7)
+	timerid = QDEL_IN_STOPPABLE(src, 7)
 
 /obj/item/saddle
 	name = "saddle"
