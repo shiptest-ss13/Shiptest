@@ -30,7 +30,7 @@
 	backpack_contents = list(/obj/item/storage/box/handcuffs = 1,
 	/obj/item/storage/box/teargas = 1,
 	/obj/item/storage/box/flashbangs = 1,
-	/obj/item/shield/riot/tele = 1)
+	/obj/item/shield/tele = 1)
 
 /datum/outfit/families_police/beatcop/armored
 	name = "Families: Armored Beat Cop"
@@ -39,7 +39,7 @@
 	backpack_contents = list(/obj/item/storage/box/handcuffs = 1,
 	/obj/item/storage/box/teargas = 1,
 	/obj/item/storage/box/flashbangs = 1,
-	/obj/item/shield/riot/tele = 1,
+	/obj/item/shield/tele = 1,
 	/obj/item/storage/box/lethalshot = 2)
 
 /datum/outfit/families_police/beatcop/swat
@@ -50,7 +50,7 @@
 	backpack_contents = list(/obj/item/storage/box/handcuffs = 1,
 	/obj/item/storage/box/teargas = 1,
 	/obj/item/storage/box/flashbangs = 1,
-	/obj/item/shield/riot/tele = 1)
+	/obj/item/shield/tele = 1)
 
 /datum/outfit/families_police/beatcop/fbi
 	name = "Families: Space FBI Officer"
@@ -60,7 +60,7 @@
 	backpack_contents = list(/obj/item/storage/box/handcuffs = 1,
 	/obj/item/storage/box/teargas = 1,
 	/obj/item/storage/box/flashbangs = 1,
-	/obj/item/shield/riot/tele = 1,
+	/obj/item/shield/tele = 1,
 	/obj/item/ammo_box/magazine/m9mm_expedition = 3)
 
 /datum/outfit/families_police/beatcop/military
@@ -73,4 +73,4 @@
 	backpack_contents = list(/obj/item/storage/box/handcuffs = 1,
 	/obj/item/storage/box/teargas = 1,
 	/obj/item/storage/box/flashbangs = 1,
-	/obj/item/shield/riot/tele = 1)
+	/obj/item/shield/tele = 1)
