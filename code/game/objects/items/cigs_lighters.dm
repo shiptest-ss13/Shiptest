@@ -141,8 +141,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	create_reagents(chem_volume, INJECTABLE | NO_REACT)
 	if(list_reagents)
 		reagents.add_reagent_list(list_reagents)
-		secondhand_smoke = new()
-		secondhand_smoke.attach(src)
+	secondhand_smoke = new()
+	secondhand_smoke.attach(src)
 	if(starts_lit)
 		light()
 	AddComponent(/datum/component/knockoff,90,list(BODY_ZONE_PRECISE_MOUTH),list(ITEM_SLOT_MASK))//90% to knock off when wearing a mask
