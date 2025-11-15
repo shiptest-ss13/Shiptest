@@ -3,6 +3,7 @@
 	faction_icon = "bg_indie"
 
 	uniform = /obj/item/clothing/under/utility
+	skirt_uniform = /obj/item/clothing/under/utility/skirt
 	box = /obj/item/storage/box/survival
 	id = /obj/item/card/id
 
@@ -49,13 +50,13 @@
 	name = "Independent - Assistant (Pirate)"
 
 	uniform = /obj/item/clothing/under/costume/pirate
+	skirt_uniform = null
 	suit = /obj/item/clothing/suit/pirate
 	head = /obj/item/clothing/head/bandana
 
 /datum/outfit/job/independent/assistant/pirate/jupiter
 	name = "Independent - Assistant (Nodesman)" // technically, this is part of SEC, but we have jackshit for SEC
 
-	uniform = /obj/item/clothing/under/utility
 	head = /obj/item/clothing/head/soft/black
 	shoes = /obj/item/clothing/shoes/combat
 	l_pocket = /obj/item/melee/knife/survival
@@ -76,6 +77,7 @@
 	name = "Independent - Assistant (Pharmacology Student)"
 
 	uniform = /obj/item/clothing/under/rank/medical/chemist
+	skirt_uniform = /obj/item/clothing/under/rank/medical/chemist
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	accessory = /obj/item/clothing/neck/scarf/orange
 	l_pocket = /obj/item/reagent_containers/pill/floorpill
@@ -100,6 +102,7 @@
 	gloves = /obj/item/clothing/gloves/color/captain
 	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/rank/command/captain
+	skirt_uniform = /obj/item/clothing/under/rank/command/captain/skirt
 	suit = /obj/item/clothing/suit/armor/captaincoat
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain //WS Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/laceup
@@ -148,6 +151,7 @@
 	name = "Independent - Captain (Mercenary)"
 
 	uniform = /obj/item/clothing/under/syndicate
+	skirt_uniform = /obj/item/clothing/under/syndicate/skirt
 	head = /obj/item/clothing/head/beret
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/combat
@@ -162,6 +166,7 @@
 
 /datum/outfit/job/independent/captain/western
 	name = "Independent - Captain (Western)"
+
 	head = /obj/item/clothing/head/caphat/cowboy
 	shoes = /obj/item/clothing/shoes/cowboy/fancy
 	glasses = /obj/item/clothing/glasses/sunglasses
@@ -169,6 +174,7 @@
 /datum/outfit/job/independent/captain/masinyane
 	name = "Independent - Captain (Masinyane)"
 	uniform = /obj/item/clothing/under/suit/black
+	skirt_uniform = /obj/item/clothing/under/suit/black/female
 	head = null
 	belt = null
 	gloves = null
@@ -186,6 +192,7 @@
 
 	ears = /obj/item/radio/headset/pirate/captain
 	uniform = /obj/item/clothing/under/costume/pirate
+	skirt_uniform = null
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/pirate/captain
 	suit = /obj/item/clothing/suit/pirate/captain
@@ -208,6 +215,7 @@
 	id = /obj/item/card/id
 	gloves = /obj/item/clothing/gloves/color/white
 	uniform = /obj/item/clothing/under/rank/security/detective/grey
+	skirt_uniform = /obj/item/clothing/under/rank/security/detective/grey/skirt
 	suit = /obj/item/clothing/suit/lawyer/charcoal
 	neck = /obj/item/clothing/neck/tie/black
 	dcoat = null
@@ -244,6 +252,7 @@
 	id = /obj/item/card/id/silver
 	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/rank/command/head_of_personnel
+	skirt_uniform = /obj/item/clothing/under/rank/command/head_of_personnel/skirt
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 
@@ -278,6 +287,7 @@
 	name = "Independent - Head of Personnel (Western)"
 
 	uniform = /obj/item/clothing/under/rank/security/detective/grey
+	skirt_uniform = /obj/item/clothing/under/rank/security/detective/grey/skirt
 	shoes = /obj/item/clothing/shoes/cowboy/black
 	accessory = /obj/item/clothing/accessory/waistcoat
 	head = /obj/item/clothing/head/cowboy
@@ -287,6 +297,7 @@
 
 	ears = /obj/item/radio/headset/pirate
 	uniform = /obj/item/clothing/under/costume/pirate
+	skirt_uniform = null
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/pirate
 	suit = /obj/item/clothing/suit/pirate
@@ -301,7 +312,7 @@
 	id = /obj/item/card/id/silver
 	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/rank/security/head_of_security
-	alt_uniform = null
+	skirt_uniform = /obj/item/clothing/under/rank/security/head_of_security/skirt
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/armor/hos/trenchcoat
 	alt_suit = /obj/item/clothing/suit/armor/vest/security/hos
@@ -327,6 +338,7 @@
 
 	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/syndicate
+	skirt_uniform = /obj/item/clothing/under/syndicate/skirt
 	shoes = /obj/item/clothing/shoes/combat
 	suit = /obj/item/clothing/suit/armor/vest
 	alt_suit = null
@@ -345,6 +357,7 @@
 	belt = /obj/item/storage/belt/utility/full
 	ears = /obj/item/radio/headset/headset_sci
 	uniform = /obj/item/clothing/under/rank/rnd/roboticist
+	skirt_uniform = /obj/item/clothing/under/rank/rnd/roboticist/skirt
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	alt_suit = /obj/item/clothing/suit/toggle/suspenders/gray
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/science
@@ -362,6 +375,7 @@
 
 	ears = /obj/item/radio/headset/alt
 	uniform = /obj/item/clothing/under/rank/security/officer
+	skirt_uniform = /obj/item/clothing/under/rank/security/officer/skirt
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/helmet/m10
 	suit = /obj/item/clothing/suit/armor/vest/alt
@@ -390,6 +404,7 @@
 	name = "Independent - Security Officer (Western)"
 
 	uniform = /obj/item/clothing/under/rank/security/officer/blueshirt
+	skirt_uniform = null
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/cowboy/sec
 
@@ -398,6 +413,7 @@
 	id_assignment = "Trooper"
 
 	uniform = /obj/item/clothing/under/rank/security/officer/camo
+	skirt_uniform = null
 	gloves = /obj/item/clothing/gloves/fingerless
 	head = null
 	suit = null
@@ -409,6 +425,7 @@
 
 	ears = /obj/item/radio/headset/pirate
 	uniform = /obj/item/clothing/under/syndicate/camo
+	skirt_uniform = null
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/bandana
 	suit = /obj/item/clothing/suit/armor/vest
@@ -437,6 +454,7 @@
 	ears = /obj/item/radio/headset/headset_eng
 	uniform = /obj/item/clothing/under/overalls/olive
 	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/hazard
+	skirt_uniform = null
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
 	shoes = /obj/item/clothing/shoes/workboots
 	head = null
@@ -496,6 +514,7 @@
 
 	ears = /obj/item/radio/headset/headset_sec/alt
 	uniform = /obj/item/clothing/under/rank/security/warden
+	skirt_uniform = /obj/item/clothing/under/rank/security/warden/skirt
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/armor/vest/security/warden
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
@@ -525,6 +544,7 @@
 	belt = /obj/item/storage/belt/utility/chief/full
 	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/rank/engineering/chief_engineer
+	skirt_uniform = /obj/item/clothing/under/rank/engineering/chief_engineer/skirt
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/hardhat/white
@@ -548,6 +568,7 @@
 
 	ears = /obj/item/radio/headset/headset_med
 	uniform = /obj/item/clothing/under/rank/medical/doctor/blue
+	skirt_uniform = null
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit =  /obj/item/clothing/suit/apron/surgical
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical
@@ -589,6 +610,7 @@
 	belt = /obj/item/storage/belt/utility/atmostech
 	ears = /obj/item/radio/headset/headset_eng
 	uniform = /obj/item/clothing/under/rank/engineering/engineer/hazard
+	skirt_uniform = null
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
 	l_pocket = /obj/item/analyzer
 
@@ -610,6 +632,7 @@
 
 	ears = /obj/item/radio/headset/headset_sci
 	uniform = /obj/item/clothing/under/rank/rnd/scientist
+	skirt_uniform = /obj/item/clothing/under/rank/rnd/scientist/skirt
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit = /obj/item/clothing/suit/toggle/labcoat/science
 	alt_suit = /obj/item/clothing/suit/toggle/suspenders/blue
@@ -628,6 +651,7 @@
 
 	ears = /obj/item/radio/headset/headset_medsec/alt
 	uniform = /obj/item/clothing/under/rank/security/brig_phys
+	skirt_uniform = /obj/item/clothing/under/rank/security/brig_phys/skirt
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	glasses = /obj/item/clothing/glasses/hud/health
 	suit = /obj/item/clothing/suit/toggle/labcoat/brig_phys
@@ -643,6 +667,7 @@
 
 	ears = /obj/item/radio/headset/headset_med
 	uniform = /obj/item/clothing/under/rank/medical/paramedic/emt
+	skirt_uniform = /obj/item/clothing/under/rank/medical/paramedic/emt/skirt
 	head = /obj/item/clothing/head/soft/paramedic
 	shoes = /obj/item/clothing/shoes/sneakers/blue
 	suit =  /obj/item/clothing/suit/toggle/labcoat/paramedic
@@ -669,6 +694,7 @@
 
 	ears = /obj/item/radio/headset/headset_cargo
 	uniform = /obj/item/clothing/under/rank/security/detective
+	skirt_uniform = /obj/item/clothing/under/rank/security/detective/skirt
 	head = /obj/item/clothing/head/hardhat/white
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
 	suit = /obj/item/clothing/suit/hazardvest
@@ -697,6 +723,7 @@
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	gloves = /obj/item/clothing/gloves/explorer
 	uniform = /obj/item/clothing/under/rank/cargo/miner
+	skirt_uniform = null
 	suit = /obj/item/clothing/suit/hazardvest
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/miner
 	l_pocket = /obj/item/storage/bag/ore
@@ -761,6 +788,7 @@
 	ears = /obj/item/radio/headset/headset_srv
 	shoes = /obj/item/clothing/shoes/laceup
 	uniform = /obj/item/clothing/under/rank/civilian/chef
+	skirt_uniform = /obj/item/clothing/under/rank/civilian/chef/skirt
 	suit = /obj/item/clothing/suit/toggle/chef
 	alt_suit = /obj/item/clothing/suit/apron/chef
 	head = /obj/item/clothing/head/chefhat
@@ -787,6 +815,7 @@
 	glasses = /obj/item/clothing/glasses/sunglasses/reagent
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/bartender
+	skirt_uniform = /obj/item/clothing/under/rank/civilian/bartender/skirt
 	alt_uniform = /obj/item/clothing/under/rank/civilian/bartender/purple
 	alt_suit = /obj/item/clothing/suit/apron/purple_bartender
 	suit = /obj/item/clothing/suit/armor/vest
@@ -822,6 +851,7 @@
 
 	ears = /obj/item/radio/headset/headset_srvsec
 	uniform = /obj/item/clothing/under/rank/civilian/lawyer/bluesuit
+	skirt_uniform = /obj/item/clothing/under/rank/civilian/lawyer/bluesuit/skirt
 	suit = /obj/item/clothing/suit/toggle/lawyer
 	shoes = /obj/item/clothing/shoes/laceup
 	l_hand = /obj/item/storage/briefcase/lawyer
@@ -837,6 +867,7 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/curator
+	skirt_uniform = /obj/item/clothing/under/rank/civilian/curator/skirt
 	l_hand = /obj/item/storage/bag/books
 	l_pocket = /obj/item/key/displaycase
 	accessory = /obj/item/clothing/accessory/pocketprotector/full
@@ -856,6 +887,7 @@
 /datum/outfit/job/independent/curator/dungeonmaster
 	name = "Independent - Curator (Dungeon Master)"
 	uniform = /obj/item/clothing/under/misc/pj/red
+	skirt_uniform = null
 	suit = /obj/item/clothing/suit/nerdshirt
 	backpack_contents = list(
 		/obj/item/choice_beacon/hero = 1,
@@ -875,6 +907,7 @@
 
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/chaplain
+	skirt_uniform = /obj/item/clothing/under/rank/civilian/chaplain/skirt
 	backpack_contents = list(
 		/obj/item/camera/spooky = 1
 		)
@@ -892,6 +925,7 @@
 	glasses = /obj/item/clothing/glasses/science
 	ears = /obj/item/radio/headset/headset_med
 	uniform = /obj/item/clothing/under/rank/medical/chemist
+	skirt_uniform = /obj/item/clothing/under/rank/medical/chemist/skirt
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit =  /obj/item/clothing/suit/toggle/labcoat/chemist
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical
@@ -924,6 +958,7 @@
 
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/janitor
+	skirt_uniform = /obj/item/clothing/under/rank/civilian/janitor/skirt
 
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
@@ -937,6 +972,7 @@
 	id = /obj/item/card/id/silver
 	ears = /obj/item/radio/headset/heads/rd
 	uniform = /obj/item/clothing/under/rank/rnd/research_director/turtleneck
+	skirt_uniform = /obj/item/clothing/under/rank/rnd/research_director/turtleneck/skirt
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	alt_suit = /obj/item/clothing/suit/toggle/suspenders
@@ -961,6 +997,7 @@
 	l_pocket = /obj/item/pinpointer/crew
 	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/rank/medical/doctor/blue
+	skirt_uniform = null
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	suit = /obj/item/clothing/suit/toggle/labcoat/cmo
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical
@@ -1001,6 +1038,7 @@
 
 	ears = /obj/item/radio/headset/headset_sec/alt
 	uniform = /obj/item/clothing/under/rank/security/detective
+	skirt_uniform = /obj/item/clothing/under/rank/security/detective/skirt
 	neck = /obj/item/clothing/neck/tie/detective
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	suit = /obj/item/clothing/suit/det_suit

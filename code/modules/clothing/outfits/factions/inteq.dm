@@ -5,6 +5,8 @@
 
 	uniform = /obj/item/clothing/under/syndicate/inteq
 	alt_uniform = /obj/item/clothing/under/syndicate/inteq/sneaksuit
+	skirt_uniform = /obj/item/clothing/under/syndicate/inteq/skirt
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
 	box = /obj/item/storage/box/survival/inteq
 
 	backpack = /obj/item/storage/backpack
@@ -89,17 +91,14 @@
 
 	ears = /obj/item/radio/headset/inteq
 	uniform = /obj/item/clothing/under/syndicate/inteq/artificer
+	skirt_uniform = /obj/item/clothing/under/syndicate/inteq/artificer/skirt
 	head = /obj/item/clothing/head/hardhat/white
 	mask = /obj/item/clothing/mask/balaclava/inteq
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
+
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/color/yellow
-	belt = /obj/item/storage/belt/utility/full
-
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/utility/chief/full
-
-	courierbag = /obj/item/storage/backpack/messenger/inteq
 
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced=1)
 
@@ -112,6 +111,7 @@
 	jobtype = /datum/job/paramedic
 
 	uniform = /obj/item/clothing/under/syndicate/inteq/corpsman
+	skirt_uniform = /obj/item/clothing/under/syndicate/inteq/corpsman/skirt
 	head = /obj/item/clothing/head/soft/inteq/corpsman
 	suit = /obj/item/clothing/suit/armor/inteq/corpsman
 	shoes = /obj/item/clothing/shoes/combat
@@ -142,15 +142,10 @@
 	suit = /obj/item/clothing/suit/armor/vest/alt
 	belt = /obj/item/storage/belt/security/webbing/inteq
 	mask = /obj/item/clothing/mask/balaclava/inteq
-	uniform = /obj/item/clothing/under/syndicate/inteq
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
 	shoes = /obj/item/clothing/shoes/combat
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	gloves = /obj/item/clothing/gloves/combat
-
-	backpack = /obj/item/storage/backpack/messenger/inteq
-	satchel = /obj/item/storage/backpack/messenger/inteq
-	courierbag = /obj/item/storage/backpack/messenger/inteq
 
 /datum/outfit/job/inteq/security/empty
 	name = "IRMG - Enforcer (Naked)"
@@ -187,6 +182,7 @@
 
 	ears = /obj/item/radio/headset/alt
 	uniform = /obj/item/clothing/under/syndicate/inteq/artificer
+	skirt_uniform = /obj/item/clothing/under/syndicate/inteq/artificer/skirt
 	head = /obj/item/clothing/head/soft/inteq
 	shoes = /obj/item/clothing/shoes/combat
 	belt = /obj/item/storage/belt/utility/full/engi
@@ -272,6 +268,7 @@
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 	ears = /obj/item/radio/headset/inteq/captain
 	uniform = /obj/item/clothing/under/syndicate/inteq/corpsman
+	skirt_uniform = /obj/item/clothing/under/syndicate/inteq/corpsman/skirt
 	shoes = /obj/item/clothing/shoes/combat
 	suit = /obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt
 	alt_suit = /obj/item/clothing/suit/armor/inteq/corpsman
@@ -281,7 +278,7 @@
 	chameleon_extras = null
 
 /datum/outfit/job/inteq/cmo/empty
-	name = "IRMG Honorable Corpsman (Inteq) (Naked)"
+	name = "IRMG - Honorable Corpsman (Naked)"
 	belt = null
 	suit = null
 	alt_suit = null
