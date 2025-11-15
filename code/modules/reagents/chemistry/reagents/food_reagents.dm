@@ -296,7 +296,7 @@
 				victim.vomit()
 
 /datum/reagent/consumable/condensedcapsaicin/on_mob_life(mob/living/carbon/M)
-	if(!M.has_reagent(/datum/reagent/consumable/milk))
+	if(!holder.has_reagent(/datum/reagent/consumable/milk))
 		if(prob(10))
 			M.visible_message(span_warning("[M] [pick("dry heaves!","coughs!","splutters!")]"))
 	..()
