@@ -7,6 +7,7 @@
 
 	if(!gibbed)
 		INVOKE_ASYNC(src, PROC_REF(emote), "deathgasp")
+
 	end_metabolization(src)
 
 	. = ..()

@@ -107,6 +107,16 @@ SUBSYSTEM_DEF(overmap)
 		if(our_outpost.mapzone?.is_in_bounds(source))
 			return our_outpost
 
+/datum/controller/subsystem/overmap/proc/get_main_outpost()
+	if(!length(outposts))
+		return "No outpost exists in this area of space."
+	return outposts[1]
+
+/datum/controller/subsystem/overmap/proc/get_main_outpost_coords()
+	if(!length(outposts))
+		return "No outpost exists in this area of space."
+	return "[outposts[1]?:x]-[outposts[1]?:y]"
+
 /datum/controller/subsystem/overmap/proc/ship_crew_percentage()
 	var/ship_percentages = 0
 	var/counted_ships = 0

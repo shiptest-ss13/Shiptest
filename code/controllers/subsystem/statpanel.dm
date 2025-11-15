@@ -25,12 +25,14 @@ SUBSYSTEM_DEF(statpanels)
 		global_data = list(
 			"Round ID: [GLOB.round_id ? GLOB.round_id : "NULL"]",
 			"Time Dilation: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)",
-			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
 			"\n",
+			"Current Outpost: [SSticker.round_start_timeofday ? SSovermap.get_main_outpost() : "The round hasn't started yet!"]",
+			"Outpost Location: [SSticker.round_start_timeofday ? "[SSovermap.get_main_outpost_coords()] - [SSovermap.default_system]" : "The round hasn't started yet!"]",
 			"Local Sector Time: [SSticker.round_start_timeofday ? "[station_time_timestamp()] [sector_datestamp()]" : "The round hasn't started yet!"]",
 			"\n",
-			"Internal Round Timer: [SSticker.round_start_timeofday ? ROUND_TIME() : "The round hasn't started yet!"]",
+			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
 			"Actual Round Timer: [SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY() : "The round hasn't started yet!"]",
+			"Internal Round Timer: [SSticker.round_start_timeofday ? ROUND_TIME() : "The round hasn't started yet!"]",
 			"\n",
 			"Playing/Connected: [get_active_player_count()]/[length(GLOB.clients)]",
 			"Crew Percentage/Ship Locking Cap: [SSovermap.ship_crew_percentage()]%/[SSovermap.ship_locking_percentage()]%"
