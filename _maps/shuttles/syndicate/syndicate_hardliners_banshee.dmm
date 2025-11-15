@@ -648,13 +648,13 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "kj" = (
-/obj/machinery/porta_turret/ship/hardliners{
-	dir = 6;
-	id = "Bansheeturrets"
-	},
 /obj/effect/turf_decal/industrial/hatch{
 	color = "#730622";
 	alpha = 255
+	},
+/obj/machinery/porta_turret/ship/hardliners{
+	dir = 4;
+	id = "Bansheeturrets"
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -2152,17 +2152,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
-"Fl" = (
-/obj/machinery/porta_turret/ship/hardliners{
-	dir = 5;
-	id = "Bansheeturrets"
-	},
-/obj/effect/turf_decal/industrial/hatch{
-	color = "#730622";
-	alpha = 255
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "Fq" = (
 /obj/effect/turf_decal/industrial/warning{
 	color = "#FFFFFF";
@@ -3724,7 +3713,7 @@ lX
 "}
 (11,1,1) = {"
 Xt
-Fl
+mf
 br
 Nz
 PL
@@ -3743,12 +3732,12 @@ ec
 kS
 Nv
 wv
-kj
+mf
 Xt
 "}
 (12,1,1) = {"
 Xt
-mf
+kj
 vd
 au
 Kx
@@ -3767,7 +3756,7 @@ mL
 Dz
 Cw
 wv
-mf
+kj
 Xt
 "}
 (13,1,1) = {"
