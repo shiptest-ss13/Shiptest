@@ -268,6 +268,8 @@
 	icon_state = "x12_inteq"
 	item_state = "x12_inteq"
 
+/obj/item/gun/energy/sharplite/x12/inteq/empty_cell
+	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/sharplite/x46
 	name = "\improper SL X46 “Amperage” Variable Energy Blaster"
