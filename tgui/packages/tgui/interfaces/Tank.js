@@ -1,13 +1,14 @@
-import { toFixed } from 'common/math';
-import { useBackend } from '../backend';
 import {
   Button,
   LabeledControls,
   NumberInput,
   RoundGauge,
   Section,
-} from '../components';
-import { formatSiUnit } from '../format';
+} from 'tgui-core/components';
+import { formatSiUnit } from 'tgui-core/format';
+import { toFixed } from 'tgui-core/math';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 const formatPressure = (value) => {
@@ -17,8 +18,8 @@ const formatPressure = (value) => {
   return formatSiUnit(value * 1000, 1, 'Pa');
 };
 
-export const Tank = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Tank = (props) => {
+  const { act, data } = useBackend();
   const {
     defaultReleasePressure,
     minReleasePressure,
@@ -30,7 +31,7 @@ export const Tank = (props, context) => {
     connected,
   } = data;
   return (
-    <Window resizable width={275} height={120}>
+    <Window width={275} height={120}>
       <Window.Content>
         <Section>
           <LabeledControls>
@@ -41,9 +42,9 @@ export const Tank = (props, context) => {
                 maxValue={fragmentPressure * 1.15}
                 alertAfter={leakPressure}
                 ranges={{
-                  'good': [0, leakPressure],
-                  'average': [leakPressure, fragmentPressure],
-                  'bad': [fragmentPressure, fragmentPressure * 1.15],
+                  good: [0, leakPressure],
+                  average: [leakPressure, fragmentPressure],
+                  bad: [fragmentPressure, fragmentPressure * 1.15],
                 }}
                 format={formatPressure}
                 size={2}
@@ -66,7 +67,7 @@ export const Tank = (props, context) => {
                 unit="kPa"
                 minValue={data.minReleasePressure}
                 maxValue={data.maxReleasePressure}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('pressure', {
                     pressure: value,
                   })

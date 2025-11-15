@@ -1,18 +1,19 @@
-import { useBackend } from '../backend';
 import {
   Button,
+  Input,
   LabeledList,
+  NoticeBox,
   NumberInput,
   Section,
-  NoticeBox,
-  Input,
   Table,
-} from '../components';
+} from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
-export const NaniteRemote = (props, context) => {
+export const NaniteRemote = (props) => {
   return (
-    <Window width={420} height={500} resizable>
+    <Window width={420} height={500}>
       <Window.Content scrollable>
         <NaniteRemoteContent />
       </Window.Content>
@@ -20,8 +21,8 @@ export const NaniteRemote = (props, context) => {
   );
 };
 
-export const NaniteRemoteContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NaniteRemoteContent = (props) => {
+  const { act, data } = useBackend();
   const {
     code,
     locked,
@@ -57,7 +58,7 @@ export const NaniteRemoteContent = (props, context) => {
               value={program_name}
               maxLength={14}
               width="130px"
-              onChange={(e, value) =>
+              onChange={(value) =>
                 act('update_name', {
                   name: value,
                 })
@@ -73,7 +74,7 @@ export const NaniteRemoteContent = (props, context) => {
               width="47px"
               step={1}
               stepPixelSize={2}
-              onChange={(e, value) =>
+              onChange={(value) =>
                 act('set_code', {
                   code: value,
                 })
@@ -85,7 +86,7 @@ export const NaniteRemoteContent = (props, context) => {
               <Input
                 value={message}
                 width="270px"
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('set_message', {
                     value: value,
                   })
@@ -102,7 +103,7 @@ export const NaniteRemoteContent = (props, context) => {
                 width="47px"
                 step={1}
                 stepPixelSize={2}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('set_relay_code', {
                     code: value,
                   })

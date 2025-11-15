@@ -1,10 +1,18 @@
-import { classes } from 'common/react';
+import {
+  Box,
+  Button,
+  Flex,
+  Icon,
+  NoticeBox,
+  Section,
+} from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
+
 import { resolveAsset } from '../assets';
 import { useBackend } from '../backend';
-import { Box, Button, Flex, Icon, NoticeBox, Section } from '../components';
 import { NtosWindow } from '../layouts';
 
-export const NtosRadar = (props, context) => {
+export const NtosRadar = (props) => {
   return (
     <NtosWindow width={800} height={600} theme="ntos">
       <NtosRadarContent />
@@ -12,8 +20,8 @@ export const NtosRadar = (props, context) => {
   );
 };
 
-export const NtosRadarContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtosRadarContent = (props) => {
+  const { act, data } = useBackend();
   const { selected, object = [], target = [], scanning } = data;
   return (
     <Flex direction={'row'} hight="100%">
@@ -60,7 +68,7 @@ export const NtosRadarContent = (props, context) => {
             'url("' + resolveAsset('ntosradarbackground.png') + '")',
           'background-position': 'center',
           'background-repeat': 'no-repeat',
-          'top': '20px',
+          top: '20px',
         }}
         position="relative"
         m={1.5}
@@ -88,7 +96,7 @@ export const NtosRadarContent = (props, context) => {
                 top="20px"
                 left="243px"
                 style={{
-                  'transform': `rotate(${target.rot}deg)`,
+                  transform: `rotate(${target.rot}deg)`,
                 }}
               />
             )) || (
