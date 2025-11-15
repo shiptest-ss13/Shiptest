@@ -1097,14 +1097,6 @@
 /obj/structure/fluff/steam_vent/high
 	particle_to_spawn = /particles/smoke/steam/vent/high
 
-/obj/effect/particle_holder
-	name = ""
-	anchored = TRUE
-	mouse_opacity = 0
-
-/obj/effect/particle_emitter/Initialize(mapload, time)
-	. = ..()
-
 /obj/structure/flora/rock/crystal
 	icon_state = "crystal"
 	base_icon_state = "crystal"
