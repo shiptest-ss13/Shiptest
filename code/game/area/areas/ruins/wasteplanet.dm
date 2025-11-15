@@ -180,3 +180,10 @@
 	name = "Recycle Bay Vault"
 	icon_state = "cargo_bay"
 
+/area/ruin/wasteplanet/recycle_bay/officers_dorms
+	name = "Recycle Bay Officers Dorms"
+	icon_state = "crew_quarters"
+
+/area/ruin/wasteplanet/recycle_bay/officers_office
+	name = "Recycle Bay Officers Office"
+	icon_state = "bridge"
