@@ -22,9 +22,9 @@
  */
 /datum/unit_test/dcs_check_list_arguments
 	/**
-	 * This unit test requires every (unless ignored) atom to have been created at least once
-	 * for a more accurate search, which is why it's run after create_and_destroy is done running.
-	 */
+	* This unit test requires every (unless ignored) atom to have been created at least once
+	* for a more accurate search, which is why it's run after create_and_destroy is done running.
+	*/
 	priority = TEST_AFTER_CREATE_AND_DESTROY
 
 /datum/unit_test/dcs_check_list_arguments/Run()
