@@ -24,13 +24,9 @@
 			"officer": true,
 			"slots": 1
 		},
-		"Marine Lieutenant": {
-			"outfit": "/datum/outfit/job/gezena/hos",
-			"officer":true,
-			"slots": 1
-		},
 		"Helmsman": {
 			"outfit": "/datum/outfit/job/gezena/assistant/bridge",
+			"officer": true,
 			"slots": 1
 		},
 		"Navy Engineer": {
@@ -41,6 +37,15 @@
 			"outfit": "/datum/outfit/job/gezena/doctor",
 			"slots": 1
 		},
+		"Crewman": {
+			"outfit": "/datum/outfit/job/gezena/assistant",
+			"slots": 1
+		},
+		"Marine Lieutenant": {
+			"outfit": "/datum/outfit/job/gezena/hos",
+			"officer":true,
+			"slots": 1
+		},
 		"Marine": {
 			"outfit": "/datum/outfit/job/gezena/security",
 			"slots": 2
@@ -48,10 +53,6 @@
 		"Assault Pioneer":{
 			"outfit": "/datum/outfit/job/gezena/security/sapper",
 			"slots":4
-		},
-		"Crewman": {
-			"outfit": "/datum/outfit/job/gezena/assistant",
-			"slots": 1
 		}
 	},
 	"enabled":true
