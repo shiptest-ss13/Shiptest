@@ -1,7 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ac" = (
 /obj/structure/sign/nanotrasen/ns,
-/turf/closed/wall/mineral/titanium/nodiagonal,
+/turf/closed/wall/mineral/titanium,
 /area/ship/hallway/starboard)
 "ag" = (
 /obj/machinery/computer/atmos_alert{
@@ -119,8 +119,9 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/aft)
 "aR" = (
-/obj/machinery/suit_storage_unit/inherit/industrial{
-	name = "miner's industrial suit storage unit"
+/obj/machinery/suit_storage_unit/inherit/industrial/locked{
+	name = "miner's industrial suit storage unit";
+	req_access_txt = "48"
 	},
 /obj/structure/railing/thin{
 	dir = 8
@@ -223,8 +224,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/engineering{
-	name = "Engineering Office";
-	req_access_txt = "10"
+	name = "Engineering Office"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/engineering)
@@ -550,8 +550,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
 "dD" = (
-/obj/machinery/suit_storage_unit/inherit/industrial{
-	name = "paramedic's industrial suit storage unit"
+/obj/machinery/suit_storage_unit/inherit/industrial/locked{
+	name = "paramedic's industrial suit storage unit";
+	req_access_txt = "5"
 	},
 /obj/structure/railing/thin{
 	dir = 8
@@ -623,7 +624,6 @@
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/line{
 	dir = 10
 	},
-/obj/item/gun/energy/sharplite/x26,
 /obj/machinery/airalarm/directional/west,
 /obj/structure/extinguisher_cabinet/directional/north{
 	pixel_x = -6
@@ -632,6 +632,7 @@
 	pixel_x = 6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/gun/energy/sharplite/x26,
 /obj/item/gun/energy/sharplite/l201/l204,
 /obj/item/gun/energy/sharplite/l201/l204,
 /obj/item/gun/energy/sharplite/l201/l204,
@@ -1217,8 +1218,32 @@
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/line{
 	dir = 8
 	},
-/obj/machinery/smartfridge/drying_rack,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/bin,
+/obj/item/plate_shard{
+	pixel_y = -5;
+	pixel_x = 2
+	},
+/obj/item/plate_shard{
+	icon_state = "plate_shard2";
+	pixel_y = -6;
+	pixel_x = 2
+	},
+/obj/item/plate_shard{
+	icon_state = "plate_shard3";
+	pixel_x = -3;
+	pixel_y = -6
+	},
+/obj/item/plate_shard{
+	icon_state = "plate_shard4";
+	pixel_x = -7;
+	pixel_y = 0
+	},
+/obj/item/plate_shard{
+	icon_state = "plate_shard5"
+	},
+/obj/item/trash/popcorn,
+/obj/item/trash/energybar,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "ix" = (
@@ -1387,55 +1412,11 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
 "jy" = (
-/obj/structure/closet/secure_closet/freezer{
-	anchored = 1;
-	locked = 0;
-	name = "fridge"
-	},
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 4
 	},
-/obj/item/food/grown/cabbage,
-/obj/item/food/grown/cabbage,
-/obj/item/food/meat/slab{
-	pixel_x = 4;
-	pixel_y = -4
-	},
-/obj/item/food/meat/slab{
-	pixel_x = 4;
-	pixel_y = -4
-	},
-/obj/item/food/meat/slab{
-	pixel_x = 4;
-	pixel_y = -4
-	},
-/obj/item/food/meat/slab{
-	pixel_x = 4;
-	pixel_y = -4
-	},
-/obj/item/reagent_containers/condiment/sugar,
-/obj/item/reagent_containers/condiment/rice{
-	pixel_y = -3
-	},
-/obj/item/reagent_containers/condiment/flour{
-	pixel_y = -6
-	},
-/obj/item/reagent_containers/condiment/flour{
-	pixel_y = -6
-	},
-/obj/item/storage/fancy/egg_box{
-	pixel_y = -4
-	},
-/obj/item/reagent_containers/condiment/milk{
-	pixel_x = -8
-	},
-/obj/item/reagent_containers/condiment/enzyme{
-	pixel_x = 1
-	},
-/obj/item/food/pizzaslice/pineapple{
-	pixel_x = 8
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/oven,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "jB" = (
@@ -2630,10 +2611,10 @@
 /obj/item/clothing/gloves/color/black{
 	pixel_y = -5
 	},
-/obj/item/clothing/glasses/heat,
-/obj/item/clothing/glasses/heat,
-/obj/item/clothing/glasses/heat,
-/obj/item/clothing/glasses/heat,
+/obj/item/clothing/glasses/safety,
+/obj/item/clothing/glasses/safety,
+/obj/item/clothing/glasses/safety,
+/obj/item/clothing/glasses/safety,
 /obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
@@ -3245,6 +3226,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
+"wG" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/storage/equip)
 "wK" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
@@ -3460,6 +3444,9 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/canteen)
+"yf" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/engineering)
 "ym" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 4
@@ -3474,70 +3461,7 @@
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 4
 	},
-/obj/item/storage/fancy/coffee_condi_display{
-	pixel_y = 13;
-	pixel_x = 6
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_x = -8;
-	pixel_y = 15
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_x = -8;
-	pixel_y = 15
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_x = -8;
-	pixel_y = 15
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_x = -8;
-	pixel_y = 15
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_x = -8;
-	pixel_y = 15
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 15
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 15
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 15
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 15
-	},
-/obj/item/reagent_containers/food/drinks/mug{
-	pixel_x = -6;
-	pixel_y = 6
-	},
-/obj/item/reagent_containers/food/drinks/mug{
-	pixel_x = -6;
-	pixel_y = 6
-	},
-/obj/item/reagent_containers/food/drinks/mug{
-	pixel_x = -6;
-	pixel_y = 6
-	},
-/obj/item/reagent_containers/food/drinks/mug{
-	pixel_x = -6;
-	pixel_y = 6
-	},
-/obj/item/reagent_containers/food/drinks/mug{
-	pixel_x = -6;
-	pixel_y = 6
-	},
-/obj/item/reagent_containers/food/drinks/mug{
-	pixel_x = -6;
-	pixel_y = 6
-	},
-/obj/item/melee/knife/kitchen{
-	pixel_y = 4
-	},
-/obj/structure/closet/secure_closet/wall/directional/east{
+/obj/structure/closet/wall/white/directional/east{
 	name = "kitchen cabinet"
 	},
 /obj/effect/decal/cleanable/food/egg_smudge,
@@ -3545,15 +3469,83 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/plate/large,
+/obj/item/plate,
+/obj/item/plate,
+/obj/item/plate/small,
+/obj/item/reagent_containers/glass/bowl,
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = -8;
+	pixel_y = 15
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = -8;
+	pixel_y = 15
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = -8;
+	pixel_y = 15
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = -8;
+	pixel_y = 15
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_y = 15
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_y = 15
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_y = 15
+	},
+/obj/item/reagent_containers/food/drinks/mug{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/food/drinks/mug{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/food/drinks/mug{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/food/drinks/mug{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/food/drinks/mug{
+	pixel_x = -6;
+	pixel_y = 6
+	},
 /obj/item/reagent_containers/glass/coffeepot,
-/obj/item/food/grown/coffee,
-/obj/item/food/grown/coffee,
-/obj/item/food/grown/coffee/robusta{
-	pixel_x = 4
+/obj/item/reagent_containers/glass/bottle/syrup_bottle/vanilla{
+	pixel_x = 14;
+	pixel_y = 14
 	},
-/obj/item/food/grown/coffee/robusta{
-	pixel_x = 4
+/obj/item/reagent_containers/glass/bottle/syrup_bottle/caramel{
+	pixel_x = 10;
+	pixel_y = 10
 	},
+/obj/item/storage/fancy/coffee_condi_display,
+/obj/item/melee/knife/kitchen{
+	pixel_y = 4
+	},
+/obj/item/storage/box/coffeepack/arabica{
+	pixel_x = -5;
+	pixel_y = -5
+	},
+/obj/item/storage/box/coffeepack/robusta{
+	pixel_x = 5;
+	pixel_y = -5
+	},
+/obj/item/storage/box/coffeepack/robusta{
+	pixel_x = 5;
+	pixel_y = -5
+	},
+/obj/item/food/bread/plain,
+/obj/item/reagent_containers/glass/beaker/large,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "yV" = (
@@ -4004,6 +3996,10 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/glass,
+/obj/item/plate_shard{
+	icon_state = "plate_shard5";
+	pixel_x = -5
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Ck" = (
@@ -4324,6 +4320,9 @@
 /obj/item/reagent_containers/pill/iron{
 	pixel_x = -5;
 	pixel_y = 3
+	},
+/obj/item/bonesetter{
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
@@ -4705,8 +4704,9 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "HE" = (
-/obj/machinery/suit_storage_unit/inherit/industrial{
-	name = "lead miner's industrial suit storage unit"
+/obj/machinery/suit_storage_unit/inherit/industrial/locked{
+	name = "lead miner's industrial suit storage unit";
+	req_access_txt = "41"
 	},
 /obj/structure/railing/thin{
 	dir = 4
@@ -4867,8 +4867,9 @@
 /turf/open/floor/plasteel,
 /area/ship/science/workshop)
 "Im" = (
-/obj/machinery/suit_storage_unit/inherit/industrial{
-	name = "miner's industrial suit storage unit"
+/obj/machinery/suit_storage_unit/inherit/industrial/locked{
+	name = "miner's industrial suit storage unit";
+	req_access_txt = "48"
 	},
 /obj/structure/railing/thin{
 	dir = 8
@@ -5240,6 +5241,10 @@
 	pixel_x = 12;
 	pixel_y = -8
 	},
+/obj/item/healthanalyzer,
+/obj/item/reagent_scanner{
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/equip)
 "Kg" = (
@@ -5422,6 +5427,9 @@
 	pixel_y = -12
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "LS" = (
@@ -5750,11 +5758,24 @@
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 4
 	},
-/obj/structure/closet/crate/bin,
 /obj/effect/decal/cleanable/food/flour,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/trash/popcorn,
-/obj/item/trash/energybar,
+/obj/structure/table/reinforced,
+/obj/machinery/coffeemaker/premium{
+	pixel_x = -1
+	},
+/obj/item/coffee_cartridge/fancy{
+	pixel_x = 14;
+	pixel_y = 11
+	},
+/obj/item/coffee_cartridge/fancy/roast{
+	pixel_x = 14;
+	pixel_y = 8
+	},
+/obj/item/coffee_cartridge/fancy/blend{
+	pixel_y = 5;
+	pixel_x = 14
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Nj" = (
@@ -5829,6 +5850,9 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/starboard)
+"NR" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/hallway/starboard)
 "NS" = (
 /obj/effect/turf_decal/nanotrasen/ns/top,
 /obj/machinery/iv_drip,
@@ -5877,7 +5901,10 @@
 "Oy" = (
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/machinery/suit_storage_unit/inherit/industrial/locked{
+	name = "engineer's industrial suit storage unit";
+	req_access_txt = "10"
+	},
 /obj/item/tank/jetpack/carbondioxide,
 /obj/item/clothing/suit/space/hardsuit/engine,
 /obj/item/clothing/mask/gas/atmos,
@@ -6208,46 +6235,20 @@
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/line{
 	dir = 8
 	},
-/obj/structure/fluff/hedge,
+/obj/machinery/hydroponics/wooden,
 /obj/machinery/light/directional/west,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 4
+/obj/item/shovel/spade{
+	pixel_y = -8
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Re" = (
-/obj/structure/table/reinforced,
+/obj/machinery/griddle,
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 4
 	},
-/obj/machinery/coffeemaker/premium{
-	pixel_x = -2;
-	pixel_y = 15
-	},
-/obj/item/reagent_containers/glass/bottle/syrup_bottle/vanilla{
-	pixel_x = 14;
-	pixel_y = 14
-	},
-/obj/item/reagent_containers/glass/bottle/syrup_bottle/caramel{
-	pixel_x = 10;
-	pixel_y = 10
-	},
-/obj/item/coffee_cartridge/fancy{
-	pixel_x = -8;
-	pixel_y = 2
-	},
-/obj/item/coffee_cartridge/fancy/roast{
-	pixel_x = -8;
-	pixel_y = -1
-	},
-/obj/item/coffee_cartridge/fancy/blend{
-	pixel_y = -4;
-	pixel_x = -8
-	},
-/obj/machinery/light/small/directional/north{
-	pixel_x = 14
-	},
+/obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -6258,11 +6259,64 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 5
 	},
-/obj/structure/reagent_dispensers/water_cooler{
-	pixel_y = 15;
-	pixel_x = 6;
-	density = 0
+/obj/structure/closet/secure_closet/freezer{
+	anchored = 1;
+	locked = 0;
+	name = "fridge"
 	},
+/obj/item/food/grown/cabbage{
+	pixel_x = -4;
+	pixel_y = 2
+	},
+/obj/item/food/grown/cabbage{
+	pixel_x = -4;
+	pixel_y = 2
+	},
+/obj/item/food/grown/siti,
+/obj/item/food/grown/sososi,
+/obj/item/food/grown/potato,
+/obj/item/food/grown/potato,
+/obj/item/food/meat/slab/tiris,
+/obj/item/food/meat/slab/tiris,
+/obj/item/food/meat/slab{
+	pixel_x = 4;
+	pixel_y = -4
+	},
+/obj/item/food/meat/slab{
+	pixel_x = 4;
+	pixel_y = -4
+	},
+/obj/item/food/meat/slab{
+	pixel_x = 4;
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/rice{
+	pixel_y = -3
+	},
+/obj/item/reagent_containers/condiment/flour{
+	pixel_y = -6
+	},
+/obj/item/reagent_containers/condiment/flour{
+	pixel_y = -6
+	},
+/obj/item/storage/fancy/egg_box{
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/condiment/milk{
+	pixel_x = -8
+	},
+/obj/item/reagent_containers/condiment/milk{
+	pixel_x = -8
+	},
+/obj/item/reagent_containers/condiment/soymilk,
+/obj/item/reagent_containers/condiment/enzyme{
+	pixel_x = 1
+	},
+/obj/item/food/jellysandwich,
+/obj/item/food/pizzaslice/pineapple,
+/obj/item/food/cheese/wedge,
+/obj/item/food/cheese/wedge,
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "Ro" = (
@@ -6472,6 +6526,9 @@
 /obj/structure/railing,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/port)
+"Sw" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/science/workshop)
 "Sx" = (
 /obj/structure/railing/corner,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -7600,6 +7657,10 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 10
 	},
+/obj/structure/reagent_dispensers/water_cooler{
+	pixel_x = -6;
+	density = 0
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "YG" = (
@@ -7674,7 +7735,7 @@
 /area/ship/hallway/port)
 "Zp" = (
 /obj/machinery/door/window/westright,
-/obj/structure/closet/secure_closet/wall/directional/east{
+/obj/structure/closet/wall/white/directional/east{
 	name = "shower cabinet"
 	},
 /obj/item/soap/nanotrasen{
@@ -8384,7 +8445,7 @@ Ge
 "}
 (18,1,1) = {"
 Jb
-gp
+yf
 gp
 ag
 Mh
@@ -8420,7 +8481,7 @@ Jb
 (19,1,1) = {"
 Jb
 Jb
-gp
+yf
 gp
 gp
 gp
@@ -8448,7 +8509,7 @@ rE
 rE
 rE
 rE
-rE
+NR
 Jb
 Jb
 "}
@@ -9057,7 +9118,7 @@ Jb
 Jb
 Jb
 Jb
-DR
+Sw
 DR
 ii
 qs
@@ -9071,7 +9132,7 @@ dD
 Ax
 mi
 ga
-ga
+wG
 Jb
 Jb
 Jb
@@ -9128,7 +9189,7 @@ Jb
 Jb
 Jb
 Jb
-DR
+Sw
 DR
 DR
 DR
@@ -9140,7 +9201,7 @@ px
 ga
 ga
 ga
-ga
+wG
 Jb
 Jb
 Jb
