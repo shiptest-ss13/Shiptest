@@ -51,7 +51,7 @@
  * See: [/obj/item/proc/melee_attack_chain]
  */
 /atom/proc/attackby(obj/item/W, mob/user, params)
-	if(SEND_SIGNAL(src, COMSIG_PARENT_ATTACKBY, W, user, params) & COMPONENT_NO_AFTERATTACK)
+	if(SEND_SIGNAL(src, COMSIG_ATOM_ATTACKBY, W, user, params) & COMPONENT_NO_AFTERATTACK)
 		return TRUE
 	return FALSE
 

@@ -24,10 +24,10 @@
 	src.valid_types = typecacheof(valid_types)
 	src.slot_offsets = slot_offsets
 
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(handle_attack))
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(handle_examine))
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE_MORE, PROC_REF(handle_examine_more))
-	RegisterSignal(parent, COMSIG_PARENT_QDELETING, PROC_REF(handle_qdel))
+	RegisterSignal(parent, COMSIG_ATOM_ATTACKBY, PROC_REF(handle_attack))
+	RegisterSignal(parent, COMSIG_ATOM_EXAMINE, PROC_REF(handle_examine))
+	RegisterSignal(parent, COMSIG_ATOM_EXAMINE_MORE, PROC_REF(handle_examine_more))
+	RegisterSignal(parent, COMSIG_QDELETING, PROC_REF(handle_qdel))
 	RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK, PROC_REF(handle_item_pre_attack))
 	RegisterSignal(parent, COMSIG_TWOHANDED_WIELD, PROC_REF(handle_item_wield))
 	RegisterSignal(parent, COMSIG_TWOHANDED_UNWIELD, PROC_REF(handle_item_unwield))

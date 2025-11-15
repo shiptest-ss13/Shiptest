@@ -44,7 +44,7 @@
 				return
 			Remove(owner)
 		owner = M
-		RegisterSignal(owner, COMSIG_PARENT_QDELETING, PROC_REF(owner_deleted))
+		RegisterSignal(owner, COMSIG_QDELETING, PROC_REF(owner_deleted))
 
 		//button id generation
 		var/counter = 0
@@ -81,7 +81,7 @@
 		M.actions -= src
 		M.update_action_buttons()
 	if(owner)
-		UnregisterSignal(owner, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(owner, COMSIG_QDELETING)
 		owner = null
 	if(button)
 		button.moved = FALSE //so the button appears in its normal position when given to another owner.

@@ -104,7 +104,7 @@
 
 	RegisterSignal(parent, COMSIG_TOPIC, PROC_REF(topic_handle))
 
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(attackby))
+	RegisterSignal(parent, COMSIG_ATOM_ATTACKBY, PROC_REF(attackby))
 
 	RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND, PROC_REF(on_attack_hand))
 	RegisterSignal(parent, COMSIG_ATOM_ATTACK_PAW, PROC_REF(on_attack_hand))
@@ -432,7 +432,7 @@
 			cansee |= M
 		else
 			LAZYREMOVE(is_using, M)
-			UnregisterSignal(M, COMSIG_PARENT_QDELETING)
+			UnregisterSignal(M, COMSIG_QDELETING)
 	return cansee
 
 //Tries to dump content
