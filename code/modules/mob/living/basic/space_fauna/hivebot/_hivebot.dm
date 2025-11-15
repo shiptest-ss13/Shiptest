@@ -75,7 +75,8 @@
 /mob/living/basic/hivebot/Initialize(mapload)
 	. = ..()
 
-	AddElement(/datum/element/death_drops, death_loot)
+	var/static/list/death_drops = death_loot
+	AddElement(/datum/element/death_drops, death_drops)
 	AddComponent(/datum/component/appearance_on_aggro, overlay_icon = icon, overlay_state = "[initial(icon_state)]_attack")
 	AddComponent(/datum/component/light_on_aggro, 6, 0.4, LIGHT_COLOR_INTENSE_RED)
 	AddComponent(/datum/component/aggro_speech, phrase_list = aggro_quips, phrase_chance = 30)

@@ -32,8 +32,7 @@
 
 /mob/living/basic/cockroach/Initialize()
 	. = ..()
-	var/list/death_loot = list(/obj/effect/decal/cleanable/insectguts)
-	AddElement(/datum/element/death_drops, death_loot)
+	AddElement(/datum/element/death_drops, /obj/effect/decal/cleanable/insectguts)
 	AddComponent( \
 		/datum/component/squashable, \
 		squash_chance = 50, \
