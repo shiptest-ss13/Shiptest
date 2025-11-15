@@ -644,7 +644,7 @@
 	category = list("initial", "Medical", "Medical Designs")
 
 /datum/design/chemical_bottle
-	name = "Glass Bottle"
+	name = "Bottle"
 	id = "bottle"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/glass = 300)
