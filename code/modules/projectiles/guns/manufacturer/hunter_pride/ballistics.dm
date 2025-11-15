@@ -488,6 +488,8 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/presawn)
 	item_state = "dshotgun_srm"
 	unique_reskin = null
 
+EMPTY_GUN_HELPER(shotgun/doublebarrel/roumain)
+
 /obj/item/gun/ballistic/shotgun/doublebarrel/roumain/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
@@ -766,6 +768,8 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 	icon_state = "illestren_factory"
 	item_state = "illestren_factory"
 
+EMPTY_GUN_HELPER(rifle/illestren/factory)
+
 /obj/item/gun/ballistic/rifle/illestren/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
@@ -902,6 +906,8 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 	base_icon_state = "flamingbolt"
 	icon_state = "flamingbolt"
 	item_state = "flamingbolt"
+
+EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/bolt/sawoff(forced = FALSE)
 	. = ..()
