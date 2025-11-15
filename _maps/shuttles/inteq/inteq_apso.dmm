@@ -2752,6 +2752,15 @@
 	},
 /obj/machinery/light/directional/west,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/freezer{
+	name = "blood freezer"
+	},
+/obj/item/reagent_containers/blood/OMinus,
+/obj/item/reagent_containers/blood/elzuose,
+/obj/item/reagent_containers/blood/lizard,
+/obj/item/reagent_containers/blood/synthetic,
+/obj/item/reagent_containers/blood/random,
+/obj/item/reagent_containers/blood/random,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "My" = (
@@ -3178,6 +3187,11 @@
 /obj/item/stack/medical/splint/twelve{
 	pixel_x = 2;
 	pixel_y = -2
+	},
+/obj/machinery/iv_drip{
+	pixel_y = 22;
+	pixel_x = 10;
+	layer = 2.901
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
