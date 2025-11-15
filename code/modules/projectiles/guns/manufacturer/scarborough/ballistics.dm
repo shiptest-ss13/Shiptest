@@ -419,6 +419,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 	icon_state = "cobra"
 	item_state = "cobra"
 
+	spread = 3
+
 	default_ammo_type = /obj/item/ammo_box/magazine/m45_cobra
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m45_cobra,
@@ -461,12 +463,14 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra)
 	desc = "An older model of submachine gun manufactured by Scarborough Arms and marketed to mercenaries, law enforcement, and independent militia. Only became popular after the end of the ICW. Chambered in .45."
 	icon_state = "cobra20"
 	item_state = "cobra20"
-	burst_size = 3
-	burst_delay = 1.75
+
+	burst_size = 4
+	burst_delay = 0.8
+	fire_delay = 3
+	spread = 2
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst")
-	default_firemode = FIREMODE_BURST
 	default_attachments = null
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
 	unique_attachments = null
