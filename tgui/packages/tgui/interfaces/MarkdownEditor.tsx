@@ -1,3 +1,4 @@
+import { debounce } from 'common/timer';
 import { marked } from 'marked';
 import { useBackend, useLocalState } from '../backend';
 import {
@@ -25,6 +26,10 @@ export const MarkdownEditor = (props, context) => {
   const [text, setText] = useLocalState(context, 'text', data.inputText);
   const unchanged = text === data.inputText;
 
+  const update = debounce((_, value: string) => {
+    setText(value);
+  }, 1000);
+
   marked.use({
     breaks: true,
     gfm: true,
@@ -50,7 +55,7 @@ export const MarkdownEditor = (props, context) => {
               value={data.inputText}
               maxLength={data.maxLength}
               placeholder={data.placeholder}
-              onInput={(_, value: string) => setText(value)}
+              onInput={update}
             />
           </Stack.Item>
           <Stack.Item grow>
