@@ -1746,6 +1746,9 @@
 	pixel_y = 15;
 	pixel_x = 1
 	},
+/obj/item/radio/headset/pgf/alt,
+/obj/item/radio/headset/pgf/alt,
+/obj/item/radio/headset/pgf/alt,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "vN" = (
@@ -2161,6 +2164,10 @@
 /obj/structure/bed/roller,
 /obj/effect/turf_decal/industrial/hatch/blue,
 /obj/machinery/airalarm/directional/north,
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = 0;
+	pixel_x = 28
+	},
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
 "DQ" = (
@@ -2756,9 +2763,6 @@
 	pixel_y = -10;
 	pixel_x = 1
 	},
-/obj/item/radio/headset/pgf/alt,
-/obj/item/radio/headset/pgf/alt,
-/obj/item/radio/headset/pgf/alt,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Ju" = (
