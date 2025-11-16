@@ -302,6 +302,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 13
+	STR.max_combined_w_class = 26
 
 /obj/item/storage/firstaid/roumain/PopulateContents()
 	if(empty)
