@@ -53,31 +53,31 @@
 
 //data HUD (medhud, sechud) defines
 //Don't forget to update human/New() if you change these!
-#define DATA_HUD_SECURITY_BASIC 1
-#define DATA_HUD_SECURITY_ADVANCED 2
-#define DATA_HUD_MEDICAL_BASIC 3
-#define DATA_HUD_MEDICAL_ADVANCED 4
-#define DATA_HUD_DIAGNOSTIC_BASIC 5
-#define DATA_HUD_DIAGNOSTIC_ADVANCED 6
-#define DATA_HUD_ABDUCTOR 7
-#define DATA_HUD_SENTIENT_DISEASE 8
-#define DATA_HUD_AI_DETECT 9
-#define DATA_HUD_FAN 10
+#define DATA_HUD_SECURITY_BASIC "sec_basic"
+#define DATA_HUD_SECURITY_ADVANCED "sec_adv"
+#define DATA_HUD_MEDICAL_BASIC "med_basic"
+#define DATA_HUD_MEDICAL_ADVANCED "med_adv"
+#define DATA_HUD_DIAGNOSTIC_BASIC "diag_basic"
+#define DATA_HUD_DIAGNOSTIC_ADVANCED "diag_adv"
+#define DATA_HUD_ABDUCTOR "abductor_data"
+#define DATA_HUD_SENTIENT_DISEASE "disease"
+#define DATA_HUD_AI_DETECT "ai_detect"
+#define DATA_HUD_FAN "fan"
 
 //antag HUD defines
-#define ANTAG_HUD_REV 11
-#define ANTAG_HUD_OPS 12
-#define ANTAG_HUD_WIZ 13
-#define ANTAG_HUD_SHADOW 14
-#define ANTAG_HUD_TRAITOR 15
-#define ANTAG_HUD_NINJA 16
-#define ANTAG_HUD_CHANGELING 17
-#define ANTAG_HUD_ABDUCTOR 18
-#define ANTAG_HUD_BROTHER 19
-#define ANTAG_HUD_OBSESSED 20
-#define ANTAG_HUD_FUGITIVE 21
-#define ANTAG_HUD_GANGSTER 22
-#define ANTAG_HUD_SPACECOP 23
+#define ANTAG_HUD_REV "rev"
+#define ANTAG_HUD_OPS "ops"
+#define ANTAG_HUD_WIZ "wiz"
+#define ANTAG_HUD_SHADOW "shadow"
+#define ANTAG_HUD_TRAITOR "traitor"
+#define ANTAG_HUD_NINJA "ninja"
+#define ANTAG_HUD_CHANGELING "changeling"
+#define ANTAG_HUD_ABDUCTOR "abductor_antag"
+#define ANTAG_HUD_BROTHER "brother"
+#define ANTAG_HUD_OBSESSED "obsessed"
+#define ANTAG_HUD_FUGITIVE "fugitive"
+#define ANTAG_HUD_GANGSTER "gangster"
+#define ANTAG_HUD_SPACECOP "spacecop"
 
 
 // Notification action types
