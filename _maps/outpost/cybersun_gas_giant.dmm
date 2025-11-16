@@ -653,6 +653,18 @@
 	},
 /turf/open/floor/suns/dark/plain,
 /area/space)
+"el" = (
+/obj/structure/table/glass,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_y = 5;
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/food/drinks/bottle/dotusira{
+	pixel_y = 15;
+	pixel_x = 7
+	},
+/turf/open/floor/suns/dark/plain,
+/area/space)
 "em" = (
 /obj/machinery/vending/cigarette,
 /turf/open/floor/plasteel/patterned/brushed,
@@ -1401,6 +1413,11 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/space)
+"ke" = (
+/obj/structure/closet/cabinet,
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/suns/dark/plain,
+/area/space)
 "ki" = (
 /obj/effect/turf_decal/industrial/fire/cee{
 	dir = 4
@@ -1530,6 +1547,10 @@
 	},
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/suns/hatch/bamboo,
+/area/space)
+"ld" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/suns/hatch/maple,
 /area/space)
 "le" = (
 /obj/structure/table/glass,
@@ -2288,6 +2309,10 @@
 	color = "#E6D2BA";
 	dir = 4
 	},
+/obj/item/storage/box/coffeepack/arabica{
+	pixel_y = -4;
+	pixel_x = -6
+	},
 /turf/open/floor/suns/dark/plain,
 /area/space)
 "pj" = (
@@ -2311,6 +2336,13 @@
 	id = "outpost2"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
+/area/space)
+"pr" = (
+/obj/effect/turf_decal/siding/black{
+	dir = 1
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "ps" = (
 /obj/effect/turf_decal/siding/wood{
@@ -3573,6 +3605,13 @@
 /obj/machinery/mineral/unloading_machine,
 /turf/open/floor/plating,
 /area/space)
+"xG" = (
+/obj/effect/turf_decal/siding/black{
+	dir = 9
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "xH" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 5
@@ -4198,6 +4237,10 @@
 "CO" = (
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/directional/north,
+/obj/item/storage/box/drinkingglasses{
+	pixel_y = 7;
+	pixel_x = -5
+	},
 /turf/open/floor/suns/dark/plain,
 /area/space)
 "CP" = (
@@ -4360,6 +4403,7 @@
 	dir = 8;
 	pixel_x = 25
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "DA" = (
@@ -4760,6 +4804,14 @@
 "Fz" = (
 /obj/machinery/disposal/bin,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"FA" = (
+/obj/structure/table/glass,
+/obj/item/reagent_containers/food/drinks/drinkingglass/filled/bridge_bunny{
+	pixel_y = 8;
+	pixel_x = 3
+	},
+/turf/open/floor/suns/dark/plain,
 /area/space)
 "FF" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/line{
@@ -5630,6 +5682,11 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/space)
+"Mj" = (
+/obj/structure/dresser,
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/suns/hatch/mahogany,
+/area/space)
 "Mo" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	color = "#E6D2BA";
@@ -5737,6 +5794,7 @@
 	color = "#E6D2BA";
 	dir = 8
 	},
+/obj/item/food/grown/dotu_fime,
 /turf/open/floor/suns/dark/plain,
 /area/space)
 "Nk" = (
@@ -5809,6 +5867,7 @@
 /area/space)
 "NF" = (
 /obj/item/radio/intercom/directional/west,
+/obj/machinery/light/directional/south,
 /turf/open/floor/suns/hatch/maple,
 /area/space)
 "NH" = (
@@ -5949,6 +6008,14 @@
 	},
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"OL" = (
+/obj/structure/table/glass,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_y = 3;
+	pixel_x = -3
+	},
+/turf/open/floor/suns/dark/plain,
 /area/space)
 "ON" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -6444,6 +6511,10 @@
 /area/space)
 "Sy" = (
 /turf/open/floor/glass/reinforced,
+/area/space)
+"SB" = (
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/suns/hatch/mahogany,
 /area/space)
 "SC" = (
 /obj/effect/turf_decal/corner/transparent/cybersunteal/half{
@@ -7638,6 +7709,10 @@
 /obj/effect/turf_decal/siding/wood{
 	color = "#E6D2BA";
 	dir = 6
+	},
+/obj/item/storage/fancy/coffee_condi_display{
+	pixel_y = 1;
+	pixel_x = -2
 	},
 /turf/open/floor/suns/dark/plain,
 /area/space)
@@ -11691,9 +11766,9 @@ oW
 Yy
 OG
 OG
-LB
+ke
 qN
-UM
+xG
 jF
 Cz
 Cz
@@ -11947,7 +12022,7 @@ Rz
 Zd
 MO
 Yy
-YR
+Mj
 OG
 OG
 QP
@@ -12206,7 +12281,7 @@ oW
 Yy
 LF
 OG
-LB
+ke
 qN
 qh
 Ow
@@ -12371,11 +12446,11 @@ oc
 Du
 qx
 Cz
+FA
 Cz
 Cz
-Cz
-Cz
-Cz
+OL
+el
 Cz
 gI
 oc
@@ -12464,7 +12539,7 @@ oW
 Yy
 Zm
 OG
-LB
+ke
 qN
 Cj
 Jx
@@ -12600,7 +12675,7 @@ GZ
 Bf
 Co
 gc
-Co
+ld
 qN
 qN
 cv
@@ -12854,7 +12929,7 @@ QM
 OG
 LB
 qN
-VK
+pr
 Bf
 QP
 ly
@@ -12979,9 +13054,9 @@ Rz
 Rz
 oW
 Yy
+SB
 OG
-OG
-LB
+ke
 qN
 Dz
 TU
