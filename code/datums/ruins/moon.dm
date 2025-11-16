@@ -21,3 +21,9 @@
 	faction = list(
 		/datum/faction/clip,
 	)
+
+/datum/map_template/ruin/moon/hideout
+	name = "Ramzi Cave Hideout"
+	description = "A makeshift ramzi hideout in a cave, holding a smaller garrison."
+	id = "moon_hideout"
+	suffix = "moon_hideout.dmm"
