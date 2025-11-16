@@ -510,6 +510,10 @@
 	name = "Ponytail (over eye)"
 	icon_state = "hair_ponytaileye"
 
+/datum/sprite_accessory/hair/ponytailbotheyes
+	name = "Ponytail (both eyes)"
+	icon_state = "hair_ponytailbotheyes"
+
 /datum/sprite_accessory/hair/ponytail4
 	name = "Ponytail 4"
 	icon_state = "hair_ponytail4"
@@ -750,6 +754,10 @@
 /datum/sprite_accessory/hair/longer
 	name = "Very Long Hair"
 	icon_state = "hair_vlong"
+
+/datum/sprite_accessory/hair/longerbangs
+	name = "Very Long Hair (Bangs)"
+	icon_state = "hair_vlongbangs"
 
 /datum/sprite_accessory/hair/longest
 	name = "Very Long Hair 2"
