@@ -148,6 +148,11 @@
 	item_state = "firstaid-ointment"
 	damagetype_healed = BURN
 
+/obj/item/storage/firstaid/fire/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 8
+
 /obj/item/storage/firstaid/fire/PopulateContents()
 	if(empty)
 		return
@@ -190,6 +195,11 @@
 	item_state = "firstaid-ointment" //its yellow
 	damagetype_healed = TOX
 
+/obj/item/storage/firstaid/radiation/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 8
+
 /obj/item/storage/firstaid/radiation/PopulateContents()
 	if(empty)
 		return
@@ -207,6 +217,11 @@
 	icon_state = "o2"
 	item_state = "firstaid-o2"
 	damagetype_healed = OXY
+
+/obj/item/storage/firstaid/o2/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 8
 
 /obj/item/storage/firstaid/o2/PopulateContents()
 	if(empty)
@@ -227,6 +242,11 @@
 	icon_state = "brute"
 	item_state = "firstaid-brute"
 	damagetype_healed = BRUTE
+
+/obj/item/storage/firstaid/brute/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 8
 
 /obj/item/storage/firstaid/brute/PopulateContents()
 	if(empty)
@@ -254,7 +274,7 @@
 /obj/item/storage/firstaid/advanced/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 10
+	STR.max_items = 11
 
 /obj/item/storage/firstaid/advanced/PopulateContents()
 	if(empty)
@@ -278,6 +298,11 @@
 	item_state = "firstaid-srm"
 	custom_premium_price = 1100
 
+/obj/item/storage/firstaid/roumain/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 13
+
 /obj/item/storage/firstaid/roumain/PopulateContents()
 	if(empty)
 		return
@@ -285,7 +310,6 @@
 		/obj/item/healthanalyzer = 1,
 		/obj/item/food/grown/ash_flora/puce = 1,
 		/obj/item/reagent_containers/glass/mortar = 1,
-		/obj/item/reagent_containers/glass/bowl/mushroom_bowl = 1,
 		/obj/item/pestle = 1,
 		/obj/item/food/grown/ash_flora/cactus_fruit = 3,
 		/obj/item/food/meat/slab/bear = 3,
@@ -301,6 +325,7 @@
 /obj/item/storage/firstaid/tactical/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 9
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/firstaid/tactical/PopulateContents()
