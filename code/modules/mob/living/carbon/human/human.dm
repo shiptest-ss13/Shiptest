@@ -500,6 +500,31 @@
 /mob/living/carbon/human/proc/canUseHUD()
 	return (mobility_flags & MOBILITY_USE)
 
+//ohh god this'll need to be reworked into a zone-by-zone selection, rather than just "are yuor jorts thick"
+
+/mob/living/carbon/human/proc/is_exposed(mob/user, error_msg, target_zone)
+	. = TRUE // Default to returning true.
+	if(user && !target_zone)
+		target_zone = user.zone_selected
+
+	// If targeting the head, see if the head item is thin enough.
+	// If targeting anything else, see if the wear suit is thin enough.
+	if(above_neck(target_zone))
+		if(head && istype(head, /obj/item/clothing))
+			var/obj/item/clothing/CH = head
+			if (CH.clothing_flags & THICKMATERIAL)
+				. = FALSE
+	else
+		if(wear_suit && istype(wear_suit, /obj/item/clothing))
+			var/obj/item/clothing/CS = wear_suit
+			if (CS.clothing_flags & THICKMATERIAL)
+				. = FALSE
+
+	if(!. && error_msg && user)
+		// Might need re-wording.
+		to_chat(user, span_alert("There is no exposed flesh or thin material [above_neck(target_zone) ? "on [p_their()] head" : "on [p_their()] body"]."))
+
+
 /mob/living/carbon/human/can_inject(mob/user, target_zone, injection_flags)
 	. = TRUE // Default to returning true.
 	// we may choose to ignore species trait pierce immunity in case we still want to check skellies for thick clothing without insta failing them (wounds)
@@ -924,6 +949,28 @@
 			Immobilize(30)
 		return 1
 	..()
+
+
+/mob/living/carbon/human/vv_edit_var(var_name, var_value)
+	if(var_name == NAMEOF(src, mob_height))
+		var/static/list/heights = list(
+			HUMAN_HEIGHT_SHORTEST,
+			HUMAN_HEIGHT_SHORT,
+			HUMAN_HEIGHT_MEDIUM,
+			HUMAN_HEIGHT_TALL,
+			HUMAN_HEIGHT_TALLER,
+			HUMAN_HEIGHT_TALLEST
+		)
+		if(!(var_value in heights))
+			return
+
+		. = set_mob_height(var_value)
+
+	if(!isnull(.))
+		datum_flags |= DF_VAR_EDITED
+		return
+
+	return ..()
 
 /mob/living/carbon/human/vv_get_dropdown()
 	. = ..()

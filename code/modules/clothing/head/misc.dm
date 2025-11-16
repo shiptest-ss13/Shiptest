@@ -164,6 +164,11 @@
 
 	dog_fashion = /datum/dog_fashion/head/cowboy
 
+/obj/item/clothing/head/cowboy/black
+	name = "black cowboy hat"
+	desc = "A dark leather hat, you get a bad feeling from it."
+	icon_state = "cowboyblack"
+
 /obj/item/clothing/head/franks_hat
 	name = "Frank's hat"
 	desc = "You feel ashamed about what you had to do to get this hat."

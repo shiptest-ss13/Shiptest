@@ -158,10 +158,23 @@
 
 /datum/supply_pack/armor/srm_duster
 	name = "SRM Duster Crate"
-	desc = "One hand-stitched duster for a proud Roumainian to wear into the Hunt."
+	desc = "One hand-stitched duster and helmet for a proud Roumainian to wear into the Hunt."
 	cost = 500
-	contains = list(/obj/item/clothing/suit/armor/roumain)
+	contains = list(/obj/item/clothing/suit/armor/roumain,
+					/obj/item/clothing/head/helmet/roumain)
 	crate_name = "duster crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/srm
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/armor/srm_trench
+	name = "SRM Heavy Duster Crate"
+	desc = "One hand-stitched duster with a heavy plate and helmet for a proud Roumainian to charge into the fray."
+	cost = 1500
+	contains = list(/obj/item/clothing/suit/armor/roumain/plate,
+					/obj/item/clothing/head/helmet/roumain/plate)
+	crate_name = "heavy duster crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/srm
 	faction_discount = 0

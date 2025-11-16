@@ -153,7 +153,7 @@
 		return
 
 	//Standard reach turf to turf or reaching inside storage
-	if(CanReach(A,W))
+	if(CanReach(A, W))
 		if(W)
 			W.melee_attack_chain(src, A, params)
 		else
@@ -161,14 +161,20 @@
 				changeNext_move(CLICK_CD_MELEE)
 			UnarmedAttack(A,1,modifiers)
 	else
+		var/proximity = A.Adjacent(src)
 		if(W)
 			if(LAZYACCESS(modifiers, RIGHT_CLICK))
 				var/after_attack_secondary_result = W.afterattack_secondary(A, src, FALSE, params)
 
 				if(after_attack_secondary_result == SECONDARY_ATTACK_CALL_NORMAL)
-					W.afterattack(A, src, FALSE, params)
+					if(!proximity || !A.attackby(W, src, params))
+						W.afterattack(A, src, proximity, params)
+						RangedAttack(A, params)
 			else
 				W.afterattack(A,src,0,params)
+				if(!proximity || !A.attackby(W, src, params))
+					W.afterattack(A, src, proximity, params)
+					RangedAttack(A, params)
 		else
 			if(LAZYACCESS(modifiers, RIGHT_CLICK))
 				ranged_secondary_attack(A, modifiers)
