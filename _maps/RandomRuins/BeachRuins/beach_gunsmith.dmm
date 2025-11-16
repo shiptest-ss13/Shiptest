@@ -564,7 +564,9 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith/kitchen)
 "fI" = (
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
+	},
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
@@ -731,7 +733,9 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
+	},
 /obj/item/stack/ore/salvage/scrapmetal/twenty{
 	pixel_x = -6;
 	pixel_y = 3
@@ -1185,7 +1189,9 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
+	},
 /obj/item/stack/sheet/plastic/twenty{
 	pixel_x = -9;
 	pixel_y = 2
@@ -1657,7 +1663,9 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
+	},
 /obj/item/storage/toolbox/syndicate,
 /obj/item/storage/toolbox/syndicate{
 	pixel_x = 0;
@@ -2857,7 +2865,9 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 6
 	},
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
+	},
 /obj/item/ammo_box/magazine/m57_39_asp{
 	pixel_x = -1;
 	pixel_y = -1
