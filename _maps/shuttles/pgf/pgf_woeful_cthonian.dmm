@@ -2249,12 +2249,8 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/recharger{
-	pixel_y = 3;
+	pixel_y = 7;
 	pixel_x = 10
-	},
-/obj/machinery/cell_charger{
-	pixel_y = 3;
-	pixel_x = -6
 	},
 /obj/item/stock_parts/cell/gun/kalix{
 	pixel_x = -9;
@@ -2282,7 +2278,7 @@
 	},
 /obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "sec_wall";
-	name = "cell locker";
+	name = "security cabinet";
 	dir = 1;
 	pixel_y = 28;
 	pixel_x = 0
@@ -2291,6 +2287,20 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/white/filled/corner,
+/obj/machinery/recharger{
+	pixel_y = 7;
+	pixel_x = 1
+	},
+/obj/item/storage/box/zipties{
+	pixel_y = 15;
+	pixel_x = 8
+	},
+/obj/item/assembly/flash{
+	pixel_x = 3
+	},
+/obj/item/assembly/flash{
+	pixel_x = 11
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "xf" = (
@@ -2861,7 +2871,7 @@
 /area/ship/bridge)
 "DG" = (
 /obj/structure/closet/secure_closet/armory1{
-	name = "gear locker";
+	name = "survey locker";
 	populate = 0;
 	req_access = null
 	},
@@ -2902,14 +2912,6 @@
 /obj/item/gps,
 /obj/item/crowbar/large,
 /obj/item/crowbar/large,
-/obj/item/clipboard{
-	pixel_x = -11;
-	pixel_y = -4
-	},
-/obj/item/clipboard{
-	pixel_x = -11;
-	pixel_y = -4
-	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "DJ" = (
