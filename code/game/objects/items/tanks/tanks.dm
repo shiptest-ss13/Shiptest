@@ -256,6 +256,8 @@
 		status_overlay.pixel_y = 4
 		overlays += status_overlay
 	else if(istype(src, /obj/item/tank/internals/emergency_oxygen))
+		status_overlay.pixel_x = 1
+		status_overlay.pixel_y = 1
 		overlays += status_overlay
 
 /obj/item/tank/proc/check_status()
@@ -333,12 +335,10 @@
 		if((2 * ONE_ATMOSPHERE) to (5 * ONE_ATMOSPHERE))
 			if(!warning_alert)
 				warning_alert = TRUE
-				playsound(src, 'sound/machines/twobeep_high.ogg', 30, FALSE)
-				say("Tank is at [pressure] kPa! Pressure low!")
 		if((0.75 * ONE_ATMOSPHERE) to (2 * ONE_ATMOSPHERE))
 			if(!critical_warning_alert)
 				critical_warning_alert = TRUE
-				playsound(src, 'sound/machines/triple_beep.ogg', 30, TRUE)
+				playsound(src, 'sound/machines/twobeep_high.ogg', 30, FALSE)
 				say("Tank is at [pressure] kPa! Pressure critically low!")
 		if((0 * ONE_ATMOSPHERE) to (0.75 * ONE_ATMOSPHERE))
 			if(!empty_alert)
