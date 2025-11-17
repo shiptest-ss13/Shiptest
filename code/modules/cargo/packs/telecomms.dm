@@ -27,12 +27,16 @@
 		/obj/item/circuitboard/machine/telecomms/broadcaster,
 		/obj/item/circuitboard/machine/telecomms/processor,
 		/obj/item/circuitboard/machine/telecomms/receiver,
-		/obj/item/stock_parts/subspace/filter = 4,
-		/obj/item/stock_parts/subspace/treatment = 2,
-		/obj/item/stock_parts/subspace/analyzer = 1,
-		/obj/item/stock_parts/subspace/amplifier = 1,
-		/obj/item/stock_parts/subspace/ansible = 1,
-		/obj/item/stock_parts/subspace/crystal = 1
+		/obj/item/stock_parts/subspace/filter,
+		/obj/item/stock_parts/subspace/filter,
+		/obj/item/stock_parts/subspace/filter,
+		/obj/item/stock_parts/subspace/filter,
+		/obj/item/stock_parts/subspace/treatment,
+		/obj/item/stock_parts/subspace/treatment,
+		/obj/item/stock_parts/subspace/analyzer,
+		/obj/item/stock_parts/subspace/amplifier,
+		/obj/item/stock_parts/subspace/ansible,
+		/obj/item/stock_parts/subspace/crystal
 	)
 	crate_name = "Telecommunications Quick-Start Pack"
 
@@ -42,8 +46,8 @@
 	cost = 1500
 	contains = list(
 		/obj/item/circuitboard/machine/telecomms/broadcaster,
-		/obj/item/stock_parts/subspace/filter = 1,
-		/obj/item/stock_parts/subspace/crystal = 1
+		/obj/item/stock_parts/subspace/filter,
+		/obj/item/stock_parts/subspace/crystal
 	)
 
 
@@ -53,7 +57,7 @@
 	cost = 1500
 	contains = list(
 		/obj/item/circuitboard/machine/telecomms/bus,
-		/obj/item/stock_parts/subspace/filter = 1,
+		/obj/item/stock_parts/subspace/filter,
 	)
 
 
@@ -63,10 +67,11 @@
 	cost = 1500
 	contains = list(
 		/obj/item/circuitboard/machine/telecomms/processor,
-		/obj/item/stock_parts/subspace/filter = 1,
-		/obj/item/stock_parts/subspace/treatment = 2,
-		/obj/item/stock_parts/subspace/analyzer = 1,
-		/obj/item/stock_parts/subspace/amplifier = 1
+		/obj/item/stock_parts/subspace/filter,
+		/obj/item/stock_parts/subspace/treatment,
+		/obj/item/stock_parts/subspace/treatment,
+		/obj/item/stock_parts/subspace/analyzer,
+		/obj/item/stock_parts/subspace/amplifier
 	)
 
 
@@ -76,10 +81,11 @@
 	cost = 1500
 	contains = list(
 		/obj/item/circuitboard/machine/telecomms/receiver,
-		/obj/item/stock_parts/subspace/filter = 1,
-		/obj/item/stock_parts/subspace/treatment = 2,
-		/obj/item/stock_parts/subspace/analyzer = 1,
-		/obj/item/stock_parts/subspace/amplifier = 1
+		/obj/item/stock_parts/subspace/filter,
+		/obj/item/stock_parts/subspace/treatment,
+		/obj/item/stock_parts/subspace/treatment,
+		/obj/item/stock_parts/subspace/analyzer,
+		/obj/item/stock_parts/subspace/amplifier
 	)
 
 /datum/supply_pack/tcomms/server
@@ -88,7 +94,7 @@
 	cost = 1500
 	contains = list(
 		/obj/item/circuitboard/machine/telecomms/server,
-		/obj/item/stock_parts/subspace/filter = 1,
+		/obj/item/stock_parts/subspace/filter,
 	)
 
 /datum/supply_pack/tcomms/pda_server
@@ -97,7 +103,9 @@
 	cost = 1500
 	contains = list(
 		/obj/item/circuitboard/machine/telecomms/message_server,
-		/obj/item/stock_parts/subspace/filter = 3,
+		/obj/item/stock_parts/subspace/filter,
+		/obj/item/stock_parts/subspace/filter,
+		/obj/item/stock_parts/subspace/filter
 	)
 
 /datum/supply_pack/tcomms/relay
@@ -106,8 +114,12 @@
 	cost = 1500
 	contains = list(
 		/obj/item/circuitboard/machine/telecomms/relay,
-		/obj/item/stock_parts/subspace/filter = 2,
-		/obj/item/stock_parts/subspace/transmitter = 4
+		/obj/item/stock_parts/subspace/filter,
+		/obj/item/stock_parts/subspace/filter,
+		/obj/item/stock_parts/subspace/transmitter,
+		/obj/item/stock_parts/subspace/transmitter,
+		/obj/item/stock_parts/subspace/transmitter,
+		/obj/item/stock_parts/subspace/transmitter
 	)
 	faction_locked = TRUE
 
@@ -117,8 +129,12 @@
 	cost = 1500
 	contains = list(
 		/obj/item/circuitboard/machine/telecomms/hub,
-		/obj/item/stock_parts/subspace/filter = 2,
-		/obj/item/stock_parts/subspace/transmitter = 4
+		/obj/item/stock_parts/subspace/filter,
+		/obj/item/stock_parts/subspace/filter,
+		/obj/item/stock_parts/subspace/transmitter,
+		/obj/item/stock_parts/subspace/transmitter,
+		/obj/item/stock_parts/subspace/transmitter,
+		/obj/item/stock_parts/subspace/transmitter
 	)
 	faction_locked = TRUE
 
