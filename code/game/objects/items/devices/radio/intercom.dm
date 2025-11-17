@@ -27,7 +27,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 
 /obj/item/radio/intercom/examine(mob/user)
 	. = ..()
-	. += span_notice("Use [MODE_TOKEN_INTERCOM] when nearby to speak into it.")
+	if(istype(src, /obj/item/radio/intercom/wideband))
+		. += span_notice("Use [MODE_TOKEN_WIDEBAND] when nearby to speak into it.")
+	else
+		. += span_notice("Use [MODE_TOKEN_INTERCOM] when nearby to speak into it.")
 	if(!unscrewed)
 		. += span_notice("It's <b>screwed</b> and secured to the wall.")
 	else
