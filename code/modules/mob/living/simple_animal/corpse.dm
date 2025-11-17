@@ -38,7 +38,7 @@
 	glasses = /obj/item/clothing/glasses/welding
 	belt = /obj/item/storage/belt/utility
 
-/obj/effect/mob_spawn/human/corpse/ramzi/doc
+/obj/effect/mob_spawn/human/corpse/ramzi/doctor
 	name = "Ramzi Sawbones"
 	outfit = /datum/outfit/ramzi/doctor
 
