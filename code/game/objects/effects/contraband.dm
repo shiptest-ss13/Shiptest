@@ -552,6 +552,103 @@
 	desc = "This poster depicts a trio of PGF sailors. The elzuose's horns are sticking up through the text block. \"Get your bigass horns out of the caption!\""
 	icon_state = "poster-pgf_bigass-horns"
 
+/obj/structure/sign/poster/contraband/diet_guide
+	name = "Dietary Guide"
+	desc = "It's a food safety infographic outlining the types of food that different species can and cannot eat."
+	icon_state = "poster-diet-guide"
+	/// Static string containing the pre-generated diet guide.
+	var/static/diet_guide_text
+	/// Static list with positioning of the food icons.
+	var/static/list/icon_positions = list()
+	var/base_text = {"
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+	<style>
+		h1{font-family: Verdana, Geneva, Tahoma, sans-serif}
+		table{border-collapse: collapse; border-color: rgb(112, 158, 132); font-family: Verdana, Geneva, Tahoma, sans-serif; font-size:14px}
+		th{width:70px; width: #d9f5e1}
+		td{text-align: center;}
+		tr{background-color:  #ffffff}
+		tr:nth-child(even){background-color: #d9f5e1}
+		.main tr td:nth-child(1){background-color: #80c294}
+	</style>
+</head>
+
+<body>
+	<center><h1>Species Dietary Guide</h1></center>
+	<table align="center" border="1" style="table-layout: fixed;" class="main">
+		DIET_DATA_HERE
+	</table>
+<br />
+	<table align="center" width="300px" border="1" style="table-layout: fixed">
+		<tr>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td>Safe to eat</td>
+		</tr>
+		<tr>
+			<td><font size="6" color="fc8403">✗</font></td>
+			<td>Cannot be digested</td>
+		</tr>
+		<tr>
+			<td><font size="6" color="c91625">✗</font></td>
+			<td>Toxic if ingested</td>
+		</tr>
+	</table>
+</body>
+"}
+
+/obj/structure/sign/poster/contraband/diet_guide/ComponentInitialize()
+	. = ..()
+	if(!diet_guide_text || !LAZYLEN(icon_positions))
+		var/static/list/food_images = list(
+			"Meat, Eggs" = "food-cooked_meat",
+			"Raw Meat" = "food-raw_meat",
+			"Grains" = "food-bread",
+			"Fruits" = "food-fruit",
+			"Veggies" = "food-vegetable",
+			"Dairy" = "food-dairy",
+			"Cloth" = "food-cloth",
+			"Fried Foods" = "food-fried",
+		)
+		var/diet_text_data = "<tr><td width=\"80px\" valign=\"top\" />"
+		var/stamp_x_pos = 81
+		for(var/food_name in food_images) // <img src=\"[food_sprites[food_name]]\" /><br / >
+			diet_text_data += "<th valign=\"center\" width=\"80px\" height=\"80px\"><br/><br/><br/><center>[food_name]</center></th>"
+			icon_positions[food_images[food_name]] = stamp_x_pos
+			stamp_x_pos += 62
+		diet_text_data += "</td></tr>"
+		var/static/list/food_groups = list(MEAT, RAW, GRAIN, FRUIT, VEGETABLES, DAIRY, CLOTH, FRIED)
+		for(var/species_id in GLOB.roundstart_races)
+			var/datum/species/species = GLOB.species_list[species_id]
+			species = new species()
+			if(species.reagent_tag == PROCESS_SYNTHETIC)
+				continue // you don't need a poster to tell you that robots don't eat food
+			if(TRAIT_NOHUNGER in species.inherent_traits)
+				continue // duh
+			diet_text_data += "<tr><td width=\"96px\"><b><center>[species.name]</center></b></td>"
+			for(var/food_group in food_groups)
+				if(species.toxic_food & food_group)
+					diet_text_data += "<td width=\"80px\" ><font size=\"6\" color=\"c91625\"><center>✗</center></font></td>"
+					continue
+				if(species.disliked_food & food_group)
+					diet_text_data += "<td width=\"80px\" ><font size=\"6\" color=\"fc8403\"><center>✗</center></font></td>"
+					continue
+				diet_text_data += "<td width=\"80px\" ><font size=\"6\" color=\"3bbf2a\"><center>✓</center></font></td>"
+			diet_text_data += "</tr>"
+			qdel(species)
+		diet_guide_text = replacetext(base_text, "DIET_DATA_HERE", diet_text_data)
+
+	var/datum/component/writing/diet_guide = AddComponent(/datum/component/writing, \
+		raw_text = diet_guide_text, \
+		window_width = 600, \
+		window_height = 640, \
+		resizable = FALSE, \
+	)
+
+	var/datum/asset/spritesheet/simple/paper_assets = get_asset_datum(/datum/asset/spritesheet/simple/paper)
+	for(var/food_name in icon_positions)
+		diet_guide.add_graphic(paper_assets.icon_class_name(food_name), icon_positions[food_name], 44, 0, food_name)
+
 //beginning of Nanotrasen approved posters. Expect corprate propaganda and motavation. You will usually only see this on Nanotrasen ships and stations
 /obj/structure/sign/poster/official
 	poster_item_name = "motivational poster"
