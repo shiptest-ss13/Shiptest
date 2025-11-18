@@ -27,11 +27,17 @@
 /turf/open/floor/wood/maple
 	color = WOOD_COLOR_PALE
 
+/turf/open/floor/wood/maple/chlorine
+	initial_gas_mix = COMBAT_CHLORINE
+
 /turf/open/floor/wood/ebony
 	color = WOOD_COLOR_BLACK
 
 /turf/open/floor/wood/walnut
 	color = WOOD_COLOR_CHOCOLATE
+
+/turf/open/floor/wood/walnut/chlorine
+	initial_gas_mix = COMBAT_CHLORINE
 
 /turf/open/floor/wood/bamboo
 	color = WOOD_COLOR_PALE2
