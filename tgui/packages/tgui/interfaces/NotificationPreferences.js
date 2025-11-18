@@ -1,9 +1,10 @@
+import { Button, Section } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Section, Button } from '../components';
 import { Window } from '../layouts';
 
-export const NotificationPreferences = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NotificationPreferences = (props) => {
+  const { act, data } = useBackend();
   const ignoresPreSort = data.ignore || [];
   const ignores = ignoresPreSort.sort((a, b) => {
     const descA = a.desc.toLowerCase();
@@ -17,7 +18,7 @@ export const NotificationPreferences = (props, context) => {
     return 0;
   });
   return (
-    <Window title="Notification Preferences" width={270} height={360} resizable>
+    <Window title="Notification Preferences" width={270} height={360}>
       <Window.Content scrollable>
         <Section title="Ghost Role Notifications">
           {ignores.map((ignore) => (

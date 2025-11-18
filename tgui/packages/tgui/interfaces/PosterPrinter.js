@@ -1,9 +1,16 @@
+import {
+  Box,
+  Button,
+  Dropdown,
+  ProgressBar,
+  Section,
+} from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Box, Button, Dropdown, ProgressBar, Section } from '../components';
 import { Window } from '../layouts';
 
-export const PosterPrinter = (props, context) => {
-  const { act, data } = useBackend(context);
+export const PosterPrinter = (props) => {
+  const { act, data } = useBackend();
   const { has_paper, has_toner, has_poster } = data;
 
   return (
@@ -44,8 +51,8 @@ export const PosterPrinter = (props, context) => {
   );
 };
 
-const Toner = (props, context) => {
-  const { act, data } = useBackend(context);
+const Toner = (props) => {
+  const { act, data } = useBackend();
   const { has_toner, max_toner, current_toner } = data;
 
   const average_toner = max_toner * 0.66;
@@ -78,8 +85,8 @@ const Toner = (props, context) => {
   );
 };
 
-const Options = (props, context) => {
-  const { act, data } = useBackend(context);
+const Options = (props) => {
+  const { act, data } = useBackend();
   const { has_toner, poster_type } = data;
 
   const posterTypes = [

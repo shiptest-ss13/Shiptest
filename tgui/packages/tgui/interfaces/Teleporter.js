@@ -1,9 +1,10 @@
+import { Box, Button, LabeledList, Section } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Box, Button, LabeledList, Section } from '../components';
 import { Window } from '../layouts';
 
-export const Teleporter = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Teleporter = (props) => {
+  const { act, data } = useBackend();
   const {
     calibrated,
     calibrating,

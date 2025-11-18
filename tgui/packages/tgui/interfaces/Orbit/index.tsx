@@ -1,21 +1,23 @@
-import { multiline } from '../../../common/string';
+import {
+  Button,
+  Divider,
+  Flex,
+  Icon,
+  Input,
+  Section,
+} from 'tgui-core/components';
+
 import { useBackend, useLocalState } from '../../backend';
-import { Button, Divider, Flex, Icon, Input, Section } from '../../components';
 import { Window } from '../../layouts';
-
 import { searchFor } from './helpers';
-import { OrbitData } from './types';
 import { OrbitContent } from './OrbitContent';
+import { OrbitData } from './types';
 
-export const Orbit = (props, context) => {
-  const { act, data } = useBackend<OrbitData>(context);
+export const Orbit = (props) => {
+  const { act, data } = useBackend<OrbitData>();
 
-  const [searchText, setSearchText] = useLocalState(context, 'searchText', '');
-  const [autoObserve, setAutoObserve] = useLocalState(
-    context,
-    'autoObserve',
-    false
-  );
+  const [searchText, setSearchText] = useLocalState('searchText', '');
+  const [autoObserve, setAutoObserve] = useLocalState('autoObserve', false);
 
   const orbitMostRelevant = () => {
     const mostRelevant = [
@@ -61,7 +63,7 @@ export const Orbit = (props, context) => {
               <Button
                 inline
                 color="transparent"
-                tooltip={multiline`Toggle Auto-Observe. When active, you'll
+                tooltip={`Toggle Auto-Observe. When active, you'll
                 see the UI / full inventory of whoever you're orbiting. Neat!`}
                 tooltipPosition="bottom-start"
                 selected={autoObserve}
