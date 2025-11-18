@@ -41,7 +41,7 @@
 
 /mob/living/simple_animal/hostile/human/hermit/survivor/passive
 	name = "Hermit Villager"
-	desc = "A panicked, wild figure, wearing tattered mining equipment and frozen in fear. They regard you with cautiously, shrinking away as to not be seen."
+	desc = "A panicked, wild figure, wearing tattered mining equipment and frozen in fear. They regard you with caution, shrinking away as to not be seen."
 	r_hand = null
 	melee_damage_lower = 5
 	melee_damage_upper = 5
@@ -301,7 +301,7 @@
 
 /mob/living/simple_animal/hostile/human/hermit/mayor
 	name = "The Mayor"
-	desc = "A blood-red silhouette leveling a wicked battle rifle in your direction. Their suit is worn and damaged, yet still armored. Their stance is trained, alert, unlike many of wanderers nearby."
+	desc = "A blood-red silhouette leveling a wicked battle rifle in your direction. Their suit is worn and damaged, yet still armored. Their stance is trained and alert, unlike many of the wanderers nearby."
 	rapid = 4
 	rapid_fire_delay = 3
 	ranged = 1

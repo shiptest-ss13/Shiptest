@@ -8166,7 +8166,9 @@
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "NS" = (
-/obj/structure/dresser,
+/obj/structure/dresser{
+	climbable = 1
+	},
 /obj/item/weldingtool{
 	pixel_x = -7;
 	pixel_y = -11
