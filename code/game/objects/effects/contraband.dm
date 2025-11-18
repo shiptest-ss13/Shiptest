@@ -561,40 +561,25 @@
 	/// Static list with positioning of the food icons.
 	var/static/list/icon_positions = list()
 	var/base_text = {"
-<head>
-	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
-	<style>
-		h1{font-family: Verdana, Geneva, Tahoma, sans-serif}
-		table{border-collapse: collapse; border-color: rgb(112, 158, 132); font-family: Verdana, Geneva, Tahoma, sans-serif; font-size:14px}
-		th{width:70px; width: #d9f5e1}
-		td{text-align: center;}
-		tr{background-color:  #ffffff}
-		tr:nth-child(even){background-color: #d9f5e1}
-		.main tr td:nth-child(1){background-color: #80c294}
-	</style>
-</head>
-
-<body>
-	<center><h1>Species Dietary Guide</h1></center>
-	<table align="center" border="1" style="table-layout: fixed;" class="main">
-		DIET_DATA_HERE
-	</table>
+<center><h1>Species Dietary Guide</h1></center>
+<table align="center" border="1" style="table-layout: fixed;" class="main">
+	DIET_DATA_HERE
+</table>
 <br />
-	<table align="center" width="300px" border="1" style="table-layout: fixed">
-		<tr>
-			<td><font size="6" color="3bbf2a">✓</font></td>
-			<td>Safe to eat</td>
-		</tr>
-		<tr>
-			<td><font size="6" color="fc8403">✗</font></td>
-			<td>Cannot be digested</td>
-		</tr>
-		<tr>
-			<td><font size="6" color="c91625">✗</font></td>
-			<td>Toxic if ingested</td>
-		</tr>
-	</table>
-</body>
+<table align="center" width="300px" border="1" style="table-layout: fixed">
+	<tr>
+		<td><font size="6" color="3bbf2a">✓</font></td>
+		<td><b>Safe to eat</b></td>
+	</tr>
+	<tr>
+		<td><font size="6" color="fc8403">✗</font></td>
+		<td><b>Cannot be digested</b></td>
+	</tr>
+	<tr>
+		<td><font size="6" color="c91625">✗</font></td>
+		<td><b>Toxic if ingested</b></td>
+	</tr>
+</table>
 "}
 
 /obj/structure/sign/poster/contraband/diet_guide/ComponentInitialize()
