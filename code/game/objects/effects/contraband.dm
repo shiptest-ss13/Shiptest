@@ -562,22 +562,22 @@
 	var/static/list/icon_positions = list()
 	var/base_text = {"
 <center><h1>Species Dietary Guide</h1></center>
-<table align="center" border="1" style="table-layout: fixed;" class="main">
+<table align="center" border="1" cellpadding="0" cellspacing="0" style="table-layout: fixed;" class="main">
 	DIET_DATA_HERE
 </table>
 <br />
-<table align="center" width="300px" border="1" style="table-layout: fixed">
-	<tr>
-		<td><font size="6" color="3bbf2a">✓</font></td>
-		<td><b>Safe to eat</b></td>
+<table align="center" width="300px" border="1" cellpadding="0" cellspacing="0" style="table-layout: fixed">
+	<tr bgcolor="d9f5e1">
+		<td><font size="6" color="3bbf2a"><center>✓</center></font></td>
+		<td><b><center>Safe to eat</b></center></td>
 	</tr>
-	<tr>
-		<td><font size="6" color="fc8403">✗</font></td>
-		<td><b>Cannot be digested</b></td>
+	<tr bgcolor="ffffff">
+		<td><font size="6" color="fc8403"><center>✗</center></font></td>
+		<td><b><center>Cannot be digested</center></b></td>
 	</tr>
-	<tr>
-		<td><font size="6" color="c91625">✗</font></td>
-		<td><b>Toxic if ingested</b></td>
+	<tr bgcolor="d9f5e1">
+		<td><font size="6" color="c91625"><center>✗</center></font></td>
+		<td><b><center>Toxic if ingested</center></b></td>
 	</tr>
 </table>
 "}
@@ -595,13 +595,14 @@
 			"Cloth" = "food-cloth",
 			"Fried Foods" = "food-fried",
 		)
-		var/diet_text_data = "<tr><td width=\"80px\" valign=\"top\" />"
+		var/diet_text_data = "<tr><td width=\"80px\" valign=\"top\" bgcolor=\"80c294\" />"
 		var/stamp_x_pos = 81
 		for(var/food_name in food_images) // <img src=\"[food_sprites[food_name]]\" /><br / >
-			diet_text_data += "<th valign=\"center\" width=\"80px\" height=\"80px\"><br/><br/><br/><center>[food_name]</center></th>"
+			diet_text_data += "<th valign=\"center\" bgcolor=\"ffffff\" width=\"80px\" height=\"80px\"><br/><br/><br/><center>[food_name]</center></th>"
 			icon_positions[food_images[food_name]] = stamp_x_pos
 			stamp_x_pos += 62
 		diet_text_data += "</td></tr>"
+		var/species_count = 0
 		var/static/list/food_groups = list(MEAT, RAW, GRAIN, FRUIT, VEGETABLES, DAIRY, CLOTH, FRIED)
 		for(var/species_id in GLOB.roundstart_races)
 			var/datum/species/species = GLOB.species_list[species_id]
@@ -610,15 +611,18 @@
 				continue // you don't need a poster to tell you that robots don't eat food
 			if(TRAIT_NOHUNGER in species.inherent_traits)
 				continue // duh
-			diet_text_data += "<tr><td width=\"96px\"><b><center>[species.name]</center></b></td>"
+			species_count++
+			diet_text_data += "<tr><td width=\"96px\" bgcolor=\"80c294\"><b><center>[replacetext(species.name, "\improper ", "")]</center></b></td>"
+			var/background_color = (species_count % 2) ? "d9f5e1" : "ffffff"
 			for(var/food_group in food_groups)
+				diet_text_data += "<td width=\"80px\" bgcolor=\"[background_color]\">"
 				if(species.toxic_food & food_group)
-					diet_text_data += "<td width=\"80px\" ><font size=\"6\" color=\"c91625\"><center>✗</center></font></td>"
+					diet_text_data += "<font size=\"6\" color=\"c91625\"><center>✗</center></font></td>"
 					continue
 				if(species.disliked_food & food_group)
-					diet_text_data += "<td width=\"80px\" ><font size=\"6\" color=\"fc8403\"><center>✗</center></font></td>"
+					diet_text_data += "<font size=\"6\" color=\"fc8403\"><center>✗</center></font></td>"
 					continue
-				diet_text_data += "<td width=\"80px\" ><font size=\"6\" color=\"3bbf2a\"><center>✓</center></font></td>"
+				diet_text_data += "<font size=\"6\" color=\"3bbf2a\"><center>✓</center></font></td>"
 			diet_text_data += "</tr>"
 			qdel(species)
 		diet_guide_text = replacetext(base_text, "DIET_DATA_HERE", diet_text_data)
