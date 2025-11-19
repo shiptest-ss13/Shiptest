@@ -2227,9 +2227,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 1;
-	filter_types = list("co2","bz","water_vapor","freon","tritium","n20");
-	widenet = 1
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/syndifort)
@@ -2347,14 +2345,14 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 6
-	},
 /obj/structure/closet/crate/bin{
 	name = "contamination bin";
 	desc = "A bin marked to be used for radioactive waste, such as contaminated suits."
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 4
+	},
+/turf/open/floor/plating/rust,
 /area/ruin/jungle/syndifort)
 "JZ" = (
 /obj/structure/closet/crate/rations,
@@ -3003,9 +3001,7 @@
 	},
 /obj/machinery/light/small/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 1;
-	filter_types = list("co2","bz","water_vapor","freon","tritium","n20");
-	widenet = 1
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/plating/rust,
