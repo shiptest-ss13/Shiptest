@@ -197,7 +197,7 @@
 		update_appearance()
 		return TRUE
 
-/obj/machinery/microwave/AltClick(mob/user)
+/obj/machinery/microwave/attack_hand_secondary(mob/user, list/modifiers)
 	if(user.canUseTopic(src, !issilicon(usr)))
 		cook()
 

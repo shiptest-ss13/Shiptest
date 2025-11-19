@@ -452,7 +452,7 @@ NO_MAG_GUN_HELPER(automatic/smg/expedition)
 	semi_auto = TRUE
 	casing_ejector = TRUE
 
-	refused_attachments = list(/obj/item/attachment/gun)
+	//refused_attachments = list(/obj/item/attachment/gun)
 
 /obj/item/gun/ballistic/shotgun/automatic/negotiator/secondary_action(user)
 	toggle_tube(user)
