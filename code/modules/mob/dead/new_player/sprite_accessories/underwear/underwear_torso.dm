@@ -59,6 +59,14 @@
 	name = "Camisole"
 	icon_state = "camisole"
 
+/datum/sprite_accessory/undershirt/onepiece
+	name = "One Piece Swimsuit"
+	icon_state = "onepiece"
+
+/datum/sprite_accessory/undershirt/onepiece_turtleneck
+	name = "One Piece Turtleneck"
+	icon_state = "onepiece_turtleneck"
+
 /datum/sprite_accessory/undershirt/beekini
 	name = "Bee-Kini Top"
 	icon_state = "beekini"
