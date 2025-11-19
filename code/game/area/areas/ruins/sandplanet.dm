@@ -75,3 +75,66 @@
 
 /area/ruin/whitesands/nomad_stop/food
 	name = "Living Compound"
+
+//Settlement Raid
+
+/area/ruin/whitesands/settlement
+	name = "Planetoid Cavern"
+	icon_state = "green"
+
+/area/ruin/whitesands/settlement/greenhouse
+	name = "Greenhouse"
+	icon_state = "hydro"
+
+/area/ruin/whitesands/settlement/pen
+	name = "Goliath Pen"
+	icon_state = "hydro"
+	always_unpowered = FALSE
+
+/area/ruin/whitesands/settlement/granary
+	name = "Granary"
+	icon_state = "kitchen"
+
+/area/ruin/whitesands/settlement/butcher
+	name = "Butcher Shop"
+	icon_state = "kitchen"
+
+/area/ruin/whitesands/settlement/doctor
+	name = "Doctor Home"
+	icon_state = "surgery"
+
+/area/ruin/whitesands/settlement/roboticist
+	name = "Sand House"
+	icon_state = "robotics"
+
+/area/ruin/whitesands/settlement/residence
+	name = "Sand House"
+	icon_state = "crew_quarters"
+
+/area/ruin/whitesands/settlement/blackmarket
+	name = "Sand House"
+	icon_state = "crew_quarters"
+
+/area/ruin/whitesands/settlement/rancher
+	name = "Rancher House"
+	icon_state = "mining"
+
+/area/ruin/whitesands/settlement/guardshouse
+	name = "Guard Barracks"
+	icon_state = "security"
+
+/area/ruin/whitesands/settlement/fortress
+	name = "Mayor's Fortress"
+	icon_state = "armory"
+
+/area/ruin/whitesands/settlement/shuttle_one
+	name = "Frontiersmen Shuttle"
+	icon_state = "red"
+
+/area/ruin/whitesands/settlement/shuttle_two
+	name = "Frontiersmen Shuttle"
+	icon_state = "red"
+
+/area/ruin/whitesands/settlement/shuttle_three
+	name = "Frontiersmen Shuttle"
+	icon_state = "red"
