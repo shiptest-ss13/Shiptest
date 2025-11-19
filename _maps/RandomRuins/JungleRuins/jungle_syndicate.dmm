@@ -207,16 +207,16 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/machinery/turretid/lethal{
-	pixel_x = -28;
-	desc = "Used to control a facility's automated defenses.";
-	id = "jungle_syndicate_turrets"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 5
+	},
+/obj/structure/filingcabinet{
+	pixel_x = -10;
+	pixel_y = 0;
+	density = 0
 	},
 /turf/open/floor/wood,
 /area/ruin/jungle/syndifort/jerry)
@@ -583,13 +583,6 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/button/door{
-	id = "jungle_syndicate_cargo_door";
-	name = "Storage Room Blast Door";
-	pixel_x = -23;
-	pixel_y = 1;
-	dir = 4
-	},
 /obj/item/radio/intercom/wideband/table{
 	dir = 8;
 	pixel_x = -4;
@@ -936,12 +929,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/syndifort/canteen)
 "oK" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/three_quarters,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/warning/radiation{
 	pixel_y = -32
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 4
+	},
+/turf/open/floor/plating/rust,
 /area/ruin/jungle/syndifort)
 "oL" = (
 /obj/item/chair{
@@ -1181,9 +1176,6 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "qV" = (
 /obj/machinery/light/small/directional/west,
-/obj/structure/flippedtable{
-	dir = 8
-	},
 /obj/item/attachment/rail_light{
 	pixel_x = 0;
 	pixel_y = 5
@@ -1249,7 +1241,7 @@
 	id = "jungle_syndicate_lockdown";
 	name = "Lockdown Blast Doors";
 	pixel_x = -23;
-	pixel_y = 1;
+	pixel_y = -3;
 	dir = 4
 	},
 /obj/item/storage/firstaid/regular{
@@ -1259,6 +1251,19 @@
 /obj/item/gun_maint_kit{
 	pixel_x = -6;
 	pixel_y = 6
+	},
+/obj/machinery/turretid/lethal{
+	pixel_x = -28;
+	desc = "Used to control a facility's automated defenses.";
+	id = "jungle_syndicate_turrets";
+	pixel_y = -15
+	},
+/obj/machinery/button/door{
+	id = "jungle_syndicate_cargo_door";
+	name = "Storage Room Blast Door";
+	pixel_x = -23;
+	pixel_y = 8;
+	dir = 4
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/jungle/syndifort/jerry)
@@ -1888,9 +1893,11 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/opaque/black,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/north,
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 10
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/syndifort)
 "AJ" = (
@@ -3146,6 +3153,9 @@
 	dir = 4;
 	pixel_x = -20;
 	pixel_y = -12
+	},
+/obj/structure/flippedtable{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/syndifort/armory)
