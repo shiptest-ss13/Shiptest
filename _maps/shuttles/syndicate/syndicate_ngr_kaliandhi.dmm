@@ -3466,14 +3466,10 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/smartfridge,
-/obj/item/food/grown/siti,
-/obj/item/food/grown/sososi,
 /obj/item/food/grown/siti,
 /obj/item/food/grown/sososi,
 /obj/item/food/grown/sososi,
 /obj/item/food/grown/siti,
-/obj/item/food/grown/fara_li,
 /obj/item/food/grown/fara_li,
 /obj/item/food/grown/fara_li,
 /obj/item/food/meat/slab/miras,
@@ -3482,23 +3478,21 @@
 /obj/item/reagent_containers/condiment/tiris_sele,
 /obj/item/reagent_containers/condiment/tiris_milk,
 /obj/item/reagent_containers/condiment/tiris_milk,
-/obj/item/reagent_containers/condiment/tiris_milk,
 /obj/item/food/cheese/wheel/tiris,
 /obj/item/food/cheese/wheel/tiris,
 /obj/item/food/grown/dote_berries,
 /obj/item/food/grown/dote_berries,
-/obj/item/food/grown/dote_berries,
-/obj/item/food/meat/slab/tiris,
-/obj/item/food/grown/refa_li,
-/obj/item/food/grown/refa_li,
-/obj/item/food/grown/dote_berries,
 /obj/item/food/grown/refa_li,
 /obj/item/food/grown/refa_li,
 /obj/item/food/meat/slab/tiris,
 /obj/item/food/meat/slab/tiris,
 /obj/item/food/meat/slab/remes,
 /obj/item/food/meat/slab/remes,
-/obj/item/food/meat/slab/remes,
+/obj/structure/closet/secure_closet/freezer{
+	anchored = 1;
+	locked = 0;
+	name = "fridge"
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/office)
 "sA" = (
