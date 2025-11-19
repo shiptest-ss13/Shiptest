@@ -757,6 +757,18 @@
 	if(isliving(user) && in_range(src, user))
 		toggle_safety(user)
 
+/obj/item/gun/attack_hand_secondary(mob/user, list/modifiers)
+	toggle_safety(user)
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
+/obj/item/gun/attackby_secondary(obj/item/weapon, mob/user, params)
+	toggle_safety(user)
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
+/obj/item/gun/attack_self_secondary(mob/user, modifiers)
+	toggle_safety(user)
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
 /obj/item/gun/proc/toggle_safety(mob/user, silent=FALSE)
 	safety = !safety
 

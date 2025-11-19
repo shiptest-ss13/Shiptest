@@ -406,12 +406,17 @@
 	if(!toggle(user))
 		togglelock(user)
 
-/obj/structure/closet/attack_hand_secondary(mob/user, modifiers)
+/obj/structure/closet/AltClick(mob/user)
+	. = ..()
 	if(!user.canUseTopic(src, BE_CLOSE) || !isturf(loc))
 		return
+	togglelock(user)
+	return TRUE
+
+/obj/structure/closet/attack_hand_secondary(mob/user, modifiers)
 	if(!opened && secure)
 		togglelock(user)
-	return TRUE
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/structure/closet/attack_paw(mob/user)
 	return attack_hand(user)

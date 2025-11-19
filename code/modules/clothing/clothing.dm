@@ -422,6 +422,14 @@
 		return
 	..()
 
+/obj/item/clothing/under/attack_hand_secondary(mob/user, list/modifiers)
+	toggle()
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
+/obj/item/clothing/under/attackby_secondary(obj/item/weapon, mob/user, params)
+	toggle()
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
 /obj/item/clothing/under/AltClick(mob/user)
 	if(..())
 		return TRUE
