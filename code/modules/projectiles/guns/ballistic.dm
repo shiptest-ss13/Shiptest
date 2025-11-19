@@ -54,7 +54,6 @@
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
-		/obj/item/attachment/gun,
 		/obj/item/attachment/ammo_counter
 	)
 	slot_available = list(
