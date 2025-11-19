@@ -3107,11 +3107,30 @@
 	name = "equipment locker";
 	req_access = list(1)
 	},
-/obj/item/attachment/gun/energy/e_gun{
-	pixel_x = 3;
+/obj/item/melee/knife/survival{
+	pixel_x = 5;
+	pixel_y = -9
+	},
+/obj/item/melee/knife/survival{
+	pixel_x = 4;
+	pixel_y = -6
+	},
+/obj/item/melee/knife/survival{
+	pixel_x = 1;
+	pixel_y = -5
+	},
+/obj/item/flashlight/seclite{
+	pixel_x = 7;
+	pixel_y = -8
+	},
+/obj/item/flashlight/seclite{
+	pixel_x = 8;
+	pixel_y = -5
+	},
+/obj/item/flashlight/seclite{
+	pixel_x = 6;
 	pixel_y = -1
 	},
-/obj/item/attachment/gun/flare,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "xa" = (
