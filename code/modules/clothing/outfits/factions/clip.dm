@@ -479,7 +479,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/engi
 
 	uniform = /obj/item/clothing/under/clip
-	head = /obj/item/clothing/head/clip
+	head = /obj/item/clothing/head/soft/utility_navy
 	suit =  /obj/item/clothing/suit/hazardvest
 
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
