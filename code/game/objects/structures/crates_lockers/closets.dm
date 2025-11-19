@@ -406,7 +406,8 @@
 	if(!toggle(user))
 		togglelock(user)
 
-/obj/structure/closet/attack_hand_secondary(mob/user, modifiers)
+/obj/structure/closet/AltClick(mob/user)
+	. = ..()
 	if(!user.canUseTopic(src, BE_CLOSE) || !isturf(loc))
 		return
 	if(!opened && secure)
