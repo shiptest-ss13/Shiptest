@@ -102,8 +102,8 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	if(method & VAPOR|INHALE) //smoke, foam, spray, inhalers
 		if(M.reagents)
 			var/modifier = clamp((1 - touch_protection), 0, 1)
-			var/amount = round(reac_volume*modifier, 0.1) - M.reagents.get_reagent_amount(type)
-			if(amount >= metabolization_rate)
+			var/amount = round(reac_volume*modifier, 0.01) - M.reagents.get_reagent_amount(type)
+			if(amount >= metabolization_rate || (method & INHALE))
 				M.reagents.add_reagent(type, amount)
 	SSblackbox.record_feedback("nested tally", "reagent_expose_mob", 1, list("[name]", "[M]", "[method]", "[reac_volume]"))
 	return 1

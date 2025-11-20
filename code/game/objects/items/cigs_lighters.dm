@@ -243,22 +243,21 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		if(iscarbon(loc))
 			var/mob/living/carbon/C = loc
 			if (src == C.wear_mask) // if it's in the human/monkey mouth, transfer reagents to the mob
-				var/fraction = min(REAGENTS_METABOLISM/reagents.total_volume, 1)
 				/*
 				* Given the amount of time the cig will last, and how often we take a hit, find the number
 				* of chems to give them each time so they'll have smoked it all by the end.
 				*/
 				if (smoke_all)
-					to_smoke = reagents.total_volume / (smoketime / dragtime)
+					to_smoke = reagents.total_volume * dragtime / smoketime
+
+				var/fraction = min(to_smoke / reagents.total_volume, 1)
 
 				reagents.expose(C, INHALE, fraction)
-				secondhand_smoke.set_up(reagents, to_smoke, 3, src, silent = TRUE)
-				secondhand_smoke.start()
 				var/obj/item/organ/lungs/L = C.getorganslot(ORGAN_SLOT_LUNGS)
 				if(L && !(L.organ_flags & ORGAN_SYNTHETIC))
 					C.adjustOrganLoss(ORGAN_SLOT_LUNGS, lung_harm)
-				reagents.remove_any(to_smoke)
-				return
+		secondhand_smoke.set_up(reagents, to_smoke, 3, src, silent = TRUE)
+		secondhand_smoke.start()
 		reagents.remove_any(to_smoke)
 
 /obj/item/clothing/mask/cigarette/process(seconds_per_tick)
@@ -360,6 +359,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	item_state = "spliffoff"
 	smoketime = 4 * 60
 	chem_volume = 50
+	smoke_all = TRUE
 	list_reagents = null
 
 /obj/item/clothing/mask/cigarette/rollie/Initialize()
