@@ -748,28 +748,32 @@
 
 /obj/item/gun/CtrlClick(mob/user)
 	. = ..()
-	if(!has_safety)
-		return
-	// only checks for first level storage e.g pockets, hands, suit storage, belts, nothing in containers
-	if(!in_contents_of(user))
-		return
-
 	if(isliving(user) && in_range(src, user))
 		toggle_safety(user)
 
 /obj/item/gun/attack_hand_secondary(mob/user, list/modifiers)
-	toggle_safety(user)
-	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	if(toggle_safety(user))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	return ..()
 
 /obj/item/gun/attackby_secondary(obj/item/weapon, mob/user, params)
-	toggle_safety(user)
-	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	if(toggle_safety(user))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	return ..()
 
 /obj/item/gun/attack_self_secondary(mob/user, modifiers)
-	toggle_safety(user)
-	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	if(toggle_safety(user))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	return ..()
 
 /obj/item/gun/proc/toggle_safety(mob/user, silent=FALSE)
+	if(!has_safety)
+		return FALSE
+
+	// only checks for first level storage e.g pockets, hands, suit storage, belts, nothing in containers
+	if(!in_contents_of(user))
+		return FALSE
+
 	safety = !safety
 
 	if(!silent)
@@ -780,8 +784,9 @@
 		)
 
 	update_appearance()
+	return TRUE
 
-/obj/item/gun/attack_hand(mob/user)
+/obj/item/gun/attack_hand(mob/user, list/modifiers)
 	. = ..()
 	update_appearance()
 

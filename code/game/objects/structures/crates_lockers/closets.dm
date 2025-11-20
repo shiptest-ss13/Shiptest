@@ -275,7 +275,7 @@
 	return TRUE
 
 /obj/structure/closet/welder_act(mob/living/user, obj/item/tool, modifiers)
-	if(user.a_intent != INTENT_HELP && !LAZYACCESS(modifiers, RIGHT_CLICK))
+	if(user.a_intent == INTENT_HARM && !LAZYACCESS(modifiers, RIGHT_CLICK))
 		return FALSE
 	if(!tool.tool_start_check(user, amount=0))
 		return FALSE
@@ -306,7 +306,7 @@
 	return FALSE
 
 /obj/structure/closet/wirecutter_act(mob/living/user, obj/item/tool, modifiers)
-	if(user.a_intent != INTENT_HELP && !(modifiers && modifiers[RIGHT_CLICK]))
+	if(user.a_intent != INTENT_HELP && !LAZYACCESS(modifiers, RIGHT_CLICK))
 		return FALSE
 	if(tool.tool_behaviour != cutting_tool)
 		return FALSE
@@ -316,7 +316,7 @@
 	return TRUE
 
 /obj/structure/closet/wrench_act(mob/living/user, obj/item/tool, modifiers)
-	if(user.a_intent != INTENT_HELP && !(modifiers && modifiers[RIGHT_CLICK]))
+	if(user.a_intent != INTENT_HELP && !LAZYACCESS(modifiers, RIGHT_CLICK))
 		return FALSE
 	if(!anchorable)
 		return FALSE

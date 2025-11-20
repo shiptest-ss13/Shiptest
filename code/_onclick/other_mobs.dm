@@ -24,14 +24,14 @@
 		return
 
 	SEND_SIGNAL(src, COMSIG_HUMAN_MELEE_UNARMED_ATTACK, A, modifiers)
-	if(modifiers[RIGHT_CLICK])
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
 		var/secondary_result = A.attack_hand_secondary(src, modifiers)
 		if(secondary_result == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN || secondary_result == SECONDARY_ATTACK_CONTINUE_CHAIN)
 			return
 		else if(secondary_result != SECONDARY_ATTACK_CALL_NORMAL)
 			CRASH("attack_hand_secondary did not return a SECONDARY_ATTACK_* define.")
 
-	A.attack_hand(src)
+	A.attack_hand(src, modifiers)
 
 /// Return TRUE to cancel other attack hand effects that respect it.
 /atom/proc/attack_hand(mob/user)
@@ -215,11 +215,11 @@
 	Simple animals
 */
 
-/mob/living/simple_animal/UnarmedAttack(atom/A, proximity)
+/mob/living/simple_animal/UnarmedAttack(atom/A, proximity, params)
 	if(!dextrous)
 		return ..()
 	if(!ismob(A))
-		A.attack_hand(src)
+		A.attack_hand(src, params2list(params))
 		update_inv_hands()
 
 
