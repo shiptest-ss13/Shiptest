@@ -10,7 +10,7 @@
 /obj/item/proc/melee_attack_chain(mob/user, atom/target, params)
 	var/is_right_clicking = LAZYACCESS(params2list(params), RIGHT_CLICK)
 
-	if(tool_behaviour && (target.tool_act(user, src, tool_behaviour, is_right_clicking)))
+	if(tool_behaviour && (target.tool_act(user, src, tool_behaviour, params)))
 		return TRUE
 
 	var/pre_attack_result

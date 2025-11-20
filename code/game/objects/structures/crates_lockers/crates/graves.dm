@@ -33,7 +33,8 @@
 	else
 		to_chat(user, span_notice("The grave has already been dug up."))
 
-/obj/structure/closet/crate/grave/tool_interact(obj/item/S, mob/living/carbon/user)
+/obj/structure/closet/crate/grave/shovel_act(mob/living/user, obj/item/S, list/modifiers)
+	. = ..()
 	if(user.a_intent == INTENT_HELP) //checks to attempt to dig the grave, must be done on help intent only.
 		if(!opened)
 			if(S.tool_behaviour == cutting_tool)
@@ -61,7 +62,7 @@
 				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "graverobbing", /datum/mood_event/graverobbing)
 				deconstruct(TRUE)
 				return TRUE
-	return
+	return TRUE
 
 /obj/structure/closet/crate/grave/bust_open()
 	..()
