@@ -93,7 +93,7 @@
 	. = ..()
 	if(gloves)
 		var/obj/item/clothing/gloves/G = gloves
-		if(istype(G) && G.Touch(A,0)) // for magic gloves
+		if(istype(G) && G.Touch(A, 0, params2list(mouseparams))) // for magic gloves
 			return
 
 	if(isturf(A) && get_dist(src,A) <= 1)
@@ -103,11 +103,11 @@
 /*
 	Animals & All Unspecified
 */
-/mob/living/UnarmedAttack(atom/A)
+/mob/living/UnarmedAttack(atom/A, proximity, list/modifiers)
 	A.attack_animal(src)
 	return TRUE
 
-/atom/proc/attack_animal(mob/user)
+/atom/proc/attack_animal(mob/user, list/modifiers)
 	SEND_SIGNAL(src, COMSIG_ATOM_ATTACK_ANIMAL, user)
 
 /atom/proc/attack_basic_mob(mob/user, list/modifiers)
@@ -116,7 +116,7 @@
 /*
 	Monkeys
 */
-/mob/living/carbon/monkey/UnarmedAttack(atom/A)
+/mob/living/carbon/monkey/UnarmedAttack(atom/A, proximity, list/modifiers)
 	if(HAS_TRAIT(src, TRAIT_HANDS_BLOCKED))
 		if(a_intent != INTENT_HARM || is_muzzled())
 			return
