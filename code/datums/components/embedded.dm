@@ -269,7 +269,7 @@
 
 	if(ishuman(victim)) // check to see if the limb is actually exposed
 		var/mob/living/carbon/human/victim_human = victim
-		if(!victim_human.can_inject(user, TRUE, limb.body_zone, ignore_species = TRUE))
+		if(!victim_human.can_inject(user, TRUE, limb.body_zone, injection_flags = INJECT_CHECK_IGNORE_SPECIES))
 			return TRUE
 
 	INVOKE_ASYNC(src, PROC_REF(tweezePluck), possible_tweezers, user)
