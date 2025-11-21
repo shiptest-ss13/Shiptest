@@ -33,21 +33,9 @@
 
 //more specialised stuff
 /proc/sanitize_gender(gender, possible_genders = list(MALE, FEMALE, PLURAL, NEUTER))
-	default ||= pick(MALE, FEMALE)
-	switch(gender)
-		if(MALE, FEMALE)
-			return gender
-		if(NEUTER)
-			if(neuter)
-				return gender
-			else
-				return default
-		if(PLURAL)
-			if(plural)
-				return gender
-			else
-				return default
-	return default
+	if(!(gender in possible_genders))
+		return pick(possible_genders)
+	return gender
 
 /proc/sanitize_hexcolor(color, desired_format = 6, include_crunch = FALSE, default)
 	var/crunch = include_crunch ? "#" : ""
