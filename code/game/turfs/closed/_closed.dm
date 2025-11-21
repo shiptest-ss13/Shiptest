@@ -209,8 +209,7 @@
 
 	var/turf/T = user.loc	//get user's location for delay checks
 
-	if(attack_override(W, user, T, params2list(params)))
-		return TRUE
+	attack_override(W, user, T, params2list(params))
 	return ..()
 
 /turf/closed/proc/attack_override(obj/item/W, mob/user, turf/loc, list/modifiers)

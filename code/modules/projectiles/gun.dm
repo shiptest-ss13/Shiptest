@@ -429,7 +429,7 @@
 /obj/item/gun/examine_more(mob/user)
 	. = ..()
 	if(has_safety)
-		. += "The safety is [safety ? span_green("ON") : span_red("OFF")]. Ctrl-Click to toggle the safety."
+		. += "The safety is [safety ? span_green("ON") : span_red("OFF")]. Right-Click to toggle the safety."
 
 	if(gun_firemodes.len > 1)
 		. += "You can change the [src]'s firemode by pressing the <b>secondary action</b> key. By default, this is <b>Shift + Space</b>"
