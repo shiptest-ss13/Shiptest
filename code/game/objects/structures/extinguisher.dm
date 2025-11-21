@@ -31,7 +31,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 28)
 
 /obj/structure/extinguisher_cabinet/examine(mob/user)
 	. = ..()
-	. += span_notice("Alt-click to [opened ? "close":"open"] it.")
+	. += span_notice("Right-click to [opened ? "close":"open"] it.")
 
 /obj/structure/extinguisher_cabinet/Destroy()
 	if(stored_extinguisher)
@@ -99,6 +99,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 28)
 	else
 		toggle_cabinet(user)
 
+/obj/structure/extinguisher_cabinet/attack_hand_secondary(mob/user, list/modifiers)
+	toggle_cabinet(user)
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/structure/extinguisher_cabinet/attack_tk(mob/user)
 	if(stored_extinguisher)
