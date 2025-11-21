@@ -165,12 +165,29 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "aW" = (
-/obj/structure/closet/secure_closet/wall/directional/south{
-	name = "doctor's locker";
-	req_access_txt = "33"
-	},
 /obj/effect/turf_decal/corner/opaque/cybersunteal/border{
 	dir = 4
+	},
+/obj/structure/closet/wall/directional/south,
+/obj/item/clipboard{
+	pixel_y = -6;
+	pixel_x = -7
+	},
+/obj/item/clipboard{
+	pixel_y = -6;
+	pixel_x = 6
+	},
+/obj/item/pen/fourcolor{
+	pixel_y = -7;
+	pixel_x = -5
+	},
+/obj/item/pen/fourcolor{
+	pixel_y = -7;
+	pixel_x = 4
+	},
+/obj/item/paper_bin{
+	pixel_y = 9;
+	pixel_x = 7
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -518,6 +535,10 @@
 "dd" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/syndiered/mono,
+/obj/machinery/recharger{
+	pixel_y = 6;
+	pixel_x = -6
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/storage/equip)
 "df" = (
@@ -2929,6 +2950,11 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/warning{
 	dir = 4
 	},
+/obj/structure/noticeboard{
+	dir = 1;
+	pixel_y = -25;
+	name = "cargo manifest board"
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "vG" = (
@@ -3939,9 +3965,9 @@
 	pixel_y = 8;
 	pixel_x = 6
 	},
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#E6D2BA";
-	dir = 8
+/obj/effect/turf_decal/siding/wood{
+	color = "#792f27";
+	dir = 9
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/dorm/commad)
@@ -4950,10 +4976,6 @@
 	pixel_y = 15;
 	pixel_x = -14
 	},
-/obj/item/disk/surgery/cybersun{
-	pixel_x = 5;
-	pixel_y = 4
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical/surgery)
 "NS" = (
@@ -5072,6 +5094,10 @@
 	dir = 4
 	},
 /obj/structure/extinguisher_cabinet/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = 10;
+	pixel_y = 20
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "Pe" = (
@@ -5564,6 +5590,11 @@
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -20;
+	pixel_x = 12
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Sw" = (
@@ -5761,16 +5792,16 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/light/small/directional/east,
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#E6D2BA";
-	dir = 4
-	},
 /obj/machinery/button/door{
 	dir = 8;
 	pixel_y = -10;
 	pixel_x = 22;
 	name = "shutter control";
 	id = "cnwin3"
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#792f27";
+	dir = 5
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/dorm/commad)
@@ -6419,6 +6450,11 @@
 	},
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -20;
+	pixel_x = 11
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
