@@ -17,6 +17,8 @@
 	/// How much spread does a shot have?
 	var/spread
 	/// Tracks time between shots
+	var/spread = 0
+	/// projectile spread
 	COOLDOWN_DECLARE(fire_cooldown)
 
 /datum/component/ranged_attacks/Initialize(
@@ -67,7 +69,7 @@
 		var/obj/item/ammo_casing/casing = new casing_type(startloc)
 		playsound(firer, projectile_sound, 100, TRUE)
 		casing.fire_casing(target, firer, null, null, null, ran_zone(), rand(-spread, spread), firer)
-		casing.on_eject(src)
+		casing.on_eject(firer)
 
 	else if(projectile_type)
 		var/obj/projectile/P = new projectile_type(startloc)

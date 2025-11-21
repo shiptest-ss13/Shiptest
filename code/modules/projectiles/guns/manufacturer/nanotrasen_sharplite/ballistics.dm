@@ -290,6 +290,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 			"y" = 17,
 		)
 	)
+NO_MAG_GUN_HELPER(automatic/smg/expedition)
 
 /obj/item/ammo_box/magazine/m9mm_expedition
 	name = "expedition submachinegun magazine (9x18mm)"
@@ -451,7 +452,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 	semi_auto = TRUE
 	casing_ejector = TRUE
 
-	refused_attachments = list(/obj/item/attachment/gun)
+	//refused_attachments = list(/obj/item/attachment/gun)
 
 /obj/item/gun/ballistic/shotgun/automatic/negotiator/secondary_action(user)
 	toggle_tube(user)
