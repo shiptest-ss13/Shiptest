@@ -43,7 +43,7 @@
 
 /// In which we print the message that we're starting to heal someone, then we try healing them. Does the do_after whether or not it can actually succeed on a targeted mob
 /obj/item/stack/medical/proc/try_heal(mob/living/patient, mob/user, silent = FALSE)
-	if(!patient.can_inject(user, check_zone(user.zone_selected)))
+	if(!patient.can_inject(user))
 		return
 
 	if(patient == user)
