@@ -255,8 +255,12 @@
 /obj/structure/closet/attackby(obj/item/attacking_item, mob/user, params)
 	if(user in src)
 		return
+	if(user.a_intent == INTENT_HARM)
+		return ..()
 	if(attacking_item.GetID()) //if you're hitting with an id item, toggle the lock
 		togglelock(user)
+		return TRUE
+	if(opened && user.transferItemToLoc(attacking_item, drop_location())) //try to transfer the held item to it
 		return TRUE
 	else
 		return ..()
