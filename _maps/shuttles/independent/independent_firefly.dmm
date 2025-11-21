@@ -2095,6 +2095,7 @@
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/aft)
 "zU" = (
@@ -3042,6 +3043,11 @@
 /obj/item/radio{
 	pixel_x = 6;
 	pixel_y = 9
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -21;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
