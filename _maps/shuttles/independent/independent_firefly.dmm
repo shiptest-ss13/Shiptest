@@ -2194,7 +2194,9 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
 "AJ" = (
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
+	},
 /obj/item/ammo_box/magazine/spitter_9mm{
 	pixel_x = 6;
 	pixel_y = -2
