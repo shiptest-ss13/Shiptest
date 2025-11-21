@@ -534,7 +534,7 @@
 	else if(HAS_TRAIT(src, TRAIT_PIERCEIMMUNE))
 		. = FALSE
 	if(user && !target_zone)
-		target_zone = get_bodypart(check_zone(user.zone_selected)) //try to find a bodypa
+		target_zone = get_bodypart(check_zone(user.zone_selected)) //try to find a bodypart. if there isn't one, target_zone will be null, and check_zone in the next line will default to the chest.
 	var/obj/item/bodypart/the_part = isbodypart(target_zone) ? target_zone : get_bodypart(check_zone(target_zone)) //keep these synced
 	// Loop through the clothing covering this bodypart and see if there's any thiccmaterials
 	if(!(injection_flags & INJECT_CHECK_PENETRATE_THICK))
