@@ -32,7 +32,8 @@
 			. += value
 
 //more specialised stuff
-/proc/sanitize_gender(gender,neuter=0,plural=1, default="male")
+/proc/sanitize_gender(gender, possible_genders = list(MALE, FEMALE, PLURAL, NEUTER))
+	default ||= pick(MALE, FEMALE)
 	switch(gender)
 		if(MALE, FEMALE)
 			return gender
