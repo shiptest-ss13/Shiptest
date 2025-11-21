@@ -399,7 +399,7 @@
 	var/spray_self = SELF_SPRAY
 	var/inject_self = SELF_INJECT
 	var/quickload = FALSE
-	var/penetrates = TRUE
+	var/inject_flags = INJECT_CHECK_PENETRATE_THICK
 
 /obj/item/hypospray/mkii/brute
 	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/indomide
@@ -514,7 +514,6 @@
 	spray_wait = COMBAT_WAIT_SPRAY
 	spray_self = COMBAT_SELF_INJECT
 	inject_self = COMBAT_SELF_SPRAY
-	penetrates = TRUE
 	to_chat(user, "You overcharge [src]'s control circuit.")
 	obj_flags |= EMAGGED
 	return TRUE
@@ -538,7 +537,7 @@
 	var/mob/living/L
 	if(isliving(target))
 		L = target
-		if(!penetrates && !L.can_inject(user, 1)) //This check appears another four times, since otherwise the penetrating sprays will break in do_after.
+		if(!L.can_inject(user, injection_flags = inject_flags)) //This check appears another four times, since otherwise the penetrating sprays will break in do_after.
 			return
 
 	if(!L && !target.is_injectable()) //only checks on non-living mobs, due to how can_inject() handles
@@ -570,8 +569,6 @@
 										span_userdanger("[user] is trying to inject [L] with [src]!"))
 						if(!do_after(user, inject_wait, L))
 							return
-						if(!penetrates && !L.can_inject(user, 1))
-							return
 						if(!vial.reagents.total_volume)
 							return
 						if(L.reagents.total_volume >= L.reagents.maximum_volume)
@@ -580,8 +577,6 @@
 										span_userdanger("[user] uses the [src] on [L]!"))
 					else
 						if(!do_after(user, inject_self, L))
-							return
-						if(!penetrates && !L.can_inject(user, 1))
 							return
 						if(!vial.reagents.total_volume)
 							return
@@ -606,8 +601,6 @@
 										span_userdanger("[user] is trying to spray [L] with [src]!"))
 						if(!do_after(user, spray_wait, L))
 							return
-						if(!penetrates && !L.can_inject(user, 1))
-							return
 						if(!vial.reagents.total_volume)
 							return
 						if(L.reagents.total_volume >= L.reagents.maximum_volume)
@@ -616,8 +609,6 @@
 										span_userdanger("[user] uses the [src] on [L]!"))
 					else
 						if(!do_after(user, spray_self, L))
-							return
-						if(!penetrates && !L.can_inject(user, 1))
 							return
 						if(!vial.reagents.total_volume)
 							return

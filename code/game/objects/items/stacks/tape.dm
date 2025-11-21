@@ -162,11 +162,11 @@
 	if(C == user)
 		playsound(loc, usesound, 30, TRUE, -2)
 		user.visible_message(span_notice("[user] starts to apply \the [src] on [user.p_them()]self..."), span_notice("You begin applying \the [src] on yourself..."))
-		if(!do_after(user, self_delay, C, extra_checks=CALLBACK(C, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
+		if(!do_after(user, self_delay, C, extra_checks=CALLBACK(C, TYPE_PROC_REF(/mob/living, can_inject), user)))
 			return
 	else if(other_delay)
 		user.visible_message(span_notice("[user] starts to apply \the [src] on [C]."), span_notice("You begin applying \the [src] on [C]..."))
-		if(!do_after(user, other_delay, C, extra_checks=CALLBACK(C, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
+		if(!do_after(user, other_delay, C, extra_checks=CALLBACK(C, TYPE_PROC_REF(/mob/living, can_inject), user)))
 			return
 
 	if(heal(C, user))
