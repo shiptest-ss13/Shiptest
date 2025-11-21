@@ -298,6 +298,10 @@
 	dir = 5
 	},
 /obj/machinery/light/small/directional/south,
+/obj/machinery/iv_drip{
+	pixel_x = 5;
+	pixel_y = 21
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "cW" = (
@@ -451,6 +455,14 @@
 	},
 /obj/structure/table,
 /obj/structure/bedsheetbin,
+/obj/machinery/firealarm/directional/south{
+	pixel_x = 5;
+	pixel_y = -32
+	},
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = -7;
+	pixel_y = -28
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/toilet)
 "eT" = (
@@ -4123,6 +4135,18 @@
 /obj/item/bonesetter{
 	pixel_y = -2;
 	pixel_x = 5
+	},
+/obj/item/reagent_containers/blood/lizard{
+	pixel_x = 9;
+	pixel_y = 14
+	},
+/obj/item/reagent_containers/blood/OMinus{
+	pixel_x = 9;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/blood/elzuose{
+	pixel_x = 10;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
