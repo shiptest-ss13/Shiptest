@@ -2085,7 +2085,6 @@
 	pixel_y = -21;
 	pixel_x = -11;
 	specialfunctions = 4;
-	normaldoorcontrol = 1;
 	dir = 1
 	},
 /turf/open/floor/carpet/black,
@@ -3346,6 +3345,10 @@
 	icon_state = "wood-broken7"
 	},
 /area/ship/crew/ccommons)
+"NL" = (
+/obj/item/folder,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/medical)
 "OL" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -3660,16 +3663,6 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/hallway/central)
-"SD" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
-/obj/structure/sign/poster/official/safety_internals{
-	pixel_x = 0;
-	pixel_y = -30
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
 "SH" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -3792,6 +3785,16 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/aft)
+"TG" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/sign/poster/official/safety_internals{
+	pixel_x = 0;
+	pixel_y = -30
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "TJ" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
@@ -4296,10 +4299,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
-"ZE" = (
-/obj/item/folder,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/medical)
 "ZS" = (
 /obj/structure/table/chem,
 /obj/structure/closet/secure_closet/wall/directional/west{
@@ -4570,7 +4569,7 @@ jW
 "}
 (8,1,1) = {"
 Ke
-ZE
+NL
 Ke
 Ke
 xb
@@ -4729,7 +4728,7 @@ jW
 cW
 Hr
 Jm
-SD
+TG
 cW
 Lc
 UL
