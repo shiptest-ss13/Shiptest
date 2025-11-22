@@ -470,7 +470,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plastic,
+/obj/effect/turf_decal/corner/transparent/black/diagonal,
+/turf/open/floor/plasteel/mono/white,
 /area/ship/crew/toilet)
 "eJ" = (
 /obj/machinery/door/firedoor/border_only,
@@ -702,6 +703,12 @@
 /obj/structure/extinguisher_cabinet/directional/east{
 	pixel_y = -7
 	},
+/obj/structure/noticeboard{
+	pixel_y = -25;
+	dir = 1
+	},
+/obj/item/paper/fluff/ship/pgf/lifesaving,
+/obj/item/paper/fluff/ship/pgf/triage,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
 "gX" = (
@@ -1134,7 +1141,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/toilet)
 "nt" = (
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5
 	},
@@ -1143,6 +1149,12 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
+	},
+/obj/machinery/firealarm/directional/north{
+	pixel_x = -6
+	},
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = 6
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
@@ -1541,6 +1553,18 @@
 	pixel_y = -10;
 	pixel_x = -6
 	},
+/obj/item/assembly/flash{
+	pixel_x = -13;
+	pixel_y = 10
+	},
+/obj/item/assembly/flash{
+	pixel_x = -9;
+	pixel_y = 10
+	},
+/obj/item/assembly/flash{
+	pixel_x = -5;
+	pixel_y = 10
+	},
 /obj/item/melee/knife/survival{
 	pixel_y = 3;
 	pixel_x = -9
@@ -1734,6 +1758,9 @@
 	pixel_y = 15;
 	pixel_x = 1
 	},
+/obj/item/radio/headset/pgf/alt,
+/obj/item/radio/headset/pgf/alt,
+/obj/item/radio/headset/pgf/alt,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "vN" = (
@@ -2149,6 +2176,10 @@
 /obj/structure/bed/roller,
 /obj/effect/turf_decal/industrial/hatch/blue,
 /obj/machinery/airalarm/directional/north,
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = 0;
+	pixel_x = 28
+	},
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
 "DQ" = (
@@ -2256,6 +2287,10 @@
 	pixel_x = -10;
 	pixel_y = 0
 	},
+/obj/item/stack/medical/splint/twelve{
+	pixel_y = 2;
+	pixel_x = 3
+	},
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
 "EZ" = (
@@ -2343,7 +2378,8 @@
 	icon_state = "0-1"
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
-/turf/open/floor/plastic,
+/obj/effect/turf_decal/corner/transparent/black/diagonal,
+/turf/open/floor/plasteel/mono/white,
 /area/ship/crew/toilet)
 "FI" = (
 /obj/structure/closet/crate/trashcart,
@@ -2889,6 +2925,10 @@
 	pixel_y = 3;
 	pixel_x = -1
 	},
+/obj/item/megaphone/command{
+	pixel_x = -5;
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Ly" = (
@@ -3219,7 +3259,6 @@
 /obj/item/storage/ration/assorted_salted_offal,
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/reagent_containers/food/drinks/waterbottle,
 /obj/item/reagent_containers/food/drinks/waterbottle,
 /obj/item/reagent_containers/food/drinks/waterbottle,
@@ -3227,6 +3266,10 @@
 /obj/item/reagent_containers/food/drinks/waterbottle,
 /obj/item/reagent_containers/food/drinks/waterbottle,
 /obj/item/storage/cans/sixsoda,
+/obj/item/storage/ration/beef_strips,
+/obj/structure/sign/poster/radio/vkxs{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "Rd" = (
@@ -3662,7 +3705,8 @@
 	density = 0;
 	should_we_be_dense = 0
 	},
-/turf/open/floor/plastic,
+/obj/effect/turf_decal/corner/transparent/black/diagonal,
+/turf/open/floor/plasteel/mono/white,
 /area/ship/crew/toilet)
 "WW" = (
 /obj/machinery/door/airlock/command{
@@ -3997,7 +4041,7 @@ sB
 (7,1,1) = {"
 sB
 sB
-fY
+ZV
 ZV
 ZV
 ZV
