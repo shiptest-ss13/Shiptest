@@ -859,6 +859,16 @@
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
+"kr" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/machinery/computer/helm/viewscreen/directional/east{
+	pixel_x = 17;
+	pixel_y = 9
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/crew/dorm)
 "ky" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/beer/light{
@@ -3800,16 +3810,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/starboard)
-"Vp" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/obj/machinery/computer/helm/viewscreen/directional/east{
-	pixel_x = 17;
-	pixel_y = 9
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/crew/dorm)
 "Vx" = (
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -3916,15 +3916,15 @@
 /turf/open/floor/plating,
 /area/ship/crew/ccommons)
 "WU" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
 /obj/effect/turf_decal/trimline/opaque/red/filled/corner{
 	dir = 4
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable/green{
 	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -4310,7 +4310,7 @@ Ke
 Ke
 Ke
 uJ
-Vp
+kr
 sY
 Gj
 ZW
