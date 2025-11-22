@@ -15,10 +15,8 @@
 	/// Time to wait between shots
 	var/cooldown_time
 	/// How much spread does a shot have?
-	var/spread
+	var/spread = 2
 	/// Tracks time between shots
-	var/spread = 0
-	/// projectile spread
 	COOLDOWN_DECLARE(fire_cooldown)
 
 /datum/component/ranged_attacks/Initialize(

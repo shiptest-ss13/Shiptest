@@ -130,7 +130,7 @@
 	name = "hijacked heavy hivebot"
 	desc = "A towering scrap-clad monolith. Hatred radiates out from the sensors that adorn it, a thin steel plate proclaiming 'FREE THE FRONTIER' around its front. Integrated Spitters are attached to its sides."
 	calibre = /obj/item/ammo_casing/c9mm
-	hivebot_spread = 15
+	firing_spread = 15
 	firing_sound = 'sound/weapons/gun/smg/spitter.ogg'
 	faction = list(FACTION_ANTAG_FRONTIERSMEN)
 	ai_controller = /datum/ai_controller/basic_controller/hivebot/ranged/frontier
