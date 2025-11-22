@@ -121,8 +121,7 @@
 					if(0)
 						to_chat(victim, span_deadsay("<b>The last of the nerve endings in your [limb.name] wither away.</b>"))
 						threshold_penalty = 120 // piss easy to destroy
-						var/datum/brain_trauma/severe/paralysis/sepsis = new (limb.body_zone)
-						victim.gain_trauma(sepsis)
+						set_disabling(TRUE)
 				strikes_to_lose_limb--
 
 /datum/wound/burn/get_examine_description(mob/user)
