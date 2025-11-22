@@ -1159,7 +1159,7 @@ SUBSYSTEM_DEF(overmap)
 	has_outpost = FALSE
 	can_be_selected_randomly = FALSE
 	encounters_refresh = TRUE
-	max_overmap_dynamic_events = 15
+	max_overmap_dynamic_events = 25
 
 /datum/overmap_star_system/shiptest/create_map()
 	. = ..()
