@@ -140,14 +140,12 @@
 	layer = 2.030;
 	dir = 8
 	},
-/obj/machinery/power/apc/away{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable/yellow,
 /obj/effect/turf_decal/trimline/opaque/tan/line{
 	dir = 4
 	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/canteen)
 "aL" = (
@@ -275,9 +273,6 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/security)
 "be" = (
-/obj/machinery/power/apc/away{
-	dir = 8
-	},
 /obj/structure/cable/yellow,
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -285,6 +280,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 4
 	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/outpost/operations)
 "bf" = (
@@ -904,13 +900,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/apc/away{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plating,
 /area/outpost/engineering/atmospherics)
 "du" = (
@@ -2967,12 +2961,10 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/apc/away{
-	dir = 1
-	},
 /obj/effect/turf_decal/industrial/fire/corner{
 	dir = 1
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plating,
 /area/outpost/maintenance/central)
 "lC" = (
@@ -3563,13 +3555,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/power/apc/away,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 10
 	},
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew)
 "nC" = (
@@ -3581,10 +3573,8 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/power/apc/away{
-	dir = 8
-	},
 /obj/structure/cable/yellow,
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo/office)
 "nD" = (
@@ -3656,9 +3646,9 @@
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 6
 	},
-/obj/machinery/power/apc/away,
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/outpost/maintenance/central)
 "nQ" = (
@@ -5123,12 +5113,10 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 6
 	},
-/obj/machinery/power/apc/away{
-	dir = 4
-	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7{
 	dir = 4
 	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/outpost/security)
 "tw" = (
@@ -5458,9 +5446,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc/away{
-	dir = 1
-	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plating/rust,
 /area/outpost/maintenance/central)
 "uP" = (
@@ -5619,9 +5605,6 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
 	},
-/obj/machinery/power/apc/away{
-	dir = 1
-	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7{
 	dir = 1
 	},
@@ -5629,6 +5612,7 @@
 	pixel_x = -12;
 	pixel_y = 22
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo)
 "vy" = (
@@ -6261,12 +6245,10 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 10
 	},
-/obj/machinery/power/apc/away{
-	dir = 8
-	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7{
 	dir = 8
 	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
 "xD" = (
@@ -6428,9 +6410,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/light/directional/south,
-/obj/machinery/power/apc/away{
-	dir = 4
-	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/crew/cryo)
 "yr" = (
@@ -8236,7 +8216,6 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/power/apc/away,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -8245,6 +8224,7 @@
 	pixel_x = 11;
 	pixel_y = -20
 	},
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plating,
 /area/outpost/crew/dorm)
 "FY" = (
@@ -8714,11 +8694,11 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 2
 	},
-/obj/machinery/power/apc/away,
 /obj/structure/cable/yellow,
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/checkpoint)
 "HK" = (
@@ -9543,9 +9523,6 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/power/apc/away{
-	dir = 8
-	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7{
 	dir = 1
 	},
@@ -9553,6 +9530,7 @@
 /obj/machinery/camera{
 	dir = 4
 	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel,
 /area/outpost/crew/canteen)
 "Lb" = (
@@ -9814,12 +9792,10 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 6
 	},
-/obj/machinery/power/apc/away{
-	dir = 4
-	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7{
 	dir = 4
 	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/bar)
 "LW" = (
@@ -10149,12 +10125,10 @@
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 1
 	},
-/obj/machinery/power/apc/away{
-	dir = 8
-	},
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/outpost/security/armory)
 "Nb" = (
@@ -12090,15 +12064,13 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/apc/away{
-	dir = 4
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7{
 	dir = 4
 	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/lounge)
 "UI" = (
@@ -12927,9 +12899,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable/yellow,
-/obj/machinery/power/apc/away{
-	dir = 4
-	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/pod/dark,
 /area/outpost/engineering)
 "XX" = (
