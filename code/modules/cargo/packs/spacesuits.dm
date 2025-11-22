@@ -411,6 +411,17 @@
 
 //srm
 
+/datum/supply_pack/spacesuits/roumain_miningsuit
+	name = "Roumain Hunter's Hardsuit Crate"
+	desc = "A hardsuit manufactured by Hunter's Pride, widely used by a variety of hunters in the Saint-Roumain Militia."
+	cost = 2500
+	contains = list(/obj/item/clothing/suit/space/hardsuit/solgov/roumain)
+	crate_name = "roumain hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/srm
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/spacesuits/roumain_hardsuit
 	name = "Roumain Hardsuit Crate"
 	desc = "A hardsuit hand-crafted to resemble plate armor of yore, the Roumain Hardsuit allows the wearer to swiftly move whilst on the hunt, while protecting them from the beasts around them."
