@@ -129,6 +129,10 @@
 	screen_loc = "WEST,SOUTH to EAST,NORTH"
 	icon_state = "druggy"
 
+/atom/movable/screen/fullscreen/stars
+	icon_state = "stars"
+	plane = HIGH_GAME_PLANE
+
 /atom/movable/screen/fullscreen/color_vision
 	icon = 'icons/hud/screen_gen.dmi'
 	screen_loc = "WEST,SOUTH to EAST,NORTH"
