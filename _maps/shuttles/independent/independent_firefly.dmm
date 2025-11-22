@@ -859,16 +859,6 @@
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
-"kr" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/obj/machinery/computer/helm/viewscreen/directional/east{
-	pixel_x = 17;
-	pixel_y = 9
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/crew/dorm)
 "ky" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/beer/light{
@@ -2650,6 +2640,7 @@
 /area/ship/crew/ccommons)
 "GV" = (
 /obj/machinery/light/directional/east,
+/obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Hr" = (
@@ -3620,16 +3611,15 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "Tk" = (
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
-/obj/structure/window/reinforced{
-	dir = 8
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
 	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "fireport"
+/obj/machinery/computer/helm/viewscreen/directional/east{
+	pixel_x = 17;
+	pixel_y = 9
 	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/engineering/engines/starboard)
+/turf/open/floor/plasteel/tech,
+/area/ship/crew/dorm)
 "Tt" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
@@ -4239,7 +4229,7 @@ Np
 vP
 Xs
 qN
-Tk
+Ao
 Ao
 qN
 dF
@@ -4310,7 +4300,7 @@ Ke
 Ke
 Ke
 uJ
-kr
+Tk
 sY
 Gj
 ZW
