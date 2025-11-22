@@ -33,11 +33,11 @@
 
 /datum/component/bakeable/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_ITEM_BAKED, PROC_REF(on_bake))
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
+	RegisterSignal(parent, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
 
 /datum/component/bakeable/UnregisterFromParent()
 	. = ..()
-	UnregisterSignal(parent, list(COMSIG_ITEM_BAKED, COMSIG_PARENT_EXAMINE))
+	UnregisterSignal(parent, list(COMSIG_ITEM_BAKED, COMSIG_ATOM_EXAMINE))
 
 ///Ran every time an item is baked by something
 /datum/component/bakeable/proc/on_bake(datum/source, atom/used_oven, seconds_per_tick = SSMACHINES_DT)
