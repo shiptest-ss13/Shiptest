@@ -1,0 +1,54 @@
+	{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Lyra-class Relief Cruiser",
+	"prefix": "CLSV",
+	"namelists": ["GENERAL", "CLIP MINUTEMEN", "BEASTS"],
+	"description": "The Lyra-class traces its origins back to the first frontiersmen war, where civilian hulls were taken by Minutemen forces and converted into relief vessels. These various ships were kept in service with dubious performance and inconsistent upkeep up until FS-472, when the Lyra-class was officially proposed and set into production to fufill the roles of these ships. Initially unpopular and almost decommissioned due to lack of use in a calmer frontier, these vessels found a major resurgence after the ICW, with humanitarian issues becoming a much larger concern to the Colonial League. Lyra-class vessels often find themselves assisting in rebuilding efforts of affected planets, or helping the occasional frontier vessel.",
+	"tags": ["Medical", "Generalist", "Engineering", "RP Focus"],
+	"faction": "/datum/faction/clip",
+	"map_short_name": "Lyra-class",
+	"map_path": "_maps/shuttles/minutemen/minutemen_lyra.dmm",
+	"starting_funds": 3000,
+	"token_icon_state": "ship_mid_generic",
+
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/clip/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Bridge Officer": {
+			"outfit": "/datum/outfit/job/clip/first_officer",
+			"officer": true,
+			"slots": 1
+
+		},
+		"Team Sergeant": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt/lead",
+			"officer": true,
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/clip/mechanic",
+			"slots": 2
+		},
+		"Minuteman": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt",
+			"slots": 2
+		},
+		"Combat Medic": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt/medic/secaccess",
+			"slots": 1
+		},
+		"Doctor":{
+			"outfit": "/datum/outfit/job/clip/doctor",
+			"slots": 1
+		},
+		"Crewman": {
+			"outfit": "/datum/outfit/job/clip/assistant",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}
