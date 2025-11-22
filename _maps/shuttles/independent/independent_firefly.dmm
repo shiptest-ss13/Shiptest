@@ -17,6 +17,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
+"ar" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/sign/poster/official/safety_internals{
+	pixel_x = 0;
+	pixel_y = -30
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "aR" = (
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning{
 	dir = 4
@@ -309,10 +319,6 @@
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm/dormtwo)
-"cJ" = (
-/obj/item/folder,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/medical)
 "cL" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 8
@@ -2369,6 +2375,11 @@
 	pixel_y = -31
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/bed/dogbed,
+/mob/living/simple_animal/pet/cat/Runtime{
+	desc = "Most modern cats hail from a solarian experimental geneline. The perfect purrtection from rats and radiation.";
+	name = "Rylie"
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
 "Bt" = (
@@ -2742,16 +2753,6 @@
 /obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/plasteel/patterned,
-/area/ship/cargo)
-"Hj" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
-/obj/structure/sign/poster/official/safety_internals{
-	pixel_x = 0;
-	pixel_y = -30
-	},
-/turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Hr" = (
 /obj/effect/turf_decal/techfloor{
@@ -4018,6 +4019,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
+"VE" = (
+/obj/item/folder,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/medical)
 "VJ" = (
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 8
@@ -4568,7 +4573,7 @@ jW
 "}
 (8,1,1) = {"
 Ke
-cJ
+VE
 Ke
 Ke
 xb
@@ -4727,7 +4732,7 @@ jW
 cW
 Hr
 Jm
-Hj
+ar
 cW
 Lc
 UL
