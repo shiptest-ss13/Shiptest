@@ -248,6 +248,32 @@
 	user.visible_message(detailed_message, self_message, vision_distance = 1, ignored_mobs = target_detailed ? null : target)
 	user.visible_message(vague_message, "", ignored_mobs = detailed_mobs)
 
+/**
+ * Sends a pain message to the target, including a chance of screaming.
+ *
+ * Arguments:
+ * * target - Who the message will be sent to
+ * * pain_message - The message to be displayed
+ * * mechanical_surgery - Boolean flag that represents if a surgery step is done on a mechanical limb (therefore does not force scream)
+ */
+/datum/surgery_step/proc/display_pain(mob/living/target, pain_message, mechanical_surgery = FALSE)
+	// Determine how drunk our patient is
+	var/drunken_patient = target.get_drunk_amount()
+	// Create a probability to ignore the pain based on drunkenness level
+	var/drunken_ignorance_probability = clamp(drunken_patient, 0, 90)
+
+	if(target.stat < UNCONSCIOUS)
+		if(HAS_TRAIT(target, TRAIT_ANALGESIA) || drunken_patient && prob(drunken_ignorance_probability))
+			if(!pain_message)
+				return
+			to_chat(target, span_notice("You feel a dull, numb sensation as your body is surgically operated on."))
+		else if(!mechanical_surgery)
+			if(!pain_message)
+				return
+			to_chat(target, span_userdanger(pain_message))
+			if(prob(30) && !mechanical_surgery)
+				target.force_pain_noise(80)
+
 /// Lacking anesthetic, a surgery has a chance to cause Complications, which is handled here
 /datum/surgery_step/proc/commit_malpractice(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/ouchie_mod = 1

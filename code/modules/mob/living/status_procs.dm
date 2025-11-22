@@ -660,3 +660,30 @@
 	if(inebriation)
 		return inebriation?.drunk_value
 	return 0
+
+/mob/living/proc/adjust_lung_inflammation(amount)
+	if(!isnum(amount))
+		CRASH("adjust_lung_inflammation: called with an invalid amount. (Got: [amount])")
+
+	var/datum/status_effect/lung_inflammation/inflammation = has_status_effect(/datum/status_effect/lung_inflammation)
+	if(inflammation)
+		inflammation.adjust_inflammation(amount)
+	else if(amount > 0)
+		apply_status_effect(/datum/status_effect/lung_inflammation, amount)
+
+/mob/living/proc/set_lung_inflammation(set_to)
+	if(!isnum(set_to) || set_to < 0)
+		CRASH("set_lung_inflammation: called with an invalid value. (Got: [set_to])")
+
+	var/datum/status_effect/lung_inflammation/inflammation = has_status_effect(/datum/status_effect/lung_inflammation)
+	if(inflammation)
+		inflammation.adjust_inflammation(set_to - inflammation.inflammation)
+	else if(set_to > 0)
+		apply_status_effect(/datum/status_effect/lung_inflammation, set_to)
+
+/// Returns the amount of lung inflammation the mob is experiencing
+/mob/living/proc/get_lung_inflammation()
+	var/datum/status_effect/lung_inflammation/inflammation = has_status_effect(/datum/status_effect/lung_inflammation)
+	if(inflammation)
+		return inflammation?.inflammation
+	return 0

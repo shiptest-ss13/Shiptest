@@ -349,8 +349,12 @@
 #define GAS_METHANE "methane"
 #define GAS_AMMONIA "ammonia"
 
+/// Used to determine whether a canister should alert admins if opened
 #define GAS_FLAG_DANGEROUS (1<<0)
+/// Do not use this unless you absolutely have to
 #define GAS_FLAG_BREATH_PROC (1<<1)
+/// Can cause lung irritation
+#define GAS_FLAG_IRRITANT (1<<2)
 
 // odors
 #define GAS_ODOR_CHEMICAL list(\

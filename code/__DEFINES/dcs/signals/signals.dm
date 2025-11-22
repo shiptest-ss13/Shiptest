@@ -838,3 +838,9 @@
 #define COMSIG_MOVETYPE_FLAG_ENABLED "movetype_flag_enabled"
 /// From base of datum/element/movetype_handler/on_movement_type_trait_loss: (flag)
 #define COMSIG_MOVETYPE_FLAG_DISABLED "movetype_flag_disabled"
+
+//from base of [/obj/effect/particle_effect/fluid/smoke/proc/smoke_mob]: (seconds_per_tick)
+#define COMSIG_CARBON_EXPOSED_TO_SMOKE "carbon_exposed_to_smoke"
+
+//from base of [/obj/item/organ/lungs/check_breath]: (datum/gas_mixture/breath, received_pressure_mult)
+#define COMSIG_CARBON_INHALED_GAS "carbon_inhaled_gas"

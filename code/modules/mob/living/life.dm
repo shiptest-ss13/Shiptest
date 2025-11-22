@@ -32,7 +32,7 @@
 			//Breathing, if applicable
 			handle_breathing(seconds_per_tick, times_fired)
 
-		handle_diseases()// DEAD check is in the proc itself; we want it to spread even if the mob is dead, but to handle its disease-y properties only if you're not.
+		handle_diseases(seconds_per_tick, times_fired)// DEAD check is in the proc itself; we want it to spread even if the mob is dead, but to handle its disease-y properties only if you're not.
 
 		handle_wounds()
 
@@ -62,7 +62,7 @@
 	if(stat != DEAD)
 		return 1
 
-/mob/living/proc/handle_breathing(seconds_per_tick, times_fired)
+/mob/living/proc/handle_breathing(seconds_per_tick = SSMOBS_DT, times_fired)
 	SEND_SIGNAL(src, COMSIG_LIVING_HANDLE_BREATHING, seconds_per_tick, times_fired)
 	return
 
@@ -70,7 +70,7 @@
 	radiation = 0 //so radiation don't accumulate in simple animals
 	return
 
-/mob/living/proc/handle_diseases()
+/mob/living/proc/handle_diseases(seconds_per_tick, times_fired)
 	return
 
 /mob/living/proc/handle_wounds()
