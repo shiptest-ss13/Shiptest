@@ -34,13 +34,13 @@
 	var/shield_bash_sound = 'sound/effects/shieldbash.ogg'
 	var/recoil_bonus = -2
 	var/broken = FALSE
-	// material used to repair
+	/// material used to repair
 	var/obj/item/stack/sheet/repair_material = /obj/item/stack/sheet/plasteel
-	// whether or not it is repairable
+	/// whether or not it is repairable
 	var/is_repairable = TRUE
-	// The block chance the shield will revert to when repaired
+	/// The block chance the shield will revert to when repaired
 	var/standard_block_chance = 60
-	// The slow down the shield will revert to when repaired
+	/// The slow down the shield will revert to when repaired
 	var/standard_slowdown = 1.25
 
 /obj/item/shield/proc/on_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
