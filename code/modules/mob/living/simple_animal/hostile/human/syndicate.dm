@@ -16,7 +16,7 @@
 	maxbodytemp = 400
 	unsuitable_atmos_damage = 15
 	faction = list(FACTION_RAMZI)
-	loot = null
+	loot = list()
 	check_friendly_fire = TRUE
 	dodging = TRUE
 	rapid_melee = 2

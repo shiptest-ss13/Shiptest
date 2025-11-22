@@ -79,7 +79,7 @@
 	if(!affecting) //missing limb? we select the first bodypart (you can never have zero, because of chest)
 		affecting = get_first_available_bodypart()
 	SEND_SIGNAL(I, COMSIG_ITEM_ATTACK_ZONE, src, user, affecting)
-	send_item_attack_message(I, user, affecting.name, parse_zone(affecting.body_zone))
+	send_item_attack_message(I, user, affecting.name, affecting)
 
 	if(I.force)
 		var/attack_direction = get_dir(user, src)
