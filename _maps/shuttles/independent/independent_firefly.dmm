@@ -543,6 +543,7 @@
 	pixel_x = 11;
 	pixel_y = 21
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "gs" = (
@@ -1027,7 +1028,7 @@
 /area/ship/engineering/engines/starboard)
 "nn" = (
 /obj/effect/turf_decal/techfloor,
-/obj/machinery/light/directional/south,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "nA" = (
@@ -1612,6 +1613,7 @@
 	pixel_x = 0;
 	pixel_y = 8
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "ul" = (
@@ -1755,7 +1757,6 @@
 "uX" = (
 /obj/effect/turf_decal/techfloor,
 /obj/structure/closet/crate/bin,
-/obj/machinery/light/directional/south,
 /obj/machinery/button/door{
 	pixel_x = 22;
 	pixel_y = 6;
@@ -1765,6 +1766,7 @@
 	dir = 8;
 	req_ship_access = 1
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "vb" = (
