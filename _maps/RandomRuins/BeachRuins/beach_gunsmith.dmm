@@ -180,7 +180,65 @@
 /turf/open/water/beach/deep,
 /area/ruin/beach/gunsmith)
 "ca" = (
-/obj/structure/closet/secure_closet/wall/directional/south,
+/obj/structure/closet/secure_closet/wall/directional/south{
+	name = "supply cabinet"
+	},
+/obj/item/cutting_board{
+	pixel_x = -3;
+	pixel_y = 7
+	},
+/obj/item/melee/knife/kitchen{
+	pixel_x = -3;
+	pixel_y = 6
+	},
+/obj/item/plate{
+	pixel_x = 10;
+	pixel_y = -2
+	},
+/obj/item/plate{
+	pixel_x = 10;
+	pixel_y = -4
+	},
+/obj/item/plate{
+	pixel_x = 10;
+	pixel_y = -6
+	},
+/obj/item/plate{
+	pixel_x = 10;
+	pixel_y = -8
+	},
+/obj/item/plate{
+	pixel_x = 10;
+	pixel_y = -10
+	},
+/obj/item/plate{
+	pixel_x = 10;
+	pixel_y = -12
+	},
+/obj/item/plate/small{
+	pixel_x = -6;
+	pixel_y = -1
+	},
+/obj/item/plate/small{
+	pixel_x = -6;
+	pixel_y = -3
+	},
+/obj/item/plate/small{
+	pixel_x = -6;
+	pixel_y = -5
+	},
+/obj/item/plate/small{
+	pixel_x = -6;
+	pixel_y = -7
+	},
+/obj/item/plate/small{
+	pixel_x = -6;
+	pixel_y = -9
+	},
+/obj/item/plate/small{
+	pixel_x = -6;
+	pixel_y = -11
+	},
 /turf/open/floor/concrete/tiles,
 /area/ruin/beach/gunsmith/kitchen)
 "cc" = (
@@ -318,13 +376,6 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith/kitchen)
 "ds" = (
-/obj/structure/table/reinforced,
-/obj/item/cutting_board,
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#332521"
-	},
-/obj/item/melee/knife/kitchen,
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/kitchen)
 "dx" = (
@@ -367,11 +418,6 @@
 	color = "#332521"
 	},
 /obj/structure/table/wood,
-/obj/item/storage/bag/tray{
-	pixel_x = 0;
-	pixel_y = 3;
-	layer = 2.89
-	},
 /obj/item/food/crab_rangoon{
 	pixel_x = -1;
 	pixel_y = 8
@@ -392,6 +438,11 @@
 	pixel_x = 6;
 	pixel_y = 8;
 	layer = 2.9
+	},
+/obj/item/plate/large{
+	layer = 2.8;
+	pixel_x = 0;
+	pixel_y = 1
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/kitchen)
@@ -513,7 +564,9 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith/kitchen)
 "fI" = (
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
+	},
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
@@ -680,7 +733,9 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
+	},
 /obj/item/stack/ore/salvage/scrapmetal/twenty{
 	pixel_x = -6;
 	pixel_y = 3
@@ -1130,7 +1185,9 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
+	},
 /obj/item/stack/sheet/plastic/twenty{
 	pixel_x = -9;
 	pixel_y = 2
@@ -1171,6 +1228,53 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/gunsmith/electrical)
+"lt" = (
+/obj/structure/table/reinforced,
+/obj/structure/closet/secure_closet/wall/directional/south{
+	name = "kitchen cabinet"
+	},
+/obj/item/reagent_containers/condiment/flour{
+	pixel_x = -7;
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/condiment/flour{
+	pixel_x = -7;
+	pixel_y = -7
+	},
+/obj/item/reagent_containers/condiment/enzyme{
+	pixel_x = -11;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/condiment/sugar{
+	pixel_x = 11;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/condiment/rice{
+	pixel_x = 11;
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/condiment/rice{
+	pixel_x = 11;
+	pixel_y = -7
+	},
+/obj/item/reagent_containers/condiment/ketchup{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/condiment/mayonnaise{
+	pixel_x = 0;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/condiment/hotsauce{
+	pixel_x = -5;
+	pixel_y = 3
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 2
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/beach/gunsmith/kitchen)
 "lO" = (
 /obj/effect/turf_decal/siding/wood/end{
 	color = "#332521";
@@ -1555,7 +1659,9 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
+	},
 /obj/item/storage/toolbox/syndicate,
 /obj/item/storage/toolbox/syndicate{
 	pixel_x = 0;
@@ -1671,7 +1777,6 @@
 /turf/open/floor/plating,
 /area/ruin/beach/gunsmith/dorms)
 "qw" = (
-/obj/structure/closet/secure_closet/freezer/fridge,
 /obj/item/reagent_containers/condiment/milk,
 /obj/item/reagent_containers/condiment/milk,
 /obj/item/reagent_containers/condiment/milk,
@@ -1688,6 +1793,7 @@
 	dir = 8;
 	layer = 2.9
 	},
+/obj/structure/closet/secure_closet/freezer,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/beach/gunsmith/kitchen)
 "qC" = (
@@ -2702,13 +2808,9 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/gunsmith)
 "BE" = (
-/obj/structure/table/reinforced,
-/obj/machinery/microwave{
-	pixel_x = 0;
-	pixel_y = 5
-	},
+/obj/machinery/griddle,
 /obj/effect/turf_decal/siding/wood{
-	dir = 9;
+	dir = 1;
 	color = "#332521"
 	},
 /turf/open/floor/wood/ebony,
@@ -2759,7 +2861,9 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 6
 	},
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
+	},
 /obj/item/ammo_box/magazine/m57_39_asp{
 	pixel_x = -1;
 	pixel_y = -1
@@ -2885,48 +2989,12 @@
 /turf/open/water/beach,
 /area/ruin/beach/gunsmith)
 "CX" = (
-/obj/structure/table/reinforced,
-/obj/structure/closet/secure_closet/wall/directional/south,
-/obj/item/reagent_containers/condiment/flour{
-	pixel_x = -7;
-	pixel_y = -5
-	},
-/obj/item/reagent_containers/condiment/flour{
-	pixel_x = -7;
-	pixel_y = -7
-	},
-/obj/item/reagent_containers/condiment/enzyme{
-	pixel_x = -11;
-	pixel_y = 3
-	},
-/obj/item/reagent_containers/condiment/sugar{
-	pixel_x = 11;
-	pixel_y = 7
-	},
-/obj/item/reagent_containers/condiment/rice{
-	pixel_x = 11;
-	pixel_y = -5
-	},
-/obj/item/reagent_containers/condiment/rice{
-	pixel_x = 11;
-	pixel_y = -7
-	},
-/obj/item/reagent_containers/condiment/ketchup{
-	pixel_x = 6;
-	pixel_y = 4
-	},
-/obj/item/reagent_containers/condiment/mayonnaise{
-	pixel_x = 0;
-	pixel_y = 4
-	},
-/obj/item/reagent_containers/condiment/hotsauce{
-	pixel_x = -5;
-	pixel_y = 3
-	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 6;
-	color = "#332521"
+	color = "#332521";
+	dir = 6
 	},
+/obj/structure/table/reinforced,
+/obj/machinery/light/directional/south,
 /turf/open/floor/wood/ebony,
 /area/ruin/beach/gunsmith/kitchen)
 "CY" = (
@@ -3131,6 +3199,13 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/ruin/beach/gunsmith/workshop)
+"Gn" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#332521"
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/beach/gunsmith/kitchen)
 "Gu" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/beach/gunsmith)
@@ -4672,7 +4747,6 @@
 /turf/open/floor/wood/maple,
 /area/ruin/beach/gunsmith/dorms)
 "Yq" = (
-/obj/structure/closet/secure_closet/freezer/fridge,
 /obj/item/food/meat/slab,
 /obj/item/food/meat/slab,
 /obj/item/food/meat/slab,
@@ -4691,6 +4765,7 @@
 /obj/item/food/meat/rawcrab,
 /obj/item/food/meat/rawcrab,
 /obj/item/food/meat/rawcrab,
+/obj/structure/closet/secure_closet/freezer,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/beach/gunsmith/kitchen)
 "YK" = (
@@ -4760,6 +4835,14 @@
 	},
 /turf/open/water/beach/deep,
 /area/ruin/beach/gunsmith)
+"Zt" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9;
+	color = "#332521"
+	},
+/obj/machinery/oven,
+/turf/open/floor/wood/ebony,
+/area/ruin/beach/gunsmith/kitchen)
 "Zz" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
@@ -6974,10 +7057,10 @@ qw
 Yq
 nm
 WX
-JW
-JW
-JW
-Cm
+WX
+LJ
+LJ
+WX
 Cm
 Cm
 pG
@@ -7024,9 +7107,9 @@ WN
 Ef
 RU
 WX
-LJ
-LJ
-WX
+Zt
+Gn
+Qk
 WX
 Cm
 Cm
@@ -7076,7 +7159,7 @@ He
 WX
 BE
 ds
-Qk
+lt
 WX
 Cm
 Cm
