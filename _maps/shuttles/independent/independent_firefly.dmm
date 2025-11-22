@@ -62,6 +62,7 @@
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/light/small/directional/north,
+/obj/machinery/computer/cryopod/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "bg" = (
@@ -329,10 +330,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "dk" = (
-/obj/structure/sign/poster/clip/lanchester{
-	pixel_x = 0;
-	pixel_y = -32
-	},
+/obj/machinery/computer/helm/viewscreen/directional/south,
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken3"
 	},
@@ -1392,6 +1390,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/machinery/computer/helm/viewscreen/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "sr" = (
@@ -3801,6 +3800,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/starboard)
+"Vp" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/machinery/computer/helm/viewscreen/directional/east{
+	pixel_x = 17;
+	pixel_y = 9
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/crew/dorm)
 "Vx" = (
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -4301,7 +4310,7 @@ Ke
 Ke
 Ke
 uJ
-Xg
+Vp
 sY
 Gj
 ZW
