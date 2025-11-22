@@ -425,12 +425,6 @@
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
-"bO" = (
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 10
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/hallway/aft)
 "bQ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
@@ -648,7 +642,7 @@
 	pixel_y = -23
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ship/crew/toilet)
+/area/ship/bridge)
 "db" = (
 /obj/machinery/shower{
 	pixel_y = 19
@@ -663,7 +657,7 @@
 /obj/structure/curtain,
 /obj/item/soap/syndie,
 /turf/open/floor/plasteel/showroomfloor,
-/area/ship/crew/toilet)
+/area/ship/bridge)
 "dl" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -3466,14 +3460,10 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/smartfridge,
-/obj/item/food/grown/siti,
-/obj/item/food/grown/sososi,
 /obj/item/food/grown/siti,
 /obj/item/food/grown/sososi,
 /obj/item/food/grown/sososi,
 /obj/item/food/grown/siti,
-/obj/item/food/grown/fara_li,
 /obj/item/food/grown/fara_li,
 /obj/item/food/grown/fara_li,
 /obj/item/food/meat/slab/miras,
@@ -3482,23 +3472,21 @@
 /obj/item/reagent_containers/condiment/tiris_sele,
 /obj/item/reagent_containers/condiment/tiris_milk,
 /obj/item/reagent_containers/condiment/tiris_milk,
-/obj/item/reagent_containers/condiment/tiris_milk,
 /obj/item/food/cheese/wheel/tiris,
 /obj/item/food/cheese/wheel/tiris,
 /obj/item/food/grown/dote_berries,
 /obj/item/food/grown/dote_berries,
-/obj/item/food/grown/dote_berries,
-/obj/item/food/meat/slab/tiris,
-/obj/item/food/grown/refa_li,
-/obj/item/food/grown/refa_li,
-/obj/item/food/grown/dote_berries,
 /obj/item/food/grown/refa_li,
 /obj/item/food/grown/refa_li,
 /obj/item/food/meat/slab/tiris,
 /obj/item/food/meat/slab/tiris,
 /obj/item/food/meat/slab/remes,
 /obj/item/food/meat/slab/remes,
-/obj/item/food/meat/slab/remes,
+/obj/structure/closet/secure_closet/freezer{
+	anchored = 1;
+	locked = 0;
+	name = "fridge"
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/office)
 "sA" = (
@@ -3945,7 +3933,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/crew/toilet)
+/area/ship/bridge)
 "uK" = (
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -8526,7 +8514,7 @@
 	},
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/showroomfloor,
-/area/ship/crew/toilet)
+/area/ship/bridge)
 "Sa" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -9342,12 +9330,6 @@
 /obj/effect/turf_decal/corner/opaque/red/full,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
-"WA" = (
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 6
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/security/armory)
 "WC" = (
 /obj/effect/turf_decal/corner/opaque/beige/mono,
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -9850,10 +9832,6 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm/commad)
-"YL" = (
-/obj/effect/turf_decal/corner/opaque/tan/full,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
 "YN" = (
 /obj/structure/railing,
 /obj/structure/closet/crate,
@@ -10595,11 +10573,11 @@ hz
 (16,1,1) = {"
 CN
 FQ
-YL
+Mg
 WO
 sf
 ws
-rm
+Mg
 db
 JW
 RB
@@ -10661,7 +10639,7 @@ jr
 Mj
 eA
 bD
-rm
+Mg
 cZ
 kB
 Cn
@@ -10692,8 +10670,8 @@ sI
 YA
 Dl
 Bx
-rm
-rm
+Mg
+Mg
 JW
 JW
 Bb
@@ -10918,7 +10896,7 @@ NL
 YG
 XX
 gn
-bO
+aH
 IK
 lF
 hs
@@ -11298,7 +11276,7 @@ Gh
 Gh
 cF
 an
-WA
+tX
 tX
 mf
 tX

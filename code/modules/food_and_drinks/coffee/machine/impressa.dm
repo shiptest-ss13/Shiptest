@@ -12,7 +12,6 @@
 	circuit = /obj/item/circuitboard/machine/coffeemaker/premium
 	initial_cartridge = null		//no cartridge, just coffee beans
 	brew_time = 15 SECONDS			//industrial grade, its faster than the regular one
-	density = TRUE
 	pass_flags = PASSTABLE
 	coffeemaker_particle = /particles/smoke/steam/mild/coffeemaker_premium
 
