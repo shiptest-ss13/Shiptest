@@ -1036,6 +1036,12 @@
 		/datum/reagent/medicine/soulus = -0.2
 	)
 
+/obj/structure/flora/tree/srm/pine
+	name = "Montagne's Conifer"
+	icon = 'icons/obj/flora/tall_trees.dmi'
+	icon_state = "pine_1"
+	desc = "A hardy, imported conifer tree acting as the centerpiece of the garden. A branch from an Illestren apple tree has been grafted onto it, producing fruits containing bactera native to the planet; often used in recipes withheld by the Saint-Roumain Militia. You could try watering it."
+
 /obj/structure/flora/tree/srm/Initialize()
 	START_PROCESSING(SSobj, src)
 	create_reagents(300, OPENCONTAINER)

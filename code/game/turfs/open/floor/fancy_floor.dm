@@ -33,6 +33,9 @@
 /turf/open/floor/wood/ebony
 	color = WOOD_COLOR_BLACK
 
+/turf/open/floor/wood/ebony/cold
+	initial_gas_mix = "o2=22;n2=82;TEMP=275.65" // normal air but 2.5 degrees
+
 /turf/open/floor/wood/walnut
 	color = WOOD_COLOR_CHOCOLATE
 
