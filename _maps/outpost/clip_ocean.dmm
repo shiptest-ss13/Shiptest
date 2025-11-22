@@ -13618,10 +13618,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/engineering)
 "RQ" = (
-/obj/structure/sign/poster/contraband/pgf{
-	pixel_x = 31;
-	pixel_y = 0
-	},
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
 	},
@@ -13632,6 +13628,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/structure/sign/poster/pgf/random{
+	pixel_y = 0;
+	pixel_x = 28
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/outpost/hallway/starboard)

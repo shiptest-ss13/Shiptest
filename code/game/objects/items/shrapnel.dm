@@ -133,7 +133,7 @@
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
 		M.adjust_fire_stacks(15)
-		M.IgniteMob()
+		M.ignite_mob()
 
 /obj/projectile/bullet/shrapnel/spicy
 	name = "radioactive slag"
