@@ -124,6 +124,7 @@
 /obj/item/clothing/suit/space/hardsuit/Initialize()
 	if(jetpack && ispath(jetpack))
 		jetpack = new jetpack(src)
+	allowed += GLOB.security_vest_allowed
 	. = ..()
 
 /obj/item/clothing/suit/space/hardsuit/attack_self(mob/user)
