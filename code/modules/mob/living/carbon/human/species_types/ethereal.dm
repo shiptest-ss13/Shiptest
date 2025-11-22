@@ -54,6 +54,9 @@
 	var/obj/effect/dummy/lighting_obj/ethereal_light
 	var/datum/action/innate/root/rooting
 
+	//var/particles/elzouse_leaves/leaves
+	var/obj/effect/abstract/particle_holder/leaves_particle
+
 /datum/species/elzuose/Destroy(force)
 	if(ethereal_light)
 		QDEL_NULL(ethereal_light)
@@ -83,6 +86,11 @@
 		if(body_part.limb_id == SPECIES_ELZUOSE)
 			body_part.update_limb(is_creating = TRUE)
 
+	if(GLOB.holidays && GLOB.holidays[HALLOWEEN])
+		if(!leaves_particle)
+			leaves_particle = new(_carbon, /particles/elzouse_leaves, PARTICLE_ATTACH_MOB)
+		leaves_particle.particles.color = default_color
+
 /datum/species/elzuose/on_species_loss(mob/living/carbon/human/_carbon, datum/species/new_species, pref_load)
 	UnregisterSignal(_carbon, COMSIG_ATOM_EMP_ACT)
 	UnregisterSignal(_carbon, COMSIG_DIGOUT)
@@ -90,6 +98,8 @@
 	QDEL_NULL(ethereal_light)
 	if(rooting)
 		rooting.Remove(_carbon)
+	if(leaves_particle)
+		QDEL_NULL(leaves_particle)
 	return ..()
 
 /datum/action/innate/root
@@ -190,9 +200,14 @@
 		set_ethereal_light(_human, current_color)
 		ethereal_light.set_light_on(TRUE)
 		fixed_mut_color = copytext_char(current_color, 2)
+		if(leaves_particle)
+			leaves_particle.particles.color = current_color
 	else
 		ethereal_light.set_light_on(FALSE)
 		fixed_mut_color = rgb(128,128,128)
+		if(leaves_particle)
+			leaves_particle.particles.color = rgb(128,128,128)
+
 	var/obj/item/bodypart/body_part
 	for(var/zone in _human.bodyparts)
 		body_part = _human.bodyparts[zone]
