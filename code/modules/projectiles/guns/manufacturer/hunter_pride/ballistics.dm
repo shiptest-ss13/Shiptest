@@ -1175,7 +1175,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 /obj/item/gun/ballistic/automatic/assault/invictus
 	name = "HP Invictus"
-	desc = "An unwieldy automatic rifle fielded by the Saint-Roumain Militia, commonly sold to police forces and private buyers. Chambered in .308."
+	desc = "An unwieldy automatic rifle fielded by the Saint-Roumain Militia, commonly sold to police forces and private buyers. This one has a smooth wood finish and is in pristine condition. Chambered in .308."
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
@@ -1204,6 +1204,8 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 	recoil = 1
 	recoil_unwielded = 4
 
+	wear_rate = 0.6
+
 	fire_sound = 'sound/weapons/gun/hmg/hmg.ogg'
 
 	unique_attachments = list(/obj/item/attachment/bayonet)
@@ -1225,6 +1227,13 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 EMPTY_GUN_HELPER(automatic/assault/invictus)
 NO_MAG_GUN_HELPER(automatic/assault/invictus)
+
+/obj/item/gun/ballistic/automatic/assault/invictus/old
+	desc = "An unwieldy automatic rifle fielded by the Saint-Roumain Militia, commonly sold to police forces and private buyers. Chambered in .308."
+	icon_state = "invictus_old"
+	item_state = "invictus_old"
+
+	wear_rate = 1
 
 /obj/item/ammo_box/magazine/invictus_308_mag
 	name = "Invictus magazine (.308)"

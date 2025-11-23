@@ -50,7 +50,6 @@
 
 	// INJECT
 	syringe.reagents.add_reagent(/datum/reagent/method_patch_test, 1)
-	syringe.mode = SYRINGE_INJECT
 	syringe.afterattack(human, human, TRUE)
 	TEST_ASSERT_EQUAL(human.health, 80, "Human health did not update after injection from syringe")
 

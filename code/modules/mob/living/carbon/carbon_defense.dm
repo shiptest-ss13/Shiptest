@@ -145,7 +145,7 @@
 	return //so we don't call the carbon's attack_hand().
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
-/mob/living/carbon/attack_hand(mob/living/carbon/human/user)
+/mob/living/carbon/attack_hand(mob/living/carbon/human/user, list/modifiers)
 
 	if(SEND_SIGNAL(src, COMSIG_ATOM_ATTACK_HAND, user) & COMPONENT_CANCEL_ATTACK_CHAIN)
 		. = TRUE
@@ -155,7 +155,7 @@
 			continue
 		if(!S.self_operable && user == src)
 			continue
-		if(S.next_step(user, user.a_intent))
+		if(S.next_step(user, modifiers))
 			return TRUE
 
 	for(var/thing in diseases)
@@ -170,7 +170,7 @@
 
 	for(var/i in all_wounds)
 		var/datum/wound/W = i
-		if(W.try_handling(user))
+		if(W.try_handling(user, modifiers))
 			return TRUE
 
 	return FALSE
