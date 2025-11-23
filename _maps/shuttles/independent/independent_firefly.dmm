@@ -792,7 +792,6 @@
 	},
 /obj/machinery/door/airlock/hatch{
 	name = "Engine Bay";
-	req_access_txt = "19";
 	dir = 4
 	},
 /obj/structure/cable/green{
@@ -1014,6 +1013,7 @@
 /area/ship/crew/ccommons)
 "mh" = (
 /obj/effect/turf_decal/corner/transparent/purple/full,
+/obj/structure/chair/office,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "mr" = (
@@ -2044,6 +2044,7 @@
 /obj/structure/cable/green{
 	icon_state = "0-8"
 	},
+/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "xC" = (
@@ -4124,9 +4125,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "WY" = (
-/obj/structure/chair/office,
 /obj/effect/turf_decal/corner/transparent/purple/full,
 /obj/machinery/light/small/directional/east,
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "Xb" = (
