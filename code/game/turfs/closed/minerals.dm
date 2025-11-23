@@ -29,6 +29,9 @@
 	var/x_offset = -4
 	var/y_offset = -4
 
+	MAP_SWITCH(pixel_x = 0, pixel_x = -4)
+	MAP_SWITCH(pixel_y = 0, pixel_y = -4)
+
 	attack_hitsound = 'sound/effects/break_stone.ogg'
 	break_sound = 'sound/effects/break_stone.ogg'
 	hitsound_type = PROJECTILE_HITSOUND_STONE
@@ -772,7 +775,7 @@
 	turf_type = /turf/open/floor/plating/asteroid/whitesands/lit
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried/lit
 
-/turf/closed/mineral/random/high_chance
+/turf/closed/mineral/random/high_chance/whitesands
 	icon = 'icons/turf/walls/ws_walls.dmi'
 	icon_state = "smoothrocks-0"
 	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
@@ -812,8 +815,8 @@
 	base_icon_state = "jungle_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
 	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
-	turf_type = /turf/open/floor/plating/dirt/jungle
-	baseturfs = /turf/open/floor/plating/dirt/jungle
+	turf_type = /turf/open/floor/plating/asteroid/dirt/jungle
+	baseturfs = /turf/open/floor/plating/asteroid/dirt/jungle
 
 	mineralChance = 16
 
@@ -936,6 +939,11 @@
 	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 2, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 5,
 		/obj/item/stack/ore/plasma = 1, /obj/item/stack/ore/iron = 40, /obj/item/stack/ore/titanium = 20,
 		/obj/item/stack/ore/bluespace_crystal = 5)
+
+/turf/closed/mineral/random/moon/safe
+
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	baseturfs = /turf/open/floor/plating/asteroid/moon/safe
 
 /turf/closed/mineral/random/moon/lit
 	turf_type = /turf/open/floor/plating/asteroid/moon_coarse/dark/lit

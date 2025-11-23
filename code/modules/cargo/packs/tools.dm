@@ -3,20 +3,6 @@
 	crate_type = /obj/structure/closet/crate/engineering
 
 /*
-		Vehicles
-*/
-
-/datum/supply_pack/tools/all_terrain_vehicle
-	name = "All Terrain Vehicle"
-	desc = "Contains one ATV and a key, for when you want to explore the frontier in style."
-	cost = 2000
-	contains = list(/obj/vehicle/ridden/atv,
-					/obj/item/key)
-	crate_name = "ATV crate"
-	crate_type = /obj/structure/closet/crate/large
-	no_bundle = TRUE
-
-/*
 		Actual tools
 */
 
@@ -39,11 +25,9 @@
 
 /datum/supply_pack/tools/bodycamera
 	name = "Body Camera Crate"
-	desc = "Contains two portable cameras, designed to help keep track of a working group at all times."
-	cost = 250
-	contains = list(/obj/item/bodycamera,
-					/obj/item/bodycamera,
-					/obj/item/paper/guides/bodycam)
+	desc = "Contains one portable camera, designed to help keep track of a working group at all times."
+	cost = 100
+	contains = list(/obj/item/bodycamera)
 	crate_name = "bodycamera crate"
 
 /datum/supply_pack/tools/assbelt
@@ -126,6 +110,12 @@
 	desc = "A compact jetpack harness for those who don't wish to be weighed down by larger traditional jetpacks."
 	cost = 1500
 	contains = list(/obj/item/tank/jetpack/oxygen/harness)
+
+/datum/supply_pack/tools/jetpack/suit
+	name = "Hardsuit Jetpack Upgrade Crate"
+	desc = "A standardized jetpack attachment designed for direct integration with hardsuits. For when every gram matters."
+	cost = 2000
+	contains = list(/obj/item/tank/jetpack/suit)
 
 /datum/supply_pack/tools/anglegrinder
 	name = "Angle Grinder"

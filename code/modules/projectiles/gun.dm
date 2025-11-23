@@ -7,7 +7,7 @@
 	lefthand_file = GUN_LEFTHAND_ICON
 	righthand_file = GUN_RIGHTHAND_ICON
 	flags_1 =  CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 	custom_materials = list(/datum/material/iron=2000)
 	w_class = WEIGHT_CLASS_NORMAL
 	throwforce = 5
@@ -45,6 +45,7 @@
 /*
  *  Firing
 */
+	var/actually_shoots = TRUE //is this gun a brick and doesnt fire bullet
 	var/fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	var/vary_fire_sound = TRUE
 	var/fire_sound_volume = 50
@@ -348,6 +349,8 @@
 	build_firemodes()
 	if(sawn_off)
 		sawoff(forced = TRUE)
+	if(slot_flags & ITEM_SLOT_SUITSTORE)
+		ADD_TRAIT(src, TRAIT_FORCE_SUIT_STORAGE, REF(src))
 
 /obj/item/gun/ComponentInitialize()
 	. = ..()
@@ -420,11 +423,13 @@
 	. = ..()
 	if(manufacturer)
 		. += span_notice("It has <b>[manufacturer]</b> engraved on it.")
+	if(HAS_TRAIT(src,TRAIT_FORCE_SUIT_STORAGE))
+		. += span_notice("It has clips and hooks for easy carrying.")
 
 /obj/item/gun/examine_more(mob/user)
 	. = ..()
 	if(has_safety)
-		. += "The safety is [safety ? span_green("ON") : span_red("OFF")]. Ctrl-Click to toggle the safety."
+		. += "The safety is [safety ? span_green("ON") : span_red("OFF")]. Right-Click to toggle the safety."
 
 	if(gun_firemodes.len > 1)
 		. += "You can change the [src]'s firemode by pressing the <b>secondary action</b> key. By default, this is <b>Shift + Space</b>"
@@ -441,7 +446,7 @@
 		zoom(user, user.dir, FALSE) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
 
 /obj/item/gun/attack(mob/M as mob, mob/user)
-	if(user.a_intent == INTENT_HARM) //Flogging
+	if(user.a_intent == INTENT_HARM || !actually_shoots) //Flogging
 		return ..()
 	return
 
@@ -469,6 +474,8 @@
 
 /obj/item/gun/afterattack(atom/target, mob/living/user, flag, params)
 	. = ..()
+	if(!actually_shoots)// this gun doesn't actually fire bullets. Dont shoot.
+		return
 	//No target? Why are we even firing anyways...
 	if(!target)
 		return
@@ -741,16 +748,32 @@
 
 /obj/item/gun/CtrlClick(mob/user)
 	. = ..()
-	if(!has_safety)
-		return
-	// only checks for first level storage e.g pockets, hands, suit storage, belts, nothing in containers
-	if(!in_contents_of(user))
-		return
-
 	if(isliving(user) && in_range(src, user))
 		toggle_safety(user)
 
+/obj/item/gun/attack_hand_secondary(mob/user, list/modifiers)
+	if(toggle_safety(user))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	return ..()
+
+/obj/item/gun/attackby_secondary(obj/item/weapon, mob/user, params)
+	if(toggle_safety(user))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	return ..()
+
+/obj/item/gun/attack_self_secondary(mob/user, modifiers)
+	if(toggle_safety(user))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	return ..()
+
 /obj/item/gun/proc/toggle_safety(mob/user, silent=FALSE)
+	if(!has_safety)
+		return FALSE
+
+	// only checks for first level storage e.g pockets, hands, suit storage, belts, nothing in containers
+	if(!in_contents_of(user))
+		return FALSE
+
 	safety = !safety
 
 	if(!silent)
@@ -761,8 +784,9 @@
 		)
 
 	update_appearance()
+	return TRUE
 
-/obj/item/gun/attack_hand(mob/user)
+/obj/item/gun/attack_hand(mob/user, list/modifiers)
 	. = ..()
 	update_appearance()
 
@@ -860,10 +884,11 @@
 /obj/item/gun/proc/before_firing(atom/target,mob/user)
 	return
 
-/obj/item/gun/proc/calculate_recoil(mob/user, recoil_bonus = 0)
+/obj/item/gun/proc/calculate_recoil(mob/living/user, recoil_bonus = 0)
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 		recoil_bonus += gunslinger_recoil_bonus
-	return clamp(recoil_bonus, min_recoil , INFINITY)
+	recoil_bonus *= user.recoil_effect
+	return clamp(recoil_bonus, min_recoil, INFINITY)
 
 /obj/item/gun/proc/calculate_spread(mob/user, bonus_spread)
 	var/final_spread = 0

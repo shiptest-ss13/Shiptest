@@ -43,7 +43,7 @@
 
 /datum/blackmarket_item/consumable/syndie_cigs
 	name = "Syndicate Cigarettes"
-	desc = "Who said smoking was bad for you? These omnizine laced cigarettes will have you feeling like a million bucks!"
+	desc = "Who said smoking was bad for you? These Panacea laced cigarettes will have you feeling like a million bucks!"
 	item = /obj/item/storage/fancy/cigarettes/cigpack_syndicate
 
 	cost_min = 50
@@ -77,7 +77,7 @@
 /datum/blackmarket_item/consumable/stimpack
 	name = "Stimpack"
 	desc = "A quick inject medipen loaded with a cocktail of powerful stimulants. Side effects may include nasuea, heartburn, constipation, weight loss, increased blood pressure, kidney stones, liver damage, mood swings, mania, anemia, weight gain, total organ failure, runny nose and minor retinal irritation."
-	item = /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor
+	item = /obj/item/reagent_containers/hypospray/medipen/stimpack/crisis
 
 	stock_min = 4
 	stock_max = 6
@@ -294,6 +294,16 @@
 	availability_prob = 30
 	spawn_weighting = FALSE
 
+/datum/blackmarket_item/consumable/nesah
+	name = "Nesah Injector"
+	desc = "Other day some dude with black hair called us up and started talkin about some grand plan. Grand plan to sell merch, we assume, because he offloaded way too fuckin many of these injectors. Our chems guy said it's just a healing injector, so go fuckin wild. "
+	item = /obj/item/reagent_containers/hypospray/medipen/netzach
+	cost_min = 500
+	cost_max = 1000
+	stock_max = 12
+	availability_prob = 50
+	spawn_weighting = FALSE
+
 /datum/blackmarket_item/consumable/finobranc
 	name = "Finobranc Tablets"
 	desc = "So get this, I know a Solarian Tgirl over the intranet, and we're chatting, and she sends me these things to try. I figure, hell yeah, try them, and got 5 days work done in one day. Now I'm sellin them. Miracle product I tell ya"
@@ -312,4 +322,14 @@
 	cost_max = 2000
 	stock_max = 3
 	availability_prob = 10
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/consumable/horse_pills
+	name = "Strider patches"
+	desc = "Fun lil story, yeah? We were screwin off in a backcounty race, watchin some horse girls run it out. One of em popped some patches beforehand. Managed to easily outrun the rest. We managed to find em and get in with the supplier. Supposed to help ya move fast. Keep your muscles workin when they might burst."
+	item = /obj/item/storage/pill_bottle/strider
+	cost_min = 700
+	cost_max = 1500
+	stock_max = 6
+	availability_prob = 40
 	spawn_weighting = FALSE

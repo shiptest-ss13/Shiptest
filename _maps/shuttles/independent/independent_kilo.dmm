@@ -903,8 +903,6 @@
 /area/ship/bridge)
 "mr" = (
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/eva,
-/obj/item/clothing/head/helmet/space/eva,
 /obj/item/clothing/mask/breath,
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -920,6 +918,8 @@
 /obj/structure/sign/warning/vacuum/external{
 	pixel_x = 32
 	},
+/obj/item/clothing/suit/space/syndicate/generic,
+/obj/item/clothing/head/helmet/space/syndicate/generic,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "mz" = (
@@ -1000,6 +1000,16 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"oI" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dwidth = 20;
+	height = 30;
+	name = "Kilo Port Beam Dock";
+	width = 40
+	},
+/turf/template_noop,
+/area/template_noop)
 "oP" = (
 /obj/structure/table,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
@@ -1040,6 +1050,12 @@
 	},
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/docking_port/mobile{
+	dir = 8;
+	launch_status = 0;
+	name = "Mining Shuttle";
+	preferred_direction = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/maintenance/fore)
 "rc" = (
@@ -1386,13 +1402,6 @@
 "Co" = (
 /obj/machinery/door/poddoor{
 	id = "kilocargo"
-	},
-/obj/docking_port/mobile{
-	dir = 2;
-	launch_status = 0;
-	name = "Mining Shuttle";
-	port_direction = 8;
-	preferred_direction = 4
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
@@ -1889,10 +1898,13 @@
 /area/ship/hallway/port)
 "Uv" = (
 /obj/docking_port/stationary{
+	dheight = 1;
 	dir = 4;
+	disable_on_owner_ship_dock = 1;
 	dwidth = 15;
-	height = 15;
-	width = 30
+	height = 30;
+	name = "Kilo Forward Bow Dock";
+	width = 35
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -2065,6 +2077,7 @@
 (1,1,1) = {"
 aa
 aa
+aa
 AQ
 ak
 AQ
@@ -2078,6 +2091,7 @@ aa
 aa
 "}
 (2,1,1) = {"
+aa
 aa
 aa
 OQ
@@ -2095,6 +2109,7 @@ aa
 (3,1,1) = {"
 aa
 aa
+aa
 kA
 av
 bQ
@@ -2108,6 +2123,7 @@ aa
 aa
 "}
 (4,1,1) = {"
+aa
 aa
 aa
 kA
@@ -2125,6 +2141,7 @@ aa
 (5,1,1) = {"
 aa
 aa
+aa
 kA
 AQ
 gs
@@ -2138,6 +2155,7 @@ aa
 aa
 "}
 (6,1,1) = {"
+aa
 aa
 aa
 Ua
@@ -2155,6 +2173,7 @@ aa
 (7,1,1) = {"
 aa
 aa
+aa
 Ua
 aS
 ca
@@ -2168,6 +2187,7 @@ aa
 aa
 "}
 (8,1,1) = {"
+aa
 aa
 aa
 vl
@@ -2185,6 +2205,7 @@ aa
 (9,1,1) = {"
 aa
 aa
+aa
 Jf
 jU
 bU
@@ -2198,6 +2219,7 @@ Rq
 aa
 "}
 (10,1,1) = {"
+aa
 aa
 cK
 Un
@@ -2214,6 +2236,7 @@ aa
 "}
 (11,1,1) = {"
 aa
+aa
 dF
 cP
 KM
@@ -2228,6 +2251,7 @@ Ti
 aa
 "}
 (12,1,1) = {"
+aa
 aa
 Vt
 Un
@@ -2244,6 +2268,7 @@ aa
 "}
 (13,1,1) = {"
 aa
+aa
 VQ
 Jf
 aC
@@ -2259,6 +2284,7 @@ Vq
 "}
 (14,1,1) = {"
 aa
+aa
 Nq
 ac
 Ud
@@ -2273,6 +2299,7 @@ XR
 Yn
 "}
 (15,1,1) = {"
+aa
 Nq
 ac
 am
@@ -2288,6 +2315,7 @@ zc
 yF
 "}
 (16,1,1) = {"
+aa
 To
 nJ
 da
@@ -2303,6 +2331,7 @@ eK
 nO
 "}
 (17,1,1) = {"
+oI
 Co
 cV
 Ih
@@ -2318,6 +2347,7 @@ dc
 vv
 "}
 (18,1,1) = {"
+aa
 cf
 La
 hR
@@ -2333,6 +2363,7 @@ XQ
 vv
 "}
 (19,1,1) = {"
+aa
 Nq
 ac
 Mj
@@ -2349,6 +2380,7 @@ bP
 "}
 (20,1,1) = {"
 aa
+aa
 ac
 jx
 pV
@@ -2363,6 +2395,7 @@ bF
 bP
 "}
 (21,1,1) = {"
+aa
 aa
 PJ
 hN
@@ -2379,6 +2412,7 @@ Bu
 "}
 (22,1,1) = {"
 aa
+aa
 Of
 Of
 Of
@@ -2393,6 +2427,7 @@ BS
 aa
 "}
 (23,1,1) = {"
+aa
 aa
 KB
 bm
@@ -2409,6 +2444,7 @@ aa
 "}
 (24,1,1) = {"
 aa
+aa
 rW
 KB
 Qw
@@ -2423,6 +2459,7 @@ aa
 aa
 "}
 (25,1,1) = {"
+aa
 aa
 aa
 aa

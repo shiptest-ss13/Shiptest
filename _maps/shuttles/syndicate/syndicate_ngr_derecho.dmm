@@ -756,7 +756,8 @@
 "gK" = (
 /obj/machinery/mineral/processing_unit_console{
 	machinedir = 2;
-	pixel_y = 26
+	pixel_y = 26;
+	dist = 3
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -2490,6 +2491,7 @@
 /obj/item/megaphone,
 /obj/item/storage/guncase/pistol/pc76,
 /obj/machinery/light/small/directional/west,
+/obj/item/clothing/glasses/hud/security/sunglasses/ngr,
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "vs" = (
@@ -2593,7 +2595,7 @@
 	a_intent = "help";
 	desc = "A small goliath pup. Its tendrils have not yet fully grown. Someone, somehow, has managed to fit a large dog collar around its neck.";
 	environment_smash = 0;
-	faction = list("neutral","playerSyndicate");
+	faction = list("neutral","New Gorlex Republic");
 	mob_size = 2;
 	move_resist = 1000;
 	name = "David";
@@ -3046,6 +3048,11 @@
 /area/ship/hallway/aft)
 "zB" = (
 /obj/machinery/door/airlock/external,
+/obj/docking_port/mobile{
+	dir = 2;
+	port_direction = 8;
+	preferred_direction = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "zC" = (
@@ -4049,7 +4056,9 @@
 /obj/docking_port/stationary{
 	dwidth = 15;
 	height = 30;
-	width = 30
+	width = 30;
+	disable_on_owner_ship_dock = 1;
+	name = "Derecho Beam Dock"
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -4817,6 +4826,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/melee/knife/survival,
 /obj/item/clothing/mask/breath/ngr,
+/obj/item/clothing/glasses/hud/security/sunglasses/ngr,
 /turf/open/floor/pod,
 /area/ship/storage/equip)
 "QD" = (
@@ -5353,6 +5363,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/melee/knife/survival,
 /obj/item/clothing/mask/breath/ngr,
+/obj/item/clothing/glasses/hud/security/sunglasses/ngr,
 /turf/open/floor/pod,
 /area/ship/storage/equip)
 "Uv" = (
@@ -5684,7 +5695,8 @@
 	dir = 4;
 	dwidth = 4;
 	height = 30;
-	width = 7
+	width = 7;
+	name = "Derecho Forward Bow Dock"
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -5713,12 +5725,6 @@
 	picked_color = "Lime"
 	},
 /obj/structure/catwalk/over,
-/obj/docking_port/mobile{
-	dir = 4;
-	launch_status = 0;
-	port_direction = 2;
-	preferred_direction = 4
-	},
 /turf/open/floor/plating,
 /area/ship/external/dark)
 "Xx" = (
@@ -5864,6 +5870,7 @@
 /obj/item/storage/guncase/pistol/a357,
 /obj/machinery/light/small/directional/east,
 /obj/item/storage/belt/military/assault,
+/obj/item/clothing/glasses/hud/security/sunglasses/ngr,
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm/captain)
 "Yq" = (

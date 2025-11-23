@@ -200,3 +200,75 @@
 		new /obj/item/clothing/suit/hooded/wintercoat(src)
 		new /obj/item/clothing/shoes/winterboots(src)
 	return
+
+/obj/structure/closet/wardrobe/clip
+	name = "CLIP spare uniforms locker"
+	desc = "This locker stores spare CLIP uniforms."
+	icon_door = "blue"
+
+/obj/structure/closet/wardrobe/clip/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/clothing/under/clip(src)
+	for(var/i in 1 to 4)
+		new /obj/item/clothing/shoes/workboots(src)
+	return
+
+/obj/structure/closet/wardrobe/clip/wall
+	icon = 'icons/obj/wallcloset.dmi'
+	icon_state = "generic_wall"
+	icon_door = null
+	wall_mounted = TRUE
+	anchored = TRUE
+	density = TRUE
+	can_be_unanchored = FALSE
+
+/obj/structure/closet/wardrobe/clip/formal
+	name = "formal CLIP spare uniforms locker"
+	desc = "This locker stores spare formal CLIP uniforms."
+	icon_door = "white"
+
+/obj/structure/closet/wardrobe/clip/formal/PopulateContents()
+	for(var/i in 1 to 3)
+		new /obj/item/clothing/under/clip/formal/with_shirt(src)
+	for(var/i in 1 to 3)
+		new /obj/item/clothing/under/clip/formal/with_shirt/alt(src)
+	for(var/i in 1 to 6)
+		new /obj/item/clothing/shoes/laceup(src)
+	return
+
+/obj/structure/closet/wardrobe/clip/formal/wall
+	icon = 'icons/obj/wallcloset.dmi'
+	icon_state = "generic_wall"
+	icon_door = null
+	wall_mounted = TRUE
+	anchored = TRUE
+	density = TRUE
+	can_be_unanchored = FALSE
+
+/obj/structure/closet/wardrobe/clip/minutemen
+	name = "C-MM spare uniforms locker"
+	desc = "This locker stores spare C-MM uniforms. Make sure any boots taken out are polished."
+
+/obj/structure/closet/wardrobe/clip/minutemen/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/clothing/under/clip/minutemen(src)
+	for(var/i in 1 to 4)
+		new /obj/item/clothing/head/clip(src)
+	for(var/i in 1 to 4)
+		new /obj/item/clothing/head/soft/utility_navy(src)
+	for(var/i in 1 to 4)
+		new /obj/item/clothing/shoes/combat(src)
+	for(var/i in 1 to 4)
+		new /obj/item/storage/backpack/security/clip(src)
+	for(var/i in 1 to 4)
+		new /obj/item/storage/backpack/satchel/sec/clip(src)
+	return
+
+/obj/structure/closet/wardrobe/clip/minutemen/wall
+	icon = 'icons/obj/wallcloset.dmi'
+	icon_state = "generic_wall"
+	icon_door = null
+	wall_mounted = TRUE
+	anchored = TRUE
+	density = TRUE
+	can_be_unanchored = FALSE

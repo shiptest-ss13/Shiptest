@@ -247,14 +247,16 @@
 /datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
 	switch(rand(1,12))
-		if(1 to 4)
+		if(1 to 3)
 			for(var/i in 1 to rand(2,3))
 				. += capitalize(pick(GLOB.alphabet))
 			. += "-"
 			. += "[pick(rand(1,999))]"
-		if(4 to 9)
+		if(3 to 5)
+			. += "[pick(GLOB.planet_names)]"
+		if(5 to 7)
 			. += "[pick(GLOB.planet_names)] \Roman[rand(1,9)]"
-		if(10, 11)
+		if(8 to 11)
 			. += "[pick(GLOB.planet_prefixes)] [pick(GLOB.planet_names)]"
 		if(12)
 			. += "[capitalize(pick(GLOB.adjectives))] [pick(GLOB.planet_names)]"
@@ -285,6 +287,11 @@
 	var/datum/virtual_level/our_likely_vlevel = mapzone.virtual_levels[1]
 	if(istype(our_likely_vlevel) && selfloop)
 		our_likely_vlevel.selfloop()
+
+	for(var/obj/docking_port/stationary/port in reserve_docks)
+		if(port.roundstart_template)
+			port.name = "[name] auxillary docking location"
+			port.load_roundstart()
 
 	SEND_SIGNAL(src, COMSIG_OVERMAP_LOADED)
 	loading = FALSE
@@ -590,12 +597,18 @@
 	light_power = 1
 	light_color = "#FFFFFF" // should look liminal, due to moons lighting
 
+/area/overmap_encounter/planetoid/moon/explored
+	area_flags = VALID_TERRITORY
+
 /area/overmap_encounter/planetoid/asteroid
 	name = "\improper Asteroid Field"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
 	ambience_index = AMBIENCE_SPACE
 	light_range = 0
 	light_power = 0
+
+/area/overmap_encounter/planetoid/asteroid/explored
+	area_flags = VALID_TERRITORY
 
 /area/overmap_encounter/planetoid/gas_giant
 	name = "\improper Gas Giant"

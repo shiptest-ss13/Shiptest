@@ -92,14 +92,14 @@
 	if(type in opcomputer.advanced_surgeries)
 		return TRUE
 
-/datum/surgery/proc/next_step(mob/user, intent)
+/datum/surgery/proc/next_step(mob/user, list/modifiers)
 	if(location != user.zone_selected)
 		return FALSE
 	if(step_in_progress)
 		return TRUE
 
 	var/try_to_fail = FALSE
-	if(intent == INTENT_DISARM)
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
 		try_to_fail = TRUE
 
 	var/datum/surgery_step/S = get_surgery_step()
@@ -174,9 +174,7 @@
 	var/list/req_tech_surgeries = list(
 		/datum/surgery/healing/brute/upgraded/femto,
 		/datum/surgery/healing/burn/upgraded/femto,
-		/datum/surgery/healing/combo/upgraded,
-		/datum/surgery/advanced/pacify,
-		/datum/surgery/advanced/lobotomy)
+		/datum/surgery/healing/combo/upgraded)
 	for(var/i in req_tech_surgeries)
 		var/datum/surgery/beep = i
 		if(initial(beep.requires_tech))

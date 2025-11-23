@@ -366,6 +366,7 @@
 	pixel_y = 3;
 	pixel_x = 8
 	},
+/obj/item/clothing/under/suit/roumain/alt,
 /turf/open/floor/wood/walnut,
 /area/ship/security)
 "fm" = (
@@ -463,6 +464,8 @@
 /obj/item/flashlight/lantern,
 /obj/item/melee/knife/combat,
 /obj/item/clothing/accessory/waistcoat/roumain,
+/obj/item/clothing/under/suit/roumain/alt,
+/obj/item/clothing/head/helmet/roumain,
 /turf/open/floor/wood/walnut,
 /area/ship/security)
 "gJ" = (
@@ -551,9 +554,12 @@
 /area/ship/bridge)
 "ie" = (
 /obj/docking_port/stationary{
-	width = 30;
-	height = 15;
-	dwidth = 15
+	dheight = 1;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 4;
+	height = 30;
+	name = "Vagrant Port Dock";
+	width = 40
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -613,6 +619,9 @@
 /obj/effect/turf_decal/siding/brown/corner{
 	dir = 4
 	},
+/obj/item/clothing/under/suit/roumain/montagne,
+/obj/item/clothing/head/helmet/roumain,
+/obj/item/clothing/suit/armor/roumain/plate/montagne,
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "ja" = (
@@ -654,8 +663,8 @@
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/eva,
 /obj/item/clothing/head/helmet/space/eva,
-/obj/item/clothing/mask/breath,
 /obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/clothing/mask/gas/roumain,
 /turf/open/floor/wood/walnut,
 /area/ship/cargo)
 "jB" = (
@@ -993,6 +1002,25 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
+"pl" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 4;
+	dwidth = 15;
+	height = 30;
+	name = "Vagrant Forward Bow Dock";
+	width = 35;
+	disable_on_owner_ship_dock = 1
+	},
+/obj/docking_port/mobile{
+	dir = 8;
+	preferred_direction = 4
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "pp" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1125,6 +1153,7 @@
 /obj/item/melee/knife/hunting,
 /obj/item/clothing/suit/armor/roumain/shadow,
 /obj/item/clothing/head/cowboy/sec/roumain/shadow,
+/obj/item/clothing/under/suit/roumain/alt,
 /turf/open/floor/wood/walnut,
 /area/ship/security)
 "qR" = (
@@ -1245,8 +1274,8 @@
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/hardsuit/solgov/roumain,
 /obj/item/tank/internals/emergency_oxygen/double,
-/obj/item/clothing/mask/breath,
 /obj/effect/turf_decal/siding/brown,
+/obj/item/clothing/mask/gas/roumain,
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "sV" = (
@@ -1612,11 +1641,11 @@
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/eva,
 /obj/item/clothing/head/helmet/space/eva,
-/obj/item/clothing/mask/breath,
 /obj/item/tank/internals/emergency_oxygen/double{
 	pixel_x = 4;
 	pixel_y = -6
 	},
+/obj/item/clothing/mask/gas/roumain,
 /turf/open/floor/wood/walnut,
 /area/ship/cargo)
 "AB" = (
@@ -1886,14 +1915,6 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/wet/safe,
 /area/ship/roumain)
-"Go" = (
-/obj/docking_port/mobile{
-	dir = 2;
-	preferred_direction = 4;
-	port_direction = 8
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "Gu" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/flora/grass/rockplanet/dead,
@@ -1943,6 +1964,8 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 4
 	},
+/obj/item/clothing/under/suit/roumain/alt,
+/obj/item/clothing/head/helmet/roumain,
 /turf/open/floor/wood/walnut,
 /area/ship/security)
 "Hn" = (
@@ -3715,10 +3738,10 @@ bF
 jM
 OJ
 OJ
+pl
 OJ
 OJ
-OJ
-Go
+jM
 bF
 bF
 bF

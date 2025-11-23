@@ -73,7 +73,7 @@
 		var/datum/surgery_step/next_step = surgery.get_surgery_next_step()
 		if(next_step)
 			surgery.status++
-			if(next_step.try_op(user, target, user.zone_selected, user.get_active_held_item(), surgery))
+			if(next_step.try_op(user, target, user.zone_selected, user.get_active_held_item(), surgery, try_to_fail))
 				return TRUE
 			else
 				surgery.status--

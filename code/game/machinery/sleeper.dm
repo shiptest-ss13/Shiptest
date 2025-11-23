@@ -27,11 +27,11 @@
 	var/list/dispensable_reagents
 
 	var/list/starting_beakers = list(
-		/obj/item/reagent_containers/glass/bottle/antitoxin/sleeper,
-		/obj/item/reagent_containers/glass/bottle/bicaridine/sleeper,
+		/obj/item/reagent_containers/glass/bottle/charcoal/sleeper,
+		/obj/item/reagent_containers/glass/bottle/indomide/sleeper,
 		/obj/item/reagent_containers/glass/bottle/dexalin/sleeper,
 		/obj/item/reagent_containers/glass/bottle/epinephrine/sleeper,
-		/obj/item/reagent_containers/glass/bottle/kelotane/sleeper,
+		/obj/item/reagent_containers/glass/bottle/alvitane/sleeper,
 		/obj/item/reagent_containers/glass/bottle/morphine/sleeper)
 
 	///Chembag which holds all the beakers, don't look at me like that
@@ -101,7 +101,7 @@
 		return
 	playsound(src, 'sound/machines/synth_yes.ogg', 50, TRUE, frequency = rand(5120, 8800))
 	target.apply_status_effect(STATUS_EFFECT_STASIS, STASIS_MACHINE_EFFECT)
-	target.ExtinguishMob()
+	target.extinguish_mob()
 	set_active_power()
 
 /obj/machinery/sleeper/proc/thaw_them(mob/living/target)

@@ -48,7 +48,7 @@
 		/datum/reagent/uranium/radium = 10,
 		/datum/reagent/ammonia = 6,
 		/datum/reagent/saltpetre = 6,
-		/datum/reagent/medicine/omnizine/protozine = 3,
+		/datum/reagent/medicine/panacea/effluvial = 3,
 		/datum/reagent/wittel = 1
 	)
 

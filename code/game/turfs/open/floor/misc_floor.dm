@@ -173,6 +173,9 @@
 /turf/open/floor/plating/rust/plasma
 	initial_gas_mix = "plasma=104;TEMP=293.15"
 
+/turf/open/floor/plating/rust/airless
+	initial_gas_mix = AIRLESS_ATMOS
+
 /turf/open/floor/plasteel/telecomms_floor
 	icon_state = "tcomms"
 	base_icon_state = "tcomms"
@@ -223,8 +226,8 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
-	pixel_x = -19 // recenters 70x70 turf sprites for mappers
-	pixel_y = -19
+	MAP_SWITCH(pixel_x = 0, pixel_x = -19)
+	MAP_SWITCH(pixel_y = 0, pixel_y = -19)
 	layer = HIGH_TURF_LAYER
 	icon_state = "grass-255"
 	base_icon_state = "grass"
@@ -234,8 +237,6 @@
 
 /turf/open/floor/grass/ship/Initialize(mapload, inherited_virtual_z)
 	. = ..()
-	pixel_x = 0 // resets -19 pixel offset
-	pixel_y = 0
 	if(smoothing_flags)
 		var/matrix/translation = new
 		translation.Translate(-19, -19)
@@ -250,6 +251,10 @@
 	baseturfs = /turf/open/floor/ship/dirt/dark
 	icon = 'icons/turf/floors/junglegrass.dmi'
 	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
+
+/turf/open/floor/grass/ship/smoothplasteel
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS, SMOOTH_GROUP_FLOOR_PLASTEEL)
 
 /turf/open/floor/plating/ship/water
 	name = "water"

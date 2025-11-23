@@ -29,9 +29,9 @@
 	chemname = "mannitol"
 	chem_desc = "Heals any brain damage the host may have."
 
-/datum/borer_chem/omnizine
-	chem = /datum/reagent/medicine/omnizine
-	chemname = "omnizine"
+/datum/borer_chem/panacea
+	chem = /datum/reagent/medicine/panacea
+	chemname = "panacea"
 	chem_desc = "Slowly heals all damage types in the host. Overdose will cause damage in all types instead."
 	quantity = 5
 

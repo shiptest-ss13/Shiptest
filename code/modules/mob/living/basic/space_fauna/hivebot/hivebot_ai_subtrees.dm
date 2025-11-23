@@ -40,11 +40,29 @@
 		/datum/ai_planning_subtree/hive_communicate,
 	)
 
+/datum/ai_controller/basic_controller/hivebot/ranged/frontier
+	planning_subtrees = list(
+		/datum/ai_planning_subtree/simple_find_target,
+		//replace with ranged skirmish in follow-up PR
+		/datum/ai_planning_subtree/basic_ranged_attack_subtree/hivebot_frontier,
+		/datum/ai_planning_subtree/attack_obstacle_in_path/hivebot,
+		/datum/ai_planning_subtree/hive_communicate,
+	)
+
 /datum/ai_controller/basic_controller/hivebot/ranged/core
 	planning_subtrees = list(
 		/datum/ai_planning_subtree/simple_find_target,
 		//replace with ranged skirmish in follow-up PR
 		/datum/ai_planning_subtree/basic_ranged_attack_subtree/hivebot_core,
+		/datum/ai_planning_subtree/attack_obstacle_in_path/hivebot,
+		/datum/ai_planning_subtree/hive_communicate,
+	)
+
+/datum/ai_controller/basic_controller/hivebot/ranged/core/frontier
+	planning_subtrees = list(
+		/datum/ai_planning_subtree/simple_find_target,
+		//replace with ranged skirmish in follow-up PR
+		/datum/ai_planning_subtree/basic_ranged_attack_subtree/hivebot_core/frontier,
 		/datum/ai_planning_subtree/attack_obstacle_in_path/hivebot,
 		/datum/ai_planning_subtree/hive_communicate,
 	)
@@ -55,9 +73,14 @@
 /datum/ai_planning_subtree/basic_ranged_attack_subtree/hivebot_core
 	ranged_attack_behavior = /datum/ai_behavior/basic_ranged_attack/hivebot_core
 
+/datum/ai_planning_subtree/basic_ranged_attack_subtree/hivebot_core/frontier
+	ranged_attack_behavior = /datum/ai_behavior/basic_ranged_attack/hivebot_core/frontier
 
 /datum/ai_planning_subtree/basic_ranged_attack_subtree/hivebot
 	ranged_attack_behavior = /datum/ai_behavior/basic_ranged_attack/hivebot
+
+/datum/ai_planning_subtree/basic_ranged_attack_subtree/hivebot_frontier
+	ranged_attack_behavior = /datum/ai_behavior/basic_ranged_attack/hivebot_frontier
 
 /datum/ai_planning_subtree/hive_communicate
 	///chance to go and relay message
@@ -92,6 +115,13 @@
 	hunt_targets = list(/obj/structure/salvageable)
 	hunt_range = 12
 	hunt_chance = 20
+
+/datum/ai_planning_subtree/find_and_hunt_target/salvage_machines/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
+	. = ..()
+	if(istype(controller.pawn, /mob/living/basic/hivebot))
+		var/mob/living/basic/hivebot/our_bot = controller.pawn
+		if(our_bot.growth >= our_bot.growth_cap)
+			return
 
 /datum/ai_planning_subtree/attack_obstacle_in_path/hivebot
 	attack_behaviour = /datum/ai_behavior/attack_obstructions/hivebot

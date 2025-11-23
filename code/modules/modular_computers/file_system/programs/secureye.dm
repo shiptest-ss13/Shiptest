@@ -4,7 +4,7 @@
 	filename = "secureye"
 	filedesc = "SecurEye"
 	ui_header = "borg_mon.gif"
-	program_icon_state = "generic"
+	program_icon_state = "secureye"
 	extended_desc = "This program allows access to standard security camera networks."
 	requires_ntnet = TRUE
 	usage_flags = PROGRAM_CONSOLE | PROGRAM_LAPTOP | PROGRAM_TABLET
@@ -175,7 +175,7 @@
 
 	var/cam_location = active_camera.loc
 
-	if((istype(cam_location, /obj/item/clothing/suit)) || (istype(cam_location, /obj/item/clothing/head/helmet)) || istype(cam_location, /obj/item/storage/belt) || istype(cam_location, /obj/item/storage/pouch)) //Should probably be refactored into excluding backpacks and boots instead of the current whitelist if more places need to be added
+	if(!(istype(cam_location, /obj/item/clothing/shoes)))
 		cam_location = active_camera.loc.loc
 
 	// If we're not forcing an update for some reason and the cameras are in the same location,

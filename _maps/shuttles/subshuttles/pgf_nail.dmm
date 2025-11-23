@@ -33,17 +33,20 @@
 /turf/template_noop,
 /area/template_noop)
 "d" = (
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters{
-	id = "nail_window_shut"
-	},
-/obj/structure/grille,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "nail_window_shut"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -73,7 +76,9 @@
 /area/ship/bridge)
 "l" = (
 /obj/structure/railing/corner,
-/obj/machinery/power/smes/engineering,
+/obj/machinery/power/smes/engineering{
+	input_level = 10000
+	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -107,11 +112,6 @@
 	pixel_y = -20;
 	pixel_x = -6
 	},
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_x = -13;
-	pixel_y = -19
-	},
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
 	},
@@ -119,6 +119,13 @@
 	pixel_y = -30;
 	pixel_x = -2;
 	id = "nail_grid"
+	},
+/obj/machinery/button/door{
+	id = "nail_door_side_blast";
+	name = "Nail Side Door";
+	dir = 1;
+	pixel_y = -20;
+	pixel_x = -16
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -129,15 +136,15 @@
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "nail_holo"
 	},
-/obj/machinery/door/poddoor/preopen{
-	dir = 8;
-	id = "nail_door_blast"
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/machinery/door/poddoor/preopen{
+	dir = 8;
+	id = "nail_door_blast"
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
@@ -193,21 +200,19 @@
 	icon_state = "0-8"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/closet/emcloset/wall/directional/south,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "x" = (
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/structure/closet/emcloset/wall/directional/north,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "y" = (
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters{
-	id = "nail_window_shut"
-	},
-/obj/structure/grille,
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -217,6 +222,17 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "nail_window_shut"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "z" = (
@@ -225,6 +241,13 @@
 	icon_state = "0-2"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 22
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "A" = (
@@ -249,6 +272,11 @@
 	icon_state = "0-8"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/button/door{
+	pixel_y = 20;
+	name = "Engine Shutters";
+	id = "nail_engine_shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "D" = (
@@ -264,6 +292,10 @@
 /obj/structure/window/plasma/reinforced{
 	dir = 1
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "nail_engine_shutters";
+	dir = 2
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "E" = (
@@ -278,20 +310,24 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
 "H" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/light/directional/west,
 /obj/item/wrench,
+/obj/machinery/airalarm/directional/north,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "I" = (
 /obj/machinery/computer/helm{
 	dir = 4
 	},
-/obj/item/radio/intercom/wideband/directional/south,
+/obj/item/radio/intercom/wideband/directional/south{
+	pixel_y = -26;
+	pixel_x = -4
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "J" = (
@@ -325,6 +361,22 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
+"K" = (
+/obj/machinery/door/firedoor/border_only/closed{
+	dir = 2
+	},
+/obj/machinery/door/firedoor/border_only/closed{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/preopen{
+	dir = 1;
+	id = "nail_door_side_blast"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/bridge)
 "L" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 8
@@ -336,17 +388,24 @@
 	dir = 4
 	},
 /obj/structure/window/plasma/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "nail_engine_shutters";
+	dir = 2
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "M" = (
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/structure/grille,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/poddoor/shutters{
 	id = "nail_window_shut"
+	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/structure/cable{
+	icon_state = "0-1"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -370,7 +429,16 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/structure/rack,
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate{
+	name = "boarding saw crate"
+	},
+/obj/item/clothing/glasses/welding{
+	pixel_y = -1;
+	pixel_x = 1
+	},
+/obj/item/radio/headset/pgf/alt,
+/obj/item/gear_pack/anglegrinder,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "R" = (
@@ -381,15 +449,7 @@
 	icon_state = "1-4"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/closet/crate{
-	name = "boarding saw crate"
-	},
-/obj/item/gear_pack/anglegrinder,
-/obj/item/radio/headset/pgf/alt,
-/obj/item/clothing/glasses/welding{
-	pixel_y = -1;
-	pixel_x = 1
-	},
+/obj/machinery/telecomms/relay/preset/pgf,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "S" = (
@@ -431,12 +491,22 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
 "X" = (
-/obj/structure/cable{
+/obj/machinery/power/terminal,
+/obj/machinery/firealarm/directional/north{
+	pixel_y = 32;
+	pixel_x = 6
+	},
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_y = 28;
+	pixel_x = -6
+	},
+/obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/terminal,
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/airalarm/directional/north,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 
@@ -478,7 +548,7 @@ c
 "}
 (5,1,1) = {"
 c
-W
+K
 x
 S
 o
