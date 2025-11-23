@@ -484,6 +484,7 @@
 	pixel_x = -11;
 	pixel_y = -5
 	},
+/obj/item/megaphone/command,
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm/commad)
 "et" = (
@@ -863,6 +864,7 @@
 	pixel_y = 6
 	},
 /obj/item/clothing/glasses/sunglasses,
+/obj/item/megaphone/command,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/commad)
 "jq" = (
@@ -1440,7 +1442,9 @@
 	pixel_y = -2;
 	pixel_x = 22;
 	specialfunctions = 4;
-	dir = 8
+	dir = 8;
+	req_access_txt = "19";
+	req_ship_access = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1664,12 +1668,12 @@
 	pixel_y = 6
 	},
 /obj/item/food/muffin/berry{
-	pixel_x = -7;
-	pixel_y = 6
+	pixel_x = -6;
+	pixel_y = 12
 	},
 /obj/item/food/muffin{
-	pixel_x = -3;
-	pixel_y = -1
+	pixel_x = -7;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -2307,10 +2311,6 @@
 	pixel_x = 6;
 	pixel_y = -1
 	},
-/obj/item/ammo_box/magazine/spitter_9mm{
-	pixel_x = 7;
-	pixel_y = 0
-	},
 /obj/item/ammo_box/magazine/m10mm_ringneck{
 	pixel_x = -8;
 	pixel_y = -5
@@ -2356,6 +2356,7 @@
 	pixel_x = 0;
 	pixel_y = 31
 	},
+/obj/item/folder,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "AV" = (
@@ -2644,6 +2645,10 @@
 /area/ship/hallway/central)
 "FZ" = (
 /obj/structure/table,
+/obj/machinery/jukebox/boombox{
+	pixel_x = 3;
+	pixel_y = 4
+	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/ccommons)
 "Gj" = (
@@ -3152,7 +3157,8 @@
 	pixel_y = 22;
 	id = "fireflyprivate";
 	name = "Bridge Lockdown";
-	req_access_txt = "19"
+	req_access_txt = "19";
+	req_ship_access = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -3493,6 +3499,10 @@
 /obj/item/storage/toolbox/ammo/c357{
 	pixel_x = -6;
 	pixel_y = 4
+	},
+/obj/item/gun_maint_kit{
+	pixel_x = 8;
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -4019,10 +4029,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
-"VE" = (
-/obj/item/folder,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/medical)
 "VJ" = (
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 8
@@ -4350,6 +4356,7 @@
 	pixel_x = 10;
 	pixel_y = 2
 	},
+/obj/item/healthanalyzer,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "ZV" = (
@@ -4573,7 +4580,7 @@ jW
 "}
 (8,1,1) = {"
 Ke
-VE
+Ke
 Ke
 Ke
 xb
