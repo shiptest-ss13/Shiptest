@@ -167,10 +167,11 @@
 		return ..()
 	if(!scanning)
 		to_chat(usr, span_warning("[src] must be on to reset its radiation level!"))
-		return 0
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 	radiation_count = 0
 	to_chat(usr, span_notice("You flush [src]'s radiation counts, resetting it to normal."))
 	update_appearance()
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/item/geiger_counter/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
