@@ -289,7 +289,7 @@
  * proximity_flag is not currently passed to attack_hand, and is instead used
  * in human click code to allow glove touches only at melee range.
  */
-/mob/proc/UnarmedAttack(atom/A, proximity_flag)
+/mob/proc/UnarmedAttack(atom/A, proximity_flag, modifiers)
 	if(ismob(A))
 		changeNext_move(CLICK_CD_MELEE)
 	return

@@ -205,10 +205,10 @@
 	tapecuff.apply_cuffs(target, user, 0)
 	return
 
-/obj/item/stack/tape/afterattack(obj/O, mob/living/user, proximity)
+/obj/item/stack/tape/afterattack(obj/O, mob/living/user, proximity, click_parameters)
 	if(!istype(O) || !proximity)
 		return TRUE
-	if(user.a_intent == INTENT_DISARM && istype(O, /obj/item))
+	if(LAZYACCESS(params2list(click_parameters), RIGHT_CLICK) && istype(O, /obj/item))
 		var/obj/item/I = O
 		if(I.embedding && I.embedding == conferred_embed)
 			to_chat(user, span_warning("[I] is already coated in [src]!"))

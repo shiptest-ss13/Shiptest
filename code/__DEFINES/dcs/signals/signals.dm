@@ -189,6 +189,8 @@
 #define COMSIG_ATOM_CROWBAR_ACT "atom_crowbar_act"
 ///from base of atom/analyser_act(): (mob/living/user, obj/item/I)
 #define COMSIG_ATOM_ANALYSER_ACT "atom_analyser_act"
+///from base of atom/shovel_act(): (mob/living/user, obj/item/I)
+#define COMSIG_ATOM_SHOVEL_ACT "atom_shovel_act"
 ///from base of atom/deconstruct_act(): (mob/living/user, obj/item/I)
 #define COMSIG_ATOM_DECONSTRUCT_ACT "atom_deconstruct_act"
 
