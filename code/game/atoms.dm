@@ -1244,32 +1244,35 @@
  *
  * Must return  parent proc ..() in the end if overridden
  */
-/atom/proc/tool_act(mob/living/user, obj/item/I, tool_type)
+/atom/proc/tool_act(mob/living/user, obj/item/tool, tool_type, params)
 	var/signal_result
 
+	var/list/modifiers = params2list(params)
 	var/list/processing_recipes = list() //List of recipes that can be mutated by sending the signal
-	signal_result = SEND_SIGNAL(src, COMSIG_ATOM_TOOL_ACT(tool_type), user, I, processing_recipes)
+	signal_result = SEND_SIGNAL(src, COMSIG_ATOM_TOOL_ACT(tool_type), user, tool, modifiers, processing_recipes)
 	if(processing_recipes.len)
-		process_recipes(user, I, processing_recipes)
-	if(QDELETED(I))
+		process_recipes(user, tool, processing_recipes)
+	if(QDELETED(tool))
 		return TRUE
 	switch(tool_type)
 		if(TOOL_CROWBAR)
-			. = crowbar_act(user, I)
+			. = crowbar_act(user, tool, modifiers)
 		if(TOOL_MULTITOOL)
-			. = multitool_act(user, I)
+			. = multitool_act(user, tool, modifiers)
 		if(TOOL_SCREWDRIVER)
-			. = screwdriver_act(user, I)
+			. = screwdriver_act(user, tool, modifiers)
 		if(TOOL_WRENCH)
-			. = wrench_act(user, I)
+			. = wrench_act(user, tool, modifiers)
 		if(TOOL_WIRECUTTER)
-			. = wirecutter_act(user, I)
+			. = wirecutter_act(user, tool, modifiers)
 		if(TOOL_WELDER)
-			. = welder_act(user, I)
+			. = welder_act(user, tool, modifiers)
 		if(TOOL_ANALYZER)
-			. = analyzer_act(user, I)
+			. = analyzer_act(user, tool, modifiers)
+		if(TOOL_SHOVEL)
+			. = shovel_act(user, tool, modifiers)
 		if(TOOL_DECONSTRUCT)
-			. |= deconstruct_act(user, I)
+			. |= deconstruct_act(user, tool, modifiers)
 	if(. || signal_result & COMPONENT_BLOCK_TOOL_ATTACK) //Either the proc or the signal handled the tool's events in some way.
 		return TRUE
 
@@ -1330,11 +1333,11 @@
 ///
 
 ///Crowbar act
-/atom/proc/crowbar_act(mob/living/user, obj/item/I)
+/atom/proc/crowbar_act(mob/living/user, obj/item/I, list/modifiers)
 	return SEND_SIGNAL(src, COMSIG_ATOM_CROWBAR_ACT, user, I)
 
 ///Multitool act
-/atom/proc/multitool_act(mob/living/user, obj/item/I)
+/atom/proc/multitool_act(mob/living/user, obj/item/I, list/modifiers)
 	return SEND_SIGNAL(src, COMSIG_ATOM_MULTITOOL_ACT, user, I)
 
 ///Check if the multitool has an item in it's data buffer
@@ -1346,27 +1349,31 @@
 	return TRUE
 
 ///Screwdriver act
-/atom/proc/screwdriver_act(mob/living/user, obj/item/I)
+/atom/proc/screwdriver_act(mob/living/user, obj/item/I, list/modifiers)
 	return SEND_SIGNAL(src, COMSIG_ATOM_SCREWDRIVER_ACT, user, I)
 
 ///Wrench act
-/atom/proc/wrench_act(mob/living/user, obj/item/I)
+/atom/proc/wrench_act(mob/living/user, obj/item/I, list/modifiers)
 	return SEND_SIGNAL(src, COMSIG_ATOM_WRENCH_ACT, user, I)
 
 ///Wirecutter act
-/atom/proc/wirecutter_act(mob/living/user, obj/item/I)
+/atom/proc/wirecutter_act(mob/living/user, obj/item/I, list/modifiers)
 	return SEND_SIGNAL(src, COMSIG_ATOM_WIRECUTTER_ACT, user, I)
 
 ///Welder act
-/atom/proc/welder_act(mob/living/user, obj/item/I)
+/atom/proc/welder_act(mob/living/user, obj/item/I, list/modifiers)
 	return SEND_SIGNAL(src, COMSIG_ATOM_WELDER_ACT, user, I)
 
 ///Analyzer act
-/atom/proc/analyzer_act(mob/living/user, obj/item/I)
+/atom/proc/analyzer_act(mob/living/user, obj/item/I, list/modifiers)
 	return SEND_SIGNAL(src, COMSIG_ATOM_ANALYSER_ACT, user, I)
 
+///Shovel act
+/atom/proc/shovel_act(mob/living/user, obj/item/I, list/modifiers)
+	return SEND_SIGNAL(src, COMSIG_ATOM_SHOVEL_ACT, user, I)
+
 ///Deconstruct act
-/atom/proc/deconstruct_act(mob/living/user, obj/item/I)
+/atom/proc/deconstruct_act(mob/living/user, obj/item/I, list/modifiers)
 	if(flags_1 & NODECONSTRUCT_1)
 		return TRUE
 	return SEND_SIGNAL(src, COMSIG_ATOM_DECONSTRUCT_ACT, user, I)
