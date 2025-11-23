@@ -54,7 +54,7 @@
 	var/contained = english_list(injected)
 	log_combat(user, M, "attempted to inject", src, "([contained])")
 
-	if(reagents.total_volume && (ignore_flags || M.can_inject(user, 1))) // Ignore flag should be checked first or there will be an error message.
+	if(reagents.total_volume && (ignore_flags || M.can_inject(user, injection_flags = INJECT_CHECK_PENETRATE_THICK)))
 		to_chat(M, span_warning("You feel a tiny prick!"))
 		to_chat(user, span_notice("You inject [M] with [src]."))
 		playsound(loc, pick('sound/items/hypospray.ogg','sound/items/hypospray2.ogg'), 50, TRUE)
