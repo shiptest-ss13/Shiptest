@@ -196,7 +196,7 @@
 	if(!istype(M))
 		return
 	if(method == TOUCH || method == VAPOR)
-		M.adjust_fire_stacks(-(reac_volume / 10))
+		M.adjust_wet_stacks(reac_volume * REM)
 		M.extinguish_mob()
 	return ..()
 
