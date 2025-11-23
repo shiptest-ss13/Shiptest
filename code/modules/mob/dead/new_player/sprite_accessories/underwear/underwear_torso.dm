@@ -84,6 +84,18 @@
 	name = "Short-sleeved shirt (Greyscale)"
 	icon_state = "shortsleeve"
 
+/datum/sprite_accessory/undershirt/compression
+	name = "compression shirt (Greyscale)"
+	icon_state = "compsleeve"
+
+/datum/sprite_accessory/undershirt/comptshirt
+	name = "compression t-shirt (Greyscale)"
+	icon_state = "compshort"
+
+/datum/sprite_accessory/undershirt/comptank
+	name = "compression tank top (Greyscale)"
+	icon_state = "comptank"
+
 /datum/sprite_accessory/undershirt/tanktop
 	name = "Tank Top (Greyscale)"
 	icon_state = "tank"
