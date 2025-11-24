@@ -27,4 +27,5 @@
 	default_priority = 90
 	mutual_understanding = list(
 		/datum/language/zohil_kalixcian = 90, // enough to sort of understand each other, but not perfectly
+		/datum/language/league_kalixcian = 80,
 	)
