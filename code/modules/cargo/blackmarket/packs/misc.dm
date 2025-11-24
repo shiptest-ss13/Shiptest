@@ -4,7 +4,7 @@
 /datum/blackmarket_item/misc/cham_holster
 	name = "Chameleon Shoulder holster"
 	desc = "Looking to pack some heat without attracting attention? This adapative chameleon shoulder holster can disguise itself and your piece!"
-	item = /obj/item/clothing/accessory/holster
+	item = /obj/item/clothing/accessory/holster/chameleon
 
 	cost_min = 200
 	cost_max = 800

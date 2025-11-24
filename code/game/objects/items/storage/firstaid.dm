@@ -156,7 +156,7 @@
 		/obj/item/stack/medical/mesh = 1,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/reagent_containers/medigel/quardexane = 1,
-		/obj/item/reagent_containers/pill/patch/alvitane = 1,
+		/obj/item/storage/pill_bottle/alvitane = 1,
 		/obj/item/reagent_containers/hypospray/medipen/ysiltane = 1,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
 		/obj/item/reagent_containers/hypospray/medipen/ekit = 1,
@@ -523,6 +523,14 @@
 	for(var/i in 1 to 4)
 		new /obj/item/reagent_containers/pill/patch/starlight(src)
 
+/obj/item/storage/pill_bottle/strider
+	name = "bottle of strider patches"
+	desc = "Contains endurance-enhancing patches. The bottle is decorated with art of a heavily spliced human woman, galloping on 4 horse legs. A small caption reads \"GALLOP ON!\""
+
+/obj/item/storage/pill_bottle/strider/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/reagent_containers/pill/patch/strider(src)
+
 /obj/item/storage/pill_bottle/placebatol
 	name = "bottle of prescription pills"
 	desc = "Contains pills as prescribed. A tag reads: \"NO MEDICINAL EFFECT\"."
@@ -538,3 +546,11 @@
 /obj/item/storage/pill_bottle/tramal/PopulateContents()
 	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/tramal(src)
+
+/obj/item/storage/pill_bottle/alvitane
+	name = "bottle of alvitane patches"
+	desc = "Contains alvitane pills, for treating burn injuries."
+
+/obj/item/storage/pill_bottle/alvitane/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/patch/alvitane

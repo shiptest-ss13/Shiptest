@@ -19,6 +19,7 @@
 
 /datum/reagent/medicine/tramal/on_mob_end_metabolize(mob/living/L)
 	REMOVE_TRAIT(L, TRAIT_PAIN_RESIST, type)
+	REMOVE_TRAIT(L, TRAIT_PINPOINT_EYES, type)
 	..()
 
 /datum/reagent/medicine/tramal/on_mob_life(mob/living/carbon/M)
@@ -85,13 +86,16 @@
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
 		drugged.physiology.damage_resistance += 5
+		drugged.impact_effect /= 2
 
 /datum/reagent/medicine/morphine/on_mob_end_metabolize(mob/living/L)
 	REMOVE_TRAIT(L, TRAIT_PAIN_RESIST, type)
+	REMOVE_TRAIT(L, TRAIT_PINPOINT_EYES, type)
 	L.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
 		drugged.physiology.damage_resistance -= 5
+		drugged.impact_effect *= 2
 	..()
 
 /datum/reagent/medicine/morphine/on_mob_life(mob/living/carbon/M)
@@ -170,9 +174,11 @@
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
 		drugged.physiology.damage_resistance += 15
+		drugged.impact_effect /= 4
 
 /datum/reagent/medicine/dimorlin/on_mob_end_metabolize(mob/living/L)
 	REMOVE_TRAIT(L, TRAIT_ANALGESIA, type)
+	REMOVE_TRAIT(L, TRAIT_PINPOINT_EYES, type)
 	if(iscarbon(L))
 		var/mob/living/carbon/C = L
 		C.set_screwyhud(SCREWYHUD_NONE)
@@ -180,6 +186,7 @@
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
 		drugged.physiology.damage_resistance -= 15
+		drugged.impact_effect *= 4
 	..()
 
 /datum/reagent/medicine/dimorlin/on_mob_life(mob/living/carbon/C)

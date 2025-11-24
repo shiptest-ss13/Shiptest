@@ -9,6 +9,8 @@
 	generic_canpass = FALSE
 	plane = GAME_PLANE_FOV_HIDDEN
 	wound_bonus = CANT_WOUND // can't wound by default
+	///armour percentage that the projectile ignores
+	armour_penetration = 0
 	///The sound this plays on impact.
 	var/hitsound = 'sound/weapons/pierce.ogg'
 	var/hitsound_non_living = ""
@@ -75,7 +77,7 @@
 	var/projectile_piercing = NONE
 	/// number of times we've pierced something. Incremented BEFORE bullet_act and on_hit proc!
 	var/pierces = 0
-
+	var/ignore_concealment = FALSE
 	///Amount of deciseconds it takes for projectile to travel
 	var/speed = 0.8
 	///plus/minus modifier to projectile speed
@@ -142,8 +144,6 @@
 	var/damage_type = BRUTE //BRUTE, BURN, TOX, OXY, CLONE, STAMINA are the only things that should be in here
 	var/nodamage = FALSE //Determines if the projectile will skip any damage inflictions
 	var/flag = "bullet" //Defines what armor to use when it hits things.  Must be set to bullet, laser, energy,or bomb
-	///How much armor this projectile pierces.
-	var/armour_penetration = 0
 	var/projectile_type = /obj/projectile
 	var/range = 50 //This will de-increment every step. When 0, it will deletze the projectile.
 	var/decayedRange			//stores original range
@@ -194,6 +194,9 @@
 	. = ..()
 	decayedRange = range
 	speed = speed + speed_mod
+	if(firer)
+		if(firer.vis_flags & SEE_MOBS)
+			ignore_concealment = TRUE
 
 	if(embedding)
 		updateEmbedding()
@@ -530,6 +533,8 @@
 		var/mob/living/L = target
 		if(direct_target)
 			return TRUE
+		if(L.check_concealment(src))
+			return FALSE
 		// If target not able to use items, move and stand - or if they're just dead, pass over.
 		if(L.stat || (!hit_stunned_targets && HAS_TRAIT(L, TRAIT_IMMOBILIZED) && HAS_TRAIT(L, TRAIT_FLOORED) && HAS_TRAIT(L, TRAIT_HANDS_BLOCKED)))
 			return FALSE

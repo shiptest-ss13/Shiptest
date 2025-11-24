@@ -1,4 +1,4 @@
-#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/energy_bayonet, /obj/item/attachment/gun, /obj/item/attachment/ammo_counter)
+#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/energy_bayonet, /obj/item/attachment/ammo_counter)
 #define SCARBOROUGH_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_SCOPE = 1, ATTACHMENT_SLOT_RAIL = 1)
 
 //########### PISTOLS ###########//
@@ -609,7 +609,7 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 	spread_unwielded = 35
 	recoil = 2
 	recoil_unwielded = 10
-	wield_slowdown = SNIPER_SLOWDOWN
+	wield_slowdown = LIGHT_SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
@@ -699,6 +699,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 	actions_types = list()
 	show_magazine_on_sprite = TRUE
 	manufacturer = MANUFACTURER_SCARBOROUGH
+	wield_slowdown = AMR_SLOWDOWN
 
 	show_ammo_capacity_on_magazine_sprite = TRUE
 
@@ -864,11 +865,13 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra)
 
 NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 
+/*
 /obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl
 	name = "SMR-80 \"Hydra\""
 	desc = "Scarborough Arms' premier modular assault rifle platform. This is the basic configuration, optimized for light weight and handiness. A very well-regarded, if expensive and rare, assault rifle. This one has an underslung grenade launcher attached. Chambered in 5.56x42mm CLIP."
 
 	default_attachments = list(/obj/item/attachment/gun/ballistic/launcher)
+*/
 
 /obj/item/ammo_box/magazine/m556_42_hydra
 	name = "Hydra assault rifle magazine (5.56x42mm CLIP)"
