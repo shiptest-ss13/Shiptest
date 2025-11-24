@@ -6,11 +6,11 @@
 	oxidation_temperature = T0C - 100 // it checks max of this and fire temperature, so rarely will things spontaneously combust
 	breath_alert_info = list(
 		not_enough_alert = list(
-			alert_category = "not_enough_oxy",
+			alert_category = ALERT_NOT_ENOUGH_OXYGEN,
 			alert_type = /atom/movable/screen/alert/not_enough_oxy
 		),
 		too_much_alert = list(
-			alert_category = "too_much_oxy",
+			alert_category = ALERT_TOO_MUCH_OXYGEN,
 			alert_type = /atom/movable/screen/alert/too_much_oxy
 		)
 	)
@@ -22,11 +22,11 @@
 	name = "Nitrogen"
 	breath_alert_info = list(
 		not_enough_alert = list(
-			alert_category = "not_enough_nitro",
+			alert_category = ALERT_NOT_ENOUGH_NITRO,
 			alert_type = /atom/movable/screen/alert/not_enough_nitro
 		),
 		too_much_alert = list(
-			alert_category = "too_much_nitro",
+			alert_category = ALERT_TOO_MUCH_NITRO,
 			alert_type = /atom/movable/screen/alert/too_much_nitro
 		)
 	)
@@ -55,11 +55,11 @@
 	breath_results = GAS_O2
 	breath_alert_info = list(
 		not_enough_alert = list(
-			alert_category = "not_enough_co2",
+			alert_category = ALERT_NOT_ENOUGH_CO2,
 			alert_type = /atom/movable/screen/alert/not_enough_co2
 		),
 		too_much_alert = list(
-			alert_category = "too_much_co2",
+			alert_category = ALERT_TOO_MUCH_CO2,
 			alert_type = /atom/movable/screen/alert/too_much_co2
 		)
 	)
@@ -73,7 +73,7 @@
 	name = "Plasma"
 	gas_overlay = "plasma"
 	moles_visible = MOLES_GAS_VISIBLE
-	flags = GAS_FLAG_DANGEROUS
+	flags = GAS_FLAG_DANGEROUS|GAS_FLAG_IRRITANT
 	breath_alert_info = list(
 		not_enough_alert = list(
 			alert_category = "not_enough_tox",
@@ -194,7 +194,7 @@
 	specific_heat = 30
 	molar_mass = 69 // yes, really
 	name = "Chlorine"
-	flags = GAS_FLAG_DANGEROUS
+	flags = GAS_FLAG_DANGEROUS|GAS_FLAG_IRRITANT
 	moles_visible = MOLES_GAS_VISIBLE * 5
 	oxidation_temperature = T0C - 100
 	oxidation_rate = 0.5
@@ -207,7 +207,7 @@
 	specific_heat = 40
 	molar_mass = 36
 	name = "Hydrogen Chloride"
-	flags = GAS_FLAG_DANGEROUS
+	flags = GAS_FLAG_DANGEROUS|GAS_FLAG_IRRITANT
 	moles_visible = MOLES_GAS_VISIBLE * 2
 	gas_overlay = "nitrous_oxide"
 	color = "#5bfd45"
@@ -222,7 +222,7 @@
 	specific_heat = 22
 	molar_mass = 64
 	name = "Sulfur Dioxide"
-	flags = GAS_FLAG_DANGEROUS
+	flags = GAS_FLAG_DANGEROUS|GAS_FLAG_IRRITANT
 	moles_visible = MOLES_GAS_VISIBLE * 60
 	gas_overlay = "generic"
 	color = "#d4cb28"
@@ -252,7 +252,7 @@
 	specific_heat = 100 //used as a coolant
 	molar_mass = 17
 	name = "Ammonia"
-	flags = GAS_FLAG_DANGEROUS
+	flags = GAS_FLAG_DANGEROUS|GAS_FLAG_IRRITANT
 	moles_visible = MOLES_GAS_VISIBLE
 	color = "#ffe"
 	gas_overlay = "nitrous_oxide"
