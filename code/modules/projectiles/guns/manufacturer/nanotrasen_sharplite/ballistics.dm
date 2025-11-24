@@ -344,7 +344,7 @@ NO_MAG_GUN_HELPER(automatic/smg/expedition)
 
 	fire_delay = 0.13 SECONDS
 
-	spread = 7
+	spread = 8
 	spread_unwielded = 10
 
 	recoil = 0
