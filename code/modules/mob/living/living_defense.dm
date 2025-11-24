@@ -462,7 +462,7 @@
 		return
 
 	if(method == INGEST)
-		taste(source)
+		taste_list(reagents)
 
 	var/permeability = 1
 	if(method == VAPOR)
