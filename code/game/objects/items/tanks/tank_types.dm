@@ -131,7 +131,6 @@
 /obj/item/tank/internals/emergency_oxygen/engi
 	name = "extended-capacity emergency oxygen tank"
 	icon_state = "emergency_tst"
-	volume = 2 // should last for about 30 minutes or so if full
 
 /obj/item/tank/internals/emergency_oxygen/engi/empty/populate_gas()
 	return
