@@ -283,7 +283,6 @@
 
 /// triggered on wield of two handed item
 /obj/item/shield/heavy/proc/on_wield(obj/item/source, mob/user)
-	SIGNAL_HANDLER
 
 	if(broken != TRUE)
 		if(do_after(user, 30, user, IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE, TRUE))
