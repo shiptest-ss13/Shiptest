@@ -48,6 +48,8 @@
 
 	var/brute_heal = 1
 	var/burn_heal = 0
+	/// Whether this reagent should get the tastes of food it's in applied onto it
+	var/carry_food_tastes = TRUE
 
 /datum/reagent/consumable/nutriment/on_mob_life(mob/living/carbon/M)
 	if(prob(50))
@@ -56,43 +58,43 @@
 	..()
 
 /datum/reagent/consumable/nutriment/on_new(list/supplied_data)
+	. = ..()
+	if(!data)
+		return
 	// taste data can sometimes be ("salt" = 3, "chips" = 1)
 	// and we want it to be in the form ("salt" = 0.75, "chips" = 0.25)
 	// which is called "normalizing"
 	if(!supplied_data)
 		supplied_data = data
-
 	// if data isn't an associative list, this has some WEIRD side effects
 	// TODO probably check for assoc list?
-
 	data = counterlist_normalise(supplied_data)
 
 /datum/reagent/consumable/nutriment/on_merge(list/newdata, newvolume)
+	. = ..()
 	if(!islist(newdata) || !newdata.len)
 		return
-
 	// data for nutriment is one or more (flavour -> ratio)
 	// where all the ratio values adds up to 1
-
 	var/list/taste_amounts = list()
 	if(data)
 		taste_amounts = data.Copy()
-
 	counterlist_scale(taste_amounts, volume)
-
 	var/list/other_taste_amounts = newdata.Copy()
 	counterlist_scale(other_taste_amounts, newvolume)
-
 	counterlist_combine(taste_amounts, other_taste_amounts)
-
 	counterlist_normalise(taste_amounts)
-
 	data = taste_amounts
+
+/datum/reagent/consumable/nutriment/get_taste_description(mob/living/taster)
+	if(length(data))
+		return data
+	return ..()
 
 /datum/reagent/consumable/nutriment/vitamin
 	name = "Vitamin"
 	description = "All the best vitamins, minerals, and carbohydrates the body needs in pure form."
-
+	taste_description = "bitterness"
 	brute_heal = 1
 	burn_heal = 1
 
@@ -101,11 +103,22 @@
 		M.satiety += 30
 	. = ..()
 
-/datum/reagent/consumable/nutriment/protein //this is from a beestation pr from a tg pr that actually makes use of this reagent. At the moment that I am porting newfood, we are just using it as filler to have something other than vitamins and nutriments.
+/datum/reagent/consumable/nutriment/protein
 	name = "Protein"
 	description = "A natural polyamide made up of amino acids. An essential constituent of mosts known forms of life."
+	taste_description = "chalk"
 	brute_heal = 0.8 //Rewards the player for eating a balanced diet.
 	nutriment_factor = 9 * REAGENTS_METABOLISM //45% as calorie dense as corn oil.
+
+/datum/reagent/consumable/nutriment/organ_tissue
+	name = "Organ Tissue"
+	description = "Natural tissues that make up the bulk of organs, providing many vitamins and minerals."
+	taste_description = "rich earthy pungent"
+
+/datum/reagent/consumable/nutriment/organ_tissue/stomach_lining
+	name = "Stomach Lining"
+	description = "Natural tissue that keeps your stomach safe."
+	carry_food_tastes = FALSE // Don't want stomachs to leech the flavours of what they eat
 
 /datum/reagent/consumable/cooking_oil
 	name = "Cooking Oil"
