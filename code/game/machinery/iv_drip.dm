@@ -174,15 +174,13 @@
 	. = ..()
 	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
 		return
-
-	if(!user.canUseTopic(src, be_close=TRUE))
-		return
 	if(dripfeed)
 		dripfeed = FALSE
 		to_chat(usr, span_notice("You loosen the valve to speed up the [src]."))
 	else
 		dripfeed = TRUE
 		to_chat(usr, span_notice("You tighten the valve to slowly drip-feed the contents of [src]."))
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/machinery/iv_drip/verb/eject_beaker()
 	set category = "Object"
