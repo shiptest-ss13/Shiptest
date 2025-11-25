@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/glass/chem_jug
 	name = "chemical jug"
-	desc = "A large jug used for storing bulk ammounts chemicals. Provided with a tamper seal which ensures that the contents are pure"
+	desc = "A large jug used for storing bulk quantities of chemicals. Provided with an anti-tamper seal which ensures that the contents are pure."
 	icon = 'icons/obj/chemical/chem_jug.dmi' // the coloring of labels for elemental chemicals is based on the chemical group block coloring at https://pubchem.ncbi.nlm.nih.gov/periodic-table/ . Everything else is whatever.
 	icon_state = "chem_jug"
 	item_state = "sheet-plastic"
@@ -22,7 +22,7 @@
 	lefthand_file = 'icons/mob/inhands/misc/sheets_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/sheets_righthand.dmi'
 
-/obj/item/reagent_containers/glass/chem_jug/AltClick(mob/user)
+/obj/item/reagent_containers/glass/chem_jug/attack_self_secondary(mob/user)
 	. = ..()
 	if(tamper && !cap_on)
 		tamper = FALSE
