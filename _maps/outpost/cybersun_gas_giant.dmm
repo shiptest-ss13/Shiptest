@@ -555,6 +555,12 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plating,
 /area/space)
+"dv" = (
+/obj/effect/turf_decal/corner/transparent/cybersunteal{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/space)
 "dw" = (
 /obj/machinery/washing_machine,
 /turf/open/floor/plating,
@@ -892,6 +898,7 @@
 /area/space)
 "fC" = (
 /obj/structure/chair/sofa/blue/corpo/corner/directional/north,
+/obj/machinery/light/floor,
 /turf/open/floor/suns/hatch/mahogany,
 /area/space)
 "fD" = (
@@ -961,6 +968,12 @@
 	dir = 5
 	},
 /turf/open/floor/glass/reinforced,
+/area/space)
+"gn" = (
+/obj/structure/platform/ship_four,
+/obj/structure/table/glass,
+/obj/item/radio/intercom/directional/west,
+/turf/open/floor/suns/dark/plain,
 /area/space)
 "go" = (
 /obj/structure/chair/sofa/red/corpo/left/directional/south,
@@ -1053,6 +1066,10 @@
 	dir = 1
 	},
 /turf/open/floor/suns/hatch/maple,
+/area/space)
+"gL" = (
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plating,
 /area/space)
 "gQ" = (
 /obj/structure/fluff/hedge,
@@ -1313,6 +1330,7 @@
 /area/space)
 "iD" = (
 /obj/structure/chair/sofa/blue/corpo/corner/directional/south,
+/obj/machinery/light/floor,
 /turf/open/floor/suns/hatch/mahogany,
 /area/space)
 "iE" = (
@@ -1413,9 +1431,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "jF" = (
-/obj/effect/turf_decal/siding/black{
-	dir = 10
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "jG" = (
@@ -1771,7 +1787,11 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 5
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/corner/transparent/cybersunteal/three_quarters{
+	dir = 8
+	},
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "mm" = (
 /obj/effect/turf_decal/siding/wood{
@@ -2232,10 +2252,33 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "ou" = (
-/obj/effect/turf_decal/siding/black{
-	dir = 4
+/obj/effect/turf_decal/siding/wood{
+	color = "#792f27";
+	dir = 10
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/siding/wood{
+	color = "#792f27";
+	dir = 5
+	},
+/obj/structure/table/glass,
+/obj/machinery/light/floor,
+/obj/item/reagent_containers/food/drinks/bottle/cognac{
+	pixel_x = 7;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = -6;
+	pixel_y = 15
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = -6;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/turf/open/floor/suns/dark/plain,
 /area/space)
 "ow" = (
 /obj/machinery/holopad,
@@ -2312,7 +2355,10 @@
 /obj/structure/sign/barsign{
 	pixel_y = 30
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/corner/transparent/cybersunteal/half{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "oJ" = (
 /obj/effect/turf_decal/siding/wood{
@@ -2913,13 +2959,6 @@
 /obj/structure/chair/sofa/red/corpo/directional/north,
 /turf/open/floor/suns/hatch/maple,
 /area/space)
-"sa" = (
-/obj/structure/chair/stool/bar{
-	dir = 1
-	},
-/obj/machinery/light/dim/directional/west,
-/turf/open/floor/suns/hatch/maple,
-/area/space)
 "sb" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/manifold{
 	dir = 8
@@ -3168,6 +3207,12 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"ts" = (
+/obj/machinery/door/airlock/mining{
+	name = "Refinery Office"
+	},
+/turf/open/floor/plasteel/tech,
 /area/space)
 "tv" = (
 /obj/structure/table/glass,
@@ -3426,6 +3471,11 @@
 /obj/effect/turf_decal/corner/opaque/orange/border,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
+"vv" = (
+/obj/effect/turf_decal/corner/transparent/cybersunteal/half,
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "vy" = (
 /obj/structure/filingcabinet/double{
 	dir = 8;
@@ -3525,7 +3575,10 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "wi" = (
-/obj/structure/crate_shelf,
+/obj/structure/ore_box,
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono,
 /area/space)
 "wk" = (
@@ -3616,9 +3669,11 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/space)
-"xc" = (
-/obj/effect/turf_decal/corner/transparent/cybersunteal/half,
-/obj/machinery/light/dim/directional/south,
+"wX" = (
+/obj/effect/turf_decal/corner/transparent/cybersunteal/half{
+	dir = 1
+	},
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "xd" = (
@@ -3811,7 +3866,8 @@
 /area/space)
 "yh" = (
 /obj/machinery/mineral/processing_unit{
-	name = "micro-furnace"
+	name = "micro-furnace";
+	desc = "A micro-fusion crucible manufactured for the express purpose of breaking alloys down."
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/space)
@@ -3819,6 +3875,7 @@
 /obj/effect/turf_decal/siding/wood/end{
 	color = "#D2BC9D"
 	},
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/suns/hatch/maple,
 /area/space)
 "yl" = (
@@ -3838,35 +3895,6 @@
 /area/space)
 "yB" = (
 /obj/structure/chair/sofa/red/corpo/right/directional/east,
-/turf/open/floor/suns/dark/plain,
-/area/space)
-"yE" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#792f27";
-	dir = 10
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#792f27";
-	dir = 5
-	},
-/obj/structure/table/glass,
-/obj/machinery/light/floor,
-/obj/item/reagent_containers/food/drinks/bottle/cognac{
-	pixel_x = 7;
-	pixel_y = 4
-	},
-/obj/item/reagent_containers/food/drinks/modglass/small{
-	pixel_x = -6;
-	pixel_y = 15
-	},
-/obj/item/reagent_containers/food/drinks/modglass/small{
-	pixel_x = -6;
-	pixel_y = 9
-	},
-/obj/item/reagent_containers/food/drinks/modglass/small{
-	pixel_x = -6;
-	pixel_y = 4
-	},
 /turf/open/floor/suns/dark/plain,
 /area/space)
 "yI" = (
@@ -4078,11 +4106,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
-"Al" = (
-/obj/structure/chair/stool/bar,
-/obj/machinery/light/dim/directional/west,
-/turf/open/floor/suns/hatch/maple,
-/area/space)
 "Aq" = (
 /obj/effect/turf_decal/corner/transparent/cybersunteal/three_quarters,
 /turf/open/floor/plasteel/mono/dark,
@@ -4177,8 +4200,9 @@
 /turf/open/floor/suns/hatch/mahogany,
 /area/space)
 "Bf" = (
-/obj/effect/turf_decal/siding/black,
-/turf/open/floor/plasteel/dark,
+/obj/structure/table/glass,
+/obj/machinery/newscaster/directional/east,
+/turf/open/floor/suns/dark/plain,
 /area/space)
 "Bi" = (
 /obj/structure/urinal{
@@ -4451,15 +4475,15 @@
 	},
 /turf/open/floor/suns/dark/plain,
 /area/space)
+"CY" = (
+/obj/structure/bed{
+	dir = 1
+	},
+/turf/open/floor/suns/hatch/mahogany,
+/area/space)
 "CZ" = (
 /obj/effect/turf_decal/industrial/hatch,
 /turf/open/floor/plasteel/tech,
-/area/space)
-"Da" = (
-/obj/structure/platform/ship_four,
-/obj/structure/table/glass,
-/obj/item/radio/intercom/directional/west,
-/turf/open/floor/suns/dark/plain,
 /area/space)
 "Dc" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
@@ -4701,10 +4725,11 @@
 /turf/open/floor/suns/hatch/bamboo,
 /area/space)
 "Ec" = (
-/obj/effect/turf_decal/siding/black/corner{
-	dir = 8
+/obj/structure/chair/stool/bar{
+	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/obj/machinery/light/dim/directional/west,
+/turf/open/floor/suns/hatch/maple,
 /area/space)
 "Ed" = (
 /obj/structure/crate_shelf,
@@ -4943,6 +4968,7 @@
 /area/space)
 "Fl" = (
 /obj/structure/chair/sofa/blue/corpo/corner/directional/east,
+/obj/machinery/light/floor,
 /turf/open/floor/suns/hatch/mahogany,
 /area/space)
 "Fm" = (
@@ -5122,6 +5148,7 @@
 /area/space)
 "GO" = (
 /obj/structure/chair/sofa/blue/corpo/right/directional/west,
+/obj/machinery/newscaster/directional/north,
 /turf/open/floor/suns/hatch/mahogany,
 /area/space)
 "GQ" = (
@@ -5157,6 +5184,7 @@
 	pixel_y = 14
 	},
 /obj/effect/turf_decal/borderfloorblack,
+/obj/machinery/newscaster/directional/east,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/space)
 "GY" = (
@@ -5168,10 +5196,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
 "GZ" = (
-/obj/effect/turf_decal/siding/black{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
+/obj/structure/chair/stool/bar,
+/obj/machinery/light/dim/directional/west,
+/turf/open/floor/suns/hatch/maple,
 /area/space)
 "Ha" = (
 /obj/machinery/suit_storage_unit/inherit,
@@ -5555,10 +5582,9 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/space)
 "Jx" = (
-/obj/effect/turf_decal/siding/black/corner{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
+/obj/structure/table/glass,
+/obj/machinery/newscaster/directional/north,
+/turf/open/floor/suns/dark/plain,
 /area/space)
 "Jy" = (
 /obj/structure/toilet{
@@ -5658,6 +5684,7 @@
 	color = "#D2BC9D";
 	dir = 1
 	},
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/suns/hatch/maple,
 /area/space)
 "Ki" = (
@@ -5812,6 +5839,7 @@
 /area/space)
 "Ln" = (
 /obj/structure/chair/sofa/blue/corpo/corner/directional/west,
+/obj/machinery/light/floor,
 /turf/open/floor/suns/hatch/mahogany,
 /area/space)
 "Lw" = (
@@ -5892,6 +5920,10 @@
 /obj/effect/turf_decal/corner/opaque/white/half,
 /obj/effect/turf_decal/corner/transparent/lightgrey/half,
 /turf/open/floor/plasteel/mono/dark,
+/area/space)
+"Md" = (
+/obj/structure/bed,
+/turf/open/floor/suns/hatch/mahogany,
 /area/space)
 "Mh" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/warning,
@@ -6039,6 +6071,7 @@
 /area/space)
 "Nu" = (
 /obj/structure/chair/sofa/blue/corpo/left/directional/west,
+/obj/machinery/newscaster/directional/south,
 /turf/open/floor/suns/hatch/mahogany,
 /area/space)
 "Ny" = (
@@ -6857,13 +6890,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
-"SU" = (
-/obj/effect/turf_decal/corner/transparent/cybersunteal/half{
-	dir = 1
-	},
-/obj/machinery/light/dim/directional/north,
-/turf/open/floor/plasteel/dark,
-/area/space)
 "SW" = (
 /obj/machinery/conveyor/auto{
 	id = "outpost1";
@@ -6968,6 +6994,9 @@
 /area/space)
 "TL" = (
 /obj/structure/ore_box,
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
+	dir = 5
+	},
 /turf/open/floor/plasteel/mono,
 /area/space)
 "TM" = (
@@ -6988,9 +7017,10 @@
 /turf/open/floor/suns/hatch/bamboo,
 /area/space)
 "TU" = (
-/obj/effect/turf_decal/siding/black{
-	dir = 6
+/obj/structure/window/reinforced/tinted{
+	dir = 4
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "TV" = (
@@ -7082,7 +7112,10 @@
 	pixel_y = 25;
 	name = "cryogenics notice board"
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/corner/transparent/cybersunteal/half{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "Uw" = (
 /obj/effect/turf_decal/siding/black,
@@ -7141,7 +7174,11 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 9
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/corner/transparent/cybersunteal/three_quarters{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "UN" = (
 /obj/effect/turf_decal/siding/wood{
@@ -7997,6 +8034,9 @@
 "Zt" = (
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 6
+	},
+/obj/effect/turf_decal/corner/opaque/orange/bordercorner{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
@@ -9685,7 +9725,7 @@ GQ
 HR
 HR
 HR
-yE
+ou
 Yy
 fB
 Rz
@@ -10711,7 +10751,7 @@ ET
 xr
 xr
 Dd
-xc
+vv
 qN
 kH
 kH
@@ -10719,7 +10759,7 @@ kH
 kH
 kH
 qN
-SU
+wX
 Qi
 xr
 xr
@@ -11485,15 +11525,15 @@ vj
 Co
 oc
 Du
-Al
-Da
+GZ
+gn
 vb
 Ry
 hd
 cp
 de
 Ay
-sa
+Ec
 oc
 Du
 Co
@@ -12400,7 +12440,7 @@ bZ
 Ku
 Sy
 qN
-Jf
+TU
 Jf
 Ht
 sG
@@ -12511,7 +12551,7 @@ Rz
 Rz
 Rz
 qN
-Cz
+Jx
 Cz
 Cz
 Cz
@@ -12660,7 +12700,7 @@ Sy
 qN
 qN
 qN
-Ht
+jF
 Xz
 qN
 fB
@@ -12905,20 +12945,20 @@ qN
 oc
 Du
 qx
-Cz
+Bf
 Kg
 Dx
 Bp
 Vn
 yi
-Cz
+Bf
 gI
 oc
 Sy
 qN
 qN
 qN
-Ht
+jF
 jR
 qN
 fB
@@ -13028,7 +13068,7 @@ Rz
 Rz
 qN
 KW
-Fk
+gL
 du
 qN
 eT
@@ -13161,7 +13201,7 @@ Fk
 rQ
 qN
 UM
-jF
+pZ
 qN
 CO
 Xr
@@ -13289,8 +13329,8 @@ qN
 Uf
 qN
 qN
-GZ
-Bf
+dK
+Nd
 qN
 ru
 nG
@@ -13418,8 +13458,8 @@ qN
 dx
 dx
 qN
-GZ
-Bf
+dK
+Nd
 qN
 qN
 qN
@@ -13547,9 +13587,9 @@ TW
 dx
 dx
 bw
-GZ
-Ec
-jF
+dK
+Wt
+pZ
 qN
 KT
 Su
@@ -13677,8 +13717,8 @@ Fk
 dx
 qN
 mh
-Jx
-Bf
+jA
+Nd
 QP
 nG
 iE
@@ -13806,8 +13846,8 @@ Fk
 dx
 qN
 qN
-GZ
-Bf
+dK
+Nd
 qN
 qN
 qN
@@ -13936,7 +13976,7 @@ dx
 dx
 qN
 oH
-Bf
+Nd
 qN
 XM
 Ju
@@ -14064,8 +14104,8 @@ Fk
 Fk
 dx
 qN
-GZ
-Bf
+dK
+Nd
 qN
 hT
 JL
@@ -14194,7 +14234,7 @@ Fk
 dx
 qN
 mh
-TU
+tQ
 qN
 qN
 Ir
@@ -14937,8 +14977,8 @@ qN
 qN
 qN
 qN
-UM
-jF
+bT
+pZ
 Hq
 Co
 Co
@@ -15003,10 +15043,10 @@ es
 iG
 iG
 Xt
-Yz
-Fr
-Fr
-Fr
+Rz
+Rz
+Rz
+Rz
 Fr
 Rz
 Rz
@@ -15066,8 +15106,8 @@ Dq
 CB
 Dq
 qN
-GZ
-Bf
+dK
+Nd
 Wr
 RS
 RS
@@ -15132,7 +15172,7 @@ NH
 oE
 ZP
 gD
-fB
+Rz
 Rz
 Rz
 Rz
@@ -15196,7 +15236,7 @@ Ht
 Ht
 Lz
 Uv
-Bf
+Nd
 Co
 Co
 Co
@@ -15261,7 +15301,7 @@ NH
 oE
 ZP
 gD
-fB
+Rz
 Rz
 Rz
 Rz
@@ -15324,8 +15364,8 @@ cF
 cA
 cF
 qN
-GZ
-Bf
+dK
+Nd
 Co
 Co
 Co
@@ -15390,7 +15430,7 @@ NH
 oE
 ZP
 gD
-fB
+Rz
 Rz
 Rz
 Rz
@@ -15453,8 +15493,8 @@ qN
 qN
 qN
 qN
-GZ
-Bf
+dK
+Nd
 Co
 Co
 Co
@@ -15582,8 +15622,8 @@ JC
 bD
 fz
 qN
-GZ
-Bf
+dK
+Nd
 Co
 Co
 Co
@@ -15664,7 +15704,7 @@ Rz
 Rz
 Yy
 OG
-OG
+CY
 OG
 ir
 fF
@@ -15711,8 +15751,8 @@ OG
 OG
 OG
 qN
-GZ
-Bf
+dK
+Nd
 qN
 wD
 wD
@@ -15840,8 +15880,8 @@ RU
 RU
 RU
 QP
-GZ
-Bf
+dK
+Nd
 qN
 qN
 qN
@@ -15969,9 +16009,9 @@ JC
 hM
 fz
 qN
-GZ
-Ec
-jF
+dK
+Wt
+pZ
 qN
 lK
 Fk
@@ -16098,9 +16138,9 @@ qN
 qN
 qN
 qN
-GZ
-Ht
-Bf
+dK
+iG
+Nd
 bw
 Fk
 Fk
@@ -16180,7 +16220,7 @@ Rz
 Rz
 Yy
 OG
-OG
+Md
 OG
 ir
 wG
@@ -16227,9 +16267,9 @@ jO
 Bp
 WM
 qN
-GZ
-Ht
-Bf
+dK
+iG
+Nd
 qN
 qN
 qN
@@ -16356,9 +16396,9 @@ xW
 XO
 kT
 uS
-GZ
-Ht
-Bf
+dK
+iG
+Nd
 aC
 qN
 Rz
@@ -16485,9 +16525,9 @@ nT
 ra
 Wo
 qN
-mh
-ou
-TU
+wT
+jK
+tQ
 iG
 qN
 Rz
@@ -18201,7 +18241,7 @@ bO
 bO
 bO
 bO
-iG
+EF
 rT
 qN
 WS
@@ -18330,7 +18370,7 @@ NR
 NR
 NR
 NR
-iG
+dv
 rT
 QP
 WS
@@ -19260,7 +19300,7 @@ PG
 iG
 iG
 iG
-Pf
+ts
 Zt
 LV
 rE
@@ -19649,9 +19689,9 @@ uk
 tW
 Mh
 TL
-TL
-TL
-TL
+wi
+wi
+wi
 qN
 Ep
 Fk
@@ -20293,10 +20333,10 @@ Uq
 yN
 Uq
 ya
-wi
-wi
-wi
-wi
+Ef
+ai
+ai
+ai
 qN
 qN
 qN
