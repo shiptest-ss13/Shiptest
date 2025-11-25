@@ -52,14 +52,15 @@
 	var/calibre = /obj/item/ammo_casing/c10mm
 	///what does a hivebot shooting sound like
 	var/firing_sound = 'sound/weapons/gun/pistol/shot.ogg'
+	///how much spread does this thing fire with
+	var/firing_spread = 4
+
 
 	/// How much extra max health can this hivebot get from scrap?
 	var/growth_cap = 100
 	/// keeps track of how much it's grown for sizing up
 	var/growth = 0
 	var/growth_stage = 0
-
-	var/hivebot_spread = 0
 
 	///aggro phrases on our hivebot
 	var/list/aggro_quips = list("CODE 7-34!!",
@@ -83,7 +84,7 @@
 	AddComponent(/datum/component/aggro_speech, phrase_list = aggro_quips, phrase_chance = 30)
 	if(!ranged_attacker)
 		return
-	AddComponent(/datum/component/ranged_attacks, calibre, null, firing_sound, spread = hivebot_spread)
+	AddComponent(/datum/component/ranged_attacks, calibre, null, firing_sound, spread = firing_spread)
 
 /mob/living/basic/hivebot/death(gibbed)
 	do_sparks(n = 3, c = TRUE, source = src)
@@ -129,7 +130,7 @@
 	name = "hijacked heavy hivebot"
 	desc = "A towering scrap-clad monolith. Hatred radiates out from the sensors that adorn it, a thin steel plate proclaiming 'FREE THE FRONTIER' around its front. Integrated Spitters are attached to its sides."
 	calibre = /obj/item/ammo_casing/c9mm
-	hivebot_spread = 15
+	firing_spread = 15
 	firing_sound = 'sound/weapons/gun/smg/spitter.ogg'
 	faction = list(FACTION_ANTAG_FRONTIERSMEN)
 	ai_controller = /datum/ai_controller/basic_controller/hivebot/ranged/frontier
@@ -188,7 +189,7 @@
 	name = "hijacked core hivebot - LANCHESTER SURPRISE"
 	desc = "A massive, alien tower of metal and circuitry. Eyes adorn its body, each one casting a ray of electronic light in myriad directions. Two rigged Pounders are haphazardly welded to the sides, fed by a dangling belt. 'FROM LANCHESTER TO YOU' is spraypainted to a plate tied around its front."
 	calibre = /obj/item/ammo_casing/c22lr
-	hivebot_spread = 24
+	firing_spread = 24
 	firing_sound = 'sound/weapons/gun/smg/pounder.ogg'
 	ai_controller = /datum/ai_controller/basic_controller/hivebot/ranged/core/frontier
 	faction = list(FACTION_ANTAG_FRONTIERSMEN)
