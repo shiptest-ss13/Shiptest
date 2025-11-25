@@ -55,7 +55,7 @@
 	contains = list(/obj/item/storage/firstaid/roumain)
 	faction = /datum/faction/srm
 	faction_discount = 10
-	
+
 /datum/supply_pack/medical/salbutamol_canister
 	name = "Salbutamol Inhaler Canister Single-Pack"
 	desc = "Contains one inhaler canister filled with aerosolized salbutamol, a potent bronchodilator."
