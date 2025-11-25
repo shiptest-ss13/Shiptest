@@ -974,6 +974,7 @@
 /obj/effect/turf_decal/corner/transparent/cybersunteal/three_quarters{
 	dir = 8
 	},
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "gs" = (
@@ -1060,6 +1061,7 @@
 /area/space)
 "gS" = (
 /obj/effect/turf_decal/corner/transparent/cybersunteal/three_quarters,
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "gW" = (
@@ -2911,6 +2913,13 @@
 /obj/structure/chair/sofa/red/corpo/directional/north,
 /turf/open/floor/suns/hatch/maple,
 /area/space)
+"sa" = (
+/obj/structure/chair/stool/bar{
+	dir = 1
+	},
+/obj/machinery/light/dim/directional/west,
+/turf/open/floor/suns/hatch/maple,
+/area/space)
 "sb" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/manifold{
 	dir = 8
@@ -3607,6 +3616,11 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/space)
+"xc" = (
+/obj/effect/turf_decal/corner/transparent/cybersunteal/half,
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "xd" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#D2BC9D";
@@ -3826,6 +3840,35 @@
 /obj/structure/chair/sofa/red/corpo/right/directional/east,
 /turf/open/floor/suns/dark/plain,
 /area/space)
+"yE" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#792f27";
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#792f27";
+	dir = 5
+	},
+/obj/structure/table/glass,
+/obj/machinery/light/floor,
+/obj/item/reagent_containers/food/drinks/bottle/cognac{
+	pixel_x = 7;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = -6;
+	pixel_y = 15
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = -6;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/turf/open/floor/suns/dark/plain,
+/area/space)
 "yI" = (
 /obj/effect/turf_decal/corner/opaque/cybersunteal/border{
 	dir = 4
@@ -4034,6 +4077,11 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
+/area/space)
+"Al" = (
+/obj/structure/chair/stool/bar,
+/obj/machinery/light/dim/directional/west,
+/turf/open/floor/suns/hatch/maple,
 /area/space)
 "Aq" = (
 /obj/effect/turf_decal/corner/transparent/cybersunteal/three_quarters,
@@ -4406,6 +4454,12 @@
 "CZ" = (
 /obj/effect/turf_decal/industrial/hatch,
 /turf/open/floor/plasteel/tech,
+/area/space)
+"Da" = (
+/obj/structure/platform/ship_four,
+/obj/structure/table/glass,
+/obj/item/radio/intercom/directional/west,
+/turf/open/floor/suns/dark/plain,
 /area/space)
 "Dc" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
@@ -5080,6 +5134,7 @@
 	dir = 5
 	},
 /obj/structure/table/glass,
+/obj/machinery/light/floor,
 /turf/open/floor/suns/dark/plain,
 /area/space)
 "GS" = (
@@ -6800,6 +6855,13 @@
 	pixel_y = -9;
 	pixel_x = -6
 	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"SU" = (
+/obj/effect/turf_decal/corner/transparent/cybersunteal/half{
+	dir = 1
+	},
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "SW" = (
@@ -9623,7 +9685,7 @@ GQ
 HR
 HR
 HR
-GQ
+yE
 Yy
 fB
 Rz
@@ -10649,7 +10711,7 @@ ET
 xr
 xr
 Dd
-uz
+xc
 qN
 kH
 kH
@@ -10657,7 +10719,7 @@ kH
 kH
 kH
 qN
-dT
+SU
 Qi
 xr
 xr
@@ -11423,15 +11485,15 @@ vj
 Co
 oc
 Du
-qx
-By
+Al
+Da
 vb
 Ry
 hd
 cp
 de
 Ay
-gI
+sa
 oc
 Du
 Co
