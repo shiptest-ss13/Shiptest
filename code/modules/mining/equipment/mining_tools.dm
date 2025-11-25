@@ -232,64 +232,41 @@
 	. = ..()
 	AddElement(/datum/element/update_icon_updates_onmob)
 
+/obj/item/trench_tool/ComponentInitialize()
+	. = ..()
+	AddComponent( \
+		/datum/component/transforming, \
+		force_on = 20, \
+		throwforce_on = 10, \
+		attack_verb_on = list("slashed", "impaled", "stabbed", "sliced"), \
+	)
+	RegisterSignal(src, COMSIG_TRANSFORMING_ON_TRANSFORM, PROC_REF(on_transform))
+
 /obj/item/trench_tool/examine(mob/user)
 	. = ..()
-	. += span_notice("Use in hand to switch configuration.")
 	. += span_notice("It functions as a [tool_behaviour] tool.")
 
-/obj/item/trench_tool/update_icon_state()
-	. = ..()
-	switch(tool_behaviour)
-		if(TOOL_SHOVEL)
-			icon_state = "[initial(icon_state)]_shovel"
-		if(TOOL_MINING)
-			icon_state = "[initial(icon_state)]"
+/obj/item/trench_tool/proc/on_transform(obj/item/source, mob/user, active)
+	SIGNAL_HANDLER
 
-/obj/item/trench_tool/attack_self(mob/user, modifiers)
-	. = ..()
-	if(!user)
-		return
-	var/list/tool_list = list(
-		"Shovel" = image(icon = icon, icon_state = "[initial(icon_state)]_shovel"),
-		"Pick" = image(icon = icon, icon_state = "[initial(icon_state)]"),
-		)
-	var/tool_result = show_radial_menu(user, src, tool_list, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)
-	if(!check_menu(user) || !tool_result)
-		return
-	switch(tool_result)
-		if("Shovel")
-			tool_behaviour = TOOL_SHOVEL
-			sharpness = SHARP_EDGED
-			toolspeed = 0.25
-			usesound = 'sound/effects/shovel_dig.ogg'
-			attack_verb = list("slashed", "impaled", "stabbed", "sliced")
-			force = 20
-			wound_bonus = 5
-			bare_wound_bonus = 10
-			armour_penetration = 0
-		if("Pick")
-			tool_behaviour = TOOL_MINING
-			sharpness = SHARP_POINTY
-			toolspeed = 0.5
-			usesound = 'sound/effects/picaxe1.ogg'
-			attack_verb = list("hits", "pierced", "sliced", "attacked")
-			force = 15
-			wound_bonus = 5
-			demolition_mod = 1.15
-			wall_decon_damage = MINERAL_WALL_INTEGRITY
-			armour_penetration = 15
+	if(active)
+		tool_behaviour = TOOL_SHOVEL
+		sharpness = SHARP_EDGED
+		toolspeed = 0.25
+		usesound = 'sound/effects/shovel_dig.ogg'
+		bare_wound_bonus = 10
+		armour_penetration = 0
+	else
+		tool_behaviour = TOOL_MINING
+		sharpness = SHARP_POINTY
+		toolspeed = 0.5
+		usesound = 'sound/effects/picaxe1.ogg'
+		bare_wound_bonus = 0
+		armour_penetration = 15
 	playsound(src, 'sound/items/ratchet.ogg', 50, vary = TRUE)
-	update_appearance(UPDATE_ICON)
-
-/obj/item/trench_tool/proc/check_menu(mob/user)
-	if(!istype(user))
-		return FALSE
-	if(user.incapacitated() || !user.Adjacent(src))
-		return FALSE
-	return TRUE
+	return COMPONENT_NO_DEFAULT_MESSAGE
 
 /obj/item/trench_tool/gezena
 	name = "entrenching tool"
 	desc = "A dual-purpose excavation tool in green, serving as both a powerful bladed shovel and a pickaxe. In use by the Pan-Gezenan Federation."
 	icon_state = "trench_tool_gezena"
-
