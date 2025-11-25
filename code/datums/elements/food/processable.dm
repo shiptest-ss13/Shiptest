@@ -32,7 +32,7 @@
 	. = ..()
 	UnregisterSignal(target, list(COMSIG_ATOM_TOOL_ACT(tool_behaviour), COMSIG_PARENT_EXAMINE))
 
-/datum/element/processable/proc/try_process(datum/source, mob/living/user, obj/item/I, list/mutable_recipes)
+/datum/element/processable/proc/try_process(datum/source, mob/living/user, obj/item/I, list/modifiers, list/mutable_recipes)
 	SIGNAL_HANDLER
 
 	if(table_required)

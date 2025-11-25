@@ -78,6 +78,7 @@
 	belt = /obj/item/storage/belt/security/webbing/ngr/cobra
 	suit_store = /obj/item/gun/ballistic/automatic/smg/cobra
 
+/*
 /datum/outfit/job/syndicate/ert/ngr/grenadier
 	name = "ERT - New Gorlex Republic Grenadier"
 
@@ -85,6 +86,7 @@
 	suit_store = /obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl
 
 	backpack_contents = list(/obj/item/grenade/c4 = 3)
+*/
 
 /datum/outfit/job/syndicate/ert/ngr/medic
 	name = "ERT - New Gorlex Republic Field Medic"

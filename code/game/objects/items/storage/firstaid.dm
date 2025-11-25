@@ -156,7 +156,7 @@
 		/obj/item/stack/medical/mesh = 1,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/reagent_containers/medigel/quardexane = 1,
-		/obj/item/reagent_containers/pill/patch/alvitane = 1,
+		/obj/item/storage/pill_bottle/alvitane = 1,
 		/obj/item/reagent_containers/hypospray/medipen/ysiltane = 1,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
 		/obj/item/reagent_containers/hypospray/medipen/ekit = 1,
@@ -213,7 +213,7 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/syringe/dexalin = 3,
-		/obj/item/reagent_containers/hypospray/medipen/salbutamol = 1,
+		/obj/item/inhaler/salbutamol = 1,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
 		/obj/item/storage/pill_bottle/iron = 1,
 		/obj/item/reagent_containers/hypospray/medipen/blood_loss = 2,
@@ -546,3 +546,11 @@
 /obj/item/storage/pill_bottle/tramal/PopulateContents()
 	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/tramal(src)
+
+/obj/item/storage/pill_bottle/alvitane
+	name = "bottle of alvitane patches"
+	desc = "Contains alvitane pills, for treating burn injuries."
+
+/obj/item/storage/pill_bottle/alvitane/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/patch/alvitane

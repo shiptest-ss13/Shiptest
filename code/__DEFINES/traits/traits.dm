@@ -141,6 +141,10 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_CRITICAL_CONDITION "critical-condition"
 /// Doesn't miss attacks
 #define TRAIT_PERFECT_ATTACKER "perfect_attacker"
+/// Is in stasis
+#define TRAIT_STASIS "stasis"
+/// This mob is asthmatic, and has much more severe reactions to any irritants present in the air
+#define TRAIT_ASTHMATIC "asthmatic"
 #define TRAIT_BLIND "blind"
 #define TRAIT_DEAF "deaf"
 #define TRAIT_MUTE "mute"
@@ -215,6 +219,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_DISSECTED "dissected"
 #define TRAIT_SIXTHSENSE "sixth_sense" //I can hear dead people
 #define TRAIT_FEARLESS "fearless"
+#define TRAIT_SENSITIVE_TONGUE "sensitive tongue" //tells you exactly what you're tasting
 #define TRAIT_PARALYSIS_L_ARM "para-l-arm" //These are used for brain-based paralysis, where replacing the limb won't fix it
 #define TRAIT_PARALYSIS_R_ARM "para-r-arm"
 #define TRAIT_PARALYSIS_L_LEG "para-l-leg"
