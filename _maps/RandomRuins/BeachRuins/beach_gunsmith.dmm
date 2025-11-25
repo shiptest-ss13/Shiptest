@@ -995,10 +995,6 @@
 	},
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate/secure/weapon,
-/obj/item/attachment/gun/ballistic/shotgun{
-	pixel_x = 0;
-	pixel_y = -5
-	},
 /obj/item/attachment/scope{
 	pixel_x = -7;
 	pixel_y = -7
@@ -1007,7 +1003,7 @@
 	pixel_x = -7;
 	pixel_y = -10
 	},
-/obj/item/attachment/gun/flamethrower,
+/obj/item/flamethrower/full,
 /obj/item/attachment/energy_bayonet{
 	pixel_x = 1;
 	pixel_y = 16
@@ -2864,6 +2860,10 @@
 /obj/item/clothing/suit/space/hardsuit/syndi/ramzi{
 	pixel_x = -8;
 	pixel_y = 2
+	},
+/obj/item/clothing/glasses/hud/security/sunglasses/ramzi{
+	pixel_x = 4;
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/gunsmith/workshop)

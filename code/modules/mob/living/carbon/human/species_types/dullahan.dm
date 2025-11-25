@@ -5,7 +5,7 @@
 	default_color = "FFFFFF"
 	species_traits = list(HAIR,FACEHAIR,LIPS)
 	inherent_traits = list(TRAIT_NOHUNGER,TRAIT_NOBREATH)
-	default_features = list("mcolor" = "FFF", "tail_human" = "None", "ears" = "None", "wings" = "None", "body_size" = "Normal")
+	default_features = list("mcolor" = "FFF", "tail_human" = "None", "ears" = "None", "wings" = "None")
 	use_skintones = TRUE
 	mutantbrain = /obj/item/organ/brain/dullahan
 	mutanteyes = /obj/item/organ/eyes/dullahan

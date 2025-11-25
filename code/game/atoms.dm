@@ -68,8 +68,6 @@
 	///Last fingerprints to touch this atom
 	var/fingerprintslast
 
-	var/list/filter_data //For handling persistent filters
-
 	///Economy cost of item
 	var/custom_price
 	///Economy cost of item in premium vendor
@@ -1246,32 +1244,35 @@
  *
  * Must return  parent proc ..() in the end if overridden
  */
-/atom/proc/tool_act(mob/living/user, obj/item/I, tool_type)
+/atom/proc/tool_act(mob/living/user, obj/item/tool, tool_type, params)
 	var/signal_result
 
+	var/list/modifiers = params2list(params)
 	var/list/processing_recipes = list() //List of recipes that can be mutated by sending the signal
-	signal_result = SEND_SIGNAL(src, COMSIG_ATOM_TOOL_ACT(tool_type), user, I, processing_recipes)
+	signal_result = SEND_SIGNAL(src, COMSIG_ATOM_TOOL_ACT(tool_type), user, tool, modifiers, processing_recipes)
 	if(processing_recipes.len)
-		process_recipes(user, I, processing_recipes)
-	if(QDELETED(I))
+		process_recipes(user, tool, processing_recipes)
+	if(QDELETED(tool))
 		return TRUE
 	switch(tool_type)
 		if(TOOL_CROWBAR)
-			. = crowbar_act(user, I)
+			. = crowbar_act(user, tool, modifiers)
 		if(TOOL_MULTITOOL)
-			. = multitool_act(user, I)
+			. = multitool_act(user, tool, modifiers)
 		if(TOOL_SCREWDRIVER)
-			. = screwdriver_act(user, I)
+			. = screwdriver_act(user, tool, modifiers)
 		if(TOOL_WRENCH)
-			. = wrench_act(user, I)
+			. = wrench_act(user, tool, modifiers)
 		if(TOOL_WIRECUTTER)
-			. = wirecutter_act(user, I)
+			. = wirecutter_act(user, tool, modifiers)
 		if(TOOL_WELDER)
-			. = welder_act(user, I)
+			. = welder_act(user, tool, modifiers)
 		if(TOOL_ANALYZER)
-			. = analyzer_act(user, I)
+			. = analyzer_act(user, tool, modifiers)
+		if(TOOL_SHOVEL)
+			. = shovel_act(user, tool, modifiers)
 		if(TOOL_DECONSTRUCT)
-			. |= deconstruct_act(user, I)
+			. |= deconstruct_act(user, tool, modifiers)
 	if(. || signal_result & COMPONENT_BLOCK_TOOL_ATTACK) //Either the proc or the signal handled the tool's events in some way.
 		return TRUE
 
@@ -1332,11 +1333,11 @@
 ///
 
 ///Crowbar act
-/atom/proc/crowbar_act(mob/living/user, obj/item/I)
+/atom/proc/crowbar_act(mob/living/user, obj/item/I, list/modifiers)
 	return SEND_SIGNAL(src, COMSIG_ATOM_CROWBAR_ACT, user, I)
 
 ///Multitool act
-/atom/proc/multitool_act(mob/living/user, obj/item/I)
+/atom/proc/multitool_act(mob/living/user, obj/item/I, list/modifiers)
 	return SEND_SIGNAL(src, COMSIG_ATOM_MULTITOOL_ACT, user, I)
 
 ///Check if the multitool has an item in it's data buffer
@@ -1348,27 +1349,31 @@
 	return TRUE
 
 ///Screwdriver act
-/atom/proc/screwdriver_act(mob/living/user, obj/item/I)
+/atom/proc/screwdriver_act(mob/living/user, obj/item/I, list/modifiers)
 	return SEND_SIGNAL(src, COMSIG_ATOM_SCREWDRIVER_ACT, user, I)
 
 ///Wrench act
-/atom/proc/wrench_act(mob/living/user, obj/item/I)
+/atom/proc/wrench_act(mob/living/user, obj/item/I, list/modifiers)
 	return SEND_SIGNAL(src, COMSIG_ATOM_WRENCH_ACT, user, I)
 
 ///Wirecutter act
-/atom/proc/wirecutter_act(mob/living/user, obj/item/I)
+/atom/proc/wirecutter_act(mob/living/user, obj/item/I, list/modifiers)
 	return SEND_SIGNAL(src, COMSIG_ATOM_WIRECUTTER_ACT, user, I)
 
 ///Welder act
-/atom/proc/welder_act(mob/living/user, obj/item/I)
+/atom/proc/welder_act(mob/living/user, obj/item/I, list/modifiers)
 	return SEND_SIGNAL(src, COMSIG_ATOM_WELDER_ACT, user, I)
 
 ///Analyzer act
-/atom/proc/analyzer_act(mob/living/user, obj/item/I)
+/atom/proc/analyzer_act(mob/living/user, obj/item/I, list/modifiers)
 	return SEND_SIGNAL(src, COMSIG_ATOM_ANALYSER_ACT, user, I)
 
+///Shovel act
+/atom/proc/shovel_act(mob/living/user, obj/item/I, list/modifiers)
+	return SEND_SIGNAL(src, COMSIG_ATOM_SHOVEL_ACT, user, I)
+
 ///Deconstruct act
-/atom/proc/deconstruct_act(mob/living/user, obj/item/I)
+/atom/proc/deconstruct_act(mob/living/user, obj/item/I, list/modifiers)
 	if(flags_1 & NODECONSTRUCT_1)
 		return TRUE
 	return SEND_SIGNAL(src, COMSIG_ATOM_DECONSTRUCT_ACT, user, I)
@@ -1487,70 +1492,6 @@
 		var/reverse_message = "has been [what_done] by [ssource][postfix]"
 		target.log_message(reverse_message, LOG_ATTACK, color="orange", log_globally=FALSE)
 
-/atom/proc/add_filter(name,priority,list/params)
-	LAZYINITLIST(filter_data)
-	var/list/p = params.Copy()
-	p["priority"] = priority
-	filter_data[name] = p
-	update_filters()
-
-/atom/proc/update_filters()
-	filters = null
-	filter_data = sortTim(filter_data, /proc/cmp_filter_data_priority, TRUE)
-	for(var/f in filter_data)
-		var/list/data = filter_data[f]
-		var/list/arguments = data.Copy()
-		arguments -= "priority"
-		filters += filter(arglist(arguments))
-	UNSETEMPTY(filter_data)
-
-/atom/proc/transition_filter(name, time, list/new_params, easing, loop)
-	var/filter = get_filter(name)
-	if(!filter)
-		return
-
-	var/list/old_filter_data = filter_data[name]
-
-	var/list/params = old_filter_data.Copy()
-	for(var/thing in new_params)
-		params[thing] = new_params[thing]
-
-	animate(filter, new_params, time = time, easing = easing, loop = loop)
-	for(var/param in params)
-		filter_data[name][param] = params[param]
-
-/atom/proc/change_filter_priority(name, new_priority)
-	if(!filter_data || !filter_data[name])
-		return
-
-	filter_data[name]["priority"] = new_priority
-	update_filters()
-
-/obj/item/update_filters()
-	. = ..()
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.UpdateButtonIcon()
-
-/atom/proc/get_filter(name)
-	if(filter_data && filter_data[name])
-		return filters[filter_data.Find(name)]
-
-/atom/proc/remove_filter(name_or_names)
-	if(!filter_data)
-		return
-
-	var/list/names = islist(name_or_names) ? name_or_names : list(name_or_names)
-
-	for(var/name in names)
-		if(filter_data[name])
-			filter_data -= name
-	update_filters()
-
-/atom/proc/clear_filters()
-	filter_data = null
-	filters = null
-
 /atom/proc/intercept_zImpact(atom/movable/AM, levels = 1)
 	. |= SEND_SIGNAL(src, COMSIG_ATOM_INTERCEPT_Z_FALL, AM, levels)
 
@@ -1576,11 +1517,6 @@
 		if(!(material_flags & MATERIAL_NO_EFFECTS))
 			custom_material.on_applied(src, materials[custom_material] * multiplier * material_modifier, material_flags)
 		custom_materials[custom_material] += materials[x] * multiplier
-
-/// Returns the indice in filters of the given filter name.
-/// If it is not found, returns null.
-/atom/proc/get_filter_index(name)
-	return filter_data?.Find(name)
 
 /**
  * Returns true if this atom has gravity for the passed in turf

@@ -925,20 +925,20 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 /datum/hallucination/fake_alert/New(mob/living/carbon/C, forced = TRUE, specific, duration = 150)
 	set waitfor = FALSE
 	..()
-	var/alert_type = pick("not_enough_oxy","not_enough_tox","not_enough_co2","too_much_oxy","too_much_co2","too_much_tox","newlaw","nutrition","charge","gravity","fire","locked","hacked","temphot","tempcold","pressure")
+	var/alert_type = pick(ALERT_NOT_ENOUGH_OXYGEN,"not_enough_tox",ALERT_NOT_ENOUGH_CO2,ALERT_TOO_MUCH_OXYGEN,ALERT_TOO_MUCH_CO2,"too_much_tox","newlaw","nutrition","charge","gravity","fire","locked","hacked","temphot","tempcold","pressure")
 	if(specific)
 		alert_type = specific
 	feedback_details += "Type: [alert_type]"
 	switch(alert_type)
-		if("not_enough_oxy")
+		if(ALERT_NOT_ENOUGH_OXYGEN)
 			target.throw_alert(alert_type, /atom/movable/screen/alert/not_enough_oxy, override = TRUE)
 		if("not_enough_tox")
 			target.throw_alert(alert_type, /atom/movable/screen/alert/not_enough_tox, override = TRUE)
-		if("not_enough_co2")
+		if(ALERT_NOT_ENOUGH_CO2)
 			target.throw_alert(alert_type, /atom/movable/screen/alert/not_enough_co2, override = TRUE)
-		if("too_much_oxy")
+		if(ALERT_TOO_MUCH_OXYGEN)
 			target.throw_alert(alert_type, /atom/movable/screen/alert/too_much_oxy, override = TRUE)
-		if("too_much_co2")
+		if(ALERT_TOO_MUCH_CO2)
 			target.throw_alert(alert_type, /atom/movable/screen/alert/too_much_co2, override = TRUE)
 		if("too_much_tox")
 			target.throw_alert(alert_type, /atom/movable/screen/alert/too_much_tox, override = TRUE)
@@ -1190,7 +1190,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	set waitfor = FALSE
 	..()
 	target.fire_stacks = max(target.fire_stacks, 0.1) //Placebo flammability
-	fire_overlay = image('icons/mob/OnFire.dmi', target, "Standing", ABOVE_MOB_LAYER)
+	fire_overlay = image('icons/mob/onfire.dmi', target, "human_burning", ABOVE_MOB_LAYER)
 	if(target.client)
 		target.client.images += fire_overlay
 	to_chat(target, span_userdanger("You're set on fire!"))

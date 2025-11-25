@@ -6,7 +6,7 @@
 	species_age_max = 280
 	species_traits = list(HAS_BONE, HAS_FLESH)
 	mutant_bodyparts = list("vox_head_quills", "vox_neck_quills")
-	default_features = list("mcolor" = "0F0", "wings" = "None", "vox_head_quills" = "None", "vox_neck_quills" = "None", "body_size" = "Normal")
+	default_features = list("mcolor" = "0F0", "wings" = "None", "vox_head_quills" = "None", "vox_neck_quills" = "None")
 	meat = /obj/item/food/meat/slab/chicken
 	disliked_food = GRAIN
 	liked_food = MEAT
@@ -36,6 +36,7 @@
 
 	custom_overlay_icon = 'icons/mob/species/vox/vox_overlays.dmi'
 	damage_overlay_type = "vox"
+	fire_overlay = "generic"
 
 	species_limbs = list(
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/vox,

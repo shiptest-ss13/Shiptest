@@ -74,7 +74,6 @@
 
 	var/static/list/can_ride_typecache = typecacheof(list(/mob/living/carbon/human, /mob/living/simple_animal/slime, /mob/living/simple_animal/parrot))
 	var/lastpuke = 0
-	var/last_fire_update
 	var/account_id
 
 	/// How many "units of blood" we have on our hands
@@ -83,3 +82,9 @@
 	var/obj/effect/abstract/particle_holder/blood_particle
 
 	COOLDOWN_DECLARE(bloodloss_message)
+
+	/// Height of the mob
+	VAR_PROTECTED/mob_height = HUMAN_HEIGHT_MEDIUM
+
+	/// Pronouns of the mob
+	var/pronouns = null // all pronoun stuff is for players and will read gender for pronouns if this is null
