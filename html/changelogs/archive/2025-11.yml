@@ -101,3 +101,27 @@
 2025-11-23:
   Gristlebee:
   - bugfix: Burn kit patches
+2025-11-25:
+  Erikafox:
+  - rscadd: Rezadone can now undo sepsis in sufficient quantities (10 units)
+  Goat:
+  - rscadd: Pronouns. Your pronouns are now separate from your gender. Be as woke
+      as you want. Pronouns are your gender's default when your save file gets updated
+      so don't worry about having to set them.
+  Overteh:
+  - balance: changes civ Cobra to rapid fire bursts of 4. Decreases spread on Cobras
+      to 2, (3-1 from silencer on mil cobra) and increases on Mongrel and Resolution
+      by 1
+  SapphicOverload:
+  - bugfix: CLIP now uses Zohilan as its official language
+  nikothedude, sapphicoverload, swanni:
+  - rscadd: Added asthma
+  - rscadd: Added inhalers, a new method of applying reagents
+  - rscadd: Oxygen deprivation medical kits now contain salbutamol in inhaler form
+      instead of an injector
+  - rscadd: Histamine and certain gases like SO2 and HCl can cause lung inflammation,
+      even in non-asthmatics
+  - balance: Salbutamol only heals suffocation damage if the affected mob is currently
+      receiving enough oxygen/plasma/etc to breathe, but significantly increases their
+      ability to receive enough in the first place
+  - bugfix: Fixed reagent duplication from smoke
