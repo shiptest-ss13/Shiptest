@@ -75,6 +75,7 @@
 #define HEAVY_WEAPON_CD 10
 #define CLICK_CD_BLOCKED 10
 #define CLICK_CD_MELEE 8
+#define CLICK_CD_THROW 8
 #define LIGHT_WEAPON_CD 6
 #define CLICK_CD_RANGE 4
 #define CLICK_CD_RAPID 2

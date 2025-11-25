@@ -21,6 +21,8 @@
 	//This is a reagent user and needs more then the 10u from edible component
 	reagent_vol = 1000
 
+	food_reagents = list(/datum/reagent/consumable/nutriment/organ_tissue/stomach_lining = 5)
+
 	///The rate that disgust decays
 	var/disgust_metabolism = 1
 

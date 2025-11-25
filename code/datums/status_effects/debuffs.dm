@@ -195,6 +195,7 @@
 	. = ..()
 	if(!.)
 		return
+	ADD_TRAIT(owner, TRAIT_STASIS, TRAIT_STATUS_EFFECT(id))
 	ADD_TRAIT(owner, TRAIT_IMMOBILIZED, TRAIT_STATUS_EFFECT(id))
 	ADD_TRAIT(owner, TRAIT_HANDS_BLOCKED, TRAIT_STATUS_EFFECT(id))
 	if(iscarbon(owner))
@@ -205,6 +206,7 @@
 	update_time_of_death()
 
 /datum/status_effect/grouped/stasis/on_remove()
+	REMOVE_TRAIT(owner, TRAIT_STASIS, TRAIT_STATUS_EFFECT(id))
 	REMOVE_TRAIT(owner, TRAIT_IMMOBILIZED, TRAIT_STATUS_EFFECT(id))
 	REMOVE_TRAIT(owner, TRAIT_HANDS_BLOCKED, TRAIT_STATUS_EFFECT(id))
 	update_time_of_death()

@@ -47,10 +47,12 @@
 	missiondesc += "<BR><B>Your Mission</B>: [ert_team.mission.explanation_text]"
 	to_chat(owner,missiondesc)
 
+/*
 /datum/antagonist/ert/syndicate/ngr/grenadier
 	name = "Gorlex Republic Grenadier"
 	outfit = /datum/outfit/job/syndicate/ert/ngr/grenadier
 	role = "Grenadier"
+*/
 
 /datum/antagonist/ert/syndicate/ngr/medic
 	name = "Gorlex Republic Field Medic"

@@ -141,12 +141,6 @@
 		loc.assume_air(breath)
 		air_update_turf()
 
-/mob/living/carbon/proc/has_smoke_protection()
-	if(HAS_TRAIT(src, TRAIT_NOBREATH))
-		return TRUE
-	return FALSE
-
-
 //Third link in a breath chain, calls handle_breath_temperature()
 /mob/living/carbon/proc/check_breath(datum/gas_mixture/breath)
 	if(status_flags & GODMODE)
@@ -165,7 +159,7 @@
 		adjustOxyLoss(1)
 
 		failed_last_breath = 1
-		throw_alert("not_enough_oxy", /atom/movable/screen/alert/not_enough_oxy)
+		throw_alert(ALERT_NOT_ENOUGH_OXYGEN, /atom/movable/screen/alert/not_enough_oxy)
 		return 0
 
 	var/safe_oxy_min = 16
@@ -193,14 +187,14 @@
 		else
 			adjustOxyLoss(3)
 			failed_last_breath = 1
-		throw_alert("not_enough_oxy", /atom/movable/screen/alert/not_enough_oxy)
+		throw_alert(ALERT_NOT_ENOUGH_OXYGEN, /atom/movable/screen/alert/not_enough_oxy)
 
 	else //Enough oxygen
 		failed_last_breath = 0
 		if(health >= crit_threshold)
 			adjustOxyLoss(-5)
 		oxygen_used = breath.get_moles(GAS_O2)
-		clear_alert("not_enough_oxy")
+		clear_alert(ALERT_NOT_ENOUGH_OXYGEN)
 
 	breath.adjust_moles(GAS_O2, -oxygen_used)
 	breath.adjust_moles(GAS_CO2, oxygen_used)
@@ -325,14 +319,14 @@
 			var/obj/item/organ/O = V
 			O.on_death() //Needed so organs decay while inside the body.
 
-/mob/living/carbon/handle_diseases()
+/mob/living/carbon/handle_diseases(seconds_per_tick = SSMOBS_DT, times_fired)
 	for(var/thing in diseases)
 		var/datum/disease/D = thing
 		if(prob(D.infectivity))
 			D.spread()
 
 		if(stat != DEAD || D.process_dead)
-			D.stage_act()
+			D.stage_act(seconds_per_tick, times_fired)
 
 /mob/living/carbon/handle_wounds()
 	for(var/thing in all_wounds)

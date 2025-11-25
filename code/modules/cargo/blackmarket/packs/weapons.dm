@@ -245,6 +245,7 @@
 	availability_prob = 20
 	spawn_weighting = FALSE
 
+/*
 /datum/blackmarket_item/weapon/guncase/e50_underbarrel
 	name = "Underbarrel Energy Cannon"
 	desc = "The normal E-50 too big to handle for you? This underbarrel conversion cuts it down to a managable size with only a <i>minor</i> chance of painfully burning your hands."
@@ -256,6 +257,7 @@
 	stock_max = 2
 	availability_prob = 20
 	spawn_weighting = FALSE
+*/
 
 /datum/blackmarket_item/weapon/guncase/e60
 	name = "E-60 Disabler"

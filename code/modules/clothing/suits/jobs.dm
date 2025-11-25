@@ -100,7 +100,7 @@
 
 /obj/item/clothing/suit/toggle/hazard
 	name = "high-visibility jacket"
-	desc = "A highlighter-yellow jacket with reflective stripes."
+	desc = "A bright-yellow jacket with reflective stripes."
 	icon_state = "jacket_hazard"
 	item_state = "jacket_hazard"
 	blood_overlay_type = "coat"
@@ -109,6 +109,18 @@
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/radio)
 	resistance_flags = NONE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+
+/obj/item/clothing/suit/toggle/hazard/orange
+	name = "high-visibility jacket"
+	desc = "An orange jacket with reflective stripes."
+	icon_state = "jacket_hazardo"
+	item_state = "jacket_hazardo"
+
+/obj/item/clothing/suit/toggle/hazard/lime
+	name = "high-visibility jacket"
+	desc = "A highlighter-yellow jacket with reflective stripes."
+	icon_state = "jacket_hazardl"
+	item_state = "jacket_hazardl"
 
 /obj/item/clothing/suit/toggle/industrial
 	name = "industrial jacket"
