@@ -201,6 +201,11 @@
 	if(user.canUseTopic(src, !issilicon(usr)))
 		cook()
 
+
+/obj/machinery/microwave/attack_hand_secondary(mob/user, list/modifiers)
+	cook()
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
 /obj/machinery/microwave/ui_interact(mob/user)
 	. = ..()
 

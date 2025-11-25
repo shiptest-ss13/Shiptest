@@ -1,0 +1,12 @@
+author: 00-Steven, Erika (porting fox)
+changes:
+  - {refactor: Refactored tasting code. Please report any jank tasting 
+      behaviours.}
+  - {bugfix: You taste what you eat instead of the contents of your own stomach.}
+  - {bugfix: 'Other basic nutriment subtypes also carry food flavours, instead of
+      outweighing the food flavours with their lack of flavour.'}
+  - {bugfix: 'Basic nutriment subtypes have a flavour they default to, in case of
+      not carrying any food flavours.'}
+  - {bugfix: 'Tasted flavours can actually be "strong" in addition to mild or "a hint
+      of", as intended.'}
+delete-after: true

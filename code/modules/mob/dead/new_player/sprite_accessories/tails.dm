@@ -74,7 +74,19 @@
 	icon_state = "bunny"
 	color_src = HAIR
 
+/datum/sprite_accessory/tails_animated/human/rabbit
+	icon = 'icons/mob/species/human/rabbit.dmi'
+	name = "Rabbit"
+	icon_state = "bunny"
+	color_src = HAIR
+
 /datum/sprite_accessory/tails/human/horse
+	icon = 'icons/mob/species/human/horse.dmi'
+	name = "Horse"
+	icon_state = "horse"
+	color_src = HAIR
+
+/datum/sprite_accessory/tails_animated/human/horse
 	icon = 'icons/mob/species/human/horse.dmi'
 	name = "Horse"
 	icon_state = "horse"
