@@ -11,7 +11,7 @@
 
 /datum/reagent/drug/space_drugs
 	name = "Dropsight"
-	description = "An illegal chemical compound used as drug."
+	description = "An illegal hallucinogenic chemical compound used as drug."
 	color = "#60A584" // rgb: 96, 165, 132
 	overdose_threshold = 30
 
