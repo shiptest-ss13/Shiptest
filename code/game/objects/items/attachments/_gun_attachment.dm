@@ -1,3 +1,4 @@
+/*
 /obj/item/attachment/gun
 	name = "underbarrel gun"
 	desc = "A gun that goes on the underbarrel of another gun. You probably shouldn't be seeing this."
@@ -96,3 +97,4 @@
 	else
 		return FALSE
 
+*/
