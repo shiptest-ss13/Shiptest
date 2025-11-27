@@ -55,7 +55,7 @@
 		CALLBACK(src, PROC_REF(toggle_attachment)), \
 		CALLBACK(src, PROC_REF(on_preattack)), \
 		CALLBACK(src, PROC_REF(on_attacked)), \
-		CALLBACK(src, PROC_REF(on_unique_action)), \
+		CALLBACK(src, PROC_REF(on_secondary_action)), \
 		CALLBACK(src, PROC_REF(on_ctrl_click)), \
 		CALLBACK(src, PROC_REF(on_wield)), \
 		CALLBACK(src, PROC_REF(on_unwield)), \

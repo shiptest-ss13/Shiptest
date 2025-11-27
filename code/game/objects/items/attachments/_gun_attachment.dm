@@ -57,6 +57,7 @@
 
 /obj/item/attachment/gun/on_attacked(obj/item/gun/gun, mob/user, obj/item/attack_item)
 	attackby(attack_item,user)
+	return COMPONENT_SECONDARY_CANCEL_ATTACK_CHAIN
 	// if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL)
 	// 	attackby(attack_item,user)
 
