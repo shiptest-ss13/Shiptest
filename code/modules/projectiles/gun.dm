@@ -751,20 +751,20 @@
 	if(isliving(user) && in_range(src, user))
 		toggle_safety(user)
 
-/obj/item/gun/attack_hand_secondary(mob/user, list/modifiers)
-	if(toggle_safety(user))
-		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-	return ..()
+// /obj/item/gun/attack_hand_secondary(mob/user, list/modifiers)
+// 	if(toggle_safety(user))
+// 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+// 	return ..()
 
-/obj/item/gun/attackby_secondary(obj/item/weapon, mob/user, params)
-	if(toggle_safety(user))
-		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-	return ..()
+// /obj/item/gun/attackby_secondary(obj/item/weapon, mob/user, params)
+// 	if(toggle_safety(user))
+// 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+// 	return ..()
 
-/obj/item/gun/attack_self_secondary(mob/user, modifiers)
-	if(toggle_safety(user))
-		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-	return ..()
+// /obj/item/gun/attack_self_secondary(mob/user, modifiers)
+// 	if(toggle_safety(user))
+// 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+// 	return ..()
 
 /obj/item/gun/proc/toggle_safety(mob/user, silent=FALSE)
 	if(!has_safety)
@@ -1174,9 +1174,9 @@
 	for(var/datum/action/current_action as anything in actions)
 		current_action.UpdateButtonIcon()
 
-/obj/item/gun/secondary_action(user)
-	if(gun_firemodes.len > 1)
-		fire_select(user)
+// /obj/item/gun/secondary_action(user)
+// 	if(gun_firemodes.len > 1)
+// 		fire_select(user)
 
 /datum/action/item_action/toggle_firemode/UpdateButtonIcon(status_only = FALSE, force = FALSE)
 	var/obj/item/gun/our_gun = target

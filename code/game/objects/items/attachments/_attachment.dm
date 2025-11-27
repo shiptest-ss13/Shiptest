@@ -115,6 +115,9 @@
 /obj/item/attachment/proc/on_unique_action(obj/item/gun/gun, mob/user, obj/item)
 	return FALSE
 
+/obj/item/attachment/proc/on_secondary_action(obj/item/gun/gun, mob/user, obj/item)
+	return FALSE
+
 /obj/item/attachment/proc/on_ctrl_click(obj/item/gun/gun, mob/user, params)
 	return FALSE
 

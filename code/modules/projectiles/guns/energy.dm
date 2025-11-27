@@ -42,6 +42,7 @@
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
+		/obj/item/attachment/gun
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,
