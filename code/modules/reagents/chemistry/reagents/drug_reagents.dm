@@ -763,8 +763,8 @@
 
 /datum/reagent/drug/cytodron/overdose_start(mob/living/M)
 	. = ..()
-	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_bad, name)
-	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/cytodron)
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_bad, name)
+	M.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/cytodron)
 
 /datum/reagent/drug/cytodron/overdose_process(mob/living/M)
 	. = ..()
@@ -802,7 +802,7 @@
 
 /datum/reagent/drug/cytodron/overdose_start(mob/living/M)
 	. = ..()
-	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/headache, name)
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/headache, name)
 
 /datum/reagent/drug/sting/overdose_process(mob/living/M)
 	. = ..()
