@@ -238,6 +238,7 @@
 		/datum/component/transforming, \
 		force_on = 20, \
 		throwforce_on = 10, \
+		hitsound_on = 'sound/weapons/bladeslice.ogg', \
 		attack_verb_on = list("slashed", "impaled", "stabbed", "sliced"), \
 	)
 	RegisterSignal(src, COMSIG_TRANSFORMING_ON_TRANSFORM, PROC_REF(on_transform))
