@@ -142,6 +142,7 @@
 #define COMSIG_ATTACHMENT_ATTACK_HAND "attach-attack-hand"
 
 #define COMSIG_ATTACHMENT_TOGGLE "attach-toggle"
+#define COMSIG_ATTACHMENT_TOGGLE_AMMO "attach-ammo"
 
 #define COMSIG_ATTACHMENT_GET_SLOT "attach-slot-who"
 #define ATTACHMENT_SLOT_MUZZLE "muzzle"
@@ -191,7 +192,7 @@
 #define ATTACH_REMOVABLE_TOOL (1<<1)
 #define ATTACH_TOGGLE (1<<2)
 #define ATTACH_NO_SPRITE (1<<3)
-#define ATTACH_FIREMODE (1<<4)
+#define ATTACH_AMMOMODE (1<<4)
 
 /////////////////
 // PROJECTILES //

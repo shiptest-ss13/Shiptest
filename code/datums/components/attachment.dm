@@ -73,7 +73,10 @@
 	RegisterSignal(parent, COMSIG_ATTACHMENT_EXAMINE_MORE, PROC_REF(handle_examine_more))
 	if(attach_features_flags & ATTACH_TOGGLE)
 		RegisterSignal(parent, COMSIG_ATTACHMENT_TOGGLE, PROC_REF(try_toggle))
-		attachment_toggle_action = new /datum/action/attachment(parent)
+		attachment_toggle_action = new /datum/action/attachment/toggle(parent)
+	// if(attach_features_flags & ATTACH_TOGGLE)
+	// 	RegisterSignal(parent, COMSIG_ATTACHMENT_TOGGLE_AMMO, PROC_REF(try_toggle))
+	// 	attachment_toggle_action = new /datum/action/attachment/ammo(parent)
 	RegisterSignal(parent, COMSIG_ATTACHMENT_PRE_ATTACK, PROC_REF(relay_pre_attack))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_UPDATE_OVERLAY, PROC_REF(update_overlays))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_GET_SLOT, PROC_REF(send_slot))
@@ -231,7 +234,7 @@
 	return attachment_slot_to_bflag(slot)
 
 /datum/action/attachment
-	name = "Toggle Attachment"
+	name = "Attachment Action"
 	check_flags = AB_CHECK_HANDS_BLOCKED|AB_CHECK_CONSCIOUS
 	button_icon_state = null
 	///Decides where we send our toggle signal for when pressed
@@ -274,3 +277,18 @@
 		I.layer = old_layer
 		I.plane = old_plane
 		current_button.appearance_cache = I.appearance
+
+/datum/action/attachment/toggle
+	name = "Toggle Attachment"
+
+/datum/action/attachment/toggle/Trigger()
+	..()
+	SEND_SIGNAL(target, COMSIG_ATTACHMENT_TOGGLE, gun, owner)
+
+/datum/action/attachment/ammo
+	name = "Toggle Firemode"
+
+/datum/action/attachment/ammo/Trigger()
+	. = ..()
+	SEND_SIGNAL(target, COMSIG_ATTACHMENT_TOGGLE_AMMO, gun, owner)
+
