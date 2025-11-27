@@ -65,8 +65,6 @@
 		"Curator" = /obj/item/clothing/head/beret/service,
 		"Janitor" = /obj/item/clothing/head/beret/service,
 		"Lawyer" = /obj/item/clothing/head/beret/service,
-		"Mime" = /obj/item/clothing/head/beret,
-		"Clown" = /obj/item/clothing/head/beret/puce
 	)
 
 /datum/gear/hat/beret/engineering/hazard
@@ -133,6 +131,10 @@
 	display_name = "cowboy hat"
 	path = /obj/item/clothing/head/cowboy
 
+/datum/gear/hat/cowboyblack
+	display_name = "black cowboy hat"
+	path = /obj/item/clothing/head/cowboy/black
+
 /datum/gear/hat/trapper
 	display_name = "trapper hat"
 	path = /obj/item/clothing/head/trapper
@@ -144,3 +146,19 @@
 /datum/gear/hat/flap
 	display_name = "flap cap, recolorable"
 	path = /obj/item/clothing/head/flap
+
+/datum/gear/hat/sunhat
+	display_name = "sun hat"
+	path = /obj/item/clothing/head/sunhat
+
+/datum/gear/hat/hairbow
+	display_name = "hairbow, recolorable"
+	path = /obj/item/clothing/head/hairbow
+
+/datum/gear/hat/headband
+	display_name = "headband, recolorable"
+	path = /obj/item/clothing/head/headband
+
+/datum/gear/hat/ribbon
+	display_name = "ribbon, recolorable"
+	path = /obj/item/clothing/head/ribbon

@@ -4,7 +4,7 @@
 	max_stages = 5
 	spread_text = "Airborne"
 	cure_text = "Spaceacillin & Perfluorodecalin"
-	cures = list(/datum/reagent/medicine/spaceacillin, /datum/reagent/medicine/perfluorodecalin)
+	cures = list(/datum/reagent/medicine/spaceacillin, /datum/reagent/medicine/salbutamol)
 	agent = "Fungal Tubercle bacillus Cosmosis"
 	viable_mobtypes = list(/mob/living/carbon/human)
 	cure_chance = 5//like hell are you getting out of hell
@@ -27,7 +27,7 @@
 		if(4)
 			if(prob(2))
 				to_chat(affected_mob, span_userdanger("You see four of everything!"))
-				affected_mob.Dizzy(5)
+				affected_mob.set_timed_status_effect(10 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			if(prob(2))
 				to_chat(affected_mob, span_danger("You feel a sharp pain from your lower chest!"))
 				affected_mob.adjustOxyLoss(5)

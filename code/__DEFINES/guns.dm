@@ -61,7 +61,7 @@
 #define MANUFACTURER_EOEHOMA "the Eoehoma Firearms emblem"
 #define MANUFACTURER_NANOTRASEN_OLD "an outdated Nanotrasen logo"
 #define MANUFACTURER_NANOTRASEN "the Nanotrasen logo"
-#define MANUFACTURER_VIGILITAS "the Vigilitas Interstellar logo"
+#define MANUFACTURER_VIGILITAS "the Nanotrasen Advantage logo"
 #define MANUFACTURER_BRAZIL "a green flag with a blue circle and a yellow diamond around it"
 #define MANUFACTURER_INTEQ "an orange crest with the letters 'IRMG'"
 #define MANUFACTURER_MINUTEMAN "the Lanchester City Firearms Plant logo"
@@ -106,6 +106,7 @@
 #define HEAVY_RIFLE_SLOWDOWN 0.6
 #define DMR_SLOWDOWN 0.6
 #define SAW_SLOWDOWN 0.7
+#define LIGHT_SNIPER_SLOWDOWN 0.75
 #define SNIPER_SLOWDOWN 0.9
 #define HMG_SLOWDOWN 1
 #define AMR_SLOWDOWN 1

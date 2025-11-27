@@ -7,9 +7,6 @@
 
 	SEND_SIGNAL(src, COMSIG_LIVING_LIFE, seconds_per_tick, times_fired)
 
-	if((movement_type & FLYING) && !(movement_type & FLOATING))	//TODO: Better floating
-		float(on = TRUE)
-
 	if (client)
 		var/turf/T = get_turf(src)
 		if(!T)
@@ -35,7 +32,9 @@
 			//Breathing, if applicable
 			handle_breathing(seconds_per_tick, times_fired)
 
-		handle_diseases()// DEAD check is in the proc itself; we want it to spread even if the mob is dead, but to handle its disease-y properties only if you're not.
+		handle_diseases(seconds_per_tick, times_fired)// DEAD check is in the proc itself; we want it to spread even if the mob is dead, but to handle its disease-y properties only if you're not.
+
+		handle_wounds()
 
 		if (QDELETED(src)) // diseases can qdel the mob via transformations
 			return
@@ -57,15 +56,13 @@
 			handle_traits() // eye, ear, brain damages
 			handle_status_effects() //all special effects, stun, knockdown, jitteryness, hallucination, sleeping, etc
 
-	handle_fire()
-
 	if(machine)
 		machine.check_eye(src)
 
 	if(stat != DEAD)
 		return 1
 
-/mob/living/proc/handle_breathing(seconds_per_tick, times_fired)
+/mob/living/proc/handle_breathing(seconds_per_tick = SSMOBS_DT, times_fired)
 	SEND_SIGNAL(src, COMSIG_LIVING_HANDLE_BREATHING, seconds_per_tick, times_fired)
 	return
 
@@ -73,7 +70,10 @@
 	radiation = 0 //so radiation don't accumulate in simple animals
 	return
 
-/mob/living/proc/handle_diseases()
+/mob/living/proc/handle_diseases(seconds_per_tick, times_fired)
+	return
+
+/mob/living/proc/handle_wounds()
 	return
 
 /mob/living/proc/handle_random_events()
@@ -88,23 +88,6 @@
 			adjust_bodytemperature(max((loc_temp - bodytemperature) / BODYTEMP_DIVISOR, HUMAN_BODYTEMP_COOLING_MAX))
 	else // this is a hot place
 		adjust_bodytemperature(min((loc_temp - bodytemperature) / BODYTEMP_DIVISOR, HUMAN_BODYTEMP_HEATING_MAX))
-
-/mob/living/proc/handle_fire()
-	if(fire_stacks < 0) //If we've doused ourselves in water to avoid fire, dry off slowly
-		fire_stacks = min(0, fire_stacks + 1)//So we dry ourselves back to default, nonflammable.
-	if(!on_fire)
-		return TRUE //the mob is no longer on fire, no need to do the rest.
-	if(fire_stacks > 0)
-		adjust_fire_stacks(-0.1) //the fire is slowly consumed
-	else
-		ExtinguishMob()
-		return TRUE //mob was put out, on_fire = FALSE via ExtinguishMob(), no need to update everything down the chain.
-	var/datum/gas_mixture/G = loc.return_air() // Check if we're standing in an oxygenless environment
-	if(G.get_moles(GAS_O2) < 1)
-		ExtinguishMob() //If there's no oxygen in the tile we're on, put out the fire
-		return TRUE
-	var/turf/location = get_turf(src)
-	location.hotspot_expose(700, 50, 1)
 
 //this updates all special effects: knockdown, druggy, stuttering, etc..
 /mob/living/proc/handle_status_effects()

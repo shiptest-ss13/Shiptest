@@ -16,6 +16,12 @@
 	path = /obj/item/clothing/under/utility/skirt
 	description = "Does it being a skirt defeat the purpose of use in a hazardous work environment?"
 
+// Cargo pants
+
+/datum/gear/uniform/cargo
+	display_name = "cargo pants, recolorable"
+	path = /obj/item/clothing/under/pants/cargo
+
 //Colored jumpsuits
 
 /datum/gear/uniform/color
@@ -28,29 +34,9 @@
 
 //Shorts
 
-/datum/gear/uniform/athshortsred
-	display_name = "athletic shorts, red"
-	path = /obj/item/clothing/under/shorts/red
-
-/datum/gear/uniform/athshortsblack
-	display_name = "athletic shorts, black"
-	path = /obj/item/clothing/under/shorts/black
-
-/datum/gear/uniform/athshortsgrey
-	display_name = "athletic shorts, grey"
-	path = /obj/item/clothing/under/shorts/grey
-
-/datum/gear/uniform/athshortsblue
-	display_name = "athletic shorts, blue"
-	path = /obj/item/clothing/under/shorts/blue
-
-/datum/gear/uniform/athshortsgreen
-	display_name = "athletic shorts, green"
-	path = /obj/item/clothing/under/shorts/green
-
-/datum/gear/uniform/athshortspurple
-	display_name = "athletic shorts, purple"
-	path = /obj/item/clothing/under/shorts/purple
+/datum/gear/uniform/athshorts
+	display_name = "athletic shorts, recolorable"
+	path = /obj/item/clothing/under/shorts
 
 /datum/gear/uniform/dolphinshorts
 	display_name = "dolphin shorts"
@@ -75,6 +61,18 @@
 /datum/gear/uniform/pants/khaki
 	display_name = "khaki pants"
 	path = /obj/item/clothing/under/pants/khaki
+
+/datum/gear/uniform/pants/pajamared
+	display_name = "red pajama pants"
+	path = /obj/item/clothing/under/pants/pajamared
+
+/datum/gear/uniform/pants/pajamablue
+	display_name = "blue pajama pants"
+	path = /obj/item/clothing/under/pants/pajamablue
+
+/datum/gear/uniform/pants/pajamagreen
+	display_name = "green pajama pants"
+	path = /obj/item/clothing/under/pants/pajamagreen
 
 /datum/gear/uniform/pants/tan
 	display_name = "tan pants"
@@ -278,3 +276,21 @@
 /datum/gear/uniform/suit/dress_suit/skirt
 	display_name = "dress-suitskirt, navy"
 	path = /obj/item/clothing/under/suit/dresssuit/skirt
+
+// Overalls
+
+/datum/gear/uniform/overalls_denim
+	display_name = "overalls, denim"
+	path = /obj/item/clothing/under/overalls
+
+/datum/gear/uniform/overalls_black
+	display_name = "overalls, black"
+	path = /obj/item/clothing/under/overalls/black
+
+/datum/gear/uniform/overalls_olive
+	display_name = "overalls, olive"
+	path = /obj/item/clothing/under/overalls/olive
+
+/datum/gear/uniform/overalls_brown
+	display_name = "overalls, brown"
+	path = /obj/item/clothing/under/overalls/brown

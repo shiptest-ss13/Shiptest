@@ -15,7 +15,7 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer/internals/ice_lodge
 	armor_base = /obj/item/clothing/suit/armor/vest/marine/frontier
 	weapon_drop_chance = 0
-	species_spawner = /datum/species/vox
+	mob_species = /datum/species/vox
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer/internals/ice_lodge
 	mob_species = /datum/species/vox
@@ -25,4 +25,6 @@
 	name = "Frontiersman Officer Corpse Internals (Ice Lodge)"
 	mask = /obj/item/clothing/mask/gas/sechailer
 	suit = /obj/item/clothing/suit/armor/vest/marine/frontier
+	back = /obj/item/storage/backpack
+	backpack_contents = list(/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/pulseslug = 2)
 

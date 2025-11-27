@@ -72,6 +72,13 @@
 	position = generator(GEN_VECTOR, list(-3, 5, 0), list(3, 6.5, 0), NORMAL_RAND)
 	velocity = generator(GEN_VECTOR, list(-0.1, 0.4, 0), list(0.1, 0.5, 0), NORMAL_RAND)
 
+/particles/smoke/drill_vent
+	color = COLOR_YELLOW
+	spawning = 2
+	lifespan = 2.5 SECONDS
+	fade = 1 SECONDS
+	position = generator(GEN_SPHERE, 16, 24, NORMAL_RAND)
+
 /particles/fog
 	icon = 'icons/effects/particles/smoke.dmi'
 	icon_state = list("chill_1" = 2, "chill_2" = 2, "chill_3" = 1)

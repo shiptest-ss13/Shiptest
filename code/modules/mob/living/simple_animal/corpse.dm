@@ -15,16 +15,29 @@
 
 /datum/outfit/ramzi
 	name = "Ramzi Clique Corpse"
-	uniform = /obj/item/clothing/under/syndicate/gorlex
-	suit = /obj/item/clothing/suit/armor/vest/syndie
+	uniform = /obj/item/clothing/under/syndicate/ramzi/overalls
+	suit = /obj/item/clothing/suit/armor/ramzi
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	ears = /obj/item/radio/headset/alt
-	mask = /obj/item/clothing/mask/gas/syndicate
-	head = /obj/item/clothing/head/helmet/syndie
+	mask = /obj/item/clothing/mask/gas/ramzi
+	head = /obj/item/clothing/head/helmet/m10/ramzi
 	back = /obj/item/storage/backpack
 	neck = /obj/item/clothing/neck/dogtag/ramzi
 	id = /obj/item/card/id/syndicate
+
+/datum/outfit/ramzi/bulletproof
+	name = "Ramzi Clique Rifleman"
+	suit = /obj/item/clothing/suit/armor/ramzi/bulletproof
+	head = /obj/item/clothing/head/helmet/bulletproof/x11/ramzi
+	belt = /obj/item/storage/belt/security/webbing/ramzi/alt
+	mask = /obj/item/clothing/mask/breath/facemask
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ramzi
+	neck = /obj/item/clothing/neck/shemagh/ramzi
+
+/obj/effect/mob_spawn/human/corpse/ramzi/trooper
+	name = "Ramzi Trooper"
+	outfit = /datum/outfit/ramzi/bulletproof
 
 /obj/effect/mob_spawn/human/corpse/ramzi/space
 	name = "Ramzi Hardsuit"
@@ -32,10 +45,50 @@
 
 /datum/outfit/ramzi/commando
 	name = "Ramzi Clique Space Corpse"
-	uniform = /obj/item/clothing/under/syndicate/combat
+	uniform = /obj/item/clothing/under/syndicate/ramzi
 	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
+	mask = /obj/item/clothing/mask/breath/facemask
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ramzi
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 	back = /obj/item/tank/jetpack/oxygen
+	r_pocket = /obj/item/tank/internals/emergency_oxygen
+
+/obj/effect/mob_spawn/human/corpse/ramzi/space/soft
+	name = "Ramzi Softsuit"
+	outfit = /datum/outfit/ramzi/soft
+
+/datum/outfit/ramzi/soft
+	name = "Ramzi Clique Softsuit"
+	uniform = /obj/item/clothing/under/syndicate/ramzi
+	head = /obj/item/clothing/head/helmet/space/syndicate/ramzi
+	suit = /obj/item/clothing/suit/space/syndicate/ramzi
+	back = /obj/item/tank/jetpack/oxygen
+	r_pocket = /obj/item/tank/internals/emergency_oxygen
+
+/obj/effect/mob_spawn/human/corpse/ramzi/space/soft/surplus
+	name = "Ramzi Softsuit Surplus"
+	outfit = /datum/outfit/ramzi/soft/surplus
+
+/obj/effect/mob_spawn/human/corpse/ramzi/towel
+	name = "Ramzi Showerer"
+	outfit = /datum/outfit/ramzi/towel
+
+/datum/outfit/ramzi/towel
+	name = "Ramzi Clique Showerer"
+	uniform = null
+	head = null
+	suit = /obj/item/towel/full
+	back = null
+	id = null
+	shoes = null
+	gloves = null
+
+/datum/outfit/ramzi/soft/surplus
+	name = "Ramzi Clique Softsuit Surplus"
+	uniform = /obj/item/clothing/under/syndicate/ramzi
+	head = /obj/item/clothing/head/helmet/space/syndicate/ramzi/surplus
+	suit = /obj/item/clothing/suit/space/syndicate/ramzi/surplus
+	back = /obj/item/storage/backpack
 	r_pocket = /obj/item/tank/internals/emergency_oxygen
 
 /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
@@ -43,12 +96,40 @@
 	id_job = "Operative"
 	outfit = /datum/outfit/ramzi/stormtrooper
 
+/datum/outfit/ramzi/officer
+	name = "Ramzi Clique Officer"
+	uniform = /obj/item/clothing/under/syndicate/ramzi/officer
+	suit = /obj/item/clothing/suit/armor/ramzi/officer
+	head = /obj/item/clothing/head/ramzi/beret
+	back = null
+	mask = /obj/item/clothing/mask/breath/facemask
+
+/obj/effect/mob_spawn/human/corpse/ramzi/officer
+	name = "Ramzi Clique Officer"
+	outfit = /datum/outfit/ramzi/officer
+
+/obj/effect/mob_spawn/human/corpse/ramzi/officer/beach
+	name = "Ramzi Clique Quartermaster"
+	mob_species = /datum/species/human
+	mob_gender = FEMALE
+
+/obj/effect/mob_spawn/human/corpse/ramzi/officer/ngr
+	name = "Corrupt NGR Official"
+	uniform = /obj/item/clothing/under/syndicate/ngr/officer
+	head = /obj/item/clothing/head/ngr
+	suit = /obj/item/clothing/suit/armor/ngr/lieutenant
+	glasses = null
+	neck = null
+	mob_gender = FEMALE
+	mob_species = /datum/species/human
+
 /datum/outfit/ramzi/stormtrooper
 	name = "Ramzi Clique Trooper Corpse"
-	uniform = /obj/item/clothing/under/syndicate/combat
-	suit = /obj/item/clothing/suit/space/hardsuit/syndi
-	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi
-	mask = /obj/item/clothing/mask/gas/syndicate
+	uniform = /obj/item/clothing/under/syndicate/ramzi/officer
+	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
+	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi/elite
+	mask = /obj/item/clothing/mask/breath/facemask
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ramzi
 	back = /obj/item/tank/jetpack/oxygen/harness
 
 /datum/outfit/syndicatecaptaincorpse
@@ -75,7 +156,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
 	ears = /obj/item/radio/headset/syndicate
-	belt = /obj/item/gun/ballistic/automatic/pistol/commander
+	belt = /obj/item/gun/ballistic/automatic/pistol/challenger
 	head = /obj/item/clothing/head/soft/cybersun/medical
 	id = /obj/item/card/id
 
@@ -154,6 +235,24 @@
 	back = /obj/item/storage/backpack/messenger
 	id = /obj/item/card/id
 
+/datum/outfit/vigilitas/space
+	name = "VI Responder"
+	suit = /obj/item/clothing/suit/space/hardsuit/security
+	head = /obj/item/clothing/head/helmet/space/hardsuit/security
+	back = /obj/item/tank/jetpack/carbondioxide
+
+/datum/outfit/vigilitas/space/hos
+	name = "VI Breacher"
+	suit = /obj/item/clothing/suit/space/hardsuit/security/hos
+	head = /obj/item/clothing/head/helmet/space/hardsuit/security/hos
+	back = /obj/item/tank/jetpack/carbondioxide
+
+/datum/outfit/vigilitas/director
+	name = "VI director"
+	uniform = /obj/item/clothing/under/nanotrasen/security/director
+	suit = /obj/item/clothing/suit/armor/nanotrasen/sec_director
+	head = /obj/item/clothing/head/nanotrasen/beret/security/command
+
 /datum/outfit/vigilitas/private
 	name = "VI Private"
 
@@ -162,10 +261,15 @@
 	id_job = "Vigilitas Interstellar"
 	outfit = /datum/outfit/vigilitas/private
 
+/obj/effect/mob_spawn/human/corpse/vigilitas_director
+	name = "VI Director"
+	id_job = "Vigilitas Interstellar"
+	outfit = /datum/outfit/vigilitas/director
+
 /datum/outfit/vigilitas/trooper
 	name = "VI Trooper"
 	gloves = /obj/item/clothing/gloves/combat
-	head = /obj/item/clothing/head/helmet/sec
+	head = /obj/item/clothing/head/helmet/m10
 	back = /obj/item/storage/backpack/security
 
 /obj/effect/mob_spawn/human/corpse/vigilitas_trooper
@@ -179,6 +283,16 @@
 	head = /obj/item/clothing/head/helmet/space/hardsuit/ert/sec
 	back = /obj/item/storage/backpack/security
 	gloves = /obj/item/clothing/gloves/combat
+
+/obj/effect/mob_spawn/human/corpse/vigilitas_hos
+	name = "VI Breacher"
+	id_job = "Vigilitas Assault Force"
+	outfit = /datum/outfit/vigilitas/space/hos
+
+/obj/effect/mob_spawn/human/corpse/vigilitas_space
+	name = "VI Responder"
+	id_job = "Vigilitas Assault Force"
+	outfit = /datum/outfit/vigilitas/space
 
 /obj/effect/mob_spawn/human/corpse/vigilitas_elite
 	name = "VI Response Team"
@@ -272,3 +386,9 @@
 	name = "PGF Captain"
 	id_job = "Captain"
 	outfit = /datum/outfit/job/gezena/captain
+
+/* clip ig */
+
+/obj/effect/mob_spawn/human/corpse/clip/bombsuitguy
+	name = "CLIP Bombsuit Spawner"
+	outfit = /datum/outfit/job/clip/minutemen/grunt/dressed/bombsuit

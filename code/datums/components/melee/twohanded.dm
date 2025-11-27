@@ -123,7 +123,7 @@
  * vars:
  * * user The mob/living/carbon that is wielding the item
  */
-/datum/component/two_handed/proc/wield(mob/living/carbon/user)
+/datum/component/two_handed/proc/wield(mob/living/carbon/user, instant = FALSE)
 	if(wielded)
 		return
 	if(ismonkey(user))
@@ -143,7 +143,7 @@
 		return
 
 	// wield update status
-	if(SEND_SIGNAL(parent, COMSIG_TWOHANDED_WIELD, user) & COMPONENT_TWOHANDED_BLOCK_WIELD)
+	if(SEND_SIGNAL(parent, COMSIG_TWOHANDED_WIELD, user, instant) & COMPONENT_TWOHANDED_BLOCK_WIELD)
 		return // blocked wield from item
 	wielded = TRUE
 	ADD_TRAIT(parent, TRAIT_WIELDED, REF(src))

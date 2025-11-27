@@ -63,6 +63,8 @@ h1.alert, h2.alert		{color: #000000;}
 
 .userdanger				{color: #ff0000;	font-weight: bold;	font-size: 3;}
 .danger					{color: #ff0000;}
+.tinydanger				{color: #ff0000; 	font-size: 85%;}
+.smalldanger			{color: #ff0000; 	font-size: 90%;}
 .warning				{color: #ff0000;	font-style: italic;}
 .boldwarning			{color: #ff0000;	font-style: italic;	font-weight: bold}
 .announce				{color: #228b22;	font-weight: bold;}
@@ -72,6 +74,10 @@ h1.alert, h2.alert		{color: #000000;}
 .rose					{color: #ff5050;}
 .info					{color: #0000CC;}
 .notice					{color: #000099;}
+.tinynotice				{color: #000099; 	font-size: 85%;}
+.tinynoticeital			{color: #000099; 	font-style: italic; font-size: 85%;}
+.smallnotice			{color: #000099; 	font-size: 90%;}
+.smallnoticeital		{color: #000099; 	font-style: italic;	font-size: 90%;}
 .boldnotice				{color: #000099;	font-weight: bold;}
 .hear					{color: #000099;	font-style: italic;}
 .adminnotice			{color: #0000ff;}
@@ -126,7 +132,6 @@ h1.alert, h2.alert		{color: #000000;}
 .extremelybig			{font-size: 5;}
 .greentext				{color: #00FF00;	font-size: 3;}
 .redtext				{color: #FF0000;	font-size: 3;}
-.clown					{color: #FF69Bf;	font-size: 3;	font-family: "Comic Sans MS", cursive, sans-serif;	font-weight: bold;}
 .singing				{font-family: "Trebuchet MS", cursive, sans-serif; font-style: italic;}
 .hypnophrase			{color: #3bb5d3;	font-weight: bold;	animation: hypnocolor 1500ms infinite; animation-direction: alternate;}
 	@keyframes hypnocolor {

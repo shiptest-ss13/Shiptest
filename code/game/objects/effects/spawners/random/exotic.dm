@@ -36,7 +36,6 @@
 		/obj/item/reagent_containers/syringe/contraband/crank = 1,
 		/obj/item/reagent_containers/syringe/contraband/methamphetamine = 1,
 		/obj/item/reagent_containers/syringe/contraband/mammoth = 1,
-		/obj/item/reagent_containers/syringe/contraband/fentanyl = 1,
 		/obj/item/reagent_containers/syringe/contraband/morphine = 1,
 		/obj/item/storage/pill_bottle/happy = 1,
 		/obj/item/storage/pill_bottle/lsd = 1,
@@ -47,7 +46,7 @@
 		/obj/item/grenade/smokebomb = 1,
 		/obj/item/flashlight/seclite = 1,
 		/obj/item/melee/knife/shiv = 4,
-		/obj/item/melee/knife/shiv/carrot = 1,
+		// /obj/item/melee/knife/shiv/carrot = 1,
 		/obj/item/melee/knife/kitchen = 1,
 		/obj/item/storage/wallet/random = 1,
 		/obj/item/pda = 1
@@ -63,6 +62,6 @@
 		/obj/item/gun/ballistic/automatic/pistol/ringneck = 8,
 		/obj/item/gun/ballistic/shotgun/automatic/m11 = 5,
 		/obj/item/gun/ballistic/automatic/pistol/spitter,
-		/obj/item/gun/ballistic/revolver/mateba
+		/obj/item/gun/ballistic/revolver/rhino
 	)
 

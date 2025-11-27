@@ -12,7 +12,6 @@
 	circuit = /obj/item/circuitboard/machine/coffeemaker/premium
 	initial_cartridge = null		//no cartridge, just coffee beans
 	brew_time = 15 SECONDS			//industrial grade, its faster than the regular one
-	density = TRUE
 	pass_flags = PASSTABLE
 	coffeemaker_particle = /particles/smoke/steam/mild/coffeemaker_premium
 
@@ -149,8 +148,8 @@
 		update_icon()
 		return TRUE
 
-	if(istype(attack_item, /obj/item/reagent_containers/condiment/creamer))
-		var/obj/item/reagent_containers/condiment/creamer/new_pack = attack_item
+	if(istype(attack_item, /obj/item/reagent_containers/condiment/pack/creamer))
+		var/obj/item/reagent_containers/condiment/pack/creamer/new_pack = attack_item
 		if(new_pack.reagents.total_volume < new_pack.reagents.maximum_volume)
 			balloon_alert(user, "the pack must be full!")
 			return TRUE
@@ -197,7 +196,7 @@
 			return TRUE
 		var/obj/item/storage/box/coffeepack/new_coffee_pack = attack_item
 		for(var/obj/item/food/grown/coffee/new_coffee in new_coffee_pack.contents)
-			if(!HAS_TRAIT(new_coffee, TRAIT_DRIED))
+			if(HAS_TRAIT(new_coffee, TRAIT_DRIED))
 				if(coffee_amount < BEAN_CAPACITY)
 					if(user.transferItemToLoc(new_coffee, src))
 						coffee += new_coffee

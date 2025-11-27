@@ -10,6 +10,8 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	icon = 'icons/obj/clothing/faction/ngr/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/uniforms.dmi'
+
+	roll_sleeves = TRUE
 	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/syndicate/ngr/fatigues
@@ -18,11 +20,16 @@
 	icon_state = "ngr_fatigues"
 	item_state = "ngr_fatigues"
 
+	roll_down = TRUE
+	roll_sleeves = FALSE
+
 /obj/item/clothing/under/syndicate/ngr/jumpsuit
 	name = "\improper NGR jumpsuit"
 	desc = "A beige jumpsuit with black overalls used by wreckers of the New Gorlex Republic. A reminder of Gorlex VII's history as a mining colony, prior to its destruction."
 	icon_state = "ngr_jumpsuit"
 	item_state = "ngr_jumpsuit"
+
+	roll_sleeves = TRUE
 
 /obj/item/clothing/under/syndicate/ngr/officer
 	name = "\improper NGR officer uniform"
@@ -30,6 +37,8 @@
 	icon_state = "ngr_officer"
 	item_state = "ngr_officer"
 	supports_variations = DIGITIGRADE_VARIATION
+
+	roll_sleeves = TRUE
 
 /obj/item/clothing/under/plasmaman/ngr
 	name = "\improper NGR phorid envirosuit"
@@ -51,6 +60,12 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
 	icon_state = "ngr_foreman"
 	item_state = "blackcloth"
+
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_COAT
+	equip_delay_other = EQUIP_DELAY_COAT * 1.5
+	strip_delay = EQUIP_DELAY_COAT * 1.5
 
 /obj/item/clothing/suit/ngr/smock
 	name = "blood red smock"
@@ -94,7 +109,7 @@
 	icon = 'icons/obj/clothing/faction/ngr/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
 	blood_overlay_type = "armor"
-	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) // 5. additional. bullet armor.
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10) // 5. additional. bullet armor.
 
 /obj/item/clothing/suit/armor/ngr/lieutenant
 	name = "\improper 2nd Battlegroup overcoat"
@@ -103,7 +118,7 @@
 	icon_state = "ngr_lieutenant"
 	item_state = "ngr_lieutenant"
 	blood_overlay_type = "coat"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 
 /obj/item/clothing/suit/armor/ngr/captain
 	name = "\improper 2nd Battlegroup coat"
@@ -112,7 +127,7 @@
 	icon_state = "ngr_captain"
 	item_state = "ngr_captain"
 	blood_overlay_type = "coat"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 
 ///////////////
 //Spacesuits//
@@ -149,6 +164,21 @@
 	item_state = "ngr_envirohelm"
 	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
+
+/obj/item/clothing/suit/space/hardsuit/bomb/ngr
+	name = "NGR EOD hardsuit"
+	icon = 'icons/obj/clothing/faction/ngr/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/suits.dmi'
+	icon_state = "hardsuit-ngreod"
+	hardsuit_type = "ngreod"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/bomb/ngr
+
+/obj/item/clothing/head/helmet/space/hardsuit/bomb/ngr
+	name = "NGR EOD hardsuit helmet"
+	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
+	icon_state = "hardsuit0-ngreod"
+	hardsuit_type = "ngreod"
 
 /////////
 //Hats//
@@ -198,6 +228,7 @@
 	icon_state = "ngr_x11"
 	item_state = "ngr_x11"
 	can_flashlight = TRUE
+	content_overlays = TRUE
 
 /obj/item/clothing/head/helmet/ngr/swat
 	name = "\improper NGR pilot helmet"
@@ -219,6 +250,7 @@
 	icon = 'icons/obj/clothing/faction/ngr/eyes.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/eyes.dmi'
 	glass_colour_type = /datum/client_colour/glass_colour/green
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 
 //////////
 //Masks//
@@ -240,6 +272,7 @@
 	icon = 'icons/obj/clothing/faction/ngr/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/mask.dmi'
 	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | KEPORI_VARIATION
+	alternate_worn_layer = BELT_LAYER
 
 //////////
 //Neck//

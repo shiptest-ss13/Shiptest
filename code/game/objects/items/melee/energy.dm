@@ -1,5 +1,5 @@
 /obj/item/melee/energy
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	icon = 'icons/obj/weapon/energy.dmi'
@@ -20,7 +20,7 @@
 	/// Throwforce while active.
 	var/active_throwforce = 20
 	/// Sharpness while active.
-	var/active_sharpness = IS_SHARP
+	var/active_sharpness = SHARP_EDGED
 	/// Hitsound played attacking while active.
 	var/active_hitsound = 'sound/weapons/blade1.ogg'
 	/// Weight class while active.
@@ -132,7 +132,7 @@
 	attack_verb = list("tapped", "poked")
 	throw_speed = 3
 	throw_range = 5
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	embedding = list("embed_chance" = 75, "impact_pain_mult" = 10)
 	armour_penetration = 35
 	block_chance = 50
@@ -166,7 +166,7 @@
 	sword_color = null //stops icon from breaking when turned on.
 	hitcost = 75 //Costs more than a standard cyborg esword
 	w_class = WEIGHT_CLASS_NORMAL
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	light_color = LIGHT_COLOR_LIGHT_CYAN
 	tool_behaviour = TOOL_SAW
 	toolspeed = 0.7 //faster as a saw
@@ -259,7 +259,7 @@
 	throw_range = 1
 	w_class = WEIGHT_CLASS_BULKY//So you can't hide it in your pocket or some such.
 	var/datum/effect_system/spark_spread/spark_system
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 
 //Most of the other special functions are handled in their own files. aka special snowflake code so kewl
 /obj/item/melee/energy/blade/Initialize()
@@ -287,7 +287,7 @@
 	icon_state = "plasmasword"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	armour_penetration = 200
 	block_chance = 0
 	force = 0
@@ -309,3 +309,88 @@
 /obj/item/melee/energy/ctf/solgov
 	armour_penetration = 40
 	active_force = 34 //desword grade, but 0 blocking
+
+/obj/item/melee/energy/flyssa
+	name = "energy flyssa"
+	desc = "Also known as a static-field flyssa, a powerful energy field is generated at the edge of a microforged filament, creating unheard of cutting power."
+	icon_state = "flyssa"
+	base_icon_state = "flyssa"
+	item_state = "flyssa"
+
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+
+	throwforce = 5
+	active_throwforce = 20
+	force = 10
+	active_force = 35
+	wound_bonus = -35
+	bare_wound_bonus = -10
+	armour_penetration = -20
+
+	w_class = WEIGHT_CLASS_NORMAL
+
+	active_hitsound = 'sound/weapons/blade1.ogg'
+
+	var/cell_override = /obj/item/stock_parts/cell/high
+	power_use_amount = 200
+
+/obj/item/melee/energy/flyssa/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/cell, cell_override, _cell_can_be_removed=FALSE, _has_cell_overlays=FALSE)
+	RegisterSignal(src, COMSIG_TRANSFORMING_PRE_TRANSFORM, PROC_REF(check_power))
+	update_appearance()
+
+/obj/item/melee/energy/flyssa/AltClick(mob/user)
+	. = ..()
+	update_appearance()
+
+/obj/item/melee/energy/flyssa/get_cell()
+	var/datum/component/cell/our_cell = GetComponent(/datum/component/cell)
+	return our_cell.inserted_cell
+
+/obj/item/melee/energy/flyssa/update_overlays()
+	. = ..()
+	var/datum/component/cell/our_cell = GetComponent(/datum/component/cell)
+	if(!our_cell.inserted_cell)
+		return cut_overlays()
+	var/charge = our_cell.inserted_cell.percent()
+	switch(charge)
+		if(86 to 100)
+			. += "flyssa-1"
+		if(70 to 85)
+			. += "flyssa-2"
+		if(55 to 69)
+			. += "flyssa-3"
+		if(40 to 54)
+			. += "flyssa-4"
+		if(25 to 39)
+			. += "flyssa-5"
+		if(0 to 25)
+			. += "flyssa-6"
+
+/obj/item/melee/energy/flyssa/proc/check_power()
+	if(!(item_use_power(power_use_amount) & COMPONENT_POWER_SUCCESS))
+		playsound(src, 'sound/machines/button1.ogg', 10)
+		return COMPONENT_BLOCK_TRANSFORM
+
+/obj/item/melee/energy/flyssa/process(seconds_per_tick)
+	if(!(item_use_power(power_use_amount) & COMPONENT_POWER_SUCCESS))
+		SEND_SIGNAL(src, COMSIG_ITEM_FORCE_TRANSFORM, "no_power")
+		on_transform()
+		playsound(src, 'sound/weapons/saberoff.ogg', 35)
+		STOP_PROCESSING(SSobj, src)
+	. = ..()
+
+/obj/item/melee/energy/flyssa/on_transform(obj/item/source, mob/user, active)
+	if(active)
+		icon_state = "[base_icon_state]-on"
+		item_state = "[base_icon_state]-on"
+		damtype = FIRE
+		armour_penetration = 60
+	else
+		icon_state = base_icon_state
+		item_state = base_icon_state
+		damtype = BRUTE
+		armour_penetration = -20
+	. = ..()

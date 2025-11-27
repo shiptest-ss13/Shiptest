@@ -50,7 +50,7 @@
 	// Extinguish, unbuckle, stop being pulled, set our location into the
 	// dummy object
 	var/obj/effect/dummy/phased_mob/slaughter/holder = new /obj/effect/dummy/phased_mob/slaughter(mobloc)
-	ExtinguishMob()
+	extinguish_mob()
 
 	// Keep a reference to whatever we're pulling, because forceMove()
 	// makes us stop pulling
@@ -74,7 +74,7 @@
 
 	if(victim.stat == CONSCIOUS)
 		visible_message(span_warning("[victim] kicks free of the blood pool just before entering it!"), null, span_notice("You hear splashing and struggling."))
-	else if(victim.reagents && victim.reagents.has_reagent(/datum/reagent/consumable/ethanol/demonsblood, needs_metabolizing = TRUE))
+	else if(victim.has_reagent(/datum/reagent/consumable/ethanol/demonsblood, needs_metabolizing = TRUE))
 		visible_message(span_warning("Something prevents [victim] from entering the pool!"), span_warning("A strange force is blocking [victim] from entering!"), span_notice("You hear a splash and a thud."))
 	else
 		victim.forceMove(src)
@@ -107,7 +107,7 @@
 	if(!victim)
 		return FALSE
 
-	if(victim.reagents && victim.reagents.has_reagent(/datum/reagent/consumable/ethanol/devilskiss, needs_metabolizing = TRUE))
+	if(victim.has_reagent(/datum/reagent/consumable/ethanol/devilskiss, needs_metabolizing = TRUE))
 		to_chat(src, span_warning("<b>AAH! THEIR FLESH! IT BURNS!</b>"))
 		adjustBruteLoss(25) //I can't use adjustHealth() here because bloodcrawl affects /mob/living and adjustHealth() only affects simple mobs
 		var/found_bloodpool = FALSE

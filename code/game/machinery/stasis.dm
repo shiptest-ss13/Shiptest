@@ -96,7 +96,7 @@
 		var/easing_direction = _running ? EASE_OUT : EASE_IN
 		animate(mattress_on, alpha = new_alpha, time = 50, easing = CUBIC_EASING|easing_direction)
 
-/obj/machinery/stasis/obj_break(damage_flag)
+/obj/machinery/stasis/atom_break(damage_flag)
 	. = ..()
 	if(.)
 		play_power_sound()
@@ -111,7 +111,7 @@
 	var/freq = rand(24750, 26550)
 	playsound(src, 'sound/effects/spray.ogg', 5, TRUE, 2, frequency = freq)
 	target.apply_status_effect(STATUS_EFFECT_STASIS, STASIS_MACHINE_EFFECT)
-	target.ExtinguishMob()
+	target.extinguish_mob()
 	set_active_power()
 
 /obj/machinery/stasis/proc/thaw_them(mob/living/target)

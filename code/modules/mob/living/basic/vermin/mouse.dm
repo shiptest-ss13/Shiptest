@@ -103,7 +103,7 @@
 	if(!proximity_flag)
 		return
 
-	if(istype(attack_target, /obj/item/reagent_containers/food/snacks/store/cheesewheel))
+	if(istype(attack_target, /obj/item/food/cheese/wheel))
 		try_consume_cheese(attack_target)
 		return TRUE
 
@@ -119,7 +119,7 @@
 		to_chat(entered, span_notice("[icon2html(src, entered)] Squeak!"))
 
 /// Attempts to consume a piece of cheese, causing a few effects.
-/mob/living/basic/mouse/proc/try_consume_cheese(obj/item/reagent_containers/food/snacks/store/cheesewheel/cheese)
+/mob/living/basic/mouse/proc/try_consume_cheese(obj/item/food/cheese/wheel/cheese)
 	var/cap = CONFIG_GET(number/ratcap)
 	// Normal cheese will either heal us
 	if(prob(90) || health < maxHealth)

@@ -41,10 +41,10 @@
 
 		dna.species.spec_life(src) // for mutantraces
 
-	//WS Begin - Broken bones
-	if(stat != DEAD)
-		handle_fractures()
-	//WS End
+	else
+		for(var/i in all_wounds)
+			var/datum/wound/iter_wound = i
+			iter_wound.on_stasis()
 
 	//Update our name based on whether our face is obscured/disfigured
 	name = get_visible_name()
@@ -107,13 +107,13 @@
 		var/datum/species/S = dna.species
 
 		if(S.breathid == "o2")
-			throw_alert("not_enough_oxy", /atom/movable/screen/alert/not_enough_oxy)
+			throw_alert(ALERT_NOT_ENOUGH_OXYGEN, /atom/movable/screen/alert/not_enough_oxy)
 		else if(S.breathid == "tox")
 			throw_alert("not_enough_tox", /atom/movable/screen/alert/not_enough_tox)
 		else if(S.breathid == "co2")
-			throw_alert("not_enough_co2", /atom/movable/screen/alert/not_enough_co2)
+			throw_alert(ALERT_NOT_ENOUGH_CO2, /atom/movable/screen/alert/not_enough_co2)
 		else if(S.breathid == "n2")
-			throw_alert("not_enough_nitro", /atom/movable/screen/alert/not_enough_nitro)
+			throw_alert(ALERT_NOT_ENOUGH_NITRO, /atom/movable/screen/alert/not_enough_nitro)
 
 		return FALSE
 	else
@@ -146,22 +146,7 @@
 		return dna.species.bodytemp_normal
 	return dna.species.bodytemp_normal + get_body_temp_normal_change()
 
-///FIRE CODE
-/mob/living/carbon/human/handle_fire()
-	. = ..()
-	if(.) //if the mob isn't on fire anymore
-		return
-
-	if(dna)
-		. = dna.species.handle_fire(src) //do special handling based on the mob's species. TRUE = they are immune to the effects of the fire.
-
-	if(!last_fire_update)
-		last_fire_update = fire_stacks
-	if((fire_stacks > HUMAN_FIRE_STACK_ICON_NUM && last_fire_update <= HUMAN_FIRE_STACK_ICON_NUM) || (fire_stacks <= HUMAN_FIRE_STACK_ICON_NUM && last_fire_update > HUMAN_FIRE_STACK_ICON_NUM))
-		last_fire_update = fire_stacks
-		update_fire()
-
-
+//fire code
 /mob/living/carbon/human/proc/get_thermal_protection()
 	var/thermal_protection = 0 //Simple check to estimate how protected we are against multiple temperatures
 	if(wear_suit)
@@ -172,20 +157,7 @@
 			thermal_protection += (head.max_heat_protection_temperature*THERMAL_PROTECTION_HEAD)
 	thermal_protection = round(thermal_protection)
 	return thermal_protection
-
-/mob/living/carbon/human/IgniteMob()
-	//If have no DNA or can be Ignited, call parent handling to light user
-	//If firestacks are high enough
-	if(!dna || dna.species.CanIgniteMob(src))
-		return ..()
-	. = FALSE //No ignition
-
-/mob/living/carbon/human/ExtinguishMob()
-	if(!dna || !dna.species.ExtinguishMob(src))
-		last_fire_update = null
-		..()
-//END FIRE CODE
-
+//end fire code
 
 //This proc returns a number made up of the flags for body parts which you are protected on. (such as HEAD, CHEST, GROIN, etc. See setup.dm for the full list)
 /mob/living/carbon/human/proc/get_heat_protection_flags(temperature) //Temperature is the temperature you're being exposed to.
@@ -338,28 +310,6 @@
 		Unconscious(80)
 	// Tissues die without blood circulation
 	adjustBruteLoss(2)
-
-/mob/living/carbon/human/proc/handle_fractures()
-	//this whole thing is hacky and WILL NOT work right with multiple hands
-	//you've been warned
-	var/obj/item/bodypart/L = get_bodypart("l_arm")
-	var/obj/item/bodypart/R = get_bodypart("r_arm")
-
-	if(istype(L) && L.bone_status == BONE_FLAG_BROKEN && held_items[1] && prob(30))
-		force_scream()
-		if(!HAS_TRAIT(src, TRAIT_ANALGESIA))
-			visible_message(span_warning("[src] screams and lets go of [held_items[1]] in pain."), span_userdanger("A horrible pain in your [parse_zone(L)] makes it impossible to hold [held_items[1]]!"))
-		else
-			visible_message(span_notice("[src] flinches and lets go of [held_items[1]]."),span_notice("A sudden weakness in your [parse_zone(L)] makes it impossible to grasp [held_items[1]]!"))
-		dropItemToGround(held_items[1])
-
-	if(istype(R) && R.bone_status == BONE_FLAG_BROKEN && held_items[2] && prob(30))
-		force_scream()
-		if(!HAS_TRAIT(src, TRAIT_ANALGESIA))
-			visible_message(span_warning("[src] screams and lets go of [held_items[1]] in pain."), span_userdanger("A horrible pain in your [parse_zone(R)] makes it impossible to hold [held_items[1]]!"))
-		else
-			visible_message(span_notice("[src] flinches and lets go of [held_items[1]]."),span_notice("A sudden weakness in your [parse_zone(R)] makes it impossible to grasp [held_items[1]]!"))
-		dropItemToGround(held_items[2])
 
 #undef THERMAL_PROTECTION_HEAD
 #undef THERMAL_PROTECTION_CHEST

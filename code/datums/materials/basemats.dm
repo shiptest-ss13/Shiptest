@@ -43,7 +43,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "gold"
 	id = "gold"
 	desc = "Gold"
-	color = "#fff032" //gold is shiny, but not as bright as bananium
+	color = "#fff032" //gold is shiny
 	strength_modifier = 1.2
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/gold

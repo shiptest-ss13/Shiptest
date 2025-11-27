@@ -4,7 +4,7 @@
 	name = "chainsaw"
 	desc = "A versatile power tool. Useful for limbing trees and delimbing humans."
 	icon_state = "chainsaw"
-	icon = 'icons/obj/weapon/axe.dmi'
+	icon = 'icons/obj/weapon/axes/axe.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/chainsaw_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/chainsaw_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -17,9 +17,9 @@
 	throw_range = 4
 	custom_materials = list(/datum/material/iron=13000)
 	attack_cooldown = HEAVY_WEAPON_CD
-	attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
+	attack_verb = list("sawed", "tore", "lacerated", "cut", "chopped", "diced")
 	hitsound = "swing_hit"
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	actions_types = list(/datum/action/item_action/startchainsaw)
 	tool_behaviour = TOOL_SAW
 	toolspeed = 0.5
@@ -49,10 +49,6 @@
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
-
-/obj/item/chainsaw/get_dismemberment_chance()
-	if(HAS_TRAIT(src, TRAIT_WIELDED))
-		. = ..()
 
 /obj/item/chainsaw/doomslayer
 	name = "THE GREAT COMMUNICATOR"

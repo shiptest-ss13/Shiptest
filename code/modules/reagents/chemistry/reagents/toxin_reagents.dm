@@ -77,8 +77,8 @@
 	accelerant_quality = 10
 
 /datum/reagent/toxin/plasma/on_mob_life(mob/living/carbon/C)
-	if(holder.has_reagent(/datum/reagent/medicine/epinephrine))
-		holder.remove_reagent(/datum/reagent/medicine/epinephrine, 2*REM)
+	if(C.has_reagent(/datum/reagent/medicine/epinephrine))
+		C.remove_reagent(/datum/reagent/medicine/epinephrine, 2*REM)
 	C.adjustPlasma(20)
 	return ..()
 
@@ -105,7 +105,7 @@
 		T.atmos_spawn_air("plasma=[reac_volume];TEMP=[temp]")
 
 /datum/reagent/toxin/plasma/expose_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with plasma is stronger than fuel!
-	if((method == TOUCH || method == SMOKE) || method == VAPOR)
+	if(method == TOUCH || method == VAPOR)
 		M.adjust_fire_stacks(reac_volume / 5)
 		return
 	..()
@@ -129,8 +129,8 @@
 	material = /datum/material/hot_ice
 
 /datum/reagent/toxin/hot_ice/on_mob_life(mob/living/carbon/M)
-	if(holder.has_reagent(/datum/reagent/medicine/epinephrine))
-		holder.remove_reagent(/datum/reagent/medicine/epinephrine, 2*REM)
+	if(M.has_reagent(/datum/reagent/medicine/epinephrine))
+		M.remove_reagent(/datum/reagent/medicine/epinephrine, 2*REM)
 	M.adjustPlasma(20)
 	M.adjust_bodytemperature(-2 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	return ..()
@@ -211,7 +211,7 @@
 /datum/reagent/toxin/zombiepowder/expose_mob(mob/living/L, method=TOUCH, reac_volume)
 	L.adjustOxyLoss(0.5*REM, 0)
 	if(method == INGEST)
-		var/datum/reagent/toxin/zombiepowder/Z = L.reagents.has_reagent(/datum/reagent/toxin/zombiepowder)
+		var/datum/reagent/toxin/zombiepowder/Z = L.has_reagent(/datum/reagent/toxin/zombiepowder)
 		if(istype(Z))
 			Z.fakedeath_active = TRUE
 
@@ -343,7 +343,7 @@
 
 /datum/reagent/toxin/spore_burning/on_mob_life(mob/living/carbon/M)
 	M.adjust_fire_stacks(2)
-	M.IgniteMob()
+	M.ignite_mob()
 	return ..()
 
 /datum/reagent/toxin/chloralhydrate
@@ -451,11 +451,20 @@
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 	toxpwr = 0
+	/// While metabolizing, lung inflammation will increase by this per tick.
+	var/histamine_inflammation = 2
+	/// If ODing, lung inflammation will increase by this per tick.
+	var/histamine_OD_inflammation = 10 // allergic reactions tend to fuck people up
 
 /datum/reagent/toxin/histamine/overdose_start(mob/living/M)
-	//Deliberately empty to make it a silent killer
+	return //Deliberately empty to make it a silent killer
 
 /datum/reagent/toxin/histamine/on_mob_life(mob/living/carbon/M)
+	if(!overdosed)
+		if (SPT_PROB(5, SSMOBS_DT))
+			to_chat(M, span_warning("You find yourself wheezing a little harder as your neck swells..."))
+		M.adjust_lung_inflammation(histamine_inflammation * SSMOBS_DT * REM)
+
 	if(prob(10))
 		switch(rand(1,4))
 			if(1)
@@ -475,6 +484,9 @@
 /datum/reagent/toxin/histamine/overdose_process(mob/living/M)
 	M.adjustOxyLoss(1*REM, 0)
 	M.adjustToxLoss(1*REM, 0)
+	M.adjust_lung_inflammation(histamine_OD_inflammation * SSMOBS_DT * REM)
+	if (SPT_PROB(15, SSMOBS_DT))
+		to_chat(M, span_boldwarning("You feel your neck swelling, squeezing on your windpipe more and more!"))
 	..()
 	. = 1
 
@@ -508,28 +520,9 @@
 	. = 1
 	if(prob(15))
 		M.reagents.add_reagent(/datum/reagent/toxin/histamine, pick(5,10))
-		M.reagents.remove_reagent(/datum/reagent/toxin/venom, 1.1)
+		M.remove_reagent(/datum/reagent/toxin/venom, 1.1)
 	else
 		..()
-
-/datum/reagent/toxin/fentanyl
-	name = "Fentanyl"
-	description = "Fentanyl will inhibit brain function and cause toxin damage before eventually knocking out its victim."
-	reagent_state = LIQUID
-	color = "#64916E"
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	toxpwr = 0
-
-/datum/reagent/toxin/fentanyl/on_mob_life(mob/living/carbon/M)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3*REM, 150)
-	if(M.toxloss <= 60)
-		M.adjustToxLoss(1*REM, 0)
-	if(current_cycle >= 4)
-		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "smacked out", /datum/mood_event/narcotic_heavy, name)
-	if(current_cycle >= 18)
-		M.Sleeping(40)
-	..()
-	return TRUE
 
 /datum/reagent/toxin/cyanide
 	name = "Cyanide"
@@ -567,7 +560,7 @@
 	toxpwr = 0
 
 /datum/reagent/toxin/itching_powder/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if((method == TOUCH || method == SMOKE) || method == VAPOR)
+	if(method == TOUCH || method == VAPOR)
 		M.reagents?.add_reagent(/datum/reagent/toxin/itching_powder, reac_volume)
 
 /datum/reagent/toxin/itching_powder/on_mob_life(mob/living/carbon/M)
@@ -585,7 +578,7 @@
 		. = 1
 	if(prob(3))
 		M.reagents.add_reagent(/datum/reagent/toxin/histamine,rand(1,3))
-		M.reagents.remove_reagent(/datum/reagent/toxin/itching_powder,1.2)
+		M.remove_reagent(/datum/reagent/toxin/itching_powder,1.2)
 		return
 	..()
 
@@ -754,22 +747,20 @@
 
 /datum/reagent/toxin/heparin //Based on a real-life anticoagulant. I'm not a doctor, so this won't be realistic.
 	name = "Heparin"
-	description = "A powerful anticoagulant. Victims will bleed uncontrollably and suffer scaling bruising."
+	description = "A powerful anticoagulant. All open cut wounds on the victim will open up and bleed much faster"
 	silent_toxin = TRUE
 	reagent_state = LIQUID
 	color = "#C8C8C8" //RGB: 200, 200, 200
 	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	toxpwr = 0
 
-/datum/reagent/toxin/heparin/on_mob_life(mob/living/carbon/M)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		for(var/obj/item/bodypart/BP in H.get_bleeding_parts())
-			BP.adjust_bleeding(BP.bleeding * 0.1)
-		H.adjustBruteLoss(1, 0) //Brute damage increases with the amount they're bleeding
-		. = 1
-	return ..() || .
+/datum/reagent/toxin/heparin/on_mob_metabolize(mob/living/M)
+	ADD_TRAIT(M, TRAIT_BLOODY_MESS, /datum/reagent/toxin/heparin)
+	return ..()
 
+/datum/reagent/toxin/heparin/on_mob_end_metabolize(mob/living/M)
+	REMOVE_TRAIT(M, TRAIT_BLOODY_MESS, /datum/reagent/toxin/heparin)
+	return ..()
 
 /datum/reagent/toxin/rotatium //Rotatium. Fucks up your rotation and is hilarious
 	name = "Rotatium"
@@ -946,20 +937,6 @@
 		. = 1
 	..()
 
-/datum/reagent/toxin/mimesbane
-	name = "Mime's Bane"
-	description = "A nonlethal neurotoxin that interferes with the victim's ability to gesture."
-	silent_toxin = TRUE
-	color = "#F0F8FF" // rgb: 240, 248, 255
-	toxpwr = 0
-	taste_description = "stillness"
-
-/datum/reagent/toxin/mimesbane/on_mob_metabolize(mob/living/L)
-	ADD_TRAIT(L, TRAIT_EMOTEMUTE, type)
-
-/datum/reagent/toxin/mimesbane/on_mob_end_metabolize(mob/living/L)
-	REMOVE_TRAIT(L, TRAIT_EMOTEMUTE, type)
-
 /datum/reagent/toxin/bonehurtingjuice //oof ouch
 	name = "Bone Hurting Juice"
 	description = "A strange substance that looks a lot like water. Drinking it is oddly tempting. Oof ouch."
@@ -1003,7 +980,7 @@
 
 /datum/reagent/toxin/bungotoxin/on_mob_life(mob/living/carbon/M)
 	M.adjustOrganLoss(ORGAN_SLOT_HEART, 3)
-	M.confused = M.dizziness //add a tertiary effect here if this is isn't an effective poison.
+	M.confused = M.get_timed_status_effect_duration(/datum/status_effect/dizziness) //add a tertiary effect here if this is isn't an effective poison.
 	if(current_cycle >= 12 && prob(8))
 		var/tox_message = pick("You feel your heart spasm in your chest.", "You feel faint.","You feel you need to catch your breath.","You feel a prickle of pain in your chest.")
 		to_chat(M, span_notice("[tox_message]"))

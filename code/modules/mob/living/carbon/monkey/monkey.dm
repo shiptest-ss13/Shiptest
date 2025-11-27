@@ -16,12 +16,12 @@
 	can_be_shoved_into = TRUE
 	blocks_emissive = EMISSIVE_BLOCK_UNIQUE
 	bodyparts = list(
-		/obj/item/bodypart/chest/monkey,
-		/obj/item/bodypart/head/monkey,
-		/obj/item/bodypart/l_arm/monkey,
-		/obj/item/bodypart/r_arm/monkey,
-		/obj/item/bodypart/leg/right/monkey,
-		/obj/item/bodypart/leg/left/monkey,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/monkey,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/monkey,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/monkey,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/monkey,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/monkey,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/monkey,
 		)
 	hud_type = /datum/hud/monkey
 	melee_damage_lower = 1
@@ -75,7 +75,7 @@
 /mob/living/carbon/monkey/on_reagent_change()
 	. = ..()
 	var/amount
-	if(reagents.has_reagent(/datum/reagent/medicine/morphine))
+	if(has_reagent(/datum/reagent/medicine/morphine))
 		amount = -1
 	if(amount)
 		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/monkey_reagent_speedmod, TRUE, amount)
@@ -174,7 +174,7 @@
 
 /mob/living/carbon/monkey/angry/Initialize()
 	. = ..()
-	ai_controller.blackboard[BB_MONKEY_AGRESSIVE] = TRUE
+	ai_controller.set_blackboard_key(BB_MONKEY_AGRESSIVE, TRUE)
 	if(prob(10))
 		var/obj/item/clothing/head/helmet/justice/escape/helmet = new(src)
 		equip_to_slot_or_del(helmet,ITEM_SLOT_HEAD)

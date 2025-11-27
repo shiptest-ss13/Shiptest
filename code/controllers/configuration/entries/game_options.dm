@@ -131,7 +131,7 @@
 	value_mode = VALUE_MODE_FLAG
 
 /datum/config_entry/number/max_loadout_items	//maximum number of items that can be in a player's loadout
-	config_entry_value = 10
+	config_entry_value = 20
 	min_val = 0
 
 /datum/config_entry/flag/no_summon_guns	//No
@@ -394,7 +394,7 @@
 	min_val = 127
 
 /datum/config_entry/number/max_dynamic_missions
-	config_entry_value = 1
+	config_entry_value = 0.66
 	min_val = 0
 
 /datum/config_entry/number/commendation_percent_poll

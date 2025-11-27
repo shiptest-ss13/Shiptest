@@ -1,47 +1,3 @@
-//Human Overlays Indexes/////////
-#define MUTATIONS_LAYER 31 //mutations. Tk headglows, cold resistance glow, etc
-#define HANDS_UNDER_BODY_LAYER 30 //Held items that render underneath the user due to perspective
-#define BODY_BEHIND_LAYER 29 //certain mutantrace features (tail when looking south) that must appear behind the body parts
-#define BODYPARTS_LOW_LAYER 28 //Layer for bodyparts that should appear behind every other bodypart - Mostly, legs when facing WEST or EAST
-#define BODYPARTS_LAYER 27 //Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
-#define BODY_ADJ_LAYER 26 //certain mutantrace features (face markings, body markings) that must appear above the body parts
-#define BODY_LAYER 25 //underwear, undershirts, socks, eyes, lips(makeup)
-#define FRONT_MUTATIONS_LAYER 24 //mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
-#define DAMAGE_LAYER 23 //damage indicators (cuts and burns)
-#define UNIFORM_LAYER 22
-#define ID_LAYER 21 //lmao at the idiot who put both ids and hands on the same layer
-#define BODYPARTS_HIGH_LAYER 20
-#define GLOVES_LAYER 19
-#define SHOES_LAYER 18
-#define EARS_LAYER 17
-#define SPLINT_LAYER 16
-#define SUIT_LAYER 15
-#define GLASSES_LAYER 14
-#define BELT_LAYER 13 //Possible make this an overlay of somethign required to wear a belt?
-#define SUIT_STORE_LAYER 12
-#define NECK_LAYER 11
-#define BACK_LAYER 10
-#define HAIR_LAYER 9 //TODO: make part of head layer?
-#define FACEMASK_LAYER 8
-#define HEAD_LAYER 7
-#define HANDCUFF_LAYER 6
-#define LEGCUFF_LAYER 5
-#define HANDS_LAYER 4
-#define BODY_FRONT_LAYER 3
-#define FIRE_LAYER 1 //If you're on fire
-#define TOTAL_LAYERS 31 //KEEP THIS UP-TO-DATE OR SHIT WILL BREAK ;_;
-
-//Human Overlay Index Shortcuts for alternate_worn_layer, layers
-//Because I *KNOW* somebody will think layer+1 means "above"
-//IT DOESN'T OK, IT MEANS "UNDER"
-#define UNDER_SUIT_LAYER (SUIT_LAYER+1)
-#define UNDER_HEAD_LAYER (HEAD_LAYER+1)
-
-//AND -1 MEANS "ABOVE", OK?, OK!?!
-#define ABOVE_SHOES_LAYER (SHOES_LAYER-1)
-#define ABOVE_BODY_FRONT_LAYER (BODY_FRONT_LAYER-1)
-
-
 //Security levels
 #define SEC_LEVEL_GREEN 0
 #define SEC_LEVEL_BLUE 1
@@ -332,9 +288,6 @@ GLOBAL_LIST_INIT(ghost_others_options, list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DE
 
 #define MAX_PROC_DEPTH 195 // 200 proc calls deep and shit breaks, this is a bit lower to give some safety room
 
-#define SYRINGE_DRAW 0
-#define SYRINGE_INJECT 1
-
 #define LUMINESCENT_DEFAULT_GLOW 2
 
 #define RIDING_OFFSET_ALL "ALL"
@@ -434,12 +387,6 @@ GLOBAL_LIST_INIT(ghost_others_options, list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DE
 
 // The alpha we give to stuff under tiles, if they want it
 #define ALPHA_UNDERTILE 128
-
-// Anonymous names defines (used in the secrets panel)
-
-#define ANON_DISABLED "" //so it's falsey
-#define ANON_RANDOMNAMES "Random Default"
-#define ANON_EMPLOYEENAMES "Employees"
 
 /// Possible value of [/atom/movable/buckle_lying]. If set to a different (positive-or-zero) value than this, the buckling thing will force a lying angle on the buckled.
 #define NO_BUCKLE_LYING -1

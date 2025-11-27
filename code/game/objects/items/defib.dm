@@ -453,7 +453,7 @@
 			span_userdanger("[user] touches [M] with [src]!"))
 	M.adjustStaminaLoss(60)
 	M.Knockdown(75)
-	M.adjust_jitter(50)
+	M.set_timed_status_effect(100 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	M.apply_status_effect(STATUS_EFFECT_CONVULSING)
 	playsound(src,  'sound/machines/defib_zap.ogg', 50, TRUE, -1)
 	if(HAS_TRAIT(M,MOB_ORGANIC))
@@ -511,7 +511,7 @@
 			H.apply_damage(50, BURN, BODY_ZONE_CHEST)
 			log_combat(user, H, "overloaded the heart of", defib)
 			H.Paralyze(100)
-			H.adjust_jitter(100)
+			H.set_timed_status_effect(200 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 			if(req_defib)
 				defib.deductcharge(revivecost)
 				cooldown = TRUE
@@ -552,10 +552,7 @@
 				shock_touching(30, H)
 				var/failed
 
-
-				if (H.hellbound)
-					failed = span_warning("[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Patient's soul appears to be on another plane of existence. Further attempts futile.")
-				else if (!heart)
+				if (!heart)
 					failed = span_warning("[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Patient's heart is missing.")
 				else if (heart.organ_flags & ORGAN_FAILING)
 					failed = span_warning("[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Patient's heart too damaged, replace or repair and try again.")
@@ -590,7 +587,7 @@
 					H.grab_ghost()
 					H.revive(full_heal = FALSE, admin_revive = FALSE)
 					H.emote("gasp")
-					H.adjust_jitter(100)
+					H.set_timed_status_effect(200 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 					SEND_SIGNAL(H, COMSIG_LIVING_MINOR_SHOCK)
 					log_combat(user, H, "revived", defib)
 				if(req_defib)

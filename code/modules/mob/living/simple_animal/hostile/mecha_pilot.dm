@@ -18,6 +18,7 @@ Featuring:
 
 */
 
+///dont use these, they are super broken
 /mob/living/simple_animal/hostile/human/ramzi/mecha_pilot
 	name = "Ramzi Clique Exowarrior"
 	desc = "A highly-trained pilot of the Clique, specialized in Exosuit operations."
@@ -60,14 +61,12 @@ Featuring:
 	icon_state = "nanotrasen"
 	faction = list("nanotrasen")
 
-
 /mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/Initialize()
 	. = ..()
 	if(spawn_mecha_type)
 		var/obj/mecha/M = new spawn_mecha_type (get_turf(src))
 		if(istype(M))
 			INVOKE_ASYNC(src, PROC_REF(enter_mecha), M)
-
 
 /mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/proc/enter_mecha(obj/mecha/M)
 	if(!M)
@@ -124,7 +123,7 @@ Featuring:
 		return 0
 	if(!M.has_charge(required_mecha_charge))
 		return 0
-	if(M.obj_integrity < M.max_integrity*0.5)
+	if(M.atom_integrity < M.max_integrity*0.5)
 		return 0
 	return 1
 
@@ -218,7 +217,7 @@ Featuring:
 				return
 
 			//Too Much Damage - Eject
-			if(mecha.obj_integrity < mecha.max_integrity*mecha_bail_threshold)
+			if(mecha.atom_integrity < mecha.max_integrity*mecha_bail_threshold)
 				exit_mecha(mecha)
 				return
 
@@ -228,7 +227,7 @@ Featuring:
 					mecha.smoke_action.Activate()
 
 			//Heavy damage - Defense Power or Retreat
-			if(mecha.obj_integrity < mecha.max_integrity*0.25)
+			if(mecha.atom_integrity < mecha.max_integrity*0.25)
 				if(prob(defense_mode_chance))
 					if(mecha.defense_action && mecha.defense_action.owner && !mecha.defense_mode)
 						mecha.leg_overload_mode = 0

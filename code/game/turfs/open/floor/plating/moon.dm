@@ -18,6 +18,8 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH)
+	MAP_SWITCH(pixel_x = 0, pixel_x = -19)
+	MAP_SWITCH(pixel_y = 0, pixel_y = -19)
 
 	floor_variance = 83
 	max_icon_states = 5
@@ -40,6 +42,11 @@
 		transform = translation
 		icon = smooth_icon
 		icon_plating = null
+
+/turf/open/floor/plating/asteroid/moon/safe
+	planetary_atmos = FALSE
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+
 
 /turf/open/floor/plating/asteroid/moon/lit
 	light_range = 2

@@ -35,7 +35,7 @@
 	visible_message(span_danger("[user] punches [src]!"), \
 					span_userdanger("You're punched by [user]!"), null, COMBAT_MESSAGE_RANGE, user)
 	to_chat(user, span_danger("You punch [src]!"))
-	adjustBruteLoss(15)
+	apply_damage(15, BRUTE, wound_bonus=10)
 
 /mob/living/simple_animal/attack_paw(mob/living/carbon/monkey/M)
 	if(..()) //successful monkey bite.
@@ -114,13 +114,6 @@
 	else
 		apply_damage(damage, damagetype, null, run_armor_check(null, armor_type, armour_pen, silent=TRUE))
 		return TRUE
-
-/*		WS Edit - Whitesands
-/mob/living/simple_animal/bullet_act(obj/projectile/Proj, def_zone, piercing_hit = FALSE)
-	apply_damage(Proj.damage, Proj.damage_type)
-	Proj.on_hit(src, 0, piercing_hit)
-	return BULLET_ACT_HIT
-*/
 
 /mob/living/simple_animal/ex_act(severity, target, origin)
 	if(origin && istype(origin, /datum/spacevine_mutation) && isvineimmune(src))

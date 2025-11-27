@@ -17,50 +17,6 @@
 	var/textb = copytext(HTMLstring, 6, 8)
 	return rgb(255 - hex2num(textr), 255 - hex2num(textg), 255 - hex2num(textb))
 
-/proc/Get_Angle(atom/movable/start,atom/movable/end)//For beams.
-	if(!start || !end)
-		return 0
-	var/dy
-	var/dx
-	dy=(32*end.y+end.pixel_y)-(32*start.y+start.pixel_y)
-	dx=(32*end.x+end.pixel_x)-(32*start.x+start.pixel_x)
-	if(!dy)
-		return (dx>=0)?90:270
-	.=arctan(dx/dy)
-	if(dy<0)
-		.+=180
-	else if(dx<0)
-		.+=360
-
-
-////Tile coordinates (x, y) to absolute coordinates (in number of pixels). Center of a tile is generally assumed to be (16,16), but can be offset.
-#define ABS_COOR(c) (((c - 1) * 32) + 16)
-#define ABS_COOR_OFFSET(c, o) (((c - 1) * 32) + o)
-
-/proc/get_angle_with_scatter(atom/start, atom/end, scatter, x_offset = 16, y_offset = 16)
-	var/end_apx
-	var/end_apy
-	if(isliving(end)) //Center mass.
-		end_apx = ABS_COOR(end.x)
-		end_apy = ABS_COOR(end.y)
-	else //Exact pixel.
-		end_apx = ABS_COOR_OFFSET(end.x, x_offset)
-		end_apy = ABS_COOR_OFFSET(end.y, y_offset)
-	scatter = ((rand(0, min(scatter, 45))) * (prob(50) ? 1 : -1)) //Up to 45 degrees deviation to either side.
-	. = round((90 - ATAN2(end_apx - ABS_COOR(start.x), end_apy - ABS_COOR(start.y))), 1) + scatter
-	if(. < 0)
-		. += 360
-	else if(. >= 360)
-		. -= 360
-
-/proc/Get_Pixel_Angle(y, x)//for getting the angle when animating something's pixel_x and pixel_y
-	if(!y)
-		return (x>=0)?90:270
-	.=arctan(x/y)
-	if(y<0)
-		.+=180
-	else if(x<0)
-		.+=360
 
 /proc/get_line(atom/starting_atom, atom/ending_atom)
 	var/current_x_step = starting_atom.x//start at x and y, then add 1 or -1 to these to get every turf from starting_atom to ending_atom
@@ -265,10 +221,6 @@ Turf and target are separate in case you want to teleport some distance from a t
 			switch(role)
 				if("human")
 					newname = random_unique_name(gender)
-				if("clown")
-					newname = pick(GLOB.clown_names)
-				if("mime")
-					newname = pick(GLOB.mime_names)
 				if("ai")
 					newname = pick(GLOB.ai_names)
 				else
@@ -1373,29 +1325,27 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 
 	if(!LAZYLEN(allowed_food)) //it's static so we only ever do this once
 		var/list/blocked = list(
-		/obj/item/food/spaghetti,
-		/obj/item/food/bread,
-		/obj/item/food/breadslice,
-		/obj/item/food/cake,
-		/obj/item/food/cakeslice,
-		/obj/item/reagent_containers/food/snacks/store,
-		/obj/item/food/pie,
-		/obj/item/food/kebab,
-		/obj/item/food/pizza,
-		/obj/item/food/pizzaslice,
-		/obj/item/reagent_containers/food/snacks/salad,
-		/obj/item/food/meat,
-		/obj/item/food/meat/slab,
-		/obj/item/reagent_containers/food/snacks/soup,
-		/obj/item/food/grown,
-		/obj/item/food/grown/mushroom,,
-		/obj/item/food/deepfryholder,
-		/obj/item/reagent_containers/food/snacks/clothing,
-		/obj/item/food/grown/shell, //base types
-		/obj/item/food/bread,
-		/obj/item/food/grown/nettle
+			/obj/item/food/spaghetti,
+			/obj/item/food/bread,
+			/obj/item/food/breadslice,
+			/obj/item/food/cake,
+			/obj/item/food/cakeslice,
+			/obj/item/food/pie,
+			/obj/item/food/kebab,
+			/obj/item/food/pizza,
+			/obj/item/food/pizzaslice,
+			/obj/item/food/salad,
+			/obj/item/food/meat,
+			/obj/item/food/meat/slab,
+			/obj/item/food/soup,
+			/obj/item/food/grown,
+			/obj/item/food/grown/mushroom,
+			/obj/item/food/deepfryholder,
+			/obj/item/food/clothing,
+			/obj/item/food/grown/shell,
+			/obj/item/food/bread,
+			/obj/item/food/grown/nettle,
 		)
-		blocked |= typesof(/obj/item/reagent_containers/food/snacks/customizable)
 
 		var/list/unfiltered_allowed_food = subtypesof(/obj/item/food) - blocked
 		for(var/obj/item/food/food as anything in unfiltered_allowed_food)

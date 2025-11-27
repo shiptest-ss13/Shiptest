@@ -31,7 +31,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 28)
 
 /obj/structure/extinguisher_cabinet/examine(mob/user)
 	. = ..()
-	. += span_notice("Alt-click to [opened ? "close":"open"] it.")
+	. += span_notice("Right-click to [opened ? "close":"open"] it.")
 
 /obj/structure/extinguisher_cabinet/Destroy()
 	if(stored_extinguisher)
@@ -99,6 +99,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 28)
 	else
 		toggle_cabinet(user)
 
+/obj/structure/extinguisher_cabinet/attack_hand_secondary(mob/user, list/modifiers)
+	toggle_cabinet(user)
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/structure/extinguisher_cabinet/attack_tk(mob/user)
 	if(stored_extinguisher)
@@ -140,7 +143,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 28)
 	else
 		. += "extinguisher_dooropen"
 
-/obj/structure/extinguisher_cabinet/obj_break(damage_flag)
+/obj/structure/extinguisher_cabinet/atom_break(damage_flag)
 	if(!broken && !(flags_1 & NODECONSTRUCT_1))
 		broken = 1
 		opened = 1
@@ -148,7 +151,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 28)
 			stored_extinguisher.forceMove(loc)
 			stored_extinguisher = null
 		update_appearance()
-
+	. = ..()
 
 /obj/structure/extinguisher_cabinet/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))

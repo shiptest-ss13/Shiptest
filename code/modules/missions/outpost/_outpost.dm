@@ -3,7 +3,7 @@
 
 /datum/mission/outpost/New(_outpost)
 	source_outpost = _outpost
-	RegisterSignal(mission_location, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
+	RegisterSignal(source_outpost, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
 	return ..()
 
 /datum/mission/outpost/Destroy()
@@ -60,7 +60,7 @@
 		"value" = src.value,
 		"duration" = src.duration,
 		"remaining" = time_remaining,
-		"timeStr" = time2text(time_remaining, "mm:ss"),
+		"timeStr" = time2text(time_remaining, "hh:mm:ss"),
 		"progressStr" = get_progress_string(),
 		"actStr" = act_str
 	)

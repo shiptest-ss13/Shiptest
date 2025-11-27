@@ -109,7 +109,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	GLOB.meteor_list += src
 	SSaugury.register_doom(src, threat)
 	SpinAnimation()
-	timerid = QDEL_IN(src, lifetime)
+	timerid = QDEL_IN_STOPPABLE(src, lifetime)
 	chase_target(target)
 
 /obj/effect/meteor/Bump(atom/A)
@@ -269,8 +269,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	heavy = 1
 	meteorsound = 'sound/effects/blobattack.ogg'
 	meteordrop = list(
-		/obj/item/food/meat/slab/human,
-		/obj/item/food/meat/slab/human/mutant,
+		/obj/item/food/meat/slab,
 		/obj/item/organ/heart,
 		/obj/item/organ/lungs,
 		/obj/item/organ/tongue,
@@ -281,7 +280,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 
 /obj/effect/meteor/meaty/Initialize()
 	for(var/path in meteordrop)
-		if(path == /obj/item/food/meat/slab/human/mutant)
+		if(path == /obj/item/food/meat/slab)
 			meteordrop -= path
 			meteordrop += pick(subtypesof(path))
 

@@ -94,24 +94,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/office)
-"aX" = (
-/obj/machinery/suit_storage_unit/inherit{
-	name = "wrecker's suit storage unit";
-	req_access_txt = "48"
-	},
-/obj/effect/turf_decal/industrial/outline{
-	color = "#791500"
-	},
-/obj/item/clothing/suit/space/syndicate/black/green,
-/obj/item/clothing/head/helmet/space/syndicate/black/green,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/pod,
-/area/ship/storage/equip)
 "aY" = (
 /obj/machinery/mech_bay_recharge_port{
 	dir = 8
@@ -403,28 +385,6 @@
 /obj/structure/chair/handrail,
 /obj/item/radio/intercom/directional/north,
 /obj/effect/decal/cleanable/oil,
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
-"dZ" = (
-/obj/structure/crate_shelf,
-/obj/structure/closet/crate{
-	name = "food crate"
-	},
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/snacks/canned/beans,
-/obj/item/reagent_containers/food/snacks/canned/beans,
-/obj/item/reagent_containers/food/snacks/canned/beans,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "ea" = (
@@ -796,7 +756,8 @@
 "gK" = (
 /obj/machinery/mineral/processing_unit_console{
 	machinedir = 2;
-	pixel_y = 26
+	pixel_y = 26;
+	dist = 3
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -1160,6 +1121,28 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/pod,
 /area/ship/hallway/fore)
+"ko" = (
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate{
+	name = "food crate"
+	},
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/food/canned/beans,
+/obj/item/food/canned/beans,
+/obj/item/food/canned/beans,
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "ks" = (
 /obj/structure/sign/warning/gasmask,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -1212,26 +1195,6 @@
 /obj/structure/grille,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
-"ld" = (
-/obj/machinery/suit_storage_unit/inherit{
-	name = "wrecker's suit storage unit";
-	req_access_txt = "48"
-	},
-/obj/effect/turf_decal/industrial/outline{
-	color = "#791500"
-	},
-/obj/item/clothing/suit/space/syndicate/black/green,
-/obj/item/clothing/head/helmet/space/syndicate/black/green,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
-/obj/structure/sign/poster/official/safety_eye_protection{
-	pixel_y = 32
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/pod,
-/area/ship/storage/equip)
 "lg" = (
 /obj/structure/closet/secure_closet/engineering_personal{
 	populate = 0
@@ -2528,6 +2491,7 @@
 /obj/item/megaphone,
 /obj/item/storage/guncase/pistol/pc76,
 /obj/machinery/light/small/directional/west,
+/obj/item/clothing/glasses/hud/security/sunglasses/ngr,
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "vs" = (
@@ -2631,7 +2595,7 @@
 	a_intent = "help";
 	desc = "A small goliath pup. Its tendrils have not yet fully grown. Someone, somehow, has managed to fit a large dog collar around its neck.";
 	environment_smash = 0;
-	faction = list("neutral","playerSyndicate");
+	faction = list("neutral","New Gorlex Republic");
 	mob_size = 2;
 	move_resist = 1000;
 	name = "David";
@@ -3084,6 +3048,11 @@
 /area/ship/hallway/aft)
 "zB" = (
 /obj/machinery/door/airlock/external,
+/obj/docking_port/mobile{
+	dir = 2;
+	port_direction = 8;
+	preferred_direction = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "zC" = (
@@ -3103,24 +3072,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
-"zI" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/table,
-/obj/item/reagent_containers/food/drinks/waterbottle{
-	pixel_x = 5;
-	pixel_y = 11
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
-	},
-/obj/item/storage/box/gum/nicotine,
-/turf/open/floor/pod,
-/area/ship/hallway/fore)
 "zJ" = (
 /obj/machinery/nuclearbomb/beer/empty{
 	desc = "An evidently-decommissioned nuclear warhead. Faded paint on the casing reads \"VICTORY OVER NANOTRASEN\", with a much newer plaque installed on top commemorating the end of the ICW in 497. A drink tap has been drilled directly into the metal.";
@@ -3929,6 +3880,23 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod/dark,
 /area/ship/engineering/electrical)
+"Hh" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_x = 5;
+	pixel_y = 11
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/pod,
+/area/ship/hallway/fore)
 "Hv" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4,
 /obj/machinery/atmospherics/components/unary/portables_connector/layer2,
@@ -3963,6 +3931,26 @@
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/crew/office)
+"HZ" = (
+/obj/machinery/suit_storage_unit/inherit{
+	name = "wrecker's suit storage unit";
+	req_access_txt = "48"
+	},
+/obj/effect/turf_decal/industrial/outline{
+	color = "#791500"
+	},
+/obj/item/clothing/mask/gas/syndicate,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/sign/poster/official/safety_eye_protection{
+	pixel_y = 32
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/suit/space/syndicate/ngr,
+/obj/item/clothing/head/helmet/space/syndicate/ngr,
+/turf/open/floor/pod,
+/area/ship/storage/equip)
 "Id" = (
 /obj/machinery/computer/cargo{
 	icon_state = "computer-left"
@@ -4019,6 +4007,23 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office)
+"Jc" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/corner/opaque/red/half{
+	dir = 1
+	},
+/obj/machinery/suit_storage_unit/inherit{
+	name = "foreman's suit storage unit";
+	req_access = list(56)
+	},
+/obj/item/clothing/suit/space/syndicate/engie,
+/obj/item/clothing/head/helmet/space/syndicate/engie,
+/obj/item/clothing/shoes/magboots/syndie,
+/obj/structure/sign/poster/contraband/engis_unite{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo/office)
 "Jh" = (
 /obj/machinery/cryopod,
 /obj/effect/turf_decal/industrial/warning{
@@ -4051,7 +4056,9 @@
 /obj/docking_port/stationary{
 	dwidth = 15;
 	height = 30;
-	width = 30
+	width = 30;
+	disable_on_owner_ship_dock = 1;
+	name = "Derecho Beam Dock"
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -4387,24 +4394,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod,
 /area/ship/crew/cryo)
-"MH" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/machinery/suit_storage_unit/inherit,
-/obj/structure/sign/poster/contraband/gec{
-	pixel_x = 32
-	},
-/obj/item/clothing/suit/space/syndicate/black/engie,
-/obj/item/clothing/head/helmet/space/syndicate/black/engie,
-/obj/item/clothing/shoes/magboots/syndie,
-/obj/effect/turf_decal/corner/opaque/red/half{
-	dir = 8
-	},
-/obj/machinery/airalarm/directional/north,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/engineering)
 "MK" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -4691,23 +4680,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
-"PH" = (
-/obj/effect/turf_decal/borderfloorblack,
-/obj/effect/turf_decal/corner/opaque/red/half{
-	dir = 1
-	},
-/obj/machinery/suit_storage_unit/inherit{
-	name = "foreman's suit storage unit";
-	req_access = list(56)
-	},
-/obj/item/clothing/suit/space/syndicate/black/engie,
-/obj/item/clothing/head/helmet/space/syndicate/black/engie,
-/obj/item/clothing/shoes/magboots/syndie,
-/obj/structure/sign/poster/contraband/engis_unite{
-	pixel_y = -32
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/cargo/office)
 "PV" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4854,6 +4826,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/melee/knife/survival,
 /obj/item/clothing/mask/breath/ngr,
+/obj/item/clothing/glasses/hud/security/sunglasses/ngr,
 /turf/open/floor/pod,
 /area/ship/storage/equip)
 "QD" = (
@@ -5390,6 +5363,25 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/melee/knife/survival,
 /obj/item/clothing/mask/breath/ngr,
+/obj/item/clothing/glasses/hud/security/sunglasses/ngr,
+/turf/open/floor/pod,
+/area/ship/storage/equip)
+"Uv" = (
+/obj/machinery/suit_storage_unit/inherit{
+	name = "wrecker's suit storage unit";
+	req_access_txt = "48"
+	},
+/obj/effect/turf_decal/industrial/outline{
+	color = "#791500"
+	},
+/obj/item/clothing/mask/gas/syndicate,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/suit/space/syndicate/ngr,
+/obj/item/clothing/head/helmet/space/syndicate/ngr,
 /turf/open/floor/pod,
 /area/ship/storage/equip)
 "UA" = (
@@ -5516,6 +5508,24 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office)
+"VR" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/machinery/suit_storage_unit/inherit,
+/obj/structure/sign/poster/contraband/gec{
+	pixel_x = 32
+	},
+/obj/item/clothing/suit/space/syndicate/engie,
+/obj/item/clothing/head/helmet/space/syndicate/engie,
+/obj/item/clothing/shoes/magboots/syndie,
+/obj/effect/turf_decal/corner/opaque/red/half{
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/engineering)
 "VW" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
@@ -5685,7 +5695,8 @@
 	dir = 4;
 	dwidth = 4;
 	height = 30;
-	width = 7
+	width = 7;
+	name = "Derecho Forward Bow Dock"
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -5714,12 +5725,6 @@
 	picked_color = "Lime"
 	},
 /obj/structure/catwalk/over,
-/obj/docking_port/mobile{
-	dir = 4;
-	launch_status = 0;
-	port_direction = 2;
-	preferred_direction = 4
-	},
 /turf/open/floor/plating,
 /area/ship/external/dark)
 "Xx" = (
@@ -5865,6 +5870,7 @@
 /obj/item/storage/guncase/pistol/a357,
 /obj/machinery/light/small/directional/east,
 /obj/item/storage/belt/military/assault,
+/obj/item/clothing/glasses/hud/security/sunglasses/ngr,
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm/captain)
 "Yq" = (
@@ -6384,7 +6390,7 @@ ZQ
 ZQ
 ZQ
 Py
-MH
+VR
 lg
 yz
 Ld
@@ -6433,8 +6439,8 @@ SP
 ZQ
 ZQ
 rL
-ld
-aX
+HZ
+Uv
 mv
 sC
 CY
@@ -6642,7 +6648,7 @@ yh
 Nq
 YR
 Tq
-zI
+Hh
 pL
 cy
 zn
@@ -6658,7 +6664,7 @@ ZQ
 ZQ
 ZQ
 GC
-dZ
+ko
 Kz
 oy
 vs
@@ -6772,7 +6778,7 @@ ZF
 Ms
 er
 SG
-PH
+Jc
 aZ
 yi
 bp

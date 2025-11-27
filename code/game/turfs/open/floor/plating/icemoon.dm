@@ -22,6 +22,8 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_SNOWED)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_SNOWED)
+	MAP_SWITCH(pixel_x = 0, pixel_x = -19)
+	MAP_SWITCH(pixel_y = 0, pixel_y = -19)
 	digResult = /obj/item/stack/sheet/mineral/snow
 	light_color = COLOR_ICEPLANET_LIGHT
 	flammability = -5
@@ -68,8 +70,15 @@
 	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/plating/asteroid/snow/temperatre
-	initial_gas_mix = "o2=22;n2=82;TEMP=255.37"
+	initial_gas_mix = "o2=22;n2=82;TEMP=272"
 	baseturfs = /turf/open/floor/plating/asteroid/icerock/temperate
+
+/turf/open/floor/plating/asteroid/snow/temperatre/lit
+	initial_gas_mix = "o2=22;n2=82;TEMP=272"
+	baseturfs = /turf/open/floor/plating/asteroid/icerock/temperate
+	light_range = 2
+	light_power = 1
+	light_color = "#1B1D2E"
 
 /turf/open/floor/plating/asteroid/snow/atmosphere
 	initial_gas_mix = FROZEN_ATMOS
@@ -77,6 +86,9 @@
 
 /turf/open/floor/plating/asteroid/snow/safe
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+
+/turf/open/floor/plating/asteroid/snow/safe/noplanet
+	planetary_atmos = FALSE
 
 /turf/open/floor/plating/asteroid/snow/safe/lit
 	light_range = 2
@@ -155,7 +167,13 @@
 	dug = TRUE
 
 /turf/open/floor/plating/asteroid/icerock/temperate
-	initial_gas_mix = "o2=22;n2=82;TEMP=255.37"
+	initial_gas_mix = "o2=22;n2=82;TEMP=272"
+
+/turf/open/floor/plating/asteroid/icerock/temperate/lit
+	initial_gas_mix = "o2=22;n2=82;TEMP=272"
+	light_range = 2
+	light_power = 1
+	light_color = "#1B1D2E"
 
 /turf/open/floor/plating/asteroid/iceberg
 	gender = PLURAL

@@ -36,7 +36,6 @@
 
 	/// 1 for full damage , 0 for none , -1 for 1:1 heal from that source.
 	var/list/damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, CLONE = 1, STAMINA = 0, OXY = 1)
-	var/datum/armor/armor
 
 	///Verbs used for speaking e.g. "Says" or "Chitters". This can be elementized
 	var/list/speak_emote = list()
@@ -92,6 +91,9 @@
 	///This damage is taken when the body temp is too hot. Set both this and unsuitable_cold_damage to 0 to avoid adding the body_temp_sensitive element.
 	var/unsuitable_heat_damage = 1
 
+	///conneceted nest datum, used to talk to the monster's 'nest'/spawner
+	var/datum/component/spawner/nest
+
 /mob/living/basic/Initialize(mapload)
 	. = ..()
 	if (islist(armor))
@@ -143,13 +145,19 @@
 	if(staminaloss > 0)
 		adjustStaminaLoss(-stamina_recovery * seconds_per_tick, FALSE, TRUE)
 
-/mob/living/basic/say_mod(input, list/message_mods = list())
+/mob/living/basic/say_mod(input, datum/language/message_language, list/message_mods = list())
 	if(length(speak_emote))
 		verb_say = pick(speak_emote)
 	return ..()
 
 /mob/living/basic/death(gibbed)
 	. = ..()
+	if(nest)
+		if(QDELETED(nest))
+			nest = null
+		else
+			nest.spawned_mobs -= src
+			nest = null
 	if(basic_mob_flags & DEL_ON_DEATH)
 		qdel(src)
 	else

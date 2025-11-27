@@ -92,9 +92,15 @@
 	resistance_flags = NONE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_COAT
+	equip_delay_other = EQUIP_DELAY_COAT * 1.5
+	strip_delay = EQUIP_DELAY_COAT * 1.5
+
 /obj/item/clothing/suit/toggle/hazard
 	name = "high-visibility jacket"
-	desc = "A highlighter-yellow jacket with reflective stripes."
+	desc = "A bright-yellow jacket with reflective stripes."
 	icon_state = "jacket_hazard"
 	item_state = "jacket_hazard"
 	blood_overlay_type = "coat"
@@ -103,6 +109,18 @@
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/radio)
 	resistance_flags = NONE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+
+/obj/item/clothing/suit/toggle/hazard/orange
+	name = "high-visibility jacket"
+	desc = "An orange jacket with reflective stripes."
+	icon_state = "jacket_hazardo"
+	item_state = "jacket_hazardo"
+
+/obj/item/clothing/suit/toggle/hazard/lime
+	name = "high-visibility jacket"
+	desc = "A highlighter-yellow jacket with reflective stripes."
+	icon_state = "jacket_hazardl"
+	item_state = "jacket_hazardl"
 
 /obj/item/clothing/suit/toggle/industrial
 	name = "industrial jacket"
@@ -136,25 +154,29 @@
 	icon_state = "suitjacket_purp"
 	item_state = "suitjacket_purp"
 
-/obj/item/clothing/suit/toggle/lawyer/black
+/obj/item/clothing/suit/lawyer
 	name = "black suit jacket"
 	desc = "A professional suit jacket."
+	icon = 'icons/obj/clothing/suits/toggle.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/toggle.dmi'
 	icon_state = "suitjacket_black"
 	item_state = "ro_suit"
+	blood_overlay_type = "coat"
+	body_parts_covered = CHEST|ARMS
 
-/obj/item/clothing/suit/toggle/lawyer/burgundy
+/obj/item/clothing/suit/lawyer/burgundy
 	name = "burgundy suit jacket"
 	desc = "A burgundy suit jacket. Makes you want to psychoanalyze."
 	icon_state = "suitjacket_burgundy"
 	item_state = "suitjacket_burgundy"
 
-/obj/item/clothing/suit/toggle/lawyer/navy
+/obj/item/clothing/suit/lawyer/navy
 	name = "navy suit jacket"
 	desc = "An orderly dress jacket."
 	icon_state = "suitjacket_navy"
 	item_state = "suitjacket_navy"
 
-/obj/item/clothing/suit/toggle/lawyer/charcoal
+/obj/item/clothing/suit/lawyer/charcoal
 	name = "charcoal suit jacket"
 	desc = "An enterprising dress jacket."
 	icon_state = "suitjacket_charcoal"
@@ -190,7 +212,6 @@
 	desc = "A foppish dress jacket."
 	icon_state = "suitjacket_light_blue"
 
-//Mime
 /obj/item/clothing/suit/toggle/suspenders
 	name = "suspenders"
 	desc = "The symbol of hard labor and dirty jobs."

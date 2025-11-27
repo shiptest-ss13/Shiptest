@@ -13,7 +13,7 @@
 
 /obj/structure/reagent_dispensers/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
 	. = ..()
-	if(. && obj_integrity > 0)
+	if(. && atom_integrity > 0)
 		if(tank_volume && (damage_flag == "bullet" || damage_flag == "laser"))
 			boom()
 
@@ -201,7 +201,7 @@
 /obj/structure/reagent_dispensers/servingdish
 	name = "serving dish"
 	desc = "A dish full of food slop for your bowl."
-	icon = 'icons/obj/kitchen.dmi'
+	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "serving"
 	anchored = TRUE
 	reagent_id = /datum/reagent/consumable/nutraslop

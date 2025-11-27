@@ -36,17 +36,17 @@
 
 	footstep_type = FOOTSTEP_MOB_SHOE
 
-	faction = list("hermit")
+	faction = list(FACTION_ANTAG_HERMITS)
 
 	/// If we use stuff from dynamic human icon generation for loot
 	var/human_loot = TRUE
 	/// Path of the mob spawner we base the mob's visuals off of.
-	var/mob_spawner
+	var/obj/effect/mob_spawn/human/mob_spawner
 	/// Path of the species we base the mob's visuals off of.
-	var/species_spawner = /datum/species/human
+	var/datum/species/mob_species
 	/// Path of the right hand held item we give to the mob's visuals.
 	var/obj/r_hand
-	/// Path of the left hand held item we give to the mob's visuals.
+	/// THE DEFAULT HAND (Required if you want them to wield it). Path of the left hand held item we give to the mob's visuals.
 	var/obj/l_hand
 	// Prob of us dropping l/r hand loot.
 	var/weapon_drop_chance = 10
@@ -57,7 +57,17 @@
 /mob/living/simple_animal/hostile/human/Initialize(mapload)
 	. = ..()
 	if(mob_spawner)
-		apply_dynamic_human_appearance(src, species_path = species_spawner, mob_spawn_path = mob_spawner, r_hand = r_hand, l_hand = l_hand)
+		if(!mob_species)
+			mob_species = pick_weight(list(
+					/datum/species/lizard = 28,
+					/datum/species/human = 22,
+					/datum/species/ipc = 20,
+					/datum/species/elzuose = 20,
+					/datum/species/moth = 5,
+					/datum/species/spider = 3
+				)
+			)
+		apply_dynamic_human_appearance(src, species_path = mob_species, mob_spawn_path = mob_spawner, r_hand = r_hand, l_hand = l_hand, seed = rand(1,3))
 		if(ispath(r_hand,/obj/item/gun))
 			var/obj/item/gun/our_gun = r_hand
 			spread = our_gun.spread
@@ -73,10 +83,12 @@
 
 /mob/living/simple_animal/hostile/human/drop_loot()
 	. = ..()
+	if(QDELING(src))
+		return
 	if(!human_loot)
 		return
 	if(mob_spawner)
-		new mob_spawner(loc)
+		new mob_spawner(loc, mob_species)
 	if(r_hand && weapon_drop_chance)
 		if(prob(weapon_drop_chance))
 			var/obj/item/gun/ballistic/cosmetic_damage = new r_hand(loc)
@@ -104,3 +116,18 @@
 				return TRUE
 			return FALSE
 	. = ..()
+
+/mob/living/simple_animal/hostile/human/bullet_act(obj/projectile/projectile)
+	shake_animation(projectile.damage)
+	if(projectile.damage_type==BRUTE)
+		if(prob((projectile.damage + projectile.wound_bonus)-(armor.bullet - projectile.armour_penetration)))
+			spray_blood(projectile.dir, rand(1,3))
+	return ..()
+
+/mob/living/simple_animal/hostile/human/proc/spray_blood(splatter_direction, splatter_strength = 3)
+	if(!isturf(loc))
+		return
+	new /obj/effect/decal/cleanable/blood(loc)
+	var/obj/effect/decal/cleanable/blood/hitsplatter/our_splatter = new(loc)
+	var/turf/targ = get_ranged_target_turf(src, splatter_direction, splatter_strength)
+	INVOKE_ASYNC(our_splatter, TYPE_PROC_REF(/obj/effect/decal/cleanable/blood/hitsplatter, fly_towards), targ, splatter_strength)

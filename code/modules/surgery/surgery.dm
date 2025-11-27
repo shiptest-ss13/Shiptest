@@ -12,6 +12,8 @@
 	var/ignore_clothes = FALSE									//This surgery ignores clothes
 	var/mob/living/target										//Operation target mob
 	var/obj/item/bodypart/operated_bodypart						//Operable body part
+	var/datum/wound/operated_wound								//The actual wound datum instance we're targeting
+	var/datum/wound/targetable_wound							//The wound type this surgery targets
 	var/requires_bodypart = TRUE								//Surgery available only when a bodypart is present, or only when it is missing.
 	var/speed_modifier = 0										//Step speed modifier
 	var/requires_real_bodypart = FALSE							//Some surgeries don't work on limbs that don't really exist
@@ -29,8 +31,13 @@
 			location = surgery_location
 		if(surgery_bodypart)
 			operated_bodypart = surgery_bodypart
+			if(targetable_wound)
+				operated_wound = operated_bodypart.get_wound_type(targetable_wound)
+				operated_wound.attached_surgery = src
 
 /datum/surgery/Destroy()
+	if(operated_wound)
+		operated_wound.attached_surgery = null
 	if(target)
 		target.surgeries -= src
 	target = null
@@ -85,14 +92,14 @@
 	if(type in opcomputer.advanced_surgeries)
 		return TRUE
 
-/datum/surgery/proc/next_step(mob/user, intent)
+/datum/surgery/proc/next_step(mob/user, list/modifiers)
 	if(location != user.zone_selected)
 		return FALSE
 	if(step_in_progress)
 		return TRUE
 
 	var/try_to_fail = FALSE
-	if(intent == INTENT_DISARM)
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
 		try_to_fail = TRUE
 
 	var/datum/surgery_step/S = get_surgery_step()
@@ -167,9 +174,7 @@
 	var/list/req_tech_surgeries = list(
 		/datum/surgery/healing/brute/upgraded/femto,
 		/datum/surgery/healing/burn/upgraded/femto,
-		/datum/surgery/healing/combo/upgraded,
-		/datum/surgery/advanced/pacify,
-		/datum/surgery/advanced/lobotomy)
+		/datum/surgery/healing/combo/upgraded)
 	for(var/i in req_tech_surgeries)
 		var/datum/surgery/beep = i
 		if(initial(beep.requires_tech))

@@ -102,7 +102,7 @@
 	glass_cost = 0
 	power_used = 0
 	cooldownTime = 10 //Only 1 second - hivebots are extremely weak
-	dispense_type = /mob/living/simple_animal/hostile/hivebot
+	dispense_type = /mob/living/basic/hivebot
 	begin_create_message = "closes and begins fabricating something within."
 	end_create_message = "slams open, revealing a hivebot!"
 	recharge_sound = null
@@ -211,12 +211,12 @@
 			span_notice("You restore [src] to operation."))
 
 		set_machine_stat(machine_stat & ~BROKEN)
-		obj_integrity = max_integrity
+		atom_integrity = max_integrity
 		update_appearance()
 	else
 		return ..()
 
-/obj/machinery/droneDispenser/obj_break(damage_flag)
+/obj/machinery/droneDispenser/atom_break(damage_flag)
 	. = ..()
 	if(!.)
 		return

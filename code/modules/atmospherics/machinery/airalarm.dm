@@ -942,12 +942,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 			return TRUE
 	return FALSE
 
-/obj/machinery/airalarm/AltClick(mob/user)
-	..()
-	if(!user.canUseTopic(src, !issilicon(user)) || !isturf(loc))
-		return
-	else
-		togglelock(user)
+/obj/machinery/airalarm/attack_hand_secondary(mob/user, list/modifiers)
+	togglelock(user)
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/machinery/airalarm/proc/togglelock(mob/living/user)
 	if(machine_stat & (NOPOWER|BROKEN))
@@ -973,7 +970,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 		new /obj/item/stack/sheet/metal(loc, 2)
 		var/obj/item/I = new /obj/item/electronics/airalarm(loc)
 		if(!disassembled)
-			I.obj_integrity = I.max_integrity * 0.5
+			I.update_integrity(I.max_integrity * 0.5)
 		new /obj/item/stack/cable_coil(loc, 3)
 	qdel(src)
 

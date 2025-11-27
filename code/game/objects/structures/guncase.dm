@@ -113,6 +113,10 @@
 		open = !open
 		update_appearance()
 
+/obj/structure/guncloset/attack_hand_secondary(mob/user, list/modifiers)
+	open = !open
+	update_appearance()
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/structure/guncloset/AltClick(mob/user)
 	if(!user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
@@ -192,4 +196,4 @@
 	desc = "A locker that holds energy guns."
 	icon_state = "ecase"
 	case_type = "egun"
-	gun_category = /obj/item/gun/energy/e_gun
+	gun_category = /obj/item/gun/energy/sharplite/x12

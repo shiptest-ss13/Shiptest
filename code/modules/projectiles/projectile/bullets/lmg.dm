@@ -11,7 +11,7 @@
 /obj/projectile/bullet/csour
 	damage = 0
 	stamina = 60
-	jitter = 30
+	jitter = 30 SECONDS
 	stutter = 10
 	slur = 10
 	knockdown = 5
@@ -27,7 +27,7 @@
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
 		M.adjust_fire_stacks(8)
-		M.IgniteMob()
+		M.ignite_mob()
 
 // Mech LMG
 

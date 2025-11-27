@@ -1207,12 +1207,6 @@
 	icon_state = "chemist"
 	toysay = "Get your pills!"
 
-/obj/item/toy/figure/clown
-	name = "Clown action figure"
-	icon_state = "clown"
-	toysay = "Honk!"
-	toysound = 'sound/items/bikehorn.ogg'
-
 /obj/item/toy/figure/ian
 	name = "Ian action figure"
 	icon_state = "ian"
@@ -1276,12 +1270,6 @@
 	name = "Paramedic action figure"
 	icon_state = "paramedic"
 	toysay = "And the best part? I'm not even a real doctor!"
-
-/obj/item/toy/figure/mime
-	name = "Mime action figure"
-	icon_state = "mime"
-	toysay = "..."
-	toysound = null
 
 /obj/item/toy/figure/miner
 	name = "Shaft Miner action figure"

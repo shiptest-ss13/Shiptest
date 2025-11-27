@@ -36,6 +36,10 @@
 	light_power = 0.6
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/lit
 
+/turf/open/floor/plating/asteroid/whitesands/lit/smooth
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH, SMOOTH_GROUP_FLOOR_HEXACRETE)
+
 /turf/open/floor/plating/asteroid/whitesands/rocky
 	has_footsteps = FALSE
 
@@ -180,6 +184,14 @@
 	light_range = 2
 	light_power = 0.6
 
+/turf/open/floor/concrete/slab_4/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+	light_color = COLOR_SANDPLANET_LIGHT
+
+/turf/open/floor/concrete/slab_4/whitesands/lit
+	light_range = 2
+	light_power = 0.6
+
 /turf/open/floor/plating/whitesands
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	light_color = COLOR_SANDPLANET_LIGHT
@@ -187,3 +199,59 @@
 /turf/open/floor/plating/whitesands/lit
 	light_range = 2
 	light_power = 0.6
+
+/turf/open/floor/wood/maple/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/wood/walnut/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/wood/ebony/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/white/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/tiles/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/slab_1/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/slab_2/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/dark/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/carpet/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/carpet/black/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/carpet/green/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/patterned/brushed/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/pod/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/engine/hull/interior/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/engine/hull/reinforced/interior/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+//stairs
+
+/turf/open/floor/plasteel/stairs/whitesand
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+	name = "exterior stairs"
+
+/turf/open/floor/plasteel/stairs/whitesand/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_SANDPLANET_LIGHT

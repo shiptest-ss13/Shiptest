@@ -90,11 +90,7 @@
 		GAS_CO=2,
 	)
 	restricted_gases = list(
-		GAS_CHLORINE=1,
-		GAS_AMMONIA=1,
-		GAS_SO2=3,
-		GAS_CO=2,
-		GAS_O3=1,
+		GAS_SO2=0.1,
 	)
 	restricted_chance = 10
 

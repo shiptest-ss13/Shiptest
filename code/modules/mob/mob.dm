@@ -1470,14 +1470,6 @@
 /mob/proc/set_nutrition(change) //Seriously fuck you oldcoders.
 	nutrition = max(0, change)
 
-
-/mob/setMovetype(newval) //Set the movement type of the mob and update it's movespeed
-	. = ..()
-	if(isnull(.))
-		return
-	update_movespeed(FALSE)
-
-
 /mob/proc/update_equipment_speed_mods()
 	var/speedies = equipped_speed_mods()
 	if(!speedies)
@@ -1520,9 +1512,6 @@
 			. =  TRUE
 		if(NAMEOF(src, stat))
 			set_stat(var_value)
-			. =  TRUE
-		if(NAMEOF(src, dizziness))
-			set_dizziness(var_value)
 			. =  TRUE
 		if(NAMEOF(src, eye_blind))
 			set_blindness(var_value)

@@ -399,7 +399,8 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		//ghostize
 		log_admin("[key_name(usr)] admin ghosted.")
 		message_admins("[key_name_admin(usr)] admin ghosted.")
-		var/mob/body = mob
+		var/mob/living/body = mob
+		body.ignore_SSD = TRUE
 		body.ghostize(1)
 		init_verbs()
 		if(body && !body.key)
@@ -785,3 +786,10 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 
 	src << link("?debug=profile&type=sendmaps&window=test")
 #endif
+
+/client/proc/admin_2fa_verify()
+	set name = "Verify Admin"
+	set category = "Admin"
+
+	var/datum/admins/admin = GLOB.admin_datums[ckey]
+	admin?.associate(src)

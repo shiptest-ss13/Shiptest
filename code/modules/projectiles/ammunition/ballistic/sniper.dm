@@ -36,18 +36,18 @@
 	projectile_type = /obj/projectile/bullet/a300/trac
 	bullet_skin = "trac"
 
-//7.5x64mm CLIP
+//6.5mm CLIP
 
-/obj/item/ammo_casing/a75clip
-	name = "7.5x64mm CLIP bullet casing"
-	desc = "A 7.5x64mm CLIP bullet casing."
+/obj/item/ammo_casing/a65clip
+	name = "6.5mm CLIP bullet casing"
+	desc = "A 6.5mm CLIP bullet casing."
 	icon_state = "big-brass"
-	caliber = "7.5x64mm CLIP"
-	projectile_type = /obj/projectile/bullet/a75clip
+	caliber = "6.5mm CLIP"
+	projectile_type = /obj/projectile/bullet/a65clip
 	stack_size = 5
 
-/obj/item/ammo_casing/a75clip/trac
-	name = "7.5x64mm CLIP tracker"
-	desc = "A 7.5x64mm CLIP tracker."
-	projectile_type = /obj/projectile/bullet/a75clip/trac
+/obj/item/ammo_casing/a65clip/trac
+	name = "6.5mm CLIP tracker"
+	desc = "A 6.5mm CLIP tracker."
+	projectile_type = /obj/projectile/bullet/a65clip/trac
 	bullet_skin = "trac"

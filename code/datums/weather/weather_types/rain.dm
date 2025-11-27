@@ -17,12 +17,19 @@
 	protect_indoors = TRUE
 	barometer_predictable = TRUE
 	affects_underground = FALSE
-	aesthetic = TRUE
 
-	sound_active_outside = /datum/looping_sound/weather/rain/indoors
-	sound_active_inside = /datum/looping_sound/weather/rain
+	sound_active_inside = /datum/looping_sound/weather/rain/indoors
+	sound_active_outside = /datum/looping_sound/weather/rain
 
 	fire_suppression = 6
+
+/datum/weather/rain/weather_act(mob/living/living_mob)
+	if(!iscarbon(living_mob))
+		return
+	var/mob/living/carbon/carbon = living_mob
+	carbon.adjust_wet_stacks(fire_suppression/2)
+	if(prob(25))
+		carbon.wash(clean_types = CLEAN_TYPE_BLOOD)
 
 /datum/weather/rain/heavy
 	name = "heavy rain"
@@ -37,10 +44,10 @@
 	end_message = span_notice("The downpour dies down...")
 	end_overlay = "rain"
 
-	sound_active_outside = /datum/looping_sound/weather/rain/indoors
-	sound_active_inside = /datum/looping_sound/weather/rain
-	sound_weak_outside = /datum/looping_sound/weather/rain/indoors
-	sound_weak_inside = /datum/looping_sound/weather/rain
+	sound_active_inside = /datum/looping_sound/weather/rain/indoors
+	sound_active_outside = /datum/looping_sound/weather/rain/no_start
+	sound_weak_inside = /datum/looping_sound/weather/rain/weak/indoors
+	sound_weak_outside = /datum/looping_sound/weather/rain/weak
 
 	fire_suppression = 8
 	thunder_chance = 2
@@ -90,12 +97,11 @@
 	protect_indoors = TRUE
 	barometer_predictable = TRUE
 	affects_underground = FALSE
-	aesthetic = FALSE
 
-	sound_active_outside = /datum/looping_sound/weather/rain/indoors
-	sound_active_inside = /datum/looping_sound/weather/rain
-	sound_weak_outside = /datum/looping_sound/weather/rain/indoors
-	sound_weak_inside = /datum/looping_sound/weather/rain
+	sound_active_inside = /datum/looping_sound/weather/rain/indoors
+	sound_active_outside = /datum/looping_sound/weather/rain/no_start
+	sound_weak_inside = /datum/looping_sound/weather/rain/weak/indoors
+	sound_weak_outside = /datum/looping_sound/weather/rain/weak
 
 	var/toxic_power = 2
 
@@ -118,6 +124,7 @@
 			if(istype (human.wear_neck,/obj/item/clothing/neck/cloak)) //cloaks protect in steed of suits
 				return
 		human.reagents.add_reagent(/datum/reagent/toxin, toxic_power/4)
+	. = ..()
 
 
 /datum/weather/rain/toxic/proc/handle_face(mob/living/carbon/living_mob)
@@ -168,10 +175,10 @@
 	end_message = "<span class='notice'>The downpour dies down...</span>"
 	end_overlay = "rain"
 
-	sound_active_outside = /datum/looping_sound/weather/rain/indoors
-	sound_active_inside = /datum/looping_sound/weather/rain
-	sound_weak_outside = /datum/looping_sound/weather/rain/indoors
-	sound_weak_inside = /datum/looping_sound/weather/rain
+	sound_active_inside = /datum/looping_sound/weather/rain/indoors
+	sound_active_outside = /datum/looping_sound/weather/rain/no_start
+	sound_weak_inside = /datum/looping_sound/weather/rain/weak/indoors
+	sound_weak_outside = /datum/looping_sound/weather/rain/weak
 
 	thunder_chance = 10
 
@@ -205,7 +212,7 @@
 	weather_duration_upper = 420690
 	fire_suppression = 16
 
-	sound_active_outside = /datum/looping_sound/weather/rain/storm/indoors
-	sound_active_inside = /datum/looping_sound/weather/rain/storm
-	sound_weak_outside = /datum/looping_sound/weather/rain/storm/indoors
-	sound_weak_inside = /datum/looping_sound/weather/rain/storm
+	sound_active_inside = /datum/looping_sound/weather/rain/storm/indoors
+	sound_active_outside = /datum/looping_sound/weather/rain/storm
+	sound_weak_inside = /datum/looping_sound/weather/rain/weak/indoors
+	sound_weak_outside = /datum/looping_sound/weather/rain/weak

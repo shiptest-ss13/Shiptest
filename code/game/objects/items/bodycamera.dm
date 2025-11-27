@@ -1,3 +1,5 @@
+#define BODYCAM_UPDATE_BUFFER 1 SECONDS
+
 /obj/item/bodycamera
 	name = "body camera"
 	desc = "Ruggedized portable camera unit. Warranty void if exposed to space."
@@ -11,10 +13,13 @@
 	var/start_active = FALSE //If it ignores the random chance to start broken on round start
 	var/area/myarea = null
 	w_class = WEIGHT_CLASS_SMALL
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
 	var/view_range = 5
 	var/busy = FALSE
 	var/can_transmit_across_z_levels = FALSE
+	var/updating = FALSE //portable camera camerachunk update
+	var/mob/tracked_mob //last mob that picked up the bodycamera. needed for cameranet updates
+	var/datum/movement_detector/tracker
 
 /obj/item/bodycamera/Initialize()
 	. = ..()
@@ -22,15 +27,18 @@
 		network -= i
 		network += lowertext(i)
 
+	tracker = new /datum/movement_detector(src, CALLBACK(src, PROC_REF(obj_move)))
 	GLOB.cameranet.cameras += src
 	GLOB.cameranet.addCamera(src)
-	c_tag = "Body Camera - " + random_string(4, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
+	c_tag = random_string(4, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
+	name = "body camera - (" + c_tag + ")"
 	update_appearance()
 
 /obj/item/bodycamera/Destroy()
 	if(can_use())
 		toggle_cam(null, 0) //kick anyone viewing out and remove from the camera chunks
 	GLOB.cameranet.cameras -= src
+	qdel(tracker)
 	return ..()
 
 /obj/item/bodycamera/examine(mob/user)
@@ -39,14 +47,14 @@
 	if(in_range(src, user))
 		. += span_notice("The camera is set to a nametag of '<b>[c_tag]</b>'.")
 		. += span_notice("The camera is set to transmit on the '<b>[network[1]]</b>' network.")
-		. += span_notice("It looks like you can modify the camera settings by using a <b>multitool</b> on it.")
+		. += span_notice("It looks like you can modify the camera settings by using it in your hand, or by using a <b>multitool</b> on it.")
 
 /obj/item/bodycamera/AltClick(mob/user)
 	. = ..()
 	if(!user.CanReach(src))
 		return
 	if(do_after(user, 10, src, IGNORE_USER_LOC_CHANGE))
-		status = !status
+		toggle_cam(user)
 		if(status)
 			icon_state = "bodycamera-on"
 			playsound(user, 'sound/items/bodycamera_on.ogg', 23, FALSE)
@@ -63,7 +71,7 @@
 	. = ..()
 	var/obj/item/multitool/M = I
 	var/list/choice_list = list("Modify the camera tag", "Change the camera network", "Save the network to the multitool buffer", "Transfer the buffered network to the camera")
-	var/choice = tgui_input_list(user, "Select an option", "Camera Configuration", choice_list)
+	var/choice = tgui_input_list(user, "Select an option", "Advanced Camera Configuration", choice_list)
 
 	switch(choice)
 		if("Modify the camera tag")
@@ -85,11 +93,46 @@
 
 	return TRUE
 
+/obj/item/bodycamera/attack_self(mob/user)
+	. = ..()
+
+	//skips broadcast cameras in this proc so that the rest of their functions work
+	if(istype(src, /obj/item/bodycamera/broadcast_camera))
+		return
+
+	var/list/choice_list = list("Modify the camera tag", "Change the camera network")
+	var/choice = tgui_input_list(user, "Select an option", "Camera Configuration", choice_list)
+
+	switch(choice)
+		if("Modify the camera tag")
+			c_tag_addition = stripped_input(user, "Set a nametag for this camera. Ensure that it is no bigger than 32 characters long.", "Nametag Setup", max_length = 32)
+			set_name(c_tag_addition)
+			to_chat(user, span_notice("You set [src] nametag to '[c_tag]'."))
+
+		if("Change the camera network")
+			network[1] = stripped_input(user, "Tune [src] to a specific network. Enter the network name and ensure that it is no bigger than 32 characters long. Network names are case sensitive.", "Network Tuning", max_length = 32)
+			to_chat(user, span_notice("You set [src] to transmit across the '[network[1]]' network."))
+
+/obj/item/bodycamera/attackby(obj/item/bodycamera_B, mob/user, params)
+	if(istype(bodycamera_B, /obj/item/bodycamera))
+		var/obj/item/bodycamera/bodycamera2 = bodycamera_B
+		network = bodycamera2.network
+		to_chat(user, "You tap the cameras together, transferring the network of \the [bodycamera2.name] to \the [name]")
+		return TRUE
+	..()
+
 /obj/item/bodycamera/proc/set_name(camera_name)
 	if(camera_name == "")
-		c_tag = "Body Camera - " + random_string(4, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
+		c_tag = random_string(4, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
 	else
 		c_tag = camera_name
+
+	if(istype(src, /obj/item/bodycamera/broadcast_camera))
+		name = camera_name
+	else
+		name = "body camera - (" + c_tag + ")"
+
+	update_appearance()
 	return
 
 
@@ -97,7 +140,7 @@
 	src.view_range = num
 	GLOB.cameranet.updateVisibility(src, 0)
 
-/obj/item/bodycamera/proc/toggle_cam(mob/user, displaymessage = 1)
+/obj/item/bodycamera/proc/toggle_cam(mob/user)
 	status = !status
 	if(can_use())
 		GLOB.cameranet.addCamera(src)
@@ -107,6 +150,7 @@
 		if (isarea(myarea))
 			LAZYREMOVE(myarea.cameras, src)
 	GLOB.cameranet.updateChunk(x, y, z)
+	do_camera_update()
 	update_appearance() //update Initialize() if you remove this.
 
 	// now disconnect anyone using the camera
@@ -137,6 +181,25 @@
 	user.sight = SEE_BLACKNESS
 	user.see_in_dark = 2
 	return 1
+
+/obj/item/bodycamera/proc/obj_move()
+	SIGNAL_HANDLER
+
+	var/cam_location = src.loc
+	if(isturf(cam_location) || isatom(cam_location))
+		update_camera_location(cam_location)
+	return
+
+/obj/item/bodycamera/proc/do_camera_update(oldLoc) //I intend to have cameras have utility in emplacements, so this will need to be modified to only be true when the camera is inside of an AI-connected IPC shell.
+	if(oldLoc != get_turf(src)) //we want to make sure the camera source has actually moved before running expensive camera updates
+		GLOB.cameranet.updatePortableCamera(src)
+	updating = FALSE
+
+/obj/item/bodycamera/proc/update_camera_location(oldLoc)
+	oldLoc = get_turf(oldLoc)
+	if(!updating)
+		updating = TRUE
+		addtimer(CALLBACK(src, PROC_REF(do_camera_update), oldLoc), BODYCAM_UPDATE_BUFFER)
 
 /obj/item/paper/guides/bodycam
 	name = "Portable Camera Unit Users Guide"
@@ -182,7 +245,8 @@
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 	RegisterSignal(radio, COMSIG_RADIO_NEW_FREQUENCY, PROC_REF(adjust_name))
 	c_tag = "Broadcast Camera - Unlabeled"
-
+	name = c_tag
+	update_appearance()
 
 /obj/item/bodycamera/broadcast_camera/Destroy()
 	listeningTo = null
@@ -248,3 +312,5 @@
 		for(var/obj/machinery/computer/security/telescreen/entertainment/TV in GLOB.machines)
 			TV.notify(TRUE, "[c_tag] is now live on [network[1]]!")
 			COOLDOWN_START(src, broadcast_announcement, 20 SECONDS)
+
+#undef BODYCAM_UPDATE_BUFFER

@@ -155,7 +155,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(!language)
 		language = get_selected_language()
 
-	if(!can_speak_vocal(message))
+	if(!(can_speak_vocal(message, language)))
 		to_chat(src, span_warning("You find yourself unable to speak!"))
 		return
 
@@ -176,7 +176,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		else
 			src.log_talk(message, LOG_SAY, forced_by = forced, custom_say_emote = message_mods[MODE_CUSTOM_SAY_EMOTE])
 
-	message = treat_message(message) // unfortunately we still need this
+	message = treat_message(message, language) // unfortunately we still need this
 	var/sigreturn = SEND_SIGNAL(src, COMSIG_MOB_SAY, args)
 	if (sigreturn & COMPONENT_UPPERCASE_SPEECH)
 		message = uppertext(message)
@@ -186,8 +186,19 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	spans |= speech_span
 
 	if(language)
-		var/datum/language/L = GLOB.language_datum_instances[language]
-		spans |= L.spans
+		var/datum/language/lang_used = GLOB.language_datum_instances[language]
+		spans |= lang_used.spans
+		bubble_type ||= lang_used.bubble_override
+		if(lang_used.use_tone_indicators)
+			if(tone_indicator)
+				remove_tone_indicator()
+			if(findtext(message, "?"))
+				tone_indicator = mutable_appearance('icons/mob/talk.dmi', "[bubble_type]1", plane = RUNECHAT_PLANE)
+			else if(findtext(message, "!"))
+				tone_indicator = mutable_appearance('icons/mob/talk.dmi', "[bubble_type]2", plane = RUNECHAT_PLANE)
+			if(!isnull(tone_indicator))
+				add_overlay(tone_indicator)
+				addtimer(CALLBACK(src, PROC_REF(remove_tone_indicator)), 2.5 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
 
 	if(message_mods[MODE_SING])
 		var/randomnote = pick("\u2669", "\u266A", "\u266B")
@@ -212,15 +223,16 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(radio_return & NOPASS)
 		return 1
 
-	//No screams in space, unless you're next to someone.
-	var/turf/T = get_turf(src)
-	var/datum/gas_mixture/environment = T.return_air()
-	var/pressure = (environment)? environment.return_pressure() : 0
-	if(pressure < SOUND_MINIMUM_PRESSURE && !HAS_TRAIT(src, TRAIT_SIGN_LANG))
-		message_range = 1
+	if(!(initial(language?.flags) & SIGNED_LANGUAGE))
+		//No screams in space, unless you're next to someone or signing.
+		var/turf/T = get_turf(src)
+		var/datum/gas_mixture/environment = T.return_air()
+		var/pressure = (environment)? environment.return_pressure() : 0
+		if(pressure < SOUND_MINIMUM_PRESSURE && !(initial(language?.flags) & SIGNED_LANGUAGE))
+			message_range = 1
 
-	if(pressure < ONE_ATMOSPHERE*0.4) //Thin air, let's italicise the message
-		spans |= SPAN_ITALICS
+		if(pressure < ONE_ATMOSPHERE*0.4) //Thin air, let's italicise the message
+			spans |= SPAN_ITALICS
 
 	send_speech(message, message_range, src, bubble_type, spans, language, message_mods)
 
@@ -229,6 +241,12 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		to_chat(src, compose_message(src, language, message, , spans, message_mods))
 
 	return 1
+
+/mob/living/proc/remove_tone_indicator()
+	if(isnull(tone_indicator))
+		return
+	cut_overlay(tone_indicator)
+	tone_indicator = null
 
 /mob/living/Hear(message, atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, list/message_mods = list(), radio_sound)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_HEAR, args)
@@ -240,16 +258,17 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	var/is_custom_emote = message_mods[MODE_CUSTOM_SAY_ERASE_INPUT]
 
-	var/understood = TRUE
+	//var/understood = TRUE
 	if(!is_custom_emote) // we do not translate emotes
-		var/untranslated_raw_message = raw_message
+		//var/untranslated_raw_message = raw_message //???? what does this code do????
 		raw_message = lang_treat(speaker, message_language, raw_message, spans, message_mods) // translate
-		if(raw_message != untranslated_raw_message)
-			understood = FALSE
+		//if(raw_message != untranslated_raw_message)
+			//understood = FALSE
 
-	if(HAS_TRAIT(speaker, TRAIT_SIGN_LANG)) //Checks if speaker is using sign language
+	if(initial(message_language.flags) & SIGNED_LANGUAGE) //Checks if speaker is using sign language
 		if(is_blind(src))
 			return FALSE
+
 		deaf_message = compose_message(speaker, message_language, raw_message, radio_freq, spans, message_mods)
 		if(speaker != src)
 			if(!radio_freq) //I'm about 90% sure there's a way to make this less cluttered
@@ -262,9 +281,6 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			create_chat_message(speaker, null, message_mods[MODE_CUSTOM_SAY_EMOTE], spans, EMOTE_MESSAGE)
 		else
 			create_chat_message(speaker, message_language, raw_message, spans)
-
-
-
 
 		message = deaf_message
 
@@ -335,9 +351,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	var/rendered = compose_message(src, message_language, message, , spans, message_mods)
 	for(var/atom/movable/listening_movable as anything in listening)
 		if(eavesdrop_range && get_dist(source, listening_movable) > message_range && !(the_dead[listening_movable]))
-			listening_movable.Hear(eavesrendered, src, message_language, eavesdropping, , spans, message_mods)
+			listening_movable.Hear(eavesrendered, src, message_language, eavesdropping, , spans, message_mods.Copy())
 		else
-			listening_movable.Hear(rendered, src, message_language, message, , spans, message_mods)
+			listening_movable.Hear(rendered, src, message_language, message, , spans, message_mods.Copy())
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_LIVING_SAY_SPECIAL, src, message)
 
 	//speech bubble
@@ -366,10 +382,17 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	return TRUE
 
-/mob/living/proc/can_speak_vocal(message) //Check AFTER handling of xeno and ling channels
-	var/sigreturn = SEND_SIGNAL(src, COMSIG_LIVING_TRY_SPEECH, message)
+/mob/living/proc/can_speak_vocal(message, datum/language/language) //Check AFTER handling of xeno and ling channels
+	if(!language)
+		language = get_selected_language()
+
+	var/sigreturn = SEND_SIGNAL(src, COMSIG_LIVING_TRY_SPEECH, message, language)
 	if(sigreturn & COMPONENT_CAN_ALWAYS_SPEAK)
 		return TRUE
+
+	if(initial(language?.flags) & SIGNED_LANGUAGE)
+		return can_sign(message)
+
 	if(HAS_TRAIT(src, TRAIT_MUTE))
 		return FALSE
 
@@ -381,9 +404,22 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	return TRUE
 
+/mob/living/proc/can_sign(message)
+	if(HAS_TRAIT(src, TRAIT_RESTRAINED))
+		visible_message("tries to sign, but can't with [p_their()] hands bound!", visible_message_flags = EMOTE_MESSAGE)
+		return FALSE
 
+	if(HAS_TRAIT(src, TRAIT_HANDS_BLOCKED))
+		to_chat(src, span_warning("Your hands are too busy to sign!"))
+		return FALSE
 
-/mob/living/proc/treat_message(message)
+	if(HAS_TRAIT(src, TRAIT_EMOTEMUTE))
+		to_chat(src, span_warning("You are unable to sign!"))
+		return TRUE
+
+	return TRUE
+
+/mob/living/proc/treat_message(message, datum/language/language)
 
 	if(HAS_TRAIT(src, TRAIT_UNINTELLIGIBLE_SPEECH))
 		message = unintelligize(message)
@@ -405,6 +441,17 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(clockcultslurring) //Shiptest edit
 		message = CLOCK_CULT_SLUR(message)
 
+	if(!language)
+		language = get_selected_language()
+
+	if(initial(language?.flags) & SIGNED_LANGUAGE)
+		var/busy_hands = 0
+		for(var/obj/item/held_item in held_items)
+			if(isnull(held_item))
+				continue
+			busy_hands++
+		if(usable_hands - busy_hands < 2)
+			message = stars(message)
 
 	// check for and apply punctuation. thanks, bee
 	var/end = copytext(message, length(message))
@@ -452,20 +499,20 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	return 0
 
-/mob/living/say_mod(input, list/message_mods = list())
+/mob/living/say_mod(input, datum/language/message_language, list/message_mods = list())
 	if(message_mods[WHISPER_MODE] == MODE_WHISPER)
-		. = verb_whisper
+		. = initial(message_language?.whisper_verb) || verb_whisper
 	else if(message_mods[WHISPER_MODE] == MODE_WHISPER_CRIT)
-		. = "[verb_whisper] in [p_their()] last breath"
+		. = "[initial(message_language?.whisper_verb) || verb_whisper] in [p_their()] last breath"
 	else if(message_mods[MODE_SING])
 		. = verb_sing
 	else if(stuttering)
-		if(HAS_TRAIT(src, TRAIT_SIGN_LANG))
+		if(initial(message_language?.flags) & SIGNED_LANGUAGE)
 			. = "shakily signs"
 		else
 			. = "stammers"
 	else if(derpspeech)
-		if(HAS_TRAIT(src, TRAIT_SIGN_LANG))
+		if(initial(message_language?.flags) & SIGNED_LANGUAGE)
 			. = "incoherently signs"
 		else
 			. = "gibbers"

@@ -17,7 +17,12 @@
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
+	AddElement(/datum/element/directional_attack)
 	update_fov()
+
+/mob/living/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/movetype_handler)
 
 /mob/living/prepare_huds()
 	..()
@@ -447,6 +452,12 @@
 /mob/living/proc/setMaxHealth(newMaxHealth)
 	maxHealth = newMaxHealth
 
+/// Returns the health of the mob while ignoring damage of non-organic (prosthetic) limbs
+/// Used by cryo cells to not permanently imprison those with damage from prosthetics,
+/// as they cannot be healed through chemicals.
+/mob/living/proc/get_organic_health()
+	return health
+
 // MOB PROCS //END
 
 /mob/living/proc/mob_sleep()
@@ -570,9 +581,29 @@
 			return TRUE
 	return FALSE
 
-// Living mobs use can_inject() to make sure that the mob is not syringe-proof in general.
-/mob/living/proc/can_inject()
+/**
+ * Returns whether or not the mob can be injected. Should not perform any side effects.
+ *
+ * Arguments:
+ * * user - The user trying to inject the mob.
+ * * target_zone - The zone being targeted.
+ * * injection_flags - A bitflag for extra properties to check.
+ *   Check __DEFINES/injection.dm for more details, specifically the ones prefixed INJECT_CHECK_*.
+ */
+/mob/living/proc/can_inject(mob/user, target_zone, injection_flags)
 	return TRUE
+
+/**
+ * Like can_inject, but it can perform side effects.
+ *
+ * Arguments:
+ * * user - The user trying to inject the mob.
+ * * target_zone - The zone being targeted.
+ * * injection_flags - A bitflag for extra properties to check. Check __DEFINES/injection.dm for more details.
+ *   Check __DEFINES/injection.dm for more details. Unlike can_inject, the INJECT_TRY_* defines will behave differently.
+ */
+/mob/living/proc/try_inject(mob/user, target_zone, injection_flags)
+	return can_inject(user, target_zone, injection_flags)
 
 /mob/living/is_injectable(mob/user, allowmobs = TRUE)
 	return (allowmobs && reagents && can_inject(user))
@@ -580,6 +611,8 @@
 /mob/living/is_drawable(mob/user, allowmobs = TRUE)
 	return (allowmobs && reagents && can_inject(user))
 
+/mob/living/is_injectable(mob/user, allowmobs = TRUE)
+	return (allowmobs && reagents && can_inject(user))
 
 ///Sets the current mob's health value. Do not call directly if you don't know what you are doing, use the damage procs, instead.
 /mob/living/proc/set_health(new_value)
@@ -657,7 +690,7 @@
 		set_stat(UNCONSCIOUS) //the mob starts unconscious,
 		updatehealth() //then we check if the mob should wake up.
 		update_sight()
-		clear_alert("not_enough_oxy")
+		clear_alert(ALERT_NOT_ENOUGH_OXYGEN)
 		reload_fullscreen()
 		. = TRUE
 		if(mind)
@@ -703,22 +736,18 @@
 	bodytemperature = get_body_temp_normal(apply_change=FALSE)
 	set_blindness(0)
 	set_blurriness(0)
-	set_dizziness(0)
 	cure_nearsighted()
 	cure_blind()
 	cure_husk()
 	hallucination = 0
-	heal_overall_integrity(INFINITY, null, TRUE) //heal all limb integrity, so that you can...
 	heal_overall_damage(INFINITY, INFINITY, INFINITY, null, TRUE) //heal brute and burn dmg on both organic and robotic limbs, and update health right away.
-	ExtinguishMob()
-	fire_stacks = 0
+	extinguish_mob()
 	confused = 0
-	dizziness = 0
 	drowsyness = 0
 	stuttering = 0
 	slurring = 0
-	jitteriness = 0
 	stop_sound_channel(CHANNEL_HEARTBEAT)
+	SEND_SIGNAL(src, COMSIG_LIVING_POST_FULLY_HEAL, admin_revive)
 
 //proc used to heal a mob, but only damage types specified.
 /mob/living/proc/specific_heal(blood_amt = 0, brute_amt = 0, fire_amt = 0, tox_amt = 0, oxy_amt = 0, clone_amt = 0, organ_amt = 0, stam_amt = 0, specific_revive = FALSE, specific_bones = FALSE)
@@ -734,8 +763,8 @@
 			O.applyOrganDamage(organ_amt*-1)//1 = 5 organ damage healed
 
 		if(specific_bones)
-			for(var/obj/item/bodypart/B in C.bodyparts)
-				B.fix_bone()
+			for(var/datum/wound/current_wound in C.all_wounds)
+				current_wound.remove_wound()
 
 	if(specific_revive)
 		revive()
@@ -754,6 +783,10 @@
 		return FALSE
 
 /mob/living/proc/update_damage_overlays()
+	return
+
+/// Proc that only really gets called for humans, to handle bleeding overlays.
+/mob/living/proc/update_wound_overlays()
 	return
 
 /mob/living/Move(atom/newloc, direct, glide_size_override)
@@ -798,38 +831,54 @@
 	return
 
 /mob/living/proc/makeTrail(turf/target_turf, turf/start, direction)
-	if(!has_gravity())
+	if(!has_gravity() || !isturf(start) || !blood_volume)
 		return
+
 	var/blood_exists = locate(/obj/effect/decal/cleanable/blood/trail_holder) in start
 
-	if(isturf(start))
-		var/trail_type = getTrail()
-		if(trail_type)
-			var/brute_ratio = round(getBruteLoss() / maxHealth, 0.1)
-			if(blood_volume && blood_volume > max(BLOOD_VOLUME_NORMAL*(1 - brute_ratio * 0.25), 0))//don't leave trail if blood volume below a threshold
-				blood_volume = max(blood_volume - max(1, brute_ratio * 2), 0) 					//that depends on our brute damage.
-				var/newdir = get_dir(target_turf, start)
-				if(newdir != direction)
-					newdir = newdir | direction
-					if(newdir == 3) //N + S
-						newdir = NORTH
-					else if(newdir == 12) //E + W
-						newdir = EAST
-				if((newdir in GLOB.cardinals) && (prob(50)))
-					newdir = turn(get_dir(target_turf, start), 180)
-				if(!blood_exists)
-					new /obj/effect/decal/cleanable/blood/trail_holder(start, get_static_viruses())
+	var/trail_type = getTrail()
+	if(!trail_type)
+		return
 
-				for(var/obj/effect/decal/cleanable/blood/trail_holder/TH in start)
-					if((!(newdir in TH.existing_dirs) || trail_type == "trails_1" || trail_type == "trails_2") && TH.existing_dirs.len <= 16) //maximum amount of overlays is 16 (all light & heavy directions filled)
-						TH.existing_dirs += newdir
-						TH.add_overlay(image('icons/effects/blood.dmi', trail_type, dir = newdir))
-						TH.transfer_mob_blood_dna(src)
+	var/bleed_amount = bleedDragAmount()
+	blood_volume = max(blood_volume - bleed_amount, 0)
+
+	var/newdir = get_dir(target_turf, start)
+	if(newdir != direction)
+		newdir = newdir | direction
+		if(newdir == (NORTH|SOUTH))
+			newdir = NORTH
+		else if(newdir == (EAST|WEST))
+			newdir = EAST
+
+	if((newdir in GLOB.cardinals) && (prob(50)))
+		newdir = turn(get_dir(target_turf, start), 180)
+
+	if(!blood_exists)
+		new /obj/effect/decal/cleanable/blood/trail_holder(start, get_static_viruses())
+
+	for(var/obj/effect/decal/cleanable/blood/trail_holder/TH in start)
+		if((!(newdir in TH.existing_dirs) || trail_type == "trails_1" || trail_type == "trails_2") && TH.existing_dirs.len <= 16) //maximum amount of overlays is 16 (all light & heavy directions filled)
+			TH.existing_dirs += newdir
+			TH.add_overlay(image('icons/effects/blood.dmi', trail_type, dir = newdir))
+			TH.transfer_mob_blood_dna(src)
 
 /mob/living/carbon/human/makeTrail(turf/T)
-	if((NOBLOOD in dna.species.species_traits) || bleedsuppress || !LAZYLEN(get_bleeding_parts(TRUE)))
+	if((NOBLOOD in dna.species.species_traits) || !is_bleeding() || bleedsuppress)
 		return
 	..()
+
+///Returns how much blood we're losing from being dragged a tile, from [mob/living/proc/makeTrail]
+/mob/living/proc/bleedDragAmount()
+	var/brute_ratio = round(getBruteLoss() / maxHealth, 0.1)
+	return max(1, brute_ratio * 2)
+
+/mob/living/carbon/bleedDragAmount()
+	var/bleed_amount = 0
+	for(var/i in all_wounds)
+		var/datum/wound/iter_wound = i
+		bleed_amount += iter_wound.drag_bleed_amount()
+	return bleed_amount
 
 /mob/living/proc/getTrail()
 	if(getBruteLoss() < 300)
@@ -935,7 +984,7 @@
 	buckled.user_unbuckle_mob(src,src)
 
 /mob/living/proc/resist_fire()
-	return
+	return FALSE
 
 /mob/living/proc/resist_restraints()
 	return
@@ -943,10 +992,11 @@
 /mob/living/proc/get_visible_name()
 	return name
 
-/mob/living/update_gravity(has_gravity, override)
+/mob/living/update_gravity(has_gravity)
 	. = ..()
 	if(!SSticker.HasRoundStarted())
 		return
+	var/was_weightless = alerts["gravity"] && istype(alerts["gravity"], /atom/movable/screen/alert/weightless)
 	if(has_gravity)
 		if(has_gravity == 1)
 			clear_alert("gravity")
@@ -955,24 +1005,12 @@
 				throw_alert("gravity", /atom/movable/screen/alert/veryhighgravity)
 			else
 				throw_alert("gravity", /atom/movable/screen/alert/highgravity)
+		if(was_weightless)
+			REMOVE_TRAIT(src, TRAIT_MOVE_FLOATING, NO_GRAVITY_TRAIT)
 	else
 		throw_alert("gravity", /atom/movable/screen/alert/weightless)
-	if(!override && !is_flying())
-		float(!has_gravity)
-
-/mob/living/float(on)
-	if(throwing)
-		return
-	var/fixed = 0
-	if(anchored || (buckled && buckled.anchored))
-		fixed = 1
-	if(on && !(movement_type & FLOATING) && !fixed)
-		animate(src, pixel_y = base_pixel_y + 2, time = 10, loop = -1, flags = ANIMATION_RELATIVE)
-		animate(pixel_y = base_pixel_y - 2, time = 10, loop = -1, flags = ANIMATION_RELATIVE)
-		setMovetype(movement_type | FLOATING)
-	else if(((!on || fixed) && (movement_type & FLOATING)))
-		animate(src, pixel_y = base_pixel_y + get_standard_pixel_y_offset(lying_angle), time = 1 SECONDS)
-		setMovetype(movement_type & ~FLOATING)
+		if(!was_weightless)
+			ADD_TRAIT(src, TRAIT_MOVE_FLOATING, NO_GRAVITY_TRAIT)
 
 // The src mob is trying to strip an item from someone
 // Override if a certain type of mob should be behave differently when stripping items (can't, for example)
@@ -1052,16 +1090,6 @@
 	else if(!src.mob_negates_gravity())
 		step_towards(src,S)
 
-/mob/living/proc/do_jitter_animation(jitteriness)
-	var/amplitude = min(4, (jitteriness/100) + 1)
-	var/pixel_x_diff = rand(-amplitude, amplitude)
-	var/pixel_y_diff = rand(-amplitude/3, amplitude/3)
-	var/final_pixel_x = base_pixel_y + get_standard_pixel_x_offset(body_position == LYING_DOWN)
-	var/final_pixel_y = base_pixel_y + get_standard_pixel_y_offset(body_position == LYING_DOWN)
-	animate(src, pixel_x = pixel_x + pixel_x_diff, pixel_y = pixel_y + pixel_y_diff , time = 2, loop = 6)
-	animate(pixel_x = final_pixel_x , pixel_y = final_pixel_y , time = 2)
-	setMovetype(movement_type & ~FLOATING) // If we were without gravity, the bouncing animation got stopped, so we make sure to restart it in next life().
-
 /mob/living/proc/get_temperature(datum/gas_mixture/environment)
 	var/loc_temp = environment ? environment.return_temperature() : T0C
 	if(isobj(loc))
@@ -1107,6 +1135,11 @@
 //used in datum/reagents/reaction() proc
 /mob/living/proc/get_permeability_protection(list/target_zones)
 	return 0
+
+/mob/living/proc/has_smoke_protection()
+	if(HAS_TRAIT(src, TRAIT_NOBREATH))
+		return TRUE
+	return FALSE
 
 /mob/living/proc/harvest(mob/living/user) //used for extra objects etc. in butchering
 	return
@@ -1183,56 +1216,148 @@
 /mob/living/proc/unfry_mob() //Callback proc to tone down spam from multiple sizzling frying oil dipping.
 	REMOVE_TRAIT(src, TRAIT_OIL_FRIED, "cooking_oil_react")
 
-//Mobs on Fire
-/mob/living/proc/IgniteMob()
-	if(fire_stacks > 0 && !on_fire)
-		on_fire = 1
-		src.visible_message(span_warning("[src] catches fire!"), \
-						span_userdanger("You're set on fire!"))
-		new/obj/effect/dummy/lighting_obj/moblight/fire(src)
-		throw_alert("fire", /atom/movable/screen/alert/fire)
-		update_fire()
-		SEND_SIGNAL(src, COMSIG_LIVING_IGNITED,src)
-		return TRUE
-	return FALSE
 
-/mob/living/proc/ExtinguishMob()
-	if(on_fire)
-		on_fire = 0
-		fire_stacks = 0
-		for(var/obj/effect/dummy/lighting_obj/moblight/fire/F in src)
-			qdel(F)
-		clear_alert("fire")
-		SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "on_fire")
-		SEND_SIGNAL(src, COMSIG_LIVING_EXTINGUISHED, src)
-		update_fire()
+/// Global list that containes cached fire overlays for mobs
+GLOBAL_LIST_EMPTY(fire_appearances)
 
-/mob/living/proc/adjust_fire_stacks(add_fire_stacks) //Adjusting the amount of fire_stacks we have on person
-	fire_stacks = clamp(fire_stacks + add_fire_stacks, -20, 20)
-	if(on_fire && fire_stacks <= 0)
-		ExtinguishMob()
+/mob/living/proc/ignite_mob()
+	if(fire_stacks <= 0)
+		return FALSE
+
+	var/datum/status_effect/fire_handler/fire_stacks/fire_status = has_status_effect(/datum/status_effect/fire_handler/fire_stacks)
+	if(!fire_status || fire_status.on_fire)
+		return FALSE
+
+	return fire_status.ignite()
+
+/**
+ * Extinguish all fire on the mob
+ *
+ * This removes all fire stacks, fire effects, alerts, and moods
+ * Signals the extinguishing.
+ */
+/mob/living/proc/extinguish_mob()
+	var/datum/status_effect/fire_handler/fire_stacks/fire_status = has_status_effect(/datum/status_effect/fire_handler/fire_stacks)
+	if(!fire_status || !fire_status.on_fire)
+		return
+	remove_status_effect(/datum/status_effect/fire_handler/fire_stacks)
+
+/**
+ * Adjust the amount of fire stacks on a mob
+ *
+ * This modifies the fire stacks on a mob.
+ *
+ * Vars:
+ * * stacks: int The amount to modify the fire stacks
+ * * fire_type: type Type of fire status effect that we apply, should be subtype of /datum/status_effect/fire_handler/fire_stacks
+ */
+
+/mob/living/proc/adjust_fire_stacks(stacks, fire_type = /datum/status_effect/fire_handler/fire_stacks)
+	if(stacks < 0)
+		stacks = max(-fire_stacks, stacks)
+	apply_status_effect(fire_type, stacks)
+
+/mob/living/proc/adjust_wet_stacks(stacks, wet_type = /datum/status_effect/fire_handler/wet_stacks)
+	if(stacks < 0)
+		stacks = max(fire_stacks, stacks)
+	apply_status_effect(wet_type, stacks)
+
+/**
+* Set the fire stacks on a mob
+*
+* This sets the fire stacks on a mob, stacks are clamped between -20 and 20.
+* If the fire stacks are reduced to 0 then we will extinguish the mob.
+*
+* Vars:
+* * stacks: int The amount to set fire_stacks to
+* * fire_type: type Type of fire status effect that we apply, should be subtype of /datum/status_effect/fire_handler/fire_stacks
+* * remove_wet_stacks: bool If we remove all wet stacks upon doing this
+*/
+
+/mob/living/proc/set_fire_stacks(stacks, fire_type = /datum/status_effect/fire_handler/fire_stacks, remove_wet_stacks = TRUE)
+	if(stacks < 0) //Shouldn't happen, ever
+		CRASH("set_fire_stacks recieved negative [stacks] fire stacks")
+
+	if(remove_wet_stacks)
+		remove_status_effect(/datum/status_effect/fire_handler/wet_stacks)
+
+	if(stacks == 0)
+		remove_status_effect(fire_type)
+		return
+
+	apply_status_effect(fire_type, stacks, TRUE)
+
+/mob/living/proc/set_wet_stacks(stacks, wet_type = /datum/status_effect/fire_handler/wet_stacks, remove_fire_stacks = TRUE)
+	if(stacks < 0)
+		CRASH("set_wet_stacks recieved negative [stacks] wet stacks")
+
+	if(remove_fire_stacks)
+		remove_status_effect(/datum/status_effect/fire_handler/fire_stacks)
+
+	if(stacks == 0)
+		remove_status_effect(wet_type)
+		return
+
+	apply_status_effect(wet_type, stacks, TRUE)
 
 //Share fire evenly between the two mobs
 //Called in MobBump() and Crossed()
-/mob/living/proc/spreadFire(mob/living/L)
-	if(!istype(L))
+/mob/living/proc/spreadFire(mob/living/spread_to)
+	if(!istype(spread_to))
 		return
 
-	if(on_fire)
-		if(L.on_fire) // If they were also on fire
-			var/firesplit = (fire_stacks + L.fire_stacks)/2
-			fire_stacks = firesplit
-			L.fire_stacks = firesplit
-		else // If they were not
-			fire_stacks /= 2
-			L.fire_stacks += fire_stacks
-			if(L.IgniteMob()) // Ignite them
-				log_game("[key_name(src)] bumped into [key_name(L)] and set them on fire")
+	// can't spread fire to mobs that don't catch on fire
+	if(HAS_TRAIT(spread_to, TRAIT_NOFIRE_SPREAD) || HAS_TRAIT(src, TRAIT_NOFIRE_SPREAD))
+		return
 
-	else if(L.on_fire) // If they were on fire and we were not
-		L.fire_stacks /= 2
-		fire_stacks += L.fire_stacks
-		IgniteMob() // Ignite us
+	var/datum/status_effect/fire_handler/fire_stacks/fire_status = has_status_effect(/datum/status_effect/fire_handler/fire_stacks)
+	var/datum/status_effect/fire_handler/fire_stacks/their_fire_status = spread_to.has_status_effect(/datum/status_effect/fire_handler/fire_stacks)
+	if(fire_status && fire_status.on_fire)
+		if(their_fire_status && their_fire_status.on_fire)
+			var/firesplit = (fire_stacks + spread_to.fire_stacks) / 2
+			var/fire_type = (spread_to.fire_stacks > fire_stacks) ? their_fire_status.type : fire_status.type
+			set_fire_stacks(firesplit, fire_type)
+			spread_to.set_fire_stacks(firesplit, fire_type)
+			return
+
+		adjust_fire_stacks(-fire_stacks / 2, fire_status.type)
+		spread_to.adjust_fire_stacks(fire_stacks, fire_status.type)
+		if(spread_to.ignite_mob())
+			log_game("[key_name(src)] bumped into [key_name(spread_to)] and set them on fire")
+		return
+
+	if(!their_fire_status || !their_fire_status.on_fire)
+		return
+
+	spread_to.adjust_fire_stacks(-spread_to.fire_stacks / 2, their_fire_status.type)
+	adjust_fire_stacks(spread_to.fire_stacks, their_fire_status.type)
+	ignite_mob()
+
+/**
+ * Gets the fire overlay to use for this mob
+ *
+ * Args:
+ * * stacks: Current amount of fire_stacks
+ * * on_fire: If we're lit on fire
+ *
+ * Return a mutable appearance, the overlay that will be applied.
+ */
+
+/mob/living/proc/get_fire_overlay(stacks, on_fire)
+	RETURN_TYPE(/mutable_appearance)
+	return null
+
+/**
+* Handles effects happening when mob is on normal fire
+*
+* Vars:
+* * delta_time
+* * times_fired
+* * fire_handler: Current fire status effect that called the proc
+*/
+
+/mob/living/proc/on_fire_stack(delta_time, times_fired, datum/status_effect/fire_handler/fire_stacks/fire_handler)
+	return
 
 //Mobs on Fire end
 
@@ -1398,6 +1523,7 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 
 /mob/living
 	var/ssd_indicator = FALSE
+	var/ignore_SSD = FALSE
 	var/lastclienttime = 0
 
 /mob/living/proc/set_ssd_indicator(state)
@@ -1416,7 +1542,8 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 /mob/living/Logout()
 	. = ..()
 	lastclienttime = world.time
-	set_ssd_indicator(TRUE)
+	if(!ignore_SSD)
+		set_ssd_indicator(TRUE)
 
 /mob/living/vv_get_header()
 	. = ..()
@@ -1801,6 +1928,7 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 		return
 	. = body_position
 	body_position = new_value
+	SEND_SIGNAL(src, COMSIG_LIVING_SET_BODY_POSITION, new_value, .)
 	if(new_value == LYING_DOWN) // From standing to lying down.
 		if(has_gravity() && m_intent != MOVE_INTENT_WALK)
 			playsound(src, "bodyfall", 50, TRUE) // Will play the falling sound if not walking
@@ -1852,7 +1980,8 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 /// Used for setting typing indicator on/off. Checking the state should be done not on the proc to avoid overhead.
 /mob/living/set_typing_indicator(state)
 	typing_indicator = state
-	var/state_of_bubble = bubble_icon? "[bubble_icon]0" : "default0"
+	var/datum/language/used_language = get_selected_language()
+	var/state_of_bubble = "[initial(used_language?.bubble_override) || bubble_icon || "default"]0"
 	var/mutable_appearance/bubble_overlay = mutable_appearance('icons/mob/talk.dmi', state_of_bubble, plane = RUNECHAT_PLANE)
 	bubble_overlay.appearance_flags = RESET_COLOR | RESET_TRANSFORM | TILE_BOUND | PIXEL_SCALE
 	if(typing_indicator)
@@ -1874,7 +2003,7 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 		var/howfuck = rand(8,16)
 		AdjustParalyzed(howfuck)
 		AdjustKnockdown(howfuck)
-		set_jitter(rand(150,200))
+		set_timed_status_effect(300 SECONDS, /datum/status_effect/jitter)
 
 /**
  * Sets the mob's speed variable and then calls update_living_varspeed().
@@ -1899,6 +2028,31 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 		return
 	add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/living_varspeed, multiplicative_slowdown = speed)
 
+/// Proc for giving a mob a new 'friend', generally used for AI control and targeting. Returns false if already friends or null if qdeleted.
+/mob/living/proc/befriend(mob/living/new_friend)
+	SHOULD_CALL_PARENT(TRUE)
+	if(QDELETED(new_friend))
+		return
+	var/friend_ref = REF(new_friend)
+	if (faction.Find(friend_ref))
+		return FALSE
+	faction |= friend_ref
+	ai_controller?.insert_blackboard_key_lazylist(BB_FRIENDS_LIST, new_friend)
+
+	SEND_SIGNAL(src, COMSIG_LIVING_BEFRIENDED, new_friend)
+	return TRUE
+
+/// Proc for removing a friend you added with the proc 'befriend'. Returns true if you removed a friend.
+/mob/living/proc/unfriend(mob/living/old_friend)
+	SHOULD_CALL_PARENT(TRUE)
+	var/friend_ref = REF(old_friend)
+	if (!faction.Find(friend_ref))
+		return FALSE
+	faction -= friend_ref
+	ai_controller?.remove_thing_from_blackboard_key(BB_FRIENDS_LIST, old_friend)
+
+	SEND_SIGNAL(src, COMSIG_LIVING_UNFRIENDED, old_friend)
+	return TRUE
 
 /**
  * Applies the mob's speed variable to a movespeed modifier.
@@ -1914,3 +2068,57 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 		REMOVE_TRAIT(src, TRAIT_EYESCLOSED, "[type]")
 	else
 		ADD_TRAIT(src, TRAIT_EYESCLOSED, "[type]")
+
+/**
+ * Get the fullness of the mob
+ *
+ * This returns a value form 0 upwards to represent how full the mob is.
+ * The value is a total amount of consumable reagents in the body combined
+ * with the total amount of nutrition they have.
+ * This does not have an upper limit.
+ */
+
+/mob/living/proc/get_fullness()
+	var/fullness = nutrition
+	// we add the nutrition value of what we're currently digesting
+	for(var/bile in reagents.reagent_list)
+		var/datum/reagent/consumable/bits = bile
+		if(bits)
+			fullness += bits.nutriment_factor * bits.volume / bits.metabolization_rate
+	return fullness
+
+/**
+ * Check if the mob contains this reagent.
+ *
+ * This will validate the the reagent holder for the mob and any sub holders contain the requested reagent.
+ * Vars:
+ * * reagent (typepath) takes a PATH to a reagent.
+ * * amount (int) checks for having a specific amount of that chemical.
+ * * needs_metabolizing (bool) takes into consideration if the chemical is matabolizing when it's checked.
+ */
+/mob/living/proc/has_reagent(reagent, amount = -1, needs_metabolizing = FALSE)
+	return reagents.has_reagent(reagent, amount, needs_metabolizing)
+
+/**
+ * Removes reagents from the mob
+ *
+ * This will locate the reagent in the mob and remove it from reagent holders
+ * Vars:
+ * * reagent (typepath) takes a PATH to a reagent.
+ * * custom_amount (int)(optional) checks for having a specific amount of that chemical.
+ * * safety (bool) check for the trans_id_to
+ */
+/mob/living/proc/remove_reagent(reagent, custom_amount, safety)
+	if(!custom_amount)
+		custom_amount = get_reagent_amount(reagent)
+	return reagents.remove_reagent(reagent, custom_amount, safety)
+
+/**
+ * Returns the amount of a reagent from the mob
+ *
+ * This will locate the reagent in the mob and return the total amount from all reagent holders
+ * Vars:
+ * * reagent (typepath) takes a PATH to a reagent.
+ */
+/mob/living/proc/get_reagent_amount(reagent)
+	return reagents.get_reagent_amount(reagent)

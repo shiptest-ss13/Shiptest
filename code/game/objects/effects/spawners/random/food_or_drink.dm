@@ -37,7 +37,10 @@
 		/obj/item/storage/ration/blackened_calamari = 5,
 		/obj/item/storage/ration/elbow_macaroni = 5,
 		/obj/item/storage/ration/cheese_pizza_slice = 5,
-		/obj/item/storage/ration/crayons = 1,
+		/obj/item/storage/ration/sososi = 5,
+		/obj/item/storage/ration/dofidote = 5,
+		/obj/item/storage/ration/miras = 5,
+		/obj/item/storage/ration/crayons = 1 // :)
 		)
 
 /obj/effect/spawner/random/food_or_drink/donut
@@ -90,19 +93,19 @@
 	spawn_loot_count = 3
 	spawn_loot_double = FALSE
 	var/soups = list(
-			/obj/item/reagent_containers/food/snacks/soup/beet,
-			/obj/item/reagent_containers/food/snacks/soup/sweet_potato,
-			/obj/item/reagent_containers/food/snacks/soup/stew,
-			/obj/item/reagent_containers/food/snacks/soup/hotchili,
-			/obj/item/reagent_containers/food/snacks/soup/nettle,
-			/obj/item/reagent_containers/food/snacks/soup/meatball,
+			/obj/item/food/soup/beet,
+			/obj/item/food/soup/sweetpotato,
+			/obj/item/food/soup/stew,
+			/obj/item/food/soup/hotchili,
+			/obj/item/food/soup/nettle,
+			/obj/item/food/soup/meatball,
 			)
 	var/salads = list(
-			/obj/item/reagent_containers/food/snacks/salad/herbsalad,
-			/obj/item/reagent_containers/food/snacks/salad/validsalad,
-			/obj/item/reagent_containers/food/snacks/salad/fruit,
-			/obj/item/reagent_containers/food/snacks/salad/jungle,
-			/obj/item/reagent_containers/food/snacks/salad/aesirsalad,
+			/obj/item/food/salad/herbsalad,
+			/obj/item/food/salad/validsalad,
+			/obj/item/food/salad/fruit,
+			/obj/item/food/salad/jungle,
+			/obj/item/food/salad/aesirsalad,
 			)
 	var/mains = list(
 			/obj/item/food/bearsteak,
@@ -162,6 +165,9 @@
 			/obj/item/food/grown/cabbage = 4,
 			/obj/item/food/grown/onion = 4,
 			/obj/item/food/grown/carrot = 4,
+			/obj/item/food/grown/dotu_fime = 4,
+			/obj/item/food/grown/siti = 4,
+			/obj/item/food/grown/sososi = 4,
 			)
 
 /obj/effect/spawner/random/food_or_drink/garden/arid
@@ -177,6 +183,12 @@
 		/obj/item/food/grown/mushroom/angel = 2,
 		/obj/item/food/grown/chili = 2,
 		/obj/item/food/grown/whitebeet = 5,
+		/obj/item/food/grown/dotu_fime = 4,
+		/obj/item/food/grown/siti = 4,
+		/obj/item/food/grown/refa_li = 2,
+		/obj/item/food/grown/dote_berries = 8,
+		/obj/item/food/grown/sososi = 4,
+		/obj/item/food/grown/fara_li = 3,
 		/obj/item/food/grown/potato = 4,
 		/obj/item/food/grown/sweet_potato = 4,
 		/obj/item/food/grown/mushroom/chanterelle = 4,

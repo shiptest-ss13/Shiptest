@@ -9,8 +9,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		DYE_PURPLE = /obj/item/clothing/under/color/lightpurple,
 		DYE_BLACK = /obj/item/clothing/under/color/black,
 		DYE_WHITE = /obj/item/clothing/under/color/white,
-		DYE_MIME = /obj/item/clothing/under/rank/civilian/mime,
-		DYE_CLOWN = /obj/item/clothing/under/rank/civilian/clown,
 		DYE_CHAP = /obj/item/clothing/under/rank/civilian/chaplain,
 		DYE_QM = /obj/item/clothing/under/rank/cargo/qm,
 		DYE_LAW = /obj/item/clothing/under/suit/black,
@@ -32,7 +30,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		DYE_PURPLE = /obj/item/clothing/under/color/jumpskirt/lightpurple,
 		DYE_BLACK = /obj/item/clothing/under/color/jumpskirt/black,
 		DYE_WHITE = /obj/item/clothing/under/color/jumpskirt/white,
-		DYE_MIME = /obj/item/clothing/under/rank/civilian/mime/skirt,
 		DYE_CHAP = /obj/item/clothing/under/rank/civilian/chaplain/skirt,
 		DYE_QM = /obj/item/clothing/under/rank/cargo/qm/skirt,
 		DYE_CAPTAIN = /obj/item/clothing/under/rank/command/captain/skirt,
@@ -52,8 +49,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		DYE_BLACK = /obj/item/clothing/gloves/color/black,
 		DYE_WHITE = /obj/item/clothing/gloves/color/white,
 		DYE_RAINBOW = /obj/item/clothing/gloves/color/rainbow,
-		DYE_MIME = /obj/item/clothing/gloves/color/white,
-		DYE_CLOWN = /obj/item/clothing/gloves/color/rainbow,
 		DYE_QM = /obj/item/clothing/gloves/color/brown,
 		DYE_CAPTAIN = /obj/item/clothing/gloves/color/captain,
 		DYE_FO = /obj/item/clothing/gloves/color/grey,
@@ -74,7 +69,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		DYE_PURPLE = /obj/item/clothing/shoes/sneakers/purple,
 		DYE_BLACK = /obj/item/clothing/shoes/sneakers/black,
 		DYE_WHITE = /obj/item/clothing/shoes/sneakers/white,
-		DYE_MIME = /obj/item/clothing/shoes/sneakers/black,
 		DYE_QM = /obj/item/clothing/shoes/sneakers/brown,
 		DYE_CAPTAIN = /obj/item/clothing/shoes/sneakers/brown,
 		DYE_FO = /obj/item/clothing/shoes/sneakers/brown,
@@ -105,8 +99,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		DYE_BLACK = /obj/item/bedsheet/black,
 		DYE_WHITE = /obj/item/bedsheet,
 		DYE_RAINBOW = /obj/item/bedsheet/rainbow,
-		DYE_MIME = /obj/item/bedsheet/mime,
-		DYE_CLOWN = /obj/item/bedsheet/clown,
 		DYE_CHAP = /obj/item/bedsheet/chaplain,
 		DYE_QM = /obj/item/bedsheet/qm,
 		DYE_LAW = /obj/item/bedsheet/black,
@@ -142,24 +134,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 /obj/machinery/washing_machine/examine(mob/user)
 	. = ..()
 	if(!busy)
-		. += span_notice("<b>Alt-click</b> it to start a wash cycle.")
-
-/obj/machinery/washing_machine/AltClick(mob/user)
-	if(!user.canUseTopic(src, !issilicon(user)))
-		return
-	if(busy)
-		return
-	if(state_open)
-		to_chat(user, span_warning("Close the door first!"))
-		return
-	if(bloody_mess)
-		to_chat(user, span_warning("[src] must be cleaned up first!"))
-		return
-	busy = TRUE
-	update_appearance()
-	addtimer(CALLBACK(src, PROC_REF(wash_cycle)), 200)
-
-	START_PROCESSING(SSfastprocess, src)
+		. += span_notice("<b>Right-click</b> it to start a wash cycle.")
 
 /obj/machinery/washing_machine/process(seconds_per_tick)
 	if(!busy)
@@ -323,15 +298,14 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	else
 		return ..()
 
-/obj/machinery/washing_machine/attack_hand(mob/user)
+/obj/machinery/washing_machine/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
 	if(.)
 		return
 	if(busy)
 		to_chat(user, span_warning("[src] is busy!"))
 		return
-
-	if(user.pulling && user.a_intent == INTENT_GRAB && isliving(user.pulling))
+	if(user.pulling && isliving(user.pulling))
 		var/mob/living/L = user.pulling
 		if(L.buckled || L.has_buckled_mobs())
 			return
@@ -340,12 +314,33 @@ GLOBAL_LIST_INIT(dye_registry, list(
 				L.forceMove(src)
 				update_appearance()
 		return
-
 	if(!state_open)
 		open_machine()
 	else
 		state_open = FALSE //close the door
 		update_appearance()
+
+/obj/machinery/washing_machine/attack_hand_secondary(mob/user, modifiers)
+	. = ..()
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+		return
+
+	if(!user.canUseTopic(src, !issilicon(user)))
+		return SECONDARY_ATTACK_CONTINUE_CHAIN
+	if(busy)
+		to_chat(user, span_warning("[src] is busy!"))
+		return SECONDARY_ATTACK_CONTINUE_CHAIN
+	if(state_open)
+		to_chat(user, span_warning("Close the door first!"))
+		return SECONDARY_ATTACK_CONTINUE_CHAIN
+	if(bloody_mess)
+		to_chat(user, span_warning("[src] must be cleaned up first!"))
+		return SECONDARY_ATTACK_CONTINUE_CHAIN
+	busy = TRUE
+	update_appearance()
+	addtimer(CALLBACK(src, PROC_REF(wash_cycle)), 20 SECONDS)
+	START_PROCESSING(SSfastprocess, src)
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/machinery/washing_machine/deconstruct(disassembled = TRUE)
 	new /obj/item/stack/sheet/metal(drop_location(), 2)

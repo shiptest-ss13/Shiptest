@@ -222,3 +222,7 @@
   - balance: Weapon Cleaning Kit now cleans twice as effectively
   thgvr:
   - rscdel: Panacea no longer spawnable
+2025-05-28:
+  Majkl-J:
+  - bugfix: The healing surgeries now correctly consider limb integrity when rechecking
+      if a surgery step can continue, stopping correctly once they can no longer heal.

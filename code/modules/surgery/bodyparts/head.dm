@@ -13,7 +13,10 @@
 	px_y = -8
 	stam_damage_coeff = 1
 	max_stamina_damage = 100
-	bone_break_threshold = 45 // Beefier bones
+	wound_resistance = 5
+	disabled_wound_penalty = 25
+	scars_covered_by_clothes = FALSE
+	grind_results = null
 
 	var/mob/living/brain/brainmob = null //The current occupant.
 	var/obj/item/organ/brain/brain = null //The brain organ
@@ -38,6 +41,11 @@
 	var/stored_lipstick_trait
 
 	var/mouth = TRUE
+
+	///Whether to show eyes, or lack thereof
+	var/draw_eyes = TRUE
+	///Uses greyscale coloring for eyes
+	var/greyscale_eyes = TRUE
 
 /obj/item/bodypart/head/Destroy()
 	QDEL_NULL(brainmob) //order is sensitive, see warning in handle_atom_del() below

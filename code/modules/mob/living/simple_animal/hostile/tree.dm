@@ -14,7 +14,7 @@
 	response_help_simple = "brush"
 	response_disarm_continuous = "pushes"
 	response_disarm_simple = "push"
-	faction = list("hostile")
+	faction = list(FACTION_HOSTILE)
 	speed = 1
 	maxHealth = 250
 	health = 250
@@ -29,6 +29,7 @@
 	attack_verb_continuous = "bites"
 	attack_verb_simple = "bite"
 	attack_sound = 'sound/weapons/bite.ogg'
+	sharpness = SHARP_POINTY
 	speak_emote = list("pines")
 	emote_taunt = list("growls")
 	taunt_chance = 20

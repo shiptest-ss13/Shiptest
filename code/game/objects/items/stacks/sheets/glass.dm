@@ -277,7 +277,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	resistance_flags = ACID_PROOF
 	armor = list("melee" = 100, "bullet" = 0, "laser" = 0, "energy" = 100, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 100)
 	max_integrity = 40
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	var/icon_prefix
 	var/obj/item/stack/sheet/weld_material = /obj/item/stack/sheet/glass
 	embedding = list("embed_chance" = 65)
@@ -364,7 +364,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	SIGNAL_HANDLER
 	if(isliving(AM))
 		var/mob/living/L = AM
-		if(!(L.is_flying() || L.is_floating() || L.buckled))
+		if(!(L.movement_type & (FLYING|FLOATING)) || L.buckled)
 			playsound(src, 'sound/effects/glass_step.ogg', HAS_TRAIT(L, TRAIT_LIGHT_STEP) ? 30 : 50, TRUE)
 
 /obj/item/shard/plasma

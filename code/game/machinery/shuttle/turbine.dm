@@ -93,7 +93,7 @@
 	SSair.start_processing_machine(src, mapload)
 	locate_machinery()
 	if(!turbine)
-		obj_break()
+		atom_break()
 	return INITIALIZE_HINT_LATELOAD
 
 /obj/machinery/power/compressor/LateInitialize()
@@ -112,7 +112,7 @@
 		turbine.locate_machinery()
 	else
 		turbine = null
-		obj_break()
+		atom_break()
 
 /obj/machinery/power/compressor/RefreshParts()
 	var/E = 0
@@ -199,7 +199,7 @@
 // These are crucial to working of a turbine - the stats modify the power output. TurbGenQ modifies how much raw energy can you get from
 // rpms, TurbGenG modifies the shape of the curve - the lower the value the less straight the curve is.
 
-#define TURBGENQ 100000
+#define TURBGENQ 200000
 #define TURBGENG 0.5
 #define POWER_TO_THRUST 0.001 // power production to thrust ratio
 
@@ -208,7 +208,7 @@
 	SSair.start_processing_machine(src, mapload)
 	locate_machinery()
 	if(!compressor)
-		obj_break()
+		atom_break()
 	connect_to_network()
 	return INITIALIZE_HINT_LATELOAD
 
@@ -237,7 +237,7 @@
 		compressor.locate_machinery()
 	else
 		compressor = null
-		obj_break()
+		atom_break()
 
 /obj/machinery/power/shuttle/engine/turbine/process(seconds_per_tick)
 	add_avail(lastgen) // add power in process() so it doesn't update power output separately from the rest of the powernet (bad)
@@ -313,7 +313,7 @@
 			to_chat(user, span_notice("Compressor connected."))
 		else
 			to_chat(user, span_alert("Compressor not connected."))
-			obj_break()
+			atom_break()
 		return
 
 	default_deconstruction_crowbar(I)
