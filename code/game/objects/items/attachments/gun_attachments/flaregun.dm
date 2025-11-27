@@ -1,4 +1,3 @@
-/*
 /obj/item/attachment/gun/flare
 	name = "underbarrel flaregun"
 	desc = "An underbarrel flaregun for lighting the path ahead."
@@ -57,6 +56,5 @@
 /obj/item/attachment/gun/flare/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
 	. = ..()
 	examine_list += span_notice("-\The [name] [loaded_flare ? "has a flare loaded." : "is empty."]")
-	examine_list += span_notice("-You can unload \the [name] by pressing the <b>unique action</b> key. By default, this is <b>space</b>")
+	examine_list += span_notice("-You can unload \the [name] by pressing the <b>secondary action</b> key. By default, this is <b>shift + space</b>")
 	return examine_list
-*/

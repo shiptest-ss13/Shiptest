@@ -1,4 +1,3 @@
-/*
 /obj/item/attachment/gun/flamethrower
 	name = "underbarrel flamethrower"
 	desc = "A compact underbarrel flamethrower holding up to 20 units of fuel, enough for two sprays."
@@ -43,7 +42,7 @@
 	for(var/datum/reagent/R in attached_flamethrower.beaker.reagents.reagent_list)
 		total_volume += R.volume
 	examine_list += span_notice("-\The [src] has [total_volume] units of fuel left.")
-	examine_list += span_notice("-You can empty the [attached_flamethrower.beaker] by pressing the <b>unique action</b> key. By default, this is <b>space</b>")
+	examine_list += span_notice("-You can empty the [attached_flamethrower.beaker] by pressing the <b>secondary action</b> key. By default, this is <b>shift + space</b>")
 	return examine_list
 
 /obj/item/attachment/gun/flamethrower/on_ctrl_click(obj/item/gun/gun, mob/user)
@@ -90,6 +89,3 @@
 	icon = 'icons/obj/chemical/hypovial.dmi'
 	icon_state = "hypovial"
 	volume = 20
-
-
-*/

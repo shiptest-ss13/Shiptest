@@ -1,4 +1,3 @@
-/*
 /obj/item/attachment/gun/energy
 	name = "underbarrel e-gun"
 	desc = "Pew pew laser beam. You probably shouldnt be seeing this."
@@ -62,7 +61,7 @@
 	else
 		. += span_notice("- \The [name] doesn't seem to have a cell!")
 	if(!e_gun.internal_magazine)
-		examine_list += span_notice("- The cell retainment latch is [e_gun.latch_closed ? span_green("CLOSED") : span_red("OPEN")]. Press the Unique Action Key in order to toggle the latch. By default, this is <b>Space</b>.")
+		examine_list += span_notice("- The cell retainment latch is [e_gun.latch_closed ? span_green("CLOSED") : span_red("OPEN")]. Press the Secondary Action Key in order to toggle the latch. By default, this is <b>Shift + Space</b>.")
 	return examine_list
 
 /obj/item/attachment/gun/energy/get_cell()
@@ -111,4 +110,3 @@
 			if(affected_hand && affected_hand.receive_damage(0, 25))
 				shooter.drop_all_held_items()
 				to_chat(shooter,span_danger("The [src] violently heats up as it fires, burning your hand!"))
-*/
