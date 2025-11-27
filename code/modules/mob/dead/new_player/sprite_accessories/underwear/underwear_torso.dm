@@ -67,6 +67,10 @@
 	name = "One Piece Turtleneck"
 	icon_state = "onepiece_turtleneck"
 
+/datum/sprite_accessory/undershirt/onepiece_compression
+	name = "One Piece Compression Top"
+	icon_state = "compone"
+
 /datum/sprite_accessory/undershirt/beekini
 	name = "Bee-Kini Top"
 	icon_state = "beekini"
