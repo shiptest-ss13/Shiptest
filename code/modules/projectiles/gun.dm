@@ -431,10 +431,6 @@
 	if(has_safety)
 		. += "The safety is [safety ? span_green("ON") : span_red("OFF")]. Right-Click to toggle the safety."
 
-	if(gun_firemodes.len > 1)
-		. += "You can change the [src]'s firemode by pressing the <b>secondary action</b> key. By default, this is <b>Shift + Space</b>"
-
-
 /obj/item/gun/attackby(obj/item/I, mob/living/user, params)
 	. = ..()
 	if(gun_firemodes[firemode_index] == FIREMODE_UNDERBARREL)
@@ -1173,10 +1169,6 @@
 	update_appearance()
 	for(var/datum/action/current_action as anything in actions)
 		current_action.UpdateButtonIcon()
-
-// /obj/item/gun/secondary_action(user)
-// 	if(gun_firemodes.len > 1)
-// 		fire_select(user)
 
 /datum/action/item_action/toggle_firemode/UpdateButtonIcon(status_only = FALSE, force = FALSE)
 	var/obj/item/gun/our_gun = target

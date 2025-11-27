@@ -24,8 +24,8 @@
 	src.valid_types = typecacheof(valid_types)
 	src.slot_offsets = slot_offsets
 
-	// RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(handle_attack)) //need to do something with is
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY_SECONDARY, PROC_REF(handle_attack))
+	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(handle_attack))
+	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY_SECONDARY, PROC_REF(handle_secondary_attack))
 	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(handle_examine))
 	RegisterSignal(parent, COMSIG_PARENT_EXAMINE_MORE, PROC_REF(handle_examine_more))
 	RegisterSignal(parent, COMSIG_PARENT_QDELETING, PROC_REF(handle_qdel))
@@ -194,6 +194,9 @@
 	if(HAS_TRAIT(item, TRAIT_ATTACHABLE))
 		INVOKE_ASYNC(src, PROC_REF(do_attach), item, user)
 		return TRUE
+
+/datum/component/attachment_holder/proc/handle_secondary_attack(obj/item/parent, obj/item/item, mob/user)
+	SIGNAL_HANDLER
 
 	for(var/obj/item/attach as anything in attachments)
 		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_ATTACK, parent, item, user))

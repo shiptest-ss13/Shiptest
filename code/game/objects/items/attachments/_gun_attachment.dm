@@ -31,7 +31,7 @@
 	// 	return FALSE
 	// else
 	// 	gun.gun_firemodes += FIREMODE_UNDERBARREL
-	// 	gun.underbarrel_prefix = underbarrel_prefix
+	gun.underbarrel_prefix = underbarrel_prefix
 	if(attached_gun)
 		attached_gun.safety = gun.safety
 	//gun.build_firemodes()
@@ -43,7 +43,7 @@
 	// var/firemode_to_remove = gun.gun_firemodes.Find(FIREMODE_UNDERBARREL)
 	// if(firemode_to_remove)
 	// 	gun.gun_firemodes -= gun.gun_firemodes[firemode_to_remove]
-	// gun.underbarrel_prefix = ""
+	gun.underbarrel_prefix = ""
 	// gun.build_firemodes()
 	// gun.equipped(user)
 

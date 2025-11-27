@@ -191,6 +191,7 @@
 #define ATTACH_REMOVABLE_TOOL (1<<1)
 #define ATTACH_TOGGLE (1<<2)
 #define ATTACH_NO_SPRITE (1<<3)
+#define ATTACH_FIREMODE (1<<4)
 
 /////////////////
 // PROJECTILES //
