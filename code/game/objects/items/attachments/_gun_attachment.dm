@@ -62,7 +62,7 @@
 
 /obj/item/attachment/gun/on_preattack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
 	attached_gun.process_fire(target,user,TRUE)
-	return COMPONENT_NO_ATTACK
+	return COMPONENT_SECONDARY_CANCEL_ATTACK_CHAIN
 	// if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL)
 	// 	attached_gun.process_fire(target,user,TRUE)
 	// 	return COMPONENT_NO_ATTACK

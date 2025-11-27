@@ -164,6 +164,8 @@
 		var/proximity = A.Adjacent(src)
 		if(W)
 			if(LAZYACCESS(modifiers, RIGHT_CLICK))
+				if(W.pre_attack_secondary(A, src, params))
+					return
 				var/after_attack_secondary_result = W.afterattack_secondary(A, src, FALSE, params)
 
 				if(after_attack_secondary_result == SECONDARY_ATTACK_CALL_NORMAL)
