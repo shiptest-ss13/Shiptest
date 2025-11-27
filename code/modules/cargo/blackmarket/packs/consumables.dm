@@ -324,6 +324,26 @@
 	availability_prob = 10
 	spawn_weighting = FALSE
 
+/datum/blackmarket_item/consumable/combat_inhaler
+	name = "Pressurized Shoalmix"
+	desc = "No-oh-oh-oh fucking idea how we swung this one my guys, but we got it. The ditz in back managed to pressurize a stable mixture of shoalmix and panacea, and we managed to fab some custom inhalers to let you hit on the go. Lemme tell you. I'm gonna be hittin somethin for this innovation."
+	item = /obj/item/inhaler/cocktail
+	cost_min = 1000
+	cost_max = 1500
+	stock_max = 3
+	availability_prob = 30
+	pair_item = /datum/blackmarket_item/consumable/combat_inhaler_cartridge
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/consumable/combat_inhaler_cartridge
+	name = "Pressurized Shoalmix Vial"
+	desc = "Oh? These? Just vials of shoalmix and panacea. It's supposed to fit into an inhaler. Buy em. Buy em now."
+	item = /obj/item/reagent_containers/inhaler_canister/combat_drug
+	cost_min = 500
+	cost_max = 1000
+	stock_max = 12
+	availability_prob = 20
+
 /datum/blackmarket_item/consumable/horse_pills
 	name = "Strider patches"
 	desc = "Fun lil story, yeah? We were screwin off in a backcounty race, watchin some horse girls run it out. One of em popped some patches beforehand. Managed to easily outrun the rest. We managed to find em and get in with the supplier. Supposed to help ya move fast. Keep your muscles workin when they might burst."

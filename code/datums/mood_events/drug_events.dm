@@ -74,6 +74,11 @@
 	mood_change = 9
 	timeout = 3 MINUTES
 
+/datum/mood_event/stimulant_light
+	description = span_nicegreen("I feel so light. So productive!")
+	mood_change = 2
+	timeout = 3 MINUTES
+
 /datum/mood_event/stimulant_medium
 	description = span_nicegreen("I have so much energy! I feel like I could do anything!")
 	mood_change = 4
@@ -83,6 +88,11 @@
 	description = span_nicegreen("Eh ah AAAAH! HA HA HA HA HAA! Uuuh.")
 	mood_change = 6
 	timeout = 3 MINUTES
+
+/datum/mood_event/stimulant_bad
+	description = span_boldwarning("Fuck. Need to move. Need to do something. I'm not doing enough. I'm not DOING ENOUGH!!")
+	mood_change = -10
+	timeout = 6 MINUTES
 
 /datum/mood_event/legion_good
 	mood_change = 5
