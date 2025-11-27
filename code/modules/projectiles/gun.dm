@@ -766,12 +766,12 @@
 // 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 // 	return ..()
 
-/obj/item/gun/proc/toggle_safety(mob/user, silent=FALSE)
+/obj/item/gun/proc/toggle_safety(mob/user, silent=FALSE, override_check = FALSE)
 	if(!has_safety)
 		return FALSE
 
 	// only checks for first level storage e.g pockets, hands, suit storage, belts, nothing in containers
-	if(!in_contents_of(user))
+	if(!in_contents_of(user) && !override_check)
 		return FALSE
 
 	safety = !safety

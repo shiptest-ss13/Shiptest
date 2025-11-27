@@ -97,7 +97,7 @@
 	return OVERRIDE_SECONDARY_ACTION
 
 /obj/item/attachment/gun/on_ctrl_click(obj/item/gun/gun, mob/user)
-	attached_gun.toggle_safety(user,TRUE)
+	attached_gun.toggle_safety(user,TRUE, TRUE)
 
 /obj/item/attachment/gun/on_alt_click(obj/item/gun/gun, mob/user, list/examine_list)
 	return FALSE

@@ -165,7 +165,7 @@
 		if(W)
 			if(LAZYACCESS(modifiers, RIGHT_CLICK))
 				if(W.pre_attack_secondary(A, src, params))
-					return
+					return FALSE // this is making the base gun not fire on right click even without underbarrel
 				var/after_attack_secondary_result = W.afterattack_secondary(A, src, FALSE, params)
 
 				if(after_attack_secondary_result == SECONDARY_ATTACK_CALL_NORMAL)
