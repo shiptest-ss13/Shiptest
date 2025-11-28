@@ -4,6 +4,7 @@
 	icon_state = "riotlauncher"
 	weapon_type = null
 	var/obj/item/flashlight/flare/loaded_flare
+	has_safety = FALSE
 
 /obj/item/attachment/gun/flare/Destroy()
 	. = ..()
@@ -30,7 +31,7 @@
 			return FALSE
 
 /obj/item/attachment/gun/flare/on_preattack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
-	if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL && !gun.safety)
+	if(!gun.safety)
 		if(loaded_flare)
 			user.visible_message(span_warning("[user] fires a flare!"), span_warning("You fire the [name] at \the [target]!"))
 			var/obj/item/flashlight/flare/flare_to_fire = loaded_flare

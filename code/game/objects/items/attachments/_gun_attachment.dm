@@ -13,6 +13,7 @@
 	var/allow_hand_interaction = FALSE
 	//basically so the fire select shows the right icon
 	var/underbarrel_prefix = ""
+	var/has_safety = TRUE
 
 /obj/item/attachment/gun/Initialize(mapload, spawn_empty = FALSE)
 	. = ..()
@@ -58,15 +59,10 @@
 /obj/item/attachment/gun/on_attacked(obj/item/gun/gun, mob/user, obj/item/attack_item)
 	attackby(attack_item,user)
 	return COMPONENT_SECONDARY_CANCEL_ATTACK_CHAIN
-	// if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL)
-	// 	attackby(attack_item,user)
 
 /obj/item/attachment/gun/on_preattack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
 	attached_gun.process_fire(target,user,TRUE)
 	return COMPONENT_SECONDARY_CANCEL_ATTACK_CHAIN
-	// if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL)
-	// 	attached_gun.process_fire(target,user,TRUE)
-	// 	return COMPONENT_NO_ATTACK
 
 /obj/item/attachment/gun/unique_action(mob/living/user)
 	attached_gun.unique_action(user)
@@ -74,10 +70,6 @@
 /obj/item/attachment/gun/on_attack_hand(obj/item/gun/gun, mob/user, list/examine_list)
 	hand_attack_interaction(user)
 	return COMPONENT_NO_ATTACK_HAND
-	// if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL && gun.loc == user && user.is_holding(gun) && allow_hand_interaction)
-	// 	hand_attack_interaction(user)
-	// 	return COMPONENT_NO_ATTACK_HAND
-	// return
 
 /obj/item/attachment/gun/attack_hand(mob/user)
 	if(loc == user && user.is_holding(src) && allow_hand_interaction)
@@ -88,17 +80,13 @@
 /obj/item/attachment/gun/proc/hand_attack_interaction(mob/user)
 	return COMPONENT_NO_ATTACK_HAND
 
-// /obj/item/attachment/gun/on_unique_action(obj/item/gun/gun, mob/user)
-// 	if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL)
-// 		attached_gun.unique_action(user)
-// 		return OVERRIDE_UNIQUE_ACTION
-
 /obj/item/attachment/gun/on_secondary_action(obj/item/gun/gun, mob/user)
 	attached_gun.unique_action(user)
 	return OVERRIDE_SECONDARY_ACTION
 
 /obj/item/attachment/gun/on_ctrl_click(obj/item/gun/gun, mob/user)
-	attached_gun.toggle_safety(user,TRUE, TRUE)
+	if(has_safety)
+		attached_gun.toggle_safety(user,TRUE, TRUE)
 
 /obj/item/attachment/gun/on_alt_click(obj/item/gun/gun, mob/user, list/examine_list)
 	return FALSE
