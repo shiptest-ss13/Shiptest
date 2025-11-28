@@ -5,7 +5,7 @@
 	gain_text = span_danger("You suddenly feel the craving for drugs.")
 	lose_text = span_notice("You feel like you should kick your drug habit.")
 	medical_record_text = "Patient has a history of hard drugs."
-	var/drug_list = list(/datum/reagent/drug/finobranc, /datum/reagent/medicine/dimorlin, /datum/reagent/drug/happiness, /datum/reagent/drug/methamphetamine, /datum/reagent/drug/starlight) //List of possible IDs
+	var/drug_list = list(/datum/reagent/drug/finobranc, /datum/reagent/medicine/dimorlin, /datum/reagent/drug/happiness, /datum/reagent/drug/methamphetamine, /datum/reagent/drug/stardrop/starlight) //List of possible IDs
 	var/datum/reagent/reagent_type //!If this is defined, reagent_id will be unused and the defined reagent type will be instead.
 	var/datum/reagent/reagent_instance //! actual instanced version of the reagent
 	var/where_drug //! Where the drug spawned
