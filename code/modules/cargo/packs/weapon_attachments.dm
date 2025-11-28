@@ -66,7 +66,6 @@
 	contains = list(/obj/item/attachment/long_scope)
 	crate_name = "scope crate"
 
-/*
 /datum/supply_pack/attachment/shotgun
 	name = "Underbarrel Shotgun Crate"
 	desc = "Contains a two shot underbarrel pump shotgun to be mounted on a firearm."
@@ -101,4 +100,3 @@
 	cost = 200
 	contains = list(/obj/item/attachment/gun/flare)
 	crate_name = "underbarrel flare gun crate"
-*/
