@@ -91,7 +91,7 @@
 			withdrawal_enters_stage_2(affected_carbon)
 		if(WITHDRAWAL_STAGE3_START_CYCLE)
 			withdrawal_enters_stage_3(affected_carbon)
-		else //you are not on withdrawl
+		else //you are not on withdrawal
 			SEND_SIGNAL(affected_carbon, COMSIG_CLEAR_MOOD_EVENT, "[type]_addiction")
 
 	///One cycle is 2 seconds
@@ -123,15 +123,15 @@
 
 /// Called when addiction is in stage 1 every process
 /datum/addiction/proc/withdrawal_stage_1_process(mob/living/carbon/affected_carbon, seconds_per_tick)
-	if(SPT_PROB(5, seconds_per_tick))
+	if(SPT_PROB(3, seconds_per_tick))
 		to_chat(affected_carbon, "<span class='danger'>[withdrawal_stage_messages[1]]</span>")
 
 /// Called when addiction is in stage 2 every process
 /datum/addiction/proc/withdrawal_stage_2_process(mob/living/carbon/affected_carbon, seconds_per_tick)
-	if(SPT_PROB(10, seconds_per_tick))
+	if(SPT_PROB(5, seconds_per_tick))
 		to_chat(affected_carbon, "<span class='danger'>[withdrawal_stage_messages[2]]</span>")
 
 /// Called when addiction is in stage 3 every process
 /datum/addiction/proc/withdrawal_stage_3_process(mob/living/carbon/affected_carbon, seconds_per_tick)
-	if(SPT_PROB(15, seconds_per_tick))
+	if(SPT_PROB(10, seconds_per_tick))
 		to_chat(affected_carbon, "<span class='danger'>[withdrawal_stage_messages[3]]</span>")

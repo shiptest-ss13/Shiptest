@@ -4,7 +4,8 @@
 
 /datum/addiction/shoal/withdrawal_stage_1_process(mob/living/carbon/affected_carbon, seconds_per_tick)
 	. = ..()
-	affected_carbon.blur_eyes(5)
+	if(SPT_PROB(5, seconds_per_tick))
+		affected_carbon.blur_eyes(5)
 
 /datum/addiction/shoal/withdrawal_stage_2_process(mob/living/carbon/affected_carbon, seconds_per_tick)
 	. = ..()
