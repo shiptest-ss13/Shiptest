@@ -31,6 +31,7 @@
 		/obj/item/stock_parts/cell/gun/empty,
 		/obj/item/stock_parts/cell/gun/upgraded/empty,
 	)
+	var/ammotype_string = "fallback_laser_fallback"
 
 	tac_reloads = FALSE
 	tactical_reload_delay = 1.2 SECONDS

@@ -278,10 +278,6 @@
 	. = ..()
 	gun = null
 
-/datum/action/attachment/Trigger()
-	..()
-	//SEND_SIGNAL(target, COMSIG_ATTACHMENT_TOGGLE, gun, owner)
-
 /datum/action/attachment/UpdateButtonIcon()
 	icon_icon = target.icon
 	button_icon_state = target.icon_state
@@ -312,10 +308,16 @@
 	..()
 	SEND_SIGNAL(target, COMSIG_ATTACHMENT_TOGGLE, gun, owner)
 
+/datum/action/attachment/toggle/UpdateButtonIcon()
+	icon_icon = target.icon
+	button_icon_state = target.icon_state
+	..()
+
 /datum/action/attachment/ammo
 	name = "Toggle Firemode"
 
 /datum/action/attachment/ammo/Trigger()
 	. = ..()
 	SEND_SIGNAL(target, COMSIG_ATTACHMENT_TOGGLE_AMMO, gun, owner)
+
 
