@@ -11,37 +11,11 @@
 
 /obj/item/attachment/gun/energy/Initialize(mapload, spawn_empty = FALSE)
 	. = ..()
-	build_ammotypes()
 
 /obj/item/attachment/gun/energy/toggle_ammo(obj/item/gun/gun, mob/user)
 	var/obj/item/gun/energy/e_gun = attached_gun
 	e_gun.select_fire(user)
 	return TRUE
-
-/obj/item/attachment/gun/energy/proc/build_ammotypes()
-	for(var/datum/action/item_action/toggle_ammotype/old_ammotype in actions)
-		old_ammotype.Destroy()
-	var/datum/action/item_action/our_action
-
-	var/obj/item/gun/energy/e_gun = attached_gun
-	if(e_gun.ammo_type.len > 1)
-		our_action = new /datum/action/item_action/toggle_ammotype(e_gun)
-
-	for(var/i=1, i <= e_gun.ammo_type.len, i++)
-		if(e_gun.default_ammo_type == e_gun.ammo_type[i])
-			e_gun.ammotype_index = i
-			if(our_action)
-				our_action.UpdateButtonIcon()
-			return
-	e_gun.ammotype_index = 1
-
-/obj/item/attachment/gun/energy/ui_action_click(mob/user, actiontype)
-	var/obj/item/gun/energy/e_gun = attached_gun
-	if (istype(actiontype, /datum/action/item_action/toggle_ammotype))
-		e_gun.select_fire(user)
-		update_appearance()
-	else
-		..()
 
 /obj/item/attachment/gun/energy/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/stock_parts/cell/gun))
@@ -89,6 +63,7 @@
 	desc = "An aftermarket conversion of Eoehoma Firearms' E-50 emitter cannon stripped down in order to fit on the rail mounts on other weapons. This less than orthodox conversion strips out most of the E-50's safety mechanisms to cut down on weight and size, making it dangerously prone to overheating even at its reduced power. Heat insulated gloves are reccomended."
 	weapon_type = /obj/item/gun/energy/laser/e50/clip/underbarrel
 	icon_state = "e50"
+	attach_features_flags = ATTACH_REMOVABLE_HAND
 
 /obj/item/gun/energy/laser/e50/clip/underbarrel
 	name = "underbarrel energy cannon"
