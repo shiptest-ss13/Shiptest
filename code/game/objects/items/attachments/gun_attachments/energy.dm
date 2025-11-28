@@ -7,9 +7,16 @@
 	var/automatic_charge_overlays = TRUE
 	allow_hand_interaction = TRUE
 
+	attach_features_flags = ATTACH_REMOVABLE_HAND | ATTACH_AMMOMODE
+
 /obj/item/attachment/gun/energy/Initialize(mapload, spawn_empty = FALSE)
 	. = ..()
 	build_ammotypes()
+
+/obj/item/attachment/gun/energy/toggle_ammo(obj/item/gun/gun, mob/user)
+	var/obj/item/gun/energy/e_gun = attached_gun
+	e_gun.select_fire(user)
+	return TRUE
 
 /obj/item/attachment/gun/energy/proc/build_ammotypes()
 	for(var/datum/action/item_action/toggle_ammotype/old_ammotype in actions)

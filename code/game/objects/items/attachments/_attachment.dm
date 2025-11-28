@@ -53,6 +53,7 @@
 		CALLBACK(src, PROC_REF(apply_attachment)), \
 		CALLBACK(src, PROC_REF(remove_attachment)), \
 		CALLBACK(src, PROC_REF(toggle_attachment)), \
+		CALLBACK(src, PROC_REF(toggle_ammo)), \
 		CALLBACK(src, PROC_REF(on_preattack)), \
 		CALLBACK(src, PROC_REF(on_attacked)), \
 		CALLBACK(src, PROC_REF(on_secondary_action)), \
@@ -75,6 +76,9 @@
 	playsound(user, toggled ? toggle_on_sound : toggle_off_sound, 40, TRUE)
 	toggled = !toggled
 	icon_state = "[initial(icon_state)][toggled ? "-on" : ""]"
+
+/obj/item/attachment/proc/toggle_ammo(obj/item/gun/gun, mob/user)
+	return FALSE
 
 /// Checks if a user should be allowed to attach this attachment to the given parent
 /obj/item/attachment/proc/apply_attachment(obj/item/gun/gun, mob/user)

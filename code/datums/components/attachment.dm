@@ -8,6 +8,7 @@
 	var/datum/callback/on_attach
 	var/datum/callback/on_detach
 	var/datum/callback/on_toggle
+	var/datum/callback/on_toggle_ammo
 	var/datum/callback/on_attacked
 	// var/datum/callback/on_unique_action
 	var/datum/callback/on_secondary_action
@@ -25,6 +26,8 @@
 	var/list/datum/action/actions
 	///Generated if the attachment can toggle, sends COMSIG_ATTACHMENT_TOGGLE
 	var/datum/action/attachment/attachment_toggle_action
+	///Generated if the attachment can toggle ammo, sends COMSIG_ATTACHMENT_TOGGLE_AMMO
+	var/datum/action/attachment/attachment_ammo_action
 
 /datum/component/attachment/Initialize(
 		slot = ATTACHMENT_SLOT_RAIL,
@@ -33,6 +36,7 @@
 		datum/callback/on_attach = null,
 		datum/callback/on_detach = null,
 		datum/callback/on_toggle = null,
+		datum/callback/on_toggle_ammo = null,
 		datum/callback/on_preattack = null,
 		datum/callback/on_attacked = null,
 		//datum/callback/on_unique_action = null,
@@ -55,6 +59,7 @@
 	src.on_attach = on_attach
 	src.on_detach = on_detach
 	src.on_toggle = on_toggle
+	src.on_toggle_ammo = on_toggle_ammo
 	src.on_preattack = on_preattack
 	src.on_attacked = on_attacked
 	//src.on_unique_action = on_unique_action
@@ -74,9 +79,9 @@
 	if(attach_features_flags & ATTACH_TOGGLE)
 		RegisterSignal(parent, COMSIG_ATTACHMENT_TOGGLE, PROC_REF(try_toggle))
 		attachment_toggle_action = new /datum/action/attachment/toggle(parent)
-	// if(attach_features_flags & ATTACH_TOGGLE)
-	// 	RegisterSignal(parent, COMSIG_ATTACHMENT_TOGGLE_AMMO, PROC_REF(try_toggle))
-	// 	attachment_toggle_action = new /datum/action/attachment/ammo(parent)
+	if(attach_features_flags & ATTACH_AMMOMODE)
+		RegisterSignal(parent, COMSIG_ATTACHMENT_TOGGLE_AMMO, PROC_REF(try_ammo))
+		attachment_ammo_action = new /datum/action/attachment/ammo(parent)
 	RegisterSignal(parent, COMSIG_ATTACHMENT_PRE_ATTACK, PROC_REF(relay_pre_attack))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_UPDATE_OVERLAY, PROC_REF(update_overlays))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_GET_SLOT, PROC_REF(send_slot))
@@ -116,6 +121,19 @@
 	parent.attack_self(user)
 	return TRUE
 
+/datum/component/attachment/proc/try_ammo(obj/item/parent, obj/item/holder, mob/user)
+	SIGNAL_HANDLER
+	if(attach_features_flags & ATTACH_AMMOMODE)
+		INVOKE_ASYNC(src, PROC_REF(do_ammo), parent, holder, user)
+		holder.update_icon()
+		attachment_ammo_action.UpdateButtonIcon()
+
+/datum/component/attachment/proc/do_ammo(obj/item/parent, obj/item/holder, mob/user)
+	if(on_toggle_ammo)
+		on_toggle_ammo.Invoke(holder, user)
+		return TRUE
+	return TRUE
+
 /datum/component/attachment/proc/update_overlays(obj/item/attachment/parent, list/overlays, list/offset)
 	if(!(attach_features_flags & ATTACH_NO_SPRITE))
 		var/overlay_layer = FLOAT_LAYER
@@ -142,6 +160,10 @@
 		holder.actions += list(attachment_toggle_action)
 		attachment_toggle_action.gun = holder
 		attachment_toggle_action.Grant(user)
+	if(attach_features_flags & ATTACH_AMMOMODE)
+		holder.actions += list(attachment_ammo_action)
+		attachment_ammo_action.gun = holder
+		attachment_ammo_action.Grant(user)
 
 	return TRUE
 
@@ -158,6 +180,11 @@
 		holder.actions -= list(attachment_toggle_action)
 		attachment_toggle_action.gun = null
 		attachment_toggle_action.Remove(user)
+
+	if(attach_features_flags & ATTACH_AMMOMODE)
+		holder.actions -= list(attachment_ammo_action)
+		attachment_ammo_action.gun = null
+		attachment_ammo_action.Remove(user)
 
 	if(user.can_put_in_hand(parent))
 		user.put_in_hand(parent)
@@ -253,7 +280,7 @@
 
 /datum/action/attachment/Trigger()
 	..()
-	SEND_SIGNAL(target, COMSIG_ATTACHMENT_TOGGLE, gun, owner)
+	//SEND_SIGNAL(target, COMSIG_ATTACHMENT_TOGGLE, gun, owner)
 
 /datum/action/attachment/UpdateButtonIcon()
 	icon_icon = target.icon
