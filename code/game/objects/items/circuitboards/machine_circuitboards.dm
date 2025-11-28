@@ -1450,6 +1450,14 @@
 	req_components = list(/obj/item/stock_parts/capacitor = 2,
 		/obj/item/stock_parts/micro_laser = 2)
 
+// Maploaded engines of this type function identically to standard ion engines, but they start with T3 parts
+/obj/item/circuitboard/machine/shuttle/engine/electric/premium
+	build_path = /obj/machinery/power/shuttle/engine/electric/premium
+	def_components = list(
+		/obj/item/stock_parts/capacitor = /obj/item/stock_parts/capacitor/super,
+		/obj/item/stock_parts/micro_laser = /obj/item/stock_parts/micro_laser/ultra
+		)
+
 /obj/item/circuitboard/machine/shuttle/engine/expulsion
 	name = "Expulsion Thruster (Machine Board)"
 	build_path = /obj/machinery/power/shuttle/engine/fueled/expulsion

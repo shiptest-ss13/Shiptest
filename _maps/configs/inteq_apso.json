@@ -1,0 +1,40 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Apso-class Signaller",
+	"faction": "/datum/faction/inteq",
+	"prefix": "IRMV",
+	"manufacturer": "Hardline Salvage and Mining",
+	"description": "A relatively recent addition to the mercenary company's fleet, the construction of the Apso-class was outsourced to Hardline in 506FS with specifications for a small, purpose-built communications and support vessel. Outfitted with basic facilities and a powerful, long-range communications suite capable of networking IRMG ships cross-sector; this little ship typically operates as a signaller and reconnaissance vessel within operational range of larger friendly forces, bolstering coordination by directing communications and relaying strategic information. The Apso's importance to local coordinated efforts make it a prime target for pirates and adversaries, making it rare to see independent of another IRMG vessel. Crews of this vessel experience cramped living conditions with a smaller divide between the ranks, commonly assigned to greenhorn Vanguards with smaller influences - or experienced commanders willing to act as a keystone of coordination in more dangerous sectors of the Frontier.",
+	"tags": [
+		"Generalist",
+		"Telecommunications"
+	],
+	"namelists": [
+		"BEASTS",
+		"INTEQ"
+	],
+	"map_short_name": "Apso-class",
+	"map_path": "_maps/shuttles/inteq/inteq_apso.dmm",
+	"token_icon_state": "ship_small_generic",
+	"limit": 1,
+	"job_slots": {
+		"Vanguard": {
+			"outfit": "/datum/outfit/job/inteq/captain/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Artificer": {
+			"outfit": "/datum/outfit/job/inteq/engineer/empty",
+			"slots": 1
+		},
+		"Enforcer": {
+			"outfit": "/datum/outfit/job/inteq/security/empty",
+			"slots": 1
+		},
+		"Auxiliary": {
+			"outfit": "/datum/outfit/job/inteq/assistant",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

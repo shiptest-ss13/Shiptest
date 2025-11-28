@@ -99,11 +99,11 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 /datum/reagent/proc/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
 	if(!istype(M))
 		return 0
-	if(method == VAPOR) //smoke, foam, spray
+	if(method & (VAPOR|INHALE)) //smoke, foam, spray, inhalers
 		if(M.reagents)
 			var/modifier = clamp((1 - touch_protection), 0, 1)
-			var/amount = round(reac_volume*modifier, 0.1)
-			if(amount >= 0.5)
+			var/amount = round(reac_volume*modifier, 0.01) - M.reagents.get_reagent_amount(type)
+			if(amount >= metabolization_rate || (method & INHALE))
 				M.reagents.add_reagent(type, amount)
 	SSblackbox.record_feedback("nested tally", "reagent_expose_mob", 1, list("[name]", "[M]", "[method]", "[reac_volume]"))
 	return 1
@@ -228,3 +228,9 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 		rs += "[R.name], [R.volume]"
 
 	return rs.Join(" | ")
+
+/// Should return a associative list where keys are taste descriptions and values are strength ratios
+/datum/reagent/proc/get_taste_description(mob/living/taster)
+	if(isnull(taster) || !HAS_TRAIT(taster, TRAIT_SENSITIVE_TONGUE))
+		return list("[taste_description]" = 1)
+	return list("[lowertext(name)]" = 1)

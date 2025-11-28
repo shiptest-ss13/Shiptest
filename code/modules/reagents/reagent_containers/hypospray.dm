@@ -499,7 +499,8 @@
 		to_chat(user, span_notice("This doesn't fit in [src]."))
 		return FALSE
 
-/obj/item/hypospray/mkii/AltClick(mob/user)
+/obj/item/hypospray/mkii/attack_self_secondary(mob/user, modifiers)
+	. = ..()
 	if(vial)
 		vial.attack_self(user)
 

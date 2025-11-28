@@ -1,3 +1,4 @@
+/*
 /obj/item/attachment/gun/energy
 	name = "underbarrel e-gun"
 	desc = "Pew pew laser beam. You probably shouldnt be seeing this."
@@ -110,4 +111,4 @@
 			if(affected_hand && affected_hand.receive_damage(0, 25))
 				shooter.drop_all_held_items()
 				to_chat(shooter,span_danger("The [src] violently heats up as it fires, burning your hand!"))
-
+*/
