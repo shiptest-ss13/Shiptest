@@ -261,7 +261,7 @@
 	return attachment_slot_to_bflag(slot)
 
 /datum/action/attachment
-	name = "Attachment Action"
+	name = "Generic Attachment Action"
 	check_flags = AB_CHECK_HANDS_BLOCKED|AB_CHECK_CONSCIOUS
 	button_icon_state = null
 	///Decides where we send our toggle signal for when pressed
@@ -269,7 +269,6 @@
 
 /datum/action/attachment/New(Target)
 	..()
-	name = "Toggle [target.name]"
 	button.name = name
 	icon_icon = target.icon
 	button_icon_state = target.icon_state
@@ -304,6 +303,10 @@
 /datum/action/attachment/toggle
 	name = "Toggle Attachment"
 
+/datum/action/attachment/toggle/New(Target)
+	. = ..()
+	name = "Toggle [target.name]"
+
 /datum/action/attachment/toggle/Trigger()
 	..()
 	SEND_SIGNAL(target, COMSIG_ATTACHMENT_TOGGLE, gun, owner)
@@ -314,7 +317,7 @@
 	..()
 
 /datum/action/attachment/ammo
-	name = "Toggle Firemode"
+	name = "Toggle Energy Mode"
 
 /datum/action/attachment/ammo/Trigger()
 	. = ..()
