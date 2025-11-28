@@ -481,7 +481,7 @@ GENE SCANNER
 				render_list += render_block
 
 		// Addictions
-		if(LAZYLEN(target.mind.active_addictions))
+		if(LAZYLEN(target?.mind.active_addictions))
 			render_list += "<span class='boldannounce ml-1'>Subject is addicted to the following types of drug:</span>\n"
 			for(var/datum/addiction/addiction_type as anything in target.mind.active_addictions)
 				render_list += "<span class='alert ml-2'>[initial(addiction_type.name)]</span>\n"

@@ -11,7 +11,7 @@
 	color = "#34eeee"
 	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	overdose_threshold = 35
-	addiction_types = list(/datum/addiction/opiods = 2)
+	addiction_types = list(/datum/addiction/opioids = 2)
 
 /datum/reagent/medicine/tramal/on_mob_metabolize(mob/living/L)
 	..()
@@ -43,7 +43,7 @@
 	color = "#A9FBFB"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
-	addiction_types = list(/datum/addiction/opiods = 10)
+	addiction_types = list(/datum/addiction/opioids = 10)
 
 /datum/reagent/medicine/morphine/on_mob_metabolize(mob/living/L)
 	..()
@@ -95,7 +95,7 @@
 	color = "#71adad"
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 	overdose_threshold = 15
-	addiction_types = list(/datum/addiction/opiods = 20)
+	addiction_types = list(/datum/addiction/opioids = 20)
 
 /datum/reagent/medicine/dimorlin/on_mob_metabolize(mob/living/L)
 	..()
@@ -193,7 +193,7 @@
 	color = "#859480"
 	overdose_threshold = 8
 	metabolization_rate = 0.1
-	addiction_types = list(/datum/addiction/opiods = 30)
+	addiction_types = list(/datum/addiction/opioids = 30)
 
 /datum/reagent/medicine/carfencadrizine/on_mob_metabolize(mob/living/L)
 	. = ..()

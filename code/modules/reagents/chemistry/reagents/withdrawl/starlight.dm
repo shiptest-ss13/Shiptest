@@ -21,7 +21,7 @@
 	affected_carbon.overlay_fullscreen("stars", /atom/movable/screen/fullscreen/stars)
 	affected_carbon.blur_eyes(20)
 
-/datum/addiction/stimulants/lose_addiction(datum/mind/victim_mind)
+/datum/addiction/stimulants/end_withdrawal(mob/living/carbon/affected_carbon)
 	. = ..()
-	victim_mind.current.remove_status_effect(STATUS_EFFECT_WOOZY)
-	victim_mind.current.clear_fullscreen("stars")
+	affected_carbon.remove_status_effect(STATUS_EFFECT_WOOZY)
+	affected_carbon.clear_fullscreen("stars")

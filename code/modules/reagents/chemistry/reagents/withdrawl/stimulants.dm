@@ -16,8 +16,7 @@
 	. = ..()
 	affected_carbon.add_movespeed_modifier(/datum/movespeed_modifier/stimulants)
 
-/datum/addiction/stimulants/lose_addiction(datum/mind/victim_mind)
+/datum/addiction/opioids/end_withdrawal(mob/living/carbon/affected_carbon)
 	. = ..()
-	victim_mind.current.remove_actionspeed_modifier(ACTIONSPEED_ID_STIMULANTS)
-	victim_mind.current.remove_status_effect(STATUS_EFFECT_WOOZY)
-	victim_mind.current.remove_movespeed_modifier(MOVESPEED_ID_STIMULANTS)
+	affected_carbon.remove_status_effect(/datum/status_effect/high_blood_pressure)
+	affected_carbon.set_disgust(affected_carbon.disgust * 0.5) //half their disgust to help

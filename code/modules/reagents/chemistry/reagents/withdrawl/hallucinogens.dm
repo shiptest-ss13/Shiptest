@@ -13,9 +13,9 @@
 	. = ..()
 	affected_carbon.apply_status_effect(/datum/status_effect/trance, 40 SECONDS, TRUE)
 
-/datum/addiction/hallucinogens/lose_addiction(datum/mind/victim_mind)
+/datum/addiction/hallucinogens/end_withdrawal(mob/living/carbon/affected_carbon)
 	. = ..()
-	var/atom/movable/plane_master_controller/game_plane_master_controller = victim_mind.current.hud_used.plane_master_controllers[PLANE_MASTERS_GAME]
+	var/atom/movable/plane_master_controller/game_plane_master_controller = affected_carbon.hud_used.plane_master_controllers[PLANE_MASTERS_GAME]
 	game_plane_master_controller.remove_filter("hallucinogen_blur")
 	game_plane_master_controller.remove_filter("hallucinogen_wave")
-	victim_mind.current.remove_status_effect(/datum/status_effect/trance, 40 SECONDS, TRUE)
+	affected_carbon.remove_status_effect(/datum/status_effect/trance, 40 SECONDS, TRUE)

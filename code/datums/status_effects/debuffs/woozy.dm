@@ -9,5 +9,5 @@
 
 /atom/movable/screen/alert/status_effect/woozy
 	name = "Woozy"
-	desc = "You feel a bit slower than usual, it seems doing things with your hands takes longer than it usually does"
+	desc = "You feel a bit slower than usual, it seems doing things with your hands takes longer than it usually does."
 	icon_state = "woozy"

@@ -69,11 +69,14 @@ GLOBAL_LIST_INIT(base_reagents, list(
 ))
 
 ///Minimum requirement for addiction buzz to be met
-#define MIN_ADDICTION_REAGENT_AMOUNT 2
+#define MIN_ADDICTION_REAGENT_AMOUNT 1
+///Nicotine requires much less in your system to be happy
+#define MIN_NICOTINE_ADDICTION_REAGENT_AMOUNT 0.01
+
 #define MAX_ADDICTION_POINTS 1000
 
 ///Addiction start/ends
-#define WITHDRAWAL_STAGE1_START_CYCLE 1
+#define WITHDRAWAL_STAGE1_START_CYCLE 61
 #define WITHDRAWAL_STAGE1_END_CYCLE 240
 #define WITHDRAWAL_STAGE2_START_CYCLE 241
 #define WITHDRAWAL_STAGE2_END_CYCLE 480

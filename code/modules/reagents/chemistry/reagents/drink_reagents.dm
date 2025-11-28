@@ -993,7 +993,7 @@
 	glass_icon_state = "lean"
 	glass_name = "Lean"
 	glass_desc = "You just don't often get to see cough syrup out here, and someone had enough to mix it with soda. You're left wondering why."
-	addiction_types = list(/datum/addiction/opiods = 6)
+	addiction_types = list(/datum/addiction/opioids = 6)
 
 
 /datum/reagent/consumable/lean/on_mob_life(mob/living/carbon/M)
