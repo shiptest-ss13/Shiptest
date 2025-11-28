@@ -241,17 +241,19 @@
 	sanitization += amount * 0.1
 	return
 
-//crystal reagent lets you reverse sepsis bcause sepsis sucks rn
+//crystal reagent lets you fully clear burns because they're rare chemicals and burns suck ass
 /datum/wound/burn/on_crystal(power)
 	if(power>=5)
-		strikes_to_lose_limb = min(strikes_to_lose_limb+1, 3)
+		to_chat(victim, span_green("The burns on your [limb.name] have been regenerated, leaving only minor necrosis."))
 		victim.adjustCloneLoss(2)
+		qdel(src)
 	return
 
 //So does rezadone
 /datum/wound/burn/on_rezadone(power)
 	if(power>=10)
-		strikes_to_lose_limb = min(strikes_to_lose_limb+1, 3)
+		to_chat(victim, span_green("The burns on your [limb.name] suddenly clear up."))
+		qdel(src)
 	return
 
 // we don't even care about first degree burns, straight to second
