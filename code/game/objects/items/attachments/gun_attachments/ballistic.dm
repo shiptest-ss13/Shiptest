@@ -34,6 +34,7 @@
 	semi_auto = TRUE
 	casing_ejector = TRUE
 	gunslinger_recoil_bonus = 0
+	//bolt_type = 1
 	default_ammo_type  = /obj/item/ammo_box/magazine/internal/shot/underbarrel
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/underbarrel,
