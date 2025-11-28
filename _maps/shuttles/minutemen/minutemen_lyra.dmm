@@ -4983,10 +4983,6 @@
 	pixel_x = 9;
 	pixel_y = -14
 	},
-/obj/item/storage/belt/medical/surgery{
-	pixel_x = -7;
-	pixel_y = -8
-	},
 /obj/structure/closet/secure_closet/medical3{
 	populate = 0
 	},
@@ -4997,6 +4993,10 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
+/obj/item/storage/belt/medical{
+	pixel_x = -8;
+	pixel_y = -10
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical)
 "KT" = (
@@ -5725,6 +5725,22 @@
 /obj/effect/turf_decal/spline/plain/opaque/blue{
 	dir = 8
 	},
+/obj/item/clothing/suit/armor/vest/alt{
+	pixel_x = -5;
+	pixel_y = -8
+	},
+/obj/item/clothing/head/helmet/bulletproof/x11/clip{
+	pixel_x = 6;
+	pixel_y = 7
+	},
+/obj/item/clothing/suit/armor/vest/bulletproof{
+	pixel_x = 7;
+	pixel_y = -8
+	},
+/obj/item/clothing/head/helmet/m10/clip{
+	pixel_x = -6;
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "RT" = (
@@ -5836,6 +5852,14 @@
 /obj/structure/closet/secure_closet/wall/directional/south{
 	req_access = list(45);
 	name = "medical supplies"
+	},
+/obj/item/tank/internals/anesthetic{
+	pixel_x = -6;
+	pixel_y = -4
+	},
+/obj/item/clothing/mask/breath/medical{
+	pixel_x = 8;
+	pixel_y = -9
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical/surgery)
