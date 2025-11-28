@@ -81,7 +81,7 @@
 	name = "PGF Entrenching Tool Crate"
 	desc = "Contains one dual-purpose mining tool, useful as a pickaxe, shovel, and weapon. Fits in your bag, and personally manufactured for PGF use."
 	cost = 500
-	contains = list(/obj/item/trench_tool)
+	contains = list(/obj/item/trench_tool/gezena)
 	crate_name = "mining crate"
 	faction = /datum/faction/pgf
 	faction_locked = TRUE
