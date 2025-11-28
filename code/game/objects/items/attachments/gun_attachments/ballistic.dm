@@ -4,7 +4,7 @@
 	underbarrel_prefix = "bullet_"
 
 /obj/item/attachment/gun/ballistic/attackby(obj/item/I, mob/living/user, params)
-	if(istype(I,/obj/item/ammo_casing) || istype(I, /obj/item/ammo_box))
+	if(istype(I,/obj/item/ammo_casing) || istype(I, /obj/item/ammo_box) || istype(I,/obj/item/gun_maint_kit))
 		attached_gun.attackby(I, user)
 	else
 		return ..()
@@ -31,7 +31,7 @@
 	bad_type = /obj/item/gun/ballistic/shotgun/underbarrel
 	name = "underbarrel ballistic gun"
 	desc = "You shouldnt be seeing this."
-	semi_auto = FALSE
+	semi_auto = TRUE
 	casing_ejector = TRUE
 	gunslinger_recoil_bonus = 0
 	default_ammo_type  = /obj/item/ammo_box/magazine/internal/shot/underbarrel
