@@ -10,7 +10,6 @@
 	var/datum/callback/on_toggle
 	var/datum/callback/on_toggle_ammo
 	var/datum/callback/on_attacked
-	// var/datum/callback/on_unique_action
 	var/datum/callback/on_secondary_action
 	var/datum/callback/on_ctrl_click
 	var/datum/callback/on_alt_click
@@ -39,7 +38,6 @@
 		datum/callback/on_toggle_ammo = null,
 		datum/callback/on_preattack = null,
 		datum/callback/on_attacked = null,
-		//datum/callback/on_unique_action = null,
 		datum/callback/on_secondary_action = null,
 		datum/callback/on_ctrl_click = null,
 		datum/callback/on_wield = null,
@@ -62,7 +60,6 @@
 	src.on_toggle_ammo = on_toggle_ammo
 	src.on_preattack = on_preattack
 	src.on_attacked = on_attacked
-	//src.on_unique_action = on_unique_action
 	src.on_secondary_action = on_secondary_action
 	src.on_ctrl_click = on_ctrl_click
 	src.on_wield = on_wield
@@ -88,7 +85,6 @@
 	RegisterSignal(parent, COMSIG_ATTACHMENT_WIELD, PROC_REF(try_wield))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_UNWIELD, PROC_REF(try_unwield))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_ATTACK, PROC_REF(relay_attacked))
-	//RegisterSignal(parent, COMSIG_ATTACHMENT_UNIQUE_ACTION, PROC_REF(relay_unique_action))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_SECONDARY_ACTION, PROC_REF(relay_secondary_action))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_CTRL_CLICK, PROC_REF(relay_ctrl_click))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_ALT_CLICK, PROC_REF(relay_alt_click))
@@ -225,12 +221,6 @@
 
 	if(on_unwield)
 		return on_unwield.Invoke(gun, user, params)
-
-// /datum/component/attachment/proc/relay_unique_action(obj/item/parent, obj/item/gun, mob/user, params)
-// 	SIGNAL_HANDLER_DOES_SLEEP
-
-// 	if(on_unique_action)
-// 		return on_unique_action.Invoke(gun, user, params)
 
 /datum/component/attachment/proc/relay_secondary_action(obj/item/parent, obj/item/gun, mob/user, params)
 	SIGNAL_HANDLER_DOES_SLEEP
