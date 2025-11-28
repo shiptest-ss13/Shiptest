@@ -1,135 +1,107 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/closed/wall/mineral/titanium,
+/turf/template_noop,
+/area/space)
+"c" = (
+/obj/structure/elevator_platform/tile/tech,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/turf/template_noop,
 /area/space)
 "h" = (
 /obj/structure/chair/bench/red/directional/west,
-/turf/open/floor/suns/hatch/bamboo,
+/obj/structure/elevator_platform/tile/bamboo_hatch,
+/turf/template_noop,
 /area/space)
 "k" = (
 /obj/structure/fluff/hedge,
-/turf/open/floor/suns/hatch/bamboo,
+/obj/structure/elevator_platform/tile/bamboo_hatch,
+/turf/template_noop,
 /area/space)
 "n" = (
 /obj/structure/chair/bench/red/directional/east,
-/turf/open/floor/suns/hatch/bamboo,
+/obj/structure/elevator_platform/tile/bamboo_hatch,
+/turf/template_noop,
 /area/space)
 "u" = (
-/turf/open/space/basic,
-/area/space)
-"z" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
-	dir = 4
+/obj/structure/elevator_platform/tile/brushed,
+/obj/machinery/elevator_floor_button{
+	pixel_y = 22
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
-	dir = 8
-	},
-/obj/structure/chair/handrail{
-	dir = 8
-	},
-/turf/open/floor/plasteel/patterned/brushed,
+/turf/template_noop,
 /area/space)
 "A" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 2
 	},
-/turf/open/floor/engine/hull/reinforced,
-/area/space)
-"B" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA"
-	},
-/turf/open/floor/plasteel/patterned/brushed,
+/obj/structure/elevator_platform/tile/brushed,
+/turf/template_noop,
 /area/space)
 "D" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA"
-	},
 /obj/machinery/light/dim/directional/south,
-/turf/open/floor/plasteel/patterned/brushed,
+/obj/structure/elevator_platform/tile/brushed,
+/turf/template_noop,
 /area/space)
 "G" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
-	dir = 4
-	},
 /obj/structure/chair/handrail{
 	dir = 4
 	},
-/turf/open/floor/plasteel/patterned/brushed,
+/obj/structure/elevator_platform/tile/brushed,
+/turf/template_noop,
 /area/space)
 "H" = (
 /obj/machinery/door/airlock/glass{
 	dir = 4
 	},
-/obj/effect/turf_decal/industrial/stand_clear{
-	dir = 4
+/obj/structure/elevator_platform/tile/tech,
+/turf/template_noop,
+/area/space)
+"I" = (
+/obj/structure/elevator_platform/tile/brushed,
+/obj/machinery/status_display/elevator{
+	pixel_y = 28
 	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech,
+/turf/template_noop,
 /area/space)
 "N" = (
 /obj/structure/crate_shelf,
-/obj/effect/turf_decal/corner/opaque/cybersunteal/half,
-/obj/effect/turf_decal/corner/opaque/cybersunteal/half{
-	dir = 1
-	},
-/turf/open/floor/plasteel/mono/white,
+/obj/structure/elevator_platform/tile/tech,
+/turf/template_noop,
 /area/space)
 "Q" = (
-/obj/effect/turf_decal/corner/opaque/cybersunteal/half,
-/obj/effect/turf_decal/corner/opaque/cybersunteal/half{
-	dir = 1
-	},
-/obj/structure/crate_shelf,
-/turf/open/floor/plasteel/mono/white,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/elevator_platform/tile/tech,
+/turf/open/floor/plating,
+/area/space)
+"T" = (
+/obj/structure/elevator_platform/tile/brushed,
+/turf/template_noop,
 /area/space)
 "W" = (
-/obj/machinery/door/airlock/glass{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/stand_clear{
-	dir = 8
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/elevator_platform/tile/tech,
+/obj/structure/elevator_platform/tile/tech,
+/turf/open/floor/plating,
 /area/space)
 "X" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
-/turf/open/floor/plating,
+/obj/structure/elevator_platform/tile/tech,
+/turf/template_noop,
 /area/space)
 "Z" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
-	dir = 1
-	},
 /obj/machinery/light/dim/directional/north,
-/turf/open/floor/plasteel/patterned/brushed,
+/obj/structure/elevator_platform/tile/brushed,
+/turf/template_noop,
 /area/space)
 
 (1,1,1) = {"
-u
 a
-W
-X
-X
-W
 a
-u
+H
+c
+X
+H
+a
+a
 "}
 (2,1,1) = {"
 a
@@ -139,55 +111,55 @@ G
 G
 D
 a
-X
+Q
 "}
 (3,1,1) = {"
 A
 a
-B
+I
 h
 h
-B
+T
 N
-X
+Q
 "}
 (4,1,1) = {"
 A
 a
-B
+u
 k
 k
-B
+T
+N
 Q
-X
 "}
 (5,1,1) = {"
 A
 a
-B
+I
 n
 n
-B
+T
 N
-X
+Q
 "}
 (6,1,1) = {"
 a
 a
 Z
-z
-z
+T
+T
 D
 a
-X
+W
 "}
 (7,1,1) = {"
-u
+a
 a
 H
 X
 X
 H
 a
-u
+a
 "}

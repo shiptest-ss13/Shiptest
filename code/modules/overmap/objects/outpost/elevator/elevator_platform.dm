@@ -26,11 +26,11 @@
 	// handles behavior
 	var/datum/elevator_master/master_datum
 
-/*
+
 // dont use the tile variants probably bugged as fuck
 // i'm only fluent in shitcode so if anyone finds a way to fix this please use it the catwalk elevators are ugly
 
-/obj/structure/elevator_platform/tile/
+/obj/structure/elevator_platform/tile
 	icon = 'icons/turf/floors/tiles.dmi'
 	icon_state = "tiled_gray"
 	base_icon_state = "tiled_gray"
@@ -53,7 +53,6 @@
 	smoothing_flags = null
 	smoothing_groups = null
 	canSmoothWith = null
-*/
 
 /obj/structure/elevator_platform/Initialize(mapload)
 	. = ..()

@@ -159,6 +159,36 @@
 	dock_width = 56
 	dock_height = 40
 
+//Cybersun Gas Giant
+/datum/map_template/outpost/cybersun_gas_giant
+	name = "cybersun_gas_giant"
+	outpost_name = "1000 Eyes Perch"
+
+/datum/map_template/outpost/hangar/cybersun_gas_giant_20x20
+	name = "hangar/cybersun_gas_giant_20x20"
+	dock_width = 20
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/cybersun_gas_giant_40x20
+	name = "hangar/cybersun_gas_giant_40x20"
+	dock_width = 40
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/cybersun_gas_giant_40x40
+	name = "hangar/cybersun_gas_giant_40x40"
+	dock_width = 40
+	dock_height = 40
+
+/datum/map_template/outpost/hangar/cybersun_gas_giant_56x20
+	name = "hangar/cybersun_gas_giant_56x20"
+	dock_width = 56
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/cybersun_gas_giant_56x40
+	name = "hangar/cybersun_gas_giant_56x40"
+	dock_width = 56
+	dock_height = 40
+
 /*
 	/datum/overmap/outpost subtypes
 */
@@ -209,6 +239,21 @@
 		/datum/map_template/outpost/hangar/clip_ocean_40x40,
 		/datum/map_template/outpost/hangar/clip_ocean_56x20,
 		/datum/map_template/outpost/hangar/clip_ocean_56x40
+	)
+
+#warn "remove when you've made a proper weather controller for the winds"
+/datum/overmap/outpost/cybersun_gas_giant
+	token_icon_state = "gas_giant_outpost"
+	//icon = 'icons/misc/overmap_larger.dmi'
+	main_template = /datum/map_template/outpost/cybersun_gas_giant
+	elevator_template = /datum/map_template/outpost/cybersun_gas_giant
+	weather_controller_type = /datum/weather_controller/lush
+	hangar_templates = list(
+		/datum/map_template/outpost/hangar/cybersun_gas_giant_20x20,
+		/datum/map_template/outpost/hangar/cybersun_gas_giant_40x20,
+		/datum/map_template/outpost/hangar/cybersun_gas_giant_40x40,
+		/datum/map_template/outpost/hangar/cybersun_gas_giant_56x20,
+		/datum/map_template/outpost/hangar/cybersun_gas_giant_56x40
 	)
 
 /datum/overmap/outpost/no_main_level // For example and adminspawn.
