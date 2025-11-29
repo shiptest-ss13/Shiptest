@@ -445,8 +445,10 @@
 	icon = 'icons/obj/flora/rocks.dmi'
 	resistance_flags = FIRE_PROOF
 	density = TRUE
+	pass_flags_self = LETPASSTHROW
 	max_integrity = 100
 	var/obj/item/stack/mineResult = /obj/item/stack/ore/glass/basalt
+	var/passchance = 50
 
 	hitsound_type = PROJECTILE_HITSOUND_STONE
 
@@ -475,6 +477,18 @@
 				playsound(src, 'sound/weapons/tap.ogg', 50, TRUE)
 		if(BURN)
 			playsound(src.loc, 'sound/items/welder.ogg', 100, TRUE)
+
+/obj/structure/flora/rock/CanAllowThrough(atom/movable/mover, border_dir)
+	. = ..()
+	if(istype(mover, /obj/projectile))
+		var/obj/projectile/proj = mover
+		if(proj.firer && Adjacent(proj.firer))
+			return TRUE
+		if(prob(passchance))
+			return TRUE
+		return FALSE
+	if((mover.pass_flags & PASSGRILLE))
+		return prob(passchance)
 
 /obj/structure/flora/rock/pile
 	icon_state = "lavarocks1"
