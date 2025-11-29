@@ -14,9 +14,9 @@
 	var/burst_intervals
 	/// Time to wait between shots
 	var/cooldown_time
+	/// How much spread does a shot have?
+	var/spread = 2
 	/// Tracks time between shots
-	var/spread = 0
-	/// projectile spread
 	COOLDOWN_DECLARE(fire_cooldown)
 
 /datum/component/ranged_attacks/Initialize(
@@ -26,7 +26,7 @@
 	burst_shots,
 	burst_intervals = 0.2 SECONDS,
 	cooldown_time = 3 SECONDS,
-	spread = 0,
+	spread = 2
 )
 	. = ..()
 	if(!isbasicmob(parent))
