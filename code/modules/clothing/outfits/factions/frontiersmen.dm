@@ -20,6 +20,7 @@
 	if(visualsOnly)
 		return
 	H.faction |= list(FACTION_ANTAG_FRONTIERSMEN)
+
 // Assistant
 
 /datum/outfit/job/frontiersmen/assistant
