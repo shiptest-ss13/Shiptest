@@ -215,9 +215,8 @@
 			if(R.overdosed == 1)
 				overdose_list += list(list("name" = R.name))
 
-	if(altPatient.reagents.addiction_list.len)
-		for(var/datum/reagent/R in altPatient.reagents.addiction_list)
-			addict_list += list(list("name" = R.name))
+	for(var/datum/addiction/addiction_type as anything in altPatient.mind.active_addictions)
+		addict_list += list(list("name" = initial(addiction_type.name)))
 	if (altPatient.hallucinating())
 		hallucination_status = "Subject appears to be hallucinating. Suggested treatments: bedrest, mannitol or psicodine."
 

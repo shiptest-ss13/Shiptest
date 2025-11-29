@@ -50,6 +50,9 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	var/list/hand_slots // /atom/movable/screen/inventory/hand objects, assoc list of "[held_index]" = object
 	var/list/atom/movable/screen/plane_master/plane_masters = list() // see "appearance_flags" in the ref, assoc list of "[plane]" = object
 
+	///Assoc list of controller groups, associated with key string group name with value of the plane master controller ref
+	var/list/atom/movable/plane_master_controller/plane_master_controllers = list()
+
 	///UI for screentips that appear when you mouse over things
 	var/atom/movable/screen/screentip/screentip_text
 
@@ -86,6 +89,10 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	screentip_text = new(null, src)
 	static_inventory += screentip_text
 
+	for(var/mytype in subtypesof(/atom/movable/plane_master_controller))
+		var/atom/movable/plane_master_controller/controller_instance = new mytype(src)
+		plane_master_controllers[controller_instance.name] = controller_instance
+
 	owner.overlay_fullscreen("see_through_darkness", /atom/movable/screen/fullscreen/see_through_darkness)
 
 /datum/hud/Destroy()
@@ -116,6 +123,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	combo_display = null
 
 	QDEL_LIST_ASSOC_VAL(plane_masters)
+	QDEL_LIST_ASSOC_VAL(plane_master_controllers)
 	QDEL_LIST(screenoverlays)
 	mymob = null
 	QDEL_NULL(screentip_text)
