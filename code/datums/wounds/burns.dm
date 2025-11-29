@@ -253,7 +253,7 @@
 /datum/wound/burn/on_rezadone(power)
 	if(power>=10)
 		// Rapidly regenerating burns isn't so clean, especially when there's an infection to purge
-		to_chat(victim, span_green("The burns on your [limb.name] clear up, leaving you with an ill feeling.")
+		to_chat(victim, span_green("The burns on your [limb.name] clear up, leaving you with an ill feeling."))
 		switch(infestation)
 			if(0 to WOUND_INFECTION_MODERATE)
 				victim.adjustToxLoss(2)
