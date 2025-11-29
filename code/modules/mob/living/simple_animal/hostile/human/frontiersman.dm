@@ -21,6 +21,24 @@
 	minbodytemp = 0
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/internals
 
+/mob/living/simple_animal/hostile/human/frontier/axe
+	name = "Frontiersman Chopper"
+	desc = "A member of the brutal Frontiersman terrorist fleet! This one clutches bulky combat axe, riveting the idea of turning your innards to gore."
+	icon_state = "frontiersmanmelee"
+	icon = 'icons/mob/simple_frontiersman.dmi'
+	speak_chance = 0
+	melee_damage_lower = 25
+	melee_damage_upper = 25
+	armour_penetration = 10
+	loot = list()
+	r_hand = /obj/item/melee/boarding_axe
+
+/mob/living/simple_animal/hostile/human/frontier/axe/internals
+	icon_state = "frontiersmanmelee_mask"
+	atmos_requirements = IMMUNE_ATMOS_REQS
+	minbodytemp = 0
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/internals
+
 /mob/living/simple_animal/hostile/human/frontier/ranged
 	name = "Frontiersman Quickdraw"
 	desc = "A member of the brutal Frontiersman terrorist fleet! This one thumbs a slender pistol, stained chrome and a malicious smile glinting in the light."
