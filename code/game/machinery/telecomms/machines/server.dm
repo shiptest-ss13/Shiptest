@@ -88,6 +88,21 @@
 	freq_listening = list(FREQ_SYNDICATE, FREQ_COMMON)
 	autolinkers = list("syndicate", "broadcasterB")
 
+/obj/machinery/telecomms/server/presets/cybersun
+	id = "Cybersun Server"
+	freq_listening = list(FREQ_SYNDICATE, FREQ_COMMON, FREQ_CYBERSUN)
+	autolinkers = list("cybersun", "broadcasterB")
+
+/obj/machinery/telecomms/server/presets/ngr
+	id = "New Gorlex Server"
+	freq_listening = list(FREQ_SYNDICATE, FREQ_COMMON, FREQ_NGR)
+	autolinkers = list("ngr", "broadcasterB")
+
+/obj/machinery/telecomms/server/presets/suns
+	id = "SUNS Server"
+	freq_listening = list(FREQ_SYNDICATE, FREQ_COMMON, FREQ_SUNS)
+	autolinkers = list("suns", "broadcasterB")
+
 /obj/machinery/telecomms/server/presets/minutemen
 	id = "CLIP Server"
 	freq_listening = list(FREQ_MINUTEMEN, FREQ_COMMON)
