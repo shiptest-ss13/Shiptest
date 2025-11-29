@@ -120,24 +120,27 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 /obj/item/radio/headset/syndicate/suns
 	name = "SUNS headset"
 	desc = "A headset worn by staff and students of SUNS, both in the frontier and elsewhere."
-	keyslot2 = /obj/item/encryptionkey/syndicate/suns
+	keyslot = new /obj/item/encryptionkey/syndicate/suns
+	keyslot2 = new /obj/item/encryptionkey/heads/captain
 
 /obj/item/radio/headset/syndicate/suns/command
 	name = "SUNS command headset"
 	desc = "A headset worn by staff and students of SUNS, both in the frontier and elsewhere. This one is worn by command staff."
 	command = TRUE
-	keyslot2 = /obj/item/encryptionkey/syndicate/suns
+	keyslot = new /obj/item/encryptionkey/syndicate/suns
+	keyslot2 = new /obj/item/encryptionkey/heads/captain
 
 /obj/item/radio/headset/syndicate/alt/suns
 	name = "SUNS bowman headset"
 	desc = "A headset worn by staff and students of SUNS, both in the frontier and elsewhere. Protects ears from distractions during exams."
-	keyslot2 = /obj/item/encryptionkey/syndicate/suns
+	keyslot = new /obj/item/encryptionkey/syndicate/suns
 
 /obj/item/radio/headset/syndicate/alt/suns/command
 	name = "SUNS bowman command headset"
 	desc = "A headset worn by staff and students of SUNS, both in the frontier and elsewhere. This one is worn by command staff. Protects ears from distractions during exams."
 	command = TRUE
-	keyslot2 = /obj/item/encryptionkey/syndicate/suns
+	keyslot = new /obj/item/encryptionkey/syndicate/suns
+	keyslot2 = new /obj/item/encryptionkey/heads/captain
 
 /obj/item/radio/headset/syndicate/cybersun
 	name = "cybersun headset"
@@ -148,20 +151,22 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "cybersun leader headset"
 	desc = "A headset worn by officers of Cybersun Industries and security forces on the frontier."
 	command = TRUE
-	keyslot2 = new /obj/item/encryptionkey/syndicate/cybersun
+	keyslot = new /obj/item/encryptionkey/syndicate/cybersun
+	keyslot2 = new /obj/item/encryptionkey/heads/captain
 
 /obj/item/radio/headset/syndicate/alt/cybersun
 	name = "cybersun bowman headset"
 	desc = "A headset worn by members of Cybersun Industries and security forces on the frontier. Protects ears from flashbangs."
 	icon_state = "syndie_headset_alt"
 	hearing_protection = TRUE
-	keyslot2 = new /obj/item/encryptionkey/syndicate/cybersun
+	keyslot = new /obj/item/encryptionkey/syndicate/cybersun
 
 /obj/item/radio/headset/syndicate/alt/captain/cybersun
 	name = "cybersun leader bowman headset"
 	desc = "A headset worn by members of Cybersun Industries and security forces on the frontier Protects ears from flashbangs."
 	command = TRUE
-	keyslot2 = new /obj/item/encryptionkey/syndicate/cybersun
+	keyslot = new /obj/item/encryptionkey/syndicate/cybersun
+	keyslot2 = new /obj/item/encryptionkey/heads/captain
 
 /obj/item/radio/headset/syndicate/ngr
 	name = "new gorlex headset"
@@ -173,20 +178,22 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "new gorlex leader headset"
 	desc = "A headset worn by officers of the New Gorlex Republic on the frontier."
 	command = TRUE
-	keyslot2 = new /obj/item/encryptionkey/syndicate/ngr
+	keyslot = new /obj/item/encryptionkey/syndicate/ngr
+	keyslot2 = new /obj/item/encryptionkey/heads/captain
 
 /obj/item/radio/headset/syndicate/alt/ngr
 	name = "new gorlex bowman headset"
 	desc = "A headset worn by members of the New Gorlex Republic on the frontier. Protects ears from flashbangs."
 	icon_state = "syndie_headset_alt"
 	hearing_protection = TRUE
-	keyslot2 = new /obj/item/encryptionkey/syndicate/ngr
+	keyslot = new /obj/item/encryptionkey/syndicate/ngr
 
 /obj/item/radio/headset/syndicate/alt/captain
 	name = "new gorlex leader bowman headset"
 	desc = "A headset worn by officers of the New Gorlex Republic on the frontier. Protects ears from flashbangs."
 	command = TRUE
-	keyslot2 = new /obj/item/encryptionkey/syndicate/ngr
+	keyslot = new /obj/item/encryptionkey/syndicate/ngr
+	keyslot2 = new /obj/item/encryptionkey/heads/captain
 
 
 //nanotrasen
