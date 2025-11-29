@@ -498,8 +498,6 @@
 	},
 /obj/machinery/light/directional/east,
 /obj/item/radio/intercom/directional/south{
-	pixel_y = -31;
-	dir = 2;
 	pixel_x = 3
 	},
 /obj/effect/turf_decal/corner_steel_grid/full{
@@ -631,7 +629,6 @@
 	pixel_y = 7
 	},
 /obj/structure/sign/poster/radio/vkxs{
-	pixel_y = 0;
 	pixel_x = -28
 	},
 /turf/open/floor/plasteel/mono/white,
@@ -785,7 +782,6 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/command{
-	dir = 2;
 	name = "Communications";
 	req_one_access = list(20, 57, 58, 10)
 	},
@@ -989,9 +985,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1183,14 +1177,12 @@
 	},
 /obj/machinery/light/small/directional/west,
 /obj/machinery/button/door{
-	dir = 2;
 	id = "bolide_bay_win_2";
 	name = "bay window shutters";
 	pixel_x = -10;
 	pixel_y = -3
 	},
 /obj/machinery/button/door{
-	dir = 2;
 	id = "bolide_bay_win_1";
 	name = "external window shutters";
 	pixel_x = -1;
@@ -1371,9 +1363,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "iY" = (
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner_steel_grid,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
 	},
@@ -1485,8 +1475,7 @@
 	pixel_x = 6
 	},
 /obj/item/clothing/gloves/gezena/marine{
-	pixel_x = -1;
-	pixel_y = 0
+	pixel_x = -1
 	},
 /obj/item/radio/headset/pgf/captain{
 	pixel_x = -9;
@@ -1720,9 +1709,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
@@ -2027,8 +2014,7 @@
 	pixel_y = 5
 	},
 /obj/item/reagent_containers/glass/bottle/morphine{
-	pixel_x = 9;
-	pixel_y = 0
+	pixel_x = 9
 	},
 /obj/structure/closet/secure_closet/wall/directional/west{
 	name = "medicine cabinet"
@@ -2082,9 +2068,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/green{
 	dir = 8
 	},
-/obj/effect/turf_decal/steeldecal/steel_decals_central7{
-	dir = 2
-	},
+/obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
 "ng" = (
@@ -2109,7 +2093,6 @@
 	dir = 8
 	},
 /obj/item/folder/pgf/blue/bolide{
-	pixel_y = 0;
 	pixel_x = -8
 	},
 /obj/item/pen{
@@ -2135,13 +2118,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "nC" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner_steel_grid,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "nJ" = (
@@ -2161,14 +2140,6 @@
 /obj/item/flashlight/seclite{
 	pixel_y = -10
 	},
-/obj/item/melee/sword/mass{
-	pixel_x = -3;
-	pixel_y = 6
-	},
-/obj/item/melee/sword/mass{
-	pixel_x = -9;
-	pixel_y = 6
-	},
 /obj/item/melee/knife/survival{
 	pixel_x = 1;
 	pixel_y = 5
@@ -2185,14 +2156,6 @@
 	pixel_x = 4;
 	pixel_y = -1
 	},
-/obj/item/melee/knife/survival{
-	pixel_x = 5;
-	pixel_y = -3
-	},
-/obj/item/melee/knife/survival{
-	pixel_x = 6;
-	pixel_y = -5
-	},
 /obj/item/attachment/rail_light{
 	pixel_x = -5;
 	pixel_y = 5
@@ -2208,6 +2171,18 @@
 /obj/item/attachment/rail_light{
 	pixel_x = -8;
 	pixel_y = 8
+	},
+/obj/item/trench_tool/gezena{
+	pixel_y = 11;
+	pixel_x = -5
+	},
+/obj/item/trench_tool/gezena{
+	pixel_y = 9;
+	pixel_x = -1
+	},
+/obj/item/trench_tool/gezena{
+	pixel_y = 16;
+	pixel_x = -9
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -2414,7 +2389,6 @@
 	pixel_x = -7
 	},
 /obj/machinery/firealarm/directional/north{
-	pixel_y = 32;
 	pixel_x = 5
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -2602,7 +2576,6 @@
 	pixel_y = -2
 	},
 /obj/structure/closet/wall/directional/south{
-	icon_door = null;
 	name = "radio locker"
 	},
 /obj/item/radio{
@@ -2814,9 +2787,7 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "rc" = (
-/obj/machinery/iv_drip{
-	pixel_y = 0
-	},
+/obj/machinery/iv_drip,
 /obj/effect/turf_decal/trimline/opaque/blue/warning{
 	dir = 8
 	},
@@ -2891,9 +2862,7 @@
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/cryo)
 "rN" = (
@@ -3674,7 +3643,6 @@
 	dir = 1
 	},
 /obj/structure/sign/poster/pgf/pioneer{
-	pixel_y = 0;
 	pixel_x = 28
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -3788,8 +3756,7 @@
 	pixel_y = 2
 	},
 /obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = -8;
-	pixel_y = 0
+	pixel_x = -8
 	},
 /obj/item/stock_parts/cell/gun/pgf{
 	pixel_x = -8;
@@ -3975,7 +3942,6 @@
 	name = "material crate"
 	},
 /obj/item/stack/sheet/glass/fifty{
-	pixel_y = 0;
 	pixel_x = -4
 	},
 /obj/item/stack/sheet/metal/fifty{
@@ -4096,13 +4062,9 @@
 	pixel_y = 16;
 	layer = 4.1
 	},
-/obj/item/modular_computer/laptop/preset{
-	pixel_x = 0;
-	pixel_y = 0
-	},
+/obj/item/modular_computer/laptop/preset,
 /obj/item/folder/pgf/blue/bolide{
-	pixel_y = -3;
-	pixel_x = 0
+	pixel_y = -3
 	},
 /obj/machinery/newscaster/directional/west,
 /turf/open/floor/plasteel/sepia,
@@ -4371,15 +4333,12 @@
 	pixel_y = 13
 	},
 /obj/item/clothing/under/gezena{
-	pixel_y = 0;
 	pixel_x = -9
 	},
 /obj/item/clothing/under/gezena{
-	pixel_y = 0;
 	pixel_x = -9
 	},
 /obj/item/clothing/under/gezena{
-	pixel_y = 0;
 	pixel_x = -9
 	},
 /obj/item/clothing/suit/toggle/gezena{
@@ -5145,7 +5104,6 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	dir = 2;
 	id = "bolide_infirmary_win"
 	},
 /turf/open/floor/engine/hull/interior,
@@ -5292,7 +5250,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
-	dir = 2;
 	id = "bolide_airlock";
 	name = "airlock shutters";
 	pixel_x = 7;
@@ -5412,12 +5369,8 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "GM" = (
-/obj/effect/turf_decal/trimline/opaque/green/filled/corner{
-	dir = 2
-	},
-/obj/effect/turf_decal/trimline/opaque/neutral/corner{
-	dir = 2
-	},
+/obj/effect/turf_decal/trimline/opaque/green/filled/corner,
+/obj/effect/turf_decal/trimline/opaque/neutral/corner,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
@@ -5547,7 +5500,6 @@
 	dir = 4
 	},
 /obj/structure/closet/wall/blue{
-	dir = 2;
 	secure = 1;
 	locked = 1;
 	pixel_y = -28;
@@ -5779,7 +5731,6 @@
 	},
 /obj/item/desk_flag/gezena{
 	pixel_x = -9;
-	pixel_y = 0;
 	layer = 4.1
 	},
 /turf/open/floor/plasteel/sepia,
@@ -5882,8 +5833,7 @@
 /obj/structure/railing,
 /obj/structure/closet/secure_closet/engineering_electrical,
 /obj/machinery/camera/autoname{
-	dir = 8;
-	pixel_y = 0
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/starboard)
@@ -6095,7 +6045,6 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/command{
-	dir = 2;
 	name = "CIC";
 	req_one_access = list(20, 57, 58)
 	},
@@ -6127,7 +6076,6 @@
 	pixel_y = 18
 	},
 /obj/item/pen/fountain{
-	pixel_x = 0;
 	pixel_y = 17
 	},
 /obj/item/megaphone/command{
@@ -6140,7 +6088,6 @@
 	},
 /obj/machinery/turretid/ship{
 	id = "bolide_grid";
-	pixel_y = 0;
 	pixel_x = -28
 	},
 /turf/open/floor/plasteel/telecomms_floor,
@@ -6265,9 +6212,7 @@
 /obj/structure/platform/ship_three{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner_steel_grid/full{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner_steel_grid/full,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "Lt" = (
@@ -6626,8 +6571,7 @@
 	pixel_y = 6
 	},
 /obj/item/clothing/neck/cloak/gezena/engi{
-	pixel_x = -5;
-	pixel_y = 0
+	pixel_x = -5
 	},
 /obj/item/clothing/neck/cloak/gezena/engi{
 	pixel_x = -5
@@ -6723,7 +6667,6 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/grunge{
 	name = "Communications Equipment";
-	dir = 2;
 	req_one_access = list(20, 57, 58, 10);
 	fast_close = 1
 	},
@@ -7162,7 +7105,6 @@
 	pixel_y = -3
 	},
 /obj/item/storage/belt/sabre/pgf{
-	pixel_y = 0;
 	pixel_x = -2
 	},
 /obj/item/radio/headset/pgf/alt/captain{
@@ -7170,8 +7112,7 @@
 	pixel_y = 1
 	},
 /obj/item/radio/headset/pgf/captain{
-	pixel_x = -10;
-	pixel_y = 0
+	pixel_x = -10
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/green{
 	dir = 9
@@ -7559,8 +7500,7 @@
 	dir = 1
 	},
 /obj/machinery/vending/modularpc{
-	pixel_x = 2;
-	pixel_y = 0
+	pixel_x = 2
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
@@ -7664,9 +7604,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -7907,7 +7845,6 @@
 	name = "refrigerator"
 	},
 /obj/item/storage/ration/crayons{
-	pixel_y = 0;
 	pixel_x = -6
 	},
 /obj/structure/table/reinforced,
@@ -8276,9 +8213,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "Xo" = (
-/obj/effect/turf_decal/trimline/opaque/green/filled{
-	pixel_y = 0
-	},
+/obj/effect/turf_decal/trimline/opaque/green/filled,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security)
 "Xr" = (
@@ -8378,8 +8313,7 @@
 	},
 /obj/machinery/newscaster/directional/north,
 /obj/machinery/camera/autoname{
-	dir = 9;
-	pixel_y = 0
+	dir = 9
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/engineering/communications)
@@ -8442,7 +8376,6 @@
 /area/ship/crew/ccommons)
 "YM" = (
 /obj/machinery/door/airlock/medical{
-	dir = 2;
 	name = "Infirmary"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -8608,9 +8541,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Zf" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/light/directional/north,
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
 /turf/open/floor/plasteel/mono/white,
@@ -8739,9 +8670,7 @@
 	pixel_x = 21;
 	pixel_y = -8
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono,
 /area/ship/engineering/communications)
