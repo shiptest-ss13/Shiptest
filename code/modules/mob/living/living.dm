@@ -2098,27 +2098,3 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
  */
 /mob/living/proc/has_reagent(reagent, amount = -1, needs_metabolizing = FALSE)
 	return reagents.has_reagent(reagent, amount, needs_metabolizing)
-
-/**
- * Removes reagents from the mob
- *
- * This will locate the reagent in the mob and remove it from reagent holders
- * Vars:
- * * reagent (typepath) takes a PATH to a reagent.
- * * custom_amount (int)(optional) checks for having a specific amount of that chemical.
- * * safety (bool) check for the trans_id_to
- */
-/mob/living/proc/remove_reagent(reagent, custom_amount, safety)
-	if(!custom_amount)
-		custom_amount = get_reagent_amount(reagent)
-	return reagents.remove_reagent(reagent, custom_amount, safety)
-
-/**
- * Returns the amount of a reagent from the mob
- *
- * This will locate the reagent in the mob and return the total amount from all reagent holders
- * Vars:
- * * reagent (typepath) takes a PATH to a reagent.
- */
-/mob/living/proc/get_reagent_amount(reagent)
-	return reagents.get_reagent_amount(reagent)

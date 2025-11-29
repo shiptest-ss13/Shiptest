@@ -664,7 +664,7 @@
 /datum/chemical_reaction/sand_bubbles/plasma			// Subbing plasma bubbles for reg
 	required_reagents = list(/datum/reagent/consumable/molten/plasma_fizz = 3, /datum/reagent/silicon = 2)
 
-/datum/chemical_reaction/eudamonia
-	results = list(/datum/reagent/consumable/ethanol/eudamonia = 2)
+/datum/chemical_reaction/eudaimonia
+	results = list(/datum/reagent/consumable/ethanol/eudaimonia = 2)
 	required_reagents = list(/datum/reagent/medicine/lithium_carbonate = 2, /datum/reagent/consumable/ethanol/hcider = 2)
 	mix_message = "The LiCarb dust incorporates into the cider, producing a pleasant chemical coloration!"
