@@ -101,9 +101,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
 "bP" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/red,
-/area/ship/crew)
+/obj/structure/table/wood,
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/carpet/red_gold,
+/area/ship/crew/dorm/captain)
 "cc" = (
 /obj/item/clothing/suit/space/hardsuit/syndi/ngr,
 /obj/item/tank/jetpack/oxygen/security,
@@ -303,18 +304,6 @@
 	color = "#a3a2a0"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
-"eC" = (
-/obj/structure/platform/ship_two{
-	dir = 1
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "fi" = (
@@ -1279,14 +1268,7 @@
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
 	},
-/obj/item/plate_shard{
-	pixel_x = 1;
-	pixel_y = 5
-	},
-/obj/item/plate_shard{
-	pixel_x = 12;
-	pixel_y = -8
-	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "rG" = (
@@ -1428,14 +1410,12 @@
 	pixel_x = 9;
 	pixel_y = 6
 	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/bridge)
-"su" = (
-/obj/effect/turf_decal/corner/opaque/tan/half{
-	dir = 4
+/obj/machinery/turretid/ship{
+	id = "boobgun";
+	pixel_x = -27;
+	pixel_y = 4
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "sK" = (
 /obj/effect/turf_decal/corner/opaque/tan{
@@ -1536,6 +1516,13 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
+"vu" = (
+/obj/effect/turf_decal/corner/opaque/tan/half{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "vA" = (
 /obj/effect/turf_decal/corner/opaque/beige/half{
 	dir = 1
@@ -1862,10 +1849,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "AF" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel,
-/area/ship/crew/canteen)
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/red,
+/area/ship/crew)
 "Bs" = (
 /obj/effect/turf_decal/corner/opaque/tan/full,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2184,11 +2170,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"Hp" = (
-/obj/structure/table/wood,
-/obj/machinery/airalarm/directional/east,
-/turf/open/floor/carpet/red_gold,
-/area/ship/crew/dorm/captain)
 "Hs" = (
 /obj/effect/turf_decal/corner/transparent/black/full,
 /obj/effect/turf_decal/industrial/warning{
@@ -2650,6 +2631,11 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
+"Ou" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
 "Ow" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
@@ -2900,6 +2886,18 @@
 "RT" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
+"RW" = (
+/obj/structure/platform/ship_two{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "Se" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -3130,6 +3128,23 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
+"TY" = (
+/obj/effect/turf_decal/corner/opaque/beige/half{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 9
+	},
+/obj/item/plate_shard{
+	pixel_x = 1;
+	pixel_y = 5
+	},
+/obj/item/plate_shard{
+	pixel_x = 12;
+	pixel_y = -8
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/canteen)
 "Ua" = (
 /obj/effect/turf_decal/stairs{
 	color = "#a3a2a0";
@@ -3251,16 +3266,6 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
-"Wp" = (
-/obj/effect/turf_decal/corner/opaque/beige/half{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 9
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/canteen)
 "Wq" = (
 /turf/template_noop,
 /area/template_noop)
@@ -3757,7 +3762,7 @@ iX
 iX
 yN
 ws
-bP
+AF
 sO
 yF
 iB
@@ -3864,7 +3869,7 @@ Wq
 ep
 TJ
 JI
-AF
+Ou
 Gz
 mI
 Ac
@@ -3885,8 +3890,8 @@ Wq
 Wq
 Sr
 qn
+TY
 rC
-Wp
 RH
 So
 ep
@@ -3960,7 +3965,7 @@ ax
 DM
 Fo
 iV
-su
+vu
 ZZ
 WG
 lw
@@ -3995,7 +4000,7 @@ Wq
 Wq
 Wq
 IY
-Hp
+bP
 PH
 wf
 il
@@ -4174,7 +4179,7 @@ Wq
 Zd
 Wk
 jv
-eC
+RW
 Bt
 LB
 Zd
