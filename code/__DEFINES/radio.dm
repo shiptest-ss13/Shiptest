@@ -59,9 +59,9 @@
 // Frequencies are always odd numbers and range from 1201 to 1599.
 
 #define FREQ_SYNDICATE 1213 // Syndicate Coalition comms frequency, dark brown
-#define FREQ_CYBERSUN 1214 // Cybersun Industries and Hardliners comms frequency, teal
-#define FREQ_NGR 1215 // New Gorlex Republic comms frequency, beige
-#define FREQ_SUNS 1216 // Student Union comms frequency, lilac
+#define FREQ_CYBERSUN 1203 // Cybersun Industries and Hardliners comms frequency, teal
+#define FREQ_NGR 1205 // New Gorlex Republic comms frequency, beige
+#define FREQ_SUNS 1207 // Student Union comms frequency, lilac
 #define FREQ_CENTCOM 1337 // NT-CentCom comms frequency, gray
 #define FREQ_SOLGOV 1345 // SolGov comms frequency, dark blue WS ADDITION
 #define FREQ_INTEQ 1347 // Inteq comms frequency, light brown
