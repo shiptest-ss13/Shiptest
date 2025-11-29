@@ -11,7 +11,7 @@
 
 /obj/item/attachment/gun/ballistic/hand_attack_interaction(mob/user)
 	var/obj/item/gun/ballistic/ballistic_gun = attached_gun
-	if(ballistic_gun.magazine)
+	if(ballistic_gun.magazine && !ballistic_gun.internal_magazine)
 		ballistic_gun.eject_magazine(user)
 		return ..()
 
