@@ -77,7 +77,7 @@
 	return ..()
 
 /datum/component/pellet_cloud/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_PARENT_PREQDELETED, PROC_REF(nullspace_parent))
+	RegisterSignal(parent, COMSIG_PREQDELETED, PROC_REF(nullspace_parent))
 	if(isammocasing(parent))
 		RegisterSignal(parent, COMSIG_PELLET_CLOUD_INIT, PROC_REF(create_casing_pellets))
 	else if(isgrenade(parent))
@@ -89,7 +89,7 @@
 		RegisterSignal(parent, COMSIG_SUPPLYPOD_LANDED, PROC_REF(create_blast_pellets))
 
 /datum/component/pellet_cloud/UnregisterFromParent()
-	UnregisterSignal(parent, list(COMSIG_PARENT_PREQDELETED, COMSIG_PELLET_CLOUD_INIT, COMSIG_GRENADE_PRIME, COMSIG_GRENADE_ARMED, COMSIG_MOVABLE_MOVED, COMSIG_MINE_TRIGGERED, COMSIG_ITEM_DROPPED))
+	UnregisterSignal(parent, list(COMSIG_PREQDELETED, COMSIG_PELLET_CLOUD_INIT, COMSIG_GRENADE_PRIME, COMSIG_GRENADE_ARMED, COMSIG_MOVABLE_MOVED, COMSIG_MINE_TRIGGERED, COMSIG_ITEM_DROPPED))
 
 
 /**
@@ -120,7 +120,7 @@
 				spread = round((i / num_pellets - 0.5) * distro)
 
 		RegisterSignal(shell.BB, COMSIG_PROJECTILE_SELF_ON_HIT, PROC_REF(pellet_hit))
-		RegisterSignals(shell.BB, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PARENT_QDELETING), PROC_REF(pellet_range))
+		RegisterSignals(shell.BB, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_QDELETING), PROC_REF(pellet_range))
 		shell.BB.damage = original_damage
 		shell.BB.wound_bonus = original_wb
 		shell.BB.bare_wound_bonus = original_bwb
@@ -218,7 +218,7 @@
 
 		if(martyr.stat != DEAD && martyr.client)
 			LAZYADD(purple_hearts, martyr)
-			RegisterSignal(martyr, COMSIG_PARENT_QDELETING, PROC_REF(on_target_qdel), override=TRUE)
+			RegisterSignal(martyr, COMSIG_QDELETING, PROC_REF(on_target_qdel), override=TRUE)
 
 		for(var/i in 1 to round(pellets_absorbed * 0.5))
 			pew(martyr)
@@ -251,8 +251,8 @@
 
 	targets_hit[target]++
 	if(targets_hit[target] == 1)
-		RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(on_target_qdel), override=TRUE)
-	UnregisterSignal(P, list(COMSIG_PARENT_QDELETING, COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PROJECTILE_SELF_ON_HIT))
+		RegisterSignal(target, COMSIG_QDELETING, PROC_REF(on_target_qdel), override=TRUE)
+	UnregisterSignal(P, list(COMSIG_QDELETING, COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PROJECTILE_SELF_ON_HIT))
 	if(terminated == num_pellets)
 		finalize()
 
@@ -262,7 +262,7 @@
 
 	pellets -= P
 	terminated++
-	UnregisterSignal(P, list(COMSIG_PARENT_QDELETING, COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PROJECTILE_SELF_ON_HIT))
+	UnregisterSignal(P, list(COMSIG_QDELETING, COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PROJECTILE_SELF_ON_HIT))
 	if(terminated == num_pellets)
 		finalize()
 
@@ -279,7 +279,7 @@
 	P.suppressed = SUPPRESSED_VERY // set the projectiles to make no message so we can do our own aggregate message
 	P.preparePixelProjectile(target, parent)
 	RegisterSignal(P, COMSIG_PROJECTILE_SELF_ON_HIT, PROC_REF(pellet_hit))
-	RegisterSignals(P, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PARENT_QDELETING), PROC_REF(pellet_range))
+	RegisterSignals(P, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_QDELETING), PROC_REF(pellet_range))
 	pellets += P
 	P.fire()
 
@@ -293,7 +293,7 @@
 
 	for(var/atom/target in targets_hit)
 		var/num_hits = targets_hit[target]
-		UnregisterSignal(target, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(target, COMSIG_QDELETING)
 		var/obj/item/bodypart/hit_part
 		if(isbodypart(target))
 			hit_part = target
@@ -317,7 +317,7 @@
 		var/mob/living/martyr = M
 		if(martyr.stat == DEAD && martyr.client)
 			martyr.client.give_award(/datum/award/achievement/misc/lookoutsir, martyr)
-	UnregisterSignal(parent, COMSIG_PARENT_PREQDELETED)
+	UnregisterSignal(parent, COMSIG_PREQDELETED)
 	if(queued_delete)
 		qdel(parent)
 	qdel(src)
@@ -349,7 +349,7 @@
 
 	LAZYCLEARLIST(bodies)
 	for(var/mob/living/new_mob in get_turf(parent))
-		RegisterSignal(new_mob, COMSIG_PARENT_QDELETING, PROC_REF(on_target_qdel), override=TRUE)
+		RegisterSignal(new_mob, COMSIG_QDELETING, PROC_REF(on_target_qdel), override=TRUE)
 		LAZYADD(bodies, new_mob)
 
 /// Someone who was originally "under" the grenade has moved off the tile and is now eligible for being a martyr and "covering" it
@@ -371,7 +371,7 @@
 /datum/component/pellet_cloud/proc/on_target_qdel(atom/target)
 	SIGNAL_HANDLER
 
-	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(target, COMSIG_QDELETING)
 	targets_hit -= target
 	LAZYREMOVE(bodies, target)
 	LAZYREMOVE(purple_hearts, target)

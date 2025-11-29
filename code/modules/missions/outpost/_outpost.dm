@@ -3,15 +3,15 @@
 
 /datum/mission/outpost/New(_outpost)
 	source_outpost = _outpost
-	RegisterSignal(source_outpost, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
+	RegisterSignal(source_outpost, COMSIG_QDELETING, PROC_REF(on_vital_delete))
 	return ..()
 
 /datum/mission/outpost/Destroy()
-	UnregisterSignal(source_outpost, COMSIG_PARENT_QDELETING, COMSIG_OVERMAP_LOADED)
+	UnregisterSignal(source_outpost, COMSIG_QDELETING, COMSIG_OVERMAP_LOADED)
 	LAZYREMOVE(source_outpost.missions, src)
 	source_outpost = null
 	if(servant)
-		UnregisterSignal(servant, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(servant, COMSIG_QDELETING)
 		LAZYREMOVE(servant.missions, src)
 		servant = null
 	for(var/bound in bound_atoms)
@@ -86,5 +86,5 @@
 	if(sparks)
 		do_sparks(3, FALSE, get_turf(bound))
 	LAZYSET(bound_atoms, bound, list(fail_on_delete, destroy_cb))
-	RegisterSignal(bound, COMSIG_PARENT_QDELETING, PROC_REF(bound_deleted))
+	RegisterSignal(bound, COMSIG_QDELETING, PROC_REF(bound_deleted))
 	return bound
