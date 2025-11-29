@@ -120,7 +120,7 @@
 		return
 
 	if(!force)
-		if(M.can_inject(user, 1))
+		if(M.can_inject(user))
 			to_chat(user, span_warning("You stab [M] with the pen."))
 			if(!stealth)
 				to_chat(M, span_danger("You feel a tiny prick!"))

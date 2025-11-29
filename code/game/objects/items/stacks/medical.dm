@@ -43,7 +43,7 @@
 
 /// In which we print the message that we're starting to heal someone, then we try healing them. Does the do_after whether or not it can actually succeed on a targeted mob
 /obj/item/stack/medical/proc/try_heal(mob/living/patient, mob/user, silent = FALSE)
-	if(!patient.can_inject(user, TRUE))
+	if(!patient.can_inject(user))
 		return
 
 	if(patient == user)
@@ -53,7 +53,7 @@
 				span_notice("[user] starts to apply [src] on [user.p_them()]self..."),
 				span_notice("You begin applying [src] on yourself..."),
 			)
-		if(!do_after(user, self_delay, patient, extra_checks = CALLBACK(patient, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
+		if(!do_after(user, self_delay, patient, extra_checks = CALLBACK(patient, TYPE_PROC_REF(/mob/living, can_inject), user)))
 			return
 
 	else if(other_delay)
@@ -63,7 +63,7 @@
 				span_notice("[user] starts to apply [src] on [patient]."),
 				span_notice("You begin applying [src] on [patient]..."),
 			)
-		if(!do_after(user, other_delay, patient, extra_checks = CALLBACK(patient, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
+		if(!do_after(user, other_delay, patient, extra_checks = CALLBACK(patient, TYPE_PROC_REF(/mob/living, can_inject), user)))
 			return
 
 	if(heal(patient, user))
