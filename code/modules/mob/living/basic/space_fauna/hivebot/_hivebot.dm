@@ -177,7 +177,7 @@
 
 /mob/living/basic/hivebot/core/Initialize(mapload)
 	. = ..()
-	transform *= 1.3
+	update_transform(1.3)
 
 /mob/living/basic/hivebot/core/death(gibbed)
 	//once we get better sprites i want this to be like the claw's death. aka fucking cool.
