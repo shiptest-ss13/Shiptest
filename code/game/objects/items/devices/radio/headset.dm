@@ -191,7 +191,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	hearing_protection = TRUE
 	keyslot = new /obj/item/encryptionkey/syndicate/ngr
 
-/obj/item/radio/headset/syndicate/alt/captain
+/obj/item/radio/headset/syndicate/alt/captain/ngr
 	name = "new gorlex leader bowman headset"
 	desc = "A headset worn by officers of the New Gorlex Republic on the frontier. Protects ears from flashbangs."
 	command = TRUE
