@@ -4,9 +4,7 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ao" = (
@@ -407,15 +405,6 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
-"gg" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "1-6"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering)
 "gj" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 10
@@ -625,16 +614,6 @@
 "iB" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/engine)
-"iF" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "iJ" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -1093,6 +1072,16 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/pod/dark,
 /area/ship/engineering)
+"oO" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "oQ" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -1380,11 +1369,11 @@
 	density = 0
 	},
 /obj/item/folder,
-/obj/item/folder/documents/syndicate,
-/obj/item/folder/documents/syndicate,
 /obj/item/pen,
 /obj/item/pen,
 /obj/item/pen/fountain,
+/obj/item/folder/documents/syndicate/ngr,
+/obj/item/folder/syndicate,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "rM" = (
@@ -2093,6 +2082,16 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/engineering/engine)
+"Eh" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Em" = (
 /obj/effect/turf_decal/corner/opaque/tan/half{
 	dir = 1
@@ -2495,6 +2494,14 @@
 "LH" = (
 /obj/structure/table/wood,
 /obj/machinery/airalarm/directional/east,
+/obj/item/clipboard{
+	pixel_x = -14;
+	pixel_y = 3
+	},
+/obj/item/pen{
+	pixel_x = -7;
+	pixel_y = 5
+	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm/captain)
 "LJ" = (
@@ -2547,16 +2554,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
-"MC" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/cable{
-	icon_state = "6-8"
-	},
-/obj/structure/cable{
-	icon_state = "6-9"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering)
 "MI" = (
 /obj/machinery/computer/helm{
 	dir = 8;
@@ -2659,14 +2656,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
-"NI" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/ship/engineering)
 "NK" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -3098,6 +3087,14 @@
 "SI" = (
 /obj/structure/table/wood,
 /obj/machinery/light/small/directional/north,
+/obj/item/flashlight/lamp{
+	pixel_x = -5;
+	pixel_y = 3
+	},
+/obj/item/desk_flag/ngr{
+	pixel_x = 9;
+	pixel_y = 10
+	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm/captain)
 "Tf" = (
@@ -3337,6 +3334,25 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
+"VE" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
+"VM" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
 "Wk" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -3501,7 +3517,7 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	icon_state = "2-5"
+	icon_state = "1-6"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -3668,9 +3684,9 @@ Wq
 IJ
 QE
 RT
-iF
-gg
-aj
+oO
+YK
+Eh
 RT
 mW
 RT
@@ -3678,9 +3694,9 @@ zA
 RT
 mW
 RT
+Eh
+VM
 aj
-YK
-NI
 RT
 QE
 EY
@@ -3692,7 +3708,7 @@ QE
 IV
 KL
 Xx
-MC
+VE
 qZ
 Dp
 MX
