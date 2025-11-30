@@ -16,7 +16,7 @@
 	maxbodytemp = 400
 	unsuitable_atmos_damage = 15
 	faction = list(FACTION_RAMZI)
-	loot = null
+	loot = list()
 	check_friendly_fire = TRUE
 	dodging = TRUE
 	rapid_melee = 2
@@ -634,6 +634,12 @@
 	armor_base = /obj/item/clothing/suit/space/syndicate/ramzi
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space/soft/surplus
 	environment_smash = ENVIRONMENT_SMASH_NONE
+
+/mob/living/simple_animal/hostile/human/ramzi/civilian/towel
+	name = "Ramzi Clique Soapmaster"
+	desc = "A deserter from the Gorlex Marauders turned pirate. This one is not only unarmed, but also just got out the shower."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/towel
+	armor_base = null
 
 /mob/living/simple_animal/hostile/viscerator
 	name = "viscerator"

@@ -84,19 +84,23 @@
 		return new girder_type(src)
 	return null
 
-/turf/closed/wall/attack_override(obj/item/W, mob/user, turf/loc)
+/turf/closed/wall/attack_override(obj/item/W, mob/user, turf/loc, list/modifiers)
 	if(!iswallturf(src))
 		return
-	if(try_clean(W, user, loc) || try_wallmount(W, user, loc) || try_decon(W, user, loc) || try_destroy(W, user, loc))
-		return
+	if(try_clean(W, user, loc, modifiers) || try_wallmount(W, user, loc) || try_decon(W, user, loc) || try_destroy(W, user, loc))
+		return TRUE
 
-/turf/closed/wall/proc/try_clean(obj/item/W, mob/user, turf/T)
-	if((user.a_intent != INTENT_HELP))
+/turf/closed/wall/proc/try_clean(obj/item/W, mob/user, turf/T, list/modifiers)
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
 		return FALSE
 
 	if(W.tool_behaviour == TOOL_WELDER)
-		if(!W.tool_start_check(user, src, amount=0) || (atom_integrity >= max_integrity))
+		if(!W.tool_start_check(user, src, amount=0))
 			return FALSE
+
+		if(atom_integrity >= max_integrity)
+			to_chat(user, span_notice("[src] doesn't have any visible damage!"))
+			return TRUE
 
 		to_chat(user, span_notice("You begin fixing dents on the wall..."))
 		if(W.use_tool(src, user, breakdown_duration, volume=100))
@@ -105,7 +109,7 @@
 				dent_decals = null
 				update_appearance()
 			alter_integrity(repair_amount)
-			return TRUE
+		return TRUE
 
 	return FALSE
 
