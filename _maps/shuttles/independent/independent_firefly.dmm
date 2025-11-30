@@ -2327,6 +2327,18 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "fireflygun"
 	},
+/obj/item/ammo_box/magazine/boomslang/short{
+	pixel_x = 0;
+	pixel_y = -10
+	},
+/obj/item/ammo_box/magazine/boomslang/short{
+	pixel_x = 0;
+	pixel_y = -10
+	},
+/obj/item/ammo_box/magazine/boomslang/short{
+	pixel_x = 0;
+	pixel_y = -9
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "AN" = (
@@ -3345,15 +3357,15 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/trinary/mixer/airmix{
-	dir = 8;
-	piping_layer = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 10
 	},
 /obj/structure/cable/green{
 	icon_state = "5-8"
+	},
+/obj/machinery/atmospherics/components/trinary/mixer/airmix/inverse{
+	dir = 8;
+	piping_layer = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/starboard)
@@ -3492,10 +3504,6 @@
 	pixel_x = 9;
 	pixel_y = 4
 	},
-/obj/item/storage/toolbox/ammo/shotgun{
-	pixel_x = -6;
-	pixel_y = -7
-	},
 /obj/item/storage/toolbox/ammo/c357{
 	pixel_x = -6;
 	pixel_y = 4
@@ -3503,6 +3511,10 @@
 /obj/item/gun_maint_kit{
 	pixel_x = 8;
 	pixel_y = -5
+	},
+/obj/item/storage/toolbox/ammo/c65{
+	pixel_x = -6;
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -3853,14 +3865,6 @@
 /obj/structure/closet/crate/internals{
 	name = "surplus EVA crate"
 	},
-/obj/item/clothing/suit/space/syndicate/generic/grey{
-	pixel_x = 10;
-	pixel_y = -4
-	},
-/obj/item/clothing/head/helmet/space/syndicate/generic{
-	pixel_x = 8;
-	pixel_y = 8
-	},
 /obj/item/clothing/head/helmet/space/eva{
 	pixel_x = -8;
 	pixel_y = 7
@@ -3878,6 +3882,14 @@
 	pixel_y = -7
 	},
 /obj/machinery/light/small/directional/west,
+/obj/item/clothing/suit/space/eva{
+	pixel_x = 6;
+	pixel_y = -5
+	},
+/obj/item/clothing/head/helmet/space/eva{
+	pixel_x = 8;
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Us" = (
@@ -4016,11 +4028,11 @@
 "Vz" = (
 /obj/structure/guncloset,
 /obj/item/gun/ballistic/automatic/pistol/ringneck/indie/no_mag,
-/obj/item/gun/ballistic/shotgun/hellfire/empty,
 /obj/item/gun/ballistic/automatic/pistol/spitter,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "fireflygun"
 	},
+/obj/item/gun/ballistic/automatic/marksman/boomslang/indie/no_mag,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "VD" = (
