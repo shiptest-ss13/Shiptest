@@ -4,7 +4,9 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ao" = (
@@ -29,6 +31,16 @@
 /obj/effect/spawner/random/food_or_drink/ration,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
+"aq" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "5-10"
+	},
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
 "ax" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 5
@@ -478,6 +490,16 @@
 /obj/item/roller,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
+"he" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "hp" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
@@ -1035,10 +1057,10 @@
 "nE" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
-	icon_state = "5-10"
+	icon_state = "6-8"
 	},
 /obj/structure/cable{
-	icon_state = "5-8"
+	icon_state = "6-9"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -1071,16 +1093,6 @@
 	},
 /obj/machinery/light/directional/east,
 /turf/open/floor/pod/dark,
-/area/ship/engineering)
-"oO" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plating,
 /area/ship/engineering)
 "oQ" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -1676,6 +1688,15 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew)
+"wt" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
 "wv" = (
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2082,16 +2103,6 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/engineering/engine)
-"Eh" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "Em" = (
 /obj/effect/turf_decal/corner/opaque/tan/half{
 	dir = 1
@@ -2221,6 +2232,13 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/button/door{
+	name = "Engine Shutters";
+	id = "boobengine1";
+	pixel_x = 21;
+	pixel_y = 3;
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "GL" = (
@@ -2228,6 +2246,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/dark,
+/area/ship/engineering)
+"GT" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable,
+/turf/open/floor/plating,
 /area/ship/engineering)
 "GV" = (
 /obj/machinery/door/firedoor/border_only,
@@ -3334,25 +3360,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
-"VE" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/cable{
-	icon_state = "6-8"
-	},
-/obj/structure/cable{
-	icon_state = "6-9"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering)
-"VM" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "2-5"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering)
 "Wk" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -3684,9 +3691,9 @@ Wq
 IJ
 QE
 RT
-oO
+he
 YK
-Eh
+aj
 RT
 mW
 RT
@@ -3694,9 +3701,9 @@ zA
 RT
 mW
 RT
-Eh
-VM
 aj
+wt
+GT
 RT
 QE
 EY
@@ -3708,7 +3715,7 @@ QE
 IV
 KL
 Xx
-VE
+nE
 qZ
 Dp
 MX
@@ -3716,7 +3723,7 @@ Dt
 GL
 UX
 oQ
-nE
+aq
 ud
 mV
 Ow
