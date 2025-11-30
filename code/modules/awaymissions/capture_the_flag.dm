@@ -507,14 +507,12 @@
 	if(isturf(loc))
 		qdel(src)
 
-/proc/is_ctf_target(atom/target)
+/proc/is_ctf_player(atom/target)
 	. = FALSE
-	if(istype(target, /obj/structure/barricade/security/ctf))
-		. = TRUE
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
 		if(istype(H.wear_suit, /obj/item/clothing/suit/armor/vest/bulletproof))
-			. = TRUE
+			return TRUE
 
 // OUTFITS
 
