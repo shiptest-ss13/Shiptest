@@ -329,6 +329,15 @@
 	suit = /obj/item/clothing/suit/armor/ngr/captain
 	shoes = /obj/item/clothing/shoes/combat
 
+/datum/outfit/job/syndicate/captain/ngr/stripped
+	name = "Syndicate - Captain - Stripped (New Gorlex Republic)"
+	faction = FACTION_NGR
+
+	uniform = /obj/item/clothing/under/syndicate/ngr/officer
+	head = null
+	suit = null
+	shoes = /obj/item/clothing/shoes/combat
+
 /datum/outfit/job/syndicate/captain/cybersun
 	name = "Syndicate - Captain (Cybersun)"
 
@@ -598,6 +607,18 @@
 	suit_store = null
 	gloves = /obj/item/clothing/gloves/color/black
 
+/datum/outfit/job/syndicate/hos/ngr/stripped
+	name = "Syndicate - Lieutenant - Stripped (New Gorlex Republic)"
+	faction = FACTION_NGR
+	id_assignment = "Lieutenant"
+
+	uniform = /obj/item/clothing/under/syndicate/ngr/officer
+	head = null
+	suit = null
+	id = /obj/item/card/id/syndicate_command/crew_id
+	shoes = /obj/item/clothing/shoes/combat
+	suit_store = null
+	gloves = /obj/item/clothing/gloves/color/black
 
 /datum/outfit/job/syndicate/hos/twink
 	name = "Syndicate - Lieutenant (Twinkleshine, NGR)"
@@ -1049,6 +1070,18 @@
 	shoes = /obj/item/clothing/shoes/workboots
 	ears = /obj/item/radio/headset/alt
 
+/datum/outfit/job/syndicate/miner/ngr/stripped
+	name = "Syndicate - Wrecker - Stripped (New Gorlex Republic)"
+	faction = FACTION_NGR
+	id_assignment = "Wrecker"
+
+	head = null
+	suit = null
+	uniform = /obj/item/clothing/under/syndicate/ngr/jumpsuit
+	accessory = null
+	shoes = /obj/item/clothing/shoes/workboots
+	ears = /obj/item/radio/headset/alt
+
 /datum/outfit/job/syndicate/miner/twink
 	name = "Syndicate - Miner (Twinkleshine, SUNS)"
 
@@ -1154,6 +1187,17 @@
 
 	head = /obj/item/clothing/head/hardhat/ngr
 	suit = /obj/item/clothing/suit/hazardvest/ngr
+	uniform = /obj/item/clothing/under/syndicate/ngr
+	shoes = /obj/item/clothing/shoes/workboots
+	glasses = null
+
+/datum/outfit/job/syndicate/engineer/ngr/stripped
+	name = "Syndicate - Mechanic - Stripped (New Gorlex Republic)"
+	faction = FACTION_NGR
+	id_assignment = "Mechanic"
+
+	head = null
+	suit = null
 	uniform = /obj/item/clothing/under/syndicate/ngr
 	shoes = /obj/item/clothing/shoes/workboots
 	glasses = null
