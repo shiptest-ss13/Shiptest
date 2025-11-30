@@ -4,6 +4,9 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ao" = (
@@ -404,6 +407,15 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
+"gg" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
 "gj" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 10
@@ -573,6 +585,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "il" = (
@@ -610,6 +625,16 @@
 "iB" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/engine)
+"iF" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "iJ" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -1030,6 +1055,12 @@
 /area/ship/engineering/engine)
 "nE" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "5-10"
+	},
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "nL" = (
@@ -2516,6 +2547,16 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
+"MC" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
 "MI" = (
 /obj/machinery/computer/helm{
 	dir = 8;
@@ -2618,6 +2659,14 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
+"NI" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "NK" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -3211,6 +3260,9 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Uz" = (
@@ -3448,6 +3500,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "YQ" = (
@@ -3613,8 +3668,8 @@ Wq
 IJ
 QE
 RT
-aj
-YK
+iF
+gg
 aj
 RT
 mW
@@ -3625,7 +3680,7 @@ mW
 RT
 aj
 YK
-aj
+NI
 RT
 QE
 EY
@@ -3637,7 +3692,7 @@ QE
 IV
 KL
 Xx
-nE
+MC
 qZ
 Dp
 MX
