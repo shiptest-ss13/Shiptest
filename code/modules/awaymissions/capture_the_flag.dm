@@ -47,7 +47,7 @@
 	AddComponent(/datum/component/two_handed)
 
 /obj/item/ctf/process(seconds_per_tick)
-	if(is_ctf_target(loc)) //don't reset from someone's hands.
+	if(is_ctf_player(loc)) //don't reset from someone's hands.
 		return PROCESS_KILL
 	if(world.time > reset_cooldown)
 		forceMove(get_turf(src.reset))
@@ -75,7 +75,7 @@
 //working with attack hand feels like taking my brain and putting it through an industrial pill press so i'm gonna be a bit liberal with the comments
 /obj/item/ctf/attack_hand(mob/living/user, list/modifiers)
 	//pre normal check item stuff, this is for our special flag checks
-	if(!is_ctf_target(user) && !anyonecanpickup)
+	if(!is_ctf_player(user) && !anyonecanpickup)
 		to_chat(user, span_warning("Non-players shouldn't be moving the flag!"))
 		return
 	if(team in user.faction)
@@ -620,7 +620,7 @@
 	return
 
 /obj/structure/trap/ctf/trap_effect(mob/living/L)
-	if(!is_ctf_target(L))
+	if(!is_ctf_player(L))
 		return
 	if(!(src.team in L.faction))
 		to_chat(L, span_danger("<B>Stay out of the enemy spawn!</B>"))
