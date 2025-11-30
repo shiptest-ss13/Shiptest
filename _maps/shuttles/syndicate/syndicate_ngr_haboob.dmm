@@ -28,18 +28,6 @@
 /obj/effect/spawner/random/food_or_drink/ration,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
-"aq" = (
-/obj/structure/platform/ship_two{
-	dir = 1
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
 "ax" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 5
@@ -135,9 +123,17 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
 "bP" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/red,
-/area/ship/crew)
+/obj/structure/platform/ship_two{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "cc" = (
 /obj/item/clothing/suit/space/hardsuit/syndi/ngr,
 /obj/item/tank/jetpack/oxygen/security,
@@ -386,11 +382,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
-"ga" = (
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel,
-/area/ship/crew/canteen)
 "gf" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
@@ -1551,6 +1542,15 @@
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/pod/dark,
 /area/ship/engineering)
+"uX" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/red,
+/area/ship/crew)
+"vd" = (
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
 "vf" = (
 /obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
@@ -1562,28 +1562,6 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
-"vp" = (
-/obj/structure/table/wood,
-/obj/machinery/airalarm/directional/east,
-/turf/open/floor/carpet/red_gold,
-/area/ship/crew/dorm/captain)
-"vu" = (
-/obj/effect/turf_decal/corner/opaque/beige/half{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/tan{
-	dir = 9
-	},
-/obj/item/plate_shard{
-	pixel_x = 1;
-	pixel_y = 5
-	},
-/obj/item/plate_shard{
-	pixel_x = 12;
-	pixel_y = -8
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/canteen)
 "vA" = (
 /obj/effect/turf_decal/corner/opaque/beige/half{
 	dir = 1
@@ -2122,6 +2100,23 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
+"ET" = (
+/obj/effect/turf_decal/corner/opaque/beige/half{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 9
+	},
+/obj/item/plate_shard{
+	pixel_x = 1;
+	pixel_y = 5
+	},
+/obj/item/plate_shard{
+	pixel_x = 12;
+	pixel_y = -8
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/canteen)
 "EY" = (
 /obj/effect/turf_decal/corner/opaque/tan/border,
 /obj/effect/turf_decal/trimline/opaque/bar/arrow_cw{
@@ -2466,6 +2461,11 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"LH" = (
+/obj/structure/table/wood,
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/carpet/red_gold,
+/area/ship/crew/dorm/captain)
 "LJ" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
@@ -2564,6 +2564,13 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
+"No" = (
+/obj/effect/turf_decal/corner/opaque/tan/half{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "Np" = (
 /obj/effect/turf_decal/corner/opaque/beige/half{
 	dir = 8
@@ -3278,13 +3285,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
-"VF" = (
-/obj/effect/turf_decal/corner/opaque/tan/half{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "Wk" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -3793,7 +3793,7 @@ iX
 iX
 yN
 ws
-bP
+uX
 sO
 yF
 iB
@@ -3900,7 +3900,7 @@ Wq
 ep
 TJ
 JI
-ga
+vd
 Gz
 mI
 Ac
@@ -3921,7 +3921,7 @@ Wq
 Wq
 Sr
 qn
-vu
+ET
 rC
 RH
 So
@@ -3996,7 +3996,7 @@ ax
 DM
 Fo
 iV
-VF
+No
 ZZ
 WG
 lw
@@ -4031,7 +4031,7 @@ Wq
 Wq
 Wq
 IY
-vp
+LH
 PH
 wf
 il
@@ -4210,7 +4210,7 @@ Wq
 Zd
 Wk
 jv
-aq
+bP
 Bt
 LB
 Zd
