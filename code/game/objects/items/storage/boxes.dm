@@ -307,11 +307,21 @@
 	name = "box of smoke grenades (WARNING)"
 	desc = "<B>WARNING: Do not use in enclosed areas. Protective mask must be worn when in smoke cloud.</B>"
 	icon_state = "secbox"
-	illustration = "flashbang"
+	illustration = "smoke"
 
 /obj/item/storage/box/smokebombs/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/grenade/smokebomb(src)
+
+/obj/item/storage/box/barriers
+	name = "box of barrier grenades (WARNING)"
+	desc = "<B>WARNING: Deploy barriers with care, providing ample space for automatic deployment to prevent accidental injury.</B>"
+	icon_state = "secbox"
+	illustration = "flashbang"
+
+/obj/item/storage/box/barriers/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/grenade/barrier(src)
 
 /obj/item/storage/box/flashbangs
 	name = "box of flashbangs (WARNING)"
