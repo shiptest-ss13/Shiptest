@@ -247,7 +247,11 @@
 	.["burnDirection"] = current_ship.burn_direction
 	.["burnPercentage"] = current_ship.burn_percentage
 	.["cloaked"] = HAS_TRAIT_FROM(current_ship, TRAIT_CLOAKED, CLOAKED_TRAIT)
-	.["cloakChargePercent"] = 100 * current_ship.cloaking_system?.current_charge / max(current_ship.cloaking_system?.max_charge, 1)
+
+	var/obj/machinery/power/cloak/cloaking_system = current_ship.ship_modules[SHIPMODULE_CLOAKING]
+	if(cloaking_system)
+		.["cloakChargePercent"] = 100 * cloaking_system.current_charge / max(cloaking_system.max_charge, 1)
+
 	for(var/datum/weakref/engine in current_ship.shuttle_port.engine_list)
 		var/obj/machinery/power/shuttle/engine/real_engine = engine.resolve()
 		if(!real_engine)
@@ -283,7 +287,7 @@
 		mass = current_ship.shuttle_port.turf_count,
 		sensor_range = 4
 	)
-	.["hasCloaking"] = !isnull(current_ship.cloaking_system)
+	.["hasCloaking"] = !isnull(current_ship.ship_modules[SHIPMODULE_CLOAKING])
 	.["canFly"] = TRUE
 	.["aiUser"] = issilicon(user)
 
@@ -332,9 +336,10 @@
 			say(allow_ai_control ? "AI Control has been enabled." : "AI Control is now disabled.")
 			return
 		if("toggle_cloak")
-			if(!current_ship.cloaking_system)
+			var/obj/machinery/power/cloak/cloaking_system = current_ship.ship_modules[SHIPMODULE_CLOAKING]
+			if(!cloaking_system)
 				return
-			current_ship.cloaking_system.set_cloak(!current_ship.cloaking_system.cloak_active)
+			cloaking_system.set_cloak(!cloaking_system.cloak_active)
 			return TRUE
 		if("act_overmap")
 			if(SSshuttle.jump_mode > BS_JUMP_CALLED)
@@ -472,10 +477,9 @@
 		var/datum/weakref/buffer_ref = tool.buffer
 		var/obj/machinery/power/cloak/linked_cloak = buffer_ref.resolve()
 		if(istype(linked_cloak, /obj/machinery/power/cloak))
-			if(current_ship.cloaking_system)
-				current_ship.cloaking_system.set_cloak(FALSE)
-				current_ship.cloaking_system.linked_ship = null
-				current_ship.cloaking_system.update_appearance(UPDATE_ICON_STATE)
+			var/obj/machinery/power/cloak/current_cloak = current_ship.ship_modules[SHIPMODULE_CLOAKING]
+			if(current_cloak)
+				current_cloak.unlink_from_ship()
 			linked_cloak.link_to_ship(current_ship)
 			return COMPONENT_BLOCK_TOOL_ATTACK
 

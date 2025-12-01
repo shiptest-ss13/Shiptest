@@ -78,9 +78,6 @@
 	///The ship's real name, without the prefix
 	var/real_name
 
-	///The ship's active cloaking system
-	var/obj/machinery/power/cloak/cloaking_system
-
 	///Image shown to helm console viewers while cloaked, allows the pilot to see
 	var/image/cloaked_image
 

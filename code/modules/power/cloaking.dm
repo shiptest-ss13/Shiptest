@@ -39,7 +39,7 @@
 /obj/machinery/power/cloak/Destroy()
 	set_cloak(FALSE)
 	if(linked_ship)
-		linked_ship.cloaking_system = null
+		unlink_from_ship()
 		for(var/obj/console as anything in linked_ship.helms)
 			console.update_static_data_for_all_viewers()
 	return ..()
@@ -138,18 +138,23 @@
 
 /obj/machinery/power/cloak/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	. = ..()
-	if(port.current_ship.cloaking_system)
+	if(port.current_ship.ship_modules[SHIPMODULE_CLOAKING])
 		return
 	active_power_usage = port.turf_count * power_multiplier * WATTS_PER_TURF
 	link_to_ship(port.current_ship)
 
 /obj/machinery/power/cloak/proc/link_to_ship(datum/overmap/ship/controlled/new_ship)
 	linked_ship = new_ship
-	linked_ship.cloaking_system = src
+	linked_ship.ship_modules[SHIPMODULE_CLOAKING] = src
 	update_appearance(UPDATE_ICON_STATE)
 	update_static_data_for_all_viewers()
 	for(var/obj/console as anything in linked_ship.helms)
 		console.update_static_data_for_all_viewers()
+
+/obj/machinery/power/cloak/proc/unlink_from_ship()
+	set_cloak(FALSE)
+	linked_ship = null
+	update_appearance(UPDATE_ICON_STATE)
 
 /obj/machinery/power/cloak/update_icon_state()
 	. = ..()
@@ -202,6 +207,15 @@
 		set_cloak(FALSE)
 		return
 	current_charge -= power_consumption
+
+/obj/machinery/power/cloak/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+	if(cloak_active)
+		visible_message("[src] ")
+		tesla_zap(src, 5, active_power_usage / 10, ZAP_DEFAULT_FLAGS)
+		set_cloak(FALSE)
 
 /obj/machinery/power/cloak/advanced
 	name = "\improper BFRD-3A cloaking device"

@@ -323,9 +323,10 @@
 		if(S.shuttle_port.is_in_shuttle_bounds(poor_crew))
 			poor_crew.playsound_local(poor_crew, THUNDER_SOUND, rand(min_damage, max_damage))
 
-	if(S.cloaking_system?.cloak_active)
-		S.cloaking_system.set_cloak(FALSE)
-		S.cloaking_system.visible_message("[src] is overloaded by the electrical storm and shuts off!")
+	var/obj/machinery/power/cloak/cloaking_system = S.ship_modules[SHIPMODULE_CLOAKING]
+	if(cloaking_system?.cloak_active)
+		cloaking_system.set_cloak(FALSE)
+		cloaking_system.visible_message("[src] is overloaded by the electrical storm and shuts off!")
 
 /datum/overmap/event/electric/modify_emptyspace_mapgen(datum/overmap/dynamic/our_planet)
 	our_planet.weather_controller_type = /datum/weather_controller/shrouded
