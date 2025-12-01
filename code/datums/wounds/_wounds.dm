@@ -335,6 +335,14 @@
 /datum/wound/proc/on_tane(power)
 	return
 
+/// Applied on crystal reagent application
+/datum/wound/proc/on_crystal(power)
+	return
+
+/// Applied on rezadone application
+/datum/wound/proc/on_rezadone(power)
+	return
+
 /// Called when the patient is undergoing stasis, so that having fully treated a wound doesn't make you sit there helplessly until you think to unbuckle them
 /datum/wound/proc/on_stasis()
 	return
