@@ -9,6 +9,13 @@
 		gender = gender_override
 	else
 		gender = pick(MALE,FEMALE,PLURAL)
+		switch(gender)
+			if(MALE)
+				pronouns = "He"
+			if(FEMALE)
+				pronouns = "She"
+			if(PLURAL)
+				pronouns = "They"
 	if(randomise[RANDOM_AGE] || randomise[RANDOM_AGE_ANTAG] && antag_override)
 		age = rand(AGE_MIN,AGE_MAX)
 	if(randomise[RANDOM_UNDERWEAR])

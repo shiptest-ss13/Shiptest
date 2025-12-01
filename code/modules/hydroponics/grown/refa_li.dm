@@ -4,7 +4,7 @@
 /obj/item/seeds/refa_li
 	name = "pack of refa-li seeds"
 	desc = "These seeds grow into a refa-li vine. Feel the heat!"
-	icon_state = ""
+	icon_state = "seed-refa"
 	species = "chilirefa"
 	plantname = "refa-li vine"
 	product = /obj/item/food/grown/refa_li

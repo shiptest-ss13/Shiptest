@@ -259,6 +259,41 @@
 	foodtypes = MEAT | ALCOHOL
 	w_class = WEIGHT_CLASS_SMALL
 
+//Raw stuff
+/obj/item/food/raw_meatball
+	name = "raw meatball"
+	desc = "A raw sphere of ground meat."
+	icon = 'icons/obj/food/meat.dmi'
+	icon_state = "raw_meatball"
+	food_reagents = list(/datum/reagent/consumable/nutriment/protein = 2)
+	tastes = list("meat" = 1)
+	foodtypes = MEAT | RAW
+	w_class = WEIGHT_CLASS_SMALL
+
+	var/meatball_type = /obj/item/food/meatball
+	var/patty_type = /obj/item/food/raw_patty
+
+/obj/item/food/raw_meatball/make_grillable()
+	AddComponent(/datum/component/grillable, meatball_type, rand(30 SECONDS, 40 SECONDS), TRUE)
+
+/obj/item/food/raw_meatball/make_processable()
+	AddElement(/datum/element/processable, TOOL_ROLLINGPIN, patty_type, 1, 20)
+
+/obj/item/food/raw_meatball/xeno
+	name = "raw xeno meatball"
+	meatball_type = /obj/item/food/meatball/xeno
+	patty_type = /obj/item/food/raw_patty/xeno
+
+/obj/item/food/raw_meatball/bear
+	name = "raw bear meatball"
+	meatball_type = /obj/item/food/meatball/bear
+	patty_type = /obj/item/food/raw_patty/bear
+
+/obj/item/food/raw_meatball/chicken
+	name = "raw chicken meatball"
+	meatball_type = /obj/item/food/meatball/chicken
+	patty_type = /obj/item/food/raw_patty/chicken
+
 /obj/item/food/meatball
 	name = "meatball"
 	desc = "Ground meat shaped into small balls, popularly eaten in sandwiches and alongside pasta."
@@ -266,12 +301,96 @@
 	icon_state = "meatball"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment/protein = 2,
-		/datum/reagent/consumable/nutriment = 3,
 	)
 	tastes = list("meat" = 1)
 	foodtypes = MEAT
 	food_flags = FOOD_FINGER_FOOD
 	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/food/meatball/xeno
+	name = "xenomorph meatball"
+	tastes = list("meat" = 1, "acid" = 1)
+
+/obj/item/food/meatball/bear
+	name = "bear meatball"
+	tastes = list("meat" = 1, "salmon" = 1)
+
+/obj/item/food/meatball/chicken
+	name = "chicken meatball"
+	tastes = list("chicken" = 1)
+	icon_state = "chicken_meatball"
+
+/obj/item/food/raw_patty
+	name = "raw patty"
+	desc = "A raw patty of minced meat."
+	icon = 'icons/obj/food/meat.dmi'
+	icon_state = "raw_patty"
+	food_reagents = list(/datum/reagent/consumable/nutriment/protein = 2)
+	tastes = list("meat" = 1)
+	foodtypes = MEAT | RAW
+	w_class = WEIGHT_CLASS_SMALL
+	var/patty_type = /obj/item/food/patty/plain
+
+/obj/item/food/raw_patty/make_grillable()
+	AddComponent(/datum/component/grillable, patty_type, rand(30 SECONDS, 40 SECONDS), TRUE)
+
+/obj/item/food/raw_patty/bear
+	name = "raw bear patty"
+	tastes = list("meat" = 1, "salmon" = 1)
+	patty_type = /obj/item/food/patty/bear
+
+/obj/item/food/raw_patty/xeno
+	name = "raw xenomorph patty"
+	tastes = list("meat" = 1, "acid" = 1)
+	patty_type = /obj/item/food/patty/xeno
+
+/obj/item/food/raw_patty/chicken
+	name = "raw chicken patty"
+	tastes = list("chicken" = 1)
+	patty_type = /obj/item/food/patty/chicken
+
+/obj/item/food/patty
+	name = "patty"
+	desc = "A cooked patty of minced meat."
+	icon = 'icons/obj/food/meat.dmi'
+	icon_state = "patty"
+	food_reagents = list(/datum/reagent/consumable/nutriment/protein = 2)
+	tastes = list("meat" = 1)
+	foodtypes = MEAT
+	w_class = WEIGHT_CLASS_SMALL
+
+///Exists purely for the crafting recipe (because itll take subtypes)
+/obj/item/food/patty/plain
+
+/obj/item/food/patty/xeno
+	name = "xenomorph patty"
+	tastes = list("meat" = 1, "acid" = 1)
+
+/obj/item/food/patty/bear
+	name = "bear patty"
+	tastes = list("meat" = 1, "salmon" = 1)
+
+/obj/item/food/patty/chicken
+	name = "chicken patty"
+	tastes = list("chicken" = 1)
+	icon_state = "chicken_patty"
+
+/obj/item/food/raw_sausage
+	name = "raw sausage"
+	desc = "A chunk of raw meat in a sausage casing."
+	icon = 'icons/obj/food/meat.dmi'
+	icon_state = "raw_sausage"
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment/protein = 5,
+		/datum/reagent/consumable/nutriment/vitamin = 2,
+	)
+	tastes = list("meat" = 1)
+	foodtypes = MEAT | RAW
+	eatverbs = list("bite","chew","nibble","deep throat","gobble","chomp")
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/food/raw_sausage/make_grillable()
+	AddComponent(/datum/component/grillable, /obj/item/food/sausage, rand(60 SECONDS, 75 SECONDS), TRUE)
 
 /obj/item/food/sausage
 	name = "sausage"
@@ -362,6 +481,9 @@
 	tastes = list("meat" = 1, "onions" = 1, "garlic" = 1)
 	foodtypes = MEAT | RAW
 	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/food/rawkhinkali/make_grillable()
+	AddComponent(/datum/component/grillable, /obj/item/food/khinkali, rand(50 SECONDS, 60 SECONDS), TRUE)
 
 /obj/item/food/khinkali
 	name = "khinkali"
@@ -461,6 +583,9 @@
 	tastes = list("venom-laden meat" = 1)
 	foodtypes = MEAT | TOXIC
 	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/food/spiderleg/make_grillable()
+	AddComponent(/datum/component/grillable, /obj/item/food/boiledspiderleg, rand(50 SECONDS, 60 SECONDS), TRUE, TRUE)
 
 /obj/item/food/boiledspiderleg
 	name = "boiled spider leg"

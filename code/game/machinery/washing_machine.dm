@@ -134,24 +134,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 /obj/machinery/washing_machine/examine(mob/user)
 	. = ..()
 	if(!busy)
-		. += span_notice("<b>Alt-click</b> it to start a wash cycle.")
-
-/obj/machinery/washing_machine/AltClick(mob/user)
-	if(!user.canUseTopic(src, !issilicon(user)))
-		return
-	if(busy)
-		return
-	if(state_open)
-		to_chat(user, span_warning("Close the door first!"))
-		return
-	if(bloody_mess)
-		to_chat(user, span_warning("[src] must be cleaned up first!"))
-		return
-	busy = TRUE
-	update_appearance()
-	addtimer(CALLBACK(src, PROC_REF(wash_cycle)), 200)
-
-	START_PROCESSING(SSfastprocess, src)
+		. += span_notice("<b>Right-click</b> it to start a wash cycle.")
 
 /obj/machinery/washing_machine/process(seconds_per_tick)
 	if(!busy)
@@ -315,15 +298,14 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	else
 		return ..()
 
-/obj/machinery/washing_machine/attack_hand(mob/user)
+/obj/machinery/washing_machine/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
 	if(.)
 		return
 	if(busy)
 		to_chat(user, span_warning("[src] is busy!"))
 		return
-
-	if(user.pulling && user.a_intent == INTENT_GRAB && isliving(user.pulling))
+	if(user.pulling && isliving(user.pulling))
 		var/mob/living/L = user.pulling
 		if(L.buckled || L.has_buckled_mobs())
 			return
@@ -332,12 +314,33 @@ GLOBAL_LIST_INIT(dye_registry, list(
 				L.forceMove(src)
 				update_appearance()
 		return
-
 	if(!state_open)
 		open_machine()
 	else
 		state_open = FALSE //close the door
 		update_appearance()
+
+/obj/machinery/washing_machine/attack_hand_secondary(mob/user, modifiers)
+	. = ..()
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+		return
+
+	if(!user.canUseTopic(src, !issilicon(user)))
+		return SECONDARY_ATTACK_CONTINUE_CHAIN
+	if(busy)
+		to_chat(user, span_warning("[src] is busy!"))
+		return SECONDARY_ATTACK_CONTINUE_CHAIN
+	if(state_open)
+		to_chat(user, span_warning("Close the door first!"))
+		return SECONDARY_ATTACK_CONTINUE_CHAIN
+	if(bloody_mess)
+		to_chat(user, span_warning("[src] must be cleaned up first!"))
+		return SECONDARY_ATTACK_CONTINUE_CHAIN
+	busy = TRUE
+	update_appearance()
+	addtimer(CALLBACK(src, PROC_REF(wash_cycle)), 20 SECONDS)
+	START_PROCESSING(SSfastprocess, src)
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/machinery/washing_machine/deconstruct(disassembled = TRUE)
 	new /obj/item/stack/sheet/metal(drop_location(), 2)

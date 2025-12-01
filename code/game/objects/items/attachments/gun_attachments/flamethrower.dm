@@ -1,3 +1,4 @@
+/*
 /obj/item/attachment/gun/flamethrower
 	name = "underbarrel flamethrower"
 	desc = "A compact underbarrel flamethrower holding up to 20 units of fuel, enough for two sprays."
@@ -91,3 +92,4 @@
 	volume = 20
 
 
+*/

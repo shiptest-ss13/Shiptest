@@ -16,12 +16,12 @@
 	can_be_shoved_into = TRUE
 	blocks_emissive = EMISSIVE_BLOCK_UNIQUE
 	bodyparts = list(
-		/obj/item/bodypart/chest/monkey,
-		/obj/item/bodypart/head/monkey,
-		/obj/item/bodypart/l_arm/monkey,
-		/obj/item/bodypart/r_arm/monkey,
-		/obj/item/bodypart/leg/right/monkey,
-		/obj/item/bodypart/leg/left/monkey,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/monkey,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/monkey,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/monkey,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/monkey,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/monkey,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/monkey,
 		)
 	hud_type = /datum/hud/monkey
 	melee_damage_lower = 1

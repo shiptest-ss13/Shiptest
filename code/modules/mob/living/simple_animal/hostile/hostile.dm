@@ -450,6 +450,7 @@
 		var/obj/item/ammo_casing/casing = new casingtype(startloc)
 		playsound(src, projectilesound, 100, TRUE)
 		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), rand(-spread, spread),  src)
+		casing.on_eject(src)
 	else if(projectiletype)
 		var/obj/projectile/P = new projectiletype(startloc)
 		playsound(src, projectilesound, 100, TRUE)
@@ -542,7 +543,7 @@
 			A.attack_animal(src)
 		return 1
 
-/mob/living/simple_animal/hostile/RangedAttack(atom/A, params) //Player firing
+/mob/living/simple_animal/hostile/RangedAttack(atom/A, modifiers) //Player firing
 	if(ranged && ranged_cooldown <= world.time)
 		GiveTarget(A)
 		OpenFire(A)

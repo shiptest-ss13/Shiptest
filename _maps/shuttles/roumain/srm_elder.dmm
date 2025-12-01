@@ -167,16 +167,10 @@
 	pixel_x = 4;
 	pixel_y = -6
 	},
-/obj/item/clothing/suit/space/eva{
-	pixel_x = -8
-	},
-/obj/item/clothing/mask/breath{
-	pixel_y = 9;
-	pixel_x = -6
-	},
-/obj/item/clothing/head/helmet/space/eva{
-	pixel_y = 8;
-	pixel_x = 8
+/obj/item/clothing/mask/gas/roumain,
+/obj/item/clothing/suit/space/hardsuit/mining/roumain{
+	pixel_x = -5;
+	pixel_y = -5
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/cargo)
@@ -383,6 +377,19 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ship/hallway/central)
+"dl" = (
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/tank/internals/emergency_oxygen/double{
+	pixel_x = 4;
+	pixel_y = -6
+	},
+/obj/item/clothing/mask/gas/roumain,
+/obj/item/clothing/suit/space/hardsuit/mining/roumain{
+	pixel_x = -7;
+	pixel_y = -4
+	},
+/turf/open/floor/wood/ebony,
+/area/ship/cargo)
 "dn" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1058,8 +1065,8 @@
 	dir = 6
 	},
 /obj/item/clothing/suit/space/hardsuit/solgov/roumain,
-/obj/item/clothing/mask/breath,
 /obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/clothing/mask/gas/roumain,
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "lM" = (
@@ -1536,6 +1543,7 @@
 	},
 /obj/item/storage/backpack/satchel/leather,
 /obj/item/clothing/accessory/waistcoat/roumain,
+/obj/item/clothing/under/suit/roumain/alt,
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
 "rW" = (
@@ -2050,6 +2058,9 @@
 /obj/item/storage/box/ammo/a44roum,
 /obj/item/storage/guncase/pistol/montagne,
 /obj/item/clothing/accessory/waistcoat/roumain,
+/obj/item/clothing/suit/armor/roumain/plate/montagne,
+/obj/item/clothing/head/helmet/roumain,
+/obj/item/clothing/under/suit/roumain/montagne,
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "zH" = (
@@ -2672,6 +2683,8 @@
 	},
 /obj/item/storage/backpack/satchel/leather,
 /obj/item/clothing/accessory/waistcoat/roumain,
+/obj/item/clothing/head/helmet/roumain,
+/obj/item/clothing/under/suit/roumain/alt,
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
 "HB" = (
@@ -2685,10 +2698,6 @@
 	pixel_y = 8;
 	pixel_x = 8
 	},
-/obj/item/clothing/mask/breath{
-	pixel_y = 9;
-	pixel_x = -6
-	},
 /obj/item/tank/internals/emergency_oxygen{
 	pixel_x = 7;
 	pixel_y = -7
@@ -2696,6 +2705,7 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/arrow_ccw{
 	dir = 8
 	},
+/obj/item/clothing/mask/gas/roumain,
 /turf/open/floor/wood/maple,
 /area/ship/cargo)
 "HO" = (
@@ -2726,6 +2736,8 @@
 /obj/item/clothing/suit/armor/roumain/colligne,
 /obj/structure/closet/secure_closet/collignes,
 /obj/item/clothing/accessory/waistcoat/roumain,
+/obj/item/clothing/head/helmet/roumain,
+/obj/item/clothing/under/suit/roumain/alt,
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "Ii" = (
@@ -3343,6 +3355,7 @@
 /obj/item/clothing/shoes/workboots/mining,
 /obj/structure/closet/secure_closet/machinist,
 /obj/item/storage/belt/utility/full,
+/obj/item/clothing/under/suit/roumain/alt,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Oo" = (
@@ -3689,6 +3702,7 @@
 	},
 /obj/item/storage/backpack/satchel/leather,
 /obj/item/clothing/accessory/waistcoat/roumain,
+/obj/item/clothing/under/suit/roumain/alt,
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
 "Tc" = (
@@ -4702,7 +4716,7 @@ Jx
 mA
 bN
 bN
-bN
+dl
 uY
 BA
 sH

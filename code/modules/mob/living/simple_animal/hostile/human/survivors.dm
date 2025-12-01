@@ -39,6 +39,14 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 
+/mob/living/simple_animal/hostile/human/hermit/survivor/passive
+	name = "Hermit Villager"
+	desc = "A panicked, wild figure, wearing tattered mining equipment and frozen in fear. They regard you with caution, shrinking away as to not be seen."
+	r_hand = null
+	melee_damage_lower = 5
+	melee_damage_upper = 5
+	faction = list(FACTION_ANTAG_HERMITS, FACTION_NEUTRAL)
+
 /mob/living/simple_animal/hostile/human/hermit/survivor/lunatic
 	name = "Hermit Lunatic"
 	desc= "A wild-eyed figure clad in tattered mining equipment wielding a plastic chair. They move erratically, eyes darting about frantically."
@@ -80,6 +88,16 @@
 	desc ="A wild-eyed figure. Watch out- he has a shotgun, and he remembers just enough of his old life to use it!"
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/gun/ballistic/rifle/polymer
+
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter/sentry
+	name = "Hermit Sentry"
+	vision_range = 10
+	aggro_vision_range = 10
+	minimum_distance = 10
+	stop_automated_movement = 1
+	wander = 0
+	retreat_distance = 0
+	environment_smash = 0
 
 /mob/living/simple_animal/hostile/human/hermit/ranged/shotgun
 	name = "Hermit Pursuer"
@@ -280,6 +298,46 @@
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/hooded/survivor_hood
+
+/mob/living/simple_animal/hostile/human/hermit/mayor
+	name = "The Mayor"
+	desc = "A blood-red silhouette leveling a wicked battle rifle in your direction. Their suit is worn and damaged, yet still armored. Their stance is trained and alert, unlike many of the wanderers nearby."
+	rapid = 4
+	rapid_fire_delay = 3
+	ranged = 1
+	retreat_distance = 4
+	minimum_distance = 7
+	icon_state = "syndicate_hydra"
+	casingtype = /obj/item/ammo_casing/a308
+	l_hand = /obj/item/gun/ballistic/automatic/assault/invictus/old
+	projectilesound = 'sound/weapons/gun/hmg/hmg.ogg'
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/mayor
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/old
+	weapon_drop_chance = 100
+
+/mob/living/simple_animal/hostile/human/hermit/mayor/Aggro()
+	..()
+	summon_backup(15)
+	say("TO ME!!")
+
+/datum/outfit/mayor
+	name = "The Mayor"
+
+	uniform = /obj/item/clothing/under/syndicate
+	suit = /obj/item/clothing/suit/space/hardsuit/syndi/old
+	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi/old
+	mask = /obj/item/clothing/mask/breath/facemask
+	glasses = /obj/item/clothing/glasses/safety
+	belt = /obj/item/storage/belt/security/military/frontiersmen
+	shoes = /obj/item/clothing/shoes/combat
+	gloves =  /obj/item/clothing/gloves/combat
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
+	back = /obj/item/storage/backpack
+	ears = /obj/item/radio/headset/alt
+
+/obj/effect/mob_spawn/human/corpse/damaged/mayor
+	name = "The Mayor"
+	outfit = /datum/outfit/mayor
 
 /datum/outfit/hermit/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()

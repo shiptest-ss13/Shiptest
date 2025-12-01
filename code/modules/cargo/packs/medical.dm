@@ -48,6 +48,20 @@
 	cost = 500
 	contains = list(/obj/item/storage/firstaid/radiation)
 
+/datum/supply_pack/medical/firstaidroumain_single
+	name = "Roumain Medical Kit Single-Pack"
+	desc = "Contains one first aid kit filled with natural medicine commonly used by the Saint-Roumain Militia."
+	cost = 400
+	contains = list(/obj/item/storage/firstaid/roumain)
+	faction = /datum/faction/srm
+	faction_discount = 10
+
+/datum/supply_pack/medical/salbutamol_canister
+	name = "Salbutamol Inhaler Canister Single-Pack"
+	desc = "Contains one inhaler canister filled with aerosolized salbutamol, a potent bronchodilator."
+	cost = 200
+	contains = list(/obj/item/reagent_containers/inhaler_canister/salbutamol)
+
 /*
 		Tools
 */
@@ -144,39 +158,6 @@
 	faction = /datum/faction/syndicate/suns
 	faction_discount = 25
 
-/datum/supply_pack/medical/surplus
-	name = "Medical Surplus Crate"
-	desc = "Contains an assortment of medical supplies haphazardly pulled from storage. German doctor not included."
-	cost = 3000
-	contains = list(/obj/item/reagent_containers/glass/bottle/charcoal,
-					/obj/item/reagent_containers/glass/bottle/epinephrine,
-					/obj/item/reagent_containers/glass/bottle/morphine,
-					/obj/item/reagent_containers/glass/bottle/toxin,
-					/obj/item/reagent_containers/glass/beaker/large,
-					/obj/item/reagent_containers/pill/insulin,
-					/obj/item/stack/medical/gauze,
-					/obj/item/storage/box/beakers,
-					/obj/item/storage/box/medigels,
-					/obj/item/storage/box/syringes,
-					/obj/item/storage/box/bodybags,
-					/obj/item/storage/firstaid/regular,
-					/obj/item/storage/firstaid/o2,
-					/obj/item/storage/firstaid/toxin,
-					/obj/item/storage/firstaid/brute,
-					/obj/item/storage/firstaid/fire,
-					/obj/item/defibrillator/loaded,
-					/obj/item/reagent_containers/blood/OMinus,
-					/obj/item/reagent_containers/pill/neurine,
-					/obj/item/vending_refill/medical)
-	crate_name = "medical surplus crate"
-	faction = /datum/faction/syndicate/suns
-	faction_discount = 25
-
-/datum/supply_pack/medical/surplus/fill(obj/structure/closet/crate/C)
-	for(var/i in 1 to 7)
-		var/item = pick(contains)
-		new item(C)
-
 /datum/supply_pack/medical/salglucanister
 	name = "Heavy-Duty Saline Canister"
 	desc = "Contains a bulk supply of saline-glucose condensed into a single canister that should last a long time, with a large pump to fill containers with. Direct injection of saline should be left to medical professionals as the pump is capable of overdosing patients."
@@ -192,6 +173,13 @@
 	cost = 600
 	contains = list(/obj/item/storage/box/medipens)
 	crate_name = "epinephrine medipen crate"
+
+/datum/supply_pack/medical/medigel_crate
+	name = "Empty Medical Gel Crate"
+	desc = "Contains a box of seven empty medical gels, for applying your own chemical mixes."
+	cost = 700
+	contains = list(/obj/item/storage/box/medigels)
+	crate_name = "empty medical gel crate"
 
 /* Hypospray supplies */
 

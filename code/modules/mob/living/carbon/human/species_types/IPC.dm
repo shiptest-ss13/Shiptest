@@ -3,7 +3,7 @@
 	id = SPECIES_IPC
 	species_age_min = 0
 	species_age_max = 300
-	species_traits = list(HAIR,NOTRANSSTING,NOEYESPRITES,NO_DNA_COPY,TRAIT_EASYDISMEMBER,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH) //all of these + whatever we inherit from the real species
+	species_traits = list(HAIR,NOTRANSSTING,NO_DNA_COPY,TRAIT_EASYDISMEMBER,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH) //all of these + whatever we inherit from the real species
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_LIMBATTACHMENT)
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
 	mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
@@ -17,7 +17,7 @@
 	mutantappendix = null
 	mutant_organs = list(/obj/item/organ/cyberimp/arm/power_cord)
 	mutant_bodyparts = list("ipc_screen", "ipc_antenna", "ipc_chassis", "ipc_tail", "ipc_brain")
-	default_features = list("mcolor" = "#7D7D7D", "ipc_screen" = "Static", "ipc_antenna" = "None", "ipc_chassis" = "Morpheus Cyberkinetics (Custom)", "ipc_tail" = "None", "ipc_brain" = "Posibrain", "body_size" = "Normal")
+	default_features = list("mcolor" = "#7D7D7D", "ipc_screen" = "Static", "ipc_antenna" = "None", "ipc_chassis" = "Morpheus Cyberkinetics (Custom)", "ipc_tail" = "None", "ipc_brain" = "Posibrain")
 	meat = /obj/item/stack/sheet/plasteel{amount = 5}
 	skinned_type = /obj/item/stack/sheet/metal{amount = 10}
 	exotic_bloodtype = "Coolant"
@@ -36,12 +36,14 @@
 	Just as easy to repair as they are to destroy, they might just get their last laugh in as you're choking on neurotoxins. Beep Boop."
 	ass_image = 'icons/ass/assmachine.png'
 
-	species_chest = /obj/item/bodypart/chest/ipc
-	species_head = /obj/item/bodypart/head/ipc
-	species_l_arm = /obj/item/bodypart/l_arm/ipc
-	species_r_arm = /obj/item/bodypart/r_arm/ipc
-	species_l_leg = /obj/item/bodypart/leg/left/ipc
-	species_r_leg = /obj/item/bodypart/leg/right/ipc
+	species_limbs = list(
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc,
+	)
 
 	/// The last screen used when the IPC died.
 	var/saved_screen
@@ -236,52 +238,22 @@
 	H.dna.features["ipc_screen"] = saved_screen
 	H.update_body()
 
-/datum/species/ipc/replace_body(mob/living/carbon/C, datum/species/new_species, robotic = FALSE)
-	..()
-
+/datum/species/ipc/replace_body(mob/living/carbon/C, datum/species/old_species, datum/species/new_species, robotic)
 	var/datum/sprite_accessory/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[C.dna.features["ipc_chassis"]]
-
-	if(chassis_of_choice.use_eyes)
-		LAZYREMOVE(species_traits, NOEYESPRITES)
-		LAZYADD(species_traits, EYECOLOR)
-		C.update_body()
-
-	if(!chassis_of_choice.has_screen)
-		has_screen = FALSE
-		C.dna.features["ipc_screen"] = null
-		C.update_body()
-
-	if(chassis_of_choice.is_digi)
-		digitigrade_customization = DIGITIGRADE_FORCED
-		bodytype = BODYTYPE_DIGITIGRADE
-
-	for(var/obj/item/bodypart/BP as anything in C.bodyparts) //Override bodypart data as necessary
-		if(BP.limb_id=="synth")
-			BP.uses_mutcolor = chassis_of_choice.color_src ? TRUE : FALSE
-
-			if(chassis_of_choice.icon)
-				BP.static_icon = chassis_of_choice.icon
-				BP.icon = chassis_of_choice.icon
-
-			if(chassis_of_choice.has_overlay)
-				BP.overlay_icon_state = TRUE
-
-			if(chassis_of_choice.is_digi)
-				if(istype(BP,/obj/item/bodypart/leg))
-					BP.bodytype |= BODYTYPE_DIGITIGRADE //i hate this so much
-
-			if(chassis_of_choice.has_snout)
-				if(istype(BP,/obj/item/bodypart/head))
-					BP.bodytype |= BODYTYPE_SNOUT //hate. hate. (tik tok tts)
-
-			if(BP.uses_mutcolor)
-				BP.should_draw_greyscale = TRUE
-				BP.species_color = C.dna?.features["mcolor"]
-				BP.species_secondary_color = C.dna?.features["mcolor2"]
-
-			BP.limb_id = chassis_of_choice.limbs_id
-			BP.name = "\improper[chassis_of_choice.name] [parse_zone(BP.body_zone)]"
-			BP.update_limb()
+	if(chassis_of_choice)
+		qdel(species_limbs)
+		species_limbs = chassis_of_choice.chassis_bodyparts.Copy() // elegant.
+		var/obj/item/bodypart/chest/new_chest = species_limbs[BODY_ZONE_CHEST]
+		if(new_chest)
+			bodytype = initial(new_chest.acceptable_bodytype)
+		else
+			stack_trace("[chassis_of_choice.type] had no chest bodypart!")
+		for(var/feature in chassis_of_choice.chassis_features)
+			mutant_bodyparts |= feature
+			default_features[feature] = chassis_of_choice.chassis_features[feature]
+	else // in case of fuckery
+		stack_trace("Invalid IPC chassis: [C.dna.features["ipc_chassis"]]")
+	return ..()
 
 /mob/living/carbon/proc/charge(datum/source, amount, repairs)
 	if(nutrition < NUTRITION_LEVEL_WELL_FED)

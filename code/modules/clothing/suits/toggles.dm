@@ -144,8 +144,13 @@
 
 	if(unique_reskin && !current_skin)
 		reskin_obj(user)
-	else
-		suit_toggle(user)
+		return TRUE
+
+	if(!user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
+		return FALSE
+	suit_toggle(user)
+
+
 	return TRUE
 
 /obj/item/clothing/suit/toggle/ui_action_click()

@@ -1,3 +1,4 @@
+/*
 /obj/item/attachment/gun/riot
 	name = "underbarrel riot grenade launcher"
 	desc = "A multipurpose underbarrel riot grenade launcher, typically issued to law enforcement. Loads any tradionally handthrown grenade. Warranty is voided should a lethal grenade be loaded."
@@ -22,3 +23,5 @@
 	name = "underbarrel riot grenade launcher"
 	desc = "An even more terrible thing. Just despicable, really. You shouldn't be seeing this."
 	max_grenades = 1
+
+*/

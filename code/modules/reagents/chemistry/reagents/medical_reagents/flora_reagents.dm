@@ -45,7 +45,7 @@
 	. = 1
 
 /datum/reagent/medicine/polypyr/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH || method == SMOKE || method == VAPOR)
+	if(method == TOUCH || method == VAPOR)
 		if(M && ishuman(M) && reac_volume >= 0.5)
 			var/mob/living/carbon/human/H = M
 			H.hair_color = "92f"

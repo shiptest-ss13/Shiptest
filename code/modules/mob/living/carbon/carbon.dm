@@ -12,7 +12,7 @@
 	QDEL_LIST(hand_bodyparts)
 	QDEL_LIST(internal_organs)
 	internal_organs_slot.Cut()
-	QDEL_LIST(bodyparts)
+	QDEL_LIST_ASSOC_VAL(bodyparts)
 	QDEL_LIST(implants)
 	for(var/wound in all_wounds) // these LAZYREMOVE themselves when deleted so no need to remove the list here
 		qdel(wound)
@@ -244,7 +244,7 @@
 				to_chat(usr, span_notice("You [internal ? "open" : "close"] the valve on [src]'s [ITEM.name]."))
 
 	if(href_list["embedded_object"] && usr.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
-		var/obj/item/bodypart/L = locate(href_list["embedded_limb"]) in bodyparts
+		var/obj/item/bodypart/L = locate(href_list["embedded_limb"]) in get_all_bodyparts()
 		if(!L)
 			return
 		var/obj/item/I = locate(href_list["embedded_object"]) in L.embedded_objects
@@ -294,17 +294,7 @@
 		buckled.user_unbuckle_mob(src,src)
 
 /mob/living/carbon/resist_fire()
-	adjust_fire_stacks(-5)
-	Paralyze(60, ignore_canstun = TRUE)
-	spin(32,2)
-	visible_message(span_danger("[src] rolls on the floor, trying to put [p_them()]self out!"), \
-		span_notice("You stop, drop, and roll!"))
-	sleep(30)
-	if(fire_stacks <= 0 && !QDELETED(src))
-		visible_message(span_danger("[src] successfully extinguishes [p_them()]self!"), \
-			span_notice("You extinguish yourself."))
-		ExtinguishMob()
-	return
+	return !!apply_status_effect(/datum/status_effect/stop_drop_roll)
 
 /mob/living/carbon/resist_restraints()
 	var/obj/item/I = null
@@ -562,10 +552,14 @@
 	var/total_burn	= 0
 	var/total_brute	= 0
 	var/total_stamina = 0
-	for(var/obj/item/bodypart/BP as anything in bodyparts)
-		total_brute	+= (BP.brute_dam * BP.body_damage_coeff)
-		total_burn	+= (BP.burn_dam * BP.body_damage_coeff)
-		total_stamina += (BP.stamina_dam * BP.stam_damage_coeff)
+	var/obj/item/bodypart/limb
+	for(var/zone in bodyparts)
+		limb = bodyparts[zone]
+		if(!limb)
+			continue
+		total_brute	+= (limb.brute_dam * limb.body_damage_coeff)
+		total_burn	+= (limb.burn_dam * limb.body_damage_coeff)
+		total_stamina += (limb.stamina_dam * limb.stam_damage_coeff)
 	set_health(round(maxHealth - getOxyLoss() - getToxLoss() - getCloneLoss() - total_burn - total_brute, DAMAGE_PRECISION))
 	staminaloss = round(total_stamina, DAMAGE_PRECISION)
 	update_stat()
@@ -943,30 +937,24 @@
 	if(organs_amt)
 		to_chat(user, span_notice("You retrieve some of [src]\'s internal organs!"))
 
-/mob/living/carbon/ExtinguishMob()
+/mob/living/carbon/extinguish_mob()
 	for(var/X in get_equipped_items())
 		var/obj/item/I = X
 		I.acid_level = 0 //washes off the acid on our clothes
 		I.extinguish() //extinguishes our clothes
 	..()
 
-/mob/living/carbon/fakefire(fire_icon = "Generic_mob_burning")
-	var/mutable_appearance/new_fire_overlay = mutable_appearance('icons/mob/OnFire.dmi', fire_icon, -FIRE_LAYER)
-	new_fire_overlay.appearance_flags = RESET_COLOR
-	overlays_standing[FIRE_LAYER] = new_fire_overlay
-	apply_overlay(FIRE_LAYER)
-
-/mob/living/carbon/fakefireextinguish()
-	remove_overlay(FIRE_LAYER)
-
-
 /mob/living/carbon/proc/create_bodyparts()
 	var/l_arm_index_next = -1
 	var/r_arm_index_next = 0
-	for(var/bodypart_path in bodyparts)
-		var/obj/item/bodypart/bodypart_instance = new bodypart_path()
+	var/obj/item/bodypart/bodypart_instance
+	for(var/zone in bodyparts)
+		bodypart_instance = bodyparts[zone]
+		if(!bodypart_instance)
+			continue
+		bodypart_instance = new bodypart_instance()
+		bodyparts[zone] = null
 		bodypart_instance.set_owner(src)
-		bodyparts.Remove(bodypart_path)
 		add_bodypart(bodypart_instance)
 		switch(bodypart_instance.body_part)
 			if(ARM_LEFT)
@@ -981,33 +969,41 @@
 
 ///Proc to hook behavior on bodypart additions.
 /mob/living/carbon/proc/add_bodypart(obj/item/bodypart/new_bodypart)
-	bodyparts += new_bodypart
+	bodyparts[new_bodypart.body_zone] = new_bodypart
 
-	switch(new_bodypart.body_part)
-		if(LEG_LEFT, LEG_RIGHT)
-			set_num_legs(num_legs + 1)
-			if(!new_bodypart.bodypart_disabled)
-				set_usable_legs(usable_legs + 1)
-		if(ARM_LEFT, ARM_RIGHT)
-			set_num_hands(num_hands + 1)
-			if(!new_bodypart.bodypart_disabled)
-				set_usable_hands(usable_hands + 1)
+	if(new_bodypart.body_part & LEGS)
+		set_num_legs(num_legs + 1)
+		if(!new_bodypart.bodypart_disabled)
+			set_usable_legs(usable_legs + 1)
+	if(new_bodypart.body_part & ARMS)
+		set_num_hands(num_hands + 1)
+		if(!new_bodypart.bodypart_disabled)
+			set_usable_hands(usable_hands + 1)
 
 
 ///Proc to hook behavior on bodypart removals.
 /mob/living/carbon/proc/remove_bodypart(obj/item/bodypart/old_bodypart)
-	bodyparts -= old_bodypart
+	var/removed_zone = old_bodypart.body_zone
+	bodyparts[removed_zone] = null // order of the bodypart list must be preserved to prevent layering issues
+	if(!(removed_zone in dna?.species.species_limbs))
+		bodyparts -= removed_zone
 
-	switch(old_bodypart.body_part)
-		if(LEG_LEFT, LEG_RIGHT)
-			set_num_legs(num_legs - 1)
-			if(!old_bodypart.bodypart_disabled)
-				set_usable_legs(usable_legs - 1)
-		if(ARM_LEFT, ARM_RIGHT)
-			set_num_hands(num_hands - 1)
-			if(!old_bodypart.bodypart_disabled)
-				set_usable_hands(usable_hands - 1)
+	if(old_bodypart.body_part & LEGS)
+		set_num_legs(num_legs - 1)
+		if(!old_bodypart.bodypart_disabled)
+			set_usable_legs(usable_legs - 1)
+	if(old_bodypart.body_part & ARMS)
+		set_num_hands(num_hands - 1)
+		if(!old_bodypart.bodypart_disabled)
+			set_usable_hands(usable_hands - 1)
 
+///Returns the first available bodypart, used as a fallback in case the original part used for something goes missing
+/mob/living/carbon/proc/get_first_available_bodypart()
+	var/limb
+	for(var/zone in bodyparts)
+		limb = bodyparts[zone]
+		if(limb)
+			return limb
 
 /mob/living/carbon/do_after_coefficent()
 	. = ..()
@@ -1049,9 +1045,14 @@
 			return
 		var/list/limb_list = list()
 		if(edit_action == "remove")
-			for(var/obj/item/bodypart/B in bodyparts)
-				limb_list += B.body_zone
-				limb_list -= BODY_ZONE_CHEST
+			var/obj/item/bodypart/limb
+			for(var/zone in bodyparts)
+				limb = bodyparts[zone]
+				if(!limb)
+					continue
+				if(limb.body_zone == BODY_ZONE_CHEST)
+					continue
+				limb_list += limb.body_zone
 		else
 			limb_list = list(BODY_ZONE_HEAD, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_CHEST)
 		var/result = input(usr, "Please choose which bodypart to [edit_action]","[capitalize(edit_action)] Bodypart") as null|anything in sortList(limb_list)
@@ -1165,7 +1166,7 @@
 		return TRUE
 
 /mob/living/carbon/can_resist()
-	return bodyparts.len > 2 && ..()
+	return get_bodypart_count() > 2 && ..()
 
 /mob/living/carbon/proc/hypnosis_vulnerable()
 	if(HAS_TRAIT(src, TRAIT_MINDSHIELD))
@@ -1228,18 +1229,20 @@
 
 /// if any of our bodyparts are bleeding
 /mob/living/carbon/proc/is_bleeding()
-	for(var/i in bodyparts)
-		var/obj/item/bodypart/BP = i
-		if(BP.get_part_bleed_rate())
+	var/obj/item/bodypart/limb
+	for(var/zone in bodyparts)
+		limb = bodyparts[zone]
+		if(limb.get_part_bleed_rate())
 			return TRUE
+	return FALSE
 
 /// get our total bleedrate
 /mob/living/carbon/proc/get_total_bleed_rate()
 	var/total_bleed_rate = 0
-	for(var/i in bodyparts)
-		var/obj/item/bodypart/BP = i
-		total_bleed_rate += BP.get_part_bleed_rate()
-
+	var/obj/item/bodypart/limb
+	for(var/zone in bodyparts)
+		limb = bodyparts[zone]
+		total_bleed_rate += limb.get_part_bleed_rate()
 	return total_bleed_rate
 
 /mob/living/carbon/proc/update_flavor_text_feature(new_text)
@@ -1296,10 +1299,22 @@
 	if(!buckled || buckled.buckle_lying != 0)
 		lying_angle_on_lying_down(new_lying_angle)
 
-
 /// Special carbon interaction on lying down, to transform its sprite by a rotation.
 /mob/living/carbon/proc/lying_angle_on_lying_down(new_lying_angle)
 	if(!new_lying_angle)
 		set_lying_angle(pick(90, 270))
 	else
 		set_lying_angle(new_lying_angle)
+
+/mob/living/carbon/get_fire_overlay(stacks, on_fire)
+	var/fire_icon = "[dna?.species.fire_overlay || "human"]_[stacks > MOB_BIG_FIRE_STACK_THRESHOLD ? "big_fire" : "small_fire"]"
+
+	if(!GLOB.fire_appearances[fire_icon])
+		GLOB.fire_appearances[fire_icon] = mutable_appearance(
+			'icons/mob/onfire.dmi',
+			fire_icon,
+			-HIGHEST_LAYER,
+			appearance_flags = RESET_COLOR,
+		)
+
+	return GLOB.fire_appearances[fire_icon]

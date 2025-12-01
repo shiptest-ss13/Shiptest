@@ -5,7 +5,7 @@
 //	You do not need to raise this if you are adding new values that have sane defaults.
 //	Only raise this value when changing the meaning/format/name/layout of an existing value
 //	where you would want the updater procs below to run
-#define SAVEFILE_VERSION_MAX 42
+#define SAVEFILE_VERSION_MAX 43
 
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
@@ -109,6 +109,22 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			pref_species = new /datum/species/human
 			features["tail_human"] = "Cat"
 			features["ears"] = "Cat"
+	if(current_version < 42)
+		var/body_size
+		READ_FILE(S["body_size"], body_size)
+		height_filter = body_size
+	if(current_version < 43)
+		var/gender
+		READ_FILE(S["gender"], gender)
+		if(gender == MALE)
+			pronouns = "He"
+		else if(gender == FEMALE)
+			pronouns = "She"
+		else if(gender == NEUTER)
+			pronouns = "It"
+		else
+			pronouns = "They"
+
 
 /// checks through keybindings for outdated unbound keys and updates them
 /datum/preferences/proc/check_keybindings()
@@ -412,6 +428,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Character
 	READ_FILE(S["real_name"], real_name)
 	READ_FILE(S["gender"], gender)
+	READ_FILE(S["pronouns"], pronouns)
 	READ_FILE(S["age"], age)
 	READ_FILE(S["hair_color"], hair_color)
 	READ_FILE(S["facial_hair_color"], facial_hair_color)
@@ -432,9 +449,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["phobia"], phobia)
 	READ_FILE(S["generic_adjective"], generic_adjective)
 	READ_FILE(S["randomise"],  randomise)
-	READ_FILE(S["body_size"], features["body_size"])
+	READ_FILE(S["height_filter"], height_filter)
 	READ_FILE(S["prosthetic_limbs"], prosthetic_limbs)
-	prosthetic_limbs ||= list(BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
+	prosthetic_limbs ||= list(BODY_ZONE_HEAD = PROSTHETIC_NORMAL, BODY_ZONE_CHEST = PROSTHETIC_NORMAL, BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
+	for(var/zone in list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
+		if(!prosthetic_limbs[zone])
+			prosthetic_limbs[zone] = PROSTHETIC_NORMAL // necessary to prevent old savefiles from breaking the interface
 	READ_FILE(S["learned_languages"], learned_languages)
 	if(!learned_languages?.len) init_learned_languages()
 	READ_FILE(S["native_language"], native_language)
@@ -448,7 +468,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_lizard_frills"], features["frills"])
 	READ_FILE(S["feature_lizard_spines"], features["spines"])
 	READ_FILE(S["feature_lizard_body_markings"], features["body_markings"])
-	READ_FILE(S["feature_lizard_legs"], features["legs"])
 	READ_FILE(S["feature_moth_wings"], features["moth_wings"])
 	READ_FILE(S["feature_moth_markings"], features["moth_markings"])
 
@@ -522,6 +541,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Sanitize
 	real_name = reject_bad_name(real_name)
 	gender = sanitize_gender(gender)
+	pronouns = sanitize_pronouns(pronouns)
 	if(!real_name)
 		real_name = random_unique_name(gender)
 
@@ -561,9 +581,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	jumpsuit_style		= sanitize_inlist(jumpsuit_style, GLOB.jumpsuitlist, initial(jumpsuit_style))
 	exowear				= sanitize_inlist(exowear, GLOB.exowearlist, initial(exowear))
 	fbp					= sanitize_integer(fbp, FALSE, TRUE, FALSE)
+	height_filter		= sanitize_inlist(height_filter, GLOB.height_filters, "Normal")
 	features["grad_style"]				= sanitize_inlist(features["grad_style"], GLOB.hair_gradients_list)
 	features["grad_color"]				= sanitize_hexcolor(features["grad_color"])
-	features["body_size"]				= sanitize_inlist(features["body_size"], GLOB.body_sizes, "Normal")
 	features["mcolor"]					= sanitize_hexcolor(features["mcolor"])
 	features["mcolor2"]					= sanitize_hexcolor(features["mcolor2"])
 	features["ethcolor"]				= copytext_char(features["ethcolor"], 1, 7)
@@ -575,7 +595,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["frills"]					= sanitize_inlist(features["frills"], GLOB.frills_list)
 	features["spines"]					= sanitize_inlist(features["spines"], GLOB.spines_list)
 	features["body_markings"]			= sanitize_inlist(features["body_markings"], GLOB.body_markings_list)
-	features["feature_lizard_legs"]		= sanitize_inlist(features["legs"], GLOB.legs_list, "Normal Legs")
 	features["moth_wings"]				= sanitize_inlist(features["moth_wings"], GLOB.moth_wings_list, "Plain")
 	features["moth_fluff"]				= sanitize_inlist(features["moth_fluff"], GLOB.moth_fluff_list, "Plain")
 	features["spider_legs"] 			= sanitize_inlist(features["spider_legs"], GLOB.spider_legs_list, "Plain")
@@ -617,6 +636,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Character
 	WRITE_FILE(S["real_name"]					, real_name)
 	WRITE_FILE(S["gender"]						, gender)
+	WRITE_FILE(S["pronouns"]					, pronouns)
 	WRITE_FILE(S["age"]							, age)
 	WRITE_FILE(S["hair_color"]					, hair_color)
 	WRITE_FILE(S["facial_hair_color"]			, facial_hair_color)
@@ -637,7 +657,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["species"]						, pref_species.id)
 	WRITE_FILE(S["phobia"]						, phobia)
 	WRITE_FILE(S["generic_adjective"]			, generic_adjective)
-	WRITE_FILE(S["body_size"]					, features["body_size"])
+	WRITE_FILE(S["height_filter"]				, height_filter)
 	WRITE_FILE(S["prosthetic_limbs"]			, prosthetic_limbs)
 	WRITE_FILE(S["learned_languages"]			, learned_languages)
 	WRITE_FILE(S["native_language"]				, native_language)
@@ -652,7 +672,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_lizard_frills"]		, features["frills"])
 	WRITE_FILE(S["feature_lizard_spines"]		, features["spines"])
 	WRITE_FILE(S["feature_lizard_body_markings"], features["body_markings"])
-	WRITE_FILE(S["feature_lizard_legs"]			, features["legs"])
 	WRITE_FILE(S["feature_moth_wings"]			, features["moth_wings"])
 	WRITE_FILE(S["feature_moth_markings"]		, features["moth_markings"])
 	WRITE_FILE(S["jumpsuit_style"]				, jumpsuit_style)

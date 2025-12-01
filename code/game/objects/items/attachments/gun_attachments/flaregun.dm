@@ -1,3 +1,4 @@
+/*
 /obj/item/attachment/gun/flare
 	name = "underbarrel flaregun"
 	desc = "An underbarrel flaregun for lighting the path ahead."
@@ -58,5 +59,4 @@
 	examine_list += span_notice("-\The [name] [loaded_flare ? "has a flare loaded." : "is empty."]")
 	examine_list += span_notice("-You can unload \the [name] by pressing the <b>unique action</b> key. By default, this is <b>space</b>")
 	return examine_list
-
-
+*/

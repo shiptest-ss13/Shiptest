@@ -102,7 +102,7 @@
 		SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "embedded", /datum/mood_event/embedded)
 
 	if(damage > 0)
-		var/armor = victim.run_armor_check(limb.body_zone, MELEE, weapon.armour_penetration, "Your armor has protected your [limb.name].", "Your armor has softened a hit to your [limb.name].",I.armour_penetration)
+		var/armor = victim.run_armor_check(limb.body_zone, MELEE, weapon.armour_penetration, "Your armor has protected your [limb.name].", "Your armor has softened a hit to your [limb.name].")
 		limb.receive_damage(brute=(1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage, blocked=armor, wound_bonus = I.wound_bonus, bare_wound_bonus = I.bare_wound_bonus, sharpness = I.get_sharpness())
 
 /datum/component/embedded/Destroy()
@@ -269,7 +269,7 @@
 
 	if(ishuman(victim)) // check to see if the limb is actually exposed
 		var/mob/living/carbon/human/victim_human = victim
-		if(!victim_human.can_inject(user, TRUE, limb.body_zone, ignore_species = TRUE))
+		if(!victim_human.can_inject(user, TRUE, limb.body_zone, injection_flags = INJECT_CHECK_IGNORE_SPECIES))
 			return TRUE
 
 	INVOKE_ASYNC(src, PROC_REF(tweezePluck), possible_tweezers, user)

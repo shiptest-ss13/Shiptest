@@ -58,7 +58,6 @@
 	if(!P.nodamage && on_hit_state != BULLET_ACT_BLOCK && !QDELETED(src)) //QDELETED literally just for the instagib rifle. Yeah.
 		var/attack_direction = get_dir(P.starting, src)
 		apply_damage(P.damage, P.damage_type, def_zone, armor, wound_bonus=P.wound_bonus, bare_wound_bonus=P.bare_wound_bonus, sharpness = P.sharpness, attack_direction = attack_direction)
-		recoil_camera(src, clamp((P.damage-armor)/4,0.5,10), clamp((P.damage-armor)/4,0.5,10), P.damage/8, P.Angle)
 		apply_effects(P.stun, P.knockdown, P.unconscious, P.irradiate, P.slur, P.stutter, P.eyeblur, P.drowsy, armor, P.stamina, P.jitter, P.paralyze, P.immobilize)
 		if(P.dismemberment)
 			check_projectile_dismemberment(P, def_zone)
@@ -110,7 +109,7 @@
 				)
 				if(!I.throwforce)
 					return
-				var/armor = run_armor_check(zone, "melee", I.armour_penetration, "Your armor has protected your [parse_zone(zone)].", "Your armor has softened hit to your [parse_zone(zone)].",I.armour_penetration)
+				var/armor = run_armor_check(zone, "melee", I.armour_penetration, "Your armor has protected your [parse_zone(zone)].", "Your armor has softened hit to your [parse_zone(zone)].")
 				apply_damage(I.throwforce, dtype, zone, armor, sharpness=I.get_sharpness(), wound_bonus=(nosell_hit * CANT_WOUND))
 		else
 			return TRUE
@@ -157,7 +156,7 @@
 
 /mob/living/fire_act()
 	adjust_fire_stacks(3)
-	IgniteMob()
+	ignite_mob()
 
 /mob/living/proc/grabbedby(mob/living/carbon/user, supress_message = FALSE)
 	if(user == src || anchored || !isturf(user.loc))
@@ -456,15 +455,20 @@
  *
  * If the method is INGEST the mob tastes the reagents.
  * If the method is VAPOR it incorporates permiability protection.
+ * If the method is INHALE it can be blocked by smoke/gas protection.
  */
 /mob/living/expose_reagents(list/reagents, datum/reagents/source, method=TOUCH, volume_modifier=1, show_message=TRUE)
 	if((. = ..()) & COMPONENT_NO_EXPOSE_REAGENTS)
 		return
 
 	if(method == INGEST)
-		taste(source)
+		taste_list(reagents)
 
-	var/touch_protection = (method == VAPOR) ? get_permeability_protection() : 0
+	var/permeability = 1
+	if(method == VAPOR)
+		permeability *= 1 - get_permeability_protection()
+	if(method == INHALE)
+		permeability *= 1 - has_smoke_protection()
 	for(var/reagent in reagents)
 		var/datum/reagent/R = reagent
-		. |= R.expose_mob(src, method, reagents[R], show_message, touch_protection)
+		. |= R.expose_mob(src, method, reagents[R], show_message, 1 - permeability)
