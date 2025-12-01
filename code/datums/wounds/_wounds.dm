@@ -298,7 +298,7 @@
 	return FALSE
 
 /// Like try_treating() but for unhanded interactions from humans, used by joint dislocations for manual bodypart chiropractice for example. Ignores thick material checks since you can pop an arm into place through a thick suit unlike using sutures
-/datum/wound/proc/try_handling(mob/living/carbon/human/user)
+/datum/wound/proc/try_handling(mob/living/carbon/human/user, list/modifiers)
 	return FALSE
 
 /// Someone is using something that might be used for treating the wound on this limb
@@ -333,6 +333,14 @@
 
 /// When ysiltane/alvitane/quardextane is applied to the victim, we call this.
 /datum/wound/proc/on_tane(power)
+	return
+
+/// Applied on crystal reagent application
+/datum/wound/proc/on_crystal(power)
+	return
+
+/// Applied on rezadone application
+/datum/wound/proc/on_rezadone(power)
 	return
 
 /// Called when the patient is undergoing stasis, so that having fully treated a wound doesn't make you sit there helplessly until you think to unbuckle them

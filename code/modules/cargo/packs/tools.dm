@@ -68,6 +68,25 @@
 	crate_name = "basic mining crate"
 	faction = /datum/faction/nt/ns_logi
 
+/datum/supply_pack/tools/entrenching
+	name = "Entrenching Tool Crate"
+	desc = "Contains one dual-purpose mining tool, useful as a pickaxe, shovel, and weapon. Fits in your bag."
+	cost = 500
+	contains = list(/obj/item/trench_tool)
+	crate_name = "mining crate"
+	faction = /datum/faction/syndicate/ngr
+	faction_discount = 20
+
+/datum/supply_pack/tools/entrenching_gezena
+	name = "PGF Entrenching Tool Crate"
+	desc = "Contains one dual-purpose mining tool, useful as a pickaxe, shovel, and weapon. Fits in your bag, and personally manufactured for PGF use."
+	cost = 500
+	contains = list(/obj/item/trench_tool/gezena)
+	crate_name = "mining crate"
+	faction = /datum/faction/pgf
+	faction_locked = TRUE
+	faction_discount = 20
+
 /datum/supply_pack/tools/jackhammer
 	name = "Jackhammer Crate"
 	desc = "Contains a jackhammer, ideal for breaking rocks."

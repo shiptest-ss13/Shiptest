@@ -13,7 +13,7 @@
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = STANDARD_VITAL_ORGAN_DECAY
 
-	food_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/iron = 5)
+	food_reagents = list(/datum/reagent/consumable/nutriment/organ_tissue = 5, /datum/reagent/iron = 5)
 
 	var/alcohol_tolerance = ALCOHOL_RATE//affects how much damage the liver takes from alcohol
 	var/toxTolerance = LIVER_DEFAULT_TOX_TOLERANCE//maximum amount of toxins the liver can just shrug off
