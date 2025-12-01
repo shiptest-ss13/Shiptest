@@ -3,9 +3,23 @@
 /obj/structure/cable{
 	icon_state = "2-10"
 	},
-/obj/effect/spawner/random/entertainment/cigarette,
-/obj/effect/spawner/random/entertainment/cigarette,
-/obj/effect/spawner/random/entertainment/cigarette,
+/obj/effect/spawner/random/entertainment/cigarette{
+	pixel_x = 0;
+	pixel_y = -8
+	},
+/obj/effect/spawner/random/entertainment/cigarette{
+	pixel_x = 10;
+	pixel_y = 6
+	},
+/obj/effect/spawner/random/entertainment/cigarette{
+	pixel_x = -14;
+	pixel_y = 6
+	},
+/obj/effect/decal/cleanable/ash,
+/obj/effect/decal/cleanable/ash/large{
+	pixel_x = -9;
+	pixel_y = 6
+	},
 /turf/open/floor/concrete/slab_1/jungleplanet,
 /area/ruin/jungle/cavecrew/bridge)
 "ae" = (
@@ -133,12 +147,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered{
-	environment_smash = 0
-	},
 /obj/structure/chair{
 	dir = 1
 	},
+/mob/living/simple_animal/hostile/human/frontier/ranged/neutered,
 /turf/open/floor/plating/asteroid/dirt,
 /area/overmap_encounter/planetoid/cave/explored)
 "bp" = (
@@ -702,7 +714,23 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/effect/spawner/random/entertainment/cigarette,
+/obj/effect/spawner/random/entertainment/cigarette{
+	pixel_x = -11;
+	pixel_y = 12
+	},
+/obj/effect/spawner/random/entertainment/cigarette{
+	pixel_x = 6;
+	pixel_y = -4
+	},
+/obj/effect/spawner/random/entertainment/cigarette{
+	pixel_x = 4;
+	pixel_y = 14
+	},
+/obj/effect/decal/cleanable/ash,
+/obj/effect/decal/cleanable/ash{
+	pixel_x = -7;
+	pixel_y = 13
+	},
 /turf/open/floor/concrete/slab_1/jungleplanet,
 /area/ruin/jungle/cavecrew/bridge)
 "eG" = (
@@ -720,14 +748,13 @@
 /turf/open/floor/plasteel/tech/grid/jungleplanet,
 /area/ruin/jungle/cavecrew/engineering)
 "eO" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/structure/closet/crate/secure/gear,
+/obj/item/gun_maint_kit,
+/obj/item/gun_maint_kit,
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/structure/closet/crate/medical,
-/obj/item/storage/firstaid/brute,
-/obj/item/storage/firstaid/regular,
-/obj/item/roller,
 /turf/open/floor/concrete/slab_1/jungleplanet,
 /area/ruin/jungle/cavecrew/cargo)
 "eQ" = (
@@ -955,7 +982,7 @@
 	},
 /obj/machinery/camera/autoname,
 /turf/open/floor/concrete/slab_1/jungleplanet,
-/area/overmap_encounter/planetoid/jungle/explored)
+/area/ruin/jungle/cavecrew)
 "hm" = (
 /obj/structure/platform/wood{
 	dir = 1
@@ -1014,6 +1041,7 @@
 	dir = 1;
 	layer = 2.01
 	},
+/mob/living/simple_animal/hostile/human/frontier/ranged/wasp,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/cavecrew/bridge)
 "hQ" = (
@@ -1081,9 +1109,9 @@
 /area/ruin/jungle/cavecrew/bridge)
 "iz" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/structure/closet/crate/secure/gear,
-/obj/item/gun_maint_kit,
-/obj/item/gun_maint_kit,
+/obj/structure/closet/crate/secure/engineering,
+/obj/item/stack/sheet/mineral/plasma/twenty,
+/obj/item/stack/sheet/mineral/plasma/twenty,
 /turf/open/floor/concrete/slab_1/jungleplanet,
 /area/ruin/jungle/cavecrew/cargo)
 "iA" = (
@@ -1093,8 +1121,15 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/effect/spawner/random/entertainment/cigarette,
-/obj/effect/spawner/random/entertainment/cigarette,
+/obj/effect/spawner/random/entertainment/cigarette{
+	pixel_x = -6;
+	pixel_y = 3
+	},
+/obj/effect/spawner/random/entertainment/cigarette{
+	pixel_x = 11;
+	pixel_y = -7
+	},
+/obj/effect/decal/cleanable/ash,
 /turf/open/floor/concrete/slab_1/jungleplanet,
 /area/ruin/jungle/cavecrew/bridge)
 "iD" = (
@@ -1225,7 +1260,7 @@
 	machinedir = 2;
 	output_dir = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/neutered,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter,
 /turf/open/floor/concrete/slab_1/jungleplanet,
 /area/ruin/jungle/cavecrew/engineering)
 "jF" = (
@@ -1327,7 +1362,7 @@
 	dir = 1
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet,
-/area/overmap_encounter/planetoid/jungle/explored)
+/area/ruin/jungle/cavecrew)
 "kr" = (
 /obj/effect/turf_decal/corner_techfloor_gray/diagonal,
 /obj/effect/decal/cleanable/dirt,
@@ -1477,7 +1512,7 @@
 	dir = 1
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet,
-/area/overmap_encounter/planetoid/jungle/explored)
+/area/ruin/jungle/cavecrew)
 "lo" = (
 /turf/open/floor/engine/hull/reinforced,
 /area/ruin/jungle/cavecrew/ship)
@@ -1577,8 +1612,18 @@
 /obj/structure/platform/wood{
 	dir = 5
 	},
-/obj/effect/spawner/random/entertainment/cigarette,
-/obj/effect/spawner/random/entertainment/cigarette,
+/obj/effect/spawner/random/entertainment/cigarette{
+	pixel_x = -6;
+	pixel_y = -20
+	},
+/obj/effect/spawner/random/entertainment/cigarette{
+	pixel_x = -11;
+	pixel_y = -14
+	},
+/obj/effect/spawner/random/entertainment/cigarette{
+	pixel_x = 5;
+	pixel_y = -5
+	},
 /turf/open/floor/concrete/slab_2/jungleplanet,
 /area/ruin/jungle/cavecrew/bridge)
 "my" = (
@@ -1646,6 +1691,10 @@
 /obj/structure/fermenting_barrel{
 	pixel_x = -5;
 	pixel_y = 11
+	},
+/obj/structure/fermenting_barrel{
+	pixel_x = 12;
+	pixel_y = -12
 	},
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/ruin/jungle/cavecrew/cargo)
@@ -2671,7 +2720,22 @@
 	pixel_y = 8;
 	pixel_x = -3
 	},
-/obj/effect/spawner/random/entertainment/cigarette_pack,
+/obj/effect/spawner/random/entertainment/cigarette_pack{
+	pixel_x = -8;
+	pixel_y = -5
+	},
+/obj/item/blackmarket_uplink{
+	pixel_x = 10;
+	pixel_y = -5
+	},
+/obj/effect/spawner/random/entertainment/cigarette_pack{
+	pixel_x = -3;
+	pixel_y = -10
+	},
+/obj/effect/spawner/random/entertainment/cigarette_pack{
+	pixel_x = -12;
+	pixel_y = 2
+	},
 /turf/open/floor/concrete/slab_1/jungleplanet,
 /area/ruin/jungle/cavecrew/bridge)
 "ww" = (
@@ -2681,7 +2745,12 @@
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "wz" = (
-/turf/open/floor/concrete/slab_4/jungleplanet,
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/structure/closet/crate/medical,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/regular,
+/obj/item/roller,
+/turf/open/floor/concrete/slab_1/jungleplanet,
 /area/ruin/jungle/cavecrew/cargo)
 "wB" = (
 /obj/structure/flora/rock/jungle{
@@ -2740,7 +2809,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "xu" = (
 /obj/structure/falsewall/plastitanium,
-/turf/open/floor/plasteel/dark/jungleplanet,
+/turf/open/floor/wood/jungleplanet,
 /area/ruin/jungle/cavecrew/engineering)
 "xv" = (
 /obj/structure/flora/rock/jungle{
@@ -2815,12 +2884,7 @@
 /obj/structure/cable{
 	icon_state = "4-9"
 	},
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/structure/closet/crate/secure/gear,
-/obj/item/attachment/bayonet,
-/obj/item/attachment/bayonet,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_1/jungleplanet,
+/turf/open/floor/concrete/slab_4/jungleplanet,
 /area/ruin/jungle/cavecrew/cargo)
 "yJ" = (
 /obj/structure/flora/ausbushes/sunnybush{
@@ -2900,12 +2964,14 @@
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/cavecrew)
 "zI" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/structure/closet/crate/secure/gear,
+/obj/item/storage/box/ammo/a762_40,
+/obj/item/storage/box/ammo/a762_40,
+/obj/item/ammo_box/magazine/skm_762_40/extended/empty,
 /obj/structure/cable{
 	icon_state = "4-9"
 	},
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/structure/closet/crate/secure/engineering,
-/obj/item/stack/sheet/mineral/plasma/twenty,
 /turf/open/floor/concrete/slab_1/jungleplanet,
 /area/ruin/jungle/cavecrew/cargo)
 "zJ" = (
@@ -3158,10 +3224,13 @@
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "BH" = (
-/obj/effect/turf_decal/corner_techfloor_gray/diagonal,
-/mob/living/simple_animal/hostile/human/frontier/ranged/wasp,
-/turf/open/floor/plasteel/dark/jungleplanet,
-/area/ruin/jungle/cavecrew/bridge)
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/structure/closet/crate/secure/gear,
+/obj/item/attachment/bayonet,
+/obj/item/attachment/bayonet,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_1/jungleplanet,
+/area/ruin/jungle/cavecrew/cargo)
 "BN" = (
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
@@ -3425,10 +3494,6 @@
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "DS" = (
-/obj/structure/fermenting_barrel{
-	pixel_x = 10;
-	pixel_y = 6
-	},
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/ruin/jungle/cavecrew/cargo)
 "DW" = (
@@ -3539,7 +3604,7 @@
 /turf/open/floor/plasteel/stairs/jungleplanet{
 	dir = 1
 	},
-/area/overmap_encounter/planetoid/jungle/explored)
+/area/ruin/jungle/cavecrew)
 "Fa" = (
 /obj/structure/chair/comfy/grey/directional/east,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -3590,13 +3655,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/cavecrew)
 "Fw" = (
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/structure/closet/crate/secure/gear,
-/obj/item/storage/box/ammo/a762_40,
-/obj/item/storage/box/ammo/a762_40,
-/obj/item/ammo_box/magazine/skm_762_40/extended/empty,
-/turf/open/floor/concrete/slab_1/jungleplanet,
-/area/ruin/jungle/cavecrew/cargo)
+/obj/structure/platform/wood{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/human/frontier/ranged/neutered,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
 "Fy" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -3775,8 +3839,19 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
-/obj/effect/spawner/random/entertainment/cigarette,
-/obj/effect/spawner/random/entertainment/cigarette,
+/obj/effect/spawner/random/entertainment/cigarette{
+	pixel_x = -6;
+	pixel_y = -8
+	},
+/obj/effect/spawner/random/entertainment/cigarette{
+	pixel_x = 8;
+	pixel_y = -11
+	},
+/obj/effect/spawner/random/entertainment/cigarette{
+	pixel_x = 0;
+	pixel_y = 5
+	},
+/obj/effect/decal/cleanable/ash/large,
 /turf/open/floor/concrete/slab_2/jungleplanet,
 /area/ruin/jungle/cavecrew/bridge)
 "Hj" = (
@@ -3898,10 +3973,6 @@
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
-"It" = (
-/mob/living/simple_animal/hostile/human/ramzi/civilian,
-/turf/closed/mineral/random/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
 "Iu" = (
 /obj/effect/spawner/bunk_bed,
 /turf/open/floor/wood,
@@ -4003,8 +4074,13 @@
 /turf/open/floor/plasteel/stairs,
 /area/ruin/jungle/cavecrew/ship)
 "Ji" = (
-/mob/living/simple_animal/hostile/human/frontier,
-/turf/open/floor/plating/asteroid/dirt/jungle,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/railing{
+	dir = 8;
+	layer = 3.1
+	},
+/mob/living/simple_animal/hostile/human/frontier/ranged/neutered,
+/turf/open/water/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "Jl" = (
 /obj/machinery/button/door{
@@ -4017,7 +4093,7 @@
 /turf/open/floor/plasteel/stairs/jungleplanet{
 	dir = 1
 	},
-/area/overmap_encounter/planetoid/jungle/explored)
+/area/ruin/jungle/cavecrew)
 "Jm" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 5
@@ -4898,8 +4974,18 @@
 /obj/structure/platform/wood{
 	dir = 9
 	},
-/obj/effect/spawner/random/entertainment/cigarette,
-/obj/effect/spawner/random/entertainment/cigarette,
+/obj/effect/spawner/random/entertainment/cigarette{
+	pixel_x = -2;
+	pixel_y = -3
+	},
+/obj/effect/spawner/random/entertainment/cigarette{
+	pixel_x = 7;
+	pixel_y = -8
+	},
+/obj/effect/decal/cleanable/ash/large{
+	pixel_x = 0;
+	pixel_y = -9
+	},
 /turf/open/floor/concrete/slab_1/jungleplanet,
 /area/ruin/jungle/cavecrew/bridge)
 "QH" = (
@@ -5607,6 +5693,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/spawner/random/entertainment/cigarette{
+	pixel_x = 14;
+	pixel_y = -6
+	},
 /turf/open/floor/concrete/slab_1/jungleplanet,
 /area/ruin/jungle/cavecrew/bridge)
 "WD" = (
@@ -5921,7 +6011,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/jungleplanet,
+/turf/open/floor/wood/jungleplanet,
 /area/ruin/jungle/cavecrew/bridge)
 "Zh" = (
 /obj/structure/flora/rock/jungle{
@@ -6798,7 +6888,7 @@ fY
 Pq
 fG
 fG
-It
+fG
 fG
 fG
 fG
@@ -7227,7 +7317,7 @@ fG
 fG
 fG
 nT
-zu
+ae
 zu
 Lm
 EI
@@ -7299,7 +7389,7 @@ fG
 fG
 YR
 ae
-bt
+zu
 rh
 Wk
 Zy
@@ -7370,7 +7460,7 @@ fG
 fG
 fG
 fG
-ae
+bt
 nJ
 ht
 OP
@@ -7447,10 +7537,10 @@ fG
 ht
 my
 BT
-Us
 Ma
+iz
 zI
-Fw
+Us
 Zy
 ks
 fG
@@ -7519,10 +7609,10 @@ YR
 cD
 cf
 Ov
-RL
 Ma
+wz
 eO
-iz
+RL
 Na
 ks
 fg
@@ -7591,9 +7681,9 @@ fG
 JS
 VB
 Zy
-wz
 Ma
 Nf
+BH
 yC
 BT
 QB
@@ -7918,7 +8008,7 @@ mK
 mK
 mK
 wr
-YR
+iV
 lm
 jz
 nQ
@@ -8206,7 +8296,7 @@ wr
 dA
 wr
 wr
-YR
+iV
 hi
 rN
 nQ
@@ -8740,7 +8830,7 @@ KQ
 KQ
 SM
 hU
-Yn
+Ji
 Yn
 Yn
 Yn
@@ -9115,7 +9205,7 @@ NT
 zL
 kr
 qb
-BH
+yk
 Pf
 yk
 gh
@@ -9134,7 +9224,7 @@ fG
 Gf
 XW
 fI
-sI
+Fw
 Nq
 KZ
 YR
@@ -9281,7 +9371,7 @@ fG
 YR
 KZ
 sI
-Ji
+KZ
 fG
 fG
 fG
