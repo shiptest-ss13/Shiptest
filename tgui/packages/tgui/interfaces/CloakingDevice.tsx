@@ -2,13 +2,12 @@ import { useBackend } from '../backend';
 import {
   Box,
   Button,
-  Flex,
   LabeledList,
   ProgressBar,
   Section,
   Slider,
 } from '../components';
-import { formatPower, formatSiUnit } from '../format';
+import { formatSiUnit } from '../format';
 import { Window } from '../layouts';
 
 type CloakingData = {

@@ -61,33 +61,31 @@ const SharedContent = (_props, context) => {
       <Section
         title="Radar"
         buttons={
-          <>
-            {hasCloaking ? (
-              <>
-                <Button
-                  tooltip="Cloak"
-                  tooltipPosition="left"
-                  icon="user-secret"
-                  selected={cloaked}
-                  disabled={isViewer}
-                  onClick={() => act('toggle_cloak')}
-                />
-                <ProgressBar
-                  value={cloakChargePercent}
-                  minValue={0}
-                  maxValue={100}
-                  width="72px"
-                  ranges={{
-                    good: [50, Infinity],
-                    average: [15, 50],
-                    bad: [-Infinity, 15],
-                  }}
-                >
-                  {toFixed(cloakChargePercent, 1)}%
-                </ProgressBar>
-              </>
-            ) : null}
-          </>
+          hasCloaking ? (
+            <>
+              <Button
+                tooltip="Cloak"
+                tooltipPosition="left"
+                icon="user-secret"
+                selected={cloaked}
+                disabled={isViewer}
+                onClick={() => act('toggle_cloak')}
+              />
+              <ProgressBar
+                value={cloakChargePercent}
+                minValue={0}
+                maxValue={100}
+                width="72px"
+                ranges={{
+                  good: [50, Infinity],
+                  average: [15, 50],
+                  bad: [-Infinity, 15],
+                }}
+              >
+                {toFixed(cloakChargePercent, 1)}%
+              </ProgressBar>
+            </>
+          ) : null
         }
       >
         <Table>
