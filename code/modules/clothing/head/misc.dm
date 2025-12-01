@@ -32,16 +32,6 @@
 
 	dog_fashion = /datum/dog_fashion/head/nurse
 
-/obj/item/clothing/head/syndicatefake
-	name = "black space-helmet replica"
-	icon = 'icons/obj/clothing/head/spacesuits.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/head/spacesuits.dmi'
-	icon_state = "syndicate-helm-black-red"
-	item_state = "syndicate-helm-black-red"
-	desc = "A plastic replica of a Syndicate agent's space helmet. You'll look just like a real murderous Syndicate agent in this! This is a toy, it is not made for use in space!"
-	clothing_flags = SNUG_FIT
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-
 	equip_sound = 'sound/items/equip/armor_equip.ogg'
 	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
 	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
@@ -173,6 +163,11 @@
 	icon_state = "cowboy"
 
 	dog_fashion = /datum/dog_fashion/head/cowboy
+
+/obj/item/clothing/head/cowboy/black
+	name = "black cowboy hat"
+	desc = "A dark leather hat, you get a bad feeling from it."
+	icon_state = "cowboyblack"
 
 /obj/item/clothing/head/franks_hat
 	name = "Frank's hat"

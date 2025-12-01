@@ -77,9 +77,9 @@
 		affecting = get_bodypart(ran_zone(user.zone_selected, zone_hit_chance))
 
 	if(!affecting) //missing limb? we select the first bodypart (you can never have zero, because of chest)
-		affecting = bodyparts[1]
+		affecting = get_first_available_bodypart()
 	SEND_SIGNAL(I, COMSIG_ITEM_ATTACK_ZONE, src, user, affecting)
-	send_item_attack_message(I, user, affecting.name, parse_zone(affecting.body_zone))
+	send_item_attack_message(I, user, affecting.name, affecting)
 
 	if(I.force)
 		var/attack_direction = get_dir(user, src)
@@ -145,7 +145,7 @@
 	return //so we don't call the carbon's attack_hand().
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
-/mob/living/carbon/attack_hand(mob/living/carbon/human/user)
+/mob/living/carbon/attack_hand(mob/living/carbon/human/user, list/modifiers)
 
 	if(SEND_SIGNAL(src, COMSIG_ATOM_ATTACK_HAND, user) & COMPONENT_CANCEL_ATTACK_CHAIN)
 		. = TRUE
@@ -155,7 +155,7 @@
 			continue
 		if(!S.self_operable && user == src)
 			continue
-		if(S.next_step(user, user.a_intent))
+		if(S.next_step(user, modifiers))
 			return TRUE
 
 	for(var/thing in diseases)
@@ -170,7 +170,7 @@
 
 	for(var/i in all_wounds)
 		var/datum/wound/W = i
-		if(W.try_handling(user))
+		if(W.try_handling(user, modifiers))
 			return TRUE
 
 	return FALSE
@@ -228,9 +228,8 @@
 	if(dam_zone && attacker.client)
 		affecting = get_bodypart(ran_zone(dam_zone))
 	else
-		var/list/things_to_ruin = shuffle(bodyparts.Copy())
-		for(var/B in things_to_ruin)
-			var/obj/item/bodypart/bodypart = B
+		var/list/things_to_ruin = shuffle(get_all_bodyparts())
+		for(var/obj/item/bodypart/bodypart as anything in things_to_ruin)
 			if(bodypart.body_zone == BODY_ZONE_HEAD || bodypart.body_zone == BODY_ZONE_CHEST)
 				continue
 			if(!affecting || ((affecting.get_damage() / affecting.max_damage) < (bodypart.get_damage() / bodypart.max_damage)))
@@ -573,17 +572,21 @@
 		return
 
 	var/embeds = FALSE
-	for(var/obj/item/bodypart/LB as anything in bodyparts)
-		for(var/obj/item/I in LB.embedded_objects)
+	var/obj/item/bodypart/limb
+	for(var/zone in bodyparts)
+		limb = bodyparts[zone]
+		if(!limb)
+			continue
+		for(var/obj/item/I in limb.embedded_objects)
 			if(!embeds)
 				embeds = TRUE
 				// this way, we only visibly try to examine ourselves if we have something embedded, otherwise we'll still hug ourselves :)
 				visible_message(span_notice("[src] examines [p_them()]self."), \
 					span_notice("You check yourself for shrapnel."))
 			if(I.isEmbedHarmless())
-				to_chat(src, "\t <a href='byond://?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] stuck to your [LB.name]!</a>")
+				to_chat(src, "\t <a href='byond://?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(limb)]' class='warning'>There is \a [I] stuck to your [limb.name]!</a>")
 			else
-				to_chat(src, "\t <a href='byond://?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] embedded in your [LB.name]!</a>")
+				to_chat(src, "\t <a href='byond://?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(limb)]' class='warning'>There is \a [I] embedded in your [limb.name]!</a>")
 
 	return embeds
 
@@ -693,8 +696,11 @@
 
 /mob/living/carbon/get_organic_health()
 	. = health
-	for (var/_limb in bodyparts)
-		var/obj/item/bodypart/limb = _limb
+	var/obj/item/bodypart/limb
+	for (var/zone in bodyparts)
+		limb = bodyparts[zone]
+		if(!limb)
+			continue
 		if(limb.bodytype != BODYPART_ORGANIC)
 			. += (limb.brute_dam * limb.body_damage_coeff) + (limb.burn_dam * limb.body_damage_coeff)
 

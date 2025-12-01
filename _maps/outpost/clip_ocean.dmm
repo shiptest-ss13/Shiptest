@@ -957,7 +957,6 @@
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/outpost/exterior/ocean)
 "cL" = (
-/obj/structure/table/chem,
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /obj/structure/closet/wall/white/directional/north{
 	name = "snack bar cabinet"
@@ -1017,6 +1016,8 @@
 	pixel_y = 4
 	},
 /obj/item/melee/knife/kitchen,
+/obj/structure/table/chem,
+/obj/item/kitchen/rollingpin,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/bar)
 "cM" = (
@@ -1048,8 +1049,9 @@
 /turf/open/floor/hangar/clipoutpost,
 /area/outpost/exterior/ocean)
 "cR" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/outpost_selling_pad,
+/obj/machinery/computer/outpost_export_console{
+	dir = 4
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/storage)
 "cS" = (
@@ -1733,18 +1735,6 @@
 /obj/machinery/newscaster/directional/south,
 /turf/open/floor/carpet/green,
 /area/outpost/crew/library)
-"ft" = (
-/obj/structure/railing/thin{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/transparent/blue/line{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/outpost/storage)
 "fv" = (
 /obj/structure/table/reinforced,
 /obj/machinery/fax/admin/outpost,
@@ -2301,8 +2291,9 @@
 /turf/open/water/beach/deep/outpost,
 /area/outpost/crew/bathroom)
 "hv" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/mission_pad,
+/obj/machinery/computer/mission{
+	dir = 8
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/storage)
 "hw" = (
@@ -2795,10 +2786,7 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms)
 "jc" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/computer/outpost_export_console{
-	dir = 4
-	},
+/obj/machinery/outpost_selling_pad,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/storage)
 "je" = (
@@ -5008,12 +4996,28 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/obj/machinery/smartfridge/food,
-/obj/item/food/meat/rawcrab,
-/obj/item/food/meat/rawcrab,
-/obj/item/food/pancakes/blueberry,
-/obj/effect/decal/cleanable/glass,
 /obj/machinery/light/dim/directional/north,
+/obj/structure/table/chem,
+/obj/machinery/coffeemaker{
+	pixel_x = 3;
+	pixel_y = 12
+	},
+/obj/item/storage/fancy/coffee_cart_rack{
+	pixel_x = -11;
+	pixel_y = 8
+	},
+/obj/item/coffee_cartridge/fancy{
+	pixel_x = -1;
+	pixel_y = 1
+	},
+/obj/item/coffee_cartridge/fancy{
+	pixel_x = 3;
+	pixel_y = 1
+	},
+/obj/item/coffee_cartridge/fancy{
+	pixel_x = 7;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/bar)
 "qv" = (
@@ -6194,13 +6198,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
-"uG" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/computer/mission{
-	dir = 8
-	},
-/turf/open/floor/plasteel/telecomms_floor,
-/area/outpost/storage)
 "uH" = (
 /obj/structure/rack,
 /obj/item/gun/ballistic/automatic/smg/cm5{
@@ -7123,28 +7120,8 @@
 /area/outpost/security/armory)
 "xq" = (
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
-/obj/structure/table/chem,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/storage/fancy/coffee_cart_rack{
-	pixel_x = -11;
-	pixel_y = 8
-	},
-/obj/item/coffee_cartridge/fancy{
-	pixel_x = -1;
-	pixel_y = 1
-	},
-/obj/item/coffee_cartridge/fancy{
-	pixel_x = 3;
-	pixel_y = 1
-	},
-/obj/item/coffee_cartridge/fancy{
-	pixel_x = 7;
-	pixel_y = 1
-	},
-/obj/machinery/coffeemaker{
-	pixel_x = 3;
-	pixel_y = 12
-	},
+/obj/machinery/griddle,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/bar)
 "xr" = (
@@ -7224,15 +7201,6 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
-"xy" = (
-/obj/structure/railing/thin,
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/effect/turf_decal/trimline/transparent/blue/line,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/outpost/storage)
 "xz" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
@@ -8818,7 +8786,6 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/library)
 "CY" = (
-/obj/structure/table/chem,
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /obj/structure/sink/chem{
 	pixel_y = 4;
@@ -8840,6 +8807,7 @@
 /obj/machinery/firealarm/directional/north{
 	pixel_x = 6
 	},
+/obj/structure/table/chem,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/bar)
 "CZ" = (
@@ -9085,7 +9053,6 @@
 	},
 /area/outpost/crew/library)
 "DI" = (
-/obj/structure/railing/thin,
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/trimline/transparent/blue/line,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -9793,12 +9760,8 @@
 /area/outpost/crew/bar)
 "Fz" = (
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
-/obj/structure/table/chem,
-/obj/machinery/microwave{
-	pixel_y = 7;
-	pixel_x = -1
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/oven,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/bar)
 "FA" = (
@@ -11766,10 +11729,7 @@
 /turf/open/floor/plasteel/mono/white,
 /area/outpost/medical)
 "LF" = (
-/obj/machinery/computer/mission{
-	dir = 8
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/mission_pad,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/storage)
 "LH" = (
@@ -13651,10 +13611,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/engineering)
 "RQ" = (
-/obj/structure/sign/poster/contraband/pgf{
-	pixel_x = 31;
-	pixel_y = 0
-	},
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
 	},
@@ -13665,6 +13621,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/structure/sign/poster/pgf/random{
+	pixel_y = 0;
+	pixel_x = 28
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/outpost/hallway/starboard)
@@ -15698,9 +15658,6 @@
 	},
 /area/outpost/external)
 "XY" = (
-/obj/structure/railing/thin{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
@@ -24632,8 +24589,8 @@ hv
 LF
 XY
 hJ
-xy
-uG
+gY
+LF
 hv
 Ol
 SX
@@ -24753,7 +24710,7 @@ SX
 Ol
 cR
 jc
-ft
+Qk
 lj
 DI
 jc

@@ -332,6 +332,22 @@
 	src.handle_reactions()
 	return amount
 
+///Multiplies the reagents inside this holder by a specific amount
+/datum/reagents/proc/multiply_reagents(multiplier=1)
+	var/list/cached_reagents = reagent_list
+	if(!total_volume)
+		return
+	var/change = (multiplier - 1) //Get the % change
+	for(var/reagent in cached_reagents)
+		var/datum/reagent/T = reagent
+		if(change > 0)
+			add_reagent(T.type, T.volume * change)
+		else
+			remove_reagent(T.type, abs(T.volume * change)) //absolute value to prevent a double negative situation (removing -50% would be adding 50%)
+
+	update_total()
+	handle_reactions()
+
 /// Transfer a specific reagent id to the target object
 /datum/reagents/proc/trans_id_to(obj/target, reagent, amount=1, preserve_data=1)//Not sure why this proc didn't exist before. It does now! /N
 	var/list/cached_reagents = reagent_list
@@ -943,51 +959,11 @@ Needs matabolizing takes into consideration if the chemical is matabolizing when
  * Returns what this holder's reagents taste like
  *
  * Arguments:
+ * * mob/living/taster - who is doing the tasting. Some mobs can pick up specific flavours.
  * * minimum_percent - the lower the minimum percent, the more sensitive the message is.
  */
-/datum/reagents/proc/generate_taste_message(minimum_percent=15)
-	var/list/out = list()
-	var/list/tastes = list() //descriptor = strength
-	if(minimum_percent <= 100)
-		for(var/datum/reagent/R in reagent_list)
-			if(!R.taste_mult)
-				continue
-
-			if(istype(R, /datum/reagent/consumable/nutriment))
-				var/list/taste_data = R.data
-				for(var/taste in taste_data)
-					var/ratio = taste_data[taste]
-					var/amount = ratio * R.taste_mult * R.volume
-					if(taste in tastes)
-						tastes[taste] += amount
-					else
-						tastes[taste] = amount
-			else
-				var/taste_desc = R.taste_description
-				var/taste_amount = R.volume * R.taste_mult
-				if(taste_desc in tastes)
-					tastes[taste_desc] += taste_amount
-				else
-					tastes[taste_desc] = taste_amount
-		//deal with percentages
-		// TODO it would be great if we could sort these from strong to weak
-		var/total_taste = counterlist_sum(tastes)
-		if(total_taste > 0)
-			for(var/taste_desc in tastes)
-				var/percent = tastes[taste_desc]/total_taste * 100
-				if(percent < minimum_percent)
-					continue
-				var/intensity_desc = "a hint of"
-				if(percent > minimum_percent * 2 || percent == 100)
-					intensity_desc = ""
-				else if(percent > minimum_percent * 3)
-					intensity_desc = "the strong flavor of"
-				if(intensity_desc != "")
-					out += "[intensity_desc] [taste_desc]"
-				else
-					out += "[taste_desc]"
-
-	return english_list(out, "something indescribable")
+/datum/reagents/proc/generate_taste_message(mob/living/taster, minimum_percent)
+	return generate_reagents_taste_message(reagent_list, taster, minimum_percent)
 
 /// Applies heat to this holder
 /datum/reagents/proc/expose_temperature(temperature, coeff=0.02)

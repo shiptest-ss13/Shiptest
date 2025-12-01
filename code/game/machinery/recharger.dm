@@ -22,8 +22,8 @@
 		/obj/item/modular_computer,
 		/obj/item/gun/ballistic/automatic/powered,
 		/obj/item/gun/ballistic/automatic/assault/e40,
-		/obj/item/attachment/gun/energy,
-		/obj/item/stock_parts/cell/gun
+		/obj/item/stock_parts/cell/gun,
+		/obj/item/melee/energy/flyssa
 		))
 
 /obj/machinery/recharger/RefreshParts()
