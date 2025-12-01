@@ -98,3 +98,71 @@
   - bugfix: Fixed existing right-click actions not working
   zimon9:
   - bugfix: fixed some typos
+2025-11-23:
+  Gristlebee:
+  - bugfix: Burn kit patches
+2025-11-25:
+  Erikafox:
+  - rscadd: Rezadone can now undo sepsis in sufficient quantities (10 units)
+  Goat:
+  - rscadd: Pronouns. Your pronouns are now separate from your gender. Be as woke
+      as you want. Pronouns are your gender's default when your save file gets updated
+      so don't worry about having to set them.
+  Overteh:
+  - balance: changes civ Cobra to rapid fire bursts of 4. Decreases spread on Cobras
+      to 2, (3-1 from silencer on mil cobra) and increases on Mongrel and Resolution
+      by 1
+  SapphicOverload:
+  - bugfix: CLIP now uses Zohilan as its official language
+  nikothedude, sapphicoverload, swanni:
+  - rscadd: Added asthma
+  - rscadd: Added inhalers, a new method of applying reagents
+  - rscadd: Oxygen deprivation medical kits now contain salbutamol in inhaler form
+      instead of an injector
+  - rscadd: Histamine and certain gases like SO2 and HCl can cause lung inflammation,
+      even in non-asthmatics
+  - balance: Salbutamol only heals suffocation damage if the affected mob is currently
+      receiving enough oxygen/plasma/etc to breathe, but significantly increases their
+      ability to receive enough in the first place
+  - bugfix: Fixed reagent duplication from smoke
+2025-11-26:
+  00-Steven, Erika (porting fox):
+  - refactor: Refactored tasting code. Please report any jank tasting behaviours.
+  - bugfix: You taste what you eat instead of the contents of your own stomach.
+  - bugfix: Other basic nutriment subtypes also carry food flavours, instead of outweighing
+      the food flavours with their lack of flavour.
+  - bugfix: Basic nutriment subtypes have a flavour they default to, in case of not
+      carrying any food flavours.
+  - bugfix: Tasted flavours can actually be "strong" in addition to mild or "a hint
+      of", as intended.
+  Aquidu:
+  - rscadd: Pill bottle and several medkits' sprites and descriptions updated.
+  - rscadd: Roumain medkit is now purchasable at the outpost.
+  thearbiber:
+  - rscadd: resprites hazard jacket and adds two variants
+  - rscadd: SRM midline hardsuit
+  - balance: Adds SRM hardsuits to ivory and elder
+2025-11-27:
+  generalthrax:
+  - bugfix: Onehalf Safe is now visible again
+2025-11-29:
+  Addust:
+  - bugfix: hardline has sent a few very angry faxes to the previously-mentioned bankrupt
+      architecture firm, reminding them of why they went bankrupt (kali doesnt have
+      doubled central hall APCs anymore)
+  moffball19:
+  - rscadd: Adds the Apso-class Signaller
+  thearbiber, generalthrax:
+  - rscadd: Added Entrenching Tool, available in cargo for 500
+  - balance: Added Entrenching tools to Raleigh and Bolide
+  zimon9:
+  - bugfix: fixed a few lottery typos
+2025-11-30:
+  generalthrax:
+  - rscadd: Added new kitchen stuff to CLIP moon ruin, Beach gunsmith, Arrowsong,
+      and NT Ice (and NGR rock)
+  - balance: Griddle and oven no longer requires titanium to build
+  - bugfix: Bad access on Gunsmith
+  - bugfix: NGR rock no longer uses away mission APCs
+  thearbiber:
+  - rscadd: remaps banshee
