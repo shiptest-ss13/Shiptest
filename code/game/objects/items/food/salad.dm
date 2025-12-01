@@ -15,7 +15,7 @@
 
 /obj/item/food/salad/aesirsalad
 	name = "\improper Aesir salad"
-	desc = "A salad consisting of the botanical experiment known as ambrosia vulgaris. Primarily made for its medicinal use, though it's rather bitter."
+	desc = "An expensive salad made with rare, specially bred golden apples in it. Rumored to have healing properties."
 	icon_state = "aesirsalad"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 8,
