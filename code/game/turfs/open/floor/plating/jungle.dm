@@ -222,13 +222,13 @@
 	light_color = COLOR_JUNGLEPLANET_LIGHT
 
 /turf/open/floor/concrete/slab_2/jungleplanet
-		planetary_atmos = TRUE
+	planetary_atmos = TRUE
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/concrete/slab_3/jungleplanet
-		planetary_atmos = TRUE
+	planetary_atmos = TRUE
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/concrete/slab_4/jungleplanet
-		planetary_atmos = TRUE
+	planetary_atmos = TRUE
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
