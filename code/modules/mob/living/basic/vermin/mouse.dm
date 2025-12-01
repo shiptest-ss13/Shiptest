@@ -190,12 +190,6 @@
 /mob/living/basic/mouse/gray/pet
 	name = "pet mouse"
 	desc = "This little guy isn't just cute, but is trained to not nibble on your ship's cables!"
-	response_help_continuous = "pets"
-	response_help_simple = "pet"
-	response_disarm_continuous = "gently pushes aside"
-	response_disarm_simple = "gently push aside"
-	response_harm_continuous = "splats"
-	response_harm_simple = "splat"
 	ai_controller = /datum/ai_controller/basic_controller/mouse/nocable
 
 /mob/living/basic/mouse/gray/pet/remy
@@ -313,14 +307,6 @@
 	)
 
 /datum/ai_controller/basic_controller/mouse/nocable ///mause that does everything except kill itself on cables, for ship pets
-	blackboard = list(
-		BB_CURRENT_HUNTING_TARGET = null,
-		BB_LOW_PRIORITY_HUNTING_TARGET = null,
-)
-
-	ai_traits = STOP_MOVING_WHEN_PULLED
-	ai_movement = /datum/ai_movement/basic_avoidance
-	idle_behavior = /datum/idle_behavior/idle_random_walk
 	planning_subtrees = list(
 		/datum/ai_planning_subtree/find_and_hunt_target/look_for_cheese,
 		/datum/ai_planning_subtree/random_speech/mouse,
