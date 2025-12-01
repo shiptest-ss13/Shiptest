@@ -373,7 +373,7 @@
 
 /datum/overmap/event/nebula/process()
 	. = ..()
-	var/list/nearby_objects = get_nearby_overmap_objects()
+	var/list/nearby_objects = get_nearby_overmap_objects(include_docked = TRUE)
 	var/datum/virtual_level/ship_vlevel
 
 	for(var/datum/overmap/ship/controlled/ship as anything in affected_ships)
