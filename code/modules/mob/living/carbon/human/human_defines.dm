@@ -85,3 +85,6 @@
 
 	/// Height of the mob
 	VAR_PROTECTED/mob_height = HUMAN_HEIGHT_MEDIUM
+
+	/// Pronouns of the mob
+	var/pronouns = null // all pronoun stuff is for players and will read gender for pronouns if this is null
