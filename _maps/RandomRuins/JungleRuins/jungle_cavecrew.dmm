@@ -3523,7 +3523,7 @@
 /turf/open/floor/concrete/slab_1/jungleplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "EN" = (
-/mob/living/simple_animal/hostile/human/frontier,
+/mob/living/simple_animal/hostile/human/frontier/civilian,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/cavecrew)
 "EP" = (
@@ -3898,6 +3898,10 @@
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
+"It" = (
+/mob/living/simple_animal/hostile/human/ramzi/civilian,
+/turf/closed/mineral/random/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
 "Iu" = (
 /obj/effect/spawner/bunk_bed,
 /turf/open/floor/wood,
@@ -6794,7 +6798,7 @@ fY
 Pq
 fG
 fG
-fG
+It
 fG
 fG
 fG
