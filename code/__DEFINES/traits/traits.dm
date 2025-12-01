@@ -424,6 +424,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define LYING_DOWN_TRAIT "lying-down"
 /// Trait associated to lacking electrical power.
 #define POWER_LACK_TRAIT "power-lack"
+/// Trait associated with an active cloaking device.
+#define CLOAKED_TRAIT "cloaked"
 /// Trait applied by MODsuits.
 #define MOD_TRAIT "mod"
 
@@ -514,6 +516,12 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_MOVE_PHASING "move_phasing"
 /// Disables the floating animation. See above.
 #define TRAIT_NO_FLOATING_ANIM "no-floating-animation"
+
+// Traits for ships and other overmap objects
+///This ship is cloaked or hidden and cannot be detected on long-range scanners
+#define TRAIT_CLOAKED "cloaked"
+///Currently only adds a blue-shifting during the cloak animation, will add functionality later when I add anti-ship weapons
+#define TRAIT_BLUESPACE_SHIFT "bluespace_shift"
 
 /// Trait granted by [mob/living/silicon/ai]
 /// Applied when the ai anchors itself
