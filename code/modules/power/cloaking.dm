@@ -39,9 +39,9 @@
 /obj/machinery/power/cloak/Destroy()
 	set_cloak(FALSE)
 	if(linked_ship)
-		unlink_from_ship()
 		for(var/obj/console as anything in linked_ship.helms)
 			console.update_static_data_for_all_viewers()
+		unlink_from_ship()
 	return ..()
 
 /obj/machinery/power/cloak/examine(mob/user)
