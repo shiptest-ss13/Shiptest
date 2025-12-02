@@ -1060,15 +1060,6 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/office)
-"id" = (
-/obj/item/coffee_cartridge/bootleg{
-	desc = "A jury-rigged coffee cartridge. Should work with a Attention coffeemaker, though it might void the warranty. This one is labled "Riso-Teceti Heat";
-	name = "bootleged coffeemaker cartridge - Riso Teceti Heat";
-	pixel_y = 5;
-	pixel_x = 3
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew/cryo)
 "ie" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -2729,17 +2720,13 @@
 /obj/item/storage/fancy/coffee_cart_rack{
 	pixel_x = 10
 	},
-/obj/item/coffee_cartridge/bootleg{
-	desc = "A jury-rigged coffee cartridge. Should work with a Attention coffeemaker, though it might void the warranty. This one is labled "Riso-Teceti Heat";
-	name = "bootleged coffeemaker cartridge - Riso Teceti Heat";
-	pixel_y = 5;
-	pixel_x = 3
+/obj/item/coffee_cartridge/fancy/mocha{
+	pixel_x = 3;
+	pixel_y = 4
 	},
-/obj/item/coffee_cartridge/bootleg{
-	desc = "A jury-rigged coffee cartridge. Should work with a Attention coffeemaker, though it might void the warranty. This one is labled "Riso-Teceti Heat";
-	name = "bootleged coffeemaker cartridge - Riso Teceti Heat";
-	pixel_y = 5;
-	pixel_x = 3
+/obj/item/coffee_cartridge/fancy/mocha{
+	pixel_x = 3;
+	pixel_y = 4
 	},
 /obj/item/coffee_cartridge{
 	pixel_x = 3;
@@ -5889,6 +5876,15 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
+"LL" = (
+/obj/item/coffee_cartridge/bootleg{
+	desc = "A jury-rigged coffee cartridge. Should work with a Attention coffeemaker, though it might void the warranty. This one is labled "Riso-Teceti Heat";
+	name = "bootleged coffeemaker cartridge - Riso Teceti Heat";
+	pixel_y = 5;
+	pixel_x = 3
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/cryo)
 "LO" = (
 /obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/dark,
@@ -8448,7 +8444,7 @@ Eb
 bL
 bL
 bL
-id
+LL
 Fs
 Tc
 Fs
