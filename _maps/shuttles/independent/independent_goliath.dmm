@@ -3194,11 +3194,6 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "uW" = (
-/obj/machinery/jukebox{
-	pixel_y = 20;
-	density = 0;
-	should_we_be_dense = 0
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
@@ -3207,6 +3202,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
+	},
+/obj/machinery/jukebox{
+	pixel_y = 20;
+	density = 0
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
@@ -5591,9 +5590,7 @@
 	dir = 4
 	},
 /obj/machinery/power/terminal,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/effect/turf_decal/industrial/fire,
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden,
