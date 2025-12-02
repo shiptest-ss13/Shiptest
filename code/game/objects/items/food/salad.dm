@@ -21,7 +21,7 @@
 		/datum/reagent/consumable/nutriment = 8,
 		/datum/reagent/consumable/nutriment/vitamin = 6,
 	)
-	tastes = list("leaves" = 1 "snobby richness" = 1)
+	tastes = list("leaves" = 1, "snobby richness" = 1)
 	foodtypes = VEGETABLES | FRUIT
 
 /obj/item/food/salad/herbsalad
