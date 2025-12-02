@@ -4,7 +4,7 @@
 	value = 0
 	mob_traits = list(TRAIT_FAN_RILENA)
 	gain_text = span_notice("You are a huge fan of a certain combination webcomic and bullet hell game.")
-	gain_text = span_danger("Suddenly, bullet hell games and webcomics don't seem all that interesting anymore...")
+	lose_text = span_danger("Suddenly, bullet hell games and webcomics don't seem all that interesting anymore...")
 	detectable = FALSE
 
 /datum/quirk/fan_rilena/on_spawn()
