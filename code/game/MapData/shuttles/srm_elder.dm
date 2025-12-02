@@ -88,29 +88,6 @@
 	DELAY 15
 	"}
 
-
-/obj/item/storage/firstaid/roumain
-	name = "Roumain first aid kit"
-	desc = "A common first aid kit used amongst the followers of the Ashen Huntsman."
-	icon_state = "radfirstaid"
-	item_state = "firstaid-rad"
-	custom_premium_price = 1100
-
-/obj/item/storage/firstaid/roumain/PopulateContents()
-	if(empty)
-		return
-	var/static/list/items_inside = list(
-		/obj/item/healthanalyzer = 1,
-		/obj/item/food/grown/ash_flora/puce = 1,
-		/obj/item/reagent_containers/glass/mortar = 1,
-		/obj/item/reagent_containers/glass/bowl/mushroom_bowl = 1,
-		/obj/item/pestle = 1,
-		/obj/item/food/grown/ash_flora/cactus_fruit = 3,
-		/obj/item/food/meat/slab/bear = 3,
-		/obj/item/food/grown/ash_flora/mushroom_leaf = 3,
-	)
-	generate_items_inside(items_inside, src)
-
 /obj/item/book/manual/srmlore
 	name = "Notes on the SRM"
 	icon_state = "book5"
