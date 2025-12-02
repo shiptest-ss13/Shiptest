@@ -95,9 +95,6 @@
 /obj/machinery/power/smes/shuttle/micro/precharged{
 	dir = 8
 	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -106,6 +103,10 @@
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "midwich_blast4"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -318,15 +319,15 @@
 /area/ship/bridge)
 "z" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater,
-/obj/machinery/door/poddoor/shutters/preopen{
-	dir = 4;
-	id = s
-	},
 /obj/structure/window/reinforced/survival_pod{
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "midwich_blast4"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -341,6 +342,7 @@
 /obj/structure/chair/handrail{
 	dir = 4
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "C" = (
@@ -405,6 +407,25 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"J" = (
+/obj/machinery/power/smes/shuttle/micro/precharged{
+	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "midwich_blast4"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -626,7 +647,7 @@ C
 (11,1,1) = {"
 Y
 Y
-h
+J
 z
 h
 Y
