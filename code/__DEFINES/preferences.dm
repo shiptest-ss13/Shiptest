@@ -123,10 +123,11 @@
 #define RANDOM_HAIR_GRADIENT_STYLE "random_grad_style"
 #define RANDOM_HAIR_GRADIENT_COLOR "random_grad_color"
 
-//prosthetics stuff
+//Limbs stuff
 #define PROSTHETIC_NORMAL "normal"
 #define PROSTHETIC_AMPUTATED "amputated"
 #define PROSTHETIC_ROBOTIC "prosthetic"
+#define PROSTHETIC_ALTERNATIVE "alternative"
 
 /// You cannot speak or understand this language whatsoever.
 #define LANGUAGE_UNKNOWN "Unknown (0)"
