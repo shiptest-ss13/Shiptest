@@ -410,8 +410,3 @@
 	id_job = "Captain"
 	outfit = /datum/outfit/job/gezena/captain
 
-/* clip ig */
-
-/obj/effect/mob_spawn/human/corpse/clip/bombsuitguy
-	name = "CLIP Bombsuit Spawner"
-	outfit = /datum/outfit/job/clip/minutemen/grunt/dressed/bombsuit
