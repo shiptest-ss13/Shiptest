@@ -2202,7 +2202,7 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "goliathblastbridge"
+	id = "goliathblastdorms"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
@@ -2386,9 +2386,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
-/obj/structure/sign/plaques/blank{
-	pixel_y = -32
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2479,6 +2476,13 @@
 /area/ship/hangar)
 "rl" = (
 /obj/structure/chair/comfy/olive/directional/west,
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_x = 6;
+	pixel_y = -20;
+	id = "goliathblastdorms";
+	name = "Exterior Window Lockdown"
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "rm" = (
