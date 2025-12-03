@@ -166,6 +166,7 @@
 	dir = 1
 	},
 /obj/structure/reagent_dispensers/watertank,
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "cu" = (
@@ -257,6 +258,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew)
@@ -2882,6 +2886,7 @@
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/siding/black,
 /obj/structure/bed/roller,
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "PJ" = (
@@ -3144,6 +3149,14 @@
 	pixel_y = 5
 	},
 /obj/machinery/light/small/directional/west,
+/obj/machinery/firealarm/directional/north{
+	pixel_x = -3;
+	pixel_y = 32
+	},
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = 9;
+	pixel_y = 28
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "Tf" = (
