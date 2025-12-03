@@ -2232,21 +2232,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if(limb != BODY_ZONE_CHEST && limb != BODY_ZONE_HEAD)
 							limb_options.Add(PROSTHETIC_AMPUTATED) // starting without a head or chest causes instant death, must be disallowed
 
-						for(var/alternative_part in pref_species.species_alternative_parts)
-							if(limb != alternative_part)
-								continue
-							if(pref_species.species_alternative_parts[limb] == null)
-								continue
-							limb_options.Add(PROSTHETIC_ALTERNATIVE)
-
-						var/datum/sprite_accessory/ipc_chassis/limb_style
 						var/obj/item/bodypart/part_candidate
-						for(var/chassis in GLOB.ipc_chassis_list)
-							limb_style = GLOB.ipc_chassis_list[chassis]
-							part_candidate = limb_style.chassis_bodyparts[limb]
+						var/datum/sprite_accessory/body/limb_style
+						for(var/body in GLOB.alternative_body_list)
+							limb_style = GLOB.alternative_body_list[body]
+							part_candidate = limb_style.replacement_bodyparts[limb]
+							if(length(limb_style.allowed_species))
+								if(!(pref_species.type in limb_style.allowed_species))
+									continue
 							if(!(pref_species.bodytype & initial(part_candidate.bodytype))) // don't allow vox and kepori to select limbs that aren't compatible
 								continue
-							limb_options.Add(chassis)
+							limb_options.Add(body)
 
 						var/status = input(user, "You are modifying your [parse_zone(limb)], what should it be changed to?", "Character Preference", prosthetic_limbs[limb]) in limb_options
 						if(status)
@@ -2632,21 +2628,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					old_part.drop_limb(TRUE)
 					qdel(old_part)
 				character.regenerate_limb(pros_limb, robotic = TRUE)
-			if(PROSTHETIC_ALTERNATIVE)
-				if(old_part)
-					old_part.drop_limb(TRUE)
-					qdel(old_part)
-				var/obj/item/bodypart/new_part = pref_species.species_alternative_parts[pros_limb]
-				new_part = new new_part()
-				if(new_part.should_draw_greyscale)
-					new_part.draw_color = features["mcolor"]
-				if(new_part.overlay_icon_state)
-					new_part.species_secondary_color = features["mcolor2"]
-				new_part.replace_limb(character, TRUE)
-				new_part.update_limb(is_creating = TRUE)
 			else
-				var/datum/sprite_accessory/ipc_chassis/limb_style = GLOB.ipc_chassis_list[prosthetic_limbs[pros_limb]]
-				var/obj/item/bodypart/new_part = limb_style.chassis_bodyparts[pros_limb]
+				var/datum/sprite_accessory/body/limb_style = GLOB.alternative_body_list[prosthetic_limbs[pros_limb]]
+				var/obj/item/bodypart/new_part = limb_style.replacement_bodyparts[pros_limb]
 				new_part = new new_part()
 				if(old_part)
 					old_part.drop_limb(TRUE)

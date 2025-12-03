@@ -242,16 +242,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus,
 	)
 
-	var/list/obj/item/bodypart/species_alternative_parts = list(
-		BODY_ZONE_CHEST = null,
-		BODY_ZONE_HEAD = null,
-		BODY_ZONE_L_ARM = null,
-		BODY_ZONE_R_ARM = null,
-		BODY_ZONE_R_LEG = null,
-		BODY_ZONE_L_LEG = null,
-
-	)
-
 	var/obj/item/organ/heart/robotic_heart = /obj/item/organ/heart/cybernetic
 	var/obj/item/organ/lungs/robotic_lungs = /obj/item/organ/lungs/cybernetic
 	var/obj/item/organ/eyes/robotic_eyes = /obj/item/organ/eyes/robotic
