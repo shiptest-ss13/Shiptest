@@ -511,13 +511,16 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew)
 "hJ" = (
-/obj/structure/table,
-/obj/structure/sign/poster/contraband/bulldog{
-	pixel_x = 31;
-	pixel_y = 0
+/obj/machinery/shower{
+	dir = 8
 	},
-/turf/open/floor/carpet/red,
-/area/ship/crew)
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/obj/machinery/door/window/northright,
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plasteel/showroomfloor,
+/area/ship/hallway/central)
 "hP" = (
 /obj/effect/turf_decal/corner/opaque/tan/mono,
 /obj/structure/table/reinforced,
@@ -678,20 +681,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "iX" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/structure/table,
+/obj/structure/sign/poster/contraband/bulldog{
+	pixel_x = 31;
+	pixel_y = 0
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/airlock/hatch{
-	name = "Infirmary"
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/medical)
+/turf/open/floor/carpet/red,
+/area/ship/crew)
 "jf" = (
 /obj/effect/turf_decal/corner/opaque/red/mono,
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
@@ -2359,6 +2355,10 @@
 /obj/effect/turf_decal/corner/opaque/beige/half{
 	dir = 8
 	},
+/obj/structure/sign/poster/radio/arf{
+	pixel_x = 32;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "HW" = (
@@ -2461,6 +2461,11 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
+"Js" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ship/medical)
 "Ju" = (
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 4
@@ -2714,16 +2719,20 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "NG" = (
-/obj/machinery/shower{
-	dir = 8
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/structure/chair/handrail{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/door/window/northright,
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/plasteel/showroomfloor,
-/area/ship/hallway/central)
+/obj/machinery/door/airlock/hatch{
+	name = "Infirmary"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/medical)
 "NK" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -3003,6 +3012,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "RC" = (
@@ -3332,11 +3342,6 @@
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
-"UK" = (
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/ship/medical)
 "UX" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -3947,7 +3952,7 @@ yN
 ws
 uX
 sO
-hJ
+iX
 iB
 iB
 iB
@@ -3991,7 +3996,7 @@ oS
 sh
 oS
 TS
-NG
+hJ
 cy
 CD
 wj
@@ -4165,7 +4170,7 @@ SI
 Kp
 Vn
 Nx
-iX
+NG
 QF
 Mi
 Kg
@@ -4207,7 +4212,7 @@ Wq
 hS
 lq
 lq
-UK
+Js
 lq
 lq
 NK
