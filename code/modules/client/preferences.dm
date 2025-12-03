@@ -2237,6 +2237,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						for(var/body in GLOB.alternative_body_list)
 							limb_style = GLOB.alternative_body_list[body]
 							part_candidate = limb_style.replacement_bodyparts[limb]
+							if(isnull(part_candidate))
+								continue
 							if(length(limb_style.allowed_species))
 								if(!(pref_species.type in limb_style.allowed_species))
 									continue
