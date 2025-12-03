@@ -188,6 +188,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "bD" = (
@@ -1419,12 +1422,15 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "pK" = (
-/obj/machinery/portable_atmospherics/pump,
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
 	},
 /obj/machinery/firealarm/directional/south,
+/obj/machinery/power/cloak,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
 "qa" = (
@@ -3205,14 +3211,16 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines)
 "Oa" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 9
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/extinguisher_cabinet/directional/west,
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/portable_atmospherics/pump,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 9
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
 "Oi" = (
@@ -3484,14 +3492,14 @@
 /area/ship/bridge)
 "QE" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
@@ -3811,10 +3819,10 @@
 	dir = 1
 	},
 /obj/structure/cable{
-	icon_state = "2-5"
+	icon_state = "1-2"
 	},
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "2-4"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)

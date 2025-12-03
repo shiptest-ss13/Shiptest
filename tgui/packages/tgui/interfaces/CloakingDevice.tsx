@@ -71,8 +71,8 @@ export const CloakingDevice = (props, context) => {
                 fillValue={available_power / POWER_MUL}
                 minValue={0}
                 maxValue={max_recharge_rate / POWER_MUL}
-                step={1}
-                stepPixelSize={(125 * POWER_MUL) / max_recharge_rate}
+                step={5}
+                stepPixelSize={(960 * POWER_MUL) / max_recharge_rate}
                 format={(value) => formatSiUnit(value * POWER_MUL, 1, 'W')}
                 onDrag={(e, value) =>
                   act('set_charge_rate', {

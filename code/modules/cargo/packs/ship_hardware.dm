@@ -71,10 +71,12 @@
 /datum/supply_pack/ship_hardware/cloaking_device
 	name = "Ship Cloaking System"
 	desc = "A crate containing a cloaking system for hiding a ship from long-range scanners. Very high power consumption."
-	cost = 15000 // expensive!
+	cost = 10000
 	contains = list(/obj/item/circuitboard/machine/cloak)
 	crate_name = "cloaking system crate"
 	crate_type = /obj/structure/closet/crate/engineering
+	faction = /datum/faction/syndicate/hardliners
+	faction_discount = 0.3
 
 /datum/supply_pack/ship_hardware/advanced_cloaking_device
 	name = "BFRD-3A Advanced Cloaking System"

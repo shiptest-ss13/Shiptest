@@ -1,5 +1,5 @@
 #define WATTS_PER_TURF 200
-#define BASE_RECHARGE_RATE 40
+#define BASE_RECHARGE_RATE 80
 
 /obj/machinery/power/cloak
 	name = "ship cloaking device"
@@ -17,9 +17,9 @@
 	/// Whether the cloaking device is active
 	var/cloak_active = FALSE
 	/// The current limit on power draw
-	var/recharge_rate = 20000
+	var/recharge_rate = 0
 	/// The maximum power the cloaking device can draw from the power network
-	var/max_recharge_rate = 20000
+	var/max_recharge_rate = 40000
 	/// Current stored power
 	var/current_charge
 	/// Maximum power storage
@@ -33,6 +33,7 @@
 
 /obj/machinery/power/cloak/Initialize(mapload, apply_default_parts)
 	. = ..()
+	recharge_rate ||= max_recharge_rate / 2
 	connect_to_network()
 	START_PROCESSING(SSmachines, src)
 
@@ -179,12 +180,23 @@
 			balloon_alert(user, "insufficient power!")
 		return FALSE
 	cloak_active = new_state
+
+	var/cloak_sound
 	if(cloak_active)
+		cloak_sound = 'sound/vehicles/cloak_activate.ogg'
 		for(var/trait in cloak_traits)
-			ADD_TRAIT(linked_ship, trait, CLOAKED_TRAIT)
+			ADD_TRAIT(linked_ship, trait, SHIPMODULE_CLOAKING)
 	else
+		cloak_sound = 'sound/vehicles/cloak_deactivate.ogg'
 		for(var/trait in cloak_traits)
-			REMOVE_TRAIT(linked_ship, trait, CLOAKED_TRAIT)
+			REMOVE_TRAIT(linked_ship, trait, SHIPMODULE_CLOAKING)
+
+	var/turf/own_turf = get_turf(src)
+	var/source_z = "[own_turf.virtual_z]"
+	var/list/listeners = (LAZYACCESS(SSmobs.players_by_virtual_z, source_z) || list()) | (LAZYACCESS(SSmobs.dead_players_by_virtual_z, source_z) || list())
+	for(var/mob/listener as anything in listeners)
+		listener.playsound_local(listener, cloak_sound, 50, FALSE, pressure_affected = FALSE)
+
 	play_click_sound("switch")
 	update_appearance(UPDATE_ICON_STATE)
 	return TRUE

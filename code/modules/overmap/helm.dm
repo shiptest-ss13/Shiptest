@@ -246,7 +246,7 @@
 	.["aiControls"] = allow_ai_control
 	.["burnDirection"] = current_ship.burn_direction
 	.["burnPercentage"] = current_ship.burn_percentage
-	.["cloaked"] = HAS_TRAIT_FROM(current_ship, TRAIT_CLOAKED, CLOAKED_TRAIT)
+	.["cloaked"] = HAS_TRAIT_FROM(current_ship, TRAIT_CLOAKED, SHIPMODULE_CLOAKING)
 
 	var/obj/machinery/power/cloak/cloaking_system = current_ship.ship_modules[SHIPMODULE_CLOAKING]
 	if(cloaking_system)
