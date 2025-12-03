@@ -61,6 +61,13 @@
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/cave/explored)
+"av" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/concrete/slab_1/jungleplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "aw" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -219,6 +226,15 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/cavecrew/ship)
+"bv" = (
+/obj/structure/platform/wood{
+	dir = 8
+	},
+/obj/item/flashlight/lantern{
+	light_on = 1
+	},
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
 "bx" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 2
@@ -226,6 +242,13 @@
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/carpet/green/jungleplanet,
 /area/ruin/jungle/cavecrew/dormitories)
+"bz" = (
+/obj/structure/railing{
+	dir = 6;
+	layer = 3.1
+	},
+/turf/open/water/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
 "bB" = (
 /obj/structure/platform/wood{
 	dir = 6
@@ -417,6 +440,20 @@
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet,
 /area/overmap_encounter/planetoid/cave/explored)
+"cC" = (
+/obj/structure/railing{
+	layer = 3.1
+	},
+/obj/structure/flora/ausbushes/reedbush{
+	pixel_y = 9;
+	pixel_x = 1
+	},
+/obj/structure/flora/ausbushes/reedbush{
+	pixel_x = -13;
+	pixel_y = -2
+	},
+/turf/open/water/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
 "cD" = (
 /obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt,
@@ -557,7 +594,9 @@
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
 "ds" = (
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern{
+	light_on = 1
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/jungleplanet{
 	icon_state = "wood-broken5"
@@ -619,12 +658,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/jungle/cavecrew/bridge)
-"dD" = (
-/obj/machinery/shower{
-	dir = 4
-	},
-/turf/open/floor/plating/catwalk_floor,
-/area/ruin/jungle/cavecrew/hallway)
 "dH" = (
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/floor/plating/asteroid/dirt/jungle,
@@ -806,10 +839,9 @@
 /turf/open/floor/concrete/slab_3/jungleplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "eN" = (
-/obj/effect/turf_decal/industrial/warning/fulltile,
-/turf/open/floor/plating/jungleplanet{
-	icon_state = "plating_rust"
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/opaque/tan/filled/warning,
+/turf/open/floor/concrete/reinforced/jungleplanet,
 /area/ruin/jungle/cavecrew)
 "eO" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -874,6 +906,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew/cargo)
+"fz" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "plating_rust"
+	},
+/area/ruin/jungle/cavecrew)
 "fG" = (
 /turf/closed/mineral/random/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -1109,6 +1147,12 @@
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
+"hT" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_1/jungleplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "hU" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/item/flashlight{
@@ -1244,10 +1288,11 @@
 	},
 /area/ruin/jungle/cavecrew)
 "jb" = (
-/obj/structure/girder,
-/obj/structure/hazard/electrical/electrified_water,
-/turf/open/water/jungle,
-/area/ruin/jungle/cavecrew)
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/concrete/slab_1/jungleplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "jc" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1487,6 +1532,12 @@
 	},
 /turf/open/floor/carpet/red/jungleplanet,
 /area/ruin/jungle/cavecrew/dormitories)
+"kF" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/ruin/jungle/cavecrew/hallway)
 "kH" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
@@ -1507,7 +1558,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating/jungleplanet/lit,
+/turf/open/floor/plating,
 /area/ruin/jungle/cavecrew/ship)
 "kQ" = (
 /turf/open/floor/carpet/red/jungleplanet,
@@ -1517,7 +1568,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 10
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/neutered,
+/mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/cavecrew/dormitories)
 "kS" = (
@@ -1733,7 +1784,7 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/east,
-/turf/open/floor/engine/hull/interior/whitesands,
+/turf/open/floor/engine/hull,
 /area/ruin/jungle/cavecrew/ship)
 "mG" = (
 /obj/structure/cable{
@@ -1813,12 +1864,21 @@
 /turf/closed/indestructible/rock/jungle,
 /area/ruin/jungle/cavecrew/bridge)
 "ni" = (
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern{
+	light_on = 1
+	},
 /obj/structure/cable{
 	icon_state = "2-5"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/jungleplanet,
+/area/overmap_encounter/planetoid/cave/explored)
+"nm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "np" = (
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
@@ -1992,7 +2052,9 @@
 	dir = 4
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/space{
-	name = "The Cook"
+	name = "The Cook";
+	weapon_drop_chance = 0;
+	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	},
 /turf/open/floor/plasteel/patterned/brushed/jungleplanet,
 /area/ruin/jungle/cavecrew)
@@ -2152,13 +2214,6 @@
 /obj/structure/flora/junglebush,
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
-"pW" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "1-6"
-	},
-/turf/open/floor/plating/asteroid/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
 "pY" = (
 /obj/structure/cable{
 	icon_state = "1-5"
@@ -2179,6 +2234,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/cavecrew/bridge)
+"qg" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/reinforced/jungleplanet,
+/area/ruin/jungle/cavecrew)
 "qj" = (
 /obj/effect/turf_decal/atmos/plasma,
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden{
@@ -2254,6 +2313,7 @@
 /obj/structure/cable{
 	icon_state = "1-10"
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "rh" = (
@@ -2275,8 +2335,10 @@
 /turf/open/floor/concrete/slab_1/jungleplanet,
 /area/ruin/jungle/cavecrew/hallway)
 "rn" = (
-/turf/closed/indestructible/rock/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/girder,
+/turf/open/floor/concrete/slab_1/jungleplanet,
+/area/ruin/jungle/cavecrew/cargo)
 "rr" = (
 /obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt,
@@ -2449,6 +2511,13 @@
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet,
 /area/ruin/jungle/cavecrew)
+"td" = (
+/obj/structure/hazard/electrical/electrified_water,
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/turf/open/water/jungle,
+/area/ruin/jungle/cavecrew)
 "to" = (
 /obj/effect/turf_decal/corner_techfloor_gray/diagonal,
 /obj/structure/cable{
@@ -2489,13 +2558,6 @@
 	},
 /turf/open/floor/plasteel/patterned/jungleplanet,
 /area/ruin/jungle/cavecrew/engineering)
-"ty" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/open/floor/concrete/slab_1/jungleplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "tA" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -2508,7 +2570,7 @@
 	dir = 1;
 	name = "tactical chair"
 	},
-/turf/open/floor/plasteel/patterned/brushed/jungleplanet,
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/jungle/cavecrew/ship)
 "tB" = (
 /obj/structure/cable{
@@ -2577,15 +2639,16 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/borderfloor{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/oil,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4;
+	layer = 2.01
+	},
 /obj/machinery/door/airlock/grunge{
 	dir = 4;
 	name = "Power Control"
 	},
-/turf/open/floor/plasteel/jungleplanet,
+/turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/cavecrew/engineering)
 "uk" = (
 /obj/structure/girder,
@@ -2741,7 +2804,7 @@
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 1
 	},
-/turf/open/floor/plating/jungleplanet/lit,
+/turf/open/floor/plating,
 /area/ruin/jungle/cavecrew/ship)
 "vh" = (
 /obj/structure/cable{
@@ -2809,12 +2872,6 @@
 "vY" = (
 /turf/closed/wall/concrete,
 /area/ruin/jungle/cavecrew/hallway)
-"vZ" = (
-/obj/structure/railing/corner{
-	dir = 8
-	},
-/turf/open/floor/concrete/slab_1/jungleplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "we" = (
 /turf/open/floor/concrete/slab_4/jungleplanet,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -2924,10 +2981,10 @@
 /turf/open/floor/concrete/slab_4/jungleplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "wG" = (
-/obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/armor/vest/frontier,
 /obj/item/clothing/head/helmet/bulletproof/x11/frontier,
 /obj/item/clothing/mask/gas/frontiersmen,
+/obj/structure/closet,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/cavecrew)
 "wN" = (
@@ -3124,10 +3181,6 @@
 "zu" = (
 /turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/cavecrew/cargo)
-"zz" = (
-/obj/structure/girder,
-/turf/open/floor/plating/asteroid/dirt,
-/area/overmap_encounter/planetoid/cave/explored)
 "zG" = (
 /obj/effect/decal/cleanable/crayon{
 	color = "#FF3333";
@@ -3172,6 +3225,11 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 2
 	},
+/obj/structure/closet/cabinet,
+/obj/item/clothing/head/frontier/peaked,
+/obj/item/clothing/under/frontiersmen/officer,
+/obj/item/clothing/suit/armor/frontier,
+/obj/item/clothing/shoes/combat,
 /turf/open/floor/wood/jungleplanet,
 /area/ruin/jungle/cavecrew/bridge)
 "zM" = (
@@ -3188,12 +3246,15 @@
 "zN" = (
 /turf/open/floor/plasteel/patterned/brushed/jungleplanet,
 /area/ruin/jungle/cavecrew)
-"zP" = (
+"zO" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/structure/cable{
-	icon_state = "4-10"
+	icon_state = "1-6"
 	},
-/turf/open/floor/concrete/slab_1/jungleplanet,
-/area/overmap_encounter/planetoid/cave/explored)
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "panelscorched"
+	},
+/area/ruin/jungle/cavecrew)
 "zW" = (
 /turf/open/floor/wood/jungleplanet,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -3235,12 +3296,6 @@
 /obj/structure/punji_sticks,
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
-"Av" = (
-/obj/effect/turf_decal/trimline/opaque/green/filled/line{
-	dir = 4
-	},
-/turf/open/floor/concrete/slab_1/jungleplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "AE" = (
 /obj/structure/cable{
 	icon_state = "1-6"
@@ -3276,7 +3331,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/engine/hull/interior/whitesands,
+/turf/open/floor/engine/hull,
 /area/ruin/jungle/cavecrew/ship)
 "AW" = (
 /obj/structure/cable{
@@ -3304,13 +3359,6 @@
 	},
 /turf/open/floor/carpet/green/jungleplanet,
 /area/ruin/jungle/cavecrew/bridge)
-"Bb" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "1-5"
-	},
-/turf/open/floor/concrete/slab_3/jungleplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "Bd" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8;
@@ -3319,7 +3367,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/turf/open/floor/engine/hull/interior/whitesands,
+/turf/open/floor/engine/hull,
 /area/ruin/jungle/cavecrew/ship)
 "Be" = (
 /obj/machinery/button/shieldwallgen{
@@ -3346,10 +3394,6 @@
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ruin/jungle/cavecrew/ship)
-"Bm" = (
-/obj/structure/girder,
-/turf/open/floor/concrete/slab_1/jungleplanet,
-/area/ruin/jungle/cavecrew/cargo)
 "Bo" = (
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/open/floor/plating/asteroid/dirt/jungle,
@@ -3457,7 +3501,7 @@
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/wasp,
 /obj/effect/turf_decal/trimline/transparent/green/filled/warning,
-/turf/open/floor/plasteel/patterned/brushed/jungleplanet,
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/jungle/cavecrew/ship)
 "BN" = (
 /obj/structure/table/reinforced{
@@ -3528,6 +3572,17 @@
 	},
 /turf/open/floor/wood/jungleplanet,
 /area/overmap_encounter/planetoid/cave/explored)
+"Ck" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4;
+	layer = 2.01
+	},
+/obj/machinery/door/airlock/grunge{
+	name = "Armory";
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/jungleplanet,
+/area/ruin/jungle/cavecrew)
 "Cl" = (
 /obj/structure/flora/ausbushes/stalkybush{
 	pixel_x = 14;
@@ -3551,7 +3606,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/neutered,
+/mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/cavecrew/dormitories)
 "Cy" = (
@@ -3673,10 +3728,6 @@
 	},
 /turf/open/floor/plasteel/patterned/jungleplanet,
 /area/ruin/jungle/cavecrew/engineering)
-"Du" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/reinforced/jungleplanet,
-/area/ruin/jungle/cavecrew)
 "Dx" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3719,6 +3770,7 @@
 /obj/structure/cable{
 	icon_state = "2-5"
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "DP" = (
@@ -3781,18 +3833,8 @@
 /turf/open/water/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "Es" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 4
-	},
-/obj/machinery/door/airlock/grunge{
-	name = "Armory";
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/jungleplanet,
-/area/ruin/jungle/cavecrew)
+/turf/closed/indestructible/rock/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
 "Ew" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -3917,12 +3959,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/cavecrew)
 "Fw" = (
-/obj/structure/platform/wood{
-	dir = 8
-	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/neutered{
 	environment_smash = 0
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "Fy" = (
@@ -4154,14 +4194,9 @@
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/cavecrew)
 "Hw" = (
-/obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/structure/cable{
-	icon_state = "1-6"
-	},
-/turf/open/floor/plating/jungleplanet{
-	icon_state = "panelscorched"
-	},
-/area/ruin/jungle/cavecrew)
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
 "Hx" = (
 /turf/open/floor/wood/jungleplanet{
 	icon_state = "wood-broken7"
@@ -4259,7 +4294,7 @@
 	name = "shoddily constructed chlorine canister";
 	desc = "This canister of chlorine seems really week. Best hope it doesn't end up in your line of fire!"
 	},
-/turf/open/floor/plating/jungleplanet/lit,
+/turf/open/floor/plating,
 /area/ruin/jungle/cavecrew/ship)
 "Ir" = (
 /obj/effect/turf_decal/techfloor{
@@ -4459,7 +4494,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier,
+/mob/living/simple_animal/hostile/human/frontier/ranged/neutered,
 /turf/open/floor/carpet/green/jungleplanet,
 /area/ruin/jungle/cavecrew/dormitories)
 "JI" = (
@@ -4616,6 +4651,12 @@
 	},
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
+"KU" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/slab_1/jungleplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "KW" = (
 /turf/open/floor/plasteel/stairs,
 /area/ruin/jungle/cavecrew/ship)
@@ -4680,11 +4721,6 @@
 "Lq" = (
 /obj/item/shovel,
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
-/area/overmap_encounter/planetoid/cave/explored)
-"Ls" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/railing/corner,
-/turf/open/water/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "Lv" = (
 /obj/item/storage/backpack/duffelbag/syndie/c4{
@@ -4783,6 +4819,13 @@
 /obj/item/shovel,
 /obj/item/clothing/head/hardhat,
 /turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
+"Mh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-5"
+	},
+/turf/open/floor/concrete/slab_3/jungleplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "Mk" = (
 /obj/effect/turf_decal/corner_techfloor_gray/diagonal,
@@ -5057,6 +5100,10 @@
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/jungle/cavecrew/ship)
+"NZ" = (
+/obj/structure/girder,
+/turf/open/floor/plating/asteroid/dirt,
+/area/overmap_encounter/planetoid/cave/explored)
 "Oc" = (
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/ruin/jungle/cavecrew)
@@ -5178,11 +5225,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/jungleplanet,
 /area/ruin/jungle/cavecrew/hallway)
-"Pj" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/girder,
-/turf/open/floor/concrete/slab_1/jungleplanet,
-/area/ruin/jungle/cavecrew/cargo)
 "Pq" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine/dense,
@@ -5232,10 +5274,6 @@
 	},
 /turf/open/water/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
-"PD" = (
-/obj/structure/hazard/electrical/electrified_water,
-/turf/open/water/jungle,
-/area/ruin/jungle/cavecrew)
 "PF" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
@@ -5248,13 +5286,6 @@
 "PN" = (
 /obj/structure/railing{
 	dir = 4;
-	layer = 3.1
-	},
-/turf/open/water/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
-"PP" = (
-/obj/structure/railing{
-	dir = 6;
 	layer = 3.1
 	},
 /turf/open/water/jungle,
@@ -5428,10 +5459,6 @@
 	},
 /turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/cavecrew/bridge)
-"Rf" = (
-/obj/structure/girder,
-/turf/open/floor/plating,
-/area/ruin/jungle/cavecrew/engineering)
 "Rh" = (
 /mob/living/simple_animal/hostile/carp,
 /turf/open/water/jungle/lit,
@@ -5445,6 +5472,12 @@
 	icon_state = "1-10"
 	},
 /turf/open/floor/concrete/slab_4/jungleplanet,
+/area/overmap_encounter/planetoid/cave/explored)
+"Rp" = (
+/obj/effect/turf_decal/trimline/opaque/green/filled/line{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1/jungleplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "Rr" = (
 /obj/structure/chair/bench/grey/directional/west,
@@ -5530,6 +5563,10 @@
 /obj/structure/spacevine,
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"SF" = (
+/obj/structure/girder,
+/turf/open/floor/plating,
+/area/ruin/jungle/cavecrew/engineering)
 "SI" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/paper_bin{
@@ -5559,9 +5596,8 @@
 /area/ruin/jungle/cavecrew/bridge)
 "SK" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/item/clothing/head/helmet/frontier,
-/obj/item/clothing/suit/armor/vest/marine/frontier,
 /obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/clothing/suit/space/hardsuit/security/independent/frontier,
 /turf/open/floor/pod/jungleplanet,
 /area/ruin/jungle/cavecrew)
 "SM" = (
@@ -5591,14 +5627,18 @@
 /turf/open/floor/concrete/slab_1/jungleplanet,
 /area/ruin/jungle/cavecrew/hallway)
 "SW" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 4
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4;
+	layer = 2.01
 	},
 /obj/machinery/door/airlock/grunge{
 	name = "Armory";
 	dir = 4
 	},
-/turf/open/floor/plasteel/jungleplanet,
+/turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/cavecrew)
 "SX" = (
 /obj/structure/cable{
@@ -5678,11 +5718,6 @@
 	},
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
-"Tp" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/trimline/opaque/tan/filled/warning,
-/turf/open/floor/concrete/reinforced/jungleplanet,
-/area/ruin/jungle/cavecrew)
 "Tu" = (
 /obj/machinery/portable_atmospherics/canister/fuel,
 /obj/machinery/atmospherics/components/unary/portables_connector{
@@ -5748,20 +5783,6 @@
 "TE" = (
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
-"TF" = (
-/obj/structure/railing{
-	layer = 3.1
-	},
-/obj/structure/flora/ausbushes/reedbush{
-	pixel_y = 9;
-	pixel_x = 1
-	},
-/obj/structure/flora/ausbushes/reedbush{
-	pixel_x = -13;
-	pixel_y = -2
-	},
-/turf/open/water/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
 "TJ" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/asteroid/dirt/jungle,
@@ -5888,6 +5909,10 @@
 	},
 /turf/open/water/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
+"Vc" = (
+/obj/structure/girder,
+/turf/open/floor/concrete/slab_1/jungleplanet,
+/area/ruin/jungle/cavecrew/cargo)
 "Vd" = (
 /obj/structure/spacevine,
 /turf/open/water/jungle,
@@ -5921,13 +5946,6 @@
 	},
 /turf/open/floor/carpet/green/jungleplanet,
 /area/ruin/jungle/cavecrew/dormitories)
-"Vs" = (
-/obj/structure/hazard/electrical/electrified_water,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
-/turf/open/water/jungle,
-/area/ruin/jungle/cavecrew)
 "Vu" = (
 /obj/structure/railing{
 	dir = 6
@@ -6005,7 +6023,7 @@
 	},
 /obj/machinery/light/directional/east,
 /obj/machinery/power/apc/auto_name/directional/north,
-/turf/open/floor/engine/hull/interior/whitesands,
+/turf/open/floor/engine/hull,
 /area/ruin/jungle/cavecrew/ship)
 "Wc" = (
 /obj/structure/cable{
@@ -6199,9 +6217,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/cavecrew/ship)
 "Xq" = (
-/obj/item/flashlight/lantern,
-/turf/open/floor/plating/asteroid/dirt/jungle/dark,
-/area/overmap_encounter/planetoid/cave/explored)
+/obj/structure/hazard/electrical/electrified_water,
+/turf/open/water/jungle,
+/area/ruin/jungle/cavecrew)
 "Xs" = (
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 8
@@ -6217,12 +6235,6 @@
 "Xu" = (
 /obj/structure/spacevine,
 /turf/open/floor/plating/asteroid/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
-"Xv" = (
-/obj/structure/cable{
-	icon_state = "2-10"
-	},
-/turf/open/floor/concrete/slab_4/jungleplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "Xy" = (
 /obj/structure/railing/corner{
@@ -6246,6 +6258,12 @@
 /obj/structure/sign/poster/contraband/radiofreefrontier,
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/jungle/cavecrew/hallway)
+"XJ" = (
+/obj/structure/cable{
+	icon_state = "2-10"
+	},
+/turf/open/floor/concrete/slab_4/jungleplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "XM" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -6264,12 +6282,6 @@
 "XN" = (
 /obj/machinery/light/directional/north,
 /turf/open/water/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
-"XO" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/concrete/slab_1/jungleplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "XT" = (
 /obj/structure/cable{
@@ -6316,6 +6328,9 @@
 	icon_state = "1-4"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/platform/wood{
+	dir = 8
+	},
 /turf/open/floor/wood/jungleplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "Yc" = (
@@ -6478,6 +6493,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/cavecrew/ship)
+"Zb" = (
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/turf/open/floor/concrete/slab_1/jungleplanet,
+/area/overmap_encounter/planetoid/cave/explored)
 "Zd" = (
 /obj/structure/falsewall/plastitanium{
 	name = "slightly ajar wall"
@@ -6517,6 +6538,16 @@
 /obj/structure/flora/tree/jungle/small,
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
+"Zn" = (
+/obj/structure/girder,
+/obj/structure/hazard/electrical/electrified_water,
+/turf/open/water/jungle,
+/area/ruin/jungle/cavecrew)
+"Zs" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/railing/corner,
+/turf/open/water/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
 "Zx" = (
 /obj/effect/turf_decal/industrial/warning/dust/corner{
 	dir = 4
@@ -7606,8 +7637,8 @@ cZ
 UJ
 Wv
 Wv
-dD
-dD
+kF
+kF
 Wv
 ST
 PY
@@ -7692,7 +7723,7 @@ Oc
 ZD
 ZD
 ZD
-jb
+Zn
 iV
 iV
 iV
@@ -7731,7 +7762,7 @@ fG
 fG
 fG
 fG
-Bm
+Vc
 dd
 HI
 Tu
@@ -7759,13 +7790,13 @@ gM
 Li
 gA
 Ti
-eN
+fz
 Oc
 Oc
 ZD
 ZD
 YK
-Hw
+zO
 dU
 Xt
 iV
@@ -7832,8 +7863,8 @@ Hj
 dm
 mL
 wE
-Vs
-PD
+td
+Xq
 ZD
 ZD
 ZD
@@ -7881,7 +7912,7 @@ Mr
 fy
 eU
 er
-zz
+NZ
 fG
 LA
 nr
@@ -7901,11 +7932,11 @@ lu
 Wv
 wr
 wr
-Es
 SW
+Ck
 wr
 wr
-jb
+Zn
 ZD
 ZD
 CJ
@@ -7973,8 +8004,8 @@ Wv
 Wv
 fG
 fG
-dz
-DZ
+KU
+jf
 fG
 fG
 fG
@@ -8026,7 +8057,7 @@ zI
 Us
 Zy
 ks
-zz
+NZ
 fG
 LA
 LA
@@ -8114,13 +8145,13 @@ fG
 WS
 Vx
 By
-Bb
-zP
-XO
+Mh
+Zb
+jb
 eo
 jf
-ty
-pW
+av
+nm
 qr
 IA
 HO
@@ -8185,7 +8216,7 @@ fG
 NG
 sR
 Rj
-Xv
+XJ
 AW
 AR
 ZA
@@ -8234,8 +8265,8 @@ fG
 fG
 fG
 cV
-Bm
-Pj
+Vc
+rn
 DS
 DS
 BT
@@ -8561,7 +8592,7 @@ TY
 nV
 Wz
 Ie
-Tp
+eN
 ta
 EU
 kl
@@ -8632,8 +8663,8 @@ mM
 HG
 nV
 Wz
-Du
-Tp
+qg
+eN
 ta
 EU
 lm
@@ -8843,7 +8874,7 @@ Yf
 KQ
 Yj
 KK
-PP
+bz
 Jg
 aD
 wr
@@ -8986,7 +9017,7 @@ Cq
 Cq
 Xu
 KQ
-TF
+cC
 fg
 Tc
 ox
@@ -9063,7 +9094,7 @@ pv
 ax
 yK
 fG
-rn
+Es
 ce
 fG
 fG
@@ -9175,7 +9206,7 @@ KQ
 KQ
 KQ
 Lw
-Ls
+Zs
 KQ
 KQ
 KQ
@@ -9207,7 +9238,7 @@ jU
 un
 QX
 fG
-rn
+Es
 Os
 fG
 fG
@@ -9341,8 +9372,8 @@ fG
 fG
 tQ
 tQ
-Rf
-Rf
+SF
+SF
 QX
 OU
 TO
@@ -9354,8 +9385,8 @@ Ri
 Cg
 ds
 YR
-rn
-rn
+Es
+Es
 fG
 fG
 fG
@@ -9404,7 +9435,7 @@ sr
 dl
 sr
 dl
-vZ
+hT
 uu
 QK
 KZ
@@ -9423,10 +9454,10 @@ cb
 jm
 QX
 fG
-rn
+Es
 dT
-rn
-rn
+Es
+Es
 FN
 YR
 fG
@@ -9497,8 +9528,8 @@ QX
 fG
 fG
 Xb
-rn
-rn
+Es
+Es
 KZ
 fG
 fG
@@ -9544,7 +9575,7 @@ mY
 ZA
 jf
 EM
-Av
+Rp
 ec
 We
 Pc
@@ -9626,22 +9657,22 @@ gm
 CH
 fG
 fG
-rn
-rn
+Es
+Es
 fI
 tB
 cn
 CD
 fv
-rn
-rn
-rn
-rn
-KZ
-KZ
+Es
+Es
 YR
-rn
-rn
+Es
+KZ
+Hw
+YR
+Es
+Es
 Iw
 fG
 fG
@@ -9698,12 +9729,12 @@ fG
 fG
 fG
 fG
-rn
+Es
 FN
 NP
-rn
-rn
-rn
+Es
+Es
+Es
 Gf
 XW
 fI
@@ -9713,8 +9744,8 @@ KZ
 YR
 YR
 YR
-rn
-rn
+Es
+Es
 fG
 fG
 fG
@@ -9772,17 +9803,17 @@ fG
 YR
 KZ
 RV
-rn
-rn
+Es
+Es
 lV
-rn
-rn
+Es
+Es
 Jg
-rn
-rn
+Es
+Es
 KZ
-rn
-rn
+Es
+Es
 YR
 fG
 fG
@@ -9823,7 +9854,7 @@ fG
 fG
 uk
 pk
-Xq
+qr
 uk
 fG
 ua
@@ -9843,14 +9874,14 @@ fG
 KZ
 DJ
 sj
-rn
-rn
+Es
+Es
 QE
 wt
 ne
-rn
+Es
 hm
-rn
+Es
 YR
 KZ
 sI
@@ -9911,20 +9942,20 @@ Gy
 Gn
 ua
 fG
-rn
+Es
 II
 fG
 fG
-rn
+Es
 lV
 Hd
 WA
 iA
 NL
 Oy
-rn
-rn
-rn
+Es
+Es
+Es
 KZ
 fG
 fG
@@ -9966,9 +9997,9 @@ fG
 fG
 fG
 fG
-fG
+YR
 lI
-fG
+YR
 fG
 ua
 ua
@@ -9987,17 +10018,17 @@ RT
 Oy
 fG
 fG
-rn
-rn
+Es
+Es
 mx
 ad
 eF
-rn
-rn
-rn
-rn
-rn
-rn
+Es
+Es
+Es
+Es
+Es
+Es
 fG
 fG
 fG
@@ -10041,7 +10072,7 @@ fG
 fG
 KZ
 fG
-rn
+Es
 fG
 fG
 fG
@@ -10060,11 +10091,11 @@ fG
 fG
 fG
 fG
-rn
-rn
-rn
-rn
-rn
+Es
+Es
+Es
+Es
+Es
 fG
 fG
 fG
@@ -10110,17 +10141,17 @@ TE
 kj
 kj
 kj
-rn
+Es
 Tj
 lI
-sI
+bv
 KZ
 KZ
 fG
 fG
 aL
 fG
-rn
+Es
 qZ
 Nq
 fG
@@ -10182,18 +10213,18 @@ TE
 TE
 TE
 kj
-rn
-rn
+Es
+Es
 fG
 fG
-rn
+Es
 Tj
 Hx
 KZ
 fG
-fG
-rn
-rn
+YR
+Es
+Es
 fI
 fG
 fG
@@ -10258,16 +10289,16 @@ fG
 fG
 fG
 fG
-rn
-rn
-rn
+Es
+Es
+Es
 Tj
 KZ
 Cg
 KZ
 KZ
 bB
-rn
+Es
 fG
 fG
 fG
@@ -10332,14 +10363,14 @@ es
 es
 fG
 fG
-rn
-rn
+Es
+Es
 fG
-rn
+Es
 fG
 fG
-rn
-rn
+Es
+Es
 fG
 fG
 fG
