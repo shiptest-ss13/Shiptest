@@ -80,6 +80,13 @@
 	name = "Lounge"
 	icon_state = "lounge"
 
+/area/outpost/crew/promenade
+	name = "Promenade"
+	icon_state = "lounge"
+
+/area/outpost/crew/sauna
+	name = "Sauna"
+	icon_state = "lounge"
 
 /area/outpost/engineering
 	name = "Engineering"
