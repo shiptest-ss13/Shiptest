@@ -296,5 +296,5 @@
 	threshold_penalty = 80
 	status_effect_type = /datum/status_effect/wound/burn/critical
 	treatable_by = list(/obj/item/stack/medical/ointment, /obj/item/stack/medical/mesh)
-	infestation_rate = 0.5
+	infestation_rate = 0.07
 	flesh_damage = 20
