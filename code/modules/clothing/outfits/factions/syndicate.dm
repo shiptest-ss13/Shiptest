@@ -751,6 +751,18 @@
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/combat
 
+/datum/outfit/job/syndicate/doctor/ngr/stripped
+	name = "Syndicate - Medical Doctor - Stripped (New Gorlex Republic)"
+	faction = FACTION_NGR
+
+	uniform = /obj/item/clothing/under/syndicate/ngr
+	head = null
+	suit = null
+	glasses = null
+	r_pocket = null
+	id = /obj/item/card/id/syndicate_command/crew_id
+	shoes = /obj/item/clothing/shoes/combat
+
 //paramedics
 
 
