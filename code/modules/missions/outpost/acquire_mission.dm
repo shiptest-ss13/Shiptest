@@ -6,9 +6,13 @@
 	/// Instance of the container, spawned after the mission is accepted.
 	var/atom/movable/container
 
+	///The item that this mission wants
 	var/atom/movable/objective_type
+	///How many of this item does the mission want?
 	var/num_wanted = 1
+	///Does this mission allow subtypes of objective_type to count to the total required?
 	var/allow_subtypes = TRUE
+	///Are stacks of objective_type counted individually?
 	var/count_stacks = TRUE
 
 /datum/mission/outpost/acquire/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
