@@ -163,9 +163,7 @@
 /area/outpost/hallway/central)
 "aN" = (
 /obj/effect/turf_decal/corner/opaque/red/mono,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -244,6 +242,9 @@
 	},
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
+	},
+/obj/machinery/computer/outpost_export_console{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo)
@@ -1529,7 +1530,6 @@
 /obj/machinery/griddle,
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/item/food/badrecipe{
-	pixel_x = 0;
 	pixel_y = 6
 	},
 /obj/machinery/light/directional/north,
@@ -1571,9 +1571,7 @@
 /obj/effect/turf_decal/corner/opaque/tan/half{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
@@ -5412,7 +5410,6 @@
 /obj/effect/turf_decal/siding/wideplating/dark/corner,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/sign/poster/radio/arf{
-	pixel_y = 0;
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel,
@@ -5500,7 +5497,6 @@
 "vb" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/effect/decal/cleanable/food/egg_smudge{
-	pixel_x = 0;
 	pixel_y = -10
 	},
 /turf/open/floor/plasteel,
@@ -6013,9 +6009,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech,
 /area/outpost/operations)
 "wT" = (
@@ -6563,7 +6557,7 @@
 /obj/effect/turf_decal/industrial/outline{
 	color = "#791500"
 	},
-/obj/machinery/mission_pad,
+/obj/machinery/outpost_selling_pad,
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo)
 "yW" = (
@@ -6679,7 +6673,6 @@
 "zq" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave{
-	pixel_x = 0;
 	pixel_y = 6
 	},
 /obj/effect/turf_decal/borderfloorblack{
@@ -8688,9 +8681,7 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/line,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/structure/cable/yellow,
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -9398,9 +9389,7 @@
 "KI" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/structure/extinguisher_cabinet/directional/east{
-	pixel_y = 0
-	},
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel,
 /area/outpost/crew/canteen)
 "KJ" = (
@@ -13157,9 +13146,7 @@
 "YV" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/structure/extinguisher_cabinet/directional/west{
-	pixel_y = 0
-	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel,
 /area/outpost/crew/canteen)
 "YX" = (
