@@ -603,7 +603,7 @@
 
 /datum/supply_pack/gun/hydra80
 	name = "Hydra-80 Rifle Crate"
-	desc = "Contains a dated variant of the Hydra assault rifle, with a quick trigger and semi-auto. Chambered in 5.56 CLIP"
+	desc = "Contains a dated variant of the Hydra assault rifle, with a quick trigger and semi-auto. Accepts only small magazines. Chambered in 5.56 CLIP"
 	contains = list(/obj/item/storage/guncase/hydra80)
 	cost = 2500
 	crate_name = "rifle crate"
