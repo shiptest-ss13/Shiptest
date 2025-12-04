@@ -143,7 +143,7 @@
 
 /obj/item/storage/guncase/hydra80
 	gun_type = /obj/item/gun/ballistic/automatic/assault/hydra/indie
-	mag_type = /obj/itme/ammo_box/magazine/m556_42_hydra/small
+	mag_type = /obj/item/ammo_box/magazine/m556_42_hydra/small
 
 /obj/item/storage/guncase/taipan
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/taipan
