@@ -10,9 +10,9 @@
 	///Messages for each stage of addictions.
 	var/list/withdrawal_stage_messages = list()
 	///Rates at which you lose addiction (in units/second) if you are not on the drug at that time per stage
-	var/addiction_loss_per_stage = list(0.5, 0.5, 1, 1.5)
+	var/addiction_loss_per_stage = list(0.075, 0.075, 0.15, 0.3)
 	///Rate at which high sanity helps addiction loss
-	var/high_sanity_addiction_loss = 2
+	var/high_sanity_addiction_loss = 0.15
 	///Amount of drugs you need in your system to be satisfied
 	var/addiction_relief_treshold = MIN_ADDICTION_REAGENT_AMOUNT
 	///moodlet for light withdrawal
@@ -54,6 +54,7 @@
 	end_withdrawal(victim_mind.current)
 	LAZYREMOVE(victim_mind.active_addictions, type)
 
+//to-do. Make it so these're called every 30 seconds rather than CONSTANTLY
 /datum/addiction/proc/process_addiction(mob/living/carbon/affected_carbon, seconds_per_tick)
 	var/current_addiction_cycle = LAZYACCESS(affected_carbon.mind.active_addictions, type) //If this is null, we're not addicted
 	var/on_drug_of_this_addiction = FALSE
