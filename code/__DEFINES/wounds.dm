@@ -24,15 +24,15 @@
 
 // ~wound categories
 /// any brute weapon/attack that doesn't have sharpness. rolls for blunt bone wounds
-#define WOUND_BLUNT 1
+#define WOUND_BLUNT "blunt"
 /// any brute weapon/attack with sharpness = SHARP_EDGED. rolls for slash wounds
-#define WOUND_SLASH 2
+#define WOUND_SLASH "slash"
 /// any brute weapon/attack with sharpness = SHARP_POINTY. rolls for piercing wounds
-#define WOUND_PIERCE 3
+#define WOUND_PIERCE "pierce"
 /// any concentrated burn attack (lasers really). rolls for burning wounds
-#define WOUND_BURN 4
+#define WOUND_BURN "burn"
 /// any brute attacks, rolled on a chance
-#define WOUND_MUSCLE 5
+#define WOUND_MUSCLE "muscle"
 
 
 // ~determination second wind defines
