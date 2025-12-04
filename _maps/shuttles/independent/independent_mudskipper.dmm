@@ -1071,6 +1071,14 @@
 /obj/effect/spawner/random/food_or_drink/ration,
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
+"vu" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "mudskipper_window"
+	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
 "vI" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2137,10 +2145,6 @@
 	color = "#543C30";
 	dir = 8
 	},
-/obj/item/storage/fancy/donut_box{
-	pixel_x = -4;
-	pixel_y = 9
-	},
 /obj/item/plate/small{
 	pixel_x = -8;
 	pixel_y = -2
@@ -2394,14 +2398,6 @@
 /obj/effect/spawner/bunk_bed,
 /turf/open/floor/wood/walnut,
 /area/ship/crew)
-"VC" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "mudskipper_window"
-	},
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/ship/hallway/aft)
 "VP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/techfloor/corner{
@@ -2867,7 +2863,7 @@ cs
 hX
 cs
 cs
-VC
+vu
 ST
 iy
 YK
@@ -2876,7 +2872,7 @@ zR
 nm
 Rl
 XU
-VC
+vu
 cs
 cs
 hX
@@ -2886,7 +2882,7 @@ cs
 hX
 cs
 cs
-VC
+vu
 sT
 vn
 Qp
@@ -2895,7 +2891,7 @@ ar
 sa
 eL
 gT
-VC
+vu
 cs
 cs
 hX
