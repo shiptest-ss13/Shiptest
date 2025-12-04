@@ -67,10 +67,6 @@
 		update_mission_info(mission_location)
 		RegisterSignal(mission_location, COMSIG_PARENT_QDELETING, PROC_REF(on_vital_delete))
 		RegisterSignal(mission_location, COMSIG_OVERMAP_LOADED, PROC_REF(on_planet_load))
-		if(active)
-			SSmissions.active_ruin_missions += src
-		else
-			SSmissions.inactive_ruin_missions += src
 
 	generate_mission_details()
 	regex_mission_text()
@@ -82,10 +78,6 @@
 		var/datum/overmap/mission_location = mission_local_weakref.resolve()
 		if(mission_location)
 			UnregisterSignal(mission_location, COMSIG_PARENT_QDELETING, COMSIG_OVERMAP_LOADED)
-		if(active)
-			SSmissions.active_ruin_missions -= src
-		else
-			SSmissions.inactive_ruin_missions -= src
 
 	//LAZYREMOVE(source_outpost.missions, src)
 	//source_outpost = null
@@ -145,12 +137,10 @@
 /datum/mission/proc/start_mission()
 	testing("starting [src][ADMIN_VV(src)].")
 	SSblackbox.record_feedback("nested tally", "[blackbox_prefix]mission", 1, list(name, "accepted"))
-	SSmissions.inactive_ruin_missions -= src
 	active = TRUE
 	time_issued = station_time()
 	if(duration && !acceptable)
 		dur_timer = addtimer(VARSET_CALLBACK(src, failed, TRUE), duration, TIMER_STOPPABLE)
-	SSmissions.active_ruin_missions += src
 
 /datum/mission/proc/on_planet_load(datum/overmap/dynamic/planet)
 	SIGNAL_HANDLER
@@ -187,7 +177,6 @@
 		SSblackbox.record_feedback("nested tally", "[blackbox_prefix]mission", value, list(name, "payout"))
 		spawn_reward(item_to_turn_in.loc)
 		do_sparks(3, FALSE, get_turf(item_to_turn_in))
-		SSmissions.active_ruin_missions -= src
 		active = FALSE
 		var/datum/overmap/mission_location = mission_local_weakref.resolve()
 		if(istype(mission_location, /datum/overmap/dynamic))

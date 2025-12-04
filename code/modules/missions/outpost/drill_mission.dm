@@ -40,6 +40,36 @@
 		desc += " \n\nA punchcard will be provided for ease of locating a [selected_planet.name]. \
 					A 500 credit bonus will be applied for not using one."
 
+/obj/machinery/drill/mission
+	name = "core sampling research drill"
+	desc = "A specialized laser drill designed to extract geological samples."
+
+	var/num_current = 0
+	var/mission_class
+	var/num_wanted
+	var/obj/structure/vein/orevein_wanted
+
+/obj/machinery/drill/mission/examine()
+	. = ..()
+	. += span_notice("The drill contains [num_current] of the [num_wanted] samples needed.")
+
+/obj/machinery/drill/mission/start_mining()
+	if(orevein_wanted && !istype(our_vein, orevein_wanted))
+		say("Error: Incorrect class of planetiod for operation.")
+		return
+	if(our_vein.vein_class < mission_class && our_vein)
+		say("Error: A vein class of [mission_class] or greater is required for operation.")
+		return
+	return ..()
+
+/obj/machinery/drill/mission/mine_success()
+	num_current++
+
+	if(num_current == num_wanted)
+		SEND_SIGNAL(src, COMSIG_DRILL_SAMPLES_DONE)
+		say("Required samples gathered, shutting down!")
+		if(active)
+			stop_mining()
 
 /datum/mission/outpost/drill/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
 	. = ..()
