@@ -21,7 +21,6 @@
 /// outright dismemberment of limb
 #define WOUND_SEVERITY_LOSS 4
 
-
 // ~wound categories
 /// any brute weapon/attack that doesn't have sharpness. rolls for blunt bone wounds
 #define WOUND_BLUNT 1
@@ -33,7 +32,6 @@
 #define WOUND_BURN 4
 /// any brute attacks, rolled on a chance
 #define WOUND_MUSCLE 5
-
 
 // ~determination second wind defines
 // How much determination reagent to add each time someone gains a new wound in [/datum/wound/proc/second_wind]
@@ -56,6 +54,7 @@ GLOBAL_LIST_INIT(global_wound_types, list(WOUND_BLUNT = list(/datum/wound/blunt/
 		WOUND_MUSCLE = list(/datum/wound/muscle/severe, /datum/wound/muscle/moderate)
 		))
 
+//why is there no SSWounds that handles all of this random shit?
 // every single type of wound that can be rolled naturally, in case you need to pull a random one
 GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datum/wound/blunt/severe, /datum/wound/blunt/moderate,
 	/datum/wound/slash/critical, /datum/wound/slash/critical, /datum/wound/slash/moderate,
@@ -63,23 +62,7 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datu
 	/datum/wound/burn/critical, /datum/wound/burn/severe, /datum/wound/burn/moderate,
 	/datum/wound/muscle/severe, /datum/wound/muscle/moderate))
 
-
-// ~burn wound infection defines
-// Thresholds for infection for burn wounds, once infestation hits each threshold, things get steadily worse
-/// below this has no ill effects from infection
-#define WOUND_INFECTION_MODERATE 4
-/// then below here, you ooze some pus and suffer minor tox damage, but nothing serious
-#define WOUND_INFECTION_SEVERE 8
-/// then below here, your limb occasionally locks up from damage and infection and briefly becomes disabled. Things are getting really bad
-#define WOUND_INFECTION_CRITICAL 12
-/// below here, your skin is almost entirely falling off and your limb locks up more frequently. You are within a stone's throw of septic paralysis and losing the limb
-#define WOUND_INFECTION_SEPTIC 20
-// above WOUND_INFECTION_SEPTIC, your limb is completely putrid and you start rolling to lose the entire limb by way of paralyzation. After 3 failed rolls (~4-5% each probably), the limb is paralyzed
-
-
 // ~random wound balance defines
-/// how quickly sanitization removes infestation and decays per tick
-#define WOUND_BURN_SANITIZATION_RATE 0.30
 /// how much blood you can lose per tick per slash max.
 #define WOUND_SLASH_MAX_BLOODFLOW 6
 /// dead people don't bleed, but they can clot! this is the minimum amount of clotting per tick on dead people, so even critical cuts will slowly clot in dead people
@@ -88,7 +71,6 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datu
 #define WOUND_BONE_HEAD_TIME_VARIANCE 20
 /// Chance to roll a muscle wound from brute damage
 #define MUSCLE_WOUND_CHANCE 20
-
 
 // ~mangling defines
 // With the wounds pt. 2 update, general dismemberment now requires 2 things for a limb to be dismemberable (bone only creatures just need the second):
@@ -99,7 +81,6 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datu
 #define BODYPART_MANGLED_BONE 1
 #define BODYPART_MANGLED_FLESH 2
 #define BODYPART_MANGLED_BOTH 3
-
 
 // ~biology defines
 // What kind of biology we have, and what wounds we can suffer, mostly relies on the HAS_FLESH and HAS_BONE species traits on human species
