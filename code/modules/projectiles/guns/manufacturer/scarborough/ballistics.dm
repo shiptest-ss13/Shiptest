@@ -799,7 +799,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra)
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	gun_firenames = list(FIREMODE_SEMIAUTO)
 
-	spread = 2
+	spread = 3
 	spread_unwielded = 10
 
 NO_MAG_GUN_HELPER(automatic/assault/hydra/indie)
