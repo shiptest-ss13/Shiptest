@@ -16,7 +16,7 @@
 	. = ..()
 	affected_carbon.add_movespeed_modifier(/datum/movespeed_modifier/stimulants)
 
-/datum/addiction/opioids/end_withdrawal(mob/living/carbon/affected_carbon)
+/datum/addiction/stimulants/end_withdrawal(mob/living/carbon/affected_carbon)
 	. = ..()
-	affected_carbon.remove_status_effect(/datum/status_effect/high_blood_pressure)
-	affected_carbon.set_disgust(affected_carbon.disgust * 0.5) //half their disgust to help
+	affected_carbon.remove_actionspeed_modifier(/datum/actionspeed_modifier/stimulants)
+	affected_carbon.remove_movespeed_modifier(/datum/movespeed_modifier/stimulants)
