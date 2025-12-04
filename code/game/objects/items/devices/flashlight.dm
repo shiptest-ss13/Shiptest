@@ -76,7 +76,7 @@
 					return
 
 				if(M == user)	//they're using it on themselves
-					if(M.flash_act(visual = 1))
+					if(M.flash_act(visual = 1) & FLASH_EFFECT)
 						M.visible_message(span_notice("[M] directs [src] to [M.p_their()] eyes."), span_notice("You wave the light in front of your eyes! Trippy!"))
 					else
 						M.visible_message(span_notice("[M] directs [src] to [M.p_their()] eyes."), span_notice("You wave the light in front of your eyes."))
@@ -85,7 +85,7 @@
 						span_warning("[user] directs [src] to [M]'s eyes."),
 						span_danger("You direct [src] to [M]'s eyes.")
 					)
-					if(M.stat == DEAD || (M.is_blind()) || !M.flash_act(visual = 1)) //mob is dead or fully blind
+					if(M.stat == DEAD || (M.is_blind()) || !(M.flash_act(visual = 1) & FLASH_EFFECT)) //mob is dead or fully blind
 						to_chat(user, span_warning("[M]'s pupils don't react to the light!"))
 					else if(M.dna && M.dna.check_mutation(XRAY))	//mob has X-ray vision
 						to_chat(user, span_danger("[M]'s pupils give an eerie glow!"))
@@ -398,7 +398,7 @@
 		var/distance = max(0, get_dist(get_turf(src), M.loc))
 		if(distance == 0) //We won't affect ourselves
 			continue
-		if(M.flash_act(affect_silicon = 1))
+		if(M.flash_act(affect_silicon = 1) & FLASH_EFFECT)
 			M.Knockdown(10/(max(1, distance)))
 			M.confused += 15
 	cooldown = TRUE
