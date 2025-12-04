@@ -788,8 +788,8 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra)
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
-	icon_state = "hydra80"
-	item_state = "hydra80"
+	icon_state = "hydra_80"
+	item_state = "hydra_80"
 
 	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra/small
 	blacklisted_ammo_types = list(
