@@ -75,6 +75,14 @@
 	description = "Standard hand coverings for everyday use."
 	path = /obj/item/clothing/gloves/color/black
 
+/datum/gear/accessory/gloves/armwarmers
+	display_name = "arm warmers"
+	path = /obj/item/clothing/gloves/armwarmer
+
+/datum/gear/accessory/gloves/stripedwarmers
+	display_name = "striped arm warmers"
+	path = /obj/item/clothing/gloves/armwarmer/striped
+
 /datum/gear/accessory/gloves/white
 	display_name = "gloves, white"
 	description = "Standard hand coverings for everyday use."
@@ -143,11 +151,24 @@
 	display_name = "face mask"
 	path = /obj/item/clothing/mask/breath/facemask
 
+/datum/gear/accessory/mask/halfmask
+	display_name = "half mask"
+	path = /obj/item/clothing/mask/gas/sechailer
+
 //Misc
 
 /datum/gear/accessory/waistcoat
 	display_name = "waistcoat"
 	path = /obj/item/clothing/accessory/waistcoat
+	slot = null
+/datum/gear/accessory/waistcoatbrown
+	display_name = "brown waistcoat"
+	path = /obj/item/clothing/accessory/waistcoat/brown
+	slot = null
+
+/datum/gear/accessory/waistcoatwhite
+	display_name = "white waistcoat"
+	path = /obj/item/clothing/accessory/waistcoat/white
 	slot = null
 
 /datum/gear/accessory/stethoscope

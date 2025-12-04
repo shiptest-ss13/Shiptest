@@ -1,4 +1,4 @@
-#define SOLAR_ATTACHMENTS list(/obj/item/attachment/laser_sight,/obj/item/attachment/rail_light,/obj/item/attachment/bayonet,/obj/item/attachment/energy_bayonet,/obj/item/attachment/scope,/obj/item/attachment/gun)
+#define SOLAR_ATTACHMENTS list(/obj/item/attachment/laser_sight,/obj/item/attachment/rail_light,/obj/item/attachment/bayonet,/obj/item/attachment/energy_bayonet,/obj/item/attachment/scope)
 #define SOLAR_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_SCOPE = 1, ATTACHMENT_SLOT_RAIL = 1)
 
 ///SOLAR ARMORIES
@@ -128,6 +128,8 @@
 	slot_available = SOLAR_ATTACH_SLOTS
 	//gauss doesn't explode so there's not light.
 	light_range = 0
+
+	doesnt_keep_bullet = TRUE
 
 
 /obj/item/gun/ballistic/automatic/powered/gauss/claris/suns

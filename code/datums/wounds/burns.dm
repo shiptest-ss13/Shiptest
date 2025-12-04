@@ -227,9 +227,32 @@
 			to_chat(user, span_warning("You need to open [mesh_check] first."))
 			return
 		ointmentmesh(mesh_check, user)
-e
+
 /datum/wound/burn/on_synthflesh(amount)
 	flesh_healing += amount * 0.5 // 20u patch will heal 10 flesh standard
+
+/// When a -tane chem is applied to the victim, we call this.
+/datum/wound/burn/on_tane(amount)
+	if(amount > 10 && severity <= WOUND_SEVERITY_SEVERE)
+		qdel(src)
+		return
+
+	flesh_healing += amount * 0.25
+	sanitization += amount * 0.1
+	return
+
+//crystal reagent lets you reverse sepsis bcause sepsis sucks rn
+/datum/wound/burn/on_crystal(power)
+	if(power>=5)
+		strikes_to_lose_limb = min(strikes_to_lose_limb+1, 3)
+		victim.adjustCloneLoss(2)
+	return
+
+//So does rezadone
+/datum/wound/burn/on_rezadone(power)
+	if(power>=10)
+		strikes_to_lose_limb = min(strikes_to_lose_limb+1, 3)
+	return
 
 // we don't even care about first degree burns, straight to second
 /datum/wound/burn/moderate
@@ -273,5 +296,5 @@ e
 	threshold_penalty = 80
 	status_effect_type = /datum/status_effect/wound/burn/critical
 	treatable_by = list(/obj/item/stack/medical/ointment, /obj/item/stack/medical/mesh)
-	infestation_rate = 0.5
+	infestation_rate = 0.07
 	flesh_damage = 20

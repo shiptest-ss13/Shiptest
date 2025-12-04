@@ -80,6 +80,7 @@
 	slot_flags = ITEM_SLOT_EARS | ITEM_SLOT_HEAD
 	force = 0
 	w_class = WEIGHT_CLASS_SMALL
+	alternate_worn_layer = UNDER_HEAD_LAYER
 	custom_price = 125
 	instrument_range = 1
 

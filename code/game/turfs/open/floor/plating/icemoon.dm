@@ -87,6 +87,9 @@
 /turf/open/floor/plating/asteroid/snow/safe
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
+/turf/open/floor/plating/asteroid/snow/safe/noplanet
+	planetary_atmos = FALSE
+
 /turf/open/floor/plating/asteroid/snow/safe/lit
 	light_range = 2
 	light_power = 0.6

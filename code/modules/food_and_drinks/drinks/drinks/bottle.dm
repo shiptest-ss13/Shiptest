@@ -185,10 +185,6 @@
 	list_reagents = list(/datum/reagent/water/holywater = 100)
 	foodtype = NONE
 
-/obj/item/reagent_containers/food/drinks/bottle/holywater/hell
-	desc = "A flask of holy water...it's been sitting in the Necropolis a while though."
-	list_reagents = list(/datum/reagent/hellwater = 100)
-
 /obj/item/reagent_containers/food/drinks/bottle/vermouth
 	name = "Whitespear Dry Vermouth"
 	desc = "Dry and sweet vermouth, commonly used for mixed drinks. Some Solarians drink it as a digestive before meals."
@@ -301,6 +297,11 @@
 	desc = "A bottle of triple sec originating from Bezuts."
 	icon_state = "triplesecbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/triple_sec = 100)
+
+/obj/item/reagent_containers/food/drinks/bottle/milk
+	name = "bottle of cow milk"
+	desc = "Bottled milk of a cow, a domestic bovine of Solarian origin."
+	list_reagents = list(/datum/reagent/consumable/milk = 100)
 
 //////////////////////////JUICES AND STUFF ///////////////////////
 

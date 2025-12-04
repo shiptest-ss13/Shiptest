@@ -114,6 +114,11 @@
 	mood_change = -4
 	timeout = 3 MINUTES
 
+/datum/mood_event/uncomfortable_medicine
+	description = span_warning("Medicine may be good for me, but right now I feel worse.")
+	mood_change = -3
+	timeout = 120 SECONDS
+
 /datum/mood_event/painful_medicine
 	description = span_warning("Medicine may be good for me but right now it stings like hell.")
 	mood_change = -5

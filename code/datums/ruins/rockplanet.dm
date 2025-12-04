@@ -5,13 +5,6 @@
 
 	ruin_type = RUINTYPE_ROCK
 
-/datum/map_template/ruin/rockplanet/budgetcuts
-	name = "Budgetcuts"
-	description = "Nanotrasen's gotta lay off some personnel, and this facility hasn't been worth the effort so far"
-	id = "rockplanet_budgetcuts"
-	suffix = "rockplanet_budgetcuts.dmm"
-	ruin_tags = list(RUIN_TAG_HARD_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
-
 /datum/map_template/ruin/rockplanet/shippingdock
 	name = "Abandoned Shipping Dock"
 	description = "An abandoned shipping dock used by small cargo freighters and smugglers alike. Some malicious group seems to have trapped the place to eliminate scavengers."
@@ -69,6 +62,7 @@
 
 /datum/mission/ruin/ns_manager
 	name = "Retrieve Manager For Interview"
+
 	desc = "Due to communication failure at one of our remote mining installations, N+S Logistics has been unable to verify the condition of its site and staff. Please travel to the site and locate the manager of the installation. Retrieve them for us so that we may interview on why they have neglected repair of their comms array."
 	value = 1500
 	mission_limit = 1
@@ -109,3 +103,31 @@
 	description = "A frontiersman drug stash in the midst of being buried."
 	id = "rockplanet_river_valley_stash"
 	suffix = "rockplanet_river_valley_stash.dmm"
+
+/datum/map_template/ruin/rockplanet/somme
+	name = "Frontiersman Trench Complex"
+	description = "Frontiersmen have dug in like ticks to the planet's surface."
+	id = "rockplanet_somme"
+	suffix = "rockplanet_somme.dmm"
+/*	ruin_mission_types = list(
+		/datum/mission/ruin/signaled/kill/ross,
+		/datum/mission/ruin/missing_reporter,
+	)
+*/
+
+/datum/mission/ruin/signaled/kill/ross
+	name = "Kill Ross"
+	desc = "A local Frontiersman captain has risen to prominence with their ability to coordinate the sector's cells into more effective action. We've already lost one contracted team to them, and would prefer they be taken care of sooner rather than later."
+	author = "Colonial Minutemen"
+	faction = /datum/faction/clip
+	value = 2000
+	mission_limit = 1
+
+/datum/mission/ruin/missing_reporter
+	name = "Locate Missing Reporter"
+	desc = "Recently one of our Inteq embedded reporters, a Chunce Whatney, stopped sending in reports to the station. Any information about his whereabouts or the recovery of his body would be appreciated."
+	value = 1500
+	mission_limit = 1
+	author = "Lanchester Fishing News"
+	faction = /datum/faction/clip
+	setpiece_item = /mob/living/carbon/human

@@ -52,7 +52,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/fuegoburrito
-	name = "fuego plasma burrito"
+	name = "chili con carne burrito"
 	desc = "A tortilla filled with meat and chili peppers."
 	icon = 'icons/obj/food/tortilla.dmi'
 	icon_state = "fuegoburrito"
@@ -94,7 +94,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/cubannachos
-	name = "Cuban nachos"
+	name = "spicy nachos"
 	desc = "A tortilla shredded into pieces, fried, and served with hot peppers and cheese."
 	icon = 'icons/obj/food/tortilla.dmi'
 	icon_state = "cubannachos"

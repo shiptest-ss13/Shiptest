@@ -127,8 +127,8 @@
 
 /obj/item/storage/firstaid/ancient
 	icon = 'icons/obj/storage.dmi'
-	icon_state = "firstaid"
-	desc = "A first aid kit with the ability to heal common types of injuries."
+	icon_state = "firstaid_old"
+	desc = "A basic first aid kit. It looks a little old..."
 
 /obj/item/storage/firstaid/ancient/PopulateContents()
 	if(empty)
@@ -148,15 +148,21 @@
 	item_state = "firstaid-ointment"
 	damagetype_healed = BURN
 
+/obj/item/storage/firstaid/fire/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 8
+
 /obj/item/storage/firstaid/fire/PopulateContents()
 	if(empty)
 		return
 	var/static/items_inside = list(
-		/obj/item/stack/medical/ointment = 2,
+		/obj/item/stack/medical/ointment = 1,
 		/obj/item/stack/medical/mesh = 1,
 		/obj/item/stack/medical/gauze = 1,
-		/obj/item/reagent_containers/pill/patch/silver_sulf = 1,
-		/obj/item/reagent_containers/hypospray/medipen/oxandrolone = 1,
+		/obj/item/reagent_containers/medigel/quardexane = 1,
+		/obj/item/storage/pill_bottle/alvitane = 1,
+		/obj/item/reagent_containers/hypospray/medipen/ysiltane = 1,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
 		/obj/item/reagent_containers/hypospray/medipen/ekit = 1,
 	)
@@ -165,7 +171,7 @@
 //Toxin kit
 /obj/item/storage/firstaid/toxin
 	name = "toxin treatment kit"
-	desc = "Used to treat toxic blood content and radiation poisoning."
+	desc = "A specialized medical kit for treating severe blood toxins."
 	icon_state = "antitoxin"
 	item_state = "firstaid-toxin"
 	damagetype_healed = TOX
@@ -175,19 +181,24 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/storage/pill_bottle/charcoal/less = 1,
-		/obj/item/reagent_containers/syringe/thializid = 3,
+		/obj/item/reagent_containers/syringe/pancrazine = 3,
 		/obj/item/storage/pill_bottle/potassiodide = 1,
-		/obj/item/reagent_containers/hypospray/medipen/penacid = 1,
+		/obj/item/reagent_containers/hypospray/medipen/gjalrazine = 1,
 	)
 	generate_items_inside(items_inside,src)
 
 //Rad kit
 /obj/item/storage/firstaid/radiation
 	name = "radiation treatment kit"
-	desc = "Used to treat severe radiation poisoning."
+	desc = "A specialized medical kit for treating radiation poisoning."
 	icon_state = "radiation"
 	item_state = "firstaid-ointment" //its yellow
 	damagetype_healed = TOX
+
+/obj/item/storage/firstaid/radiation/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 8
 
 /obj/item/storage/firstaid/radiation/PopulateContents()
 	if(empty)
@@ -202,17 +213,22 @@
 //Oxy kit
 /obj/item/storage/firstaid/o2
 	name = "oxygen deprivation treatment kit"
-	desc = "A box full of oxygen goodies."
+	desc = "A specialized medical kit for treating suffocation and blood loss."
 	icon_state = "o2"
 	item_state = "firstaid-o2"
 	damagetype_healed = OXY
+
+/obj/item/storage/firstaid/o2/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 8
 
 /obj/item/storage/firstaid/o2/PopulateContents()
 	if(empty)
 		return
 	var/static/items_inside = list(
-		/obj/item/reagent_containers/syringe/perfluorodecalin = 3,
-		/obj/item/reagent_containers/hypospray/medipen/salbutamol = 1,
+		/obj/item/reagent_containers/syringe/dexalin = 3,
+		/obj/item/inhaler/salbutamol = 1,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
 		/obj/item/storage/pill_bottle/iron = 1,
 		/obj/item/reagent_containers/hypospray/medipen/blood_loss = 2,
@@ -222,22 +238,27 @@
 //Brute kit
 /obj/item/storage/firstaid/brute
 	name = "brute trauma treatment kit"
-	desc = "A first aid kit for when you get toolboxed."
+	desc = "A specialized medical kit for treating severe bruises."
 	icon_state = "brute"
 	item_state = "firstaid-brute"
 	damagetype_healed = BRUTE
+
+/obj/item/storage/firstaid/brute/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 8
 
 /obj/item/storage/firstaid/brute/PopulateContents()
 	if(empty)
 		return
 	var/static/items_inside = list(
-		/obj/item/reagent_containers/pill/patch/styptic = 1,
-		/obj/item/storage/pill_bottle/trophazole = 1,
+		/obj/item/reagent_containers/medigel/hadrakine = 1,
+		/obj/item/storage/pill_bottle/indomide = 1,
 		/obj/item/stack/medical/bone_gel = 1,
 		/obj/item/stack/sticky_tape/surgical = 1,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/stack/medical/splint = 1,
-		/obj/item/reagent_containers/hypospray/medipen/salacid = 1,
+		/obj/item/reagent_containers/hypospray/medipen/silfrine = 1,
 		/obj/item/reagent_containers/hypospray/medipen/ekit = 1,
 	)
 	generate_items_inside(items_inside,src)
@@ -245,15 +266,15 @@
 //Advanced kit
 /obj/item/storage/firstaid/advanced
 	name = "advanced first aid kit"
-	desc = "An advanced kit to help deal with advanced wounds."
-	icon_state = "radfirstaid"
-	item_state = "firstaid-rad"
+	desc = "A specialized medical kit full of advanced medicine for treating most types of wounds."
+	icon_state = "firstaid_advanced"
+	item_state = "firstaid-advanced"
 	custom_premium_price = 1100
 
 /obj/item/storage/firstaid/advanced/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 10
+	STR.max_items = 11
 
 /obj/item/storage/firstaid/advanced/PopulateContents()
 	if(empty)
@@ -270,14 +291,42 @@
 	)
 	generate_items_inside(items_inside,src)
 
+/obj/item/storage/firstaid/roumain
+	name = "Roumain first aid kit"
+	desc = "A first aid kit full of natural medicine commonly used amongst the followers of the Ashen Huntsman."
+	icon_state = "firstaid_srm"
+	item_state = "firstaid-srm"
+	custom_premium_price = 1100
+
+/obj/item/storage/firstaid/roumain/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 13
+	STR.max_combined_w_class = 26
+
+/obj/item/storage/firstaid/roumain/PopulateContents()
+	if(empty)
+		return
+	var/static/list/items_inside = list(
+		/obj/item/healthanalyzer = 1,
+		/obj/item/food/grown/ash_flora/puce = 1,
+		/obj/item/reagent_containers/glass/mortar = 1,
+		/obj/item/pestle = 1,
+		/obj/item/food/grown/ash_flora/cactus_fruit = 3,
+		/obj/item/food/meat/slab/bear = 3,
+		/obj/item/food/grown/ash_flora/mushroom_leaf = 3,
+	)
+	generate_items_inside(items_inside, src)
+
 /obj/item/storage/firstaid/tactical
 	name = "combat medical kit"
-	desc = "This one's red."
+	desc = "A rare medical kit full of powerful tools to keep soldiers fighting."
 	icon_state = "bezerk"
 
 /obj/item/storage/firstaid/tactical/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 9
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/firstaid/tactical/PopulateContents()
@@ -287,10 +336,10 @@
 	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/defibrillator/compact/combat/loaded(src)
 	new /obj/item/reagent_containers/hypospray/combat(src)
-	new /obj/item/reagent_containers/pill/patch/styptic(src)
-	new /obj/item/reagent_containers/pill/patch/styptic(src)
-	new /obj/item/reagent_containers/pill/patch/silver_sulf(src)
-	new /obj/item/reagent_containers/pill/patch/silver_sulf(src)
+	new /obj/item/reagent_containers/hypospray/medipen/ysiltane(src)
+	new /obj/item/reagent_containers/hypospray/medipen/ysiltane(src)
+	new /obj/item/reagent_containers/hypospray/medipen/silfrine(src)
+	new /obj/item/reagent_containers/hypospray/medipen/silfrine(src)
 	new /obj/item/clothing/glasses/hud/health/night(src)
 
 //medibot assembly
@@ -331,7 +380,7 @@
 	desc = "It's an airtight container for storing medication."
 	icon_state = "pill_canister"
 	icon = 'icons/obj/chemical/medicine.dmi'
-	item_state = "contsolid"
+	item_state = "pillbottle"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
@@ -341,7 +390,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.allow_quick_gather = TRUE
 	STR.click_gather = TRUE
-	STR.set_holdable(list(/obj/item/reagent_containers/pill, /obj/item/dice))
+	STR.set_holdable(list(/obj/item/reagent_containers/pill, /obj/item/dice, /obj/item/paper/paperslip))
 	STR.use_sound = 'sound/items/storage/pillbottle.ogg'
 
 /obj/item/storage/pill_bottle/charcoal
@@ -405,15 +454,6 @@
 /obj/item/storage/pill_bottle/stimulant/PopulateContents()
 	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/stimulant(src)
-
-/obj/item/storage/pill_bottle/mining
-	name = "bottle of patches"
-	desc = "Contains patches used to treat brute and burn damage."
-
-/obj/item/storage/pill_bottle/mining/PopulateContents()
-	new /obj/item/reagent_containers/pill/patch/silver_sulf(src)
-	for(var/i in 1 to 3)
-		new /obj/item/reagent_containers/pill/patch/styptic(src)
 
 /obj/item/storage/pill_bottle/zoom
 	name = "suspicious pill bottle"
@@ -489,13 +529,13 @@
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/pill/floorpill(src)
 
-/obj/item/storage/pill_bottle/trophazole
-	name = "bottle of trophazole pills"
+/obj/item/storage/pill_bottle/indomide
+	name = "bottle of indomide pills"
 	desc = "Contains pills used to treat brute damage.The tag in the bottle states 'Eat before ingesting'."
 
-/obj/item/storage/pill_bottle/trophazole/PopulateContents()
+/obj/item/storage/pill_bottle/indomide/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/reagent_containers/pill/trophazole(src)
+		new /obj/item/reagent_containers/pill/indomide(src)
 
 /obj/item/storage/pill_bottle/licarb
 	name = "bottle of lithium carbonate pills"
@@ -515,7 +555,7 @@
 		new /obj/item/reagent_containers/pill/finobranc(src)
 
 /obj/item/storage/pill_bottle/stardrop
-	name = "bottle of stardrop capsules"
+	name = "bottle of stardrop patches"
 	desc = "Contains vision-enhancing patches."
 	custom_price = 300
 
@@ -524,12 +564,20 @@
 		new /obj/item/reagent_containers/pill/patch/stardrop(src)
 
 /obj/item/storage/pill_bottle/starlight
-	name = "bottle of starlight capsules"
+	name = "bottle of starlight patches"
 	desc = "Contains vision-enhancing patches."
 
 /obj/item/storage/pill_bottle/starlight/PopulateContents()
 	for(var/i in 1 to 4)
 		new /obj/item/reagent_containers/pill/patch/starlight(src)
+
+/obj/item/storage/pill_bottle/strider
+	name = "bottle of strider patches"
+	desc = "Contains endurance-enhancing patches. The bottle is decorated with art of a heavily spliced human woman, galloping on 4 horse legs. A small caption reads \"GALLOP ON!\""
+
+/obj/item/storage/pill_bottle/strider/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/reagent_containers/pill/patch/strider(src)
 
 /obj/item/storage/pill_bottle/placebatol
 	name = "bottle of prescription pills"
@@ -546,3 +594,11 @@
 /obj/item/storage/pill_bottle/tramal/PopulateContents()
 	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/tramal(src)
+
+/obj/item/storage/pill_bottle/alvitane
+	name = "bottle of alvitane patches"
+	desc = "Contains alvitane pills, for treating burn injuries."
+
+/obj/item/storage/pill_bottle/alvitane/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/patch/alvitane

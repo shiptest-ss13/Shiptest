@@ -30,6 +30,14 @@
 	crate_name = "engineering space suit crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 
+/datum/supply_pack/spacesuits/armored_spacesuit
+	name = "Armored Space Suit Crate"
+	desc = "Contains one lightly armored softsuit, able to protect against the smaller day-to-day hazards."
+	cost = 1000
+	contains = list(/obj/item/clothing/suit/space/syndicate/generic,
+					/obj/item/clothing/head/helmet/space/syndicate/generic)
+	crate_name = "armored softsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma
 //syndicate
 
 /datum/supply_pack/spacesuits/armored_spacesuit
@@ -84,6 +92,17 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/spacesuits/spacesuit/inteq/pilot
+	name = "Inteq Pilot Space Suit Crate"
+	desc = "Contains one lightweight suit designed for exosuit and shuttle pilots of the IRMG. While highly mobile, it offers poor protection against prolonged exposure to extreme temperatures of either end."
+	cost = 500
+	contains = list(/obj/item/clothing/suit/space/inteq/pilot,
+					/obj/item/clothing/head/helmet/space/inteq/pilot)
+	crate_name = "space suit crate"
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
 //solgov
 
 /datum/supply_pack/spacesuits/spacesuit/solgov
@@ -100,12 +119,23 @@
 //fucking gezena
 
 /datum/supply_pack/spacesuits/spacesuit/pgf
-	name = "Rakalla Crate"
-	desc = "Contains one Rakalla Suit. It provides robust-enough protection from the elements while being quite flexible."
+	name = "Rakalla Navy Utility Suit Crate"
+	desc = "Contains one Rakalla Utility Suit. The aging but beloved workhorse of Navy space operations."
 	cost = 600
 	contains = list(/obj/item/clothing/suit/space/gezena,
 					/obj/item/clothing/head/helmet/space/gezena)
 	crate_name = "rakalla suit crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/spacesuit/pgf/marine
+	name = "Lataka Composite Combat Suit Crate"
+	desc = "Contains one Lataka Combat Suit. The backbone of any Marine Corps space assault."
+	cost = 1000
+	contains = list(/obj/item/clothing/suit/space/gezena/marine,
+					/obj/item/clothing/head/helmet/space/gezena/marine)
+	crate_name = "lataka suit crate"
 	faction = /datum/faction/pgf
 	faction_discount = 0
 	faction_locked = TRUE
@@ -307,6 +337,30 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/spacesuits/clip
+	name = "CLIP softsuit crate"
+	desc = "Contains one civilian-grade CLIP softsuit."
+	cost = 500
+	contains = list(/obj/item/clothing/suit/space/clip,
+					/obj/item/clothing/head/helmet/space/clip)
+	crate_name = "CLIP softsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/science
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/spacesuits/clip_armored
+	name = "CLIP armored softsuit crate"
+	desc = "Contains one civilian-grade CLIP armored softsuit."
+	cost = 1000
+	contains = list(/obj/item/clothing/suit/space/clip/armored,
+					/obj/item/clothing/head/helmet/space/clip/armored)
+	crate_name = "CLIP armored softsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/science
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/spacesuits/eod_clip
 	name = "CMM EOD Hardsuit Crate"
 	desc = "Contains one EOD hardsuit, to provide safety with explosives."
@@ -356,6 +410,17 @@
 	faction_locked = TRUE
 
 //srm
+
+/datum/supply_pack/spacesuits/roumain_miningsuit
+	name = "Roumain Hunter's Hardsuit Crate"
+	desc = "A hardsuit manufactured by Hunter's Pride, widely used by a variety of hunters in the Saint-Roumain Militia."
+	cost = 2500
+	contains = list(/obj/item/clothing/suit/space/hardsuit/solgov/roumain)
+	crate_name = "roumain hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/srm
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/roumain_hardsuit
 	name = "Roumain Hardsuit Crate"

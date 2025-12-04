@@ -50,6 +50,23 @@
 	density = FALSE
 	climbable = FALSE
 
+/obj/structure/platform/industrial_alt/indestructible
+	icon_state = "industrial2_platform"
+	climbable = FALSE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
+/obj/structure/platform/industrial_alt/indestructible/CanPass(atom/movable/mover, border_dir)
+	. = ..()
+	if(border_dir & dir)
+		return . || mover.throwing || mover.movement_type & (FLYING | FLOATING)
+	return FALSE
+
+/obj/structure/platform/industrial_alt/corner/indestructible
+	icon_state = "ind2_platform_corners"
+	density = FALSE
+	climbable = FALSE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
 /obj/structure/platform/military
 	icon_state = "military_platform"
 

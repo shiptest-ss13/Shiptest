@@ -64,22 +64,27 @@
 	icon_state = "thigh_blue"
 	use_static = TRUE
 
+/datum/sprite_accessory/socks/stockings_cyan
+	name = "Cyan Thigh-Highs"
+	icon_state = "thigh_cyan"
+	use_static = TRUE
+
 /datum/sprite_accessory/socks/stockings_green
 	name = "Green Thigh-Highs"
 	icon_state = "thigh_green"
 	use_static = TRUE
 
-/datum/sprite_accessory/socks/stockings_cyan
-	name = "Cyan Thigh-Highs"
+/datum/sprite_accessory/socks/stockings_purple
+	name = "Purple Thigh-Highs"
 	icon_state = "thigh_purple"
 	use_static = TRUE
 
-/datum/sprite_accessory/socks/stockings_cyan
+/datum/sprite_accessory/socks/stockings_orange
 	name = "Orange Thigh-Highs"
 	icon_state = "thigh_orange"
 	use_static = TRUE
 
-/datum/sprite_accessory/socks/stockings_cyan
+/datum/sprite_accessory/socks/stockings_yellow
 	name = "Yellow Thigh-Highs"
 	icon_state = "thigh_yellow"
 	use_static = TRUE

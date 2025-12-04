@@ -447,9 +447,12 @@
 		return FALSE	//welp too late for them!
 
 	var/can_inject = FALSE
-	for(var/X in C.bodyparts)
-		var/obj/item/bodypart/part = X
-		if(IS_ORGANIC_LIMB(part))
+	var/obj/item/bodypart/body_part
+	for(var/zone in C.bodyparts)
+		body_part = C.bodyparts[zone]
+		if(!body_part)
+			continue
+		if(IS_ORGANIC_LIMB(body_part))
 			can_inject = TRUE
 	if(!can_inject)
 		return 0
@@ -487,12 +490,12 @@
 	if(C.getToxLoss() >= heal_threshold)
 		return TRUE
 
-/mob/living/simple_animal/bot/medbot/attack_hand(mob/living/carbon/human/H)
+/mob/living/simple_animal/bot/medbot/attack_hand(mob/living/carbon/human/H, list/modifiers)
 	if(DOING_INTERACTION_WITH_TARGET(H, src))
 		to_chat(H, span_warning("You're already interacting with [src]."))
 		return
 
-	if(H.a_intent == INTENT_DISARM && mode != BOT_TIPPED)
+	if(LAZYACCESS(modifiers, RIGHT_CLICK) && mode != BOT_TIPPED)
 		H.visible_message(span_danger("[H] begins tipping over [src]."), span_warning("You begin tipping over [src]..."))
 
 		if(world.time > last_tipping_action_voice + 15 SECONDS)

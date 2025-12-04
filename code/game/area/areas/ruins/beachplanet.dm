@@ -51,3 +51,57 @@
 
 /area/ruin/beach/bunker/side_two
 	icon_state = "green"
+
+// fishing village
+
+/area/ruin/beach/village
+	icon_state = "green"
+
+/area/ruin/beach/village/armory
+	icon_state = "armory"
+
+/area/ruin/beach/village/infirmary
+	icon_state = "blue"
+
+/area/ruin/beach/village/kitchen
+	icon_state = "bar"
+
+/area/ruin/beach/village/officers
+	icon_state = "bridge"
+
+/area/ruin/beach/village/dorm
+	icon_state = "crew_quarters"
+
+// gunsmith
+
+/area/ruin/beach/gunsmith
+	name = "Cave Camp"
+	icon_state = "green"
+
+/area/ruin/beach/gunsmith/workshop
+	name = "Gunsmithing Workshop"
+	icon_state = "armory"
+
+/area/ruin/beach/gunsmith/electrical
+	name = "Cave Electrical"
+	icon_state = "engine"
+
+/area/ruin/beach/gunsmith/crewquarters
+	name = "Crew Quarters"
+	icon_state = "crew_quarters"
+
+/area/ruin/beach/gunsmith/dorms
+	name = "Dorms"
+	icon_state = "blue"
+
+/area/ruin/beach/gunsmith/dorms/officer
+	name = "Officer Quarters"
+	icon_state = "red"
+
+/area/ruin/beach/gunsmith/kitchen
+	name = "Kitchen"
+	icon_state = "kitchen"
+
+/area/ruin/beach/gunsmith/bathroom
+	name = "Quarters Bathroom"
+	icon_state = "toilet"

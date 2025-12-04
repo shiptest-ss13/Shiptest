@@ -181,3 +181,13 @@
 		throw_alert("succumb", /atom/movable/screen/alert/succumb)
 	else
 		clear_alert("succumb")
+
+///From [element/movetype_handler/on_movement_type_trait_gain()]
+/mob/living/proc/on_movement_type_flag_enabled(datum/source, trait)
+	SIGNAL_HANDLER
+	update_movespeed(FALSE)
+
+///From [element/movetype_handler/on_movement_type_trait_loss()]
+/mob/living/proc/on_movement_type_flag_disabled(datum/source, trait)
+	SIGNAL_HANDLER
+	update_movespeed(FALSE)

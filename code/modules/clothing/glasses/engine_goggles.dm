@@ -173,12 +173,14 @@
 	desc = "Used by engineering and mining staff to see basic structural and terrain layouts through walls, regardless of lighting conditions. This pair also corrects nearsightedness."
 	icon_state = "prescriptionmeson"
 	vision_correction = 1
+	flags_cover = GLASSESCOVERSEYES
 
 /obj/item/clothing/glasses/meson/sunglasses
 	name = "optical meson scannerglasses"
 	desc = "Used by engineering and mining staff to see basic structural and terrain layouts through walls, regardless of lighting conditions. This pair is built into a pair of sunglasses."
 	icon_state = "sunmeson"
 	flash_protect = FLASH_PROTECTION_FLASH
+	flags_cover = GLASSESCOVERSEYES
 
 #undef MODE_NONE
 #undef MODE_MESON

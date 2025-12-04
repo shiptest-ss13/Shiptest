@@ -151,6 +151,18 @@
 	. = ..()
 	blood_flow -= 0.075 * power // 20u * 0.075 = -1.5 blood flow
 
+/datum/wound/slash/on_silfrine(power)
+	switch(power)
+		if(0 to 5)
+			EMPTY_BLOCK_GUARD
+		if(6 to 11)
+			if(severity < WOUND_SEVERITY_MODERATE)
+				qdel(src)
+		if(12 to 30)
+			if(severity < WOUND_SEVERITY_SEVERE)
+				qdel(src)
+	blood_flow -= 0.05 * power
+
 /// If someone's putting a laser gun up to our cut to cauterize it
 /datum/wound/slash/proc/las_cauterize(obj/item/gun/energy/laser/lasgun, mob/user)
 	var/self_penalty_mult = (user == victim ? 1.25 : 1)

@@ -76,9 +76,9 @@
 		if(cap_lost)
 			. += span_notice("The cap seems to be missing.")
 		else if(cap_on)
-			. += span_notice("The cap is firmly on to prevent spilling. Alt-click to remove the cap.")
+			. += span_notice("The cap is firmly on to prevent spilling. <b>Right-Click</b> to remove the cap.")
 		else
-			. += span_notice("The cap has been taken off. Alt-click to put a cap on.")
+			. += span_notice("The cap has been taken off. <b>Right-Click</b> to put a cap on.")
 
 /obj/item/reagent_containers/is_injectable(mob/user, allowmobs = TRUE)
 	if(can_have_cap && cap_on)
@@ -127,17 +127,19 @@
 	// reagents may have been emptied
 	if(!is_drainable() || !reagents.total_volume)
 		return
+
 	playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
 	target.visible_message(span_notice("[user] pours [src] onto [target]."))
 	log_combat(user, target, "poured [english_list(reagents.reagent_list)]", "in [AREACOORD(target)]")
 	log_game("[key_name(user)] poured [english_list(reagents.reagent_list)] on [target] in [AREACOORD(target)].")
+
 	var/frac = min(amount_per_transfer_from_this/reagents.total_volume, 1)
 	// don't use trans_to, because we're not ADDING it to the object, we're just... pouring it.
 	reagents.expose(target, TOUCH, frac)
 	for(var/datum/reagent/reag as anything in reagents.reagent_list)
 		reagents.remove_reagent(reag.type, reag.volume * frac)
 
-/obj/item/reagent_containers/AltClick(mob/user)
+/obj/item/reagent_containers/attack_self_secondary(mob/user)
 	if(!can_interact(user))
 		return
 	. = ..()

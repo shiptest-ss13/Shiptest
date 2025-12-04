@@ -1,4 +1,4 @@
-/obj/item/clothing/accessory //Ties moved to neck slot items, but as there are still things like medals and armbands, this accessory system is being kept as-is
+/obj/item/clothing/accessory
 	name = "Accessory"
 	desc = "Something has gone wrong!"
 	icon = 'icons/obj/clothing/accessories.dmi'
@@ -109,6 +109,16 @@
 	minimize_when_attached = FALSE
 	attachment_slot = null
 
+/obj/item/clothing/accessory/waistcoat/brown
+	name = "brown waistcoat"
+	icon_state = "waistcoat_brown"
+	item_state = "det_suit"
+
+/obj/item/clothing/accessory/waistcoat/white
+	name = "white waistcoat"
+	icon_state = "waistcoat_white"
+	item_state = "det_suit"
+
 /obj/item/clothing/accessory/maidapron
 	name = "maid apron"
 	desc = "The best part of a maid costume."
@@ -128,6 +138,7 @@
 	custom_materials = list(/datum/material/iron=1000)
 	resistance_flags = FIRE_PROOF
 	attachment_slot = null
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	var/medaltype = "medal" //Sprite used for medalbox
 	var/commended = FALSE
 

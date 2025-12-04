@@ -37,6 +37,9 @@
 	/// Whether or not the overmap object is currently docking.
 	var/docking
 
+	/// Whether this can attempt to dock to the special ports on the outpost
+	var/outpost_special_dock_perms = FALSE
+
 	/// Current overmap we are apart of.
 	var/datum/overmap_star_system/current_overmap
 	/// List of all datums docked in this datum.
@@ -375,7 +378,7 @@
 	var/input = stripped_input(user, "Please choose a message to hail the target with.", "Hailing Vessel")
 	if(!input)
 		return
-	priority_announce("[input]", "Outbound Hail to [interact_target]", 'sound/effects/hail.ogg', sender_override = name, zlevel = shuttle_port.virtual_z())
+	priority_announce("[html_decode(input)]", "Outbound Hail to [interact_target]", 'sound/effects/hail.ogg', sender_override = name, zlevel = shuttle_port.virtual_z())
 	interact_target.relay_message(user,interact_target, input)
 	deadchat_broadcast(" hailed the <span class='name'>[interact_target.name]</span>: [input]", "<span class='name'>[user.real_name]</span>", user, message_type=DEADCHAT_ANNOUNCEMENT)
 	return
@@ -396,7 +399,7 @@
  * * requesting_interactor - The overmap datum requesting the options.
  */
 /datum/overmap/ship/controlled/relay_message(mob/living/user, datum/overmap/requesting_interactor, message)
-	priority_announce("[message]", "Incoming Hail", 'sound/effects/hail.ogg', sender_override = requesting_interactor.name, zlevel = shuttle_port.virtual_z())
+	priority_announce("[html_decode(message)]", "Incoming Hail", 'sound/effects/hail.ogg', sender_override = requesting_interactor.name, zlevel = shuttle_port.virtual_z())
 	return
 
 /**

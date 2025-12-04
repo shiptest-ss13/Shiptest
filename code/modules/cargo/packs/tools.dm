@@ -3,20 +3,6 @@
 	crate_type = /obj/structure/closet/crate/engineering
 
 /*
-		Vehicles
-*/
-
-/datum/supply_pack/tools/all_terrain_vehicle
-	name = "All Terrain Vehicle"
-	desc = "Contains one ATV and a key, for when you want to explore the frontier in style."
-	cost = 2000
-	contains = list(/obj/vehicle/ridden/atv,
-					/obj/item/key)
-	crate_name = "ATV crate"
-	crate_type = /obj/structure/closet/crate/large
-	no_bundle = TRUE
-
-/*
 		Actual tools
 */
 
@@ -39,11 +25,9 @@
 
 /datum/supply_pack/tools/bodycamera
 	name = "Body Camera Crate"
-	desc = "Contains two portable cameras, designed to help keep track of a working group at all times."
-	cost = 250
-	contains = list(/obj/item/bodycamera,
-					/obj/item/bodycamera,
-					/obj/item/paper/guides/bodycam)
+	desc = "Contains one portable camera, designed to help keep track of a working group at all times."
+	cost = 100
+	contains = list(/obj/item/bodycamera)
 	crate_name = "bodycamera crate"
 
 /datum/supply_pack/tools/assbelt
@@ -83,6 +67,25 @@
 		/obj/item/mining_scanner)
 	crate_name = "basic mining crate"
 	faction = /datum/faction/nt/ns_logi
+
+/datum/supply_pack/tools/entrenching
+	name = "Entrenching Tool Crate"
+	desc = "Contains one dual-purpose mining tool, useful as a pickaxe, shovel, and weapon. Fits in your bag."
+	cost = 500
+	contains = list(/obj/item/trench_tool)
+	crate_name = "mining crate"
+	faction = /datum/faction/syndicate/ngr
+	faction_discount = 20
+
+/datum/supply_pack/tools/entrenching_gezena
+	name = "PGF Entrenching Tool Crate"
+	desc = "Contains one dual-purpose mining tool, useful as a pickaxe, shovel, and weapon. Fits in your bag, and personally manufactured for PGF use."
+	cost = 500
+	contains = list(/obj/item/trench_tool/gezena)
+	crate_name = "mining crate"
+	faction = /datum/faction/pgf
+	faction_locked = TRUE
+	faction_discount = 20
 
 /datum/supply_pack/tools/jackhammer
 	name = "Jackhammer Crate"
@@ -126,6 +129,12 @@
 	desc = "A compact jetpack harness for those who don't wish to be weighed down by larger traditional jetpacks."
 	cost = 1500
 	contains = list(/obj/item/tank/jetpack/oxygen/harness)
+
+/datum/supply_pack/tools/jetpack/suit
+	name = "Hardsuit Jetpack Upgrade Crate"
+	desc = "A standardized jetpack attachment designed for direct integration with hardsuits. For when every gram matters."
+	cost = 2000
+	contains = list(/obj/item/tank/jetpack/suit)
 
 /datum/supply_pack/tools/anglegrinder
 	name = "Angle Grinder"
