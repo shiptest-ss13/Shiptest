@@ -16,6 +16,7 @@
 	throw_range = 7
 	amount_per_transfer_from_this = 10
 	volume = 60
+	custom_materials = list(/datum/material/plastic=200, /datum/material/iron=400)
 	var/can_fill_from_container = TRUE
 	var/apply_type = PATCH
 	var/apply_method = "spray" //the thick gel is sprayed and then dries into patch like film.

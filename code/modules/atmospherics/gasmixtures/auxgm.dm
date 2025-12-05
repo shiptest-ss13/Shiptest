@@ -15,6 +15,7 @@ GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(GAS_O2, GAS_N2, GAS_CO2, GA
 /datum/auxgm
 	var/list/datums = list()
 	var/list/specific_heats = list()
+	var/list/molar_masses = list()
 	var/list/names = list()
 	var/list/visibility = list()
 	var/list/overlays = list()
@@ -40,6 +41,8 @@ GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(GAS_O2, GAS_N2, GAS_CO2, GA
 	var/id = ""
 	/// heat capacity? thats the only explanation on what this var is
 	var/specific_heat = 0
+	/// Molar mass, used to calculate specific impulse in certain thrusters
+	var/molar_mass = 1
 	var/name = ""
 	///icon_state in icons/effects/atmospherics.dmi
 	var/gas_overlay = "generic"
@@ -91,6 +94,7 @@ GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(GAS_O2, GAS_N2, GAS_CO2, GA
 	if(g)
 		datums[g] = gas
 		specific_heats[g] = gas.specific_heat
+		molar_masses[g] = gas.molar_mass
 		names[g] = gas.name
 		if(gas.moles_visible)
 			visibility[g] = gas.moles_visible

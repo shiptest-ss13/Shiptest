@@ -59,6 +59,18 @@
 	name = "Camisole"
 	icon_state = "camisole"
 
+/datum/sprite_accessory/undershirt/onepiece
+	name = "One Piece Swimsuit"
+	icon_state = "onepiece"
+
+/datum/sprite_accessory/undershirt/onepiece_turtleneck
+	name = "One Piece Turtleneck"
+	icon_state = "onepiece_turtleneck"
+
+/datum/sprite_accessory/undershirt/onepiece_compression
+	name = "One Piece Compression Top"
+	icon_state = "compone"
+
 /datum/sprite_accessory/undershirt/beekini
 	name = "Bee-Kini Top"
 	icon_state = "beekini"
@@ -75,6 +87,22 @@
 /datum/sprite_accessory/undershirt/shortsleeve
 	name = "Short-sleeved shirt (Greyscale)"
 	icon_state = "shortsleeve"
+
+/datum/sprite_accessory/undershirt/compression
+	name = "compression shirt (Greyscale)"
+	icon_state = "compsleeve"
+
+/datum/sprite_accessory/undershirt/comptshirt
+	name = "compression t-shirt (Greyscale)"
+	icon_state = "compshort"
+
+/datum/sprite_accessory/undershirt/comptank
+	name = "compression tank top (Greyscale)"
+	icon_state = "comptank"
+
+/datum/sprite_accessory/undershirt/comptank
+	name = "cropped compression top (Greyscale)"
+	icon_state = "compcropped"
 
 /datum/sprite_accessory/undershirt/tanktop
 	name = "Tank Top (Greyscale)"

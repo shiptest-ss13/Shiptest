@@ -11,6 +11,12 @@
 /mob/living/simple_animal/hostile/asteroid/gutlunch/gubbuck,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
+"aL" = (
+/obj/structure/hazard/spray/steam/dangerous/random,
+/turf/open/water/tar{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/overmap_encounter/planetoid/cave/explored)
 "aP" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
@@ -67,6 +73,7 @@
 	dir = 4
 	},
 /obj/item/stack/sheet/animalhide/goliath_hide,
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
 "dq" = (
@@ -320,9 +327,9 @@
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
 "jQ" = (
-/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner{
-	loot = list(/obj/item/melee/cleaving_saw,/obj/item/gun/energy/kinetic_accelerator,/obj/item/keycard/gatedrop/lavacanyon)
-	},
+/obj/structure/punji_sticks,
+/obj/structure/barricade/wooden/crude,
+/obj/structure/barricade/wooden,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
 "jR" = (
@@ -416,9 +423,6 @@
 "lr" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 8
-	},
-/obj/machinery/door/keycard/gates/lavacanyon{
-	color = "#423429"
 	},
 /turf/open/indestructible/cult,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -1250,9 +1254,7 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "Kj" = (
 /obj/structure/stone_tile/surrounding/cracked,
-/obj/machinery/door/keycard/gates/lavacanyon{
-	color = "#423429"
-	},
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal,
 /turf/open/indestructible/cult,
 /area/overmap_encounter/planetoid/cave/explored)
 "Kp" = (
@@ -1527,7 +1529,6 @@
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
 "So" = (
-/obj/structure/closet/crate/necropolis/tendril/greater,
 /turf/open/indestructible/necropolis,
 /area/overmap_encounter/planetoid/cave/explored)
 "Sy" = (
@@ -1609,14 +1610,6 @@
 	dir = 1
 	},
 /obj/structure/table/wood,
-/obj/item/gun/ballistic/bow/ashen{
-	pixel_x = -14;
-	pixel_y = 2
-	},
-/obj/item/storage/bag/quiver/empty{
-	pixel_x = 13;
-	pixel_y = 6
-	},
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
 "Uh" = (
@@ -5298,7 +5291,7 @@ sj
 sj
 CY
 rq
-jQ
+rq
 rq
 vh
 sj
@@ -5754,7 +5747,7 @@ OU
 WK
 qg
 gm
-jm
+aL
 QE
 Aj
 Aj
@@ -6210,7 +6203,7 @@ rq
 cy
 FB
 KC
-Kz
+jQ
 Mc
 Eq
 En

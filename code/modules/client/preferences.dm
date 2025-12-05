@@ -66,6 +66,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/slot_randomized					//keeps track of round-to-round randomization of the character slot, prevents overwriting
 	var/real_name						//our character's name
 	var/gender = MALE					//gender of character (well duh)
+	var/pronouns = "He"					//pronouns of character
 	var/age = 30						//age of character
 	var/underwear = "Nude"				//Type of underwear
 	var/underwear_color = "000"			//Greyscale color of underwear
@@ -119,9 +120,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"vox_neck_quills" = "Plain",
 							"elzu_horns" = "None",
 							"elzu_tail" = "None",
-							"flavor_text" = "",
-							"body_size" = "Normal"
+							"flavor_text" = ""
 						)
+	var/height_filter = "Normal"
 	var/list/randomise = list(
 							RANDOM_UNDERWEAR = TRUE,
 							RANDOM_UNDERWEAR_COLOR = TRUE,
@@ -142,7 +143,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/friendlyGenders = list(
 							"Male" = "male",
 							"Female" = "female",
-							"Other" = "plural"
+							"Other" = "plural",
+							"None" = "neuter"
+						)
+	var/list/friendlyPronouns = list(
+							"He/Him" = "He",
+							"She/Her" = "She",
+							"They/Them" = "They",
+							"It/Its" = "It"
 						)
 	var/list/prosthetic_limbs = list(
 							BODY_ZONE_HEAD = PROSTHETIC_NORMAL,
@@ -199,8 +207,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/widescreenpref = FALSE
 	///What size should pixels be displayed as? 0 is strech to fit
 	var/pixel_size = 0
-	///What scaling method should we use?
-	var/scaling_method = "distort"
+	///What scaling method should we use? Distort = Nearest Neighbor
+	var/scaling_method = SCALING_METHOD_DISTORT
 
 	var/list/exp = list()
 	var/list/menuoptions
@@ -333,13 +341,24 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dispGender = "Male"
 				else if(gender == FEMALE)
 					dispGender = "Female"
+				else if(gender == NEUTER)
+					dispGender = "None"
 				else
 					dispGender = "Other"
 				dat += "<b>Gender:</b> <a href='byond://?_src_=prefs;preference=gender'>[dispGender]</a>"
 				if(randomise[RANDOM_BODY] || randomise[RANDOM_BODY_ANTAG]) //doesn't work unless random body
 					dat += "<a href='byond://?_src_=prefs;preference=toggle_random;random_type=[RANDOM_GENDER]'>Always Random Gender: [(randomise[RANDOM_GENDER]) ? "Yes" : "No"]</A>"
 					dat += "<a href='byond://?_src_=prefs;preference=toggle_random;random_type=[RANDOM_GENDER_ANTAG]'>When Antagonist: [(randomise[RANDOM_GENDER_ANTAG]) ? "Yes" : "No"]</A>"
-
+			var/dispPronouns
+			if(pronouns == "He")
+				dispPronouns = "He/Him"
+			else if(pronouns == "She")
+				dispPronouns = "She/Her"
+			else if(pronouns == "It")
+				dispPronouns = "It/Its"
+			else
+				dispPronouns = "They/Them"
+			dat += "<br><b>Pronouns:</b> <a href='byond://?_src_=prefs;preference=pronouns'>[dispPronouns]</a>"
 			dat += "<br><b>Age:</b> <a href='byond://?_src_=prefs;preference=age;task=input'>[age]</a>"
 			if(randomise[RANDOM_BODY] || randomise[RANDOM_BODY_ANTAG]) //doesn't work unless random body
 				dat += "<a href='byond://?_src_=prefs;preference=toggle_random;random_type=[RANDOM_AGE]'>Always Random Age: [(randomise[RANDOM_AGE]) ? "Yes" : "No"]</A>"
@@ -449,6 +468,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<a href='byond://?_src_=prefs;preference=s_tone;task=input'>[skin_tone]</a>"
 				dat += "<a href='byond://?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SKIN_TONE]'>[(randomise[RANDOM_SKIN_TONE]) ? "Lock" : "Unlock"]</A>"
 				dat += "<br>"
+
+			//Height filters
+			if(pref_species.use_height)
+
+				dat += "<h3>Height</h3>"
+
+				dat += "<a href='?_src_=prefs;preference=height_filter;task=input'>[height_filter]</a><BR>"
 
 			// Everyone gets mutant colors now.
 			dat += "<h3>Mutant Colors</h3>"
@@ -879,19 +905,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 					mutant_category = 0
 
-			if("body_size" in pref_species.default_features)
-				if(!mutant_category)
-					dat += APPEARANCE_CATEGORY_COLUMN
-
-				dat += "<h3>Size</h3>"
-
-				dat += "<a href='byond://?_src_=prefs;preference=body_size;task=input'>[features["body_size"]]</a><BR>"
-
-				mutant_category++
-				if(mutant_category >= MAX_MUTANT_ROWS)
-					dat += "</td>"
-					mutant_category = 0
-
 			// begin generic adjective
 			if(!mutant_category)
 				dat += APPEARANCE_CATEGORY_COLUMN
@@ -1097,12 +1110,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Pixel Scaling:</b> <a href='byond://?_src_=prefs;preference=pixel_size'>[(button_name) ? "Pixel Perfect [button_name]x" : "Stretch to fit"]</a><br>"
 
 			switch(scaling_method)
-				if(SCALING_METHOD_NORMAL)
-					button_name = "Nearest Neighbor"
 				if(SCALING_METHOD_DISTORT)
+					button_name = "Nearest Neighbor"
+				if(SCALING_METHOD_NORMAL)
 					button_name = "Point Sampling"
 				if(SCALING_METHOD_BLUR)
 					button_name = "Bilinear"
+
 			dat += "<b>Scaling Method:</b> <a href='byond://?_src_=prefs;preference=scaling_method'>[button_name]</a><br>"
 
 			dat += "</td><td width='300px' height='300px' valign='top'>"
@@ -1867,10 +1881,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_eyes)
 						eye_color = sanitize_hexcolor(new_eyes)
 
-				if("body_size")
-					var/new_size = input(user, "Choose your character's height:", "Character Preference") as null|anything in GLOB.body_sizes
-					if(new_size)
-						features["body_size"] = new_size
+				if("height_filter")
+					var/list/height_filters_available = list()
+					height_filters_available ^= GLOB.height_filters
+					var/new_height = input(user, "Choose your character's height:", "Character Preference") as null|anything in height_filters_available
+					if(new_height)
+						height_filter = new_height
+
 
 				if("mutant_color")
 					var/new_mutantcolor = input(user, "Choose your character's primary alien/mutant color:", "Character Preference","#" + features["mcolor"]) as color|null
@@ -2201,7 +2218,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						socks = random_socks()
 						facial_hairstyle = random_facial_hairstyle(gender)
 						hairstyle = random_hairstyle(gender)
-
+				if("pronouns")
+					var/pickedPronouns = input(user, "Choose your pronouns.", "Character Preference", pronouns) as null|anything in friendlyPronouns
+					if(pickedPronouns)
+						pronouns = friendlyPronouns[pickedPronouns]
 				if("fbp")
 					fbp = !fbp
 
@@ -2536,6 +2556,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.name = character.real_name
 
 	character.gender = gender
+	character.pronouns = pronouns
 	character.age = clamp(age, pref_species.species_age_min, pref_species.species_age_max)
 	character.eye_color = eye_color
 	var/obj/item/organ/eyes/organ_eyes = character.getorgan(/obj/item/organ/eyes)
@@ -2639,7 +2660,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		character.update_body()
 		character.update_hair()
 		character.update_body_parts(TRUE)
-	character.dna.update_body_size()
+	character.set_mob_height(GLOB.height_filters[height_filter])
 
 	if(!character_setup && get_language_point_balance() < 0)
 		init_learned_languages() // no exploits allowed

@@ -50,10 +50,10 @@
 		kill_smoke()
 		return 0
 	for(var/mob/living/L in range(0,src))
-		smoke_mob(L)
+		smoke_mob(L, seconds_per_tick)
 	return 1
 
-/obj/effect/particle_effect/smoke/proc/smoke_mob(mob/living/carbon/C)
+/obj/effect/particle_effect/smoke/proc/smoke_mob(mob/living/carbon/C, seconds_per_tick = SSOBJ_DT)
 	if(!istype(C))
 		return 0
 	if(lifetime<1)
@@ -66,7 +66,8 @@
 		return 0
 	C.smoke_delay++
 	addtimer(CALLBACK(src, PROC_REF(remove_smoke_delay), C), 10)
-	return 1
+	SEND_SIGNAL(C, COMSIG_CARBON_EXPOSED_TO_SMOKE, seconds_per_tick)
+	return TRUE
 
 /obj/effect/particle_effect/smoke/proc/remove_smoke_delay(mob/living/carbon/C)
 	if(C)
@@ -80,7 +81,9 @@
 	for(var/turf/T in t_loc.get_atmos_adjacent_turfs())
 		var/obj/effect/particle_effect/smoke/foundsmoke = locate() in T //Don't spread smoke where there's already smoke!
 		if(foundsmoke)
-			continue
+			if(foundsmoke.alpha >= alpha)
+				continue
+			qdel(foundsmoke) //Unless our smoke is thicker
 		for(var/mob/living/L in T)
 			smoke_mob(L)
 		var/obj/effect/particle_effect/smoke/S = new type(T)
@@ -188,7 +191,7 @@
 					U.update_appearance()
 					U.visible_message(span_danger("[U] is frozen shut!"))
 		for(var/mob/living/L in T)
-			L.ExtinguishMob()
+			L.extinguish_mob()
 		for(var/obj/item/Item in T)
 			Item.extinguish()
 
@@ -230,7 +233,6 @@
 /////////////////////////////////////////////
 
 /obj/effect/particle_effect/smoke/chem
-
 	lifetime = 10
 
 /obj/effect/particle_effect/smoke/chem/thin
@@ -245,12 +247,12 @@
 		for(var/atom/movable/AM in T)
 			if(AM.type == src.type)
 				continue
-			reagents.expose(AM, SMOKE, fraction)
+			reagents.expose(AM, TOUCH, fraction)
 
-		reagents.expose(T, SMOKE, fraction)
+		reagents.expose(T, TOUCH, fraction)
 		return 1
 
-/obj/effect/particle_effect/smoke/chem/smoke_mob(mob/living/carbon/M)
+/obj/effect/particle_effect/smoke/chem/smoke_mob(mob/living/carbon/M, seconds_per_tick = SSOBJ_DT)
 	if(lifetime<1)
 		return 0
 	if(!istype(M))
@@ -259,14 +261,14 @@
 	if(C.internal != null || C.has_smoke_protection())
 		return 0
 	var/fraction = 1/initial(lifetime)
-	reagents.copy_to(C, fraction*reagents.total_volume)
-	reagents.expose(M, INGEST, fraction)
-	return 1
-
-
+	reagents.expose(M, INHALE, fraction)
+	SEND_SIGNAL(C, COMSIG_CARBON_EXPOSED_TO_SMOKE, seconds_per_tick)
+	return TRUE
 
 /datum/effect_system/smoke_spread/chem
 	var/obj/chemholder
+	/// Fixed color for this smoke regardless of reagents
+	var/fixed_color
 	effect_type = /obj/effect/particle_effect/smoke/chem
 
 /datum/effect_system/smoke_spread/chem/New()
@@ -312,14 +314,13 @@
 
 
 /datum/effect_system/smoke_spread/chem/start()
-	var/mixcolor = mix_color_from_reagents(chemholder.reagents.reagent_list)
+	var/mixcolor = fixed_color || mix_color_from_reagents(chemholder.reagents.reagent_list)
 	if(holder)
 		location = get_turf(holder)
 	var/obj/effect/particle_effect/smoke/chem/S = new effect_type(location)
 
 	if(chemholder.reagents.total_volume > 1) // can't split 1 very well
 		chemholder.reagents.copy_to(S, chemholder.reagents.total_volume)
-
 	if(mixcolor)
 		S.add_atom_colour(mixcolor, FIXED_COLOUR_PRIORITY) // give the smoke color, if it has any to begin with
 	S.amount = amount
@@ -339,6 +340,12 @@
 
 /obj/effect/particle_effect/smoke/transparent
 	opaque = FALSE
+
+/datum/effect_system/smoke_spread/transparent/cigarette
+	effect_type = /obj/effect/particle_effect/smoke/transparent/cigarette
+
+/obj/effect/particle_effect/smoke/transparent/cigarette
+	alpha = 5
 
 /proc/do_smoke(range=0, location=null, smoke_type=/obj/effect/particle_effect/smoke)
 	var/datum/effect_system/smoke_spread/smoke = new

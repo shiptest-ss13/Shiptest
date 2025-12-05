@@ -171,6 +171,17 @@
 					/obj/item/food/grown/carrot,
 	)
 
+/datum/supply_pack/food/ingredients_basic/cabbage
+	name = "Cabbage Crate"
+	desc = "Crate containing five cabbages."
+	cost = 75
+	contains = list(/obj/item/food/grown/cabbage,
+					/obj/item/food/grown/cabbage,
+					/obj/item/food/grown/cabbage,
+					/obj/item/food/grown/cabbage,
+					/obj/item/food/grown/cabbage,
+	)
+
 /datum/supply_pack/food/ingredients_basic/chanterelle
 	name = "Chanterelle Crate"
 	desc = "Crate containing five chanterelle mushrooms."

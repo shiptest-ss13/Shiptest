@@ -224,7 +224,7 @@
 		if(92)
 			new /obj/item/storage/firstaid/advanced(src)
 		if(93)
-			new /obj/item/attachment/gun/energy/e50(src)
+			//new /obj/item/attachment/gun/energy/e50(src)
 		if(94)
 			new /mob/living/simple_animal/hostile/mimic/crate(src)
 			qdel_on_open = TRUE

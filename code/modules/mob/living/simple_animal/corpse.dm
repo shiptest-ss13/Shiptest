@@ -27,11 +27,12 @@
 	id = /obj/item/card/id/syndicate
 
 /datum/outfit/ramzi/bulletproof
-	name = "Ramzi Clique Trooper"
+	name = "Ramzi Clique Rifleman"
 	suit = /obj/item/clothing/suit/armor/ramzi/bulletproof
 	head = /obj/item/clothing/head/helmet/bulletproof/x11/ramzi
 	belt = /obj/item/storage/belt/security/webbing/ramzi/alt
 	mask = /obj/item/clothing/mask/breath/facemask
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ramzi
 	neck = /obj/item/clothing/neck/shemagh/ramzi
 
 /obj/effect/mob_spawn/human/corpse/ramzi/trooper
@@ -46,6 +47,8 @@
 	name = "Ramzi Clique Space Corpse"
 	uniform = /obj/item/clothing/under/syndicate/ramzi
 	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
+	mask = /obj/item/clothing/mask/breath/facemask
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ramzi
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 	back = /obj/item/tank/jetpack/oxygen
 	r_pocket = /obj/item/tank/internals/emergency_oxygen
@@ -65,6 +68,20 @@
 /obj/effect/mob_spawn/human/corpse/ramzi/space/soft/surplus
 	name = "Ramzi Softsuit Surplus"
 	outfit = /datum/outfit/ramzi/soft/surplus
+
+/obj/effect/mob_spawn/human/corpse/ramzi/towel
+	name = "Ramzi Showerer"
+	outfit = /datum/outfit/ramzi/towel
+
+/datum/outfit/ramzi/towel
+	name = "Ramzi Clique Showerer"
+	uniform = null
+	head = null
+	suit = /obj/item/towel/full
+	back = null
+	id = null
+	shoes = null
+	gloves = null
 
 /datum/outfit/ramzi/soft/surplus
 	name = "Ramzi Clique Softsuit Surplus"
@@ -111,7 +128,8 @@
 	uniform = /obj/item/clothing/under/syndicate/ramzi/officer
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi/elite
-	mask = /obj/item/clothing/mask/gas/ramzi
+	mask = /obj/item/clothing/mask/breath/facemask
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/ramzi
 	back = /obj/item/tank/jetpack/oxygen/harness
 
 /datum/outfit/syndicatecaptaincorpse
@@ -369,8 +387,3 @@
 	id_job = "Captain"
 	outfit = /datum/outfit/job/gezena/captain
 
-/* clip ig */
-
-/obj/effect/mob_spawn/human/corpse/clip/bombsuitguy
-	name = "CLIP Bombsuit Spawner"
-	outfit = /datum/outfit/job/clip/minutemen/grunt/dressed/bombsuit

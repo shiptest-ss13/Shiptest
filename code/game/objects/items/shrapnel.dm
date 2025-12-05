@@ -67,7 +67,7 @@
 
 /obj/item/shrapnel/bullet/tracker/Initialize()
 	. = ..()
-	timer_id = QDEL_IN(src, lifespan)
+	timer_id = QDEL_IN_STOPPABLE(src, lifespan)
 	AddComponent(/datum/component/gps/item, gps_tag)
 
 /obj/item/shrapnel/bullet/tracker/Destroy()
@@ -133,7 +133,7 @@
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
 		M.adjust_fire_stacks(15)
-		M.IgniteMob()
+		M.ignite_mob()
 
 /obj/projectile/bullet/shrapnel/spicy
 	name = "radioactive slag"
