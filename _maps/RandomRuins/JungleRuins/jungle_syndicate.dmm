@@ -1260,7 +1260,8 @@
 	pixel_x = -28;
 	desc = "Used to control a facility's automated defenses.";
 	id = "jungle_syndicate_turrets";
-	pixel_y = -15
+	pixel_y = -15;
+	req_access = list(150)
 	},
 /obj/machinery/button/door{
 	id = "jungle_syndicate_cargo_door";
