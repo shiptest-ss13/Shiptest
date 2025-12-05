@@ -327,6 +327,14 @@
 /obj/machinery/atmospherics/components/unary/passive_vent,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
+"ft" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "mudskipper_window"
+	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
 "gf" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -1070,14 +1078,6 @@
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
 /turf/open/floor/plasteel,
-/area/ship/hallway/aft)
-"vu" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "mudskipper_window"
-	},
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/structure/grille,
-/turf/open/floor/plating,
 /area/ship/hallway/aft)
 "vI" = (
 /obj/structure/cable{
@@ -2146,11 +2146,11 @@
 	dir = 8
 	},
 /obj/item/plate/small{
-	pixel_x = -8;
+	pixel_x = -6;
 	pixel_y = -2
 	},
 /obj/item/food/muffin{
-	pixel_x = -7;
+	pixel_x = -5;
 	pixel_y = 2
 	},
 /turf/open/floor/wood/walnut,
@@ -2863,7 +2863,7 @@ cs
 hX
 cs
 cs
-vu
+ft
 ST
 iy
 YK
@@ -2872,7 +2872,7 @@ zR
 nm
 Rl
 XU
-vu
+ft
 cs
 cs
 hX
@@ -2882,7 +2882,7 @@ cs
 hX
 cs
 cs
-vu
+ft
 sT
 vn
 Qp
@@ -2891,7 +2891,7 @@ ar
 sa
 eL
 gT
-vu
+ft
 cs
 cs
 hX
