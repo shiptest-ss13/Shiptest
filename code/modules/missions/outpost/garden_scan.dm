@@ -14,7 +14,7 @@
 	var/allow_subtypes = FALSE
 	var/count_stacks = TRUE
 
-/datum/mission/outpost/survey/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
+/datum/mission/outpost/survey/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc, obj/hangar_crate_spawner/cargo_belt)
 	. = ..()
 	scanner = spawn_bound(scanner_type, accept_loc, VARSET_CALLBACK(src, scanner, null))
 	scanner.name += " ([capitalize(objective_type.name)])"
@@ -34,6 +34,12 @@
 
 /datum/mission/outpost/survey/get_progress_string()
 	return "[current_num()]/[num_wanted]"
+
+/datum/mission/outpost/survey/get_progress_percent()
+	if(!scanner)
+		return 0
+	return current_num()/num_wanted
+
 
 /datum/mission/outpost/survey/turn_in()
 	recall_bound(scanner)
@@ -56,7 +62,6 @@
 	desc = ""
 	value = 1500
 	weight = 10
-	duration = 90 MINUTES
 	scanner_type = /obj/item/survey_handheld
 	objective_type = /obj/structure/flora/ash/garden
 	num_wanted = 12
@@ -110,7 +115,6 @@
 	value = 2500
 	objective_type = /obj/structure/geyser
 	scanner_type = /obj/item/survey_handheld/elite
-	duration = 90 MINUTES
 	weight = 4
 
 	num_wanted = 1

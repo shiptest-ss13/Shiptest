@@ -15,9 +15,13 @@
 	///Are stacks of objective_type counted individually?
 	var/count_stacks = TRUE
 
-/datum/mission/outpost/acquire/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
+/datum/mission/outpost/acquire/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc, obj/hangar_crate_spawner/cargo_belt)
 	. = ..()
-	container = spawn_bound(container_type, accept_loc, VARSET_CALLBACK(src, container, null))
+	if(isnull(cargo_belt))
+		container = spawn_bound(container_type, cargo_belt, VARSET_CALLBACK(src, container, null))
+		stack_trace("[src] issued by [source_outpost] could not find cargo chute to send items down. Fell back to cargo console.")
+	else
+		container = spawn_bound(container_type, cargo_belt.loc, VARSET_CALLBACK(src, container, null))
 	container.name += " ([capitalize(objective_type.name)])"
 
 /datum/mission/outpost/acquire/Destroy()
@@ -33,6 +37,12 @@
 
 /datum/mission/outpost/acquire/get_progress_string()
 	return "[current_num()]/[num_wanted]"
+
+/datum/mission/outpost/acquire/get_progress_percent()
+	if(!container)
+		return 0
+	else
+		return current_num()/num_wanted
 
 /datum/mission/outpost/acquire/turn_in()
 	del_container()
@@ -77,7 +87,6 @@
 	name = ""
 	desc = ""
 	value = 1500
-	duration = 90 MINUTES
 	weight = 6
 	container_type = /obj/structure/closet/mob_capture
 	objective_type = /mob/living/simple_animal/hostile/asteroid/goliath

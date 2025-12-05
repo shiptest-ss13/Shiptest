@@ -24,20 +24,14 @@
 	/// If location specific, if it run times when the planet has no pois
 	var/requires_poi = TRUE
 
-	/// The amount of time in which to complete the mission. Setting it to 0 will result in no time limit
-	var/duration = 2 HOURS
-	/// Should mission value scale proportionally to the deviation from the mission's base duration?
-	var/dur_value_scaling = FALSE
 	/// The maximum deviation of the mission's true value from the base value, as a proportion.
 	var/val_mod_range = 0.1
-	/// The maximum deviation of the mission's true duration from the base value, as a proportion.
-	var/dur_mod_range = 0.1
+
 
 	/// Timestamp for when the mission was activated
 	var/time_issued
 	var/active = FALSE
 	var/failed = FALSE
-	var/dur_timer
 
 	///Used to determine if it shows up as an acceptable mission instead of public.
 	var/acceptable = FALSE
@@ -78,12 +72,10 @@
 		var/datum/overmap/mission_location = mission_local_weakref.resolve()
 		if(mission_location)
 			UnregisterSignal(mission_location, COMSIG_PARENT_QDELETING, COMSIG_OVERMAP_LOADED)
-
 	//LAZYREMOVE(source_outpost.missions, src)
 	//source_outpost = null
 	for(var/bound in bound_atoms)
 		remove_bound(bound)
-	deltimer(dur_timer)
 	return ..()
 
 /datum/mission/proc/on_vital_delete()
@@ -93,11 +85,6 @@
 /datum/mission/proc/generate_mission_details()
 	var/val_mod = value * val_mod_range
 	value = rand(value-val_mod, value+val_mod)
-	if(duration)
-		var/old_dur = duration
-		var/dur_mod = duration * dur_mod_range
-		duration = round(rand(duration-dur_mod, duration+dur_mod), 30 SECONDS)
-		value = value * (dur_value_scaling ? old_dur / duration : 1)
 	value = round(value, 50)
 
 	faction = pick(faction)
@@ -139,8 +126,6 @@
 	SSblackbox.record_feedback("nested tally", "[blackbox_prefix]mission", 1, list(name, "accepted"))
 	active = TRUE
 	time_issued = station_time()
-	if(duration && !acceptable)
-		dur_timer = addtimer(VARSET_CALLBACK(src, failed, TRUE), duration, TIMER_STOPPABLE)
 
 /datum/mission/proc/on_planet_load(datum/overmap/dynamic/planet)
 	SIGNAL_HANDLER
@@ -166,7 +151,6 @@
 	servant = acceptor
 	LAZYREMOVE(source_outpost.missions, src)
 	LAZYADD(servant.missions, src)
-	dur_timer = addtimer(VARSET_CALLBACK(src, failed, TRUE), duration, TIMER_STOPPABLE)
 
 /datum/mission/proc/can_turn_in(atom/movable/item_to_check)
 	return
@@ -195,6 +179,9 @@
 
 /datum/mission/proc/get_progress_string()
 	return "null"
+
+/datum/mission/proc/get_progress_percent()
+	return null
 
 /**
  * Spawns a "bound" atom of the given type at the given location. When the "bound" atom
