@@ -1806,7 +1806,8 @@
 "kd" = (
 /obj/machinery/door/airlock/grunge{
 	req_access = "20";
-	name = "Supervisor's Quarters"
+	name = "Supervisor's Quarters";
+	id_tag = "supervisorlock"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm/commad)
@@ -2117,15 +2118,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/port)
-"lY" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/machinery/suit_storage_unit/syndicate,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/clothing/suit/space/hardsuit/syndi/hl,
-/turf/open/floor/mineral/plastitanium,
-/area/ship/security)
 "lZ" = (
 /obj/structure/closet/secure_closet/security{
 	populate = 0;
@@ -3236,8 +3228,9 @@
 	dir = 1
 	},
 /obj/item/clothing/suit/space/hardsuit/syndi/hl,
-/obj/machinery/suit_storage_unit/syndicate,
 /obj/item/clothing/mask/gas/syndicate,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/tank/jetpack/oxygen/harness,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "rQ" = (
@@ -3626,8 +3619,10 @@
 	dir = 1
 	},
 /obj/item/clothing/mask/gas/syndicate,
-/obj/machinery/suit_storage_unit/syndicate,
 /obj/item/clothing/suit/space/hardsuit/syndi/hl,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/tank/jetpack/oxygen/harness,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "ue" = (
@@ -5261,6 +5256,10 @@
 	dir = 1
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = -12;
+	pixel_y = 23
+	},
 /turf/open/floor/hangar/plasteel/white,
 /area/ship/crew/dorm/commad)
 "Dk" = (
@@ -6084,15 +6083,6 @@
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
-"GU" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/clothing/suit/space/hardsuit/syndi/hl,
-/obj/machinery/suit_storage_unit/syndicate,
-/turf/open/floor/mineral/plastitanium,
-/area/ship/security)
 "GW" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 10
@@ -7134,6 +7124,7 @@
 	req_access_txt = "20";
 	name = "Door Lock"
 	},
+/obj/item/tank/jetpack/oxygen/harness,
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm/captain)
 "No" = (
@@ -8927,6 +8918,14 @@
 	color = "#792f27";
 	dir = 9
 	},
+/obj/machinery/button/door{
+	pixel_x = -10;
+	pixel_y = 23;
+	id = "supervisorlock";
+	name = "door lock";
+	normaldoorcontrol = 1;
+	specialfunctions = 4
+	},
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/dorm/commad)
 "Wy" = (
@@ -9392,11 +9391,10 @@
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 8
 	},
-/obj/machinery/suit_storage_unit/syndicate{
-	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi/ngr;
-	name = "lieutenant's suit storage unit"
-	},
 /obj/item/clothing/suit/space/hardsuit/syndi/hl,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/tank/jetpack/oxygen/harness,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "YJ" = (
@@ -10327,7 +10325,7 @@ gE
 PL
 Fu
 FA
-lY
+ua
 yN
 Bj
 mp
@@ -10438,7 +10436,7 @@ TC
 on
 ep
 BK
-lY
+ua
 Ru
 Bj
 mp
@@ -10697,7 +10695,7 @@ HH
 Pa
 At
 to
-GU
+ua
 lZ
 Bj
 mp
