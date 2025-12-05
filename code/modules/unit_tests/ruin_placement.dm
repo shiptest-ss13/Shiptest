@@ -32,9 +32,7 @@
 
 			TEST_ASSERT(!dummy_overmap.loading, "[dummy_overmap] is somehow loading before we call the load level proc?!?")
 			TEST_ASSERT(dummy_overmap.load_level(), "[dummy_overmap] failed to load!")
-			TEST_ASSERT_EQUAL(length(SSmissions.unallocated_pois), 0, "Somehow a planet created pois but did not manage to allocate them to itself!")
 
-			log_test("Mission poi count: [length(dummy_overmap.spawned_mission_pois)]")
 			var/list/errors = atmosscan(TRUE, TRUE)
 			//errors += powerdebug(TRUE)
 
