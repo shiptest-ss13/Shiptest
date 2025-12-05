@@ -220,7 +220,7 @@
  *
  * Arguments:
  * * seep_amt - How much absorption capacity we're removing from our current bandages (think, how much blood or pus are we soaking up this tick?)
- * * type - Is it blood or pus we're being stained with? GAUZE_STAIN_BLOOD, GAUZE_STAIN_PUS defines from wounds.dm
+ * * type - Is it blood or pus we're being stained with? GAUZE_STAIN_BLOOD defines from wounds.dm - can have more here, but there is only one in use for now
  */
 /datum/bodypart_aid/gauze/proc/seep_gauze(amount, type)
 	if(absorption_capacity > 0)
@@ -236,10 +236,6 @@
 			blood_stained = TRUE
 			if(bodypart.owner)
 				to_chat(bodypart.owner, span_warning("The [name] on your [bodypart.name] [pick(list("pools", "trickles", "seeps"))] with blood."))
-		else if(type == GAUZE_STAIN_PUS && !pus_stained)
-			pus_stained = TRUE
-			if(bodypart.owner)
-				to_chat(bodypart.owner, span_warning("The [name] on your [bodypart.name] [pick(list("pools", "trickles", "seeps"))] with pus."))
 
 /datum/bodypart_aid/gauze/improvised
 	name = "improvised gauze"
