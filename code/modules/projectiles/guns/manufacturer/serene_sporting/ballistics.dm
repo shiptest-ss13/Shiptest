@@ -342,6 +342,8 @@ NO_MAG_GUN_HELPER(automatic/marksman/woodsman)
 	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
 	wield_delay = 1 SECONDS
 
+	fire_delay = 3
+
 	valid_attachments = SERENE_ATTACHMENTS
 	slot_available = SERENE_ATTACH_SLOTS
 
