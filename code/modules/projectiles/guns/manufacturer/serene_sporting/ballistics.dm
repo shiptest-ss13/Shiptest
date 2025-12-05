@@ -344,6 +344,10 @@ NO_MAG_GUN_HELPER(automatic/marksman/woodsman)
 
 	fire_delay = 3
 
+	wear_minor_threshold = 200
+	wear_major_threshold = 600
+	wear_maximum = 1200
+
 	valid_attachments = SERENE_ATTACHMENTS
 	slot_available = SERENE_ATTACH_SLOTS
 
