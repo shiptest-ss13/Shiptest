@@ -602,7 +602,7 @@
 		if(!tagfluff)
 			return
 		tag_fluff = tagfluff
-		to_chat("You add to the information on [src]!")
+		to_chat(user, span_notice("You add to the information on [src]!"))
 		return
 
 /obj/item/clothing/neck/dogtag/loadout
