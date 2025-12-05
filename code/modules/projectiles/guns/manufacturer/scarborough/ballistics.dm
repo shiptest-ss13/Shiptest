@@ -792,8 +792,9 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra)
 	item_state = "hydra_80"
 
 	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra/small
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/m556_42_hydra/small,
+	blacklisted_ammo_types = list(
+		/obj/item/ammo_box/magazine/m556_42_hydra/extended,
+		/obj/item/ammo_box/magazine/m556_42_hydra/casket,
 	)
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
