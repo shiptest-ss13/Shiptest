@@ -21,13 +21,15 @@ SUBSYSTEM_DEF(missions)
 /datum/controller/subsystem/missions/proc/get_researcher_name()
 	var/group = pick(list(
 		"Cybersun Biodynamics",
+		"Cybersun Virtual Solutions",
 		"CLIP-GOLD Frontier Investigations Office",
-		"CLIP-LAND Frontier Development Office"
+		"CLIP-LAND Frontier Development Office",
 		"Nanotrasen Frontier Studies Division",
-		"The N+S Survey Corps"
+		"The N+S Survey Corps",
 		"The Naturalienwissenschaftlicher Studentenverbindungs-Verband",
 		"The Central Solarian Frontier Research Agency",
 		"NGR Bureau of Expansion",
+		"NGR Bureau of Industry",
 		"A Gezenan newscaster",
 		"Tecetian researchers",
 		"The representative of a Rachnid guild",
