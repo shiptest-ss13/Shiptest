@@ -26,6 +26,9 @@
 
 	return ..()
 
+/datum/mission/outpost/acquire/industrial_drill/Destroy()
+	. = ..()
+	recall_bound(mission_drill, FALSE)
 
 //unfortunately: the behavior for normal mission drills is different than what I want.
 /obj/machinery/drill/sampler_mission
@@ -80,7 +83,7 @@
 	item_state = "tile"
 	lefthand_file = 'icons/mob/inhands/misc/tiles_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/tiles_righthand.dmi'
-	var/obj/item/nuke_core/core
+	var/obj/item/drill_sample/core
 
 /obj/item/drill_core_container/Destroy()
 	QDEL_NULL(core)

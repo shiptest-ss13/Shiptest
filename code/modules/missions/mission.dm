@@ -37,6 +37,8 @@
 	var/acceptable = FALSE
 	// If the mission has been accepted by a ship.
 	var/accepted = FALSE
+	/// if this mission is 'high priority' (cycled away during mission board clear)
+	var/high_priority = FALSE
 	/// The outpost that issued this mission. Passed in New().
 	var/datum/overmap/outpost/source_outpost
 	/// The ship that accepted this mission. Passed in accept().

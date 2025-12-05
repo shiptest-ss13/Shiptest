@@ -1,0 +1,65 @@
+/datum/mission/outpost/acquire/dogtags
+	name = "Pirate Hunting Stipend"
+	desc = ""
+	value = 3000
+	container_type = /obj/item/storage/dogtag_case
+
+
+	///The item that this mission wants
+	objective_type = null
+	///How many of this item does the mission want?
+	num_wanted = 10
+	weight = 0
+
+/datum/mission/outpost/acquire/dogtags/ramzi
+	name = "Ramzi Clique Bounty"
+	desc = null
+	objective_type = /obj/item/clothing/neck/dogtag/ramzi
+	weight = 6
+
+/datum/mission/outpost/acquire/dogtags/ramzi/New(...)
+	num_wanted = rand(num_wanted-4,num_wanted+6)
+	if(!desc)
+		desc = "The Ramzi Clique is ramping up activity near [source_outpost]. We are offering a [value] bounty to kill at least [num_wanted] of them, on top of the usual pirate bounty.\
+		Retrieve their dogtags, put them in the provided case, and return it to us to complete the bounty."
+
+	value += (num_wanted*200)
+
+/datum/mission/outpost/acquire/dogtags/frontier
+	name = "New Frontiersman Bounty"
+	desc = null
+	objective_type = /obj/item/clothing/neck/dogtag/ramzi
+	weight = 6
+
+/datum/mission/outpost/acquire/dogtags/ramzi/New(...)
+	num_wanted = rand(num_wanted-4,num_wanted+6)
+	if(!desc)
+		desc = "The New Frontiersmen are ramping up activity near [source_outpost]. We are offering a [value] bounty to kill at least [num_wanted] of them, on top of the usual pirate bounty.\
+		Retrieve their dogtags, put them in the provided case, and return it to us to complete the bounty."
+	value += (num_wanted*200)
+
+
+/obj/item/storage/dogtag_case
+	name = "dogtag case"
+	desc = "A box designed to hold a collection of dogtags."
+	icon = 'icons/obj/guncase.dmi'
+	icon_state = "guncase"
+	lefthand_file = 'icons/mob/inhands/equipment/toolbox_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/toolbox_righthand.dmi'
+	item_state = "infiltrator_case"
+	force = 12
+	throwforce = 12
+	throw_speed = 2
+	throw_range = 7
+	w_class = WEIGHT_CLASS_NORMAL
+	attack_verb = list("bonked")
+	hitsound = 'sound/weapons/smash.ogg'
+	drop_sound = 'sound/items/handling/toolbox_drop.ogg'
+	pickup_sound = 'sound/items/handling/toolbox_pickup.ogg'
+
+/obj/item/storage/guncase/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 16
+	STR.max_w_class = WEIGHT_CLASS_SMALL
+	STR.set_holdable(list(/obj/item/clothing/neck/dogtag))

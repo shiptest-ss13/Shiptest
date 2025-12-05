@@ -70,12 +70,13 @@
 	var/planet_hint ="Beach and Jungle"
 
 /datum/mission/outpost/survey/garden/New(...)
+	num_wanted = rand(num_wanted-4,num_wanted+2)
 	if(!name)
 		name = "Survey [garden_string]"
 	if(!desc)
 		desc = "[SSmissions.get_researcher_name()] has requested that we conduct a survey on the worlds in [GLOB.station_name] and determine their suitablity for future colonization. \
 		The first step of this process is analysis of local flora. Utilize the provided scanner to scan [num_wanted] botanical 'gardens' on nearby worlds. [capitalize(garden_string)] are usually found on [planet_hint]-class worlds."
-	num_wanted = rand(num_wanted-4,num_wanted+2)
+
 	value = rand(value*0.75, value*1.25) + (num_wanted*50)
 	. = ..()
 
