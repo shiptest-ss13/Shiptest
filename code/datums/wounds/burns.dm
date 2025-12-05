@@ -241,6 +241,18 @@
 	sanitization += amount * 0.1
 	return
 
+//crystal reagent lets you reverse sepsis bcause sepsis sucks rn
+/datum/wound/burn/on_crystal(power)
+	if(power>=5)
+		strikes_to_lose_limb = min(strikes_to_lose_limb+1, 3)
+		victim.adjustCloneLoss(2)
+	return
+
+//So does rezadone
+/datum/wound/burn/on_rezadone(power)
+	if(power>=10)
+		strikes_to_lose_limb = min(strikes_to_lose_limb+1, 3)
+	return
 
 // we don't even care about first degree burns, straight to second
 /datum/wound/burn/moderate
@@ -284,5 +296,5 @@
 	threshold_penalty = 80
 	status_effect_type = /datum/status_effect/wound/burn/critical
 	treatable_by = list(/obj/item/stack/medical/ointment, /obj/item/stack/medical/mesh)
-	infestation_rate = 0.5
+	infestation_rate = 0.07
 	flesh_damage = 20

@@ -117,10 +117,12 @@ Behavior that's still missing from this component that original food items had t
 
 	for(var/rid in initial_reagents)
 		var/amount = initial_reagents[rid]
-		if(length(tastes) && (rid == /datum/reagent/consumable/nutriment || rid == /datum/reagent/consumable/nutriment/vitamin))
-			owner.reagents.add_reagent(rid, amount, tastes.Copy())
-		else
-			owner.reagents.add_reagent(rid, amount)
+		if(length(tastes) && ispath(rid, /datum/reagent/consumable/nutriment))
+			var/datum/reagent/consumable/nutriment/nid = rid
+			if(initial(nid.carry_food_tastes))
+				owner.reagents.add_reagent(rid, amount, tastes.Copy())
+				continue
+		owner.reagents.add_reagent(rid, amount)
 
 /datum/component/edible/InheritComponent(
 	datum/component/C,
@@ -505,7 +507,7 @@ Behavior that's still missing from this component that original food items had t
 		L.manual_emote("nibbles away at \the [parent].")
 	bitecount++
 	. = COMPONENT_CANCEL_ATTACK_CHAIN
-	L.taste(owner.reagents) // why should carbons get all the fun?
+	L.taste_container(owner.reagents) // why should carbons get all the fun?
 	if(bitecount >= 5)
 		var/satisfaction_text = pick("burps from enjoyment.", "yaps for more!", "woofs twice.", "looks at the area where \the [parent] was.")
 		L.manual_emote(satisfaction_text)

@@ -488,6 +488,8 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/presawn)
 	item_state = "dshotgun_srm"
 	unique_reskin = null
 
+EMPTY_GUN_HELPER(shotgun/doublebarrel/roumain)
+
 /obj/item/gun/ballistic/shotgun/doublebarrel/roumain/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
@@ -766,6 +768,8 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 	icon_state = "illestren_factory"
 	item_state = "illestren_factory"
 
+EMPTY_GUN_HELPER(rifle/illestren/factory)
+
 /obj/item/gun/ballistic/rifle/illestren/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
@@ -902,6 +906,8 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 	base_icon_state = "flamingbolt"
 	icon_state = "flamingbolt"
 	item_state = "flamingbolt"
+
+EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/bolt/sawoff(forced = FALSE)
 	. = ..()
@@ -1175,7 +1181,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 /obj/item/gun/ballistic/automatic/assault/invictus
 	name = "HP Invictus"
-	desc = "An unwieldy automatic rifle fielded by the Saint-Roumain Militia, commonly sold to police forces and private buyers. Chambered in .308."
+	desc = "An unwieldy automatic rifle fielded by the Saint-Roumain Militia, commonly sold to police forces and private buyers. This one has a smooth wood finish and is in pristine condition. Chambered in .308."
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
@@ -1204,6 +1210,8 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 	recoil = 1
 	recoil_unwielded = 4
 
+	wear_rate = 0.6
+
 	fire_sound = 'sound/weapons/gun/hmg/hmg.ogg'
 
 	unique_attachments = list(/obj/item/attachment/bayonet)
@@ -1225,6 +1233,13 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 EMPTY_GUN_HELPER(automatic/assault/invictus)
 NO_MAG_GUN_HELPER(automatic/assault/invictus)
+
+/obj/item/gun/ballistic/automatic/assault/invictus/old
+	desc = "An unwieldy automatic rifle fielded by the Saint-Roumain Militia, commonly sold to police forces and private buyers. Chambered in .308."
+	icon_state = "invictus_old"
+	item_state = "invictus_old"
+
+	wear_rate = 1
 
 /obj/item/ammo_box/magazine/invictus_308_mag
 	name = "Invictus magazine (.308)"
