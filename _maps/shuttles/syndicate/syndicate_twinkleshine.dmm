@@ -509,7 +509,7 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/engineering{
-	req_access = list(150,10);
+	req_access = "10";
 	dir = 4;
 	name = "Engineering Access"
 	},
@@ -565,8 +565,7 @@
 /area/ship/security)
 "db" = (
 /obj/machinery/door/airlock/atmos/glass{
-	req_one_access_txt = "150";
-	req_access = list(150,10);
+	req_access = "10";
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1010,7 +1009,7 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning,
 /obj/machinery/door/airlock/engineering{
-	req_access = list(150,10);
+	req_access = "10";
 	dir = 4;
 	name = "Engineering Access"
 	},
@@ -1074,7 +1073,6 @@
 /area/ship/medical)
 "fV" = (
 /obj/machinery/door/airlock/atmos/glass{
-	req_one_access_txt = "150";
 	dir = 4
 	},
 /obj/structure/cable/yellow{
@@ -1567,7 +1565,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/engineering{
 	dir = 1;
-	req_access = list(150,10)
+	req_access = "10"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
@@ -2046,8 +2044,7 @@
 /area/ship/engineering/atmospherics)
 "lw" = (
 /obj/machinery/door/airlock/atmos/glass{
-	req_one_access_txt = "150";
-	req_access = list(150,10);
+	req_access = "10";
 	dir = 4
 	},
 /obj/structure/cable/yellow{
@@ -2302,7 +2299,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/engineering{
-	req_access = list(150,10)
+	req_access = "10"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -2563,7 +2560,7 @@
 /area/ship/bridge)
 "oG" = (
 /obj/machinery/door/airlock/grunge{
-	req_access = list(3,150)
+	req_access = "3"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
@@ -3147,7 +3144,7 @@
 /area/ship/engineering/engine)
 "rd" = (
 /obj/machinery/door/airlock/engineering{
-	req_access = list(150,10)
+	req_access = "10"
 	},
 /obj/effect/turf_decal/corner/opaque/orange/full,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -3296,7 +3293,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/engineering{
-	req_access = list(150,10)
+	req_access = "10"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
@@ -3982,8 +3979,7 @@
 /area/ship/crew/dorm/commad)
 "wz" = (
 /obj/machinery/door/airlock/atmos/glass{
-	req_one_access_txt = "150";
-	req_access = list(150,10);
+	req_access = "10";
 	dir = 8
 	},
 /obj/structure/cable/yellow{
@@ -4021,7 +4017,6 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/atmos/glass{
-	req_one_access_txt = "150";
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -4266,8 +4261,6 @@
 /area/ship/hallway/starboard)
 "xK" = (
 /obj/machinery/door/airlock/medical/glass{
-	req_one_access_txt = "150";
-	req_access = list(150);
 	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -4321,7 +4314,7 @@
 /area/template_noop)
 "ya" = (
 /obj/machinery/door/airlock/engineering/glass{
-	req_access = list(150,10);
+	req_access = "10";
 	dir = 8
 	},
 /turf/open/floor/engine,
@@ -4540,9 +4533,7 @@
 /turf/open/floor/pod/dark,
 /area/ship/engineering/atmospherics)
 "zk" = (
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "zp" = (
@@ -4930,8 +4921,6 @@
 /area/ship/engineering/engine)
 "BC" = (
 /obj/machinery/door/airlock/medical/glass{
-	req_one_access_txt = "150";
-	req_access = list(150);
 	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -5305,7 +5294,6 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/atmos/glass{
-	req_one_access_txt = "150";
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -6134,9 +6122,7 @@
 /turf/open/floor/plating,
 /area/ship/external/dark)
 "He" = (
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "Hi" = (
@@ -6718,7 +6704,7 @@
 /area/ship/engineering/engine)
 "Ks" = (
 /obj/machinery/door/airlock/engineering{
-	req_access = list(150,10);
+	req_access = "10";
 	dir = 4;
 	name = "Engineering Access"
 	},
@@ -6918,7 +6904,7 @@
 /area/ship/crew/dorm)
 "Lp" = (
 /obj/machinery/door/airlock/engineering/glass{
-	req_access = list(150,10);
+	req_access = "10";
 	dir = 4
 	},
 /turf/open/floor/engine,
@@ -7049,8 +7035,7 @@
 "MK" = (
 /obj/machinery/door/airlock/public/glass{
 	dir = 4;
-	name = "Kitchen";
-	req_ship_access = 1
+	name = "Kitchen"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -7582,7 +7567,6 @@
 /area/ship/bridge)
 "PB" = (
 /obj/machinery/door/airlock/hatch{
-	req_access = list(150);
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -7690,8 +7674,7 @@
 	},
 /obj/machinery/door/airlock/medical{
 	name = "Surgery";
-	req_one_access_txt = "150";
-	req_access = list(150,5)
+	req_access = "5"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
@@ -8370,7 +8353,7 @@
 	},
 /obj/machinery/door/airlock/hatch{
 	name = "Captain Quarters";
-	req_access = list(150, 20);
+	req_access = list(20);
 	dir = 4;
 	id_tag = "captaindoorlock"
 	},
@@ -9173,9 +9156,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/office)
 "XL" = (
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
@@ -9270,9 +9251,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/office)
 "Yj" = (
-/obj/machinery/door/airlock/external{
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
