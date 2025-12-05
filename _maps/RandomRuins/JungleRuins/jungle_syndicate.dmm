@@ -593,6 +593,9 @@
 	pixel_x = -4;
 	pixel_y = -2
 	},
+/obj/structure/sign/poster/contraband/syndiemoth{
+	pixel_x = -32
+	},
 /turf/open/floor/wood/walnut,
 /area/ruin/jungle/syndifort/jerry)
 "jk" = (
@@ -1480,6 +1483,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
+/obj/item/modular_computer/laptop/preset/civilian,
 /turf/open/floor/wood/walnut,
 /area/ruin/jungle/syndifort/dorms)
 "ur" = (
@@ -1907,6 +1911,9 @@
 	dir = 2;
 	color = "#543C30"
 	},
+/obj/structure/sign/poster/rilena/random{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/syndifort/dorms)
 "Ba" = (
@@ -2042,6 +2049,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/radio/intercom/directional/south,
 /obj/structure/table,
+/obj/structure/sign/poster/contraband/syndicate_recruitment{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/syndifort/storage)
 "DE" = (
@@ -2204,6 +2214,10 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 1
 	},
+/obj/item/modular_computer/laptop/preset/civilian{
+	pixel_x = -5;
+	pixel_y = 5
+	},
 /turf/open/floor/wood/walnut,
 /area/ruin/jungle/syndifort/dorms)
 "GQ" = (
@@ -2219,6 +2233,9 @@
 "GR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/computer/arcade/battle,
+/obj/structure/sign/poster/contraband/syndicate{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/syndifort/canteen)
 "Hb" = (
@@ -2621,6 +2638,16 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
+	},
+/obj/structure/sign/poster/contraband/gec{
+	pixel_y = 32
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "x";
+	layer = 3.5;
+	paint_colour = "#FF0000";
+	pixel_x = 1;
+	pixel_y = 34
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/syndifort/atmos)
