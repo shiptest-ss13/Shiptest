@@ -173,7 +173,7 @@
 /datum/overmap/outpost/proc/cycle_missions()
 	for(var/datum/mission/target_mission as anything in missions)
 		if(!target_mission.accepted)
-			qdel(mission)
+			qdel(target_mission)
 	fill_missions()
 
 /datum/overmap/outpost/proc/load_main_level()
