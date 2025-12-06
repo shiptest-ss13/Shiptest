@@ -4,7 +4,7 @@
 
 	base_gases = list(
 		GAS_SO2=5,
-		GAS_CO=10,
+		GAS_CO=2,
 	)
 	normal_gases = list(
 		GAS_O2=10,
