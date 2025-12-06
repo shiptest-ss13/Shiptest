@@ -102,7 +102,7 @@
 				severity = 0
 
 			//chance to actually hit the eyes depends on internal component
-			if(prob(effectchance * diode.rating) && C.flash_act(severity))
+			if(prob(effectchance * diode.rating) && (C.flash_act(severity) & FLASH_EFFECT))
 				outmsg = span_notice("You blind [C] by shining [src] in [C.p_their()] eyes.")
 				log_combat(user, C, "blinded with a laser pointer",src)
 			else
