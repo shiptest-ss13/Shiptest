@@ -151,6 +151,12 @@ const MissionsList = (props, context) => {
       </Stack.Item>
 
       <Stack.Item>
+        <Box inline mx={1}>
+          {`$completed: ${mission.progressStr}`}
+        </Box>
+      </Stack.Item>
+
+      <Stack.Item>
         <ProgressBar
           ranges={{
             good: [0.75, 1],

@@ -65,7 +65,6 @@
 	scanner_type = /obj/item/survey_handheld
 	objective_type = /obj/structure/flora/ash/garden
 	num_wanted = 12
-	var/danger_bonus = 50
 	var/garden_string = "lush gardens"
 	var/planet_hint ="Beach and Jungle"
 
@@ -95,7 +94,6 @@
 	objective_type = /obj/structure/flora/ash/garden/frigid
 	scanner_type = /obj/item/survey_handheld/advanced
 	num_wanted = 6
-	danger_bonus = 75
 	garden_string = "chilly gardens"
 	planet_hint = "Ice"
 
@@ -104,7 +102,6 @@
 	objective_type = /obj/structure/flora/ash/garden/arid
 	scanner_type = /obj/item/survey_handheld/advanced
 	num_wanted = 6
-	danger_bonus = 75
 	garden_string = "rock gardens"
 	planet_hint = "Rock"
 

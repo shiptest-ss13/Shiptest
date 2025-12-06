@@ -15,7 +15,7 @@
 	name = "Ramzi Clique Bounty"
 	desc = null
 	objective_type = /obj/item/clothing/neck/dogtag/ramzi
-	weight = 6
+	weight = 8
 
 /datum/mission/outpost/acquire/dogtags/ramzi/New(...)
 	num_wanted = rand(num_wanted-4,num_wanted+6)
@@ -29,7 +29,7 @@
 	name = "New Frontiersman Bounty"
 	desc = null
 	objective_type = /obj/item/clothing/neck/dogtag/ramzi
-	weight = 6
+	weight = 8
 
 /datum/mission/outpost/acquire/dogtags/ramzi/New(...)
 	num_wanted = rand(num_wanted-4,num_wanted+6)

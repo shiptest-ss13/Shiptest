@@ -21,7 +21,8 @@
 	target_outpost = pick(SSovermap.outposts)
 	for(var/i = 0, i<3, i++)
 		var/high_priority = SSmissions.get_weighted_mission_type()
-		var/datum/mission/outpost/M = new high_priority(src)
+		var/datum/mission/outpost/M = new high_priority(target_outpost)
+
 		LAZYADD(target_outpost.missions, M)
 		M.value *= 2
 		M.name = "HIGH PRIORITY - [M.name]"

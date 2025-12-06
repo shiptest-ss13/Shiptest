@@ -595,7 +595,7 @@
 
 /obj/item/clothing/neck/dogtag/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/pen))
-		if(length(tag_fluff) >= 5)
+		if(length(tag_fluff) <= 5)
 			to_chat(user, span_warning("[src] has no more space!"))
 			return
 		var/tagfluff = stripped_input(user, "Add to this dogtag.", "Plaque Customization", max_length=60)
