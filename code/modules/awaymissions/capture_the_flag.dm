@@ -514,6 +514,18 @@
 		if(istype(H.wear_suit, /obj/item/clothing/suit/armor/vest/bulletproof))
 			return TRUE
 
+// CTF FIRST AID
+
+/obj/item/storage/pouch/medical/ctf
+
+/obj/item/storage/pouch/medical/ctf/dropped()
+	. = ..()
+	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 1)
+
+/obj/item/storage/pouch/medical/ctf/proc/floor_vanish()
+	if(isturf(loc))
+		qdel(src)
+
 // OUTFITS
 
 /datum/outfit/ctf
@@ -582,7 +594,7 @@
 	back = /obj/item/gun/ballistic/automatic/assault/cm82/ctf
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/cm23/ctf
 	l_pocket = /obj/item/ammo_box/magazine/cm23/ctf
-	r_pocket = /obj/item/ammo_box/magazine/cm23/ctf
+	r_pocket = /obj/item/storage/pouch/medical/ctf
 	belt = /obj/item/storage/belt/military/clip/cm82/ctf
 	id = /obj/item/card/id/centcom //it's blue
 
