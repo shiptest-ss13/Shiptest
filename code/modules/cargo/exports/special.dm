@@ -8,7 +8,7 @@
 	)
 
 /datum/export/document
-	name = "Document recovery program"
+	unit_name = "Document recovery program"
 	desc = "State entities will often pay a premium for the recovery of documentation, even if it's out of date. This outpost runs a program to pay out most of this premium for spacers who don't want to sit down for interviews."
 	cost = 1000
 	elasticity_coeff = 0
