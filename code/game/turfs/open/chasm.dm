@@ -14,7 +14,10 @@
 
 /turf/open/chasm/Initialize(mapload, inherited_virtual_z)
 	. = ..()
-	AddComponent(/datum/component/chasm, below())
+	apply_components(mapload)
+
+/turf/open/chasm/proc/apply_components(mapload)
+	AddComponent(/datum/component/chasm, below(), mapload)
 
 /turf/open/chasm/examine(mob/user)
 	. = ..()
@@ -23,6 +26,8 @@
 /// Lets people walk into chasms.
 /turf/open/chasm/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
+	if(HAS_TRAIT(src, TRAIT_CHASM_STOPPED))
+		return TRUE
 	if(!isliving(mover))
 		return TRUE
 	if(mover.movement_type & (FLOATING|FLYING))
