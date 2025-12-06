@@ -37,6 +37,7 @@
 		desc = "The New Frontiersmen are ramping up activity near [source_outpost]. We are offering a [value] bounty to kill at least [num_wanted] of them, on top of the usual pirate bounty.\
 		Retrieve their dogtags, put them in the provided case, and return it to us to complete the bounty."
 	value += (num_wanted*200)
+	. = ..()
 
 
 /obj/item/storage/dogtag_case
