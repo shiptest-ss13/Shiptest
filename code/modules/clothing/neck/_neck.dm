@@ -594,7 +594,7 @@
 		. += span_boldnotice(line)
 
 /obj/item/clothing/neck/dogtag/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/pen/fountain))
+	if(istype(I, /obj/item/pen))
 		if(length(tag_fluff) == 5)
 			to_chat(user, span_warning("[src] has no more space!"))
 			return
