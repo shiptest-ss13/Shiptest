@@ -79,7 +79,7 @@ GLOBAL_LIST_EMPTY(gear_datums)
 	path = npath
 	location = nlocation
 
-/datum/gear/proc/spawn_item(location, mob/owner)
+/datum/gear/proc/spawn_item(location, mob/living/carbon/owner)
 	var/datum/gear_data/gd
 	if(role_replacements) //If the owner is a human (should be one) and the item in question has a role replacement
 		var/job = owner.job || owner.mind?.assigned_role

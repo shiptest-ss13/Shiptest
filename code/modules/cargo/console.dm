@@ -166,7 +166,7 @@
 			if(!mission.accepted)
 				if(LAZYLEN(ship.missions) >= ship.max_missions)
 					return
-				mission.accept(ship, loc)
+				mission.accept(ship, loc, return_crate_spawner())
 				return TRUE
 			else if(mission.servant == ship)
 				if(mission.can_complete())
