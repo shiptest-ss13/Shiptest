@@ -1,18 +1,17 @@
-/*
 /obj/item/attachment/gun/ballistic
 	name = "ballistic underbarrel gun"
 	desc = "A ballistic underbarrel gun. It shoots bullets. Or something."
 	underbarrel_prefix = "bullet_"
 
 /obj/item/attachment/gun/ballistic/attackby(obj/item/I, mob/living/user, params)
-	if(istype(I,/obj/item/ammo_casing) || istype(I, /obj/item/ammo_box))
+	if(istype(I,/obj/item/ammo_casing) || istype(I, /obj/item/ammo_box) || istype(I,/obj/item/gun_maint_kit))
 		attached_gun.attackby(I, user)
 	else
 		return ..()
 
 /obj/item/attachment/gun/ballistic/hand_attack_interaction(mob/user)
 	var/obj/item/gun/ballistic/ballistic_gun = attached_gun
-	if(ballistic_gun.magazine)
+	if(ballistic_gun.magazine && !ballistic_gun.internal_magazine)
 		ballistic_gun.eject_magazine(user)
 		return ..()
 
@@ -25,16 +24,17 @@
 		examine_list += span_notice("-The [name] does not seem to have a round chambered.")
 	if (attached_gun.bolt_locked)
 		examine_list += span_notice("-The [name]'s [ballistic_gun.bolt_wording] is locked back and needs to be released before firing.")
-	examine_list += span_notice("-You can [ballistic_gun.bolt_wording] [src] by pressing the <b>unique action</b> key. By default, this is <b>space</b>")
+	examine_list += span_notice("-You can [ballistic_gun.bolt_wording] [src] by pressing the <b>secondary action</b> key. By default, this is <b>shift + space</b>")
 	return examine_list
 
 /obj/item/gun/ballistic/shotgun/underbarrel
 	bad_type = /obj/item/gun/ballistic/shotgun/underbarrel
 	name = "underbarrel ballistic gun"
 	desc = "You shouldnt be seeing this."
-	semi_auto = FALSE
+	semi_auto = TRUE
 	casing_ejector = TRUE
 	gunslinger_recoil_bonus = 0
+	//bolt_type = 1
 	default_ammo_type  = /obj/item/ammo_box/magazine/internal/shot/underbarrel
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/underbarrel,
@@ -87,4 +87,3 @@
 /obj/item/ammo_box/magazine/m22lr_himehabu/hognose/empty
 	start_empty = TRUE
 
-*/

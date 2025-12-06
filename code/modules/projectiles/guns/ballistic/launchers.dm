@@ -77,6 +77,7 @@ GLOBAL_LIST_INIT(rpg_scrawlings, list(
 
 	//Bolt
 	bolt_type = BOLT_TYPE_NO_BOLT
+	doesnt_keep_bullet = TRUE
 
 	///Magazine stuff
 	cartridge_wording = "rocket"
