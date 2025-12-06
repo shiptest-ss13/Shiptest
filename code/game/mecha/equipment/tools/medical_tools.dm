@@ -324,7 +324,7 @@
 					var/mob/living/carbon/M = pick(mobs)
 					var/R
 					mechsyringe.visible_message("<span class=\"attack\"> [M] is hit by the syringe!</span>")
-					if(M.can_inject(null, 1))
+					if(M.can_inject(null))
 						if(mechsyringe.reagents)
 							for(var/datum/reagent/A in mechsyringe.reagents.reagent_list)
 								R += "[A.name] ([num2text(A.volume)]"
