@@ -15,14 +15,13 @@
 
 /obj/item/food/salad/aesirsalad
 	name = "\improper Aesir salad"
-	desc = "A salad consisting of the botanical experiment known as ambrosia vulgaris. Primarily made for its medicinal use, though it's rather bitter."
+	desc = "An expensive salad made with rare, specially bred golden apples in it. Commonly ordered and eaten by the super-rich as a sign of their wealth, but it really doesn't taste any better than a normal salad."
 	icon_state = "aesirsalad"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 8,
-		/datum/reagent/medicine/panacea = 10,
-		/datum/reagent/consumable/nutriment/vitamin = 12,
+		/datum/reagent/consumable/nutriment/vitamin = 6,
 	)
-	tastes = list("leaves" = 1)
+	tastes = list("leaves" = 1, "snobby richness" = 1)
 	foodtypes = VEGETABLES | FRUIT
 
 /obj/item/food/salad/herbsalad
@@ -46,7 +45,7 @@
 		/datum/reagent/consumable/doctor_delight = 8,
 		/datum/reagent/consumable/nutriment/vitamin = 6,
 	)
-	tastes = list("leaves" = 1, "potato" = 1, "meat" = 1, "valids" = 1)
+	tastes = list("leaves" = 1, "potato" = 1, "meat" = 1,)
 	foodtypes = VEGETABLES | MEAT | FRIED | FRUIT
 
 /obj/item/food/salad/fruit
