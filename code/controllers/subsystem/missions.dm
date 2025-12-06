@@ -31,6 +31,7 @@ SUBSYSTEM_DEF(missions)
 		"NGR Bureau of Expansion",
 		"NGR Bureau of Industry",
 		"A Gezenan newscaster",
+		"PGFN representatives",
 		"Tecetian researchers",
 		"The representative of a Rachnid guild",
 		"A strange sarathi on the outpost"

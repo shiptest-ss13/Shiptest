@@ -11,8 +11,6 @@
 
 	var/atom/movable/objective_type
 	var/num_wanted = 1
-	var/allow_subtypes = FALSE
-	var/count_stacks = TRUE
 
 /datum/mission/outpost/survey/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc, obj/hangar_crate_spawner/cargo_belt)
 	. = ..()
@@ -119,4 +117,24 @@
 /datum/mission/outpost/survey/geyser/New(...)
 	if(!desc)
 		desc = "[SSmissions.get_researcher_name()] has requested that we locate and scan planetary geysers for potential investment into pharmacuticals within the system. Utilze the provided scanner to scan and record data on [num_wanted] geyser."
+	. = ..()
+
+/datum/mission/outpost/survey/anomaly
+	name = ""
+	desc = ""
+	value = 3000
+	weight = 4
+	scanner_type = /obj/item/survey_handheld/elite
+	objective_type = /obj/effect/anomaly
+	num_wanted = 2
+
+/datum/mission/outpost/survey/anomaly/New(...)
+	num_wanted = rand(num_wanted-1,num_wanted+1)
+	if(!name)
+		name = "Scan Anomaly"
+	if(!desc)
+		desc = "Anomaly manifestation is on the rise in this area of space,  and [SSmissions.get_researcher_name()] has placed a bounty for the scanning of in-place anomaly fields. \
+		Locate an anomaly and use the provided scanner to analyze active wavelengths in the area of manifestation."
+
+	value = rand(value*0.75, value*1.25) + (num_wanted*2000)
 	. = ..()

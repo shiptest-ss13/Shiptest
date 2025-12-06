@@ -98,8 +98,8 @@
 	if(!name)
 		name = "Capture a [creature_name]"
 	if(!desc)
-		desc = "I require a live [creature_name] for research purposes. Trap one within the given \
-				Lifeform Containment Unit and return it to me and you will be paid handsomely."
+		desc = "[SSmissions.get_researcher_name()] has requested a live [creature_name] for research purposes. Trap one within the given \
+				Lifeform Containment Unit and return it to the outpost for a handsome payday."
 	. = ..()
 
 /datum/mission/outpost/acquire/creature/atom_effective_count(atom/movable/target)
@@ -126,6 +126,24 @@
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/netherworld/migo/asteroid
 	creature_name = "mi-go"
+
+/datum/mission/outpost/acquire/creature/basilisk
+	value = 1050
+	weight = 2
+	objective_type = /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands
+	creature_name = "sandworld basilisk"
+
+/datum/mission/outpost/acquire/creature/basilisk
+	value = 1050
+	weight = 2
+	objective_type = /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands
+	creature_name = "sandworld basilisk"
+
+/datum/mission/outpost/acquire/creature/basilisk
+	value = 1050
+	weight = 2
+	objective_type = /mob/living/simple_animal/hostile/asteroid/basilisk/watcher
+	creature_name = "watcher"
 
 /*
 		Acquiry mission containers

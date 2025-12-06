@@ -1,7 +1,7 @@
 /datum/mission/outpost/acquire/dogtags
 	name = "Pirate Hunting Stipend"
 	desc = ""
-	value = 3000
+	value = 2000
 	container_type = /obj/item/storage/dogtag_case
 
 
@@ -31,7 +31,7 @@
 	objective_type = /obj/item/clothing/neck/dogtag/ramzi
 	weight = 8
 
-/datum/mission/outpost/acquire/dogtags/ramzi/New(...)
+/datum/mission/outpost/acquire/dogtags/frontier/New(...)
 	num_wanted = rand(num_wanted-4,num_wanted+6)
 	if(!desc)
 		desc = "The New Frontiersmen are ramping up activity near [source_outpost]. We are offering a [value] bounty to kill at least [num_wanted] of them, on top of the usual pirate bounty.\

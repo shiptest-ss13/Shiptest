@@ -90,6 +90,7 @@
 	cost = 2
 	sell_floor = 1
 	material_id = /datum/material/plastic
+	valid_event_target = FALSE
 
 /datum/export/material/metal
 	unit_name = "sheet of metal"
@@ -102,6 +103,7 @@
 		/obj/item/stack/ore,
 		/obj/item/coin
 	)
+	valid_event_target = FALSE
 
 /datum/export/material/glass
 	unit_name = "sheet of glass"
@@ -112,3 +114,4 @@
 		/obj/item/stack/ore,
 		/obj/item/shard
 	)
+	valid_event_target = FALSE

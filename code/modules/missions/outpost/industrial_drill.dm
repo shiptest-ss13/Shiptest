@@ -1,7 +1,7 @@
 /datum/mission/outpost/acquire/industrial_drill
 	name = "Class 4 Vein Survey"
 	desc = ""
-	value = 13000
+	value = 18000
 	weight = 2
 	num_wanted = 10
 	container_type = /obj/item/drill_core_container
@@ -10,7 +10,8 @@
 /datum/mission/outpost/acquire/industrial_drill/New(...)
 	if(!desc)
 		desc = "[SSmissions.get_researcher_name()] has requested that we locate mineral resources for development in the near future. \
-		The only suitable mineral deposits for heavy industry are typically far underground. Locate a vein of sufficent depth, place the provided drill, and let it dig until it's produced a mineral sample. Place the sample in the box and return it to us."
+		The only suitable mineral deposits for heavy industry are typically far underground. Locate a vein of sufficent depth, place the provided drill, and let it dig until it's produced a mineral sample. Place the sample in the box and return it to us. \
+		A bonus will be provided for return of the drill."
 
 /datum/mission/outpost/acquire/industrial_drill/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc, obj/hangar_crate_spawner/cargo_belt)
 	. = ..()

@@ -152,7 +152,7 @@ const MissionsList = (props, context) => {
 
       <Stack.Item>
         <Box inline mx={1}>
-          {`$completed: ${mission.progressStr}`}
+          {`Completed: ${mission.progressStr}`}
         </Box>
       </Stack.Item>
 
