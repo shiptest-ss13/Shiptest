@@ -89,6 +89,7 @@
 #include "keybinding_init.dm"
 #include "machine_disassembly.dm"
 #include "medical_wounds.dm"
+#include "metabolization.dm"
 #include "open_air.dm"
 #include "outfit_sanity.dm"
 #include "overmap.dm"
