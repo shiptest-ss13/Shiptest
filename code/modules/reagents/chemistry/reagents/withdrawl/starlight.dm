@@ -6,8 +6,8 @@
 
 /datum/addiction/stimulants/withdrawal_stage_1_process(mob/living/carbon/affected_carbon, seconds_per_tick)
 	. = ..()
-	if(SPT_PROB(10, seconds_per_tick))
-	affected_carbon.blur_eyes(5)
+	if(SPT_PROB(5, seconds_per_tick))
+		affected_carbon.blur_eyes(5)
 
 /datum/addiction/stimulants/withdrawal_enters_stage_2(mob/living/carbon/affected_carbon)
 	. = ..()
