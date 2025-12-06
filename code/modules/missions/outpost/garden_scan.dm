@@ -85,7 +85,6 @@
 	objective_type = /obj/structure/flora/ash/garden/waste
 	weight = 4
 	num_wanted = 6
-	danger_bonus = 100
 	garden_string = "sickly gardens"
 	planet_hint = "Waste"
 
