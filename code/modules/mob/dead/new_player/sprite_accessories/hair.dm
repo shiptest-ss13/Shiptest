@@ -234,6 +234,10 @@
 	name = "Emo Fringe"
 	icon_state = "hair_emofringe"
 
+/datum/sprite_accessory/hair/emobangs
+	name = "Emo Bangs"
+	icon_state = "hair_emobangs"
+
 /datum/sprite_accessory/hair/nofade
 	name = "Fade (None)"
 	icon_state = "hair_nofade"
