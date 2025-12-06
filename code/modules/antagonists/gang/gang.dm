@@ -1,3 +1,5 @@
+// to do - remove
+
 /datum/antagonist/gang
 	name = "Family Member"
 	roundend_category = "gangsters"
@@ -246,9 +248,8 @@
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			people_on_station++
-			for(var/R in H.reagents.addiction_list)
-				if(istype(R, /datum/reagent/drug/methamphetamine))
-					people_on_crack++
+			if(H.mind.active_addictions[/datum/addiction/stimulants])
+				people_on_crack++
 	if(0.25*people_on_station > people_on_crack)
 		return FALSE
 	return TRUE

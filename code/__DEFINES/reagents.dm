@@ -67,3 +67,17 @@ GLOBAL_LIST_INIT(base_reagents, list(
 	/datum/reagent/water,
 	/datum/reagent/fuel
 ))
+
+///Minimum requirement for addiction buzz to be met
+#define MIN_ADDICTION_REAGENT_AMOUNT 1
+///Nicotine requires much less in your system to be happy
+#define MIN_NICOTINE_ADDICTION_REAGENT_AMOUNT 0.01
+
+#define MAX_ADDICTION_POINTS 1000
+
+///Addiction start/ends
+#define WITHDRAWAL_STAGE1_START_CYCLE 901 //15 minutes
+#define WITHDRAWAL_STAGE1_END_CYCLE 1540
+#define WITHDRAWAL_STAGE2_START_CYCLE 1541 // 25 minutes
+#define WITHDRAWAL_STAGE2_END_CYCLE 1880
+#define WITHDRAWAL_STAGE3_START_CYCLE 1881 // 30 minutes

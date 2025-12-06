@@ -7,35 +7,30 @@
 	mood_change = 1
 	timeout = 6 MINUTES
 
-/datum/mood_event/wrong_brand
-	description = span_warning("That brand of cigarette just doesn't hit right.")
-	mood_change = -1
-	timeout = 6 MINUTES
-
 /datum/mood_event/overdose
 	mood_change = -8
 	timeout = 5 MINUTES
 
 /datum/mood_event/overdose/add_effects(drug_name)
-	description = span_warning("I think I took a bit too much of that [drug_name]")
+	description = span_warning("I think I took a bit too much of that [drug_name]!")
 
 /datum/mood_event/withdrawal_light
 	mood_change = -2
 
 /datum/mood_event/withdrawal_light/add_effects(drug_name)
-	description = span_warning("I could use some [drug_name]")
+	description = span_warning("I could use some [drug_name]...")
 
 /datum/mood_event/withdrawal_medium
 	mood_change = -5
 
 /datum/mood_event/withdrawal_medium/add_effects(drug_name)
-	description = span_warning("I really need [drug_name]")
+	description = span_warning("I really need [drug_name].")
 
 /datum/mood_event/withdrawal_severe
 	mood_change = -8
 
 /datum/mood_event/withdrawal_severe/add_effects(drug_name)
-	description = span_boldwarning("Oh god I need some of that [drug_name]")
+	description = span_boldwarning("Oh god I need some of that [drug_name]!")
 
 /datum/mood_event/withdrawal_critical
 	mood_change = -10
@@ -95,3 +90,11 @@
 /datum/mood_event/stoned
 	mood_change = 6
 	description = span_nicegreen("The world is so comfortable...")
+
+/datum/mood_event/nicotine_withdrawal_moderate
+	description = "<span class='warning'>Haven't had a smoke in a while. Feeling a little on edge... </span>\n"
+	mood_change = -5
+
+/datum/mood_event/nicotine_withdrawal_severe
+	description = "<span class='boldwarning'>Head pounding. Cold sweating. Feeling anxious. Need a smoke to calm down!</span>\n"
+	mood_change = -8
