@@ -74,6 +74,7 @@
 	RegisterSignal(parent, COMSIG_ATTACHMENT_PRE_ATTACK, PROC_REF(relay_pre_attack))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_UPDATE_OVERLAY, PROC_REF(update_overlays))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_GET_SLOT, PROC_REF(send_slot))
+	RegisterSignal(parent, COMSIG_ATTACHMENT_CHANGE_SLOT, PROC_REF(change_slot))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_WIELD, PROC_REF(try_wield))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_UNWIELD, PROC_REF(try_unwield))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_ATTACK, PROC_REF(relay_attacked))
@@ -219,6 +220,11 @@
 /datum/component/attachment/proc/send_slot(obj/item/parent)
 	SIGNAL_HANDLER
 	return attachment_slot_to_bflag(slot)
+
+/datum/component/attachment/proc/change_slot(obj/item/parent, new_slot)
+	SIGNAL_HANDLER
+	slot = new_slot
+	return
 
 /datum/action/attachment
 	name = "Toggle Attachment"
