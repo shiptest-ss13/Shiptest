@@ -104,7 +104,7 @@
 
 	current_attack = new typepath
 	current_attack.infect(quirk_holder, make_copy = FALSE) // dont leave make_copy on TRUE. worst mistake ive ever made
-	RegisterSignal(current_attack, COMSIG_PARENT_QDELETING, PROC_REF(attack_deleting))
+	RegisterSignal(current_attack, COMSIG_QDELETING, PROC_REF(attack_deleting))
 
 	if (current_attack.alert_ghosts)
 		notify_ghosts("[quirk_holder] is having an asthma attack: [current_attack.name]!", source = quirk_holder, flashwindow = FALSE, header = "Asthma attack!")
@@ -132,7 +132,7 @@
 /datum/quirk/asthma/proc/attack_deleting(datum/signal_source)
 	SIGNAL_HANDLER
 
-	UnregisterSignal(current_attack, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(current_attack, COMSIG_QDELETING)
 	current_attack = null
 
 	COOLDOWN_START(src, next_attack_cooldown, rand(min_time_between_attacks, max_time_between_attacks))

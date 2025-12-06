@@ -197,12 +197,12 @@
 
 /obj/item/mod/module/plasma_engine/on_activation()
 	. = ..()
-	RegisterSignal(mod, COMSIG_PARENT_ATTACKBY, PROC_REF(on_attackby))
+	RegisterSignal(mod, COMSIG_ATOM_ATTACKBY, PROC_REF(on_attackby))
 	to_chat(mod.wearer,span_notice("Engine online, insert plasma into core unit."))
 	playsound(mod,'sound/mecha/mech_shield_raise.ogg')
 
 /obj/item/mod/module/plasma_engine/on_deactivation(display_message, deleting)
-	UnregisterSignal(mod, COMSIG_PARENT_ATTACKBY)
+	UnregisterSignal(mod, COMSIG_ATOM_ATTACKBY)
 	to_chat(mod.wearer,span_notice("Engine offline."))
 	playsound(mod,'sound/mecha/mech_shield_drop.ogg')
 

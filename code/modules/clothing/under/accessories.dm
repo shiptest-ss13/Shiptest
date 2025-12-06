@@ -73,10 +73,10 @@
 
 /obj/item/clothing/accessory/proc/set_detached_pockets(new_pocket)
 	if(detached_pockets)
-		UnregisterSignal(detached_pockets, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(detached_pockets, COMSIG_QDELETING)
 	detached_pockets = new_pocket
 	if(detached_pockets)
-		RegisterSignal(detached_pockets, COMSIG_PARENT_QDELETING, PROC_REF(handle_pockets_del))
+		RegisterSignal(detached_pockets, COMSIG_QDELETING, PROC_REF(handle_pockets_del))
 
 /obj/item/clothing/accessory/proc/handle_pockets_del(datum/source)
 	SIGNAL_HANDLER
