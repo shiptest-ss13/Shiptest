@@ -573,7 +573,7 @@
 	back = /obj/item/gun/ballistic/automatic/assault/skm/ctf
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/mauler/regular/ctf
 	l_pocket = /obj/item/ammo_box/magazine/m9mm_mauler/ctf
-	r_pocket = /obj/item/ammo_box/magazine/m9mm_mauler/ctf
+	r_pocket = /obj/item/storage/pouch/medical/ctf
 	belt = /obj/item/storage/belt/security/military/frontiersmen/skm_ammo/ctf
 	id = /obj/item/card/id/syndicate_command //it's red
 
