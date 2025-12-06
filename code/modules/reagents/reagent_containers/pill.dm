@@ -316,3 +316,9 @@
 	desc = "A pill composed of a white, powdery substance. Take as prescribed."
 	icon_state = "pill9"
 	list_reagents = list(/datum/reagent/drug/placebatol = 10)
+
+/obj/item/reagent_containers/pill/rcyte
+	name = "R-Cyte tablet"
+	desc = "A pill composed of a white, powdery substance. Take as prescribed."
+	icon_state = "pill0"
+	list_reagents = list(/datum/reagent/drug/cytodron = 10)
