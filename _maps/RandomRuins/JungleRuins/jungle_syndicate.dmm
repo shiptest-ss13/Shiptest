@@ -875,6 +875,9 @@
 	color = "#543C30"
 	},
 /obj/structure/table/wood,
+/obj/effect/landmark/mission_poi/main{
+	blocks_emissive = 1
+	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken4"
 	},
@@ -1296,6 +1299,9 @@
 	dir = 9;
 	color = "#543C30"
 	},
+/obj/effect/landmark/mission_poi/guard{
+	type_to_spawn = /mob/living/simple_animal/hostile/human/ramzi/ranged
+	},
 /turf/open/floor/wood/walnut,
 /area/ruin/jungle/syndifort/dorms)
 "sF" = (
@@ -1582,6 +1588,10 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 1
+	},
+/obj/effect/landmark/mission_poi/main/kill{
+	already_spawned = 1;
+	mission_index = 2
 	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
