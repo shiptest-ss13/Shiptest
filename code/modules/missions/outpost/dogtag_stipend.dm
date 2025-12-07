@@ -10,35 +10,30 @@
 	///How many of this item does the mission want?
 	num_wanted = 10
 	weight = 0
+	var/pirate_type = ""
+
+/datum/mission/outpost/acquire/dogtags/New(...)
+	num_wanted = rand(num_wanted-4,num_wanted+6)
+	if(!desc)
+		desc = "The [pirate_type] are ramping up activity near [source_outpost]. We are offering a [value]cr bounty to kill at least [num_wanted] of them, on top of the usual pirate bounty.\
+		Retrieve their dogtags, put them in the provided case, and return it to us to complete the bounty."
+	value += (num_wanted*200)
+	. = ..()
 
 /datum/mission/outpost/acquire/dogtags/ramzi
 	name = "Ramzi Clique Bounty"
 	desc = null
 	objective_type = /obj/item/clothing/neck/dogtag/ramzi
 	weight = 8
-
-/datum/mission/outpost/acquire/dogtags/ramzi/New(...)
-	num_wanted = rand(num_wanted-4,num_wanted+6)
-	if(!desc)
-		desc = "The Ramzi Clique is ramping up activity near [source_outpost]. We are offering a [value] bounty to kill at least [num_wanted] of them, on top of the usual pirate bounty.\
-		Retrieve their dogtags, put them in the provided case, and return it to us to complete the bounty."
-
-	value += (num_wanted*200)
+	num_wanted = 8
+	pirate_type = "Ramzi Clique"
 
 /datum/mission/outpost/acquire/dogtags/frontier
 	name = "New Frontiersman Bounty"
 	desc = null
 	objective_type = /obj/item/clothing/neck/dogtag/ramzi
 	weight = 8
-
-/datum/mission/outpost/acquire/dogtags/frontier/New(...)
-	num_wanted = rand(num_wanted-4,num_wanted+6)
-	if(!desc)
-		desc = "The New Frontiersmen are ramping up activity near [source_outpost]. We are offering a [value] bounty to kill at least [num_wanted] of them, on top of the usual pirate bounty.\
-		Retrieve their dogtags, put them in the provided case, and return it to us to complete the bounty."
-	value += (num_wanted*200)
-	. = ..()
-
+	pirate_type = "New Frontiersmen"
 
 /obj/item/storage/dogtag_case
 	name = "dogtag case"
@@ -58,9 +53,10 @@
 	drop_sound = 'sound/items/handling/toolbox_drop.ogg'
 	pickup_sound = 'sound/items/handling/toolbox_pickup.ogg'
 
-/obj/item/storage/guncase/ComponentInitialize()
+/obj/item/storage/dogtag_case/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 16
 	STR.max_w_class = WEIGHT_CLASS_SMALL
+	STR.max_combined_w_class = 32
 	STR.set_holdable(list(/obj/item/clothing/neck/dogtag))
