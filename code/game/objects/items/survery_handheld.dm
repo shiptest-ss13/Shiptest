@@ -17,6 +17,11 @@
 	if(scans_required)
 		. += span_notice("The scanner reports [scan_tally] of [scans_required] scans have been completed.")
 
+/obj/item/survey_handheld/pre_attack(atom/A, mob/living/user, params)
+	. = ..()
+	if(istype(A, /obj/effect/anomaly))
+		attack_obj(A, user)
+
 /obj/item/survey_handheld/attack_obj(obj/O, mob/living/user)
 	. = ..()
 	if(istype(O, scan_target) && scan_tally < scans_required)
@@ -53,8 +58,10 @@
 	name = "Advanced Survey Handheld"
 	desc = "An advanced survey scanner specialized in collecting large amounts of information on unique environments."
 	icon_state = "survey-adv"
+	base_icon_state = "survey-adv"
 
 /obj/item/survey_handheld/elite
 	name = "Experimental Survey Handheld"
 	desc = "An experimental survey scanner utilizing deep radar techniques to quickly ascertain information on its locale."
 	icon_state = "survey-elite"
+	base_icon_state = "survey-elite"
