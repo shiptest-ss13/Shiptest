@@ -133,13 +133,13 @@
 	objective_type = /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands
 	creature_name = "sandworld basilisk"
 
-/datum/mission/outpost/acquire/creature/basilisk
+/datum/mission/outpost/acquire/creature/lobster_activity
 	value = 1050
 	weight = 2
-	objective_type = /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands
-	creature_name = "sandworld basilisk"
+	objective_type = /mob/living/simple_animal/hostile/asteroid/lobstrosity
+	creature_name = "lobstrocity"
 
-/datum/mission/outpost/acquire/creature/basilisk
+/datum/mission/outpost/acquire/creature/watcher
 	value = 1050
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/asteroid/basilisk/watcher

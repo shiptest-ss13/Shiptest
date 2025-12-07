@@ -1,7 +1,7 @@
 /datum/mission/outpost/acquire/crystal_critter
 	name = "Crystal Infection Study"
 	desc = ""
-	value = 5000
+	value = 8000
 	weight = 1
 	container_type = /obj/structure/closet/mob_capture
 	objective_type = /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal
