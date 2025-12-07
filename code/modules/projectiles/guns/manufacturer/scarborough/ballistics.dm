@@ -782,7 +782,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra)
 
 /obj/item/gun/ballistic/automatic/assault/hydra/indie
 	name = "Hydra-80"
-	desc = "A dated variant of Scarborough Arm's premier assault rifle platform. Only accepts small magazines and is locked to semi-auto. Chambered in 5.56mm CLIP."
+	desc = "A dated variant of Scarborough Arms' premier assault rifle platform. Only accepts small magazines and is locked to semi-auto. Chambered in 5.56mm CLIP."
 
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
