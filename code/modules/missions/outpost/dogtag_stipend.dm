@@ -13,12 +13,12 @@
 	var/pirate_type = ""
 
 /datum/mission/outpost/acquire/dogtags/New(...)
+	. = ..()
 	num_wanted = rand(num_wanted-4,num_wanted+6)
 	if(!desc)
 		desc = "The [pirate_type] are ramping up activity near [source_outpost]. We are offering a [value]cr bounty to kill at least [num_wanted] of them, on top of the usual pirate bounty.\
 		Retrieve their dogtags, put them in the provided case, and return it to us to complete the bounty."
 	value += (num_wanted*200)
-	. = ..()
 
 /datum/mission/outpost/acquire/dogtags/ramzi
 	name = "Ramzi Clique Bounty"
@@ -31,7 +31,7 @@
 /datum/mission/outpost/acquire/dogtags/frontier
 	name = "New Frontiersman Bounty"
 	desc = null
-	objective_type = /obj/item/clothing/neck/dogtag/ramzi
+	objective_type = /obj/item/clothing/neck/dogtag/frontier
 	weight = 8
 	pirate_type = "New Frontiersmen"
 
