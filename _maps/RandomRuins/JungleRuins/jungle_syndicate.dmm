@@ -797,7 +797,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/syndifort/armory)
 "mh" = (
-/obj/structure/crate_shelf,
 /obj/structure/closet/crate/wooden,
 /obj/item/clothing/under/syndicate/ramzi,
 /obj/item/clothing/under/syndicate/ramzi/overalls,
@@ -876,9 +875,6 @@
 	color = "#543C30"
 	},
 /obj/structure/table/wood,
-/obj/effect/landmark/mission_poi/main{
-	blocks_emissive = 1
-	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken4"
 	},
@@ -1300,9 +1296,6 @@
 	dir = 9;
 	color = "#543C30"
 	},
-/obj/effect/landmark/mission_poi/guard{
-	type_to_spawn = /mob/living/simple_animal/hostile/human/ramzi/ranged
-	},
 /turf/open/floor/wood/walnut,
 /area/ruin/jungle/syndifort/dorms)
 "sF" = (
@@ -1580,10 +1573,6 @@
 	desc = "A paranoid officer of the Ramzi Clique, cradling a compact submachinegun in blackened gloves.";
 	weapon_drop_chance = 100;
 	environment_smash = 0
-	},
-/obj/effect/landmark/mission_poi/main/kill{
-	already_spawned = 1;
-	mission_index = 2
 	},
 /obj/structure/cable{
 	icon_state = "4-10"
