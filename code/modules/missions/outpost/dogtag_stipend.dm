@@ -58,5 +58,5 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 16
 	STR.max_w_class = WEIGHT_CLASS_SMALL
-	STR.max_combined_w_class = 32
+	STR.max_combined_w_class = 40
 	STR.set_holdable(list(/obj/item/clothing/neck/dogtag))
