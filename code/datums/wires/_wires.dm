@@ -37,7 +37,7 @@
 		CRASH("Wire holder is not of the expected type!")
 
 	src.holder = holder
-	RegisterSignal(holder, COMSIG_PARENT_QDELETING, PROC_REF(on_holder_qdel))
+	RegisterSignal(holder, COMSIG_QDELETING, PROC_REF(on_holder_qdel))
 	if(randomize)
 		randomize()
 	else
