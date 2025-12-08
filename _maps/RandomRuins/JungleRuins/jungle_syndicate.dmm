@@ -15,6 +15,15 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
+"aT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/chair{
+	dir = 8;
+	pixel_x = 3;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ruin/jungle/syndifort/canteen)
 "aX" = (
 /obj/item/stack/cable_coil/yellow{
 	pixel_x = 4;
@@ -667,10 +676,6 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 8
 	},
-/obj/item/ammo_box/magazine/m10mm_ringneck{
-	pixel_x = 9;
-	pixel_y = -1
-	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/syndifort/armory)
 "ky" = (
@@ -778,15 +783,6 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/jungle/syndifort/dorms)
-"ma" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/chair{
-	dir = 8;
-	pixel_x = 3;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/patterned/ridged,
-/area/ruin/jungle/syndifort/canteen)
 "me" = (
 /obj/structure/safe,
 /obj/item/melee/energy/sword/saber/red,
@@ -3311,6 +3307,10 @@
 /obj/structure/flippedtable{
 	dir = 8
 	},
+/obj/item/ammo_box/magazine/m10mm_ringneck{
+	pixel_x = 9;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/syndifort)
 "XE" = (
@@ -4134,7 +4134,7 @@ OC
 YH
 oL
 Hz
-ma
+aT
 Mk
 yR
 bs
