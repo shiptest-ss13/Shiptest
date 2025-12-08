@@ -1633,6 +1633,10 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/megaphone,
 /obj/item/radio/intercom/directional/east,
+/obj/item/storage/belt/security/webbing/hardliners/alt{
+	pixel_x = 4;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "sM" = (
@@ -3352,6 +3356,14 @@
 	icon_state = "syndicate";
 	name = "armoring locker";
 	req_access = list(1)
+	},
+/obj/item/storage/belt/security/webbing/hardliners/alt{
+	pixel_x = -9;
+	pixel_y = -8
+	},
+/obj/item/storage/belt/security/webbing/hardliners/alt{
+	pixel_x = 10;
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security)

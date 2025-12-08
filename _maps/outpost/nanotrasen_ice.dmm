@@ -1324,11 +1324,12 @@
 /turf/open/floor/plasteel/patterned,
 /area/outpost/vacant_rooms/shop)
 "gR" = (
-/obj/machinery/vending/boozeomat/syndicate_access,
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
-	dir = 9
+	dir = 8
 	},
+/obj/machinery/griddle,
+/obj/machinery/light/directional/west,
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/bar)
 "gZ" = (
@@ -1888,10 +1889,10 @@
 	color = "#543C30";
 	dir = 8
 	},
-/obj/machinery/icecream_vat,
 /obj/machinery/camera/autoname{
 	dir = 5
 	},
+/obj/machinery/vending/boozeomat/syndicate_access,
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/bar)
 "kl" = (
@@ -3164,10 +3165,7 @@
 	color = "#543C30";
 	dir = 1
 	},
-/obj/structure/sign/nanotrasen{
-	pixel_y = 28;
-	pixel_x = 0
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/bar)
 "rJ" = (
@@ -5631,6 +5629,10 @@
 /obj/effect/turf_decal/trimline/opaque/ntblue/line{
 	dir = 4
 	},
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_x = 31;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/bar)
 "El" = (
@@ -6075,13 +6077,9 @@
 "GO" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
-	dir = 1
+	dir = 9
 	},
-/obj/machinery/jukebox{
-	pixel_x = 0;
-	pixel_y = 17;
-	density = 0
-	},
+/obj/machinery/oven,
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/bar)
 "GS" = (
@@ -8078,16 +8076,15 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/outpost/vacant_rooms/shop)
 "Sc" = (
-/obj/machinery/chem_dispenser/drinks{
-	pixel_y = 7;
-	layer = 3
-	},
-/obj/structure/table/wood,
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
-	dir = 9
+	dir = 1
 	},
-/obj/machinery/light/directional/north,
+/obj/machinery/icecream_vat,
+/obj/structure/sign/nanotrasen{
+	pixel_y = 28;
+	pixel_x = 0
+	},
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/bar)
 "Sd" = (
@@ -9061,10 +9058,7 @@
 	pixel_y = 22;
 	pixel_x = 4
 	},
-/obj/item/table_bell{
-	pixel_x = 8;
-	pixel_y = 9
-	},
+/obj/machinery/jukebox/boombox,
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/bar)
 "XB" = (
@@ -9268,6 +9262,18 @@
 	light_range = 2
 	},
 /area/outpost/exterior)
+"Yt" = (
+/obj/machinery/chem_dispenser/drinks{
+	pixel_y = 7;
+	layer = 3
+	},
+/obj/structure/table/wood,
+/obj/effect/turf_decal/siding/wood{
+	color = "#543C30";
+	dir = 9
+	},
+/turf/open/floor/wood/walnut,
+/area/outpost/crew/bar)
 "Yw" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -13702,8 +13708,8 @@ QL
 QL
 QL
 QL
-QL
-GS
+TF
+TF
 GS
 GS
 GS
@@ -13793,9 +13799,9 @@ QL
 QL
 QL
 QL
-QL
 TF
 TF
+GO
 gR
 kb
 IP
@@ -13883,12 +13889,12 @@ QL
 QL
 Lh
 QL
-QL
 CP
 QL
 TF
-Sc
+Yt
 yu
+So
 xU
 em
 Ky
@@ -13977,9 +13983,9 @@ QL
 QL
 QL
 QL
-QL
 TF
 rD
+So
 So
 lY
 Zh
@@ -14069,9 +14075,9 @@ QL
 QL
 QL
 QL
-QL
 TF
-GO
+Sc
+So
 So
 Pj
 wW
@@ -14161,7 +14167,7 @@ QL
 CP
 QL
 Lh
-QL
+TF
 TF
 Xy
 Kz
