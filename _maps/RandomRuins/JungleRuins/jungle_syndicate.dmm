@@ -15,15 +15,6 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
-"aT" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/chair{
-	dir = 8;
-	pixel_x = 3;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/patterned/ridged,
-/area/ruin/jungle/syndifort/canteen)
 "aX" = (
 /obj/item/stack/cable_coil/yellow{
 	pixel_x = 4;
@@ -790,6 +781,7 @@
 /obj/item/spacecash/bundle/smallrand,
 /obj/machinery/light/directional/east,
 /obj/item/spacecash/bundle/smallrand,
+/obj/item/folder/documents/syndicate/red,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/syndifort/armory)
 "mh" = (
@@ -864,9 +856,6 @@
 	color = "#543C30"
 	},
 /obj/structure/table/wood,
-/obj/effect/landmark/mission_poi/main{
-	blocks_emissive = 1
-	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken4"
 	},
@@ -1301,9 +1290,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9;
 	color = "#543C30"
-	},
-/obj/effect/landmark/mission_poi/guard{
-	type_to_spawn = /mob/living/simple_animal/hostile/human/ramzi/ranged
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/jungle/syndifort/dorms)
@@ -3368,6 +3354,15 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/jungle/syndifort/jerry)
+"Yf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/chair{
+	dir = 8;
+	pixel_x = 3;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ruin/jungle/syndifort/canteen)
 "Yj" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
@@ -3477,10 +3472,6 @@
 	desc = "A paranoid officer of the Ramzi Clique, cradling a compact submachinegun in blackened gloves.";
 	weapon_drop_chance = 100;
 	environment_smash = 0
-	},
-/obj/effect/landmark/mission_poi/main/kill{
-	already_spawned = 1;
-	mission_index = 2
 	},
 /obj/structure/flippedtable{
 	icon_state = "wood_table";
@@ -4134,7 +4125,7 @@ OC
 YH
 oL
 Hz
-aT
+Yf
 Mk
 yR
 bs
