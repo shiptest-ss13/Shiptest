@@ -47,6 +47,9 @@
 	id = "goliathblasthangar2";
 	name = "Fore Hangar Door"
 	},
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hangar)
 "ai" = (
@@ -635,6 +638,9 @@
 /obj/item/clothing/head/helmet/space/light/engineer,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/tank/jetpack/carbondioxide,
+/obj/machinery/camera/autoname{
+	dir = 10
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "er" = (
@@ -903,6 +909,9 @@
 /obj/item/gun/energy/laser/e10,
 /obj/item/gun/ballistic/shotgun/flamingarrow/absolution,
 /obj/item/gun/ballistic/automatic/marksman/f4/indie,
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "gZ" = (
@@ -2206,6 +2215,9 @@
 /obj/structure/table/glass,
 /obj/effect/turf_decal/siding/black,
 /obj/structure/window/reinforced/survival_pod,
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "ph" = (
@@ -2297,6 +2309,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning,
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "pP" = (
@@ -2546,6 +2561,9 @@
 	id = "goliathblaststarboard";
 	name = "Thruster Blastdoors"
 	},
+/obj/machinery/camera/autoname{
+	dir = 10
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "rO" = (
@@ -2649,6 +2667,9 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/west,
+/obj/machinery/camera/autoname{
+	dir = 5
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
 "sl" = (
@@ -3116,6 +3137,9 @@
 	},
 /obj/machinery/firealarm/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
 "up" = (
@@ -3318,6 +3342,9 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
+	},
+/obj/machinery/camera/autoname{
+	dir = 1
 	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/ccommons)
@@ -3662,6 +3689,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden,
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "xT" = (
@@ -3751,6 +3781,9 @@
 "ys" = (
 /obj/effect/turf_decal/techfloor,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "yG" = (
@@ -3959,6 +3992,9 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/light/directional/east,
+/obj/machinery/camera/autoname{
+	dir = 9
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hangar)
 "zN" = (
@@ -4404,6 +4440,9 @@
 /obj/machinery/light/small/directional/west{
 	pixel_y = 8
 	},
+/obj/machinery/camera/autoname{
+	dir = 5
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hangar)
 "Dd" = (
@@ -4492,6 +4531,9 @@
 	layer = 2.5
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
+/obj/machinery/camera/autoname{
+	dir = 9
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "Dt" = (
@@ -4528,6 +4570,10 @@
 /obj/structure/chair/sofa/olive/old/left/directional/east,
 /obj/structure/sign/poster/radio/icf{
 	pixel_x = -30
+	},
+/obj/machinery/camera/autoname{
+	dir = 4;
+	pixel_y = 5
 	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/office)
@@ -4793,6 +4839,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/machinery/camera/autoname,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
 "Fi" = (
@@ -4818,6 +4865,9 @@
 /obj/item/binoculars{
 	pixel_y = 4;
 	pixel_x = -2
+	},
+/obj/machinery/camera/autoname{
+	dir = 1
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -5103,6 +5153,9 @@
 	icon_state = "2-8"
 	},
 /obj/structure/extinguisher_cabinet/directional/east,
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "GF" = (
@@ -5133,6 +5186,9 @@
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_y = 32;
 	pixel_x = -8
+	},
+/obj/machinery/camera/autoname{
+	dir = 6
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -5758,6 +5814,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/camera/autoname{
+	dir = 10
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "Kr" = (
@@ -5877,6 +5936,9 @@
 /obj/effect/turf_decal/siding/thinplating,
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden{
 	dir = 4
+	},
+/obj/machinery/camera/autoname{
+	dir = 10
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
@@ -6021,6 +6083,9 @@
 /obj/machinery/telecomms/bus/preset_four{
 	autolinkers = list("hub","processor4","bus");
 	network = "indie_commnet"
+	},
+/obj/machinery/camera/autoname{
+	dir = 9
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
@@ -6664,6 +6729,9 @@
 "Qb" = (
 /obj/machinery/airalarm/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
 "Qp" = (
@@ -7784,6 +7852,9 @@
 /obj/item/clothing/suit/space/eva,
 /obj/item/clothing/head/helmet/space/eva,
 /obj/item/tank/internals/oxygen/yellow,
+/obj/machinery/camera/autoname{
+	dir = 5
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Xz" = (
@@ -8005,6 +8076,9 @@
 /obj/effect/decal/cleanable/oil,
 /obj/structure/sign/warning/nosmoking/burnt{
 	pixel_y = -32
+	},
+/obj/machinery/camera/autoname{
+	dir = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/atmospherics)
