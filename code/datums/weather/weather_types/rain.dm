@@ -27,7 +27,7 @@
 	if(!iscarbon(living_mob))
 		return
 	var/mob/living/carbon/carbon = living_mob
-	carbon.adjust_fire_stacks(-fire_suppression/2)
+	carbon.adjust_wet_stacks(fire_suppression/2)
 	if(prob(25))
 		carbon.wash(clean_types = CLEAN_TYPE_BLOOD)
 

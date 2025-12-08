@@ -217,6 +217,44 @@
 	slowdown = 0.8
 
 //spacesuits
+/obj/item/clothing/suit/space/clip
+	name = "CLIP space suit"
+	icon_state = "space-clip"
+	item_state = "space-clip"
+	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
+	desc = "A popular suit manufactured by the colonial league, rated for hazardous, low-pressure environments and high temperature alike. Often worn by various workers and civilians hired by the league."
+	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 20, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75, "wound" = 10)
+	resistance_flags = FIRE_PROOF
+	siemens_coefficient = 0
+
+/obj/item/clothing/head/helmet/space/clip
+	name = "CLIP space helmet"
+	icon_state = "space-clip"
+	item_state = "space-clip"
+	icon = 'icons/obj/clothing/faction/clip/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+	desc = "A space helmet manufactured by the colonial league, rated for hazardous, low pressure environments and minor impacts. Often worn by various workers and civilians hired by the league."
+	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 20, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75, "wound" = 10)
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/suit/space/clip/armored
+	name = "CLIP armored space suit"
+	icon_state = "space-clip-armor"
+	item_state = "space-clip-armor"
+	desc = "An armored variant of the leagues civilian spacesuit, swapping fabrics and adding more plating. Often issued out to miners in hazardous locations, police forces, or reservists."
+	w_class = WEIGHT_CLASS_BULKY
+	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15)
+	resistance_flags = null
+
+/obj/item/clothing/head/helmet/space/clip/armored
+	name = "CLIP armored space helmet"
+	icon_state = "space-clip-armor"
+	item_state = "space-clip-armor"
+	desc = "An armored variant of the leagues civilian space helmet, swapping plating types. Often issued out to miners in hazardous locations, police forces, or reservists."
+	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15)
+	resistance_flags = null
+
 /obj/item/clothing/suit/space/hardsuit/clip_patroller
 	name = "\improper CM-410 'Patroller' EVA Hardsuit"
 	desc = "An older-issue CLIP hardsuit, adapted from an even older design. Widely utilized in reconnaissance duty and skirmishing due to its lightweight construction."
@@ -349,43 +387,52 @@
 
 /obj/item/clothing/head/helmet/bulletproof/x11/clip
 	name = "\improper Minutemen CM-11 Helmet"
-	desc = "A large, bulky bulletproof helmet, in the distinctive blue coloring of the Confederated League. Features a little attachment rail on the side where you can mount a flashlight."
+	desc = "A large, bulky bulletproof helmet in the distinctive blue coloring of the Minutemen. Features a little attachment rail on the side where you can mount a flashlight."
 
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
 	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/clip/kepori.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/clip/clip_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/clip/clip_righthand.dmi'
 
 	icon_state = "clip_x11"
 	item_state = "clip_x11"
-	unique_reskin = list("Standard Issue" = "clip_x11",
-						"Blank" = "clip_x11_a",
-						"White Stripe" = "clip_x11_b"
-						)
+	unique_reskin = list(
+		"Standard Issue" = "clip_x11",
+		"Blank" = "clip_x11_blank",
+		"White Stripe" = "clip_x11_stripe"
+		)
 	can_flashlight = TRUE
 
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/head/helmet/m10/clip
 	name = "\improper Minutemen CM-10 Helmet"
-	desc = "A special, lightweight helmet issued to the Minutemen of the Confederated League Minutemen."
+	desc = "A cheap, but comfortable and light helmet painted in Minutemen colors, often seen in the hands of the reserves or Minutemen in the backline. Features a little attachment rail on the side where you can mount a flashlight."
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
 	icon_state = "clip_m10"
 	can_flashlight = TRUE
+	unique_reskin = list(
+		"Standard Issue" = "clip_m10",
+		"Blank" = "clip_m10_blank",
+		"Triple Column" = "clip_m10_triple"
+		)
 
 /obj/item/clothing/head/helmet/m10/clip_vc
 	name = "\improper Minutemen CM-12 Helmet"
-	desc = "A special, lightweight and padded helmet issued to Vehicle Crewmen of the Confederated League Minutemen. Features noise-reducing technology and a microphone that automatically connects with worn headsets. Hopefully protects you from bumpy rides."
+	desc = "A special, lightweight and padded helmet issued to Vehicle Crewmen of the Minutemen. Features noise-reducing technology and a microphone that automatically connects with worn headsets. Hopefully protects you from bumpy rides."
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
 	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 
 	icon_state = "clip_m10_vc"
-	unique_reskin = list("Standard Issue" = "clip_m10_vc",
-						"Arctic" = "clip_m10_vc_a",
-						)
+	unique_reskin = list(
+		"Standard Issue" = "clip_m10_vc",
+		"Arctic" = "clip_m10_vc_arctic",
+		"Spearhead" = "clip_m10_vc_spearhead"
+		)
 	can_flashlight = TRUE
 
 	supports_variations = VOX_VARIATION
