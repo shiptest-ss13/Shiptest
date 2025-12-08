@@ -363,6 +363,15 @@
 "gY" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/jungle/syndifort/dorms)
+"ha" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/chair{
+	dir = 8;
+	pixel_x = 3;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ruin/jungle/syndifort/canteen)
 "hb" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
@@ -3202,6 +3211,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
 	},
+/obj/item/toy/plush/rilena,
 /turf/open/floor/carpet/red_gold,
 /area/ruin/jungle/syndifort/jerry)
 "WJ" = (
@@ -3354,15 +3364,6 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/jungle/syndifort/jerry)
-"Yf" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/chair{
-	dir = 8;
-	pixel_x = 3;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/patterned/ridged,
-/area/ruin/jungle/syndifort/canteen)
 "Yj" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
@@ -4125,7 +4126,7 @@ OC
 YH
 oL
 Hz
-Yf
+ha
 Mk
 yR
 bs
