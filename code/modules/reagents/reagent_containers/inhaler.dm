@@ -304,7 +304,7 @@
 
 /obj/item/reagent_containers/inhaler_canister/sting
 	name = "sting canister"
-	desc = "A small canister filled with aerosolized reagents for use in a inhaler. This one contains Sting, a stimulant from Sybelnach!"
+	desc = "A small canister filled with aerosolized reagents for use in a inhaler. This one contains Sting, and the mark of a Syeben'Altch guild."
 	icon_state = "canister_generic"
 	list_reagents = list(/datum/reagent/drug/sting = 30)
 
