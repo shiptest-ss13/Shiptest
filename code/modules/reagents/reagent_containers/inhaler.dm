@@ -315,6 +315,6 @@
 
 /obj/item/reagent_containers/inhaler_canister/combat_drug
 	name = "shoalmix canister"
-	desc = "A small canister filled with aerosolized reagents for use in a inhaler. This one contains a blend of shoalmix and panacea! Hit it in a fight!"
+	desc = "A small canister filled with aerosolized reagents for use in a inhaler. This one contains a blend of shoalmix and panacea. Hit it in a fight!"
 	icon_state = "canister_syndicate"
 	list_reagents = list(/datum/reagent/drug/combat_drug = 20, /datum/reagent/medicine/panacea = 10)
