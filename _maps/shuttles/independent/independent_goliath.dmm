@@ -289,8 +289,7 @@
 /area/ship/hallway/fore)
 "bw" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2{
-	dir = 8;
-	piping_layer = 5
+	dir = 8
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/tech,
@@ -499,7 +498,7 @@
 "df" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/closet/crate/bin,
-/obj/machinery/airalarm/directional/east,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "dk" = (
@@ -942,9 +941,6 @@
 	color = "#543C30"
 	},
 /obj/effect/spawner/bunk_bed,
-/obj/structure/curtain/bounty{
-	layer = 4.1
-	},
 /obj/item/bedsheet/grey,
 /obj/item/bedsheet/grey{
 	pixel_y = 13
@@ -982,7 +978,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
 "hp" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer5,
+/obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped/inverse,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "hr" = (
@@ -1114,6 +1110,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
 "is" = (
@@ -1155,9 +1152,11 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "iv" = (
-/obj/machinery/atmospherics/pipe/simple/green/visible/layer5,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
@@ -1189,14 +1188,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
 "iJ" = (
-/obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped/inverse{
-	dir = 4;
-	piping_layer = 5
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/layer_manifold/visible{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "iM" = (
@@ -1238,12 +1236,6 @@
 /turf/open/floor/carpet/green,
 /area/ship/crew/ccommons)
 "ja" = (
-/obj/machinery/atmospherics/pipe/simple/dark/visible/layer5{
-	dir = 1
-	},
-/obj/machinery/atmospherics/components/binary/valve{
-	name = "waste release"
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
@@ -1251,6 +1243,10 @@
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor6"
 	},
+/obj/machinery/atmospherics/components/binary/valve{
+	name = "waste release"
+	},
+/obj/machinery/atmospherics/pipe/simple/dark/visible/layer4,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "jf" = (
@@ -1667,9 +1663,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/office)
 "lf" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer5{
-	dir = 5
-	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 8
 	},
@@ -1679,6 +1672,9 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer2{
+	dir = 5
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -1975,7 +1971,7 @@
 /area/ship/medical)
 "nr" = (
 /obj/structure/catwalk/over,
-/obj/machinery/atmospherics/pipe/manifold/dark/visible,
+/obj/machinery/atmospherics/pipe/manifold/dark/visible/layer4,
 /turf/open/floor/plating,
 /area/ship/external/dark)
 "nv" = (
@@ -2263,11 +2259,11 @@
 /area/ship/hangar)
 "py" = (
 /obj/structure/catwalk/over,
-/obj/machinery/atmospherics/components/unary/outlet_injector/on{
-	dir = 4
-	},
 /obj/structure/sign/warning/fire{
 	pixel_y = 32
+	},
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/external/dark)
@@ -2424,9 +2420,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/toilet)
 "qY" = (
-/obj/structure/curtain/bounty{
-	layer = 4.1
-	},
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
 	dir = 9
@@ -2580,9 +2573,6 @@
 	color = "#543C30";
 	dir = 9
 	},
-/obj/structure/curtain/bounty{
-	layer = 4.1
-	},
 /obj/effect/spawner/bunk_bed{
 	dir = 1
 	},
@@ -2691,10 +2681,30 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 8
 	},
-/obj/item/cutting_board{
+/obj/item/reagent_containers/condiment/bbqsauce{
+	pixel_y = 13;
+	pixel_x = -10
+	},
+/obj/item/reagent_containers/condiment/ketchup{
+	pixel_y = 13
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = 8;
+	pixel_y = 13
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = 8;
 	pixel_y = 3
 	},
-/obj/item/melee/knife/kitchen,
+/obj/item/reagent_containers/condiment/mayonnaise{
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/condiment/hotsauce{
+	pixel_y = 7;
+	pixel_x = -9;
+	name = "flamin hot refa sauce bottle";
+	desc = "A bottle of hot sauce, made from chili peppers and refa-li. Good for spicing up food, South Teceti style!"
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "sx" = (
@@ -2789,8 +2799,7 @@
 /area/ship/crew/cryo)
 "sU" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
-	dir = 8;
-	piping_layer = 5
+	dir = 8
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 10;
@@ -2887,9 +2896,6 @@
 "tp" = (
 /obj/effect/spawner/bunk_bed{
 	dir = 1
-	},
-/obj/structure/curtain/bounty{
-	layer = 4.1
 	},
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -3149,12 +3155,12 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "uC" = (
-/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4{
-	dir = 1
-	},
 /obj/effect/turf_decal/industrial/hatch/blue,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/glass/plastitanium,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/atmospherics)
 "uD" = (
@@ -3480,44 +3486,50 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "wm" = (
-/obj/machinery/atmospherics/pipe/simple/dark/visible/layer5{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/dark/visible,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6;
 	layer = 2.5
 	},
 /obj/machinery/light/small/directional/east,
+/obj/machinery/atmospherics/pipe/simple/dark/visible{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/dark/visible/layer4,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "wr" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/condiment/bbqsauce{
-	pixel_y = 11;
-	pixel_x = -10
+/obj/effect/turf_decal/siding/black{
+	dir = 1
 	},
-/obj/item/reagent_containers/condiment/ketchup{
-	pixel_y = 11
+/obj/item/plate/large,
+/obj/item/plate/large,
+/obj/item/storage/box/drinkingglasses{
+	pixel_y = 14
 	},
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_x = 8;
-	pixel_y = 10
+/obj/item/reagent_containers/glass/bowl,
+/obj/item/reagent_containers/glass/bowl,
+/obj/item/plate/small,
+/obj/item/plate/small,
+/obj/item/kitchen/fork{
+	pixel_x = -11
 	},
-/obj/item/reagent_containers/condiment/hotsauce{
-	pixel_y = 5;
-	pixel_x = -9;
-	name = "flamin hot refa sauce bottle";
-	desc = "A bottle of hot sauce, made from chili peppers and refa-li. Good for spicing up food, South Teceti style!"
+/obj/item/kitchen/fork{
+	pixel_x = -9
 	},
-/obj/item/reagent_containers/condiment/mayonnaise{
-	pixel_y = 4
+/obj/item/kitchen/spoon/plastic{
+	pixel_x = 14
 	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = 8
+/obj/item/kitchen/spoon/plastic{
+	pixel_x = 17
 	},
-/obj/machinery/light/directional/east,
+/obj/item/reagent_containers/glass/beaker/large{
+	pixel_y = 7
+	},
+/obj/structure/closet/wall/directional/east{
+	name = "kitchen cabinet"
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "wz" = (
@@ -3856,18 +3868,18 @@
 "zh" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/atmospherics/pipe/simple/dark/visible,
 /obj/machinery/door/poddoor{
 	id = "goliathblastbridge"
 	},
+/obj/machinery/atmospherics/pipe/simple/dark/visible/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "zi" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer5{
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer2{
 	dir = 9
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "zk" = (
@@ -4319,11 +4331,11 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/hangar)
 "CB" = (
-/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4{
-	dir = 1
-	},
 /obj/effect/turf_decal/industrial/hatch/blue,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/atmospherics)
 "CE" = (
@@ -5045,14 +5057,14 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/office)
 "Gu" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer5{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer2{
+	dir = 8
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
@@ -5679,7 +5691,7 @@
 	dir = 1;
 	layer = 2.5
 	},
-/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer5{
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 10
 	},
 /turf/open/floor/plasteel/tech,
@@ -5949,6 +5961,10 @@
 "LK" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/table/reinforced,
+/obj/item/cutting_board{
+	pixel_y = 3
+	},
+/obj/item/melee/knife/kitchen,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "LO" = (
@@ -6010,37 +6026,10 @@
 /area/ship/engineering/communications)
 "Mq" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/structure/table/reinforced,
 /obj/effect/turf_decal/siding/black{
 	dir = 1
 	},
-/obj/structure/closet/wall/directional/north{
-	name = "kitchen cabinet"
-	},
-/obj/item/plate/large,
-/obj/item/plate/large,
-/obj/item/storage/box/drinkingglasses{
-	pixel_y = 14
-	},
-/obj/item/reagent_containers/glass/bowl,
-/obj/item/reagent_containers/glass/bowl,
-/obj/item/plate/small,
-/obj/item/plate/small,
-/obj/item/kitchen/fork{
-	pixel_x = -11
-	},
-/obj/item/kitchen/fork{
-	pixel_x = -9
-	},
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 14
-	},
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 17
-	},
-/obj/item/reagent_containers/glass/beaker/large{
-	pixel_y = 7
-	},
+/obj/machinery/oven,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "MA" = (
@@ -6245,7 +6234,7 @@
 /obj/structure/chair{
 	dir = 8
 	},
-/obj/machinery/newscaster/directional/east,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "NN" = (
@@ -6965,11 +6954,11 @@
 /area/ship/hallway/central)
 "RY" = (
 /obj/structure/catwalk/over,
-/obj/machinery/atmospherics/components/unary/outlet_injector/on{
-	dir = 8
-	},
 /obj/structure/sign/warning/hottemp{
 	pixel_y = 32
+	},
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/external/dark)
@@ -7010,9 +6999,6 @@
 /area/ship/maintenance/port)
 "Ss" = (
 /obj/effect/spawner/bunk_bed,
-/obj/structure/curtain/bounty{
-	layer = 4.1
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 5;
 	color = "#543C30"
@@ -7084,6 +7070,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
+"SU" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ship/crew/ccommons)
 "Ta" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -7160,7 +7151,7 @@
 /turf/open/floor/plating,
 /area/ship/crew/cryo)
 "Tr" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer5{
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer2{
 	dir = 6
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -7878,11 +7869,6 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 8;
-	piping_layer = 5;
-	name = "air tank input pump"
-	},
 /obj/effect/turf_decal/industrial/outline/orange,
 /obj/machinery/atmospherics/components/binary/pump/layer4{
 	dir = 4;
@@ -7896,6 +7882,10 @@
 	pixel_x = 4;
 	id = "goliathshutteratmosair";
 	name = "Window Shutters - Air"
+	},
+/obj/machinery/atmospherics/components/binary/pump/layer2{
+	dir = 8;
+	name = "air tank input pump"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
@@ -8105,11 +8095,11 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer5{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer2{
+	dir = 8
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
@@ -8814,7 +8804,7 @@ ID
 OG
 vC
 Sn
-Mq
+uH
 fM
 sv
 LX
@@ -8846,8 +8836,8 @@ rd
 yX
 tg
 DG
-Sn
-uH
+SU
+Ws
 fM
 LK
 Bs
@@ -8879,8 +8869,8 @@ lu
 wc
 iZ
 aS
-Sn
-Ws
+SU
+Mq
 Tf
 wr
 df
