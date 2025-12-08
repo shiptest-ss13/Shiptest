@@ -23,7 +23,7 @@ Borg Hypospray
 	var/charge_cost = 50
 	var/charge_timer = 0
 	var/recharge_time = 10 //Time it takes for shots to recharge (in seconds)
-	var/bypass_protection = 0 //If the hypospray can go through armor or thick material
+	var/inject_flags = INJECT_CHECK_PENETRATE_THICK //If the hypospray can go through armor or thick material
 
 	var/list/datum/reagents/reagent_list = list()
 	var/list/reagent_ids = list(/datum/reagent/medicine/dexalin, /datum/reagent/medicine/alvitane, /datum/reagent/medicine/indomide, /datum/reagent/medicine/pancrazine, /datum/reagent/medicine/epinephrine, /datum/reagent/medicine/spaceacillin, /datum/reagent/medicine/salglu_solution, /datum/reagent/medicine/morphine)
@@ -102,7 +102,7 @@ Borg Hypospray
 		return
 	if(!istype(M))
 		return
-	if(R.total_volume && M.can_inject(user, 1, user.zone_selected,bypass_protection))
+	if(R.total_volume && M.can_inject(user, user.zone_selected, inject_flags))
 		to_chat(M, span_warning("You feel a tiny prick!"))
 		to_chat(user, span_notice("You inject [M] with the injector."))
 		if(M.reagents)
@@ -155,7 +155,7 @@ Borg Hypospray
 	charge_cost = 20
 	recharge_time = 2
 	reagent_ids = list(/datum/reagent/medicine/panacea, /datum/reagent/medicine/potass_iodide, /datum/reagent/medicine/morphine)
-	bypass_protection = 1
+	inject_flags = INJECT_CHECK_PENETRATE_THICK
 	accepts_reagent_upgrades = FALSE
 
 /*

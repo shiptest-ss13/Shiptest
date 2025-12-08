@@ -423,7 +423,7 @@
 			. += flavor
 	. += "</span>"
 
-	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
+	SEND_SIGNAL(src, COMSIG_ATOM_EXAMINE, user, .)
 
 /**
  * Shows any and all examine text related to any status effects the user has.
