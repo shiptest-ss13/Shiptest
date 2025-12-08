@@ -71,12 +71,10 @@
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C
 		if(!change_screen)
-			var/datum/species/ipc/species_datum = H.dna.species
-			var/datum/sprite_accessory/ipc_chassis/chassis_datum = GLOB.ipc_chassis_list[H.dna.features["ipc_chassis"]]
-			if(species_datum?.has_screen)
+			if(C.bodyparts[BODY_ZONE_HEAD]?.has_screen)
 				change_screen = new
 				change_screen.Grant(H)
-			else if (chassis_datum?.use_eyes)
+			else if (C.bodyparts[BODY_ZONE_HEAD]?.draw_eyes)
 				change_eye_color = new
 				change_eye_color.Grant(H)
 		C.RegisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, TYPE_PROC_REF(/mob/living/carbon, charge))
@@ -145,8 +143,6 @@
 	var/mob/living/carbon/human/H = owner
 	var/datum/species/ipc/species_datum = H.dna.species
 	if(!species_datum)
-		return
-	if(species_datum.has_screen)
 		return
 	H.eye_color = sanitize_hexcolor(color_choice)
 	H.update_body()
