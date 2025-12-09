@@ -57,8 +57,8 @@
 	return ..()
 
 /datum/component/writing/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(on_attackby))
+	RegisterSignal(parent, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
+	RegisterSignal(parent, COMSIG_ATOM_ATTACKBY, PROC_REF(on_attackby))
 	RegisterSignal(parent, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(handle_overlays))
 	if(isitem(parent))
 		RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, PROC_REF(on_attack_self))
@@ -66,7 +66,7 @@
 /datum/component/writing/UnregisterFromParent()
 	if(isitem(parent))
 		UnregisterSignal(parent, COMSIG_ITEM_ATTACK_SELF)
-	UnregisterSignal(parent, list(COMSIG_PARENT_EXAMINE, COMSIG_PARENT_ATTACKBY, COMSIG_ATOM_UPDATE_OVERLAYS))
+	UnregisterSignal(parent, list(COMSIG_ATOM_EXAMINE, COMSIG_ATOM_ATTACKBY, COMSIG_ATOM_UPDATE_OVERLAYS))
 
 /datum/component/writing/proc/on_examine(datum/source, mob/user, list/examine_list)
 	SIGNAL_HANDLER
