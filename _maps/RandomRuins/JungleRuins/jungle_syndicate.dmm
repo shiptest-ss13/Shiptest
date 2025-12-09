@@ -347,6 +347,17 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/flippedtable{
+	icon_state = "wood_table";
+	table_type = /obj/structure/table/wood;
+	dir = 2
+	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/officer/smg{
+	name = "Jerry";
+	desc = "A paranoid officer of the Ramzi Clique, cradling a compact submachinegun in blackened gloves.";
+	weapon_drop_chance = 100;
+	environment_smash = 0
+	},
 /turf/open/floor/wood/walnut,
 /area/ruin/jungle/syndifort/jerry)
 "gQ" = (
@@ -1707,6 +1718,8 @@
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 8
 	},
+/obj/item/stack/sheet/mineral/plasma/twenty,
+/obj/structure/closet/crate/engineering/electrical,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/syndifort/electrical)
 "ym" = (
@@ -3174,11 +3187,10 @@
 "Wx" = (
 /obj/effect/turf_decal/corner/opaque/orange/three_quarters,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate/engineering/electrical,
-/obj/item/stack/sheet/mineral/plasma/twenty,
 /obj/structure/flippedtable{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/syndifort/electrical)
 "WA" = (
@@ -3468,17 +3480,6 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/officer/smg{
-	name = "Jerry";
-	desc = "A paranoid officer of the Ramzi Clique, cradling a compact submachinegun in blackened gloves.";
-	weapon_drop_chance = 100;
-	environment_smash = 0
-	},
-/obj/structure/flippedtable{
-	icon_state = "wood_table";
-	table_type = /obj/structure/table/wood;
-	dir = 2
-	},
 /turf/open/floor/wood/walnut,
 /area/ruin/jungle/syndifort/jerry)
 "ZB" = (
@@ -3546,7 +3547,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth,
 /obj/structure/flippedtable{
 	dir = 8
 	},
