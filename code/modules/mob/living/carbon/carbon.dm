@@ -1232,6 +1232,8 @@
 	var/obj/item/bodypart/limb
 	for(var/zone in bodyparts)
 		limb = bodyparts[zone]
+		if(!limb)
+			continue
 		if(limb.get_part_bleed_rate())
 			return TRUE
 	return FALSE
@@ -1242,6 +1244,8 @@
 	var/obj/item/bodypart/limb
 	for(var/zone in bodyparts)
 		limb = bodyparts[zone]
+		if(!limb)
+			continue
 		total_bleed_rate += limb.get_part_bleed_rate()
 	return total_bleed_rate
 

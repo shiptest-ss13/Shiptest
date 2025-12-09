@@ -28,6 +28,9 @@
 
 	var/useable = TRUE
 	var/list/food_reagents = list(/datum/reagent/consumable/nutriment/organ_tissue = 5)
+	///The size of the reagent container
+	var/reagent_vol = 10
+
 	var/vital = 0
 	//Was this organ implanted/inserted/etc, if true will not be removed during species change.
 	var/external = FALSE
@@ -41,7 +44,7 @@
 		AddComponent(/datum/component/edible,\
 		initial_reagents = food_reagents,\
 		foodtypes = RAW | MEAT | GORE,\
-		volume = 10,\
+		volume = reagent_vol,\
 		filling_color = COLOR_PINK,\
 		pre_eat = CALLBACK(src, PROC_REF(pre_eat)),\
 		on_compost = CALLBACK(src, PROC_REF(pre_compost)),\

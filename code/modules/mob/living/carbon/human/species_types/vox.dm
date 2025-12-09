@@ -161,7 +161,7 @@
 		held_item = null
 
 	handle_sprite_magic()
-	UnregisterSignal(owner, COMSIG_PARENT_EXAMINE)
+	UnregisterSignal(owner, COMSIG_ATOM_EXAMINE)
 	return ..()
 
 /datum/action/innate/tail_hold/Grant(mob/M)
@@ -175,7 +175,7 @@
 			held_item.forceMove(get_turf(owner))
 		held_item = null
 		handle_sprite_magic()
-		UnregisterSignal(owner, COMSIG_PARENT_EXAMINE)
+		UnregisterSignal(owner, COMSIG_ATOM_EXAMINE)
 
 	else
 		var/obj/item/I = H.get_active_held_item()
@@ -183,7 +183,7 @@
 			if(H.temporarilyRemoveItemFromInventory(I, FALSE, FALSE))
 				held_item = I
 				to_chat(H,span_notice("You move \the [I] into your tail's grip."))
-				RegisterSignal(owner, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
+				RegisterSignal(owner, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
 				handle_sprite_magic(force = TRUE)
 				return
 
