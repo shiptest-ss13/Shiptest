@@ -30,13 +30,13 @@
 	/// This sound will be played upon the wound being applied
 	var/sound_effect
 
-	/// Either WOUND_SEVERITY_TRIVIAL, WOUND_SEVERITY_MODERATE, WOUND_SEVERITY_SEVERE, WOUND_SEVERITY_CRITICAL, WOUND_SEVERITY_LOSS
-	var/severity = WOUND_SEVERITY_MODERATE
+	/// Either WOUND_SEVERITY_TRIVIAL, WOUND_SEVERITY_MODERATE, WOUND_SEVERITY_SEVERE, WOUND_SEVERITY_CRITICAL, WOUND_SEVERITY_LOSS. FALSE prevents it from rolling.
+	var/severity = FALSE
 	/// The list of wounds it belongs in, WOUND_BLUNT, WOUND_SLASH, WOUND_BURN, WOUND_MUSCLE
 	var/wound_type
 
-	/// What body zones can we affect
-	var/list/viable_zones = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+	/// What body zones can we NOT affect
+	var/list/excluded_zones = list()
 	/// Who owns the body part that we're wounding
 	var/mob/living/carbon/victim = null
 	/// The bodypart we're parented to
@@ -84,8 +84,10 @@
 	/// If we forced this wound through badmin smite, we won't count it towards the round totals
 	var/from_smite
 
+	/// The biological state required for this wound to be applied
+	var/bio_state_required = BIO_BONE | BIO_FLESH
 	/// What flags apply to this wound
-	var/wound_flags = (FLESH_WOUND | BONE_WOUND | ACCEPTS_GAUZE)
+	var/wound_flags = ACCEPTS_GAUZE
 
 /datum/wound/Destroy()
 	if(attached_surgery)
@@ -109,15 +111,13 @@
  * * attack_direction: For bloodsplatters, if relevant
  */
 /datum/wound/proc/apply_wound(obj/item/bodypart/L, silent = FALSE, datum/wound/old_wound = null, smited = FALSE, attack_direction = null)
-	if(!istype(L) || !L.owner || !(L.body_zone in viable_zones) || !IS_ORGANIC_LIMB(L) || HAS_TRAIT(L.owner, TRAIT_NEVER_WOUNDED))
+	if(!istype(L) || !L.owner || (L.body_zone in excluded_zones) || HAS_TRAIT(L.owner, TRAIT_NEVER_WOUNDED))
 		qdel(src)
 		return
 
-	if(ishuman(L.owner))
-		var/mob/living/carbon/human/H = L.owner
-		if(((wound_flags & BONE_WOUND) && !(HAS_BONE in H.dna.species.species_traits)) || ((wound_flags & FLESH_WOUND) && !(HAS_FLESH in H.dna.species.species_traits)))
-			qdel(src)
-			return
+	if(!(L.biological_state & bio_state_required))
+		qdel(src)
+		return
 
 	// we accept promotions and demotions, but no point in redundancy. This should have already been checked wherever the wound was rolled and applied for (see: bodypart damage code), but we do an extra check
 	// in case we ever directly add wounds
@@ -126,6 +126,9 @@
 		if((preexisting_wound.type == type) && (preexisting_wound != old_wound))
 			qdel(src)
 			return
+
+	if(wound_flags & MANGLES_LIMB)
+		ADD_TRAIT(L, TRAIT_EASILY_WOUNDED, REF(src))
 
 	victim = L.owner
 	set_limb(L)
@@ -173,6 +176,9 @@
 	//TODO: have better way to tell if we're getting removed without replacement (full heal)
 	set_disabling(FALSE)
 
+	if(wound_flags & MANGLES_LIMB)
+		REMOVE_TRAIT(limb, TRAIT_EASILY_WOUNDED, REF(src))
+
 	if(victim)
 		LAZYREMOVE(victim.all_wounds, src)
 		if(!victim.all_wounds)
@@ -194,7 +200,7 @@
  */
 /datum/wound/proc/replace_wound(new_type, smited = FALSE, attack_direction = attack_direction)
 	var/datum/wound/new_wound = new new_type
-	remove_wound(replaced=TRUE)
+	remove_wound(replaced = new_wound)
 	new_wound.apply_wound(limb, old_wound = src, smited = smited, attack_direction = attack_direction)
 	. = new_wound
 	qdel(src)
@@ -314,7 +320,7 @@
 	return (!QDELETED(src) && limb)
 
 /// When our parent bodypart is hurt
-/datum/wound/proc/receive_damage(wounding_type, wounding_dmg, wound_bonus, attack_direction)
+/datum/wound/proc/receive_damage(list/wounding_types, total_wound_dmg, wound_bonus, attack_direction)
 	return
 
 /// Called from cryoxadone and pyroxadone when they're proc'ing. Wounds will slowly be fixed separately from other methods when these are in effect. crappy name but eh

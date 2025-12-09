@@ -9,7 +9,8 @@
 	wound_type = WOUND_BURN
 	processes = TRUE
 	sound_effect = 'sound/effects/wounds/sizzle1.ogg'
-	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE)
+	wound_flags = ACCEPTS_GAUZE
+	bio_state_required = BIO_FLESH
 
 	treatable_by = list(/obj/item/stack/medical/ointment, /obj/item/stack/medical/mesh) // sterilizer and alcohol will require reagent treatments, coming soon
 
@@ -298,3 +299,4 @@
 	treatable_by = list(/obj/item/stack/medical/ointment, /obj/item/stack/medical/mesh)
 	infestation_rate = 0.07
 	flesh_damage = 20
+	wound_flags = ACCEPTS_GAUZE | MANGLES_LIMB

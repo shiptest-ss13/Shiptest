@@ -185,10 +185,10 @@
 		return
 	if(IS_ROBOTIC_LIMB(affecting)) //Robotic patch-up
 		if(affecting.brute_dam)
-			user.visible_message(span_notice("[user] applies \the [src] on [C]'s [affecting.name]."), span_green("You apply \the [src] on [C]'s [affecting.name]."))
-			if(affecting.heal_damage(nonorganic_heal))
-				C.update_damage_overlays()
-			return TRUE
+			if(item_heal_robotic(C, user, nonorganic_heal, 0))
+				user.visible_message(span_notice("[user] applies \the [src] on [C]'s [affecting.name]."), span_green("You apply \the [src] on [C]'s [affecting.name]."))
+				return TRUE
+			return FALSE
 	to_chat(user, span_warning("[src] can't patch what [C] has..."))
 
 /obj/item/stack/tape/proc/apply_gag(mob/living/carbon/target, mob/user)
@@ -306,6 +306,7 @@
 	nonorganic_heal = 10
 	prefix = "insulated sticky"
 	siemens_coefficient = 0
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/stack/tape/industrial/electrical/wrap_item(obj/item/I, mob/living/user)
 	if(istype(I, /obj/item/clothing/gloves/color))

@@ -70,16 +70,10 @@
 /obj/item/organ/eyes/on_life()
 	..()
 	var/mob/living/carbon/C = owner
-	//since we can repair fully damaged eyes, check if healing has occurred
-	if((organ_flags & ORGAN_FAILING) && (damage < maxHealth))
-		organ_flags &= ~ORGAN_FAILING
-		C.cure_blind(EYE_DAMAGE)
 	//various degrees of "oh fuck my eyes", from "point a laser at your eye" to "staring at the Sun" intensities
 	if(damage > 20)
 		damaged = TRUE
-		if((organ_flags & ORGAN_FAILING))
-			C.become_blind(EYE_DAMAGE)
-		else if(damage > 30)
+		if(damage > 30)
 			C.overlay_fullscreen("eye_damage", /atom/movable/screen/fullscreen/impaired, 2)
 		else
 			C.overlay_fullscreen("eye_damage", /atom/movable/screen/fullscreen/impaired, 1)
@@ -88,6 +82,14 @@
 		damaged = FALSE
 		C.clear_fullscreen("eye_damage")
 	return
+
+/obj/item/organ/eyes/on_organ_fail()
+	. = ..()
+	owner.become_blind(EYE_DAMAGE)
+
+/obj/item/organ/eyes/on_organ_restore()
+	. = ..()
+	owner.cure_blind(EYE_DAMAGE)
 
 /obj/item/organ/eyes/lizard
 	name = "lizard eyes"

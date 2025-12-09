@@ -181,28 +181,19 @@
 
 	if(!no_protection)
 		if(thermal_protection >= FIRE_IMMUNITY_MAX_TEMP_PROTECT)
+			SEND_SIGNAL(victim, COMSIG_CLEAR_MOOD_EVENT, "on_fire")
 			return
 		if(thermal_protection >= FIRE_SUIT_MAX_TEMP_PROTECT)
+			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "on_fire", /datum/mood_event/on_fire)
 			victim.adjust_bodytemperature(5.5 * seconds_per_tick)
 			return
 
 	victim.adjust_bodytemperature((victim.dna.species.bodytemp_heating_rate_max + (stacks * 12)) * 0.5 * seconds_per_tick)
-	victim.apply_damage((stacks * 0.5), FIRE, blocked = victim.run_armor_check(null, "fire", armour_penetration=stacks*5, silent=TRUE), spread_damage = TRUE)
-	if(SPT_PROB(20, seconds_per_tick))
-		var/obj/item/bodypart/it_burns = victim.get_bodypart(pick(BODY_ZONE_L_ARM,BODY_ZONE_L_LEG, BODY_ZONE_R_ARM, BODY_ZONE_R_LEG, BODY_ZONE_CHEST, BODY_ZONE_HEAD))
-		if(it_burns)
-			var/datum/wound/burn_injury
-			switch(stacks)
-				if(1 to 3)
-					EMPTY_BLOCK_GUARD
-				if(3 to 7)
-					burn_injury = new /datum/wound/burn/moderate
-				if(7 to 14)
-					burn_injury = new /datum/wound/burn/severe
-				if(14 to 20)
-					burn_injury = new /datum/wound/burn/critical
-			if(burn_injury)
-				burn_injury.apply_wound(it_burns)
+	if(!victim.apply_damage((stacks * 0.5), BURN, blocked = victim.run_armor_check(null, "fire", armour_penetration=stacks*5, silent=TRUE), spread_damage = TRUE))
+		return
+	var/obj/item/bodypart/it_burns = victim.get_random_bodypart()
+	if(it_burns) // apply_damage doesn't cause wounds without a selected bodypart, so we do this manually here
+		it_burns.wound_roll(0, stacks, stacks * min(victim.bodytemperature / T20C, 2))
 	SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "on_fire", /datum/mood_event/on_fire)
 
 /**

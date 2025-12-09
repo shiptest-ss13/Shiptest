@@ -24,16 +24,21 @@
 
 // ~wound categories
 /// any brute weapon/attack that doesn't have sharpness. rolls for blunt bone wounds
-#define WOUND_BLUNT 1
+#define WOUND_BLUNT "blunt"
 /// any brute weapon/attack with sharpness = SHARP_EDGED. rolls for slash wounds
-#define WOUND_SLASH 2
+#define WOUND_SLASH "slash"
 /// any brute weapon/attack with sharpness = SHARP_POINTY. rolls for piercing wounds
-#define WOUND_PIERCE 3
+#define WOUND_PIERCE "pierce"
 /// any concentrated burn attack (lasers really). rolls for burning wounds
-#define WOUND_BURN 4
+#define WOUND_BURN "burn"
 /// any brute attacks, rolled on a chance
-#define WOUND_MUSCLE 5
-
+#define WOUND_MUSCLE "muscle"
+/// brute attacks vs. robotic limbs, more likely with sharpness = SHARP_NONE
+#define WOUND_BUCKLING "buckling"
+/// brute attacks vs. robotic limbs, more common with sharpness = SHARP_POINTY as well as bullets
+#define WOUND_ELECTRIC "electric"
+/// burn attacks and heat vs. robotic limbs
+#define WOUND_WARP "warp"
 
 // ~determination second wind defines
 // How much determination reagent to add each time someone gains a new wound in [/datum/wound/proc/second_wind]
@@ -46,23 +51,6 @@
 
 /// While someone has determination in their system, their bleed rate is slightly reduced
 #define WOUND_DETERMINATION_BLEED_MOD 0.85
-
-// ~wound global lists
-// list in order of highest severity to lowest
-GLOBAL_LIST_INIT(global_wound_types, list(WOUND_BLUNT = list(/datum/wound/blunt/critical, /datum/wound/blunt/severe, /datum/wound/blunt/moderate),
-		WOUND_SLASH = list(/datum/wound/slash/critical, /datum/wound/slash/critical, /datum/wound/slash/moderate),
-		WOUND_PIERCE = list(/datum/wound/pierce/critical, /datum/wound/pierce/severe, /datum/wound/pierce/moderate),
-		WOUND_BURN = list(/datum/wound/burn/critical, /datum/wound/burn/severe, /datum/wound/burn/moderate),
-		WOUND_MUSCLE = list(/datum/wound/muscle/severe, /datum/wound/muscle/moderate)
-		))
-
-// every single type of wound that can be rolled naturally, in case you need to pull a random one
-GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datum/wound/blunt/severe, /datum/wound/blunt/moderate,
-	/datum/wound/slash/critical, /datum/wound/slash/critical, /datum/wound/slash/moderate,
-	/datum/wound/pierce/critical, /datum/wound/pierce/severe, /datum/wound/pierce/moderate,
-	/datum/wound/burn/critical, /datum/wound/burn/severe, /datum/wound/burn/moderate,
-	/datum/wound/muscle/severe, /datum/wound/muscle/moderate))
-
 
 // ~burn wound infection defines
 // Thresholds for infection for burn wounds, once infestation hits each threshold, things get steadily worse
@@ -86,46 +74,29 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datu
 #define WOUND_SLASH_DEAD_CLOT_MIN 0.05
 /// if we suffer a bone wound to the head that creates brain traumas, the timer for the trauma cycle is +/- by this percent (0-100)
 #define WOUND_BONE_HEAD_TIME_VARIANCE 20
+/// charge drain per severity level
+#define WOUND_ELECTRIC_POWER_DRAIN 0.05
 /// Chance to roll a muscle wound from brute damage
 #define MUSCLE_WOUND_CHANCE 20
 
-
-// ~mangling defines
-// With the wounds pt. 2 update, general dismemberment now requires 2 things for a limb to be dismemberable (bone only creatures just need the second):
-// 	1. Skin is mangled: A critical slash or pierce wound on that limb
-// 	2. Bone is mangled: At least a severe bone wound on that limb
-// see [/obj/item/bodypart/proc/get_mangled_state] for more information
-#define BODYPART_MANGLED_NONE 0
-#define BODYPART_MANGLED_BONE 1
-#define BODYPART_MANGLED_FLESH 2
-#define BODYPART_MANGLED_BOTH 3
-
-
 // ~biology defines
-// What kind of biology we have, and what wounds we can suffer, mostly relies on the HAS_FLESH and HAS_BONE species traits on human species
-/// golems and androids, cannot suffer any wounds
-#define BIO_INORGANIC 0
-/// skeletons and plasmemes, can only suffer bone wounds, only needs mangled bone to be able to dismember
-#define BIO_JUST_BONE 1
-/// nothing right now, maybe slimepeople in the future, can only suffer slashing, piercing, and burn wounds
-#define BIO_JUST_FLESH 2
-/// standard humanoids, can suffer all wounds, needs mangled bone and flesh to dismember. conveniently, what you get when you combine BIO_JUST_BONE and BIO_JUST_FLESH
-#define BIO_FLESH_BONE 3
-
+// What kind of biology we have, and what wounds we can suffer, relies on the biological_state var on bodyparts.
+/// can only suffer bone wounds, only needs mangled bone to be able to dismember
+#define BIO_BONE (1<<0)
+/// can suffer slashing, piercing, and burn wounds
+#define BIO_FLESH (1<<1)
+/// can suffer buckling, heat-warping, and electrical wounds
+#define BIO_METAL (1<<2)
 
 // ~wound flag defines
-/// If this wound requires having the HAS_FLESH flag for humanoids
-#define FLESH_WOUND (1<<0)
-/// If this wound requires having the HAS_BONE flag for humanaoids
-#define BONE_WOUND (1<<1)
-/// If having this wound counts as mangled flesh for dismemberment
-#define MANGLES_FLESH (1<<2)
-/// If having this wound counts as mangled bone for dismemberment
-#define MANGLES_BONE (1<<3)
+/// If having this wound mangles a limb enough for dismemberment
+#define MANGLES_LIMB (1<<0)
 /// If this wound marks the limb as being allowed to have gauze applied
-#define ACCEPTS_GAUZE (1<<4)
+#define ACCEPTS_GAUZE (1<<1)
 /// If this wound marks the limb as being allowed to have splints applied
-#define ACCEPTS_SPLINT (1<<5)
+#define ACCEPTS_SPLINT (1<<2)
+/// Whether this wound is fixed when replacing the external plating
+#define PLATING_DAMAGE (1<<3)
 
 /// When a wound is staining the gauze with blood
 #define GAUZE_STAIN_BLOOD 1

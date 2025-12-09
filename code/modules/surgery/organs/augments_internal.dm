@@ -131,11 +131,11 @@
 	. = ..()
 	if((organ_flags & ORGAN_FAILING) || . & EMP_PROTECT_SELF)
 		return
-	organ_flags |= ORGAN_FAILING
+	ADD_TRAIT(src, TRAIT_ORGAN_FAILING, EMP_TRAIT)
 	addtimer(CALLBACK(src, PROC_REF(reboot)), 90 / severity)
 
 /obj/item/organ/cyberimp/brain/anti_stun/proc/reboot()
-	organ_flags &= ~ORGAN_FAILING
+	REMOVE_TRAIT(src, TRAIT_ORGAN_FAILING, EMP_TRAIT)
 
 /obj/item/organ/cyberimp/brain/joywire
 	name = "\improper Midi-Sed pleasure vivifier"
@@ -152,7 +152,7 @@
 	. = ..()
 	if(!owner || . & EMP_PROTECT_SELF)
 		return
-	organ_flags |= ORGAN_FAILING
+	ADD_TRAIT(src, TRAIT_ORGAN_FAILING, DAMAGE_TRAIT)
 	SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, "joywire")
 	SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "joywire_emp", /datum/mood_event/joywire_emp)
 	to_chat(owner, span_boldwarning("That feeling of dream-like, distilled joy is suddenly diluted. Misery sets in..."))

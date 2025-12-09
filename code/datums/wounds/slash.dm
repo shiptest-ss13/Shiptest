@@ -11,7 +11,8 @@
 	treatable_by_grabbed = list(/obj/item/gun/energy/laser)
 	treatable_tool = TOOL_CAUTERY
 	base_treat_time = 3 SECONDS
-	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE)
+	wound_flags = ACCEPTS_GAUZE
+	bio_state_required = BIO_FLESH
 
 	/// How much blood we start losing when this wound is first applied
 	var/initial_flow
@@ -62,9 +63,9 @@
 
 	return "<B>[msg.Join()]</B>"
 
-/datum/wound/slash/receive_damage(wounding_type, wounding_dmg, wound_bonus)
-	if(victim.stat != DEAD && wound_bonus != CANT_WOUND && wounding_type == WOUND_SLASH) // can't stab dead bodies to make it bleed faster this way
-		blood_flow += 0.05 * wounding_dmg
+/datum/wound/slash/receive_damage(list/wounding_types, total_wound_dmg, wound_bonus)
+	if(victim.stat != DEAD && wound_bonus != CANT_WOUND && wounding_types[WOUND_SLASH] < WOUND_MINIMUM_DAMAGE) // can't stab dead bodies to make it bleed faster this way
+		blood_flow += 0.05 * wounding_types[WOUND_SLASH]
 
 /datum/wound/slash/drag_bleed_amount()
 	// say we have 3 severe cuts with 3 blood flow each, pretty reasonable
@@ -280,4 +281,4 @@
 	threshold_penalty = 50
 	demotes_to = /datum/wound/slash/severe
 	status_effect_type = /datum/status_effect/wound/slash/critical
-	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE | MANGLES_FLESH)
+	wound_flags = ACCEPTS_GAUZE | MANGLES_LIMB

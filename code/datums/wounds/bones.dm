@@ -6,7 +6,8 @@
 	name = "Blunt (Bone) Wound"
 	sound_effect = 'sound/effects/wounds/crack1.ogg'
 	wound_type = WOUND_BLUNT
-	wound_flags = (BONE_WOUND | ACCEPTS_SPLINT)
+	wound_flags = ACCEPTS_SPLINT
+	bio_state_required = BIO_BONE
 
 	///Have we been bone gel'd?
 	var/gelled
@@ -73,8 +74,7 @@
 			active_trauma = victim.gain_trauma_type(brain_trauma_group, TRAUMA_RESILIENCE_WOUND)
 		next_trauma_cycle = world.time + (rand(100-WOUND_BONE_HEAD_TIME_VARIANCE, 100+WOUND_BONE_HEAD_TIME_VARIANCE) * 0.01 * trauma_cycle_cooldown)
 
-	var/is_bone_creature = victim.get_biological_state() == BIO_JUST_BONE
-	if(!gelled || (!taped && !is_bone_creature))
+	if(!gelled || (!taped && limb.biological_state != BIO_BONE))
 		return
 
 	regen_ticks_current++
@@ -117,16 +117,16 @@
 			return COMPONENT_NO_ATTACK_HAND
 
 
-/datum/wound/blunt/receive_damage(wounding_type, wounding_dmg, wound_bonus)
-	if(!victim || wounding_dmg < WOUND_MINIMUM_DAMAGE)
+/datum/wound/blunt/receive_damage(list/wounding_types, total_wound_dmg, wound_bonus)
+	if(!victim || total_wound_dmg < WOUND_MINIMUM_DAMAGE)
 		return
 	if(ishuman(victim))
 		var/mob/living/carbon/human/human_victim = victim
 		if(NOBLOOD in human_victim.dna?.species.species_traits)
 			return
 
-	if(limb.body_zone == BODY_ZONE_CHEST && victim.blood_volume && prob(internal_bleeding_chance + wounding_dmg))
-		var/blood_bled = rand(1, wounding_dmg * (severity == WOUND_SEVERITY_CRITICAL ? 2 : 1.5)) // 12 brute toolbox can cause up to 18/24 bleeding with a severe/critical chest wound
+	if(limb.body_zone == BODY_ZONE_CHEST && victim.blood_volume && prob(internal_bleeding_chance + total_wound_dmg))
+		var/blood_bled = rand(1, total_wound_dmg * (severity == WOUND_SEVERITY_CRITICAL ? 2 : 1.5)) // 12 brute toolbox can cause up to 18/24 bleeding with a severe/critical chest wound
 		switch(blood_bled)
 			if(1 to 6)
 				victim.bleed(blood_bled, TRUE)
@@ -225,14 +225,14 @@
 	examine_desc = "is awkwardly janked out of place"
 	occur_text = "janks violently and becomes unseated"
 	severity = WOUND_SEVERITY_MODERATE
-	viable_zones = list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+	excluded_zones = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST)
 	interaction_efficiency_penalty = 1.2
 	limp_slowdown = 2.25
 	limp_chance = 50
 	threshold_minimum = 35
 	threshold_penalty = 15
 	treatable_tool = TOOL_BONESET
-	wound_flags = (BONE_WOUND)
+	wound_flags = NONE
 	status_effect_type = /datum/status_effect/wound/blunt/moderate
 
 /datum/wound/blunt/moderate/Destroy()
@@ -380,7 +380,7 @@
 	brain_trauma_group = BRAIN_TRAUMA_MILD
 	trauma_cycle_cooldown = 5 MINUTES
 	internal_bleeding_chance = 40
-	wound_flags = (BONE_WOUND | ACCEPTS_SPLINT | MANGLES_BONE)
+	wound_flags = ACCEPTS_SPLINT | MANGLES_LIMB
 	regen_ticks_needed = 120 // ticks every 2 seconds, 240 seconds, so roughly 4 minutes default
 
 /// Compound Fracture (Critical Blunt)
@@ -405,7 +405,7 @@
 	brain_trauma_group = BRAIN_TRAUMA_SEVERE
 	trauma_cycle_cooldown = 5 MINUTES
 	internal_bleeding_chance = 60
-	wound_flags = (BONE_WOUND | ACCEPTS_SPLINT | MANGLES_BONE)
+	wound_flags = ACCEPTS_SPLINT | MANGLES_LIMB
 	regen_ticks_needed = 240 // ticks every 2 seconds, 480 seconds, so roughly 8 minutes default
 
 // doesn't make much sense for "a" bone to stick out of your head
@@ -519,7 +519,7 @@
 	. += "<div class='ml-3'>"
 
 	if(severity > WOUND_SEVERITY_MODERATE)
-		if(victim.get_biological_state() == BIO_JUST_BONE)
+		if(limb.biological_state == BIO_BONE)
 			if(!gelled)
 				. += "Recommended Treatment: Apply bone gel directly to injured limb. Creatures of pure bone don't seem to mind bone gel application nearly as much as fleshed individuals. Surgical tape will also be unnecessary.\n"
 			else

@@ -10,7 +10,7 @@
 
 /// Our special proc for our special dismembering, the wounding type only matters for what text we have
 /datum/wound/loss/proc/apply_dismember(obj/item/bodypart/dismembered_part, wounding_type = WOUND_SLASH, outright = FALSE, attack_direction)
-	if(!istype(dismembered_part) || !dismembered_part.owner || !(dismembered_part.body_zone in viable_zones) || isalien(dismembered_part.owner) || !dismembered_part.can_dismember())
+	if(!istype(dismembered_part) || !dismembered_part.owner || (dismembered_part.body_zone in excluded_zones) || isalien(dismembered_part.owner) || !dismembered_part.can_dismember())
 		qdel(src)
 		return
 
@@ -28,6 +28,10 @@
 				occur_text = "is outright blasted apart, severing it completely!"
 			if(WOUND_BURN)
 				occur_text = "is outright incinerated, falling to dust!"
+			if(WOUND_BUCKLING)
+				occur_text = "is outright sheared off, severing it completely!"
+			if(WOUND_WARP)
+				occur_text = "outright snaps off from internal stress!"
 	else
 		switch(wounding_type)
 			if(WOUND_BLUNT)
@@ -38,6 +42,10 @@
 				occur_text = "is pierced through the last tissue holding it together, severing it completely!"
 			if(WOUND_BURN)
 				occur_text = "is completely incinerated, falling to dust!"
+			if(WOUND_BUCKLING)
+				occur_text = "is sheared off, severing it completely!"
+			if(WOUND_WARP)
+				occur_text = "snaps off from internal stress!"
 
 	var/msg = span_bolddanger("[victim]'s [dismembered_part.name] [occur_text]!")
 

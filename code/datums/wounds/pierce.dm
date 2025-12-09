@@ -10,7 +10,8 @@
 	treatable_by = list(/obj/item/stack/medical/suture)
 	treatable_tool = TOOL_CAUTERY
 	base_treat_time = 3 SECONDS
-	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE | ACCEPTS_SPLINT)
+	wound_flags = ACCEPTS_GAUZE | ACCEPTS_SPLINT
+	bio_state_required = BIO_FLESH
 
 	/// How much blood we start losing when this wound is first applied
 	var/initial_flow
@@ -37,15 +38,15 @@
 	if(attack_direction && victim.blood_volume > BLOOD_VOLUME_BAD)
 		victim.spray_blood(attack_direction, severity)
 
-/datum/wound/pierce/receive_damage(wounding_type, wounding_dmg, wound_bonus)
-	if(isnull(victim) || victim.stat == DEAD || wounding_dmg < WOUND_MINIMUM_DAMAGE)
+/datum/wound/pierce/receive_damage(list/wounding_types, total_wound_dmg, wound_bonus)
+	if(isnull(victim) || victim.stat == DEAD || total_wound_dmg < WOUND_MINIMUM_DAMAGE)
 		return
 
-	if(victim.blood_volume && prob(internal_bleeding_chance + wounding_dmg))
+	if(victim.blood_volume && prob(internal_bleeding_chance + total_wound_dmg))
 		if(limb.current_splint?.splint_factor)
-			wounding_dmg *= (1 - limb.current_splint.splint_factor)
+			total_wound_dmg *= (1 - limb.current_splint.splint_factor)
 
-		var/blood_bled = rand(1, wounding_dmg * internal_bleeding_coefficient)
+		var/blood_bled = rand(1, total_wound_dmg * internal_bleeding_coefficient)
 		switch(blood_bled)
 			if(1 to 6)
 				victim.bleed(blood_bled, TRUE)
@@ -224,4 +225,4 @@
 	threshold_minimum = 115
 	threshold_penalty = 50
 	status_effect_type = /datum/status_effect/wound/pierce/critical
-	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE | ACCEPTS_SPLINT | MANGLES_FLESH)
+	wound_flags = ACCEPTS_GAUZE | ACCEPTS_SPLINT | MANGLES_LIMB

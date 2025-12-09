@@ -11,21 +11,39 @@
 
 /datum/status_effect/determined/on_apply()
 	. = ..()
-	owner.visible_message(
-		span_danger("[owner]'s body tenses up noticeably, gritting against [owner.p_their()] pain!"),
-		span_notice("<b>Your senses sharpen as your body tenses up from the wounds you've sustained!</b>"),
-		vision_distance = COMBAT_MESSAGE_RANGE,
-	)
+	if(owner.mob_biotypes & MOB_ROBOTIC)
+		owner.visible_message(
+			span_danger("[owner]'s cooling fans spin up far louder than usual."),
+			span_notice("<b>Acceptable damage threshold exceeded. Emergency self-preservation protocol initiated.</b>"),
+			vision_distance = COMBAT_MESSAGE_RANGE,
+		)
+	else
+		owner.visible_message(
+			span_danger("[owner]'s body tenses up noticeably, gritting against [owner.p_their()] pain!"),
+			span_notice("<b>Your senses sharpen as your body tenses up from the wounds you've sustained!</b>"),
+			vision_distance = COMBAT_MESSAGE_RANGE,
+		)
 	if(ishuman(owner))
 		var/mob/living/carbon/human/human_owner = owner
 		human_owner.physiology.bleed_mod *= WOUND_DETERMINATION_BLEED_MOD
 
 /datum/status_effect/determined/on_remove()
-	owner.visible_message(
-		span_danger("[owner]'s body slackens noticeably!"),
-		span_warning("<b>Your adrenaline rush dies off, and the pain from your wounds come aching back in...</b>"),
-		vision_distance = COMBAT_MESSAGE_RANGE,
-	)
+	if(owner.mob_biotypes & MOB_ROBOTIC)
+		var/mob/living/carbon/carbon_owner = owner
+		if(!iscarbon(owner))
+			stack_trace("Determination status effect applied to non-carbon [owner] of type [owner.type]")
+			carbon_owner = null
+		owner.visible_message(
+			span_danger("[owner]'s cooling fans suddenly quiet down."),
+			span_notice("<b>Emergency self-preservation protocol concluded. [rand(2, 100 * LAZYLEN(carbon_owner?.all_wounds))] new errors to report.</b>"),
+			vision_distance = COMBAT_MESSAGE_RANGE,
+		)
+	else
+		owner.visible_message(
+			span_danger("[owner]'s body slackens noticeably!"),
+			span_warning("<b>Your adrenaline rush dies off, and the pain from your wounds come aching back in...</b>"),
+			vision_distance = COMBAT_MESSAGE_RANGE,
+		)
 	if(ishuman(owner))
 		var/mob/living/carbon/human/human_owner = owner
 		human_owner.physiology.bleed_mod /= WOUND_DETERMINATION_BLEED_MOD
