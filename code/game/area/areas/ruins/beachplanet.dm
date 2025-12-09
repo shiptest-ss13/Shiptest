@@ -1,18 +1,35 @@
 //beach ruins here
 
-//Ancient Complex
+//Corporate Resort
 
-/area/ruin/beach/complex //seems quite simple to me
-	name = "Cybersun Complex"
-	icon_state = "hallC"
-	ambience_index = AMBIENCE_MAINT
-
-/area/ruin/beach/complex/wall
-	name = "Cybersun Complex Exterior Wall"
+/area/ruin/beach/corpo_resort
+	name = "Corporate Resort"
+	ambience_index = AMBIENCE_RUINS
 	icon_state = "red"
 
-/area/ruin/beach/complex/shuttle
-	name = "Syndicate Shuttle"
+/area/ruin/beach/corpo_resort/hotel
+	name = "Corporate Resort Hotel"
+	ambience_index = AMBIENCE_GENERIC
+
+/area/ruin/beach/corpo_resort/security
+	name = "Corporate Resort Security"
+	icon_state = "purple"
+
+/area/ruin/beach/corpo_resort/office
+	name = "Corporate Resort Office"
+
+/area/ruin/beach/corpo_resort/supply
+	name = "Corporate Resort Storage"
+
+/area/ruin/beach/corpo_resort/bar
+	name = "Corporate Resort Bar and Grill"
+
+/area/ruin/beach/corpo_resort/electrical
+	name = "Corporate Resort Geothermal Power Station"
+	ambience_index = AMBIENCE_MAINT
+
+/area/ruin/beach/corpo_resort/ramzi_shuttle
+	name = "Clique Shuttle"
 	icon_state = "green"
 
 //Pirate Scrap Village
