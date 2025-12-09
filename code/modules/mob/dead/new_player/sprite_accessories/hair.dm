@@ -234,6 +234,10 @@
 	name = "Emo Fringe"
 	icon_state = "hair_emofringe"
 
+/datum/sprite_accessory/hair/emobangs
+	name = "Emo Bangs"
+	icon_state = "hair_emobangs"
+
 /datum/sprite_accessory/hair/nofade
 	name = "Fade (None)"
 	icon_state = "hair_nofade"
@@ -389,6 +393,10 @@
 /datum/sprite_accessory/hair/longbangs
 	name = "Long Bangs"
 	icon_state = "hair_lbangs"
+
+/datum/sprite_accessory/hair/longbangeye
+	name = "Long Bangs Over Eye"
+	icon_state = "hair_eyebangs"
 
 /datum/sprite_accessory/hair/longemo
 	name = "Long Emo"
