@@ -299,8 +299,6 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
-/obj/item/storage/belt/security/webbing/ngr/alt,
-/obj/item/storage/belt/security/webbing/ngr/alt,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "el" = (
@@ -1754,7 +1752,8 @@
 	},
 /obj/structure/closet/secure_closet/wall/directional/north{
 	icon_state = "cargo_wall";
-	req_access_txt = "10"
+	req_access_txt = "10";
+	name = "Engineer's Closet"
 	},
 /obj/item/storage/pouch/engi,
 /obj/item/clothing/shoes/magboots/syndie,
