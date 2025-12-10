@@ -236,8 +236,8 @@
 
 
 /datum/reagent/cryostylane/on_mob_life(mob/living/carbon/M) //TODO: code freezing into an ice cube
-	if(M.has_reagent(/datum/reagent/oxygen))
-		M.remove_reagent(/datum/reagent/oxygen, 0.5)
+	if(M.reagents.has_reagent(/datum/reagent/oxygen))
+		M.reagents.remove_reagent(/datum/reagent/oxygen, 0.5)
 		M.adjust_bodytemperature(-5)
 	..()
 
@@ -257,8 +257,8 @@
 	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
 
 /datum/reagent/pyrosium/on_mob_life(mob/living/carbon/M)
-	if(M.has_reagent(/datum/reagent/oxygen))
-		M.remove_reagent(/datum/reagent/oxygen, 0.5)
+	if(holder.has_reagent(/datum/reagent/oxygen))
+		holder.remove_reagent(/datum/reagent/oxygen, 0.5)
 		M.adjust_bodytemperature(5)
 	..()
 
@@ -334,7 +334,7 @@
 	O.extinguish()
 
 /datum/reagent/firefighting_foam/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method in list(VAPOR, TOUCH, SMOKE))
+	if(method in list(VAPOR, TOUCH))
 		M.adjust_fire_stacks(-reac_volume)
 		M.extinguish_mob()
 	..()

@@ -10,7 +10,7 @@
 /obj/item/proc/melee_attack_chain(mob/user, atom/target, params)
 	var/is_right_clicking = LAZYACCESS(params2list(params), RIGHT_CLICK)
 
-	if(tool_behaviour && (target.tool_act(user, src, tool_behaviour, is_right_clicking)))
+	if(tool_behaviour && (target.tool_act(user, src, tool_behaviour, params)))
 		return TRUE
 
 	var/pre_attack_result
@@ -109,7 +109,7 @@
  * See: [/obj/item/proc/melee_attack_chain]
  */
 /atom/proc/attackby(obj/item/W, mob/user, params)
-	if(SEND_SIGNAL(src, COMSIG_PARENT_ATTACKBY, W, user, params) & COMPONENT_NO_AFTERATTACK)
+	if(SEND_SIGNAL(src, COMSIG_ATOM_ATTACKBY, W, user, params) & COMPONENT_NO_AFTERATTACK)
 		return TRUE
 	return FALSE
 
@@ -124,7 +124,7 @@
  * See: [/obj/item/proc/melee_attack_chain]
  */
 /atom/proc/attackby_secondary(obj/item/weapon, mob/user, params)
-	var/signal_result = SEND_SIGNAL(src, COMSIG_PARENT_ATTACKBY_SECONDARY, weapon, user, params)
+	var/signal_result = SEND_SIGNAL(src, COMSIG_ATOM_ATTACKBY_SECONDARY, weapon, user, params)
 
 	if(signal_result & COMPONENT_SECONDARY_CANCEL_ATTACK_CHAIN)
 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
@@ -146,16 +146,16 @@
 				continue
 			if(!S.self_operable && user == src)
 				continue
-			if(S.next_step(user, user.a_intent))
+			if(S.next_step(user, params2list(params)))
 				return TRUE
 	if((I.item_flags & SURGICAL_TOOL) && user.a_intent == INTENT_HELP)
 		if(attempt_initiate_surgery(I, src, user))
 			return TRUE
 	//This should really be in attack but 2 much logic doesnt call parent
 	user.changeNext_move(I.attack_cooldown)
-	return I.attack(src, user)
+	return I.attack(src, user, params)
 
-/mob/living/attack_hand(mob/living/user)
+/mob/living/attack_hand(mob/living/user, list/modifiers)
 	if(..())
 		return TRUE
 	for(var/datum/surgery/S in surgeries)
@@ -163,20 +163,21 @@
 			continue
 		if(!S.self_operable && user == src)
 			continue
-		if(S.next_step(user, user.a_intent))
+		if(S.next_step(user, modifiers))
 			return TRUE
 
 /**
- * Called from [/mob/living/attackby]
+ * Called from [/mob/living/proc/attackby]
  *
  * Arguments:
- * * mob/living/M - The mob being hit by this item
+ * * mob/living/target_mob - The mob being hit by this item
  * * mob/living/user - The mob hitting with this item
+ * * params - Click params of this attack
  */
-/obj/item/proc/attack(mob/living/target_mob, mob/living/user)
-	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, target_mob, user) & COMPONENT_ITEM_NO_ATTACK)
+/obj/item/proc/attack(mob/living/target_mob, mob/living/user, params)
+	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, target_mob, user, params) & COMPONENT_ITEM_NO_ATTACK)
 		return
-	SEND_SIGNAL(user, COMSIG_MOB_ITEM_ATTACK, target_mob, user)
+	SEND_SIGNAL(user, COMSIG_MOB_ITEM_ATTACK, target_mob, user, params)
 	if(item_flags & NOBLUDGEON)
 		return
 
@@ -201,7 +202,7 @@
 		user.client.give_award(/datum/award/achievement/misc/selfouch, user)
 
 	user.do_attack_animation(target_mob)
-	target_mob.attacked_by(src, user)
+	target_mob.attacked_by(src, user, params)
 
 	SEND_SIGNAL(src, COMSIG_ITEM_POST_ATTACK, target_mob, user)
 
@@ -223,7 +224,7 @@
 	return
 
 /// Called from [/obj/item/proc/attack_obj] and [/obj/item/proc/attack] if the attack succeeds
-/atom/movable/proc/attacked_by()
+/atom/movable/proc/attacked_by(obj/item/attacking_item, mob/living/user, params)
 	return
 
 /obj/attacked_by(obj/item/attacking_item, mob/living/user)

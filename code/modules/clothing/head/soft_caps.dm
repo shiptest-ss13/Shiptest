@@ -39,10 +39,8 @@
 	flip(usr)
 
 /obj/item/clothing/head/soft/attack_hand_secondary(mob/user, list/modifiers)
-	. = ..()
-	if(!user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
-		return FALSE
 	flip()
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/item/clothing/head/soft/AltClick(mob/user)
 	if(!user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))

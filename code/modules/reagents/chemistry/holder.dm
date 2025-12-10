@@ -258,10 +258,10 @@
 				trans_data = copy_data(T)
 			R.add_reagent(T.type, transfer_amount * multiplier, trans_data, chem_temp, no_react = 1) //we only handle reaction after every reagent has been transfered.
 			if(method)
-				if(istype(target_atom, /obj/item/organ/stomach))
-					R.expose_single(T, target, method, part, show_message)
+				if(istype(target_atom, /obj/item/organ))
+					R.expose_single(T, target, method, transfer_amount, show_message)
 				else
-					R.expose_single(T, target_atom, method, part, show_message)
+					R.expose_single(T, target_atom, method, transfer_amount, show_message)
 				T.on_transfer(target_atom, method, transfer_amount * multiplier)
 			remove_reagent(T.type, transfer_amount)
 			transfer_log[T.type] = transfer_amount
@@ -281,7 +281,7 @@
 			R.add_reagent(T.type, transfer_amount * multiplier, trans_data, chem_temp, no_react = 1)
 			to_transfer = max(to_transfer - transfer_amount , 0)
 			if(method)
-				if(istype(target_atom, /obj/item/organ/stomach))
+				if(istype(target_atom, /obj/item/organ))
 					R.expose_single(T, target, method, transfer_amount, show_message)
 				else
 					R.expose_single(T, target_atom, method, transfer_amount, show_message)
@@ -620,18 +620,11 @@
 	for(var/_reagent in cached_reagents)
 		var/datum/reagent/R = _reagent
 		if(R.type == reagent)
-			var/mob/living/mob_consumer
-			if (isliving(my_atom))
-				mob_consumer = my_atom
-			else if (istype(my_atom, /obj/item/organ))
-				var/obj/item/organ/organ = my_atom
-				mob_consumer = organ.owner
-
-			if (mob_consumer)
+			if(isliving(my_atom))
 				if(R.metabolizing)
 					R.metabolizing = FALSE
-					R.on_mob_end_metabolize(mob_consumer)
-				R.on_mob_delete(mob_consumer)
+					R.on_mob_end_metabolize(my_atom)
+				R.on_mob_delete(my_atom)
 			//Clear from relevant lists
 			addiction_list -= R
 			reagent_list -= R
@@ -648,7 +641,7 @@
 	total_volume = 0
 	for(var/reagent in cached_reagents)
 		var/datum/reagent/R = reagent
-		if(R.volume < 0.1)
+		if(R.volume < 0.05)
 			del_reagent(R.type)
 		else
 			total_volume += R.volume
@@ -790,7 +783,7 @@
 		R.on_new(data)
 
 	if(isliving(my_atom))
-		R.on_mob_add(my_atom) //Must occur befor it could posibly run on_mob_delete
+		R.on_mob_add(my_atom) //Must occur before it could posibly run on_mob_delete
 	else if(istype(my_atom, /obj/item/organ/stomach))
 		var/obj/item/organ/stomach/belly = my_atom
 		var/mob/living/carbon/body = belly.owner
@@ -959,51 +952,11 @@ Needs matabolizing takes into consideration if the chemical is matabolizing when
  * Returns what this holder's reagents taste like
  *
  * Arguments:
+ * * mob/living/taster - who is doing the tasting. Some mobs can pick up specific flavours.
  * * minimum_percent - the lower the minimum percent, the more sensitive the message is.
  */
-/datum/reagents/proc/generate_taste_message(minimum_percent=15)
-	var/list/out = list()
-	var/list/tastes = list() //descriptor = strength
-	if(minimum_percent <= 100)
-		for(var/datum/reagent/R in reagent_list)
-			if(!R.taste_mult)
-				continue
-
-			if(istype(R, /datum/reagent/consumable/nutriment))
-				var/list/taste_data = R.data
-				for(var/taste in taste_data)
-					var/ratio = taste_data[taste]
-					var/amount = ratio * R.taste_mult * R.volume
-					if(taste in tastes)
-						tastes[taste] += amount
-					else
-						tastes[taste] = amount
-			else
-				var/taste_desc = R.taste_description
-				var/taste_amount = R.volume * R.taste_mult
-				if(taste_desc in tastes)
-					tastes[taste_desc] += taste_amount
-				else
-					tastes[taste_desc] = taste_amount
-		//deal with percentages
-		// TODO it would be great if we could sort these from strong to weak
-		var/total_taste = counterlist_sum(tastes)
-		if(total_taste > 0)
-			for(var/taste_desc in tastes)
-				var/percent = tastes[taste_desc]/total_taste * 100
-				if(percent < minimum_percent)
-					continue
-				var/intensity_desc = "a hint of"
-				if(percent > minimum_percent * 2 || percent == 100)
-					intensity_desc = ""
-				else if(percent > minimum_percent * 3)
-					intensity_desc = "the strong flavor of"
-				if(intensity_desc != "")
-					out += "[intensity_desc] [taste_desc]"
-				else
-					out += "[taste_desc]"
-
-	return english_list(out, "something indescribable")
+/datum/reagents/proc/generate_taste_message(mob/living/taster, minimum_percent)
+	return generate_reagents_taste_message(reagent_list, taster, minimum_percent)
 
 /// Applies heat to this holder
 /datum/reagents/proc/expose_temperature(temperature, coeff=0.02)

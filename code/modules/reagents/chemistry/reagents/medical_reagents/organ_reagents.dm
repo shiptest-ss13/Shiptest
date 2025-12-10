@@ -59,8 +59,8 @@
 	color = "#C0C0C0" //ditto
 
 /datum/reagent/medicine/neurine/on_mob_life(mob/living/carbon/C)
-	if(C.has_reagent(/datum/reagent/consumable/ethanol/neurotoxin))
-		C.remove_reagent(/datum/reagent/consumable/ethanol/neurotoxin, 5)
+	if(holder.has_reagent(/datum/reagent/consumable/ethanol/neurotoxin))
+		holder.remove_reagent(/datum/reagent/consumable/ethanol/neurotoxin, 5)
 	if(prob(15))
 		C.cure_trauma_type(resilience = TRAUMA_RESILIENCE_BASIC)
 	..()

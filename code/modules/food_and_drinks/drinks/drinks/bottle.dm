@@ -298,6 +298,11 @@
 	icon_state = "triplesecbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/triple_sec = 100)
 
+/obj/item/reagent_containers/food/drinks/bottle/milk
+	name = "bottle of cow milk"
+	desc = "Bottled milk of a cow, a domestic bovine of Solarian origin."
+	list_reagents = list(/datum/reagent/consumable/milk = 100)
+
 //////////////////////////JUICES AND STUFF ///////////////////////
 
 /obj/item/reagent_containers/food/drinks/bottle/orangejuice
