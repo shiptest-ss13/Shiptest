@@ -375,7 +375,7 @@ NO_MAG_GUN_HELPER(automatic/m15)
 	icon_state = "p16_mag-1"
 	base_icon_state = "p16_mag"
 	ammo_type = /obj/item/ammo_casing/a762_40
-	caliber = "7.62x40mm CLIP"
+	caliber = "7.62x40mm"
 	max_ammo = 20
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
