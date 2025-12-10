@@ -184,21 +184,29 @@
 	if(W == linked_wound)
 		qdel(src)
 
-// bones
-/datum/status_effect/wound/blunt
+/datum/status_effect/wound/nextmove_modifier()
+	var/mob/living/carbon/status_owner = owner
 
-/datum/status_effect/wound/blunt/on_apply()
+	if(status_owner.get_active_hand() == linked_limb)
+		return linked_wound.get_action_delay_mult()
+
+	return
+
+// bones
+/datum/status_effect/wound/blunt/bone
+
+/datum/status_effect/wound/blunt/bone/on_apply()
 	. = ..()
 	RegisterSignal(owner, COMSIG_MOB_SWAP_HANDS, PROC_REF(on_swap_hands))
 	on_swap_hands()
 
-/datum/status_effect/wound/blunt/on_remove()
+/datum/status_effect/wound/blunt/bone/on_remove()
 	. = ..()
 	UnregisterSignal(owner, COMSIG_MOB_SWAP_HANDS)
 	var/mob/living/carbon/wound_owner = owner
 	wound_owner.remove_movespeed_modifier(/datum/movespeed_modifier/status_effect/blunt_wound)
 
-/datum/status_effect/wound/blunt/proc/on_swap_hands()
+/datum/status_effect/wound/blunt/bone/proc/on_swap_hands()
 	SIGNAL_HANDLER
 
 	var/mob/living/carbon/wound_owner = owner
@@ -207,44 +215,36 @@
 	else
 		wound_owner.remove_movespeed_modifier(/datum/movespeed_modifier/status_effect/blunt_wound)
 
-/datum/status_effect/wound/blunt/nextmove_modifier()
-	var/mob/living/carbon/C = owner
-
-	if(C.get_active_hand() == linked_limb)
-		return linked_wound.interaction_efficiency_penalty
-
-	return 1
-
 // blunt
-/datum/status_effect/wound/blunt/moderate
+/datum/status_effect/wound/blunt/bone/moderate
 	id = "disjoint"
-/datum/status_effect/wound/blunt/severe
+/datum/status_effect/wound/blunt/bone/severe
 	id = "hairline"
-/datum/status_effect/wound/blunt/critical
+/datum/status_effect/wound/blunt/bone/critical
 	id = "compound"
 
 // slash
-/datum/status_effect/wound/slash/moderate
+/datum/status_effect/wound/slash/flesh/moderate
 	id = "abrasion"
-/datum/status_effect/wound/slash/severe
+/datum/status_effect/wound/slash/flesh/severe
 	id = "laceration"
-/datum/status_effect/wound/slash/critical
+/datum/status_effect/wound/slash/flesh/critical
 	id = "avulsion"
 
 // pierce
-/datum/status_effect/wound/pierce/moderate
+/datum/status_effect/wound/pierce/bleed/moderate
 	id = "breakage"
-/datum/status_effect/wound/pierce/severe
+/datum/status_effect/wound/pierce/bleed/severe
 	id = "puncture"
-/datum/status_effect/wound/pierce/critical
+/datum/status_effect/wound/pierce/bleed/critical
 	id = "rupture"
 
 // burns
-/datum/status_effect/wound/burn/moderate
+/datum/status_effect/wound/burn/flesh/moderate
 	id = "seconddeg"
-/datum/status_effect/wound/burn/severe
+/datum/status_effect/wound/burn/flesh/severe
 	id = "thirddeg"
-/datum/status_effect/wound/burn/critical
+/datum/status_effect/wound/burn/flesh/critical
 	id = "fourthdeg"
 
 // muscle

@@ -8,7 +8,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
-	biological_state = BIO_METAL
+	biological_state = BIO_ROBOTIC
 
 	light_brute_msg = "scratched"
 	medium_brute_msg = "dented"
@@ -27,7 +27,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	biological_state = BIO_METAL
+	biological_state = BIO_ROBOTIC
 
 	light_brute_msg = "scratched"
 	medium_brute_msg = "dented"
@@ -45,7 +45,7 @@
 	dynamic_rename = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	biological_state = BIO_METAL
+	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	light_brute_msg = "scratched"
 	medium_brute_msg = "dented"
@@ -63,7 +63,7 @@
 	dynamic_rename = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	biological_state = BIO_METAL
+	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	light_brute_msg = "scratched"
 	medium_brute_msg = "dented"
@@ -81,7 +81,7 @@
 	dynamic_rename = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	biological_state = BIO_METAL
+	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	light_brute_msg = "scratched"
 	medium_brute_msg = "dented"
@@ -99,7 +99,7 @@
 	dynamic_rename = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	biological_state = BIO_METAL
+	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	light_brute_msg = "scratched"
 	medium_brute_msg = "dented"

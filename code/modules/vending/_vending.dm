@@ -548,11 +548,9 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 							squish_part = C.bodyparts[zone]
 							if(!squish_part)
 								continue
-							if(IS_ORGANIC_LIMB(squish_part))
-								var/type_wound = pick(list(/datum/wound/blunt/severe, /datum/wound/blunt/moderate))
-								squish_part.force_wound_upwards(type_wound)
-							else
-								squish_part.receive_damage(brute=30)
+							var/severity = pick(WOUND_SEVERITY_MODERATE, WOUND_SEVERITY_SEVERE, WOUND_SEVERITY_CRITICAL)
+							if(!C.cause_wound_of_type_and_severity(WOUND_BLUNT, squish_part, severity, wound_source = "crushed by [src]"))
+								squish_part.receive_damage(brute = 30)
 						C.visible_message(
 							span_userdanger("[C]'s body is maimed underneath the mass of [src]!"),
 							span_userdanger("Your body is maimed underneath the mass of [src]!"),

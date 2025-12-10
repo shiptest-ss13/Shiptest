@@ -1,7 +1,8 @@
+// Electrical wounds are special and can be applied from any physical damage type, they get to be their own thing
+
 /datum/wound/electric
 	name = "Electrical Wound"
 	sound_effect = 'sound/effects/light_flicker.ogg'
-	wound_type = WOUND_ELECTRIC
 	wound_flags = NONE
 	bio_state_required = BIO_METAL
 
@@ -12,16 +13,29 @@
 	/// The group of brain traumas that can be inflicted.
 	var/trauma_group = BRAIN_TRAUMA_MILD
 
+/datum/wound_pregen_data/electric
+	abstract = TRUE
+	required_limb_biostate = BIO_WIRED
+
+	required_wounding_types = list(WOUND_PIERCE, WOUND_BURN)
+
+	wound_series = WOUND_SERIES_WIRED_ELECTRICAL
+
 /datum/wound/electric/severe
 	name = "Damaged Electronics"
 	desc = "Patient's electronics are damaged, preventing movement and damaging internal components."
 	treat_text = "Recommend replacement of internal wiring."
 	examine_desc = "occasionally sparks"
 	occur_text = "emits a shower of sparks"
-	threshold_minimum = 70
 	threshold_penalty = 20
 	severity = WOUND_SEVERITY_SEVERE
 	disabling = TRUE
+
+/datum/wound_pregen_data/electric/damaged
+	abstract = FALSE
+
+	wound_path_to_generate = /datum/wound/electric/severe
+	threshold_minimum = 70
 
 /datum/wound/electric/critical
 	name = "Short Circuit"
@@ -30,11 +44,16 @@
 	examine_desc = "is twitching and emitting electrical arcs"
 	occur_text = "arcs as its electronics short out"
 	sound_effect = 'sound/machines/defib_zap.ogg'
-	threshold_minimum = 115
 	disabling = TRUE
 	processes = TRUE
 	severity = WOUND_SEVERITY_CRITICAL
 	trauma_group = BRAIN_TRAUMA_SEVERE
+
+/datum/wound_pregen_data/electric/shorted
+	abstract = FALSE
+
+	wound_path_to_generate = /datum/wound/electric/critical
+	threshold_minimum = 115
 
 /datum/wound/electric/wound_injury(datum/wound/old_wound, attack_direction)
 	if(!affected_organ)
@@ -42,13 +61,22 @@
 	RegisterSignal(victim, COMSIG_CARBON_LOSE_ORGAN, PROC_REF(on_organ_loss))
 	RegisterSignal(victim, COMSIG_CARBON_GAIN_ORGAN, PROC_REF(on_organ_gain))
 
-/datum/wound/electric/remove_wound(ignore_limb, replaced)
-	if(istype(replaced, /datum/wound/electric))
-		var/datum/wound/electric/new_wound = replaced
+/datum/wound/electric/replace_wound(datum/wound/electric/new_wound, smited, attack_direction)
+	if(istype(new_wound, /datum/wound/electric))
 		new_wound.affected_organ = affected_organ
-	else
+	return ..()
+
+/datum/wound/electric/remove_wound(ignore_limb, replaced)
+	if(!replaced)
 		restore_organ()
+	else
+		QDEL_NULL(linked_trauma)
 	UnregisterSignal(victim, list(COMSIG_CARBON_LOSE_ORGAN, COMSIG_CARBON_GAIN_ORGAN))
+	return ..()
+
+/datum/wound/electric/set_victim(new_victim)
+	if(victim && !new_victim)
+		restore_organ()
 	return ..()
 
 /datum/wound/electric/proc/affect_organ()
@@ -88,6 +116,8 @@
 	if(!affected_organ && new_organ.zone == limb.body_zone)
 		affect_organ()
 
-/datum/wound/electric/handle_process()
+/datum/wound/electric/handle_process(seconds_per_tick, times_fired)
+	if(!victim)
+		return
 	if(victim.mob_biotypes & MOB_ROBOTIC)
 		victim.adjust_nutrition(severity * -WOUND_ELECTRIC_POWER_DRAIN)

@@ -16,7 +16,7 @@
 	var/bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC
 
 	///The types of wounds this bodypart is capable of receiving.
-	var/biological_state = BIO_BONE|BIO_FLESH
+	var/biological_state = BIO_STANDARD_UNJOINTED
 
 	///Whether the clothing being worn forces the limb into being "squished" to plantigrade/standard humanoid compliance
 	var/plantigrade_forced = FALSE
@@ -147,6 +147,16 @@
 
 //band-aid for blood overlays & other external overlays until they get refactored
 	var/stored_icon_state
+
+	/// In the case we dont have dismemberable features, or literally cant get wounds, we will use this percent to determine when we can be dismembered.
+	/// Compared to our ABSOLUTE maximum. Stored in decimal; 0.8 = 80%.
+	var/hp_percent_to_dismemberable = 0.8
+	/// If true, we will use [hp_percent_to_dismemberable] even if we are dismemberable via wounds. Useful for things with extreme wound resistance.
+	var/use_alternate_dismemberment_calc_even_if_mangleable = FALSE
+	/// If false, no wound that can be applied to us can mangle our exterior. Used for determining if we should use [hp_percent_to_dismemberable] instead of normal dismemberment.
+	var/any_existing_wound_can_mangle_our_exterior
+	/// If false, no wound that can be applied to us can mangle our interior. Used for determining if we should use [hp_percent_to_dismemberable] instead of normal dismemberment.
+	var/any_existing_wound_can_mangle_our_interior
 
 /obj/item/bodypart/Initialize()
 	. = ..()
@@ -296,6 +306,39 @@
 		if(ALIEN_BODYPART,LARVA_BODYPART) //aliens take double burn //nothing can burn with so much snowflake code around
 			burn *= 2
 
+	/* REMOVE THIS BEFORE COMMIT
+	var/bio_status = get_bio_state_status()
+
+	var/has_exterior = ((bio_status & ANATOMY_EXTERIOR))
+	var/has_interior = ((bio_status & ANATOMY_INTERIOR))
+
+	var/exterior_ready_to_dismember = (!has_exterior || ((mangled_state & BODYPART_MANGLED_EXTERIOR)))
+
+	// if we're bone only, all cutting attacks go straight to the bone
+	if(!has_exterior && has_interior)
+		if(wounding_type == WOUND_SLASH)
+			wounding_type = WOUND_BLUNT
+			wounding_dmg *= (easy_dismember ? 1 : 0.6)
+		else if(wounding_type == WOUND_PIERCE)
+			wounding_type = WOUND_BLUNT
+			wounding_dmg *= (easy_dismember ? 1 : 0.75)
+	else
+		// if we've already mangled the skin (critical slash or piercing wound), then the bone is exposed, and we can damage it with sharp weapons at a reduced rate
+		// So a big sharp weapon is still all you need to destroy a limb
+		if(has_interior && exterior_ready_to_dismember && !(mangled_state & BODYPART_MANGLED_INTERIOR) && sharpness)
+			if(wounding_type == WOUND_SLASH && !easy_dismember)
+				wounding_dmg *= 0.6 // edged weapons pass along 60% of their wounding damage to the bone since the power is spread out over a larger area
+			if(wounding_type == WOUND_PIERCE && !easy_dismember)
+				wounding_dmg *= 0.75 // piercing weapons pass along 75% of their wounding damage to the bone since it's more concentrated
+			wounding_type = WOUND_BLUNT
+		else if(interior_ready_to_dismember && exterior_ready_to_dismember && try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus))
+			return
+	if ((dismemberable_by_wound() || dismemberable_by_total_damage()) && try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus))
+		return
+
+	for(var/datum/wound/iter_wound as anything in wounds)
+		iter_wound.receive_damage(highest_damage, wounding_types, wound_bonus)*/
+
 	if(wound_roll(brute, burn, wound_bonus, bare_wound_bonus, sharpness, attack_direction))
 		return // stop here if dismembered
 
@@ -333,55 +376,27 @@
 	if(wound_bonus == CANT_WOUND)
 		return
 
-	var/mangled_state = get_mangled_state()
 	// if we have easydismember, we don't reduce damage when redirecting damage to different types (slashing weapons on mangled/skinless limbs attack at 100% instead of 50%)
 	var/easy_dismember = HAS_TRAIT(owner, TRAIT_EASYDISMEMBER) || HAS_TRAIT(src, TRAIT_EASYDISMEMBER)
 
 	/// Associated list of each wound type and how much effective wounding damage can be done of that type.
 	var/list/wounding_types
-	if((biological_state & BIO_BONE) && brute)
-		switch(sharpness)
-			if(SHARP_EDGED)
-				LAZYSET(wounding_types, WOUND_BLUNT, max(easy_dismember ? brute : brute * 0.6, LAZYACCESS(wounding_types, WOUND_BLUNT)))
-			if(SHARP_POINTY)
-				LAZYSET(wounding_types, WOUND_BLUNT, max(easy_dismember ? brute : brute * 0.75, LAZYACCESS(wounding_types, WOUND_BLUNT)))
-			else
-				LAZYSET(wounding_types, WOUND_BLUNT, max(brute, LAZYACCESS(wounding_types, WOUND_BLUNT)))
-		if((mangled_state & BIO_FLESH) && sharpness)
-			playsound(src, "sound/effects/wounds/crackandbleed.ogg", 100)
-	if(biological_state & BIO_FLESH)
-		if(burn)
-			LAZYSET(wounding_types, WOUND_BURN, max(burn, LAZYACCESS(wounding_types, WOUND_BURN)))
-			wounding_types[WOUND_BURN] = burn
-		switch(sharpness)
-			if(SHARP_EDGED)
-				LAZYSET(wounding_types, WOUND_SLASH, max(brute, burn, LAZYACCESS(wounding_types, WOUND_SLASH))) // in case someone makes energy swords do burn damage
-				if(brute)
-					LAZYSET(wounding_types, WOUND_MUSCLE, max(easy_dismember ? brute : brute * 0.6, LAZYACCESS(wounding_types, WOUND_MUSCLE)))
-			if(SHARP_POINTY)
-				LAZYSET(wounding_types, WOUND_PIERCE, max(brute, burn, LAZYACCESS(wounding_types, WOUND_PIERCE)))
-				if(brute)
-					LAZYSET(wounding_types, WOUND_MUSCLE, max(easy_dismember ? brute : brute * 0.75, LAZYACCESS(wounding_types, WOUND_MUSCLE)))
-			else
-				LAZYSET(wounding_types, WOUND_MUSCLE, max(brute, LAZYACCESS(wounding_types, WOUND_MUSCLE)))
-	if(biological_state & BIO_METAL)
-		switch(sharpness)
-			if(SHARP_EDGED)
-				LAZYSET(wounding_types, WOUND_ELECTRIC, max((brute + burn) * 0.2, LAZYACCESS(wounding_types, WOUND_ELECTRIC)))
-				if(brute)
-					LAZYSET(wounding_types, WOUND_BUCKLING, max(easy_dismember ? brute : brute * 0.5, LAZYACCESS(wounding_types, WOUND_BUCKLING)))
-			if(SHARP_POINTY)
-				LAZYSET(wounding_types, WOUND_ELECTRIC, max((brute + burn), LAZYACCESS(wounding_types, WOUND_ELECTRIC)))
-				if(brute)
-					LAZYSET(wounding_types, WOUND_BUCKLING, max(easy_dismember ? brute : brute * 0.3, LAZYACCESS(wounding_types, WOUND_BUCKLING)))
-			else
-				LAZYSET(wounding_types, WOUND_ELECTRIC, max((brute + burn) * 0.6, LAZYACCESS(wounding_types, WOUND_ELECTRIC)))
-				if(brute)
-					LAZYSET(wounding_types, WOUND_BUCKLING, max(brute, LAZYACCESS(wounding_types, WOUND_BUCKLING)))
-		if(burn)
-			LAZYSET(wounding_types, WOUND_WARP, max(burn, LAZYACCESS(wounding_types, WOUND_WARP)))
+	switch(sharpness)
+		if(SHARP_NONE)
+			if(brute)
+				LAZYSET(wounding_types, WOUND_BLUNT, brute)
+		if(SHARP_EDGED)
+			LAZYSET(wounding_types, WOUND_SLASH, brute + burn)
+			if(brute)
+				LAZYSET(wounding_types, WOUND_BLUNT, brute * (easy_dismember ? 1 : 0.4))
+		if(SHARP_POINTY)
+			LAZYSET(wounding_types, WOUND_PIERCE, brute + burn)
+			if(brute)
+				LAZYSET(wounding_types, WOUND_BLUNT, brute * (easy_dismember ? 1 : 0.6))
+	if(burn)
+		LAZYSET(wounding_types, WOUND_BURN, burn)
 
-	if((mangled_state == biological_state || (easy_dismember && mangled_state)) && try_dismember(wounding_types, wound_bonus, bare_wound_bonus))
+	if((dismemberable_by_wound() || dismemberable_by_total_damage()) && try_dismember(wounding_types, wound_bonus, bare_wound_bonus))
 		return TRUE
 
 	var/highest_damage = 0
@@ -394,14 +409,11 @@
 		for(var/wound_type in wounding_types)
 			if(!owner)
 				break
-			var/wound_dmg = wounding_types[wound_type]
-			if(!wound_dmg)
-				continue
-			highest_damage = max(highest_damage, wound_dmg)
-			check_wounding(wound_type, wound_dmg, wound_bonus, bare_wound_bonus, attack_direction)
+			highest_damage = max(highest_damage, wounding_types[wound_type])
+		check_wounding(wounding_types, wound_bonus, bare_wound_bonus, attack_direction)
 
 	for(var/datum/wound/iter_wound as anything in wounds)
-		iter_wound.receive_damage(highest_damage, wounding_types, wound_bonus)
+		iter_wound.receive_damage(wounding_types, highest_damage, wound_bonus)
 
 /**
  * check_wounding() is where we handle rolling for, selecting, and applying a wound if we meet the criteria
@@ -415,31 +427,40 @@
  * * wound_bonus- The wound_bonus of an attack
  * * bare_wound_bonus- The bare_wound_bonus of an attack
  */
-/obj/item/bodypart/proc/check_wounding(woundtype, damage, wound_bonus, bare_wound_bonus, attack_direction)
+/obj/item/bodypart/proc/check_wounding(list/wounding_types, wound_bonus, bare_wound_bonus, attack_direction)
+	var/damage_mult = 1
+
 	// note that these are fed into an exponent, so these are magnified
 	if(HAS_TRAIT(owner, TRAIT_EASILY_WOUNDED))
-		damage *= 1.5
-	else
-		damage = min(damage, WOUND_MAX_CONSIDERED_DAMAGE)
+		damage_mult *= 1.5
 
 	if(HAS_TRAIT(owner,TRAIT_HARDLY_WOUNDED))
-		damage *= 0.85
+		damage_mult *= 0.85
 
 	if(HAS_TRAIT(owner, TRAIT_VERY_HARDLY_WOUNDED))
-		damage *= 0.6
+		damage_mult *= 0.6
 
 	if(HAS_TRAIT(owner, TRAIT_EASYDISMEMBER))
-		damage *= 1.1
+		damage_mult *= 1.1
 
-	var/base_roll = rand(1, round(damage ** WOUND_DAMAGE_EXPONENT))
-	var/injury_roll = base_roll
-	injury_roll += check_woundings_mods(woundtype, damage, wound_bonus, bare_wound_bonus)
-	var/list/wounds_checking = SSwounds.wound_types[woundtype]
+	var/wounding_mods = check_woundings_mods(wound_bonus, bare_wound_bonus)
+	var/list/wound_rolls
+	for(var/wounding_type in wounding_types)
+		var/injury_roll = rand(1, round(min(wounding_types[wounding_type], WOUND_MAX_CONSIDERED_DAMAGE) * damage_mult)) + wounding_mods
+		if(injury_roll > WOUND_DISMEMBER_OUTRIGHT_THRESH && prob(get_damage() / max_damage * 100))
+			var/datum/wound/loss/dismembering = new
+			dismembering.apply_dismember(src, wounding_type, outright = TRUE, attack_direction = attack_direction)
+			return
+		LAZYSET(wound_rolls, wounding_type, injury_roll)
+	if(isnull(wound_rolls))
+		CRASH("check_wounding called with a null wounding_types list!")
+	var/list/series_wounding_mods = check_series_wounding_mods()
 
-	if(injury_roll > WOUND_DISMEMBER_OUTRIGHT_THRESH && prob(get_damage() / max_damage * 100))
-		var/datum/wound/loss/dismembering = new
-		dismembering.apply_dismember(src, woundtype, outright = TRUE, attack_direction = attack_direction)
-		return
+	var/list/datum/wound/possible_wounds = list()
+	for(var/datum/wound/wound_type as anything in SSwounds.pregen_data)
+		var/datum/wound_pregen_data/pregen_data = SSwounds.pregen_data[wound_type]
+		if(pregen_data.can_be_applied_to(src, wounding_types, random_roll = TRUE))
+			possible_wounds[wound_type] = pregen_data.get_weight(src, wounding_types, attack_direction)
 
 	// quick re-check to see if bare_wound_bonus applies, for the benefit of log_wound(), see about getting the check from check_woundings_mods() somehow
 	if(ishuman(owner))
@@ -451,39 +472,145 @@
 				bare_wound_bonus = 0
 				break
 
-	//cycle through the wounds of the relevant category from the most severe down
-	for(var/datum/wound/possible_wound as anything in wounds_checking)
+	for(var/datum/wound/iterated_path as anything in possible_wounds)
+		for(var/datum/wound/existing_wound as anything in wounds)
+			if(iterated_path == existing_wound.type)
+				possible_wounds -= iterated_path
+				break // breaks out of the nested loop
+
+		var/datum/wound_pregen_data/pregen_data = SSwounds.pregen_data[iterated_path]
+		var/best_fit = -INFINITY
+		for(var/required_wound_type in pregen_data.required_wounding_types)
+			best_fit = max(best_fit, wounding_types[required_wound_type])
+		var/specific_injury_roll = (best_fit + series_wounding_mods[pregen_data.wound_series])
+		if(pregen_data.get_threshold_for(src, attack_direction) > specific_injury_roll)
+			possible_wounds -= iterated_path
+			continue
+
+		if(pregen_data.compete_for_wounding)
+			for(var/datum/wound/other_path as anything in possible_wounds)
+				if(other_path == iterated_path)
+					continue
+				if(initial(iterated_path.severity) == initial(other_path.severity) && pregen_data.overpower_wounds_of_even_severity)
+					possible_wounds -= other_path
+					continue
+				else if(pregen_data.competition_mode == WOUND_COMPETITION_OVERPOWER_LESSERS)
+					if(initial(iterated_path.severity) > initial(other_path.severity))
+						possible_wounds -= other_path
+						continue
+				else if(pregen_data.competition_mode == WOUND_COMPETITION_OVERPOWER_GREATERS)
+					if(initial(iterated_path.severity) < initial(other_path.severity))
+						possible_wounds -= other_path
+						continue
+
+	var/list/datum/wound/applied_wounds
+	while(length(possible_wounds))
+		var/datum/wound/possible_wound = pick_weight(possible_wounds)
+		var/datum/wound_pregen_data/possible_pregen_data = SSwounds.pregen_data[possible_wound]
+		possible_wounds -= possible_wound
+
 		var/datum/wound/replaced_wound
 		for(var/i in wounds)
 			var/datum/wound/existing_wound = i
-			if(existing_wound.type in wounds_checking)
+			var/datum/wound_pregen_data/existing_pregen_data = SSwounds.pregen_data[existing_wound.type]
+			if(existing_pregen_data.wound_series == possible_pregen_data.wound_series)
 				if(existing_wound.severity >= possible_wound::severity)
-					return
+					continue
 				else
 					replaced_wound = existing_wound
 
-		if(possible_wound::threshold_minimum < injury_roll)
-			var/datum/wound/new_wound
-			if(replaced_wound)
-				new_wound = replaced_wound.replace_wound(possible_wound, attack_direction = attack_direction)
-				log_wound(owner, new_wound, damage, wound_bonus, bare_wound_bonus, base_roll) // dismembering wounds are logged in the apply_wound() for loss wounds since they delete themselves immediately, these will be immediately returned
-			else
-				new_wound = new possible_wound
-				new_wound.apply_wound(src, attack_direction = attack_direction)
-				log_wound(owner, new_wound, damage, wound_bonus, bare_wound_bonus, base_roll)
-			return new_wound
+		// if we get through this whole loop without continuing, we found our winner
+		var/datum/wound/new_wound = new possible_wound
+		if(replaced_wound)
+			new_wound = replaced_wound.replace_wound(new_wound, attack_direction = attack_direction)
+		else
+			new_wound.apply_wound(src, attack_direction = attack_direction)
+		LAZYADD(applied_wounds, new_wound)
+
+	if(LAZYLEN(applied_wounds)) // dismembering wounds are logged in the apply_wound() for loss wounds since they delete themselves immediately, these will be immediately returned
+		log_wound(owner, src, applied_wounds, wounding_types, wound_bonus, bare_wound_bonus, wound_rolls)
+	return applied_wounds
 
 // try forcing a specific wound, but only if there isn't already a wound of that severity or greater for that type on this bodypart
-/obj/item/bodypart/proc/force_wound_upwards(specific_woundtype, smited = FALSE)
-	var/datum/wound/potential_wound = specific_woundtype
+/obj/item/bodypart/proc/force_wound_upwards(datum/wound/potential_wound, smited = FALSE, wound_source)
+	SHOULD_NOT_OVERRIDE(TRUE)
+
+	if (isnull(potential_wound))
+		return
+
+	var/datum/wound_pregen_data/pregen_data = SSwounds.pregen_data[potential_wound]
 	for(var/datum/wound/existing_wound as anything in wounds)
-		if(existing_wound.wound_type == potential_wound::wound_type)
+		var/datum/wound_pregen_data/existing_pregen_data = existing_wound.get_pregen_data()
+		if(existing_pregen_data.wound_series == pregen_data.wound_series)
 			if(existing_wound.severity < potential_wound::severity) // we only try if the existing one is inferior to the one we're trying to force
-				existing_wound.replace_wound(potential_wound, smited)
+				existing_wound.replace_wound(new potential_wound, smited)
 			return
 
 	var/datum/wound/new_wound = new potential_wound
 	new_wound.apply_wound(src, smited = smited)
+	return new_wound
+
+/**
+ *  A simple proc to force a type of wound onto this mob. If you just want to force a specific mainline (fractures, bleeding, etc.) wound, you only need to care about the first 3 args.
+ *
+ * Args:
+ * * wounding_type: The wounding_type, e.g. WOUND_BLUNT, WOUND_SLASH to force onto the mob. Can be a list.
+ * * obj/item/bodypart/limb: The limb we wil be applying the wound to. If null, a random bodypart will be picked.
+ * * min_severity: The minimum severity that will be considered.
+ * * max_severity: The maximum severity that will be considered.
+ * * severity_pick_mode: The "pick mode" to be used. See get_corresponding_wound_type's documentation
+ * * wound_source: The source of the wound to be applied. Nullable.
+ *
+ * For the rest of the args, refer to get_corresponding_wound_type().
+ *
+ * Returns:
+ * A new wound instance if the application was successful, null otherwise.
+*/
+/mob/living/carbon/proc/cause_wound_of_type_and_severity(wounding_type, obj/item/bodypart/limb, min_severity, max_severity = min_severity, severity_pick_mode = WOUND_PICK_HIGHEST_SEVERITY, wound_source)
+	if(isnull(limb))
+		limb = pick(bodyparts)
+
+	var/list/type_list = wounding_type
+	if(!islist(type_list))
+		type_list = list(type_list)
+
+	var/datum/wound/corresponding_typepath = SSwounds.get_corresponding_wound_type(type_list, limb, min_severity, max_severity, severity_pick_mode)
+	if(corresponding_typepath)
+		return limb.force_wound_upwards(corresponding_typepath, wound_source = wound_source)
+
+/// Limb is nullable, but picks a random one. Defers to limb.get_wound_threshold_of_wound_type, see it for documentation.
+/mob/living/carbon/proc/get_wound_threshold_of_wound_type(wounding_type, severity, default, obj/item/bodypart/limb, wound_source)
+	if(isnull(limb))
+		limb = pick(bodyparts)
+
+	if(!limb)
+		return default
+
+	return limb.get_wound_threshold_of_wound_type(wounding_type, severity, default, wound_source)
+
+/**
+ * A simple proc that gets the best wound to fit the criteria laid out, then returns its wound threshold.
+ *
+ * Args:
+ * * wounding_type: The wounding_type, e.g. WOUND_BLUNT, WOUND_SLASH to force onto the mob. Can be a list of wounding_types.
+ * * severity: The severity that will be considered.
+ * * return_value_if_no_wound: If no wound is found, we will return this instead. (It is reccomended to use named args for this one, as its unclear what it is without)
+ * * wound_source: The theoretical source of the wound. Nullable.
+ *
+ * Returns:
+ * return_value_if_no_wound if no wound is found - if one IS found, the wound threshold for that wound.
+ */
+/obj/item/bodypart/proc/get_wound_threshold_of_wound_type(wounding_type, severity, return_value_if_no_wound, wound_source)
+	var/list/type_list = wounding_type
+	if(!islist(type_list))
+		type_list = list(type_list)
+
+	var/datum/wound/wound_path = SSwounds.get_corresponding_wound_type(type_list, src, severity, duplicates_allowed = TRUE, care_about_existing_wounds = FALSE)
+	if(wound_path)
+		var/datum/wound_pregen_data/pregen_data = SSwounds.pregen_data[wound_path]
+		return pregen_data.get_threshold_for(src, damage_source = wound_source)
+
+	return return_value_if_no_wound
 
 /**
  * check_wounding_mods() is where we handle the various modifiers of a wound roll
@@ -495,7 +622,7 @@
  * Arguments:
  * * It's the same ones on [/obj/item/bodypart/proc/receive_damage]
  */
-/obj/item/bodypart/proc/check_woundings_mods(wounding_type, damage, wound_bonus, bare_wound_bonus)
+/obj/item/bodypart/proc/check_woundings_mods(wound_bonus, bare_wound_bonus)
 	var/armor_ablation = 0
 	var/injury_mod = 0
 
@@ -512,9 +639,8 @@
 	injury_mod -= armor_ablation
 	injury_mod += wound_bonus
 
-	for(var/datum/wound/W as anything in wounds)
-		if(W.wound_type == wounding_type)
-			injury_mod += W.threshold_penalty
+	for(var/datum/wound/wound as anything in wounds)
+		injury_mod += wound.threshold_penalty
 
 	var/part_mod = -wound_resistance
 	if(get_damage(TRUE) >= max_damage)
@@ -523,6 +649,83 @@
 	injury_mod += part_mod
 
 	return injury_mod
+
+/// Returns a bitflag using ANATOMY_EXTERIOR or ANATOMY_INTERIOR. Used to determine if we as a whole have a interior or exterior biostate, or both.
+/obj/item/bodypart/proc/get_bio_state_status()
+	SHOULD_BE_PURE(TRUE)
+
+	var/bio_status = NONE
+
+	for (var/state as anything in SSwounds.bio_state_anatomy)
+		var/flag = text2num(state)
+		if (!(biological_state & flag))
+			continue
+
+		var/value = SSwounds.bio_state_anatomy[state]
+		if (value & ANATOMY_EXTERIOR)
+			bio_status |= ANATOMY_EXTERIOR
+		if (value & ANATOMY_INTERIOR)
+			bio_status |= ANATOMY_INTERIOR
+
+		if ((bio_status & ANATOMY_EXTERIOR_AND_INTERIOR) == ANATOMY_EXTERIOR_AND_INTERIOR)
+			break
+
+	return bio_status
+
+/// Returns if our current mangling status allows us to be dismembered. Requires both no exterior/mangled exterior and no interior/mangled interior.
+/obj/item/bodypart/proc/dismemberable_by_wound()
+	SHOULD_BE_PURE(TRUE)
+
+	var/mangled_state = get_mangled_state()
+
+	var/bio_status = get_bio_state_status()
+
+	var/has_exterior = ((bio_status & ANATOMY_EXTERIOR))
+	var/has_interior = ((bio_status & ANATOMY_INTERIOR))
+
+	var/exterior_ready_to_dismember = (!has_exterior || ((mangled_state & BODYPART_MANGLED_EXTERIOR)))
+	var/interior_ready_to_dismember = (!has_interior || ((mangled_state & BODYPART_MANGLED_INTERIOR)))
+
+	return (exterior_ready_to_dismember && interior_ready_to_dismember)
+
+/// Returns TRUE if our total percent damage is more or equal to our dismemberable percentage, but FALSE if a wound can cause us to be dismembered.
+/obj/item/bodypart/proc/dismemberable_by_total_damage()
+
+	update_wound_theory()
+
+	var/bio_status = get_bio_state_status()
+
+	var/has_interior = ((bio_status & ANATOMY_INTERIOR))
+	var/can_theoretically_be_dismembered_by_wound = (any_existing_wound_can_mangle_our_interior || (any_existing_wound_can_mangle_our_exterior && has_interior))
+
+	var/wound_dismemberable = dismemberable_by_wound()
+	var/ready_to_use_alternate_formula = (use_alternate_dismemberment_calc_even_if_mangleable || (!wound_dismemberable && !can_theoretically_be_dismembered_by_wound))
+
+	if (ready_to_use_alternate_formula)
+		var/percent_to_total_max = (get_damage() / max_damage)
+		if (percent_to_total_max >= hp_percent_to_dismemberable)
+			return TRUE
+
+	return FALSE
+
+/// Updates our "can be theoretically dismembered by wounds" variables by iterating through all wound static data.
+/obj/item/bodypart/proc/update_wound_theory()
+	// We put this here so we dont increase init time by doing this all at once on initialization
+	// Effectively, we "lazy load"
+	if (isnull(any_existing_wound_can_mangle_our_interior) || isnull(any_existing_wound_can_mangle_our_exterior))
+		any_existing_wound_can_mangle_our_interior = FALSE
+		any_existing_wound_can_mangle_our_exterior = FALSE
+		for (var/datum/wound/wound_type as anything in SSwounds.pregen_data)
+			var/datum/wound_pregen_data/pregen_data = SSwounds.pregen_data[wound_type]
+			if (!pregen_data.can_be_applied_to(src, random_roll = TRUE)) // we only consider randoms because non-randoms are usually really specific
+				continue
+			if (initial(pregen_data.wound_path_to_generate.wound_flags) & MANGLES_EXTERIOR)
+				any_existing_wound_can_mangle_our_exterior = TRUE
+			if (initial(pregen_data.wound_path_to_generate.wound_flags) & MANGLES_INTERIOR)
+				any_existing_wound_can_mangle_our_interior = TRUE
+
+			if (any_existing_wound_can_mangle_our_interior && any_existing_wound_can_mangle_our_exterior)
+				break
 
 //Heals brute and burn damage for the organ. Returns 1 if the damage-icon states changed at all.
 //Damage cannot go below zero, or min_damage.
@@ -965,6 +1168,19 @@
 	drop_organs()
 	qdel(src)
 
+/// Should return an assoc list of (wound_series -> penalty). Will be used in determining series-specific penalties for wounding.
+/obj/item/bodypart/proc/check_series_wounding_mods()
+	RETURN_TYPE(/list)
+
+	var/list/series_mods = list()
+
+	for (var/datum/wound/iterated_wound as anything in wounds)
+		var/datum/wound_pregen_data/pregen_data = SSwounds.pregen_data[iterated_wound.type]
+
+		series_mods[pregen_data.wound_series] += iterated_wound.series_threshold_penalty
+
+	return series_mods
+
 /// Get whatever wound of the given type is currently attached to this limb, if any
 /obj/item/bodypart/proc/get_wound_type(checking_type)
 	if(isnull(wounds))
@@ -1069,6 +1285,11 @@
 #undef BLEED_OVERLAY_MED
 #undef BLEED_OVERLAY_GUSH
 
+/obj/item/bodypart/proc/can_bleed()
+	SHOULD_BE_PURE(TRUE)
+
+	return ((biological_state & BIO_BLOODED) && (!owner || !HAS_TRAIT(owner, TRAIT_NOBLOOD)))
+
 /**
  * apply_gauze() is used to- well, apply gauze to a bodypart
  *
@@ -1099,3 +1320,23 @@
 		return
 	current_splint = new new_splint.splint_type(src)
 	new_splint.use(1)
+
+/* NOTE: it makes absolutely NO sense for wires to be "external," it should likely be renamed to hard/soft materials but i'm too lazy to do that right now */
+
+/// Returns the generic description of our BIO_EXTERNAL feature(s), prioritizing certain ones over others. Returns error on failure.
+/obj/item/bodypart/proc/get_external_description()
+	if (biological_state & BIO_FLESH)
+		return "flesh"
+	if (biological_state & BIO_WIRED)
+		return "wiring"
+
+	return "error"
+
+/// Returns the generic description of our BIO_INTERNAL feature(s), prioritizing certain ones over others. Returns error on failure.
+/obj/item/bodypart/proc/get_internal_description()
+	if (biological_state & BIO_BONE)
+		return "bone"
+	if (biological_state & BIO_METAL)
+		return "metal"
+
+	return "error"

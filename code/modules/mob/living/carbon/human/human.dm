@@ -894,8 +894,8 @@
 					if(!body_part)
 						continue
 					var/numbing_wound = FALSE
-					for(var/datum/wound/W in body_part.wounds)
-						if(W.wound_type == WOUND_BURN)
+					for(var/datum/wound/iterated_wound in body_part.wounds)
+						if(iterated_wound.wound_flags & NUMBS_BODYPART)
 							numbing_wound = TRUE
 
 					var/damage = body_part.burn_dam + body_part.brute_dam

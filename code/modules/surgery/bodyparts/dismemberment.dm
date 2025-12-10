@@ -1,36 +1,41 @@
 
 /obj/item/bodypart/proc/can_dismember()
+	if(owner && HAS_TRAIT(owner, TRAIT_NODISMEMBER))
+		return FALSE
 	return dismemberable
 
 //Dismember a limb
-/obj/item/bodypart/proc/dismember(dam_type = BRUTE, silent=TRUE)
+/obj/item/bodypart/proc/dismember(dam_type = BRUTE, silent=TRUE, wounding_type)
 	if(!owner || !dismemberable)
 		return FALSE
-	var/mob/living/carbon/C = owner
-	if(C.status_flags & GODMODE)
+	var/mob/living/carbon/limb_owner = owner
+	if(limb_owner.status_flags & GODMODE)
 		return FALSE
-	if(HAS_TRAIT(C, TRAIT_NODISMEMBER))
+	if(HAS_TRAIT(limb_owner, TRAIT_NODISMEMBER))
 		return FALSE
 
-	var/obj/item/bodypart/affecting = C.get_bodypart(BODY_ZONE_CHEST)
+	var/obj/item/bodypart/affecting = limb_owner.get_bodypart(BODY_ZONE_CHEST)
 	affecting.receive_damage(clamp(brute_dam/2 * affecting.body_damage_coeff, 15, 50), clamp(burn_dam/2 * affecting.body_damage_coeff, 0, 50), wound_bonus=CANT_WOUND) //Damage the chest based on limb's existing damage
 	if(!silent)
-		C.visible_message(span_danger("<B>[C]'s [name] sails off in a bloody arc!</B>"))
+		limb_owner.visible_message(span_danger("<B>[limb_owner]'s [name] sails off in a bloody arc!</B>"))
 
-	if(C.stat <= SOFT_CRIT)//No more screaming while unconsious
+	if(limb_owner.stat <= SOFT_CRIT)//No more screaming while unconsious
 		if(IS_ORGANIC_LIMB(affecting))//Chest is a good indicator for if a carbon is robotic in nature or not.
-			if(!HAS_TRAIT(C, TRAIT_ANALGESIA)) //and do we actually feel pain?
-				INVOKE_ASYNC(C, TYPE_PROC_REF(/mob, emote), "scream")
+			if(!HAS_TRAIT(limb_owner, TRAIT_ANALGESIA)) //and do we actually feel pain?
+				INVOKE_ASYNC(limb_owner, TYPE_PROC_REF(/mob, emote), "scream")
 
-	playsound(get_turf(C), 'sound/effects/wounds/dismember.ogg', 80, TRUE)
-	SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "dismembered", /datum/mood_event/dismembered)
+	playsound(get_turf(limb_owner), 'sound/effects/wounds/dismember.ogg', 80, TRUE)
+	SEND_SIGNAL(limb_owner, COMSIG_ADD_MOOD_EVENT, "dismembered", /datum/mood_event/dismembered)
+
+	if(wounding_type)
+		LAZYSET(limb_owner.body_zone_dismembered_by, body_zone, wounding_type)
 
 	drop_limb()
 
-	C.update_equipment_speed_mods() // Update in case speed affecting item unequipped by dismemberment
-	var/turf/location = C.loc
-	if(istype(location))
-		C.add_splatter_floor(location)
+	limb_owner.update_equipment_speed_mods() // Update in case speed affecting item unequipped by dismemberment
+	var/turf/location = limb_owner.loc
+	if(wounding_type != WOUND_BURN && istype(location) && can_bleed())
+		limb_owner.add_splatter_floor(location)
 
 	if(QDELETED(src)) //Could have dropped into lava/explosion/chasm/whatever
 		return TRUE
@@ -38,8 +43,9 @@
 		burn()
 		return TRUE
 
-	add_mob_blood(C)
-	C.bleed(rand(20, 40))
+	if(can_bleed())
+		add_mob_blood(limb_owner)
+		limb_owner.bleed(rand(20, 40))
 
 	var/direction = pick(GLOB.cardinals)
 	var/t_range = rand(2,max(throw_range/2, 2))
@@ -56,27 +62,27 @@
 	return TRUE
 
 
-/obj/item/bodypart/chest/dismember()
+/obj/item/bodypart/chest/dismember(dam_type = BRUTE, silent = TRUE, wound_type)
 	if(!owner)
 		return FALSE
-	var/mob/living/carbon/C = owner
+	var/mob/living/carbon/chest_owner = owner
 	if(!dismemberable)
 		return FALSE
-	if(HAS_TRAIT(C, TRAIT_NODISMEMBER))
+	if(HAS_TRAIT(chest_owner, TRAIT_NODISMEMBER))
 		return FALSE
 	. = list()
-	var/turf/T = get_turf(C)
-	C.add_splatter_floor(T)
-	playsound(get_turf(C), 'sound/misc/splort.ogg', 80, TRUE)
-	for(var/obj/item/organ/O as anything in C.internal_organs)
+	if(wound_type != WOUND_BURN && isturf(chest_owner.loc) && can_bleed())
+		chest_owner.add_splatter_floor(chest_owner.loc)
+		playsound(get_turf(chest_owner), 'sound/misc/splort.ogg', 80, TRUE)
+	for(var/obj/item/organ/O as anything in chest_owner.internal_organs)
 		var/org_zone = check_zone(O.zone)
 		if(org_zone != BODY_ZONE_CHEST)
 			continue
-		O.Remove(C)
-		O.forceMove(T)
+		O.Remove(chest_owner)
+		O.forceMove(chest_owner.loc)
 		. += O
 	if(cavity_item)
-		cavity_item.forceMove(T)
+		cavity_item.forceMove(chest_owner.loc)
 		. += cavity_item
 		cavity_item = null
 
@@ -153,9 +159,10 @@
 /obj/item/bodypart/proc/get_mangled_state()
 	var/mangled_states = NONE
 	for(var/datum/wound/iter_wound as anything in wounds)
-		if(!(iter_wound.wound_flags & MANGLES_LIMB))
-			continue
-		mangled_states |= iter_wound.bio_state_required
+		if((iter_wound.wound_flags & MANGLES_INTERIOR))
+			mangled_states |= BODYPART_MANGLED_INTERIOR
+		if((iter_wound.wound_flags & MANGLES_EXTERIOR))
+			mangled_states |= BODYPART_MANGLED_EXTERIOR
 	return mangled_states
 
 /**
@@ -171,6 +178,9 @@
  * * bare_wound_bonus: ditto above
  */
 /obj/item/bodypart/proc/try_dismember(list/wounding_types, wound_bonus, bare_wound_bonus)
+	if(!can_dismember())
+		return
+
 	var/wounding_type
 	var/wounding_dmg = 0
 	for(var/wound in wounding_types)
@@ -184,8 +194,8 @@
 	var/base_chance = wounding_dmg
 	base_chance += (get_damage() / max_damage * 50) // how much damage we dealt with this blow, + 50% of the damage percentage we already had on this bodypart
 
-	if(locate(/datum/wound/blunt/critical) in wounds) // we only require a severe bone break, but if there's a critical bone break, we'll add 15% more
-		base_chance += 15
+	for(var/datum/wound/iterated_wound as anything in wounds)
+		base_chance += iterated_wound.get_dismember_chance_bonus(base_chance)
 
 	if(prob(base_chance))
 		var/datum/wound/loss/dismembering = new
@@ -324,6 +334,7 @@
 	moveToNullspace()
 	set_owner(C)
 	C.add_bodypart(src)
+	LAZYREMOVE(C.body_zone_dismembered_by, body_zone)
 	if(held_index)
 		if(held_index > C.hand_bodyparts.len)
 			C.hand_bodyparts.len = held_index
@@ -449,9 +460,9 @@
 	return
 
 /mob/living/carbon/regenerate_limb(limb_zone, noheal, robotic = FALSE)
-	var/obj/item/bodypart/L
+	var/obj/item/bodypart/limb
 	if(get_bodypart(limb_zone))
 		return FALSE
-	L = new_body_part(limb_zone, robotic, FALSE)
-	L.replace_limb(src, TRUE, TRUE)
+	limb = new_body_part(limb_zone, robotic, FALSE)
+	limb.replace_limb(src, TRUE, TRUE)
 	return TRUE

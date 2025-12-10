@@ -19,7 +19,7 @@
 		if(31 to INFINITY)
 			C.AdjustSleeping(40)
 			//formerly everything-fixing juice
-			for(var/datum/wound/blunt/broken_bone in C.all_wounds)
+			for(var/datum/wound/blunt/bone/broken_bone in C.all_wounds)
 				broken_bone.remove_wound()
 			for(var/obj/item/organ/O in C.internal_organs)
 				O.damage = 0

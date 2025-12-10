@@ -303,7 +303,7 @@
 				var/damage_dealt = wound_info_by_part[hit_part][CLOUD_POSITION_DAMAGE]
 				var/w_bonus = wound_info_by_part[hit_part][CLOUD_POSITION_W_BONUS]
 				var/bw_bonus = wound_info_by_part[hit_part][CLOUD_POSITION_BW_BONUS]
-				wound_info_by_part[hit_part] = null
+				wound_info_by_part -= hit_part
 				hit_part.wound_roll((damage_type == BRUTE) ? damage_dealt : 0, (damage_type == BURN) ? damage_dealt : 0, w_bonus, bw_bonus, initial(P.sharpness))
 
 		if(num_hits > 1)

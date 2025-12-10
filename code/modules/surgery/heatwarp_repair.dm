@@ -11,7 +11,7 @@
 	)
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	self_operable = TRUE
-	targetable_wound = /datum/wound/heat_warping/critical
+	targetable_wound = /datum/wound/burn/heat_warping/critical
 
 /datum/surgery/repair_sheared_frame/can_start(mob/user, mob/living/patient)
 	if(!..())

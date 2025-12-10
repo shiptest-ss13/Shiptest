@@ -52,28 +52,28 @@
 /obj/item/bodypart/head/jelly
 	limb_id = SPECIES_JELLYPERSON
 	is_dimorphic = TRUE
-	biological_state = BIO_FLESH
+	biological_state = (BIO_FLESH|BIO_BLOODED)
 
 /obj/item/bodypart/chest/jelly
 	limb_id = SPECIES_JELLYPERSON
 	is_dimorphic = TRUE
-	biological_state = BIO_FLESH
+	biological_state = (BIO_FLESH|BIO_BLOODED)
 
 /obj/item/bodypart/l_arm/jelly
 	limb_id = SPECIES_JELLYPERSON
-	biological_state = BIO_FLESH
+	biological_state = (BIO_FLESH|BIO_BLOODED)
 
 /obj/item/bodypart/r_arm/jelly
 	limb_id = SPECIES_JELLYPERSON
-	biological_state = BIO_FLESH
+	biological_state = (BIO_FLESH|BIO_BLOODED)
 
 /obj/item/bodypart/leg/left/jelly
 	limb_id = SPECIES_JELLYPERSON
-	biological_state = BIO_FLESH
+	biological_state = (BIO_FLESH|BIO_BLOODED)
 
 /obj/item/bodypart/leg/right/jelly
 	limb_id = SPECIES_JELLYPERSON
-	biological_state = BIO_FLESH
+	biological_state = (BIO_FLESH|BIO_BLOODED)
 
 ///SLIME
 /obj/item/bodypart/head/slime
@@ -179,33 +179,27 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	draw_eyes = FALSE
-	biological_state = NONE
 
 /obj/item/bodypart/chest/shadow
 	limb_id = "shadow"
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
-	biological_state = NONE
 
 /obj/item/bodypart/l_arm/shadow
 	limb_id = "shadow"
 	should_draw_greyscale = FALSE
-	biological_state = NONE
 
 /obj/item/bodypart/r_arm/shadow
 	limb_id = "shadow"
 	should_draw_greyscale = FALSE
-	biological_state = NONE
 
 /obj/item/bodypart/leg/left/shadow
 	limb_id = "shadow"
 	should_draw_greyscale = FALSE
-	biological_state = NONE
 
 /obj/item/bodypart/leg/right/shadow
 	limb_id = "shadow"
 	should_draw_greyscale = FALSE
-	biological_state = NONE
 
 ///SKELETON
 /obj/item/bodypart/head/skeleton
@@ -224,19 +218,19 @@
 /obj/item/bodypart/l_arm/skeleton
 	limb_id = "skeleton"
 	should_draw_greyscale = FALSE
-	biological_state = BIO_BONE
+	biological_state = (BIO_BONE|BIO_JOINTED)
 
 /obj/item/bodypart/r_arm/skeleton
 	limb_id = "skeleton"
 	should_draw_greyscale = FALSE
-	biological_state = BIO_BONE
+	biological_state = (BIO_BONE|BIO_JOINTED)
 
 /obj/item/bodypart/leg/left/skeleton
 	limb_id = "skeleton"
 	should_draw_greyscale = FALSE
-	biological_state = BIO_BONE
+	biological_state = (BIO_BONE|BIO_JOINTED)
 
 /obj/item/bodypart/leg/right/skeleton
 	limb_id = "skeleton"
 	should_draw_greyscale = FALSE
-	biological_state = BIO_BONE
+	biological_state = (BIO_BONE|BIO_JOINTED)

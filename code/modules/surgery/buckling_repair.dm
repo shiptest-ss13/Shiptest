@@ -8,7 +8,7 @@
 	)
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	self_operable = TRUE
-	targetable_wound = /datum/wound/buckling/severe
+	targetable_wound = /datum/wound/blunt/buckling/severe
 
 /datum/surgery/repair_buckled_frame/can_start(mob/user, mob/living/patient)
 	if(!..())
@@ -29,7 +29,7 @@
 	)
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	self_operable = TRUE
-	targetable_wound = /datum/wound/buckling/critical
+	targetable_wound = /datum/wound/blunt/buckling/critical
 
 /datum/surgery/repair_sheared_frame/can_start(mob/user, mob/living/patient)
 	if(!..())
