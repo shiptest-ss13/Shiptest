@@ -1,0 +1,49 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Firefly-class Industrial Liner",
+	"faction": "/datum/faction/independent",
+	"prefix": "SV",
+	"manufacturer": "Hardline Salvage and Mining",
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"NATURAL",
+		"NATURAL_AGGRESSIVE"
+	],
+	"map_short_name": "Firefly-class",
+	"map_path": "_maps/shuttles/independent/independent_firefly.dmm",
+	"token_icon_state": "ship_generic",
+	"description": "The Firefly-class is one of Hardline's earliest hulls, garnering a reputation for ruggedness and reliability quick in its production. While not many would claim the vessel to be a vacation, many would boast about cheap upkeep and proper living conditions for the working man. Fitted for modular use, A majority of these ships have been refitted for specialized purposes, from mercenary work to cargo vessels. Despite such modularity, the most popular configuration would be it's standard production-line variant, with modest living overall.",
+	"tags": [
+		"Generalist",
+		"Medical",
+		"Combat"
+	],
+	"starting_funds": 2500,
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"First Mate": {
+			"outfit": "/datum/outfit/job/independent/hop",
+			"officer": true,
+			"slots": 1
+		},
+		"Doctor": {
+			"outfit": "/datum/outfit/job/independent/doctor",
+			"slots": 1
+		},
+		"Technician": {
+			"outfit": "/datum/outfit/job/independent/engineer",
+			"slots": 1
+		},
+		"Crewman": {
+			"outfit": "/datum/outfit/job/independent/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}
