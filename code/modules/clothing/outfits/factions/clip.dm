@@ -478,8 +478,8 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
 	courierbag = /obj/item/storage/backpack/messenger/engi
 
-	uniform = /obj/item/clothing/under/clip/minutemen
-	head = /obj/item/clothing/head/clip
+	uniform = /obj/item/clothing/under/clip
+	head = /obj/item/clothing/head/soft/utility_navy
 	suit =  /obj/item/clothing/suit/hazardvest
 
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
@@ -537,11 +537,6 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/clip_spotter
 	suit_store = /obj/item/tank/internals/oxygen
 
-/datum/outfit/job/clip/minutemen/grunt/dressed/bombsuit
-	name = "CLIP Minutmemen - Minuteman (Bombsuit)"
-	suit = /obj/item/clothing/suit/space/hardsuit/bomb/clip
-	head = /obj/item/clothing/head/helmet/space/hardsuit/bomb/clip
-
 /datum/outfit/job/clip/minutemen/grunt/dressed/armed
 	name = "CLIP Minutemen - Minuteman (Armed - CM-82)"
 
@@ -595,6 +590,14 @@
 
 	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/storage/ration/chili_macaroni=1, /obj/item/grenade/c4=2, /obj/item/ammo_box/magazine/p16=3)
 
+/datum/outfit/job/clip/minutemen/grunt/eod
+	name = "CLIP Minutemen - EOD Specialist"
+	id_assignment = "Explosive Ordnance Disposal Technician"
+
+/datum/outfit/job/clip/minutemen/grunt/eod/bombsuit
+	name = "CLIP Minutemen - EOD Specialist (Bombsuit)"
+	suit = /obj/item/clothing/suit/space/hardsuit/bomb/clip
+
 // combat medic
 
 /datum/outfit/job/clip/minutemen/grunt/medic
@@ -603,6 +606,10 @@
 	jobtype = /datum/job/doctor
 
 	accessory = /obj/item/clothing/accessory/armband/medblue
+
+/datum/outfit/job/clip/minutemen/grunt/medic/secaccess
+	name = "CLIP Minutemen - Combat Medic (Security Access)"
+	jobtype = /datum/job/officer
 
 /datum/outfit/job/clip/minutemen/grunt/medic/dressed
 	name = "CLIP Minutemen - Combat Medic (Dressed)"

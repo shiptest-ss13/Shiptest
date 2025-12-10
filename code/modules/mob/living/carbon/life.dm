@@ -86,7 +86,7 @@
 //Second link in a breath chain, calls check_breath()
 /mob/living/carbon/proc/breathe()
 	var/obj/item/organ/lungs = getorganslot(ORGAN_SLOT_LUNGS)
-	if(has_reagent(/datum/reagent/toxin/lexorin, needs_metabolizing = TRUE))
+	if(reagents.has_reagent(/datum/reagent/toxin/lexorin, needs_metabolizing = TRUE))
 		return
 	if(istype(loc, /obj/machinery/atmospherics/components/unary/cryo_cell))
 		return
@@ -141,12 +141,6 @@
 		loc.assume_air(breath)
 		air_update_turf()
 
-/mob/living/carbon/proc/has_smoke_protection()
-	if(HAS_TRAIT(src, TRAIT_NOBREATH))
-		return TRUE
-	return FALSE
-
-
 //Third link in a breath chain, calls handle_breath_temperature()
 /mob/living/carbon/proc/check_breath(datum/gas_mixture/breath)
 	if(status_flags & GODMODE)
@@ -160,12 +154,12 @@
 
 	//CRIT
 	if(!breath || (breath.total_moles() == 0) || !lungs)
-		if(has_reagent(/datum/reagent/medicine/epinephrine, needs_metabolizing = TRUE) && lungs)
+		if(reagents.has_reagent(/datum/reagent/medicine/epinephrine, needs_metabolizing = TRUE) && lungs)
 			return
 		adjustOxyLoss(1)
 
 		failed_last_breath = 1
-		throw_alert("not_enough_oxy", /atom/movable/screen/alert/not_enough_oxy)
+		throw_alert(ALERT_NOT_ENOUGH_OXYGEN, /atom/movable/screen/alert/not_enough_oxy)
 		return 0
 
 	var/safe_oxy_min = 16
@@ -193,14 +187,14 @@
 		else
 			adjustOxyLoss(3)
 			failed_last_breath = 1
-		throw_alert("not_enough_oxy", /atom/movable/screen/alert/not_enough_oxy)
+		throw_alert(ALERT_NOT_ENOUGH_OXYGEN, /atom/movable/screen/alert/not_enough_oxy)
 
 	else //Enough oxygen
 		failed_last_breath = 0
 		if(health >= crit_threshold)
 			adjustOxyLoss(-5)
 		oxygen_used = breath.get_moles(GAS_O2)
-		clear_alert("not_enough_oxy")
+		clear_alert(ALERT_NOT_ENOUGH_OXYGEN)
 
 	breath.adjust_moles(GAS_O2, -oxygen_used)
 	breath.adjust_moles(GAS_CO2, oxygen_used)
@@ -314,25 +308,25 @@
 
 /mob/living/carbon/proc/handle_organs()
 	if(stat != DEAD)
-		for(var/V in internal_organs)
-			var/obj/item/organ/O = V
-			if(O.owner) // This exist mostly because reagent metabolization can cause organ reshuffling
-				O.on_life()
+		for(var/organ_slot in GLOB.organ_process_order)
+			var/obj/item/organ/organ = getorganslot(organ_slot)
+			if(organ?.owner) // This exist mostly because reagent metabolization can cause organ reshuffling
+				organ.on_life()
 	else
-		if(has_reagent(/datum/reagent/toxin/formaldehyde, 1)) // No organ decay if the body contains formaldehyde.
+		if(reagents.has_reagent(/datum/reagent/toxin/formaldehyde, 1)) // No organ decay if the body contains formaldehyde.
 			return
 		for(var/V in internal_organs)
 			var/obj/item/organ/O = V
 			O.on_death() //Needed so organs decay while inside the body.
 
-/mob/living/carbon/handle_diseases()
+/mob/living/carbon/handle_diseases(seconds_per_tick = SSMOBS_DT, times_fired)
 	for(var/thing in diseases)
 		var/datum/disease/D = thing
 		if(prob(D.infectivity))
 			D.spread()
 
 		if(stat != DEAD || D.process_dead)
-			D.stage_act()
+			D.stage_act(seconds_per_tick, times_fired)
 
 /mob/living/carbon/handle_wounds()
 	for(var/thing in all_wounds)
@@ -555,7 +549,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
  * * use_steps (optional) Use the body temp divisors and max change rates
  * * hardsuit_fix (optional) num HUMAN_BODYTEMP_NORMAL - H.bodytemperature Use hardsuit override until hardsuits fix is done...
  */
-/mob/living/carbon/adjust_bodytemperature(amount, min_temp=0, max_temp=INFINITY, use_insulation=TRUE, use_steps=FALSE, \
+/mob/living/carbon/adjust_bodytemperature(amount, min_temp=0, max_temp=HUMAN_BODYTEMP_MAX, use_insulation=TRUE, use_steps=FALSE, \
 											hardsuit_fix=FALSE)
 	// apply insulation to the amount of change
 	if(use_insulation)
@@ -599,28 +593,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		return FALSE
 	return belly.reagents.has_reagent(reagent, amount, needs_metabolizing)
 
-/mob/living/carbon/remove_reagent(reagent, custom_amount, safety)
-	if(!custom_amount)
-		custom_amount = get_reagent_amount(reagent)
-	var/amount_body = reagents.get_reagent_amount(reagent)
-	if(custom_amount <= amount_body)
-		reagents.remove_reagent(reagent, custom_amount, safety)
-		return	TRUE
-	reagents.remove_reagent(reagent, amount_body, safety)
-	custom_amount -= amount_body
-	var/obj/item/organ/stomach/belly = getorganslot(ORGAN_SLOT_STOMACH)
-	if(!belly)
-		return FALSE
-	belly.reagents.remove_reagent(reagent, custom_amount, safety)
-	return TRUE
-
-/mob/living/carbon/get_reagent_amount(reagent)
-	. = ..()
-	var/obj/item/organ/stomach/belly = getorganslot(ORGAN_SLOT_STOMACH)
-	if(!belly)
-		return
-	. += belly.reagents.get_reagent_amount(reagent)
-
 /////////
 //LIVER//
 /////////
@@ -639,26 +611,13 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		return TRUE
 
 /mob/living/carbon/proc/liver_failure()
-	end_metabolization(src, keep_liverless = TRUE) //Stops trait-based effects on reagents, to prevent permanent buffs
+	reagents.end_metabolization(src, keep_liverless = TRUE) //Stops trait-based effects on reagents, to prevent permanent buffs
 	reagents.metabolize(src, can_overdose=FALSE, liverless = TRUE)
 	if(HAS_TRAIT(src, TRAIT_STABLELIVER) || HAS_TRAIT(src, TRAIT_NOMETABOLISM))
 		return
 	adjustToxLoss(4, TRUE,  TRUE)
 	if(prob(30))
 		to_chat(src, span_warning("You feel a stabbing pain in your abdomen!"))
-
-/**
- * Ends metabolization on the mob
- *
- * This stop all reagents in the body and organs from metabolizing
- * Vars:
- * * keep_liverless (bool)(optional)(default:TRUE) Will keep working without a liver
- */
-/mob/living/carbon/proc/end_metabolization(keep_liverless = TRUE)
-	reagents.end_metabolization(src, keep_liverless = keep_liverless)
-	var/obj/item/organ/stomach/belly = getorganslot(ORGAN_SLOT_STOMACH)
-	if(belly)
-		belly.reagents.end_metabolization(src, keep_liverless = keep_liverless)
 
 /////////////
 //CREMATION//
