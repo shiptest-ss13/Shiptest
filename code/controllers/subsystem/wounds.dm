@@ -139,7 +139,7 @@ SUBSYSTEM_DEF(wounds)
 
 	var/list/wounding_type_list = list()
 	for (var/wounding_type as anything in wounding_types)
-		wounding_type_list += SSwounds.types_to_series[wounding_type]
+		wounding_type_list |= SSwounds.types_to_series[wounding_type]
 	if (!length(wounding_type_list))
 		return null
 

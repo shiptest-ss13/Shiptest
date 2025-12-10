@@ -43,10 +43,9 @@
 	var/competition_mode = WOUND_COMPETITION_OVERPOWER_LESSERS
 	/// If this and [compete_for_wounding] is true, we will remove wounds of an even severity to us during a random wound roll.
 	var/overpower_wounds_of_even_severity = FALSE
+	/// While competing for wounding, this will overpower wounds of other wound series when set to TRUE.
+	var/compete_with_other_wound_series = FALSE
 
-	/// A list of BIO_ defines that will be iterated over in order to determine the scar file our wound will generate.
-	/// Use generate_scar_priorities to create a custom list.
-	var/list/scar_priorities
 
 /datum/wound_pregen_data/New()
 	. = ..()
@@ -90,7 +89,7 @@
 		for(var/datum/wound/preexisting_wound as anything in limb.wounds)
 			var/datum/wound_pregen_data/pregen_data = SSwounds.pregen_data[preexisting_wound.type]
 			if(pregen_data.wound_series == wound_series)
-				if(preexisting_wound.severity >= initial(wound_path_to_generate.severity))
+				if(preexisting_wound.severity >= wound_path_to_generate::severity)
 					return FALSE
 
 	if(!ignore_cannot_bleed && ((required_limb_biostate & BIO_BLOODED) && !limb.can_bleed()))
@@ -125,8 +124,7 @@
  *
  * Args:
  * * obj/item/bodypart/limb: The limb we are contemplating being added to. Nullable.
- * * woundtype: The woundtype of the assumed attack that would generate us. Nullable.
- * * damage: The raw damage that would cause us. Nullable.
+ * * list/wounding_types: The amount of damage for each wounding type. Nullable.
  * * attack_direction: The direction of the attack that'd cause us. Nullable.
  * * damage_source: The entity that would cause us. Nullable.
  *

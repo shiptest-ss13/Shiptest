@@ -82,7 +82,7 @@
 	abstract = FALSE
 
 	wound_path_to_generate = /datum/wound/blunt/buckling/critical
-	threshold_minimum = 115
+	threshold_minimum = 125
 
 /datum/wound/blunt/buckling/wound_injury(datum/wound/old_wound, attack_direction)
 	update_inefficiencies()
@@ -106,10 +106,10 @@
 /datum/wound/blunt/buckling/proc/apply_tape(obj/item/stack/tape/new_tape, mob/user)
 	if(applied_tape?.amount >= MAX_TAPE_STACKS)
 		to_chat(user, span_notice("[limb] has too much tape on it already!"))
-		return
+		return TRUE
 	if(new_tape.amount < 1)
 		to_chat(user, span_notice("[new_tape] does not contain enough tape!"))
-		return
+		return TRUE
 	victim.visible_message(
 		span_notice("[user] starts applying [new_tape.name] to [victim]'s [limb]."),
 		span_notice("[user] starts applying [new_tape.name] to your [limb]."),
@@ -130,7 +130,7 @@
 			span_notice("[user] applies some [applied_tape.name] to [victim]'s [limb]."),
 			span_notice("[user] applies some [applied_tape.name] to your [limb]."),
 		)
-
+	return TRUE
 
 /// Removes tape from the round.
 /datum/wound/blunt/buckling/proc/remove_tape(obj/item/tool, mob/user)

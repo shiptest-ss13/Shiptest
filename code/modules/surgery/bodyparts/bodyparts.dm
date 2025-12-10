@@ -446,7 +446,7 @@
 	var/wounding_mods = check_woundings_mods(wound_bonus, bare_wound_bonus)
 	var/list/wound_rolls
 	for(var/wounding_type in wounding_types)
-		var/injury_roll = rand(1, round(min(wounding_types[wounding_type], WOUND_MAX_CONSIDERED_DAMAGE) * damage_mult)) + wounding_mods
+		var/injury_roll = rand(1, round(min(wounding_types[wounding_type], WOUND_MAX_CONSIDERED_DAMAGE) * damage_mult) ** WOUND_DAMAGE_EXPONENT) + wounding_mods
 		if(injury_roll > WOUND_DISMEMBER_OUTRIGHT_THRESH && prob(get_damage() / max_damage * 100))
 			var/datum/wound/loss/dismembering = new
 			dismembering.apply_dismember(src, wounding_type, outright = TRUE, attack_direction = attack_direction)
@@ -481,7 +481,7 @@
 		var/datum/wound_pregen_data/pregen_data = SSwounds.pregen_data[iterated_path]
 		var/best_fit = -INFINITY
 		for(var/required_wound_type in pregen_data.required_wounding_types)
-			best_fit = max(best_fit, wounding_types[required_wound_type])
+			best_fit = max(best_fit, wound_rolls[required_wound_type])
 		var/specific_injury_roll = (best_fit + series_wounding_mods[pregen_data.wound_series])
 		if(pregen_data.get_threshold_for(src, attack_direction) > specific_injury_roll)
 			possible_wounds -= iterated_path
@@ -491,15 +491,18 @@
 			for(var/datum/wound/other_path as anything in possible_wounds)
 				if(other_path == iterated_path)
 					continue
-				if(initial(iterated_path.severity) == initial(other_path.severity) && pregen_data.overpower_wounds_of_even_severity)
+				/*var/datum/wound_pregen_data/other_pregen_data = SSwounds.pregen_data[other_path]
+				if(pregen_data.compete_with_other_wound_series && pregen_data.wound_series != other_pregen_data.wound_series)
+					continue*/
+				if(iterated_path::severity == other_path::severity && pregen_data.overpower_wounds_of_even_severity)
 					possible_wounds -= other_path
 					continue
 				else if(pregen_data.competition_mode == WOUND_COMPETITION_OVERPOWER_LESSERS)
-					if(initial(iterated_path.severity) > initial(other_path.severity))
+					if(iterated_path::severity > other_path::severity)
 						possible_wounds -= other_path
 						continue
 				else if(pregen_data.competition_mode == WOUND_COMPETITION_OVERPOWER_GREATERS)
-					if(initial(iterated_path.severity) < initial(other_path.severity))
+					if(iterated_path::severity < other_path::severity)
 						possible_wounds -= other_path
 						continue
 
@@ -643,7 +646,7 @@
 		injury_mod += wound.threshold_penalty
 
 	var/part_mod = -wound_resistance
-	if(get_damage(TRUE) >= max_damage)
+	if(bodypart_disabled >= max_damage)
 		part_mod += disabled_wound_penalty
 
 	injury_mod += part_mod

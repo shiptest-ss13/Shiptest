@@ -458,7 +458,7 @@
 		else
 			dam = 0
 		if(affecting.get_damage() <= affecting.min_damage)
-			to_chat(user, span_warning("[affecting] is too deformed to be fully repaired!"))
+			to_chat(user, span_warning("[affecting] cannot be repaired any further!"))
 			return
 		if((brute_heal > 0 && affecting.brute_dam > 0) || (burn_heal > 0 && affecting.burn_dam > 0))
 			if(affecting.heal_damage(brute_heal, burn_heal, 0, BODYTYPE_ROBOTIC))

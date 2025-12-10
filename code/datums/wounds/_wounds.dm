@@ -85,11 +85,11 @@
 	var/datum/status_effect/linked_status_effect
 	/// If we're operating on this wound and it gets healed, we'll nix the surgery too
 	var/datum/surgery/attached_surgery
-	/// if you're a lazy git and just throw them in cryo, the wound will go away after accumulating severity * [base_xadone_progress_to_qdel] power
-	var/cryo_progress
+	/// if you're a lazy git and just throw them in cryo, the wound will go away after accumulating severity * [base_regen_progress_to_qdel] power
+	var/regen_progress
 
-	/// The base amount of [cryo_progress] required to have ourselves fully healed by cryo. Multiplied against severity.
-	var/base_xadone_progress_to_qdel = 33
+	/// The base amount of [regen_progress] required to have ourselves fully healed by cryo. Multiplied against severity.
+	var/base_regen_progress_to_qdel = 33
 
 	/// If we forced this wound through badmin smite, we won't count it towards the round totals
 	var/from_smite
@@ -452,19 +452,19 @@
 
 /// Called from cryoxadone and pyroxadone when they're proc'ing. Wounds will slowly be fixed separately from other methods when these are in effect. crappy name but eh
 /datum/wound/proc/on_xadone(power)
-	cryo_progress += power
-	return handle_xadone_progress()
+	regen_progress += power
+	return handle_regen_progress()
 
-/// Does various actions based on [cryo_progress]. By default, qdeletes the wound past a certain threshold.
-/datum/wound/proc/handle_xadone_progress()
-	if(cryo_progress > get_xadone_progress_to_qdel())
+/// Does various actions based on [regen_progress]. By default, qdeletes the wound past a certain threshold.
+/datum/wound/proc/handle_regen_progress()
+	if(regen_progress > get_regen_progress_to_qdel())
 		qdel(src)
 
-/// Returns the amount of [cryo_progress] we need to be qdeleted.
-/datum/wound/proc/get_xadone_progress_to_qdel()
+/// Returns the amount of [regen_progress] we need to be qdeleted.
+/datum/wound/proc/get_regen_progress_to_qdel()
 	SHOULD_BE_PURE(TRUE)
 
-	return base_xadone_progress_to_qdel * severity
+	return base_regen_progress_to_qdel * severity
 
 /// When synthflesh is applied to the victim, we call this. No sense in setting up an entire chem reaction system for wounds when we only care for a few chems. Probably will change in the future
 /datum/wound/proc/on_synthflesh(power)
@@ -516,11 +516,11 @@
 	var/desc
 
 	if((wound_flags & ACCEPTS_SPLINT) && limb.current_splint)
-		desc = "[victim.p_their()] [limb.plaintext_zone] is [get_sling_condition()] fastened with a [limb.current_splint.name]"
+		desc = "[victim.p_their()] [limb.name] is [get_sling_condition()] fastened with a [limb.current_splint.name]"
 	else if ((wound_flags & ACCEPTS_GAUZE) && limb.current_gauze)
-		desc = "[victim.p_their()] [limb.plaintext_zone] is [get_gauze_condition()] fastened in a sling of [limb.current_gauze.name]"
+		desc = "[victim.p_their()] [limb.name] is [get_gauze_condition()] fastened in a sling of [limb.current_gauze.name]"
 	else
-		desc = "[victim.p_their()] [limb.plaintext_zone] [examine_desc]"
+		desc = "[victim.p_their()] [limb.name] [examine_desc]"
 
 	desc = modify_desc_before_span(desc, user)
 
@@ -602,7 +602,7 @@
 	SHOULD_BE_PURE(TRUE)
 
 	var/datum/wound_pregen_data/pregen_data = get_pregen_data()
-	if (WOUND_BLUNT in pregen_data.required_wounding_types && severity >= WOUND_SEVERITY_CRITICAL)
+	if((WOUND_BLUNT in pregen_data.required_wounding_types) && severity >= WOUND_SEVERITY_CRITICAL)
 		return WOUND_CRITICAL_BLUNT_DISMEMBER_BONUS // we only require mangled bone (T2 blunt), but if there's a critical blunt, we'll add 15% more
 
 /// Returns our pregen data, which is practically guaranteed to exist, so this proc can safely be used raw.

@@ -257,5 +257,6 @@
 	organ_flags |= ORGAN_FAILING
 
 /obj/item/organ/proc/on_organ_restore()
+	SIGNAL_HANDLER
 	organ_flags &= ~ORGAN_FAILING
 

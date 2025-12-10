@@ -50,6 +50,8 @@
 			sclera_color = human_owner.sclera_color
 
 	M.update_tint()
+	if(organ_flags & ORGAN_FAILING)
+		M.become_blind(EYE_DAMAGE)
 	owner.update_sight()
 	if(M.has_dna() && ishuman(M))
 		M.dna.species.handle_body(M) //updates eye icon
@@ -85,11 +87,13 @@
 
 /obj/item/organ/eyes/on_organ_fail()
 	. = ..()
-	owner.become_blind(EYE_DAMAGE)
+	if(owner)
+		owner.become_blind(EYE_DAMAGE)
 
 /obj/item/organ/eyes/on_organ_restore()
 	. = ..()
-	owner.cure_blind(EYE_DAMAGE)
+	if(owner)
+		owner.cure_blind(EYE_DAMAGE)
 
 /obj/item/organ/eyes/lizard
 	name = "lizard eyes"

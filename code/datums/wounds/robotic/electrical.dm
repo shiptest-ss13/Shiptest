@@ -35,7 +35,7 @@
 	abstract = FALSE
 
 	wound_path_to_generate = /datum/wound/electric/severe
-	threshold_minimum = 70
+	threshold_minimum = 80
 
 /datum/wound/electric/critical
 	name = "Short Circuit"
@@ -43,6 +43,7 @@
 	treat_text = "Recommend replacement of internal electronics and wiring."
 	examine_desc = "is twitching and emitting electrical arcs"
 	occur_text = "arcs as its electronics short out"
+	threshold_penalty = 40
 	sound_effect = 'sound/machines/defib_zap.ogg'
 	disabling = TRUE
 	processes = TRUE
@@ -53,7 +54,7 @@
 	abstract = FALSE
 
 	wound_path_to_generate = /datum/wound/electric/critical
-	threshold_minimum = 115
+	threshold_minimum = 130
 
 /datum/wound/electric/wound_injury(datum/wound/old_wound, attack_direction)
 	if(!affected_organ)

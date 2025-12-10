@@ -191,9 +191,10 @@
 	victim.adjust_bodytemperature((victim.dna.species.bodytemp_heating_rate_max + (stacks * 12)) * 0.5 * seconds_per_tick)
 	if(!victim.apply_damage((stacks * 0.5), BURN, blocked = victim.run_armor_check(null, "fire", armour_penetration=stacks*5, silent=TRUE), spread_damage = TRUE))
 		return
-	var/obj/item/bodypart/it_burns = victim.get_random_bodypart()
-	if(it_burns) // apply_damage doesn't cause wounds without a selected bodypart, so we do this manually here
-		it_burns.wound_roll(0, stacks, stacks * min(victim.bodytemperature / T20C, 2))
+	if(SPT_PROB(50, seconds_per_tick))
+		var/obj/item/bodypart/it_burns = victim.get_random_bodypart()
+		if(it_burns) // apply_damage doesn't cause wounds without a selected bodypart, so we do this manually here
+			it_burns.wound_roll(0, stacks * min(victim.bodytemperature / FIRE_MINIMUM_TEMPERATURE_TO_EXIST, 2))
 	SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "on_fire", /datum/mood_event/on_fire)
 
 /**

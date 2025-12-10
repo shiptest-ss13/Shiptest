@@ -1,5 +1,7 @@
 /// The flame temperature required to re-heat the chassis.
 #define CHASSIS_MELTING_POINT 1900
+/// Maximum amount of structural integrity loss. This is to prevent perma-crit from critical warping on the head or chest.
+#define MAXIMUM_INTEGRITY_LOSS 50
 
 /datum/wound/burn/heat_warping
 	name = "Heat-Warping Wound"
@@ -21,62 +23,33 @@
 
 	wound_series = WOUND_SERIES_METAL_HEAT_WARPING
 
-/datum/wound/burn/heat_warping/severe
-	name = "Warped Plating"
-	desc = "Patient's external plating has been warped by thermal stress, threatening its structural integrity."
-	treat_text = "Recommend re-heating the external plating and bending it back into shape."
-	examine_desc = "is heat-warped and oxidized"
-	occur_text = "warps from the high temperature"
-	severity = WOUND_SEVERITY_SEVERE
-	treatable_tools = list(TOOL_WELDER, TOOL_CROWBAR)
-	threshold_penalty = 20
-	integrity_loss = 0.4
-
-/datum/wound_pregen_data/heat_warping/thermal_stress
-	abstract = FALSE
-
-	wound_path_to_generate = /datum/wound/burn/heat_warping/severe
-	threshold_minimum = 80
-
-/datum/wound/burn/heat_warping/critical
-	name = "Deformed Chassis"
-	desc = "Patient's chassis has been severely deformed from high temperatures and can no longer function."
-	treat_text = "Recommend replacement of the warped external plating."
-	examine_desc = "is a deformed mass of charred metal"
-	occur_text = "glows red-hot and begins to deform"
-	severity = WOUND_SEVERITY_CRITICAL
-	wound_flags = PLATING_DAMAGE | MANGLES_INTERIOR
-	disabling = TRUE
-	threshold_penalty = 40
-	integrity_loss = 0.6
-
-/datum/wound_pregen_data/heat_warping/deformed_slag
-	abstract = FALSE
-
-	wound_path_to_generate = /datum/wound/burn/heat_warping/severe
-	threshold_minimum = 120
-
-/datum/wound/burn/heat_warping/wound_injury(datum/wound/old_wound, attack_direction)
-	update_limb_integrity()
-
 /datum/wound/burn/heat_warping/remove_wound(ignore_limb, replaced)
 	if(!replaced)
-		update_limb_integrity()
+		limb.heal_damage(0, limb.min_damage)
 	return ..()
 
+/datum/wound/burn/heat_warping/set_limb(obj/item/bodypart/new_value, replaced)
+	var/obj/item/bodypart/old_limb = ..()
+	if(old_limb)
+		if(!replaced)
+			old_limb.heal_damage(burn = old_limb.min_damage)
+		old_limb.min_damage = old_limb::min_damage
+	if(new_value)
+		update_limb_integrity()
+	return old_limb
+
 /datum/wound/burn/heat_warping/proc/update_limb_integrity()
-	limb.min_damage = min(limb.max_damage, victim.maxHealth) * integrity_loss
+	limb.min_damage = min(limb.max_damage * integrity_loss, MAXIMUM_INTEGRITY_LOSS)
 	var/limb_damage = limb.get_damage()
 	if(limb_damage < limb.min_damage)
 		limb.set_burn_dam(CEILING(limb.burn_dam + limb.min_damage - limb_damage, DAMAGE_PRECISION))
 
 /datum/wound/burn/heat_warping/treat(obj/item/tool, mob/user)
 	if(tool.tool_behaviour == TOOL_WELDER)
-		heat_chassis(tool, user)
-		return
+		return heat_chassis(tool, user)
 	if(tool.tool_behaviour == TOOL_CROWBAR)
-		bend_chassis(tool, user)
-		return
+		return bend_chassis(tool, user)
+	return ..()
 
 /datum/wound/burn/heat_warping/check_grab_treatments(obj/item/tool, mob/user)
 	if(tool.get_temperature() > CHASSIS_MELTING_POINT)
@@ -129,3 +102,95 @@
 		span_warning("Your [limb.name] cools back down."),
 	)
 	re_heated = FALSE
+
+/datum/wound/burn/heat_warping/moderate
+	name = "Surface Oxidization"
+	desc = "Patient's external plating has been oxidized by high temperature."
+	treat_text = "Recommend applying a cleaning agent to remove the oxidized layer, or burning it off with a welding tool."
+	examine_desc = "is oxidized across much of its surface"
+	occur_text = "starts to become discolored"
+	severity = WOUND_SEVERITY_MODERATE
+	treatable_tools = list(TOOL_WELDER)
+	threshold_penalty = 20
+	integrity_loss = 0.2
+
+/datum/wound_pregen_data/heat_warping/oxidation
+	abstract = FALSE
+
+	wound_path_to_generate = /datum/wound/burn/heat_warping/moderate
+	threshold_minimum = 30
+
+/datum/wound/burn/heat_warping/oxidation/moderate/set_victim(new_victim)
+	if(victim)
+		UnregisterSignal(victim, COMSIG_ATOM_EXPOSE_REAGENTS)
+	if(new_victim)
+		RegisterSignal(victim, COMSIG_ATOM_EXPOSE_REAGENTS, PROC_REF(on_expose))
+	return ..()
+
+/datum/wound/burn/heat_warping/moderate/heat_chassis(obj/item/tool, mob/user)
+	victim.visible_message(
+		span_notice("[user] starts to burn the oxidized layer off of [victim]'s [limb.name]..."),
+		span_notice("[user] starts to burn the oxidized layer off of your [limb.name]..."),
+	)
+	if(!tool.use_tool(victim, user, 4 SECONDS, volume = 50))
+		return TRUE
+	victim.visible_message(
+		span_notice("[user] burns the oxidized layer off of [victim]'s [limb.name]."),
+		span_notice("[user] burns the oxidized layer off of your [limb.name]."),
+	)
+	qdel(src)
+	return TRUE
+
+/datum/wound/burn/heat_warping/oxidation/moderate/proc/on_expose(atom/source, list/reagents, datum/reagents/source_reagents, methods, volume_modifier, show_message)
+	SIGNAL_HANDLER
+
+	if(!(methods & (TOUCH|VAPOR|PATCH)))
+		return
+	var/total_clean_power = 0
+	for(var/datum/reagent/space_cleaner/cleaner in reagents)
+		total_clean_power += cleaner.volume * cleaner.robot_clean_power * volume_modifier
+	if (total_clean_power)
+		source.visible_message(
+			span_notice("The surface of [victim]'s [limb.name] begins to bubble."),
+			span_notice("The surface of your [limb.name] begins to bubble."),
+		)
+		playsound(victim, 'sound/effects/bubbles.ogg', 25 + total_clean_power * 2)
+		handle_regen_progress()
+
+/datum/wound/burn/heat_warping/severe
+	name = "Warped Plating"
+	desc = "Patient's external plating has been warped by thermal stress, threatening its structural integrity."
+	treat_text = "Recommend re-heating the external plating and bending it back into shape."
+	examine_desc = "is heat-warped and charred"
+	occur_text = "warps from the high temperature"
+	severity = WOUND_SEVERITY_SEVERE
+	treatable_tools = list(TOOL_WELDER, TOOL_CROWBAR)
+	threshold_penalty = 30
+	integrity_loss = 0.4
+
+/datum/wound_pregen_data/heat_warping/thermal_stress
+	abstract = FALSE
+
+	wound_path_to_generate = /datum/wound/burn/heat_warping/severe
+	threshold_minimum = 75
+
+/datum/wound/burn/heat_warping/critical
+	name = "Deformed Chassis"
+	desc = "Patient's chassis has been severely deformed from temperatures close to its melting point and can no longer function."
+	treat_text = "Recommend replacement of the warped external plating."
+	examine_desc = "is a deformed mass of metal and slag"
+	occur_text = "glows red-hot and begins to deform"
+	severity = WOUND_SEVERITY_CRITICAL
+	wound_flags = PLATING_DAMAGE | MANGLES_INTERIOR
+	disabling = TRUE
+	threshold_penalty = 40
+	integrity_loss = 0.6
+
+/datum/wound_pregen_data/heat_warping/deformed_slag
+	abstract = FALSE
+
+	wound_path_to_generate = /datum/wound/burn/heat_warping/critical
+	threshold_minimum = 130
+
+#undef MAXIMUM_INTEGRITY_LOSS
+#undef CHASSIS_MELTING_POINT

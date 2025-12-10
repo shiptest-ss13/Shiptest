@@ -12,7 +12,7 @@
 
 /datum/wound/blunt/bone
 	name = "Blunt (Bone) Wound"
-	wound_flags = (ACCEPTS_GAUZE)
+	wound_flags = ACCEPTS_SPLINT
 
 	///Have we been bone gel'd?
 	var/gelled
@@ -180,10 +180,11 @@
 /datum/wound/blunt/bone/moderate
 	name = "Joint Dislocation"
 	desc = "Patient's limb has been unset from socket, causing pain and reduced motor function."
-	treat_text = "Recommended application of bonesetter to affected limb, though manual relocation by applying an aggressive grab to the patient and helpfully interacting with afflicted limb may suffice."
+	treat_text = "Recommended application of bonesetter or wrench to affected limb, though manual relocation by applying an aggressive grab to the patient and helpfully interacting with afflicted limb may suffice."
 	examine_desc = "is awkwardly janked out of place"
 	occur_text = "janks violently and becomes unseated"
 	severity = WOUND_SEVERITY_MODERATE
+	wound_flags = ACCEPTS_SPLINT | PLATING_DAMAGE
 	excluded_zones = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST)
 	interaction_efficiency_penalty = 1.2
 	limp_slowdown = 2.25
@@ -201,6 +202,11 @@
 	required_limb_biostate = BIO_JOINTED
 
 	threshold_minimum = 35
+
+/datum/wound_pregen_data/bone/dislocate/get_threshold_for(obj/item/bodypart/part, attack_direction, damage_source)
+	if(part.biological_state & BIO_METAL)
+		return threshold_minimum * 2
+	return ..()
 
 /datum/wound/blunt/bone/moderate/Destroy()
 	if(victim)
@@ -223,6 +229,27 @@
 			span_userdanger("Your dislocated [limb.name] pops back into place!"),
 		)
 		remove_wound()
+
+/datum/wound/blunt/bone/moderate/treat(obj/item/treatment, mob/user)
+	if((limb.biological_state & BIO_METAL) && treatment.tool_behaviour == TOOL_WRENCH)
+		return wrench_limb(treatment, user)
+	return ..()
+
+/datum/wound/blunt/bone/moderate/proc/wrench_limb(obj/item/wrench, mob/user)
+	if(!victim)
+		return FALSE
+	victim.visible_message(
+		span_notice("[user] starts tightening the bolts on [victim]'s [limb.name]..."),
+		span_notice("[user] starts tightening the bolts on your [limb.name].")
+	)
+	if(!wrench.use_tool(victim, user, 3 SECONDS, volume = 50))
+		return TRUE
+	victim.visible_message(
+		span_notice("[user] wrenches [victim]'s [limb.name] back into place."),
+		span_notice("[user] wrenches your [limb.name] back into place.")
+	)
+	qdel(src)
+	return TRUE
 
 /datum/wound/blunt/bone/moderate/try_handling(mob/living/carbon/human/user, modifiers)
 	if(user.pulling != victim || user.zone_selected != limb.body_zone || user.a_intent == INTENT_GRAB)
