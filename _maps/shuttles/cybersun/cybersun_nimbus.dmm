@@ -1227,19 +1227,20 @@
 	pixel_x = 4;
 	pixel_y = 10
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 3;
-	pixel_x = -1
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 4;
-	pixel_x = 6
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 5;
-	pixel_x = 13
-	},
 /obj/structure/table,
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = -9;
+	pixel_y = 6;
+	icon_state = "sglass-5-"
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = -7;
+	pixel_y = 1;
+	icon_state = "sglass-5-"
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	icon_state = "sglass-5-"
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/ccommons)
 "wM" = (
@@ -2500,13 +2501,19 @@
 	name = "window shutters";
 	id = "zkitchen"
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_x = -8;
-	pixel_y = 13
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = -2;
+	pixel_y = 11;
+	icon_state = "sglass-5-"
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_y = 2;
-	pixel_x = -2
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = -2;
+	pixel_y = 5;
+	icon_state = "sglass-5-"
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = -2;
+	icon_state = "sglass-5-"
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
