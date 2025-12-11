@@ -631,14 +631,14 @@
 
 /obj/machinery/porta_turret/proc/set_target(atom/movable/target = null)
 	if(current_target)
-		UnregisterSignal(current_target, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(current_target, COMSIG_QDELETING)
 
 	retaliating = FALSE
 	current_target = target
 	target_beam.set_target(target)
 
 	if(current_target)
-		RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(set_target))
+		RegisterSignal(target, COMSIG_QDELETING, PROC_REF(set_target))
 
 /obj/machinery/porta_turret/proc/set_state(on, new_lethal, new_flags)
 	if(!isnull(new_flags))
