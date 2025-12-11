@@ -100,7 +100,7 @@
 	name = "compression tank top (Greyscale)"
 	icon_state = "comptank"
 
-/datum/sprite_accessory/undershirt/comptank
+/datum/sprite_accessory/undershirt/compcropped
 	name = "cropped compression top (Greyscale)"
 	icon_state = "compcropped"
 
