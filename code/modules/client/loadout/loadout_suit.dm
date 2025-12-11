@@ -23,10 +23,6 @@
 	display_name = "baggy shirt"
 	path = /obj/item/clothing/suit/jacket/baggy
 
-/datum/gear/suit/jacket/bomber
-	display_name = "leather coat"
-	path = /obj/item/clothing/suit/jacket/leathercoat
-
 /datum/gear/suit/jacket/leather
 	display_name = "leather jacket"
 	path = /obj/item/clothing/suit/jacket/leather
