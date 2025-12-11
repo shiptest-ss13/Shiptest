@@ -315,6 +315,8 @@
 	else
 		if(has_reagent(/datum/reagent/toxin/formaldehyde, 1)) // No organ decay if the body contains formaldehyde.
 			return
+		else if(has_reagent(/datum/reagent/medicine/preserver, 0.1)) //Evil formaldehyde that doesn't poison you
+			return
 		for(var/V in internal_organs)
 			var/obj/item/organ/O = V
 			O.on_death() //Needed so organs decay while inside the body.
