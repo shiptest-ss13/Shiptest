@@ -1507,13 +1507,12 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
 	},
-/obj/machinery/door/airlock/engineering{
-	name = "Engineering";
-	req_one_access = list(1, 10)
-	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/machinery/door/airlock/engineering{
+	name = "Engineering Storage"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/starboard)
@@ -1580,7 +1579,7 @@
 "jN" = (
 /obj/machinery/door/airlock/security{
 	dir = 4;
-	name = "Engineering Storage";
+	name = "Field Engineering Storage";
 	req_one_access_txt = "1"
 	},
 /obj/effect/turf_decal/techfloor/orange{
@@ -3716,8 +3715,7 @@
 /obj/machinery/button/door{
 	dir = 1;
 	id = "bolide_engineering";
-	pixel_y = -20;
-	req_one_access = list(1, 10)
+	pixel_y = -20
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/starboard)
@@ -7253,10 +7251,6 @@
 /turf/open/floor/engine/hull/interior,
 /area/ship/crew/office)
 "Ry" = (
-/obj/machinery/door/airlock/engineering{
-	name = "Engineering Storage";
-	req_one_access = list(1, 10)
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -7269,6 +7263,10 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/machinery/door/airlock/engineering{
+	dir = 2;
+	name = "Engine Bay"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/port)
@@ -7338,11 +7336,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/starboard)
 "RJ" = (
-/obj/machinery/door/airlock/engineering{
-	dir = 4;
-	name = "Engineering";
-	req_one_access = list(1, 10)
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -7363,6 +7356,10 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
+	},
+/obj/machinery/door/airlock/engineering{
+	dir = 4;
+	name = "Engine Bay"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -7845,7 +7842,8 @@
 	name = "secure storage access";
 	pixel_x = -10;
 	pixel_y = -20;
-	req_access = list(3)
+	req_access = list(3);
+	req_one_access = list(1, 10)
 	},
 /obj/machinery/firealarm/directional/south{
 	pixel_x = 5

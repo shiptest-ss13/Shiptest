@@ -1437,7 +1437,8 @@
 /area/ship/engineering/engines/port)
 "lb" = (
 /obj/structure/railing/corner{
-	dir = 4
+	dir = 4;
+	layer = 2.89
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -2269,7 +2270,8 @@
 /area/ship/crew/office)
 "rs" = (
 /obj/structure/railing{
-	dir = 1
+	dir = 1;
+	layer = 2.89
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2281,6 +2283,7 @@
 	pixel_x = 21;
 	pixel_y = 0
 	},
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/construction)
 "rM" = (
@@ -3661,7 +3664,6 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 5
 	},
-/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "CZ" = (
@@ -3726,9 +3728,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
-	},
-/obj/machinery/camera/autoname{
-	dir = 1
 	},
 /obj/machinery/button/door{
 	id = "lib_dorm_shut";
@@ -4203,9 +4202,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
-/obj/machinery/camera/autoname{
-	dir = 5
-	},
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
@@ -4223,9 +4219,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
 /obj/item/radio/intercom/directional/south{
 	pixel_y = -31
 	},
@@ -4347,11 +4340,11 @@
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm/dormthree)
 "GP" = (
+/obj/structure/closet/crate/solarpanel_small,
+/obj/effect/mapping_helpers/crate_shelve,
 /obj/machinery/camera/autoname{
 	dir = 5
 	},
-/obj/structure/closet/crate/solarpanel_small,
-/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/construction)
 "GQ" = (
@@ -4502,6 +4495,9 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/west,
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "HM" = (
@@ -5108,9 +5104,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "MZ" = (
-/obj/machinery/door/airlock/engineering{
-	req_one_access = list(1, 10)
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
@@ -5120,6 +5113,10 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock/engineering{
+	dir = 2;
+	name = "Engine Bay"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Nc" = (
@@ -5316,7 +5313,6 @@
 	dir = 10
 	},
 /obj/machinery/meter,
-/obj/structure/reagent_dispensers/watertank,
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
@@ -6763,11 +6759,13 @@
 /area/ship/engineering)
 "YA" = (
 /obj/structure/railing{
-	dir = 1
+	dir = 1;
+	layer = 2.89
 	},
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
 	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/construction)
 "YD" = (
@@ -6780,9 +6778,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "YG" = (
