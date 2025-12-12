@@ -12,7 +12,7 @@
 	if(!name)
 		name = "Crystal Infection Study"
 	if(!desc)
-		desc = "[SSmissions.get_researcher_name()] has requested the capture of an anomalous crystal lifeform for the sake of research into the phenomena. \
+		desc = "[SSmissions.get_researcher_name()] have requested the capture of an anomalous crystal lifeform for the sake of research into the phenomena. \
 				Take care in capturing it, as entities infected by crystals tend to have enhanced protections for themselves. A lifeform capture unit will be provided for safety's sake."
 	. = ..()
 

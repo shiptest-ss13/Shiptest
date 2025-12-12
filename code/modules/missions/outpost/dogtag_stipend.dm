@@ -16,7 +16,7 @@
 	. = ..()
 	num_wanted = rand(num_wanted-4,num_wanted+6)
 	if(!desc)
-		desc = "The [pirate_type] are ramping up activity near [source_outpost]. We are offering a [value]cr bounty to kill at least [num_wanted] of them, on top of the usual pirate bounty.\
+		desc = "The [pirate_type] are ramping up activity near [source_outpost]. We are offering a [value]cr bounty to kill at least [num_wanted] of them, in addition to the usual pirate bounty. \
 		Retrieve their dogtags, put them in the provided case, and return it to us to complete the bounty."
 	value += (num_wanted*200)
 
