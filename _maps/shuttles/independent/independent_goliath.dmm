@@ -272,7 +272,20 @@
 /area/ship/engineering/atmospherics)
 "br" = (
 /obj/structure/catwalk/over,
-/turf/open/floor/plating,
+/obj/item/toy/plush/goatplushie,
+/obj/item/clothing/mask/cigarette/rollie/cannabis{
+	pixel_y = 6;
+	pixel_x = -4
+	},
+/obj/item/lighter/greyscale{
+	pixel_y = -3;
+	pixel_x = 14
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_cannabis{
+	pixel_x = 14;
+	pixel_y = -7
+	},
+/turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "bu" = (
 /obj/machinery/door/firedoor/border_only{
@@ -322,7 +335,7 @@
 "bJ" = (
 /obj/effect/turf_decal/industrial/traffic,
 /obj/structure/catwalk/over,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "bL" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -440,7 +453,7 @@
 	pixel_x = 1;
 	pixel_y = 29
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "cu" = (
 /obj/effect/turf_decal/techfloor{
@@ -612,7 +625,7 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "ef" = (
 /obj/machinery/power/terminal,
@@ -1018,7 +1031,7 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "hC" = (
 /obj/structure/closet/crate/bin,
@@ -1923,7 +1936,7 @@
 	},
 /obj/structure/catwalk/over,
 /obj/item/radio/intercom/directional/west,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "mI" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1972,7 +1985,7 @@
 "nr" = (
 /obj/structure/catwalk/over,
 /obj/machinery/atmospherics/pipe/manifold/dark/visible/layer4,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "nv" = (
 /obj/machinery/bluespace_drive{
@@ -2028,7 +2041,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "nP" = (
 /turf/open/floor/engine/hull/reinforced,
@@ -2038,7 +2051,7 @@
 /obj/structure/railing{
 	dir = 9
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "oe" = (
 /obj/machinery/power/terminal{
@@ -2267,7 +2280,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "pF" = (
 /obj/structure/catwalk/over/plated_catwalk/white,
@@ -3206,7 +3219,7 @@
 "uE" = (
 /obj/structure/catwalk/over,
 /obj/effect/turf_decal/industrial/traffic,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "uH" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
@@ -4327,7 +4340,7 @@
 /obj/structure/marker_beacon{
 	picked_color = "Burgundy"
 	},
-/turf/open/floor/plasteel/mono/dark,
+/turf/open/floor/plasteel/mono/dark/airless,
 /area/ship/external/dark)
 "Cw" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -5458,7 +5471,7 @@
 	width = 14;
 	name = "Goliath Hangar Exterior"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "IO" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden{
@@ -5714,7 +5727,7 @@
 /obj/effect/turf_decal/industrial/traffic/corner,
 /obj/structure/catwalk/over,
 /obj/item/radio/intercom/directional/west,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "JY" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden{
@@ -5823,7 +5836,7 @@
 	pixel_y = -30
 	},
 /obj/effect/turf_decal/industrial/traffic/corner,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "KA" = (
 /obj/structure/cable{
@@ -6145,7 +6158,7 @@
 	dir = 8
 	},
 /obj/item/radio/intercom/directional/east,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "MP" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden{
@@ -6245,26 +6258,6 @@
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
-"Nl" = (
-/obj/structure/catwalk/over,
-/obj/item/toy/plush/goatplushie,
-/obj/item/clothing/mask/cigarette/rollie/cannabis{
-	pixel_y = 6;
-	pixel_x = -4
-	},
-/obj/item/lighter/greyscale{
-	pixel_y = -3;
-	pixel_x = 14
-	},
-/obj/item/storage/fancy/cigarettes/cigpack_cannabis{
-	pixel_x = 14;
-	pixel_y = -7
-	},
-/obj/structure/railing{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ship/external/dark)
 "Nr" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
@@ -6489,13 +6482,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
-"OJ" = (
-/obj/structure/catwalk/over,
-/obj/structure/marker_beacon{
-	picked_color = "Burgundy"
-	},
-/turf/open/floor/plating,
-/area/ship/external/dark)
 "OL" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/electrical)
@@ -7018,7 +7004,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
 	dir = 8
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "Sd" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
@@ -7247,7 +7233,7 @@
 /obj/structure/marker_beacon{
 	picked_color = "Lime"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "TE" = (
 /obj/structure/closet/secure_closet{
@@ -7403,7 +7389,7 @@
 /obj/structure/marker_beacon{
 	picked_color = "Lime"
 	},
-/turf/open/floor/plasteel/mono/dark,
+/turf/open/floor/plasteel/mono/dark/airless,
 /area/ship/external/dark)
 "Uo" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -7639,7 +7625,7 @@
 /obj/structure/railing{
 	dir = 10
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "VF" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -8259,7 +8245,7 @@
 /obj/structure/marker_beacon{
 	picked_color = "Lime"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "Zr" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -8501,9 +8487,9 @@ Cs
 Cs
 re
 On
-Nl
-br
-br
+nM
+dk
+dk
 VC
 yq
 JG
@@ -8513,7 +8499,7 @@ JG
 JG
 nP
 od
-br
+dk
 cq
 nM
 YF
@@ -8572,11 +8558,11 @@ NS
 HC
 Eb
 LB
-br
-br
-br
-br
-br
+dk
+dk
+dk
+dk
+dk
 nP
 jA
 KZ
@@ -8791,7 +8777,7 @@ JG
 "}
 (14,1,1) = {"
 JG
-br
+dk
 Zr
 eW
 Lw
@@ -8824,7 +8810,7 @@ JG
 "}
 (15,1,1) = {"
 JG
-br
+dk
 IF
 pP
 xF
@@ -8890,7 +8876,7 @@ JG
 "}
 (17,1,1) = {"
 JG
-br
+dk
 IF
 jf
 fA
@@ -8923,7 +8909,7 @@ JG
 "}
 (18,1,1) = {"
 JG
-br
+dk
 Zr
 UB
 Qb
@@ -9413,7 +9399,7 @@ Tr
 zi
 Iz
 ow
-br
+dk
 JG
 "}
 (33,1,1) = {"
@@ -9446,7 +9432,7 @@ iJ
 iv
 sU
 ow
-OJ
+EQ
 JG
 "}
 (34,1,1) = {"
@@ -9578,7 +9564,7 @@ uN
 Zl
 eq
 Fi
-OJ
+EQ
 JG
 "}
 (38,1,1) = {"
@@ -9611,7 +9597,7 @@ Sz
 EJ
 yG
 Fi
-br
+dk
 JG
 "}
 (39,1,1) = {"
@@ -9703,7 +9689,7 @@ kw
 MJ
 RE
 br
-br
+dk
 qz
 CT
 mI
@@ -9735,8 +9721,8 @@ VO
 VO
 VO
 RE
-br
-br
+dk
+dk
 qz
 Mh
 Hd
