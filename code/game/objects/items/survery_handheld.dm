@@ -44,7 +44,7 @@
 		var/obj/effect/anomaly/scan_target = O
 		to_chat(user, span_notice("[src]'s primary field is fluctuating along frequency [format_frequency(scan_target.core.frequency)], code [scan_target.core.code]. An unstable wavelength is at code [scan_target.core.code_b]!"))
 		scan_target.drops_core = FALSE
-		scan_target.visible_message(span_warning("Scanning [src] has solidified it's presence in the area! It can no longer be stabilized"))
+		scan_target.visible_message(span_warning("Scanning [src] has solidified it's presence in the area! It can no longer be stabilized into a core!"))
 		return
 	return
 
