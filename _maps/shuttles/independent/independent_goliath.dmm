@@ -1989,6 +1989,10 @@
 "nj" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/medical)
+"nk" = (
+/obj/machinery/atmospherics/pipe/simple/dark/visible/layer5,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering/communications)
 "nr" = (
 /obj/structure/catwalk/over,
 /obj/machinery/atmospherics/pipe/manifold/dark/visible/layer4,
@@ -2719,7 +2723,6 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/stock_parts/subspace/transmitter,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "sv" = (
@@ -9798,7 +9801,7 @@ JG
 JG
 hs
 qz
-qz
+nk
 qz
 qz
 hs
