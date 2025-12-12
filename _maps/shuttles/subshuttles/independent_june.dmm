@@ -339,7 +339,6 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "z" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater,
 /obj/structure/window/reinforced/survival_pod{
 	dir = 4
 	},
@@ -350,6 +349,7 @@
 	dir = 4;
 	id = "midwich_blast4"
 	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "A" = (
