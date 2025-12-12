@@ -4,6 +4,7 @@ GLOBAL_LIST_INIT(immerse_ignored_movable, typecacheof(list(
 	/mob/dead,
 	/obj/projectile,
 	/obj/structure/platform,
+	/obj/structure/railing,
 )))
 
 /// A visual element that makes movables entering the attached turfs look immersed into that turf.
@@ -74,8 +75,7 @@ GLOBAL_LIST_INIT(immerse_ignored_movable, typecacheof(list(
 	if(QDELETED(movable))
 		return
 
-	if(HAS_TRAIT(movable, TRAIT_IMMERSED))
-	//|| HAS_TRAIT(movable, TRAIT_WALLMOUNTED
+	if(HAS_TRAIT(movable, TRAIT_IMMERSED)|| HAS_TRAIT(movable, TRAIT_WALLMOUNTED))
 		return
 	if(!ISINRANGE(PLANE_TO_TRUE(movable.plane), FLOOR_PLANE, GAME_PLANE))
 		return

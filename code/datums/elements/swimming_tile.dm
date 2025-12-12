@@ -11,6 +11,12 @@
 	var/ticking_oxy_damage
 	/// Probability to exhaust our swimmer
 	var/exhaust_swimmer_prob
+	/// Tracked list of all mobs that are present in our turfs
+	var/list/mob/swimmers = list()
+
+/datum/element/swimming_tile/Destroy(force)
+	swimmers = null
+	return ..()
 
 /datum/element/swimming_tile/Attach(turf/target, stamina_entry_cost = 7, ticking_stamina_cost = 5, ticking_oxy_damage = 2, exhaust_swimmer_prob = 30)
 	. = ..()
@@ -39,20 +45,32 @@
 /// When something enters the water set up to start drowning it
 /datum/element/swimming_tile/proc/enter_water(atom/source, mob/living/swimmer)
 	SIGNAL_HANDLER
-	if (!istype(swimmer))
+
+	if(!istype(swimmer))
 		return
+
 	if(QDELETED(swimmer))
 		return
-	if(HAS_TRAIT(swimmer, TRAIT_IMMERSED))
-		return
-	RegisterSignal(swimmer, SIGNAL_ADDTRAIT(TRAIT_IMMERSED), PROC_REF(dip_in))
+
 	if(HAS_TRAIT(swimmer, TRAIT_IMMERSED))
 		dip_in(swimmer)
+
+	if(swimmer in swimmers)
+		return
+
+	RegisterSignal(swimmer, SIGNAL_ADDTRAIT(TRAIT_IMMERSED), PROC_REF(dip_in))
+	RegisterSignal(swimmer, COMSIG_QDELETING, PROC_REF(on_swimmer_del))
+	swimmers |= swimmer
 
 /// When something exits the water it probably shouldn't drowning
 /datum/element/swimming_tile/proc/out_of_water(atom/source, mob/living/landlubber)
 	SIGNAL_HANDLER
-	UnregisterSignal(landlubber, list(SIGNAL_ADDTRAIT(TRAIT_IMMERSED)))
+	UnregisterSignal(landlubber, list(SIGNAL_ADDTRAIT(TRAIT_IMMERSED), COMSIG_QDELETING))
+	swimmers -= landlubber
+
+/datum/element/swimming_tile/proc/on_swimmer_del(atom/source)
+	SIGNAL_HANDLER
+	out_of_water(null, source)
 
 /// When we've validated that someone is actually in the water start drowning the-I mean, start swimming!
 /datum/element/swimming_tile/proc/dip_in(mob/living/floater)
