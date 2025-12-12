@@ -87,6 +87,11 @@
 /obj/item/clothing/head/beret/med,
 /obj/item/healthanalyzer,
 /obj/item/clothing/gloves/color/latex/nitrile,
+/obj/item/sensor_device,
+/obj/item/bonesetter,
+/obj/item/storage/pill_bottle/charcoal,
+/obj/item/reagent_containers/glass/bottle/formaldehyde,
+/obj/item/storage/box/syringes,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "ao" = (
@@ -2224,6 +2229,10 @@
 	},
 /obj/item/clothing/suit/apron/surgical,
 /obj/item/clothing/mask/surgical,
+/obj/item/reagent_containers/medigel/sterilizine{
+	pixel_x = 10;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "ph" = (
@@ -3423,7 +3432,7 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
 	dir = 8;
-	id = "goliathblasthangar2"
+	id = "goliathblastlounge"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -5336,6 +5345,13 @@
 /area/ship/hangar)
 "HC" = (
 /obj/structure/chair/sofa/grey/left/directional/north,
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_x = 6;
+	pixel_y = -20;
+	id = "goliathblastlounge";
+	name = "Exterior Window Lockdown"
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/maintenance/port)
 "HJ" = (
@@ -8296,8 +8312,7 @@
 /obj/machinery/door/airlock/medical/glass{
 	name = "Infirmary";
 	dir = 4;
-	req_access_txt = null;
-	req_one_access = list(5,41)
+	req_access_txt = null
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
