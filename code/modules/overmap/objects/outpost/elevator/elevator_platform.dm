@@ -60,7 +60,7 @@
 
 	var/static/list/connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(AddItemOnPlat),
-		COMSIG_ATOM_CREATED = PROC_REF(AddItemOnPlat),
+		COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZED_ON = PROC_REF(AddItemOnPlat),
 		COMSIG_ATOM_EXITED = PROC_REF(RemoveItemFromPlat)
 	)
 	AddElement(/datum/element/connect_loc, connections)
