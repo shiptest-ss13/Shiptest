@@ -10,7 +10,7 @@ GLOBAL_LIST_INIT(immerse_ignored_movable, typecacheof(list(
 /// May the gods forgive me for the bullshit you're about to witness
 /datum/element/immerse
 	element_flags = ELEMENT_DETACH | ELEMENT_BESPOKE
-	id_arg_index = 2
+	argument_hash_start_idx = 2
 
 	/// An association list of turfs that have this element attached and their affected contents.
 	var/list/attached_turf_contents = list()
@@ -97,7 +97,7 @@ GLOBAL_LIST_INIT(immerse_ignored_movable, typecacheof(list(
 		RegisterSignal(movable, COMSIG_LIVING_POST_UPDATE_TRANSFORM, PROC_REF(on_update_transform))
 
 	RegisterSignal(movable, COMSIG_ATOM_SPIN_ANIMATION, PROC_REF(on_spin_animation))
-	RegisterSignal(movable, COMSIG_PARENT_QDELETING, PROC_REF(on_movable_qdel))
+	RegisterSignal(movable, COMSIG_QDELETING, PROC_REF(on_movable_qdel))
 	try_immerse(movable, buckled)
 	LAZYADD(attached_turf_contents[source], movable)
 	ADD_TRAIT(movable, TRAIT_IMMERSED, ELEMENT_TRAIT(src))
@@ -201,7 +201,7 @@ GLOBAL_LIST_INIT(immerse_ignored_movable, typecacheof(list(
 	try_unimmerse(movable, buckled)
 	LAZYREMOVE(attached_turf_contents[source], movable)
 
-	UnregisterSignal(movable, list(COMSIG_LIVING_SET_BUCKLED, COMSIG_PARENT_QDELETING, COMSIG_LIVING_UPDATE_OFFSETS, COMSIG_ATOM_SPIN_ANIMATION, COMSIG_LIVING_POST_UPDATE_TRANSFORM))
+	UnregisterSignal(movable, list(COMSIG_LIVING_SET_BUCKLED, COMSIG_QDELETING, COMSIG_LIVING_UPDATE_OFFSETS, COMSIG_ATOM_SPIN_ANIMATION, COMSIG_LIVING_POST_UPDATE_TRANSFORM))
 	REMOVE_TRAIT(movable, TRAIT_IMMERSED, ELEMENT_TRAIT(src))
 
 /// Generate a mask filter mutable to use as render_source for the alpha filter based on provided width, height and immersion state

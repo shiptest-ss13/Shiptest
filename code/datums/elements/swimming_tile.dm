@@ -1,7 +1,7 @@
 /// A tile which drains stamina of people crossing it and deals oxygen damage to people who are prone inside of it
 /datum/element/swimming_tile
 	element_flags = ELEMENT_BESPOKE
-	id_arg_index = 2
+	argument_hash_start_idx = 2
 	element_flags = ELEMENT_DETACH | ELEMENT_BESPOKE
 	/// How much stamina does it cost to enter this tile?
 	var/stamina_entry_cost
@@ -42,6 +42,8 @@
 	if (!istype(swimmer))
 		return
 	if(QDELETED(swimmer))
+		return
+	if(HAS_TRAIT(swimmer, TRAIT_IMMERSED))
 		return
 	RegisterSignal(swimmer, SIGNAL_ADDTRAIT(TRAIT_IMMERSED), PROC_REF(dip_in))
 	if(HAS_TRAIT(swimmer, TRAIT_IMMERSED))
