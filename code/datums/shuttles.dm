@@ -498,4 +498,4 @@
 	file_name = "independent_june"
 	name = "June-class Dropship"
 	token_icon_state = "ship_tiny_generic"
-	prefix = "ISV"
+	prefix = "SV"
