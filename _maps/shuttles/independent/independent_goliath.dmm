@@ -1273,10 +1273,10 @@
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor6"
 	},
+/obj/machinery/atmospherics/pipe/simple/dark/visible/layer4,
 /obj/machinery/atmospherics/components/binary/valve{
 	name = "waste release"
 	},
-/obj/machinery/atmospherics/pipe/simple/dark/visible/layer4,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "jf" = (
@@ -1723,6 +1723,8 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/light/small/directional/south,
+/obj/structure/table,
+/obj/machinery/cell_charger,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "ll" = (
@@ -2307,6 +2309,9 @@
 	pixel_x = -14;
 	pixel_y = 23;
 	specialfunctions = 4
+	},
+/obj/structure/mirror{
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/toilet)
@@ -3712,12 +3717,11 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "xT" = (
-/obj/structure/table,
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/light/directional/south,
+/obj/structure/closet/emcloset/wall/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "yg" = (
@@ -3887,6 +3891,8 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 1
 	},
+/obj/item/storage/fancy/egg_box,
+/obj/item/storage/fancy/egg_box,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "yU" = (
@@ -4018,6 +4024,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "zP" = (
@@ -6734,7 +6741,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
 "Qp" = (
-/obj/structure/closet/emcloset/wall/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/firealarm/directional/east{
 	pixel_y = 6
@@ -6743,6 +6749,7 @@
 /obj/structure/extinguisher_cabinet/directional/east{
 	pixel_y = -6
 	},
+/obj/structure/closet/cabinet,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "Qt" = (
@@ -8120,7 +8127,7 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/hatch{
-	name = "Hangar B"
+	name = "Lounge"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
