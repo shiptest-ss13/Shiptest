@@ -183,7 +183,7 @@
 	dry()
 	add_blood_DNA(list("Non-human DNA" = random_blood_type()))
 	if(move_on_init)
-		pixel_x = rand(-5,5)
+		pixel_x = rand(-5, 5)
 		pixel_y = rand(-5, 5)
 
 
