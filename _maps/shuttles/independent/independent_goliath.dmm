@@ -1273,10 +1273,10 @@
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor6"
 	},
-/obj/machinery/atmospherics/pipe/simple/dark/visible/layer4,
 /obj/machinery/atmospherics/components/binary/valve{
 	name = "waste release"
 	},
+/obj/machinery/atmospherics/pipe/simple/dark/visible/layer5,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "jf" = (
@@ -3546,7 +3546,7 @@
 /obj/machinery/atmospherics/pipe/simple/dark/visible{
 	dir = 9
 	},
-/obj/machinery/atmospherics/pipe/simple/dark/visible/layer4,
+/obj/machinery/atmospherics/pipe/simple/dark/visible/layer5,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "wr" = (
@@ -3921,7 +3921,7 @@
 /obj/machinery/door/poddoor{
 	id = "goliathblastbridge"
 	},
-/obj/machinery/atmospherics/pipe/simple/dark/visible/layer4,
+/obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "zi" = (
