@@ -28,7 +28,7 @@
 
 // sliceable into 3xdoughslices
 /obj/item/food/flatdough/make_processable()
-	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/doughslice, 3, 3 SECONDS, table_required = TRUE, /*screentip_verb = "Slice"*/)
+	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/doughslice, 4, 3 SECONDS, table_required = TRUE, /*screentip_verb = "Slice"*/)
 
 /obj/item/food/pizzabread
 	name = "pizza bread"
