@@ -26,6 +26,16 @@
 	loot_subtype_path = /obj/effect/spawner/costume
 	loot = list()
 
+/obj/effect/spawner/random/clothing/spooky_masks
+	name = "random costume spawner"
+	icon_state = "costume"
+	loot_subtype_path = /obj/item/clothing/mask/spooky
+
+/obj/effect/spawner/random/clothing/day_of_dead
+	loot = list(
+		/obj/item/clothing/mask/spooky/skeleton = 5,
+	)
+
 /obj/effect/spawner/random/clothing/beret_or_rabbitears
 	name = "beret or rabbit ears spawner"
 	loot = list(
