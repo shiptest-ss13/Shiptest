@@ -655,7 +655,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 							maxSeverity = 2 //part of gitting gud is rng mitigation
 						var/severity = rand(1,maxSeverity) //pray to RNGesus. PRAY, PIGS
 						if(severity == 1)
-							to_chat(M, span_userdanger("You suddenly feel slightly nauseated.") )
+							to_chat(M, span_userdanger("You suddenly feel slightly nauseated."))
 						if(severity == 2)
 							to_chat(usr, span_userdanger("You suddenly feel extremely nauseated and hunch over until it passes."))
 							M.Stun(60)
