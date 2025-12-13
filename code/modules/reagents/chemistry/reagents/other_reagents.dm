@@ -874,6 +874,7 @@
 	color = "#A5F0EE" // rgb: 165, 240, 238
 	taste_description = "sourness"
 	reagent_weight = 0.6 //so it sprays further
+	var/robot_clean_power = 2
 	var/clean_types = CLEAN_WASH
 
 /datum/reagent/space_cleaner/expose_obj(obj/O, reac_volume)
@@ -899,6 +900,7 @@
 	description = "A powerful, acidic cleaner sold by Waffle Co. Affects organic matter while leaving other objects unaffected."
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 	taste_description = "acid"
+	robot_clean_power = 15
 
 /datum/reagent/space_cleaner/ez_clean/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(3.33)

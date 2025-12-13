@@ -2,7 +2,7 @@
 	name = "\improper Human"
 	id = SPECIES_HUMAN
 	default_color = "FFFFFF"
-	species_traits = list(HAIR,FACEHAIR,LIPS,SCLERA,EMOTE_OVERLAY,SKINCOLORS,HAS_FLESH,HAS_BONE)
+	species_traits = list(HAIR,FACEHAIR,LIPS,SCLERA,EMOTE_OVERLAY,SKINCOLORS)
 	default_features = list("mcolor" = "FFF", "tail_human" = "None", "ears" = "None", "wings" = "None")
 	mutant_bodyparts = list("ears", "tail_human")
 	use_skintones = TRUE

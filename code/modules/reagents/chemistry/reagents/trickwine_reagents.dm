@@ -356,9 +356,9 @@
 	var/mob/living/carbon/guy_who_probably_got_shot = M
 	if(prob(20) && length(guy_who_probably_got_shot.all_wounds))
 		to_chat(M, span_warning("Your cuts and punctures sear for a second, before ceasing their bloody flow!"))
-		for(var/datum/wound/slash/cut in guy_who_probably_got_shot.all_wounds)
+		for(var/datum/wound/slash/flesh/cut in guy_who_probably_got_shot.all_wounds)
 			cut.remove_wound()
-		for(var/datum/wound/pierce/hole in guy_who_probably_got_shot.all_wounds)
+		for(var/datum/wound/pierce/bleed/hole in guy_who_probably_got_shot.all_wounds)
 			hole.remove_wound()
 
 	if(prob(10) && length(guy_who_probably_got_shot.all_wounds))

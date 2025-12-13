@@ -28,7 +28,7 @@
 	if(cavity_item)
 		cavity_item.forceMove(drop_location())
 		cavity_item = null
-	..()
+	return ..()
 
 /obj/item/bodypart/chest/monkey
 	icon = 'icons/mob/animal_parts.dmi'
@@ -70,6 +70,7 @@
 	px_x = -6
 	px_y = 0
 	can_be_disabled = TRUE
+	biological_state = BIO_STANDARD_JOINTED
 
 /obj/item/bodypart/l_arm/set_owner(new_owner)
 	. = ..()
@@ -161,6 +162,7 @@
 	px_y = 0
 	max_stamina_damage = 50
 	can_be_disabled = TRUE
+	biological_state = BIO_STANDARD_JOINTED
 
 /obj/item/bodypart/r_arm/set_owner(new_owner)
 	. = ..()
@@ -233,6 +235,9 @@
 	can_be_disabled = FALSE
 	max_damage = 100
 	animal_origin = ALIEN_BODYPART
+
+/obj/item/bodypart/leg
+	biological_state = BIO_STANDARD_JOINTED
 
 /obj/item/bodypart/leg/left
 	name = "left leg"
