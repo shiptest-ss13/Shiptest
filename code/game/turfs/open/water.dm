@@ -68,7 +68,7 @@
 	AddElement(/datum/element/immerse, immerse_overlay, immerse_overlay_alpha)
 	immerse_added = TRUE
 	if(is_swimming_tile)
-		AddElement(/datum/element/swimming_tile, stamina_entry_cost, ticking_stamina_cost, ticking_oxy_damage, exhaust_swimmer_prob)
+		AddElement(/datum/element/swimming_tile, stamina_entry_cost, ticking_oxy_damage, exhaust_swimmer_prob)
 	return TRUE
 
 /turf/open/water/Destroy()

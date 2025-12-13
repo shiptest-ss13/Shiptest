@@ -87,7 +87,7 @@
 		floater.apply_damage(clamp((stamina_entry_cost) * gravity_modifier, 1, 100), STAMINA, no_animation = TRUE)
 		floater.apply_status_effect(/datum/status_effect/exercised, 15 SECONDS)
 
-	floater.apply_status_effect(/datum/status_effect/swimming, ticking_stamina_cost, ticking_oxy_damage) // Apply the status anyway for when they stop riding
+	floater.apply_status_effect(/datum/status_effect/swimming, ticking_oxy_damage) // Apply the status anyway for when they stop riding
 
 /* clothing weight needs an audit before this
 /// The weight of our swimmers clothing, including slowdown, impacts the amount of stamina damage dealt on dipping in.
@@ -109,15 +109,15 @@
 	status_type = STATUS_EFFECT_UNIQUE
 	tick_interval = 5 SECONDS
 	/// How much damage do we do every tick interval?
-	var/stamina_per_interval
+	//var/stamina_per_interval
 	/// How much oxygen do we lose every tick interval in which we are drowning?
 	var/oxygen_per_interval
 	/// Probability that we lose breaths while drowning
 	var/drowning_process_probability = 20
 
-/datum/status_effect/swimming/on_creation(mob/living/new_owner, ticking_stamina_cost = 7, ticking_oxy_damage = 2)
+/datum/status_effect/swimming/on_creation(mob/living/new_owner, ticking_oxy_damage = 2)
 	. = ..()
-	stamina_per_interval = ticking_stamina_cost
+	//stamina_per_interval = ticking_stamina_cost
 	oxygen_per_interval = ticking_oxy_damage
 	//if (!HAS_TRAIT(owner, TRAIT_SWIMMER))
 	owner.add_movespeed_modifier(/datum/movespeed_modifier/swimming_deep)
