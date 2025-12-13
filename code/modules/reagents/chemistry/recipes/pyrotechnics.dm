@@ -303,7 +303,7 @@
 		var/atom/A = holder.my_atom
 		A.flash_lighting_fx(_range = (range + 2))
 	for(var/mob/living/C in get_hearers_in_view(range, location))
-		if(C.flash_act(affect_silicon = TRUE))
+		if(C.flash_act(affect_silicon = TRUE) & FLASH_EFFECT)
 			if(get_dist(C, location) < 4)
 				C.Paralyze(60)
 			else
@@ -322,7 +322,7 @@
 		var/atom/A = holder.my_atom
 		A.flash_lighting_fx(_range = (range + 2))
 	for(var/mob/living/C in get_hearers_in_view(range, location))
-		if(C.flash_act(affect_silicon = TRUE))
+		if(C.flash_act(affect_silicon = TRUE) & FLASH_EFFECT)
 			if(get_dist(C, location) < 4)
 				C.Paralyze(60)
 			else
