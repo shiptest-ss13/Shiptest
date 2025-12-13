@@ -5,8 +5,6 @@
 	element_flags = ELEMENT_DETACH | ELEMENT_BESPOKE
 	/// How much stamina does it cost to enter this tile?
 	var/stamina_entry_cost
-	/// How much stamina does it cost per tick interval to stay in this tile?
-	var/ticking_stamina_cost
 	/// How fast do we kill people who collapse?
 	var/ticking_oxy_damage
 	/// Probability to exhaust our swimmer
@@ -18,13 +16,13 @@
 	swimmers = null
 	return ..()
 
-/datum/element/swimming_tile/Attach(turf/target, stamina_entry_cost = 7, ticking_stamina_cost = 5, ticking_oxy_damage = 2, exhaust_swimmer_prob = 30)
+/datum/element/swimming_tile/Attach(turf/target, stamina_entry_cost = 7, ticking_oxy_damage = 2, exhaust_swimmer_prob = 30)
 	. = ..()
 	if(!isturf(target))
 		return ELEMENT_INCOMPATIBLE
 
 	src.stamina_entry_cost = stamina_entry_cost
-	src.ticking_stamina_cost = ticking_stamina_cost
+	//src.ticking_stamina_cost = ticking_stamina_cost
 	src.ticking_oxy_damage = ticking_oxy_damage
 	src.exhaust_swimmer_prob = exhaust_swimmer_prob
 
@@ -81,17 +79,17 @@
 
 		//First, we determine our effective stamina entry cost baseline. This includes the value from the water, as well as any heavy clothing being worn. The strength trait halves this value.
 		//effective_stamina_entry_cost = HAS_TRAIT(floater, TRAIT_STRENGTH) ? (stamina_entry_cost + clothing_weight(floater)) : ((stamina_entry_cost + clothing_weight(floater)) / 2)
-		var/effective_stamina_entry_cost = (stamina_entry_cost + clothing_weight(floater))
 
 		//Being in high gravity doubles our effective stamina cost
 		var/gravity_modifier = floater.has_gravity() > STANDARD_GRAVITY ? 2 : 1
 
 
-		floater.apply_damage(clamp((effective_stamina_entry_cost) * gravity_modifier, 1, 100), STAMINA, no_animation = TRUE)
+		floater.apply_damage(clamp((stamina_entry_cost) * gravity_modifier, 1, 100), STAMINA, no_animation = TRUE)
 		floater.apply_status_effect(/datum/status_effect/exercised, 15 SECONDS)
 
 	floater.apply_status_effect(/datum/status_effect/swimming, ticking_stamina_cost, ticking_oxy_damage) // Apply the status anyway for when they stop riding
 
+/* clothing weight needs an audit before this
 /// The weight of our swimmers clothing, including slowdown, impacts the amount of stamina damage dealt on dipping in.
 /datum/element/swimming_tile/proc/clothing_weight(mob/living/floater)
 	var/extra_stamina_weight = 0
@@ -100,6 +98,8 @@
 			continue
 		extra_stamina_weight += (clamp(equipped_item.w_class - 2, 0, 100) + equipped_item.slowdown) //Clothing that speeds us up reduces the stamina drain!
 	return extra_stamina_weight
+*/
+
 
 ///Added by the swimming_tile element. Drains stamina over time until the owner stops being immersed. Starts drowning them if they are prone or small.
 /datum/status_effect/swimming
