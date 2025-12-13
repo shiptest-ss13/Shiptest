@@ -81,6 +81,8 @@
 	if(master_datum)
 		master_datum.remove_platform(src)
 
+	QDEL_LIST(lift_load)
+
 	// industrial lifts had some (only semi-functional) code here for splitting
 	// lifts into separate platforms on platform deletion. that's difficult to do well
 	// and not all THAT necessary, so i didn't do it. laziness wins!
@@ -88,6 +90,8 @@
 
 /obj/structure/elevator_platform/proc/AddItemOnPlat(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
+	if(AM == src)
+		return
 	if(AM in lift_load)
 		return
 	LAZYADD(lift_load, AM)
