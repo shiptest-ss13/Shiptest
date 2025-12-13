@@ -142,10 +142,10 @@
 						"jean baggy pants" = "baggyjean",
 						"woodland baggy pants" = "baggygreen",
 						"surplus baggy pants" = "baggycamo",
-						"surplus olive drab baggy pants" = "baggyfrontie"
-						"surplus gorlex baggy pants" = "baggyramzi"
-						"surplus green baggy pants" = "baggypgfmc"
-						"surplus navy pants" = "baggypgfn"
+						"surplus olive drab baggy pants" = "baggyfrontie",
+						"surplus gorlex baggy pants" = "baggyramzi",
+						"surplus green baggy pants" = "baggypgfmc",
+						"surplus navy pants" = "baggypgfn",
 						"surplus blue baggy pants" = "baggyclip"
 						)
 	supports_variations = DIGITIGRADE_VARIATION
