@@ -66,14 +66,34 @@
 	var/mob/living/carbon/spawnee = H
 	if(M.client && (M.client.prefs.equipped_gear && length(M.client.prefs.equipped_gear)))
 		var/obj/item/storage/box/loadout_dumper = new()
-		for(var/gear in M.client.prefs.equipped_gear)
-			var/datum/gear/new_gear = GLOB.gear_datums[gear]
-			new_gear.spawn_item(loadout_dumper, spawnee)
 		var/datum/component/storage/back_storage = spawnee.back.GetComponent(/datum/component/storage)
 		if(back_storage)
 			back_storage.handle_item_insertion(loadout_dumper, TRUE)
-		else if(!spawnee.put_in_hands(loadout_dumper, TRUE))
+		else if(!spawnee.put_in_hands(loadout_dumper))
 			to_chat(spawnee, "Unable to place loadout box.")
+			return
+
+		for(var/gear in M.client.prefs.equipped_gear)
+			var/datum/gear/new_gear = GLOB.gear_datums[gear]
+			if(new_gear)
+				// there should be a check for a player's job here for stuff like role restrictions, but since currently they are mostly tied to outfit and we cannot check outfit easily
+				// it sucks to try and implement. especially since we're getting further and further away from job datums
+				var/permitted = TRUE
+
+				if(length(new_gear.faction_whitelist) && !(faction_check(new_gear.faction_whitelist, H.faction, FALSE)))
+					permitted = FALSE
+
+				if(!permitted)
+					to_chat(M, span_warning("Your current faction does not permit you to spawn with [gear]!"))
+					continue
+
+			if(new_gear.path.w_class >= 3) // this is probably a bad idea but it stops normal sized objects from going into the loadout box
+				if(back_storage)
+					new_gear.spawn_item(spawnee.back, spawnee)
+				else
+					new_gear.spawn_item(get_turf(spawnee), spawnee)
+			else
+				new_gear.spawn_item(loadout_dumper, spawnee)
 
 /datum/job/proc/override_latejoin_spawn(mob/living/carbon/human/H)		//Return TRUE to force latejoining to not automatically place the person in latejoin shuttle/whatever.
 	return FALSE
