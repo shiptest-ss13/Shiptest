@@ -9,9 +9,9 @@
 	var/list/gases = null
 	var/list/products = null
 	var/danger_reagent = null
-	var/low_alert_category = "not_enough_oxy"
+	var/low_alert_category = ALERT_NOT_ENOUGH_OXYGEN
 	var/low_alert_datum =  /atom/movable/screen/alert/not_enough_oxy
-	var/high_alert_category = "too_much_oxy"
+	var/high_alert_category = ALERT_TOO_MUCH_OXYGEN
 	var/high_alert_datum =  /atom/movable/screen/alert/too_much_oxy
 
 /datum/breathing_class/proc/get_effective_pp(datum/gas_mixture/breath)

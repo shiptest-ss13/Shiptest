@@ -86,10 +86,6 @@
 	name = "Bowlcut"
 	icon_state = "hair_bowlcut"
 
-/datum/sprite_accessory/hair/bowlcut2
-	name = "Bowlcut 2"
-	icon_state = "hair_bowlcut2"
-
 /datum/sprite_accessory/hair/ponytail_braided
 	name = "Ponytail (Braided)"
 	icon_state = "hair_braid2"
@@ -230,10 +226,6 @@
 	name = "Egg"
 	icon_state = "hair_egg"
 
-/datum/sprite_accessory/hair/eight
-	name = "Eight"
-	icon_state = "hair_eight"
-
 /datum/sprite_accessory/hair/emo
 	name = "Emo"
 	icon_state = "hair_emo"
@@ -241,6 +233,10 @@
 /datum/sprite_accessory/hair/emofrine
 	name = "Emo Fringe"
 	icon_state = "hair_emofringe"
+
+/datum/sprite_accessory/hair/emobangs
+	name = "Emo Bangs"
+	icon_state = "hair_emobangs"
 
 /datum/sprite_accessory/hair/nofade
 	name = "Fade (None)"
@@ -398,6 +394,10 @@
 	name = "Long Bangs"
 	icon_state = "hair_lbangs"
 
+/datum/sprite_accessory/hair/longbangeye
+	name = "Long Bangs Over Eye"
+	icon_state = "hair_eyebangs"
+
 /datum/sprite_accessory/hair/longemo
 	name = "Long Emo"
 	icon_state = "hair_longemo"
@@ -502,10 +502,6 @@
 	name = "Pixie Cut"
 	icon_state = "hair_pixie"
 
-/datum/sprite_accessory/hair/pompadour
-	name = "Pompadour"
-	icon_state = "hair_pompadour"
-
 /datum/sprite_accessory/hair/bigpompadour
 	name = "Pompadour (Big)"
 	icon_state = "hair_bigpompadour"
@@ -521,6 +517,10 @@
 /datum/sprite_accessory/hair/ponytaileye
 	name = "Ponytail (over eye)"
 	icon_state = "hair_ponytaileye"
+
+/datum/sprite_accessory/hair/ponytailbotheyes
+	name = "Ponytail (both eyes)"
+	icon_state = "hair_ponytailbotheyes"
 
 /datum/sprite_accessory/hair/ponytail4
 	name = "Ponytail 4"
@@ -762,6 +762,10 @@
 /datum/sprite_accessory/hair/longer
 	name = "Very Long Hair"
 	icon_state = "hair_vlong"
+
+/datum/sprite_accessory/hair/longerbangs
+	name = "Very Long Hair (Bangs)"
+	icon_state = "hair_vlongbangs"
 
 /datum/sprite_accessory/hair/longest
 	name = "Very Long Hair 2"

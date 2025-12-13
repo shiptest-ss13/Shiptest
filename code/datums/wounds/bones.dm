@@ -253,7 +253,7 @@
 		)
 		remove_wound()
 
-/datum/wound/blunt/moderate/try_handling(mob/living/carbon/human/user)
+/datum/wound/blunt/moderate/try_handling(mob/living/carbon/human/user, modifiers)
 	if(user.pulling != victim || user.zone_selected != limb.body_zone || user.a_intent == INTENT_GRAB)
 		return FALSE
 
@@ -269,7 +269,7 @@
 		)
 		to_chat(victim, span_userdanger("[user] begins twisting and straining your dislocated [limb.name]!"))
 
-		if(user.a_intent == INTENT_HELP)
+		if(!LAZYACCESS(modifiers, RIGHT_CLICK))
 			chiropractice(user)
 		else
 			malpractice(user)

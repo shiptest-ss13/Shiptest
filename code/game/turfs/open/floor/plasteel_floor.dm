@@ -62,6 +62,8 @@
 	initial_gas_mix = ATMOS_TANK_PLASMAHALF
 /turf/open/floor/plasteel/mono/dark/plasma
 	initial_gas_mix = ATMOS_TANK_PLASMAHALF
+/turf/open/floor/plasteel/mono/airless
+	initial_gas_mix = AIRLESS_ATMOS
 /turf/open/floor/plasteel/mono/white/airless
 	initial_gas_mix = AIRLESS_ATMOS
 /turf/open/floor/plasteel/mono/dark/airless
@@ -78,6 +80,9 @@
 
 /turf/open/floor/plasteel/tech/airless
 	initial_gas_mix = AIRLESS_ATMOS
+
+/turf/open/floor/plasteel/tech/cold
+	initial_gas_mix = "o2=22;n2=82;TEMP=275.65" // normal air but 2.5 degrees
 
 /turf/open/floor/plasteel/tech/grid
 	icon_state = "techfloor_grid"

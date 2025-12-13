@@ -224,7 +224,7 @@
 /obj/machinery/door/proc/unrestricted_side(mob/M) //Allows for specific side of airlocks to be unrestrected (IE, can exit maint freely, but need access to enter)
 	return get_dir(src, M) & unres_sides
 
-/obj/machinery/door/proc/try_to_weld(obj/item/weldingtool/W, mob/user)
+/obj/machinery/door/proc/try_to_weld(obj/item/weldingtool/W, mob/user, list/modifiers)
 	return
 
 /obj/machinery/door/proc/try_to_crowbar(obj/item/I, mob/user)
@@ -264,7 +264,7 @@
 		try_to_crowbar(I, user, forced_open)
 		return TRUE
 	else if(I.tool_behaviour == TOOL_WELDER)
-		try_to_weld(I, user)
+		try_to_weld(I, user, params2list(params))
 		return TRUE
 	else if(!(I.item_flags & NOBLUDGEON) && user.a_intent != INTENT_HARM)
 		try_to_activate_door(user)

@@ -208,7 +208,7 @@
 /datum/supply_pack/gun/cm357
 	name = "CM-357 Automag Pistol Crate"
 	desc = "Contains a magazine-fed .357 handgun, produced for the CLIP-BARD division and available for requisition in small numbers to the Minutemen."
-	cost = 3000
+	cost = 1750
 	contains = list(/obj/item/storage/guncase/pistol/cm357)
 	faction = /datum/faction/clip
 	faction_discount = 0
@@ -231,7 +231,7 @@
 /datum/supply_pack/gun/l204
 	name = "L204 'Resistor' Plasma Rifle Crate"
 	desc = "Contains a lethal, high-energy laser gun."
-	cost = 2000
+	cost = 1000
 	contains = list(/obj/item/storage/guncase/energy/laser)
 	crate_name = "laser crate"
 	faction = /datum/faction/nt
@@ -606,10 +606,19 @@
 
 /datum/supply_pack/gun/m15
 	name = "Super Sporter Rifle Crate"
-	desc = "Contains a recently manufactured Model 15 \"Super Sporter\", Serene Outdoors' premier hunting rifle. Chambered in 5.56 CLIP"
+	desc = "Contains a recently manufactured Model 15 \"Super Sporter\", Serene Outdoors' premier hunting rifle. Chambered in 7.62 CLIP"
 	contains = list(/obj/item/storage/guncase/m15)
 	cost = 2500
 	crate_name = "rifle crate"
+
+/datum/supply_pack/gun/hydra80
+	name = "Hydra-80 Rifle Crate"
+	desc = "Contains a dated variant of the Hydra assault rifle, with a quick trigger and semi-auto. Accepts only small magazines. Chambered in 5.56 CLIP"
+	contains = list(/obj/item/storage/guncase/hydra80)
+	cost = 3000
+	crate_name = "rifle crate"
+	faction = /datum/faction/syndicate/scarborough
+	faction_discount = 10
 
 /datum/supply_pack/gun/winchester
 	name = "Flaming Arrow Lever Action Rifle Crate"

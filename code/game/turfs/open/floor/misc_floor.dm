@@ -173,6 +173,9 @@
 /turf/open/floor/plating/rust/plasma
 	initial_gas_mix = "plasma=104;TEMP=293.15"
 
+/turf/open/floor/plating/rust/airless
+	initial_gas_mix = AIRLESS_ATMOS
+
 /turf/open/floor/plasteel/telecomms_floor
 	icon_state = "tcomms"
 	base_icon_state = "tcomms"
@@ -248,6 +251,28 @@
 	baseturfs = /turf/open/floor/ship/dirt/dark
 	icon = 'icons/turf/floors/junglegrass.dmi'
 	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
+
+/turf/open/floor/grass/ship/jungle/dark
+	name = "jungle grass"
+	desc = "Greener on the other side."
+	icon_state = "grass-255"
+	base_icon_state = "grass"
+	baseturfs = /turf/open/floor/ship/dirt/dark
+	icon = 'icons/turf/floors/darkjunglegrass.dmi'
+	smooth_icon = 'icons/turf/floors/darkjunglegrass.dmi'
+
+/turf/open/floor/grass/ship/jungle/yellow
+	name = "jungle grass"
+	desc = "Greener on the other side."
+	icon_state = "grass-255"
+	base_icon_state = "grass"
+	baseturfs = /turf/open/floor/ship/dirt/dark
+	icon = 'icons/turf/floors/yellowgrass.dmi'
+	smooth_icon = 'icons/turf/floors/yellowgrass.dmi'
+
+/turf/open/floor/grass/ship/smoothplasteel
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS, SMOOTH_GROUP_FLOOR_PLASTEEL)
 
 /turf/open/floor/plating/ship/water
 	name = "water"

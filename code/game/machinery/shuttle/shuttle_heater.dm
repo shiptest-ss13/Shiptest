@@ -5,17 +5,10 @@
 //it for the engine.
 //-----------------------------------------------
 
-#define CHLORINE_OXIDATION_VALUE 0.5
-#define O2_OXIDATION_VALUE 1
-#define NITRYL_OXIDATION_VALUE 1
-#define NITROUS_OXIDATION_VALUE 3
-
-#define HYDROGEN_THRUSTER_VALUE 0.5
-#define PLASMA_THRUSTER_VALUE 1
-#define TRITRIUM_THRUSTER_VALUE 3
-
-#define NITROUS_COOLING_MULTIPIER 500
-#define NITROUS_COOLING_MIN 173
+/// Multiplied by exhaust velocity to calculate thrust
+#define ISP_THRUST_COEFFICIENT 0.005
+/// Base ignition power of the combustion engine in kelvin
+#define IGNITION_TEMPERATURE 500
 
 #define DAMAGE_NONE 0
 #define DAMAGE_LOW 1
@@ -205,17 +198,23 @@
 
 //combustion heater
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater
-	name = "combustion engine heater"
-	desc = "Directs fuel mix into an attached combustion thruster."
+	name = "combustion engine fuel injector"
+	desc = "Injects propellant into an attached combustion thruster."
 	icon_state = "heater_pipe"
 	var/icon_state_closed = "heater_pipe"
 	var/icon_state_open = "heater_pipe_open"
-	var/gas_amount = 0 //amount of gas used in calculations
 	var/gas_capacity = 0
-	var/efficiency_multiplier = 1
 	var/pressure_damage = 0
 	var/damage_state = 0
 	var/metal_repair = FALSE //used to see if metal's been added during repair step
+
+	/// The contained gas mixture which is burned to generate thrust
+	var/datum/gas_mixture/combustion_chamber
+	/// Volume of the combustion chamber in liters
+	var/combustion_volume = 5
+	/// The temperature the gas mixture is raised to at minimum before reacting
+	var/ignition_temp = IGNITION_TEMPERATURE
+
 	idle_power_usage = 50
 	circuit = /obj/item/circuitboard/machine/shuttle/fire_heater
 
@@ -298,12 +297,12 @@
 	for(var/obj/item/stock_parts/micro_laser/L in component_parts)
 		eff += L.rating
 	gas_capacity = 5000 * ((cap - 1) ** 2) + 1000
-	efficiency_multiplier = round(sqrt(eff), 0.1)
+	ignition_temp = IGNITION_TEMPERATURE * eff
 	update_gas_stats()
 
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/examine(mob/user)
 	. = ..()
-	. += "The engine heater's gas dial reads [return_gas()] kPa."
+	. += "The combustion chamber's gas dial reads [combustion_chamber.return_pressure()] kPa."
 	. += "A lightly burnt hazard sticker reports a safe pressure of [PRESSURE_LIMIT] kPa. "
 	if(damage_state == DAMAGE_MED && metal_repair == FALSE)
 		. += "The engine heater's plating could be repaired with <b>metal</b>."
@@ -316,16 +315,13 @@
 	if(damage_state == DAMAGE_NONE && pressure_damage < PRESSURE_DAMAGE_MAX / 2)
 		. += "The engine heater is in good condition."
 
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/proc/return_gas()
-	var/datum/gas_mixture/air_contents = airs[1]
-	return air_contents?.return_pressure()
-
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/proc/return_gas_capacity()
-	var/datum/gas_mixture/air_contents = airs[1]
-	return air_contents?.return_volume()
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/return_air()
+	return combustion_chamber
 
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/proc/update_gas_stats()
 	var/datum/gas_mixture/air_contents = airs[1]
+	if(!combustion_chamber)
+		combustion_chamber = new(combustion_volume)
 	if(!air_contents)
 		return
 	air_contents.set_volume(gas_capacity)
@@ -338,47 +334,37 @@
 	return air_contents.get_moles(gas_type) >= required
 
 /**
- * consumes a portion of the mols and checks how much could combust to make thrust.
- * oxidation_power is the total value of all the oxidizers
- * fuel_power is ^ but for fuel
+ * Injects propellant into the combustion chamber and burns it to generate thrust.
+ * The specific impulse of actual rockets in reality is important as it means less mass of propellant is needed for the same amount of thrust.
+ * However, shiptest's ships don't actually care about the mass of their contents, so we just scale the acceleration directly.
  */
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/proc/consume_fuel(gas_consumed)
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/proc/consume_fuel(gas_consumed, reactions = 3, obj/machinery/power/shuttle/engine/thruster)
 	var/datum/gas_mixture/air_contents = airs[1]
-	if(!air_contents)
-		return
+	if(air_contents)
+		combustion_chamber.merge(air_contents.remove_ratio(gas_consumed))
 
-	else
-		var/oxidation_power = 0
-		var/fuel_power = 0
-		var/thrust_power = 0
-		var/gas_amount = 0
+	// temporarily raise the temperature, then subtract the artificially added energy to get only the energy of the reaction
+	var/initial_energy = combustion_chamber.thermal_energy()
+	var/delta_energy = 0
+	if(combustion_chamber.return_temperature() < ignition_temp)
+		combustion_chamber.set_temperature(ignition_temp)
+		delta_energy = combustion_chamber.thermal_energy() - initial_energy
+	for(var/i in 1 to reactions)
+		combustion_chamber.react()
+	if(delta_energy)
+		combustion_chamber.set_temperature((combustion_chamber.thermal_energy() - delta_energy) / combustion_chamber.heat_capacity())
 
-		for(var/id in air_contents.get_gases())
-			gas_amount = air_contents.get_moles(id) * gas_consumed //this takes a percent (set by gas_consumed) and multiplies it by the total gas to get the amount of gas used by the calculation.
+	var/exhaust_mass = combustion_chamber.return_mass()
+	if(!exhaust_mass)
+		combustion_chamber.clear()
+		return 0 // no mass == no force
+	var/exhaust_velocity = combustion_chamber.return_pressure() * combustion_chamber.total_moles() / exhaust_mass
 
-			switch(id)
-			// adds each oxidizer's power to the total oxidation max
-				if(GAS_O2)
-					oxidation_power += O2_OXIDATION_VALUE * gas_amount
-				if(GAS_NITROUS) //burning nitrous cools down the heater's main tank, just like it cools the intake on real cars.
-					oxidation_power += NITROUS_OXIDATION_VALUE * gas_amount
-					var/heat_capacity = gas_amount * NITROUS_COOLING_MULTIPIER
-					var/air_heat_capacity = air_contents.heat_capacity()
-					var/combined_heat_capacity = heat_capacity + air_heat_capacity
-					if(combined_heat_capacity > 0)
-						var/combined_energy = heat_capacity * NITROUS_COOLING_MIN + air_heat_capacity * air_contents.return_temperature()
-						air_contents.set_temperature(combined_energy / combined_heat_capacity)
-			// adds each fuel gas's power to the fuel max (air.get_fuel_amount is busted, and trit should be Better anyways.)
-				if(GAS_PLASMA)
-					fuel_power += PLASMA_THRUSTER_VALUE * gas_amount
-				if(GAS_TRITIUM)
-					fuel_power += TRITRIUM_THRUSTER_VALUE * gas_amount
-				if(GAS_HYDROGEN)
-					fuel_power += HYDROGEN_THRUSTER_VALUE * gas_amount
+	var/turf/ejection_turf = get_step(get_turf(thruster), turn(thruster.dir, 180))
+	ejection_turf.assume_air(combustion_chamber)
+	ejection_turf.air_update_turf()
 
-			air_contents.adjust_moles(id, -gas_amount)
-		thrust_power = min(oxidation_power, fuel_power) * efficiency_multiplier //"simulates" how much possible thrust either oxidizer or fuel could make, and takes the min
-		return thrust_power
+	return exhaust_velocity * ISP_THRUST_COEFFICIENT
 
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/attackby(obj/item/I, mob/living/user, params)
 	update_adjacent_engines()
