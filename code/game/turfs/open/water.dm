@@ -100,6 +100,19 @@
 		. += span_notice("You could probably scoop some of the [extracted_reagent_visible_name] if you had a beaker...")
 
 /turf/open/water/attackby(obj/item/_item, mob/user, params)
+	if(istype(_item, /obj/item/stack/rods))
+		var/obj/item/stack/rods/R = _item
+		var/obj/structure/lattice/H = locate(/obj/structure/lattice, src)
+		if(H)
+			to_chat(user, span_warning("There is already a lattice here!"))
+			return
+		if(R.use(2))
+			to_chat(user, span_notice("You construct a catwalk."))
+			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
+			new /obj/structure/lattice/catwalk(locate(x, y, z))
+		else
+			to_chat(user, span_warning("You need one rod to build a lattice."))
+		return
 	if(istype(_item, /obj/item/fish))
 		to_chat(user, span_notice("You toss the [_item.name] into the [name]."))
 		playsound(_item, "sound/effects/bigsplash.ogg", 90)

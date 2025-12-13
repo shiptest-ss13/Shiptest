@@ -65,22 +65,6 @@
 	underlay_appearance.icon_state = "basalt"
 	return TRUE
 
-/turf/open/water/acid/attackby(obj/item/_item, mob/user, params)
-	..()
-	if(istype(_item, /obj/item/stack/rods))
-		var/obj/item/stack/rods/R = _item
-		var/obj/structure/lattice/H = locate(/obj/structure/lattice, src)
-		if(H)
-			to_chat(user, span_warning("There is already a lattice here!"))
-			return
-		if(R.use(2))
-			to_chat(user, span_notice("You construct a catwalk."))
-			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
-			new /obj/structure/lattice/catwalk(locate(x, y, z))
-		else
-			to_chat(user, span_warning("You need one rod to build a lattice."))
-		return
-
 /turf/open/water/acid/proc/is_safe_to_cross()
 	return HAS_TRAIT(src, TRAIT_ACID_STOPPED)
 

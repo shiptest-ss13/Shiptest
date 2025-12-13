@@ -134,6 +134,8 @@
 		if (ismob(owner.buckled))
 			return
 
+	var/gravity_modifier = owner.has_gravity() > STANDARD_GRAVITY ? 2 : 1
+
 	var/under_pressure = prob(drowning_process_probability * gravity_modifier)
 
 	// You might not be swimming but you can breathe
