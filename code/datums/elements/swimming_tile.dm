@@ -87,7 +87,7 @@
 		var/gravity_modifier = floater.has_gravity() > STANDARD_GRAVITY ? 2 : 1
 
 
-		floater.apply_damage(clamp((effective_stamina_entry_cost) * gravity_modifier, 1, 100), STAMINA)
+		floater.apply_damage(clamp((effective_stamina_entry_cost) * gravity_modifier, 1, 100), STAMINA, no_animation = TRUE)
 		floater.apply_status_effect(/datum/status_effect/exercised, 15 SECONDS)
 
 	floater.apply_status_effect(/datum/status_effect/swimming, ticking_stamina_cost, ticking_oxy_damage) // Apply the status anyway for when they stop riding
