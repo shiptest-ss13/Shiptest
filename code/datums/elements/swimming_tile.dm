@@ -134,16 +134,7 @@
 		if (ismob(owner.buckled))
 			return
 
-	//var/effective_stamina_per_interval = HAS_TRAIT(owner, TRAIT_STRENGTH) ? stamina_per_interval : (stamina_per_interval / 2)
-	var/effective_stamina_per_interval = stamina_per_interval
-
-	var/gravity_modifier = owner.has_gravity() > STANDARD_GRAVITY ? 2 : 1
-
 	var/under_pressure = prob(drowning_process_probability * gravity_modifier)
-
-	//if (!HAS_TRAIT(owner, TRAIT_SWIMMER))
-	//var/athletics_skill =  (owner.mind?.get_skill_level(/datum/skill/athletics) || 1) - 1
-	owner.apply_damage(clamp((effective_stamina_per_interval) * gravity_modifier, 1, 100), STAMINA)
 
 	// You might not be swimming but you can breathe
 	if (HAS_TRAIT(owner, TRAIT_NOBREATH) || (owner.mob_size >= MOB_SIZE_HUMAN && owner.body_position == STANDING_UP))
