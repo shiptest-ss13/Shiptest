@@ -32,7 +32,7 @@
 	///what class of vein does this mission want
 	var/class_wanted = 1
 	///does this mission spawn a punchcard?
-	var/spawn_punchcard = FALSE
+	var/spawn_punchcard = TRUE
 	///bonus fluff
 	var/bonus_text = TRUE
 
