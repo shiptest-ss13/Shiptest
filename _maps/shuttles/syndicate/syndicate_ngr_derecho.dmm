@@ -2482,7 +2482,6 @@
 /obj/item/clothing/under/syndicate/ngr/officer,
 /obj/item/clothing/suit/ngr,
 /obj/item/clothing/gloves/color/red/insulated,
-/obj/item/radio/headset/syndicate/alt,
 /obj/item/clothing/head/hardhat/ngr/foreman,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/clothing/neck/shemagh/ngr,
@@ -2492,6 +2491,7 @@
 /obj/item/storage/guncase/pistol/pc76,
 /obj/machinery/light/small/directional/west,
 /obj/item/clothing/glasses/hud/security/sunglasses/ngr,
+/obj/item/radio/headset/syndicate/alt/ngr,
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "vs" = (
@@ -3718,11 +3718,11 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4,
-/obj/structure/reagent_dispensers/foamtank,
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/telecomms/relay/preset/ngr,
 /turf/open/floor/pod/dark,
 /area/ship/engineering/atmospherics)
 "EY" = (
@@ -4563,6 +4563,10 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
+"Oe" = (
+/obj/machinery/telecomms/relay/preset/ngr,
+/turf/template_noop,
+/area/template_noop)
 "Oh" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -5197,10 +5201,6 @@
 /obj/effect/turf_decal/industrial/outline{
 	color = "#791500"
 	},
-/obj/structure/closet/secure_closet/engineering_welding{
-	req_access = null;
-	req_access_txt = "11"
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
@@ -5212,6 +5212,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/structure/reagent_dispensers/foamtank,
 /turf/open/floor/pod/dark,
 /area/ship/engineering/electrical)
 "TC" = (
@@ -5857,7 +5858,6 @@
 /obj/item/clothing/under/syndicate/ngr/officer,
 /obj/item/clothing/suit/armor/ngr/captain,
 /obj/item/clothing/gloves/combat,
-/obj/item/radio/headset/syndicate/alt/captain,
 /obj/item/clothing/head/ngr/peaked,
 /obj/item/clothing/neck/shemagh/ngr,
 /obj/item/clothing/mask/breath/ngr,
@@ -5871,6 +5871,7 @@
 /obj/machinery/light/small/directional/east,
 /obj/item/storage/belt/military/assault,
 /obj/item/clothing/glasses/hud/security/sunglasses/ngr,
+/obj/item/radio/headset/syndicate/alt/captain/ngr,
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm/captain)
 "Yq" = (
@@ -6038,7 +6039,7 @@
 (1,1,1) = {"
 ZQ
 ZQ
-ZQ
+Oe
 ZQ
 ZQ
 ZQ

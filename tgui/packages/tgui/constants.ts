@@ -75,6 +75,21 @@ export const RADIO_CHANNELS = [
     color: '#8f4a4b',
   },
   {
+    name: 'Cybersun',
+    freq: 1203,
+    color: '#4c9c9c',
+  },
+  {
+    name: 'New Gorlex',
+    freq: 1205,
+    color: '#c59973',
+  },
+  {
+    name: 'SUNS',
+    freq: 1207,
+    color: '#8f67a1',
+  },
+  {
     name: 'Red Team',
     freq: 1215,
     color: '#ff4444',
