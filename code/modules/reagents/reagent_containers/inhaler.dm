@@ -252,7 +252,7 @@
 /// Called when a inhaler we are in is used on someone. Transfers reagents and plays the puff sound.
 /obj/item/reagent_containers/inhaler_canister/proc/puff(mob/living/user, mob/living/carbon/target)
 	playsound(src, puff_sound, puff_volume, TRUE, -6)
-	reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user, method = INHALE)
+	reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user, methods = INHALE)
 
 /// Returns a integer approximating how many puffs we can be used for.
 /obj/item/reagent_containers/inhaler_canister/proc/get_puffs_left()
