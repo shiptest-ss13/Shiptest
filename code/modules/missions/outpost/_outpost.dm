@@ -16,7 +16,6 @@
 		servant = null
 	for(var/bound in bound_atoms)
 		remove_bound(bound)
-	deltimer(dur_timer)
 	return ..()
 
 /datum/mission/outpost/turn_in()
@@ -45,7 +44,6 @@
 
 /datum/mission/outpost/get_tgui_info()
 	. = ..()
-	var/time_remaining = max(dur_timer ? timeleft(dur_timer) : duration, 0)
 
 	var/act_str = "Give up"
 	if(!accepted)
@@ -58,10 +56,8 @@
 		"name" = src.name,
 		"desc" = src.desc,
 		"value" = src.value,
-		"duration" = src.duration,
-		"remaining" = time_remaining,
-		"timeStr" = time2text(time_remaining, "hh:mm:ss"),
 		"progressStr" = get_progress_string(),
+		"progressPer" = get_progress_percent(),
 		"actStr" = act_str
 	)
 

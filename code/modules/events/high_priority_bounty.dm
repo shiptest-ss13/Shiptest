@@ -15,11 +15,15 @@
 	var/datum/overmap/outpost/target_outpost
 
 /datum/round_event/high_priority_bounty/announce()
-	priority_announce("We have issued a high-priority bounty for [priority_bounty.unit_name]. The Value has been doubled due to high demand.", "[target_outpost] Bounty Program", null, sender_override = "[target_outpost] Communications")
+	priority_announce("[target_outpost.main_template.outpost_administrator] has issued a high-priority bounty. The value of [priority_bounty.unit_name] has been doubled.", "[target_outpost] Bounty Program", null, sender_override = "[target_outpost] Communications")
 
 /datum/round_event/high_priority_bounty/setup()
 	target_outpost = pick(SSovermap.outposts)
-	priority_bounty = pick(GLOB.outpost_exports)
+	var/list/valid_targets = list()
+	for(var/datum/export/target as anything in GLOB.outpost_exports)
+		if(target.valid_event_target)
+			valid_targets.Add(target)
+	priority_bounty = pick(valid_targets)
 
 /datum/round_event/high_priority_bounty/start()
 	if(priority_bounty)

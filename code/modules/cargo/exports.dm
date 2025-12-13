@@ -66,6 +66,9 @@
 	var/include_subtypes = TRUE		// Set to FALSE to make the datum apply only to a strict type.
 	var/list/exclude_types = list()	// Types excluded from export
 
+	///can this export be targetting with high-value bounty?
+	var/valid_event_target = TRUE
+
 /datum/export/New()
 	..()
 	true_cost = cost

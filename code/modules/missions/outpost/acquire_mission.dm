@@ -6,14 +6,22 @@
 	/// Instance of the container, spawned after the mission is accepted.
 	var/atom/movable/container
 
+	///The item that this mission wants
 	var/atom/movable/objective_type
+	///How many of this item does the mission want?
 	var/num_wanted = 1
+	///Does this mission allow subtypes of objective_type to count to the total required?
 	var/allow_subtypes = TRUE
+	///Are stacks of objective_type counted individually?
 	var/count_stacks = TRUE
 
-/datum/mission/outpost/acquire/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
+/datum/mission/outpost/acquire/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc, obj/hangar_crate_spawner/cargo_belt)
 	. = ..()
-	container = spawn_bound(container_type, accept_loc, VARSET_CALLBACK(src, container, null))
+	if(isnull(cargo_belt))
+		container = spawn_bound(container_type, cargo_belt, VARSET_CALLBACK(src, container, null))
+		stack_trace("[src] issued by [source_outpost] could not find cargo chute to send items down. Fell back to cargo console.")
+	else
+		container = spawn_bound(container_type, cargo_belt.loc, VARSET_CALLBACK(src, container, null))
 	container.name += " ([capitalize(objective_type.name)])"
 
 /datum/mission/outpost/acquire/Destroy()
@@ -29,6 +37,12 @@
 
 /datum/mission/outpost/acquire/get_progress_string()
 	return "[current_num()]/[num_wanted]"
+
+/datum/mission/outpost/acquire/get_progress_percent()
+	if(!container)
+		return 0
+	else
+		return current_num()/num_wanted
 
 /datum/mission/outpost/acquire/turn_in()
 	del_container()
@@ -73,7 +87,6 @@
 	name = ""
 	desc = ""
 	value = 1500
-	duration = 90 MINUTES
 	weight = 6
 	container_type = /obj/structure/closet/mob_capture
 	objective_type = /mob/living/simple_animal/hostile/asteroid/goliath
@@ -85,8 +98,8 @@
 	if(!name)
 		name = "Capture a [creature_name]"
 	if(!desc)
-		desc = "I require a live [creature_name] for research purposes. Trap one within the given \
-				Lifeform Containment Unit and return it to me and you will be paid handsomely."
+		desc = "[SSmissions.get_researcher_name()] has requested a live [creature_name] for research purposes. Trap one within the given \
+				Lifeform Containment Unit and return it to the outpost for a handsome payday."
 	. = ..()
 
 /datum/mission/outpost/acquire/creature/atom_effective_count(atom/movable/target)
@@ -113,6 +126,24 @@
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/netherworld/migo/asteroid
 	creature_name = "mi-go"
+
+/datum/mission/outpost/acquire/creature/basilisk
+	value = 1050
+	weight = 2
+	objective_type = /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands
+	creature_name = "sandworld basilisk"
+
+/datum/mission/outpost/acquire/creature/lobster_activity
+	value = 1050
+	weight = 2
+	objective_type = /mob/living/simple_animal/hostile/asteroid/lobstrosity
+	creature_name = "lobstrocity"
+
+/datum/mission/outpost/acquire/creature/watcher
+	value = 1050
+	weight = 2
+	objective_type = /mob/living/simple_animal/hostile/asteroid/basilisk/watcher
+	creature_name = "watcher"
 
 /*
 		Acquiry mission containers
