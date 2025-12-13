@@ -12,6 +12,7 @@
 		desc = "[SSmissions.get_researcher_name()] has requested that we locate mineral resources for development in the near future. \
 		The only suitable mineral deposits for heavy industry are typically far underground. Locate a vein of sufficent depth, place the provided drill, and let it dig until it's produced a mineral sample. Place the sample in the box and return it to us. \
 		A bonus will be provided for return of the drill."
+	..()
 
 /datum/mission/outpost/acquire/industrial_drill/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc, obj/hangar_crate_spawner/cargo_belt)
 	. = ..()
