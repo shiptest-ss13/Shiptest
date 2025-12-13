@@ -74,6 +74,7 @@
 		else
 			var/dist_modifier = max((4 - dist), 1)
 			if(prob((concealment.concealment_power/dist_modifier)))
+				playsound_local(get_turf(src), pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, TRUE)
 				return TRUE // we are concealed and the bullet misses
 	return FALSE
 
