@@ -127,3 +127,12 @@
 		M.adjustFireLoss(0.5*REM, FALSE, FALSE, BODYTYPE_ORGANIC)
 		. = TRUE
 	..()
+
+/datum/reagent/medicine/preserver
+
+	name = "Preserverine" // Does absolutely nothing here because apparently prservitives are handled in life.dm????? Anyways all it does is be not present in living people
+	description = "An advanced chemical used to preserve the recently dead for resuscitation without the toxicity associated with other corpse preservitives."
+	reagent_state = LIQUID
+	color = "#63d3e7"
+	metabolization_rate = 9 //I don't want this in living people. So it metabolizes stupid quick.
+	taste_description = "weird jelly"
