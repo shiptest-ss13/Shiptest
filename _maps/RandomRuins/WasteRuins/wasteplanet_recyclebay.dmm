@@ -3225,7 +3225,10 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper_target,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_target{
+	dirx = 1;
+	diry = 2
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/recycle_bay/telecommunications)
 "vv" = (
@@ -3302,6 +3305,24 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/recycle_bay/telecommunications)
+"vX" = (
+/obj/machinery/door/airlock/external{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor/orange,
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_target{
+	dirx = 2;
+	diry = 2
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/wasteplanet/recycle_bay/eva)
 "wc" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4884,7 +4905,10 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper_target,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_target{
+	dirx = -2;
+	diry = -3
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/recycle_bay/telecommunications)
 "Gy" = (
@@ -5400,7 +5424,10 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper_target,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_target{
+	dirx = 2;
+	diry = 3
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/recycle_bay/telecommunications)
 "KE" = (
@@ -5500,7 +5527,10 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper_target,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_target{
+	dirx = -1;
+	diry = -2
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/recycle_bay/telecommunications)
 "Li" = (
@@ -6651,7 +6681,10 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper_target,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_target{
+	dirx = 1;
+	diry = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/recycle_bay/eva)
 "TF" = (
@@ -7099,7 +7132,10 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper_target,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_target{
+	dirx = -2;
+	diry = -2
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/recycle_bay/eva)
 "Xk" = (
@@ -7310,7 +7346,10 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper_target,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_target{
+	dirx = -1;
+	diry = -1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/recycle_bay/eva)
 "Ym" = (
@@ -10001,7 +10040,7 @@ Wi
 vy
 my
 eU
-Tu
+vX
 HI
 ls
 Az
