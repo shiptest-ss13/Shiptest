@@ -169,14 +169,15 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "m" = (
-/obj/machinery/door/airlock/hatch{
-	dir = 4
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
+	},
+/obj/machinery/door/airlock/command/glass{
+	dir = 4;
+	name = "Cockpit"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
