@@ -8,8 +8,9 @@
 	var/datum/callback/on_attach
 	var/datum/callback/on_detach
 	var/datum/callback/on_toggle
+	var/datum/callback/on_toggle_ammo
 	var/datum/callback/on_attacked
-	var/datum/callback/on_unique_action
+	var/datum/callback/on_secondary_action
 	var/datum/callback/on_ctrl_click
 	var/datum/callback/on_alt_click
 	var/datum/callback/on_examine
@@ -24,6 +25,8 @@
 	var/list/datum/action/actions
 	///Generated if the attachment can toggle, sends COMSIG_ATTACHMENT_TOGGLE
 	var/datum/action/attachment/attachment_toggle_action
+	///Generated if the attachment can toggle ammo, sends COMSIG_ATTACHMENT_TOGGLE_AMMO
+	var/datum/action/attachment/attachment_ammo_action
 
 /datum/component/attachment/Initialize(
 		slot = ATTACHMENT_SLOT_RAIL,
@@ -32,9 +35,10 @@
 		datum/callback/on_attach = null,
 		datum/callback/on_detach = null,
 		datum/callback/on_toggle = null,
+		datum/callback/on_toggle_ammo = null,
 		datum/callback/on_preattack = null,
 		datum/callback/on_attacked = null,
-		datum/callback/on_unique_action = null,
+		datum/callback/on_secondary_action = null,
 		datum/callback/on_ctrl_click = null,
 		datum/callback/on_wield = null,
 		datum/callback/on_unwield = null,
@@ -53,9 +57,10 @@
 	src.on_attach = on_attach
 	src.on_detach = on_detach
 	src.on_toggle = on_toggle
+	src.on_toggle_ammo = on_toggle_ammo
 	src.on_preattack = on_preattack
 	src.on_attacked = on_attacked
-	src.on_unique_action = on_unique_action
+	src.on_secondary_action = on_secondary_action
 	src.on_ctrl_click = on_ctrl_click
 	src.on_wield = on_wield
 	src.on_unwield = on_unwield
@@ -70,7 +75,10 @@
 	RegisterSignal(parent, COMSIG_ATTACHMENT_EXAMINE_MORE, PROC_REF(handle_examine_more))
 	if(attach_features_flags & ATTACH_TOGGLE)
 		RegisterSignal(parent, COMSIG_ATTACHMENT_TOGGLE, PROC_REF(try_toggle))
-		attachment_toggle_action = new /datum/action/attachment(parent)
+		attachment_toggle_action = new /datum/action/attachment/toggle(parent)
+	if(attach_features_flags & ATTACH_AMMOMODE)
+		RegisterSignal(parent, COMSIG_ATTACHMENT_TOGGLE_AMMO, PROC_REF(try_ammo))
+		attachment_ammo_action = new /datum/action/attachment/ammo(parent)
 	RegisterSignal(parent, COMSIG_ATTACHMENT_PRE_ATTACK, PROC_REF(relay_pre_attack))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_UPDATE_OVERLAY, PROC_REF(update_overlays))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_GET_SLOT, PROC_REF(send_slot))
@@ -78,7 +86,7 @@
 	RegisterSignal(parent, COMSIG_ATTACHMENT_WIELD, PROC_REF(try_wield))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_UNWIELD, PROC_REF(try_unwield))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_ATTACK, PROC_REF(relay_attacked))
-	RegisterSignal(parent, COMSIG_ATTACHMENT_UNIQUE_ACTION, PROC_REF(relay_unique_action))
+	RegisterSignal(parent, COMSIG_ATTACHMENT_SECONDARY_ACTION, PROC_REF(relay_secondary_action))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_CTRL_CLICK, PROC_REF(relay_ctrl_click))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_ALT_CLICK, PROC_REF(relay_alt_click))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_ATTACK_HAND, PROC_REF(relay_attack_hand))
@@ -93,6 +101,7 @@
 		parent.actions -= actions
 		QDEL_LIST(actions)
 	qdel(attachment_toggle_action)
+	qdel(attachment_ammo_action)
 	return ..()
 
 /datum/component/attachment/proc/try_toggle(obj/item/parent, obj/item/holder, mob/user)
@@ -108,6 +117,19 @@
 		return TRUE
 
 	parent.attack_self(user)
+	return TRUE
+
+/datum/component/attachment/proc/try_ammo(obj/item/parent, obj/item/holder, mob/user)
+	SIGNAL_HANDLER
+	if(attach_features_flags & ATTACH_AMMOMODE)
+		INVOKE_ASYNC(src, PROC_REF(do_ammo), parent, holder, user)
+		holder.update_icon()
+		attachment_ammo_action.UpdateButtonIcon()
+
+/datum/component/attachment/proc/do_ammo(obj/item/parent, obj/item/holder, mob/user)
+	if(on_toggle_ammo)
+		on_toggle_ammo.Invoke(holder, user)
+		return TRUE
 	return TRUE
 
 /datum/component/attachment/proc/update_overlays(obj/item/attachment/parent, list/overlays, list/offset)
@@ -136,6 +158,10 @@
 		holder.actions += list(attachment_toggle_action)
 		attachment_toggle_action.gun = holder
 		attachment_toggle_action.Grant(user)
+	if(attach_features_flags & ATTACH_AMMOMODE)
+		holder.actions += list(attachment_ammo_action)
+		attachment_ammo_action.gun = holder
+		attachment_ammo_action.Grant(user)
 
 	return TRUE
 
@@ -152,6 +178,11 @@
 		holder.actions -= list(attachment_toggle_action)
 		attachment_toggle_action.gun = null
 		attachment_toggle_action.Remove(user)
+
+	if(attach_features_flags & ATTACH_AMMOMODE)
+		holder.actions -= list(attachment_ammo_action)
+		attachment_ammo_action.gun = null
+		attachment_ammo_action.Remove(user)
 
 	if(user.can_put_in_hand(parent))
 		user.put_in_hand(parent)
@@ -193,11 +224,11 @@
 	if(on_unwield)
 		return on_unwield.Invoke(gun, user, params)
 
-/datum/component/attachment/proc/relay_unique_action(obj/item/parent, obj/item/gun, mob/user, params)
+/datum/component/attachment/proc/relay_secondary_action(obj/item/parent, obj/item/gun, mob/user, params)
 	SIGNAL_HANDLER_DOES_SLEEP
 
-	if(on_unique_action)
-		return on_unique_action.Invoke(gun, user, params)
+	if(on_secondary_action)
+		return on_secondary_action.Invoke(gun, user, params)
 
 /datum/component/attachment/proc/relay_ctrl_click(obj/item/parent, obj/item/gun, mob/user, params)
 	SIGNAL_HANDLER_DOES_SLEEP
@@ -227,7 +258,7 @@
 	return
 
 /datum/action/attachment
-	name = "Toggle Attachment"
+	name = "Generic Attachment Action"
 	check_flags = AB_CHECK_HANDS_BLOCKED|AB_CHECK_CONSCIOUS
 	button_icon_state = null
 	///Decides where we send our toggle signal for when pressed
@@ -235,7 +266,6 @@
 
 /datum/action/attachment/New(Target)
 	..()
-	name = "Toggle [target.name]"
 	button.name = name
 	icon_icon = target.icon
 	button_icon_state = target.icon_state
@@ -243,10 +273,6 @@
 /datum/action/attachment/Destroy()
 	. = ..()
 	gun = null
-
-/datum/action/attachment/Trigger()
-	..()
-	SEND_SIGNAL(target, COMSIG_ATTACHMENT_TOGGLE, gun, owner)
 
 /datum/action/attachment/UpdateButtonIcon()
 	icon_icon = target.icon
@@ -270,3 +296,28 @@
 		I.layer = old_layer
 		I.plane = old_plane
 		current_button.appearance_cache = I.appearance
+
+/datum/action/attachment/toggle
+	name = "Toggle Attachment"
+
+/datum/action/attachment/toggle/New(Target)
+	. = ..()
+	name = "Toggle [target.name]"
+
+/datum/action/attachment/toggle/Trigger()
+	..()
+	SEND_SIGNAL(target, COMSIG_ATTACHMENT_TOGGLE, gun, owner)
+
+/datum/action/attachment/toggle/UpdateButtonIcon()
+	icon_icon = target.icon
+	button_icon_state = target.icon_state
+	..()
+
+/datum/action/attachment/ammo
+	name = "Toggle Energy Mode"
+
+/datum/action/attachment/ammo/Trigger()
+	. = ..()
+	SEND_SIGNAL(target, COMSIG_ATTACHMENT_TOGGLE_AMMO, gun, owner)
+
+

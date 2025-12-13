@@ -31,6 +31,7 @@
 		/obj/item/stock_parts/cell/gun/empty,
 		/obj/item/stock_parts/cell/gun/upgraded/empty,
 	)
+	var/ammotype_string = "fallback_laser_fallback"
 
 	tac_reloads = FALSE
 	tactical_reload_delay = 1.2 SECONDS
@@ -42,6 +43,7 @@
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
+		/obj/item/attachment/gun
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,
