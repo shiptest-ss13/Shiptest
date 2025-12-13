@@ -123,3 +123,90 @@
 	name = "green pajama pants"
 	desc = "A comfy pair of pajamas. Probably not the best for work attire."
 	icon_state = "pajamagreen"
+
+//baggy pants
+/obj/item/clothing/under/pants/baggy
+	name = "baggy pants"
+	desc = "An oversized pair of pants. Perfect for hiding a weapon."
+	icon_state = "baggygrey"
+	unique_reskin = list("standard baggy pants" = "baggygrey",
+						"covert baggy pants" = "baggyblack",
+						"industrial baggy pants" = "baggybeige",
+						"jean baggy pants" = "baggyjean",
+						"woodland baggy pants" = "baggygreen",
+						"surplus baggy pants" = "baggycamo",
+						"surplus olive drab baggy pants" = "baggyfrontie"
+						"surplus gorlex baggy pants" = "baggyramzi"
+						"surplus green baggy pants" = "baggypgfmc"
+						"surplus navy pants" = "baggypgfn"
+						"surplus blue baggy pants" = "baggyclip"
+						)
+	supports_variations = DIGITIGRADE_VARIATION
+	alternate_worn_layer = EARS_LAYER
+
+/obj/item/clothing/under/pants/baggy/grey
+	name = "standard baggy pants"
+	desc = "An oversized pair of pants. Perfect for hiding a weapon."
+	icon_state = "baggygrey"
+	current_skin = "standard baggy pants"
+
+/obj/item/clothing/under/pants/baggy/black
+	name = "covert baggy pants"
+	desc = "An oversized pair of pants. Perfect for sneaking around."
+	icon_state = "baggyblack"
+	current_skin = "covert baggy pants"
+
+/obj/item/clothing/under/pants/baggy/beige
+	name = "industrial baggy pants"
+	desc = "An oversized pair of pants. Makes you feel unionized."
+	icon_state = "baggybeige"
+	current_skin = "industrial baggy pants"
+
+/obj/item/clothing/under/pants/baggy/jean
+	name = "baggy jeans"
+	desc = "An oversized pair of jeans. Timelessly fashionable."
+	icon_state = "baggyjean"
+	current_skin = "jean baggy pants"
+
+/obj/item/clothing/under/pants/baggy/grey
+	name = "woodland baggy pants"
+	desc = "An oversized pair of pants. Keep the ticks off."
+	icon_state = "baggygreen"
+	current_skin = "woodland baggy pants"
+
+	/obj/item/clothing/under/pants/baggy/camo
+	name = "surplus baggy pants"
+	desc = "An oversized pair of camo pants. Nobody died in these."
+	icon_state = "baggycamo"
+	current_skin = "surplus baggy pants"
+
+	/obj/item/clothing/under/pants/baggy/frontie
+	name = "surplus olive drab baggy pants"
+	desc = "An oversized pair of pants. Wonder why these were on sale?"
+	icon_state = "baggyfrontie"
+	current_skin = "olive drab baggy pants"
+
+	/obj/item/clothing/under/pants/baggy/ramzi
+	name = "surplus gorlex baggy pants"
+	desc = "An oversized pair of pants. Certified pre-worn by a miner on Old Gorlex."
+	icon_state = "baggyramzi"
+	current_skin = "gorlex baggy pants"
+
+/obj/item/clothing/under/pants/baggy/pgfmc
+	name = "surpluse marine baggy pants"
+	desc = "An oversized pair of old PGFMC pants. Patriotic."
+	icon_state = "baggypgfmc"
+	current_skin = "surplus marine baggy pants"
+
+/obj/item/clothing/under/pants/baggy/pgfn
+	name = "surplus navy baggy pants"
+	desc = "An oversized pair of old PGNF pants. Patriotic."
+	icon_state = "baggygrey"
+	current_skin = "standard baggy pants"
+
+	/obj/item/clothing/under/pants/baggy/clip
+	name = "surplus blue baggy pants"
+	desc = "An oversized pair of pants in Luna-Town blue."
+	icon_state = "baggyclip"
+	current_skin = "surplus blue baggy pants"
+
