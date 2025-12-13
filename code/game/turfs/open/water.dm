@@ -198,6 +198,7 @@
 	light_power = 0.90
 	is_swimming_tile = TRUE
 	immerse_overlay_alpha = 210
+	stamina_entry_cost = 20
 
 /turf/open/water/tar
 	name = "tar pit"
