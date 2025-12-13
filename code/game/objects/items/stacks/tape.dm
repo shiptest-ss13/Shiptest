@@ -162,11 +162,11 @@
 	if(C == user)
 		playsound(loc, usesound, 30, TRUE, -2)
 		user.visible_message(span_notice("[user] starts to apply \the [src] on [user.p_them()]self..."), span_notice("You begin applying \the [src] on yourself..."))
-		if(!do_after(user, self_delay, C, extra_checks=CALLBACK(C, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
+		if(!do_after(user, self_delay, C, extra_checks=CALLBACK(C, TYPE_PROC_REF(/mob/living, can_inject), user)))
 			return
 	else if(other_delay)
 		user.visible_message(span_notice("[user] starts to apply \the [src] on [C]."), span_notice("You begin applying \the [src] on [C]..."))
-		if(!do_after(user, other_delay, C, extra_checks=CALLBACK(C, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
+		if(!do_after(user, other_delay, C, extra_checks=CALLBACK(C, TYPE_PROC_REF(/mob/living, can_inject), user)))
 			return
 
 	if(heal(C, user))
@@ -205,10 +205,10 @@
 	tapecuff.apply_cuffs(target, user, 0)
 	return
 
-/obj/item/stack/tape/afterattack(obj/O, mob/living/user, proximity)
+/obj/item/stack/tape/afterattack(obj/O, mob/living/user, proximity, click_parameters)
 	if(!istype(O) || !proximity)
 		return TRUE
-	if(user.a_intent == INTENT_DISARM && istype(O, /obj/item))
+	if(LAZYACCESS(params2list(click_parameters), RIGHT_CLICK) && istype(O, /obj/item))
 		var/obj/item/I = O
 		if(I.embedding && I.embedding == conferred_embed)
 			to_chat(user, span_warning("[I] is already coated in [src]!"))

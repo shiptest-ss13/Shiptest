@@ -27,7 +27,7 @@
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
 		M.adjust_fire_stacks(8)
-		M.IgniteMob()
+		M.ignite_mob()
 
 // Mech LMG
 

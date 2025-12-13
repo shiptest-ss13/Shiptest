@@ -424,13 +424,6 @@
 	prefix = "CSSV"
 	name_categories = list("GENERAL", "SPACE")
 
-/datum/map_template/shuttle/subshuttles/haste
-	file_name = "inteq_haste"
-	name = "Haste-class Ambulance"
-	faction = /datum/faction/inteq
-	token_icon_state = "ship_tiny_generic"
-	prefix = "IRMV"
-
 /datum/map_template/shuttle/subshuttles/nail
 	file_name = "pgf_nail"
 	name = "Nail-class Boarding Vessel"

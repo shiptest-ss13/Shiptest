@@ -78,7 +78,7 @@
 	if(istype(M))
 		if(method != INGEST && method != INJECT)
 			M.adjust_fire_stacks(min(reac_volume/5, 10))
-			M.IgniteMob()
+			M.ignite_mob()
 			if(!locate(/obj/effect/hotspot) in M.loc)
 				new /obj/effect/hotspot(M.loc)
 
@@ -186,7 +186,7 @@
 	M.adjust_fire_stacks(1)
 	var/burndmg = max(0.3*M.fire_stacks, 0.3)
 	M.adjustFireLoss(burndmg, 0)
-	M.IgniteMob()
+	M.ignite_mob()
 	..()
 
 /datum/reagent/phlogiston/on_mob_life(mob/living/carbon/M)
@@ -236,8 +236,8 @@
 
 
 /datum/reagent/cryostylane/on_mob_life(mob/living/carbon/M) //TODO: code freezing into an ice cube
-	if(M.has_reagent(/datum/reagent/oxygen))
-		M.remove_reagent(/datum/reagent/oxygen, 0.5)
+	if(M.reagents.has_reagent(/datum/reagent/oxygen))
+		M.reagents.remove_reagent(/datum/reagent/oxygen, 0.5)
 		M.adjust_bodytemperature(-5)
 	..()
 
@@ -257,8 +257,8 @@
 	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
 
 /datum/reagent/pyrosium/on_mob_life(mob/living/carbon/M)
-	if(M.has_reagent(/datum/reagent/oxygen))
-		M.remove_reagent(/datum/reagent/oxygen, 0.5)
+	if(holder.has_reagent(/datum/reagent/oxygen))
+		holder.remove_reagent(/datum/reagent/oxygen, 0.5)
 		M.adjust_bodytemperature(5)
 	..()
 
@@ -334,7 +334,7 @@
 	O.extinguish()
 
 /datum/reagent/firefighting_foam/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method in list(VAPOR, TOUCH, SMOKE))
+	if(method in list(VAPOR, TOUCH))
 		M.adjust_fire_stacks(-reac_volume)
-		M.ExtinguishMob()
+		M.extinguish_mob()
 	..()

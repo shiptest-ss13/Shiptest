@@ -24,9 +24,11 @@
 						"jean cargo pants" = "cargojeans",
 						"olive cargo pants" = "cargoolive",
 						"brown cargo pants" = "cargobrown",
+						"navy cargo pants" = "cargonavy",
 						)
 	unique_reskin_changes_base_icon_state = TRUE
 	unique_reskin_changes_name = TRUE
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/pants/cargo/grey
 	name = "grey cargo pants"
@@ -45,6 +47,12 @@
 	desc = "A pocket for every need."
 	icon_state = "cargokhaki"
 	current_skin = "khaki cargo pants"
+
+/obj/item/clothing/under/pants/cargo/navy
+	name = "navy cargo pants"
+	desc = "A pocket for every need."
+	icon_state = "cargonavy"
+	current_skin = "navy cargo pants"
 
 /obj/item/clothing/under/pants/cargo/jeans
 	name = "jean cargo pants"

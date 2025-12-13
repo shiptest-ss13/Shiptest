@@ -19,9 +19,17 @@
 	display_name = "bomber jacket"
 	path = /obj/item/clothing/suit/jacket
 
+/datum/gear/suit/jacket/baggy
+	display_name = "baggy shirt"
+	path = /obj/item/clothing/suit/jacket/baggy
+
 /datum/gear/suit/jacket/leather
 	display_name = "leather jacket"
 	path = /obj/item/clothing/suit/jacket/leather
+
+/datum/gear/suit/jacket/leather/coat
+	display_name = "leather coat"
+	path = /obj/item/clothing/suit/jacket/leather/coat
 
 /datum/gear/suit/jacket/leather/duster
 	display_name = "leather duster"
@@ -37,15 +45,15 @@
 
 /datum/gear/suit/jacket/burgundy
 	display_name = "suit jacket, burgundy"
-	path = /obj/item/clothing/suit/toggle/lawyer/burgundy
+	path = /obj/item/clothing/suit/lawyer/burgundy
 
 /datum/gear/suit/jacket/navy
 	display_name = "suit jacket, navy"
-	path = /obj/item/clothing/suit/toggle/lawyer/navy
+	path = /obj/item/clothing/suit/lawyer/navy
 
 /datum/gear/suit/jacket/charcoal
 	display_name = "suit jacket, charcoal"
-	path = /obj/item/clothing/suit/toggle/lawyer/charcoal
+	path = /obj/item/clothing/suit/lawyer/charcoal
 
 /datum/gear/suit/jacket/hoodie_black
 	display_name = "hoodie, recolorable"
@@ -70,6 +78,14 @@
 /datum/gear/suit/jacket/hazard
 	display_name = "hazard jacket"
 	path = /obj/item/clothing/suit/toggle/hazard
+
+/datum/gear/suit/orangehazard
+	display_name = "orange hazard jacket"
+	path = /obj/item/clothing/suit/toggle/hazard/orange
+
+/datum/gear/suit/limehazard
+	display_name = " lime hazard jacket"
+	path = /obj/item/clothing/suit/toggle/hazard/lime
 
 /datum/gear/suit/jacket/windbreaker
 	display_name = "windbreaker, colorable"

@@ -2833,9 +2833,6 @@
 /area/ruin/icemoon/training_facility/range)
 "oc" = (
 /obj/structure/sign/poster/official/safety_eye_protection,
-/obj/item/clothing/glasses/sunglasses/ballistic{
-	pixel_y = -31
-	},
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/icemoon/training_facility/range)
 "od" = (
@@ -5374,7 +5371,7 @@
 /area/ruin/icemoon/training_facility/classroom)
 "Ay" = (
 /obj/structure/table/greyscale,
-/obj/item/attachment/gun/flamethrower,
+/obj/item/flamethrower/full,
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/ruin/icemoon/training_facility)
 "AA" = (
@@ -6589,11 +6586,13 @@
 	pixel_x = -32
 	},
 /obj/structure/table/reinforced,
-/obj/item/clothing/glasses/sunglasses/ballistic{
-	pixel_y = -12
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 9
+	},
+/obj/item/clothing/glasses/hud/security/sunglasses/ramzi,
+/obj/item/clothing/glasses/hud/security/sunglasses/ramzi{
+	pixel_x = 0;
+	pixel_y = -14
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/range)
@@ -9453,12 +9452,13 @@
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/training_facility/cafeteria)
 "Ud" = (
-/obj/item/clothing/glasses/sunglasses/ballistic{
-	pixel_y = 8
-	},
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/techfloor{
 	dir = 8
+	},
+/obj/item/clothing/glasses/hud/security/sunglasses/ramzi{
+	pixel_x = 0;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/range)

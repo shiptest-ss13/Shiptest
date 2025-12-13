@@ -73,7 +73,7 @@
 		holder = equipper
 		qdel(GetComponent(/datum/component/connect_loc_behalf))
 		AddComponent(/datum/component/connect_loc_behalf, holder, holder_connections)
-		RegisterSignal(holder, COMSIG_PARENT_PREQDELETED, PROC_REF(holder_deleted))
+		RegisterSignal(holder, COMSIG_PREQDELETED, PROC_REF(holder_deleted))
 
 /datum/component/slippery/proc/holder_deleted(datum/source, datum/possible_holder)
 	SIGNAL_HANDLER
@@ -84,7 +84,7 @@
 /datum/component/slippery/proc/on_drop(datum/source, mob/user)
 	SIGNAL_HANDLER
 
-	UnregisterSignal(user, COMSIG_PARENT_PREQDELETED)
+	UnregisterSignal(user, COMSIG_PREQDELETED)
 
 	qdel(GetComponent(/datum/component/connect_loc_behalf))
 	add_connect_loc_behalf_to_parent()
