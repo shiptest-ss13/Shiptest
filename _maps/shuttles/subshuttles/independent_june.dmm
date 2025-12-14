@@ -104,9 +104,6 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "h" = (
-/obj/machinery/power/smes/shuttle/micro/precharged{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -119,6 +116,9 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 4;
 	id = "midwich_blast4"
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -455,9 +455,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "J" = (
-/obj/machinery/power/smes/shuttle/micro/precharged{
-	dir = 8
-	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 4;
 	id = "midwich_blast4"
@@ -469,6 +466,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/power/smes/shuttle/precharged{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,

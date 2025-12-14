@@ -333,6 +333,9 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "bA" = (
@@ -2258,6 +2261,7 @@
 	id = "goliathshuttermedbay";
 	name = "privacy shutters"
 	},
+/obj/structure/window/reinforced/survival_pod,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "ph" = (
@@ -3221,6 +3225,9 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
 	dir = 1
 	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/atmospherics)
 "uD" = (
@@ -3921,6 +3928,12 @@
 	},
 /obj/item/storage/fancy/egg_box,
 /obj/item/storage/fancy/egg_box,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/grown/cabbage,
+/obj/item/food/grown/cabbage,
+/obj/item/food/grown/cabbage,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "yU" = (
@@ -4177,6 +4190,9 @@
 /obj/machinery/firealarm/directional/south{
 	pixel_x = -2
 	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
 "AU" = (
@@ -4344,6 +4360,9 @@
 	pixel_y = 4
 	},
 /obj/item/storage/firstaid/medical,
+/obj/structure/sink/chem{
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "BW" = (
@@ -4659,6 +4678,9 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/west,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/toilet)
 "Ed" = (
@@ -5045,9 +5067,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm/captain)
 "FN" = (
-/obj/structure/sink{
-	pixel_y = 21
-	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "FS" = (
@@ -5222,6 +5242,9 @@
 	},
 /obj/structure/extinguisher_cabinet/directional/east,
 /obj/machinery/camera/autoname{
+	dir = 8
+	},
+/obj/structure/chair/handrail{
 	dir = 8
 	},
 /turf/open/floor/plasteel/patterned,
@@ -6734,6 +6757,9 @@
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden,
 /obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Pk" = (
@@ -6845,6 +6871,9 @@
 /obj/machinery/airalarm/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/camera/autoname{
+	dir = 8
+	},
+/obj/structure/chair/handrail{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
@@ -7770,6 +7799,9 @@
 	id = "goliathholocargo"
 	},
 /obj/machinery/light/directional/east,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Vg" = (
@@ -8397,6 +8429,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/plastic{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Zo" = (
