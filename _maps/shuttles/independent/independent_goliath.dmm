@@ -2316,16 +2316,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
-"pE" = (
-/obj/structure/table/reinforced,
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/window/brigdoor/security/holding/eastleft{
-	req_one_access = list(1,41)
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/security)
 "pF" = (
 /obj/structure/catwalk/over/plated_catwalk/white,
 /obj/structure/sink{
@@ -2810,15 +2800,6 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/captain)
-"sB" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/preopen{
-	id = "goliathshuttermedbay";
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/medical)
 "sJ" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 5
@@ -2946,9 +2927,25 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/hallway/central)
 "tc" = (
-/obj/machinery/atmospherics/pipe/simple/dark/visible/layer5,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering/communications)
+/obj/machinery/atmospherics/pipe/simple/yellow/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1;
+	layer = 2.5
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "tg" = (
 /obj/structure/table/wood/poker,
 /obj/effect/spawner/random/entertainment/dice,
@@ -3436,15 +3433,6 @@
 	pixel_y = -12
 	},
 /obj/effect/decal/cleanable/vomit,
-/obj/machinery/button/door{
-	specialfunctions = 2;
-	normaldoorcontrol = 1;
-	dir = 8;
-	pixel_y = 13;
-	pixel_x = 21;
-	id = "goliathmedaccess";
-	name = "public access button"
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "vG" = (
@@ -3693,7 +3681,8 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/preopen{
-	id = "goliathshuttermedbay"
+	id = "goliathshuttermedbay";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/medical)
@@ -3845,6 +3834,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
+"yu" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/window/brigdoor/security/holding/eastleft{
+	req_one_access = list(1,41)
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/security)
 "yG" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 6
@@ -4951,15 +4950,6 @@
 /obj/machinery/camera/autoname{
 	dir = 1
 	},
-/obj/machinery/button/door{
-	specialfunctions = 2;
-	normaldoorcontrol = 1;
-	dir = 1;
-	pixel_y = -20;
-	pixel_x = -6;
-	id = "goliathbridgeaccess";
-	name = "public access button"
-	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "Fq" = (
@@ -5116,6 +5106,14 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/electrical)
+"Gb" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/preopen{
+	id = "goliathshuttermedbay"
+	},
+/turf/open/floor/plating,
+/area/ship/medical)
 "Gd" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
@@ -5530,28 +5528,9 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "IC" = (
-/obj/machinery/atmospherics/pipe/simple/yellow/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/storage/box/plastic{
-	pixel_y = 13
-	},
-/obj/item/toy/crayon/spraycan{
-	pixel_x = 7;
-	pixel_y = 22
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
+/obj/machinery/atmospherics/pipe/simple/dark/visible/layer5,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering/communications)
 "ID" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
@@ -6385,6 +6364,29 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
+"Ns" = (
+/obj/machinery/atmospherics/pipe/simple/yellow/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/storage/box/plastic{
+	pixel_y = 13
+	},
+/obj/item/toy/crayon/spraycan{
+	pixel_x = 7;
+	pixel_y = 22
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "Nt" = (
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
@@ -8340,26 +8342,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
-"YZ" = (
-/obj/machinery/atmospherics/pipe/simple/yellow/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1;
-	layer = 2.5
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "Zc" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -9099,7 +9081,7 @@ eH
 Dh
 Wz
 lR
-YZ
+tc
 Rw
 JG
 dk
@@ -9165,7 +9147,7 @@ Dd
 rm
 PS
 HS
-IC
+Ns
 HJ
 JG
 dk
@@ -9191,7 +9173,7 @@ eB
 xP
 EV
 GO
-xp
+Gb
 TQ
 gl
 vA
@@ -9224,7 +9206,7 @@ vF
 GF
 LZ
 qM
-xp
+Gb
 kz
 Li
 Dd
@@ -9256,7 +9238,7 @@ nj
 nj
 ZG
 nj
-sB
+xp
 nj
 BX
 uy
@@ -9487,7 +9469,7 @@ VF
 VF
 VF
 VF
-pE
+yu
 VF
 OO
 bu
@@ -9923,7 +9905,7 @@ JG
 JG
 hs
 qz
-tc
+IC
 qz
 qz
 hs
