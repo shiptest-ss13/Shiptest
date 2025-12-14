@@ -736,16 +736,10 @@
 /obj/item/bodypart/proc/heal_damage(brute, burn, stamina, required_status, updating_health = TRUE)
 	if(required_status && !(bodytype & required_status)) //So we can only heal certain kinds of limbs, ie robotic vs organic.
 		return
-	var/heal_mult = 1
-	var/total_damage = brute + burn
-	if(total_damage)
-		heal_mult = (total_damage - min_damage) / total_damage
-	if(heal_mult <= 0)
-		return
 	if(brute)
-		set_brute_dam(round(heal_mult * max(brute_dam - brute, 0), DAMAGE_PRECISION))
+		set_brute_dam(round(max(brute_dam - brute, min_damage - burn_dam, 0), DAMAGE_PRECISION))
 	if(burn)
-		set_burn_dam(round(heal_mult * max(burn_dam - burn, 0), DAMAGE_PRECISION))
+		set_burn_dam(round(max(burn_dam - burn, min_damage - brute_dam, 0), DAMAGE_PRECISION))
 	if(stamina)
 		set_stamina_dam(round(max(stamina_dam - stamina, 0), DAMAGE_PRECISION))
 	if(owner)
