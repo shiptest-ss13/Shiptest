@@ -3417,6 +3417,15 @@
 	pixel_y = -12
 	},
 /obj/effect/decal/cleanable/vomit,
+/obj/machinery/button/door{
+	specialfunctions = 2;
+	normaldoorcontrol = 1;
+	dir = 8;
+	pixel_y = 13;
+	pixel_x = 21;
+	id = "goliathmedaccess";
+	name = "public access button"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "vG" = (
@@ -4854,7 +4863,7 @@
 	dir = 4;
 	name = "Bridge";
 	req_access_txt = "41";
-	id = "goliathbridgeaccess"
+	id_tag = "goliathbridgeaccess"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -4921,6 +4930,15 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 1
+	},
+/obj/machinery/button/door{
+	specialfunctions = 2;
+	normaldoorcontrol = 1;
+	dir = 1;
+	pixel_y = -20;
+	pixel_x = -6;
+	id = "goliathbridgeaccess";
+	name = "public access button"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -8432,7 +8450,7 @@
 	name = "Infirmary";
 	dir = 4;
 	req_access_txt = "5";
-	id = "goliathmedaccess"
+	id_tag = "goliathmedaccess"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
