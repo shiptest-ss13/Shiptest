@@ -427,7 +427,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/recycle_bay/security)
 "dG" = (
-/obj/machinery/atmospherics/components/unary/tank/oxygen,
+/obj/machinery/atmospherics/components/unary/tank/oxygen{
+	piping_layer = 2;
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/recycle_bay/atmospherics)
 "dM" = (
@@ -2655,7 +2658,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/recycle_bay/dorms)
 "rK" = (
-/obj/machinery/atmospherics/components/unary/tank/air,
+/obj/machinery/atmospherics/components/unary/tank/air{
+	piping_layer = 2;
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/recycle_bay/atmospherics)
 "rL" = (
@@ -3305,24 +3311,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/recycle_bay/telecommunications)
-"vX" = (
-/obj/machinery/door/airlock/external{
-	dir = 1
-	},
-/obj/effect/turf_decal/techfloor/orange,
-/obj/effect/turf_decal/techfloor/orange{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper_target{
-	dirx = 2;
-	diry = 2
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/wasteplanet/recycle_bay/eva)
 "wc" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4689,6 +4677,24 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/recycle_bay/security)
+"EX" = (
+/obj/machinery/door/airlock/external{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor/orange,
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_target{
+	dirx = 1;
+	diry = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/wasteplanet/recycle_bay/eva)
 "Fi" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/large,
@@ -6682,8 +6688,8 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper_target{
-	dirx = 1;
-	diry = 1
+	dirx = 2;
+	diry = 2
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/recycle_bay/eva)
@@ -10040,7 +10046,7 @@ Wi
 vy
 my
 eU
-vX
+Tu
 HI
 ls
 Az
@@ -10117,7 +10123,7 @@ Wi
 vy
 wR
 dc
-Tu
+EX
 HI
 HI
 Az
