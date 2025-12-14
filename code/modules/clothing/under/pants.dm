@@ -149,7 +149,7 @@
 						"surplus blue baggy pants" = "baggyclip"
 						)
 	supports_variations = DIGITIGRADE_VARIATION
-	alternate_worn_layer = ABOVE_SHOES_LAYER
+	alternate_worn_layer = SHOES_LAYER
 
 /obj/item/clothing/under/pants/baggy/grey
 	name = "standard baggy pants"
