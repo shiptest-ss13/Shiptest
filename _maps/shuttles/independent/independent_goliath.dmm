@@ -77,6 +77,9 @@
 	},
 /obj/effect/turf_decal/corner/opaque/purple/mono,
 /obj/machinery/airalarm/directional/west,
+/obj/item/storage/backpack/satchel/med,
+/obj/item/storage/backpack/medic,
+/obj/item/storage/backpack/duffelbag/med,
 /obj/item/clothing/under/rank/medical/doctor/red,
 /obj/item/clothing/under/rank/medical/doctor/blue,
 /obj/item/clothing/under/rank/medical/paramedic/emt,
@@ -85,13 +88,21 @@
 	pixel_y = -4
 	},
 /obj/item/clothing/head/beret/med,
-/obj/item/healthanalyzer,
 /obj/item/clothing/gloves/color/latex/nitrile,
+/obj/item/storage/pill_bottle/charcoal{
+	pixel_x = -9;
+	pixel_y = -9
+	},
+/obj/item/storage/box/syringes{
+	pixel_x = 7;
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/glass/bottle/formaldehyde{
+	pixel_y = -8
+	},
 /obj/item/sensor_device,
 /obj/item/bonesetter,
-/obj/item/storage/pill_bottle/charcoal,
-/obj/item/reagent_containers/glass/bottle/formaldehyde,
-/obj/item/storage/box/syringes,
+/obj/item/healthanalyzer,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "ao" = (
@@ -531,10 +542,6 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
-"dm" = (
-/obj/machinery/atmospherics/pipe/simple/dark/visible/layer5,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering/communications)
 "ds" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4{
 	dir = 1
@@ -1972,6 +1979,15 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
+"mT" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/preopen{
+	id = "goliathshuttermedbay";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/medical)
 "mW" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 9
@@ -2236,7 +2252,6 @@
 "oW" = (
 /obj/structure/table/glass,
 /obj/effect/turf_decal/siding/black,
-/obj/structure/window/reinforced/survival_pod,
 /obj/machinery/camera/autoname{
 	dir = 8
 	},
@@ -2245,6 +2260,13 @@
 /obj/item/reagent_containers/medigel/sterilizine{
 	pixel_x = 10;
 	pixel_y = 4
+	},
+/obj/machinery/button/door{
+	pixel_x = 21;
+	pixel_y = -8;
+	dir = 8;
+	id = "goliathshuttermedbay";
+	name = "privacy shutters"
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
@@ -3417,6 +3439,14 @@
 	pixel_y = -12
 	},
 /obj/effect/decal/cleanable/vomit,
+/obj/machinery/button/door{
+	specialfunctions = 2;
+	normaldoorcontrol = 1;
+	dir = 8;
+	pixel_y = 13;
+	pixel_x = 21;
+	id = "goliathmedEA"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "vG" = (
@@ -3658,6 +3688,9 @@
 "xp" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/preopen{
+	id = "goliathshuttermedbay"
+	},
 /turf/open/floor/plating,
 /area/ship/medical)
 "xF" = (
@@ -4487,11 +4520,14 @@
 /area/ship/hallway/fore)
 "Dh" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/janitorialcart,
 /obj/machinery/firealarm/directional/east,
 /obj/machinery/light/small/directional/east{
 	pixel_y = 15
 	},
+/obj/structure/sink{
+	pixel_y = 27
+	},
+/obj/structure/janitorialcart,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/janitor)
 "Dl" = (
@@ -5323,7 +5359,8 @@
 	},
 /obj/structure/filingcabinet/double{
 	dir = 4;
-	pixel_x = -10
+	pixel_x = -10;
+	density = 0
 	},
 /obj/item/paper/carbon,
 /obj/item/paper/carbon,
@@ -5336,6 +5373,7 @@
 /obj/item/stamp/denied,
 /obj/item/hand_labeler_refill,
 /obj/item/hand_labeler_refill,
+/obj/item/melee/knife/survival,
 /obj/item/melee/knife/survival,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -5492,6 +5530,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew)
+"IG" = (
+/obj/machinery/atmospherics/pipe/simple/dark/visible/layer5,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering/communications)
 "IH" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 5
@@ -8336,7 +8378,8 @@
 /obj/machinery/door/airlock/medical/glass{
 	name = "Infirmary";
 	dir = 4;
-	req_access_txt = null
+	req_access_txt = "5";
+	id = "goliathmedEA"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -9137,7 +9180,7 @@ nj
 nj
 ZG
 nj
-xp
+mT
 nj
 BX
 uy
@@ -9804,7 +9847,7 @@ JG
 JG
 hs
 qz
-dm
+IG
 qz
 qz
 hs
