@@ -19,9 +19,17 @@
 	display_name = "bomber jacket"
 	path = /obj/item/clothing/suit/jacket
 
+/datum/gear/suit/jacket/baggy
+	display_name = "baggy shirt"
+	path = /obj/item/clothing/suit/jacket/baggy
+
 /datum/gear/suit/jacket/leather
 	display_name = "leather jacket"
 	path = /obj/item/clothing/suit/jacket/leather
+
+/datum/gear/suit/jacket/leather/coat
+	display_name = "leather coat"
+	path = /obj/item/clothing/suit/jacket/leather/coat
 
 /datum/gear/suit/jacket/leather/duster
 	display_name = "leather duster"
