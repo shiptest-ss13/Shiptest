@@ -531,6 +531,10 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
+"dm" = (
+/obj/machinery/atmospherics/pipe/simple/dark/visible/layer5,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering/communications)
 "ds" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4{
 	dir = 1
@@ -6947,10 +6951,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
-"Rv" = (
-/obj/machinery/atmospherics/pipe/simple/dark/visible/layer5,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering/communications)
 "Rw" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/maintenance/starboard)
@@ -9804,7 +9804,7 @@ JG
 JG
 hs
 qz
-Rv
+dm
 qz
 qz
 hs

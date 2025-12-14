@@ -227,20 +227,22 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
+/obj/machinery/light/small/directional/north{
+	pixel_x = -12
+	},
+/obj/item/radio/intercom/directional/south{
+	pixel_x = 5
+	},
 /obj/machinery/button/door{
-	pixel_y = -18;
+	pixel_y = -20;
 	id = "midwich_blast3";
 	name = "Exterior Window Control";
 	dir = 1;
-	pixel_x = -2
+	pixel_x = -9
 	},
-/obj/item/radio/intercom/directional/north,
+/obj/item/radio/intercom/wideband/directional/north,
 /obj/structure/chair/comfy/shuttle{
-	dir = 8;
-	layer = 2.8
-	},
-/obj/machinery/light/small/directional/south{
-	pixel_x = 9
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
