@@ -168,6 +168,23 @@
 	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 10)
 	w_class = WEIGHT_CLASS_NORMAL
 
+/obj/item/clothing/suit/armor/inteq/pilot
+	name = "inteq pilot jacket"
+	desc = "A baggy parka, favored by shuttle pilots for it's insulative properties. It won't protect you from a hull breach, but at least you look cool."
+	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
+	icon_state = "inteqpilot"
+	item_state = "inteqpilot"
+
+/obj/item/clothing/suit/armor/inteq/pilot/alt
+	name = "inteq pilot jacket"
+	desc = "A baggy parka, favored by shuttle pilots for it's insulative properties. It won't protect you from a hull breach, but at least you look cool."
+	icon = 'icons/obj/clothing/faction/inteq/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
+	icon_state = "inteqpilot_alt"
+	item_state = "inteqpilot_alt"
+
+
 /obj/item/clothing/head/helmet/space/inteq
 	name = "inteq space helmet"
 	desc = "A black space helmet with an opaque yellow visor, there is a small 'IRMG' written on the earpad."
