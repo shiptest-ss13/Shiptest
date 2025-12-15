@@ -82,9 +82,7 @@
 		to_chat(user, span_warning("[patient]'s [part_to_repair.plaintext_zone] is gone!"))
 		return
 
-	if(!part_to_repair.heal_damage(brute_heal, burn_heal, FALSE, BODYTYPE_ROBOTIC))
-		CRASH("[src] tried to heal organic bodypart [part_to_repair.type] with [tool.type]!") // what the fuck? this shouldn't happen but just in case
-
+	part_to_repair.heal_damage(brute_heal, burn_heal, FALSE, BODYTYPE_ROBOTIC)
 	patient.update_damage_overlays()
 	user.visible_message(
 		span_notice("[user] fixes some of the [heal_message] [patient]'s [part_to_repair.plaintext_zone]."),
