@@ -320,9 +320,6 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 1
-	},
 /obj/structure/closet/firecloset/wall/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -1447,10 +1444,6 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
 	},
-/obj/machinery/door/airlock/engineering{
-	dir = 4;
-	name = "Engineering"
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1465,6 +1458,10 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
+	},
+/obj/machinery/door/airlock/engineering{
+	dir = 4;
+	name = "Engineering"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -2418,9 +2415,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -2578,12 +2572,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "zM" = (
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 5
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2596,7 +2584,13 @@
 /obj/structure/sign/departments/engineering{
 	pixel_y = 30
 	},
-/turf/open/floor/plasteel/mono/dark,
+/obj/effect/turf_decal/corner/opaque/orange{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "Af" = (
 /obj/item/storage/backpack/satchel/med{
@@ -2810,9 +2804,6 @@
 "BK" = (
 /obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 1
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -3192,9 +3183,6 @@
 "HA" = (
 /obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 1
 	},
 /obj/machinery/atmospherics/components/binary/pump/on/layer4{
 	dir = 8;
@@ -3685,15 +3673,17 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "Mv" = (
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 10
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen,
 /obj/structure/closet/crate/bin{
 	pixel_x = -5
 	},
 /obj/machinery/light/small/directional/south,
-/turf/open/floor/plasteel/mono/dark,
+/obj/effect/turf_decal/corner/opaque/orange{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "MY" = (
 /obj/structure/table/reinforced,
@@ -4072,9 +4062,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 1
-	},
 /obj/machinery/firealarm/directional/north,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -4214,6 +4201,10 @@
 	},
 /obj/structure/chair/handrail,
 /obj/machinery/light/directional/north,
+/obj/effect/turf_decal/spline/fancy/opaque/orange{
+	dir = 8;
+	layer = 2.040
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "TS" = (
@@ -4476,6 +4467,10 @@
 /obj/item/reagent_containers/glass/bucket,
 /obj/item/storage/bag/trash,
 /obj/item/pushbroom,
+/obj/effect/turf_decal/spline/fancy/opaque/orange{
+	dir = 8;
+	layer = 2.040
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Xk" = (
@@ -4619,11 +4614,7 @@
 	},
 /obj/item/gps{
 	pixel_y = 11;
-	pixel_x = -5
-	},
-/obj/item/multitool{
-	pixel_x = -11;
-	pixel_y = 14
+	pixel_x = -10
 	},
 /obj/item/bodycamera{
 	pixel_y = 0;

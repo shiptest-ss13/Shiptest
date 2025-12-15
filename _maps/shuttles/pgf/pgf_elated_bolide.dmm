@@ -3117,21 +3117,18 @@
 	pixel_y = 7
 	},
 /obj/machinery/light/directional/north,
-/obj/effect/turf_decal/spline/fancy/transparent/bottlegreen{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 5
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/green{
-	dir = 1
-	},
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -21;
 	pixel_y = -10
 	},
-/turf/open/floor/plasteel/mono/dark,
+/obj/effect/turf_decal/corner/opaque/orange{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "tI" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3181,6 +3178,10 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/green,
+/obj/effect/turf_decal/spline/fancy/opaque/orange{
+	dir = 8;
+	layer = 2.040
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "ul" = (
@@ -3693,6 +3694,10 @@
 /obj/effect/turf_decal/spline/fancy/opaque/green{
 	dir = 1
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/orange{
+	dir = 8;
+	layer = 2.040
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "xA" = (
@@ -3926,14 +3931,16 @@
 /obj/structure/extinguisher_cabinet/directional/south{
 	pixel_x = 6
 	},
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 10
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/green,
 /obj/machinery/firealarm/directional/south{
 	pixel_x = -6
 	},
-/turf/open/floor/plasteel/mono/dark,
+/obj/effect/turf_decal/corner/opaque/orange{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "yR" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -6971,10 +6978,7 @@
 	pixel_x = -9
 	},
 /obj/item/bodycamera{
-	pixel_y = 11
-	},
-/obj/item/multitool{
-	pixel_y = 3
+	pixel_y = 10
 	},
 /obj/item/bodycamera{
 	pixel_y = 8;
