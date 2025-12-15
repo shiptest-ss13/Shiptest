@@ -430,9 +430,10 @@
 		qdel(src)
 
 /obj/item/storage/belt/security/military/frontiersmen/skm_ammo/ctf/PopulateContents()
-	for(var/i in 1 to 4)
+	for(var/i in 1 to 3)
 		new /obj/item/ammo_box/magazine/skm_762_40/ctf(src)
 	new /obj/item/grenade/frag(src)
+	new /obj/item/gun/ballistic/automatic/pistol/mauler/regular/ctf(src)
 
 /obj/item/gun/ballistic/automatic/pistol/mauler/regular/ctf
 	desc = "A semi-automatic 9mm handgun frequently used by the Frontiersmen. This sidearm will disintegrate if dropped."
@@ -481,9 +482,10 @@
 		qdel(src)
 
 /obj/item/storage/belt/military/clip/cm82/ctf/PopulateContents()
-	for(var/i in 1 to 4)
+	for(var/i in 1 to 3)
 		new /obj/item/ammo_box/magazine/p16/ctf(src)
 	new /obj/item/grenade/frag(src)
+	new /obj/item/gun/ballistic/automatic/pistol/cm23/ctf(src)
 
 /obj/item/gun/ballistic/automatic/pistol/cm23/ctf
 	desc = "CLIP's standard service pistol, chambered in 10mm. This sidearm will disintegrate if dropped."
@@ -570,8 +572,7 @@
 	uniform = /obj/item/clothing/under/frontiersmen
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/color/black
-	back = /obj/item/gun/ballistic/automatic/assault/skm/ctf
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/mauler/regular/ctf
+	suit_store = /obj/item/gun/ballistic/automatic/assault/skm/ctf
 	l_pocket = /obj/item/ammo_box/magazine/m9mm_mauler/ctf
 	r_pocket = /obj/item/storage/pouch/medical/ctf
 	belt = /obj/item/storage/belt/security/military/frontiersmen/skm_ammo/ctf
@@ -591,8 +592,7 @@
 	uniform = /obj/item/clothing/under/clip/minutemen
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/color/black
-	back = /obj/item/gun/ballistic/automatic/assault/cm82/ctf
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/cm23/ctf
+	suit_store = /obj/item/gun/ballistic/automatic/assault/cm82/ctf
 	l_pocket = /obj/item/ammo_box/magazine/cm23/ctf
 	r_pocket = /obj/item/storage/pouch/medical/ctf
 	belt = /obj/item/storage/belt/military/clip/cm82/ctf
