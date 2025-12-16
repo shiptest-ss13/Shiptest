@@ -218,8 +218,7 @@
 /area/ruin/moon/moonbase/dorms)
 "bJ" = (
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/structure/table/reinforced,
-/obj/machinery/reagentgrinder,
+/obj/machinery/griddle,
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
 "bL" = (
@@ -524,6 +523,23 @@
 "dY" = (
 /obj/structure/table,
 /obj/item/radio/intercom/directional/north,
+/obj/item/plate,
+/obj/item/food/sausage{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/food/friedegg{
+	pixel_x = -3;
+	pixel_y = 1
+	},
+/obj/item/food/friedegg{
+	pixel_x = 0;
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = 10;
+	pixel_y = -8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
 "ec" = (
@@ -869,10 +885,10 @@
 /area/ruin/moon/moonbase/refinery)
 "gH" = (
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/structure/closet/secure_closet/freezer/fridge,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/machinery/oven,
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
 "gJ" = (
@@ -1895,14 +1911,10 @@
 /turf/open/floor/plating/asteroid/moon_coarse/dark/lit,
 /area/overmap_encounter/planetoid/moon/explored)
 "qa" = (
-/obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/drinks/beaglemug{
-	pixel_x = -6;
-	pixel_y = 2
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
 	},
+/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
 "qi" = (
@@ -2198,6 +2210,10 @@
 /obj/machinery/coffeemaker,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
+	},
+/obj/item/reagent_containers/food/drinks/beaglemug{
+	pixel_x = -7;
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
@@ -2523,7 +2539,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/obj/structure/closet/crate/bin,
 /obj/machinery/button/door{
 	pixel_x = 20;
 	pixel_y = 0;
@@ -2531,11 +2546,13 @@
 	id = "dorms-shutters";
 	name = "Dorms Shutters"
 	},
+/obj/structure/closet/secure_closet/freezer/fridge,
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
 "wv" = (
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
 "wx" = (
@@ -2825,8 +2842,43 @@
 /area/ruin/moon/moonbase/cargo)
 "zR" = (
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/structure/table/reinforced,
-/obj/item/cutting_board,
+/obj/structure/closet/secure_closet/wall/directional/west,
+/obj/item/plate{
+	pixel_x = 4;
+	pixel_y = -2
+	},
+/obj/item/plate{
+	pixel_x = 4;
+	pixel_y = -4
+	},
+/obj/item/plate{
+	pixel_x = 5;
+	pixel_y = -7
+	},
+/obj/item/plate{
+	pixel_x = 5;
+	pixel_y = -9
+	},
+/obj/item/plate/large{
+	pixel_x = -4;
+	pixel_y = 8
+	},
+/obj/item/plate/small{
+	pixel_x = -10;
+	pixel_y = -1
+	},
+/obj/item/plate/small{
+	pixel_x = -10;
+	pixel_y = -4
+	},
+/obj/item/plate/small{
+	pixel_x = -10;
+	pixel_y = -7
+	},
+/obj/item/plate/small{
+	pixel_x = -10;
+	pixel_y = -10
+	},
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
 "zT" = (
@@ -2958,6 +3010,18 @@
 /area/ruin/moon/moonbase/refinery)
 "Bb" = (
 /obj/structure/table,
+/obj/item/plate/small{
+	pixel_x = 5;
+	pixel_y = -2
+	},
+/obj/item/food/breadslice/meat{
+	pixel_x = 5;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = -10;
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
 "Bc" = (
@@ -3001,6 +3065,15 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech/grid,
+/area/ruin/moon/moonbase/dorms)
+"Bn" = (
+/obj/effect/turf_decal/corner/transparent/brown/diagonal,
+/obj/structure/table/reinforced,
+/obj/machinery/reagentgrinder{
+	pixel_x = -8;
+	pixel_y = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
 "Bx" = (
 /obj/machinery/computer/atmos_control/tank/oxygen_tank{
@@ -3627,7 +3700,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase/dorms)
 "GU" = (
-/obj/effect/mob_spawn/human/corpse/clip/bombsuitguy,
+/obj/effect/mob_spawn/human/corpse/clip/minuteman/eod/bombsuit,
 /obj/item/mine/pressure/explosive{
 	pixel_x = -9;
 	pixel_y = 6
@@ -3823,6 +3896,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/structure/table/reinforced,
+/obj/item/cutting_board,
+/obj/item/melee/knife/kitchen,
 /turf/open/floor/plasteel,
 /area/ruin/moon/moonbase/dorms)
 "IG" = (
@@ -4190,6 +4266,35 @@
 	},
 /turf/open/floor/plating/asteroid/moon_coarse/dark/lit,
 /area/overmap_encounter/planetoid/moon/explored)
+"Lr" = (
+/obj/structure/table,
+/obj/item/radio/intercom/directional/north,
+/obj/item/plate/small{
+	pixel_x = 8;
+	pixel_y = -1
+	},
+/obj/item/plate/small{
+	pixel_x = -9;
+	pixel_y = 7
+	},
+/obj/item/food/muffin{
+	pixel_x = -8;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/food/drinks/mug/coco{
+	pixel_x = 9;
+	pixel_y = 0
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = 5;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = 11;
+	pixel_y = 12
+	},
+/turf/open/floor/plasteel,
+/area/ruin/moon/moonbase/dorms)
 "Lt" = (
 /obj/effect/turf_decal/industrial,
 /obj/structure/cable/yellow{
@@ -5073,6 +5178,14 @@
 	},
 /turf/open/floor/plasteel/dark/airless,
 /area/overmap_encounter/planetoid/moon/explored)
+"Sf" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/item/plate_shard,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plasteel,
+/area/ruin/moon/moonbase/dorms)
 "Sj" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/westleft,
@@ -5605,6 +5718,17 @@
 	},
 /turf/open/floor/pod/rockplanet,
 /area/overmap_encounter/planetoid/moon/explored)
+"WH" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/glass,
+/obj/item/plate_shard{
+	pixel_x = 19;
+	pixel_y = -13
+	},
+/turf/open/floor/plasteel,
+/area/ruin/moon/moonbase/dorms)
 "WK" = (
 /obj/machinery/computer/atmos_control/tank/nitrogen_tank{
 	dir = 1
@@ -7697,7 +7821,7 @@ bC
 ba
 IE
 wn
-wn
+Bn
 aa
 fi
 fi
@@ -7757,7 +7881,7 @@ tp
 wk
 qq
 Fi
-RI
+Sf
 RI
 JM
 Ay
@@ -8083,7 +8207,7 @@ ry
 qC
 Tx
 Fi
-dY
+Lr
 aZ
 KH
 Fi
@@ -8148,7 +8272,7 @@ ZM
 HT
 xD
 Fi
-UG
+WH
 aZ
 Vk
 ka
