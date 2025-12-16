@@ -334,6 +334,66 @@
 	desc = "A fancy white and blue armband!"
 	icon_state = "medblueband"
 
+/obj/item/clothing/accessory/armband/redteam/
+	name = "red and yellow armband"
+	desc = "A red armband, used to designate people to teams."
+	icon_state = "redteamband"
+
+/obj/item/clothing/accessory/armband/redteam/lead
+	name = "red and yellow armband"
+	desc = "A red armband with a yellow stripe, used to designate the leader of a team."
+	icon_state = "redteamband_lead"
+
+/obj/item/clothing/accessory/armband/redteam/med
+	name = "red armband"
+	desc = "A red armband with a blue stripe, used to designate the medic of a team."
+	icon_state = "redteamband_med"
+
+/obj/item/clothing/accessory/armband/purpleteam
+	name = "purple armband"
+	desc = "A purple armband, used to designate people to teams."
+	icon_state = "purpleteamband"
+
+/obj/item/clothing/accessory/armband/purpleteam/lead
+	name = "purple and yellow armband"
+	desc = "A purple armband with a yellow stripe, used to designate the leader of a team."
+	icon_state = "purpleteamband_lead"
+
+/obj/item/clothing/accessory/armband/purpleteam/med
+	name = "purple and blue armband"
+	desc = "A purple armband with a blue stripe, used to designate the medic of a team."
+	icon_state = "purpleteamband_med"
+
+/obj/item/clothing/accessory/armband/whiteteam
+	name = "white armband"
+	desc = "A white armband, used to designate people to teams."
+	icon_state = "whiteteamband"
+
+/obj/item/clothing/accessory/armband/whiteteam/lead
+	name = "white and yellow armband"
+	desc = "A white armband with a yellow stripe, used to designate the leader of a team."
+	icon_state = "whiteteamband_lead"
+
+/obj/item/clothing/accessory/armband/whiteteam/med
+	name = "white and blue armband"
+	desc = "A white armband with a blue stripe, used to designate the medic of a team."
+	icon_state = "whiteteamband_med"
+
+/obj/item/clothing/accessory/armband/blackteam
+	name = "black armband"
+	desc = "A black armband, used to designate people to teams."
+	icon_state = "blackteamband"
+
+/obj/item/clothing/accessory/armband/blackteam/lead
+	name = "black and yellow armband"
+	desc = "A black armband with a yellow stripe, used to designate the leader of a team."
+	icon_state = "blackteamband_lead"
+
+/obj/item/clothing/accessory/armband/blackteam/med
+	name = "black and blue armband"
+	desc = "A black armband with a blue stripe, used to designate the medic of a team."
+	icon_state = "blackteamband_med"
+
 //////////////
 //OBJECTION!//
 //////////////
