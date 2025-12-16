@@ -334,20 +334,20 @@
 	desc = "A fancy white and blue armband!"
 	icon_state = "medblueband"
 
-/obj/item/clothing/accessory/armband/redteam/
-	name = "red and yellow armband"
-	desc = "A red armband, used to designate people to teams."
-	icon_state = "redteamband"
+/obj/item/clothing/accessory/armband/greenteam/
+	name = "green armband"
+	desc = "A green armband, used to designate people to teams."
+	icon_state = "greenteamband"
 
-/obj/item/clothing/accessory/armband/redteam/lead
-	name = "red and yellow armband"
-	desc = "A red armband with a yellow stripe, used to designate the leader of a team."
-	icon_state = "redteamband_lead"
+/obj/item/clothing/accessory/armband/greenteam/lead
+	name = "green and yellow armband"
+	desc = "A green armband with a yellow stripe, used to designate the leader of a team."
+	icon_state = "greenteamband_lead"
 
-/obj/item/clothing/accessory/armband/redteam/med
-	name = "red armband"
-	desc = "A red armband with a blue stripe, used to designate the medic of a team."
-	icon_state = "redteamband_med"
+/obj/item/clothing/accessory/armband/greenteam/med
+	name = "green and blue armband"
+	desc = "A green armband with a blue stripe, used to designate the medic of a team."
+	icon_state = "greenteamband_med"
 
 /obj/item/clothing/accessory/armband/purpleteam
 	name = "purple armband"

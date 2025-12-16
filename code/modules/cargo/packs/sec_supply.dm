@@ -72,7 +72,7 @@
 	name = "Armbands Crate"
 	desc = "Contains four sets of coloured armbands, for organising your crew into teams."
 	cost = 100
-	contains = list(/obj/item/storage/box/armbands/red,
+	contains = list(/obj/item/storage/box/armbands/green,
 					/obj/item/storage/box/armbands/purple,
 					/obj/item/storage/box/armbands/white,
 					/obj/item/storage/box/armbands/black)

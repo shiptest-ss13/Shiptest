@@ -1508,15 +1508,15 @@
 		new /obj/item/kitchen/spoon/plastic(src)
 		new /obj/item/melee/knife/plastic(src)
 
-/obj/item/storage/box/armbands/red
-	name = "red armband box"
-	desc = "Contains several red armbands for designating a team, including a team leader and medic."
+/obj/item/storage/box/armbands/green
+	name = "green armband box"
+	desc = "Contains several green armbands for designating a team, including a team leader and medic."
 
-/obj/item/storage/box/armbands/red/PopulateContents()
+/obj/item/storage/box/armbands/green/PopulateContents()
 	var/static/items_inside = list(
-		/obj/item/clothing/accessory/armband/redteam/lead=1,\
-		/obj/item/clothing/accessory/armband/redteam/med=1,\
-		/obj/item/clothing/accessory/armband/redteam=2
+		/obj/item/clothing/accessory/armband/greenteam/lead=1,\
+		/obj/item/clothing/accessory/armband/greenteam/med=1,\
+		/obj/item/clothing/accessory/armband/greenteam=2
 		)
 	generate_items_inside(items_inside,src)
 
