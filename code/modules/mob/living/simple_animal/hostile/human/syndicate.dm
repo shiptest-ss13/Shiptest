@@ -95,7 +95,7 @@
 	melee_damage_upper = 25
 
 /mob/living/simple_animal/hostile/human/ramzi/melee/hatchet
-	name = "Ramzi Clique Chopper"
+	name = "Ramzi Clique Axeman"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They wield a hatchet, preparing to swing right at you."
 	attack_verb_continuous = "chops"
 	attack_verb_simple = "chop"
