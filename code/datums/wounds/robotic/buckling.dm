@@ -44,7 +44,7 @@
 
 /datum/wound/blunt/buckling/severe
 	name = "Buckled Chassis"
-	desc = "Patient's chassis is buckled inwards, causing disruption to mobility."
+	desc = "Patient's chassis is buckled inwards, causing disruption to mobility. Applying duct tape can temporarily secure the limb until proper repairs."
 	treat_text = "Recommend replacement of external plating."
 	examine_desc = "is buckled inwards"
 	occur_text = "creaks and buckles inwards"
@@ -65,7 +65,7 @@
 /datum/wound/blunt/buckling/critical
 	name = "Sheared Frame"
 	desc = "Patient's limb is sheared, rendering it inoperable."
-	treat_text = "Recommend replacement of internal frame and external plating."
+	treat_text = "Recommend replacement of internal frame and external plating. Applying duct tape can temporarily secure the limb until proper repairs."
 	examine_desc = "is sheared off, barely hanging on by the wires"
 	occur_text = "violently snaps as its frame shears apart"
 	wound_flags = MANGLES_INTERIOR | PLATING_DAMAGE
@@ -83,9 +83,6 @@
 
 	wound_path_to_generate = /datum/wound/blunt/buckling/critical
 	threshold_minimum = 125
-
-/datum/wound/blunt/buckling/wound_injury(datum/wound/old_wound, attack_direction)
-	update_inefficiencies()
 
 /datum/wound/blunt/buckling/remove_wound(ignore_limb, replaced)
 	limp_slowdown = 0
@@ -114,9 +111,9 @@
 		span_notice("[user] starts applying [new_tape.name] to [victim]'s [limb]."),
 		span_notice("[user] starts applying [new_tape.name] to your [limb]."),
 	)
-	while(applied_tape?.amount < MAX_TAPE_STACKS && new_tape.use_tool(victim, user, 2 SECONDS, amount = 1))
+	while(applied_tape?.amount < MAX_TAPE_STACKS && new_tape.use_tool(victim, user, 2 SECONDS, amount = 1, volume = 50))
 		if(!applied_tape)
-			applied_tape = new new_tape.type(null, FALSE, 1)
+			applied_tape = new new_tape.type(null, 1)
 		else
 			applied_tape.add(1)
 		update_inefficiencies()
@@ -125,7 +122,7 @@
 				span_notice("[user] finishes applying [applied_tape.name] to [victim]'s [limb]."),
 				span_notice("[user] finishes applying [applied_tape.name] to your [limb]."),
 			)
-			return
+			return TRUE
 		victim.visible_message(
 			span_notice("[user] applies some [applied_tape.name] to [victim]'s [limb]."),
 			span_notice("[user] applies some [applied_tape.name] to your [limb]."),
