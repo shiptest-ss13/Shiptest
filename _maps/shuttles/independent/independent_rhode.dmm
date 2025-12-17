@@ -1893,7 +1893,7 @@
 "Qq" = (
 /obj/structure/rack,
 /obj/item/gear_pack/anglegrinder{
-	pixel_x = 0;
+	pixel_x = 5;
 	pixel_y = 0
 	},
 /obj/effect/turf_decal/box,
@@ -1901,8 +1901,16 @@
 	icon_state = "6-9"
 	},
 /obj/item/radio/headset/alt{
-	pixel_x = 4;
+	pixel_x = 7;
 	pixel_y = 5
+	},
+/obj/item/clothing/gloves/color/yellow{
+	pixel_x = -7;
+	pixel_y = 0
+	},
+/obj/item/clothing/gloves/color/yellow{
+	pixel_x = -8;
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)

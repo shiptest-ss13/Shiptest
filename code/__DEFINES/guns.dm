@@ -143,6 +143,7 @@
 #define COMSIG_ATTACHMENT_TOGGLE "attach-toggle"
 
 #define COMSIG_ATTACHMENT_GET_SLOT "attach-slot-who"
+#define COMSIG_ATTACHMENT_CHANGE_SLOT "change_attach_slot"
 #define ATTACHMENT_SLOT_MUZZLE "muzzle"
 #define ATTACHMENT_SLOT_SCOPE "scope"
 #define ATTACHMENT_SLOT_GRIP "grip"

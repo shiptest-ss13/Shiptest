@@ -540,13 +540,14 @@
 	..()
 	if(C?.mind?.get_skill_level(/datum/skill/gaming) >= SKILL_LEVEL_LEGENDARY && method==INGEST && !HAS_TRAIT(C, TRAIT_GAMERGOD))
 		ADD_TRAIT(C, TRAIT_GAMERGOD, "pwr_game")
-		to_chat(C, "<span class='nicegreen'>As you imbibe the PAC-Fuel, your gamer third eye opens... \
-		You feel as though a great secret of the universe has been made known to you...</span>")
+		to_chat(C, span_nicegreen("As you imbibe the PAC-Fuel, your gamer third eye opens... \
+		You feel as though a great secret of the universe has been made known to you..."))
 
 /datum/reagent/consumable/pacfuel/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-2 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
-	if(prob(10))
-		M?.mind.adjust_experience(/datum/skill/gaming, 5)
+	if(M.mind)
+		if(prob(10))
+			M?.mind.adjust_experience(/datum/skill/gaming, 5)
 	..()
 
 /datum/reagent/consumable/shoal_punch

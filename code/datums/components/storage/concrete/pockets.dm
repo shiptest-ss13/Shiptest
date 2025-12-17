@@ -8,7 +8,7 @@
 	. = ..()
 	if(. && silent && !prevent_warning)
 		if(quickdraw)
-			to_chat(user, span_notice("You discreetly slip [I] into [parent]. Alt-click [parent] to remove it."))
+			to_chat(user, span_notice("You discreetly slip [I] into [parent]. Right-click [parent] to remove it."))
 		else
 			to_chat(user, span_notice("You discreetly slip [I] into [parent]."))
 
@@ -94,6 +94,7 @@
 		/obj/item/clothing/glasses/sunglasses/pgf,
 		/obj/item/clothing/glasses/hud/security/sunglasses/ngr,
 		/obj/item/clothing/glasses/hud/security/sunglasses/hardliners,
+		/obj/item/clothing/glasses/hud/security/sunglasses/ramzi,
 		/obj/item/ammo_casing,
 		/obj/item/ammo_box/magazine/illestren_a850r,
 		/obj/item/bodycamera,

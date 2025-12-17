@@ -404,6 +404,7 @@
 	chargerate = 1500
 	rating = 0 //Makes it incompatible with RPED
 	blinky_light = FALSE
+	auto_scatter = FALSE
 	var/start_empty = FALSE //this really wasn't a var before?
 
 /obj/item/stock_parts/cell/gun/Initialize()

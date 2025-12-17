@@ -957,7 +957,6 @@
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/outpost/exterior/ocean)
 "cL" = (
-/obj/structure/table/chem,
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /obj/structure/closet/wall/white/directional/north{
 	name = "snack bar cabinet"
@@ -1017,6 +1016,8 @@
 	pixel_y = 4
 	},
 /obj/item/melee/knife/kitchen,
+/obj/structure/table/chem,
+/obj/item/kitchen/rollingpin,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/bar)
 "cM" = (
@@ -4995,12 +4996,28 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/obj/machinery/smartfridge/food,
-/obj/item/food/meat/rawcrab,
-/obj/item/food/meat/rawcrab,
-/obj/item/food/pancakes/blueberry,
-/obj/effect/decal/cleanable/glass,
 /obj/machinery/light/dim/directional/north,
+/obj/structure/table/chem,
+/obj/machinery/coffeemaker{
+	pixel_x = 3;
+	pixel_y = 12
+	},
+/obj/item/storage/fancy/coffee_cart_rack{
+	pixel_x = -11;
+	pixel_y = 8
+	},
+/obj/item/coffee_cartridge/fancy{
+	pixel_x = -1;
+	pixel_y = 1
+	},
+/obj/item/coffee_cartridge/fancy{
+	pixel_x = 3;
+	pixel_y = 1
+	},
+/obj/item/coffee_cartridge/fancy{
+	pixel_x = 7;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/bar)
 "qv" = (
@@ -7103,28 +7120,8 @@
 /area/outpost/security/armory)
 "xq" = (
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
-/obj/structure/table/chem,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/storage/fancy/coffee_cart_rack{
-	pixel_x = -11;
-	pixel_y = 8
-	},
-/obj/item/coffee_cartridge/fancy{
-	pixel_x = -1;
-	pixel_y = 1
-	},
-/obj/item/coffee_cartridge/fancy{
-	pixel_x = 3;
-	pixel_y = 1
-	},
-/obj/item/coffee_cartridge/fancy{
-	pixel_x = 7;
-	pixel_y = 1
-	},
-/obj/machinery/coffeemaker{
-	pixel_x = 3;
-	pixel_y = 12
-	},
+/obj/machinery/griddle,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/bar)
 "xr" = (
@@ -8789,7 +8786,6 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/library)
 "CY" = (
-/obj/structure/table/chem,
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /obj/structure/sink/chem{
 	pixel_y = 4;
@@ -8811,6 +8807,7 @@
 /obj/machinery/firealarm/directional/north{
 	pixel_x = 6
 	},
+/obj/structure/table/chem,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/bar)
 "CZ" = (
@@ -9763,12 +9760,8 @@
 /area/outpost/crew/bar)
 "Fz" = (
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
-/obj/structure/table/chem,
-/obj/machinery/microwave{
-	pixel_y = 7;
-	pixel_x = -1
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/oven,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/bar)
 "FA" = (
@@ -13618,10 +13611,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/engineering)
 "RQ" = (
-/obj/structure/sign/poster/contraband/pgf{
-	pixel_x = 31;
-	pixel_y = 0
-	},
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
 	},
@@ -13632,6 +13621,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/structure/sign/poster/pgf/random{
+	pixel_y = 0;
+	pixel_x = 28
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/outpost/hallway/starboard)

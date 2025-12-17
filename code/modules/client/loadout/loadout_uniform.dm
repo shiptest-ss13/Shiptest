@@ -131,13 +131,25 @@
 	display_name = "suit, navy"
 	path = /obj/item/clothing/under/suit/navy
 
+/datum/gear/uniform/suit/navyskirt
+	display_name = "skirt, navy"
+	path = /obj/item/clothing/under/suit/navy/skirt
+
 /datum/gear/uniform/suit/burgundy
 	display_name = "suit, burgundy"
 	path = /obj/item/clothing/under/suit/burgundy
 
+/datum/gear/uniform/suit/burgundyskirt
+	display_name = "skirt, burgundy"
+	path = /obj/item/clothing/under/suit/burgundy/skirt
+
 /datum/gear/uniform/suit/charcoal
 	display_name = "suit, charcoal"
 	path = /obj/item/clothing/under/suit/charcoal
+
+/datum/gear/uniform/suit/charcoalskirt
+	display_name = "skirt, charcoal"
+	path = /obj/item/clothing/under/suit/charcoal/skirt
 
 /datum/gear/uniform/suit/white_skirt
 	display_name = "suitskirt, white shirt"

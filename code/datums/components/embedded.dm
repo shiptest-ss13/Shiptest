@@ -87,7 +87,7 @@
 
 	limb.embedded_objects |= weapon // on the inside... on the inside...
 	weapon.forceMove(victim)
-	RegisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING), PROC_REF(weaponDeleted))
+	RegisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_QDELETING), PROC_REF(weaponDeleted))
 	victim.visible_message(
 		span_danger("[weapon] [harmful ? "embeds" : "sticks"] itself [harmful ? "in" : "to"] [victim]'s [limb.name]!"),
 		span_userdanger("[weapon] [harmful ? "embeds" : "sticks"] itself [harmful ? "in" : "to"] your [limb.name]!"),
@@ -102,7 +102,7 @@
 		SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "embedded", /datum/mood_event/embedded)
 
 	if(damage > 0)
-		var/armor = victim.run_armor_check(limb.body_zone, MELEE, weapon.armour_penetration, "Your armor has protected your [limb.name].", "Your armor has softened a hit to your [limb.name].",I.armour_penetration)
+		var/armor = victim.run_armor_check(limb.body_zone, MELEE, weapon.armour_penetration, "Your armor has protected your [limb.name].", "Your armor has softened a hit to your [limb.name].")
 		limb.receive_damage(brute=(1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage, blocked=armor, wound_bonus = I.wound_bonus, bare_wound_bonus = I.bare_wound_bonus, sharpness = I.get_sharpness())
 
 /datum/component/embedded/Destroy()
@@ -111,7 +111,7 @@
 		victim.clear_alert("embeddedobject")
 		SEND_SIGNAL(victim, COMSIG_CLEAR_MOOD_EVENT, "embedded")
 	if(weapon)
-		UnregisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING))
+		UnregisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_QDELETING))
 	weapon = null
 	limb = null
 	return ..()
@@ -120,10 +120,10 @@
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(jostle_check))
 	RegisterSignal(parent, COMSIG_CARBON_EMBED_RIP, PROC_REF(rip_out))
 	RegisterSignal(parent, COMSIG_CARBON_EMBED_REMOVAL, PROC_REF(safe_remove))
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(check_tweeze))
+	RegisterSignal(parent, COMSIG_ATOM_ATTACKBY, PROC_REF(check_tweeze))
 
 /datum/component/embedded/UnregisterFromParent()
-	UnregisterSignal(parent, list(COMSIG_MOVABLE_MOVED, COMSIG_CARBON_EMBED_RIP, COMSIG_CARBON_EMBED_REMOVAL, COMSIG_PARENT_ATTACKBY))
+	UnregisterSignal(parent, list(COMSIG_MOVABLE_MOVED, COMSIG_CARBON_EMBED_RIP, COMSIG_CARBON_EMBED_REMOVAL, COMSIG_ATOM_ATTACKBY))
 
 /datum/component/embedded/process()
 	var/mob/living/carbon/victim = parent
@@ -234,10 +234,10 @@
 
 	var/mob/living/carbon/victim = parent
 	limb.embedded_objects -= weapon
-	UnregisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING)) // have to do it here otherwise we trigger weaponDeleted()
+	UnregisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_QDELETING)) // have to do it here otherwise we trigger weaponDeleted()
 
 	if(!weapon.unembedded()) // if it hasn't deleted itself due to drop del
-		UnregisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING))
+		UnregisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_QDELETING))
 		if(to_hands)
 			INVOKE_ASYNC(to_hands, TYPE_PROC_REF(/mob, put_in_hands), weapon)
 		else
@@ -269,7 +269,7 @@
 
 	if(ishuman(victim)) // check to see if the limb is actually exposed
 		var/mob/living/carbon/human/victim_human = victim
-		if(!victim_human.can_inject(user, TRUE, limb.body_zone, ignore_species = TRUE))
+		if(!victim_human.can_inject(user, limb, injection_flags = (INJECT_CHECK_IGNORE_SPECIES)))
 			return TRUE
 
 	INVOKE_ASYNC(src, PROC_REF(tweezePluck), possible_tweezers, user)

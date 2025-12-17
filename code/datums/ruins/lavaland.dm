@@ -18,12 +18,6 @@
 	description = "An ancient temple belonging to some long-gone inhabitants, wrecked and buried by the volcanic activity of it's home planet."
 	suffix = "lavaland_surface_buried_shrine.dmm"
 
-/datum/map_template/ruin/lavaland/lava_canyon
-	name = "Lava Canyon"
-	id = "lava_canyon"
-	description = "Tectonic activity has gouged a large fissure into the surface of the planet here. Tucked in the crevasse, the remains of an ashwalker village lay in ashes."
-	suffix = "lavaland_surface_lava_canyon.dmm"
-
 /datum/map_template/ruin/lavaland/wrecked_factory
 	name = "Wrecked Factory"
 	id = "wreck_factory"

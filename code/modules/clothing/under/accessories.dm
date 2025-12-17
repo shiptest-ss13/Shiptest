@@ -73,10 +73,10 @@
 
 /obj/item/clothing/accessory/proc/set_detached_pockets(new_pocket)
 	if(detached_pockets)
-		UnregisterSignal(detached_pockets, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(detached_pockets, COMSIG_QDELETING)
 	detached_pockets = new_pocket
 	if(detached_pockets)
-		RegisterSignal(detached_pockets, COMSIG_PARENT_QDELETING, PROC_REF(handle_pockets_del))
+		RegisterSignal(detached_pockets, COMSIG_QDELETING, PROC_REF(handle_pockets_del))
 
 /obj/item/clothing/accessory/proc/handle_pockets_del(datum/source)
 	SIGNAL_HANDLER
@@ -108,6 +108,16 @@
 	item_state = "det_suit"
 	minimize_when_attached = FALSE
 	attachment_slot = null
+
+/obj/item/clothing/accessory/waistcoat/brown
+	name = "brown waistcoat"
+	icon_state = "waistcoat_brown"
+	item_state = "det_suit"
+
+/obj/item/clothing/accessory/waistcoat/white
+	name = "white waistcoat"
+	icon_state = "waistcoat_white"
+	item_state = "det_suit"
 
 /obj/item/clothing/accessory/maidapron
 	name = "maid apron"

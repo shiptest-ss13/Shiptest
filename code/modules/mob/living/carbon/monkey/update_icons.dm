@@ -37,10 +37,6 @@
 			overlays_standing[HAIR_LAYER] = mutable_appearance('icons/mob/human_face.dmi', "debrained", -HAIR_LAYER)
 			apply_overlay(HAIR_LAYER)
 
-
-/mob/living/carbon/monkey/update_fire()
-	..("Monkey_burning")
-
 /mob/living/carbon/monkey/update_inv_legcuffed()
 	remove_overlay(LEGCUFF_LAYER)
 	if(legcuffed)

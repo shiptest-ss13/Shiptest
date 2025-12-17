@@ -56,9 +56,7 @@
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -79,8 +77,7 @@
 "aU" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/sign/poster/contraband/gec{
-	pixel_x = 28;
-	pixel_y = 0
+	pixel_x = 28
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
@@ -106,7 +103,6 @@
 "bf" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /turf/open/floor/plasteel/tech,
@@ -135,7 +131,6 @@
 /obj/structure/filingcabinet/double/grey{
 	dir = 8;
 	pixel_x = 9;
-	pixel_y = 0;
 	density = 0
 	},
 /obj/structure/cable{
@@ -176,8 +171,7 @@
 	},
 /obj/machinery/light_switch{
 	dir = 4;
-	pixel_x = -20;
-	pixel_y = 0
+	pixel_x = -20
 	},
 /turf/open/floor/suns/hatch{
 	color = "#E6D2BA"
@@ -366,9 +360,7 @@
 /area/ship/cargo)
 "dz" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 20;
@@ -418,8 +410,7 @@
 /obj/item/storage/toolbox/syndicate,
 /obj/item/radio/headset/alt,
 /obj/item/clothing/under/syndicate/gec{
-	pixel_x = 12;
-	pixel_y = 0
+	pixel_x = 12
 	},
 /obj/item/clothing/under/syndicate/hardliners{
 	pixel_x = 13;
@@ -586,7 +577,6 @@
 	},
 /obj/item/storage/toolbox/syndicate,
 /obj/item/clothing/gloves/explorer{
-	pixel_x = 0;
 	pixel_y = -8
 	},
 /obj/item/clothing/shoes/workboots,
@@ -620,7 +610,6 @@
 /area/ship/engineering/engines)
 "fx" = (
 /obj/structure/sign/warning/nosmoking/circle{
-	pixel_x = 0;
 	pixel_y = -21
 	},
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
@@ -857,15 +846,12 @@
 	},
 /obj/structure/rack,
 /obj/item/storage/toolbox/ammo/a12g_slug{
-	pixel_x = -7;
-	pixel_y = 0
+	pixel_x = -7
 	},
 /obj/item/storage/toolbox/ammo/c57{
-	pixel_x = 8;
-	pixel_y = 0
+	pixel_x = 8
 	},
 /obj/item/storage/toolbox/ammo/c9mm{
-	pixel_x = 0;
 	pixel_y = 10
 	},
 /turf/open/floor/plasteel/dark,
@@ -879,8 +865,7 @@
 	},
 /obj/structure/sink/kitchen{
 	dir = 4;
-	pixel_x = -3;
-	pixel_y = 0
+	pixel_x = -3
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -896,8 +881,7 @@
 	desc = "An evil mothperson plushy. It's a sad bug... that's quite sad actually."
 	},
 /obj/item/melee/knife/kitchen{
-	pixel_x = -2;
-	pixel_y = 0
+	pixel_x = -2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
@@ -1014,9 +998,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/central)
@@ -1043,8 +1025,7 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
 /obj/structure/filingcabinet/double{
 	dir = 1;
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 5
 	},
 /obj/item/folder/documents/syndicate/cybersun,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -1504,11 +1485,9 @@
 /obj/structure/table/reinforced,
 /obj/machinery/airalarm/directional/south,
 /obj/item/paper_bin{
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /obj/item/pen{
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech,
@@ -1644,18 +1623,20 @@
 	pixel_y = 4
 	},
 /obj/item/clothing/head/helmet/hardliners{
-	pixel_x = 0;
 	pixel_y = 8
 	},
 /obj/item/radio/headset/syndicate/alt/leader,
 /obj/machinery/light/directional/south,
 /obj/item/clothing/shoes/combat{
-	pixel_x = 0;
 	pixel_y = -7
 	},
 /obj/item/clothing/gloves/combat,
 /obj/item/megaphone,
 /obj/item/radio/intercom/directional/east,
+/obj/item/storage/belt/security/webbing/hardliners/alt{
+	pixel_x = 4;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "sM" = (
@@ -1676,8 +1657,7 @@
 	pixel_y = 5
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = 30;
-	pixel_y = 0
+	pixel_x = 30
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
@@ -1953,8 +1933,7 @@
 "xx" = (
 /obj/structure/toilet{
 	dir = 4;
-	pixel_x = -7;
-	pixel_y = 0
+	pixel_x = -7
 	},
 /obj/effect/turf_decal/siding/thinplating/end,
 /obj/machinery/button/door{
@@ -2000,7 +1979,6 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable,
 /obj/structure/sign/poster/rilena/tali{
-	pixel_x = 0;
 	pixel_y = -31
 	},
 /turf/open/floor/plating,
@@ -2224,11 +2202,9 @@
 /area/ship/engineering/engines)
 "Bc" = (
 /obj/item/flashlight/seclite{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /obj/item/flashlight/seclite{
-	pixel_x = 0;
 	pixel_y = -9
 	},
 /obj/item/melee/knife/survival{
@@ -2260,7 +2236,6 @@
 /area/ship/security)
 "Be" = (
 /obj/docking_port/mobile{
-	can_move_docking_ports = 1;
 	dir = 8;
 	launch_status = 0;
 	preferred_direction = 4
@@ -2364,8 +2339,7 @@
 "CB" = (
 /obj/structure/dresser{
 	dir = 4;
-	pixel_x = -9;
-	pixel_y = 0
+	pixel_x = -9
 	},
 /obj/effect/turf_decal/siding{
 	color = "#474747"
@@ -2838,13 +2812,13 @@
 	pixel_y = -11
 	},
 /obj/item/megaphone{
-	pixel_x = 0;
 	pixel_y = 11
 	},
 /obj/item/stamp/cybersun{
 	pixel_x = 1;
 	pixel_y = 4
 	},
+/obj/item/melee/energy/flyssa,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "Jv" = (
@@ -2874,7 +2848,6 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = 0;
 	pixel_y = -20
 	},
 /turf/open/floor/plasteel/dark,
@@ -2982,7 +2955,6 @@
 	},
 /obj/item/clothing/shoes/combat,
 /obj/item/megaphone{
-	pixel_x = 0;
 	pixel_y = 11
 	},
 /turf/open/floor/plasteel/patterned/brushed,
@@ -3008,9 +2980,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -3144,10 +3114,7 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 6
 	},
-/obj/structure/table/reinforced{
-	pixel_x = 0;
-	pixel_y = 0
-	},
+/obj/structure/table/reinforced,
 /obj/item/paper_bin{
 	pixel_x = 8;
 	pixel_y = 5
@@ -3158,11 +3125,9 @@
 	},
 /obj/item/radio/intercom/wideband/table{
 	dir = 8;
-	pixel_x = -10;
-	pixel_y = 0
+	pixel_x = -10
 	},
 /obj/machinery/turretid/ship{
-	pixel_x = 0;
 	pixel_y = -21;
 	id = "leyakgun"
 	},
@@ -3332,7 +3297,6 @@
 	dir = 1
 	},
 /obj/structure/sign/warning/nosmoking/burnt{
-	pixel_x = 0;
 	pixel_y = 28
 	},
 /obj/machinery/light/directional/east,
@@ -3381,8 +3345,7 @@
 	pixel_y = -5
 	},
 /obj/item/clothing/suit/armor/hardliners{
-	pixel_x = 10;
-	pixel_y = 0
+	pixel_x = 10
 	},
 /obj/item/clothing/suit/armor/hardliners{
 	pixel_x = -9;
@@ -3394,6 +3357,14 @@
 	name = "armoring locker";
 	req_access = list(1)
 	},
+/obj/item/storage/belt/security/webbing/hardliners/alt{
+	pixel_x = -9;
+	pixel_y = -8
+	},
+/obj/item/storage/belt/security/webbing/hardliners/alt{
+	pixel_x = 10;
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security)
 "OS" = (
@@ -3403,9 +3374,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 1
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
@@ -3718,8 +3687,7 @@
 	pixel_y = -3
 	},
 /obj/item/melee/sledgehammer/gorlex{
-	pixel_x = -4;
-	pixel_y = 0
+	pixel_x = -4
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
@@ -3971,8 +3939,7 @@
 	},
 /obj/machinery/light_switch{
 	dir = 4;
-	pixel_x = -20;
-	pixel_y = 0
+	pixel_x = -20
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -4005,7 +3972,6 @@
 	},
 /obj/structure/curtain/cloth/grey,
 /obj/structure/sign/poster/contraband/backdoor_xeno_babes_6{
-	pixel_x = 0;
 	pixel_y = 31
 	},
 /turf/open/floor/carpet/nanoweave,
@@ -4190,8 +4156,7 @@
 /obj/effect/spawner/bunk_bed,
 /obj/structure/curtain/cloth/grey,
 /obj/structure/sign/poster/contraband/syndiemoth{
-	pixel_x = 29;
-	pixel_y = 0
+	pixel_x = 29
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/dorm)
@@ -4284,20 +4249,16 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/bodycamera{
-	pixel_x = -10;
-	pixel_y = 0
+	pixel_x = -10
 	},
 /obj/item/bodycamera{
-	pixel_x = 10;
-	pixel_y = 0
+	pixel_x = 10
 	},
 /obj/item/multitool,
 /obj/item/bodycamera{
-	pixel_x = 0;
 	pixel_y = 8
 	},
 /obj/structure/sign/poster/contraband/cybersun{
-	pixel_x = 0;
 	pixel_y = 30
 	},
 /turf/open/floor/suns/hatch{
@@ -4312,7 +4273,6 @@
 	dir = 1
 	},
 /obj/machinery/button/massdriver{
-	pixel_x = 0;
 	pixel_y = 21;
 	id = "leyaklaunch"
 	},

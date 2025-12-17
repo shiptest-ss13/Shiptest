@@ -219,7 +219,7 @@
 		/obj/item/reagent_containers/glass/bowl = 1,
 		/obj/item/food/grown/sweet_potato = 2
 	)
-	result = /obj/item/food/grown/sweet_potato
+	result = /obj/item/food/soup/sweetpotato
 	subcategory = CAT_SOUP
 
 /datum/crafting_recipe/food/redbeetsoup

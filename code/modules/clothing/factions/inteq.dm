@@ -61,7 +61,7 @@
 	desc = "A tactical sneaksuit developed for usage in the IRMG's covert elements. Maximizes stealth by minimizing friction."
 	icon_state = "inteq_sneak"
 	item_state = "inteq_sneak"
-	roll_sleeves = FALSE
+	roll_sleeves = TRUE
 	roll_down = TRUE
 
 // Oversuits // can someone like. change the vanguard and maa armors to be subtypes of armor/inteq. please

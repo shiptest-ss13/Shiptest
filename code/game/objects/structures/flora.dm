@@ -862,11 +862,6 @@
 /obj/structure/flora/tree/chapel/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/reagent_containers))
 		var/obj/item/reagent_containers/container = I
-		if(istype(container, /obj/item/reagent_containers/syringe))
-			var/obj/item/reagent_containers/syringe/syr = container
-			if(syr.mode != 1)
-				to_chat(user, span_warning("You can't get any extract out of this plant."))
-				return
 		if(!container.reagents.total_volume)
 			to_chat(user, span_warning("[container] is empty!"))
 			return 1
@@ -922,6 +917,12 @@
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "treekarma", /datum/mood_event/bad_tree, name)
 			M.adjustToxLoss(abs(karma)*0.25, 0)
 	adjustKarma(gainedkarma)
+
+/obj/structure/flora/tree/chapel/attackby_secondary(obj/item/weapon, mob/user, list/modifiers, list/attack_modifiers)
+	if (istype(weapon, /obj/item/reagent_containers/syringe))
+		to_chat(user, span_warning("You can't get any extract out of this plant."))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	return SECONDARY_ATTACK_CALL_NORMAL
 
 /obj/structure/flora/tree/chapel/proc/update_tree()
 	if(100 > karma > -100)
@@ -1034,6 +1035,12 @@
 		/datum/reagent/consumable/ethanol/demonsblood = -0.8,
 		/datum/reagent/medicine/soulus = -0.2
 	)
+
+/obj/structure/flora/tree/srm/pine
+	name = "Montagne's Conifer"
+	icon = 'icons/obj/flora/tall_trees.dmi'
+	icon_state = "pine_1"
+	desc = "A hardy, imported conifer tree acting as the centerpiece of the garden. A branch from an Illestren apple tree has been grafted onto it, producing fruits containing bactera native to the planet; often used in recipes withheld by the Saint-Roumain Militia. You could try watering it."
 
 /obj/structure/flora/tree/srm/Initialize()
 	START_PROCESSING(SSobj, src)

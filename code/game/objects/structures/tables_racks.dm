@@ -171,7 +171,7 @@
 
 /obj/structure/table/attackby(obj/item/I, mob/user, params)
 	var/list/modifiers = params2list(params)
-	if(!(flags_1 & NODECONSTRUCT_1) && user.a_intent != INTENT_HELP)
+	if(!(flags_1 & NODECONSTRUCT_1) && LAZYACCESS(modifiers, RIGHT_CLICK))
 		if((I.tool_behaviour == TOOL_SCREWDRIVER) && deconstruction_ready)
 			to_chat(user, span_notice("You start disassembling [src]..."))
 			if(I.use_tool(src, user, 20, volume=50))
@@ -641,10 +641,10 @@
 
 /obj/structure/table/optable/proc/set_patient(new_patient)
 	if(patient)
-		UnregisterSignal(patient, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(patient, COMSIG_QDELETING)
 	patient = new_patient
 	if(patient)
-		RegisterSignal(patient, COMSIG_PARENT_QDELETING, PROC_REF(patient_deleted))
+		RegisterSignal(patient, COMSIG_QDELETING, PROC_REF(patient_deleted))
 
 /obj/structure/table/optable/proc/patient_deleted(datum/source)
 	SIGNAL_HANDLER

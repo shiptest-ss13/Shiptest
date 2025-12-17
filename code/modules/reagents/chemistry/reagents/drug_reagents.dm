@@ -344,25 +344,29 @@
 
 /datum/reagent/drug/happiness/addiction_act_stage1(mob/living/M)// all work and no play makes jack a dull boy
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
-	mood.setSanity(min(mood.sanity, SANITY_DISTURBED))
+	if(mood)
+		mood.setSanity(min(mood.sanity, SANITY_DISTURBED))
 	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/drug/happiness/addiction_act_stage2(mob/living/M)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
-	mood.setSanity(min(mood.sanity, SANITY_UNSTABLE))
+	if(mood)
+		mood.setSanity(min(mood.sanity, SANITY_UNSTABLE))
 	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/drug/happiness/addiction_act_stage3(mob/living/M)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
-	mood.setSanity(min(mood.sanity, SANITY_CRAZY))
+	if(mood)
+		mood.setSanity(min(mood.sanity, SANITY_CRAZY))
 	M.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/drug/happiness/addiction_act_stage4(mob/living/carbon/human/M)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
-	mood.setSanity(SANITY_INSANE)
+	if(mood)
+		mood.setSanity(SANITY_INSANE)
 	M.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 	. = 1
@@ -529,20 +533,23 @@
 /datum/reagent/drug/combat_drug/addiction_act_stage1(mob/living/M)
 	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
-	mood.setSanity(min(mood.sanity, SANITY_DISTURBED))
+	if(mood)
+		mood.setSanity(min(mood.sanity, SANITY_DISTURBED))
 	..()
 
 /datum/reagent/drug/combat_drug/addiction_act_stage2(mob/living/M)
 	M.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
-	mood.setSanity(min(mood.sanity, SANITY_UNSTABLE))
+	if(mood)
+		mood.setSanity(min(mood.sanity, SANITY_UNSTABLE))
 	..()
 
 /datum/reagent/drug/combat_drug/addiction_act_stage3(mob/living/M)
 	M.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
-	mood.setSanity(min(mood.sanity, SANITY_CRAZY))
+	if(mood)
+		mood.setSanity(min(mood.sanity, SANITY_CRAZY))
 	..()
 
 /datum/reagent/drug/combat_drug/addiction_act_stage4(mob/living/carbon/human/M)
@@ -553,7 +560,8 @@
 	M.apply_status_effect(STATUS_EFFECT_CONVULSING)
 	M.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
-	mood.setSanity(min(mood.sanity, SANITY_INSANE))
+	if(mood)
+		mood.setSanity(min(mood.sanity, SANITY_INSANE))
 	..()
 
 
@@ -678,4 +686,59 @@
 /datum/reagent/drug/placebatol/on_mob_life(mob/living/carbon/M)
 	if(prob(3))
 		to_chat(M, span_notice("[pick("You feel better.", "You feel normal.", "You feel stable.")]")) //normal pills
+	..()
+
+/datum/reagent/drug/cinesia
+	name = "Cinesia"
+	description = "A stimulant cocktail devised for usage in long-haul environments. Temporarily rebinds muscles, and forces contractions to allow the user to force motion from an otherwise disabled limb."
+	reagent_state = LIQUID
+	color = "#5a360e"
+	overdose_threshold = 16
+	addiction_threshold = 15
+	metabolization_rate = 0.2
+	taste_description = "an apple coated in glue"
+
+/datum/reagent/drug/cinesia/on_mob_metabolize(mob/living/L)
+	..()
+	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_medium, name)
+	ADD_TRAIT(L, TRAIT_NOLIMBDISABLE, /datum/reagent/drug/cinesia)
+	L.playsound_local(get_turf(L), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
+	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/cinesia)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.hunger_mod += 1
+
+/datum/reagent/drug/cinesia/on_mob_end_metabolize(mob/living/L)
+	..()
+	REMOVE_TRAIT(L, TRAIT_NOLIMBDISABLE, /datum/reagent/drug/cinesia)
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/cinesia)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.hunger_mod -= 1
+
+/datum/reagent/drug/cinesia/on_mob_life(mob/living/carbon/M)
+	..()
+	M.adjustStaminaLoss(-10, 0)
+	M.adjustBruteLoss(-1, 0)
+	if(prob(10))
+		M.playsound_local(get_turf(M), 'sound/health/slowbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
+
+/datum/reagent/drug/cinesia/overdose_process(mob/living/M)
+	M.adjustOrganLoss(ORGAN_SLOT_HEART, 2)
+	if(prob(20))
+		var/obj/item/bodypart/muscle_seizure = M.get_bodypart(pick(BODY_ZONE_L_ARM,BODY_ZONE_L_LEG, BODY_ZONE_R_ARM, BODY_ZONE_R_LEG))
+		if(muscle_seizure)
+			var/datum/wound/muscle/moderate/my_arm_explode = new
+			my_arm_explode.apply_wound(muscle_seizure)
+	if(prob(10))
+		M.drop_all_held_items()
+	..()
+
+/datum/reagent/drug/cinesia/addiction_act_stage3(mob/living/M)
+	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
+	..()
+
+/datum/reagent/drug/cinesia/addiction_act_stage4(mob/living/carbon/human/M)
+	M.apply_status_effect(/datum/status_effect/stagger)
+	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
