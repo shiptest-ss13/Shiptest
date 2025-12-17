@@ -3950,6 +3950,12 @@
 	dir = 9
 	},
 /obj/structure/table,
+/obj/item/gun_maint_kit{
+	pixel_y = 3
+	},
+/obj/item/gun_maint_kit{
+	pixel_y = 9
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "yX" = (
@@ -8114,7 +8120,7 @@
 	dir = 8;
 	name = "air tank input pump"
 	},
-/turf/open/floor/engine/hydrogen_fuel,
+/turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "XJ" = (
 /obj/structure/closet/wall/orange/directional/north{
