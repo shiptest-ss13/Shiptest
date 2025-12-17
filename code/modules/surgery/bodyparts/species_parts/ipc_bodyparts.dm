@@ -668,3 +668,36 @@
 	name = "\improper Clover Corporation 'Humaniform' right leg"
 	icon_state = "humanipc_r_leg"
 	limb_id = "humanipc"
+
+// CYBERSUN GHOST
+
+/obj/item/bodypart/head/ipc/ghost
+	name = "\improper Cybersun Biodynamics S Series 'Ghost' head"
+	icon_state = "cyber_head"
+	limb_id = "cyber"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/chest/ipc/ghost
+	name = "\improper Cybersun Biodynamics S Series 'Ghost' chest"
+	icon_state = "cyber_chest"
+	limb_id = "cyber"
+
+/obj/item/bodypart/l_arm/ipc/ghost
+	name = "\improper Cybersun Biodynamics S Series 'Ghost' left arm"
+	icon_state = "cyber_l_arm"
+	limb_id = "cyber"
+
+/obj/item/bodypart/r_arm/ipc/ghost
+	name = "\improper Cybersun Biodynamics S Series 'Ghost' right arm"
+	icon_state = "cyber_r_arm"
+	limb_id = "cyber"
+
+/obj/item/bodypart/leg/left/ipc/ghost
+	name = "\improper Cybersun Biodynamics S Series 'Ghost' left leg"
+	icon_state = "cyber_l_leg"
+	limb_id = "cyber"
+
+/obj/item/bodypart/leg/right/ipc/ghost
+	name = "\improper Cybersun Biodynamics S Series 'Ghost' right leg"
+	icon_state = "cyber_r_leg"
+	limb_id = "cyber"

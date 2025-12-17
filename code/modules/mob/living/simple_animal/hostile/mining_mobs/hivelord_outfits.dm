@@ -233,7 +233,7 @@
 				/obj/item/reagent_containers/hypospray/medipen/survival = text2num(pick_weight(list(
 					"1" = 3,
 					"2" = 2,
-					"3" = 1
+					"3" = 1,
 				)))
 			)
 	else if (prob(75))
