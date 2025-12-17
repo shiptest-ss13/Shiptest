@@ -1,165 +1,156 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
 /turf/template_noop,
-/area/space)
-"c" = (
-/obj/structure/elevator_platform/tile/tech,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/turf/template_noop,
-/area/space)
+/area/template_noop)
 "h" = (
+/obj/structure/elevator_platform/tile/bamboo_hatch,
 /obj/structure/chair/bench/red/directional/west,
-/obj/structure/elevator_platform/tile/bamboo_hatch,
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "k" = (
+/obj/structure/elevator_platform/tile/bamboo_hatch,
 /obj/structure/fluff/hedge,
-/obj/structure/elevator_platform/tile/bamboo_hatch,
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "n" = (
-/obj/structure/chair/bench/red/directional/east,
 /obj/structure/elevator_platform/tile/bamboo_hatch,
+/obj/structure/chair/bench/red/directional/east,
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "u" = (
 /obj/structure/elevator_platform/tile/brushed,
 /obj/machinery/elevator_floor_button{
-	pixel_y = 22
+	pixel_y = 22;
+	layer = 2.91
 	},
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "A" = (
+/obj/structure/elevator_platform/tile/brushed,
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 2
 	},
-/obj/structure/elevator_platform/tile/brushed,
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "D" = (
 /obj/machinery/light/dim/directional/south,
 /obj/structure/elevator_platform/tile/brushed,
 /turf/template_noop,
-/area/space)
+/area/template_noop)
+"E" = (
+/obj/structure/elevator_platform,
+/obj/structure/fake_titanium_wall,
+/turf/template_noop,
+/area/template_noop)
 "G" = (
 /obj/structure/chair/handrail{
 	dir = 4
 	},
 /obj/structure/elevator_platform/tile/brushed,
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "H" = (
+/obj/structure/elevator_platform/tile/tech,
 /obj/machinery/door/airlock/glass{
 	dir = 4
 	},
-/obj/structure/elevator_platform/tile/tech,
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "I" = (
 /obj/structure/elevator_platform/tile/brushed,
 /obj/machinery/status_display/elevator{
 	pixel_y = 28
 	},
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "N" = (
+/obj/structure/elevator_platform/tile/tech,
 /obj/structure/crate_shelf,
-/obj/structure/elevator_platform/tile/tech,
 /turf/template_noop,
-/area/space)
-"Q" = (
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/structure/elevator_platform/tile/tech,
-/turf/open/floor/plating,
-/area/space)
+/area/template_noop)
 "T" = (
 /obj/structure/elevator_platform/tile/brushed,
 /turf/template_noop,
-/area/space)
-"W" = (
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/structure/elevator_platform/tile/tech,
-/obj/structure/elevator_platform/tile/tech,
-/turf/open/floor/plating,
-/area/space)
+/area/template_noop)
 "X" = (
-/obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/elevator_platform/tile/tech,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/grille,
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "Z" = (
 /obj/machinery/light/dim/directional/north,
 /obj/structure/elevator_platform/tile/brushed,
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 
 (1,1,1) = {"
 a
-a
+E
 H
-c
+X
 X
 H
-a
-a
+E
+E
 "}
 (2,1,1) = {"
-a
-a
+E
+E
 Z
 G
 G
 D
-a
-Q
+E
+X
 "}
 (3,1,1) = {"
 A
-a
+E
 I
 h
 h
 T
 N
-Q
+X
 "}
 (4,1,1) = {"
 A
-a
+E
 u
 k
 k
 T
 N
-Q
+X
 "}
 (5,1,1) = {"
 A
-a
+E
 I
 n
 n
 T
 N
-Q
+X
 "}
 (6,1,1) = {"
-a
-a
+E
+E
 Z
 T
 T
 D
-a
-W
+E
+X
 "}
 (7,1,1) = {"
 a
-a
+E
 H
 X
 X
 H
-a
-a
+E
+E
 "}

@@ -31,6 +31,10 @@
 
 /datum/map_template/outpost/elevator_clip
 	name = "elevator_clip"
+
+/datum/map_template/outpost/elevator_cybersun
+	name = "elevator_cybersun"
+
 /*
 	Independent Space Outpost //creative name!
 */
@@ -162,7 +166,7 @@
 //Cybersun Gas Giant
 /datum/map_template/outpost/cybersun_gas_giant
 	name = "cybersun_gas_giant"
-	outpost_name = "1000 Eyes Perch"
+	outpost_name = "Thousand Eyes Perch"
 
 /datum/map_template/outpost/hangar/cybersun_gas_giant_20x20
 	name = "hangar/cybersun_gas_giant_20x20"
@@ -246,7 +250,7 @@
 	token_icon_state = "gas_giant_outpost"
 	//icon = 'icons/misc/overmap_larger.dmi'
 	main_template = /datum/map_template/outpost/cybersun_gas_giant
-	elevator_template = /datum/map_template/outpost/cybersun_gas_giant
+	elevator_template = /datum/map_template/outpost/elevator_cybersun
 	weather_controller_type = /datum/weather_controller/lush
 	hangar_templates = list(
 		/datum/map_template/outpost/hangar/cybersun_gas_giant_20x20,
@@ -255,6 +259,18 @@
 		/datum/map_template/outpost/hangar/cybersun_gas_giant_56x20,
 		/datum/map_template/outpost/hangar/cybersun_gas_giant_56x40
 	)
+	main_level_ztraits = list(
+		ZTRAIT_GAS_GIANT = TRUE,
+		ZTRAIT_STATION = TRUE,
+		ZTRAIT_SUN_TYPE = AZIMUTH,
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY
+	)
+	hangar_ztraits =  list(
+		ZTRAIT_GAS_GIANT = TRUE,
+		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY
+	)
+
 
 /datum/overmap/outpost/no_main_level // For example and adminspawn.
 	main_template = null

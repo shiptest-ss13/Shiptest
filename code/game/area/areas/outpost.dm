@@ -23,7 +23,11 @@
 	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
 
 /area/outpost/cargo/smeltery
-	name = "Smeltery"
+	name = "Refinery"
+	icon_state = "mining_production"
+
+/area/outpost/cargo/recycling
+	name = "Recycling"
 	icon_state = "mining_production"
 
 /area/outpost/crew
@@ -82,6 +86,10 @@
 
 /area/outpost/crew/promenade
 	name = "Promenade"
+	icon_state = "lounge"
+
+/area/outpost/crew/court
+	name = "Court"
 	icon_state = "lounge"
 
 /area/outpost/crew/sauna

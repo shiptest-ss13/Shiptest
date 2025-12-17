@@ -68,7 +68,7 @@
 		// if there are adjacent platforms with masters, reach them
 		for(var/obj/structure/elevator_platform/plat as anything in get_adj_platforms())
 			if(plat.master_datum)
-				master_datum.add_platform(src)
+				plat.master_datum.add_platform(src)
 				break
 		if(!master_datum)
 			// runs a flood-fill starting at src, adding reached platforms to the
