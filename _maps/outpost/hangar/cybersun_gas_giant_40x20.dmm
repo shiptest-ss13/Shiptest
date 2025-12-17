@@ -39,6 +39,9 @@
 	dir = 1
 	},
 /obj/machinery/light/floor,
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/hangar)
 "cC" = (
@@ -106,6 +109,10 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
+/area/hangar)
+"fg" = (
+/obj/structure/disposalpipe/segment,
+/turf/closed/indestructible/titanium,
 /area/hangar)
 "fr" = (
 /obj/effect/turf_decal/corner/opaque/orange/border{
@@ -465,6 +472,12 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/hangar)
+"AC" = (
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/turf/closed/wall/mineral/titanium,
+/area/hangar)
 "BB" = (
 /obj/structure/chair/bench/red/directional/east,
 /turf/open/floor/suns/hatch/bamboo/cybersun_outpost,
@@ -512,6 +525,12 @@
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
 /area/hangar)
+"CR" = (
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/turf/closed/indestructible/titanium,
+/area/hangar)
 "Dh" = (
 /obj/structure/chair/sofa/red/corpo/right/directional/east,
 /turf/open/floor/suns/hatch/bamboo/cybersun_outpost,
@@ -536,6 +555,12 @@
 /area/hangar)
 "Ew" = (
 /turf/open/floor/suns/hatch/bamboo/cybersun_outpost,
+/area/hangar)
+"EA" = (
+/obj/structure/platform/ship_three/corner{
+	dir = 1
+	},
+/turf/open/cybersun_outpost_exterior,
 /area/hangar)
 "Fz" = (
 /obj/effect/landmark/outpost/hangar_dock,
@@ -828,6 +853,9 @@
 "RX" = (
 /obj/machinery/disposal/deliveryChute{
 	dir = 8
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 4
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/hangar)
@@ -4344,9 +4372,9 @@ Ei
 NS
 NS
 NS
-Ei
-Zo
-Zo
+AC
+fg
+CR
 Zo
 Zo
 eb
@@ -4493,7 +4521,7 @@ Ui
 Ui
 Ui
 Ui
-Ui
+EA
 bF
 bF
 bF

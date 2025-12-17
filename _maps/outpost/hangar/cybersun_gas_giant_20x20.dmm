@@ -1,4 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aj" = (
+/obj/structure/disposalpipe/segment,
+/turf/closed/indestructible/titanium,
+/area/hangar)
 "aq" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#E6D2BA"
@@ -449,6 +453,12 @@
 	},
 /turf/open/cybersun_outpost_exterior,
 /area/hangar)
+"Br" = (
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/turf/closed/wall/mineral/titanium,
+/area/hangar)
 "BI" = (
 /obj/effect/turf_decal/corner/opaque/white/three_quarters,
 /obj/effect/turf_decal/corner/transparent/lightgrey/three_quarters,
@@ -533,6 +543,9 @@
 	dir = 1
 	},
 /obj/machinery/light/floor,
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/hangar)
 "Hb" = (
@@ -641,6 +654,9 @@
 "Kk" = (
 /obj/machinery/disposal/deliveryChute{
 	dir = 8
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 4
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/hangar)
@@ -953,6 +969,12 @@
 	},
 /turf/open/cybersun_outpost_exterior,
 /area/hangar)
+"Xb" = (
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/turf/closed/indestructible/titanium,
+/area/hangar)
 "Xd" = (
 /obj/structure/fluff/hedge/opaque,
 /turf/open/floor/plasteel/patterned/brushed/cybersun_outpost,
@@ -994,6 +1016,12 @@
 	pixel_x = 28
 	},
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
+/area/hangar)
+"Zm" = (
+/obj/structure/platform/ship_three/corner{
+	dir = 1
+	},
+/turf/open/cybersun_outpost_exterior,
 /area/hangar)
 "ZH" = (
 /obj/effect/turf_decal/corner/opaque/orange/bordercorner{
@@ -2995,9 +3023,9 @@ kI
 Af
 Af
 Af
-kI
-Mz
-Mz
+Br
+aj
+Xb
 Mz
 Mz
 YR
@@ -3144,7 +3172,7 @@ Gm
 Gm
 Gm
 Gm
-Gm
+Zm
 Ey
 Ey
 Ey

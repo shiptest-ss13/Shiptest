@@ -313,6 +313,10 @@
 	},
 /turf/open/floor/plating,
 /area/hangar)
+"mc" = (
+/obj/structure/disposalpipe/segment,
+/turf/closed/indestructible/titanium,
+/area/hangar)
 "mh" = (
 /turf/open/floor/hangar/cybersun_outpost,
 /area/hangar)
@@ -872,6 +876,9 @@
 	dir = 1
 	},
 /obj/machinery/light/floor,
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/hangar)
 "Mg" = (
@@ -965,6 +972,12 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/hangar)
+"UK" = (
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/turf/closed/indestructible/titanium,
+/area/hangar)
 "Va" = (
 /obj/effect/turf_decal/corner/transparent/lightgrey/mono,
 /obj/effect/landmark/outpost/shaft_number,
@@ -1035,6 +1048,12 @@
 "ZD" = (
 /turf/open/floor/plasteel/mono/white/cybersun_outpost,
 /area/hangar)
+"ZE" = (
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/turf/closed/wall/mineral/titanium,
+/area/hangar)
 "ZF" = (
 /obj/effect/turf_decal/corner/opaque/white/three_quarters,
 /obj/effect/turf_decal/corner/transparent/lightgrey/three_quarters,
@@ -1046,6 +1065,9 @@
 "ZY" = (
 /obj/machinery/disposal/deliveryChute{
 	dir = 8
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 4
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/hangar)
@@ -5759,9 +5781,9 @@ JB
 Zk
 Zk
 Zk
-JB
-hc
-hc
+ZE
+mc
+UK
 hc
 hc
 dQ
@@ -5968,7 +5990,7 @@ cs
 cs
 cs
 cs
-cs
+NF
 SK
 SK
 SK

@@ -202,6 +202,9 @@
 	dir = 1
 	},
 /obj/machinery/light/floor,
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/hangar)
 "lb" = (
@@ -310,6 +313,12 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed/cybersun_outpost,
 /area/hangar)
+"qW" = (
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/turf/closed/wall/mineral/titanium,
+/area/hangar)
 "rC" = (
 /obj/effect/turf_decal/corner/opaque/white/three_quarters{
 	dir = 4
@@ -319,6 +328,12 @@
 	},
 /obj/effect/turf_decal/industrial/warning/corner,
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
+/area/hangar)
+"rU" = (
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/turf/closed/indestructible/titanium,
 /area/hangar)
 "rV" = (
 /obj/machinery/conveyor/auto/outpost{
@@ -727,6 +742,10 @@
 	},
 /turf/open/cybersun_outpost_exterior,
 /area/hangar)
+"Li" = (
+/obj/structure/disposalpipe/segment,
+/turf/closed/indestructible/titanium,
+/area/hangar)
 "Lq" = (
 /obj/effect/turf_decal/corner/opaque/white/three_quarters{
 	dir = 8
@@ -738,6 +757,15 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
+/area/hangar)
+"LB" = (
+/obj/structure/platform/ship_three/indestructible{
+	dir = 8
+	},
+/obj/structure/platform/ship_three/corner/indestructible{
+	dir = 1
+	},
+/turf/open/cybersun_outpost_exterior,
 /area/hangar)
 "LK" = (
 /obj/effect/turf_decal/trimline/opaque/orange/arrow_ccw{
@@ -957,6 +985,9 @@
 "Vu" = (
 /obj/machinery/disposal/deliveryChute{
 	dir = 8
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 4
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/hangar)
@@ -5943,7 +5974,7 @@ iB
 iB
 iB
 uB
-ei
+LB
 ei
 ei
 ei
@@ -6243,9 +6274,9 @@ iO
 lL
 lL
 lL
-iO
-Qm
-Qm
+qW
+Li
+rU
 Qm
 Qm
 Mh

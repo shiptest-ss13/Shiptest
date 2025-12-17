@@ -79,6 +79,12 @@
 /obj/structure/fluff/hedge/opaque,
 /turf/open/floor/plasteel/patterned/brushed/cybersun_outpost,
 /area/space)
+"do" = (
+/obj/structure/platform/ship_three/corner{
+	dir = 1
+	},
+/turf/open/cybersun_outpost_exterior,
+/area/space)
 "eh" = (
 /obj/effect/turf_decal/industrial/hatch,
 /turf/open/floor/engine/hull/reinforced/interior,
@@ -276,6 +282,9 @@
 "nM" = (
 /obj/machinery/disposal/deliveryChute{
 	dir = 8
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 4
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/space)
@@ -592,6 +601,9 @@
 	dir = 1
 	},
 /obj/machinery/light/floor,
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/space)
 "Ct" = (
@@ -757,6 +769,12 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark/cybersun_outpost,
 /area/space)
+"NG" = (
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/turf/closed/wall/mineral/titanium,
+/area/space)
 "Oa" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line,
 /obj/effect/turf_decal/corner/opaque/white/half{
@@ -898,6 +916,12 @@
 	},
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
 /area/space)
+"UJ" = (
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/turf/closed/indestructible/titanium,
+/area/space)
 "Vr" = (
 /obj/effect/landmark/outpost/hangar_crate_spawner,
 /obj/machinery/conveyor/auto/outpost{
@@ -909,6 +933,10 @@
 /obj/effect/turf_decal/corner/transparent/lightgrey/mono,
 /obj/effect/landmark/outpost/shaft_number,
 /turf/open/floor/plasteel/mono/white/cybersun_outpost,
+/area/space)
+"VU" = (
+/obj/structure/disposalpipe/segment,
+/turf/closed/indestructible/titanium,
 /area/space)
 "Xe" = (
 /obj/structure/chair/bench/red/directional/east,
@@ -4593,9 +4621,9 @@ yf
 ya
 ya
 ya
-yf
-jV
-jV
+NG
+VU
+UJ
 jV
 jV
 wX
@@ -4733,7 +4761,7 @@ wi
 wi
 wi
 wi
-wi
+do
 pM
 pM
 pM
