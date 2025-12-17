@@ -85,6 +85,8 @@
 	name = ""
 	lighting_colour_tube = "#4f3c28"
 	lighting_colour_bulb = "#3d2f21"
+	lighting_brightness_tube = 20
+	lighting_brightness_bulb = 12
 
 /area/outpost/exterior/csoutpost
 	name = "Scaffolding"

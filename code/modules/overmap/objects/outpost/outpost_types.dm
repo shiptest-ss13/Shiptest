@@ -272,6 +272,19 @@
 	)
 
 
+/datum/overmap/outpost/cybersun_gas_giant/alter_token_appearance()
+	token.name = name
+	token.desc = desc
+	token.icon = 'icons/misc/overmap_large.dmi'
+	token.icon_state = token_icon_state
+	token.color = current_overmap.secondary_structure_color
+	if(flag_overlay)
+		token.cut_overlays()
+		token.add_overlay("colonized")
+	if(current_overmap.override_object_colors)
+		token.color = current_overmap.primary_color
+	current_overmap.post_edit_token_state(src)
+
 /datum/overmap/outpost/no_main_level // For example and adminspawn.
 	main_template = null
 	elevator_template = /datum/map_template/outpost/elevator_test
