@@ -95,7 +95,7 @@
 	melee_damage_upper = 25
 
 /mob/living/simple_animal/hostile/human/ramzi/melee/hatchet
-	name = "Ramzi Clique Chopper"
+	name = "Ramzi Clique Axeman"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They wield a hatchet, preparing to swing right at you."
 	attack_verb_continuous = "chops"
 	attack_verb_simple = "chop"
@@ -110,13 +110,13 @@
 	weapon_drop_chance = 35 //loot value of a hatchet is limited
 
 /mob/living/simple_animal/hostile/human/ramzi/melee/hatchet/engi
-	name = "Ramzi Clique Lumberjack"
+	name = "Ramzi Clique Defoliator"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They clutch a hatchet in dirty old gloves, ready to take a firm swing."
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/engi
 	armor_base = /obj/item/clothing/suit/ramzi //they're an engi not a combatant
 
 /mob/living/simple_animal/hostile/human/ramzi/melee/sawbones
-	name = "Ramzi Clique Sawbones"
+	name = "Ramzi Clique Field Medic"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They clutch a bonesaw, its blade whirring away amidst the backdrop of their maroon smock."
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/doctor
 	armor_base = /obj/item/clothing/suit/ramzi/smock //i am a surgeon
