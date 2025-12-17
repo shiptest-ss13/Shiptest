@@ -245,13 +245,12 @@
 		/datum/map_template/outpost/hangar/clip_ocean_56x40
 	)
 
-#warn "remove when you've made a proper weather controller for the winds"
 /datum/overmap/outpost/cybersun_gas_giant
 	token_icon_state = "gas_giant_outpost"
 	//icon = 'icons/misc/overmap_larger.dmi'
 	main_template = /datum/map_template/outpost/cybersun_gas_giant
 	elevator_template = /datum/map_template/outpost/elevator_cybersun
-	weather_controller_type = /datum/weather_controller/lush
+	weather_controller_type = /datum/weather_controller/thousand_eyes
 	hangar_templates = list(
 		/datum/map_template/outpost/hangar/cybersun_gas_giant_20x20,
 		/datum/map_template/outpost/hangar/cybersun_gas_giant_40x20,
