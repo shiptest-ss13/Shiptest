@@ -796,12 +796,12 @@
 /area/ruin/jungle/syndifort/dorms)
 "me" = (
 /obj/structure/safe,
-/obj/item/melee/energy/sword/saber/red,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/spacecash/bundle/smallrand,
 /obj/machinery/light/directional/east,
 /obj/item/spacecash/bundle/smallrand,
 /obj/item/folder/documents/syndicate/red,
+/obj/item/melee/energy/flyssa,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/syndifort/armory)
 "mh" = (
@@ -1315,10 +1315,10 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/jungle/syndifort/dorms)
 "sF" = (
-/obj/structure/salvageable/computer{
+/obj/effect/turf_decal/box,
+/obj/machinery/computer/monitor/retro{
 	dir = 8
 	},
-/obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/syndifort/atmos)
 "sI" = (
@@ -1549,8 +1549,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/syndifort/canteen)
 "ve" = (
-/obj/structure/salvageable/autolathe,
 /obj/effect/turf_decal/box,
+/obj/machinery/autolathe,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/syndifort/atmos)
 "vs" = (
@@ -1721,6 +1721,8 @@
 	},
 /obj/item/stack/sheet/mineral/plasma/twenty,
 /obj/structure/closet/crate/engineering/electrical,
+/obj/item/stack/sheet/metal/twenty,
+/obj/item/stack/sheet/glass/twenty,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/syndifort/electrical)
 "ym" = (
