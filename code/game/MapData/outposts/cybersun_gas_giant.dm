@@ -21,6 +21,7 @@
 	light_power = 0.4
 	light_range = 2
 	//add immerse element once that pr is merged
+	slowdown = 8
 
 	plane = PLANE_SPACE
 	layer = SPACE_LAYER
@@ -76,7 +77,7 @@
 	resistance_flags = INDESTRUCTIBLE
 	flags_ricochet = RICOCHET_SHINY | RICOCHET_HARD
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_TITANIUM_WALLS)
+	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_TITANIUM_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_TITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 	hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
