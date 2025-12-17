@@ -1147,6 +1147,7 @@ SUBSYSTEM_DEF(overmap)
 	override_object_colors = TRUE
 	overmap_icon_state = "overmap_dark"
 
+#warn you need a name and custom colors, erika.
 /datum/overmap_star_system/safezone/thousand_eyes
 	name = "Cybersun - "
 	starname = "Kapche-Legnica"
