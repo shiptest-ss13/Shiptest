@@ -1,6 +1,6 @@
 SUBSYSTEM_DEF(missions)
 	name = "Missions"
-	flags = SS_NO_FIRE
+	flags = SS_NO_INIT|SS_NO_FIRE
 	priority = FIRE_PRIORITY_MISSIONS
 	wait = 10 SECONDS
 
