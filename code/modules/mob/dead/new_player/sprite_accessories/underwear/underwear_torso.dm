@@ -84,25 +84,41 @@
 	name = "Polo Shirt (Greyscale)"
 	icon_state = "polo"
 
+/datum/sprite_accessory/undershirt/longpolo
+	name = "Long Polo Shirt (Greyscale)"
+	icon_state = "longpolo"
+
 /datum/sprite_accessory/undershirt/shortsleeve
 	name = "Short-sleeved shirt (Greyscale)"
 	icon_state = "shortsleeve"
 
+/datum/sprite_accessory/undershirt/longsleeve
+	name = "Shirt (Greyscale)"
+	icon_state = "longsleeve"
+
 /datum/sprite_accessory/undershirt/compression
-	name = "compression shirt (Greyscale)"
+	name = "Compression Shirt (Greyscale)"
 	icon_state = "compsleeve"
 
 /datum/sprite_accessory/undershirt/comptshirt
-	name = "compression t-shirt (Greyscale)"
+	name = "Compression T-shirt (Greyscale)"
 	icon_state = "compshort"
 
 /datum/sprite_accessory/undershirt/comptank
-	name = "compression tank top (Greyscale)"
+	name = "Compression Tank Top (Greyscale)"
 	icon_state = "comptank"
 
 /datum/sprite_accessory/undershirt/compcropped
-	name = "cropped compression top (Greyscale)"
+	name = "Cropped Compression Top (Greyscale)"
 	icon_state = "compcropped"
+
+/datum/sprite_accessory/undershirt/compcroppedlong
+	name = "Cropped Sleeved Compression Top (Greyscale)"
+	icon_state = "compcroppedlong"
+
+/datum/sprite_accessory/undershirt/compcroppedshort
+	name = "Cropped Shortsleeve Compression Top (Greyscale)"
+	icon_state = "compcroppedshort"
 
 /datum/sprite_accessory/undershirt/tanktop
 	name = "Tank Top (Greyscale)"
@@ -111,6 +127,22 @@
 /datum/sprite_accessory/undershirt/oneshoulder
 	name = "One Shoulder (Greyscale)"
 	icon_state = "oneshoulder"
+
+/datum/sprite_accessory/undershirt/shoulderless
+	name = "Shoulderless Top (Greyscale)"
+	icon_state = "shoulderless"
+
+/datum/sprite_accessory/undershirt/shortshoulderless
+	name = "Shortsleeve Shoulderless Top (Greyscale)"
+	icon_state = "shoulderlessshort"
+
+/datum/sprite_accessory/undershirt/longshoulderless
+	name = "Long Shoulderless Top (Greyscale)"
+	icon_state = "longshoulder"
+
+/datum/sprite_accessory/undershirt/shortlongshoulderless // dude i suck ass at naming
+	name = "Shortsleeve Long Shoulderless Top (Greyscale)"
+	icon_state = "longshouldershort"
 
 /datum/sprite_accessory/undershirt/turtle
 	name = "Turtleneck (Greyscale)"
