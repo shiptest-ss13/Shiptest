@@ -535,11 +535,11 @@
 	. = ..()
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
-		if(C.get_item_by_slot(ITEM_SLOT_NECK) == src)
-			to_chat(user, span_warning("You can't untie [src] while wearing it!"))
+		if((C.get_item_by_slot(ITEM_SLOT_NECK) == src))
+			to_chat(user, span_warning("You can't tie [src] while wearing it!"))
 			return
 		if(user.is_holding(src))
-			var/obj/item/clothing/mask/shemagh/nk = new (src)
+			var/obj/item/clothing/mask/shemagh/nk = new(src)
 			nk.name = "[name] mask"
 			nk.icon_state = "[icon_state]_over"
 			nk.sourceShemaghType = src.type
@@ -565,10 +565,9 @@
 	. = ..()
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
-		if((C.get_item_by_slot(ITEM_SLOT_MASK) == src))
-			to_chat(user, span_warning("You can't tie [src] while wearing it!"))
+		if(C.get_item_by_slot(ITEM_SLOT_MASK) == src)
+			to_chat(user, span_warning("You can't untie [src] while wearing it!"))
 			return
-	else
 		if(user.is_holding(src))
 			var/obj/item/clothing/neck/shemagh/newShemagh = new sourceShemaghType(user)
 			var/currentHandIndex = user.get_held_index_of_item(src)
