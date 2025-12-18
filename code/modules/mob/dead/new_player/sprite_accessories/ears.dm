@@ -72,7 +72,7 @@
 
 /datum/sprite_accessory/ears/human/goat
 	icon = 'icons/mob/species/human/goat.dmi'
-	name = "Horns"
+	name = "Goat Horns"
 	icon_state = "goat"
 	secondary_color = TRUE
 	color_src = HAIR
