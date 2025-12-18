@@ -130,11 +130,12 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	/// How long the cigarette lasts in seconds
 	var/smoketime = 360
 	var/chem_volume = 30
-	var/smoke_all = FALSE /// Should we smoke all of the chems in the cig before it runs out. Splits each puff to take a portion of the overall chems so by the end you'll always have consumed all of the chems inside.
+	/// Should we smoke all of the chems in the cig before it runs out. Splits each puff to take a portion of the overall chems so by the end you'll always have consumed all of the chems inside.
+	var/smoke_all = FALSE
 	var/list/list_reagents = list(/datum/reagent/drug/nicotine = 15)
 	var/lung_harm = 0.1 //How bad it is for you
 	/// The smoke effect system, used to force nearby mobs to inhale secondhand smoke
-	var/datum/effect_system/smoke_spread/chem/cigarette/secondhand_smoke
+	var/datum/effect_system/smoke_spread/transparent/cigarette/secondhand_smoke
 
 /obj/item/clothing/mask/cigarette/Initialize()
 	. = ..()
@@ -256,7 +257,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 				var/obj/item/organ/lungs/L = C.getorganslot(ORGAN_SLOT_LUNGS)
 				if(L && !(L.organ_flags & ORGAN_SYNTHETIC))
 					C.adjustOrganLoss(ORGAN_SLOT_LUNGS, lung_harm)
-		secondhand_smoke.set_up(reagents, to_smoke, 3, src, silent = TRUE)
+		secondhand_smoke.set_up(3, src)
 		secondhand_smoke.start()
 		reagents.remove_any(to_smoke)
 
