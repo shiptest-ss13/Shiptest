@@ -84,7 +84,7 @@
 
 /area/outpost/crew/bar/cybersun_outpost
 	name = "Her Eyes"
-	lighting_colour_tube = "#ae875c"
+	lighting_colour_tube = "#634d36"
 	lighting_colour_bulb = "#8f6c49"
 	lighting_brightness_tube = 20
 	lighting_brightness_bulb = 12
