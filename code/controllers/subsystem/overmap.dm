@@ -1147,18 +1147,17 @@ SUBSYSTEM_DEF(overmap)
 	override_object_colors = TRUE
 	overmap_icon_state = "overmap_dark"
 
-#warn you need a name and custom colors, erika.
 /datum/overmap_star_system/safezone/thousand_eyes
-	name = "Cybersun - "
+	name = "Cybersun - Kapche-Legnica"
 	starname = "Kapche-Legnica"
 	startype = /datum/overmap/star/binary
 	default_outpost_type = /datum/overmap/outpost/cybersun_gas_giant
 
-	primary_color = "#5e5e5e"
-	secondary_color = "#242424"
+	primary_color = "#00eaff"
+	secondary_color = "#4d140f"
 
-	hazard_primary_color = "#b56060"
-	hazard_secondary_color = "#824242"
+	hazard_primary_color = "#972241"
+	hazard_secondary_color = "#71a1a9"
 
 	primary_structure_color = "#ffffff"
 	secondary_structure_color = "#ffffff"

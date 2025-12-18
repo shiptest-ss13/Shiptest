@@ -110,6 +110,9 @@
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/mono/white/cybersun_outpost,
 /area/hangar)
+"hS" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/hangar)
 "hX" = (
 /obj/effect/turf_decal/corner/opaque/white/three_quarters{
 	dir = 4
@@ -279,6 +282,10 @@
 	color = "#E6D2BA"
 	},
 /turf/open/floor/plasteel/patterned/brushed,
+/area/hangar)
+"sn" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/hangar)
 "sB" = (
 /obj/structure/platform/ship_three/corner,
@@ -457,7 +464,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 6
 	},
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/hangar)
 "BI" = (
 /obj/effect/turf_decal/corner/opaque/white/three_quarters,
@@ -2809,26 +2816,26 @@ Gm
 Gm
 Gm
 TZ
-kI
-kI
+hS
+hS
 kI
 kT
 km
 JF
-kI
+hS
 ZH
 Mz
 Mz
-Mz
-Mz
-Mz
+hS
+hS
+hS
 Rf
 QQ
 Fc
 zX
 Mz
 Mz
-Mz
+hS
 NA
 Ey
 Ey
@@ -2861,7 +2868,7 @@ Gm
 Gm
 Gm
 TZ
-kI
+hS
 eR
 LI
 iQ
@@ -2880,7 +2887,7 @@ iD
 aq
 NF
 IT
-Mz
+hS
 zq
 WM
 WM
@@ -2913,7 +2920,7 @@ Gm
 Gm
 Gm
 TZ
-kI
+hS
 Mj
 wf
 vf
@@ -2932,7 +2939,7 @@ iD
 aq
 jD
 Ai
-Mz
+hS
 Pb
 Gm
 Gm
@@ -2965,7 +2972,7 @@ Gm
 Gm
 Gm
 TZ
-kI
+hS
 Mj
 In
 Ef
@@ -2984,7 +2991,7 @@ iD
 aq
 NF
 IT
-Mz
+hS
 Bn
 bx
 bx
@@ -3017,9 +3024,9 @@ Gm
 Gm
 Gm
 TZ
-kI
+hS
 RW
-kI
+hS
 Af
 Af
 Af
@@ -3027,7 +3034,7 @@ Br
 aj
 Xb
 Mz
-Mz
+hS
 YR
 bg
 Ia
@@ -3036,7 +3043,7 @@ iD
 sh
 Mz
 Mz
-Mz
+hS
 Pb
 Gm
 Gm
@@ -3069,14 +3076,14 @@ Gm
 Gm
 Gm
 TZ
-kI
+hS
 qg
 xf
 aU
 aU
 aU
 GT
-kI
+hS
 NA
 iy
 Ux
@@ -3121,14 +3128,14 @@ Gm
 Gm
 Gm
 TZ
-kI
-kI
-kI
-Af
-Af
-Af
-kI
-kI
+hS
+hS
+hS
+sn
+sn
+sn
+hS
+hS
 Pb
 TZ
 Ux

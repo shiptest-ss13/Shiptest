@@ -7,7 +7,7 @@
 	telegraph_overlay = ""
 
 	weather_message = span_userdanger("Gusts of wind start to batter the gravitic bubble!")
-	weather_overlay = "electric_storm"
+	weather_overlay = ""
 	weather_duration_lower = 600
 	weather_duration_upper = 1500
 

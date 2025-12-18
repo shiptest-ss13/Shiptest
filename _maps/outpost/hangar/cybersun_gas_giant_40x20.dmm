@@ -476,7 +476,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 6
 	},
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/hangar)
 "BB" = (
 /obj/structure/chair/bench/red/directional/east,
@@ -590,6 +590,9 @@
 	},
 /obj/effect/landmark/outpost/elevator_machine,
 /turf/open/floor/plasteel/tech/cybersun_outpost,
+/area/hangar)
+"FT" = (
+/turf/closed/indestructible/titanium,
 /area/hangar)
 "Gj" = (
 /obj/structure/fluff/power_conduit{
@@ -1014,7 +1017,7 @@
 /turf/open/cybersun_outpost_exterior,
 /area/hangar)
 "Zo" = (
-/turf/closed/indestructible/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/hangar)
 "ZN" = (
 /obj/structure/platform/ship_three/indestructible,
@@ -4158,16 +4161,16 @@ Ui
 Ui
 Ui
 ZN
-Ei
-Ei
-Ei
+Zo
+Zo
+Zo
 nr
 Dx
 dJ
 Ei
 mu
-Zo
-Zo
+FT
+FT
 Zo
 Zo
 Zo
@@ -4210,7 +4213,7 @@ Ui
 Ui
 Ui
 ZN
-Ei
+Zo
 dS
 QG
 Tb
@@ -4219,7 +4222,7 @@ bm
 Sg
 Wh
 RA
-Zo
+FT
 TQ
 hU
 Dh
@@ -4262,16 +4265,16 @@ Ui
 Ui
 Ui
 ZN
-Ei
+Zo
 ZY
 ai
 fr
 Vn
 Yt
 JX
-Zo
+FT
 VY
-Zo
+FT
 sr
 as
 VD
@@ -4314,16 +4317,16 @@ Ui
 Ui
 Ui
 ZN
-Ei
+Zo
 ZY
 KQ
 CK
 Mn
 CK
 kS
-Zo
+FT
 RX
-Zo
+FT
 IY
 Ew
 Ew
@@ -4366,16 +4369,16 @@ Ui
 Ui
 Ui
 ZN
-Ei
+Zo
 fE
-Ei
+Zo
 NS
 NS
 NS
 AC
 fg
 CR
-Zo
+FT
 Zo
 eb
 yQ
@@ -4418,14 +4421,14 @@ Ui
 Ui
 Ui
 ZN
-Ei
+Zo
 Kl
 Cc
 ma
 ma
 ma
 bJ
-Ei
+Zo
 nj
 Wu
 Gl
@@ -4470,14 +4473,14 @@ Ui
 Ui
 Ui
 ZN
-Ei
-Ei
-Ei
+Zo
+Zo
+Zo
 NS
 NS
 NS
 Ei
-Ei
+Zo
 Md
 ZN
 Gl

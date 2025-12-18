@@ -5,7 +5,7 @@
 		initial_gas_mix = OPENTURF_DEFAULT_ATMOS;		\
 		planetary_atmos = TRUE;							\
 		light_color = COLOR_CYBERSUN_OUTPOST_LIGHTING;	\
-		light_power = 0.4;								\
+		light_power = 1;								\
 		light_range = 2;								\
 	}
 
@@ -21,7 +21,7 @@
 	light_power = 0.4
 	light_range = 2
 	//add immerse element once that pr is merged
-	slowdown = 8
+	slowdown = 2
 
 	plane = PLANE_SPACE
 	layer = SPACE_LAYER
@@ -73,19 +73,19 @@
 	explosion_block = 3
 	density = TRUE
 	opacity = TRUE
+	anchored = TRUE
 	layer = CLOSED_TURF_LAYER
 	resistance_flags = INDESTRUCTIBLE
 	flags_ricochet = RICOCHET_SHINY | RICOCHET_HARD
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
+	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_TITANIUM_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_TITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
-
+	canSmoothWith = list(SMOOTH_GROUP_TITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS)
 	hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
 
 /area/outpost/crew/bar/cybersun_outpost
-	name = ""
-	lighting_colour_tube = "#4f3c28"
-	lighting_colour_bulb = "#3d2f21"
+	name = "Her Eyes"
+	lighting_colour_tube = "#ae875c"
+	lighting_colour_bulb = "#8f6c49"
 	lighting_brightness_tube = 20
 	lighting_brightness_bulb = 12
 

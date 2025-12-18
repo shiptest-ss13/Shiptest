@@ -193,7 +193,7 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/hangar)
 "hc" = (
-/turf/closed/indestructible/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/hangar)
 "hk" = (
 /obj/effect/turf_decal/corner/opaque/orange/border{
@@ -429,6 +429,9 @@
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 1
 	},
+/turf/closed/indestructible/titanium,
+/area/hangar)
+"uF" = (
 /turf/closed/indestructible/titanium,
 /area/hangar)
 "vP" = (
@@ -1052,7 +1055,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 6
 	},
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/hangar)
 "ZF" = (
 /obj/effect/turf_decal/corner/opaque/white/three_quarters,
@@ -5487,16 +5490,16 @@ SK
 SK
 SK
 Gi
-JB
-JB
+hc
+hc
 JB
 wn
 Jq
 WO
 JB
 kA
-hc
-hc
+uF
+uF
 hc
 hc
 hc
@@ -5559,7 +5562,7 @@ cs
 cs
 cs
 lK
-JB
+hc
 gb
 Eu
 Cd
@@ -5568,7 +5571,7 @@ rD
 LJ
 sU
 Lp
-hc
+uF
 vP
 Iq
 yA
@@ -5631,16 +5634,16 @@ cs
 cs
 cs
 lK
-JB
+hc
 lZ
 NE
 DC
 hk
 Dg
 gT
-hc
+uF
 Dc
-hc
+uF
 HG
 YT
 AX
@@ -5703,16 +5706,16 @@ cs
 cs
 cs
 lK
-JB
+hc
 lZ
 Wf
 yQ
 rA
 yQ
 gI
-hc
+uF
 ZY
-hc
+uF
 Az
 So
 So
@@ -5775,16 +5778,16 @@ cs
 cs
 cs
 lK
-JB
+hc
 DG
-JB
+hc
 Zk
 Zk
 Zk
 ZE
 mc
 UK
-hc
+uF
 hc
 dQ
 CR
@@ -5847,14 +5850,14 @@ cs
 cs
 cs
 lK
-JB
+hc
 Jy
 WJ
 Xq
 Xq
 Xq
 Ma
-JB
+hc
 Hz
 Gi
 sc
@@ -5919,14 +5922,14 @@ cs
 cs
 cs
 lK
-JB
-JB
-JB
+hc
+hc
+hc
 Zk
 Zk
 Zk
-JB
-JB
+hc
+hc
 zZ
 lK
 sc

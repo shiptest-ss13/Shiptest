@@ -317,7 +317,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 6
 	},
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/hangar)
 "rC" = (
 /obj/effect/turf_decal/corner/opaque/white/three_quarters{
@@ -631,6 +631,9 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
+/area/hangar)
+"GZ" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/hangar)
 "He" = (
 /obj/effect/turf_decal/siding/black/end{
@@ -5984,9 +5987,9 @@ ei
 ei
 ei
 wX
-iO
-iO
-iO
+GZ
+GZ
+GZ
 dj
 DS
 zo
@@ -5994,16 +5997,16 @@ iO
 Na
 Qm
 Qm
-Qm
-Qm
-Qm
+GZ
+GZ
+GZ
 He
 wY
 fT
 tJ
-Qm
-Qm
-Qm
+GZ
+GZ
+GZ
 ov
 ei
 ei
@@ -6055,7 +6058,7 @@ iB
 iB
 iB
 DE
-iO
+GZ
 FG
 uh
 ej
@@ -6074,7 +6077,7 @@ PH
 EV
 tb
 fB
-Qm
+GZ
 HX
 cL
 cL
@@ -6126,7 +6129,7 @@ iB
 iB
 iB
 DE
-iO
+GZ
 rV
 tK
 uD
@@ -6145,7 +6148,7 @@ PH
 EV
 dD
 KS
-Qm
+GZ
 IF
 iB
 iB
@@ -6197,7 +6200,7 @@ iB
 iB
 iB
 DE
-iO
+GZ
 rV
 lr
 LK
@@ -6216,7 +6219,7 @@ PH
 EV
 tb
 fB
-Qm
+GZ
 Wb
 Ld
 Ld
@@ -6268,9 +6271,9 @@ iB
 iB
 iB
 DE
-iO
+GZ
 ag
-iO
+GZ
 lL
 lL
 lL
@@ -6278,16 +6281,16 @@ qW
 Li
 rU
 Qm
-Qm
+GZ
 Mh
 Nt
 Nf
 GI
 PH
 wT
-Qm
-Qm
-Qm
+GZ
+GZ
+GZ
 IF
 iB
 iB
@@ -6339,14 +6342,14 @@ iB
 iB
 iB
 DE
-iO
+GZ
 pb
 BK
 mz
 mz
 mz
 kO
-iO
+GZ
 ov
 wX
 OB
@@ -6410,14 +6413,14 @@ iB
 iB
 iB
 DE
-iO
-iO
-iO
+GZ
+GZ
+GZ
 lL
 lL
 lL
-iO
-iO
+GZ
+GZ
 IF
 DE
 OB
@@ -6480,7 +6483,7 @@ iB
 iB
 iB
 iB
-iB
+uB
 ei
 ei
 ei
