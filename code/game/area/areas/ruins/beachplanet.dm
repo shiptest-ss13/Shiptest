@@ -24,6 +24,9 @@
 /area/ruin/beach/corpo_resort/bar
 	name = "Corporate Resort Bar and Grill"
 
+/area/ruin/beach/corpo_resort/staff_dorms
+	name = "Corporate Resort Staff Dormitories"
+
 /area/ruin/beach/corpo_resort/electrical
 	name = "Corporate Resort Geothermal Power Station"
 	ambience_index = AMBIENCE_MAINT

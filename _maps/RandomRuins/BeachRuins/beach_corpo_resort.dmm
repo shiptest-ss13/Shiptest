@@ -1,9 +1,17 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/turf/open/floor/engine/hull/reinforced/interior{
-	name = "exterior reinforced hull plating"
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"ao" = (
+/turf/closed/wall/mineral/titanium,
+/area/ruin/beach/corpo_resort/hotel)
+"aE" = (
+/obj/structure/platform/wood/corner{
+	dir = 1
 	},
-/area/ruin/beach/corpo_resort/ramzi_shuttle)
+/turf/open/floor/plating/asteroid/sand/dense/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "aN" = (
 /obj/structure/mecha_wreckage/gygax/dark,
 /turf/open/floor/plasteel/telecomms_floor,
@@ -12,8 +20,30 @@
 /obj/structure/platform/corner{
 	dir = 4
 	},
-/turf/open/water/beach,
+/turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"aT" = (
+/obj/effect/turf_decal/corner/opaque/ntbluelight,
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
+"aW" = (
+/obj/effect/turf_decal/ntlogo{
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "f";
+	pixel_x = 0;
+	pixel_y = 3
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "u";
+	pixel_x = 12;
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
 "bj" = (
 /obj/structure/catwalk/over/plated_catwalk/white,
 /turf/open/floor/plating,
@@ -22,13 +52,24 @@
 /obj/structure/platform{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/dirt/beach,
+/turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/electrical)
+"by" = (
+/obj/item/shard,
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "bz" = (
-/obj/structure/platform,
 /obj/machinery/power/rtg/geothermal,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/corpo_resort/electrical)
+"bC" = (
+/obj/effect/turf_decal/stairs{
+	dir = 5
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken6"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "bE" = (
 /obj/structure/platform{
 	dir = 4
@@ -43,8 +84,13 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/tech,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"bN" = (
+/mob/living/simple_animal/hostile/human/ramzi/ranged/sniper/sentry,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "bQ" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
 	dir = 4
@@ -61,6 +107,24 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"bR" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/beach/corpo_resort/ramzi_shuttle)
+"cj" = (
+/obj/structure/girder/displaced,
+/turf/open/floor/plating/rust,
+/area/ruin/beach/corpo_resort/security)
+"cp" = (
+/obj/effect/turf_decal/stairs{
+	dir = 9
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken5"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "ct" = (
 /obj/structure/platform/corner{
 	dir = 8
@@ -104,22 +168,61 @@
 /obj/structure/platform{
 	dir = 4
 	},
-/turf/open/water/beach,
+/turf/open/floor/wood/birch,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "di" = (
 /obj/structure/hazard/electrical/conduit/corner{
 	id = "corpo_resort_geothermal_station";
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/dirt/beach,
+/turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/electrical)
 "dq" = (
 /obj/structure/platform/corner,
-/turf/open/water/beach,
+/turf/open/floor/plating/asteroid/sand/dense/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"dC" = (
+/obj/effect/turf_decal/corner/opaque/ntbluelight/three_quarters,
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
+"dI" = (
+/obj/effect/turf_decal/ntlogo,
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "s";
+	pixel_x = -1;
+	pixel_y = 3
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "c";
+	pixel_x = 7;
+	pixel_y = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
+"dZ" = (
+/obj/structure/platform,
+/turf/open/floor/plating/asteroid/sand/dense/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"ej" = (
+/obj/structure/platform{
+	dir = 1
+	},
+/obj/structure/chair/handrail{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/beach/corpo_resort/ramzi_shuttle)
 "en" = (
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/corpo_resort/office)
+"es" = (
+/obj/structure/platform/corner{
+	dir = 8
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken5"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "eJ" = (
 /obj/structure/girder/displaced,
 /turf/open/floor/plating/rust,
@@ -127,13 +230,45 @@
 "eN" = (
 /turf/open/water/beach,
 /area/ruin/beach/corpo_resort/office)
+"fb" = (
+/obj/item/storage/toolbox/ammo/c65{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"fc" = (
+/obj/effect/turf_decal/corner/opaque/ntbluelight/three_quarters{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
+"fh" = (
+/obj/structure/girder,
+/turf/open/floor/plating/rust,
+/area/ruin/beach/corpo_resort/security)
 "fp" = (
 /obj/structure/hazard/electrical/conduit/frayed_sparks{
 	id = "corpo_resort_geothermal_station";
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/dirt/beach,
-/area/ruin/beach/corpo_resort/electrical)
+/obj/item/clothing/head/hardhat/nanotrasen{
+	pixel_x = 8;
+	pixel_y = 7
+	},
+/obj/item/pda/engineering{
+	pixel_x = -12;
+	pixel_y = -5
+	},
+/turf/open/floor/plating/rust,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"fu" = (
+/obj/machinery/door/window/westright,
+/obj/effect/turf_decal/corner/opaque/ntbluelight/three_quarters{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
 "fF" = (
 /obj/machinery/power/smes/magical{
 	name = "power storage unit";
@@ -145,13 +280,22 @@
 "fH" = (
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate/secure/weapon,
-/obj/item/storage/toolbox/ammo/c65,
 /obj/item/storage/toolbox/ammo/c45,
 /obj/item/storage/toolbox/ammo/c57,
 /obj/item/storage/toolbox/ammo/frag,
 /obj/item/storage/toolbox/ammo/c10mm,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"fR" = (
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"fV" = (
+/obj/item/stack/ore/salvage/scrapmetal,
+/obj/machinery/light/small/broken/directional/east,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating/rust,
+/area/ruin/beach/corpo_resort/security)
 "gl" = (
 /obj/effect/turf_decal/road/edge{
 	dir = 1
@@ -186,19 +330,46 @@
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/electrical)
 "gO" = (
-/obj/structure/hazard/electrical/conduit/manifold{
-	id = "corpo_resort_geothermal_station";
-	dir = 4
+/turf/open/floor/plating/asteroid/sand/dense/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"gX" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
 	},
-/turf/open/floor/plating/asteroid/dirt/beach,
-/area/ruin/beach/corpo_resort/electrical)
+/obj/machinery/power/apc/auto_name/directional/north,
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
 "hk" = (
 /obj/structure/girder,
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"hv" = (
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "hC" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/beach/corpo_resort/electrical)
+"hS" = (
+/obj/structure/hazard/electrical/electrified_water{
+	id = "corpo_resort_geothermal_station"
+	},
+/obj/structure/platform{
+	dir = 5
+	},
+/turf/open/water/beach/underground,
+/area/ruin/beach/corpo_resort/electrical)
+"hT" = (
+/obj/structure/platform/wood/corner{
+	dir = 8
+	},
+/turf/open/water/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"hU" = (
+/obj/structure/platform{
+	dir = 4
+	},
+/turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "hV" = (
 /turf/template_noop,
 /area/template_noop)
@@ -214,10 +385,17 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
-"iq" = (
-/obj/effect/turf_decal/ntlogo{
-	dir = 8
+"io" = (
+/turf/open/floor/wood{
+	icon_state = "wood-broken"
 	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"iq" = (
+/obj/effect/turf_decal/corner/opaque/ntbluelight{
+	dir = 9
+	},
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced/spawner/north,
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/corpo_resort/office)
 "iG" = (
@@ -226,6 +404,12 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/electrical)
+"iJ" = (
+/obj/effect/turf_decal/corner/opaque/ntbluelight/three_quarters{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
 "iU" = (
 /obj/effect/turf_decal/techfloor,
 /obj/structure/table/reinforced,
@@ -243,6 +427,13 @@
 	name = "exterior reinforced hull plating"
 	},
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"jB" = (
+/obj/structure/hazard/electrical/electrified_water{
+	id = "corpo_resort_geothermal_station"
+	},
+/obj/structure/platform,
+/turf/open/water/beach/underground,
+/area/ruin/beach/corpo_resort/electrical)
 "ke" = (
 /obj/structure/platform{
 	dir = 1
@@ -270,7 +461,10 @@
 /obj/structure/platform{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/dirt/beach,
+/obj/structure/hazard/electrical/electrified_water{
+	id = "corpo_resort_geothermal_station"
+	},
+/turf/open/water/beach/underground,
 /area/ruin/beach/corpo_resort/electrical)
 "kN" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
@@ -300,18 +494,14 @@
 /obj/structure/platform{
 	dir = 6
 	},
-/turf/open/water/beach,
+/turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "lU" = (
 /obj/item/shard,
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "lY" = (
-/obj/structure/hazard/electrical/conduit/frayed_sparks{
-	id = "corpo_resort_geothermal_station";
-	dir = 8
-	},
-/turf/open/floor/plating/asteroid/dirt/beach,
+/turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/electrical)
 "mp" = (
 /obj/structure/cable{
@@ -321,34 +511,57 @@
 	color = "#912a2a";
 	dir = 8
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "mu" = (
 /obj/structure/platform{
 	dir = 1
 	},
-/turf/open/water/beach,
+/turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "mJ" = (
 /obj/machinery/autolathe/hacked,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "nb" = (
-/mob/living/simple_animal/beachcarp/salmon,
 /turf/open/water/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
+/area/ruin/beach/corpo_resort/bar)
 "nm" = (
 /obj/structure/platform,
 /obj/structure/sign/nanotrasen/ns{
 	pixel_x = -32
 	},
-/turf/open/water/beach,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"nq" = (
+/turf/open/floor/plating,
+/area/ruin/beach/corpo_resort/security)
+"nu" = (
+/obj/effect/turf_decal/stairs_wood{
+	dir = 5;
+	color = "#55391A"
+	},
+/turf/open/floor/wood/birch,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "nJ" = (
 /obj/effect/turf_decal/road/edge{
 	dir = 8
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"nZ" = (
+/obj/structure/platform{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"oE" = (
+/obj/structure/hazard/electrical/electrified_water{
+	id = "corpo_resort_geothermal_station"
+	},
+/obj/structure/platform,
+/turf/open/water/beach/underground,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "oU" = (
 /obj/structure/table_frame,
@@ -360,11 +573,19 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"oZ" = (
+/obj/effect/turf_decal/stairs{
+	dir = 5
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken3"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "pa" = (
 /obj/structure/platform{
 	dir = 5
 	},
-/turf/open/water/beach,
+/turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "pi" = (
 /obj/structure/cable{
@@ -399,8 +620,30 @@
 /obj/structure/platform/corner{
 	dir = 8
 	},
-/turf/open/water/beach,
+/turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"qV" = (
+/obj/item/stack/ore/salvage/scraptitanium,
+/obj/effect/turf_decal/corner/opaque/red{
+	dir = 6
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/beach/corpo_resort/security)
+"qZ" = (
+/obj/structure/hazard/electrical/electrified_water{
+	id = "corpo_resort_geothermal_station"
+	},
+/obj/structure/platform{
+	dir = 4
+	},
+/turf/open/water/beach/underground,
+/area/ruin/beach/corpo_resort/electrical)
+"ra" = (
+/obj/effect/turf_decal/corner/opaque/ntbluelight{
+	dir = 10
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
 "re" = (
 /obj/structure/hazard/electrical/conduit/corner{
 	id = "corpo_resort_geothermal_station"
@@ -411,6 +654,11 @@
 /obj/effect/turf_decal/corner_techfloor_grid,
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/electrical)
+"rf" = (
+/obj/structure/girder/displaced,
+/obj/structure/foamedmetal/iron,
+/turf/open/floor/plating/rust,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "ro" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 10
@@ -439,18 +687,60 @@
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"rz" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-9"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-5"
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
 "rM" = (
-/turf/open/floor/plating/asteroid/dirt/beach,
+/obj/structure/hazard/electrical/electrified_water{
+	id = "corpo_resort_geothermal_station"
+	},
+/obj/structure/platform{
+	dir = 8
+	},
+/turf/open/water/beach/underground,
 /area/ruin/beach/corpo_resort/electrical)
+"rN" = (
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/beach/corpo_resort/security)
+"rQ" = (
+/obj/effect/turf_decal/siding/thinplating/light{
+	dir = 9
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/beach/corpo_resort/office)
+"rR" = (
+/turf/open/floor/plating/rust,
+/area/ruin/beach/corpo_resort/security)
 "rX" = (
 /obj/structure/platform{
 	dir = 10
 	},
-/turf/open/water/beach,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"sy" = (
+/obj/structure/hazard/electrical/electrified_water{
+	id = "corpo_resort_geothermal_station"
+	},
+/obj/structure/platform{
+	dir = 4
+	},
+/turf/open/water/beach/underground,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "sI" = (
 /obj/machinery/light/directional/east,
-/turf/open/floor/plating/asteroid/dirt/beach,
+/obj/structure/hazard/electrical/electrified_water{
+	id = "corpo_resort_geothermal_station"
+	},
+/obj/structure/platform{
+	dir = 8
+	},
+/turf/open/water/beach/underground,
 /area/ruin/beach/corpo_resort/electrical)
 "sY" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -459,9 +749,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "tu" = (
-/obj/effect/turf_decal/ntlogo{
-	dir = 4
+/obj/effect/turf_decal/corner/opaque/ntbluelight{
+	dir = 9
 	},
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced/spawner,
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/corpo_resort/office)
 "tL" = (
@@ -472,19 +764,43 @@
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "tO" = (
 /obj/machinery/light/directional/north,
-/turf/open/floor/plating/asteroid/dirt/beach,
+/obj/structure/hazard/electrical/electrified_water{
+	id = "corpo_resort_geothermal_station"
+	},
+/turf/open/water/beach/underground,
 /area/ruin/beach/corpo_resort/electrical)
+"ui" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/beach/corpo_resort/office)
 "ul" = (
 /obj/structure/cable{
 	icon_state = "1-9"
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"uv" = (
+/obj/effect/turf_decal/siding/thinplating/light{
+	dir = 10
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/beach/corpo_resort/office)
 "uR" = (
 /obj/effect/turf_decal/road{
 	dir = 5
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"va" = (
+/obj/structure/platform/corner{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "vb" = (
 /obj/effect/turf_decal/trimline/opaque/blue/line{
@@ -498,6 +814,20 @@
 "vm" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"vw" = (
+/obj/structure/hazard/electrical/electrified_water{
+	id = "corpo_resort_geothermal_station"
+	},
+/obj/item/stack/ore/salvage/scrapmetal,
+/obj/structure/platform{
+	dir = 5
+	},
+/turf/open/water/beach/underground,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"vI" = (
+/obj/effect/decal/remains/human,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/ruin/beach/corpo_resort/security)
 "vJ" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -509,8 +839,18 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"we" = (
+/turf/open/floor/wood,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"wg" = (
+/obj/structure/platform/wood,
+/turf/open/water/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "wi" = (
 /turf/open/water/beach,
 /area/ruin/beach/corpo_resort/supply)
@@ -529,6 +869,11 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/beach/corpo_resort/office)
+"wG" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/turf/open/floor/plating,
+/area/ruin/beach/corpo_resort/electrical)
 "wH" = (
 /obj/structure/mecha_wreckage/ripley,
 /obj/item/mecha_parts/mecha_equipment/hydraulic_clamp{
@@ -571,8 +916,19 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"wT" = (
+/obj/effect/turf_decal/stairs{
+	dir = 5
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken4"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "wX" = (
 /obj/effect/turf_decal/techfloor,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "wY" = (
@@ -580,8 +936,23 @@
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"xi" = (
+/obj/item/stack/ore/salvage/scrapmetal,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating/rust,
+/area/ruin/beach/corpo_resort/security)
+"xz" = (
+/mob/living/simple_animal/hostile/human/ramzi/melee/machete,
+/obj/effect/turf_decal/corner/opaque/ntbluelight{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
 "xK" = (
 /obj/machinery/porta_turret/ruin/ramzi/light{
 	dir = 5;
@@ -593,7 +964,9 @@
 /obj/effect/turf_decal/stairs{
 	dir = 9
 	},
-/turf/open/water/beach,
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken3"
+	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "xQ" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -604,6 +977,25 @@
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"xX" = (
+/obj/structure/table/reinforced,
+/turf/open/water/beach,
+/area/ruin/beach/corpo_resort/electrical)
+"xZ" = (
+/obj/structure/table/reinforced,
+/obj/structure/hazard_shutoff/electrical_shutoff/resets{
+	id = "corpo_resort_geothermal_station";
+	pixel_x = 0;
+	pixel_y = -11;
+	name = "generator cycle button";
+	desc = "A button marked to initiate a restart of the geothermal generators. Doesn't seem like it'll take long."
+	},
+/turf/open/water/beach,
+/area/ruin/beach/corpo_resort/electrical)
+"yc" = (
+/obj/item/shard,
+/turf/open/floor/plating/asteroid/sand/dense/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "ye" = (
 /obj/structure/platform{
 	dir = 1
@@ -611,22 +1003,26 @@
 /obj/structure/sign/nanotrasen/ns{
 	pixel_x = -32
 	},
-/turf/open/water/beach,
+/turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "yj" = (
 /obj/structure/hazard/electrical/conduit/manifold{
 	id = "corpo_resort_geothermal_station";
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/dirt/beach,
-/area/ruin/beach/corpo_resort/electrical)
+/turf/open/floor/plating/rust,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"yl" = (
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken7"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "yn" = (
-/obj/structure/platform,
 /obj/structure/hazard/electrical/conduit/manifold{
 	id = "corpo_resort_geothermal_station";
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/dirt/beach,
+/turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/electrical)
 "yz" = (
 /obj/structure/cable,
@@ -634,11 +1030,10 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "zk" = (
-/obj/structure/platform{
-	dir = 4
+/obj/effect/turf_decal/stairs{
+	dir = 9
 	},
-/obj/machinery/power/rtg/geothermal,
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/electrical)
 "zS" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -646,6 +1041,17 @@
 "Ag" = (
 /obj/effect/turf_decal/road/edge,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Ah" = (
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken6"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Ar" = (
+/obj/structure/platform/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/sand/dense/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "AH" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
@@ -678,6 +1084,25 @@
 	name = "exterior reinforced hull plating"
 	},
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"AM" = (
+/obj/item/ammo_casing/spent/big_brass{
+	pixel_x = -9;
+	pixel_y = 9
+	},
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"AQ" = (
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 8
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/beach/corpo_resort/office)
+"AR" = (
+/obj/structure/platform{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "AY" = (
 /obj/structure/girder/displaced,
 /obj/item/stack/ore/salvage/scrapmetal,
@@ -688,8 +1113,14 @@
 	dir = 8;
 	id = "corpo_resort_geothermal_station"
 	},
-/turf/open/floor/plating/asteroid/dirt/beach,
-/area/ruin/beach/corpo_resort/electrical)
+/turf/open/floor/plating/rust,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Bp" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-10"
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
 "Bw" = (
 /turf/open/water/beach,
 /area/ruin/beach/corpo_resort/electrical)
@@ -705,6 +1136,41 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"BX" = (
+/obj/item/stack/ore/salvage/scraptitanium,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Cq" = (
+/obj/effect/turf_decal/ntlogo{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "c";
+	pixel_x = -10;
+	pixel_y = 4
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "k";
+	pixel_x = 1;
+	pixel_y = 2
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
+"Cw" = (
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken4"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"CJ" = (
+/obj/item/toy/crayon/spraycan{
+	pixel_x = 6;
+	pixel_y = 5
+	},
+/obj/effect/turf_decal/corner/opaque/ntbluelight{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
 "CP" = (
 /obj/structure/cable,
 /obj/machinery/power/terminal{
@@ -722,7 +1188,9 @@
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/metal/fifty,
-/turf/open/water/beach,
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken4"
+	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Dd" = (
 /obj/structure/cable{
@@ -749,11 +1217,32 @@
 /obj/machinery/power/smes/engineering,
 /turf/open/floor/plating,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"DA" = (
+/obj/structure/hazard/electrical/electrified_water{
+	id = "corpo_resort_geothermal_station"
+	},
+/obj/item/storage/belt/utility/chief/full{
+	pixel_x = -6;
+	pixel_y = -6
+	},
+/obj/structure/platform,
+/turf/open/water/beach/underground,
+/area/ruin/beach/corpo_resort/electrical)
 "DI" = (
 /obj/effect/turf_decal/road/edge{
 	dir = 4
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Ec" = (
+/obj/structure/hazard/electrical/electrified_water{
+	id = "corpo_resort_geothermal_station"
+	},
+/obj/item/stack/ore/salvage/scrapmetal,
+/obj/structure/platform{
+	dir = 10
+	},
+/turf/open/water/beach/underground,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Eg" = (
 /obj/structure/catwalk/over/plated_catwalk/white,
@@ -765,6 +1254,14 @@
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Er" = (
+/obj/structure/crate_shelf,
+/obj/item/clothing/head/helmet/space/syndicate/ramzi/surplus,
+/obj/item/tank/internals/oxygen,
+/obj/item/clothing/suit/space/syndicate/ramzi/surplus,
+/obj/structure/closet/crate/internals,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/beach/corpo_resort/ramzi_shuttle)
 "Ex" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -777,7 +1274,16 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"EB" = (
+/obj/structure/platform/wood{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/sand/dense/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "EO" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "EQ" = (
@@ -821,8 +1327,13 @@
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "FU" = (
-/obj/effect/turf_decal/ntlogo,
-/turf/open/floor/plasteel/white,
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/ntbluelight{
+	dir = 2
+	},
+/turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/office)
 "FX" = (
 /obj/effect/turf_decal/corner_steel_grid,
@@ -839,7 +1350,7 @@
 /obj/effect/turf_decal/stairs{
 	dir = 5
 	},
-/turf/open/water/beach,
+/turf/open/floor/wood/birch,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Gl" = (
 /obj/structure/salvageable/computer{
@@ -848,9 +1359,17 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "GC" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/sniper/sentry,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"GE" = (
+/obj/structure/platform/wood{
+	dir = 1
+	},
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"He" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/beach/corpo_resort/hotel)
 "Hg" = (
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
@@ -858,6 +1377,17 @@
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/water/beach,
 /area/ruin/beach/corpo_resort/supply)
+"HL" = (
+/obj/structure/guncloset,
+/obj/effect/turf_decal/corner/opaque/red{
+	dir = 10
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/beach/corpo_resort/security)
+"HM" = (
+/obj/item/stack/ore/salvage/scrapmetal/five,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Ia" = (
 /obj/effect/turf_decal/techfloor,
 /obj/structure/table/reinforced,
@@ -867,6 +1397,22 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"Ig" = (
+/obj/effect/turf_decal/ntlogo{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "u";
+	pixel_x = -11;
+	pixel_y = 2
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "m";
+	pixel_x = 2;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
 "Ih" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -876,6 +1422,17 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"Ij" = (
+/obj/effect/turf_decal/corner/opaque/ntbluelight{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
+"Im" = (
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken2"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Is" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-9"
@@ -883,24 +1440,42 @@
 /turf/open/water/beach,
 /area/ruin/beach/corpo_resort/electrical)
 "ID" = (
-/turf/open/water/beach,
+/turf/open/floor/plasteel/dark,
 /area/ruin/beach/corpo_resort/security)
 "IH" = (
 /obj/effect/turf_decal/industrial/warning{
 	color = "#912a2a";
 	dir = 4
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/engine/hull/reinforced/interior{
 	name = "exterior reinforced hull plating"
 	},
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"II" = (
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken3"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"IP" = (
+/obj/structure/platform{
+	dir = 4
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken4"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Jf" = (
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg/sidewinder,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Jj" = (
 /obj/structure/hazard/electrical/conduit/manifold{
 	id = "corpo_resort_geothermal_station";
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/dirt/beach,
-/area/ruin/beach/corpo_resort/electrical)
+/turf/open/floor/plating/rust,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Jv" = (
 /obj/structure/platform{
 	dir = 8
@@ -910,18 +1485,45 @@
 "Kv" = (
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Kx" = (
+/obj/effect/turf_decal/techfloor/corner,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/beach/corpo_resort/ramzi_shuttle)
 "Ky" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-5"
 	},
 /turf/open/water/beach,
 /area/ruin/beach/corpo_resort/electrical)
+"KF" = (
+/obj/effect/turf_decal/siding/thinplating/light{
+	dir = 5
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/beach/corpo_resort/office)
+"KT" = (
+/turf/open/floor/wood{
+	icon_state = "wood-broken4"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "KU" = (
 /obj/effect/turf_decal/techfloor,
 /obj/structure/closet/wall/red/directional/west,
 /obj/item/storage/box/ammo/a357,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"LB" = (
+/obj/effect/turf_decal/stairs{
+	dir = 5
+	},
+/obj/structure/cable/yellow{
+	icon_state = "6-8"
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
 "LN" = (
 /obj/item/wallframe/apc{
 	pixel_x = 20;
@@ -943,6 +1545,12 @@
 /obj/effect/spawner/random/food_or_drink/garden/seaweed,
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"MN" = (
+/obj/effect/turf_decal/siding/thinplating/light{
+	dir = 6
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/beach/corpo_resort/office)
 "MU" = (
 /obj/structure/cable/yellow{
 	icon_state = "6-8"
@@ -955,6 +1563,10 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/electrical)
+"Nm" = (
+/obj/structure/platform/wood,
+/turf/open/floor/plating/asteroid/sand/dense/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Nz" = (
 /obj/structure/spawner/hivebot,
 /obj/structure/cable{
@@ -966,8 +1578,13 @@
 /obj/structure/hazard/electrical/conduit{
 	id = "corpo_resort_geothermal_station"
 	},
-/turf/open/floor/plating/asteroid/dirt/beach,
+/turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/electrical)
+"Oc" = (
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken5"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Oo" = (
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/beach/corpo_resort/supply)
@@ -975,8 +1592,30 @@
 /obj/structure/platform{
 	dir = 4
 	},
-/turf/open/water/beach,
+/turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"OJ" = (
+/obj/effect/turf_decal/stairs{
+	dir = 9
+	},
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Pd" = (
+/obj/effect/turf_decal/corner/opaque/white,
+/obj/effect/turf_decal/corner/opaque/ntbluelight{
+	dir = 1
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/beach/corpo_resort/office)
+"Pm" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/beach/corpo_resort/electrical)
 "Px" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 4
@@ -1001,12 +1640,11 @@
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "Qa" = (
-/obj/structure/platform,
-/obj/structure/hazard/electrical/conduit{
-	dir = 8;
-	id = "corpo_resort_geothermal_station"
+/obj/structure/hazard/electrical/conduit/exposed_wires_stun{
+	id = "corpo_resort_geothermal_station";
+	dir = 4
 	},
-/turf/open/floor/plating/asteroid/dirt/beach,
+/turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/electrical)
 "Qd" = (
 /obj/effect/turf_decal/road{
@@ -1026,6 +1664,21 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"QH" = (
+/obj/item/ammo_casing/spent/big_brass{
+	pixel_x = -7;
+	pixel_y = 0
+	},
+/obj/item/ammo_casing/spent/big_brass{
+	pixel_x = 5;
+	pixel_y = 8
+	},
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Rj" = (
+/obj/structure/platform/corner,
+/turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Rn" = (
 /obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
@@ -1048,19 +1701,22 @@
 /obj/structure/platform/corner{
 	dir = 1
 	},
-/turf/open/water/beach,
+/turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "RU" = (
 /obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Sm" = (
+/turf/open/floor/plasteel/patterned,
+/area/ruin/beach/corpo_resort/electrical)
 "Sn" = (
 /obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Sx" = (
-/obj/effect/turf_decal/ntlogo{
-	dir = 1
+/obj/effect/turf_decal/corner/opaque/ntbluelight{
+	dir = 6
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/corpo_resort/office)
@@ -1069,7 +1725,7 @@
 /area/ruin/beach/corpo_resort/office)
 "Tf" = (
 /obj/structure/platform,
-/turf/open/water/beach,
+/turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Tk" = (
 /obj/structure/crate_shelf,
@@ -1086,9 +1742,21 @@
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Tt" = (
-/mob/living/simple_animal/hostile/human/ramzi/melee/sledge,
-/turf/open/water/beach,
+/turf/open/floor/wood/birch,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Tz" = (
+/obj/structure/hazard/electrical/electrified_water{
+	id = "corpo_resort_geothermal_station"
+	},
+/obj/structure/platform{
+	dir = 6
+	},
+/turf/open/water/beach/underground,
+/area/ruin/beach/corpo_resort/electrical)
+"TF" = (
+/obj/structure/girder,
+/turf/open/floor/plating,
+/area/ruin/beach/corpo_resort/security)
 "TG" = (
 /obj/effect/turf_decal/stairs{
 	dir = 9
@@ -1098,6 +1766,21 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"TP" = (
+/obj/structure/hazard/electrical/electrified_water{
+	id = "corpo_resort_geothermal_station"
+	},
+/turf/open/water/beach/underground,
+/area/ruin/beach/corpo_resort/electrical)
+"TZ" = (
+/obj/structure/hazard/electrical/electrified_water{
+	id = "corpo_resort_geothermal_station"
+	},
+/obj/structure/platform{
+	dir = 1
+	},
+/turf/open/water/beach/underground,
+/area/ruin/beach/corpo_resort/electrical)
 "Ue" = (
 /obj/structure/platform{
 	dir = 8
@@ -1105,22 +1788,61 @@
 /obj/machinery/power/rtg/geothermal,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/corpo_resort/electrical)
+"Uk" = (
+/obj/structure/platform,
+/obj/structure/platform{
+	dir = 1
+	},
+/obj/structure/hazard/electrical/electrified_water{
+	id = "corpo_resort_geothermal_station"
+	},
+/turf/open/water/beach/underground,
+/area/ruin/beach/corpo_resort/electrical)
 "Uo" = (
 /obj/effect/turf_decal/techfloor/corner,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"Uz" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/turf/open/floor/plating,
+/area/ruin/beach/corpo_resort/office)
+"UN" = (
+/obj/effect/turf_decal/corner/opaque/ntbluelight{
+	dir = 5
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
 "US" = (
 /obj/structure/hazard/electrical/conduit/frayed_sparks{
 	id = "corpo_resort_geothermal_station"
 	},
-/turf/open/floor/plating/asteroid/dirt/beach,
+/turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/electrical)
+"Vh" = (
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/red{
+	dir = 4
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/beach/corpo_resort/security)
 "Vs" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 6
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"Vt" = (
+/obj/structure/hazard/electrical/electrified_water{
+	id = "corpo_resort_geothermal_station"
+	},
+/obj/structure/platform{
+	dir = 9
+	},
+/turf/open/water/beach/underground,
+/area/ruin/beach/corpo_resort/electrical)
 "Vv" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1134,6 +1856,15 @@
 "Wb" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/beach/corpo_resort/security)
+"Wc" = (
+/obj/structure/hazard/electrical/electrified_water{
+	id = "corpo_resort_geothermal_station"
+	},
+/obj/structure/platform{
+	dir = 10
+	},
+/turf/open/water/beach/underground,
+/area/ruin/beach/corpo_resort/electrical)
 "Wg" = (
 /obj/effect/turf_decal/trimline/opaque/blue/corner,
 /obj/effect/turf_decal/trimline/opaque/blue/corner{
@@ -1150,6 +1881,16 @@
 "Wj" = (
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/beach/corpo_resort/electrical)
+"Wk" = (
+/obj/structure/platform,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Wo" = (
+/obj/effect/turf_decal/corner/opaque/red/three_quarters{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/beach/corpo_resort/security)
 "WI" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -1165,7 +1906,18 @@
 "WR" = (
 /obj/structure/platform,
 /obj/item/stack/ore/salvage/scrapmetal,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"WS" = (
 /turf/open/water/beach,
+/area/ruin/beach/corpo_resort/hotel)
+"WU" = (
+/obj/effect/turf_decal/stairs{
+	dir = 5
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken5"
+	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "WW" = (
 /turf/closed/wall/mineral/titanium,
@@ -1181,8 +1933,12 @@
 /obj/structure/hazard/electrical/conduit/exposed_wires_stun{
 	id = "corpo_resort_geothermal_station"
 	},
-/turf/open/floor/plating/asteroid/dirt/beach,
-/area/ruin/beach/corpo_resort/electrical)
+/obj/structure/hazard/electrical/electrified_water{
+	id = "corpo_resort_geothermal_station"
+	},
+/obj/item/stack/ore/salvage/scrapmetal,
+/turf/open/water/beach/underground,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Xm" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5;
@@ -1191,13 +1947,27 @@
 /obj/structure/cable{
 	icon_state = "6-10"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "Xo" = (
 /obj/structure/platform{
 	dir = 9
 	},
-/turf/open/water/beach,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Xy" = (
+/mob/living/simple_animal/hostile/human/ramzi/melee/sledge,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"XJ" = (
+/obj/structure/closet/crate/trashcart,
+/obj/item/stock_parts/cell/gun/sharplite/plus/empty,
+/obj/item/gun/energy/sharplite/l201/l204/empty_cell,
+/obj/item/stack/ore/salvage/scrapmetal,
+/turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "XN" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -1208,10 +1978,35 @@
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Yr" = (
+/obj/machinery/door/window/westleft,
+/obj/effect/turf_decal/corner/opaque/ntbluelight/three_quarters{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
+"Yt" = (
+/obj/structure/foamedmetal/iron,
+/turf/open/floor/plating/rust,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"YC" = (
+/obj/structure/hazard/electrical/electrified_water{
+	id = "corpo_resort_geothermal_station"
+	},
+/obj/effect/mob_spawn/human/corpse/charredskeleton,
+/obj/structure/platform{
+	layer = 3.07;
+	dir = 1
+	},
+/turf/open/water/beach/underground,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "YJ" = (
 /obj/structure/grille/broken,
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"YQ" = (
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/ruin/beach/corpo_resort/security)
 "YS" = (
 /obj/effect/supplypod_rubble,
 /turf/open/water/beach,
@@ -1220,7 +2015,9 @@
 /obj/structure/sign/nanotrasen/vigilitas{
 	pixel_x = 32
 	},
-/turf/open/water/beach,
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken3"
+	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "YX" = (
 /obj/effect/turf_decal/road{
@@ -1234,8 +2031,15 @@
 /obj/machinery/door/window/brigdoor/northleft,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"Zd" = (
+/obj/structure/platform/wood/corner,
+/turf/open/water/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "ZO" = (
-/turf/open/floor/plating,
+/obj/effect/turf_decal/corner/opaque/ntbluelight/three_quarters{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
 /area/ruin/beach/corpo_resort/office)
 "ZZ" = (
 /obj/structure/cable/yellow{
@@ -1650,19 +2454,6 @@ Fi
 Fi
 Fi
 Fi
-GC
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-nb
 Fi
 Fi
 Fi
@@ -1676,12 +2467,25 @@ Fi
 Fi
 Fi
 Fi
+Zd
 Fi
 Fi
 Fi
 Fi
 Fi
-Mu
+Fi
+Fi
+Fi
+Fi
+Fi
+Fi
+Fi
+Fi
+Fi
+Fi
+Fi
+Fi
+Fi
 Fi
 Fi
 Fi
@@ -1740,10 +2544,10 @@ Fi
 Fi
 Fi
 Fi
+wg
+we
 Fi
-Fi
-Fi
-Fi
+hT
 Fi
 Fi
 Fi
@@ -1817,10 +2621,10 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
+wg
+KT
+we
+GE
 Fi
 Fi
 Fi
@@ -1891,13 +2695,13 @@ XN
 XN
 XN
 XN
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+Nm
+we
+we
+GE
 Fi
 Fi
 Fi
@@ -1953,7 +2757,7 @@ Fi
 Fi
 Fi
 Fi
-Fi
+gO
 qs
 kR
 Sn
@@ -1968,13 +2772,13 @@ wi
 wi
 wi
 XN
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+Nm
+we
+io
+GE
 Fi
 Fi
 Fi
@@ -2030,7 +2834,7 @@ Fi
 Fi
 Fi
 Fi
-Fi
+gO
 RU
 Fi
 HE
@@ -2047,16 +2851,16 @@ wi
 XN
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+Nm
+we
+we
+EB
+gO
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -2107,7 +2911,7 @@ Fi
 Fi
 Fi
 Fi
-Fi
+gO
 qs
 AY
 wH
@@ -2125,19 +2929,19 @@ Oo
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+aE
+nu
+nu
+Ar
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -2183,8 +2987,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
+gO
+gO
 hk
 wi
 wi
@@ -2202,24 +3006,24 @@ XN
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+Tt
+II
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -2259,9 +3063,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
 XN
 wi
 wi
@@ -2279,26 +3083,26 @@ XN
 Fi
 Fi
 Fi
+gO
+II
+Tt
+gO
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -2335,10 +3139,10 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+hv
 WW
 XN
 XN
@@ -2357,28 +3161,28 @@ Fi
 Fi
 Fi
 Fi
+Tt
+Tt
 Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -2412,52 +3216,52 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+hv
+hv
+hv
+hv
+hv
 nm
 gl
 nJ
 ye
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+yl
+Tt
 Fi
 Fi
 Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -2489,17 +3293,30 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Tf
+gO
+gO
+hv
+hv
+hv
+hv
+GC
+Wk
 YX
 xR
 mu
+GC
+GC
+II
+Tt
+Tt
+Tt
+Ah
+Tt
+Oc
+Tt
+Tt
+Tt
+Oc
 Fi
 Fi
 Fi
@@ -2510,33 +3327,20 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -2565,18 +3369,31 @@ Fi
 Fi
 Fi
 Mu
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Tf
+gO
+gO
+gO
+hv
+hv
+hv
+hv
+GC
+Wk
 YX
 xR
 mu
+GC
+GC
+Tt
+Tt
+II
+Tt
+Tt
+Tt
+Tt
+Cw
+Tt
+Oc
+Tt
 Fi
 Fi
 Fi
@@ -2588,33 +3405,20 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -2641,13 +3445,13 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
+gO
+gO
 dq
-OB
-OB
-xO
-xO
+nZ
+nZ
+OJ
+OJ
 OB
 OB
 lD
@@ -2656,44 +3460,44 @@ xR
 pa
 OB
 OB
-xO
+cp
 xO
 OB
 OB
 qP
+Tt
+Tt
+GC
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
 Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -2718,9 +3522,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Tf
+gO
+gO
+dZ
 Ep
 FR
 Ag
@@ -2738,6 +3542,22 @@ DI
 FR
 Qd
 mu
+Cw
+Tt
+GC
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
 Fi
 Fi
 Fi
@@ -2746,32 +3566,16 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -2794,10 +3598,10 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Tf
+gO
+gO
+gO
+dZ
 YX
 Kv
 Kv
@@ -2815,6 +3619,22 @@ Kv
 Kv
 xR
 mu
+Tt
+Oc
+GC
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
 Fi
 Fi
 Fi
@@ -2826,30 +3646,14 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -2871,9 +3675,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
 Tf
 YX
 Kv
@@ -2892,6 +3696,22 @@ Kv
 Kv
 xR
 mu
+Tt
+Tt
+GC
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
 Fi
 Fi
 Fi
@@ -2905,28 +3725,12 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -2948,9 +3752,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
 Tf
 YX
 Kv
@@ -2969,8 +3773,22 @@ Kv
 Kv
 xR
 mu
-Fi
+Tt
 CT
+GC
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
 Fi
 Fi
 Fi
@@ -2986,25 +3804,11 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -3025,9 +3829,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
+gO
+gO
+hv
 Tf
 YX
 Kv
@@ -3046,6 +3850,22 @@ Kv
 Kv
 xR
 mu
+II
+Tt
+GC
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
 Fi
 Fi
 Fi
@@ -3063,26 +3883,10 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -3102,9 +3906,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
+gO
+gO
+hv
 Tf
 YX
 Kv
@@ -3123,6 +3927,34 @@ Kv
 Kv
 xR
 mu
+Tt
+Oc
+GC
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+Fi
+Tt
+Tt
+Cw
+Tt
+Tt
+Tt
+Tt
+Tt
+Tt
+Tt
+Tt
 Fi
 Fi
 Fi
@@ -3130,37 +3962,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -3179,9 +3983,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
 Tf
 YX
 Kv
@@ -3191,8 +3995,8 @@ Kv
 Kv
 Kv
 Kv
-aa
-aa
+Kv
+Kv
 Kv
 Kv
 Kv
@@ -3200,24 +4004,24 @@ Kv
 Kv
 xR
 mu
+Tt
+Tt
+GC
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+Tt
 Fi
 Fi
 Fi
@@ -3225,6 +4029,9 @@ Fi
 YS
 Fi
 Fi
+Tt
+Fi
+Tt
 Fi
 Fi
 Fi
@@ -3233,12 +4040,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -3256,9 +4060,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
 Tf
 YX
 Kv
@@ -3277,24 +4081,24 @@ Kv
 kW
 xR
 mu
+Oc
+Tt
+GC
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+Cw
 Fi
 YS
 Fi
@@ -3302,6 +4106,9 @@ Fi
 Fi
 Fi
 Fi
+Tt
+Fi
+Tt
 Fi
 Fi
 Fi
@@ -3309,14 +4116,11 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -3334,8 +4138,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
+gO
+gO
 Tf
 YX
 Kv
@@ -3354,6 +4158,24 @@ jl
 zS
 xR
 mu
+Tt
+Tt
+GC
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+WS
+Fi
+Tt
 Fi
 Fi
 Fi
@@ -3361,6 +4183,9 @@ Fi
 Fi
 Fi
 Fi
+Tt
+Fi
+Tt
 Fi
 Fi
 Fi
@@ -3368,32 +4193,11 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -3411,9 +4215,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Tf
+gO
+gO
+dZ
 YX
 Kv
 Kv
@@ -3431,46 +4235,46 @@ Rn
 zS
 xR
 mu
+yl
+Tt
+GC
+WS
+WS
+WS
+He
+WS
+WS
+WS
+WS
+WS
+He
+WS
+WS
+WS
+Fi
+Oc
 Fi
 Fi
 Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-hC
-Bw
-Bw
-Bw
-hC
-hC
+qd
+Pm
+wG
+Pm
 hC
 hC
 hC
 hC
 hC
 hC
-Fi
-Fi
-Fi
-Fi
+hC
+qd
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -3488,9 +4292,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Tf
+gO
+gO
+dZ
 YX
 Kv
 Kv
@@ -3508,31 +4312,31 @@ CP
 zS
 xR
 mu
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+Tt
+Tt
+GC
+GC
+GC
+GC
+He
+WS
+WS
+WS
+WS
+WS
+He
+GC
+GC
+GC
+GC
+Tt
 Fi
 Fi
 YS
 Fi
 Fi
-hC
 qd
+hC
 Bw
 Bw
 Bw
@@ -3544,10 +4348,10 @@ Bw
 Bw
 Bw
 hC
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -3566,13 +4370,13 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Tf
+gO
+dZ
 YX
 Kv
 Kv
 zS
-EO
+bR
 EO
 zS
 Tk
@@ -3585,24 +4389,24 @@ FC
 zS
 xR
 mu
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+Tt
+Cw
+GC
+GC
+GC
+GC
+He
+WS
+WS
+WS
+WS
+WS
+He
+GC
+GC
+GC
+GC
+yl
 Fi
 Fi
 Fi
@@ -3621,10 +4425,10 @@ Bw
 Bw
 Bw
 hC
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -3643,8 +4447,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Tf
+gO
+dZ
 YX
 Kv
 Kv
@@ -3655,32 +4459,32 @@ zS
 mJ
 tL
 ul
-Tk
+Er
 zS
 Dv
 zS
 iZ
 xR
 mu
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-qs
+Tt
+Ah
+GC
+GC
+GC
+GC
+ao
+He
+WS
+WS
+WS
+He
+ao
+aa
+aa
+GC
+GC
+yl
+Yt
 qs
 qs
 hk
@@ -3694,14 +4498,14 @@ Bw
 hC
 Bw
 Bw
-Bw
+xZ
 Bw
 Bw
 hC
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -3720,8 +4524,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Tf
+gO
+dZ
 YX
 Kv
 Kv
@@ -3732,53 +4536,53 @@ TG
 bE
 ct
 Hg
-Uo
+Kx
 zS
 zS
 iZ
 Kv
 xR
 mu
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-qs
+Tt
+Tt
+GC
+GC
+GC
+GC
+GC
+ao
+WS
+WS
+WS
+ao
+GC
+fR
+aa
+GC
+GC
+Tt
+Yt
 Fi
 Fi
 Fi
 Bw
 hC
 hC
+Pm
 hC
-hC
-hC
+Pm
 hC
 hC
 Bw
 Bw
-Bw
+xX
 Bw
 Bw
 hC
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -3797,8 +4601,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Tf
+gO
+dZ
 YX
 Kv
 Kv
@@ -3816,46 +4620,46 @@ Kv
 Kv
 xR
 mu
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-eJ
+Tt
+Tt
+GC
+GC
+GC
+GC
+GC
+GC
+Tt
+Ah
+Oc
+GC
+GC
+GC
+aa
+GC
+GC
+Tt
+rf
 Fi
 Bw
 Bw
 Bw
+Sm
+Sm
+Sm
+Sm
+Sm
+Sm
+Sm
 Bw
 Bw
-Bw
-Bw
-Bw
-Bw
-Bw
-Bw
-Bw
-Bw
+xX
 Bw
 Bw
 hC
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
 Fi
 Mu
 Fi
@@ -3873,9 +4677,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Tf
+gO
+gO
+dZ
 YX
 Kv
 Kv
@@ -3884,7 +4688,7 @@ Kv
 zS
 bJ
 sY
-ke
+ej
 wX
 Gl
 EX
@@ -3893,35 +4697,35 @@ Kv
 Kv
 xR
 mu
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+Ah
+Tt
+GC
+GC
+GC
+GC
+GC
+GC
+yl
+Tt
+Tt
+GC
+GC
+GC
+aa
+GC
+GC
+Ah
 hC
 Bw
 Bw
 Bw
 Bw
 hC
-Bw
-Bw
-Bw
-Bw
-Bw
+Sm
+Sm
+Sm
+Sm
+Sm
 hC
 Bw
 Bw
@@ -3929,9 +4733,9 @@ Bw
 Bw
 Bw
 hC
-Fi
-Fi
-Fi
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -3950,8 +4754,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
+gO
+gO
 Tf
 YX
 Kv
@@ -3970,35 +4774,35 @@ Kv
 Kv
 xR
 mu
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+Tt
+yl
+GC
+GC
+GC
+GC
+GC
+GC
+Tt
+Oc
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+Tt
 hC
 Bw
 Bw
 Bw
 Bw
 hC
-kG
+Wc
 Ue
 kG
 Ue
-kG
+Vt
 hC
 Bw
 Bw
@@ -4006,9 +4810,9 @@ Bw
 Bw
 Bw
 hC
-Fi
-Fi
-Fi
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -4027,8 +4831,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
+gO
+gO
 Tf
 YX
 Kv
@@ -4047,45 +4851,45 @@ Kv
 Kv
 xR
 mu
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+Cw
+Tt
+GC
+GC
+GC
+GC
+GC
+GC
+Tt
+Tt
+GC
+GC
+GC
+GC
+Tt
+Tt
+Tt
+Tt
 hC
 Bw
 Bw
 kw
 Bw
 hC
-rM
+jB
 di
 US
 yj
-rM
+TZ
+qd
 hC
 hC
+Sm
 hC
 hC
-hC
-hC
-hC
-Fi
-Fi
-Fi
+qd
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -4104,8 +4908,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
+gO
+gO
 Tf
 YX
 Kv
@@ -4124,24 +4928,24 @@ Kv
 Kv
 xR
 mu
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+Tt
+Tt
+GC
+GC
+GC
+GC
+GC
+GC
+Ah
+Tt
+GC
+GC
+GC
+GC
+yl
+GC
+GC
+GC
 hC
 Bw
 Bw
@@ -4149,19 +4953,19 @@ Ky
 fF
 hC
 tO
-rM
-rM
+TP
+Ec
 fp
-rM
-rM
+YC
+DA
 bz
-Bw
-Bw
+Uk
+Sm
 hC
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -4181,8 +4985,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
+gO
+gO
 Tf
 YX
 Kv
@@ -4201,43 +5005,43 @@ Kv
 Kv
 xR
 mu
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+yl
+Tt
+GC
+GC
+GC
+GC
+GC
+GC
+Tt
+Tt
+GC
+GC
+GC
+GC
+Tt
+GC
+GC
+GC
 hC
 Wj
 ZZ
 gy
 re
 hC
-rM
-rM
-rM
+qZ
+sy
+oE
 Ba
-rM
-rM
+vw
+Tz
 Qa
-Bw
-Bw
+Uk
+Sm
 hC
-Fi
-Fi
-Fi
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -4258,8 +5062,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
+gO
+gO
 Tf
 YX
 Kv
@@ -4278,24 +5082,24 @@ Kv
 Kv
 xR
 mu
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+Tt
+Tt
+GC
+GC
+GC
+GC
+GC
+GC
+Oc
+Tt
+GC
+GC
+GC
+GC
+Ah
+GC
+GC
+GC
 hC
 Wj
 MU
@@ -4303,18 +5107,18 @@ Wj
 px
 hC
 NW
-gO
+NW
 WY
 Jj
 NW
 US
 yn
-Bw
-Bw
+Uk
+Sm
 hC
-Fi
-Fi
-Fi
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -4335,8 +5139,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
+gO
+gO
 Tf
 YX
 Kv
@@ -4355,44 +5159,44 @@ Kv
 Kv
 xR
 mu
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+Tt
+Cw
+GC
+GC
+GC
+GC
+GC
+GC
+Tt
+Ah
+GC
+GC
+GC
+GC
+Tt
+GC
+GC
+GC
 hC
 Bw
 iG
 Is
 fF
 hC
-rM
+TP
 lY
-rM
+hS
 sI
 rM
-rM
+Wc
 bz
-Bw
-Bw
+Uk
+Sm
 hC
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -4412,8 +5216,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
+gO
+gO
 Tf
 YX
 Kv
@@ -4432,24 +5236,24 @@ Kv
 Kv
 xR
 mu
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+Tt
+Tt
+GC
+GC
+GC
+GC
+GC
+GC
+Tt
+Tt
+GC
+GC
+GC
+GC
+Tt
+aa
+aa
+aa
 hC
 Fp
 iG
@@ -4464,12 +5268,12 @@ hC
 hC
 hC
 hC
+Sm
 hC
-hC
-hC
+qd
 Fi
-Fi
-Fi
+gO
+gO
 Fi
 Fi
 Fi
@@ -4488,9 +5292,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
+gO
+gO
+hv
 Tf
 uR
 gl
@@ -4509,33 +5313,33 @@ Kv
 nJ
 Yk
 mu
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+yl
+Tt
+GC
+GC
+GC
+GC
+GC
+GC
+Tt
+II
+GC
+GC
+GC
+GC
+Tt
+aa
+fb
+bN
 hC
 Bw
 iG
 Bw
 Bw
 hC
-Bw
-Bw
-Bw
+Sm
+Sm
+Sm
 hC
 Bw
 Bw
@@ -4546,8 +5350,8 @@ Bw
 hC
 Fi
 Fi
-Fi
-Fi
+gO
+gO
 Fi
 Fi
 Fi
@@ -4565,55 +5369,55 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Rx
+gO
+gO
+hv
+va
 Jv
+wT
 Gk
-Gk
-Gk
-Jv
-Jv
-Gk
-Gk
-Gk
-Gk
+WU
 Jv
 Jv
 Gk
-Gk
+wT
+WU
 Gk
 Jv
+Jv
+wT
+oZ
+bC
+AR
 aQ
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+Tt
+Tt
+Tt
+II
+Tt
+Tt
+yl
+Tt
+Tt
+Ah
+yl
+Tt
+Tt
+Tt
+Im
+GC
+AM
+QH
 hC
 Bw
 Nz
 Bw
 Bw
-Bw
-Bw
-Bw
-Bw
-Bw
+Sm
+Sm
+Sm
+Sm
+Sm
 Bw
 Bw
 Bw
@@ -4624,7 +5428,7 @@ hC
 Fi
 Fi
 Fi
-Fi
+gO
 Fi
 Fi
 Fi
@@ -4643,44 +5447,44 @@ Fi
 Fi
 Fi
 Fi
+gO
+hv
+hv
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+Tt
+Oc
+Tt
+Tt
+Oc
+Tt
+Tt
+Tt
+Tt
+Tt
+Oc
+Tt
+Tt
+Tt
+Tt
+Cw
+Tt
+Tt
+Tt
+Tt
+Tt
+yl
+Tt
+II
+Tt
+Tt
+Tt
+Ah
+Im
+Tt
+Tt
+GC
+GC
+GC
 hC
 Bw
 Bw
@@ -4701,7 +5505,7 @@ hC
 Fi
 Fi
 Fi
-Fi
+gO
 Fi
 Fi
 Fi
@@ -4720,65 +5524,65 @@ Fi
 Fi
 Fi
 Fi
-lU
+yc
+hv
+hv
 Fi
-Fi
-Fi
-dq
+Rj
 cF
-OB
-OB
-OB
-qP
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+hU
+IP
+hU
+es
+Cw
 Tt
+Cw
+Tt
+Tt
+Oc
+Tt
+Cw
+Tt
+Tt
+Tt
+Cw
+GC
+XJ
+GC
+GC
+GC
+Tt
+Tt
+GC
+GC
+Jf
+GC
+Tt
+Tt
+GC
+GC
+GC
+qd
+hC
+hC
+hC
+hC
+qd
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+qd
 hC
 hC
 hC
 hC
 hC
 hC
+qd
 Fi
 Fi
 Fi
-hC
-hC
-hC
-hC
-hC
-hC
-hC
-hC
-Fi
-Fi
-Fi
-Fi
+gO
 Fi
 Fi
 Fi
@@ -4797,16 +5601,45 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Tf
+gO
+hv
+hv
+GC
+Wk
 oU
 YJ
 WI
 WI
 mu
+GC
+GC
+Tt
+Cw
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+BX
+GC
+BX
+GC
+Xy
+GC
+Tt
+yl
+GC
+GC
+GC
+GC
+Tt
+Ah
+GC
+GC
+GC
+aa
 Fi
 Fi
 Fi
@@ -4826,37 +5659,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
 Fi
 Fi
 Fi
@@ -4873,35 +5677,46 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-lU
-Fi
+gO
+gO
+hv
+by
+GC
 WR
 WX
 FX
 vb
 WI
 mu
-Fi
+SA
 xQ
-eN
-eN
+ui
+ui
 xQ
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+SA
+GC
+GC
+GC
+GC
+GC
+GC
+HM
+GC
+GC
+BX
+GC
 YU
+Tt
+GC
+GC
+GC
+GC
+Tt
+Tt
+GC
+GC
+GC
+aa
 Fi
 Fi
 Fi
@@ -4922,18 +5737,7 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
 Fi
 Fi
 Fi
@@ -4950,38 +5754,51 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Tf
+gO
+hv
+hv
+hv
+GC
+Wk
 Ru
 LN
 EQ
 WI
 mu
-Fi
+Uz
 ZO
-eN
-eN
-ZO
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+CJ
+xz
+iJ
+Uz
+GC
+GC
+GC
+GC
+GC
+GC
 Fv
+nq
+nq
+TF
 Wb
 Wb
-Wb
-Wb
-Wb
-ID
+rN
 Wb
 Fv
+GC
+GC
+Ah
+Tt
+GC
+GC
+nb
+nb
+nb
+nb
+nb
+nb
+nb
 Fi
 Fi
 Fi
@@ -4997,20 +5814,7 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
 Fi
 Fi
 Fi
@@ -5027,23 +5831,23 @@ Fi
 Fi
 Fi
 Fi
-lU
+yc
+hv
+hv
 Fi
-Fi
-Fi
-Fi
-Tf
+GC
+Wk
 eJ
 vm
 Wg
 vm
 mu
-SA
 xQ
-eN
-eN
+UN
+aW
+dI
+ra
 xQ
-SA
 Fi
 Fi
 Fi
@@ -5051,15 +5855,28 @@ Fi
 Fi
 Fv
 Wb
-ID
-ID
+qV
+Vh
 Wb
-ID
+Wo
 ID
 ID
 ID
 Wb
 Fv
+GC
+Tt
+Tt
+Fi
+nb
+nb
+nb
+nb
+nb
+nb
+nb
+nb
+nb
 Fi
 Fi
 Fi
@@ -5074,20 +5891,7 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
 Fi
 Fi
 Fi
@@ -5104,22 +5908,22 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
+gO
+hv
+hv
 lU
-Fi
+GC
 Rx
-Jv
+AR
 rX
 Tp
 Xo
 aQ
 xQ
-en
-en
-en
-en
+Pd
+Cq
+Ig
+ra
 xQ
 Fi
 Fi
@@ -5127,16 +5931,29 @@ Fi
 Fi
 Fi
 Wb
-ID
-ID
-ID
-ID
+HL
+fV
+xi
+rN
 ID
 ID
 ID
 ID
 ID
 Wb
+GC
+Tt
+Tt
+Fi
+nb
+nb
+nb
+nb
+nb
+nb
+nb
+nb
+nb
 Fi
 Fi
 Fi
@@ -5150,21 +5967,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
 Fi
 Fi
 Fi
@@ -5181,9 +5985,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
+gO
+hv
+hv
 Fi
 Fi
 Fi
@@ -5193,27 +5997,40 @@ wm
 xQ
 xQ
 xQ
-en
+fc
 Sx
 FU
-en
+dC
 xQ
-SA
 Fi
 Fi
 Fi
 Fi
+Fi
 Wb
 Wb
 Wb
-Wb
-Wb
+fh
+rR
+Fi
+GC
+qs
 ID
 ID
-ID
-ID
-ID
 Wb
+GC
+Tt
+Ah
+Fi
+nb
+nb
+nb
+nb
+nb
+nb
+nb
+nb
+nb
 Fi
 Fi
 Fi
@@ -5227,20 +6044,7 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
 Fi
 Fi
 Fi
@@ -5258,24 +6062,24 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
+gO
+hv
+hv
+hv
 Fi
 Fi
 SA
 xQ
-eN
-eN
-eN
-eN
+LB
 en
+en
+xQ
+fu
 iq
 tu
-en
-eN
-eN
+Yr
+xQ
+SA
 Fi
 Fi
 Fi
@@ -5285,12 +6089,25 @@ ID
 ID
 ID
 ID
-ID
-ID
-ID
-ID
+Fi
+Fi
+Fi
+GC
 ID
 Wb
+GC
+Tt
+Tt
+Fi
+nb
+nb
+nb
+nb
+nb
+nb
+nb
+nb
+nb
 Fi
 Fi
 Fi
@@ -5304,20 +6121,7 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
 Fi
 Fi
 Fi
@@ -5335,24 +6139,24 @@ Fi
 Fi
 Fi
 Fi
+gO
+gO
+hv
+hv
+hv
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-eN
-eN
-eN
-eN
-eN
-eN
+xQ
 en
 en
+rz
 en
 en
-eN
-eN
+UN
+rQ
+uv
+Ij
+iJ
+xQ
 Fi
 Fi
 Fi
@@ -5360,14 +6164,27 @@ Fi
 Wb
 ID
 ID
+cj
+GC
+Fi
+Fi
+GC
+ID
 ID
 Wb
-ID
-ID
-ID
-ID
-ID
-Wb
+GC
+yl
+Tt
+Fi
+nb
+nb
+nb
+nb
+nb
+nb
+nb
+nb
+nb
 Fi
 Fi
 Fi
@@ -5380,21 +6197,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
 Fi
 Fi
 Fi
@@ -5413,23 +6217,23 @@ Fi
 Fi
 Fi
 Fi
+gO
+hv
+hv
+hv
 Fi
-Fi
-Fi
-Fi
-Fi
-eN
-eN
-eN
-eN
-eN
-eN
-eN
-eN
-eN
-eN
-eN
-eN
+xQ
+en
+Bp
+en
+en
+en
+UN
+KF
+MN
+aT
+dC
+xQ
 Fi
 Fi
 Fi
@@ -5438,13 +6242,26 @@ Wb
 Wb
 Wb
 Wb
-Wb
+rR
+vI
+Fi
 ID
 ID
 ID
-ID
-ID
 Wb
+GC
+Tt
+Tt
+Fi
+nb
+nb
+nb
+nb
+nb
+nb
+nb
+nb
+nb
 Fi
 Fi
 Fi
@@ -5456,21 +6273,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
 Fi
 Fi
 Fi
@@ -5490,21 +6294,21 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
+gO
+hv
+hv
+hv
 Fi
 SA
 xQ
-eN
-eN
-eN
-eN
-eN
-eN
-eN
-eN
+gX
+en
+en
+xQ
+fc
+Sx
+AQ
+dC
 xQ
 SA
 Fi
@@ -5516,12 +6320,25 @@ ID
 ID
 ID
 Wb
-Wb
-Wb
+YQ
+fh
 ID
 ID
 ID
 Wb
+GC
+Tt
+Cw
+Fi
+nb
+nb
+nb
+nb
+nb
+nb
+nb
+nb
+nb
 Fi
 Fi
 Fi
@@ -5533,20 +6350,7 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
 Fi
 Fi
 Fi
@@ -5567,22 +6371,22 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+hv
+hv
+hv
 Fi
 SA
-eN
-eN
-eN
-eN
-eN
-eN
-eN
-eN
-SA
+xQ
+xQ
+ui
+xQ
+xQ
+xQ
+xQ
+xQ
+xQ
 Fi
 Fi
 Fi
@@ -5592,13 +6396,25 @@ Wb
 ID
 ID
 ID
+rN
 ID
-ID
-ID
+rN
 ID
 ID
 ID
 Wb
+GC
+Fi
+Fi
+Fi
+Fi
+nb
+nb
+nb
+nb
+nb
+nb
+nb
 Fi
 Fi
 Fi
@@ -5610,20 +6426,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
 Fi
 Fi
 Fi
@@ -5645,21 +6449,21 @@ Fi
 Fi
 Fi
 Fi
+gO
+hv
+hv
+hv
+hv
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+xQ
+eN
+eN
+eN
+eN
+eN
+eN
+eN
+xQ
 Fi
 Fi
 Fi
@@ -5699,7 +6503,7 @@ Fi
 Fi
 Fi
 Fi
-Fi
+gO
 Fi
 Fi
 Fi
@@ -5722,21 +6526,21 @@ Fi
 Fi
 Fi
 Fi
+gO
+gO
+hv
+hv
+hv
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+xQ
+eN
+eN
+eN
+eN
+xQ
+eN
+eN
+xQ
 Fi
 Fi
 Fi
@@ -5775,7 +6579,7 @@ Fi
 Fi
 Fi
 Fi
-Fi
+gO
 Fi
 Fi
 Fi
@@ -5800,6 +6604,22 @@ Fi
 Fi
 Fi
 Fi
+gO
+gO
+hv
+hv
+hv
+xQ
+eN
+eN
+eN
+eN
+xQ
+xQ
+xQ
+SA
+hv
+hv
 Fi
 Fi
 Fi
@@ -5835,23 +6655,7 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
 Fi
 Fi
 Fi
@@ -5878,6 +6682,22 @@ Fi
 Fi
 Fi
 Fi
+gO
+gO
+hv
+hv
+SA
+xQ
+xQ
+xQ
+xQ
+SA
+hv
+hv
+hv
+hv
+hv
+hv
 Fi
 Fi
 Fi
@@ -5910,24 +6730,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
 Fi
 Fi
 Fi
@@ -5956,6 +6760,24 @@ Fi
 Fi
 Fi
 Fi
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+hv
+hv
+hv
+hv
+hv
+hv
 Fi
 Fi
 Fi
@@ -5984,26 +6806,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
 Fi
 Fi
 Fi
@@ -6037,6 +6841,24 @@ Fi
 Fi
 Fi
 Fi
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+hv
+hv
+hv
+hv
+hv
+hv
+hv
+hv
 Fi
 Fi
 Fi
@@ -6060,26 +6882,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
 Fi
 Fi
 Fi
@@ -6123,6 +6927,30 @@ Fi
 Fi
 Fi
 Fi
+gO
+gO
+gO
+gO
+gO
+hv
+hv
+hv
+hv
+hv
+hv
+hv
+hv
+hv
+hv
+hv
+hv
+Fi
+Fi
+Fi
+Fi
+hv
+hv
+hv
 Fi
 Fi
 Fi
@@ -6130,32 +6958,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
 Fi
 Fi
 Fi
@@ -6204,33 +7008,33 @@ Fi
 Fi
 Fi
 Fi
+gO
+gO
+hv
+hv
+gO
+hv
+hv
+hv
+hv
+hv
+hv
+hv
+hv
+hv
+hv
+hv
+hv
+hv
+hv
+hv
+hv
 Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
 Fi
 Fi
 Fi
@@ -6282,31 +7086,31 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+hv
+hv
+hv
+hv
+hv
+hv
+hv
+hv
+hv
+hv
+hv
+hv
+gO
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
@@ -6366,20 +7170,20 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
+gO
 Fi
 Fi
 Fi
