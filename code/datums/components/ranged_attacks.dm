@@ -14,6 +14,8 @@
 	var/burst_intervals
 	/// Time to wait between shots
 	var/cooldown_time
+	/// How much spread does a shot have?
+	var/spread = 2
 	/// Tracks time between shots
 	COOLDOWN_DECLARE(fire_cooldown)
 
@@ -24,6 +26,7 @@
 	burst_shots,
 	burst_intervals = 0.2 SECONDS,
 	cooldown_time = 3 SECONDS,
+	spread = 2
 )
 	. = ..()
 	if(!isbasicmob(parent))
@@ -33,6 +36,7 @@
 	src.projectile_sound = projectile_sound
 	src.projectile_type = projectile_type
 	src.cooldown_time = cooldown_time
+	src.spread = spread
 
 	if (casing_type && projectile_type)
 		CRASH("Set both casing type and projectile type in [parent]'s ranged attacks component! uhoh! stinky!")
@@ -62,7 +66,8 @@
 	if(casing_type)
 		var/obj/item/ammo_casing/casing = new casing_type(startloc)
 		playsound(firer, projectile_sound, 100, TRUE)
-		casing.fire_casing(target, firer, null, null, null, ran_zone(), 0,  firer)
+		casing.fire_casing(target, firer, null, null, null, ran_zone(), rand(-spread, spread), firer)
+		casing.on_eject(firer)
 
 	else if(projectile_type)
 		var/obj/projectile/P = new projectile_type(startloc)

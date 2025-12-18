@@ -306,7 +306,7 @@
 		M.adjust_bodytemperature(-reac_volume * TEMPERATURE_DAMAGE_COEFFICIENT * 0.5, 200)
 		M.adjust_fire_stacks(-reac_volume / 2)
 		if(reac_volume >= metabolization_rate)
-			M.ExtinguishMob()
+			M.extinguish_mob()
 
 	if(method == INJECT)
 		M.adjustFireLoss(-2*reac_volume, 0)
@@ -517,17 +517,95 @@
 
 /datum/reagent/medicine/salbutamol
 	name = "Salbutamol"
-	description = "Rapidly restores oxygen deprivation as well as preventing more of it to an extent."
-	reagent_state = LIQUID
-	color = "#00FFFF"
-	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	description = "A potent bronchodilator capable of increasing the amount of gas inhaled by the lungs. Is highly effective at shutting down asthma attacks, \
+		but only when inhaled. Overdose causes over-dilation, resulting in reduced lung function. "
+	taste_description = "bitter and salty air"
+	overdose_threshold = 30
+	color = "#8df5f0"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	//chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+
+	/// The decrement we will apply to the received_pressure_mult of our targets lungs.
+	var/pressure_mult_increment = 0.4
+	/// After this many cycles of overdose, we activate secondary effects.
+	var/secondary_overdose_effect_cycle_threshold = 40
+	/// We stop increasing stamina damage once we reach this number.
+	var/maximum_od_stamina_damage = 80
+
+/datum/reagent/medicine/salbutamol/expose_mob(mob/living/M, method = TOUCH, reac_volume, show_message = TRUE, touch_protection = 0)
+	var/datum/status_effect/lung_inflammation/asthma = M.has_status_effect(/datum/status_effect/lung_inflammation)
+	if(asthma)
+		asthma.adjust_salbutamol_levels(reac_volume)
+	return ..()
+
+/datum/reagent/medicine/salbutamol/on_mob_metabolize(mob/living/affected_mob)
+	. = ..()
+
+	if (!iscarbon(affected_mob))
+		return
+
+	// has additional effects on asthma, but that's handled in the quirk
+
+	RegisterSignal(affected_mob, COMSIG_CARBON_LOSE_ORGAN, PROC_REF(holder_lost_organ))
+	RegisterSignal(affected_mob, COMSIG_CARBON_GAIN_ORGAN, PROC_REF(holder_gained_organ))
+	var/mob/living/carbon/carbon_mob = affected_mob
+	var/obj/item/organ/lungs/holder_lungs = carbon_mob.getorganslot(ORGAN_SLOT_LUNGS)
+	holder_lungs?.adjust_received_pressure_mult(pressure_mult_increment)
+
+/datum/reagent/medicine/salbutamol/on_mob_end_metabolize(mob/living/affected_mob)
+	. = ..()
+
+	if (!iscarbon(affected_mob))
+		return
+
+	UnregisterSignal(affected_mob, list(COMSIG_CARBON_LOSE_ORGAN, COMSIG_CARBON_GAIN_ORGAN))
+	var/mob/living/carbon/carbon_mob = affected_mob
+	var/obj/item/organ/lungs/holder_lungs = carbon_mob.getorganslot(ORGAN_SLOT_LUNGS)
+	holder_lungs?.adjust_received_pressure_mult(-pressure_mult_increment)
 
 /datum/reagent/medicine/salbutamol/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-3*REM, 0)
+	. = ..()
+	if(!M.failed_last_breath) // accelerate recovery from suffocation, but only if they can actually breathe
+		M.adjustOxyLoss(-3 * REM, FALSE)
 	if(M.losebreath >= 4)
 		M.losebreath -= 2
-	..()
-	. = 1
+
+/datum/reagent/medicine/salbutamol/overdose_process(mob/living/affected_mob, seconds_per_tick, times_fired)
+	. = ..()
+
+	if (!iscarbon(affected_mob))
+		return
+
+	var/mob/living/carbon/carbon_mob = affected_mob
+	if (SPT_PROB(25, seconds_per_tick))
+		carbon_mob.adjust_timed_status_effect(2 SECONDS, /datum/status_effect/jitter, 20 SECONDS)
+	if (SPT_PROB(35, seconds_per_tick))
+		if (prob(60))
+			carbon_mob.losebreath += 1
+			to_chat(affected_mob, span_danger("Your diaphram spasms and you find yourself unable to breathe!"))
+		else
+			carbon_mob.breathe(seconds_per_tick, times_fired)
+			to_chat(affected_mob, span_danger("Your diaphram spasms and you unintentionally take a breath!"))
+
+	if (current_cycle > secondary_overdose_effect_cycle_threshold)
+		if (SPT_PROB(30, seconds_per_tick))
+			carbon_mob.set_blurriness(max(carbon_mob.eye_blurry, min(carbon_mob.eye_blurry + 3, 15)))
+		if (carbon_mob.getStaminaLoss() < maximum_od_stamina_damage)
+			carbon_mob.adjustStaminaLoss(seconds_per_tick)
+
+/datum/reagent/medicine/salbutamol/proc/holder_lost_organ(datum/source, obj/item/organ/lost)
+	SIGNAL_HANDLER
+
+	if (istype(lost, /obj/item/organ/lungs))
+		var/obj/item/organ/lungs/holder_lungs = lost
+		holder_lungs.adjust_received_pressure_mult(-pressure_mult_increment)
+
+/datum/reagent/medicine/salbutamol/proc/holder_gained_organ(datum/source, obj/item/organ/gained)
+	SIGNAL_HANDLER
+
+	if (istype(gained, /obj/item/organ/lungs))
+		var/obj/item/organ/lungs/holder_lungs = gained
+		holder_lungs.adjust_received_pressure_mult(pressure_mult_increment)
 
 /datum/reagent/medicine/inaprovaline
 	name = "Inaprovaline"
@@ -601,7 +679,7 @@
 		var/mob/living/carbon/carbies = M
 		if (carbies.stat == DEAD)
 			show_message = 0
-		if(method in list(PATCH, TOUCH, SMOKE))
+		if(method in list(PATCH, TOUCH, VAPOR))
 			var/harmies = min(carbies.getBruteLoss(),carbies.adjustBruteLoss(-1.25 * reac_volume)*-1)
 			var/burnies = min(carbies.getFireLoss(),carbies.adjustFireLoss(-1.25 * reac_volume)*-1)
 			for(var/i in carbies.all_wounds)

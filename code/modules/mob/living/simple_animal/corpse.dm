@@ -69,6 +69,20 @@
 	name = "Ramzi Softsuit Surplus"
 	outfit = /datum/outfit/ramzi/soft/surplus
 
+/obj/effect/mob_spawn/human/corpse/ramzi/towel
+	name = "Ramzi Showerer"
+	outfit = /datum/outfit/ramzi/towel
+
+/datum/outfit/ramzi/towel
+	name = "Ramzi Clique Showerer"
+	uniform = null
+	head = null
+	suit = /obj/item/towel/full
+	back = null
+	id = null
+	shoes = null
+	gloves = null
+
 /datum/outfit/ramzi/soft/surplus
 	name = "Ramzi Clique Softsuit Surplus"
 	uniform = /obj/item/clothing/under/syndicate/ramzi
@@ -373,8 +387,3 @@
 	id_job = "Captain"
 	outfit = /datum/outfit/job/gezena/captain
 
-/* clip ig */
-
-/obj/effect/mob_spawn/human/corpse/clip/bombsuitguy
-	name = "CLIP Bombsuit Spawner"
-	outfit = /datum/outfit/job/clip/minutemen/grunt/dressed/bombsuit

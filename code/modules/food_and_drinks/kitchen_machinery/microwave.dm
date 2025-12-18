@@ -201,6 +201,11 @@
 	if(user.canUseTopic(src, !issilicon(usr)))
 		cook()
 
+
+/obj/machinery/microwave/attack_hand_secondary(mob/user, list/modifiers)
+	cook()
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
 /obj/machinery/microwave/ui_interact(mob/user)
 	. = ..()
 
@@ -386,7 +391,7 @@
 
 		if(do_after(user, 10))
 			tocook = target
-			RegisterSignal(tocook, COMSIG_PARENT_QDELETING, PROC_REF(clear_cooking))
+			RegisterSignal(tocook, COMSIG_QDELETING, PROC_REF(clear_cooking))
 			target.add_overlay(ration_overlay)
 			addtimer(CALLBACK(src, PROC_REF(cook)), 100)
 			target.visible_message(span_notice("\The [target] rapidly begins cooking..."))
@@ -400,7 +405,7 @@
 
 /obj/item/ration_heater/proc/clear_cooking(datum/source)
 	SIGNAL_HANDLER
-	UnregisterSignal(tocook, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(tocook, COMSIG_QDELETING)
 	tocook.cut_overlay(ration_overlay)
 	tocook = null
 

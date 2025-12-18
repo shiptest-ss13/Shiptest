@@ -84,7 +84,7 @@
 
 /datum/supply_pack/magazine/m15_mag
 	name = "Super Sporter Magazine Crate"
-	desc = "Contains a 5.56 CLIP magazine for the Super Sporter Rifle, with a capacity of 20 rounds."
+	desc = "Contains a 7.62 CLIP magazine for the Super Sporter Rifle, with a capacity of 20 rounds."
 	contains = list(/obj/item/ammo_box/magazine/m15/empty)
 	cost = 300
 
@@ -109,12 +109,14 @@
 	cost = 100
 	faction = /datum/faction/syndicate/scarborough
 
+/*
 /datum/supply_pack/magazine/hognose_mag
 	name = "Hognose Magazine Crate"
 	desc = "Contains a .22lr magazine for the Hognose underbarrel pistol, with a capacity of eight rounds."
 	contains = list(/obj/item/ammo_box/magazine/m22lr_himehabu/hognose/empty)
 	cost = 100
 	faction = /datum/faction/syndicate/scarborough
+*/
 
 /datum/supply_pack/magazine/asp_mag
 	name = "Asp Magazine Crate"

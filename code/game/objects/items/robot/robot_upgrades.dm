@@ -416,7 +416,7 @@
 	if(.)
 		var/found_hypo = FALSE
 		for(var/obj/item/reagent_containers/borghypo/H in R.module.modules)
-			H.bypass_protection = TRUE
+			H.inject_flags = INJECT_CHECK_PENETRATE_THICK
 			found_hypo = TRUE
 
 		if(!found_hypo)
@@ -426,7 +426,7 @@
 	. = ..()
 	if (.)
 		for(var/obj/item/reagent_containers/borghypo/H in R.module.modules)
-			H.bypass_protection = initial(H.bypass_protection)
+			H.inject_flags = initial(H.inject_flags)
 
 /obj/item/borg/upgrade/defib
 	name = "medical cyborg defibrillator"

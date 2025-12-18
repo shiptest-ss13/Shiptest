@@ -104,17 +104,6 @@
 	if(HAS_TRAIT(src, TRAIT_DUMB))
 		msg += "[t_He] seem[p_s()] to be clumsy and unable to think.\n"
 
-	switch(fire_stacks)
-		if(1 to INFINITY)
-			msg += "[t_He] [t_is] covered in something flammable.\n"
-		if(0)
-			EMPTY_BLOCK_GUARD
-		if(-15 to -1)
-			msg += "[t_He] look[p_s()] a little soaked.\n"
-		if(-20 to -15)
-			msg += "[t_He] look[p_s()] completely sopping.\n"
-
-
 	if(pulledby && pulledby.grab_state)
 		msg += "[t_He] [t_is] restrained by [pulledby]'s grip.\n"
 
@@ -159,7 +148,7 @@
 
 	. += "</span>"
 
-	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
+	SEND_SIGNAL(src, COMSIG_ATOM_EXAMINE, user, .)
 
 /mob/living/carbon/examine_more(mob/user)
 	. = ..()
