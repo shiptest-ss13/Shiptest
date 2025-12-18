@@ -559,13 +559,17 @@
 /turf/open/floor/suns/hatch/bamboo/cybersun_outpost,
 /area/space)
 "AU" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
+/obj/structure/disposaloutlet{
+	dir = 1
 	},
-/obj/effect/turf_decal/industrial/stand_clear{
+/obj/machinery/light/floor,
+/obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech/cybersun_outpost,
+/obj/machinery/conveyor/auto/outpost{
+	dir = 1
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
 /area/space)
 "Bh" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -589,17 +593,13 @@
 /turf/open/floor/hangar/cybersun_outpost,
 /area/space)
 "By" = (
-/obj/structure/disposaloutlet{
-	dir = 1
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
 	},
-/obj/machinery/light/floor,
-/obj/structure/disposalpipe/trunk{
+/obj/effect/turf_decal/industrial/stand_clear{
 	dir = 8
 	},
-/obj/machinery/conveyor/auto/outpost{
-	dir = 1
-	},
-/turf/open/floor/engine/hull/reinforced/interior,
+/turf/open/floor/plasteel/tech/cybersun_outpost,
 /area/space)
 "Ct" = (
 /obj/structure/fluff/hedge,
@@ -4025,7 +4025,7 @@ wi
 wi
 qa
 UG
-lG
+rQ
 Rw
 Bx
 Bx
@@ -4048,7 +4048,7 @@ Bx
 Bx
 Bx
 qi
-lG
+rQ
 Oa
 uX
 wi
@@ -4074,7 +4074,7 @@ wi
 wi
 qa
 UG
-rQ
+lG
 Rw
 Bx
 Bx
@@ -4097,7 +4097,7 @@ Bx
 Bx
 Bx
 qi
-rQ
+lG
 Oa
 uX
 wi
@@ -4271,6 +4271,104 @@ wi
 qa
 UG
 rQ
+Rw
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+qi
+rQ
+Oa
+uX
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+"}
+(68,1,1) = {"
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+qa
+UG
+rQ
+Rw
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+Bx
+qi
+rQ
+Oa
+uX
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+"}
+(69,1,1) = {"
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+qa
+UG
+rQ
 hh
 Bh
 Bh
@@ -4308,7 +4406,7 @@ wi
 wi
 wi
 "}
-(68,1,1) = {"
+(70,1,1) = {"
 wi
 wi
 wi
@@ -4357,7 +4455,7 @@ wi
 wi
 wi
 "}
-(69,1,1) = {"
+(71,1,1) = {"
 wi
 wi
 wi
@@ -4406,7 +4504,7 @@ wi
 wi
 wi
 "}
-(70,1,1) = {"
+(72,1,1) = {"
 wi
 wi
 wi
@@ -4455,7 +4553,7 @@ wi
 wi
 wi
 "}
-(71,1,1) = {"
+(73,1,1) = {"
 wi
 wi
 wi
@@ -4504,7 +4602,7 @@ ob
 ob
 ob
 "}
-(72,1,1) = {"
+(74,1,1) = {"
 wi
 wi
 wi
@@ -4553,7 +4651,7 @@ wi
 wi
 wi
 "}
-(73,1,1) = {"
+(75,1,1) = {"
 wi
 wi
 wi
@@ -4602,7 +4700,7 @@ ni
 ni
 ni
 "}
-(74,1,1) = {"
+(76,1,1) = {"
 wi
 wi
 wi
@@ -4651,7 +4749,7 @@ wi
 wi
 wi
 "}
-(75,1,1) = {"
+(77,1,1) = {"
 wi
 wi
 wi
@@ -4665,7 +4763,7 @@ zi
 va
 va
 va
-By
+AU
 yf
 Lz
 Oy
@@ -4700,7 +4798,7 @@ wi
 wi
 wi
 "}
-(76,1,1) = {"
+(78,1,1) = {"
 wi
 wi
 wi
@@ -4749,7 +4847,7 @@ wi
 wi
 wi
 "}
-(77,1,1) = {"
+(79,1,1) = {"
 wi
 wi
 wi
@@ -4798,7 +4896,7 @@ wi
 wi
 wi
 "}
-(78,1,1) = {"
+(80,1,1) = {"
 wi
 wi
 wi
@@ -4847,7 +4945,7 @@ wi
 wi
 wi
 "}
-(79,1,1) = {"
+(81,1,1) = {"
 wi
 wi
 wi
@@ -4868,10 +4966,10 @@ qa
 cq
 cq
 yf
-AU
+By
 rf
 rf
-AU
+By
 yf
 cq
 cq
@@ -4896,7 +4994,7 @@ wi
 wi
 wi
 "}
-(80,1,1) = {"
+(82,1,1) = {"
 wi
 wi
 wi
@@ -4945,104 +5043,6 @@ wi
 wi
 wi
 "}
-(81,1,1) = {"
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-DY
-pi
-pi
-DY
-pi
-pi
-DY
-Zv
-Qj
-uO
-uO
-uO
-uO
-uO
-uO
-uO
-uO
-Qj
-PK
-DY
-pi
-pi
-DY
-pi
-pi
-DY
-pi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-"}
-(82,1,1) = {"
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-pi
-pi
-pi
-pi
-pi
-pi
-pi
-Zv
-Qj
-Qj
-Qj
-Qj
-Qj
-Qj
-Qj
-Qj
-Qj
-Qj
-PK
-pi
-pi
-pi
-pi
-pi
-pi
-pi
-pi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-"}
 (83,1,1) = {"
 wi
 wi
@@ -5053,14 +5053,14 @@ wi
 wi
 wi
 wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-qa
+DY
+pi
+pi
+DY
+pi
+pi
+DY
+Zv
 Qj
 uO
 uO
@@ -5071,15 +5071,15 @@ uO
 uO
 uO
 Qj
-uX
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
+PK
+DY
+pi
+pi
+DY
+pi
+pi
+DY
+pi
 wi
 wi
 wi
@@ -5151,6 +5151,104 @@ wi
 wi
 wi
 wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+qa
+Qj
+uO
+uO
+uO
+uO
+uO
+uO
+uO
+uO
+Qj
+uX
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+"}
+(86,1,1) = {"
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+pi
+pi
+pi
+pi
+pi
+pi
+pi
+Zv
+Qj
+Qj
+Qj
+Qj
+Qj
+Qj
+Qj
+Qj
+Qj
+Qj
+PK
+pi
+pi
+pi
+pi
+pi
+pi
+pi
+pi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+"}
+(87,1,1) = {"
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
+wi
 DY
 pi
 pi
@@ -5190,7 +5288,7 @@ wi
 wi
 wi
 "}
-(86,1,1) = {"
+(88,1,1) = {"
 wi
 wi
 wi
@@ -5239,7 +5337,7 @@ wi
 wi
 wi
 "}
-(87,1,1) = {"
+(89,1,1) = {"
 wi
 wi
 wi
@@ -5268,104 +5366,6 @@ pM
 pM
 pM
 eP
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-"}
-(88,1,1) = {"
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-"}
-(89,1,1) = {"
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
-wi
 wi
 wi
 wi
