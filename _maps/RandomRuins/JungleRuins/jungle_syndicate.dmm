@@ -324,23 +324,21 @@
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "gu" = (
-/obj/item/stack/cable_coil/cut/red{
-	pixel_x = 6;
-	pixel_y = 8
-	},
-/obj/item/stock_parts/capacitor{
-	pixel_x = -9;
-	pixel_y = -7
-	},
-/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/turf/template_noop,
 /area/overmap_encounter/planetoid/jungle/explored)
 "gG" = (
-/obj/structure/flora/grass/jungle,
-/obj/structure/flora/grass/jungle,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/flora/rock,
-/turf/open/floor/plating/asteroid/dirt/grass/jungle,
-/area/overmap_encounter/planetoid/jungle/explored)
+/obj/machinery/atmospherics/components/trinary/filter/on/layer4{
+	dir = 1;
+	filter_type = "o2"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plating,
+/area/ruin/jungle/syndifort/atmos)
 "gO" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
@@ -391,13 +389,17 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/syndifort)
 "hf" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
+/obj/item/stack/cable_coil/cut/red{
+	pixel_x = 6;
+	pixel_y = 8
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ruin/jungle/syndifort/atmos)
+/obj/item/stock_parts/capacitor{
+	pixel_x = -9;
+	pixel_y = -7
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
 "hg" = (
 /obj/machinery/power/smes{
 	output_level = 15000;
@@ -434,17 +436,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/syndifort/atmos)
 "ho" = (
-/obj/machinery/atmospherics/components/trinary/filter/on/layer4{
-	dir = 1;
-	filter_type = "o2"
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 5
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ruin/jungle/syndifort/atmos)
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "hF" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
@@ -573,14 +567,9 @@
 /turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort/storage)
 "iN" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/structure/frame/machine,
-/obj/item/circuitboard/machine/turret/ruin,
-/turf/open/floor/plating/jungleplanet{
-	icon_state = "plating_rust"
-	},
+/obj/structure/barricade/sandbags,
+/obj/structure/spacevine,
+/turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "iW" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -681,14 +670,10 @@
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "kp" = (
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
-	dir = 5
-	},
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/syndifort/armory)
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/spacevine,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "ky" = (
 /obj/structure/spacevine,
 /obj/structure/cable{
@@ -1447,9 +1432,14 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "uf" = (
 /obj/structure/cable{
-	icon_state = "5-8"
+	icon_state = "0-4"
 	},
-/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/obj/structure/frame/machine,
+/obj/item/circuitboard/machine/turret/ruin,
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "plating_rust"
+	},
 /area/overmap_encounter/planetoid/jungle/explored)
 "ug" = (
 /obj/structure/flora/junglebush,
@@ -1909,6 +1899,11 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/syndifort/dorms)
+"AR" = (
+/obj/structure/flora/stump,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ba" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/grass/jungle,
@@ -1976,9 +1971,17 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/syndifort/canteen)
 "Cr" = (
-/obj/structure/flora/rock,
-/turf/open/floor/plating/asteroid/dirt/jungle,
-/area/overmap_encounter/planetoid/jungle/explored)
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 5
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 8
+	},
+/obj/machinery/recharger{
+	anchored = 0
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/syndifort/armory)
 "CD" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
@@ -2125,6 +2128,13 @@
 /obj/structure/flora/rock,
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
+"EP" = (
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
 "EZ" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-9"
@@ -2166,6 +2176,11 @@
 "FP" = (
 /mob/living/simple_animal/hostile/human/ramzi/melee/machete,
 /turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
+"Gc" = (
+/obj/structure/flora/stump,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ge" = (
 /obj/effect/turf_decal/syndicateemblem/bottom/right,
@@ -2701,11 +2716,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/syndifort/canteen)
 "OI" = (
-/obj/structure/cable{
-	icon_state = "5-10"
-	},
-/obj/item/stack/cable_coil/cut/red,
-/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/obj/structure/barricade/sandbags,
+/obj/structure/spacevine,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
 "OJ" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
@@ -2778,10 +2791,15 @@
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ps" = (
-/obj/structure/barricade/sandbags,
-/obj/item/stack/cable_coil/cut/red,
-/turf/open/floor/plating/asteroid/dirt/jungle/dark,
-/area/overmap_encounter/planetoid/jungle/explored)
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/reagent_dispensers/fueltank,
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plating,
+/area/ruin/jungle/syndifort/atmos)
 "PS" = (
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
@@ -2993,6 +3011,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/syndifort/electrical)
+"Tg" = (
+/obj/structure/cable{
+	icon_state = "5-10"
+	},
+/obj/item/stack/cable_coil/cut/red,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Tl" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3114,6 +3140,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/syndifort/atmos)
+"Vo" = (
+/obj/structure/barricade/sandbags,
+/obj/item/stack/cable_coil/cut/red,
+/obj/structure/spacevine,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Vx" = (
 /obj/structure/flora/junglebush/c,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
@@ -3564,16 +3596,17 @@ yZ
 yZ
 yZ
 yZ
-ws
-ws
+yZ
+yZ
+qx
 bO
-sR
-ws
-ws
+qx
 qx
 Vx
 qx
-ws
+qx
+yZ
+yZ
 yZ
 yZ
 yZ
@@ -3598,23 +3631,24 @@ yZ
 yZ
 yZ
 yZ
-TK
-Kb
+yZ
+yZ
 ws
+eF
 bO
 sR
 ws
-bO
-FP
-SP
-Aa
+ws
 qx
-dw
+Vx
+qx
+ws
+yZ
+Gs
+Sz
 yZ
 yZ
 yZ
-SO
-dO
 yZ
 yZ
 yZ
@@ -3622,9 +3656,9 @@ yZ
 yZ
 yZ
 yZ
-HN
-HN
-Ps
+qx
+VV
+yZ
 "}
 (3,1,1) = {"
 yZ
@@ -3632,24 +3666,24 @@ yZ
 yZ
 yZ
 yZ
-ws
-Aa
+yZ
+yZ
 TK
-bO
+Kb
+qx
 bO
 sR
-ws
+qx
 bO
-qL
-XW
-Ol
-Vx
-SO
-gG
-yZ
+FP
+SP
+Aa
+qx
+dw
+ws
+kp
 yZ
 dw
-Wl
 dO
 yZ
 yZ
@@ -3657,15 +3691,53 @@ yZ
 yZ
 yZ
 yZ
-HN
+SP
 iN
-Rk
+iN
+Vo
 "}
 (4,1,1) = {"
 yZ
 yZ
-dw
 yZ
+yZ
+yZ
+yJ
+qt
+Aa
+TK
+bO
+bO
+sR
+qx
+bO
+qL
+XW
+Ol
+Vx
+dw
+Rl
+ws
+dw
+dw
+Wl
+dO
+yZ
+yZ
+yZ
+yZ
+qx
+qx
+iN
+uf
+Rk
+"}
+(5,1,1) = {"
+yZ
+yZ
+qx
+dw
+ws
 ws
 SP
 TK
@@ -3680,8 +3752,8 @@ Uy
 ws
 kf
 qx
-SO
-Wm
+dw
+Rl
 Wm
 es
 es
@@ -3689,15 +3761,16 @@ an
 qq
 yZ
 yZ
-yZ
-yZ
-Cr
-gu
-uf
-Rk
+qx
+fU
+Sz
+hf
+EP
+OI
 "}
-(5,1,1) = {"
+(6,1,1) = {"
 yZ
+TK
 Ol
 qx
 qx
@@ -3724,14 +3797,15 @@ qx
 qx
 Ba
 yZ
-yZ
+fU
 Hd
-qx
+fU
 yf
 EK
-yZ
+jk
 "}
-(6,1,1) = {"
+(7,1,1) = {"
+qx
 qx
 Aa
 qx
@@ -3758,15 +3832,16 @@ zX
 MT
 hH
 Vx
-yZ
+gu
 Hd
 KP
-OI
+Tg
 qx
 PS
 yZ
 "}
-(7,1,1) = {"
+(8,1,1) = {"
+Ol
 dw
 Ol
 ws
@@ -3798,10 +3873,11 @@ Wl
 ky
 VV
 ws
-yZ
+ws
 yZ
 "}
-(8,1,1) = {"
+(9,1,1) = {"
+ws
 Ol
 mR
 cT
@@ -3832,11 +3908,12 @@ hL
 fb
 VV
 OO
-yZ
+ws
 yZ
 yZ
 "}
-(9,1,1) = {"
+(10,1,1) = {"
+yJ
 qx
 ws
 ws
@@ -3866,16 +3943,17 @@ HN
 xM
 ws
 ws
-yZ
+ws
 yZ
 yZ
 yZ
 "}
-(10,1,1) = {"
+(11,1,1) = {"
+yZ
 ws
 dw
 ye
-ws
+yd
 qY
 ad
 gY
@@ -3901,13 +3979,14 @@ LJ
 HN
 wT
 OO
-yZ
+ws
 yZ
 yZ
 yZ
 "}
-(11,1,1) = {"
+(12,1,1) = {"
 yZ
+yd
 dw
 dJ
 pC
@@ -3941,8 +4020,9 @@ yZ
 yZ
 yZ
 "}
-(12,1,1) = {"
+(13,1,1) = {"
 yZ
+qx
 qx
 ws
 Bi
@@ -3976,8 +4056,9 @@ yZ
 yZ
 yZ
 "}
-(13,1,1) = {"
+(14,1,1) = {"
 yZ
+qx
 Ol
 ye
 Gk
@@ -4011,7 +4092,8 @@ OO
 yZ
 yZ
 "}
-(14,1,1) = {"
+(15,1,1) = {"
+yZ
 yZ
 yd
 TT
@@ -4042,11 +4124,12 @@ Kh
 ws
 HN
 ws
-Sz
+OO
 yZ
 yZ
 "}
-(15,1,1) = {"
+(16,1,1) = {"
+yZ
 yZ
 ws
 ws
@@ -4081,7 +4164,8 @@ Ol
 yZ
 yZ
 "}
-(16,1,1) = {"
+(17,1,1) = {"
+yZ
 yZ
 yJ
 ws
@@ -4116,7 +4200,8 @@ Ol
 Jg
 yZ
 "}
-(17,1,1) = {"
+(18,1,1) = {"
+yZ
 SO
 dO
 qx
@@ -4151,7 +4236,8 @@ PS
 Ol
 yZ
 "}
-(18,1,1) = {"
+(19,1,1) = {"
+yZ
 dw
 Wl
 qx
@@ -4186,7 +4272,8 @@ PS
 ws
 yZ
 "}
-(19,1,1) = {"
+(20,1,1) = {"
+yZ
 cO
 VV
 TK
@@ -4221,7 +4308,8 @@ QG
 OO
 ws
 "}
-(20,1,1) = {"
+(21,1,1) = {"
+yZ
 cO
 VV
 qx
@@ -4253,10 +4341,11 @@ cX
 ws
 Kw
 yd
-ws
+zv
 OO
 "}
-(21,1,1) = {"
+(22,1,1) = {"
+yZ
 OO
 VV
 qx
@@ -4270,7 +4359,7 @@ xF
 qr
 SU
 Rz
-hf
+Ps
 nH
 bX
 qV
@@ -4291,7 +4380,8 @@ yd
 ws
 ws
 "}
-(22,1,1) = {"
+(23,1,1) = {"
+yZ
 yZ
 cO
 dw
@@ -4304,11 +4394,11 @@ uu
 sf
 Eg
 Jq
-ho
+gG
 kL
 nH
 Hf
-kp
+Cr
 tE
 pk
 mD
@@ -4326,7 +4416,8 @@ ws
 ws
 yd
 "}
-(23,1,1) = {"
+(24,1,1) = {"
+yZ
 yZ
 VV
 cO
@@ -4354,14 +4445,15 @@ hh
 ws
 Qx
 kJ
-yZ
+AR
 tL
 qq
-yZ
+qx
 yZ
 yZ
 "}
-(24,1,1) = {"
+(25,1,1) = {"
+yZ
 yZ
 Aa
 cO
@@ -4382,21 +4474,22 @@ nH
 nH
 nH
 nH
-ws
+zv
 ws
 hh
 qt
 ws
 TK
-yZ
-yZ
-yZ
-yZ
+VV
+fU
+OO
+ws
 yZ
 yZ
 yZ
 "}
-(25,1,1) = {"
+(26,1,1) = {"
+yZ
 yZ
 yZ
 OO
@@ -4423,15 +4516,16 @@ qx
 ws
 yJ
 TK
-Wl
-yZ
-yZ
+Gc
+OO
+OO
 yZ
 yZ
 yZ
 yZ
 "}
-(26,1,1) = {"
+(27,1,1) = {"
+yZ
 yZ
 yZ
 yZ
@@ -4457,16 +4551,17 @@ zH
 TV
 PX
 TK
-Cr
-ws
+Sz
+OO
 KP
-yZ
+qx
 yZ
 yZ
 yZ
 yZ
 "}
-(27,1,1) = {"
+(28,1,1) = {"
+yZ
 yZ
 yZ
 yZ
@@ -4495,13 +4590,14 @@ KP
 KP
 KP
 KP
-yZ
+fU
 yZ
 yZ
 yZ
 yZ
 "}
-(28,1,1) = {"
+(29,1,1) = {"
+yZ
 yZ
 yZ
 yZ
@@ -4513,7 +4609,7 @@ qx
 ws
 qx
 qx
-yZ
+ws
 ws
 HN
 HN
@@ -4526,45 +4622,10 @@ qx
 qx
 dw
 qx
-yZ
-yZ
-yZ
-yZ
-yZ
-yZ
-yZ
-yZ
-yZ
-"}
-(29,1,1) = {"
-yZ
-yZ
-yZ
-OO
-KP
-Au
-Au
-Au
-OO
-yZ
-yZ
-yZ
-yZ
-ws
-ws
-ws
-Aa
-dw
-Rl
-yZ
-yZ
-yZ
-dw
-yZ
-yZ
-yZ
-yZ
-yZ
+ho
+VV
+fU
+ho
 yZ
 yZ
 yZ
@@ -4577,13 +4638,50 @@ yZ
 yZ
 yZ
 OO
+KP
+Au
+Au
+Au
+OO
+qx
+qx
+yJ
+ws
+ws
+ws
+ws
+Aa
+dw
+Rl
+yZ
+yZ
+yZ
+TV
+yZ
+ws
+yd
+ho
+yZ
+yZ
+yZ
+yZ
+yZ
+yZ
+"}
+(31,1,1) = {"
+yZ
+yZ
+yZ
+yZ
+yZ
+OO
 OO
 Au
 Au
 Gs
 dw
-yZ
-yZ
+qx
+qx
 yZ
 ws
 ws
