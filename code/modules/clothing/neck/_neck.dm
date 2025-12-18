@@ -531,6 +531,54 @@
 	icon_state = "shemagh"
 	supports_variations = VOX_VARIATION
 
+/obj/item/clothing/neck/shemagh/AltClick(mob/user)
+	. = ..()
+	if(iscarbon(user))
+		var/mob/living/carbon/C = user
+		if(C.get_item_by_slot(ITEM_SLOT_NECK) == src)
+			to_chat(user, span_warning("You can't untie [src] while wearing it!"))
+			return
+		if(user.is_holding(src))
+			var/obj/item/clothing/mask/shemagh/nk = new (src)
+			nk.name = "[name] mask"
+			nk.icon_state = "[icon_state]_over"
+			nk.sourceShemaghType = src.type
+			var/currentHandIndex = user.get_held_index_of_item(src)
+			user.transferItemToLoc(src, null)
+			user.put_in_hand(nk, currentHandIndex)
+			user.visible_message(span_notice("You tie [src] up like a facemask."), span_notice("[user] ties [src] up like a facemask."))
+			qdel(src)
+		else
+			to_chat(user, span_warning("You must be holding [src] in order to tie it!"))
+
+/obj/item/clothing/mask/shemagh
+	icon = 'icons/obj/clothing/neck.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/neck.dmi'
+	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR
+	clothing_flags = ALLOWINTERNALS
+	flags_cover = MASKCOVERSMOUTH
+	alternate_worn_layer = FACEMASK_LAYER
+	w_class = WEIGHT_CLASS_TINY
+	var/sourceShemaghType
+
+/obj/item/clothing/mask/shemagh/AltClick(mob/user)
+	. = ..()
+	if(iscarbon(user))
+		var/mob/living/carbon/C = user
+		if((C.get_item_by_slot(ITEM_SLOT_MASK) == src))
+			to_chat(user, span_warning("You can't tie [src] while wearing it!"))
+			return
+	else
+		if(user.is_holding(src))
+			var/obj/item/clothing/neck/shemagh/newShemagh = new sourceShemaghType(user)
+			var/currentHandIndex = user.get_held_index_of_item(src)
+			var/oldName = src.name
+			qdel(src)
+			user.put_in_hand(newShemagh, currentHandIndex)
+			user.visible_message(span_notice("You untie [oldName] back into a [newShemagh.name]."), span_notice("[user] unties [oldName] back into a [newShemagh.name]."))
+		else
+			to_chat(user, span_warning("You must be holding [src] in order to untie it!"))
+
 /obj/item/clothing/neck/shemagh/khaki
 	icon_state = "shemagh_khaki"
 
