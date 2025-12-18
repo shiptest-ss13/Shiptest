@@ -39,7 +39,7 @@
 	belt = /obj/item/storage/belt/utility
 
 /obj/effect/mob_spawn/human/corpse/ramzi/doctor
-	name = "Ramzi Sawbones"
+	name = "Ramzi Field Medic"
 	outfit = /datum/outfit/ramzi/doctor
 
 /datum/outfit/ramzi/doctor
