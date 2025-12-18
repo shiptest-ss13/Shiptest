@@ -26,12 +26,12 @@
 /obj/machinery/mineral/proc/register_input_turf()
 	input_turf = get_step(src, input_dir)
 	if(input_turf) // make sure there is actually a turf
-		RegisterSignal(input_turf, COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZED_ON, PROC_REF(pickup_item))
+		RegisterSignal(input_turf, COMSIG_ATOM_ENTERED, PROC_REF(pickup_item))
 
 /// Unregisters signals that are registered the machine's input turf, if it has one.
 /obj/machinery/mineral/proc/unregister_input_turf()
 	if(input_turf)
-		UnregisterSignal(input_turf, COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZED_ON)
+		UnregisterSignal(input_turf, COMSIG_ATOM_ENTERED)
 
 /obj/machinery/mineral/Moved()
 	. = ..()
