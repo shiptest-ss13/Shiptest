@@ -205,6 +205,9 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
+/obj/machinery/conveyor/auto/outpost{
+	dir = 1
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/hangar)
 "lb" = (
@@ -582,10 +585,6 @@
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 8
 	},
-/obj/machinery/door/airlock{
-	dir = 4
-	},
-/obj/effect/landmark/outpost/elevator_machine,
 /turf/open/floor/plasteel/tech/cybersun_outpost,
 /area/hangar)
 "Ei" = (
@@ -595,10 +594,6 @@
 /obj/structure/railing/thick{
 	dir = 4
 	},
-/obj/machinery/door/airlock{
-	dir = 4
-	},
-/obj/effect/landmark/outpost/elevator_machine,
 /turf/open/floor/plasteel/tech/cybersun_outpost,
 /area/hangar)
 "EV" = (

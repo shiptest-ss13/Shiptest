@@ -33,8 +33,8 @@
 /turf/template_noop,
 /area/template_noop)
 "D" = (
-/obj/machinery/light/dim/directional/south,
 /obj/structure/elevator_platform/tile/brushed,
+/obj/machinery/light/dim/directional/south,
 /turf/template_noop,
 /area/template_noop)
 "E" = (
@@ -43,10 +43,10 @@
 /turf/template_noop,
 /area/template_noop)
 "G" = (
+/obj/structure/elevator_platform/tile/brushed,
 /obj/structure/chair/handrail{
 	dir = 4
 	},
-/obj/structure/elevator_platform/tile/brushed,
 /turf/template_noop,
 /area/template_noop)
 "H" = (
@@ -60,6 +60,13 @@
 /obj/structure/elevator_platform/tile/brushed,
 /obj/machinery/status_display/elevator{
 	pixel_y = 28
+	},
+/turf/template_noop,
+/area/template_noop)
+"M" = (
+/obj/structure/elevator_platform/tile/brushed,
+/obj/structure/chair/handrail{
+	dir = 8
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -79,8 +86,8 @@
 /turf/template_noop,
 /area/template_noop)
 "Z" = (
-/obj/machinery/light/dim/directional/north,
 /obj/structure/elevator_platform/tile/brushed,
+/obj/machinery/light/dim/directional/north,
 /turf/template_noop,
 /area/template_noop)
 
@@ -138,8 +145,8 @@ X
 E
 E
 Z
-T
-T
+M
+M
 D
 E
 X
