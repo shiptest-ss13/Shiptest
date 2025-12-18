@@ -958,7 +958,11 @@
 /obj/effect/turf_decal/box{
 	color = "#75A2BB"
 	},
-/obj/machinery/suit_storage_unit/standard_unit,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/tank/internals/oxygen,
+/obj/item/clothing/mask/gas/clip,
+/obj/item/clothing/suit/space/clip/armored,
+/obj/item/clothing/head/helmet/space/clip/armored,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "AP" = (
@@ -1465,7 +1469,13 @@
 /obj/effect/turf_decal/box{
 	color = "#75A2BB"
 	},
-/obj/machinery/suit_storage_unit/standard_unit,
+/obj/machinery/suit_storage_unit/inherit{
+	name = "engineering suit storage unit"
+	},
+/obj/item/clothing/head/helmet/space/clip,
+/obj/item/clothing/suit/space/clip,
+/obj/item/tank/internals/oxygen,
+/obj/item/clothing/mask/gas/clip,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Oy" = (

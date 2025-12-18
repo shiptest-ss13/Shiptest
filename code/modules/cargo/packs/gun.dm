@@ -32,7 +32,7 @@
 /datum/supply_pack/gun/m20_auto_elite
 	name = "M20 Auto Elite Pistol Crate"
 	desc = "Contains a heavy pistol manufactured by Serene Outdoors. Chambered in .44 Roumain."
-	cost = 1250
+	cost = 1500
 	contains = list(/obj/item/storage/guncase/pistol/m20_auto_elite)
 	crate_name = "pistol crate"
 
@@ -72,7 +72,7 @@
 /datum/supply_pack/gun/cm70
 	name = "CM-70 Machinepistol Crate"
 	desc = "Contains a 9x18mm machinepistol produced proudly within Lanchester City. Confederated Minuteman issue only."
-	cost = 2500
+	cost = 2000
 	contains = list(/obj/item/storage/guncase/pistol/cm70)
 	faction = /datum/faction/clip
 	faction_discount = 0
@@ -100,6 +100,16 @@
 	cost = 1250
 	contains = list(/obj/item/storage/guncase/pistol/asp)
 	faction = /datum/faction/syndicate/scarborough
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/pinscher
+	name = "Pinscher Heavy Pistol Crate"
+	desc = "Contains a heavy pistol manufactured by Serene Outdoors and modified to fit IRMG's standards. Chambered in .44 Roumain."
+	cost = 1500
+	contains = list(/obj/item/storage/guncase/pistol/pinscher)
+	crate_name = "pistol crate"
+	faction = /datum/faction/inteq
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -198,7 +208,7 @@
 /datum/supply_pack/gun/cm357
 	name = "CM-357 Automag Pistol Crate"
 	desc = "Contains a magazine-fed .357 handgun, produced for the CLIP-BARD division and available for requisition in small numbers to the Minutemen."
-	cost = 3000
+	cost = 1750
 	contains = list(/obj/item/storage/guncase/pistol/cm357)
 	faction = /datum/faction/clip
 	faction_discount = 0
@@ -221,7 +231,7 @@
 /datum/supply_pack/gun/l204
 	name = "L204 'Resistor' Plasma Rifle Crate"
 	desc = "Contains a lethal, high-energy laser gun."
-	cost = 2000
+	cost = 1000
 	contains = list(/obj/item/storage/guncase/energy/laser)
 	crate_name = "laser crate"
 	faction = /datum/faction/nt
@@ -275,6 +285,24 @@
 	contains = list(/obj/item/storage/guncase/energy/kalixrifle)
 	crate_name = "beam gun crate"
 	faction = /datum/faction/pgf
+
+/datum/supply_pack/gun/laser/kalix/nock
+	name = "Etherbor VG-F3 Beam Volleygun Crate"
+	desc = "Contains a single VG-F3 Beam Volleygun, a civilian-grade volleygun developed in the PGF, manufactured by Etherbor Industries."
+	cost = 3000
+	contains = list(/obj/item/storage/guncase/energy/kalixnock)
+	crate_name = "beam volleygun crate"
+	faction = /datum/faction/pgf
+
+/datum/supply_pack/gun/laser/vga5
+	name = "Etherbor VG-A5 Beam Volleygun Crate"
+	desc = "Contains a single VG-A5 Beam Volleygun, a military-grade volleygun developed in the PGF and manufactured by Etherbor Industries for use within the Marine Corps."
+	cost = 4000
+	contains = list(/obj/item/storage/guncase/energy/vga5)
+	crate_name = "beam volleygun crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/gun/laser/bg16
 	name = "Etherbor BG-16 Beam Gun Crate"
@@ -376,6 +404,13 @@
 	cost = 3000
 	crate_name = "shotgun crate"
 
+/datum/supply_pack/gun/slammer
+	name = "Slammer Shotgun Crate"
+	desc = "For when you need to deal with a 6-hooligan riot. Contains a mag-fed pump shotgun, with a 6-round capacity."
+	cost = 3000
+	contains = list(/obj/item/storage/guncase/slammer)
+	crate_name = "shotgun crate"
+
 /datum/supply_pack/gun/bulldog
 	name = "Bulldog Shotgun Crate"
 	desc = "An automatic shotgun chambered in 12ga produced by Scarborough Arms for exclusive use by licensed buyers. Comes with 8-round box magazines."
@@ -472,7 +507,7 @@
 /datum/supply_pack/gun/resolution
 	name = "PD46 Resolution PDW Crate"
 	desc = "Contains a compact automatic personal defense weapon chambered in 4.6x30mm."
-	cost = 3000
+	cost = 3500
 	contains = list(/obj/item/storage/guncase/wt550)
 	crate_name = "PDW crate"
 	faction_discount = 10
@@ -481,7 +516,7 @@
 /datum/supply_pack/gun/bdm50
 	name = "BDM-50 'Akita' PDW Crate"
 	desc = "Contains a compact Automatic personal defense weapon chambered in 4.6x30mm, in use by the IRMG."
-	cost = 3000
+	cost = 3500
 	contains = list(/obj/item/storage/guncase/bdm50)
 	crate_name = "PDW crate"
 	faction = /datum/faction/inteq
@@ -491,7 +526,7 @@
 /datum/supply_pack/gun/champion
 	name = "PHB Champion Machinepistol Crate"
 	desc = "Contains a compact 9x18mm burst fire machine pistol produced by Nanotrasen advantage. For NT employee use only."
-	cost = 2500
+	cost = 2000
 	contains = list(/obj/item/storage/guncase/saber)
 	crate_name = "Machinepistol crate"
 	faction = /datum/faction/nt
@@ -521,7 +556,7 @@
 /datum/supply_pack/gun/rattlesnake
 	name = "Rattlesnake Machinepistol Crate"
 	desc = "Contains an automatic machinepistol produced by Scarborough Arms, chambered in 9x18mm."
-	cost = 2500
+	cost = 2000
 	contains = list(/obj/item/storage/guncase/rattlesnake)
 	crate_name = "Machinepistol crate"
 	faction = /datum/faction/syndicate/scarborough
@@ -531,7 +566,7 @@
 /datum/supply_pack/gun/kingsnake
 	name = "Kingsnake Machinepistol Crate"
 	desc = "Contains an automatic machinepistol chambered in 9x18mm, painted in the brown-and-gold of Inteq."
-	cost = 2500
+	cost = 2000
 	contains = list(/obj/item/storage/guncase/kingsnake)
 	crate_name = "Machinepistol crate"
 	faction = /datum/faction/inteq
@@ -551,7 +586,7 @@
 /datum/supply_pack/gun/sidewinder
 	name = "Sidewinder SMG Crate"
 	desc = "Contains a Sidewinder PDW produced by Scarborough Arms and chambered in 5.7mm for armor-piercing capabilities."
-	cost = 3000
+	cost = 3500
 	contains = list(/obj/item/storage/guncase/sidewinder)
 	crate_name = "SMG crate"
 	faction = /datum/faction/syndicate/scarborough
@@ -571,10 +606,19 @@
 
 /datum/supply_pack/gun/m15
 	name = "Super Sporter Rifle Crate"
-	desc = "Contains a recently manufactured Model 15 \"Super Sporter\", Serene Outdoors' premier hunting rifle. Chambered in 5.56 CLIP"
+	desc = "Contains a recently manufactured Model 15 \"Super Sporter\", Serene Outdoors' premier hunting rifle. Chambered in 7.62 CLIP"
 	contains = list(/obj/item/storage/guncase/m15)
 	cost = 2500
 	crate_name = "rifle crate"
+
+/datum/supply_pack/gun/hydra80
+	name = "Hydra-80 Rifle Crate"
+	desc = "Contains a dated variant of the Hydra assault rifle, with a quick trigger and semi-auto. Accepts only small magazines. Chambered in 5.56 CLIP"
+	contains = list(/obj/item/storage/guncase/hydra80)
+	cost = 3000
+	crate_name = "rifle crate"
+	faction = /datum/faction/syndicate/scarborough
+	faction_discount = 10
 
 /datum/supply_pack/gun/winchester
 	name = "Flaming Arrow Lever Action Rifle Crate"

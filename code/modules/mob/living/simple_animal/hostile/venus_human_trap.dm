@@ -99,7 +99,7 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	unsuitable_atmos_damage = 0
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
-	faction = list("hostile","vines","plants")
+	faction = list(FACTION_HOSTILE,"vines","plants")
 	initial_language_holder = /datum/language_holder/venus
 	del_on_death = TRUE
 	/// A list of all the plant's vines
@@ -131,7 +131,7 @@
 				return
 
 	var/datum/beam/newVine = Beam(the_target, icon_state = "vine", maxdistance = vine_grab_distance, beam_type=/obj/effect/ebeam/vine, emissive = FALSE)
-	RegisterSignal(newVine, COMSIG_PARENT_QDELETING, PROC_REF(remove_vine), newVine)
+	RegisterSignal(newVine, COMSIG_QDELETING, PROC_REF(remove_vine), newVine)
 	vines += newVine
 	if(isliving(the_target))
 		var/mob/living/L = the_target
@@ -201,7 +201,7 @@
 /mob/living/simple_animal/hostile/venus_human_trap/proc/remove_vine(datum/beam/vine)
 	SIGNAL_HANDLER
 
-	UnregisterSignal(vine, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(vine, COMSIG_QDELETING)
 	vines -= vine
 
 /mob/living/simple_animal/hostile/venus_human_trap/mining

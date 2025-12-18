@@ -6,6 +6,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	MODE_KEY_L_HAND = MODE_L_HAND,
 	MODE_KEY_EXOSUIT = MODE_EXOSUIT,
 	MODE_KEY_INTERCOM = MODE_INTERCOM,
+	MODE_KEY_WIDEBAND = MODE_WIDEBAND,
 
 	// Department
 	MODE_KEY_DEPARTMENT = MODE_DEPARTMENT,
@@ -489,8 +490,15 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 				exo.radio.talk_into(src, message, , spans, language, message_mods)
 				return ITALICS | REDUCE_RANGE
 
+		// Allows the :i prefix to only work on mounted intercoms, not widebands
 		if(MODE_INTERCOM)
 			for (var/obj/item/radio/intercom/I in view(MODE_RANGE_INTERCOM, null))
+				if (!(istype(I, /obj/item/radio/intercom/wideband)))
+					I.talk_into(src, message, , spans, language, message_mods)
+			return ITALICS | REDUCE_RANGE
+
+		if(MODE_WIDEBAND)
+			for (var/obj/item/radio/intercom/wideband/I in view(MODE_RANGE_INTERCOM, null))
 				I.talk_into(src, message, , spans, language, message_mods)
 			return ITALICS | REDUCE_RANGE
 

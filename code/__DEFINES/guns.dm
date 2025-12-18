@@ -106,6 +106,7 @@
 #define HEAVY_RIFLE_SLOWDOWN 0.6
 #define DMR_SLOWDOWN 0.6
 #define SAW_SLOWDOWN 0.7
+#define LIGHT_SNIPER_SLOWDOWN 0.75
 #define SNIPER_SLOWDOWN 0.9
 #define HMG_SLOWDOWN 1
 #define AMR_SLOWDOWN 1
@@ -142,6 +143,7 @@
 #define COMSIG_ATTACHMENT_TOGGLE "attach-toggle"
 
 #define COMSIG_ATTACHMENT_GET_SLOT "attach-slot-who"
+#define COMSIG_ATTACHMENT_CHANGE_SLOT "change_attach_slot"
 #define ATTACHMENT_SLOT_MUZZLE "muzzle"
 #define ATTACHMENT_SLOT_SCOPE "scope"
 #define ATTACHMENT_SLOT_GRIP "grip"

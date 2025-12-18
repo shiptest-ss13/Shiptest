@@ -61,6 +61,12 @@
 	icon_state = "ngr_foreman"
 	item_state = "blackcloth"
 
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_COAT
+	equip_delay_other = EQUIP_DELAY_COAT * 1.5
+	strip_delay = EQUIP_DELAY_COAT * 1.5
+
 /obj/item/clothing/suit/ngr/smock
 	name = "blood red smock"
 	desc = "A blood-red surgical smock typically worn by field medics of the New Gorlex Republic. It hides red blood really well!"
@@ -303,6 +309,15 @@
 		new /obj/item/ammo_box/magazine/m556_42_hydra(src)
 	new /obj/item/ammo_casing/a40mm(src)
 	new /obj/item/ammo_casing/a40mm(src)
+
+/obj/item/storage/belt/security/webbing/ngr/alt
+	name = "NGR drop pouch harness"
+	desc = "A harness with a bunch of pouches attached to them for operators of the New Gorlex Republic, can hold security gear."
+	icon_state = "ngr_droppouch"
+	item_state = "ngr_droppouch"
+	icon = 'icons/obj/clothing/faction/ngr/belt.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/belt.dmi'
+	supports_variations = null
 
 /obj/item/storage/belt/mining/ngr
 	name = "NGR industrial webbing"

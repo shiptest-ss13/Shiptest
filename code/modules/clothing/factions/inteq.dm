@@ -61,7 +61,7 @@
 	desc = "A tactical sneaksuit developed for usage in the IRMG's covert elements. Maximizes stealth by minimizing friction."
 	icon_state = "inteq_sneak"
 	item_state = "inteq_sneak"
-	roll_sleeves = FALSE
+	roll_sleeves = TRUE
 	roll_down = TRUE
 
 // Oversuits // can someone like. change the vanguard and maa armors to be subtypes of armor/inteq. please
@@ -403,6 +403,7 @@
 	can_flashlight = TRUE
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 	content_overlays = TRUE
+	unique_reskin = null
 
 /obj/item/clothing/head/helmet/m10/inteq
 	name = "inteq M-10 helmet"
@@ -415,6 +416,7 @@
 	vox_override_icon = 'icons/mob/clothing/faction/inteq/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/inteq/kepori.dmi'
 	content_overlays = TRUE
+	unique_reskin = null
 
 // Gloves
 

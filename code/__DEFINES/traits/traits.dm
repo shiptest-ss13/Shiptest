@@ -9,14 +9,14 @@
 			target.status_traits = list(); \
 			_L = target.status_traits; \
 			_L[trait] = list(source); \
-			SEND_SIGNAL(target, SIGNAL_ADDTRAIT(trait)); \
+			SEND_SIGNAL(target, SIGNAL_ADDTRAIT(trait), trait); \
 		} else { \
 			_L = target.status_traits; \
 			if (_L[trait]) { \
 				_L[trait] |= list(source); \
 			} else { \
 				_L[trait] = list(source); \
-				SEND_SIGNAL(target, SIGNAL_ADDTRAIT(trait)); \
+				SEND_SIGNAL(target, SIGNAL_ADDTRAIT(trait), trait); \
 			} \
 		} \
 	} while (0)
@@ -37,7 +37,7 @@
 			}; \
 			if (!length(_L[trait])) { \
 				_L -= trait; \
-				SEND_SIGNAL(target, SIGNAL_REMOVETRAIT(trait)); \
+				SEND_SIGNAL(target, SIGNAL_REMOVETRAIT(trait), trait); \
 			}; \
 			if (!length(_L)) { \
 				target.status_traits = null \
@@ -141,6 +141,10 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_CRITICAL_CONDITION "critical-condition"
 /// Doesn't miss attacks
 #define TRAIT_PERFECT_ATTACKER "perfect_attacker"
+/// Is in stasis
+#define TRAIT_STASIS "stasis"
+/// This mob is asthmatic, and has much more severe reactions to any irritants present in the air
+#define TRAIT_ASTHMATIC "asthmatic"
 #define TRAIT_BLIND "blind"
 #define TRAIT_DEAF "deaf"
 #define TRAIT_MUTE "mute"
@@ -185,7 +189,10 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_SNOWSTORM_IMMUNE "snow_immunity"
 #define TRAIT_ASHSTORM_IMMUNE "ash_immunity"
 #define TRAIT_SANDSTORM_IMMUNE "sand_immunity"
+/// Mobs that have this trait cannot be extinguished
+#define TRAIT_NO_EXTINGUISH "no_extinguish"
 #define TRAIT_NOFIRE "nonflammable"
+#define TRAIT_NOFIRE_SPREAD "nofirespread"
 /// Prevents plasmamen from self-igniting if only their helmet is missing
 #define TRAIT_NOSELFIGNITION_HEAD_ONLY "no_selfignition_head_only"
 #define TRAIT_NOGUNS "no_guns"
@@ -212,6 +219,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_DISSECTED "dissected"
 #define TRAIT_SIXTHSENSE "sixth_sense" //I can hear dead people
 #define TRAIT_FEARLESS "fearless"
+#define TRAIT_SENSITIVE_TONGUE "sensitive tongue" //tells you exactly what you're tasting
 #define TRAIT_PARALYSIS_L_ARM "para-l-arm" //These are used for brain-based paralysis, where replacing the limb won't fix it
 #define TRAIT_PARALYSIS_R_ARM "para-r-arm"
 #define TRAIT_PARALYSIS_L_LEG "para-l-leg"
@@ -363,19 +371,20 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_DRYABLE "trait_dryable"
 ///Trait for dried items
 #define TRAIT_DRIED "trait_dried"
-/// Trait for customizable reagent holder
-//#define TRAIT_CUSTOMIZABLE_REAGENT_HOLDER "customizable_reagent_holder"
-/// Trait for allowing an item that isn't food into the customizable reagent holder
-//#define TRAIT_ODD_CUSTOMIZABLE_FOOD_INGREDIENT "odd_customizable_food_ingredient"
 
-/// Trait granted by lipstick
+///Trait for customizable reagent holder
+#define TRAIT_CUSTOMIZABLE_REAGENT_HOLDER "customizable_reagent_holder"
+///Trait for allowing an item that isn't food into the customizable reagent holder
+#define TRAIT_ODD_CUSTOMIZABLE_FOOD_INGREDIENT "odd_customizable_food_ingredient"
+
+///Trait granted by lipstick
 #define LIPSTICK_TRAIT "lipstick_trait"
 
-// Bone breaking traits. Don't actually do anything(?)
+//Bone breaking traits. Don't actually do anything(?)
 #define TRAIT_NOBREAK "no_break"
 #define TRAIT_ALLBREAK "all_break"
 
-// common trait sources
+//common trait sources
 #define TRAIT_GENERIC "generic"
 #define GENERIC_ITEM_TRAIT "generic_item"
 #define UNCONSCIOUS_TRAIT "unconscious"
@@ -450,6 +459,11 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define ANTI_DROP_IMPLANT_TRAIT "anti-drop-implant"
 #define SLEEPING_CARP_TRAIT "sleeping_carp"
 #define MADE_UNCLONEABLE "made-uncloneable"
+#define VENTCRAWLING_TRAIT "ventcrawling"
+#define SPECIES_FLIGHT_TRAIT "species-flight"
+#define FROSTMINER_ENRAGE_TRAIT "frostminer-enrage"
+#define NO_GRAVITY_TRAIT "no-gravity"
+#define LEAPER_BUBBLE_TRAIT "leaper-bubble"
 #define TIMESTOP_TRAIT "timestop"
 #define STICKY_NODROP "sticky-nodrop" //sticky nodrop sounds like a bad soundcloud rapper's name
 #define PULLED_WHILE_SOFTCRIT_TRAIT "pulled-while-softcrit"
@@ -473,6 +487,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 
 /// Trait granted by [/obj/item/clothing/head/helmet/space/hardsuit/berserker]
 #define BERSERK_TRAIT "berserk_trait"
+/// The person with this trait always appears as 'unknown'.
+#define TRAIT_UNKNOWN "unknown"
 /// Currently fishing
 #define TRAIT_GONE_FISHING "fishing"
 /// Fish in this won't die
@@ -487,20 +503,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_BLOODY_MESS "bloody_mess" //from heparin, makes open bleeding wounds rapidly spill more blood
 #define TRAIT_COAGULATING "coagulating" //from coagulant reagents, this doesn't affect the bleeding itself but does affect the bleed warning messages
 #define TRAIT_NOBLEED "nobleed" //This carbon doesn't bleed
-
-// mobility flag traits
-// IN THE FUTURE, IT WOULD BE NICE TO DO SOMETHING SIMILAR TO https://github.com/tgstation/tgstation/pull/48923/files (ofcourse not nearly the same because I have my.. thoughts on it)
-// BUT FOR NOW, THESE ARE HOOKED TO DO update_mobility() VIA COMSIG IN living_mobility.dm
-// SO IF YOU ADD MORE, BESURE TO UPDATE IT THERE.
-
-/// Disallow movement
-#define TRAIT_MOBILITY_NOMOVE "mobility_nomove"
-/// Disallow pickup
-#define TRAIT_MOBILITY_NOPICKUP "mobility_nopickup"
-/// Disallow item use
-#define TRAIT_MOBILITY_NOUSE "mobility_nouse"
-///Disallow resting/unresting
-#define TRAIT_MOBILITY_NOREST "mobility_norest"
 
 #define TRAIT_FORCED_STANDING "forcedstanding"
 

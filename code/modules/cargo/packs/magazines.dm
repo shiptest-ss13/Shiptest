@@ -84,7 +84,7 @@
 
 /datum/supply_pack/magazine/m15_mag
 	name = "Super Sporter Magazine Crate"
-	desc = "Contains a 5.56 CLIP magazine for the Super Sporter Rifle, with a capacity of 20 rounds."
+	desc = "Contains a 7.62 CLIP magazine for the Super Sporter Rifle, with a capacity of 20 rounds."
 	contains = list(/obj/item/ammo_box/magazine/m15/empty)
 	cost = 300
 
@@ -109,12 +109,14 @@
 	cost = 100
 	faction = /datum/faction/syndicate/scarborough
 
+/*
 /datum/supply_pack/magazine/hognose_mag
 	name = "Hognose Magazine Crate"
 	desc = "Contains a .22lr magazine for the Hognose underbarrel pistol, with a capacity of eight rounds."
 	contains = list(/obj/item/ammo_box/magazine/m22lr_himehabu/hognose/empty)
 	cost = 100
 	faction = /datum/faction/syndicate/scarborough
+*/
 
 /datum/supply_pack/magazine/asp_mag
 	name = "Asp Magazine Crate"
@@ -365,6 +367,12 @@
 	cost = 1200
 	faction = /datum/faction/syndicate/scarborough
 
+/datum/supply_pack/magazine/slammer
+	name = "Slammer Magazine Crate"
+	desc = "Contains a 6-round 12ga magazine for the Slammer shotgun."
+	contains = list(/obj/item/ammo_box/magazine/m12g_slammer)
+	cost = 300
+
 /* energy weapons */
 
 /datum/supply_pack/magazine/guncell
@@ -389,6 +397,14 @@
 	faction = /datum/faction/nt
 	faction_discount = 30
 	cost = 700
+
+/datum/supply_pack/magazine/tinyguncell
+	name = "Sharplite Mini Power Cell"
+	desc = "Contains a proprietary weapon cell, compatible with the Ohm self-defence pistol."
+	contains = list(/obj/item/stock_parts/cell/gun/sharplite/mini)
+	faction = /datum/faction/nt
+	faction_discount = 30
+	cost = 300
 
 /datum/supply_pack/magazine/upgradedguncell
 	name = "Sharplite Plus Proprietary Weapon Cell"

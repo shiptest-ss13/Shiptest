@@ -263,15 +263,12 @@
 	var/obj/item/storage/backpack/duffelbag/syndie/B = ..()
 	B.name = "Spacesuit Duffelbag"
 	B.desc = "It has a Coalition logo stamped on the front."
-	var/suit_color = pick(list("white-red", "blue", "beige", "worn", "worn_surplus", "yellow", "surplus"))
+	var/suit_color = pick(list("white_red", "blue", "beige", "worn", "worn_surplus", "yellow", "surplus"))
 
 	switch(suit_color)
 		if("white_red")
 			new /obj/item/clothing/head/helmet/space/syndicate/white_red(B)
 			new /obj/item/clothing/suit/space/syndicate/white_red(B)
-		if("blue")
-			new /obj/item/clothing/head/helmet/space/syndicate/blue(B)
-			new /obj/item/clothing/suit/space/syndicate/blue(B)
 		if("beige")
 			new /obj/item/clothing/head/helmet/space/syndicate/ngr(B)
 			new /obj/item/clothing/suit/space/syndicate/ngr(B)

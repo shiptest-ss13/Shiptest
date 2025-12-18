@@ -160,6 +160,13 @@
 	righthand_file = 'icons/mob/inhands/faction/nanotrasen/nt_righthand.dmi'
 	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
 
+	equip_sound = 'sound/items/equip/cloth_equip.ogg'
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_COAT
+	equip_delay_other = EQUIP_DELAY_COAT * 1.5
+	strip_delay = EQUIP_DELAY_COAT * 1.5
+
 /obj/item/clothing/suit/nanotrasen/medical_smock
 	name = "surgical smock"
 	desc = "A thick fluid-repelling smock rendered in what is unmistakeably Nanotrasen Blue. The tag on the inside declares it property of Nanotrasen, Inc."
@@ -329,6 +336,7 @@
 	icon_state = "nt_m10helm"
 	icon = 'icons/obj/clothing/faction/nanotrasen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/nanotrasen/head.dmi'
+	unique_reskin = null
 
 /obj/item/clothing/head/helmet/bulletproof/x11/nanotrasen
 	name = "\improper Bulletproof Vigilitas Helmet"
@@ -336,6 +344,7 @@
 	icon_state = "nt_x11helm"
 	icon = 'icons/obj/clothing/faction/nanotrasen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/nanotrasen/head.dmi'
+	unique_reskin = null
 
 /obj/item/clothing/head/helmet/riot/nanotrasen
 	name = "\improper Vigilitas Riot Helmet"
