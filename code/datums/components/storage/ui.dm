@@ -184,7 +184,7 @@
 	// in tiles
 	var/maxallowedscreensize = cview[1]-8
 	// we got screen size, register signal
-	RegisterSignal(M, COMSIG_PARENT_QDELETING, PROC_REF(on_logout), override = TRUE)
+	RegisterSignal(M, COMSIG_QDELETING, PROC_REF(on_logout), override = TRUE)
 	if(M.active_storage != src)
 		if(M.active_storage)
 			M.active_storage.ui_hide(M)
@@ -222,7 +222,7 @@
 /datum/component/storage/proc/ui_hide(mob/M)
 	if(!M.client)
 		return TRUE
-	UnregisterSignal(M, list(COMSIG_PARENT_QDELETING))
+	UnregisterSignal(M, list(COMSIG_QDELETING))
 	M.client.screen -= ui_by_mob[M]
 	var/list/objects = ui_by_mob[M]
 	QDEL_LIST(objects)
