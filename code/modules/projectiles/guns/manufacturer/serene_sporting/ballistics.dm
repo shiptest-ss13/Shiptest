@@ -309,7 +309,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/woodsman)
 
 /obj/item/gun/ballistic/automatic/m15
 	name = "Model 15 Super Sporter"
-	desc = "A popular semi-automatic hunting rifle produced by Serene Outdoors. Solid all-round performance, high accuracy, and ease of access compared to military rifles makes the Super Sporter a popular choice for hunting medium game and occasionally self-defense. Chambered in 5.56mm."
+	desc = "A popular semi-automatic hunting rifle produced by Serene Outdoors. Solid all-round performance, high accuracy, and ease of access compared to military rifles makes the Super Sporter a popular choice for hunting medium game and occasionally self-defense. Chambered in 7.62x40mm CLIP."
 
 	icon = 'icons/obj/guns/manufacturer/serene_outdoors/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/serene_outdoors/lefthand.dmi'
@@ -342,6 +342,12 @@ NO_MAG_GUN_HELPER(automatic/marksman/woodsman)
 	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
 	wield_delay = 1 SECONDS
 
+	fire_delay = 3
+
+	wear_minor_threshold = 200
+	wear_major_threshold = 600
+	wear_maximum = 1200
+
 	valid_attachments = SERENE_ATTACHMENTS
 	slot_available = SERENE_ATTACH_SLOTS
 
@@ -364,12 +370,12 @@ EMPTY_GUN_HELPER(automatic/m15)
 NO_MAG_GUN_HELPER(automatic/m15)
 
 /obj/item/ammo_box/magazine/m15
-	name = "Model 15 magazine (5.56x42mm CLIP)"
-	desc = "A 20-round magazine for the Model 15 \"Super Sporter\". These rounds do average damage and perform moderately against armor."
+	name = "Model 15 magazine (7.62x40mm CLIP)"
+	desc = "A 20-round magazine for the Model 15 \"Super Sporter\". These rounds do good damage with good armor penetration."
 	icon_state = "p16_mag-1"
 	base_icon_state = "p16_mag"
-	ammo_type = /obj/item/ammo_casing/a556_42
-	caliber = "5.56x42mm"
+	ammo_type = /obj/item/ammo_casing/a762_40
+	caliber = "7.62x40mm"
 	max_ammo = 20
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
