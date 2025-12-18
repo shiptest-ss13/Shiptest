@@ -2205,6 +2205,7 @@
 	self_consuming = TRUE
 	taste_description = "pure determination"
 	overdose_threshold = 45
+	process_flags = ALL
 	/// Whether we've had at least WOUND_DETERMINATION_SEVERE (2.5u) of determination at any given time. No damage slowdown immunity or indication we're having a second wind if it's just a single moderate wound
 	var/significant = FALSE
 
