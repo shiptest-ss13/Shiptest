@@ -1659,6 +1659,12 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 5
 	},
+/obj/item/storage/backpack/duffelbag{
+	pixel_y = 2
+	},
+/obj/item/storage/backpack/duffelbag{
+	pixel_y = -6
+	},
 /turf/open/floor/suns/dark/plain,
 /area/outpost/crew/bar/cybersun_outpost)
 "ek" = (
@@ -2113,6 +2119,13 @@
 /obj/item/melee/knife/hunting,
 /turf/open/floor/suns/hatch/bamboo,
 /area/outpost/operations)
+"fd" = (
+/obj/effect/turf_decal/siding/black/end{
+	dir = 1
+	},
+/obj/structure/dresser,
+/turf/open/floor/suns/dark/plain,
+/area/outpost/crew/sauna)
 "fe" = (
 /obj/structure/chair/sofa/red/corpo/directional/west,
 /turf/open/floor/suns/hatch/maple,
@@ -2256,6 +2269,12 @@
 /obj/structure/closet/cabinet,
 /obj/effect/turf_decal/siding/black{
 	dir = 6
+	},
+/obj/item/storage/backpack/duffelbag{
+	pixel_y = 2
+	},
+/obj/item/storage/backpack/duffelbag{
+	pixel_y = -6
 	},
 /turf/open/floor/suns/dark/plain,
 /area/outpost/crew/bar/cybersun_outpost)
@@ -10466,10 +10485,10 @@
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/bar/cybersun_outpost)
 "zE" = (
-/obj/structure/closet/cabinet,
 /obj/effect/turf_decal/siding/black{
 	dir = 10
 	},
+/obj/structure/dresser,
 /turf/open/floor/suns/dark/plain,
 /area/outpost/crew/bar/cybersun_outpost)
 "zF" = (
@@ -17533,6 +17552,12 @@
 /obj/structure/closet/cabinet,
 /obj/effect/turf_decal/siding/black{
 	dir = 9
+	},
+/obj/item/storage/backpack/duffelbag{
+	pixel_y = 2
+	},
+/obj/item/storage/backpack/duffelbag{
+	pixel_y = -6
 	},
 /turf/open/floor/suns/dark/plain,
 /area/outpost/crew/bar/cybersun_outpost)
@@ -29423,7 +29448,7 @@ JV
 gy
 sM
 Id
-JC
+fd
 hM
 rk
 lX
