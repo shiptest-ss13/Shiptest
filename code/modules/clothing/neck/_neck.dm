@@ -599,7 +599,7 @@
 	item_state = "neckwraps"
 	unique_reskin = list("grey neckwraps" = "neckwraps",
 						"black neckwraps" = "neckwraps_black",
-						"brown neckwraps" = "nechwraps_brown",
+						"brown neckwraps" = "neckwraps_brown",
 						"tan neckwraps" = "neckwraps_tan",
 						"olive neckwraps" = "neckwraps_olive",
 						"red neckwraps" = "neckwraps_red",
