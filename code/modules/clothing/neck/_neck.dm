@@ -590,6 +590,59 @@
 /obj/item/clothing/neck/shemagh/black
 	icon_state = "shemagh_black"
 
+// neck wraps
+
+/obj/item/clothing/neck/neckwraps
+	name = "neckwraps"
+	desc = "A fashionable piece of cloth cover your neck."
+	icon_state = "neckwraps"
+	item_state = "neckwraps"
+	unique_reskin = list("grey neckwraps" = "neckwraps",
+						"black neckwraps" = "neckwraps_black",
+						"brown neckwraps" = "nechwraps_brown",
+						"tan neckwraps" = "neckwraps_tan",
+						"olive neckwraps" = "neckwraps_olive",
+						"red neckwraps" = "neckwraps_red",
+						"blue neckwraps" = "neckwraps_blue"
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/neck/neckwraps/grey
+	name = "grey neckwraps"
+	icon_state = "neckwraps"
+	current_skin = "grey neckwraps"
+
+/obj/item/clothing/neck/neckwraps/black
+	name = "black neckwraps"
+	icon_state = "neckwraps_black"
+	current_skin = "black neckwraps"
+
+/obj/item/clothing/neck/neckwraps/brown
+	name = "brown neckwraps"
+	icon_state = "neckwraps_brown"
+	current_skin = "brown neckwraps"
+
+/obj/item/clothing/neck/neckwraps/tan
+	name = "tan neckwraps"
+	icon_state = "neckwraps_tan"
+	current_skin = "tan neckwraps"
+
+/obj/item/clothing/neck/neckwraps/olive
+	name = "olive neckwraps"
+	icon_state = "neckwraps_olive"
+	current_skin = "olive neckwraps"
+
+/obj/item/clothing/neck/neckwraps/red
+	name = "red neckwraps"
+	icon_state = "neckwraps_red"
+	current_skin = "red neckwraps"
+
+/obj/item/clothing/neck/neckwraps/blue
+	name = "blue neckwraps"
+	icon_state = "neckwraps_blue"
+	current_skin = "blue neckwraps"
+
 //The three following scarves don't have the scarf subtype
 //This is because Ian can equip anything from that subtype
 //However, these 4 don't have corgi versions of their sprites
