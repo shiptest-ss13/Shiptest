@@ -2684,6 +2684,7 @@
 /obj/structure/showcase/cyborg/assault{
 	name = "Cybersun Assault Borg Display"
 	},
+/obj/structure/catwalk,
 /turf/open/water/csoutpost,
 /area/outpost/crew/promenade)
 "gy" = (
@@ -7242,15 +7243,6 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/suns/dark/plain,
 /area/outpost/crew/lounge)
-"rp" = (
-/obj/machinery/computer/electrolyzer_console{
-	dir = 8;
-	pixel_x = 24;
-	density = 0
-	},
-/obj/effect/turf_decal/industrial/stand_clear,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/outpost/cargo/smeltery)
 "rq" = (
 /obj/effect/turf_decal/corner/opaque/white/half{
 	dir = 1
@@ -21698,6 +21690,15 @@
 	},
 /turf/open/cybersun_outpost_exterior,
 /area/outpost/external)
+"Zx" = (
+/obj/machinery/computer/electrolyzer_console{
+	dir = 8;
+	pixel_x = 24;
+	density = 0
+	},
+/obj/effect/turf_decal/industrial/stand_clear,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/outpost/cargo/smeltery)
 "Zy" = (
 /obj/effect/turf_decal/corner/transparent/cybersunteal{
 	dir = 8
@@ -33822,7 +33823,7 @@ TH
 sf
 sF
 hS
-rp
+Zx
 yZ
 Fu
 EC
