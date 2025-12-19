@@ -20,7 +20,7 @@
 	circuit = /obj/item/circuitboard/computer/shuttle
 	light_color = LIGHT_COLOR_CYAN
 	clicksound = null
-	density = TRUE //why was this not originally set
+	density = TRUE
 
 	/// The ship we reside on for ease of access
 	var/datum/overmap/ship/controlled/current_ship
