@@ -20,7 +20,7 @@
 	armour_penetration = 0
 
 	heat = 3800
-	usesound = list('sound/weapons/melee/plasmacutter/plasma_cutter_melee.ogg', 'sound/items/welder2.ogg')
+	usesound = list('sound/weapons/melee/plasmacutter/plasma_cutter_melee.ogg')
 
 	power_use_amount = POWER_CELL_USE_VERY_LOW
 
@@ -185,11 +185,3 @@
 	else
 		to_chat(user, span_warning("You need more charge to complete this task!"))
 		return FALSE
-
-/obj/item/plasmacutter/adv
-	name = "advanced plasma cutter"
-	icon_state = "adv_plasmacutter"
-	item_state = "adv_plasmacutter"
-	force = 15
-	wall_decon_damage = 300
-	shot_type = /obj/projectile/plasma/adv
