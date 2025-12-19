@@ -1783,6 +1783,9 @@
 /area/outpost/crew/promenade)
 "ev" = (
 /obj/machinery/mineral/electrolyzer_unloader,
+/obj/structure/railing/thin{
+	dir = 4
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/outpost/cargo/smeltery)
 "ew" = (
@@ -3911,6 +3914,10 @@
 /obj/structure/filingcabinet/double{
 	dir = 1
 	},
+/obj/item/clipboard,
+/obj/item/clipboard,
+/obj/item/folder/syndicate,
+/obj/item/folder/syndicate,
 /turf/open/floor/plasteel/dark,
 /area/outpost/hallway/fore)
 "jw" = (
@@ -4432,6 +4439,10 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 9
 	},
+/obj/item/clipboard,
+/obj/item/clipboard,
+/obj/item/folder/syndicate,
+/obj/item/folder/syndicate,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/cargo/office)
 "kD" = (
@@ -5180,8 +5191,9 @@
 /obj/effect/turf_decal/siding/black/end{
 	dir = 4
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/patterned/brushed,
-/area/outpost/external)
+/area/outpost/cargo/smeltery)
 "my" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
@@ -5387,7 +5399,7 @@
 	},
 /obj/structure/grille,
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/outpost/external)
+/area/outpost/cargo/smeltery)
 "mX" = (
 /obj/machinery/door/airlock{
 	dir = 4;
@@ -6100,7 +6112,7 @@
 	},
 /obj/effect/turf_decal/industrial/hatch,
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/outpost/external)
+/area/outpost/cargo/smeltery)
 "oE" = (
 /obj/effect/turf_decal/corner/opaque/white/half,
 /obj/effect/turf_decal/corner/transparent/lightgrey/half,
@@ -6623,6 +6635,10 @@
 /obj/structure/filingcabinet/double/grey{
 	dir = 1
 	},
+/obj/item/folder/syndicate,
+/obj/item/folder/syndicate,
+/obj/item/clipboard,
+/obj/item/clipboard,
 /turf/open/floor/suns/dark/plain,
 /area/outpost/crew/bar/cybersun_outpost)
 "pQ" = (
@@ -7232,6 +7248,7 @@
 	pixel_x = 24;
 	density = 0
 	},
+/obj/effect/turf_decal/industrial/stand_clear,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/cargo/smeltery)
 "rq" = (
@@ -7441,9 +7458,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/suns/hatch/bamboo,
 /area/outpost/vacant_rooms/office)
-"rW" = (
-/turf/open/space/basic,
-/area/outpost/external)
 "rX" = (
 /obj/structure/chair/sofa/blue/corpo/directional/west,
 /turf/open/floor/suns/hatch/mahogany,
@@ -8558,7 +8572,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/outpost/external)
+/area/outpost/cargo/smeltery)
 "uM" = (
 /obj/machinery/conveyor/auto{
 	id = "outpost1";
@@ -9348,7 +9362,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/outpost/external)
+/area/outpost/cargo/smeltery)
 "wO" = (
 /obj/effect/turf_decal/corner/opaque/syndiered,
 /obj/machinery/light/directional/west,
@@ -10820,10 +10834,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/promenade)
-"Au" = (
-/obj/structure/table,
-/turf/open/floor/plasteel/dark,
-/area/outpost/external)
 "Aw" = (
 /obj/structure/chair/sofa/blue/corpo/left/directional/east,
 /obj/item/radio/intercom/directional/north,
@@ -11448,6 +11458,10 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/north,
+/obj/item/clipboard,
+/obj/item/clipboard,
+/obj/item/folder/syndicate,
+/obj/item/folder/syndicate,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/cargo/office)
 "BZ" = (
@@ -14655,16 +14669,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/operations)
-"JI" = (
-/obj/structure/table,
-/obj/item/paper_bin{
-	pixel_x = 5;
-	pixel_y = 2
-	},
-/obj/item/pen,
-/obj/item/radio/intercom/directional/north,
-/turf/open/floor/plasteel/dark,
-/area/outpost/external)
 "JJ" = (
 /obj/machinery/door/airlock,
 /obj/machinery/door/firedoor/border_only,
@@ -15278,7 +15282,7 @@
 "Lc" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/dark,
-/area/outpost/external)
+/area/outpost/cargo/smeltery)
 "Ld" = (
 /obj/machinery/vending/custom,
 /obj/effect/turf_decal/siding/wood{
@@ -16799,6 +16803,10 @@
 /obj/structure/filingcabinet/double{
 	dir = 1
 	},
+/obj/item/clipboard,
+/obj/item/clipboard,
+/obj/item/folder/syndicate,
+/obj/item/folder/syndicate,
 /turf/open/floor/plasteel/dark,
 /area/outpost/hallway/fore)
 "Ow" = (
@@ -18140,14 +18148,25 @@
 	input_dir = 2;
 	output_dir = 4
 	},
+/obj/structure/railing/thin{
+	dir = 4
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/outpost/cargo/smeltery)
 "Rw" = (
 /obj/machinery/atmospherics/components/unary/hydrogen_pump{
 	dir = 8
 	},
+/obj/structure/sign/warning/fire{
+	pixel_x = 22;
+	pixel_y = 12
+	},
+/obj/structure/sign/warning/nosmoking/circle{
+	pixel_x = 22;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/outpost/external)
+/area/outpost/cargo/smeltery)
 "Rx" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -19594,6 +19613,9 @@
 	id = "outpost1";
 	dir = 1
 	},
+/obj/structure/railing/thin{
+	dir = 4
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/outpost/cargo/smeltery)
 "UR" = (
@@ -20545,6 +20567,11 @@
 	},
 /obj/effect/landmark/outpost/elevator_machine{
 	shaft = "2"
+	},
+/obj/machinery/elevator_call_button{
+	dir = 8;
+	pixel_x = 23;
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/patterned/brushed/cybersun_outpost,
 /area/outpost/hallway/fore)
@@ -21617,8 +21644,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/promenade)
 "Zr" = (
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/dark,
-/area/outpost/external)
+/area/outpost/cargo/smeltery)
 "Zs" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
 	dir = 4
@@ -21670,14 +21698,6 @@
 	},
 /turf/open/cybersun_outpost_exterior,
 /area/outpost/external)
-"Zx" = (
-/obj/machinery/elevator_call_button{
-	dir = 8;
-	pixel_x = -10;
-	pixel_y = 8
-	},
-/turf/closed/wall/mineral/titanium,
-/area/outpost/hallway/fore)
 "Zy" = (
 /obj/effect/turf_decal/corner/transparent/cybersunteal{
 	dir = 8
@@ -21868,6 +21888,10 @@
 	pixel_x = 10;
 	density = 0
 	},
+/obj/item/clipboard,
+/obj/item/clipboard,
+/obj/item/folder/syndicate,
+/obj/item/folder/syndicate,
 /turf/open/floor/suns/hatch/bamboo,
 /area/outpost/operations)
 "ZZ" = (
@@ -29882,7 +29906,7 @@ jh
 Os
 Os
 Os
-Zx
+Eq
 fN
 zI
 Eq
@@ -33796,9 +33820,9 @@ nr
 nr
 TH
 sf
-rp
-hS
 sF
+hS
+rp
 yZ
 Fu
 EC
@@ -35832,8 +35856,8 @@ OI
 OI
 OI
 OI
-rW
-Au
+OI
+OI
 OI
 OI
 OI
@@ -35958,8 +35982,8 @@ OI
 OI
 OI
 OI
-rW
-JI
+OI
+OI
 OI
 OI
 OI
