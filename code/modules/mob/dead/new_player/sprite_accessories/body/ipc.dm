@@ -215,7 +215,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/cybersun
 	name = "Cybersun Biodynamics S Series 'Ghost'"
-	chassis_bodyparts = list(
+	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/ghost,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/ghost,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/ghost,
