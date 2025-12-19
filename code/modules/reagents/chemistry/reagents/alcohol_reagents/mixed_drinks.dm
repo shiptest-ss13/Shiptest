@@ -352,6 +352,8 @@
 /datum/reagent/consumable/ethanol/beepsky_smash/on_mob_metabolize(mob/living/carbon/M)
 	if(HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
 		metabolization_rate = 0.8
+	if(!M.mind)
+		return ..()
 	if(!HAS_TRAIT(M.mind, TRAIT_LAW_ENFORCEMENT_METABOLISM))
 		B = new()
 		M.gain_trauma(B, TRAUMA_RESILIENCE_ABSOLUTE)
@@ -359,6 +361,8 @@
 
 /datum/reagent/consumable/ethanol/beepsky_smash/on_mob_life(mob/living/carbon/M)
 	M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	if(!M.mind)
+		return ..()
 	if(HAS_TRAIT(M.mind, TRAIT_LAW_ENFORCEMENT_METABOLISM))
 		M.adjustStaminaLoss(-10, 0)
 		if(prob(20))
@@ -1789,24 +1793,26 @@
 	var/drink_message = pick("You think of what you've left behind...", "You think of the people who miss you...", "You think of where you're from...")
 	to_chat(M, span_notice("[drink_message]"))
 
-/datum/reagent/consumable/ethanol/eudamonia
-	name = "Eudamonia"
+/datum/reagent/consumable/ethanol/eudaimonia
+	name = "Eudaimonia"
 	description = "A fleeting, virtous drink that inspires vigorous debate."
 	color = "#6884a1"
 	boozepwr = 40
 	quality = DRINK_VERYGOOD
 	overdose_threshold = 40
 	taste_description = "a flourishing alcoholic bloom"
-	glass_name = "Eudamonia"
+	glass_name = "Eudaimonia"
 	glass_desc = "A drink popular in academic circles, supposedly made with a distilled virtue. Most published recipes insist to use an antidepressant."
 
-/datum/reagent/consumable/ethanol/eudamonia/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/ethanol/eudaimonia/on_mob_life(mob/living/carbon/M)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
+	if(!mood)
+		return ..()
 	if(mood.sanity <= SANITY_NEUTRAL)
 		mood.setSanity(min(mood.sanity+5, SANITY_GREAT))
 	..()
 
-/datum/reagent/consumable/ethanol/eudamonia/overdose_process(mob/living/M)
+/datum/reagent/consumable/ethanol/eudaimonia/overdose_process(mob/living/M)
 	//don't mix uppers and downers, kids.
 	if(prob(6) && iscarbon(M))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 4*REM)
