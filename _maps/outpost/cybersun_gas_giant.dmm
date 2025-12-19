@@ -7243,6 +7243,15 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/suns/dark/plain,
 /area/outpost/crew/lounge)
+"rp" = (
+/obj/machinery/computer/electrolyzer_console{
+	dir = 8;
+	pixel_x = 24;
+	density = 0
+	},
+/obj/effect/turf_decal/industrial/stand_clear,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/outpost/cargo/smeltery)
 "rq" = (
 /obj/effect/turf_decal/corner/opaque/white/half{
 	dir = 1
@@ -10137,7 +10146,6 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 5
 	},
-/obj/structure/sign/number/two,
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
 /area/outpost/hallway/fore)
 "yD" = (
@@ -21691,14 +21699,12 @@
 /turf/open/cybersun_outpost_exterior,
 /area/outpost/external)
 "Zx" = (
-/obj/machinery/computer/electrolyzer_console{
-	dir = 8;
-	pixel_x = 24;
-	density = 0
+/obj/effect/turf_decal/siding/black{
+	dir = 1
 	},
-/obj/effect/turf_decal/industrial/stand_clear,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/outpost/cargo/smeltery)
+/obj/structure/sign/number/two,
+/turf/open/floor/plasteel/mono/dark/cybersun_outpost,
+/area/outpost/hallway/fore)
 "Zy" = (
 /obj/effect/turf_decal/corner/transparent/cybersunteal{
 	dir = 8
@@ -30160,7 +30166,7 @@ dI
 Bx
 OI
 NH
-fN
+Zx
 ag
 kc
 OI
@@ -33823,7 +33829,7 @@ TH
 sf
 sF
 hS
-Zx
+rp
 yZ
 Fu
 EC
