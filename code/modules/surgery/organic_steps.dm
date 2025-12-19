@@ -164,7 +164,7 @@
 	preop_sound = list(
 		/obj/item/circular_saw = 'sound/surgery/saw.ogg',
 		/obj/item/gear_handle/anglegrinder = 'sound/surgery/saw.ogg',
-		/obj/item/plasmacutter = 'sound/weapons/plasma_cutter.ogg',
+		/obj/item/plasmacutter = 'sound/weapons/melee/plasmacutter/plasma_cutter_melee.ogg',
 		/obj/item/melee/arm_blade = 'sound/surgery/scalpel1.ogg',
 		/obj/item/melee/axe/fire = 'sound/surgery/scalpel1.ogg',
 		/obj/item/hatchet = 'sound/surgery/scalpel1.ogg',

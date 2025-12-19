@@ -2,29 +2,31 @@
 /obj/item/plasmacutter
 	name = "plasma cutter"
 	desc = "A high powered engineering tool used for everything from hull slicing to industrial revolts. This particular model has an adjustable lens capable of welding, cutting, and firing energetic bursts."
-	icon = 'icons/obj/guns/energy.dmi'
-	icon_state = "plasmacutter"
-	item_state = "plasmacutter"
+	icon = 'icons/obj/weapon/plasmacutter.dmi'
+	base_icon_state = "cutter"
+	icon_state = "cutter"
+	item_state = "cutter"
+
+	lefthand_file = 'icons/mob/inhands/weapons/plasmacutter_left.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/plasmacutter_right.dmi'
 
 	flags_1 = CONDUCT_1
 	attack_verb = list("attacked", "slashed", "cut", "sliced")
 
-	sharpness = SHARP_EDGED
+	sharpness = SHARP_NONE
 
 	force = 10
 	demolition_mod = 2
 	armour_penetration = 0
 
 	heat = 3800
-	usesound = list('sound/items/welder.ogg', 'sound/items/welder2.ogg')
+	usesound = list('sound/weapons/melee/plasmacutter/plasma_cutter_melee.ogg', 'sound/items/welder2.ogg')
 
-	power_use_amount = POWER_CELL_USE_NORMAL
-
-
+	power_use_amount = POWER_CELL_USE_VERY_LOW
 
 	tool_behaviour = TOOL_DECONSTRUCT
 	wall_decon_damage = 200
-	toolspeed = 1
+	toolspeed = 0.75
 
 	light_system = MOVABLE_LIGHT
 	light_range = 2
@@ -35,11 +37,8 @@
 	///is the cutter currently powered?
 	var/powered = FALSE
 
-	///holder for overlay type
-	var/adv = FALSE
-
 	var/obj/projectile/shot_type = /obj/projectile/plasma
-	var/fire_delay = 2 SECONDS
+	var/fire_delay = 3 SECONDS
 	var/charged = TRUE
 
 	var/cell_override = /obj/item/stock_parts/cell/high
@@ -62,19 +61,20 @@
 	var/modifiers = params2list(clickparams)
 	if(!HAS_TRAIT(src, TRAIT_WIELDED))
 		return
-	if(!(item_use_power(power_use_amount*10) & COMPONENT_POWER_SUCCESS))
+	if(!(item_use_power(power_use_amount*30) & COMPONENT_POWER_SUCCESS))
 		return
-	if(!proximity_flag && charged)
+	if(!proximity_flag && charged && powered)
 		var/turf/proj_turf = user.loc
 		if(!isturf(proj_turf))
 			return
 		var/obj/projectile/plasma_burst = new shot_type(proj_turf)
 		plasma_burst.preparePixelProjectile(target, user, modifiers)
 		plasma_burst.firer = user
-		playsound(user, 'sound/weapons/plasma_cutter.ogg', 100, TRUE)
+		playsound(user, 'sound/weapons/melee/plasmacutter/plasma_cutter.ogg', 100, TRUE)
 		plasma_burst.fire()
 		charged = FALSE
 		update_appearance()
+		addtimer(CALLBACK(src, GLOBAL_PROC_REF(playsound), src, 'sound/weapons/melee/plasmacutter/cutter_recharge.ogg', 60, TRUE), fire_delay-8)
 		addtimer(CALLBACK(src, PROC_REF(recharge)), fire_delay)
 		return
 
@@ -82,7 +82,14 @@
 	if(!charged)
 		charged = TRUE
 		update_appearance()
-		playsound(src.loc, 'sound/weapons/kenetic_reload.ogg', 60, TRUE)
+
+/obj/item/plasmacutter/update_appearance(updates)
+	. = ..()
+	icon_state = "[base_icon_state][powered ? "_on" : ""]"
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
+		item_state = "[base_icon_state]_wielded[powered ? "_on" : ""]"
+	else
+		item_state = "[base_icon_state]"
 
 
 /obj/item/plasmacutter/proc/toggle_tool_mode(mob/user)
@@ -95,6 +102,9 @@
 
 /obj/item/plasmacutter/unique_action(mob/user, modifiers)
 	. = ..()
+	if(!HAS_TRAIT(src, TRAIT_WIELDED))
+		to_chat(user, span_warning("[src] needs to beheld in both hands to activate!"))
+		return FALSE
 	if(!powered)
 		if(!(item_use_power(power_use_amount, user, TRUE) & COMPONENT_POWER_SUCCESS))
 			return
@@ -114,7 +124,8 @@
 	powered = TRUE
 	force += 15
 	damtype = BURN
-	hitsound = 'sound/items/welder.ogg'
+	sharpness = SHARP_EDGED
+	hitsound = 'sound/weapons/melee/plasmacutter/plasma_cutter_melee.ogg'
 	tool_behaviour = TOOL_DECONSTRUCT
 	set_light_on(powered)
 	update_appearance()
@@ -124,31 +135,40 @@
 	powered = FALSE
 	force -= 15
 	damtype = BRUTE
+	sharpness = SHARP_NONE
+	hitsound = 'sound/weapons/melee/baton_hit.ogg'
 	set_light_on(powered)
 	tool_behaviour = NONE
 	update_appearance()
 	STOP_PROCESSING(SSobj, src)
 
 /obj/item/plasmacutter/process(seconds_per_tick)
+	if(!HAS_TRAIT(src, TRAIT_WIELDED))
+		playsound(src, 'sound/weapons/saberoff.ogg', 20, TRUE)
+		switched_off()
+		return
+
 	if(!powered)
+		playsound(src, 'sound/weapons/saberoff.ogg', 20, TRUE)
 		switched_off()
 		return
 
 	if(!(item_use_power(power_use_amount) & COMPONENT_POWER_SUCCESS))
+		playsound(src, 'sound/weapons/saberoff.ogg', 20, TRUE)
 		switched_off()
 		return
 
 /obj/item/plasmacutter/use_tool(atom/target, mob/living/user, delay, amount=1, volume=0, datum/callback/extra_checks)
 	if(amount)
-		if(adv)
+		if(tool_behaviour==TOOL_DECONSTRUCT)
 			target.add_overlay(GLOB.advanced_cutting_effect)
 		else
-			target.add_overlay(GLOB.cutting_effect)
+			target.add_overlay(GLOB.welding_sparks)
 		. = ..()
-		if(adv)
+		if(tool_behaviour==TOOL_DECONSTRUCT)
 			target.cut_overlay(GLOB.advanced_cutting_effect)
 		else
-			target.cut_overlay(GLOB.cutting_effect)
+			target.cut_overlay(GLOB.welding_sparks)
 	else
 		. = ..(amount=1)
 
