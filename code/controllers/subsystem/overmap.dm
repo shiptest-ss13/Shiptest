@@ -1161,7 +1161,7 @@ SUBSYSTEM_DEF(overmap)
 	encounters_refresh = TRUE
 
 /datum/overmap_star_system/shiptest/create_map()
-	CONFIG_GET(number/max_overmap_dynamic_events)
+	max_overmap_dynamic_events = CONFIG_GET(number/max_overmap_dynamic_events)
 	. = ..()
 
 /datum/overmap_star_system/admin_sandbox
