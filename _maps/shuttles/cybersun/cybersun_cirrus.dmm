@@ -1149,23 +1149,42 @@
 /area/ship/crew/ccommons)
 "hr" = (
 /obj/structure/table/glass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 10
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 9;
-	pixel_x = 10
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_x = 2;
-	pixel_y = 2
-	},
 /obj/item/reagent_containers/food/drinks/bottle/tequila{
 	pixel_x = 16;
 	pixel_y = 1
 	},
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = 9;
+	pixel_y = 6;
+	icon_state = "sglass-5-"
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = 1;
+	pixel_y = 6;
+	icon_state = "sglass-5-"
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = -7;
+	pixel_y = 6;
+	icon_state = "sglass-5-"
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = -7;
+	pixel_y = 1;
+	icon_state = "sglass-5-"
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = 1;
+	pixel_y = 1;
+	icon_state = "sglass-5-"
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = 8;
+	pixel_y = 1;
+	icon_state = "sglass-5-"
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/ccommons)
