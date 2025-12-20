@@ -412,7 +412,7 @@
 
 /obj/item/gun/ballistic/automatic/assault/skm/ctf/dropped()
 	. = ..()
-	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 1)
+	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 30)
 
 /obj/item/gun/ballistic/automatic/assault/skm/ctf/proc/floor_vanish()
 	if(isturf(loc))
@@ -429,18 +429,24 @@
 	if(isturf(loc))
 		qdel(src)
 
+/obj/item/storage/belt/security/military/frontiersmen/skm_ammo/ctf/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 6
+
 /obj/item/storage/belt/security/military/frontiersmen/skm_ammo/ctf/PopulateContents()
 	for(var/i in 1 to 3)
 		new /obj/item/ammo_box/magazine/skm_762_40/ctf(src)
 	new /obj/item/grenade/frag(src)
 	new /obj/item/gun/ballistic/automatic/pistol/mauler/regular/ctf(src)
+	new /obj/item/melee/knife/combat/ctf(src)
 
 /obj/item/gun/ballistic/automatic/pistol/mauler/regular/ctf
 	desc = "A semi-automatic 9mm handgun frequently used by the Frontiersmen. This sidearm will disintegrate if dropped."
 
 /obj/item/gun/ballistic/automatic/pistol/mauler/regular/ctf/dropped()
 	. = ..()
-	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 1)
+	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 30)
 
 /obj/item/gun/ballistic/automatic/pistol/mauler/regular/ctf/proc/floor_vanish()
 	if(isturf(loc))
@@ -464,7 +470,7 @@
 
 /obj/item/gun/ballistic/automatic/assault/cm82/dropped()
 	. = ..()
-	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 1)
+	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 30)
 
 /obj/item/gun/ballistic/automatic/assault/cm82/proc/floor_vanish()
 	if(isturf(loc))
@@ -481,18 +487,24 @@
 	if(isturf(loc))
 		qdel(src)
 
+/obj/item/storage/belt/military/clip/cm82/ctf/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 6
+
 /obj/item/storage/belt/military/clip/cm82/ctf/PopulateContents()
 	for(var/i in 1 to 3)
 		new /obj/item/ammo_box/magazine/p16/ctf(src)
 	new /obj/item/grenade/frag(src)
 	new /obj/item/gun/ballistic/automatic/pistol/cm23/ctf(src)
+	new /obj/item/melee/knife/combat/ctf(src)
 
 /obj/item/gun/ballistic/automatic/pistol/cm23/ctf
 	desc = "CLIP's standard service pistol, chambered in 10mm. This sidearm will disintegrate if dropped."
 
 /obj/item/gun/ballistic/automatic/pistol/cm23/ctf/dropped()
 	. = ..()
-	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 1)
+	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 30)
 
 /obj/item/gun/ballistic/automatic/pistol/cm23/ctf/proc/floor_vanish()
 	if(isturf(loc))
@@ -516,7 +528,7 @@
 		if(istype(H.wear_suit, /obj/item/clothing/suit/armor/vest/bulletproof))
 			return TRUE
 
-// CTF FIRST AID
+// CTF MISCELLANEOUS
 
 /obj/item/storage/pouch/medical/ctf
 
@@ -527,6 +539,20 @@
 /obj/item/storage/pouch/medical/ctf/proc/floor_vanish()
 	if(isturf(loc))
 		qdel(src)
+
+/obj/item/melee/knife/combat/ctf
+	desc = "A standard issue combat knife. This could really hurt someone."
+	force = 25
+	throwforce = 25
+
+/obj/item/melee/knife/combat/ctf/dropped()
+	. = ..()
+	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 60)
+
+/obj/item/melee/knife/combat/ctf/proc/floor_vanish()
+	if(isturf(loc))
+		qdel(src)
+
 
 // OUTFITS
 
