@@ -82,7 +82,7 @@
 	if(HAS_TRAIT(limb.owner, TRAIT_NEVER_WOUNDED) || (limb.owner.status_flags & GODMODE))
 		return FALSE
 
-	if(!wounding_types_valid(suggested_wounding_types))
+	if(!wounding_types_valid(limb, suggested_wounding_types))
 		return FALSE
 
 	if(care_about_existing_wounds)
@@ -135,7 +135,7 @@
 	return weight
 
 /// Returns TRUE if we use WOUND_ALL, or we require all types and have all/if we require any and have any, FALSE otherwise.
-/datum/wound_pregen_data/proc/wounding_types_valid(list/suggested_wounding_types)
+/datum/wound_pregen_data/proc/wounding_types_valid(obj/item/bodypart/limb, list/suggested_wounding_types)
 	if (WOUND_ALL in required_wounding_types)
 		return TRUE
 	if (!length(suggested_wounding_types))

@@ -32,7 +32,7 @@
 	treatable_by = list(/obj/item/stack/tape)
 	severity = WOUND_SEVERITY_MODERATE
 	interaction_efficiency_penalty = 1.2
-	threshold_penalty = 15
+	threshold_penalty = 30
 	limp_slowdown = 2.25
 	limp_chance = 50
 
@@ -49,10 +49,11 @@
 	examine_desc = "is buckled inwards"
 	occur_text = "creaks and buckles inwards"
 	severity = WOUND_SEVERITY_SEVERE
+	wound_flags = MANGLES_INTERIOR | PLATING_DAMAGE
 	treatable_tools = list(TOOL_WIRECUTTER) // for tape removal
 	treatable_by = list(/obj/item/stack/tape)
 	interaction_efficiency_penalty = 2
-	threshold_penalty = 30
+	threshold_penalty = 50
 	limp_slowdown = 6
 	limp_chance = 60
 

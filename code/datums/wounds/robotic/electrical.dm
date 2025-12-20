@@ -21,6 +21,12 @@
 
 	wound_series = WOUND_SERIES_WIRED_ELECTRICAL
 
+/datum/wound_pregen_data/electric/wounding_types_valid(obj/item/bodypart/limb, list/suggested_wounding_types)
+	var/mangled_state = limb.get_mangled_state()
+	if((mangled_state & ANATOMY_INTERIOR) && (WOUND_SLASH in suggested_wounding_types))
+		return TRUE // this allows slashing attacks to cut the wires, but only if the plating is mangled enough to reach it
+	return ..()
+
 /datum/wound/electric/severe
 	name = "Damaged Electronics"
 	desc = "Patient's electronics are damaged, preventing movement and damaging internal components."
@@ -47,6 +53,7 @@
 	sound_effect = 'sound/machines/defib_zap.ogg'
 	disabling = TRUE
 	processes = TRUE
+	wound_flags = MANGLES_EXTERIOR
 	severity = WOUND_SEVERITY_CRITICAL
 	trauma_group = BRAIN_TRAUMA_SEVERE
 

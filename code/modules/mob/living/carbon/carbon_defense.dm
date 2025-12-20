@@ -145,14 +145,6 @@
 			else if(has_exterior && ((has_interior && interior_ready_to_dismember) && I.get_sharpness()))
 				var/tissue_text = hit_bodypart.get_external_description()
 				extra_wound_details = ", [sharpness_text] at the remaining [tissue_text]"
-			/*if((mangled_state & BIO_FLESH) && (hit_bodypart.biological_state & BIO_BONE))
-				extra_wound_details = ", [sharpness_text] through to the bone"
-			else if((mangled_state & BIO_BONE) && (hit_bodypart.biological_state & BIO_FLESH))
-				extra_wound_details = ", [sharpness_text] at the remaining tissue"
-			else if((mangled_state & BIO_METAL) && (hit_bodypart.biological_state & BIO_WIRED))
-				extra_wound_details = ", [sharpness_text] at the wiring!"
-			else if((mangled_state & BIO_WIRED) && (hit_bodypart.biological_state & BIO_METAL))
-				extra_wound_details = ", [sharpness_text] the external casing"*/
 
 	var/message_hit_area = ""
 	if(hit_area)

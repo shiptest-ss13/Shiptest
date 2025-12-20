@@ -306,39 +306,6 @@
 		if(ALIEN_BODYPART,LARVA_BODYPART) //aliens take double burn //nothing can burn with so much snowflake code around
 			burn *= 2
 
-	/* REMOVE THIS BEFORE COMMIT
-	var/bio_status = get_bio_state_status()
-
-	var/has_exterior = ((bio_status & ANATOMY_EXTERIOR))
-	var/has_interior = ((bio_status & ANATOMY_INTERIOR))
-
-	var/exterior_ready_to_dismember = (!has_exterior || ((mangled_state & BODYPART_MANGLED_EXTERIOR)))
-
-	// if we're bone only, all cutting attacks go straight to the bone
-	if(!has_exterior && has_interior)
-		if(wounding_type == WOUND_SLASH)
-			wounding_type = WOUND_BLUNT
-			wounding_dmg *= (easy_dismember ? 1 : 0.6)
-		else if(wounding_type == WOUND_PIERCE)
-			wounding_type = WOUND_BLUNT
-			wounding_dmg *= (easy_dismember ? 1 : 0.75)
-	else
-		// if we've already mangled the skin (critical slash or piercing wound), then the bone is exposed, and we can damage it with sharp weapons at a reduced rate
-		// So a big sharp weapon is still all you need to destroy a limb
-		if(has_interior && exterior_ready_to_dismember && !(mangled_state & BODYPART_MANGLED_INTERIOR) && sharpness)
-			if(wounding_type == WOUND_SLASH && !easy_dismember)
-				wounding_dmg *= 0.6 // edged weapons pass along 60% of their wounding damage to the bone since the power is spread out over a larger area
-			if(wounding_type == WOUND_PIERCE && !easy_dismember)
-				wounding_dmg *= 0.75 // piercing weapons pass along 75% of their wounding damage to the bone since it's more concentrated
-			wounding_type = WOUND_BLUNT
-		else if(interior_ready_to_dismember && exterior_ready_to_dismember && try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus))
-			return
-	if ((dismemberable_by_wound() || dismemberable_by_total_damage()) && try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus))
-		return
-
-	for(var/datum/wound/iter_wound as anything in wounds)
-		iter_wound.receive_damage(highest_damage, wounding_types, wound_bonus)*/
-
 	if(wound_roll(brute, burn, wound_bonus, bare_wound_bonus, sharpness, attack_direction))
 		return // stop here if dismembered
 
@@ -388,7 +355,7 @@
 		if(SHARP_EDGED)
 			LAZYSET(wounding_types, WOUND_SLASH, brute + burn)
 			if(brute)
-				LAZYSET(wounding_types, WOUND_BLUNT, brute * (easy_dismember ? 1 : 0.4))
+				LAZYSET(wounding_types, WOUND_BLUNT, brute * (easy_dismember ? 1 : 0.6))
 		if(SHARP_POINTY)
 			LAZYSET(wounding_types, WOUND_PIERCE, brute + burn)
 			if(brute)

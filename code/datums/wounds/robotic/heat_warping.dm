@@ -1,7 +1,7 @@
 /// The flame temperature required to re-heat the chassis.
 #define CHASSIS_MELTING_POINT 1900
-/// Maximum amount of structural integrity loss. This is to prevent perma-crit from critical warping on the head or chest.
-#define MAXIMUM_INTEGRITY_LOSS 50
+/// Highest maximum integrity considered when calculating the integrity loss. This is to prevent perma-crit from critical warping on the head or chest.
+#define MAXIMUM_INTEGRITY_CONSIDERED 50
 
 /datum/wound/burn/heat_warping
 	name = "Heat-Warping Wound"
@@ -39,7 +39,7 @@
 	return old_limb
 
 /datum/wound/burn/heat_warping/proc/update_limb_integrity()
-	limb.min_damage = min(limb.max_damage * integrity_loss, MAXIMUM_INTEGRITY_LOSS)
+	limb.min_damage = min(limb.max_damage, MAXIMUM_INTEGRITY_CONSIDERED) * integrity_loss
 	var/limb_damage = limb.get_damage()
 	if(limb_damage < limb.min_damage)
 		limb.set_burn_dam(CEILING(limb.burn_dam + limb.min_damage - limb_damage, DAMAGE_PRECISION))
@@ -112,7 +112,7 @@
 	severity = WOUND_SEVERITY_MODERATE
 	treatable_tools = list(TOOL_WELDER)
 	threshold_penalty = 20
-	integrity_loss = 0.2
+	integrity_loss = 0.1
 
 /datum/wound_pregen_data/heat_warping/oxidation
 	abstract = FALSE
@@ -166,7 +166,7 @@
 	severity = WOUND_SEVERITY_SEVERE
 	treatable_tools = list(TOOL_WELDER, TOOL_CROWBAR)
 	threshold_penalty = 30
-	integrity_loss = 0.4
+	integrity_loss = 0.2
 
 /datum/wound_pregen_data/heat_warping/thermal_stress
 	abstract = FALSE
@@ -184,7 +184,7 @@
 	wound_flags = PLATING_DAMAGE | MANGLES_INTERIOR
 	disabling = TRUE
 	threshold_penalty = 40
-	integrity_loss = 0.6
+	integrity_loss = 0.3
 
 /datum/wound_pregen_data/heat_warping/deformed_slag
 	abstract = FALSE
@@ -192,5 +192,5 @@
 	wound_path_to_generate = /datum/wound/burn/heat_warping/critical
 	threshold_minimum = 130
 
-#undef MAXIMUM_INTEGRITY_LOSS
+#undef MAXIMUM_INTEGRITY_CONSIDERED
 #undef CHASSIS_MELTING_POINT
