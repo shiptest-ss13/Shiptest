@@ -17,14 +17,14 @@
 	abstract = TRUE
 	required_limb_biostate = BIO_WIRED
 
-	required_wounding_types = list(WOUND_PIERCE, WOUND_BURN)
+	required_wounding_types = list(WOUND_SLASH, WOUND_PIERCE, WOUND_BURN)
 
 	wound_series = WOUND_SERIES_WIRED_ELECTRICAL
 
 /datum/wound_pregen_data/electric/wounding_types_valid(obj/item/bodypart/limb, list/suggested_wounding_types)
 	var/mangled_state = limb.get_mangled_state()
-	if((mangled_state & ANATOMY_INTERIOR) && (WOUND_SLASH in suggested_wounding_types))
-		return TRUE // this allows slashing attacks to cut the wires, but only if the plating is mangled enough to reach it
+	if(!(mangled_state & ANATOMY_INTERIOR) && (WOUND_SLASH in suggested_wounding_types))
+		return FALSE // slash attacks can't cut the wires until the metal is mangled enough to reach it
 	return ..()
 
 /datum/wound/electric/severe
