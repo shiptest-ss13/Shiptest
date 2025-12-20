@@ -215,6 +215,9 @@
 	tastes = list("mellow flesh" = 6, "earthiness" = 2)
 	foodtypes = MEAT
 
+/obj/item/food/meat/slab/remes/make_grillable()
+	return
+
 /obj/item/food/meat/slab/dofitis
 	name = "dofitis meat"
 	icon_state = "dofi"
