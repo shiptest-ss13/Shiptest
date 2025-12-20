@@ -1448,14 +1448,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/light_switch{
-	pixel_y = 23;
-	pixel_x = 11
-	},
-/obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "sK" = (
@@ -2008,7 +2001,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "ze" = (
-/obj/machinery/iv_drip,
 /obj/machinery/light/directional/east,
 /obj/structure/chair/handrail{
 	dir = 8
@@ -2191,10 +2183,22 @@
 "Ds" = (
 /obj/structure/bed/roller,
 /obj/effect/turf_decal/industrial/hatch/blue,
-/obj/machinery/airalarm/directional/north,
 /obj/machinery/defibrillator_mount/loaded{
 	pixel_y = 0;
 	pixel_x = 28
+	},
+/obj/machinery/iv_drip{
+	layer = 2.95;
+	pixel_x = 8;
+	pixel_y = 22
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = -12
 	},
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
@@ -3265,7 +3269,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
-	icon_state = "1-8"
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel,
 /area/ship/medical)

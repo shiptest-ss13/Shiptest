@@ -1588,13 +1588,16 @@
 /area/ship/crew/dorm/dormthree)
 "mG" = (
 /obj/structure/table/optable,
-/obj/item/storage/case/surgery,
-/obj/machinery/light/directional/north,
+/obj/machinery/light/small/directional/north,
 /obj/item/reagent_containers/food/drinks/bottle/whiskey{
-	pixel_x = -10;
-	pixel_y = 3;
+	pixel_x = 1;
+	pixel_y = 7;
 	name = "'Anesthesia'";
 	desc = "A bottle of Git's with the word 'Anastheasia' written over it in marker."
+	},
+/obj/machinery/iv_drip{
+	pixel_x = -10;
+	pixel_y = 22
 	},
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
@@ -3153,37 +3156,29 @@
 /area/ship/crew/canteen)
 "zc" = (
 /obj/structure/table/chem,
-/obj/item/storage/firstaid/brute{
-	pixel_y = 15;
-	pixel_x = 9
-	},
 /obj/item/storage/firstaid/fire{
 	pixel_x = -9;
-	pixel_y = 15
+	pixel_y = 13
 	},
 /obj/item/storage/firstaid/o2{
-	pixel_y = 8;
+	pixel_y = 6;
 	pixel_x = -9
 	},
-/obj/item/storage/firstaid/toxin{
-	pixel_y = 8;
+/obj/item/storage/firstaid/brute{
+	pixel_y = 13;
 	pixel_x = 9
 	},
-/obj/item/roller{
-	pixel_y = -4;
-	pixel_x = -7
-	},
-/obj/item/roller{
-	pixel_y = 2;
-	pixel_x = -7
+/obj/item/storage/firstaid/toxin{
+	pixel_y = 6;
+	pixel_x = 9
 	},
 /obj/item/storage/firstaid/regular{
 	pixel_x = 9;
-	pixel_y = 2
+	pixel_y = 0
 	},
 /obj/item/healthanalyzer{
-	pixel_x = 10;
-	pixel_y = -8
+	pixel_x = -5;
+	pixel_y = -3
 	},
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
@@ -3270,7 +3265,6 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
 "zO" = (
-/obj/machinery/iv_drip,
 /obj/structure/chair/handrail{
 	dir = 8
 	},
@@ -5793,6 +5787,22 @@
 	},
 /obj/item/paper/fluff/ship/pgf/triage,
 /obj/item/paper/fluff/ship/pgf/lifesaving,
+/obj/structure/closet/wall/red/directional/east{
+	pixel_y = 4;
+	name = "roller locker"
+	},
+/obj/item/roller{
+	pixel_y = 13;
+	pixel_x = 7
+	},
+/obj/item/roller{
+	pixel_y = 8;
+	pixel_x = 7
+	},
+/obj/item/roller{
+	pixel_y = 3;
+	pixel_x = 7
+	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/hallway/central)
 "Rp" = (
@@ -6343,20 +6353,20 @@
 /area/ship/crew/dorm)
 "Vr" = (
 /obj/structure/table/chem,
+/obj/item/storage/box/beakers{
+	pixel_y = 10;
+	pixel_x = 1
+	},
 /obj/item/storage/box/syringes{
-	pixel_y = 7;
+	pixel_y = 5;
 	pixel_x = -7
 	},
-/obj/item/storage/box/beakers{
-	pixel_y = 16;
-	pixel_x = 9
-	},
 /obj/item/storage/box/bodybags{
-	pixel_x = 9;
-	pixel_y = 7
+	pixel_x = 8;
+	pixel_y = 5
 	},
 /obj/item/stack/medical/splint/twelve{
-	pixel_y = -1;
+	pixel_y = 0;
 	pixel_x = 3
 	},
 /turf/open/floor/mineral/titanium,
@@ -6777,17 +6787,13 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "YG" = (
-/obj/structure/closet/crate/freezer/blood{
-	pixel_x = 4
-	},
+/obj/structure/closet/crate/freezer/blood,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/computer/helm/viewscreen/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/structure/crate_shelf{
-	capacity = 2
-	},
+/obj/structure/crate_shelf,
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
 "YI" = (
@@ -7003,13 +7009,16 @@
 /area/ship/hallway/central)
 "ZY" = (
 /obj/structure/table,
-/obj/item/defibrillator/loaded{
-	pixel_y = 6
-	},
 /obj/machinery/camera/autoname{
-	dir = 6
+	dir = 8
 	},
-/obj/item/radio/intercom/directional/north,
+/obj/item/defibrillator/loaded{
+	pixel_y = 20
+	},
+/obj/item/storage/case/surgery{
+	pixel_y = 1
+	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
 

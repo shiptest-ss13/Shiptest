@@ -4164,7 +4164,8 @@
 	dir = 1
 	},
 /obj/machinery/defibrillator_mount/loaded{
-	pixel_y = 25
+	pixel_y = 25;
+	pixel_x = 1
 	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical/surgery)
@@ -4700,8 +4701,12 @@
 /area/ship/medical)
 "Zj" = (
 /obj/machinery/light/directional/west,
-/obj/machinery/iv_drip,
 /obj/machinery/firealarm/directional/north,
+/obj/machinery/iv_drip{
+	pixel_x = 11;
+	pixel_y = 21;
+	layer = 2.95
+	},
 /turf/open/floor/mineral/titanium,
 /area/ship/medical/surgery)
 "Zo" = (
