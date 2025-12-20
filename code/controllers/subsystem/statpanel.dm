@@ -27,7 +27,7 @@ SUBSYSTEM_DEF(statpanels)
 			"Time Dilation: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)",
 			"\n",
 			"Current Outpost: [SSticker.round_start_timeofday ? SSovermap.get_main_outpost() : "The round hasn't started yet!"]",
-			"Outpost Location: [SSticker.round_start_timeofday ? "[SSovermap.get_main_outpost_coords()] - [SSovermap.default_system]" : "The round hasn't started yet!"]",
+			"Outpost Location: [SSticker.round_start_timeofday ? "[SSovermap.get_main_outpost_coords()] - [SSovermap.safe_system]" : "The round hasn't started yet!"]",
 			"Local Sector Time: [SSticker.round_start_timeofday ? "[station_time_timestamp()] [sector_datestamp()]" : "The round hasn't started yet!"]",
 			"\n",
 			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
