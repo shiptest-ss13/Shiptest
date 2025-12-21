@@ -320,7 +320,7 @@
 		"cropped purple hoodie" = "crophoodpurple",
 		"cropped pink hoodie" = "crophoodpink",
 		"cropped brown hoodie" = "crophoodbrown",
-		"croppedlight brown hoodie" = "crophoodlbrown"
+		"cropped light brown hoodie" = "crophoodlbrown"
 	)
 
 /obj/item/clothing/suit/hooded/croppedhoodie/white
@@ -328,27 +328,15 @@
 	current_skin = "cropped white hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/white
 
-/obj/item/clothing/head/hooded/croppedhood/white
-	name = "white hood"
-	desc = "A white hood for your white hoodie."
-
 /obj/item/clothing/suit/hooded/croppedhoodie/gray
 	name = "cropped grey hoodie"
 	current_skin = "cropped grey hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/gray
 
-/obj/item/clothing/head/hooded/croppedhood/gray
-	name = "grey hood"
-	desc = "A grey hood for your grey hoodie."
-
 /obj/item/clothing/suit/hooded/croppedhoodie/black
 	name = "cropped black hoodie"
 	current_skin = "cropped black hoodie"
 	hoodtype = /obj/item/clothing/head/hooded/hood/black
-
-/obj/item/clothing/head/hooded/croppedhood/black
-	name = "black hood"
-	desc = "A black hood for your black hoodie."
 
 /obj/item/clothing/suit/hooded/croppedhoodie/red
 	name = "cropped red hoodie"
