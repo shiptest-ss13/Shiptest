@@ -288,7 +288,7 @@
 	item_state = "crophoodwhite"
 	icon = 'icons/obj/clothing/suits/color.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suits/color.dmi'
-	hoodtype = /obj/item/clothing/head/hooded/crophood
+	hoodtype = /obj/item/clothing/head/hooded/hood
 	body_parts_covered = CHEST|ARMS
 	cold_protection = CHEST|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
@@ -418,8 +418,8 @@
 /obj/item/clothing/suit/hooded/croppedhoodie/blackwa
 	name = "cropped black and white hoodie"
 	desc = "A cropped hoodie. For keeping short people warm."
-	icon_state = "croppedhoodie"
-	item_state = "croppedhoodie"
+	icon_state = "crophoodie"
+	item_state = "crophoodie"
 	icon = 'icons/obj/clothing/suits/hooded.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suits/hooded.dmi'
 	hoodtype = /obj/item/clothing/head/hooded/hood/gray

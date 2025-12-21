@@ -71,6 +71,14 @@
 	display_name = "hoodie, black w grey hood"
 	path = /obj/item/clothing/suit/hooded/hoodie/blackwa
 
+/datum/gear/suit/jacket/croppedhoodie
+	display_name = "cropped hoodie, recolorable"
+	path = /obj/item/clothing/suit/hooded/croppedhoodie
+
+/datum/gear/suit/jacket/croppedhoodiealt
+	display_name = "cropped black and white hoodie"
+	path = /obj/item/clothing/suit/hooded/croppedhoodie/blackwa
+
 /datum/gear/suit/jacket/highvis
 	display_name = "industrial jacket"
 	path = /obj/item/clothing/suit/toggle/industrial
