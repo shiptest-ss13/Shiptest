@@ -56,15 +56,24 @@
 	desc = "Jean shorts cut from denim."
 	icon_state = "jorts"
 	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
+	unique_reskin = null
 
 /obj/item/clothing/under/shorts/dolphin
 	name = "dolphin shorts"
 	desc = "Short shorts made for blistering hot days and athletic use."
 	icon_state = "dolphin"
 	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
+	unique_reskin = null
 
 /obj/item/clothing/under/shorts/explorer
 	name = "explorer shorts"
 	desc = "Bright khaki short shorts for higher humidity, hot planets."
 	icon_state = "explorers"
 	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
+	unique_reskin = null
+
+/obj/item/clothing/under/shorts/skirt
+	name = "short skirt"
+	desc = "a shorter black skirt."
+	icon_state = "shortskirt"
+	unique_reskin = null
