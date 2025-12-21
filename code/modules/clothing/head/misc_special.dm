@@ -142,6 +142,7 @@
 	icon_state = "hair_vlong"
 	item_state = "pwig"
 	flags_inv = HIDEHAIR
+	slot_flags = ITEM_SLOT_HEAD | ITEM_SLOT_NECK
 	color = "#000000"
 	var/hairstyle = "Very Long Hair"
 	var/adjustablecolor = TRUE //can color be changed manually?
