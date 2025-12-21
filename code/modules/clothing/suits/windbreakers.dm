@@ -115,6 +115,8 @@
 /obj/item/clothing/suit/toggle/windbreaker/cropped
 	name = "cropped windbreaker"
 	desc = "A cropped windbreaker, made out of synthetic material. Good for keeping the chilly wind off only half the time."
+	icon_state = "cropjacketwhite"
+	item_state = "cropjacketwhite"
 	body_parts_covered = CHEST|ARMS
 	cold_protection = CHEST|ARMS
 	unique_reskin = list(
