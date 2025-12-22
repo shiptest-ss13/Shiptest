@@ -33,6 +33,10 @@
 	. = ..()
 	RegisterSignals(src, list(COMSIG_ATOM_ENTERED), PROC_REF(object_enter))
 
+/turf/open/cybersun_outpost_exterior/Destroy()
+	. = ..()
+	UnregisterSignal(src, list(COMSIG_ATOM_ENTERED), PROC_REF(object_enter))
+
 /turf/open/cybersun_outpost_exterior/proc/object_enter(datum/source, atom/movable/mover)
 	//fucking ew
 	//use the chasmstop trait the moment water immersion is out of hell
