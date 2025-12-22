@@ -542,10 +542,10 @@
 			var/obj/item/clothing/mask/shemagh/nk = new(src)
 			nk.name = "[name] mask"
 			nk.icon_state = "[icon_state]_over"
-			nk.sourceShemaghType = src.type
-			var/currentHandIndex = user.get_held_index_of_item(src)
+			nk.source_shemagh_type = src.type
+			var/current_hand_index = user.get_held_index_of_item(src)
 			user.transferItemToLoc(src, null)
-			user.put_in_hand(nk, currentHandIndex)
+			user.put_in_hand(nk, current_hand_index)
 			user.visible_message(span_notice("You tie [src] up like a facemask."), span_notice("[user] ties [src] up like a facemask."))
 			qdel(src)
 		else
@@ -559,7 +559,7 @@
 	flags_cover = MASKCOVERSMOUTH
 	alternate_worn_layer = SUIT_LAYER
 	w_class = WEIGHT_CLASS_TINY
-	var/sourceShemaghType
+	var/source_shemagh_type
 
 /obj/item/clothing/mask/shemagh/AltClick(mob/user)
 	. = ..()
@@ -569,12 +569,12 @@
 			to_chat(user, span_warning("You can't untie [src] while wearing it!"))
 			return
 		if(user.is_holding(src))
-			var/obj/item/clothing/neck/shemagh/newShemagh = new sourceShemaghType(user)
-			var/currentHandIndex = user.get_held_index_of_item(src)
-			var/oldName = src.name
+			var/obj/item/clothing/neck/shemagh/new_shemagh = new source_shemagh_type(user)
+			var/current_hand_index = user.get_held_index_of_item(src)
+			var/old_name = src.name
 			qdel(src)
 			user.put_in_hand(newShemagh, currentHandIndex)
-			user.visible_message(span_notice("You untie [oldName] back into a [newShemagh.name]."), span_notice("[user] unties [oldName] back into a [newShemagh.name]."))
+			user.visible_message(span_notice("You untie [old_name] back into a [new_shemagh.name]."), span_notice("[user] unties [old_name] back into a [new_shemagh.name]."))
 		else
 			to_chat(user, span_warning("You must be holding [src] in order to untie it!"))
 
