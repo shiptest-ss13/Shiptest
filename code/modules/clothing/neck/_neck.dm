@@ -573,7 +573,7 @@
 			var/current_hand_index = user.get_held_index_of_item(src)
 			var/old_name = src.name
 			qdel(src)
-			user.put_in_hand(newShemagh, currentHandIndex)
+			user.put_in_hand(new_shemagh, current_hand_index)
 			user.visible_message(span_notice("You untie [old_name] back into a [new_shemagh.name]."), span_notice("[user] unties [old_name] back into a [new_shemagh.name]."))
 		else
 			to_chat(user, span_warning("You must be holding [src] in order to untie it!"))
