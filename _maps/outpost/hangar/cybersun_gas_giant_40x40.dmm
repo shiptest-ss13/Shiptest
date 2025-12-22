@@ -120,8 +120,10 @@
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
 /area/hangar)
 "gb" = (
-/obj/effect/turf_decal/industrial/hatch,
-/turf/open/floor/engine/hull/reinforced/interior,
+/obj/effect/turf_decal/corner/opaque/orange/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint/cybersun_outpost,
 /area/hangar)
 "go" = (
 /obj/structure/chair/bench/red/directional/south,
@@ -192,25 +194,19 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/hangar)
 "hk" = (
-/obj/effect/turf_decal/corner/opaque/orange/border{
-	dir = 4
+/obj/machinery/conveyor/auto/outpost{
+	dir = 8
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/engine/hull/reinforced/cybersun_outpost,
 /area/hangar)
 "hF" = (
-/obj/effect/turf_decal/corner/opaque/white/half{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/transparent/lightgrey/half{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
+/obj/effect/turf_decal/corner/opaque/orange/bordercorner{
 	dir = 4
 	},
-/obj/structure/sign/departments/cargo{
-	pixel_x = 28
+/obj/effect/turf_decal/corner/opaque/orange/border{
+	dir = 8
 	},
-/turf/open/floor/plasteel/mono/dark/cybersun_outpost,
+/turf/open/floor/plasteel/tech/techmaint/cybersun_outpost,
 /area/hangar)
 "iT" = (
 /obj/effect/turf_decal/siding/black/corner{
@@ -304,10 +300,10 @@
 /turf/open/cybersun_outpost_exterior,
 /area/hangar)
 "lZ" = (
-/obj/machinery/conveyor/auto/outpost{
-	dir = 8
+/obj/effect/turf_decal/corner/opaque/orange/border{
+	dir = 5
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech/techmaint/cybersun_outpost,
 /area/hangar)
 "mc" = (
 /obj/structure/disposalpipe/segment,
@@ -404,7 +400,7 @@
 /area/hangar)
 "rD" = (
 /obj/effect/turf_decal/corner/opaque/orange/border,
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/cybersun_outpost,
 /area/hangar)
 "rL" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
@@ -438,13 +434,10 @@
 /turf/open/floor/suns/hatch/bamboo/cybersun_outpost,
 /area/hangar)
 "wn" = (
-/obj/effect/turf_decal/corner/opaque/orange/bordercorner{
-	dir = 4
-	},
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/cybersun_outpost,
 /area/hangar)
 "wS" = (
 /obj/structure/platform/ship_three/corner{
@@ -556,10 +549,8 @@
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
 /area/hangar)
 "Cd" = (
-/obj/effect/turf_decal/corner/opaque/orange/border{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech/techmaint,
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/tech/techmaint/cybersun_outpost,
 /area/hangar)
 "Cl" = (
 /obj/effect/turf_decal/siding/black{
@@ -588,7 +579,7 @@
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 6
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/cybersun_outpost,
 /area/hangar)
 "Dm" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/warning{
@@ -604,9 +595,9 @@
 /area/hangar)
 "DC" = (
 /obj/effect/turf_decal/corner/opaque/orange/border{
-	dir = 5
+	dir = 4
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/cybersun_outpost,
 /area/hangar)
 "DG" = (
 /obj/structure/plasticflaps/outpost,
@@ -746,10 +737,8 @@
 /turf/open/floor/plasteel/tech/cybersun_outpost,
 /area/hangar)
 "Jq" = (
-/obj/effect/turf_decal/corner/opaque/orange/border{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech/techmaint,
+/obj/effect/turf_decal/industrial/hatch,
+/turf/open/floor/engine/hull/reinforced/cybersun_outpost,
 /area/hangar)
 "Jy" = (
 /obj/structure/plasticflaps/outpost,
@@ -995,8 +984,7 @@
 /turf/open/floor/plasteel/patterned/brushed/cybersun_outpost,
 /area/hangar)
 "WB" = (
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/cybersun_outpost,
 /area/hangar)
 "WJ" = (
 /obj/structure/plasticflaps/outpost,
@@ -1010,7 +998,7 @@
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/cybersun_outpost,
 /area/hangar)
 "Xq" = (
 /obj/machinery/conveyor/auto/outpost{
@@ -5411,11 +5399,11 @@ kk
 kk
 iZ
 kk
-kk
-iZ
 BA
+oQ
+Cb
 ab
-hF
+oQ
 Dm
 jd
 jd
@@ -5482,14 +5470,14 @@ SK
 SK
 SK
 SK
-SK
-SK
 Gi
 hc
 hc
 JB
+hF
 wn
-Jq
+wn
+wn
 WO
 JB
 kA
@@ -5554,12 +5542,12 @@ cs
 cs
 cs
 cs
-cs
-cs
 lK
 hc
-gb
+Jq
 Eu
+gb
+WB
 Cd
 WB
 rD
@@ -5626,14 +5614,14 @@ cs
 cs
 cs
 cs
-cs
-cs
 lK
 hc
-lZ
-NE
-DC
 hk
+NE
+lZ
+DC
+DC
+DC
 Dg
 gT
 uF
@@ -5698,15 +5686,15 @@ cs
 cs
 cs
 cs
-cs
-cs
 lK
 hc
-lZ
+hk
 Wf
+rA
 yQ
 rA
 yQ
+rA
 gI
 uF
 ZY
@@ -5770,12 +5758,12 @@ cs
 cs
 cs
 cs
-cs
-cs
 lK
 hc
 DG
 hc
+Zk
+Zk
 Zk
 Zk
 Zk
@@ -5842,12 +5830,12 @@ cs
 cs
 cs
 cs
-cs
-cs
 lK
 hc
 Jy
 WJ
+Xq
+Xq
 Xq
 Xq
 Xq
@@ -5914,12 +5902,12 @@ cs
 cs
 cs
 cs
-cs
-cs
 lK
 hc
 hc
 hc
+Zk
+Zk
 Zk
 Zk
 Zk
@@ -5986,9 +5974,9 @@ cs
 cs
 cs
 cs
-cs
-cs
 NF
+SK
+SK
 SK
 SK
 SK

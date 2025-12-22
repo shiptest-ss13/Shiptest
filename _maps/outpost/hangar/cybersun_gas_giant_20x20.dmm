@@ -17,7 +17,7 @@
 /area/hangar)
 "as" = (
 /obj/effect/turf_decal/corner/opaque/orange/border,
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/cybersun_outpost,
 /area/hangar)
 "aU" = (
 /obj/machinery/conveyor/auto/outpost{
@@ -33,8 +33,10 @@
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/hangar)
 "bd" = (
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/tech/techmaint,
+/obj/effect/turf_decal/corner/opaque/orange/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint/cybersun_outpost,
 /area/hangar)
 "bg" = (
 /obj/effect/turf_decal/siding/wood{
@@ -90,10 +92,6 @@
 /obj/machinery/newscaster/directional/west,
 /turf/open/floor/suns/hatch/bamboo/cybersun_outpost,
 /area/hangar)
-"eR" = (
-/obj/effect/turf_decal/industrial/hatch,
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/hangar)
 "gb" = (
 /obj/effect/turf_decal/trimline/opaque/orange/line{
 	dir = 4
@@ -140,10 +138,7 @@
 /turf/open/cybersun_outpost_exterior,
 /area/hangar)
 "iQ" = (
-/obj/effect/turf_decal/corner/opaque/orange/border{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/cybersun_outpost,
 /area/hangar)
 "jy" = (
 /obj/effect/landmark/outpost/hangar_crate_spawner,
@@ -170,7 +165,7 @@
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/cybersun_outpost,
 /area/hangar)
 "kI" = (
 /turf/closed/wall/mineral/titanium,
@@ -185,7 +180,7 @@
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/cybersun_outpost,
 /area/hangar)
 "lO" = (
 /obj/effect/turf_decal/corner/transparent/lightgrey/mono,
@@ -279,6 +274,10 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/hangar)
+"sn" = (
+/obj/effect/turf_decal/industrial/hatch,
+/turf/open/floor/engine/hull/reinforced/cybersun_outpost,
+/area/hangar)
 "sB" = (
 /obj/structure/platform/ship_three/corner,
 /turf/open/cybersun_outpost_exterior,
@@ -312,15 +311,15 @@
 /area/hangar)
 "vf" = (
 /obj/effect/turf_decal/corner/opaque/orange/border{
-	dir = 5
+	dir = 4
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/cybersun_outpost,
 /area/hangar)
 "vK" = (
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 6
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/cybersun_outpost,
 /area/hangar)
 "wf" = (
 /obj/effect/turf_decal/trimline/opaque/orange/arrow_ccw{
@@ -647,7 +646,7 @@
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/cybersun_outpost,
 /area/hangar)
 "Kk" = (
 /obj/machinery/disposal/deliveryChute{
@@ -738,9 +737,9 @@
 /area/hangar)
 "Nj" = (
 /obj/effect/turf_decal/corner/opaque/orange/border{
-	dir = 4
+	dir = 5
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/techmaint/cybersun_outpost,
 /area/hangar)
 "NA" = (
 /obj/structure/platform/ship_three/indestructible{
@@ -1009,9 +1008,6 @@
 	},
 /obj/structure/railing/thin{
 	dir = 1
-	},
-/obj/structure/sign/departments/cargo{
-	pixel_x = 28
 	},
 /turf/open/floor/plasteel/mono/dark/cybersun_outpost,
 /area/hangar)
@@ -2753,8 +2749,8 @@ Gm
 Gm
 Gm
 Gm
-Gm
 sB
+iI
 iI
 rw
 Za
@@ -2805,12 +2801,12 @@ Gm
 Gm
 Gm
 Gm
-Gm
 TZ
 hS
 hS
-kI
+hS
 kT
+km
 km
 JF
 hS
@@ -2857,13 +2853,13 @@ Gm
 Gm
 Gm
 Gm
-Gm
 TZ
 hS
-eR
+sn
 LI
-iQ
 bd
+iQ
+iQ
 as
 MH
 TG
@@ -2909,13 +2905,13 @@ Gm
 Gm
 Gm
 Gm
-Gm
 TZ
 hS
 Mj
 wf
-vf
 Nj
+vf
+vf
 vK
 Pz
 Mz
@@ -2961,7 +2957,6 @@ Gm
 Gm
 Gm
 Gm
-Gm
 TZ
 hS
 Mj
@@ -2969,6 +2964,7 @@ In
 Ef
 gb
 Ef
+gb
 wx
 Mz
 Kk
@@ -3013,11 +3009,11 @@ Gm
 Gm
 Gm
 Gm
-Gm
 TZ
 hS
 RW
 hS
+Af
 Af
 Af
 Af
@@ -3065,11 +3061,11 @@ Gm
 Gm
 Gm
 Gm
-Gm
 TZ
 hS
 qg
 xf
+aU
 aU
 aU
 aU
@@ -3117,11 +3113,11 @@ Gm
 Gm
 Gm
 Gm
-Gm
 TZ
 hS
 hS
 hS
+Af
 Af
 Af
 Af
@@ -3169,8 +3165,8 @@ Gm
 Gm
 Gm
 Gm
-Gm
 Zm
+Ey
 Ey
 Ey
 Ey

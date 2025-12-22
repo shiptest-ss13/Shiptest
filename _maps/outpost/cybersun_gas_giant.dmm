@@ -200,9 +200,6 @@
 "ax" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
-/obj/structure/fluff/power_conduit{
-	icon_state = "1-4"
-	},
 /obj/structure/cable/cyan{
 	icon_state = "1-4"
 	},
@@ -214,6 +211,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
+	},
+/obj/structure/fluff/power_conduit{
+	icon_state = "1-2-4"
 	},
 /turf/open/cybersun_outpost_exterior,
 /area/outpost/maintenance/starboard)
@@ -251,6 +251,14 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/promenade)
+"aE" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "admin_pressure";
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/outpost/security/checkpoint)
 "aF" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -477,13 +485,12 @@
 /turf/open/floor/glass/reinforced,
 /area/outpost/crew/bar/cybersun_outpost)
 "bm" = (
-/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/window/reinforced/fulltile/shuttle/indestructible,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "admin_pressure";
-	dir = 1
+	id = "admin_pressure"
 	},
 /turf/open/floor/plating,
-/area/outpost/security/checkpoint)
+/area/outpost/operations)
 "bo" = (
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
@@ -1059,15 +1066,6 @@
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/operations)
-"cE" = (
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/structure/grille/indestructible,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "outpost_refinery_external";
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/outpost/cargo/office)
 "cF" = (
 /obj/machinery/cryopod{
 	dir = 8
@@ -2585,6 +2583,10 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "cs_idk";
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/vacant_rooms/office)
 "gj" = (
@@ -2775,7 +2777,8 @@
 "gF" = (
 /obj/structure/window/reinforced/fulltile/shuttle/indestructible,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "admin_pressure"
+	id = "admin_pressure";
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/outpost/operations)
@@ -3199,7 +3202,7 @@
 	},
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "outpost_refinery_inner";
+	id = "outpost_refinery_external";
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
@@ -3677,10 +3680,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "outpost_refinery_inner";
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -3689,6 +3688,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "outpost_refinery_external";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo/smeltery)
@@ -5602,13 +5605,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/promenade)
-"no" = (
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "outpost_refinery_external"
-	},
-/turf/open/floor/plating,
-/area/outpost/cargo/office)
 "np" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
@@ -8691,6 +8687,16 @@
 	},
 /turf/open/cybersun_outpost_exterior,
 /area/outpost/external)
+"uW" = (
+/obj/machinery/door/firedoor/heavy,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "admin_pressure"
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered/half{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/outpost/security/checkpoint)
 "uX" = (
 /obj/machinery/door/firedoor/heavy,
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
@@ -9857,10 +9863,6 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
 	dir = 4
 	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "outpost_refinery";
-	dir = 4
-	},
 /obj/machinery/door/firedoor/heavy,
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -9872,6 +9874,10 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "cs_idk";
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
@@ -10374,6 +10380,13 @@
 	},
 /turf/open/floor/suns/hatch/maple,
 /area/outpost/operations)
+"zf" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "outpost_refinery_external"
+	},
+/turf/open/floor/plating,
+/area/outpost/cargo/office)
 "zg" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -10685,11 +10698,11 @@
 /area/outpost/engineering/atmospherics)
 "zR" = (
 /obj/machinery/door/firedoor/heavy,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "admin_pressure"
-	},
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
 	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "admin_pressure"
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/checkpoint)
@@ -10869,6 +10882,15 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/promenade)
+"Au" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/grille/indestructible,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "outpost_refinery_external";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/outpost/cargo/office)
 "Aw" = (
 /obj/structure/chair/sofa/blue/corpo/left/directional/east,
 /obj/item/radio/intercom/directional/north,
@@ -13335,14 +13357,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
-"Gk" = (
-/obj/structure/window/reinforced/fulltile/shuttle/indestructible,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "admin_pressure";
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/outpost/operations)
 "Gl" = (
 /obj/structure/extinguisher_cabinet/directional/east,
 /obj/machinery/light/small/directional/south,
@@ -13782,7 +13796,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "outpost_refinery";
+	id = "cs_idk";
 	dir = 4
 	},
 /obj/machinery/door/firedoor/heavy,
@@ -14205,6 +14219,20 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
+"Ip" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/heavy,
+/obj/effect/turf_decal/corner/opaque/syndiered/half{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "cs_idk";
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/outpost/vacant_rooms/office)
 "Ir" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/patterned/brushed,
@@ -15294,13 +15322,6 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
 /area/outpost/vacant_rooms/shop)
-"KZ" = (
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "admin_pressure"
-	},
-/turf/open/floor/plating,
-/area/outpost/security/checkpoint)
 "La" = (
 /obj/effect/turf_decal/corner/opaque/white/half{
 	dir = 4
@@ -15771,8 +15792,12 @@
 /turf/open/floor/plasteel/mono/white,
 /area/outpost/security/checkpoint)
 "Mk" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/outpost/crew/lounge)
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "admin_pressure"
+	},
+/turf/open/floor/plating,
+/area/outpost/security/checkpoint)
 "Ml" = (
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
@@ -17115,13 +17140,8 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/hallway/fore)
 "Pc" = (
-/obj/structure/window/reinforced/fulltile/shuttle/indestructible,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "admin_pressure";
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/outpost/operations)
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/outpost/crew/lounge)
 "Pd" = (
 /obj/structure/chair/pew/left,
 /turf/open/floor/wood/mahogany,
@@ -17417,7 +17437,6 @@
 	color = "#D2BC9D";
 	dir = 8
 	},
-/obj/machinery/newscaster/directional/east,
 /obj/machinery/button/door{
 	pixel_y = 22;
 	pixel_x = -11;
@@ -17440,6 +17459,13 @@
 	pixel_y = 12;
 	name = "Refinery Pressure  Shutters";
 	id = "outpost_refinery_external";
+	pixel_x = 20;
+	dir = 8
+	},
+/obj/machinery/button/door{
+	pixel_y = 1;
+	name = "Meeting Space Pressure Shutters";
+	id = "cs_Idk";
 	pixel_x = 20;
 	dir = 8
 	},
@@ -17606,6 +17632,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "outpost_refinery_external";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo/office)
@@ -19724,15 +19754,13 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/dorm)
 "UW" = (
-/obj/machinery/door/firedoor/heavy,
-/obj/effect/turf_decal/corner/opaque/syndiered/half{
-	dir = 1
-	},
+/obj/structure/window/reinforced/fulltile/shuttle/indestructible,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "admin_pressure"
+	id = "admin_pressure";
+	dir = 4
 	},
-/turf/open/floor/plasteel/tech,
-/area/outpost/security/checkpoint)
+/turf/open/floor/plating,
+/area/outpost/operations)
 "UY" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -20799,6 +20827,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "outpost_refinery_external"
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo/office)
@@ -27130,9 +27161,9 @@ pZ
 pZ
 pZ
 pZ
-Pc
-Pc
-Gk
+UW
+UW
+gF
 kc
 OI
 OI
@@ -27258,7 +27289,7 @@ qj
 wO
 Ic
 Ic
-gF
+bm
 kc
 OI
 OI
@@ -27384,7 +27415,7 @@ qj
 ur
 WU
 ez
-gF
+bm
 kc
 OI
 OI
@@ -27510,7 +27541,7 @@ wn
 Wd
 Oz
 fx
-gF
+bm
 kc
 OI
 OI
@@ -27636,7 +27667,7 @@ VR
 RK
 cu
 nz
-gF
+bm
 kc
 OI
 OI
@@ -27762,7 +27793,7 @@ Oi
 Ra
 uY
 zq
-gF
+bm
 kc
 OI
 OI
@@ -27888,7 +27919,7 @@ qj
 ur
 VT
 TX
-gF
+bm
 kc
 OI
 OI
@@ -27920,8 +27951,8 @@ Rn
 dn
 vt
 hR
-Mk
-Mk
+Pc
+Pc
 AW
 AW
 fW
@@ -28014,7 +28045,7 @@ qj
 Pu
 zc
 zc
-gF
+bm
 kc
 OI
 OI
@@ -28140,7 +28171,7 @@ lS
 US
 wH
 Gy
-gF
+bm
 kc
 OI
 OI
@@ -28298,7 +28329,7 @@ wy
 eo
 Mr
 Ro
-Mk
+Pc
 tt
 AW
 AW
@@ -28374,7 +28405,7 @@ OI
 OI
 OI
 OI
-gF
+bm
 hk
 wd
 Mi
@@ -28424,7 +28455,7 @@ wy
 RP
 po
 tQ
-Mk
+Pc
 Pb
 jv
 AW
@@ -28500,7 +28531,7 @@ OI
 OI
 OI
 OI
-gF
+bm
 CX
 Mi
 Mi
@@ -28543,14 +28574,14 @@ OI
 OI
 OI
 jh
-Mk
+Pc
 Or
 vC
 Js
-Mk
+Pc
 gG
 OP
-Mk
+Pc
 Bl
 Ov
 AW
@@ -28613,7 +28644,7 @@ jh
 ce
 Hi
 xQ
-Hi
+Ip
 jk
 ks
 ks
@@ -28626,7 +28657,7 @@ OI
 OI
 OI
 OI
-gF
+bm
 TM
 XN
 lx
@@ -28752,7 +28783,7 @@ OI
 OI
 OI
 OI
-gF
+bm
 aJ
 DQ
 TD
@@ -28878,7 +28909,7 @@ OI
 OI
 OI
 OI
-gF
+bm
 hk
 Mi
 Mi
@@ -29004,7 +29035,7 @@ OI
 OI
 OI
 OI
-gF
+bm
 oK
 Wl
 Mi
@@ -29384,7 +29415,7 @@ OI
 OI
 OI
 OI
-gF
+bm
 cg
 Et
 Tk
@@ -29510,7 +29541,7 @@ OI
 OI
 OI
 OI
-gF
+bm
 Gc
 Gc
 Gc
@@ -29636,7 +29667,7 @@ OI
 OI
 OI
 OI
-gF
+bm
 kP
 Gc
 JA
@@ -29762,7 +29793,7 @@ OI
 OI
 OI
 OI
-gF
+bm
 Gc
 Gc
 Gc
@@ -29888,7 +29919,7 @@ OI
 OI
 OI
 OI
-gF
+bm
 dl
 pQ
 Ri
@@ -30010,8 +30041,8 @@ OI
 OI
 OI
 OI
-Pc
-Pc
+UW
+UW
 pZ
 pZ
 pZ
@@ -30136,7 +30167,7 @@ OI
 OI
 OI
 OI
-gF
+bm
 pb
 tE
 iG
@@ -30262,7 +30293,7 @@ OI
 OI
 OI
 OI
-gF
+bm
 DE
 tE
 iw
@@ -30640,7 +30671,7 @@ iY
 iY
 iY
 iY
-UW
+zR
 qM
 dW
 Vp
@@ -30892,7 +30923,7 @@ TO
 TO
 TO
 TO
-zR
+uW
 nA
 BK
 BK
@@ -31907,12 +31938,12 @@ Ff
 kc
 OI
 OI
-bm
+aE
 YS
 FR
 eI
 wU
-KZ
+Mk
 OI
 OI
 OI
@@ -32033,12 +32064,12 @@ Ff
 kc
 OI
 OI
-bm
+aE
 tM
 tM
 tM
 tM
-KZ
+Mk
 OI
 OI
 OI
@@ -32269,7 +32300,7 @@ hW
 pX
 iC
 Fm
-no
+zf
 qt
 qt
 qt
@@ -33151,10 +33182,10 @@ hs
 IR
 hs
 dO
-cE
-cE
-cE
-cE
+Au
+Au
+Au
+Au
 dO
 su
 bo
