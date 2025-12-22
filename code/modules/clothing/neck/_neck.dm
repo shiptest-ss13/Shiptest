@@ -557,7 +557,7 @@
 	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR
 	clothing_flags = ALLOWINTERNALS
 	flags_cover = MASKCOVERSMOUTH
-	alternate_worn_layer = SUIT_LAYER
+	alternate_worn_layer = FACEWRAP_LAYER
 	w_class = WEIGHT_CLASS_TINY
 	var/source_shemagh_type
 
