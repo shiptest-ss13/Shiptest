@@ -57,6 +57,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/machinery/holopad,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "cv" = (
@@ -1535,7 +1536,6 @@
 	pixel_y = 4;
 	pixel_x = 5
 	},
-/obj/machinery/holopad,
 /obj/structure/closet/secure_closet/captains{
 	populate = 0
 	},
@@ -3393,6 +3393,10 @@
 /area/ship/engineering/engine)
 "RQ" = (
 /obj/effect/turf_decal/techfloor,
+/obj/item/kirbyplants{
+	icon_state = "plant-21";
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "RX" = (
