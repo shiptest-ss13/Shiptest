@@ -477,11 +477,13 @@
 /turf/open/floor/glass/reinforced,
 /area/outpost/crew/bar/cybersun_outpost)
 "bm" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "admin_pressure";
+	dir = 1
 	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/outpost/medical)
+/turf/open/floor/plating,
+/area/outpost/security/checkpoint)
 "bo" = (
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
@@ -1057,6 +1059,15 @@
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/operations)
+"cE" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/grille/indestructible,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "outpost_refinery_external";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/outpost/cargo/office)
 "cF" = (
 /obj/machinery/cryopod{
 	dir = 8
@@ -2763,6 +2774,9 @@
 /area/outpost/crew/promenade)
 "gF" = (
 /obj/structure/window/reinforced/fulltile/shuttle/indestructible,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "admin_pressure"
+	},
 /turf/open/floor/plating,
 /area/outpost/operations)
 "gG" = (
@@ -2985,8 +2999,10 @@
 /area/outpost/cargo/office)
 "hj" = (
 /obj/machinery/door/firedoor/heavy,
-/obj/machinery/door/poddoor/shutters/preopen,
 /obj/effect/turf_decal/corner/opaque/syndiered/half,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "admin_pressure"
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/checkpoint)
 "hk" = (
@@ -3044,11 +3060,11 @@
 /turf/open/floor/plating,
 /area/outpost/cargo/office)
 "hs" = (
+/obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "outpost_refinery";
+	id = "outpost_refinery_external";
 	dir = 4
 	},
-/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo/office)
 "ht" = (
@@ -5586,6 +5602,13 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/promenade)
+"no" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "outpost_refinery_external"
+	},
+/turf/open/floor/plating,
+/area/outpost/cargo/office)
 "np" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
@@ -6858,6 +6881,10 @@
 /area/outpost/crew/bar/cybersun_outpost)
 "qt" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "outpost_refinery_external";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/outpost/cargo/office)
 "qu" = (
@@ -8182,6 +8209,10 @@
 /area/outpost/hallway/aft)
 "tM" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "admin_pressure";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/outpost/security/checkpoint)
 "tN" = (
@@ -9451,10 +9482,12 @@
 /area/outpost/vacant_rooms/shop)
 "wW" = (
 /obj/machinery/door/firedoor/heavy,
-/obj/machinery/door/poddoor/shutters/preopen,
 /obj/effect/turf_decal/corner/opaque/syndiered/half,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "admin_pressure"
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/checkpoint)
 "wY" = (
@@ -10652,7 +10685,9 @@
 /area/outpost/engineering/atmospherics)
 "zR" = (
 /obj/machinery/door/firedoor/heavy,
-/obj/machinery/door/poddoor/shutters/preopen,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "admin_pressure"
+	},
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
 	dir = 1
 	},
@@ -13300,6 +13335,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
+"Gk" = (
+/obj/structure/window/reinforced/fulltile/shuttle/indestructible,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "admin_pressure";
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/outpost/operations)
 "Gl" = (
 /obj/structure/extinguisher_cabinet/directional/east,
 /obj/machinery/light/small/directional/south,
@@ -14329,10 +14372,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/bar/cybersun_outpost)
 "IR" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "outpost_refinery";
-	dir = 4
-	},
 /obj/machinery/door/firedoor/heavy,
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -14345,6 +14384,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "outpost_refinery_external";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo/office)
@@ -15251,6 +15294,13 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
 /area/outpost/vacant_rooms/shop)
+"KZ" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "admin_pressure"
+	},
+/turf/open/floor/plating,
+/area/outpost/security/checkpoint)
 "La" = (
 /obj/effect/turf_decal/corner/opaque/white/half{
 	dir = 4
@@ -17065,11 +17115,13 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/hallway/fore)
 "Pc" = (
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#D2BC9D"
+/obj/structure/window/reinforced/fulltile/shuttle/indestructible,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "admin_pressure";
+	dir = 4
 	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/outpost/crew/lounge)
+/turf/open/floor/plating,
+/area/outpost/operations)
 "Pd" = (
 /obj/structure/chair/pew/left,
 /turf/open/floor/wood/mahogany,
@@ -17368,15 +17420,28 @@
 /obj/machinery/newscaster/directional/east,
 /obj/machinery/button/door{
 	pixel_y = 22;
-	pixel_x = -6;
+	pixel_x = -11;
 	name = "Residental Pressure Shutters";
 	id = "cspressure1"
 	},
 /obj/machinery/button/door{
 	pixel_y = 22;
-	pixel_x = 4;
-	name = "Residental Pressure Shutters";
-	id = "cspressure1"
+	name = "Central Pressure Shutters";
+	id = "cspressure2";
+	pixel_x = -1
+	},
+/obj/machinery/button/door{
+	pixel_y = 22;
+	name = "Refinery Pressure  Shutters";
+	id = "outpost_refinery_external";
+	pixel_x = 8
+	},
+/obj/machinery/button/door{
+	pixel_y = 12;
+	name = "Refinery Pressure  Shutters";
+	id = "outpost_refinery_external";
+	pixel_x = 20;
+	dir = 8
 	},
 /turf/open/floor/suns/dark/plain,
 /area/outpost/operations)
@@ -18544,12 +18609,14 @@
 /area/outpost/external)
 "Sq" = (
 /obj/machinery/door/firedoor/heavy,
-/obj/machinery/door/poddoor/shutters/preopen,
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "admin_pressure"
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/checkpoint)
 "Sr" = (
@@ -19657,12 +19724,15 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/dorm)
 "UW" = (
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#D2BC9D";
+/obj/machinery/door/firedoor/heavy,
+/obj/effect/turf_decal/corner/opaque/syndiered/half{
 	dir = 1
 	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/outpost/crew/lounge)
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "admin_pressure"
+	},
+/turf/open/floor/plasteel/tech,
+/area/outpost/security/checkpoint)
 "UY" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -27060,9 +27130,9 @@ pZ
 pZ
 pZ
 pZ
-gF
-gF
-gF
+Pc
+Pc
+Gk
 kc
 OI
 OI
@@ -27850,8 +27920,8 @@ Rn
 dn
 vt
 hR
-UW
-Pc
+Mk
+Mk
 AW
 AW
 fW
@@ -29940,8 +30010,8 @@ OI
 OI
 OI
 OI
-gF
-gF
+Pc
+Pc
 pZ
 pZ
 pZ
@@ -30570,7 +30640,7 @@ iY
 iY
 iY
 iY
-zR
+UW
 qM
 dW
 Vp
@@ -31837,12 +31907,12 @@ Ff
 kc
 OI
 OI
-tM
+bm
 YS
 FR
 eI
 wU
-tM
+KZ
 OI
 OI
 OI
@@ -31963,12 +32033,12 @@ Ff
 kc
 OI
 OI
+bm
 tM
 tM
 tM
 tM
-tM
-tM
+KZ
 OI
 OI
 OI
@@ -32199,7 +32269,7 @@ hW
 pX
 iC
 Fm
-qt
+no
 qt
 qt
 qt
@@ -33081,10 +33151,10 @@ hs
 IR
 hs
 dO
-qt
-qt
-qt
-qt
+cE
+cE
+cE
+cE
 dO
 su
 bo
@@ -33408,7 +33478,7 @@ MH
 il
 pz
 el
-bm
+pz
 cb
 pz
 du
