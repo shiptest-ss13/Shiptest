@@ -210,6 +210,46 @@
 	equip_delay_other = EQUIP_DELAY_HELMET * 1.5
 	strip_delay = EQUIP_DELAY_HELMET * 1.5
 
+/obj/item/clothing/head/motorcycle/black
+	name = "black motorcycle helmet"
+	icon_state = "motohelm"
+	current_skin = "black motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/white
+	name = "white motorcycle helmet"
+	icon_state = "motohelmwhite"
+	current_skin = "white motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/blue
+	name = "blue motorcycle helmet"
+	icon_state = "motohelmblue"
+	current_skin = "blue motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/red
+	name = "red motorcycle helmet"
+	icon_state = "motohelmred"
+	current_skin = "red motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/purple
+	name = "purple motorcycle helmet"
+	icon_state = "motohelmpurple"
+	current_skin = "purple motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/pink
+	name = "pink motorcycle helmet"
+	icon_state = "motohelmpink"
+	current_skin = "pink motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/green
+	name = "green motorcycle helmet"
+	icon_state = "motohelmgreen"
+	current_skin = "green motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/brown
+	name = "brown motorcycle helmet"
+	icon_state = "motohelmbrown"
+	current_skin = "brown motorcycle helmet"
+
 /obj/item/clothing/head/motorcycle/cat
 	name = "cat motorcycle helmet"
 	desc = "A helmet designed to protect your head in case of impacts in motor vehicle accidents. This one has cute cat ears."
@@ -224,3 +264,43 @@
 						"green cat motorcycle helmet" = "motocatgreen",
 						"brown cat motorcycle helmet" = "motocatbrown"
 						)
+
+/obj/item/clothing/head/motorcycle/cat/black
+	name = "black cat motorcycle helmet"
+	icon_state = "motocat"
+	current_skin = "black cat motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat/white
+	name = "white cat motorcycle helmet"
+	icon_state = "motocatwhite"
+	current_skin = "white cat motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat/blue
+	name = "blue cat motorcycle helmet"
+	icon_state = "motocatblue"
+	current_skin = "blue cat motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat/ red
+	name = "red cat motorcycle helmet"
+	icon_state = "motocatred"
+	current_skin = "red cat motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat/purple
+	name = "purple cat motorcycle helmet"
+	icon_state = "motocatpurple"
+	current_skin = "purple cat motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat/pink
+	name = "pink cat motorcycle helmet"
+	icon_state = "motocatpink"
+	current_skin = "pink cat motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat/green
+	name = "green cat motorcycle helmet"
+	icon_state = "motocatgreen"
+	current_skin = "green cat motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat/brown
+	name = "brown cat motorcycle helmet"
+	icon_state = "motocatbrown"
+	current_skin = "brown cat motorcycle helmet"
