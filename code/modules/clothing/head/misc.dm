@@ -280,7 +280,7 @@
 	icon_state = "motocatblue"
 	current_skin = "blue cat motorcycle helmet"
 
-/obj/item/clothing/head/motorcycle/cat/ red
+/obj/item/clothing/head/motorcycle/cat/red
 	name = "red cat motorcycle helmet"
 	icon_state = "motocatred"
 	current_skin = "red cat motorcycle helmet"
