@@ -180,3 +180,44 @@
 	desc = "A fashionable straw hat designed for providing shade to your head. An essential of tropical touristry and backbreaking labor alike!"
 	icon_state = "sunhat"
 	item_state = "sunhat"
+
+/obj/item/clothing/head/motorcycle
+	name = "motorcycle helmet"
+	desc = "A helmet designed to protect your head in case of impacts in motor vehicle accidents. Also quite fashionable."
+	icon_state = "motohelm"
+	item-state = "motohelm"
+	unique_reskin = list("black motorcycle helmet" = "motohelm",
+						"white motorcycle helmet" = "motohelmwhite",
+						"blue motorcycle helmet" = "motohelmblue",
+						"red motorcycle helmet" = "motohelmred",
+						"purple motorcycle helmet" = "motohelmpurple",
+						"pink motorcycle helmet" = "motohelmpink",
+						"green motorcycle helmet" = "motohelmgreen",
+						"brown motorcycle helmet" = "motohelmbrown"
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 20, "bio" = 10, "rad" = 20, "fire" = 100, "acid" = 50, "wound" = 20)
+	clothing_flags = SNUG_FIT
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	equip_sound = 'sound/items/equip/armor_equip.ogg'
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_HELMET
+	equip_delay_other = EQUIP_DELAY_HELMET * 1.5
+	strip_delay = EQUIP_DELAY_HELMET * 1.5
+
+/obj/item/clothing/head/motorcycle/cat
+	name = "cat motorcycle helmet"
+	desc = "A helmet designed to protect your head in case of impacts in motor vehicle accidents. This one has cute cat ears."
+	icon_state = "motocat"
+	item-state = "motocat"
+	unique_reskin = list("black cat motorcycle helmet" = "motocat",
+						"white cat motorcycle helmet" = "motocatwhite",
+						"blue cat motorcycle helmet" = "motocatblue",
+						"red cat motorcycle helmet" = "motocatred",
+						"purple cat motorcycle helmet" = "motocatpurple",
+						"pink cat motorcycle helmet" = "motocatpink",
+						"green cat motorcycle helmet" = "motocatgreen",
+						"brown cat motorcycle helmet" = "motocatbrown"
+						)
