@@ -733,7 +733,7 @@
 	return
 
 /// Handle what happens when your contents are exploded by a bomb
-/atom/proc/contents_explosion(severity, target)
+/atom/proc/contents_explosion(severity, target, light_dam, light_item_dam, heavy_dam, heavy_item_dam)
 	return //For handling the effects of explosions on contents that would not normally be effected
 
 /**
@@ -743,7 +743,7 @@
  */
 /atom/proc/ex_act(severity, target, origin, light_dam, light_item_dam, heavy_dam, heavy_item_dam)
 	set waitfor = FALSE
-	contents_explosion(severity, target)
+	contents_explosion(severity, target, light_dam, light_item_dam, heavy_dam, heavy_item_dam)
 	SEND_SIGNAL(src, COMSIG_ATOM_EX_ACT, severity, target, origin, light_dam, light_item_dam, heavy_dam, heavy_item_dam)
 
 /atom/proc/fire_act(exposed_temperature, exposed_volume)

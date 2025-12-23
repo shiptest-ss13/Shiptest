@@ -74,6 +74,21 @@ SUBSYSTEM_DEF(explosions)
 /datum/controller/subsystem/explosions/proc/is_exploding()
 	return (length(lowturf) || length(medturf) || length(highturf) || length(flameturf) || length(throwturf) || length(lowobj) || length(medobj) || length(highobj))
 
+//use datum instead of list??
+/datum/explosion_ticket
+	var/atom/target
+	var/light_damage
+	var/light_item_damage
+	var/heavy_damage
+	var/heavy_item_damage
+
+/datum/explosion_ticket/New(_target, light_dam = 1, light_item_dam = 1, heavy_dam = 1, heavy_item_dam = 1)
+	. = ..()
+	target = _target
+	light_damage = light_dam
+	light_item_damage = light_item_dam
+	heavy_damage = heavy_dam
+	heavy_item_damage = heavy_item_dam
 
 /client/proc/check_bomb_impacts()
 	set name = "Check Bomb Impact"
@@ -351,23 +366,25 @@ SUBSYSTEM_DEF(explosions)
 					items -= A				// Because GetAllContents returns the mob too, resulting in double damage
 			for(var/O in items)
 				//have this pass a list
-				var/list/to_explode = list(O,light_damage,light_item_damage,heavy_damage,heavy_item_damage)
 				var/atom/A = O
+				var/list/to_explode = list(A,light_damage,light_item_damage,heavy_damage,heavy_item_damage)
 				if(!QDELETED(A))
 					switch(dist)
 						if(EXPLODE_DEVASTATE)
-							SSexplosions.highobj += to_explode
+							SSexplosions.highobj += list(to_explode)
 						if(EXPLODE_HEAVY)
-							SSexplosions.medobj += to_explode
+							SSexplosions.medobj += list(to_explode)
 						if(EXPLODE_LIGHT)
-							SSexplosions.lowobj += to_explode
+							SSexplosions.lowobj += list(to_explode)
+		//shit is mainly handled by turf explosions, with the occasional direct add
+		var/list/turf_explode = list(T,light_damage,light_item_damage,heavy_damage,heavy_item_damage)
 		switch(dist)
 			if(EXPLODE_DEVASTATE)
-				SSexplosions.highturf += T
+				SSexplosions.highturf += list(turf_explode)
 			if(EXPLODE_HEAVY)
-				SSexplosions.medturf += T
+				SSexplosions.medturf += list(turf_explode)
 			if(EXPLODE_LIGHT)
-				SSexplosions.lowturf += T
+				SSexplosions.lowturf += list(turf_explode)
 
 
 		if(flame_dist && prob(40) && !isspaceturf(T) && !T.density)
@@ -481,30 +498,45 @@ SUBSYSTEM_DEF(explosions)
 		var/list/low_turf = lowturf
 		lowturf = list()
 		for(var/thing in low_turf)
-			if(thing)
-				var/turf/T = thing
+			if(islist(thing))
+				var/list/explodey = thing
+				var/turf/T = explodey[1]
 				T.explosion_level = max(T.explosion_level, EXPLODE_LIGHT)
-				T.ex_act(EXPLODE_LIGHT)
+				T.ex_act(EXPLODE_LIGHT, explodey[2],explodey[3],explodey[4],explodey[5])
+			// if(thing)
+			// 	var/turf/T = thing
+			// 	T.explosion_level = max(T.explosion_level, EXPLODE_LIGHT)
+			// 	T.ex_act(EXPLODE_LIGHT)
 		cost_lowturf = MC_AVERAGE(cost_lowturf, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 		timer = TICK_USAGE_REAL
 		var/list/med_turf = medturf
 		medturf = list()
 		for(var/thing in med_turf)
-			if(thing)
-				var/turf/T = thing
+			if(islist(thing))
+				var/list/explodey = thing
+				var/turf/T = explodey[1]
 				T.explosion_level = max(T.explosion_level, EXPLODE_HEAVY)
-				T.ex_act(EXPLODE_HEAVY)
+				T.ex_act(EXPLODE_HEAVY, explodey[2],explodey[3],explodey[4],explodey[5])
+			// if(thing)
+			// 	var/turf/T = thing
+			// 	T.explosion_level = max(T.explosion_level, EXPLODE_HEAVY)
+			// 	T.ex_act(EXPLODE_HEAVY)
 		cost_medturf = MC_AVERAGE(cost_medturf, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 		timer = TICK_USAGE_REAL
 		var/list/high_turf = highturf
 		highturf = list()
 		for(var/thing in high_turf)
-			if(thing)
-				var/turf/T = thing
+			if(islist(thing))
+				var/list/explodey = thing
+				var/turf/T = explodey[1]
 				T.explosion_level = max(T.explosion_level, EXPLODE_DEVASTATE)
-				T.ex_act(EXPLODE_DEVASTATE)
+				T.ex_act(EXPLODE_DEVASTATE, explodey[2],explodey[3],explodey[4],explodey[5])
+			// if(thing)
+			// 	var/turf/T = thing
+			// 	T.explosion_level = max(T.explosion_level, EXPLODE_DEVASTATE)
+			// 	T.ex_act(EXPLODE_DEVASTATE)
 		cost_highturf = MC_AVERAGE(cost_highturf, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 		timer = TICK_USAGE_REAL
@@ -532,9 +564,9 @@ SUBSYSTEM_DEF(explosions)
 		for(var/exploded as anything in high_obj)
 			if(islist(exploded))
 				var/list/explodey = exploded
-				var/obj/O = explodey[0]
+				var/obj/O = explodey[1]
 				if(!QDELETED(O))
-					O.ex_act(EXPLODE_DEVASTATE, explodey[1],explodey[2],explodey[3],explodey[4])
+					O.ex_act(EXPLODE_DEVASTATE, explodey[2],explodey[3],explodey[4],explodey[5])
 					//QDEL_LIST(explodey)
 		cost_highobj = MC_AVERAGE(cost_highobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
@@ -545,12 +577,12 @@ SUBSYSTEM_DEF(explosions)
 		// 	if(!QDELETED(O))
 		// 		O.ex_act(EXPLODE_HEAVY)
 		// think im casting too high, cut list
-		for(var/exploded as anything in med_obj)
+		for(var/exploded in med_obj)
 			if(islist(exploded))
 				var/list/explodey = exploded
-				var/obj/O = explodey[0]
+				var/obj/O = explodey[1]
 				if(!QDELETED(O))
-					O.ex_act(EXPLODE_HEAVY, explodey[1],explodey[2],explodey[3],explodey[4])
+					O.ex_act(EXPLODE_HEAVY, explodey[2],explodey[3],explodey[4],explodey[5])
 					//QDEL_LIST(explodey)
 		cost_medobj = MC_AVERAGE(cost_medobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
@@ -563,9 +595,9 @@ SUBSYSTEM_DEF(explosions)
 		for(var/exploded as anything in low_obj)
 			if(islist(exploded))
 				var/list/explodey = exploded
-				var/obj/O = explodey[0]
+				var/obj/O = explodey[1]
 				if(!QDELETED(O))
-					O.ex_act(EXPLODE_LIGHT, explodey[1],explodey[2],explodey[3],explodey[4])
+					O.ex_act(EXPLODE_LIGHT, explodey[2],explodey[3],explodey[4],explodey[5])
 					//QDEL_LIST(explodey)
 		cost_lowobj = MC_AVERAGE(cost_lowobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
