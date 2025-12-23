@@ -450,7 +450,7 @@
 		..()
 
 
-/mob/living/carbon/human/ex_act(severity, target, origin, light_dam = 40, light_item_dam = 45, heavy_dam = 200, heavy_item_dam = 75)
+/mob/living/carbon/human/ex_act(severity, target, origin, light_dam = 40, light_item_dam = 45, heavy_dam = 80, heavy_item_dam = 75)
 	if(TRAIT_BOMBIMMUNE in dna.species.species_traits)
 		return
 	..()
@@ -476,11 +476,11 @@
 					if(!QDELETED(A))
 						switch(severity)
 							if(EXPLODE_DEVASTATE)
-								SSexplosions.highobj += to_explode
+								SSexplosions.highobj += list(to_explode)
 							if(EXPLODE_HEAVY)
-								SSexplosions.medobj += to_explode
+								SSexplosions.medobj += list(to_explode)
 							if(EXPLODE_LIGHT)
-								SSexplosions.lowobj += to_explode
+								SSexplosions.lowobj += list(to_explode)
 				gib()
 				return
 			else

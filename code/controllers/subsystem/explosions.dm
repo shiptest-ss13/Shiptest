@@ -503,10 +503,10 @@ SUBSYSTEM_DEF(explosions)
 				var/turf/T = explodey[1]
 				T.explosion_level = max(T.explosion_level, EXPLODE_LIGHT)
 				T.ex_act(EXPLODE_LIGHT, explodey[2],explodey[3],explodey[4],explodey[5])
-			// if(thing)
-			// 	var/turf/T = thing
-			// 	T.explosion_level = max(T.explosion_level, EXPLODE_LIGHT)
-			// 	T.ex_act(EXPLODE_LIGHT)
+			else if(isturf(thing))
+				var/turf/T = thing
+				T.explosion_level = max(T.explosion_level, EXPLODE_LIGHT)
+				T.ex_act(EXPLODE_LIGHT)
 		cost_lowturf = MC_AVERAGE(cost_lowturf, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 		timer = TICK_USAGE_REAL
@@ -518,10 +518,10 @@ SUBSYSTEM_DEF(explosions)
 				var/turf/T = explodey[1]
 				T.explosion_level = max(T.explosion_level, EXPLODE_HEAVY)
 				T.ex_act(EXPLODE_HEAVY, explodey[2],explodey[3],explodey[4],explodey[5])
-			// if(thing)
-			// 	var/turf/T = thing
-			// 	T.explosion_level = max(T.explosion_level, EXPLODE_HEAVY)
-			// 	T.ex_act(EXPLODE_HEAVY)
+			else if(isturf(thing))
+				var/turf/T = thing
+				T.explosion_level = max(T.explosion_level, EXPLODE_HEAVY)
+				T.ex_act(EXPLODE_HEAVY)
 		cost_medturf = MC_AVERAGE(cost_medturf, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 		timer = TICK_USAGE_REAL
@@ -533,10 +533,10 @@ SUBSYSTEM_DEF(explosions)
 				var/turf/T = explodey[1]
 				T.explosion_level = max(T.explosion_level, EXPLODE_DEVASTATE)
 				T.ex_act(EXPLODE_DEVASTATE, explodey[2],explodey[3],explodey[4],explodey[5])
-			// if(thing)
-			// 	var/turf/T = thing
-			// 	T.explosion_level = max(T.explosion_level, EXPLODE_DEVASTATE)
-			// 	T.ex_act(EXPLODE_DEVASTATE)
+			else if(isturf(thing))
+				var/turf/T = thing
+				T.explosion_level = max(T.explosion_level, EXPLODE_DEVASTATE)
+				T.ex_act(EXPLODE_DEVASTATE)
 		cost_highturf = MC_AVERAGE(cost_highturf, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 		timer = TICK_USAGE_REAL
@@ -567,7 +567,9 @@ SUBSYSTEM_DEF(explosions)
 				var/obj/O = explodey[1]
 				if(!QDELETED(O))
 					O.ex_act(EXPLODE_DEVASTATE, explodey[2],explodey[3],explodey[4],explodey[5])
-					//QDEL_LIST(explodey)
+			else if(isatom(exploded))
+				if(!QDELETED(O))
+					O.ex_act(EXPLODE_DEVASTATE)
 		cost_highobj = MC_AVERAGE(cost_highobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 		timer = TICK_USAGE_REAL
@@ -583,7 +585,9 @@ SUBSYSTEM_DEF(explosions)
 				var/obj/O = explodey[1]
 				if(!QDELETED(O))
 					O.ex_act(EXPLODE_HEAVY, explodey[2],explodey[3],explodey[4],explodey[5])
-					//QDEL_LIST(explodey)
+			else if(isatom(exploded))
+				if(!QDELETED(O))
+					O.ex_act(EXPLODE_HEAVY)
 		cost_medobj = MC_AVERAGE(cost_medobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 		timer = TICK_USAGE_REAL
@@ -598,7 +602,9 @@ SUBSYSTEM_DEF(explosions)
 				var/obj/O = explodey[1]
 				if(!QDELETED(O))
 					O.ex_act(EXPLODE_LIGHT, explodey[2],explodey[3],explodey[4],explodey[5])
-					//QDEL_LIST(explodey)
+			else if(isatom(exploded))
+				if(!QDELETED(O))
+					O.ex_act(EXPLODE_LIGHT)
 		cost_lowobj = MC_AVERAGE(cost_lowobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 
