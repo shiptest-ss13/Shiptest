@@ -184,6 +184,8 @@
 /obj/item/clothing/head/motorcycle
 	name = "motorcycle helmet"
 	desc = "A helmet designed to protect your head in case of impacts in motor vehicle accidents. Also quite fashionable."
+	icon = 'icons/obj/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
 	icon_state = "motohelm"
 	item_state = "motohelm"
 	unique_reskin = list("black motorcycle helmet" = "motohelm",
