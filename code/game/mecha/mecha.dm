@@ -700,7 +700,7 @@
 		if(isobj(obstacle))
 			var/obj/object = obstacle
 			obstacle.mech_melee_attack(src)
-			if(!(object.resistance_flags & INDESTRUCTIBLE) && charge_toss_structures)
+			if(!(object.resistance_flags & INDESTRUCTIBLE) && charge_toss_structures && !QDELETED(object))
 				object.throw_at(throw_target, 4, 3)
 			visible_message(span_danger("[src] crashes into [obstacle]!"))
 			playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
@@ -1331,4 +1331,5 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 /// Sets the direction of the mecha and all of its occcupents, required for FOV. Alternatively one could make a recursive contents registration and register topmost direction changes in the fov component
 /obj/mecha/proc/set_dir_mecha(new_dir)
 	setDir(new_dir)
-	occupant.setDir(new_dir)
+	if(occupant)
+		occupant.setDir(new_dir)
