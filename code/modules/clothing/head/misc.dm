@@ -185,7 +185,7 @@
 	name = "motorcycle helmet"
 	desc = "A helmet designed to protect your head in case of impacts in motor vehicle accidents. Also quite fashionable."
 	icon_state = "motohelm"
-	item-state = "motohelm"
+	item_state = "motohelm"
 	unique_reskin = list("black motorcycle helmet" = "motohelm",
 						"white motorcycle helmet" = "motohelmwhite",
 						"blue motorcycle helmet" = "motohelmblue",
@@ -211,7 +211,7 @@
 	name = "cat motorcycle helmet"
 	desc = "A helmet designed to protect your head in case of impacts in motor vehicle accidents. This one has cute cat ears."
 	icon_state = "motocat"
-	item-state = "motocat"
+	item_state = "motocat"
 	unique_reskin = list("black cat motorcycle helmet" = "motocat",
 						"white cat motorcycle helmet" = "motocatwhite",
 						"blue cat motorcycle helmet" = "motocatblue",
