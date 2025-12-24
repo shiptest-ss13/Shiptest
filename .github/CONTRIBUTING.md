@@ -20,7 +20,7 @@ Shiptest doesn't usually have a list of goals and features to add; we instead al
 
 <!--> This needs to be updated still
 
-If you want to contribute the first thing you'll need to do is [set up Git](https://wiki.white-sands.space/Setting_up_git) so you can download the source code.
+If you want to contribute the first thing you'll need to do is [set up Git](https://shiptest.net/wiki/Setting_up_git) so you can download the source code.
 After setting it up, optionally navigate your git commandline to the project folder and run the command: 'git config blame.ignoreRevsFile .git-blame-ignore-revs'
 
 <!-->
