@@ -17,15 +17,10 @@
 	abstract = TRUE
 	required_limb_biostate = BIO_WIRED
 
-	required_wounding_types = list(WOUND_SLASH, WOUND_PIERCE, WOUND_BURN)
+	required_wounding_types = list(WOUND_PIERCE, WOUND_BURN)
+	mangled_wounding_types = list(WOUND_SLASH = ANATOMY_INTERIOR)
 
 	wound_series = WOUND_SERIES_WIRED_ELECTRICAL
-
-/datum/wound_pregen_data/electric/wounding_types_valid(obj/item/bodypart/limb, list/suggested_wounding_types)
-	var/mangled_state = limb.get_mangled_state()
-	if(!(mangled_state & ANATOMY_INTERIOR) && (WOUND_SLASH in suggested_wounding_types))
-		return FALSE // slash attacks can't cut the wires until the metal is mangled enough to reach it
-	return ..()
 
 /datum/wound/electric/severe
 	name = "Damaged Electronics"
@@ -90,7 +85,7 @@
 /datum/wound/electric/proc/affect_organ()
 	if(!affected_organ)
 		var/obj/item/organ/brain/victim_brain = victim.getorganslot(ORGAN_SLOT_BRAIN)
-		if(limb.body_zone == victim_brain.zone && victim_brain.status == ORGAN_ROBOTIC)
+		if(victim_brain && limb.body_zone == victim_brain.zone && victim_brain.status == ORGAN_ROBOTIC)
 			affected_organ = victim_brain
 		else
 			affected_organ = pick(limb.get_organs(ORGAN_ROBOTIC))

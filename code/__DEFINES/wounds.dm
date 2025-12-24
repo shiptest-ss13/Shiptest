@@ -16,6 +16,8 @@
 /// If there are multiple possible and valid wounds for the same type and severity, weight will be used to pick among them. See _wound_pregen_data.dm for more details
 /// This is used in pick_weight, so use integers
 #define WOUND_DEFAULT_WEIGHT 50
+/// Chance to roll a muscle wound from brute damage
+#define WOUND_MUSCLE_WEIGHT 15
 
 // ~wound severities
 #define WOUND_SEVERITY_TRIVIAL 0
@@ -80,8 +82,6 @@
 #define WOUND_BONE_HEAD_TIME_VARIANCE 20
 /// charge drain per severity level
 #define WOUND_ELECTRIC_POWER_DRAIN 0.05
-/// Chance to roll a muscle wound from brute damage
-#define MUSCLE_WOUND_CHANCE 20
 
 // ~biology defines
 // What kind of biology we have, and what wounds we can suffer, relies on the biological_state var on bodyparts.

@@ -339,7 +339,7 @@
 	return update_bodypart_damage_state() || .
 
 /// Rolls for wounds, returning TRUE if the limb was dismembered.
-/obj/item/bodypart/proc/wound_roll(brute, burn, wound_bonus = 0, bare_wound_bonus = 0, sharpness=SHARP_NONE, attack_direction)
+/obj/item/bodypart/proc/wound_roll(brute, burn, wound_bonus = 0, bare_wound_bonus = 0, sharpness=SHARP_NONE, attack_direction, no_dismember = FALSE)
 	if(wound_bonus == CANT_WOUND)
 		return
 
@@ -363,7 +363,7 @@
 	if(burn)
 		LAZYSET(wounding_types, WOUND_BURN, burn)
 
-	if((dismemberable_by_wound() || dismemberable_by_total_damage()) && try_dismember(wounding_types, wound_bonus, bare_wound_bonus))
+	if(!no_dismember && (dismemberable_by_wound() || dismemberable_by_total_damage()) && try_dismember(wounding_types, wound_bonus, bare_wound_bonus))
 		return TRUE
 
 	var/highest_damage = 0
@@ -377,7 +377,7 @@
 			if(!owner)
 				break
 			highest_damage = max(highest_damage, wounding_types[wound_type])
-		check_wounding(wounding_types, wound_bonus, bare_wound_bonus, attack_direction)
+		check_wounding(wounding_types, wound_bonus, bare_wound_bonus, attack_direction, no_dismember)
 
 	for(var/datum/wound/iter_wound as anything in wounds)
 		iter_wound.receive_damage(wounding_types, highest_damage, wound_bonus)
@@ -394,7 +394,7 @@
  * * wound_bonus- The wound_bonus of an attack
  * * bare_wound_bonus- The bare_wound_bonus of an attack
  */
-/obj/item/bodypart/proc/check_wounding(list/wounding_types, wound_bonus, bare_wound_bonus, attack_direction)
+/obj/item/bodypart/proc/check_wounding(list/wounding_types, wound_bonus, bare_wound_bonus, attack_direction, no_dismember = FALSE)
 	var/damage_mult = 1
 
 	// note that these are fed into an exponent, so these are magnified
@@ -414,7 +414,7 @@
 	var/list/wound_rolls
 	for(var/wounding_type in wounding_types)
 		var/injury_roll = rand(1, round(min(wounding_types[wounding_type], WOUND_MAX_CONSIDERED_DAMAGE) * damage_mult) ** WOUND_DAMAGE_EXPONENT) + wounding_mods
-		if(injury_roll > WOUND_DISMEMBER_OUTRIGHT_THRESH && prob(get_damage() / max_damage * 100))
+		if(!no_dismember && injury_roll > WOUND_DISMEMBER_OUTRIGHT_THRESH && prob(get_damage() / max_damage * 100))
 			var/datum/wound/loss/dismembering = new
 			dismembering.apply_dismember(src, wounding_type, outright = TRUE, attack_direction = attack_direction)
 			return

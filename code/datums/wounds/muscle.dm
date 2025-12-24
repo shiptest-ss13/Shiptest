@@ -18,6 +18,7 @@
 
 	required_wounding_types = list(WOUND_BLUNT, WOUND_SLASH, WOUND_PIERCE)
 	wound_series = WOUND_SERIES_FLESH_MUSCLE
+	weight = WOUND_MUSCLE_WEIGHT
 
 /*
 	Overwriting of base procs
