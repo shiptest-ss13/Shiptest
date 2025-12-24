@@ -259,6 +259,10 @@
 	name = "Command Post Officer Dorm"
 	icon_state = "Sleep"
 
+/area/ruin/icemoon/command_post/mission_control
+	name = "Command Post Mission Control"
+	icon_state = "bridge"
+
 /area/ruin/icemoon/command_post/kitchen/second
 
 /area/ruin/icemoon/command_post/dorms/second
