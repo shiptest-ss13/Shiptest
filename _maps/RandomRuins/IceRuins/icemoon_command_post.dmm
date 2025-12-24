@@ -145,7 +145,7 @@
 	specialfunctions = 4;
 	dir = 4
 	},
-/obj/machinery/suit_storage_unit/inherit,
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/officer)
 "cj" = (
@@ -167,7 +167,7 @@
 /obj/structure/table,
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/dark,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "cn" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
@@ -314,7 +314,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "eE" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
@@ -496,7 +496,7 @@
 /obj/machinery/blackbox_recorder,
 /obj/effect/turf_decal/borderfloorblack,
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "gh" = (
 /obj/effect/turf_decal/borderfloorblack/corner{
 	dir = 1
@@ -549,7 +549,7 @@
 	icon_state = "computer-middle"
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "gG" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
@@ -585,7 +585,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/dark,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "ha" = (
 /obj/machinery/door/airlock/grunge,
 /turf/open/floor/concrete/reinforced,
@@ -620,6 +620,7 @@
 	name = "chilly snake";
 	desc = "Brrrr."
 	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/icemoon/command_post/dorms/third)
 "hr" = (
@@ -790,7 +791,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "jq" = (
 /obj/structure/table/rolling,
 /obj/item/weldingtool/largetank{
@@ -902,6 +903,14 @@
 "kp" = (
 /turf/closed/indestructible/rock/schist,
 /area/ruin/icemoon/command_post)
+"kr" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/machinery/power/apc/auto_name/directional/south,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/crew_quarters)
 "kC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor{
@@ -931,7 +940,7 @@
 /turf/open/floor/plasteel/stairs{
 	dir = 4
 	},
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "lg" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
@@ -986,7 +995,7 @@
 	},
 /mob/living/simple_animal/hostile/human/ramzi/ranged/officer,
 /turf/open/floor/plasteel/tech,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "lW" = (
 /obj/item/cigbutt/roach{
 	pixel_x = -2;
@@ -1076,7 +1085,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "mL" = (
 /obj/item/cigbutt{
 	pixel_x = -12;
@@ -1144,7 +1153,7 @@
 /obj/item/folder/syndicate,
 /obj/item/folder/documents/syndicate/red,
 /turf/open/floor/plasteel/mono/dark,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "nk" = (
 /obj/structure/table,
 /obj/item/plate/small{
@@ -1168,6 +1177,7 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/red/line,
 /obj/machinery/washing_machine,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/dorms)
 "ny" = (
@@ -1181,6 +1191,7 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
 	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plating,
 /area/ruin/icemoon/command_post/kitchen)
 "nA" = (
@@ -1225,8 +1236,10 @@
 	dir = 10;
 	layer = 2.040
 	},
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/dark,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "nX" = (
 /obj/effect/turf_decal/borderfloorblack/corner{
 	dir = 4
@@ -1236,6 +1249,8 @@
 	layer = 2.040
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/kitchen/second)
 "oc" = (
@@ -1319,6 +1334,7 @@
 	pixel_y = 29
 	},
 /obj/structure/railing/thin,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/eva)
 "pf" = (
@@ -1327,7 +1343,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "pm" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
@@ -1445,7 +1461,7 @@
 "qg" = (
 /mob/living/simple_animal/hostile/human/ramzi/ranged/hydra,
 /turf/open/floor/concrete/tiles,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "qr" = (
 /mob/living/simple_animal/hostile/viscerator,
 /turf/open/floor/plating/asteroid/icerock,
@@ -1454,7 +1470,7 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/line,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "qz" = (
 /obj/machinery/power/rtg/geothermal,
 /obj/structure/lattice/catwalk,
@@ -1552,6 +1568,8 @@
 	color = "#543C30";
 	dir = 1
 	},
+/obj/machinery/suit_storage_unit/inherit,
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/wood/walnut,
 /area/ruin/icemoon/command_post/officer)
 "sZ" = (
@@ -1610,7 +1628,7 @@
 	pixel_y = 0
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "tt" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
@@ -1624,14 +1642,14 @@
 	icon_state = "computer-right"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "tQ" = (
 /obj/machinery/telecomms/bus,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "tT" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -1716,11 +1734,11 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/command_post/dorms)
 "uM" = (
-/turf/open/space/basic,
-/area/ruin/icemoon/command_post)
+/turf/template_noop,
+/area/template_noop)
 "uQ" = (
 /turf/open/floor/plasteel/tech,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "uR" = (
 /obj/item/chair/plastic,
 /obj/item/chair/plastic{
@@ -1771,6 +1789,7 @@
 /obj/structure/closet/crate/trashcart/laundry,
 /obj/item/towel,
 /obj/item/towel,
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/dorms)
 "ve" = (
@@ -1781,6 +1800,7 @@
 	dir = 4;
 	layer = 2.040
 	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/dorms/second)
 "vk" = (
@@ -1792,6 +1812,7 @@
 	layer = 2.040
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/crew_quarters)
 "vt" = (
@@ -1817,7 +1838,7 @@
 /obj/machinery/telecomms/server/presets/pirate,
 /obj/effect/turf_decal/borderfloorblack,
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "vv" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -1875,17 +1896,17 @@
 /area/ruin/icemoon/command_post/dorms/third)
 "vV" = (
 /turf/open/floor/concrete/tiles,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "wc" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/tiles,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "wj" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "wp" = (
 /obj/structure/platform/ship{
 	dir = 10
@@ -1899,7 +1920,7 @@
 	icon_state = "computer-left"
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "wy" = (
 /obj/structure/closet/crate/freezer,
 /obj/effect/mapping_helpers/crate_shelve,
@@ -2008,7 +2029,7 @@
 	pixel_y = 9
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "xd" = (
 /obj/structure/dresser,
 /obj/structure/noticeboard{
@@ -2194,6 +2215,7 @@
 	name = "Oxygen Canister Filling"
 	},
 /obj/effect/turf_decal/industrial/hatch/blue,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/icemoon/command_post/engi)
 "zb" = (
@@ -2221,17 +2243,18 @@
 	layer = 2.040
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/armory)
 "zk" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "zr" = (
 /obj/machinery/telecomms/relay/preset/frontiersmen,
 /obj/effect/turf_decal/borderfloorblack,
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "zA" = (
 /obj/structure/marker_beacon{
 	picked_color = "Bronze"
@@ -2249,7 +2272,7 @@
 	pixel_y = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "zG" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/concrete/reinforced,
@@ -2424,6 +2447,7 @@
 	dir = 8;
 	layer = 2.040
 	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/armory)
 "CE" = (
@@ -2458,7 +2482,7 @@
 	icon_state = "computer-left"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "DO" = (
 /obj/structure/chair{
 	dir = 4
@@ -2486,7 +2510,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "Ef" = (
 /turf/open/floor/concrete/tiles,
 /area/ruin/icemoon/command_post/dorms)
@@ -2627,7 +2651,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "Fo" = (
 /obj/effect/turf_decal/borderfloorblack/corner{
 	dir = 1
@@ -2694,6 +2718,9 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/command_post/engi)
+"Gq" = (
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/icemoon/command_post/mission_control)
 "Gw" = (
 /obj/machinery/autolathe,
 /obj/item/stack/sheet/metal/fifty,
@@ -2792,6 +2819,7 @@
 	},
 /obj/item/poster/random_contraband,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/dorms/third)
 "IJ" = (
@@ -2799,14 +2827,14 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/tech,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "IO" = (
 /obj/machinery/door/airlock/grunge{
 	dir = 4;
 	id_tag = "officelock"
 	},
 /turf/open/floor/concrete/reinforced,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "IY" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/tiles,
@@ -2989,7 +3017,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/dark,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "KG" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/icemoon/command_post/dorms)
@@ -3000,7 +3028,7 @@
 /obj/machinery/holopad,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/dark,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "KK" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
@@ -3143,7 +3171,7 @@
 /obj/machinery/fax/ramzi,
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/mono/dark,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "MM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/port_gen/pacman,
@@ -3261,6 +3289,7 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
 	dir = 5
 	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/icemoon/command_post/engi)
 "Og" = (
@@ -3356,7 +3385,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/tiles,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "Pd" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -3373,6 +3402,13 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/kitchen/second)
+"Pf" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/kitchen)
 "Ps" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5;
@@ -3409,7 +3445,7 @@
 	icon_state = "computer-middle"
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "PI" = (
 /obj/effect/spawner/bunk_bed,
 /obj/effect/turf_decal/siding/wood{
@@ -3517,7 +3553,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "QB" = (
 /obj/structure/platform{
 	dir = 9
@@ -3582,7 +3618,7 @@
 	pixel_y = 31
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "Ru" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 6
@@ -3601,7 +3637,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "RG" = (
 /turf/open/floor/concrete/slab_2/icemoon,
 /area/ruin/icemoon/command_post)
@@ -3696,7 +3732,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "Sf" = (
 /turf/open/floor/plating/asteroid/iceberg,
 /area/ruin/icemoon/command_post/kitchen)
@@ -3780,7 +3816,7 @@
 	layer = 2.040
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "Tz" = (
 /obj/structure/platform/corner{
 	dir = 4
@@ -3803,6 +3839,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/walnut,
 /area/ruin/icemoon/command_post/dorms)
+"TV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc/auto_name/directional/north,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/storage)
 "Ui" = (
 /obj/structure/filingcabinet{
 	dir = 4;
@@ -4085,7 +4126,7 @@
 	icon_state = "computer-right"
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "WF" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/icemoon/command_post/armory)
@@ -4189,7 +4230,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/telecomms_floor,
-/area/ruin/icemoon/command_post)
+/area/ruin/icemoon/command_post/mission_control)
 "Yt" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/curtain/cloth,
@@ -4845,7 +4886,7 @@ YS
 ve
 jt
 HQ
-Mh
+TV
 Sh
 Mh
 HQ
@@ -5273,7 +5314,7 @@ OD
 KG
 pK
 jN
-Oy
+Pf
 ny
 fO
 LI
@@ -5473,7 +5514,7 @@ YY
 wN
 mY
 bK
-Bj
+kr
 YY
 RG
 ul
@@ -6057,10 +6098,10 @@ kp
 kp
 kp
 kp
-XF
-XF
-XF
-XF
+Gq
+Gq
+Gq
+Gq
 rN
 nN
 eg
@@ -6105,8 +6146,8 @@ kp
 kp
 kp
 kp
-XF
-XF
+Gq
+Gq
 tQ
 pf
 jp
@@ -6154,7 +6195,7 @@ kp
 kp
 kp
 kp
-XF
+Gq
 gf
 uQ
 uQ
@@ -6203,7 +6244,7 @@ kp
 kp
 kp
 kp
-XF
+Gq
 vu
 uQ
 uQ
@@ -6252,7 +6293,7 @@ kp
 kp
 kp
 kp
-XF
+Gq
 zr
 uQ
 zk
@@ -6300,12 +6341,12 @@ kp
 kp
 kp
 kp
-XF
-XF
-XF
-XF
+Gq
+Gq
+Gq
+Gq
 IO
-XF
+Gq
 WF
 JA
 eE
@@ -6348,8 +6389,8 @@ kp
 kp
 kp
 kp
-XF
-XF
+Gq
+Gq
 tt
 DL
 Te
@@ -6397,7 +6438,7 @@ kp
 kp
 kp
 kp
-XF
+Gq
 cl
 vV
 OZ
@@ -6446,7 +6487,7 @@ kp
 kp
 kp
 kp
-XF
+Gq
 wT
 qg
 vV
@@ -6495,8 +6536,8 @@ kp
 kp
 kp
 kp
-XF
-XF
+Gq
+Gq
 WB
 gD
 PC
@@ -6544,7 +6585,7 @@ kp
 kp
 kp
 kp
-XF
+Gq
 Mn
 Qv
 wj
@@ -6593,7 +6634,7 @@ kp
 kp
 kp
 kp
-XF
+Gq
 RB
 IJ
 ez
@@ -6642,7 +6683,7 @@ kp
 kp
 kp
 kp
-XF
+Gq
 Rs
 KC
 KH
@@ -6691,13 +6732,13 @@ kp
 kp
 kp
 kp
-XF
-XF
-XF
-XF
-XF
-XF
-XF
+Gq
+Gq
+Gq
+Gq
+Gq
+Gq
+Gq
 WF
 nM
 Jt
