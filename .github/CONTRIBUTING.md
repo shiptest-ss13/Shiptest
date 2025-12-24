@@ -37,7 +37,7 @@ The Project Lead is responsible for controlling, adding, and removing maintainer
 The Head Coder controls quality of code, maintainability of the project, CI and unit tests. They have say over features but primarly based off the merit of the code.
 
 ### Lore Head
-Much of the Lore heads work is done outside github itself, much of it in doucments or wiki pages, however lore-maints can still be manually requested on a pr if it has a significant lore implication
+Much of the Lore heads work is done outside github itself, much of it in doucments or wiki pages, however lore-maints can still be manually requested on a pr if it has a significant lore implication.
 
 ### Head Spriter
 
