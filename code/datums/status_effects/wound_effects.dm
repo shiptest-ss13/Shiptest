@@ -190,7 +190,7 @@
 	if(status_owner.get_active_hand() == linked_limb)
 		return linked_wound.get_action_delay_mult()
 
-	return
+	return ..()
 
 // bones
 /datum/status_effect/wound/blunt/bone
