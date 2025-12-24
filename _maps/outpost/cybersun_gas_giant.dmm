@@ -1346,6 +1346,7 @@
 "du" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/machinery/light/small/directional/north,
+/obj/effect/turf_decal/box/white,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/medical)
 "dv" = (
@@ -3792,6 +3793,14 @@
 /obj/item/trash/mirastin{
 	pixel_y = 7
 	},
+/obj/item/trash/pistachios{
+	pixel_x = 5;
+	pixel_y = 2
+	},
+/obj/item/trash/popcorn{
+	pixel_x = -3;
+	pixel_y = -3
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/maintenance/fore)
 "jf" = (
@@ -5312,6 +5321,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/corner{
 	dir = 4
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/exterior/csoutpost)
 "mL" = (
@@ -5615,6 +5625,10 @@
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple,
 /turf/open/cybersun_outpost_exterior,
 /area/outpost/external)
+"ns" = (
+/obj/effect/turf_decal/corner/transparent/lightgrey/mono,
+/turf/closed/indestructible/titanium/nodiagnonal,
+/area/outpost/exterior/csoutpost)
 "nt" = (
 /obj/structure/table/glass,
 /obj/item/reagent_containers/food/drinks/bottle/amaretto{
@@ -6013,6 +6027,16 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/cargo/office)
+"or" = (
+/obj/effect/turf_decal/corner/transparent/cybersunteal/half{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
+	dir = 8
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/mono/dark,
+/area/outpost/exterior/csoutpost)
 "os" = (
 /obj/effect/turf_decal/corner/transparent/cybersunteal/half,
 /obj/effect/turf_decal/siding/wood{
@@ -6150,7 +6174,8 @@
 /area/outpost/cargo/office)
 "oH" = (
 /obj/structure/sign/barsign{
-	pixel_y = 30
+	pixel_y = 30;
+	req_access = list(101)
 	},
 /obj/effect/turf_decal/corner/transparent/cybersunteal/half{
 	dir = 1
@@ -7455,7 +7480,8 @@
 "rQ" = (
 /obj/structure/reagent_dispensers/cooking_oil,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/box/white,
+/turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/maintenance/fore)
 "rS" = (
 /obj/structure/railing/thin/corner{
@@ -8825,6 +8851,9 @@
 	network = list("1000eye");
 	dir = 10
 	},
+/obj/item/kirbyplants{
+	icon_state = "plant-09"
+	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/outpost/vacant_rooms/office)
 "vl" = (
@@ -9197,6 +9226,7 @@
 "wi" = (
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "wj" = (
@@ -9859,6 +9889,24 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/outpost/hallway/central)
+"xP" = (
+/obj/structure/platform/ship_four{
+	dir = 8
+	},
+/obj/structure/table/glass,
+/obj/item/storage/bag/tray{
+	pixel_y = 5
+	},
+/obj/item/food/kebab/fafe_skewer{
+	pixel_x = -5;
+	pixel_y = 3
+	},
+/obj/item/food/kebab/fafe_skewer{
+	pixel_x = 2;
+	pixel_y = 1
+	},
+/turf/open/floor/suns/dark/plain,
+/area/outpost/crew/bar/cybersun_outpost)
 "xQ" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
 	dir = 4
@@ -10909,6 +10957,10 @@
 	},
 /obj/structure/table/glass,
 /obj/item/radio/intercom/directional/west,
+/obj/item/reagent_containers/food/drinks/bottle/faraseta{
+	pixel_y = 8;
+	pixel_x = -6
+	},
 /turf/open/floor/suns/dark/plain,
 /area/outpost/crew/bar/cybersun_outpost)
 "Az" = (
@@ -12243,6 +12295,17 @@
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/suns/dark/plain,
 /area/outpost/crew/promenade)
+"DK" = (
+/obj/structure/platform/ship_four{
+	dir = 8
+	},
+/obj/structure/table/glass,
+/obj/item/reagent_containers/food/drinks/bottle/faraseta{
+	pixel_y = 9;
+	pixel_x = -6
+	},
+/turf/open/floor/suns/dark/plain,
+/area/outpost/crew/bar/cybersun_outpost)
 "DL" = (
 /obj/machinery/vending/games,
 /obj/structure/sign/painting/library{
@@ -13355,6 +13418,7 @@
 /area/outpost/crew/court)
 "Gj" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "Gl" = (
@@ -13625,7 +13689,11 @@
 /area/outpost/crew/bar/cybersun_outpost)
 "GU" = (
 /obj/structure/table/glass,
-/obj/item/food/nachos,
+/obj/item/food/nachos{
+	name = "outpost nachos";
+	desc = "How long have these been out...";
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/toxin/bad_food = 4)
+	},
 /turf/open/floor/suns/hatch/maple,
 /area/outpost/crew/promenade)
 "GV" = (
@@ -14089,6 +14157,9 @@
 	dir = 10
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/item/kirbyplants{
+	icon_state = "plant-21"
+	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/outpost/vacant_rooms/office)
 "Ic" = (
@@ -14486,6 +14557,7 @@
 	pixel_x = 6;
 	pixel_y = -1
 	},
+/obj/effect/turf_decal/box/white,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/medical)
 "Jb" = (
@@ -15165,7 +15237,8 @@
 "KF" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/box/white,
+/turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/maintenance/fore)
 "KG" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -15293,6 +15366,22 @@
 	},
 /obj/effect/turf_decal/industrial/hatch,
 /obj/structure/closet/crate/trashcart,
+/obj/item/valentine{
+	pixel_x = -4;
+	pixel_y = -1
+	},
+/obj/item/trash/waffles{
+	pixel_x = 3;
+	pixel_y = 7
+	},
+/obj/item/trash/sosjerky{
+	pixel_y = 2;
+	pixel_x = 1
+	},
+/obj/item/trash/lifosa{
+	pixel_x = -2;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/cargo/recycling)
 "KV" = (
@@ -15304,7 +15393,8 @@
 "KW" = (
 /obj/structure/reagent_dispensers/beerkeg,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/box/white,
+/turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/maintenance/fore)
 "KX" = (
 /obj/effect/turf_decal/corner/opaque/white/three_quarters{
@@ -15944,7 +16034,9 @@
 /obj/machinery/light/dim/directional/west,
 /obj/item/reagent_containers/food/drinks/bottle/vodka{
 	pixel_y = 6;
-	pixel_x = -8
+	pixel_x = -8;
+	name = "Mr. Confidence";
+	desc = "You're fairly sure this is just a bottle of vodka with 'Mr. Confidence' slapped on as a label"
 	},
 /obj/item/clothing/head/wig{
 	pixel_x = 2;
@@ -15959,7 +16051,9 @@
 	pixel_x = 4
 	},
 /obj/item/bodycamera/broadcast_camera{
-	pixel_y = 3
+	pixel_y = 3;
+	name = "Mr. Show";
+	desc = "A broadcast camera with a small Cybersun logo under the control switches."
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/bar/cybersun_outpost)
@@ -18082,6 +18176,16 @@
 /obj/structure/catwalk,
 /turf/open/cybersun_outpost_exterior,
 /area/outpost/external)
+"Rd" = (
+/obj/effect/turf_decal/corner/transparent/cybersunteal/half{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/cybersunteal/line{
+	dir = 4
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/mono/dark,
+/area/outpost/exterior/csoutpost)
 "Re" = (
 /obj/structure/railing/thin{
 	dir = 8
@@ -19761,6 +19865,15 @@
 	},
 /turf/open/floor/plating,
 /area/outpost/operations)
+"UX" = (
+/obj/structure/platform/ship_four,
+/obj/structure/table/glass,
+/obj/item/reagent_containers/food/drinks/bottle/faraseta{
+	pixel_y = 9;
+	pixel_x = -6
+	},
+/turf/open/floor/suns/dark/plain,
+/area/outpost/crew/bar/cybersun_outpost)
 "UY" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -25461,7 +25574,7 @@ aR
 oc
 Eb
 qx
-By
+UX
 vb
 lp
 uU
@@ -25717,8 +25830,8 @@ sE
 CG
 CG
 CG
-CG
-CG
+DK
+xP
 qS
 gI
 Zf
@@ -30319,7 +30432,7 @@ dI
 dI
 dI
 dI
-OI
+Bx
 OI
 OI
 OI
@@ -30563,10 +30676,10 @@ pZ
 Nm
 wt
 sx
+Rd
 ih
 ih
-ih
-ih
+Rd
 ih
 ih
 mK
@@ -30579,7 +30692,7 @@ ir
 ir
 "}
 (69,1,1) = {"
-ih
+ir
 ih
 ih
 VM
@@ -30699,13 +30812,13 @@ Sn
 ih
 ih
 ih
+Rd
 ih
 ih
-ih
-ih
+ir
 "}
 (70,1,1) = {"
-Gb
+ir
 Gb
 Ig
 gq
@@ -30828,10 +30941,10 @@ Gb
 Gb
 Gb
 Gb
-Gb
+ir
 "}
 (71,1,1) = {"
-bg
+ns
 bg
 bg
 Gb
@@ -30954,10 +31067,10 @@ bg
 bg
 bg
 bg
-bg
+ir
 "}
 (72,1,1) = {"
-Gb
+ir
 Gb
 Fb
 Sf
@@ -31070,7 +31183,7 @@ Sf
 Kf
 Oc
 Sf
-Sf
+or
 Sf
 Sf
 EK
@@ -31080,10 +31193,10 @@ Gb
 Gb
 Gb
 Gb
-Gb
+ir
 "}
 (73,1,1) = {"
-Sf
+ir
 Sf
 Aq
 ir
@@ -31203,10 +31316,10 @@ lJ
 zu
 Sf
 Sf
+or
 Sf
 Sf
-Sf
-Sf
+ir
 "}
 (74,1,1) = {"
 ir
@@ -31577,7 +31690,7 @@ tD
 lg
 Ff
 nY
-OI
+kA
 OI
 OI
 OI
