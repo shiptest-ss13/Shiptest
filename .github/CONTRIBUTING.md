@@ -55,7 +55,12 @@ Maintainers are quality control. If a proposed pull request doesn't meet the fol
 
 Maintainers can revert your changes if they feel they are not worth maintaining or if they did not live up to the quality specifications.
 
-Unlike most other servers, we have a more formal seperation between code-tainers, map-tainers, sprite-tainers, and even lore-tainers (lore curators). In general its recommended to keep to your lane and get approval of the respective team if their review is important to a pr. (A pr with a large addition of code and sprites would want to get a review from both.) Balance changes, however, despite being a code change, can be reviewed by any maintainer or even admin.
+Unlike most other servers, we have a more formal seperation between code-tainers, map-tainers, sprite-tainers, and even lore-tainers (lore curators). They operate semi-independently and prs that makes meaninful changes to parts of the game require a approval from each relevent team.
+Examples of changes that dont require approval
+- A few fluff sprites for a map.
+- Extreamly simple subtypes for a pr that adds clothing sprites.
+
+Game balance changes (map balances changes will still require maptainer approval) despite being a code change, can be reviewed by any maintainer or even admin.
 
 ### Maintainer Code of Conduct
 
