@@ -34,7 +34,7 @@ You can of course, as always, ask for help on the discord channels, or the forum
 The Project Lead is responsible for controlling, adding, and removing maintainers from the project. In addition to filling the role of a normal maintainer, they have sole authority on who becomes a maintainer, as well as who remains a maintainer and who does not. The Project Lead also has the final say on what gameplay changes get into and out of the game. He or she has full veto power on any feature or balance additions, changes, or removals, and attempts to establish a universally accepted direction for the game.
 
 ### Head Coder
-The Head Coder controls quality of code, maintainability of the project, CI and unit tests. They have say over features but primarly based off the merit of the code.
+The Head Coder controls quality of code, maintainability of the project, CI and unit tests. They have say over features but primarly based off the merit of the code, e.g long term maintenance for complex feature.
 
 ### Lore Head
 Much of the Lore heads work is done outside github itself, much of it in doucments or wiki pages, however lore-maints can still be manually requested on a pr if it has a significant lore implication.
