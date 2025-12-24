@@ -224,3 +224,11 @@
 /area/ruin/unpowered/icemoon/downed_transport/security_office
 	name = "Security Office"
 	icon_state = "security"
+
+// command post
+
+/area/ruin/icemoon/command_post
+	name = "Command Post"
+	icon_state = "green"
+
+/area/ruin/icemoon/command_post
