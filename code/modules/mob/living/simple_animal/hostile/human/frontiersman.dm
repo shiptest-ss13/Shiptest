@@ -286,6 +286,9 @@
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered
 	weapon_drop_chance = 0
+	atmos_requirements = IMMUNE_ATMOS_REQS
+	minbodytemp = 0
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/internals
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/neutered
 	weapon_drop_chance = 0
