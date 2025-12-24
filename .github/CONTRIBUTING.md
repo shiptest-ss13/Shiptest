@@ -31,13 +31,13 @@ You can of course, as always, ask for help on the discord channels, or the forum
 
 ### Project Lead
 
-The Project Lead is responsible for controlling, adding, and removing maintainers from the project. In addition to filling the role of a normal maintainer, they have sole authority on who becomes a maintainer, as well as who remains a maintainer and who does not. The Project Lead also has the final say on what gameplay changes get into and out of the game. He or she has full veto power on any feature or balance additions, changes, or removals, and attempts to establish a universally accepted direction for the game.
+The Project Lead is responsible for controlling, adding, and removing maintainers from the project. In addition to filling the role of a normal maintainer, they have sole authority on who becomes a maintainer, as well as who remains a maintainer and who does not. The Project Lead also has the final say on what gameplay changes are added to and removed from the game. He or she has full veto power on any feature or balance additions, changes, or removals, and attempts to establish a universally accepted direction for the game.
 
 ### Head Coder
-The Head Coder controls quality of code, maintainability of the project, CI and unit tests. They have say over features but primarly based off the merit of the code, e.g long term maintenance for complex feature.
+The Head Coder controls the quality of code, maintainability of the project, CI, and unit tests. They have a say over features, but primarily based on the merit of the code, e.g., long-term maintenance for complex features.
 
 ### Lore Head
-Much of the Lore heads work is done outside github itself, much of it in doucments or wiki pages, however lore-maints can still be manually requested on a pr if it has a significant lore implication.
+Much of the Lore heads' work is done outside github itself, much of it in doucments or wiki pages; however, lore-maints can still be manually requested on a pr if it has a significant lore implication.
 
 ### Head Spriter
 
@@ -55,11 +55,11 @@ Maintainers are quality control. If a proposed pull request doesn't meet the fol
 
 Maintainers can revert your changes if they feel they are not worth maintaining or if they did not live up to the quality specifications.
 
-Unlike most other servers, we have a more formal seperation between code-tainers, map-tainers, sprite-tainers, and even lore-tainers (lore curtators). In general its recommended to keep to your lane and get approval of the respective team if their review is important to a pr. (A pr with a large addition of code and sprites would want to get a review from both for example). Balance changes however despite being a code change can be reviewed by any maintainer.
+Unlike most other servers, we have a more formal seperation between code-tainers, map-tainers, sprite-tainers, and even lore-tainers (lore curators). In general its recommended to keep to your lane and get approval of the respective team if their review is important to a pr. (A pr with a large addition of code and sprites would want to get a review from both.) Balance changes, however, despite being a code change, can be reviewed by any maintainer or even admin.
 
 ### Maintainer Code of Conduct
 
-Maintainers are expected to maintain the codebase in its entirety. This means that maintainers are in charge of pull requests, issues, and the Git discussion board. Maintainers have say on what will and will not be merged. Maintainers should assign themselves to pull requests that they are claiming and reviewing and should respect when others assign themselves to a pull request and not interfere except in situations where they believe a pull request to be heavily detrimental to the codebase or its playerbase. **Maintainers are not server admins and should not use their rank on the server to perform admin related tasks except where asked to by a Headmin or higher.**
+Maintainers are expected to maintain the codebase in its entirety. This means that maintainers are in charge of pull requests, issues, and the Git discussion board. Maintainers have a say on what will and will not be merged. Maintainers should assign themselves to pull requests that they are claiming and reviewing, and should respect when others assign themselves to a pull request and not interfere except in situations where they believe a pull request to be heavily detrimental to the codebase or its playerbase. **Maintainers are not server admins and should not use their rank on the server to perform admin related tasks except where asked to by a Headmin or higher.**
 
 <details>
 <summary>Maintainer Guidelines</summary>
@@ -67,13 +67,13 @@ Maintainers are expected to maintain the codebase in its entirety. This means th
 These are the few directives we have for project maintainers.
 
 - Do not merge PRs you create.
-- Do not merge PRs until 24 hours have passed since it was opened. Exceptions include:
+- Do not merge PRs until 24 hours have passed since they were opened. Exceptions include:
   - Emergency fixes or CI fixes.
-    - Try to get secondary maintainer approval before merging if you are able to.
+    - Try to get secondary maintainer approval before merging if you can.
   - PRs with empty commits intended to generate a changelog.
 - Do not close PRs purely for breaking a template if the same information is contained without it.
 
-These are not steadfast rules as maintainers are expected to use their best judgement when operating.
+These are not steadfast rules as maintainers are expected to use their best judgment when operating.
 
 </details>
 
