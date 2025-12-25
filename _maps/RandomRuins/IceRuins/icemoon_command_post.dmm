@@ -1902,7 +1902,6 @@
 	dir = 9
 	},
 /obj/structure/catwalk/over,
-/obj/structure/catwalk/over,
 /turf/open/floor/plating/icemoon,
 /area/ruin/icemoon/command_post)
 "rI" = (
@@ -1922,6 +1921,16 @@
 /obj/item/flashlight/flare/burnt,
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/icemoon/command_post)
+"sm" = (
+/obj/machinery/door/poddoor{
+	dir = 8;
+	id = "caveshed"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/storage)
 "sB" = (
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/trimline/opaque/red/line{
@@ -2581,16 +2590,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/command_post/armory)
-"wR" = (
-/obj/machinery/door/poddoor{
-	dir = 8;
-	id = "caveshed"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/concrete/reinforced,
-/area/ruin/icemoon/command_post/storage)
 "wT" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/turf_decal/trimline/opaque/red/line{
@@ -3208,6 +3207,18 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/command_post/mission_control)
+"DM" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/icemoon,
+/area/ruin/icemoon/command_post)
 "DO" = (
 /obj/structure/chair{
 	dir = 4
@@ -5023,18 +5034,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/icemoon/command_post/armory)
-"VD" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk/over,
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/floor/plating/icemoon,
-/area/ruin/icemoon/command_post)
 "VR" = (
 /obj/effect/spawner/bunk_bed,
 /turf/open/floor/plasteel/patterned/grid/dark,
@@ -6064,7 +6063,7 @@ mR
 jt
 jt
 HQ
-wR
+sm
 bI
 bI
 HQ
@@ -6162,7 +6161,7 @@ ur
 Ld
 pn
 ha
-VD
+DM
 qJ
 os
 Vj
