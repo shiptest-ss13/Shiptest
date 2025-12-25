@@ -84,6 +84,8 @@
 	icon = 'icons/effects/mapping/mapping_helpers.dmi'
 	icon_state = ""
 	invisibility = INVISIBILITY_OBSERVER
+	// Unless otherwise specified, layer above everything
+	layer = ABOVE_ALL_MOB_LAYER
 	var/late = FALSE
 
 /obj/effect/mapping_helpers/Initialize()
