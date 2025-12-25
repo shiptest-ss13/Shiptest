@@ -179,6 +179,18 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/officer)
+"cf" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/icemoon,
+/area/ruin/icemoon/command_post)
 "cj" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6;
@@ -508,6 +520,16 @@
 	},
 /turf/open/floor/concrete/tiles,
 /area/ruin/icemoon/command_post/dorms)
+"fL" = (
+/obj/machinery/door/poddoor{
+	dir = 8;
+	id = "caveshed"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/storage)
 "fM" = (
 /obj/structure/chair/stool,
 /obj/item/weldingtool/electric{
@@ -1561,6 +1583,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/machinery/airalarm/directional/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/kitchen/second)
 "nZ" = (
@@ -1716,6 +1741,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/kitchen/second)
@@ -3801,6 +3829,9 @@
 	pixel_x = 0;
 	pixel_y = 23
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/icemoon/command_post)
 "Ka" = (
@@ -4804,6 +4835,9 @@
 "TV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/command_post/storage)
 "Ui" = (
@@ -6034,7 +6068,7 @@ mR
 jt
 jt
 HQ
-bI
+fL
 bI
 bI
 HQ
@@ -6132,7 +6166,7 @@ ur
 Ld
 pn
 ha
-zd
+cf
 qJ
 os
 Vj
