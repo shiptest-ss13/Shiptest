@@ -61,6 +61,13 @@
 		/datum/mission/ruin/downed_transport
 	)
 
+/datum/map_template/ruin/icemoon/command_post
+	name = "Ramzi Command Post"
+	id = "command_post"
+	description = "A Ramzi Clique-controlled command post that directs raids and manages communications within its outfit within the sector."
+	suffix = "icemoon_command_post.dmm"
+	ruin_tags = list(RUIN_TAG_HARD_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER)
+
 /datum/mission/ruin/site_investigation
 	name = "Site Investigation"
 	desc = "Sent a prospecting team to set up on a nearby ice world a few months back and about a month ago they went off the radar. Fast forward two weeks and I find the bastards two men short. Apparently they collapsed the mineshaft to 'keep it in', whatever that means. Go in there, check out the mineshaft and figure out what the hell spooked em so bad. Oh, and bring me back some proof too."
