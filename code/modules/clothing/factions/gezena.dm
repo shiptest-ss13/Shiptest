@@ -421,6 +421,7 @@
 	icon_state = "pgfgoggles"
 	item_state = "pgfgoggles"
 	clothing_flags = SEALS_EYES | FLASH_PROTECTION_FLASH
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
