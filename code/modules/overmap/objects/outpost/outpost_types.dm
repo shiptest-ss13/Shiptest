@@ -172,6 +172,7 @@
 /datum/map_template/outpost/cybersun_gas_giant
 	name = "cybersun_gas_giant"
 	outpost_name = "Thousand Eyes Perch"
+	outpost_administrator = "Cybersun Frontier Developments"
 
 /datum/map_template/outpost/hangar/cybersun_gas_giant_20x20
 	name = "hangar/cybersun_gas_giant_20x20"
