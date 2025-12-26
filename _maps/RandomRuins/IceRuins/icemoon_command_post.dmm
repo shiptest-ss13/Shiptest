@@ -59,6 +59,13 @@
 	},
 /turf/closed/mineral/random/snow,
 /area/ruin/icemoon/command_post)
+"bs" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete,
+/area/ruin/icemoon/command_post/engi)
 "bx" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/curtain/cloth,
@@ -221,6 +228,13 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/dorms/third)
+"cO" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet/directional/east,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/icemoon/command_post/engi)
 "cT" = (
 /obj/structure/cable{
 	icon_state = "1-6"
@@ -269,64 +283,16 @@
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/icemoon/command_post)
 "dX" = (
-/obj/structure/closet/wall/med/directional/north,
-/obj/item/storage/firstaid{
-	pixel_x = -6;
-	pixel_y = 14
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
 	},
-/obj/item/bonesetter{
-	pixel_x = -3;
-	pixel_y = 7
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/structure/chair{
+	dir = 8
 	},
-/obj/item/stack/medical/splint/twelve{
-	pixel_x = -4;
-	pixel_y = 4
-	},
-/obj/item/stack/medical/bruise_pack{
-	pixel_x = 7;
-	pixel_y = 20
-	},
-/obj/item/stack/medical/ointment{
-	pixel_x = 6;
-	pixel_y = 8
-	},
-/obj/item/reagent_containers/glass/bottle/chitosan{
-	pixel_x = 10;
-	pixel_y = 16
-	},
-/obj/item/reagent_containers/syringe{
-	pixel_x = 8;
-	pixel_y = 7
-	},
-/obj/item/reagent_containers/hypospray/medipen/morphine{
-	pixel_x = 7;
-	pixel_y = 7
-	},
-/obj/item/reagent_containers/hypospray/medipen/morphine{
-	pixel_x = 11;
-	pixel_y = 7
-	},
-/obj/item/reagent_containers/medigel/sterilizine{
-	pixel_x = 1;
-	pixel_y = 8
-	},
-/obj/item/clothing/suit/ramzi/smock{
-	pixel_x = -6;
-	pixel_y = -6
-	},
-/obj/item/clothing/head/ramzi/surgical{
-	pixel_x = -6;
-	pixel_y = 1
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
-	},
-/obj/item/clothing/neck/stethoscope{
-	pixel_x = 6;
-	pixel_y = -2
-	},
-/turf/open/floor/concrete/slab_1,
-/area/ruin/icemoon/command_post/dorms)
+/obj/structure/extinguisher_cabinet/directional/east,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/kitchen/second)
 "eg" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/tiles,
@@ -719,12 +685,10 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/command_post/kitchen)
 "gZ" = (
-/obj/effect/turf_decal/corner/opaque/syndiered/border{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/icemoon/command_post/mission_control)
+/obj/structure/guncloset,
+/obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonmouth,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/armory)
 "ha" = (
 /obj/machinery/door/airlock/grunge,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -895,62 +859,22 @@
 /turf/closed/mineral/random/snow,
 /area/ruin/icemoon/command_post)
 "iN" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#543C30"
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 2;
-	color = "#543C30"
-	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/hydra,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+/obj/effect/turf_decal/road/line{
 	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/wood/walnut,
-/area/ruin/icemoon/command_post/dorms)
+/turf/open/floor/concrete/pavement/icemoon,
+/area/overmap_encounter/planetoid/ice/explored)
 "iR" = (
-/obj/structure/closet/secure_closet/armorycage{
-	pixel_x = 0;
-	pixel_y = 0;
-	req_access = null
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
-/obj/item/grenade/spawnergrenade/manhacks{
-	pixel_x = -5;
-	pixel_y = -4
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
-/obj/item/grenade/spawnergrenade/manhacks{
-	pixel_x = -5;
-	pixel_y = 3
-	},
-/obj/item/grenade/spawnergrenade/manhacks{
-	pixel_x = -5;
-	pixel_y = 11
-	},
-/obj/item/grenade/smokebomb{
-	pixel_x = 7;
-	pixel_y = -3
-	},
-/obj/item/grenade/smokebomb{
-	pixel_x = 7;
-	pixel_y = 4
-	},
-/obj/item/grenade/smokebomb{
-	pixel_x = 7;
-	pixel_y = 11
-	},
-/obj/machinery/door/poddoor/shutters{
-	dir = 8;
-	id = "rightarmoury"
-	},
-/turf/open/floor/concrete/slab_1,
-/area/ruin/icemoon/command_post/armory)
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/concrete/slab_2,
+/area/ruin/icemoon/command_post/dorms)
 "jc" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -1024,6 +948,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/engi)
+"jH" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/command_post/mission_control)
 "jJ" = (
 /obj/structure/railing/thin{
 	dir = 8
@@ -1078,14 +1010,11 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/eva)
 "jR" = (
-/obj/structure/guncloset,
-/obj/item/gun/ballistic/shotgun/doublebarrel/roumain,
-/obj/machinery/door/poddoor/shutters{
-	dir = 8;
-	id = "rightarmoury"
+/obj/effect/turf_decal/road/line{
+	dir = 4
 	},
-/turf/open/floor/concrete/slab_1,
-/area/ruin/icemoon/command_post/armory)
+/turf/open/floor/concrete/pavement/icemoon,
+/area/overmap_encounter/planetoid/ice/explored)
 "jU" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/transparent/red/diagonal,
@@ -1514,12 +1443,6 @@
 /turf/open/floor/concrete/slab_2,
 /area/ruin/icemoon/command_post/dorms)
 "nM" = (
-/obj/structure/guncloset,
-/obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonmouth,
-/obj/item/gun/ballistic/rifle/scout{
-	pixel_x = -2;
-	pixel_y = -5
-	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
 	id = "leftarmoury"
@@ -1527,14 +1450,12 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/command_post/armory)
 "nN" = (
-/obj/effect/turf_decal/borderfloorblack,
-/obj/effect/turf_decal/trimline/opaque/red/line{
-	dir = 1
+/obj/machinery/door/poddoor/shutters{
+	dir = 8;
+	id = "rightarmoury"
 	},
-/obj/structure/chair/stool,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/icemoon/command_post/eva)
+/turf/open/space/basic,
+/area/ruin/icemoon/command_post/armory)
 "nP" = (
 /obj/effect/turf_decal/borderfloor/corner{
 	dir = 4
@@ -1824,7 +1745,15 @@
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/icemoon/command_post)
 "pR" = (
-/turf/open/floor/concrete/slab_4,
+/obj/machinery/light/directional/north,
+/obj/effect/turf_decal/borderfloor/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 5;
+	layer = 2.040
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/ruin/icemoon/command_post/armory)
 "pU" = (
 /obj/machinery/door/poddoor{
@@ -1891,9 +1820,21 @@
 /turf/open/floor/concrete/slab_4,
 /area/ruin/icemoon/command_post/engi)
 "rb" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
+	dir = 8;
+	piping_layer = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
 /turf/open/floor/concrete/slab_4,
-/area/ruin/icemoon/command_post/armory)
+/area/ruin/icemoon/command_post/engi)
 "rl" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -2210,10 +2151,16 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/eva)
 "uA" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
+/obj/structure/table/rolling,
+/obj/item/storage/toolbox/syndicate{
+	pixel_x = -1;
+	pixel_y = -2
 	},
-/turf/open/floor/concrete/slab_4,
+/obj/item/clothing/glasses/welding{
+	pixel_x = 5;
+	pixel_y = 8
+	},
+/turf/open/floor/concrete,
 /area/ruin/icemoon/command_post/engi)
 "uB" = (
 /obj/machinery/light/directional/east,
@@ -2248,6 +2195,34 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/icemoon/command_post/dorms/third)
+"uT" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/structure/table,
+/obj/machinery/recharger{
+	pixel_x = -8;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = -10;
+	pixel_y = 1
+	},
+/obj/item/flashlight/pen{
+	pixel_x = -4;
+	pixel_y = -8
+	},
+/obj/item/gun_maint_kit{
+	pixel_x = 4;
+	pixel_y = -2
+	},
+/obj/item/gun_maint_kit{
+	pixel_x = 7;
+	pixel_y = 10
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/command_post/armory)
 "uV" = (
 /obj/effect/turf_decal/siding/wood/end{
 	color = "#543C30";
@@ -2332,24 +2307,16 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/crew_quarters)
 "vt" = (
-/obj/effect/turf_decal/borderfloor{
+/obj/effect/turf_decal/borderfloorblack{
 	dir = 1
 	},
-/obj/structure/table/rolling,
-/obj/item/weldingtool/electric{
-	pixel_x = -8;
-	pixel_y = 8
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/structure/chair/stool{
+	dir = 1
 	},
-/obj/item/screwdriver/power{
-	pixel_x = 5;
-	pixel_y = 7
-	},
-/obj/item/crowbar/power{
-	pixel_x = 0;
-	pixel_y = 2
-	},
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/icemoon/command_post/engi)
+/area/ruin/icemoon/command_post/armory)
 "vu" = (
 /obj/machinery/telecomms/server/presets/pirate,
 /obj/effect/turf_decal/borderfloorblack,
@@ -2755,20 +2722,12 @@
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/icemoon/command_post)
 "ys" = (
-/obj/item/storage/toolbox/syndicate{
-	pixel_x = -4;
-	pixel_y = -10
+/obj/machinery/door/poddoor/shutters{
+	dir = 8;
+	id = "rightarmoury"
 	},
-/obj/item/clothing/glasses/welding{
-	pixel_x = 8;
-	pixel_y = -1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/concrete,
-/area/ruin/icemoon/command_post/engi)
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/armory)
 "yv" = (
 /obj/effect/turf_decal/atmos/air,
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
@@ -2957,15 +2916,36 @@
 /turf/open/floor/concrete/slab_2/icemoon,
 /area/ruin/icemoon/command_post)
 "Ao" = (
-/obj/effect/turf_decal/borderfloor,
-/obj/effect/turf_decal/trimline/opaque/red/line{
-	dir = 1
+/obj/structure/closet/secure_closet/armorycage{
+	pixel_x = 0;
+	pixel_y = 0;
+	req_access = null
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
+/obj/item/grenade/spawnergrenade/manhacks{
+	pixel_x = -5;
+	pixel_y = -4
 	},
-/obj/machinery/light/directional/north,
-/turf/open/floor/plasteel/mono/dark,
+/obj/item/grenade/spawnergrenade/manhacks{
+	pixel_x = -5;
+	pixel_y = 3
+	},
+/obj/item/grenade/spawnergrenade/manhacks{
+	pixel_x = -5;
+	pixel_y = 11
+	},
+/obj/item/grenade/smokebomb{
+	pixel_x = 7;
+	pixel_y = -3
+	},
+/obj/item/grenade/smokebomb{
+	pixel_x = 7;
+	pixel_y = 4
+	},
+/obj/item/grenade/smokebomb{
+	pixel_x = 7;
+	pixel_y = 11
+	},
+/turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/command_post/armory)
 "At" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -3538,12 +3518,27 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/crew_quarters)
 "Hg" = (
-/obj/structure/chair/office/dark{
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#543C30"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 2;
+	color = "#543C30"
+	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/hydra,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/hydra/dmr,
-/turf/open/floor/concrete/slab_4,
-/area/ruin/icemoon/command_post/armory)
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/dorms)
 "Ho" = (
 /obj/effect/turf_decal/road,
 /turf/open/floor/concrete/pavement/icemoon,
@@ -3606,15 +3601,14 @@
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/ruin/icemoon/command_post)
 "Is" = (
-/obj/effect/turf_decal/borderfloor,
-/obj/effect/turf_decal/trimline/opaque/red/line{
-	dir = 1
+/obj/structure/filingcabinet{
+	dir = 4;
+	pixel_x = -10;
+	pixel_y = 0
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/turf/open/floor/plasteel/mono/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/concrete/slab_4,
 /area/ruin/icemoon/command_post/armory)
 "Iw" = (
 /obj/effect/turf_decal/borderfloor{
@@ -3708,35 +3702,13 @@
 	},
 /area/ruin/icemoon/command_post/dorms)
 "Jt" = (
-/obj/structure/closet/secure_closet/armorycage{
-	req_access = null
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
 	},
-/obj/item/storage/toolbox/ammo/c10mm{
-	pixel_x = -6;
-	pixel_y = 7
-	},
-/obj/item/storage/toolbox/ammo/c556{
-	pixel_x = -6;
-	pixel_y = 1
-	},
-/obj/item/storage/toolbox/ammo/shotgun{
-	pixel_x = -6;
-	pixel_y = -5
-	},
-/obj/item/storage/box/ammo/a300{
-	pixel_x = 6;
-	pixel_y = -1
-	},
-/obj/item/storage/box/ammo/a300{
-	pixel_x = 6;
-	pixel_y = -7
-	},
-/obj/machinery/door/poddoor/shutters{
-	dir = 8;
-	id = "leftarmoury"
-	},
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/concrete/slab_1,
-/area/ruin/icemoon/command_post/armory)
+/area/ruin/icemoon/command_post/kitchen)
 "Ju" = (
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/trimline/opaque/red/line{
@@ -3804,20 +3776,15 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/crew_quarters)
 "JH" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
 	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
-	},
-/turf/open/floor/concrete/slab_4,
-/area/ruin/icemoon/command_post/engi)
+/obj/structure/chair/stool,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/eva)
 "JK" = (
 /obj/machinery/button/door{
 	name = "shed door";
@@ -4059,6 +4026,16 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/icemoon/command_post/mission_control)
+"MK" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/crew_quarters)
 "MM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/port_gen/pacman,
@@ -4217,14 +4194,32 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/command_post/armory)
 "Op" = (
-/obj/effect/turf_decal/borderfloorblack,
-/obj/effect/turf_decal/trimline/opaque/red/line{
-	dir = 1
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
 	},
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/icemoon/command_post/crew_quarters)
+/obj/item/storage/toolbox/ammo/c10mm{
+	pixel_x = -6;
+	pixel_y = 7
+	},
+/obj/item/storage/toolbox/ammo/c556{
+	pixel_x = -6;
+	pixel_y = 1
+	},
+/obj/item/storage/toolbox/ammo/shotgun{
+	pixel_x = -6;
+	pixel_y = -5
+	},
+/obj/item/ammo_box/magazine/m10mm_cottonmouth,
+/obj/item/ammo_box/magazine/m10mm_cottonmouth{
+	pixel_x = 8;
+	pixel_y = 0
+	},
+/obj/item/ammo_box/magazine/m10mm_cottonmouth{
+	pixel_x = 13;
+	pixel_y = 0
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/armory)
 "Oy" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -4243,12 +4238,8 @@
 /turf/open/floor/plating,
 /area/ruin/icemoon/command_post/engi)
 "OC" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/turf/open/floor/concrete/slab_1,
-/area/ruin/icemoon/command_post/kitchen)
+/turf/open/floor/concrete/slab_1/icemoon/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "OD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -4522,14 +4513,15 @@
 /area/ruin/icemoon/command_post)
 "QM" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 4;
+	layer = 2.040
 	},
-/turf/open/floor/concrete/slab_2,
-/area/ruin/icemoon/command_post/dorms)
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/command_post/armory)
 "QS" = (
 /obj/machinery/door/airlock/grunge{
 	dir = 4;
@@ -4541,16 +4533,8 @@
 /turf/open/floor/concrete/reinforced,
 /area/ruin/icemoon/command_post/armory)
 "QW" = (
-/obj/effect/turf_decal/trimline/opaque/red/line{
-	dir = 6;
-	layer = 2.040
-	},
-/obj/effect/turf_decal/borderfloor/corner{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/icemoon/command_post/armory)
+/turf/open/floor/grass/snow,
+/area/overmap_encounter/planetoid/ice/explored)
 "QY" = (
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/concrete,
@@ -4708,25 +4692,9 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/command_post/storage)
 "Sq" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/red/line,
-/obj/structure/table,
-/obj/machinery/recharger{
-	pixel_x = -8;
-	pixel_y = 6
-	},
-/obj/item/reagent_containers/glass/rag{
-	pixel_x = -3;
-	pixel_y = 1
-	},
-/obj/item/flashlight/pen{
-	pixel_x = 3;
-	pixel_y = -4
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/icemoon/command_post/armory)
+/obj/effect/turf_decal/road,
+/turf/open/floor/concrete/pavement/icemoon,
+/area/overmap_encounter/planetoid/ice/explored)
 "SF" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8;
@@ -4747,29 +4715,22 @@
 	},
 /area/ruin/icemoon/command_post/dorms)
 "SH" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 8
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/borderfloor/corner{
+	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/red/line{
-	dir = 4;
+	dir = 6;
 	layer = 2.040
 	},
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/icemoon/command_post/armory)
 "Ta" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/red/line,
-/obj/structure/table,
-/obj/item/gun_maint_kit,
-/obj/item/gun_maint_kit{
-	pixel_x = 0;
-	pixel_y = 10
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/icemoon/command_post/armory)
+/obj/effect/turf_decal/borderfloor,
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/engi)
 "Tb" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
@@ -4836,13 +4797,9 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/command_post/storage)
 "Ui" = (
-/obj/structure/filingcabinet{
-	dir = 4;
-	pixel_x = -10;
-	pixel_y = 0
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/slab_4,
+/obj/structure/guncloset,
+/obj/item/gun/ballistic/shotgun/doublebarrel/roumain,
+/turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/command_post/armory)
 "Uj" = (
 /turf/closed/wall/concrete/reinforced,
@@ -5010,30 +4967,43 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/icemoon/command_post/officer)
 "Vv" = (
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/red/line,
-/obj/structure/chair{
+/obj/effect/turf_decal/borderfloor{
 	dir = 8
 	},
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/icemoon/command_post/kitchen/second)
-"Vw" = (
 /obj/effect/turf_decal/trimline/opaque/red/line{
-	dir = 5;
+	dir = 4;
 	layer = 2.040
 	},
-/obj/effect/turf_decal/borderfloor/corner{
-	dir = 8
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = -10;
+	id = "rightarmoury";
+	name = "Right Armoury Lockdown"
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = 10;
+	name = "Left Armoury Lockdown";
+	id = "leftarmoury"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/command_post/armory)
+"Vw" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/icemoon/command_post/armory)
 "VC" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/concrete/slab_4,
-/area/ruin/icemoon/command_post/armory)
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/ice/explored)
 "VR" = (
 /obj/effect/spawner/bunk_bed,
 /turf/open/floor/plasteel/patterned/grid/dark,
@@ -5095,29 +5065,14 @@
 /turf/open/floor/concrete/slab_4,
 /area/ruin/icemoon/command_post/armory)
 "Wt" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 8
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/red/line{
-	dir = 4;
-	layer = 2.040
-	},
-/obj/machinery/button/door{
-	dir = 8;
-	pixel_x = 22;
-	pixel_y = 10;
-	name = "Left Armoury Lockdown";
-	id = "leftarmoury"
-	},
-/obj/machinery/button/door{
-	dir = 8;
-	pixel_x = 22;
-	pixel_y = -10;
-	id = "rightarmoury";
-	name = "Right Armoury Lockdown"
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/icemoon/command_post/armory)
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/engi)
 "Wz" = (
 /obj/machinery/door/airlock/grunge{
 	dir = 4;
@@ -5288,9 +5243,65 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/icemoon/command_post/dorms)
 "Yb" = (
-/obj/effect/turf_decal/borderfloor,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/icemoon/command_post/engi)
+/obj/structure/closet/wall/med/directional/north,
+/obj/item/bonesetter{
+	pixel_x = -3;
+	pixel_y = 7
+	},
+/obj/item/stack/medical/splint/twelve{
+	pixel_x = -4;
+	pixel_y = 4
+	},
+/obj/item/stack/medical/bruise_pack{
+	pixel_x = 7;
+	pixel_y = 20
+	},
+/obj/item/stack/medical/ointment{
+	pixel_x = 6;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/glass/bottle/chitosan{
+	pixel_x = 10;
+	pixel_y = 16
+	},
+/obj/item/reagent_containers/syringe{
+	pixel_x = 8;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/hypospray/medipen/morphine{
+	pixel_x = 7;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/hypospray/medipen/morphine{
+	pixel_x = 11;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/medigel/sterilizine{
+	pixel_x = 1;
+	pixel_y = 8
+	},
+/obj/item/clothing/suit/ramzi/smock{
+	pixel_x = -6;
+	pixel_y = -6
+	},
+/obj/item/clothing/head/ramzi/surgical{
+	pixel_x = -6;
+	pixel_y = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/item/clothing/neck/stethoscope{
+	pixel_x = 6;
+	pixel_y = -2
+	},
+/obj/item/storage/firstaid/regular{
+	pixel_x = -6;
+	pixel_y = 12;
+	layer = 2.9
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/dorms)
 "Ye" = (
 /mob/living/simple_animal/hostile/human/ramzi/ranged/smg/sidewinder,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -5447,14 +5458,12 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/command_post/armory)
 "Zl" = (
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 1
+/obj/structure/chair/office/dark{
+	dir = 8
 	},
-/obj/effect/turf_decal/trimline/opaque/red/line,
-/obj/structure/chair/stool{
-	dir = 1
-	},
-/turf/open/floor/plasteel/patterned/grid/dark,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/hydra/dmr,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/concrete/slab_4,
 /area/ruin/icemoon/command_post/armory)
 "Zp" = (
 /obj/effect/turf_decal/corner_steel_grid{
@@ -5594,6 +5603,11 @@ uM
 uM
 uM
 uM
+uM
+uM
+uM
+uM
+uM
 "}
 (2,1,1) = {"
 uM
@@ -5631,6 +5645,11 @@ kp
 uM
 kp
 kp
+uM
+uM
+uM
+uM
+uM
 uM
 uM
 uM
@@ -5692,6 +5711,11 @@ uM
 uM
 uM
 uM
+uM
+uM
+uM
+uM
+uM
 "}
 (4,1,1) = {"
 uM
@@ -5738,6 +5762,11 @@ kp
 kp
 kp
 kp
+uM
+uM
+uM
+uM
+uM
 uM
 uM
 uM
@@ -5790,6 +5819,11 @@ kp
 kp
 kp
 uM
+uM
+uM
+uM
+uM
+uM
 "}
 (6,1,1) = {"
 uM
@@ -5838,6 +5872,11 @@ kp
 kp
 kp
 kp
+uM
+uM
+uM
+uM
+uM
 uM
 "}
 (7,1,1) = {"
@@ -5888,6 +5927,11 @@ kp
 kp
 kp
 kp
+QW
+QW
+QW
+uM
+uM
 "}
 (8,1,1) = {"
 uM
@@ -5937,6 +5981,11 @@ kp
 kp
 kp
 kp
+VC
+QW
+QW
+QW
+uM
 "}
 (9,1,1) = {"
 uM
@@ -5986,6 +6035,11 @@ kp
 kp
 kp
 kp
+VC
+QW
+QW
+QW
+QW
 "}
 (10,1,1) = {"
 uM
@@ -6035,6 +6089,11 @@ AB
 XF
 kp
 kp
+VC
+VC
+VC
+QW
+QW
 "}
 (11,1,1) = {"
 uM
@@ -6083,7 +6142,12 @@ LA
 LA
 hz
 LA
-os
+LA
+OC
+VC
+OC
+QW
+QW
 "}
 (12,1,1) = {"
 uM
@@ -6131,8 +6195,13 @@ hh
 hh
 hh
 hh
-os
-uM
+hh
+iN
+iN
+VC
+iN
+QW
+QW
 "}
 (13,1,1) = {"
 uM
@@ -6180,8 +6249,13 @@ Ho
 Ho
 Ho
 Ho
-os
-uM
+Ho
+Sq
+VC
+VC
+QW
+QW
+Sq
 "}
 (14,1,1) = {"
 uM
@@ -6229,8 +6303,13 @@ oP
 oz
 oP
 oP
-os
-os
+oP
+oP
+jR
+VC
+jR
+jR
+QW
 "}
 (15,1,1) = {"
 uM
@@ -6279,7 +6358,12 @@ LA
 LA
 uB
 LA
-os
+LA
+OC
+OC
+VC
+OC
+QW
 "}
 (16,1,1) = {"
 uM
@@ -6296,7 +6380,7 @@ KG
 na
 pE
 PM
-OC
+Jt
 LI
 LI
 kp
@@ -6306,7 +6390,7 @@ sB
 EI
 jK
 Zw
-Vv
+dX
 Yt
 os
 Ci
@@ -6329,6 +6413,11 @@ AB
 XF
 kp
 os
+VC
+VC
+QW
+QW
+QW
 "}
 (17,1,1) = {"
 kp
@@ -6377,7 +6466,12 @@ kp
 kp
 kp
 kp
-uM
+VC
+VC
+QW
+QW
+QW
+QW
 "}
 (18,1,1) = {"
 kp
@@ -6427,6 +6521,11 @@ kp
 kp
 kp
 kp
+VC
+QW
+QW
+QW
+uM
 "}
 (19,1,1) = {"
 kp
@@ -6434,11 +6533,11 @@ kp
 kp
 kp
 KG
-dX
+Yb
 xq
 KG
 Fy
-QM
+iR
 KG
 pK
 jN
@@ -6476,6 +6575,11 @@ kp
 kp
 kp
 kp
+QW
+QW
+QW
+QW
+uM
 "}
 (20,1,1) = {"
 uM
@@ -6523,6 +6627,11 @@ kp
 kp
 kp
 kp
+uM
+uM
+uM
+uM
+uM
 uM
 uM
 "}
@@ -6574,6 +6683,11 @@ kp
 kp
 uM
 uM
+uM
+uM
+uM
+uM
+uM
 "}
 (22,1,1) = {"
 uM
@@ -6621,6 +6735,11 @@ kp
 kp
 kp
 kp
+uM
+uM
+uM
+uM
+uM
 uM
 uM
 "}
@@ -6672,6 +6791,11 @@ kp
 uM
 uM
 uM
+uM
+uM
+uM
+uM
+uM
 "}
 (24,1,1) = {"
 uM
@@ -6688,7 +6812,7 @@ ES
 ua
 vv
 YY
-Op
+MK
 gr
 hW
 Bj
@@ -6721,6 +6845,11 @@ kp
 kp
 uM
 uM
+uM
+uM
+uM
+uM
+uM
 "}
 (25,1,1) = {"
 uM
@@ -6732,7 +6861,7 @@ KG
 KG
 KG
 KG
-iN
+Hg
 fG
 Ef
 vb
@@ -6768,6 +6897,11 @@ kp
 kp
 kp
 kp
+uM
+uM
+uM
+uM
+uM
 uM
 uM
 "}
@@ -6819,6 +6953,11 @@ kp
 kp
 uM
 uM
+uM
+uM
+uM
+uM
+uM
 "}
 (27,1,1) = {"
 uM
@@ -6868,6 +7007,11 @@ kp
 kp
 uM
 uM
+uM
+uM
+uM
+uM
+uM
 "}
 (28,1,1) = {"
 uM
@@ -6914,6 +7058,11 @@ kp
 kp
 kp
 kp
+uM
+uM
+uM
+uM
+uM
 uM
 uM
 uM
@@ -6966,6 +7115,11 @@ kp
 uM
 uM
 uM
+uM
+uM
+uM
+uM
+uM
 "}
 (30,1,1) = {"
 uM
@@ -7011,6 +7165,11 @@ yA
 yA
 qS
 df
+uM
+uM
+uM
+uM
+uM
 uM
 uM
 uM
@@ -7064,6 +7223,11 @@ uM
 uM
 uM
 uM
+uM
+uM
+uM
+uM
+uM
 "}
 (32,1,1) = {"
 uM
@@ -7109,6 +7273,11 @@ kp
 kp
 XF
 kp
+uM
+uM
+uM
+uM
+uM
 uM
 uM
 uM
@@ -7162,6 +7331,11 @@ kp
 uM
 uM
 uM
+uM
+uM
+uM
+uM
+uM
 "}
 (34,1,1) = {"
 uM
@@ -7211,6 +7385,11 @@ kp
 uM
 uM
 uM
+uM
+uM
+uM
+uM
+uM
 "}
 (35,1,1) = {"
 uM
@@ -7231,17 +7410,17 @@ Gq
 Gq
 Gq
 rN
-nN
+JH
 HG
 IZ
 YU
 Be
 rN
 BN
-vG
+uA
 vG
 LY
-vt
+jc
 Bk
 Mf
 kp
@@ -7256,6 +7435,11 @@ kp
 kp
 kp
 kp
+uM
+uM
+uM
+uM
+uM
 uM
 uM
 uM
@@ -7286,7 +7470,7 @@ zH
 fM
 kR
 rN
-Yb
+Ta
 Vi
 vG
 QY
@@ -7304,6 +7488,11 @@ kp
 kp
 kp
 kp
+uM
+uM
+uM
+uM
+uM
 uM
 uM
 uM
@@ -7358,6 +7547,11 @@ uM
 uM
 uM
 uM
+uM
+uM
+uM
+uM
+uM
 "}
 (38,1,1) = {"
 uM
@@ -7384,7 +7578,7 @@ zH
 jQ
 Fo
 rN
-iI
+Wt
 vG
 vG
 Ii
@@ -7401,6 +7595,11 @@ kp
 kp
 kp
 kp
+uM
+uM
+uM
+uM
+uM
 uM
 uM
 uM
@@ -7456,6 +7655,11 @@ uM
 uM
 uM
 uM
+uM
+uM
+uM
+uM
+uM
 "}
 (40,1,1) = {"
 uM
@@ -7484,7 +7688,7 @@ ze
 jF
 LM
 kl
-ys
+bs
 jq
 ng
 kJ
@@ -7499,6 +7703,11 @@ kp
 kp
 kp
 kp
+uM
+uM
+uM
+uM
+uM
 uM
 uM
 uM
@@ -7529,7 +7738,7 @@ Hx
 Oi
 LQ
 YZ
-Zl
+vt
 WF
 WX
 hl
@@ -7548,6 +7757,11 @@ kp
 kp
 kp
 kp
+uM
+uM
+uM
+uM
+uM
 uM
 uM
 uM
@@ -7596,6 +7810,11 @@ kp
 kp
 kp
 kp
+uM
+uM
+uM
+uM
+uM
 uM
 uM
 uM
@@ -7652,6 +7871,11 @@ uM
 uM
 uM
 uM
+uM
+uM
+uM
+uM
+uM
 "}
 (44,1,1) = {"
 uM
@@ -7701,6 +7925,11 @@ uM
 uM
 uM
 uM
+uM
+uM
+uM
+uM
+uM
 "}
 (45,1,1) = {"
 uM
@@ -7719,13 +7948,13 @@ Qv
 wj
 wj
 qs
-gZ
+jH
 WF
+Vw
 Is
-Ui
-Hg
-pR
-Sq
+Zl
+Wc
+uT
 WF
 yv
 oh
@@ -7743,6 +7972,11 @@ kp
 kp
 kp
 kp
+uM
+uM
+uM
+uM
+uM
 uM
 uM
 uM
@@ -7770,18 +8004,18 @@ ez
 lP
 Sb
 WF
-Ao
-VC
-rb
-Wc
-Ta
+pR
+tf
+Vv
+QM
+SH
 WF
 EV
 Mf
 yj
 qX
-JH
-uA
+rb
+cO
 Mf
 kp
 kp
@@ -7791,6 +8025,11 @@ kp
 kp
 kp
 kp
+uM
+uM
+uM
+uM
+uM
 uM
 uM
 uM
@@ -7819,11 +8058,11 @@ nh
 zB
 tj
 WF
-Vw
-tf
-Wt
-SH
-QW
+nM
+nM
+WF
+ys
+nN
 WF
 Mf
 Mf
@@ -7840,6 +8079,11 @@ kp
 kp
 kp
 kp
+uM
+uM
+uM
+uM
+uM
 uM
 uM
 uM
@@ -7868,11 +8112,11 @@ Gq
 Gq
 Gq
 WF
-nM
-Jt
+gZ
+Op
 WF
-jR
-iR
+Ui
+Ao
 WF
 XF
 XF
@@ -7888,6 +8132,11 @@ kp
 kp
 kp
 kp
+uM
+uM
+uM
+uM
+uM
 uM
 uM
 uM
@@ -7946,6 +8195,11 @@ uM
 uM
 uM
 uM
+uM
+uM
+uM
+uM
+uM
 "}
 (50,1,1) = {"
 uM
@@ -7985,6 +8239,11 @@ kp
 kp
 kp
 kp
+uM
+uM
+uM
+uM
+uM
 uM
 uM
 uM
@@ -8044,6 +8303,11 @@ uM
 uM
 uM
 uM
+uM
+uM
+uM
+uM
+uM
 "}
 (52,1,1) = {"
 uM
@@ -8093,6 +8357,11 @@ uM
 uM
 uM
 uM
+uM
+uM
+uM
+uM
+uM
 "}
 (53,1,1) = {"
 uM
@@ -8129,6 +8398,11 @@ nE
 kp
 kp
 kp
+uM
+uM
+uM
+uM
+uM
 uM
 uM
 uM
@@ -8191,6 +8465,11 @@ uM
 uM
 uM
 uM
+uM
+uM
+uM
+uM
+uM
 "}
 (55,1,1) = {"
 uM
@@ -8240,6 +8519,11 @@ uM
 uM
 uM
 uM
+uM
+uM
+uM
+uM
+uM
 "}
 (56,1,1) = {"
 uM
@@ -8272,6 +8556,11 @@ os
 os
 os
 os
+uM
+uM
+uM
+uM
+uM
 uM
 uM
 uM
