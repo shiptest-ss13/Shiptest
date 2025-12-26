@@ -43,25 +43,25 @@
 	var/obj/item/bodypart/part_to_repair = patient.get_bodypart(user.zone_selected)
 	if(!part_to_repair)
 		to_chat(user, span_warning("[patient]'s [parse_zone(user.zone_selected)] is missing!"))
-		return COMPONENT_ITEM_NO_ATTACK
+		return COMPONENT_CANCEL_ATTACK_CHAIN
 
 	if(!IS_ROBOTIC_LIMB(part_to_repair))
 		to_chat(user, span_warning("[tool] can't repair this!"))
-		return COMPONENT_ITEM_NO_ATTACK
+		return COMPONENT_CANCEL_ATTACK_CHAIN
 
 	if(!(brute_heal && part_to_repair.brute_dam > 0) && !(burn_heal && part_to_repair.burn_dam > 0))
 		to_chat(user, span_warning("[patient]'s [part_to_repair.plaintext_zone] is already in good condition!"))
-		return COMPONENT_ITEM_NO_ATTACK
+		return COMPONENT_CANCEL_ATTACK_CHAIN
 
-	if(part_to_repair.get_damage() <= part_to_repair.min_damage)
+	if(part_to_repair.get_damage() <= part_to_repair.wound_integrity_loss)
 		to_chat(user, span_warning("[patient]'s [part_to_repair.plaintext_zone] cannot be repaired any further!"))
-		return COMPONENT_ITEM_NO_ATTACK
+		return COMPONENT_CANCEL_ATTACK_CHAIN
 
 	if(!patient.is_exposed(user))
-		return COMPONENT_ITEM_NO_ATTACK
+		return COMPONENT_CANCEL_ATTACK_CHAIN
 
 	if(!tool.tool_start_check(user, patient, amount = 1))
-		return COMPONENT_ITEM_NO_ATTACK
+		return COMPONENT_CANCEL_ATTACK_CHAIN
 
 	user.visible_message(
 		span_notice("[user] starts to fix some of the [heal_message] [patient]'s [part_to_repair.plaintext_zone]"),
@@ -69,7 +69,7 @@
 	)
 
 	INVOKE_ASYNC(src, PROC_REF(item_heal_robotic), tool, patient, user, part_to_repair, patient == user ? self_delay : other_delay)
-	return COMPONENT_ITEM_NO_ATTACK
+	return COMPONENT_CANCEL_ATTACK_CHAIN
 
 /**
  * Heal a robotic body part on a mob

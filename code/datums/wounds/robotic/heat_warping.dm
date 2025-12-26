@@ -1,7 +1,5 @@
 /// The flame temperature required to re-heat the chassis.
 #define CHASSIS_MELTING_POINT 1900
-/// Highest maximum integrity considered when calculating the integrity loss. This is to prevent perma-crit from critical warping on the head or chest.
-#define MAXIMUM_INTEGRITY_CONSIDERED 50
 
 /datum/wound/burn/heat_warping
 	name = "Heat-Warping Wound"
@@ -10,8 +8,6 @@
 	wound_flags = PLATING_DAMAGE
 	bio_state_required = BIO_METAL
 
-	/// The proportion of max integrity lost to this wound.
-	var/integrity_loss = 0
 	/// Whether the limb has been re-heated, allowing it to be bent back into shape
 	var/re_heated = FALSE
 
@@ -23,26 +19,15 @@
 
 	wound_series = WOUND_SERIES_METAL_HEAT_WARPING
 
-/datum/wound/burn/heat_warping/remove_wound(ignore_limb, replaced)
-	if(!replaced)
-		limb.heal_damage(0, limb.min_damage)
-	return ..()
-
 /datum/wound/burn/heat_warping/set_limb(obj/item/bodypart/new_value, replaced)
 	var/obj/item/bodypart/old_limb = ..()
-	if(old_limb)
-		if(!replaced)
-			old_limb.heal_damage(burn = old_limb.min_damage)
-		old_limb.min_damage = old_limb::min_damage
+	if(old_limb && !replaced && !QDELETED(old_limb))
+		old_limb.heal_damage(burn = min(old_limb.max_damage, WOUND_MAX_INTEGRITY_CONSIDERED) * limb_integrity_penalty)
 	if(new_value)
-		update_limb_integrity()
+		var/limb_damage = limb.get_damage()
+		if(limb_damage < limb.wound_integrity_loss)
+			limb.set_burn_dam(CEILING(limb.burn_dam + limb.wound_integrity_loss - limb_damage, DAMAGE_PRECISION))
 	return old_limb
-
-/datum/wound/burn/heat_warping/proc/update_limb_integrity()
-	limb.min_damage = min(limb.max_damage, MAXIMUM_INTEGRITY_CONSIDERED) * integrity_loss
-	var/limb_damage = limb.get_damage()
-	if(limb_damage < limb.min_damage)
-		limb.set_burn_dam(CEILING(limb.burn_dam + limb.min_damage - limb_damage, DAMAGE_PRECISION))
 
 /datum/wound/burn/heat_warping/treat(obj/item/tool, mob/user)
 	if(tool.tool_behaviour == TOOL_WELDER)
@@ -112,7 +97,7 @@
 	severity = WOUND_SEVERITY_MODERATE
 	treatable_tools = list(TOOL_WELDER)
 	threshold_penalty = 20
-	integrity_loss = 0.1
+	limb_integrity_penalty = 0.1
 
 /datum/wound_pregen_data/heat_warping/oxidation
 	abstract = FALSE
@@ -166,7 +151,7 @@
 	severity = WOUND_SEVERITY_SEVERE
 	treatable_tools = list(TOOL_WELDER, TOOL_CROWBAR)
 	threshold_penalty = 30
-	integrity_loss = 0.2
+	limb_integrity_penalty = 0.2
 
 /datum/wound_pregen_data/heat_warping/thermal_stress
 	abstract = FALSE
@@ -184,7 +169,7 @@
 	wound_flags = PLATING_DAMAGE | MANGLES_INTERIOR
 	disabling = TRUE
 	threshold_penalty = 40
-	integrity_loss = 0.3
+	limb_integrity_penalty = 0.3
 
 /datum/wound_pregen_data/heat_warping/deformed_slag
 	abstract = FALSE
@@ -192,5 +177,4 @@
 	wound_path_to_generate = /datum/wound/burn/heat_warping/critical
 	threshold_minimum = 130
 
-#undef MAXIMUM_INTEGRITY_CONSIDERED
 #undef CHASSIS_MELTING_POINT

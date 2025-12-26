@@ -338,7 +338,7 @@
 		)
 
 	if(!do_after(user, base_treat_time * (user == victim ? 1.5 : 1), target = victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
-		return
+		return TRUE
 
 	if(victim == user)
 		limb.receive_damage(brute = 5, wound_bonus = CANT_WOUND)
@@ -356,6 +356,7 @@
 		to_chat(victim, span_userdanger("[user] resets your [limb.name]!"))
 
 	qdel(src)
+	return TRUE
 
 /*
 	Severe (Hairline Fracture)

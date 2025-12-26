@@ -62,6 +62,8 @@
 	var/interaction_efficiency_penalty = 1
 	/// Incoming damage on this limb will be multiplied by this, to simulate tenderness and vulnerability (mostly burns).
 	var/damage_mulitplier_penalty = 1
+	/// The proportion of damage on this limb that cannot be healed until this wound is removed (0-1).
+	var/limb_integrity_penalty = 0
 	/// If set and this wound is applied to a leg, we take this many deciseconds extra per step on this leg
 	var/limp_slowdown
 	/// If this wound has a limp_slowdown and is applied to a leg, it has this chance to limp each step
@@ -130,6 +132,7 @@
 
 	if(status_effect_type)
 		linked_status_effect = victim.apply_status_effect(status_effect_type, src)
+		RegisterSignal(linked_status_effect, COMSIG_QDELETING, PROC_REF(on_status_effect_remove))
 	SEND_SIGNAL(victim, COMSIG_CARBON_GAIN_WOUND, src, limb)
 
 	if(!victim.alerts["wound"]) // only one alert is shared between all of the wounds
@@ -361,7 +364,7 @@
 		if(initial(disabling))
 			set_disabling(!limb.current_splint)
 
-		limb.update_wounds()
+	limb.update_wounds()
 
 	start_limping_if_we_should()
 
@@ -376,6 +379,12 @@
 			victim.reagents.add_reagent(/datum/reagent/determination, WOUND_DETERMINATION_CRITICAL)
 		if(WOUND_SEVERITY_LOSS)
 			victim.reagents.add_reagent(/datum/reagent/determination, WOUND_DETERMINATION_LOSS)
+
+/// Handles unlinking the linked status effect on deletion.
+/datum/wound/proc/on_status_effect_remove()
+	SIGNAL_HANDLER
+	UnregisterSignal(linked_status_effect, COMSIG_QDELETING)
+	linked_status_effect = null
 
 /**
  * try_treating() is an intercept run from [/mob/living/carbon/proc/attackby] right after surgeries but before anything else. Return TRUE here if the item is something that is relevant to treatment to take over the interaction.

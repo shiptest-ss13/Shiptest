@@ -16,7 +16,7 @@
 	abstract = TRUE
 	required_limb_biostate = BIO_FLESH
 
-	required_wounding_types = list(WOUND_BLUNT, WOUND_SLASH, WOUND_PIERCE)
+	required_wounding_types = list(WOUND_BLUNT)
 	wound_series = WOUND_SERIES_FLESH_MUSCLE
 	weight = WOUND_MUSCLE_WEIGHT
 

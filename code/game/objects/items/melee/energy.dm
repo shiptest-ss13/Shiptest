@@ -14,6 +14,8 @@
 	var/sword_color
 	/// The heat given off when active.
 	var/active_heat = 3500
+	/// Damage type used while active.
+	var/active_damtype = BURN
 
 	/// Force while active.
 	var/active_force = 30
@@ -56,11 +58,13 @@
 
 	if(active)
 		heat = active_heat
+		damtype = active_damtype
 		START_PROCESSING(SSobj, src)
 		if(sword_color)
 			icon_state = "[base_icon_state][sword_color]"
 	else
 		heat = initial(heat)
+		damtype = initial(damtype)
 		STOP_PROCESSING(SSobj, src)
 
 	tool_behaviour = (active ? TOOL_SAW : NONE) //Lets energy weapons cut trees. Also lets them do bonecutting surgery, which is kinda metal!
@@ -386,11 +390,9 @@
 	if(active)
 		icon_state = "[base_icon_state]-on"
 		item_state = "[base_icon_state]-on"
-		damtype = FIRE
 		armour_penetration = 60
 	else
 		icon_state = base_icon_state
 		item_state = base_icon_state
-		damtype = BRUTE
 		armour_penetration = -20
 	. = ..()

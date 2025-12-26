@@ -45,8 +45,6 @@
 	var/competition_mode = WOUND_COMPETITION_OVERPOWER_LESSERS
 	/// If this and [compete_for_wounding] is true, we will remove wounds of an even severity to us during a random wound roll.
 	var/overpower_wounds_of_even_severity = FALSE
-	/// While competing for wounding, this will overpower wounds of other wound series when set to TRUE.
-	var/compete_with_other_wound_series = FALSE
 
 
 /datum/wound_pregen_data/New()

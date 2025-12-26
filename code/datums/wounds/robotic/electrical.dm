@@ -3,7 +3,7 @@
 /datum/wound/electric
 	name = "Electrical Wound"
 	sound_effect = 'sound/effects/light_flicker.ogg'
-	wound_flags = NONE
+	wound_flags = NUMBS_BODYPART
 	bio_state_required = BIO_METAL
 
 	/// The organ currently being affected by this wound.
@@ -36,7 +36,7 @@
 	abstract = FALSE
 
 	wound_path_to_generate = /datum/wound/electric/severe
-	threshold_minimum = 80
+	threshold_minimum = 70
 
 /datum/wound/electric/critical
 	name = "Short Circuit"
@@ -48,7 +48,7 @@
 	sound_effect = 'sound/machines/defib_zap.ogg'
 	disabling = TRUE
 	processes = TRUE
-	wound_flags = MANGLES_EXTERIOR
+	wound_flags = MANGLES_EXTERIOR | NUMBS_BODYPART
 	severity = WOUND_SEVERITY_CRITICAL
 	trauma_group = BRAIN_TRAUMA_SEVERE
 
@@ -56,13 +56,12 @@
 	abstract = FALSE
 
 	wound_path_to_generate = /datum/wound/electric/critical
-	threshold_minimum = 130
+	threshold_minimum = 110
 
 /datum/wound/electric/wound_injury(datum/wound/old_wound, attack_direction)
 	if(!affected_organ)
 		affect_organ()
-	RegisterSignal(victim, COMSIG_CARBON_LOSE_ORGAN, PROC_REF(on_organ_loss))
-	RegisterSignal(victim, COMSIG_CARBON_GAIN_ORGAN, PROC_REF(on_organ_gain))
+
 
 /datum/wound/electric/replace_wound(datum/wound/electric/new_wound, smited, attack_direction)
 	if(istype(new_wound, /datum/wound/electric))
@@ -74,12 +73,16 @@
 		restore_organ()
 	else
 		QDEL_NULL(linked_trauma)
-	UnregisterSignal(victim, list(COMSIG_CARBON_LOSE_ORGAN, COMSIG_CARBON_GAIN_ORGAN))
 	return ..()
 
 /datum/wound/electric/set_victim(new_victim)
-	if(victim && !new_victim)
-		restore_organ()
+	if(victim)
+		UnregisterSignal(victim, list(COMSIG_CARBON_LOSE_ORGAN, COMSIG_CARBON_GAIN_ORGAN))
+		if(!new_victim)
+			restore_organ()
+	if(new_victim)
+		RegisterSignal(victim, COMSIG_CARBON_LOSE_ORGAN, PROC_REF(on_organ_loss))
+		RegisterSignal(victim, COMSIG_CARBON_GAIN_ORGAN, PROC_REF(on_organ_gain))
 	return ..()
 
 /datum/wound/electric/proc/affect_organ()
@@ -89,11 +92,12 @@
 			affected_organ = victim_brain
 		else
 			affected_organ = pick(limb.get_organs(ORGAN_ROBOTIC))
-	if(!affected_organ)
-		return
+		if(!affected_organ)
+			return
 	if(affected_organ.slot == ORGAN_SLOT_BRAIN)
 		if(linked_trauma)
 			QDEL_NULL(linked_trauma)
+		to_chat(victim, span_userdanger(Gibberish("Warning: Power loss to central processing core detected!", TRUE, 40)))
 		linked_trauma = victim.gain_trauma_type(trauma_group, TRAUMA_RESILIENCE_WOUND)
 	else
 		to_chat(victim, span_userdanger("Your [affected_organ.name] suddenly shuts down as it loses power!"))

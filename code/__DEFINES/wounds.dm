@@ -179,6 +179,9 @@
 /// When a wound is staining the gauze with pus
 #define GAUZE_STAIN_PUS 2
 
+/// Limb integrity is reduced to this before being used to calculate how much integrity loss it should have.
+#define WOUND_MAX_INTEGRITY_CONSIDERED 50
+
 // ~blood_flow rates of change, these are used by [/datum/wound/proc/get_bleed_rate_of_change] from [/mob/living/carbon/proc/bleed_warn] to let the player know if their bleeding is getting better/worse/the same
 /// Our wound is clotting and will eventually stop bleeding if this continues
 #define BLOOD_FLOW_DECREASING -1

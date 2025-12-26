@@ -45,28 +45,25 @@ SUBSYSTEM_DEF(wounds)
 		),
 		WOUND_SLASH = list(
 			WOUND_SERIES_FLESH_SLASH_BLEED,
-			WOUND_SERIES_FLESH_MUSCLE,
+			WOUND_SERIES_WIRED_ELECTRICAL,
 		),
 		WOUND_BURN = list(
 			WOUND_SERIES_FLESH_BURN_BASIC,
 			WOUND_SERIES_METAL_HEAT_WARPING,
+			WOUND_SERIES_WIRED_ELECTRICAL,
 		),
 		WOUND_PUNCTURE = list(
 			WOUND_SERIES_FLESH_PUNCTURE_BLEED,
 			WOUND_SERIES_WIRED_ELECTRICAL,
-			WOUND_SERIES_FLESH_MUSCLE,
 		),
 	)
-
-	/// A list of all possible wounds that can be rolled naturally.
-	var/list/all_wounds
 
 /datum/controller/subsystem/wounds/Initialize(timeofday)
 	generate_wound_static_data()
 	generate_wound_series_collection()
 	return ..()
 
-/// Constructs [GLOB.all_wound_pregen_data] by iterating through a typecache of pregen data, ignoring abstract types, and instantiating the rest.
+/// Constructs [all_wound_pregen_data] by iterating through a typecache of pregen data, ignoring abstract types, and instantiating the rest.
 /datum/controller/subsystem/wounds/proc/generate_wound_static_data()
 	var/list/datum/wound_pregen_data/all_pregen_data = list()
 

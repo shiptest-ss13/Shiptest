@@ -70,9 +70,6 @@
 	var/max_stamina_damage = 0
 	var/max_damage = 0
 
-	///The minimum amount of damage this limb can have, it cannot be healed past this point.
-	var/min_damage = 0
-
 	///Gradually increases while burning when at full damage, destroys the limb when at 100
 	var/cremation_progress = 0
 
@@ -126,6 +123,8 @@
 	var/list/scars
 	/// Our current stored wound damage multiplier
 	var/wound_damage_multiplier = 1
+	/// The amount of damage on this limb that cannot be healed until the wounds causing it are fixed
+	var/wound_integrity_loss = 0
 
 	/// This number is subtracted from all wound rolls on this bodypart, higher numbers mean more defense, negative means easier to wound
 	var/wound_resistance = 0
@@ -411,16 +410,23 @@
 		damage_mult *= 1.1
 
 	var/wounding_mods = check_woundings_mods(wound_bonus, bare_wound_bonus)
-	var/list/wound_rolls
+	var/highest_roll = 0
+	var/highest_wound_type
+	var/list/wound_rolls = list()
 	for(var/wounding_type in wounding_types)
-		var/injury_roll = rand(1, round(min(wounding_types[wounding_type], WOUND_MAX_CONSIDERED_DAMAGE) * damage_mult) ** WOUND_DAMAGE_EXPONENT) + wounding_mods
-		if(!no_dismember && injury_roll > WOUND_DISMEMBER_OUTRIGHT_THRESH && prob(get_damage() / max_damage * 100))
-			var/datum/wound/loss/dismembering = new
-			dismembering.apply_dismember(src, wounding_type, outright = TRUE, attack_direction = attack_direction)
-			return
-		LAZYSET(wound_rolls, wounding_type, injury_roll)
-	if(isnull(wound_rolls))
+		for(var/wounding_series in SSwounds.types_to_series[wounding_type])
+			var/injury_roll = rand(1, round(min(wounding_types[wounding_type], WOUND_MAX_CONSIDERED_DAMAGE) * damage_mult) ** WOUND_DAMAGE_EXPONENT) + wounding_mods
+			if(injury_roll > highest_roll)
+				highest_wound_type = wounding_type
+				highest_roll = highest_roll
+			wound_rolls[wounding_series] = max(injury_roll, wound_rolls[wounding_series])
+	if(!wound_rolls.len)
 		CRASH("check_wounding called with a null wounding_types list!")
+	if(!no_dismember && highest_roll > WOUND_DISMEMBER_OUTRIGHT_THRESH && prob(get_damage() / max_damage * 100))
+		var/datum/wound/loss/dismembering = new
+		dismembering.apply_dismember(src, highest_wound_type, outright = TRUE, attack_direction = attack_direction)
+		return
+
 	var/list/series_wounding_mods = check_series_wounding_mods()
 
 	var/list/datum/wound/possible_wounds = list()
@@ -446,10 +452,7 @@
 				break // breaks out of the nested loop
 
 		var/datum/wound_pregen_data/pregen_data = SSwounds.pregen_data[iterated_path]
-		var/best_fit = -INFINITY
-		for(var/required_wound_type in pregen_data.required_wounding_types)
-			best_fit = max(best_fit, wound_rolls[required_wound_type])
-		var/specific_injury_roll = (best_fit + series_wounding_mods[pregen_data.wound_series])
+		var/specific_injury_roll = (wound_rolls[pregen_data.wound_series] + series_wounding_mods[pregen_data.wound_series])
 		if(pregen_data.get_threshold_for(src, attack_direction) > specific_injury_roll)
 			possible_wounds -= iterated_path
 			continue
@@ -458,9 +461,6 @@
 			for(var/datum/wound/other_path as anything in possible_wounds)
 				if(other_path == iterated_path)
 					continue
-				/*var/datum/wound_pregen_data/other_pregen_data = SSwounds.pregen_data[other_path]
-				if(pregen_data.compete_with_other_wound_series && pregen_data.wound_series != other_pregen_data.wound_series)
-					continue*/
 				if(iterated_path::severity == other_path::severity && pregen_data.overpower_wounds_of_even_severity)
 					possible_wounds -= other_path
 					continue
@@ -704,9 +704,9 @@
 	if(required_status && !(bodytype & required_status)) //So we can only heal certain kinds of limbs, ie robotic vs organic.
 		return
 	if(brute)
-		set_brute_dam(round(max(brute_dam - brute, min_damage - burn_dam, 0), DAMAGE_PRECISION))
+		set_brute_dam(round(max(brute_dam - brute, wound_integrity_loss - burn_dam, 0), DAMAGE_PRECISION))
 	if(burn)
-		set_burn_dam(round(max(burn_dam - burn, min_damage - brute_dam, 0), DAMAGE_PRECISION))
+		set_burn_dam(round(max(burn_dam - burn, wound_integrity_loss - brute_dam, 0), DAMAGE_PRECISION))
 	if(stamina)
 		set_stamina_dam(round(max(stamina_dam - stamina, 0), DAMAGE_PRECISION))
 	if(owner)
@@ -1164,12 +1164,15 @@
  */
 /obj/item/bodypart/proc/update_wounds(replaced = FALSE)
 	var/dam_mul = 1 //initial(wound_damage_multiplier)
+	var/integrity_mul = 0
 
-// we can (normally) only have one wound per type, but remember there's multiple types (smites like :B:loodless can generate multiple cuts on a limb)
+	// we can (normally) only have one wound per type, but remember there's multiple types (smites like :B:loodless can generate multiple cuts on a limb)
 	for(var/datum/wound/iter_wound as anything in wounds)
 		dam_mul *= iter_wound.damage_mulitplier_penalty
+		integrity_mul += iter_wound.limb_integrity_penalty
 
 	wound_damage_multiplier = dam_mul
+	wound_integrity_loss = min(max_damage, WOUND_MAX_INTEGRITY_CONSIDERED) * integrity_mul
 
 /**
  * Calculates how much blood this limb is losing per life tick
