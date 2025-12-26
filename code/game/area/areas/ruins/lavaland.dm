@@ -27,12 +27,6 @@
 	name = "Hierophant's Arena"
 	icon_state = "dk_yellow"
 
-//Lava Canyon
-
-/area/ruin/unpowered/scorched_hut
-	name = "Scorched Hut"
-	icon_state = "red"
-
 // Wrecked Factory
 
 /area/ruin/lavaland/factory/warehouse
