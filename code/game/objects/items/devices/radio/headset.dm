@@ -5,6 +5,9 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	RADIO_CHANNEL_CENTCOM = RADIO_TOKEN_CENTCOM,
 	RADIO_CHANNEL_SOLGOV = RADIO_TOKEN_SOLGOV,		//WS Edit - SolGov Rep
 	RADIO_CHANNEL_SYNDICATE = RADIO_TOKEN_SYNDICATE,
+	RADIO_CHANNEL_CYBERSUN = RADIO_TOKEN_CYBERSUN,
+	RADIO_CHANNEL_NGR = RADIO_TOKEN_NGR,
+	RADIO_CHANNEL_SUNS = RADIO_TOKEN_SUNS,
 	RADIO_CHANNEL_NANOTRASEN = RADIO_TOKEN_NANOTRASEN, //Shiptest edits - faction channels, removed department channels
 	RADIO_CHANNEL_MINUTEMEN = RADIO_TOKEN_MINUTEMEN,
 	RADIO_CHANNEL_PGF = RADIO_TOKEN_PGF,
@@ -119,23 +122,82 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/syndicate/suns
 	name = "SUNS headset"
-	icon_state = "suns_headset"
 	desc = "A headset worn by staff and students of SUNS, both in the frontier and elsewhere."
+	keyslot = new /obj/item/encryptionkey/syndicate/suns
+	keyslot2 = new /obj/item/encryptionkey/heads/captain
 
 /obj/item/radio/headset/syndicate/suns/command
 	name = "SUNS command headset"
 	desc = "A headset worn by staff and students of SUNS, both in the frontier and elsewhere. This one is worn by command staff."
 	command = TRUE
+	keyslot = new /obj/item/encryptionkey/syndicate/suns
+	keyslot2 = new /obj/item/encryptionkey/heads/captain
 
 /obj/item/radio/headset/syndicate/alt/suns
 	name = "SUNS bowman headset"
-	icon_state = "suns_headset_alt"
 	desc = "A headset worn by staff and students of SUNS, both in the frontier and elsewhere. Protects ears from distractions during exams."
+	keyslot = new /obj/item/encryptionkey/syndicate/suns
 
 /obj/item/radio/headset/syndicate/alt/suns/command
 	name = "SUNS bowman command headset"
 	desc = "A headset worn by staff and students of SUNS, both in the frontier and elsewhere. This one is worn by command staff. Protects ears from distractions during exams."
 	command = TRUE
+	keyslot = new /obj/item/encryptionkey/syndicate/suns
+	keyslot2 = new /obj/item/encryptionkey/heads/captain
+
+/obj/item/radio/headset/syndicate/cybersun
+	name = "cybersun headset"
+	desc = "A headset worn by members of Cybersun Industries and security forces on the frontier."
+	keyslot = new /obj/item/encryptionkey/syndicate/cybersun
+
+/obj/item/radio/headset/syndicate/captain/cybersun
+	name = "cybersun leader headset"
+	desc = "A headset worn by officers of Cybersun Industries and security forces on the frontier."
+	command = TRUE
+	keyslot = new /obj/item/encryptionkey/syndicate/cybersun
+	keyslot2 = new /obj/item/encryptionkey/heads/captain
+
+/obj/item/radio/headset/syndicate/alt/cybersun
+	name = "cybersun bowman headset"
+	desc = "A headset worn by members of Cybersun Industries and security forces on the frontier. Protects ears from flashbangs."
+	icon_state = "syndie_headset_alt"
+	hearing_protection = TRUE
+	keyslot = new /obj/item/encryptionkey/syndicate/cybersun
+
+/obj/item/radio/headset/syndicate/alt/captain/cybersun
+	name = "cybersun leader bowman headset"
+	desc = "A headset worn by members of Cybersun Industries and security forces on the frontier Protects ears from flashbangs."
+	command = TRUE
+	keyslot = new /obj/item/encryptionkey/syndicate/cybersun
+	keyslot2 = new /obj/item/encryptionkey/heads/captain
+
+/obj/item/radio/headset/syndicate/ngr
+	name = "new gorlex headset"
+	desc = "A headset worn by members of the New Gorlex Republic on the frontier."
+	icon_state = "syndie_headset"
+	keyslot = new /obj/item/encryptionkey/syndicate/ngr
+
+/obj/item/radio/headset/syndicate/captain/ngr
+	name = "new gorlex leader headset"
+	desc = "A headset worn by officers of the New Gorlex Republic on the frontier."
+	command = TRUE
+	keyslot = new /obj/item/encryptionkey/syndicate/ngr
+	keyslot2 = new /obj/item/encryptionkey/heads/captain
+
+/obj/item/radio/headset/syndicate/alt/ngr
+	name = "new gorlex bowman headset"
+	desc = "A headset worn by members of the New Gorlex Republic on the frontier. Protects ears from flashbangs."
+	icon_state = "syndie_headset_alt"
+	hearing_protection = TRUE
+	keyslot = new /obj/item/encryptionkey/syndicate/ngr
+
+/obj/item/radio/headset/syndicate/alt/captain/ngr
+	name = "new gorlex leader bowman headset"
+	desc = "A headset worn by officers of the New Gorlex Republic on the frontier. Protects ears from flashbangs."
+	command = TRUE
+	keyslot = new /obj/item/encryptionkey/syndicate/ngr
+	keyslot2 = new /obj/item/encryptionkey/heads/captain
+
 
 //nanotrasen
 /obj/item/radio/headset/nanotrasen
