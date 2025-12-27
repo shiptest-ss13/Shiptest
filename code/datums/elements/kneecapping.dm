@@ -90,9 +90,10 @@
 		span_danger("You swing \the [weapon] at [target]'s kneecaps!"),
 		)
 
-		var/datum/wound/blunt/severe/severe_wound_type = /datum/wound/blunt/severe
-		var/datum/wound/blunt/critical/critical_wound_type = /datum/wound/blunt/critical
-		leg.receive_damage(brute = weapon.force, wound_bonus = rand(initial(severe_wound_type.threshold_minimum), initial(critical_wound_type.threshold_minimum) + 10))
+		var/min_wound = leg.get_wound_threshold_of_wound_type(WOUND_BLUNT, WOUND_SEVERITY_SEVERE, return_value_if_no_wound = 30, wound_source = weapon)
+		var/max_wound = leg.get_wound_threshold_of_wound_type(WOUND_BLUNT, WOUND_SEVERITY_CRITICAL, return_value_if_no_wound = 50, wound_source = weapon)
+
+		leg.receive_damage(brute = weapon.force, wound_bonus = rand(min_wound, max_wound + 10))
 		log_combat(attacker, target, "broke the kneecaps of", weapon)
 		target.update_damage_overlays()
 		attacker.do_attack_animation(target, used_item = weapon)

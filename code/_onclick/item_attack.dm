@@ -175,9 +175,12 @@
  * * params - Click params of this attack
  */
 /obj/item/proc/attack(mob/living/target_mob, mob/living/user, params)
-	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, target_mob, user, params) & COMPONENT_ITEM_NO_ATTACK)
-		return
-	SEND_SIGNAL(user, COMSIG_MOB_ITEM_ATTACK, target_mob, user, params)
+	var/signal_return = SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, target_mob, user, params) | SEND_SIGNAL(user, COMSIG_MOB_ITEM_ATTACK, target_mob, user, params)
+	if(signal_return & COMPONENT_CANCEL_ATTACK_CHAIN)
+		return TRUE
+	if(signal_return & COMPONENT_SKIP_ATTACK)
+		return FALSE
+
 	if(item_flags & NOBLUDGEON)
 		return
 
