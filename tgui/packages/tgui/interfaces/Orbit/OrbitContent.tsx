@@ -25,16 +25,16 @@ export const OrbitContent = (props, context) => {
 
   const sections: readonly ContentSection[] = [
     {
-      content: data.alive.sort((a, b) => a.name.localeCompare(b.name)),
+      content: data.alive,
       title: 'Alive',
       color: 'good',
     },
     {
-      content: data.dead.sort((a, b) => a.name.localeCompare(b.name)),
+      content: data.dead,
       title: 'Dead',
     },
     {
-      content: data.ghosts.sort((a, b) => a.name.localeCompare(b.name)),
+      content: data.ghosts,
       title: 'Ghosts',
     },
     {
