@@ -459,7 +459,7 @@
 	hardsuit_type = "old"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/old
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
-	slowdown = 1
+	slowdown = 0.5
 	jetpack = null
 	supports_variations = KEPORI_VARIATION
 
