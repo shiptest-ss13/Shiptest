@@ -103,6 +103,9 @@
 		CtrlClickOn(A)
 		return
 
+	if(typing_indicator)
+		set_typing_indicator(FALSE)
+
 	if(incapacitated(ignore_restraints = TRUE))
 		return
 
@@ -204,10 +207,6 @@
 			return TRUE
 	return FALSE
 
-/**
- * A backwards depth-limited breadth-first-search to see if the target is
- * logically "in" anything adjacent to us.
- */
 /**
  * A backwards depth-limited breadth-first-search to see if the target is
  * logically "in" anything adjacent to us.
