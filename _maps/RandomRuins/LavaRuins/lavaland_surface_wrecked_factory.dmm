@@ -1749,6 +1749,15 @@
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
+"qD" = (
+/obj/effect/turf_decal/trimline/opaque/lime/warning,
+/obj/effect/decal/cleanable/blood{
+	icon_state = "trails_2";
+	dir = 4
+	},
+/obj/item/ammo_box/magazine/m9mm_expedition/empty,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/dorms)
 "qH" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 8
@@ -2551,10 +2560,8 @@
 /obj/effect/turf_decal/trimline/opaque/lime/warning{
 	dir = 1
 	},
-/obj/item/ammo_box/magazine/m9mm_expedition{
-	start_empty = 1
-	},
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/saber,
+/obj/item/gun/ballistic/automatic/smg/expedition/no_mag,
+/obj/item/ammo_box/magazine/m9mm_expedition/empty,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
 "yU" = (
@@ -7178,7 +7185,7 @@ MH
 sZ
 qX
 iR
-WZ
+qD
 CT
 sZ
 MH
