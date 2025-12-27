@@ -1474,6 +1474,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 
 /datum/species/proc/help(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)
+	if(target.on_fire)
+		return target.help_extinguish_act(user)
 	if(target.body_position == STANDING_UP || (target.health >= 0 && !HAS_TRAIT(target, TRAIT_FAKEDEATH)))
 		target.help_shake_act(user)
 		if(target != user)
