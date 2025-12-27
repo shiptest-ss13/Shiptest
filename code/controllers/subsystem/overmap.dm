@@ -1148,6 +1148,24 @@ SUBSYSTEM_DEF(overmap)
 	override_object_colors = TRUE
 	overmap_icon_state = "overmap_dark"
 
+/datum/overmap_star_system/safezone/thousand_eyes
+	name = "Cybersun - Kapche-Legnica"
+	starname = "Kapche-Legnica"
+	startype = /datum/overmap/star/binary
+	default_outpost_type = /datum/overmap/outpost/cybersun_gas_giant
+
+	primary_color = "#00eaff"
+	secondary_color = "#4d140f"
+
+	hazard_primary_color = "#972241"
+	hazard_secondary_color = "#71a1a9"
+
+	primary_structure_color = "#ffffff"
+	secondary_structure_color = "#ffffff"
+
+	override_object_colors = TRUE
+	overmap_icon_state = "overmap"
+
 /datum/overmap_star_system/c64
 
 	//main colors, used for dockable terrestrials, and background
