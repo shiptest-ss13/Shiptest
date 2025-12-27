@@ -60,12 +60,16 @@
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "exercise", /datum/mood_event/exercise)
 		L.apply_status_effect(STATUS_EFFECT_EXERCISED)
 
+/// roughly 8 seconds for 1 workout rep
+#define WORKOUT_LENGTH 8
+
 /obj/structure/weightmachine
 	name = "weight machine"
 	desc = "Just looking at this thing makes you feel tired."
 	icon = 'icons/obj/gym_equipment.dmi'
 	density = TRUE
 	anchored = TRUE
+	var/pixel_shift_z = -3
 	var/buildstacktype = /obj/item/stack/sheet/metal
 	var/buildstackamount = 5
 
@@ -141,7 +145,8 @@
 		playsound(user, 'sound/machines/click.ogg', 60, TRUE)
 		obj_flags &= ~IN_USE
 		update_appearance()
-		user.pixel_y = user.base_pixel_y
+		animate(user, pixel_z = pixel_shift_z, time = WORKOUT_LENGTH * 0.5, flags = ANIMATION_PARALLEL|ANIMATION_RELATIVE)
+		animate(pixel_z = -pixel_shift_z, time = WORKOUT_LENGTH * 0.5, flags = ANIMATION_PARALLEL)
 		var/finishmessage = pick("You feel stronger!","You feel like you can take on the world!","You feel robust!","You feel indestructible!")
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "exercise", /datum/mood_event/exercise)
 		to_chat(user, finishmessage)

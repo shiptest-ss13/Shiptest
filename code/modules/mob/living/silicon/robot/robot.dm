@@ -878,9 +878,8 @@
 		hud_used.update_robot_modules_display()
 
 	if (hasExpanded)
-		resize = 0.5
 		hasExpanded = FALSE
-		update_transform()
+		update_transform(0.5)
 	logevent("Chassis configuration has been reset.")
 	module.transform_to(/obj/item/robot_module)
 
