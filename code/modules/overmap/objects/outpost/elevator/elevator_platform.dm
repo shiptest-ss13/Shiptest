@@ -133,4 +133,12 @@
 		if(QDELETED(thing)) // if we let nulls stick around they fuck EVERYTHING
 			lift_load -= thing
 			continue
+		if(istype(thing, /mob/living/carbon))
+			var/mob/living/carbon/buckled_mob = thing
+			if(buckled_mob.buckled)
+				var/obj/temp_buckling_item = buckled_mob.buckled
+				temp_buckling_item.forceMove(destination)
+				thing.forceMove(destination)
+				temp_buckling_item.buckle_mob(thing, TRUE, FALSE)
+				continue
 		thing.forceMove(destination)
