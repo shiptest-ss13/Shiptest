@@ -31,13 +31,11 @@ export const OrbitTooltip = (props: Props) => {
           </LabeledList.Item>
         ) : (
           <>
-            {!!name && (
-              <LabeledList.Item label="Real Name">{name}</LabeledList.Item>
-            )}
             {!!full_name && (
-              <LabeledList.Item label="Shown Name">
-                {full_name}
-              </LabeledList.Item>
+              <LabeledList.Item label="Real Name">{full_name}</LabeledList.Item>
+            )}
+            {!!name && (
+              <LabeledList.Item label="Shown Name">{name}</LabeledList.Item>
             )}
             {!!job && <LabeledList.Item label="Job">{job}</LabeledList.Item>}
             {!!antag && (
