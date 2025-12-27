@@ -3,7 +3,7 @@ import { Stack, Button, Flex, Icon } from '../../components';
 
 import { capitalizeFirst } from 'common/string';
 
-import { getDisplayColor, getDisplayName } from './helpers';
+import { getDisplayColor } from './helpers';
 import { Antagonist, Observable, OrbitData } from './types';
 
 type Props = {
