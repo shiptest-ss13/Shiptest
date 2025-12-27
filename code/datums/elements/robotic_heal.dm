@@ -37,7 +37,10 @@
 /datum/element/robotic_heal/proc/on_item_attack(obj/item/tool, mob/living/patient, mob/user, params)
 	SIGNAL_HANDLER
 
-	if(user.a_intent == INTENT_HARM)
+	if(user.a_intent != INTENT_HELP)
+		return NONE
+
+	if(!iscarbon(patient))
 		return NONE
 
 	var/obj/item/bodypart/part_to_repair = patient.get_bodypart(user.zone_selected)
