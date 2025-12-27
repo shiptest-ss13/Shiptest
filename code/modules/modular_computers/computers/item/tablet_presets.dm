@@ -29,7 +29,6 @@
 	install_component(new /obj/item/computer_hardware/network_card)
 	install_component(new /obj/item/computer_hardware/printer/mini)
 	hard_drive.store_file(new /datum/computer_file/program/shipping)
-	hard_drive.store_file(new /datum/computer_file/program/mission_board)
 
 /// Given to Nuke Ops members.
 /obj/item/modular_computer/tablet/nukeops/Initialize()
