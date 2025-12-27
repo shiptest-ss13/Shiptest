@@ -1,4 +1,5 @@
 /obj/item/food/meat
+	name = "meat"
 	w_class = WEIGHT_CLASS_SMALL
 	icon = 'icons/obj/food/meat.dmi'
 	var/subjectname = "" //old, remove
