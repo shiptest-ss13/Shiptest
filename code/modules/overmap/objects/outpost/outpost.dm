@@ -167,7 +167,7 @@
 	max_missions = min(20 + (SSovermap.controlled_ships.len * 2), 40)
 	while(LAZYLEN(missions) < max_missions)
 		var/mission_type = SSmissions.get_weighted_mission_type()
-		var/datum/mission/outpost/M = new mission_type(src)
+		var/datum/mission/M = new mission_type(src)
 		LAZYADD(missions, M)
 
 /datum/overmap/outpost/proc/cycle_missions()

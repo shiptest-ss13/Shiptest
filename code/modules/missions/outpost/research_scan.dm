@@ -1,4 +1,4 @@
-/datum/mission/outpost/survey
+/datum/mission/survey
 	//incoming pr: scan 12 rocks
 	desc = "Survey some features"
 
@@ -12,42 +12,42 @@
 	var/atom/movable/objective_type
 	var/num_wanted = 1
 
-/datum/mission/outpost/survey/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc, obj/hangar_crate_spawner/cargo_belt)
+/datum/mission/survey/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc, obj/hangar_crate_spawner/cargo_belt)
 	. = ..()
 	scanner = spawn_bound(scanner_type, accept_loc, VARSET_CALLBACK(src, scanner, null))
 	scanner.name += " ([capitalize(objective_type.name)])"
 	scanner.scans_required = num_wanted
 	scanner.scan_target = objective_type
 
-/datum/mission/outpost/survey/Destroy()
+/datum/mission/survey/Destroy()
 	scanner = null
 	return ..()
 
-/datum/mission/outpost/survey/can_complete()
+/datum/mission/survey/can_complete()
 	. = ..()
 	if(!.)
 		return
 	var/obj/docking_port/mobile/cont_port = SSshuttle.get_containing_shuttle(scanner)
 	return . && (current_num() >= num_wanted) && (cont_port?.current_ship == servant)
 
-/datum/mission/outpost/survey/get_progress_string()
+/datum/mission/survey/get_progress_string()
 	return "[current_num()]/[num_wanted]"
 
-/datum/mission/outpost/survey/get_progress_percent()
+/datum/mission/survey/get_progress_percent()
 	if(!scanner)
 		return 0
 	return current_num()/num_wanted
 
 
-/datum/mission/outpost/survey/turn_in()
+/datum/mission/survey/turn_in()
 	recall_bound(scanner)
 	return ..()
 
-/datum/mission/outpost/survey/give_up()
+/datum/mission/survey/give_up()
 	recall_bound(scanner)
 	return ..()
 
-/datum/mission/outpost/survey/proc/current_num()
+/datum/mission/survey/proc/current_num()
 	if(!scanner)
 		return 0
 	return scanner.scan_tally
@@ -55,7 +55,7 @@
 
 //Survey: The heavens
 
-/datum/mission/outpost/survey/garden
+/datum/mission/survey/garden
 	name = ""
 	desc = ""
 	value = 1500
@@ -66,7 +66,7 @@
 	var/garden_string = "lush gardens"
 	var/planet_hint ="Beach and Jungle"
 
-/datum/mission/outpost/survey/garden/New(...)
+/datum/mission/survey/garden/New(...)
 	num_wanted = rand(num_wanted-4,num_wanted+2)
 	if(!name)
 		name = "Survey [garden_string]"
@@ -77,7 +77,7 @@
 	value = rand(value*0.75, value*1.25) + (num_wanted*50)
 	. = ..()
 
-/datum/mission/outpost/survey/garden/waste
+/datum/mission/survey/garden/waste
 	value = 3000
 	scanner_type = /obj/item/survey_handheld/advanced
 	objective_type = /obj/structure/flora/ash/garden/waste
@@ -86,7 +86,7 @@
 	garden_string = "sickly gardens"
 	planet_hint = "Waste"
 
-/datum/mission/outpost/survey/garden/ice
+/datum/mission/survey/garden/ice
 	value = 2000
 	objective_type = /obj/structure/flora/ash/garden/frigid
 	scanner_type = /obj/item/survey_handheld/advanced
@@ -94,7 +94,7 @@
 	garden_string = "chilly gardens"
 	planet_hint = "Ice"
 
-/datum/mission/outpost/survey/garden/arid
+/datum/mission/survey/garden/arid
 	value = 2000
 	objective_type = /obj/structure/flora/ash/garden/arid
 	scanner_type = /obj/item/survey_handheld/advanced
@@ -104,7 +104,7 @@
 
 //Survey: we like chemicals
 
-/datum/mission/outpost/survey/geyser
+/datum/mission/survey/geyser
 	name = "scan chemical geyser"
 	desc = ""
 	value = 2500
@@ -114,12 +114,12 @@
 
 	num_wanted = 1
 
-/datum/mission/outpost/survey/geyser/New(...)
+/datum/mission/survey/geyser/New(...)
 	if(!desc)
 		desc = "[SSmissions.get_researcher_name()] has requested that we locate and scan planetary geysers for potential investment into pharmacuticals within the system. Utilze the provided scanner to scan and record data on [num_wanted] geyser."
 	. = ..()
 
-/datum/mission/outpost/survey/anomaly
+/datum/mission/survey/anomaly
 	name = ""
 	desc = ""
 	value = 3000
@@ -128,7 +128,7 @@
 	objective_type = /obj/effect/anomaly
 	num_wanted = 2
 
-/datum/mission/outpost/survey/anomaly/New(...)
+/datum/mission/survey/anomaly/New(...)
 	num_wanted = rand(num_wanted-1,num_wanted+1)
 	if(!name)
 		name = "Scan Anomaly"

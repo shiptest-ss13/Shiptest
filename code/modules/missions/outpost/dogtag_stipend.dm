@@ -1,4 +1,4 @@
-/datum/mission/outpost/acquire/dogtags
+/datum/mission/acquire/dogtags
 	name = "Pirate Hunting Stipend"
 	desc = ""
 	value = 2000
@@ -12,7 +12,7 @@
 	weight = 0
 	var/pirate_type = ""
 
-/datum/mission/outpost/acquire/dogtags/New(...)
+/datum/mission/acquire/dogtags/New(...)
 	. = ..()
 	num_wanted = rand(num_wanted-4,num_wanted+6)
 	if(!desc)
@@ -20,7 +20,7 @@
 		Retrieve their dogtags, put them in the provided case, and return it to us to complete the bounty."
 	value += (num_wanted*200)
 
-/datum/mission/outpost/acquire/dogtags/ramzi
+/datum/mission/acquire/dogtags/ramzi
 	name = "Ramzi Clique Bounty"
 	desc = null
 	objective_type = /obj/item/clothing/neck/dogtag/ramzi
@@ -28,7 +28,7 @@
 	num_wanted = 8
 	pirate_type = "Ramzi Clique"
 
-/datum/mission/outpost/acquire/dogtags/frontier
+/datum/mission/acquire/dogtags/frontier
 	name = "New Frontiersman Bounty"
 	desc = null
 	objective_type = /obj/item/clothing/neck/dogtag/frontier

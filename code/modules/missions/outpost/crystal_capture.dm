@@ -1,4 +1,4 @@
-/datum/mission/outpost/acquire/crystal_critter
+/datum/mission/acquire/crystal_critter
 	name = "Crystal Infection Study"
 	desc = ""
 	value = 8000
@@ -8,7 +8,7 @@
 	num_wanted = 1
 	count_stacks = FALSE
 
-/datum/mission/outpost/acquire/crystal_critter/New(...)
+/datum/mission/acquire/crystal_critter/New(...)
 	if(!name)
 		name = "Crystal Infection Study"
 	if(!desc)
@@ -17,7 +17,7 @@
 	. = ..()
 
 
-/datum/mission/outpost/acquire/crystal_critter/atom_effective_count(atom/movable/target)
+/datum/mission/acquire/crystal_critter/atom_effective_count(atom/movable/target)
 	if(is_type_in_list(target, list(
 			/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal, \
 			/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal, \

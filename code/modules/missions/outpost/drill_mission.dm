@@ -1,7 +1,7 @@
 /*
 		Core sampling missions
 */
-/datum/mission/outpost/drill
+/datum/mission/drill
 	name = "Class 1 core sample mission"
 	desc = "We require geological information from one of the neighboring planetoids. \
 			Please anchor the drill in place and defend it until it has gathered enough samples. \
@@ -36,7 +36,7 @@
 	///bonus fluff
 	var/bonus_text = TRUE
 
-/datum/mission/outpost/drill/generate_mission_details()
+/datum/mission/drill/generate_mission_details()
 	. = ..()
 	selected_planet = pick(available_planets)
 	num_wanted = rand(num_wanted-2,num_wanted+2)
@@ -49,7 +49,7 @@
 		desc += " \n\nA punchcard will be provided for ease of locating a [selected_planet.name]. \
 					A 500 credit bonus will be applied for not using one."
 
-/datum/mission/outpost/drill/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc, obj/hangar_crate_spawner/cargo_belt)
+/datum/mission/drill/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc, obj/hangar_crate_spawner/cargo_belt)
 	. = ..()
 	//you shouldn't be accepting this without an outpost but just in case
 	if(isnull(cargo_belt))
@@ -69,32 +69,32 @@
 		if(bonus_text)
 			punchcard.desc += span_notice("\nA [span_bold("500 credit")] bonus will be applied for keeping this until the end of your sample mission.")
 
-/datum/mission/outpost/drill/can_complete()
+/datum/mission/drill/can_complete()
 	. = ..()
 	if(!.)
 		return
 	var/obj/docking_port/mobile/scanner_port = SSshuttle.get_containing_shuttle(sampler)
 	return . && (sampler.num_current >= num_wanted) && (scanner_port?.current_ship == servant)
 
-/datum/mission/outpost/drill/get_progress_string()
+/datum/mission/drill/get_progress_string()
 	if(!sampler)
 		return "0/[num_wanted]"
 	else
 		return "[sampler.num_current]/[num_wanted]"
 
 //stupid fox proc
-/datum/mission/outpost/drill/get_progress_percent()
+/datum/mission/drill/get_progress_percent()
 	if(!sampler)
 		return 0
 	else
 		return sampler.num_current/num_wanted
 
 
-/datum/mission/outpost/drill/Destroy()
+/datum/mission/drill/Destroy()
 	sampler = null
 	return ..()
 
-/datum/mission/outpost/drill/turn_in()
+/datum/mission/drill/turn_in()
 	//Gives players a little extra money for going past the mission goal
 	value += (sampler.num_current - num_wanted)*200
 	if(punchcard)
@@ -105,21 +105,21 @@
 	recall_bound(sampler)
 	return ..()
 
-/datum/mission/outpost/drill/give_up()
+/datum/mission/drill/give_up()
 	if(punchcard)
 		recall_bound(punchcard)
 	recall_bound(sampler)
 
 	return ..()
 
-/datum/mission/outpost/drill/classtwo
+/datum/mission/drill/classtwo
 	name = "Class 2 core sample mission"
 	value = 4500
 	weight = 9
 	class_wanted = 2
 	num_wanted = 6
 
-/datum/mission/outpost/drill/classthree
+/datum/mission/drill/classthree
 	name = "Class 3 core sample mission"
 	value = 8000
 	weight = 5
@@ -129,7 +129,7 @@
 /*
 		Variant for rare planets
 */
-/datum/mission/outpost/drill/rareplanet
+/datum/mission/drill/rareplanet
 	name = "Class 1 rare core sample mission"
 	desc = "We have discovered a rare planetoid and wish to study it's geology. \
 			Please anchor the drill in place and defend it until it has gathered enough samples. \
@@ -146,7 +146,7 @@
 	bonus_text = FALSE
 	num_wanted = 6
 
-/datum/mission/outpost/drill/rare_planet/generate_mission_details()
+/datum/mission/drill/rare_planet/generate_mission_details()
 	. = ..()
 	name = "Class [class_wanted] rare [selected_planet.name] core sample mission"
 	desc = "We have discovered a rare [selected_planet.name] and wish to study it's geology. \
@@ -166,7 +166,7 @@
 		desc += " \n\nA punchcard will be provided for ease of locating a [selected_planet.name].\
 				A 500 credit bonus will be applied for not using one."
 
-/datum/mission/outpost/drill/rare_planet/class_two
+/datum/mission/drill/rare_planet/class_two
 	name = "Class 2 rare core sample mission"
 	value = 5000
 	weight = 3
@@ -180,7 +180,7 @@
 		/datum/planet_type/shrouded = /obj/structure/vein/shrouded,
 	)
 
-/datum/mission/outpost/drill/rare_planet/class_three
+/datum/mission/drill/rare_planet/class_three
 	name = "Class 3 rare core sample mission"
 	value = 6500
 	weight = 2

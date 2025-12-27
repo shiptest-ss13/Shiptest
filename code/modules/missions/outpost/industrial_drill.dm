@@ -1,4 +1,4 @@
-/datum/mission/outpost/acquire/industrial_drill
+/datum/mission/acquire/industrial_drill
 	name = "Class 4 Vein Survey"
 	desc = ""
 	value = 18000
@@ -7,18 +7,18 @@
 	container_type = /obj/item/drill_core_container
 	var/obj/machinery/drill/sampler_mission/mission_drill
 
-/datum/mission/outpost/acquire/industrial_drill/New(...)
+/datum/mission/acquire/industrial_drill/New(...)
 	if(!desc)
 		desc = "[SSmissions.get_researcher_name()] has requested that we locate mineral resources for development in the near future. \
 		The only suitable mineral deposits for heavy industry are typically far underground. Locate a vein of sufficent depth, place the provided drill, and let it dig until it's produced a mineral sample. Place the sample in the box and return it to us. \
 		A bonus will be provided for return of the drill."
 	..()
 
-/datum/mission/outpost/acquire/industrial_drill/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc, obj/hangar_crate_spawner/cargo_belt)
+/datum/mission/acquire/industrial_drill/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc, obj/hangar_crate_spawner/cargo_belt)
 	. = ..()
 	mission_drill = spawn_bound(/obj/machinery/drill/sampler_mission, cargo_belt, VARSET_CALLBACK(src, mission_drill, null))
 
-/datum/mission/outpost/acquire/industrial_drill/turn_in()
+/datum/mission/acquire/industrial_drill/turn_in()
 	//You guys gotta bring the expensive drill back.
 
 	var/obj/docking_port/mobile/scanner_port = SSshuttle.get_containing_shuttle(mission_drill)
@@ -28,7 +28,7 @@
 
 	return ..()
 
-/datum/mission/outpost/acquire/industrial_drill/Destroy()
+/datum/mission/acquire/industrial_drill/Destroy()
 	. = ..()
 	recall_bound(mission_drill, FALSE)
 

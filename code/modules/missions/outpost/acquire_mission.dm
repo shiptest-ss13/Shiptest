@@ -1,4 +1,4 @@
-/datum/mission/outpost/acquire
+/datum/mission/acquire
 	desc = "Get me some things."
 
 	/// The type of container to be spawned when the mission is accepted.
@@ -15,7 +15,7 @@
 	///Are stacks of objective_type counted individually?
 	var/count_stacks = TRUE
 
-/datum/mission/outpost/acquire/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc, obj/hangar_crate_spawner/cargo_belt)
+/datum/mission/acquire/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc, obj/hangar_crate_spawner/cargo_belt)
 	. = ..()
 	if(isnull(cargo_belt))
 		container = spawn_bound(container_type, cargo_belt, VARSET_CALLBACK(src, container, null))
@@ -24,35 +24,35 @@
 		container = spawn_bound(container_type, cargo_belt.loc, VARSET_CALLBACK(src, container, null))
 	container.name += " ([capitalize(objective_type.name)])"
 
-/datum/mission/outpost/acquire/Destroy()
+/datum/mission/acquire/Destroy()
 	container = null
 	return ..()
 
-/datum/mission/outpost/acquire/can_complete()
+/datum/mission/acquire/can_complete()
 	. = ..()
 	if(!.)
 		return
 	var/obj/docking_port/mobile/cont_port = SSshuttle.get_containing_shuttle(container)
 	return . && (current_num() >= num_wanted) && (cont_port?.current_ship == servant)
 
-/datum/mission/outpost/acquire/get_progress_string()
+/datum/mission/acquire/get_progress_string()
 	return "[current_num()]/[num_wanted]"
 
-/datum/mission/outpost/acquire/get_progress_percent()
+/datum/mission/acquire/get_progress_percent()
 	if(!container)
 		return 0
 	else
 		return current_num()/num_wanted
 
-/datum/mission/outpost/acquire/turn_in()
+/datum/mission/acquire/turn_in()
 	del_container()
 	return ..()
 
-/datum/mission/outpost/acquire/give_up()
+/datum/mission/acquire/give_up()
 	del_container()
 	return ..()
 
-/datum/mission/outpost/acquire/proc/current_num()
+/datum/mission/acquire/proc/current_num()
 	if(!container)
 		return 0
 	var/num = 0
@@ -62,7 +62,7 @@
 			return num
 	return num
 
-/datum/mission/outpost/acquire/proc/atom_effective_count(atom/movable/target)
+/datum/mission/acquire/proc/atom_effective_count(atom/movable/target)
 	if(allow_subtypes ? !istype(target, objective_type) : target.type != objective_type)
 		return 0
 	if(count_stacks && istype(target, /obj/item/stack))
@@ -70,7 +70,7 @@
 		return target_stack.amount
 	return 1
 
-/datum/mission/outpost/acquire/proc/del_container()
+/datum/mission/acquire/proc/del_container()
 	var/turf/cont_loc = get_turf(container)
 	for(var/atom/movable/target in container.contents)
 		if(atom_effective_count(target))
@@ -83,7 +83,7 @@
 		Acquire: The Creature
 */
 
-/datum/mission/outpost/acquire/creature
+/datum/mission/acquire/creature
 	name = ""
 	desc = ""
 	value = 1500
@@ -94,7 +94,7 @@
 	count_stacks = FALSE
 	var/creature_name = "goliath"
 
-/datum/mission/outpost/acquire/creature/New(...)
+/datum/mission/acquire/creature/New(...)
 	if(!name)
 		name = "Capture a [creature_name]"
 	if(!desc)
@@ -102,7 +102,7 @@
 				Lifeform Containment Unit and return it to the outpost for a handsome payday."
 	. = ..()
 
-/datum/mission/outpost/acquire/creature/atom_effective_count(atom/movable/target)
+/datum/mission/acquire/creature/atom_effective_count(atom/movable/target)
 	. = ..()
 	if(!.)
 		return
@@ -110,36 +110,36 @@
 	if(creature.stat == DEAD)
 		return 0
 
-/datum/mission/outpost/acquire/creature/legion
+/datum/mission/acquire/creature/legion
 	value = 1300
 	objective_type = /mob/living/simple_animal/hostile/asteroid/hivelord/legion
 	creature_name = "legion"
 
-/datum/mission/outpost/acquire/creature/ice_whelp
+/datum/mission/acquire/creature/ice_whelp
 	value = 1700
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/asteroid/ice_whelp
 	creature_name = "ice whelp"
 
-/datum/mission/outpost/acquire/creature/migo
+/datum/mission/acquire/creature/migo
 	value = 1050
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/netherworld/migo/asteroid
 	creature_name = "mi-go"
 
-/datum/mission/outpost/acquire/creature/basilisk
+/datum/mission/acquire/creature/basilisk
 	value = 1050
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands
 	creature_name = "sandworld basilisk"
 
-/datum/mission/outpost/acquire/creature/lobster_activity
+/datum/mission/acquire/creature/lobster_activity
 	value = 1050
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/asteroid/lobstrosity
 	creature_name = "lobstrocity"
 
-/datum/mission/outpost/acquire/creature/watcher
+/datum/mission/acquire/creature/watcher
 	value = 1050
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/asteroid/basilisk/watcher

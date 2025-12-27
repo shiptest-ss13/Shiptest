@@ -34,7 +34,7 @@
 	var/failed = FALSE
 
 	///Used to determine if it shows up as an acceptable mission instead of public.
-	var/acceptable = FALSE
+	var/acceptable = TRUE
 	// If the mission has been accepted by a ship.
 	var/accepted = FALSE
 	/// if this mission is 'high priority' (cycled away during mission board clear)
@@ -52,30 +52,22 @@
 
 	var/blackbox_prefix = ""
 
-/datum/mission/New(_location, _mission_index)
-	//source_outpost = _outpost
-	//RegisterSignal(source_outpost, COMSIG_QDELETING, PROC_REF(on_vital_delete))
-	mission_index = _mission_index
-
-	if(location_specific)
-		var/datum/overmap/mission_location = _location
-		mission_local_weakref = WEAKREF(mission_location)
-		update_mission_info(mission_location)
-		RegisterSignal(mission_location, COMSIG_QDELETING, PROC_REF(on_vital_delete))
-		RegisterSignal(mission_location, COMSIG_OVERMAP_LOADED, PROC_REF(on_planet_load))
+/datum/mission/New(_outpost)
+	source_outpost = _outpost
+	RegisterSignal(source_outpost, COMSIG_QDELETING, PROC_REF(on_vital_delete))
 
 	generate_mission_details()
 	regex_mission_text()
 	return ..()
 
 /datum/mission/Destroy()
-	UnregisterSignal(source_outpost, COMSIG_QDELETING)
-	if(location_specific)
-		var/datum/overmap/mission_location = mission_local_weakref.resolve()
-		if(mission_location)
-			UnregisterSignal(mission_location, COMSIG_QDELETING, COMSIG_OVERMAP_LOADED)
+	UnregisterSignal(source_outpost, COMSIG_QDELETING, COMSIG_OVERMAP_LOADED)
 	LAZYREMOVE(source_outpost.missions, src)
 	source_outpost = null
+	if(servant)
+		UnregisterSignal(servant, COMSIG_QDELETING)
+		LAZYREMOVE(servant.missions, src)
+		servant = null
 	for(var/bound in bound_atoms)
 		remove_bound(bound)
 	return ..()
@@ -95,16 +87,6 @@
 	mission_reward = pick(mission_reward)
 	return
 
-/datum/mission/proc/update_mission_info(datum/overmap/mission_location)
-	if(!istype(mission_location))
-		local_name = "missing location"
-		local_x = "???"
-		local_y = "???"
-		return
-	local_name = mission_location.name
-	local_x = mission_location.x
-	local_y = mission_location.y
-
 /datum/mission/proc/regex_mission_text()
 	name = mission_regexs(name)
 	desc = mission_regexs(desc)
@@ -115,13 +97,6 @@
 		var/atom/reward = mission_reward
 		mission_string = replacetext(mission_string, "%MISSION_REWARD", "[reward::name]")
 	return mission_string
-
-/datum/mission/proc/reward_flavortext()
-	var/reward_string = "[value] cr upon completion"
-	if(ispath(mission_reward))
-		var/atom/reward = mission_reward
-		reward_string += " along with [reward::name]"
-	return reward_string
 
 /datum/mission/proc/start_mission()
 	testing("starting [src][ADMIN_VV(src)].")
@@ -158,18 +133,25 @@
 	return
 
 /datum/mission/proc/turn_in(atom/movable/item_to_turn_in)
-	if(can_turn_in(item_to_turn_in))
-		SSblackbox.record_feedback("nested tally", "[blackbox_prefix]mission", 1, list(name, "succeeded"))
-		SSblackbox.record_feedback("nested tally", "[blackbox_prefix]mission", value, list(name, "payout"))
-		spawn_reward(item_to_turn_in.loc)
-		do_sparks(3, FALSE, get_turf(item_to_turn_in))
-		active = FALSE
-		var/datum/overmap/mission_location = mission_local_weakref.resolve()
-		if(istype(mission_location, /datum/overmap/dynamic))
-			var/datum/overmap/dynamic/dynamic_location = mission_location
-			dynamic_location.start_countdown(30 SECONDS)
-		qdel(item_to_turn_in)
-		qdel(src)
+	if(QDELING(src))
+		return
+	SSblackbox.record_feedback("nested tally", "[blackbox_prefix]mission", 1, list(name, "succeeded"))
+	SSblackbox.record_feedback("nested tally", "[blackbox_prefix]mission", value, list(name, "payout"))
+	var/remaining_value = value
+	var/payment = floor(value*servant.crew_share)
+	for(var/datum/weakref/account in servant.crew_bank_accounts)
+		var/datum/bank_account/target_account = account.resolve()
+		target_account.adjust_money(payment, CREDIT_LOG_MISSION)
+		target_account.bank_card_talk("[payment] credits deposited to account, balance is now [target_account.account_balance]cr.")
+		remaining_value = remaining_value - payment
+	servant.ship_account.adjust_money(remaining_value, CREDIT_LOG_MISSION)
+	qdel(src)
+
+/datum/mission/proc/give_up()
+	if(QDELING(src))
+		return
+	SSblackbox.record_feedback("nested tally", "[blackbox_prefix]mission", 1, list(name, "abandoned"))
+	qdel(src)
 
 /datum/mission/proc/spawn_reward(loc)
 	new /obj/item/spacecash/bundle(loc, value)
@@ -203,7 +185,10 @@
 	if(!ispath(a_type, /atom/movable))
 		CRASH("[src] attempted to spawn bound atom of invalid type [a_type]!")
 	var/atom/movable/bound = new a_type(a_loc)
-	set_bound(bound, destroy_cb, fail_on_delete, sparks)
+	if(sparks)
+		do_sparks(3, FALSE, get_turf(bound))
+	LAZYSET(bound_atoms, bound, list(fail_on_delete, destroy_cb))
+	RegisterSignal(bound, COMSIG_QDELETING, PROC_REF(bound_deleted))
 	return bound
 
 /datum/mission/proc/set_bound(atom/movable/bound, destroy_cb = null, fail_on_delete = TRUE, sparks = TRUE)
@@ -268,8 +253,22 @@
 	// remove info from our list
 	LAZYREMOVE(bound_atoms, bound)
 
-/datum/mission/proc/get_tgui_info(list/items_on_pad = list())
-	return list()
+/datum/mission/proc/get_tgui_info()
+	var/act_str = "Give up"
+	if(!accepted)
+		act_str = "Accept"
+	else if(can_complete())
+		act_str = "Turn in"
+
+	. += list(
+		"ref" = REF(src),
+		"name" = src.name,
+		"desc" = src.desc,
+		"value" = src.value,
+		"progressStr" = get_progress_string(),
+		"progressPer" = get_progress_percent(),
+		"actStr" = act_str
+	)
 
 /datum/mission/proc/get_turn_in_info(list/items_on_pad = list())
 	return
