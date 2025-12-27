@@ -54,7 +54,7 @@
 		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 
-	if(!GLOB.deadchat_allowed && !holder)
+	if(!GLOB.deadchat_allowed && !client.holder)
 		to_chat(usr, span_danger("Deadchat is currently muted."))
 		return
 
