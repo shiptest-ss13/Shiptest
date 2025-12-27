@@ -33,9 +33,7 @@ export const OrbitItem = (props: Props, context) => {
     >
       <Button color={getDisplayColor(item, color)} pl={validIcon && 0.5}>
         <Stack>
-          <Stack.Item>
-            {capitalizeFirst(getDisplayName(full_name, name))}
-          </Stack.Item>
+          <Stack.Item>{capitalizeFirst(full_name)}</Stack.Item>
           {!!orbiters && (
             <Stack.Item>
               <Icon name="ghost" />
