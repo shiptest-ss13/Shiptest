@@ -1507,3 +1507,51 @@
 		new /obj/item/kitchen/fork/plastic(src)
 		new /obj/item/kitchen/spoon/plastic(src)
 		new /obj/item/melee/knife/plastic(src)
+
+/obj/item/storage/box/armbands/green
+	name = "green armband box"
+	desc = "Contains several green armbands for designating a team, including a team leader and medic."
+
+/obj/item/storage/box/armbands/green/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/clothing/accessory/armband/greenteam/lead=1,\
+		/obj/item/clothing/accessory/armband/greenteam/med=1,\
+		/obj/item/clothing/accessory/armband/greenteam=2
+		)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/armbands/purple
+	name = "purple armband box"
+	desc = "Contains several purple armbands for designating a team, including a team leader and medic."
+
+/obj/item/storage/box/armbands/purple/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/clothing/accessory/armband/purpleteam/lead=1,\
+		/obj/item/clothing/accessory/armband/purpleteam/med=1,\
+		/obj/item/clothing/accessory/armband/purpleteam=2
+		)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/armbands/white
+	name = "white armband box"
+	desc = "Contains several white armbands for designating a team, including a team leader and medic."
+
+/obj/item/storage/box/armbands/white/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/clothing/accessory/armband/whiteteam/lead=1,\
+		/obj/item/clothing/accessory/armband/whiteteam/med=1,\
+		/obj/item/clothing/accessory/armband/whiteteam=2
+		)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/armbands/black
+	name = "black armband box"
+	desc = "Contains several black armbands for designating a team, including a team leader and medic."
+
+/obj/item/storage/box/armbands/black/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/clothing/accessory/armband/blackteam/lead=1,\
+		/obj/item/clothing/accessory/armband/blackteam/med=1,\
+		/obj/item/clothing/accessory/armband/blackteam=2
+		)
+	generate_items_inside(items_inside,src)
