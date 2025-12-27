@@ -164,7 +164,7 @@
 	name = "Plasmacutter Crate"
 	desc = "Contains a plasmacutter, capable of rapidly breaking down hull."
 	cost = 2500
-	contains = list(/obj/item/gun/energy/plasmacutter)
+	contains = list(/obj/item/plasmacutter)
 	crate_name = "plasmacutter crate"
 
 /datum/supply_pack/tools/sledgehammer

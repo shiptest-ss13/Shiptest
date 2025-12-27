@@ -35,11 +35,11 @@
 	/// Stun mode projectile type
 	var/stun_projectile = /obj/projectile/beam/disabler
 	/// Sound of stun projectile
-	var/stun_projectile_sound = 'sound/weapons/plasma_cutter.ogg'
+	var/stun_projectile_sound = 'sound/weapons/melee/plasmacutter/plasma_cutter.ogg'
 	/// Lethal mode projectile type
 	var/lethal_projectile = /obj/projectile/beam/laser
 	/// Sound of lethal projectile
-	var/lethal_projectile_sound = 'sound/weapons/plasma_cutter.ogg'
+	var/lethal_projectile_sound = 'sound/weapons/melee/plasmacutter/plasma_cutter.ogg'
 
 	/// Power needed per shot
 	var/reqpower = 500
