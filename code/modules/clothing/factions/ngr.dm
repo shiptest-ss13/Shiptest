@@ -310,6 +310,15 @@
 	new /obj/item/ammo_casing/a40mm(src)
 	new /obj/item/ammo_casing/a40mm(src)
 
+/obj/item/storage/belt/security/webbing/ngr/alt
+	name = "NGR drop pouch harness"
+	desc = "A harness with a bunch of pouches attached to them for operators of the New Gorlex Republic, can hold security gear."
+	icon_state = "ngr_droppouch"
+	item_state = "ngr_droppouch"
+	icon = 'icons/obj/clothing/faction/ngr/belt.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/belt.dmi'
+	supports_variations = null
+
 /obj/item/storage/belt/mining/ngr
 	name = "NGR industrial webbing"
 	desc = "A set of industrial webbing used primarily by salvagers of the New Gorlex Republic, capable of holding mining equipment."
