@@ -280,3 +280,135 @@
 	mob_overlay_icon = 'icons/mob/clothing/suits/hooded.dmi'
 	hoodtype = /obj/item/clothing/head/hooded/hood/gray
 	unique_reskin = null
+
+/obj/item/clothing/suit/hooded/croppedhoodie
+	name = "cropped hoodie"
+	desc = "A cropped hoodie. For keeping short people warm."
+	icon_state = "crophoodwhite"
+	item_state = "crophoodwhite"
+	icon = 'icons/obj/clothing/suits/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/color.dmi'
+	hoodtype = /obj/item/clothing/head/hooded/hood
+	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+	allowed = list(
+		/obj/item/flashlight,
+		/obj/item/tank/internals/emergency_oxygen,
+		/obj/item/tank/internals/plasmaman,
+		/obj/item/toy,
+		/obj/item/storage/fancy/cigarettes,
+		/obj/item/lighter,
+		/obj/item/radio,
+		/obj/item/storage/pill_bottle
+	)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //it's just a hoodie.
+	unique_reskin = list(
+		"cropped white hoodie" = "crophoodwhite",
+		"cropped grey hoodie" = "crophoodgrey",
+		"cropped black hoodie" = "crophoodblack",
+		"cropped red hoodie" = "crophoodred",
+		"cropped maroon hoodie" = "crophoodmaroon",
+		"cropped orange hoodie" = "crophoodorange",
+		"cropped yellow hoodie" = "crophoodyellow",
+		"cropped green hoodie" = "crophoodgreen",
+		"cropped dark green hoodie" = "crophooddgreen",
+		"cropped teal hoodie" = "crophoodteal",
+		"cropped blue hoodie" = "crophoodblue",
+		"cropped dark blue hoodie" = "crophooddblue",
+		"cropped purple hoodie" = "crophoodpurple",
+		"cropped pink hoodie" = "crophoodpink",
+		"cropped brown hoodie" = "crophoodbrown",
+		"cropped light brown hoodie" = "crophoodlbrown"
+	)
+
+/obj/item/clothing/suit/hooded/croppedhoodie/white
+	name = "cropped white hoodie"
+	current_skin = "cropped white hoodie"
+	hoodtype = /obj/item/clothing/head/hooded/hood/white
+
+/obj/item/clothing/suit/hooded/croppedhoodie/gray
+	name = "cropped grey hoodie"
+	current_skin = "cropped grey hoodie"
+	hoodtype = /obj/item/clothing/head/hooded/hood/gray
+
+/obj/item/clothing/suit/hooded/croppedhoodie/black
+	name = "cropped black hoodie"
+	current_skin = "cropped black hoodie"
+	hoodtype = /obj/item/clothing/head/hooded/hood/black
+
+/obj/item/clothing/suit/hooded/croppedhoodie/red
+	name = "cropped red hoodie"
+	current_skin = "cropped red hoodie"
+	hoodtype = /obj/item/clothing/head/hooded/hood/red
+
+/obj/item/clothing/suit/hooded/croppedhoodie/maroon
+	name = "cropped maroon hoodie"
+	current_skin = "cropped maroon hoodie"
+	hoodtype = /obj/item/clothing/head/hooded/hood/maroon
+
+/obj/item/clothing/suit/hooded/croppedhoodie/orange
+	name = "cropped orange hoodie"
+	current_skin = "cropped orange hoodie"
+	hoodtype = /obj/item/clothing/head/hooded/hood/orange
+
+/obj/item/clothing/suit/hooded/croppedhoodie/yellow
+	name = "cropped yellow hoodie"
+	current_skin = "cropped yellow hoodie"
+	hoodtype = /obj/item/clothing/head/hooded/hood/yellow
+
+/obj/item/clothing/suit/hooded/croppedhoodie/green
+	name = "cropped green hoodie"
+	current_skin = "cropped green hoodie"
+	hoodtype = /obj/item/clothing/head/hooded/hood/green
+
+/obj/item/clothing/suit/hooded/croppedhoodie/darkgreen
+	name = "cropped dark green hoodie"
+	current_skin = "cropped dark green hoodie"
+	hoodtype = /obj/item/clothing/head/hooded/hood/darkgreen
+
+/obj/item/clothing/suit/hooded/croppedhoodie/teal
+	name = "cropped teal hoodie"
+	current_skin = "cropped teal hoodie"
+	hoodtype = /obj/item/clothing/head/hooded/hood/teal
+
+/obj/item/clothing/suit/hooded/croppedhoodie/blue
+	name = "cropped blue hoodie"
+	current_skin = "cropped blue hoodie"
+	hoodtype = /obj/item/clothing/head/hooded/hood/blue
+
+/obj/item/clothing/suit/hooded/croppedhoodie/darkblue
+	name = "cropped dark blue hoodie"
+	current_skin = "cropped dark blue hoodie"
+	hoodtype = /obj/item/clothing/head/hooded/hood/darkblue
+
+/obj/item/clothing/suit/hooded/croppedhoodie/purple
+	name = "cropped purple hoodie"
+	current_skin = "cropped purple hoodie"
+	hoodtype = /obj/item/clothing/head/hooded/hood/purple
+
+/obj/item/clothing/suit/hooded/croppedhoodie/pink
+	name = "cropped pink hoodie"
+	current_skin = "cropped pink hoodie"
+	hoodtype = /obj/item/clothing/head/hooded/hood/pink
+
+/obj/item/clothing/suit/hooded/croppedhoodie/brown
+	name = "cropped brown hoodie"
+	current_skin = "cropped brown hoodie"
+	hoodtype = /obj/item/clothing/head/hooded/hood/brown
+
+/obj/item/clothing/suit/hooded/croppedhoodie/lightbrown
+	name = "cropped light brown hoodie"
+	current_skin = "cropped light brown hoodie"
+	hoodtype = /obj/item/clothing/head/hooded/hood/lightbrown
+
+/obj/item/clothing/suit/hooded/croppedhoodie/blackwa
+	name = "cropped black and white hoodie"
+	desc = "A cropped hoodie. For keeping short people warm."
+	icon_state = "crophoodie"
+	item_state = "crophoodie"
+	icon = 'icons/obj/clothing/suits/hooded.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/hooded.dmi'
+	hoodtype = /obj/item/clothing/head/hooded/hood/gray
+	unique_reskin = null
