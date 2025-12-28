@@ -28,7 +28,7 @@
 			return
 		else
 			to_chat(user, span_notice("You tear open [src] above [target] and the condiments drip onto it."))
-			src.reagents.trans_to(target, amount_per_transfer, transfered_by = user)
+			src.reagents.trans_to(target, amount_per_transfer, transferred_by = user)
 			qdel(src)
 
 /obj/item/food/ration/condiment/cheese_spread

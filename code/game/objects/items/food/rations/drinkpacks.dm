@@ -28,7 +28,7 @@
 			return
 		else
 			to_chat(user, span_notice("You pour the [src] into [target] and shake."))
-			src.reagents.trans_to(target, amount_per_transfer, transfered_by = user)
+			src.reagents.trans_to(target, amount_per_transfer, transferred_by = user)
 			qdel(src)
 
 /obj/item/food/ration/pack/chocolate_protein_beverage

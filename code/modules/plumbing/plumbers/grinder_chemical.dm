@@ -51,12 +51,12 @@
 			I.on_juice()
 			reagents.add_reagent_list(I.juice_results)
 			if(I.reagents)
-				I.reagents.trans_to(src, I.reagents.total_volume, transfered_by = src)
+				I.reagents.trans_to(src, I.reagents.total_volume, transferred_by = src)
 			qdel(I)
 			return
 		I.on_grind()
 		reagents.add_reagent_list(I.grind_results)
 		if(I.reagents)
-			I.reagents.trans_to(src, I.reagents.total_volume, transfered_by = src)
+			I.reagents.trans_to(src, I.reagents.total_volume, transferred_by = src)
 		qdel(I)
 

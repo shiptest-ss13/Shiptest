@@ -25,7 +25,7 @@
 			to_chat(user, span_warning("[container] is unable to be dunked in!"))
 			return
 		var/obj/item/I = source // the item that has the dunkable element
-		if(container.reagents.trans_to(I, dunk_amount, transfered_by = user))	//if reagents were transfered, show the message
+		if(container.reagents.trans_to(I, dunk_amount, transferred_by = user))	//if reagents were transfered, show the message
 			to_chat(user, span_notice("You dunk \the [I] into \the [container]."))
 			return
 		if(!container.reagents.total_volume)

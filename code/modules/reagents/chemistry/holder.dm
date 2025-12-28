@@ -1,3 +1,4 @@
+#define REAGENT_TRANSFER_AMOUNT "amount"
 #define CHEMICAL_QUANTISATION_LEVEL 0.0001 //stops floating point errors causing issues with checking reagent amounts
 
 
@@ -210,62 +211,113 @@
  * * multiplier - multiplies amount of each reagent by this number
  * * preserve_data - if preserve_data=0, the reagents data will be lost. Usefull if you use data for some strange stuff and don't want it to be transferred.
  * * no_react - passed through to [/datum/reagents/proc/add_reagent]
- * * mob/transfered_by - used for logging
+ * * mob/transferred_by - used for logging
  * * remove_blacklisted - skips transferring of reagents without REAGENT_CAN_BE_SYNTHESIZED in chemical_flags
  * * methods - passed through to [/datum/reagents/proc/expose_single] and [/datum/reagent/proc/on_transfer]
  * * show_message - passed through to [/datum/reagents/proc/expose_single]
  * * round_robin - if round_robin=TRUE, so transfer 5 from 15 water, 15 sugar and 15 plasma becomes 10, 15, 15 instead of 13.3333, 13.3333 13.3333. Good if you hate floating point errors
  * * ignore_stomach - when using methods INGEST will not use the stomach as the target
  */
-/datum/reagents/proc/trans_to(obj/target, amount = 1, multiplier = 1, preserve_data = TRUE, no_react = FALSE, mob/transfered_by, remove_blacklisted = FALSE, methods = NONE, show_message = TRUE, round_robin = FALSE, ignore_stomach = FALSE)
+/datum/reagents/proc/trans_to(
+	obj/target,
+	amount = 1,
+	multiplier = 1,
+	preserve_data = TRUE,
+	no_react = FALSE,
+	mob/transferred_by,
+	remove_blacklisted = FALSE,
+	methods = NONE,
+	show_message = TRUE,
+	round_robin = FALSE,
+	ignore_stomach = FALSE
+)
+	if(QDELETED(target) || !total_volume)
+		return
+
 	var/list/cached_reagents = reagent_list
-	if(!target || !total_volume)
-		return
-	if(amount < 0)
-		return
+
 	var/atom/target_atom
-	var/datum/reagents/R
+	var/datum/reagents/target_holder
 	if(istype(target, /datum/reagents))
-		R = target
-		target_atom = R.my_atom
+		target_holder = target
+		target_atom = target_holder.my_atom
 	else
-		if(!ignore_stomach && (methods & INGEST) && istype(target, /mob/living/carbon))
+		if(!ignore_stomach && (methods & INGEST) && iscarbon(target))
 			var/mob/living/carbon/eater = target
 			var/obj/item/organ/stomach/belly = eater.getorganslot(ORGAN_SLOT_STOMACH)
 			if(!belly)
-				eater.expel_ingested(my_atom, amount)
+				var/expel_amount = FLOOR(amount, CHEMICAL_QUANTISATION_LEVEL)
+				if(expel_amount > 0 )
+					eater.expel_ingested(my_atom, expel_amount)
 				return
-			R = belly.reagents
+			target_holder = belly.reagents
 			target_atom = belly
 		else if(!target.reagents)
 			return
 		else
-			R = target.reagents
+			target_holder = target.reagents
 			target_atom = target
-	amount = min(min(amount, src.total_volume), R.maximum_volume-R.total_volume)
-	var/trans_data = null
-	var/transfer_log = list()
-	var/r_to_send = list()	// Validated list of reagents to be exposed
-	if(!round_robin)
-		var/part = amount / src.total_volume
-		for(var/datum/reagent/reagent as anything in cached_reagents)
-			if(remove_blacklisted && !(reagent.can_synth))
-				continue
-			var/transfer_amount = reagent.volume * part
-			if(preserve_data)
-				trans_data = copy_data(reagent)
-			if(!R.add_reagent(reagent.type, transfer_amount * multiplier, trans_data, chem_temp, no_react = TRUE)) //we only handle reaction after every reagent has been transfered.
-				continue
-			if(methods)
-				r_to_send += reagent
-			remove_reagent(reagent.type, transfer_amount)
-			var/list/reagent_qualities = list(REAGENT_TRANSFER_AMOUNT = transfer_amount)
-			transfer_log[reagent.type] = reagent_qualities
 
-		if(istype(target_atom, /obj/item/organ))
-			R.expose_multiple(r_to_send, target, methods, part, show_message)
-		else
-			R.expose_multiple(r_to_send, target_atom, methods, part, show_message)
+	// Prevents small amount problems, as well as zero and below zero amounts.
+	amount = FLOOR(min(amount * multiplier, total_volume, target_holder.maximum_volume - target_holder.total_volume), CHEMICAL_QUANTISATION_LEVEL)
+	if(amount <= 0)
+		return FALSE
+
+	var/transfered_amount = 0
+	var/trans_data = null
+	var/list/transfer_log = list()
+	var/list/r_to_send = list()	// Validated list of reagents to be exposed
+	var/list/reagents_to_remove = list()
+	if(!round_robin)
+		var/part = 1 / length(cached_reagents)
+
+		var/equal_contribution = amount * part
+		var/final_contribution = 0
+		// when i = 1(1st iteration) each reagent contributes equally to the requested amount
+		// when i = 2(2nd iteration) each reagent contributes maximum to how much is left over
+		for(var/i in 1 to 2)
+			//clear lists when/if we go to the 2nd iteration
+			r_to_send.Cut()
+			reagents_to_remove.Cut()
+
+			//first add reagents to target
+			for(var/datum/reagent/reagent as anything in cached_reagents)
+				if(remove_blacklisted && !(reagent.can_synth))
+					continue
+				if(preserve_data)
+					trans_data = copy_data(reagent)
+				var/transfer_amount = FLOOR(min(reagent.volume, i == 1 ? equal_contribution : final_contribution), CHEMICAL_QUANTISATION_LEVEL)
+				if(!target_holder.add_reagent(reagent.type, transfer_amount, trans_data, chem_temp, no_react = TRUE)) //we only handle reaction after every reagent has been transferred.
+					continue
+				if(methods)
+					r_to_send += reagent
+				reagents_to_remove += list(list("R" = reagent, "T" = transfer_amount))
+				transfered_amount += transfer_amount
+				if(transfered_amount >= amount)
+					break
+				if(i == 2)
+					final_contribution = (amount - transfered_amount)
+
+			//expose target to reagent changes
+			target_holder.expose_multiple(r_to_send, isorgan(target_atom) ? target : target_atom, methods, part, show_message)
+
+			//remove chemicals that were added above
+			for(var/list/data as anything in reagents_to_remove)
+				var/datum/reagent/reagent = data["R"]
+				var/transfer_amount = data["T"]
+				if(methods)
+					reagent.on_transfer(target_atom, methods, transfer_amount)
+				remove_reagent(reagent.type, transfer_amount)
+				if(!transfer_log[reagent.type])
+					transfer_log[reagent.type] = list(REAGENT_TRANSFER_AMOUNT = transfer_amount)
+				else
+					var/list/logs = transfer_log[reagent.type]
+					logs["[REAGENT_TRANSFER_AMOUNT]"] += transfer_amount
+
+			//see if we can contribute more to the requested amount and go again in the 2nd iteration
+			final_contribution = (amount - transfered_amount)
+			if(!total_volume || final_contribution < CHEMICAL_QUANTISATION_LEVEL)
+				break
 
 	else
 		var/to_transfer = amount
@@ -276,30 +328,27 @@
 				continue
 			if(preserve_data)
 				trans_data = copy_data(reagent)
-			var/transfer_amount = amount
-			if(amount > reagent.volume)
-				transfer_amount = reagent.volume
-			if(!R.add_reagent(reagent.type, transfer_amount * multiplier, trans_data, chem_temp, no_react = TRUE)) //we only handle reaction after every reagent has been transfered.
+			var/transfer_amount = FLOOR(min(amount, reagent.volume), CHEMICAL_QUANTISATION_LEVEL)
+			if(!target_holder.add_reagent(reagent.type, transfer_amount, trans_data, chem_temp, no_react = TRUE)) //we only handle reaction after every reagent has been transferred.
 				continue
 			to_transfer = max(to_transfer - transfer_amount , 0)
 			if(methods)
-				if(istype(target_atom, /obj/item/organ))
-					R.expose_single(reagent, target, methods, transfer_amount, show_message)
-				else
-					R.expose_single(reagent, target_atom, methods, transfer_amount, show_message)
-				reagent.on_transfer(target_atom, methods, transfer_amount * multiplier)
+				target_holder.expose_multiple(r_to_send, isorgan(target_atom) ? target : target_atom, methods, transfer_amount, show_message)
+				reagent.on_transfer(target_atom, methods, transfer_amount)
 			remove_reagent(reagent.type, transfer_amount)
-			var/list/reagent_qualities = list(REAGENT_TRANSFER_AMOUNT = transfer_amount)
-			transfer_log[reagent.type] = reagent_qualities
-	if(transfered_by && target_atom)
-		target_atom.add_hiddenprint(transfered_by) //log prints so admins can figure out who touched it last.
-		log_combat(transfered_by, target_atom, "transferred reagents ([log_list(transfer_log)]) from [my_atom] to")
+			transfered_amount += transfer_amount
+			transfer_log[reagent.type] = list(REAGENT_TRANSFER_AMOUNT = transfer_amount)
+
+	if(transferred_by && target_atom)
+		target_atom.add_hiddenprint(transferred_by) //log prints so admins can figure out who touched it last.
+		log_combat(transferred_by, target_atom, "transferred reagents ([log_list(transfer_log)]) from [my_atom] to")
+
 	update_total()
-	R.update_total()
+	target_holder.update_total()
 	if(!no_react)
-		R.handle_reactions()
+		target_holder.handle_reactions()
 		src.handle_reactions()
-	return amount
+	return transfered_amount
 
 /// Copies the reagents to the target object
 /datum/reagents/proc/copy_to(obj/target, amount=1, multiplier=1, preserve_data=1)
@@ -698,7 +747,7 @@
 	return A.expose_reagents(reagents, src, methods, volume_modifier, show_message)
 
 /// Same as [/datum/reagents/proc/expose] but only for one reagent
-/datum/reagents/proc/expose_single(datum/reagent/R, atom/A, method = TOUCH, volume_modifier = 1, show_message = TRUE)
+/datum/reagents/proc/expose_single(datum/reagent/R, atom/A, methods = TOUCH, volume_modifier = 1, show_message = TRUE)
 	if(isnull(A))
 		return null
 
@@ -708,7 +757,7 @@
 		return null
 
 	// Yes, we need the parentheses.
-	return A.expose_reagents(list((R) = R.volume * volume_modifier), src, method, volume_modifier, show_message)
+	return A.expose_reagents(list((R) = R.volume * volume_modifier), src, methods, volume_modifier, show_message)
 
 /// Is this holder full or not
 /datum/reagents/proc/holder_full()

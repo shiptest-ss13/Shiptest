@@ -72,7 +72,7 @@
 		if(beaker.reagents.total_volume >= beaker.volume)
 			to_chat(user, span_danger("\The [beaker] is full."))
 			return
-		source.reagents.trans_to(beaker, source.amount_per_transfer_from_this, transfered_by = user)
+		source.reagents.trans_to(beaker, source.amount_per_transfer_from_this, transferred_by = user)
 		playsound(user,'sound/items/glass_transfer.ogg',100)
 		to_chat(user, span_notice("You transfer [source.amount_per_transfer_from_this] units to \the [beaker]"))
 	else

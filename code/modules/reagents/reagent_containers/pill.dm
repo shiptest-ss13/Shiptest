@@ -50,7 +50,7 @@
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), M, span_notice("[pick(strings(REDPILL_FILE, "redpill_questions"))]")), 50)
 
 	if(reagents.total_volume)
-		reagents.trans_to(M, reagents.total_volume, transfered_by = user, methods = apply_type)
+		reagents.trans_to(M, reagents.total_volume, transferred_by = user, methods = apply_type)
 	qdel(src)
 	return TRUE
 
@@ -70,7 +70,7 @@
 		return
 
 	user.visible_message(span_warning("[user] slips something into [target]!"), span_notice("You dissolve [src] in [target]."), null, 2)
-	reagents.trans_to(target, reagents.total_volume, transfered_by = user)
+	reagents.trans_to(target, reagents.total_volume, transferred_by = user)
 	qdel(src)
 
 /obj/item/reagent_containers/pill/tox

@@ -80,7 +80,7 @@
 			to_chat(user, span_warning("[target] is full."))
 			return
 
-		var/trans = reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
+		var/trans = reagents.trans_to(target, amount_per_transfer_from_this, transferred_by = user)
 		to_chat(user, span_notice("You transfer [trans] unit\s of the solution to [target]."))
 		playsound(src, 'sound/items/glass_transfer.ogg', 50, 1)
 
@@ -93,7 +93,7 @@
 			to_chat(user, span_warning("[src] is full."))
 			return
 
-		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
+		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transferred_by = user)
 		to_chat(user, span_notice("You fill [src] with [trans] unit\s of the contents of [target]."))
 
 	else if(reagents.total_volume && is_drainable())
@@ -122,7 +122,7 @@
 				to_chat(user, span_notice("[src] is full."))
 			else
 				to_chat(user, span_notice("You break [E] in [src]."))
-				E.reagents.trans_to(src, E.reagents.total_volume, transfered_by = user)
+				E.reagents.trans_to(src, E.reagents.total_volume, transferred_by = user)
 				qdel(E)
 			return
 	..()
@@ -276,7 +276,7 @@
 		if(reagents.total_volume < 1)
 			to_chat(user, span_warning("[src] is out of water!"))
 		else
-			reagents.trans_to(O, 5, transfered_by = user)
+			reagents.trans_to(O, 5, transferred_by = user)
 			to_chat(user, span_notice("You wet [O] in [src]."))
 			playsound(loc, 'sound/effects/slosh.ogg', 25, TRUE)
 	else if(isprox(O)) //This works with wooden buckets for now. Somewhat unintended, but maybe someone will add sprites for it soon(TM)
@@ -351,7 +351,7 @@
 			to_chat(user, span_warning("[src] is full."))
 			return
 
-		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
+		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transferred_by = user)
 		to_chat(user, span_notice("You fill [src] with [trans] unit\s of the contents of [target]."))
 
 	else if(reagents.total_volume)

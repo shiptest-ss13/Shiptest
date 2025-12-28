@@ -166,7 +166,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(!proximity || lit) //can't dip if cigarette is lit (it will heat the reagents in the glass instead)
 		return
 	if(istype(glass))	//you can dip cigarettes into beakers
-		if(glass.reagents.trans_to(src, chem_volume, transfered_by = user))	//if reagents were transfered, show the message
+		if(glass.reagents.trans_to(src, chem_volume, transferred_by = user))	//if reagents were transfered, show the message
 			to_chat(user, span_notice("You dip \the [src] into \the [glass]."))
 		else			//if not, either the beaker was empty, or the cigarette was full
 			if(!glass.reagents.total_volume)
@@ -510,7 +510,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 				packeditem = 1
 				name = "[O.name]-packed [initial(name)]"
 				if(O.reagents)
-					O.reagents.trans_to(src, O.reagents.total_volume, transfered_by = user)
+					O.reagents.trans_to(src, O.reagents.total_volume, transferred_by = user)
 				qdel(O)
 			else
 				to_chat(user, span_warning("It has to be dried first!"))
@@ -815,7 +815,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		if(HAS_TRAIT(O, TRAIT_DRIED))
 			var/obj/item/clothing/mask/cigarette/rollie/R = new /obj/item/clothing/mask/cigarette/rollie(user.loc)
 			R.chem_volume = target.reagents.total_volume
-			target.reagents.trans_to(R, R.chem_volume, transfered_by = user)
+			target.reagents.trans_to(R, R.chem_volume, transferred_by = user)
 			qdel(target)
 			qdel(src)
 			user.put_in_active_hand(R)
