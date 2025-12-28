@@ -201,6 +201,10 @@
 	pixel_x = 5;
 	pixel_y = -19
 	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = -6;
+	pixel_y = -32
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "bj" = (
@@ -374,9 +378,6 @@
 	dir = 1;
 	pixel_x = 4;
 	pixel_y = -19
-	},
-/obj/structure/extinguisher_cabinet/directional/south{
-	pixel_x = -6
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
@@ -1444,6 +1445,14 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/south{
+	pixel_x = 10;
+	pixel_y = -32
+	},
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = -4;
+	pixel_y = -28
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "yF" = (
@@ -1531,6 +1540,9 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/greenglow,
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "BS" = (
@@ -2402,7 +2414,7 @@ hS
 YL
 MY
 Ti
-aa
+jx
 "}
 (12,1,1) = {"
 aa
@@ -2418,7 +2430,7 @@ cY
 wc
 wc
 Ti
-jx
+Ti
 "}
 (13,1,1) = {"
 aa
