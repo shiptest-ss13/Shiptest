@@ -82,6 +82,12 @@
 /obj/effect/decal/cleanable/glass,
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/shard,
+/obj/structure/cable/pink{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/pink{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ay" = (
@@ -310,6 +316,7 @@
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
 	dir = 6
 	},
+/obj/structure/cable/pink,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "bU" = (
@@ -727,6 +734,9 @@
 /obj/structure/cable/pink{
 	icon_state = "0-2"
 	},
+/obj/structure/cable/pink{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ep" = (
@@ -1142,13 +1152,6 @@
 "mz" = (
 /turf/closed/wall/rust,
 /area/ship/engineering/engine)
-"mX" = (
-/obj/structure/extinguisher_cabinet/directional/west{
-	pixel_x = -28;
-	pixel_y = 10
-	},
-/turf/closed/wall,
-/area/ship/crew)
 "nc" = (
 /obj/effect/turf_decal/siding/thinplating,
 /obj/effect/decal/cleanable/dirt,
@@ -1191,6 +1194,9 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/west,
+/obj/structure/cable/pink{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "nJ" = (
@@ -1230,6 +1236,7 @@
 	dir = 8
 	},
 /obj/machinery/cell_charger,
+/obj/structure/cable/pink,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "oO" = (
@@ -1397,14 +1404,6 @@
 	dir = 1
 	},
 /area/ship/cargo)
-"uy" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor{
-	id = "kilobridge"
-	},
-/turf/open/floor/plating,
-/area/ship/bridge)
 "vv" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -1424,6 +1423,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/poddoor{
+	id = "kilobridge"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "xe" = (
@@ -1451,6 +1453,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
+"xy" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "kilobridge"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "yd" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1543,6 +1553,13 @@
 "AQ" = (
 /turf/closed/wall/r_wall,
 /area/ship/engineering/engine)
+"Bb" = (
+/obj/structure/extinguisher_cabinet/directional/west{
+	pixel_x = -28;
+	pixel_y = 10
+	},
+/turf/closed/wall,
+/area/ship/crew)
 "Bm" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable/pink{
@@ -1680,6 +1697,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/pink{
+	icon_state = "2-6"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "GK" = (
@@ -1726,6 +1746,9 @@
 	icon_state = "1-6"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/pink{
+	icon_state = "6-9"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "IW" = (
@@ -2165,6 +2188,10 @@
 /obj/item/storage/toolbox/mechanical{
 	pixel_y = 4
 	},
+/obj/structure/cable/pink{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/pink,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Vx" = (
@@ -2443,7 +2470,7 @@ AB
 PS
 rc
 Yu
-mX
+Bb
 Vx
 cY
 wc
@@ -2607,7 +2634,7 @@ bP
 Ds
 sW
 Pg
-uy
+xy
 BS
 aa
 "}
