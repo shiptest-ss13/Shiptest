@@ -179,7 +179,7 @@ SUBSYSTEM_DEF(explosions)
 // 5 explosion power is a (0, 1, 3) explosion.
 // 1 explosion power is a (0, 0, 1) explosion.
 
-/proc/explosion(atom/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog = TRUE, ignorecap = FALSE, flame_range = 0, silent = FALSE, smoke = FALSE, gentle = FALSE, light_dam, light_item_dam, heavy_dam, heavy_item_dam)
+/proc/explosion(atom/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog = TRUE, ignorecap = FALSE, flame_range = 0, silent = FALSE, smoke = FALSE, gentle = FALSE, light_dam = 40, light_item_dam, heavy_dam, heavy_item_dam)
 	. = SSexplosions.explode(arglist(args))
 
 #define CREAK_DELAY 5 SECONDS //Time taken for the creak to play after explosion, if applicable.
@@ -568,8 +568,8 @@ SUBSYSTEM_DEF(explosions)
 				if(!QDELETED(O))
 					O.ex_act(EXPLODE_DEVASTATE, explodey[2],explodey[3],explodey[4],explodey[5])
 			else if(isatom(exploded))
-				if(!QDELETED(O))
-					O.ex_act(EXPLODE_DEVASTATE)
+				if(!QDELETED(exploded))
+					exploded.ex_act(EXPLODE_DEVASTATE)
 		cost_highobj = MC_AVERAGE(cost_highobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 		timer = TICK_USAGE_REAL
@@ -578,7 +578,6 @@ SUBSYSTEM_DEF(explosions)
 		// for(var/obj/O as anything in med_obj)
 		// 	if(!QDELETED(O))
 		// 		O.ex_act(EXPLODE_HEAVY)
-		// think im casting too high, cut list
 		for(var/exploded in med_obj)
 			if(islist(exploded))
 				var/list/explodey = exploded
@@ -586,8 +585,8 @@ SUBSYSTEM_DEF(explosions)
 				if(!QDELETED(O))
 					O.ex_act(EXPLODE_HEAVY, explodey[2],explodey[3],explodey[4],explodey[5])
 			else if(isatom(exploded))
-				if(!QDELETED(O))
-					O.ex_act(EXPLODE_HEAVY)
+				if(!QDELETED(exploded))
+					exploded.ex_act(EXPLODE_HEAVY)
 		cost_medobj = MC_AVERAGE(cost_medobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 		timer = TICK_USAGE_REAL
@@ -603,8 +602,8 @@ SUBSYSTEM_DEF(explosions)
 				if(!QDELETED(O))
 					O.ex_act(EXPLODE_LIGHT, explodey[2],explodey[3],explodey[4],explodey[5])
 			else if(isatom(exploded))
-				if(!QDELETED(O))
-					O.ex_act(EXPLODE_LIGHT)
+				if(!QDELETED(exploded))
+					exploded.ex_act(EXPLODE_LIGHT)
 		cost_lowobj = MC_AVERAGE(cost_lowobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 
