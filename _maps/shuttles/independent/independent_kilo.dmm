@@ -34,10 +34,6 @@
 /obj/structure/closet/crate/secure/weapon{
 	name = "ammo crate"
 	},
-/obj/item/storage/box/ammo/a12g_buckshot{
-	pixel_x = -1;
-	pixel_y = -3
-	},
 /obj/item/storage/box/ammo/a8_50r{
 	pixel_x = 6;
 	pixel_y = -5
@@ -1146,6 +1142,13 @@
 "mz" = (
 /turf/closed/wall/rust,
 /area/ship/engineering/engine)
+"mX" = (
+/obj/structure/extinguisher_cabinet/directional/west{
+	pixel_x = -28;
+	pixel_y = 10
+	},
+/turf/closed/wall,
+/area/ship/crew)
 "nc" = (
 /obj/effect/turf_decal/siding/thinplating,
 /obj/effect/decal/cleanable/dirt,
@@ -1158,8 +1161,16 @@
 "ng" = (
 /obj/machinery/light_switch{
 	dir = 4;
-	pixel_x = -22;
+	pixel_x = -21;
+	pixel_y = 8
+	},
+/obj/machinery/firealarm/directional/west{
+	pixel_x = -32;
 	pixel_y = -2
+	},
+/obj/structure/extinguisher_cabinet/directional/west{
+	pixel_x = -28;
+	pixel_y = -14
 	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken7"
@@ -1386,6 +1397,14 @@
 	dir = 1
 	},
 /area/ship/cargo)
+"uy" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "kilobridge"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "vv" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -1446,7 +1465,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/firealarm/directional/south{
-	pixel_x = 10;
+	pixel_x = 8;
 	pixel_y = -32
 	},
 /obj/structure/extinguisher_cabinet/directional/south{
@@ -2424,7 +2443,7 @@ AB
 PS
 rc
 Yu
-Vx
+mX
 Vx
 cY
 wc
@@ -2588,7 +2607,7 @@ bP
 Ds
 sW
 Pg
-BS
+uy
 BS
 aa
 "}
