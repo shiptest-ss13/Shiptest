@@ -741,7 +741,7 @@
  *
  * Default behaviour is to call [contents_explosion][/atom/proc/contents_explosion] and send the [COMSIG_ATOM_EX_ACT] signal
  */
-/atom/proc/ex_act(severity, target, origin, light_dam, light_item_dam, heavy_dam, heavy_item_dam)
+/atom/proc/ex_act(severity, target, origin, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM)
 	set waitfor = FALSE
 	contents_explosion(severity, target, light_dam, light_item_dam, heavy_dam, heavy_item_dam)
 	SEND_SIGNAL(src, COMSIG_ATOM_EX_ACT, severity, target, origin, light_dam, light_item_dam, heavy_dam, heavy_item_dam)

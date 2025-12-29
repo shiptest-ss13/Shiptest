@@ -74,22 +74,6 @@ SUBSYSTEM_DEF(explosions)
 /datum/controller/subsystem/explosions/proc/is_exploding()
 	return (length(lowturf) || length(medturf) || length(highturf) || length(flameturf) || length(throwturf) || length(lowobj) || length(medobj) || length(highobj))
 
-//use datum instead of list??
-/datum/explosion_ticket
-	var/atom/target
-	var/light_damage
-	var/light_item_damage
-	var/heavy_damage
-	var/heavy_item_damage
-
-/datum/explosion_ticket/New(_target, light_dam = 1, light_item_dam = 1, heavy_dam = 1, heavy_item_dam = 1)
-	. = ..()
-	target = _target
-	light_damage = light_dam
-	light_item_damage = light_item_dam
-	heavy_damage = heavy_dam
-	heavy_item_damage = heavy_item_dam
-
 /client/proc/check_bomb_impacts()
 	set name = "Check Bomb Impact"
 	set category = "Debug"
@@ -179,7 +163,7 @@ SUBSYSTEM_DEF(explosions)
 // 5 explosion power is a (0, 1, 3) explosion.
 // 1 explosion power is a (0, 0, 1) explosion.
 
-/proc/explosion(atom/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog = TRUE, ignorecap = FALSE, flame_range = 0, silent = FALSE, smoke = FALSE, gentle = FALSE, light_dam = 40, light_item_dam, heavy_dam, heavy_item_dam)
+/proc/explosion(atom/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog = TRUE, ignorecap = FALSE, flame_range = 0, silent = FALSE, smoke = FALSE, gentle = FALSE, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM)
 	. = SSexplosions.explode(arglist(args))
 
 #define CREAK_DELAY 5 SECONDS //Time taken for the creak to play after explosion, if applicable.
@@ -568,8 +552,9 @@ SUBSYSTEM_DEF(explosions)
 				if(!QDELETED(O))
 					O.ex_act(EXPLODE_DEVASTATE, explodey[2],explodey[3],explodey[4],explodey[5])
 			else if(isatom(exploded))
-				if(!QDELETED(exploded))
-					exploded.ex_act(EXPLODE_DEVASTATE)
+				var/obj/O = exploded
+				if(!QDELETED(O))
+					O.ex_act(EXPLODE_DEVASTATE)
 		cost_highobj = MC_AVERAGE(cost_highobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 		timer = TICK_USAGE_REAL
@@ -585,8 +570,9 @@ SUBSYSTEM_DEF(explosions)
 				if(!QDELETED(O))
 					O.ex_act(EXPLODE_HEAVY, explodey[2],explodey[3],explodey[4],explodey[5])
 			else if(isatom(exploded))
-				if(!QDELETED(exploded))
-					exploded.ex_act(EXPLODE_HEAVY)
+				var/obj/O = exploded
+				if(!QDELETED(O))
+					O.ex_act(EXPLODE_HEAVY)
 		cost_medobj = MC_AVERAGE(cost_medobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 		timer = TICK_USAGE_REAL
@@ -602,8 +588,9 @@ SUBSYSTEM_DEF(explosions)
 				if(!QDELETED(O))
 					O.ex_act(EXPLODE_LIGHT, explodey[2],explodey[3],explodey[4],explodey[5])
 			else if(isatom(exploded))
-				if(!QDELETED(exploded))
-					exploded.ex_act(EXPLODE_LIGHT)
+				var/obj/O = exploded
+				if(!QDELETED(O))
+					O.ex_act(EXPLODE_LIGHT)
 		cost_lowobj = MC_AVERAGE(cost_lowobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 
