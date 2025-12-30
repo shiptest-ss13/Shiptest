@@ -26,11 +26,11 @@
 	// handles behavior
 	var/datum/elevator_master/master_datum
 
-/*
+
 // dont use the tile variants probably bugged as fuck
 // i'm only fluent in shitcode so if anyone finds a way to fix this please use it the catwalk elevators are ugly
 
-/obj/structure/elevator_platform/tile/
+/obj/structure/elevator_platform/tile
 	icon = 'icons/turf/floors/tiles.dmi'
 	icon_state = "tiled_gray"
 	base_icon_state = "tiled_gray"
@@ -53,7 +53,6 @@
 	smoothing_flags = null
 	smoothing_groups = null
 	canSmoothWith = null
-*/
 
 /obj/structure/elevator_platform/Initialize(mapload)
 	. = ..()
@@ -69,7 +68,7 @@
 		// if there are adjacent platforms with masters, reach them
 		for(var/obj/structure/elevator_platform/plat as anything in get_adj_platforms())
 			if(plat.master_datum)
-				master_datum.add_platform(src)
+				plat.master_datum.add_platform(src)
 				break
 		if(!master_datum)
 			// runs a flood-fill starting at src, adding reached platforms to the
@@ -91,14 +90,14 @@
 	if(AM in lift_load)
 		return
 	LAZYADD(lift_load, AM)
-	RegisterSignal(AM, COMSIG_PARENT_QDELETING, PROC_REF(RemoveItemFromPlat))
+	RegisterSignal(AM, COMSIG_QDELETING, PROC_REF(RemoveItemFromPlat))
 
 /obj/structure/elevator_platform/proc/RemoveItemFromPlat(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	if(!(AM in lift_load))
 		return
 	LAZYREMOVE(lift_load, AM)
-	UnregisterSignal(AM, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(AM, COMSIG_QDELETING)
 
 /obj/structure/elevator_platform/proc/get_adj_platforms()
 	. = list()

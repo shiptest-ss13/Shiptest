@@ -103,6 +103,9 @@
 		CtrlClickOn(A)
 		return
 
+	if(typing_indicator)
+		set_typing_indicator(FALSE)
+
 	if(incapacitated(ignore_restraints = TRUE))
 		return
 
@@ -113,6 +116,10 @@
 
 	if(!LAZYACCESS(modifiers, "catcher") && A.IsObscured())
 		return
+
+	if(ismecha(loc))
+		var/obj/mecha/M = loc
+		return M.click_action(A, src, params)
 
 	if(HAS_TRAIT(src, TRAIT_HANDS_BLOCKED))
 		changeNext_move(CLICK_CD_HANDCUFFED)   //Doing shit in cuffs shall be vey slow
@@ -200,10 +207,6 @@
 			return TRUE
 	return FALSE
 
-/**
- * A backwards depth-limited breadth-first-search to see if the target is
- * logically "in" anything adjacent to us.
- */
 /**
  * A backwards depth-limited breadth-first-search to see if the target is
  * logically "in" anything adjacent to us.

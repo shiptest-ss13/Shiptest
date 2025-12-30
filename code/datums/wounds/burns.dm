@@ -121,8 +121,7 @@
 					if(0)
 						to_chat(victim, span_deadsay("<b>The last of the nerve endings in your [limb.name] wither away.</b>"))
 						threshold_penalty = 120 // piss easy to destroy
-						var/datum/brain_trauma/severe/paralysis/sepsis = new (limb.body_zone)
-						victim.gain_trauma(sepsis)
+						set_disabling(TRUE)
 				strikes_to_lose_limb--
 
 /datum/wound/burn/get_examine_description(mob/user)
@@ -241,17 +240,31 @@
 	sanitization += amount * 0.1
 	return
 
-//crystal reagent lets you reverse sepsis bcause sepsis sucks rn
+//crystal reagent lets you fully clear burns because they're rare chemicals and burns suck ass with no cryo
 /datum/wound/burn/on_crystal(power)
 	if(power>=5)
-		strikes_to_lose_limb = min(strikes_to_lose_limb+1, 3)
-		victim.adjustCloneLoss(2)
+		to_chat(victim, span_green("The burns on your [limb.name] have been regenerated, leaving only minor necrosis."))
+		victim.adjustCloneLoss(5)
+		qdel(src)
 	return
 
 //So does rezadone
 /datum/wound/burn/on_rezadone(power)
 	if(power>=10)
-		strikes_to_lose_limb = min(strikes_to_lose_limb+1, 3)
+		// Rapidly regenerating burns isn't so clean, especially when there's an infection to purge
+		to_chat(victim, span_green("The burns on your [limb.name] clear up, leaving you with an ill feeling."))
+		switch(infestation)
+			if(0 to WOUND_INFECTION_MODERATE)
+				victim.adjustToxLoss(2)
+			if(WOUND_INFECTION_MODERATE to WOUND_INFECTION_SEVERE)
+				victim.adjustToxLoss(5)
+			if(WOUND_INFECTION_SEVERE to WOUND_INFECTION_CRITICAL)
+				victim.adjustToxLoss(10)
+			if(WOUND_INFECTION_CRITICAL to WOUND_INFECTION_SEPTIC)
+				victim.adjustToxLoss(15)
+			if(WOUND_INFECTION_SEPTIC to INFINITY)
+				victim.adjustToxLoss(20)
+		qdel(src)
 	return
 
 // we don't even care about first degree burns, straight to second

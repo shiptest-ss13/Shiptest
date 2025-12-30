@@ -78,7 +78,7 @@
 		current_overmap = docked_object.current_overmap
 
 	if(!current_overmap)
-		current_overmap = SSovermap.default_system
+		current_overmap = SSovermap.safe_system
 		stack_trace("[src.name] has no overmap on load!! This is very bad!! Set the object's overmap to the default overmap of the round!!")
 	current_overmap.overmap_objects |= src
 	SSovermap.overmap_objects |= src
@@ -177,7 +177,7 @@
 	if(new_x == x && new_y == y)
 		return
 	if(!current_overmap)
-		current_overmap = SSovermap.default_system
+		current_overmap = SSovermap.safe_system
 		CRASH("Overmap datum [src] tried to move() with no valid overmap! What?? Moving to the default sector of SSovermap as a failsafe!")
 	new_x %= current_overmap.size
 	new_y %= current_overmap.size
@@ -681,10 +681,10 @@
  */
 /datum/overmap/proc/fsck()
 	//set the current overmap to the default one. If theres no default overmap shit is truly fucked
-	if(!SSovermap.default_system)
+	if(!SSovermap.safe_system)
 		message_admins(span_userdanger("There is no default overmap set. Consider restarting the round."))
 		CRASH("There is no default overmap set. Consider restarting the round.")
-	current_overmap = SSovermap.default_system
+	current_overmap = SSovermap.safe_system
 
 	//reset all docking timers
 	dock_time = null

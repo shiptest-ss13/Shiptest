@@ -94,3 +94,11 @@
 	id = "wasteplanet_facility"
 	suffix = "wasteplanet_facility.dmm"
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
+
+/datum/map_template/ruin/wasteplanet/recycling
+	name = "Recycling Facility"
+	description = "A rusty salvaging and recycling base made to supply some unsavory people."
+	id = "wasteplanet_recyclebay"
+	suffix = "wasteplanet_recyclebay.dmm"
+	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
+
