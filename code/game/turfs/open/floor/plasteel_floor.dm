@@ -51,9 +51,11 @@
 /turf/open/floor/plasteel/mono
 	icon_state = "monotile_gray"
 	base_icon_state = "monotile_gray"
+
 /turf/open/floor/plasteel/mono/dark
 	icon_state = "monotile_dark"
 	base_icon_state = "monotile_dark"
+
 /turf/open/floor/plasteel/mono/white
 	icon_state = "monotile_light"
 	base_icon_state = "monotile_light"
@@ -88,44 +90,59 @@
 	icon_state = "techfloor_grid"
 	base_icon_state = "techfloor_grid"
 	floor_tile = /obj/item/stack/tile/plasteel/tech/grid
+
 /turf/open/floor/plasteel/tech/grid/airless
 	initial_gas_mix = AIRLESS_ATMOS
+
 /turf/open/floor/plasteel/tech/techmaint
 	icon_state = "techmaint"
 	base_icon_state = "techmaint"
 	floor_tile = /obj/item/stack/tile/plasteel/tech/techmaint
+
 /turf/open/floor/plasteel/tech/techmaint/airless
 	initial_gas_mix = AIRLESS_ATMOS
+
 /turf/open/floor/plasteel/patterned
 	icon_state = "tile_full"
 	base_icon_state = "tile_full"
+
 /turf/open/floor/plasteel/patterned/jungleplanet
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
 /turf/open/floor/plasteel/patterned/external
 	initial_gas_mix = AIRLESS_ATMOS
+
 /turf/open/floor/plasteel/patterned/external/handle_decompression_floor_rip(sum)
 	return
+
 /turf/open/floor/plasteel/patterned/cargo_one
 	icon_state = "cargo_one_full"
 	base_icon_state = "cargo_one_full"
+
 /turf/open/floor/plasteel/patterned/cargo_one/jungleplanet
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
 /turf/open/floor/plasteel/patterned/cargo_one/external
 	initial_gas_mix = AIRLESS_ATMOS
+
 /turf/open/floor/plasteel/patterned/cargo_one/external/handle_decompression_floor_rip(sum)
 	return
+
 /turf/open/floor/plasteel/patterned/brushed
 	icon_state = "kafel_full"
 	base_icon_state = "kafel_full"
+
 /turf/open/floor/plasteel/patterned/brushed/cold
 	initial_gas_mix = "o2=22;n2=82;TEMP=275.65" // normal air but 2.5 degrees
 
 /turf/open/floor/plasteel/patterned/grid
 	icon_state = "grid"
 	base_icon_state = "grid"
+
 /turf/open/floor/plasteel/patterned/grid/dark
 	icon_state = "grid_dark"
 	base_icon_state = "grid_dark"
+
 /turf/open/floor/plasteel/patterned/ridged
 	icon_state = "ridged"
 	base_icon_state = "ridged"
@@ -164,7 +181,6 @@
 /turf/open/floor/plasteel/kitchen_coldroom/freezerfloor //tempted to make this a subset of freezer
 	icon_state = "freezer"
 	base_icon_state = "freezer"
-
 
 /turf/open/floor/plasteel/grimy
 	icon = 'icons/turf/floors.dmi'
@@ -364,7 +380,6 @@
 /turf/open/floor/plasteel/rockvault/sandstone
 	icon_state = "sandstonevault"
 	base_icon_state = "sandstonevault"
-
 
 /turf/open/floor/plasteel/elevatorshaft
 	icon = 'icons/turf/floors.dmi'
