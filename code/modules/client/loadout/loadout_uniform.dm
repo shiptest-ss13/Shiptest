@@ -306,3 +306,8 @@
 /datum/gear/uniform/overalls_brown
 	display_name = "overalls, brown"
 	path = /obj/item/clothing/under/overalls/brown
+
+// skirts
+/datum/gear/uniform/shortskirt
+	display_name = "short skirt"
+	path = /obj/item/clothing/under/shorts/skirt

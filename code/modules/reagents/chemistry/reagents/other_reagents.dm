@@ -144,6 +144,7 @@
 
 /datum/reagent/water/on_mob_life(mob/living/carbon/M)
 	. = ..()
+	M.adjust_disgust(-2)
 	if(M.blood_volume)
 		M.blood_volume += 0.1 //full of water...
 /*

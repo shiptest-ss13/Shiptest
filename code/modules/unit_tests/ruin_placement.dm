@@ -8,7 +8,7 @@
 	populate_turfs = FALSE
 
 /datum/unit_test/ruin_placement/Run()
-	var/datum/overmap_star_system/dummy_system = SSovermap.default_system
+	var/datum/overmap_star_system/dummy_system = SSovermap.safe_system
 	dummy_system.name = "Ruin Test: Dummy System"
 	for(var/planet_name as anything in SSmapping.planet_types)
 		var/datum/planet_type/planet_type = SSmapping.planet_types[planet_name]

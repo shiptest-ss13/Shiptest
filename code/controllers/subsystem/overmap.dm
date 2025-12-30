@@ -20,8 +20,8 @@ SUBSYSTEM_DEF(overmap)
 	///List of all events
 	var/list/events = list()
 
-	/// The mandatory and default star system
-	var/datum/overmap_star_system/default_system
+	/// The primary star system that holds the outpost
+	var/datum/overmap_star_system/safe_system
 
 	/// The secondary star system that allows planet spawns
 	var/datum/overmap_star_system/wild_system
@@ -58,7 +58,17 @@ SUBSYSTEM_DEF(overmap)
 	events = list()
 
 	var/list/sector_types = pick(subtypesof(/datum/overmap_star_system/safezone))
-	default_system = create_new_star_system(new sector_types)
+
+	if(fexists(SAFEZONE_OVERRIDE_FILEPATH))
+		var/file_text = trim_right(file2text(SAFEZONE_OVERRIDE_FILEPATH)) // trim_right because there's often a trailing newline
+		var/datum/overmap_star_system/safezone/potential_type = text2path(file_text)
+		if(!potential_type || !ispath(potential_type, /datum/overmap_star_system/safezone))
+			stack_trace("SSovermap found an safezone override file at [SAFEZONE_OVERRIDE_FILEPATH], but was unable to find the system type [potential_type]!")
+		else
+			sector_types = potential_type
+		fdel(SAFEZONE_OVERRIDE_FILEPATH) // don't want it to affect 2 rounds in a row.
+
+	safe_system = create_new_star_system(new sector_types)
 	wild_system = create_new_star_system (new /datum/overmap_star_system/shiptest)
 	return ..()
 
@@ -530,15 +540,6 @@ SUBSYSTEM_DEF(overmap)
  */
 /datum/overmap_star_system/proc/spawn_outpost()
 	var/list/location = get_unused_overmap_square_in_radius(rand(4, round(size/5)))
-
-	if(fexists(OUTPOST_OVERRIDE_FILEPATH))
-		var/file_text = trim_right(file2text(OUTPOST_OVERRIDE_FILEPATH)) // trim_right because there's often a trailing newline
-		var/datum/overmap/outpost/potential_type = text2path(file_text)
-		if(!potential_type || !ispath(potential_type, /datum/overmap/outpost))
-			stack_trace("SSovermap found an outpost override file at [OUTPOST_OVERRIDE_FILEPATH], but was unable to find the outpost type [potential_type]!")
-		else
-			default_outpost_type = potential_type
-		fdel(OUTPOST_OVERRIDE_FILEPATH) // don't want it to affect 2 rounds in a row.
 
 	if(!default_outpost_type)
 		var/list/possible_types = subtypesof(/datum/overmap/outpost)
@@ -1063,7 +1064,7 @@ SUBSYSTEM_DEF(overmap)
 	else
 		datum_to_edit.token.add_filter("gloweffect", 5, list("type"="drop_shadow", "color"= "#808080", "size"=2, "offset"=1))
 
-/datum/overmap_star_system/safezone/ngr
+/datum/overmap_star_system/safezone/agni
 	name = "Gorlex Controlled - Value of Public Works"
 	starname = "Ecbatana"
 	startype = /datum/overmap/star/dwarf
@@ -1084,7 +1085,7 @@ SUBSYSTEM_DEF(overmap)
 	override_object_colors = TRUE
 	overmap_icon_state = "overmap_dark"
 
-/datum/overmap_star_system/safezone/clip
+/datum/overmap_star_system/safezone/arrowsong
 	name = "CLIP Controlled - High-Pier"
 	starname = "Chana"
 	startype = /datum/overmap/star/dwarf/orange
@@ -1126,7 +1127,7 @@ SUBSYSTEM_DEF(overmap)
 	override_object_colors = TRUE
 	overmap_icon_state = "overmap"
 
-/datum/overmap_star_system/safezone/nt
+/datum/overmap_star_system/safezone/yebiri
 	name = "Nanotrasen Controlled - Persei-277"
 	starname = "Persei-277"
 	startype = /datum/overmap/star/medium
@@ -1146,6 +1147,24 @@ SUBSYSTEM_DEF(overmap)
 
 	override_object_colors = TRUE
 	overmap_icon_state = "overmap_dark"
+
+/datum/overmap_star_system/safezone/thousand_eyes
+	name = "Cybersun - Kapche-Legnica"
+	starname = "Kapche-Legnica"
+	startype = /datum/overmap/star/binary
+	default_outpost_type = /datum/overmap/outpost/cybersun_gas_giant
+
+	primary_color = "#00eaff"
+	secondary_color = "#4d140f"
+
+	hazard_primary_color = "#972241"
+	hazard_secondary_color = "#71a1a9"
+
+	primary_structure_color = "#ffffff"
+	secondary_structure_color = "#ffffff"
+
+	override_object_colors = TRUE
+	overmap_icon_state = "overmap"
 
 /datum/overmap_star_system/c64
 
@@ -1169,9 +1188,9 @@ SUBSYSTEM_DEF(overmap)
 	has_outpost = FALSE
 	can_be_selected_randomly = FALSE
 	encounters_refresh = TRUE
-	max_overmap_dynamic_events = 15
 
 /datum/overmap_star_system/shiptest/create_map()
+	max_overmap_dynamic_events = CONFIG_GET(number/max_overmap_dynamic_events)
 	. = ..()
 
 /datum/overmap_star_system/admin_sandbox

@@ -231,7 +231,7 @@
 
 		// load the template
 		elevator_template.load(anchor_landmark.loc)
-		plat = locate() in anchor_landmark.loc
+		plat = locate(/obj/structure/elevator_platform) in anchor_landmark.loc
 		// create the shaft datum
 		shaft_datums += new /datum/hangar_shaft(shaft_name, plat.master_datum)
 		// give the elevator a first floor

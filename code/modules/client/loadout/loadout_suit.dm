@@ -71,6 +71,14 @@
 	display_name = "hoodie, black w grey hood"
 	path = /obj/item/clothing/suit/hooded/hoodie/blackwa
 
+/datum/gear/suit/jacket/cropped_hoodie
+	display_name = "cropped hoodie, recolorable"
+	path = /obj/item/clothing/suit/hooded/croppedhoodie
+
+/datum/gear/suit/jacket/croppedhoodiealt
+	display_name = "cropped black and white hoodie"
+	path = /obj/item/clothing/suit/hooded/croppedhoodie/blackwa
+
 /datum/gear/suit/jacket/highvis
 	display_name = "industrial jacket"
 	path = /obj/item/clothing/suit/toggle/industrial
@@ -90,6 +98,10 @@
 /datum/gear/suit/jacket/windbreaker
 	display_name = "windbreaker, colorable"
 	path = /obj/item/clothing/suit/toggle/windbreaker
+
+/datum/gear/suit/jacket/cropped_windbreaker
+	display_name = "cropped windbreaker, colorable"
+	path = /obj/item/clothing/suit/toggle/windbreaker/cropped
 
 /datum/gear/suit/jacket/pufferjacket
 	display_name = "pufferjacket, colorable"
