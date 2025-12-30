@@ -16,7 +16,11 @@
 
 /datum/mission/acquire/industrial_drill/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc, obj/hangar_crate_spawner/cargo_belt)
 	. = ..()
-	mission_drill = spawn_bound(/obj/machinery/drill/sampler_mission, cargo_belt, VARSET_CALLBACK(src, mission_drill, null))
+	if(isnull(cargo_belt))
+		mission_drill = spawn_bound(/obj/machinery/drill/sampler_mission, accept_loc, VARSET_CALLBACK(src, sampler, null))
+		stack_trace("[src] issued by [source_outpost] could not find cargo chute to send items down. Fell back to cargo console.")
+	else
+		mission_drill = spawn_bound(/obj/machinery/drill/sampler_mission, cargo_belt.loc, VARSET_CALLBACK(src, sampler, null))
 
 /datum/mission/acquire/industrial_drill/turn_in()
 	//You guys gotta bring the expensive drill back.
