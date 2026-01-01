@@ -4757,6 +4757,10 @@
 	name = "Bridge";
 	req_one_access = list(20,41)
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "dwayne_bridge"
+	},
 /turf/open/floor/plasteel/stairs{
 	dir = 4;
 	color = "#555555"
@@ -4879,11 +4883,17 @@
 /obj/machinery/button/door{
 	id = "dwayne_windows";
 	name = "Bridge Window Control";
-	pixel_x = -5;
+	pixel_x = 5;
 	pixel_y = 20
 	},
 /obj/machinery/computer/helm{
 	dir = 8
+	},
+/obj/machinery/button/door{
+	id = "dwayne_bridge";
+	name = "Privacy Shutter Control";
+	pixel_x = -6;
+	pixel_y = 20
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
