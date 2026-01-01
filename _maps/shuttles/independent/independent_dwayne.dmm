@@ -252,6 +252,10 @@
 	dir = 8
 	},
 /obj/item/radio/intercom/directional/north,
+/obj/item/tank/internals/oxygen/yellow{
+	pixel_x = -3;
+	pixel_y = -7
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/equip)
 "dh" = (
@@ -2792,6 +2796,30 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/warning,
+/obj/structure/closet/crate/internals{
+	name = "surplus EVA crate"
+	},
+/obj/item/clothing/suit/space/orange,
+/obj/item/clothing/suit/space/orange,
+/obj/item/clothing/head/helmet/space/orange,
+/obj/item/clothing/head/helmet/space/orange,
+/obj/item/tank/internals/oxygen/yellow{
+	pixel_x = -3;
+	pixel_y = -4
+	},
+/obj/item/tank/internals/oxygen/yellow{
+	pixel_x = -3;
+	pixel_y = -4
+	},
+/obj/item/clothing/mask/breath{
+	pixel_x = 0;
+	pixel_y = -5
+	},
+/obj/item/clothing/mask/breath{
+	pixel_x = 0;
+	pixel_y = -5
+	},
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/starboard)
 "Ak" = (
@@ -3956,6 +3984,10 @@
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/item/tank/internals/oxygen/yellow{
+	pixel_x = -3;
+	pixel_y = -7
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/equip)
 "Lo" = (
@@ -4305,37 +4337,52 @@
 /turf/open/floor/plating,
 /area/ship/cargo/starboard)
 "NQ" = (
+/obj/structure/closet/crate/science{
+	name = "mining crate"
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/structure/crate_shelf,
+/obj/effect/turf_decal/box/corners,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
 /obj/item/clothing/under/rank/cargo/miner/hazard{
 	pixel_x = 11;
-	pixel_y = 2
+	pixel_y = 4
 	},
 /obj/item/clothing/under/rank/cargo/miner/hazard{
 	pixel_x = 11;
-	pixel_y = -1
+	pixel_y = 1
 	},
 /obj/item/clothing/under/rank/cargo/miner/hazard{
+	pixel_x = 11;
+	pixel_y = -2
+	},
+/obj/item/radio/weather_monitor{
 	pixel_x = -1;
-	pixel_y = 2
+	pixel_y = 0
 	},
-/obj/item/clothing/under/rank/cargo/miner/hazard{
+/obj/item/radio/weather_monitor{
 	pixel_x = -1;
-	pixel_y = -1
+	pixel_y = -2
 	},
-/obj/item/clothing/shoes/workboots/mining{
-	pixel_y = -8;
-	pixel_x = -3
+/obj/item/radio/weather_monitor{
+	pixel_x = -1;
+	pixel_y = -4
 	},
-/obj/item/clothing/shoes/workboots/mining{
-	pixel_y = -8;
-	pixel_x = -3
+/obj/item/mining_scanner{
+	pixel_x = 9;
+	pixel_y = 0
 	},
-/obj/item/clothing/shoes/workboots/mining{
-	pixel_y = -8;
-	pixel_x = 7
+/obj/item/mining_scanner{
+	pixel_x = 9;
+	pixel_y = -2
 	},
-/obj/item/clothing/shoes/workboots/mining{
-	pixel_y = -8;
-	pixel_x = 7
+/obj/item/mining_scanner{
+	pixel_x = 9;
+	pixel_y = -4
 	},
 /obj/item/clothing/head/hardhat/mining{
 	pixel_x = -11;
@@ -4349,30 +4396,18 @@
 	pixel_x = -11;
 	pixel_y = 3
 	},
-/obj/item/clothing/head/hardhat/mining{
-	pixel_x = -11;
-	pixel_y = 7
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_y = -8;
+	pixel_x = -3
 	},
-/obj/item/radio/weather_monitor{
-	pixel_x = 4;
-	pixel_y = 1
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_y = -8;
+	pixel_x = -3
 	},
-/obj/item/radio/weather_monitor{
-	pixel_x = 4;
-	pixel_y = -3
+/obj/item/clothing/shoes/workboots/mining{
+	pixel_y = -8;
+	pixel_x = -3
 	},
-/obj/structure/closet/crate/science{
-	name = "mining crate"
-	},
-/obj/effect/turf_decal/box/corners{
-	dir = 8
-	},
-/obj/structure/crate_shelf,
-/obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
-/obj/effect/turf_decal/box/corners,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
 "NW" = (
@@ -4635,6 +4670,10 @@
 	},
 /obj/structure/railing/thin{
 	dir = 4
+	},
+/obj/item/tank/internals/oxygen/yellow{
+	pixel_x = -3;
+	pixel_y = -7
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/equip)
