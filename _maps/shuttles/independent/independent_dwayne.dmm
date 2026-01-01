@@ -4031,11 +4031,6 @@
 /obj/effect/turf_decal/trimline/opaque/blue/filled/warning{
 	dir = 4
 	},
-/obj/machinery/door/airlock/command/glass{
-	dir = 4;
-	name = "Bridge";
-	req_one_access = list(20,41)
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "LB" = (
@@ -4759,6 +4754,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/machinery/door/airlock/command/glass{
+	dir = 4;
+	name = "Bridge";
+	req_one_access = list(20,41)
 	},
 /turf/open/floor/plasteel/stairs{
 	dir = 4;
