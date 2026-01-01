@@ -731,9 +731,6 @@
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "iu" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/warning{
-	dir = 1
-	},
 /obj/structure/closet/secure_closet/wall/directional/south{
 	icon_state = "cargo_wall";
 	name = "miner's locker";
@@ -795,6 +792,9 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/yellow/corner,
 /obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/yellow/warning{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -1660,7 +1660,6 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/starboard)
 "qp" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/warning,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -1671,10 +1670,11 @@
 	layer = 2.030;
 	dir = 1
 	},
+/obj/effect/turf_decal/siding/white,
 /obj/effect/turf_decal/trimline/opaque/yellow/warning{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/white,
+/obj/effect/turf_decal/trimline/opaque/yellow/warning,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/equip)
 "qq" = (
@@ -1949,9 +1949,6 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/corner{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/opaque/yellow/warning{
-	dir = 1
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/railing/thin/corner{
 	dir = 1
@@ -1961,6 +1958,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/yellow/warning{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -2173,11 +2173,11 @@
 /obj/effect/turf_decal/trimline/opaque/black/line{
 	layer = 2.030
 	},
-/obj/effect/turf_decal/trimline/opaque/yellow/warning,
 /obj/effect/turf_decal/trimline/opaque/yellow/corner{
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/white,
+/obj/effect/turf_decal/trimline/opaque/yellow/warning,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/equip)
 "uq" = (
@@ -2577,9 +2577,6 @@
 /obj/structure/railing/thin/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/yellow/warning{
-	dir = 1
-	},
 /obj/effect/turf_decal/trimline/opaque/black/line{
 	layer = 2.030;
 	dir = 1
@@ -2587,8 +2584,11 @@
 /obj/effect/turf_decal/trimline/opaque/black/line{
 	layer = 2.030
 	},
-/obj/effect/turf_decal/trimline/opaque/yellow/warning,
 /obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/yellow/warning,
+/obj/effect/turf_decal/trimline/opaque/yellow/warning{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -3243,9 +3243,6 @@
 /obj/structure/railing/thin/corner{
 	dir = 1
 	},
-/obj/effect/turf_decal/trimline/opaque/yellow/warning{
-	dir = 1
-	},
 /obj/effect/turf_decal/trimline/opaque/black/line{
 	layer = 2.030;
 	dir = 1
@@ -3253,8 +3250,11 @@
 /obj/effect/turf_decal/trimline/opaque/black/line{
 	layer = 2.030
 	},
-/obj/effect/turf_decal/trimline/opaque/yellow/warning,
 /obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/yellow/warning,
+/obj/effect/turf_decal/trimline/opaque/yellow/warning{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -3293,7 +3293,6 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/yellow/warning,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
@@ -3346,6 +3345,7 @@
 	layer = 2.030
 	},
 /obj/effect/turf_decal/siding/white,
+/obj/effect/turf_decal/trimline/opaque/yellow/warning,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/equip)
 "Fj" = (
@@ -4742,9 +4742,6 @@
 	},
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
 	},
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
