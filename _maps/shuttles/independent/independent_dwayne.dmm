@@ -5188,6 +5188,14 @@
 	pixel_x = 10;
 	pixel_y = 21
 	},
+/obj/machinery/button/door{
+	id = "dwayne_bridge";
+	name = "Privacy Shutter Control";
+	pixel_x = 21;
+	pixel_y = -3;
+	dir = 8;
+	req_one_access = list(20,41)
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "Wy" = (
