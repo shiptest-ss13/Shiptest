@@ -1820,7 +1820,9 @@
 /obj/effect/turf_decal/corner/opaque/ntblue/half{
 	dir = 1
 	},
-/obj/machinery/computer/crew,
+/obj/machinery/computer/crew{
+	icon_state = "computer-right"
+	},
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -2116,10 +2118,6 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
-	},
-/obj/item/reagent_containers/glass/maunamug{
-	pixel_x = 7;
-	pixel_y = 2
 	},
 /obj/item/book/fish_catalog{
 	pixel_x = -6;
@@ -4422,10 +4420,17 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom/wideband/table{
-	dir = 4;
-	pixel_x = 5;
-	pixel_y = 3
+/obj/item/paper_bin{
+	pixel_x = 7;
+	pixel_y = 4
+	},
+/obj/item/stamp/captain{
+	pixel_x = 8;
+	pixel_y = 9
+	},
+/obj/item/pen/fountain{
+	pixel_x = 2;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -4615,23 +4620,24 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
 "Qg" = (
-/obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/ntblue/half{
 	dir = 1
 	},
-/obj/item/radio/weather_monitor{
-	pixel_x = 8;
-	pixel_y = 7
-	},
 /obj/machinery/newscaster/directional/west,
-/obj/item/paper_bin{
-	pixel_x = -8;
-	pixel_y = 6
+/obj/structure/table/emptycomputer{
+	icon_state = "emptycomputer-left"
 	},
-/obj/item/pen/fountain,
-/obj/item/stamp/captain{
-	pixel_x = -7;
-	pixel_y = 9
+/obj/item/radio/intercom/wideband/directional/north{
+	pixel_x = 9;
+	pixel_y = 13
+	},
+/obj/machinery/emergency_panel{
+	pixel_y = 4;
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/glass/maunamug{
+	pixel_x = 0;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
