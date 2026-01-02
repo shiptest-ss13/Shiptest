@@ -19,6 +19,7 @@ export type OrbitData = {
 
 export type Observable = {
   full_name: string;
+  name: string;
   ref: string;
   // Optionals
 } & Partial<{

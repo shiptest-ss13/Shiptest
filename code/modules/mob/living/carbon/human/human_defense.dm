@@ -1101,5 +1101,5 @@
 	burn_clothing(delta_time, times_fired, fire_handler.stacks)
 	var/no_protection = FALSE
 	if(dna && dna.species)
-		no_protection = dna.species.handle_fire(src, delta_time, times_fired, no_protection)
+		no_protection = dna.species.handle_fire(src, no_protection)
 	fire_handler.harm_human(delta_time, times_fired, no_protection)
