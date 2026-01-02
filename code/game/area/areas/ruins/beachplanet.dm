@@ -35,6 +35,9 @@
 	name = "Clique Shuttle"
 	icon_state = "green"
 
+/area/ruin/beach/corpo_resort/ramzi_tent
+	name = "Ramzi Clique Hut"
+
 //Pirate Scrap Village
 
 /area/ruin/beach/piratecrash

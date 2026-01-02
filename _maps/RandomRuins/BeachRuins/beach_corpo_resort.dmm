@@ -12,6 +12,22 @@
 	},
 /turf/open/floor/plating/asteroid/sand/dense/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"aH" = (
+/obj/structure/salvageable/autolathe,
+/turf/open/water/beach,
+/area/ruin/beach/corpo_resort/supply)
+"aI" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#D2BC9D"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken6"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "aM" = (
 /obj/structure/spacevine,
 /mob/living/basic/hivebot/rapid,
@@ -49,6 +65,16 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/corpo_resort/office)
+"bg" = (
+/obj/effect/turf_decal/stairs{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#D2BC9D";
+	dir = 4
+	},
+/turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "bj" = (
 /obj/structure/catwalk/over/plated_catwalk/white,
 /turf/open/floor/plating,
@@ -73,6 +99,9 @@
 "bC" = (
 /obj/effect/turf_decal/stairs{
 	dir = 5
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#D2BC9D"
 	},
 /turf/open/floor/wood/birch{
 	icon_state = "wood-broken6"
@@ -121,12 +150,36 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"bU" = (
+/obj/machinery/door/airlock/wood{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/beach/corpo_resort/ramzi_tent)
 "bZ" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /turf/open/water/beach,
 /area/ruin/beach/corpo_resort/staff_dorms)
+"ca" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#D2BC9D";
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken4"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"cf" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/rust,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "cj" = (
 /obj/structure/girder/displaced,
 /turf/open/floor/plating/rust,
@@ -134,6 +187,10 @@
 "cp" = (
 /obj/effect/turf_decal/stairs{
 	dir = 9
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1;
+	color = "#D2BC9D"
 	},
 /turf/open/floor/wood/birch{
 	icon_state = "wood-broken5"
@@ -146,6 +203,10 @@
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plating,
 /area/ruin/beach/corpo_resort/electrical)
+"cs" = (
+/obj/structure/closet/crate/rations,
+/turf/open/floor/wood/ebony,
+/area/ruin/beach/corpo_resort/ramzi_tent)
 "ct" = (
 /obj/structure/platform/corner{
 	dir = 8
@@ -184,6 +245,13 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"cz" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 8
+	},
+/turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "cB" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -198,7 +266,33 @@
 /obj/structure/platform{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 4
+	},
 /turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"cM" = (
+/obj/effect/turf_decal/stairs{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#D2BC9D"
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken5"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"cR" = (
+/obj/structure/table/wood,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/wood/ebony,
+/area/ruin/beach/corpo_resort/ramzi_tent)
+"dh" = (
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "di" = (
 /obj/structure/hazard/electrical/conduit/corner{
@@ -241,6 +335,12 @@
 /obj/structure/platform,
 /turf/open/floor/plating/asteroid/sand/dense/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"eh" = (
+/obj/structure/platform{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "ej" = (
 /obj/structure/platform{
 	dir = 1
@@ -260,6 +360,10 @@
 "es" = (
 /obj/structure/platform/corner{
 	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 4
 	},
 /turf/open/floor/wood/birch{
 	icon_state = "wood-broken5"
@@ -315,8 +419,18 @@
 /obj/effect/turf_decal/corner/opaque/ntbluelight/three_quarters{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/corpo_resort/office)
+"fx" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 6
+	},
+/turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "fF" = (
 /obj/machinery/power/smes/magical{
 	name = "power storage unit";
@@ -332,8 +446,23 @@
 /obj/item/storage/toolbox/ammo/c57,
 /obj/item/storage/toolbox/ammo/frag,
 /obj/item/storage/toolbox/ammo/c10mm,
+/obj/structure/cable/yellow{
+	icon_state = "8-10"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"fJ" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken5"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "fR" = (
 /mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
 /turf/open/floor/plating/asteroid/dirt/beach,
@@ -380,6 +509,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
+/obj/structure/cable/yellow{
+	icon_state = "2-9"
+	},
 /turf/open/floor/plating,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "gy" = (
@@ -396,6 +528,15 @@
 /obj/effect/mapping_helpers/turf/burnt,
 /turf/open/floor/plating,
 /area/ruin/beach/corpo_resort/electrical)
+"gW" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#D2BC9D"
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken7"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "gX" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
@@ -403,9 +544,30 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/corpo_resort/office)
+"hi" = (
+/obj/machinery/light/small/directional/east,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 19;
+	pixel_y = -7
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/beach/corpo_resort/ramzi_tent)
 "hk" = (
 /obj/structure/girder,
 /turf/open/floor/plating/rust,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"hq" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken3"
+	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "hv" = (
 /turf/open/floor/plating/asteroid/sand/lit,
@@ -430,6 +592,10 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "hU" = (
 /obj/structure/platform{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
 	dir = 4
 	},
 /turf/open/floor/wood/birch,
@@ -474,6 +640,25 @@
 /obj/structure/window/reinforced/spawner/north,
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/corpo_resort/office)
+"iu" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 2
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken7"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"iB" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#D2BC9D"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "iG" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -503,6 +688,25 @@
 	name = "exterior reinforced hull plating"
 	},
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"jn" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1;
+	color = "#D2BC9D"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"jo" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/beach/corpo_resort/hotel)
 "jB" = (
 /obj/structure/hazard/electrical/electrified_water{
 	id = "corpo_resort_geothermal_station"
@@ -510,6 +714,15 @@
 /obj/structure/platform,
 /turf/open/water/beach/underground,
 /area/ruin/beach/corpo_resort/electrical)
+"jR" = (
+/obj/effect/turf_decal/corner/opaque/ntbluelight{
+	dir = 5
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
 "kc" = (
 /obj/effect/turf_decal/corner/opaque/grey{
 	dir = 6
@@ -522,6 +735,25 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"kq" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"kr" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating/rust,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "kw" = (
 /mob/living/basic/hivebot/strong,
 /turf/open/floor/plasteel/patterned,
@@ -536,6 +768,9 @@
 /obj/machinery/door/poddoor{
 	id = "corpo_resort_ramzi_cargo";
 	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "6-10"
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
@@ -554,6 +789,9 @@
 /obj/machinery/door/airlock/maintenance_hatch{
 	dir = 1
 	},
+/obj/structure/cable/yellow{
+	icon_state = "5-6"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "kR" = (
@@ -567,16 +805,46 @@
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"kZ" = (
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/turf/open/floor/wood/ebony{
+	icon_state = "wood-broken3"
+	},
+/area/ruin/beach/corpo_resort/ramzi_tent)
 "ll" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
+"lv" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
 /area/ruin/beach/corpo_resort/office)
 "lw" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 9
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#D2BC9D"
 	},
 /turf/open/floor/wood/birch,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -602,7 +870,7 @@
 /area/ruin/beach/corpo_resort/electrical)
 "lU" = (
 /obj/item/shard,
-/turf/open/water/beach,
+/turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "lY" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -622,6 +890,9 @@
 	dir = 8
 	},
 /obj/item/radio/intercom/directional/south,
+/obj/structure/cable/yellow{
+	icon_state = "6-9"
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "mu" = (
@@ -634,6 +905,15 @@
 /obj/machinery/autolathe/hacked,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"mP" = (
+/turf/open/floor/plating/asteroid/dirt/grass/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"mS" = (
+/obj/structure/sign/nanotrasen/ns{
+	pixel_x = -32
+	},
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "nb" = (
 /turf/open/water/beach,
 /area/ruin/beach/corpo_resort/bar)
@@ -645,11 +925,13 @@
 /turf/open/floor/wood/birch,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "nm" = (
-/obj/structure/platform,
-/obj/structure/sign/nanotrasen/ns{
-	pixel_x = -32
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#D2BC9D"
 	},
-/turf/open/floor/plating/asteroid/dirt/beach,
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken3"
+	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "nq" = (
 /turf/open/floor/plating,
@@ -659,13 +941,34 @@
 	dir = 5;
 	color = "#55391A"
 	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#D2BC9D"
+	},
 /turf/open/floor/wood/birch,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"nH" = (
+/obj/effect/turf_decal/corner/opaque/ntbluelight/three_quarters{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
 "nJ" = (
 /obj/effect/turf_decal/road/edge{
 	dir = 8
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"nS" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 2
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken4"
+	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "nZ" = (
 /obj/structure/platform{
@@ -682,12 +985,27 @@
 /mob/living/basic/hivebot/mechanic,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/beach/corpo_resort/electrical)
+"oC" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#D2BC9D"
+	},
+/turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "oE" = (
 /obj/structure/hazard/electrical/electrified_water{
 	id = "corpo_resort_geothermal_station"
 	},
 /obj/structure/platform,
 /turf/open/water/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"oP" = (
+/obj/effect/turf_decal/stairs{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#D2BC9D"
+	},
+/turf/open/floor/wood/birch,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "oS" = (
 /obj/machinery/light/dim/directional/north,
@@ -759,14 +1077,49 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/beach/corpo_resort/electrical)
-"pG" = (
+"pD" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/beach/corpo_resort/hotel)
+"pF" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
 	},
 /turf/open/floor/wood/birch{
 	icon_state = "wood-broken7"
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"pG" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#D2BC9D"
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken7"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"pJ" = (
+/obj/machinery/vending/cola/blue,
+/obj/effect/turf_decal/corner/opaque/ntblue/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/beach/corpo_resort/hotel)
 "pQ" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/beach/corpo_resort/staff_dorms)
@@ -776,18 +1129,42 @@
 "qs" = (
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"qz" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 4
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken3"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "qE" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-9"
 	},
 /turf/open/water/beach,
 /area/ruin/beach/corpo_resort/staff_dorms)
+"qH" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 4
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken2"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "qP" = (
 /obj/structure/platform/corner{
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"qT" = (
+/obj/structure/chair/wood{
+	dir = 1
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/beach/corpo_resort/ramzi_tent)
 "qV" = (
 /obj/item/stack/ore/salvage/scraptitanium,
 /obj/effect/turf_decal/corner/opaque/red{
@@ -859,12 +1236,17 @@
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"rt" = (
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 19;
+	pixel_y = -7
+	},
+/turf/closed/wall/mineral/wood/nonmetal,
+/area/ruin/beach/corpo_resort/ramzi_tent)
 "rz" = (
 /obj/structure/cable/yellow{
-	icon_state = "2-9"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-5"
+	icon_state = "6-9"
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/corpo_resort/office)
@@ -893,11 +1275,15 @@
 "rR" = (
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/security)
+"rV" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
 "rX" = (
 /obj/structure/platform{
 	dir = 10
 	},
-/turf/open/floor/plating/asteroid/dirt/beach,
+/turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "sg" = (
 /obj/structure/cable{
@@ -922,12 +1308,27 @@
 	},
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"sC" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken4"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "sI" = (
 /obj/machinery/light/directional/east,
 /obj/structure/hazard/electrical/electrified_water{
 	id = "corpo_resort_geothermal_station"
 	},
 /obj/structure/platform{
+	dir = 8
+	},
+/obj/structure/platform/corner{
 	dir = 8
 	},
 /turf/open/water/beach/underground,
@@ -972,6 +1373,13 @@
 /obj/machinery/light/dim/directional/north,
 /turf/open/water/beach/underground,
 /area/ruin/beach/corpo_resort/electrical)
+"tQ" = (
+/obj/machinery/vending/cigarette,
+/obj/effect/turf_decal/corner/opaque/ntblue/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/beach/corpo_resort/hotel)
 "ui" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
@@ -993,6 +1401,21 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/beach/corpo_resort/office)
+"ux" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8;
+	color = "#D2BC9D"
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1;
+	color = "#D2BC9D"
+	},
+/turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"uF" = (
+/obj/effect/spawner/bunk_bed,
+/turf/open/floor/wood/ebony,
+/area/ruin/beach/corpo_resort/ramzi_tent)
 "uP" = (
 /obj/effect/turf_decal/corner/opaque/grey{
 	dir = 4
@@ -1009,6 +1432,31 @@
 /obj/effect/turf_decal/corner/opaque/ntbluelight,
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/office)
+"uX" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 8
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken6"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"uZ" = (
+/obj/structure/table/wood,
+/obj/item/food/meat/slab{
+	pixel_x = 0;
+	pixel_y = 9
+	},
+/obj/item/food/meat/slab{
+	pixel_x = -3;
+	pixel_y = 15
+	},
+/obj/item/food/meat/slab{
+	pixel_x = 3;
+	pixel_y = 14
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/beach/corpo_resort/ramzi_tent)
 "va" = (
 /obj/structure/platform/corner{
 	dir = 1
@@ -1068,6 +1516,19 @@
 /obj/structure/spacevine/weak,
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"wb" = (
+/obj/structure/closet/crate/wooden,
+/obj/effect/mapping_helpers/crate_shelve,
+/obj/machinery/light/small/directional/east,
+/obj/item/toy/plush/nukeplushie,
+/obj/item/toy/plush/rilena,
+/obj/item/toy/plush/xader,
+/obj/item/modular_computer/laptop/preset/civilian/rilena,
+/obj/item/spacecash/bundle/pocketchange,
+/turf/open/floor/wood/ebony{
+	icon_state = "wood-broken7"
+	},
+/area/ruin/beach/corpo_resort/ramzi_tent)
 "we" = (
 /turf/open/floor/wood,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -1096,6 +1557,10 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/beach/corpo_resort/office)
+"wq" = (
+/obj/structure/foamedmetal/iron,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "wG" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -1166,6 +1631,9 @@
 /obj/structure/chair/handrail{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "4-9"
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "xi" = (
@@ -1173,6 +1641,15 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/security)
+"xn" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 8
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken5"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "xr" = (
 /obj/structure/flora/tree/palm,
 /turf/open/floor/plating/asteroid/dirt/beach,
@@ -1201,6 +1678,10 @@
 "xO" = (
 /obj/effect/turf_decal/stairs{
 	dir = 9
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8;
+	color = "#D2BC9D"
 	},
 /turf/open/floor/wood/birch{
 	icon_state = "wood-broken3"
@@ -1235,13 +1716,11 @@
 /turf/open/floor/plating/asteroid/sand/dense/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "ye" = (
-/obj/structure/platform{
-	dir = 1
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 2
 	},
-/obj/structure/sign/nanotrasen/ns{
-	pixel_x = -32
-	},
-/turf/open/floor/plating/asteroid/dirt/beach,
+/turf/open/floor/wood/birch,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "yf" = (
 /obj/structure/cable/yellow{
@@ -1291,6 +1770,26 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/beach/corpo_resort/electrical)
+"yR" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 4
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken6"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"yU" = (
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -7;
+	pixel_y = -19
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/beach/corpo_resort/ramzi_tent)
+"za" = (
+/turf/closed/wall/mineral/wood/nonmetal,
+/area/ruin/beach/corpo_resort/ramzi_tent)
 "zk" = (
 /obj/effect/turf_decal/stairs{
 	dir = 9
@@ -1304,6 +1803,13 @@
 "zS" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"zU" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#D2BC9D";
+	dir = 4
+	},
+/turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Ag" = (
 /obj/effect/turf_decal/road/edge,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
@@ -1389,6 +1895,19 @@
 	},
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Bb" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#D2BC9D"
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 2
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken5"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Bj" = (
 /obj/structure/hazard/electrical/conduit{
 	id = "corpo_resort_geothermal_station"
@@ -1397,7 +1916,7 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Bp" = (
 /obj/structure/cable/yellow{
-	icon_state = "4-10"
+	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/corpo_resort/office)
@@ -1460,8 +1979,21 @@
 /obj/effect/turf_decal/corner/opaque/ntbluelight{
 	dir = 9
 	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/corpo_resort/office)
+"CN" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#D2BC9D"
+	},
+/turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "CP" = (
 /obj/structure/cable,
 /obj/machinery/power/terminal{
@@ -1479,6 +2011,10 @@
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/metal/fifty,
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 2
+	},
 /turf/open/floor/wood/birch{
 	icon_state = "wood-broken4"
 	},
@@ -1525,12 +2061,41 @@
 /obj/structure/platform,
 /turf/open/water/beach/underground,
 /area/ruin/beach/corpo_resort/electrical)
+"DB" = (
+/obj/structure/table/wood,
+/turf/open/floor/wood/ebony,
+/area/ruin/beach/corpo_resort/ramzi_tent)
 "DI" = (
 /obj/effect/turf_decal/road/edge{
 	dir = 4
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"DR" = (
+/obj/structure/closet/crate/wooden,
+/obj/structure/crate_shelf,
+/obj/item/clothing/head/hardhat/ramzi,
+/obj/item/clothing/head/hardhat/ramzi,
+/obj/item/clothing/head/helmet/m10/ramzi,
+/obj/item/clothing/head/helmet/m10/ramzi,
+/obj/item/clothing/head/helmet/bulletproof/x11/ramzi,
+/obj/item/clothing/suit/armor/ramzi,
+/obj/item/clothing/suit/armor/ramzi,
+/obj/item/clothing/suit/armor/ramzi/bulletproof,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/suit/ramzi,
+/obj/item/clothing/under/syndicate/ramzi,
+/obj/item/clothing/under/syndicate/ramzi,
+/obj/item/clothing/under/syndicate/ramzi/officer,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
+/obj/item/clothing/suit/armor/ramzi/officer,
+/turf/open/floor/wood/ebony,
+/area/ruin/beach/corpo_resort/ramzi_tent)
 "Ec" = (
 /obj/structure/hazard/electrical/electrified_water{
 	id = "corpo_resort_geothermal_station"
@@ -1630,6 +2195,18 @@
 /obj/machinery/power/port_gen/pacman,
 /turf/open/floor/plating,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"FQ" = (
+/obj/effect/turf_decal/stairs{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#D2BC9D";
+	dir = 4
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken4"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "FR" = (
 /obj/effect/turf_decal/road,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
@@ -1694,6 +2271,15 @@
 	},
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"GT" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 2
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken5"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "He" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/beach/corpo_resort/hotel)
@@ -1724,6 +2310,10 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"Ie" = (
+/obj/machinery/griddle,
+/turf/open/floor/plating,
+/area/ruin/beach/corpo_resort/ramzi_tent)
 "Ig" = (
 /obj/effect/turf_decal/ntlogo{
 	dir = 4
@@ -1756,6 +2346,9 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/corpo_resort/office)
 "Im" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
 /turf/open/floor/wood/birch{
 	icon_state = "wood-broken2"
 	},
@@ -1775,12 +2368,24 @@
 "ID" = (
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/corpo_resort/security)
+"IE" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-9"
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
 "IH" = (
 /obj/effect/turf_decal/industrial/warning{
 	color = "#912a2a";
 	dir = 4
 	},
 /obj/item/radio/intercom/directional/south,
+/obj/structure/cable/yellow{
+	icon_state = "5-8"
+	},
 /turf/open/floor/engine/hull/reinforced/interior{
 	name = "exterior reinforced hull plating"
 	},
@@ -1790,8 +2395,21 @@
 	icon_state = "wood-broken3"
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"IJ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6;
+	color = "#D2BC9D"
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken4"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "IP" = (
 /obj/structure/platform{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
 	dir = 4
 	},
 /turf/open/floor/wood/birch{
@@ -1824,11 +2442,37 @@
 /obj/structure/platform{
 	dir = 8
 	},
-/turf/open/water/beach,
+/turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Jw" = (
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/ruin/beach/corpo_resort/hotel)
+"JL" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8;
+	color = "#D2BC9D"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"JO" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 2
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken3"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Kf" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8;
+	color = "#D2BC9D"
+	},
+/turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Kv" = (
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
@@ -1860,6 +2504,7 @@
 /obj/effect/turf_decal/techfloor,
 /obj/structure/closet/wall/red/directional/west,
 /obj/item/storage/box/ammo/a357,
+/obj/item/spacecash/bundle/mediumrand,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "KX" = (
@@ -1887,6 +2532,15 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/corpo_resort/office)
+"LJ" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 4
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken7"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "LN" = (
 /obj/item/wallframe/apc{
 	pixel_x = 20;
@@ -1912,6 +2566,16 @@
 	icon_state = "wood-broken6"
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Mh" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#D2BC9D"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Mp" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -1921,6 +2585,31 @@
 "Mu" = (
 /obj/effect/spawner/random/food_or_drink/garden/seaweed,
 /turf/open/water/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Mz" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"MD" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#D2BC9D"
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken4"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"ME" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8;
+	color = "#D2BC9D"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood/birch,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "MN" = (
 /obj/effect/turf_decal/siding/thinplating/light{
@@ -1936,10 +2625,19 @@
 	icon_state = "4-6"
 	},
 /obj/effect/turf_decal/corner/opaque/grey{
-	dir = 8
+	dir = 4
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/electrical)
+"MV" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 2
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken6"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Nm" = (
 /obj/structure/platform/wood,
 /turf/open/floor/plating/asteroid/sand/dense/lit,
@@ -1981,6 +2679,15 @@
 "Oo" = (
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/beach/corpo_resort/supply)
+"Oz" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#D2BC9D"
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken6"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "OB" = (
 /obj/structure/platform{
 	dir = 4
@@ -1991,6 +2698,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/beach/corpo_resort/electrical)
 "OJ" = (
@@ -2004,6 +2712,9 @@
 /obj/effect/turf_decal/corner/opaque/ntbluelight{
 	dir = 1
 	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/office)
 "Pe" = (
@@ -2015,12 +2726,6 @@
 	icon_state = "wood-broken7"
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"Pf" = (
-/obj/structure/cable/yellow{
-	icon_state = "0-6"
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ruin/beach/corpo_resort/electrical)
 "Pm" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
@@ -2063,6 +2768,13 @@
 	},
 /turf/open/floor/plating/asteroid/sand/dense/lit,
 /area/ruin/beach/corpo_resort/staff_dorms)
+"PP" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#D2BC9D"
+	},
+/turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Qa" = (
 /obj/structure/hazard/electrical/conduit/exposed_wires_stun{
 	id = "corpo_resort_geothermal_station";
@@ -2088,6 +2800,10 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"Qq" = (
+/mob/living/simple_animal/hostile/human/ramzi/melee,
+/turf/open/floor/plating,
+/area/ruin/beach/corpo_resort/ramzi_tent)
 "QH" = (
 /obj/item/ammo_casing/spent/big_brass{
 	pixel_x = -7;
@@ -2099,6 +2815,22 @@
 	},
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"QR" = (
+/turf/open/floor/wood/ebony{
+	icon_state = "wood-broken3"
+	},
+/area/ruin/beach/corpo_resort/ramzi_tent)
+"QT" = (
+/obj/structure/salvageable/machine{
+	pixel_x = 4;
+	pixel_y = 0
+	},
+/obj/structure/filingcabinet{
+	pixel_x = -10;
+	pixel_y = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
 "QX" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -2109,6 +2841,21 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Rj" = (
 /obj/structure/platform/corner,
+/obj/effect/turf_decal/siding/wood{
+	dir = 5;
+	color = "#D2BC9D"
+	},
+/turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Rl" = (
+/obj/effect/turf_decal/stairs_wood{
+	dir = 5;
+	color = "#55391A"
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#D2BC9D";
+	dir = 4
+	},
 /turf/open/floor/wood/birch,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Rn" = (
@@ -2125,6 +2872,15 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"Rq" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/wood{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/beach/corpo_resort/ramzi_tent)
 "Ru" = (
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plating/rust,
@@ -2133,13 +2889,22 @@
 /obj/structure/platform/corner{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/dirt/beach,
+/turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Rz" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"RA" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 4
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken5"
+	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "RK" = (
 /obj/structure/cable/yellow{
@@ -2149,6 +2914,18 @@
 	icon_state = "4-9"
 	},
 /turf/open/floor/plating/rust,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"RP" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#D2BC9D"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken7"
+	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "RU" = (
 /obj/item/stack/ore/salvage/scraptitanium,
@@ -2174,6 +2951,13 @@
 "SA" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/beach/corpo_resort/office)
+"SQ" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 4
+	},
+/turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "SV" = (
 /obj/machinery/light/dim/directional/east,
 /turf/open/water/beach,
@@ -2198,15 +2982,21 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Tq" = (
 /obj/structure/cable/yellow{
-	icon_state = "4-9"
-	},
-/obj/structure/cable/yellow{
 	icon_state = "4-10"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/beach/corpo_resort/electrical)
 "Tt" = (
 /turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"Tv" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 4
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken4"
+	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Tz" = (
 /obj/structure/hazard/electrical/electrified_water{
@@ -2233,6 +3023,18 @@
 "TP" = (
 /obj/structure/hazard/spray/steam/safe,
 /turf/open/floor/plating/rust,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"TW" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#D2BC9D"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken5"
+	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "TZ" = (
 /obj/structure/hazard/electrical/electrified_water{
@@ -2269,9 +3071,37 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
 /area/ruin/beach/corpo_resort/office)
+"UF" = (
+/obj/structure/table/wood,
+/obj/item/food/meat/rawcrab,
+/obj/item/food/meat/rawcrab{
+	pixel_x = 0;
+	pixel_y = 10
+	},
+/obj/item/food/meat/rawcrab{
+	pixel_x = -3;
+	pixel_y = 4
+	},
+/obj/item/food/meat/rawcrab{
+	pixel_x = 3;
+	pixel_y = 5
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/wood/ebony,
+/area/ruin/beach/corpo_resort/ramzi_tent)
+"UK" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1;
+	color = "#D2BC9D"
+	},
+/turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "UN" = (
 /obj/effect/turf_decal/corner/opaque/ntbluelight{
 	dir = 5
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/corpo_resort/office)
@@ -2281,6 +3111,18 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/electrical)
+"UX" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#D2BC9D"
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken6"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Vh" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 1
@@ -2315,6 +3157,13 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"VD" = (
+/obj/machinery/vending/snack/blue,
+/obj/effect/turf_decal/corner/opaque/ntblue/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/beach/corpo_resort/hotel)
 "Wb" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/beach/corpo_resort/security)
@@ -2327,6 +3176,14 @@
 	},
 /turf/open/water/beach/underground,
 /area/ruin/beach/corpo_resort/electrical)
+"Wf" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood/ebony{
+	icon_state = "wood-broken4"
+	},
+/area/ruin/beach/corpo_resort/ramzi_tent)
 "Wg" = (
 /obj/effect/turf_decal/trimline/opaque/blue/corner,
 /obj/effect/turf_decal/trimline/opaque/blue/corner{
@@ -2357,6 +3214,26 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/corpo_resort/security)
+"Wr" = (
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/turf/open/floor/wood/ebony,
+/area/ruin/beach/corpo_resort/ramzi_tent)
+"Wt" = (
+/obj/structure/platform,
+/turf/open/floor/plating/asteroid/dirt/grass/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"WG" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#D2BC9D"
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken5"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "WI" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -2372,7 +3249,7 @@
 "WR" = (
 /obj/structure/platform,
 /obj/item/stack/ore/salvage/scrapmetal,
-/turf/open/floor/plating/asteroid/dirt/beach,
+/turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "WS" = (
 /turf/open/water/beach,
@@ -2422,7 +3299,7 @@
 /obj/structure/platform{
 	dir = 9
 	},
-/turf/open/floor/plating/asteroid/dirt/beach,
+/turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Xy" = (
 /mob/living/simple_animal/hostile/human/ramzi/melee/sledge,
@@ -2438,6 +3315,12 @@
 "XN" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/beach/corpo_resort/supply)
+"XQ" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/beach/corpo_resort/office)
 "Yk" = (
 /obj/effect/turf_decal/road{
 	dir = 6
@@ -2455,6 +3338,9 @@
 /obj/structure/foamedmetal/iron,
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Yv" = (
+/turf/open/floor/wood/ebony,
+/area/ruin/beach/corpo_resort/ramzi_tent)
 "YC" = (
 /obj/structure/hazard/electrical/electrified_water{
 	id = "corpo_resort_geothermal_station"
@@ -2478,9 +3364,18 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"YT" = (
+/turf/open/floor/wood/ebony{
+	icon_state = "wood-broken5"
+	},
+/area/ruin/beach/corpo_resort/ramzi_tent)
 "YU" = (
 /obj/structure/sign/nanotrasen/vigilitas{
 	pixel_x = 32
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#D2BC9D"
 	},
 /turf/open/floor/wood/birch{
 	icon_state = "wood-broken3"
@@ -2498,6 +3393,15 @@
 /obj/machinery/door/window/brigdoor/northleft,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"Zb" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 9
+	},
+/turf/open/floor/wood/birch{
+	icon_state = "wood-broken3"
+	},
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Zd" = (
 /obj/structure/platform/wood/corner,
 /turf/open/water/beach,
@@ -2506,8 +3410,20 @@
 /obj/effect/turf_decal/corner/opaque/ntbluelight{
 	dir = 1
 	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/office)
+"ZA" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/wood/birch,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "ZN" = (
 /obj/structure/cable{
 	icon_state = "6-8"
@@ -2518,6 +3434,9 @@
 /obj/effect/turf_decal/corner/opaque/ntbluelight/three_quarters{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/beach/corpo_resort/office)
 "ZQ" = (
@@ -2525,6 +3444,11 @@
 /obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/electrical)
+"ZT" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/turf/open/floor/plating,
+/area/ruin/beach/corpo_resort/hotel)
 "ZZ" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-10"
@@ -3254,10 +4178,10 @@ wi
 XN
 wi
 wi
-wi
+aH
 XN
-gO
-gO
+hv
+hv
 gO
 Nm
 we
@@ -3333,9 +4257,9 @@ wi
 wi
 wi
 XN
-Fi
-Fi
-gO
+GC
+hv
+hv
 Nm
 we
 we
@@ -3409,12 +4333,12 @@ XN
 wi
 wi
 wi
-Oo
-Fi
-Fi
-Fi
+XN
+GC
+GC
+hv
 aE
-nu
+Rl
 nu
 Ar
 gO
@@ -3487,15 +4411,15 @@ wi
 wi
 wi
 XN
-Fi
-Fi
-Fi
-gO
-Tt
-II
-gO
-gO
-gO
+GC
+GC
+hv
+hv
+PP
+JO
+hv
+hv
+hv
 gO
 gO
 gO
@@ -3564,17 +4488,17 @@ wi
 wi
 wi
 XN
-Fi
-Fi
-Fi
-gO
-II
-Tt
-gO
-Fi
-Fi
-gO
-gO
+GC
+GC
+GC
+hv
+nm
+ye
+hv
+hv
+hv
+hv
+hv
 gO
 gO
 gO
@@ -3638,15 +4562,15 @@ XN
 XN
 XN
 XN
+Oo
 XN
 XN
-XN
-Fi
-Fi
-Fi
-Fi
-Tt
-Tt
+GC
+GC
+GC
+GC
+PP
+ye
 ao
 He
 He
@@ -3707,23 +4631,23 @@ hv
 hv
 hv
 hv
-nm
+Wk
 gl
 nJ
-ye
+mu
 GC
 GC
 GC
 GC
-GC
-GC
+Bb
+mS
 GC
 GC
 GC
 GC
 xr
-yl
-Tt
+gW
+ye
 He
 WS
 WS
@@ -3734,7 +4658,7 @@ NS
 NS
 NS
 He
-gO
+hv
 pQ
 lY
 lY
@@ -3790,17 +4714,17 @@ xR
 mu
 GC
 GC
-II
+Zb
+cz
+ux
+cz
+uX
+cz
+xn
+cz
+cz
 Tt
-Tt
-Tt
-Ah
-Tt
-Oc
-Tt
-Tt
-Tt
-Oc
+GT
 He
 WS
 WS
@@ -3811,7 +4735,7 @@ WS
 WS
 WS
 He
-gO
+hv
 lY
 bA
 bA
@@ -3867,17 +4791,17 @@ xR
 mu
 GC
 GC
-Tt
-Tt
-II
-Tt
-Tt
-Tt
-Tt
-Cw
-Tt
-Oc
-Tt
+PP
+oC
+qz
+SQ
+SQ
+zU
+oC
+Tv
+SQ
+RA
+fx
 He
 WS
 WS
@@ -3888,7 +4812,7 @@ WS
 WS
 WS
 He
-Fi
+hv
 lY
 bA
 bA
@@ -3949,8 +4873,8 @@ xO
 OB
 OB
 qP
-Tt
-Tt
+PP
+ye
 GC
 ao
 He
@@ -3965,7 +4889,7 @@ WS
 WS
 WS
 He
-Fi
+hv
 lY
 lY
 lY
@@ -3977,7 +4901,7 @@ bA
 bA
 bA
 lY
-gO
+hv
 gO
 gO
 gO
@@ -4026,8 +4950,8 @@ DI
 FR
 Qd
 mu
-Cw
-Tt
+MD
+ye
 GC
 He
 WS
@@ -4054,9 +4978,9 @@ bA
 bA
 bA
 lY
-gO
-gO
-gO
+hv
+hv
+hv
 gO
 gO
 gO
@@ -4103,8 +5027,8 @@ Kv
 Kv
 xR
 mu
-Tt
-Oc
+PP
+GT
 GC
 He
 WS
@@ -4131,10 +5055,10 @@ oW
 oW
 oW
 lY
-gO
-gO
-gO
-gO
+hv
+hv
+hv
+hv
 gO
 gO
 gO
@@ -4180,8 +5104,8 @@ Kv
 Kv
 xR
 mu
-Tt
-Tt
+PP
+ye
 GC
 He
 WS
@@ -4208,11 +5132,11 @@ lY
 lY
 lY
 pQ
-Fi
-gO
-gO
-gO
-gO
+hv
+hv
+hv
+hv
+hv
 gO
 gO
 Fi
@@ -4257,7 +5181,7 @@ Kv
 Kv
 xR
 mu
-Tt
+PP
 CT
 GC
 He
@@ -4269,9 +5193,9 @@ WS
 WS
 WS
 WS
-WS
-WS
-WS
+He
+He
+He
 He
 Wj
 kG
@@ -4286,11 +5210,11 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-gO
-gO
-gO
+hv
+hv
+hv
+hv
+hv
 gO
 gO
 Fi
@@ -4334,8 +5258,8 @@ Kv
 Kv
 xR
 mu
-II
-Tt
+nm
+ye
 GC
 He
 He
@@ -4345,8 +5269,8 @@ He
 WS
 WS
 WS
-WS
-WS
+He
+He
 WS
 WS
 He
@@ -4364,10 +5288,10 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-gO
+hv
+hv
+hv
+hv
 gO
 gO
 gO
@@ -4411,8 +5335,8 @@ Kv
 Kv
 xR
 mu
-Tt
-Oc
+PP
+GT
 GC
 He
 WS
@@ -4422,7 +5346,7 @@ He
 WS
 WS
 WS
-WS
+He
 WS
 WS
 WS
@@ -4443,9 +5367,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
+hv
+hv
+hv
 gO
 gO
 gO
@@ -4488,8 +5412,8 @@ Kv
 Kv
 xR
 mu
-Tt
-Tt
+PP
+ye
 GC
 He
 WS
@@ -4504,7 +5428,7 @@ WS
 WS
 WS
 He
-Wj
+wq
 Ch
 Wj
 Wj
@@ -4519,11 +5443,11 @@ Tt
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+hv
+hv
+hv
+hv
+hv
 gO
 gO
 gO
@@ -4565,8 +5489,8 @@ Kv
 kW
 xR
 mu
-Oc
-Tt
+WG
+ye
 GC
 He
 WS
@@ -4576,7 +5500,7 @@ He
 WS
 WS
 WS
-WS
+He
 WS
 WS
 WS
@@ -4598,10 +5522,10 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-gO
-gO
+hv
+hv
+hv
+hv
 gO
 gO
 gO
@@ -4642,8 +5566,8 @@ jl
 zS
 xR
 mu
-Tt
-Tt
+PP
+ye
 GC
 He
 WS
@@ -4676,9 +5600,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-gO
-gO
+hv
+hv
+hv
 gO
 gO
 gO
@@ -4719,10 +5643,10 @@ Rn
 zS
 xR
 mu
-yl
-Tt
-GC
-ao
+gW
+Kf
+uX
+He
 He
 Jw
 He
@@ -4755,7 +5679,7 @@ hC
 hC
 hC
 qd
-gO
+hv
 gO
 gO
 gO
@@ -4796,10 +5720,10 @@ CP
 zS
 xR
 mu
+PP
 Tt
 Tt
-GC
-GC
+pJ
 He
 Jw
 Jw
@@ -4832,8 +5756,8 @@ Bw
 Bw
 Bw
 hC
-gO
-gO
+hv
+hv
 gO
 gO
 Fi
@@ -4873,10 +5797,10 @@ FC
 zS
 xR
 mu
-Tt
+PP
 Cw
-GC
-GC
+Tt
+tQ
 He
 Jw
 Jw
@@ -4909,8 +5833,8 @@ Bw
 Bw
 Bw
 hC
-gO
-gO
+hv
+hv
 gO
 gO
 Fi
@@ -4950,10 +5874,10 @@ zS
 iZ
 xR
 mu
-Tt
+PP
 Ah
-GC
-GC
+Oc
+VD
 He
 Jw
 Jw
@@ -4986,8 +5910,8 @@ xZ
 Bw
 Bw
 hC
-gO
-gO
+hv
+hv
 gO
 gO
 Fi
@@ -5027,17 +5951,17 @@ iZ
 Kv
 xR
 mu
-Tt
-Tt
-GC
-GC
-ao
+PP
+oC
+SQ
+He
+He
 He
 He
 ao
-WS
-WS
-WS
+pD
+ZT
+jo
 ao
 GC
 Gr
@@ -5063,8 +5987,8 @@ xX
 Bw
 RZ
 hC
-gO
-gO
+hv
+hv
 gO
 gO
 Fi
@@ -5104,17 +6028,17 @@ Kv
 Kv
 xR
 mu
-Tt
-Tt
+PP
+ye
 GC
 GC
 GC
 GC
 GC
 GC
-Tt
+Mh
 Ah
-Oc
+GT
 GC
 GC
 mc
@@ -5140,7 +6064,7 @@ xX
 Bw
 Bw
 hC
-gO
+hv
 gO
 gO
 gO
@@ -5181,17 +6105,17 @@ Kv
 Kv
 xR
 mu
-Ah
-Tt
+Oz
+ye
 GC
 GC
 GC
 GC
 GC
 GC
-yl
-Tt
-Tt
+RP
+oC
+fx
 GC
 GC
 mc
@@ -5217,7 +6141,7 @@ Bw
 Bw
 Bw
 hC
-gO
+hv
 gO
 gO
 Fi
@@ -5258,16 +6182,16 @@ Kv
 Kv
 xR
 mu
-Tt
-yl
+PP
+iu
 GC
 GC
 GC
 GC
 GC
 GC
-Tt
-Oc
+Mh
+GT
 GC
 GC
 GC
@@ -5277,7 +6201,7 @@ GC
 GC
 yf
 hC
-Pf
+Sm
 Sm
 tj
 Sm
@@ -5335,16 +6259,16 @@ Kv
 Kv
 xR
 mu
-Cw
-Tt
+MD
+ye
 GC
 GC
 GC
 GC
 GC
 GC
-Tt
-Tt
+Mh
+ye
 GC
 GC
 GC
@@ -5412,16 +6336,16 @@ Kv
 Kv
 xR
 mu
-Tt
-Tt
+PP
+ye
 GC
 GC
 GC
 GC
 GC
 GC
-Ah
-Tt
+aI
+ye
 GC
 GC
 GC
@@ -5446,7 +6370,7 @@ bz
 Uk
 Sm
 hC
-gO
+hv
 gO
 gO
 gO
@@ -5489,16 +6413,16 @@ Kv
 Kv
 xR
 mu
-yl
-Tt
+gW
+ye
 GC
 GC
 GC
 GC
 GC
 GC
-Tt
-Tt
+Mh
+ye
 GC
 GC
 GC
@@ -5523,7 +6447,7 @@ Qa
 Uk
 lP
 hC
-gO
+hv
 gO
 gO
 Fi
@@ -5566,21 +6490,21 @@ Kv
 Kv
 xR
 mu
-Tt
-Tt
+PP
+ye
 GC
 GC
 GC
 GC
 GC
 GC
-Oc
-Tt
+TW
+ye
 GC
 GC
 GC
 GC
-QX
+UX
 GC
 GC
 GC
@@ -5643,21 +6567,21 @@ Kv
 Kv
 xR
 mu
-Tt
-Cw
+PP
+nS
 GC
 GC
 GC
 GC
 GC
 GC
-Tt
-Ah
+Mh
+MV
 GC
 GC
 fR
 GC
-yf
+CN
 GC
 GC
 GC
@@ -5720,21 +6644,21 @@ Kv
 Kv
 xR
 mu
-Tt
-Tt
+PP
+ye
 GC
 GC
 GC
 GC
 GC
 GC
-Tt
-Tt
+Mh
+ye
 GC
 GC
 GC
 GC
-yf
+CN
 aa
 aa
 aa
@@ -5797,21 +6721,21 @@ Kv
 nJ
 Yk
 mu
-yl
-Tt
+gW
+ye
 GC
 GC
 GC
 GC
 GC
 GC
-Tt
-II
+Mh
+JO
 GC
 GC
 GC
 GC
-yf
+CN
 aa
 fb
 bN
@@ -5832,7 +6756,7 @@ Bw
 Bw
 Bw
 hC
-Fi
+hv
 gO
 gO
 gO
@@ -5858,36 +6782,36 @@ gO
 hv
 va
 Jv
-wT
+FQ
 Gk
+cM
+AR
+AR
+bg
+wT
 WU
-Jv
-Jv
-Gk
-wT
-WU
-Gk
-Jv
-Jv
-wT
+oP
+AR
+AR
+FQ
 oZ
 bC
 AR
 aQ
-Tt
-Tt
-Tt
-II
-Tt
-Tt
-yl
-Tt
-Tt
-Ah
-yl
-Tt
-Tt
-Tt
+iB
+Rz
+kq
+hq
+kq
+kq
+pF
+kq
+ZA
+LO
+pF
+kq
+kq
+kq
 Im
 GC
 AM
@@ -5909,8 +6833,8 @@ Bw
 Bw
 Bw
 hC
-Fi
-Fi
+hv
+hv
 gO
 gO
 Fi
@@ -5934,36 +6858,36 @@ Fi
 gO
 hv
 hv
-Fi
-Tt
+mP
+PP
 Oc
+Kf
+cz
+xn
+UK
 Tt
 Tt
-Oc
+JL
+kq
+fJ
+jn
+kr
+ME
+kq
+sC
+Ip
 Tt
-Tt
-Tt
-Tt
-Tt
-Oc
-Tt
-Tt
-Tt
-Tt
-Cw
-Tt
-Tt
-Tt
-Tt
-Tt
-yl
-Tt
+SQ
+SQ
+SQ
+LJ
+SQ
 II
 Tt
-Tt
-Tt
-Ah
-Im
+SQ
+SQ
+yR
+qH
 Tt
 Tt
 GC
@@ -5986,8 +6910,8 @@ Bw
 Bw
 Bw
 hC
-Fi
-Fi
+hv
+hv
 gO
 gO
 Fi
@@ -6011,32 +6935,32 @@ Fi
 yc
 hv
 hv
-Fi
+mP
 Rj
 cF
 hU
 IP
 hU
 es
-Cw
-Tt
-Cw
-Tt
-Tt
-Oc
-Tt
-Cw
-Tt
-Tt
-Tt
-Cw
+Tv
+SQ
+ca
+oC
+SQ
+RA
+cf
+Tv
+SQ
+SQ
+SQ
+IJ
 GC
 XJ
 GC
 GC
 GC
-Tt
-Tt
+PP
+ye
 GC
 GC
 Jf
@@ -6063,8 +6987,8 @@ hC
 hC
 hC
 qd
-Fi
-Fi
+hv
+hv
 gO
 gO
 Fi
@@ -6088,20 +7012,20 @@ Fi
 gO
 hv
 hv
-GC
-Wk
+mP
+Wt
 oU
 YJ
 WI
 WI
-mu
+eh
+mP
+mP
+Mh
+nS
 GC
 GC
-Tt
-Cw
-GC
-GC
-GC
+ZN
 GC
 GC
 GC
@@ -6112,8 +7036,8 @@ BX
 GC
 Xy
 GC
-Tt
-yl
+PP
+iu
 GC
 GC
 GC
@@ -6140,8 +7064,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
+hv
+hv
 gO
 gO
 gO
@@ -6165,21 +7089,21 @@ gO
 gO
 hv
 by
-GC
+mP
 WR
 WX
 FX
 vb
 WI
-mu
+eh
 SA
 xQ
-ui
+lv
 ui
 xQ
 SA
 GC
-GC
+dh
 GC
 GC
 GC
@@ -6190,7 +7114,7 @@ GC
 BX
 GC
 YU
-Tt
+ye
 GC
 GC
 GC
@@ -6217,8 +7141,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
+hv
+hv
 gO
 gO
 gO
@@ -6242,13 +7166,13 @@ gO
 hv
 hv
 hv
-GC
-Wk
+mP
+Wt
 Ru
 LN
 EQ
 WI
-mu
+eh
 Uz
 ZO
 CJ
@@ -6257,7 +7181,7 @@ iJ
 Uz
 GC
 GC
-GC
+Mz
 GC
 GC
 GC
@@ -6294,9 +7218,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
+hv
+hv
+hv
 gO
 gO
 Fi
@@ -6318,9 +7242,9 @@ Fi
 yc
 hv
 hv
-Fi
-GC
-Wk
+mP
+mP
+Wt
 eJ
 vm
 Wg
@@ -6332,11 +7256,11 @@ aW
 dI
 Oh
 xQ
-Fi
-Fi
-Fi
-Fi
-Fi
+za
+za
+Rq
+za
+za
 Fv
 Wb
 qV
@@ -6371,9 +7295,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
+hv
+hv
+hv
 gO
 gO
 Fi
@@ -6396,9 +7320,9 @@ gO
 hv
 hv
 lU
-GC
+mP
 Rx
-AR
+Jv
 rX
 Tp
 Xo
@@ -6409,11 +7333,11 @@ Cq
 Ig
 ra
 xQ
-Fi
-Fi
-Fi
-Fi
-Fi
+cR
+qT
+Wf
+UF
+uZ
 Wb
 HL
 fV
@@ -6447,9 +7371,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
+hv
+hv
+hv
 gO
 gO
 gO
@@ -6472,25 +7396,25 @@ Fi
 gO
 hv
 hv
-Fi
-Fi
-Fi
-Fi
+mP
+mP
+mP
 SA
+xQ
 wm
 xQ
 xQ
 xQ
-fc
+nH
 uW
 FU
 dC
 xQ
-Fi
-Fi
-Fi
-Fi
-Fi
+DB
+qT
+kZ
+Qq
+Ie
 Wb
 Wb
 Wb
@@ -6524,9 +7448,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
+hv
+hv
+hv
 gO
 gO
 Fi
@@ -6550,10 +7474,10 @@ gO
 hv
 hv
 hv
-Fi
-Fi
-SA
+mP
+mP
 xQ
+rV
 LB
 en
 en
@@ -6564,10 +7488,10 @@ tu
 Yr
 xQ
 SA
-Fi
-Fi
-Fi
-Fi
+Wr
+Yv
+cs
+DB
 Wb
 ID
 ID
@@ -6601,9 +7525,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-gO
+hv
+hv
+hv
 gO
 gO
 Fi
@@ -6628,9 +7552,9 @@ gO
 hv
 hv
 hv
-Fi
+mP
 xQ
-en
+rV
 en
 rz
 en
@@ -6641,10 +7565,10 @@ uv
 Ij
 iJ
 xQ
-Fi
-Fi
-Fi
-Fi
+Yv
+hi
+Yv
+DB
 Wb
 ID
 ID
@@ -6677,9 +7601,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-gO
+hv
+hv
+hv
 gO
 gO
 gO
@@ -6705,23 +7629,23 @@ gO
 hv
 hv
 hv
-Fi
+mP
 xQ
-en
+QT
 Bp
-en
-en
+XQ
+IE
 ll
-UN
+jR
 KF
 MN
 aT
 dC
 xQ
-Fi
-Fi
-Fi
-Fi
+za
+rt
+bU
+za
 Wb
 Wb
 Wb
@@ -6754,8 +7678,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
+hv
+hv
 gO
 gO
 gO
@@ -6782,7 +7706,7 @@ gO
 hv
 hv
 hv
-Fi
+GC
 SA
 xQ
 gX
@@ -6795,10 +7719,10 @@ AQ
 dC
 xQ
 SA
-Fi
-Fi
-Fi
-Fi
+uF
+uF
+QR
+uF
 Wb
 ID
 ID
@@ -6831,8 +7755,8 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
+hv
+hv
 gO
 gO
 Fi
@@ -6860,7 +7784,7 @@ gO
 hv
 hv
 hv
-Fi
+GC
 SA
 xQ
 xQ
@@ -6871,11 +7795,11 @@ xQ
 xQ
 xQ
 xQ
-Fi
-Fi
-Fi
-Fi
-Fi
+Yv
+Yv
+YT
+Yv
+uF
 Wb
 ID
 ID
@@ -6906,9 +7830,9 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
+hv
+hv
+hv
 gO
 gO
 gO
@@ -6938,7 +7862,7 @@ hv
 hv
 hv
 hv
-Fi
+GC
 xQ
 eN
 eN
@@ -6948,11 +7872,11 @@ eN
 eN
 eN
 xQ
-Fi
-Fi
-Fi
-Fi
-Fi
+DR
+wb
+yU
+za
+za
 Fv
 Wb
 ID
@@ -6981,10 +7905,10 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
+hv
+hv
+hv
+hv
 gO
 gO
 gO
@@ -7015,7 +7939,7 @@ gO
 hv
 hv
 hv
-Fi
+GC
 xQ
 eN
 eN
@@ -7025,10 +7949,10 @@ xQ
 eN
 eN
 xQ
-Fi
-Fi
-Fi
-Fi
+za
+za
+za
+za
 Fi
 Fi
 Fv
@@ -7057,10 +7981,10 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
+hv
+hv
+hv
+hv
 gO
 gO
 gO
@@ -7132,11 +8056,11 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+hv
+hv
+hv
+hv
+hv
 gO
 gO
 gO
@@ -7208,11 +8132,11 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+hv
+hv
+hv
+hv
+hv
 gO
 gO
 gO
@@ -7283,11 +8207,11 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+hv
+hv
+hv
+hv
+hv
 gO
 gO
 gO
@@ -7359,11 +8283,11 @@ Fi
 Fi
 Fi
 Fi
-Fi
-Fi
-Fi
-Fi
-Fi
+hv
+hv
+hv
+hv
+hv
 gO
 gO
 gO
@@ -7435,10 +8359,10 @@ Fi
 hv
 hv
 hv
-Fi
-Fi
-Fi
-Fi
+hv
+hv
+hv
+hv
 gO
 gO
 gO
@@ -7513,7 +8437,7 @@ hv
 hv
 hv
 hv
-Fi
+hv
 gO
 gO
 gO
