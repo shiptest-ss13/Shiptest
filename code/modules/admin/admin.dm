@@ -588,7 +588,7 @@
 	toggle_deadchat()
 	log_admin("[key_name(usr)] toggled deadchat.")
 	message_admins("[key_name_admin(usr)] toggled deadchat.")
-	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Local OOC", "[GLOB.deadchat_allowed ? "Enabled" : "Disabled"]"))
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Dead Chat", "[GLOB.deadchat_allowed ? "Enabled" : "Disabled"]"))
 
 /datum/admins/proc/toggleoocdead()
 	set category = "Server"
