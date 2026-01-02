@@ -111,3 +111,78 @@
 
 /obj/item/clothing/suit/toggle/windbreaker/lightbrown
 	current_skin = "light brown windbreaker"
+
+/obj/item/clothing/suit/toggle/windbreaker/cropped
+	name = "cropped windbreaker"
+	desc = "A cropped windbreaker, made out of synthetic material. Good for keeping the chilly wind off only half the time."
+	icon_state = "cropjacketwhite"
+	item_state = "cropjacketwhite"
+	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS
+	unique_reskin = list(
+		"white cropped windbreaker" = "cropjacketwhite",
+		"grey cropped windbreaker" = "cropjacketgrey",
+		"black cropped windbreaker" = "cropjacketblack",
+		"red cropped windbreaker" = "cropjacketred",
+		"maroon cropped windbreaker" = "cropjacketmaroon",
+		"orange cropped windbreaker" = "cropjacketorange",
+		"yellow cropped windbreaker" = "cropjacketyellow",
+		"green cropped windbreaker" = "cropjacketgreen",
+		"dark green cropped windbreaker" = "cropjacketdarkgreen",
+		"teal cropped windbreaker" = "cropjacketteal",
+		"blue cropped windbreaker" = "cropjacketblue",
+		"dark blue cropped windbreaker" = "cropjacketdarkblue",
+		"purple cropped windbreaker" = "cropjacketpurple",
+		"pink cropped windbreaker" = "cropjacketpink",
+		"brown cropped windbreaker" = "cropjacketbrown",
+		"light brown cropped windbreaker" = "cropjacketlightbrown"
+	)
+	unique_reskin_changes_inhand = TRUE
+
+/obj/item/clothing/suit/toggle/windbreaker/cropped/white
+	current_skin = "white cropped windbreaker"
+
+/obj/item/clothing/suit/toggle/windbreaker/cropped/grey
+	current_skin = "grey cropped windbreaker"
+
+/obj/item/clothing/suit/toggle/windbreaker/cropped/black
+	current_skin = "black cropped windbreaker"
+
+/obj/item/clothing/suit/toggle/windbreaker/cropped/red
+	current_skin = "red cropped windbreaker"
+
+/obj/item/clothing/suit/toggle/windbreaker/cropped/maroon
+	current_skin = "maroon cropped windbreaker"
+
+/obj/item/clothing/suit/toggle/windbreaker/cropped/orange
+	current_skin = "orange cropped windbreaker"
+
+/obj/item/clothing/suit/toggle/windbreaker/cropped/yellow
+	current_skin = "yellow cropped windbreaker"
+
+/obj/item/clothing/suit/toggle/windbreaker/cropped/green
+	current_skin = "green cropped windbreaker"
+
+/obj/item/clothing/suit/toggle/windbreaker/cropped/darkgreen
+	current_skin = "dark green cropped windbreaker"
+
+/obj/item/clothing/suit/toggle/windbreaker/cropped/teal
+	current_skin = "teal cropped windbreaker"
+
+/obj/item/clothing/suit/toggle/windbreaker/cropped/blue
+	current_skin = "blue cropped windbreaker"
+
+/obj/item/clothing/suit/toggle/windbreaker/cropped/darkblue
+	current_skin = "dark blue cropped windbreaker"
+
+/obj/item/clothing/suit/toggle/windbreaker/cropped/purple
+	current_skin = "purple cropped windbreaker"
+
+/obj/item/clothing/suit/toggle/windbreaker/cropped/pink
+	current_skin = "pink cropped windbreaker"
+
+/obj/item/clothing/suit/toggle/windbreaker/cropped/brown
+	current_skin = "brown cropped windbreaker"
+
+/obj/item/clothing/suit/toggle/windbreaker/cropped/lightbrown
+	current_skin = "light brown cropped windbreaker"
