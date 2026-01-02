@@ -4,7 +4,6 @@
 	icon_state = "2-10"
 	},
 /obj/effect/spawner/random/entertainment/cigarette{
-	pixel_x = 0;
 	pixel_y = -8
 	},
 /obj/effect/spawner/random/entertainment/cigarette{
@@ -154,9 +153,7 @@
 /area/ruin/jungle/cavecrew/engineering)
 "bg" = (
 /obj/structure/hazard/electrical/electrified_water,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/water/jungle,
 /area/ruin/jungle/cavecrew)
 "bj" = (
@@ -230,9 +227,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/cavecrew/ship)
 "bx" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 2
-	},
+/obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/carpet/green/jungleplanet,
 /area/ruin/jungle/cavecrew/dormitories)
@@ -393,8 +388,7 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/item/reagent_containers/food/drinks/soda_cans/vimukti{
-	pixel_x = 10;
-	pixel_y = 0
+	pixel_x = 10
 	},
 /obj/item/reagent_containers/food/drinks/beer{
 	pixel_x = -10;
@@ -501,8 +495,7 @@
 	pixel_y = 4
 	},
 /obj/structure/mirror{
-	pixel_y = 29;
-	pixel_x = 0
+	pixel_y = 29
 	},
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/cavecrew/hallway)
@@ -548,8 +541,7 @@
 "dm" = (
 /obj/structure/chair/plastic{
 	dir = 8;
-	pixel_x = 8;
-	pixel_y = 0
+	pixel_x = 8
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
@@ -694,10 +686,7 @@
 /obj/structure/chair/plastic{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier{
-	pixel_x = 0;
-	pixel_y = 0
-	},
+/mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/cavecrew/engineering)
 "ea" = (
@@ -1495,7 +1484,6 @@
 	},
 /obj/item/gun/ballistic/automatic/smg/skm_carbine,
 /obj/item/gun/ballistic/shotgun/automatic/slammer{
-	pixel_x = 0;
 	pixel_y = 8
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -1533,7 +1521,6 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "kv" = (
 /obj/structure/sign/poster/rilena/ri{
-	pixel_x = 0;
 	pixel_y = 31
 	},
 /turf/open/floor/plasteel/dark/jungleplanet,
@@ -1812,8 +1799,7 @@
 	pixel_y = -4
 	},
 /obj/item/stack/sheet/metal{
-	pixel_x = -15;
-	pixel_y = 0
+	pixel_x = -15
 	},
 /obj/item/stack/sheet/metal{
 	pixel_x = -13;
@@ -1878,8 +1864,7 @@
 "mL" = (
 /obj/structure/chair/plastic{
 	dir = 8;
-	pixel_x = 8;
-	pixel_y = 0
+	pixel_x = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/jungleplanet,
@@ -2410,7 +2395,6 @@
 	pixel_x = -10
 	},
 /obj/structure/flora/ausbushes/sunnybush{
-	pixel_x = 0;
 	pixel_y = 6
 	},
 /obj/effect/turf_decal/siding/wood{
@@ -2646,12 +2630,9 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "tC" = (
 /obj/machinery/light/small/directional/south{
-	pixel_x = 11;
-	pixel_y = -28
+	pixel_x = 11
 	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/item/toy/plush/moth/punished,
 /obj/effect/decal/cleanable/dirt,
@@ -3324,9 +3305,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/cavecrew/bridge)
 "zL" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 2
-	},
+/obj/effect/turf_decal/siding/wood,
 /obj/structure/closet/cabinet,
 /obj/item/clothing/head/frontier/peaked,
 /obj/item/clothing/under/frontiersmen/officer,
@@ -3349,10 +3328,7 @@
 /turf/open/floor/plasteel/patterned/brushed/jungleplanet,
 /area/ruin/jungle/cavecrew)
 "zW" = (
-/mob/living/simple_animal/hostile/human/frontier{
-	pixel_x = 0;
-	pixel_y = 0
-	},
+/mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/wood/jungleplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "zX" = (
@@ -3368,8 +3344,7 @@
 /obj/machinery/light/small/directional/south,
 /obj/structure/toilet{
 	dir = 8;
-	pixel_x = 8;
-	pixel_y = 0
+	pixel_x = 8
 	},
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/cavecrew/hallway)
@@ -4006,9 +3981,7 @@
 /turf/open/floor/concrete/slab_1/jungleplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "EN" = (
-/mob/living/simple_animal/hostile/human/frontier/civilian{
-	r_hand = null
-	},
+/mob/living/simple_animal/hostile/human/frontier/civilian,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/cavecrew)
 "EP" = (
@@ -4048,7 +4021,6 @@
 "Fp" = (
 /obj/structure/table/reinforced{
 	color = "#c1b6a5";
-	pixel_x = 0;
 	pixel_y = 2
 	},
 /obj/machinery/button/door{
@@ -4067,7 +4039,6 @@
 	},
 /obj/machinery/button/door{
 	pixel_x = -8;
-	pixel_y = 0;
 	dir = 8;
 	id = "cavecheckpointsouth"
 	},
@@ -4270,7 +4241,6 @@
 	},
 /obj/effect/turf_decal/techfloor,
 /obj/structure/sign/poster/contraband/missing_gloves{
-	pixel_x = 0;
 	pixel_y = 30
 	},
 /obj/structure/railing{
@@ -4315,7 +4285,6 @@
 	pixel_y = -11
 	},
 /obj/effect/spawner/random/entertainment/cigarette{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /obj/effect/decal/cleanable/ash/large,
@@ -5493,11 +5462,6 @@
 /area/ruin/jungle/cavecrew)
 "Qb" = (
 /obj/item/documents/frontier,
-/obj/effect/landmark/mission_poi/main{
-	mission_index = 2;
-	type_to_spawn = /obj/item/documents/frontier;
-	already_spawned = 1
-	},
 /obj/item/desk_flag{
 	pixel_x = -11;
 	pixel_y = 14
@@ -5566,7 +5530,6 @@
 	pixel_y = -8
 	},
 /obj/effect/decal/cleanable/ash/large{
-	pixel_x = 0;
 	pixel_y = -9
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet,
@@ -5931,9 +5894,7 @@
 	color = "#c1b6a5"
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/item/clothing/head/soft/frontiersmen,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/cavecrew)
@@ -6078,8 +6039,7 @@
 /obj/effect/decal/cleanable/food/flour,
 /obj/item/kirbyplants{
 	icon_state = "plant-21";
-	pixel_y = 2;
-	pixel_x = 0
+	pixel_y = 2
 	},
 /turf/open/floor/wood/jungleplanet,
 /area/ruin/jungle/cavecrew/dormitories)
@@ -6334,10 +6294,6 @@
 	name = "Officer Seth";
 	environment_smash = 0
 	},
-/obj/effect/landmark/mission_poi/main/kill{
-	already_spawned = 1;
-	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/officer
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -6532,8 +6488,7 @@
 	pixel_y = 15
 	},
 /obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = -3;
-	pixel_y = 0
+	pixel_x = -3
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass{
 	pixel_x = -10;
@@ -6783,9 +6738,7 @@
 /obj/structure/cable{
 	icon_state = "1-6"
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 2
-	},
+/obj/effect/turf_decal/siding/wood,
 /obj/structure/chair{
 	dir = 1
 	},
@@ -6843,9 +6796,7 @@
 /area/ruin/jungle/cavecrew/dormitories)
 "ZT" = (
 /obj/structure/table/reinforced{
-	color = "#c1b6a5";
-	pixel_x = 0;
-	pixel_y = 0
+	color = "#c1b6a5"
 	},
 /obj/item/paper_bin{
 	pixel_x = -11;
@@ -6861,8 +6812,7 @@
 	},
 /obj/item/radio/intercom/table{
 	dir = 4;
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/cavecrew)
