@@ -531,6 +531,53 @@
 	icon_state = "shemagh"
 	supports_variations = VOX_VARIATION
 
+/obj/item/clothing/neck/shemagh/AltClick(mob/user)
+	. = ..()
+	if(iscarbon(user))
+		var/mob/living/carbon/C = user
+		if((C.get_item_by_slot(ITEM_SLOT_NECK) == src))
+			to_chat(user, span_warning("You can't tie [src] while wearing it!"))
+			return
+		if(user.is_holding(src))
+			var/obj/item/clothing/mask/shemagh/nk = new(src)
+			nk.name = "[name] mask"
+			nk.icon_state = "[icon_state]_over"
+			nk.source_shemagh_type = src.type
+			var/current_hand_index = user.get_held_index_of_item(src)
+			user.transferItemToLoc(src, null)
+			user.put_in_hand(nk, current_hand_index)
+			user.visible_message(span_notice("You tie [src] up like a facemask."), span_notice("[user] ties [src] up like a facemask."))
+			qdel(src)
+		else
+			to_chat(user, span_warning("You must be holding [src] in order to tie it!"))
+
+/obj/item/clothing/mask/shemagh
+	icon = 'icons/obj/clothing/neck.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/neck.dmi'
+	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR
+	clothing_flags = ALLOWINTERNALS
+	flags_cover = MASKCOVERSMOUTH
+	alternate_worn_layer = FACEWRAP_LAYER
+	w_class = WEIGHT_CLASS_TINY
+	var/source_shemagh_type
+
+/obj/item/clothing/mask/shemagh/AltClick(mob/user)
+	. = ..()
+	if(iscarbon(user))
+		var/mob/living/carbon/C = user
+		if(C.get_item_by_slot(ITEM_SLOT_MASK) == src)
+			to_chat(user, span_warning("You can't untie [src] while wearing it!"))
+			return
+		if(user.is_holding(src))
+			var/obj/item/clothing/neck/shemagh/new_shemagh = new source_shemagh_type(user)
+			var/current_hand_index = user.get_held_index_of_item(src)
+			var/old_name = src.name
+			qdel(src)
+			user.put_in_hand(new_shemagh, current_hand_index)
+			user.visible_message(span_notice("You untie [old_name] back into a [new_shemagh.name]."), span_notice("[user] unties [old_name] back into a [new_shemagh.name]."))
+		else
+			to_chat(user, span_warning("You must be holding [src] in order to untie it!"))
+
 /obj/item/clothing/neck/shemagh/khaki
 	icon_state = "shemagh_khaki"
 
@@ -542,6 +589,59 @@
 
 /obj/item/clothing/neck/shemagh/black
 	icon_state = "shemagh_black"
+
+// neck wraps
+
+/obj/item/clothing/neck/neckwraps
+	name = "neckwraps"
+	desc = "A fashionable piece of cloth cover your neck."
+	icon_state = "neckwraps"
+	item_state = "neckwraps"
+	unique_reskin = list("grey neckwraps" = "neckwraps",
+						"black neckwraps" = "neckwraps_black",
+						"brown neckwraps" = "neckwraps_brown",
+						"tan neckwraps" = "neckwraps_tan",
+						"olive neckwraps" = "neckwraps_olive",
+						"red neckwraps" = "neckwraps_red",
+						"blue neckwraps" = "neckwraps_blue"
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/neck/neckwraps/grey
+	name = "grey neckwraps"
+	icon_state = "neckwraps"
+	current_skin = "grey neckwraps"
+
+/obj/item/clothing/neck/neckwraps/black
+	name = "black neckwraps"
+	icon_state = "neckwraps_black"
+	current_skin = "black neckwraps"
+
+/obj/item/clothing/neck/neckwraps/brown
+	name = "brown neckwraps"
+	icon_state = "neckwraps_brown"
+	current_skin = "brown neckwraps"
+
+/obj/item/clothing/neck/neckwraps/tan
+	name = "tan neckwraps"
+	icon_state = "neckwraps_tan"
+	current_skin = "tan neckwraps"
+
+/obj/item/clothing/neck/neckwraps/olive
+	name = "olive neckwraps"
+	icon_state = "neckwraps_olive"
+	current_skin = "olive neckwraps"
+
+/obj/item/clothing/neck/neckwraps/red
+	name = "red neckwraps"
+	icon_state = "neckwraps_red"
+	current_skin = "red neckwraps"
+
+/obj/item/clothing/neck/neckwraps/blue
+	name = "blue neckwraps"
+	icon_state = "neckwraps_blue"
+	current_skin = "blue neckwraps"
 
 //The three following scarves don't have the scarf subtype
 //This is because Ian can equip anything from that subtype

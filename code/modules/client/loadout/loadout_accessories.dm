@@ -38,6 +38,12 @@
 	display_name = "poncho, recolorable"
 	path = /obj/item/clothing/neck/poncho
 
+//neckwraps
+
+/datum/gear/accessory/neckwraps
+	display_name = "neckwraps, recolorable"
+	path = /obj/item/clothing/neck/neckwraps
+
 //(The actually good scarves)
 
 /datum/gear/accessory/scarf/striped
