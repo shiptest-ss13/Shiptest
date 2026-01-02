@@ -686,6 +686,27 @@
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_NECK | ITEM_SLOT_POCKETS
 	strip_delay = 10
+	var/list/tag_fluff = list()
+
+/obj/item/clothing/neck/dogtag/examine_more(mob/user)
+	. = ..()
+	for(var/line in tag_fluff)
+		. += span_boldnotice(line)
+
+/obj/item/clothing/neck/dogtag/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/pen))
+		if(length(tag_fluff) >= 5)
+			to_chat(user, span_warning("[src] has no more space!"))
+			return
+		var/tagfluff = stripped_input(user, "Add to this dogtag.", "Plaque Customization", max_length=60)
+		if(!tagfluff)
+			return
+		tag_fluff = tagfluff
+		to_chat(user, span_notice("You add to the information on [src]!"))
+		return
+
+/obj/item/clothing/neck/dogtag/loadout
+	desc = "A non-military dogtag, often worn for style in certain circles."
 
 /obj/item/clothing/neck/dogtag/gold
 	icon_state = "dogtag_gold"
