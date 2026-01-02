@@ -3586,7 +3586,9 @@
 /obj/structure/chair/office/dark{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/hydra/dmr,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/hydra/dmr{
+	wander = 0
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/icemoon/command_post/armory)
@@ -3599,7 +3601,9 @@
 /obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/human/ramzi/melee/space/sledge,
+/mob/living/simple_animal/hostile/human/ramzi/melee/space/sledge{
+	wander = 0
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/armory)
 "HB" = (
@@ -5305,7 +5309,9 @@
 /turf/open/floor/concrete/pavement/icemoon,
 /area/overmap_encounter/planetoid/ice/explored)
 "Ye" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/smg/sidewinder,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg/sidewinder{
+	wander = 0
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
