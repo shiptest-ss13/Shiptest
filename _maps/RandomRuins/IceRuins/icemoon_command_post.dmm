@@ -1773,6 +1773,7 @@
 	pixel_x = 13;
 	pixel_y = 0
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/command_post/armory)
 "pU" = (
@@ -4261,6 +4262,7 @@
 "OC" = (
 /obj/structure/guncloset,
 /obj/item/gun/ballistic/shotgun/doublebarrel/roumain,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/command_post/armory)
 "OD" = (
@@ -4339,13 +4341,6 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/command_post/kitchen)
-"Pk" = (
-/obj/machinery/door/poddoor/shutters{
-	dir = 8;
-	id = "rightarmoury"
-	},
-/turf/open/space/basic,
-/area/ruin/icemoon/command_post/armory)
 "Ps" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5;
@@ -8070,7 +8065,7 @@ nM
 nM
 WF
 VC
-Pk
+VC
 WF
 Mf
 Mf
