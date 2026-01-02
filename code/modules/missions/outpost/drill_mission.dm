@@ -9,6 +9,8 @@
 	value = 2500
 	weight = 11
 
+	blackbox_prefix = "Drill "
+
 	var/datum/planet_type/selected_planet
 	var/list/available_planets = list(
 		/datum/planet_type/lava = /obj/structure/vein/lavaland,
