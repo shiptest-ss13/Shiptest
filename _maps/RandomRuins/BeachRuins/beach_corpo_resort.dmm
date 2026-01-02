@@ -881,6 +881,12 @@
 	},
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"mg" = (
+/obj/structure/sign/warning/electricshock{
+	pixel_y = 26
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/beach/corpo_resort/electrical)
 "mp" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1074,6 +1080,10 @@
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 5
+	},
+/obj/structure/sign/warning/electricshock{
+	dir = 1;
+	pixel_y = -26
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/beach/corpo_resort/electrical)
@@ -2759,8 +2769,12 @@
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "PF" = (
-/obj/structure/foamedmetal/iron,
-/turf/open/floor/plasteel/patterned,
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/sign/warning/electricshock{
+	dir = 1;
+	pixel_y = -26
+	},
+/turf/open/floor/plating,
 /area/ruin/beach/corpo_resort/electrical)
 "PI" = (
 /obj/structure/cable/yellow{
@@ -6522,7 +6536,7 @@ NW
 US
 yn
 Uk
-tf
+PF
 hC
 gO
 gO
@@ -6586,7 +6600,7 @@ GC
 GC
 GC
 hC
-PF
+Sm
 sg
 Is
 fF
@@ -6745,7 +6759,7 @@ gT
 pp
 Sm
 hC
-Sm
+mg
 rO
 oz
 hC
