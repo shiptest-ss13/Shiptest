@@ -231,25 +231,10 @@
 		remove_wound()
 
 /datum/wound/blunt/bone/moderate/treat(obj/item/treatment, mob/user)
+	if((limb.biological_state & BIO_BONE) && treatment.tool_behaviour == TOOL_BONESET)
+		return boneset_limb(treatment, user)
 	if((limb.biological_state & BIO_METAL) && treatment.tool_behaviour == TOOL_WRENCH)
 		return wrench_limb(treatment, user)
-	return ..()
-
-/datum/wound/blunt/bone/moderate/proc/wrench_limb(obj/item/wrench, mob/user)
-	if(!victim)
-		return FALSE
-	victim.visible_message(
-		span_notice("[user] starts tightening the bolts on [victim]'s [limb.name]..."),
-		span_notice("[user] starts tightening the bolts on your [limb.name].")
-	)
-	if(!wrench.use_tool(victim, user, 3 SECONDS, volume = 50))
-		return TRUE
-	victim.visible_message(
-		span_notice("[user] wrenches [victim]'s [limb.name] back into place."),
-		span_notice("[user] wrenches your [limb.name] back into place.")
-	)
-	qdel(src)
-	return TRUE
 
 /datum/wound/blunt/bone/moderate/try_handling(mob/living/carbon/human/user, modifiers)
 	if(user.pulling != victim || user.zone_selected != limb.body_zone || user.a_intent == INTENT_GRAB)
@@ -325,16 +310,16 @@
 		limb.receive_damage(brute = 10, wound_bonus = 10)
 		malpractice(user)
 
-/datum/wound/blunt/bone/moderate/treat(obj/item/I, mob/user)
+/datum/wound/blunt/bone/moderate/proc/boneset_limb(obj/item/treatment, mob/user)
 	if(victim == user)
 		victim.visible_message(
-			span_danger("[user] begins resetting [victim.p_their()] [limb.name] with [I]."),
-			span_warning("You begin resetting your [limb.name] with [I]..."),
+			span_danger("[user] begins resetting [victim.p_their()] [limb.name] with [treatment]."),
+			span_warning("You begin resetting your [limb.name] with [treatment]..."),
 		)
 	else
 		user.visible_message(
-			span_danger("[user] begins resetting [victim]'s [limb.name] with [I]."),
-			span_notice("You begin resetting [victim]'s [limb.name] with [I]..."),
+			span_danger("[user] begins resetting [victim]'s [limb.name] with [treatment]."),
+			span_notice("You begin resetting [victim]'s [limb.name] with [treatment]..."),
 		)
 
 	if(!do_after(user, base_treat_time * (user == victim ? 1.5 : 1), target = victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
@@ -355,6 +340,22 @@
 		)
 		to_chat(victim, span_userdanger("[user] resets your [limb.name]!"))
 
+	qdel(src)
+	return TRUE
+
+/datum/wound/blunt/bone/moderate/proc/wrench_limb(obj/item/wrench, mob/user)
+	if(!victim)
+		return FALSE
+	victim.visible_message(
+		span_notice("[user] starts tightening the bolts on [victim]'s [limb.name]..."),
+		span_notice("[user] starts tightening the bolts on your [limb.name].")
+	)
+	if(!wrench.use_tool(victim, user, 3 SECONDS, volume = 50))
+		return TRUE
+	victim.visible_message(
+		span_notice("[user] wrenches [victim]'s [limb.name] back into place."),
+		span_notice("[user] wrenches your [limb.name] back into place.")
+	)
 	qdel(src)
 	return TRUE
 
