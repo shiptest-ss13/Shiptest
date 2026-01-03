@@ -1008,9 +1008,11 @@
 /turf/open/floor/concrete/slab_4/jungleplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "gu" = (
-/mob/living/simple_animal/hostile/human/frontier,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating/asteroid/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/jungle/cavecrew)
 "gv" = (
 /obj/machinery/porta_turret/ruin/frontiersmen,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -2510,6 +2512,10 @@
 	icon_state = "panelscorched"
 	},
 /area/ruin/jungle/cavecrew)
+"sE" = (
+/mob/living/simple_animal/hostile/human/frontier,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
 "sI" = (
 /obj/structure/platform/wood{
 	dir = 8
@@ -4358,9 +4364,9 @@
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/cavecrew)
 "Hp" = (
-/obj/item/storage/secure/safe,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/jungle/cavecrew/engineering)
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/area/ruin/jungle/cavecrew)
 "Hw" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4543,12 +4549,6 @@
 	icon_state = "4-10"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/asteroid/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
-"IM" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/neutered{
-	environment_smash = 0
-	},
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "IO" = (
@@ -5502,9 +5502,11 @@
 /turf/open/floor/concrete/slab_2/jungleplanet,
 /area/ruin/jungle/cavecrew/cargo)
 "PY" = (
-/obj/structure/barricade/wooden/crude,
-/turf/open/floor/plating/asteroid/dirt/jungle/dark,
-/area/ruin/jungle/cavecrew)
+/mob/living/simple_animal/hostile/human/frontier/ranged/neutered{
+	environment_smash = 0
+	},
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
 "PZ" = (
 /obj/structure/closet,
 /obj/item/clothing/mask/gas/frontiersmen,
@@ -5514,11 +5516,6 @@
 /area/ruin/jungle/cavecrew)
 "Qb" = (
 /obj/item/documents/frontier,
-/obj/effect/landmark/mission_poi/main{
-	mission_index = 2;
-	type_to_spawn = /obj/item/documents/frontier;
-	already_spawned = 1
-	},
 /obj/item/desk_flag{
 	pixel_x = -11;
 	pixel_y = 14
@@ -6326,11 +6323,9 @@
 	},
 /area/ruin/jungle/cavecrew)
 "Wr" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating/asteroid/dirt/jungle,
-/area/ruin/jungle/cavecrew)
+/obj/item/storage/secure/safe,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/jungle/cavecrew/engineering)
 "Wu" = (
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -7654,7 +7649,7 @@ cl
 oM
 XU
 kQ
-Hp
+Wr
 DW
 Wc
 fr
@@ -7953,7 +7948,7 @@ NK
 aw
 nC
 YS
-PY
+Hp
 ZD
 ZD
 ZD
@@ -8025,7 +8020,7 @@ Li
 gA
 Ti
 wE
-PY
+Hp
 Oc
 ZD
 ZD
@@ -9109,7 +9104,7 @@ KQ
 Yj
 KK
 Ms
-Wr
+gu
 aD
 wr
 PZ
@@ -9181,7 +9176,7 @@ KQ
 bY
 iT
 YS
-Wr
+gu
 Jh
 wr
 wG
@@ -9764,7 +9759,7 @@ fG
 Xb
 rn
 rn
-IM
+PY
 fG
 fG
 fG
@@ -9831,7 +9826,7 @@ QX
 QX
 QX
 QX
-gu
+sE
 KZ
 go
 KZ
