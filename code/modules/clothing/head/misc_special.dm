@@ -140,6 +140,7 @@
 	desc = "A bunch of hair without a head attached."
 	icon = 'icons/mob/human_face.dmi'	  // default icon for all hairs
 	icon_state = "hair_vlong"
+	mob_overlay_icon = 'icons/mob/human_face.dmi'
 	item_state = "pwig"
 	flags_inv = HIDEHAIR
 	slot_flags = ITEM_SLOT_HEAD | ITEM_SLOT_NECK
