@@ -546,7 +546,7 @@
 			var/current_hand_index = user.get_held_index_of_item(src)
 			user.transferItemToLoc(src, null)
 			user.put_in_hand(nk, current_hand_index)
-			user.visible_message(span_notice("You tie [src] up like a facemask."), span_notice("[user] ties [src] up like a facemask."))
+			to_chat(user, span_notice("You tie [src] up like a facemask."))
 			qdel(src)
 		else
 			to_chat(user, span_warning("You must be holding [src] in order to tie it!"))
@@ -574,7 +574,7 @@
 			var/old_name = src.name
 			qdel(src)
 			user.put_in_hand(new_shemagh, current_hand_index)
-			user.visible_message(span_notice("You untie [old_name] back into a [new_shemagh.name]."), span_notice("[user] unties [old_name] back into a [new_shemagh.name]."))
+			to_chat(user, span_notice("You untie [old_name] back into a [new_shemagh.name]."))
 		else
 			to_chat(user, span_warning("You must be holding [src] in order to untie it!"))
 
