@@ -28,7 +28,7 @@
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
-	zoom_amt = RIFLE_ZOOM
+	range_modifier = SIGHT_ZOOM
 	aimed_wield_slowdown = RIFLE_AIM_SLOWDOWN
 
 	spread = -1

@@ -35,7 +35,7 @@
 	aimed_wield_slowdown = SHOTGUN_AIM_SLOWDOWN
 	wield_delay = 0.8 SECONDS
 
-	zoom_amt = SHOTGUN_ZOOM
+	range_modifier = SIGHT_ZOOM
 
 	spread = 3
 	spread_unwielded = 9

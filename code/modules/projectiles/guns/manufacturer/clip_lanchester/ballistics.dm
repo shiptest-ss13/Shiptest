@@ -385,8 +385,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 		)
 	)
 
-	zoom_amt = 6
-	zoom_out_amt = 2
+	range_modifier = DMR_SIGHT_ZOOM
 	wield_slowdown = DMR_SLOWDOWN
 	spread = -4
 	fire_select_icon_state_prefix = "clip_"
@@ -457,8 +456,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 		),
 	)
 
-	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
-	zoom_out_amt = 5
+	range_modifier = LONG_SCOPE_ZOOM //Long range, enough to see in front of you, but no tiles behind you.
 
 /obj/item/ammo_box/magazine/f90
 	name = "\improper CM-F90 Magazine (6.5x57mm CLIP)"

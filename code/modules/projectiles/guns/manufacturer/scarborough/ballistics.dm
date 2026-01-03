@@ -616,8 +616,7 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 	wield_slowdown = LIGHT_SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 
-	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
-	zoom_out_amt = 5
+	range_modifier = LONG_SCOPE_ZOOM //Long range
 
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
 	slot_available = list(
@@ -644,8 +643,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang)
 	icon_state = "boomslang90"
 	item_state = "boomslang90"
 
-	zoom_amt = 6
-	zoom_out_amt = 2
+	range_modifier = DMR_SIGHT_ZOOM
 
 NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 
@@ -698,8 +696,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 		/obj/item/ammo_box/magazine/sniper_rounds,
 	)
 	w_class = WEIGHT_CLASS_BULKY
-	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
-	zoom_out_amt = 5
+	range_modifier = LONG_SCOPE_ZOOM //Long range
 	actions_types = list()
 	show_magazine_on_sprite = TRUE
 	manufacturer = MANUFACTURER_SCARBOROUGH
@@ -883,9 +880,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/indie)
 	spread_unwielded = 12
 	wield_slowdown = DMR_SLOWDOWN //dmrrrr
 	wield_delay = 0.85 SECONDS //above
-	zoomable = TRUE
-	zoom_amt = 6
-	zoom_out_amt = 2
+	range_modifier = DMR_SIGHT_ZOOM
 	default_ammo_type = /obj/item/ammo_box/magazine/m556_42_hydra/small
 	blacklisted_ammo_types = list(
 		/obj/item/ammo_box/magazine/m556_42_hydra/extended,

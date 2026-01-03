@@ -161,10 +161,9 @@
 	//supports_variations = VOX_VARIATION
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
-	zoomable = TRUE //this var as true without setting anything else produces a 2x zoom
 	wield_slowdown = DMR_SLOWDOWN
 	aimed_wield_slowdown = LONG_RIFLE_AIM_SLOWDOWN
-	zoom_amt = DMR_ZOOM
+	range_modifier = DMR_SIGHT_ZOOM
 	wield_delay = 1 SECONDS
 
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
@@ -193,8 +192,7 @@
 
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/sharplite)
 
-	zoomable = FALSE
-	zoom_amt = PISTOL_ZOOM
+	range_modifier = SIGHT_ZOOM
 	wield_slowdown = SMG_SLOWDOWN
 	aimed_wield_slowdown = LONG_RIFLE_AIM_SLOWDOWN
 	wield_delay = 0.4 SECONDS
@@ -300,7 +298,7 @@
 
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
-	zoom_amt = SHOTGUN_ZOOM
+	range_modifier = SIGHT_ZOOM
 
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,
@@ -438,8 +436,7 @@
 
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
-	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
-	zoom_out_amt = 5
+	range_modifier = LONG_SCOPE_ZOOM //Long range
 
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,

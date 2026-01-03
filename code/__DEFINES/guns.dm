@@ -83,6 +83,16 @@
 #define RIFLE_ZOOM 2
 #define DMR_ZOOM 6
 
+// scope zoom values
+/// Range modifier from aiming down sights.
+#define SIGHT_ZOOM 0
+/// Range modifier from aiming down a DMR's sights.
+#define DMR_SIGHT_ZOOM 1
+/// Range modifier from using a short scope.
+#define SHORT_SCOPE_ZOOM 2
+/// Range modifier from using a long scope.
+#define LONG_SCOPE_ZOOM 4
+
 //ads slowdown
 #define PISTOL_AIM_SLOWDOWN 0.1
 #define SHOTGUN_AIM_SLOWDOWN 0.3

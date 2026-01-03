@@ -287,14 +287,8 @@
 /*
  *  Zooming
 */
-	///Whether the gun generates a Zoom action on creation
-	var/zoomable = TRUE
-	//Zoom toggle
-	var/zoomed = FALSE
-	///Distance in TURFs to move the user's screen forward (the "zoom" effect)
-	var/zoom_amt = 3
-	var/zoom_out_amt = 0
-	var/datum/action/toggle_scope_zoom/azoom
+	///The range modifier when aiming down this gun's sights.
+	var/range_modifier = SIGHT_ZOOM
 
 /*
  * Safety
@@ -345,8 +339,9 @@
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 	muzzle_flash = new(src, muzzleflash_iconstate)
-	build_zooming()
 	build_firemodes()
+	if(range_modifier)
+		AddComponent(/datum/component/scope, range_modifier = range_modifier)
 	if(sawn_off)
 		sawoff(forced = TRUE)
 	if(slot_flags & ITEM_SLOT_SUITSTORE)
@@ -372,8 +367,6 @@
 /obj/item/gun/proc/do_wield(mob/user, instant)
 	user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun, multiplicative_slowdown = wield_slowdown)
 	wield_time = world.time + wield_delay
-	if(azoom)
-		azoom.Grant(user)
 	if(wield_time > 0 && !instant)
 		if(do_after(
 			user,
@@ -394,10 +387,7 @@
 /obj/item/gun/proc/on_unwield(obj/item/source, mob/user)
 	wielded = FALSE
 	wielded_fully = FALSE
-	zoom(user, forced_zoom = FALSE)
 	user.remove_movespeed_modifier(/datum/movespeed_modifier/gun)
-	if(azoom)
-		azoom.Remove(user)
 
 /obj/item/gun/proc/is_wielded()
 	return wielded
@@ -405,8 +395,6 @@
 /obj/item/gun/Destroy()
 	if(chambered) //Not all guns are chambered (EMP'ed energy guns etc)
 		QDEL_NULL(chambered)
-	if(azoom)
-		QDEL_NULL(azoom)
 	if(muzzle_flash)
 		QDEL_NULL(muzzle_flash)
 	if(magazine)
@@ -440,11 +428,6 @@
 	if(gun_firemodes[firemode_index] == FIREMODE_UNDERBARREL)
 		return TRUE
 
-/obj/item/gun/equipped(mob/living/user, slot)
-	. = ..()
-	if(zoomed && user.get_active_held_item() != src)
-		zoom(user, user.dir, FALSE) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
-
 /obj/item/gun/attack(mob/M as mob, mob/user)
 	if(user.a_intent == INTENT_HARM || !actually_shoots) //Flogging
 		return ..()
@@ -473,7 +456,11 @@
 	return
 
 /obj/item/gun/afterattack(atom/target, mob/living/user, flag, params)
-	. = ..()
+	if(fire_gun(target, user, flag, params))
+		return TRUE
+	return ..()
+
+/obj/item/gun/proc/fire_gun(atom/target, mob/living/user, flag, params)
 	if(!actually_shoots)// this gun doesn't actually fire bullets. Dont shoot.
 		return
 	//No target? Why are we even firing anyways...
@@ -482,6 +469,13 @@
 	//If we are burst firing, don't fire, obviously
 	if(currently_firing_burst)
 		return
+
+	if(SEND_SIGNAL(user, COMSIG_MOB_TRYING_TO_FIRE_GUN, src, target, flag, params) & COMPONENT_CANCEL_GUN_FIRE)
+		return
+
+	if(SEND_SIGNAL(src, COMSIG_GUN_TRY_FIRE, user, target, flag, params) & COMPONENT_CANCEL_GUN_FIRE)
+		return
+
 	//This var happens when we are either clicking someone next to us or ourselves. Check if we don't want to fire...
 	if(flag)
 		if(target in user.contents) //can't shoot stuff inside us.
@@ -797,8 +791,6 @@
 /obj/item/gun/dropped(mob/user)
 	. = ..()
 	update_appearance()
-	if(zoomed)
-		zoom(user, user.dir)
 
 /obj/item/gun/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()
@@ -888,7 +880,7 @@
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 		recoil_bonus += gunslinger_recoil_bonus
 	recoil_bonus *= user.recoil_effect
-	return clamp(recoil_bonus, min_recoil, INFINITY)
+	return clamp(recoil_bonus, HAS_TRAIT(user, TRAIT_AIMING) ? min_recoil_aimed : min_recoil, INFINITY)
 
 /obj/item/gun/proc/calculate_spread(mob/user, bonus_spread)
 	var/final_spread = 0
@@ -1057,72 +1049,6 @@
 				log_combat(src,src,"misfired",at_risk,"caused by [cause]")
 				visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s [get_bodypart(bodyzone)]!"), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your [get_bodypart(bodyzone)]!"))
 				human_holder.force_scream()
-
-//I need to refactor this into an attachment
-/datum/action/toggle_scope_zoom
-	name = "Aim Down Sights"
-	check_flags = AB_CHECK_CONSCIOUS|AB_CHECK_HANDS_BLOCKED|AB_CHECK_IMMOBILE|AB_CHECK_LYING
-	icon_icon = 'icons/mob/actions/actions_items.dmi'
-	button_icon_state = "sniper_zoom"
-
-/datum/action/toggle_scope_zoom/Trigger()
-	if(!istype(target, /obj/item/gun) || !..())
-		return
-
-	var/obj/item/gun/gun = target
-	gun.zoom(owner, owner.dir)
-	gun.min_recoil = gun.min_recoil_aimed
-
-/datum/action/toggle_scope_zoom/Remove(mob/user)
-	if(!istype(target, /obj/item/gun))
-		return ..()
-
-	var/obj/item/gun/gun = target
-	gun.zoom(user, user.dir, FALSE)
-
-	..()
-
-/obj/item/gun/proc/rotate(atom/thing, old_dir, new_dir)
-	SIGNAL_HANDLER
-
-	if(ismob(thing))
-		var/mob/lad = thing
-		lad.client.view_size.zoomOut(zoom_out_amt, zoom_amt, new_dir)
-
-/obj/item/gun/proc/zoom(mob/living/user, direc, forced_zoom)
-	if(!user || !user.client)
-		return
-
-	if(isnull(forced_zoom))
-		if((!zoomed && wielded_fully) || zoomed)
-			zoomed = !zoomed
-		else
-			to_chat(user, span_danger("You can't look down the sights without wielding [src]!"))
-			zoomed = FALSE
-	else
-		zoomed = forced_zoom
-
-	if(zoomed)
-		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, PROC_REF(rotate))
-		ADD_TRAIT(user, TRAIT_AIMING, ref(src))
-		user.client.view_size.zoomOut(zoom_out_amt, zoom_amt, direc)
-		min_recoil = min_recoil_aimed
-		user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/aiming, multiplicative_slowdown = aimed_wield_slowdown)
-	else
-		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
-		REMOVE_TRAIT(user, TRAIT_AIMING, ref(src))
-		user.client.view_size.zoomIn()
-		min_recoil = initial(min_recoil)
-		user.remove_movespeed_modifier(/datum/movespeed_modifier/aiming)
-	return zoomed
-
-//Proc, so that gun accessories/scopes/etc. can easily add zooming.
-/obj/item/gun/proc/build_zooming()
-	if(azoom)
-		return
-
-	if(zoomable)
-		azoom = new(src)
 
 /obj/item/gun/proc/build_firemodes()
 	if(FIREMODE_FULLAUTO in gun_firemodes)

@@ -13,7 +13,7 @@
 	recoil_unwielded = 3
 	recoil_backtime_multiplier = 1
 
-	zoom_amt = PISTOL_ZOOM
+	range_modifier = SIGHT_ZOOM
 
 	wield_delay = 0.2 SECONDS
 	fire_delay = 0.2 SECONDS
