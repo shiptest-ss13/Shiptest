@@ -1008,9 +1008,9 @@
 /turf/open/floor/concrete/slab_4/jungleplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "gu" = (
-/obj/item/storage/secure/safe,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/jungle/cavecrew/engineering)
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/area/ruin/jungle/cavecrew)
 "gv" = (
 /obj/machinery/porta_turret/ruin/frontiersmen,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -4121,12 +4121,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/cavecrew/ship)
-"FF" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/neutered{
-	environment_smash = 0
-	},
-/turf/open/floor/plating/asteroid/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
 "FK" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
@@ -4364,7 +4358,9 @@
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/cavecrew)
 "Hp" = (
-/mob/living/simple_animal/hostile/human/frontier,
+/mob/living/simple_animal/hostile/human/frontier/ranged/neutered{
+	environment_smash = 0
+	},
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "Hw" = (
@@ -5502,8 +5498,10 @@
 /turf/open/floor/concrete/slab_2/jungleplanet,
 /area/ruin/jungle/cavecrew/cargo)
 "PY" = (
-/obj/structure/barricade/wooden/crude,
-/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/asteroid/dirt/jungle,
 /area/ruin/jungle/cavecrew)
 "PZ" = (
 /obj/structure/closet,
@@ -5766,6 +5764,10 @@
 /obj/structure/spacevine,
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"SD" = (
+/obj/item/storage/secure/safe,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/jungle/cavecrew/engineering)
 "SI" = (
 /obj/item/pen{
 	pixel_y = 4;
@@ -6321,11 +6323,9 @@
 	},
 /area/ruin/jungle/cavecrew)
 "Wr" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/plating/asteroid/dirt/jungle,
-/area/ruin/jungle/cavecrew)
+/area/overmap_encounter/planetoid/cave/explored)
 "Wu" = (
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -6348,10 +6348,6 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/neutured{
 	name = "Officer Seth";
 	environment_smash = 0
-	},
-/obj/effect/landmark/mission_poi/main/kill{
-	already_spawned = 1;
-	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/officer
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -7649,7 +7645,7 @@ cl
 oM
 XU
 kQ
-gu
+SD
 DW
 Wc
 fr
@@ -7948,7 +7944,7 @@ NK
 aw
 nC
 YS
-PY
+gu
 ZD
 ZD
 ZD
@@ -8020,7 +8016,7 @@ Li
 gA
 Ti
 wE
-PY
+gu
 Oc
 ZD
 ZD
@@ -9104,7 +9100,7 @@ KQ
 Yj
 KK
 Ms
-Wr
+PY
 aD
 wr
 PZ
@@ -9176,7 +9172,7 @@ KQ
 bY
 iT
 YS
-Wr
+PY
 Jh
 wr
 wG
@@ -9759,7 +9755,7 @@ fG
 Xb
 rn
 rn
-FF
+Hp
 fG
 fG
 fG
@@ -9826,7 +9822,7 @@ QX
 QX
 QX
 QX
-Hp
+Wr
 KZ
 go
 KZ
