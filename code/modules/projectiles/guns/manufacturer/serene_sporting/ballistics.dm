@@ -357,7 +357,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/woodsman)
 			"y" = 21,
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 13,
+			"x" = 15,
 			"y" = 23,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
