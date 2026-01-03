@@ -69,6 +69,7 @@
 	pixel_x = 2;
 	pixel_y = -7
 	},
+/obj/item/storage/box/ammo/a12g_buckshot,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "av" = (
@@ -301,6 +302,10 @@
 	pixel_x = 13;
 	pixel_y = 7
 	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = 10;
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew)
 "bP" = (
@@ -418,6 +423,8 @@
 /obj/item/gun/ballistic/rifle/illestren/empty,
 /obj/item/gun/ballistic/automatic/pistol/m17/no_mag,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/gun/ballistic/shotgun/doublebarrel/presawn/empty,
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "cj" = (
@@ -705,6 +712,7 @@
 	pixel_x = 7;
 	pixel_y = -3
 	},
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "dt" = (
@@ -838,6 +846,18 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/food/drinks/soda_cans/lunapunch{
+	pixel_x = 4;
+	pixel_y = 5
+	},
+/obj/item/lighter/greyscale{
+	pixel_x = -8;
+	pixel_y = 6
+	},
+/obj/item/cigbutt{
+	pixel_x = -8;
+	pixel_y = 3
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "gC" = (
@@ -1075,10 +1095,6 @@
 "jK" = (
 /obj/effect/turf_decal/corner/transparent/green{
 	dir = 5
-	},
-/obj/machinery/emergency_panel{
-	pixel_x = 0;
-	pixel_y = -6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1642,8 +1658,6 @@
 /obj/item/clothing/shoes/sneakers/brown,
 /obj/item/clothing/suit/jacket/leather/duster/command,
 /obj/item/clothing/glasses/cheapsuns,
-/obj/item/storage/box/ammo/a12g_buckshot,
-/obj/item/gun/ballistic/shotgun/doublebarrel/presawn/empty,
 /obj/effect/turf_decal/borderfloorblack{
 	layer = 2.030
 	},
@@ -1663,7 +1677,7 @@
 "Ds" = (
 /obj/structure/table,
 /obj/item/radio/intercom/wideband/table{
-	dir = 4;
+	dir = 1;
 	pixel_x = 5;
 	pixel_y = 0
 	},
@@ -1689,6 +1703,11 @@
 	name = "Privacy Shutters"
 	},
 /obj/machinery/light/small/directional/east,
+/obj/item/wallframe/intercom/table{
+	dir = 1;
+	pixel_x = -13;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "EU" = (
@@ -1747,6 +1766,7 @@
 	pixel_x = -22;
 	pixel_y = -10
 	},
+/obj/item/computer_hardware/card_slot,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "II" = (
@@ -2040,6 +2060,18 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/trashcart,
+/obj/item/mop,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/pushbroom{
+	pixel_x = 5;
+	pixel_y = -3
+	},
+/obj/item/storage/bag/trash{
+	pixel_x = 10;
+	pixel_y = -4
+	},
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "To" = (
@@ -2137,12 +2169,16 @@
 	},
 /obj/machinery/airalarm/directional/east,
 /obj/item/paper_bin{
-	pixel_x = -6;
+	pixel_x = 6;
 	pixel_y = 5
 	},
 /obj/item/pen{
-	pixel_x = -6;
+	pixel_x = 6;
 	pixel_y = 7
+	},
+/obj/machinery/emergency_panel{
+	pixel_x = -10;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -2230,6 +2266,10 @@
 "Ww" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /mob/living/basic/cockroach,
+/obj/item/radio/intercom/directional/east{
+	pixel_x = 31;
+	pixel_y = 7
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Xd" = (
