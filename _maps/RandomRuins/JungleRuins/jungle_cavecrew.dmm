@@ -27,7 +27,6 @@
 	armor = list("melee" = 50, "bullet" = 0, "laser" = 50, "energy" = 100, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 50);
 	name = "shitty plasma canister";
 	max_integrity = 60;
-	maximum_pressure = d;
 	desc = "A shoddily constructed container of Plasma gas. Highly toxic."
 	},
 /turf/open/floor/plating/jungleplanet,
@@ -4359,11 +4358,9 @@
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/cavecrew)
 "Hp" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating/asteroid/dirt/jungle,
-/area/ruin/jungle/cavecrew)
+/obj/item/storage/secure/safe,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/jungle/cavecrew/engineering)
 "Hw" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4408,7 +4405,6 @@
 	armor = list("melee" = 50, "bullet" = 0, "laser" = 50, "energy" = 100, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 50);
 	name = "shitty plasma canister";
 	max_integrity = 60;
-	maximum_pressure = d;
 	desc = "A shoddily constructed container of Plasma gas. Highly toxic."
 	},
 /turf/open/floor/plasteel/tech,
@@ -4547,6 +4543,12 @@
 	icon_state = "4-10"
 	},
 /obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/asteroid/dirt/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
+"IM" = (
+/mob/living/simple_animal/hostile/human/frontier/ranged/neutered{
+	environment_smash = 0
+	},
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "IO" = (
@@ -4841,10 +4843,6 @@
 "KW" = (
 /turf/open/floor/plasteel/stairs,
 /area/ruin/jungle/cavecrew/ship)
-"KY" = (
-/obj/structure/barricade/wooden/crude,
-/turf/open/floor/plating/asteroid/dirt/jungle/dark,
-/area/ruin/jungle/cavecrew)
 "KZ" = (
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -5504,9 +5502,9 @@
 /turf/open/floor/concrete/slab_2/jungleplanet,
 /area/ruin/jungle/cavecrew/cargo)
 "PY" = (
-/obj/item/storage/secure/safe,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/jungle/cavecrew/engineering)
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/area/ruin/jungle/cavecrew)
 "PZ" = (
 /obj/structure/closet,
 /obj/item/clothing/mask/gas/frontiersmen,
@@ -5946,7 +5944,6 @@
 	armor = list("melee" = 50, "bullet" = 0, "laser" = 50, "energy" = 100, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 50);
 	name = "shitty plasma canister";
 	max_integrity = 60;
-	maximum_pressure = d;
 	desc = "A shoddily constructed container of Plasma gas. Highly toxic."
 	},
 /turf/open/floor/plasteel/tech,
@@ -6329,11 +6326,11 @@
 	},
 /area/ruin/jungle/cavecrew)
 "Wr" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/neutered{
-	environment_smash = 0
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating/asteroid/dirt/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
+/area/ruin/jungle/cavecrew)
 "Wu" = (
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -7657,7 +7654,7 @@ cl
 oM
 XU
 kQ
-PY
+Hp
 DW
 Wc
 fr
@@ -7956,7 +7953,7 @@ NK
 aw
 nC
 YS
-KY
+PY
 ZD
 ZD
 ZD
@@ -8028,7 +8025,7 @@ Li
 gA
 Ti
 wE
-KY
+PY
 Oc
 ZD
 ZD
@@ -9112,7 +9109,7 @@ KQ
 Yj
 KK
 Ms
-Hp
+Wr
 aD
 wr
 PZ
@@ -9184,7 +9181,7 @@ KQ
 bY
 iT
 YS
-Hp
+Wr
 Jh
 wr
 wG
@@ -9767,7 +9764,7 @@ fG
 Xb
 rn
 rn
-Wr
+IM
 fG
 fG
 fG
