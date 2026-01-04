@@ -175,7 +175,7 @@
 		return
 	if(!COOLDOWN_FINISHED(src, coordinate_cooldown))
 		return
-	COOLDOWN_START(src, coordinate_cooldown, 0.2 SECONDS)
+	COOLDOWN_START(src, coordinate_cooldown, 0.05 SECONDS)
 	var/list/modifiers = params2list(params)
 	var/icon_x = text2num(LAZYACCESS(modifiers, VIS_X))
 	var/icon_y = text2num(LAZYACCESS(modifiers, VIS_Y))

@@ -87,7 +87,7 @@
 /// Range modifier from aiming down sights.
 #define SIGHT_ZOOM 0
 /// Range modifier from aiming down a DMR's sights.
-#define DMR_SIGHT_ZOOM 1
+#define DMR_SIGHT_ZOOM 1.25
 /// Range modifier from using a short scope.
 #define SHORT_SCOPE_ZOOM 2
 /// Range modifier from using a long scope.
