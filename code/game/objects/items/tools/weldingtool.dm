@@ -148,7 +148,7 @@
 				log_game("[key_name(user)] set [key_name(L)] on fire with [src] at [AREACOORD(user)]")
 
 	if(!status && O.is_refillable())
-		reagents.trans_to(O, reagents.total_volume, transferred_by = user)
+		reagents.trans_to(O, reagents.total_volume, transfered_by = user)
 		to_chat(user, span_notice("You empty [src]'s fuel tank into [O]."))
 		update_appearance()
 

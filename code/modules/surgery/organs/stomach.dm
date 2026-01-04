@@ -36,7 +36,6 @@
 		create_reagents(reagent_vol)
 
 /obj/item/organ/stomach/on_life()
-	. = ..()
 	//Manage species digestion
 	if(istype(owner, /mob/living/carbon/human))
 		var/mob/living/carbon/human/humi = owner

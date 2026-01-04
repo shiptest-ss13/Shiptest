@@ -228,7 +228,7 @@
 					var/datum/reagents/R = new/datum/reagents(5)
 					W.reagents = R
 					R.my_atom = W
-					reagents.trans_to(W,1, transferred_by = chassis.occupant)
+					reagents.trans_to(W,1, transfered_by = chassis.occupant)
 					for(var/b=0, b<4, b++)
 						if(!W)
 							return

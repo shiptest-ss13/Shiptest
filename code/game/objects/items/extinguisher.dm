@@ -108,7 +108,7 @@
 			safety = safety_save
 			return 1
 		var/obj/structure/reagent_dispensers/W = target //will it work?
-		var/transferred = W.reagents.trans_to(src, max_water, transferred_by = user)
+		var/transferred = W.reagents.trans_to(src, max_water, transfered_by = user)
 		if(transferred > 0)
 			to_chat(user, span_notice("\The [src] has been refilled by [transferred] units."))
 			playsound(src.loc, 'sound/effects/refill.ogg', 50, TRUE, -6)
@@ -165,7 +165,7 @@
 		for(var/a=0, a<5, a++)
 			var/my_target = pick(the_targets)
 			var/obj/effect/particle_effect/water/W = new /obj/effect/particle_effect/water(get_turf(src), my_target)
-			reagents.trans_to(W, volume, transferred_by = user)
+			reagents.trans_to(W, volume, transfered_by = user)
 			// If precise, remove turf from targets so it won't be picked more than once
 			if(precision)
 				the_targets -= my_target

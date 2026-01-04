@@ -61,7 +61,7 @@
 		if(attacking_item.reagents.holder_full())
 			to_chat(user, span_warning("[attacking_item] is full.</span>"))
 
-		var/trans = reagents.trans_to(attacking_item, amount_per_transfer_from_this, transferred_by = user)
+		var/trans = reagents.trans_to(attacking_item, amount_per_transfer_from_this, transfered_by = user)
 		to_chat(user, span_notice("You transfer [trans] unit\s of the solution to [attacking_item]."))
 		flick("syrup_anim", src)
 	attacking_item.update_icon()

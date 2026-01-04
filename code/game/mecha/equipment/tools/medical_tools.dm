@@ -304,7 +304,7 @@
 	var/turf/trg = get_turf(target)
 	var/obj/item/reagent_containers/syringe/mechsyringe = syringes[1]
 	mechsyringe.forceMove(get_turf(chassis))
-	reagents.trans_to(mechsyringe, min(mechsyringe.volume, reagents.total_volume), transferred_by = chassis.occupant)
+	reagents.trans_to(mechsyringe, min(mechsyringe.volume, reagents.total_volume), transfered_by = chassis.occupant)
 	syringes -= mechsyringe
 	mechsyringe.icon = 'icons/obj/chemical/misc.dmi'
 	mechsyringe.icon_state = "potgreen"
@@ -330,7 +330,7 @@
 								R += "[A.name] ([num2text(A.volume)]"
 						mechsyringe.icon_state = initial(mechsyringe.icon_state)
 						mechsyringe.icon = initial(mechsyringe.icon)
-						mechsyringe.reagents.trans_to(M, mechsyringe.reagents.total_volume, transferred_by = originaloccupant, methods = INJECT)
+						mechsyringe.reagents.trans_to(M, mechsyringe.reagents.total_volume, transfered_by = originaloccupant, methods = INJECT)
 						M.take_bodypart_damage(2)
 						log_combat(originaloccupant, M, "shot", "syringegun")
 					break
@@ -450,7 +450,7 @@
 	if(!chassis.Adjacent(S))
 		occupant_message(span_warning("Unable to load syringe!"))
 		return FALSE
-	S.reagents.trans_to(src, S.reagents.total_volume, transferred_by = user)
+	S.reagents.trans_to(src, S.reagents.total_volume, transfered_by = user)
 	S.forceMove(src)
 	syringes += S
 	occupant_message(span_notice("Syringe loaded."))

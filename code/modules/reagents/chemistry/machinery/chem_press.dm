@@ -57,7 +57,7 @@
 			pill = new/obj/item/reagent_containers/pill(drop_location())
 		pill.name = "pill"
 		pill.icon_state = "pill[pill_style]"
-		beaker.reagents.trans_to(pill, current_volume, transferred_by = user)
+		beaker.reagents.trans_to(pill, current_volume, transfered_by = user)
 		balloon_alert(user, "finished pressing")
 	return TRUE
 

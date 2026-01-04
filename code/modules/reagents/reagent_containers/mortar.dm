@@ -87,7 +87,7 @@ to accommodate additional materials.
 	reagents.add_reagent_list(to_be_juiced.juice_results)
 
 	if(to_be_juiced.reagents) //If juiced item has reagents within, transfer them to the mortar
-		to_be_juiced.reagents.trans_to(src, to_be_juiced.reagents.total_volume, transferred_by = user)
+		to_be_juiced.reagents.trans_to(src, to_be_juiced.reagents.total_volume, transfered_by = user)
 
 	to_chat(user, span_notice("You juice [to_be_juiced] into a fine liquid."))
 	QDEL_NULL(to_be_juiced)
@@ -98,7 +98,7 @@ to accommodate additional materials.
 	reagents.add_reagent_list(to_be_ground.grind_results)
 
 	if(to_be_ground.reagents) //If grinded item has reagents within, transfer them to the mortar
-		to_be_ground.reagents.trans_to(src, to_be_ground.reagents.total_volume, transferred_by = user)
+		to_be_ground.reagents.trans_to(src, to_be_ground.reagents.total_volume, transfered_by = user)
 
 	to_chat(user, span_notice("You break [to_be_ground] into powder."))
 	QDEL_NULL(to_be_ground)

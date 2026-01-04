@@ -875,7 +875,7 @@
 		playsound(loc, 'sound/effects/slosh.ogg', 25, TRUE)
 		var/datum/reagents/R = new /datum/reagents()
 		R.my_atom = src
-		container.reagents.trans_to(R, container.amount_per_transfer_from_this, transferred_by = user)
+		container.reagents.trans_to(R, container.amount_per_transfer_from_this, transfered_by = user)
 		apply_reagents(R, user)
 	else if(I.get_sharpness() && I.force > 0)
 		if(I.hitsound)

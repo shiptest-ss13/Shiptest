@@ -626,7 +626,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	var/chemicals_lost = belly.reagents.total_volume * 0.1
 	if(purge)
 		chemicals_lost = belly.reagents.total_volume * 0.67 //For detoxification surgery, we're manually pumping the stomach out of chemcials, so it's far more efficient.
-	belly.reagents.trans_to(V, chemicals_lost, transferred_by = M)
+	belly.reagents.trans_to(V, chemicals_lost, transfered_by = M)
 	//clear the stomach of anything even not food
 	for(var/bile in belly.reagents.reagent_list)
 		var/datum/reagent/reagent = bile
