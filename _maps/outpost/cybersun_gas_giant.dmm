@@ -2695,11 +2695,6 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/bar/cybersun_outpost)
-"gw" = (
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/outpost/vacant_rooms/shop)
 "gx" = (
 /obj/machinery/light/floor,
 /obj/structure/showcase/cyborg/assault{
@@ -2817,11 +2812,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/lounge)
-"gH" = (
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/outpost/crew/garden)
 "gI" = (
 /obj/structure/chair/stool/bar{
 	dir = 1
@@ -5642,6 +5632,11 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/promenade)
+"no" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/turf/open/floor/plating,
+/area/outpost/crew/court)
 "np" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
@@ -6951,6 +6946,11 @@
 "qy" = (
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/bar/cybersun_outpost)
+"qz" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/outpost/crew/garden)
 "qB" = (
 /obj/machinery/door/airlock/glass{
 	name = "Teceti Garden";
@@ -12046,6 +12046,11 @@
 	},
 /turf/open/floor/suns/dark/plain,
 /area/outpost/operations)
+"CY" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/turf/open/floor/plating,
+/area/outpost/crew/library)
 "CZ" = (
 /obj/effect/turf_decal/industrial/hatch,
 /turf/open/floor/plasteel/tech,
@@ -15717,7 +15722,6 @@
 "LB" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
-/obj/structure/grille,
 /turf/open/floor/plating,
 /area/outpost/crew/library)
 "LC" = (
@@ -17423,6 +17427,11 @@
 	},
 /turf/open/floor/suns/dark/plain,
 /area/outpost/vacant_rooms/shop)
+"Po" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/outpost/vacant_rooms/shop)
 "Pp" = (
 /obj/machinery/door/airlock{
 	id_tag = "cs_b_2";
@@ -18065,12 +18074,6 @@
 /obj/structure/platform/ship_three/indestructible,
 /turf/open/cybersun_outpost_exterior,
 /area/outpost/external)
-"QF" = (
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/structure/grille,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/outpost/crew/court)
 "QG" = (
 /obj/structure/platform/ship_three/corner/indestructible{
 	dir = 1
@@ -19714,11 +19717,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo/smeltery)
-"Us" = (
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/outpost/crew/library)
 "Ut" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/manifold{
 	dir = 4
@@ -29368,7 +29366,7 @@ RL
 kE
 Rl
 GL
-LB
+CY
 kc
 OI
 OI
@@ -29493,8 +29491,8 @@ iA
 RL
 DL
 yT
-Us
-Us
+LB
+LB
 kc
 OI
 OI
@@ -29618,8 +29616,8 @@ zY
 iA
 rv
 rv
-Us
-Us
+LB
+LB
 nY
 kA
 OI
@@ -30097,7 +30095,7 @@ ZT
 tN
 tN
 tN
-gw
+Po
 kc
 jh
 Os
@@ -30223,7 +30221,7 @@ tN
 tN
 tN
 tN
-gw
+Po
 kc
 jh
 Os
@@ -30344,12 +30342,12 @@ Mc
 Bb
 Rk
 kI
-gw
+Po
 lM
 dE
 tN
 fk
-gw
+Po
 kc
 QG
 jj
@@ -30470,12 +30468,12 @@ rx
 uD
 Yx
 ll
-gw
+Po
 ri
 pn
 tN
 SR
-gw
+Po
 Fo
 dI
 dI
@@ -30598,9 +30596,9 @@ Rk
 kI
 BO
 BO
-gw
-gw
-gw
+Po
+Po
+Po
 BO
 Sv
 Sv
@@ -31341,10 +31339,10 @@ Oy
 Oy
 bQ
 XU
-gH
-gH
+qz
+qz
 yo
-gH
+qz
 XU
 XU
 ZR
@@ -31466,7 +31464,7 @@ OI
 OI
 OI
 jh
-gH
+qz
 NT
 nN
 Cb
@@ -31592,7 +31590,7 @@ OI
 OI
 OI
 jh
-gH
+qz
 Sr
 SX
 SX
@@ -31718,7 +31716,7 @@ dI
 Bx
 OI
 jh
-gH
+qz
 rG
 lh
 pt
@@ -31837,14 +31835,14 @@ ck
 ja
 gz
 BO
-gw
-gw
-gw
+Po
+Po
+Po
 BO
 Fo
 Bx
 jh
-gH
+qz
 rG
 uQ
 SX
@@ -31970,8 +31968,8 @@ BO
 BO
 kc
 jh
-gH
-gH
+qz
+qz
 Hu
 Ek
 Hu
@@ -32079,7 +32077,7 @@ CH
 kc
 OI
 jh
-gH
+qz
 Do
 Zo
 kS
@@ -32093,13 +32091,13 @@ NS
 tN
 tN
 VG
-gw
+Po
 kc
 QG
 iL
-gH
-gH
-gH
+qz
+qz
+qz
 XU
 XU
 oh
@@ -32205,7 +32203,7 @@ CH
 kc
 OI
 jh
-gH
+qz
 Wv
 kS
 kS
@@ -32219,7 +32217,7 @@ pG
 pG
 AY
 Fa
-gw
+Po
 kc
 OI
 QG
@@ -32331,7 +32329,7 @@ CH
 kc
 OI
 jh
-gH
+qz
 Do
 kS
 Ft
@@ -32457,7 +32455,7 @@ OB
 kc
 OI
 jh
-gH
+qz
 va
 Do
 kS
@@ -32614,7 +32612,7 @@ qR
 LV
 UR
 Yy
-QF
+no
 UR
 Si
 PV
@@ -32848,7 +32846,7 @@ BO
 gV
 yq
 px
-gw
+Po
 kc
 OI
 OI
@@ -32974,7 +32972,7 @@ ME
 NI
 KE
 Mt
-gw
+Po
 kc
 OI
 OI
@@ -33100,7 +33098,7 @@ BO
 cM
 TC
 vp
-gw
+Po
 kc
 OI
 OI
@@ -33226,7 +33224,7 @@ qG
 ot
 kn
 qE
-gw
+Po
 kc
 OI
 OI
@@ -33352,7 +33350,7 @@ BO
 DT
 MY
 te
-gw
+Po
 kc
 OI
 OI
