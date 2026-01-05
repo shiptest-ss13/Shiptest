@@ -2006,11 +2006,18 @@
 /area/outpost/crew/lounge)
 "iF" = (
 /obj/effect/turf_decal/corner/opaque/neutral/half,
-/obj/machinery/computer/mission{
-	dir = 1
-	},
 /obj/machinery/camera/autoname{
 	dir = 1
+	},
+/obj/structure/table,
+/obj/item/paper_bin{
+	pixel_y = 5;
+	pixel_x = 3;
+	layer = 2.9
+	},
+/obj/item/pen{
+	pixel_y = 6;
+	pixel_x = 3
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/operations)
@@ -2551,8 +2558,8 @@
 /obj/effect/turf_decal/corner/opaque/neutral/half{
 	dir = 1
 	},
-/obj/machinery/computer/mission,
 /obj/machinery/camera/autoname,
+/obj/machinery/computer/outpost_export_console,
 /turf/open/floor/plasteel/dark,
 /area/outpost/operations)
 "ks" = (
@@ -2657,7 +2664,16 @@
 /obj/effect/turf_decal/corner/opaque/neutral/half{
 	dir = 1
 	},
-/obj/machinery/computer/outpost_export_console,
+/obj/structure/table,
+/obj/item/paper_bin{
+	pixel_y = 5;
+	pixel_x = 3;
+	layer = 2.9
+	},
+/obj/item/pen{
+	pixel_y = 6;
+	pixel_x = 3
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/operations)
 "kM" = (
@@ -5807,7 +5823,11 @@
 /area/outpost/hallway/central)
 "xJ" = (
 /obj/effect/turf_decal/corner/opaque/neutral/half,
-/obj/machinery/mission_pad,
+/obj/structure/table,
+/obj/structure/noticeboard{
+	pixel_y = -24;
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/operations)
 "xK" = (
@@ -7543,7 +7563,10 @@
 /obj/effect/turf_decal/corner/opaque/neutral/half{
 	dir = 1
 	},
-/obj/machinery/mission_pad,
+/obj/structure/table,
+/obj/structure/noticeboard{
+	pixel_y = 25
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/operations)
 "EX" = (
@@ -18530,7 +18553,7 @@ aI
 Ec
 Ec
 SE
-ES
+FU
 jc
 Bk
 st
@@ -18653,7 +18676,7 @@ aI
 pG
 ky
 SE
-FU
+ES
 qM
 Bk
 AC

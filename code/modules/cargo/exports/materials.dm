@@ -50,31 +50,31 @@
 	material_id = /datum/material/diamond
 
 /datum/export/material/plasma
-	cost = 20
+	cost = 25
 	unit_name = "cm3 of plasma"
 	sell_floor = 15
 	material_id = /datum/material/plasma
 
 /datum/export/material/uranium
-	cost = 25
+	cost = 50
 	unit_name = "cm3 of uranium"
-	sell_floor = 20
+	sell_floor = 40
 	material_id = /datum/material/uranium
 
 /datum/export/material/gold
-	cost = 30
+	cost = 35
 	unit_name = "cm3 of gold"
-	sell_floor = 10
+	sell_floor = 15
 	material_id = /datum/material/gold
 
 /datum/export/material/silver
-	cost = 15
+	cost = 20
 	unit_name = "cm3 of silver"
 	sell_floor = 10
 	material_id = /datum/material/silver
 
 /datum/export/material/titanium
-	cost = 30
+	cost = 35
 	unit_name = "cm3 of titanium"
 	sell_floor = 15
 	material_id = /datum/material/titanium
@@ -90,6 +90,7 @@
 	cost = 2
 	sell_floor = 1
 	material_id = /datum/material/plastic
+	valid_event_target = FALSE
 
 /datum/export/material/metal
 	unit_name = "sheet of metal"
@@ -102,6 +103,7 @@
 		/obj/item/stack/ore,
 		/obj/item/coin
 	)
+	valid_event_target = FALSE
 
 /datum/export/material/glass
 	unit_name = "sheet of glass"
@@ -112,3 +114,4 @@
 		/obj/item/stack/ore,
 		/obj/item/shard
 	)
+	valid_event_target = FALSE
