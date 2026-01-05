@@ -383,9 +383,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 //special headsets
 /obj/item/radio/headset/binary
-
-/obj/item/radio/headset/binary/Initialize()
-	. = ..()
 	keyslot = /obj/item/encryptionkey/binary
 
 /obj/item/radio/headset/headset_cent
