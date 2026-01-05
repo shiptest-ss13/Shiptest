@@ -266,7 +266,7 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	mask = /obj/item/clothing/mask/balaclava/combat
 	head = /obj/item/clothing/head/helmet/hardliners
-	/obj/item/radio/headset/syndicate/alt/cybersun
+	ears = /obj/item/radio/headset/syndicate/alt/cybersun
 
 /datum/outfit/job/syndicate/ert/hardliner/engineer
 	name = "ERT - Syndicate Hardliner Mechanic"
