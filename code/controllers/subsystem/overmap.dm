@@ -724,16 +724,8 @@ SUBSYSTEM_DEF(overmap)
 					continue
 				docking_ports += port
 
-	var/list/datum/weakref/spawned_mission_pois = list()
-	for(var/obj/effect/landmark/mission_poi/mission_poi in SSmissions.unallocated_pois)
-		if(!vlevel.is_in_bounds(mission_poi))
-			continue
 
-		spawned_mission_pois += WEAKREF(mission_poi)
-		SSmissions.unallocated_pois -= mission_poi
-
-
-	return list(mapzone, docking_ports, ruin_turfs, ruin_templates, spawned_mission_pois)
+	return list(mapzone, docking_ports, ruin_turfs, ruin_templates)
 
 /**
  * Reserves a square dynamic encounter area then loads a map.

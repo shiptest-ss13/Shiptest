@@ -90,6 +90,7 @@
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset
 	head = /obj/item/clothing/head/frontier/peaked
+	neck = /obj/item/clothing/neck/dogtag/gold
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer/internals
 	name = "Frontiersman Officer Corpse Internals"

@@ -302,17 +302,6 @@
 	stock_max = 2
 	availability_prob = 30
 
-/datum/blackmarket_item/weapon/guncase/saber_smg
-	name = "Saber 9x18mm SMG"
-	desc = "A prototype 9x18mm submachine gun. Most of these never got past the RND phase and into distribution. But we happen know a guy."
-	item = /obj/item/gun/ballistic/automatic/smg/skm_carbine/saber
-	pair_item = list(/datum/blackmarket_item/ammo/saber_mag)
-
-	cost_min = 2000
-	cost_max = 3750
-	stock_max = 2
-	availability_prob = 25
-
 /datum/blackmarket_item/weapon/guncase/vga5
 	name = "VG-A5 Beam Gun"
 	desc = "So you've seen those quad burst Etherbor Volleyguns? Well this thing has a quintuple burst! That means five!"

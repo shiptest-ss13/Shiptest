@@ -1251,9 +1251,7 @@
 	id = "outpost2";
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
-	dir = 5
-	},
+/obj/machinery/atmospherics/pipe/heat_exchanging/manifold,
 /turf/open/floor/engine/hull/reinforced/cybersun_outpost,
 /area/outpost/cargo/smeltery)
 "di" = (
@@ -2699,6 +2697,7 @@
 	name = "Cybersun Assault Borg Display"
 	},
 /obj/structure/catwalk,
+/obj/effect/landmark/observer_start,
 /turf/open/water/csoutpost,
 /area/outpost/crew/promenade)
 "gy" = (
@@ -4194,6 +4193,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/bathroom)
 "jZ" = (
@@ -5272,6 +5274,9 @@
 	dir = 8
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable/cyan{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/bathroom)
 "mE" = (
@@ -5511,6 +5516,7 @@
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/warning{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/vacant_rooms/office)
 "nf" = (
@@ -5805,6 +5811,9 @@
 /obj/machinery/conveyor/auto{
 	id = "outpost2";
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 4
 	},
 /turf/open/floor/engine/hull/reinforced/cybersun_outpost,
 /area/outpost/cargo/smeltery)
@@ -10985,6 +10994,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/bathroom)
 "AB" = (
@@ -14547,10 +14559,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/outpost/crew/promenade)
 "Ja" = (
@@ -15089,19 +15099,20 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/bar/cybersun_outpost)
 "Kr" = (
-/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
-	dir = 5
-	},
 /obj/machinery/mineral/processing_unit{
 	input_dir = 4;
 	output_dir = 8
 	},
+/obj/machinery/atmospherics/pipe/heat_exchanging/manifold,
 /turf/open/floor/engine/hull/reinforced/cybersun_outpost,
 /area/outpost/cargo/smeltery)
 "Ks" = (
 /obj/machinery/conveyor/auto{
 	id = "outpost1";
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 4
 	},
 /turf/open/floor/engine/hull/reinforced/cybersun_outpost,
 /area/outpost/cargo/smeltery)
@@ -15667,6 +15678,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/cryo)
 "LA" = (
@@ -16331,6 +16343,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/bathroom)
 "MW" = (
@@ -16702,6 +16717,17 @@
 /obj/structure/grille,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/cargo/smeltery)
+"NN" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "outpost_refinery_external"
+	},
+/obj/structure/grille,
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 10
+	},
+/turf/open/floor/plating,
+/area/outpost/cargo/smeltery)
 "NO" = (
 /obj/effect/turf_decal/corner/opaque/orange{
 	dir = 6
@@ -16846,6 +16872,9 @@
 	},
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/lounge)
@@ -17228,6 +17257,9 @@
 /obj/machinery/light/small/directional/west,
 /obj/effect/turf_decal/siding/black{
 	dir = 8
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/lounge)
@@ -17699,9 +17731,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono/white,
 /area/outpost/vacant_rooms/office)
 "Qa" = (
@@ -18165,6 +18195,7 @@
 /obj/machinery/door/airlock/external{
 	name = "External Access"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech,
 /area/outpost/vacant_rooms/office)
 "QY" = (
@@ -19028,6 +19059,9 @@
 	id = "outpost1";
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 4
+	},
 /turf/open/floor/engine/hull/reinforced/cybersun_outpost,
 /area/outpost/cargo/smeltery)
 "SX" = (
@@ -19054,6 +19088,9 @@
 	},
 /obj/structure/sign/poster/official/cleanliness{
 	pixel_x = -28
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/bathroom)
@@ -19167,6 +19204,9 @@
 	id = "outpost_refinery_external"
 	},
 /obj/structure/grille,
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 6
+	},
 /turf/open/floor/plating,
 /area/outpost/cargo/smeltery)
 "To" = (
@@ -19502,6 +19542,9 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
 /turf/open/floor/plating,
 /area/outpost/vacant_rooms/office)
 "Ub" = (
@@ -20469,6 +20512,9 @@
 /obj/effect/turf_decal/siding/black/corner{
 	dir = 8
 	},
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/lounge)
 "Wu" = (
@@ -20835,6 +20881,9 @@
 /obj/effect/turf_decal/siding/black{
 	dir = 10
 	},
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/lounge)
 "Xk" = (
@@ -21130,8 +21179,8 @@
 	id = "outpost1";
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
-	dir = 10
+/obj/machinery/atmospherics/pipe/heat_exchanging/manifold{
+	dir = 1
 	},
 /turf/open/floor/engine/hull/reinforced/cybersun_outpost,
 /area/outpost/cargo/smeltery)
@@ -21214,6 +21263,9 @@
 "XX" = (
 /obj/machinery/conveyor/auto{
 	id = "outpost2";
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 4
 	},
 /turf/open/floor/engine/hull/reinforced/cybersun_outpost,
@@ -22062,8 +22114,8 @@
 	input_dir = 4;
 	output_dir = 8
 	},
-/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
-	dir = 10
+/obj/machinery/atmospherics/pipe/heat_exchanging/manifold{
+	dir = 1
 	},
 /turf/open/floor/engine/hull/reinforced/cybersun_outpost,
 /area/outpost/cargo/smeltery)
@@ -34438,7 +34490,7 @@ la
 Gv
 pY
 OV
-Tn
+NN
 TH
 nr
 nr
@@ -34816,7 +34868,7 @@ xC
 zn
 zK
 sK
-Tn
+NN
 TH
 nr
 nr
