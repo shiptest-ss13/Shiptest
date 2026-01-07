@@ -25,7 +25,7 @@
 	if(!istype(below_the_cable))
 		return FALSE
 
-	return below_the_cable.intact
+	return !below_the_cable.intact
 
 // Our hunts have a decent cooldown.
 /datum/ai_behavior/hunt_target/unarmed_attack_target/mouse
