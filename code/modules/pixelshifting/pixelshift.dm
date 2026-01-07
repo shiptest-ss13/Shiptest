@@ -56,19 +56,15 @@
 /**
  * Removes any offsets from the passed mob that are related to being grabbed
  *
- * * M - the mob to remove the offsets from
+ * * pull_target - the mob to remove the offsets from
  * * override - if TRUE, the offsets will be removed regardless of the mob's buckled state
  * otherwise we won't remove the offsets if the mob is buckled
  */
-/mob/living/proc/reset_pull_offsets(mob/living/M, override)
-	if(!override && M.buckled)
+/mob/living/proc/reset_pull_offsets(mob/living/pull_target, override)
+	if(!override && pull_target.buckled)
 		return
-	M.remove_offsets(GRABBING_TRAIT)
+	pull_target.remove_offsets(GRABBING_TRAIT)
 
-
-/mob/living/reset_pull_offsets(mob/living/pull_target, override)
-	pull_target.unpixel_shift()
-	return ..()
 
 /mob/living/pixel_shift(direction)
 	passthroughable = NONE
@@ -79,24 +75,80 @@
 			if(pixel_y <= MAXIMUM_PIXEL_SHIFT + base_pixel_y)
 				pixel_y++
 				is_shifted = TRUE
+			if(buckled)
+				if(!buckled.anchored)
+					if(ismob(buckled))
+						var/mob/buckled_mob = buckled
+						buckled_mob.pixel_shift(direction)
+					else
+						buckled.pixel_y = pixel_y
+			if(buckling)
+				if(!buckling.anchored)
+					if(ismob(buckling))
+						var/mob/buckling_mob = buckling
+						buckling_mob.pixel_shift(direction)
+					else
+						buckled.pixel_y = pixel_y
 		if(EAST)
 			if(!canface())
 				return FALSE
 			if(pixel_x <= MAXIMUM_PIXEL_SHIFT + base_pixel_x)
 				pixel_x++
 				is_shifted = TRUE
+			if(buckled)
+				if(!buckled.anchored)
+					if(ismob(buckled))
+						var/mob/buckled_mob = buckled
+						buckled_mob.pixel_shift(direction)
+					else
+						buckled.pixel_x = pixel_x
+			if(buckling)
+				if(!buckling.anchored)
+					if(ismob(buckling))
+						var/mob/buckling_mob = buckling
+						buckling_mob.pixel_shift(direction)
+					else
+						buckled.pixel_x = pixel_x
 		if(SOUTH)
 			if(!canface())
 				return FALSE
 			if(pixel_y >= -MAXIMUM_PIXEL_SHIFT + base_pixel_y)
 				pixel_y--
 				is_shifted = TRUE
+			if(buckled)
+				if(!buckled.anchored)
+					if(ismob(buckled))
+						var/mob/buckled_mob = buckled
+						buckled_mob.pixel_shift(direction)
+					else
+						buckled.pixel_y = pixel_y
+			if(buckling)
+				if(!buckling.anchored)
+					if(ismob(buckling))
+						var/mob/buckling_mob = buckling
+						buckling_mob.pixel_shift(direction)
+					else
+						buckled.pixel_y = pixel_y
 		if(WEST)
 			if(!canface())
 				return FALSE
 			if(pixel_x >= -MAXIMUM_PIXEL_SHIFT + base_pixel_x)
 				pixel_x--
 				is_shifted = TRUE
+			if(buckled)
+				if(!buckled.anchored)
+					if(ismob(buckled))
+						var/mob/buckled_mob = buckled
+						buckled_mob.pixel_shift(direction)
+					else
+						buckled.pixel_x = pixel_x
+			if(buckling)
+				if(!buckling.anchored)
+					if(ismob(buckling))
+						var/mob/buckling_mob = buckling
+						buckling_mob.pixel_shift(direction)
+					else
+						buckled.pixel_x = pixel_x
 
 	// Yes, I know this sets it to true for everything if more than one is matched.
 	// Movement doesn't check diagonals, and instead just checks EAST or WEST, depending on where you are for those.
