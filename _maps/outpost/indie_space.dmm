@@ -1891,12 +1891,11 @@
 /area/outpost/hallway/central)
 "hS" = (
 /obj/structure/table/wood,
-/obj/machinery/jukebox{
-	pixel_y = 8;
-	layer = 4.1
-	},
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 4
+	},
+/obj/machinery/jukebox/boombox{
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/outpost/crew/bar)
@@ -1937,10 +1936,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
 /area/outpost/crew/canteen)
-"id" = (
-/obj/structure/table/wood,
-/turf/open/floor/carpet/green,
-/area/outpost/crew/bar)
 "ie" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -3678,6 +3673,10 @@
 /obj/structure/chair/comfy/orange/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
+/area/outpost/crew/bar)
+"nR" = (
+/obj/structure/table/wood,
+/turf/open/floor/carpet/green,
 /area/outpost/crew/bar)
 "nS" = (
 /obj/item/stack/tile/carpet,
@@ -18148,7 +18147,7 @@ kl
 lW
 Cs
 tw
-id
+nR
 Fg
 KX
 mC
