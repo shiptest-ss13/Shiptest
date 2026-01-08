@@ -816,9 +816,6 @@
 			safety_overlay.icon_state = "[safety_wording]-off"
 		. += safety_overlay
 
-#define BRAINS_BLOWN_THROW_RANGE 2
-#define BRAINS_BLOWN_THROW_SPEED 1
-
 /obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params, bypass_timer)
 	if(!ishuman(user) || !ishuman(target))
 		return
@@ -853,32 +850,10 @@
 	target.visible_message(span_warning("[user] pulls the trigger!"), span_userdanger("[(user == target) ? "You pull" : "[user] pulls"] the trigger!"))
 
 	if(chambered && chambered.BB && can_trigger_gun(user))
-		chambered.BB.damage *= 3
+		chambered.BB.damage *= 8
 		//Check is here for safeties and such, brain will be removed after
 		if(!pre_fire(target, user, TRUE, FALSE, params, BODY_ZONE_HEAD)) // We're already in handle_suicide, hence the 4th parameter needs to be FALSE to avoid circular logic. Also, BODY_ZONE_HEAD because we want to damage the head as a whole.
 			return
-
-		var/obj/item/organ/brain/brain_to_blast = target.getorganslot(ORGAN_SLOT_BRAIN)
-		if(brain_to_blast)
-
-			//Check if the projectile is actually damaging and not of type STAMINA
-			if(chambered.BB.nodamage || !chambered.BB.damage || chambered.BB.damage_type == STAMINA)
-				return
-
-			//Remove brain of the mob shot
-			brain_to_blast.Remove(target)
-
-			var/turf/splat_turf = get_turf(target)
-			//Move the brain of the person shot to selected turf
-			brain_to_blast.forceMove(splat_turf)
-
-			var/turf/splat_target = get_ranged_target_turf(target, REVERSE_DIR(target.dir), BRAINS_BLOWN_THROW_RANGE)
-			var/datum/callback/gibspawner = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(spawn_atom_to_turf), /obj/effect/gibspawner/generic, brain_to_blast, 1, FALSE, target)
-			//Throw the brain that has been removed away and place a gibspawner on landing
-			brain_to_blast.throw_at(splat_target, BRAINS_BLOWN_THROW_RANGE, BRAINS_BLOWN_THROW_SPEED, callback = gibspawner)
-
-#undef BRAINS_BLOWN_THROW_RANGE
-#undef BRAINS_BLOWN_THROW_SPEED
 
 //Happens before the actual projectile creation
 /obj/item/gun/proc/before_firing(atom/target,mob/user)
