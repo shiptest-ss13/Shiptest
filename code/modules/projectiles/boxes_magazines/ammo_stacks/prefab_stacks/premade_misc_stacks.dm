@@ -5,6 +5,7 @@
 	name = "box of foam darts"
 	icon = 'icons/obj/guns/toy.dmi'
 	icon_state = "foambox"
+	max_ammo = 15
 
 /obj/item/storage/box/ammo/foam_darts/PopulateContents()
 	var/static/items_inside = list(
