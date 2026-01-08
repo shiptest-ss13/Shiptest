@@ -1,11 +1,11 @@
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/foam_darts
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart
+	max_ammo = 15
 
 /obj/item/storage/box/ammo/foam_darts
 	name = "box of foam darts"
 	icon = 'icons/obj/guns/toy.dmi'
 	icon_state = "foambox"
-	max_ammo = 15
 
 /obj/item/storage/box/ammo/foam_darts/PopulateContents()
 	var/static/items_inside = list(
