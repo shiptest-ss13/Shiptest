@@ -535,7 +535,7 @@
 	icon_state = "hair_ponytail5"
 
 /datum/sprite_accessory/hair/ponytail5long
-	name = "Ponytail 5 (long)"
+	name = "Ponytail 5 (over eye)"
 	icon_state = "hair_ptail5long"
 
 /datum/sprite_accessory/hair/ponytail6
