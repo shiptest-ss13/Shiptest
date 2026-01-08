@@ -260,8 +260,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 					C.adjustOrganLoss(ORGAN_SLOT_LUNGS, lung_harm)
 
 				var/obj/item/clothing/headwear = C.get_item_by_slot(ITEM_SLOT_HEAD)
-				if(headwear)
-					if(headwear.clothing_flags & STOPSPRESSUREDAMAGE)
+				if(headwear?.clothing_flags & STOPSPRESSUREDAMAGE)
 						enclosed = TRUE
 
 		if(!enclosed)
