@@ -18,7 +18,7 @@
 	///list containing the actual ammo within the magazine
 	var/list/stored_ammo = list()
 	///type that the magazine will be searching for, rejects if not a subtype of
-	var/ammo_type = /obj/item/ammo_casing
+	var/obj/item/ammo_casing/ammo_type = /obj/item/ammo_casing
 	///maximum amount of ammo in the magazine
 	var/max_ammo = 7
 	///Controls how sprites are updated for the ammo box; see defines in combat.dm: AMMO_BOX_ONE_SPRITE; AMMO_BOX_PER_BULLET; AMMO_BOX_FULL_EMPTY

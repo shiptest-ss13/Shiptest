@@ -1,6 +1,5 @@
 /obj/item/ammo_box/magazine/ammo_stack/prefilled
 	var/load_override //if we want the stack to spawn with a certain amount of ammo for whatever reason
-	var/obj/item/ammo_casing/set_ammo
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/Initialize(mapload, amt, to_copy)
 	if(amt)
@@ -9,6 +8,8 @@
 		ammo_type = to_copy
 	make_stack()
 	update_appearance()
+	if (!(max_ammo == ammo_type.stack_size))
+		stack_trace("Max ammo stack size on [src] ([max_ammo]) does not match declared stack size on assigned ammunition ([ammo_type.name], [ammo_type.stack_size]) type")
 	. = ..()
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/proc/make_stack()
