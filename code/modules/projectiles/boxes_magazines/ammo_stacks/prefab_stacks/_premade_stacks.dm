@@ -8,8 +8,10 @@
 		ammo_type = to_copy
 	make_stack()
 	update_appearance()
+#ifdef UNIT_TESTS
 	if (!(max_ammo == ammo_type.stack_size))
 		stack_trace("Max ammo stack size on [src] ([max_ammo]) does not match declared stack size on assigned ammunition ([ammo_type.name], [ammo_type.stack_size]) type")
+#endif
 	. = ..()
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/proc/make_stack()
