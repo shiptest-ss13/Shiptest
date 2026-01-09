@@ -4,6 +4,8 @@
 
 	base_gases = list(
 		GAS_SO2=5,
+		GAS_N2=8,
+		GAS_CO2=2,
 		GAS_CO=0.2,
 	)
 	normal_gases = list(
