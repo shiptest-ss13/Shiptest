@@ -39,16 +39,11 @@
 	return protection
 
 ///Get all the clothing on a specific body part
-/mob/living/carbon/human/proc/clothingonpart(obj/item/bodypart/def_zone)
+/mob/living/carbon/human/proc/get_clothing_on_part(obj/item/bodypart/def_zone)
 	var/list/covering_part = list()
-	var/list/body_parts = list(head, wear_mask, wear_suit, w_uniform, back, gloves, shoes, belt, s_store, glasses, ears, wear_id, wear_neck) //Everything but pockets. Pockets are l_store and r_store. (if pockets were allowed, putting something armored, gloves or hats for example, would double up on the armor)
-	for(var/bp in body_parts)
-		if(!bp)
-			continue
-		if(bp && istype(bp , /obj/item/clothing))
-			var/obj/item/clothing/C = bp
-			if(C.body_parts_covered & def_zone.body_part)
-				covering_part += C
+	for(var/obj/item/clothing/equipped in get_equipped_items())
+		if(equipped.body_parts_covered & def_zone.body_part)
+			covering_part += equipped
 	return covering_part
 
 /mob/living/carbon/human/on_hit(obj/projectile/P)
@@ -273,7 +268,7 @@
 	if(M.limb_destroyer)
 		dismembering_strike(M, affecting.body_zone)
 
-	if(can_inject(M, 1, affecting))//Thick suits can stop monkey bites.
+	if(can_inject(M, affecting))//Thick suits can stop monkey bites.
 		if(..()) //successful monkey bite, this handles disease contraction.
 			var/damage = rand(M.melee_damage_lower, M.melee_damage_upper)
 			if(!damage)
@@ -1106,5 +1101,5 @@
 	burn_clothing(delta_time, times_fired, fire_handler.stacks)
 	var/no_protection = FALSE
 	if(dna && dna.species)
-		no_protection = dna.species.handle_fire(src, delta_time, times_fired, no_protection)
+		no_protection = dna.species.handle_fire(src, no_protection)
 	fire_handler.harm_human(delta_time, times_fired, no_protection)
