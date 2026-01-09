@@ -339,7 +339,7 @@
 			if(!critical_warning_alert)
 				critical_warning_alert = TRUE
 				playsound(src, 'sound/machines/twobeep_high.ogg', 30, FALSE)
-				say("Tank pressure low -- Estimated time until depletion: 5 minutes.")
+				say("Tank pressure low -- Estimated time until depletion: [(src.volume/2) * 5] minutes.")
 		if((0 * ONE_ATMOSPHERE) to (0.75 * ONE_ATMOSPHERE))
 			if(!empty_alert)
 				empty_alert = TRUE
