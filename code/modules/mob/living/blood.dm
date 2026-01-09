@@ -116,7 +116,7 @@
 
 	//Blood loss still happens in locker, floor stays clean
 	if(isturf(loc) && prob(sqrt(amt)*BLOOD_DRIP_RATE_MOD) && !isgroundlessturf(src.loc))
-		add_splatter_floor(loc, (amt >= 10))
+		add_splatter_floor(loc, (amt <= 5))
 
 /mob/living/carbon/human/bleed(amt)
 	amt *= physiology.bleed_mod

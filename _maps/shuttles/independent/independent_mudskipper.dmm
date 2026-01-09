@@ -302,11 +302,24 @@
 	dir = 4
 	},
 /obj/item/toy/cards/deck{
-	pixel_y = 3
+	pixel_y = -1;
+	pixel_x = 9
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
 	pixel_x = 31;
 	pixel_y = 2
+	},
+/obj/item/reagent_containers/food/drinks/coffee{
+	pixel_x = -18;
+	pixel_y = 12
+	},
+/obj/item/trash/energybar{
+	pixel_x = -11;
+	pixel_y = 1
+	},
+/obj/item/plate/small{
+	pixel_x = 3;
+	pixel_y = 9
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/hallway/aft)
@@ -314,6 +327,14 @@
 /obj/machinery/atmospherics/components/unary/passive_vent,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
+"ft" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "mudskipper_window"
+	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
 "gf" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -390,7 +411,6 @@
 	color = "#543C30";
 	dir = 6
 	},
-/obj/machinery/light/directional/south,
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/wood/walnut,
 /area/ship/hallway/aft)
@@ -665,7 +685,6 @@
 	pixel_x = -28;
 	locked = 1
 	},
-/obj/item/gun/energy/laser/scatter,
 /obj/machinery/holopad/emergency/command,
 /obj/item/storage/backpack/duffelbag{
 	pixel_x = -6;
@@ -690,6 +709,7 @@
 	pixel_x = -8;
 	pixel_y = 2
 	},
+/obj/item/gun/energy/sharplite/l305,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "ot" = (
@@ -789,6 +809,7 @@
 	},
 /obj/structure/guncloset,
 /obj/item/gun/energy/sharplite/l201/l204,
+/obj/item/gun/energy/laser/e10,
 /obj/item/gun/energy/laser/e10,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance)
@@ -925,17 +946,12 @@
 /area/ship/engineering/engine)
 "sT" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/structure/table/reinforced,
-/obj/machinery/microwave{
-	pixel_x = 0;
-	pixel_y = 12
-	},
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
-/obj/machinery/light/directional/north,
+/obj/machinery/griddle,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "th" = (
@@ -1043,10 +1059,8 @@
 	pixel_x = 4;
 	pixel_y = 0
 	},
-/obj/effect/spawner/random/food_or_drink/donkpockets,
 /obj/item/reagent_containers/food/drinks/waterbottle,
 /obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/effect/spawner/random/food_or_drink/donkpockets,
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/item/storage/cans/sixbeer,
@@ -1061,6 +1075,8 @@
 /obj/item/food/canned/beans,
 /obj/item/food/canned/beans,
 /obj/item/food/canned/beans,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "vI" = (
@@ -1245,11 +1261,44 @@
 	pixel_x = -1;
 	pixel_y = -2
 	},
-/obj/machinery/reagentgrinder{
-	pixel_x = 5;
-	pixel_y = 18;
-	layer = 3.22
+/obj/structure/closet/wall/white/directional/north{
+	name = "kitchen cabinet"
 	},
+/obj/item/cutting_board,
+/obj/item/melee/knife/kitchen,
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = -8;
+	pixel_y = 11
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = -3;
+	pixel_y = 11
+	},
+/obj/item/plate{
+	pixel_x = 8;
+	pixel_y = 6
+	},
+/obj/item/plate{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/obj/item/plate{
+	pixel_x = 8;
+	pixel_y = 10
+	},
+/obj/item/plate{
+	pixel_x = 8;
+	pixel_y = 12
+	},
+/obj/item/plate/small{
+	pixel_x = 11;
+	pixel_y = -2
+	},
+/obj/item/plate/small{
+	pixel_x = 11;
+	pixel_y = -4
+	},
+/obj/item/kitchen/rollingpin,
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "yv" = (
@@ -1730,6 +1779,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
 "KA" = (
@@ -1775,6 +1825,10 @@
 	},
 /obj/structure/closet/secure_closet/armorycage{
 	req_access = null
+	},
+/obj/item/stock_parts/cell/gun/sharplite{
+	pixel_x = 3;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance)
@@ -2091,9 +2145,14 @@
 	color = "#543C30";
 	dir = 8
 	},
-/obj/item/storage/fancy/donut_box{
-	pixel_x = 4;
-	pixel_y = 6
+/obj/item/plate/small{
+	pixel_x = -6;
+	pixel_y = -2
+	},
+/obj/item/food/muffin{
+	pixel_x = -5;
+	pixel_y = 2;
+	layer = 3.1
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/hallway/aft)
@@ -2182,20 +2241,15 @@
 /area/ship/crew/toilet)
 "ST" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_x = -12;
-	pixel_y = 9
-	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = -7;
-	pixel_y = 9
-	},
-/obj/item/cutting_board,
-/obj/item/melee/knife/kitchen,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
 /obj/structure/table/reinforced,
+/obj/machinery/reagentgrinder{
+	pixel_x = 6;
+	pixel_y = 19;
+	layer = 3.22
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "Tn" = (
@@ -2294,7 +2348,7 @@
 	color = "#c1b6a5"
 	},
 /obj/machinery/recharger{
-	pixel_y = 4;
+	pixel_y = 7;
 	pixel_x = -8
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -2791,7 +2845,7 @@ cs
 hX
 cs
 cs
-Xm
+Qp
 yg
 XK
 Ni
@@ -2800,7 +2854,7 @@ JS
 tI
 yS
 Kt
-Xm
+Qp
 cs
 cs
 hX
@@ -2810,7 +2864,7 @@ cs
 hX
 cs
 cs
-Xm
+ft
 ST
 iy
 YK
@@ -2819,7 +2873,7 @@ zR
 nm
 Rl
 XU
-Xm
+ft
 cs
 cs
 hX
@@ -2829,7 +2883,7 @@ cs
 hX
 cs
 cs
-Qp
+ft
 sT
 vn
 Qp
@@ -2838,7 +2892,7 @@ ar
 sa
 eL
 gT
-Qp
+ft
 cs
 cs
 hX
