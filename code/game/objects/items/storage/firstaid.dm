@@ -607,6 +607,6 @@
 	name = "bottle of Reflex-Cytodron"
 	desc = "Contains Reflex-Cytodron tablets, a common over-the-counter stimulant."
 
-/obj/item/storage/pill_bottle/alvitane/PopulateContents()
+/obj/item/storage/pill_bottle/rcyte/PopulateContents()
 	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/rcyte(src)
