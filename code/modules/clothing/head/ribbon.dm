@@ -5,6 +5,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
 	icon_state = "ribbonblack"
 	item_state = "ribbonblack"
+	alternate_worn_layer = BODY_FRONT_LAYER
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 	unique_reskin = list(
 		"white ribbon" = "ribbonwhite",
@@ -17,6 +18,15 @@
 		"brown ribbon" = "ribbonbrown",
 	)
 	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/head/ribbon/AltClick(mob/user)
+	. = ..()
+	if(slot_flags == ITEM_SLOT_HEAD)
+		slot_flags = ITEM_SLOT_EARS
+		to_chat(user, span_notice("You adjust [src] to fit on your ear"))
+	else
+		slot_flags = ITEM_SLOT_HEAD
+		to_chat(user, span_notice("You adjust [src] to fit on your head"))
 
 /obj/item/clothing/head/ribbon/white
 	name = "white ribbon"

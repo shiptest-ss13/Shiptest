@@ -31,6 +31,8 @@
 	var/immortal = FALSE
 	///Do we stay in one place?
 	var/immobile = FALSE
+	//have we been scanned for a mission yet?
+	var/mission_scanned = FALSE
 
 /obj/effect/anomaly/Initialize(mapload, new_lifespan, drops_core = TRUE)
 	. = ..()

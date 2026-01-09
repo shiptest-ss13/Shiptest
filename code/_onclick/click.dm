@@ -103,6 +103,9 @@
 		CtrlClickOn(A)
 		return
 
+	if(typing_indicator)
+		set_typing_indicator(FALSE)
+
 	if(incapacitated(ignore_restraints = TRUE))
 		return
 
@@ -113,6 +116,10 @@
 
 	if(!LAZYACCESS(modifiers, "catcher") && A.IsObscured())
 		return
+
+	if(ismecha(loc))
+		var/obj/mecha/M = loc
+		return M.click_action(A, src, params)
 
 	if(HAS_TRAIT(src, TRAIT_HANDS_BLOCKED))
 		changeNext_move(CLICK_CD_HANDCUFFED)   //Doing shit in cuffs shall be vey slow
@@ -164,12 +171,16 @@
 		var/proximity = A.Adjacent(src)
 		if(W)
 			if(LAZYACCESS(modifiers, RIGHT_CLICK))
-				var/after_attack_secondary_result = W.afterattack_secondary(A, src, FALSE, params)
+				var/pre_attack_seconday_result = W.pre_attack_secondary(A, src, params)
+				if(pre_attack_seconday_result == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+					return  // this is making the base gun not fire on right click even without underbarrel
+				else
+					var/after_attack_secondary_result = W.afterattack_secondary(A, src, FALSE, params)
 
-				if(after_attack_secondary_result == SECONDARY_ATTACK_CALL_NORMAL)
-					if(!proximity || !A.attackby(W, src, params))
-						W.afterattack(A, src, proximity, params)
-						RangedAttack(A, params)
+					if(after_attack_secondary_result == SECONDARY_ATTACK_CALL_NORMAL)
+						if(!proximity || !A.attackby(W, src, params))
+							W.afterattack(A, src, proximity, params)
+							RangedAttack(A, params)
 			else
 				W.afterattack(A,src,0,params)
 				if(!proximity || !A.attackby(W, src, params))
@@ -200,10 +211,6 @@
 			return TRUE
 	return FALSE
 
-/**
- * A backwards depth-limited breadth-first-search to see if the target is
- * logically "in" anything adjacent to us.
- */
 /**
  * A backwards depth-limited breadth-first-search to see if the target is
  * logically "in" anything adjacent to us.

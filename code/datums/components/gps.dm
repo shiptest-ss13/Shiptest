@@ -33,7 +33,7 @@ GLOBAL_LIST_EMPTY(GPS_list)
 	if(!emp_proof)
 		RegisterSignal(parent, COMSIG_ATOM_EMP_ACT, PROC_REF(on_emp_act))
 	deep_interact = has_deep_interact
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
+	RegisterSignal(parent, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
 	RegisterSignal(parent, COMSIG_CLICK_ALT, PROC_REF(on_AltClick))
 
 ///Called on COMSIG_ITEM_ATTACK_SELF
@@ -43,7 +43,7 @@ GLOBAL_LIST_EMPTY(GPS_list)
 	if(user)
 		INVOKE_ASYNC(src, PROC_REF(ui_interact), user)
 
-///Called on COMSIG_PARENT_EXAMINE
+///Called on COMSIG_ATOM_EXAMINE
 /datum/component/gps/item/proc/on_examine(datum/source, mob/user, list/examine_list)
 	SIGNAL_HANDLER
 

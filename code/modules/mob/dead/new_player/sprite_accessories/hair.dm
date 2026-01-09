@@ -234,6 +234,10 @@
 	name = "Emo Fringe"
 	icon_state = "hair_emofringe"
 
+/datum/sprite_accessory/hair/emobangs
+	name = "Emo Bangs"
+	icon_state = "hair_emobangs"
+
 /datum/sprite_accessory/hair/nofade
 	name = "Fade (None)"
 	icon_state = "hair_nofade"
@@ -390,6 +394,10 @@
 	name = "Long Bangs"
 	icon_state = "hair_lbangs"
 
+/datum/sprite_accessory/hair/longbangeye
+	name = "Long Bangs Over Eye"
+	icon_state = "hair_eyebangs"
+
 /datum/sprite_accessory/hair/longemo
 	name = "Long Emo"
 	icon_state = "hair_longemo"
@@ -486,6 +494,10 @@
 	name = "Pigtails 2"
 	icon_state = "hair_pigtails"
 
+/datum/sprite_accessory/hair/pigtaillong
+	name = "Pigtails (long)"
+	icon_state = "hair_pigtaillong"
+
 /datum/sprite_accessory/hair/pigtail2
 	name = "Pigtails 3"
 	icon_state = "hair_pigtails2"
@@ -521,6 +533,10 @@
 /datum/sprite_accessory/hair/ponytail5
 	name = "Ponytail 5"
 	icon_state = "hair_ponytail5"
+
+/datum/sprite_accessory/hair/ponytail5long
+	name = "Ponytail 5 (over eye)"
+	icon_state = "hair_ptail5long"
 
 /datum/sprite_accessory/hair/ponytail6
 	name = "Ponytail 6"
@@ -722,6 +738,14 @@
 /datum/sprite_accessory/hair/twintailslong
 	name = "Twintails (Long)"
 	icon_state = "hair_twintaillong"
+
+/datum/sprite_accessory/hair/twintailsbang
+	name = "Twintail Bangs"
+	icon_state = "hair_twintailbangs"
+
+/datum/sprite_accessory/hair/twintailsblong
+	name = "Twintail Bangs (Long)"
+	icon_state = "hair_twintailblong"
 
 /datum/sprite_accessory/hair/ruby
 	name = "Ruby"
