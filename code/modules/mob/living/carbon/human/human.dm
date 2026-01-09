@@ -538,7 +538,7 @@
 	var/obj/item/bodypart/the_part = isbodypart(target_zone) ? target_zone : get_bodypart(check_zone(target_zone)) //keep these synced
 	// Loop through the clothing covering this bodypart and see if there's any thiccmaterials
 	if(!(injection_flags & INJECT_CHECK_PENETRATE_THICK))
-		for(var/obj/item/clothing/iter_clothing in clothingonpart(the_part))
+		for(var/obj/item/clothing/iter_clothing in get_clothing_on_part(the_part))
 			if(iter_clothing.clothing_flags & THICKMATERIAL)
 				. = FALSE
 				break
@@ -1254,6 +1254,8 @@
 		visible_message(span_notice("[target] starts to climb onto [src]..."))
 		if(do_after(target, 15, target = src))
 			if(can_piggyback(target))
+				if(target.buckled)
+					target.buckled.unbuckle_mob(target)
 				if(target.incapacitated(FALSE, TRUE) || incapacitated(FALSE, TRUE))
 					target.visible_message(span_warning("[target] can't hang onto [src]!"))
 					return

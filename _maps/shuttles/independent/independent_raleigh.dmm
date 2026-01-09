@@ -8,16 +8,6 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
-"az" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/cargo)
 "aB" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -1214,6 +1204,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "nn" = (
@@ -1434,7 +1425,6 @@
 	pixel_y = 22
 	},
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2{
-	piping_layer = 4;
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -1499,9 +1489,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "qC" = (
@@ -1921,6 +1909,7 @@
 /obj/item/attachment/rail_light{
 	pixel_y = -5
 	},
+/obj/item/attachment/gun/flare,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "tx" = (
@@ -2663,9 +2652,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/electrical)
 "Bn" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
 /obj/effect/turf_decal/box/corners{
 	dir = 4
 	},
@@ -3580,8 +3566,7 @@
 /area/ship/crew/ccommons)
 "Jo" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
-	dir = 4;
-	piping_layer = 4
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -4581,6 +4566,7 @@
 	pixel_x = 4;
 	pixel_y = 4
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "TO" = (
@@ -5173,6 +5159,7 @@
 	pixel_x = 5;
 	pixel_y = 2
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Zf" = (
@@ -5738,7 +5725,7 @@ XG
 xR
 Gl
 fv
-az
+Dp
 Bn
 xj
 kG

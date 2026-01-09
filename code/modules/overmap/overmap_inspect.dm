@@ -55,12 +55,12 @@
 	. = ..()
 	src.focus = focus
 	src.inspector = inspector
-	RegisterSignal(src.focus, COMSIG_PARENT_QDELETING, PROC_REF(qdel))
-	RegisterSignal(src.inspector, COMSIG_PARENT_QDELETING, PROC_REF(qdel))
+	RegisterSignal(src.focus, COMSIG_QDELETING, PROC_REF(qdel))
+	RegisterSignal(src.inspector, COMSIG_QDELETING, PROC_REF(qdel))
 
 /datum/overmap_inspect/Destroy()
-	UnregisterSignal(focus, COMSIG_PARENT_QDELETING)
-	UnregisterSignal(inspector, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(focus, COMSIG_QDELETING)
+	UnregisterSignal(inspector, COMSIG_QDELETING)
 	focus = null
 	inspector = null
 	. = ..()
@@ -90,15 +90,6 @@
 				return
 			if(istype(focus, /datum/overmap))
 				focus.admin_load()
-		if("inspect_mission")
-			var/datum/mission/ruin/mission = locate(params["ref"])
-			usr.client.debug_variables(mission)
-		if("load_mission")
-			if(!check_rights(R_DEBUG))
-				return
-			var/datum/mission/ruin/mission = locate(params["ref"])
-			if(istype(mission, /datum/mission))
-				mission.start_mission()
 
 /datum/overmap_inspect/ui_data(mob/user)
 	return focus.ui_data(user)
