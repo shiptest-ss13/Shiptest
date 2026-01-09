@@ -77,7 +77,8 @@
 			continue
 
 		serialized["ref"] = REF(mob_poi)
-		serialized["full_name"] = mob_poi.name
+		serialized["full_name"] = mob_poi.real_name
+		serialized["name"] = mob_poi.name
 		serialized["job"] = mob_poi.job
 		if(number_of_orbiters)
 			serialized["orbiters"] = number_of_orbiters
@@ -99,7 +100,6 @@
 			continue
 
 		serialized["client"] = !!mob_poi.client
-		serialized["name"] = mob_poi.real_name
 
 		if(isliving(mob_poi))
 			serialized += get_living_data(mob_poi)
