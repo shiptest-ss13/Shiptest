@@ -105,7 +105,7 @@
 		return . || mover.throwing || mover.movement_type & (FLYING | FLOATING)
 	return TRUE
 
-/obj/structure/platform/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
+/obj/structure/railing/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
 	if (!(to_dir & dir))
 		return TRUE
 	return ..()
