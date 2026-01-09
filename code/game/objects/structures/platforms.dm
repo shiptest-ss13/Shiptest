@@ -184,8 +184,8 @@
 	return TRUE
 
 /obj/structure/platform/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/caller)
-	if (to_dir & dir)
-		return caller.movement_type & (FLYING | FLOATING)
+	if (!(to_dir & dir))
+		return TRUE
 	return ..()
 
 
