@@ -3,7 +3,7 @@
  * Practically every casing type needs an associated ammo stack type, because that was the easiest
  * way for me to handle it.
  */
- //and because it was the easiest way now we have more gun jank :(
+//and because it was the easiest way now we have more gun jank :(
 /obj/item/ammo_box/magazine/ammo_stack
 	name = "ammo stack"
 	desc = "A pile of live rounds."
