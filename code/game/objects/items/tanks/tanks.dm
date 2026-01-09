@@ -339,12 +339,12 @@
 			if(!critical_warning_alert)
 				critical_warning_alert = TRUE
 				playsound(src, 'sound/machines/twobeep_high.ogg', 30, FALSE)
-				say("Tank is at [pressure] kPa! Pressure critically low!")
+				say("Tank pressure low! Estimated time until depletion: 6 minutes!")
 		if((0 * ONE_ATMOSPHERE) to (0.75 * ONE_ATMOSPHERE))
 			if(!empty_alert)
 				empty_alert = TRUE
 				playsound(src, 'sound/machines/twobeep_high.ogg', 30, FALSE)
 				playsound(src, 'sound/machines/beep.ogg', 30, FALSE)
-				say("Tank is empty! Replacement recommended!")
+				say("Tank is nearly empty! Replacement recommended!")
 
 	update_overlays()
