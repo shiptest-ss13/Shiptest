@@ -90,6 +90,7 @@
 	icon_state = "charcoal_suit"
 	item_state = "charcoal_suit"
 	roll_sleeves = TRUE
+	roll_down = TRUE
 
 /obj/item/clothing/under/suit/charcoal/skirt
 	name = "charcoal skirt"
@@ -103,6 +104,7 @@
 	icon_state = "navy_suit"
 	item_state = "navy_suit"
 	roll_sleeves = TRUE
+	roll_down = TRUE
 
 /obj/item/clothing/under/suit/navy/skirt
 	name = "navy skirt"
@@ -116,6 +118,7 @@
 	icon_state = "burgundy_suit"
 	item_state = "burgundy_suit"
 	roll_sleeves = TRUE
+	roll_down = TRUE
 
 /obj/item/clothing/under/suit/burgundy/skirt
 	name = "burgundy skirt"

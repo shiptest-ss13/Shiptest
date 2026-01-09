@@ -554,7 +554,7 @@
 /obj/item/clothing/mask/shemagh
 	icon = 'icons/obj/clothing/neck.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/neck.dmi'
-	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR
+	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	clothing_flags = ALLOWINTERNALS
 	flags_cover = MASKCOVERSMOUTH
 	alternate_worn_layer = FACEWRAP_LAYER
