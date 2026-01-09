@@ -261,7 +261,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 				var/obj/item/clothing/headwear = C.get_item_by_slot(ITEM_SLOT_HEAD)
 				if(headwear?.clothing_flags & STOPSPRESSUREDAMAGE)
-						enclosed = TRUE
+					enclosed = TRUE
 
 		if(!enclosed)
 			secondhand_smoke.set_up(3, src)
