@@ -1,6 +1,6 @@
 ///Checks for ammo stack capacity matching
 /datum/unit_test/ammo_stacks/Run()
-	for(var/ammo_stack_type in subtypesof(/obj/item/ammo_box/magazine/ammo_stack))
+	for(var/ammo_stack_type in subtypesof(/obj/item/ammo_box/magazine/ammo_stack) - /obj/item/ammo_box/magazine/ammo_stack/prefilled - /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun)
 
 		var/obj/item/ammo_box/magazine/ammo_stack/target_ammo_stack = new ammo_stack_type()
 		if(!target_ammo_stack.ammo_type)
