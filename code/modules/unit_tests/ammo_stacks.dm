@@ -6,5 +6,5 @@
 		if(!target_ammo_stack.ammo_type)
 			TEST_FAIL("Ammo stack created without ammo type.")
 		if (!(target_ammo_stack.max_ammo == target_ammo_stack.ammo_type.stack_size))
-			TEST_FAIL("Max ammo stack size on [src] ([target_ammo_stack.max_ammo]) does not match declared stack size on assigned ammunition ([target_ammo_stack.ammo_type.name], [target_ammo_stack.ammo_type.stack_size]) type")
+			TEST_FAIL("Max ammo stack size on [target_ammo_stack] ([target_ammo_stack.max_ammo]) does not match declared stack size on assigned ammunition ([target_ammo_stack.ammo_type.name], [target_ammo_stack.ammo_type.stack_size]) type")
 		qdel(target_ammo_stack)
