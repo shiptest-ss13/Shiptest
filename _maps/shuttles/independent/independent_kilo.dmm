@@ -999,11 +999,6 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/machinery/door/airlock/command{
-	dir = 4;
-	name = "Bridge";
-	id_tag = "kilodoor"
-	},
 /obj/structure/cable/pink{
 	icon_state = "4-8"
 	},
@@ -1012,6 +1007,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/machinery/door/airlock/command/glass{
+	dir = 4;
+	id_tag = "kilodoor";
+	name = "Bridge"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -2044,6 +2044,11 @@
 /obj/machinery/light/dim/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
+	},
+/obj/structure/sink/kitchen{
+	dir = 4;
+	pixel_x = 0;
+	pixel_y = -8
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
