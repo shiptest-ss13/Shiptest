@@ -269,6 +269,12 @@
 								available_channels.Add(RADIO_TOKEN_SOLGOV)
 							if(RADIO_CHANNEL_SYNDICATE)
 								available_channels.Add(RADIO_TOKEN_SYNDICATE)
+							if(RADIO_CHANNEL_CYBERSUN)
+								available_channels.Add(RADIO_TOKEN_CYBERSUN)
+							if(RADIO_CHANNEL_NGR)
+								available_channels.Add(RADIO_TOKEN_NGR)
+							if(RADIO_CHANNEL_SUNS)
+								available_channels.Add(RADIO_TOKEN_SUNS)
 							if(RADIO_CHANNEL_PIRATE)
 								available_channels.Add(RADIO_TOKEN_PIRATE)
 

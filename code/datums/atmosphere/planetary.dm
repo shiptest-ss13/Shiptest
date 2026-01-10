@@ -4,11 +4,13 @@
 
 	base_gases = list(
 		GAS_SO2=5,
-		GAS_CO=10,
+		GAS_N2=8,
+		GAS_CO2=2,
+		GAS_CO=0.2,
 	)
 	normal_gases = list(
 		GAS_O2=10,
-		GAS_CO=2,
+		GAS_CO=0.5,
 		GAS_CO2=10,
 	)
 	restricted_gases = list(
@@ -62,7 +64,7 @@
 	normal_gases = list(
 		GAS_O3=2,
 		GAS_CO2=2,
-		GAS_CO=2,
+		GAS_CO=0.5,
 	)
 	restricted_gases = list(
 		GAS_ARGON=1,
@@ -87,7 +89,7 @@
 	)
 	normal_gases = list(
 		GAS_O2=7,
-		GAS_CO=2,
+		GAS_CO=0.5,
 	)
 	restricted_gases = list(
 		GAS_SO2=0.1,
@@ -187,10 +189,10 @@
 	normal_gases = list(
 		GAS_CO2=3,
 		GAS_N2=1,
-		GAS_CO=1,
+		GAS_CO=0.2,
 	)
 	restricted_gases = list(
-		GAS_CO=1,
+		GAS_CO=0.5,
 	)
 	restricted_chance = 5
 
