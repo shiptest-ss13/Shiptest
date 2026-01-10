@@ -19,6 +19,7 @@ type CloakingData = {
   power_consumption: number;
   max_recharge_rate: number;
   max_charge: number;
+  observer: boolean;
 };
 
 export const CloakingDevice = (props, context) => {
@@ -32,6 +33,7 @@ export const CloakingDevice = (props, context) => {
     power_consumption,
     max_recharge_rate,
     max_charge,
+    observer,
   } = data;
   const POWER_MUL = 1000;
 
@@ -43,7 +45,7 @@ export const CloakingDevice = (props, context) => {
             <Button
               icon={cloak_active ? 'power-off' : 'times'}
               selected={cloak_active}
-              disabled={!linked_ship}
+              disabled={!linked_ship || observer}
               onClick={() => act('toggle_cloak')}
             >
               {cloak_active ? 'Deactivate Cloaking' : 'Activate Cloaking'}

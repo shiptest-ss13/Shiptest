@@ -74,10 +74,14 @@
 		"power_consumption" = active_power_usage,
 		"max_recharge_rate" = max_recharge_rate,
 		"max_charge" = max_charge,
+		"observer" = isobserver(user) && !isAdminGhostAI(user)
 	)
 
 /obj/machinery/power/cloak/ui_act(action, list/params)
 	. = ..()
+
+	if(!isliving(usr))
+		return
 
 	switch(action)
 		if("toggle_cloak")
