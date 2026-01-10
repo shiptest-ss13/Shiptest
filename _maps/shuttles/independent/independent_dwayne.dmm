@@ -354,12 +354,6 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/port)
-"ec" = (
-/obj/structure/sign/poster/contraband/cardinal_port_starboard{
-	pixel_y = 0
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/bridge)
 "eg" = (
 /obj/structure/closet/crate/trashcart,
 /obj/item/trash/can/food/beans,
@@ -1185,6 +1179,19 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/crew/canteen)
+"lT" = (
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/industrial/caution/red,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/yellow,
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/cargo/port)
 "lU" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
 	dir = 9
@@ -2701,6 +2708,12 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
+"yC" = (
+/obj/structure/sign/poster/contraband/cardinal_port_starboard{
+	pixel_y = 0
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/bridge)
 "yD" = (
 /obj/machinery/power/solar,
 /obj/effect/turf_decal/solarpanel,
@@ -2747,19 +2760,6 @@
 	pixel_x = -11;
 	pixel_y = 29
 	},
-/obj/structure/rack,
-/obj/item/towel{
-	pixel_y = -5;
-	pixel_x = -5
-	},
-/obj/item/towel{
-	pixel_x = 8;
-	pixel_y = -3
-	},
-/obj/item/soap/nanotrasen{
-	pixel_y = -1;
-	pixel_x = -3
-	},
 /obj/effect/turf_decal/siding/white,
 /obj/machinery/button/door{
 	pixel_y = -10;
@@ -2769,6 +2769,19 @@
 	name = "Bathroom Bolt Control";
 	normaldoorcontrol = 1;
 	specialfunctions = 4
+	},
+/obj/structure/table,
+/obj/item/towel{
+	pixel_x = 8;
+	pixel_y = -3
+	},
+/obj/item/towel{
+	pixel_y = -4;
+	pixel_x = -5
+	},
+/obj/item/soap/nanotrasen{
+	pixel_y = -1;
+	pixel_x = -3
 	},
 /turf/open/floor/plastic,
 /area/ship/crew/toilet)
@@ -4780,19 +4793,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
-"Qu" = (
-/obj/structure/cable/cyan{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/industrial/caution/red,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/yellow,
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/grid,
-/area/ship/cargo/port)
 "QG" = (
 /obj/machinery/atmospherics/components/binary/pump/layer2{
 	dir = 2;
@@ -6162,7 +6162,7 @@ Dv
 (18,1,1) = {"
 Dv
 AB
-Qu
+lT
 kV
 kV
 TR
@@ -6464,7 +6464,7 @@ eq
 Pl
 aX
 RV
-ec
+yC
 vi
 HB
 Op
