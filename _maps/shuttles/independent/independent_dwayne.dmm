@@ -354,6 +354,12 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/port)
+"ec" = (
+/obj/structure/sign/poster/contraband/cardinal_port_starboard{
+	pixel_y = 0
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/bridge)
 "eg" = (
 /obj/structure/closet/crate/trashcart,
 /obj/item/trash/can/food/beans,
@@ -680,7 +686,7 @@
 "hQ" = (
 /obj/machinery/button/door{
 	id = "dwayne_port";
-	name = "Port Blast Doors";
+	name = "Port Blast Door Control";
 	pixel_x = -8;
 	pixel_y = 20
 	},
@@ -1934,19 +1940,6 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
-"rX" = (
-/obj/structure/cable/cyan{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/industrial/caution/red,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/yellow,
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/grid,
-/area/ship/cargo/port)
 "sb" = (
 /obj/structure/grille,
 /obj/machinery/door/firedoor/window,
@@ -2968,7 +2961,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/freezer{
-	name = "Bathroom";
+	name = "Captain's-Bathroom";
 	dir = 4;
 	req_access_txt = "20";
 	id_tag = "dwayne_bathroom"
@@ -3158,7 +3151,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/freezer{
-	name = "Bathroom";
+	name = "Dorms-Bathroom";
 	dir = 4;
 	id_tag = "dwayne_bathroom"
 	},
@@ -3204,22 +3197,26 @@
 /obj/effect/turf_decal/corner/opaque/ntblue/border{
 	dir = 8
 	},
-/obj/item/reagent_containers/food/drinks/bottle/whiskey,
-/obj/item/megaphone/cargo,
 /obj/structure/railing{
 	dir = 2
 	},
 /obj/structure/cable/cyan{
 	icon_state = "0-2"
 	},
-/obj/item/bodycamera,
-/obj/item/bodycamera,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/light_switch{
 	pixel_x = -12;
 	pixel_y = 22
 	},
+/obj/item/reagent_containers/food/drinks/bottle/whiskey,
+/obj/item/folder/yellow,
+/obj/item/folder/red,
+/obj/item/folder/blue,
+/obj/item/megaphone/cargo,
 /obj/item/gps,
+/obj/item/bodycamera,
+/obj/item/bodycamera,
+/obj/item/pen,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "DP" = (
@@ -3695,7 +3692,7 @@
 	dir = 2;
 	pixel_y = 20;
 	id = "dwayne_engines_starboard";
-	name = "Starboard Engine Blast Doors"
+	name = "Starboard Engine Window Control"
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering)
@@ -4119,7 +4116,7 @@
 	dir = 1;
 	pixel_y = -21;
 	id = "dwayne_engines_port";
-	name = "Port Engine Blast Doors"
+	name = "Port Engine Window Control"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/grid/dark,
@@ -4783,6 +4780,19 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
+"Qu" = (
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/industrial/caution/red,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/yellow,
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/cargo/port)
 "QG" = (
 /obj/machinery/atmospherics/components/binary/pump/layer2{
 	dir = 2;
@@ -4963,12 +4973,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"Sd" = (
-/obj/structure/sign/poster/contraband/cardinal_port_starboard{
-	pixel_y = 0
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/bridge)
 "Se" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -5772,7 +5776,7 @@
 "ZX" = (
 /obj/machinery/button/door{
 	id = "dwayne_starboard";
-	name = "Starboard Blast Doors";
+	name = "Starboard Blast Door Control";
 	pixel_x = -8;
 	pixel_y = -20;
 	dir = 1
@@ -6158,7 +6162,7 @@ Dv
 (18,1,1) = {"
 Dv
 AB
-rX
+Qu
 kV
 kV
 TR
@@ -6460,7 +6464,7 @@ eq
 Pl
 aX
 RV
-Sd
+ec
 vi
 HB
 Op
