@@ -78,7 +78,7 @@
 
 	START_PROCESSING(SSobj, src)
 
-	addtimer(CALLBACK(src, PROC_REF(pressure_alerts)), 5 SECONDS, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+	addtimer(CALLBACK(src, PROC_REF(pressure_alerts)), 1 SECONDS, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
 /obj/item/tank/proc/populate_gas()
 	return
@@ -235,15 +235,20 @@
 	var/pressure = air_contents.return_pressure()
 
 	// Switches the pressure status overlay depending on which range the tank pressure lies in
+	// The extra icon state check prevents the icon state from being changed if it's already set to it
 	switch(pressure)
 		if((5 * ONE_ATMOSPHERE) to (20 * ONE_ATMOSPHERE))
-			status_overlay_icon_state = "status_nominal"
+			if(status_overlay_icon_state != "status_nominal")
+				status_overlay_icon_state = "status_nominal"
 		if((2 * ONE_ATMOSPHERE) to (5 * ONE_ATMOSPHERE))
-			status_overlay_icon_state = "status_warning"
+			if(status_overlay_icon_state != "status_warning")
+				status_overlay_icon_state = "status_warning"
 		if((0.75 * ONE_ATMOSPHERE) to (2 * ONE_ATMOSPHERE))
-			status_overlay_icon_state = "status_alert"
+			if(status_overlay_icon_state != "status_alert")
+				status_overlay_icon_state = "status_alert"
 		if((0 * ONE_ATMOSPHERE) to (0.75 * ONE_ATMOSPHERE))
-			status_overlay_icon_state = "status_critical"
+			if(status_overlay_icon_state != "status_critical")
+				status_overlay_icon_state = "status_critical"
 
 	// Actually sets the overlay. As of now, this has only been done for smaller emergency tanks
 	// The if statement is set as follows due to the coarse search type that the istype proc conducts, as subtypes count as valid types
