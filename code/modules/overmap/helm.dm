@@ -481,6 +481,7 @@
 			if(current_cloak)
 				current_cloak.unlink_from_ship()
 			linked_cloak.link_to_ship(current_ship)
+			balloon_alert(user, "[linked_cloak.name] linked!")
 			return COMPONENT_BLOCK_TOOL_ATTACK
 
 	to_chat(user, span_warning("You begin to manually override the local database..."))

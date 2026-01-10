@@ -141,12 +141,13 @@
 	. = ..()
 	if(port.current_ship.ship_modules[SHIPMODULE_CLOAKING])
 		return
-	active_power_usage = port.turf_count * power_multiplier * WATTS_PER_TURF
-	link_to_ship(port.current_ship)
+	link_to_ship(port.current_ship, port)
 
-/obj/machinery/power/cloak/proc/link_to_ship(datum/overmap/ship/controlled/new_ship)
+/obj/machinery/power/cloak/proc/link_to_ship(datum/overmap/ship/controlled/new_ship, obj/docking_port/mobile/new_port)
+	new_port ||= new_ship.shuttle_port
 	linked_ship = new_ship
 	linked_ship.ship_modules[SHIPMODULE_CLOAKING] = src
+	active_power_usage = new_port.turf_count * power_multiplier * WATTS_PER_TURF
 	update_appearance(UPDATE_ICON_STATE)
 	update_static_data_for_all_viewers()
 	for(var/obj/console as anything in linked_ship.helms)
@@ -154,6 +155,8 @@
 
 /obj/machinery/power/cloak/proc/unlink_from_ship()
 	set_cloak(FALSE)
+	active_power_usage = 0
+	linked_ship.ship_modules[SHIPMODULE_CLOAKING] = null
 	linked_ship = null
 	update_appearance(UPDATE_ICON_STATE)
 
