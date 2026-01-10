@@ -328,7 +328,7 @@
 	// Checks the pressure of the tank while it's in use and sends an alert out when the pressure reaches a specific range.
 	// Binary variables are used here to prevent an alert from repeating more than once
 	switch(pressure)
-		if((5 * ONE_ATMOSPHERE) to (20 * ONE_ATMOSPHERE))
+		if((5 * ONE_ATMOSPHERE) to (29 * ONE_ATMOSPHERE))
 			warning_alert = FALSE
 			critical_warning_alert = FALSE
 			empty_alert = FALSE
