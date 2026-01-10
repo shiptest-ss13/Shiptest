@@ -78,7 +78,7 @@
 
 	START_PROCESSING(SSobj, src)
 
-	addtimer(CALLBACK(src, PROC_REF(pressure_alerts)), 1 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+	addtimer(CALLBACK(src, PROC_REF(pressure_alerts)), 5 SECONDS, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
 /obj/item/tank/proc/populate_gas()
 	return
