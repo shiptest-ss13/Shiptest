@@ -78,6 +78,8 @@
 
 	START_PROCESSING(SSobj, src)
 
+	addtimer(CALLBACK(src, PROC_REF(pressure_alerts)), 1 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+
 /obj/item/tank/proc/populate_gas()
 	return
 
@@ -226,7 +228,6 @@
 	//Allow for reactions
 	air_contents.react()
 	check_status()
-	pressure_alerts()
 
 /obj/item/tank/update_overlays()
 	. = ..()
