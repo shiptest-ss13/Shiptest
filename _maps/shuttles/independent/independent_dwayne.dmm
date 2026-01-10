@@ -178,8 +178,8 @@
 /area/ship/cargo/port)
 "bR" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/thinplating,
-/obj/effect/turf_decal/borderfloor{
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/turf_decal/siding/thinplating{
 	dir = 1
 	},
 /turf/open/floor/plasteel/patterned,
@@ -847,12 +847,17 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
 "iY" = (
-/obj/machinery/door/airlock/command{
-	name = "Captain's Quarters";
-	req_access_txt = "20"
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/corner/opaque/white/diagonal{
+	dir = 4
 	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew/dorm/captain)
+/obj/structure/sink/kitchen{
+	dir = 1;
+	pixel_x = 16;
+	pixel_y = 11
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
 "iZ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -2501,8 +2506,8 @@
 /area/ship/crew/toilet)
 "xo" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/borderfloor,
-/obj/effect/turf_decal/siding/thinplating{
+/obj/effect/turf_decal/siding/thinplating,
+/obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
 /turf/open/floor/plasteel/patterned,
@@ -4173,6 +4178,10 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/command{
+	name = "Captain's Quarters";
+	req_access_txt = "20"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm/captain)
 "LM" = (
@@ -4496,18 +4505,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/atmospherics)
-"Oc" = (
-/obj/structure/table/reinforced,
-/obj/effect/turf_decal/corner/opaque/white/diagonal{
-	dir = 4
-	},
-/obj/structure/sink/kitchen{
-	dir = 1;
-	pixel_x = 16;
-	pixel_y = 11
-	},
-/turf/open/floor/plasteel,
-/area/ship/crew/canteen)
 "On" = (
 /obj/effect/turf_decal/corner/opaque/ntblue/half{
 	dir = 4
@@ -5981,7 +5978,7 @@ iu
 Fi
 MG
 JB
-xo
+bR
 fN
 QG
 Ny
@@ -6271,7 +6268,7 @@ Dv
 Pl
 Ex
 tQ
-Oc
+iY
 ck
 OX
 Wa
@@ -6361,7 +6358,7 @@ vw
 Pl
 FN
 Mz
-bR
+xo
 gx
 zb
 Xw
@@ -6383,7 +6380,7 @@ XC
 hB
 Jx
 BX
-iY
+vi
 vi
 AC
 vi
