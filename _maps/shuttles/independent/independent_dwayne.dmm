@@ -3,6 +3,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
+/obj/machinery/computer/cryopod/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
 "ak" = (
@@ -529,6 +530,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/port)
+"ga" = (
+/obj/structure/sign/poster/contraband/cardinal_port_starboard{
+	pixel_y = 0
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/bridge)
 "ge" = (
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/machinery/atmospherics/components/unary/tank/nitrogen{
@@ -628,12 +635,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo/port)
-"hu" = (
-/obj/structure/sign/poster/contraband/cardinal_port_starboard{
-	pixel_y = 0
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/bridge)
 "hB" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
@@ -1042,6 +1043,19 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
+/area/ship/cargo/port)
+"kv" = (
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/industrial/caution/red,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/yellow,
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/port)
 "kJ" = (
 /obj/machinery/power/terminal{
@@ -1560,19 +1574,6 @@
 "oF" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/toilet)
-"oH" = (
-/obj/structure/cable/cyan{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/industrial/caution/red,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/yellow,
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned/grid,
-/area/ship/cargo/port)
 "oK" = (
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5,
 /obj/machinery/atmospherics/pipe/simple/purple/hidden,
@@ -6163,7 +6164,7 @@ Dv
 (18,1,1) = {"
 Dv
 AB
-oH
+kv
 kV
 kV
 TR
@@ -6465,7 +6466,7 @@ eq
 Pl
 aX
 RV
-hu
+ga
 vi
 HB
 Op
