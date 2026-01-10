@@ -9,13 +9,13 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/atmospherics)
 "am" = (
-/obj/machinery/griddle,
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
+/obj/machinery/griddle,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "aq" = (
@@ -177,12 +177,13 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
 "bR" = (
-/obj/machinery/door/airlock/command{
-	name = "Captain's Quarters";
-	req_access_txt = "20"
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/thinplating,
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
 	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew/dorm/captain)
+/turf/open/floor/plasteel/patterned,
+/area/ship/hallway/central)
 "bW" = (
 /obj/machinery/power/solar,
 /obj/effect/turf_decal/solarpanel,
@@ -846,15 +847,12 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
 "iY" = (
-/obj/structure/table/reinforced,
-/obj/effect/turf_decal/corner/opaque/white/diagonal{
-	dir = 4
+/obj/machinery/door/airlock/command{
+	name = "Captain's Quarters";
+	req_access_txt = "20"
 	},
-/obj/effect/turf_decal/siding/white{
-	dir = 6
-	},
-/turf/open/floor/plasteel,
-/area/ship/crew/canteen)
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/dorm/captain)
 "iZ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -1487,7 +1485,7 @@
 	pixel_x = -5
 	},
 /obj/machinery/light/directional/north,
-/turf/open/floor/plasteel/grimy,
+/turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
 "oa" = (
 /obj/effect/turf_decal/solarpanel,
@@ -2091,11 +2089,21 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "tD" = (
-/obj/structure/chair{
-	dir = 8
-	},
 /obj/machinery/airalarm/directional/south,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
+/obj/machinery/coffeemaker{
+	pixel_y = 12;
+	pixel_x = 0
+	},
+/obj/item/coffee_cartridge/bootleg{
+	pixel_x = 6;
+	pixel_y = 2
+	},
+/obj/item/coffee_cartridge/bootleg{
+	pixel_x = -5;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
 "tG" = (
@@ -2117,24 +2125,32 @@
 /area/ship/storage/equip)
 "tI" = (
 /obj/structure/table/reinforced,
-/obj/machinery/coffeemaker{
-	pixel_y = 14;
-	pixel_x = -4
-	},
-/obj/item/coffee_cartridge/bootleg{
-	pixel_x = -9;
-	pixel_y = 4
-	},
-/obj/item/coffee_cartridge/bootleg{
-	pixel_x = 2;
-	pixel_y = 4
-	},
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 4
 	},
 /obj/structure/sign/poster/retro/radio{
 	desc = "A poster advertising one of Nanotrasen's earliest products, a radio. One of its main selling points was a integrated OS and two way automatic translation for Solarian Common and Gezenan, which made it a smash hit. This thing is ancient.";
 	pixel_x = -28
+	},
+/obj/item/cutting_board{
+	pixel_y = 5;
+	pixel_x = 5
+	},
+/obj/item/melee/knife/kitchen{
+	pixel_y = 7;
+	pixel_x = 4
+	},
+/obj/item/kitchen/rollingpin{
+	pixel_x = 9;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_y = 10;
+	pixel_x = -10
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = -10;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -2485,8 +2501,8 @@
 /area/ship/crew/toilet)
 "xo" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/thinplating,
-/obj/effect/turf_decal/borderfloor{
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/turf_decal/siding/thinplating{
 	dir = 1
 	},
 /turf/open/floor/plasteel/patterned,
@@ -3275,33 +3291,10 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering)
 "Ex" = (
-/obj/structure/table/reinforced,
-/obj/structure/sink/kitchen{
-	pixel_y = 21;
-	layer = 2.79;
-	dir = 2
-	},
-/obj/item/cutting_board{
-	pixel_y = 2;
-	pixel_x = 1
-	},
-/obj/item/melee/knife/kitchen{
-	pixel_y = 4
-	},
-/obj/item/kitchen/rollingpin{
-	pixel_x = 8
-	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_y = 7;
-	pixel_x = -15
-	},
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_x = -15;
-	pixel_y = 0
-	},
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 4
 	},
+/obj/machinery/oven,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "EE" = (
@@ -4503,6 +4496,18 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/atmospherics)
+"Oc" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/corner/opaque/white/diagonal{
+	dir = 4
+	},
+/obj/structure/sink/kitchen{
+	dir = 1;
+	pixel_x = 16;
+	pixel_y = 11
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
 "On" = (
 /obj/effect/turf_decal/corner/opaque/ntblue/half{
 	dir = 4
@@ -4810,7 +4815,7 @@
 /obj/structure/table/wood/poker{
 	name = "billiards table"
 	},
-/turf/open/floor/plasteel/grimy,
+/turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
 "Rm" = (
 /obj/machinery/shower{
@@ -4847,7 +4852,7 @@
 	pixel_y = 4;
 	pixel_x = 4
 	},
-/turf/open/floor/plasteel/grimy,
+/turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
 "RS" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2{
@@ -5049,14 +5054,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
-"Ti" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/borderfloor,
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 1
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ship/hallway/central)
 "Tl" = (
 /obj/machinery/atmospherics/components/binary/valve{
 	dir = 4;
@@ -5292,7 +5289,7 @@
 	pixel_x = 5;
 	pixel_y = 3
 	},
-/turf/open/floor/plasteel/grimy,
+/turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
 "Wa" = (
 /obj/machinery/door/firedoor/border_only,
@@ -5984,7 +5981,7 @@ iu
 Fi
 MG
 JB
-Ti
+xo
 fN
 QG
 Ny
@@ -6274,7 +6271,7 @@ Dv
 Pl
 Ex
 tQ
-xh
+Oc
 ck
 OX
 Wa
@@ -6295,7 +6292,7 @@ Dv
 ir
 am
 tQ
-iY
+xh
 ck
 qg
 Pl
@@ -6364,7 +6361,7 @@ vw
 Pl
 FN
 Mz
-xo
+bR
 gx
 zb
 Xw
@@ -6386,7 +6383,7 @@ XC
 hB
 Jx
 BX
-bR
+iY
 vi
 AC
 vi
