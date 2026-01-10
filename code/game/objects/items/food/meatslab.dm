@@ -185,7 +185,7 @@
 	foodtypes = MEAT | SUGAR | RAW
 
 /obj/item/food/meat/slab/miras/make_processable()
-	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/meat/rawcutlet/miras, 4, 30)
+	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/meat/rawcutlet/miras, 2, 30)
 
 /obj/item/food/meat/slab/miras/make_grillable()
 	AddComponent(/datum/component/grillable, /obj/item/food/meat/steak/miras, rand(30 SECONDS, 90 SECONDS), TRUE, TRUE)
