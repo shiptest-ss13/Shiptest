@@ -65,7 +65,7 @@
 		return COMPONENT_ATOM_BLOCK_EXIT
 	return
 
-/obj/structure/flippedtable/CtrlShiftClick(mob/user)
+/obj/structure/flippedtable/CtrlShiftClick(mob/living/user)
 	. = ..()
 	if(!istype(user) || !user.can_interact_with(src))
 		return FALSE
