@@ -250,7 +250,7 @@
 	name = ".45-70 Hollow Point Ammo Box Crate"
 	desc = "Contains a 24-round box containing devastatingly powerful .45-70 hollow point caliber ammunition."
 	contains = list(/obj/item/storage/box/ammo/a4570_hp)
-	cost = 400
+	cost = 300
 
 /* 7.62 */
 
