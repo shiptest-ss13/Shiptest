@@ -49,7 +49,7 @@
 
 	var/fraction = min(gulp_size/reagents.total_volume, 1)
 	checkLiked(fraction, M)
-	reagents.trans_to(M, gulp_size, transfered_by = user, method = INGEST)
+	reagents.trans_to(M, gulp_size, transfered_by = user, methods = INGEST)
 	playsound(M.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
 	return TRUE
 

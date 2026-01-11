@@ -433,7 +433,7 @@
 	mag_type = /obj/item/ammo_box/magazine/c22lr_pounder_pan
 
 /* underbarrel guns */
-/*
+
 /obj/item/storage/guncase/underbarrel_shotgun
 	gun_type = /obj/item/attachment/gun/ballistic/shotgun
 
@@ -452,4 +452,4 @@
 
 /obj/item/storage/guncase/energy/underbarrel_e_gun
 	gun_type = /obj/item/attachment/gun/energy/e_gun
-*/
+

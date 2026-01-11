@@ -105,10 +105,10 @@
 	data["outpostMissions"] = list()
 
 	if(current_ship)
-		for(var/datum/mission/outpost/M as anything in current_ship.missions)
+		for(var/datum/mission/M as anything in current_ship.missions)
 			data["shipMissions"] += list(M.get_tgui_info())
 		if(istype(outpost_docked))
-			for(var/datum/mission/outpost/M as anything in outpost_docked.missions)
+			for(var/datum/mission/M as anything in outpost_docked.missions)
 				data["outpostMissions"] += list(M.get_tgui_info())
 
 	return data
@@ -157,7 +157,7 @@
 			current_outpost.market.make_order(usr, unprocessed_packs, return_crate_spawner())
 
 		if("mission-act")
-			var/datum/mission/outpost/mission = locate(params["ref"])
+			var/datum/mission/mission = locate(params["ref"])
 			var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
 			var/datum/overmap/ship/controlled/ship = D.current_ship
 			var/datum/overmap/outpost/outpost = ship.docked_to
@@ -166,7 +166,7 @@
 			if(!mission.accepted)
 				if(LAZYLEN(ship.missions) >= ship.max_missions)
 					return
-				mission.accept(ship, loc)
+				mission.accept(ship, loc, return_crate_spawner())
 				return TRUE
 			else if(mission.servant == ship)
 				if(mission.can_complete())

@@ -3384,11 +3384,6 @@
 	retreat_distance = null;
 	name = "Foreman Bonsha"
 	},
-/obj/effect/landmark/mission_poi/main/kill{
-	already_spawned = 1;
-	type_to_spawn = /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun;
-	mission_index = 2
-	},
 /turf/open/floor/carpet/red_gold,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
 "tl" = (
@@ -6637,10 +6632,6 @@
 /obj/structure/closet/body_bag,
 /obj/effect/mob_spawn/human/corpse/pgf/captain,
 /obj/item/storage/belt/sabre/pgf,
-/obj/effect/landmark/mission_poi/main{
-	already_spawned = 1;
-	spawn_in_containter = 1
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/pgf_wreck/cargo)
 "Ll" = (

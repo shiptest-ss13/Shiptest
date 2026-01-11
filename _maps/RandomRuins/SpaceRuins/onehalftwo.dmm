@@ -1527,13 +1527,6 @@
 /obj/machinery/light/broken/directional/north,
 /turf/open/floor/plating/rust/airless,
 /area/ruin/space/has_grav/refuelingpost/bridge)
-"oN" = (
-/obj/machinery/porta_turret/ruin/ramzi/light/bonnie{
-	dir = 10;
-	id = "bonnieguns"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/refuelingpost/cargobay)
 "oP" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -3205,9 +3198,6 @@
 "Hd" = (
 /obj/structure/table/glass,
 /obj/item/documents/nanotrasen,
-/obj/effect/landmark/mission_poi/main{
-	already_spawned = 1
-	},
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "Hf" = (
@@ -4964,13 +4954,6 @@
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/warning,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/has_grav/refuelingpost/cargo)
-"Wz" = (
-/obj/machinery/porta_turret/ruin/ramzi/light/bonnie{
-	dir = 9;
-	id = "bonnieguns"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/refuelingpost/cargobay)
 "WC" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	welded = 1
@@ -6486,11 +6469,11 @@ YT
 CI
 IF
 Yu
-Wz
+nT
 Zr
 Zr
 Zr
-oN
+nT
 rd
 tA
 aY
