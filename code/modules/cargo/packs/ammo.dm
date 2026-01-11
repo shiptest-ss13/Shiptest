@@ -246,6 +246,12 @@
 	contains = list(/obj/item/storage/box/ammo/a4570_match)
 	cost = 235
 
+/obj/item/storage/box/ammo/a4570_hp
+	name = ".45-70 Hollow Point Ammo Box Crate"
+	desc = "Contains a 24-round box containing devastatingly powerful .45-70 hollow point caliber ammunition."
+	contains = list(/obj/item/storage/box/ammo/a4570_hp)
+	cost = 400
+
 /* 7.62 */
 
 /datum/supply_pack/ammo/a762_ammo_box
