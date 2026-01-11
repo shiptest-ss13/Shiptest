@@ -237,7 +237,7 @@
 	// Switches the pressure status overlay depending on which range the tank pressure lies in
 	// The extra icon state check prevents the icon state from being changed if it's already set to it
 	switch(pressure)
-		if((5 * ONE_ATMOSPHERE) to (20 * ONE_ATMOSPHERE))
+		if((5 * ONE_ATMOSPHERE) to (29 * ONE_ATMOSPHERE))
 			if(status_overlay_icon_state != "status_nominal")
 				status_overlay_icon_state = "status_nominal"
 		if((2 * ONE_ATMOSPHERE) to (5 * ONE_ATMOSPHERE))
