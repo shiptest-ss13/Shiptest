@@ -442,7 +442,7 @@
 	casingtype = /obj/item/ammo_casing/shotgun
 	r_hand = /obj/item/gun/ballistic/automatic/hmg/shredder
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy
-	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+	armor_base = /obj/item/clothing/suit/armor/vest/marine/frontier
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/space
 	icon_state = "frontiersmanranged_mask"
