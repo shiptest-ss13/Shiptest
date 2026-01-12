@@ -4,6 +4,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/syndiered/border,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/bridge)
 "af" = (
@@ -205,7 +206,7 @@
 	color = "#912a2a";
 	dir = 4
 	},
-/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_steel,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)
 "bH" = (
@@ -337,10 +338,9 @@
 	},
 /area/ruin/rockplanet/rust_base/hallway2)
 "cL" = (
-/obj/effect/mapping_helpers/airlock/locked,
-/obj/machinery/door/airlock/hatch,
-/turf/open/floor/plating/rust,
-/area/ruin/rockplanet/rust_base)
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/rust_base/engine_two)
 "cM" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -487,6 +487,7 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/rust_base/hallway2)
 "dN" = (
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/rust_base/slop)
 "dR" = (
@@ -747,6 +748,10 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/rust_base/hallway)
+"fH" = (
+/obj/structure/frame/machine,
+/turf/open/floor/engine/hull/rockplanet,
+/area/ruin/rockplanet/rust_base/tanto2)
 "fK" = (
 /obj/structure/dresser,
 /turf/open/floor/carpet/red,
@@ -810,6 +815,7 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 4
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/hallway2)
 "gj" = (
@@ -842,6 +848,12 @@
 	pixel_y = 2;
 	pixel_x = 6
 	},
+/mob/living/simple_animal/hostile/human/ramzi/civilian{
+	name = "Kaiser 'Shy' Dan"
+	},
+/obj/effect/decal/cleanable/food/salt,
+/obj/item/reagent_containers/condiment/saltshaker,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/rust_base/slop)
 "gy" = (
@@ -1079,6 +1091,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/rust_base)
 "it" = (
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/rust_base/engine_two)
 "iv" = (
@@ -1159,6 +1172,7 @@
 /area/ruin/rockplanet/rust_base/dorms)
 "iV" = (
 /obj/structure/reagent_dispensers,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/engine/hull/reinforced/rockplanet,
 /area/ruin/rockplanet/rust_base/hallway)
 "iZ" = (
@@ -1280,6 +1294,14 @@
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/rust_base/hallway2)
+"jZ" = (
+/obj/structure/table/reinforced,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/rust_base/engine_one)
 "ka" = (
 /obj/item/ammo_casing/spent/big_brass,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
@@ -1310,6 +1332,11 @@
 	},
 /turf/open/floor/plating/rockplanet,
 /area/ruin/rockplanet/rust_base/drop4)
+"kj" = (
+/obj/structure/crate_shelf,
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/rockplanet/rust_base/hallway2)
 "kk" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
@@ -1548,6 +1575,11 @@
 /area/ruin/rockplanet/rust_base)
 "mv" = (
 /obj/structure/closet/crate/bin,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -21;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/rust_base/slop)
 "mw" = (
@@ -1666,6 +1698,7 @@
 /area/ruin/rockplanet/rust_base)
 "nK" = (
 /obj/structure/closet,
+/obj/machinery/light/directional/north,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/rust_base)
 "nM" = (
@@ -1683,6 +1716,7 @@
 	pixel_x = 7;
 	pixel_y = 11
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/rust_base/mechbay)
 "nQ" = (
@@ -1758,16 +1792,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/dorms)
 "oh" = (
-/obj/structure/rack,
-/obj/machinery/light/directional/south,
-/obj/item/mecha_ammo/scattershot{
-	pixel_y = 5
-	},
-/obj/item/mecha_ammo/scattershot{
-	pixel_y = 11
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/rockplanet/rust_base/mechbay)
+/obj/effect/turf_decal/corner/transparent/red/diagonal,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame,
+/turf/open/floor/hangar/plasteel/dark,
+/area/ruin/rockplanet/rust_base/slop)
 "oi" = (
 /obj/structure/crate_shelf,
 /obj/effect/turf_decal/spline/fancy/opaque/black,
@@ -1816,6 +1844,7 @@
 /obj/machinery/cryopod/syndicate{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/dorms)
 "on" = (
@@ -1847,18 +1876,15 @@
 /turf/open/floor/plating/asteroid/snow/lit/rockplanet,
 /area/ruin/rockplanet/rust_base)
 "oN" = (
-/obj/structure/flippedtable{
-	dir = 8
-	},
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/syndiered/warning{
+/obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 8
 	},
-/obj/item/ammo_casing/spent/pistol_brass,
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/rockplanet/rust_base/armory)
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/rockplanet/rust_base/hallway2)
 "oT" = (
 /obj/effect/decal/cleanable/blood/squirt,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
@@ -1873,6 +1899,22 @@
 /obj/structure/flora/rock/pile/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"oY" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/button/door{
+	id = "rusteastsouth";
+	pixel_x = -9;
+	pixel_y = 22
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 2;
+	pixel_y = 21;
+	id = "rusteastholo"
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/rockplanet/rust_base/mechbay)
 "pa" = (
 /obj/structure/table/wood/poker,
 /obj/item/storage/cans/sixsoda{
@@ -1899,7 +1941,7 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/warning{
 	dir = 9
 	},
-/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_steel,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/rust_base/armory)
 "ph" = (
@@ -1970,6 +2012,12 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/rust_base)
+"pG" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/rockplanet,
+/area/ruin/rockplanet/rust_base/drop3)
 "pM" = (
 /obj/effect/turf_decal/siding/black{
 	dir = 8
@@ -2011,6 +2059,17 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)
+"pZ" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1;
+	layer = 2.040
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/rockplanet/rust_base/hallway)
 "qa" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
@@ -2139,6 +2198,16 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/rust_base/engine_two)
+"qW" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1;
+	layer = 2.040
+	},
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/rockplanet/rust_base)
 "qX" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -2568,6 +2637,9 @@
 /area/ruin/rockplanet/rust_base/hallway)
 "ua" = (
 /obj/machinery/light/directional/south,
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/rockplanet,
 /area/ruin/rockplanet/rust_base/drop3)
 "uf" = (
@@ -2619,6 +2691,9 @@
 /area/ruin/rockplanet/rust_base/mechbay)
 "uK" = (
 /obj/machinery/light/directional/south,
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/rockplanet,
 /area/ruin/rockplanet/rust_base/drop4)
 "uV" = (
@@ -2682,6 +2757,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/engine_one)
 "vt" = (
@@ -2709,6 +2787,7 @@
 /area/ruin/rockplanet/rust_base/engine_one)
 "vA" = (
 /obj/structure/crate_shelf,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/rust_base/mechbay)
 "vB" = (
@@ -2716,6 +2795,7 @@
 	dir = 4;
 	name = "Washroom"
 	},
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/rust_base/slop)
 "vI" = (
@@ -2724,8 +2804,7 @@
 	color = "#912a2a";
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
-/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_steel,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)
 "vJ" = (
@@ -2846,7 +2925,6 @@
 /area/ruin/rockplanet/rust_base/tanto2)
 "xc" = (
 /obj/structure/rack,
-/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)
 "xd" = (
@@ -3055,6 +3133,22 @@
 "yU" = (
 /turf/open/floor/plating/asteroid/snow/lit/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"yZ" = (
+/obj/effect/turf_decal/borderfloor{
+	layer = 2.030;
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/rockplanet/rust_base/hallway)
 "za" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -3114,6 +3208,10 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/rust_base/hallway2)
+"zu" = (
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/rockplanet/rust_base/slop)
 "zw" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -3247,6 +3345,7 @@
 "As" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/rust_base/hallway)
 "Aw" = (
@@ -3337,6 +3436,13 @@
 /obj/structure/chair/comfy/shuttle,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/hallway2)
+"Bb" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/rockplanet/rust_base)
 "Be" = (
 /obj/effect/turf_decal/industrial/warning,
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg,
@@ -3382,10 +3488,6 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/rockplanet/rust_base/bridge)
 "Br" = (
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun{
-	name = "'Armored' O. Ray";
-	weapon_drop_chance = 100
-	},
 /obj/effect/turf_decal/borderfloor{
 	layer = 2.030;
 	dir = 8
@@ -3393,9 +3495,22 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/warning{
 	dir = 4
 	},
-/obj/item/ammo_casing/spent/pistol_brass,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun{
+	name = "'Armored' O. Ray";
+	weapon_drop_chance = 100
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/rust_base/armory)
+"BE" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 8
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/rockplanet/rust_base/hallway)
 "BG" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/trimline/opaque/red/line,
@@ -3422,6 +3537,7 @@
 /area/ruin/rockplanet/rust_base/engine_two)
 "BL" = (
 /obj/structure/reagent_dispensers/fueltank,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/engine/hull/reinforced/rockplanet,
 /area/ruin/rockplanet/rust_base/hallway2)
 "BM" = (
@@ -3445,7 +3561,7 @@
 	dir = 5
 	},
 /obj/item/ammo_casing/spent/slug/buck,
-/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_steel,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/rust_base/armory)
 "BS" = (
@@ -3456,10 +3572,18 @@
 /obj/item/ammo_casing/spent/big_brass,
 /turf/open/floor/plating/asteroid/snow/lit/rockplanet,
 /area/ruin/rockplanet/rust_base)
+"Cf" = (
+/obj/structure/platform/wood{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter/internals,
+/turf/open/floor/plating/asteroid/rockplanet/wet/lit,
+/area/ruin/rockplanet/rust_base)
 "Cg" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/chair/comfy/shuttle,
 /turf/open/floor/plasteel/patterned/rockplanet,
 /area/ruin/rockplanet/rust_base/drop4)
 "Ci" = (
@@ -3639,7 +3763,6 @@
 /area/ruin/rockplanet/rust_base/hallway2)
 "DM" = (
 /obj/structure/salvageable/computer,
-/obj/machinery/light/directional/north,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
@@ -3737,9 +3860,15 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = -7
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/dorms)
 "EF" = (
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/rockplanet/rust_base/hallway)
 "EM" = (
@@ -3800,6 +3929,13 @@
 /obj/structure/salvageable/machine,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/rust_base/hallway)
+"Fl" = (
+/obj/effect/spawner/bunk_bed{
+	dir = 4
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/carpet/red,
+/area/ruin/rockplanet/rust_base/dorms)
 "Fm" = (
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 4
@@ -3818,6 +3954,7 @@
 /area/ruin/rockplanet/rust_base/armory)
 "Fq" = (
 /obj/machinery/atmospherics/components/unary/tank/nitrogen,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/rust_base/engine_one)
 "Fv" = (
@@ -3844,6 +3981,10 @@
 	},
 /obj/effect/mob_spawn/human/corpse/ramzi,
 /obj/effect/abstract/turf_fire/magical,
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = -6;
+	pixel_y = 28
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/rust_base/slop)
 "FD" = (
@@ -3963,6 +4104,14 @@
 	dir = 4
 	},
 /area/ruin/rockplanet/rust_base/mechbay)
+"GD" = (
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 4;
+	pixel_y = -20
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/rockplanet/rust_base/armory)
 "GJ" = (
 /turf/open/floor/engine/hull/reinforced/rockplanet,
 /area/ruin/rockplanet/rust_base/hallway)
@@ -3983,6 +4132,7 @@
 	dir = 8
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals,
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/rust_base/hallway)
 "GY" = (
@@ -4033,6 +4183,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/chair/comfy/shuttle,
 /turf/open/floor/plasteel/patterned/rockplanet,
 /area/ruin/rockplanet/rust_base/drop3)
 "Ho" = (
@@ -4060,9 +4211,11 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/rust_base)
 "HL" = (
+/mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)
 "HO" = (
@@ -4076,6 +4229,11 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/corner,
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 1
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -21;
+	pixel_y = -7
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/bridge)
@@ -4194,6 +4352,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/engine_two)
 "IW" = (
@@ -4251,8 +4410,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/bridge)
 "Jl" = (
-/obj/effect/abstract/turf_fire/small/magical,
 /obj/effect/mapping_helpers/turf/burnt,
+/obj/item/mine/pressure/explosive/fire/live,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/rust_base/slop)
 "Jn" = (
@@ -4292,6 +4451,11 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/rust_base/tanto2)
+"JB" = (
+/obj/effect/turf_decal/borderfloor/full,
+/obj/structure/chair/bench/grey/directional/west,
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/rust_base/hallway2)
 "JC" = (
 /obj/structure/fluff/broken_flooring{
 	icon_state = "plating";
@@ -4422,6 +4586,11 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/mechbay)
+"KH" = (
+/obj/structure/crate_shelf,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/rockplanet/rust_base/mechbay)
 "KI" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -4457,6 +4626,16 @@
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"KW" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1;
+	layer = 2.040
+	},
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/wasp/internals,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/rockplanet/rust_base)
 "KZ" = (
 /obj/machinery/portable_atmospherics/scrubber,
 /obj/effect/turf_decal/box/red,
@@ -4702,6 +4881,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/door/airlock/hatch{
+	name = "Engine";
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/rust_base/engine_two)
 "Nh" = (
@@ -4764,6 +4947,7 @@
 /area/ruin/rockplanet/rust_base/mechbay)
 "NB" = (
 /obj/structure/crate_shelf,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/rust_base/hallway2)
 "NC" = (
@@ -4771,6 +4955,7 @@
 /obj/effect/decal/cleanable/glass/plasma,
 /obj/effect/decal/cleanable/plastic,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/mechbay)
 "ND" = (
@@ -4862,6 +5047,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/rust_base/hallway)
 "Oh" = (
@@ -4907,6 +5093,22 @@
 /obj/item/ammo_casing/spent/rifle_brass,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/rust_base/hallway)
+"OD" = (
+/obj/effect/turf_decal/borderfloor{
+	layer = 2.030;
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/extinguisher_cabinet/directional/east,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/rockplanet/rust_base/hallway)
 "OI" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -4926,6 +5128,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/engine_two)
 "OU" = (
@@ -4995,6 +5198,13 @@
 "Pk" = (
 /turf/open/floor/engine/hull/reinforced/rockplanet,
 /area/ruin/rockplanet/rust_base/drop4)
+"Pq" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/rockplanet/rust_base)
 "Pr" = (
 /obj/effect/decal/cleanable/glass,
 /obj/item/shard{
@@ -5274,9 +5484,12 @@
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Sv" = (
-/obj/item/mine/pressure/explosive/fire/live,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/ruin/rockplanet/rust_base)
+/obj/effect/spawner/bunk_bed{
+	dir = 4
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/carpet/red,
+/area/ruin/rockplanet/rust_base/dorms)
 "Sw" = (
 /obj/structure/platform/wood,
 /turf/open/floor/plasteel/stairs/wood/mid{
@@ -5345,6 +5558,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = -6;
+	pixel_y = 28
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/engine_two)
@@ -5528,6 +5745,7 @@
 /turf/open/floor/plating,
 /area/ruin/rockplanet/rust_base/engine_one)
 "UE" = (
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/rockplanet/rust_base/hallway)
 "UN" = (
@@ -5675,6 +5893,7 @@
 	pixel_x = 8;
 	pixel_y = 0
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)
 "VJ" = (
@@ -6005,6 +6224,11 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/rockplanet/rust_base)
+"YC" = (
+/obj/effect/turf_decal/borderfloor/full,
+/obj/structure/closet/crate/bin,
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/rust_base/hallway2)
 "YD" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
@@ -6025,14 +6249,10 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/rust_base)
 "YL" = (
-/obj/structure/toilet,
-/obj/item/reagent_containers/condiment/saltshaker,
-/obj/effect/decal/cleanable/food/salt,
-/mob/living/simple_animal/hostile/human/ramzi/civilian{
-	name = "Kaiser 'Shy' Dan"
-	},
-/turf/open/floor/plating/rust,
-/area/ruin/rockplanet/rust_base)
+/obj/structure/table/reinforced,
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/rockplanet/rust_base/hallway2)
 "YP" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -6097,6 +6317,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/rust_base)
 "Zj" = (
@@ -6125,9 +6346,11 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/rust_base)
 "Zw" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame,
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/rockplanet/rust_base/slop)
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/rockplanet,
+/area/ruin/rockplanet/rust_base/drop4)
 "Zy" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
@@ -6203,6 +6426,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/rust_base/armory)
 
@@ -6990,7 +7214,7 @@ nw
 Cz
 HR
 ki
-iP
+Zw
 nw
 ez
 ez
@@ -7114,7 +7338,7 @@ nw
 Cg
 CJ
 BM
-iP
+Zw
 nw
 ez
 ez
@@ -7310,7 +7534,7 @@ ZX
 xz
 fh
 cz
-sn
+pG
 ZX
 ez
 ez
@@ -7434,7 +7658,7 @@ ZX
 Hk
 rz
 zd
-sn
+pG
 ZX
 ez
 ez
@@ -8826,17 +9050,17 @@ Fq
 Di
 ye
 qv
-uf
+jZ
 lw
 lw
 lw
 lw
-vL
+Fl
 vL
 Vl
 zW
 vL
-vL
+Sv
 zi
 IP
 zi
@@ -8854,7 +9078,7 @@ Oh
 fl
 bQ
 Oh
-Pf
+qW
 Ry
 Oh
 ez
@@ -8967,7 +9191,7 @@ Xk
 RG
 zi
 EM
-eW
+cL
 WJ
 tC
 af
@@ -8983,10 +9207,10 @@ Vq
 Zh
 Oh
 aK
-aK
+Bb
 Oh
 JN
-Ag
+Ho
 Oh
 PO
 PO
@@ -9077,7 +9301,7 @@ Vo
 ts
 Dj
 Dj
-dG
+BE
 dG
 xf
 xI
@@ -9107,10 +9331,10 @@ Th
 HJ
 Oh
 sB
-sB
+Pq
 Oh
 ni
-Ag
+Ho
 Oh
 PO
 PO
@@ -9144,8 +9368,8 @@ WL
 CG
 fc
 Np
-gG
-gG
+yZ
+OD
 gG
 gG
 gG
@@ -9226,7 +9450,7 @@ Oh
 fl
 mk
 Oh
-Pf
+qW
 qF
 Oh
 ez
@@ -9288,7 +9512,7 @@ Oh
 Vh
 sH
 Oh
-Pf
+KW
 YD
 Oh
 ez
@@ -9335,7 +9559,7 @@ pM
 pM
 pY
 Fp
-Fp
+GD
 hW
 IR
 pe
@@ -9448,10 +9672,10 @@ gf
 sO
 Sl
 dR
-sa
+zu
 tf
 sa
-Zw
+sa
 fp
 dN
 dR
@@ -9463,7 +9687,7 @@ KJ
 hW
 as
 PM
-Xe
+pZ
 Vo
 nb
 Fk
@@ -9519,7 +9743,7 @@ Jl
 dR
 vI
 bz
-bz
+es
 es
 PJ
 hW
@@ -9580,7 +9804,7 @@ dR
 vB
 dR
 pf
-oN
+nB
 nB
 gy
 hW
@@ -9636,7 +9860,7 @@ rv
 dR
 BS
 Gh
-BS
+oh
 fs
 dR
 QN
@@ -9722,7 +9946,7 @@ yU
 yU
 yU
 hd
-RW
+Cf
 pU
 FA
 ez
@@ -9822,14 +10046,14 @@ MO
 Ja
 Cs
 dJ
-dJ
+oN
 dJ
 dJ
 dJ
 lQ
 dJ
 dJ
-dJ
+oN
 dJ
 TQ
 gK
@@ -9948,10 +10172,10 @@ tT
 xr
 tT
 tT
-NH
+JB
 NH
 aO
-NH
+YC
 Zj
 Zj
 tJ
@@ -10015,7 +10239,7 @@ QI
 FD
 QI
 Zj
-vA
+KH
 Xd
 bj
 bX
@@ -10070,7 +10294,7 @@ mw
 xU
 NX
 Vu
-NB
+kj
 zl
 DM
 HP
@@ -10440,7 +10664,7 @@ pA
 jX
 Lq
 Ov
-zV
+YL
 lE
 VX
 fS
@@ -10518,7 +10742,7 @@ im
 Nt
 Uq
 cq
-oh
+TT
 NF
 ez
 ez
@@ -10626,7 +10850,7 @@ PO
 Vp
 PO
 NG
-lE
+zT
 lE
 fS
 fS
@@ -10688,7 +10912,7 @@ PO
 Vp
 PO
 Mf
-lE
+zT
 zT
 fS
 fS
@@ -10700,7 +10924,7 @@ fS
 fS
 NF
 NF
-pj
+oY
 Qe
 WH
 cq
@@ -11201,7 +11425,7 @@ on
 ny
 ny
 ny
-fS
+ka
 fS
 fS
 on
@@ -11444,8 +11668,8 @@ fS
 fS
 fS
 fS
-YE
-YE
+fS
+fS
 fS
 fS
 ny
@@ -11503,11 +11727,11 @@ eA
 Yf
 fS
 fS
-Oh
-Oh
-Oh
 fS
-YE
+fS
+fS
+fS
+fS
 fS
 fS
 fS
@@ -11565,10 +11789,10 @@ OU
 Yf
 fS
 fS
-Oh
-YL
-cL
-Sv
+fS
+fS
+fS
+fS
 fS
 fS
 fS
@@ -11627,11 +11851,11 @@ IX
 Yf
 fS
 fS
-Oh
-Oh
-Oh
 fS
-YE
+fS
+fS
+fS
+fS
 fS
 fS
 fS
@@ -11692,8 +11916,8 @@ fS
 fS
 fS
 fS
-YE
-YE
+fS
+fS
 fS
 fS
 PO
@@ -11768,7 +11992,7 @@ LI
 ty
 ty
 FL
-zs
+fH
 Ck
 bm
 bm
