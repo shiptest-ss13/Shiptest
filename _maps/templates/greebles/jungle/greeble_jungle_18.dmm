@@ -3,9 +3,6 @@
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/asteroid/sand/jungle,
 /area/template_noop)
-"i" = (
-/turf/open/floor/plating/asteroid/dirt/jungle/dark,
-/area/template_noop)
 "m" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/water/jungle,
@@ -16,11 +13,6 @@
 /area/template_noop)
 "v" = (
 /turf/open/water/jungle,
-/area/template_noop)
-"w" = (
-/obj/structure/flora/grass/jungle/b,
-/obj/structure/spacevine/weak,
-/turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/template_noop)
 "z" = (
 /obj/structure/flora/grass/jungle,
@@ -52,7 +44,7 @@
 "R" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/spacevine/weak,
-/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/turf/open/floor/plating/asteroid/sand/jungle,
 /area/template_noop)
 "T" = (
 /obj/structure/flora/grass/jungle/b,
@@ -88,7 +80,7 @@ v
 v
 a
 X
-A
+q
 E
 "}
 (3,1,1) = {"
@@ -102,7 +94,7 @@ m
 v
 v
 G
-A
+q
 H
 "}
 (4,1,1) = {"
@@ -116,8 +108,8 @@ v
 v
 m
 G
-H
-J
+a
+z
 "}
 (5,1,1) = {"
 X
@@ -130,8 +122,8 @@ v
 v
 v
 G
-A
-H
+q
+a
 "}
 (6,1,1) = {"
 X
@@ -144,8 +136,8 @@ v
 v
 v
 G
-A
-i
+q
+X
 "}
 (7,1,1) = {"
 E
@@ -158,12 +150,12 @@ v
 v
 v
 v
-i
+X
 J
 "}
 (8,1,1) = {"
 E
-A
+q
 C
 C
 C
@@ -171,13 +163,13 @@ C
 v
 m
 v
-i
-J
+X
+z
 E
 "}
 (9,1,1) = {"
-i
-i
+E
+X
 v
 m
 C
@@ -185,34 +177,34 @@ C
 C
 v
 v
-i
-H
+X
+a
 E
 "}
 (10,1,1) = {"
 E
-i
+X
 v
 v
 v
 C
 C
 G
-A
-J
+q
+z
 H
 E
 "}
 (11,1,1) = {"
 E
-i
-i
-i
+X
+X
+X
 v
 G
-w
+T
 R
-w
+T
 H
 E
 E
