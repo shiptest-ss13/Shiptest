@@ -74,10 +74,10 @@
 		whitelisted_turfs = typecacheof(/turf/closed/mineral)
 		banned_objects = typecacheof(list(
 			/obj/structure/stone_tile,
-			/obj/structure/vein/classfour
-			/obj/structure/vein/ice/classfour
-			/obj/structure/vein/jungle/classfour
-			/obj/structure/vein/moon/classfour
+			/obj/structure/vein/classfour,
+			/obj/structure/vein/ice/classfour,
+			/obj/structure/vein/jungle/classfour,
+			/obj/structure/vein/moon/classfour,
 		))
 		types_cached = TRUE
 
