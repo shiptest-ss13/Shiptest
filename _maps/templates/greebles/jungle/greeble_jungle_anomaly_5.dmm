@@ -3,15 +3,6 @@
 /obj/structure/flora/grass/rockplanet/dead,
 /turf/open/floor/plating/asteroid/dirt/wasteland,
 /area/template_noop)
-"c" = (
-/obj/structure/flora/tree/dead/tall,
-/obj/structure/spacevine/dead,
-/turf/open/floor/plating/asteroid/dirt/wasteland,
-/area/template_noop)
-"d" = (
-/obj/structure/flora/grass/rockplanet/dead,
-/turf/open/floor/plating/asteroid/dirt/wasteland,
-/area/space)
 "f" = (
 /obj/effect/anomaly/heartbeat/planetary,
 /turf/open/floor/plating/asteroid/dirt/wasteland,
@@ -21,27 +12,24 @@
 /turf/open/floor/plating/asteroid/dirt/wasteland,
 /area/template_noop)
 "l" = (
+/obj/effect/radiation,
 /obj/structure/flora/grass/rockplanet/dead,
 /obj/structure/spacevine/dead,
 /turf/open/floor/plating/asteroid/dirt/wasteland,
-/area/space)
+/area/template_noop)
 "m" = (
 /turf/open/floor/plating/asteroid/dirt/wasteland,
 /area/template_noop)
-"w" = (
-/turf/open/floor/plating/asteroid/dirt/wasteland,
-/area/space)
 "z" = (
 /obj/structure/flora/tree/dead/tall,
 /obj/structure/flora/grass/rockplanet/dead,
 /turf/open/floor/plating/asteroid/dirt/wasteland,
 /area/template_noop)
-"H" = (
-/obj/effect/radiation,
-/obj/structure/flora/grass/rockplanet/dead,
+"D" = (
+/obj/structure/flora/tree/dead/tall,
 /obj/structure/spacevine/dead,
 /turf/open/floor/plating/asteroid/dirt/wasteland,
-/area/space)
+/area/template_noop)
 "I" = (
 /turf/template_noop,
 /area/template_noop)
@@ -50,20 +38,18 @@
 /obj/structure/flora/grass/rockplanet/dead,
 /turf/open/floor/plating/asteroid/dirt/wasteland,
 /area/template_noop)
-"M" = (
-/turf/template_noop,
-/area/space)
 "P" = (
+/obj/structure/flora/grass/rockplanet/dead,
 /obj/structure/spacevine/dead,
 /turf/open/floor/plating/asteroid/dirt/wasteland,
-/area/space)
+/area/template_noop)
 "V" = (
 /obj/structure/spacevine/dead,
 /turf/open/floor/plating/asteroid/dirt/wasteland,
 /area/template_noop)
 
 (1,1,1) = {"
-M
+I
 I
 a
 I
@@ -71,7 +57,7 @@ I
 I
 "}
 (2,1,1) = {"
-M
+I
 a
 J
 a
@@ -79,7 +65,7 @@ I
 I
 "}
 (3,1,1) = {"
-M
+I
 I
 g
 m
@@ -87,7 +73,7 @@ V
 I
 "}
 (4,1,1) = {"
-M
+I
 V
 m
 m
@@ -95,7 +81,7 @@ V
 V
 "}
 (5,1,1) = {"
-P
+V
 V
 m
 f
@@ -103,7 +89,7 @@ V
 I
 "}
 (6,1,1) = {"
-M
+I
 V
 m
 m
@@ -111,26 +97,26 @@ V
 I
 "}
 (7,1,1) = {"
-l
+P
 z
 m
 V
-c
+D
 I
 "}
 (8,1,1) = {"
-P
-d
-w
-H
+V
+a
+m
 l
-M
+P
+I
 "}
 (9,1,1) = {"
-M
-M
-M
-P
-M
-M
+I
+I
+I
+V
+I
+I
 "}
