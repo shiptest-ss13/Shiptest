@@ -92,6 +92,18 @@
 /obj/effect/greeble_spawner/jungleplanet/twentyone
 	template = /datum/map_template/greeble/jungleplanet/twentyone
 
+/obj/effect/greeble_spawner/jungleplanet/twentytwo
+	template = /datum/map_template/greeble/jungleplanet/twentytwo
+
+/obj/effect/greeble_spawner/jungleplanet/twentythree
+	template = /datum/map_template/greeble/jungleplanet/twentythree
+
+/obj/effect/greeble_spawner/jungleplanet/twentyfour
+	template = /datum/map_template/greeble/jungleplanet/twentyfour
+
+/obj/effect/greeble_spawner/jungleplanet/twentyfive
+	template = /datum/map_template/greeble/jungleplanet/twentyfive
+
 /datum/map_template/greeble/jungleplanet
 	name = "Jungle Greeble 1"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_1.dmm"
