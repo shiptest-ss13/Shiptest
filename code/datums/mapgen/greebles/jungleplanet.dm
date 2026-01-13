@@ -230,10 +230,7 @@
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_25.dmm"
 	description = "An overgrown landing pad. The trees have reclaimed the concrete."
 
-
-
 /* Cave Greebles */
-
 
 /obj/effect/spawner/random/greeble/jungleplanet/cave
 	loot = list(

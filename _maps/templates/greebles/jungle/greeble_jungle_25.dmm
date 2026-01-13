@@ -3,14 +3,14 @@
 /obj/structure/spacevine/dense,
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/junglebush/large,
-/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/template_noop)
 "af" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow,
 /area/template_noop)
 "bl" = (
-/turf/open/floor/concrete/slab_1/jungleplanet,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/template_noop)
 "bD" = (
 /turf/template_noop,
@@ -33,7 +33,7 @@
 "eE" = (
 /obj/structure/spacevine/dense,
 /obj/structure/flora/grass/jungle/b,
-/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/template_noop)
 "gc" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -58,9 +58,9 @@
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/template_noop)
 "jD" = (
-/obj/structure/spacevine/dense,
+/obj/structure/spacevine,
 /obj/structure/flora/grass/jungle/b,
-/turf/open/floor/concrete/slab_1/jungleplanet,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/template_noop)
 "jJ" = (
 /obj/structure/flora/grass/jungle/b,
@@ -151,17 +151,13 @@
 "BG" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/junglebush/large,
-/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/template_noop)
 "Cm" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /turf/open/floor/concrete/slab_4/jungleplanet,
-/area/template_noop)
-"CB" = (
-/obj/structure/spacevine/dense,
-/turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/template_noop)
 "Do" = (
 /obj/structure/spacevine,
@@ -170,11 +166,11 @@
 /area/template_noop)
 "DH" = (
 /obj/structure/spacevine/dense,
-/turf/open/floor/concrete/slab_1/jungleplanet,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/template_noop)
 "FD" = (
 /obj/structure/flora/grass/jungle/b,
-/turf/open/floor/concrete/slab_1/jungleplanet,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/template_noop)
 "FJ" = (
 /obj/structure/spacevine,
@@ -185,7 +181,7 @@
 /obj/structure/spacevine/dense,
 /obj/structure/flora/tree/jungle,
 /obj/structure/flora/grass/jungle/b,
-/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/template_noop)
 "Hk" = (
 /obj/structure/spacevine,
@@ -199,7 +195,7 @@
 /area/template_noop)
 "Kk" = (
 /obj/structure/spacevine,
-/turf/open/floor/concrete/slab_1/jungleplanet,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/template_noop)
 "Lq" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -227,12 +223,12 @@
 /obj/structure/spacevine,
 /obj/structure/flora/tree/jungle,
 /obj/structure/flora/grass/jungle/b,
-/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/template_noop)
 "Qb" = (
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine,
-/turf/open/floor/concrete/slab_1/jungleplanet,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/template_noop)
 "Qu" = (
 /obj/structure/spacevine,
@@ -248,7 +244,7 @@
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine,
 /obj/structure/flora/grass/jungle/b,
-/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/template_noop)
 "TI" = (
 /obj/effect/turf_decal/industrial/warning/corner,
@@ -343,7 +339,7 @@ Kk
 bl
 bl
 bl
-jD
+eE
 eE
 DH
 LP
@@ -359,7 +355,7 @@ bl
 bl
 bl
 DH
-CB
+DH
 FS
 DH
 gc
@@ -467,9 +463,9 @@ bD
 bD
 ig
 HD
-uc
+jD
 OH
-uc
+jD
 bl
 bl
 bl
@@ -499,7 +495,7 @@ bD
 bD
 Hk
 le
-jD
+eE
 Qb
 DH
 Kk

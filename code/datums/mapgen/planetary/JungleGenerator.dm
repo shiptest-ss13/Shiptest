@@ -201,7 +201,7 @@
 		/mob/living/simple_animal/hostile/retaliate/bat = 1,
 		/mob/living/simple_animal/hostile/retaliate/poison/snake = 1
 	)
-	feature_spawn_chance = 0.5
+	feature_spawn_chance = 0.7
 	feature_spawn_list = list(
 		/obj/item/pickaxe/rusted = 1,
 		/obj/structure/spawner/burrow/jungle_planet = 4,
