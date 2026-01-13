@@ -257,7 +257,7 @@
 		return
 	if(can_flip)
 		user.visible_message(span_danger("[user] starts flipping [src]!"), span_notice("You start flipping over the [src]!"))
-		if(do_after(user, max_integrity/4))
+		if(do_after(user, max_integrity/12))
 			var/obj/structure/flippedtable/flipped = new flipped_table_type(src.loc)
 			flipped.name = "flipped [src.name]"
 			flipped.desc = "[src.desc] It is flipped!"

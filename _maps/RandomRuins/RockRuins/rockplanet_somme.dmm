@@ -4991,10 +4991,6 @@
 	outfit = /datum/outfit/job/clip/correspondent;
 	mob_name = "Chunce Whatney"
 	},
-/obj/effect/landmark/mission_poi/main{
-	already_spawned = 1;
-	mission_index = 2
-	},
 /obj/effect/decal/cleanable/blood/splatter{
 	icon_state = "floor6"
 	},
@@ -8292,10 +8288,6 @@
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/wasp/internals/somme{
 	environment_smash = 0
-	},
-/obj/effect/landmark/mission_poi/main/kill{
-	already_spawned = 1;
-	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/officer/wasp/internals/somme
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/somme/armory)

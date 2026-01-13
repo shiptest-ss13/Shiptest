@@ -1058,10 +1058,13 @@
 	pixel_x = -7;
 	pixel_y = -10
 	},
-/obj/item/flamethrower/full,
 /obj/item/attachment/energy_bayonet{
 	pixel_x = 1;
 	pixel_y = 16
+	},
+/obj/item/attachment/gun/flamethrower,
+/obj/item/attachment/gun/ballistic/shotgun{
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/beach/gunsmith/workshop)
@@ -2797,9 +2800,6 @@
 /obj/item/stamp/ngr/ensign{
 	pixel_x = -7;
 	pixel_y = 11
-	},
-/obj/effect/landmark/mission_poi/main{
-	already_spawned = 1
 	},
 /obj/item/documents/syndicate/ngr{
 	pixel_x = 1;

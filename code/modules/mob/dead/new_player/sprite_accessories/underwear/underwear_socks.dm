@@ -21,6 +21,10 @@
 	name = "Thigh-High Socks (Greyscale)"
 	icon_state = "thigh"
 
+/datum/sprite_accessory/socks/socks_thighalt
+	name = "Thigh-High Socks (Alt)"
+	icon_state = "thighalt"
+
 /datum/sprite_accessory/socks/striped_knee
 	name = "Striped Knee-Highs (Greyscale)"
 	icon_state = "striped_knee"
