@@ -77,8 +77,8 @@
 	accelerant_quality = 10
 
 /datum/reagent/toxin/plasma/on_mob_life(mob/living/carbon/C)
-	if(C.has_reagent(/datum/reagent/medicine/epinephrine))
-		C.remove_reagent(/datum/reagent/medicine/epinephrine, 2*REM)
+	if(holder.has_reagent(/datum/reagent/medicine/epinephrine))
+		holder.remove_reagent(/datum/reagent/medicine/epinephrine, 2*REM)
 	C.adjustPlasma(20)
 	return ..()
 
@@ -129,8 +129,8 @@
 	material = /datum/material/hot_ice
 
 /datum/reagent/toxin/hot_ice/on_mob_life(mob/living/carbon/M)
-	if(M.has_reagent(/datum/reagent/medicine/epinephrine))
-		M.remove_reagent(/datum/reagent/medicine/epinephrine, 2*REM)
+	if(holder.has_reagent(/datum/reagent/medicine/epinephrine))
+		holder.remove_reagent(/datum/reagent/medicine/epinephrine, 2*REM)
 	M.adjustPlasma(20)
 	M.adjust_bodytemperature(-2 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	return ..()
@@ -208,12 +208,12 @@
 	L.cure_fakedeath(type)
 	..()
 
-/datum/reagent/toxin/zombiepowder/expose_mob(mob/living/L, method=TOUCH, reac_volume)
-	L.adjustOxyLoss(0.5*REM, 0)
+/datum/reagent/toxin/zombiepowder/expose_mob(mob/living/exposed_mob, method=TOUCH, reac_volume)
+	exposed_mob.adjustOxyLoss(0.5*REM, 0)
 	if(method == INGEST)
-		var/datum/reagent/toxin/zombiepowder/Z = L.has_reagent(/datum/reagent/toxin/zombiepowder)
-		if(istype(Z))
-			Z.fakedeath_active = TRUE
+		var/datum/reagent/toxin/zombiepowder/zombiepowder = exposed_mob.reagents.has_reagent(/datum/reagent/toxin/zombiepowder)
+		if(istype(zombiepowder))
+			zombiepowder.fakedeath_active = TRUE
 
 /datum/reagent/toxin/zombiepowder/on_mob_life(mob/living/M)
 	..()
@@ -500,7 +500,7 @@
 	toxpwr = 1
 
 /datum/reagent/toxin/formaldehyde/on_mob_life(mob/living/carbon/M)
-	if(prob(5))
+	if(prob(5) && M.has_reagent(/datum/reagent/toxin/formaldehyde, 5.1)) //Okay in theory you can't get histamine unless you have over 5 units of formal in your blood
 		holder.add_reagent(/datum/reagent/toxin/histamine, pick(5,15))
 		holder.remove_reagent(/datum/reagent/toxin/formaldehyde, 1.2)
 	else
@@ -519,8 +519,8 @@
 	M.adjustBruteLoss((0.3*volume)*REM, 0)
 	. = 1
 	if(prob(15))
-		M.reagents.add_reagent(/datum/reagent/toxin/histamine, pick(5,10))
-		M.remove_reagent(/datum/reagent/toxin/venom, 1.1)
+		holder.add_reagent(/datum/reagent/toxin/histamine, pick(5,10))
+		M.reagents.remove_reagent(/datum/reagent/toxin/venom, 1.1)
 	else
 		..()
 
@@ -577,8 +577,8 @@
 		M.adjustBruteLoss(0.2*REM, 0)
 		. = 1
 	if(prob(3))
-		M.reagents.add_reagent(/datum/reagent/toxin/histamine,rand(1,3))
-		M.remove_reagent(/datum/reagent/toxin/itching_powder,1.2)
+		holder.add_reagent(/datum/reagent/toxin/histamine,rand(1,3))
+		M.reagents.remove_reagent(/datum/reagent/toxin/itching_powder,1.2)
 		return
 	..()
 

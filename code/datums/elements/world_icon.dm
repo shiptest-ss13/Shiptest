@@ -9,7 +9,7 @@
 // Fixed 12/04/2023: Icon states, Needs major tuning up by someone who can properly make it work
 
 /datum/element/world_icon
-	id_arg_index = 2
+	argument_hash_start_idx = 2
 	element_flags = ELEMENT_BESPOKE | ELEMENT_DETACH
 	//If we want COMPLEX world icon behavior, this proc will handle icon updating when the item is NOT in the inventory.
 	//I just assumed that the default update_icon is for inventory sprites because ss13 basically focuses on how the sprites

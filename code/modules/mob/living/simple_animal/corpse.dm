@@ -103,6 +103,7 @@
 	head = /obj/item/clothing/head/ramzi/beret
 	back = null
 	mask = /obj/item/clothing/mask/breath/facemask
+	neck = /obj/item/clothing/neck/dogtag/gold
 
 /obj/effect/mob_spawn/human/corpse/ramzi/officer
 	name = "Ramzi Clique Officer"
@@ -387,8 +388,3 @@
 	id_job = "Captain"
 	outfit = /datum/outfit/job/gezena/captain
 
-/* clip ig */
-
-/obj/effect/mob_spawn/human/corpse/clip/bombsuitguy
-	name = "CLIP Bombsuit Spawner"
-	outfit = /datum/outfit/job/clip/minutemen/grunt/dressed/bombsuit

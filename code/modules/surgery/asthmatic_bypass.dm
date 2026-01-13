@@ -32,7 +32,7 @@
 	if (!.)
 		return
 
-	return (patient.has_quirk(/datum/quirk/asthma))
+	return (patient.has_status_effect(/datum/status_effect/lung_inflammation))
 
 /datum/surgery_step/expand_windpipe
 	name = "force open windpipe (retractor)"

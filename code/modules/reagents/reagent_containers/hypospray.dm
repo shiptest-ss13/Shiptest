@@ -54,7 +54,7 @@
 	var/contained = english_list(injected)
 	log_combat(user, M, "attempted to inject", src, "([contained])")
 
-	if(reagents.total_volume && (ignore_flags || M.can_inject(user, 1))) // Ignore flag should be checked first or there will be an error message.
+	if(reagents.total_volume && (ignore_flags || M.can_inject(user, injection_flags = INJECT_CHECK_PENETRATE_THICK)))
 		to_chat(M, span_warning("You feel a tiny prick!"))
 		to_chat(user, span_notice("You inject [M] with [src]."))
 		playsound(loc, pick('sound/items/hypospray.ogg','sound/items/hypospray2.ogg'), 50, TRUE)
@@ -64,7 +64,7 @@
 		if(M.reagents)
 			var/trans = 0
 			if(!infinite)
-				trans = reagents.trans_to(M, amount_per_transfer_from_this, transfered_by = user, method = INJECT)
+				trans = reagents.trans_to(M, amount_per_transfer_from_this, transfered_by = user, methods = INJECT)
 			else
 				reagents.expose(M, INJECT, fraction)
 				trans = reagents.copy_to(M, amount_per_transfer_from_this)
@@ -216,6 +216,18 @@
 		icon_state = base_icon_state
 		return
 	icon_state = "[base_icon_state][(reagents.total_volume > 0) ? 1 : 0]"
+
+/obj/item/reagent_containers/hypospray/medipen/oculine
+	name = "oculine autoinjector"
+	desc = "An autoinjector designed to promote the repair of the cornea and the retina after damage."
+	list_reagents = list(/datum/reagent/medicine/inacusiate = 10)
+	custom_price = 100
+
+/obj/item/reagent_containers/hypospray/medipen/inacusiate
+	name = "inacusiate autoinjector"
+	desc = "An autoinjector designed to rapidly restore hearing after acute hearing loss."
+	list_reagents = list(/datum/reagent/medicine/inacusiate = 10)
+	custom_price = 100
 
 /obj/item/reagent_containers/hypospray/medipen/atropine
 	name = "atropine autoinjector"
@@ -399,7 +411,7 @@
 	var/spray_self = SELF_SPRAY
 	var/inject_self = SELF_INJECT
 	var/quickload = FALSE
-	var/penetrates = TRUE
+	var/inject_flags = INJECT_CHECK_PENETRATE_THICK
 
 /obj/item/hypospray/mkii/brute
 	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/indomide
@@ -514,7 +526,6 @@
 	spray_wait = COMBAT_WAIT_SPRAY
 	spray_self = COMBAT_SELF_INJECT
 	inject_self = COMBAT_SELF_SPRAY
-	penetrates = TRUE
 	to_chat(user, "You overcharge [src]'s control circuit.")
 	obj_flags |= EMAGGED
 	return TRUE
@@ -538,7 +549,7 @@
 	var/mob/living/L
 	if(isliving(target))
 		L = target
-		if(!penetrates && !L.can_inject(user, 1)) //This check appears another four times, since otherwise the penetrating sprays will break in do_after.
+		if(!L.can_inject(user, injection_flags = inject_flags)) //This check appears another four times, since otherwise the penetrating sprays will break in do_after.
 			return
 
 	if(!L && !target.is_injectable()) //only checks on non-living mobs, due to how can_inject() handles
@@ -570,8 +581,6 @@
 										span_userdanger("[user] is trying to inject [L] with [src]!"))
 						if(!do_after(user, inject_wait, L))
 							return
-						if(!penetrates && !L.can_inject(user, 1))
-							return
 						if(!vial.reagents.total_volume)
 							return
 						if(L.reagents.total_volume >= L.reagents.maximum_volume)
@@ -580,8 +589,6 @@
 										span_userdanger("[user] uses the [src] on [L]!"))
 					else
 						if(!do_after(user, inject_self, L))
-							return
-						if(!penetrates && !L.can_inject(user, 1))
 							return
 						if(!vial.reagents.total_volume)
 							return
@@ -592,7 +599,7 @@
 
 				var/fraction = min(vial.amount_per_transfer_from_this/vial.reagents.total_volume, 1)
 				vial.reagents.expose(L, INJECT, fraction)
-				vial.reagents.trans_to(target, vial.amount_per_transfer_from_this, method = INJECT)
+				vial.reagents.trans_to(target, vial.amount_per_transfer_from_this, methods = INJECT)
 				if(vial.amount_per_transfer_from_this >= 15)
 					playsound(loc,'sound/items/hypospray_long.ogg',50, 1, -1)
 				if(vial.amount_per_transfer_from_this < 15)
@@ -606,8 +613,6 @@
 										span_userdanger("[user] is trying to spray [L] with [src]!"))
 						if(!do_after(user, spray_wait, L))
 							return
-						if(!penetrates && !L.can_inject(user, 1))
-							return
 						if(!vial.reagents.total_volume)
 							return
 						if(L.reagents.total_volume >= L.reagents.maximum_volume)
@@ -617,8 +622,6 @@
 					else
 						if(!do_after(user, spray_self, L))
 							return
-						if(!penetrates && !L.can_inject(user, 1))
-							return
 						if(!vial.reagents.total_volume)
 							return
 						if(L.reagents.total_volume >= L.reagents.maximum_volume)
@@ -627,7 +630,7 @@
 						L.log_message("<font color='orange'>applied [src] to  themselves ([contained]).</font>", INDIVIDUAL_ATTACK_LOG)
 				var/fraction = min(vial.amount_per_transfer_from_this/vial.reagents.total_volume, 1)
 				vial.reagents.expose(L, PATCH, fraction)
-				vial.reagents.trans_to(target, vial.amount_per_transfer_from_this, method = PATCH)
+				vial.reagents.trans_to(target, vial.amount_per_transfer_from_this, methods = PATCH)
 				if(vial.amount_per_transfer_from_this >= 15)
 					playsound(loc,'sound/items/hypospray_long.ogg',50, 1, -1)
 				if(vial.amount_per_transfer_from_this < 15)

@@ -1,0 +1,53 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Sojourner-class Homesteader",
+	"faction": "/datum/faction/srm",
+	"prefix": "SRSV",
+	"namelists": [
+		"SAINT-ROUMAIN",
+		"BEASTS"
+	],
+	"map_short_name": "Sojourner-class",
+	"map_path": "_maps/shuttles/roumain/srm_sojourner.dmm",
+	"description": "First produced as the Estuary-class in 499FS for the civilian market, this hull is among Ihejirika's first widely adopted designs. In need of a supplier, the Saint-Roumain Militia commissioned the shipwright in 502FS for a fleet of custom modified Estuary-classes to provide to their Montagnes. Now known as the Sojourner-class, this ship has been tailored to suit the lifestyle of self-sufficiency for a band in the hunting order; the most notable refurbishment being a central garden featuring a tree imported from the owning Montagne's home planet. Modifications to the ship systems and hull are otherwise superficial.",
+	"tags": [
+		"Botany",
+		"Combat",
+		"Generalist"
+	],
+	"map_id": "srm_sojourner",
+	"limit": 1,
+	"job_slots": {
+		"Hunter Montagne": {
+			"outfit": "/datum/outfit/job/roumain/captain/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Hunter Colligne": {
+			"outfit": "/datum/outfit/job/roumain/hop/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Flamebearer": {
+			"outfit": "/datum/outfit/job/roumain/flamebearer/empty",
+			"slots": 1
+		},
+		"Hunter": {
+			"outfit": "/datum/outfit/job/roumain/security/empty",
+			"slots": 1
+		},
+		"Hunter Doctor": {
+			"outfit": "/datum/outfit/job/roumain/doctor/empty",
+			"slots": 1
+		},
+		"Machinist": {
+			"outfit": "/datum/outfit/job/roumain/engineer/empty",
+			"slots": 1
+		},
+		"Shadow": {
+			"outfit": "/datum/outfit/job/roumain/assistant/empty",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}
