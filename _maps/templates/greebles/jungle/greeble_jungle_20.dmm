@@ -8,14 +8,22 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 6
 	},
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/airless,
 /area/template_noop)
 "d" = (
 /obj/structure/spacevine/weak,
 /turf/closed/wall,
 /area/template_noop)
+"e" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/spacevine/weak,
+/obj/item/stack/ore/salvage/scrapmetal,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/area/template_noop)
 "f" = (
 /obj/structure/poddoor_assembly/shutters,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/tech/techmaint/airless,
 /area/template_noop)
 "h" = (
@@ -24,6 +32,8 @@
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/template_noop)
 "j" = (
+/obj/effect/decal/cleanable/glass,
+/obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plasteel/tech/techmaint/airless,
 /area/template_noop)
 "l" = (
@@ -65,12 +75,19 @@
 /area/template_noop)
 "s" = (
 /obj/effect/gibspawner/human,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/tech/grid/airless,
+/area/template_noop)
+"w" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/item/stack/ore/salvage/scrapmetal,
+/turf/open/floor/plasteel/tech/techmaint/airless,
 /area/template_noop)
 "z" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 5
 	},
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/airless,
 /area/template_noop)
 "B" = (
@@ -83,19 +100,42 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/airless,
 /area/template_noop)
+"C" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/spacevine/dense,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/area/template_noop)
 "E" = (
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
 /turf/open/floor/plating/airless,
 /area/template_noop)
+"G" = (
+/obj/structure/spacevine/weak,
+/obj/item/stack/ore/salvage/scrapmetal,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/area/template_noop)
+"H" = (
+/obj/effect/abstract/turf_fire/small/magical,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/area/template_noop)
 "I" = (
 /obj/structure/spacevine/dense,
 /turf/closed/wall,
 /area/template_noop)
+"K" = (
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
+/area/template_noop)
 "L" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/spacevine/dense,
+/obj/effect/decal/cleanable/glass,
+/obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/template_noop)
 "M" = (
@@ -118,6 +158,7 @@
 	dir = 4;
 	id = "frontiepod1"
 	},
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/tech/grid/airless,
 /area/template_noop)
 "R" = (
@@ -132,7 +173,14 @@
 /area/template_noop)
 "T" = (
 /obj/effect/gibspawner/human,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/airless,
+/area/template_noop)
+"U" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/template_noop)
 "V" = (
 /obj/structure/chair/comfy/shuttle,
@@ -211,7 +259,7 @@ Y
 (6,1,1) = {"
 o
 r
-q
+w
 E
 Z
 Y
@@ -237,29 +285,29 @@ I
 p
 p
 I
-h
+e
 N
 o
 "}
 (9,1,1) = {"
 L
-a
+C
 I
 B
 B
 I
-h
+U
 h
 o
 "}
 (10,1,1) = {"
-n
+K
 N
 I
 h
 N
 d
-N
+H
 n
 o
 "}
@@ -267,7 +315,7 @@ o
 o
 O
 a
-h
+e
 N
 n
 n
@@ -278,9 +326,9 @@ o
 o
 o
 P
+H
 N
-N
-n
+G
 o
 o
 o
