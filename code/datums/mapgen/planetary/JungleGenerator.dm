@@ -161,7 +161,7 @@
 	mob_spawn_chance = 0.05
 	mob_spawn_list = list(/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 1)
 	feature_spawn_chance = 0.1
-	feature_spawn_list = list(/obj/effect/spawner/random/greeble/jungleplanet)
+	feature_spawn_list = list(/obj/effect/spawner/random/greeble/jungleplanet = 1)
 
 /datum/biome/jungle_wasteland
 	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/wasteland = 1)
