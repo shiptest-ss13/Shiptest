@@ -9,15 +9,11 @@
 /obj/structure/flora/ausbushes/fullgrass/hell,
 /turf/open/floor/plating/asteroid/sand/jungle,
 /area/template_noop)
-"g" = (
-/obj/effect/anomaly/veins/planetary,
-/turf/open/water/jungle,
-/area/template_noop)
 "l" = (
-/obj/effect/mob_spawn/human/corpse/inteq/artificer,
-/obj/structure/flora/tree/dead/hell{
-	pixel_x = -18
+/obj/effect/mob_spawn/human/corpse/inteq/artificer{
+	brute_damage = 600
 	},
+/obj/effect/anomaly/veins/helltree,
 /turf/open/water/jungle,
 /area/template_noop)
 "u" = (
@@ -96,7 +92,7 @@ a
 a
 a
 l
-g
+a
 a
 f
 "}

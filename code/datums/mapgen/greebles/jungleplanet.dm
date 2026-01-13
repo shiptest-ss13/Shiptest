@@ -22,6 +22,11 @@
 			/obj/effect/greeble_spawner/jungleplanet/eighteen = 5,
 			/obj/effect/greeble_spawner/jungleplanet/nineteen = 5,
 			/obj/effect/greeble_spawner/jungleplanet/twenty = 5,
+			/obj/effect/greeble_spawner/jungleplanet/twentyone = 5,
+			/obj/effect/greeble_spawner/jungleplanet/twentytwo = 5,
+			/obj/effect/greeble_spawner/jungleplanet/twentythree = 5,
+			/obj/effect/greeble_spawner/jungleplanet/twentyfour = 5,
+			/obj/effect/greeble_spawner/jungleplanet/twentyfive = 5,
 		)
 
 /obj/effect/greeble_spawner/jungleplanet
@@ -83,6 +88,9 @@
 
 /obj/effect/greeble_spawner/jungleplanet/twenty
 	template = /datum/map_template/greeble/jungleplanet/twenty
+
+/obj/effect/greeble_spawner/jungleplanet/twentyone
+	template = /datum/map_template/greeble/jungleplanet/twentyone
 
 /datum/map_template/greeble/jungleplanet
 	name = "Jungle Greeble 1"
@@ -184,6 +192,33 @@
 	name = "Jungle Greeble 20"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_20.dmm"
 	description = "Frontiersmen aren't very good pilots, are they?"
+
+/datum/map_template/greeble/jungleplanet/twentyone
+	name = "Jungle Greeble 21"
+	mappath = "_maps/templates/greebles/jungle/greeble_jungle_21.dmm"
+	description = "Be careful where you dig! Not every site is safe."
+
+/datum/map_template/greeble/jungleplanet/twentytwo
+	name = "Jungle Greeble 22"
+	mappath = "_maps/templates/greebles/jungle/greeble_jungle_22.dmm"
+	description = "A crashed vessel, completely out of place."
+
+/datum/map_template/greeble/jungleplanet/twentythree
+	name = "Jungle Greeble 23"
+	mappath = "_maps/templates/greebles/jungle/greeble_jungle_23.dmm"
+	description = "Not every colonization effort works out."
+
+/datum/map_template/greeble/jungleplanet/twentyfour
+	name = "Jungle Greeble 24"
+	mappath = "_maps/templates/greebles/jungle/greeble_jungle_24.dmm"
+	description = "A quaint little rest from a hostile world."
+
+/datum/map_template/greeble/jungleplanet/twentyfive
+	name = "Jungle Greeble 25"
+	mappath = "_maps/templates/greebles/jungle/greeble_jungle_25.dmm"
+	description = "An overgrown landing pad. The trees have reclaimed the concrete."
+
+
 
 /* Cave Greebles */
 

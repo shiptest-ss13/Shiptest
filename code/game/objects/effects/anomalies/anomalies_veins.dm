@@ -50,6 +50,25 @@
 		anomalyEffect()
 	. = ..()
 
+/obj/effect/anomaly/veins/helltree
+	name = "Fountain of Life"
+	desc = "A tree coated in the blood of those who came before it. It will give birth to the future, even if you are not in it."
+	icon_state = "tree_1"
+	icon = 'icons/obj/flora/lavatrees.dmi'
+	density = 1
+	pixel_x = -16
+	light_color = LIGHT_COLOR_BLOOD_MAGIC
+	light_range = 2
+	light_power = 0.85
+	resistance_flags = LAVA_PROOF
+	immortal = TRUE
+	immobile = TRUE
+
+/obj/effect/anomaly/veins/helltree/Initialize(mapload, new_lifespan, drops_core)
+	. = ..()
+	var/tree = rand(1,6)
+	icon_state = "tree_[tree]"
+
 /obj/effect/anomaly/veins/planetary
 	immortal = TRUE
 	immobile = TRUE
