@@ -131,6 +131,10 @@
 	stat_allowed = HARD_CRIT
 
 /datum/emote/living/deathgasp/run_emote(mob/user, params, type_override, intentional)
+	//prevents fake deathgasping
+	if(intentional)
+		return
+
 	var/mob/living/simple_animal/S = user
 	if(istype(S) && S.deathmessage)
 		message_simple = S.deathmessage
