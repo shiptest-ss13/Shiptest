@@ -87,103 +87,103 @@
 /datum/map_template/greeble/jungleplanet
 	name = "Jungle Greeble 1"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_1.dmm"
-	description = = "A small attempt at a fishing pier"
+	description = "A small attempt at a fishing pier"
 	clear_everything = TRUE
 
 /datum/map_template/greeble/jungleplanet/two
 	name = "Jungle Greeble 2"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_2.dmm"
-	description = = "A simple garden, abandoned."
+	description = "A simple garden, abandoned."
 
 /datum/map_template/greeble/jungleplanet/three
 	name = "Jungle Greeble 3"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_3.dmm"
-	description = = "A grave for the damned."
+	description = "A grave for the damned."
 
 /datum/map_template/greeble/jungleplanet/four
 	name = "Jungle Greeble 4"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_4.dmm"
-	description = = "Beware of bear caves."
+	description = "Beware of bear caves."
 
 /datum/map_template/greeble/jungleplanet/five
 	name = "Jungle Greeble 5"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_5.dmm"
-	description = = "Murdered frontiersman bits."
+	description = "Murdered frontiersman bits."
 
 /datum/map_template/greeble/jungleplanet/six
 	name = "Jungle Greeble 6"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_6.dmm"
-	description = = "Radioactive hole."
+	description = "Radioactive hole."
 
 /datum/map_template/greeble/jungleplanet/seven
 	name = "Jungle Greeble 7"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_7.dmm"
-	description = = "A radioactive incident."
+	description = "A radioactive incident."
 
 /datum/map_template/greeble/jungleplanet/eight
 	name = "Jungle Greeble 8"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_8.dmm"
-	description = = "Radioactive Hole 2"
+	description = "Radioactive Hole 2"
 
 /datum/map_template/greeble/jungleplanet/nine
 	name = "Jungle Greeble 9"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_9.dmm"
-	description = = "Radioactive debris."
+	description = "Radioactive debris."
 
 /datum/map_template/greeble/jungleplanet/ten
 	name = "Jungle Greeble 10"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_10.dmm"
-	description = = "A simple pond."
+	description = "A simple pond."
 
 /datum/map_template/greeble/jungleplanet/eleven
 	name = "Jungle Greeble 11"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_11.dmm"
-	description = = "A radioactive trench left to rot."
+	description = "A radioactive trench left to rot."
 
 /datum/map_template/greeble/jungleplanet/twelve
 	name = "Jungle Greeble 12"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_12.dmm"
-	description = = "A friend's grave adorned with a flower"
+	description = "A friend's grave adorned with a flower"
 
 /datum/map_template/greeble/jungleplanet/thirteen
 	name = "Jungle Greeble 13"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_13.dmm"
-	description = = "Industrial decay."
+	description = "Industrial decay."
 
 /datum/map_template/greeble/jungleplanet/fourteen
 	name = "Jungle Greeble 14"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_14.dmm"
-	description = = "Industrial decay 2"
+	description = "Industrial decay 2"
 
 /datum/map_template/greeble/jungleplanet/fifteen
 	name = "Jungle Greeble 15"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_15.dmm"
-	description = = "Industrial decay the third."
+	description = "Industrial decay the third."
 
 /datum/map_template/greeble/jungleplanet/sixteen
 	name = "Jungle Greeble 16"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_16.dmm"
-	description = = "A broken road."
+	description = "A broken road."
 
 /datum/map_template/greeble/jungleplanet/seventeen
 	name = "Jungle Greeble 17"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_17.dmm"
-	description = = "Who let the chickens out? Who put them here? A chicken coop."
+	description = "Who let the chickens out? Who put them here? A chicken coop."
 
 /datum/map_template/greeble/jungleplanet/eighteen
 	name = "Jungle Greeble 18"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_18.dmm"
-	description = = "Mangrooves in the water."
+	description = "Mangrooves in the water."
 
 /datum/map_template/greeble/jungleplanet/nineteen
 	name = "Jungle Greeble 19"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_19.dmm"
-	description = = "Syndicate-flavored debris."
+	description = "Syndicate-flavored debris."
 
 /datum/map_template/greeble/jungleplanet/twenty
 	name = "Jungle Greeble 20"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_20.dmm"
-	description = = "Frontiersmen aren't very good pilots, are they?"
+	description = "Frontiersmen aren't very good pilots, are they?"
 
 /* Cave Greebles */
 
@@ -349,60 +349,60 @@
 /datum/map_template/greeble/jungleplanet/anomaly
 	name = "Jungle Anomaly Greeble 1"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_anomaly_1.dmm"
-	description = = "A pool of blood and its conductor."
+	description = "A pool of blood and its conductor."
 	clear_everything = TRUE
 
 /datum/map_template/greeble/jungleplanet/anomaly/two
 	name = "Jungle Anomaly Greeble 2"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_anomaly_2.dmm"
-	description = = "Death comes for us all eventually."
+	description = "Death comes for us all eventually."
 
 /datum/map_template/greeble/jungleplanet/anomaly/three
 	name = "Jungle Anomaly Greeble 3"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_anomaly_3.dmm"
-	description = = "This doesn't seem right."
+	description = "This doesn't seem right."
 
 /datum/map_template/greeble/jungleplanet/anomaly/four
 	name = "Jungle Anomaly Greeble 4"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_anomaly_4.dmm"
-	description = = "Jungle carpets."
+	description = "Jungle carpets."
 
 /datum/map_template/greeble/jungleplanet/anomaly/five
 	name = "Jungle Anomaly Greeble 5"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_anomaly_5.dmm"
-	description = = "A lone heartbeat chokes the land around it."
+	description = "A lone heartbeat chokes the land around it."
 
 /datum/map_template/greeble/jungleplanet/anomaly/six
 	name = "Jungle Anomaly Greeble 6"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_anomaly_6.dmm"
-	description = = "Go ahead, dump your waste. The frontier has a way with it."
+	description = "Go ahead, dump your waste. The frontier has a way with it."
 
 /datum/map_template/greeble/jungleplanet/anomaly/seven
 	name = "Jungle Anomaly Greeble 7"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_anomaly_7.dmm"
-	description = = "Something from outside! Something different!"
+	description = "Something from outside! Something different!"
 
 /datum/map_template/greeble/jungleplanet/anomaly/eight
 	name = "Jungle Anomaly Greeble 8"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_anomaly_8.dmm"
-	description = = "KILL YOUR TV"
+	description = "KILL YOUR TV"
 
 /datum/map_template/greeble/jungleplanet/anomaly/nine
 	name = "Jungle Anomaly Greeble 9"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_anomaly_9.dmm"
-	description = = "Feed the fountain of life with your corpse."
+	description = "Feed the fountain of life with your corpse."
 
 /datum/map_template/greeble/jungleplanet/anomaly/ten
 	name = "Jungle Anomaly Greeble 10"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_anomaly_10.dmm"
-	description = = "Not every dead mercenary gets buried."
+	description = "Not every dead mercenary gets buried."
 
 /datum/map_template/greeble/jungleplanet/anomaly/eleven
 	name = "Jungle Anomaly Greeble 11"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_anomaly_11.dmm"
-	description = = "Reach out and touch  me."
+	description = "Reach out and touch  me."
 
 /datum/map_template/greeble/jungleplanet/anomaly/twelve
 	name = "Jungle Anomaly Greeble 12"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_anomaly_12.dmm"
-	description = = "Will you join my friends and I?"
+	description = "Will you join my friends and I?"
