@@ -58,7 +58,8 @@
 /obj/item/weldingtool/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/update_icon_updates_onmob)
-	AddElement(/datum/element/tool_flash, light_range)
+	if(light_range > 0)
+		AddElement(/datum/element/tool_flash, light_range)
 
 /obj/item/weldingtool/update_icon_state()
 	if(welding)
