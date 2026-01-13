@@ -1,3 +1,19 @@
+///Use this to define a new ruinturf and associated subtypes easily.
+///Planetary types should still be explicitly defined for description fluff
+#define JUNGLE_TURF_HELPER(turf_type)					\
+	/turf/open/floor/##turf_type/jungleplanet {			\
+		initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS;	\
+		planetary_atmos = TRUE;							\
+		light_color = COLOR_JUNGLEPLANET_LIGHT;			\
+	}													\
+	/turf/open/floor/##turf_type/jungleplanet/lit {		\
+		light_power = 0.8;								\
+		light_range = 2;								\
+	}													\
+	/turf/open/floor/##turf_type/jungleplanet/interior {\
+		planetary_atmos = FALSE;						\
+	}
+
 //NEW and improved jungle turfs
 /turf/open/floor/plating/asteroid/dirt/jungle
 	name = "mud"
@@ -42,173 +58,70 @@
 	light_power = 0.8
 	light_color = LIGHT_COLOR_BLUEGREEN
 
+/turf/open/floor/plating/asteroid/sand/jungle
+	name = "river sand"
+	desc = "A thick, wet sand typically found against established bodies of water on jungle worlds."
+	icon = 'icons/turf/floors/beachsand_wet.dmi'
+	smooth_icon = 'icons/turf/floors/beachsand_wet.dmi'
+	planetary_atmos = TRUE
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+	light_color = COLOR_JUNGLEPLANET_LIGHT;
+
+/turf/open/floor/plating/asteroid/sand/jungle/lit
+	light_range = 2
+	light_power = 0.8
+
+/turf/open/floor/plating/moss/jungle
+	name = "jungle moss"
+	desc = "Moss often takes root in damp environments, usually accompanied by its fungus friends."
+	planetary_atmos = TRUE
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+	light_color = COLOR_JUNGLEPLANET_LIGHT;
+
+/turf/open/floor/plating/moss/jungle/lit
+	light_range = 2
+	light_power = 0.8
+
 //ruinturfs
 
-/turf/open/floor/plating/jungleplanet
-	planetary_atmos = TRUE
-	light_color = COLOR_JUNGLEPLANET_LIGHT
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+JUNGLE_TURF_HELPER(plating)
+JUNGLE_TURF_HELPER(plating/rust)
 
-/turf/open/floor/plating/jungleplanet/lit
-	light_range = 2
-	light_power = 1
+JUNGLE_TURF_HELPER(carpet)
+JUNGLE_TURF_HELPER(carpet/black)
+JUNGLE_TURF_HELPER(carpet/red)
+JUNGLE_TURF_HELPER(carpet/green)
+JUNGLE_TURF_HELPER(carpet/royalblack)
 
-//for bombed spartport
+JUNGLE_TURF_HELPER(plasteel)
+JUNGLE_TURF_HELPER(plasteel/dark)
+JUNGLE_TURF_HELPER(plasteel/white)
 
-/turf/open/floor/carpet/red/jungleplanet
-	planetary_atmos = TRUE
-	light_color = COLOR_JUNGLEPLANET_LIGHT
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+JUNGLE_TURF_HELPER(plasteel/mono/dark)
 
-/turf/open/floor/plasteel/jungleplanet
-	planetary_atmos = TRUE
-	light_color = COLOR_JUNGLEPLANET_LIGHT
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+JUNGLE_TURF_HELPER(plasteel/patterned/brushed)
 
-/turf/open/floor/plasteel/patterned/brushed/jungleplanet
-	planetary_atmos = TRUE
-	light_color = COLOR_JUNGLEPLANET_LIGHT
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+JUNGLE_TURF_HELPER(plasteel/freezer)
 
-/turf/open/floor/plasteel/freezer/jungleplanet
-	planetary_atmos = TRUE
-	light_color = COLOR_JUNGLEPLANET_LIGHT
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+JUNGLE_TURF_HELPER(plasteel/stairs)
+JUNGLE_TURF_HELPER(plasteel/stairs/wood)
 
-/turf/open/floor/plasteel/stairs/jungleplanet
-	planetary_atmos = TRUE
-	light_color = COLOR_JUNGLEPLANET_LIGHT
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 
-//end of stuff for starport
+JUNGLE_TURF_HELPER(wood)
 
-/turf/open/floor/plasteel/dark/jungleplanet
-	planetary_atmos = TRUE
-	light_color = COLOR_JUNGLEPLANET_LIGHT
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+JUNGLE_TURF_HELPER(wood/maple)
+JUNGLE_TURF_HELPER(wood/ebony)
+JUNGLE_TURF_HELPER(wood/mahogany)
 
-/turf/open/floor/plasteel/dark/jungleplanet/lit
-	light_range = 2
-	light_power = 1
-
-/turf/open/floor/plasteel/white/jungleplanet
-	planetary_atmos = TRUE
-	light_color = COLOR_JUNGLEPLANET_LIGHT
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/plasteel/white/jungleplanet/lit
-	light_range = 2
-	light_power = 1
-
-/turf/open/floor/plasteel/mono/dark/jungleplanet
-	planetary_atmos = TRUE
-	light_color = COLOR_JUNGLEPLANET_LIGHT
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/carpet/green/jungleplanet
-	planetary_atmos = TRUE
-	light_color = COLOR_JUNGLEPLANET_LIGHT
-
-/turf/open/floor/plasteel/mono/dark/jungleplanet/lit
-	light_range = 2
-	light_power = 1
-
-/turf/open/floor/wood/jungleplanet
-	planetary_atmos = TRUE
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/wood/maple/jungleplanet
-	planetary_atmos = TRUE
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/wood/ebony/jungleplanet
-	planetary_atmos = TRUE
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/wood/ebony/jungleplanet/lit
-	light_range = 2
-	light_power = 1
-	light_color = COLOR_JUNGLEPLANET_LIGHT
-
-/turf/open/floor/plasteel/stairs/wood/jungleplanet
-	planetary_atmos = TRUE
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/plasteel/stairs/wood/jungleplanet/lit
-	light_range = 2
-	light_power = 1
-	light_color = COLOR_JUNGLEPLANET_LIGHT
-
-/turf/open/floor/wood/mahogany/jungleplanet
-	planetary_atmos = TRUE
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/carpet/jungleplanet
-	planetary_atmos = TRUE
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/carpet/royalblack/jungleplanet
-	planetary_atmos = TRUE
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/carpet/black/jungleplanet
-	planetary_atmos = TRUE
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/carpet/red/jungleplanet
-	planetary_atmos = TRUE
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+JUNGLE_TURF_HELPER(engine/hull/interior)
 
 //cementcrete
 
-/turf/open/floor/concrete/jungleplanet
-	planetary_atmos = TRUE
-	light_color = COLOR_JUNGLEPLANET_LIGHT
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/concrete/jungleplanet/lit
-	light_range = 2
-	light_power = 1
-
-/turf/open/floor/concrete/slab_1/jungleplanet
-	planetary_atmos = TRUE
-	light_color = COLOR_JUNGLEPLANET_LIGHT
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/concrete/slab_1/jungleplanet/lit
-	light_range = 2
-	light_power = 1
-
-/turf/open/floor/concrete/reinforced/jungleplanet
-	planetary_atmos = TRUE
-	light_color = COLOR_JUNGLEPLANET_LIGHT
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/concrete/reinforced/jungleplanet/lit
-	light_range = 2
-	light_power = 1
-
-/turf/open/floor/concrete/pavement/jungleplanet
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/concrete/pavement/jungleplanet/lit
-	light_range = 2
-	light_power = 1
-	light_color = COLOR_JUNGLEPLANET_LIGHT
-
-/turf/open/floor/concrete/tiles/jungleplanet
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/concrete/tiles/jungleplanet/lit
-	light_range = 2
-	light_power = 1
-	light_color = COLOR_JUNGLEPLANET_LIGHT
-
-/turf/open/floor/engine/hull/interior
-	planetary_atmos = TRUE
-	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
-
-/turf/open/floor/engine/hull/interior/lit
-	light_range = 2
-	light_power = 1
-	light_color = COLOR_JUNGLEPLANET_LIGHT
+JUNGLE_TURF_HELPER(concrete)
+JUNGLE_TURF_HELPER(concrete/slab_1)
+JUNGLE_TURF_HELPER(concrete/slab_2)
+JUNGLE_TURF_HELPER(concrete/slab_3)
+JUNGLE_TURF_HELPER(concrete/slab_4)
+JUNGLE_TURF_HELPER(concrete/tiles)
+JUNGLE_TURF_HELPER(concrete/reinforced)
+JUNGLE_TURF_HELPER(concrete/pavement)
