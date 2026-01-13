@@ -438,7 +438,7 @@
 		return FLASH_DAMAGE
 	overlay_fullscreen("flash", type)
 	addtimer(CALLBACK(src, PROC_REF(clear_fullscreen), "flash", 25), 25)
-	return ALL
+	return FLASH_EFFECT | FLASH_DAMAGE
 
 //called when the mob receives a loud bang
 /mob/living/proc/soundbang_act()
