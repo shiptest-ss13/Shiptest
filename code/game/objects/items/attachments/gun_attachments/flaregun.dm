@@ -30,8 +30,9 @@
 			to_chat(user, span_warning("\The [name] already has a flare loaded!"))
 			return FALSE
 
-/obj/item/attachment/gun/flare/on_preattack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
-	if(!gun.safety)
+/obj/item/attachment/gun/flare/on_fire_gun(obj/item/gun/gun, mob/living/user, atom/target, flag, params)
+	var/list/modifiers = params2list(params)
+	if(!gun.safety && LAZYACCESS(modifiers, RIGHT_CLICK))
 		if(loaded_flare)
 			user.visible_message(span_warning("[user] fires a flare!"), span_warning("You fire the [name] at \the [target]!"))
 			var/obj/item/flashlight/flare/flare_to_fire = loaded_flare
@@ -43,7 +44,7 @@
 		else
 			to_chat(user,span_warning("\The [name] doesn't have a flare loaded!"))
 			playsound(src,'sound/weapons/gun/pistol/dry_fire.ogg')
-	return COMPONENT_NO_ATTACK
+		return COMPONENT_CANCEL_GUN_FIRE
 
 /obj/item/attachment/gun/flare/on_unique_action(obj/item/gun/gun, mob/user)
 	. = ..()

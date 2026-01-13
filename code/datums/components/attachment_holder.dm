@@ -29,6 +29,7 @@
 	RegisterSignal(parent, COMSIG_ATOM_EXAMINE, PROC_REF(handle_examine))
 	RegisterSignal(parent, COMSIG_ATOM_EXAMINE_MORE, PROC_REF(handle_examine_more))
 	RegisterSignal(parent, COMSIG_QDELETING, PROC_REF(handle_qdel))
+	RegisterSignal(parent, COMSIG_GUN_TRY_FIRE, PROC_REF(handle_gun_try_fire))
 	RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK_SECONDARY, PROC_REF(handle_item_pre_attack))
 	RegisterSignal(parent, COMSIG_TWOHANDED_WIELD, PROC_REF(handle_item_wield))
 	RegisterSignal(parent, COMSIG_TWOHANDED_UNWIELD, PROC_REF(handle_item_unwield))
@@ -199,6 +200,13 @@
 		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_ATTACK, parent, item, user))
 			parent.update_icon()
 			return TRUE
+
+/datum/component/attachment_holder/proc/handle_gun_try_fire(obj/item/gun/parent_gun, mob/user, atom/target, flag, params)
+	SIGNAL_HANDLER
+
+	for(var/obj/item/attach as anything in attachments)
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_TRY_FIRE_GUN, parent_gun, user, target, flag, params))
+			return COMPONENT_CANCEL_GUN_FIRE
 
 /datum/component/attachment_holder/proc/handle_item_pre_attack(obj/item/parent, atom/target_atom, mob/user, params)
 	SIGNAL_HANDLER
