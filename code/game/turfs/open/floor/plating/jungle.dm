@@ -58,6 +58,16 @@
 	light_power = 0.8
 	light_color = LIGHT_COLOR_BLUEGREEN
 
+//greeble
+/turf/open/water/jungle/blood
+	name = "blood"
+	desc = "The ichor of the long-dead, whipped into obedience by the sphere above it."
+	color = "#800000"
+	light_range = 2
+	light_power = 0.8
+	light_color = LIGHT_COLOR_BLOOD_MAGIC
+	reagent_to_extract = /datum/reagent/blood
+
 /turf/open/floor/plating/asteroid/sand/jungle
 	name = "river sand"
 	desc = "A thick, wet sand typically found against established bodies of water on jungle worlds."

@@ -6,6 +6,9 @@
 	core = /obj/item/assembly/signaler/anomaly/heartbeat
 	effectrange = 3
 	pulse_delay = 6 SECONDS
+
+	light_color = LIGHT_COLOR_GREEN
+
 	var/reagent_amount = 5
 
 /obj/effect/anomaly/heartbeat/anomalyEffect()

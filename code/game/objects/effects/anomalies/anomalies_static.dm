@@ -52,9 +52,11 @@ GLOBAL_LIST_INIT(tvstatic_sayings, list(
 	. = ..()
 	if(!iscarbon(user))
 		return
-	if(iscarbon(user) && !user.research_scanner) //this'll probably cause some weirdness when I start using research scanner in more places / on more items. Oh well.
+	if(iscarbon(user) && !user.research_scanner)
 		var/mob/living/carbon/victim = user
 		to_chat(victim, span_userdanger("Your head aches as you stare into [src]!"))
+		victim.flash_act(intensity = 3, visual=TRUE, type = /atom/movable/screen/fullscreen/flash/static)
+		SEND_SOUND(victim, 'sound/effects/anomaly/static.ogg')
 		victim.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5, 100)
 
 /obj/effect/anomaly/tvstatic/anomalyEffect()
@@ -76,7 +78,8 @@ GLOBAL_LIST_INIT(tvstatic_sayings, list(
 		if(HAS_TRAIT(looking, TRAIT_MINDSHIELD) || looking.stat == DEAD || looking.research_scanner || HAS_TRAIT(looking, TRAIT_DEAF))
 			continue
 		looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10, 200)
-		playsound(src, 'sound/effects/stall.ogg', 50)
+		looking.flash_act(intensity = 2, visual=TRUE, type = /atom/movable/screen/fullscreen/flash/static)
+		playsound(src, 'sound/effects/radiohiss.ogg', 50)
 		if(looking.getOrganLoss(ORGAN_SLOT_BRAIN) >= 150 && looking.stat != DEAD)
 			if(prob(20))
 				var/mob/living/carbon/victim = looking
@@ -128,6 +131,14 @@ GLOBAL_LIST_INIT(tvstatic_sayings, list(
 	immortal = TRUE
 	immobile = TRUE
 
+/obj/effect/anomaly/tvstatic/blackbox
+	name = "Quantum Blackbox"
+	desc = "Sometimes, something ends up in the wrong place. Detrius from a place that doesn't really exist. This is one of those things."
+	immortal = TRUE
+	immobile = TRUE
+	icon = 'icons/obj/stationobjs.dmi'
+	icon_state = "blackcube"
+
 /obj/effect/particle_effect/staticball
 	name = "static blob"
 	desc = "An unsettling mass of free floating static"
@@ -140,6 +151,6 @@ GLOBAL_LIST_INIT(tvstatic_sayings, list(
 
 /obj/effect/particle_effect/staticball/LateInitialize()
 	flick(icon_state, src)
-	playsound(src, "walkietalkie", 100, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
+	playsound(src, "walkietalkie", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 	QDEL_IN(src, 20)
 
