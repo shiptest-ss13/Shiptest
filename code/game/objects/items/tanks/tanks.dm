@@ -21,6 +21,7 @@
 	var/volume = 70
 
 	//Alert variables
+	var/nominal_alert = FALSE
 	var/warning_alert = FALSE
 	var/critical_warning_alert = FALSE
 	var/empty_alert = FALSE
@@ -78,7 +79,6 @@
 
 	START_PROCESSING(SSobj, src)
 
-	addtimer(CALLBACK(src, PROC_REF(pressure_alerts)), 1 SECONDS, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
 /obj/item/tank/proc/populate_gas()
 	return
@@ -228,6 +228,7 @@
 	//Allow for reactions
 	air_contents.react()
 	check_status()
+	pressure_alerts()
 
 /obj/item/tank/update_overlays()
 	. = ..()
@@ -238,17 +239,13 @@
 	// The extra icon state check prevents the icon state from being changed if it's already set to it
 	switch(pressure)
 		if((5 * ONE_ATMOSPHERE) to (29 * ONE_ATMOSPHERE))
-			if(status_overlay_icon_state != "status_nominal")
-				status_overlay_icon_state = "status_nominal"
+			status_overlay_icon_state = "status_nominal"
 		if((2 * ONE_ATMOSPHERE) to (5 * ONE_ATMOSPHERE))
-			if(status_overlay_icon_state != "status_warning")
-				status_overlay_icon_state = "status_warning"
+			status_overlay_icon_state = "status_warning"
 		if((0.75 * ONE_ATMOSPHERE) to (2 * ONE_ATMOSPHERE))
-			if(status_overlay_icon_state != "status_alert")
-				status_overlay_icon_state = "status_alert"
+			status_overlay_icon_state = "status_alert"
 		if((0 * ONE_ATMOSPHERE) to (0.75 * ONE_ATMOSPHERE))
-			if(status_overlay_icon_state != "status_critical")
-				status_overlay_icon_state = "status_critical"
+			status_overlay_icon_state = "status_critical"
 
 	// Actually sets the overlay. As of now, this has only been done for smaller emergency tanks
 	// The if statement is set as follows due to the coarse search type that the istype proc conducts, as subtypes count as valid types
@@ -335,22 +332,26 @@
 	// Binary variables are used here to prevent an alert from repeating more than once
 	switch(pressure)
 		if((5 * ONE_ATMOSPHERE) to (29 * ONE_ATMOSPHERE))
-			warning_alert = FALSE
-			critical_warning_alert = FALSE
-			empty_alert = FALSE
+			if(!nominal_alert)
+				nominal_alert = TRUE
+				update_overlays()
+				warning_alert = FALSE
+				critical_warning_alert = FALSE
+				empty_alert = FALSE
 		if((2 * ONE_ATMOSPHERE) to (5 * ONE_ATMOSPHERE))
 			if(!warning_alert)
 				warning_alert = TRUE
+				update_overlays()
 		if((0.75 * ONE_ATMOSPHERE) to (2 * ONE_ATMOSPHERE))
 			if(!critical_warning_alert)
 				critical_warning_alert = TRUE
+				update_overlays()
 				playsound(src, 'sound/machines/twobeep_high.ogg', 30, FALSE)
 				say("Tank pressure low -- Estimated time until depletion: [(src.volume/2) * 5] minutes.")
 		if((0 * ONE_ATMOSPHERE) to (0.75 * ONE_ATMOSPHERE))
 			if(!empty_alert)
 				empty_alert = TRUE
+				update_overlays()
 				playsound(src, 'sound/machines/twobeep_high.ogg', 30, FALSE)
 				playsound(src, 'sound/machines/beep.ogg', 30, FALSE)
 				say("Tank is nearly empty! Replacement recommended!")
-
-	update_overlays()
