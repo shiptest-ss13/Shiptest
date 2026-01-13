@@ -93,12 +93,13 @@
 /turf/open/floor/wood,
 /area/template_noop)
 "A" = (
-/obj/structure/closet/crate/grave{
-	desc = "A marked patch of soil, adorned with a cross. \"I WILL REMEMBER\" is scratched into the splintered wooden surface."
-	},
 /obj/item/gun/ballistic/rifle/illestren/sawn,
 /obj/item/clothing/head/beret/sec/frontier,
 /obj/effect/decal/remains/human,
+/obj/structure/closet/crate/grave{
+	desc = "A marked patch of soil, adorned with a cross. A simple flower is etched into the wood.";
+	opened = 0
+	},
 /turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
 /area/template_noop)
 "B" = (
@@ -164,10 +165,8 @@ a
 a
 a
 a
-a
 "}
 (2,1,1) = {"
-a
 O
 n
 n
@@ -177,7 +176,6 @@ O
 a
 "}
 (3,1,1) = {"
-a
 n
 C
 z
@@ -187,7 +185,6 @@ n
 a
 "}
 (4,1,1) = {"
-a
 e
 v
 A
@@ -197,7 +194,6 @@ l
 Q
 "}
 (5,1,1) = {"
-a
 H
 B
 u
@@ -207,7 +203,6 @@ W
 Q
 "}
 (6,1,1) = {"
-a
 v
 I
 f
@@ -217,22 +212,11 @@ n
 Q
 "}
 (7,1,1) = {"
-a
 n
 b
 s
 n
 n
 O
-a
-"}
-(8,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
 a
 "}
