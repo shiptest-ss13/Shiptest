@@ -980,16 +980,16 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 	icon_state = "pyre"
 	item_state = "pyre"
 	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
-	desc = "WIP"
+	desc = "A powerful lever-action rifle with hand-stamped Hunter's Pride marks on the receiver and an 5 round ammunition capacity. Bulky and unwieldy but devastatingly powerful. Chambered in .45-70."
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/winchester/pyre
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/winchester/pyre,
 	)
-	fire_delay = 1 SECONDS
+	fire_delay = 1.5 SECONDS
 	wield_slowdown = HEAVY_RIFLE_SLOWDOWN
 	spread_unwielded = 15
 	spread = 0
-	recoil = 1.5
+	recoil = 2
 	recoil_unwielded = 4
 
 	slot_offsets = list(
@@ -1002,6 +1002,11 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 	can_be_sawn_off = FALSE
 
 EMPTY_GUN_HELPER(shotgun/flamingarrow/pyre)
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/pyre/factory
+	icon_state = "pyre_factory"
+	item_state = "pyre_factory"
+	desc = "A powerful lever-action rifle with hand-stamped Hunter's Pride marks on the receiver and an 5 round ammunition capacity, in pristine wood furniture. Bulky and unwieldy but devastatingly powerful. Chambered in .45-70."
 
 //Break-Action Rifle
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon
