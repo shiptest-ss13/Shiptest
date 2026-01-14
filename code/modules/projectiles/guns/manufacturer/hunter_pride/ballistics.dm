@@ -985,7 +985,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/winchester/pyre,
 	)
-	fire_delay = 0.6 SECONDS
+	fire_delay = 1 SECONDS
 	wield_slowdown = HEAVY_RIFLE_SLOWDOWN
 	spread_unwielded = 15
 	spread = 0
@@ -1000,7 +1000,8 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 	)
 
 	can_be_sawn_off = FALSE
-	EMPTY_GUN_HELPER(shotgun/flamingarrow/pyre)
+
+EMPTY_GUN_HELPER(shotgun/flamingarrow/pyre)
 
 //Break-Action Rifle
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon
