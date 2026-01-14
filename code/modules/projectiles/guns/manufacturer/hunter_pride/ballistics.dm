@@ -987,6 +987,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 	)
 	fire_delay = 1 SECONDS
 	wield_slowdown = HEAVY_RIFLE_SLOWDOWN
+	wield_delay = 1 SECONDS
 	spread_unwielded = 15
 	spread = 0
 	recoil = 2
