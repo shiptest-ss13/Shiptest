@@ -130,6 +130,7 @@
 	light_range = 0
 
 	doesnt_keep_bullet = TRUE
+	casing_ejector = TRUE
 
 
 /obj/item/gun/ballistic/automatic/powered/gauss/claris/suns
@@ -214,8 +215,8 @@
 	wield_delay = 1.3 SECONDS
 
 /obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon
-	name = "Rail Cannon"
-	desc = "Rails you. Hard."
+	name = "Atelier Gauss Cannon"
+	desc = "When you need to pulverize a gnome."
 	icon = 'icons/obj/guns/manufacturer/solararmories/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/solararmories/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/solararmories/righthand.dmi'
@@ -230,8 +231,8 @@
 		/obj/item/stock_parts/cell/gun/solgov,
 	)
 
-	icon_state = "mecha_railgun"
-	item_state = "ssg669c"
+	icon_state = "railgun"
+	item_state = "railgun"
 
 	manufacturer = MANUFACTURER_SOLARARMORIES
 	spread = -5
@@ -250,3 +251,6 @@
 	empty_indicator = FALSE
 
 	canMouseDown = TRUE
+
+/obj/item/gun/ballistic/automatic/powered/gauss/rail_cannon/loaded
+	doesnt_keep_bullet = FALSE
