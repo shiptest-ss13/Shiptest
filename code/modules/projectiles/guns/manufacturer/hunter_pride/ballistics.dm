@@ -994,6 +994,11 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 	recoil_unwielded = 4
 	gunslinger_recoil_bonus = 0
 
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1
+	)
+
+
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
 		/obj/item/attachment/bayonet,
