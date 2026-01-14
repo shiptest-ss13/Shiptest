@@ -985,7 +985,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/winchester/pyre,
 	)
-	fire_delay = 1.5 SECONDS
+	fire_delay = 1 SECONDS
 	wield_slowdown = HEAVY_RIFLE_SLOWDOWN
 	spread_unwielded = 15
 	spread = 0
