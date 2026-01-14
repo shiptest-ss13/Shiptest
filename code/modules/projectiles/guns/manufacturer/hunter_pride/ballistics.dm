@@ -995,13 +995,15 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 	gunslinger_recoil_bonus = 0
 
 	slot_available = list(
-		ATTACHMENT_SLOT_MUZZLE = 1
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
 	)
 
 
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
 		/obj/item/attachment/bayonet,
+		/obj/item/attachment/scope
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
