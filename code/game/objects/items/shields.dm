@@ -38,10 +38,6 @@
 	var/obj/item/stack/sheet/repair_material = /obj/item/stack/sheet/plasteel
 	/// whether or not it is repairable
 	var/is_repairable = TRUE
-	/// The block chance the shield will revert to when repaired
-	var/standard_block_chance = 60
-	/// The slow down the shield will revert to when repaired
-	var/standard_slowdown = 1.25
 
 /obj/item/shield/proc/on_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
 	take_damage(damage)
@@ -67,7 +63,6 @@
 			. += span_info("It appears heavily damaged.")
 		if(0 to 25)
 			. += span_warning("It's falling apart!")
-	. += span_info("Block chance is at [block_chance].")
 
 /obj/item/shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK, damage_type = BRUTE)
 	if(transparent && (hitby.pass_flags & PASSGLASS))
@@ -88,7 +83,7 @@
 			to_chat(owner, span_boldwarning("Your shield is penetrated by [hitby]!"))
 			return FALSE
 	. = ..()
-	if(. && broken != TRUE)
+	if(. && !broken)
 		on_block(owner, hitby, attack_text, damage, attack_type, damage_type)
 
 /obj/item/shield/proc/repair(attacking_item, obj/item/stack/sheet, user)
@@ -97,17 +92,20 @@
 			to_chat(user, span_warning("[src] is already in perfect condition."))
 		else
 			while(atom_integrity < max_integrity)
+				var/obj/item/stack/sheet/material_used = attacking_item
+				if(material_used.contains < 10)
+					to_chat(user, span_notice("You do not have enough [material_used] to repair!"))
+					return
 				if(!do_after(user, 30, target= src))
 					return
-				var/obj/item/stack/sheet/material_used = attacking_item
 				material_used.use(10)
 				update_integrity(max_integrity)
 				to_chat(user, span_notice("You repair [src] with [material_used]."))
 				name = src::name
 				broken = FALSE
-				block_chance = standard_block_chance
-				slowdown = standard_slowdown
-				drag_slowdown = standard_slowdown
+				block_chance = initial(block_chance)
+				slowdown = initial(slowdown)
+				drag_slowdown = initial(drag_slowdown)
 	else
 		to_chat(user, span_warning("[src] isn't made of this material!"))
 
@@ -124,19 +122,17 @@
 			to_chat(user, span_warning("[src] cannot be repaired!"))
 
 /obj/item/shield/buckler
-	name = "Wooden buckler"
+	name = "wooden buckler"
 	desc = "A medieval wooden buckler."
 	icon_state = "buckler"
 	item_state = "buckler"
 	slowdown = 0
 	drag_slowdown = 0
-	standard_slowdown = 0
 	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 10)
 	resistance_flags = FLAMMABLE
 	block_chance = 25
-	standard_block_chance = 25
 	transparent = FALSE
 	max_integrity = 55
 	integrity_failure = 0.2
@@ -153,7 +149,7 @@
 	return ..()
 
 /obj/item/shield/energy
-	name = "Energy combat shield"
+	name = "energy combat shield"
 	desc = "A shield that reflects almost all energy projectiles, but is useless against physical attacks. It can be retracted, expanded, and stored anywhere."
 	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
@@ -206,7 +202,7 @@
 	add_fingerprint(user)
 
 /obj/item/shield/tele
-	name = "Telescopic shield"
+	name = "telescopic shield"
 	desc = "An advanced riot shield made of lightweight materials that collapses for easy storage."
 	icon_state = "teleriot0"
 	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
@@ -219,10 +215,8 @@
 	throw_range = 4
 	max_integrity = 300
 	block_chance = 50
-	standard_block_chance = 50
 	slowdown = 1
 	drag_slowdown = 1
-	standard_slowdown = 1
 	repair_material = /obj/item/stack/sheet/rglass
 	w_class = WEIGHT_CLASS_NORMAL
 	var/active = 0
@@ -254,7 +248,7 @@
 	add_fingerprint(user)
 
 /obj/item/shield/heavy
-	name = "Heavy ballistic shield"
+	name = "heavy ballistic shield"
 	desc = "A heavy shield designed to keep everything behind it safe from any due harm. Use 10 plasteel to repair."
 	icon_state = "heavy"
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
@@ -262,13 +256,11 @@
 	// It's a heavy shield. So it'll obviously weigh more, but it can certainly take more of a beating; as well as dish out some
 	slowdown = 1.50
 	drag_slowdown = 1.50
-	standard_slowdown = 1.50
 	throwforce = 10
 	throw_range = 2
 	max_integrity = 800
 	force = 10
 	block_chance = 60
-	standard_block_chance = 60
 	ap_threshold = 30
 	armor = list("melee" = 70, "bullet" = 70, "laser" = 70, "energy" = 0, "bomb" = 50, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 80)
 
@@ -284,8 +276,8 @@
 /// triggered on wield of two handed item
 /obj/item/shield/heavy/proc/on_wield(obj/item/source, mob/user)
 
-	if(broken != TRUE)
-		if(do_after(user, 30, user, IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE, TRUE))
+	if(!broken)
+		if(do_after(user, 3 SECONDS, user, IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE, TRUE))
 			block_chance = 85
 			slowdown = 3.50	// This is a huge block of plasteel that will block most attacks. You shouldn't be running forward with an SKM spraying and praying
 
@@ -294,8 +286,8 @@
 /obj/item/shield/heavy/proc/on_unwield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
-	if(broken != TRUE)
-		block_chance = 60
-		slowdown = 1.75
+	if(!broken)
+		block_chance = initial(block_chance)
+		slowdown = initial(slowdown)
 
 #undef BATON_BASH_COOLDOWN
