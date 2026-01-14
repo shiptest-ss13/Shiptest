@@ -341,7 +341,7 @@
 	muzzle_flash = new(src, muzzleflash_iconstate)
 	build_firemodes()
 	if(range_modifier)
-		AddComponent(/datum/component/scope, range_modifier = range_modifier)
+		AddComponent(/datum/component/scope, range_modifier = range_modifier, require_wielded = TRUE)
 	if(sawn_off)
 		sawoff(forced = TRUE)
 	if(slot_flags & ITEM_SLOT_SUITSTORE)
@@ -876,7 +876,7 @@
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 		recoil_bonus += gunslinger_recoil_bonus
 	recoil_bonus *= user.recoil_effect
-	return clamp(recoil_bonus, HAS_TRAIT(user, TRAIT_AIMING) ? min_recoil_aimed : min_recoil, INFINITY)
+	return clamp(recoil_bonus, HAS_TRAIT(user, TRAIT_USER_SCOPED) ? min_recoil_aimed : min_recoil, INFINITY)
 
 /obj/item/gun/proc/calculate_spread(mob/user, bonus_spread)
 	var/final_spread = 0
