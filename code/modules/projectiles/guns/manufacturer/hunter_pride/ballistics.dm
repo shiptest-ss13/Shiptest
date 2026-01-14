@@ -1004,6 +1004,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 EMPTY_GUN_HELPER(shotgun/flamingarrow/pyre)
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/pyre/factory
+	base_icon_state = "pyre_factory"
 	icon_state = "pyre_factory"
 	item_state = "pyre_factory"
 	desc = "A powerful lever-action rifle with hand-stamped Hunter's Pride marks on the receiver and an 5 round ammunition capacity, in pristine wood furniture. Bulky and unwieldy but devastatingly powerful. Chambered in .45-70."
