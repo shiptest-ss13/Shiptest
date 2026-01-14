@@ -93,7 +93,7 @@
 		else
 			while(atom_integrity < max_integrity)
 				var/obj/item/stack/sheet/material_used = attacking_item
-				if(material_used.contains < 10)
+				if(material_used.get_amount() < 10)
 					to_chat(user, span_notice("You do not have enough [material_used] to repair!"))
 					return
 				if(!do_after(user, 30, target= src))
