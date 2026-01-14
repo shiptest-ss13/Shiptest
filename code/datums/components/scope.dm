@@ -32,10 +32,10 @@
 	switch(zoom_method)
 		if(ZOOM_METHOD_RIGHT_CLICK)
 			RegisterSignal(parent, COMSIG_ITEM_AFTERATTACK_SECONDARY, PROC_REF(on_secondary_afterattack))
+			if(require_wielded)
+				RegisterSignal(parent, SIGNAL_REMOVETRAIT(TRAIT_WIELDED), PROC_REF(on_unwielded))
 		if(ZOOM_METHOD_WIELD)
 			RegisterSignal(parent, SIGNAL_ADDTRAIT(TRAIT_WIELDED), PROC_REF(on_wielded))
-			RegisterSignal(parent, SIGNAL_REMOVETRAIT(TRAIT_WIELDED), PROC_REF(on_unwielded))
-		else if(require_wielded)
 			RegisterSignal(parent, SIGNAL_REMOVETRAIT(TRAIT_WIELDED), PROC_REF(on_unwielded))
 	if(item_action_type)
 		var/obj/item/parent_item = parent
