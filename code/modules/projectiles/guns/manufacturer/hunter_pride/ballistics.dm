@@ -990,7 +990,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 	wield_delay = 1 SECONDS
 	spread_unwielded = 15
 	spread = 0
-	recoil = 2
+	recoil = 1.5
 	recoil_unwielded = 4
 	gunslinger_recoil_bonus = 0
 
