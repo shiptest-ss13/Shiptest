@@ -119,6 +119,8 @@
 #include "species_unique_id.dm"
 #include "species_whitelists.dm"
 #include "stack_singular_name.dm"
+#include "status_effect_ticks.dm"
+#include "stomach.dm"
 #include "subsystem_init.dm"
 #include "subsystem_metric_sanity.dm"
 #include "supply_pack.dm"
