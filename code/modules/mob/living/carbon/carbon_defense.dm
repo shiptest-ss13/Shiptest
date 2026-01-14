@@ -177,7 +177,7 @@
 
 /mob/living/carbon/attack_paw(mob/living/carbon/monkey/M)
 
-	if(can_inject(M, TRUE))
+	if(can_inject(M))
 		for(var/thing in diseases)
 			var/datum/disease/D = thing
 			if((D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN) && prob(85))
@@ -414,12 +414,30 @@
 	if(should_stun)
 		Paralyze(60)
 
+/mob/living/carbon/proc/help_extinguish_act(mob/living/carbon/helper)
+	if(on_fire && src != helper)
+		if(helper.check_hot_hands())
+			if(do_after(helper, 10, src))
+				adjust_fire_stacks(-3)
+				playsound(src.loc, 'sound/weapons/thudswoosh.ogg', 25, 1, 7)
+				helper.visible_message(span_danger("[helper] tries to put out the fire on [src]!"),
+					span_warning("You try to put out the fire on [src]!"), null, 5)
+				if(fire_stacks <= 0)
+					helper.visible_message(span_warning("[helper] has successfully extinguished the fire on [src]!"),
+						span_notice("You extinguished the fire on [src]."), null, 5)
+					extinguish_mob()
+					return TRUE
+				return TRUE
+		else
+			to_chat(helper, span_warning("You can't get close enough without getting burnt!"))
+	else
+		to_chat(helper, span_warning("You can't put [p_them()] out with just your bare hands!"))
+		return
+
 /mob/living/carbon/proc/help_shake_act(mob/living/carbon/M)
 	var/datum/component/mood/hugger_mood = M.GetComponent(/datum/component/mood)
 	var/nosound = FALSE
-	if(on_fire)
-		to_chat(M, span_warning("You can't put [p_them()] out with just your bare hands!"))
-		return
+
 
 	if(M == src && check_self_for_injuries())
 		return
@@ -750,10 +768,10 @@
 /obj/item/self_grasp/Destroy()
 	if(user)
 		to_chat(user, span_warning("You stop holding onto your[grasped_part ? " [grasped_part.name]" : "self"]."))
-		UnregisterSignal(user, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(user, COMSIG_QDELETING)
 
 	if(grasped_part)
-		UnregisterSignal(grasped_part, list(COMSIG_CARBON_REMOVE_LIMB, COMSIG_PARENT_QDELETING))
+		UnregisterSignal(grasped_part, list(COMSIG_CARBON_REMOVE_LIMB, COMSIG_QDELETING))
 		grasped_part.grasped_by = null
 
 	grasped_part = null
@@ -774,8 +792,8 @@
 
 	grasped_part = grasping_part
 	grasped_part.grasped_by = src
-	RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(qdel_void))
-	RegisterSignal(grasped_part, list(COMSIG_CARBON_REMOVE_LIMB, COMSIG_PARENT_QDELETING), PROC_REF(qdel_void))
+	RegisterSignal(user, COMSIG_QDELETING, PROC_REF(qdel_void))
+	RegisterSignal(grasped_part, list(COMSIG_CARBON_REMOVE_LIMB, COMSIG_QDELETING), PROC_REF(qdel_void))
 
 	user.visible_message(
 		span_danger("[user] grasps at [user.p_their()] [grasped_part.name], trying to stop the bleeding."),
@@ -823,3 +841,11 @@
 			check_projectile_dismemberment(P, def_zone)
 
 	return on_hit_state ? BULLET_ACT_HIT : BULLET_ACT_BLOCK
+
+/mob/living/carbon/proc/check_hot_hands()
+	var/can_handle_hot = FALSE
+	if(gloves && (gloves.max_heat_protection_temperature > 360))
+		can_handle_hot = TRUE
+	else if(HAS_TRAIT(src, TRAIT_RESISTHEAT) || HAS_TRAIT(src, TRAIT_RESISTHEATHANDS))
+		can_handle_hot = TRUE
+	return can_handle_hot

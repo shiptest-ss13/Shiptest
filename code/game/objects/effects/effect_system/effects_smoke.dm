@@ -233,17 +233,12 @@
 /////////////////////////////////////////////
 
 /obj/effect/particle_effect/smoke/chem
-
 	lifetime = 10
 
 /obj/effect/particle_effect/smoke/chem/thin
 	alpha = 100
 	opaque = FALSE
 	opaque = TRUE
-
-/obj/effect/particle_effect/smoke/chem/cigarette
-	alpha = 5
-	opaque = FALSE
 
 /obj/effect/particle_effect/smoke/chem/process(seconds_per_tick)
 	if(..())
@@ -332,18 +327,6 @@
 	if(S.amount)
 		S.spread_smoke() //calling process right now so the smoke immediately attacks mobs.
 
-/datum/effect_system/smoke_spread/chem/cigarette
-	effect_type = /obj/effect/particle_effect/smoke/chem/cigarette
-	fixed_color = "#aaaaaa"
-
-/datum/effect_system/smoke_spread/chem/cigarette/set_up(datum/reagents/carry = null, transfer_amount = 1, radius = 1, loca, silent = FALSE)
-	if(isturf(loca))
-		location = loca
-	else
-		location = get_turf(loca)
-	amount = radius
-	carry.copy_to(chemholder, transfer_amount, 0.25)
-
 /datum/effect_system/smoke_spread/chem/thin
 	effect_type = /obj/effect/particle_effect/smoke/chem/thin
 
@@ -357,6 +340,12 @@
 
 /obj/effect/particle_effect/smoke/transparent
 	opaque = FALSE
+
+/datum/effect_system/smoke_spread/transparent/cigarette
+	effect_type = /obj/effect/particle_effect/smoke/transparent/cigarette
+
+/obj/effect/particle_effect/smoke/transparent/cigarette
+	alpha = 5
 
 /proc/do_smoke(range=0, location=null, smoke_type=/obj/effect/particle_effect/smoke)
 	var/datum/effect_system/smoke_spread/smoke = new

@@ -233,14 +233,8 @@
 /area/ship/bridge)
 "q" = (
 /obj/structure/cable/yellow,
-/obj/machinery/telecomms/relay/preset/mining{
-	autolinkers = list("relay","hub");
-	freq_listening = list(1213);
-	id = "NGR Relay";
-	name = "NGR Relay";
-	network = "ngr_commnet"
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/telecomms/relay/preset/ngr,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "r" = (

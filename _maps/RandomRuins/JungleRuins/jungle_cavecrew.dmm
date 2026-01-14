@@ -1170,11 +1170,6 @@
 	pixel_x = -5;
 	pixel_y = -3
 	},
-/obj/effect/landmark/mission_poi/main{
-	mission_index = 2;
-	type_to_spawn = /obj/item/documents/frontier;
-	already_spawned = 1
-	},
 /obj/item/documents/frontier,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew/bridge)
@@ -2454,10 +2449,6 @@
 	dir = 10
 	},
 /obj/machinery/light/directional/south,
-/obj/effect/landmark/mission_poi/guard{
-	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/neutered;
-	mission_index = 2
-	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/cavecrew/bridge)
 "Ir" = (
@@ -3873,10 +3864,6 @@
 	icon_state = "1-2"
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/neutured,
-/obj/effect/landmark/mission_poi/main/kill{
-	already_spawned = 1;
-	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/officer
-	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew/bridge)
 "YE" = (
@@ -4009,7 +3996,6 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/secure/loot,
-/obj/item/wallframe/mission_viewer,
 /turf/open/floor/plasteel/patterned/cargo_one/jungleplanet,
 /area/ruin/jungle/cavecrew/cargo)
 "ZT" = (

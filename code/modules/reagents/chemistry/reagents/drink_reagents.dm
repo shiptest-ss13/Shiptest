@@ -545,8 +545,9 @@
 
 /datum/reagent/consumable/pacfuel/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-2 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
-	if(prob(10))
-		M?.mind.adjust_experience(/datum/skill/gaming, 5)
+	if(M.mind)
+		if(prob(10))
+			M?.mind.adjust_experience(/datum/skill/gaming, 5)
 	..()
 
 /datum/reagent/consumable/shoal_punch

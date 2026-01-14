@@ -545,7 +545,6 @@
 /// Proc to append behavior related to lying down.
 /mob/living/proc/on_lying_down(new_lying_angle)
 	layer = LYING_MOB_LAYER //so mob lying always appear behind standing mobs
-	ADD_TRAIT(src, TRAIT_UI_BLOCKED, LYING_DOWN_TRAIT)
 	ADD_TRAIT(src, TRAIT_PULL_BLOCKED, LYING_DOWN_TRAIT)
 	density = FALSE // We lose density and stop bumping passable dense things.
 	if(HAS_TRAIT(src, TRAIT_FLOORED) && !(dir & (NORTH|SOUTH)))
@@ -557,7 +556,6 @@
 	if(layer == LYING_MOB_LAYER)
 		layer = initial(layer)
 	density = initial(density) // We were prone before, so we become dense and things can bump into us again.
-	REMOVE_TRAIT(src, TRAIT_UI_BLOCKED, LYING_DOWN_TRAIT)
 	REMOVE_TRAIT(src, TRAIT_PULL_BLOCKED, LYING_DOWN_TRAIT)
 
 
@@ -2098,27 +2096,3 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
  */
 /mob/living/proc/has_reagent(reagent, amount = -1, needs_metabolizing = FALSE)
 	return reagents.has_reagent(reagent, amount, needs_metabolizing)
-
-/**
- * Removes reagents from the mob
- *
- * This will locate the reagent in the mob and remove it from reagent holders
- * Vars:
- * * reagent (typepath) takes a PATH to a reagent.
- * * custom_amount (int)(optional) checks for having a specific amount of that chemical.
- * * safety (bool) check for the trans_id_to
- */
-/mob/living/proc/remove_reagent(reagent, custom_amount, safety)
-	if(!custom_amount)
-		custom_amount = get_reagent_amount(reagent)
-	return reagents.remove_reagent(reagent, custom_amount, safety)
-
-/**
- * Returns the amount of a reagent from the mob
- *
- * This will locate the reagent in the mob and return the total amount from all reagent holders
- * Vars:
- * * reagent (typepath) takes a PATH to a reagent.
- */
-/mob/living/proc/get_reagent_amount(reagent)
-	return reagents.get_reagent_amount(reagent)

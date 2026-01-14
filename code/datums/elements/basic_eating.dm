@@ -5,7 +5,7 @@
  */
 /datum/element/basic_eating
 	element_flags = ELEMENT_BESPOKE
-	id_arg_index = 2
+	argument_hash_start_idx = 2
 	/// Amount to heal
 	var/heal_amt
 	/// Amount to hurt
@@ -34,14 +34,14 @@
 	src.food_types = food_types
 
 
-	RegisterSignal(target, COMSIG_PARENT_ATTACKBY, PROC_REF(try_feed))
+	RegisterSignal(target, COMSIG_ATOM_ATTACKBY, PROC_REF(try_feed))
 	RegisterSignal(target, COMSIG_ATOM_ATTACK_ANIMAL, PROC_REF(on_unarm_attack))
 
 /datum/element/basic_eating/Detach(datum/target)
 	REMOVE_TRAIT(target, TRAIT_MOB_EATER, REF(src))
 
 	UnregisterSignal(target, list(
-		COMSIG_PARENT_ATTACKBY,
+		COMSIG_ATOM_ATTACKBY,
 		COMSIG_ATOM_ATTACK_ANIMAL
 	))
 	return ..()
