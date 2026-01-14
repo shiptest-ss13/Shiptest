@@ -991,6 +991,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 	spread = 0
 	recoil = 2
 	recoil_unwielded = 4
+	gunslinger_recoil_bonus = 0
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
