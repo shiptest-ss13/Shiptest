@@ -106,7 +106,7 @@
 
 /datum/outfit/frontier/trooper/heavy
 	name = "Frontiersman Heavy Corpse"
-	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+	suit = /obj/item/clothing/suit/armor/vest/marine/frontier
 	head = /obj/item/clothing/head/beret/sec/frontier/officer
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/internals

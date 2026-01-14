@@ -283,6 +283,70 @@
 		return list("success" = FALSE, "message" = "Plasma fires aren't making trit!")
 	return ..()
 
+//This needs to be a special gas reaction or atmospheres will spontaneously combust
+/datum/gas_reaction/monoxidefire
+	name = "Carbon Monoxide Combustion"
+	id = "monoxidefire"
+	priority = -4
+
+/datum/gas_reaction/monoxidefire/init_reqs()
+	min_requirements = list(
+		"TEMP" = FIRE_MINIMUM_TEMPERATURE_TO_EXIST,
+		GAS_CO = MINIMUM_MOLE_COUNT,
+	)
+
+/datum/gas_reaction/monoxidefire/react(datum/gas_mixture/air, atom/location)
+	var/total_moles = air.total_moles()
+	var/initial_co = air.get_moles(GAS_CO)
+	var/list/cached_results = air.reaction_results
+	cached_results["fire"] = FALSE
+	if(initial_co / total_moles < MONOXIDE_MIN_BURN_CONCENTRATION)
+		return NO_REACTION
+
+	var/initial_ox = 0
+	var/total_ox_moles = 0
+	var/list/oxidizers = list()
+	var/list/oxidation_temps = GLOB.gas_data.oxidation_temperatures
+	var/list/oxidation_rates = GLOB.gas_data.oxidation_rates
+
+	var/temperature = air.return_temperature()
+	for(var/gas in air.get_gases())
+		var/oxidation_temp = oxidation_temps[gas]
+		if(oxidation_temp && oxidation_temp <= temperature)
+			var/amt = air.get_moles(gas)
+			oxidizers[gas] = amt
+			total_ox_moles += amt
+			initial_ox += amt * oxidation_rates[gas]
+
+	if(initial_ox < MINIMUM_MOLE_COUNT)
+		return NO_REACTION
+
+	var/reaction_rate = min(initial_ox * 0.5, initial_co) * (1 - 1 / (1 + ((initial_ox * 0.5) / initial_co))) * MONOXIDE_BURN_RATE
+	if(reaction_rate > MINIMUM_MOLE_COUNT)
+		var/old_heat_capacity = air.heat_capacity()
+		var/enthalpy_of_combustion = reaction_rate * (GLOB.gas_data.enthalpies[GAS_CO] - GLOB.gas_data.enthalpies[GAS_CO2])
+		air.adjust_moles(GAS_CO, -reaction_rate)
+		air.adjust_moles(GAS_CO2, reaction_rate)
+		for(var/oxidizer in oxidizers)
+			var/delta_moles = reaction_rate * 0.5 * oxidizers[oxidizer] / total_ox_moles
+			enthalpy_of_combustion += delta_moles * GLOB.gas_data.enthalpies[oxidizer]
+			air.adjust_moles(oxidizer, -delta_moles)
+		air.set_temperature((air.thermal_energy() + enthalpy_of_combustion) / old_heat_capacity)
+
+		if(isturf(location))
+			var/turf/turf_location = location
+			temperature = air.return_temperature()
+			if(temperature > FIRE_MINIMUM_TEMPERATURE_TO_EXIST)
+				turf_location.hotspot_expose(temperature, CELL_VOLUME)
+				for(var/I in location)
+					var/atom/movable/item = I
+					item.temperature_expose(air, temperature, CELL_VOLUME)
+				turf_location.temperature_expose(air, temperature, CELL_VOLUME)
+
+		cached_results["fire"] -= enthalpy_of_combustion
+
+	return cached_results["fire"] ? REACTING : NO_REACTION
+
 //freon reaction (is not a fire yet)
 /datum/gas_reaction/freonfire
 	priority = -3
@@ -337,7 +401,7 @@
 			air.set_temperature((temperature*old_heat_capacity + energy_released)/new_heat_capacity)
 
 /datum/gas_reaction/genericfire
-	priority = -4 // very last reaction
+	priority = -5 // very last reaction
 	name = "Combustion"
 	id = "genericfire"
 
