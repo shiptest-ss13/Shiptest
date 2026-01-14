@@ -974,6 +974,34 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 		item_state = "absolution_factory_sawn"
 		mob_overlay_state = item_state
 
+/obj/item/gun/ballistic/shotgun/flamingarrow/pyre
+	name = "HP Pyre"
+	base_icon_state = "pyre"
+	icon_state = "pyre"
+	item_state = "pyre"
+	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
+	desc = "WIP"
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/winchester/pyre
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/shot/winchester/pyre,
+	)
+	fire_delay = 0.6 SECONDS
+	wield_slowdown = HEAVY_RIFLE_SLOWDOWN
+	spread_unwielded = 15
+	spread = 0
+	recoil = 1.5
+	recoil_unwielded = 4
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 19,
+		)
+	)
+
+	can_be_sawn_off = FALSE
+	EMPTY_GUN_HELPER(shotgun/flamingarrow/pyre)
+
 //Break-Action Rifle
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon
 	name = "HP Beacon"
