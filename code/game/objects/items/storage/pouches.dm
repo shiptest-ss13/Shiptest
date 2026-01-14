@@ -85,6 +85,7 @@
 		/obj/item/ammo_box/a858,
 		/obj/item/ammo_box/vickland_a8_50r,
 		/obj/item/ammo_box/a300,
+		/obj/item/ammo_box/a4570,
 		/obj/item/ammo_box/a762_stripper,
 		/obj/item/ammo_box/amagpellet_claris,
 		/obj/item/stock_parts/cell/gun
