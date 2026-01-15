@@ -43,10 +43,9 @@
 /// before a component is removed from a datum because of RemoveComponent: (/datum/component)
 #define COMSIG_COMPONENT_REMOVING "component_removing"
 /// before a datum's Destroy() is called: (force), returning a nonzero value will cancel the qdel operation
-#define COMSIG_PARENT_PREQDELETED "parent_preqdeleted"
 #define COMSIG_PREQDELETED "parent_preqdeleted"
 /// just before a datum's Destroy() is called: (force), at this point none of the other components chose to interrupt qdel and Destroy will be called
-#define COMSIG_PARENT_QDELETING "parent_qdeleting"
+#define COMSIG_QDELETING "parent_qdeleting"
 /// generic topic handler (usr, href_list)
 #define COMSIG_TOPIC "handle_topic"
 
@@ -61,13 +60,13 @@
 //from SSatoms InitAtom - Only if the  atom was not deleted or failed initialization
 #define COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZE "atom_init_success"
 ///from base of atom/attackby(): (/obj/item, /mob/living, params)
-#define COMSIG_PARENT_ATTACKBY "atom_attackby"
+#define COMSIG_ATOM_ATTACKBY "atom_attackby"
 /// From base of [/obj/item/proc/pre_attack_secondary()]: (atom/target, mob/user, params)
 #define COMSIG_ITEM_PRE_ATTACK_SECONDARY "item_pre_attack_secondary"
 	#define COMPONENT_SECONDARY_CANCEL_ATTACK_CHAIN (1<<0)
 	#define COMPONENT_SECONDARY_CONTINUE_ATTACK_CHAIN (1<<1)
 	#define COMPONENT_SECONDARY_CALL_NORMAL_ATTACK_CHAIN (1<<2)
-#define COMSIG_PARENT_ATTACKBY_SECONDARY "atom_attackby_secondary"
+#define COMSIG_ATOM_ATTACKBY_SECONDARY "atom_attackby_secondary"
 /// From base of [/atom/proc/attack_hand_secondary]: (mob/user, list/modifiers) - Called when the atom receives a secondary unarmed attack.
 #define COMSIG_ATOM_ATTACK_HAND_SECONDARY "atom_attack_hand_secondary"
 ///Return this in response if you don't want afterattack to be called
@@ -79,11 +78,11 @@
 //from base of atom/attack_basic_mob(): (/mob/user)
 #define COMSIG_ATOM_ATTACK_BASIC_MOB "attack_basic_mob"
 ///from base of atom/examine(): (/mob)
-#define COMSIG_PARENT_EXAMINE "atom_examine"
+#define COMSIG_ATOM_EXAMINE "atom_examine"
 ///from base of atom/get_examine_name(): (/mob, list/overrides)
 #define COMSIG_ATOM_GET_EXAMINE_NAME "atom_examine_name"
 ///from base of atom/examine_more(): (/mob)
-#define COMSIG_PARENT_EXAMINE_MORE "atom_examine_more"
+#define COMSIG_ATOM_EXAMINE_MORE "atom_examine_more"
 	//Positions for overrides list
 	#define EXAMINE_POSITION_ARTICLE 1
 	#define EXAMINE_POSITION_BEFORE 2
@@ -189,6 +188,8 @@
 #define COMSIG_ATOM_CROWBAR_ACT "atom_crowbar_act"
 ///from base of atom/analyser_act(): (mob/living/user, obj/item/I)
 #define COMSIG_ATOM_ANALYSER_ACT "atom_analyser_act"
+///from base of atom/shovel_act(): (mob/living/user, obj/item/I)
+#define COMSIG_ATOM_SHOVEL_ACT "atom_shovel_act"
 ///from base of atom/deconstruct_act(): (mob/living/user, obj/item/I)
 #define COMSIG_ATOM_DECONSTRUCT_ACT "atom_deconstruct_act"
 
@@ -240,6 +241,8 @@
 #define COMSIG_LIVING_START_PULL "living_start_pull"
 ///called on /living when someone is pulled (mob/living/puller)
 #define COMSIG_LIVING_GET_PULLED "living_start_pulled"
+///from base of mob/living/set_body_position(): (new_position, old_position)
+#define COMSIG_LIVING_SET_BODY_POSITION "living_set_body_position"
 
 /////////////////
 //from base of area/Entered(): (/area). Sent to "area-sensitive" movables, see __DEFINES/traits.dm for info.
@@ -254,9 +257,12 @@
 	#define COMPONENT_ALLOW_EXAMINATE 1
 //from base of atom/CtrlClickOn(): (/mob)
 #define COMSIG_CLICK_CTRL "ctrl_click"
-//from base of atom/AltClick(): (/mob)
+///from base of atom/AltClick(): (/mob)
 #define COMSIG_CLICK_ALT "alt_click"
 	#define COMPONENT_CANCEL_CLICK_ALT (1<<0)
+///from base of atom/alt_click_secondary(): (/mob)
+#define COMSIG_CLICK_ALT_SECONDARY "alt_click_secondary"
+	#define COMPONENT_CANCEL_CLICK_ALT_SECONDARY (1<<0)
 //from base of atom/CtrlShiftClick(/mob)
 #define COMSIG_CLICK_CTRL_SHIFT "ctrl_shift_click"
 ///from base of atom/CtrlShiftRightClick(/mob)
@@ -441,6 +447,8 @@
 ///from base of mob/AltClickOn(): (atom/A)
 #define COMSIG_MOB_ALTCLICKON "mob_altclickon"
 	#define COMSIG_MOB_CANCEL_CLICKON (1<<0)
+///from base of mob/alt_click_on_secodary(): (atom/A)
+#define COMSIG_MOB_ALTCLICKON_SECONDARY "mob_altclickon_secondary"
 
 ///From base of mob/living/MobBump() (mob/living)
 #define COMSIG_LIVING_MOB_BUMP "living_mob_bump"
@@ -519,9 +527,9 @@
 #define COMSIG_LIVING_RESIST "living_resist"
 ///from base of mob/living/look_up() (/mob/living)
 #define COMSIG_LIVING_LOOK_UP "living_look_up"
-///from base of mob/living/IgniteMob() (/mob/living)
+///from base of mob/living/ignite_mob() (/mob/living)
 #define COMSIG_LIVING_IGNITED "living_ignite"
-///from base of mob/living/ExtinguishMob() (/mob/living)
+///from base of mob/living/extinguish_mob() (/mob/living)
 #define COMSIG_LIVING_EXTINGUISHED "living_extinguished"
 ///from base of mob/living/electrocute_act(): (shock_damage, source, siemens_coeff, flags)
 #define COMSIG_LIVING_ELECTROCUTE_ACT "living_electrocute_act"
@@ -829,3 +837,9 @@
 #define COMSIG_MOVETYPE_FLAG_ENABLED "movetype_flag_enabled"
 /// From base of datum/element/movetype_handler/on_movement_type_trait_loss: (flag)
 #define COMSIG_MOVETYPE_FLAG_DISABLED "movetype_flag_disabled"
+
+//from base of [/obj/effect/particle_effect/fluid/smoke/proc/smoke_mob]: (seconds_per_tick)
+#define COMSIG_CARBON_EXPOSED_TO_SMOKE "carbon_exposed_to_smoke"
+
+//from base of [/obj/item/organ/lungs/check_breath]: (datum/gas_mixture/breath, received_pressure_mult)
+#define COMSIG_CARBON_INHALED_GAS "carbon_inhaled_gas"

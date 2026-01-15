@@ -170,7 +170,7 @@
 	desc = "A sharp, concealable, spring-loaded knife."
 	flags_1 = CONDUCT_1
 	force = 3
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 	sharpness = SHARP_NONE
 	throwforce = 5
 	throw_speed = 3
@@ -189,7 +189,7 @@
 		throw_speed_on = 4, \
 		sharpness_on = SHARP_EDGED, \
 		hitsound_on = 'sound/weapons/bladeslice.ogg', \
-		w_class_on = WEIGHT_CLASS_NORMAL, \
+		w_class_on = WEIGHT_CLASS_SMALL, \
 		attack_verb_on = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut"), \
 	)
 

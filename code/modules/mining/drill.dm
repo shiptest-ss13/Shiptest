@@ -25,6 +25,7 @@
 
 	var/malfunction
 	var/active = FALSE
+	///the vein that we are currently drilling
 	var/obj/structure/vein/our_vein
 	var/datum/looping_sound/drill/soundloop
 	var/obj/item/stock_parts/cell/cell

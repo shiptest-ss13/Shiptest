@@ -52,6 +52,7 @@
 	key = "choke"
 	key_third_person = "chokes"
 	message = "chokes!"
+	stat_allowed = HARD_CRIT
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/cross
@@ -94,12 +95,20 @@
 	key = "cough"
 	key_third_person = "coughs"
 	message = "coughs!"
+	stat_allowed = SOFT_CRIT
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/cough/can_run_emote(mob/user, status_check = TRUE , intentional)
 	. = ..()
 	if(HAS_TRAIT(user, TRAIT_SOOTHED_THROAT))
 		return FALSE
+
+/datum/emote/living/wheeze
+	key = "wheeze"
+	key_third_person = "wheezes"
+	message = "wheezes!"
+	stat_allowed = SOFT_CRIT
+	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/dance
 	key = "dance"
@@ -122,6 +131,10 @@
 	stat_allowed = HARD_CRIT
 
 /datum/emote/living/deathgasp/run_emote(mob/user, params, type_override, intentional)
+	//prevents fake deathgasping
+	if(intentional)
+		return
+
 	var/mob/living/simple_animal/S = user
 	if(istype(S) && S.deathmessage)
 		message_simple = S.deathmessage
@@ -217,6 +230,7 @@
 /datum/emote/living/groan
 	key = "groan"
 	key_third_person = "groans"
+	stat_allowed = SOFT_CRIT
 	message = "groans!"
 
 /datum/emote/living/grimace
@@ -365,6 +379,7 @@
 	key = "shiver"
 	key_third_person = "shiver"
 	message = "shivers."
+	stat_allowed = SOFT_CRIT
 	emote_type = EMOTE_AUDIBLE
 
 #define SHIVER_LOOP_DURATION (1 SECONDS)
@@ -541,6 +556,7 @@
 /datum/emote/living/whimper
 	key = "whimper"
 	key_third_person = "whimpers"
+	stat_allowed = SOFT_CRIT
 	message = "whimpers."
 
 /datum/emote/living/wsmile
@@ -558,11 +574,13 @@
 	key = "gurgle"
 	key_third_person = "gurgles"
 	message = "makes an uncomfortable gurgle."
+	stat_allowed = HARD_CRIT
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/custom
 	key = "me"
 	key_third_person = "custom"
+	stat_allowed = SOFT_CRIT
 	message = null
 
 /datum/emote/living/custom/can_run_emote(mob/user, status_check, intentional)

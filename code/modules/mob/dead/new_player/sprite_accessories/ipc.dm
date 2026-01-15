@@ -509,3 +509,14 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/humaniform,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/humaniform,
 	)
+
+/datum/sprite_accessory/ipc_chassis/cybersun
+	name = "Cybersun Biodynamics S Series 'Ghost'"
+	chassis_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/ghost,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/ghost,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/ghost,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/ghost,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/ghost,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/ghost,
+	)

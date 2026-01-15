@@ -254,9 +254,9 @@
 
 	load_sound = 'sound/weapons/gun/gauss/pistol_reload.ogg'
 
-	refused_attachments = list(
-		/obj/item/attachment/gun,
-		)
+	//refused_attachments = list(
+	//	/obj/item/attachment/gun,
+	//	)
 
 /obj/item/ammo_casing/energy/kalix/pistol
 	fire_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'

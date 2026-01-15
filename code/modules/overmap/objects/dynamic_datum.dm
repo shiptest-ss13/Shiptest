@@ -157,10 +157,6 @@
 	if(length(mapzone?.get_mind_mobs()) || SSlag_switch.measures[DISABLE_PLANETDEL])
 		return FALSE //Dont fuck over stranded people
 
-	for(var/datum/mission/ruin/dynamic_mission in dynamic_missions)
-		if(dynamic_mission.active && !dynamic_mission.bound_left_location)
-			return FALSE //Dont fuck over people trying to complete a mission.
-
 	return TRUE
 
 /datum/overmap/dynamic/proc/reset_dynamic()
@@ -282,7 +278,6 @@
 	reserve_docks = dynamic_encounter_values[2]
 	ruin_turfs = dynamic_encounter_values[3]
 	spawned_ruins = dynamic_encounter_values[4]
-	spawned_mission_pois = dynamic_encounter_values[5]
 
 	var/datum/virtual_level/our_likely_vlevel = mapzone.virtual_levels[1]
 	if(istype(our_likely_vlevel) && selfloop)
@@ -307,22 +302,6 @@
 	for(var/ruin in ruin_turfs)
 		var/turf/ruin_turf = ruin_turfs[ruin]
 		message_admins(span_big("Click here to jump to \"[ruin]\": " + ADMIN_JMP(ruin_turf)))
-
-/datum/overmap/dynamic/ui_data(mob/user)
-	. = ..()
-	.["active_ruin_missions"] = list()
-	.["inactive_ruin_missions"] = list()
-	for(var/datum/mission/ruin/mission as anything in dynamic_missions)
-		if(mission.active)
-			.["active_ruin_missions"] += list(list(
-				"ref" = REF(mission),
-				"name" = mission.name,
-			))
-		else
-			.["inactive_ruin_missions"] += list(list(
-				"ref" = REF(mission),
-				"name" = mission.name,
-			))
 
 /datum/overmap/dynamic/empty
 	name = "Empty Space"

@@ -66,6 +66,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/slot_randomized					//keeps track of round-to-round randomization of the character slot, prevents overwriting
 	var/real_name						//our character's name
 	var/gender = MALE					//gender of character (well duh)
+	var/pronouns = "He"					//pronouns of character
 	var/age = 30						//age of character
 	var/underwear = "Nude"				//Type of underwear
 	var/underwear_color = "000"			//Greyscale color of underwear
@@ -144,6 +145,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"Female" = "female",
 							"Other" = "plural",
 							"None" = "neuter"
+						)
+	var/list/friendlyPronouns = list(
+							"He/Him" = "He",
+							"She/Her" = "She",
+							"They/Them" = "They",
+							"It/Its" = "It"
 						)
 	var/list/prosthetic_limbs = list(
 							BODY_ZONE_HEAD = PROSTHETIC_NORMAL,
@@ -342,7 +349,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(randomise[RANDOM_BODY] || randomise[RANDOM_BODY_ANTAG]) //doesn't work unless random body
 					dat += "<a href='byond://?_src_=prefs;preference=toggle_random;random_type=[RANDOM_GENDER]'>Always Random Gender: [(randomise[RANDOM_GENDER]) ? "Yes" : "No"]</A>"
 					dat += "<a href='byond://?_src_=prefs;preference=toggle_random;random_type=[RANDOM_GENDER_ANTAG]'>When Antagonist: [(randomise[RANDOM_GENDER_ANTAG]) ? "Yes" : "No"]</A>"
-
+			var/dispPronouns
+			if(pronouns == "He")
+				dispPronouns = "He/Him"
+			else if(pronouns == "She")
+				dispPronouns = "She/Her"
+			else if(pronouns == "It")
+				dispPronouns = "It/Its"
+			else
+				dispPronouns = "They/Them"
+			dat += "<br><b>Pronouns:</b> <a href='byond://?_src_=prefs;preference=pronouns'>[dispPronouns]</a>"
 			dat += "<br><b>Age:</b> <a href='byond://?_src_=prefs;preference=age;task=input'>[age]</a>"
 			if(randomise[RANDOM_BODY] || randomise[RANDOM_BODY_ANTAG]) //doesn't work unless random body
 				dat += "<a href='byond://?_src_=prefs;preference=toggle_random;random_type=[RANDOM_AGE]'>Always Random Age: [(randomise[RANDOM_AGE]) ? "Yes" : "No"]</A>"
@@ -2202,7 +2218,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						socks = random_socks()
 						facial_hairstyle = random_facial_hairstyle(gender)
 						hairstyle = random_hairstyle(gender)
-
+				if("pronouns")
+					var/pickedPronouns = input(user, "Choose your pronouns.", "Character Preference", pronouns) as null|anything in friendlyPronouns
+					if(pickedPronouns)
+						pronouns = friendlyPronouns[pickedPronouns]
 				if("fbp")
 					fbp = !fbp
 
@@ -2537,6 +2556,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.name = character.real_name
 
 	character.gender = gender
+	character.pronouns = pronouns
 	character.age = clamp(age, pref_species.species_age_min, pref_species.species_age_max)
 	character.eye_color = eye_color
 	var/obj/item/organ/eyes/organ_eyes = character.getorgan(/obj/item/organ/eyes)

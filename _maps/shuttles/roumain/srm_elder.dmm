@@ -167,14 +167,11 @@
 	pixel_x = 4;
 	pixel_y = -6
 	},
-/obj/item/clothing/suit/space/eva{
-	pixel_x = -8
-	},
-/obj/item/clothing/head/helmet/space/eva{
-	pixel_y = 8;
-	pixel_x = 8
-	},
 /obj/item/clothing/mask/gas/roumain,
+/obj/item/clothing/suit/space/hardsuit/mining/roumain{
+	pixel_x = -5;
+	pixel_y = -5
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/cargo)
 "bO" = (
@@ -380,6 +377,19 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ship/hallway/central)
+"dl" = (
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/tank/internals/emergency_oxygen/double{
+	pixel_x = 4;
+	pixel_y = -6
+	},
+/obj/item/clothing/mask/gas/roumain,
+/obj/item/clothing/suit/space/hardsuit/mining/roumain{
+	pixel_x = -7;
+	pixel_y = -4
+	},
+/turf/open/floor/wood/ebony,
+/area/ship/cargo)
 "dn" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4706,7 +4716,7 @@ Jx
 mA
 bN
 bN
-bN
+dl
 uY
 BA
 sH

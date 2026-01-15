@@ -11,6 +11,8 @@
 	now_failing = span_warning("An explosion of pain erupts in your lower right abdomen!")
 	now_fixed = span_info("The pain in your abdomen has subsided.")
 
+	food_reagents = list(/datum/reagent/consumable/nutriment/organ_tissue = 5, /datum/reagent/toxin/bad_food = 5)
+
 	var/inflamed
 
 /obj/item/organ/appendix/update_name()

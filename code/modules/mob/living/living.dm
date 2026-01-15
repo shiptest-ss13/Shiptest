@@ -545,7 +545,6 @@
 /// Proc to append behavior related to lying down.
 /mob/living/proc/on_lying_down(new_lying_angle)
 	layer = LYING_MOB_LAYER //so mob lying always appear behind standing mobs
-	ADD_TRAIT(src, TRAIT_UI_BLOCKED, LYING_DOWN_TRAIT)
 	ADD_TRAIT(src, TRAIT_PULL_BLOCKED, LYING_DOWN_TRAIT)
 	density = FALSE // We lose density and stop bumping passable dense things.
 	if(HAS_TRAIT(src, TRAIT_FLOORED) && !(dir & (NORTH|SOUTH)))
@@ -557,7 +556,6 @@
 	if(layer == LYING_MOB_LAYER)
 		layer = initial(layer)
 	density = initial(density) // We were prone before, so we become dense and things can bump into us again.
-	REMOVE_TRAIT(src, TRAIT_UI_BLOCKED, LYING_DOWN_TRAIT)
 	REMOVE_TRAIT(src, TRAIT_PULL_BLOCKED, LYING_DOWN_TRAIT)
 
 
@@ -581,9 +579,29 @@
 			return TRUE
 	return FALSE
 
-// Living mobs use can_inject() to make sure that the mob is not syringe-proof in general.
-/mob/living/proc/can_inject()
+/**
+ * Returns whether or not the mob can be injected. Should not perform any side effects.
+ *
+ * Arguments:
+ * * user - The user trying to inject the mob.
+ * * target_zone - The zone being targeted.
+ * * injection_flags - A bitflag for extra properties to check.
+ *   Check __DEFINES/injection.dm for more details, specifically the ones prefixed INJECT_CHECK_*.
+ */
+/mob/living/proc/can_inject(mob/user, target_zone, injection_flags)
 	return TRUE
+
+/**
+ * Like can_inject, but it can perform side effects.
+ *
+ * Arguments:
+ * * user - The user trying to inject the mob.
+ * * target_zone - The zone being targeted.
+ * * injection_flags - A bitflag for extra properties to check. Check __DEFINES/injection.dm for more details.
+ *   Check __DEFINES/injection.dm for more details. Unlike can_inject, the INJECT_TRY_* defines will behave differently.
+ */
+/mob/living/proc/try_inject(mob/user, target_zone, injection_flags)
+	return can_inject(user, target_zone, injection_flags)
 
 /mob/living/is_injectable(mob/user, allowmobs = TRUE)
 	return (allowmobs && reagents && can_inject(user))
@@ -591,6 +609,8 @@
 /mob/living/is_drawable(mob/user, allowmobs = TRUE)
 	return (allowmobs && reagents && can_inject(user))
 
+/mob/living/is_injectable(mob/user, allowmobs = TRUE)
+	return (allowmobs && reagents && can_inject(user))
 
 ///Sets the current mob's health value. Do not call directly if you don't know what you are doing, use the damage procs, instead.
 /mob/living/proc/set_health(new_value)
@@ -668,7 +688,7 @@
 		set_stat(UNCONSCIOUS) //the mob starts unconscious,
 		updatehealth() //then we check if the mob should wake up.
 		update_sight()
-		clear_alert("not_enough_oxy")
+		clear_alert(ALERT_NOT_ENOUGH_OXYGEN)
 		reload_fullscreen()
 		. = TRUE
 		if(mind)
@@ -719,8 +739,7 @@
 	cure_husk()
 	hallucination = 0
 	heal_overall_damage(INFINITY, INFINITY, INFINITY, null, TRUE) //heal brute and burn dmg on both organic and robotic limbs, and update health right away.
-	ExtinguishMob()
-	fire_stacks = 0
+	extinguish_mob()
 	confused = 0
 	drowsyness = 0
 	stuttering = 0
@@ -963,7 +982,7 @@
 	buckled.user_unbuckle_mob(src,src)
 
 /mob/living/proc/resist_fire()
-	return
+	return FALSE
 
 /mob/living/proc/resist_restraints()
 	return
@@ -1115,6 +1134,11 @@
 /mob/living/proc/get_permeability_protection(list/target_zones)
 	return 0
 
+/mob/living/proc/has_smoke_protection()
+	if(HAS_TRAIT(src, TRAIT_NOBREATH))
+		return TRUE
+	return FALSE
+
 /mob/living/proc/harvest(mob/living/user) //used for extra objects etc. in butchering
 	return
 
@@ -1190,56 +1214,148 @@
 /mob/living/proc/unfry_mob() //Callback proc to tone down spam from multiple sizzling frying oil dipping.
 	REMOVE_TRAIT(src, TRAIT_OIL_FRIED, "cooking_oil_react")
 
-//Mobs on Fire
-/mob/living/proc/IgniteMob()
-	if(fire_stacks > 0 && !on_fire)
-		on_fire = 1
-		src.visible_message(span_warning("[src] catches fire!"), \
-						span_userdanger("You're set on fire!"))
-		new/obj/effect/dummy/lighting_obj/moblight/fire(src)
-		throw_alert("fire", /atom/movable/screen/alert/fire)
-		update_fire()
-		SEND_SIGNAL(src, COMSIG_LIVING_IGNITED,src)
-		return TRUE
-	return FALSE
 
-/mob/living/proc/ExtinguishMob()
-	if(on_fire)
-		on_fire = 0
-		fire_stacks = 0
-		for(var/obj/effect/dummy/lighting_obj/moblight/fire/F in src)
-			qdel(F)
-		clear_alert("fire")
-		SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "on_fire")
-		SEND_SIGNAL(src, COMSIG_LIVING_EXTINGUISHED, src)
-		update_fire()
+/// Global list that containes cached fire overlays for mobs
+GLOBAL_LIST_EMPTY(fire_appearances)
 
-/mob/living/proc/adjust_fire_stacks(add_fire_stacks) //Adjusting the amount of fire_stacks we have on person
-	fire_stacks = clamp(fire_stacks + add_fire_stacks, -20, 20)
-	if(on_fire && fire_stacks <= 0)
-		ExtinguishMob()
+/mob/living/proc/ignite_mob()
+	if(fire_stacks <= 0)
+		return FALSE
+
+	var/datum/status_effect/fire_handler/fire_stacks/fire_status = has_status_effect(/datum/status_effect/fire_handler/fire_stacks)
+	if(!fire_status || fire_status.on_fire)
+		return FALSE
+
+	return fire_status.ignite()
+
+/**
+ * Extinguish all fire on the mob
+ *
+ * This removes all fire stacks, fire effects, alerts, and moods
+ * Signals the extinguishing.
+ */
+/mob/living/proc/extinguish_mob()
+	var/datum/status_effect/fire_handler/fire_stacks/fire_status = has_status_effect(/datum/status_effect/fire_handler/fire_stacks)
+	if(!fire_status || !fire_status.on_fire)
+		return
+	remove_status_effect(/datum/status_effect/fire_handler/fire_stacks)
+
+/**
+ * Adjust the amount of fire stacks on a mob
+ *
+ * This modifies the fire stacks on a mob.
+ *
+ * Vars:
+ * * stacks: int The amount to modify the fire stacks
+ * * fire_type: type Type of fire status effect that we apply, should be subtype of /datum/status_effect/fire_handler/fire_stacks
+ */
+
+/mob/living/proc/adjust_fire_stacks(stacks, fire_type = /datum/status_effect/fire_handler/fire_stacks)
+	if(stacks < 0)
+		stacks = max(-fire_stacks, stacks)
+	apply_status_effect(fire_type, stacks)
+
+/mob/living/proc/adjust_wet_stacks(stacks, wet_type = /datum/status_effect/fire_handler/wet_stacks)
+	if(stacks < 0)
+		stacks = max(fire_stacks, stacks)
+	apply_status_effect(wet_type, stacks)
+
+/**
+* Set the fire stacks on a mob
+*
+* This sets the fire stacks on a mob, stacks are clamped between -20 and 20.
+* If the fire stacks are reduced to 0 then we will extinguish the mob.
+*
+* Vars:
+* * stacks: int The amount to set fire_stacks to
+* * fire_type: type Type of fire status effect that we apply, should be subtype of /datum/status_effect/fire_handler/fire_stacks
+* * remove_wet_stacks: bool If we remove all wet stacks upon doing this
+*/
+
+/mob/living/proc/set_fire_stacks(stacks, fire_type = /datum/status_effect/fire_handler/fire_stacks, remove_wet_stacks = TRUE)
+	if(stacks < 0) //Shouldn't happen, ever
+		CRASH("set_fire_stacks recieved negative [stacks] fire stacks")
+
+	if(remove_wet_stacks)
+		remove_status_effect(/datum/status_effect/fire_handler/wet_stacks)
+
+	if(stacks == 0)
+		remove_status_effect(fire_type)
+		return
+
+	apply_status_effect(fire_type, stacks, TRUE)
+
+/mob/living/proc/set_wet_stacks(stacks, wet_type = /datum/status_effect/fire_handler/wet_stacks, remove_fire_stacks = TRUE)
+	if(stacks < 0)
+		CRASH("set_wet_stacks recieved negative [stacks] wet stacks")
+
+	if(remove_fire_stacks)
+		remove_status_effect(/datum/status_effect/fire_handler/fire_stacks)
+
+	if(stacks == 0)
+		remove_status_effect(wet_type)
+		return
+
+	apply_status_effect(wet_type, stacks, TRUE)
 
 //Share fire evenly between the two mobs
 //Called in MobBump() and Crossed()
-/mob/living/proc/spreadFire(mob/living/L)
-	if(!istype(L))
+/mob/living/proc/spreadFire(mob/living/spread_to)
+	if(!istype(spread_to))
 		return
 
-	if(on_fire)
-		if(L.on_fire) // If they were also on fire
-			var/firesplit = (fire_stacks + L.fire_stacks)/2
-			fire_stacks = firesplit
-			L.fire_stacks = firesplit
-		else // If they were not
-			fire_stacks /= 2
-			L.fire_stacks += fire_stacks
-			if(L.IgniteMob()) // Ignite them
-				log_game("[key_name(src)] bumped into [key_name(L)] and set them on fire")
+	// can't spread fire to mobs that don't catch on fire
+	if(HAS_TRAIT(spread_to, TRAIT_NOFIRE_SPREAD) || HAS_TRAIT(src, TRAIT_NOFIRE_SPREAD))
+		return
 
-	else if(L.on_fire) // If they were on fire and we were not
-		L.fire_stacks /= 2
-		fire_stacks += L.fire_stacks
-		IgniteMob() // Ignite us
+	var/datum/status_effect/fire_handler/fire_stacks/fire_status = has_status_effect(/datum/status_effect/fire_handler/fire_stacks)
+	var/datum/status_effect/fire_handler/fire_stacks/their_fire_status = spread_to.has_status_effect(/datum/status_effect/fire_handler/fire_stacks)
+	if(fire_status && fire_status.on_fire)
+		if(their_fire_status && their_fire_status.on_fire)
+			var/firesplit = (fire_stacks + spread_to.fire_stacks) / 2
+			var/fire_type = (spread_to.fire_stacks > fire_stacks) ? their_fire_status.type : fire_status.type
+			set_fire_stacks(firesplit, fire_type)
+			spread_to.set_fire_stacks(firesplit, fire_type)
+			return
+
+		adjust_fire_stacks(-fire_stacks / 2, fire_status.type)
+		spread_to.adjust_fire_stacks(fire_stacks, fire_status.type)
+		if(spread_to.ignite_mob())
+			log_game("[key_name(src)] bumped into [key_name(spread_to)] and set them on fire")
+		return
+
+	if(!their_fire_status || !their_fire_status.on_fire)
+		return
+
+	spread_to.adjust_fire_stacks(-spread_to.fire_stacks / 2, their_fire_status.type)
+	adjust_fire_stacks(spread_to.fire_stacks, their_fire_status.type)
+	ignite_mob()
+
+/**
+ * Gets the fire overlay to use for this mob
+ *
+ * Args:
+ * * stacks: Current amount of fire_stacks
+ * * on_fire: If we're lit on fire
+ *
+ * Return a mutable appearance, the overlay that will be applied.
+ */
+
+/mob/living/proc/get_fire_overlay(stacks, on_fire)
+	RETURN_TYPE(/mutable_appearance)
+	return null
+
+/**
+* Handles effects happening when mob is on normal fire
+*
+* Vars:
+* * delta_time
+* * times_fired
+* * fire_handler: Current fire status effect that called the proc
+*/
+
+/mob/living/proc/on_fire_stack(delta_time, times_fired, datum/status_effect/fire_handler/fire_stacks/fire_handler)
+	return
 
 //Mobs on Fire end
 
@@ -1810,6 +1926,7 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 		return
 	. = body_position
 	body_position = new_value
+	SEND_SIGNAL(src, COMSIG_LIVING_SET_BODY_POSITION, new_value, .)
 	if(new_value == LYING_DOWN) // From standing to lying down.
 		if(has_gravity() && m_intent != MOVE_INTENT_WALK)
 			playsound(src, "bodyfall", 50, TRUE) // Will play the falling sound if not walking
@@ -1979,27 +2096,3 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
  */
 /mob/living/proc/has_reagent(reagent, amount = -1, needs_metabolizing = FALSE)
 	return reagents.has_reagent(reagent, amount, needs_metabolizing)
-
-/**
- * Removes reagents from the mob
- *
- * This will locate the reagent in the mob and remove it from reagent holders
- * Vars:
- * * reagent (typepath) takes a PATH to a reagent.
- * * custom_amount (int)(optional) checks for having a specific amount of that chemical.
- * * safety (bool) check for the trans_id_to
- */
-/mob/living/proc/remove_reagent(reagent, custom_amount, safety)
-	if(!custom_amount)
-		custom_amount = get_reagent_amount(reagent)
-	return reagents.remove_reagent(reagent, custom_amount, safety)
-
-/**
- * Returns the amount of a reagent from the mob
- *
- * This will locate the reagent in the mob and return the total amount from all reagent holders
- * Vars:
- * * reagent (typepath) takes a PATH to a reagent.
- */
-/mob/living/proc/get_reagent_amount(reagent)
-	return reagents.get_reagent_amount(reagent)

@@ -155,6 +155,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/podium)
 	icon_state = "podium_inteq"
 	item_state = "inteq_generic"
 
+NO_MAG_GUN_HELPER(automatic/pistol/podium/inteq)
 
 /obj/item/ammo_box/magazine/m46_30_podium
 	name = "Podium magazine (4.6x30mm)"
@@ -290,6 +291,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 			"y" = 17,
 		)
 	)
+NO_MAG_GUN_HELPER(automatic/smg/expedition)
 
 /obj/item/ammo_box/magazine/m9mm_expedition
 	name = "expedition submachinegun magazine (9x18mm)"
@@ -343,7 +345,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 
 	fire_delay = 0.13 SECONDS
 
-	spread = 7
+	spread = 8
 	spread_unwielded = 10
 
 	recoil = 0
@@ -408,6 +410,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 		/obj/item/attachment/foldable_stock/resolution_inteq
 	)
 
+NO_MAG_GUN_HELPER(automatic/smg/resolution/inteq)
+
 /obj/item/ammo_box/magazine/wt550m9
 	name = "Resolution magazine (4.6x30mm)"
 	desc = "A 30-round magazine for the Resolution personal defense weapon. These rounds do okay damage with average performance against armor."
@@ -451,7 +455,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 	semi_auto = TRUE
 	casing_ejector = TRUE
 
-	refused_attachments = list(/obj/item/attachment/gun)
+	//refused_attachments = list(/obj/item/attachment/gun)
 
 /obj/item/gun/ballistic/shotgun/automatic/negotiator/secondary_action(user)
 	toggle_tube(user)

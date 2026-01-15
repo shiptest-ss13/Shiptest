@@ -143,7 +143,7 @@
 
 		if(!QDELETED(O) && isliving(O)) // can't ignite something that doesn't exist
 			var/mob/living/L = O
-			if(L.IgniteMob())
+			if(L.ignite_mob())
 				message_admins("[ADMIN_LOOKUPFLW(user)] set [key_name_admin(L)] on fire with [src] at [AREACOORD(user)]")
 				log_game("[key_name(user)] set [key_name(L)] on fire with [src] at [AREACOORD(user)]")
 
@@ -162,7 +162,7 @@
 
 		if(!QDELETED(O) && isliving(O)) // can't ignite something that doesn't exist
 			var/mob/living/L = O
-			if(L.IgniteMob())
+			if(L.ignite_mob())
 				message_admins("[ADMIN_LOOKUPFLW(user)] set [key_name_admin(L)] on fire with [src] at [AREACOORD(user)]")
 				log_game("[key_name(user)] set [key_name(L)] on fire with [src] at [AREACOORD(user)]")
 

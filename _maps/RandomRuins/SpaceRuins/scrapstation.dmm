@@ -1549,6 +1549,18 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/pgf_wreck/cargo)
+"je" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 5
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/lime{
+	dir = 1
+	},
+/obj/structure/sign/poster/pgf/random{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/space/pgf_wreck)
 "jl" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
@@ -1911,9 +1923,6 @@
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/lime{
 	dir = 1
-	},
-/obj/structure/sign/poster/contraband/pgf{
-	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
@@ -3374,11 +3383,6 @@
 	minimum_distance = 1;
 	retreat_distance = null;
 	name = "Foreman Bonsha"
-	},
-/obj/effect/landmark/mission_poi/main/kill{
-	already_spawned = 1;
-	type_to_spawn = /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun;
-	mission_index = 2
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
@@ -6370,6 +6374,9 @@
 	},
 /obj/effect/turf_decal/corner/opaque/lime/mono,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/pgf/random{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/space/pgf_wreck)
 "Ka" = (
@@ -6625,10 +6632,6 @@
 /obj/structure/closet/body_bag,
 /obj/effect/mob_spawn/human/corpse/pgf/captain,
 /obj/item/storage/belt/sabre/pgf,
-/obj/effect/landmark/mission_poi/main{
-	already_spawned = 1;
-	spawn_in_containter = 1
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/pgf_wreck/cargo)
 "Ll" = (
@@ -11723,7 +11726,7 @@ av
 GI
 fG
 sM
-Sr
+je
 gr
 sM
 Hi

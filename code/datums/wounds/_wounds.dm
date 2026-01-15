@@ -135,6 +135,7 @@
 
 	if(status_effect_type)
 		linked_status_effect = victim.apply_status_effect(status_effect_type, src)
+		RegisterSignal(linked_status_effect, COMSIG_QDELETING, PROC_REF(on_status_effect_remove))
 	SEND_SIGNAL(victim, COMSIG_CARBON_GAIN_WOUND, src, limb)
 
 	if(!victim.alerts["wound"]) // only one alert is shared between all of the wounds
@@ -246,6 +247,12 @@
 		if(WOUND_SEVERITY_LOSS)
 			victim.reagents.add_reagent(/datum/reagent/determination, WOUND_DETERMINATION_LOSS)
 
+/// Handles unlinking the linked status effect on deletion.
+/datum/wound/proc/on_status_effect_remove()
+	SIGNAL_HANDLER
+	UnregisterSignal(linked_status_effect, COMSIG_QDELETING)
+	linked_status_effect = null
+
 /**
  * try_treating() is an intercept run from [/mob/living/carbon/proc/attackby] right after surgeries but before anything else. Return TRUE here if the item is something that is relevant to treatment to take over the interaction.
  *
@@ -286,7 +293,7 @@
 	// & such may need to use bone gel but may be wearing a space suit for..... whatever reason a skeleton would wear a space suit for
 	if(ishuman(victim))
 		var/mob/living/carbon/human/victim_human = victim
-		if(!victim_human.can_inject(user, TRUE, ignore_species = TRUE))
+		if(!victim_human.can_inject(user, injection_flags = INJECT_CHECK_IGNORE_SPECIES))
 			return TRUE
 
 	// lastly, treat them
@@ -298,7 +305,7 @@
 	return FALSE
 
 /// Like try_treating() but for unhanded interactions from humans, used by joint dislocations for manual bodypart chiropractice for example. Ignores thick material checks since you can pop an arm into place through a thick suit unlike using sutures
-/datum/wound/proc/try_handling(mob/living/carbon/human/user)
+/datum/wound/proc/try_handling(mob/living/carbon/human/user, list/modifiers)
 	return FALSE
 
 /// Someone is using something that might be used for treating the wound on this limb
@@ -333,6 +340,14 @@
 
 /// When ysiltane/alvitane/quardextane is applied to the victim, we call this.
 /datum/wound/proc/on_tane(power)
+	return
+
+/// Applied on crystal reagent application
+/datum/wound/proc/on_crystal(power)
+	return
+
+/// Applied on rezadone application
+/datum/wound/proc/on_rezadone(power)
 	return
 
 /// Called when the patient is undergoing stasis, so that having fully treated a wound doesn't make you sit there helplessly until you think to unbuckle them
