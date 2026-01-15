@@ -1009,7 +1009,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 48,
 			"y" = 19,
-		)
+		),
 		ATTACHMENT_SLOT_SCOPE = list(
 			"x" = 25,
 			"y" = 21,
