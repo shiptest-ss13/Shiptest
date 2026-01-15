@@ -69,7 +69,7 @@
 	duration = 30
 	status_type = STATUS_EFFECT_MULTIPLE
 	alert_type = null
-	tick_interval = 1
+	tick_interval = 2
 	var/atom/movable/screen/seedling/seedling_screen_object
 	var/atom/target
 
