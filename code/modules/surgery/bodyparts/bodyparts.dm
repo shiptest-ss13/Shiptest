@@ -479,6 +479,10 @@
 		var/datum/wound_pregen_data/possible_pregen_data = SSwounds.pregen_data[possible_wound]
 		possible_wounds -= possible_wound
 
+		// this makes muscle wounds show up less consistently at the same time as others
+		if(LAZYLEN(applied_wounds) && !prob(possible_wounds[possible_wound]))
+			continue
+
 		var/datum/wound/replaced_wound
 		for(var/i in wounds)
 			var/datum/wound/existing_wound = i
