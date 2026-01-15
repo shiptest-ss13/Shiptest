@@ -1002,9 +1002,9 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
-		/obj/item/attachment/bayonet,
-		/obj/item/attachment/scope
-	)
+		/obj/item/attachment/bayonet
+		)
+	unique_attachments = list(/obj/item/attachment/scope)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 48,
