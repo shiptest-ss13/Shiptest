@@ -103,6 +103,7 @@
 	head = /obj/item/clothing/head/ramzi/beret
 	back = null
 	mask = /obj/item/clothing/mask/breath/facemask
+	neck = /obj/item/clothing/neck/dogtag/gold
 
 /obj/effect/mob_spawn/human/corpse/ramzi/officer
 	name = "Ramzi Clique Officer"

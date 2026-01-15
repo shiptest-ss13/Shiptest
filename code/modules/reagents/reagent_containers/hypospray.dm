@@ -64,7 +64,7 @@
 		if(M.reagents)
 			var/trans = 0
 			if(!infinite)
-				trans = reagents.trans_to(M, amount_per_transfer_from_this, transfered_by = user, method = INJECT)
+				trans = reagents.trans_to(M, amount_per_transfer_from_this, transfered_by = user, methods = INJECT)
 			else
 				reagents.expose(M, INJECT, fraction)
 				trans = reagents.copy_to(M, amount_per_transfer_from_this)
@@ -599,7 +599,7 @@
 
 				var/fraction = min(vial.amount_per_transfer_from_this/vial.reagents.total_volume, 1)
 				vial.reagents.expose(L, INJECT, fraction)
-				vial.reagents.trans_to(target, vial.amount_per_transfer_from_this, method = INJECT)
+				vial.reagents.trans_to(target, vial.amount_per_transfer_from_this, methods = INJECT)
 				if(vial.amount_per_transfer_from_this >= 15)
 					playsound(loc,'sound/items/hypospray_long.ogg',50, 1, -1)
 				if(vial.amount_per_transfer_from_this < 15)
@@ -630,7 +630,7 @@
 						L.log_message("<font color='orange'>applied [src] to  themselves ([contained]).</font>", INDIVIDUAL_ATTACK_LOG)
 				var/fraction = min(vial.amount_per_transfer_from_this/vial.reagents.total_volume, 1)
 				vial.reagents.expose(L, PATCH, fraction)
-				vial.reagents.trans_to(target, vial.amount_per_transfer_from_this, method = PATCH)
+				vial.reagents.trans_to(target, vial.amount_per_transfer_from_this, methods = PATCH)
 				if(vial.amount_per_transfer_from_this >= 15)
 					playsound(loc,'sound/items/hypospray_long.ogg',50, 1, -1)
 				if(vial.amount_per_transfer_from_this < 15)

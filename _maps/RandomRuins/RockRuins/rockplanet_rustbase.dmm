@@ -961,10 +961,6 @@
 /mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/sledge{
 	name = "Captain Dwight"
 	},
-/obj/effect/landmark/mission_poi/main/kill{
-	already_spawned = 1;
-	type_to_spawn = /mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/sledge
-	},
 /turf/open/floor/plasteel/white,
 /area/ruin/rockplanet/rust_base/bridge)
 "ke" = (
@@ -1952,11 +1948,6 @@
 "tI" = (
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun{
 	name = "'Armored' O. Ray"
-	},
-/obj/effect/landmark/mission_poi/main/kill{
-	already_spawned = 1;
-	type_to_spawn = /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun;
-	mission_index = 2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)

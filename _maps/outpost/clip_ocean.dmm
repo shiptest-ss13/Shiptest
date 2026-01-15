@@ -31,9 +31,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
-/obj/machinery/camera/autoname{
-	dir = 2
-	},
+/obj/machinery/camera/autoname,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/outpost/exterior/ocean)
 "ai" = (
@@ -52,7 +50,6 @@
 /area/outpost/crew/library)
 "al" = (
 /obj/structure/sign/painting/library{
-	pixel_y = 0;
 	pixel_x = 32
 	},
 /turf/open/floor/wood/walnut,
@@ -137,8 +134,7 @@
 "au" = (
 /obj/structure/table/wood,
 /obj/structure/extinguisher_cabinet/directional/west{
-	pixel_y = 2;
-	pixel_x = -28
+	pixel_y = 2
 	},
 /turf/open/floor/suns/hatch/mahogany,
 /area/outpost/crew/lounge)
@@ -185,8 +181,7 @@
 /area/outpost/security/armory)
 "aC" = (
 /obj/structure/sign/poster/clip/lunatown{
-	pixel_x = 30;
-	pixel_y = 0
+	pixel_x = 30
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/outpost/exterior/ocean)
@@ -292,8 +287,7 @@
 "aW" = (
 /obj/structure/table/reinforced,
 /obj/item/pen{
-	pixel_x = -10;
-	pixel_y = 0
+	pixel_x = -10
 	},
 /turf/open/floor/carpet/blue,
 /area/outpost/vacant_rooms/shop)
@@ -527,8 +521,7 @@
 "bK" = (
 /obj/structure/rack,
 /obj/structure/sign/poster/contraband/c20r{
-	pixel_x = -32;
-	pixel_y = 0
+	pixel_x = -32
 	},
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 8
@@ -765,7 +758,6 @@
 	dir = 1
 	},
 /obj/structure/plaque{
-	pixel_x = 0;
 	pixel_y = 29;
 	name = "CLIP Armaments";
 	desc = "A plaque with info regarding the CMM's early weaponry, with mention of the UNSV Lichenstein jumpstarting their military."
@@ -779,8 +771,7 @@
 	pixel_y = 1
 	},
 /obj/item/extinguisher/advanced{
-	pixel_x = -1;
-	pixel_y = 0
+	pixel_x = -1
 	},
 /obj/item/extinguisher/advanced{
 	pixel_x = 9;
@@ -1280,8 +1271,7 @@
 /area/outpost/crew/bar)
 "dT" = (
 /obj/structure/sign/poster/clip/enlist{
-	pixel_x = -28;
-	pixel_y = 0
+	pixel_x = -28
 	},
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 8
@@ -1325,7 +1315,6 @@
 /area/outpost/crew/library)
 "ed" = (
 /obj/structure/railing{
-	dir = 2;
 	layer = 4.1
 	},
 /obj/structure/chair{
@@ -1446,12 +1435,10 @@
 "ex" = (
 /obj/structure/rack,
 /obj/item/newspaper{
-	pixel_x = 6;
-	pixel_y = 0
+	pixel_x = 6
 	},
 /obj/item/newspaper{
-	pixel_x = -5;
-	pixel_y = 0
+	pixel_x = -5
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/checkpoint)
@@ -1511,7 +1498,6 @@
 	pixel_y = 7
 	},
 /obj/structure/plaque{
-	pixel_x = 0;
 	pixel_y = -28;
 	name = "The Ember Armory";
 	desc = "A plaque describing the various health hazards of the frontiersmen hardsuit, and haphazard manufacturing of Frontiersman-used weapons."
@@ -1566,19 +1552,16 @@
 	pixel_y = 6
 	},
 /obj/item/reagent_containers/hypospray/medipen/morphine{
-	pixel_x = 6;
-	pixel_y = 0
+	pixel_x = 6
 	},
 /obj/item/reagent_containers/hypospray/medipen/morphine{
 	pixel_x = 6;
 	pixel_y = -6
 	},
 /obj/item/reagent_containers/glass/bottle/morphine{
-	pixel_x = 0;
 	pixel_y = 8
 	},
 /obj/item/reagent_containers/syringe/contraband/morphine{
-	pixel_x = 0;
 	pixel_y = -2;
 	name = "morphine syringe"
 	},
@@ -1652,7 +1635,6 @@
 	pixel_y = 8
 	},
 /obj/structure/plaque{
-	pixel_x = 0;
 	pixel_y = 27;
 	name = "The Captain's Quarters";
 	desc = "A plaque describing the incompetence of Frontiersmen Officers."
@@ -1701,7 +1683,6 @@
 /obj/structure/filingcabinet/double/grey{
 	dir = 8;
 	pixel_x = 11;
-	pixel_y = 0;
 	density = 0
 	},
 /obj/structure/cable{
@@ -1720,7 +1701,6 @@
 	dir = 9
 	},
 /obj/structure/sign/clip{
-	pixel_x = 0;
 	pixel_y = -29
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
@@ -2043,7 +2023,6 @@
 	},
 /obj/machinery/light/small/directional/west,
 /obj/structure/frame{
-	pixel_x = 0;
 	pixel_y = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -2091,7 +2070,6 @@
 /obj/effect/turf_decal/corner/transparent/blue/mono,
 /obj/structure/chair/bench/blue/directional/south,
 /obj/structure/sign/poster/contraband/winchester{
-	pixel_x = 0;
 	pixel_y = 31
 	},
 /turf/open/floor/plasteel/mono/white,
@@ -2186,11 +2164,9 @@
 	dir = 4
 	},
 /obj/machinery/firealarm/directional/east{
-	pixel_x = 32;
 	pixel_y = -5
 	},
 /obj/structure/extinguisher_cabinet/directional/east{
-	pixel_x = 28;
 	pixel_y = 9
 	},
 /turf/open/floor/plasteel/dark,
@@ -2216,7 +2192,6 @@
 	dir = 6
 	},
 /obj/structure/sign/clip{
-	pixel_x = 0;
 	pixel_y = 30
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
@@ -2291,7 +2266,7 @@
 /turf/open/water/beach/deep/outpost,
 /area/outpost/crew/bathroom)
 "hv" = (
-/obj/machinery/computer/mission{
+/obj/machinery/computer/outpost_export_console{
 	dir = 8
 	},
 /turf/open/floor/plasteel/telecomms_floor,
@@ -2520,7 +2495,6 @@
 /area/outpost/crew/library)
 "ij" = (
 /obj/effect/turf_decal/industrial/warning{
-	dir = 2;
 	color = "#808080"
 	},
 /obj/structure/girder/reinforced,
@@ -2664,9 +2638,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 2
-	},
+/obj/machinery/camera/autoname,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -2769,8 +2741,7 @@
 	pixel_y = -5
 	},
 /obj/machinery/firealarm/directional/west{
-	pixel_y = 8;
-	pixel_x = -32
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/starboard)
@@ -2987,7 +2958,6 @@
 /area/outpost/external)
 "jW" = (
 /obj/structure/plaque{
-	pixel_x = 0;
 	pixel_y = 29;
 	name = "Captain Peck's Shipwreck";
 	desc = "A greeting to Captain Peck's wrecked vessel, with information explaining the Frontiersman menace, and the outposts first defense against them."
@@ -2999,11 +2969,9 @@
 	dir = 10
 	},
 /obj/machinery/firealarm/directional/east{
-	pixel_x = 32;
 	pixel_y = -5
 	},
 /obj/structure/extinguisher_cabinet/directional/east{
-	pixel_x = 28;
 	pixel_y = 9
 	},
 /turf/open/floor/plasteel/telecomms_floor,
@@ -3089,7 +3057,6 @@
 /area/outpost/storage)
 "kl" = (
 /obj/structure/railing{
-	dir = 2;
 	layer = 4.1
 	},
 /obj/structure/chair{
@@ -3504,7 +3471,6 @@
 /area/outpost/vacant_rooms/shop)
 "lH" = (
 /obj/structure/railing{
-	dir = 2;
 	layer = 4.1
 	},
 /obj/effect/turf_decal/borderfloorblack,
@@ -3513,9 +3479,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/camera/autoname{
-	dir = 2
-	},
+/obj/machinery/camera/autoname,
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/library)
 "lJ" = (
@@ -3698,8 +3662,7 @@
 	},
 /obj/structure/catwalk/over,
 /obj/structure/sign/poster/contraband/lusty_xenomorph{
-	pixel_x = -30;
-	pixel_y = 0
+	pixel_x = -30
 	},
 /turf/open/water/beach/deep/outpost,
 /area/outpost/crew/bathroom)
@@ -3937,7 +3900,6 @@
 	pixel_y = 1
 	},
 /obj/machinery/button/door{
-	pixel_x = 0;
 	pixel_y = -21;
 	name = "privacy shutters";
 	id = "clipshop2";
@@ -4192,7 +4154,6 @@
 	dir = 8
 	},
 /obj/structure/sign/poster/clip/maxin{
-	pixel_x = 0;
 	pixel_y = 32
 	},
 /obj/structure/railing/thin{
@@ -4254,7 +4215,6 @@
 "nX" = (
 /obj/structure/table,
 /obj/item/food/miras_li{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /turf/open/floor/plasteel/dark,
@@ -4429,8 +4389,7 @@
 /area/outpost/security/checkpoint)
 "oG" = (
 /obj/structure/sign/departments/engineering{
-	pixel_x = 30;
-	pixel_y = 0
+	pixel_x = 30
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/exterior/ocean)
@@ -4651,7 +4610,6 @@
 	pixel_y = 1
 	},
 /obj/machinery/button/door{
-	pixel_x = 0;
 	pixel_y = 23;
 	name = "privacy shutters";
 	id = "clipshop1"
@@ -4856,7 +4814,6 @@
 "pO" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
 /obj/structure/sign/poster/random{
-	pixel_x = 0;
 	pixel_y = 32
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
@@ -4874,7 +4831,6 @@
 "pV" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
 /obj/structure/sign/painting/library{
-	pixel_x = 0;
 	pixel_y = -29
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -4936,12 +4892,10 @@
 /obj/effect/turf_decal/corner/transparent/blue/mono,
 /obj/structure/rack,
 /obj/item/newspaper{
-	pixel_x = -4;
-	pixel_y = 0
+	pixel_x = -4
 	},
 /obj/item/newspaper{
-	pixel_x = 7;
-	pixel_y = 0
+	pixel_x = 7
 	},
 /obj/machinery/camera/autoname,
 /turf/open/floor/plasteel/mono/white,
@@ -4958,11 +4912,9 @@
 	dir = 1
 	},
 /obj/item/paper_bin{
-	pixel_x = 0;
 	pixel_y = 1
 	},
 /obj/item/pen{
-	pixel_x = 0;
 	pixel_y = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -5196,11 +5148,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/firealarm/directional/east{
-	pixel_x = 32;
 	pixel_y = -5
 	},
 /obj/structure/extinguisher_cabinet/directional/east{
-	pixel_x = 28;
 	pixel_y = 9
 	},
 /obj/effect/turf_decal/corner/transparent/inteqbrown/half{
@@ -5281,7 +5231,6 @@
 /obj/structure/filingcabinet/double/grey{
 	dir = 8;
 	pixel_x = 8;
-	pixel_y = 0;
 	density = 0
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -5370,27 +5319,21 @@
 /obj/item/clothing/suit/armor/vest/alt,
 /obj/item/clothing/suit/armor/vest/alt,
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq{
-	pixel_x = 0;
 	pixel_y = -9
 	},
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq{
-	pixel_x = 0;
 	pixel_y = -9
 	},
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq{
-	pixel_x = 0;
 	pixel_y = -9
 	},
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq{
-	pixel_x = 0;
 	pixel_y = -9
 	},
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq{
-	pixel_x = 0;
 	pixel_y = -9
 	},
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq{
-	pixel_x = 0;
 	pixel_y = -9
 	},
 /obj/item/clothing/head/helmet/m10/inteq{
@@ -5557,8 +5500,7 @@
 	dir = 9
 	},
 /obj/machinery/firealarm/directional/west{
-	pixel_y = 8;
-	pixel_x = -32
+	pixel_y = 8
 	},
 /obj/structure/extinguisher_cabinet/directional/west{
 	pixel_y = -5
@@ -5661,21 +5603,17 @@
 	pixel_y = 12
 	},
 /obj/item/towel{
-	pixel_x = -15;
-	pixel_y = 0
+	pixel_x = -15
 	},
 /obj/item/towel{
-	pixel_x = -9;
-	pixel_y = 0
+	pixel_x = -9
 	},
 /obj/item/towel{
-	pixel_x = -4;
-	pixel_y = 0
+	pixel_x = -4
 	},
 /obj/item/towel,
 /obj/item/towel{
-	pixel_x = 10;
-	pixel_y = 0
+	pixel_x = 10
 	},
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/tech/grid,
@@ -5740,7 +5678,6 @@
 	},
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/item/food/fishandchips{
-	pixel_x = 0;
 	pixel_y = 2
 	},
 /obj/machinery/light/directional/east,
@@ -5850,7 +5787,6 @@
 /area/outpost/operations)
 "tB" = (
 /obj/structure/urinal{
-	pixel_y = 0;
 	pixel_x = 16;
 	dir = 8
 	},
@@ -6037,27 +5973,21 @@
 /obj/item/clothing/suit/armor/vest/bulletproof,
 /obj/item/clothing/suit/armor/vest/bulletproof,
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq{
-	pixel_x = 0;
 	pixel_y = -9
 	},
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq{
-	pixel_x = 0;
 	pixel_y = -9
 	},
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq{
-	pixel_x = 0;
 	pixel_y = -9
 	},
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq{
-	pixel_x = 0;
 	pixel_y = -9
 	},
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq{
-	pixel_x = 0;
 	pixel_y = -9
 	},
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq{
-	pixel_x = 0;
 	pixel_y = -9
 	},
 /obj/item/clothing/mask/balaclava/inteq{
@@ -6121,9 +6051,7 @@
 /area/outpost/hallway/starboard)
 "uq" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line,
-/obj/machinery/camera/autoname{
-	dir = 2
-	},
+/obj/machinery/camera/autoname,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/outpost/exterior/ocean)
 "uu" = (
@@ -6207,7 +6135,6 @@
 	},
 /obj/item/gun/ballistic/automatic/smg/cm5/compact{
 	pixel_x = 2;
-	pixel_y = 0;
 	spawn_no_ammo = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -6472,8 +6399,7 @@
 "vv" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin{
-	pixel_x = -10;
-	pixel_y = 0
+	pixel_x = -10
 	},
 /turf/open/floor/carpet/blue,
 /area/outpost/vacant_rooms/shop)
@@ -6527,8 +6453,7 @@
 	dir = 8
 	},
 /obj/machinery/firealarm/directional/west{
-	pixel_y = 8;
-	pixel_x = -32
+	pixel_y = 8
 	},
 /obj/structure/extinguisher_cabinet/directional/west{
 	pixel_y = -5
@@ -6613,8 +6538,7 @@
 /area/outpost/exterior/ocean)
 "vX" = (
 /obj/structure/sign/poster/contraband/aclf{
-	pixel_x = 29;
-	pixel_y = 0
+	pixel_x = 29
 	},
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
@@ -6766,7 +6690,6 @@
 	pixel_y = 6
 	},
 /obj/structure/sign/poster/contraband/engis_unite{
-	pixel_x = 0;
 	pixel_y = -28
 	},
 /obj/machinery/light/directional/south,
@@ -6857,8 +6780,7 @@
 	dir = 4
 	},
 /obj/structure/sign/poster/contraband/bulldog{
-	pixel_x = 32;
-	pixel_y = 0
+	pixel_x = 32
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
@@ -7309,7 +7231,6 @@
 	dir = 8
 	},
 /obj/structure/sign/poster/contraband/twelve_gauge{
-	pixel_x = 0;
 	pixel_y = -31
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
@@ -7424,7 +7345,6 @@
 	},
 /obj/machinery/firealarm/directional/west,
 /obj/item/radio/intercom/table{
-	pixel_x = 0;
 	pixel_y = -13;
 	dir = 8
 	},
@@ -7470,7 +7390,6 @@
 	dir = 1
 	},
 /obj/structure/mirror{
-	pixel_x = 0;
 	pixel_y = -28
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -7493,7 +7412,6 @@
 /area/outpost/engineering)
 "yD" = (
 /obj/structure/railing{
-	dir = 2;
 	layer = 4.1
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black,
@@ -8084,8 +8002,7 @@
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/wideband/table{
 	dir = 8;
-	pixel_x = -6;
-	pixel_y = 0
+	pixel_x = -6
 	},
 /obj/item/radio/intercom/table{
 	pixel_x = -6;
@@ -8384,7 +8301,6 @@
 	dir = 8
 	},
 /obj/item/radio/intercom/table{
-	pixel_x = 0;
 	pixel_y = -13;
 	dir = 8
 	},
@@ -8451,7 +8367,6 @@
 /area/outpost/exterior/ocean)
 "BU" = (
 /obj/effect/turf_decal/industrial/warning{
-	dir = 2;
 	color = "#808080"
 	},
 /turf/open/floor/plasteel/elevatorshaft{
@@ -8508,9 +8423,7 @@
 /obj/structure/railing/thin{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 2
-	},
+/obj/machinery/camera/autoname,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/outpost/exterior/ocean)
 "Ci" = (
@@ -8632,7 +8545,6 @@
 /area/outpost/cargo/smeltery)
 "CE" = (
 /obj/structure/sign/poster/contraband/inteq{
-	pixel_x = 0;
 	pixel_y = -31
 	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/arrow_ccw{
@@ -8649,8 +8561,7 @@
 	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/arrow_ccw,
 /obj/structure/sign/departments/medbay{
-	pixel_x = 31;
-	pixel_y = 0
+	pixel_x = 31
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/exterior/ocean)
@@ -8819,7 +8730,6 @@
 	dir = 4
 	},
 /obj/structure/plaque{
-	pixel_x = 0;
 	pixel_y = 27;
 	name = "The Ember Bridge";
 	desc = "A plaque describing the below-average living standards of the average Frontiersmen."
@@ -9358,11 +9268,9 @@
 "Eu" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/item/soap{
-	pixel_x = 0;
 	pixel_y = -8
 	},
 /obj/item/soap{
-	pixel_x = 0;
 	pixel_y = -4
 	},
 /obj/item/towel{
@@ -9551,17 +9459,22 @@
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /obj/structure/table/chem,
 /obj/item/storage/firstaid{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /turf/open/floor/plasteel/white,
 /area/outpost/medical)
 "EV" = (
-/obj/structure/chair/pew/left{
-	dir = 2
+/obj/structure/table,
+/obj/item/paper_bin{
+	pixel_y = 1;
+	pixel_x = 4
 	},
-/turf/open/floor/wood/walnut,
-/area/outpost/crew/bar)
+/obj/item/pen{
+	pixel_y = 2;
+	pixel_x = -3
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/outpost/storage)
 "EW" = (
 /obj/machinery/door/window/brigdoor/northleft{
 	dir = 4
@@ -9820,11 +9733,9 @@
 "FG" = (
 /obj/structure/rack,
 /obj/item/clothing/head/helmet/frontier{
-	pixel_x = 0;
 	pixel_y = 9
 	},
 /obj/item/clothing/neck/dogtag/frontier{
-	pixel_x = 0;
 	pixel_y = -8
 	},
 /obj/machinery/light/directional/east,
@@ -9913,8 +9824,7 @@
 "FY" = (
 /obj/structure/urinal{
 	dir = 8;
-	pixel_x = 16;
-	pixel_y = 0
+	pixel_x = 16
 	},
 /obj/structure/window/reinforced/tinted,
 /obj/effect/turf_decal/steeldecal/steel_decals9{
@@ -10407,9 +10317,7 @@
 	},
 /area/outpost/exterior/ocean)
 "HJ" = (
-/obj/effect/turf_decal/corner_techfloor_grid{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner_techfloor_grid,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
@@ -10476,9 +10384,7 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms)
 "HU" = (
-/obj/effect/turf_decal/corner_techfloor_grid{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner_techfloor_grid,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/trash/energybar,
 /turf/open/floor/plasteel/dark,
@@ -10598,7 +10504,6 @@
 /area/outpost/exterior/ocean)
 "Ir" = (
 /obj/structure/sauna_oven{
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /obj/effect/turf_decal/siding/wood{
@@ -10723,7 +10628,6 @@
 /area/outpost/exterior/ocean)
 "IF" = (
 /obj/structure/railing{
-	dir = 2;
 	layer = 4.1
 	},
 /obj/structure/chair{
@@ -10934,8 +10838,7 @@
 "Jf" = (
 /obj/structure/catwalk/over,
 /obj/structure/sign/poster/clip/random{
-	pixel_x = -29;
-	pixel_y = 0
+	pixel_x = -29
 	},
 /obj/structure/toilet{
 	dir = 4;
@@ -11173,8 +11076,7 @@
 	pixel_y = 1
 	},
 /obj/item/clothing/suit/armor/vest/bulletproof{
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 5
 	},
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/dark,
@@ -11404,8 +11306,7 @@
 "KG" = (
 /obj/structure/chair,
 /obj/machinery/firealarm/directional/west{
-	pixel_y = 8;
-	pixel_x = -32
+	pixel_y = 8
 	},
 /obj/structure/extinguisher_cabinet/directional/west{
 	pixel_y = -5
@@ -11642,7 +11543,6 @@
 	id = "cutter_gun_driver"
 	},
 /obj/effect/turf_decal/industrial/warning{
-	dir = 2;
 	color = "#808080"
 	},
 /turf/open/floor/plasteel/elevatorshaft{
@@ -11718,18 +11618,16 @@
 /obj/effect/turf_decal/corner/transparent/blue/mono,
 /obj/structure/rack,
 /obj/item/newspaper{
-	pixel_x = -6;
-	pixel_y = 0
+	pixel_x = -6
 	},
 /obj/item/newspaper{
-	pixel_x = 7;
-	pixel_y = 0
+	pixel_x = 7
 	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/mono/white,
 /area/outpost/medical)
 "LF" = (
-/obj/machinery/mission_pad,
+/obj/structure/table,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/storage)
 "LH" = (
@@ -11762,9 +11660,7 @@
 /obj/structure/chair/bench/beige/directional/east{
 	dir = 2
 	},
-/obj/machinery/camera/autoname{
-	dir = 2
-	},
+/obj/machinery/camera/autoname,
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/checkpoint)
@@ -11806,12 +11702,10 @@
 "LR" = (
 /obj/structure/rack,
 /obj/item/clothing/neck/poncho/darkblue{
-	pixel_x = 4;
-	pixel_y = 0
+	pixel_x = 4
 	},
 /obj/item/clothing/neck/poncho/darkblue{
-	pixel_x = -2;
-	pixel_y = 0
+	pixel_x = -2
 	},
 /turf/open/floor/plasteel/mono,
 /area/outpost/vacant_rooms/shop)
@@ -11996,8 +11890,7 @@
 	layer = 2.04
 	},
 /obj/machinery/firealarm/directional/west{
-	pixel_y = 8;
-	pixel_x = -32
+	pixel_y = 8
 	},
 /obj/structure/extinguisher_cabinet/directional/west{
 	pixel_y = -5
@@ -12105,7 +11998,6 @@
 "MM" = (
 /obj/structure/table,
 /obj/item/toy/prize/basenji{
-	pixel_x = 0;
 	pixel_y = 14
 	},
 /turf/open/floor/plasteel/tech,
@@ -12131,8 +12023,7 @@
 	},
 /obj/structure/sign/flag/gezena{
 	dir = 8;
-	pixel_x = 27;
-	pixel_y = 0
+	pixel_x = 27
 	},
 /obj/effect/turf_decal/floordetail/tiled,
 /turf/open/floor/plasteel/telecomms_floor,
@@ -12168,8 +12059,7 @@
 "MS" = (
 /obj/structure/table,
 /obj/structure/sign/poster/contraband/inteq_gec{
-	pixel_x = -29;
-	pixel_y = 0
+	pixel_x = -29
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/checkpoint)
@@ -12703,7 +12593,6 @@
 /area/outpost/cargo/smeltery)
 "OP" = (
 /obj/machinery/button/door{
-	pixel_x = 0;
 	pixel_y = 21;
 	id = "cliprefinery";
 	name = "Refinery Lockdown"
@@ -12793,7 +12682,6 @@
 "OZ" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave{
-	pixel_x = 0;
 	pixel_y = 6
 	},
 /turf/open/floor/plasteel/patterned/brushed,
@@ -13149,8 +13037,7 @@
 /area/outpost/security/checkpoint)
 "Qq" = (
 /obj/structure/sign/poster/clip/gold{
-	pixel_x = -29;
-	pixel_y = 0
+	pixel_x = -29
 	},
 /obj/machinery/photocopier,
 /turf/open/floor/plasteel/dark,
@@ -13174,8 +13061,7 @@
 	},
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/structure/sign/poster/contraband/inteq{
-	pixel_x = 30;
-	pixel_y = 0
+	pixel_x = 30
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/canteen)
@@ -13212,7 +13098,6 @@
 	dir = 4
 	},
 /obj/structure/sign/poster/clip/maxin{
-	pixel_x = 0;
 	pixel_y = 32
 	},
 /obj/structure/railing/thin{
@@ -13324,8 +13209,7 @@
 "QU" = (
 /obj/structure/table/glass,
 /obj/structure/sign/poster/clip/gold{
-	pixel_x = 29;
-	pixel_y = 0
+	pixel_x = 29
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/storage)
@@ -13463,7 +13347,6 @@
 	dir = 8
 	},
 /obj/item/table_bell{
-	pixel_x = 0;
 	pixel_y = 3
 	},
 /obj/item/megaphone/command{
@@ -13610,6 +13493,18 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/engineering)
+"RP" = (
+/obj/structure/table,
+/obj/item/paper_bin{
+	pixel_y = 1;
+	pixel_x = -3
+	},
+/obj/item/pen{
+	pixel_y = 2;
+	pixel_x = -3
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/outpost/storage)
 "RQ" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
@@ -13623,7 +13518,6 @@
 	icon_state = "1-2"
 	},
 /obj/structure/sign/poster/pgf/random{
-	pixel_y = 0;
 	pixel_x = 28
 	},
 /turf/open/floor/plasteel/patterned/grid,
@@ -13659,9 +13553,7 @@
 /obj/effect/turf_decal/trimline/transparent/blue/filled/arrow_cw{
 	dir = 4
 	},
-/obj/machinery/camera/autoname{
-	dir = 2
-	},
+/obj/machinery/camera/autoname,
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
 /area/outpost/exterior/ocean)
 "RW" = (
@@ -13706,8 +13598,7 @@
 	pixel_y = 8
 	},
 /obj/item/toy/figure/vanguard{
-	pixel_x = -1;
-	pixel_y = 0
+	pixel_x = -1
 	},
 /obj/item/toy/figure/inteq{
 	pixel_x = -7;
@@ -13748,8 +13639,7 @@
 "Se" = (
 /obj/structure/dresser{
 	dir = 4;
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 5
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
@@ -13788,9 +13678,7 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo/smeltery)
 "Sp" = (
-/obj/effect/turf_decal/corner_techfloor_grid{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner_techfloor_grid,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/sign/poster/official/help_others{
 	pixel_x = 32;
@@ -13975,8 +13863,7 @@
 /area/outpost/vacant_rooms)
 "SW" = (
 /obj/structure/sign/clip{
-	pixel_x = 28;
-	pixel_y = 0
+	pixel_x = 28
 	},
 /obj/structure/railing/thin{
 	dir = 1
@@ -14090,8 +13977,7 @@
 "Tq" = (
 /obj/structure/railing/thin,
 /obj/structure/sign/clip{
-	pixel_x = 27;
-	pixel_y = 0
+	pixel_x = 27
 	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/arrow_cw{
 	dir = 1
@@ -14140,7 +14026,6 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/structure/mirror{
-	pixel_x = 0;
 	pixel_y = -28
 	},
 /turf/open/floor/plasteel/dark,
@@ -14321,8 +14206,7 @@
 /obj/machinery/computer/electrolyzer_console{
 	pixel_y = -20;
 	density = 0;
-	dir = 1;
-	pixel_x = 0
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/cargo/smeltery)
@@ -14353,7 +14237,6 @@
 /obj/structure/filingcabinet/double/grey{
 	dir = 8;
 	pixel_x = 11;
-	pixel_y = 0;
 	density = 0
 	},
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
@@ -14448,9 +14331,7 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/bar)
 "Uw" = (
-/obj/structure/chair/pew/right{
-	dir = 2
-	},
+/obj/structure/chair/pew/right,
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/bar)
 "Ux" = (
@@ -15067,11 +14948,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/firealarm/directional/east{
-	pixel_x = 32;
 	pixel_y = -5
 	},
 /obj/structure/extinguisher_cabinet/directional/east{
-	pixel_x = 28;
 	pixel_y = 9
 	},
 /turf/open/floor/plasteel/patterned/grid,
@@ -15094,8 +14973,7 @@
 	pixel_y = -5
 	},
 /obj/machinery/firealarm/directional/west{
-	pixel_y = 8;
-	pixel_x = -32
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/hallway/starboard)
@@ -15151,7 +15029,6 @@
 	dir = 1
 	},
 /obj/structure/sign/poster/random{
-	pixel_x = 0;
 	pixel_y = -31
 	},
 /turf/open/floor/hangar/plasteel/dark/clipoutpost,
@@ -15372,17 +15249,14 @@
 /area/outpost/crew/library)
 "Xl" = (
 /obj/structure/sign/poster/contraband/inteq_nt{
-	pixel_x = 29;
-	pixel_y = 0
+	pixel_x = 29
 	},
 /obj/structure/rack,
 /obj/item/newspaper{
-	pixel_x = -6;
-	pixel_y = 0
+	pixel_x = -6
 	},
 /obj/item/newspaper{
-	pixel_x = 6;
-	pixel_y = 0
+	pixel_x = 6
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/checkpoint)
@@ -15598,8 +15472,7 @@
 "XS" = (
 /obj/structure/table/chem,
 /obj/machinery/vending/wallmed{
-	pixel_x = 26;
-	pixel_y = 0
+	pixel_x = 26
 	},
 /obj/effect/turf_decal/corner/transparent/blue/mono,
 /turf/open/floor/plasteel/mono/white,
@@ -15693,8 +15566,7 @@
 	pixel_y = -5
 	},
 /obj/machinery/firealarm/directional/west{
-	pixel_y = 8;
-	pixel_x = -32
+	pixel_y = 8
 	},
 /obj/item/melee/knife/kitchen{
 	pixel_x = 8;
@@ -16047,7 +15919,6 @@
 	pixel_y = 4
 	},
 /obj/item/toy/figure/vanguard{
-	pixel_x = 0;
 	pixel_y = 2
 	},
 /turf/open/floor/plasteel/tech,
@@ -16171,8 +16042,7 @@
 /area/outpost/exterior/ocean)
 "ZH" = (
 /obj/machinery/firealarm/directional/west{
-	pixel_y = 8;
-	pixel_x = -32
+	pixel_y = 8
 	},
 /obj/structure/extinguisher_cabinet/directional/west{
 	pixel_y = -5
@@ -16193,12 +16063,10 @@
 "ZL" = (
 /obj/structure/rack,
 /obj/item/clothing/neck/poncho/darkblue{
-	pixel_x = 4;
-	pixel_y = 0
+	pixel_x = 4
 	},
 /obj/item/clothing/neck/poncho/darkblue{
-	pixel_x = -2;
-	pixel_y = 0
+	pixel_x = -2
 	},
 /turf/open/floor/plasteel/mono,
 /area/outpost/vacant_rooms/office)
@@ -24585,12 +24453,12 @@ Ae
 gF
 SX
 Ol
-hv
+EV
 LF
 XY
 hJ
 gY
-LF
+jc
 hv
 Ol
 SX
@@ -24713,8 +24581,8 @@ jc
 Qk
 lj
 DI
-jc
-cR
+LF
+RP
 Ol
 SX
 uL
@@ -25184,7 +25052,7 @@ XU
 er
 ix
 Vw
-EV
+FK
 lq
 YI
 Fg

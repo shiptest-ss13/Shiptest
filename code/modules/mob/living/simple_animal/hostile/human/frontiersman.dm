@@ -236,6 +236,11 @@
 	r_hand = /obj/item/gun/ballistic/shotgun/automatic/slammer
 	armor_base = /obj/item/clothing/suit/armor/vest/frontier
 
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals
+	atmos_requirements = IMMUNE_ATMOS_REQS
+	minbodytemp = 0
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/internals
+
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter
 	name = "Frontiersman Runner"
 	desc = "A quick-footed member of the brutal Frontiersman terrorist fleet! This one wields a boxy submachine gun in one hand."
@@ -437,7 +442,7 @@
 	casingtype = /obj/item/ammo_casing/shotgun
 	r_hand = /obj/item/gun/ballistic/automatic/hmg/shredder
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy
-	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+	armor_base = /obj/item/clothing/suit/armor/vest/marine/frontier
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/space
 	icon_state = "frontiersmanranged_mask"
