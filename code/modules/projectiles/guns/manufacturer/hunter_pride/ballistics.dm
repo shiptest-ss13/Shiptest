@@ -1010,6 +1010,10 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 			"x" = 48,
 			"y" = 19,
 		)
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 18,
+			"y" = 21,
+		)
 	)
 
 	can_be_sawn_off = FALSE
