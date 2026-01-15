@@ -1011,7 +1011,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 			"y" = 19,
 		)
 		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 23,
+			"x" = 25,
 			"y" = 21,
 		)
 	)
