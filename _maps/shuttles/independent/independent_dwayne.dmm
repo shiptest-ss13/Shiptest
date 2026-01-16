@@ -298,6 +298,7 @@
 /obj/effect/turf_decal/borderfloor/corner{
 	dir = 4
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "dK" = (
@@ -836,6 +837,10 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/yellow/warning{
 	dir = 1
+	},
+/obj/item/flashlight/seclite{
+	pixel_x = -3;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/equip)
@@ -2723,7 +2728,6 @@
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "yJ" = (
-/obj/item/radio/intercom/directional/south,
 /obj/effect/turf_decal/siding/thinplating,
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -3469,6 +3473,10 @@
 	},
 /obj/effect/turf_decal/siding/white,
 /obj/effect/turf_decal/trimline/opaque/yellow/warning,
+/obj/item/flashlight/seclite{
+	pixel_x = -3;
+	pixel_y = -2
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/equip)
 "Fj" = (
@@ -3838,11 +3846,6 @@
 /obj/structure/closet/crate/engineering/electrical{
 	name = "fuel crate"
 	},
-/obj/item/stack/sheet/mineral/plasma/twenty{
-	pixel_x = -2;
-	pixel_y = -4
-	},
-/obj/effect/mapping_helpers/crate_shelve,
 /obj/structure/cable/cyan{
 	icon_state = "2-8"
 	},
@@ -3853,6 +3856,8 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/warning,
+/obj/item/stack/sheet/mineral/plasma/ten,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/starboard)
 "IF" = (
@@ -3864,7 +3869,7 @@
 /obj/machinery/fax/indie{
 	pixel_y = 7
 	},
-/obj/item/radio/intercom/directional/west,
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "IW" = (
@@ -4077,6 +4082,18 @@
 	pixel_x = -8;
 	pixel_y = -2
 	},
+/obj/item/storage/backpack/satchel{
+	pixel_x = -11;
+	pixel_y = -10
+	},
+/obj/item/storage/backpack{
+	pixel_x = 0;
+	pixel_y = -11
+	},
+/obj/item/storage/backpack/duffelbag{
+	pixel_x = 7;
+	pixel_y = -7
+	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "KJ" = (
@@ -4257,6 +4274,7 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
 	dir = 1
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "LZ" = (
@@ -4762,7 +4780,6 @@
 /obj/effect/turf_decal/corner/opaque/ntblue/half{
 	dir = 1
 	},
-/obj/machinery/newscaster/directional/west,
 /obj/structure/table/emptycomputer{
 	icon_state = "emptycomputer-left"
 	},
@@ -4778,6 +4795,7 @@
 	pixel_x = 0;
 	pixel_y = 0
 	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Qp" = (
