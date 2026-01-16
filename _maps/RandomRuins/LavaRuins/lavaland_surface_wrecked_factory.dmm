@@ -75,10 +75,6 @@
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/structure/safe,
-/obj/effect/landmark/mission_poi/main{
-	type_to_spawn = /obj/item/documents/nanotrasen;
-	spawn_in_containter = 1
-	},
 /obj/item/stock_parts/cell/gun/sharplite/plus,
 /turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/manager_office)
@@ -246,11 +242,6 @@
 /obj/effect/mob_spawn/human/corpse/cargo_tech,
 /obj/effect/decal/cleanable/blood{
 	icon_state = "bubblegumfoot"
-	},
-/obj/effect/landmark/mission_poi/main/implanted{
-	mission_index = 3;
-	type_to_spawn = /mob/living/carbon/human;
-	already_spawned = 1
 	},
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -1749,6 +1740,15 @@
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
+"qD" = (
+/obj/effect/turf_decal/trimline/opaque/lime/warning,
+/obj/effect/decal/cleanable/blood{
+	icon_state = "trails_2";
+	dir = 4
+	},
+/obj/item/ammo_box/magazine/m9mm_expedition/empty,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/dorms)
 "qH" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 8
@@ -2551,10 +2551,8 @@
 /obj/effect/turf_decal/trimline/opaque/lime/warning{
 	dir = 1
 	},
-/obj/item/ammo_box/magazine/m9mm_expedition{
-	start_empty = 1
-	},
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/saber,
+/obj/item/gun/ballistic/automatic/smg/expedition/no_mag,
+/obj/item/ammo_box/magazine/m9mm_expedition/empty,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
 "yU" = (
@@ -4980,11 +4978,6 @@
 /obj/structure/sign/poster/official/enlist{
 	pixel_y = 32
 	},
-/obj/effect/landmark/mission_poi/main{
-	mission_index = 2;
-	type_to_spawn = /obj/item/clothing/accessory/medal/gold/heroism;
-	already_spawned = 1
-	},
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/adminstrative)
 "YU" = (
@@ -7178,7 +7171,7 @@ MH
 sZ
 qX
 iR
-WZ
+qD
 CT
 sZ
 MH

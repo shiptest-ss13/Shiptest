@@ -170,7 +170,7 @@
 	///ds between parallax updates
 	var/parallax_throttle = 0
 	var/parallax_movedir = 0
-	var/parallax_layers_max = 4
+	var/parallax_layers_max = 8
 	var/parallax_animate_timer
 
 	/// rate limiting for the crew manifest

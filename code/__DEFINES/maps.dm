@@ -34,6 +34,7 @@ require only minor tweaks.
 #define ZTRAIT_RESERVED "Reserved"
 #define ZTRAIT_AWAY "Away Mission"
 #define ZTRAIT_SPACE_RUINS "Space Ruins"
+#define ZTRAIT_GAS_GIANT "Gas Giant"
 
 // enum - how SSsun should calculate sun exposure on this level
 // if left null, AZIMUTH is assumed

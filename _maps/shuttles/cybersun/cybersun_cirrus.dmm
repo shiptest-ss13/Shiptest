@@ -913,6 +913,7 @@
 	color = "#792f27";
 	dir = 9
 	},
+/obj/item/radio/headset/syndicate/alt/captain/cybersun,
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/dorm/commad)
 "eI" = (
@@ -2733,6 +2734,7 @@
 	pixel_x = -6;
 	pixel_y = -3
 	},
+/obj/item/radio/headset/syndicate/alt/cybersun,
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/dorm/commad)
 "sC" = (
@@ -4046,8 +4048,21 @@
 "Gc" = (
 /obj/effect/turf_decal/box/white,
 /obj/structure/rack,
-/obj/item/pipe_dispenser,
+/obj/item/pipe_dispenser{
+	pixel_x = 0;
+	pixel_y = 9
+	},
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5,
+/obj/item/stack/sheet/metal/twenty{
+	pixel_x = 9
+	},
+/obj/item/stack/sheet/plastic/twenty{
+	pixel_x = -6
+	},
+/obj/item/stack/sheet/glass/twenty{
+	pixel_y = 0;
+	pixel_x = 2
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
 "Gd" = (
@@ -6321,18 +6336,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "0-2"
 	},
-/obj/structure/closet/crate/engineering{
-	name = "materials crate"
-	},
-/obj/item/stack/sheet/glass/twenty{
-	pixel_y = 7
-	},
-/obj/item/stack/sheet/metal/twenty{
-	pixel_x = 9
-	},
-/obj/item/stack/sheet/plastic/twenty{
-	pixel_x = -6
-	},
+/obj/machinery/telecomms/relay/preset/cybersun,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "Yj" = (
