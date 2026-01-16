@@ -469,7 +469,11 @@
 	return
 
 /obj/item/gun/afterattack(atom/target, mob/living/user, flag, params)
-	. = ..()
+	if(fire_gun(target, user, flag, params))
+		return TRUE
+	return ..()
+
+/obj/item/gun/proc/fire_gun(atom/target, mob/living/user, flag, params)
 	if(!actually_shoots)// this gun doesn't actually fire bullets. Dont shoot.
 		return
 	//No target? Why are we even firing anyways...
@@ -478,6 +482,13 @@
 	//If we are burst firing, don't fire, obviously
 	if(currently_firing_burst)
 		return
+
+	if(SEND_SIGNAL(user, COMSIG_MOB_TRYING_TO_FIRE_GUN, src, target, flag, params) & COMPONENT_CANCEL_GUN_FIRE)
+		return
+
+	if(SEND_SIGNAL(src, COMSIG_GUN_TRY_FIRE, user, target, flag, params) & COMPONENT_CANCEL_GUN_FIRE)
+		return
+
 	//This var happens when we are either clicking someone next to us or ourselves. Check if we don't want to fire...
 	if(flag)
 		if(target in user.contents) //can't shoot stuff inside us.

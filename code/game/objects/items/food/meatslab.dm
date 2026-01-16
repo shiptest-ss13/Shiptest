@@ -205,7 +205,7 @@
 	AddComponent(/datum/component/grillable, /obj/item/food/meat/steak/tiris, rand(30 SECONDS, 90 SECONDS), TRUE, TRUE)
 
 /obj/item/food/meat/slab/tiris/make_processable()
-	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/meat/rawcutlet/tiris, 3, 30)
+	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/meat/rawcutlet/tiris, 4, 30)
 
 /obj/item/food/meat/slab/remes
 	name = "remes meat"
@@ -277,7 +277,7 @@
 
 /obj/item/food/meat/slab/penguin/make_processable()
 	. = ..()
-	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/meat/rawcutlet/penguin, 3, 30)
+	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/meat/rawcutlet/penguin, 4, 30)
 
 /obj/item/food/meat/rawcrab
 	name = "raw crab meat"
@@ -320,7 +320,7 @@
 
 /obj/item/food/meat/slab/chicken/make_processable()
 	. = ..()
-	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/meat/rawcutlet/chicken, 3, 30)
+	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/meat/rawcutlet/chicken, 4, 30)
 
 /obj/item/food/meat/slab/mothroach
 	name = "mothroach meat"
