@@ -1024,7 +1024,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/pyre)
 	base_icon_state = "pyre_factory"
 	icon_state = "pyre_factory"
 	item_state = "pyre_factory"
-	desc = "A powerful lever-action rifle with hand-stamped Hunter's Pride marks on the receiver and an 5 round ammunition capacity, in pristine wood furniture. Bulky and unwieldy but devastatingly powerful. Chambered in .45-70."
+	desc = "A powerful lever-action rifle with hand-stamped Hunter's Pride marks on the receiver and an 5 round ammunition capacity, in pristine wood furniture lined with brass. Bulky and unwieldy but devastatingly powerful. Chambered in .45-70."
 
 //Break-Action Rifle
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon
