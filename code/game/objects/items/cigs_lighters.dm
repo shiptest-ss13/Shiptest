@@ -239,6 +239,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		M.update_inv_hands()
 
 /obj/item/clothing/mask/cigarette/proc/handle_reagents()
+	var/enclosed = FALSE
 	if(reagents.total_volume)
 		var/to_smoke = REAGENTS_METABOLISM
 		if(iscarbon(loc))
@@ -257,8 +258,14 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 				var/obj/item/organ/lungs/L = C.getorganslot(ORGAN_SLOT_LUNGS)
 				if(L && !(L.organ_flags & ORGAN_SYNTHETIC))
 					C.adjustOrganLoss(ORGAN_SLOT_LUNGS, lung_harm)
-		secondhand_smoke.set_up(3, src)
-		secondhand_smoke.start()
+
+				var/obj/item/clothing/headwear = C.get_item_by_slot(ITEM_SLOT_HEAD)
+				if(headwear?.clothing_flags & STOPSPRESSUREDAMAGE)
+					enclosed = TRUE
+
+		if(!enclosed)
+			secondhand_smoke.set_up(3, src)
+			secondhand_smoke.start()
 		reagents.remove_any(to_smoke)
 
 /obj/item/clothing/mask/cigarette/process(seconds_per_tick)
