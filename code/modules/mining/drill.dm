@@ -19,7 +19,7 @@
 	density = TRUE
 	anchored = FALSE
 	use_power = NO_POWER_USE
-	layer = ABOVE_ALL_MOB_LAYER
+	layer = LYING_MOB_LAYER
 	armor = list("melee" = 50, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
 	component_parts = list()
 
