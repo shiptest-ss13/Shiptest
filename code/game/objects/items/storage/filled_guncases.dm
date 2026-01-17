@@ -55,6 +55,10 @@
 /obj/item/storage/guncase/absolution
 	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/absolution
 
+/obj/item/storage/guncase/pyre
+	gun_type = /obj/item/gun/ballistic/shotgun/flamingarrow/pyre
+	mag_type = /obj/item/ammo_box/a4570/empty
+
 /obj/item/storage/guncase/firestorm
 	gun_type = /obj/item/gun/ballistic/automatic/smg/firestorm
 	mag_type = /obj/item/ammo_box/magazine/c44_firestorm_mag

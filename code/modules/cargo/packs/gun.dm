@@ -637,6 +637,14 @@
 	crate_name = "shotguns crate"
 	faction = /datum/faction/srm
 
+/datum/supply_pack/gun/pyre
+	name = "Pyre Lever Action Rifle Crate"
+	desc = "Contains a devastating but unwieldy lever-action rifle for annihilating larger wildlife. Chambered in .45-70."
+	cost = 3000
+	contains = list(/obj/item/storage/guncase/pyre)
+	crate_name = "rifle crate"
+	faction = /datum/faction/srm
+
 /datum/supply_pack/gun/illestren
 	name = "Illestren Rifle Crate"
 	desc = "Contains an expertly made bolt action rifle intended for hunting wildlife. Chambered in 8x50mmR rounds."

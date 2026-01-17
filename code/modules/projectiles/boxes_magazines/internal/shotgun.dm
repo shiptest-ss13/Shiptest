@@ -54,6 +54,13 @@
 	caliber = "12ga"
 	max_ammo = 5
 
+/obj/item/ammo_box/magazine/internal/shot/winchester/pyre
+	name = "pyre internal magazine"
+	ammo_type = /obj/item/ammo_casing/a4570
+	caliber = ".45-70"
+	max_ammo = 5
+	instant_load = TRUE
+
 /obj/item/ammo_box/magazine/internal/shot/beacon
 	name = "beacon internal magazine"
 	ammo_type = /obj/item/ammo_casing/a4570
