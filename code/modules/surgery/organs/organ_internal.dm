@@ -109,6 +109,8 @@
 	applyOrganDamage(maxHealth * decay_factor * 0.5 * seconds_per_tick)
 
 /obj/item/organ/proc/on_life()	//repair organ damage if the organ is not failing
+	SHOULD_CALL_PARENT(TRUE)
+
 	if(organ_flags & ORGAN_FAILING)
 		return
 	if(organ_flags & ORGAN_SYNTHETIC_EMP) //Synthetic organ has been emped, is now failing.
