@@ -1,17 +1,18 @@
 ///Use this to define a new ruinturf and associated subtypes easily.
 ///Planetary types should still be explicitly defined for description fluff
-#define JUNGLE_TURF_HELPER(turf_type)					\
-	/turf/open/floor/##turf_type/jungleplanet {			\
-		initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS;	\
-		planetary_atmos = TRUE;							\
-		light_color = COLOR_JUNGLEPLANET_LIGHT;			\
-	}													\
-	/turf/open/floor/##turf_type/jungleplanet/lit {		\
-		light_power = 0.8;								\
-		light_range = 2;								\
-	}													\
-	/turf/open/floor/##turf_type/jungleplanet/interior {\
-		planetary_atmos = FALSE;						\
+#define JUNGLE_TURF_HELPER(turf_type)								\
+	/turf/open/floor/##turf_type/jungleplanet {						\
+		baseturfs = /turf/open/floor/plating/asteroid/dirt/jungle	\
+		initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS;				\
+		planetary_atmos = TRUE;										\
+		light_color = COLOR_JUNGLEPLANET_LIGHT;						\
+	}																\
+	/turf/open/floor/##turf_type/jungleplanet/lit {					\
+		light_power = 0.8;											\
+		light_range = 2;											\
+	}																\
+	/turf/open/floor/##turf_type/jungleplanet/interior {			\
+		planetary_atmos = FALSE;									\
 	}
 
 //NEW and improved jungle turfs
