@@ -27,6 +27,11 @@
 			/obj/effect/greeble_spawner/jungleplanet/twentythree = 5,
 			/obj/effect/greeble_spawner/jungleplanet/twentyfour = 5,
 			/obj/effect/greeble_spawner/jungleplanet/twentyfive = 5,
+			/obj/effect/greeble_spawner/jungleplanet/twentysix = 5,
+			/obj/effect/greeble_spawner/jungleplanet/twentyseven = 5,
+			/obj/effect/greeble_spawner/jungleplanet/twentyeight = 5,
+			/obj/effect/greeble_spawner/jungleplanet/twentynine = 5,
+			/obj/effect/greeble_spawner/jungleplanet/thirty = 5,
 		)
 
 /obj/effect/greeble_spawner/jungleplanet
@@ -103,6 +108,21 @@
 
 /obj/effect/greeble_spawner/jungleplanet/twentyfive
 	template = /datum/map_template/greeble/jungleplanet/twentyfive
+
+/obj/effect/greeble_spawner/jungleplanet/twentysix
+	template = /datum/map_template/greeble/jungleplanet/twentysix
+
+/obj/effect/greeble_spawner/jungleplanet/twentyseven
+	template = /datum/map_template/greeble/jungleplanet/twentyseven
+
+/obj/effect/greeble_spawner/jungleplanet/twentyeight
+	template = /datum/map_template/greeble/jungleplanet/twentyeight
+
+/obj/effect/greeble_spawner/jungleplanet/twentynine
+	template = /datum/map_template/greeble/jungleplanet/twentynine
+
+/obj/effect/greeble_spawner/jungleplanet/thirty
+	template = /datum/map_template/greeble/jungleplanet/thirty
 
 /datum/map_template/greeble/jungleplanet
 	name = "Jungle Greeble 1"
@@ -229,6 +249,31 @@
 	name = "Jungle Greeble 25"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_25.dmm"
 	description = "An overgrown landing pad. The trees have reclaimed the concrete."
+
+/datum/map_template/greeble/jungleplanet/twentysix
+	name = "Jungle Greeble 26"
+	mappath = "_maps/templates/greebles/jungle/greeble_jungle_26.dmm"
+	description = "Another scar from the war. A platform."
+
+/datum/map_template/greeble/jungleplanet/twentyseven
+	name = "Jungle Greeble 27"
+	mappath = "_maps/templates/greebles/jungle/greeble_jungle_22.dmm"
+	description = "A crashed vessel, completely out of place."
+
+/datum/map_template/greeble/jungleplanet/twentyeight
+	name = "Jungle Greeble 28"
+	mappath = "_maps/templates/greebles/jungle/greeble_jungle_28.dmm"
+	description = "A very small, unbroken trench segment."
+
+/datum/map_template/greeble/jungleplanet/twentynine
+	name = "Jungle Greeble 29"
+	mappath = "_maps/templates/greebles/jungle/greeble_jungle_29.dmm"
+	description = "A watchtower. Better times to be had."
+
+/datum/map_template/greeble/jungleplanet/thirty
+	name = "Jungle Greeble 30"
+	mappath = "_maps/templates/greebles/jungle/greeble_jungle_30.dmm"
+	description = "Water has come to the surface here, and the ground around it has eroded."
 
 /* Cave Greebles */
 
