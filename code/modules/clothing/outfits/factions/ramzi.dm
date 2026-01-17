@@ -9,17 +9,12 @@
 	id = /obj/item/card/id
 
 	faction_icon = "bg_syndicate"
+	faction = FACTION_RAMZI
 
 	backpack = /obj/item/storage/backpack
 	satchel = /obj/item/storage/backpack/satchel
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
-
-/datum/outfit/job/ramzi/post_equip(mob/living/carbon/human/H, visualsOnly)
-	. = ..()
-	if(visualsOnly)
-		return
-	H.faction |= list(FACTION_RAMZI)
 
 //Deckhand
 
