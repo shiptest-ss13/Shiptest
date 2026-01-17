@@ -322,6 +322,8 @@
 #define GALOSHES_DONT_HELP (1<<2)
 #define SLIDE_ICE (1<<3)
 #define SLIP_WHEN_CRAWLING (1<<4)
+/// the mob won't slip if the turf has the TRAIT_TURF_IGNORE_SLIPPERY trait.
+#define SLIPPERY_TURF (1<<5)
 
 #define MAX_CHICKENS 50
 
@@ -583,3 +585,4 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 
 /// In dynamic human icon gen we don't replace the held item.
 #define NO_REPLACE 0
+

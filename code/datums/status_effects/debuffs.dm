@@ -3,7 +3,7 @@
 //Largely negative status effects go here, even if they have small benificial effects
 //STUN EFFECTS
 /datum/status_effect/incapacitating
-	tick_interval = 0
+	tick_interval = -1
 	status_type = STATUS_EFFECT_REPLACE
 	alert_type = null
 	var/needs_update_stat = FALSE
@@ -236,7 +236,7 @@
 /datum/status_effect/pacify
 	id = "pacify"
 	status_type = STATUS_EFFECT_REPLACE
-	tick_interval = 1
+	tick_interval = 2
 	duration = 100
 	alert_type = null
 
@@ -612,7 +612,7 @@
 	id = "go_away"
 	duration = 100
 	status_type = STATUS_EFFECT_REPLACE
-	tick_interval = 1
+	tick_interval = 2
 	alert_type = /atom/movable/screen/alert/status_effect/go_away
 	var/direction
 
@@ -635,7 +635,7 @@
 	id = "fake_virus"
 	duration = 1800//3 minutes
 	status_type = STATUS_EFFECT_REPLACE
-	tick_interval = 1
+	tick_interval = 2
 	alert_type = null
 	var/msg_stage = 0//so you dont get the most intense messages immediately
 
