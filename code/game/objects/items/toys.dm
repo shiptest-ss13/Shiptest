@@ -571,7 +571,7 @@
 	resistance_flags = FLAMMABLE
 	max_integrity = 50
 	var/parentdeck = null
-	var/deckstyle = "nanotrasen"
+	var/deckstyle = "makossowarra"
 	var/card_hitsound = null
 	var/card_force = 0
 	var/card_throwforce = 0
@@ -588,8 +588,8 @@
 	name = "deck of cards"
 	desc = "A deck of space-grade playing cards."
 	icon = 'icons/obj/toy.dmi'
-	deckstyle = "nanotrasen"
-	icon_state = "deck_nanotrasen_full"
+	deckstyle = "makossowarra"
+	icon_state = "deck_makossowarra_full"
 	w_class = WEIGHT_CLASS_SMALL
 	var/cooldown = 0
 	var/list/cards = list()
@@ -803,7 +803,7 @@
 	name = "card"
 	desc = "A playing card used to play card games like poker."
 	icon = 'icons/obj/toy.dmi'
-	icon_state = "singlecard_down_nanotrasen"
+	icon_state = "singlecard_down_makossowarra"
 	w_class = WEIGHT_CLASS_TINY
 	var/cardname = null
 	var/flipped = 0

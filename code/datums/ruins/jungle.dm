@@ -11,11 +11,11 @@
 	suffix = "jungle_syndicate.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
 	ruin_mission_types = list(
-		/datum/mission/ruin/nt_files,
+		/datum/mission/ruin/makossowarra_files,
 		/datum/mission/ruin/signaled/kill/jerry
 	)
 
-/datum/mission/ruin/nt_files
+/datum/mission/ruin/makossowarra_files
 	name = "Discrete Asset Recovery"
 	desc = "Look- long story short, I need this folder retrieved. You don't ask why, I make sure you get paid."
 	value = 1500
@@ -23,10 +23,10 @@
 	mission_reward = list(
 		/obj/item/gun/energy/laser/retro,
 	)
-	faction = /datum/faction/nt
-	setpiece_item = /obj/item/documents/nanotrasen
+	faction = /datum/faction/makossowarra
+	setpiece_item = /obj/item/documents/makossowarra
 
-/datum/mission/ruin/nt_files/generate_mission_details()
+/datum/mission/ruin/makossowarra_files/generate_mission_details()
 	. = ..()
 	author = "Captain [random_species_name()]"
 

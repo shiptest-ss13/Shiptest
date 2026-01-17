@@ -121,7 +121,7 @@
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/hangar)
 "aX" = (
-/obj/structure/sign/nanotrasen,
+/obj/structure/sign/makossowarra,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hangar)
 "aY" = (
@@ -559,9 +559,9 @@
 	pixel_y = 8
 	},
 /obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/under/nanotrasen/security,
+/obj/item/clothing/under/makossowarra/security,
 /obj/item/clothing/gloves/color/black,
-/obj/item/clothing/head/nanotrasen/cap/security,
+/obj/item/clothing/head/makossowarra/cap/security,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/storage/box/handcuffs,
 /obj/item/storage/box/bodybags,
@@ -621,8 +621,8 @@
 /obj/structure/closet/secure_closet/engineering_personal{
 	populate = 0
 	},
-/obj/item/clothing/head/hardhat/nanotrasen,
-/obj/item/clothing/under/nanotrasen/engineering,
+/obj/item/clothing/head/hardhat/makossowarra,
+/obj/item/clothing/under/makossowarra/engineering,
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/glasses/meson/engine,
 /obj/item/holosign_creator/engineering,
@@ -731,7 +731,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
 "eP" = (
-/obj/structure/sign/nanotrasen,
+/obj/structure/sign/makossowarra,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew)
 "eZ" = (
@@ -1064,7 +1064,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "jd" = (
-/obj/structure/sign/nanotrasen,
+/obj/structure/sign/makossowarra,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/communications)
 "jf" = (
@@ -1431,8 +1431,8 @@
 "lJ" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light/dim/directional/east,
-/obj/item/clothing/head/hardhat/nanotrasen,
-/obj/item/clothing/suit/nanotrasen/vest,
+/obj/item/clothing/head/hardhat/makossowarra,
+/obj/item/clothing/suit/makossowarra/vest,
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/mask/gas/explorer,
 /obj/item/clothing/glasses/meson/engine,
@@ -2056,9 +2056,9 @@
 	},
 /obj/item/storage/backpack/messenger,
 /obj/item/storage/backpack/duffelbag,
-/obj/item/clothing/under/nanotrasen/supply/qm,
+/obj/item/clothing/under/makossowarra/supply/qm,
 /obj/item/clothing/head/hardhat/orange,
-/obj/item/clothing/head/nanotrasen/cap/supply,
+/obj/item/clothing/head/makossowarra/cap/supply,
 /obj/item/clipboard,
 /obj/item/hand_labeler,
 /obj/item/megaphone/cargo,
@@ -2074,8 +2074,8 @@
 /area/ship/crew/crewtwo)
 "qW" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/item/clothing/head/hardhat/nanotrasen,
-/obj/item/clothing/suit/nanotrasen/vest,
+/obj/item/clothing/head/hardhat/makossowarra,
+/obj/item/clothing/suit/makossowarra/vest,
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/mask/gas/explorer,
 /obj/item/clothing/glasses/meson/engine,
@@ -2184,17 +2184,17 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/hallway/central)
 "rL" = (
-/obj/machinery/telecomms/server/presets/nanotrasen{
-	autolinkers = list("nanotrasen","broadcasterA","hub");
+/obj/machinery/telecomms/server/presets/makossowarra{
+	autolinkers = list("makossowarra","broadcasterA","hub");
 	freq_listening = list(1353,1351,1459);
-	network = "nt_commnet"
+	network = "makossowarra_commnet"
 	},
 /turf/open/floor/circuit,
 /area/ship/engineering/communications)
 "rP" = (
 /obj/machinery/telecomms/broadcaster/preset_right{
 	autolinkers = list("broadcasterB","hub");
-	network = "nt_commnet"
+	network = "makossowarra_commnet"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/window/reinforced/spawner/west,
@@ -2500,7 +2500,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/telecomms/server/presets/common{
 	autolinkers = list("common","broadcasterA","hub");
-	network = "nt_commnet"
+	network = "makossowarra_commnet"
 	},
 /turf/open/floor/circuit,
 /area/ship/engineering/communications)
@@ -2642,9 +2642,9 @@
 "vS" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/telecomms/hub{
-	autolinkers = list("hub","bus","relay","messaging","nanotrasen","broadcasterB","receiverB");
-	id = "Nanotrasen Communications Hub";
-	network = "nt_commnet"
+	autolinkers = list("hub","bus","relay","messaging","makossowarra","broadcasterB","receiverB");
+	id = "Makosso-Warra Communications Hub";
+	network = "makossowarra_commnet"
 	},
 /turf/open/floor/circuit,
 /area/ship/engineering/communications)
@@ -2816,7 +2816,7 @@
 /obj/machinery/telecomms/message_server/preset{
 	autolinkers = list("messaging","hub");
 	layer = 3.1;
-	network = "nt_commnet"
+	network = "makossowarra_commnet"
 	},
 /turf/open/floor/circuit/green,
 /area/ship/engineering/communications)
@@ -2839,7 +2839,7 @@
 	pixel_x = 6;
 	pixel_y = 2
 	},
-/obj/structure/sign/nanotrasen/vigilitas{
+/obj/structure/sign/makossowarra/vigilitas{
 	pixel_y = -32
 	},
 /obj/structure/closet/wall/red/directional/east{
@@ -2849,8 +2849,8 @@
 	req_access = list(2)
 	},
 /obj/item/clothing/mask/gas/vigilitas,
-/obj/item/clothing/suit/armor/nanotrasen,
-/obj/item/clothing/suit/armor/nanotrasen/slim,
+/obj/item/clothing/suit/armor/makossowarra,
+/obj/item/clothing/suit/armor/makossowarra/slim,
 /obj/item/clothing/head/helmet/m10,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned,
@@ -2960,7 +2960,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hangar)
 "yy" = (
-/obj/structure/sign/nanotrasen,
+/obj/structure/sign/makossowarra,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/crewfour)
 "yz" = (
@@ -3151,11 +3151,11 @@
 	dir = 8;
 	pixel_x = 8
 	},
-/obj/item/stamp/nanotrasen/ns/supply{
+/obj/item/stamp/makossowarra/ns/supply{
 	pixel_x = -6;
 	pixel_y = -6
 	},
-/obj/item/stamp/nanotrasen{
+/obj/item/stamp/makossowarra{
 	pixel_y = 7;
 	pixel_x = -7
 	},
@@ -3282,7 +3282,7 @@
 /turf/open/floor/carpet/cyan,
 /area/ship/crew)
 "BL" = (
-/obj/structure/sign/nanotrasen,
+/obj/structure/sign/makossowarra,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/canteen)
 "BO" = (
@@ -3481,13 +3481,13 @@
 	name = "captain's locker"
 	},
 /obj/item/storage/box/handcuffs,
-/obj/item/clothing/suit/armor/nanotrasen/captain,
-/obj/item/clothing/suit/armor/nanotrasen/captain/parade,
-/obj/item/clothing/head/nanotrasen/captain/peaked,
-/obj/item/clothing/head/nanotrasen/captain,
+/obj/item/clothing/suit/armor/makossowarra/captain,
+/obj/item/clothing/suit/armor/makossowarra/captain/parade,
+/obj/item/clothing/head/makossowarra/captain/peaked,
+/obj/item/clothing/head/makossowarra/captain,
 /obj/item/clothing/gloves/color/captain/nt,
-/obj/item/clothing/under/nanotrasen/captain/skirt,
-/obj/item/clothing/under/nanotrasen/captain,
+/obj/item/clothing/under/makossowarra/captain/skirt,
+/obj/item/clothing/under/makossowarra/captain,
 /obj/machinery/newscaster/directional/south{
 	pixel_x = -3
 	},
@@ -4001,7 +4001,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/item/stamp/nanotrasen/captain{
+/obj/item/stamp/makossowarra/captain{
 	pixel_x = -5
 	},
 /turf/open/floor/carpet/royalblue,
@@ -4457,7 +4457,7 @@
 /turf/open/floor/circuit/green,
 /area/ship/engineering/communications)
 "Mv" = (
-/obj/machinery/fax/nanotrasen,
+/obj/machinery/fax/makossowarra,
 /obj/structure/table,
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4683,8 +4683,8 @@
 /obj/machinery/telecomms/bus/preset_four{
 	autolinkers = list("hub","processor4","bus");
 	freq_listening = list(1353,1351,1459);
-	id = "Nanotrasen Communications Bus";
-	network = "nt_commnet"
+	id = "Makosso-Warra Communications Bus";
+	network = "makossowarra_commnet"
 	},
 /turf/open/floor/circuit,
 /area/ship/engineering/communications)
@@ -5027,7 +5027,7 @@
 /obj/structure/bed{
 	dir = 4
 	},
-/obj/item/bedsheet/nanotrasen{
+/obj/item/bedsheet/makossowarra{
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/west,
@@ -5313,7 +5313,7 @@
 	pixel_x = 5;
 	pixel_y = 3
 	},
-/obj/item/stamp/nanotrasen/vigilitas{
+/obj/item/stamp/makossowarra/vigilitas{
 	pixel_x = 6;
 	pixel_y = 4
 	},
@@ -5384,7 +5384,7 @@
 /obj/machinery/telecomms/receiver/preset_right{
 	autolinkers = list("receiverB","hub");
 	freq_listening = list(1353,1351,1459);
-	network = "nt_commnet"
+	network = "makossowarra_commnet"
 	},
 /turf/open/floor/circuit,
 /area/ship/engineering/communications)
@@ -5624,9 +5624,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/telecomms/processor/preset_four{
 	autolinkers = list("processor4","bus");
-	id = "Nanotrasen Communications Processor";
+	id = "Makosso-Warra Communications Processor";
 	layer = 3.09;
-	network = "nt_commnet"
+	network = "makossowarra_commnet"
 	},
 /turf/open/floor/circuit,
 /area/ship/engineering/communications)
@@ -5723,7 +5723,7 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "Ya" = (
-/obj/structure/sign/nanotrasen,
+/obj/structure/sign/makossowarra,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/crewtwo)
 "Yb" = (

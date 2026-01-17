@@ -362,7 +362,7 @@
 /datum/preset_holoimage/captain
 	outfit_type = /datum/outfit/job/captain
 
-/datum/preset_holoimage/nanotrasenprivatesecurity
+/datum/preset_holoimage/makossowarraprivatesecurity
 	outfit_type = /datum/outfit/vigilitas/trooper
 
 /datum/preset_holoimage/gorilla

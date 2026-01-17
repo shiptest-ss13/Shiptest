@@ -1,39 +1,39 @@
-/datum/antagonist/ert/nanotrasen
+/datum/antagonist/ert/makossowarra
 	name = "Vigilitas Security Officer"
-	outfit = /datum/outfit/job/nanotrasen/ert
+	outfit = /datum/outfit/job/makossowarra/ert
 	role = "Security Officer"
 
-/datum/antagonist/ert/nanotrasen/delivery
+/datum/antagonist/ert/makossowarra/delivery
 	name = "N+S Cargo Technician"
-	outfit = /datum/outfit/job/nanotrasen/cargo_tech
+	outfit = /datum/outfit/job/makossowarra/cargo_tech
 	role = "Cargo Technician"
 
-/datum/antagonist/ert/nanotrasen/inspector
-	name = "Nanotrasen Central Command Liaison"
-	outfit = /datum/outfit/job/nanotrasen/ert/inspector
+/datum/antagonist/ert/makossowarra/inspector
+	name = "Makosso-Warra Central Command Liaison"
+	outfit = /datum/outfit/job/makossowarra/ert/inspector
 	role = "Liaison"
 
-// /datum/antagonist/ert/nanotrasen/emergency
+// /datum/antagonist/ert/makossowarra/emergency
 // 	name = "Vigilitas Response Officer"
-// 	outfit = /datum/outfit/job/nanotrasen/ert/emergency
+// 	outfit = /datum/outfit/job/makossowarra/ert/emergency
 // 	role = "Response Officer"
 
-/datum/antagonist/ert/nanotrasen/leader
+/datum/antagonist/ert/makossowarra/leader
 	name = "Vigilitas Security Corporal"
-	outfit = /datum/outfit/job/nanotrasen/ert/leader
+	outfit = /datum/outfit/job/makossowarra/ert/leader
 	role = "Corporal"
 
-// /datum/antagonist/ert/nanotrasen/leader/emergency
+// /datum/antagonist/ert/makossowarra/leader/emergency
 // 	name = "Vigilitas Response Lieutenant"
-// 	outfit = /datum/outfit/job/nanotrasen/ert/leader/emergency
+// 	outfit = /datum/outfit/job/makossowarra/ert/leader/emergency
 // 	role = "Lieutenant"
 
-// /datum/antagonist/ert/nanotrasen/medic/emergency
+// /datum/antagonist/ert/makossowarra/medic/emergency
 // 	name = "Vigilitas Medical Response Officer"
-// 	outfit = /datum/outfit/job/nanotrasen/ert/medic/emergency
+// 	outfit = /datum/outfit/job/makossowarra/ert/medic/emergency
 // 	role = "Medic"
 
-// /datum/antagonist/ert/nanotrasen/emergency/engineer
+// /datum/antagonist/ert/makossowarra/emergency/engineer
 // 	name = "Vigilitas Engineering Response Officer"
-// 	outfit = /datum/outfit/job/nanotrasen/ert/emergency/engineer
+// 	outfit = /datum/outfit/job/makossowarra/ert/emergency/engineer
 // 	role = "Engineer"

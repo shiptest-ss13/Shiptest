@@ -162,7 +162,7 @@
 					span_notice("You try to pin [src] on [M]'s chest."))
 			var/input
 			if(!commended && user != M)
-				input = stripped_input(user,"Please input a reason for this commendation, it will be recorded by Nanotrasen.", ,"", 140)
+				input = stripped_input(user,"Please input a reason for this commendation. It will be recorded by Makosso-Warra.", ,"", 140)
 			if(do_after(user, delay, target = M))
 				if(U.attach_accessory(src, user, 0)) //Attach it, do not notify the user of the attachment
 					if(user == M)
@@ -219,7 +219,7 @@
 
 /obj/item/clothing/accessory/medal/silver/excellence
 	name = "\proper the head of personnel award for outstanding achievement in the field of excellence"
-	desc = "Nanotrasen's dictionary defines excellence as \"the quality or condition of being excellent\". This is awarded to those rare crewmembers who fit that definition."
+	desc = "Makosso-Warra's dictionary defines excellence as \"the quality or condition of being excellent\". This is awarded to those rare crewmembers who fit that definition."
 
 /obj/item/clothing/accessory/medal/silver/bureaucracy
 	name = "\improper Excellence in Bureaucracy Medal"

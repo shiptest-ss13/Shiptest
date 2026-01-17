@@ -31,9 +31,9 @@
 	value = 15000
 	mission_limit = 5
 	faction = list(
-		/datum/faction/nt,
-		/datum/faction/nt/ns_logi,
-		/datum/faction/nt/vigilitas,
+		/datum/faction/makossowarra,
+		/datum/faction/makossowarra/ns_logi,
+		/datum/faction/makossowarra/vigilitas,
 		/datum/faction/independent
 	)
 	registered_type = /obj/machinery/drill/mission/ruin

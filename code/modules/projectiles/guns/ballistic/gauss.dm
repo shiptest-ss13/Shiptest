@@ -1,10 +1,10 @@
 /obj/item/gun/ballistic/automatic/powered/gauss
 	name = "prototype gauss rifle"
-	desc = "An experimental Nanotrasen rifle with a high capacity. Useful for putting down crowds. Chambered in ferromagnetic pellets."
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	desc = "An experimental Makosso-Warra rifle with a high capacity. Useful for putting down crowds. Chambered in ferromagnetic pellets."
+	icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/onmob.dmi'
 	icon_state = "gauss"
 	item_state = "arg"
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
@@ -23,7 +23,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	charge_sections = 4
 	ammo_x_offset = 2
-	manufacturer = MANUFACTURER_NANOTRASEN
+	manufacturer = MANUFACTURER_MAKOSSOWARRA
 
 	spread = 0
 	spread_unwielded = 25

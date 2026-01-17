@@ -23,7 +23,7 @@
 
 /datum/map_template/ruin/rockplanet/distillery
 	name = "Frontiersman Distillery"
-	description = "A former pre-ICW era Nanotrasen outpost converted into a moonshine distillery by Frontiersman bootleggers."
+	description = "A former pre-ICW era Makosso-Warra outpost converted into a moonshine distillery by Frontiersman bootleggers."
 	id = "rockplanet_distillery"
 	suffix = "rockplanet_distillery.dmm"
 /*	ruin_mission_types = list(
@@ -57,7 +57,7 @@
 			If an N+S team is still on site, please inform them that their communications system has been damaged, and that the next supply run will be in 3 weeks."
 	mission_limit = 1
 	faction = list(
-		/datum/faction/nt/ns_logi,
+		/datum/faction/makossowarra/ns_logi,
 	)
 
 /datum/mission/ruin/ns_manager
@@ -67,7 +67,7 @@
 	value = 1500
 	mission_limit = 1
 	faction = list(
-		/datum/faction/nt/ns_logi,
+		/datum/faction/makossowarra/ns_logi,
 	)
 	setpiece_item = /mob/living/carbon/human
 

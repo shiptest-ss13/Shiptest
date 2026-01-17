@@ -6,7 +6,7 @@
 
 /datum/antagonist/traitor/internal_affairs
 	name = "Internal Affairs Agent"
-	employer = "Nanotrasen"
+	employer = "Makosso-Warra"
 	special_role = "internal affairs agent"
 	antagpanel_category = "IAA"
 	var/syndicate = FALSE
@@ -239,7 +239,7 @@
 	to_chat(owner.current, span_userdanger("You are the [special_role]."))
 	if(syndicate)
 		to_chat(owner.current, span_userdanger("Your target has been framed for [crime], and you have been tasked with eliminating them to prevent them defending themselves in court."))
-		to_chat(owner.current, "<B><font size=5 color=red>Any damage you cause will be a further embarrassment to Nanotrasen, so you have no limits on collateral damage.</font></B>")
+		to_chat(owner.current, "<B><font size=5 color=red>Any damage you cause will be a further embarrassment to Makosso-Warra, so you have no limits on collateral damage.</font></B>")
 		to_chat(owner.current, span_userdanger("You have been provided with a standard uplink to accomplish your task."))
 	else
 		to_chat(owner.current, span_userdanger("Your target is suspected of [crime], and you have been tasked with eliminating them by any means necessary to avoid a costly and embarrassing public trial."))

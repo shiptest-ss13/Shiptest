@@ -43,7 +43,7 @@
 	value = 3000
 	mission_limit = 1
 	faction = /datum/faction/syndicate
-	registered_type = /mob/living/simple_animal/hostile/human/nanotrasen/elite
+	registered_type = /mob/living/simple_animal/hostile/human/makossowarra/elite
 	setpiece_item = /obj/item/folder/documents/syndicate
 
 /datum/mission/ruin/signaled/kill/megafauna

@@ -650,7 +650,7 @@
 
 /obj/item/gun/energy/kinetic_accelerator/old
 	name = "proto-kinetic accelerator"
-	desc = "A self-recharging concussive blast mining tool, heavily used by Nanotrasen Mining Corps both for extracting minerals and dealing with unruly locals. NT's prototype line was produced with top-of-the-line cooling mechanisms. "
+	desc = "A self-recharging concussive blast mining tool, heavily used by N+S Logistics's Mining Corps both for extracting minerals and dealing with unruly locals. Makosso-Warra's prototype line was produced with top-of-the-line cooling mechanisms. "
 	icon_state = "kineticgunold"
 	item_state = "kineticgunold"
 	overheat_time = 10

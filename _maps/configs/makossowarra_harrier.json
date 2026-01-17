@@ -1,0 +1,78 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Harrier-class Exploration Cruiser",
+	"prefix": "MWSV",
+	"manufacturer": "Makosso-Warra Spaceworks",
+	"faction": "/datum/faction/makossowarra",
+	"namelists": [
+		"MAKOSSO-WARRA",
+		"SPACE",
+		"MYTHOLOGICAL",
+		"WEAPONS"
+	],
+	"map_short_name": "Harrier-class",
+	"map_path": "_maps/shuttles/makossowarra/makossowarra_harrier.dmm",
+	"token_icon_state": "ship_big_generic",
+	"description": "Originally an advanced ICW-era command cruiser, the surviving Harriers have been refurbished as exploration and \"reclamation\" ships in the post-ICW era. Large, well-rounded, and boasting excellent crew accomodations, Harriers are exceedingly popular with Makosso-Warra crews in spite of their lack of specialized equipment.",
+	"tags": ["Generalist"],
+	"limit": 1,
+	"starting_funds": 4000,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/makossowarra/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"First Officer": {
+			"outfit": "/datum/outfit/job/makossowarra/hop",
+			"officer": true,
+			"slots": 1
+		},
+		"Supply Director": {
+			"outfit": "/datum/outfit/job/makossowarra/quartermaster",
+			"officer":true,
+			"slots": 1
+		},
+		"Internal Affairs Agent": {
+			"outfit": "/datum/outfit/job/makossowarra/lawyer/corporaterepresentative",
+			"slots": 1
+		},
+		"Security Officer": {
+			"outfit": "/datum/outfit/job/makossowarra/security",
+			"slots": 1
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/makossowarra/doctor",
+			"slots": 1
+		},
+		"Paramedic": {
+			"outfit": "/datum/outfit/job/makossowarra/paramedic",
+			"slots": 1
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/makossowarra/engineer",
+			"slots": 1
+		},
+		"Atmospheric Technician": {
+			"outfit": "/datum/outfit/job/makossowarra/atmos",
+			"slots": 1
+		},
+		"Cargo Technician": {
+			"outfit": "/datum/outfit/job/makossowarra/cargo_tech",
+			"slots": 1
+		},
+		"Shaft Miner": {
+			"outfit": "/datum/outfit/job/makossowarra/miner/no_equipment",
+			"slots": 1
+		},
+		"Cook": {
+			"outfit": "/datum/outfit/job/independent/cook",
+			"slots": 1
+		},
+		"Assistant": {
+			"outfit": "/datum/outfit/job/makossowarra/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}

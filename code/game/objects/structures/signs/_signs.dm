@@ -208,22 +208,22 @@
 	placed_sign.setDir(turn(dir,180)) //SinguloStation13 Edit (Normally all wallframes's dir point away from the wall, not look into it when placed.)
 	qdel(src)
 
-/obj/structure/sign/nanotrasen
-	name = "\improper Nanotrasen logo sign"
-	sign_change_name = "Corporate Logo - Nanotrasen"
-	desc = "A sign with the Nanotrasen logo on it. Glory to Nanotrasen!"
-	icon = 'icons/obj/nanotrasen_logos.dmi'
-	icon_state = "nanotrasen"
+/obj/structure/sign/makossowarra
+	name = "\improper Makosso-Warra logo sign"
+	sign_change_name = "Corporate Logo - Makosso-Warra"
+	desc = "A sign with the Makosso-Warra logo on it. Glory to Makosso-Warra!"
+	icon = 'icons/obj/makossowarra_logos.dmi'
+	icon_state = "makossowarra"
 	is_editable = TRUE
 
-/obj/structure/sign/nanotrasen/ns
+/obj/structure/sign/makossowarra/ns
 	name = "\improper N+S Logistics logo sign"
 	sign_change_name = "Corporate Logo - N+S Logistics"
 	desc = "A sign with the N+S Logistics compass rose on it."
 	icon_state = "ns"
 	is_editable = TRUE
 
-/obj/structure/sign/nanotrasen/vigilitas
+/obj/structure/sign/makossowarra/vigilitas
 	name = "\improper Vigilitas Interstellar logo sign"
 	sign_change_name = "Corporate Logo - Vigilitas Interstellar"
 	desc = "A sign with Vigilitas Interstellar's VI logo on it."
@@ -231,15 +231,15 @@
 	is_editable = TRUE
 
 /obj/structure/sign/logo
-	name = "\improper Nanotrasen logo sign"
-	desc = "The Nanotrasen corporate logo."
-	icon_state = "nanotrasen_sign1"
+	name = "\improper Makosso-Warra logo sign"
+	desc = "The Makosso-Warra corporate logo."
+	icon_state = "makossowarra_sign1"
 
 // im still holding on to that syndicate city idea... my hope will never die
 /obj/structure/sign/syndicate	//based of paradise's syndicate logo. I will i was good enough to sprite the background
 	name = "\improper Syndicate logo sign"
 	sign_change_name = "Corporate Logo - Syndicate"
-	desc = "A sign with the Syndicate logo on it. Death to Nanotrasen."
+	desc = "A sign with the Syndicate logo on it. Death to Makosso-Warra."
 	icon_state = "syndicate"
 	is_editable = TRUE
 

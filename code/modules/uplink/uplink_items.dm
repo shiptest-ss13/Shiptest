@@ -403,7 +403,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/dangerous/flamethrower
 	name = "Flamethrower"
-	desc = "A flamethrower, fueled by a portion of highly flammable biotoxins stolen previously from Nanotrasen \
+	desc = "A flamethrower, fueled by a portion of highly flammable biotoxins stolen previously from Makosso-Warra \
 			stations. Make a statement by roasting the filth in their own greed. Use with caution."
 	item = /obj/item/flamethrower/full/tank
 	cost = 4
@@ -1030,7 +1030,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	name = "Syndicate Saboteur Cyborg"
 	desc = "A streamlined engineering cyborg, equipped with covert modules. Also incapable of leaving the welder in the shuttle. \
 			Aside from regular Engineering equipment, it comes with a special destination tagger that lets it traverse disposals networks. \
-			Its chameleon projector lets it disguise itself as a Nanotrasen cyborg, on top it has thermal vision and a pinpointer."
+			Its chameleon projector lets it disguise itself as a Makosso-Warra cyborg, on top it has thermal vision and a pinpointer."
 	item = /obj/item/antag_spawner/nuke_ops/borg_tele/saboteur
 	refundable = TRUE
 	cost = 35
@@ -1156,8 +1156,8 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/suits/space_suit
 	name = "Syndicate Space Suit"
-	desc = "This red and black Syndicate space suit is less encumbering than Nanotrasen variants, \
-			fits inside bags, and has a weapon slot. Nanotrasen crew members are trained to report red space suit \
+	desc = "This red and black Syndicate space suit is less encumbering than Makosso-Warra variants, \
+			fits inside bags, and has a weapon slot. Makosso-Warra crew members are trained to report red space suit \
 			sightings, however."
 	item = /obj/item/storage/box/syndie_kit/space
 	cost = 4
@@ -1168,7 +1168,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			that runs off standard atmospheric tanks. Toggling the suit in and out of \
 			combat mode will allow you all the mobility of a loose fitting uniform without sacrificing armoring. \
 			Additionally the suit is collapsible, making it small enough to fit within a backpack. \
-			Nanotrasen crew who spot these suits are known to panic."
+			Makosso-Warra crew who spot these suits are known to panic."
 	item = /obj/item/clothing/suit/space/hardsuit/syndi
 	cost = 8
 	exclude_modes = list(/datum/game_mode/nuclear) //you can't buy it in nuke, because the elite hardsuit costs the same while being better
@@ -1216,7 +1216,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 /datum/uplink_item/device_tools/magboots
 	name = "Blood-Red Magboots"
 	desc = "A pair of magnetic boots with a Syndicate paintjob that assist with freer movement in zero-g conditions \
-			during gravitational generator failures. These reverse-engineered knockoffs of Nanotrasen's \
+			during gravitational generator failures. These reverse-engineered knockoffs of Makosso-Warra's \
 			'Advanced Magboots' slow you down in simulated-gravity environments much like the standard issue variety."
 	item = /obj/item/clothing/shoes/magboots/syndie
 	cost = 2
@@ -1343,7 +1343,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/device_tools/rad_laser
 	name = "Radioactive Microlaser"
-	desc = "A radioactive microlaser disguised as a standard Nanotrasen health analyzer. When used, it emits a \
+	desc = "A radioactive microlaser disguised as a standard Makosso-Warra health analyzer. When used, it emits a \
 			powerful burst of radiation, which, after a short delay, can incapacitate all but the most protected \
 			of humanoids. It has two settings: intensity, which controls the power of the radiation, \
 			and wavelength, which controls the delay before the effect kicks in."

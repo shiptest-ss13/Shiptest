@@ -121,7 +121,7 @@
 
 /obj/item/melee/energy/sword
 	name = "energy sword"
-	desc = "For when a katana isn't enough. While Nanotrasen and the Syndicate both produce the so-called e-swords, they are visually and functionaly identical."
+	desc = "For when a katana isn't enough. While Makosso-Warra and the Syndicate both produce the so-called e-swords, they are visually and functionaly identical."
 	icon_state = "sword"
 	base_icon_state = "sword"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'

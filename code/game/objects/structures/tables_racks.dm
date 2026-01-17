@@ -310,7 +310,7 @@
 ///Table on wheels
 /obj/structure/table/rolling
 	name = "Rolling table"
-	desc = "A NT brand \"Rolly poly\" rolling table. It can and will move."
+	desc = "A Makosso-Warra brand \"Rolly poly\" rolling table. It can and will move."
 	anchored = FALSE
 	smoothing_flags = NONE
 	smoothing_groups = null

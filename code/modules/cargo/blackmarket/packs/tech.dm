@@ -108,7 +108,7 @@
 
 /datum/blackmarket_item/tech/t4_manip
 	name = "Femto Manipulator"
-	desc = "A top grade femto manipulator. These insanely precise manipuators are capable of manipulating particles up to a quadtillionth of a meter. Still not precise enough to find a single braincell in an NT exec's head though."
+	desc = "A top grade femto manipulator. These insanely precise manipuators are capable of manipulating particles up to a quadtillionth of a meter. Still not precise enough to find a single braincell in an MW exec's head though."
 	item = /obj/item/stock_parts/manipulator/femto
 
 	cost_min = 400

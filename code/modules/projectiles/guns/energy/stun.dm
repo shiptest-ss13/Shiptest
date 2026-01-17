@@ -27,10 +27,10 @@
 /obj/item/gun/energy/disabler
 	name = "disabler"
 	desc = "A self-defense weapon that exhausts organic targets, weakening them until they collapse."
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/onmob.dmi'
 	icon_state = "disabler"
 	item_state = null
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler)

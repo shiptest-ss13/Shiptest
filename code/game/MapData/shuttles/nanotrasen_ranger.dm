@@ -91,7 +91,7 @@
 
 //Holocalls
 /datum/preset_holoimage/commissioner
-	outfit_type = /datum/outfit/job/nanotrasen/captain/lp
+	outfit_type = /datum/outfit/job/makossowarra/captain/lp
 
 //hardsuits
 /obj/item/clothing/suit/space/hardsuit/ert/lp
@@ -211,7 +211,7 @@
 	NAME Commissioner Gorre Donn
 	SAY This mission, should you choose to accept it, revolves around a retrieval objective. The LP will need to obtain or create something.
 	DELAY 25
-	SAY Nanotrasen has sent you a very limited supply of weaponry. Increase it. We want five unique guns stored in your vault.
+	SAY Makosso-Warra has sent you a very limited supply of weaponry. Increase it. We want five unique guns stored in your vault.
 	DELAY 25
 	"}
 
@@ -223,7 +223,7 @@
 	NAME Commissioner Gorre Donn
 	SAY This mission, should you choose to accept it, revolves around a retrieval objective. The LP will need to obtain or create something.
 	DELAY 25
-	SAY Nanotrasen is short on funds and materials. Procure 150 sheets of the following: Diamond, Bluespace Polycrystals, Plastitanium.
+	SAY Makosso-Warra is short on funds and materials. Procure 150 sheets of the following: Diamond, Bluespace Polycrystals, Plastitanium.
 	DELAY 25
 	"}
 
@@ -275,7 +275,7 @@
 	DELAY 20
 	SAY Command Frequency: 135.1 using :c
 	DELAY 20
-	SAY Nanotrasen Sector Frequency: 135.3 using :n
+	SAY Makosso-Warra Sector Frequency: 135.3 using :w
 	DELAY 20
 	SAY Common Frequency: 149.1 using ;
 	DELAY 20

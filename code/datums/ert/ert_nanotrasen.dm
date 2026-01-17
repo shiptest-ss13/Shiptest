@@ -1,26 +1,26 @@
-/datum/ert/nanotrasen
+/datum/ert/makossowarra
 	teamsize = 4
-	leader_role = /datum/antagonist/ert/nanotrasen/leader
-	roles = list(/datum/antagonist/ert/nanotrasen)
-	mission = "Work for the corporate values of Nanotrasen."
+	leader_role = /datum/antagonist/ert/makossowarra/leader
+	roles = list(/datum/antagonist/ert/makossowarra)
+	mission = "Work for the corporate values of makossowarra."
 	rename_team = "Vigilitas Security Team"
 	polldesc = "a Vigilitas security team"
 
-// /datum/ert/nanotrasen/emergency
-// 	leader_role = /datum/antagonist/ert/nanotrasen/leader/emergency
-// 	roles = list(/datum/antagonist/ert/nanotrasen/emergency, /datum/antagonist/ert/nanotrasen/emergency/engineer=1, /datum/antagonist/ert/nanotrasen/emergency/medic=1)
+// /datum/ert/makossowarra/emergency
+// 	leader_role = /datum/antagonist/ert/makossowarra/leader/emergency
+// 	roles = list(/datum/antagonist/ert/makossowarra/emergency, /datum/antagonist/ert/makossowarra/emergency/engineer=1, /datum/antagonist/ert/makossowarra/emergency/medic=1)
 // 	rename_team = "Vigilitas Distress Response Team"
 // 	polldesc = "a Vigilitas emergency team"
 
-/datum/ert/nanotrasen/delivery
-	leader_role = /datum/antagonist/ert/nanotrasen/delivery
-	roles = list(/datum/antagonist/ert/nanotrasen/delivery)
+/datum/ert/makossowarra/delivery
+	leader_role = /datum/antagonist/ert/makossowarra/delivery
+	roles = list(/datum/antagonist/ert/makossowarra/delivery)
 	rename_team = "N+S Delivery Team"
 	polldesc = "a N+S delivery job"
 
-/datum/ert/nanotrasen/inspector
+/datum/ert/makossowarra/inspector
 	teamsize = 1
-	leader_role = /datum/antagonist/ert/nanotrasen/inspector
-	roles = list(/datum/antagonist/ert/nanotrasen/inspector)
-	rename_team = "Nanotrasen Central Command Liaison"
-	polldesc = "a NT CentCom inspector"
+	leader_role = /datum/antagonist/ert/makossowarra/inspector
+	roles = list(/datum/antagonist/ert/makossowarra/inspector)
+	rename_team = "Makosso-Warra Central Command Liaison"
+	polldesc = "a Makosso-Warra CentCom inspector"

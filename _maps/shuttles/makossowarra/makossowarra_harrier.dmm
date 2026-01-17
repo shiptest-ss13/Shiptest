@@ -638,7 +638,7 @@
 /obj/item/pen/fountain/captain{
 	pixel_x = -6
 	},
-/obj/item/stamp/nanotrasen/captain{
+/obj/item/stamp/makossowarra/captain{
 	pixel_x = 6
 	},
 /turf/open/floor/carpet/royalblue,
@@ -999,7 +999,7 @@
 /area/ship/engineering)
 "fc" = (
 /obj/structure/table/wood/reinforced,
-/obj/machinery/fax/nanotrasen,
+/obj/machinery/fax/makossowarra,
 /obj/machinery/light/small/directional/east,
 /obj/machinery/button/door{
 	dir = 1;
@@ -1289,7 +1289,7 @@
 /area/ship/crew/toilet)
 "gH" = (
 /obj/structure/bed,
-/obj/item/bedsheet/nanotrasen,
+/obj/item/bedsheet/makossowarra,
 /obj/structure/curtain/bounty,
 /turf/open/floor/wood,
 /area/ship/crew/law_office)
@@ -1314,8 +1314,8 @@
 "gO" = (
 /obj/item/storage/backpack/satchel/med,
 /obj/item/clothing/shoes/sneakers/white,
-/obj/item/clothing/under/nanotrasen/medical,
-/obj/item/clothing/suit/toggle/labcoat/nanotrasen,
+/obj/item/clothing/under/makossowarra/medical,
+/obj/item/clothing/suit/toggle/labcoat/makossowarra,
 /obj/item/clothing/glasses/hud/health,
 /obj/item/storage/pill_bottle/stimulant{
 	pixel_x = 5
@@ -1601,10 +1601,10 @@
 	pixel_x = 32
 	},
 /obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/under/nanotrasen/security,
+/obj/item/clothing/under/makossowarra/security,
 /obj/item/clothing/gloves/color/black,
-/obj/item/clothing/head/nanotrasen/cap/security,
-/obj/item/clothing/head/nanotrasen/beret/security,
+/obj/item/clothing/head/makossowarra/cap/security,
+/obj/item/clothing/head/makossowarra/beret/security,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/storage/backpack/security,
 /obj/item/storage/box/handcuffs,
@@ -2177,8 +2177,8 @@
 	req_access = list(2)
 	},
 /obj/machinery/airalarm/directional/east,
-/obj/item/clothing/suit/armor/nanotrasen,
-/obj/item/clothing/suit/armor/nanotrasen/slim,
+/obj/item/clothing/suit/armor/makossowarra,
+/obj/item/clothing/suit/armor/makossowarra/slim,
 /obj/item/clothing/head/helmet/m10,
 /obj/item/clothing/head/helmet/m10,
 /obj/effect/turf_decal/trimline/opaque/vired/filled/warning{
@@ -2303,8 +2303,8 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/item/radio/intercom/directional/north,
-/obj/item/clothing/under/nanotrasen/janitor,
-/obj/item/clothing/head/nanotrasen/cap/janitor,
+/obj/item/clothing/under/makossowarra/janitor,
+/obj/item/clothing/head/makossowarra/cap/janitor,
 /obj/item/clothing/shoes/galoshes,
 /obj/item/storage/belt/janitor,
 /obj/item/clothing/gloves/color/black,
@@ -2392,8 +2392,8 @@
 	pixel_y = -25
 	},
 /obj/item/clothing/gloves/color/latex/nitrile,
-/obj/item/clothing/suit/nanotrasen/medical_smock,
-/obj/item/clothing/head/nanotrasen/surgical,
+/obj/item/clothing/suit/makossowarra/medical_smock,
+/obj/item/clothing/head/makossowarra/surgical,
 /obj/machinery/firealarm/directional/east,
 /obj/item/tank/internals/anesthetic,
 /obj/item/clothing/mask/breath/medical,
@@ -2613,10 +2613,10 @@
 	},
 /obj/machinery/firealarm/directional/west,
 /obj/item/clothing/shoes/laceup,
-/obj/item/clothing/under/nanotrasen/officer,
-/obj/item/clothing/suit/toggle/nanotrasen,
-/obj/item/clothing/head/nanotrasen/officer,
-/obj/item/clothing/head/nanotrasen/beret,
+/obj/item/clothing/under/makossowarra/officer,
+/obj/item/clothing/suit/toggle/makossowarra,
+/obj/item/clothing/head/makossowarra/officer,
+/obj/item/clothing/head/makossowarra/beret,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/storage/backpack/satchel/leather,
 /obj/item/storage/box/ids,
@@ -3383,7 +3383,7 @@
 /obj/effect/turf_decal/trimline/opaque/nsorange/line{
 	dir = 8
 	},
-/obj/item/stamp/nanotrasen/ns{
+/obj/item/stamp/makossowarra/ns{
 	pixel_y = 8;
 	pixel_x = 8
 	},
@@ -3798,7 +3798,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/atmospherics)
 "uZ" = (
-/obj/structure/sign/nanotrasen,
+/obj/structure/sign/makossowarra,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
 "va" = (
@@ -3958,7 +3958,7 @@
 /area/ship/cargo)
 "vS" = (
 /obj/structure/filingcabinet/double/grey,
-/obj/structure/sign/nanotrasen/ns{
+/obj/structure/sign/makossowarra/ns{
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel,
@@ -4136,9 +4136,9 @@
 "wM" = (
 /obj/machinery/telecomms/relay{
 	freq_listening = list(1351);
-	id = "Nanotrasen Relay";
-	name = "Nanotrasen relay";
-	network = "nt_commnet"
+	id = "Makosso-Warra Relay";
+	name = "Makosso-Warra relay";
+	network = "makossowarra_commnet"
 	},
 /turf/open/floor/circuit,
 /area/ship/science/ai_chamber)
@@ -4593,8 +4593,8 @@
 "yR" = (
 /obj/item/storage/backpack/medic,
 /obj/item/clothing/shoes/sneakers/blue,
-/obj/item/clothing/under/nanotrasen/medical/paramedic,
-/obj/item/clothing/head/nanotrasen/cap/medical,
+/obj/item/clothing/under/makossowarra/medical/paramedic,
+/obj/item/clothing/head/makossowarra/cap/medical,
 /obj/item/clothing/glasses/hud/health,
 /obj/item/storage/belt/medical/paramedic,
 /obj/structure/closet/secure_closet/medical3{
@@ -4780,11 +4780,11 @@
 	},
 /obj/machinery/firealarm/directional/west,
 /obj/item/clothing/shoes/laceup,
-/obj/item/clothing/under/nanotrasen/captain,
-/obj/item/clothing/suit/armor/nanotrasen/captain/parade,
-/obj/item/clothing/neck/cloak/nanotrasen,
+/obj/item/clothing/under/makossowarra/captain,
+/obj/item/clothing/suit/armor/makossowarra/captain/parade,
+/obj/item/clothing/neck/cloak/makossowarra,
 /obj/item/storage/backpack/captain,
-/obj/item/clothing/head/nanotrasen/captain/peaked,
+/obj/item/clothing/head/makossowarra/captain/peaked,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/storage/belt/sabre,
 /obj/machinery/light/small/directional/north,
@@ -5049,7 +5049,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/item/stamp/nanotrasen{
+/obj/item/stamp/makossowarra{
 	pixel_x = -12;
 	pixel_y = 4
 	},
@@ -5663,7 +5663,7 @@
 "EV" = (
 /obj/structure/bed,
 /obj/structure/curtain/bounty,
-/obj/item/bedsheet/nanotrasen,
+/obj/item/bedsheet/makossowarra,
 /turf/open/floor/carpet/cyan,
 /area/ship/crew)
 "EX" = (
@@ -5746,7 +5746,7 @@
 "Fx" = (
 /obj/structure/railing/corner,
 /obj/structure/table/reinforced,
-/obj/machinery/fax/nanotrasen,
+/obj/machinery/fax/makossowarra,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
@@ -5922,15 +5922,15 @@
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/item/clothing/shoes/sneakers/brown,
-/obj/item/clothing/under/nanotrasen/supply/qm,
+/obj/item/clothing/under/makossowarra/supply/qm,
 /obj/item/storage/backpack/satchel/leather,
 /obj/item/clothing/glasses/sunglasses,
-/obj/item/clothing/head/nanotrasen/cap/supply,
+/obj/item/clothing/head/makossowarra/cap/supply,
 /obj/structure/closet/secure_closet/quartermaster{
 	populate = 0
 	},
 /obj/item/stack/tape,
-/obj/item/stamp/nanotrasen/ns/supply,
+/obj/item/stamp/makossowarra/ns/supply,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Gy" = (
@@ -6216,8 +6216,8 @@
 /area/ship/engineering/engine)
 "Ik" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/item/clothing/head/hardhat/nanotrasen,
-/obj/item/clothing/suit/nanotrasen/vest,
+/obj/item/clothing/head/hardhat/makossowarra,
+/obj/item/clothing/suit/makossowarra/vest,
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/mask/gas/explorer,
 /obj/item/melee/knife/survival,
@@ -6230,7 +6230,7 @@
 	dir = 4
 	},
 /obj/machinery/firealarm/directional/south,
-/obj/item/clothing/under/nanotrasen/supply/miner,
+/obj/item/clothing/under/makossowarra/supply/miner,
 /obj/item/clothing/glasses/meson,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -6282,7 +6282,7 @@
 	pixel_x = -8;
 	pixel_y = 8
 	},
-/obj/item/stamp/nanotrasen{
+/obj/item/stamp/makossowarra{
 	pixel_x = 6;
 	pixel_y = 2
 	},
@@ -6550,10 +6550,10 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/airalarm/directional/south,
 /obj/item/clothing/shoes/workboots,
-/obj/item/clothing/under/nanotrasen/engineering/atmos,
-/obj/item/clothing/suit/nanotrasen/vest/blue,
+/obj/item/clothing/under/makossowarra/engineering/atmos,
+/obj/item/clothing/suit/makossowarra/vest/blue,
 /obj/item/storage/backpack/industrial,
-/obj/item/clothing/head/hardhat/nanotrasen/blue,
+/obj/item/clothing/head/hardhat/makossowarra/blue,
 /obj/item/clothing/gloves/color/black,
 /obj/item/clothing/glasses/meson/engine,
 /obj/item/analyzer,
@@ -6590,10 +6590,10 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/firealarm/directional/south,
 /obj/item/clothing/shoes/workboots,
-/obj/item/clothing/under/nanotrasen/engineering,
-/obj/item/clothing/suit/nanotrasen/vest,
+/obj/item/clothing/under/makossowarra/engineering,
+/obj/item/clothing/suit/makossowarra/vest,
 /obj/item/storage/backpack/industrial,
-/obj/item/clothing/head/hardhat/nanotrasen,
+/obj/item/clothing/head/hardhat/makossowarra,
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/clothing/glasses/meson/engine,
 /turf/open/floor/plasteel/patterned,
@@ -8720,7 +8720,7 @@
 	},
 /obj/item/gun/ballistic/automatic/pistol/challenger/no_mag,
 /obj/item/radio/intercom/directional/east,
-/obj/structure/sign/nanotrasen/vigilitas{
+/obj/structure/sign/makossowarra/vigilitas{
 	pixel_y = 32
 	},
 /obj/effect/turf_decal/trimline/opaque/vired/filled/warning{
@@ -9045,11 +9045,11 @@
 /obj/machinery/camera/autoname{
 	dir = 10
 	},
-/obj/item/stamp/nanotrasen{
+/obj/item/stamp/makossowarra{
 	pixel_x = 8;
 	pixel_y = 10
 	},
-/obj/item/stamp/nanotrasen/central{
+/obj/item/stamp/makossowarra/central{
 	pixel_x = 8;
 	pixel_y = 4
 	},
@@ -9063,7 +9063,7 @@
 /obj/item/pen/fourcolor{
 	pixel_x = -6
 	},
-/obj/item/stamp/nanotrasen/officer{
+/obj/item/stamp/makossowarra/officer{
 	pixel_x = 6
 	},
 /turf/open/floor/carpet/blue,
@@ -9527,8 +9527,8 @@
 	},
 /obj/machinery/airalarm/directional/north,
 /obj/item/clothing/shoes/laceup,
-/obj/item/clothing/under/nanotrasen/affairs,
-/obj/item/clothing/suit/nanotrasen/suitjacket,
+/obj/item/clothing/under/makossowarra/affairs,
+/obj/item/clothing/suit/makossowarra/suitjacket,
 /obj/item/clothing/neck/tie/black,
 /obj/item/clothing/neck/tie/black,
 /obj/item/clothing/neck/tie/black,
@@ -9597,7 +9597,7 @@
 /obj/item/paper_bin{
 	pixel_x = 8
 	},
-/obj/item/stamp/nanotrasen/vigilitas{
+/obj/item/stamp/makossowarra/vigilitas{
 	pixel_x = 8;
 	pixel_y = 3
 	},
@@ -9701,8 +9701,8 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/airalarm/directional/east,
 /obj/item/clothing/shoes/sneakers/black,
-/obj/item/clothing/under/nanotrasen/supply,
-/obj/item/clothing/head/nanotrasen/cap/supply,
+/obj/item/clothing/under/makossowarra/supply,
+/obj/item/clothing/head/makossowarra/cap/supply,
 /obj/item/clothing/gloves/fingerless,
 /obj/item/storage/backpack/messenger,
 /obj/machinery/firealarm/directional/south,

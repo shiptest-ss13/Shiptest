@@ -293,9 +293,9 @@
 	icon_state = "letterman_s"
 	item_state = "letterman_s"
 
-/obj/item/clothing/suit/jacket/letterman_nanotrasen
+/obj/item/clothing/suit/jacket/letterman_makossowarra
 	name = "blue letterman jacket"
-	desc = "A blue letterman jacket with a proud Nanotrasen N on the back. The tag says that it was made in Space China."
+	desc = "A blue letterman jacket with a proud Makosso-Warra M on the back. It seems cheaply made."
 	icon_state = "letterman_n"
 	item_state = "letterman_n"
 

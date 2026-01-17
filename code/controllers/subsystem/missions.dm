@@ -62,7 +62,7 @@ SUBSYSTEM_DEF(missions)
 	var/group = pick(list(
 		"Cybersun Biodynamics",
 		"CLIP-GOLD Frontier Investigations Office",
-		"Nanotrasen Frontier Studies Division",
+		"Makosso-Warra Frontier Studies Division",
 		"The Naturalienwissenschaftlicher Studentenverbindungs-Verband",
 		"The Central Solarian Frontier Research Agency",
 		"NGR Bureau of Expansion",

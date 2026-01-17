@@ -27,51 +27,51 @@
 /datum/map_template/ruin/lavaland/wrecked_factory
 	name = "Wrecked Factory"
 	id = "wreck_factory"
-	description = "A Nanotrasen processing facility, assaulted by a pirate raid that has killed most of the staff. The offices however, remain unbreached for now."
+	description = "A Makosso-Warra processing facility, assaulted by a pirate raid that has killed most of the staff. The offices however, remain unbreached for now."
 	suffix = "lavaland_surface_wrecked_factory.dmm"
 /*	ruin_mission_types = list(
-		/datum/mission/ruin/nanotrasen_docs,
+		/datum/mission/ruin/makossowarra_docs,
 		/datum/mission/ruin/captain_medal,
 		/datum/mission/ruin/brainchip
 	)
 */
 
-/datum/mission/ruin/nanotrasen_docs
-	name = "Nanotrasen Asset Recovery Program."
-	author = "Nanotrasen Recovery Program"
-	desc = "We've recently lost contact with a processing facility within the purview of this outpost. Nanotrasen is interested in the retrieval of sensitive assets located within the facility."
+/datum/mission/ruin/makossowarra_docs
+	name = "Makosso-Warra Asset Recovery Program."
+	author = "Makosso-Warra Recovery Program"
+	desc = "We've recently lost contact with a processing facility within the purview of this outpost. Makosso-Warra is interested in the retrieval of sensitive assets located within the facility."
 	faction = list(
-		/datum/faction/nt,
+		/datum/faction/makossowarra,
 		/datum/faction/syndicate/cybersun
 	)
 	mission_limit = 1
-	setpiece_item = /obj/item/documents/nanotrasen
+	setpiece_item = /obj/item/documents/makossowarra
 
-/datum/mission/ruin/nanotrasen_docs/generate_mission_details()
+/datum/mission/ruin/makossowarra_docs/generate_mission_details()
 	. = ..()
-	if(faction == /datum/faction/nt)
-		name = "Nanotrasen Asset Recovery Program"
-		author = "Nanotrasen Recovery Program"
-		desc = "Nanotrasen Corporate has recently lost contact with a processing facility within the purview of this outpost. Nanotrasen is interested in the retrieval of sensitive assets located within the facility."
+	if(faction == /datum/faction/makossowarra)
+		name = "Makosso-Warra Asset Recovery Program"
+		author = "Makosso-Warra Recovery Program"
+		desc = "Makosso-Warra Corporate has recently lost contact with a processing facility within the purview of this outpost. Makosso-Warra is interested in the retrieval of sensitive assets located within the facility."
 		value = 1500
 	if(faction == /datum/faction/syndicate/cybersun)
 		name = "Cybersun Capture Program"
 		author = "Cybersun Virtual Solutions"
-		desc = "Cybersun VS is extremely interested in the contents of a documents package located at a Nanotrasen facility recently hit by the Ramzi Clique. Retrieve it for us, and we'll pay handsomely."
+		desc = "Cybersun VS is extremely interested in the contents of a documents package located at a Makosso-Warra facility recently hit by the Ramzi Clique. Retrieve it for us, and we'll pay handsomely."
 		value = 2000
 
 /datum/mission/ruin/captain_medal
 	name = "Recover War Medal"
 	desc = "A few months back, I lost my medal for \"Valiant Command Under Fire\". I've managed to track it down to a world in this system, and I'd like it retrieved."
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 	mission_limit = 1
 	setpiece_item = /obj/item/clothing/accessory/medal/gold/captain
 
 /datum/mission/ruin/brainchip
-	name = "Nanotrasen Asset Recovery Program"
-	author = "Nanotrasen Recovery Program"
+	name = "Makosso-Warra Asset Recovery Program"
+	author = "Makosso-Warra Recovery Program"
 	desc = "Retrieve an implant from cargo technician who has failed to report proper usage of the system as stipulated by contract."
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 	value = 1000
 	mission_limit = 1
 	setpiece_item = /mob/living/carbon/human
@@ -108,7 +108,7 @@
 	author = "Cybersun Virtual Solutions"
 	desc = "Several listening posts previously belonging to Coalition operations during the ICW went dark. We'd like you to retrieve any classified information within their secure data safe, and to do this quietly. We'll pay you well."
 	faction = list(
-		/datum/faction/nt,
+		/datum/faction/makossowarra,
 		/datum/faction/syndicate/cybersun
 	)
 	value = 3500
@@ -117,7 +117,7 @@
 
 /datum/mission/ruin/syndicate_docs/generate_mission_details()
 	. = ..()
-	if(faction == /datum/faction/nt)
+	if(faction == /datum/faction/makossowarra)
 		name = "Vigilitas Data Collection"
 		author = "Vigilitas Interstellar"
 		desc = "We've been made aware of a listening post operating within this section of space that may contain information of interest to the Company. We'll pay you well if you bring them to us."

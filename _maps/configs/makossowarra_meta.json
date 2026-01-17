@@ -2,8 +2,8 @@
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Meta-class Freighter",
 	"prefix": "NSSV",
-	"faction": "/datum/faction/nt/ns_logi",
-	"manufacturer": "Nanotrasen Spaceworks",
+	"faction": "/datum/faction/makossowarra/ns_logi",
+	"manufacturer": "Makosso-Warra Spaceworks",
 	"map_short_name": "Meta-class",
 	"description": "The Meta-class is the mainline freighter of N+S Logistics, boasting incredible cargo capacity, spacious crew areas, and law-abiding levels of speed. It has been through a substantial redesign compared to its pre-war namesake, aiming to reduce accidents and increase supply throughput to make up for post-war defecits. The Meta-class frigate can most often be found in the frontier transporting cargo between outposts, delivering mail, and selling N+S goods and merchandise. N+S is not liable for any health issues, injuries or addictions that may occur while working aboard this vessel.",
 	"tags": [
@@ -12,31 +12,31 @@
 	"namelists": [
 		"GENERAL",
 		"SPACE",
-		"NANOTRASEN",
+		"MAKOSSO-WARRA",
 		"HISTORICAL"
 	],
-	"map_path": "_maps/shuttles/nanotrasen/nanotrasen_meta.dmm",
+	"map_path": "_maps/shuttles/makossowarra/makossowarra_meta.dmm",
 	"starting_funds": 4000,
 	"job_slots": {
 		"Quartermaster": {
-			"outfit": "/datum/outfit/job/nanotrasen/captain/ns",
+			"outfit": "/datum/outfit/job/makossowarra/captain/ns",
 			"officer": true,
 			"slots": 1
 		},
 		"Cargo Technician": {
-			"outfit": "/datum/outfit/job/nanotrasen/cargo_tech",
+			"outfit": "/datum/outfit/job/makossowarra/cargo_tech",
 			"slots": 2
 		},
 		"Field Technician": {
-			"outfit": "/datum/outfit/job/nanotrasen/miner/no_equipment",
+			"outfit": "/datum/outfit/job/makossowarra/miner/no_equipment",
 			"slots": 1
 		},
 		"Engineer": {
-			"outfit": "/datum/outfit/job/nanotrasen/engineer",
+			"outfit": "/datum/outfit/job/makossowarra/engineer",
 			"slots": 1
 		},
 		"Desk Assistant": {
-			"outfit": "/datum/outfit/job/nanotrasen/assistant",
+			"outfit": "/datum/outfit/job/makossowarra/assistant",
 			"slots": 2
 		}
 	},

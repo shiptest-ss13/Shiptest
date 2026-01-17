@@ -775,7 +775,7 @@
 	color = "#2E6671" // rgb: 46, 102, 113
 	boozepwr = 90
 	quality = DRINK_GOOD
-	taste_description = "anti-Nanotrasen sentiments"
+	taste_description = "anti-Makosso-Warra sentiments"
 	glass_icon_state = "syndicatebomb"
 	glass_name = "Gorlex Surprise"
 	glass_desc = "Infamously named after the accusations of Syndicate-led bombings of space installations. It's a blast!"
@@ -965,7 +965,7 @@
 	metabolization_rate = 1 * REAGENTS_METABOLISM
 	glass_icon_state = "neurotoxinglass"
 	glass_name = "Neurotoxin"
-	glass_desc = "The story goes that this drink was made on a bet between Cybersun chemists, debating if a drink could be used to put down a suspected Nanotrasen spy. While morphine wasn't <i>supposed</i> to be used, it put them down all the same."
+	glass_desc = "The story goes that this drink was made on a bet between Cybersun chemists, debating if a drink could be used to put down a suspected Makosso-Warra spy. While morphine wasn't <i>supposed</i> to be used, it put them down all the same."
 
 /datum/reagent/consumable/ethanol/neurotoxin/proc/pickt()
 	return (pick(TRAIT_PARALYSIS_L_ARM,TRAIT_PARALYSIS_R_ARM,TRAIT_PARALYSIS_R_LEG,TRAIT_PARALYSIS_L_LEG))
@@ -1061,7 +1061,7 @@
 	taste_description = "an invigorating bitter freshness which suffuses your being; you can take on anyone who messes with your vessel"
 	glass_icon_state = "quadruple_sec"
 	glass_name = "Quadruple Sec"
-	glass_desc = "A glass of Quadruple Sec. Popularized for being a mixed drink of choice across multiple independent security agencies, and notably among Nanotrasen's internal security culture. It's not recommended to drink while manning a vessel, though!"
+	glass_desc = "A glass of Quadruple Sec. Popularized for being a mixed drink of choice across multiple independent security agencies, and notably among Vigilitas's security staff. It's not recommended to drink while manning a vessel, though!"
 
 /datum/reagent/consumable/ethanol/quintuple_sec
 	name = "Quintuple Sec"
@@ -1615,7 +1615,7 @@
 	taste_description = "thick, nut-flavored milk with a boozy kick"
 	glass_icon_state = "muddersmilk"
 	glass_name = "Miner's Milk"
-	glass_desc = "All the protein, vitamins and carbs of two full ration packs, plus 15% alcohol. Created by Nanotrasen's Mining and Exploration League, and often still enjoyed in the New Gorlex Republic."
+	glass_desc = "All the protein, vitamins and carbs of two full ration packs, plus 15% alcohol. Created by N+S's mining and survey corps, and often still enjoyed in the New Gorlex Republic."
 
 /datum/reagent/consumable/ethanol/mudders_milk/on_mob_life(mob/living/carbon/M)
 	if(prob(1))

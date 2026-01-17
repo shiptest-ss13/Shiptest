@@ -256,7 +256,7 @@
 		/obj/item/pickaxe,
 		/obj/item/t_scanner/adv_mining_scanner,
 		/obj/item/restraints/handcuffs/cable/zipties,
-		/obj/item/soap/nanotrasen,
+		/obj/item/soap/makossowarra,
 		/obj/item/borg/cyborghug)
 	emag_modules = list(/obj/item/melee/energy/sword/cyborg)
 	cyborg_base_icon = "robot"
@@ -637,7 +637,7 @@
 		/obj/item/screwdriver/cyborg,
 		/obj/item/crowbar/cyborg,
 		/obj/item/stack/tile/plasteel/cyborg,
-		/obj/item/soap/nanotrasen,
+		/obj/item/soap/makossowarra,
 		/obj/item/storage/bag/trash/cyborg,
 		/obj/item/melee/flyswatter,
 		/obj/item/extinguisher/mini,

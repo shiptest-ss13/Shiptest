@@ -48,15 +48,15 @@
 	resistance_flags = NONE
 	roll_down = TRUE
 
-/obj/item/clothing/under/rank/engineering/engineer/nt
-	desc = "It's an yellow high visibility jumpsuit worn by Nanotrasen contracted engineers. It has minor radiation shielding."
+/obj/item/clothing/under/rank/engineering/engineer/makossowarra
+	desc = "It's an yellow high visibility jumpsuit worn by Makosso-Warra contracted engineers. It has minor radiation shielding."
 	name = "engineer's jumpsuit"
 	icon_state = "engine_nt"
 	item_state = "engi_suit"
 
-/obj/item/clothing/under/rank/engineering/engineer/nt/skirt
+/obj/item/clothing/under/rank/engineering/engineer/makossowarra/skirt
 	name = "engineer's jumpskirt"
-	desc = "It's an orange high visibility jumpskirt worn by Nanotrasen contracted engineers."
+	desc = "It's an orange high visibility jumpskirt worn by Makosso-Warra contracted engineers."
 	icon_state = "engine_nt_skirt"
 	item_state = "engi_suit"
 	body_parts_covered = CHEST|GROIN|ARMS

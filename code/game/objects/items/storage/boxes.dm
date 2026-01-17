@@ -864,7 +864,7 @@
 	. = ..()
 	papersack_designs = sortList(list(
 		"None" = image(icon = src.icon, icon_state = "paperbag_None"),
-		"NanotrasenStandard" = image(icon = src.icon, icon_state = "paperbag_NanotrasenStandard"),
+		"MakossowarraStandard" = image(icon = src.icon, icon_state = "paperbag_MakossowarraStandard"),
 		"SyndiSnacks" = image(icon = src.icon, icon_state = "paperbag_SyndiSnacks"),
 		"Heart" = image(icon = src.icon, icon_state = "paperbag_Heart"),
 		"SmileyFace" = image(icon = src.icon, icon_state = "paperbag_SmileyFace")
@@ -887,8 +887,8 @@
 		switch(choice)
 			if("None")
 				desc = "A sack neatly crafted out of paper."
-			if("NanotrasenStandard")
-				desc = "A standard Nanotrasen paper lunch sack for loyal employees on the go."
+			if("MakossowarraStandard")
+				desc = "A standard Makosso-Warra paper lunch sack for loyal employees on the go."
 			if("SyndiSnacks")
 				desc = "The design on this paper sack is a remnant of the notorious 'SyndieSnacks' program."
 			if("Heart")
@@ -1103,8 +1103,8 @@
 	new /obj/item/circuitboard/computer/rdconsole(src)
 
 /obj/item/storage/box/rndboards/old
-	name = "\proper Nanotrasen R&D Construction Kit"
-	desc = "A set of boards for constructing prototype design lathes, dating from a prewar Nanotrasen labratory. These ones are unbraked, and can produce any of the designs in their database without limit."
+	name = "\proper Makosso-Warra R&D Construction Kit"
+	desc = "A set of boards for constructing prototype design lathes, dating from a prewar Makosso-warra labratory. These ones are unbraked, and can produce any of the designs in their database without limit."
 
 //departmental RND kits, for shiptests.
 /obj/item/storage/box/rndmining
@@ -1458,7 +1458,7 @@
 
 /obj/item/storage/box/sparklers
 	name = "box of sparklers"
-	desc = "A box of NT brand sparklers, burns hot even in the cold of space-winter."
+	desc = "A box of Makosso-Warra brand sparklers, burns hot even in the cold of space-winter."
 	illustration = "sparkler"
 
 /obj/item/storage/box/sparklers/PopulateContents()

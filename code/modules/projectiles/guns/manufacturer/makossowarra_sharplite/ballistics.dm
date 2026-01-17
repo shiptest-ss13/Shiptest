@@ -2,11 +2,11 @@
 	name = "Advantage PS9 Challenger"
 	desc = "A lightweight semi-automatic 9mm pistol constructed largely of polymers. Low price point, forgiving recoil, and generous magazine capacity for its class. Chambered in 9x18mm."
 	icon_state = "challenger"
-	item_state = "nt_generic"
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	item_state = "makossowarra_generic"
+	icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/onmob.dmi'
 
 	w_class = WEIGHT_CLASS_NORMAL
 	default_ammo_type = /obj/item/ammo_box/magazine/co9mm
@@ -46,10 +46,10 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger)
 	desc = "A large, burst-fire machine pistol featuring an impressive recoil compensation assembly, making it substantially more stable and accurate than most machine pistols. Chambered in 9x18mm."
 	icon_state = "champion"
 	item_state = "champion"
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/onmob.dmi'
 
 	w_class = WEIGHT_CLASS_NORMAL
 	default_ammo_type = /obj/item/ammo_box/magazine/co9mm
@@ -101,10 +101,10 @@ NO_MAG_GUN_HELPER(automatic/pistol/champion)
 	name = "Advantage PH46 Podium"
 	desc ="A heavy pistol chambered in the high-velocity 4.6mm cartridge, designed to defeat common body armor. Despite the powerful cartridge, it is known to be surprisingly controllable, though not necessarily lightweight. Chambered in 4.6mm."
 
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/onmob.dmi'
 	icon_state = "podium"
 	item_state = "podium"
 
@@ -146,7 +146,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/podium)
 
 /obj/item/gun/ballistic/automatic/pistol/podium/inteq
 	name = "P46 Schnauzer"
-	desc = "A modification of Nanotrasen's \"Podium\" line of pistols made by the IRMG. Typically issued to second line combatants due to the armor piercing potential of the 4.6mm cartridge. Just be careful around the snout. Chambered in 4.6mm."
+	desc = "A modification of Makosso-Warra's \"Podium\" line of pistols made by the IRMG. Typically issued to second line combatants due to the armor piercing potential of the 4.6mm cartridge. Just be careful around the snout. Chambered in 4.6mm."
 
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
@@ -229,13 +229,13 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 
 /obj/item/gun/ballistic/revolver/rhino
 	name = "Advantage Rhino"
-	desc = "A very famous high-powered semi-auto revolver, often used as the de-facto officer weapon of the Nanotrasen aliance. Chambered in .357."
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	desc = "A very famous high-powered semi-auto revolver, often used as the de-facto officer weapon of the Makosso-Warra aliance. Chambered in .357."
+	icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/onmob.dmi'
 	icon_state = "rhino"
-	item_state = "nt_generic"
+	item_state = "makossowarra_generic"
 	manufacturer = MANUFACTURER_VIGILITAS
 	semi_auto = TRUE
 	safety_wording = "safety"
@@ -259,10 +259,10 @@ NO_MAG_GUN_HELPER(automatic/pistol/challenger/inteq)
 /obj/item/gun/ballistic/automatic/smg/expedition
 	name = "\improper Advantage SGL9 Expedition"
 	desc = "A deceptively lightweight submachinegun. Its novel recoil compensation system almost eliminates recoil, and its compact size is well-suited for use aboard ships and stations."
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/onmob.dmi'
 	icon_state = "expedition"
 	item_state = "expedition"
 	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_expedition
@@ -323,10 +323,10 @@ NO_MAG_GUN_HELPER(automatic/smg/expedition)
 /obj/item/gun/ballistic/automatic/smg/resolution
 	name = "\improper Advantage PD46 Resolution"
 	desc = "A surprisingly compact 4.6mm personal defense weapon with a very unusual design. Though somewhat awkward to reload, the PD46 has excellent shooting ergonomics and excellent accuracy for its class, combined with its armor-penetrating cartridge and low price of entry."
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/onmob.dmi'
 	icon_state = "resolution"
 	item_state = "resolution"
 	default_ammo_type = /obj/item/ammo_box/magazine/wt550m9
@@ -339,7 +339,7 @@ NO_MAG_GUN_HELPER(automatic/smg/expedition)
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
 	empty_indicator = TRUE
-	manufacturer = MANUFACTURER_NANOTRASEN_OLD
+	manufacturer = MANUFACTURER_MAKOSSOWARRA_OLD
 	fire_sound = 'sound/weapons/gun/smg/resolution.ogg'
 
 	fire_delay = 0.13 SECONDS
@@ -432,10 +432,10 @@ NO_MAG_GUN_HELPER(automatic/smg/expedition)
 	name = "Advantage AST12 Negotiator"
 	desc = "A pump-action shotgun with a twin-tube design that allows the user to switch between two ammo types on demand, or simply double their available ammunition."
 
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/onmob.dmi'
 
 	icon_state = "negotiator"
 	item_state = "negotiator"

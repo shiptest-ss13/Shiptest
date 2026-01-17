@@ -272,12 +272,12 @@
 		toggle_paddles()
 		return
 
-/obj/item/defibrillator/compact/combat/loaded/nanotrasen
-	name = "elite Nanotrasen defibrillator"
+/obj/item/defibrillator/compact/combat/loaded/makossowarra
+	name = "elite Makosso-Warra defibrillator"
 	desc = "A belt-equipped state-of-the-art defibrillator. Can revive through spacesuits, has an experimental self-recharging battery, and can be utilized in combat via applying the paddles in a disarming or agressive manner."
 	icon_state = "defibnt" //needs defib inhand sprites
 	item_state = "defibnt"
-	paddle_type = /obj/item/shockpaddles/syndicate/nanotrasen
+	paddle_type = /obj/item/shockpaddles/syndicate/makossowarra
 
 //paddles
 
@@ -643,8 +643,8 @@
 	item_state = "syndiepaddles0"
 	base_icon_state = "syndiepaddles"
 
-/obj/item/shockpaddles/syndicate/nanotrasen
-	name = "elite nanotrasen defibrillator paddles"
+/obj/item/shockpaddles/syndicate/makossowarra
+	name = "elite Makosso-Warra defibrillator paddles"
 	desc = "A pair of paddles used to revive deceased ERT members. They possess both the ability to penetrate armor and to deliver powerful or disabling shocks offensively."
 	icon_state = "ntpaddles0"
 	item_state = "ntpaddles0"

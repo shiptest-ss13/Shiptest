@@ -158,7 +158,7 @@
 
 /obj/item/clothing/suit/armor/vest/leather
 	name = "security overcoat"
-	desc = "Lightly armored leather overcoat meant as casual wear for high-ranking officers. Bears the crest of Nanotrasen Security."
+	desc = "Lightly armored leather overcoat meant as casual wear for high-ranking officers. Bears the crest of Vigilitas Security."
 	icon_state = "armor_leathercoat-sec"
 	item_state = "hostrench"
 	cold_protection = CHEST|GROIN|LEGS|ARMS

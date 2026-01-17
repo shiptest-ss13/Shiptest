@@ -67,7 +67,7 @@
 
 /datum/design/inducer
 	name = "Inducer"
-	desc = "The NT-75 Electromagnetic Power Inducer can wirelessly induce electric charge in an object, allowing you to recharge power cells without having to remove them."
+	desc = "The MW-75 Electromagnetic Power Inducer can wirelessly induce electric charge in an object, allowing you to recharge power cells without having to remove them."
 	id = "inducer"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 3000, /datum/material/glass = 1000)

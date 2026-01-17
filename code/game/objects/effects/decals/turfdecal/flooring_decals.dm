@@ -1229,40 +1229,40 @@ TURF_DECAL_COLOR_HELPER(transparent/cybersunteal, "#4C9C9C", 140)
 /obj/effect/turf_decal/suns/transparent/columm6/top
 	icon_state = "sunstrans-columm6-top"
 
-// nanotrasen
+// makossowarra
 
-/obj/effect/turf_decal/nanotrasen //placeholder for sorting these together, add 3x3 NT and Vigilitas logos later
-	icon = 'icons/obj/nanotrasen_floor.dmi'
+/obj/effect/turf_decal/makossowarra //placeholder for sorting these together, add 3x3 MW and Vigilitas logos later
+	icon = 'icons/obj/makossowarra_floor.dmi'
 	icon_state = "NS-2x2" //also placeholder
 
-/obj/effect/turf_decal/nanotrasen/ns
+/obj/effect/turf_decal/makossowarra/ns
 	icon_state = "NS-2x2"
 
-/obj/effect/turf_decal/nanotrasen/ns/top_left
+/obj/effect/turf_decal/makossowarra/ns/top_left
 	icon_state = "NS-top-left"
 
-/obj/effect/turf_decal/nanotrasen/ns/top
+/obj/effect/turf_decal/makossowarra/ns/top
 	icon_state = "NS-top-center"
 
-/obj/effect/turf_decal/nanotrasen/ns/top_right
+/obj/effect/turf_decal/makossowarra/ns/top_right
 	icon_state = "NS-top-right"
 
-/obj/effect/turf_decal/nanotrasen/ns/center_left
+/obj/effect/turf_decal/makossowarra/ns/center_left
 	icon_state = "NS-center-left"
 
-/obj/effect/turf_decal/nanotrasen/ns/center
+/obj/effect/turf_decal/makossowarra/ns/center
 	icon_state = "NS-center"
 
-/obj/effect/turf_decal/nanotrasen/ns/center_right
+/obj/effect/turf_decal/makossowarra/ns/center_right
 	icon_state = "NS-center-right"
 
-/obj/effect/turf_decal/nanotrasen/ns/bottom_left
+/obj/effect/turf_decal/makossowarra/ns/bottom_left
 	icon_state = "NS-bottom-left"
 
-/obj/effect/turf_decal/nanotrasen/ns/bottom
+/obj/effect/turf_decal/makossowarra/ns/bottom
 	icon_state = "NS-bottom-center"
 
-/obj/effect/turf_decal/nanotrasen/ns/bottom_right
+/obj/effect/turf_decal/makossowarra/ns/bottom_right
 	icon_state = "NS-bottom-right"
 
 /obj/effect/turf_decal/road

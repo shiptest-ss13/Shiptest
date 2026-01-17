@@ -234,7 +234,7 @@
 
 /obj/structure/sign/poster/contraband
 	poster_item_name = "contraband poster"
-	poster_item_desc = "This poster comes with its own automatic adhesive mechanism, for easy pinning to any vertical surface. Its vulgar themes have marked it as contraband aboard Nanotrasen space facilities."
+	poster_item_desc = "This poster comes with its own automatic adhesive mechanism, for easy pinning to any vertical surface. Its vulgar themes have marked it as contraband aboard Makosso-Warra space facilities."
 	poster_item_icon_state = "rolled_poster"
 
 /obj/structure/sign/poster/contraband/random
@@ -257,12 +257,12 @@
 
 /obj/structure/sign/poster/contraband/atmosia_independence
 	name = "Atmosia Declaration of Independence"
-	desc = "A relic of a failed rebellion on a Nanotrasen station, highly ridiculed due to the absurdity of it."
+	desc = "A relic of a failed rebellion on a Makosso-Warra station, highly ridiculed due to the absurdity of it."
 	icon_state = "poster_independence"
 
 /obj/structure/sign/poster/contraband/fun_police
 	name = "Fun Police"
-	desc = "A poster condemning Nanotrasen's corporate security forces about being the 'fun police.' The creator of this poster is currently in jail for 2 counts of manslaughter and 1 murder."
+	desc = "A poster condemning Vigilitas security officers for being the 'fun police.' The creator of this poster is currently in jail for 2 counts of manslaughter and 1 murder."
 	icon_state = "poster_fun_police"
 
 /obj/structure/sign/poster/contraband/lusty_xenomorph
@@ -287,7 +287,7 @@
 
 /obj/structure/sign/poster/contraband/missing_gloves
 	name = "Missing Gloves"
-	desc = "This poster references the uproar that followed Nanotrasen's financial cuts toward insulated-glove purchases."
+	desc = "This poster references the uproar that followed Makosso-Warra's financial cuts toward insulated-glove purchases."
 	icon_state = "poster_insul_gloves"
 
 /obj/structure/sign/poster/contraband/hacking_guide
@@ -317,7 +317,7 @@
 
 /obj/structure/sign/poster/contraband/tools
 	name = "Tools"
-	desc = "This poster looks like an advertisement for tools, but is in fact a subliminal jab at the tools on Nanotrasen stations."
+	desc = "This poster looks like an advertisement for tools, but is in fact a subliminal jab at the tools on Makosso-Warra stations."
 	icon_state = "poster_tools"
 
 /obj/structure/sign/poster/contraband/power
@@ -357,7 +357,7 @@
 
 /obj/structure/sign/poster/contraband/engis_unite
 	name = "Engineers Unite!"
-	desc = "A poster sponsered by the Galactic Engineer's Concordat urging to vote YES to the formation of a engineers union on NT Shipyard 22-A."
+	desc = "A poster sponsered by the Galactic Engineer's Concordat urging to vote YES to the formation of a engineers union on Makosso-Warra Shipyard 22-A."
 	icon_state = "poster_unite"
 
 /obj/structure/sign/poster/contraband/c20r
@@ -403,7 +403,7 @@
 
 /obj/structure/sign/poster/contraband/ntos
 	name = "Ntos V"
-	desc = "A advertisement for Ntos V. Unlike earlier iterations of the system, Nanotrasen has opted to update this version continously, instead of release a new version every so often, much to the dismay of older system users."
+	desc = "A advertisement for Ntos V. Unlike earlier iterations of the system, Makosso-Warra has opted to update this version continously, instead of release a new version every so often, much to the dismay of older system users."
 	icon_state = "poster_ntos"
 
 /obj/structure/sign/poster/contraband/punch_shit
@@ -503,8 +503,8 @@
 
 /obj/structure/sign/poster/contraband/aclf
 	name = "Syndicate Support Poster"
-	desc = "An poster made by ACLF protestors in support of the Syndicate, listing Nanotrasen's abuses of their workers. While this poster was made during for the ICW, it seems like some keep it up as it still resonates with them."
-	icon_state = "poster-aclf_antint"
+	desc = "An poster made by ACLF protestors in support of the Syndicate, listing Makosso-Warra's abuses of their workers. While this poster was made during for the ICW, it seems like some keep it up as it still resonates with them."
+	icon_state = "poster-aclf_antimakossowarra"
 
 /obj/structure/sign/poster/contraband/bulldog
 	name = "Bulldog Shotgun"
@@ -516,10 +516,10 @@
 	desc = "A poster advertising the Scarborough M90. Burst action with a grenade launcher, for some reason."
 	icon_state = "poster-m90"
 
-/obj/structure/sign/poster/contraband/inteq_nt
+/obj/structure/sign/poster/contraband/inteq_makossowarra
 	name = "Inteq Recruitment"
-	desc = "Tired of your underpaying and abusive job at Nanotrasen? Join the IRMG Artificers! You won't get bullshit from us. Retrofit spacecraft and weaponry, field test weaponry, and earn higher pay!"
-	icon_state = "poster-inteq_poaching_nt"
+	desc = "Tired of your underpaying and abusive job at Makosso-Warra? Join the IRMG Artificers! You won't get bullshit from us. Retrofit spacecraft and weaponry, field test weaponry, and earn higher pay!"
+	icon_state = "poster-inteq_poaching_makossowarra"
 
 /obj/structure/sign/poster/contraband/inteq_gec
 	name = "Inteq Recruitment"
@@ -552,10 +552,10 @@
 	desc = "This poster depicts a trio of PGF sailors. The elzuose's horns are sticking up through the text block. \"Get your bigass horns out of the caption!\""
 	icon_state = "poster-pgf_bigass-horns"
 
-//beginning of Nanotrasen approved posters. Expect corprate propaganda and motavation. You will usually only see this on Nanotrasen ships and stations
+//beginning of Makosso-Warra approved posters. Expect corprate propaganda and motavation. You will usually only see this on Makosso-Warra ships and stations
 /obj/structure/sign/poster/official
 	poster_item_name = "motivational poster"
-	poster_item_desc = "An official Nanotrasen-issued poster to foster a compliant and obedient workforce. It comes with state-of-the-art adhesive backing, for easy pinning to any vertical surface."
+	poster_item_desc = "An official Makosso-Warra-issued poster to foster a compliant and obedient workforce. It comes with state-of-the-art adhesive backing, for easy pinning to any vertical surface."
 	poster_item_icon_state = "rolled_legit"
 
 /obj/structure/sign/poster/official/random
@@ -567,13 +567,13 @@
 
 /obj/structure/sign/poster/official/here_for_your_safety
 	name = "Here For Your Safety"
-	desc = "A poster glorifying the Nanotrasen private security forces."
+	desc = "A poster glorifying the Makosso-Warra private security forces."
 	icon_state = "poster_saftey"
 
-/obj/structure/sign/poster/official/nanotrasen_logo
-	name = "\improper Nanotrasen logo"
-	desc = "A poster depicting the Nanotrasen logo."
-	icon_state = "poster_nanotrasen"
+/obj/structure/sign/poster/official/makossowarra_logo
+	name = "\improper Makosso-Warra logo"
+	desc = "A poster depicting the Makosso-Warra logo."
+	icon_state = "poster_makossowarra"
 
 /obj/structure/sign/poster/official/cleanliness
 	name = "Cleanliness"
@@ -687,7 +687,7 @@
 
 /obj/structure/sign/poster/official/pda_ad
 	name = "PDA Ad"
-	desc = "A poster advertising the latest PDA from Nanotrasen suppliers."
+	desc = "A poster advertising the latest PDA from Makosso-Warra suppliers."
 	icon_state = "poster_pda"
 
 /obj/structure/sign/poster/official/mini_energy_gun
@@ -697,8 +697,8 @@
 
 /obj/structure/sign/poster/official/enlist
 	name = "Enlist" // but I thought deathsquad was never acknowledged
-	// desc = "Enlist in the Nanotrasen Deathsquadron reserves today!" // I refuse to acknowledge this bullshit - Zeta
-	desc = "A poster urging all across the NT umbrella to join the Nanotrasen Private Security forces. This was made specifically for the ICW, so someone probably forgot to take this down."
+	// desc = "Join the Death Squad today!" // I refuse to acknowledge this bullshit - Zeta
+	desc = "Merchandise for the popular Death Squad comic series, done up as a convincingly fake recruitment poster for the titular Death Squad. True fans know you don't choose the Death Squad - the Death Squad chooses you."
 	icon_state = "poster_enlist"
 
 /obj/structure/sign/poster/official/high_class_martini
@@ -728,14 +728,14 @@
 	icon_state = "poster-focus"
 
 /obj/structure/sign/poster/official/miners
-	name = "Nanotrasen Mining-Exploratory Corps Recruitment"
-	desc = "A poster recruiting more miners and explorers for new Nanotrasen holdings. It tells about how advanced Nanotrasen mining equipment and how it relates to the history of Nanotrasen."
+	name = "Makosso-Warra Mining-Exploratory Corps Recruitment" //Shouldn't this be N+S?
+	desc = "A poster recruiting more miners and explorers for new Makosso-Warra holdings. It tells about how advanced Makosso-Warra mining equipment and how it relates to the history of the company."
 	icon_state = "posters-minersneeded"
 
-//Retro naontrasen posters. very inspired by the early apple logos and 70s-90s tech logos. Expect to see these on ancient Nanotrasen ships and stations, collectables, or callbacks to retro NT
+//Retro naontrasen posters. very inspired by the early apple logos and 70s-90s tech logos. Expect to see these on ancient Makosso-Warra ships and stations, collectables, or callbacks to retro MW
 /obj/structure/sign/poster/retro
 	poster_item_name = "retro poster"
-	poster_item_desc = "A really old Nanotrasen poster that probably sells for a lot now days. It comes with adhesive backing, for easy pinning to any vertical surface."
+	poster_item_desc = "A really old Makosso-Warra poster that probably sells for a lot now days. It comes with adhesive backing, for easy pinning to any vertical surface."
 	poster_item_icon_state = "rolled_legit"
 
 /obj/structure/sign/poster/retro/random
@@ -745,15 +745,15 @@
 	random_basetype = /obj/structure/sign/poster/retro
 	random_type = POSTER_SUBTYPES
 
-/obj/structure/sign/poster/retro/nanotrasen_logo_70s
-	name = "\improper Ancient Nanotrasen logo"
-	desc = "A poster depicting the Nanotrasen logo. This thing is ancient."
-	icon_state = "poster-nanotrasen70s_retro"
+/obj/structure/sign/poster/retro/makossowarra_logo_70s
+	name = "\improper Ancient Makosso-Warra logo"
+	desc = "A poster depicting an older Makosso-Warra logo. This thing is ancient."
+	icon_state = "poster-makossowarra70s_retro"
 
-/obj/structure/sign/poster/retro/nanotrasen_logo_80s
-	name = "\improper Nanotrasen logo"
-	desc = "A poster depicting the Nanotrasen logo. It has a nice aesthetic."
-	icon_state = "poster-nanotrasen_retro"
+/obj/structure/sign/poster/retro/makossowarra_logo_80s
+	name = "\improper Makosso-Warra logo"
+	desc = "A poster depicting Makosso-Warra's ICW-era logo. It has a nice aesthetic."
+	icon_state = "poster-makossowarra_retro"
 
 /obj/structure/sign/poster/retro/smile
 	name = "Smile"
@@ -777,7 +777,7 @@
 
 /obj/structure/sign/poster/retro/pdaancient
 	name = "PDA Ad"
-	desc = "A poster advertising the original Thinkitronic PDA after the company was aquired by Nanotrasen. This thing shipped with severe problems such as PDA message 'bombing' and memory errors. Despite this, it's fondly remembered. This thing is ancient."
+	desc = "A poster advertising the original Thinkitronic PDA after the company was aquired by Makosso-Warra. This thing shipped with severe problems such as PDA message 'bombing' and memory errors. Despite this, it's fondly remembered. This thing is ancient."
 	icon_state = "poster-pda70_retro"
 
 /obj/structure/sign/poster/retro/lasergun
@@ -792,7 +792,7 @@
 
 /obj/structure/sign/poster/retro/radio
 	name = "Radio"
-	desc = "A poster advertising one of Nanotrasen's earliest products, a radio. One of its main selling points was a integrated OS and two way automatic translation for Solarian Common and Gezenan, which made it a smash hit. This thing is ancient."
+	desc = "A poster advertising one of Makosso-Warra's earliest products, a radio. One of its main selling points was a integrated OS and two way automatic translation for Solarian Common and Gezenan, which made it a smash hit. This thing is ancient."
 	icon_state = "poster-radio70_retro"
 
 //Safety moth posters, credit to AspEv for the art which the below posters are based on and to Ayy-Robotics for the sprites.
@@ -849,7 +849,7 @@
 
 /obj/structure/sign/poster/contraband/mothpill
 	name = "Safety Pill - Methamphetamine"
-	desc = "A decommisioned poster that uses Safety Pill(TM?) to promote less-than-legal chemicals. This is one of the reasons Nanotrasen stopped outsourcing their posters. It's partially signed by 'AspEv'."
+	desc = "A decommisioned poster that uses Safety Pill(TM?) to promote less-than-legal chemicals. This is one of the reasons Makosso-Warra stopped outsourcing their posters. It's partially signed by 'AspEv'."
 	icon_state = "poster_moth_pill"
 
 //SolGov poster pool. expect a focus on solarian based products and places. Expect these on solgov ships
@@ -936,7 +936,7 @@
 
 /obj/structure/sign/poster/solgov/suns
 	name = "Student Union of Natural Sciences"
-	desc = "SUNS, best known for it's diverse variety of top students from various solarian universities, dealing with internal fighting via dueling with swords, and being sued by Nanotrasen for trademark infrigement on their old name \"NSV.\""
+	desc = "SUNS, best known for it's diverse variety of top students from various solarian universities, and dealing with internal fighting via dueling with swords." //Makosso-Warra ruined the NSV joke and the rule of three, RIP
 	icon_state = "poster-solgov_suns"
 
 //CLIP poster pool. This is quite limited, so don't use more than 3 random ones at once. Expect to see these on CLIP ships.
@@ -1279,14 +1279,14 @@
 	poster_type = /obj/structure/sign/poster/radio/orn
 	icon_state = "rolled_poster"
 
-/obj/structure/sign/poster/radio/ntra
-	name = "NTRA"
-	desc = "A Nanotrasen Radio poster. Despite all that's happened, communication is still NT's game, and the airwaves are just another Frontier to establish market dominance in."
-	icon_state = "poster-radio_NTRA"
+/obj/structure/sign/poster/radio/mwra
+	name = "MWRA"
+	desc = "A Makosso-Warra Radio poster. Despite all that's happened, communication is still M-W's game, and the airwaves are just another Frontier to establish market dominance in."
+	icon_state = "poster-radio_MWRA"
 
-/obj/item/poster/ntra
-	name = "NTRA poster"
-	poster_type = /obj/structure/sign/poster/radio/ntra
+/obj/item/poster/mwra
+	name = "MWRA poster"
+	poster_type = /obj/structure/sign/poster/radio/mwra
 	icon_state = "rolled_poster"
 
 /obj/structure/sign/poster/radio/pris

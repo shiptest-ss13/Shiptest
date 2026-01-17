@@ -395,10 +395,10 @@
 	prefix = "CLSV"
 
 /datum/map_template/shuttle/subshuttles/ancon
-	file_name = "nanotrasen_ancon"
-	name = "Nanotrasen Ancon-class Command Ship"
+	file_name = "makossowarra_ancon"
+	name = "Makosso-Warra Ancon-class Command Ship"
 	token_icon_state = "ship_tiny_generic"
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 	prefix = "NTSV"
 	name_categories = list("GENERAL", "SPACE")
 
@@ -448,9 +448,9 @@
 	prefix = "SV"
 
 /datum/map_template/shuttle/subshuttles/skink
-	file_name = "nanotrasen_skink"
+	file_name = "makossowarra_skink"
 	name = "Skink-class Cargo Runner"
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 	token_icon_state = "ship_tiny_generic"
 	prefix = "NTSV"
 

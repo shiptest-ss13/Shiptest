@@ -2,7 +2,7 @@
 
 /datum/preset_holoimage/vi_director
 	species_type = /datum/species/lizard
-	outfit_type = /datum/outfit/job/nanotrasen/captain/vi
+	outfit_type = /datum/outfit/job/makossowarra/captain/vi
 
 
 /obj/item/disk/holodisk/ship/magpie/securitynotice
@@ -41,7 +41,7 @@
 
 /datum/preset_holoimage/ns_director
 	species_type = /datum/species/elzuose
-	outfit_type = /datum/outfit/job/nanotrasen/quartermaster
+	outfit_type = /datum/outfit/job/makossowarra/quartermaster
 
 
 /obj/item/disk/holodisk/ship/magpie/supplynotice

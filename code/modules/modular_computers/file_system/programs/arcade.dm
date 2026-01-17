@@ -18,7 +18,7 @@
 	var/player_mp = 10
 	var/ticket_count = 0
 	///Shows what text is shown on the app, usually showing the log of combat actions taken by the player.
-	var/heads_up = "Nanotrasen says, winners make us money."
+	var/heads_up = "Makosso-Warra says, winners make us money."
 	var/boss_name = "Cuban Pete's Minion"
 	///Determines which boss image to use on the UI.
 	var/boss_id = 1

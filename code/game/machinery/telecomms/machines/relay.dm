@@ -73,10 +73,10 @@
 	toggled = FALSE
 	autolinkers = list("r_relay")
 
-/obj/machinery/telecomms/relay/preset/nanotrasen
-	freq_listening = list(FREQ_EMERGENCY, FREQ_NANOTRASEN)
-	id = "Nanotrasen Relay"
-	network = "nt_commnet"
+/obj/machinery/telecomms/relay/preset/makossowarra
+	freq_listening = list(FREQ_EMERGENCY, FREQ_MAKOSSOWARRA)
+	id = "Makosso-Warra Relay"
+	network = "makossowarra_commnet"
 
 /obj/machinery/telecomms/relay/preset/inteq
 	freq_listening = list(FREQ_EMERGENCY, FREQ_INTEQ)

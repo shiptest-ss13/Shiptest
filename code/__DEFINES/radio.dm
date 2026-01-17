@@ -21,9 +21,9 @@
 #define RADIO_KEY_SOLGOV "s"
 #define RADIO_TOKEN_SOLGOV ":s"
 
-#define RADIO_CHANNEL_NANOTRASEN "Nanotrasen"
-#define RADIO_KEY_NANOTRASEN "n"
-#define RADIO_TOKEN_NANOTRASEN ":n"
+#define RADIO_CHANNEL_MAKOSSOWARRA "Makosso-Warra"
+#define RADIO_KEY_MAKOSSOWARRA "w"
+#define RADIO_TOKEN_MAKOSSOWARRA ":w"
 
 #define RADIO_CHANNEL_MINUTEMEN "Minutemen"
 #define RADIO_KEY_MINUTEMEN "m"
@@ -47,11 +47,11 @@
 // Frequencies are always odd numbers and range from 1201 to 1599.
 
 #define FREQ_SYNDICATE 1213 // Syndicate Coalition comms frequency, dark brown
-#define FREQ_CENTCOM 1337 // NT-CentCom comms frequency, gray
+#define FREQ_CENTCOM 1337 // MW-CentCom comms frequency, gray
 #define FREQ_SOLGOV 1345 // SolGov comms frequency, dark blue WS ADDITION
 #define FREQ_INTEQ 1347 // Inteq comms frequency, light brown
 #define FREQ_PGF 1349 // PGF comms frequency, lime green
-#define FREQ_NANOTRASEN 1351 // Nanotrasen comms frequency, plum
+#define FREQ_MAKOSSOWARRA 1351 // Makosso-Warra comms frequency, plum
 #define FREQ_EMERGENCY 1353 // Emergency comms frequency, red
 #define FREQ_MINUTEMEN 1355 // Minutemen comms frequency, soft blue
 #define FREQ_PIRATE 1359 // Pirate comms frequency, gold

@@ -119,7 +119,7 @@
 
 /datum/game_mode/traitor/generate_report()
 	return "Although more specific threats are commonplace, you should always remain vigilant for Syndicate agents aboard your station. Syndicate communications have implied that many \
-		Nanotrasen employees are Syndicate agents with hidden memories that may be activated at a moment's notice, so it's possible that these agents might not even know their positions."
+		Makosso-Warra employees are Syndicate agents with hidden memories that may be activated at a moment's notice, so it's possible that these agents might not even know their positions."
 
 
 /datum/game_mode/traitor/generate_credit_text()

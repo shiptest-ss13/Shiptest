@@ -62,7 +62,7 @@
 //Corporate "confidental" biscuit cards
 /obj/item/folder/biscuit/confidental
 	name = "\proper confidental biscuit card"
-	desc = "An confidental biscuit card. In a tasteful blue color with NT logo, looks like a chocolate bar. Has label which says <b>DO NOT DIGEST</b>."
+	desc = "An confidental biscuit card. In a tasteful blue color with Makosso-Warra logo, looks like a chocolate bar. Has label which says <b>DO NOT DIGEST</b>."
 	icon_state = "paperbiscuit_secret"
 	bg_color = "#355e9f"
 
@@ -98,7 +98,7 @@
 
 /obj/item/folder/biscuit/unsealed/confidental
 	name = "\proper confidental biscuit card"
-	desc = "An confidental biscuit card. In a tasteful blue color with NT logo, looks like a chocolate bar. To reach contents you need to crack it open. Has label which says <b>DO NOT DIGEST</b>."
+	desc = "An confidental biscuit card. In a tasteful blue color with Makosso-Warra logo, looks like a chocolate bar. To reach contents you need to crack it open. Has label which says <b>DO NOT DIGEST</b>."
 	icon_state = "paperbiscuit_secret_cracked"
 	bg_color = "#355e9f"
 	not_cracked_icon = "paperbiscuit_secret"

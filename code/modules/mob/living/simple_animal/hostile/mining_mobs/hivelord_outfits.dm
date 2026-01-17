@@ -213,7 +213,7 @@
 				backpack_contents += pick_weight(list(
 					/obj/item/borg/upgrade/modkit/damage = 1,
 					/obj/item/borg/upgrade/modkit/trigger_guard = 1,
-					/obj/item/soap/nanotrasen = 1,
+					/obj/item/soap/makossowarra = 1,
 					/obj/item/wormhole_jaunter = 1,
 					/obj/item/fulton_core = 1,
 					/obj/item/extraction_pack = 2,

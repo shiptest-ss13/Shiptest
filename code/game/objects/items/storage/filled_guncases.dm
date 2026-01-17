@@ -289,7 +289,7 @@
 	gun_type = /obj/item/gun/energy/sharplite/x01
 	mag_type = /obj/item/stock_parts/cell/gun/sharplite/plus
 
-/* Old NT */
+/* Old MW */
 
 /obj/item/storage/guncase/wt550
 	gun_type = /obj/item/gun/ballistic/automatic/smg/resolution

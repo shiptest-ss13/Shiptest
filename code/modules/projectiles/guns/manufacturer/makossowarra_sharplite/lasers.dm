@@ -1,10 +1,10 @@
 /obj/item/gun/energy/sharplite
 	name = "sharplite laser gun"
 	desc = "The newest from sharplite! The 'adminhelp if you see this!' Wow! A bit of a disapointment you feel, though."
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/onmob.dmi'
 
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite, /obj/item/ammo_casing/energy/laser/sharplite)
 
@@ -32,10 +32,10 @@
 	name = "SL X26 “Ohm” Variable Energy Pistol"
 	desc = "A compact energy pistol that can fire lethal electroplasma bolts or stamina-draining disabler bolts."
 
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/onmob.dmi'
 
 	icon_state = "x26"
 	item_state = "x26"
@@ -65,10 +65,10 @@
 	desc = "A bulky pistol that can fire devastating electroplasma bolts and disabler shots. An early Sharplite product notable for unusually strong power output."
 
 
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/onmob.dmi'
 
 	w_class = WEIGHT_CLASS_NORMAL
 	icon_state = "x01"
@@ -103,10 +103,10 @@
 	name = "\improper L305 “Rush” Tactical Plasma Gun"
 	desc = "A radical development on the X26 frame, fitted with a rapid-cycle plasma chamber and designed to produce sustained bursts of low-power electroplasma bolts."
 
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/onmob.dmi'
 
 	icon_state = "l305"
 	item_state = "l305"
@@ -454,7 +454,7 @@
 	name = "X11 Advanced Stopping Pistol" //wayland is better
 	desc = "An advanced energy revolver with the capacity to shoot both disabler and lethal lasers, as well as futuristic safari nets."
 	icon_state = "x11"
-	item_state = "nt_generic"
+	item_state = "makossowarra_generic"
 	force = 7
 	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite/mini
 	allowed_ammo_types = list(
@@ -478,10 +478,10 @@
 	name ="SL L104"
 	desc = "An antiquated model of the L204, no longer used or sold by Sharplite. Nevertheless, the sheer popularity of this model makes it a somewhat common sight to this day."
 
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/onmob.dmi'
 
 	icon_state = "laser"
 	item_state = "laser"
@@ -498,10 +498,10 @@
 
 /obj/item/gun/energy/laser/captain
 	name = "antique laser gun"
-	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/onmob.dmi'
 	icon_state = "caplaser"
 	item_state = "caplaser"
 	desc = "This is the SL X-00, an antique laser gun, out of production for decades and well beyond anyone's capacity to recreate. All craftsmanship is of the highest quality. It is decorated with ashdrake leather and chrome. The gun menaces with spikes of energy. On the item is an image of a space station. The station is exploding."

@@ -27,9 +27,9 @@
 	icon_state = "folder_syndie"
 
 /obj/item/folder/documents
-	var/document = /obj/item/documents/nanotrasen
+	var/document = /obj/item/documents/makossowarra
 	name = "folder- 'TOP SECRET'"
-	desc = "A folder stamped \"Top Secret - Property of Nanotrasen Corporation. Unauthorized distribution is punishable by death.\""
+	desc = "A folder stamped \"Top Secret - Property of Makosso-Warra Corporation. Unauthorized distribution is punishable by death.\""
 
 /obj/item/folder/documents/Initialize()
 	. = ..()

@@ -127,7 +127,7 @@
 
 /obj/item/paper/crumpled/ruins/snowdin/misc1
 	name = "Mission Prologue"
-	default_raw_text = {"Holy shit, what a rush! Those Nanotrasen bastards didn't even know what hit 'em! All five of us dropped in right on the captain, didn't even have time to yell! We were in and out with that disk in mere minutes!
+	default_raw_text = {"Holy shit, what a rush! Those Makosso-Warra bastards didn't even know what hit 'em! All five of us dropped in right on the captain, didn't even have time to yell! We were in and out with that disk in mere minutes!
 	Crew didn't even know what was happening till the delta alert went down and by then we were already gone. We got a case to drink on the way home to celebrate, fuckin' job well done!"}
 
 /obj/item/paper/crumpled/ruins/snowdin/dontdeadopeninside
@@ -158,11 +158,11 @@
 	DELAY 45
 	NAME Elizabeth Queef
 	DELAY 10
-	SAY Nah. I've been feeding the AI the results for the past 2 weeks to sift through the garbage and haven't seen anything out of the usual, at least whatever Nanotrasen is looking for.
+	SAY Nah. I've been feeding the AI the results for the past 2 weeks to sift through the garbage and haven't seen anything out of the usual, at least whatever Makosso-Warra is looking for.
 	DELAY 45
 	NAME Jacob Ullman
 	DELAY 10
-	SAY Figured as much. Dunno what Nanotrasen expects to find out here past the plasma. At least we're getting paid to fuck around for a couple months while the AI does the hard work.
+	SAY Figured as much. Dunno what Makosso-Warra expects to find out here past the plasma. At least we're getting paid to fuck around for a couple months while the AI does the hard work.
 	DELAY 45
 	NAME Elizabeth Queef
 	DELAY 10
@@ -177,7 +177,7 @@
 	PRESET /datum/preset_holoimage/captain
 	NAME Caleb Reed
 	DELAY 10
-	SAY Paid in experience! That's the Nanotrasen Motto!
+	SAY Paid in experience! That's the Makosso-Warra Motto!
 	DELAY 30;"}
 
 /obj/item/disk/holodisk/snowdin/welcometodie
@@ -190,14 +190,14 @@
 	DELAY 30
 	SAY You have been selected out of $)@! potential candidates for this post!
 	DELAY 30
-	SAY Nanotrasen is pleased to have you working in one of the many top-of-the-line research posts within the $%@!! sector!
+	SAY Makosso-Warra is pleased to have you working in one of the many top-of-the-line research posts within the $%@!! sector!
 	DELAY 30
 	SAY Further job assignment information can be found at your local security post! Have a secure day!
 	DELAY 20;"}
 
 /obj/item/disk/holodisk/snowdin/overrun
 	name = "Conversation #AOP#55"
-	preset_image_type = /datum/preset_holoimage/nanotrasenprivatesecurity
+	preset_image_type = /datum/preset_holoimage/makossowarraprivatesecurity
 	preset_record_text = {"
 	NAME James Reed
 	DELAY 10
@@ -208,7 +208,7 @@
 	DELAY 10
 	SAY Hell if I know! Just shoot it already!
 	DELAY 30
-	PRESET /datum/preset_holoimage/nanotrasenprivatesecurity
+	PRESET /datum/preset_holoimage/makossowarraprivatesecurity
 	NAME James Reed
 	DELAY 10
 	SOUND sound/weapons/laser.ogg
@@ -307,7 +307,7 @@
 	faction = ROLE_SYNDICATE
 	outfit = /datum/outfit/snowsyndie
 	short_desc = "You are a syndicate operative recently awoken from cryostasis in an underground outpost."
-	flavour_text = "You are a syndicate operative recently awoken from cryostasis in an underground outpost. Monitor Nanotrasen communications and record information. All intruders should be \
+	flavour_text = "You are a syndicate operative recently awoken from cryostasis in an underground outpost. Monitor Makosso-Warra communications and record information. All intruders should be \
 	disposed of swiftly to assure no gathered information is stolen or lost. Try not to wander too far from the outpost as the caves can be a deadly place even for a trained operative such as yourself."
 
 /datum/outfit/snowsyndie

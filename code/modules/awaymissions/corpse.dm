@@ -486,15 +486,15 @@
 		return
 	H.dna.add_mutation(STONER)
 
-/////////////////Officers+Nanotrasen Security//////////////////////
+/////////////////Officers+Makosso-Warra Security//////////////////////
 
 /obj/effect/mob_spawn/human/bridgeofficer
 	name = "Bridge Officer"
 	id_job = "Bridge Officer"
 	id_access_list = list(ACCESS_CENT_CAPTAIN)
-	outfit = /datum/outfit/nanotrasenbridgeofficercorpse
+	outfit = /datum/outfit/makossowarrabridgeofficercorpse
 
-/datum/outfit/nanotrasenbridgeofficercorpse
+/datum/outfit/makossowarrabridgeofficercorpse
 	name = "Bridge Officer Corpse"
 	ears = /obj/item/radio/headset/heads/head_of_personnel
 	uniform = /obj/item/clothing/under/rank/centcom/official
@@ -508,10 +508,10 @@
 	name = "Commander"
 	id_job = "Commander"
 	id_access_list = list(ACCESS_CENT_CAPTAIN, ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_MEDICAL, ACCESS_CENT_STORAGE)
-	outfit = /datum/outfit/nanotrasencommandercorpse
+	outfit = /datum/outfit/makossowarracommandercorpse
 
-/datum/outfit/nanotrasencommandercorpse
-	name = "\improper Nanotrasen Private Security Commander"
+/datum/outfit/makossowarracommandercorpse
+	name = "\improper Vigilitas Private Security Commander"
 	uniform = /obj/item/clothing/under/rank/centcom/commander
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	ears = /obj/item/radio/headset/heads/captain
@@ -524,30 +524,30 @@
 	id = /obj/item/card/id
 
 
-/obj/effect/mob_spawn/human/nanotrasensoldier
-	name = "\improper Nanotrasen LP Security Specialist"
+/obj/effect/mob_spawn/human/makossowarrasoldier
+	name = "\improper Vigilitas LP Security Specialist"
 	id_job = "Private Security Force"
 	id_access_list = list(ACCESS_CENT_CAPTAIN, ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_MEDICAL, ACCESS_CENT_STORAGE, ACCESS_SECURITY, ACCESS_MECH_SECURITY)
-	outfit = /datum/outfit/job/nanotrasen/security/lp
+	outfit = /datum/outfit/job/makossowarra/security/lp
 
 /obj/effect/mob_spawn/human/commander/alive
 	death = FALSE
 	roundstart = FALSE
-	mob_name = "\improper Nanotrasen Commander"
+	mob_name = "\improper Vigilitas Commander"
 	name = "sleeper"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
-	short_desc = "You are a Nanotrasen Commander!"
+	short_desc = "You are a Vigilitas Commander!"
 
-/obj/effect/mob_spawn/human/nanotrasensoldier/alive
+/obj/effect/mob_spawn/human/makossowarrasoldier/alive
 	death = FALSE
 	roundstart = FALSE
 	mob_name = "Private Security Officer"
 	name = "sleeper"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
-	faction = "nanotrasenprivate"
-	short_desc = "You are a Nanotrasen Private Security Officer!"
+	faction = "makossowarraprivate"
+	short_desc = "You are a Vigilitas Private Security Officer!"
 
 
 /////////////////Spooky Undead//////////////////////

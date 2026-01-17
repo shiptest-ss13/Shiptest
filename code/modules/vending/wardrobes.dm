@@ -318,7 +318,7 @@
 					/obj/item/clothing/suit/caution = 6,
 					/obj/item/holosign_creator = 2,
 					/obj/item/lightreplacer = 2,
-					/obj/item/soap/nanotrasen = 2,
+					/obj/item/soap/makossowarra = 2,
 					/obj/item/storage/bag/trash = 2,
 					/obj/item/clothing/shoes/sneakers/brown = 2,
 					/obj/item/clothing/shoes/sneakers/purple = 2,
