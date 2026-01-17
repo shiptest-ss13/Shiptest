@@ -199,9 +199,7 @@
 	fire_sound = 'sound/weapons/gun/rifle/ssg669c.ogg'
 	can_be_sawn_off = FALSE
 
-	zoomable = TRUE
-	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
-	zoom_out_amt = 5
+	range_modifier = LONG_SCOPE_ZOOM //Long range
 
 	manufacturer = MANUFACTURER_SOLARARMORIES
 	spread = -5

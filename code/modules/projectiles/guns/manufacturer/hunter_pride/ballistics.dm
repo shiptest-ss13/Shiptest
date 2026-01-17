@@ -717,7 +717,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 
 	unique_attachments = list(
 		/obj/item/attachment/scope,
-		/obj/item/attachment/long_scope,
+		/obj/item/attachment/scope/long,
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
@@ -810,7 +810,7 @@ EMPTY_GUN_HELPER(rifle/illestren/factory)
 
 	unique_attachments = list(
 		/obj/item/attachment/scope,
-		/obj/item/attachment/long_scope,
+		/obj/item/attachment/scope/long,
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
@@ -1009,7 +1009,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 	unique_attachments = list(
 		/obj/item/attachment/alof,
 		/obj/item/attachment/scope,
-		/obj/item/attachment/long_scope)
+		/obj/item/attachment/scope/long)
 
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
@@ -1157,10 +1157,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 	can_be_sawn_off = FALSE
 
-	zoomable = TRUE
-	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
-	zoom_out_amt = 5
-
+	range_modifier = LONG_SCOPE_ZOOM
 	wield_slowdown = SNIPER_SLOWDOWN
 
 	recoil = 3

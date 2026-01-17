@@ -10,7 +10,7 @@
 	wield_slowdown = RIFLE_SLOWDOWN
 	aimed_wield_slowdown = RIFLE_AIM_SLOWDOWN
 
-	zoom_amt = RIFLE_ZOOM
+	range_modifier = SIGHT_ZOOM
 
 	fire_delay = 0.2 SECONDS
 
