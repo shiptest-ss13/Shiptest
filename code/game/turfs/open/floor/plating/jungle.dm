@@ -108,6 +108,9 @@ JUNGLE_TURF_HELPER(plasteel)
 JUNGLE_TURF_HELPER(plasteel/dark)
 JUNGLE_TURF_HELPER(plasteel/white)
 
+JUNGLE_TURF_HELPER(plasteel/tech/grid)
+JUNGLE_TURF_HELPER(plasteel/tech/pod)
+
 JUNGLE_TURF_HELPER(plasteel/mono/dark)
 
 JUNGLE_TURF_HELPER(plasteel/patterned/brushed)
