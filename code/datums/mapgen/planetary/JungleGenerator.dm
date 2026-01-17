@@ -105,11 +105,13 @@
 
 	feature_spawn_chance = 1.4
 	feature_spawn_list = list(
-		/obj/structure/vein/jungle = 2,
-		/obj/structure/vein/jungle/classtwo = 4,
-		/obj/structure/vein/jungle/classtwo/rare = 2,
-		/obj/structure/vein/jungle/classthree = 2,
-		/obj/structure/vein/jungle/classthree/rare = 1,
+		/obj/structure/vein/jungle = 4,
+		/obj/structure/vein/jungle/classtwo = 8,
+		/obj/structure/vein/jungle/classtwo/rare = 4,
+		/obj/structure/vein/jungle/classthree = 4,
+		/obj/structure/vein/jungle/classthree/rare = 2,
+		/obj/effect/spawner/random/greeble/jungleplanet = 10,
+		/obj/effect/spawner/random/greeble/jungleplanet/anomaly = 1,
 		/obj/effect/greeble_spawner/grass_patch_spawner/dark_jungle = 20,
 		/obj/effect/greeble_spawner/grass_patch_spawner/yellow_jungle = 50,
 	)
@@ -158,6 +160,8 @@
 	flora_spawn_chance = 20
 	mob_spawn_chance = 0.05
 	mob_spawn_list = list(/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 1)
+	feature_spawn_chance = 0.1
+	feature_spawn_list = list(/obj/effect/spawner/random/greeble/jungleplanet = 1)
 
 /datum/biome/jungle_wasteland
 	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/wasteland = 1)
@@ -197,13 +201,14 @@
 		/mob/living/simple_animal/hostile/retaliate/bat = 1,
 		/mob/living/simple_animal/hostile/retaliate/poison/snake = 1
 	)
-	feature_spawn_chance = 0.5
+	feature_spawn_chance = 0.7
 	feature_spawn_list = list(
 		/obj/item/pickaxe/rusted = 1,
 		/obj/structure/spawner/burrow/jungle_planet = 4,
-		/obj/effect/spawner/random/anomaly/jungle = 2,
+		/obj/effect/spawner/random/anomaly/jungle/cave = 2,
 		/obj/structure/vein/jungle = 8,
 		/obj/structure/vein/jungle/classtwo = 4,
+		/obj/effect/spawner/random/greeble/jungleplanet/cave = 4
 	)
 
 /datum/biome/cave/jungle/dirt
