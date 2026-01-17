@@ -290,6 +290,7 @@
 	if(destructive)
 		our_vein.Destroy()
 		our_vein = null
+		anchored = FALSE
 	playsound(src, 'sound/machines/switch2.ogg', 50, TRUE)
 	update_icon_state()
 	update_overlays()
