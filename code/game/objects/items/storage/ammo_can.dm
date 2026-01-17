@@ -59,6 +59,9 @@
 	STR.max_combined_w_class = 400
 	STR.set_holdable(holdable_items)
 
+/obj/item/storage/toolbox/ammo/reskin_obj(mob/user)
+	. = ..()
+	name = "ammo can ([current_skin])"
 
 /obj/item/storage/toolbox/ammo/a850r/PopulateContents()
 	name = "ammo can (8x50mmR)"
