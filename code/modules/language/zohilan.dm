@@ -6,7 +6,7 @@
 	exclaim_verb = "roars"
 	sing_verb = "sings"
 	key = "z"
-	flags = TONGUELESS_SPEECH | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD | ROUNDSTART_LANGUAGE | NO_HISS
+	flags = TONGUELESS_SPEECH | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD | NO_HISS
 	space_chance = 12
 	sentence_chance = 0
 	between_word_sentence_chance = 10
@@ -30,4 +30,5 @@
 	default_priority = 90
 	mutual_understanding = list(
 		/datum/language/gezena_kalixcian = 90, // enough to sort of understand each other, but not perfectly
+		/datum/language/league_kalixcian = 95
 	)
