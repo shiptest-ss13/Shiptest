@@ -221,8 +221,8 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	icon_state = "makossowarra_headset_alt"
 	hearing_protection = TRUE
 
-/obj/item/radio/headset/nanotrasen/alt/captain
-	name = "nanotrasen captain's bowman headset"
+/obj/item/radio/headset/makossowarra/alt/captain
+	name = "Makosso-Warra captain's bowman headset"
 	desc = "Worn proudly by Nanotrasen's remaining captains on the frontier. Protects ears from flashbangs."
 	keyslot2 = /obj/item/encryptionkey/heads/captain
 	command = TRUE
