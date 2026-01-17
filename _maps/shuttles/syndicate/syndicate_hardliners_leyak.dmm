@@ -75,7 +75,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "aU" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/sign/poster/contraband/gec{
 	pixel_x = 28
 	},
@@ -85,7 +84,11 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/obj/structure/railing{
+	dir = 9
+	},
+/obj/machinery/telecomms/relay/preset/cybersun,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines)
 "bb" = (
 /obj/structure/cable{
@@ -1419,12 +1422,12 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "pK" = (
-/obj/machinery/portable_atmospherics/pump,
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
 	},
 /obj/machinery/firealarm/directional/south,
+/obj/machinery/portable_atmospherics/pump,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
 "qa" = (
@@ -1625,7 +1628,6 @@
 /obj/item/clothing/head/helmet/hardliners{
 	pixel_y = 8
 	},
-/obj/item/radio/headset/syndicate/alt/leader,
 /obj/machinery/light/directional/south,
 /obj/item/clothing/shoes/combat{
 	pixel_y = -7
@@ -1633,6 +1635,11 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/megaphone,
 /obj/item/radio/intercom/directional/east,
+/obj/item/radio/headset/syndicate/alt/cybersun,
+/obj/item/storage/belt/security/webbing/hardliners/alt{
+	pixel_x = 4;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "sM" = (
@@ -2815,6 +2822,7 @@
 	pixel_y = 4
 	},
 /obj/item/melee/energy/flyssa,
+/obj/item/radio/headset/syndicate/alt/cybersun,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "Jv" = (
@@ -2940,7 +2948,6 @@
 	pixel_x = -8;
 	pixel_y = 7
 	},
-/obj/item/radio/headset/syndicate/alt/captain,
 /obj/item/clothing/under/syndicate/hardliners/officer{
 	pixel_x = -10;
 	pixel_y = -9
@@ -2953,6 +2960,7 @@
 /obj/item/megaphone{
 	pixel_y = 11
 	},
+/obj/item/radio/headset/syndicate/alt/captain/cybersun,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "Lg" = (
@@ -3352,6 +3360,14 @@
 	icon_state = "syndicate";
 	name = "armoring locker";
 	req_access = list(1)
+	},
+/obj/item/storage/belt/security/webbing/hardliners/alt{
+	pixel_x = -9;
+	pixel_y = -8
+	},
+/obj/item/storage/belt/security/webbing/hardliners/alt{
+	pixel_x = 10;
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security)
@@ -4084,9 +4100,6 @@
 	dir = 1;
 	piping_layer = 2
 	},
-/obj/structure/railing{
-	dir = 9
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -4094,6 +4107,9 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/light/directional/east,
+/obj/structure/railing{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines)
 "XW" = (

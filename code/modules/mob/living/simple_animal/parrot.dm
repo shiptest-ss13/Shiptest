@@ -269,6 +269,12 @@
 								available_channels.Add(RADIO_TOKEN_SOLGOV)
 							if(RADIO_CHANNEL_SYNDICATE)
 								available_channels.Add(RADIO_TOKEN_SYNDICATE)
+							if(RADIO_CHANNEL_CYBERSUN)
+								available_channels.Add(RADIO_TOKEN_CYBERSUN)
+							if(RADIO_CHANNEL_NGR)
+								available_channels.Add(RADIO_TOKEN_NGR)
+							if(RADIO_CHANNEL_SUNS)
+								available_channels.Add(RADIO_TOKEN_SUNS)
 							if(RADIO_CHANNEL_PIRATE)
 								available_channels.Add(RADIO_TOKEN_PIRATE)
 
@@ -882,19 +888,19 @@
 
 /mob/living/simple_animal/parrot/proc/set_interest(atom/movable/new_interest)
 	if(parrot_interest)
-		UnregisterSignal(parrot_interest, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(parrot_interest, COMSIG_QDELETING)
 		parrot_interest = null
 	if(new_interest)
 		parrot_interest = new_interest
-		RegisterSignal(parrot_interest, COMSIG_PARENT_QDELETING, PROC_REF(set_interest))
+		RegisterSignal(parrot_interest, COMSIG_QDELETING, PROC_REF(set_interest))
 
 /mob/living/simple_animal/parrot/proc/set_perch(obj/new_perch)
 	if(parrot_perch)
-		UnregisterSignal(parrot_perch, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(parrot_perch, COMSIG_QDELETING)
 		parrot_perch = null
 	if(new_perch)
 		parrot_perch = new_perch
-		RegisterSignal(parrot_perch, COMSIG_PARENT_QDELETING, PROC_REF(set_perch))
+		RegisterSignal(parrot_perch, COMSIG_QDELETING, PROC_REF(set_perch))
 
 /*
  * Sub-types

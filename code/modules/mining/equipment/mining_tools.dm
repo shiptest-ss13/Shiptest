@@ -204,3 +204,70 @@
 	toolspeed = 0.8
 	attack_verb = list("bashed", "bludgeoned", "spooned", "scooped")
 	sharpness = SHARP_NONE
+
+/obj/item/trench_tool
+	name = "entrenching tool"
+	desc = "A dual-purpose excavation tool in black and red, serving as both a powerful bladed shovel and a pickaxe. Manufactured by the New Gorlex Republic."
+	icon = 'icons/obj/mining.dmi'
+	icon_state = "trench_tool"
+	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
+	force = 15
+	throwforce = 6
+	armour_penetration = 15
+	wound_bonus = 5
+	tool_behaviour = TOOL_MINING
+	slot_flags = ITEM_SLOT_BELT
+	demolition_mod = 1.15
+	wall_decon_damage = MINERAL_WALL_INTEGRITY
+	w_class = WEIGHT_CLASS_NORMAL
+	sharpness = SHARP_POINTY
+	toolspeed = 0.5
+	usesound = 'sound/effects/picaxe1.ogg'
+	attack_verb = list("hits", "pierced", "sliced", "attacked")
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	wound_bonus = 5
+
+/obj/item/trench_tool/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/update_icon_updates_onmob)
+
+/obj/item/trench_tool/ComponentInitialize()
+	. = ..()
+	AddComponent( \
+		/datum/component/transforming, \
+		force_on = 20, \
+		throwforce_on = 10, \
+		hitsound_on = 'sound/weapons/bladeslice.ogg', \
+		attack_verb_on = list("slashed", "impaled", "stabbed", "sliced"), \
+	)
+	RegisterSignal(src, COMSIG_TRANSFORMING_ON_TRANSFORM, PROC_REF(on_transform))
+
+/obj/item/trench_tool/examine(mob/user)
+	. = ..()
+	. += span_notice("It functions as a [tool_behaviour] tool.")
+
+/obj/item/trench_tool/proc/on_transform(obj/item/source, mob/user, active)
+	SIGNAL_HANDLER
+
+	if(active)
+		tool_behaviour = TOOL_SHOVEL
+		sharpness = SHARP_EDGED
+		toolspeed = 0.25
+		usesound = 'sound/effects/shovel_dig.ogg'
+		bare_wound_bonus = 10
+		armour_penetration = 0
+	else
+		tool_behaviour = TOOL_MINING
+		sharpness = SHARP_POINTY
+		toolspeed = 0.5
+		usesound = 'sound/effects/picaxe1.ogg'
+		bare_wound_bonus = 0
+		armour_penetration = 15
+	playsound(src, 'sound/items/ratchet.ogg', 50, vary = TRUE)
+	return COMPONENT_NO_DEFAULT_MESSAGE
+
+/obj/item/trench_tool/gezena
+	name = "entrenching tool"
+	desc = "A dual-purpose excavation tool in green, serving as both a powerful bladed shovel and a pickaxe. In use by the Pan-Gezenan Federation."
+	icon_state = "trench_tool_gezena"

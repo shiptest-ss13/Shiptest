@@ -64,7 +64,7 @@
 /obj/item/ammo_box/magazine/internal/shot/underbarrel
 	name = "underbarrel shotgun internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
-	max_ammo = 2
+	max_ammo = 1
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/internal/shot/sex

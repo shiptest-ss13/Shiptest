@@ -230,12 +230,11 @@
 				)
 		if(prob(30))
 			backpack_contents += list(
-				/obj/item/reagent_containers/hypospray/medipen/survival = pick_weight(list(
-					1 = 3,
-					2 = 2,
-					3 = 1
-					)
-				)
+				/obj/item/reagent_containers/hypospray/medipen/survival = text2num(pick_weight(list(
+					"1" = 3,
+					"2" = 2,
+					"3" = 1,
+				)))
 			)
 	else if (prob(75))
 		backpack_contents = list()

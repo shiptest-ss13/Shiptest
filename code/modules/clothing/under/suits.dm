@@ -89,18 +89,42 @@
 	desc = "A charcoal suit and red tie. Very professional."
 	icon_state = "charcoal_suit"
 	item_state = "charcoal_suit"
+	roll_sleeves = TRUE
+	roll_down = TRUE
+
+/obj/item/clothing/under/suit/charcoal/skirt
+	name = "charcoal skirt"
+	desc = "A charcoal skirt. Very professional."
+	icon_state = "charcoal_skirt"
+	item_state = "charcoal_skirt"
 
 /obj/item/clothing/under/suit/navy
 	name = "navy suit"
-	desc = "A navy suit and red tie, intended for the galaxy's finest."
+	desc = "A navy suit, intended for the galaxy's finest."
 	icon_state = "navy_suit"
 	item_state = "navy_suit"
+	roll_sleeves = TRUE
+	roll_down = TRUE
+
+/obj/item/clothing/under/suit/navy/skirt
+	name = "navy skirt"
+	desc = "A navy skirt, intended for the galaxy's finest."
+	icon_state = "navy_skirt"
+	item_state = "navy_skirt"
 
 /obj/item/clothing/under/suit/burgundy
 	name = "burgundy suit"
-	desc = "A burgundy suit and black tie. Somewhat formal."
+	desc = "A burgundy suit. Somewhat formal."
 	icon_state = "burgundy_suit"
 	item_state = "burgundy_suit"
+	roll_sleeves = TRUE
+	roll_down = TRUE
+
+/obj/item/clothing/under/suit/burgundy/skirt
+	name = "burgundy skirt"
+	desc = "A burgundy skirt. Somewhat formal."
+	icon_state = "burgundy_skirt"
+	item_state = "burgundy_skirt"
 
 /obj/item/clothing/under/suit/checkered
 	name = "checkered suit"

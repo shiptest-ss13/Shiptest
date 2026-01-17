@@ -471,6 +471,24 @@
 	for(var/i in 1 to 6)
 		new /obj/item/reagent_containers/food/drinks/drinkingglass(src)
 
+/obj/item/storage/box/shotglasses
+	name = "box of shot glasses"
+	desc = "It has a picture of shot glasses on it."
+	illustration = "drinkglass"
+
+/obj/item/storage/box/shotglasses/PopulateContents()
+	for(var/i in 1 to 6)
+		new /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass(src)
+
+/obj/item/storage/box/modglasses
+	name = "box of malleable glasses"
+	desc = "It has a picture of malleable glasses on it."
+	illustration = "drinkglass"
+
+/obj/item/storage/box/modglasses/PopulateContents()
+	for(var/i in 1 to 6)
+		new /obj/item/reagent_containers/food/drinks/modglass(src)
+
 /obj/item/storage/box/condimentbottles
 	name = "box of condiment bottles"
 	desc = "It has a large ketchup smear on it."

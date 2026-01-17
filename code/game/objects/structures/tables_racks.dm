@@ -257,7 +257,7 @@
 		return
 	if(can_flip)
 		user.visible_message(span_danger("[user] starts flipping [src]!"), span_notice("You start flipping over the [src]!"))
-		if(do_after(user, max_integrity/4))
+		if(do_after(user, max_integrity/12))
 			var/obj/structure/flippedtable/flipped = new flipped_table_type(src.loc)
 			flipped.name = "flipped [src.name]"
 			flipped.desc = "[src.desc] It is flipped!"
@@ -641,10 +641,10 @@
 
 /obj/structure/table/optable/proc/set_patient(new_patient)
 	if(patient)
-		UnregisterSignal(patient, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(patient, COMSIG_QDELETING)
 	patient = new_patient
 	if(patient)
-		RegisterSignal(patient, COMSIG_PARENT_QDELETING, PROC_REF(patient_deleted))
+		RegisterSignal(patient, COMSIG_QDELETING, PROC_REF(patient_deleted))
 
 /obj/structure/table/optable/proc/patient_deleted(datum/source)
 	SIGNAL_HANDLER

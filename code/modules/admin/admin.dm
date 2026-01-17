@@ -581,6 +581,15 @@
 	message_admins("[key_name_admin(usr)] toggled LOOC.")
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Local OOC", "[GLOB.looc_allowed ? "Enabled" : "Disabled"]"))
 
+/datum/admins/proc/toggledeadchat()
+	set category = "Server"
+	set desc="Toggle dat bitch"
+	set name="Toggle Deadchat"
+	toggle_deadchat()
+	log_admin("[key_name(usr)] toggled deadchat.")
+	message_admins("[key_name_admin(usr)] toggled deadchat.")
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Dead Chat", "[GLOB.deadchat_allowed ? "Enabled" : "Disabled"]"))
+
 /datum/admins/proc/toggleoocdead()
 	set category = "Server"
 	set desc="Toggle dis bitch"

@@ -103,6 +103,9 @@
 		CtrlClickOn(A)
 		return
 
+	if(typing_indicator)
+		set_typing_indicator(FALSE)
+
 	if(incapacitated(ignore_restraints = TRUE))
 		return
 
@@ -113,6 +116,10 @@
 
 	if(!LAZYACCESS(modifiers, "catcher") && A.IsObscured())
 		return
+
+	if(ismecha(loc))
+		var/obj/mecha/M = loc
+		return M.click_action(A, src, params)
 
 	if(HAS_TRAIT(src, TRAIT_HANDS_BLOCKED))
 		changeNext_move(CLICK_CD_HANDCUFFED)   //Doing shit in cuffs shall be vey slow
@@ -160,26 +167,11 @@
 			if(ismob(A))
 				changeNext_move(CLICK_CD_MELEE)
 			UnarmedAttack(A,1,modifiers)
-	else
-		var/proximity = A.Adjacent(src)
-		if(W)
-			if(LAZYACCESS(modifiers, RIGHT_CLICK))
-				var/after_attack_secondary_result = W.afterattack_secondary(A, src, FALSE, params)
-
-				if(after_attack_secondary_result == SECONDARY_ATTACK_CALL_NORMAL)
-					if(!proximity || !A.attackby(W, src, params))
-						W.afterattack(A, src, proximity, params)
-						RangedAttack(A, params)
-			else
-				W.afterattack(A,src,0,params)
-				if(!proximity || !A.attackby(W, src, params))
-					W.afterattack(A, src, proximity, params)
-					RangedAttack(A, params)
-		else
-			if(LAZYACCESS(modifiers, RIGHT_CLICK))
-				ranged_secondary_attack(A, modifiers)
-			else
-				RangedAttack(A,modifiers)
+	else if(W) //Handle clicking on something out of reach
+		if(!(LAZYACCESS(modifiers, RIGHT_CLICK) && W.afterattack_secondary(A, src, FALSE, params) != SECONDARY_ATTACK_CALL_NORMAL))
+			W.afterattack(A, src, FALSE, params)
+	else if(!(LAZYACCESS(modifiers, RIGHT_CLICK) && ranged_secondary_attack(A, modifiers) != SECONDARY_ATTACK_CALL_NORMAL))
+		RangedAttack(A, modifiers)
 
 /// Is the atom obscured by a PREVENT_CLICK_UNDER_1 object above it
 /atom/proc/IsObscured()
@@ -200,10 +192,6 @@
 			return TRUE
 	return FALSE
 
-/**
- * A backwards depth-limited breadth-first-search to see if the target is
- * logically "in" anything adjacent to us.
- */
 /**
  * A backwards depth-limited breadth-first-search to see if the target is
  * logically "in" anything adjacent to us.

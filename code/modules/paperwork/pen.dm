@@ -120,7 +120,7 @@
 		return
 
 	if(!force)
-		if(M.can_inject(user, 1))
+		if(M.can_inject(user))
 			to_chat(user, span_warning("You stab [M] with the pen."))
 			if(!stealth)
 				to_chat(M, span_danger("You feel a tiny prick!"))
@@ -177,7 +177,7 @@
 		if(reagents.total_volume)
 			if(M.reagents)
 
-				reagents.trans_to(M, reagents.total_volume, transfered_by = user, method = INJECT)
+				reagents.trans_to(M, reagents.total_volume, transfered_by = user, methods = INJECT)
 
 
 /obj/item/pen/sleepy/Initialize()

@@ -84,7 +84,8 @@
 		/obj/item/clothing/head/welding, //WS end
 		/obj/item/gun/energy/plasmacutter,
 		/obj/item/bodycamera,
-		/obj/item/stack/tape/industrial
+		/obj/item/stack/tape/industrial,
+		/obj/item/trench_tool,
 		))
 
 /obj/item/storage/belt/utility/chief
@@ -423,6 +424,7 @@
 		/obj/item/bodycamera,
 		/obj/item/binoculars,
 		/obj/item/tank/internals/emergency_oxygen,
+		/obj/item/trench_tool,
 		))
 
 
