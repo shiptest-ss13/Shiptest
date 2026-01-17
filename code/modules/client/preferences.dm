@@ -120,7 +120,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"vox_neck_quills" = "Plain",
 							"elzu_horns" = "None",
 							"elzu_tail" = "None",
-							"flavor_text" = ""
+							"flavor_text" = "",
+							"flavor_portrait" = "",
+							"flavor_portrait_source" = ""
 						)
 	var/height_filter = "Normal"
 	var/list/randomise = list(
@@ -364,14 +366,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<a href='byond://?_src_=prefs;preference=toggle_random;random_type=[RANDOM_AGE]'>Always Random Age: [(randomise[RANDOM_AGE]) ? "Yes" : "No"]</A>"
 				dat += "<a href='byond://?_src_=prefs;preference=toggle_random;random_type=[RANDOM_AGE_ANTAG]'>When Antagonist: [(randomise[RANDOM_AGE_ANTAG]) ? "Yes" : "No"]</A>"
 
-			dat += "<br><a href='byond://?_src_=prefs;preference=flavor_text;task=input'><b>Set Flavor Text</b></a>"
-			if(length(features["flavor_text"]) <= 40)
-				if(!length(features["flavor_text"]))
-					dat += "\[...\]"
-				else
-					dat += "[features["flavor_text"]]"
-			else
-				dat += "[copytext_char(features["flavor_text"], 1, 37)]...<BR>"
+			dat += "<br><b>Flavor Text: </b>"
+			var/flavortext = "\[...\]"
+			if(length(features["flavor_text"]) > 40)
+				flavortext = copytext_char(features["flavor_text"], 1, 37) + "..."
+			else if(length(features["flavor_text"]))
+				flavortext = features["flavor_text"]
+			dat += "<a href='byond://?_src_=prefs;preference=flavor_text;task=input'>[flavortext]</a>"
+
+			dat += "<br><b>Portrait:</b>"
+			var/portrait_text = length(features["flavor_portrait"]) ? "\[Image by [features["flavor_portrait_source"]]\]" : "\[Unset\]"
+			dat += "<a href='byond://?_src_=prefs;preference=flavor_portrait;task=input'>[portrait_text]</a>"
 
 			dat += "<br><br><b>Special Names:</b><BR>"
 			var/old_group
@@ -1758,9 +1763,24 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						age = clamp(round(text2num(new_age)), pref_species.species_age_min, pref_species.species_age_max)
 
 				if("flavor_text")
-					var/msg = tgui_input_text(usr, "A snippet of text shown when others examine you, describing what you may look like. This can also be used for OOC notes.", "Flavor Text", html_decode(features["flavor_text"]), MAX_FLAVOR_LEN, TRUE)
-					if(msg) //WS edit - "Cancel" does not clear flavor text
-						features["flavor_text"] = msg
+					tgui_markdown(user, "Flavor Text", CALLBACK(src, PROC_REF(set_flavortext)), features["flavor_text"], MAX_FLAVOR_LEN, "A snippet of text shown when others examine you, describing what you may look like. This can also be used for OOC notes. The first line (up to 100 characters) will be shown directly on examine, while the rest will need to be opened in a separate window.", "Enter flavortext for [real_name].")
+					//Async prompt so no need to refresh
+					return TRUE
+
+				if("flavor_portrait")
+					var/url = input(user, "A URL to an image that will be shown when others examine you.", "Flavor Portrait", features["flavor_portrait"]) as text|null
+					if(isnull(url))
+						return
+
+					if(!findtext(url, /datum/component/flavor_text::flavortext_regex))
+						alert(user, "This is an invalid portrait link! Please either post your image to the Shiptest forums and link it from there, or use Gyazo or imgbb.")
+						return
+
+					features["flavor_portrait"] = url
+					var/source = input(user, "The name of the artist or other source for the specified image.", "Flavor Portrait", features["flavor_portrait_source"]) as text|null
+					if(isnull(source))
+						return
+					features["flavor_portrait_source"] = source
 
 				if("hair")
 					var/new_hair = input(user, "Choose your character's hair colour:", "Character Preference","#"+hair_color) as color|null
@@ -2580,7 +2600,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	character.fbp = fbp
 
-	character.flavor_text = features["flavor_text"] //Let's update their flavor_text at least initially
+	character.set_flavor_text(features["flavor_text"], features["flavor_portrait"], features["flavor_portrait_source"]) //Let's update their flavor_text at least initially
 
 	if(loadout) //I have been told not to do this because it's too taxing on performance, but hey, I did it anyways! //I hate you old me //don't be mean
 		for(var/gear in equipped_gear)
@@ -2708,3 +2728,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			return
 		else
 			custom_names[name_id] = sanitized_name
+
+/datum/preferences/proc/set_flavortext(user, result)
+	//Only prompt them if they had flavor text to begin with
+	if(!result && (!features["flavor_text"] || tgui_alert(user, "Are you sure you want to clear your flavour text?", "Character Preference", list("Yes", "No")) != "Yes"))
+		return
+	features["flavor_text"] = result
+	ShowChoices(user)

@@ -45,6 +45,18 @@
 
 	QUEUE_OR_CALL_VERB_FOR(VERB_CALLBACK(src, TYPE_PROC_REF(/mob, emote), "me", 1, message, TRUE), SSspeech_controller)
 
+/mob/verb/subtle_verb(message as text)
+	set name = "Subtle"
+	set category = "IC"
+
+	if(typing_indicator)
+		set_typing_indicator(FALSE)
+	if(GLOB.say_disabled)	//This is here to try to identify lag problems
+		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		return
+
+	QUEUE_OR_CALL_VERB_FOR(VERB_CALLBACK(src, TYPE_PROC_REF(/mob, emote), "subtle", 1, message, TRUE), SSspeech_controller)
+
 ///Speak as a dead person (ghost etc)
 /mob/proc/say_dead(message)
 	var/name = real_name
