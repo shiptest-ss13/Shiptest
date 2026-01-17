@@ -279,7 +279,7 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/plating,
-/area/template_noop)
+/area/ship/bridge)
 "dC" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
@@ -849,7 +849,7 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
-/area/template_noop)
+/area/ship/bridge)
 "jf" = (
 /obj/structure/table,
 /obj/effect/turf_decal/corner_steel_grid{
@@ -1459,7 +1459,7 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/plating,
-/area/template_noop)
+/area/ship/bridge)
 "rQ" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -3774,7 +3774,6 @@
 /obj/item/pickaxe/drill{
 	pixel_y = -6
 	},
-/obj/effect/mapping_helpers/crate_shelve,
 /obj/structure/closet/crate/secure/plasma{
 	name = "disembarkation gear"
 	},
@@ -3806,7 +3805,6 @@
 /obj/item/melee/sword/mass{
 	pixel_x = 6
 	},
-/obj/effect/mapping_helpers/crate_shelve,
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
