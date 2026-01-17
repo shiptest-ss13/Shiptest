@@ -2,7 +2,7 @@
 ///Planetary types should still be explicitly defined for description fluff
 #define JUNGLE_TURF_HELPER(turf_type)								\
 	/turf/open/floor/##turf_type/jungleplanet {						\
-		baseturfs = /turf/open/floor/plating/asteroid/dirt/jungle	\
+		baseturfs = /turf/open/floor/plating/asteroid/dirt/jungle;	\
 		initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS;				\
 		planetary_atmos = TRUE;										\
 		light_color = COLOR_JUNGLEPLANET_LIGHT;						\
