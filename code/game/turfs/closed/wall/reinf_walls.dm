@@ -73,15 +73,6 @@
 	return max_integrity - ((max_integrity/7) * state)
 
 /turf/closed/wall/r_wall/try_decon(obj/item/W, mob/user, turf/T)
-	//DECONSTRUCTION
-	if(istype(W,/obj/item/gun/energy/plasmacutter))
-		to_chat(user, span_notice("You begin slicing through the [src]."))
-		while(W.use_tool(src,user,30,volume = 100))
-			to_chat(user, span_notice("You slice through some of the outer plating..."))
-			if(!alter_integrity(-(W.wall_decon_damage)))
-				return TRUE
-		return 1
-
 	switch(d_state)
 		if(INTACT)
 			if(W.tool_behaviour == TOOL_WIRECUTTER)

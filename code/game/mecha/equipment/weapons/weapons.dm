@@ -176,7 +176,7 @@
 	righthand_file = GUN_RIGHTHAND_ICON
 	energy_drain = 30
 	projectile = /obj/projectile/plasma/adv/mech
-	fire_sound = 'sound/weapons/plasma_cutter.ogg'
+	fire_sound = 'sound/weapons/melee/plasmacutter/plasma_cutter.ogg'
 	harmful = TRUE
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma/can_attach(obj/mecha/working/M)
