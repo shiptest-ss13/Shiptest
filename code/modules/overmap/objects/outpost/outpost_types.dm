@@ -174,7 +174,7 @@
 	token_icon_state = "station_asteroid"
 	main_template = /datum/map_template/outpost/makossowarra_ice
 	elevator_template = /datum/map_template/outpost/elevator_ice
-	faction = FACTION_NT
+	faction = FACTION_MAKOSSOWARRA
 	weather_controller_type = /datum/weather_controller/chill
 	hangar_templates = list(
 		/datum/map_template/outpost/hangar/makossowarra_ice_20x20,

@@ -59,7 +59,7 @@
 	casingtype = null
 	projectiletype = /obj/projectile/beam/laser/sharplite
 	r_hand = /obj/item/gun/energy/sharplite/l201/l204
-	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
+	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 
 /mob/living/simple_animal/hostile/human/makossowarra/ranged/laser/space
 	minbodytemp = 0
@@ -95,7 +95,7 @@
 	casingtype = null
 	projectiletype = /obj/projectile/beam/weak/sharplite
 	r_hand = /obj/item/gun/energy/sharplite/l305
-	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
+	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 
 /mob/living/simple_animal/hostile/human/makossowarra/ranged/trooper/shotgun
 	name = "\improper Vigilitas Pointman"
@@ -109,7 +109,7 @@
 	retreat_distance = 0
 	minimum_distance = 1
 	shoot_point_blank = TRUE
-	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
+	projectilesound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 
 /mob/living/simple_animal/hostile/human/makossowarra/ranged/trooper/shotgun/space
 	name = "\improper Vigilitas Pointman"
@@ -196,5 +196,5 @@
 	minbodytemp = 0
 	casingtype = /obj/item/ammo_casing/energy/laser/shotgun/sharplite
 	projectiletype = null
-	projectilesound = 'sound/weapons/gun/laser/nt-fire_light.ogg'
+	projectilesound = 'sound/weapons/gun/laser/sharplite-fire_light.ogg'
 	r_hand = /obj/item/gun/energy/sharplite/x46

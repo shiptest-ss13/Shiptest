@@ -1,9 +1,9 @@
 //Clothes
-/obj/item/clothing/under/rank/security/head_of_security/nt/skirt/lp
+/obj/item/clothing/under/rank/security/head_of_security/makossowarra/skirt/lp
 	name = "LP Security Specialist's Jumpskirt"
 	desc = "A standard Jumpskirt belonging to the Security Specialist of the Loss Previention team."
 
-/obj/item/clothing/under/rank/security/head_of_security/nt/lp
+/obj/item/clothing/under/rank/security/head_of_security/makossowarra/lp
 	name = "LP Security Specialist's Jumpsuit"
 	desc = "The ERT ran out of outfits to give to the LP, so they gave them station spares. This one belongs to the LP Security Specialist."
 
@@ -23,11 +23,11 @@
 	name = "LP Lieutenant's Jumpsuit"
 	desc = "The ERT ran out of outfits to give to the LP, so they gave them station spares. This one belongs to the LP Lieutenant."
 
-/obj/item/clothing/under/rank/engineering/engineer/nt/lp
+/obj/item/clothing/under/rank/engineering/engineer/makossowarra/lp
 	name = "LP Engineering Specialist's Jumpsuit"
 	desc = "The ERT ran out of outfits to give to the LP, so they gave them station spares. This one belongs to the LP Engineering Specialist."
 
-/obj/item/clothing/under/rank/engineering/engineer/nt/skirt/lp
+/obj/item/clothing/under/rank/engineering/engineer/makossowarra/skirt/lp
 	name = "LP Engineering Specialist's Jumpskirt"
 	desc = "A standard Jumpskirt belonging to the Engineering Specialist of the Loss Previention team."
 

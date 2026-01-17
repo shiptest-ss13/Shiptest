@@ -294,9 +294,9 @@
 	jobtype = /datum/job/warden
 
 	ears = /obj/item/radio/headset/headset_sec/alt
-	uniform = /obj/item/clothing/under/rank/security/warden/nt
+	uniform = /obj/item/clothing/under/rank/security/warden/makossowarra
 	shoes = /obj/item/clothing/shoes/jackboots
-	suit = /obj/item/clothing/suit/armor/vest/security/warden/alt/nt
+	suit = /obj/item/clothing/suit/armor/vest/security/warden/alt/makossowarra
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/warden/red
@@ -419,7 +419,7 @@
 	job_icon = "brigphysician"
 
 	ears = /obj/item/radio/headset/headset_medsec/alt
-	uniform = /obj/item/clothing/under/rank/security/brig_phys/nt
+	uniform = /obj/item/clothing/under/rank/security/brig_phys/makossowarra
 	shoes = /obj/item/clothing/shoes/jackboots
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
 	suit = /obj/item/clothing/suit/toggle/labcoat/brig_phys
@@ -791,8 +791,8 @@
 	id = /obj/item/card/id/lpsec
 	belt = /obj/item/pda/security
 	gloves = /obj/item/clothing/gloves/color/black
-	uniform = /obj/item/clothing/under/rank/security/head_of_security/nt/lp
-	alt_uniform = /obj/item/clothing/under/rank/security/head_of_security/nt/skirt/lp
+	uniform = /obj/item/clothing/under/rank/security/head_of_security/makossowarra/lp
+	alt_uniform = /obj/item/clothing/under/rank/security/head_of_security/makossowarra/skirt/lp
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/beret/sec
@@ -808,8 +808,8 @@
 	ears = /obj/item/radio/headset/makossowarra/alt/captain
 	id = /obj/item/card/id/lpengie
 	gloves = /obj/item/clothing/gloves/color/yellow
-	uniform = /obj/item/clothing/under/rank/engineering/engineer/nt/lp
-	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/nt/skirt/lp
+	uniform = /obj/item/clothing/under/rank/engineering/engineer/makossowarra/lp
+	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/makossowarra/skirt/lp
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/beret/eng

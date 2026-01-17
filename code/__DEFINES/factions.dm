@@ -7,7 +7,7 @@
 #define FACTION_SRM "Saint-Roumain Militia"
 #define FACTION_INTEQ "Inteq Risk Management Group"
 #define FACTION_CLIP "Confederated League of Independent Planets"
-#define FACTION_MW "Makosso-Warra Corporation"
+#define FACTION_MAKOSSOWARRA "Makosso-Warra Corporation"
 	#define FACTION_NS_LOGI "N+S Logistics"
 	#define FACTION_VIGILITAS "Vigilitas Interstellar"
 #define FACTION_FRONTIERSMEN "Frontiersmen Fleet"
