@@ -63,6 +63,7 @@
 	resistance_flags = LAVA_PROOF
 	immortal = TRUE
 	immobile = TRUE
+	layer = 5
 
 /obj/effect/anomaly/veins/helltree/Initialize(mapload, new_lifespan, drops_core)
 	. = ..()
