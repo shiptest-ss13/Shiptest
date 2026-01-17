@@ -39,7 +39,6 @@
 	boozepwr = 80
 	quality = DRINK_GOOD
 	overdose_threshold = 60
-	addiction_threshold = 30
 	taste_description = "oily syrup"
 	glass_icon_state = "vimukti_glass"
 	glass_name = "glass of Vimukti"

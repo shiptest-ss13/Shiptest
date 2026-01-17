@@ -60,10 +60,6 @@
 	var/chem_temp = 150
 	/// unused
 	var/last_tick = 1
-	/// see [/datum/reagents/proc/metabolize] for usage
-	var/addiction_tick = 1
-	/// currently addicted reagents
-	var/list/datum/reagent/addiction_list = new/list()
 	/// various flags, see code\__DEFINES\reagents.dm
 	var/flags
 
@@ -81,7 +77,6 @@
 /datum/reagents/Destroy()
 	. = ..()
 	//We're about to delete all reagents, so lets cleanup
-	addiction_list.Cut()
 	var/list/cached_reagents = reagent_list
 	for(var/reagent in cached_reagents)
 		var/datum/reagent/R = reagent
@@ -393,7 +388,6 @@
  */
 /datum/reagents/proc/metabolize(mob/living/carbon/C, can_overdose = FALSE, liverless = FALSE)
 	var/list/cached_reagents = reagent_list
-	var/list/cached_addictions = addiction_list
 	if(C)
 		expose_temperature(C.bodytemperature, 0.25)
 	var/need_mob_update = 0
@@ -416,52 +410,14 @@
 							R.overdosed = 1
 							need_mob_update += R.overdose_start(C)
 							log_game("[key_name(C)] has started overdosing on [R.name] at [R.volume] units.")
-					if(R.addiction_threshold)
-						if(R.volume >= R.addiction_threshold && !is_type_in_list(R, cached_addictions))
-							var/datum/reagent/new_reagent = new R.type()
-							cached_addictions.Add(new_reagent)
-							log_game("[key_name(C)] has become addicted to [R.name] at [R.volume] units.")
 					if(R.overdosed)
 						need_mob_update += R.overdose_process(C)
-					if(is_type_in_list(R,cached_addictions))
-						for(var/addiction in cached_addictions)
-							var/datum/reagent/A = addiction
-							if(istype(R, A))
-								A.addiction_stage = -30 // you're satisfied for a good while.
 				need_mob_update += R.on_mob_life(C)
 
-	if(can_overdose)
-		if(addiction_tick == 6)
-			addiction_tick = 1
-			for(var/datum/reagent/R as anything in cached_addictions)
-				if(C && R)
-					R.addiction_stage++
-					switch(R.addiction_stage)
-						if(1 to 10)
-							need_mob_update += R.addiction_act_stage1(C)
-						if(10 to 20)
-							need_mob_update += R.addiction_act_stage2(C)
-						if(20 to 30)
-							need_mob_update += R.addiction_act_stage3(C)
-						if(30 to 40)
-							need_mob_update += R.addiction_act_stage4(C)
-						if(40 to INFINITY)
-							remove_addiction(R)
-						else
-							SEND_SIGNAL(C, COMSIG_CLEAR_MOOD_EVENT, "[R.type]_overdose")
-		addiction_tick++
 	if(C && need_mob_update) //some of the metabolized reagents had effects on the mob that requires some updates.
 		C.updatehealth()
 		C.update_stamina()
 	update_total()
-
-/// Removes addiction to a specific reagent on [/datum/reagents/var/my_atom]
-/datum/reagents/proc/remove_addiction(datum/reagent/R)
-	R.on_addiction_removal(my_atom)
-	to_chat(my_atom, span_notice("You feel like you've gotten over your need for [R.name]."))
-	SEND_SIGNAL(my_atom, COMSIG_CLEAR_MOOD_EVENT, "[R.type]_overdose")
-	addiction_list.Remove(R)
-	qdel(R)
 
 /// Signals that metabolization has stopped, triggering the end of trait-based effects
 /datum/reagents/proc/end_metabolization(mob/living/carbon/C, keep_liverless = TRUE)
@@ -632,7 +588,6 @@
 					R.on_mob_end_metabolize(my_atom)
 				R.on_mob_delete(my_atom)
 			//Clear from relevant lists
-			addiction_list -= R
 			reagent_list -= R
 			SEND_SIGNAL(src, COMSIG_REAGENTS_DEL_REAGENT, R)
 			qdel(R)
