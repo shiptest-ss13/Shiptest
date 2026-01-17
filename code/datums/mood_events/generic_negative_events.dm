@@ -284,6 +284,11 @@
 	mood_change = -18
 	timeout = 3 MINUTES
 
+/datum/mood_event/headache
+	description = span_warning("My head hurts....")
+	mood_change = -3
+	timeout = 5 MINUTES
+
 /datum/mood_event/bad_touch_bear_hug
 	description = span_warning("I just got squeezed way too hard.")
 	mood_change = -3
