@@ -37,7 +37,7 @@
 	var/acceptable = TRUE
 	// If the mission has been accepted by a ship.
 	var/accepted = FALSE
-	/// if this mission is 'high priority' (cycled away during mission board clear)
+	/// if this mission is 'high priority'. It will not cycled away during mission board clear
 	var/high_priority = FALSE
 	/// The outpost that issued this mission. Passed in New().
 	var/datum/overmap/outpost/source_outpost
@@ -267,8 +267,6 @@
 		"value" = src.value,
 		"progressStr" = get_progress_string(),
 		"progressPer" = get_progress_percent(),
-		"actStr" = act_str
+		"actStr" = act_str,
+		"highPriority" = src.high_priority
 	)
-
-/datum/mission/proc/get_turn_in_info(list/items_on_pad = list())
-	return
