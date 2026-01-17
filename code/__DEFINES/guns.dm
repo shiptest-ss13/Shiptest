@@ -129,6 +129,7 @@
 #define COMSIG_ATTACHMENT_DETACH "attach-detach"
 #define COMSIG_ATTACHMENT_EXAMINE "attach-examine"
 #define COMSIG_ATTACHMENT_EXAMINE_MORE "attach-examine-more"
+#define COMSIG_ATTACHMENT_TRY_FIRE_GUN "attach-try-fire-gun"
 #define COMSIG_ATTACHMENT_PRE_ATTACK "attach-pre-attack"
 #define COMSIG_ATTACHMENT_AFTER_ATTACK "attach-after-attack"
 #define COMSIG_ATTACHMENT_ATTACK "attach-attacked"

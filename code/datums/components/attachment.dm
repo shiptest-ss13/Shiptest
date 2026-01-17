@@ -15,6 +15,8 @@
 	var/datum/callback/on_alt_click
 	var/datum/callback/on_examine
 	var/datum/callback/on_attack_hand
+	///Called on the parent's fire_gun
+	var/datum/callback/on_fire_gun
 	///Called on the parents preattack
 	var/datum/callback/on_preattack
 	///Called on the parents wield
@@ -36,6 +38,7 @@
 		datum/callback/on_detach = null,
 		datum/callback/on_toggle = null,
 		datum/callback/on_toggle_ammo = null,
+		datum/callback/on_fire_gun = null,
 		datum/callback/on_preattack = null,
 		datum/callback/on_attacked = null,
 		datum/callback/on_secondary_action = null,
@@ -58,6 +61,7 @@
 	src.on_detach = on_detach
 	src.on_toggle = on_toggle
 	src.on_toggle_ammo = on_toggle_ammo
+	src.on_fire_gun = on_fire_gun
 	src.on_preattack = on_preattack
 	src.on_attacked = on_attacked
 	src.on_secondary_action = on_secondary_action
@@ -79,6 +83,7 @@
 	if(attach_features_flags & ATTACH_AMMOMODE)
 		RegisterSignal(parent, COMSIG_ATTACHMENT_TOGGLE_AMMO, PROC_REF(try_ammo))
 		attachment_ammo_action = new /datum/action/attachment/ammo(parent)
+	RegisterSignal(parent, COMSIG_ATTACHMENT_TRY_FIRE_GUN, PROC_REF(try_fire_gun))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_PRE_ATTACK, PROC_REF(relay_pre_attack))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_UPDATE_OVERLAY, PROC_REF(update_overlays))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_GET_SLOT, PROC_REF(send_slot))
@@ -199,6 +204,12 @@
 
 /datum/component/attachment/proc/handle_examine_more(obj/item/parent, mob/user, list/examine_list)
 	SIGNAL_HANDLER
+
+/datum/component/attachment/proc/try_fire_gun(obj/item/parent, obj/item/gun/parent_gun, mob/user, atom/target, flag, params)
+	SIGNAL_HANDLER
+
+	if(on_fire_gun)
+		return on_fire_gun.Invoke(parent_gun, user, target, flag, params)
 
 /datum/component/attachment/proc/relay_pre_attack(obj/item/parent, obj/item/gun, atom/target_atom, mob/user, params)
 	SIGNAL_HANDLER_DOES_SLEEP
