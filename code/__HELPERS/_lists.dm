@@ -70,6 +70,7 @@
 #define LAZYACCESSASSOC(L, I, K) L ? L[I] ? L[I][K] ? L[I][K] : null : null : null
 #define LAZYNULL(L) L = null
 #define QDEL_LAZYLIST(L) for(var/I in L) qdel(I); L = null;
+#define QDEL_LAZYASSOCLIST(L) for(var/K in L) qdel(L[K]); L = null;
 /// ORs two lazylists together without inserting errant nulls, returning a new list and not modifying the existing lists.
 #define LAZY_LISTS_OR(left_list, right_list)\
 	(length(left_list)\

@@ -3,7 +3,7 @@
 	name = "\improper Jellyperson"
 	id = SPECIES_JELLYPERSON
 	default_color = "00FF90"
-	species_traits = list(MUTCOLORS,NOBLOOD,HAIR,FACEHAIR,HAS_FLESH)
+	species_traits = list(MUTCOLORS,NOBLOOD,HAIR,FACEHAIR)
 	inherent_traits = list(TRAIT_TOXINLOVER)
 	hair_color = "mutcolor"
 	hair_alpha = 150

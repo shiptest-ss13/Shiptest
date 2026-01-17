@@ -502,7 +502,7 @@
 
 //ohh god this'll need to be reworked into a zone-by-zone selection, rather than just "are yuor jorts thick"
 
-/mob/living/carbon/human/proc/is_exposed(mob/user, error_msg, target_zone)
+/mob/living/carbon/human/is_exposed(mob/user, target_zone, error_msg)
 	. = TRUE // Default to returning true.
 	if(user && !target_zone)
 		target_zone = user.zone_selected
@@ -894,8 +894,8 @@
 					if(!body_part)
 						continue
 					var/numbing_wound = FALSE
-					for(var/datum/wound/W in body_part.wounds)
-						if(W.wound_type == WOUND_BURN)
+					for(var/datum/wound/iterated_wound in body_part.wounds)
+						if(iterated_wound.wound_flags & NUMBS_BODYPART)
 							numbing_wound = TRUE
 
 					var/damage = body_part.burn_dam + body_part.brute_dam

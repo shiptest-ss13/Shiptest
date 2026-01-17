@@ -2,7 +2,7 @@
 	name = "\improper Snailperson"
 	id = SPECIES_SNAIL
 	default_color = "336600" //vomit green
-	species_traits = list(MUTCOLORS, NO_UNDERWEAR, HAS_FLESH, HAS_BONE)
+	species_traits = list(MUTCOLORS, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_ALWAYS_CLEAN, TRAIT_NOSLIPALL)
 	attack_verb = "slap"
 	coldmod = 0.5 //snails only come out when its cold and wet
