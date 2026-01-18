@@ -114,8 +114,8 @@
 	name = FACTION_MAKOSSOWARRA
 	short_name = "MAKOSSO-WARRA"
 	parent_faction = /datum/faction/makossowarra
-	prefixes = PREFIX_NT
-	color = "#283674"
+	prefixes = PREFIX_MAKOSSOWARRA
+	color = "#0094FF"
 
 /datum/faction/makossowarra/ns_logi
 	name = FACTION_NS_LOGI
