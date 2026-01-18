@@ -181,16 +181,16 @@
 		stat_table[item] /= loot_count
 
 /obj/effect/spawner/random/garden
-    name = "garden or nothing spawner"
-    desc = "cloudy with a chance of gardens"
-    icon_state = "seed"
+	name = "garden or nothing spawner"
+	desc = "cloudy with a chance of gardens"
+	icon_state = "seed"
 
 /obj/effect/spawner/random/garden/arid
-    loot = list(
-        /obj/structure/flora/ash/garden/arid
-        )
+	loot = list(
+		/obj/structure/flora/ash/garden/arid
+		)
 
 /obj/effect/spawner/random/garden/arid/fifty/Initialize(mapload)
-    if(prob(50))
-        return ..()
-    return INITIALIZE_HINT_QDEL
+	if(prob(50))
+		return ..()
+	return INITIALIZE_HINT_QDEL
