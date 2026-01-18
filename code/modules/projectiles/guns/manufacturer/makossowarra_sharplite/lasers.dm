@@ -18,7 +18,7 @@
 		/obj/item/stock_parts/cell/gun/sharplite/plus/empty,
 	)
 
-	muzzleflash_iconstate = "muzzle_flash_nt"
+	muzzleflash_iconstate = "muzzle_flash_sharplite"
 	light_color = COLOR_PALE_BLUE_GRAY
 
 	modifystate = TRUE
@@ -58,7 +58,7 @@
 	spread = 4
 	spread_unwielded = 8
 
-	muzzleflash_iconstate = "muzzle_flash_nt"
+	muzzleflash_iconstate = "muzzle_flash_sharplite"
 
 /obj/item/gun/energy/sharplite/x01
 	name = "SL X01 “Yari” Heavy Variable Pistol"

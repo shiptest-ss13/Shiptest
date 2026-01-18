@@ -275,8 +275,8 @@
 /obj/item/defibrillator/compact/combat/loaded/makossowarra
 	name = "elite Makosso-Warra defibrillator"
 	desc = "A belt-equipped state-of-the-art defibrillator. Can revive through spacesuits, has an experimental self-recharging battery, and can be utilized in combat via applying the paddles in a disarming or agressive manner."
-	icon_state = "defibnt" //needs defib inhand sprites
-	item_state = "defibnt"
+	icon_state = "defibmakossowarra" //needs defib inhand sprites
+	item_state = "defibmakossowarra"
 	paddle_type = /obj/item/shockpaddles/syndicate/makossowarra
 
 //paddles
