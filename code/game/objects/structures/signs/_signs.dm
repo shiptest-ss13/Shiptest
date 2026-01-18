@@ -216,24 +216,22 @@
 	icon_state = "makossowarra"
 	is_editable = TRUE
 
+/obj/structure/sign/makossowarra/old
+	name = "\improper old Makosso-Warra logo sign"
+	sign_change_name = "Corporate Logo - Makosso-Warra (Outdated)"
+	desc = "A sign with an Inter-Corporate War-era Makosso-Warra logo on it."
+	icon_state = "makossowarra_old"
+
 /obj/structure/sign/makossowarra/ns
 	name = "\improper N+S Logistics logo sign"
 	sign_change_name = "Corporate Logo - N+S Logistics"
 	desc = "A sign with the N+S Logistics compass rose on it."
 	icon_state = "ns"
-	is_editable = TRUE
-
 /obj/structure/sign/makossowarra/vigilitas
 	name = "\improper Vigilitas Interstellar logo sign"
 	sign_change_name = "Corporate Logo - Vigilitas Interstellar"
 	desc = "A sign with Vigilitas Interstellar's VI logo on it."
 	icon_state = "vigilitas"
-	is_editable = TRUE
-
-/obj/structure/sign/logo
-	name = "\improper Makosso-Warra logo sign"
-	desc = "The Makosso-Warra corporate logo."
-	icon_state = "makossowarra_sign1"
 
 // im still holding on to that syndicate city idea... my hope will never die
 /obj/structure/sign/syndicate	//based of paradise's syndicate logo. I will i was good enough to sprite the background

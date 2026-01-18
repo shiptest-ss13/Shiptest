@@ -54,7 +54,7 @@
 /obj/item/soap/makossowarra
 	desc = "A heavy duty bar of Makosso-Warra brand soap. Smells of plasma."
 	grind_results = list(/datum/reagent/toxin/plasma = 10, /datum/reagent/lye = 10)
-	icon_state = "soapnt"
+	icon_state = "soapmakossowarra"
 	cleanspeed = 28 //janitor gets this
 	uses = 300
 

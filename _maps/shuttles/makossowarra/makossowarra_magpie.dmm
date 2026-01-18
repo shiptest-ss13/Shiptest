@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ak" = (
-/obj/effect/turf_decal/trimline/opaque/ntbluelight/filled/line{
+/obj/effect/turf_decal/trimline/opaque/makossowarrabluelight/filled/line{
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning{
@@ -17,8 +17,8 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "magpie_officehall_window";
-	desc = 1
+	desc = 1;
+	id = "magpie_officehall_window"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/office)
@@ -26,7 +26,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/office)
 "aC" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/white/filled/corner,
@@ -39,10 +39,10 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_x = -20;
-	pixel_y = -11;
 	id = "magpie_airlock";
-	name = "Airlock Lockdown"
+	name = "Airlock Lockdown";
+	pixel_x = -20;
+	pixel_y = -11
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/starboard)
@@ -73,26 +73,26 @@
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
 "aO" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 10
 	},
 /obj/structure/table,
 /obj/item/cigbutt{
-	pixel_y = 10;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 10
 	},
 /obj/item/cigbutt{
 	pixel_x = -10;
 	pixel_y = 4
 	},
 /obj/item/storage/fancy/cigarettes/cigpack_uplift{
-	pixel_y = 7;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "aU" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/white/warning,
@@ -118,7 +118,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/white/warning,
@@ -176,11 +176,11 @@
 /obj/structure/bed/dogbed,
 /mob/living/simple_animal/hostile/retaliate/gator/steppy{
 	desc = "Exported from one of many Solarian Cantons, this small but domesticated alligator lives aboard this vessel. Be careful not to step on the tail!";
+	faction = list("neutral, nanotrasen");
 	gender = "male";
-	name = "Lioples";
 	melee_damage_lower = 10;
 	melee_damage_upper = 15;
-	faction = list("neutral, nanotrasen")
+	name = "Lioples"
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
@@ -193,8 +193,8 @@
 	},
 /obj/effect/decal/cleanable/plasma,
 /obj/item/storage/toolbox/drone{
-	pixel_y = 15;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 15
 	},
 /obj/machinery/atmospherics/pipe/simple/purple/hidden{
 	dir = 4
@@ -202,7 +202,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "bu" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 5
 	},
 /obj/effect/turf_decal/trimline/opaque/white/corner{
@@ -218,7 +218,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/port)
 "bx" = (
-/obj/machinery/porta_turret/ship/nt/heavy{
+/obj/machinery/porta_turret/ship/makossowarra/heavy{
 	dir = 8;
 	id = "magpie_grid"
 	},
@@ -288,14 +288,14 @@
 	pixel_y = 20
 	},
 /obj/machinery/button/door{
-	pixel_y = 21;
-	pixel_x = -2;
 	id = "magpie_vi_office";
-	normaldoorcontrol = 1;
-	specialfunctions = 4;
 	name = "Bolt Control";
+	normaldoorcontrol = 1;
+	pixel_x = -2;
+	pixel_y = 21;
 	req_access_txt = "1";
-	req_ship_access = 1
+	req_ship_access = 1;
+	specialfunctions = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -310,7 +310,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "ci" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 10
 	},
 /obj/effect/turf_decal/siding/white{
@@ -346,12 +346,12 @@
 	pixel_y = -4
 	},
 /obj/item/clothing/head/makossowarra{
-	pixel_y = 10;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 10
 	},
 /obj/item/clothing/head/makossowarra{
-	pixel_y = 10;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 10
 	},
 /obj/item/pda,
 /turf/open/floor/carpet/nanoweave,
@@ -415,12 +415,12 @@
 	pixel_y = -4
 	},
 /obj/item/clothing/head/makossowarra{
-	pixel_y = 10;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 10
 	},
 /obj/item/clothing/head/makossowarra{
-	pixel_y = 10;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 10
 	},
 /obj/item/pda,
 /turf/open/floor/carpet/nanoweave,
@@ -445,13 +445,13 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/item/megaphone{
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/turretid/ship{
-	pixel_y = 40;
-	id = "magpie_grid"
+	id = "magpie_grid";
+	pixel_y = 40
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/office)
@@ -569,8 +569,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/public/glass{
-	req_ship_access = 1;
-	name = "Portside Hallway"
+	name = "Portside Hallway";
+	req_ship_access = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1,
 /turf/open/floor/plasteel/patterned/ridged,
@@ -627,26 +627,26 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	pixel_y = -21;
-	pixel_x = -6;
+	dir = 1;
 	id = "magpie_bathroom";
-	normaldoorcontrol = 1;
-	specialfunctions = 4;
 	name = "Bathroom Bolt Override";
-	dir = 1
+	normaldoorcontrol = 1;
+	pixel_x = -6;
+	pixel_y = -21;
+	specialfunctions = 4
 	},
 /obj/machinery/button/door{
-	pixel_y = -21;
-	pixel_x = 6;
+	dir = 1;
 	id = "magpie_office";
-	normaldoorcontrol = 1;
-	specialfunctions = 4;
 	name = "Office Bolt Override";
-	dir = 1
+	normaldoorcontrol = 1;
+	pixel_x = 6;
+	pixel_y = -21;
+	specialfunctions = 4
 	},
 /obj/machinery/turretid/ship{
-	pixel_y = -31;
-	id = "magpie_grid"
+	id = "magpie_grid";
+	pixel_y = -31
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
@@ -677,12 +677,12 @@
 	pixel_y = -5
 	},
 /obj/item/food/grown/dotu_fime{
-	pixel_y = 5;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 5
 	},
 /obj/item/food/grown/dotu_fime{
-	pixel_y = 5;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 5
 	},
 /obj/item/food/mirasegg{
 	pixel_x = -6;
@@ -693,12 +693,12 @@
 	pixel_y = 4
 	},
 /obj/item/food/meat/slab/remes{
-	pixel_y = -5;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = -5
 	},
 /obj/item/food/meat/slab/remes{
-	pixel_y = -5;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = -5
 	},
 /obj/item/food/meat/slab{
 	pixel_x = 4;
@@ -773,12 +773,12 @@
 /obj/effect/turf_decal/corner/transparent/white/mono,
 /obj/structure/table/chem,
 /obj/structure/sink/chem{
-	pixel_y = 4;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 4
 	},
 /obj/item/reagent_containers/glass/rag{
-	pixel_y = 3;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 3
 	},
 /obj/machinery/firealarm/directional/east{
 	pixel_y = 6
@@ -787,8 +787,8 @@
 	pixel_y = -6
 	},
 /obj/structure/sign/poster/official/moth/epi{
-	pixel_y = 32;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/spray/cleaner{
@@ -801,8 +801,8 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "magpie_office_window";
-	dir = 4
+	dir = 4;
+	id = "magpie_office_window"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/office)
@@ -810,9 +810,9 @@
 /obj/effect/turf_decal/corner/transparent/blue/mono,
 /obj/effect/turf_decal/corner/transparent/white/mono,
 /obj/structure/filingcabinet/double{
+	density = 0;
 	dir = 8;
-	pixel_x = 8;
-	density = 0
+	pixel_x = 8
 	},
 /obj/item/clipboard{
 	pixel_y = 5
@@ -829,18 +829,18 @@
 	},
 /obj/item/wrench/medical,
 /obj/machinery/button/door{
-	pixel_y = -10;
-	pixel_x = 21;
 	dir = 8;
 	id = "magpie_medbay_window";
-	name = "External Window Control"
+	name = "External Window Control";
+	pixel_x = 21;
+	pixel_y = -10
 	},
 /obj/machinery/button/door{
-	pixel_y = 2;
-	pixel_x = 21;
 	dir = 8;
 	id = "magpie_medbayhall_window";
-	name = "Hallway Window Control"
+	name = "Hallway Window Control";
+	pixel_x = 21;
+	pixel_y = 2
 	},
 /obj/item/spacecash/bundle/c5,
 /obj/item/reagent_containers/glass/beaker,
@@ -849,7 +849,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/medical)
 "gh" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 6
 	},
 /obj/effect/turf_decal/trimline/opaque/white/warning{
@@ -933,8 +933,8 @@
 /obj/item/plate/oven_tray,
 /obj/item/plate/small,
 /obj/item/reagent_containers/condiment/saltshaker{
-	pixel_y = 12;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = 12
 	},
 /obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = 7;
@@ -948,13 +948,13 @@
 /area/ship/crew/canteen)
 "gp" = (
 /obj/effect/turf_decal/borderfloor{
-	layer = 2.030;
-	dir = 8
+	dir = 8;
+	layer = 2.030
 	},
 /obj/structure/closet/secure_closet/miner{
-	populate = 0;
+	anchored = 1;
 	name = "miner's locker";
-	anchored = 1
+	populate = 0
 	},
 /obj/item/storage/backpack/duffelbag,
 /obj/item/storage/backpack/explorer,
@@ -974,13 +974,13 @@
 	pixel_y = -10
 	},
 /obj/item/clothing/gloves/color/black{
-	pixel_y = -10;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = -10
 	},
 /obj/item/clothing/suit/makossowarra/vest,
 /obj/item/clothing/head/hardhat/makossowarra{
-	pixel_y = 8;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 8
 	},
 /obj/item/clothing/head/makossowarra/cap/supply{
 	pixel_x = 4;
@@ -988,10 +988,10 @@
 	},
 /obj/item/clothing/glasses/meson,
 /obj/machinery/button/door{
-	pixel_y = 21;
-	pixel_x = -10;
 	id = "magpie_miner_window";
-	name = "Window Control"
+	name = "Window Control";
+	pixel_x = -10;
+	pixel_y = 21
 	},
 /obj/machinery/firealarm/directional/east{
 	pixel_y = 6
@@ -1028,13 +1028,13 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/freezer{
-	name = "Bathroom";
-	id_tag = "magpie_bathroom"
+	id_tag = "magpie_bathroom";
+	name = "Bathroom"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/toilet)
 "gD" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 6
 	},
 /obj/effect/turf_decal/trimline/opaque/white/corner,
@@ -1053,9 +1053,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/starboard)
 "gE" = (
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 8
-	},
 /obj/structure/cable/white{
 	icon_state = "4-8"
 	},
@@ -1063,6 +1060,7 @@
 	icon_state = "1-4"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/makossowarra/modern_big/top_right,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "hc" = (
@@ -1075,7 +1073,7 @@
 /obj/structure/sign/makossowarra{
 	pixel_x = 28
 	},
-/obj/effect/turf_decal/trimline/opaque/ntbluelight/filled/corner{
+/obj/effect/turf_decal/trimline/opaque/makossowarrabluelight/filled/corner{
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/opaque/white/corner{
@@ -1188,8 +1186,8 @@
 /area/ship/crew/dorm/commad)
 "ic" = (
 /obj/effect/turf_decal/borderfloor{
-	layer = 2.030;
-	dir = 5
+	dir = 5;
+	layer = 2.030
 	},
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/corner,
 /obj/effect/turf_decal/siding/white{
@@ -1199,10 +1197,10 @@
 	dir = 8
 	},
 /obj/structure/filingcabinet{
-	pixel_y = 21;
+	density = 0;
 	layer = 3.22;
 	pixel_x = 10;
-	density = 0
+	pixel_y = 21
 	},
 /obj/item/clipboard{
 	pixel_y = 5
@@ -1238,8 +1236,8 @@
 /area/ship/bridge)
 "in" = (
 /obj/effect/turf_decal/borderfloor{
-	layer = 2.030;
-	dir = 8
+	dir = 8;
+	layer = 2.030
 	},
 /obj/effect/turf_decal/trimline/opaque/nsorange/line{
 	dir = 8
@@ -1278,8 +1276,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/command{
-	id_tag = "magpie_office";
 	dir = 4;
+	id_tag = "magpie_office";
 	name = "Office"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
@@ -1315,14 +1313,14 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_x = -20;
+	id = "magpie_portthruster";
 	name = "Thruster Shield Control";
-	id = "magpie_portthruster"
+	pixel_x = -20
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/atmospherics)
 "iS" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight/three_quarters{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight/three_quarters{
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/opaque/white/line{
@@ -1349,18 +1347,18 @@
 	pixel_x = -5
 	},
 /obj/item/clothing/glasses/sunglasses{
-	pixel_y = 14;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 14
 	},
 /obj/item/clothing/glasses/sunglasses{
-	pixel_y = 4;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 4
 	},
 /obj/machinery/button/door{
-	pixel_x = -21;
 	dir = 4;
 	id = "magpie_officer_window";
-	name = "Window Control"
+	name = "Window Control";
+	pixel_x = -21
 	},
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -1398,12 +1396,12 @@
 	},
 /obj/effect/decal/cleanable/plasma,
 /obj/item/toy/crayon/spraycan{
-	pixel_y = 20;
-	pixel_x = -9
+	pixel_x = -9;
+	pixel_y = 20
 	},
 /obj/item/reagent_containers/glass/rag{
-	pixel_y = 15;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 15
 	},
 /obj/item/advertisement/gec{
 	pixel_x = 12;
@@ -1412,7 +1410,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "jm" = (
-/obj/effect/turf_decal/trimline/opaque/ntbluelight/filled/line{
+/obj/effect/turf_decal/trimline/opaque/makossowarrabluelight/filled/line{
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning{
@@ -1435,7 +1433,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/white/corner{
@@ -1504,11 +1502,11 @@
 	pixel_y = -20
 	},
 /obj/machinery/button/door{
-	pixel_y = -21;
-	pixel_x = 14;
+	dir = 1;
 	id = "magpie_dorm_window";
 	name = "Window Control";
-	dir = 1
+	pixel_x = 14;
+	pixel_y = -21
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
@@ -1568,8 +1566,8 @@
 	dir = 5
 	},
 /obj/item/kirbyplants/fullysynthetic{
-	pixel_x = 10;
 	icon_state = "plant-29";
+	pixel_x = 10;
 	pixel_y = 8
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -1582,9 +1580,9 @@
 /obj/structure/bed/roller,
 /obj/item/bedsheet/medical,
 /obj/machinery/iv_drip{
-	pixel_y = 22;
+	layer = 2.901;
 	pixel_x = 10;
-	layer = 2.901
+	pixel_y = 22
 	},
 /obj/effect/turf_decal/industrial/hatch/blue,
 /turf/open/floor/plasteel/mono,
@@ -1618,7 +1616,7 @@
 /obj/structure/chair/bench/blue{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 5
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -1647,14 +1645,14 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/cryo)
 "kI" = (
-/obj/machinery/porta_turret/ship/nt/light{
-	id = "magpie_grid";
-	dir = 6
+/obj/machinery/porta_turret/ship/makossowarra/light{
+	dir = 6;
+	id = "magpie_grid"
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/security)
 "kM" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 10
 	},
 /obj/effect/turf_decal/siding/white{
@@ -1705,20 +1703,20 @@
 "lu" = (
 /obj/structure/table/reinforced,
 /obj/structure/sink/kitchen{
-	pixel_y = 21;
 	layer = 2.709;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 21
 	},
 /obj/machinery/reagentgrinder{
-	pixel_y = 19;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 19
 	},
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 4
 	},
 /obj/item/reagent_containers/glass/rag{
-	pixel_y = 12;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 12
 	},
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
@@ -1750,7 +1748,7 @@
 	dir = 4;
 	name = "Navigations"
 	},
-/obj/effect/turf_decal/corner/opaque/ntbluelight/three_quarters,
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight/three_quarters,
 /obj/effect/turf_decal/trimline/opaque/white/line{
 	dir = 6
 	},
@@ -1761,13 +1759,13 @@
 /area/ship/bridge)
 "lX" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
-	name = "exhaust injector";
-	dir = 4
+	dir = 4;
+	name = "exhaust injector"
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "mh" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 9
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -1825,8 +1823,8 @@
 "mA" = (
 /obj/structure/table,
 /obj/item/plate{
-	pixel_y = 5;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/canteen)
@@ -1834,6 +1832,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/effect/turf_decal/makossowarra/modern_big/center_left,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "mP" = (
@@ -1843,10 +1842,10 @@
 /obj/effect/turf_decal/industrial/caution{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/opaque/white,
 /obj/structure/cable/white{
 	icon_state = "4-8"
 	},
+/obj/effect/turf_decal/makossowarra/modern_big/top_left,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "mW" = (
@@ -1877,7 +1876,7 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo/starboard)
 "nd" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 5
 	},
 /obj/effect/turf_decal/siding/white,
@@ -1886,8 +1885,8 @@
 "nh" = (
 /obj/structure/table/reinforced,
 /obj/machinery/cell_charger{
-	pixel_y = 2;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 2
 	},
 /obj/effect/turf_decal/box/white,
 /obj/effect/decal/cleanable/dirt,
@@ -1921,12 +1920,12 @@
 /area/ship/engineering)
 "nA" = (
 /obj/structure/chair/sofa/blue/corpo/left,
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 10
 	},
 /obj/item/toy/plush/blahaj{
-	pixel_x = 4;
 	name = "Bonnet";
+	pixel_x = 4;
 	pixel_y = -2
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -1984,7 +1983,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/cryo)
 "og" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight/three_quarters,
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight/three_quarters,
 /obj/effect/turf_decal/trimline/opaque/white/line{
 	dir = 6
 	},
@@ -1996,8 +1995,8 @@
 /area/ship/cargo/office)
 "oy" = (
 /obj/effect/turf_decal/borderfloor{
-	layer = 2.030;
-	dir = 4
+	dir = 4;
+	layer = 2.030
 	},
 /obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
@@ -2015,7 +2014,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/external/dark)
 "oC" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 6
 	},
 /obj/effect/turf_decal/trimline/opaque/white/warning{
@@ -2048,14 +2047,14 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	pixel_y = -11;
-	pixel_x = -21;
-	id = "magpie_office";
-	normaldoorcontrol = 1;
-	specialfunctions = 4;
-	name = "Bolt Control";
 	dir = 4;
-	req_access_txt = "19"
+	id = "magpie_office";
+	name = "Bolt Control";
+	normaldoorcontrol = 1;
+	pixel_x = -21;
+	pixel_y = -11;
+	req_access_txt = "19";
+	specialfunctions = 4
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/office)
@@ -2068,8 +2067,8 @@
 /area/ship/crew/canteen)
 "pk" = (
 /obj/structure/closet/secure_closet/wall/directional/north{
-	icon_state = "solgov_wall";
 	icon_door = "solgov_wall";
+	icon_state = "solgov_wall";
 	name = "first officer's locker";
 	req_access_txt = "57"
 	},
@@ -2084,12 +2083,12 @@
 	pixel_x = 4
 	},
 /obj/item/clothing/shoes/laceup{
-	pixel_y = -13;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = -13
 	},
 /obj/item/clothing/shoes/heels/black{
-	pixel_y = -13;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = -13
 	},
 /obj/item/clothing/gloves/color/evening{
 	pixel_x = -5;
@@ -2138,8 +2137,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/security{
-	name = "Vigilitas Security Office";
-	id_tag = "magpie_vi_office"
+	id_tag = "magpie_vi_office";
+	name = "Vigilitas Security Office"
 	},
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/patterned/ridged,
@@ -2170,9 +2169,9 @@
 	dir = 8
 	},
 /obj/machinery/suit_storage_unit/inherit/industrial{
+	locked = 1;
 	name = "miner's industrial suit storage unit";
-	req_access_txt = "48";
-	locked = 1
+	req_access_txt = "48"
 	},
 /obj/item/tank/internals/oxygen/yellow,
 /obj/item/clothing/suit/space/hardsuit/mining/heavy/ns,
@@ -2182,14 +2181,14 @@
 	pixel_y = 20
 	},
 /obj/machinery/button/door{
-	pixel_y = 21;
-	pixel_x = 2;
 	id = "magpie_miner_room";
-	normaldoorcontrol = 1;
-	specialfunctions = 4;
 	name = "Bolt Control";
+	normaldoorcontrol = 1;
+	pixel_x = 2;
+	pixel_y = 21;
 	req_access_txt = "48";
-	req_ship_access = 1
+	req_ship_access = 1;
+	specialfunctions = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -2211,8 +2210,8 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "magpie_portnac_window";
-	dir = 4
+	dir = 4;
+	id = "magpie_portnac_window"
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 8
@@ -2221,8 +2220,8 @@
 /area/ship/engineering/atmospherics)
 "qb" = (
 /obj/effect/turf_decal/borderfloor{
-	layer = 2.030;
-	dir = 8
+	dir = 8;
+	layer = 2.030
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/airalarm/directional/south,
@@ -2232,9 +2231,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/ore{
-	pixel_y = 5;
+	desc = "A cool rock.";
 	pixel_x = 8;
-	desc = "A cool rock."
+	pixel_y = 5
 	},
 /obj/item/flashlight/lamp{
 	pixel_x = -6;
@@ -2264,7 +2263,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "qk" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/white/filled/corner{
@@ -2296,16 +2295,14 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/engineering)
 "qI" = (
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 1
-	},
 /obj/structure/cable/white{
 	icon_state = "4-8"
 	},
+/obj/effect/turf_decal/makossowarra/modern_big/bottom_right,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "qR" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 5
 	},
 /obj/effect/turf_decal/trimline/opaque/white/warning{
@@ -2325,40 +2322,40 @@
 /obj/structure/table/glass,
 /obj/structure/closet/secure_closet/wall/directional/south{
 	icon_door = "med_wall";
-	req_access_txt = "5";
-	name = "medical locker"
+	name = "medical locker";
+	req_access_txt = "5"
 	},
 /obj/item/storage/firstaid/medical{
-	pixel_y = 7;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = 7
 	},
 /obj/item/storage/firstaid/brute{
 	pixel_x = -7;
 	pixel_y = 2
 	},
 /obj/item/storage/firstaid/fire{
-	pixel_y = -3;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = -3
 	},
 /obj/item/reagent_containers/glass/bottle/dimorlin{
-	pixel_y = 6;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 6
 	},
 /obj/item/reagent_containers/glass/bottle/dimorlin{
-	pixel_y = 1;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 1
 	},
 /obj/item/reagent_containers/glass/bottle/formaldehyde{
 	pixel_x = 8;
 	pixel_y = -4
 	},
 /obj/item/reagent_containers/syringe{
-	pixel_y = 5;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 5
 	},
 /obj/item/storage/pill_bottle/charcoal{
-	pixel_y = -8;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = -8
 	},
 /obj/item/bodybag{
 	pixel_x = -7;
@@ -2380,7 +2377,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/medical)
 "rh" = (
-/obj/machinery/porta_turret/ship/nt/heavy{
+/obj/machinery/porta_turret/ship/makossowarra/heavy{
 	dir = 8;
 	id = "magpie_grid"
 	},
@@ -2402,7 +2399,7 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/cryo)
 "ry" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 10
 	},
 /obj/effect/turf_decal/siding/white{
@@ -2463,13 +2460,13 @@
 /area/ship/crew/canteen)
 "sh" = (
 /obj/structure/sign/warning/securearea{
-	pixel_y = -6;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = -6
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/atmospherics)
 "sC" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/white/line,
@@ -2519,8 +2516,8 @@
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/box/white,
 /obj/item/stack/tape/industrial{
-	pixel_y = 10;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 10
 	},
 /obj/item/stack/sheet/metal/twenty{
 	pixel_x = -6
@@ -2554,9 +2551,9 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo/starboard)
 "sS" = (
-/obj/machinery/porta_turret/ship/nt/light{
-	id = "magpie_grid";
-	dir = 5
+/obj/machinery/porta_turret/ship/makossowarra/light{
+	dir = 5;
+	id = "magpie_grid"
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/toilet)
@@ -2592,7 +2589,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "sX" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 5
 	},
 /obj/effect/turf_decal/siding/white,
@@ -2610,12 +2607,12 @@
 /area/ship/crew/dorm)
 "tf" = (
 /obj/structure/table,
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 5
 	},
 /obj/item/plate/small{
-	pixel_y = -5;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = -5
 	},
 /obj/item/food/muffin/berry{
 	pixel_x = -3;
@@ -2667,7 +2664,7 @@
 /area/ship/cargo)
 "tr" = (
 /obj/machinery/vending/cola/blue,
-/obj/effect/turf_decal/corner/opaque/ntbluelight/mono,
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight/mono,
 /obj/effect/turf_decal/trimline/opaque/white/filled/line{
 	dir = 8
 	},
@@ -2679,13 +2676,13 @@
 /area/ship/crew/canteen)
 "tE" = (
 /obj/effect/turf_decal/borderfloor{
-	layer = 2.030;
-	dir = 5
+	dir = 5;
+	layer = 2.030
 	},
 /obj/structure/rack,
 /obj/item/clothing/suit/hooded/wintercoat/cargo{
-	pixel_y = 8;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 8
 	},
 /obj/item/clothing/shoes/winterboots/ice_boots{
 	pixel_x = 4;
@@ -2695,8 +2692,8 @@
 	pixel_x = -4
 	},
 /obj/item/clothing/mask/balaclava{
-	pixel_y = 2;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 2
 	},
 /obj/item/storage/belt/mining/alt,
 /obj/machinery/light/small/directional/west,
@@ -2718,7 +2715,7 @@
 /area/ship/engineering)
 "tH" = (
 /obj/machinery/holopad/emergency/command,
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/white/warning,
@@ -2758,9 +2755,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
 "tU" = (
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 10
-	},
 /obj/structure/closet/crate/hydroponics{
 	name = "ration crate"
 	},
@@ -2804,6 +2798,7 @@
 /obj/structure/cable/white{
 	icon_state = "4-8"
 	},
+/obj/effect/turf_decal/makossowarra/modern_big/top_center,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "tW" = (
@@ -2830,7 +2825,7 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/commad)
 "ua" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 6
 	},
 /obj/effect/turf_decal/trimline/opaque/white/warning{
@@ -2898,8 +2893,8 @@
 /area/ship/medical)
 "uF" = (
 /obj/item/kirbyplants/fullysynthetic{
-	pixel_x = 8;
-	icon_state = "plant-29"
+	icon_state = "plant-29";
+	pixel_x = 8
 	},
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/carpet/nanoweave,
@@ -2913,8 +2908,8 @@
 	name = "bathroom sink"
 	},
 /obj/structure/mirror{
-	pixel_y = 6;
-	pixel_x = -24
+	pixel_x = -24;
+	pixel_y = 6
 	},
 /obj/effect/turf_decal/siding/white{
 	dir = 4
@@ -2923,13 +2918,13 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/button/door{
-	pixel_y = -11;
-	pixel_x = -21;
+	dir = 4;
 	id = "magpie_bathroom";
-	normaldoorcontrol = 1;
-	specialfunctions = 4;
 	name = "Bolt Control";
-	dir = 4
+	normaldoorcontrol = 1;
+	pixel_x = -21;
+	pixel_y = -11;
+	specialfunctions = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
@@ -2953,7 +2948,7 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/toilet)
 "ve" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 10
 	},
 /obj/structure/fluff/hedge,
@@ -2963,8 +2958,8 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "magpie_officer_window";
-	dir = 4
+	dir = 4;
+	id = "magpie_officer_window"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm/commad)
@@ -2987,8 +2982,8 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "magpie_starnac_window";
-	dir = 4
+	dir = 4;
+	id = "magpie_starnac_window"
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 8
@@ -2997,7 +2992,7 @@
 /area/ship/engineering)
 "vF" = (
 /obj/effect/turf_decal/corner/opaque/blue/mono,
-/obj/effect/turf_decal/ntspaceworks_small/right,
+/obj/effect/turf_decal/makossowarraspaceworks_small/right,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "vH" = (
@@ -3046,8 +3041,8 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "magpie_bridgehall_window";
-	dir = 4
+	dir = 4;
+	id = "magpie_bridgehall_window"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -3146,10 +3141,10 @@
 "xf" = (
 /obj/structure/table,
 /obj/structure/bedsheetbin{
-	pixel_y = 2;
-	pixel_x = -1
+	pixel_x = -1;
+	pixel_y = 2
 	},
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 9
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
@@ -3192,7 +3187,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm/commad)
 "xm" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 6
 	},
 /obj/effect/turf_decal/trimline/opaque/white/corner{
@@ -3212,7 +3207,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/port)
 "xn" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight/three_quarters,
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight/three_quarters,
 /obj/effect/turf_decal/trimline/opaque/white/corner{
 	dir = 4
 	},
@@ -3245,7 +3240,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/external/dark)
 "xR" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning,
@@ -3272,8 +3267,8 @@
 	},
 /obj/effect/turf_decal/corner/transparent/white,
 /obj/structure/closet/secure_closet/medical3{
-	populate = 0;
-	anchored = 1
+	anchored = 1;
+	populate = 0
 	},
 /obj/item/storage/backpack/duffelbag/med,
 /obj/item/storage/backpack/medic,
@@ -3289,8 +3284,8 @@
 	pixel_y = -13
 	},
 /obj/item/clothing/shoes/heels/black{
-	pixel_y = -13;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = -13
 	},
 /obj/item/clothing/gloves/color/latex/nitrile{
 	pixel_x = -5;
@@ -3406,8 +3401,8 @@
 "zv" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/fancy/donut_box{
-	pixel_y = 6;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 6
 	},
 /obj/item/reagent_containers/food/drinks/sillycup{
 	pixel_x = 10
@@ -3427,7 +3422,7 @@
 /area/ship/crew/canteen)
 "zz" = (
 /obj/machinery/vending/cigarette,
-/obj/effect/turf_decal/corner/opaque/ntbluelight/three_quarters{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight/three_quarters{
 	dir = 1
 	},
 /obj/machinery/camera/autoname{
@@ -3501,8 +3496,8 @@
 /obj/item/storage/backpack/messenger/sec,
 /obj/item/clothing/under/makossowarra/security,
 /obj/item/clothing/shoes/jackboots{
-	pixel_y = -7;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = -7
 	},
 /obj/item/clothing/shoes/winterboots{
 	pixel_x = 6;
@@ -3513,14 +3508,14 @@
 	},
 /obj/item/clothing/suit/hooded/wintercoat/security,
 /obj/item/clothing/head/makossowarra/cap/security{
-	pixel_y = 8;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 8
 	},
 /obj/machinery/button/door{
-	pixel_y = 21;
-	pixel_x = 10;
 	id = "magpie_security_window";
-	name = "Window Control"
+	name = "Window Control";
+	pixel_x = 10;
+	pixel_y = 21
 	},
 /obj/machinery/airalarm/directional/west,
 /obj/machinery/camera/autoname,
@@ -3536,8 +3531,8 @@
 /area/ship/security)
 "Ai" = (
 /obj/effect/turf_decal/borderfloor{
-	layer = 2.030;
-	dir = 4
+	dir = 4;
+	layer = 2.030
 	},
 /obj/structure/chair/office{
 	dir = 4
@@ -3568,10 +3563,11 @@
 /turf/open/floor/plating,
 /area/ship/cargo/office)
 "Ap" = (
+/obj/effect/turf_decal/makossowarra/modern_big/center_right,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "AB" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/white/warning,
@@ -3604,18 +3600,18 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_x = -20;
-	pixel_y = 10;
 	id = "magpie_starnac_window";
-	name = "Window Control"
+	name = "Window Control";
+	pixel_x = -20;
+	pixel_y = 10
 	},
 /obj/machinery/light/small/directional/west,
 /obj/structure/railing,
 /obj/effect/turf_decal/industrial/hatch/blue,
 /obj/machinery/suit_storage_unit/inherit/industrial{
+	locked = 1;
 	name = "engineer's industrial suit storage unit";
-	req_access_txt = "10";
-	locked = 1
+	req_access_txt = "10"
 	},
 /obj/item/tank/jetpack/oxygen,
 /obj/item/clothing/suit/space/hardsuit/engine,
@@ -3658,7 +3654,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Bp" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 5
 	},
 /obj/effect/turf_decal/trimline/opaque/white/corner{
@@ -3691,8 +3687,8 @@
 /area/ship/external/dark)
 "Bv" = (
 /obj/effect/turf_decal/borderfloor{
-	layer = 2.030;
-	dir = 4
+	dir = 4;
+	layer = 2.030
 	},
 /obj/structure/rack,
 /obj/item/storage/bag/ore{
@@ -3705,12 +3701,12 @@
 	pixel_y = 4
 	},
 /obj/item/radio/weather_monitor{
-	pixel_y = -3;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = -3
 	},
 /obj/item/t_scanner/adv_mining_scanner{
-	pixel_y = -2;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = -2
 	},
 /obj/item/extinguisher/mini,
 /obj/item/attachment/rail_light{
@@ -3745,9 +3741,9 @@
 "BI" = (
 /obj/effect/turf_decal/industrial/hatch,
 /obj/machinery/suit_storage_unit/inherit{
-	req_access_txt = "1";
+	locked = 1;
 	name = "security's suit storage unit";
-	locked = 1
+	req_access_txt = "1"
 	},
 /obj/item/tank/internals/oxygen/red,
 /obj/item/clothing/suit/space/hardsuit/security,
@@ -3795,8 +3791,8 @@
 /area/ship/engineering)
 "BY" = (
 /obj/effect/turf_decal/borderfloor{
-	layer = 2.030;
-	dir = 8
+	dir = 8;
+	layer = 2.030
 	},
 /obj/structure/table/reinforced,
 /obj/item/stack/marker_beacon/thirty,
@@ -3836,8 +3832,8 @@
 /obj/machinery/newscaster/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/photo/old{
-	pixel_y = 8;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 8
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
@@ -3848,12 +3844,12 @@
 /obj/effect/turf_decal/trimline/opaque/white/line,
 /obj/structure/table/reinforced,
 /obj/machinery/recharger{
-	pixel_y = 4;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 4
 	},
 /obj/machinery/recharger{
-	pixel_y = 4;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/radio/intercom/directional/south,
@@ -3872,7 +3868,7 @@
 /obj/structure/chair/bench/blue{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 5
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -3884,13 +3880,13 @@
 /obj/effect/turf_decal/trimline/opaque/white/line,
 /obj/structure/closet/secure_closet/wall/directional/south{
 	icon_door = "sec_wall";
+	icon_state = "sec_wall";
 	name = "equipment locker";
-	req_access_txt = "1";
-	icon_state = "sec_wall"
+	req_access_txt = "1"
 	},
 /obj/item/clothing/head/helmet/m10/makossowarra{
-	pixel_y = 8;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 8
 	},
 /obj/item/clothing/head/helmet/bulletproof/x11/makossowarra{
 	pixel_x = 6;
@@ -3903,8 +3899,8 @@
 	pixel_x = 4
 	},
 /obj/item/storage/box/handcuffs{
-	pixel_y = -5;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = -5
 	},
 /obj/item/melee/knife/survival{
 	pixel_x = -4
@@ -3933,8 +3929,8 @@
 	dir = 4
 	},
 /obj/item/bodycamera{
-	pixel_y = 5;
-	pixel_x = -9
+	pixel_x = -9;
+	pixel_y = 5
 	},
 /obj/item/bodycamera{
 	pixel_y = 5
@@ -3944,15 +3940,15 @@
 	pixel_y = 6
 	},
 /obj/item/gps{
-	pixel_y = -11;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = -11
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/office)
 "Dj" = (
 /obj/machinery/computer/security{
-	icon_state = "computer-right";
-	dir = 4
+	dir = 4;
+	icon_state = "computer-right"
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
@@ -3997,8 +3993,8 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "magpie_medbay_window";
-	dir = 4
+	dir = 4;
+	id = "magpie_medbay_window"
 	},
 /turf/open/floor/plating,
 /area/ship/medical)
@@ -4037,9 +4033,9 @@
 	},
 /obj/structure/chair/handrail,
 /obj/structure/closet/secure_closet/wall/directional/north{
-	name = "tool locker";
-	icon_state = "cargo_wall";
 	icon_door = "cargo_wall";
+	icon_state = "cargo_wall";
+	name = "tool locker";
 	req_access_txt = "10"
 	},
 /obj/item/storage/bag/construction{
@@ -4107,7 +4103,7 @@
 /area/ship/hallway/port)
 "DW" = (
 /obj/effect/turf_decal/corner/opaque/blue/mono,
-/obj/effect/turf_decal/ntspaceworks_small,
+/obj/effect/turf_decal/makossowarraspaceworks_small,
 /obj/structure/chair/office,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
@@ -4125,7 +4121,7 @@
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/medical)
 "Ek" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight/three_quarters{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight/three_quarters{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -4140,9 +4136,9 @@
 	layer = 2.809
 	},
 /obj/structure/filingcabinet/double{
+	density = 0;
 	dir = 8;
-	pixel_x = 10;
-	density = 0
+	pixel_x = 10
 	},
 /obj/item/clipboard{
 	pixel_x = 12;
@@ -4162,18 +4158,18 @@
 	pixel_y = -2
 	},
 /obj/machinery/button/door{
-	pixel_y = 10;
-	pixel_x = 21;
 	dir = 8;
 	id = "magpie_office_window";
-	name = "External Window Control"
+	name = "External Window Control";
+	pixel_x = 21;
+	pixel_y = 10
 	},
 /obj/machinery/button/door{
-	pixel_y = -2;
-	pixel_x = 21;
 	dir = 8;
 	id = "magpie_officehall_window";
-	name = "Hallway Window Control"
+	name = "Hallway Window Control";
+	pixel_x = 21;
+	pixel_y = -2
 	},
 /obj/item/disk/holodisk,
 /turf/open/floor/suns/hatch/walnut,
@@ -4287,8 +4283,8 @@
 	},
 /obj/machinery/door/airlock/command{
 	dir = 4;
-	req_access_txt = "19";
-	name = "Bridge"
+	name = "Bridge";
+	req_access_txt = "19"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
@@ -4325,7 +4321,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen)
 "Fn" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/white/corner,
@@ -4333,15 +4329,15 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	pixel_y = -21;
-	pixel_x = 7;
-	id = "magpie_miner_room";
-	normaldoorcontrol = 1;
-	specialfunctions = 4;
-	name = "N+S Equipment Room Bolt Control";
-	req_access_txt = "48";
 	dir = 1;
-	req_ship_access = 1
+	id = "magpie_miner_room";
+	name = "N+S Equipment Room Bolt Control";
+	normaldoorcontrol = 1;
+	pixel_x = 7;
+	pixel_y = -21;
+	req_access_txt = "48";
+	req_ship_access = 1;
+	specialfunctions = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/starboard)
@@ -4351,12 +4347,12 @@
 	pixel_x = 5
 	},
 /obj/item/coffee_cartridge/fancy{
-	pixel_y = 6;
-	pixel_x = -15
+	pixel_x = -15;
+	pixel_y = 6
 	},
 /obj/item/coffee_cartridge/fancy/roast{
-	pixel_y = 2;
-	pixel_x = -15
+	pixel_x = -15;
+	pixel_y = 2
 	},
 /obj/item/coffee_cartridge/fancy/blue{
 	pixel_x = -15;
@@ -4474,8 +4470,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/public/glass{
-	req_ship_access = 1;
-	name = "Starboard Hallway"
+	name = "Starboard Hallway";
+	req_ship_access = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1,
 /turf/open/floor/plasteel/patterned/ridged,
@@ -4487,8 +4483,8 @@
 	pixel_y = 2
 	},
 /obj/item/folder/biscuit/unsealed/confidental{
-	pixel_y = 15;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 15
 	},
 /obj/item/pen{
 	pixel_x = -2
@@ -4505,16 +4501,16 @@
 /area/ship/external/dark)
 "GF" = (
 /obj/structure/sign/warning/securearea{
-	pixel_y = 8;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 8
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
 "GG" = (
 /obj/structure/table,
 /obj/machinery/coffeemaker{
-	pixel_y = 2;
-	pixel_x = -1
+	pixel_x = -1;
+	pixel_y = 2
 	},
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30"
@@ -4530,12 +4526,10 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "Hc" = (
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 5
-	},
 /obj/structure/cable/white{
 	icon_state = "4-8"
 	},
+/obj/effect/turf_decal/makossowarra/modern_big/bottom_center,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Hj" = (
@@ -4547,7 +4541,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Hv" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight/three_quarters{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight/three_quarters{
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/opaque/white/corner,
@@ -4639,8 +4633,8 @@
 /area/ship/engineering/atmospherics)
 "HP" = (
 /obj/structure/closet/secure_closet/wall/directional/north{
-	icon_state = "solgov_wall";
 	icon_door = "solgov_wall";
+	icon_state = "solgov_wall";
 	name = "captain's locker";
 	req_access_txt = "20"
 	},
@@ -4655,14 +4649,14 @@
 	pixel_x = 4
 	},
 /obj/item/clothing/shoes/laceup{
-	pixel_y = -13;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = -13
 	},
 /obj/item/clothing/shoes/cowboy/black{
-	pixel_y = -7;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = -7
 	},
-/obj/item/clothing/gloves/color/captain/nt{
+/obj/item/clothing/gloves/color/captain/makossowarra{
 	pixel_x = -5;
 	pixel_y = -10
 	},
@@ -4734,10 +4728,10 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_x = -20;
-	pixel_y = -10;
 	id = "magpie_portnac_window";
-	name = "Window Control"
+	name = "Window Control";
+	pixel_x = -20;
+	pixel_y = -10
 	},
 /obj/machinery/light/small/directional/west,
 /obj/structure/janitorialcart{
@@ -4748,7 +4742,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
 "HU" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/white/corner{
@@ -4761,7 +4755,7 @@
 /area/ship/hallway/starboard)
 "HZ" = (
 /obj/machinery/washing_machine,
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 9
 	},
 /obj/machinery/firealarm/directional/east{
@@ -4828,17 +4822,17 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/shieldwallgen{
-	pixel_y = -6;
-	pixel_x = -20;
 	dir = 4;
-	id = "magpie_holofield"
+	id = "magpie_holofield";
+	pixel_x = -20;
+	pixel_y = -6
 	},
 /obj/machinery/button/door{
-	pixel_y = 4;
-	pixel_x = -21;
-	name = "Cargo Door Control";
 	dir = 4;
-	id = "magpie_cargo"
+	id = "magpie_cargo";
+	name = "Cargo Door Control";
+	pixel_x = -21;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -4856,7 +4850,7 @@
 /area/ship/engineering)
 "ID" = (
 /obj/effect/turf_decal/corner/opaque/blue/mono,
-/obj/effect/turf_decal/ntspaceworks_small/left,
+/obj/effect/turf_decal/makossowarraspaceworks_small/left,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "IF" = (
@@ -4906,13 +4900,11 @@
 /obj/effect/turf_decal/industrial/caution{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 4
-	},
 /obj/structure/cable/white{
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/makossowarra/modern_big/bottom_left,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Jm" = (
@@ -4921,8 +4913,8 @@
 /obj/structure/table/glass,
 /obj/machinery/light/small/directional/south,
 /obj/item/storage/box/evidence{
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /obj/item/flashlight/pen{
 	pixel_x = -11;
@@ -4937,9 +4929,9 @@
 	},
 /obj/structure/closet/secure_closet/wall/directional/south{
 	icon_door = "sec_wall";
+	icon_state = "sec_wall";
 	name = "ammunition locker";
-	req_access_txt = "1";
-	icon_state = "sec_wall"
+	req_access_txt = "1"
 	},
 /obj/item/storage/toolbox/ammo/c9mm{
 	pixel_y = 8
@@ -4954,16 +4946,16 @@
 	pixel_x = 12
 	},
 /obj/item/ammo_box/magazine/co9mm{
-	pixel_y = -1;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = -1
 	},
 /obj/item/ammo_box/magazine/co9mm{
-	pixel_y = -1;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = -1
 	},
 /obj/item/ammo_box/magazine/co9mm{
-	pixel_y = -1;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = -1
 	},
 /obj/item/stock_parts/cell/gun/sharplite/plus{
 	pixel_x = -8;
@@ -5090,11 +5082,11 @@
 /area/ship/cargo/office)
 "Ko" = (
 /obj/machinery/button/door{
-	pixel_y = -10;
-	pixel_x = 21;
 	dir = 8;
 	id = "magpie_gate1";
 	name = "Shutter Control 1";
+	pixel_x = 21;
+	pixel_y = -10;
 	req_ship_access = 1
 	},
 /obj/structure/cable/white{
@@ -5134,8 +5126,8 @@
 	dir = 1
 	},
 /obj/item/megaphone/command{
-	pixel_y = 4;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 4
 	},
 /obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
@@ -5161,7 +5153,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Ll" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 6
 	},
 /obj/effect/turf_decal/trimline/opaque/white/line{
@@ -5225,16 +5217,16 @@
 	pixel_y = 28
 	},
 /obj/item/stack/medical/bone_gel/four{
-	pixel_y = 15;
-	pixel_x = -9
+	pixel_x = -9;
+	pixel_y = 15
 	},
 /obj/item/reagent_containers/medigel/sterilizine{
-	pixel_y = 15;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = 15
 	},
 /obj/item/stack/sticky_tape/surgical{
-	pixel_y = 12;
-	pixel_x = 15
+	pixel_x = 15;
+	pixel_y = 12
 	},
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/medical)
@@ -5282,8 +5274,8 @@
 /obj/item/reagent_containers/spray/cleaner,
 /obj/item/reagent_containers/glass/rag,
 /obj/item/reagent_containers/glass/bucket{
-	pixel_y = -6;
-	pixel_x = -10
+	pixel_x = -10;
+	pixel_y = -6
 	},
 /obj/item/pda/janitor,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -5310,9 +5302,9 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	pixel_x = -20;
+	id = "magpie_starthruster";
 	name = "Thruster Shield Control";
-	id = "magpie_starthruster"
+	pixel_x = -20
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -5378,9 +5370,9 @@
 "Mm" = (
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/wideband/table{
+	layer = 2.9;
 	pixel_x = 4;
-	pixel_y = -2;
-	layer = 2.9
+	pixel_y = -2
 	},
 /obj/item/radio/intercom/table{
 	pixel_x = -14;
@@ -5390,18 +5382,18 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "magpie_bridgehall_window";
-	pixel_x = -6;
-	pixel_y = -21;
 	dir = 1;
-	name = "Hallway Window Control"
+	id = "magpie_bridgehall_window";
+	name = "Hallway Window Control";
+	pixel_x = -6;
+	pixel_y = -21
 	},
 /obj/machinery/button/door{
-	id = "magpie_bridge_window";
-	pixel_x = 6;
-	pixel_y = -21;
 	dir = 1;
-	name = "External Window Control"
+	id = "magpie_bridge_window";
+	name = "External Window Control";
+	pixel_x = 6;
+	pixel_y = -21
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -5433,9 +5425,9 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "magpie_medbayhall_window";
 	desc = 1;
-	dir = 4
+	dir = 4;
+	id = "magpie_medbayhall_window"
 	},
 /turf/open/floor/plating,
 /area/ship/medical)
@@ -5471,7 +5463,7 @@
 	picked_color = "Teal"
 	},
 /obj/item/radio/intercom/directional/east,
-/obj/effect/turf_decal/trimline/opaque/ntbluelight/filled/corner,
+/obj/effect/turf_decal/trimline/opaque/makossowarrabluelight/filled/corner,
 /obj/effect/turf_decal/trimline/opaque/white/corner,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine/hull/reinforced,
@@ -5562,11 +5554,11 @@
 /area/ship/cargo)
 "NI" = (
 /obj/machinery/button/door{
-	pixel_y = 10;
-	pixel_x = 21;
 	dir = 8;
 	id = "magpie_gate2";
 	name = "Shutter Control 2";
+	pixel_x = 21;
+	pixel_y = 10;
 	req_ship_access = 1
 	},
 /obj/structure/cable/white{
@@ -5578,8 +5570,8 @@
 /area/ship/cargo)
 "NJ" = (
 /obj/effect/turf_decal/borderfloor{
-	layer = 2.030;
-	dir = 9
+	dir = 9;
+	layer = 2.030
 	},
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 1
@@ -5691,8 +5683,8 @@
 /area/ship/hallway/central)
 "OD" = (
 /obj/structure/closet/secure_closet/engineering_personal{
-	populate = 0;
-	anchored = 1
+	anchored = 1;
+	populate = 0
 	},
 /obj/item/storage/backpack/duffelbag/engineering,
 /obj/item/storage/backpack/industrial,
@@ -5709,8 +5701,8 @@
 	pixel_y = -8
 	},
 /obj/item/clothing/shoes/jackboots{
-	pixel_y = -7;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = -7
 	},
 /obj/item/clothing/gloves/color/black{
 	pixel_y = -10
@@ -5722,8 +5714,8 @@
 	pixel_x = 4
 	},
 /obj/item/clothing/head/hardhat/makossowarra{
-	pixel_y = 8;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 8
 	},
 /obj/item/clothing/head/hardhat/makossowarra/blue{
 	pixel_x = 4;
@@ -5756,8 +5748,8 @@
 	dir = 1
 	},
 /obj/item/radio/intercom/table{
-	pixel_y = -2;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/office)
@@ -5813,10 +5805,10 @@
 	pixel_y = 4
 	},
 /obj/machinery/computer/security/telescreen{
-	pixel_y = -26;
-	network = list("ss13");
 	desc = "A telescreen that connects to the ship's security camera network.";
-	dir = 1
+	dir = 1;
+	network = list("ss13");
+	pixel_y = -26
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
@@ -5824,8 +5816,8 @@
 "Pm" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green{
-	pixel_y = -6;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = -6
 	},
 /obj/machinery/fax/makossowarra,
 /obj/effect/turf_decal/siding/wood{
@@ -5836,8 +5828,8 @@
 /area/ship/crew/dorm/commad)
 "Pq" = (
 /obj/structure/reagent_dispensers/water_cooler{
-	pixel_x = 10;
-	density = 0
+	density = 0;
+	pixel_x = 10
 	},
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -5887,12 +5879,12 @@
 	pixel_x = 10
 	},
 /obj/item/clothing/head/helmet/space/fragile{
-	pixel_y = 10;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 10
 	},
 /obj/item/clothing/head/helmet/space/fragile{
-	pixel_y = 10;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = 10
 	},
 /obj/structure/cable/white{
 	icon_state = "1-2"
@@ -5940,8 +5932,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
 /obj/item/paper_bin/construction{
-	pixel_y = 4;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 4
 	},
 /obj/item/pen/blue{
 	pixel_x = 6;
@@ -6065,9 +6057,9 @@
 /obj/effect/turf_decal/corner/transparent/white/mono,
 /obj/effect/turf_decal/industrial/hatch/blue,
 /obj/machinery/suit_storage_unit/inherit{
-	req_access_txt = "5";
+	locked = 1;
 	name = "doctor's suit storage unit";
-	locked = 1
+	req_access_txt = "5"
 	},
 /obj/item/tank/internals/oxygen,
 /obj/item/clothing/suit/space/hardsuit/medical,
@@ -6147,7 +6139,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "RU" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 5
 	},
 /obj/effect/turf_decal/trimline/opaque/white/corner{
@@ -6160,9 +6152,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/port)
 "Sn" = (
-/obj/effect/turf_decal/corner/opaque/white/diagonal{
-	dir = 4
-	},
+/obj/effect/turf_decal/makossowarra/modern_big/center,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Sz" = (
@@ -6239,8 +6229,8 @@
 /area/ship/hallway/starboard)
 "Tb" = (
 /obj/effect/turf_decal/borderfloor{
-	layer = 2.030;
-	dir = 4
+	dir = 4;
+	layer = 2.030
 	},
 /obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
@@ -6284,8 +6274,8 @@
 /area/ship/hallway/port)
 "Ti" = (
 /obj/effect/turf_decal/borderfloor{
-	layer = 2.030;
-	dir = 4
+	dir = 4;
+	layer = 2.030
 	},
 /obj/effect/turf_decal/trimline/transparent/white/filled/warning{
 	dir = 4
@@ -6294,8 +6284,8 @@
 	dir = 4
 	},
 /obj/item/trash/can{
-	pixel_y = 20;
-	pixel_x = 11
+	pixel_x = 11;
+	pixel_y = 20
 	},
 /obj/machinery/light/small/directional/west,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
@@ -6305,7 +6295,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/external/dark)
 "Tk" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/white/corner,
@@ -6376,8 +6366,8 @@
 "TZ" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/glass/bottle/syrup_bottle/vanilla{
-	pixel_y = 11;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 11
 	},
 /obj/item/reagent_containers/glass/bottle/syrup_bottle/creme_de_cacao{
 	pixel_x = 5;
@@ -6406,10 +6396,10 @@
 	dir = 4
 	},
 /obj/structure/filingcabinet{
-	pixel_y = 21;
+	density = 0;
 	layer = 3.22;
 	pixel_x = -10;
-	density = 0
+	pixel_y = 21
 	},
 /obj/item/clipboard{
 	pixel_y = 5
@@ -6437,37 +6427,37 @@
 "Uv" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	pixel_y = 4;
-	pixel_x = -32;
-	name = "Cargo Door Control";
 	dir = 4;
-	id = "magpie_cargo"
+	id = "magpie_cargo";
+	name = "Cargo Door Control";
+	pixel_x = -32;
+	pixel_y = 4
 	},
 /obj/machinery/button/shieldwallgen{
-	pixel_y = -6;
-	pixel_x = -30;
 	dir = 4;
-	id = "magpie_holofield"
+	id = "magpie_holofield";
+	pixel_x = -30;
+	pixel_y = -6
 	},
 /obj/machinery/button/door{
-	pixel_y = 6;
-	pixel_x = -21;
 	dir = 4;
 	id = "magpie_gate2";
-	name = "Shutter Control 2"
+	name = "Shutter Control 2";
+	pixel_x = -21;
+	pixel_y = 6
 	},
 /obj/machinery/button/door{
-	pixel_y = -6;
-	pixel_x = -21;
 	dir = 4;
 	id = "magpie_gate1";
-	name = "Shutter Control 1"
+	name = "Shutter Control 1";
+	pixel_x = -21;
+	pixel_y = -6
 	},
 /obj/machinery/button/door{
-	pixel_y = 21;
 	id = "magpie_overlook_window";
 	name = "Window Shutter Control";
-	pixel_x = 13
+	pixel_x = 13;
+	pixel_y = 21
 	},
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
 /obj/item/radio/intercom/table{
@@ -6570,8 +6560,8 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "magpie_bridge_window";
-	dir = 4
+	dir = 4;
+	id = "magpie_bridge_window"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -6616,17 +6606,17 @@
 /obj/machinery/newscaster/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/briefcase{
-	pixel_y = 10;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 10
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "VX" = (
 /obj/structure/chair/comfy/shuttle{
-	name = "Monitoring";
-	dir = 8
+	dir = 8;
+	name = "Monitoring"
 	},
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 5
 	},
 /obj/effect/turf_decal/trimline/opaque/white/line{
@@ -6650,8 +6640,8 @@
 	},
 /obj/machinery/airalarm/directional/west,
 /obj/item/melee/knife/pizza_cutter{
-	pixel_y = 8;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
@@ -6681,7 +6671,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/white/corner,
@@ -6724,15 +6714,15 @@
 /obj/structure/closet/crate/bin,
 /obj/item/plate_shard{
 	icon_state = "plate_shard2";
-	pixel_y = -6;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = -6
 	},
 /obj/item/plate_shard{
 	icon_state = "plate_shard5"
 	},
 /obj/item/plate_shard{
-	pixel_y = -5;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = -5
 	},
 /obj/item/plate_shard{
 	icon_state = "plate_shard4";
@@ -6846,7 +6836,7 @@
 /obj/structure/chair/comfy/shuttle{
 	name = "Operations"
 	},
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/white/line,
@@ -6857,7 +6847,7 @@
 /area/ship/bridge)
 "XN" = (
 /obj/structure/chair/sofa/blue/corpo/right,
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 10
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -6879,15 +6869,15 @@
 	name = "shower cabinet"
 	},
 /obj/item/towel{
-	pixel_y = -5;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = -5
 	},
 /obj/item/towel{
 	pixel_y = -5
 	},
 /obj/item/soap/makossowarra{
-	pixel_y = 7;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 7
 	},
 /obj/item/razor{
 	pixel_x = -6
@@ -6949,8 +6939,8 @@
 	dir = 2;
 	dwidth = 15;
 	height = 15;
-	width = 30;
-	name = "Starboard Airlock Docking Point"
+	name = "Starboard Airlock Docking Point";
+	width = 30
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -6968,8 +6958,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/airlock/mining{
-	name = "N+S Equipment Room";
-	id_tag = "magpie_miner_room"
+	id_tag = "magpie_miner_room";
+	name = "N+S Equipment Room"
 	},
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/patterned/ridged,
@@ -7011,16 +7001,16 @@
 /area/ship/cargo)
 "Zc" = (
 /obj/machinery/vending/snack/teal,
-/obj/effect/turf_decal/corner/opaque/ntbluelight/mono,
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight/mono,
 /obj/effect/turf_decal/trimline/opaque/white/filled/line{
 	dir = 8
 	},
 /obj/machinery/button/door{
-	pixel_y = -21;
-	pixel_x = 10;
+	dir = 1;
 	id = "magpie_kitchen_window";
 	name = "Window Control";
-	dir = 1
+	pixel_x = 10;
+	pixel_y = -21
 	},
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
@@ -7089,7 +7079,7 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "ZD" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 5
 	},
 /obj/effect/turf_decal/trimline/opaque/white/corner{
@@ -7099,7 +7089,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/port)
 "ZJ" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 5
 	},
 /obj/effect/turf_decal/trimline/opaque/white/corner{
@@ -7117,7 +7107,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/port)
 "ZR" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/opaque/white/corner{
@@ -7127,15 +7117,15 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	pixel_y = -21;
-	pixel_x = -7;
-	id = "magpie_vi_office";
-	normaldoorcontrol = 1;
-	specialfunctions = 4;
-	name = "Vigilitas Security Office Bolt Control";
-	req_access_txt = "1";
 	dir = 1;
-	req_ship_access = 1
+	id = "magpie_vi_office";
+	name = "Vigilitas Security Office Bolt Control";
+	normaldoorcontrol = 1;
+	pixel_x = -7;
+	pixel_y = -21;
+	req_access_txt = "1";
+	req_ship_access = 1;
+	specialfunctions = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/starboard)
@@ -7148,7 +7138,7 @@
 /turf/open/floor/plating,
 /area/ship/security)
 "ZU" = (
-/obj/effect/turf_decal/corner/opaque/ntbluelight{
+/obj/effect/turf_decal/corner/opaque/makossowarrabluelight{
 	dir = 5
 	},
 /obj/effect/turf_decal/siding/white,

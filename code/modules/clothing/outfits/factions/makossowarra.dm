@@ -22,7 +22,7 @@
 
 	id = /obj/item/card/id/gold
 	belt = /obj/item/pda/captain
-	gloves = /obj/item/clothing/gloves/color/captain/nt
+	gloves = /obj/item/clothing/gloves/color/captain/makossowarra
 	ears = /obj/item/radio/headset/makossowarra/captain
 	uniform = /obj/item/clothing/under/makossowarra/captain
 	alt_uniform = /obj/item/clothing/under/makossowarra/captain/skirt

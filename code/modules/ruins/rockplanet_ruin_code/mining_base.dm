@@ -1,7 +1,7 @@
-/obj/machinery/porta_turret/ship/nt/light/mining_base
+/obj/machinery/porta_turret/ship/makossowarra/light/mining_base
 	lethal = TRUE
 
-/obj/machinery/porta_turret/ship/nt/light/mining_base/Initialize()
+/obj/machinery/porta_turret/ship/makossowarra/light/mining_base/Initialize()
 	. = ..()
 	take_damage(rand(120, 150),BRUTE)
 

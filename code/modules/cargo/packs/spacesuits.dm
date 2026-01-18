@@ -169,7 +169,7 @@
 	crate_name = "EOD hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/science
 
-//nt hardsuit breaker
+//makosso-warra hardsuit breaker
 
 /datum/supply_pack/spacesuits/med_hardsuit
 	name = "Medical Hardsuit Crate"
