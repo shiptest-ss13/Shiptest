@@ -145,6 +145,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_STASIS "stasis"
 /// This mob is asthmatic, and has much more severe reactions to any irritants present in the air
 #define TRAIT_ASTHMATIC "asthmatic"
+/// Prevents lung inflammation from increasing.
+#define TRAIT_ANTI_INFLAMMATORY "anti-inflammatory"
 #define TRAIT_BLIND "blind"
 #define TRAIT_DEAF "deaf"
 #define TRAIT_MUTE "mute"

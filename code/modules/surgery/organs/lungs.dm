@@ -604,6 +604,14 @@
 
 	can_smell = FALSE
 
+/obj/item/organ/lungs/plasmaman/Insert(mob/living/carbon/new_owner, special, drop_if_replaced)
+	. = ..()
+	ADD_TRAIT(new_owner, TRAIT_ANTI_INFLAMMATORY, REF(src)) // they're not even "lungs" and shouldn't be constricting in the first place
+
+/obj/item/organ/lungs/plasmaman/Remove(mob/living/carbon/old_owner, special)
+	REMOVE_TRAIT(old_owner, TRAIT_ANTI_INFLAMMATORY, REF(src))
+	return ..()
+
 /obj/item/organ/lungs/plasmaman/populate_gas_info()
 	..()
 	gas_max -= GAS_PLASMA
