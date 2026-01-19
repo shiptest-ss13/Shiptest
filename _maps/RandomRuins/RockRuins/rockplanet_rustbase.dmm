@@ -2636,6 +2636,12 @@
 /obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 5
 	},
+/obj/machinery/button/door{
+	pixel_y = 2;
+	id = "rustarmory";
+	dir = 8;
+	pixel_x = 21
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/rust_base/hallway2)
 "rv" = (
@@ -3784,6 +3790,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/button/door{
+	pixel_y = 2;
+	id = "rustmech";
+	pixel_x = 21;
+	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/rockplanet/rust_base/hallway2)
