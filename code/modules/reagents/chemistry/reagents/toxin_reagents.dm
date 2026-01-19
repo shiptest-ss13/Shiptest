@@ -77,8 +77,8 @@
 	accelerant_quality = 10
 
 /datum/reagent/toxin/plasma/on_mob_life(mob/living/carbon/C)
-	if(C.has_reagent(/datum/reagent/medicine/epinephrine))
-		C.remove_reagent(/datum/reagent/medicine/epinephrine, 2*REM)
+	if(holder.has_reagent(/datum/reagent/medicine/epinephrine))
+		holder.remove_reagent(/datum/reagent/medicine/epinephrine, 2*REM)
 	C.adjustPlasma(20)
 	return ..()
 
@@ -105,7 +105,7 @@
 		T.atmos_spawn_air("plasma=[reac_volume];TEMP=[temp]")
 
 /datum/reagent/toxin/plasma/expose_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with plasma is stronger than fuel!
-	if((method == TOUCH || method == SMOKE) || method == VAPOR)
+	if(method == TOUCH || method == VAPOR)
 		M.adjust_fire_stacks(reac_volume / 5)
 		return
 	..()
@@ -129,8 +129,8 @@
 	material = /datum/material/hot_ice
 
 /datum/reagent/toxin/hot_ice/on_mob_life(mob/living/carbon/M)
-	if(M.has_reagent(/datum/reagent/medicine/epinephrine))
-		M.remove_reagent(/datum/reagent/medicine/epinephrine, 2*REM)
+	if(holder.has_reagent(/datum/reagent/medicine/epinephrine))
+		holder.remove_reagent(/datum/reagent/medicine/epinephrine, 2*REM)
 	M.adjustPlasma(20)
 	M.adjust_bodytemperature(-2 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	return ..()
@@ -208,12 +208,12 @@
 	L.cure_fakedeath(type)
 	..()
 
-/datum/reagent/toxin/zombiepowder/expose_mob(mob/living/L, method=TOUCH, reac_volume)
-	L.adjustOxyLoss(0.5*REM, 0)
+/datum/reagent/toxin/zombiepowder/expose_mob(mob/living/exposed_mob, method=TOUCH, reac_volume)
+	exposed_mob.adjustOxyLoss(0.5*REM, 0)
 	if(method == INGEST)
-		var/datum/reagent/toxin/zombiepowder/Z = L.has_reagent(/datum/reagent/toxin/zombiepowder)
-		if(istype(Z))
-			Z.fakedeath_active = TRUE
+		var/datum/reagent/toxin/zombiepowder/zombiepowder = exposed_mob.reagents.has_reagent(/datum/reagent/toxin/zombiepowder)
+		if(istype(zombiepowder))
+			zombiepowder.fakedeath_active = TRUE
 
 /datum/reagent/toxin/zombiepowder/on_mob_life(mob/living/M)
 	..()
@@ -343,7 +343,7 @@
 
 /datum/reagent/toxin/spore_burning/on_mob_life(mob/living/carbon/M)
 	M.adjust_fire_stacks(2)
-	M.IgniteMob()
+	M.ignite_mob()
 	return ..()
 
 /datum/reagent/toxin/chloralhydrate
@@ -451,11 +451,20 @@
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 	toxpwr = 0
+	/// While metabolizing, lung inflammation will increase by this per tick.
+	var/histamine_inflammation = 2
+	/// If ODing, lung inflammation will increase by this per tick.
+	var/histamine_OD_inflammation = 10 // allergic reactions tend to fuck people up
 
 /datum/reagent/toxin/histamine/overdose_start(mob/living/M)
-	//Deliberately empty to make it a silent killer
+	return //Deliberately empty to make it a silent killer
 
 /datum/reagent/toxin/histamine/on_mob_life(mob/living/carbon/M)
+	if(!overdosed)
+		if (SPT_PROB(5, SSMOBS_DT))
+			to_chat(M, span_warning("You find yourself wheezing a little harder as your neck swells..."))
+		M.adjust_lung_inflammation(histamine_inflammation * SSMOBS_DT * REM)
+
 	if(prob(10))
 		switch(rand(1,4))
 			if(1)
@@ -475,6 +484,9 @@
 /datum/reagent/toxin/histamine/overdose_process(mob/living/M)
 	M.adjustOxyLoss(1*REM, 0)
 	M.adjustToxLoss(1*REM, 0)
+	M.adjust_lung_inflammation(histamine_OD_inflammation * SSMOBS_DT * REM)
+	if (SPT_PROB(15, SSMOBS_DT))
+		to_chat(M, span_boldwarning("You feel your neck swelling, squeezing on your windpipe more and more!"))
 	..()
 	. = 1
 
@@ -488,7 +500,7 @@
 	toxpwr = 1
 
 /datum/reagent/toxin/formaldehyde/on_mob_life(mob/living/carbon/M)
-	if(prob(5))
+	if(prob(5) && M.has_reagent(/datum/reagent/toxin/formaldehyde, 5.1)) //Okay in theory you can't get histamine unless you have over 5 units of formal in your blood
 		holder.add_reagent(/datum/reagent/toxin/histamine, pick(5,15))
 		holder.remove_reagent(/datum/reagent/toxin/formaldehyde, 1.2)
 	else
@@ -507,8 +519,8 @@
 	M.adjustBruteLoss((0.3*volume)*REM, 0)
 	. = 1
 	if(prob(15))
-		M.reagents.add_reagent(/datum/reagent/toxin/histamine, pick(5,10))
-		M.remove_reagent(/datum/reagent/toxin/venom, 1.1)
+		holder.add_reagent(/datum/reagent/toxin/histamine, pick(5,10))
+		M.reagents.remove_reagent(/datum/reagent/toxin/venom, 1.1)
 	else
 		..()
 
@@ -548,7 +560,7 @@
 	toxpwr = 0
 
 /datum/reagent/toxin/itching_powder/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if((method == TOUCH || method == SMOKE) || method == VAPOR)
+	if(method == TOUCH || method == VAPOR)
 		M.reagents?.add_reagent(/datum/reagent/toxin/itching_powder, reac_volume)
 
 /datum/reagent/toxin/itching_powder/on_mob_life(mob/living/carbon/M)
@@ -565,8 +577,8 @@
 		M.adjustBruteLoss(0.2*REM, 0)
 		. = 1
 	if(prob(3))
-		M.reagents.add_reagent(/datum/reagent/toxin/histamine,rand(1,3))
-		M.remove_reagent(/datum/reagent/toxin/itching_powder,1.2)
+		holder.add_reagent(/datum/reagent/toxin/histamine,rand(1,3))
+		M.reagents.remove_reagent(/datum/reagent/toxin/itching_powder,1.2)
 		return
 	..()
 

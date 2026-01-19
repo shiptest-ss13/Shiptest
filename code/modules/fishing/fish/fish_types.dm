@@ -291,7 +291,7 @@
 	random_case_rarity = FISH_RARITY_RARE
 	required_fluid_type = AQUARIUM_FLUID_FRESHWATER
 	stable_population = 10 //set by New, but this is the default config value
-	fillet_type = /obj/item/food/meat/slab/human/mutant/zombie
+	fillet_type = /obj/item/food/meat/slab
 
 	fish_ai_type = FISH_AI_ZIPPY
 	favorite_bait = list(

@@ -4,7 +4,7 @@
 	icon_state = "syndicate-helm"
 	item_state = "syndicate-helm"
 	desc = "An advanced, lightweight space helmet made of durable composites. Almost matches integrated hardsuit helmets for protection. Almost."
-	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15)
+	armor = list("melee" = 30, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15)
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/space/syndicate
@@ -13,22 +13,35 @@
 	item_state = "syndicate"
 	desc = "A space suit made of high-grade ballistic fabric with integrated armor plates. More compact than a normal space suit while almost matching powered hardsuits for protection. Almost."
 	w_class = WEIGHT_CLASS_NORMAL
-	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15)
+	armor = list("melee" = 30, "bullet" = 35, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15)
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/suit/space/syndicate/Initialize()
 	. = ..()
 	allowed = GLOB.security_hardsuit_allowed
 
-//CLIP space suit
-/obj/item/clothing/head/helmet/space/syndicate/blue
-	name = "blue space helmet"
-	icon_state = "syndicate-helm-blue"
-	item_state = "syndicate-helm-blue"
+//Generic indie
+/obj/item/clothing/head/helmet/space/syndicate/generic
+	name = "armored space helmet"
+	icon_state = "syndicate-helm-generic"
+	item_state = "syndicate-helm-generic"
+	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15) // you dont get buffed
 
-/obj/item/clothing/suit/space/syndicate/blue
-	name = "blue space suit"
-	icon_state = "syndicate-blue"
-	item_state = "syndicate-blue"
+/obj/item/clothing/suit/space/syndicate/generic
+	name = "armored olive space suit"
+	icon_state = "syndicate-generic"
+	item_state = "syndicate-generic"
+	unique_reskin = list("armored olive space suit" = "syndicate-generic",
+						"armored grey space suit" = "syndicate-grey"
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75, "wound" = 15) // you dont get buffed
+
+/obj/item/clothing/suit/space/syndicate/generic/grey
+	name = "armored grey space suit"
+	icon_state = "syndicate-grey"
+	item_state = "syndicate-grey"
 
 //Hardliner + Cybersun
 /obj/item/clothing/head/helmet/space/syndicate/white_red

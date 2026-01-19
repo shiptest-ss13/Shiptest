@@ -18,9 +18,9 @@
 			if((D.spread_flags & DISEASE_SPREAD_SPECIAL) || (D.spread_flags & DISEASE_SPREAD_NON_CONTAGIOUS))
 				continue
 
-			if(((method == TOUCH || method == SMOKE) || method == VAPOR) && (D.spread_flags & DISEASE_SPREAD_CONTACT_FLUIDS))
+			if((method == TOUCH || method == VAPOR) && (D.spread_flags & DISEASE_SPREAD_CONTACT_FLUIDS))
 				L.ContactContractDisease(D)
-			else //ingest, patch or inject
+			else if(method != INHALE || (D.spread_flags & DISEASE_SPREAD_AIRBORNE))
 				L.ForceContractDisease(D)
 
 	if(iscarbon(L))
@@ -144,6 +144,7 @@
 
 /datum/reagent/water/on_mob_life(mob/living/carbon/M)
 	. = ..()
+	M.adjust_disgust(-2)
 	if(M.blood_volume)
 		M.blood_volume += 0.1 //full of water...
 /*
@@ -195,10 +196,10 @@
 /datum/reagent/water/expose_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with water can help put them out!
 	if(!istype(M))
 		return
-	if(method == TOUCH || method == SMOKE)
-		M.adjust_fire_stacks(-(reac_volume / 10))
-		M.ExtinguishMob()
-	..()
+	if(method == TOUCH || method == VAPOR)
+		M.adjust_wet_stacks(reac_volume * REM)
+		M.extinguish_mob()
+	return ..()
 
 ///For weird backwards situations where water manages to get added to trays nutrients, as opposed to being snowflaked away like usual.
 /datum/reagent/water/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
@@ -288,7 +289,7 @@
 /datum/reagent/hydrogen_peroxide/expose_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with h2o2 can burn them !
 	if(!istype(M))
 		return
-	if(method == TOUCH || method == SMOKE)
+	if(method == TOUCH || method == INHALE) // breathing in it too (why would you do that???)
 		M.adjustFireLoss(2, 0) // burns
 	..()
 
@@ -688,7 +689,7 @@
 	taste_description = "bitterness"
 
 /datum/reagent/space_cleaner/sterilizine/expose_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
-	if(method in list(TOUCH, VAPOR, PATCH, SMOKE))
+	if(method in list(TOUCH, VAPOR, PATCH))
 		for(var/s in C.surgeries)
 			var/datum/surgery/S = s
 			S.speed_modifier = max(0.2, S.speed_modifier)
@@ -798,7 +799,7 @@
 	//WS End
 
 /datum/reagent/bluespace/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if((method == TOUCH || method == SMOKE) || method == VAPOR)
+	if((method == TOUCH || method == INHALE) || method == VAPOR) // yeah smoke the bluespace i guess
 		do_teleport(M, get_turf(M), (reac_volume / 5), asoundin = 'sound/effects/phasein.ogg', channel = TELEPORT_CHANNEL_BLUESPACE) //4 tiles per crystal
 	..()
 
@@ -858,7 +859,7 @@
 	accelerant_quality = 10
 
 /datum/reagent/fuel/expose_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with welding fuel to make them easy to ignite!
-	if((method == TOUCH || method == SMOKE) || method == VAPOR)
+	if(method == TOUCH || method == VAPOR)
 		M.adjust_fire_stacks(reac_volume / 10)
 		return
 	..()
@@ -891,7 +892,7 @@
 			M.adjustToxLoss(rand(5,10))
 
 /datum/reagent/space_cleaner/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if((method == TOUCH || method == SMOKE) || method == VAPOR)
+	if(method == TOUCH || method == VAPOR)
 		M.wash(clean_types)
 
 /datum/reagent/space_cleaner/ez_clean
@@ -908,7 +909,7 @@
 
 /datum/reagent/space_cleaner/ez_clean/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	..()
-	if(((method == TOUCH || method == SMOKE) || method == VAPOR) && !issilicon(M))
+	if((method == TOUCH || method == VAPOR) && !issilicon(M))
 		M.adjustBruteLoss(1.5)
 		M.adjustFireLoss(1.5)
 
@@ -1655,7 +1656,7 @@
 /datum/reagent/acetone_oxide/expose_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people kills people!
 	if(!istype(M))
 		return
-	if(method == TOUCH || method == SMOKE)
+	if(method == TOUCH || method == INHALE)
 		M.adjustFireLoss(2, FALSE) // burns,
 		M.adjust_fire_stacks((reac_volume / 10))
 	..()
@@ -1735,7 +1736,7 @@
 	color = pick(potential_colors)
 
 /datum/reagent/hair_dye/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if((method == TOUCH || method == SMOKE)  || method == VAPOR)
+	if(method == TOUCH || method == VAPOR)
 		if(M && ishuman(M))
 			var/mob/living/carbon/human/H = M
 			H.hair_color = pick(potential_colors)
@@ -1750,7 +1751,7 @@
 	taste_description = "sourness"
 
 /datum/reagent/barbers_aid/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if((method == TOUCH || method == SMOKE)  || method == VAPOR)
+	if(method == TOUCH || method == VAPOR)
 		if(M && ishuman(M) && !HAS_TRAIT(M, TRAIT_BALD))
 			var/mob/living/carbon/human/H = M
 			var/datum/sprite_accessory/hair/picked_hair = pick(GLOB.hairstyles_list)
@@ -1768,7 +1769,7 @@
 	taste_description = "sourness"
 
 /datum/reagent/concentrated_barbers_aid/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if((method == TOUCH || method == SMOKE)  || method == VAPOR)
+	if(method == TOUCH || method == VAPOR)
 		if(M && ishuman(M) && !HAS_TRAIT(M, TRAIT_BALD))
 			var/mob/living/carbon/human/H = M
 			to_chat(H, span_notice("Your hair starts growing at an incredible speed!"))
@@ -1784,7 +1785,7 @@
 	taste_description = "bitterness"
 
 /datum/reagent/baldium/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if((method == TOUCH || method == SMOKE)  || method == VAPOR)
+	if(method == TOUCH || method == VAPOR)
 		if(M && ishuman(M))
 			var/mob/living/carbon/human/H = M
 			to_chat(H, span_danger("Your hair is falling out in clumps!"))
@@ -2247,6 +2248,20 @@
 	taste_description = "sharp rocks"
 	var/healing = 2
 
+/datum/reagent/crystal_reagent/expose_mob(mob/living/M, method=TOUCH, reac_volume)
+	. = ..()
+	if(iscarbon(M))
+		var/mob/living/carbon/patient = M
+		for(var/i in patient.all_wounds)
+			var/datum/wound/iter_wound = i
+			iter_wound.on_crystal(reac_volume)
+		if(reac_volume >= 5 && HAS_TRAIT_FROM(patient, TRAIT_HUSK, "burn") && patient.stat == DEAD)
+			patient.adjustFireLoss(-500)
+			patient.cure_husk("burn")
+			patient.visible_message(span_nicegreen("[patient]'s body shivers as the crystal enters them, seared flesh returning to normal coloration as crystals grow under it!"))
+			patient.adjustCloneLoss(10)
+			patient.do_jitter_animation(200)
+
 /datum/reagent/crystal_reagent/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-healing*REM, 0)
 	M.adjustOxyLoss(-healing*REM, 0)
@@ -2567,7 +2582,7 @@
 /datum/reagent/anti_radiation_foam/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method in list(TOUCH, VAPOR))
 		M.radiation = M.radiation - rand(max(M.radiation * 0.07, 0)) //get the hose
-		M.ExtinguishMob()
+		M.extinguish_mob()
 	..()
 
 

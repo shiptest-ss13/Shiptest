@@ -473,7 +473,7 @@
 	dir = 4;
 	color = "#808080"
 	},
-/obj/item/gun/energy/laser,
+/obj/item/gun/energy/laser/e10,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/treasure_cove)
 "sl" = (
@@ -1170,11 +1170,6 @@
 	dir = 8
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/neutured,
-/obj/effect/landmark/mission_poi/main/kill{
-	already_spawned = 1;
-	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/officer/neutured;
-	mission_index = 1
-	},
 /turf/open/floor/carpet/red,
 /area/ruin/beach/treasure_cove)
 "SX" = (

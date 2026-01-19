@@ -16,6 +16,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c10mm/surplus
 	ammo_type = /obj/item/ammo_casing/c10mm/surplus
+	custom_materials = list(/datum/material/iron = 4000)
 
 /obj/item/storage/box/ammo/c10mm_surplus
 	name = "box of surplus 10x22mm ammo"
@@ -89,6 +90,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c9mm/surplus
 	ammo_type = /obj/item/ammo_casing/c9mm/surplus
+	custom_materials = list(/datum/material/iron = 4000)
 
 /obj/item/storage/box/ammo/c9mm_surplus
 	name = "box of surplus 9x18mm ammo"
@@ -160,6 +162,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c45/surplus
 	ammo_type = /obj/item/ammo_casing/c45/surplus
+	custom_materials = list(/datum/material/iron = 4000)
 
 /obj/item/storage/box/ammo/c45_surplus
 	name = "box of surplus .45 ammo"
@@ -331,7 +334,7 @@
 	ammo_type = /obj/item/ammo_casing/a4570/match
 
 /obj/item/storage/box/ammo/a4570_match
-	name = "box of HP match .45-70 ammo"
+	name = "box of match .45-70 ammo"
 	desc = "A 12-round ammo box for .45-70 revolvers. These match rounds travel faster, perform better against armor, and can ricochet off targets."
 	icon_state = "4570-match"
 
@@ -384,6 +387,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c38/surplus
 	ammo_type = /obj/item/ammo_casing/c38/surplus
+	custom_materials = list(/datum/material/iron = 4000)
 
 /obj/item/storage/box/ammo/c38_surplus
 	name = "box of surplus .38 ammo"

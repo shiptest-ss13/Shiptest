@@ -37,7 +37,7 @@
 	TEST_ASSERT_EQUAL(human.drowsyness, 0, "Human is drowsy at the start of testing")
 	drink.reagents.clear_reagents()
 	drink.reagents.add_reagent(/datum/reagent/nitrous_oxide, 10)
-	drink.reagents.trans_to(human, 10, method = VAPOR)
+	drink.reagents.trans_to(human, 10, methods = VAPOR)
 	TEST_ASSERT_NOTEQUAL(human.drowsyness, 0, "Human is not drowsy after exposure to vapors")
 
 	// PATCH
@@ -50,7 +50,6 @@
 
 	// INJECT
 	syringe.reagents.add_reagent(/datum/reagent/method_patch_test, 1)
-	syringe.mode = SYRINGE_INJECT
 	syringe.afterattack(human, human, TRUE)
 	TEST_ASSERT_EQUAL(human.health, 80, "Human health did not update after injection from syringe")
 

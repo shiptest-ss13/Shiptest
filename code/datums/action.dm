@@ -44,7 +44,7 @@
 				return
 			Remove(owner)
 		owner = M
-		RegisterSignal(owner, COMSIG_PARENT_QDELETING, PROC_REF(owner_deleted))
+		RegisterSignal(owner, COMSIG_QDELETING, PROC_REF(owner_deleted))
 
 		//button id generation
 		var/counter = 0
@@ -81,7 +81,7 @@
 		M.actions -= src
 		M.update_action_buttons()
 	if(owner)
-		UnregisterSignal(owner, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(owner, COMSIG_QDELETING)
 		owner = null
 	if(button)
 		button.moved = FALSE //so the button appears in its normal position when given to another owner.
@@ -407,6 +407,14 @@
 	..()
 	name = "Adjust [target.name]"
 	button.name = name
+
+/datum/action/item_action/adjust_earmuffs
+	name = "Adjust Earmuffs"
+
+/datum/action/item_action/adjust_earmuffs/Trigger()
+	if(istype(target, /obj/item/clothing/ears/earmuffs))
+		var/obj/item/clothing/ears/earmuffs/muffs = target
+		muffs.adjust(owner)
 
 /datum/action/item_action/switch_hud
 	name = "Switch HUD"

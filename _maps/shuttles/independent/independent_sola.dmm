@@ -1809,7 +1809,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/item/storage/box/ammo/a556_42,
 /obj/item/storage/box/ammo/c38,
 /obj/item/storage/box/ammo/a12g_buckshot,
 /obj/item/ammo_box/magazine/m15/empty,
@@ -1822,6 +1821,7 @@
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c38/trac{
 	max_ammo = 5
 	},
+/obj/item/storage/box/ammo/a762_40,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "yw" = (
@@ -3612,7 +3612,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "UO" = (
-/obj/machinery/grill,
+/obj/machinery/griddle,
 /obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,

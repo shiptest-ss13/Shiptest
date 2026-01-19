@@ -7,6 +7,7 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 	loot = list()
+	stat_attack = UNCONSCIOUS
 	atmos_requirements = NORMAL_ATMOS_REQS
 	faction = list(FACTION_ANTAG_FRONTIERSMEN)
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -14,7 +15,38 @@
 	r_hand = /obj/item/melee/knife/survival
 	dodging = TRUE
 
+/mob/living/simple_animal/hostile/human/frontier/civilian
+	name = "Frontiersman Doorguard"
+	desc = "A new recruit to the brutal Frontiersman terrorist fleet. This one is too new or stupid to even be assigned a knife."
+	minimum_distance = 10
+	retreat_distance = 10
+	obj_damage = 0
+	r_hand = null
+	environment_smash = ENVIRONMENT_SMASH_NONE
+
+/mob/living/simple_animal/hostile/human/frontier/civilian/Aggro()
+	..()
+	say("GUARDS!!")
+
 /mob/living/simple_animal/hostile/human/frontier/internals
+	icon_state = "frontiersmanmelee_mask"
+	atmos_requirements = IMMUNE_ATMOS_REQS
+	minbodytemp = 0
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/internals
+
+/mob/living/simple_animal/hostile/human/frontier/axe
+	name = "Frontiersman Chopper"
+	desc = "A member of the brutal Frontiersman terrorist fleet! This one clutches bulky combat axe, riveting the idea of turning your innards to gore."
+	icon_state = "frontiersmanmelee"
+	icon = 'icons/mob/simple_frontiersman.dmi'
+	speak_chance = 0
+	melee_damage_lower = 25
+	melee_damage_upper = 25
+	armour_penetration = 10
+	loot = list()
+	r_hand = /obj/item/melee/boarding_axe
+
+/mob/living/simple_animal/hostile/human/frontier/axe/internals
 	icon_state = "frontiersmanmelee_mask"
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
@@ -217,9 +249,14 @@
 	r_hand = /obj/item/gun/ballistic/shotgun/automatic/slammer
 	armor_base = /obj/item/clothing/suit/armor/vest/frontier
 
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals
+	atmos_requirements = IMMUNE_ATMOS_REQS
+	minbodytemp = 0
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/internals
+
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter
-	name = "Frontiersmen Runner"
-	desc = "A quick-footed member of the brutal Frontiersmen terrorist fleet! This one wields a boxy submachine gun in one hand."
+	name = "Frontiersman Runner"
+	desc = "A quick-footed member of the brutal Frontiersman terrorist fleet! This one wields a boxy submachine gun in one hand."
 	rapid = 8
 	rapid_fire_delay = 1
 	retreat_distance = 4
@@ -227,6 +264,12 @@
 	projectilesound = 'sound/weapons/gun/smg/spitter.ogg'
 	casingtype = /obj/item/ammo_casing/c9mm
 	r_hand = /obj/item/gun/ballistic/automatic/pistol/spitter
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter/internals
+	icon_state = "frontiersmanrangedelite_mask"
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/internals
+	atmos_requirements = IMMUNE_ATMOS_REQS
+	minbodytemp = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/spitter/neutered
 	weapon_drop_chance = 0
@@ -246,7 +289,7 @@
 	set_light(4)
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/space/spitter
-	name = "Frontiersmen Runner"
+	name = "Frontiersman Runner"
 	desc = "A quick-footed member of the brutal Frontiersmen terrorist fleet! This one clutches a boxy submachine gun with the bulky gauntlets of their grey hardsuit."
 	rapid = 8
 	rapid_fire_delay = 1
@@ -258,12 +301,6 @@
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/space/spitter/neutered
 	weapon_drop_chance = 0
-
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals
-	icon_state = "frontiersmanrangedelite_mask"
-	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/internals
-	atmos_requirements = IMMUNE_ATMOS_REQS
-	minbodytemp = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered
 	weapon_drop_chance = 0
@@ -418,7 +455,7 @@
 	casingtype = /obj/item/ammo_casing/shotgun
 	r_hand = /obj/item/gun/ballistic/automatic/hmg/shredder
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy
-	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+	armor_base = /obj/item/clothing/suit/armor/vest/marine/frontier
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/space
 	icon_state = "frontiersmanranged_mask"

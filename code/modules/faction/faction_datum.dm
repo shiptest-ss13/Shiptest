@@ -20,6 +20,8 @@
 	var/check_prefix = TRUE
 	/// Sorting order for factions
 	var/order = FACTION_SORT_DEFAULT
+	/// Whether or not this faction is hidden from the autowiki ships table (see: Unknown, used for ruins but has no ships)
+	var/wiki_hidden = FALSE
 
 /datum/faction/New()
 	if(!short_name)
@@ -104,6 +106,7 @@
 	name = FACTION_CLIP
 	short_name = "CLIP"
 	parent_faction = /datum/faction/clip
+	official_language = /datum/language/zohil_kalixcian
 	prefixes = PREFIX_CLIP
 	color = "#3F90DF"
 
@@ -165,3 +168,4 @@
 	color = "#504c4c"
 	check_prefix = FALSE
 	order = FACTION_SORT_ASPAWN
+	wiki_hidden = TRUE

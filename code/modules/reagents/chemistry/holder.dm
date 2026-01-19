@@ -211,26 +211,25 @@
  * * preserve_data - if preserve_data=0, the reagents data will be lost. Usefull if you use data for some strange stuff and don't want it to be transferred.
  * * no_react - passed through to [/datum/reagents/proc/add_reagent]
  * * mob/transfered_by - used for logging
- * * remove_blacklisted - skips transferring of reagents with can_synth = FALSE
- * * method - passed through to [/datum/reagents/proc/react_single] and [/datum/reagent/proc/on_transfer]
- * * show_message - passed through to [/datum/reagents/proc/react_single]
+ * * remove_blacklisted - skips transferring of reagents without REAGENT_CAN_BE_SYNTHESIZED in chemical_flags
+ * * methods - passed through to [/datum/reagents/proc/expose_single] and [/datum/reagent/proc/on_transfer]
+ * * show_message - passed through to [/datum/reagents/proc/expose_single]
  * * round_robin - if round_robin=TRUE, so transfer 5 from 15 water, 15 sugar and 15 plasma becomes 10, 15, 15 instead of 13.3333, 13.3333 13.3333. Good if you hate floating point errors
  * * ignore_stomach - when using methods INGEST will not use the stomach as the target
  */
-/datum/reagents/proc/trans_to(obj/target, amount = 1, multiplier = 1, preserve_data = TRUE, no_react = FALSE, mob/transfered_by, remove_blacklisted = FALSE, method = null, show_message = TRUE, round_robin = FALSE, ignore_stomach = FALSE)
+/datum/reagents/proc/trans_to(obj/target, amount = 1, multiplier = 1, preserve_data = TRUE, no_react = FALSE, mob/transfered_by, remove_blacklisted = FALSE, methods = NONE, show_message = TRUE, round_robin = FALSE, ignore_stomach = FALSE)
 	var/list/cached_reagents = reagent_list
 	if(!target || !total_volume)
 		return
 	if(amount < 0)
 		return
-
 	var/atom/target_atom
 	var/datum/reagents/R
 	if(istype(target, /datum/reagents))
 		R = target
 		target_atom = R.my_atom
 	else
-		if(!ignore_stomach && (method & INGEST) && istype(target, /mob/living/carbon))
+		if(!ignore_stomach && (methods & INGEST) && istype(target, /mob/living/carbon))
 			var/mob/living/carbon/eater = target
 			var/obj/item/organ/stomach/belly = eater.getorganslot(ORGAN_SLOT_STOMACH)
 			if(!belly)
@@ -243,56 +242,63 @@
 		else
 			R = target.reagents
 			target_atom = target
-
 	amount = min(min(amount, src.total_volume), R.maximum_volume-R.total_volume)
 	var/trans_data = null
 	var/transfer_log = list()
+	var/r_to_send = list()	// Validated list of reagents to be exposed
+	var/reagents_to_remove = list()
 	if(!round_robin)
 		var/part = amount / src.total_volume
-		for(var/reagent in cached_reagents)
-			var/datum/reagent/T = reagent
-			if(remove_blacklisted && !T.can_synth)
+		for(var/datum/reagent/reagent as anything in cached_reagents)
+			if(remove_blacklisted && !(reagent.can_synth))
 				continue
-			var/transfer_amount = T.volume * part
+			var/transfer_amount = reagent.volume * part
 			if(preserve_data)
-				trans_data = copy_data(T)
-			R.add_reagent(T.type, transfer_amount * multiplier, trans_data, chem_temp, no_react = 1) //we only handle reaction after every reagent has been transfered.
-			if(method)
-				if(istype(target_atom, /obj/item/organ/stomach))
-					R.expose_single(T, target, method, part, show_message)
-				else
-					R.expose_single(T, target_atom, method, part, show_message)
-				T.on_transfer(target_atom, method, transfer_amount * multiplier)
-			remove_reagent(T.type, transfer_amount)
-			transfer_log[T.type] = transfer_amount
+				trans_data = copy_data(reagent)
+			if(!R.add_reagent(reagent.type, transfer_amount * multiplier, trans_data, chem_temp, no_react = TRUE)) //we only handle reaction after every reagent has been transfered.
+				continue
+			if(methods)
+				r_to_send += reagent
+			reagents_to_remove += reagent
+
+		if(istype(target_atom, /obj/item/organ))
+			R.expose_multiple(r_to_send, target, methods, part, show_message)
+		else
+			R.expose_multiple(r_to_send, target_atom, methods, part, show_message)
+
+		for(var/datum/reagent/reagent as anything in reagents_to_remove)
+			var/transfer_amount = reagent.volume * part
+			remove_reagent(reagent.type, transfer_amount)
+			var/list/reagent_qualities = list(REAGENT_TRANSFER_AMOUNT = transfer_amount)
+			transfer_log[reagent.type] = reagent_qualities
+
 	else
 		var/to_transfer = amount
-		for(var/reagent in cached_reagents)
+		for(var/datum/reagent/reagent as anything in cached_reagents)
 			if(!to_transfer)
 				break
-			var/datum/reagent/T = reagent
-			if(remove_blacklisted && !T.can_synth)
+			if(remove_blacklisted && !(reagent.can_synth))
 				continue
 			if(preserve_data)
-				trans_data = copy_data(T)
+				trans_data = copy_data(reagent)
 			var/transfer_amount = amount
-			if(amount > T.volume)
-				transfer_amount = T.volume
-			R.add_reagent(T.type, transfer_amount * multiplier, trans_data, chem_temp, no_react = 1)
+			if(amount > reagent.volume)
+				transfer_amount = reagent.volume
+			if(!R.add_reagent(reagent.type, transfer_amount * multiplier, trans_data, chem_temp, no_react = TRUE)) //we only handle reaction after every reagent has been transfered.
+				continue
 			to_transfer = max(to_transfer - transfer_amount , 0)
-			if(method)
-				if(istype(target_atom, /obj/item/organ/stomach))
-					R.expose_single(T, target, method, transfer_amount, show_message)
+			if(methods)
+				if(istype(target_atom, /obj/item/organ))
+					R.expose_single(reagent, target, methods, transfer_amount, show_message)
 				else
-					R.expose_single(T, target_atom, method, transfer_amount, show_message)
-				T.on_transfer(target_atom, method, transfer_amount * multiplier)
-			remove_reagent(T.type, transfer_amount)
-			transfer_log[T.type] = transfer_amount
-
+					R.expose_single(reagent, target_atom, methods, transfer_amount, show_message)
+				reagent.on_transfer(target_atom, methods, transfer_amount * multiplier)
+			remove_reagent(reagent.type, transfer_amount)
+			var/list/reagent_qualities = list(REAGENT_TRANSFER_AMOUNT = transfer_amount)
+			transfer_log[reagent.type] = reagent_qualities
 	if(transfered_by && target_atom)
 		target_atom.add_hiddenprint(transfered_by) //log prints so admins can figure out who touched it last.
 		log_combat(transfered_by, target_atom, "transferred reagents ([log_list(transfer_log)]) from [my_atom] to")
-
 	update_total()
 	R.update_total()
 	if(!no_react)
@@ -331,6 +337,22 @@
 	R.handle_reactions()
 	src.handle_reactions()
 	return amount
+
+///Multiplies the reagents inside this holder by a specific amount
+/datum/reagents/proc/multiply_reagents(multiplier=1)
+	var/list/cached_reagents = reagent_list
+	if(!total_volume)
+		return
+	var/change = (multiplier - 1) //Get the % change
+	for(var/reagent in cached_reagents)
+		var/datum/reagent/T = reagent
+		if(change > 0)
+			add_reagent(T.type, T.volume * change)
+		else
+			remove_reagent(T.type, abs(T.volume * change)) //absolute value to prevent a double negative situation (removing -50% would be adding 50%)
+
+	update_total()
+	handle_reactions()
 
 /// Transfer a specific reagent id to the target object
 /datum/reagents/proc/trans_id_to(obj/target, reagent, amount=1, preserve_data=1)//Not sure why this proc didn't exist before. It does now! /N
@@ -604,18 +626,11 @@
 	for(var/_reagent in cached_reagents)
 		var/datum/reagent/R = _reagent
 		if(R.type == reagent)
-			var/mob/living/mob_consumer
-			if (isliving(my_atom))
-				mob_consumer = my_atom
-			else if (istype(my_atom, /obj/item/organ))
-				var/obj/item/organ/organ = my_atom
-				mob_consumer = organ.owner
-
-			if (mob_consumer)
+			if(isliving(my_atom))
 				if(R.metabolizing)
 					R.metabolizing = FALSE
-					R.on_mob_end_metabolize(mob_consumer)
-				R.on_mob_delete(mob_consumer)
+					R.on_mob_end_metabolize(my_atom)
+				R.on_mob_delete(my_atom)
 			//Clear from relevant lists
 			addiction_list -= R
 			reagent_list -= R
@@ -632,7 +647,7 @@
 	total_volume = 0
 	for(var/reagent in cached_reagents)
 		var/datum/reagent/R = reagent
-		if(R.volume < 0.1)
+		if(R.volume < 0.05)
 			del_reagent(R.type)
 		else
 			total_volume += R.volume
@@ -672,6 +687,20 @@
 
 	return A.expose_reagents(reagents, src, method, volume_modifier, show_message)
 
+// Same as [/datum/reagents/proc/expose] but only for multiple reagents (through a list)
+/datum/reagents/proc/expose_multiple(list/r_to_expose, atom/A, methods = TOUCH, volume_modifier = 1, show_message = 1)
+	if(isnull(A))
+		return null
+
+	var/list/cached_reagents = r_to_expose
+	if(!cached_reagents.len)
+		return null
+
+	var/list/reagents = list()
+	for(var/datum/reagent/reagent as anything in cached_reagents)
+		reagents[reagent] = reagent.volume * volume_modifier
+
+	return A.expose_reagents(reagents, src, methods, volume_modifier, show_message)
 
 /// Same as [/datum/reagents/proc/expose] but only for one reagent
 /datum/reagents/proc/expose_single(datum/reagent/R, atom/A, method = TOUCH, volume_modifier = 1, show_message = TRUE)
@@ -774,11 +803,7 @@
 		R.on_new(data)
 
 	if(isliving(my_atom))
-		R.on_mob_add(my_atom) //Must occur befor it could posibly run on_mob_delete
-	else if(istype(my_atom, /obj/item/organ/stomach))
-		var/obj/item/organ/stomach/belly = my_atom
-		var/mob/living/carbon/body = belly.owner
-		R.on_mob_add(body)
+		R.on_mob_add(my_atom) //Must occur before it could posibly run on_mob_delete
 	update_total()
 	if(my_atom)
 		my_atom.on_reagent_change(ADD_REAGENT)
@@ -943,51 +968,11 @@ Needs matabolizing takes into consideration if the chemical is matabolizing when
  * Returns what this holder's reagents taste like
  *
  * Arguments:
+ * * mob/living/taster - who is doing the tasting. Some mobs can pick up specific flavours.
  * * minimum_percent - the lower the minimum percent, the more sensitive the message is.
  */
-/datum/reagents/proc/generate_taste_message(minimum_percent=15)
-	var/list/out = list()
-	var/list/tastes = list() //descriptor = strength
-	if(minimum_percent <= 100)
-		for(var/datum/reagent/R in reagent_list)
-			if(!R.taste_mult)
-				continue
-
-			if(istype(R, /datum/reagent/consumable/nutriment))
-				var/list/taste_data = R.data
-				for(var/taste in taste_data)
-					var/ratio = taste_data[taste]
-					var/amount = ratio * R.taste_mult * R.volume
-					if(taste in tastes)
-						tastes[taste] += amount
-					else
-						tastes[taste] = amount
-			else
-				var/taste_desc = R.taste_description
-				var/taste_amount = R.volume * R.taste_mult
-				if(taste_desc in tastes)
-					tastes[taste_desc] += taste_amount
-				else
-					tastes[taste_desc] = taste_amount
-		//deal with percentages
-		// TODO it would be great if we could sort these from strong to weak
-		var/total_taste = counterlist_sum(tastes)
-		if(total_taste > 0)
-			for(var/taste_desc in tastes)
-				var/percent = tastes[taste_desc]/total_taste * 100
-				if(percent < minimum_percent)
-					continue
-				var/intensity_desc = "a hint of"
-				if(percent > minimum_percent * 2 || percent == 100)
-					intensity_desc = ""
-				else if(percent > minimum_percent * 3)
-					intensity_desc = "the strong flavor of"
-				if(intensity_desc != "")
-					out += "[intensity_desc] [taste_desc]"
-				else
-					out += "[taste_desc]"
-
-	return english_list(out, "something indescribable")
+/datum/reagents/proc/generate_taste_message(mob/living/taster, minimum_percent)
+	return generate_reagents_taste_message(reagent_list, taster, minimum_percent)
 
 /// Applies heat to this holder
 /datum/reagents/proc/expose_temperature(temperature, coeff=0.02)

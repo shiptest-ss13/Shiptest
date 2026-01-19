@@ -16,6 +16,7 @@
 	throw_range = 7
 	amount_per_transfer_from_this = 10
 	volume = 60
+	custom_materials = list(/datum/material/plastic=200, /datum/material/iron=400)
 	var/can_fill_from_container = TRUE
 	var/apply_type = PATCH
 	var/apply_method = "spray" //the thick gel is sprayed and then dries into patch like film.
@@ -71,7 +72,7 @@
 	else
 		log_combat(user, M, "applied", src, reagents.log_list())
 		playsound(src, 'sound/effects/spray.ogg', 30, TRUE, -6)
-		reagents.trans_to(M, amount_per_transfer_from_this, transfered_by = user, method = apply_type)
+		reagents.trans_to(M, amount_per_transfer_from_this, transfered_by = user, methods = apply_type)
 	return
 
 /obj/item/reagent_containers/medigel/hadrakine

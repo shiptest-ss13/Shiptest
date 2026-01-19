@@ -105,17 +105,6 @@
 	},
 /turf/open/floor/suns/grid,
 /area/ship/storage)
-"bw" = (
-/obj/docking_port/stationary{
-	dheight = 1;
-	dir = 4;
-	dwidth = 25;
-	height = 30;
-	name = "Mercury Port Bow Dock";
-	width = 41
-	},
-/turf/template_noop,
-/area/template_noop)
 "bI" = (
 /obj/structure/toilet{
 	dir = 8;
@@ -283,13 +272,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
-"ek" = (
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "mercurycargo"
-	},
-/turf/open/floor/engine,
-/area/ship/cargo)
 "el" = (
 /obj/machinery/firealarm/directional/north,
 /obj/structure/cable{
@@ -470,6 +452,17 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/fore)
+"hu" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 4;
+	dwidth = 25;
+	height = 30;
+	name = "Mercury Port Bow Dock";
+	width = 41
+	},
+/turf/template_noop,
+/area/template_noop)
 "hx" = (
 /obj/structure/window/plasma/reinforced/fulltile,
 /obj/structure/grille,
@@ -695,17 +688,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
-"lj" = (
-/obj/docking_port/stationary{
-	dheight = 1;
-	disable_on_owner_ship_dock = 1;
-	dwidth = 20;
-	height = 30;
-	name = "Mercury Beam Dock";
-	width = 40
-	},
-/turf/template_noop,
-/area/template_noop)
 "lm" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -776,6 +758,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
+"mX" = (
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "mercurycargo"
+	},
+/turf/open/floor/engine,
+/area/ship/cargo)
 "nk" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/crate_shelf,
@@ -849,10 +838,12 @@
 /obj/effect/turf_decal/borderfloorwhite{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
@@ -1109,14 +1100,6 @@
 	},
 /turf/open/floor/suns/grid,
 /area/ship/bridge)
-"sg" = (
-/obj/structure/table/wood,
-/obj/item/food/toastedsandwich{
-	pixel_x = 0;
-	pixel_y = 17
-	},
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/crew/canteen)
 "st" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -1373,19 +1356,6 @@
 "vL" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm)
-"vR" = (
-/obj/effect/mapping_helpers/airlock/locked,
-/obj/machinery/door/airlock/external{
-	req_ship_access = 0
-	},
-/obj/docking_port/mobile{
-	dir = 2;
-	port_direction = 8;
-	preferred_direction = 4;
-	launch_status = 0
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/maintenance/fore)
 "wa" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521"
@@ -1405,22 +1375,22 @@
 	color = "#543C30"
 	},
 /area/ship/crew/dorm/captain)
+"wc" = (
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/external{
+	req_ship_access = 0
+	},
+/obj/docking_port/mobile{
+	dir = 2;
+	port_direction = 8;
+	preferred_direction = 4;
+	launch_status = 0
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/maintenance/fore)
 "wg" = (
-/obj/structure/closet/secure_closet/engineering_personal{
-	name = "ship engineer's personal locker";
-	populate = 0
-	},
-/obj/item/clothing/head/safety_helmet/suns,
-/obj/item/clothing/gloves/suns/yellow,
-/obj/item/clothing/under/syndicate/suns/workerjumpsuit,
-/obj/item/clothing/shoes/jackboots/suns,
-/obj/item/clothing/suit/toggle/suns/workervest,
-/obj/item/storage/pouch/engi,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 4
-	},
 /obj/machinery/newscaster/directional/west,
-/obj/item/radio/headset/alt,
+/obj/machinery/telecomms/relay/preset/suns,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "wj" = (
@@ -2181,11 +2151,11 @@
 /obj/item/clothing/gloves/suns/xo,
 /obj/item/clothing/neck/cloak/suns/xo,
 /obj/item/storage/pouch/squad,
-/obj/item/radio/headset/syndicate/alt/leader,
 /obj/item/clothing/head/suns,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/obj/item/radio/headset/syndicate/alt/suns,
 /turf/open/floor/suns/hatch/ebony,
 /area/ship/bridge)
 "Iy" = (
@@ -2391,9 +2361,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engines/port)
 "Lt" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
@@ -2446,9 +2413,33 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"Mj" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 20;
+	height = 30;
+	name = "Mercury Beam Dock";
+	width = 40
+	},
+/turf/template_noop,
+/area/template_noop)
 "Mx" = (
 /obj/effect/turf_decal/borderfloorwhite{
 	dir = 1
+	},
+/obj/structure/closet/wall/orange/directional/west{
+	name = "ship engineer's personal locker"
+	},
+/obj/item/radio/headset/alt,
+/obj/item/storage/pouch/engi,
+/obj/item/clothing/suit/toggle/suns/workervest,
+/obj/item/clothing/shoes/jackboots/suns,
+/obj/item/clothing/under/syndicate/suns/workerjumpsuit,
+/obj/item/clothing/gloves/suns/yellow,
+/obj/item/clothing/head/safety_helmet/suns,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
@@ -2703,6 +2694,14 @@
 	color = "#543C30"
 	},
 /area/ship/crew/dorm/captain)
+"Pc" = (
+/obj/structure/table/wood,
+/obj/item/food/grilled_cheese_sandwich{
+	pixel_x = 0;
+	pixel_y = 17
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/crew/canteen)
 "Pr" = (
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/structure/window/plasma/reinforced{
@@ -2780,7 +2779,6 @@
 /obj/item/storage/box/ammo/ferroslug,
 /obj/item/storage/pouch/squad,
 /obj/item/clothing/gloves/suns/captain,
-/obj/item/radio/headset/syndicate/alt/captain,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
@@ -2789,6 +2787,7 @@
 /obj/item/clothing/shoes/combat/suns,
 /obj/item/clothing/suit/armor/vest/suns/captain,
 /obj/item/clothing/head/suns/captain,
+/obj/item/radio/headset/syndicate/alt/suns/command,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm/captain)
 "Qw" = (
@@ -3795,8 +3794,8 @@ dt
 xZ
 "}
 (19,1,1) = {"
-lj
-vR
+Mj
+wc
 XF
 YD
 dB
@@ -3811,7 +3810,7 @@ td
 JM
 jo
 Gi
-sg
+Pc
 Nh
 "}
 (20,1,1) = {"
@@ -4000,7 +3999,7 @@ xr
 xr
 Yu
 GB
-ek
+mX
 OS
 Ek
 xr
@@ -4020,7 +4019,7 @@ xr
 xr
 xr
 xr
-bw
+hu
 xr
 xr
 xr

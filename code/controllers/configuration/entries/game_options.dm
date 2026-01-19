@@ -131,7 +131,7 @@
 	value_mode = VALUE_MODE_FLAG
 
 /datum/config_entry/number/max_loadout_items	//maximum number of items that can be in a player's loadout
-	config_entry_value = 10
+	config_entry_value = 20
 	min_val = 0
 
 /datum/config_entry/flag/no_summon_guns	//No
@@ -379,7 +379,7 @@
 	config_entry_value = 150
 
 /datum/config_entry/number/max_overmap_dynamic_events
-	config_entry_value = 10
+	config_entry_value = 25
 
 /datum/config_entry/string/overmap_generator_type
 	config_entry_value = "solar_system"
