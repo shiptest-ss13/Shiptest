@@ -79,6 +79,8 @@
 #define PLASMA_MINIMUM_BURN_TEMPERATURE (100+T0C)
 #define PLASMA_UPPER_TEMPERATURE (1370+T0C)
 #define PLASMA_OXYGEN_FULLBURN 10
+#define MONOXIDE_MIN_BURN_CONCENTRATION 0.12 // 12% fuel concentration required
+#define MONOXIDE_BURN_RATE 0.2
 
 //COLD FIRE (this is used only for the freon-o2 reaction, there is no fire still)
 #define COLD_FIRE_MAXIMUM_TEMPERATURE_TO_SPREAD 263 //fire will spread if the temperature is -10 °C
