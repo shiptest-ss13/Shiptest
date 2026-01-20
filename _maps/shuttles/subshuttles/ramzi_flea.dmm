@@ -49,7 +49,6 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/turretid/ship{
-	pixel_x = 0;
 	pixel_y = 24;
 	id = "roachgun";
 	req_access = null
@@ -196,19 +195,16 @@
 	mag_count = 3
 	},
 /obj/item/storage/belt/military/assault{
-	pixel_x = 0;
 	pixel_y = -10
 	},
 /obj/item/clothing/shoes/workboots{
-	pixel_x = 0;
 	pixel_y = -9
 	},
 /obj/item/storage/toolbox/syndicate{
-	pixel_x = 0;
 	pixel_y = 12
 	},
 /obj/item/clothing/gloves/combat,
-/obj/item/radio/headset/syndicate/alt/leader,
+/obj/item/radio/headset/pirate/alt/captain,
 /obj/item/megaphone,
 /obj/item/clothing/under/syndicate/ramzi/officer,
 /obj/item/clothing/head/ramzi/beret,
@@ -412,8 +408,7 @@
 	icon_state = "4-8"
 	},
 /obj/item/radio/intercom/wideband/directional/south{
-	pixel_x = 7;
-	pixel_y = -26
+	pixel_x = 7
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6
