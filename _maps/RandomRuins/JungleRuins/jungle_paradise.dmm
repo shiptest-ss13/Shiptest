@@ -379,12 +379,6 @@
 	},
 /turf/open/floor/wood,
 /area/overmap_encounter/planetoid/cave/explored)
-"cU" = (
-/obj/structure/lattice/clockwork{
-	icon_state = "lattice-5"
-	},
-/turf/open/water/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
 "cX" = (
 /obj/structure/rack,
 /obj/item/crowbar,
@@ -655,10 +649,6 @@
 	},
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/cave/explored)
-"fd" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/asteroid/waterplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "fh" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/sand,
@@ -785,7 +775,7 @@
 /obj/structure/geyser/random,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/asteroid/waterplanet,
+/turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "gc" = (
 /obj/item/stack/rods{
@@ -3645,12 +3635,6 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
-"zM" = (
-/obj/structure/lattice/clockwork{
-	icon_state = "lattice-137"
-	},
-/turf/open/water/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
 "zN" = (
 /obj/effect/turf_decal/sand,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4047,7 +4031,7 @@
 "Dh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/greenglow,
-/turf/open/floor/plating/asteroid/waterplanet,
+/turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "Dl" = (
 /obj/machinery/light/directional/west,
@@ -4212,12 +4196,6 @@
 /obj/structure/closet/crate/solarpanel_small,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/cargo)
-"Ep" = (
-/obj/structure/lattice/clockwork{
-	icon_state = "lattice-10"
-	},
-/turf/open/water/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
 "Eq" = (
 /obj/structure/flora/rock/jungle,
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
@@ -4459,12 +4437,6 @@
 "FI" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium/red/brig,
-/area/overmap_encounter/planetoid/cave/explored)
-"FQ" = (
-/obj/structure/lattice/clockwork{
-	icon_state = "lattice-3"
-	},
-/turf/open/water/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "FT" = (
 /obj/structure/flora/ausbushes/stalkybush{
@@ -5420,9 +5392,6 @@
 	},
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
-"Ni" = (
-/turf/open/floor/plating/ashplanet/rocky,
-/area/overmap_encounter/planetoid/cave/explored)
 "Nj" = (
 /obj/machinery/telecomms/server/presets,
 /obj/effect/turf_decal/techfloor{
@@ -5892,7 +5861,7 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "Ri" = (
 /obj/machinery/light/directional/south,
-/turf/open/floor/plating/ashplanet/rocky,
+/turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/cave/explored)
 "Rl" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6050,16 +6019,6 @@
 	},
 /turf/open/water/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
-"Sx" = (
-/obj/structure/lattice/clockwork{
-	icon_state = "lattice-12"
-	},
-/turf/open/water/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
-"Sy" = (
-/obj/machinery/anomalous_crystal/helpers,
-/turf/open/water/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
 "SB" = (
 /obj/machinery/conveyor{
 	dir = 8;
@@ -6423,7 +6382,7 @@
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/asteroid/waterplanet,
+/turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "Vw" = (
 /obj/structure/flora/tree/jungle/small{
@@ -7061,12 +7020,6 @@
 	},
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
-"ZI" = (
-/obj/structure/lattice/clockwork{
-	icon_state = "lattice-6"
-	},
-/turf/open/water/jungle,
-/area/overmap_encounter/planetoid/cave/explored)
 "ZO" = (
 /obj/structure/flora/rock/pile/largejungle{
 	pixel_x = -33;
@@ -10452,9 +10405,9 @@ Iw
 Iw
 kt
 kt
-ZI
-FQ
-cU
+eC
+eC
+eC
 eC
 eC
 eC
@@ -10520,9 +10473,9 @@ Iw
 Dh
 eC
 UO
-Sx
-Sy
-Sx
+eC
+eC
+eC
 eC
 eC
 eC
@@ -10585,15 +10538,15 @@ Iw
 Iw
 Iw
 Iw
-fd
+eJ
 eC
 eC
-Ep
-FQ
-zM
+eC
+eC
+eC
 Jt
 eC
-Rp
+pL
 Iw
 Iw
 Iw
@@ -10660,8 +10613,8 @@ fm
 eC
 Fw
 eC
-Rp
-Rp
+pL
+pL
 Iw
 Iw
 Iw
@@ -10721,14 +10674,14 @@ Iw
 Iw
 Iw
 Iw
-fd
-Rp
+eJ
+pL
 eC
 eC
 eC
 eC
 eC
-Rp
+pL
 Iw
 Iw
 Iw
@@ -10789,14 +10742,14 @@ Iw
 Iw
 Iw
 Iw
-fd
+eJ
 Vs
 qm
 eC
-Rp
-Rp
-Rp
-Rp
+pL
+pL
+pL
+pL
 Iw
 Iw
 Iw
@@ -10857,11 +10810,11 @@ Iw
 Iw
 Iw
 Iw
-Rp
+pL
 XV
 eU
 QY
-fd
+eJ
 eU
 GW
 Cg
@@ -10929,7 +10882,7 @@ MG
 eU
 pL
 GW
-fd
+eJ
 pL
 uU
 CJ
@@ -11283,7 +11236,7 @@ eJ
 eJ
 eU
 kt
-Ni
+kt
 Iw
 Iw
 Iw
@@ -11350,8 +11303,8 @@ eU
 kt
 kt
 kt
-Ni
-Ni
+kt
+kt
 Iw
 Iw
 Iw
@@ -11411,14 +11364,14 @@ Iw
 ki
 pL
 Iw
-Ni
-Ni
-Ni
-Ni
-Ni
-Ni
-Ni
-Ni
+kt
+kt
+kt
+kt
+kt
+kt
+kt
+kt
 Ri
 DI
 Iw
@@ -11481,13 +11434,13 @@ Iw
 Iw
 Iw
 Iw
-Ni
-Ni
-Ni
+kt
+kt
+kt
 Iw
-Ni
-Ni
-Ni
+kt
+kt
+kt
 Iw
 Iw
 Iw
@@ -11554,7 +11507,7 @@ Iw
 Iw
 Iw
 Iw
-Ni
+kt
 Iw
 Iw
 Iw
