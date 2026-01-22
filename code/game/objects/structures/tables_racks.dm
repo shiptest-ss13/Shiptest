@@ -559,23 +559,24 @@
 	else
 		return span_notice("The top cover is firmly <b>welded</b> on.")
 
-/obj/structure/table/reinforced/attackby(obj/item/W, mob/user, params)
-	if(W.tool_behaviour == TOOL_WELDER && user.a_intent != INTENT_HELP)
-		if(!W.tool_start_check(user, src, amount=0))
-			return
-
+/obj/structure/table/reinforced/welder_act(mob/living/user, obj/item/tool, list/modifiers)
+	. = ..()
+	if(. & COMPONENT_BLOCK_TOOL_ATTACK)
+		return
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+		if(!tool.tool_start_check(user, src, amount = 0))
+			return COMPONENT_BLOCK_TOOL_ATTACK
 		if(deconstruction_ready)
 			to_chat(user, span_notice("You start strengthening the reinforced table..."))
-			if (W.use_tool(src, user, 50, volume=50))
+			if(tool.use_tool(src, user, 5 SECONDS, volume = 50))
 				to_chat(user, span_notice("You strengthen the table."))
 				deconstruction_ready = 0
 		else
 			to_chat(user, span_notice("You start weakening the reinforced table..."))
-			if (W.use_tool(src, user, 50, volume=50))
+			if(tool.use_tool(src, user, 5 SECONDS, volume = 50))
 				to_chat(user, span_notice("You weaken the table."))
 				deconstruction_ready = 1
-	else
-		. = ..()
+		return COMPONENT_BLOCK_TOOL_ATTACK
 
 /obj/structure/table/bronze
 	name = "bronze table"
