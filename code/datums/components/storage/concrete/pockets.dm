@@ -2,6 +2,7 @@
 	max_items = 2
 	max_w_class = WEIGHT_CLASS_SMALL
 	max_combined_w_class = 50
+	alt_click_open = FALSE // alt-click has special interactions on a lot of clothing items and shouldn't be canceled by opening storage instead
 	use_sound = null
 
 /datum/component/storage/concrete/pockets/handle_item_insertion(obj/item/I, prevent_warning, mob/user)
