@@ -61,16 +61,13 @@
 	else
 		mode() // Activate held item
 
-/mob/living/carbon/attackby(obj/item/I, mob/user, params)
-	if(!all_wounds || !(user.a_intent == INTENT_HELP || user == src))
-		return ..()
-
-	for(var/i in shuffle(all_wounds))
-		var/datum/wound/W = i
-		if(W.try_treating(I, user))
-			return 1
-
-	return ..()
+/mob/living/carbon/handle_tool_treatment(obj/item/tool, mob/living/user, list/modifiers)
+	. = ..()
+	if(. || !all_wounds || !(user.a_intent == INTENT_HELP || user == src))
+		return
+	for(var/datum/wound/iterated_wound as anything in shuffle(all_wounds))
+		if(iterated_wound.try_treating(tool, user))
+			return TRUE
 
 /mob/living/carbon/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()

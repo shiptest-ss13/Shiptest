@@ -137,23 +137,31 @@
 /obj/attackby(obj/item/I, mob/living/user, params)
 	return ..() || ((obj_flags & CAN_BE_HIT) && I.attack_obj(src, user))
 
-/mob/living/attackby(obj/item/I, mob/living/user, params)
+/mob/living/attackby(obj/item/weapon, mob/living/user, params)
 	if(..())
 		return TRUE
-	if(user.a_intent == INTENT_HELP || user.a_intent == INTENT_DISARM)
-		for(var/datum/surgery/S in surgeries)
-			if(body_position != LYING_DOWN && S.lying_required)
-				continue
-			if(!S.self_operable && user == src)
-				continue
-			if(S.next_step(user, params2list(params)))
-				return TRUE
-	if((I.item_flags & SURGICAL_TOOL) && user.a_intent == INTENT_HELP)
-		if(attempt_initiate_surgery(I, src, user))
-			return TRUE
+
+	if(handle_tool_treatment(weapon, user, params2list(params)))
+		return TRUE
+
 	//This should really be in attack but 2 much logic doesnt call parent
-	user.changeNext_move(I.attack_cooldown)
-	return I.attack(src, user, params)
+	user.changeNext_move(weapon.attack_cooldown)
+	return weapon.attack(src, user, params)
+
+/// This handles treating wounds and performing surgeries with items. It is also a hack to avoid refactoring the entire attack chain.
+/mob/living/proc/handle_tool_treatment(obj/item/tool, mob/living/user, list/modifiers)
+	if(user.a_intent == INTENT_HELP)
+		for(var/datum/surgery/active_surgery in surgeries)
+			if(body_position != LYING_DOWN && active_surgery.lying_required)
+				continue
+			if(!active_surgery.self_operable && user == src)
+				continue
+			if(active_surgery.next_step(user, modifiers))
+				return TRUE
+	if((tool.item_flags & SURGICAL_TOOL) && user.a_intent == INTENT_HELP)
+		if(attempt_initiate_surgery(tool, src, user))
+			return TRUE
+	return FALSE
 
 /mob/living/attack_hand(mob/living/user, list/modifiers)
 	if(..())
