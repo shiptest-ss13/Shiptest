@@ -444,7 +444,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	// Right-click is now the standard for opening storage items, and shouldn't try to pickup/unequip items without storage.
 	if(LAZYACCESS(modifiers, RIGHT_CLICK))
-		to_chat(user, span_warning("[src] has no room to store anything!"))
 		return
 
 	//check if the item is inside another item's storage
