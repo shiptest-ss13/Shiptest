@@ -239,24 +239,21 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "cV" = (
-/obj/item/clothing/head/helmet/space/syndicate/generic{
-	pixel_y = 0
-	},
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/effect/turf_decal/corner/opaque/yellow/mono,
 /obj/structure/railing/thin{
 	dir = 4
 	},
-/obj/item/clothing/suit/space/syndicate/generic/grey,
-/obj/item/clothing/mask/gas,
 /obj/structure/railing/thin{
 	dir = 8
 	},
 /obj/item/radio/intercom/directional/north,
-/obj/item/tank/internals/oxygen/yellow{
-	pixel_x = -3;
-	pixel_y = -7
+/obj/item/tank/jetpack/oxygen,
+/obj/item/clothing/suit/space/syndicate/generic/grey,
+/obj/item/clothing/head/helmet/space/syndicate/generic{
+	pixel_y = 0
 	},
+/obj/item/clothing/mask/gas,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/equip)
 "dh" = (
@@ -625,16 +622,18 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/toilet)
 "ht" = (
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/structure/grille,
-/obj/machinery/door/firedoor/window{
-	pixel_y = 0
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "dwayne_equipment";
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/port)
 "hB" = (
 /obj/effect/turf_decal/siding/thinplating{
@@ -1910,13 +1909,14 @@
 /area/ship/bridge)
 "ro" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/clothing/suit/space/engineer,
-/obj/item/clothing/head/helmet/space/light/engineer,
-/obj/item/clothing/mask/gas,
 /obj/structure/sign/warning/enginesafety{
 	pixel_x = 32;
 	pixel_y = 0
 	},
+/obj/item/tank/jetpack/oxygen,
+/obj/item/clothing/suit/space/engineer,
+/obj/item/clothing/head/helmet/space/light/engineer,
+/obj/item/clothing/mask/gas,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "rw" = (
@@ -2048,10 +2048,10 @@
 	layer = 2.030;
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/white{
+/obj/effect/turf_decal/trimline/opaque/yellow/warning{
 	dir = 1
 	},
-/obj/effect/turf_decal/trimline/opaque/yellow/warning{
+/obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -2283,8 +2283,8 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/corner{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/white,
 /obj/effect/turf_decal/trimline/opaque/yellow/warning,
+/obj/effect/turf_decal/siding/white,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/equip)
 "uq" = (
@@ -3055,9 +3055,9 @@
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/fragile,
-/obj/item/clothing/head/helmet/space/fragile,
 /obj/item/clothing/mask/breath,
+/obj/item/clothing/suit/space/orange,
+/obj/item/clothing/head/helmet/space/orange,
 /obj/item/tank/internals/emergency_oxygen,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
@@ -4111,18 +4111,15 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/port)
 "Ln" = (
-/obj/item/clothing/suit/space/hardsuit/mining/independent,
-/obj/item/clothing/mask/gas/explorer,
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/effect/turf_decal/corner/opaque/yellow/mono,
 /obj/structure/railing/thin{
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/east,
-/obj/item/tank/internals/oxygen/yellow{
-	pixel_x = -3;
-	pixel_y = -7
-	},
+/obj/item/tank/jetpack/oxygen,
+/obj/item/clothing/suit/space/hardsuit/mining/independent,
+/obj/item/clothing/mask/gas/explorer,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/equip)
 "Lo" = (
@@ -4823,8 +4820,6 @@
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "QI" = (
-/obj/item/clothing/suit/space/hardsuit/mining/independent,
-/obj/item/clothing/mask/gas/explorer,
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/effect/turf_decal/corner/opaque/yellow/mono,
 /obj/machinery/light/directional/north,
@@ -4834,10 +4829,9 @@
 /obj/structure/railing/thin{
 	dir = 4
 	},
-/obj/item/tank/internals/oxygen/yellow{
-	pixel_x = -3;
-	pixel_y = -7
-	},
+/obj/item/tank/jetpack/oxygen,
+/obj/item/clothing/suit/space/hardsuit/mining/independent,
+/obj/item/clothing/mask/gas/explorer,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage/equip)
 "QK" = (
@@ -5318,6 +5312,13 @@
 	layer = 2.038
 	},
 /obj/effect/turf_decal/box,
+/obj/machinery/button/door{
+	pixel_y = 10;
+	dir = 4;
+	id = "dwayne_equipment";
+	name = "Equipment Room Shutter Control";
+	pixel_x = -21
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/port)
 "VZ" = (
