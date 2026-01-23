@@ -233,6 +233,7 @@
 	icon_state = "brain-x"
 
 /obj/item/organ/brain/mmi_holder //MMI brain for IPC
+	name = "man-machine interface"
 	zone = BODY_ZONE_CHEST
 	status = ORGAN_ROBOTIC
 	organ_flags = ORGAN_SYNTHETIC
@@ -279,7 +280,7 @@
 	brainmob.forceMove(stored_mmi) //moves the brainmob to the stored mmi
 	stored_mmi.set_brainmob(brainmob) //sets the mmi's brainmob to the current one
 	brainmob.container = stored_mmi
-	stored_mmi.brain = L // for the mmi icon
+	stored_mmi.brain = src // for the mmi icon
 	stored_mmi.name = "\improper Man-Machine Interface: [L.real_name]"
 	stored_mmi.icon_state = "mmi_brain" //renames mmi and switches it to the right icon
 	stored_mmi.update_overlays()

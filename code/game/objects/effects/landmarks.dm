@@ -193,8 +193,14 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "AI"
 	icon_state = "AI"
 	delete_after_roundstart = FALSE
+	/// The linked shuttle port, this is used to check whether a joining AI should be able to spawn here.
+	var/obj/docking_port/mobile/linked_port
 	var/primary_ai = TRUE
 	var/latejoin_active = TRUE
+
+/obj/effect/landmark/start/ai/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	. = ..()
+	linked_port = port
 
 /obj/effect/landmark/start/ai/after_round_start()
 	if(latejoin_active && !used)

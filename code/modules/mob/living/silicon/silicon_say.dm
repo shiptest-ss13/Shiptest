@@ -24,7 +24,7 @@
 			to_chat(M, span_binarysay("[link] [rendered]"))
 
 /mob/living/silicon/binarycheck()
-	return 1
+	return TRUE
 
 /mob/living/silicon/lingcheck()
 	return 0 //Borged or AI'd lings can't speak on the ling channel.

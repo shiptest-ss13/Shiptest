@@ -79,7 +79,7 @@
 	return FALSE
 
 //Used for a special check of whether to allow a client to latejoin as this job.
-/datum/job/proc/special_check_latejoin(client/C)
+/datum/job/proc/special_check_latejoin(datum/overmap/ship/controlled/ship, client/C)
 	return TRUE
 
 //Gives the player the stuff he should have with his rank

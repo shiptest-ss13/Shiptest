@@ -284,7 +284,7 @@
 		return JOB_UNAVAILABLE_ACCOUNTAGE
 	if(check_playtime && !ship.source_template.has_job_playtime(client, job))
 		return JOB_UNAVAILABLE_PLAYTIME
-	if(latejoin && !job.special_check_latejoin(client))
+	if(latejoin && !job.special_check_latejoin(ship, client))
 		return JOB_UNAVAILABLE_GENERIC
 	return JOB_AVAILABLE
 
