@@ -210,6 +210,16 @@
 	crate_type = /obj/structure/closet/crate/science
 	no_bundle = TRUE
 
+/datum/supply_pack/machinery/remote_control
+	name = "Remote Uplink Positronic Frame Controller Kit"
+	desc = "Contains a remote controller for humanoid robotic frames."
+	cost = 2000
+	contains = list(/obj/item/organ/brain/remote_control)
+	crate_name = "remote controller crate"
+	crate_type = /obj/structure/closet/crate/science
+	faction = /datum/faction/nt
+	faction_discount = 75
+
 /*
 		Miscellaneous machines
 */

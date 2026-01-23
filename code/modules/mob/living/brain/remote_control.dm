@@ -1,7 +1,7 @@
 #define CONTROL_LOSS_TRAIT "control_loss"
 
 /obj/item/organ/brain/remote_control
-	name = "Remote Frame Controller"
+	name = "Remote Uplink Positronic Frame Controller"
 	desc = "A remote controller for humanoid robotic frames. It can be linked to a stationary mainframe unit."
 	icon = 'icons/obj/module.dmi'
 	icon_state = "boris"
@@ -26,7 +26,7 @@
 	else
 		. += span_notice("It is not linked to an AI!")
 
-/obj/item/organ/brain/remote_control/Insert(mob/living/carbon/new_owner, special, no_id_transfer)
+/obj/item/organ/brain/remote_control/Insert(mob/living/carbon/new_owner, special, drop_if_replaced = TRUE, no_id_transfer = FALSE)
 	. = ..()
 	var/mob/living/silicon/ai/linked_ai = linked_ai_ref?.resolve()
 	if(linked_ai)
@@ -70,7 +70,7 @@
 		linked_ai_ref = WEAKREF(new_ai)
 		if(owner)
 			link_frame(owner, new_ai)
-		RegisterSignal(new_ai, list(COMSIG_QDELETING, COMSIG_AI_DECONSTRUCT_CORE), PROC_REF(handle_core_loss))
+		RegisterSignals(new_ai, list(COMSIG_QDELETING, COMSIG_AI_DECONSTRUCT_CORE), PROC_REF(handle_core_loss))
 	update_control_status()
 
 /// Handles the linked AI being deconstructed or deleted.
@@ -142,6 +142,7 @@
 	desc = "Stop controlling your remote frame and resume normal core operations."
 	icon_icon = 'icons/mob/actions/actions_AI.dmi'
 	button_icon_state = "ai_core"
+	check_flags = NONE
 
 /datum/action/item_action/organ_action/undeploy_frame/Trigger()
 	. = ..()
@@ -155,7 +156,7 @@
 	name = "Connect to frame"
 	/// The frame linked to this action.
 	var/mob/living/carbon/frame
-	/// Static list of overlays to copy onto the button icon.
+	/// Static list of overlays to copy from the frame onto the button icon.
 	var/static/list/overlays_to_copy = list(BODY_BEHIND_LAYER, BODYPARTS_LOW_LAYER, BODYPARTS_LAYER, BODY_ADJ_LAYER, BODY_LAYER, FRONT_MUTATIONS_LAYER, BODYPARTS_HIGH_LAYER, BODY_FRONT_LAYER)
 
 /datum/action/innate/deploy_frame/proc/set_frame(mob/living/carbon/new_frame)
