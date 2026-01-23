@@ -2,7 +2,7 @@
 
 /obj/item/organ/brain/remote_control
 	name = "Remote Frame Controller"
-	desc = "A remote controller for robotic frames. It can be linked to a stationary mainframe unit."
+	desc = "A remote controller for humanoid robotic frames. It can be linked to a stationary mainframe unit."
 	icon = 'icons/obj/module.dmi'
 	icon_state = "boris"
 	organ_flags = ORGAN_SYNTHETIC
@@ -17,6 +17,14 @@
 /obj/item/organ/brain/remote_control/Initialize()
 	. = ..()
 	deploy_action = new(src)
+
+/obj/item/organ/brain/remote_control/examine(mob/user)
+	. = ..()
+	var/mob/living/silicon/ai/our_ai = linked_ai_ref?.resolve()
+	if(our_ai)
+		. += span_notice("It is linked to [our_ai].")
+	else
+		. += span_notice("It is not linked to an AI!")
 
 /obj/item/organ/brain/remote_control/Insert(mob/living/carbon/new_owner, special, no_id_transfer)
 	. = ..()

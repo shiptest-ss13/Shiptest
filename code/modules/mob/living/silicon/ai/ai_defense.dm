@@ -26,6 +26,7 @@
 		return
 	if(user.a_intent != INTENT_HARM)
 		tool.buffer = src
+		balloon_alert(user, "saved [src]")
 		return COMPONENT_BLOCK_TOOL_ATTACK
 
 /mob/living/silicon/ai/screwdriver_act(mob/living/user, obj/item/tool, list/modifiers)
