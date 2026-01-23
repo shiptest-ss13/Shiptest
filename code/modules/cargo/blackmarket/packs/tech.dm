@@ -45,7 +45,7 @@
 	name = "AI Core Board"
 	desc = "The future is now! Become one with your ship with this AI core board! (Some assembly required.)"
 	item = /obj/item/circuitboard/aicore
-	pair_item = list(/datum/blackmarket_item/tech/boris, /datum/blackmarket_item/tech/mmi, /datum/blackmarket_item/tech/borg)
+	pair_item = list(/datum/blackmarket_item/tech/boris, /datum/blackmarket_item/tech/mmi, /datum/blackmarket_item/tech/borg, /datum/blackmarket_item/tech/remote_control)
 
 	cost_min = 3000
 	cost_max = 6000
