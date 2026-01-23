@@ -130,12 +130,15 @@
 
 /obj/item/organ/brain/remote_control/proc/on_ranged_attack(mob/living/carbon/source, atom/target, list/modifiers)
 	SIGNAL_HANDLER
-	target.attack_ai(source)
+	if(target.attack_ai(source))
+		return COMPONENT_SECONDARY_CANCEL_ATTACK_CHAIN
 
 /obj/item/organ/brain/remote_control/proc/on_unarmed_attack(mob/living/carbon/source, atom/target, list/modifiers)
 	SIGNAL_HANDLER
-	if(LAZYACCESS(modifiers, RIGHT_CLICK))
-		target.attack_ai(source)
+	if(!LAZYACCESS(modifiers, RIGHT_CLICK))
+		return
+	if(target.attack_ai(source))
+		return COMPONENT_NO_ATTACK_HAND
 
 /datum/action/item_action/organ_action/undeploy_frame
 	name = "Disconnect from frame"
