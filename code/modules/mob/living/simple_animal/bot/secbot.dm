@@ -55,8 +55,7 @@
 
 /mob/living/simple_animal/bot/secbot/beepsky/jr/Initialize()
 	. = ..()
-	resize = 0.8
-	update_transform()
+	update_transform(0.8)
 
 
 /mob/living/simple_animal/bot/secbot/beepsky/explode()

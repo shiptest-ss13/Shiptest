@@ -19,6 +19,10 @@
 	///sign_change_name is used to make nice looking, alphebetized and categorized names when you use a pen on a sign backing.
 	var/sign_change_name = "Sign - Blank" //If this is ever seen in game, something went wrong.
 
+/obj/structure/sign/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_WALLMOUNTED, type)
+
 /obj/item/sign
 	name = "sign backing"
 	desc = "A plastic sign backing, use a pen to change the decal. It can be placed on a wall."
