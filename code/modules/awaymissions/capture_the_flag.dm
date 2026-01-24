@@ -16,7 +16,7 @@
 	item_state = "banner"
 	lefthand_file = 'icons/mob/inhands/equipment/banners_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/banners_righthand.dmi'
-	desc = "A banner with Nanotrasen's logo on it."
+	desc = "A banner with Makosso-Warra's logo on it."
 	slowdown = 2
 	throw_speed = 0
 	throw_range = 1
@@ -132,7 +132,7 @@
 	name = "banner landmark"
 	icon = 'icons/obj/banner.dmi'
 	icon_state = "banner"
-	desc = "This is where a banner with Nanotrasen's logo on it would go."
+	desc = "This is where a banner with Makosso-Warra's logo on it would go."
 	layer = LOW_ITEM_LAYER
 	var/obj/item/ctf/flag
 

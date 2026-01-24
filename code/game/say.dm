@@ -4,7 +4,7 @@
 	And the base of the send_speech() proc, which is the core of saycode.
 */
 GLOBAL_LIST_INIT(freqtospan, list(
-	"[FREQ_NANOTRASEN]" = "ntradio",
+	"[FREQ_MAKOSSOWARRA]" = "mwradio",
 	"[FREQ_MINUTEMEN]" = "clipradio",
 	"[FREQ_INTEQ]" = "irmgradio",
 	"[FREQ_PGF]" = "pgfradio",

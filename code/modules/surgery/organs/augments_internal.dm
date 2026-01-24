@@ -168,7 +168,7 @@
 		SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "mindscrew", /datum/mood_event/mindscrew)
 
 /obj/item/organ/cyberimp/brain/datachip
-	name = "Nanotrasen brain datachip"
+	name = "Makosso-Warra brain datachip"
 	desc = "Covered in serial codes and warnings. That data must be important."
 
 /obj/item/organ/cyberimp/brain/datachip/Insert()

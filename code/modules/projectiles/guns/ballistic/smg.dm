@@ -135,7 +135,7 @@ NO_MAG_GUN_HELPER(automatic/smg/skm_carbine/inteq)
 
 //TODO: REMOVE
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/saber
-	name = "\improper Nanotrasen Saber SMG"
+	name = "\improper Makosso-Warra Saber SMG"
 	desc = "A prototype full-auto 9x18mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "saber"
@@ -167,4 +167,4 @@ NO_MAG_GUN_HELPER(automatic/smg/skm_carbine/inteq)
 	default_attachments = list(/obj/item/attachment/foldable_stock)
 	bolt_type = BOLT_TYPE_LOCKING
 	show_magazine_on_sprite = TRUE
-	manufacturer = MANUFACTURER_NANOTRASEN_OLD
+	manufacturer = MANUFACTURER_MAKOSSOWARRA_OLD

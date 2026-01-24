@@ -46,20 +46,20 @@ Featuring:
 	. = ..()
 	wanted_objects = typecacheof(/obj/mecha/combat, TRUE)
 
-/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/nanotrasen //nanotrasen are syndies! no it's just a weird path.
-	name = "\improper Nanotrasen Mecha Pilot"
+/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/makossowarra //makossowarra are syndies! no it's just a weird path.
+	name = "\improper Makosso-Warra Mecha Pilot"
 	desc = "Death to the Syndicate. This variant comes in MECHA DEATH flavour."
-	icon_living = "nanotrasen"
-	icon_state = "nanotrasen"
-	faction = list("nanotrasen")
+	icon_living = "makossowarra"
+	icon_state = "makossowarra"
+	faction = list("makossowarra")
 	spawn_mecha_type = /obj/mecha/combat/marauder/loaded
 
-/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech/nanotrasen
-	name = "\improper Nanotrasen Mecha Pilot"
+/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech/makossowarra
+	name = "\improper Makosso-Warra Mecha Pilot"
 	desc = "Death to the Syndicate. This variant comes in MECHA DEATH flavour."
-	icon_living = "nanotrasen"
-	icon_state = "nanotrasen"
-	faction = list("nanotrasen")
+	icon_living = "makossowarra"
+	icon_state = "makossowarra"
+	faction = list("makossowarra")
 
 /mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/Initialize()
 	. = ..()

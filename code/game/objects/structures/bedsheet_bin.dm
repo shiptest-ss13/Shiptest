@@ -108,7 +108,7 @@ LINEN BINS
 
 /obj/item/bedsheet/captain
 	name = "captain's bedsheet"
-	desc = "It has a Nanotrasen symbol on it, and was woven with a revolutionary new kind of thread guaranteed to have 0.01% permeability for most non-chemical substances, popular among most modern captains."
+	desc = "It has a Makosso-Warra symbol on it, and was woven with a revolutionary new kind of thread guaranteed to have 0.01% permeability for most non-chemical substances, popular among most modern captains."
 	icon_state = "sheetcaptain"
 	item_state = "sheetcaptain"
 	dream_messages = list("authority", "a golden ID", "sunglasses", "a green disc", "an antique gun", "the captain")
@@ -207,11 +207,11 @@ LINEN BINS
 	item_state = "sheetwiz"
 	dream_messages = list("a book", "an explosion", "lightning", "a staff", "a skeleton", "a robe", "magic")
 
-/obj/item/bedsheet/nanotrasen
-	name = "\improper Nanotrasen bedsheet"
-	desc = "It has the Nanotrasen logo on it and has an aura of duty."
-	icon_state = "sheetNT"
-	item_state = "sheetNT"
+/obj/item/bedsheet/makossowarra
+	name = "\improper Makosso-Warra bedsheet"
+	desc = "It has the Makosso-Warra logo on it and has an aura of duty."
+	icon_state = "sheetmakossowarra"
+	item_state = "sheetmakossowarra"
 	dream_messages = list("authority", "an ending")
 
 /obj/item/bedsheet/solgov
@@ -319,7 +319,7 @@ LINEN BINS
 	icon_state = "double_sheetcaptain"
 	item_state = "sheetcaptain"
 	dream_messages = list("authority", "a golden ID", "sunglasses", "a green disc", "an antique gun", "the captain")
-	desc = "It has a Nanotrasen symbol on it, and was woven with a revolutionary new kind of thread guaranteed to have 0.01% permeability for most non-chemical substances, popular among most modern captains."
+	desc = "It has a Makosso-Warra symbol on it, and was woven with a revolutionary new kind of thread guaranteed to have 0.01% permeability for most non-chemical substances, popular among most modern captains."
 
 /obj/item/bedsheet/double/rd
 	name = "double research director's bedsheet"

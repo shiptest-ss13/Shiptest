@@ -77,7 +77,7 @@
 					if(ispath(mobtype, /mob/living/carbon/human) || ispath(mobtype, /mob/living/brain))
 						race = "Humanoid"
 
-					// NT knows a lot about slimes, but not aliens. Can identify slimes
+					// Makosso-Warra knows a lot about slimes, but not aliens. Can identify slimes
 					else if(ispath(mobtype, /mob/living/simple_animal/slime))
 						race = "Slime"
 

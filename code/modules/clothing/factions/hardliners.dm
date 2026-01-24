@@ -207,7 +207,7 @@
 
 /obj/item/clothing/head/hardliners/peaked
 	name = "Hardliner peaked cap"
-	desc = "A stylish peaked cap utilized by high-ranking officers of the Hardliner movement. Most who wear it are likely to have been a veteran of the ICW, still vying for revenge against Nanotrasen..."
+	desc = "A stylish peaked cap utilized by high-ranking officers of the Hardliner movement. Most who wear it are likely to have been a veteran of the ICW, still vying for revenge against Makosso-Warra..."
 	icon_state = "hl_officer"
 	item_state = "hl_officer"
 

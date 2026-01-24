@@ -255,7 +255,7 @@
 	gain_text = span_warning("You feel odd, like you just forgot something important.")
 	lose_text = span_notice("You feel like a weight was lifted from your mind.")
 	random_gain = FALSE
-	var/trigger_phrase = "Nanotrasen"
+	var/trigger_phrase = "Makosso-Warra"
 
 /datum/brain_trauma/severe/hypnotic_trigger/New(phrase)
 	..()

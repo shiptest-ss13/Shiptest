@@ -36,13 +36,13 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
-/obj/item/clothing/under/rank/security/officer/nt
+/obj/item/clothing/under/rank/security/officer/makossowarra
 	name = "red security jumpsuit"
-	desc = "A tactical security jumpsuit for officers complete with a Nanotrasen belt buckle."
+	desc = "A tactical security jumpsuit for officers complete with a Vigilitas belt buckle."
 	icon_state = "rsecurity"
 	item_state = "r_suit"
 
-/obj/item/clothing/under/rank/security/officer/nt/skirt
+/obj/item/clothing/under/rank/security/officer/makossowarra/skirt
 	name = "red security jumpskirt"
 	desc = "A \"tactical\" security jumpsuit with the legs replaced by a skirt."
 	icon_state = "rsecurity_skirt"
@@ -95,16 +95,16 @@
 	roll_sleeves = FALSE
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
-/obj/item/clothing/under/rank/security/brig_phys/nt
+/obj/item/clothing/under/rank/security/brig_phys/makossowarra
 	name = "security medic's uniform"
-	desc = "A uniform worn by members of Nanotrasen's Asset Protection Medical Corps."
+	desc = "A uniform worn by members of Makosso-Warra's Asset Protection Medical Corps."
 	icon_state = "security_medic"
 	item_state = "r_suit"
 	mob_overlay_state = "rbrig_phys"
 
-/obj/item/clothing/under/rank/security/brig_phys/nt/skirt
+/obj/item/clothing/under/rank/security/brig_phys/makossowarra/skirt
 	name = "security medic's uniform"
-	desc = "A uniform with a skirt, worn by members of Nanotrasen's Asset Protection Medical Corps."
+	desc = "A uniform with a skirt, worn by members of Makosso-Warra's Asset Protection Medical Corps."
 	icon_state = "security_medic_skirt"
 	mob_overlay_state = "rbrig_phys_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
@@ -129,15 +129,15 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
-/obj/item/clothing/under/rank/security/warden/nt
+/obj/item/clothing/under/rank/security/warden/makossowarra
 	name = "warden's red security suit"
-	desc = "A formal security suit for wardens, complete with Nanotrasen belt buckle."
+	desc = "A formal security suit for wardens, complete with Makosso-Warra belt buckle."
 	icon_state = "rwarden"
 	item_state = "r_suit"
 
-/obj/item/clothing/under/rank/security/warden/nt/skirt
+/obj/item/clothing/under/rank/security/warden/makossowarra/skirt
 	name = "warden's red suitskirt"
-	desc = "A formal security suitskirt for wardens, complete with Nanotrasen belt buckle."
+	desc = "A formal security suitskirt for wardens, complete with Makosso-Warra belt buckle."
 	icon_state = "rwarden_skirt"
 	item_state = "r_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
@@ -176,12 +176,12 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
-/obj/item/clothing/under/rank/security/head_of_security/nt
+/obj/item/clothing/under/rank/security/head_of_security/makossowarra
 	name = "red head of security's jumpsuit"
 	icon_state = "rhos"
 	item_state = "r_suit"
 
-/obj/item/clothing/under/rank/security/head_of_security/nt/skirt
+/obj/item/clothing/under/rank/security/head_of_security/makossowarra/skirt
 	name = "head of security's red jumpskirt"
 	desc = "A security jumpskirt decorated for those few with the dedication to achieve the position of Head of Security."
 	icon_state = "rhos_skirt"

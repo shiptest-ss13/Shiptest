@@ -70,7 +70,7 @@
 	max_ammo()
 
 /obj/mecha/combat/marauder/touro
-	desc = "A powerful ICW-era combat exosuit, developed off of Nanotrasen's Marauder model by Cybersun Biodynamics."
+	desc = "A powerful ICW-era combat exosuit, developed off of Makosso-Warra's Marauder model by Cybersun Biodynamics."
 	name = "\improper Touro"
 	icon_state = "touro"
 	operation_req_access = list(ACCESS_SYNDICATE)

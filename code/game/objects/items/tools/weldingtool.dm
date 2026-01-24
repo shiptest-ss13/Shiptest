@@ -359,7 +359,7 @@
 	start_full = FALSE
 
 /obj/item/weldingtool/old
-	desc = "A standard edition welder provided by Nanotrasen. This one seems to leak a little bit."
+	desc = "A standard edition welder provided by Makosso-Warra. This one seems to leak a little bit."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "oldwelder"
 

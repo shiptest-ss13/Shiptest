@@ -283,7 +283,7 @@
 /obj/structure/sign/mining
 	name = "\improper N+S mining corps sign"
 	desc = "A sign of relief for weary miners, and a warning for would-be competitors to N+S's mining claims."
-	icon = 'icons/obj/nanotrasen_logos.dmi'
+	icon = 'icons/obj/makossowarra_logos.dmi'
 	icon_state = "ns"
 
 /obj/structure/sign/mining/survival

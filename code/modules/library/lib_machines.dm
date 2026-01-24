@@ -464,12 +464,12 @@ GLOBAL_LIST(cachedbooks) // List of our cached book datums
 			alert("No news network found on station. Aborting.")
 		var/channelexists = 0
 		for(var/datum/newscaster/feed_channel/FC in GLOB.news_network.network_channels)
-			if(FC.channel_name == "Nanotrasen Book Club")
+			if(FC.channel_name == "Makosso-Warra Book Club")
 				channelexists = 1
 				break
 		if(!channelexists)
-			GLOB.news_network.CreateFeedChannel("Nanotrasen Book Club", "Library", null)
-		GLOB.news_network.SubmitArticle(scanner.cache.dat, "[scanner.cache.name]", "Nanotrasen Book Club", null)
+			GLOB.news_network.CreateFeedChannel("Makosso-Warra Book Club", "Library", null)
+		GLOB.news_network.SubmitArticle(scanner.cache.dat, "[scanner.cache.name]", "Makosso-Warra Book Club", null)
 		alert("Upload complete. Your uploaded title is now available on station newscasters.")
 	if(href_list["orderbyid"])
 		if(cooldown > world.time)

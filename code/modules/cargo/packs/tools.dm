@@ -66,7 +66,7 @@
 		/obj/item/storage/bag/ore,
 		/obj/item/mining_scanner)
 	crate_name = "basic mining crate"
-	faction = /datum/faction/nt/ns_logi
+	faction = /datum/faction/makossowarra/ns_logi
 
 /datum/supply_pack/tools/entrenching
 	name = "Entrenching Tool Crate"
@@ -114,7 +114,7 @@
 	cost = 750
 	contains = list(/obj/item/inducer)
 	crate_name = "inducer crate"
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 
 /datum/supply_pack/tools/jetpack
 	name = "Jetpack Crate"

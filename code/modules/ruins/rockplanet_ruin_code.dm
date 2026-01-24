@@ -66,7 +66,7 @@
 
 /obj/item/weaponcrafting/gunkit/capgun_ugrade_kit
 	name = "experimental gun upgrade kit"
-	desc = "A suitcase containing the necessary gun parts to tranform a antique laser gun into something even better. A faded Nanotrasen Security symbol is on the side."
+	desc = "A suitcase containing the necessary gun parts to tranform a antique laser gun into something even better. A faded Makosso-Warra Research symbol is on the side."
 	icon = 'icons/obj/improvised.dmi'
 	icon_state = "kitsuitcase"
 

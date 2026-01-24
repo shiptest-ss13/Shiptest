@@ -7,7 +7,7 @@
 #define FACTION_SRM "Saint-Roumain Militia"
 #define FACTION_INTEQ "Inteq Risk Management Group"
 #define FACTION_CLIP "Confederated League of Independent Planets"
-#define FACTION_NT "Nanotrasen"
+#define FACTION_MAKOSSOWARRA "Makosso-Warra Corporation"
 	#define FACTION_NS_LOGI "N+S Logistics"
 	#define FACTION_VIGILITAS "Vigilitas Interstellar"
 #define FACTION_FRONTIERSMEN "Frontiersmen Fleet"
@@ -25,7 +25,7 @@
 #define PREFIX_SRM list("SRSV")
 #define PREFIX_INTEQ list("IRMV")
 #define PREFIX_CLIP list("CMSV", "CMGSV", "CLSV")
-#define PREFIX_NT list("NTSV")
+#define PREFIX_MAKOSSOWARRA list("MWSV")
 	#define PREFIX_NS_LOGI list("NSSV")
 	#define PREFIX_VIGILITAS list("VISV")
 #define PREFIX_FRONTIERSMEN list("FFV")

@@ -15,7 +15,7 @@
 
 //Player Factions
 #define FACTION_PLAYER_SYNDICATE "playerSyndicate"
-#define FACTION_PLAYER_NANOTRASEN "playerNanotrasen"
+#define FACTION_PLAYER_MAKOSSOWARRA "playerMakossowarra"
 #define FACTION_PLAYER_FRONTIERSMEN "playerFrontiersmen"
 #define FACTION_PLAYER_MINUTEMAN "playerMinuteman"
 #define FACTION_PLAYER_SOLCON "playerSolCon"

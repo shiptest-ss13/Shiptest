@@ -38,10 +38,10 @@
 
 /datum/supply_pack/gun/commanders
 	name = "PS9 Challenger Pistol Crate"
-	desc = "Contains a double stacked Challenger pistol, produced by Nanotrasen Advantage. Chambered in 9x18mm."
+	desc = "Contains a double stacked Challenger pistol, produced by Makosso-Warra Advantage. Chambered in 9x18mm."
 	cost = 750
 	contains = list(/obj/item/storage/guncase/pistol/commander)
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 	faction_discount = 20
 
 /datum/supply_pack/gun/ringneck
@@ -115,10 +115,10 @@
 
 /datum/supply_pack/gun/podium
 	name = "Advantage PH46 Podium Crate"
-	desc = "Contains a compact armor-piercing sidearm, chambered in 4.6mm. For NT employee use only."
+	desc = "Contains a compact armor-piercing sidearm, chambered in 4.6mm. For Makosso-Warra employee use only."
 	cost = 1250
 	contains = list(/obj/item/storage/guncase/pistol/podium)
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -192,7 +192,7 @@
 	desc = "Contains a double-action Rhino Revolver, chambered in .357 magnum."
 	cost = 1750
 	contains = list(/obj/item/storage/guncase/pistol/rhino)
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -220,11 +220,11 @@
 
 /datum/supply_pack/gun/l201
 	name = "L201 'Surge' Marksman Plasma Rifle"
-	desc = "Contains a high-powered marksman laser. For NT employee use only."
+	desc = "Contains a high-powered marksman laser. For Makosso-Warra employee use only."
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/energy/l201)
 	crate_name = "dmr crate"
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -234,7 +234,7 @@
 	cost = 1000
 	contains = list(/obj/item/storage/guncase/energy/laser)
 	crate_name = "laser crate"
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 
 /datum/supply_pack/gun/mini_energy
 	name = "X26 'Ohm' Variable Energy Pistol Crate"
@@ -243,7 +243,7 @@
 	contains = list(/obj/item/storage/guncase/pistol/miniegun)
 	crate_name = "laser crate"
 	faction_discount = 20
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 
 /datum/supply_pack/gun/energy
 	name = "X12 'Volt' Variable Energy Carbine Crate"
@@ -252,7 +252,7 @@
 	contains = list(/obj/item/storage/guncase/energy/egun)
 	crate_name = "energy gun crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 
 /datum/supply_pack/gun/scatterlaser
 	name = "Scatter Laser Crate"
@@ -268,7 +268,7 @@
 	contains = list(/obj/item/storage/guncase/energy/iongun)
 	crate_name = "ion rifle crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 
 /datum/supply_pack/gun/laser/kalix/pistol
 	name = "Etherbor SG-8 Beam Pistol Crate"
@@ -339,7 +339,7 @@
 	cost = 1000
 	contains = list(/obj/item/gun/energy/disabler)
 	crate_name = "disabler crate"
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 
 /datum/supply_pack/gun/energy/taser
 	name = "Hybrid Taser Crate"
@@ -347,7 +347,7 @@
 	cost = 1250
 	contains = list(/obj/item/gun/energy/e_gun/advtaser)
 	crate_name = "hybrid taser crate"
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -443,21 +443,21 @@
 
 /datum/supply_pack/gun/x46
 	name = "X46 'Amperage' Variable Energy Blaster Crate"
-	desc = "Contains an energy-based shotgun equipped with dual kill/disable modes, ideal for short range. For NT employee use only."
+	desc = "Contains an energy-based shotgun equipped with dual kill/disable modes, ideal for short range. For Makosso-Warra employee use only."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/energy/ultima)
 	crate_name = "shotgun crate"
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 	faction_discount = 0
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/cycler
 	name = "Advantage AST12 Negotiator"
-	desc = "Contains an advanced shotgun with five round dual magazine tubes. For NT employee use only."
+	desc = "Contains an advanced shotgun with five round dual magazine tubes. For Makosso-Warra employee use only."
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/cycler)
 	crate_name = "shotgun crate"
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -486,11 +486,11 @@
 
 /datum/supply_pack/gun/expedition
 	name = "SGL9 Expedition SMG Crate"
-	desc = "Contains a Expidition SMG produced by Nanotrasen Advantage. Chambered in 9x18mm."
+	desc = "Contains a Expedition SMG produced by Makosso-Warra Advantage. Chambered in 9x18mm."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/vector)
 	crate_name = "SMG crate"
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -511,7 +511,7 @@
 	contains = list(/obj/item/storage/guncase/wt550)
 	crate_name = "PDW crate"
 	faction_discount = 10
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 
 /datum/supply_pack/gun/bdm50
 	name = "BDM-50 'Akita' PDW Crate"
@@ -525,21 +525,21 @@
 
 /datum/supply_pack/gun/champion
 	name = "PHB Champion Machinepistol Crate"
-	desc = "Contains a compact 9x18mm burst fire machine pistol produced by Nanotrasen advantage. For NT employee use only."
+	desc = "Contains a compact 9x18mm burst fire machine pistol produced by Makosso-Warra Advantage. For MW employee use only."
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/saber)
 	crate_name = "Machinepistol crate"
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 	faction_discount = 0
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/l305
 	name = "L305 'Rush' Tactical Plasma Gun Crate"
-	desc = "Contains a compact energy-based SMG. For NT employee use only."
+	desc = "Contains a compact energy-based SMG. For Makosso-Warra employee use only."
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/energy/etar)
 	crate_name = "SMG crate"
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -682,11 +682,11 @@
 
 /datum/supply_pack/gun/hades
 	name = "AL655 Assault Plasma Rifle crate"
-	desc = "Contains a high-energy, automatic laser rifle. For NT employee use only."
+	desc = "Contains a high-energy, automatic laser rifle. For Makosso-Warra employee use only."
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/hades)
 	crate_name = "laser crate"
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -825,11 +825,11 @@
 /*
 /datum/supply_pack/gun/gauss
 	name = "Prototype Gauss Rifle"
-	desc = "Contains a high-powered prototype armor-piercing gauss rifle, operable with ferromagnetic pellets. For NT employee use only."
+	desc = "Contains a high-powered prototype armor-piercing gauss rifle, operable with ferromagnetic pellets. For Makosso-Warra employee use only."
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/gauss)
 	crate_name = "dmr crate"
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 	faction_discount = 0
 	faction_locked = TRUE
 */
@@ -874,11 +874,11 @@
 
 /datum/supply_pack/gun/al607
 	name = "AL607 'Sarissa' Plasma Accelerator"
-	desc = "Contains a AL607 Laser Sniper. For NT employee use only."
+	desc = "Contains a AL607 Laser Sniper. For Makosso-Warra employee use only."
 	cost = 4500
 	contains = list(/obj/item/storage/guncase/energy/al607)
 	crate_name = "sniper rifle crate"
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 	faction_discount = 0
 	faction_locked = TRUE
 

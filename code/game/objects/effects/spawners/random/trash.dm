@@ -222,7 +222,7 @@
 		/obj/item/bikehorn/rubberducky = 20,
 		/obj/item/soap/homemade = 20,
 		/obj/item/soap/deluxe = 15,
-		/obj/item/soap/nanotrasen = 10,
+		/obj/item/soap/makossowarra = 10,
 	)
 
 /obj/effect/spawner/random/trash/box

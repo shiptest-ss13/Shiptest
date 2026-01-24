@@ -576,7 +576,7 @@
 
 	shrapnel_magnitude = 8
 	shrapnel_type = /obj/projectile/bullet/pellet/stingball
-	manufacturer = MANUFACTURER_NANOTRASEN_OLD
+	manufacturer = MANUFACTURER_MAKOSSOWARRA_OLD
 
 
 /obj/item/mine/proximity/explosive/plasma

@@ -73,10 +73,10 @@
 	name = id
 
 
-/obj/machinery/telecomms/server/presets/nanotrasen
-	id = "Nanotrasen Server"
-	freq_listening = list(FREQ_NANOTRASEN, FREQ_COMMON)
-	autolinkers = list("nanotrasen", "broadcasterA")
+/obj/machinery/telecomms/server/presets/makossowarra
+	id = "Makosso-Warra Server"
+	freq_listening = list(FREQ_MAKOSSOWARRA, FREQ_COMMON)
+	autolinkers = list("makossowarra", "broadcasterA")
 
 /obj/machinery/telecomms/server/presets/solgov
 	id = "SolGov Server"

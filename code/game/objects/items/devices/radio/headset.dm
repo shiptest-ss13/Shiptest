@@ -8,7 +8,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	RADIO_CHANNEL_CYBERSUN = RADIO_TOKEN_CYBERSUN,
 	RADIO_CHANNEL_NGR = RADIO_TOKEN_NGR,
 	RADIO_CHANNEL_SUNS = RADIO_TOKEN_SUNS,
-	RADIO_CHANNEL_NANOTRASEN = RADIO_TOKEN_NANOTRASEN, //Shiptest edits - faction channels, removed department channels
+	RADIO_CHANNEL_MAKOSSOWARRA = RADIO_TOKEN_MAKOSSOWARRA,
 	RADIO_CHANNEL_MINUTEMEN = RADIO_TOKEN_MINUTEMEN,
 	RADIO_CHANNEL_PGF = RADIO_TOKEN_PGF,
 	RADIO_CHANNEL_INTEQ = RADIO_TOKEN_INTEQ,
@@ -202,27 +202,27 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	keyslot2 = /obj/item/encryptionkey/heads/captain
 
 
-//nanotrasen
-/obj/item/radio/headset/nanotrasen
-	name = "nanotrasen radio headset"
-	desc = "Worn proudly by the battered remnants of Nanotrasen's frontier holdings."
-	icon_state = "nanotrasen_headset"
-	keyslot = /obj/item/encryptionkey/nanotrasen
+//makossowarra
+/obj/item/radio/headset/makossowarra
+	name = "Makosso-Warra radio headset"
+	desc = "Worn proudly by the battered remnants of Makosso-Warra's frontier holdings."
+	icon_state = "makossowarra_headset"
+	keyslot = /obj/item/encryptionkey/makossowarra
 
-/obj/item/radio/headset/nanotrasen/captain
-	name = "nanotrasen captain's radio headset"
-	desc = "Worn proudly by Nanotrasen's remaining captains on the frontier."
-	keyslot2 = /obj/item/encryptionkey/heads/captain
+/obj/item/radio/headset/makossowarra/captain
+	name = "Makosso-Warra captain's radio headset"
+	desc = "Worn proudly by Makosso-Warra's remaining captains on the frontier."
+	keyslot2 = new /obj/item/encryptionkey/heads/captain
 	command = TRUE
 
-/obj/item/radio/headset/nanotrasen/alt
-	name = "nanotrasen bowman headset"
-	desc = "Worn proudly by the battered remnants of Nanotrasen's frontier holdings. Protects ears from flashbangs."
-	icon_state = "nanotrasen_headset_alt"
+/obj/item/radio/headset/makossowarra/alt
+	name = "Makosso-Warra bowman headset"
+	desc = "Worn proudly by the battered remnants of Makosso-Warra's frontier holdings. Protects ears from flashbangs."
+	icon_state = "makossowarra_headset_alt"
 	hearing_protection = TRUE
 
-/obj/item/radio/headset/nanotrasen/alt/captain
-	name = "nanotrasen captain's bowman headset"
+/obj/item/radio/headset/makossowarra/alt/captain
+	name = "Makosso-Warra captain's bowman headset"
 	desc = "Worn proudly by Nanotrasen's remaining captains on the frontier. Protects ears from flashbangs."
 	keyslot2 = /obj/item/encryptionkey/heads/captain
 	command = TRUE

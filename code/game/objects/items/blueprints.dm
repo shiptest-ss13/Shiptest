@@ -48,7 +48,7 @@
 	desc = "Blueprints of what appear to be an experimental station design, with a large spinal weapon mounted to the front. There is a \"Classified\" stamp and several coffee stains on it."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "blueprints"
-	fluffnotice = "Property of Nanotrasen. For heads of staff only. Store in high-secure storage."
+	fluffnotice = "Property of Makosso-Warra. For heads of staff only. Store in high-secure storage."
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	var/list/image/showing = list()
 	var/client/viewing
@@ -205,7 +205,7 @@
 	desc = "A digital copy of the local blueprints and zoning permits stored in your memory."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "blueprints"
-	fluffnotice = "Intellectual Property of Nanotrasen. For use in engineering cyborgs only. Wipe from memory upon departure from company ownership."
+	fluffnotice = "Intellectual Property of Makosso-Warra. For use in engineering cyborgs only. Wipe from memory upon departure from company ownership."
 
 /area/proc/rename_area(new_name)
 	var/prevname = "[name]"

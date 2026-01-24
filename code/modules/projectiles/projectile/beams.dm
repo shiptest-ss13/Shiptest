@@ -45,7 +45,7 @@
 	damage = 15
 
 /obj/projectile/beam/laser/sharplite
-	icon_state = "nt_laser"
+	icon_state = "sharplite_laser"
 	light_color = COLOR_BLUE_LIGHT
 	damage = 25
 	armour_penetration = -5
@@ -57,7 +57,7 @@
 	speed = 0.3
 
 /obj/projectile/beam/weak/sharplite
-	icon_state = "nt_laser_light"
+	icon_state = "sharplite_laser_light"
 	damage = 15
 	speed = 0.3
 	light_color = COLOR_BLUE_LIGHT
@@ -66,12 +66,12 @@
 
 
 /obj/projectile/beam/laser/sharplite/dmr
-	icon_state = "nt_laser_stronger"
+	icon_state = "sharplite_laser_stronger"
 	damage = 30
 	armour_penetration = 20
 
 /obj/projectile/beam/laser/assault/sharplite
-	icon_state = "nt_laser_heavy"
+	icon_state = "sharplite_laser_heavy"
 	damage = 25
 	armour_penetration = 20
 	speed = 0.3
@@ -83,7 +83,7 @@
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 
 /obj/projectile/beam/laser/sharplite/sniper
-	icon_state = "nt_laser_sniper"
+	icon_state = "sharplite_laser_sniper"
 	damage = 35
 	armour_penetration = 30
 	speed = 0.2
@@ -91,7 +91,7 @@
 	bare_wound_bonus = 20
 
 /obj/projectile/beam/laser/light/sharplite
-	icon_state = "nt_laser_light"
+	icon_state = "sharplite_laser_light"
 	speed = 0.4
 	pass_flags = PASSTABLE | PASSGRILLE //does not go through glass
 
@@ -166,7 +166,7 @@
 		qdel(src)
 
 /obj/projectile/beam/weak/shotgun/sharplite
-	icon_state = "nt_laser_light"
+	icon_state = "sharplite_laser_light"
 	light_color = COLOR_BLUE_LIGHT
 
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
@@ -252,7 +252,7 @@
 	impact_type = /obj/effect/projectile/impact/disabler
 
 /obj/projectile/beam/disabler/sharplite
-	icon_state = "nt_disabler"
+	icon_state = "sharplite_disabler"
 	light_color = COLOR_PALE_ORANGE
 	speed = 0.3
 
@@ -267,7 +267,7 @@
 	range = 9
 
 /obj/projectile/beam/disabler/weak/negative_ap/sharplite
-	icon_state = "nt_disabler_light"
+	icon_state = "sharplite_disabler_light"
 	light_color = COLOR_PALE_ORANGE
 	armour_penetration = -30
 	range = 9

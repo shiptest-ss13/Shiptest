@@ -2,7 +2,7 @@
 	category = "Telecommunications"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 	crate_name = "telecommunication equipment"
-	faction = /datum/faction/nt
+	faction = /datum/faction/makossowarra
 	faction_discount = 30
 
 /datum/supply_pack/tcomms/bowman
@@ -13,7 +13,7 @@
 
 /datum/supply_pack/tcomms/pda
 	name = "Personal Data Assistant Crate"
-	desc = "A Nanotrasen manufactured Personal Data Assistant - PDA for short. Requires an operating network to function"
+	desc = "A Makosso-Warra manufactured Personal Data Assistant - PDA for short. Requires an operating network to function"
 	cost = 100
 	contains = list(/obj/item/pda)
 	faction_discount = 80
@@ -42,7 +42,7 @@
 
 /datum/supply_pack/tcomms/broadcaster
 	name = "Broadcaster Crate"
-	desc = "An Nanotrasen manufactured subspace broadcaster. Broadcasts recieved and processed radio signals as dense packets of information through subspace."
+	desc = "An Makosso-Warra manufactured subspace broadcaster. Broadcasts recieved and processed radio signals as dense packets of information through subspace."
 	cost = 1500
 	contains = list(
 		/obj/item/circuitboard/machine/telecomms/broadcaster,
@@ -53,7 +53,7 @@
 
 /datum/supply_pack/tcomms/bus
 	name = "Bus Mainframe Crate"
-	desc = "An Nanotrasen manufactured bus mainframe. Moves signals to the requisite telecommunications machine once linked."
+	desc = "An Makosso-Warra manufactured bus mainframe. Moves signals to the requisite telecommunications machine once linked."
 	cost = 1500
 	contains = list(
 		/obj/item/circuitboard/machine/telecomms/bus,
@@ -63,7 +63,7 @@
 
 /datum/supply_pack/tcomms/processor
 	name = "Signal Processor Crate"
-	desc = "An Nanotrasen manufactured Signal Processor. Decompresses and decodes subspace radio signals."
+	desc = "An Makosso-Warra manufactured Signal Processor. Decompresses and decodes subspace radio signals."
 	cost = 1500
 	contains = list(
 		/obj/item/circuitboard/machine/telecomms/processor,
@@ -77,7 +77,7 @@
 
 /datum/supply_pack/tcomms/receiver
 	name = "Receiver Crate"
-	desc = "An Nanotrasen manufactured subspace receiver. Catches radio signals being broadcast through subspace."
+	desc = "An Makosso-Warra manufactured subspace receiver. Catches radio signals being broadcast through subspace."
 	cost = 1500
 	contains = list(
 		/obj/item/circuitboard/machine/telecomms/receiver,
@@ -90,7 +90,7 @@
 
 /datum/supply_pack/tcomms/server
 	name = "Telecommunication Server Crate"
-	desc = "An Nanotrasen manufactured telecommunications server. Logs radio signals passed through it for future reference."
+	desc = "An Makosso-Warra manufactured telecommunications server. Logs radio signals passed through it for future reference."
 	cost = 1500
 	contains = list(
 		/obj/item/circuitboard/machine/telecomms/server,
@@ -99,7 +99,7 @@
 
 /datum/supply_pack/tcomms/pda_server
 	name = "Messaging Server Crate"
-	desc = "An Nanotrasen manufactured PDA Server. Translates radio bursts from PDA messaging into a subspace-friendly packet."
+	desc = "An Makosso-Warra manufactured PDA Server. Translates radio bursts from PDA messaging into a subspace-friendly packet."
 	cost = 1500
 	contains = list(
 		/obj/item/circuitboard/machine/telecomms/message_server,
@@ -110,7 +110,7 @@
 
 /datum/supply_pack/tcomms/relay
 	name = "Subspace Relay Crate"
-	desc = "An Nanotrasen manufactured Subspace Relay. Creates paths through exotic subspace geometry to broadcast signals to other known relays. "
+	desc = "An Makosso-Warra manufactured Subspace Relay. Creates paths through exotic subspace geometry to broadcast signals to other known relays. "
 	cost = 1500
 	contains = list(
 		/obj/item/circuitboard/machine/telecomms/relay,
@@ -125,7 +125,7 @@
 
 /datum/supply_pack/tcomms/hub
 	name = "Telecommunications Hub Crate"
-	desc = "An Nanotrasen manufactured Telecommunications Hub. The centerpiece of any functional telecommunications set up. Routes all data fed to it. "
+	desc = "An Makosso-Warra manufactured Telecommunications Hub. The centerpiece of any functional telecommunications set up. Routes all data fed to it. "
 	cost = 1500
 	contains = list(
 		/obj/item/circuitboard/machine/telecomms/hub,

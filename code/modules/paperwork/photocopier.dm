@@ -84,7 +84,7 @@
 	data["num_copies"] = num_copies
 
 	try
-		var/list/blanks = json_decode(file2text("strings/blanks/nt_blanks.json"))
+		var/list/blanks = json_decode(file2text("strings/blanks/makossowarra_blanks.json"))
 		if (blanks != null)
 			data["blanks"] = blanks
 			data["category"] = category

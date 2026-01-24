@@ -1,0 +1,48 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Tegu-class Communications Freighter",
+	"faction": "/datum/faction/makossowarra",
+	"prefix": "MWSV",
+	"manufacturer": "Makosso-Warra Spaceworks",
+	"namelists": [
+		"MAKOSSO-WARRA",
+		"SPACE",
+		"MYTHOLOGICAL",
+		"WEAPONS"
+	],
+	"map_short_name": "Tegu-class",
+	"map_path": "_maps/shuttles/makossowarra/makossowarra_tegu.dmm",
+	"description": "The Tegu-class network vessel has long been the backbone of Makosso-Warra's interstellar telecommunications network. These ships are outfitted with a large communications array, allowing them to function as a mobile network hub both for corporate and civilian radio traffic. While the Tegu has been in service for decades, they have become quite abundant on the Frontier after the ICW, as the Frontier's already-sparse infrastructure was devastated by the fighting, leaving many systems with minimal to no organized telecommunications. In order to facilitate infrastructure reconstruction in an environment with poor shipping networks, the Tegu is also outfitted with mining equipment that allows it to procure materials in the field.",
+	"tags": ["Mining", "Construction", "Telecomms", "Subshuttle"],
+	"limit": 1,
+	"starting_funds": 6000,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/makossowarra/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Supply Director": {
+			"outfit": "/datum/outfit/job/makossowarra/quartermaster",
+			"officer": true,
+			"slots": 1
+		},
+		"Security Officer": {
+			"outfit": "/datum/outfit/job/makossowarra/security",
+			"slots": 1
+		},
+		"Field Technician": {
+			"outfit": "/datum/outfit/job/makossowarra/miner/no_equipment",
+			"slots": 2
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/makossowarra/engineer",
+			"slots": 1
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/makossowarra/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}

@@ -180,66 +180,66 @@
 	icon_state = "stamp-suns"
 	dye_color = DYE_PURPLE
 
-/obj/item/stamp/nanotrasen
-	name = "Nanotrasen rubber stamp"
+/obj/item/stamp/makossowarra
+	name = "Makosso-Warra rubber stamp"
 	desc = "A small rubber stamp for stamping important documents."
-	icon_state = "stamp-nt"
+	icon_state = "stamp-makossowarra"
 	dye_color = DYE_BLUE
 
-/obj/item/stamp/nanotrasen/captain
+/obj/item/stamp/makossowarra/captain
 	name = "NT Captain's rubber stamp"
-	icon_state = "stamp-nt_cap"
+	icon_state = "stamp-makossowarra_cap"
 
-/obj/item/stamp/nanotrasen/officer
+/obj/item/stamp/makossowarra/officer
 	name = "NT Officer's rubber stamp"
-	icon_state = "stamp-nt_fo"
+	icon_state = "stamp-makossowarra_fo"
 
-/obj/item/stamp/nanotrasen/engineering
+/obj/item/stamp/makossowarra/engineering
 	name = "NT Engineering Director's rubber stamp"
-	icon_state = "stamp-nt_engdir"
+	icon_state = "stamp-makossowarra_engdir"
 
-/obj/item/stamp/nanotrasen/medical
+/obj/item/stamp/makossowarra/medical
 	name = "NT Medical Director's rubber stamp"
-	icon_state = "stamp-nt_meddir"
+	icon_state = "stamp-makossowarra_meddir"
 
-/obj/item/stamp/nanotrasen/science
+/obj/item/stamp/makossowarra/science
 	name = "NT Science Director's rubber stamp"
-	icon_state = "stamp-nt_scidir"
+	icon_state = "stamp-makossowarra_scidir"
 
-/obj/item/stamp/nanotrasen/ns
+/obj/item/stamp/makossowarra/ns
 	name = "N+S Logistics rubber stamp"
 	icon_state = "stamp-ns"
 	dye_color = DYE_ORANGE
 
-/obj/item/stamp/nanotrasen/ns/captain
+/obj/item/stamp/makossowarra/ns/captain
 	name = "N+S Captain's rubber stamp"
 	icon_state = "stamp-ns_cap"
 
-/obj/item/stamp/nanotrasen/ns/supply
+/obj/item/stamp/makossowarra/ns/supply
 	name = "N+S Supply Director's rubber stamp"
 	icon_state = "stamp-ns_supdir"
 
-/obj/item/stamp/nanotrasen/vigilitas
+/obj/item/stamp/makossowarra/vigilitas
 	name = "Vigilitas Interstellar rubber stamp"
 	icon_state = "stamp-vi"
 	dye_color = DYE_HOS
 
-/obj/item/stamp/nanotrasen/vigilitas/captain
+/obj/item/stamp/makossowarra/vigilitas/captain
 	name = "VI Captain's rubber stamp"
 	icon_state = "stamp-vi_cap"
 
-/obj/item/stamp/nanotrasen/vigilitas/security
+/obj/item/stamp/makossowarra/vigilitas/security
 	name = "VI Security Director's rubber stamp"
 	icon_state = "stamp-vi_secdir"
 
-/obj/item/stamp/nanotrasen/vigilitas/loss_prevention
+/obj/item/stamp/makossowarra/vigilitas/loss_prevention
 	name = "VI Loss Prevention rubber stamp"
 	icon_state = "stamp-vi_lp"
 
-/obj/item/stamp/nanotrasen/central
+/obj/item/stamp/makossowarra/central
 	name = "NT Central Command rubber stamp"
-	desc = "A rubber stamp for stamping important documents." // Needed, because base nt has "small" added.
-	icon_state = "stamp-nt_central"
+	desc = "A rubber stamp for stamping important documents." // Needed, because base makossowarra has "small" added.
+	icon_state = "stamp-makossowarra_central"
 
 /obj/item/stamp/attack_paw(mob/user)
 	return attack_hand(user)

@@ -26,9 +26,9 @@
 	extra_price = 700
 
 	var/voucher_items = list(
-		"NT-E-Rifle" = /obj/item/gun/energy/sharplite/x12,
-		"E-TAR SMG" = /obj/item/gun/energy/sharplite/l305,
-		"E-SG 500" = /obj/item/gun/energy/sharplite/x46)
+		"SL X12 Variable Energy Carbine" = /obj/item/gun/energy/sharplite/x12,
+		"L305 Tactical Plasma Gun" = /obj/item/gun/energy/sharplite/l305,
+		"E-SL x46 Variable Energy Blaster" = /obj/item/gun/energy/sharplite/x46)
 
 /obj/machinery/vending/security/pre_throw(obj/item/I)
 	if(istype(I, /obj/item/grenade))
@@ -132,7 +132,7 @@
 		"C-20r SMG" = /obj/item/gun/ballistic/automatic/smg/cobra,
 		"Bulldog Shotgun" = /obj/item/gun/ballistic/shotgun/automatic/bulldog)
 
-/obj/machinery/vending/security/marine/nanotrasen
+/obj/machinery/vending/security/marine/makossowarra
 	icon_state = "nt-marine"
 	icon_deny = "nt-marine-deny"
 	light_mask = "nt-marine-mask"
@@ -154,10 +154,10 @@
 		)
 
 	voucher_items = list(
-		"SL AL-655 Energy Rifle" = /obj/item/gun/energy/sharplite/al655,
-		"NT-E-Rifle" = /obj/item/gun/energy/sharplite/x12,
-		"E-TAR SMG" = /obj/item/gun/energy/sharplite/l305,
-		"E-SG 500" = /obj/item/gun/energy/sharplite/x46)
+		"SL AL655 Assault Plasma Rifle" = /obj/item/gun/energy/sharplite/al655,
+		"SL X12 Variable Energy Carbine" = /obj/item/gun/energy/sharplite/x12,
+		"L305 Tactical Plasma Gun" = /obj/item/gun/energy/sharplite/l305,
+		"SL X46 Variable Energy Blaster" = /obj/item/gun/energy/sharplite/x46)
 /obj/item/gun_voucher
 	name = "security weapon voucher"
 	desc = "A token used to redeem guns from the SecTech vendor."
@@ -170,7 +170,7 @@
 	desc = "A token used to redeem equipment from your nearest marine vendor."
 	icon_state = "syndie-voucher"
 
-/obj/item/gun_voucher/nanotrasen
-	name = "nanotrasen weapon voucher"
+/obj/item/gun_voucher/makossowarra
+	name = "Makosso-Warra weapon voucher"
 	desc = "A token used to redeem equipment from your nearest marine vendor."
-	icon_state = "nanotrasen-voucher"
+	icon_state = "makossowarra-voucher"
