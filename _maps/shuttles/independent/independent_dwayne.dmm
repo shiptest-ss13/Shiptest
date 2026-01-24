@@ -1188,7 +1188,9 @@
 	dir = 1
 	},
 /obj/machinery/advanced_airlock_controller{
-	pixel_x = -26
+	pixel_x = -26;
+	dir = 8;
+	pixel_y = 0
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
@@ -3236,6 +3238,13 @@
 /obj/item/bodycamera,
 /obj/item/bodycamera,
 /obj/item/pen,
+/obj/machinery/button/door{
+	id = "dwayne_bridge";
+	name = "Privacy Shutter Control";
+	pixel_x = -21;
+	pixel_y = -3;
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "DP" = (
@@ -5083,17 +5092,11 @@
 /obj/machinery/button/door{
 	id = "dwayne_windows";
 	name = "Bridge Window Control";
-	pixel_x = 5;
+	pixel_x = -5;
 	pixel_y = 20
 	},
 /obj/machinery/computer/helm{
 	dir = 8
-	},
-/obj/machinery/button/door{
-	id = "dwayne_bridge";
-	name = "Privacy Shutter Control";
-	pixel_x = -6;
-	pixel_y = 20
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
