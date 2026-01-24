@@ -246,6 +246,7 @@
 /datum/outfit/job/syndicate/captain/gorlex
 	name = "Syndicate - Captain (Hardliner)"
 	uniform = /obj/item/clothing/under/syndicate/hardliners/officer
+	ears = /obj/item/radio/headset/syndicate/alt/captain/cybersun
 
 	head = /obj/item/clothing/head/hardliners/peaked
 	suit = /obj/item/clothing/suit/toggle/armor/vest/hardliners
@@ -255,6 +256,7 @@
 	name = "Syndicate - Captain (New Gorlex Republic)"
 	faction = FACTION_NGR
 
+	ears = /obj/item/radio/headset/syndicate/alt/captain/ngr
 	uniform = /obj/item/clothing/under/syndicate/ngr/officer
 	head = /obj/item/clothing/head/ngr/peaked
 	suit = /obj/item/clothing/suit/armor/ngr/captain
@@ -272,6 +274,7 @@
 /datum/outfit/job/syndicate/captain/cybersun
 	name = "Syndicate - Captain (Cybersun)"
 
+	ears = /obj/item/radio/headset/syndicate/alt/captain/cybersun
 	uniform = /obj/item/clothing/under/syndicate/cybersun/officer
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/cybersun
 	head = /obj/item/clothing/head/HoS/cybersun
@@ -288,6 +291,7 @@
 	belt = /obj/item/storage/belt/sabre/suns/captain
 	mask = /obj/item/clothing/mask/breath/suns
 	neck = /obj/item/clothing/neck/cloak/suns/cap
+	ears = /obj/item/radio/headset/syndicate/alt/suns/command
 
 	backpack = /obj/item/storage/backpack
 	satchel  = /obj/item/storage/backpack/satchel

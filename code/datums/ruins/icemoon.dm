@@ -31,3 +31,10 @@
 	description = "There's been reports of a number of unmarked structures on a nearby ice world and what's more, a Gezenan transport just went missing in orbit."
 	suffix = "icemoon_downed_transport.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
+
+/datum/map_template/ruin/icemoon/command_post
+	name = "Ramzi Command Post"
+	id = "command_post"
+	description = "A Ramzi Clique-controlled command post that directs raids and manages communications within its outfit within the sector."
+	suffix = "icemoon_command_post.dmm"
+	ruin_tags = list(RUIN_TAG_HARD_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER)

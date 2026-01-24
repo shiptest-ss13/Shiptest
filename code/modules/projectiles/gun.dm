@@ -431,10 +431,6 @@
 	if(has_safety)
 		. += "The safety is [safety ? span_green("ON") : span_red("OFF")]. Right-Click to toggle the safety."
 
-	if(gun_firemodes.len > 1)
-		. += "You can change the [src]'s firemode by pressing the <b>secondary action</b> key. By default, this is <b>Shift + Space</b>"
-
-
 /obj/item/gun/attackby(obj/item/I, mob/living/user, params)
 	. = ..()
 	if(gun_firemodes[firemode_index] == FIREMODE_UNDERBARREL)
@@ -473,7 +469,11 @@
 	return
 
 /obj/item/gun/afterattack(atom/target, mob/living/user, flag, params)
-	. = ..()
+	if(fire_gun(target, user, flag, params))
+		return TRUE
+	return ..()
+
+/obj/item/gun/proc/fire_gun(atom/target, mob/living/user, flag, params)
 	if(!actually_shoots)// this gun doesn't actually fire bullets. Dont shoot.
 		return
 	//No target? Why are we even firing anyways...
@@ -482,6 +482,13 @@
 	//If we are burst firing, don't fire, obviously
 	if(currently_firing_burst)
 		return
+
+	if(SEND_SIGNAL(user, COMSIG_MOB_TRYING_TO_FIRE_GUN, src, target, flag, params) & COMPONENT_CANCEL_GUN_FIRE)
+		return
+
+	if(SEND_SIGNAL(src, COMSIG_GUN_TRY_FIRE, user, target, flag, params) & COMPONENT_CANCEL_GUN_FIRE)
+		return
+
 	//This var happens when we are either clicking someone next to us or ourselves. Check if we don't want to fire...
 	if(flag)
 		if(target in user.contents) //can't shoot stuff inside us.
@@ -751,27 +758,27 @@
 	if(isliving(user) && in_range(src, user))
 		toggle_safety(user)
 
-/obj/item/gun/attack_hand_secondary(mob/user, list/modifiers)
-	if(toggle_safety(user))
-		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-	return ..()
+// /obj/item/gun/attack_hand_secondary(mob/user, list/modifiers)
+// 	if(toggle_safety(user))
+// 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+// 	return ..()
 
-/obj/item/gun/attackby_secondary(obj/item/weapon, mob/user, params)
-	if(toggle_safety(user))
-		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-	return ..()
+// /obj/item/gun/attackby_secondary(obj/item/weapon, mob/user, params)
+// 	if(toggle_safety(user))
+// 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+// 	return ..()
 
-/obj/item/gun/attack_self_secondary(mob/user, modifiers)
-	if(toggle_safety(user))
-		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-	return ..()
+// /obj/item/gun/attack_self_secondary(mob/user, modifiers)
+// 	if(toggle_safety(user))
+// 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+// 	return ..()
 
-/obj/item/gun/proc/toggle_safety(mob/user, silent=FALSE)
+/obj/item/gun/proc/toggle_safety(mob/user, silent=FALSE, override_check = FALSE)
 	if(!has_safety)
 		return FALSE
 
 	// only checks for first level storage e.g pockets, hands, suit storage, belts, nothing in containers
-	if(!in_contents_of(user))
+	if(!in_contents_of(user) && !override_check)
 		return FALSE
 
 	safety = !safety
@@ -1173,10 +1180,6 @@
 	update_appearance()
 	for(var/datum/action/current_action as anything in actions)
 		current_action.UpdateButtonIcon()
-
-/obj/item/gun/secondary_action(user)
-	if(gun_firemodes.len > 1)
-		fire_select(user)
 
 /datum/action/item_action/toggle_firemode/UpdateButtonIcon(status_only = FALSE, force = FALSE)
 	var/obj/item/gun/our_gun = target
