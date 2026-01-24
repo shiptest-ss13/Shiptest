@@ -378,6 +378,10 @@
 	name = "Long Hair 2"
 	icon_state = "hair_long2"
 
+/datum/sprite_accessory/hair/longhalf
+	name = "Long Hair (half)"
+	icon_state = "hair_longhalf"
+
 /datum/sprite_accessory/hair/long_over_eye
 	name = "Long Over Eye"
 	icon_state = "hair_longovereye"
