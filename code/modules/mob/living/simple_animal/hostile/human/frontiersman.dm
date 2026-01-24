@@ -15,6 +15,19 @@
 	r_hand = /obj/item/melee/knife/survival
 	dodging = TRUE
 
+/mob/living/simple_animal/hostile/human/frontier/civilian
+	name = "Frontiersman Doorguard"
+	desc = "A new recruit to the brutal Frontiersman terrorist fleet. This one is too new or stupid to even be assigned a knife."
+	minimum_distance = 10
+	retreat_distance = 10
+	obj_damage = 0
+	r_hand = null
+	environment_smash = ENVIRONMENT_SMASH_NONE
+
+/mob/living/simple_animal/hostile/human/frontier/civilian/Aggro()
+	..()
+	say("GUARDS!!")
+
 /mob/living/simple_animal/hostile/human/frontier/internals
 	icon_state = "frontiersmanmelee_mask"
 	atmos_requirements = IMMUNE_ATMOS_REQS

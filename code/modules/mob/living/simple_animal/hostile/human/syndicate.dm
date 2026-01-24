@@ -302,6 +302,8 @@
 	casingtype = /obj/item/ammo_casing/a556_42
 	l_hand = /obj/item/gun/ballistic/automatic/assault/hydra
 	projectilesound = 'sound/weapons/gun/rifle/hydra.ogg'
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/hydra/gunsmith
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/trooper
 	armor_base = /obj/item/clothing/suit/armor/ramzi/bulletproof
 

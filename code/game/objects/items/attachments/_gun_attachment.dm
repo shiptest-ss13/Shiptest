@@ -60,9 +60,12 @@
 	attackby(attack_item,user)
 	return COMPONENT_SECONDARY_CANCEL_ATTACK_CHAIN
 
-/obj/item/attachment/gun/on_preattack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
-	attached_gun.process_fire(target,user,TRUE)
-	return COMPONENT_SECONDARY_CANCEL_ATTACK_CHAIN
+/obj/item/attachment/gun/on_fire_gun(obj/item/gun/gun, mob/living/user, atom/target, flag, params)
+	var/list/modifiers = params2list(params)
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+		INVOKE_ASYNC(attached_gun, TYPE_PROC_REF(/obj/item/gun, fire_gun), target, user, flag, params)
+		attached_gun.process_fire(target,user,TRUE)
+		return COMPONENT_CANCEL_GUN_FIRE
 
 /obj/item/attachment/gun/unique_action(mob/living/user)
 	attached_gun.unique_action(user)
