@@ -2697,6 +2697,7 @@
 	name = "Cybersun Assault Borg Display"
 	},
 /obj/structure/catwalk,
+/obj/effect/landmark/observer_start,
 /turf/open/water/csoutpost,
 /area/outpost/crew/promenade)
 "gy" = (
@@ -9433,9 +9434,6 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "outpost_refinery_external"
-	},
-/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
-	dir = 5
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/outpost/cargo/smeltery)

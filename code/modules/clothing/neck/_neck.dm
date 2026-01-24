@@ -546,7 +546,7 @@
 			var/current_hand_index = user.get_held_index_of_item(src)
 			user.transferItemToLoc(src, null)
 			user.put_in_hand(nk, current_hand_index)
-			user.visible_message(span_notice("You tie [src] up like a facemask."), span_notice("[user] ties [src] up like a facemask."))
+			to_chat(user, span_notice("You tie [src] up like a facemask."))
 			qdel(src)
 		else
 			to_chat(user, span_warning("You must be holding [src] in order to tie it!"))
@@ -554,7 +554,7 @@
 /obj/item/clothing/mask/shemagh
 	icon = 'icons/obj/clothing/neck.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/neck.dmi'
-	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR
+	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	clothing_flags = ALLOWINTERNALS
 	flags_cover = MASKCOVERSMOUTH
 	alternate_worn_layer = FACEWRAP_LAYER
@@ -574,7 +574,7 @@
 			var/old_name = src.name
 			qdel(src)
 			user.put_in_hand(new_shemagh, current_hand_index)
-			user.visible_message(span_notice("You untie [old_name] back into a [new_shemagh.name]."), span_notice("[user] unties [old_name] back into a [new_shemagh.name]."))
+			to_chat(user, span_notice("You untie [old_name] back into a [new_shemagh.name]."))
 		else
 			to_chat(user, span_warning("You must be holding [src] in order to untie it!"))
 
@@ -686,6 +686,27 @@
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_NECK | ITEM_SLOT_POCKETS
 	strip_delay = 10
+	var/list/tag_fluff = list()
+
+/obj/item/clothing/neck/dogtag/examine_more(mob/user)
+	. = ..()
+	for(var/line in tag_fluff)
+		. += span_boldnotice(line)
+
+/obj/item/clothing/neck/dogtag/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/pen))
+		if(length(tag_fluff) >= 5)
+			to_chat(user, span_warning("[src] has no more space!"))
+			return
+		var/tagfluff = stripped_input(user, "Add to this dogtag.", "Plaque Customization", max_length=60)
+		if(!tagfluff)
+			return
+		tag_fluff = tagfluff
+		to_chat(user, span_notice("You add to the information on [src]!"))
+		return
+
+/obj/item/clothing/neck/dogtag/loadout
+	desc = "A non-military dogtag, often worn for style in certain circles."
 
 /obj/item/clothing/neck/dogtag/gold
 	icon_state = "dogtag_gold"
