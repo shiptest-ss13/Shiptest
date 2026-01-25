@@ -470,8 +470,6 @@
 	switch (severity)
 		if (EXPLODE_DEVASTATE)
 			brute_loss = 500
-			var/atom/throw_target = get_edge_target_turf(src, get_dir(src, get_step_away(src, src)))
-			throw_at(throw_target, 200, 4)
 			damage_clothes(400 - bomb_armor, BRUTE, "bomb")
 
 		if (EXPLODE_HEAVY)
