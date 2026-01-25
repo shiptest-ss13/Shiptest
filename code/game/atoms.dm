@@ -152,10 +152,14 @@
 	/// The current connector overlay appearance. Saved so that it can be cut when necessary.
 	var/connector_overlay
 
-	///Default X pixel offset
-	var/base_pixel_x
-	///Default Y pixel offset
-	var/base_pixel_y
+	///Default pixel x shifting for the atom's icon.
+	var/base_pixel_x = 0
+	///Default pixel y shifting for the atom's icon.
+	var/base_pixel_y = 0
+	//Default pixel w shifting for the atom's icon.
+	var/base_pixel_w = 0
+	///Default pixel z shifting for the atom's icon.
+	var/base_pixel_z = 0
 
 	///Wanted sound when hit by a projectile
 	var/hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
@@ -1751,3 +1755,24 @@
 		message += " | BWB: [dealt_bare_wound_bonus]"
 
 	victim.log_message(message, LOG_ATTACK, color="blue")
+
+
+/**
+ * Proc called when you want the atom to spin around the center of its icon (or where it would be if its transform var is translated)
+ * By default, it makes the atom spin forever and ever at a speed of 60 rpm.
+ *
+ * Arguments:
+ * * speed: how much it takes for the atom to complete one 360° rotation
+ * * loops: how many times do we want the atom to rotate
+ * * clockwise: whether the atom ought to spin clockwise or counter-clockwise
+ * * segments: in how many animate calls the rotation is split. Probably unnecessary, but you shouldn't set it lower than 3 anyway.
+ * * parallel: whether the animation calls have the ANIMATION_PARALLEL flag, necessary for it to run alongside concurrent animations.
+ */
+/atom/proc/SpinAnimation(speed = 1 SECONDS, loops = -1, clockwise = TRUE, segments = 3, parallel = TRUE)
+	if(!segments)
+		return
+	var/segment = 360/segments
+	if(!clockwise)
+		segment = -segment
+	SEND_SIGNAL(src, COMSIG_ATOM_SPIN_ANIMATION, speed, loops, segments, segment)
+	do_spin_animation(speed, loops, segments, segment, parallel)

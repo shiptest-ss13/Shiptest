@@ -17,10 +17,14 @@
 	var/number_of_rods = 2
 	var/hatch_open = FALSE
 	var/obj/item/stack/tile/plated_tile
+	var/list/give_turf_traits = list(TRAIT_IMMERSE_STOPPED, TRAIT_CHASM_STOPPED, TRAIT_LAVA_STOPPED, TRAIT_TURF_IGNORE_SLOWDOWN, TRAIT_ACID_STOPPED)
 
 /obj/structure/catwalk/Initialize()
 	. = ..()
 	update_appearance()
+	if(length(give_turf_traits))
+		give_turf_traits = string_list(give_turf_traits)
+		AddElement(/datum/element/give_turf_traits, give_turf_traits)
 
 /obj/structure/catwalk/over
 	layer = CATWALK_LAYER //over pipes, duh

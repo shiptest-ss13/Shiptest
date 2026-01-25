@@ -468,11 +468,11 @@
 /obj/item/gun/ballistic/automatic/assault/cm82/ctf
 	desc = "CLIP's standard assault rifle, a relatively new service weapon. This rifle will disintegrate if dropped."
 
-/obj/item/gun/ballistic/automatic/assault/cm82/dropped()
+/obj/item/gun/ballistic/automatic/assault/cm82/ctf/dropped()
 	. = ..()
 	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 30)
 
-/obj/item/gun/ballistic/automatic/assault/cm82/proc/floor_vanish()
+/obj/item/gun/ballistic/automatic/assault/cm82/ctf/proc/floor_vanish()
 	if(isturf(loc))
 		qdel(src)
 
