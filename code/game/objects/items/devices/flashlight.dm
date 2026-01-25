@@ -45,6 +45,18 @@
 		A.UpdateButtonIcon()
 	return 1
 
+/obj/item/flashlight/attack_hand(mob/user, list/modifiers)
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+		on = !on
+		playsound(user, on ? toggle_on_sound : toggle_off_sound, 40, TRUE)
+		update_brightness(user)
+		for(var/X in actions)
+			var/datum/action/A = X
+			A.UpdateButtonIcon()
+		return 1
+	else
+		. = ..()
+
 /obj/item/flashlight/attack(mob/living/carbon/M, mob/living/carbon/human/user)
 	add_fingerprint(user)
 	if(istype(M) && on && (user.zone_selected in list(BODY_ZONE_PRECISE_EYES, BODY_ZONE_PRECISE_MOUTH)))
