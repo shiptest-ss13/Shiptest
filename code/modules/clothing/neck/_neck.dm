@@ -598,7 +598,7 @@
 	icon_state = "mantle"
 	item_state = "mantle"
 	unique_reskin = list("black mantle" = "mantle",
-						"forest mantle" = "mantle_forest",
+						"olive mantle" = "mantle_forest",
 						"red mantle" = "mantle_red",
 						"snow mantle" = "mantle_snow",
 						"desert mantle" = "mantle_sand",
@@ -613,10 +613,10 @@
 	icon_state = "mantle"
 	current_skin = "black mantle"
 
-/obj/item/clothing/neck/mantle/forest
-	name = "forest mantle"
+/obj/item/clothing/neck/mantle/olive
+	name = "olive mantle"
 	icon_state = "mantle_forest"
-	current_skin = "forest mantle"
+	current_skin = "olive mantle"
 
 /obj/item/clothing/neck/mantle/red
 	name = "red mantle"
