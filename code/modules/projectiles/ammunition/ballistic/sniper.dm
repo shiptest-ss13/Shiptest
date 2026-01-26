@@ -6,6 +6,7 @@
 	icon_state = "big-steel"
 	caliber = ".50 BMG"
 	projectile_type = /obj/projectile/bullet/p50
+	stack_size = 5
 
 /obj/item/ammo_casing/p50/soporific
 	name = ".50 BMG soporific bullet casing"
@@ -28,7 +29,7 @@
 	icon_state = "rifle-steel"
 	caliber = "a300"
 	projectile_type = /obj/projectile/bullet/a300
-	stack_size = 15
+	stack_size = 5
 
 /obj/item/ammo_casing/a300/trac
 	name = ".300 Magnum Trac bullet casing"

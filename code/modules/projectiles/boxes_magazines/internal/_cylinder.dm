@@ -4,6 +4,7 @@
 	caliber = ".357"
 	max_ammo = 6
 	instant_load = TRUE
+	quick_empty = FALSE
 
 /obj/item/ammo_box/magazine/internal/cylinder/get_round(keep = FALSE, counter_clockwise = FALSE)
 	rotate(counter_clockwise)
