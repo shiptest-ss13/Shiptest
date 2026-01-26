@@ -263,6 +263,7 @@
 	block_chance = 60
 	ap_threshold = 30
 	armor = list("melee" = 70, "bullet" = 70, "laser" = 70, "energy" = 0, "bomb" = 50, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 80)
+	var/wielded = FALSE
 
 /obj/item/shield/heavy/Initialize()
 	. = ..()
@@ -275,19 +276,25 @@
 
 /// triggered on wield of two handed item
 /obj/item/shield/heavy/proc/on_wield(obj/item/source, mob/user)
+	slowdown = 3.50
+	wielded = TRUE
+	INVOKE_ASYNC(src, PROC_REF(do_wield), user)
 
+/obj/item/shield/heavy/proc/do_wield(mob/user)
 	if(!broken)
-		if(do_after(user, 3 SECONDS, user, IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE, TRUE))
+		if(do_after(user, 3 SECONDS, user, IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE, TRUE,
+		CALLBACK(src, PROC_REF(is_wielded))))
 			block_chance = 85
-			slowdown = 3.50	// This is a huge block of plasteel that will block most attacks. You shouldn't be running forward with an SKM spraying and praying
-
 
 /// triggered on unwield of two handed item
 /obj/item/shield/heavy/proc/on_unwield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
-
+	wielded = FALSE
 	if(!broken)
 		block_chance = initial(block_chance)
 		slowdown = initial(slowdown)
+
+/obj/item/shield/heavy/proc/is_wielded()
+	return wielded
 
 #undef BATON_BASH_COOLDOWN
