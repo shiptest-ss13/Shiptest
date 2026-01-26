@@ -378,6 +378,10 @@
 	name = "Long Hair 2"
 	icon_state = "hair_long2"
 
+/datum/sprite_accessory/hair/longhalf
+	name = "Long Hair (half)"
+	icon_state = "hair_longhalf"
+
 /datum/sprite_accessory/hair/long_over_eye
 	name = "Long Over Eye"
 	icon_state = "hair_longovereye"
@@ -546,6 +550,9 @@
 	name = "Ponytail 7"
 	icon_state = "hair_ponytail7"
 
+/datum/sprite_accessory/hair/rattail
+	name = "Ponytail (Rat)"
+	icon_state = "hair_ponytailrat"
 
 /datum/sprite_accessory/hair/stail
 	name = "Ponytail (Short)"
