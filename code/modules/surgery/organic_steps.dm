@@ -158,13 +158,13 @@
 		/obj/item/melee/arm_blade = 40,
 		/obj/item/hatchet = 40,
 		/obj/item/melee/knife/butcher = 33,
-		/obj/item/gun/energy/plasmacutter = 30,
+		/obj/item/plasmacutter = 30,
 		/obj/item = 10) //10% success (sort of) with any sharp item with a force>=10
 	time = 5.4 SECONDS
 	preop_sound = list(
 		/obj/item/circular_saw = 'sound/surgery/saw.ogg',
 		/obj/item/gear_handle/anglegrinder = 'sound/surgery/saw.ogg',
-		/obj/item/gun/energy/plasmacutter = 'sound/weapons/plasma_cutter.ogg',
+		/obj/item/plasmacutter = 'sound/weapons/melee/plasmacutter/plasma_cutter_melee.ogg',
 		/obj/item/melee/arm_blade = 'sound/surgery/scalpel1.ogg',
 		/obj/item/melee/axe/fire = 'sound/surgery/scalpel1.ogg',
 		/obj/item/hatchet = 'sound/surgery/scalpel1.ogg',
