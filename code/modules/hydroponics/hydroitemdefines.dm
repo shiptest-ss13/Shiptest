@@ -89,6 +89,7 @@
 	attack_verb = list("chopped", "torn", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = SHARP_EDGED
+	tool_behaviour = TOOL_SAW
 
 /obj/item/hatchet/Initialize()
 	. = ..()
