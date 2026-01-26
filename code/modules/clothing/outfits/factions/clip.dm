@@ -7,6 +7,7 @@
 	alt_uniform = null
 
 	faction_icon = "bg_clip"
+	faction = FACTION_PLAYER_MINUTEMAN
 
 	box = /obj/item/storage/box/survival/clip
 	ears = /obj/item/radio/headset
@@ -14,30 +15,12 @@
 	backpack = /obj/item/storage/backpack/security/clip
 	satchel = /obj/item/storage/backpack/satchel/sec/clip
 
-// 	var/list/selectable_alt_titles = list()
-
-/datum/outfit/job/clip/post_equip(mob/living/carbon/human/H, visualsOnly)
-	. = ..()
-	if(visualsOnly)
-		return
-	H.faction |= list(FACTION_PLAYER_MINUTEMAN)
-/* 	if(selectable_alt_titles)
-		var/selection = input(H, "Select an alternative name for your role.", "Job Title", alt_title) as null|anything in selectable_alt_titles)
-	if(!selection)
-		return
-
-	var/obj/item/card/id/W = H.wear_id
-	if(W)
-		W.assignment = alt_title
-*/
-
 // Base CLIP
 
 /datum/outfit/job/clip/assistant
 	name = "CLIP - Volunteer"
 	job_icon = "assistant"
 	jobtype = /datum/job/assistant
-	// selectable_alt_titles = list("Volunteer","Civillian")
 
 	r_pocket = /obj/item/radio
 

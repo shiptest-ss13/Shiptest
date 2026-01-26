@@ -45,11 +45,13 @@ GLOBAL_LIST_EMPTY(gear_datums)
 	///Description of this gear. If left blank will default to the description of the pathed item.
 	var/description
 	///Path to item.
-	var/path
+	var/obj/item/path
 	///Slot to equip to.
 	var/slot
 	///Roles that can spawn with this item.
 	var/list/allowed_roles
+	/// Only allow certain factions to spawn with this item. Uses FACTION_PLAYER defines.
+	var/list/faction_whitelist
 	///Stop certain species from receiving this gear
 	var/list/species_blacklist
 	///Only allow certain species to receive this gear
