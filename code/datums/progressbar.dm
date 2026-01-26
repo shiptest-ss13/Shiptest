@@ -63,7 +63,7 @@
 	if(!(timed_action_flags & IGNORE_USER_LOC_CHANGE))
 		RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(on_moved))
 		var/obj/mecha/mech = user.loc
-		if(ismecha(user.loc) && user == mech.occupant)
+		if(ismecha(user.loc) && user == mech.occupant && mech != target)
 			RegisterSignal(mech, COMSIG_MOVABLE_MOVED, PROC_REF(on_moved))
 	if(!(timed_action_flags & IGNORE_TARGET_LOC_CHANGE))
 		if(user != target)
