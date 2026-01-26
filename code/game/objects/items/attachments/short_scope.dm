@@ -12,6 +12,14 @@
 	var/min_recoil_mod = 0.1
 	var/aim_slowdown_mod = 0.2
 
+	unique_reskin = list(\
+		"Scope" = "small_scope",
+		"Classic" = "small_scope_old",
+		)
+	unique_reskin_changes_inhand = TRUE
+
+/obj/item/attachment/scope/old
+	icon_state = "small_scope_old"
 
 /obj/item/attachment/scope/apply_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
