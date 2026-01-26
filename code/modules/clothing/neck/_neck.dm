@@ -590,6 +590,59 @@
 /obj/item/clothing/neck/shemagh/black
 	icon_state = "shemagh_black"
 
+// mantles
+
+/obj/item/clothing/neck/mantle
+	name = "mantle"
+	desc = "A big mantle for big shoulders."
+	icon_state = "mantle"
+	item_state = "mantle"
+	unique_reskin = list("black mantle" = "mantle",
+						"olive mantle" = "mantle_forest",
+						"red mantle" = "mantle_red",
+						"snow mantle" = "mantle_snow",
+						"desert mantle" = "mantle_sand",
+						"navy mantle" = "mantle_navy",
+						"leather mantle" = "mantle_leather"
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/neck/mantle/black
+	name = "black mantle"
+	icon_state = "mantle"
+	current_skin = "black mantle"
+
+/obj/item/clothing/neck/mantle/olive
+	name = "olive mantle"
+	icon_state = "mantle_forest"
+	current_skin = "olive mantle"
+
+/obj/item/clothing/neck/mantle/red
+	name = "red mantle"
+	icon_state = "mantle_red"
+	current_skin = "red mantle"
+
+/obj/item/clothing/neck/mantle/snow
+	name = "snow mantle"
+	icon_state = "mantle_snow"
+	current_skin = "snow mantle"
+
+/obj/item/clothing/neck/mantle/sand
+	name = "desert mantle"
+	icon_state = "mantle_sand"
+	current_skin = "desert mantle"
+
+/obj/item/clothing/neck/mantle/navy
+	name = "navy mantle"
+	icon_state = "mantle_navy"
+	current_skin = "navy mantle"
+
+/obj/item/clothing/neck/mantle/leather
+	name = "leather mantle"
+	icon_state = "mantle_leather"
+	current_skin = "leather mantle"
+
 // neck wraps
 
 /obj/item/clothing/neck/neckwraps
