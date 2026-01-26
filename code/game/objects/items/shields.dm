@@ -109,15 +109,15 @@
 	else
 		to_chat(user, span_warning("[src] isn't made of this material!"))
 
-/obj/item/shield/attackby(obj/item/attacking_item, mob/user, params)
-	if(istype(attacking_item, /obj/item/melee))
+/obj/item/shield/attackby(obj/item/W, mob/user, params)
+	if(istype(W, /obj/item/melee))
 		if(COOLDOWN_FINISHED(src, baton_bash))
-			user.visible_message(span_warning("[user] bashes [src] with [attacking_item]!"))
+			user.visible_message(span_warning("[user] bashes [src] with [W]!"))
 			playsound(src, shield_bash_sound, 50, TRUE)
 			COOLDOWN_START(src, baton_bash, BATON_BASH_COOLDOWN)
-	else if(istype(attacking_item, /obj/item/stack/sheet))
+	else if(istype(W, /obj/item/stack/sheet))
 		if(is_repairable == TRUE)
-			repair(attacking_item, /obj/item/stack/sheet, user)
+			repair(W, /obj/item/stack/sheet, user)
 		else
 			to_chat(user, span_warning("[src] cannot be repaired!"))
 
