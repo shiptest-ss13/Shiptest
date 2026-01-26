@@ -24,7 +24,7 @@
 		var/datum/mission/M = new high_priority(target_outpost)
 
 		LAZYADD(target_outpost.missions, M)
-		M.value *= 2
+		M.value *= 3
 		M.name = "HIGH PRIORITY - [M.name]"
 		M.high_priority = TRUE
 		log_game("[priority_mission][ADMIN_VV(priority_mission)] was selected for [src]")

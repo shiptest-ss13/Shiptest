@@ -10,6 +10,7 @@
 	///How many of this item does the mission want?
 	num_wanted = 10
 	weight = 0
+	blackbox_prefix = "Dogtag Turn-in "
 	var/pirate_type = ""
 
 /datum/mission/acquire/dogtags/New(...)
