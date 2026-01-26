@@ -461,7 +461,7 @@
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 	slowdown = 0.5
 	jetpack = null
-	supports_variations = KEPORI_VARIATION
+	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/old
 	name = "worn blood-red hardsuit helmet"
