@@ -668,7 +668,7 @@
 	var/datum/status_effect/lung_inflammation/inflammation = has_status_effect(/datum/status_effect/lung_inflammation)
 	if(inflammation)
 		inflammation.adjust_inflammation(amount)
-	else if(amount > 0)
+	else if(amount > 0 && !HAS_TRAIT(src, TRAIT_ANTI_INFLAMMATORY))
 		apply_status_effect(/datum/status_effect/lung_inflammation, amount)
 
 /mob/living/proc/set_lung_inflammation(set_to)

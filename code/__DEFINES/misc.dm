@@ -31,6 +31,10 @@
 
 #define RESIZE_DEFAULT_SIZE 1
 
+//Lying angles, which way your head points
+#define LYING_ANGLE_EAST 90
+#define LYING_ANGLE_WEST 270
+
 //transfer_ai() defines. Main proc in ai_core.dm
 #define AI_TRANS_TO_CARD 1 //Downloading AI to InteliCard.
 #define AI_TRANS_FROM_CARD 2 //Uploading AI from InteliCard
