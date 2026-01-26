@@ -34,7 +34,14 @@
 
 /obj/item/multitool/examine(mob/user)
 	. = ..()
-	. += span_notice("Its buffer [buffer ? "contains [buffer]." : "is empty."]")
+	if(!buffer)
+		. += span_notice("Its buffer is empty.")
+		return
+	var/buffer_text = "[buffer]"
+	if(isweakref(buffer))
+		var/datum/weakref/buffer_ref = buffer
+		buffer_text = "[buffer_ref.resolve()]"
+	. += span_notice("Its buffer contains [buffer_text].")
 
 // Syndicate device disguised as a multitool; it will turn red when an AI camera is nearby.
 
