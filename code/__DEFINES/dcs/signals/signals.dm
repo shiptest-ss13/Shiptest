@@ -54,6 +54,8 @@
 #define COMSIG_ATOM_ATTACK_HAND_SECONDARY "atom_attack_hand_secondary"
 ///Return this in response if you don't want afterattack to be called
 	#define COMPONENT_NO_AFTERATTACK (1<<0)
+///from base of [obj/item/afterattack_secondary()]: (atom/target, mob/user, proximity_flag, click_parameters)
+#define COMSIG_ITEM_AFTERATTACK_SECONDARY "item_afterattack_secondary"
 ///from base of atom/attack_hulk(): (/mob/living/carbon/human)
 #define COMSIG_ATOM_HULK_ATTACK "hulk_attack"
 ///from base of atom/animal_attack(): (/mob/user)

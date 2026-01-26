@@ -373,9 +373,7 @@
 	icon_state = "pgfheavy_sniper"
 	item_state = "pgfheavy_sniper"
 
-	zoomable = TRUE
-	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
-	zoom_out_amt = 5
+	range_modifier = LONG_SCOPE_ZOOM //Long range
 
 	spread = -5
 	spread_unwielded = 40

@@ -4,10 +4,9 @@
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	burst_size = 1
-	zoomable = TRUE //this var as true without setting anything else produces a 2x zoom
 	wield_slowdown = DMR_SLOWDOWN
 	aimed_wield_slowdown = LONG_RIFLE_AIM_SLOWDOWN
-	zoom_amt = DMR_ZOOM
+	range_modifier = DMR_SIGHT_ZOOM
 	wield_delay = 1 SECONDS
 
 	min_recoil = 0.1

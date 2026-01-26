@@ -304,8 +304,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_KISS_OF_DEATH "kiss_of_death"
 /// We can handle 'dangerous' plants in botany safely
 #define TRAIT_PLANT_SAFE "plant_safe"
-///This person is aiming and should not face atoms in different directions
-#define TRAIT_AIMING "aiming"
+/// Mob is using the scope component
+#define TRAIT_USER_SCOPED "user_scoped"
 /// This mob overrides certian SSlag_switch measures with this special trait
 #define TRAIT_BYPASS_MEASURES "bypass_lagswitch_measures"
 /// This mob is able to use sign language over the radio.

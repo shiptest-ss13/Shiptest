@@ -34,7 +34,7 @@
 	manufacturer = null
 	gunslinger_recoil_bonus = 0
 	wield_slowdown = 0
-	zoomable = FALSE
+	range_modifier = 0
 	ammo_counter = TRUE
 
 	valid_attachments = list()

@@ -546,6 +546,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	QDEL_NULL(void)
 	QDEL_NULL(tooltips)
 	SSambience.ambience_listening_clients -= src
+	SSmouse_entered.hovers -= src
 	seen_messages = null
 	Master.UpdateTickRate()
 	..() //Even though we're going to be hard deleted there are still some things that want to know the destroy is happening
