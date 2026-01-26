@@ -536,7 +536,7 @@
 	rapid_fire_delay = 10
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle/neutered
-	weapon_drop_chance = 100
+	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals
 	icon_state = "frontiersmanofficer_mask"
