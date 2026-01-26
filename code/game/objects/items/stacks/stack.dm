@@ -12,6 +12,7 @@
 /obj/item/stack
 	icon = 'icons/obj/stack_objects.dmi'
 	gender = PLURAL
+	item_flags = NOBLUDGEON
 	material_modifier = 0.01
 	max_integrity = 100
 	var/list/datum/stack_recipe/recipes

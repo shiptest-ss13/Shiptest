@@ -4,7 +4,7 @@
 	id = SPECIES_SARATHI
 	default_color = "00FF00"
 	species_age_max = 175
-	species_traits = list(MUTCOLORS, LIPS, SCLERA, EMOTE_OVERLAY, MUTCOLORS_SECONDARY, HAS_FLESH, HAS_BONE)
+	species_traits = list(MUTCOLORS, LIPS, SCLERA, EMOTE_OVERLAY, MUTCOLORS_SECONDARY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
 	mutant_bodyparts = list("tail_lizard", "face_markings", "frills", "horns", "spines", "body_markings")
 	mutanttongue = /obj/item/organ/tongue/lizard

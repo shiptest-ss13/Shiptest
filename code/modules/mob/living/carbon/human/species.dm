@@ -2368,14 +2368,4 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 /datum/species/proc/get_harm_descriptors()
 	return
 
-/**
- * The human species version of [/mob/living/carbon/proc/get_biological_state]. Depends on the HAS_FLESH and HAS_BONE species traits, having bones lets you have bone wounds, having flesh lets you have burn, slash, and piercing wounds
- */
-/datum/species/proc/get_biological_state(mob/living/carbon/human/H)
-	. = BIO_INORGANIC
-	if(HAS_FLESH in species_traits)
-		. |= BIO_JUST_FLESH
-	if(HAS_BONE in species_traits)
-		. |= BIO_JUST_BONE
-
 #undef MINIMUM_MOLS_TO_HARM

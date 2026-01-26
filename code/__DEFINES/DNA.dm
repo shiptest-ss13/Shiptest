@@ -132,11 +132,6 @@
 #define MUTCOLORS_SECONDARY 25
 ///Human skintones
 #define SKINCOLORS 26
-///Used for determining which wounds are applicable to this species.
-///if we have flesh (can suffer slash/piercing/burn wounds, requires they don't have NOBLOOD)
-#define HAS_FLESH 27
-///if we have bones (can suffer bone wounds)
-#define HAS_BONE 28
 
 //organ slots
 #define ORGAN_SLOT_BRAIN "brain"

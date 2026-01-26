@@ -6,6 +6,7 @@
 	max_damage = 200
 	body_zone = BODY_ZONE_HEAD
 	body_part = HEAD
+	plaintext_zone = "head"
 	w_class = WEIGHT_CLASS_BULKY //Quite a hefty load
 	slowdown = 1 //Balancing measure
 	throw_range = 2 //No head bowling
@@ -134,22 +135,22 @@
 	tongue = null
 
 /obj/item/bodypart/head/update_limb(dropping_limb, mob/living/carbon/source, is_creating)
-	var/mob/living/carbon/C
+	var/mob/living/carbon/limb_owner
 	if(source)
-		C = source
+		limb_owner = source
 	else
-		C = owner
+		limb_owner = owner
 
-	real_name = C.real_name
-	if(HAS_TRAIT(C, TRAIT_HUSK))
+	real_name = limb_owner.real_name
+	if(HAS_TRAIT(limb_owner, TRAIT_HUSK))
 		real_name = "Unknown"
 		hairstyle = "Bald"
 		facial_hairstyle = "Shaved"
 		lip_style = null
 		stored_lipstick_trait = null
 
-	else if(!animal_origin && ishuman(C))
-		var/mob/living/carbon/human/H = C
+	else if(!animal_origin && ishuman(limb_owner))
+		var/mob/living/carbon/human/H = limb_owner
 		var/datum/species/S = H.dna.species
 
 		//Facial hair

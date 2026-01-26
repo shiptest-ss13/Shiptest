@@ -318,24 +318,34 @@
 	id = "neck_slice"
 	status_type = STATUS_EFFECT_UNIQUE
 	alert_type = null
-	duration = -1
+	duration = STATUS_EFFECT_PERMANENT
 
-/datum/status_effect/neck_slice/tick()
-	var/mob/living/carbon/human/H = owner
-	var/obj/item/bodypart/throat = H.get_bodypart(BODY_ZONE_HEAD)
-	if(H.stat == DEAD || !throat)
-		H.remove_status_effect(/datum/status_effect/neck_slice)
+/datum/status_effect/neck_slice/on_apply()
+	if(!ishuman(owner))
+		return FALSE
+	if(!owner.get_bodypart(BODY_ZONE_HEAD))
+		return FALSE
+	return TRUE
+
+/datum/status_effect/neck_slice/tick(seconds_between_ticks)
+	var/obj/item/bodypart/throat = owner.get_bodypart(BODY_ZONE_HEAD)
+	if(owner.stat == DEAD || !throat) // they can lose their head while it's going.
+		qdel(src)
+		return
 
 	var/still_bleeding = FALSE
-	for(var/datum/wound/W as anything in throat.wounds)
-		if(W.wound_type == WOUND_SLASH && W.severity > WOUND_SEVERITY_MODERATE)
+	for(var/datum/wound/bleeding_thing as anything in throat.wounds)
+		var/datum/wound_pregen_data/pregen_data = SSwounds.pregen_data[bleeding_thing.type]
+
+		if(pregen_data.wounding_types_valid(throat, list(WOUND_SLASH)) && bleeding_thing.severity > WOUND_SEVERITY_MODERATE && bleeding_thing.blood_flow > 0)
 			still_bleeding = TRUE
 			break
 	if(!still_bleeding)
-		H.remove_status_effect(/datum/status_effect/neck_slice)
+		qdel(src)
+		return
 
 	if(prob(10))
-		H.emote(pick("gasp", "gag", "choke"))
+		owner.emote(pick("gasp", "gag", "choke"))
 
 /mob/living/proc/apply_necropolis_curse(set_curse)
 	var/datum/status_effect/necropolis_curse/C = has_status_effect(STATUS_EFFECT_NECROPOLIS_CURSE)

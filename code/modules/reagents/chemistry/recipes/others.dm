@@ -340,6 +340,10 @@
 	results = list(/datum/reagent/space_cleaner = 2)
 	required_reagents = list(/datum/reagent/ammonia = 1, /datum/reagent/water = 1)
 
+/datum/chemical_reaction/system_cleaner
+	results = list(/datum/reagent/space_cleaner/system_cleaner = 4)
+	required_reagents = list(/datum/reagent/consumable/ethanol = 1, /datum/reagent/chlorine = 1, /datum/reagent/phenol = 2, /datum/reagent/potassium = 1)
+
 /datum/chemical_reaction/plantbgone
 	results = list(/datum/reagent/toxin/plantbgone = 5)
 	required_reagents = list(/datum/reagent/toxin = 1, /datum/reagent/water = 4)

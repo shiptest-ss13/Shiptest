@@ -49,6 +49,8 @@
 		pre_eat = CALLBACK(src, PROC_REF(pre_eat)),\
 		on_compost = CALLBACK(src, PROC_REF(pre_compost)),\
 		after_eat = CALLBACK(src, PROC_REF(on_eat_from)))
+	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_ORGAN_FAILING), PROC_REF(on_organ_fail))
+	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_ORGAN_FAILING), PROC_REF(on_organ_restore))
 
 	///When you take a bite you cant jam it in for surgery anymore.
 /obj/item/organ/proc/Insert(mob/living/carbon/M, special = 0, drop_if_replaced = TRUE)
@@ -191,6 +193,7 @@
 	var/delta = damage - prev_damage
 	if(delta > 0)
 		if(damage >= maxHealth)
+			ADD_TRAIT(src, TRAIT_ORGAN_FAILING, DAMAGE_TRAIT)
 			organ_flags |= ORGAN_FAILING
 			return now_failing
 		if(damage > high_threshold && prev_damage <= high_threshold)
@@ -198,7 +201,7 @@
 		if(damage > low_threshold && prev_damage <= low_threshold)
 			return low_threshold_passed
 	else
-		organ_flags &= ~ORGAN_FAILING
+		REMOVE_TRAIT(src, TRAIT_ORGAN_FAILING, DAMAGE_TRAIT)
 		if(prev_damage > low_threshold && damage <= low_threshold)
 			return low_threshold_cleared
 		if(prev_damage > high_threshold && damage <= high_threshold)
@@ -248,3 +251,12 @@
  */
 /obj/item/organ/proc/get_availability(datum/species/S)
 	return TRUE
+
+/obj/item/organ/proc/on_organ_fail()
+	SIGNAL_HANDLER
+	organ_flags |= ORGAN_FAILING
+
+/obj/item/organ/proc/on_organ_restore()
+	SIGNAL_HANDLER
+	organ_flags &= ~ORGAN_FAILING
+

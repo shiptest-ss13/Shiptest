@@ -561,6 +561,9 @@
 /mob/living/proc/can_inject(mob/user, target_zone, injection_flags)
 	return TRUE
 
+/mob/living/proc/is_exposed(mob/user, target_zone, error_msg)
+	return TRUE
+
 /**
  * Like can_inject, but it can perform side effects.
  *

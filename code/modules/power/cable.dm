@@ -525,34 +525,12 @@ GLOBAL_LIST_INIT(cable_coil_recipes, list(new/datum/stack_recipe("cable restrain
 	pixel_x = base_pixel_x + rand(-2,2)
 	pixel_y = base_pixel_y + rand(-2,2)
 	update_appearance()
+	AddElement(/datum/element/robotic_heal, burn_heal = 15)
 	recipes = GLOB.cable_coil_recipes
-
 
 ///////////////////////////////////
 // General procedures
 ///////////////////////////////////
-
-
-//you can use wires to heal robotics
-/obj/item/stack/cable_coil/attack(mob/living/carbon/human/H, mob/user)
-	if(!istype(H))
-		return ..()
-
-	if(!H.is_exposed(user, TRUE, user.zone_selected))
-		return TRUE
-
-	var/obj/item/bodypart/affecting = H.get_bodypart(check_zone(user.zone_selected))
-	if(affecting && (!IS_ORGANIC_LIMB(affecting)))
-		if(user == H)
-			user.visible_message(span_notice("[user] starts to fix some of the wires in [H]'s [parse_zone(affecting.body_zone)]."), span_notice("You start fixing some of the wires in [H == user ? "your" : "[H]'s"] [parse_zone(affecting.body_zone)]."))
-			if(!do_after(user, 0.5 SECONDS, H))
-				return
-		if(item_heal_robotic(H, user, 0, 15))
-			use(1)
-		return
-	else
-		return ..()
-
 
 /obj/item/stack/cable_coil/update_appearance()
 	. = ..()

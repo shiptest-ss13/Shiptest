@@ -506,12 +506,14 @@
  * - show_message: Whether to display anything to mobs when they are exposed.
  */
 /atom/proc/expose_reagents(list/reagents, datum/reagents/source, method=TOUCH, volume_modifier=1, show_message=TRUE)
-	if((. = SEND_SIGNAL(src, COMSIG_ATOM_EXPOSE_REAGENTS, reagents, source, method, volume_modifier, show_message)) & COMPONENT_NO_EXPOSE_REAGENTS)
+	. = SEND_SIGNAL(src, COMSIG_ATOM_EXPOSE_REAGENTS, reagents, source, method, volume_modifier, show_message)
+	if(. & COMPONENT_NO_EXPOSE_REAGENTS)
 		return
 
 	for(var/reagent in reagents)
 		var/datum/reagent/R = reagent
 		. |= R.expose_atom(src, reagents[R])
+	SEND_SIGNAL(src, COMSIG_ATOM_AFTER_EXPOSE_REAGENTS, reagents, source, method, volume_modifier, show_message)
 
 /// Are you allowed to drop this atom
 /atom/proc/AllowDrop()
@@ -1737,16 +1739,22 @@
  * * dealt_bare_wound_bonus- The bare_wound_bonus, if one was specified *and applied*, of the wounding attack. Not shown if armor was present
  * * base_roll- Base wounding ability of an attack is a random number from 1 to (dealt_damage ** WOUND_DAMAGE_EXPONENT). This is the number that was rolled in there, before mods
  */
-/proc/log_wound(atom/victim, datum/wound/suffered_wound, dealt_damage, dealt_wound_bonus, dealt_bare_wound_bonus, base_roll)
-	if(QDELETED(victim) || !suffered_wound)
+/proc/log_wound(atom/victim, obj/item/bodypart/limb, list/datum/wound/suffered_wounds, list/wounding_types, dealt_wound_bonus, dealt_bare_wound_bonus, list/base_rolls)
+	if(QDELETED(victim) || !LAZYLEN(suffered_wounds))
 		return
-	var/message = "has suffered: [suffered_wound][suffered_wound.limb ? " to [suffered_wound.limb.name]" : null]"// maybe indicate if it's a promote/demote?
+	var/message = "has suffered: [english_list(suffered_wounds)][limb ? " to [limb.name]" : null]"// maybe indicate if it's a promote/demote?
 
-	if(dealt_damage)
-		message += " | Damage: [dealt_damage]"
-		// The base roll is useful since it can show how lucky someone got with the given attack. For example, dealing a cut
-		if(base_roll)
-			message += " (rolled [base_roll]/[dealt_damage ** WOUND_DAMAGE_EXPONENT])"
+	if(wounding_types)
+		var/damage_text
+		for(var/wounding_type in wounding_types)
+			if(damage_text)
+				damage_text += ", "
+			var/damage_dealt = wounding_types[wounding_type]
+			damage_text = "[damage_dealt] [wounding_type]"
+			// The base roll is useful since it can show how lucky someone got with the given attack. For example, dealing a cut
+			if(base_rolls)
+				damage_text += "(rolled [base_rolls[wounding_type]]/[damage_dealt ** WOUND_DAMAGE_EXPONENT])"
+		message += " | Damage: [damage_text]"
 
 	if(dealt_wound_bonus)
 		message += " | WB: [dealt_wound_bonus]"

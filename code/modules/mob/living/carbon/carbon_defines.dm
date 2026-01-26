@@ -91,6 +91,9 @@
 	/// All of the wounds a carbon has afflicted throughout their limbs
 	var/list/all_wounds
 
+	/// Assoc list of BODY_ZONE -> wounding_type. Set when a limb is dismembered, unset when one is attached. Used for determining what scar to add when it comes time to generate them.
+	var/list/body_zone_dismembered_by
+
 	/// Levels of moth dust
 	var/mothdust
 

@@ -92,11 +92,15 @@
 
 	var/lifespan = 300
 	var/nonorganic_heal = 5
-	var/self_delay = 30 //! Also used for the tapecuff delay
-	var/other_delay = 10
+	var/self_delay = 3 SECONDS //! Also used for the tapecuff delay
+	var/other_delay = 1 SECONDS
 	var/prefix = "sticky"
 	var/list/conferred_embed = EMBED_HARMLESS
 	var/overwrite_existing = FALSE
+
+/obj/item/stack/tape/Initialize(mapload, new_amount, merge)
+	. = ..()
+	AddElement(/datum/element/robotic_heal, brute_heal = nonorganic_heal, self_delay = self_delay, other_delay = other_delay)
 
 /obj/item/stack/tape/merge(obj/item/stack/S) //Because we have unique children, we need to add an additional fail case
 	if(src.type != S.type)
@@ -106,10 +110,6 @@
 /obj/item/stack/tape/attack(mob/living/carbon/C, mob/living/user)
 	if(!istype(C))
 		return
-
-	//Bootleg bandage
-	if(user.a_intent == INTENT_HELP)
-		try_heal(C, user)
 
 	//Relatable suffering
 	if((HAS_TRAIT(user, TRAIT_CLUMSY) && prob(25)))
@@ -157,39 +157,7 @@
 					to_chat(user, span_warning("There isn't enough tape left!"))
 			else
 				to_chat(user, span_warning("[C] doesn't have two hands..."))
-
-/obj/item/stack/tape/proc/try_heal(mob/living/carbon/C, mob/user)
-	if(C == user)
-		playsound(loc, usesound, 30, TRUE, -2)
-		user.visible_message(span_notice("[user] starts to apply \the [src] on [user.p_them()]self..."), span_notice("You begin applying \the [src] on yourself..."))
-		if(!do_after(user, self_delay, C, extra_checks=CALLBACK(C, TYPE_PROC_REF(/mob/living, can_inject), user)))
-			return
-	else if(other_delay)
-		user.visible_message(span_notice("[user] starts to apply \the [src] on [C]."), span_notice("You begin applying \the [src] on [C]..."))
-		if(!do_after(user, other_delay, C, extra_checks=CALLBACK(C, TYPE_PROC_REF(/mob/living, can_inject), user)))
-			return
-
-	if(heal(C, user))
-		log_combat(user, C, "tape bandaged", src.name)
-		use(1)
-
-/obj/item/stack/tape/proc/heal(mob/living/carbon/C, mob/user)
-	if(C.stat == DEAD)
-		to_chat(user, span_notice("There isn't enough [src] in the universe to fix that..."))
-		return
-	if(!iscarbon(C))
-		return
-	var/obj/item/bodypart/affecting = C.get_bodypart(check_zone(user.zone_selected))
-	if(!affecting) //Missing limb?
-		to_chat(user, span_warning("[C] doesn't have \a [parse_zone(user.zone_selected)]!"))
-		return
-	if(IS_ROBOTIC_LIMB(affecting)) //Robotic patch-up
-		if(affecting.brute_dam)
-			user.visible_message(span_notice("[user] applies \the [src] on [C]'s [affecting.name]."), span_green("You apply \the [src] on [C]'s [affecting.name]."))
-			if(affecting.heal_damage(nonorganic_heal))
-				C.update_damage_overlays()
-			return TRUE
-	to_chat(user, span_warning("[src] can't patch what [C] has..."))
+	return ..()
 
 /obj/item/stack/tape/proc/apply_gag(mob/living/carbon/target, mob/user)
 	if(target.is_muzzled() || target.is_mouth_covered())
@@ -306,6 +274,7 @@
 	nonorganic_heal = 10
 	prefix = "insulated sticky"
 	siemens_coefficient = 0
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/stack/tape/industrial/electrical/wrap_item(obj/item/I, mob/living/user)
 	if(istype(I, /obj/item/clothing/gloves/color))

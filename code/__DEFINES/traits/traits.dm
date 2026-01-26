@@ -216,6 +216,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_NOMETABOLISM "no_metabolism"
 #define TRAIT_NOCLONELOSS "no_cloneloss"
 #define TRAIT_TOXIMMUNE "toxin_immune"
+#define TRAIT_NOBLOOD "noblood"
 #define TRAIT_EASYDISMEMBER "easy_dismember"
 #define TRAIT_LIMBATTACHMENT "limb_attach"
 #define TRAIT_NOLIMBDISABLE "no_limb_disable"
@@ -436,6 +437,10 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define MAPPING_HELPER_TRAIT "mapping-helper" //obtained from mapping helper
 /// Trait associated to wearing a suit
 #define SUIT_TRAIT "suit"
+/// Trait associated with being EMPed
+#define EMP_TRAIT "emp"
+/// Trait associated with damage, whatever that means in the datum's context
+#define DAMAGE_TRAIT "damage"
 /// Trait associated to lying down (having a [lying_angle] of a different value than zero).
 #define LYING_DOWN_TRAIT "lying-down"
 /// Trait associated to lacking electrical power.
@@ -488,6 +493,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define LACKING_MANIPULATION_APPENDAGES_TRAIT "lacking-manipulation-appengades" //trait associated to not having fine manipulation appendages such as hands
 #define HANDCUFFED_TRAIT "handcuffed"
 #define ORBITED_TRAIT "orbited"
+/// Trait applied to organs when they are unable to function.
+#define TRAIT_ORGAN_FAILING "organ_failing"
 /// Trait granted by [/obj/item/warpwhistle]
 #define WARPWHISTLE_TRAIT "warpwhistle"
 ///Turf trait for when a turf is transparent
