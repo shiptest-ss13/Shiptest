@@ -564,23 +564,24 @@
 	else
 		return span_notice("The top cover is firmly <b>welded</b> on.")
 
-/obj/structure/table/reinforced/attackby(obj/item/W, mob/user, params)
-	if(W.tool_behaviour == TOOL_WELDER && user.a_intent != INTENT_HELP)
-		if(!W.tool_start_check(user, src, amount=0))
-			return
-
+/obj/structure/table/reinforced/welder_act(mob/living/user, obj/item/tool, list/modifiers)
+	. = ..()
+	if(. & COMPONENT_BLOCK_TOOL_ATTACK)
+		return
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+		if(!tool.tool_start_check(user, src, amount = 0))
+			return COMPONENT_BLOCK_TOOL_ATTACK
 		if(deconstruction_ready)
 			to_chat(user, span_notice("You start strengthening the reinforced table..."))
-			if (W.use_tool(src, user, 50, volume=50))
+			if(tool.use_tool(src, user, 5 SECONDS, volume = 50))
 				to_chat(user, span_notice("You strengthen the table."))
 				deconstruction_ready = 0
 		else
 			to_chat(user, span_notice("You start weakening the reinforced table..."))
-			if (W.use_tool(src, user, 50, volume=50))
+			if(tool.use_tool(src, user, 5 SECONDS, volume = 50))
 				to_chat(user, span_notice("You weaken the table."))
 				deconstruction_ready = 1
-	else
-		. = ..()
+		return COMPONENT_BLOCK_TOOL_ATTACK
 
 /obj/structure/table/bronze
 	name = "bronze table"
@@ -698,15 +699,18 @@
 	if(O.loc != src.loc)
 		step(O, get_dir(O, src))
 
-/obj/structure/rack/attackby(obj/item/W, mob/user, params)
-	var/list/modifiers = params2list(params)
-	if (W.tool_behaviour == TOOL_WRENCH && !(flags_1&NODECONSTRUCT_1) && user.a_intent != INTENT_HELP)
-		W.play_tool_sound(src)
-		deconstruct(TRUE)
+/obj/structure/rack/wrench_act(mob/living/user, obj/item/tool, list/modifiers)
+	. = ..()
+	if(. & COMPONENT_BLOCK_TOOL_ATTACK)
 		return
-	if(user.a_intent == INTENT_HARM)
-		return ..()
-	if(user.transferItemToLoc(W, drop_location(), silent = FALSE))
+	if(!(flags_1 & NODECONSTRUCT_1) && LAZYACCESS(modifiers, RIGHT_CLICK))
+		tool.play_tool_sound(src)
+		deconstruct(TRUE)
+		return COMPONENT_BLOCK_TOOL_ATTACK
+
+/obj/structure/rack/attackby(obj/item/W, mob/user, params)
+	if(user.a_intent != INTENT_HARM && user.transferItemToLoc(W, drop_location(), silent = FALSE))
+		var/list/modifiers = params2list(params)
 		//Center the icon where the user clicked.
 		if(!LAZYACCESS(modifiers, ICON_X) || !LAZYACCESS(modifiers, ICON_Y))
 			return
@@ -714,6 +718,7 @@
 		W.pixel_x = clamp(text2num(LAZYACCESS(modifiers, ICON_X)) - 16, -(world.icon_size/2), world.icon_size/2)
 		W.pixel_y = clamp(text2num(LAZYACCESS(modifiers, ICON_Y)) - 16, -(world.icon_size/2), world.icon_size/2)
 		return TRUE
+	return ..()
 
 /obj/structure/rack/attack_paw(mob/living/user)
 	attack_hand(user)
