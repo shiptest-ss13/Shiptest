@@ -87,7 +87,6 @@
 		/obj/item/clothing/head/helmet/roman/fake = 1,
 		/obj/item/clothing/head/helmet/roman/legionnaire/fake = 1,
 		/obj/item/clothing/under/costume/roman = 1,
-		/obj/item/shield/riot/roman/fake = 1,
 		/obj/item/skub = 1)
 	refill_canister = /obj/item/vending_refill/autodrobe
 	default_price = 90

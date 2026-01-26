@@ -69,7 +69,7 @@
 	desc = "A stanced figure sheltered behind a shoddy, makeshift wooden buckler. A jagged machete is held within their clutch."
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/melee/sword/mass
-	l_hand = /obj/item/shield/riot/buckler
+	l_hand = /obj/item/shield/buckler
 	projectile_deflect_chance = 25
 
 /mob/living/simple_animal/hostile/human/hermit/ranged
