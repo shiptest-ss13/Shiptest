@@ -90,6 +90,7 @@
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset
 	head = /obj/item/clothing/head/frontier/peaked
+	neck = /obj/item/clothing/neck/dogtag/gold
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer/internals
 	name = "Frontiersman Officer Corpse Internals"
@@ -105,7 +106,7 @@
 
 /datum/outfit/frontier/trooper/heavy
 	name = "Frontiersman Heavy Corpse"
-	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+	suit = /obj/item/clothing/suit/armor/vest/marine/frontier
 	head = /obj/item/clothing/head/beret/sec/frontier/officer
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/internals

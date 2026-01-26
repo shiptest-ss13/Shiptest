@@ -26,11 +26,11 @@
 	// handles behavior
 	var/datum/elevator_master/master_datum
 
-/*
+
 // dont use the tile variants probably bugged as fuck
 // i'm only fluent in shitcode so if anyone finds a way to fix this please use it the catwalk elevators are ugly
 
-/obj/structure/elevator_platform/tile/
+/obj/structure/elevator_platform/tile
 	icon = 'icons/turf/floors/tiles.dmi'
 	icon_state = "tiled_gray"
 	base_icon_state = "tiled_gray"
@@ -53,14 +53,13 @@
 	smoothing_flags = null
 	smoothing_groups = null
 	canSmoothWith = null
-*/
 
 /obj/structure/elevator_platform/Initialize(mapload)
 	. = ..()
 
 	var/static/list/connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(AddItemOnPlat),
-		COMSIG_ATOM_CREATED = PROC_REF(AddItemOnPlat),
+		COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZED_ON = PROC_REF(AddItemOnPlat),
 		COMSIG_ATOM_EXITED = PROC_REF(RemoveItemFromPlat)
 	)
 	AddElement(/datum/element/connect_loc, connections)
@@ -69,7 +68,7 @@
 		// if there are adjacent platforms with masters, reach them
 		for(var/obj/structure/elevator_platform/plat as anything in get_adj_platforms())
 			if(plat.master_datum)
-				master_datum.add_platform(src)
+				plat.master_datum.add_platform(src)
 				break
 		if(!master_datum)
 			// runs a flood-fill starting at src, adding reached platforms to the
@@ -81,6 +80,8 @@
 	if(master_datum)
 		master_datum.remove_platform(src)
 
+	QDEL_LIST(lift_load)
+
 	// industrial lifts had some (only semi-functional) code here for splitting
 	// lifts into separate platforms on platform deletion. that's difficult to do well
 	// and not all THAT necessary, so i didn't do it. laziness wins!
@@ -88,6 +89,8 @@
 
 /obj/structure/elevator_platform/proc/AddItemOnPlat(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
+	if(AM == src)
+		return
 	if(AM in lift_load)
 		return
 	LAZYADD(lift_load, AM)
@@ -134,4 +137,12 @@
 		if(QDELETED(thing)) // if we let nulls stick around they fuck EVERYTHING
 			lift_load -= thing
 			continue
+		if(istype(thing, /mob/living/carbon))
+			var/mob/living/carbon/buckled_mob = thing
+			if(buckled_mob.buckled)
+				var/obj/temp_buckling_item = buckled_mob.buckled
+				temp_buckling_item.forceMove(destination)
+				thing.forceMove(destination)
+				temp_buckling_item.buckle_mob(thing, TRUE, FALSE)
+				continue
 		thing.forceMove(destination)

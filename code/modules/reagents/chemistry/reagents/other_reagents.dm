@@ -144,6 +144,7 @@
 
 /datum/reagent/water/on_mob_life(mob/living/carbon/M)
 	. = ..()
+	M.adjust_disgust(-2)
 	if(M.blood_volume)
 		M.blood_volume += 0.1 //full of water...
 /*
@@ -1921,15 +1922,11 @@
 /datum/reagent/growthserum/on_mob_life(mob/living/carbon/H)
 	var/newsize = current_size
 	newsize = (1 + (clamp(volume, 0, 25) / 100)) * RESIZE_DEFAULT_SIZE
-	H.resize = newsize/current_size
-	current_size = newsize
-	H.update_transform()
+	H.update_transform(newsize/current_size)
 	..()
 
 /datum/reagent/growthserum/on_mob_end_metabolize(mob/living/M)
-	M.resize = RESIZE_DEFAULT_SIZE/current_size
-	current_size = RESIZE_DEFAULT_SIZE
-	M.update_transform()
+	M.update_transform(RESIZE_DEFAULT_SIZE/current_size)
 	..()
 
 /datum/reagent/plastic_polymers

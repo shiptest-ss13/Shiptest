@@ -302,6 +302,8 @@
 	casingtype = /obj/item/ammo_casing/a556_42
 	l_hand = /obj/item/gun/ballistic/automatic/assault/hydra
 	projectilesound = 'sound/weapons/gun/rifle/hydra.ogg'
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/hydra/gunsmith
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/trooper
 	armor_base = /obj/item/clothing/suit/armor/ramzi/bulletproof
 
@@ -508,6 +510,15 @@
 	casingtype = /obj/item/ammo_casing/a65clip
 	l_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
 	projectilesound = 'sound/weapons/gun/sniper/cmf90.ogg'
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/sniper/sentry
+	vision_range = 14
+	aggro_vision_range = 14
+	minimum_distance = 14
+	stop_automated_movement = 1
+	wander = 0
+	retreat_distance = 0
+	environment_smash = 0
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun/incendiary
 	name = "Ramzi Clique Boiler"
