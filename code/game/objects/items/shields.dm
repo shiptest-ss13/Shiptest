@@ -110,7 +110,7 @@
 		to_chat(user, span_warning("[src] isn't made of this material!"))
 
 /obj/item/shield/attackby(obj/item/attacking_item, mob/user, params)
-	if(istype(attacking_item, /obj/item/melee/baton))
+	if(istype(attacking_item, /obj/item/melee))
 		if(COOLDOWN_FINISHED(src, baton_bash))
 			user.visible_message(span_warning("[user] bashes [src] with [attacking_item]!"))
 			playsound(src, shield_bash_sound, 50, TRUE)
