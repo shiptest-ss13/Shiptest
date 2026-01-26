@@ -63,8 +63,8 @@
 		return
 	return ..()
 
-/obj/machinery/drill/sampler_mission/mission/mine_success()
-	//add thumping noise? Dune thumper...
+/obj/machinery/drill/sampler_mission/mine_success()
+	playsound(src, 'sound/effects/podwoosh.ogg', 50)
 	num_current++
 
 	if(num_current == samples_required)

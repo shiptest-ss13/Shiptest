@@ -255,7 +255,6 @@
 	dir = 5
 	},
 /obj/item/storage/case/surgery{
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /turf/open/floor/pod/light,
@@ -3942,10 +3941,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
 /obj/structure/spacevine,
-/obj/structure/girder{
-	icon = 'icons/effects/32x64.dmi';
-	icon_state = "crystal"
-	},
+/obj/structure/flora/rock/crystal,
 /turf/open/floor/plating/asteroid/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "Cp" = (
@@ -4418,9 +4414,8 @@
 /turf/open/floor/pod,
 /area/ruin/jungle/paradise/comms)
 "Fw" = (
-/obj/structure/girder{
-	icon = 'icons/effects/32x64.dmi';
-	icon_state = "crystal"
+/obj/structure/flora/rock/crystal{
+	layer = 5
 	},
 /turf/open/water/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -6338,12 +6333,7 @@
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "UO" = (
-/obj/structure/girder{
-	icon = 'icons/effects/32x64.dmi';
-	icon_state = "crystal";
-	pixel_x = 10;
-	pixel_y = -4
-	},
+/obj/structure/flora/rock/crystal,
 /turf/open/water/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "UR" = (
@@ -6676,10 +6666,7 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "Xe" = (
 /obj/structure/flora/grass/jungle/b,
-/obj/structure/girder{
-	icon = 'icons/effects/32x64.dmi';
-	icon_state = "crystal"
-	},
+/obj/structure/flora/rock/crystal,
 /turf/open/floor/plating/asteroid/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/cave/explored)
 "Xg" = (
@@ -10385,8 +10372,8 @@ Iw
 Iw
 Iw
 pL
+UO
 eC
-Fw
 Jt
 fV
 eC
@@ -10658,7 +10645,7 @@ eC
 eC
 fm
 eC
-Fw
+UO
 eC
 Rp
 Rp

@@ -467,3 +467,28 @@ Diagnostic HUDs!
 		holder.icon_state = "electrified"
 	else
 		holder.icon_state = ""
+
+#define CACHED_WIDTH_INDEX "width"
+#define CACHED_HEIGHT_INDEX "height"
+
+/atom/proc/get_cached_width()
+	if (isnull(icon))
+		return 0
+	var/list/dimensions = get_icon_dimensions(icon)
+	return dimensions[CACHED_WIDTH_INDEX]
+
+/atom/proc/get_cached_height()
+	if (isnull(icon))
+		return 0
+	var/list/dimensions = get_icon_dimensions(icon)
+	return dimensions[CACHED_HEIGHT_INDEX]
+
+/atom/proc/adjust_hud_position(image/holder, animate_time = null)
+	if (animate_time)
+		animate(holder, pixel_w = -(get_cached_width() - ICON_SIZE_X) / 2, pixel_z = get_cached_height() - ICON_SIZE_Y, time = animate_time)
+		return
+	holder.pixel_w = -(get_cached_width() - ICON_SIZE_X) / 2
+	holder.pixel_z = get_cached_height() - ICON_SIZE_Y
+
+#undef CACHED_WIDTH_INDEX
+#undef CACHED_HEIGHT_INDEX
