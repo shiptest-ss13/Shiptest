@@ -1864,6 +1864,10 @@
 	pixel_x = -9;
 	pixel_y = -8
 	},
+/obj/item/storage/belt/mining/alt{
+	pixel_x = -8;
+	pixel_y = -2
+	},
 /obj/item/storage/guncase/pistol/candor{
 	pixel_x = -8;
 	pixel_y = -9;
@@ -1931,16 +1935,7 @@
 "rE" = (
 /obj/structure/closet/crate/medical,
 /obj/item/clothing/gloves/color/latex/nitrile,
-/obj/item/storage/firstaid/regular,
 /obj/item/roller,
-/obj/item/reagent_containers/hypospray/medipen/survival,
-/obj/item/reagent_containers/hypospray/medipen/survival{
-	pixel_y = -4
-	},
-/obj/item/storage/pill_bottle/charcoal/less{
-	pixel_x = -6;
-	pixel_y = -2
-	},
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
@@ -1950,6 +1945,16 @@
 	},
 /obj/effect/turf_decal/box/corners{
 	dir = 1
+	},
+/obj/item/storage/firstaid/radiation,
+/obj/item/storage/firstaid/regular,
+/obj/item/reagent_containers/hypospray/medipen/survival,
+/obj/item/reagent_containers/hypospray/medipen/survival{
+	pixel_y = -4
+	},
+/obj/item/storage/pill_bottle/charcoal/less{
+	pixel_x = -6;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
@@ -2858,12 +2863,11 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo/starboard)
 "zB" = (
-/obj/machinery/atmospherics/components/unary/passive_vent{
-	dir = 2;
-	piping_layer = 1
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
+	dir = 2
 	},
 /turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
+/area/ship/engineering/atmospherics)
 "zC" = (
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
@@ -3887,7 +3891,7 @@
 	dir = 1
 	},
 /turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
+/area/ship/engineering)
 "IZ" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
