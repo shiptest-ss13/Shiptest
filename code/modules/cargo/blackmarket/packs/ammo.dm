@@ -101,17 +101,6 @@
 	stock_max = 6
 	availability_prob = 0
 
-/datum/blackmarket_item/ammo/saber_mag
-	name = "Saber 9x18mm SMG Magazines"
-	desc = "Magazines for use in the Saber 9x18mm SMG. No, they don't work as swords."
-	item = /obj/item/ammo_box/magazine/m9mm_expedition
-
-	cost_min = 150
-	cost_max = 450
-	stock_min = 4
-	stock_max = 6
-	availability_prob = 0
-
 /datum/blackmarket_item/ammo/model_h_mag
 	name = "Model H Magazine"
 	desc = "A 10 round magazine for Model H slug pistol."

@@ -11,7 +11,8 @@
 
 	bad_type = /mob/living
 
-	var/resize = 1 ///Badminnery resize
+	///Tracks the current size of the mob in relation to its original size. Use update_transform(resize) to change it.
+	var/current_size = RESIZE_DEFAULT_SIZE
 	var/lastattacker = null
 	var/lastattackerckey = null
 
@@ -185,6 +186,9 @@
 	///Default Y offset
 	var/body_pixel_y_offset = 0
 
+	///The height offset of a mob's maptext due to their current size.
+	var/body_maptext_height_offset = 0
+
 	/// FOV view that is applied from either nativeness or traits
 	var/fov_view
 	/// Native FOV that will be applied if a config is enabled
@@ -192,10 +196,20 @@
 	/// Lazy list of FOV traits that will apply a FOV view when handled.
 	var/list/fov_traits
 
+	var/rotate_on_lying = FALSE
+
+	///what multiplicative slowdown we get from turfs currently.
+	var/current_turf_slowdown = 0
+
 	///how much recoil do we experience when shooting. Ideally some.
 	var/recoil_effect = 1 //i hate guncode
 	///how much recoil do we experience from being shot. Ideally some.
 	var/impact_effect = 1
+
+	/// Lazylists of pixel offsets this mob is currently using
+	/// Modify this via add_offsets and remove_offsets,
+	/// NOT directly (and definitely avoid modifying offsets directly)
+	VAR_PRIVATE/list/offsets
 
 	/// World time of the last time this mob heard a radio crackle, to reduce spamminess.
 	COOLDOWN_DECLARE(radio_crackle_cooldown)

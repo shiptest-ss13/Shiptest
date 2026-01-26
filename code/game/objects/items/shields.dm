@@ -93,7 +93,7 @@
 	material_flags = MATERIAL_NO_EFFECTS
 
 /obj/item/shield/riot/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/melee/baton))
+	if(istype(W, /obj/item/melee))
 		if(COOLDOWN_FINISHED(src, baton_bash))
 			user.visible_message(span_warning("[user] bashes [src] with [W]!"))
 			playsound(src, shield_bash_sound, 50, TRUE)
