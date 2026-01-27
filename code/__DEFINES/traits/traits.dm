@@ -1,5 +1,5 @@
-#define SIGNAL_ADDTRAIT(trait_ref) "addtrait [trait_ref]"
-#define SIGNAL_REMOVETRAIT(trait_ref) "removetrait [trait_ref]"
+#define SIGNAL_ADDTRAIT(trait_ref) ("addtrait " + trait_ref)
+#define SIGNAL_REMOVETRAIT(trait_ref) ("removetrait " + trait_ref)
 
 // trait accessor defines
 #define ADD_TRAIT(target, trait, source) \
@@ -27,14 +27,14 @@
 		if (sources && !islist(sources)) { \
 			_S = list(sources); \
 		} else { \
-			_S = sources \
+			_S = sources\
 		}; \
-		if (_L && _L[trait]) { \
+		if (_L?[trait]) { \
 			for (var/_T in _L[trait]) { \
 				if ((!_S && (_T != ROUNDSTART_TRAIT)) || (_T in _S)) { \
 					_L[trait] -= _T \
 				} \
-			}; \
+			};\
 			if (!length(_L[trait])) { \
 				_L -= trait; \
 				SEND_SIGNAL(target, SIGNAL_REMOVETRAIT(trait), trait); \
@@ -145,6 +145,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_STASIS "stasis"
 /// This mob is asthmatic, and has much more severe reactions to any irritants present in the air
 #define TRAIT_ASTHMATIC "asthmatic"
+/// Prevents lung inflammation from increasing.
+#define TRAIT_ANTI_INFLAMMATORY "anti-inflammatory"
 #define TRAIT_BLIND "blind"
 #define TRAIT_DEAF "deaf"
 #define TRAIT_MUTE "mute"
@@ -189,6 +191,20 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_SNOWSTORM_IMMUNE "snow_immunity"
 #define TRAIT_ASHSTORM_IMMUNE "ash_immunity"
 #define TRAIT_SANDSTORM_IMMUNE "sand_immunity"
+
+///Lava will be safe to cross while it has this trait.
+#define TRAIT_LAVA_STOPPED "lava_stopped"
+///Chasms will be safe to cross while they've this trait.
+#define TRAIT_CHASM_STOPPED "chasm_stopped"
+///The effects of the immerse element will be halted while this trait is present.
+#define TRAIT_IMMERSE_STOPPED "immerse_stopped"
+///The effects of acid turfs will be stopped while the trait is present
+#define TRAIT_ACID_STOPPED "immerse_stopped"
+///Turf slowdown will be ignored when this trait is added to a turf.
+#define TRAIT_TURF_IGNORE_SLOWDOWN "turf_ignore_slowdown"
+///Mobs won't slip on a wet turf while it has this trait
+#define TRAIT_TURF_IGNORE_SLIPPERY "turf_ignore_slippery"
+
 /// Mobs that have this trait cannot be extinguished
 #define TRAIT_NO_EXTINGUISH "no_extinguish"
 #define TRAIT_NOFIRE "nonflammable"
@@ -521,6 +537,9 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 
 /// Climbable trait, given and taken by the climbable element when added or removed. Exists to be easily checked via HAS_TRAIT().
 #define TRAIT_CLIMBABLE "trait_climbable"
+
+/// If this movable is currently treading in a turf with the immerse element.
+#define TRAIT_IMMERSED "immersed"
 
 /// Trait applied by element
 #define ELEMENT_TRAIT(source) "element_trait_[source]"

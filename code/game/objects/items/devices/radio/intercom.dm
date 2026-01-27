@@ -25,6 +25,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 	if(!current_area)
 		return
 	RegisterSignal(current_area, COMSIG_AREA_POWER_CHANGE, PROC_REF(AreaPowerCheck))
+	ADD_TRAIT(src, TRAIT_WALLMOUNTED, type)
 
 /obj/item/radio/intercom/examine(mob/user)
 	. = ..()
