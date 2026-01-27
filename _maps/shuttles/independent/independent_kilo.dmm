@@ -149,11 +149,7 @@
 	icon_state = "4-6"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/item/reagent_containers/food/drinks/beer{
-	list_reagents = null;
-	pixel_x = -14;
-	pixel_y = 5
-	},
+/obj/item/reagent_containers/food/drinks/mead,
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
@@ -421,11 +417,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/item/reagent_containers/food/drinks/beer{
-	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 10);
-	pixel_x = -6;
-	pixel_y = 7
-	},
+/obj/item/reagent_containers/food/drinks/mead,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "cB" = (
@@ -1016,11 +1008,7 @@
 	dir = 8
 	},
 /obj/item/stack/sheet/mineral/plasma/ten,
-/obj/item/reagent_containers/food/drinks/beer{
-	list_reagents = null;
-	pixel_x = -13;
-	pixel_y = 11
-	},
+/obj/item/reagent_containers/food/drinks/mead,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "pV" = (
@@ -2041,10 +2029,7 @@
 /obj/structure/dresser{
 	dir = 1
 	},
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = -9;
-	pixel_y = 12
-	},
+/obj/item/reagent_containers/food/drinks/mead,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
