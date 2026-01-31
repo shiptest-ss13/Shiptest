@@ -18,6 +18,13 @@
 	. = ..()
 	deploy_action = new(src)
 
+/obj/item/organ/brain/remote_control/Destroy()
+	var/mob/living/silicon/ai/linked_ai = linked_ai_ref?.resolve()
+	if(linked_ai && owner?.mind)
+		undeploy_from_frame(owner, linked_ai)
+	QDEL_NULL(deploy_action)
+	return ..()
+
 /obj/item/organ/brain/remote_control/examine(mob/user)
 	. = ..()
 	var/mob/living/silicon/ai/our_ai = linked_ai_ref?.resolve()
@@ -175,6 +182,10 @@
 	var/mob/living/carbon/frame
 	/// Static list of overlays to copy from the frame onto the button icon.
 	var/static/list/overlays_to_copy = list(BODY_BEHIND_LAYER, BODYPARTS_LOW_LAYER, BODYPARTS_LAYER, BODY_ADJ_LAYER, BODY_LAYER, FRONT_MUTATIONS_LAYER, BODYPARTS_HIGH_LAYER, BODY_FRONT_LAYER)
+
+/datum/action/innate/deploy_frame/Destroy()
+	frame = null
+	return ..()
 
 /datum/action/innate/deploy_frame/proc/set_frame(mob/living/carbon/new_frame)
 	frame = new_frame
