@@ -28,7 +28,7 @@
 		to_chat(character, span_notice("NOTICE: Successfully linked core to remote frame [character.real_name]."))
 	else
 		to_chat(new_ai, span_userdanger("ERROR: Failed to link with remote frame [character.real_name]!"))
-		stack_trace("/datum/job/ai failed to deploy AI [new_ai] to remote frame [character.real_name]!")
+		stack_trace("[type] failed to deploy AI [new_ai] to remote frame [character.real_name]!")
 
 	new_ai.add_ship_access(ship)
 	new_ai.set_core_display_icon(null, user_client)
