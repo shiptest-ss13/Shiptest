@@ -145,6 +145,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_STASIS "stasis"
 /// This mob is asthmatic, and has much more severe reactions to any irritants present in the air
 #define TRAIT_ASTHMATIC "asthmatic"
+/// Prevents lung inflammation from increasing.
+#define TRAIT_ANTI_INFLAMMATORY "anti-inflammatory"
 /// This mob is a remote-controlled body of another mob, and shouldn't show up as catatonic/SSD/etc.
 #define TRAIT_REMOTE_CONTROL "remote_control"
 /// This mob is capable of using binary chat.

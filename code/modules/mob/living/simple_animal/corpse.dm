@@ -26,6 +26,29 @@
 	neck = /obj/item/clothing/neck/dogtag/ramzi
 	id = /obj/item/card/id/syndicate
 
+/obj/effect/mob_spawn/human/corpse/ramzi/engi
+	name = "Ramzi Engineer"
+	outfit = /datum/outfit/ramzi/engi
+
+/datum/outfit/ramzi/engi
+	name = "Ramzi Technician Corpse"
+	suit = /obj/item/clothing/suit/ramzi
+	gloves = /obj/item/clothing/gloves/color/fyellow/old
+	head = /obj/item/clothing/head/hardhat/ramzi
+	glasses = /obj/item/clothing/glasses/welding
+	belt = /obj/item/storage/belt/utility
+
+/obj/effect/mob_spawn/human/corpse/ramzi/doctor
+	name = "Ramzi Field Medic"
+	outfit = /datum/outfit/ramzi/doctor
+
+/datum/outfit/ramzi/doctor
+	name = "Ramzi Sawbones Corpse"
+	uniform = /obj/item/clothing/under/syndicate/ramzi
+	suit = /obj/item/clothing/suit/ramzi/smock
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil //EVIL
+	head = /obj/item/clothing/head/ramzi/surgical
+
 /datum/outfit/ramzi/bulletproof
 	name = "Ramzi Clique Rifleman"
 	suit = /obj/item/clothing/suit/armor/ramzi/bulletproof
