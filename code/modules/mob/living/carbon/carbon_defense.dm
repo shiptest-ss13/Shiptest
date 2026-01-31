@@ -414,12 +414,30 @@
 	if(should_stun)
 		Paralyze(60)
 
+/mob/living/carbon/proc/help_extinguish_act(mob/living/carbon/helper)
+	if(on_fire && src != helper)
+		if(helper.check_hot_hands())
+			if(do_after(helper, 10, src))
+				adjust_fire_stacks(-3)
+				playsound(src.loc, 'sound/weapons/thudswoosh.ogg', 25, 1, 7)
+				helper.visible_message(span_danger("[helper] tries to put out the fire on [src]!"),
+					span_warning("You try to put out the fire on [src]!"), null, 5)
+				if(fire_stacks <= 0)
+					helper.visible_message(span_warning("[helper] has successfully extinguished the fire on [src]!"),
+						span_notice("You extinguished the fire on [src]."), null, 5)
+					extinguish_mob()
+					return TRUE
+				return TRUE
+		else
+			to_chat(helper, span_warning("You can't get close enough without getting burnt!"))
+	else
+		to_chat(helper, span_warning("You can't put [p_them()] out with just your bare hands!"))
+		return
+
 /mob/living/carbon/proc/help_shake_act(mob/living/carbon/M)
 	var/datum/component/mood/hugger_mood = M.GetComponent(/datum/component/mood)
 	var/nosound = FALSE
-	if(on_fire)
-		to_chat(M, span_warning("You can't put [p_them()] out with just your bare hands!"))
-		return
+
 
 	if(M == src && check_self_for_injuries())
 		return
@@ -823,3 +841,11 @@
 			check_projectile_dismemberment(P, def_zone)
 
 	return on_hit_state ? BULLET_ACT_HIT : BULLET_ACT_BLOCK
+
+/mob/living/carbon/proc/check_hot_hands()
+	var/can_handle_hot = FALSE
+	if(gloves && (gloves.max_heat_protection_temperature > 360))
+		can_handle_hot = TRUE
+	else if(HAS_TRAIT(src, TRAIT_RESISTHEAT) || HAS_TRAIT(src, TRAIT_RESISTHEATHANDS))
+		can_handle_hot = TRUE
+	return can_handle_hot

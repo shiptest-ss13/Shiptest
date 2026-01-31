@@ -115,6 +115,8 @@
 		return
 	if(LAZYACCESS(modifiers, ALT_CLICK))
 		return
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+		return
 	if(source.mob.throw_mode)
 		return
 	if(!isturf(source.mob.loc)) //No firing inside lockers and stuff.

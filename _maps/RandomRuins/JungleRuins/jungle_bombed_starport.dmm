@@ -9330,9 +9330,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/landmark/mission_poi/main/kill{
-	type_to_spawn = /mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun/incendiary
-	},
 /turf/open/floor/plating/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Py" = (
@@ -11060,10 +11057,6 @@
 /obj/item/folder/documents/syndicate/red{
 	pixel_y = 6;
 	pixel_x = -6
-	},
-/obj/effect/landmark/mission_poi/main{
-	already_spawned = 1;
-	mission_index = 2
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/airbase/tower)

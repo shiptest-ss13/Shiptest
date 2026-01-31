@@ -3,7 +3,7 @@
 	name = "Herb salad"
 	reqs = list(
 		/obj/item/reagent_containers/glass/bowl = 1,
-		/obj/item/food/grown/ambrosia/vulgaris = 3,
+		/obj/item/food/grown/cabbage = 3,
 		/obj/item/food/grown/apple = 1
 	)
 	result = /obj/item/food/salad/herbsalad
@@ -13,7 +13,7 @@
 	name = "Aesir salad"
 	reqs = list(
 		/obj/item/reagent_containers/glass/bowl = 1,
-		/obj/item/food/grown/ambrosia/deus = 3,
+		/obj/item/food/grown/cabbage = 3,
 		/obj/item/food/grown/apple/gold = 1
 	)
 	result = /obj/item/food/salad/aesirsalad
@@ -23,7 +23,7 @@
 	name = "Full salad"
 	reqs = list(
 		/obj/item/reagent_containers/glass/bowl = 1,
-		/obj/item/food/grown/ambrosia/vulgaris = 3,
+		/obj/item/food/grown/cabbage = 3,
 		/obj/item/food/grown/potato = 1,
 		/obj/item/food/meatball = 1
 	)
@@ -38,7 +38,7 @@
 		/obj/item/food/grown/citrus/orange = 1,
 		/obj/item/food/grown/citrus/lemon = 1,
 		/obj/item/food/grown/banana = 1,
-		/obj/item/food/grown/ambrosia = 1
+		/obj/item/food/grown/cabbage = 1
 	)
 	result = /obj/item/food/melonfruitbowl
 	subcategory = CAT_SALAD

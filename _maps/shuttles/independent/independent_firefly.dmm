@@ -926,14 +926,8 @@
 /area/ship/crew/ccommons)
 "ky" = (
 /obj/structure/table,
-/obj/item/reagent_containers/food/drinks/beer/light{
-	pixel_x = -8;
-	pixel_y = 7
-	},
-/obj/item/reagent_containers/food/drinks/beer/light{
-	pixel_x = 7;
-	pixel_y = -3
-	},
+/obj/item/reagent_containers/food/drinks/beer,
+/obj/item/reagent_containers/food/drinks/beer,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
@@ -1004,10 +998,7 @@
 /area/ship/hallway/aft)
 "lV" = (
 /obj/structure/table,
-/obj/item/reagent_containers/food/drinks/beer/light{
-	pixel_x = -2;
-	pixel_y = 6
-	},
+/obj/item/reagent_containers/food/drinks/beer,
 /obj/machinery/newscaster/directional/south,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
@@ -2650,6 +2641,14 @@
 	pixel_x = 3;
 	pixel_y = 4
 	},
+/obj/item/toy/cards/deck{
+	pixel_x = 9;
+	pixel_y = -1
+	},
+/obj/item/toy/cards/deck/kotahi{
+	pixel_x = 9;
+	pixel_y = 4
+	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/ccommons)
 "Gj" = (
@@ -3003,6 +3002,7 @@
 	pixel_y = -5
 	},
 /obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/flour,
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
 "Jm" = (

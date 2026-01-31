@@ -25,6 +25,7 @@
 
 	var/malfunction
 	var/active = FALSE
+	///the vein that we are currently drilling
 	var/obj/structure/vein/our_vein
 	var/datum/looping_sound/drill/soundloop
 	var/obj/item/stock_parts/cell/cell
@@ -289,6 +290,7 @@
 	if(destructive)
 		our_vein.Destroy()
 		our_vein = null
+		anchored = FALSE
 	playsound(src, 'sound/machines/switch2.ogg', 50, TRUE)
 	update_icon_state()
 	update_overlays()

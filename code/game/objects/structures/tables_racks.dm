@@ -42,6 +42,11 @@
 	/// Whether or not this table can actually be flipped. TODO: Make setting flipped_table_type to null do this instead and remove this var
 	var/can_flip = TRUE
 
+/obj/structure/table/Initialize()
+	. = ..()
+	var/static/list/give_turf_traits = list(TRAIT_TURF_IGNORE_SLOWDOWN, TRAIT_TURF_IGNORE_SLIPPERY, TRAIT_IMMERSE_STOPPED)
+	AddElement(/datum/element/give_turf_traits, give_turf_traits)
+
 /obj/structure/table/examine(mob/user)
 	. = ..()
 	. += deconstruction_hints(user)
@@ -257,7 +262,7 @@
 		return
 	if(can_flip)
 		user.visible_message(span_danger("[user] starts flipping [src]!"), span_notice("You start flipping over the [src]!"))
-		if(do_after(user, max_integrity/4))
+		if(do_after(user, max_integrity/12))
 			var/obj/structure/flippedtable/flipped = new flipped_table_type(src.loc)
 			flipped.name = "flipped [src.name]"
 			flipped.desc = "[src.desc] It is flipped!"

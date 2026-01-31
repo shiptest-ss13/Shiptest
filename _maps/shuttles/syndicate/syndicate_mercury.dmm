@@ -838,10 +838,12 @@
 /obj/effect/turf_decal/borderfloorwhite{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
@@ -1387,21 +1389,8 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/fore)
 "wg" = (
-/obj/structure/closet/secure_closet/engineering_personal{
-	name = "ship engineer's personal locker";
-	populate = 0
-	},
-/obj/item/clothing/head/safety_helmet/suns,
-/obj/item/clothing/gloves/suns/yellow,
-/obj/item/clothing/under/syndicate/suns/workerjumpsuit,
-/obj/item/clothing/shoes/jackboots/suns,
-/obj/item/clothing/suit/toggle/suns/workervest,
-/obj/item/storage/pouch/engi,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 4
-	},
 /obj/machinery/newscaster/directional/west,
-/obj/item/radio/headset/alt,
+/obj/machinery/telecomms/relay/preset/suns,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "wj" = (
@@ -2162,11 +2151,11 @@
 /obj/item/clothing/gloves/suns/xo,
 /obj/item/clothing/neck/cloak/suns/xo,
 /obj/item/storage/pouch/squad,
-/obj/item/radio/headset/syndicate/alt/leader,
 /obj/item/clothing/head/suns,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/obj/item/radio/headset/syndicate/alt/suns,
 /turf/open/floor/suns/hatch/ebony,
 /area/ship/bridge)
 "Iy" = (
@@ -2372,9 +2361,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engines/port)
 "Lt" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
@@ -2441,6 +2427,19 @@
 "Mx" = (
 /obj/effect/turf_decal/borderfloorwhite{
 	dir = 1
+	},
+/obj/structure/closet/wall/orange/directional/west{
+	name = "ship engineer's personal locker"
+	},
+/obj/item/radio/headset/alt,
+/obj/item/storage/pouch/engi,
+/obj/item/clothing/suit/toggle/suns/workervest,
+/obj/item/clothing/shoes/jackboots/suns,
+/obj/item/clothing/under/syndicate/suns/workerjumpsuit,
+/obj/item/clothing/gloves/suns/yellow,
+/obj/item/clothing/head/safety_helmet/suns,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
@@ -2780,7 +2779,6 @@
 /obj/item/storage/box/ammo/ferroslug,
 /obj/item/storage/pouch/squad,
 /obj/item/clothing/gloves/suns/captain,
-/obj/item/radio/headset/syndicate/alt/captain,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
@@ -2789,6 +2787,7 @@
 /obj/item/clothing/shoes/combat/suns,
 /obj/item/clothing/suit/armor/vest/suns/captain,
 /obj/item/clothing/head/suns/captain,
+/obj/item/radio/headset/syndicate/alt/suns/command,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm/captain)
 "Qw" = (
