@@ -77,7 +77,11 @@
 /obj/item/organ/brain/remote_control/proc/handle_core_loss(mob/living/silicon/ai/source)
 	SIGNAL_HANDLER
 	if(owner)
-		undeploy_from_frame(owner, source)
+		to_chat(owner, span_userdanger("ERROR: Lost connection with core!"))
+		if(QDELETED(source))
+			owner.ghostize()
+		else
+			undeploy_from_frame(owner, source)
 	set_linked_ai(null)
 
 /// This updates whether the frame should be incapacitated by losing its linked core. Roger Roger.
@@ -98,6 +102,7 @@
 	deploy_action.Grant(core)
 	ADD_TRAIT(frame, TRAIT_REMOTE_CONTROL, REF(src))
 	ADD_TRAIT(frame, TRAIT_BINARY_RADIO, REF(src))
+	RegisterSignal(frame, COMSIG_MOB_DEATH, PROC_REF(on_frame_death))
 	RegisterSignal(frame, COMSIG_MOB_ATTACK_RANGED_SECONDARY, PROC_REF(on_ranged_attack))
 	RegisterSignal(frame, COMSIG_HUMAN_EARLY_UNARMED_ATTACK, PROC_REF(on_unarmed_attack))
 
@@ -108,12 +113,12 @@
 		undeploy_from_frame(frame, core)
 	REMOVE_TRAIT(frame, TRAIT_REMOTE_CONTROL, REF(src))
 	REMOVE_TRAIT(frame, TRAIT_BINARY_RADIO, REF(src))
-	UnregisterSignal(frame, list(COMSIG_MOB_ATTACK_RANGED_SECONDARY, COMSIG_HUMAN_EARLY_UNARMED_ATTACK))
+	UnregisterSignal(frame, list(COMSIG_MOB_DEATH, COMSIG_MOB_ATTACK_RANGED_SECONDARY, COMSIG_HUMAN_EARLY_UNARMED_ATTACK))
 
 /obj/item/organ/brain/remote_control/proc/deploy_to_frame(mob/living/carbon/frame, mob/living/silicon/ai/core)
 	if(!core.mind)
 		return
-	if(frame.stat >= UNCONSCIOUS)
+	if(frame.stat >= HARD_CRIT)
 		to_chat(core, span_warning("ERROR: [frame.real_name] is not responding!"))
 		return
 	if(organ_flags & ORGAN_FAILING)
@@ -139,6 +144,15 @@
 		return
 	if(target.attack_ai(source))
 		return COMPONENT_NO_ATTACK_HAND
+
+/obj/item/organ/brain/remote_control/proc/on_frame_death(mob/living/source)
+	SIGNAL_HANDLER
+	var/mob/living/silicon/ai/linked_ai = linked_ai_ref?.resolve()
+	if(!linked_ai)
+		source.ghostize()
+		return
+	to_chat(source, span_userdanger("ERROR: Lost connection with remote frame!"))
+	undeploy_from_frame(source, linked_ai)
 
 /datum/action/item_action/organ_action/undeploy_frame
 	name = "Disconnect from frame"

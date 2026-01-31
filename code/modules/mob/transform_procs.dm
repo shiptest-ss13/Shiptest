@@ -393,13 +393,17 @@
 	if(!transfer_after)
 		mind.active = FALSE
 
-	. = new /mob/living/silicon/ai(pick(landmark_loc), null, src)
+	var/mob/living/silicon/ai/new_ai = new(pick(landmark_loc), null, src)
 
 	if(preference_source)
-		apply_pref_name("ai",preference_source)
+		new_ai.apply_pref_name("ai", preference_source)
 
 	if(delete_self)
 		qdel(src)
+	else
+		notransform = FALSE
+
+	return new_ai
 
 /mob/living/carbon/human/proc/Robotize(delete_items = 0, transfer_after = TRUE)
 	if (notransform)

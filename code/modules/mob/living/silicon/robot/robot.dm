@@ -1094,8 +1094,9 @@
 		unbuckle_mob(unbuckle_me_now, FALSE)
 
 
-/mob/living/silicon/robot/proc/TryConnectToAI()
-	set_connected_ai(select_active_ai_with_fewest_borgs(z))
+/mob/living/silicon/robot/proc/TryConnectToAI(mob/living/silicon/ai/new_ai)
+	new_ai ||= select_active_ai_with_fewest_borgs(z)
+	set_connected_ai(new_ai)
 	if(connected_ai)
 		lawsync()
 		lawupdate = 1
