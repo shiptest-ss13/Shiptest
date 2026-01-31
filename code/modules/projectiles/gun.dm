@@ -1289,7 +1289,7 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 
 /// AIMING BEAM BEHAVIOR
 
-/obj/item/gun/proc/aiming_beam(force_update = FALSE)
+/obj/item/gun/proc/aiming_beam(force_update = FALSE, new_angle)
 	var/diff = abs(aiming_lastangle - lastangle)
 	if(!check_user())
 		return
@@ -1335,13 +1335,18 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 		return FALSE
 	return TRUE
 
-/obj/item/gun/proc/process_aim()
+/obj/item/gun/proc/process_aim(target)
 	if(istype(current_user) && current_user.client && current_user.client.mouseParams)
-		var/angle = mouse_angle_from_client(current_user.client)
+		var/angle
+		if(target)
+			angle = get_angle(current_user,target)
+		else
+			angle = mouse_angle_from_client(current_user.client)
 		current_user.setDir(angle2dir_cardinal(angle))
 		var/difference = abs(closer_angle_difference(lastangle, angle))
 		delay_penalty(difference * aiming_time_increase_angle_multiplier)
 		lastangle = angle
+		//to_chat(current_user,lastangle)
 
 /obj/item/gun/proc/on_mob_move()
 	check_user()
@@ -1350,10 +1355,10 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 		process_aim()
 		aiming_beam(TRUE)
 
-/obj/item/gun/proc/start_aiming()
+/obj/item/gun/proc/start_aiming(target)
 	aiming_time_left = aiming_time
 	aiming = TRUE
-	process_aim()
+	process_aim(target)
 	aiming_beam(TRUE)
 	//zooming_angle = lastangle
 	//()
@@ -1374,7 +1379,7 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 		return
 	if((object in mob.contents) || (object == mob))
 		return
-	start_aiming()
+	start_aiming(object)
 	return ..()
 
 /obj/item/gun/onMouseDrag(src_object, over_object, src_location, over_location, params, mob)
@@ -1406,9 +1411,9 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 	// 	if(target == user && user.zone_selected != BODY_ZONE_PRECISE_MOUTH) //so we can't shoot ourselves (unless mouth selected)
 	// 		return
 	if(!passthrough && (aiming_time > aiming_time_fire_threshold))
-		return
+		return FALSE
 	if(lastfire > world.time + delay)
-		return
+		return FALSE
 	lastfire = world.time
 	// . = ..()
 	// stop_aiming()

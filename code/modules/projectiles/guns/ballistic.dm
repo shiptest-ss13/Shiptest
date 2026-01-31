@@ -336,15 +336,20 @@
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/gun/ballistic/attack_hand(mob/user)
-	// the main calls it's own eject mag before the underbarrel. fix this
-	if(user.is_holding(src) && loc == user && !(gun_firemodes[firemode_index] == FIREMODE_UNDERBARREL))
+	if(user.is_holding(src) && loc == user)
 		if(sealed_magazine)
 			to_chat(user, span_warning("The [magazine_wording] on [src] is sealed and cannot be accessed!"))
 			return
 		if(bolt_type == BOLT_TYPE_NO_BOLT && (chambered || internal_magazine))
-			chambered = null
 			var/num_unloaded = 0
-			for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
+			var/count_chambered = FALSE
+			if(doesnt_keep_bullet)
+				count_chambered = TRUE
+			else
+				chambered = null
+			for(var/obj/item/ammo_casing/CB in get_ammo_list(count_chambered, TRUE))
+				if(QDELETED(CB))
+					continue
 				CB.forceMove(drop_location())
 
 				var/angle_of_movement =(rand(-3000, 3000) / 100) + dir2angle(turn(user.dir, 180))
