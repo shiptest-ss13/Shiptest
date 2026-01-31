@@ -30,9 +30,7 @@
 		to_chat(new_ai, span_userdanger("ERROR: Failed to link with remote frame [character.real_name]!"))
 		stack_trace("/datum/job/ai failed to deploy AI [new_ai] to remote frame [character.real_name]!")
 
-	var/obj/item/card/id/access_card = character.get_idcard()
-	if(access_card)
-		new_ai.add_ship_access(ship)
+	new_ai.add_ship_access(ship)
 	new_ai.set_core_display_icon(null, user_client)
 
 	//we may have been created after our borg
