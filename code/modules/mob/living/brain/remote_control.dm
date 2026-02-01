@@ -5,7 +5,7 @@
 	desc = "A remote controller for humanoid robotic frames. It can be linked to a stationary mainframe unit."
 	icon = 'icons/obj/module.dmi'
 	icon_state = "boris"
-	organ_flags = ORGAN_SYNTHETIC
+	organ_flags = ORGAN_SYNTHETIC | ORGAN_PERSISTENT
 	status = ORGAN_ROBOTIC
 	zone = BODY_ZONE_CHEST
 	actions_types = list(/datum/action/item_action/organ_action/undeploy_frame)
