@@ -60,6 +60,8 @@
 
 	var/mob/living/target_mob
 	for(target_mob in turf_to_check)
+		if(target_mob == source)
+			continue
 		if(!target_mob || target_mob.stat == DEAD)
 			continue
 		return target_mob
