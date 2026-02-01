@@ -3,21 +3,27 @@
 */
 /datum/wound/muscle
 	name = "Muscle Wound"
-	wound_type = WOUND_MUSCLE
-	wound_flags = (FLESH_WOUND | ACCEPTS_SPLINT)
-	viable_zones = list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+	wound_flags = ACCEPTS_SPLINT
+	bio_state_required = BIO_FLESH
+	excluded_zones = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST)
 	processes = TRUE
 	///How much do we need to regen. Will regen faster if we're splinted and or laying down
 	var/regen_ticks_needed
 	///Our current counter for healing
 	var/regen_ticks_current = 0
 
+/datum/wound_pregen_data/muscle
+	abstract = TRUE
+	required_limb_biostate = BIO_FLESH
+
+	required_wounding_types = list(WOUND_BLUNT)
+	wound_series = WOUND_SERIES_FLESH_MUSCLE
+	weight = WOUND_MUSCLE_WEIGHT
+
 /*
 	Overwriting of base procs
 */
 /datum/wound/muscle/wound_injury(datum/wound/old_wound = null, attack_direction = null)
-	//hook into gaining/losing gauze so crit muscle wounds can re-enable/disable depending if they're slung or not
-	RegisterSignals(limb, list(COMSIG_BODYPART_SPLINTED, COMSIG_BODYPART_SPLINT_DESTROYED), PROC_REF(update_inefficiencies))
 	RegisterSignal(victim, COMSIG_HUMAN_EARLY_UNARMED_ATTACK, PROC_REF(attack_with_hurt_hand))
 
 	if(limb.held_index && victim.get_item_for_held_index(limb.held_index) && (disabling || prob(10 * severity)))
@@ -111,31 +117,6 @@
 
 	return "<B>[msg.Join()]</B>"
 
-/*
-	Common procs mostly copied from bone wounds, as their behaviour is very similar
-*/
-/datum/wound/muscle/proc/update_inefficiencies()
-	if(limb.body_zone in list(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
-		if(limb.current_splint)
-			limp_slowdown = initial(limp_slowdown) * limb.current_splint.splint_factor
-		else
-			limp_slowdown = initial(limp_slowdown)
-		victim.apply_status_effect(STATUS_EFFECT_LIMP)
-
-	else if(limb.body_zone in list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
-		if(limb.current_splint)
-			interaction_efficiency_penalty = 1 + ((interaction_efficiency_penalty - 1) * limb.current_splint.splint_factor)
-		else
-			interaction_efficiency_penalty = interaction_efficiency_penalty
-
-	if(initial(disabling))
-		if(limb.current_splint && limb.current_splint.helps_disabled)
-			set_disabling(FALSE)
-		else
-			set_disabling(TRUE)
-
-	limb.update_wounds()
-
 //Moderate (Muscle Tear)
 /datum/wound/muscle/moderate
 	name = "Muscle Tear"
@@ -146,10 +127,15 @@
 	severity = WOUND_SEVERITY_MODERATE
 	interaction_efficiency_penalty = 1.15
 	limp_slowdown = 1
-	threshold_minimum = 40
 	threshold_penalty = 10
 	status_effect_type = /datum/status_effect/wound/muscle/moderate
 	regen_ticks_needed = 500
+
+/datum/wound_pregen_data/muscle/tear
+	abstract = FALSE
+
+	wound_path_to_generate = /datum/wound/muscle/moderate
+	threshold_minimum = 40
 
 //Severe (Ruptured Tendon)
 /datum/wound/muscle/severe
@@ -162,11 +148,16 @@
 	severity = WOUND_SEVERITY_SEVERE
 	interaction_efficiency_penalty = 1.25
 	limp_slowdown = 5
-	threshold_minimum = 90
 	threshold_penalty = 35
 	disabling = TRUE
 	status_effect_type = /datum/status_effect/wound/muscle/severe
 	regen_ticks_needed = 1500 //takes a while
+
+/datum/wound_pregen_data/muscle/rupture
+	abstract = FALSE
+
+	wound_path_to_generate = /datum/wound/muscle/severe
+	threshold_minimum = 90
 
 /datum/status_effect/wound/muscle
 

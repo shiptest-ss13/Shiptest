@@ -1,0 +1,11 @@
+author: SapphicOverload
+changes:
+  - {rscadd: Added several new wound types for robotic limbs.}
+  - {balance: Fire stacks now apply wounds normally instead of instantly 
+      applying the highest one possible.}
+  - {code_imp: Multiple wound types can be rolled for and applied 
+      simultaneously.}
+  - {code_imp: Burn damage weapons can now apply slash/pierce wounds with the 
+      correct sharpness.}
+  - {bugfix: Fixed IPCs taking far more damage in crit than intended.}
+delete-after: true

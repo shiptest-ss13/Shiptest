@@ -1,0 +1,8584 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"au" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 8;
+	layer = 2.040
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall/white/directional/east{
+	name = "kitchen cabinet";
+	dir = 8;
+	pixel_x = -30;
+	pixel_y = 0
+	},
+/obj/item/plate{
+	pixel_x = -9;
+	pixel_y = -4
+	},
+/obj/item/plate{
+	pixel_x = -9;
+	pixel_y = -6
+	},
+/obj/item/plate{
+	pixel_x = -9;
+	pixel_y = -8
+	},
+/obj/item/plate{
+	pixel_x = -9;
+	pixel_y = -10
+	},
+/obj/item/plate/small{
+	pixel_x = 6;
+	pixel_y = -1
+	},
+/obj/item/plate/small{
+	pixel_x = 6;
+	pixel_y = -4
+	},
+/obj/item/plate/small{
+	pixel_x = 6;
+	pixel_y = -7
+	},
+/obj/item/plate/small{
+	pixel_x = 6;
+	pixel_y = -10
+	},
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/kitchen/second)
+"aw" = (
+/mob/living/simple_animal/hostile/viscerator,
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/ruin/icemoon/command_post)
+"aZ" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
+	},
+/turf/closed/mineral/random/snow,
+/area/ruin/icemoon/command_post)
+"bx" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/curtain/cloth,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/kitchen/second)
+"bC" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/engi)
+"bH" = (
+/obj/structure/toilet{
+	pixel_x = 0;
+	pixel_y = 13
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/machinery/light/dim/directional/east,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/dorms)
+"bI" = (
+/obj/machinery/door/poddoor{
+	dir = 8;
+	id = "caveshed"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/storage)
+"bK" = (
+/obj/structure/table/wood/poker,
+/obj/item/toy/cards/deck/syndicate{
+	pixel_x = 0;
+	pixel_y = 6
+	},
+/obj/item/spacecash/bundle/c50{
+	pixel_x = 9;
+	pixel_y = 13
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/crew_quarters)
+"bM" = (
+/obj/structure/rack,
+/obj/item/grown/log{
+	pixel_x = -7;
+	pixel_y = 5
+	},
+/obj/item/grown/log{
+	pixel_x = 2;
+	pixel_y = 5
+	},
+/obj/item/grown/log{
+	pixel_x = 10;
+	pixel_y = 5
+	},
+/obj/item/grown/log{
+	pixel_x = 6;
+	pixel_y = 9
+	},
+/obj/item/grown/log{
+	pixel_x = -3;
+	pixel_y = 10
+	},
+/obj/item/hatchet/wooden{
+	pixel_x = 5;
+	pixel_y = -9
+	},
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/crew_quarters)
+"bV" = (
+/obj/structure/railing/thin{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_2/icemoon,
+/area/ruin/icemoon/command_post)
+"bX" = (
+/obj/machinery/light/directional/north,
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"ce" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 8;
+	layer = 2.040
+	},
+/obj/machinery/button/door{
+	pixel_x = -22;
+	pixel_y = -9;
+	id = "ramziminingofficer";
+	normaldoorcontrol = 1;
+	name = "door lock";
+	specialfunctions = 4;
+	dir = 4
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/officer)
+"cj" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6;
+	color = "#543C30"
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#543C30";
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/dorms)
+"cl" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/obj/structure/table,
+/obj/item/radio/intercom/directional/north,
+/turf/open/floor/plasteel/dark,
+/area/ruin/icemoon/command_post/mission_control)
+"cn" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/engi)
+"cp" = (
+/obj/structure/dresser,
+/obj/item/poster/random_contraband{
+	pixel_x = 0;
+	pixel_y = 8
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/dorms/third)
+"cT" = (
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/ruin/icemoon/command_post)
+"cU" = (
+/turf/open/floor/carpet/green,
+/area/ruin/icemoon/command_post/officer)
+"da" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/dorms/second)
+"df" = (
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"do" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/armory)
+"dJ" = (
+/turf/closed/mineral/ice,
+/area/ruin/icemoon/command_post/kitchen)
+"dS" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
+	},
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
+	},
+/obj/effect/turf_decal/corner_techfloor_grid,
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"dX" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/command_post/mission_control)
+"eg" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/eva)
+"er" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/terminal,
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2{
+	piping_layer = 4;
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/engi)
+"et" = (
+/obj/machinery/drill,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/storage)
+"ey" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/obj/structure/rack,
+/obj/item/gun_maint_kit{
+	pixel_x = -3;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = -6;
+	pixel_y = 1
+	},
+/obj/item/flashlight/pen{
+	pixel_x = 5;
+	pixel_y = -4
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/eva)
+"ez" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/icemoon/command_post/mission_control)
+"eE" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 8;
+	layer = 2.040
+	},
+/obj/structure/chair/stool{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/armory)
+"eM" = (
+/obj/structure/closet/wall/directional/south,
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 8;
+	layer = 2.040
+	},
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = -3;
+	pixel_y = -10
+	},
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = -9;
+	pixel_y = -10
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = 7;
+	pixel_y = -3
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = 7;
+	pixel_y = -9
+	},
+/obj/item/clothing/suit/ramzi,
+/obj/item/clothing/suit/ramzi{
+	pixel_x = -9;
+	pixel_y = 0
+	},
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = 0;
+	pixel_y = 6
+	},
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = -7;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/dorms/third)
+"eQ" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/crew_quarters)
+"eZ" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/armory)
+"fa" = (
+/obj/machinery/door/airlock/grunge{
+	id_tag = "ramziminingbathroom"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/dorms)
+"fb" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/officer)
+"ff" = (
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/ruin/icemoon/command_post/kitchen)
+"fq" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 4;
+	layer = 2.040
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/crew_quarters)
+"fs" = (
+/turf/closed/mineral/ice,
+/area/ruin/icemoon/command_post)
+"fD" = (
+/obj/structure/platform{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"fG" = (
+/obj/structure/rack,
+/obj/item/storage/belt/security/webbing/ramzi{
+	pixel_x = -8;
+	pixel_y = 7
+	},
+/obj/item/storage/belt/security/webbing/ramzi/alt{
+	pixel_x = -7;
+	pixel_y = -3
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/dorms)
+"fM" = (
+/obj/structure/chair/stool,
+/obj/item/weldingtool/electric{
+	pixel_x = 2;
+	pixel_y = 5
+	},
+/obj/item/clothing/glasses/welding{
+	pixel_x = 11;
+	pixel_y = 0
+	},
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/eva)
+"fO" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/kitchen)
+"fV" = (
+/obj/structure/rack,
+/obj/item/clothing/shoes/winterboots/ice_boots{
+	pixel_x = -10;
+	pixel_y = -4
+	},
+/obj/item/clothing/shoes/winterboots/ice_boots{
+	pixel_x = -10;
+	pixel_y = 1
+	},
+/obj/item/clothing/shoes/winterboots/ice_boots{
+	pixel_x = -10;
+	pixel_y = 6
+	},
+/obj/item/clothing/shoes/winterboots{
+	pixel_x = 6;
+	pixel_y = -4
+	},
+/obj/item/clothing/shoes/winterboots{
+	pixel_x = 6;
+	pixel_y = 1
+	},
+/obj/item/clothing/shoes/winterboots{
+	pixel_x = 6;
+	pixel_y = 5
+	},
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/dorms)
+"fY" = (
+/obj/effect/turf_decal/siding/wood/end{
+	color = "#543C30";
+	dir = 4
+	},
+/obj/structure/sign/poster/contraband/syndiemoth{
+	pixel_x = 31;
+	pixel_y = 0
+	},
+/obj/structure/closet/wall/directional/south,
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = -8;
+	pixel_y = -13
+	},
+/obj/item/clothing/under/syndicate/ramzi/overalls{
+	pixel_x = 1;
+	pixel_y = -13
+	},
+/obj/item/clothing/suit/ramzi{
+	pixel_x = 11;
+	pixel_y = -12
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = 8;
+	pixel_y = 3
+	},
+/obj/item/clothing/suit/hooded/hoodie/rilena{
+	pixel_x = 1;
+	pixel_y = -1
+	},
+/obj/item/toy/plush/rilena{
+	pixel_x = -8;
+	pixel_y = -1
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/dorms)
+"gd" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/officer)
+"gf" = (
+/obj/machinery/blackbox_recorder,
+/obj/effect/turf_decal/borderfloorblack,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/icemoon/command_post/mission_control)
+"gh" = (
+/obj/effect/turf_decal/borderfloorblack/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 6;
+	layer = 2.040
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/armory)
+"gj" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#543C30";
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#543C30";
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#543C30";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/officer)
+"gk" = (
+/obj/machinery/power/floodlight,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/storage)
+"gr" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/crew_quarters)
+"gA" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/layer4{
+	dir = 4
+	},
+/turf/open/floor/engine/air,
+/area/ruin/icemoon/command_post/engi)
+"gD" = (
+/obj/structure/platform/ship{
+	dir = 8
+	},
+/obj/structure/railing/thin{
+	dir = 8
+	},
+/obj/machinery/computer/security{
+	dir = 4;
+	icon_state = "computer-middle"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/icemoon/command_post/mission_control)
+"gG" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/engi)
+"gK" = (
+/obj/machinery/door/airlock/grunge,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/dorms)
+"gP" = (
+/obj/structure/barricade/sandbags,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/icemoon,
+/area/ruin/icemoon/command_post)
+"gR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 9;
+	layer = 2.041
+	},
+/mob/living/simple_animal/hostile/human/ramzi/melee/machete,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/kitchen)
+"gZ" = (
+/obj/machinery/light/directional/north,
+/obj/effect/turf_decal/borderfloor/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 5;
+	layer = 2.040
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/command_post/armory)
+"ha" = (
+/obj/machinery/door/airlock/grunge,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/kitchen/second)
+"hh" = (
+/obj/effect/turf_decal/road/line{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement/icemoon,
+/area/ruin/icemoon/command_post)
+"hl" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/engi)
+"hn" = (
+/obj/structure/kitchenspike,
+/mob/living/basic/bear/polar{
+	icon_state = "polarbear_dead";
+	density = 0;
+	health = 0;
+	stat = 4
+	},
+/obj/effect/gibspawner/generic/animal,
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post/kitchen)
+"ho" = (
+/obj/structure/closet/cardboard,
+/mob/living/simple_animal/hostile/retaliate/poison/snake{
+	name = "chilly snake";
+	desc = "Brrrr."
+	},
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/turf/open/floor/plasteel/patterned,
+/area/ruin/icemoon/command_post/dorms/third)
+"hr" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/kitchen/second)
+"ht" = (
+/obj/structure/chair/bench/beige{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#543C30";
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/obj/effect/decal/cleanable/ash,
+/obj/item/cigbutt{
+	pixel_x = 9;
+	pixel_y = -8
+	},
+/obj/item/cigbutt{
+	pixel_x = 13;
+	pixel_y = -5
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/dorms/second)
+"hy" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/structure/railing/thin{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/eva)
+"hz" = (
+/obj/machinery/light/directional/west,
+/turf/open/floor/concrete/slab_1/icemoon/lit,
+/area/ruin/icemoon/command_post)
+"hN" = (
+/obj/effect/turf_decal/borderfloorblack/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 5;
+	layer = 2.040
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/armory)
+"hW" = (
+/obj/structure/chair/stool{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/crew_quarters)
+"hX" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/structure/chair/stool{
+	dir = 1
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/armory)
+"ig" = (
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post/kitchen)
+"iz" = (
+/obj/effect/turf_decal/borderfloor/corner,
+/obj/effect/decal/cleanable/oil,
+/obj/machinery/button/door{
+	pixel_x = 0;
+	pixel_y = 25;
+	name = "garage button";
+	id = "cavegarage"
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/engi)
+"iC" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/crew_quarters)
+"iI" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/engi)
+"iJ" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 8
+	},
+/turf/closed/mineral/random/snow,
+/area/ruin/icemoon/command_post)
+"iN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/borderfloor/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 6;
+	layer = 2.040
+	},
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/command_post/armory)
+"iR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/kitchen)
+"jc" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/engi)
+"je" = (
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/kitchen)
+"ji" = (
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/plate{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/kitchen/second)
+"jp" = (
+/obj/machinery/telecomms/processor,
+/obj/effect/turf_decal/borderfloorblack/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/icemoon/command_post/mission_control)
+"jq" = (
+/obj/structure/table/rolling,
+/obj/item/weldingtool/largetank{
+	pixel_x = -3;
+	pixel_y = 5
+	},
+/obj/item/crowbar/power,
+/obj/item/screwdriver/power{
+	pixel_x = 4;
+	pixel_y = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete,
+/area/ruin/icemoon/command_post/engi)
+"js" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/engi)
+"jt" = (
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/icemoon/command_post/dorms/second)
+"jF" = (
+/obj/machinery/door/airlock/grunge,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/armory)
+"jG" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/engi)
+"jJ" = (
+/obj/structure/railing/thin{
+	dir = 8
+	},
+/turf/open/floor/plasteel/stairs/left,
+/area/ruin/icemoon/command_post)
+"jK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/kitchen/second)
+"jM" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/crew_quarters)
+"jN" = (
+/obj/effect/turf_decal/corner/transparent/red/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/icemoon/command_post/kitchen)
+"jO" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/armory)
+"jQ" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 4;
+	layer = 2.040
+	},
+/obj/structure/railing/thin/corner{
+	dir = 8
+	},
+/obj/structure/chair/handrail{
+	dir = 1;
+	name = "overhead handrail"
+	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg/sidewinder,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/eva)
+"jR" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/obj/structure/chair/stool,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/eva)
+"jU" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/corner/transparent/red/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/icemoon/command_post)
+"jY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/icemoon/command_post/dorms/third)
+"kb" = (
+/obj/effect/spawner/bunk_bed,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#543C30"
+	},
+/obj/structure/sign/poster/official/moth/meth{
+	pixel_x = 0;
+	pixel_y = -32
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/dorms/second)
+"kh" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/mission_control)
+"kl" = (
+/obj/effect/decal/cleanable/oil,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete,
+/area/ruin/icemoon/command_post/engi)
+"km" = (
+/obj/structure/railing/thin{
+	dir = 6
+	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/sniper/sentry,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_2/icemoon,
+/area/ruin/icemoon/command_post)
+"kp" = (
+/turf/closed/mineral/random/snow,
+/area/ruin/icemoon/command_post)
+"kr" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/crew_quarters)
+"kC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/poddoor{
+	dir = 8;
+	id = "cavegarage"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/engi)
+"kJ" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger{
+	pixel_x = 9;
+	pixel_y = 0
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/engi)
+"kR" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/machinery/portable_atmospherics/pump,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/eva)
+"le" = (
+/turf/open/floor/plasteel/stairs{
+	dir = 4
+	},
+/area/ruin/icemoon/command_post/mission_control)
+"lg" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/engi)
+"lr" = (
+/obj/structure/platform,
+/obj/structure/railing/thin,
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/condiment/milk{
+	pixel_x = -2;
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/condiment/tiris_milk{
+	pixel_x = -10;
+	pixel_y = 0
+	},
+/obj/item/reagent_containers/condiment/milk{
+	pixel_x = 6;
+	pixel_y = -2
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post/kitchen)
+"ly" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 8;
+	layer = 2.040
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/crew_quarters)
+"lD" = (
+/obj/effect/turf_decal/siding/wood/end{
+	color = "#543C30";
+	dir = 8
+	},
+/obj/structure/filingcabinet{
+	dir = 4;
+	pixel_x = -10;
+	pixel_y = 0
+	},
+/obj/item/clipboard,
+/obj/item/clipboard,
+/obj/item/folder/syndicate,
+/obj/item/folder/syndicate,
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/officer)
+"lP" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 6
+	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/officer,
+/turf/open/floor/plasteel/tech,
+/area/ruin/icemoon/command_post/mission_control)
+"lT" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"lW" = (
+/obj/item/cigbutt/roach{
+	pixel_x = -2;
+	pixel_y = -2
+	},
+/obj/item/cigbutt/roach{
+	pixel_x = 10;
+	pixel_y = 0
+	},
+/obj/item/cigbutt/roach{
+	pixel_x = -12;
+	pixel_y = 0
+	},
+/obj/item/cigbutt/roach{
+	pixel_x = -2;
+	pixel_y = 7
+	},
+/obj/item/cigbutt/roach{
+	pixel_x = 5;
+	pixel_y = 9
+	},
+/obj/item/cigbutt/roach{
+	pixel_x = 8;
+	pixel_y = 16
+	},
+/obj/item/cigbutt/roach{
+	pixel_x = -10;
+	pixel_y = 8
+	},
+/obj/item/cigbutt/roach{
+	pixel_x = -4;
+	pixel_y = 15
+	},
+/obj/item/cigbutt/roach{
+	pixel_x = -13;
+	pixel_y = 17
+	},
+/obj/effect/decal/cleanable/ash,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/east,
+/turf/open/floor/concrete/tiles{
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/area/ruin/icemoon/command_post/dorms/second)
+"lZ" = (
+/obj/machinery/door/window/eastleft,
+/obj/structure/closet/wall/white/directional/west,
+/obj/item/soap/syndie{
+	pixel_x = -9;
+	pixel_y = -9
+	},
+/obj/item/towel{
+	pixel_x = -9;
+	pixel_y = 8
+	},
+/obj/item/towel{
+	pixel_x = -10;
+	pixel_y = 6
+	},
+/obj/item/towel{
+	pixel_x = -11;
+	pixel_y = 4
+	},
+/obj/item/pushbroom{
+	pixel_x = -3;
+	pixel_y = 5
+	},
+/obj/item/mop{
+	pixel_x = 1;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/glass/bucket{
+	pixel_x = 6;
+	pixel_y = -1
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/icemoon/command_post/dorms)
+"mc" = (
+/obj/structure/platform{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"mt" = (
+/obj/machinery/door/airlock/grunge{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/dorms)
+"mE" = (
+/obj/machinery/telecomms/receiver,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/icemoon/command_post/mission_control)
+"mL" = (
+/obj/item/cigbutt{
+	pixel_x = -12;
+	pixel_y = 13
+	},
+/obj/item/cigbutt{
+	pixel_x = -14;
+	pixel_y = 16
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/tiles{
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/area/ruin/icemoon/command_post/dorms/second)
+"mR" = (
+/obj/machinery/door/airlock/grunge{
+	dir = 4;
+	id_tag = "officelock"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/dorms/second)
+"mY" = (
+/obj/structure/table/wood/poker,
+/obj/item/spacecash/bundle/c10{
+	pixel_x = -7;
+	pixel_y = 0
+	},
+/obj/item/spacecash/bundle/c100{
+	pixel_x = 7;
+	pixel_y = 10
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/crew_quarters)
+"na" = (
+/obj/effect/turf_decal/corner/transparent/red/diagonal,
+/obj/structure/chair/bench/beige,
+/turf/open/floor/plasteel/dark,
+/area/ruin/icemoon/command_post/kitchen)
+"nb" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 2;
+	color = "#543C30"
+	},
+/obj/structure/sign/poster/contraband/ambrosia_vulgaris{
+	pixel_x = 0;
+	pixel_y = 32
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/bench/beige,
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/dorms/second)
+"ng" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/engi)
+"nh" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 8
+	},
+/obj/structure/filingcabinet/double{
+	dir = 8;
+	pixel_x = 10;
+	pixel_y = 0
+	},
+/obj/item/clipboard,
+/obj/item/clipboard,
+/obj/item/folder/syndicate,
+/obj/item/folder/syndicate,
+/obj/item/folder/documents/syndicate/red,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/command_post/mission_control)
+"nk" = (
+/obj/structure/table,
+/obj/item/plate/small{
+	pixel_x = 4;
+	pixel_y = 7;
+	layer = 2.9
+	},
+/obj/item/food/cheese/wedge{
+	pixel_x = 5;
+	pixel_y = 12
+	},
+/obj/item/food/soup/oatmeal{
+	pixel_x = -5;
+	pixel_y = 0
+	},
+/obj/effect/turf_decal/corner/transparent/red/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/icemoon/command_post/kitchen)
+"nl" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/machinery/washing_machine,
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/dorms)
+"ny" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 4;
+	layer = 2.040
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/kitchen)
+"nA" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/engi)
+"nE" = (
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/ruin/icemoon/command_post)
+"nG" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/light/directional/south,
+/turf/open/floor/concrete/slab_2,
+/area/ruin/icemoon/command_post/dorms)
+"nM" = (
+/obj/machinery/door/poddoor/shutters{
+	dir = 8;
+	id = "leftarmoury"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/armory)
+"nN" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/structure/chair/stool{
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/armory)
+"nP" = (
+/obj/effect/turf_decal/borderfloor/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 10;
+	layer = 2.040
+	},
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/machinery/airalarm/directional/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/icemoon/command_post/mission_control)
+"nX" = (
+/obj/effect/turf_decal/borderfloorblack/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 10;
+	layer = 2.040
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/machinery/airalarm/directional/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/kitchen/second)
+"nZ" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/icemoon,
+/area/ruin/icemoon/command_post)
+"oc" = (
+/obj/effect/turf_decal/siding/wood/end{
+	color = "#543C30"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken2"
+	},
+/area/ruin/icemoon/command_post/dorms)
+"og" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/ruin/icemoon/command_post)
+"oh" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/engi)
+"oj" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/kitchen/second)
+"ok" = (
+/turf/open/floor/plasteel/stairs/mid,
+/area/ruin/icemoon/command_post)
+"on" = (
+/obj/structure/platform{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/ruin/icemoon/command_post)
+"os" = (
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"ow" = (
+/obj/structure/table/wood,
+/obj/item/clipboard,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/officer)
+"oz" = (
+/obj/effect/turf_decal/road/line{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/viscerator,
+/turf/open/floor/concrete/pavement/icemoon,
+/area/ruin/icemoon/command_post)
+"oC" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 4;
+	layer = 2.040
+	},
+/obj/structure/chair,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/kitchen/second)
+"oF" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/tech,
+/area/ruin/icemoon/command_post/mission_control)
+"oJ" = (
+/obj/structure/railing/thin{
+	dir = 10
+	},
+/turf/open/floor/concrete/slab_2/icemoon,
+/area/ruin/icemoon/command_post)
+"oP" = (
+/obj/effect/turf_decal/road/line{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/icemoon,
+/area/ruin/icemoon/command_post)
+"oQ" = (
+/obj/machinery/power/floodlight{
+	anchored = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"oV" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 8;
+	layer = 2.040
+	},
+/obj/structure/reagent_dispensers/fueltank,
+/obj/structure/sign/warning/explosives/alt{
+	pixel_x = 0;
+	pixel_y = 29
+	},
+/obj/structure/railing/thin,
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/eva)
+"pf" = (
+/obj/machinery/telecomms/hub,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/icemoon/command_post/mission_control)
+"pm" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 4;
+	layer = 2.040
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/armory)
+"pn" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/kitchen/second)
+"po" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/kitchen/second)
+"pD" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#543C30"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 2;
+	color = "#543C30"
+	},
+/obj/structure/closet/wall/directional/south,
+/obj/item/clothing/head/cowboy/black{
+	pixel_x = -9;
+	pixel_y = 0
+	},
+/obj/item/clothing/shoes/cowboy/black{
+	pixel_x = -8;
+	pixel_y = -10
+	},
+/obj/item/clothing/under/syndicate/ramzi/overalls{
+	pixel_x = 5;
+	pixel_y = -10
+	},
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = 5;
+	pixel_y = -13
+	},
+/obj/item/clothing/neck/shemagh/ramzi{
+	pixel_x = 13;
+	pixel_y = -9
+	},
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = 12;
+	pixel_y = -5
+	},
+/obj/item/storage/box/ammo/a357{
+	pixel_x = 7;
+	pixel_y = 5;
+	layer = 2.9
+	},
+/obj/item/clothing/suit/ramzi{
+	pixel_x = 4;
+	pixel_y = -16
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/dorms)
+"pE" = (
+/obj/structure/table,
+/obj/item/plate/small{
+	pixel_x = -7;
+	pixel_y = -1;
+	layer = 2.9
+	},
+/obj/item/reagent_containers/food/drinks/coffee{
+	pixel_x = 9;
+	pixel_y = 12
+	},
+/obj/effect/turf_decal/corner/transparent/red/diagonal,
+/obj/item/food/garlicbread{
+	pixel_x = -7;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/icemoon/command_post/kitchen)
+"pF" = (
+/obj/structure/reagent_dispensers/fueltank,
+/obj/effect/turf_decal/corner/opaque/orange{
+	dir = 6
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/obj/structure/sign/warning{
+	pixel_x = 28;
+	pixel_y = 1
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/engi)
+"pH" = (
+/obj/machinery/light/directional/north,
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/ruin/icemoon/command_post)
+"pK" = (
+/obj/machinery/oven,
+/obj/effect/turf_decal/corner/transparent/red/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/icemoon/command_post/kitchen)
+"pN" = (
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"pR" = (
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
+	},
+/obj/item/storage/toolbox/ammo/c10mm{
+	pixel_x = -6;
+	pixel_y = 7
+	},
+/obj/item/storage/toolbox/ammo/c556{
+	pixel_x = -6;
+	pixel_y = 1
+	},
+/obj/item/storage/toolbox/ammo/shotgun{
+	pixel_x = -6;
+	pixel_y = -5
+	},
+/obj/item/ammo_box/magazine/m10mm_cottonmouth,
+/obj/item/ammo_box/magazine/m10mm_cottonmouth{
+	pixel_x = 8;
+	pixel_y = 0
+	},
+/obj/item/ammo_box/magazine/m10mm_cottonmouth{
+	pixel_x = 13;
+	pixel_y = 0
+	},
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/armory)
+"pU" = (
+/obj/machinery/door/poddoor{
+	dir = 8;
+	id = "cavegarage"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/engi)
+"qd" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/dorms)
+"qg" = (
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/mission_control)
+"qr" = (
+/mob/living/simple_animal/hostile/viscerator,
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"qs" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/line,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech,
+/area/ruin/icemoon/command_post/mission_control)
+"qz" = (
+/obj/machinery/power/rtg/geothermal,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/ruin/icemoon/command_post)
+"qJ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/icemoon,
+/area/ruin/icemoon/command_post)
+"qS" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 8
+	},
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"qX" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/east,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/icemoon/command_post/engi)
+"rb" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#543C30"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 2;
+	color = "#543C30"
+	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/hydra,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/dorms)
+"rl" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/icemoon,
+/area/ruin/icemoon/command_post)
+"rI" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 8;
+	layer = 2.040
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/crew_quarters)
+"rN" = (
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/icemoon/command_post/eva)
+"rS" = (
+/obj/item/flashlight/flare/burnt,
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"sm" = (
+/obj/machinery/door/poddoor{
+	dir = 8;
+	id = "caveshed"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/storage)
+"sB" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/structure/reagent_dispensers/servingdish,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/kitchen/second)
+"sI" = (
+/obj/machinery/power/floodlight,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"sK" = (
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/borderfloorblack,
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/plate{
+	pixel_x = -7;
+	pixel_y = 6
+	},
+/obj/item/food/butterbiscuit{
+	pixel_x = -10;
+	pixel_y = 7
+	},
+/obj/item/food/boiledegg{
+	pixel_x = -1;
+	pixel_y = 10
+	},
+/obj/item/food/boiledegg{
+	pixel_x = -4;
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/kitchen/second)
+"sQ" = (
+/turf/closed/mineral/random/snow,
+/area/ruin/icemoon/command_post/kitchen)
+"sS" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/kitchen/second)
+"sT" = (
+/obj/effect/turf_decal/borderfloorblack/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 6;
+	layer = 2.040
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/crew_quarters)
+"sW" = (
+/obj/effect/turf_decal/siding/wood/end{
+	color = "#543C30";
+	dir = 1
+	},
+/obj/machinery/suit_storage_unit/inherit,
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/officer)
+"sX" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/mission_control)
+"sZ" = (
+/obj/effect/turf_decal/siding/wood/end{
+	color = "#543C30";
+	dir = 1
+	},
+/obj/structure/sign/poster/contraband/hacking_guide{
+	pixel_x = 0;
+	pixel_y = 32
+	},
+/obj/structure/safe/floor,
+/obj/structure/chair/comfy/grey/old/alt,
+/obj/item/card/emag/limited,
+/obj/item/organ/cyberimp/arm/toolset,
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken3"
+	},
+/area/ruin/icemoon/command_post/dorms)
+"ta" = (
+/obj/effect/turf_decal/borderfloor/corner{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/engi)
+"tf" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 4;
+	layer = 2.040
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/command_post/armory)
+"tj" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/bordercorner{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_x = 10;
+	pixel_y = -2
+	},
+/obj/item/pen{
+	pixel_x = 9;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/command_post/mission_control)
+"tr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/kitchen/second)
+"tt" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 8;
+	layer = 2.040
+	},
+/obj/machinery/computer/telecomms/monitor{
+	dir = 4;
+	icon_state = "computer-right"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/icemoon/command_post/mission_control)
+"tM" = (
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"tQ" = (
+/obj/machinery/telecomms/bus,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/icemoon/command_post/mission_control)
+"tT" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/structure/railing/thin{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/eva)
+"ua" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/dorms)
+"uc" = (
+/obj/effect/turf_decal/borderfloorblack/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 10;
+	layer = 2.040
+	},
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/structure/railing/thin{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/eva)
+"ul" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_2/icemoon,
+/area/ruin/icemoon/command_post)
+"ur" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/kitchen/second)
+"ux" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/obj/structure/closet/wall/orange/directional/north,
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = -8;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = -8;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = -8;
+	pixel_y = 15
+	},
+/obj/item/gun_maint_kit{
+	pixel_x = -3;
+	pixel_y = -4
+	},
+/obj/item/gun_maint_kit{
+	pixel_x = -3;
+	pixel_y = -7
+	},
+/obj/item/weldingtool/largetank/empty{
+	pixel_x = 7;
+	pixel_y = 10
+	},
+/obj/item/weldingtool/largetank/empty{
+	pixel_x = 8;
+	pixel_y = 14
+	},
+/obj/item/stock_parts/cell/hyper{
+	pixel_x = 8;
+	pixel_y = -3
+	},
+/obj/item/stock_parts/cell/hyper{
+	pixel_x = 8;
+	pixel_y = -8
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/eva)
+"uA" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/command_post/armory)
+"uB" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/concrete/slab_1/icemoon/lit,
+/area/ruin/icemoon/command_post)
+"uK" = (
+/obj/effect/spawner/bunk_bed,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/dorms)
+"uM" = (
+/turf/template_noop,
+/area/template_noop)
+"uQ" = (
+/turf/open/floor/plasteel/tech,
+/area/ruin/icemoon/command_post/mission_control)
+"uR" = (
+/obj/item/chair/plastic,
+/obj/item/chair/plastic{
+	pixel_x = 0;
+	pixel_y = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/icemoon/command_post/dorms/third)
+"uV" = (
+/obj/effect/turf_decal/siding/wood/end{
+	color = "#543C30";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/contraband/winchester{
+	pixel_x = -31;
+	pixel_y = 0
+	},
+/obj/structure/chair/comfy/beige/old/alt{
+	dir = 4
+	},
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken"
+	},
+/area/ruin/icemoon/command_post/dorms)
+"uW" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 4;
+	layer = 2.040
+	},
+/obj/structure/table,
+/obj/item/plate{
+	pixel_x = -7;
+	pixel_y = 9
+	},
+/obj/item/food/soup/oatmeal,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/kitchen/second)
+"vb" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/structure/closet/crate/trashcart/laundry,
+/obj/item/towel,
+/obj/item/towel,
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/dorms)
+"ve" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 4;
+	layer = 2.040
+	},
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/dorms/second)
+"vk" = (
+/obj/effect/turf_decal/borderfloorblack/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 10;
+	layer = 2.040
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/crew_quarters)
+"vt" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/structure/table,
+/obj/machinery/recharger{
+	pixel_x = -8;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = -10;
+	pixel_y = 1
+	},
+/obj/item/flashlight/pen{
+	pixel_x = -4;
+	pixel_y = -8
+	},
+/obj/item/gun_maint_kit{
+	pixel_x = 4;
+	pixel_y = -2
+	},
+/obj/item/gun_maint_kit{
+	pixel_x = 7;
+	pixel_y = 10
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/command_post/armory)
+"vu" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/machinery/telecomms/server,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/icemoon/command_post/mission_control)
+"vv" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/structure/closet,
+/obj/item/storage/box/flares{
+	pixel_x = 9;
+	pixel_y = 1
+	},
+/obj/item/storage/box/flares{
+	pixel_x = 9;
+	pixel_y = -6
+	},
+/obj/item/trench_tool{
+	pixel_x = 0;
+	pixel_y = -3
+	},
+/obj/item/radio/weather_monitor{
+	pixel_x = -9;
+	pixel_y = 4
+	},
+/obj/item/radio/weather_monitor{
+	pixel_x = -9;
+	pixel_y = 0
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/dorms)
+"vB" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/icemoon,
+/area/ruin/icemoon/command_post)
+"vG" = (
+/turf/open/floor/concrete,
+/area/ruin/icemoon/command_post/engi)
+"vI" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 4;
+	layer = 2.040
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/armory)
+"vJ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#543C30"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#543C30"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/officer)
+"vS" = (
+/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/area/ruin/icemoon/command_post/dorms/third)
+"vV" = (
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/mission_control)
+"wc" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/mission_control)
+"wg" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/obj/structure/chair/stool,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/eva)
+"wh" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
+	dir = 8;
+	piping_layer = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/turf/open/floor/concrete/slab_4,
+/area/ruin/icemoon/command_post/engi)
+"wj" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/icemoon/command_post/mission_control)
+"wp" = (
+/obj/structure/platform/ship{
+	dir = 10
+	},
+/obj/structure/railing/thin{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/line,
+/obj/machinery/computer/crew/syndie{
+	dir = 4;
+	icon_state = "computer-left"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/icemoon/command_post/mission_control)
+"wy" = (
+/obj/structure/closet/crate/freezer,
+/obj/effect/mapping_helpers/crate_shelve,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab/dofitis,
+/obj/item/food/meat/slab/dofitis,
+/obj/item/food/meat/slab/miras,
+/obj/item/food/meat/slab/miras,
+/turf/open/floor/plating/asteroid/iceberg,
+/area/ruin/icemoon/command_post/kitchen)
+"wz" = (
+/obj/structure/ore_box,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/storage)
+"wA" = (
+/obj/effect/turf_decal/borderfloorblack/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 5;
+	layer = 2.040
+	},
+/obj/structure/closet,
+/obj/item/clothing/suit/armor/ramzi{
+	pixel_x = 2;
+	pixel_y = -3
+	},
+/obj/item/clothing/suit/armor/ramzi{
+	pixel_x = 2;
+	pixel_y = -9
+	},
+/obj/item/clothing/suit/armor/ramzi/bulletproof{
+	pixel_x = 11;
+	pixel_y = -10
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/eva)
+"wH" = (
+/obj/effect/turf_decal/siding/wood/end{
+	color = "#543C30";
+	dir = 1
+	},
+/obj/structure/fermenting_barrel/distiller,
+/obj/structure/sign/poster/contraband/red_rum{
+	pixel_x = 32;
+	pixel_y = 0
+	},
+/obj/structure/platform/ship_three{
+	dir = 1;
+	layer = 2.9
+	},
+/obj/item/reagent_containers/food/drinks/bottle/rum{
+	pixel_x = -11;
+	pixel_y = 21
+	},
+/obj/item/reagent_containers/food/drinks/bottle/trappist{
+	pixel_x = 13;
+	pixel_y = 21
+	},
+/obj/item/reagent_containers/food/drinks/bottle/absinthe/premium{
+	pixel_x = 4;
+	pixel_y = 21
+	},
+/obj/item/reagent_containers/food/drinks/bottle/sake/wolfgirl{
+	pixel_x = -3;
+	pixel_y = 22
+	},
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken2"
+	},
+/area/ruin/icemoon/command_post/dorms)
+"wJ" = (
+/obj/machinery/power/floodlight{
+	anchored = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-9"
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"wN" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/crew_quarters)
+"wO" = (
+/obj/effect/decal/cleanable/ash,
+/obj/effect/decal/cleanable/plasma,
+/turf/open/floor/concrete,
+/area/ruin/icemoon/command_post/engi)
+"wP" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/armory)
+"wT" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/obj/structure/table,
+/obj/item/clipboard{
+	pixel_x = 4;
+	pixel_y = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/icemoon/command_post/mission_control)
+"xd" = (
+/obj/structure/dresser,
+/obj/structure/noticeboard{
+	pixel_x = 0;
+	pixel_y = 28;
+	name = "gun rack";
+	desc = "A board for holding a gun."
+	},
+/obj/item/melee/knife/hunting,
+/obj/item/gun/ballistic/shotgun/flamingarrow/absolution/factory{
+	pixel_x = -7;
+	pixel_y = 27;
+	layer = 3.1
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/dorms)
+"xf" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/light/directional/north,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/icemoon,
+/area/ruin/icemoon/command_post)
+"xn" = (
+/obj/structure/closet/crate/bin,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/kitchen)
+"xq" = (
+/obj/structure/sink/kitchen{
+	dir = 1;
+	name = "sink"
+	},
+/obj/structure/mirror{
+	pixel_x = 0;
+	pixel_y = -26
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/dorms)
+"xy" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/mission_control)
+"xB" = (
+/obj/structure/closet/secure_closet/freezer/wall/directional/north,
+/obj/item/reagent_containers/condiment/flour{
+	pixel_x = -10;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/condiment/enzyme{
+	pixel_x = 0;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/condiment/flour{
+	pixel_x = -10;
+	pixel_y = 4
+	},
+/obj/item/food/grown/onion{
+	pixel_x = -3;
+	pixel_y = -5
+	},
+/obj/item/food/grown/onion{
+	pixel_x = -9;
+	pixel_y = -6
+	},
+/obj/item/food/grown/onion{
+	pixel_x = -14;
+	pixel_y = -6
+	},
+/obj/item/food/grown/potato{
+	pixel_x = 4;
+	pixel_y = 3
+	},
+/obj/item/food/grown/potato{
+	pixel_x = 4;
+	pixel_y = 0
+	},
+/obj/item/food/grown/potato{
+	pixel_x = 6;
+	pixel_y = -2
+	},
+/obj/effect/turf_decal/corner/transparent/red/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/icemoon/command_post/kitchen)
+"xI" = (
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/dorms/second)
+"xJ" = (
+/turf/open/lava,
+/area/ruin/icemoon/command_post)
+"xM" = (
+/obj/structure/railing/thin{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_2/icemoon,
+/area/ruin/icemoon/command_post)
+"xX" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#543C30"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 2;
+	color = "#543C30"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken2"
+	},
+/area/ruin/icemoon/command_post/dorms)
+"xY" = (
+/obj/machinery/light/directional/west,
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"yj" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/concrete/slab_4,
+/area/ruin/icemoon/command_post/engi)
+"yo" = (
+/obj/structure/closet/crate/engineering,
+/obj/item/storage/box/emptysandbags{
+	pixel_x = 2;
+	pixel_y = 0
+	},
+/obj/item/storage/box/emptysandbags{
+	pixel_x = -5;
+	pixel_y = 0
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"ys" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/engi)
+"yv" = (
+/obj/effect/turf_decal/atmos/air,
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/turf/open/floor/engine/air,
+/area/ruin/icemoon/command_post/engi)
+"yA" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 6
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"yC" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/engi)
+"yE" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/armory)
+"yN" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 4;
+	layer = 2.040
+	},
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/kitchen/second)
+"yU" = (
+/obj/structure/railing/thin{
+	dir = 4
+	},
+/turf/open/floor/plasteel/stairs/right,
+/area/ruin/icemoon/command_post)
+"yW" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/layer4{
+	name = "Oxygen Canister Filling"
+	},
+/obj/effect/turf_decal/industrial/hatch/blue,
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/icemoon/command_post/engi)
+"zb" = (
+/obj/structure/crate_shelf,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/radiation,
+/obj/item/stack/sheet/mineral/plasma/twenty,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/storage)
+"zd" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/icemoon,
+/area/ruin/icemoon/command_post)
+"ze" = (
+/obj/effect/turf_decal/borderfloorblack/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 10;
+	layer = 2.040
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/airalarm/directional/west,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/armory)
+"zk" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/mission_control)
+"zm" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/armory)
+"zr" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/machinery/telecomms/relay,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/icemoon/command_post/mission_control)
+"zA" = (
+/obj/structure/marker_beacon{
+	picked_color = "Bronze"
+	},
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/ruin/icemoon/command_post)
+"zB" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/item/radio/intercom/table{
+	dir = 4;
+	pixel_x = 7;
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/command_post/mission_control)
+"zG" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/officer)
+"zH" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/eva)
+"zL" = (
+/obj/item/folder/documents/syndicate/red{
+	pixel_x = 0;
+	pixel_y = 7
+	},
+/obj/structure/safe/floor,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/turf/open/floor/plating/rust,
+/area/ruin/icemoon/command_post/officer)
+"zU" = (
+/obj/item/cutting_board{
+	pixel_x = -8;
+	pixel_y = 6
+	},
+/obj/item/food/sausage{
+	pixel_x = -10;
+	pixel_y = 11
+	},
+/obj/item/food/sausage{
+	pixel_x = -7;
+	pixel_y = 7
+	},
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/crew_quarters)
+"Af" = (
+/obj/structure/railing/thin/corner{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_2/icemoon,
+/area/ruin/icemoon/command_post)
+"Ao" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet/directional/east,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/icemoon/command_post/engi)
+"At" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/components/trinary/mixer/on/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/engi)
+"AB" = (
+/obj/structure/girder/reinforced,
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"AG" = (
+/obj/structure/table/reinforced,
+/obj/item/flashlight/lamp{
+	pixel_x = -8;
+	pixel_y = 12
+	},
+/obj/item/storage/box/stockparts/t3{
+	pixel_x = -7;
+	pixel_y = -2
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/engi)
+"AZ" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/engi)
+"Ba" = (
+/obj/structure/table/wood,
+/obj/item/clothing/mask/cigarette/pipe{
+	pixel_x = 10;
+	pixel_y = -1
+	},
+/obj/item/food/grown/tobacco{
+	pixel_x = -9;
+	pixel_y = 13
+	},
+/obj/item/food/grown/tobacco{
+	pixel_x = -10;
+	pixel_y = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/officer)
+"Be" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/structure/tank_dispenser/oxygen,
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/eva)
+"Bj" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/crew_quarters)
+"Bk" = (
+/obj/structure/table/reinforced{
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = 5;
+	pixel_y = 14
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/engi)
+"Br" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/icemoon,
+/area/ruin/icemoon/command_post)
+"Bs" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 2;
+	color = "#543C30"
+	},
+/obj/machinery/holopad,
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/officer)
+"BN" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/decal/cleanable/oil/streak,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/engi)
+"BT" = (
+/mob/living/simple_animal/hostile/viscerator,
+/obj/structure/platform/corner{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"BV" = (
+/obj/structure/vein/ice/classfour,
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/ruin/icemoon/command_post)
+"Ce" = (
+/obj/machinery/door/airlock/grunge{
+	dir = 4;
+	id_tag = "officelock"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/eva)
+"Cf" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9;
+	color = "#543C30"
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#543C30"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/dorms)
+"Ci" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"Cl" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
+	},
+/obj/effect/turf_decal/corner_techfloor_grid,
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"Cq" = (
+/obj/effect/turf_decal/corner/transparent/red/diagonal,
+/obj/structure/chair/bench/beige{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/icemoon/command_post/kitchen)
+"Cy" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 8;
+	layer = 2.040
+	},
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/armory)
+"CE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/kitchen)
+"CI" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/portable_atmospherics/canister/hydrogen,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/icemoon/command_post/engi)
+"Dn" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/dorms)
+"DL" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 8;
+	layer = 2.040
+	},
+/obj/machinery/computer/telecomms/server{
+	dir = 4;
+	icon_state = "computer-left"
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/dark,
+/area/ruin/icemoon/command_post/mission_control)
+"DM" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/icemoon,
+/area/ruin/icemoon/command_post)
+"DO" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 8;
+	layer = 2.040
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/plate_shard{
+	pixel_x = 17;
+	pixel_y = 9
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/kitchen/second)
+"DT" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	layer = 2.040
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/icemoon/command_post/mission_control)
+"Ef" = (
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/dorms)
+"Eh" = (
+/obj/structure/fireplace{
+	dir = 8;
+	pixel_x = -18;
+	pixel_y = -17
+	},
+/obj/item/reagent_containers/glass/bowl{
+	pixel_x = -3;
+	pixel_y = -6
+	},
+/obj/item/food/grown/onion{
+	pixel_x = -11;
+	pixel_y = 10
+	},
+/obj/item/food/grown/onion{
+	pixel_x = -15;
+	pixel_y = 6
+	},
+/obj/item/food/grown/potato{
+	pixel_x = 0;
+	pixel_y = 9
+	},
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/crew_quarters)
+"Ek" = (
+/obj/structure/bed/double,
+/obj/item/bedsheet/double/black,
+/obj/structure/noticeboard{
+	pixel_x = 0;
+	pixel_y = 28
+	},
+/obj/item/clothing/neck/cloak/nanotrasen{
+	pixel_x = 0;
+	pixel_y = 28
+	},
+/turf/open/floor/carpet/green,
+/area/ruin/icemoon/command_post/officer)
+"En" = (
+/obj/structure/closet/wall/med/directional/north,
+/obj/item/bonesetter{
+	pixel_x = -3;
+	pixel_y = 7
+	},
+/obj/item/stack/medical/splint/twelve{
+	pixel_x = -4;
+	pixel_y = 4
+	},
+/obj/item/stack/medical/bruise_pack{
+	pixel_x = 7;
+	pixel_y = 20
+	},
+/obj/item/stack/medical/ointment{
+	pixel_x = 6;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/glass/bottle/chitosan{
+	pixel_x = 10;
+	pixel_y = 16
+	},
+/obj/item/reagent_containers/syringe{
+	pixel_x = 8;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/hypospray/medipen/morphine{
+	pixel_x = 7;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/hypospray/medipen/morphine{
+	pixel_x = 11;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/medigel/sterilizine{
+	pixel_x = 1;
+	pixel_y = 8
+	},
+/obj/item/clothing/suit/ramzi/smock{
+	pixel_x = -6;
+	pixel_y = -6
+	},
+/obj/item/clothing/head/ramzi/surgical{
+	pixel_x = -6;
+	pixel_y = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/item/clothing/neck/stethoscope{
+	pixel_x = 6;
+	pixel_y = -2
+	},
+/obj/item/storage/firstaid/regular{
+	pixel_x = -6;
+	pixel_y = 12;
+	layer = 2.9
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/dorms)
+"Er" = (
+/obj/effect/turf_decal/siding/wood/end{
+	color = "#543C30";
+	dir = 8
+	},
+/obj/structure/sign/poster/contraband/stechkin{
+	pixel_x = -32;
+	pixel_y = -1
+	},
+/obj/structure/closet/wall/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/under/syndicate/ramzi/overalls{
+	pixel_x = -11;
+	pixel_y = -11
+	},
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = -3;
+	pixel_y = -11
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = 9;
+	pixel_y = -9
+	},
+/obj/item/clothing/neck/shemagh/ramzi{
+	pixel_x = -10;
+	pixel_y = 4
+	},
+/obj/item/clothing/neck/scarf/maroon{
+	pixel_x = 0;
+	pixel_y = -1;
+	layer = 3.1
+	},
+/obj/item/storage/box/ammo/c22lr{
+	pixel_x = -7;
+	pixel_y = 10
+	},
+/obj/item/gun_maint_kit{
+	pixel_x = 3;
+	pixel_y = 9
+	},
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = 8;
+	pixel_y = -1
+	},
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken2"
+	},
+/area/ruin/icemoon/command_post/dorms)
+"Ez" = (
+/obj/structure/dresser,
+/obj/item/gun/ballistic/automatic/pistol/himehabu{
+	pixel_x = -4;
+	pixel_y = 8
+	},
+/obj/item/ammo_box/magazine/m22lr_himehabu{
+	pixel_x = 1;
+	pixel_y = 5
+	},
+/obj/item/ammo_box/magazine/m22lr_himehabu{
+	pixel_x = 10;
+	pixel_y = 9
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/dorms)
+"EB" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/platform{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/icemoon,
+/area/ruin/icemoon/command_post)
+"EG" = (
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/icemoon/command_post/kitchen/second)
+"EI" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/kitchen/second)
+"ES" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/dorms)
+"EV" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/engine/air,
+/area/ruin/icemoon/command_post/engi)
+"Fe" = (
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/freezer,
+/obj/item/food/raw_sausage,
+/obj/item/food/raw_sausage,
+/obj/item/food/raw_sausage,
+/obj/item/food/raw_sausage,
+/obj/item/food/raw_meatball,
+/obj/item/food/raw_meatball,
+/obj/item/food/raw_meatball,
+/obj/item/food/raw_meatball,
+/obj/item/food/raw_meatball,
+/obj/item/food/raw_meatball,
+/obj/item/food/raw_meatball,
+/obj/item/food/raw_meatball,
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/ruin/icemoon/command_post/kitchen)
+"Fh" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/mission_control)
+"Fk" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/icemoon/command_post/mission_control)
+"Fo" = (
+/obj/effect/turf_decal/borderfloorblack/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 6;
+	layer = 2.040
+	},
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/structure/railing/thin{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/eva)
+"Fs" = (
+/obj/effect/turf_decal/siding/wood/end{
+	color = "#543C30";
+	dir = 1
+	},
+/obj/structure/sign/poster/contraband/lusty_xenomorph{
+	pixel_x = 0;
+	pixel_y = 32
+	},
+/obj/item/toy/toy_xeno{
+	pixel_x = 12;
+	pixel_y = 5
+	},
+/obj/item/toy/toy_xeno{
+	pixel_x = 4;
+	pixel_y = 8
+	},
+/obj/structure/chair/stool,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken2"
+	},
+/area/ruin/icemoon/command_post/dorms)
+"Fw" = (
+/obj/structure/rack,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/rcl/pre_loaded,
+/obj/item/stack/cable_coil/red,
+/obj/item/stack/cable_coil/red,
+/obj/item/stack/cable_coil/red,
+/obj/item/stack/cable_coil/red,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/storage)
+"Fy" = (
+/obj/structure/table,
+/obj/structure/bedsheetbin,
+/turf/open/floor/concrete/slab_2,
+/area/ruin/icemoon/command_post/dorms)
+"FR" = (
+/obj/structure/reagent_dispensers/watertank,
+/obj/effect/turf_decal/corner/opaque/orange{
+	dir = 6
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/structure/sign/warning{
+	pixel_x = 28;
+	pixel_y = 0
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/engi)
+"Gq" = (
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/icemoon/command_post/mission_control)
+"Gw" = (
+/obj/machinery/autolathe,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/glass/fifty{
+	pixel_x = -8;
+	pixel_y = 0
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/engi)
+"Gy" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/engi)
+"GI" = (
+/obj/structure/platform/corner{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"GW" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/engi)
+"GX" = (
+/obj/effect/turf_decal/borderfloorblack/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 5;
+	layer = 2.040
+	},
+/obj/structure/chair/stool,
+/obj/item/reagent_containers/glass/bucket{
+	pixel_x = 7;
+	pixel_y = 15
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/crew_quarters)
+"Hg" = (
+/obj/structure/chair/office/dark{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/hydra/dmr{
+	wander = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/icemoon/command_post/armory)
+"Ho" = (
+/obj/effect/turf_decal/road,
+/turf/open/floor/concrete/pavement/icemoon,
+/area/ruin/icemoon/command_post)
+"Hx" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/human/ramzi/melee/space/sledge{
+	wander = 0
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/armory)
+"HB" = (
+/obj/machinery/door/airlock/grunge{
+	dir = 4;
+	id_tag = "officelock"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/kitchen)
+"HG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/eva)
+"HQ" = (
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/icemoon/command_post/storage)
+"HT" = (
+/obj/machinery/button/door{
+	pixel_x = 0;
+	pixel_y = 25;
+	name = "garage button";
+	id = "cavegarage"
+	},
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/ruin/icemoon/command_post)
+"Ii" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
+/turf/open/floor/concrete,
+/area/ruin/icemoon/command_post/engi)
+"Il" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/concrete/slab_4,
+/area/ruin/icemoon/command_post/engi)
+"Im" = (
+/obj/machinery/light/directional/west,
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/ruin/icemoon/command_post)
+"Is" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/engi)
+"Iw" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 8;
+	layer = 2.040
+	},
+/obj/item/poster/random_contraband,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/dorms/third)
+"IJ" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/icemoon/command_post/mission_control)
+"IO" = (
+/obj/machinery/door/airlock/grunge{
+	dir = 4;
+	id_tag = "officelock"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/mission_control)
+"IY" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/storage)
+"IZ" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/eva)
+"Jh" = (
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/kitchen)
+"Ji" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 2
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"Jl" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/crew_quarters)
+"Jn" = (
+/obj/structure/railing/thin/corner,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_2/icemoon,
+/area/ruin/icemoon/command_post)
+"Jr" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#543C30"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#543C30"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken3"
+	},
+/area/ruin/icemoon/command_post/dorms)
+"Jt" = (
+/obj/structure/filingcabinet{
+	dir = 4;
+	pixel_x = -10;
+	pixel_y = 0
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/icemoon/command_post/armory)
+"Ju" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/obj/structure/chair{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/kitchen/second)
+"Jy" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#543C30";
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 10;
+	color = "#543C30"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/storage/toolbox/syndicate{
+	pixel_x = -13;
+	pixel_y = 10
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/dorms)
+"JA" = (
+/obj/effect/turf_decal/borderfloorblack/corner,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 9;
+	layer = 2.04
+	},
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/coffee{
+	pixel_x = 7;
+	pixel_y = 6
+	},
+/obj/item/trash/syndi_cakes{
+	pixel_x = -5;
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/armory)
+"JC" = (
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"JE" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 4;
+	layer = 2.040
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/crew_quarters)
+"JH" = (
+/turf/open/floor/plating/asteroid/snow/lit,
+/area/overmap_encounter/planetoid/ice/explored)
+"JK" = (
+/obj/machinery/button/door{
+	name = "shed door";
+	id = "caveshed";
+	pixel_x = 0;
+	pixel_y = 23
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"Ka" = (
+/obj/machinery/button/door{
+	pixel_x = 21;
+	pixel_y = -9;
+	id = "ramziminingbathroom";
+	normaldoorcontrol = 1;
+	name = "bathroom lock";
+	specialfunctions = 4;
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/carpet/black{
+	name = "bathroom mat"
+	},
+/area/ruin/icemoon/command_post/dorms)
+"Km" = (
+/obj/structure/dresser,
+/obj/item/disk/nuclear/fake{
+	pixel_x = -5;
+	pixel_y = 11
+	},
+/turf/open/floor/carpet/green,
+/area/ruin/icemoon/command_post/officer)
+"KC" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 8
+	},
+/obj/structure/chair/office/dark{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/command_post/mission_control)
+"KG" = (
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/icemoon/command_post/dorms)
+"KH" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 8
+	},
+/obj/machinery/holopad,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/command_post/mission_control)
+"KK" = (
+/obj/structure/table/wood,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/item/radio/intercom/directional/west,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/officer)
+"Ld" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/kitchen/second)
+"Lh" = (
+/obj/effect/turf_decal/steeldecal/steel_decals10{
+	dir = 6
+	},
+/obj/structure/window/reinforced/tinted{
+	dir = 4
+	},
+/obj/machinery/shower{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/icemoon/command_post/dorms)
+"Li" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 8;
+	layer = 2.040
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/kitchen/second)
+"Ll" = (
+/turf/open/floor/plasteel/stairs{
+	dir = 8
+	},
+/area/ruin/icemoon/command_post/kitchen)
+"Lo" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 4;
+	layer = 2.040
+	},
+/obj/structure/closet,
+/obj/item/clothing/head/helmet/m10/ramzi{
+	pixel_x = -7;
+	pixel_y = -4
+	},
+/obj/item/clothing/head/helmet/m10/ramzi{
+	pixel_x = -7;
+	pixel_y = -8
+	},
+/obj/item/clothing/head/helmet/bulletproof/x11/ramzi{
+	pixel_x = 8;
+	pixel_y = -9
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/eva)
+"LA" = (
+/turf/open/floor/concrete/slab_1/icemoon/lit,
+/area/ruin/icemoon/command_post)
+"LD" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#543C30"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 2;
+	color = "#543C30"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/wall/directional/south,
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = -10;
+	pixel_y = -13
+	},
+/obj/item/clothing/under/syndicate/ramzi/overalls{
+	pixel_x = -1;
+	pixel_y = -13
+	},
+/obj/item/clothing/suit/ramzi{
+	pixel_x = 7;
+	pixel_y = -12
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = 6;
+	pixel_y = 3
+	},
+/obj/item/storage/pouch/engi{
+	pixel_x = -10;
+	pixel_y = 0
+	},
+/obj/item/radio/old{
+	pixel_x = -9;
+	pixel_y = 12;
+	name = "decommissioned uplink";
+	desc = "An old operative's uplink disguised as a radio. This one is no longer supplied."
+	},
+/obj/item/stack/telecrystal/five{
+	pixel_x = 2;
+	pixel_y = 9
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken3"
+	},
+/area/ruin/icemoon/command_post/dorms)
+"LH" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/kitchen/second)
+"LI" = (
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/icemoon/command_post/kitchen)
+"LM" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/engi)
+"LQ" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/armory)
+"LY" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete,
+/area/ruin/icemoon/command_post/engi)
+"Me" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/ruin/icemoon/command_post)
+"Mf" = (
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/icemoon/command_post/engi)
+"Mh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/south,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/storage)
+"Mn" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border,
+/obj/machinery/fax/ramzi,
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/command_post/mission_control)
+"MM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/port_gen/pacman,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/storage)
+"No" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/carpet/green,
+/area/ruin/icemoon/command_post/officer)
+"Nq" = (
+/obj/structure/dresser,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#543C30"
+	},
+/obj/structure/sign/poster/contraband/smoke{
+	pixel_x = -32;
+	pixel_y = 0
+	},
+/obj/item/storage/pill_bottle/finobranc{
+	pixel_x = 8;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/hypospray/medipen/tramal{
+	pixel_x = -4;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/hypospray/medipen/tramal{
+	pixel_x = -9;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/hypospray/medipen/rabbit{
+	pixel_x = 1;
+	pixel_y = 5
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/dorms/second)
+"Nv" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/icemoon,
+/area/ruin/icemoon/command_post)
+"NA" = (
+/obj/machinery/door/airlock/freezer{
+	dir = 4
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/kitchen)
+"NE" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/kitchen)
+"NF" = (
+/obj/effect/turf_decal/borderfloor/corner{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/engi)
+"NL" = (
+/obj/structure/closet/wall/directional/south,
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = 11;
+	pixel_y = -10
+	},
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = 4;
+	pixel_y = -10
+	},
+/obj/item/clothing/under/syndicate/ramzi/overalls{
+	pixel_x = -3;
+	pixel_y = -10
+	},
+/obj/item/clothing/under/syndicate/ramzi/overalls{
+	pixel_x = -10;
+	pixel_y = -10
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = 2;
+	pixel_y = 4
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = 9;
+	pixel_y = 4
+	},
+/obj/item/clothing/neck/scarf/maroon{
+	pixel_x = -4;
+	pixel_y = 0
+	},
+/obj/item/clothing/neck/scarf/maroon{
+	pixel_x = -9;
+	pixel_y = 0
+	},
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = -2;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = -9;
+	pixel_y = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/dorms/second)
+"NX" = (
+/obj/structure/crate_shelf,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/engineering,
+/obj/item/trench_tool,
+/obj/item/trench_tool{
+	pixel_x = 0;
+	pixel_y = 5
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/storage)
+"Ob" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/machinery/light/directional/south,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/engi)
+"Of" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/power/apc/auto_name/directional/west,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/icemoon/command_post/engi)
+"Og" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"Oi" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/armory)
+"Op" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/concrete/slab_2,
+/area/ruin/icemoon/command_post/dorms)
+"Oy" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/kitchen)
+"OA" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/grille,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/engi)
+"OC" = (
+/obj/structure/guncloset,
+/obj/item/gun/ballistic/shotgun/doublebarrel/roumain,
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/armory)
+"OD" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/concrete/slab_2,
+/area/ruin/icemoon/command_post/dorms)
+"OV" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 8;
+	layer = 2.040
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/dorms/third)
+"OW" = (
+/obj/structure/dresser{
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 2;
+	color = "#543C30"
+	},
+/obj/item/clothing/gloves/boxing{
+	pixel_x = -6;
+	pixel_y = 12
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_cannabis{
+	pixel_x = 4;
+	pixel_y = 5
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_cannabis{
+	pixel_x = 11;
+	pixel_y = 8
+	},
+/obj/item/melee/knife/switchblade{
+	pixel_x = -6;
+	pixel_y = 7
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/dorms/second)
+"OZ" = (
+/obj/structure/chair/office/dark{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/mission_control)
+"Pd" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/structure/table,
+/obj/item/reagent_containers/glass/bowl{
+	pixel_x = -8;
+	pixel_y = 13
+	},
+/obj/item/food/soup/oatmeal{
+	pixel_x = 7;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/kitchen/second)
+"Pf" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/kitchen)
+"Ps" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5;
+	color = "#543C30"
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#543C30";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken"
+	},
+/area/ruin/icemoon/command_post/dorms)
+"PA" = (
+/obj/structure/railing/thin/corner{
+	dir = 8
+	},
+/obj/structure/chair/handrail{
+	dir = 1;
+	name = "overhead handrail"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/eva)
+"PC" = (
+/obj/structure/platform/ship{
+	dir = 8
+	},
+/obj/structure/railing/thin{
+	dir = 8
+	},
+/obj/machinery/modular_computer/console/preset/command{
+	dir = 4;
+	icon_state = "computer-middle"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/icemoon/command_post/mission_control)
+"PI" = (
+/obj/effect/spawner/bunk_bed,
+/obj/effect/turf_decal/siding/wood{
+	dir = 2;
+	color = "#543C30"
+	},
+/obj/structure/sign/poster/contraband/punch_shit{
+	pixel_x = 0;
+	pixel_y = 31
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/dorms/second)
+"PL" = (
+/obj/structure/chair/stool{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/crew_quarters)
+"PM" = (
+/obj/effect/turf_decal/corner/transparent/red/diagonal,
+/obj/structure/chair/bench/beige{
+	dir = 1
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/dark,
+/area/ruin/icemoon/command_post/kitchen)
+"PN" = (
+/obj/structure/closet/wall/directional/south,
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = 0;
+	pixel_y = -10
+	},
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = -8;
+	pixel_y = -10
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = 9;
+	pixel_y = -3
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = 9;
+	pixel_y = -8
+	},
+/obj/item/clothing/suit/ramzi,
+/obj/item/clothing/suit/ramzi{
+	pixel_x = -8;
+	pixel_y = 0
+	},
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = 0;
+	pixel_y = 6
+	},
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = -8;
+	pixel_y = 6
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/icemoon/command_post/dorms/third)
+"Qi" = (
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/engineering,
+/obj/item/storage/box/flares{
+	pixel_x = 8;
+	pixel_y = 2
+	},
+/obj/item/storage/box/flares{
+	pixel_x = 0;
+	pixel_y = 2
+	},
+/obj/item/storage/box/flares{
+	pixel_x = -8;
+	pixel_y = 2
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/storage)
+"Qj" = (
+/obj/structure/railing/thin/corner,
+/obj/structure/chair/handrail{
+	dir = 1;
+	name = "overhead handrail"
+	},
+/obj/item/clothing/suit/space/hardsuit/syndi/ramzi,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/eva)
+"Qt" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/glass/bowl{
+	pixel_x = -5;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/glass/bowl{
+	pixel_x = -5;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/glass/bowl{
+	pixel_x = 7;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/glass/bowl{
+	pixel_x = 7;
+	pixel_y = 12
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/kitchen/second)
+"Qv" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/icemoon/command_post/mission_control)
+"QB" = (
+/obj/structure/platform{
+	dir = 9
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"QC" = (
+/obj/effect/turf_decal/borderfloorblack/corner,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 9;
+	layer = 2.04
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/crew_quarters)
+"QF" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"QM" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete,
+/area/ruin/icemoon/command_post/engi)
+"QS" = (
+/obj/machinery/door/airlock/grunge{
+	dir = 4;
+	id_tag = "officelock"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/armory)
+"QW" = (
+/obj/effect/turf_decal/road/line{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement/icemoon,
+/area/overmap_encounter/planetoid/ice/explored)
+"QY" = (
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/concrete,
+/area/ruin/icemoon/command_post/engi)
+"Rp" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 2;
+	color = "#543C30"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 10;
+	color = "#543C30"
+	},
+/obj/structure/chair/office/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/officer)
+"Rs" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/bordercorner{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/item/radio/intercom/wideband/table{
+	dir = 1;
+	pixel_x = 5;
+	pixel_y = 3
+	},
+/obj/item/radio/intercom/directional/north{
+	pixel_x = 4;
+	pixel_y = 31
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/command_post/mission_control)
+"Ru" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 6
+	},
+/turf/closed/mineral/random/snow,
+/area/ruin/icemoon/command_post)
+"RB" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border,
+/obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_x = -8;
+	pixel_y = 5
+	},
+/obj/item/pen{
+	pixel_x = -8;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/command_post/mission_control)
+"RG" = (
+/turf/open/floor/concrete/slab_2/icemoon,
+/area/ruin/icemoon/command_post)
+"RI" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/components/binary/pump/on/layer2{
+	dir = 2;
+	name = "Air to Distro"
+	},
+/obj/machinery/atmospherics/pipe/manifold/cyan/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/engi)
+"RJ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 2;
+	color = "#543C30"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#543C30"
+	},
+/obj/structure/closet/wall/directional/south,
+/obj/item/clothing/under/syndicate/ramzi/overalls{
+	pixel_x = -1;
+	pixel_y = -11
+	},
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = -8;
+	pixel_y = -11
+	},
+/obj/item/clothing/neck/shemagh/ramzi{
+	pixel_x = -7;
+	pixel_y = 4;
+	layer = 3.1
+	},
+/obj/item/clothing/neck/scarf/pink{
+	pixel_x = 1;
+	pixel_y = -2;
+	layer = 3.1
+	},
+/obj/item/clothing/under/dress/skirt/pinafore/maroon{
+	pixel_x = 10;
+	pixel_y = 1;
+	layer = 3.1
+	},
+/obj/item/camera{
+	pixel_x = -6;
+	pixel_y = 8
+	},
+/obj/item/storage/photo_album{
+	pixel_x = -2;
+	pixel_y = 7
+	},
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = 11;
+	pixel_y = 7
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = 4;
+	pixel_y = -9
+	},
+/obj/item/clothing/shoes/heels/black{
+	pixel_x = 11;
+	pixel_y = -14
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/dorms)
+"RR" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloorblack/corner,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 9;
+	layer = 2.04
+	},
+/obj/item/plate_shard{
+	pixel_x = -5;
+	pixel_y = -12
+	},
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/kitchen/second)
+"Sb" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 1
+	},
+/obj/structure/chair/office/dark{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/command_post/mission_control)
+"Sf" = (
+/turf/open/floor/plating/asteroid/iceberg,
+/area/ruin/icemoon/command_post/kitchen)
+"Sh" = (
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/storage)
+"Sk" = (
+/obj/structure/guncloset,
+/obj/item/gun/ballistic/automatic/pistol/rattlesnake/cottonmouth,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/armory)
+"Sq" = (
+/obj/structure/table/rolling,
+/obj/item/storage/toolbox/syndicate{
+	pixel_x = -1;
+	pixel_y = -2
+	},
+/obj/item/clothing/glasses/welding{
+	pixel_x = 5;
+	pixel_y = 8
+	},
+/turf/open/floor/concrete,
+/area/ruin/icemoon/command_post/engi)
+"SF" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#543C30"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#543C30"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood/walnut{
+	icon_state = "wood-broken"
+	},
+/area/ruin/icemoon/command_post/dorms)
+"SH" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 4;
+	layer = 2.040
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/command_post/armory)
+"Ta" = (
+/obj/structure/closet/secure_closet/armorycage{
+	pixel_x = 0;
+	pixel_y = 0;
+	req_access = null
+	},
+/obj/item/grenade/spawnergrenade/manhacks{
+	pixel_x = -5;
+	pixel_y = -4
+	},
+/obj/item/grenade/spawnergrenade/manhacks{
+	pixel_x = -5;
+	pixel_y = 3
+	},
+/obj/item/grenade/spawnergrenade/manhacks{
+	pixel_x = -5;
+	pixel_y = 11
+	},
+/obj/item/grenade/smokebomb{
+	pixel_x = 7;
+	pixel_y = -3
+	},
+/obj/item/grenade/smokebomb{
+	pixel_x = 7;
+	pixel_y = 4
+	},
+/obj/item/grenade/smokebomb{
+	pixel_x = 7;
+	pixel_y = 11
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/armory)
+"Tb" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
+	},
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/viscerator,
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"Te" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 8;
+	layer = 2.040
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/icemoon/command_post/mission_control)
+"Tz" = (
+/obj/structure/platform/corner{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"TA" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/dorms)
+"TQ" = (
+/obj/machinery/door/airlock/external{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/icemoon/command_post/dorms/third)
+"TR" = (
+/obj/effect/turf_decal/siding/wood/end{
+	color = "#543C30"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/dorms)
+"TV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/storage)
+"Ui" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/structure/chair{
+	dir = 8
+	},
+/obj/structure/extinguisher_cabinet/directional/east,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/kitchen/second)
+"Uj" = (
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/icemoon/command_post/officer)
+"Uk" = (
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/armory)
+"Uo" = (
+/obj/structure/table/wood,
+/obj/machinery/fax/ramzi,
+/obj/item/radio/intercom/wideband/directional/west,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/officer)
+"Uq" = (
+/obj/machinery/door/airlock/grunge,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/crew_quarters)
+"UP" = (
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/storage)
+"Ve" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/icemoon,
+/area/ruin/icemoon/command_post)
+"Vf" = (
+/obj/effect/turf_decal/road,
+/mob/living/simple_animal/hostile/viscerator,
+/turf/open/floor/concrete/pavement/icemoon,
+/area/ruin/icemoon/command_post)
+"Vi" = (
+/obj/effect/decal/cleanable/oil/streak,
+/turf/open/floor/concrete,
+/area/ruin/icemoon/command_post/engi)
+"Vj" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"Vr" = (
+/mob/living/simple_animal/hostile/viscerator,
+/turf/open/floor/concrete/slab_1/icemoon/lit,
+/area/ruin/icemoon/command_post)
+"Vs" = (
+/obj/structure/table/reinforced,
+/obj/item/plate{
+	pixel_x = 10;
+	pixel_y = 0
+	},
+/obj/item/plate{
+	pixel_x = 10;
+	pixel_y = -3
+	},
+/obj/item/reagent_containers/glass/bowl{
+	pixel_x = -5;
+	pixel_y = -3
+	},
+/obj/item/reagent_containers/glass/bowl{
+	pixel_x = -4;
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/glass/bowl{
+	pixel_x = -5;
+	pixel_y = -7
+	},
+/obj/item/cutting_board{
+	pixel_x = -4;
+	pixel_y = 0
+	},
+/obj/item/melee/knife/butcher{
+	pixel_x = -3;
+	pixel_y = 5
+	},
+/obj/item/melee/knife/kitchen{
+	pixel_x = 0;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = -3;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = -8;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = -13;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = -3;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = -8;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = -13;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = 3;
+	pixel_y = 10
+	},
+/obj/item/plate{
+	pixel_x = 10;
+	pixel_y = -6
+	},
+/obj/item/plate{
+	pixel_x = 10;
+	pixel_y = -9
+	},
+/obj/structure/closet/wall/white/directional/east{
+	name = "kitchen cabinet"
+	},
+/obj/effect/turf_decal/corner/transparent/red/diagonal,
+/turf/open/floor/plasteel/dark,
+/area/ruin/icemoon/command_post/kitchen)
+"Vu" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5;
+	color = "#543C30"
+	},
+/obj/structure/closet/wall/blue/directional/east,
+/obj/item/clothing/suit/armor/ramzi/captain{
+	pixel_x = 0;
+	pixel_y = 8
+	},
+/obj/item/clothing/suit/armor/ramzi/officer{
+	pixel_x = -9;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/ramzi/beret{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/ramzi/peaked{
+	pixel_x = 9;
+	pixel_y = 12
+	},
+/obj/item/clothing/under/syndicate/ramzi/officer{
+	pixel_x = 10;
+	pixel_y = 1
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = 8;
+	pixel_y = -4
+	},
+/obj/item/clothing/neck/scarf/maroon{
+	pixel_x = -1;
+	pixel_y = -5
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/officer)
+"Vv" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 4;
+	layer = 2.040
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = -10;
+	id = "rightarmoury";
+	name = "Right Armoury Lockdown"
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = 10;
+	name = "Left Armoury Lockdown";
+	id = "leftarmoury"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/command_post/armory)
+"Vw" = (
+/turf/open/floor/plating/asteroid/icerock,
+/area/overmap_encounter/planetoid/ice/explored)
+"VC" = (
+/obj/machinery/door/poddoor/shutters{
+	dir = 8;
+	id = "rightarmoury"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/armory)
+"VR" = (
+/obj/effect/spawner/bunk_bed,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/dorms/third)
+"Wa" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#543C30";
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 6;
+	color = "#543C30"
+	},
+/obj/structure/closet/wall/directional/east,
+/obj/item/clothing/under/syndicate/ramzi/overalls{
+	pixel_x = 6;
+	pixel_y = 9
+	},
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = 12;
+	pixel_y = 9
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = 10;
+	pixel_y = -3
+	},
+/obj/item/clothing/neck/shemagh/ramzi{
+	pixel_x = 13;
+	pixel_y = 5
+	},
+/obj/item/clothing/neck/scarf/maroon{
+	pixel_x = 5;
+	pixel_y = 1
+	},
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = 8;
+	pixel_y = -12
+	},
+/obj/item/clothing/suit/ramzi{
+	pixel_x = -1;
+	pixel_y = 11
+	},
+/obj/item/reagent_containers/food/drinks/flask/det{
+	pixel_x = -1;
+	pixel_y = 3;
+	name = "premium flask";
+	desc = "Alcohol is our friend. Can you really abandon a friend?"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/dorms)
+"Wc" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_4,
+/area/ruin/icemoon/command_post/armory)
+"Wt" = (
+/turf/open/floor/concrete/slab_1/icemoon/lit,
+/area/overmap_encounter/planetoid/ice/explored)
+"Wz" = (
+/obj/machinery/door/airlock/grunge{
+	dir = 4;
+	id_tag = "officelock"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/engi)
+"WB" = (
+/obj/structure/platform/ship{
+	dir = 8
+	},
+/obj/structure/railing/thin{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 1
+	},
+/obj/machinery/computer/monitor{
+	dir = 4;
+	icon_state = "computer-right"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/icemoon/command_post/mission_control)
+"WF" = (
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/icemoon/command_post/armory)
+"WL" = (
+/obj/machinery/power/rtg/geothermal,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/ruin/icemoon/command_post)
+"WO" = (
+/obj/structure/crate_shelf,
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post/kitchen)
+"WX" = (
+/obj/effect/turf_decal/borderfloor/corner{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/engi)
+"Xc" = (
+/obj/effect/spawner/bunk_bed,
+/obj/item/toy/plush/moth/redish{
+	pixel_x = 9;
+	pixel_y = -2;
+	name = "Yitosun";
+	desc = "An adorable mothperson plushy. It's a red bug! A little nametag labeled 'Yitosun' is penned in a neat cursive."
+	},
+/obj/item/toy/plush/moth/poison{
+	pixel_x = 5;
+	pixel_y = -8;
+	name = "Anna";
+	desc = "An adorable mothperson plushy. It's a toxic bug! A little nametag labeled 'Anna' is penned in a neat cursive."
+	},
+/obj/item/toy/plush/moth/monarch{
+	pixel_x = -1;
+	pixel_y = -6;
+	name = "Debbie";
+	desc = "An adorable mothperson plushy. It's an important bug! A little nametag labeled 'Debbie' is penned in a neat cursive."
+	},
+/obj/item/toy/plush/moth/snow{
+	pixel_x = -8;
+	pixel_y = -6;
+	name = "Myo";
+	desc = "An adorable mothperson plushy. It's a cool bug! A little nametag labeled 'Myo' is penned in a neat cursive. The antennae are perked up like bunny ears."
+	},
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/dorms)
+"Xp" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#543C30"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/officer)
+"Xt" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/eva)
+"Xw" = (
+/obj/item/chair/stool,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/crew_quarters)
+"XF" = (
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/icemoon/command_post)
+"XM" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/toolbox/syndicate{
+	pixel_x = -2;
+	pixel_y = 0
+	},
+/obj/item/clothing/glasses/welding{
+	pixel_x = -6;
+	pixel_y = 10
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/engi)
+"XP" = (
+/obj/structure/platform{
+	dir = 5
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"XS" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#543C30"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 2;
+	color = "#543C30"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood/walnut,
+/area/ruin/icemoon/command_post/dorms)
+"Yb" = (
+/obj/effect/turf_decal/road,
+/turf/open/floor/concrete/pavement/icemoon,
+/area/overmap_encounter/planetoid/ice/explored)
+"Ye" = (
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg/sidewinder{
+	wander = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/icemoon,
+/area/ruin/icemoon/command_post)
+"Yn" = (
+/obj/machinery/telecomms/broadcaster,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/icemoon/command_post/mission_control)
+"Yt" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/curtain/cloth,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/kitchen/second)
+"Yy" = (
+/mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth,
+/obj/machinery/light/directional/south,
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/ruin/icemoon/command_post)
+"YD" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"YE" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/icemoon/command_post/mission_control)
+"YF" = (
+/obj/structure/dresser,
+/obj/item/stack/arcadeticket{
+	pixel_x = 0;
+	pixel_y = 15
+	},
+/obj/structure/sign/poster/rilena/tali{
+	pixel_x = 32;
+	pixel_y = 0
+	},
+/obj/item/reagent_containers/food/drinks/rilenacup{
+	pixel_x = 7;
+	pixel_y = 7
+	},
+/obj/item/paper/fluff/ruins{
+	name = "angry note";
+	pixel_x = -6;
+	pixel_y = 7;
+	default_raw_text = "you dumb fucker STOP MOVING THE CHAIR i dont care you have your safe under it, its cramped as all hell in here"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/dorms)
+"YP" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 8;
+	layer = 2.040
+	},
+/obj/structure/railing/thin/corner,
+/obj/structure/chair/handrail{
+	dir = 1;
+	name = "overhead handrail"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/eva)
+"YQ" = (
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/ruin/icemoon/command_post)
+"YS" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/command_post/dorms/second)
+"YT" = (
+/obj/structure/closet/wall/directional/south,
+/obj/item/clothing/under/syndicate/ramzi/overalls{
+	pixel_x = -8;
+	pixel_y = -11
+	},
+/obj/item/clothing/under/syndicate/ramzi/overalls{
+	pixel_x = -3;
+	pixel_y = -11
+	},
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = 6;
+	pixel_y = -11
+	},
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = 12;
+	pixel_y = -11
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = 2;
+	pixel_y = 3
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_x = 10;
+	pixel_y = 3
+	},
+/obj/item/clothing/neck/scarf/maroon{
+	pixel_x = -3;
+	pixel_y = 0
+	},
+/obj/item/clothing/neck/scarf/maroon{
+	pixel_x = -8;
+	pixel_y = 0
+	},
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = -1;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = -8;
+	pixel_y = 8
+	},
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/dorms/second)
+"YU" = (
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/eva)
+"YY" = (
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/icemoon/command_post/crew_quarters)
+"YZ" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/armory)
+"Zl" = (
+/obj/effect/turf_decal/road/line{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/icemoon,
+/area/overmap_encounter/planetoid/ice/explored)
+"Zp" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
+	},
+/obj/effect/turf_decal/corner_techfloor_grid,
+/obj/effect/mob_spawn/human/skeleton,
+/obj/item/pickaxe,
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/icemoon/command_post)
+"Zw" = (
+/turf/open/floor/concrete/slab_1,
+/area/ruin/icemoon/command_post/kitchen/second)
+"ZH" = (
+/obj/machinery/door/airlock/grunge,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/crew_quarters)
+"ZN" = (
+/obj/machinery/door/airlock/grunge{
+	dir = 4;
+	id_tag = "ramziminingofficer"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/icemoon/command_post/officer)
+"ZT" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/concrete/tiles,
+/area/ruin/icemoon/command_post/mission_control)
+"ZZ" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/structure/closet,
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = 9;
+	pixel_y = 1
+	},
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = 0;
+	pixel_y = 1
+	},
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = -9;
+	pixel_y = 1
+	},
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = 9;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = 0;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = -9;
+	pixel_y = 8
+	},
+/obj/item/clothing/neck/scarf/maroon{
+	pixel_x = -9;
+	pixel_y = -9
+	},
+/obj/item/clothing/neck/scarf/maroon{
+	pixel_x = -3;
+	pixel_y = -9
+	},
+/obj/item/clothing/neck/scarf/maroon{
+	pixel_x = 2;
+	pixel_y = -9
+	},
+/obj/item/clothing/neck/scarf/maroon{
+	pixel_x = 8;
+	pixel_y = -9
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/icemoon/command_post/dorms)
+
+(1,1,1) = {"
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(2,1,1) = {"
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(3,1,1) = {"
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+os
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(4,1,1) = {"
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+os
+os
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(5,1,1) = {"
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+nE
+qr
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+HQ
+HQ
+HQ
+HQ
+HQ
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(6,1,1) = {"
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+nE
+nE
+os
+kp
+kp
+jt
+jt
+jt
+jt
+jt
+HQ
+gk
+MM
+Fw
+HQ
+HQ
+kp
+vS
+vS
+vS
+vS
+vS
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(7,1,1) = {"
+uM
+uM
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+fs
+fs
+fs
+kp
+kp
+nE
+os
+kp
+jt
+jt
+ht
+Nq
+kb
+jt
+NX
+UP
+UP
+UP
+et
+HQ
+kp
+vS
+VR
+cp
+VR
+vS
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+JH
+JH
+JH
+uM
+uM
+"}
+(8,1,1) = {"
+uM
+uM
+uM
+uM
+uM
+uM
+kp
+kp
+fs
+fs
+fs
+fs
+kp
+kp
+kp
+kp
+nE
+kp
+kp
+jt
+PI
+mL
+xI
+NL
+jt
+zb
+IY
+UP
+UP
+wz
+HQ
+kp
+vS
+Iw
+OV
+eM
+vS
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+Vw
+JH
+JH
+JH
+JH
+uM
+"}
+(9,1,1) = {"
+uM
+uM
+uM
+uM
+uM
+kp
+kp
+fs
+fs
+fs
+fs
+kp
+kp
+kp
+fs
+kp
+qr
+os
+kp
+jt
+OW
+xI
+da
+YT
+jt
+Qi
+UP
+UP
+IY
+wz
+HQ
+kp
+vS
+ho
+uR
+PN
+vS
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+Vw
+Vw
+JH
+JH
+JH
+JH
+"}
+(10,1,1) = {"
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+fs
+fs
+fs
+fs
+fs
+fs
+fs
+fs
+kp
+os
+os
+qr
+jt
+nb
+lW
+YS
+ve
+jt
+HQ
+TV
+Sh
+Mh
+HQ
+HQ
+kp
+vS
+vS
+jY
+vS
+vS
+kp
+kp
+XF
+AB
+kp
+kp
+AB
+XF
+kp
+Vw
+Vw
+Vw
+Vw
+JH
+JH
+"}
+(11,1,1) = {"
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+fs
+kp
+fs
+dJ
+dJ
+dJ
+dJ
+dJ
+XF
+YQ
+kp
+jt
+jt
+jt
+mR
+jt
+jt
+HQ
+sm
+bI
+bI
+HQ
+kp
+kp
+kp
+vS
+TQ
+vS
+nE
+os
+qr
+hz
+LA
+Vr
+LA
+LA
+hz
+LA
+Wt
+Wt
+Vw
+Wt
+JH
+JH
+"}
+(12,1,1) = {"
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+fs
+kp
+fs
+kp
+dJ
+hn
+Sf
+ff
+sQ
+kp
+qr
+kp
+EG
+RR
+DO
+Li
+au
+nX
+EG
+JK
+os
+os
+xY
+kp
+kp
+kp
+kp
+Br
+nE
+os
+os
+os
+qr
+hh
+hh
+hh
+hh
+hh
+hh
+QW
+QW
+Vw
+QW
+JH
+JH
+"}
+(13,1,1) = {"
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+XF
+wy
+ig
+ig
+je
+LI
+kp
+nE
+kp
+EG
+sK
+ji
+ur
+Ld
+pn
+ha
+DM
+qJ
+os
+Vj
+os
+kp
+kp
+XF
+xf
+os
+os
+os
+os
+os
+Vf
+Ho
+Ho
+Ho
+Ho
+Ho
+Yb
+Vw
+Vw
+JH
+JH
+Yb
+"}
+(14,1,1) = {"
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+KG
+KG
+KG
+KG
+Fe
+WO
+lr
+Ll
+LI
+kp
+nE
+nE
+EG
+Ju
+LH
+sS
+po
+hr
+EG
+os
+vB
+Ye
+gP
+zd
+zd
+zd
+zd
+rl
+os
+os
+os
+os
+os
+oP
+oP
+oz
+oP
+oP
+oP
+Zl
+Zl
+Vw
+Zl
+Zl
+JH
+"}
+(15,1,1) = {"
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+KG
+Ez
+Er
+KG
+LI
+LI
+LI
+NA
+LI
+kp
+os
+aw
+EG
+Qt
+Zw
+tr
+oj
+Pd
+Yt
+os
+Ci
+os
+Vj
+os
+os
+os
+nE
+os
+os
+os
+os
+qr
+uB
+LA
+Vr
+LA
+LA
+uB
+LA
+Wt
+Wt
+Wt
+Vw
+Wt
+JH
+"}
+(16,1,1) = {"
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+KG
+uK
+RJ
+KG
+na
+pE
+PM
+iR
+LI
+LI
+kp
+os
+EG
+sB
+EI
+jK
+Zw
+Ui
+Yt
+os
+Ci
+os
+os
+qr
+os
+os
+os
+os
+os
+os
+os
+kp
+XF
+AB
+kp
+kp
+AB
+XF
+kp
+Vw
+Vw
+Vw
+JH
+JH
+JH
+"}
+(17,1,1) = {"
+kp
+kp
+kp
+kp
+KG
+KG
+KG
+KG
+Fs
+cj
+KG
+na
+nk
+Cq
+Oy
+xn
+LI
+BT
+pN
+EG
+EG
+oC
+uW
+yN
+EG
+EG
+os
+oQ
+qr
+os
+os
+os
+os
+rS
+os
+os
+os
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+Vw
+Vw
+JH
+JH
+JH
+JH
+"}
+(18,1,1) = {"
+kp
+kp
+kp
+kp
+KG
+lZ
+Lh
+KG
+KG
+mt
+KG
+xB
+jN
+gR
+Jh
+CE
+NE
+mc
+os
+os
+EG
+EG
+bx
+EG
+EG
+kp
+kp
+nE
+os
+qr
+os
+os
+os
+os
+os
+os
+nE
+nE
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+Vw
+JH
+JH
+JH
+uM
+"}
+(19,1,1) = {"
+kp
+kp
+kp
+kp
+KG
+En
+xq
+KG
+Fy
+Op
+KG
+pK
+jN
+Pf
+ny
+fO
+LI
+Tz
+os
+os
+os
+os
+Br
+os
+kp
+kp
+XF
+kp
+nE
+os
+os
+os
+nE
+os
+os
+nE
+kp
+nE
+nE
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+JH
+JH
+JH
+JH
+uM
+"}
+(20,1,1) = {"
+uM
+kp
+kp
+kp
+KG
+bH
+Ka
+fa
+OD
+nG
+KG
+jU
+Vs
+LI
+LI
+HB
+LI
+YY
+YY
+fD
+fD
+GI
+Br
+os
+nE
+nE
+Im
+nE
+nE
+os
+rS
+zA
+nE
+os
+os
+Yy
+XF
+kp
+nE
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(21,1,1) = {"
+uM
+kp
+kp
+kp
+KG
+KG
+KG
+KG
+KG
+TA
+KG
+KG
+KG
+YY
+QC
+ly
+rI
+vk
+YY
+bV
+oJ
+XP
+Br
+os
+os
+os
+nE
+nE
+os
+os
+nE
+BV
+nE
+os
+nE
+nE
+kp
+kp
+nE
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(22,1,1) = {"
+uM
+uM
+kp
+kp
+kp
+KG
+xd
+uV
+KG
+Cf
+SF
+oc
+Dn
+Uq
+wN
+Xw
+PL
+iC
+ZH
+RG
+Af
+jJ
+Br
+os
+os
+os
+os
+os
+os
+os
+nE
+zA
+os
+os
+nE
+os
+nE
+nE
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(23,1,1) = {"
+uM
+uM
+kp
+kp
+kp
+KG
+uK
+pD
+KG
+xX
+fV
+qd
+ZZ
+YY
+eQ
+mY
+bK
+kr
+YY
+RG
+ul
+ok
+Br
+os
+os
+os
+os
+os
+os
+os
+os
+os
+rS
+os
+os
+os
+nE
+nE
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(24,1,1) = {"
+uM
+uM
+kp
+kp
+kp
+KG
+wH
+Wa
+gK
+XS
+ES
+ua
+vv
+YY
+jM
+gr
+hW
+Bj
+Jl
+RG
+Jn
+yU
+Br
+os
+os
+os
+os
+os
+os
+os
+os
+os
+os
+os
+os
+os
+nE
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+JH
+uM
+uM
+uM
+uM
+uM
+"}
+(25,1,1) = {"
+uM
+uM
+kp
+kp
+kp
+KG
+KG
+KG
+KG
+rb
+fG
+Ef
+vb
+YY
+GX
+JE
+fq
+sT
+Jl
+xM
+km
+QB
+Br
+os
+os
+os
+os
+os
+os
+os
+nE
+os
+os
+os
+os
+os
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+JH
+JH
+JH
+uM
+uM
+uM
+uM
+"}
+(26,1,1) = {"
+uM
+uM
+kp
+kp
+kp
+KG
+sZ
+Jy
+gK
+Ps
+Jr
+TR
+nl
+YY
+Eh
+zU
+bM
+YY
+YY
+on
+on
+Tz
+Br
+os
+os
+os
+os
+os
+nE
+og
+XF
+pH
+nE
+os
+os
+os
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+Vw
+JH
+JH
+JH
+uM
+uM
+uM
+"}
+(27,1,1) = {"
+uM
+uM
+kp
+kp
+kp
+KG
+Xc
+LD
+Uj
+Uj
+ZN
+Uj
+Uj
+Uj
+Uj
+YY
+YY
+YY
+nE
+nE
+nE
+nE
+Br
+os
+os
+os
+os
+os
+nE
+kp
+kp
+kp
+nE
+os
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+Vw
+Vw
+JH
+JH
+uM
+uM
+uM
+"}
+(28,1,1) = {"
+uM
+uM
+uM
+kp
+kp
+KG
+YF
+fY
+Uj
+ce
+gd
+lD
+KK
+Uo
+Uj
+GI
+os
+nE
+nE
+og
+XF
+bX
+Br
+os
+os
+os
+os
+os
+kp
+kp
+kp
+kp
+os
+yo
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+Vw
+Vw
+Vw
+JH
+uM
+uM
+uM
+uM
+"}
+(29,1,1) = {"
+uM
+uM
+uM
+kp
+kp
+KG
+KG
+KG
+Uj
+sW
+vJ
+gj
+Rp
+Ba
+fb
+EB
+zd
+Ve
+zd
+zd
+nZ
+zd
+Nv
+QF
+QF
+JC
+os
+os
+nE
+kp
+kp
+nE
+aw
+os
+os
+XF
+kp
+kp
+XF
+kp
+kp
+XF
+kp
+kp
+Vw
+Vw
+JH
+JH
+uM
+uM
+uM
+uM
+"}
+(30,1,1) = {"
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+Uj
+Km
+cU
+Xp
+Bs
+ow
+zG
+mc
+os
+sI
+nE
+os
+Br
+os
+os
+nE
+os
+os
+tM
+QF
+QF
+Me
+Me
+cT
+os
+Ji
+yA
+Og
+yA
+Ru
+iJ
+yA
+yA
+qS
+df
+Vw
+Vw
+Vw
+JH
+JH
+uM
+uM
+uM
+uM
+"}
+(31,1,1) = {"
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+Uj
+Ek
+No
+Vu
+zL
+Uj
+Uj
+Tz
+os
+nE
+nE
+os
+Br
+os
+nE
+nE
+nE
+os
+os
+os
+os
+nE
+kp
+kp
+wJ
+Tb
+YD
+Cl
+aZ
+aZ
+Zp
+YD
+YD
+dS
+os
+Vw
+Vw
+Vw
+Vw
+JH
+JH
+uM
+uM
+uM
+"}
+(32,1,1) = {"
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+Uj
+Uj
+Uj
+Uj
+Uj
+Uj
+os
+os
+nE
+nE
+rN
+rN
+Ce
+rN
+rN
+rN
+HT
+nE
+os
+os
+os
+lT
+kp
+kp
+XF
+kp
+kp
+XF
+kp
+kp
+XF
+kp
+kp
+XF
+kp
+Vw
+Vw
+Vw
+Vw
+JH
+JH
+uM
+uM
+uM
+"}
+(33,1,1) = {"
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+os
+os
+nE
+nE
+rN
+rN
+oV
+Xt
+YP
+uc
+rN
+kC
+kC
+pU
+pU
+kC
+Mf
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+Vw
+Vw
+JH
+JH
+uM
+uM
+uM
+uM
+"}
+(34,1,1) = {"
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+nE
+nE
+nE
+rN
+ey
+eg
+zH
+PA
+tT
+rN
+iz
+cn
+nA
+nA
+NF
+Mf
+Mf
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+Vw
+JH
+JH
+uM
+uM
+uM
+uM
+uM
+"}
+(35,1,1) = {"
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+Gq
+Gq
+Gq
+Gq
+rN
+jR
+HG
+IZ
+YU
+Be
+rN
+BN
+Sq
+vG
+LY
+jc
+Bk
+Mf
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+JH
+JH
+JH
+JH
+uM
+uM
+uM
+uM
+uM
+"}
+(36,1,1) = {"
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+Gq
+Gq
+tQ
+pf
+jp
+rN
+wg
+YU
+zH
+fM
+kR
+rN
+Is
+Vi
+vG
+QY
+jc
+XM
+Mf
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(37,1,1) = {"
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+Gq
+gf
+uQ
+uQ
+Fk
+rN
+ux
+YU
+zH
+Qj
+hy
+rN
+AZ
+wO
+vG
+vG
+GW
+Ob
+Mf
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(38,1,1) = {"
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+Gq
+vu
+uQ
+YE
+mE
+rN
+wA
+Lo
+zH
+jQ
+Fo
+rN
+ys
+vG
+vG
+Ii
+Gy
+Gw
+Mf
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(39,1,1) = {"
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+Gq
+zr
+oF
+Fh
+Yn
+WF
+WF
+WF
+jO
+WF
+WF
+WF
+iI
+vG
+vG
+wO
+bC
+AG
+Mf
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(40,1,1) = {"
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+Gq
+Gq
+Gq
+Gq
+IO
+Gq
+WF
+JA
+eE
+zm
+Cy
+ze
+jF
+LM
+kl
+QM
+jq
+ng
+kJ
+Mf
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(41,1,1) = {"
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+Gq
+Gq
+tt
+DL
+Te
+zk
+nP
+WF
+Hx
+Oi
+LQ
+YZ
+nN
+WF
+WX
+hl
+jG
+js
+ta
+Mf
+Mf
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(42,1,1) = {"
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+Gq
+cl
+vV
+OZ
+xy
+sX
+kh
+jF
+do
+wP
+eZ
+Uk
+hX
+WF
+Mf
+pF
+FR
+Mf
+Wz
+Mf
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(43,1,1) = {"
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+Gq
+wT
+qg
+vV
+wc
+ZT
+DT
+WF
+hN
+pm
+vI
+vI
+gh
+WF
+Mf
+Mf
+Mf
+Mf
+lg
+Mf
+Mf
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(44,1,1) = {"
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+Gq
+Gq
+WB
+gD
+PC
+wp
+le
+WF
+QS
+WF
+yE
+yE
+WF
+WF
+gA
+Mf
+yW
+Of
+gG
+CI
+Mf
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(45,1,1) = {"
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+Gq
+Mn
+Qv
+wj
+wj
+qs
+dX
+WF
+uA
+Jt
+Hg
+Wc
+vt
+WF
+yv
+oh
+At
+RI
+er
+Il
+Mf
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(46,1,1) = {"
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+Gq
+RB
+IJ
+ez
+ez
+lP
+Sb
+WF
+gZ
+tf
+Vv
+SH
+iN
+WF
+EV
+Mf
+yj
+qX
+wh
+Ao
+Mf
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(47,1,1) = {"
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+Gq
+Rs
+KC
+KH
+nh
+zB
+tj
+WF
+nM
+nM
+WF
+VC
+VC
+WF
+Mf
+Mf
+yC
+Mf
+OA
+Mf
+Mf
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(48,1,1) = {"
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+Gq
+Gq
+Gq
+Gq
+Gq
+Gq
+Gq
+WF
+Sk
+pR
+WF
+OC
+Ta
+WF
+XF
+XF
+qz
+XF
+WL
+XF
+XF
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(49,1,1) = {"
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+WF
+WF
+WF
+WF
+WF
+WF
+WF
+XF
+xJ
+xJ
+xJ
+xJ
+nE
+XF
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(50,1,1) = {"
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+XF
+nE
+nE
+xJ
+xJ
+xJ
+XF
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(51,1,1) = {"
+uM
+uM
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+nE
+nE
+nE
+os
+xJ
+nE
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(52,1,1) = {"
+uM
+uM
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+os
+os
+os
+os
+nE
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(53,1,1) = {"
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+os
+os
+os
+os
+os
+nE
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(54,1,1) = {"
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+kp
+nE
+os
+os
+os
+nE
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(55,1,1) = {"
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+kp
+nE
+os
+os
+os
+nE
+kp
+uM
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}
+(56,1,1) = {"
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+kp
+kp
+kp
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+kp
+kp
+os
+os
+os
+os
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+uM
+"}

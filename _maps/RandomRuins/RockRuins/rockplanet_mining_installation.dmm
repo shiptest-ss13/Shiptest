@@ -512,10 +512,7 @@
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
 	},
-/obj/item/reagent_containers/food/drinks/beer/light{
-	pixel_x = 3;
-	pixel_y = 9
-	},
+/obj/item/reagent_containers/food/drinks/beer,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/canteen)
 "cY" = (
@@ -1244,10 +1241,7 @@
 	pixel_x = -7;
 	pixel_y = 7
 	},
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = -5;
-	pixel_y = 5
-	},
+/obj/item/reagent_containers/food/drinks/mead,
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/canteen)
 "gJ" = (
@@ -1679,10 +1673,7 @@
 /area/ruin/rockplanet/mining_base/refinery)
 "jc" = (
 /obj/structure/table,
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = -2;
-	pixel_y = 14
-	},
+/obj/item/reagent_containers/food/drinks/mead,
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/canteen)
 "jg" = (
@@ -2879,10 +2870,7 @@
 /area/ruin/rockplanet/mining_base/refinery)
 "pO" = (
 /obj/structure/table,
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = 6;
-	pixel_y = 11
-	},
+/obj/item/reagent_containers/food/drinks/mead,
 /obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = -3;
 	pixel_y = -11
@@ -6233,10 +6221,7 @@
 /area/ruin/rockplanet/mining_base/engineering)
 "Ib" = (
 /obj/structure/table,
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = 6;
-	pixel_y = 11
-	},
+/obj/item/reagent_containers/food/drinks/mead,
 /obj/item/food/meat/steak/chicken{
 	pixel_x = -6;
 	pixel_y = -2
@@ -6261,10 +6246,7 @@
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
 	},
-/obj/item/reagent_containers/food/drinks/beer/light{
-	pixel_x = -5;
-	pixel_y = 6
-	},
+/obj/item/reagent_containers/food/drinks/beer,
 /obj/item/food/meat/steak/chicken{
 	pixel_x = 3;
 	pixel_y = -5
@@ -6777,12 +6759,12 @@
 	},
 /obj/effect/turf_decal/borderfloor/corner,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/item/stock_parts/cell/gun/empty,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/item/stock_parts/cell/gun/sharplite,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Lw" = (
