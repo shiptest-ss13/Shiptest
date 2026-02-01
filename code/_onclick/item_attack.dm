@@ -144,11 +144,15 @@
 	if(handle_tool_treatment(weapon, user, params2list(params)))
 		return TRUE
 
+	// MUST be done AFTER wound treatment
+	if((weapon.item_flags & SURGICAL_TOOL) && user.a_intent == INTENT_HELP && attempt_initiate_surgery(weapon, src, user))
+		return TRUE
+
 	//This should really be in attack but 2 much logic doesnt call parent
 	user.changeNext_move(weapon.attack_cooldown)
 	return weapon.attack(src, user, params)
 
-/// This handles treating wounds and performing surgeries with items. It is also a hack to avoid refactoring the entire attack chain.
+/// This handles treating wounds and performing surgeries with items. It is also a hack to avoid refactoring the entire attack chain (for now)
 /mob/living/proc/handle_tool_treatment(obj/item/tool, mob/living/user, list/modifiers)
 	if(user.a_intent == INTENT_HELP)
 		for(var/datum/surgery/active_surgery in surgeries)
@@ -158,9 +162,6 @@
 				continue
 			if(active_surgery.next_step(user, modifiers))
 				return TRUE
-	if((tool.item_flags & SURGICAL_TOOL) && user.a_intent == INTENT_HELP)
-		if(attempt_initiate_surgery(tool, src, user))
-			return TRUE
 	return FALSE
 
 /mob/living/attack_hand(mob/living/user, list/modifiers)
