@@ -111,6 +111,7 @@
 		return INITIALIZE_HINT_QDEL //Delete AI.
 
 	ADD_TRAIT(src, TRAIT_NO_TELEPORT, AI_ANCHOR_TRAIT)
+	ADD_TRAIT(src, TRAIT_REMOTE_CONTROL, INNATE_TRAIT)
 	if(L && istype(L, /datum/ai_laws))
 		laws = L
 		laws.associate(src)

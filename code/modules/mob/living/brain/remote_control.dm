@@ -19,11 +19,8 @@
 	deploy_action = new(src)
 
 /obj/item/organ/brain/remote_control/Destroy()
-	var/mob/living/silicon/ai/linked_ai = linked_ai_ref?.resolve()
-	if(linked_ai && owner?.mind)
-		undeploy_from_frame(owner, linked_ai)
+	. = ..()
 	QDEL_NULL(deploy_action)
-	return ..()
 
 /obj/item/organ/brain/remote_control/examine(mob/user)
 	. = ..()
@@ -107,20 +104,23 @@
 /obj/item/organ/brain/remote_control/proc/link_frame(mob/living/carbon/frame, mob/living/silicon/ai/core)
 	deploy_action.set_frame(frame)
 	deploy_action.Grant(core)
+	frame.has_unlimited_silicon_privilege = TRUE
 	ADD_TRAIT(frame, TRAIT_REMOTE_CONTROL, REF(src))
 	ADD_TRAIT(frame, TRAIT_BINARY_RADIO, REF(src))
 	RegisterSignal(frame, COMSIG_MOB_DEATH, PROC_REF(on_frame_death))
+	RegisterSignal(frame, COMSIG_MOB_HAS_SHIP_ACCESS, PROC_REF(on_ship_access))
 	RegisterSignal(frame, COMSIG_MOB_ATTACK_RANGED_SECONDARY, PROC_REF(on_ranged_attack))
 	RegisterSignal(frame, COMSIG_HUMAN_EARLY_UNARMED_ATTACK, PROC_REF(on_unarmed_attack))
 
 /obj/item/organ/brain/remote_control/proc/unlink_frame(mob/living/carbon/frame, mob/living/silicon/ai/core)
 	deploy_action.Remove(core)
 	deploy_action.set_frame(null)
+	frame.has_unlimited_silicon_privilege = frame::has_unlimited_silicon_privilege
 	if(frame.mind)
 		undeploy_from_frame(frame, core)
 	REMOVE_TRAIT(frame, TRAIT_REMOTE_CONTROL, REF(src))
 	REMOVE_TRAIT(frame, TRAIT_BINARY_RADIO, REF(src))
-	UnregisterSignal(frame, list(COMSIG_MOB_DEATH, COMSIG_MOB_ATTACK_RANGED_SECONDARY, COMSIG_HUMAN_EARLY_UNARMED_ATTACK))
+	UnregisterSignal(frame, list(COMSIG_MOB_DEATH, COMSIG_MOB_HAS_SHIP_ACCESS, COMSIG_MOB_ATTACK_RANGED_SECONDARY, COMSIG_HUMAN_EARLY_UNARMED_ATTACK))
 
 /obj/item/organ/brain/remote_control/proc/deploy_to_frame(mob/living/carbon/frame, mob/living/silicon/ai/core)
 	if(!core.mind)
@@ -139,6 +139,12 @@
 		return
 	frame.mind.transfer_to(core)
 	core.diag_hud_set_deployed()
+
+/obj/item/organ/brain/remote_control/proc/on_ship_access(mob/source, datum/overmap/ship/controlled/ship)
+	SIGNAL_HANDLER
+	var/mob/living/silicon/ai/linked_ai = linked_ai_ref?.resolve()
+	if(linked_ai && linked_ai.has_ship_access(ship))
+		return ALLOW_SHIP_ACCESS
 
 /obj/item/organ/brain/remote_control/proc/on_ranged_attack(mob/living/carbon/source, atom/target, list/modifiers)
 	SIGNAL_HANDLER

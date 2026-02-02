@@ -395,6 +395,10 @@
 
 	var/mob/living/silicon/ai/new_ai = new(pick(landmark_loc), null, src)
 
+	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(new_ai)
+	if(ship)
+		new_ai.add_ship_access(ship)
+
 	if(preference_source)
 		new_ai.apply_pref_name("ai", preference_source)
 

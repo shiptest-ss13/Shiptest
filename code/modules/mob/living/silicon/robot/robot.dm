@@ -112,6 +112,7 @@
 	wires = new /datum/wires/robot(src)
 	AddComponent(/datum/component/empprotection, EMP_PROTECT_WIRES)
 	RegisterSignal(src, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, PROC_REF(charge))
+	ADD_TRAIT(src, TRAIT_REMOTE_CONTROL, INNATE_TRAIT)
 
 	robot_modules_background = new()
 	robot_modules_background.icon_state = "block"
