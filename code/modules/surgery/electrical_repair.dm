@@ -110,7 +110,6 @@
 		TOOL_WELDER = 100,
 		TOOL_CAUTERY = 100,
 		/obj/item/reagent_containers = 100,
-		/obj/item/gun/energy/plasmacutter = 70,
 		/obj/item = 40,
 	)
 	time = 5 SECONDS
