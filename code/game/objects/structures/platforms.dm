@@ -183,6 +183,12 @@
 		return . || mover.throwing || mover.movement_type & (FLYING | FLOATING)
 	return TRUE
 
+/obj/structure/platform/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
+	if (!(to_dir & dir))
+		return TRUE
+	return ..()
+
+
 /obj/structure/platform/proc/on_exit(datum/source, atom/movable/leaving, direction)
 	SIGNAL_HANDLER
 

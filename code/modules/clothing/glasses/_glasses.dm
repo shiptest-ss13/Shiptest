@@ -127,9 +127,12 @@
 	darkness_view = 8
 	flash_protect = FLASH_PROTECTION_SENSITIVE
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
-	glass_colour_type = /datum/client_colour/glass_colour/green
 	supports_variations = VOX_VARIATION
 	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
+	unique_reskin = list(
+		"mono-eye" = "night",
+		"bino-eye" = "nightalt",
+	)
 
 /obj/item/clothing/glasses/eyepatch
 	name = "eyepatch"

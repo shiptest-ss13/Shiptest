@@ -87,3 +87,66 @@
   - bugfix: Fixed some guns firing twice simultaneously
   zimon9:
   - rscdel: Removed intentional deathgasps
+2026-01-16:
+  thearbiber:
+  - rscadd: digi alt thighhigh adjustment
+2026-01-17:
+  PositiveEntropy:
+  - bugfix: Ponytail (Side) 4 now shows the eyes properly.
+2026-01-19:
+  generalthrax:
+  - bugfix: Haboob now has correct headsets for officer
+2026-01-21:
+  KOCMODECAHTHUK:
+  - bugfix: Non-CTF CM-82 guns no longer get deleted when thrown or drop
+  SomeguyManperson:
+  - rscadd: bashing your shield is no longer restricted to batons and now works for
+      all melee weapons
+  ValorousHeart:
+  - bugfix: flea now has pirate headset instead of syndicate one
+  generalthrax:
+  - bugfix: roach now has pirate headsets instead of syndicate ones
+2026-01-23:
+  hry-gh:
+  - bugfix: the admin music player works again on 516
+2026-01-25:
+  Erikafox:
+  - bugfix: T4 drill missions will now progress properly
+  - bugfix: T4 drills now have a sound associated with their mining.
+  - bugfix: drills will now properly unanchor themselves from veins they destroy.
+  SapphicOverload:
+  - bugfix: Fixed phorids dying for no reason
+  Smartkar, Ghommie, Melbert, Jacqurel, Rhials,  Erika (Porting Fox):
+  - code_imp: Updated some status effect tick code to be more clear of how long is
+      elapsing between ticks. Some effects that were inadvertently weakened are now
+      stronger as a result (fire and some heretic effects).
+  - bugfix: Fixed grab offsets not showing for anything but passive grab
+  - refactor: Refactored pixel offsets of mobs. Report any oddities
+  - refactor: Replaced hardcoded "safeties" for lava, chasms and ignoring turf slowdowns
+      on catwalks with traits.
+  - balance: much like catwalks, tables and conveyors also disable turf slowdowns.
+  - balance: slippery turfs won't slip you when walking on a table.
+  - bugfix: pixel offsets from grabbing other mobs now respect the body offset variables.
+  - refactor: Changed some code so that resized mobs no longer look like they're poking
+      over the below tile with their legs or not even reaching the bottom edge of
+      the tile they're on.
+  - rscadd: deep water swimming w/ immersive drowning
+2026-01-26:
+  DIB-DOG:
+  - rscadd: remaps the Dwayne
+  Erikafox:
+  - bugfix: simplemobs will no longer get stuck on railings when they're trying to
+      kill you
+2026-01-30:
+  Addust:
+  - rscadd: Recent recon efforts have identified the Ramzi Clique's successful takeover
+      of various ICW-era nuclear bunkers on jungle planetoids, alongside a major increase
+      in the number of officers named "Jerry" who actually know how to operate their
+      personal submachineguns.
+  Erikafox:
+  - rscadd: Atira interior expansion
+  generalthrax:
+  - bugfix: Added right cell to Mining Facility
+2026-01-31:
+  thearbiber:
+  - rscadd: remaps the kilo

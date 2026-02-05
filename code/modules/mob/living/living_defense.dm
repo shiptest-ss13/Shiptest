@@ -234,7 +234,7 @@
 				to_chat(user, span_danger("You're strangling [src]!"))
 				if(!buckled && !density)
 					Move(user.loc)
-		user.set_pull_offsets(src, grab_state)
+		user.set_pull_offsets(src, user.grab_state)
 		return 1
 
 
