@@ -56,7 +56,7 @@
 						span_danger("You fire the grenade launcher!"))
 	var/obj/item/grenade/F = grenades[1] //Now with less copypasta!
 	grenades -= F
+	F.forceMove(user.loc)
 	F.preprime(user, fuse_override, FALSE)
 	log_combat(user, target, "launched [F.name] at", src)
-	F.forceMove(user.loc)
 	F.throw_at(target, fire_range, 2, user)
