@@ -7,10 +7,15 @@
 	w_class = WEIGHT_CLASS_BULKY
 	throw_speed = 2
 	throw_range = 7
+	/// Maximum range that a grenade can be launched
 	var/fire_range = 10
 	force = 5
+	/// Loaded grenades
 	var/list/grenades = new/list()
+	/// How many grenades the launcher can hold
 	var/max_grenades = 3
+	/// The fuse time of the launched grenade (in deciseconds), null uses the grenades timer
+	var/fuse_override
 	custom_materials = list(/datum/material/iron=2000)
 
 /obj/item/gun/grenadelauncher/examine(mob/user)
@@ -51,7 +56,7 @@
 						span_danger("You fire the grenade launcher!"))
 	var/obj/item/grenade/F = grenades[1] //Now with less copypasta!
 	grenades -= F
-	F.preprime(user, null, FALSE)
+	F.preprime(user, fuse_override, FALSE)
 	log_combat(user, target, "launched [F.name] at", src)
 	F.forceMove(user.loc)
 	F.throw_at(target, fire_range, 2, user)
