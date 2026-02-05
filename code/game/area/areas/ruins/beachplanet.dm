@@ -11,6 +11,21 @@
 	name = "Corporate Resort Hotel"
 	ambience_index = AMBIENCE_GENERIC
 
+/area/ruin/beach/corpo_resort/hotel/rooms
+	name = "Corporate Resort Hotel Rooms"
+
+/area/ruin/beach/corpo_resort/hotel/rooms/one
+	name = "Corporate Resort Hotel Room One"
+
+/area/ruin/beach/corpo_resort/hotel/rooms/two
+	name = "Corporate Resort Hotel Room Two"
+
+/area/ruin/beach/corpo_resort/hotel/rooms/three
+	name = "Corporate Resort Hotel Room Three"
+
+/area/ruin/beach/corpo_resort/hotel/rooms/officer
+	name = "Corporate Resort Hotel Officer's Suite"
+
 /area/ruin/beach/corpo_resort/security
 	name = "Corporate Resort Security"
 	icon_state = "purple"
@@ -37,6 +52,15 @@
 
 /area/ruin/beach/corpo_resort/ramzi_tent
 	name = "Ramzi Clique Hut"
+
+/area/ruin/beach/corpo_resort/ramzi_emplacement
+	name = "Ramzi Clique Emplacement"
+
+/area/ruin/beach/corpo_resort/ramzi_emplacement/north
+	name = "Ramzi Clique North Emplacement"
+
+/area/ruin/beach/corpo_resort/ramzi_emplacement/west
+	name = "Ramzi Clique West Emplacement"
 
 //Pirate Scrap Village
 
