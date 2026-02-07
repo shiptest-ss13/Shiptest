@@ -402,6 +402,7 @@
 		new /obj/item/reagent_containers/pill/charcoal(src)
 
 /obj/item/storage/pill_bottle/charcoal/less
+	custom_price = 100
 
 /obj/item/storage/pill_bottle/charcoal/less/PopulateContents()
 	for(var/i in 1 to 3)

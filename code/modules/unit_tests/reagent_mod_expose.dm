@@ -37,7 +37,7 @@
 	TEST_ASSERT_EQUAL(human.drowsyness, 0, "Human is drowsy at the start of testing")
 	drink.reagents.clear_reagents()
 	drink.reagents.add_reagent(/datum/reagent/nitrous_oxide, 10)
-	drink.reagents.trans_to(human, 10, method = VAPOR)
+	drink.reagents.trans_to(human, 10, methods = VAPOR)
 	TEST_ASSERT_NOTEQUAL(human.drowsyness, 0, "Human is not drowsy after exposure to vapors")
 
 	// PATCH

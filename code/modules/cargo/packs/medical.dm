@@ -110,6 +110,13 @@
 	faction = /datum/faction/syndicate/suns
 	faction_discount = 50 //this shouldnt be 3k but if it is...
 
+/datum/supply_pack/medical/filter
+	name = "Blood Filter Crate"
+	desc = "A tool for use in a surgery to filter toxins out of a patient."
+	cost = 500
+	contains = list(/obj/item/blood_filter)
+	crate_name ="surgical supplies crate"
+
 /datum/supply_pack/medical/disk
 	name = "Advanced Surgical Procedure Disk"
 	desc = "A disk containing Advanced T2 surgical procedures for wound tending. Requires an Operating Console."

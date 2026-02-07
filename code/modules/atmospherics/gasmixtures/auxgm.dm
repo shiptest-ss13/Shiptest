@@ -111,6 +111,7 @@ GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(GAS_O2, GAS_N2, GAS_CO2, GA
 		ids[g] = g
 		typepaths[g] = gas.type
 		fusion_powers[g] = gas.fusion_power
+		enthalpies[g] = gas.enthalpy
 
 		if(gas.breath_alert_info)
 			breath_alert_info[g] = gas.breath_alert_info
@@ -124,13 +125,11 @@ GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(GAS_O2, GAS_N2, GAS_CO2, GA
 			oxidation_rates[g] = gas.oxidation_rate
 			if(gas.fire_products)
 				fire_products[g] = gas.fire_products
-			enthalpies[g] = gas.enthalpy
 		else if(gas.fire_temperature)
 			fire_temperatures[g] = gas.fire_temperature
 			fire_burn_rates[g] = gas.fire_burn_rate
 			if(gas.fire_products)
 				fire_products[g] = gas.fire_products
-			enthalpies[g] = gas.enthalpy
 		_auxtools_register_gas(gas)
 
 /datum/auxgm/New()

@@ -194,3 +194,9 @@
 /datum/reagent/medicine/neoxanthin/on_mob_life(mob/living/carbon/M)
 	if(prob(80))
 		M.adjustToxLoss(-1*REM, 0)
+	..()
+
+/datum/reagent/medicine/neoxanthin/overdose_process(mob/living/carbon/M)
+	if(prob(30))
+		M.vomit()
+	..()

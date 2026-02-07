@@ -545,8 +545,9 @@
 
 /datum/reagent/consumable/pacfuel/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-2 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
-	if(prob(10))
-		M?.mind.adjust_experience(/datum/skill/gaming, 5)
+	if(M.mind)
+		if(prob(10))
+			M?.mind.adjust_experience(/datum/skill/gaming, 5)
 	..()
 
 /datum/reagent/consumable/shoal_punch
@@ -930,17 +931,13 @@
 		return ..()
 	var/newsize = pick(0.5, 0.75, 1, 1.50, 2)
 	newsize *= RESIZE_DEFAULT_SIZE
-	H.resize = newsize/current_size
-	current_size = newsize
-	H.update_transform()
+	H.update_transform(newsize/current_size)
 	if(prob(40))
 		H.emote("sneeze")
 	..()
 
 /datum/reagent/consumable/red_queen/on_mob_end_metabolize(mob/living/M)
-	M.resize = RESIZE_DEFAULT_SIZE/current_size
-	current_size = RESIZE_DEFAULT_SIZE
-	M.update_transform()
+	M.update_transform(RESIZE_DEFAULT_SIZE/current_size)
 	..()
 
 /datum/reagent/consumable/bungojuice

@@ -1181,7 +1181,7 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 			mask_icon = 'icons/effects/cut_48x48.dmi'
 		else if(icon_height == 36 && icon_width <= 48)
 			mask_icon = 'icons/effects/cut_48x36.dmi'
-		else if(icon_height == 32 && icon_width <= 48)
+		else if(icon_height == 32 && icon_width <= 48 && icon_width != 32)
 			mask_icon = 'icons/effects/cut_48x32.dmi'
 		else if(icon_height != 32 || icon_width > 32)
 			stack_trace("Bad dimensions (w[icon_width],h[icon_height]) for icon '[appearance.icon]'")

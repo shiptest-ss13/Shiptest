@@ -61,16 +61,13 @@
 	else
 		mode() // Activate held item
 
-/mob/living/carbon/attackby(obj/item/I, mob/user, params)
-	if(!all_wounds || !(user.a_intent == INTENT_HELP || user == src))
-		return ..()
-
-	for(var/i in shuffle(all_wounds))
-		var/datum/wound/W = i
-		if(W.try_treating(I, user))
-			return 1
-
-	return ..()
+/mob/living/carbon/handle_tool_treatment(obj/item/tool, mob/living/user, list/modifiers)
+	. = ..()
+	if(. || !all_wounds || !(user.a_intent == INTENT_HELP || user == src))
+		return
+	for(var/datum/wound/iterated_wound as anything in shuffle(all_wounds))
+		if(iterated_wound.try_treating(tool, user))
+			return TRUE
 
 /mob/living/carbon/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()
@@ -1232,6 +1229,8 @@
 	var/obj/item/bodypart/limb
 	for(var/zone in bodyparts)
 		limb = bodyparts[zone]
+		if(!limb)
+			continue
 		if(limb.get_part_bleed_rate())
 			return TRUE
 	return FALSE
@@ -1242,6 +1241,8 @@
 	var/obj/item/bodypart/limb
 	for(var/zone in bodyparts)
 		limb = bodyparts[zone]
+		if(!limb)
+			continue
 		total_bleed_rate += limb.get_part_bleed_rate()
 	return total_bleed_rate
 
@@ -1272,14 +1273,6 @@
 
 /mob/living/carbon/is_face_visible()
 	return !(wear_mask?.flags_inv & HIDEFACE) && !(head?.flags_inv & HIDEFACE)
-
-/**
- * get_biological_state is a helper used to see what kind of wounds we roll for. By default we just assume carbons (read:monkeys) are flesh and bone, but humans rely on their species datums
- *
- * go look at the species def for more info [/datum/species/proc/get_biological_state]
- */
-/mob/living/carbon/proc/get_biological_state() //todo: silicon wounds for ipcs
-	return BIO_FLESH_BONE
 
 /// Modifies the handcuffed value if a different value is passed, returning FALSE otherwise. The variable should only be changed through this proc.
 /mob/living/carbon/proc/set_handcuffed(new_value)

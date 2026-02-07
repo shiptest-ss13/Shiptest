@@ -6,7 +6,6 @@
 	icon_state = "water"
 	baseturfs = /turf/open/water
 	planetary_atmos = TRUE
-	slowdown = 1
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null //needs a splashing sound one day.
 	layer = WATER_TURF_LAYER
@@ -16,8 +15,65 @@
 	clawfootstep = FOOTSTEP_WATER
 	heavyfootstep = FOOTSTEP_WATER
 
+	///The transparency of the immerse element's overlay
+	var/immerse_overlay_alpha = 180
+	///Icon state to use for the immersion mask
+	var/immerse_overlay = "immerse"
+	/// Fishing element for this specific water tile
+	var/datum/fish_source/fishing_datum = /datum/fish_source/ocean
+	/// Whether the immerse element has been added yet or not
+	var/immerse_added = FALSE
+	/**
+	* Variables used for the swimming tile element. If TRUE, we pass these values to the element.
+	* - is_swimming_tile: Whether or not we add the element to this tile.
+	* - stamina_entry_cost: how much stamina it costs to enter the swimming tile, and for each move into a tile
+	* - ticking_oxy_damage: How much oxygen is lost per tick when drowning in water. Also determines how many breathes are lost.
+	* - exhaust_swimmer_prob: The likelihood that someone suffers stamina damage when entering a swimming tile.
+	*/
+	var/is_swimming_tile = FALSE
+	var/stamina_entry_cost = 7
+	var/ticking_oxy_damage = 2
+	var/exhaust_swimmer_prob = 30
+
 	var/datum/reagent/reagent_to_extract = /datum/reagent/water
 	var/extracted_reagent_visible_name = "water"
+
+/turf/open/water/Initialize(mapload)
+	. = ..()
+	RegisterSignal(src, COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZED_ON, PROC_REF(on_atom_inited))
+	AddElement(/datum/element/watery_tile)
+	if(!isnull(fishing_datum))
+		AddElement(/datum/element/lazy_fishing_spot, fishing_datum)
+	//ADD_TRAIT(src, TRAIT_CATCH_AND_RELEASE, INNATE_TRAIT)
+
+///We lazily add the immerse element when something is spawned or crosses this turf and not before.
+/turf/open/water/proc/on_atom_inited(datum/source, atom/movable/movable)
+	SIGNAL_HANDLER
+	UnregisterSignal(src, COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZED_ON)
+	make_immersed(movable)
+
+/**
+ * turf/Initialize() calls Entered on its contents too, however
+ * we need to wait for movables that still need to be initialized
+ * before we add the immerse element.
+ */
+/turf/open/water/Entered(atom/movable/arrived)
+	. = ..()
+	make_immersed(arrived)
+
+///Makes this turf immersable, return true if we actually did anything so child procs don't have to repeat our checks
+/turf/open/water/proc/make_immersed(atom/movable/triggering_atom)
+	if(immerse_added || is_type_in_typecache(triggering_atom, GLOB.immerse_ignored_movable))
+		return FALSE
+	AddElement(/datum/element/immerse, immerse_overlay, immerse_overlay_alpha)
+	immerse_added = TRUE
+	if(is_swimming_tile)
+		AddElement(/datum/element/swimming_tile, stamina_entry_cost, ticking_oxy_damage, exhaust_swimmer_prob)
+	return TRUE
+
+/turf/open/water/Destroy()
+	UnregisterSignal(src, COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZED_ON)
+	return ..()
 
 /turf/open/water/Initialize(mapload, inherited_virtual_z)
 	. = ..()
@@ -42,6 +98,19 @@
 		. += span_notice("You could probably scoop some of the [extracted_reagent_visible_name] if you had a beaker...")
 
 /turf/open/water/attackby(obj/item/_item, mob/user, params)
+	if(istype(_item, /obj/item/stack/rods))
+		var/obj/item/stack/rods/R = _item
+		var/obj/structure/lattice/H = locate(/obj/structure/lattice, src)
+		if(H)
+			to_chat(user, span_warning("There is already a lattice here!"))
+			return
+		if(R.use(2))
+			to_chat(user, span_notice("You construct a catwalk."))
+			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
+			new /obj/structure/lattice/catwalk(locate(x, y, z))
+		else
+			to_chat(user, span_warning("You need one rod to build a lattice."))
+		return
 	if(istype(_item, /obj/item/fish))
 		to_chat(user, span_notice("You toss the [_item.name] into the [name]."))
 		playsound(_item, "sound/effects/bigsplash.ogg", 90)
@@ -118,6 +187,8 @@
 /turf/open/water/beach/deep
 	color = "#4566ad"
 	light_color = LIGHT_COLOR_DARK_BLUE
+	immerse_overlay = "immerse_deep"
+	is_swimming_tile = TRUE
 
 /turf/open/water/beach/deep/outpost
 	color = "#22423b"
@@ -125,6 +196,9 @@
 	initial_gas_mix = "o2=22;n2=82;TEMP=305"
 	light_range = 2
 	light_power = 0.90
+	is_swimming_tile = TRUE
+	immerse_overlay_alpha = 210
+	stamina_entry_cost = 20
 
 /turf/open/water/tar
 	name = "tar pit"
@@ -132,12 +206,12 @@
 	color = "#574747"
 	light_range = 0
 	slowdown = 2
+	fishing_datum = null
 	reagent_to_extract = /datum/reagent/asphalt
 	extracted_reagent_visible_name = "tar"
-
+	immerse_overlay_alpha = 240
 
 /turf/open/water/whitesands
-
 	name = "sulfuric acid pool"
 	desc = "Shallow sulfuric acid. It isn't the best ideas to step in this, but you are able to without many short term consequnces."
 	baseturfs = /turf/open/water/whitesands

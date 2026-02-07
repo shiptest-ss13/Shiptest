@@ -706,10 +706,10 @@
 
 /mob/living/simple_animal/hostile/proc/add_target(new_target)
 	if(target)
-		UnregisterSignal(target, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(target, COMSIG_QDELETING)
 	target = new_target
 	if(target)
-		RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(handle_target_del), TRUE)
+		RegisterSignal(target, COMSIG_QDELETING, PROC_REF(handle_target_del), TRUE)
 
 /mob/living/simple_animal/hostile/proc/set_camp_faction(tag)
 	src.faction = list()

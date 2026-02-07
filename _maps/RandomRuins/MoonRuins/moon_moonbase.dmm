@@ -1903,11 +1903,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/moon/moonbase/cargo)
 "pS" = (
-/obj/machinery/drill/mission/ruin,
 /obj/structure/vein/moon/classfour,
-/obj/effect/landmark/mission_poi/main/drill{
-	already_spawned = 1
-	},
 /turf/open/floor/plating/asteroid/moon_coarse/dark/lit,
 /area/overmap_encounter/planetoid/moon/explored)
 "qa" = (
@@ -3700,7 +3696,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/moon/moonbase/dorms)
 "GU" = (
-/obj/effect/mob_spawn/human/corpse/clip/bombsuitguy,
+/obj/effect/mob_spawn/human/corpse/clip/minuteman/eod/bombsuit,
 /obj/item/mine/pressure/explosive{
 	pixel_x = -9;
 	pixel_y = 6

@@ -112,7 +112,7 @@
 
 	var/was_sleeping = (target.stat != DEAD && target.IsSleeping())
 
-	if(do_after(user, modded_time, target = target))
+	if(tool ? tool.use_tool(target, user, modded_time) : do_after(user, modded_time, target = target))
 
 		var/chem_check_result = chem_check(target)
 		if((prob(100-fail_prob) || (iscyborg(user) && !silicons_obey_prob)) && chem_check_result && !try_to_fail)
@@ -221,12 +221,12 @@
 	if(require_all_chems)
 		. = TRUE
 		for(var/R in chems_needed)
-			if(!target.has_reagent(R))
+			if(!target.reagents.has_reagent(R))
 				return FALSE
 	else
 		. = FALSE
 		for(var/R in chems_needed)
-			if(target.has_reagent(R))
+			if(!target.reagents.has_reagent(R))
 				return TRUE
 
 /datum/surgery_step/proc/get_chem_list()

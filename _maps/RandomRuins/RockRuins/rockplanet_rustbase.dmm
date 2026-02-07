@@ -782,10 +782,7 @@
 	pixel_y = 2;
 	pixel_x = 4
 	},
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = -8;
-	pixel_y = 8
-	},
+/obj/item/reagent_containers/food/drinks/mead,
 /turf/open/floor/carpet/red,
 /area/ruin/rockplanet/rust_base/dorms)
 "ir" = (
@@ -960,10 +957,6 @@
 /obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4,
 /mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/sledge{
 	name = "Captain Dwight"
-	},
-/obj/effect/landmark/mission_poi/main/kill{
-	already_spawned = 1;
-	type_to_spawn = /mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/sledge
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/rockplanet/rust_base/bridge)
@@ -1952,11 +1945,6 @@
 "tI" = (
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun{
 	name = "'Armored' O. Ray"
-	},
-/obj/effect/landmark/mission_poi/main/kill{
-	already_spawned = 1;
-	type_to_spawn = /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun;
-	mission_index = 2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)
@@ -4058,13 +4046,8 @@
 /area/ruin/rockplanet/rust_base/engine_one)
 "Qq" = (
 /obj/structure/table,
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_y = 16
-	},
+/obj/item/reagent_containers/food/drinks/mead,
+/obj/item/reagent_containers/food/drinks/mead,
 /turf/open/floor/carpet/red,
 /area/ruin/rockplanet/rust_base/dorms)
 "Qx" = (

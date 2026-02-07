@@ -13,13 +13,14 @@
 
 /obj/machinery/bluespace_drive
 	name = "AU/W-class bluespace drive"
-	desc = "Amazing innovations after studying the solarian sun have now compacted the massive AU-class bluespace rooms of the past into barely a 2 meter big machine. This in turn, vastly reduced vessel sizes, resulitng in a new age of space travel across the cosmos... and here the miracle sits silently, gathering dust as you forgot to clean it last week."
+	desc = "Amazing innovations after studying the solarian sun have now compacted the massive AU-class bluespace rooms of the past into barely a 2 meter big machine. This in turn, vastly reduced vessel sizes, resulting in a new age of space travel across the cosmos... and here the miracle sits silently, gathering dust as you forgot to clean it last week."
 	icon = 'icons/obj/machines/bsdrive.dmi'
 	icon_state = "bsdrive_left"
 	var/icon_screen = "bsdrive_left_screen"
 	circuit = /obj/item/circuitboard/computer/shuttle
 	light_color = LIGHT_COLOR_CYAN
 	clicksound = null
+	density = TRUE
 
 	/// The ship we reside on for ease of access
 	var/datum/overmap/ship/controlled/current_ship

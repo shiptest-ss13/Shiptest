@@ -38,6 +38,12 @@
 	display_name = "poncho, recolorable"
 	path = /obj/item/clothing/neck/poncho
 
+//neckwraps
+
+/datum/gear/accessory/neckwraps
+	display_name = "neckwraps, recolorable"
+	path = /obj/item/clothing/neck/neckwraps
+
 //(The actually good scarves)
 
 /datum/gear/accessory/scarf/striped
@@ -161,6 +167,7 @@
 	display_name = "waistcoat"
 	path = /obj/item/clothing/accessory/waistcoat
 	slot = null
+
 /datum/gear/accessory/waistcoatbrown
 	display_name = "brown waistcoat"
 	path = /obj/item/clothing/accessory/waistcoat/brown
@@ -184,3 +191,20 @@
 /datum/gear/accessory/pocketprotector
 	display_name = "pocket protector"
 	path = /obj/item/clothing/accessory/pocketprotector
+
+/datum/gear/accessory/dogtag
+	display_name = "dogtag"
+	path = /obj/item/clothing/neck/dogtag/loadout
+	slot = ITEM_SLOT_NECK
+
+/datum/gear/accessory/dogtag/spawn_item(location, mob/living/carbon/owner)
+	var/datum/gear_data/gd
+
+	gd = new(path, location)
+
+	var/obj/item/clothing/neck/dogtag/loadout/tag_spawn = new gd.path(gd.location)
+	tag_spawn.tag_fluff.Add(owner.real_name)
+	tag_spawn.tag_fluff.Add(owner.dna.blood_type.name)
+	tag_spawn.tag_fluff.Add(owner.gender)
+
+	return tag_spawn

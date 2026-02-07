@@ -502,7 +502,7 @@
 
 //ohh god this'll need to be reworked into a zone-by-zone selection, rather than just "are yuor jorts thick"
 
-/mob/living/carbon/human/proc/is_exposed(mob/user, error_msg, target_zone)
+/mob/living/carbon/human/is_exposed(mob/user, target_zone, error_msg)
 	. = TRUE // Default to returning true.
 	if(user && !target_zone)
 		target_zone = user.zone_selected
@@ -538,7 +538,7 @@
 	var/obj/item/bodypart/the_part = isbodypart(target_zone) ? target_zone : get_bodypart(check_zone(target_zone)) //keep these synced
 	// Loop through the clothing covering this bodypart and see if there's any thiccmaterials
 	if(!(injection_flags & INJECT_CHECK_PENETRATE_THICK))
-		for(var/obj/item/clothing/iter_clothing in clothingonpart(the_part))
+		for(var/obj/item/clothing/iter_clothing in get_clothing_on_part(the_part))
 			if(iter_clothing.clothing_flags & THICKMATERIAL)
 				. = FALSE
 				break
@@ -894,8 +894,8 @@
 					if(!body_part)
 						continue
 					var/numbing_wound = FALSE
-					for(var/datum/wound/W in body_part.wounds)
-						if(W.wound_type == WOUND_BURN)
+					for(var/datum/wound/iterated_wound in body_part.wounds)
+						if(iterated_wound.wound_flags & NUMBS_BODYPART)
 							numbing_wound = TRUE
 
 					var/damage = body_part.burn_dam + body_part.brute_dam
@@ -1254,6 +1254,8 @@
 		visible_message(span_notice("[target] starts to climb onto [src]..."))
 		if(do_after(target, 15, target = src))
 			if(can_piggyback(target))
+				if(target.buckled)
+					target.buckled.unbuckle_mob(target)
 				if(target.incapacitated(FALSE, TRUE) || incapacitated(FALSE, TRUE))
 					target.visible_message(span_warning("[target] can't hang onto [src]!"))
 					return

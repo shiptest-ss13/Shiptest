@@ -110,7 +110,7 @@
 		return
 
 	if(!breath || (breath.total_moles() == 0))
-		if(H.has_reagent(crit_stabilizing_reagent, needs_metabolizing = TRUE))
+		if(H.reagents.has_reagent(crit_stabilizing_reagent, needs_metabolizing = TRUE))
 			return
 		if(H.health >= H.crit_threshold)
 			H.adjustOxyLoss(HUMAN_MAX_OXYLOSS)
@@ -603,6 +603,14 @@
 	breathing_class = BREATH_PLASMA
 
 	can_smell = FALSE
+
+/obj/item/organ/lungs/plasmaman/Insert(mob/living/carbon/new_owner, special, drop_if_replaced)
+	. = ..()
+	ADD_TRAIT(new_owner, TRAIT_ANTI_INFLAMMATORY, REF(src)) // they're not even "lungs" and shouldn't be constricting in the first place
+
+/obj/item/organ/lungs/plasmaman/Remove(mob/living/carbon/old_owner, special)
+	REMOVE_TRAIT(old_owner, TRAIT_ANTI_INFLAMMATORY, REF(src))
+	return ..()
 
 /obj/item/organ/lungs/plasmaman/populate_gas_info()
 	..()

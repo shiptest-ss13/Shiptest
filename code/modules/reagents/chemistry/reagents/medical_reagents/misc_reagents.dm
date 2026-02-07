@@ -183,7 +183,7 @@
 /datum/reagent/medicine/insulin/on_mob_life(mob/living/carbon/M)
 	if(M.AdjustSleeping(-20))
 		. = 1
-	M.reagents.remove_reagent(/datum/reagent/consumable/sugar, 3)
+	holder.remove_reagent(/datum/reagent/consumable/sugar, 3)
 	..()
 
 /*
