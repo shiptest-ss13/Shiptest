@@ -32,7 +32,7 @@
 /obj/item/ammo_casing/energy/kalix
 	projectile_type = /obj/projectile/beam/hitscan/kalix
 	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
-	e_cost = 666 //30 shots per cell
+	e_cost = 500 //25 shots per cell
 	delay = 1
 
 /obj/projectile/beam/hitscan/kalix
@@ -66,13 +66,13 @@
 /obj/item/ammo_casing/energy/kalix/nock
 	projectile_type = /obj/projectile/beam/hitscan/kalix/nock
 	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
-	e_cost = 312
+	e_cost = 312 //10 bursts per cell
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/disabler/hitscan/kalix/nock
 	projectile_type = /obj/projectile/beam/hitscan/disabler
 	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
-	e_cost = 312
+	e_cost = 312 //10 bursts per cell
 	select_name = "disable"
 
 /obj/item/gun/energy/kalix/nock
@@ -129,13 +129,13 @@
 /obj/item/ammo_casing/energy/kalix/pgf/nock
 	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf/nock
 	fire_sound = 'sound/weapons/gun/energy/kalixrifle.ogg'
-	e_cost = 250
+	e_cost = 250 //16 bursts per cell
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/nock
 	projectile_type = /obj/projectile/beam/hitscan/disabler
 	fire_sound = 'sound/weapons/gun/energy/kalixrifle.ogg'
-	e_cost = 250
+	e_cost = 250 //16 bursts per cell
 	select_name = "disable"
 
 /obj/item/gun/energy/kalix/pgf/nock
@@ -225,7 +225,7 @@
 /obj/item/ammo_casing/energy/kalix/pgf
 	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf
 	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
-	e_cost = 666 //30 shots per cell
+	e_cost = 500 //40 shots per cell
 	delay = 1
 
 /obj/item/gun/energy/kalix/pistol //blue
@@ -260,7 +260,7 @@
 
 /obj/item/ammo_casing/energy/kalix/pistol
 	fire_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
-	e_cost = 1250 //10 shots per cell
+	e_cost = 1000 //12 shots per cell
 	delay = 0
 
 /obj/item/gun/energy/kalix/pistol/empty_cell
@@ -338,7 +338,7 @@
 	select_name  = "AR"
 	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf/assault
 	fire_sound = 'sound/weapons/gun/energy/kalixrifle.ogg'
-	e_cost = 1000 //20 shots per cell
+	e_cost = 666 //30 shots per cell
 	delay = 1
 
 /obj/projectile/beam/hitscan/kalix/pgf/assault
@@ -354,7 +354,7 @@
 	select_name  = "DMR"
 	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf/sniper
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
-	e_cost = 2000 //20 shots per cell
+	e_cost = 2000 //10 shots per cell
 	delay = 6
 
 /obj/projectile/beam/hitscan/kalix/pgf/sniper
