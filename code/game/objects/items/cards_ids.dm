@@ -202,7 +202,7 @@
 		. += "[registered_name]"
 	if(registered_age)
 		. += "<B>AGE:</B>"
-		. += "[registered_age] years old [(registered_age < AGE_MINOR) ? "There's a holographic stripe that reads <b>[span_danger("'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'")]</b> along the bottom of the card." : ""]"
+		. += "[registered_age] years old [(registered_age < AGE_DRINKING) ? "There's a holographic stripe that reads <b>[span_danger("'DO NOT SERVE ALCOHOL OR TOBACCO'")]</b> along the bottom of the card." : ""]"
 	if(length(ship_access))
 		var/list/ship_factions = list()
 		var/list/ship_names = list()

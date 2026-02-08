@@ -153,6 +153,7 @@
 	AddComponent(/datum/component/butchering, 25, 105, 0, 'sound/weapons/plasma_cutter.ogg')
 	AddElement(/datum/element/update_icon_blocker)
 	AddElement(/datum/element/tool_flash, 1)
+	AddElement(/datum/element/robotic_heal, brute_heal = 15)
 
 /obj/item/gun/energy/plasmacutter/examine(mob/user)
 	. = ..()
@@ -188,23 +189,6 @@
 		to_chat(user, span_warning("You need more charge to complete this task!"))
 		return FALSE
 
-	return TRUE
-
-/obj/item/gun/energy/plasmacutter/attack(mob/living/carbon/human/target, mob/user)
-	if(!istype(target))
-		return ..()
-	var/obj/item/bodypart/attackedLimb = target.get_bodypart(check_zone(user.zone_selected))
-	if(!attackedLimb || IS_ORGANIC_LIMB(attackedLimb) || (user.a_intent == INTENT_HARM))
-		return ..()
-	if(!target.is_exposed(user, TRUE, user.zone_selected))
-		return TRUE
-	if(!tool_start_check(user, amount = 1))
-		return TRUE
-	user.visible_message(span_notice("[user] starts to fix some of the dents on [target]'s [parse_zone(attackedLimb.body_zone)]."),
-			span_notice("You start fixing some of the dents on [target == user ? "your" : "[target]'s"] [parse_zone(attackedLimb.body_zone)]."))
-	if(!use_tool(target, user, delay = (target == user ? 5 SECONDS : 0.5 SECONDS), amount = 1, volume = 25))
-		return TRUE
-	item_heal_robotic(target, user, brute_heal = 15, burn_heal = 0)
 	return TRUE
 
 /obj/item/gun/energy/plasmacutter/use(amount)

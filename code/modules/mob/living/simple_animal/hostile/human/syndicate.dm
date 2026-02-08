@@ -590,6 +590,8 @@
 	casingtype = /obj/item/ammo_casing/a65clip
 	l_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
 	projectilesound = 'sound/weapons/gun/sniper/cmf90.ogg'
+	armor_base = /obj/item/clothing/suit/space/hardsuit/stealth/ramzi
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/sniper
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/sniper/sentry
 	vision_range = 14

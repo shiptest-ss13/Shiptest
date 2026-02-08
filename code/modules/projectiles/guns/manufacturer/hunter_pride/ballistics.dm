@@ -974,6 +974,58 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
 		item_state = "absolution_factory_sawn"
 		mob_overlay_state = item_state
 
+/obj/item/gun/ballistic/shotgun/flamingarrow/pyre
+	name = "HP Pyre"
+	base_icon_state = "pyre"
+	icon_state = "pyre"
+	item_state = "pyre"
+	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
+	desc = "A powerful lever-action rifle with hand-stamped Hunter's Pride marks on the receiver and an 5 round ammunition capacity. Bulky and unwieldy but devastatingly powerful. Chambered in .45-70."
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/winchester/pyre
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/shot/winchester/pyre,
+	)
+	fire_delay = 0.8 SECONDS
+	wield_slowdown = HEAVY_RIFLE_SLOWDOWN
+	wield_delay = 1 SECONDS
+	spread_unwielded = 15
+	spread = 0
+	recoil = 1.5
+	recoil_unwielded = 4
+	gunslinger_recoil_bonus = 0
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/bayonet
+		)
+	unique_attachments = list(/obj/item/attachment/scope)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 25,
+			"y" = 21,
+		)
+	)
+
+	can_be_sawn_off = FALSE
+
+EMPTY_GUN_HELPER(shotgun/flamingarrow/pyre)
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/pyre/factory
+	base_icon_state = "pyre_factory"
+	icon_state = "pyre_factory"
+	item_state = "pyre_factory"
+	desc = "A powerful lever-action rifle with hand-stamped Hunter's Pride marks on the receiver and an 5 round ammunition capacity, in pristine wood furniture lined with brass. Bulky and unwieldy but devastatingly powerful. Chambered in .45-70."
+
 //Break-Action Rifle
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon
 	name = "HP Beacon"
