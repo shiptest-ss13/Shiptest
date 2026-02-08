@@ -2,7 +2,7 @@
 	name = "\improper Phorid"
 	id = SPECIES_PLASMAMAN
 	meat = /obj/item/stack/sheet/mineral/plasma
-	species_traits = list(NOBLOOD, NOTRANSSTING, HAS_BONE)
+	species_traits = list(NOBLOOD, NOTRANSSTING)
 	// plasmemes get hard to wound since they only need a severe bone wound to dismember, but unlike skellies, they can't pop their bones back into place
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_NOHUNGER,TRAIT_ALWAYS_CLEAN, TRAIT_HARDLY_WOUNDED)
 	inherent_biotypes = MOB_HUMANOID|MOB_MINERAL
