@@ -54,7 +54,7 @@
 	if(QDELETED(clicked_atom))
 		return FALSE
 
-	var/turf/turf_to_check = get_step(source, angle_to_dir(Get_Angle(source, clicked_atom)))
+	var/turf/turf_to_check = get_step(source, angle_to_dir(Get_Angle(source,parse_caught_click_modifiers(modifiers, get_turf(source), source?.client))))
 	if(!turf_to_check || !source.Adjacent(turf_to_check))
 		return FALSE
 
