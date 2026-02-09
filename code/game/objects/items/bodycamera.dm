@@ -14,7 +14,7 @@
 	var/area/myarea = null
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
-	var/view_range = 5
+	var/view_range = 7
 	var/busy = FALSE
 	var/can_transmit_across_z_levels = FALSE
 	var/updating = FALSE //portable camera camerachunk update
@@ -47,7 +47,10 @@
 	if(in_range(src, user))
 		. += span_notice("The camera is set to a nametag of '<b>[c_tag]</b>'.")
 		. += span_notice("The camera is set to transmit on the '<b>[network[1]]</b>' network.")
-		. += span_notice("It looks like you can modify the camera settings by using it in your hand, or by using a <b>multitool</b> on it.")
+		if(!(istype(src, /obj/item/bodycamera/broadcast_camera)))
+			. += span_notice("It looks like you can configure the camera settings by <b>using it in your hand</b>, or by using a multitool on it.")
+		else
+			. += span_notice("It looks like you can configure the camera settings by <b>using a multitool on it.</b>")
 
 /obj/item/bodycamera/AltClick(mob/user)
 	. = ..()
@@ -228,7 +231,7 @@
 	lefthand_file = 'icons/mob/inhands/misc/broadcast_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/broadcast_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY
-	view_range = 5
+	view_range = 7
 	can_transmit_across_z_levels = TRUE
 	network = list("IntraNet")
 	var/obj/item/radio/broadcast/radio
@@ -240,7 +243,7 @@
 	. = ..()
 	radio = new /obj/item/radio/broadcast(src)
 	radio.sectorwide = TRUE
-	radio.canhear_range = 3
+	radio.canhear_range = 7
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 	RegisterSignal(radio, COMSIG_RADIO_NEW_FREQUENCY, PROC_REF(adjust_name))
@@ -297,14 +300,14 @@
 
 	user.visible_message(span_notice("[user] raises the [src] over [user.p_their()] arms."), span_notice("You raise [src] over your arms, giving it a better view."))
 	item_state = "broadcast_wielded"
-	view_range = 7
+	view_range = 10
 
 /obj/item/bodycamera/broadcast_camera/proc/on_unwield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
 	user.visible_message(span_notice("[user] lowers [src]."), span_notice("You lower [src], reducing it's view."))
 	item_state = "broadcast"
-	view_range = 3
+	view_range = 7
 
 /obj/item/bodycamera/broadcast_camera/AltClick(mob/user)
 	. = ..()
