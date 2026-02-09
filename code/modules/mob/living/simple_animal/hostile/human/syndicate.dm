@@ -431,6 +431,14 @@
 
 	armor_base = /obj/item/clothing/suit/armor/ngr/lieutenant
 
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/officer/captain
+	name = "Ramzi Clique Captain"
+	desc = "A commanding deserter from the Gorlex Marauders turned pirate. They hold themselves high, clad in an imposing, well-maintained greatcoat; calmly wielding a pitch-black revolver."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/officer/captain
+	armor_base = /obj/item/clothing/suit/armor/ramzi/captain
+	rapid = 2 //they are well-trained and can thus fire a viper quicker
+
 /mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun
 	name = "Ramzi Clique Breacher"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They move low and quickly, heavy combat shotgun at the ready."
