@@ -279,7 +279,7 @@
 /obj/item/bodycamera/broadcast_camera/examine(mob/user)
 	. += ..()
 	if(in_range(src, user))
-		. += span_notice("You can access the Internal Radio by <b>interacting with harm intent</b>.")
+		. += span_notice("You can access the Internal Radio by <b>clicking on the corresponding UI button in the top left corner</b>.")
 		. += span_notice("You can also use <b>Unique Action (default space)</b> to toggle the microphone.")
 
 /obj/item/bodycamera/broadcast_camera/set_name(camera_name)
