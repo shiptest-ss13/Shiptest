@@ -19,13 +19,7 @@
 	var/distribute_pressure = ONE_ATMOSPHERE
 	var/integrity = 3
 	var/volume = 70
-
-	//Alert variables
-	var/nominal_alert = FALSE
-	var/warning_alert = FALSE
-	var/critical_warning_alert = FALSE
-	var/empty_alert = FALSE
-
+	var/alert_level = 0 //1 = nominal, 2 = warning, 3 = critical warning, 4 = empty
 	supports_variations = VOX_VARIATION
 
 /obj/item/tank/ui_action_click(mob/user)
@@ -321,36 +315,25 @@
 	if(istype(src, /obj/item/tank/jetpack))
 		return 0
 
-	// Prevents newly printed tanks from beeping out an alert
-	if(!air_contents || pressure == 0)
-		warning_alert = TRUE
-		critical_warning_alert = TRUE
-		empty_alert = TRUE
-		return 0
-
 	// Checks the pressure of the tank while it's in use and sends an alert out when the pressure reaches a specific range.
-	// Binary variables are used here to prevent an alert from repeating more than once
 	switch(pressure)
 		if((5 * ONE_ATMOSPHERE) to (29 * ONE_ATMOSPHERE))
-			if(!nominal_alert)
-				nominal_alert = TRUE
+			if(alert_level != 1)
+				alert_level = 1
 				update_overlays()
-				warning_alert = FALSE
-				critical_warning_alert = FALSE
-				empty_alert = FALSE
 		if((2 * ONE_ATMOSPHERE) to (5 * ONE_ATMOSPHERE))
-			if(!warning_alert)
-				warning_alert = TRUE
+			if(alert_level != 2)
+				alert_level = 2
 				update_overlays()
 		if((0.75 * ONE_ATMOSPHERE) to (2 * ONE_ATMOSPHERE))
-			if(!critical_warning_alert)
-				critical_warning_alert = TRUE
+			if(alert_level != 3)
+				alert_level = 3
 				update_overlays()
 				playsound(src, 'sound/machines/twobeep_high.ogg', 30, FALSE)
 				say("Tank pressure low -- Estimated time until depletion: [(src.volume/2) * 5] minutes.")
-		if((0 * ONE_ATMOSPHERE) to (0.75 * ONE_ATMOSPHERE))
-			if(!empty_alert)
-				empty_alert = TRUE
+		if((0.01 * ONE_ATMOSPHERE) to (0.75 * ONE_ATMOSPHERE))
+			if(alert_level != 4)
+				alert_level = 4
 				update_overlays()
 				playsound(src, 'sound/machines/twobeep_high.ogg', 30, FALSE)
 				playsound(src, 'sound/machines/beep.ogg', 30, FALSE)
