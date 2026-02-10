@@ -46,7 +46,7 @@ All ShuttleMove procs go here
 					if(istype(M, /mob/living/carbon))
 						var/mob/living/carbon/mob = M
 						for(var/obj/item/bodypart/limb in mob.bodyparts)
-							limb.check_wounding(WOUND_BLUNT, 50, 50)
+							limb.check_wounding(list(WOUND_BLUNT = 50), 50)
 					M.AddElement(/datum/element/squish, 20 SECONDS)
 					M.spawn_gibs()
 
