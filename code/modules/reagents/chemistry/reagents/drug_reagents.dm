@@ -755,7 +755,6 @@
 
 /datum/reagent/drug/cytodron/on_mob_end_metabolize(mob/living/L)
 	..()
-	REMOVE_TRAIT(L, TRAIT_NOLIMBDISABLE, /datum/reagent/drug/cytodron)
 	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/cytodron)
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
@@ -786,16 +785,16 @@
 /datum/reagent/drug/sting/on_mob_metabolize(mob/living/L)
 	..()
 	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_medium, name)
-	ADD_TRAIT(L, TRAIT_SENSITIVE_TONGUE, /datum/reagent/drug/sting)
-	ADD_TRAIT(L, TRAIT_PINPOINT_EYES, /datum/reagent/drug/sting)
+	ADD_TRAIT(L, TRAIT_SENSITIVE_TONGUE, type)
+	ADD_TRAIT(L, TRAIT_PINPOINT_EYES, type)
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
 		drugged.physiology.do_after_speed -= 0.2
 
 /datum/reagent/drug/sting/on_mob_end_metabolize(mob/living/L)
 	..()
-	REMOVE_TRAIT(L, TRAIT_SENSITIVE_TONGUE, /datum/reagent/drug/sting)
-	REMOVE_TRAIT(L, TRAIT_PINPOINT_EYES, /datum/reagent/drug/sting)
+	REMOVE_TRAIT(L, TRAIT_SENSITIVE_TONGUE, type)
+	REMOVE_TRAIT(L, TRAIT_PINPOINT_EYES, type)
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
 		drugged.physiology.do_after_speed += 0.2
