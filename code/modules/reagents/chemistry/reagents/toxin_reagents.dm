@@ -500,7 +500,7 @@
 	toxpwr = 1
 
 /datum/reagent/toxin/formaldehyde/on_mob_life(mob/living/carbon/M)
-	if(prob(5))
+	if(prob(5) && M.has_reagent(/datum/reagent/toxin/formaldehyde, 5.1)) //Okay in theory you can't get histamine unless you have over 5 units of formal in your blood
 		holder.add_reagent(/datum/reagent/toxin/histamine, pick(5,15))
 		holder.remove_reagent(/datum/reagent/toxin/formaldehyde, 1.2)
 	else

@@ -2,6 +2,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c10mm
 	ammo_type = /obj/item/ammo_casing/c10mm
+	max_ammo = 15
 
 /obj/item/storage/box/ammo/c10mm
 	name = "box of 10x22mm ammo"
@@ -334,7 +335,7 @@
 	ammo_type = /obj/item/ammo_casing/a4570/match
 
 /obj/item/storage/box/ammo/a4570_match
-	name = "box of HP match .45-70 ammo"
+	name = "box of match .45-70 ammo"
 	desc = "A 12-round ammo box for .45-70 revolvers. These match rounds travel faster, perform better against armor, and can ricochet off targets."
 	icon_state = "4570-match"
 
@@ -441,6 +442,7 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a44roum
 	ammo_type = /obj/item/ammo_casing/a44roum
+	max_ammo = 12
 
 /obj/item/storage/box/ammo/a44roum
 	name = "box of .44 roumain ammo"

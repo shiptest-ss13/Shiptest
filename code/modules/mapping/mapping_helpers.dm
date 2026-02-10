@@ -84,6 +84,8 @@
 	icon = 'icons/effects/mapping/mapping_helpers.dmi'
 	icon_state = ""
 	invisibility = INVISIBILITY_OBSERVER
+	// Unless otherwise specified, layer above everything
+	layer = ABOVE_ALL_MOB_LAYER
 	var/late = FALSE
 
 /obj/effect/mapping_helpers/Initialize()
@@ -515,12 +517,12 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 /obj/effect/mapping_helpers/chair/tim_buckley
 	name = "chair buckler 12000"
 	desc = "buckles a guy into the chair if theres a guy and a chair."
+	late = TRUE
 
 /obj/effect/mapping_helpers/chair/tim_buckley/LateInitialize()
-	var/turf/turf = get_turf(src)
-	if(locate(/obj/structure/chair) in turf && locate(/mob/living/carbon) in turf)
-		var/obj/structure/chair/idiot_throne = locate(/obj/structure/chair) in turf
-		var/mob/living/carbon/idiot = locate(/mob/living/carbon)
+	var/obj/structure/chair/idiot_throne = locate(/obj/structure/chair) in loc
+	var/mob/living/idiot = locate(/mob/living) in loc
+	if(idiot_throne && idiot)
 		idiot_throne.buckle_mob(idiot, TRUE)
 		qdel(src)
 	log_mapping("[src] at [x],[y] could not find a chair and guy on current turf.")
@@ -532,8 +534,22 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 /obj/effect/mapping_helpers/turf/burnt
 	name = "turf_burner"
 	desc = "burns the everliving shit out of the turf its on."
+	late = TRUE
 
 /obj/effect/mapping_helpers/turf/burnt/LateInitialize()
 	var/turf/our_turf = loc
 	our_turf.burn_tile()
+	qdel(src)
+
+/obj/effect/mapping_helpers/neuter
+	icon_state = "cut"
+	late = TRUE
+	var/weapon_drop_chance = 0
+
+/obj/effect/mapping_helpers/neuter/LateInitialize()
+	var/mob/living/simple_animal/hostile/human/dog = locate(/mob/living/simple_animal/hostile/human) in loc
+	if(dog)
+		dog.weapon_drop_chance = weapon_drop_chance
+		qdel(src)
+	log_mapping("[src] at [x],[y] could not find a hostile human to neuter.")
 	qdel(src)

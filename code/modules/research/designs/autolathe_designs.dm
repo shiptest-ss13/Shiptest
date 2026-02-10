@@ -779,14 +779,6 @@
 	build_path = /obj/item/wallframe/newscaster
 	category = list("initial", "Construction")
 
-/datum/design/mission_board_frame
-	name = "Bounty Board Frame"
-	id = "bountyboard_frame"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 14000, /datum/material/glass = 8000)
-	build_path = /obj/item/wallframe/mission_viewer
-	category = list("initial", "Construction")
-
 /datum/design/syringe
 	name = "Syringe"
 	id = "syringe"
@@ -1220,6 +1212,14 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/magazine/illestren_a850r/empty
+	category = list("initial", "Security", "Ammo")
+
+/datum/design/a4570clip
+	name = ".45-70 Stripper Clip"
+	id = "PyreStripClip"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 1000)
+	build_path = /obj/item/ammo_box/a4570/empty
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/a300clip
