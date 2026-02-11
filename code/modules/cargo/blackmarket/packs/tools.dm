@@ -76,16 +76,6 @@
 	stock_max = 4
 	availability_prob = 80
 
-/datum/blackmarket_item/tool/riot_shield
-	name = "Riot Shield"
-	desc = "Protect yourself from an unexpected Riot at your local Police department!"
-	item = /obj/item/shield/riot
-
-	cost_min = 300
-	cost_max = 800
-	stock_max = 3
-	availability_prob = 50
-
 /datum/blackmarket_item/tool/thermite_bottle
 	name = "Thermite Bottle"
 	desc = "30u of Thermite to assist in creating a quick access point or get away!"
