@@ -50,6 +50,8 @@
 			sclera_color = human_owner.sclera_color
 
 	M.update_tint()
+	if(organ_flags & ORGAN_FAILING)
+		M.become_blind(EYE_DAMAGE)
 	owner.update_sight()
 	if(M.has_dna() && ishuman(M))
 		M.dna.species.handle_body(M) //updates eye icon
@@ -70,16 +72,10 @@
 /obj/item/organ/eyes/on_life()
 	..()
 	var/mob/living/carbon/C = owner
-	//since we can repair fully damaged eyes, check if healing has occurred
-	if((organ_flags & ORGAN_FAILING) && (damage < maxHealth))
-		organ_flags &= ~ORGAN_FAILING
-		C.cure_blind(EYE_DAMAGE)
 	//various degrees of "oh fuck my eyes", from "point a laser at your eye" to "staring at the Sun" intensities
 	if(damage > 20)
 		damaged = TRUE
-		if((organ_flags & ORGAN_FAILING))
-			C.become_blind(EYE_DAMAGE)
-		else if(damage > 30)
+		if(damage > 30)
 			C.overlay_fullscreen("eye_damage", /atom/movable/screen/fullscreen/impaired, 2)
 		else
 			C.overlay_fullscreen("eye_damage", /atom/movable/screen/fullscreen/impaired, 1)
@@ -88,6 +84,16 @@
 		damaged = FALSE
 		C.clear_fullscreen("eye_damage")
 	return
+
+/obj/item/organ/eyes/on_organ_fail()
+	. = ..()
+	if(owner)
+		owner.become_blind(EYE_DAMAGE)
+
+/obj/item/organ/eyes/on_organ_restore()
+	. = ..()
+	if(owner)
+		owner.cure_blind(EYE_DAMAGE)
 
 /obj/item/organ/eyes/lizard
 	name = "lizard eyes"

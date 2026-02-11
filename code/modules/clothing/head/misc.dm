@@ -180,3 +180,127 @@
 	desc = "A fashionable straw hat designed for providing shade to your head. An essential of tropical touristry and backbreaking labor alike!"
 	icon_state = "sunhat"
 	item_state = "sunhat"
+
+/obj/item/clothing/head/motorcycle
+	name = "motorcycle helmet"
+	desc = "A helmet designed to protect your head in case of impacts in motor vehicle accidents. Also quite fashionable."
+	icon = 'icons/obj/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
+	icon_state = "motohelm"
+	item_state = "motohelm"
+	unique_reskin = list("black motorcycle helmet" = "motohelm",
+						"white motorcycle helmet" = "motohelmwhite",
+						"blue motorcycle helmet" = "motohelmblue",
+						"red motorcycle helmet" = "motohelmred",
+						"purple motorcycle helmet" = "motohelmpurple",
+						"pink motorcycle helmet" = "motohelmpink",
+						"green motorcycle helmet" = "motohelmgreen",
+						"brown motorcycle helmet" = "motohelmbrown"
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+	armor = list("melee" = 15, "bullet" = 5, "laser" = 0, "energy" = 0, "bomb" = 20, "bio" = 10, "rad" = 20, "fire" = 100, "acid" = 50, "wound" = 20)
+	clothing_flags = SNUG_FIT
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	flags_inv = HIDEHAIR | HIDEFACIALHAIR | HIDEFACE | HIDEEYES | HIDEMASK | HIDEEARS
+	equip_sound = 'sound/items/equip/armor_equip.ogg'
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_HELMET
+	equip_delay_other = EQUIP_DELAY_HELMET * 1.5
+	strip_delay = EQUIP_DELAY_HELMET * 1.5
+
+/obj/item/clothing/head/motorcycle/black
+	name = "black motorcycle helmet"
+	icon_state = "motohelm"
+	current_skin = "black motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/white
+	name = "white motorcycle helmet"
+	icon_state = "motohelmwhite"
+	current_skin = "white motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/blue
+	name = "blue motorcycle helmet"
+	icon_state = "motohelmblue"
+	current_skin = "blue motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/red
+	name = "red motorcycle helmet"
+	icon_state = "motohelmred"
+	current_skin = "red motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/purple
+	name = "purple motorcycle helmet"
+	icon_state = "motohelmpurple"
+	current_skin = "purple motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/pink
+	name = "pink motorcycle helmet"
+	icon_state = "motohelmpink"
+	current_skin = "pink motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/green
+	name = "green motorcycle helmet"
+	icon_state = "motohelmgreen"
+	current_skin = "green motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/brown
+	name = "brown motorcycle helmet"
+	icon_state = "motohelmbrown"
+	current_skin = "brown motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat
+	name = "cat motorcycle helmet"
+	desc = "A helmet designed to protect your head in case of impacts in motor vehicle accidents. This one has cute cat ears."
+	icon_state = "motocat"
+	item_state = "motocat"
+	unique_reskin = list("black cat motorcycle helmet" = "motocat",
+						"white cat motorcycle helmet" = "motocatwhite",
+						"blue cat motorcycle helmet" = "motocatblue",
+						"red cat motorcycle helmet" = "motocatred",
+						"purple cat motorcycle helmet" = "motocatpurple",
+						"pink cat motorcycle helmet" = "motocatpink",
+						"green cat motorcycle helmet" = "motocatgreen",
+						"brown cat motorcycle helmet" = "motocatbrown"
+						)
+
+/obj/item/clothing/head/motorcycle/cat/black
+	name = "black cat motorcycle helmet"
+	icon_state = "motocat"
+	current_skin = "black cat motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat/white
+	name = "white cat motorcycle helmet"
+	icon_state = "motocatwhite"
+	current_skin = "white cat motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat/blue
+	name = "blue cat motorcycle helmet"
+	icon_state = "motocatblue"
+	current_skin = "blue cat motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat/red
+	name = "red cat motorcycle helmet"
+	icon_state = "motocatred"
+	current_skin = "red cat motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat/purple
+	name = "purple cat motorcycle helmet"
+	icon_state = "motocatpurple"
+	current_skin = "purple cat motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat/pink
+	name = "pink cat motorcycle helmet"
+	icon_state = "motocatpink"
+	current_skin = "pink cat motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat/green
+	name = "green cat motorcycle helmet"
+	icon_state = "motocatgreen"
+	current_skin = "green cat motorcycle helmet"
+
+/obj/item/clothing/head/motorcycle/cat/brown
+	name = "brown cat motorcycle helmet"
+	icon_state = "motocatbrown"
+	current_skin = "brown cat motorcycle helmet"

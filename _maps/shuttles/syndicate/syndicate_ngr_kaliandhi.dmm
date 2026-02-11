@@ -1271,7 +1271,6 @@
 /obj/item/clothing/head/ngr/peaked,
 /obj/item/clothing/neck/shemagh/ngr,
 /obj/item/clothing/mask/breath/ngr,
-/obj/item/radio/headset/syndicate/alt/captain,
 /obj/item/clothing/mask/balaclava/ngr,
 /obj/item/megaphone,
 /obj/item/storage/box/ammo/a357{
@@ -1286,6 +1285,7 @@
 /obj/item/clothing/glasses/hud/security/sunglasses/ngr,
 /obj/item/storage/backpack/messenger/sec,
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
+/obj/item/radio/headset/syndicate/alt/captain/ngr,
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm/captain)
 "gS" = (
@@ -1718,13 +1718,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
-"iV" = (
-/obj/docking_port/stationary{
-	dir = 4;
-	name = "Karst Docking Gantry"
-	},
-/turf/open/floor/plating,
-/area/ship/external/dark)
 "iZ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -3008,19 +3001,13 @@
 	icon_state = "4-8"
 	},
 /obj/structure/table,
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = -8;
-	pixel_y = 4
-	},
+/obj/item/reagent_containers/food/drinks/mead,
 /obj/item/toy/cards/deck/tarot,
 /obj/item/toy/figure/syndie{
 	pixel_x = 4;
 	pixel_y = 9
 	},
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = 9;
-	pixel_y = -4
-	},
+/obj/item/reagent_containers/food/drinks/mead,
 /turf/open/floor/carpet/red,
 /area/ship/crew)
 "qk" = (
@@ -3130,7 +3117,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "qy" = (
-/obj/machinery/computer/apc_control{
+/obj/machinery/computer/monitor{
 	icon_state = "computer-right"
 	},
 /obj/effect/turf_decal/techfloor{
@@ -4228,13 +4215,6 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "ws" = (
-/obj/machinery/telecomms/relay/preset/mining{
-	autolinkers = list("relay","hub");
-	freq_listening = list(1213);
-	id = "NGR Relay";
-	name = "NGR Relay";
-	network = "ngr_commnet"
-	},
 /obj/structure/window/reinforced/tinted{
 	dir = 1
 	},
@@ -4243,6 +4223,7 @@
 	req_access = list(20);
 	req_ship_access = 1
 	},
+/obj/machinery/telecomms/relay/preset/ngr,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "wz" = (
@@ -6209,9 +6190,9 @@
 	mag_count = 3
 	},
 /obj/item/storage/belt/military/assault,
-/obj/item/radio/headset/syndicate/alt/leader,
 /obj/item/clothing/glasses/hud/security/sunglasses/ngr,
 /obj/item/storage/backpack/messenger/sec,
+/obj/item/radio/headset/syndicate/alt/ngr,
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm/commad)
 "Gh" = (
@@ -7945,6 +7926,10 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/light_switch{
+	pixel_x = -14;
+	pixel_y = 22
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/maintenance/starboard)
@@ -11485,7 +11470,7 @@ CN
 pi
 pi
 pi
-iV
+pi
 pi
 pi
 pi
