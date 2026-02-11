@@ -239,18 +239,18 @@
 	H.update_body()
 
 /datum/species/ipc/replace_body(mob/living/carbon/C, datum/species/old_species, datum/species/new_species, robotic)
-	var/datum/sprite_accessory/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[C.dna.features["ipc_chassis"]]
+	var/datum/sprite_accessory/body/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[C.dna.features["ipc_chassis"]]
 	if(chassis_of_choice)
 		qdel(species_limbs)
-		species_limbs = chassis_of_choice.chassis_bodyparts.Copy() // elegant.
+		species_limbs = chassis_of_choice.replacement_bodyparts.Copy() // elegant.
 		var/obj/item/bodypart/chest/new_chest = species_limbs[BODY_ZONE_CHEST]
 		if(new_chest)
 			bodytype = initial(new_chest.acceptable_bodytype)
 		else
 			stack_trace("[chassis_of_choice.type] had no chest bodypart!")
-		for(var/feature in chassis_of_choice.chassis_features)
+		for(var/feature in chassis_of_choice.body_features)
 			mutant_bodyparts |= feature
-			default_features[feature] = chassis_of_choice.chassis_features[feature]
+			default_features[feature] = chassis_of_choice.body_features[feature]
 	else // in case of fuckery
 		stack_trace("Invalid IPC chassis: [C.dna.features["ipc_chassis"]]")
 	return ..()

@@ -614,6 +614,15 @@
 	vision_range = 12
 	aggro_vision_range = 14
 
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/hydra/dmr/sentry
+	vision_range = 14
+	aggro_vision_range = 14
+	minimum_distance = 14
+	stop_automated_movement = 1
+	wander = 0
+	retreat_distance = 0
+	environment_smash = 0
+
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/smg
 	name = "Ramzi Clique Shock Trooper"
 	desc = "Night-black armor traces the silhouette of a soldier equaled by precious few. Their Sidewinder tracks you perfectly, a staccato bark of 5.7 already in its throat."
