@@ -14,7 +14,7 @@
 	var/area/myarea = null
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
-	var/view_range = 7
+	var/view_range = 5
 	var/busy = FALSE
 	var/can_transmit_across_z_levels = FALSE
 	var/updating = FALSE //portable camera camerachunk update
