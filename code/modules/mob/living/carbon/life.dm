@@ -106,7 +106,7 @@
 			var drop_chance = 50
 			if(prob(drop_chance))
 				Knockdown(75)
-				Jitter(50)
+				do_jitter_animation(50)
 				to_chat(src, "<span class='notice'>You are too tired to keep going!</span>")
 
 	//Suffocate
