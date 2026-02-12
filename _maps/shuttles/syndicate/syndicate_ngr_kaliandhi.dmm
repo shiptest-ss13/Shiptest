@@ -3001,19 +3001,13 @@
 	icon_state = "4-8"
 	},
 /obj/structure/table,
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = -8;
-	pixel_y = 4
-	},
+/obj/item/reagent_containers/food/drinks/mead,
 /obj/item/toy/cards/deck/tarot,
 /obj/item/toy/figure/syndie{
 	pixel_x = 4;
 	pixel_y = 9
 	},
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = 9;
-	pixel_y = -4
-	},
+/obj/item/reagent_containers/food/drinks/mead,
 /turf/open/floor/carpet/red,
 /area/ship/crew)
 "qk" = (
@@ -3123,7 +3117,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "qy" = (
-/obj/machinery/computer/apc_control{
+/obj/machinery/computer/monitor{
 	icon_state = "computer-right"
 	},
 /obj/effect/turf_decal/techfloor{
@@ -7932,6 +7926,10 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/light_switch{
+	pixel_x = -14;
+	pixel_y = 22
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/maintenance/starboard)

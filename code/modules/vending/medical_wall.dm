@@ -28,6 +28,7 @@
 		/obj/item/reagent_containers/hypospray/medipen/psicodine = 6,
 		/obj/item/reagent_containers/hypospray/medipen/synap = 6,
 		/obj/item/reagent_containers/hypospray/medipen/mannitol = 10,
+		/obj/item/reagent_containers/hypospray/medipen/neurine = 6,
 		/obj/item/reagent_containers/hypospray/medipen/cureall = 6,
 		/obj/item/reagent_containers/hypospray/medipen/tramal = 6,
 		/obj/item/reagent_containers/hypospray/medipen/antihol = 10,

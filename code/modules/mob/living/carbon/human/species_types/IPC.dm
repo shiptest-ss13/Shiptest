@@ -3,7 +3,7 @@
 	id = SPECIES_IPC
 	species_age_min = 0
 	species_age_max = 300
-	species_traits = list(HAIR,NOTRANSSTING,NO_DNA_COPY,TRAIT_EASYDISMEMBER,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH) //all of these + whatever we inherit from the real species
+	species_traits = list(HAIR,NOTRANSSTING,NO_DNA_COPY,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH) //all of these + whatever we inherit from the real species
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_LIMBATTACHMENT)
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
 	mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
@@ -217,7 +217,7 @@
 /datum/species/ipc/spec_life(mob/living/carbon/human/H)
 	. = ..()
 	if(H.health <= HEALTH_THRESHOLD_CRIT && H.stat != DEAD) // So they die eventually instead of being stuck in crit limbo.
-		H.adjustFireLoss(6) // After BODYTYPE_ROBOTIC resistance this is ~2/second
+		H.adjustFireLoss(2, ignore_reduction = INFINITY)
 		if(prob(5))
 			to_chat(H, span_warning("Alert: Internal temperature regulation systems offline; thermal damage sustained. Shutdown imminent."))
 			H.visible_message("[H]'s cooling system fans stutter and stall. There is a faint, yet rapid beeping coming from inside their chassis.")
@@ -239,18 +239,18 @@
 	H.update_body()
 
 /datum/species/ipc/replace_body(mob/living/carbon/C, datum/species/old_species, datum/species/new_species, robotic)
-	var/datum/sprite_accessory/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[C.dna.features["ipc_chassis"]]
+	var/datum/sprite_accessory/body/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[C.dna.features["ipc_chassis"]]
 	if(chassis_of_choice)
 		qdel(species_limbs)
-		species_limbs = chassis_of_choice.chassis_bodyparts.Copy() // elegant.
+		species_limbs = chassis_of_choice.replacement_bodyparts.Copy() // elegant.
 		var/obj/item/bodypart/chest/new_chest = species_limbs[BODY_ZONE_CHEST]
 		if(new_chest)
 			bodytype = initial(new_chest.acceptable_bodytype)
 		else
 			stack_trace("[chassis_of_choice.type] had no chest bodypart!")
-		for(var/feature in chassis_of_choice.chassis_features)
+		for(var/feature in chassis_of_choice.body_features)
 			mutant_bodyparts |= feature
-			default_features[feature] = chassis_of_choice.chassis_features[feature]
+			default_features[feature] = chassis_of_choice.body_features[feature]
 	else // in case of fuckery
 		stack_trace("Invalid IPC chassis: [C.dna.features["ipc_chassis"]]")
 	return ..()

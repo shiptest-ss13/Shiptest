@@ -57,7 +57,7 @@
 	if(prob(5))
 		var/obj/item/bodypart/open_sore = victim.get_random_bodypart()
 		if(IS_ORGANIC_LIMB(open_sore))
-			open_sore.force_wound_upwards(/datum/wound/slash/moderate)
+			open_sore.force_wound_upwards(/datum/wound/slash/flesh/moderate)
 		M.emote("gasps")
 
 /datum/reagent/medicine/indomide/on_mob_end_metabolize(mob/living/L)
