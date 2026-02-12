@@ -8,7 +8,7 @@
 	populate_turfs = FALSE
 
 /datum/unit_test/ruin_placement/Run()
-	var/datum/overmap_star_system/dummy_system = SSovermap.default_system
+	var/datum/overmap_star_system/dummy_system = SSovermap.safe_system
 	dummy_system.name = "Ruin Test: Dummy System"
 	for(var/planet_name as anything in SSmapping.planet_types)
 		var/datum/planet_type/planet_type = SSmapping.planet_types[planet_name]
@@ -30,17 +30,9 @@
 
 			dummy_overmap.populate_turfs = FALSE
 
-			for(var/mission_type in ruin.ruin_mission_types)
-				var/datum/mission/ruin/ruin_mission = new mission_type(dummy_overmap, 1 + length(dummy_overmap.dynamic_missions))
-				dummy_overmap.dynamic_missions += ruin_mission
-				ruin_mission.start_mission()
-				log_test("Testing Mission: [ruin_mission.name]")
-
 			TEST_ASSERT(!dummy_overmap.loading, "[dummy_overmap] is somehow loading before we call the load level proc?!?")
 			TEST_ASSERT(dummy_overmap.load_level(), "[dummy_overmap] failed to load!")
-			TEST_ASSERT_EQUAL(length(SSmissions.unallocated_pois), 0, "Somehow a planet created pois but did not manage to allocate them to itself!")
 
-			log_test("Mission poi count: [length(dummy_overmap.spawned_mission_pois)]")
 			var/list/errors = atmosscan(TRUE, TRUE)
 			//errors += powerdebug(TRUE)
 

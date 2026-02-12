@@ -46,7 +46,7 @@
 		/obj/item/grenade/smokebomb = 1,
 		/obj/item/flashlight/seclite = 1,
 		/obj/item/melee/knife/shiv = 4,
-		/obj/item/melee/knife/shiv/carrot = 1,
+		// /obj/item/melee/knife/shiv/carrot = 1,
 		/obj/item/melee/knife/kitchen = 1,
 		/obj/item/storage/wallet/random = 1,
 		/obj/item/pda = 1
@@ -62,6 +62,6 @@
 		/obj/item/gun/ballistic/automatic/pistol/ringneck = 8,
 		/obj/item/gun/ballistic/shotgun/automatic/m11 = 5,
 		/obj/item/gun/ballistic/automatic/pistol/spitter,
-		/obj/item/gun/ballistic/revolver/mateba
+		/obj/item/gun/ballistic/revolver/rhino
 	)
 

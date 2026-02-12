@@ -17,7 +17,7 @@
 /datum/supply_pack/magazine/smgm9mm_mag
 	name = "9x18mm SMG Magazine Crate"
 	desc = "Contains a 9x18mm magazine for the Vector and Saber SMGs, with a capacity of thirty rounds."
-	contains = list(/obj/item/ammo_box/magazine/smgm9mm/empty)
+	contains = list(/obj/item/ammo_box/magazine/m9mm_expedition/empty)
 	cost = 250
 	faction = /datum/faction/nt
 
@@ -84,7 +84,7 @@
 
 /datum/supply_pack/magazine/m15_mag
 	name = "Super Sporter Magazine Crate"
-	desc = "Contains a 5.56 CLIP magazine for the Super Sporter Rifle, with a capacity of 20 rounds."
+	desc = "Contains a 7.62 CLIP magazine for the Super Sporter Rifle, with a capacity of 20 rounds."
 	contains = list(/obj/item/ammo_box/magazine/m15/empty)
 	cost = 300
 
@@ -109,12 +109,14 @@
 	cost = 100
 	faction = /datum/faction/syndicate/scarborough
 
+/*
 /datum/supply_pack/magazine/hognose_mag
 	name = "Hognose Magazine Crate"
 	desc = "Contains a .22lr magazine for the Hognose underbarrel pistol, with a capacity of eight rounds."
 	contains = list(/obj/item/ammo_box/magazine/m22lr_himehabu/hognose/empty)
 	cost = 100
 	faction = /datum/faction/syndicate/scarborough
+*/
 
 /datum/supply_pack/magazine/asp_mag
 	name = "Asp Magazine Crate"
@@ -122,6 +124,13 @@
 	contains = list(/obj/item/ammo_box/magazine/m57_39_asp/empty)
 	cost = 250
 	faction = /datum/faction/syndicate/scarborough
+
+/datum/supply_pack/magazine/podium_mag
+	name = "Podium Magazine Crate"
+	desc = "Contains a 4.6x30mm magazine for the Podium and Schnauzer pistols, with a capacity of 12 rounds."
+	contains = list(/obj/item/ammo_box/magazine/m46_30_podium)
+	cost = 250
+	faction = /datum/faction/nt
 
 /datum/supply_pack/magazine/m10mm_mag
 	name = "Ringneck Magazine Crate"
@@ -282,10 +291,17 @@
 /* NT */
 
 /datum/supply_pack/magazine/wt550_mag
-	name = "WT-550 Auto Rifle Magazine Crate"
-	desc = "Contains a 20-round magazine for the WT-550 Auto Rifle. Each magazine is designed to facilitate rapid tactical reloads."
+	name = "Resolution Auto Rifle Magazine Crate"
+	desc = "Contains a 20-round magazine for the Resolution Auto Rifle. Each magazine is designed to facilitate rapid tactical reloads."
 	cost = 300
 	contains = list(/obj/item/ammo_box/magazine/wt550m9/empty)
+	faction = /datum/faction/nt
+
+/datum/supply_pack/magazine/expedition_mag
+	name = "SGL9 Expedition Submachinegun Magazine Crate"
+	desc = "Contains a 30-round magazine for the Expedition Submachinegun, chambered in 9mm."
+	cost = 250
+	contains = list(/obj/item/ammo_box/magazine/m9mm_expedition)
 	faction = /datum/faction/nt
 
 /* SolGov */
@@ -351,14 +367,19 @@
 	cost = 1200
 	faction = /datum/faction/syndicate/scarborough
 
+/datum/supply_pack/magazine/slammer
+	name = "Slammer Magazine Crate"
+	desc = "Contains a 6-round 12ga magazine for the Slammer shotgun."
+	contains = list(/obj/item/ammo_box/magazine/m12g_slammer)
+	cost = 300
+
 /* energy weapons */
 
 /datum/supply_pack/magazine/guncell
-	name = "Weapon Cell Crate"
-	desc = "Contains a weapon cell, compatible with laser guns."
+	name = "Eoehoma-style Power Cell"
+	desc = "Contains a weapon power cell built to be compatible with Eoehoma weapons, and systems that still use Eoehoma's style of cell."
 	contains = list(/obj/item/stock_parts/cell/gun)
-	faction = /datum/faction/nt
-	cost = 300
+	cost = 500
 
 /datum/supply_pack/magazine/solgovcell
 	name = "SolCon Weapon Cell Crate"
@@ -369,12 +390,37 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/magazine/nt_guncell
+	name = "Sharplite Power Cell"
+	desc = "Contains a proprietary weapon cell, compatible with most Sharplite energy weapons."
+	contains = list(/obj/item/stock_parts/cell/gun/sharplite)
+	faction = /datum/faction/nt
+	faction_discount = 30
+	cost = 700
+
+/datum/supply_pack/magazine/tinyguncell
+	name = "Sharplite Mini Power Cell"
+	desc = "Contains a proprietary weapon cell, compatible with the Ohm self-defence pistol."
+	contains = list(/obj/item/stock_parts/cell/gun/sharplite/mini)
+	faction = /datum/faction/nt
+	faction_discount = 30
+	cost = 300
+
 /datum/supply_pack/magazine/upgradedguncell
-	name = "Upgraded Weapon Cell Crate"
-	desc = "Contains an upgraded weapon cell, compatible with laser guns. For NT use only."
-	contains = list(/obj/item/stock_parts/cell/gun/upgraded)
+	name = "Sharplite Plus Proprietary Weapon Cell"
+	desc = "Contains an upgraded weapon cell, compatible with most Nanotrasen models. For NT use only."
+	contains = list(/obj/item/stock_parts/cell/gun/sharplite/plus)
 	cost = 1000
 	faction = /datum/faction/nt
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/magazine/upgradedguncellinteq
+	name = "Sharplite Plus Proprietary Weapon Cell"
+	desc = "Contains an upgraded weapon cell, compatible with most Nanotrasen models."
+	contains = list(/obj/item/stock_parts/cell/gun/sharplite/plus)
+	cost = 1000
+	faction = /datum/faction/inteq
 	faction_discount = 0
 	faction_locked = TRUE
 

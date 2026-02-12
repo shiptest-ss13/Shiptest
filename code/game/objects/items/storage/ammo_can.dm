@@ -20,7 +20,7 @@
 		".38" = "ammobox_38",
 		".22lr" = "ammobox_22",
 		"5.7x39mm" = "ammobox_57",
-		"4.6mm" = "ammobox_4.6",
+		"4.6mm" = "ammobox_46",
 		"5.56x42mm CLIP" = "ammobox_556",
 		"7.62x40mm CLIP" = "ammobox_762",
 		".44 Roumain" = "ammobox_44",
@@ -59,6 +59,9 @@
 	STR.max_combined_w_class = 400
 	STR.set_holdable(holdable_items)
 
+/obj/item/storage/toolbox/ammo/reskin_obj(mob/user)
+	. = ..()
+	name = "ammo can ([current_skin])"
 
 /obj/item/storage/toolbox/ammo/a850r/PopulateContents()
 	name = "ammo can (8x50mmR)"

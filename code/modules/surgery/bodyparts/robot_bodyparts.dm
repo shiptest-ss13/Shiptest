@@ -23,6 +23,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -48,6 +49,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -73,6 +75,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -98,6 +101,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -122,6 +126,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	biological_state = BIO_ROBOTIC
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -224,6 +229,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	biological_state = BIO_ROBOTIC
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -316,7 +322,7 @@
 	static_icon = 'icons/mob/augmentation/surplus_augments.dmi'
 	brute_reduction = 0
 	burn_reduction = 0
-	max_damage = 20
+	max_damage = 50
 
 /obj/item/bodypart/r_arm/robot/surplus
 	name = "surplus prosthetic right arm"
@@ -324,7 +330,7 @@
 	static_icon = 'icons/mob/augmentation/surplus_augments.dmi'
 	brute_reduction = 0
 	burn_reduction = 0
-	max_damage = 20
+	max_damage = 50
 
 /obj/item/bodypart/leg/left/robot/surplus
 	name = "surplus prosthetic left leg"
@@ -332,7 +338,7 @@
 	static_icon = 'icons/mob/augmentation/surplus_augments.dmi'
 	brute_reduction = 0
 	burn_reduction = 0
-	max_damage = 20
+	max_damage = 50
 
 /obj/item/bodypart/leg/right/robot/surplus
 	name = "surplus prosthetic right leg"
@@ -340,7 +346,7 @@
 	static_icon = 'icons/mob/augmentation/surplus_augments.dmi'
 	brute_reduction = 0
 	burn_reduction = 0
-	max_damage = 20
+	max_damage = 50
 
 // Lizard Robotic (Synths)
 /obj/item/bodypart/chest/robot/lizard

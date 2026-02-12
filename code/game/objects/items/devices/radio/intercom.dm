@@ -9,6 +9,7 @@
 	canhear_range = 2
 	dog_fashion = null
 	unscrewed = FALSE
+	var/mode_token = MODE_TOKEN_INTERCOM
 	var/obj/item/wallframe/wallframe = /obj/item/wallframe/intercom
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
@@ -24,10 +25,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 	if(!current_area)
 		return
 	RegisterSignal(current_area, COMSIG_AREA_POWER_CHANGE, PROC_REF(AreaPowerCheck))
+	ADD_TRAIT(src, TRAIT_WALLMOUNTED, type)
 
 /obj/item/radio/intercom/examine(mob/user)
 	. = ..()
-	. += span_notice("Use [MODE_TOKEN_INTERCOM] when nearby to speak into it.")
+	. += span_notice("Use [mode_token] when nearby to speak into it.")
 	if(!unscrewed)
 		. += span_notice("It's <b>screwed</b> and secured to the wall.")
 	else
@@ -174,6 +176,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 	freqlock = TRUE
 	freerange = TRUE
 	log = TRUE
+	mode_token = MODE_TOKEN_WIDEBAND
 	wallframe = /obj/item/wallframe/intercom/wideband
 
 /obj/item/radio/intercom/wideband/Initialize(mapload, ndir, building)

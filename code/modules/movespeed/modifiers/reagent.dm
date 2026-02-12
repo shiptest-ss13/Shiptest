@@ -28,6 +28,12 @@
 /datum/movespeed_modifier/reagent/shoalmix
 	multiplicative_slowdown = -0.4
 
+/datum/movespeed_modifier/reagent/cytodron
+	multiplicative_slowdown = -0.1
+
+/datum/movespeed_modifier/reagent/cinesia
+	multiplicative_slowdown = -0.55
+
 /datum/movespeed_modifier/reagent/nitryl
 	multiplicative_slowdown = -0.65
 

@@ -131,7 +131,7 @@
 		/obj/item/melee/classic_baton/telescopic=1,
 		/obj/item/modular_computer/tablet/preset/advanced = 1)
 
-	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/officer)
+	chameleon_extras = list(/obj/item/gun/energy/sharplite/x12, /obj/item/stamp/officer)
 
 /datum/outfit/job/clip/doctor
 	name = "CLIP - Doctor"
@@ -289,7 +289,7 @@
 /datum/outfit/job/clip/correspondent/dressed
 	name = "CLIP - Military Correspondent (Dressed)"
 
-	head = /obj/item/clothing/head/helmet/bulletproof/m10/clip_correspondent
+	head = /obj/item/clothing/head/helmet/m10/clip_correspondent
 	suit = /obj/item/clothing/suit/armor/vest/clip_correspondent
 
 	belt = /obj/item/bodycamera/broadcast_camera
@@ -354,7 +354,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 
 	box = /obj/item/storage/box/survival/engineer
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/gun/ballistic/revolver/mateba=1)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/gun/ballistic/revolver/rhino=1)
 
 /datum/outfit/job/clip/minutemen/captain/general/admiral // for flavor, might remove outright
 	name = "CLIP Minutemen - Admiral"
@@ -432,7 +432,7 @@
 /datum/outfit/job/clip/minutemen/vehicle_pilot/dressed
 	name = "CLIP Minutemen - Vehicle Pilot (Dressed)"
 
-	head = /obj/item/clothing/head/helmet/bulletproof/m10/clip_vc
+	head = /obj/item/clothing/head/helmet/m10/clip_vc
 	suit = /obj/item/clothing/suit/armor/vest/alt
 	glasses = /obj/item/clothing/glasses/hud/diagnostic
 
@@ -442,7 +442,7 @@
 	job_icon = "clip_mech3"
 
 	suit = /obj/item/clothing/suit/jacket/miljacket
-	head = /obj/item/clothing/head/helmet/bulletproof/m10/clip_vc
+	head = /obj/item/clothing/head/helmet/m10/clip_vc
 	glasses = /obj/item/clothing/glasses/hud/diagnostic/sunglasses
 
 /datum/outfit/job/clip/minutemen/vehicle_crew/coordinator
@@ -478,8 +478,8 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
 	courierbag = /obj/item/storage/backpack/messenger/engi
 
-	uniform = /obj/item/clothing/under/clip/minutemen
-	head = /obj/item/clothing/head/clip
+	uniform = /obj/item/clothing/under/clip
+	head = /obj/item/clothing/head/soft/utility_navy
 	suit =  /obj/item/clothing/suit/hazardvest
 
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
@@ -590,6 +590,14 @@
 
 	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/storage/ration/chili_macaroni=1, /obj/item/grenade/c4=2, /obj/item/ammo_box/magazine/p16=3)
 
+/datum/outfit/job/clip/minutemen/grunt/eod
+	name = "CLIP Minutemen - EOD Specialist"
+	id_assignment = "Explosive Ordnance Disposal Technician"
+
+/datum/outfit/job/clip/minutemen/grunt/eod/bombsuit
+	name = "CLIP Minutemen - EOD Specialist (Bombsuit)"
+	suit = /obj/item/clothing/suit/space/hardsuit/bomb/clip
+
 // combat medic
 
 /datum/outfit/job/clip/minutemen/grunt/medic
@@ -598,6 +606,10 @@
 	jobtype = /datum/job/doctor
 
 	accessory = /obj/item/clothing/accessory/armband/medblue
+
+/datum/outfit/job/clip/minutemen/grunt/medic/secaccess
+	name = "CLIP Minutemen - Combat Medic (Security Access)"
+	jobtype = /datum/job/officer
 
 /datum/outfit/job/clip/minutemen/grunt/medic/dressed
 	name = "CLIP Minutemen - Combat Medic (Dressed)"

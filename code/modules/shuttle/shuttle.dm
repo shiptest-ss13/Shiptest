@@ -472,6 +472,9 @@
 	///List of all stationary docking ports that spawned on the ship roundstart, used for docking to other ships.
 	var/list/obj/docking_port/stationary/docking_points
 
+	///The faction this shuttle is registered under.
+	var/datum/faction/registered_faction
+
 	/// Does this shuttle play sounds upon landing and takeoff?
 	var/shuttle_sounds = TRUE
 	/// The take off sound to be played
@@ -536,6 +539,7 @@
 
 
 /obj/docking_port/mobile/proc/load(datum/map_template/shuttle/source_template)
+	registered_faction = source_template.faction
 	shuttle_areas = list()
 	var/list/all_turfs = return_ordered_turfs(x, y, z, dir)
 	for(var/turf/curT as anything in all_turfs)
@@ -657,7 +661,7 @@
 			return SHUTTLE_OUR_MOBILEDOCK_FORBIDS_DOCKING
 
 	//if the docking port has disable_on_owner_ship_dock set and the target ship is docked to something, don't land. very much don't land.
-	if(S.disable_on_owner_ship_dock && S.owner_ship.docked)
+	if(S.disable_on_owner_ship_dock && (!istype(S.owner_ship.docked, /obj/docking_port/stationary/transit)))
 		return SHUTTLE_TARGET_MOBILEDOCK_FORBIDS_DOCKING
 
 	for(var/turf/closed/indestructible/edgeturf as anything in return_ordered_turfs(S.x, S.y, S.z, S.dir))

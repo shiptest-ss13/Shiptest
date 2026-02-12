@@ -85,6 +85,7 @@
 		/obj/item/ammo_box/a858,
 		/obj/item/ammo_box/vickland_a8_50r,
 		/obj/item/ammo_box/a300,
+		/obj/item/ammo_box/a4570,
 		/obj/item/ammo_box/a762_stripper,
 		/obj/item/ammo_box/amagpellet_claris,
 		/obj/item/stock_parts/cell/gun
@@ -177,5 +178,6 @@
 		/obj/item/stack/marker_beacon,
 		/obj/item/reagent_containers/glass/rag,
 		/obj/item/taperecorder,
-		/obj/item/bodycamera
+		/obj/item/bodycamera,
+		/obj/item/gps
 		))

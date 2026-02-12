@@ -17,7 +17,7 @@
 	else
 		new /obj/item/ammo_box/a357(src)
 		new /obj/item/ammo_box/a357(src)
-		new /obj/item/gun/ballistic/revolver/mateba(src)
+		new /obj/item/gun/ballistic/revolver/rhino(src)
 
 /obj/structure/closet/secure_closet/ertSec
 	name = "emergency response team security locker"
@@ -31,7 +31,7 @@
 	new /obj/item/storage/box/teargas(src)
 	new /obj/item/storage/box/flashes(src)
 	new /obj/item/storage/box/handcuffs(src)
-	new /obj/item/shield/riot/tele(src)
+	new /obj/item/shield/tele(src)
 
 /obj/structure/closet/secure_closet/ertMed
 	name = "emergency response team medical locker"

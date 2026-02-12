@@ -272,9 +272,6 @@
 /obj/item/pizzabox/margherita/proc/AddPizza()
 	pizza = new /obj/item/food/pizza/margherita(src)
 
-/obj/item/pizzabox/margherita/robo/AddPizza()
-	pizza = new /obj/item/food/pizza/margherita/robo(src)
-
 /obj/item/pizzabox/vegetable/Initialize()
 	. = ..()
 	pizza = new /obj/item/food/pizza/vegetable(src)

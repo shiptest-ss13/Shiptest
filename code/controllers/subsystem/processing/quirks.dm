@@ -24,15 +24,21 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		SetupQuirks()
 
 	quirk_blacklist = list(
-		list("Blind","Nearsighted"), \
-		list("Ageusia","Vegetarian","Deviant Tastes"), \
-		list("Alcohol Tolerance","Light Drinker"), \
-		list("Bad Touch", "Friendly"), \
-		list("Self-Aware", "Congenital Analgesia"), \
-		list("(Language) Moth Pidgin", "(Language) Solarian International", "(Language) Teceti Unified Standard", "(Language) Kalixcian Common"), \
-		)
+		list("Blind","Nearsighted"),
+		list("Ageusia","Vegetarian","Deviant Tastes"),
+		list("Alcohol Tolerance","Light Drinker"),
+		list("Bad Touch", "Friendly"),
+		list("Self-Aware", "Congenital Analgesia"),
+		list("Trilingual", "Monolingual"),
+	)
 
-	species_blacklist = list("Blood Deficiency" = list(SPECIES_IPC, SPECIES_JELLYPERSON, SPECIES_PLASMAMAN, SPECIES_VAMPIRE))
+	species_blacklist = list(
+		"Blood Deficiency" = list(SPECIES_IPC, SPECIES_JELLYPERSON, SPECIES_PLASMAMAN, SPECIES_VAMPIRE),
+		"Alcohol Tolerance" = list(SPECIES_IPC, SPECIES_PLASMAMAN),
+		"Light Drinker" = list(SPECIES_IPC, SPECIES_PLASMAMAN),
+		"Smoker" = list(SPECIES_IPC, SPECIES_PLASMAMAN),
+		"Asthma" = list(SPECIES_IPC, SPECIES_PLASMAMAN)
+	)
 
 	for(var/client/client in GLOB.clients)
 		client?.prefs.check_quirk_compatibility()

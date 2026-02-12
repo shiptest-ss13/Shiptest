@@ -141,3 +141,21 @@
 /obj/item/paper/crumpled/fluff/ruin/space/deepstorage/orders
 	name = "\improper Written Log"
 	default_raw_text = "You know the drill, people. Shoot anyone on sight approaching the station. This includes our own colors, conducts the same as usual. Give fair warning to our boys, unless shots have already been fired. Cargo's more valuable this time, and we've gotta get our shit together to get that sweet, sweet raise."
+
+/obj/item/paper/fluff/ruins/wasteplanet/vault
+	name = "\improper Vault Button"
+	default_raw_text = "The vault's button is bugged out, if you need to get in, head up to security and yell at em to use their remote access, just pray they ain't in the middle of a game."
+
+/obj/item/paper/fluff/ruins/wasteplanet/reminder
+	name = "\improper LAST REMINDER"
+	default_raw_text = "If one of you dumbasses forgets to pick up your spent ammo casings again, I will personally send you out to escort the salvage team with nothing but a knife, and if you let one of em die ill put your head on the next crate out of here, got it?"
+
+/obj/item/paper/crumpled/fluff/ruins/wasteplanet/doors
+	name = "\improper Shitty doors!"
+	default_raw_text = "the blastdoors on the inner engineering airlock bugged out again! whoever chose this spot for construction deserves to be shot, everything keeps falling apart! Drill won't work, whoever is reading this, grab the salvage saw from the vault and cut it open, or blow it to bits, just don't break anything or the Boss will make you hive target practice."
+
+/obj/item/paper/fluff/ruins/wasteplanet/derringer
+	name = "\improper DO NOT READ."
+	default_raw_text = "Keep forgetting where I put my derringer everytime I leave it somewhere, so im keeping it in the safe. REMINDER: The safe is besides the only plant that seems to survive in this dumb habitat."
+
+

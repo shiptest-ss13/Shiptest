@@ -61,18 +61,6 @@
 	item_state = "purplebartenderapron"
 	body_parts_covered = CHEST|GROIN|LEGS
 
-/obj/item/clothing/suit/syndicatefake
-	name = "black and red space suit replica"
-	icon = 'icons/obj/clothing/suits/spacesuits.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/suits/spacesuits.dmi'
-	icon_state = "syndicate-black-red"
-	item_state = "syndicate-black-red"
-	desc = "A plastic replica of the Syndicate space suit. You'll look just like a real murderous Syndicate agent in this! This is a toy, it is not made for use in space!"
-	w_class = WEIGHT_CLASS_NORMAL
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/toy)
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
-	resistance_flags = NONE
-
 /obj/item/clothing/suit/toggle/owlwings
 	name = "owl cloak"
 	desc = "A soft brown cloak made of synthetic feathers. Soft to the touch, stylish, and a 2 meter wing span that will drive the ladies mad."
@@ -263,6 +251,35 @@
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter, /obj/item/gun/ballistic/automatic/pistol, /obj/item/gun/ballistic/revolver, /obj/item/gun/ballistic/revolver/detective, /obj/item/radio)
 
+/obj/item/clothing/suit/jacket/leather/coat
+	name = "leather coat"
+	desc = "A shorter, clean leather coat. Far less sturdy than others, and easier to move around in."
+	icon_state = "leatherblack"
+	item_state = "leatherblack"
+	icon = 'icons/obj/clothing/suits/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/color.dmi'
+	heat_protection = CHEST|GROIN|ARMS|LEGS
+	cold_protection = CHEST|GROIN|ARMS|LEGS
+	unique_reskin = list(
+		"black leather coat" = "leatherblack",
+		"white leather coat" = "leatherwhite",
+		"brown leather coat" = "leatherbrown",
+		"navy leather coat" = "leathernavy",
+	)
+	unique_reskin_changes_inhand = TRUE
+
+/obj/item/clothing/suit/jacket/leather/coat/black
+	current_skin = "black leather coat"
+
+/obj/item/clothing/suit/jacket/leather/coat/white
+	current_skin = "white leather coat"
+
+/obj/item/clothing/suit/jacket/leather/coat/brown
+	current_skin = "brown leather coat"
+
+/obj/item/clothing/suit/jacket/leather/coat/navy
+	current_skin = "navy leather coat"
+
 /obj/item/clothing/suit/jacket/leather/duster
 	name = "leather duster"
 	desc = "A long, utilitarian leather coat. Ideal for protecting its wearer from rain, sun, and dust."
@@ -271,6 +288,13 @@
 	heat_protection = CHEST|GROIN|ARMS|LEGS
 	cold_protection = CHEST|GROIN|ARMS|LEGS
 	supports_variations = VOX_VARIATION
+
+/obj/item/clothing/suit/jacket/leather/duster/black
+	name = "black leather duster"
+	desc = "A long, utilitarian leather coat. Ideal for protecting its wearer from rain, sun, and dust."
+	icon_state = "duster_black"
+	item_state = "duster_black"
+
 
 /obj/item/clothing/suit/jacket/leather/duster/command
 	name = "officer's duster"
@@ -286,6 +310,11 @@
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter, /obj/item/gun/ballistic/automatic/pistol, /obj/item/gun/ballistic/revolver, /obj/item/radio)
 	supports_variations = VOX_VARIATION
 
+/obj/item/clothing/suit/jacket/baggy
+	name = "baggy shirt"
+	desc = "An oversized baggy shirt. Why?"
+	icon_state = "baggy"
+	item_state = "baggy"
 
 /obj/item/clothing/suit/jacket/letterman
 	name = "letterman jacket"

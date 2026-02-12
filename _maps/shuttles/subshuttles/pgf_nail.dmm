@@ -240,7 +240,6 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/light_switch{
 	pixel_x = 11;
 	pixel_y = 22
@@ -248,7 +247,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/steeldecal/steel_decals_central7{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "A" = (
 /obj/structure/railing,
@@ -258,8 +260,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "B" = (
 /obj/machinery/power/terminal{
@@ -412,16 +413,19 @@
 "N" = (
 /obj/machinery/atmospherics/components/binary/pump/layer2{
 	dir = 8;
-	name = "supply pump"
+	name = "supply pump";
+	layer = 2.43
 	},
 /obj/machinery/atmospherics/components/binary/pump/layer4{
 	dir = 4;
-	name = "nail exhaust pump"
+	name = "nail exhaust pump";
+	layer = 2.43
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/patterned/brushed,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ship/bridge)
 "O" = (
 /obj/structure/railing,
@@ -503,10 +507,10 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/bridge)
 

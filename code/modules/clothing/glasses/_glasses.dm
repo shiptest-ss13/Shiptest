@@ -127,9 +127,12 @@
 	darkness_view = 8
 	flash_protect = FLASH_PROTECTION_SENSITIVE
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
-	glass_colour_type = /datum/client_colour/glass_colour/green
 	supports_variations = VOX_VARIATION
 	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
+	unique_reskin = list(
+		"mono-eye" = "night",
+		"bino-eye" = "nightalt",
+	)
 
 /obj/item/clothing/glasses/eyepatch
 	name = "eyepatch"
@@ -416,6 +419,18 @@
 	icon_state = "heat"
 	item_state = "heat"
 	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
+
+/obj/item/clothing/glasses/safety
+	name = "safety goggles"
+	desc = "A pair of goggles meant to protect your eyes from debris and irritants."
+	icon_state = "safety_skier"
+	item_state = "safety_skier"
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
+	supports_variations = VOX_VARIATION
+	unique_reskin = list(
+		"biker" = "safety_biker",
+		"skier" = "safety_skier",
+	)
 
 /obj/item/clothing/glasses/orange
 	name = "orange glasses"

@@ -1994,7 +1994,7 @@
 /obj/structure/closet/wall/red/directional/north{
 	name = "confiscated weapons"
 	},
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq/no_mag{
+/obj/item/gun/ballistic/automatic/pistol/challenger/inteq/no_mag{
 	pixel_y = 6
 	},
 /obj/item/ammo_box/magazine/co9mm/empty{
@@ -4990,10 +4990,6 @@
 	mob_gender = "male";
 	outfit = /datum/outfit/job/clip/correspondent;
 	mob_name = "Chunce Whatney"
-	},
-/obj/effect/landmark/mission_poi/main{
-	already_spawned = 1;
-	mission_index = 2
 	},
 /obj/effect/decal/cleanable/blood/splatter{
 	icon_state = "floor6"
@@ -8292,10 +8288,6 @@
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/wasp/internals/somme{
 	environment_smash = 0
-	},
-/obj/effect/landmark/mission_poi/main/kill{
-	already_spawned = 1;
-	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/officer/wasp/internals/somme
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/somme/armory)

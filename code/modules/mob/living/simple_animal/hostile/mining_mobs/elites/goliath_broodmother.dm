@@ -210,12 +210,6 @@
 		visible_message(span_warning("[src] digs one of its tentacles under [target]!"))
 		new /obj/effect/temp_visual/goliath_tentacle/broodmother(tturf, src)
 
-/mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/death()
-	. = ..()
-	visible_message(span_warning("[src] explodes!"))
-	explosion(get_turf(loc),0,0,0,flame_range = 3, adminlog = FALSE)
-	gib()
-
 //Tentacles have less stun time compared to regular variant, to balance being able to use them much more often.  Also, 10 more damage.
 /obj/effect/temp_visual/goliath_tentacle/broodmother/trip()
 	var/latched = FALSE
@@ -248,7 +242,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/rockplanet
 	name = "baby gruboid"
-	desc = "A newly-born gruboid. As a defense mechanism, they violently explode if killed."
+	desc = "A newly-born gruboid. Though their hide is less durable than that of a mature gruboid, they are equally capable of defending themselves."
 	icon_state = "gruboid_baby"
 	icon_living = "gruboid_baby"
 	icon_aggro = "gruboid_baby"

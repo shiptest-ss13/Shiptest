@@ -12,7 +12,7 @@
 	desc = "One set of well-rounded body armor. The set includes a helmet and vest."
 	cost = 750
 	contains = list(/obj/item/clothing/suit/armor/vest,
-					/obj/item/clothing/head/helmet/sec)
+					/obj/item/clothing/head/helmet/m10)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
@@ -37,8 +37,8 @@
 
 /datum/supply_pack/armor/laser_armor
 	name = "Reflector Vest Crate"
-	desc = "Contains one vest made of highly reflective material. The armor piece diffuses a laser's energy by over half, as well as offering a good chance to reflect the laser entirely."
-	cost = 1500
+	desc = "Contains one vest made of highly reflective material. The armor piece diffuses a laser's energy by over half, but with limited protection against melee and ballistic weaponry."
+	cost = 1250
 	contains = list(/obj/item/clothing/suit/armor/laserproof)
 	crate_name = "reflector vest crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
@@ -57,7 +57,7 @@
 	desc = "One set of well-rounded medium tactical body armor. Plates are attached to the vest and cover the limbs. The set includes a helmet and chestpiece."
 	cost = 3000
 	contains = list(/obj/item/clothing/suit/armor/vest/marine/medium,
-					/obj/item/clothing/head/helmet/bulletproof/x11)
+					/obj/item/clothing/head/helmet/riot)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
@@ -119,7 +119,7 @@
 
 /datum/supply_pack/armor/hardliner_armor
 	name = "Hardliner Armor Crate"
-	desc = "One set of well-rounded hardliner body armor. Well. Rounded aside from the painfully obvious white. Subsidized by Cybersun Biodynamics."
+	desc = "One set of well-rounded Hardliner body armor. Well. Rounded aside from the painfully obvious white. Subsidized by Cybersun Industries."
 	cost = 500
 	contains = list(/obj/item/clothing/suit/armor/hardliners,
 					/obj/item/clothing/head/helmet/hardliners)
@@ -132,7 +132,7 @@
 /datum/supply_pack/armor/hardliner_mecha_armor
 	name = "Hardliner Pilot Armor Crate"
 	desc = "One set of armor manufactured for Hardliner exosuit pilots. The jacket is often sought out by those outside of it as a keepsake."
-	cost = 1500
+	cost = 500
 	contains = list(/obj/item/clothing/suit/armor/hardliners/jacket,
 					/obj/item/clothing/head/helmet/hardliners/swat)
 	crate_name = "armor crate"
@@ -158,10 +158,23 @@
 
 /datum/supply_pack/armor/srm_duster
 	name = "SRM Duster Crate"
-	desc = "One hand-stitched duster for a proud Roumainian to wear into the Hunt."
+	desc = "One hand-stitched duster and helmet for a proud Roumainian to wear into the Hunt."
 	cost = 500
-	contains = list(/obj/item/clothing/suit/armor/roumain)
+	contains = list(/obj/item/clothing/suit/armor/roumain,
+					/obj/item/clothing/head/helmet/roumain)
 	crate_name = "duster crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/srm
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/armor/srm_trench
+	name = "SRM Heavy Duster Crate"
+	desc = "One hand-stitched duster with a heavy plate and helmet for a proud Roumainian to charge into the fray."
+	cost = 1500
+	contains = list(/obj/item/clothing/suit/armor/roumain/plate,
+					/obj/item/clothing/head/helmet/roumain/plate)
+	crate_name = "heavy duster crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/srm
 	faction_discount = 0

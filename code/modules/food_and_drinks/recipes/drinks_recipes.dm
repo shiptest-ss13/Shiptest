@@ -617,7 +617,7 @@
 	results = list(/datum/reagent/consumable/ethanol/trickwine/ash_wine = 5)
 	required_reagents = list(/datum/reagent/consumable/ethanol/absinthe = 3, /datum/reagent/ash = 1, /datum/reagent/drug/mushroomhallucinogen = 1)
 	required_container = /obj/structure/fermenting_barrel/distiller
-	mix_sound ='sound/weather/ashstorm/inside/weak_end.ogg'
+	mix_sound ='sound/weather/ashstorm/outside/weak_end.ogg'
 
 /datum/chemical_reaction/ice_wine
 	results = list(/datum/reagent/consumable/ethanol/trickwine/ice_wine = 5)
@@ -664,7 +664,7 @@
 /datum/chemical_reaction/sand_bubbles/plasma			// Subbing plasma bubbles for reg
 	required_reagents = list(/datum/reagent/consumable/molten/plasma_fizz = 3, /datum/reagent/silicon = 2)
 
-/datum/chemical_reaction/eudamonia
-	results = list(/datum/reagent/consumable/ethanol/eudamonia = 2)
+/datum/chemical_reaction/eudaimonia
+	results = list(/datum/reagent/consumable/ethanol/eudaimonia = 2)
 	required_reagents = list(/datum/reagent/medicine/lithium_carbonate = 2, /datum/reagent/consumable/ethanol/hcider = 2)
 	mix_message = "The LiCarb dust incorporates into the cider, producing a pleasant chemical coloration!"

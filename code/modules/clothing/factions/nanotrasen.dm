@@ -160,6 +160,13 @@
 	righthand_file = 'icons/mob/inhands/faction/nanotrasen/nt_righthand.dmi'
 	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
 
+	equip_sound = 'sound/items/equip/cloth_equip.ogg'
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_COAT
+	equip_delay_other = EQUIP_DELAY_COAT * 1.5
+	strip_delay = EQUIP_DELAY_COAT * 1.5
+
 /obj/item/clothing/suit/nanotrasen/medical_smock
 	name = "surgical smock"
 	desc = "A thick fluid-repelling smock rendered in what is unmistakeably Nanotrasen Blue. The tag on the inside declares it property of Nanotrasen, Inc."
@@ -322,6 +329,30 @@
 	desc = "A cherry red cap with a white 'VI' logo embroidered on the front. Issued to Vigilitas security guards as casual wear and low-threat workwear. Surprisingly durable, and very popular among current and retired employees."
 	icon_state = "cap_red"
 	item_state = "redcloth"
+
+/obj/item/clothing/head/helmet/m10/nanotrasen
+	name = "\improper Vigilitas Helmet"
+	desc = "A classic protective helmet utilized by Vigilitas, utilizing a M-10 pattern helmet with their color scheme!"
+	icon_state = "nt_m10helm"
+	icon = 'icons/obj/clothing/faction/nanotrasen/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/nanotrasen/head.dmi'
+	unique_reskin = null
+
+/obj/item/clothing/head/helmet/bulletproof/x11/nanotrasen
+	name = "\improper Bulletproof Vigilitas Helmet"
+	desc = "A bulky bulletproof helmet in the X-11 pattern, utilized by Vigilitas and NT loss prevention!"
+	icon_state = "nt_x11helm"
+	icon = 'icons/obj/clothing/faction/nanotrasen/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/nanotrasen/head.dmi'
+	unique_reskin = null
+
+/obj/item/clothing/head/helmet/riot/nanotrasen
+	name = "\improper Vigilitas Riot Helmet"
+	desc = "A resistant riot helmet produced for security detail in Vigilitas, often deployed to quell rioters in corporate grounds."
+	icon = 'icons/obj/clothing/faction/nanotrasen/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/nanotrasen/head.dmi'
+	icon_state = "riot_nanotrasen"
+	base_icon_state = "riot_nanotrasen"
 
 /obj/item/clothing/head/nanotrasen/cap/supply
 	name = "brown softcap"

@@ -204,7 +204,7 @@
 		flamer_proj.range = FLAMETHROWER_RANGE
 
 	RegisterSignal(flamer_proj, COMSIG_MOVABLE_MOVED, PROC_REF(handle_flaming))
-	RegisterSignal(flamer_proj, COMSIG_PARENT_QDELETING, PROC_REF(stop_operating))
+	RegisterSignal(flamer_proj, COMSIG_QDELETING, PROC_REF(stop_operating))
 
 	flamer_proj.fire() //off it goes
 
