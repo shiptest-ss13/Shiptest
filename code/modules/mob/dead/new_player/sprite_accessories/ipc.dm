@@ -421,7 +421,7 @@
 	)
 
 /datum/sprite_accessory/ipc_chassis/zeng_hu
-	name = "Zeng-Hu Pharmaceuticals"
+	name = "Nanotrasen Zeng-Hu"
 	chassis_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/zeng_hu,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/zeng_hu,
@@ -431,8 +431,63 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/zeng_hu,
 	)
 
+/datum/sprite_accessory/ipc_chassis/saipc
+	name = "Scarborgh Arms IPC-80"
+	chassis_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/saipc,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/saipc,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/saipc,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/saipc,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/saipc,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/saipc,
+	)
+
+/datum/sprite_accessory/ipc_chassis/saipc2
+	name = "Scarborgh Arms IPC-80 MK.2"
+	chassis_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/saipc2,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/saipc2,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/saipc2,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/saipc2,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/saipc2,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/saipc2,
+	)
+
+/datum/sprite_accessory/ipc_chassis/lanchesterheavy
+	name = "Lanchester Mechanics 'HEAVY DUTY FRAME'"
+	chassis_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/lanchesterheavy,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/lanchesterheavy,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/lanchesterheavy,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/lanchesterheavy,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/lanchesterheavy,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/lanchesterheavy,
+	)
+
+/datum/sprite_accessory/ipc_chassis/lanchesterworker
+	name = "Lanchester Mechanics 'WORKER FRAME'"
+	chassis_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/lanchesterworker,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/lanchesterworker,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/lanchesterworker,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/lanchesterworker,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/lanchesterworker,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/lanchesterworker,
+	)
+
+/datum/sprite_accessory/ipc_chassis/lanchesterunplated
+	name = "Custom 'Unplated'"
+	chassis_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/lanchesterunplated,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/lanchesterunplated,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/lanchesterunplated,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/lanchesterunplated,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/lanchesterunplated,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/lanchesterunplated,
+	)
+
 /datum/sprite_accessory/ipc_chassis/pgf
-	name = "PGF Mechanics Type-P"
+	name = "PGF Mechanics MK.5 Type-P"
 	color_src = MUTCOLORS
 	chassis_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pgf,

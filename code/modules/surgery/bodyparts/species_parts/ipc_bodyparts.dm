@@ -435,37 +435,257 @@
 	icon_state = "xm2ipc_r_leg"
 	limb_id = "xm2ipc"
 
-// ZENG-HU PHARMACEUTICALS
+// ZENG-HU PHARMACEUTICALS z
 
 /obj/item/bodypart/head/ipc/zeng_hu
-	name = "\improper Zeng-Hu Pharmaceuticals head"
+	name = "\improper Nanotrasen Zeng-Hu head"
 	icon_state = "zhpipc_head"
 	limb_id = "zhpipc"
 
 /obj/item/bodypart/chest/ipc/zeng_hu
-	name = "\improper Zeng-Hu Pharmaceuticals chest"
+	name = "\improper Nanotrasen Zeng-Hu chest"
 	icon_state = "zhpipc_chest"
 	limb_id = "zhpipc"
 
 /obj/item/bodypart/l_arm/ipc/zeng_hu
-	name = "\improper Zeng-Hu Pharmaceuticals left arm"
+	name = "\improper Nanotrasen Zeng-Hu left arm"
 	icon_state = "zhpipc_l_arm"
 	limb_id = "zhpipc"
 
 /obj/item/bodypart/r_arm/ipc/zeng_hu
-	name = "\improper Zeng-Hu Pharmaceuticals right arm"
+	name = "\improper Nanotrasen Zeng-Hu right arm"
 	icon_state = "zhpipc_r_arm"
 	limb_id = "zhpipc"
 
 /obj/item/bodypart/leg/left/ipc/zeng_hu
-	name = "\improper Zeng-Hu Pharmaceuticals left leg"
+	name = "\improper Nanotrasen Zeng-Hu left leg"
 	icon_state = "zhpipc_l_leg"
 	limb_id = "zhpipc"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
 /obj/item/bodypart/leg/right/ipc/zeng_hu
-	name = "\improper Zeng-Hu Pharmaceuticals right leg"
+	name = "\improper Nanotrasen Zeng-Hu right leg"
 	icon_state = "zhpipc_r_leg"
 	limb_id = "zhpipc"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
+
+// Scarborgh Arms IPC-80
+
+/obj/item/bodypart/head/ipc/saipc
+	name = "\improper Scarborgh Arms IPC-80 head"
+	icon_state = "saipc_head"
+	limb_id = "saipc"
+	draw_eyes = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT
+
+/obj/item/bodypart/chest/ipc/saipc
+	name = "\improper Scarborgh Arms IPC-80 chest"
+	icon_state = "saipc_chest"
+	limb_id = "saipc"
+
+/obj/item/bodypart/l_arm/ipc/saipc
+	name = "\improper Scarborgh Arms IPC-80 left arm"
+	icon_state = "saipc_l_arm"
+	limb_id = "saipc"
+
+/obj/item/bodypart/r_arm/ipc/saipc
+	name = "\improper Scarborgh Arms IPC-80 right arm"
+	icon_state = "saipc_r_arm"
+	limb_id = "saipc"
+
+/obj/item/bodypart/leg/left/ipc/saipc
+	name = "\improper Scarborgh Arms IPC-80 left leg"
+	icon_state = "saipc_l_leg"
+	limb_id = "saipc"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
+
+/obj/item/bodypart/leg/right/ipc/saipc
+	name = "\improper Scarborgh Arms IPC-80 right leg"
+	icon_state = "saipc_r_leg"
+	limb_id = "saipc"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
+
+// Scarborgh Arms IPC-80 MK.2
+
+/obj/item/bodypart/head/ipc/saipc2
+	name = "\improper Scarborgh Arms IPC-80 MK.2 head"
+	icon_state = "saipc2_head"
+	limb_id = "saipc2"
+	draw_eyes = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT
+
+/obj/item/bodypart/chest/ipc/saipc2
+	name = "\improper Scarborgh Arms IPC-80 MK.2 chest"
+	icon_state = "saipc2_chest"
+	limb_id = "saipc2"
+
+/obj/item/bodypart/l_arm/ipc/saipc2
+	name = "\improper Scarborgh Arms IPC-80 MK.2 left arm"
+	icon_state = "saipc2_l_arm"
+	limb_id = "saipc2"
+
+/obj/item/bodypart/r_arm/ipc/saipc2
+	name = "\improper Scarborgh Arms IPC-80 MK.2 right arm"
+	icon_state = "saipc2_r_arm"
+	limb_id = "saipc2"
+
+/obj/item/bodypart/leg/left/ipc/saipc2
+	name = "\improper Scarborgh Arms IPC-80 MK.2 left leg"
+	icon_state = "saipc2_l_leg_digigrade"
+	limb_id = "saipc2"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
+
+/obj/item/bodypart/leg/right/ipc/saipc2
+	name = "\improper Scarborgh Arms IPC-80 MK.2 right leg"
+	icon_state = "saipc2_r_leg_digigrade"
+	limb_id = "saipc2"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
+
+// Scarborgh Arms IPC-80 MK.2
+
+/obj/item/bodypart/head/ipc/saipc2
+	name = "\improper Scarborgh Arms IPC-80 MK.2 head"
+	icon_state = "saipc2_head"
+	limb_id = "saipc2"
+	draw_eyes = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT
+
+/obj/item/bodypart/chest/ipc/saipc2
+	name = "\improper Scarborgh Arms IPC-80 MK.2 chest"
+	icon_state = "saipc2_chest"
+	limb_id = "saipc2"
+
+/obj/item/bodypart/l_arm/ipc/saipc2
+	name = "\improper Scarborgh Arms IPC-80 MK.2 left arm"
+	icon_state = "saipc2_l_arm"
+	limb_id = "saipc2"
+
+/obj/item/bodypart/r_arm/ipc/saipc2
+	name = "\improper Scarborgh Arms IPC-80 MK.2 right arm"
+	icon_state = "saipc2_r_arm"
+	limb_id = "saipc2"
+
+/obj/item/bodypart/leg/left/ipc/saipc2
+	name = "\improper Scarborgh Arms IPC-80 MK.2 left leg"
+	icon_state = "saipc2_l_leg_digigrade"
+	limb_id = "saipc2"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
+
+/obj/item/bodypart/leg/right/ipc/saipc2
+	name = "\improper Scarborgh Arms IPC-80 MK.2 right leg"
+	icon_state = "saipc2_r_leg_digigrade"
+	limb_id = "saipc2"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
+
+// Lanchester Mechanics 'HEAVY DUTY FRAME'
+
+/obj/item/bodypart/head/ipc/lanchesterheavy
+	name = "\improper Lanchester Mechanics 'HEAVY DUTY FRAME' head"
+	icon_state = "lanchesterheavy_head"
+	limb_id = "lanchesterheavy"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/chest/ipc/lanchesterheavy
+	name = "\improper Lanchester Mechanics 'HEAVY DUTY FRAME' chest"
+	icon_state = "lanchesterheavy_chest"
+	limb_id = "lanchesterheavy"
+
+/obj/item/bodypart/l_arm/ipc/lanchesterheavy
+	name = "\improper Lanchester Mechanics 'HEAVY DUTY FRAME' left arm"
+	icon_state = "lanchesterheavy_l_arm"
+	limb_id = "lanchesterheavy"
+
+/obj/item/bodypart/r_arm/ipc/lanchesterheavy
+	name = "\improper Lanchester Mechanics 'HEAVY DUTY FRAME' right arm"
+	icon_state = "lanchesterheavy_r_arm"
+	limb_id = "lanchesterheavy"
+
+/obj/item/bodypart/leg/left/ipc/lanchesterheavy
+	name = "\improper Lanchester Mechanics 'HEAVY DUTY FRAME' left leg"
+	icon_state = "lanchesterheavy_l_leg"
+	limb_id = "lanchesterheavy"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/right/ipc/lanchesterheavy
+	name = "\improper Lanchester Mechanics 'HEAVY DUTY FRAME' right leg"
+	icon_state = "lanchesterheavy_r_leg"
+	limb_id = "lanchesterheavy"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+// Lanchester Mechanics 'WORKER FRAME'
+
+/obj/item/bodypart/head/ipc/lanchesterworker
+	name = "\improper Lanchester Mechanics 'WORKER FRAME' head"
+	icon_state = "lanchesterworker_head"
+	limb_id = "lanchesterworker"
+
+/obj/item/bodypart/chest/ipc/lanchesterworker
+	name = "\improper Lanchester Mechanics 'WORKER FRAME' chest"
+	icon_state = "lanchesterworker_chest"
+	limb_id = "lanchesterworker"
+
+/obj/item/bodypart/l_arm/ipc/lanchesterworker
+	name = "\improper Lanchester Mechanics 'WORKER FRAME' left arm"
+	icon_state = "lanchesterworker_l_arm"
+	limb_id = "lanchesterworker"
+
+/obj/item/bodypart/r_arm/ipc/lanchesterworker
+	name = "\improper Lanchester Mechanics 'WORKER FRAME' right arm"
+	icon_state = "lanchesterworker_r_arm"
+	limb_id = "lanchesterworker"
+
+/obj/item/bodypart/leg/left/ipc/lanchesterworker
+	name = "\improper Lanchester Mechanics 'WORKER FRAME' left leg"
+	icon_state = "lanchesterworker_l_leg"
+	limb_id = "lanchesterworker"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/right/ipc/lanchesterworker
+	name = "\improper Lanchester Mechanics 'WORKER FRAME' right leg"
+	icon_state = "lanchesterworker_r_leg"
+	limb_id = "lanchesterworker"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+// Custom Unplated
+
+/obj/item/bodypart/head/ipc/lanchesterunplated
+	name = "\improper Custom Unplated head"
+	icon_state = "lanchesterunplated_head"
+	limb_id = "lanchesterunplated"
+	should_draw_greyscale = TRUE
+
+/obj/item/bodypart/chest/ipc/lanchesterunplated
+	name = "\improper Custom Unplated chest"
+	icon_state = "lanchesterunplated_chest"
+	limb_id = "lanchesterunplated"
+	should_draw_greyscale = TRUE
+
+/obj/item/bodypart/l_arm/ipc/lanchesterunplated
+	name = "\improper Custom Unplated left arm"
+	icon_state = "lanchesterunplated_l_arm"
+	limb_id = "lanchesterunplated"
+	should_draw_greyscale = TRUE
+
+/obj/item/bodypart/r_arm/ipc/lanchesterunplated
+	name = "\improper Custom Unplated right arm"
+	icon_state = "lanchesterunplated_r_arm"
+	limb_id = "lanchesterunplated"
+	should_draw_greyscale = TRUE
+
+/obj/item/bodypart/leg/left/ipc/lanchesterunplated
+	name = "\improper Custom Unplated left leg"
+	icon_state = "lanchesterunplated_l_leg"
+	limb_id = "lanchesterunplated"
+	should_draw_greyscale = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/right/ipc/lanchesterunplated
+	name = "\improper Custom Unplated right leg"
+	icon_state = "lanchesterunplated_r_leg"
+	limb_id = "lanchesterunplated"
+	should_draw_greyscale = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
 
 // PGF MECHANICS TYPE-P
 
