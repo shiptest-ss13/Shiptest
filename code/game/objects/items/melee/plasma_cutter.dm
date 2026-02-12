@@ -163,12 +163,13 @@
 	if(amount)
 		if(tool_behaviour==TOOL_DECONSTRUCT)
 			target.add_overlay(GLOB.advanced_cutting_effect)
+			. = ..()
+			target.cut_overlay(GLOB.advanced_cutting_effect)
+
+
 		else
 			target.add_overlay(GLOB.welding_sparks)
-		. = ..()
-		if(tool_behaviour==TOOL_DECONSTRUCT)
-			target.cut_overlay(GLOB.advanced_cutting_effect)
-		else
+			. = ..()
 			target.cut_overlay(GLOB.welding_sparks)
 	else
 		. = ..(amount=1)
