@@ -1117,12 +1117,12 @@
 		return ..()
 
 
-/obj/machinery/door/airlock/try_to_weld(obj/item/weldingtool/W, mob/user)
+/obj/machinery/door/airlock/try_to_weld(obj/item/weldingtool/W, mob/user, list/modifiers)
 	if(!operating && density)
 		if(seal)
 			to_chat(user, span_warning("[src] is blocked by a seal!"))
 			return
-		if(user.a_intent != INTENT_HELP)
+		if(LAZYACCESS(modifiers, RIGHT_CLICK))
 			if(!W.tool_start_check(user, src, amount=0))
 				return
 			user.visible_message(span_notice("[user] begins [welded ? "unwelding":"welding"] the airlock."), \

@@ -167,14 +167,11 @@
 	pixel_x = 4;
 	pixel_y = -6
 	},
-/obj/item/clothing/suit/space/eva{
-	pixel_x = -8
-	},
-/obj/item/clothing/head/helmet/space/eva{
-	pixel_y = 8;
-	pixel_x = 8
-	},
 /obj/item/clothing/mask/gas/roumain,
+/obj/item/clothing/suit/space/hardsuit/mining/roumain{
+	pixel_x = -5;
+	pixel_y = -5
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/cargo)
 "bO" = (
@@ -366,6 +363,30 @@
 	pixel_x = 8;
 	pixel_y = -6
 	},
+/obj/item/storage/box/ammo/a4570{
+	pixel_x = -6;
+	pixel_y = 3
+	},
+/obj/item/storage/box/ammo/a4570{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/storage/box/ammo/a4570{
+	pixel_x = -6;
+	pixel_y = 9
+	},
+/obj/item/ammo_box/a4570{
+	pixel_x = -3;
+	pixel_y = -6
+	},
+/obj/item/ammo_box/a4570{
+	pixel_x = -8;
+	pixel_y = -6
+	},
+/obj/item/ammo_box/a4570{
+	pixel_x = -12;
+	pixel_y = -6
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
 "de" = (
@@ -380,6 +401,19 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ship/hallway/central)
+"dl" = (
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/tank/internals/emergency_oxygen/double{
+	pixel_x = 4;
+	pixel_y = -6
+	},
+/obj/item/clothing/mask/gas/roumain,
+/obj/item/clothing/suit/space/hardsuit/mining/roumain{
+	pixel_x = -7;
+	pixel_y = -4
+	},
+/turf/open/floor/wood/ebony,
+/area/ship/cargo)
 "dn" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2220,16 +2254,16 @@
 	dir = 8
 	},
 /obj/item/gun/ballistic/rifle/illestren/factory{
-	pixel_y = 3;
-	pixel_x = -4
-	},
-/obj/item/gun/ballistic/rifle/illestren/factory{
 	pixel_x = -4;
 	pixel_y = -5
 	},
 /obj/item/gun/ballistic/rifle/illestren/factory{
 	pixel_x = -4;
 	pixel_y = -1
+	},
+/obj/item/gun/ballistic/shotgun/flamingarrow/pyre/factory{
+	pixel_x = -6;
+	pixel_y = 3
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
@@ -4706,7 +4740,7 @@ Jx
 mA
 bN
 bN
-bN
+dl
 uY
 BA
 sH

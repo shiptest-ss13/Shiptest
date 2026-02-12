@@ -419,7 +419,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/attackby(obj/item/A, mob/user, params)
 	if (!bolt_locked)
-		if(SEND_SIGNAL(src, COMSIG_PARENT_ATTACKBY, A, user, params) & COMPONENT_NO_AFTERATTACK)
+		if(SEND_SIGNAL(src, COMSIG_ATOM_ATTACKBY, A, user, params) & COMPONENT_NO_AFTERATTACK)
 			return TRUE
 		to_chat(user, span_notice("The [bolt_wording] is shut closed!"))
 		return
@@ -487,6 +487,8 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/presawn)
 	icon_state = "dshotgun_srm"
 	item_state = "dshotgun_srm"
 	unique_reskin = null
+
+EMPTY_GUN_HELPER(shotgun/doublebarrel/roumain)
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/roumain/sawoff(forced = FALSE)
 	. = ..()
@@ -766,6 +768,8 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 	icon_state = "illestren_factory"
 	item_state = "illestren_factory"
 
+EMPTY_GUN_HELPER(rifle/illestren/factory)
+
 /obj/item/gun/ballistic/rifle/illestren/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
@@ -903,6 +907,8 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 	icon_state = "flamingbolt"
 	item_state = "flamingbolt"
 
+EMPTY_GUN_HELPER(shotgun/flamingarrow/bolt)
+
 /obj/item/gun/ballistic/shotgun/flamingarrow/bolt/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
@@ -967,6 +973,58 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 	if(.)
 		item_state = "absolution_factory_sawn"
 		mob_overlay_state = item_state
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/pyre
+	name = "HP Pyre"
+	base_icon_state = "pyre"
+	icon_state = "pyre"
+	item_state = "pyre"
+	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
+	desc = "A powerful lever-action rifle with hand-stamped Hunter's Pride marks on the receiver and an 5 round ammunition capacity. Bulky and unwieldy but devastatingly powerful. Chambered in .45-70."
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/winchester/pyre
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/shot/winchester/pyre,
+	)
+	fire_delay = 0.8 SECONDS
+	wield_slowdown = HEAVY_RIFLE_SLOWDOWN
+	wield_delay = 1 SECONDS
+	spread_unwielded = 15
+	spread = 0
+	recoil = 1.5
+	recoil_unwielded = 4
+	gunslinger_recoil_bonus = 0
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/bayonet
+		)
+	unique_attachments = list(/obj/item/attachment/scope)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 25,
+			"y" = 21,
+		)
+	)
+
+	can_be_sawn_off = FALSE
+
+EMPTY_GUN_HELPER(shotgun/flamingarrow/pyre)
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/pyre/factory
+	base_icon_state = "pyre_factory"
+	icon_state = "pyre_factory"
+	item_state = "pyre_factory"
+	desc = "A powerful lever-action rifle with hand-stamped Hunter's Pride marks on the receiver and an 5 round ammunition capacity, in pristine wood furniture lined with brass. Bulky and unwieldy but devastatingly powerful. Chambered in .45-70."
 
 //Break-Action Rifle
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon
@@ -1175,7 +1233,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 /obj/item/gun/ballistic/automatic/assault/invictus
 	name = "HP Invictus"
-	desc = "An unwieldy automatic rifle fielded by the Saint-Roumain Militia, commonly sold to police forces and private buyers. Chambered in .308."
+	desc = "An unwieldy automatic rifle fielded by the Saint-Roumain Militia, commonly sold to police forces and private buyers. This one has a smooth wood finish and is in pristine condition. Chambered in .308."
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
@@ -1204,6 +1262,8 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 	recoil = 1
 	recoil_unwielded = 4
 
+	wear_rate = 0.6
+
 	fire_sound = 'sound/weapons/gun/hmg/hmg.ogg'
 
 	unique_attachments = list(/obj/item/attachment/bayonet)
@@ -1225,6 +1285,13 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 EMPTY_GUN_HELPER(automatic/assault/invictus)
 NO_MAG_GUN_HELPER(automatic/assault/invictus)
+
+/obj/item/gun/ballistic/automatic/assault/invictus/old
+	desc = "An unwieldy automatic rifle fielded by the Saint-Roumain Militia, commonly sold to police forces and private buyers. Chambered in .308."
+	icon_state = "invictus_old"
+	item_state = "invictus_old"
+
+	wear_rate = 1
 
 /obj/item/ammo_box/magazine/invictus_308_mag
 	name = "Invictus magazine (.308)"

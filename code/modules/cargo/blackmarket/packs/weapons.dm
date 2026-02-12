@@ -68,16 +68,6 @@
 	new /obj/item/gun/ballistic/shotgun/blasting_hammer(B)
 	new /obj/item/storage/box/ammo/a12g_blank(B)
 	return B
-/datum/blackmarket_item/weapon/spikeshield
-	name = "Spiked Ballistic Shield"
-	desc = "Be the ancient warrior you always wanted to be. Block bullets and impale your enemies."
-	item = /obj/item/shield/riot/spike
-
-	cost_min = 1000
-	cost_max = 1500
-	stock_max = 2
-	availability_prob = 50
-
 /datum/blackmarket_item/weapon/powerfist
 	name = "Powerfist"
 	desc = "Lookin to give a fisting someone'll remember? This electrically assisted powerfist'll slam em in the face hard enough they won't ever forget. Unless they black out an' forget it."
@@ -245,6 +235,7 @@
 	availability_prob = 20
 	spawn_weighting = FALSE
 
+/*
 /datum/blackmarket_item/weapon/guncase/e50_underbarrel
 	name = "Underbarrel Energy Cannon"
 	desc = "The normal E-50 too big to handle for you? This underbarrel conversion cuts it down to a managable size with only a <i>minor</i> chance of painfully burning your hands."
@@ -256,6 +247,7 @@
 	stock_max = 2
 	availability_prob = 20
 	spawn_weighting = FALSE
+*/
 
 /datum/blackmarket_item/weapon/guncase/e60
 	name = "E-60 Disabler"
@@ -299,17 +291,6 @@
 	cost_max = 3500
 	stock_max = 2
 	availability_prob = 30
-
-/datum/blackmarket_item/weapon/guncase/saber_smg
-	name = "Saber 9x18mm SMG"
-	desc = "A prototype 9x18mm submachine gun. Most of these never got past the RND phase and into distribution. But we happen know a guy."
-	item = /obj/item/gun/ballistic/automatic/smg/skm_carbine/saber
-	pair_item = list(/datum/blackmarket_item/ammo/saber_mag)
-
-	cost_min = 2000
-	cost_max = 3750
-	stock_max = 2
-	availability_prob = 25
 
 /datum/blackmarket_item/weapon/guncase/vga5
 	name = "VG-A5 Beam Gun"

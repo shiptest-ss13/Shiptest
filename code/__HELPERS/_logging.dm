@@ -37,7 +37,7 @@
 #define testing(msg)
 #endif
 
-#ifdef UNIT_TESTS
+#if defined(UNIT_TESTS) || defined(SPACEMAN_DMM)
 /proc/log_test(text)
 	WRITE_LOG(GLOB.test_log, text)
 	SEND_TEXT(world.log, text)
@@ -229,6 +229,9 @@
 /* Log to the logfile only. */
 /proc/log_runtime(text)
 	WRITE_LOG(GLOB.world_runtime_log, text)
+
+/proc/log_signal(text, list/data)
+	WRITE_LOG(GLOB.world_signal_log, text)
 
 /* Rarely gets called; just here in case the config breaks. */
 /proc/log_config(text)

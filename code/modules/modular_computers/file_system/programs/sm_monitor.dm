@@ -54,7 +54,7 @@
 		if (!isturf(S.loc) || !S.virtual_z() == T.virtual_z())
 			continue
 		supermatters.Add(S)
-		RegisterSignal(S, COMSIG_PARENT_QDELETING, PROC_REF(react_to_del))
+		RegisterSignal(S, COMSIG_QDELETING, PROC_REF(react_to_del))
 
 /datum/computer_file/program/supermatter_monitor/proc/get_status()
 	. = SUPERMATTER_INACTIVE
@@ -196,4 +196,4 @@
 	supermatters -= matter
 	if(matter == active)
 		active = null
-	UnregisterSignal(matter, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(matter, COMSIG_QDELETING)

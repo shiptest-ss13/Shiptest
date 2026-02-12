@@ -74,7 +74,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/match/attack(mob/living/carbon/M, mob/living/carbon/user)
 	if(!isliving(M))
 		return
-	if(lit && M.IgniteMob())
+	if(lit && M.ignite_mob())
 		message_admins("[ADMIN_LOOKUPFLW(user)] set [key_name_admin(M)] on fire with [src] at [AREACOORD(user)]")
 		log_game("[key_name(user)] set [key_name(M)] on fire with [src] at [AREACOORD(user)]")
 	var/obj/item/clothing/mask/cigarette/cig = help_light_cig(M)
@@ -130,20 +130,26 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	/// How long the cigarette lasts in seconds
 	var/smoketime = 360
 	var/chem_volume = 30
-	var/smoke_all = FALSE /// Should we smoke all of the chems in the cig before it runs out. Splits each puff to take a portion of the overall chems so by the end you'll always have consumed all of the chems inside.
+	/// Should we smoke all of the chems in the cig before it runs out. Splits each puff to take a portion of the overall chems so by the end you'll always have consumed all of the chems inside.
+	var/smoke_all = FALSE
 	var/list/list_reagents = list(/datum/reagent/drug/nicotine = 15)
 	var/lung_harm = 0.1 //How bad it is for you
+	/// The smoke effect system, used to force nearby mobs to inhale secondhand smoke
+	var/datum/effect_system/smoke_spread/transparent/cigarette/secondhand_smoke
 
 /obj/item/clothing/mask/cigarette/Initialize()
 	. = ..()
 	create_reagents(chem_volume, INJECTABLE | NO_REACT)
 	if(list_reagents)
 		reagents.add_reagent_list(list_reagents)
+	secondhand_smoke = new()
+	secondhand_smoke.attach(src)
 	if(starts_lit)
 		light()
 	AddComponent(/datum/component/knockoff,90,list(BODY_ZONE_PRECISE_MOUTH),list(ITEM_SLOT_MASK))//90% to knock off when wearing a mask
 
 /obj/item/clothing/mask/cigarette/Destroy()
+	qdel(secondhand_smoke)
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
@@ -233,33 +239,40 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		M.update_inv_hands()
 
 /obj/item/clothing/mask/cigarette/proc/handle_reagents()
+	var/enclosed = FALSE
 	if(reagents.total_volume)
 		var/to_smoke = REAGENTS_METABOLISM
 		if(iscarbon(loc))
 			var/mob/living/carbon/C = loc
 			if (src == C.wear_mask) // if it's in the human/monkey mouth, transfer reagents to the mob
-				var/fraction = min(REAGENTS_METABOLISM/reagents.total_volume, 1)
 				/*
 				* Given the amount of time the cig will last, and how often we take a hit, find the number
 				* of chems to give them each time so they'll have smoked it all by the end.
 				*/
 				if (smoke_all)
-					to_smoke = reagents.total_volume / (smoketime / dragtime)
+					to_smoke = reagents.total_volume * dragtime / smoketime
 
-				reagents.expose(C, INGEST, fraction)
+				var/fraction = min(to_smoke / reagents.total_volume, 1)
+
+				reagents.expose(C, INHALE, fraction)
 				var/obj/item/organ/lungs/L = C.getorganslot(ORGAN_SLOT_LUNGS)
 				if(L && !(L.organ_flags & ORGAN_SYNTHETIC))
 					C.adjustOrganLoss(ORGAN_SLOT_LUNGS, lung_harm)
-				if(!reagents.trans_to(C, to_smoke))
-					reagents.remove_any(to_smoke)
-				return
+
+				var/obj/item/clothing/headwear = C.get_item_by_slot(ITEM_SLOT_HEAD)
+				if(headwear?.clothing_flags & STOPSPRESSUREDAMAGE)
+					enclosed = TRUE
+
+		if(!enclosed)
+			secondhand_smoke.set_up(3, src)
+			secondhand_smoke.start()
 		reagents.remove_any(to_smoke)
 
 /obj/item/clothing/mask/cigarette/process(seconds_per_tick)
 	var/turf/location = get_turf(src)
 	var/mob/living/M = loc
 	if(isliving(loc))
-		M.IgniteMob()
+		M.ignite_mob()
 	smoketime -= seconds_per_tick
 	if(smoketime <= 0)
 		new type_butt(location)
@@ -354,6 +367,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	item_state = "spliffoff"
 	smoketime = 4 * 60
 	chem_volume = 50
+	smoke_all = TRUE
 	list_reagents = null
 
 /obj/item/clothing/mask/cigarette/rollie/Initialize()
@@ -662,7 +676,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		. = ..()
 
 /obj/item/lighter/attack(mob/living/carbon/M, mob/living/carbon/user)
-	if(lit && M.IgniteMob())
+	if(lit && M.ignite_mob())
 		message_admins("[ADMIN_LOOKUPFLW(user)] set [key_name_admin(M)] on fire with [src] at [AREACOORD(user)]")
 		log_game("[key_name(user)] set [key_name(M)] on fire with [src] at [AREACOORD(user)]")
 	var/obj/item/clothing/mask/cigarette/cig = help_light_cig(M)
@@ -991,7 +1005,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 				if(reagents.get_reagent_amount(/datum/reagent/fuel))
 					//HOT STUFF
 					C.adjust_fire_stacks(2)
-					C.IgniteMob()
+					C.ignite_mob()
 
 				if(reagents.get_reagent_amount(/datum/reagent/toxin/plasma)) // the plasma explodes when exposed to fire
 					var/datum/effect_system/reagents_explosion/e = new()
@@ -1005,7 +1019,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/mob/living/M = loc
 
 	if(isliving(loc))
-		M.IgniteMob()
+		M.ignite_mob()
 
 	vapetime += seconds_per_tick
 
