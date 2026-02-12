@@ -45,6 +45,10 @@
 		A.UpdateButtonIcon()
 	return 1
 
+/obj/item/flashlight/attack_hand_secondary(mob/user, modifiers)
+	attack_self(user)
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
 /obj/item/flashlight/attack(mob/living/carbon/M, mob/living/carbon/human/user)
 	add_fingerprint(user)
 	if(istype(M) && on && (user.zone_selected in list(BODY_ZONE_PRECISE_EYES, BODY_ZONE_PRECISE_MOUTH)))
