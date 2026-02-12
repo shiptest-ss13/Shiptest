@@ -93,7 +93,7 @@
 	// Handle writing items.
 	var/writing_stats = istype(attacking_item) ? attacking_item.get_writing_implement_details() : null
 
-	if(writing_stats["interaction_mode"] == MODE_WRITING)
+	if(writing_stats?["interaction_mode"] == MODE_WRITING)
 		if(!user.can_write(attacking_item))
 			return COMPONENT_NO_AFTERATTACK
 		if(get_total_length() >= MAX_PAPER_LENGTH)
@@ -104,7 +104,7 @@
 		return COMPONENT_NO_AFTERATTACK
 
 	// Handle stamping items.
-	if(writing_stats["interaction_mode"] == MODE_STAMPING)
+	if(writing_stats?["interaction_mode"] == MODE_STAMPING)
 		if(!user.can_read(parent_atom) || user.is_blind())
 			//The paper's stampable window area is assumed approx 400x500
 			add_graphic(writing_stats["stamp_class"], rand(0, 400), rand(0, 500), rand(0, 360), writing_stats["stamp_icon_state"])
