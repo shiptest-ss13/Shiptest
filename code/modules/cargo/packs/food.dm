@@ -281,6 +281,17 @@
 					/obj/item/food/grown/apple,
 	)
 
+/datum/supply_pack/food/ingredients_basic/cherry
+	name = "Cherry Crate"
+	desc = "Crate containing five cherries."
+	cost = 75
+	contains = list(/obj/item/food/grown/cherries,
+					/obj/item/food/grown/cherries,
+					/obj/item/food/grown/cherries,
+					/obj/item/food/grown/cherries,
+					/obj/item/food/grown/cherries,
+	)
+
 /datum/supply_pack/food/ingredients_basic/lime
 	name = "Lime Crate"
 	desc = "Crate containing five limes."
