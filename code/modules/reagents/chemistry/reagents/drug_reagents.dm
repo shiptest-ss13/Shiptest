@@ -11,7 +11,7 @@
 
 /datum/reagent/drug/space_drugs
 	name = "Dropsight"
-	description = "An illegal chemical compound used as drug."
+	description = "An illegal hallucinogenic chemical compound used as drug."
 	color = "#60A584" // rgb: 96, 165, 132
 	overdose_threshold = 30
 
@@ -742,3 +742,78 @@
 	M.apply_status_effect(/datum/status_effect/stagger)
 	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
+
+/datum/reagent/drug/cytodron
+	name = "Reflex-Cytodron"
+	description = "A popular trade in the Confederated League - although barely legal, Reflex-Cytodron is a chemical that aids in reception of neural impulses at extremities of the body, allowing someone to faster and more precise."
+	reagent_state = SOLID
+	color = "#5a360e"
+	overdose_threshold = 20
+	addiction_threshold = 17
+	metabolization_rate = 0.1
+	taste_description = "pharmacokinetics"
+
+/datum/reagent/drug/cytodron/on_mob_metabolize(mob/living/L)
+	..()
+	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_light, name)
+	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/cytodron)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.do_after_speed -= 0.1
+
+/datum/reagent/drug/cytodron/on_mob_end_metabolize(mob/living/L)
+	..()
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/cytodron)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.do_after_speed += 0.1
+
+/datum/reagent/drug/cytodron/overdose_start(mob/living/M)
+	. = ..()
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_bad, name)
+	M.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/cytodron)
+
+/datum/reagent/drug/cytodron/overdose_process(mob/living/M)
+	. = ..()
+	if(prob(10))
+		M.drop_all_held_items()
+	if(prob(40))
+		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+
+/datum/reagent/drug/sting
+	name = "Sting"
+	description = "A Sybelnatch-originating 'attention-aide' devised for usage in educational and research setting. Focuses the mind on the task at hand."
+	reagent_state = GAS
+	color = "#5a360e"
+	overdose_threshold = 16
+	addiction_threshold = 15
+	metabolization_rate = 0.2
+	taste_description = "a jolt of pain"
+
+/datum/reagent/drug/sting/on_mob_metabolize(mob/living/L)
+	..()
+	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_medium, name)
+	ADD_TRAIT(L, TRAIT_SENSITIVE_TONGUE, type)
+	ADD_TRAIT(L, TRAIT_PINPOINT_EYES, type)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.do_after_speed -= 0.2
+
+/datum/reagent/drug/sting/on_mob_end_metabolize(mob/living/L)
+	..()
+	REMOVE_TRAIT(L, TRAIT_SENSITIVE_TONGUE, type)
+	REMOVE_TRAIT(L, TRAIT_PINPOINT_EYES, type)
+	if(ishuman(L))
+		var/mob/living/carbon/human/drugged = L
+		drugged.physiology.do_after_speed += 0.2
+
+/datum/reagent/drug/cytodron/overdose_start(mob/living/M)
+	. = ..()
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/headache, name)
+
+/datum/reagent/drug/sting/overdose_process(mob/living/M)
+	. = ..()
+	if(prob(30))
+		M.blur_eyes(rand(5,12))
+	if(prob(5))
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1)

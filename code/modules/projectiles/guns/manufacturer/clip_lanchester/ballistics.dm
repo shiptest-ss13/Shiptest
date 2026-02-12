@@ -637,6 +637,7 @@ NO_MAG_GUN_HELPER(automatic/assault/skm/cm24)
 	base_icon_state = "cm40_mag"
 	icon_state = "cm40_mag-1"
 	ammo_type = /obj/item/ammo_casing/a762_40
+	caliber = "7.62x40mm"
 	max_ammo = 80
 	w_class = WEIGHT_CLASS_NORMAL
 

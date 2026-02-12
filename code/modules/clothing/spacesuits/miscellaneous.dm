@@ -447,6 +447,7 @@ Contains:
 	item_state = "syndicate-helm-orange"
 	armor = list("melee" = 5, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 0, "acid" = 0)
 	strip_delay = 65
+	supports_variations = SNOUTED_VARIATION
 
 /obj/item/clothing/suit/space/fragile
 	name = "emergency space suit"
@@ -457,6 +458,7 @@ Contains:
 	slowdown = 2
 	armor = list("melee" = 5, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 0, "acid" = 0)
 	strip_delay = 65
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/suit/space/fragile/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(!torn && prob(50))

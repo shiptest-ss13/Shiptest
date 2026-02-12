@@ -58,7 +58,8 @@
 /obj/item/weldingtool/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/update_icon_updates_onmob)
-	AddElement(/datum/element/tool_flash, light_range)
+	if(light_range > 0)
+		AddElement(/datum/element/tool_flash, light_range)
 	AddElement(/datum/element/robotic_heal, brute_heal = 15, self_delay = 5 SECONDS)
 
 /obj/item/weldingtool/update_icon_state()

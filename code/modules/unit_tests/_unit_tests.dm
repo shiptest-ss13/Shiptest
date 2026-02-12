@@ -82,6 +82,7 @@
 #include "icons/spritesheets.dm"
 #include "icons/worn_icons.dm"
 #include "anchored_mobs.dm"
+#include "ammo_stacks.dm"
 #include "atmospheres.dm"
 #include "autowiki.dm"
 #include "bespoke_id.dm"
