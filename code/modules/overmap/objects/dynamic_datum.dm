@@ -109,7 +109,7 @@
 				//This means you can name a docking port with a leading ! like '!Ship Starboard Stern Docking Port' to have priority over other docking ports
 				if(!dock.docked)
 					alt_message = TRUE
-				if(!dock.docked && dock_requester.shuttle_port.check_dock(dock_to_use, TRUE, FALSE))
+				if(!dock.docked && dock_requester.shuttle_port.check_dock(dock, TRUE, FALSE))
 					dock_to_use = dock
 					break
 
