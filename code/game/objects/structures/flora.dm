@@ -1114,7 +1114,7 @@
 
 /obj/structure/flora/rock/crystal
 	name = "crystal growth"
-	desc = "A towering, obaque crystal. You could probably shave something off this."
+	desc = "A towering, opaque crystal. You could probably shave something off this."
 	icon_state = "crystal"
 	base_icon_state = "crystal"
 	icon = 'icons/effects/32x64.dmi'
@@ -1139,7 +1139,7 @@
 
 /obj/structure/flora/rock/crystal/attackby(obj/item/tool, mob/user, params)
 	if(tool.sharpness && tool.tool_behaviour != TOOL_MINING && user.a_intent != INTENT_HARM)
-		if(!shaving_count < max_shavings)
+		if(shaving_count >= max_shavings)
 			to_chat(user, span_warning("There are no good places to cut [src]."))
 			return
 		playsound(src, 'sound/effects/fuse.ogg')
