@@ -1138,7 +1138,7 @@
 	icon_state = "[base_icon_state]"
 
 /obj/structure/flora/rock/crystal/attackby(obj/item/tool, mob/user, params)
-	if(tool.sharpness && tool.tool_behaviour != TOOL_MINING)
+	if(tool.sharpness && tool.tool_behaviour != TOOL_MINING && user.a_intent != INTENT_HARM)
 		if(!shaving_count < max_shavings)
 			to_chat(user, span_warning("There are no good places to cut [src]."))
 			return
@@ -1148,4 +1148,5 @@
 			new shaving_type(loc)
 			shaving_count++
 			to_chat(user, span_notice("You cut a [shaving_type.name] off of [src]."))
+			return
 	return ..()
