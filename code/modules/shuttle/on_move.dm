@@ -423,15 +423,14 @@ All ShuttleMove procs go here
 	//are we a stationary docking port of the main docking port? if not, we get ignored
 	if(!(src in moving_dock.docking_points))
 		return FALSE
-	//i'm not quite sure what this check is for, since it seems useless (why would a towed shuttle be a stationary docking port?), but keeping just incase the old coders were onto something
-	if(towed_shuttles[docked])
-		return FALSE
 	//check if we are a docking port of a towed shuttle, if we are, we get towed along when the mainship moves, if not, we get ignored
 	for(var/obj/docking_port/mobile/checked_port as anything in towed_shuttles)
 		var/port_in_towed_ports = FALSE
 		if(src in checked_port.docking_points)
 			port_in_towed_ports = TRUE
 			break
-		if(!port_in_towed_ports)
+		//towed_shuttles[docked]: are we towing a docked ship? If so, let us load. The point of this appears to be to let pre-spawned subshuttles work.
+		//Basically, if we are not in the towed ports OR towing a ship, dont move us.
+		if(!port_in_towed_ports && !towed_shuttles[docked])
 			return FALSE
 	return ..()
