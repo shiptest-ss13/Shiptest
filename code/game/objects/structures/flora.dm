@@ -1139,7 +1139,7 @@
 
 /obj/structure/flora/rock/crystal/attackby(obj/item/tool, mob/user, params)
 	if(tool.sharpness && tool.tool_behaviour != TOOL_MINING)
-		if(!shaving_count < max_shavings)
+		if(shaving_count >= max_shavings)
 			to_chat(user, span_warning("There are no good places to cut [src]."))
 			return
 		playsound(src, 'sound/effects/fuse.ogg')
