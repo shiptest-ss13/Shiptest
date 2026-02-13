@@ -405,7 +405,7 @@ All ShuttleMove procs go here
 	if(!moving_dock.can_move_docking_ports)
 		return FALSE
 	//are we not being towed by another ship or are we not the ship thats moving? if neither, ignore
-	if(!towed_shuttles[src] || moving_dock != src)
+	if(!(src in towed_shuttles || moving_dock == src))
 		return FALSE
 
 	return ..()
