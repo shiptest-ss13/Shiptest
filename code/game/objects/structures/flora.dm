@@ -1114,7 +1114,7 @@
 
 /obj/structure/flora/rock/crystal
 	name = "crystal growth"
-	desc = "A towering, obaque crystal. You could probably shave something off this."
+	desc = "A towering, opaque crystal. You could probably shave something off this."
 	icon_state = "crystal"
 	base_icon_state = "crystal"
 	icon = 'icons/effects/32x64.dmi'
