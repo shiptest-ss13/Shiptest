@@ -400,7 +400,7 @@
 	casingtype = /obj/item/ammo_casing/c57x39mm
 	l_hand = /obj/item/gun/ballistic/automatic/pistol/asp
 	projectilesound = 'sound/weapons/gun/pistol/asp.ogg'
-	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/officer/ensign
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/ensign
 
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/officer/smg
