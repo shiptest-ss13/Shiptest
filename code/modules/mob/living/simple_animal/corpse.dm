@@ -114,6 +114,19 @@
 	back = /obj/item/storage/backpack
 	r_pocket = /obj/item/tank/internals/emergency_oxygen
 
+/datum/outfit/ramzi/sniper
+	name = "Ramzi Clique Sniper"
+	uniform = /obj/item/clothing/under/syndicate/ramzi
+	head = /obj/item/clothing/head/helmet/space/hardsuit/stealth/ramzi
+	suit = /obj/item/clothing/suit/space/hardsuit/stealth/ramzi
+	back = /obj/item/tank/jetpack/oxygen/harness
+	r_pocket = /obj/item/tank/internals/emergency_oxygen
+
+/obj/effect/mob_spawn/human/corpse/ramzi/sniper
+	name = "Ramzi Clique Sniper"
+	id_job = "Operative"
+	outfit = /datum/outfit/ramzi/sniper
+
 /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
 	name = "Ramzi Clique Trooper"
 	id_job = "Operative"

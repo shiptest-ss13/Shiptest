@@ -308,7 +308,6 @@
 	AddElement(/datum/element/update_icon_updates_onmob)
 	AddComponent(/datum/component/two_handed, force_unwielded=8, force_wielded=12)
 
-
 /obj/item/shockpaddles/Destroy()
 	defib = null
 	return ..()
@@ -322,7 +321,6 @@
 /obj/item/shockpaddles/Moved()
 	. = ..()
 	check_range()
-
 
 /obj/item/shockpaddles/fire_act(exposed_temperature, exposed_volume)
 	. = ..()
@@ -391,6 +389,9 @@
 
 /obj/item/shockpaddles/attack(mob/M, mob/user)
 	if(busy)
+		return
+	if(!M.get_ghost(FALSE, TRUE)) //Stops from reviving DNR player corpses. Maybe expand this to still defib, but have a body thump and fail message then for drama or whatever
+		to_chat(user, span_warning("It's too late for [M.p_them()]. Revival is impossible."))
 		return
 	if(req_defib && !defib.powered)
 		user.visible_message(span_notice("[defib] beeps: Unit is unpowered."))

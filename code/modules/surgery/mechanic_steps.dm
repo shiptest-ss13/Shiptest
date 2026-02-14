@@ -374,7 +374,6 @@
 	name = "weld plating"
 	implements = list(
 		TOOL_WELDER = 100,
-		/obj/item/gun/energy/plasmacutter = 75,
 	)
 	time = 3 SECONDS
 

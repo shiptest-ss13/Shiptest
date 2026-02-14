@@ -640,8 +640,11 @@
 	. = ..()
 
 	var/damage = intensity - get_eye_protection()
-	if(.) // we've been flashed
+	if(. & FLASH_DAMAGE) // we've been flashed
 		if(visual)
+			return
+
+		if(!damage)
 			return
 
 		if (damage == 1)
@@ -674,8 +677,7 @@
 
 			else
 				to_chat(src, span_warning("Your eyes are really starting to hurt. This can't be good for you!"))
-		return 1
-	else if(damage == 0) // just enough protection
+	else if(!is_blind()) // just enough protection
 		if(prob(20))
 			to_chat(src, span_notice("Something bright flashes in the corner of your vision!"))
 

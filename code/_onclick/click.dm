@@ -302,7 +302,15 @@
  * Useful for mobs that have their abilities mapped to right click.
  */
 /mob/proc/ranged_secondary_attack(atom/target, modifiers)
+	var/signal_result = SEND_SIGNAL(src, COMSIG_MOB_ATTACK_RANGED_SECONDARY, target, modifiers)
 
+	if(signal_result & COMPONENT_SECONDARY_CANCEL_ATTACK_CHAIN)
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
+	if(signal_result & COMPONENT_SECONDARY_CONTINUE_ATTACK_CHAIN)
+		return SECONDARY_ATTACK_CONTINUE_CHAIN
+
+	return SECONDARY_ATTACK_CALL_NORMAL
 
 /**
  * Middle click
