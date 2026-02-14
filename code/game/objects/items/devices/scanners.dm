@@ -301,6 +301,8 @@ GENE SCANNER
 			message = ""
 			if(C.is_blind())
 				message += "\n<span class='alert ml-2'>Subject is blind.</span>"
+			if(HAS_TRAIT(C, TRAIT_SCARRED_EYE))
+				message += "\n<span class='alert ml-2'>Subject's vision is impaired by severe ocular scarring."
 			if(HAS_TRAIT(C, TRAIT_NEARSIGHT))
 				message += "\n<span class='alert ml-2'>Subject is nearsighted.</span>"
 			if(eyes.damage > 30)

@@ -162,6 +162,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						)
 	var/fbp = FALSE
 	var/phobia = "spiders"
+	var/scarred_eye_side = SCAR_RIGHT
 	var/list/alt_titles_preferences = list()
 	var/list/custom_names = list()
 	var/preferred_ai_core_display = "Blue"
@@ -905,6 +906,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 					mutant_category = 0
 
+			//TGUI preferences when
+			if("Scarred Eye" in all_quirks)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+				dat += "<h3>Scarred Eye</h3>"
+				dat += "<a href='byond://?_src_=prefs;preference=scarred_eye_side;task=input'>[scarred_eye_side]</a><BR>"
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+
 			// begin generic adjective
 			if(!mutant_category)
 				dat += APPEARANCE_CATEGORY_COLUMN
@@ -1428,7 +1440,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/handled_conflicts = list()
 	for(var/quirk_name in SSquirks.quirks)
 		var/datum/quirk/quirk_type = SSquirks.quirks[quirk_name]
-		if(initial(quirk_type.mood_quirk) && CONFIG_GET(flag/disable_human_mood))
+		if((quirk_type::quirk_flags & QUIRK_MOODLET_BASED) && CONFIG_GET(flag/disable_human_mood))
 			quirk_conflicts[quirk_name] = "Mood and mood quirks are disabled."
 			if(!handled_conflicts["mood"])
 				handle_quirk_conflict("mood", null, user)
@@ -1473,7 +1485,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					all_quirks_new -= quirk_name
 					balance += initial(quirk_type.value)
 			if("mood")
-				if(initial(quirk_type.mood_quirk))
+				if(quirk_type::quirk_flags & QUIRK_MOODLET_BASED)
 					all_quirks_new -= quirk_name
 					balance += initial(quirk_type.value)
 			if("blacklist")
@@ -2187,6 +2199,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/phobiaType = input(user, "What is your character scared of?", "Quirk Preference", phobia) as null|anything in SStraumas.phobia_types
 					if(phobiaType)
 						phobia = phobiaType
+
+				if("scarred_eye_side")
+					var/scar_side = tgui_input_list(
+						user,
+						"Which eye is scarred?",
+						"Quirk Preference",
+						list(SCAR_LEFT, SCAR_RIGHT, SCAR_DOUBLE, SCAR_RANDOM),
+					)
+					if(scar_side)
+						scarred_eye_side = scar_side
 
 				if("generic_adjective")
 					var/selectAdj

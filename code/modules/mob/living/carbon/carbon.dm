@@ -170,6 +170,9 @@
 		)
 		log_message("has thrown [thrown_thing] [power_throw ? "really hard" : ""]", LOG_ATTACK)
 		newtonian_move(get_dir(target, src))
+		var/target_dist = get_dist(src, target)
+		if(target_dist > 3 && prob(50) && HAS_TRAIT(src, TRAIT_SCARRED_EYE))
+			target = get_turf_in_angle(prob(50) ? get_angle(src, target) : get_angle(target, src), get_turf(target), 10)
 		thrown_thing.safe_throw_at(target, thrown_thing.throw_range, thrown_thing.throw_speed + power_throw, src, null, null, null, move_force)
 
 
@@ -1298,6 +1301,12 @@
 		set_lying_angle(pick(90, 270))
 	else
 		set_lying_angle(new_lying_angle)
+
+/mob/living/carbon/proc/get_eye_scars()
+	var/obj/item/organ/eyes/eyes = getorganslot(ORGAN_SLOT_EYES)
+	if(!isnull(eyes))
+		return eyes.scarring
+	return NONE
 
 /mob/living/carbon/get_fire_overlay(stacks, on_fire)
 	var/fire_icon = "[dna?.species.fire_overlay || "human"]_[stacks > MOB_BIG_FIRE_STACK_THRESHOLD ? "big_fire" : "small_fire"]"
