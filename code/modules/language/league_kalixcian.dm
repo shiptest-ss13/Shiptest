@@ -1,5 +1,5 @@
 /datum/language/league_kalixcian
-	name = "League Kalixcian"
+	name = "League Zohilian"
 	desc = "A variation of Zohilian spoken in the former colonies of the URFZ, primarily in the Maxin system, emerging after around a century of drift."
 	speech_verb = "hisses"
 	ask_verb = "questions"
@@ -27,6 +27,6 @@
 	icon_state = "clip_kalixcian"
 	default_priority = 80
 	mutual_understanding = list(
-		/datum/language/zohil_kalixcian = 95, // enough to sort of understand each other, but not perfectly
+		/datum/language/zohil_kalixcian = 90, // enough to sort of understand each other, but not perfectly
 		/datum/language/gezena_kalixcian = 80,
 	)
