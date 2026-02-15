@@ -170,9 +170,6 @@
 		)
 		log_message("has thrown [thrown_thing] [power_throw ? "really hard" : ""]", LOG_ATTACK)
 		newtonian_move(get_dir(target, src))
-		var/target_dist = get_dist(src, target)
-		if(target_dist > 3 && prob(50) && HAS_TRAIT(src, TRAIT_SCARRED_EYE))
-			target = get_turf_in_angle(prob(50) ? get_angle(src, target) : get_angle(target, src), get_turf(target), 10)
 		thrown_thing.safe_throw_at(target, thrown_thing.throw_range, thrown_thing.throw_speed + power_throw, src, null, null, null, move_force)
 
 

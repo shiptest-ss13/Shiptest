@@ -25,7 +25,8 @@
 	quirk_holder.roundstart_quirks += src
 	for(var/T in mob_traits)
 		ADD_TRAIT(quirk_holder, T, ROUNDSTART_TRAIT)
-	START_PROCESSING(SSquirks, src)
+	if(quirk_flags & QUIRK_PROCESSES)
+		START_PROCESSING(SSquirks, src)
 	add(client_source)
 	if(spawn_effects)
 		on_spawn(client_source)
@@ -49,7 +50,8 @@
 		post_add()
 
 /datum/quirk/Destroy()
-	STOP_PROCESSING(SSquirks, src)
+	if(quirk_flags & QUIRK_PROCESSES)
+		STOP_PROCESSING(SSquirks, src)
 	remove()
 	if(quirk_holder)
 		if(lose_text)

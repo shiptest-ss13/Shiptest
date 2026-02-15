@@ -75,6 +75,8 @@
 		M.clear_fullscreen("eye_damage")
 	if(scarring)
 		M.cure_blind(EYE_SCARRING_TRAIT)
+		M.clear_fullscreen(EYE_SCARRING_TRAIT)
+		REMOVE_TRAIT(M, TRAIT_SCARRED_EYE, EYE_SCARRING_TRAIT)
 	M.cure_blind(EYE_DAMAGE)
 	M.cure_nearsighted(EYE_DAMAGE)
 	M.set_blindness(0)
@@ -98,7 +100,7 @@
 		valid_sides += RIGHT_EYE_SCAR
 	if(!(scarring & LEFT_EYE_SCAR))
 		valid_sides += LEFT_EYE_SCAR
-	if(!length(valid_sides))
+	if(!prob(50 * length(valid_sides)))
 		return
 
 	var/picked_side = pick(valid_sides)
@@ -125,8 +127,10 @@
 /obj/item/organ/eyes/proc/apply_scarring_effects()
 	if(!owner)
 		return
+	ADD_TRAIT(owner, TRAIT_SCARRED_EYE, EYE_SCARRING_TRAIT)
 	if((scarring & RIGHT_EYE_SCAR) && (scarring & LEFT_EYE_SCAR))
 		owner.become_blind(EYE_SCARRING_TRAIT)
+	owner.overlay_fullscreen(EYE_SCARRING_TRAIT, /atom/movable/screen/fullscreen/impaired, 1)
 	owner.update_body()
 
 /obj/item/organ/eyes/proc/fix_scar(side)
@@ -137,6 +141,9 @@
 	update_appearance()
 	if(!owner)
 		return
+	if(!scarring)
+		REMOVE_TRAIT(owner, TRAIT_SCARRED_EYE, EYE_SCARRING_TRAIT)
+		owner.clear_fullscreen(EYE_SCARRING_TRAIT)
 	owner.cure_blind(EYE_SCARRING_TRAIT)
 	owner.update_body()
 
