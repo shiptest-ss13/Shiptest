@@ -41,7 +41,7 @@
 	overdose_threshold = 60
 	addiction_threshold = 30
 	taste_description = "oily syrup"
-	glass_icon_state = "vimukti_glass"
+	glass_icon_state = "thirteen_loko_glass"
 	glass_name = "glass of Vimukti"
 	glass_desc = "A spiritually-taxing drink from the Shoal. Numerous warnings about this drink tell you to not drink too much, lest you incur some sort of wrath... or an overdose of a psychoactive lichen."
 
