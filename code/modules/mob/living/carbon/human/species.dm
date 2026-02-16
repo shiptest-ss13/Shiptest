@@ -251,9 +251,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/obj/item/organ/stomach/robotic_stomach = /obj/item/organ/stomach/cybernetic
 	var/obj/item/organ/appendix/robotic_appendix = null
 
-	///For custom overrides for species ass images
-	var/icon/ass_image
-
 ///////////
 // PROCS //
 ///////////

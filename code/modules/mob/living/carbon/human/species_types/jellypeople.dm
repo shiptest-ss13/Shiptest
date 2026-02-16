@@ -22,7 +22,6 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	inherent_factions = list("slime")
 	species_language_holder = /datum/language_holder/jelly
-	ass_image = 'icons/ass/assslime.png'
 	loreblurb = "Slime, itself a slime-mold like organism of unknown origin, is capable of both mutating existing biological organisms into slime, retaining most of the structure and mind of the original, and forming quick-learning gestalts capable of mimicking existing beings, including animals and humanoids. The blood of slimepeople is toxic, and the properties of poisonous and poison-healing substances are inverted for them."
 
 	species_limbs = list(

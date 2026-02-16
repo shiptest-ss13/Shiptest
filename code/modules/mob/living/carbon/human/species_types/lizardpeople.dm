@@ -54,7 +54,6 @@
 	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL
 	loreblurb = "The Sarathi are a cold-blooded reptilian species originating from the planet Kalixcis, where they evolved alongside the Elzuosa. Kalixcian culture places no importance on blood-bonds, and those from it tend to consider their family anyone they are sufficiently close to, and choose their own names."
 
-	ass_image = 'icons/ass/asslizard.png'
 	var/datum/action/innate/liz_lighter/internal_lighter
 
 /datum/species/lizard/on_species_loss(mob/living/carbon/C)

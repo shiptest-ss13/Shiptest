@@ -5,7 +5,6 @@
 	inherent_traits = list(TRAIT_VIRUSIMMUNE,TRAIT_CHUNKYFINGERS,TRAIT_NOHUNGER,TRAIT_NOBREATH,TRAIT_NODISMEMBER,TRAIT_NEVER_WOUNDED)
 	mutanttongue = /obj/item/organ/tongue/abductor
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
-	ass_image = 'icons/ass/assgrey.png'
 
 	species_limbs = list(
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/abductor,

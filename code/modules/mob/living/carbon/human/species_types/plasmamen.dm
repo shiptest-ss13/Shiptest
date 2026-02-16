@@ -38,7 +38,6 @@
 	bodytemp_heat_damage_limit = (HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT - 20) // about 40C
 	// This effects how fast body temp stabilizes, also if cold resit is lost on the mob
 	bodytemp_cold_damage_limit = (HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 50) // about -50c
-	ass_image = 'icons/ass/assplasma.png'
 
 /datum/species/plasmaman/spec_life(mob/living/carbon/human/H)
 	var/datum/gas_mixture/environment = H.loc.return_air()

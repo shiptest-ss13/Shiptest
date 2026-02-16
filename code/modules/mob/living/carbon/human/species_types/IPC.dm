@@ -34,7 +34,6 @@
 	loreblurb = "Integrated Positronic Chassis or \"IPC\" for short, are synthetic lifeforms composed of an Artificial \
 	Intelligence program encased in a bipedal robotic shell. They are fragile, allergic to EMPs, and the butt of endless toaster jokes. \
 	Just as easy to repair as they are to destroy, they might just get their last laugh in as you're choking on neurotoxins. Beep Boop."
-	ass_image = 'icons/ass/assmachine.png'
 
 	species_limbs = list(
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc,

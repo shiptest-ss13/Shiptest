@@ -10,8 +10,6 @@
 #define PHOTO_TONER_USE 0.625
 /// How much toner is used for making a copy of a document.
 #define DOCUMENT_TONER_USE 0.75
-/// How much toner is used for making a copy of an ass.
-#define ASS_TONER_USE 0.625
 /// The maximum amount of copies you can make with one press of the copy button.
 #define MAX_COPIES_AT_ONCE 10
 
@@ -35,8 +33,6 @@
 	var/obj/item/photo/photo_copy
 	/// A reference to an `/obj/item/documents` inside the copier, if one is inserted. Otherwise null.
 	var/obj/item/documents/document_copy
-	/// A reference to a mob on top of the photocopier trying to copy their ass. Null if there is no mob.
-	var/mob/living/ass
 	/// A reference to the toner cartridge that's inserted into the copier. Null if there is no cartridge.
 	var/obj/item/toner/toner_cartridge
 	/// How many copies will be printed with one click of the "copy" button.
@@ -59,8 +55,6 @@
 		photo_copy = null
 	if(deleting_atom == document_copy)
 		document_copy = null
-	if(deleting_atom == ass)
-		ass = null
 	if(deleting_atom == toner_cartridge)
 		toner_cartridge = null
 	return ..()
@@ -69,7 +63,6 @@
 	QDEL_NULL(paper_copy)
 	QDEL_NULL(photo_copy)
 	QDEL_NULL(toner_cartridge)
-	ass = null //the mob isn't actually contained and just referenced, no need to delete it.
 	return ..()
 
 /obj/machinery/photocopier/ui_interact(mob/user, datum/tgui/ui)
@@ -122,7 +115,7 @@
 		return
 
 	switch(action)
-		// Copying paper, photos, documents and asses.
+		// Copying paper, photos, and documents.
 		if("make_copy")
 			if(busy)
 				to_chat(usr, span_warning("[src] is currently busy copying something. Please wait until it is finished."))
@@ -143,10 +136,6 @@
 			if(document_copy)
 				do_copy_loop(CALLBACK(src, PROC_REF(make_document_copy)), usr)
 				return TRUE
-			// ASS COPY. By Miauw
-			if(ass)
-				do_copy_loop(CALLBACK(src, PROC_REF(make_ass_copy)), usr)
-				return TRUE
 
 		// Remove the paper/photo/document from the photocopier.
 		if("remove")
@@ -159,8 +148,6 @@
 			else if(document_copy)
 				remove_photocopy(document_copy, usr)
 				document_copy = null
-			else if(check_ass())
-				to_chat(ass, span_notice("You feel a slight pressure on your ass."))
 			return TRUE
 
 		// AI printing photos from their saved images.
@@ -227,8 +214,6 @@
 		return toner_cartridge.charges >= (DOCUMENT_TONER_USE * num_copies)
 	else if(photo_copy)
 		return toner_cartridge.charges >= (PHOTO_TONER_USE * num_copies)
-	else if(ass)
-		return toner_cartridge.charges >= (ASS_TONER_USE * num_copies)
 	return FALSE
 
 /**
@@ -320,42 +305,6 @@
 	toner_cartridge.charges -= PAPER_TONER_USE
 
 /**
- * Handles the copying of an ass photo.
- *
- * Calls `check_ass()` first to make sure that `ass` exists, among other conditions. Since this proc is called from a timer, it's possible that it was removed.
- * Additionally checks that the mob has their clothes off.
- */
-/obj/machinery/photocopier/proc/make_ass_copy()
-	if(!check_ass())
-		return
-	if(ishuman(ass) && (ass.get_item_by_slot(ITEM_SLOT_ICLOTHING) || ass.get_item_by_slot(ITEM_SLOT_OCLOTHING)))
-		to_chat(usr, span_notice("You feel kind of silly, copying [ass == usr ? "your" : ass][ass == usr ? "" : "\'s"] ass with [ass == usr ? "your" : "[ass.p_their()]"] clothes on.") )
-		return
-
-	var/icon/temp_img
-	if(ishuman(ass))
-		var/mob/living/carbon/human/H = ass
-		var/datum/species/spec = H.dna.species
-		if(spec.ass_image)
-			temp_img = spec.ass_image
-		else
-			temp_img = icon(ass.gender == FEMALE ? 'icons/ass/assfemale.png' : 'icons/ass/assmale.png')
-	else if(isalienadult(ass) || istype(ass, /mob/living/simple_animal/hostile/alien)) //Xenos have their own asses, thanks to Pybro.
-		temp_img = icon('icons/ass/assalien.png')
-	else if(issilicon(ass))
-		temp_img = icon('icons/ass/assmachine.png')
-	else if(isdrone(ass)) //Drones are hot
-		temp_img = icon('icons/ass/assdrone.png')
-
-	var/obj/item/photo/copied_ass = new /obj/item/photo(loc)
-	var/datum/picture/toEmbed = new(name = "[ass]'s Ass", desc = "You see [ass]'s ass on the photo.", image = temp_img)
-	give_pixel_offset(copied_ass)
-	toEmbed.psize_x = 128
-	toEmbed.psize_y = 128
-	copied_ass.set_picture(toEmbed, TRUE, TRUE)
-	toner_cartridge.charges -= ASS_TONER_USE
-
-/**
  * Inserts the item into the copier. Called in `attackby()` after a human mob clicked on the copier with a paper, photo, or document.
  *
  * Arugments:
@@ -443,82 +392,13 @@
 		new /obj/effect/decal/cleanable/oil(get_turf(src))
 		toner_cartridge.charges = 0
 
-/obj/machinery/photocopier/MouseDrop_T(mob/target, mob/user)
-	check_ass() //Just to make sure that you can re-drag somebody onto it after they moved off.
-	if(!istype(target) || target.anchored || target.buckled || !Adjacent(target) || !user.canUseTopic(src, BE_CLOSE) || target == ass || copier_blocked())
-		return
-	add_fingerprint(user)
-	if(target == user)
-		user.visible_message(span_notice("[user] starts climbing onto the photocopier!"), span_notice("You start climbing onto the photocopier..."))
-	else
-		user.visible_message(span_warning("[user] starts putting [target] onto the photocopier!"), span_notice("You start putting [target] onto the photocopier..."))
-
-	if(do_after(user, 20, target = src))
-		if(!target || QDELETED(target) || QDELETED(src) || !Adjacent(target)) //check if the photocopier/target still exists.
-			return
-
-		if(target == user)
-			user.visible_message(span_notice("[user] climbs onto the photocopier!"), span_notice("You climb onto the photocopier."))
-		else
-			user.visible_message(span_warning("[user] puts [target] onto the photocopier!"), span_notice("You put [target] onto the photocopier."))
-
-		target.forceMove(get_turf(src))
-		ass = target
-
-		if(photo_copy)
-			photo_copy.forceMove(drop_location())
-			visible_message(span_warning("[photo_copy] is shoved out of the way by [ass]!"))
-			photo_copy = null
-
-		else if(paper_copy)
-			paper_copy.forceMove(drop_location())
-			visible_message(span_warning("[paper_copy] is shoved out of the way by [ass]!"))
-			paper_copy = null
-
-		else if(document_copy)
-			document_copy.forceMove(drop_location())
-			visible_message(span_warning("[document_copy] is shoved out of the way by [ass]!"))
-			document_copy = null
-
-/obj/machinery/photocopier/Exited(atom/movable/AM, atom/newloc)
-	check_ass() // There was potentially a person sitting on the copier, check if they're still there.
-	return ..()
-
-/**
- * Checks the living mob `ass` exists and its location is the same as the photocopier.
- *
- * Returns FALSE if `ass` doesn't exist or is not at the copier's location. Returns TRUE otherwise.
- */
-/obj/machinery/photocopier/proc/check_ass() //I'm not sure wether I made this proc because it's good form or because of the name.
-	if(!ass)
-		return FALSE
-	if(ass.loc != loc)
-		ass = null
-		return FALSE
-	return TRUE
-
-/**
- * Checks if the copier is deleted, or has something dense at its location. Called in `MouseDrop_T()`
- */
-/obj/machinery/photocopier/proc/copier_blocked()
-	if(QDELETED(src))
-		return
-	if(loc.density)
-		return TRUE
-	for(var/atom/movable/AM in loc)
-		if(AM == src)
-			continue
-		if(AM.density)
-			return TRUE
-	return FALSE
-
 /**
  * Checks if there is an item inserted into the copier or a mob sitting on top of it.
  *
  * Return `FALSE` is the copier has something inside of it. Returns `TRUE` if it doesn't.
  */
 /obj/machinery/photocopier/proc/copier_empty()
-	if(paper_copy || photo_copy || document_copy || check_ass())
+	if(paper_copy || photo_copy || document_copy)
 		return FALSE
 	else
 		return TRUE
@@ -551,5 +431,4 @@
 #undef PAPER_TONER_USE
 #undef PHOTO_TONER_USE
 #undef DOCUMENT_TONER_USE
-#undef ASS_TONER_USE
 #undef MAX_COPIES_AT_ONCE
