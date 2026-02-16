@@ -296,3 +296,25 @@
 	name = "rescue inhaler"
 	icon_state = "inhaler_generic"
 	initial_casister_path = /obj/item/reagent_containers/inhaler_canister/salbutamol
+
+/obj/item/inhaler/sting
+	name = "sting inhaler"
+	icon_state = "inhaler_generic"
+	initial_casister_path = /obj/item/reagent_containers/inhaler_canister/sting
+
+/obj/item/reagent_containers/inhaler_canister/sting
+	name = "sting canister"
+	desc = "A small canister filled with aerosolized reagents for use in a inhaler. This one contains Sting, and the mark of a Syeben'Altch guild."
+	icon_state = "canister_generic"
+	list_reagents = list(/datum/reagent/drug/sting = 30)
+
+/obj/item/inhaler/cocktail
+	name = "shoalmix inhaler"
+	icon_state = "inhaler_syndicate"
+	initial_casister_path = /obj/item/reagent_containers/inhaler_canister/combat_drug
+
+/obj/item/reagent_containers/inhaler_canister/combat_drug
+	name = "shoalmix canister"
+	desc = "A small canister filled with aerosolized reagents for use in a inhaler. This one contains a blend of shoalmix and panacea. Hit it in a fight!"
+	icon_state = "canister_syndicate"
+	list_reagents = list(/datum/reagent/drug/combat_drug = 20, /datum/reagent/medicine/panacea = 10)

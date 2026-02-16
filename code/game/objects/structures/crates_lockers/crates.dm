@@ -20,7 +20,7 @@
 	//half as much as a closet
 	drag_slowdown = 0.75
 	pass_flags_self = LETPASSCLICKS
-	var/obj/item/paper/manifest/manifest
+	var/manifest_id = null
 	var/shelve = FALSE
 	var/shelve_range = 0
 
@@ -46,14 +46,15 @@
 
 /obj/structure/closet/crate/closet_update_overlays(list/new_overlays)
 	. = new_overlays
-	if(manifest)
+	if(GetComponent(/datum/component/writing))
 		. += "manifest"
 
 /obj/structure/closet/crate/attack_hand(mob/user)
 	if(istype(src.loc, /obj/structure/crate_shelf))
 		return FALSE // No opening crates in shelves!!
+	var/datum/component/writing/manifest = GetComponent(/datum/component/writing)
 	if(manifest)
-		tear_manifest(user)
+		tear_manifest(user, manifest)
 	return ..()
 
 /obj/structure/closet/crate/MouseDrop(atom/drop_atom, src_location, over_location)
@@ -77,22 +78,35 @@
 
 /obj/structure/closet/crate/open(mob/living/user, force = FALSE)
 	. = ..()
-	if(. && manifest)
-		to_chat(user, span_notice("The manifest is torn off [src]."))
-		playsound(src, 'sound/items/poster_ripped.ogg', 75, TRUE)
-		manifest.forceMove(get_turf(src))
-		manifest = null
-		update_appearance()
+	if(!.)
+		return
+	var/datum/component/writing/manifest = GetComponent(/datum/component/writing)
+	if(!manifest)
+		return
+	to_chat(user, span_notice("The manifest is torn off [src]."))
+	playsound(src, 'sound/items/poster_ripped.ogg', 75, TRUE)
+	paperize_manifest(get_turf(src), manifest)
 
-/obj/structure/closet/crate/proc/tear_manifest(mob/user)
+/obj/structure/closet/crate/proc/tear_manifest(mob/user, datum/component/writing/manifest)
 	to_chat(user, span_notice("You tear the manifest off of [src]."))
 	playsound(src, 'sound/items/poster_ripped.ogg', 75, TRUE)
 
-	manifest.forceMove(loc)
+	var/obj/item/paper/manifest_paper = paperize_manifest(loc, manifest)
 	if(ishuman(user))
-		user.put_in_hands(manifest)
-	manifest = null
+		user.put_in_hands(manifest_paper)
+
+/// Turns a writing component into a paper and returns the paper. Warning: this also destroys the component datum!
+/obj/structure/closet/crate/proc/paperize_manifest(atom/paper_location, datum/component/writing/manifest)
+	var/obj/item/paper/manifest/manifest_paper = new(paper_location, manifest_id, 0)
+	var/datum/component/writing/paper_text = manifest_paper.GetComponent(/datum/component/writing)
+	if(!paper_text)
+		CRASH("[manifest_paper.type] somehow had no writing component!")
+	manifest_paper.name = "shipping manifest - #[manifest_id]"
+	manifest.copy_to(paper_text)
+	manifest_paper.update_appearance()
+	qdel(manifest)
 	update_appearance()
+	return manifest_paper
 
 /obj/structure/closet/crate/coffin
 	name = "coffin"

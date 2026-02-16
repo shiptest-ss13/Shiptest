@@ -3586,13 +3586,8 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/icemoon/command_post/crew_quarters)
 "Hg" = (
-/obj/structure/chair/office/dark{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/hydra/dmr{
-	wander = 0
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/hydra/dmr/sentry,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/icemoon/command_post/armory)
 "Ho" = (
@@ -5126,6 +5121,9 @@
 "Wc" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
+	},
+/obj/structure/chair/office/dark{
+	dir = 8
 	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/icemoon/command_post/armory)
