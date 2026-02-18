@@ -104,7 +104,7 @@
 //Used by empty space
 #define INTERACTION_OVERMAP_SETSIGNALSPRITE "Set Signal Appearance"
 //Used by jump points
-#define INTERACTION_OVERMAP_JUMPTO "Bluespace Jump to Target System"
+#define INTERACTION_OVERMAP_JUMPTO "Jump to Next System?"
 
 //Used to end an interaction if a target object has them
 #define INTERACTION_OVERMAP_SELECTED "ERROR" //use this to end the interaction without failing

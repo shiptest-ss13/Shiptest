@@ -207,11 +207,6 @@
 	selfloop = planet.selfloop
 	interference_power = planet.interference_power
 
-	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
-		planet_name = "LV-[pick(rand(11111,99999))]"
-		token.icon_state = "sector"
-		Rename(planet_name)
-
 	alter_token_appearance()
 
 /datum/overmap/dynamic/alter_token_appearance()

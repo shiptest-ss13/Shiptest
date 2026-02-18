@@ -8,6 +8,12 @@ SUBSYSTEM_DEF(overmap)
 	/// All the existing star systems, it's gonna be atleast 1 including the main system
 	var/list/tracked_star_systems = list()
 
+	//outpost sectors
+	var/list/safe_sectors = list()
+
+	//wilderness sectors
+	var/list/wild_sectors = list()
+
 	///List of all overmap objects.
 	var/list/overmap_objects = list()
 	///List of all simulated ships. All ships in this list are fully initialized.
@@ -19,12 +25,6 @@ SUBSYSTEM_DEF(overmap)
 	var/list/dynamic_encounters  = list()
 	///List of all events
 	var/list/events = list()
-
-	/// The primary star system that holds the outpost
-	var/datum/overmap_star_system/safe_system
-
-	/// The secondary star system that allows planet spawns
-	var/datum/overmap_star_system/wild_system
 
 	///Should events be processed
 	var/events_enabled = TRUE
@@ -57,19 +57,29 @@ SUBSYSTEM_DEF(overmap)
 	dynamic_encounters = list()
 	events = list()
 
-	var/list/sector_types = pick(subtypesof(/datum/overmap_star_system/safezone))
+	var/list/primary_outpost_sector = pick(subtypesof(/datum/overmap_star_system/safezone))
+	var/list/secondary_outpost_sector = pick(subtypesof(/datum/overmap_star_system/safezone) - primary_outpost_sector)
+	var/list/wilderness_sector_types = pick(typesof(/datum/overmap_star_system/shiptest))
 
+	/* needs refactor for multi outpost
 	if(fexists(SAFEZONE_OVERRIDE_FILEPATH))
 		var/file_text = trim_right(file2text(SAFEZONE_OVERRIDE_FILEPATH)) // trim_right because there's often a trailing newline
 		var/datum/overmap_star_system/safezone/potential_type = text2path(file_text)
 		if(!potential_type || !ispath(potential_type, /datum/overmap_star_system/safezone))
 			stack_trace("SSovermap found an safezone override file at [SAFEZONE_OVERRIDE_FILEPATH], but was unable to find the system type [potential_type]!")
 		else
-			sector_types = potential_type
+			outpost_sector_types = potential_type
 		fdel(SAFEZONE_OVERRIDE_FILEPATH) // don't want it to affect 2 rounds in a row.
+	*/
 
-	safe_system = create_new_star_system(new sector_types)
-	wild_system = create_new_star_system (new /datum/overmap_star_system/shiptest)
+	//4 systems. Outpost-Wilderness-Outpost-Wilderness
+	tracked_star_systems[1] = create_new_star_system(new primary_outpost_sector)
+	tracked_star_systems[2] = create_new_star_system(new wilderness_sector_types)
+	tracked_star_systems[3] = create_new_star_system(new secondary_outpost_sector)
+	tracked_star_systems[4] = create_new_star_system(new wilderness_sector_types)
+
+	set_up_jump_points()
+
 	return ..()
 
 /datum/controller/subsystem/overmap/proc/spawn_new_star_system(datum/overmap_star_system/system_to_spawn=/datum/overmap_star_system)
@@ -89,6 +99,22 @@ SUBSYSTEM_DEF(overmap)
 				E.apply_effect()
 				if(MC_TICK_CHECK)
 					return
+
+/datum/controller/subsystem/overmap/proc/set_up_jump_points()
+	var/sector_size = length(tracked_star_systems)
+	if(sector_size!=4)
+		CRASH("Overmap attempted to generate [sector_size] sectors, but currently requires 4!")
+	var/list/jump_dirs = list(5, 6, 10, 9) //NE=>SE->SW->NW
+	for(var/i = 1, i <= sector_size, i++)
+		var/datum/overmap_star_system/source_system = tracked_star_systems[i]
+		var/datum/overmap_star_system/target_system
+		if(i==sector_size)
+			target_system = tracked_star_systems[1]
+		else
+			target_system = tracked_star_systems[i+1]
+		source_system.create_jump_point(target_system, jump_dirs[i])
+
+
 
 /**
  * Gets the parent overmap object (e.g. the planet the atom is on) for a given atom.
@@ -117,15 +143,15 @@ SUBSYSTEM_DEF(overmap)
 		if(our_outpost.mapzone?.is_in_bounds(source))
 			return our_outpost
 
-/datum/controller/subsystem/overmap/proc/get_main_outpost()
-	if(!length(outposts))
-		return "No outpost exists in this area of space."
-	return outposts[1]
+/datum/controller/subsystem/overmap/proc/get_outpost(datum/overmap_star_system/target_system)
+	if(!length(target_system.outposts))
+		return "No outpost exists in [target_system.name]."
+	return target_system.outposts[1]
 
-/datum/controller/subsystem/overmap/proc/get_main_outpost_coords()
-	if(!length(outposts))
-		return "No outpost exists in this area of space."
-	return "[outposts[1]?:x]-[outposts[1]?:y]"
+/datum/controller/subsystem/overmap/proc/get_outpost_coords(datum/overmap_star_system/target_system)
+	if(!length(target_system.outposts))
+		return "No outpost exists in [target_system.name]."
+	return "[target_system.outposts[1]?:x]-[target_system.outposts[1]?:y]"
 
 /datum/controller/subsystem/overmap/proc/ship_crew_percentage()
 	var/ship_percentages = 0
@@ -363,7 +389,7 @@ SUBSYSTEM_DEF(overmap)
 	var/overmap_icon_state = "overmap_dark"
 
 	//Can players bluespace jump to this sector? Recommended to be FALSE if this is a punchcard or for some event
-	var/can_jump_to = TRUE
+	var/can_jump_to = FALSE
 	//can our pallete be selected randomly roundstart? set to no for subtypes or if you dont change the pallete
 	var/can_be_selected_randomly = TRUE
 
@@ -406,7 +432,7 @@ SUBSYSTEM_DEF(overmap)
 	overmap_vlevel.current_systen = src
 	overmap_vlevel.reserve_margin(MAP_EDGE_PAD)
 	overmap_vlevel.fill_in(/turf/open/overmap, /area/overmap)
-	overmap_vlevel.selfloop()
+	//overmap_vlevel.selfloop()
 	var/area/our_area = get_area(OVERMAP_TOKEN_TURF(1, 1, src))
 
 	our_area.rename_area ("[our_area.name] ([name])")
@@ -884,13 +910,13 @@ SUBSYSTEM_DEF(overmap)
 		current_object.alter_token_appearance()
 
 /**
- * Creates 2 jump points to link an overmap to another one "naturally"
+ * Creates 2 jump points to link an overmap to another one bidirectionally
  * * destination_system - The destination system we want to connect us to [/datum/overmap_star_system].
  * * point_direction - The direction we spawn the jump point spawn in. In the target system we make one in the opposite direction.
  */
 //Returns the jump point in our system
 /datum/overmap_star_system/proc/create_jump_point_link(datum/overmap_star_system/destination_system, point_direction)
-	var/datum/overmap/jump_point/point2 = new(destination_system.get_overmap_edge(REVERSE_DIR(point_direction)), destination_system)
+	var/datum/overmap/jump_point/point2 = new(destination_system.get_overmap_edge(REVERSE_DIR(point_direction)), destination_system, TRUE)
 	point2.dir = REVERSE_DIR(point_direction)
 	var/datum/overmap/jump_point/point1 = new(get_overmap_edge(point_direction), src, point2)
 	point1.dir = point_direction
@@ -899,10 +925,22 @@ SUBSYSTEM_DEF(overmap)
 	return point1
 
 /**
+ * Creates 1 jump point to link an overmap to another one linearly.
+ * * destination_system - The destination system we want to connect us to [/datum/overmap_star_system].
+ * * point_direction - The direction we spawn the jump point spawn in.
+ */
+//Returns the jump point in our system
+/datum/overmap_star_system/proc/create_jump_point(datum/overmap_star_system/destination_system, point_direction)
+	var/datum/overmap/jump_point/point1 = new(get_overmap_edge(point_direction), src, destination_system)
+	point1.dir = point_direction
+	point1.alter_token_appearance()
+	return point1
+
+/**
  * Gets the edge of a star system
  * * dir - The direction we are getting the edge from.
  */
-//Returns the jump point in our system
+//Returns the edge as coordinates.
 /datum/overmap_star_system/proc/get_overmap_edge(dir)
 	var/center_coords = round(size / 2 + 1)
 

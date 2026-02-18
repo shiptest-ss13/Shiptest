@@ -103,22 +103,21 @@
 			SStgui.close_uis(src)
 		if(JUMP_STATE_CHARGING)
 			jump_state = JUMP_STATE_IONIZING
-			priority_announce("Bluespace Jump Calibration completed. Ionizing Bluespace Pylon.", sender_override = "[current_ship.name] Bluespace Pylon", zlevel = virtual_z())
+			say("Bluespace Jump Calibration completed. Ionizing Bluespace Pylon.")
 		if(JUMP_STATE_IONIZING)
 			jump_state = JUMP_STATE_FIRING
-			priority_announce("Bluespace Ionization finalized; preparing to fire Bluespace Pylon.", sender_override = "[current_ship.name] Bluespace Pylon", zlevel = virtual_z())
+			say("Bluespace Ionization finalized; preparing to fire Bluespace Pylon.")
 		if(JUMP_STATE_FIRING)
 			jump_state = JUMP_STATE_FINALIZED
-			priority_announce("Bluespace Pylon launched.", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightning_chargeup.ogg', zlevel = virtual_z())
+			say("Bluespace Pylon launched.")
 			addtimer(CALLBACK(src, PROC_REF(do_jump)), 10 SECONDS)
 			return
 	jump_timer = addtimer(CALLBACK(src, PROC_REF(jump_sequence), TRUE), JUMP_CHARGE_DELAY, TIMER_STOPPABLE)
 
 /obj/machinery/computer/helm/proc/do_jump()
-	if(jump_destination)
-		priority_announce("Bluespace Jump Initiated. Welcome to [jump_destination.name]", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightningbolt.ogg', zlevel = virtual_z())
-	else
-		priority_announce("Bluespace Jump Initiated.", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightningbolt.ogg', zlevel = virtual_z())
+	for(var/mob/Mob as anything in GLOB.player_list)
+		if(current_ship.shuttle_port.is_in_shuttle_bounds(Mob))
+			jump_announcement(jump_destination ? "Bluespace Jump Completed. Welcome to [jump_destination.name]" : "Bluespace Jump Completed", current_ship.name, Mob)
 	if(!jump_destination)
 		qdel(current_ship)
 		return
@@ -130,6 +129,13 @@
 	jump_state = JUMP_STATE_OFF
 	jump_coords = null
 	calibrating = FALSE
+
+/obj/machinery/computer/helm/proc/jump_announcement(message, title = "Attention:", mob/living/from)
+	if(!message)
+		return
+	from.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[jump_destination.name]</u></span><br>[station_time_timestamp("hh:mm")]")
+	to_chat(from, "[span_minorannounce("<font color = red>[title]</font color><BR>[message]")]<BR>")
+	playsound(from, 'sound/effects/overmap/jump.ogg', 50)
 
 /obj/machinery/computer/helm/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	if(!viewer)

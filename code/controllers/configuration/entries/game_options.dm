@@ -373,7 +373,7 @@
 	min_val = 0
 
 /datum/config_entry/number/max_overmap_event_clusters
-	config_entry_value = 10
+	config_entry_value = 3
 
 /datum/config_entry/number/max_overmap_events
 	config_entry_value = 150
@@ -385,17 +385,13 @@
 	config_entry_value = "solar_system"
 
 /datum/config_entry/number/overmap_size
-	config_entry_value = 30
+	config_entry_value = 15
 	min_val = 1
 
 /datum/config_entry/number/overmap_encounter_size
 	max_val = 255
-	config_entry_value = 127
-	min_val = 127
-
-/datum/config_entry/number/max_dynamic_missions
-	config_entry_value = 0.66
-	min_val = 0
+	config_entry_value = 255
+	min_val = 255
 
 /datum/config_entry/number/commendation_percent_poll
 	integer = FALSE
