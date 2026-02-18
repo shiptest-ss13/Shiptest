@@ -932,7 +932,7 @@ SUBSYSTEM_DEF(overmap)
 
 	return list("x" = edge_x, "y" = edge_y)
 
-//exports current star system to json, mean to l oad with
+//exports current star system to json, meant to load with
 /datum/overmap_star_system/proc/export_to_json()
 	var/list/file_data = list()
 	file_data["system_info"] =  list()
@@ -949,6 +949,20 @@ SUBSYSTEM_DEF(overmap)
 	system_data["max_overmap_dynamic_events"] = max_overmap_dynamic_events
 	system_data["faction"] = faction
 	system_data["dynamic_probabilities"] = dynamic_probabilities
+	system_data["can_jump_to"] = can_jump_to
+
+	//overmap color stuff
+	system_data["override_object_colors"] = override_object_colors
+
+	system_data["primary_color"] = primary_color
+	system_data["secondary_color"] = secondary_color
+	system_data["hazard_primary_color"] = hazard_primary_color
+	system_data["hazard_secondary_color"] = hazard_secondary_color
+	system_data["primary_structure_color"] = primary_structure_color
+	system_data["secondary_structure_color"] = secondary_structure_color
+
+	system_data["overmap_icon_state"] = overmap_icon_state
+
 
 	for(var/datum/overmap/current_object as anything in overmap_objects)
 		//dont save limited lifetime events
@@ -956,7 +970,7 @@ SUBSYSTEM_DEF(overmap)
 			continue
 		var/count = (objects_data.len + 1)
 		objects_data["[current_object.type]_[count]"] = list()
-		var/list/current_data = objects_data["[count]"]
+		var/list/current_data = objects_data["[current_object.type]_[count]"]
 		current_data["type"] = current_object.type
 
 		//if we arent an hazard, save the name and desc
@@ -968,7 +982,7 @@ SUBSYSTEM_DEF(overmap)
 
 		//custom handling for dynamic events
 		if(istype(current_object, /datum/overmap/dynamic))
-			var/datum/overmap/dynamic/current_dynamic
+			var/datum/overmap/dynamic/current_dynamic = current_object
 			current_data["force_encounter"] = current_dynamic.force_encounter ? current_dynamic.force_encounter : current_dynamic.planet.type
 			current_data["preserve_level"] = current_dynamic.preserve_level
 			current_data["planet_name"] = current_dynamic.planet_name
@@ -976,7 +990,7 @@ SUBSYSTEM_DEF(overmap)
 
 
 
-		current_data["X"] = current_object.x
+		current_data["x"] = current_object.x
 		current_data["y"] = current_object.y
 
 	var/json_file = file("data/exported-starsystem.json")
@@ -988,10 +1002,81 @@ SUBSYSTEM_DEF(overmap)
 	//sends the file via ftp
 	usr << ftp(json_file)
 	fdel(json_file)
-	alert("Area saved successfully.", "Action Successful!", "Ok")
+	alert("Star system saved successfully.", "Action Successful!", "Ok")
 
+/datum/overmap_star_system
+	var/list/exported
 
+/datum/overmap_star_system/proc/import_from_json(json_file)
+	var/json_file
 
+	if(!json_file)
+		json_file = input(usr, "Choose a star system to import","Upload Map Template") as null|file
+
+	if(!json_file)
+		return
+	var/list/file_data = json_decode(file2text(json_file))
+	//to see how things happened
+	exported = file_data
+	var/list/system_data = file_data["system_info"]
+	var/list/objects_data = file_data["objects"]
+
+	var/list/save_names = list(/datum/overmap/outpost, /datum/overmap/static_object, /datum/overmap/dynamic)
+
+	// reapply the sector parameters data
+	name = system_data["name"]
+	starname = system_data["starname"]
+	startype = system_data["startype"]
+	size = system_data["size"]
+	max_overmap_dynamic_events = system_data["max_overmap_dynamic_events"]
+	faction = system_data["faction"]
+	dynamic_probabilities = system_data["dynamic_probabilities"]
+	can_jump_to = system_data["can_jump_to"]
+
+	//overmap color stuff
+	override_object_colors = system_data["override_object_colors"]
+
+	primary_color = system_data["primary_color"]
+	secondary_color = system_data["secondary_color"]
+	hazard_primary_color = system_data["hazard_primary_color"]
+	hazard_secondary_color = system_data["hazard_secondary_color"]
+	primary_structure_color = system_data["primary_structure_color"]
+	secondary_structure_color = system_data["secondary_structure_color"]
+
+	overmap_icon_state = system_data["overmap_icon_state"]
+
+	for(var/current_object as anything in objects_data)
+
+		var/datum/overmap/obj_typepath
+
+		var/list/current_data = objects_data["[current_object]"]
+		var/list/coords = list("x" = current_data["x"], "y" = current_data["y"])
+		if(!current_data["x"] || !current_data["y"])
+			continue
+
+		obj_typepath = current_data["type"]
+
+		var/datum/overmap/new_obj = new obj_typepath(coords, src)
+
+		//custom handling for dynamic events
+		if(istype(obj_typepath, /datum/overmap/dynamic))
+			var/datum/overmap/dynamic/current_dynamic = new_obj
+			current_dynamic.force_encounter = current_data["force_encounter"]
+			current_dynamic.preserve_level = current_data["preserve_level"]
+			current_dynamic.planet_name = current_data["planet_name"]
+			current_dynamic.selected_ruin = current_data["selected_ruin"]
+			current_dynamic.choose_level_type()
+
+		//load names and desc, if any
+		if(current_data["name"])
+			new_obj.name = current_data["name"]
+		if(current_data["desc"])
+			new_obj.desc = current_data["desc"]
+
+		new_obj.alter_token_appearance()
+
+	//https://github.com/BeeStation/NSV13/blob/5f66318e4560efa01ac839b48e9e9929f52d7275/nsv13/code/controllers/subsystem/starsystem.dm#L140
+	//https://github.com/tgstation/tgstation/blob/d7eada0ebcf4ad37dca2283b201823e47a154fb5/code/modules/mob/living/basic/pets/parrot/poly.dm#L130
 
 
 //meant to be a duplicate of default to be selectable in the spawn menu
