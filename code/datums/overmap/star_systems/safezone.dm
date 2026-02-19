@@ -32,7 +32,6 @@
 	primary_structure_color = "#83db2b"
 	secondary_structure_color = "#21a52e"
 
-	override_object_colors = TRUE
 	overmap_icon_state = "overmap_dark"
 
 /datum/overmap_star_system/safezone/arrowsong
@@ -50,7 +49,6 @@
 	primary_structure_color = "#97dfe8"
 	secondary_structure_color = "#6fa8de"
 
-	override_object_colors = TRUE
 	overmap_icon_state = "overmap_dark"
 
 /datum/overmap_star_system/safezone/trifuge
@@ -68,15 +66,14 @@
 	primary_structure_color = "#ffffff"
 	secondary_structure_color = "#ffffff"
 
-	override_object_colors = TRUE
 	overmap_icon_state = "overmap"
 
 	entry_quotes = list(
 		"Welcome to the Minya League.",
 		"Installation Trifuge recieving... welcome home.",
-		"Bluespace wake registered. Welcome back."
-		"Watch the skies. Aubaine's bright today."
-		"Someone just lost a bet."
+		"Bluespace wake registered. Welcome back.",
+		"Watch the skies. Aubaine's bright today.",
+		"Someone just lost a bet.",
 	)
 
 /datum/overmap_star_system/safezone/yebiri
@@ -94,7 +91,6 @@
 	primary_structure_color = "#4272db"
 	secondary_structure_color = "#38a0eb"
 
-	override_object_colors = TRUE
 	overmap_icon_state = "overmap_dark"
 
 /datum/overmap_star_system/safezone/thousand_eyes
@@ -112,12 +108,10 @@
 	primary_structure_color = "#ffffff"
 	secondary_structure_color = "#ffffff"
 
-	override_object_colors = TRUE
-	overmap_icon_state = "overmap"
 	entry_quotes = list(
-		"One Thousand Eyes watch over you."
-		"Cybersun is not liable for damage caused by stellar objects in-system."
-		"Weather on the Perch is safe for now."
-		"Follow the buoys. Don't get lost."
+		"One Thousand Eyes watch over you.",
+		"Cybersun is not liable for damage caused by stellar objects in-system.",
+		"Weather on the Perch is safe for now.",
+		"Follow the buoys. Don't get lost.",
 		"Cybersun welcomes you to Thousand Eyes Perch."
 	)

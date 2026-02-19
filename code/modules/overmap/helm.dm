@@ -115,9 +115,10 @@
 	jump_timer = addtimer(CALLBACK(src, PROC_REF(jump_sequence), TRUE), JUMP_CHARGE_DELAY, TIMER_STOPPABLE)
 
 /obj/machinery/computer/helm/proc/do_jump()
-	for(var/mob/Mob as anything in GLOB.player_list)
-		if(current_ship.shuttle_port.is_in_shuttle_bounds(Mob))
-			jump_announcement(jump_destination ? "Bluespace Jump Completed. Welcome to [jump_destination.name]" : "Bluespace Jump Completed", current_ship.name, Mob)
+	var/quote = pick(jump_destination.entry_quotes)
+	for(var/mob/looker as anything in GLOB.player_list)
+		if(current_ship.shuttle_port.is_in_shuttle_bounds(looker))
+			jump_announcement(jump_destination ? "Bluespace Jump Completed. Welcome to [jump_destination.name]" : "Bluespace Jump Completed", quote, current_ship.name, looker)
 	if(!jump_destination)
 		qdel(current_ship)
 		return
@@ -130,10 +131,10 @@
 	jump_coords = null
 	calibrating = FALSE
 
-/obj/machinery/computer/helm/proc/jump_announcement(message, title = "Attention:", mob/living/target)
+/obj/machinery/computer/helm/proc/jump_announcement(message, quote, title = "Attention:", mob/living/target)
 	if(!message)
 		return
-	target.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[jump_destination.name]</u></span><br>[station_time_timestamp("hh:mm")]")
+	target.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[jump_destination.name]</u></span><br>[station_time_timestamp("hh:mm")]<br>[quote]")
 	to_chat(target, "[span_minorannounce("<font color = red>[title]</font color><BR>[message]")]<BR>")
 	playsound(target, 'sound/effects/overmap/jump.ogg', 50)
 

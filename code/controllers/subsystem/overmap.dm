@@ -59,7 +59,7 @@ SUBSYSTEM_DEF(overmap)
 
 	var/list/primary_outpost_sector = pick(subtypesof(/datum/overmap_star_system/safezone))
 	var/list/secondary_outpost_sector = pick(subtypesof(/datum/overmap_star_system/safezone) - primary_outpost_sector)
-	var/list/wilderness_sector_types = pick(typesof(/datum/overmap_star_system/shiptest))
+	var/list/wilderness_sector_types = pick(typesof(/datum/overmap_star_system/wilderness))
 
 	/* needs refactor for multi outpost
 	if(fexists(SAFEZONE_OVERRIDE_FILEPATH))

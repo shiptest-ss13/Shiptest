@@ -10,7 +10,8 @@
 		"..return to the garden..",
 		"..treasure and riches untold..",
 		"..back in the saddle..",
-		"..tearing through the ashes.."
+		"..tearing through the ashes..",
+		"..burn bright, burn fast..",
 	)
 
 /datum/overmap_star_system/wilderness/create_map()
