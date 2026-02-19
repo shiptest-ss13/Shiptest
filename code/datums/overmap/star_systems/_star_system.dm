@@ -48,15 +48,15 @@
 
 	//fancy color shit! yayyyyy!
 
-	//main colors, used for dockable terrestrials, and background
+	///main colors, used for dockable terrestrials, and background
 	var/primary_color = "#D8D8D8"
 	var/secondary_color = "#3a3f85"
 
-	//hazard colors, used for the overmap hazards and sun
+	///hazard colors, used for the overmap hazards and sun
 	var/hazard_primary_color = null //this should take the color of the sun if not defined, which we want for generic sectors
 	var/hazard_secondary_color = "#9D96AD"
 
-	//structure colors, used for ships and outposts/colonies
+	///structure colors, used for ships and outposts/colonies
 	var/primary_structure_color = "#FFFFFF"
 	var/secondary_structure_color = "#FFFFFF"
 
@@ -75,6 +75,10 @@
 
 	/// Datum type for the main outpost spawned here
 	var/default_outpost_type
+
+	///Quotes to show to players when entering this sector via jump.
+	//try to populate this list with at least 5 examples.
+	var/list/entry_quotes = list()
 
 	COOLDOWN_DECLARE(dynamic_despawn_cooldown)
 

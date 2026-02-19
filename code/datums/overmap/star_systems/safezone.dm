@@ -2,15 +2,12 @@
 	name = "Lymantria Teagarden Memorial sector"
 	has_outpost = TRUE
 
-	//main colors, used for dockable terrestrials, and background
 	primary_color = "#ffffdf"
 	secondary_color = "#828282"
 
-	//hazard colors, used for the overmap hazards and sun
 	hazard_primary_color = "#a2b210"
 	hazard_secondary_color = "#5757c5"
 
-	//structure colors, used for ships and outposts/colonies
 	primary_structure_color = "#fbaa51"
 	secondary_structure_color = "#fb1010"
 
@@ -26,15 +23,12 @@
 	startype = /datum/overmap/star/dwarf
 	default_outpost_type = /datum/overmap/outpost/ngr_rock
 
-	//main colors, used for dockable terrestrials, and background
 	primary_color = "#d9ad82"
 	secondary_color = "#c48c60"
 
-	//hazard colors, used for the overmap hazards and sun
 	hazard_primary_color = "#c13623"
 	hazard_secondary_color = "#943a43"
 
-	//structure colors, used for ships and outposts/colonies
 	primary_structure_color = "#83db2b"
 	secondary_structure_color = "#21a52e"
 
@@ -47,15 +41,12 @@
 	startype = /datum/overmap/star/dwarf/orange
 	default_outpost_type = /datum/overmap/outpost/clip_ocean
 
-	//main colors, used for dockable terrestrials, and background
 	primary_color = "#6fa8de"
 	secondary_color = "#96b6d4"
 
-	//hazard colors, used for the overmap hazards and sun
 	hazard_primary_color = "#d5e3f0"
 	hazard_secondary_color = "#96a6b5"
 
-	//structure colors, used for ships and outposts/colonies
 	primary_structure_color = "#97dfe8"
 	secondary_structure_color = "#6fa8de"
 
@@ -68,20 +59,25 @@
 	startype = /datum/overmap/star/medium
 	default_outpost_type = /datum/overmap/outpost/indie_space
 
-	//main colors, used for dockable terrestrials, and background
 	primary_color = "#5e5e5e"
 	secondary_color = "#242424"
 
-	//hazard colors, used for the overmap hazards and sun
 	hazard_primary_color = "#b56060"
 	hazard_secondary_color = "#824242"
 
-	//structure colors, used for ships and outposts/colonies
 	primary_structure_color = "#ffffff"
 	secondary_structure_color = "#ffffff"
 
 	override_object_colors = TRUE
 	overmap_icon_state = "overmap"
+
+	entry_quotes = list(
+		"Welcome to the Minya League.",
+		"Installation Trifuge recieving... welcome home.",
+		"Bluespace wake registered. Welcome back."
+		"Watch the skies. Aubaine's bright today."
+		"Someone just lost a bet."
+	)
 
 /datum/overmap_star_system/safezone/yebiri
 	name = "Nanotrasen Controlled - Persei-277"
@@ -89,15 +85,12 @@
 	startype = /datum/overmap/star/medium
 	default_outpost_type = /datum/overmap/outpost/nanotrasen_ice
 
-	//main colors, used for dockable terrestrials, and background
 	primary_color = "#7e8cd9"
 	secondary_color = "#33324a"
 
-	//hazard colors, used for the overmap hazards and sun
 	hazard_primary_color = "#ededed"
 	hazard_secondary_color = "#7f7db0"
 
-	//structure colors, used for ships and outposts/colonies
 	primary_structure_color = "#4272db"
 	secondary_structure_color = "#38a0eb"
 
@@ -121,3 +114,10 @@
 
 	override_object_colors = TRUE
 	overmap_icon_state = "overmap"
+	entry_quotes = list(
+		"One Thousand Eyes watch over you."
+		"Cybersun is not liable for damage caused by stellar objects in-system."
+		"Weather on the Perch is safe for now."
+		"Follow the buoys. Don't get lost."
+		"Cybersun welcomes you to Thousand Eyes Perch."
+	)
