@@ -203,7 +203,7 @@
 	mapgen = planet.mapgen
 	weather_controller_type = planet.weather_controller_type
 	landing_sound = planet.landing_sound
-	preserve_level = planet.preserve_level //it came to me while I was looking at chickens
+	preserve_level = planet.preserve_level
 	selfloop = planet.selfloop
 	interference_power = planet.interference_power
 

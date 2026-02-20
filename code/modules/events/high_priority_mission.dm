@@ -15,7 +15,7 @@
 	var/datum/overmap/outpost/target_outpost
 
 /datum/round_event/high_priority_mission/announce()
-	priority_announce("[target_outpost.main_template.outpost_administrator] has issued a series of high priority missions. Details are available at [target_outpost].", "[target_outpost] Mission Program", null, sender_override = "[target_outpost] Communications")
+	priority_announce("[target_outpost.outpost_administrator] has issued a series of high priority missions. Details are available at [target_outpost].", "[target_outpost] Mission Program", null, sender_override = "[target_outpost] Communications")
 
 /datum/round_event/high_priority_mission/setup()
 	target_outpost = pick(SSovermap.outposts)

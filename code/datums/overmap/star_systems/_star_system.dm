@@ -38,13 +38,40 @@
 	var/max_overmap_dynamic_events
 	///Do we have a outpost in this system?
 	var/has_outpost = FALSE
-	///The abliltiy for the system to automaticly spawn and despawn dynamic encounters
+	///The ablilty for the system to automaticly spawn and despawn dynamic encounters
 	var/encounters_refresh = FALSE
 	/// Our faction of the outpost
 	var/faction
 
 	///the list of dynamic planets that can spawn in this sector
-	var/list/dynamic_probabilities
+	var/list/dynamic_probabilities = list(
+		DYNAMIC_WORLD_LAVA = 40,
+		DYNAMIC_WORLD_ICE = 40,
+		DYNAMIC_WORLD_SAND = 40,
+		DYNAMIC_WORLD_JUNGLE = 40,
+		DYNAMIC_WORLD_ROCKPLANET = 40,
+		DYNAMIC_WORLD_BEACHPLANET = 40,
+		DYNAMIC_WORLD_WASTEPLANET = 40,
+		DYNAMIC_WORLD_SPACERUIN = 40,
+		DYNAMIC_WORLD_MOON = 20
+	)
+
+	///weighted list of events that this system type can spawn during creation.
+	var/list/event_probabilities = list(
+		/datum/overmap/event/wormhole = 10,
+		/datum/overmap/event/nebula = 60,
+		/datum/overmap/event/electric/minor = 45,
+		/datum/overmap/event/electric = 40,
+		/datum/overmap/event/electric/major = 35,
+		/datum/overmap/event/meteor/minor = 45,
+		/datum/overmap/event/meteor = 40,
+		/datum/overmap/event/meteor/major = 35,
+		/datum/overmap/event/meteor/carp/minor = 45,
+		/datum/overmap/event/meteor/carp = 35,
+		/datum/overmap/event/meteor/carp/major = 20,
+		/datum/overmap/event/meteor/dust = 50,
+		/datum/overmap/event/anomaly = 10
+	)
 
 	//fancy color shit! yayyyyy!
 
@@ -74,7 +101,7 @@
 	var/can_be_selected_randomly = TRUE
 
 	/// Datum type for the main outpost spawned here
-	var/default_outpost_type
+	var/datum/overmap/outpost/default_outpost_type
 
 	///Quotes to show to players when entering this sector via jump.
 	//try to populate this list with at least 5 examples.
@@ -95,11 +122,6 @@
 	controlled_ships = list()
 	outposts = list()
 	events = list()
-
-	if(isnull(dynamic_probabilities))
-		dynamic_probabilities = list()
-		for(var/datum/planet_type/planet_type as anything in subtypesof(/datum/planet_type))
-			dynamic_probabilities[initial(planet_type.planet)] = initial(planet_type.weight)
 
 	if(!generator_type)
 		generator_type = CONFIG_GET(string/overmap_generator_type)
@@ -131,7 +153,7 @@
 	if ((generator_type == OVERMAP_GENERATOR_SOLAR) || (generator_type == OVERMAP_GENERATOR_RANDOM))
 		var/datum/overmap/star/center
 		if(!startype)
-			startype = pick(subtypesof(/datum/overmap/star))
+			startype = pick(subtypesof(/datum/overmap/star) - /datum/overmap/star/singularity)
 		center = new startype(list("x" = round(size / 2 + 1), "y" = round(size / 2 + 1)), src)
 		if(starname)
 			center.name = starname
@@ -202,7 +224,7 @@
 			return
 		if(!length(orbits))
 			break // Can't fit any more in
-		var/event_type = pick_weight(GLOB.overmap_event_pick_list)
+		var/event_type = pick_weight(event_probabilities)
 		var/selected_orbit = pick(orbits)
 
 		var/list/T = get_unused_overmap_square_in_radius(selected_orbit)

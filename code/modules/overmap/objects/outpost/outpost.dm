@@ -55,11 +55,18 @@
 
 	var/datum/cargo_market/outpost/market
 
-	/// Our faction of the outpost
+	/// The faction of the outpost
 	var/datum/faction/faction
 	/// simple var that toggles the flag on/off, neant for eventing purposes
 	var/flag_overlay = TRUE
-	var/outpost_name
+
+	///Official name of the outpost, used for announcements and the like.
+	var/outpost_name = "Fallback Outpost"
+	///Who 'runs' the outpost, used for announcements.
+	var/outpost_administrator = "Fallback Administration"
+
+	///Can this outpost be selected as a spawning location during ship spawn?
+	var/valid_spawn_location = FALSE
 
 /datum/overmap/outpost/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
 	. = ..()
@@ -144,8 +151,8 @@
 
 // Shamelessly cribbed from how Elite: Dangerous does station names.
 /datum/overmap/outpost/proc/gen_outpost_name()
-	if(main_template?.outpost_name)
-		return "[main_template.outpost_name]"
+	if(outpost_name)
+		return "[outpost_name]"
 	return "[random_species_name()] [pick(GLOB.station_suffixes)]"
 
 /proc/random_species_name()

@@ -59,7 +59,7 @@ SUBSYSTEM_DEF(overmap)
 
 	var/list/primary_outpost_sector = pick(subtypesof(/datum/overmap_star_system/safezone))
 	var/list/secondary_outpost_sector = pick(subtypesof(/datum/overmap_star_system/safezone) - primary_outpost_sector)
-	var/list/wilderness_sector_types = pick(typesof(/datum/overmap_star_system/wilderness))
+	var/list/wilderness_sector_types = typesof(/datum/overmap_star_system/wilderness)
 
 	/* needs refactor for multi outpost
 	if(fexists(SAFEZONE_OVERRIDE_FILEPATH))
@@ -73,10 +73,14 @@ SUBSYSTEM_DEF(overmap)
 	*/
 
 	//4 systems. Outpost-Wilderness-Outpost-Wilderness
-	tracked_star_systems[1] = create_new_star_system(new primary_outpost_sector)
-	tracked_star_systems[2] = create_new_star_system(new wilderness_sector_types)
-	tracked_star_systems[3] = create_new_star_system(new secondary_outpost_sector)
-	tracked_star_systems[4] = create_new_star_system(new wilderness_sector_types)
+	tracked_star_systems[1] = spawn_new_star_system(primary_outpost_sector)
+	safe_sectors += tracked_star_systems[1]
+	tracked_star_systems[2] = spawn_new_star_system(pick(wilderness_sector_types))
+	wild_sectors += tracked_star_systems[2]
+	tracked_star_systems[3] = spawn_new_star_system(secondary_outpost_sector)
+	safe_sectors += tracked_star_systems[3]
+	tracked_star_systems[4] = spawn_new_star_system(pick(wilderness_sector_types))
+	wild_sectors += tracked_star_systems[4]
 
 	set_up_jump_points()
 
@@ -259,6 +263,12 @@ SUBSYSTEM_DEF(overmap)
 	outposts = SSovermap.outposts
 	tracked_star_systems = SSovermap.tracked_star_systems
 
+/datum/controller/subsystem/overmap/proc/get_spawn_outposts()
+	var/list/valid_outposts
+	for(var/datum/overmap/outpost/outpost in outposts)
+		if(outpost.valid_spawn_location)
+			valid_outposts += outpost
+	return valid_outposts
 
 /datum/controller/subsystem/overmap/proc/get_random_star_system()
 	if(length(tracked_star_systems) >= 1) //if theres only one star system, why bother?

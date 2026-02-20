@@ -544,22 +544,6 @@
 		if(S.shuttle_port.is_in_shuttle_bounds(M))
 			M.playsound_local(M, 'sound/effects/bamf.ogg', 100)
 
-GLOBAL_LIST_INIT(overmap_event_pick_list, list(
-	/datum/overmap/event/wormhole = 10,
-	/datum/overmap/event/nebula = 60,
-	/datum/overmap/event/electric/minor = 45,
-	/datum/overmap/event/electric = 40,
-	/datum/overmap/event/electric/major = 35,
-	/datum/overmap/event/meteor/minor = 45,
-	/datum/overmap/event/meteor = 40,
-	/datum/overmap/event/meteor/major = 35,
-	/datum/overmap/event/meteor/carp/minor = 45,
-	/datum/overmap/event/meteor/carp = 35,
-	/datum/overmap/event/meteor/carp/major = 20,
-	/datum/overmap/event/meteor/dust = 50,
-	/datum/overmap/event/anomaly = 10
-))
-
 ///RADIATION STORM - explodes your organics
 /datum/overmap/event/rad
 	name = "radiation storm (moderate)"
@@ -610,7 +594,7 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 
 
 
-///METEOR STORMS - explodes your ship if you go too fast
+///DEBRIS FIELDS - explodes your ship if you go too fast
 /datum/overmap/event/meteor/debris
 	name = "debris field (moderate)"
 	desc = "An area full of scrap metal, going fast through here could prove dangerous"

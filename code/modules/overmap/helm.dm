@@ -134,7 +134,7 @@
 /obj/machinery/computer/helm/proc/jump_announcement(message, quote, title = "Attention:", mob/living/target)
 	if(!message)
 		return
-	target.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[jump_destination.name]</u></span><br>[station_time_timestamp("hh:mm")]<br>[quote]")
+	target.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[jump_destination.name]</u></span><br>[station_time_timestamp("hh:mm")]<br><i>\"[quote]\"</i>")
 	to_chat(target, "[span_minorannounce("<font color = red>[title]</font color><BR>[message]")]<BR>")
 	playsound(target, 'sound/effects/overmap/jump.ogg', 50)
 

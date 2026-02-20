@@ -16,6 +16,16 @@
 
 	max_overmap_dynamic_events = 0
 
+	//this matters less for static outposts but it is a nice fallback.
+	event_probabilities = list(
+		/datum/overmap/event/nebula = 60,
+		/datum/overmap/event/electric/minor = 45,
+		/datum/overmap/event/electric = 40,
+		/datum/overmap/event/meteor/minor = 45,
+		/datum/overmap/event/meteor = 40,
+		/datum/overmap/event/meteor/dust = 50,
+	)
+
 
 /datum/overmap_star_system/safezone/agni
 	name = "Gorlex Controlled - Value of Public Works"

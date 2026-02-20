@@ -20,26 +20,25 @@
 //Amount of times the overmap generator will attempt to place something before giving up
 #define MAX_OVERMAP_PLACEMENT_ATTEMPTS 5
 
-//I belive these are redundant now? No reason to use these, maybe remove?
+
 //Possible dynamic encounter types
-#define DYNAMIC_WORLD_LAVA "lava" //base planets
+#define DYNAMIC_WORLD_LAVA "lava"
 #define DYNAMIC_WORLD_ICE "ice"
 #define DYNAMIC_WORLD_SAND "sand"
 #define DYNAMIC_WORLD_JUNGLE "jungle"
-
-#define DYNAMIC_WORLD_ROCKPLANET "rockplanet" //wacky planets
+#define DYNAMIC_WORLD_ROCKPLANET "rockplanet"
 #define DYNAMIC_WORLD_BEACHPLANET "beachplanet"
 #define DYNAMIC_WORLD_WASTEPLANET "wasteplanet"
+#define DYNAMIC_WORLD_MOON "moon"
 
+//spawnable but unused dynamic encounter types
 #define DYNAMIC_WORLD_WATERPLANET "waterplanet" //minor planets
 #define DYNAMIC_WORLD_DESERT "desertplanet"
 #define DYNAMIC_WORLD_SHROUDED "shroudedplanet"
 #define DYNAMIC_WORLD_BATTLEFIELD "battlefieldplanet"
-#define DYNAMIC_WORLD_BLOBPLANET "blobplanet"
 #define DYNAMIC_WORLD_SNOWBALL "snowball"
 #define DYNAMIC_WORLD_DUSTBALL "dustball"
 #define DYNAMIC_WORLD_SUPERFLAT "superflat"
-#define DYNAMIC_WORLD_MOON "moon"
 
 #define DYNAMIC_WORLD_REEBE "reebe" //celestial bodies
 #define DYNAMIC_WORLD_ASTEROID "asteroid"

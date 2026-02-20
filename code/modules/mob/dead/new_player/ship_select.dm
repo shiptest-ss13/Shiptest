@@ -110,17 +110,18 @@
 			var/ship_loc
 			var/datum/overmap_star_system/selected_system //the star system we want to spawn in
 
-			/*
-			if(length(SSovermap.outposts) > 1)
-				var/datum/overmap/outpost/temp_loc = input(spawnee, "Select outpost to spawn at") as null|anything in SSovermap.outposts
+			var/list/valid_spawns = SSovermap.get_spawn_outposts()
+
+			if(valid_spawns > 1)
+				var/datum/overmap/outpost/temp_loc = input(spawnee, "Select outpost to spawn at") as null|anything in valid_spawns
 				if(!temp_loc)
 					return
 				selected_system = temp_loc.current_overmap
 				ship_loc = temp_loc
-			*/
 
-			ship_loc = SSovermap.outposts[1]
-			selected_system = SSovermap.tracked_star_systems[1]
+			else
+				ship_loc = SSovermap.outposts[1]
+				selected_system = SSovermap.tracked_star_systems[1]
 
 			if(!selected_system)
 				CRASH("Ship attemped to be bought at spawn menu, but spawning outpost was not selected! This is bad!") //if selected_system didnt get selected, we nope out, this is very bad

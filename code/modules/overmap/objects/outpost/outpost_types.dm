@@ -8,8 +8,7 @@
 	// (Interestingly, this is much less of a problem for ruins: PlaceOnTop ignores the top closed turf in the baseturfs stack
 	// of the new tile, meaning that placing plating on top of a wall doesn't result in a wall underneath the plating.)
 	should_place_on_top = FALSE
-	var/outpost_name = "Fallback Outpost"
-	var/outpost_administrator = "Fallback Administration"
+
 
 /datum/map_template/outpost/New()
 	. = ..(path = "_maps/outpost/[name].dmm")
@@ -41,8 +40,7 @@
 */
 /datum/map_template/outpost/indie_space
 	name = "indie_space"
-	outpost_name = "Installation Trifuge"
-	outpost_administrator = "Caldwell"
+
 
 /datum/map_template/outpost/hangar/indie_space_20x20
 	name = "hangar/indie_space_20x20"
@@ -74,8 +72,7 @@
 */
 /datum/map_template/outpost/nanotrasen_ice
 	name = "nanotrasen_ice"
-	outpost_name = "Yebiri Sipili"
-	outpost_administrator = "Nanotrasen Authorities"
+
 
 /datum/map_template/outpost/hangar/nt_ice_20x20
 	name = "hangar/nt_ice_20x20"
@@ -107,8 +104,7 @@
 */
 /datum/map_template/outpost/ngr_rock
 	name = "ngr_rock"
-	outpost_name = "Agni Trading Post"
-	outpost_administrator = "The NGR Bureau Of Development"
+
 
 /datum/map_template/outpost/hangar/ngr_rock_20x20
 	name = "hangar/ngr_rock_20x20"
@@ -140,8 +136,7 @@
 */
 /datum/map_template/outpost/clip_ocean
 	name = "clip_ocean"
-	outpost_name = "Arrowsong Refueling Platform"
-	outpost_administrator = "The Arrowsong Executive Council"
+
 
 /datum/map_template/outpost/hangar/clip_ocean_20x20
 	name = "hangar/clip_ocean_20x20"
@@ -171,8 +166,7 @@
 //Cybersun Gas Giant
 /datum/map_template/outpost/cybersun_gas_giant
 	name = "cybersun_gas_giant"
-	outpost_name = "Thousand Eyes Perch"
-	outpost_administrator = "Cybersun Frontier Developments"
+
 
 /datum/map_template/outpost/hangar/cybersun_gas_giant_20x20
 	name = "hangar/cybersun_gas_giant_20x20"
@@ -208,6 +202,9 @@
 	main_template = /datum/map_template/outpost/indie_space
 	elevator_template = /datum/map_template/outpost/elevator_indie
 	faction = FACTION_INDEPENDENT
+
+	outpost_name = "Installation Trifuge"
+	outpost_administrator = "Caldwell"
 	// Uses "default" hangars (indie_space).
 
 /datum/overmap/outpost/nanotrasen_ice
@@ -223,7 +220,9 @@
 		/datum/map_template/outpost/hangar/nt_ice_56x20,
 		/datum/map_template/outpost/hangar/nt_ice_56x40
 	)
-	faction = /datum/faction/nt
+
+	outpost_name = "Yebiri Sipili"
+	outpost_administrator = "Nanotrasen Authorities"
 
 /datum/overmap/outpost/ngr_rock
 	token_icon_state = "station_asteroid"
@@ -238,6 +237,9 @@
 		/datum/map_template/outpost/hangar/ngr_rock_56x40
 	)
 
+	outpost_name = "Agni Trading Post"
+	outpost_administrator = "The NGR Bureau Of Development"
+
 /datum/overmap/outpost/clip_ocean
 	token_icon_state = "station_planet"
 	main_template = /datum/map_template/outpost/clip_ocean
@@ -250,6 +252,9 @@
 		/datum/map_template/outpost/hangar/clip_ocean_56x20,
 		/datum/map_template/outpost/hangar/clip_ocean_56x40
 	)
+
+	outpost_name = "Arrowsong Refueling Platform"
+	outpost_administrator = "The Arrowsong Executive Council"
 
 /datum/overmap/outpost/cybersun_gas_giant
 	token_icon_state = "gas_giant_outpost"
@@ -275,6 +280,9 @@
 		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY
 	)
+
+	outpost_name = "Thousand Eyes Perch"
+	outpost_administrator = "Cybersun Frontier Developments"
 
 
 /datum/overmap/outpost/cybersun_gas_giant/alter_token_appearance()
