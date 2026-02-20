@@ -1104,6 +1104,7 @@ SUBSYSTEM_DEF(overmap)
 	if(!json_file && !islist(json_file))
 		if(!fexists(json_file))
 			log_game("The json map path \"[json_file]\" attempted to load, but no such file exists!")
+			stack_trace("The json map path \"[json_file]\" attempted to load, but no such file exists!")
 			return
 
 	if(!json_file)
@@ -1228,237 +1229,6 @@ SUBSYSTEM_DEF(overmap)
 	generator_type = OVERMAP_GENERATOR_RANDOM
 	can_be_selected_randomly = FALSE
 
-/datum/overmap_star_system/safezone
-	name = "Lymantria Teagarden Memorial sector"
-	has_outpost = TRUE
-
-	//main colors, used for dockable terrestrials, and background
-	primary_color = "#ffffdf"
-	secondary_color = "#828282"
-
-	//hazard colors, used for the overmap hazards and sun
-	hazard_primary_color = "#a2b210"
-	hazard_secondary_color = "#5757c5"
-
-	//structure colors, used for ships and outposts/colonies
-	primary_structure_color = "#fbaa51"
-	secondary_structure_color = "#fb1010"
-
-	override_object_colors = TRUE
-	overmap_icon_state = "overmap"
-
-	max_overmap_dynamic_events = 0
-
-/datum/overmap_star_system/zx_spectrum_pallete
-	//main colors, used for dockable terrestrials, and background
-	primary_color = "#00ffff"
-	secondary_color = "#ff00ff"
-
-	//hazard colors, used for the overmap hazards and sun
-	hazard_primary_color = "#ff0000"
-	hazard_secondary_color = "#0000ff"
-
-	//structure colors, used for ships and outposts/colonies
-	primary_structure_color = "#ffff00"
-	secondary_structure_color = "#00ff00"
-
-	override_object_colors = TRUE
-	overmap_icon_state = "overmap_black_bg"
-
-/datum/overmap_star_system/gameboy
-	//main colors, used for dockable terrestrials, and background
-	primary_color = "#8bad10"
-	secondary_color = "#0f380f"
-
-	//hazard colors, used for the overmap hazards and sun
-	hazard_primary_color = "#8bad10"
-	hazard_secondary_color = "#306230"
-
-	//structure colors, used for ships and outposts/colonies
-	primary_structure_color = "#9bbc0f"
-	secondary_structure_color = "#8bad10"
-
-	override_object_colors = TRUE
-	overmap_icon_state = "overmap"
-
-/datum/overmap_star_system/virtualboy
-	//main colors, used for dockable terrestrials, and background
-	primary_color = "#aa0000"
-	secondary_color = "#ff0000"
-
-	//hazard colors, used for the overmap hazards and sun
-	hazard_primary_color = "#aa0000"
-	hazard_secondary_color = "#550000"
-
-	//structure colors, used for ships and outposts/colonies
-	primary_structure_color = "#ff0000"
-	secondary_structure_color = "#aa0000"
-
-	override_object_colors = TRUE
-	overmap_icon_state = "overmap_black_bg"
-
-	can_be_selected_randomly = FALSE //this overmap does not play well without the filter
-
-/datum/overmap_star_system/qud //hi lamb
-	//main colors, used for dockable terrestrials, and background
-	primary_color = "#b1c9c3"
-	secondary_color = "#155352"
-
-	//hazard colors, used for the overmap hazards and sun
-	hazard_primary_color = "#d74200"
-	hazard_secondary_color = "#e99f10"
-
-	//structure colors, used for ships and outposts/colonies
-	primary_structure_color = "#ffffff"
-	secondary_structure_color = "#b154cf"
-
-	override_object_colors = TRUE
-	overmap_icon_state = "overmap"
-
-/datum/overmap_star_system/amber_term
-	//main colors, used for dockable terrestrials, and background
-	primary_color = "#ffb000"
-	secondary_color = "#eb7500"
-
-	//hazard colors, used for the overmap hazards and sun
-	hazard_primary_color = "#ffb000"
-	hazard_secondary_color = "#eb7500"
-
-	//structure colors, used for ships and outposts/colonies
-	primary_structure_color = "#ffcc00"
-	secondary_structure_color = "#ffb000"
-
-	override_object_colors = TRUE
-	overmap_icon_state = "overmap_black_bg"
-
-	can_be_selected_randomly = FALSE //this overmap does not play well without the filter
-
-/datum/overmap_star_system/amber_term/post_edit_token_state(datum/overmap/datum_to_edit)
-	datum_to_edit.token.remove_filter("gloweffect")
-	if(datum_to_edit.token.color)
-		datum_to_edit.token.add_filter("gloweffect", 5, list("type"="drop_shadow", "color"= datum_to_edit.token.color + "F0", "size"=2, "offset"=1))
-	else
-		datum_to_edit.token.add_filter("gloweffect", 5, list("type"="drop_shadow", "color"= "#808080", "size"=2, "offset"=1))
-
-/datum/overmap_star_system/safezone/agni
-	name = "Gorlex Controlled - Value of Public Works"
-	starname = "Ecbatana"
-	startype = /datum/overmap/star/dwarf
-	default_outpost_type = /datum/overmap/outpost/ngr_rock
-
-	//main colors, used for dockable terrestrials, and background
-	primary_color = "#d9ad82"
-	secondary_color = "#c48c60"
-
-	//hazard colors, used for the overmap hazards and sun
-	hazard_primary_color = "#c13623"
-	hazard_secondary_color = "#943a43"
-
-	//structure colors, used for ships and outposts/colonies
-	primary_structure_color = "#83db2b"
-	secondary_structure_color = "#21a52e"
-
-	override_object_colors = TRUE
-	overmap_icon_state = "overmap_dark"
-
-/datum/overmap_star_system/safezone/arrowsong
-	name = "CLIP Controlled - High-Pier"
-	starname = "Chana"
-	startype = /datum/overmap/star/dwarf/orange
-	default_outpost_type = /datum/overmap/outpost/clip_ocean
-
-	//main colors, used for dockable terrestrials, and background
-	primary_color = "#6fa8de"
-	secondary_color = "#96b6d4"
-
-	//hazard colors, used for the overmap hazards and sun
-	hazard_primary_color = "#d5e3f0"
-	hazard_secondary_color = "#96a6b5"
-
-	//structure colors, used for ships and outposts/colonies
-	primary_structure_color = "#97dfe8"
-	secondary_structure_color = "#6fa8de"
-
-	override_object_colors = TRUE
-	overmap_icon_state = "overmap_dark"
-
-/datum/overmap_star_system/safezone/trifuge
-	name = "Independent - Minya"
-	starname = "Aubaine"
-	startype = /datum/overmap/star/medium
-	default_outpost_type = /datum/overmap/outpost/indie_space
-
-	//main colors, used for dockable terrestrials, and background
-	primary_color = "#5e5e5e"
-	secondary_color = "#242424"
-
-	//hazard colors, used for the overmap hazards and sun
-	hazard_primary_color = "#b56060"
-	hazard_secondary_color = "#824242"
-
-	//structure colors, used for ships and outposts/colonies
-	primary_structure_color = "#ffffff"
-	secondary_structure_color = "#ffffff"
-
-	override_object_colors = TRUE
-	overmap_icon_state = "overmap"
-
-/datum/overmap_star_system/safezone/yebiri
-	name = "Nanotrasen Controlled - Persei-277"
-	starname = "Persei-277"
-	startype = /datum/overmap/star/medium
-	default_outpost_type = /datum/overmap/outpost/nanotrasen_ice
-
-	//main colors, used for dockable terrestrials, and background
-	primary_color = "#7e8cd9"
-	secondary_color = "#33324a"
-
-	//hazard colors, used for the overmap hazards and sun
-	hazard_primary_color = "#ededed"
-	hazard_secondary_color = "#7f7db0"
-
-	//structure colors, used for ships and outposts/colonies
-	primary_structure_color = "#4272db"
-	secondary_structure_color = "#38a0eb"
-
-	override_object_colors = TRUE
-	overmap_icon_state = "overmap_dark"
-
-/datum/overmap_star_system/safezone/thousand_eyes
-	name = "Cybersun - Kapche-Legnica"
-	starname = "Kapche-Legnica"
-	startype = /datum/overmap/star/binary
-	default_outpost_type = /datum/overmap/outpost/cybersun_gas_giant
-
-	primary_color = "#00eaff"
-	secondary_color = "#4d140f"
-
-	hazard_primary_color = "#972241"
-	hazard_secondary_color = "#71a1a9"
-
-	primary_structure_color = "#ffffff"
-	secondary_structure_color = "#ffffff"
-
-	override_object_colors = TRUE
-	overmap_icon_state = "overmap"
-
-/datum/overmap_star_system/c64
-
-	//main colors, used for dockable terrestrials, and background
-	primary_color = "#d9ad82"
-	secondary_color = "#887ecb"
-
-	//hazard colors, used for the overmap hazards and sun
-	hazard_primary_color = "#9f4e44"
-	hazard_secondary_color = "#6abfc6"
-
-	//structure colors, used for ships and outposts/colonies
-	primary_structure_color = "#a1683c"
-	secondary_structure_color = "#5cab5e"
-
-	override_object_colors = TRUE
-	overmap_icon_state = "overmap_dark"
-
 //default shiptest overmap
 /datum/overmap_star_system/shiptest
 	has_outpost = FALSE
@@ -1497,3 +1267,10 @@ SUBSYSTEM_DEF(overmap)
 	The [span_notice("MODIF. OVERMAP")] tool is similar in usuage to BUILD ADV but to manipulate the overmap only.
 	"}
 	return ..()
+
+/datum/overmap_star_system/json_example
+	name = "Json test overmap"
+	can_be_selected_randomly = FALSE
+	can_jump_to = FALSE
+	json = '_maps/sectors/example_json_starsystem.json'
+	generator_type = OVERMAP_GENERATOR_JSON
