@@ -114,6 +114,7 @@
 #define SHIPMODULE_BSDRIVE "bluespace_drive"
 #define SHIPMODULE_HELMCONSOLE "helm_console"
 #define SHIPMODULE_TRANSPONDER "transponder"
+#define SHIPMODULE_CLOAKING "cloaking"
 
 //the color assignments used by overmaps TODO: make overmap objects use these instead of the old hardcoded assignments
 #define STARSYSTEM_COLOR_PRIMARY_COLOR "primary"
