@@ -460,6 +460,13 @@ SUBSYSTEM_DEF(overmap)
 			center.custom_color = FALSE
 			center.spectral_type = hazard_primary_color
 			center.alter_token_appearance()
+	//meant for editing outpost maps on locals
+	#ifndef FULL_INIT
+		new /datum/overmap/mapping_helper/ez_export_button(list("x" = 1, "y" = 1), src)
+		if(size > 1)
+			new /datum/overmap/mapping_helper/ez_varedit_system(list("x" = 2, "y" = 1), src)
+	#endif
+
 
 	create_map()
 
@@ -960,9 +967,14 @@ SUBSYSTEM_DEF(overmap)
 	return list("x" = edge_x, "y" = edge_y)
 
 //exports current star system to json, meant to load with
-/datum/overmap_star_system/proc/export_to_json()
+/datum/overmap_star_system/proc/export_to_json(user)
+	if(user)
+		usr = user
 	//Step 1: Get the data
 	var/list/file_data = list()
+	file_data["system_info"] =  list()
+	file_data["objects"] =  list()
+
 	var/list/system_data = file_data["system_info"]
 	var/list/objects_data = file_data["objects"]
 
@@ -1008,6 +1020,9 @@ SUBSYSTEM_DEF(overmap)
 			continue
 		//especially not this
 		if(istype(current_object, /datum/overmap/mapping_helper/ez_export_button))
+			continue
+		//and this
+		if(istype(current_object, /datum/overmap/mapping_helper/ez_varedit_system))
 			continue
 		objects_data["[current_object.type]_[count]"] = list()
 		var/list/current_data = objects_data["[current_object.type]_[count]"]

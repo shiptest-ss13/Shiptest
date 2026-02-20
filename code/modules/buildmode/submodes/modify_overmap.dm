@@ -64,6 +64,12 @@ the parameters are from the client, meaning object is what they clicked on, not 
 				current_fluff.dir = BM.build_dir
 				current_fluff.alter_token_appearance()
 
+			if(istype(newobj, /datum/overmap/mapping_helper/wild_sector_jumppoint_helper))
+				var/datum/overmap/mapping_helper/wild_sector_jumppoint_helper/current_helper = newobj
+				current_helper.dir = BM.build_dir
+				current_helper.alter_token_appearance()
+
+
 			log_admin("Build Mode: [key_name(target_client)] modified [overmap_x], [overmap_y] in [AREACOORD(object)] to [datum_holder]")
 		else
 			to_chat(target_client, "<span class='warning'>Select a overmap object first.</span>")

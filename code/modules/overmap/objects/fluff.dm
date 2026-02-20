@@ -305,3 +305,31 @@
 	token_icon_state = "ship_massive_war"
 	flag_overlay = TRUE
 	interference_power = -60
+
+/datum/overmap/fluff/fakestation
+	name = "station"
+	desc = "An average, run of the mill station. It doesn't appear to be open at the moment"
+
+	docking_message = "Station is not accepting visitors at the moment."
+	flag_overlay = TRUE
+
+	token_icon_state = "station_cylinder"
+
+/datum/overmap/fluff/fakestation/boxstation
+	name = "research station MWSS-13 'Box'"
+	desc = "What's left of the extremely infamous MW-SS13. The parts that haven't joined the surrounding debris belt are nearly untouched, however the ruins itself is extremely dangerous with radiation and other unknown hazards. Even now up close, you really cannot tell what the hell happened here."
+
+	token_icon_state = "station_classic"
+	overmap_color_type = STARSYSTEM_COLOR_SECONDARY_STRUCTURE_COLOR
+	docking_message = "Extreme radiation and debris prevents docking. Aborting."
+	interference_power = 10
+
+
+/datum/overmap/fluff/fakestation/packedstation
+	name = "supply station MWSS-104 'Packed'"
+	desc = "What's left of the less famous MWSS-104, sister station to 'Box'. It was used to aid the various cities on Sunset during initial colonization. The smaller crew size to 'Box' resulted in a full evacuation before everything went south. It's too dangerous to land here."
+
+	token_icon_state = "outpost_small"
+	overmap_color_type = STARSYSTEM_COLOR_SECONDARY_STRUCTURE_COLOR
+	docking_message = "Extreme munition hazards and debris prevents docking. Aborting."
+	interference_power = 5
