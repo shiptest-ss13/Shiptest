@@ -103,6 +103,9 @@
 	/// Datum type for the main outpost spawned here
 	var/datum/overmap/outpost/default_outpost_type
 
+	//What system comes 'next' in the chain?
+	var/datum/overmap_star_system/next_overmap
+
 	///Quotes to show to players when entering this sector via jump.
 	//try to populate this list with at least 5 examples.
 	var/list/entry_quotes = list()

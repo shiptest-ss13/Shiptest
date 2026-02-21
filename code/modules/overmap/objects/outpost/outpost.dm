@@ -53,6 +53,9 @@
 	/// List of missions that can be accepted at this outpost. Missions which have been accepted are removed from this list.
 	var/list/datum/mission/missions
 
+	///the overmap this outpost tries to target with mission generation.
+	var/datum/overmap_star_system/mission_system
+
 	var/datum/cargo_market/outpost/market
 
 	/// The faction of the outpost
@@ -173,7 +176,10 @@
 /datum/overmap/outpost/proc/fill_missions()
 	max_missions = min(20 + (SSovermap.controlled_ships.len * 2), 40)
 	while(LAZYLEN(missions) < max_missions)
-		var/mission_type = SSmissions.get_weighted_mission_type()
+		var/mission_type = SSmissions.get_weighted_mission_type(get_mission_sector())
+		if(!mission_type)
+			stack_trace("[src] could not find any valid missions while attempting to refill its mission list!")
+			return FALSE
 		var/datum/mission/M = new mission_type(src)
 		LAZYADD(missions, M)
 
@@ -516,3 +522,8 @@
 	//fixed? return to service after
 	port_to_fix.is_adjusting_now = FALSE
 	return TRUE
+
+/datum/overmap/outpost/proc/get_mission_sector()
+	if(!mission_system)
+		return SSovermap.wild_sectors[1]
+	return current_overmap.next_overmap

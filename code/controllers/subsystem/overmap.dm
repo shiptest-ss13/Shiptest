@@ -82,7 +82,7 @@ SUBSYSTEM_DEF(overmap)
 	tracked_star_systems[4] = spawn_new_star_system(pick(wilderness_sector_types))
 	wild_sectors += tracked_star_systems[4]
 
-	set_up_jump_points()
+	link_systems()
 
 	return ..()
 
@@ -104,7 +104,7 @@ SUBSYSTEM_DEF(overmap)
 				if(MC_TICK_CHECK)
 					return
 
-/datum/controller/subsystem/overmap/proc/set_up_jump_points()
+/datum/controller/subsystem/overmap/proc/link_systems()
 	var/sector_size = length(tracked_star_systems)
 	if(sector_size!=4)
 		CRASH("Overmap attempted to generate [sector_size] sectors, but currently requires 4!")
@@ -116,6 +116,7 @@ SUBSYSTEM_DEF(overmap)
 			target_system = tracked_star_systems[1]
 		else
 			target_system = tracked_star_systems[i+1]
+		source_system.next_overmap = target_system
 		source_system.create_jump_point(target_system, jump_dirs[i])
 
 

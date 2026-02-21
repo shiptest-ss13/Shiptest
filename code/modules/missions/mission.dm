@@ -44,6 +44,9 @@
 	/// The ship that accepted this mission. Passed in accept().
 	var/datum/overmap/ship/controlled/servant
 
+	/// A list of locations, the mission requires at least 1 to exist to be created.
+	var/list/required_locations = list()
+
 	/// Assoc list of atoms "bound" to this mission; each atom is associated with a 2-element list. The first
 	/// entry in that list is a bool that determines if the mission should fail when the atom qdeletes; the second
 	/// is a callback to be invoked upon the atom's qdeletion.
