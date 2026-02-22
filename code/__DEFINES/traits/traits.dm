@@ -538,6 +538,12 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// Disables the floating animation. See above.
 #define TRAIT_NO_FLOATING_ANIM "no-floating-animation"
 
+// Traits for ships and other overmap objects
+///This ship is cloaked or hidden and cannot be detected on long-range scanners
+#define TRAIT_CLOAKED "cloaked"
+///Currently only adds a blue-shifting during the cloak animation, will add functionality later when I add anti-ship weapons
+#define TRAIT_BLUESPACE_SHIFT "bluespace_shift"
+
 /// Trait granted by [mob/living/silicon/ai]
 /// Applied when the ai anchors itself
 #define AI_ANCHOR_TRAIT "ai_anchor"

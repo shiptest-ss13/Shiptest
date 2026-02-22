@@ -78,6 +78,9 @@
 	///The ship's real name, without the prefix
 	var/real_name
 
+	///Image shown to helm console viewers while cloaked, allows the pilot to see
+	var/image/cloaked_image
+
 	///Stations the ship has been blacklisted from landing at, associative station = reason
 	var/list/blacklisted = list()
 
@@ -125,6 +128,7 @@
 		source_template = creation_template
 		unique_ship_access = source_template.unique_ship_access
 		job_slots = source_template.job_slots?.Copy()
+		ship_class = source_template.ship_class
 		stationary_icon_state = creation_template.token_icon_state
 		alter_token_appearance()
 		if(create_shuttle)
@@ -538,6 +542,32 @@
 	if(our_helm)
 		our_helm.cancel_jump()
 
+/datum/overmap/ship/controlled/activate_cloak()
+	. = ..()
+	var/mutable_appearance/token_appearance = new(token)
+	cloaked_image = new(loc = token)
+	token_appearance.dir = token.dir
+	token_appearance.appearance_flags = RESET_COLOR|RESET_ALPHA
+	token_appearance.alpha = 64
+	cloaked_image.appearance = token_appearance
+	for(var/obj/machinery/computer/helm/helm_console as anything in helms)
+		for(var/user_ref in helm_console.concurrent_users)
+			var/mob/user = locate(user_ref)
+			if(!user)
+				continue
+			user.client.images += cloaked_image
+
+/datum/overmap/ship/controlled/deactivate_cloak()
+	. = ..()
+	if(!cloaked_image)
+		return
+	for(var/obj/machinery/computer/helm/helm_console as anything in helms)
+		for(var/user_ref in helm_console.concurrent_users)
+			var/mob/user = locate(user_ref)
+			if(!user)
+				continue
+			user.client.images -= cloaked_image
+	QDEL_NULL(cloaked_image)
 
 /obj/item/key/ship
 	name = "ship key"
