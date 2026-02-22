@@ -456,7 +456,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(!prosthetic_limbs[zone])
 			prosthetic_limbs[zone] = PROSTHETIC_NORMAL // necessary to prevent old savefiles from breaking the interface
 	READ_FILE(S["learned_languages"], learned_languages)
-	if(!learned_languages?.len) init_learned_languages()
 	READ_FILE(S["native_language"], native_language)
 	native_language ||= /datum/language/galactic_common
 	READ_FILE(S["feature_mcolor"], features["mcolor"])
@@ -542,6 +541,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	real_name = reject_bad_name(real_name)
 	gender = sanitize_gender(gender)
 	pronouns = sanitize_pronouns(pronouns)
+	learned_languages = sanitize_learned_languages(learned_languages)
 	if(!real_name)
 		real_name = random_unique_name(gender)
 
