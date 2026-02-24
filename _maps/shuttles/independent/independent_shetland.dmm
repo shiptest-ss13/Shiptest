@@ -7671,14 +7671,15 @@
 	pixel_y = 28;
 	pixel_x = 8
 	},
-/obj/item/kirbyplants{
-	icon_state = "plant-02";
-	pixel_x = -8
-	},
 /obj/structure/cable/pink{
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/table/wood,
+/obj/structure/bedsheetbin{
+	pixel_x = -1;
+	pixel_y = 3
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew)
 "Kh" = (
@@ -9031,6 +9032,10 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/west,
+/obj/item/kirbyplants{
+	icon_state = "plant-02";
+	pixel_x = -8
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew)
 "PU" = (
