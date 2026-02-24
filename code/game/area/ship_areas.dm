@@ -385,6 +385,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Incinerator"
 	icon_state = "disposal"
 
+/area/ship/engineering/storage
+	name = "Engineering Storage Room"
+
 /area/ship/engineering/hallway
 	name = "Engineering Hallway"
 
