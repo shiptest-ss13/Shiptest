@@ -32,21 +32,51 @@
 /obj/item/paper/fluff/ship/shetland/inspection
 	name = "Inspection Notice"
 	default_raw_text = {"<html>
-			<center>
-			<font size=6><b>BUG INSPETION</b></font>
-			<center><table style="width: 90%;" border="2">
+			<head>
+			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+			</head>
+			<body>
+			<font face="serif" size="2">
+			<head>
+			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+			</head>
+			<center><h1>BUG INSPETION REPORT</h1>
+			<body>
+			<hr>
+			<table align=/"center/" width="100%" style="width: 90%;" border="2">
 			<tr>
-			<td>fr.shoalscrub.com</font></td><td>~250 Insection/Year</td><td>150+ Year Working</td>
+			<td>fr.shoalscrub.com</td>
+			<td style="padding-top:%">
+			~250 Insection/year</font>
+			</td>
+			<td>150+ Year working</td>
+			</tr>
+			</table>
+			<hr>
+			<table align=/"center/" width="100%" style="width: 90%;" border="2">
+			<tr>
+			<td><center><font size=5 color="#b91717"><b>PROBLEM</b></font></center></td>
+			</tr>
+			</table>
+			<table align=/"left/" width="100%" style="width: 90%;" border="2">
+			<tr>
+			<td><b>SIRVICES</b></td>
+			</tr>
+			<tr>
+			<td style="padding-top:%">
+			<b>Yes</b> Inspetion
+			</td>
+			</tr>
+			<tr>
+			<td><b>no</b> Treetmunt </td>
 			</tr>
 			</table>
 			</center>
+			<font>
 			<hr>
-			<table style align="center" width="60%" border="3">
-			<tr>
-			<td>
-			<center><font color="#b91717" size=5><b>[PROBLEM]
-			</td>
-			</tr>
-			</table>
-			Complimentry inpetion finish, bug many in walls, laundry here. I is offer fumigate follow up next week, cheap price!!! 52 credit!!  Get rid of bug 🐜 permnent. Contact soon
+			<div style=/"margin-left:5%;margin-right:5%/"><strong>REPORT:</strong><br>
+			<b>1.</b> Searching ship. bug mostlies back-end, engines, pipes<br>
+			<b>2.</b> clothes washroom. bug many in walls, here.. Egg. <br>
+			<b>3.</b> seal Bugs in room. welds vent, airlock. close to visitor<br>
+			<b>5.</b> Bug poison clean for cheap price, next week i call. Cheap price
 			"}
