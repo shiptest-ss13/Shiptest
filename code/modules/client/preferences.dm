@@ -392,7 +392,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<tr><td><b>[get_language_point_balance()]</b> points left.</td></tr>"
 			dat += "<tr><td><a href='byond://?_src_=prefs;preference=native_language;task=input'><b>Native Language: </b>[initial(native_language.name)]</a></td></tr>"
 			if(!learned_languages?.len)
-				init_learned_languages()
+				learned_languages = sanitize_learned_languages()
 			for(var/datum/language/lang_type as anything in learned_languages)
 				if(lang_type == native_language)
 					continue
@@ -1524,11 +1524,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		if(SSquirks.quirk_points[q] > 0)
 			.++
 
-/datum/preferences/proc/init_learned_languages()
-	learned_languages = list()
+/datum/preferences/proc/sanitize_learned_languages(list/language_list)
+	var/list/new_language_list = list()
 	for(var/datum/language/lang_type as anything in subtypesof(/datum/language))
-		if(initial(lang_type.flags) & ROUNDSTART_LANGUAGE)
-			learned_languages[lang_type] = LANGUAGE_UNKNOWN
+		if(!(initial(lang_type.flags) & ROUNDSTART_LANGUAGE))
+			continue
+		if(!(lang_type in language_list))
+			new_language_list[lang_type] = LANGUAGE_UNKNOWN
+			continue
+		new_language_list[lang_type] = language_list[lang_type]
+	return new_language_list
 
 /datum/preferences/proc/get_language_point_balance()
 	var/points_balance = MAX_LANGUAGE_POINTS
@@ -2161,7 +2166,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							to_chat(usr, span_warning("You don't have enough language points!"))
 
 				if("reset_languages")
-					init_learned_languages()
+					learned_languages = sanitize_learned_languages()
 
 				if ("clientfps")
 					var/desiredfps = input(user, "Choose your desired fps. (0 = default, 60 FPS))", "Character Preference", clientfps)  as null|num //WS Edit - Client FPS Tweak -
@@ -2670,7 +2675,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.set_mob_height(GLOB.height_filters[height_filter])
 
 	if(!character_setup && get_language_point_balance() < 0)
-		init_learned_languages() // no exploits allowed
+		learned_languages = sanitize_learned_languages() // no exploits allowed
 	character.grant_language(native_language)
 	character.get_language_holder().selected_language = native_language
 	for(var/datum/language/lang_type as anything in learned_languages)

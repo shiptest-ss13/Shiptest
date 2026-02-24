@@ -1,0 +1,15 @@
+author: rye-rice
+changes:
+  - {rscadd: 'Quick dock now searches for docking ports your ship can land at, rather
+      than picking the first option and failing. Quicker!'}
+  - {rscadd: Makes docking port messages less vauge.}
+  - {rscadd: Adjusts transit vlevel sizes for larger ships}
+  - {rscadd: 'In case you are unable to dock to something, you should be given more
+      feedback'}
+  - {bugfix: Shuttle errors due to docking ports being stolen}
+  - {bugfix: 'Edgecase handling for docking ports, should fix very rare shuttle bugs'}
+  - {bugfix: 'Kali, Corona, Dwayne, Firefly, Scarab, Venetia, Typhoon, June, and especially
+      the Quasar have either proper docking ports or fixed docking ports'}
+  - {bugfix: Firefly is now not extremely dangerous to dock to}
+  - {bugfix: Shuttle code should be less prone to breaking in general}
+delete-after: true

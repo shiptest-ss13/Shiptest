@@ -1,6 +1,6 @@
 /datum/language/league_kalixcian
-	name = "League Zohilian"
-	desc = "A variation of Zohilian spoken in the former colonies of the URFZ, primarily in the Maxin system, emerging after around a century of drift."
+	name = "League Zohilan"
+	desc = "A variation of Zohilan spoken in the former colonies of the URFZ, primarily in the Maxin system, emerging after around a century of drift."
 	speech_verb = "hisses"
 	ask_verb = "questions"
 	exclaim_verb = "bellows"

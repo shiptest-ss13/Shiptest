@@ -6,7 +6,7 @@
 	exclaim_verb = "roars"
 	sing_verb = "sings"
 	key = "z"
-	flags = TONGUELESS_SPEECH | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD | NO_HISS
+	flags = TONGUELESS_SPEECH | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD | ROUNDSTART_LANGUAGE | NO_HISS
 	space_chance = 12
 	sentence_chance = 0
 	between_word_sentence_chance = 10
