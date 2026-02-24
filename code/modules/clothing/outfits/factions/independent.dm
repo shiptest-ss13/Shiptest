@@ -435,8 +435,8 @@
 
 	implants = list(/obj/item/implant/radio)
 
-/datum/outfit/job/independent/security
-	name = "Independent - Security Officer"
+/datum/outfit/job/independent/security/gown
+	name = "Independent - Security Officer (Gown)"
 	jobtype = /datum/job/officer
 	job_icon = "securityofficer"
 
