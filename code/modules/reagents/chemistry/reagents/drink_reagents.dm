@@ -820,7 +820,7 @@
 	quality = DRINK_NICE
 	taste_description = "sweet herbs and lingering bitterness"
 	glass_name = "glass of Lunapunch"
-	glass_desc = "An herbal-sweet soft drink. The bitter bite after each sip is enough to make you wince, but it leaves you wanting more."
+	glass_desc = "An herbal-sweet soft drink. The bitter bite after each sip is enough to make you wince but leaves you wanting more."
 /datum/reagent/consumable/hot_coco
 	name = "Hot Cocoa"
 	description = "Made with love and cocoa beans. Or from a vending machine."
