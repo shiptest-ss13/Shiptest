@@ -669,7 +669,7 @@
 	taste_description = "bitter cream"
 	glass_icon_state = "cafe_latte"
 	glass_name = "cafe latte"
-	glass_desc = "A nice, strong, and refreshing beverage. It goes well with a book, if you have the time to read."
+	glass_desc = "A nice, strong, refreshing beverage. It goes well with a book, if you have the time to read."
 
 /datum/reagent/consumable/cafe_latte/overdose_process(mob/living/M)
 	M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
