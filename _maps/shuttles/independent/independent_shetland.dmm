@@ -3608,6 +3608,22 @@
 	pixel_y = -3
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/storage/pouch{
+	pixel_y = -8;
+	pixel_x = 8
+	},
+/obj/item/storage/pouch{
+	pixel_y = -8;
+	pixel_x = 8
+	},
+/obj/item/storage/pouch{
+	pixel_y = -8;
+	pixel_x = 8
+	},
+/obj/item/storage/pouch{
+	pixel_y = -8;
+	pixel_x = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "rC" = (
@@ -3882,6 +3898,7 @@
 	},
 /obj/item/clothing/glasses/blindfold/white,
 /obj/item/clothing/glasses/blindfold/white,
+/obj/item/storage/bag/medical,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "sP" = (
@@ -4493,6 +4510,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/mask/gas/sechailer,
 /obj/item/clothing/glasses/safety,
+/obj/item/storage/bag/chemistry,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "uY" = (
@@ -4508,6 +4526,8 @@
 /obj/structure/closet/crate/secure/exo{
 	name = "disembarkation equipment crate"
 	},
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
 /obj/item/pickaxe,
 /obj/item/pickaxe,
 /obj/item/mining_scanner{
@@ -5269,6 +5289,19 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
+"yb" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "sus_office_desk"
+	},
+/obj/machinery/door/window/survival_pod{
+	dir = 8;
+	req_access_txt = "1";
+	layer = 3.2
+	},
+/turf/open/floor/plating,
+/area/ship/security)
 "yg" = (
 /obj/structure/table,
 /obj/effect/turf_decal/corner/transparent/lightgrey/full,
@@ -5308,6 +5341,13 @@
 	icon_state = "4-10"
 	},
 /turf/open/floor/plating,
+/area/ship/engineering/engine)
+"yn" = (
+/obj/structure/sign/warning/fire{
+	pixel_x = -10;
+	pixel_y = 2
+	},
+/turf/closed/wall/r_wall,
 /area/ship/engineering/engine)
 "yp" = (
 /obj/effect/turf_decal/miskilamo_big/eight{
@@ -6084,6 +6124,10 @@
 /obj/item/t_scanner{
 	pixel_x = -10;
 	pixel_y = 7
+	},
+/obj/item/geiger_counter{
+	pixel_x = 4;
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
@@ -7714,19 +7758,6 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"JL" = (
-/obj/structure/table/reinforced,
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "sus_office_desk"
-	},
-/obj/machinery/door/window/survival_pod{
-	dir = 8;
-	req_access_txt = "1";
-	layer = 3.2
-	},
-/turf/open/floor/plating,
-/area/ship/security)
 "JO" = (
 /obj/machinery/button/door{
 	dir = 4;
@@ -8259,13 +8290,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
-"LJ" = (
-/obj/structure/sign/warning/fire{
-	pixel_x = -10;
-	pixel_y = 2
-	},
-/turf/closed/wall/r_wall,
-/area/ship/engineering/engine)
 "LK" = (
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/box/corners{
@@ -8545,6 +8569,14 @@
 	pixel_y = -5
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/storage/bag/construction{
+	pixel_y = -4
+	},
+/obj/item/storage/bag/construction{
+	pixel_y = -4
+	},
+/obj/item/geiger_counter,
+/obj/item/geiger_counter,
 /turf/open/floor/plating/rust,
 /area/ship/engineering/storage)
 "MD" = (
@@ -11648,9 +11680,9 @@ pT
 pT
 pT
 EZ
-LJ
+yn
 QB
-LJ
+yn
 EZ
 pT
 pT
@@ -12648,7 +12680,7 @@ ji
 fu
 Kw
 Kw
-JL
+yb
 Kw
 Kw
 DD
