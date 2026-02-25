@@ -136,7 +136,7 @@
 /obj/item/food/grown/mushroom/plumphelmet
 	seed = /obj/item/seeds/plump
 	name = "plump-helmet"
-	desc = "<I>Plumus Hellmus</I>: Plump, soft and s-so inviting~"
+	desc = "<I>Plumus Hellmus</I>; Named for it's helmet-shaped cap and purple coloration."
 	icon_state = "plumphelmet"
 	filling_color = "#9370DB"
 	distill_reagent = /datum/reagent/consumable/ethanol/manly_dorf

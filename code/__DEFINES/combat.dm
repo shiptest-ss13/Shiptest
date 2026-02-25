@@ -221,6 +221,11 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(/obj/item/gun)))
 //We will round to this value in damage calculations.
 #define DAMAGE_PRECISION 0.1
 
+/// Calls the effects of flashes. Screen overlays and such.
+#define FLASH_EFFECT (1<<0)
+/// Whether the flash should cause eye damage.
+#define FLASH_DAMAGE (1<<1)
+
 /// Alternate attack defines. Return these at the end of procs like afterattack_secondary.
 /// Calls the normal attack proc. For example, if returned in afterattack_secondary, will call afterattack.
 /// Will continue the chain depending on the return value of the non-alternate proc, like with normal attacks.

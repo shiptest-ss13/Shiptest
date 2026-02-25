@@ -758,20 +758,27 @@
 	if(isliving(user) && in_range(src, user))
 		toggle_safety(user)
 
-// /obj/item/gun/attack_hand_secondary(mob/user, list/modifiers)
-// 	if(toggle_safety(user))
-// 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-// 	return ..()
+// This is overridden when interacting with attached underbarrel guns.
+/obj/item/gun/attack_hand_secondary(mob/user, list/modifiers)
+	. = ..()
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+		return
+	if(toggle_safety(user))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
-// /obj/item/gun/attackby_secondary(obj/item/weapon, mob/user, params)
-// 	if(toggle_safety(user))
-// 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-// 	return ..()
+/obj/item/gun/attackby_secondary(obj/item/weapon, mob/user, params)
+	. = ..()
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+		return
+	if(toggle_safety(user))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
-// /obj/item/gun/attack_self_secondary(mob/user, modifiers)
-// 	if(toggle_safety(user))
-// 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-// 	return ..()
+/obj/item/gun/attack_self_secondary(mob/user, modifiers)
+	. = ..()
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+		return
+	if(toggle_safety(user))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/item/gun/proc/toggle_safety(mob/user, silent=FALSE, override_check = FALSE)
 	if(!has_safety)
@@ -1194,9 +1201,10 @@
 	return ..()
 
 GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
-	/obj/item/gun/energy/plasmacutter,
+	/obj/item/plasmacutter,
 	/obj/item/melee/energy,
 	/obj/item/gear_handle/anglegrinder,
+	/obj/item/hatchet,
 	)))
 
 ///Handles all the logic of sawing off guns,

@@ -32,8 +32,6 @@
 		return
 	..()
 	var/mob/living/carbon/C = owner
-	if((damage < maxHealth) && (organ_flags & ORGAN_FAILING))	//ear damage can be repaired from the failing condition
-		organ_flags &= ~ORGAN_FAILING
 	// genetic deafness prevents the body from using the ears, even if healthy
 	if(HAS_TRAIT(C, TRAIT_DEAF))
 		deaf = max(deaf, 1)
@@ -48,8 +46,7 @@
 
 /obj/item/organ/ears/proc/restoreEars()
 	deaf = 0
-	damage = 0
-	organ_flags &= ~ORGAN_FAILING
+	setOrganDamage(0)
 
 	var/mob/living/carbon/C = owner
 
@@ -57,7 +54,7 @@
 		deaf = 1
 
 /obj/item/organ/ears/proc/adjustEarDamage(ddmg, ddeaf)
-	damage = max(damage + (ddmg*damage_multiplier), 0)
+	applyOrganDamage(-ddmg * damage_multiplier)
 	deaf = max(deaf + (ddeaf*damage_multiplier), 0)
 
 /obj/item/organ/ears/proc/minimumDeafTicks(value)
