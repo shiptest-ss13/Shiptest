@@ -1,16 +1,18 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/obj/machinery/holopad,
-/obj/effect/turf_decal/trimline/opaque/green/filled/corner{
-	dir = 4
-	},
 /obj/effect/turf_decal/trimline/opaque/green/filled/corner{
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/green/filled/corner{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/opaque/green/filled/corner,
+/obj/effect/turf_decal/trimline/opaque/green/filled/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/green/filled/corner{
+	dir = 2
+	},
+/obj/machinery/holopad,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "ay" = (
@@ -395,6 +397,9 @@
 	},
 /obj/machinery/door/window/survival_pod,
 /obj/machinery/door/firedoor/border_only,
+/obj/effect/turf_decal/trimline/transparent/beige/filled/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
 "dV" = (
@@ -453,6 +458,7 @@
 /obj/structure/railing/corner{
 	dir = 8
 	},
+/obj/item/tank/jetpack/oxygen,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "ec" = (
@@ -681,6 +687,32 @@
 /obj/structure/chair/handrail{
 	dir = 4
 	},
+/obj/structure/closet/crate/internals,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/clothing/mask/gas/sechailer,
+/obj/item/clothing/mask/gas/sechailer,
+/obj/item/clothing/mask/gas/sechailer,
+/obj/item/clothing/mask/gas/sechailer,
+/obj/item/clothing/glasses/safety{
+	pixel_y = 7
+	},
+/obj/item/clothing/glasses/safety{
+	pixel_y = 7
+	},
+/obj/item/clothing/glasses/safety{
+	pixel_y = 7
+	},
+/obj/item/clothing/glasses/safety{
+	pixel_y = 7
+	},
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "gm" = (
@@ -758,6 +790,9 @@
 	pixel_y = 16;
 	pixel_x = 7;
 	name = "elzousa"
+	},
+/obj/effect/turf_decal/trimline/transparent/beige/filled/corner{
+	dir = 8
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
@@ -1045,11 +1080,6 @@
 /area/ship/bridge)
 "jo" = (
 /obj/effect/turf_decal/etherbor/left,
-/obj/item/storage/cans/sixsoda,
-/obj/item/storage/cans/sixsoda,
-/obj/item/storage/cans/sixsoda,
-/obj/item/storage/cans/sixsoda,
-/obj/structure/closet/crate,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "jp" = (
@@ -1550,6 +1580,9 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "cth_bridge"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "oE" = (
@@ -1819,11 +1852,11 @@
 /area/ship/engineering/communications)
 "su" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/crate_shelf,
 /obj/structure/railing{
 	dir = 8
 	},
 /obj/machinery/light/directional/south,
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "sT" = (
@@ -1979,6 +2012,18 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/closet/crate{
+	name = "provisions crate"
+	},
+/obj/item/storage/cans/sixsoda,
+/obj/item/storage/cans/sixsoda,
+/obj/item/storage/cans/sixsoda,
+/obj/item/storage/cans/sixsoda,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "uO" = (
@@ -2008,6 +2053,18 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/south,
+/obj/structure/closet/crate/internals{
+	name = "spare EVA crate"
+	},
+/obj/item/clothing/suit/space/gezena,
+/obj/item/clothing/suit/space/gezena,
+/obj/item/clothing/suit/space/gezena,
+/obj/item/tank/internals/oxygen/red,
+/obj/item/tank/internals/oxygen/red,
+/obj/item/tank/internals/oxygen/red,
+/obj/item/clothing/head/helmet/space/gezena,
+/obj/item/clothing/head/helmet/space/gezena,
+/obj/item/clothing/head/helmet/space/gezena,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "vp" = (
@@ -2034,7 +2091,8 @@
 "vt" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 2;
-	layer = 2.43
+	layer = 2.43;
+	name = "air injection pump"
 	},
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
@@ -2227,6 +2285,7 @@
 	pixel_y = 13
 	},
 /obj/structure/curtain/cloth/grey,
+/obj/effect/turf_decal/trimline/transparent/beige/filled/corner,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
 "wT" = (
@@ -2476,39 +2535,6 @@
 /area/ship/engineering)
 "yY" = (
 /obj/effect/turf_decal/etherbor/center,
-/obj/item/tank/internals/oxygen,
-/obj/item/tank/internals/oxygen,
-/obj/item/tank/internals/oxygen,
-/obj/item/tank/internals/oxygen,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/clothing/glasses/safety{
-	pixel_y = 7
-	},
-/obj/item/clothing/glasses/safety{
-	pixel_y = 7
-	},
-/obj/item/clothing/glasses/safety{
-	pixel_y = 7
-	},
-/obj/item/clothing/glasses/safety{
-	pixel_y = 7
-	},
-/obj/item/clothing/glasses/safety{
-	pixel_y = 7
-	},
-/obj/item/clothing/glasses/safety{
-	pixel_y = 7
-	},
-/obj/structure/closet/crate/internals,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "zz" = (
@@ -2554,6 +2580,12 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "cth_bridge"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -2667,6 +2699,14 @@
 	pixel_x = -9
 	},
 /obj/item/clothing/suit/armor/gezena/medic,
+/obj/item/radio/headset/pgf/alt/captain{
+	pixel_x = 10;
+	pixel_y = 0
+	},
+/obj/item/radio/headset/pgf/captain{
+	pixel_x = -10;
+	pixel_y = -3
+	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical/surgery)
 "Aj" = (
@@ -2702,6 +2742,9 @@
 	icon_state = "plant-04";
 	pixel_y = 17;
 	pixel_x = 8
+	},
+/obj/effect/turf_decal/trimline/transparent/beige/filled/corner{
+	dir = 8
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
@@ -3040,7 +3083,8 @@
 /area/ship/external/dark)
 "Fr" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
-	dir = 2
+	dir = 2;
+	name = "air injection port"
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -3087,7 +3131,6 @@
 /area/ship/medical/surgery)
 "GC" = (
 /obj/effect/turf_decal/etherbor/right,
-/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "GE" = (
@@ -3175,6 +3218,9 @@
 /obj/item/radio/headset/pgf,
 /obj/item/clothing/head/gezena/flap,
 /obj/item/clothing/head/gezena/flap,
+/obj/effect/turf_decal/trimline/transparent/beige/filled/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
 "HA" = (
@@ -3299,6 +3345,9 @@
 	id = "cth_bridge";
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "IJ" = (
@@ -3311,6 +3360,7 @@
 /obj/item/toy/plush/carpplushie{
 	pixel_y = -6
 	},
+/obj/effect/turf_decal/trimline/transparent/beige/filled/corner,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
 "IR" = (
@@ -3898,15 +3948,15 @@
 /obj/machinery/door/airlock/external/glass{
 	dir = 4
 	},
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "cth_airlock"
-	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "cth_airlock"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/medical/surgery)
@@ -4017,6 +4067,9 @@
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/door/window/survival_pod,
 /obj/machinery/door/firedoor/border_only,
+/obj/effect/turf_decal/trimline/transparent/beige/filled/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
 "Rn" = (
@@ -4087,10 +4140,6 @@
 /obj/item/storage/ration/assorted_salted_offal,
 /obj/item/storage/ration/blackened_calamari,
 /obj/item/storage/ration/beef_strips,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/ccommons)
 "SB" = (
@@ -4116,12 +4165,9 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/ccommons)
 "Tb" = (
-/obj/item/clothing/head/helmet/space/gezena,
-/obj/item/clothing/suit/space/gezena,
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 2
 	},
-/obj/item/tank/internals/oxygen/red,
 /obj/item/radio/intercom/directional/east{
 	pixel_y = 6
 	},
@@ -4133,6 +4179,9 @@
 	name = "airlock access"
 	},
 /obj/machinery/suit_storage_unit/inherit,
+/obj/item/tank/internals/oxygen/red,
+/obj/item/clothing/suit/space/gezena,
+/obj/item/clothing/head/helmet/space/gezena,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/medical/surgery)
 "Td" = (
@@ -4243,14 +4292,14 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
 	},
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "cth_airlock"
-	},
 /obj/machinery/door/airlock/external/glass{
 	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "cth_airlock"
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/medical/surgery)
 "UM" = (
@@ -4451,6 +4500,9 @@
 /obj/item/radio/headset/pgf,
 /obj/item/clothing/head/gezena,
 /obj/item/clothing/head/gezena,
+/obj/effect/turf_decal/trimline/transparent/beige/filled/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
 "Xd" = (

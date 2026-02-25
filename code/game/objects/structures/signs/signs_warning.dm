@@ -94,6 +94,13 @@
 	icon_state = "nosmoking2_b"
 	is_editable = TRUE
 
+/obj/structure/sign/warning/smoking/circle
+	name = "\improper SMOKING sign"
+	sign_change_name = "Warning - Smoking Alt"
+	desc = "A warning sign which reads 'SMOKING PERMITTED'."
+	icon_state = "smoking"
+	is_editable = TRUE
+
 /obj/structure/sign/warning/radiation
 	name = "\improper HAZARDOUS RADIATION sign"
 	sign_change_name = "Warning - Radiation"

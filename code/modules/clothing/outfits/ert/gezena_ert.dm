@@ -35,8 +35,8 @@
 	neck = /obj/item/clothing/neck/cloak/gezena/engi
 
 /datum/outfit/job/gezena/ert/medic
-	name = "ERT - PGF Marine Medic"
-	id_assignment = "Marine Medic"
+	name = "ERT - PGF Marine Corpsman"
+	id_assignment = "Marine Corpsman"
 	jobtype = /datum/job/ert/med
 	job_icon = "paramedic"
 

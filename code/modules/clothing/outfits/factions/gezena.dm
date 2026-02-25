@@ -88,6 +88,17 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
 	courierbag = /obj/item/storage/backpack/messenger/engi
 
+/datum/outfit/job/gezena/security/paramedic
+	name = "PGF - Marine Corpsman"
+	jobtype = /datum/job/paramedic
+	job_icon = "paramedic"
+
+	neck = /obj/item/clothing/neck/cloak/gezena/med
+	backpack = /obj/item/storage/backpack/medic
+	satchel = /obj/item/storage/backpack/satchel/med
+	duffelbag = /obj/item/storage/backpack/duffelbag/med
+	courierbag = /obj/item/storage/backpack/messenger/para
+
 /datum/outfit/job/gezena/cmo
 	name = "PGF - Medical Officer"
 	jobtype = /datum/job/cmo
@@ -279,8 +290,8 @@
 	courierbag = /obj/item/storage/backpack/messenger/sec
 	box = /obj/item/storage/box/survival/pgf
 
-/datum/outfit/job/gezena/paramedic
-	name = "PGF - Marine Medic - Equipped"
+/datum/outfit/job/gezena/security/paramedic/geared
+	name = "PGF - Marine Corpsman - Equipped"
 	jobtype = /datum/job/paramedic
 	job_icon = "paramedic"
 
@@ -299,7 +310,7 @@
 	satchel = /obj/item/storage/backpack/satchel/med
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
 	courierbag = /obj/item/storage/backpack/messenger/para
-	box = /obj/item/storage/box/survival/medical
+	box = /obj/item/storage/box/survival/pgf
 
 /datum/outfit/job/gezena/hop/geared
 	name = "PGF - Naval Bridge Officer - Equipped"
