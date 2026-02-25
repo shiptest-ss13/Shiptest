@@ -643,6 +643,9 @@
 	if(!new_system)
 		CRASH("move_overmaps() called with no valid overmap!")
 
+	//very shitty 'fix' to the runtime that happens when you jump to a sector thats larger than the previous one
+	//if you aren't me and want to fix this in a better, the moving between star systems code should be on overmap_move() insteads
+	overmap_move(1, 1)
 	try
 		current_overmap.overmap_container[x][y] -= src
 	catch(var/exception/error)

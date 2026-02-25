@@ -79,7 +79,7 @@ SUBSYSTEM_DEF(overmap)
 	var/datum/overmap/jump_point/point_used
 
 	for(var/list/jumppoint_spawnloc as anything in safe_system.jump_spawnlocs)
-		total_spawn_locations += jumppoint_spawnloc
+		total_spawn_locations += list(jumppoint_spawnloc)
 
 	location_to_use = pick(total_spawn_locations)
 	point_used = safe_system.create_jump_point_link(wild_system, location_to_use["dir"])
@@ -462,9 +462,9 @@ SUBSYSTEM_DEF(overmap)
 			center.alter_token_appearance()
 	//meant for editing outpost maps on locals
 	#ifndef FULL_INIT
-		new /datum/overmap/mapping_helper/ez_export_button(list("x" = 1, "y" = 1), src)
-		if(size > 1)
-			new /datum/overmap/mapping_helper/ez_varedit_system(list("x" = 2, "y" = 1), src)
+	new /datum/overmap/mapping_helper/ez_export_button(list("x" = 1, "y" = 1), src)
+	if(size > 1)
+		new /datum/overmap/mapping_helper/ez_varedit_system(list("x" = 2, "y" = 1), src)
 	#endif
 
 
@@ -978,10 +978,6 @@ SUBSYSTEM_DEF(overmap)
 	var/list/system_data = file_data["system_info"]
 	var/list/objects_data = file_data["objects"]
 
-	file_data["system_info"] =  list()
-	file_data["objects"] =  list()
-
-
 	system_data["name"] = name
 	system_data["starname"] = starname
 	system_data["startype"] = startype
@@ -1033,6 +1029,7 @@ SUBSYSTEM_DEF(overmap)
 		|| istype(current_object, /datum/overmap/outpost) \
 		|| istype(current_object, /datum/overmap/static_object)\
 		|| istype(current_object, /datum/overmap/fluff)\
+		|| istype(current_object, /datum/overmap/star)\
 		)
 			if(current_object.name != current_object::name)
 				current_data["name"] = current_object.name
@@ -1041,11 +1038,15 @@ SUBSYSTEM_DEF(overmap)
 			if(current_object.interference_power != current_object::interference_power)
 				current_data["interference_power"] = current_object.interference_power
 
+		//custom handling for star
+		if(istype(current_object, /datum/overmap/star))
+			var/datum/overmap/star/current_star = current_object
+			current_data["custom_color"] = current_star.custom_color
+
 		//custom handling for the jump point helper
 		if(istype(current_object, /datum/overmap/mapping_helper/wild_sector_jumppoint_helper))
 			var/datum/overmap/mapping_helper/wild_sector_jumppoint_helper/current_helper = current_object
 			current_data["dir"] = current_helper.dir
-
 
 		//custom handling for customizable/fluff objects
 		if(istype(current_object, /datum/overmap/fluff))
@@ -1162,14 +1163,20 @@ SUBSYSTEM_DEF(overmap)
 
 		var/datum/overmap/new_obj = new obj_typepath(coords, src)
 
+		//custom handling for star
+		if(istype(new_obj, /datum/overmap/star))
+			var/datum/overmap/star/current_star = new_obj
+			current_star.custom_color = current_data["custom_color"]
+
 		//custom handling for the jump point helper
-		if(istype(current_object, /datum/overmap/mapping_helper/wild_sector_jumppoint_helper))
-			var/datum/overmap/mapping_helper/wild_sector_jumppoint_helper/current_helper = current_object
+		if(istype(new_obj, /datum/overmap/mapping_helper/wild_sector_jumppoint_helper))
+			var/datum/overmap/mapping_helper/wild_sector_jumppoint_helper/current_helper = new_obj
 			current_helper.dir = current_data["dir"]
+			current_helper.token.setDir(current_data["dir"])
 
 		//custom handling for customizable/fluff objects
-		if(istype(obj_typepath, /datum/overmap/fluff))
-			var/datum/overmap/fluff/current_fluff = current_object
+		if(istype(new_obj, /datum/overmap/fluff))
+			var/datum/overmap/fluff/current_fluff = new_obj
 			if(current_data["token_icon_state"])
 				current_fluff.token_icon_state = current_data["token_icon_state"]
 			if(current_data["overmap_color_type"])
@@ -1180,18 +1187,20 @@ SUBSYSTEM_DEF(overmap)
 				current_fluff.docking_message = current_data["docking_message"]
 			if(current_data["dir"])
 				current_fluff.dir = current_data["dir"]
+				current_fluff.token.setDir(current_data["dir"])
 
 		//custom handling for dynamic events
-		if(istype(obj_typepath, /datum/overmap/dynamic))
+		if(istype(new_obj, /datum/overmap/dynamic))
 			var/datum/overmap/dynamic/current_dynamic = new_obj
-			current_dynamic.force_encounter = current_data["force_encounter"]
+			if(current_data["force_encounter"])
+				current_dynamic.force_encounter = text2path(current_data["force_encounter"])
 			current_dynamic.preserve_level = current_data["preserve_level"]
 			current_dynamic.planet_name = current_data["planet_name"]
 			current_dynamic.selected_ruin = current_data["selected_ruin"]
 			current_dynamic.choose_level_type()
 
 		//custom handling for static events
-		if(istype(current_object, /datum/overmap/static_object))
+		if(istype(new_obj, /datum/overmap/static_object))
 			var/datum/overmap/static_object/current_static = new_obj
 			current_static.mapgen = current_data["mapgen"]
 			current_static.preserve_level = current_data["preserve_level"]
@@ -1273,4 +1282,13 @@ SUBSYSTEM_DEF(overmap)
 	can_be_selected_randomly = FALSE
 	can_jump_to = FALSE
 	json = '_maps/sectors/example_json_starsystem.json'
+	generator_type = OVERMAP_GENERATOR_JSON
+
+//not meant to be seen normally: this shows the eventing/storytelling potential of json overmaps
+//while unable to add sectors to punchards yet, this could be a good sample punchcard map, not in the main overmap but in its own enviroment
+/datum/overmap_star_system/sunset_example
+	name = "Abandoned - New Dawn"
+	can_be_selected_randomly = FALSE
+	can_jump_to = FALSE
+	json = '_maps/sectors/sunset_starsystem.json'
 	generator_type = OVERMAP_GENERATOR_JSON

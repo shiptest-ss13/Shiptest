@@ -192,11 +192,11 @@
 
 /datum/overmap/fluff/fakeplanet/sand/sunset
 	name = "Sunset"
-	desc = "Once a vibrant colony with the fastest growing population, now the infamous site of the 5 battles of Sunset, the most infamous stalemate of the ICW. Debris often rains down and bombards what is left of the surface, and numerous vessels litter the landscape along with the SBC Starfury's wreckage. Naturally, you can't visit here. " + span_notice("\nThere is likely nothing of interest here. Traveling here is a waste of time.")
+	desc = "Once a vibrant colony with the fastest growing population, now the site of the 5 battles of Sunset, the most infamous stalemate of the ICW. Debris often rains down, bombarding what is left, numerous vessels litter the landscape, along with the SBC Starfury's crashed remains. Naturally, you can't visit here. " + span_notice("\nThere is likely nothing of interest here. Traveling here is a waste of time.")
 	token_icon_state = "battlefield"
 	default_color = COLOR_GRAY
 
-/datum/overmap/fluff/fakeplanet/sand
+/datum/overmap/fluff/fakeplanet/beach
 	name = "ocean planet"
 	desc = "A warm and comfortable planet with an especially breathable atmosphere. " + span_notice("\nThere is likely nothing of interest here. Traveling here is a waste of time.")
 	token_icon_state = "ocean"
@@ -319,6 +319,7 @@
 	name = "research station MWSS-13 'Box'"
 	desc = "What's left of the extremely infamous MW-SS13. The parts that haven't joined the surrounding debris belt are nearly untouched, however the ruins itself is extremely dangerous with radiation and other unknown hazards. Even now up close, you really cannot tell what the hell happened here."
 
+	flag_overlay = FALSE
 	token_icon_state = "station_classic"
 	overmap_color_type = STARSYSTEM_COLOR_SECONDARY_STRUCTURE_COLOR
 	docking_message = "Extreme radiation and debris prevents docking. Aborting."
@@ -327,8 +328,9 @@
 
 /datum/overmap/fluff/fakestation/packedstation
 	name = "supply station MWSS-104 'Packed'"
-	desc = "What's left of the less famous MWSS-104, sister station to 'Box'. It was used to aid the various cities on Sunset during initial colonization. The smaller crew size to 'Box' resulted in a full evacuation before everything went south. It's too dangerous to land here."
+	desc = "What's left of the less famous MWSS-104, sister station to 'Box'. It was used to aid the various cities on Sunset during initial colonization. The smaller crew size compared to 'Box' resulted in a full evacuation before everything went south. It's too dangerous to land here."
 
+	flag_overlay = FALSE
 	token_icon_state = "outpost_small"
 	overmap_color_type = STARSYSTEM_COLOR_SECONDARY_STRUCTURE_COLOR
 	docking_message = "Extreme munition hazards and debris prevents docking. Aborting."
