@@ -752,8 +752,9 @@
 "jt" = (
 /obj/docking_port/stationary{
 	dwidth = 7;
-	height = 15;
-	width = 14
+	height = 30;
+	width = 14;
+	name = "Scarab Port Bow Dock"
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -2039,17 +2040,6 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
-"ye" = (
-/obj/structure/catwalk/over,
-/obj/docking_port/mobile{
-	dir = 2;
-	launch_status = 0;
-	name = "drilling ship";
-	port_direction = 8;
-	preferred_direction = 4
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external/dark)
 "yi" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
@@ -3063,11 +3053,19 @@
 /obj/docking_port/stationary{
 	dir = 8;
 	dwidth = 3;
-	height = 15;
-	width = 5
+	height = 30;
+	width = 5;
+	name = "Scarab Stern Dock"
 	},
-/turf/template_noop,
-/area/template_noop)
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 4;
+	port_direction = 2;
+	preferred_direction = 4
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/airless,
+/area/ship/external/dark)
 "JW" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/cable/green{
@@ -3479,6 +3477,16 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
+"OM" = (
+/obj/docking_port/stationary{
+	dwidth = 5;
+	height = 30;
+	width = 10;
+	name = "Scarab Forward Bow Dock";
+	dir = 4
+	},
+/turf/template_noop,
+/area/template_noop)
 "OS" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/fore)
@@ -3672,10 +3680,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "RX" = (
-/obj/structure/catwalk/over,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/structure/catwalk/over,
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "Sa" = (
@@ -4181,11 +4189,11 @@ dY
 dY
 Ei
 LJ
-wW
-wW
+IE
+Ku
 JT
-wW
-wW
+Ku
+IE
 JB
 nn
 jZ
@@ -4208,11 +4216,11 @@ jG
 jG
 kz
 yi
-IE
+Ku
 xI
 RX
 Ku
-IE
+Ku
 ee
 lG
 Bd
@@ -4414,7 +4422,7 @@ wW
 Ku
 "}
 (10,1,1) = {"
-ye
+Ku
 yX
 yX
 pQ
@@ -4750,7 +4758,7 @@ wW
 wW
 wW
 wW
-wW
+OM
 wW
 wW
 wW
