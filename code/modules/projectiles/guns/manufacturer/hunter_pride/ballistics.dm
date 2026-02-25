@@ -890,8 +890,8 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 
 //pre sawn off flaming arrow
 /obj/item/gun/ballistic/shotgun/flamingarrow/presawn/Initialize(mapload, spawn_empty)
-    . = ..()
-    sawoff(TRUE)
+	. = ..()
+	sawoff(TRUE)
 /obj/item/gun/ballistic/shotgun/flamingarrow/presawn
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/winchester/presawn
 
@@ -911,8 +911,8 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/presawn)
 
 //pre sawn off Factoryyy flaming arrow
 /obj/item/gun/ballistic/shotgun/flamingarrow/factory/presawn/Initialize(mapload, spawn_empty)
-    . = ..()
-    sawoff(TRUE)
+	. = ..()
+	sawoff(TRUE)
 /obj/item/gun/ballistic/shotgun/flamingarrow/factory/presawn
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/winchester/presawn
 
