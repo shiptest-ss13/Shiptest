@@ -43,7 +43,7 @@
 			else
 				CRASH("attackby_secondary must return an SECONDARY_ATTACK_* define, please consult code/__DEFINES/combat.dm")
 	else
-		attackby_result = target.attackby(src, user, params)
+		attackby_result = target.attackby(src, user, params, modifier)
 
 	if (attackby_result)
 		return TRUE
@@ -272,7 +272,7 @@
 	if(!attacking_item.force)
 		return FALSE
 
-	apply_damage(attacking_item.force  * modifier, attacking_item.damtype, blocked = armor_value)
+	apply_damage(attacking_item.force * modifier, attacking_item.damtype, blocked = armor_value)
 
 	if(attacking_item.damtype == BRUTE && prob(33))
 		attacking_item.add_mob_blood(src)
@@ -410,6 +410,45 @@
 				affected_turfs[front_turf] = 0.5
 				affected_turfs[get_step(front_turf, user.dir)] = 1
 
+		if(SWINGABLE_CLEAVE)
+			//effect_type = null
+			show_sweetspot = TRUE
+			var/turf/front_turf = get_step(user, user.dir) //the tile in front of the user and the one in front of that
+			var/turf/front_turf_2range = get_step(front_turf, user.dir) //...and in front of that
+			var/turf/front_turf_3range = get_step(front_turf_2range, user.dir) //...and in front of that
+			var/hand_used = user.held_index_to_dir(user.active_hand_index)
+			var/lefthanding = FALSE
+			var/righthanding = FALSE
+			switch(hand_used)
+				if("l")
+					lefthanding = TRUE
+				if("r")
+					righthanding = TRUE
+
+			//complciated ass proc, basically, if were facing north, automaticlly get the tile to the left, since we can rotate, we use this complicated ass proc do get the correct way for us
+			// * get_step(user, (turn(user.dir, -90)))
+
+			//adjacent to mobs first
+			affected_turfs[get_step(user, (turn(user.dir, -90)))] = righthanding ? 0.5 : 0.25
+			affected_turfs[get_step(user, (turn(user.dir,  90)))] = lefthanding ? 0.5 : 0.25
+
+			//tiles in front
+			affected_turfs[get_step(front_turf, (turn(user.dir, -90)))] = righthanding ? 1 : 0.5
+			affected_turfs[front_turf] = 0.75 //middle tile does not change depending on handedness, so no need to check, woo
+			affected_turfs[get_step(front_turf, (turn(user.dir,  90)))] = lefthanding ? 1 : 0.5
+			//tiles in front of front, since this is the fastest and furthest part of the swing, it does up to 2x damage rahter than the usual 1x sweetspot
+			affected_turfs[get_step(front_turf_2range, (turn(user.dir, -90)))] = righthanding ? 2 : 0.75
+			affected_turfs[front_turf_2range] = 1 //middle tile does not change depending on handedness, so no need to check, woo
+			affected_turfs[get_step(front_turf_2range, (turn(user.dir,  90)))] = lefthanding ? 2 : 0.75
+			//furthest tile, 3 tiles away is a guranteed sweetspot
+			affected_turfs[front_turf_3range] = 2
+
+			var/turf/cleave_effect_loc = get_step(get_turf(src), SOUTHWEST)
+			new /obj/effect/temp_visual/dir_setting/item_swing/big_swipe(cleave_effect_loc, user.dir)
+
+			if(user.dir & NORTHWEST) //makes it so you always swing the same way around
+				reverseRange(affected_turfs)
+
 	COOLDOWN_START(user, swing_cooldown, SWING_COOLDOWN_TIME)
 	var/swing_num = 0
 	for(var/turf in affected_turfs)
@@ -429,6 +468,9 @@
 
 		if(damage_modifier == 1) // if its actually the sweet spot
 			slash_effect.color = "red"
+
+		if(damage_modifier == 2) // if the super-sweet spot
+			slash_effect.color = "purple"
 
 	for(var/mob/M in contents)
 		if(M == user)
