@@ -31,10 +31,8 @@
 /datum/overmap/mapping_helper/wild_sector_jumppoint_helper/proc/add_jump_spawnloc()
 	current_overmap.jump_spawnlocs += list(list("x" = x, "y" = y, "dir" = dir))
 	//if we are on a local build dont clean these up, so a mapper may edit the map in a json file
-	// if an admin spwans in a star system wiith these on a non-main overmap, dont delete in case they need these for reference
 	#ifdef FULL_INIT
-	if(current_overmap == SSovermap.safe_system)
-		return INITIALIZE_HINT_QDEL
+	return INITIALIZE_HINT_QDEL
 	#endif
 
 /datum/overmap/mapping_helper/ez_export_button
