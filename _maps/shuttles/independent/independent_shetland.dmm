@@ -240,6 +240,9 @@
 	id = "sus_starboard";
 	dir = 4
 	},
+/obj/structure/cable/pink{
+	icon_state = "2-5"
+	},
 /turf/open/floor/plasteel/stairs{
 	dir = 1;
 	icon = 'icons/obj/stairs.dmi'
@@ -712,6 +715,13 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
+"dI" = (
+/obj/structure/sign/warning/fire{
+	pixel_x = -10;
+	pixel_y = 2
+	},
+/turf/closed/wall/r_wall,
+/area/ship/engineering/engine)
 "dL" = (
 /turf/closed/wall/rust,
 /area/ship/crew/toilet)
@@ -5289,19 +5299,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
-"yb" = (
-/obj/structure/table/reinforced,
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "sus_office_desk"
-	},
-/obj/machinery/door/window/survival_pod{
-	dir = 8;
-	req_access_txt = "1";
-	layer = 3.2
-	},
-/turf/open/floor/plating,
-/area/ship/security)
 "yg" = (
 /obj/structure/table,
 /obj/effect/turf_decal/corner/transparent/lightgrey/full,
@@ -5341,13 +5338,6 @@
 	icon_state = "4-10"
 	},
 /turf/open/floor/plating,
-/area/ship/engineering/engine)
-"yn" = (
-/obj/structure/sign/warning/fire{
-	pixel_x = -10;
-	pixel_y = 2
-	},
-/turf/closed/wall/r_wall,
 /area/ship/engineering/engine)
 "yp" = (
 /obj/effect/turf_decal/miskilamo_big/eight{
@@ -7622,6 +7612,10 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/pink{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/pink,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "IT" = (
@@ -8524,6 +8518,12 @@
 	icon_state = "2-4"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/pink{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/pink{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Mv" = (
@@ -9283,6 +9283,7 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/pink,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "Qg" = (
@@ -10460,6 +10461,19 @@
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/office/lobby)
+"Uj" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "sus_office_desk"
+	},
+/obj/machinery/door/window/survival_pod{
+	dir = 8;
+	req_access_txt = "1";
+	layer = 3.2
+	},
+/turf/open/floor/plating,
+/area/ship/security)
 "Uk" = (
 /obj/structure/table,
 /obj/machinery/coffeemaker{
@@ -10701,6 +10715,9 @@
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/robot_debris,
+/obj/structure/cable/pink{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Vp" = (
@@ -11680,9 +11697,9 @@ pT
 pT
 pT
 EZ
-yn
+dI
 QB
-yn
+dI
 EZ
 pT
 pT
@@ -12680,7 +12697,7 @@ ji
 fu
 Kw
 Kw
-yb
+Uj
 Kw
 Kw
 DD
