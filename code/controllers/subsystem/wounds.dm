@@ -88,7 +88,7 @@ SUBSYSTEM_DEF(wounds)
 /datum/controller/subsystem/wounds/proc/generate_wound_series_collection()
 	series_collection = list()
 
-	for (var/datum/wound/wound_typepath as anything in typecacheof(/datum/wound, TRUE))
+	for (var/datum/wound/wound_typepath as anything in typecacheof(/datum/wound, ignore_root_path = TRUE))
 		var/datum/wound_pregen_data/data = pregen_data[wound_typepath]
 		if (!data)
 			continue
