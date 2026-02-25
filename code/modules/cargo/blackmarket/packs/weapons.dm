@@ -376,7 +376,7 @@
 
 /datum/blackmarket_item/weapon/guncase/cycler
 	name = "Cycler Shotgun"
-	desc = "Perpetuate the cycle of violence with this dual-feed shotgun! Has two built-in 4 shell magazine tubes that can be swapped at the press of a button!"
+	desc = "Perpetuate the cycle of violence with this dual-feed shotgun! Has two built-in 4-shell magazine tubes that can be swapped at the press of a button!"
 	item = /obj/item/gun/ballistic/shotgun/automatic/negotiator
 	gun_unloaded = FALSE
 	mag_number = 0
