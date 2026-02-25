@@ -65,6 +65,11 @@
 	poster_type = /obj/structure/sign/poster/rilena/random
 	icon_state = "rolled_rilena"
 
+/obj/item/poster/random_pgf
+	name = "random pgf poster"
+	poster_type = /obj/structure/sign/poster/pgf/random
+	icon_state = "rolled_poster"
+
 // The poster sign/structure
 
 /obj/structure/sign/poster
@@ -411,11 +416,6 @@
 	desc = "The Griffin commands you to be the worst you can be. Will you?"
 	icon_state = "poster_griffin"
 
-/obj/structure/sign/poster/contraband/pgf
-	name = "PGF Marine"
-	desc = "This poster depicts a PGF marine with a E-40. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
-	icon_state = "poster_pgf"
-
 /obj/structure/sign/poster/contraband/free_drone
 	name = "Free Drone"
 	desc = "This poster is advertising a seller selling a free syndidrone. It is so obviously a scam."
@@ -546,6 +546,97 @@
 	name = "Captain Cardinal Port and Starbird"
 	desc = "Captain Cardinal would like to remind you that the left of the ship is port, and the right of the ship is starBIRD! Get it, right?"
 	icon_state = "poster-cardinal-2"
+
+/obj/structure/sign/poster/contraband/bigass_horns
+	name = "Bigass Horns"
+	desc = "This poster depicts a trio of PGF sailors. The elzuose's horns are sticking up through the text block. \"Get your bigass horns out of the caption!\""
+	icon_state = "poster-pgf_bigass-horns"
+
+/obj/structure/sign/poster/contraband/diet_guide
+	name = "Dietary Guide"
+	desc = "It's a food safety infographic outlining the types of food that different species can and cannot eat."
+	icon_state = "poster-diet-guide"
+	/// Static string containing the pre-generated diet guide.
+	var/static/diet_guide_text
+	/// Static list with positioning of the food icons.
+	var/static/list/icon_positions = list()
+	var/base_text = {"
+<center><h1>Species Dietary Guide</h1></center>
+<table align="center" border="1" cellpadding="0" cellspacing="0" style="table-layout: fixed;" class="main">
+	DIET_DATA_HERE
+</table>
+<br />
+<table align="center" width="300px" border="1" cellpadding="0" cellspacing="0" style="table-layout: fixed">
+	<tr bgcolor="d9f5e1">
+		<td><font size="6" color="3bbf2a"><center>✓</center></font></td>
+		<td><b><center>Safe to eat</b></center></td>
+	</tr>
+	<tr bgcolor="ffffff">
+		<td><font size="6" color="fc8403"><center>✗</center></font></td>
+		<td><b><center>Cannot be digested</center></b></td>
+	</tr>
+	<tr bgcolor="d9f5e1">
+		<td><font size="6" color="c91625"><center>✗</center></font></td>
+		<td><b><center>Toxic if ingested</center></b></td>
+	</tr>
+</table>
+"}
+
+/obj/structure/sign/poster/contraband/diet_guide/ComponentInitialize()
+	. = ..()
+	if(!diet_guide_text || !LAZYLEN(icon_positions))
+		var/static/list/food_images = list(
+			"Meat, Eggs" = "food-cooked_meat",
+			"Raw Meat" = "food-raw_meat",
+			"Grains" = "food-bread",
+			"Fruits" = "food-fruit",
+			"Veggies" = "food-vegetable",
+			"Dairy" = "food-dairy",
+			"Cloth" = "food-cloth",
+			"Fried Foods" = "food-fried",
+		)
+		var/diet_text_data = "<tr><td width=\"80px\" valign=\"top\" bgcolor=\"80c294\" />"
+		var/stamp_x_pos = 81
+		for(var/food_name in food_images) // <img src=\"[food_sprites[food_name]]\" /><br / >
+			diet_text_data += "<th valign=\"center\" bgcolor=\"ffffff\" width=\"80px\" height=\"80px\"><br/><br/><br/><center>[food_name]</center></th>"
+			icon_positions[food_images[food_name]] = stamp_x_pos
+			stamp_x_pos += 62
+		diet_text_data += "</td></tr>"
+		var/species_count = 0
+		var/static/list/food_groups = list(MEAT, RAW, GRAIN, FRUIT, VEGETABLES, DAIRY, CLOTH, FRIED)
+		for(var/species_id in GLOB.roundstart_races)
+			var/datum/species/species = GLOB.species_list[species_id]
+			species = new species()
+			if(species.reagent_tag == PROCESS_SYNTHETIC)
+				continue // you don't need a poster to tell you that robots don't eat food
+			if(TRAIT_NOHUNGER in species.inherent_traits)
+				continue // duh
+			species_count++
+			diet_text_data += "<tr><td width=\"96px\" bgcolor=\"80c294\"><b><center>[replacetext(species.name, "\improper ", "")]</center></b></td>"
+			var/background_color = (species_count % 2) ? "d9f5e1" : "ffffff"
+			for(var/food_group in food_groups)
+				diet_text_data += "<td width=\"80px\" bgcolor=\"[background_color]\">"
+				if(species.toxic_food & food_group)
+					diet_text_data += "<font size=\"6\" color=\"c91625\"><center>✗</center></font></td>"
+					continue
+				if(species.disliked_food & food_group)
+					diet_text_data += "<font size=\"6\" color=\"fc8403\"><center>✗</center></font></td>"
+					continue
+				diet_text_data += "<font size=\"6\" color=\"3bbf2a\"><center>✓</center></font></td>"
+			diet_text_data += "</tr>"
+			qdel(species)
+		diet_guide_text = replacetext(base_text, "DIET_DATA_HERE", diet_text_data)
+
+	var/datum/component/writing/diet_guide = AddComponent(/datum/component/writing, \
+		raw_text = diet_guide_text, \
+		window_width = 600, \
+		window_height = 640, \
+		resizable = FALSE, \
+	)
+
+	var/datum/asset/spritesheet/simple/paper_assets = get_asset_datum(/datum/asset/spritesheet/simple/paper)
+	for(var/food_name in icon_positions)
+		diet_guide.add_graphic(paper_assets.icon_class_name(food_name), icon_positions[food_name], 44, 0, food_name)
 
 //beginning of Nanotrasen approved posters. Expect corprate propaganda and motavation. You will usually only see this on Nanotrasen ships and stations
 /obj/structure/sign/poster/official
@@ -1053,6 +1144,69 @@
 	name = "Timeline"
 	desc = "A RILENA: LMR poster split in two to represent the series' disregard for conventional timeline aspects."
 	icon_state = "poster-rilena_timeline"
+
+//PGF recruitment diversity posters.
+/obj/structure/sign/poster/pgf
+	poster_item_name = "pgf poster"
+	poster_item_desc = "A poster that is produced by the armed forces of the PGF. It comes with adhesive backing, for easy pinning to any vertical surface."
+	poster_item_icon_state = "rolled_legit"
+
+/obj/structure/sign/poster/pgf/random
+	name = "random official poster"
+	random_basetype = /obj/structure/sign/poster/pgf
+	icon_state = "poster-pgf_random"
+	never_random = TRUE
+	random_type = POSTER_SUBTYPES
+
+/obj/structure/sign/poster/pgf/marine
+	name = "PGF Marine"
+	desc = "This poster depicts a human PGF Marine armed with a BGC-10. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster-pgf_marine"
+
+/obj/structure/sign/poster/pgf/sergeant
+	name = "PGF Marine Sergeant"
+	desc = "This poster depicts a sarathi PGF Marine sergeant armed with a HBG-7. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster-pgf_sergeant"
+
+/obj/structure/sign/poster/pgf/corpsman
+	name = "PGF Marine Corpsman"
+	desc = "This poster depicts an elzuose PGF Marine corpsman. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster-pgf_corpsman"
+
+/obj/structure/sign/poster/pgf/pioneer
+	name = "PGF Marine Pioneer"
+	desc = "This poster depicts a vox PGF Marine pioneer with armed with a VG-A5. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster-pgf_pioneer"
+
+/obj/structure/sign/poster/pgf/captain
+	name = "PGF Navy Captain"
+	desc = "This poster depicts a kepori PGF Navy captain. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster-pgf_captain"
+
+/obj/structure/sign/poster/pgf/engineer
+	name = "PGF Navy Engineer"
+	desc = "This poster depicts a synthetic PGF Navy engineer. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster-pgf_engineer"
+
+/obj/structure/sign/poster/pgf/officer
+	name = "PGF Navy Officer"
+	desc = "This poster depicts a rachnid PGF Navy officer. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
+	icon_state = "poster-pgf_officer"
+
+/obj/structure/sign/poster/pgf/choose
+	name = "Choose Your Path"
+	desc = "This poster depicts a sarathi split between PGF Marine Corps and Navy dress. \"Fight with the Pan-Gezena Federation and choose your own path!\""
+	icon_state = "poster-pgf_choose"
+
+/obj/structure/sign/poster/pgf/hero
+	name = "How About You"
+	desc = "This poster depicts a Vox marine stepping forward from between two silhouettes. \"Heroes don't back down and neither do Marines. How about you?\""
+	icon_state = "poster-pgf_hero"
+
+/obj/structure/sign/poster/pgf/together
+	name = "In It Together"
+	desc = "This poster depicts a trio of PGF sailors. \"All together now!\""
+	icon_state = "poster-pgf_together"
 
 //PGF Mission Accomplished
 /obj/structure/sign/poster/pgf/mission_accomplished_1

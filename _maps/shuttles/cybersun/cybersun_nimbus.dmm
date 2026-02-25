@@ -863,6 +863,19 @@
 /area/ship/crew/ccommons)
 "pq" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/closet/crate/engineering,
+/obj/effect/mapping_helpers/crate_shelve,
+/obj/item/stack/sheet/mineral/plasma/ten{
+	pixel_y = -6;
+	pixel_x = 2
+	},
+/obj/item/stack/sheet/glass/twenty{
+	pixel_x = 7;
+	pixel_y = 5
+	},
+/obj/item/stack/sheet/metal/ten{
+	pixel_x = -3
+	},
 /turf/open/floor/plasteel/patterned/grid{
 	color = "#777777"
 	},
@@ -1227,19 +1240,20 @@
 	pixel_x = 4;
 	pixel_y = 10
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 3;
-	pixel_x = -1
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 4;
-	pixel_x = 6
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 5;
-	pixel_x = 13
-	},
 /obj/structure/table,
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = -9;
+	pixel_y = 6;
+	icon_state = "sglass-5-"
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = -7;
+	pixel_y = 1;
+	icon_state = "sglass-5-"
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	icon_state = "sglass-5-"
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/ccommons)
 "wM" = (
@@ -1712,9 +1726,12 @@
 	name = "weapons closet";
 	req_access_txt = "48"
 	},
-/obj/item/storage/guncase/pistol/rattlesnake,
-/obj/item/storage/guncase/pistol/rattlesnake{
-	pixel_y = 6
+/obj/effect/turf_decal/corner/transparent/cybersunteal/half{
+	dir = 8
+	},
+/obj/machinery/recharger{
+	pixel_x = -2;
+	pixel_y = 4
 	},
 /obj/item/storage/box/ammo/c9mm{
 	pixel_x = -5;
@@ -1724,24 +1741,17 @@
 	pixel_x = -5;
 	pixel_y = -1
 	},
-/obj/effect/turf_decal/corner/transparent/cybersunteal/half{
-	dir = 8
-	},
-/obj/item/melee/energy/flyssa{
-	pixel_x = 7;
-	pixel_y = -4
+/obj/item/storage/guncase/pistol/rattlesnake,
+/obj/item/storage/guncase/pistol/rattlesnake{
+	pixel_y = 6
 	},
 /obj/item/melee/energy/flyssa{
 	pixel_x = 4;
 	pixel_y = -1
 	},
-/obj/machinery/recharger{
-	pixel_x = -2;
-	pixel_y = 4
-	},
-/obj/machinery/recharger{
-	pixel_x = -5;
-	pixel_y = 4
+/obj/item/melee/energy/flyssa{
+	pixel_x = 7;
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -1801,25 +1811,38 @@
 	pixel_x = -6;
 	pixel_y = 5
 	},
-/obj/item/food/grown/sososi{
-	pixel_x = -6;
+/obj/item/food/grown/dote_berries{
+	pixel_x = 5
+	},
+/obj/item/food/grown/dote_berries{
+	pixel_x = 5
+	},
+/obj/item/food/grown/dote_berries{
+	pixel_x = 5
+	},
+/obj/item/food/grown/refa_li{
+	pixel_x = -11;
+	pixel_y = -6
+	},
+/obj/item/food/grown/refa_li{
+	pixel_x = -11;
+	pixel_y = -6
+	},
+/obj/item/food/grown/refa_li{
+	pixel_x = -11;
+	pixel_y = -7
+	},
+/obj/item/food/grown/siti{
+	pixel_x = -5;
+	pixel_y = 4
+	},
+/obj/item/food/grown/siti{
+	pixel_x = -7;
 	pixel_y = 5
 	},
-/obj/item/food/grown/sososi{
-	pixel_x = -6;
-	pixel_y = 5
-	},
-/obj/item/food/grown/dote_berries{
-	pixel_x = 5
-	},
-/obj/item/food/grown/dote_berries{
-	pixel_x = 5
-	},
-/obj/item/food/grown/dote_berries{
-	pixel_x = 5
-	},
-/obj/item/food/grown/dote_berries{
-	pixel_x = 5
+/obj/item/food/grown/siti{
+	pixel_x = -9;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
@@ -2159,6 +2182,7 @@
 	pixel_x = -5;
 	pixel_y = 5
 	},
+/obj/item/radio/headset/syndicate/alt/captain/cybersun,
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
 "KN" = (
@@ -2500,13 +2524,19 @@
 	name = "window shutters";
 	id = "zkitchen"
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_x = -8;
-	pixel_y = 13
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = -2;
+	pixel_y = 11;
+	icon_state = "sglass-5-"
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_y = 2;
-	pixel_x = -2
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = -2;
+	pixel_y = 5;
+	icon_state = "sglass-5-"
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = -2;
+	icon_state = "sglass-5-"
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
@@ -2999,17 +3029,9 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/structure/rack,
 /obj/machinery/atmospherics/pipe/simple/violet/hidden,
 /obj/effect/turf_decal/industrial/warning/fulltile{
 	color = "#FFFFFF"
-	},
-/obj/item/stack/sheet/metal/ten{
-	pixel_x = -3
-	},
-/obj/item/stack/sheet/glass/twenty{
-	pixel_x = 7;
-	pixel_y = 5
 	},
 /obj/machinery/button/door{
 	dir = 8;
@@ -3019,10 +3041,7 @@
 	id = "zengine2"
 	},
 /obj/structure/extinguisher_cabinet/directional/east,
-/obj/item/stack/sheet/mineral/plasma/ten{
-	pixel_y = -6;
-	pixel_x = 2
-	},
+/obj/machinery/telecomms/relay/preset/cybersun,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 

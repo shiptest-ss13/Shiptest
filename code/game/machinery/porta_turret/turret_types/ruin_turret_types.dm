@@ -38,13 +38,6 @@
 	max_integrity = 140
 	integrity_failure = 0.6
 
-/obj/machinery/porta_turret/ruin/ramzi/light/bonnie
-	lethal = TRUE
-
-/obj/machinery/porta_turret/ruin/ramzi/light/bonnie/Initialize()
-	. = ..()
-	take_damage(rand(120, 130),BRUTE)
-
 /obj/machinery/porta_turret/ruin/ramzi/heavy
 	name = "Revolt Turret"
 	desc = "A durable turret manufactured by the Gorlex Marauders during the ICW. Some reported examples used anti-vehicle munitions. Most surviving examples are poorly maintained."

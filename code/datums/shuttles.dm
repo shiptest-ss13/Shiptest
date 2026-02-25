@@ -26,6 +26,8 @@
 	var/token_icon_state = "ship_generic"
 	/// The prefix of the ship's name.
 	var/prefix = "ISV"
+	/// The class of this ship.
+	var/ship_class = "Ship"
 	/// The name of the ship's manufacturer.
 	var/manufacturer = "Unknown"
 	/// The faction this ship belongs to.
@@ -378,7 +380,7 @@
 	token_icon_state = "ship_tiny_generic"
 	prefix = "ISV"
 
-//your subshuttle here //why is my subshuttle here // its no longer there
+//your subshuttle here //why is my subshuttle here // its no longer there //oops i dropped my subshuttles everywhere
 
 /datum/map_template/shuttle/subshuttles/crux
 	file_name = "minutemen_crux"
@@ -423,13 +425,6 @@
 	token_icon_state = "ship_tiny_generic"
 	prefix = "CSSV"
 	name_categories = list("GENERAL", "SPACE")
-
-/datum/map_template/shuttle/subshuttles/haste
-	file_name = "inteq_haste"
-	name = "Haste-class Ambulance"
-	faction = /datum/faction/inteq
-	token_icon_state = "ship_tiny_generic"
-	prefix = "IRMV"
 
 /datum/map_template/shuttle/subshuttles/nail
 	file_name = "pgf_nail"
@@ -500,3 +495,9 @@
 	faction = /datum/faction/syndicate/ngr
 	token_icon_state = "ship_tiny_generic"
 	prefix = "NGRV"
+
+/datum/map_template/shuttle/subshuttles/june
+	file_name = "independent_june"
+	name = "June-class Dropship"
+	token_icon_state = "ship_tiny_generic"
+	prefix = "SV"

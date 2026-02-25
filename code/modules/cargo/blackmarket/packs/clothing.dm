@@ -348,6 +348,26 @@
 	stock_max = 3
 	availability_prob = 40
 
+/datum/blackmarket_item/clothing/old_blood_red
+	name = "Damaged Blood-Red Hardsuit"
+	desc = "Don't even know where we got this thing, but it is so damaged beyond repair I just gotta get rid of it. We'll give it to ya cheap, isn't even EVA-worthy."
+	item = /obj/item/clothing/suit/space/hardsuit/syndi/old
+
+	cost_min = 800
+	cost_max = 1500
+	stock_max = 1
+	availability_prob = 40
+
+/datum/blackmarket_item/clothing/stealth_hardsuit
+	name = "INF-95 Tactical Hardsuit"
+	desc = "My friend recently died, bummer right? Well not actually, because I went through his garage and looted tons'a shit! Turns out, he's had this ANTIQUE ICW HARDSUIT sitting about! I dont even know jack about it, but it weighs like nothing and has night vision to boot."
+	item = /obj/item/clothing/suit/space/hardsuit/stealth
+
+	cost_min = 4000
+	cost_max = 5500
+	stock_max = 1
+	availability_prob = 20
+
 /datum/blackmarket_item/clothing/thermal_eyepatch
 	name = "Thermal Eyepatch"
 	desc = "A thermal eyepatch, capable of tracking the heat signatures of living beings through solid objects."

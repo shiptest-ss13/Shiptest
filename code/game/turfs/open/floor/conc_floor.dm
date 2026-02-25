@@ -225,6 +225,9 @@
 	icon_state = "conc_tiles"
 	has_variation = FALSE
 
+/turf/open/floor/concrete/tiles/chlorine
+	initial_gas_mix = COMBAT_CHLORINE
+
 /turf/open/floor/concrete/reinforced
 	name = "hexacrete floor"
 	desc = "Reinforced hexacrete tiling."
@@ -285,11 +288,15 @@
 	return ..()
 
 /turf/open/floor/concrete/pavement
-	name = "pavement"
-	desc = "The hot, coarse, and somewhat pavement. Vehicles driven on this are generally quiter than on traditional concrete, and is prefered for roadways."
+	name = "strip of pavement"
+	desc = "Hot, coarse pavement. Preferred for roadways, as vehicles are generally quieter driven on this than on traditional concrete."
 	icon_state = "pavement_1"
 	base_icon_state = "pavement"
 	broken_states = null
 	shape_types = list(
 		/turf/open/floor/concrete/pavement,
 	)
+
+
+/turf/open/floor/concrete/pavement/airless
+	initial_gas_mix = AIRLESS_ATMOS

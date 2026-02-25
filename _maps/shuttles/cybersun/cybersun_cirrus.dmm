@@ -72,10 +72,6 @@
 	pixel_y = -11;
 	pixel_x = -4
 	},
-/obj/item/food/meat/slab/chicken{
-	pixel_y = -11;
-	pixel_x = -4
-	},
 /obj/item/food/grown/refa_li{
 	pixel_x = 6;
 	pixel_y = -5
@@ -87,18 +83,6 @@
 /obj/item/food/grown/refa_li{
 	pixel_x = 6;
 	pixel_y = -5
-	},
-/obj/item/food/grown/refa_li{
-	pixel_x = 6;
-	pixel_y = -5
-	},
-/obj/item/food/meat/slab/remes{
-	pixel_y = -5;
-	pixel_x = -5
-	},
-/obj/item/food/meat/slab/remes{
-	pixel_y = -5;
-	pixel_x = -5
 	},
 /obj/item/food/meat/slab/remes{
 	pixel_y = -5;
@@ -120,14 +104,6 @@
 	pixel_y = 5;
 	pixel_x = 4
 	},
-/obj/item/food/grown/dotu_fime{
-	pixel_y = 4;
-	pixel_x = 4
-	},
-/obj/item/food/mirasegg{
-	pixel_x = -6;
-	pixel_y = 4
-	},
 /obj/item/food/mirasegg{
 	pixel_x = -6;
 	pixel_y = 4
@@ -137,6 +113,33 @@
 	pixel_y = 4
 	},
 /obj/effect/turf_decal/siding/black/end,
+/obj/item/food/grown/sososi,
+/obj/item/food/grown/sososi,
+/obj/item/food/grown/sososi,
+/obj/item/food/grown/dote_berries{
+	pixel_x = 0;
+	pixel_y = -8
+	},
+/obj/item/food/grown/dote_berries{
+	pixel_x = 1;
+	pixel_y = -9
+	},
+/obj/item/food/grown/dote_berries{
+	pixel_x = 2;
+	pixel_y = -10
+	},
+/obj/item/food/meat/slab/tiris{
+	pixel_x = -1;
+	pixel_y = -4
+	},
+/obj/item/food/meat/slab/tiris{
+	pixel_x = -2;
+	pixel_y = -1
+	},
+/obj/item/food/meat/slab/tiris{
+	pixel_x = -2;
+	pixel_y = -2
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
 "aE" = (
@@ -165,12 +168,29 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "aW" = (
-/obj/structure/closet/secure_closet/wall/directional/south{
-	name = "doctor's locker";
-	req_access_txt = "33"
-	},
 /obj/effect/turf_decal/corner/opaque/cybersunteal/border{
 	dir = 4
+	},
+/obj/structure/closet/wall/directional/south,
+/obj/item/clipboard{
+	pixel_y = -6;
+	pixel_x = -7
+	},
+/obj/item/clipboard{
+	pixel_y = -6;
+	pixel_x = 6
+	},
+/obj/item/pen/fourcolor{
+	pixel_y = -7;
+	pixel_x = -5
+	},
+/obj/item/pen/fourcolor{
+	pixel_y = -7;
+	pixel_x = 4
+	},
+/obj/item/paper_bin{
+	pixel_y = 9;
+	pixel_x = 7
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -518,6 +538,10 @@
 "dd" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/syndiered/mono,
+/obj/machinery/recharger{
+	pixel_y = 6;
+	pixel_x = -6
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/storage/equip)
 "df" = (
@@ -892,6 +916,7 @@
 	color = "#792f27";
 	dir = 9
 	},
+/obj/item/radio/headset/syndicate/alt/captain/cybersun,
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/dorm/commad)
 "eI" = (
@@ -1037,6 +1062,15 @@
 /obj/effect/turf_decal/siding/black/end{
 	dir = 8
 	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = -9;
+	name = "bathroom lock";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	id = "ccrlock"
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "gD" = (
@@ -1128,23 +1162,42 @@
 /area/ship/crew/ccommons)
 "hr" = (
 /obj/structure/table/glass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 10
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 9;
-	pixel_x = 10
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_x = 2;
-	pixel_y = 2
-	},
 /obj/item/reagent_containers/food/drinks/bottle/tequila{
 	pixel_x = 16;
 	pixel_y = 1
 	},
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = 9;
+	pixel_y = 6;
+	icon_state = "sglass-5-"
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = 1;
+	pixel_y = 6;
+	icon_state = "sglass-5-"
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = -7;
+	pixel_y = 6;
+	icon_state = "sglass-5-"
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = -7;
+	pixel_y = 1;
+	icon_state = "sglass-5-"
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = 1;
+	pixel_y = 1;
+	icon_state = "sglass-5-"
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = 8;
+	pixel_y = 1;
+	icon_state = "sglass-5-"
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/ccommons)
@@ -1774,6 +1827,14 @@
 	},
 /turf/open/floor/suns/hatch/maple,
 /area/ship/bridge)
+"kM" = (
+/obj/effect/turf_decal/corner/opaque/cybersunteal/border,
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 5
+	},
+/obj/structure/closet/emcloset/wall/directional/south,
+/turf/open/floor/plasteel/dark,
+/area/ship/medical)
 "kO" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/closed/wall/mineral/titanium,
@@ -2693,6 +2754,7 @@
 	pixel_x = -6;
 	pixel_y = -3
 	},
+/obj/item/radio/headset/syndicate/alt/cybersun,
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/dorm/commad)
 "sC" = (
@@ -2928,6 +2990,11 @@
 "vE" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/warning{
 	dir = 4
+	},
+/obj/structure/noticeboard{
+	dir = 1;
+	pixel_y = -25;
+	name = "cargo manifest board"
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
@@ -3466,7 +3533,7 @@
 /obj/machinery/door/airlock{
 	name = "Restroom";
 	dir = 4;
-	id_tag = "cpiss"
+	id_tag = "ccrlock"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -3939,9 +4006,9 @@
 	pixel_y = 8;
 	pixel_x = 6
 	},
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#E6D2BA";
-	dir = 8
+/obj/effect/turf_decal/siding/wood{
+	color = "#792f27";
+	dir = 9
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/dorm/commad)
@@ -4001,8 +4068,21 @@
 "Gc" = (
 /obj/effect/turf_decal/box/white,
 /obj/structure/rack,
-/obj/item/pipe_dispenser,
+/obj/item/pipe_dispenser{
+	pixel_x = 0;
+	pixel_y = 9
+	},
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5,
+/obj/item/stack/sheet/metal/twenty{
+	pixel_x = 9
+	},
+/obj/item/stack/sheet/plastic/twenty{
+	pixel_x = -6
+	},
+/obj/item/stack/sheet/glass/twenty{
+	pixel_y = 0;
+	pixel_x = 2
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
 "Gd" = (
@@ -4950,10 +5030,6 @@
 	pixel_y = 15;
 	pixel_x = -14
 	},
-/obj/item/disk/surgery/cybersun{
-	pixel_x = 5;
-	pixel_y = 4
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical/surgery)
 "NS" = (
@@ -5072,6 +5148,10 @@
 	dir = 4
 	},
 /obj/structure/extinguisher_cabinet/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = 10;
+	pixel_y = 20
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "Pe" = (
@@ -5564,6 +5644,11 @@
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -20;
+	pixel_x = 12
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Sw" = (
@@ -5716,6 +5801,7 @@
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 10
 	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Te" = (
@@ -5761,16 +5847,16 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/light/small/directional/east,
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#E6D2BA";
-	dir = 4
-	},
 /obj/machinery/button/door{
 	dir = 8;
 	pixel_y = -10;
 	pixel_x = 22;
 	name = "shutter control";
 	id = "cnwin3"
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#792f27";
+	dir = 5
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/dorm/commad)
@@ -6271,18 +6357,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "0-2"
 	},
-/obj/structure/closet/crate/engineering{
-	name = "materials crate"
-	},
-/obj/item/stack/sheet/glass/twenty{
-	pixel_y = 7
-	},
-/obj/item/stack/sheet/metal/twenty{
-	pixel_x = 9
-	},
-/obj/item/stack/sheet/plastic/twenty{
-	pixel_x = -6
-	},
+/obj/machinery/telecomms/relay/preset/cybersun,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "Yj" = (
@@ -6419,6 +6494,11 @@
 	},
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -20;
+	pixel_x = 11
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
@@ -7044,7 +7124,7 @@ ep
 Kk
 ja
 ak
-vq
+kM
 Vn
 PH
 lN

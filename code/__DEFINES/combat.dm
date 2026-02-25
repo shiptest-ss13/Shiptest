@@ -75,6 +75,7 @@
 #define HEAVY_WEAPON_CD 10
 #define CLICK_CD_BLOCKED 10
 #define CLICK_CD_MELEE 8
+#define CLICK_CD_THROW 8
 #define LIGHT_WEAPON_CD 6
 #define CLICK_CD_RANGE 4
 #define CLICK_CD_RAPID 2
@@ -226,6 +227,10 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(/obj/item/gun)))
 #define SWINGABLE_THRUST		"thrust"
 
 #define SWING_COOLDOWN_TIME		1 SECONDS
+/// Calls the effects of flashes. Screen overlays and such.
+#define FLASH_EFFECT (1<<0)
+/// Whether the flash should cause eye damage.
+#define FLASH_DAMAGE (1<<1)
 
 /// Alternate attack defines. Return these at the end of procs like afterattack_secondary.
 /// Calls the normal attack proc. For example, if returned in afterattack_secondary, will call afterattack.

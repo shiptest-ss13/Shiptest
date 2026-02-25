@@ -37,9 +37,6 @@
 	///ONLY USED FOR NON-SIMULATED SHIPS. The amount per burn that this ship accelerates
 	var/acceleration_speed = 0.02
 
-	///Is this ship hidden? If true we hide the ships name/class on the token.
-	var/hidden = FALSE
-
 	var/registered_to_docked = FALSE
 
 /datum/overmap/ship/Initialize(position, system_spawned_in, ...)
@@ -264,21 +261,39 @@
 		token_icon_state = stationary_icon_state
 		if(direction)
 			token.dir = direction
-	..()
-	if(hidden)
-		token.name = "???"
-		token.desc = "There's no identification of what this is. It's possible to get more information with your radar by getting closer."
-		token.icon_state = "unknown"
-	token.color = current_overmap.primary_structure_color
+
+	var/cloaked = HAS_TRAIT(src, TRAIT_CLOAKED)
+	if(!cloaked)
+		..() // no need to update while invisible
+		token.color = current_overmap.primary_structure_color
+
 	current_overmap.post_edit_token_state(src)
 	if(!legacy_rendering_switch)
 		token.cut_overlays()
 		if(direction)
 			token.add_overlay("dir_moving")
-		else if(!hidden)
+		else if(!cloaked)
 			token.add_overlay("dir_idle")
 		if(speed)
 			token.add_overlay("speed_[clamp(round(speed,1),0,10)]")
+
+/datum/overmap/ship/activate_cloak()
+	. = ..()
+	animate(token, 0.8 SECONDS, alpha = 0, color = (HAS_TRAIT(src, TRAIT_BLUESPACE_SHIFT) ? COLOR_BLUE : COLOR_RED))
+	addtimer(CALLBACK(src, PROC_REF(after_activate_cloak)), 0.8 SECONDS)
+
+/datum/overmap/ship/proc/after_activate_cloak()
+	if(!HAS_TRAIT(src, TRAIT_CLOAKED))
+		return
+	token.name = "???"
+	token.desc = "There's no identification of what this is. It's possible to get more information with your radar by getting closer."
+	token.icon_state = "unknown"
+
+/datum/overmap/ship/deactivate_cloak()
+	if(!token.alpha)
+		token.color = HAS_TRAIT(src, TRAIT_BLUESPACE_SHIFT) ? COLOR_BLUE : COLOR_RED
+	animate(token, 0.8 SECONDS, alpha = token::alpha, color = current_overmap.primary_structure_color)
+	return ..()
 
 // ensures the camera always moves when the ship moves
 /datum/overmap/ship/overmap_move(new_x, new_y)

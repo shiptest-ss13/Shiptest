@@ -121,6 +121,27 @@
 //Spacesuits//
 //////////////
 
+/obj/item/clothing/head/helmet/space/hardsuit/mining/roumain
+	name = "\improper roumain hunter's hardsuit helmet"
+	desc = "An armored helmet resembling a traditional sallet, manufactured by Hunter's Pride. Despite resembling pre-industrial solarian armor, it is suprisingly vacuum-rated."
+	icon = 'icons/obj/clothing/faction/srm/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/srm/head.dmi'
+	icon_state = "hardsuit0-rouma"
+	item_state = "hardsuit0-rouma"
+	armor = list("melee" = 50, "bullet" = 30, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 100, "wound" = 20)
+	hardsuit_type = "rouma"
+
+/obj/item/clothing/suit/space/hardsuit/mining/roumain
+	name = "\improper roumain hunter's hardsuit"
+	desc = "A hand-crafted suit of armor from Hunter's Pride, with noticeably heavy plate. Such steel seems rated well against blunt and sharp attacks, and is thick enough to block some small arms fire. Despite appearing ancient, it is spaceworthy."
+	icon = 'icons/obj/clothing/faction/srm/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/srm/suits.dmi'
+	icon_state = "hardsuit-rouma"
+	item_state = "hardsuit-rouma"
+	armor = list("melee" = 50, "bullet" = 30, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 100, "wound" = 20)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/roumain
+	slowdown = 0.5
+
 /obj/item/clothing/head/helmet/space/hardsuit/solgov/roumain
 	name = "\improper roumain hardsuit helmet"
 	desc = "An armored helmet with an unusual design that recalls both pre-industrial Solarian armor and iconography depicting the Ashen Huntsman. Though hand-made, it is surprisingly quite spaceworthy."

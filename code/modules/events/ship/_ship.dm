@@ -8,6 +8,7 @@
 
 /datum/round_event/ship/setup()
 	if(SSovermap.controlled_ships && length(SSovermap.controlled_ships))
+		target_ship = pick(SSovermap.controlled_ships)
 		return TRUE
 	return FALSE
 

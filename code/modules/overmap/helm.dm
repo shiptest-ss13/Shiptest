@@ -4,7 +4,7 @@
 #define JUMP_STATE_FIRING 3
 #define JUMP_STATE_FINALIZED 4
 #define JUMP_CHARGE_DELAY (7 SECONDS)
-#define JUMP_CHARGEUP_TIME (1 MINUTES)
+#define JUMP_CHARGEUP_TIME (20 SECONDS)
 
 /obj/machinery/computer/helm
 	name = "helm control console"
@@ -69,11 +69,11 @@
 	message_admins("[ADMIN_LOOKUPFLW(usr)] has initiated a bluespace jump in [ADMIN_VERBOSEJMP(src)]")
 	jump_timer = addtimer(CALLBACK(src, PROC_REF(jump_sequence), TRUE), JUMP_CHARGEUP_TIME, TIMER_STOPPABLE)
 	if(new_system)
-		priority_announce("Bluespace jump calibration to destination [new_system.name] initialized. Calibration completion in [JUMP_CHARGEUP_TIME/600] minutes.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+		priority_announce("Bluespace jump calibration to destination [new_system.name] initialized. Calibration completion in [JUMP_CHARGEUP_TIME/10] seconds.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
 		jump_destination = new_system
 		jump_coords = newpos
 	else
-		priority_announce("Bluespace jump calibration initialized. Exitting Frontier. Calibration completion in [JUMP_CHARGEUP_TIME/600] minutes.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+		priority_announce("Bluespace jump calibration initialized. Exitting Frontier. Calibration completion in [JUMP_CHARGEUP_TIME/10] seconds.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
 
 	calibrating = TRUE
 	return TRUE
@@ -186,6 +186,8 @@
 			user.client.register_map_obj(current_ship.token.cam_screen)
 			user.client.register_map_obj(current_ship.token.cam_plane_master)
 			user.client.register_map_obj(current_ship.token.cam_background)
+			if(current_ship.cloaked_image)
+				user.client.images += current_ship.cloaked_image
 			current_ship.token.update_screen()
 
 		// Open UI
@@ -225,6 +227,8 @@
 		var/list/other_data = list(
 			name = object.name,
 			candock = available_dock,
+			object_class = object.ship_class,
+			hidden = HAS_TRAIT(object, TRAIT_CLOAKED),
 			ref = REF(object)
 		)
 		.["otherInfo"] += list(other_data)
@@ -242,6 +246,12 @@
 	.["aiControls"] = allow_ai_control
 	.["burnDirection"] = current_ship.burn_direction
 	.["burnPercentage"] = current_ship.burn_percentage
+	.["cloaked"] = HAS_TRAIT_FROM(current_ship, TRAIT_CLOAKED, SHIPMODULE_CLOAKING)
+
+	var/obj/machinery/power/cloak/cloaking_system = current_ship.ship_modules[SHIPMODULE_CLOAKING]
+	if(cloaking_system)
+		.["cloakChargePercent"] = 100 * cloaking_system.current_charge / max(cloaking_system.max_charge, 1)
+
 	for(var/datum/weakref/engine in current_ship.shuttle_port.engine_list)
 		var/obj/machinery/power/shuttle/engine/real_engine = engine.resolve()
 		if(!real_engine)
@@ -277,6 +287,7 @@
 		mass = current_ship.shuttle_port.turf_count,
 		sensor_range = 4
 	)
+	.["hasCloaking"] = !isnull(current_ship.ship_modules[SHIPMODULE_CLOAKING])
 	.["canFly"] = TRUE
 	.["aiUser"] = issilicon(user)
 
@@ -324,6 +335,12 @@
 			allow_ai_control = !allow_ai_control
 			say(allow_ai_control ? "AI Control has been enabled." : "AI Control is now disabled.")
 			return
+		if("toggle_cloak")
+			var/obj/machinery/power/cloak/cloaking_system = current_ship.ship_modules[SHIPMODULE_CLOAKING]
+			if(!cloaking_system)
+				return
+			cloaking_system.set_cloak(!cloaking_system.cloak_active)
+			return TRUE
 		if("act_overmap")
 			if(SSshuttle.jump_mode > BS_JUMP_CALLED)
 				to_chat(usr, "<span class='warning'>Cannot interact due to bluespace jump preperations!</span>")
@@ -427,6 +444,8 @@
 		if(current_ship.burn_direction > BURN_NONE && !length(concurrent_users) && !viewer && is_living) // If accelerating with nobody else to stop it
 			say("Pilot absence detected, engaging acceleration safeties.")
 			current_ship.change_heading(BURN_NONE)
+		if(current_ship.cloaked_image)
+			user.client.images -= current_ship.cloaked_image
 
 	// Turn off the console
 	if(!length(concurrent_users) && is_living)
@@ -450,9 +469,20 @@
 	playsound(src, 'sound/effects/fuse.ogg')
 	current_ship.helm_locked = FALSE
 
-/obj/machinery/computer/helm/multitool_act(mob/living/user, obj/item/I)
+/obj/machinery/computer/helm/multitool_act(mob/living/user, obj/item/multitool/tool)
 	if(!Adjacent(user))
 		return
+
+	if(istype(tool, /obj/item/multitool) && isweakref(tool.buffer))
+		var/datum/weakref/buffer_ref = tool.buffer
+		var/obj/machinery/power/cloak/linked_cloak = buffer_ref.resolve()
+		if(istype(linked_cloak, /obj/machinery/power/cloak))
+			var/obj/machinery/power/cloak/current_cloak = current_ship.ship_modules[SHIPMODULE_CLOAKING]
+			if(current_cloak)
+				current_cloak.unlink_from_ship()
+			linked_cloak.link_to_ship(current_ship)
+			balloon_alert(user, "[linked_cloak.name] linked!")
+			return COMPONENT_BLOCK_TOOL_ATTACK
 
 	to_chat(user, span_warning("You begin to manually override the local database..."))
 	if(!do_after(user, 2 SECONDS, list(src)))

@@ -1902,6 +1902,20 @@
 "qe" = (
 /turf/open/floor/carpet/black,
 /area/ship/hallway/starboard)
+"qt" = (
+/obj/structure/table,
+/obj/item/plate,
+/obj/item/reagent_containers/food/drinks/sillycup{
+	pixel_y = 10;
+	pixel_x = -8
+	},
+/obj/item/food/ration/pack/grape_beverage{
+	pixel_y = 10;
+	pixel_x = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
 "qy" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
 	dir = 1
@@ -2695,6 +2709,72 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"wQ" = (
+/obj/structure/closet/secure_closet/armorycage{
+	anchored = 1;
+	can_be_unanchored = 1;
+	name = "equipment locker";
+	req_access = null;
+	req_access_txt = "1"
+	},
+/obj/effect/turf_decal/trimline/opaque/yellow/line,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/item/storage/box/teargas{
+	pixel_y = -4;
+	pixel_x = 8
+	},
+/obj/item/storage/box/zipties{
+	pixel_y = -4;
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/spray/pepper{
+	pixel_y = 10;
+	pixel_x = -11
+	},
+/obj/item/reagent_containers/spray/pepper{
+	pixel_y = 10;
+	pixel_x = -3
+	},
+/obj/item/storage/pouch/ammo{
+	pixel_y = -10
+	},
+/obj/item/storage/pouch/ammo{
+	pixel_y = -10
+	},
+/obj/item/melee/knife/survival{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/melee/knife/survival{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/melee/knife/survival{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/attachment/rail_light{
+	pixel_x = 6;
+	pixel_y = -4
+	},
+/obj/item/attachment/rail_light{
+	pixel_x = 6;
+	pixel_y = -4
+	},
+/obj/item/attachment/rail_light{
+	pixel_x = 6;
+	pixel_y = -4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/shield/heavy,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/security)
 "wU" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -3484,72 +3564,6 @@
 /obj/item/clothing/mask/gas/inteq,
 /obj/structure/cable{
 	icon_state = "1-4"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/security)
-"Db" = (
-/obj/structure/closet/secure_closet/armorycage{
-	anchored = 1;
-	can_be_unanchored = 1;
-	name = "equipment locker";
-	req_access = null;
-	req_access_txt = "1"
-	},
-/obj/effect/turf_decal/trimline/opaque/yellow/line,
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/item/storage/box/teargas{
-	pixel_y = -4;
-	pixel_x = 8
-	},
-/obj/item/storage/box/zipties{
-	pixel_y = -4;
-	pixel_x = -7
-	},
-/obj/item/reagent_containers/spray/pepper{
-	pixel_y = 10;
-	pixel_x = -11
-	},
-/obj/item/reagent_containers/spray/pepper{
-	pixel_y = 10;
-	pixel_x = -3
-	},
-/obj/item/storage/pouch/ammo{
-	pixel_y = -10
-	},
-/obj/item/storage/pouch/ammo{
-	pixel_y = -10
-	},
-/obj/item/melee/knife/survival{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/item/melee/knife/survival{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/item/melee/knife/survival{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/item/attachment/rail_light{
-	pixel_x = 6;
-	pixel_y = -4
-	},
-/obj/item/attachment/rail_light{
-	pixel_x = 6;
-	pixel_y = -4
-	},
-/obj/item/attachment/rail_light{
-	pixel_x = 6;
-	pixel_y = -4
-	},
-/obj/item/shield/riot,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
@@ -5773,20 +5787,6 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
-"Xv" = (
-/obj/structure/table,
-/obj/item/plate,
-/obj/item/reagent_containers/food/drinks/sillycup{
-	pixel_y = 10;
-	pixel_x = -8
-	},
-/obj/item/food/ration/pack/grape_beverage{
-	pixel_y = 10;
-	pixel_x = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/canteen)
 "XA" = (
 /obj/structure/closet/secure_closet/armorycage{
 	anchored = 1;
@@ -6656,7 +6656,7 @@ LQ
 mg
 GI
 Fm
-Xv
+qt
 XW
 EB
 aw
@@ -6860,7 +6860,7 @@ vT
 Xi
 gO
 eL
-Db
+wQ
 DP
 ww
 ww

@@ -9,7 +9,8 @@
 	var/duration = -1
 	/// When set initially / in on_creation, this is how long between [proc/tick] calls in deciseconds.
 	/// While processing, this becomes the world.time when the next tick will occur.
-	/// -1 = will stop processing, if duration is also unlimited (-1).
+	/// Note that this cannot be faster than the processing subsystem you choose to fire the effect on. (See: [var/processing_speed])
+	/// -1 = will prevent ticks, and if duration is also unlimited (-1), stop processing wholesale.
 	var/tick_interval = 1 SECONDS
 	/// The mob affected by the status effect.
 	var/mob/living/owner
@@ -45,14 +46,15 @@
 
 	if(duration != -1)
 		duration = world.time + duration
-	tick_interval = world.time + tick_interval
+	if(tick_interval != -1)
+		tick_interval = world.time + tick_interval
 
 	if(alert_type)
 		var/atom/movable/screen/alert/status_effect/new_alert = owner.throw_alert(id, alert_type)
 		new_alert.attached_effect = src //so the alert can reference us, if it needs to
 		linked_alert = new_alert //so we can reference the alert, if we need to
 
-	if(duration > 0 || initial(tick_interval) > 0) //don't process if we don't care
+	if(duration > world.time || tick_interval > world.time) //don't process if we don't care
 		switch(processing_speed)
 			if(STATUS_EFFECT_FAST_PROCESS)
 				START_PROCESSING(SSfastprocess, src)
@@ -82,9 +84,13 @@
 	if(QDELETED(owner))
 		qdel(src)
 		return
-	if(tick_interval < world.time)
-		tick(seconds_per_tick)
-		tick_interval = world.time + initial(tick_interval)
+	if(tick_interval != -1 && tick_interval < world.time)
+		var/tick_length = initial(tick_interval)
+		tick(tick_length / (1 SECONDS))
+		tick_interval = world.time + tick_length
+		if(QDELING(src))
+			// tick deleted us, no need to continue
+			return
 	if(duration != -1 && duration < world.time)
 		qdel(src)
 
@@ -98,9 +104,17 @@
 /datum/status_effect/proc/get_examine_text()
 	return null
 
-/// Called every tick from process().
-/datum/status_effect/proc/tick(seconds_per_tick)
-	return
+/**
+ * Called every tick from process().
+ * This is only called of tick_interval is not -1.
+ *
+ * Note that every tick =/= every processing cycle.
+ *
+ * * seconds_between_ticks = This is how many SECONDS that elapse between ticks.
+ * This is a constant value based upon the initial tick interval set on the status effect.
+ * It is similar to seconds_per_tick, from processing itself, but adjusted to the status effect's tick interval.
+ */
+/datum/status_effect/proc/tick(seconds_between_ticks)
 
 /// Called whenever the buff expires or is removed (qdeleted)
 /// Note that at the point this is called, it is out of the
@@ -162,50 +176,6 @@
 		return
 
 	qdel(src)
-
-/mob/living/proc/apply_status_effect(effect, ...) //applies a given status effect to this mob, returning the effect if it was successful
-	. = FALSE
-	var/datum/status_effect/S1 = effect
-	LAZYINITLIST(status_effects)
-	for(var/datum/status_effect/S in status_effects)
-		if(S.id == initial(S1.id) && S.status_type)
-			if(S.status_type == STATUS_EFFECT_REPLACE)
-				S.be_replaced()
-			else if(S.status_type == STATUS_EFFECT_REFRESH)
-				S.refresh()
-				return
-			else
-				return
-	var/list/arguments = args.Copy()
-	arguments[1] = src
-	S1 = new effect(arguments)
-	. = S1
-
-/mob/living/proc/remove_status_effect(effect, ...) //removes all of a given status effect from this mob, returning TRUE if at least one was removed
-	. = FALSE
-	var/list/arguments = args.Copy(2)
-	if(status_effects)
-		var/datum/status_effect/S1 = effect
-		for(var/datum/status_effect/S in status_effects)
-			if(initial(S1.id) == S.id && S.before_remove(arguments))
-				qdel(S)
-				. = TRUE
-
-/mob/living/proc/has_status_effect(effect) //returns the effect if the mob calling the proc owns the given status effect
-	. = FALSE
-	if(status_effects)
-		var/datum/status_effect/S1 = effect
-		for(var/datum/status_effect/S in status_effects)
-			if(initial(S1.id) == S.id)
-				return S
-
-/mob/living/proc/has_status_effect_list(effect) //returns a list of effects with matching IDs that the mod owns; use for effects there can be multiple of
-	. = list()
-	if(status_effects)
-		var/datum/status_effect/S1 = effect
-		for(var/datum/status_effect/S in status_effects)
-			if(initial(S1.id) == S.id)
-				. += S
 
 //////////////////////
 // STACKING EFFECTS //
