@@ -43,7 +43,7 @@
 	max_ammo = 12
 
 /obj/item/ammo_box/magazine/internal/shot/winchester/presawn
-    max_ammo = 7
+	max_ammo = 7
 
 /obj/item/ammo_box/magazine/internal/shot/winchester/absolution
 	name = "absolution internal magazine"
