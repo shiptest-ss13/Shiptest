@@ -62,6 +62,9 @@
 /datum/outfit/job/cybersun/doctor
 	name = "Cybersun - Medical Doctor"
 
+	jobtype = /datum/job/doctor
+	job_icon = "medicaldoctor"
+
 	uniform = /obj/item/clothing/under/cybersun/medic
 	suit = /obj/item/clothing/suit/cybersun/smock
 	head = /obj/item/clothing/head/cybersun/medical
@@ -82,7 +85,7 @@
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/jackboots
 
-	ears = /obj/item/radio/headset/syndicate/cybersun/alt
+	ears = /obj/item/radio/headset/syndicate/alt/cybersun
 
 /datum/outfit/job/cybersun/officer/captain
 	name = "Cybersun - Captain"
