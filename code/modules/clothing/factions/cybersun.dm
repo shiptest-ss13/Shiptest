@@ -44,7 +44,7 @@
 /obj/item/clothing/under/cybersun/overalls
 	name = "Cybersun overalls"
 	desc = "Durable black-on-red overalls built for Cybersun's field workers."
-	icon_state = "cybersun"
+	icon_state = "cybersun_overalls"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 100)
 	roll_sleeves = TRUE
 	//supports_variations = DIGITIGRADE_VARIATION
