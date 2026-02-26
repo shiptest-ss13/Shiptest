@@ -1492,12 +1492,12 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 6
 	},
-/obj/structure/table,
 /obj/machinery/fax/syndicate,
 /obj/item/radio/intercom/directional/south,
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 1
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "kS" = (
@@ -3331,7 +3331,6 @@
 /area/ship/crew)
 "xz" = (
 /obj/effect/turf_decal/techfloor,
-/obj/structure/table,
 /obj/item/paper_bin{
 	pixel_y = 3;
 	pixel_x = 6
@@ -3344,6 +3343,7 @@
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 5
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "xG" = (
@@ -4966,12 +4966,6 @@
 /obj/item/clipboard,
 /obj/item/folder/syndicate,
 /obj/item/folder,
-/obj/machinery/button/door{
-	pixel_y = 24;
-	pixel_x = 10;
-	name = "bridge shutters control";
-	id = "puru_bridge_shutters"
-	},
 /obj/machinery/firealarm/directional/north{
 	pixel_x = -1
 	},
