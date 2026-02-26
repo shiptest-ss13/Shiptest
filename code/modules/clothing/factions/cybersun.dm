@@ -52,7 +52,7 @@
 /obj/item/clothing/under/cybersun/suit
 	name = "cybersun suit"
 	desc = "White shirt and suit pants, worn by the many office inhabitants working for Cybersun."
-	icon_state = "cybersun_officer"
+	icon_state = "cybersun_suit"
 	roll_sleeves = TRUE
 	//supports_variations = DIGITIGRADE_VARIATION
 

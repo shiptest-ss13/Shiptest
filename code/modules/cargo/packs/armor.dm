@@ -238,20 +238,20 @@
 	contains = list(/obj/item/clothing/suit/armor/vest/cybersun/trauma,
 					/obj/item/clothing/head/helmet/m10/cybersun/trauma)
 
-/datum/supply_pack/armor/bulletproof_cybersun
+/datum/supply_pack/armor/bulletproof_cybersun/trauma_team
 	name = "Trauma Team Bulletproof Armor Crate"
 	desc = "Contains one full set of bulletproof armor, guaranteed to reduce a bullet's stopping power by half but with limited protection against melee weaponry."
 	contains = list(/obj/item/clothing/suit/armor/vest/bulletproof/cybersun/trauma,
 					/obj/item/clothing/head/helmet/bulletproof,
 					/obj/item/clothing/glasses/sunglasses/ballistic)
 
-/datum/supply_pack/armor/marine_cybersun
+/datum/supply_pack/armor/marine_cybersun/trauma_team
 	name = "Trauma Team Combat Armor Crate"
 	desc = "One set of well-rounded tactical armor. While it does not protect the limbs, the vest is fairly durable. The set includes a helmet and vest."
 	contains = list(/obj/item/clothing/suit/armor/vest/marine/cybersun/trauma,
 					/obj/item/clothing/head/helmet/bulletproof/x11/cybersun/trauma)
 
-/datum/supply_pack/armor/medium_marine_cybersun
+/datum/supply_pack/armor/medium_marine_cybersun/trauma_team
 	name = "Trauma Team Point Armor Crate"
 	desc = "A trauma team \"Point\" suit, made for first responders in hostile situations. Plates are attached to the vest and cover the limbs. The set includes a helmet and chestpiece."
 	contains = list(/obj/item/clothing/suit/armor/vest/marine/medium/cybersun/trauma,

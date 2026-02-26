@@ -57,7 +57,6 @@
 	uniform = /obj/item/clothing/under/cybersun/medic
 	head = /obj/item/clothing/head/soft/cybersun/medical
 	shoes = /obj/item/clothing/shoes/combat
-	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
 
 /datum/outfit/job/cybersun/doctor
 	name = "Cybersun - Medical Doctor"
