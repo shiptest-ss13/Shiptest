@@ -1539,6 +1539,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		var/discount = get_intelligibility_discount(lang_type, native_language)
 		if(discount < MAXIMUM_POINT_DISCOUNT)
 			for(var/datum/language/mutual_type as anything in checked_langs)
+				if(level != LANGUAGE_FLUENT && learned_languages[mutual_type] != LANGUAGE_FLUENT)
+					continue
 				discount = max(discount, get_intelligibility_discount(lang_type, mutual_type))
 				if(discount >= MAXIMUM_POINT_DISCOUNT)
 					break
@@ -2170,6 +2172,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						var/discount = get_intelligibility_discount(selected_lang.type, native_language)
 						if(discount < MAXIMUM_POINT_DISCOUNT)
 							for(var/datum/language/lang_type as anything in learned_languages)
+								if(learned_languages[lang_type] != LANGUAGE_FLUENT)
+									continue
 								discount = max(discount, get_intelligibility_discount(selected_lang.type, lang_type))
 								if(discount >= MAXIMUM_POINT_DISCOUNT)
 									break
