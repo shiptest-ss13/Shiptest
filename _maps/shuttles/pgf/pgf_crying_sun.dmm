@@ -829,6 +829,9 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/south,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "fa" = (
@@ -2183,6 +2186,7 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/north,
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "lZ" = (
@@ -4163,6 +4167,7 @@
 	icon_state = "0-2"
 	},
 /obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/chair/handrail,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "xx" = (
@@ -7975,6 +7980,9 @@
 	icon_state = "5-8"
 	},
 /obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Qt" = (
@@ -8595,6 +8603,19 @@
 /obj/effect/turf_decal/industrial/caution,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
+"Tz" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/structure/chair/handrail,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/central)
 "TB" = (
 /obj/effect/turf_decal/corner/transparent/black/full,
 /obj/effect/turf_decal/trimline/opaque/lightgrey/line{
@@ -10647,7 +10668,7 @@ Wk
 sJ
 wR
 HX
-fh
+Tz
 xd
 rh
 DU
