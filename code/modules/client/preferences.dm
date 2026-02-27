@@ -925,7 +925,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			var/metal_skin = fbp || pref_species.inherent_biotypes & MOB_ROBOTIC
 			dat += metal_skin ? "<h3>Chassis Customization</h3>" : "<h3>Prosthetic Limbs</h3>"
-			dat += "<a href='byond://?_src_=prefs;preference=fbp'>Full Body Prosthesis: [fbp ? "Yes" : "No"]</a><br>"
+			if(!(pref_species.inherent_biotypes & MOB_ROBOTIC))
+				dat += "<a href='byond://?_src_=prefs;preference=fbp'>Full Body Prosthesis: [fbp ? "Yes" : "No"]</a><br>"
 
 			dat += "<a href='byond://?_src_=prefs;preference=toggle_random;random_type=[RANDOM_PROSTHETIC]'>Random Prosthetic: [(randomise[RANDOM_PROSTHETIC]) ? "Yes" : "No"]</a><br>"
 
@@ -2571,7 +2572,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	character.exowear = exowear
 
-	character.fbp = fbp
+	if(!(pref_species.inherent_biotypes & MOB_ROBOTIC))
+		character.fbp = fbp
 
 	character.flavor_text = features["flavor_text"] //Let's update their flavor_text at least initially
 

@@ -32,7 +32,6 @@
 
 	fire_overlay = "generic"
 
-	mutanttongue = /obj/item/organ/tongue/kepori
 	species_language_holder = /datum/language_holder/kepori
 	var/datum/action/innate/keptackle/keptackle
 	/// # Inherit tackling variables #
@@ -51,6 +50,30 @@
 
 	bodytype = BODYTYPE_KEPORI
 
+	species_organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/kepori,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
+		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+	)
+
+	species_robotic_organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart/cybernetic,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs/cybernetic,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/robotic/kepori,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears/cybernetic,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/robot,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver/cybernetic,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/cybernetic,
+		ORGAN_SLOT_APPENDIX = null
+	)
+
 	species_limbs = list(
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/kepori,
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/kepori,
@@ -68,8 +91,6 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus/kepori,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus/kepori,
 	)
-
-	robotic_eyes = /obj/item/organ/eyes/robotic/kepori
 
 	//I'm not emotionally prepared to spend ten more hours splicing overlays together
 	damage_overlay_type = ""

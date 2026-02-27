@@ -22,39 +22,37 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus/human,
 	)
 
-	robotic_eyes = /obj/item/organ/eyes/robotic
-
 /datum/species/human/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	switch(C.dna.features["ears"])
 		if("Elf")
-			mutantears = /obj/item/organ/ears/elf
+			species_organs[ORGAN_SLOT_EARS] = /obj/item/organ/ears/elf
 		if("Cat")
-			mutantears = /obj/item/organ/ears/cat
+			species_organs[ORGAN_SLOT_EARS] = /obj/item/organ/ears/cat
 		if("Dog")
-			mutantears = /obj/item/organ/ears/dog
+			species_organs[ORGAN_SLOT_EARS] = /obj/item/organ/ears/dog
 		if("Fox")
-			mutantears = /obj/item/organ/ears/fox
+			species_organs[ORGAN_SLOT_EARS] = /obj/item/organ/ears/fox
 		if("Rabbit")
-			mutantears = /obj/item/organ/ears/rabbit
+			species_organs[ORGAN_SLOT_EARS] = /obj/item/organ/ears/rabbit
 		if("Bent Rabbit")
-			mutantears = /obj/item/organ/ears/rabbit/bent
+			species_organs[ORGAN_SLOT_EARS] = /obj/item/organ/ears/rabbit/bent
 		if("Floppy Rabbit")
-			mutantears = /obj/item/organ/ears/rabbit/floppy
+			species_organs[ORGAN_SLOT_EARS] = /obj/item/organ/ears/rabbit/floppy
 		if("Horse")
-			mutantears = /obj/item/organ/ears/horse
+			species_organs[ORGAN_SLOT_EARS] = /obj/item/organ/ears/horse
 	switch(C.dna.features["tail_human"])
 		if("Cat")
-			mutant_organs |= /obj/item/organ/tail/cat
+			species_organs[ORGAN_SLOT_TAIL] |= /obj/item/organ/tail/cat
 		if("Dog")
-			mutant_organs |= /obj/item/organ/tail/dog
+			species_organs[ORGAN_SLOT_TAIL] |= /obj/item/organ/tail/dog
 		if("Fox")
-			mutant_organs |= /obj/item/organ/tail/fox
+			species_organs[ORGAN_SLOT_TAIL] |= /obj/item/organ/tail/fox
 		if("Fox 2")
-			mutant_organs |= /obj/item/organ/tail/fox/alt
+			species_organs[ORGAN_SLOT_TAIL] |= /obj/item/organ/tail/fox/alt
 		if("Rabbit")
-			mutant_organs |= /obj/item/organ/tail/rabbit
+			species_organs[ORGAN_SLOT_TAIL] |= /obj/item/organ/tail/rabbit
 		if("Horse")
-			mutant_organs |= /obj/item/organ/tail/horse
+			species_organs[ORGAN_SLOT_TAIL] |= /obj/item/organ/tail/horse
 
 	return ..()
 

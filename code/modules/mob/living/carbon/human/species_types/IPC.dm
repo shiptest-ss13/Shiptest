@@ -5,17 +5,7 @@
 	species_age_max = 300
 	species_traits = list(HAIR,NOTRANSSTING,NO_DNA_COPY,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH) //all of these + whatever we inherit from the real species
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_LIMBATTACHMENT)
-	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
-	mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
-	mutanteyes = /obj/item/organ/eyes/robotic
-	mutanttongue = /obj/item/organ/tongue/robot
-	mutantheart = /obj/item/organ/heart/cybernetic/ipc
-	mutantliver = /obj/item/organ/liver/cybernetic/upgraded/ipc
-	mutantstomach = /obj/item/organ/stomach/cell
-	mutantears = /obj/item/organ/ears/robot
-	mutantlungs = null //no more collecting change for you
-	mutantappendix = null
-	mutant_organs = list(/obj/item/organ/cyberimp/arm/power_cord)
+	inherent_biotypes = MOB_ROBOTIC | MOB_HUMANOID
 	mutant_bodyparts = list("ipc_screen", "ipc_antenna", "ipc_chassis", "ipc_tail", "ipc_brain")
 	default_features = list("mcolor" = "#7D7D7D", "ipc_screen" = "Static", "ipc_antenna" = "None", "ipc_chassis" = "Morpheus Cyberkinetics (Custom)", "ipc_tail" = "None", "ipc_brain" = "Posibrain")
 	meat = /obj/item/stack/sheet/plasteel{amount = 5}
@@ -35,6 +25,17 @@
 	Intelligence program encased in a bipedal robotic shell. They are fragile, allergic to EMPs, and the butt of endless toaster jokes. \
 	Just as easy to repair as they are to destroy, they might just get their last laugh in as you're choking on neurotoxins. Beep Boop."
 	ass_image = 'icons/ass/assmachine.png'
+
+	species_organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain/mmi_holder/posibrain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart/cybernetic/ipc,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/robotic,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears/robot,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/robot,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver/cybernetic/upgraded/ipc,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/cell,
+		ORGAN_SLOT_LEFT_ARM_AUG = /obj/item/organ/cyberimp/arm/power_cord
+	)
 
 	species_limbs = list(
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc,
@@ -66,7 +67,7 @@
 
 /datum/species/ipc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load) // Let's make that IPC actually robotic.
 	if(C.dna?.features["ipc_brain"] == "Man-Machine Interface")
-		mutantbrain = /obj/item/organ/brain/mmi_holder
+		species_organs[ORGAN_SLOT_BRAIN] = /obj/item/organ/brain/mmi_holder
 	. = ..()
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C

@@ -26,15 +26,12 @@
 	var/obj/item/organ/ears/cat/cat_ears = locate() in internal_organs
 	if(cat_tail)
 		cat_tail.Remove(src, TRUE)
-		var/obj/item/organ/tail/new_tail
-		for(var/organ in dna.species.mutant_organs) //Yes, there's no other way.
-			if(ispath(organ, /obj/item/organ/tail))
-				new_tail = organ
+		var/obj/item/organ/tail/new_tail = dna.species.species_organs[ORGAN_SLOT_TAIL]
 		if(new_tail)
 			new_tail = new new_tail()
 			new_tail.Insert(src, TRUE, FALSE)
 	if(cat_ears)
-		var/obj/item/organ/new_ears = new dna.species.mutantears
+		var/obj/item/organ/new_ears = new dna.species.species_organs[ORGAN_SLOT_EARS]
 		new_ears.Insert(src, TRUE, FALSE)
 	if(!silent)
 		to_chat(src, span_boldnotice("You are no longer a cat."))

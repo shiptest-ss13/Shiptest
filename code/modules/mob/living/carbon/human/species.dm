@@ -76,8 +76,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/list/default_features = list()
 	/// Visible CURRENT bodyparts that are unique to a species. DO NOT USE THIS AS A LIST OF ALL POSSIBLE BODYPARTS AS IT WILL FUCK SHIT UP! Changes to this list for non-species specific bodyparts (ie cat ears and tails) should be assigned at organ level if possible. Layer hiding is handled by [datum/species/handle_mutant_bodyparts()] below.
 	var/list/mutant_bodyparts = list()
-	///Internal organs that are unique to this race, like a tail.
-	var/list/mutant_organs = list()
 	///Multiplier for the race's speed. Positive numbers make it move slower, negative numbers make it move faster.
 	var/speedmod = 0
 	///Percentage modifier for overall defense of the race, or less defense, if it's negative.
@@ -193,28 +191,33 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	///What gas does this species breathe? Used by suffocation screen alerts, most of actual gas breathing is handled by mutantlungs. See [life.dm][code/modules/mob/living/carbon/human/life.dm]
 	var/breathid = "o2"
 
+	///Organs that this species should have. Includes vital organs like the heart and brain, as well as external features like a tail.
+	var/list/obj/item/organ/species_organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
+		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+	)
 	//Do NOT remove by setting to null. use OR make a RESPECTIVE TRAIT (removing stomach? add the NOSTOMACH trait to your species)
 	//why does it work this way? because traits also disable the downsides of not having an organ, removing organs but not having the trait will make your species die
 	//shut up you're not my mother
 
-	///Replaces default brain with a different organ
-	var/obj/item/organ/brain/mutantbrain = /obj/item/organ/brain
-	///Replaces default heart with a different organ
-	var/obj/item/organ/heart/mutantheart = /obj/item/organ/heart
-	///Replaces default lungs with a different organ
-	var/obj/item/organ/lungs/mutantlungs = /obj/item/organ/lungs
-	///Replaces default eyes with a different organ
-	var/obj/item/organ/eyes/mutanteyes = /obj/item/organ/eyes
-	///Replaces default ears with a different organ
-	var/obj/item/organ/ears/mutantears = /obj/item/organ/ears
-	///Replaces default tongue with a different organ
-	var/obj/item/organ/tongue/mutanttongue = /obj/item/organ/tongue
-	///Replaces default liver with a different organ
-	var/obj/item/organ/liver/mutantliver = /obj/item/organ/liver
-	///Replaces default stomach with a different organ
-	var/obj/item/organ/stomach/mutantstomach = /obj/item/organ/stomach
-	///Replaces default appendix with a different organ.
-	var/obj/item/organ/appendix/mutantappendix = /obj/item/organ/appendix
+	/// species_organs but for fully-robotic mobs.
+	var/list/obj/item/organ/species_robotic_organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart/cybernetic,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs/cybernetic,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/robotic,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears/cybernetic,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/robot,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver/cybernetic,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/cybernetic,
+	)
 	///Forces an item into this species' hands. Only an honorary mutantthing because this is not an organ and not loaded in the same way, you've been warned to do your research.
 	var/obj/item/mutanthands
 
@@ -241,15 +244,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus,
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus,
 	)
-
-	var/obj/item/organ/heart/robotic_heart = /obj/item/organ/heart/cybernetic
-	var/obj/item/organ/lungs/robotic_lungs = /obj/item/organ/lungs/cybernetic
-	var/obj/item/organ/eyes/robotic_eyes = /obj/item/organ/eyes/robotic
-	var/obj/item/organ/ears/robotic_ears = /obj/item/organ/ears/cybernetic
-	var/obj/item/organ/tongue/robotic_tongue = /obj/item/organ/tongue/robot
-	var/obj/item/organ/liver/robotic_liver = /obj/item/organ/liver/cybernetic
-	var/obj/item/organ/stomach/robotic_stomach = /obj/item/organ/stomach/cybernetic
-	var/obj/item/organ/appendix/robotic_appendix = null
 
 	///For custom overrides for species ass images
 	var/icon/ass_image
@@ -339,22 +333,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
  */
 /datum/species/proc/regenerate_organs(mob/living/carbon/C, datum/species/old_species,replace_current=TRUE, list/excluded_zones, robotic = FALSE)
 	//what should be put in if there is no mutantorgan (brains handled seperately)
-	var/list/slot_mutantorgans = list( \
-		ORGAN_SLOT_BRAIN = mutantbrain, \
-		ORGAN_SLOT_HEART = robotic ? robotic_heart : mutantheart, \
-		ORGAN_SLOT_LUNGS = robotic ? robotic_lungs : mutantlungs, \
-		ORGAN_SLOT_APPENDIX = robotic ? robotic_appendix : mutantappendix, \
-		ORGAN_SLOT_EYES = robotic ? robotic_eyes : mutanteyes, \
-		ORGAN_SLOT_EARS = robotic ? robotic_ears : mutantears, \
-		ORGAN_SLOT_TONGUE = robotic ? robotic_tongue : mutanttongue, \
-		ORGAN_SLOT_LIVER = robotic ? robotic_liver : mutantliver, \
-		ORGAN_SLOT_STOMACH = robotic ? robotic_stomach : mutantstomach)
+	var/list/new_organ_list = robotic ? species_robotic_organs : species_organs
 
-	for(var/slot in list(ORGAN_SLOT_BRAIN, ORGAN_SLOT_HEART, ORGAN_SLOT_LUNGS, ORGAN_SLOT_APPENDIX, \
-	ORGAN_SLOT_EYES, ORGAN_SLOT_EARS, ORGAN_SLOT_TONGUE, ORGAN_SLOT_LIVER, ORGAN_SLOT_STOMACH))
+	for(var/slot in (new_organ_list | old_species.species_organs))
 
 		var/obj/item/organ/oldorgan = C.getorganslot(slot) //used in removing
-		var/obj/item/organ/neworgan = slot_mutantorgans[slot] //used in adding
+		var/obj/item/organ/neworgan = new_organ_list[slot] //used in adding
 
 		if(isnull(neworgan)) //If null is specified, just delete the old organ and call it a day
 			QDEL_NULL(oldorgan)
@@ -380,20 +364,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 		if(!used_neworgan)
 			qdel(neworgan)
-
-	if(old_species)
-		for(var/mutantorgan in old_species.mutant_organs)
-			var/obj/item/organ/I = C.getorgan(mutantorgan)
-			if(I)
-				I.Remove(C)
-				QDEL_NULL(I)
-
-	for(var/path in mutant_organs)
-		var/obj/item/organ/I = new path()
-		var/obj/item/organ/old = C.getorgan(I)
-		if(old)
-			QDEL_NULL(old)
-		I.Insert(C)
 
 /datum/species/proc/replace_body(mob/living/carbon/C, datum/species/old_species, datum/species/new_species, robotic = FALSE)
 	new_species ||= C.dna.species //If no new species is provided, assume its src.
