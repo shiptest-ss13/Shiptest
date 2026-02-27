@@ -286,6 +286,9 @@
 	icon_state = "cybersun_riot"
 	unique_reskin = null
 
+	icon = 'icons/obj/clothing/faction/cybersun/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/suits.dmi'
+
 /obj/item/clothing/head/helmet/riot/cybersun/trauma
 	name = "\improper Riot \"Recovery\" Helmet"
 	desc = "A heavy helmet made to pair with Cybersun's Trauma Team \"Recovery\" combat armor. Effective against most weapons."
