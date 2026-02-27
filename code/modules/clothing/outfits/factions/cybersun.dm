@@ -69,6 +69,8 @@
 	head = /obj/item/clothing/head/cybersun/medical
 	shoes = /obj/item/clothing/shoes/combat
 
+	neck = /obj/item/clothing/neck/stethoscope
+
 	l_hand = /obj/item/storage/firstaid/medical
 	l_pocket = /obj/item/pinpointer/crew
 
@@ -133,6 +135,5 @@
 	suit = /obj/item/clothing/suit/cybersun
 	alt_suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
 
-	suit_store = /obj/item/flashlight/pen/paramedic
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
 	box = /obj/item/storage/box/survival/medical
