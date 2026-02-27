@@ -26,9 +26,9 @@
 #define DYNAMIC_WORLD_ICE "ice"
 #define DYNAMIC_WORLD_SAND "sand"
 #define DYNAMIC_WORLD_JUNGLE "jungle"
-#define DYNAMIC_WORLD_ROCKPLANET "rockplanet"
-#define DYNAMIC_WORLD_BEACHPLANET "beachplanet"
-#define DYNAMIC_WORLD_WASTEPLANET "wasteplanet"
+#define DYNAMIC_WORLD_ROCKPLANET "rock"
+#define DYNAMIC_WORLD_BEACHPLANET "beach"
+#define DYNAMIC_WORLD_WASTEPLANET "waste"
 #define DYNAMIC_WORLD_MOON "moon"
 
 //spawnable but unused dynamic encounter types

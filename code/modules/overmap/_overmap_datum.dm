@@ -65,6 +65,7 @@
 
 /datum/overmap/New(position, datum/overmap_star_system/system_spawned_in, ...)
 	SHOULD_NOT_OVERRIDE(TRUE) // Use [/datum/overmap/proc/Initialize] instead.
+	RegisterSignal(SSdcs, COMSIG_OVERMAP_FINISHED_CREATION, PROC_REF(on_overmaps_loaded))
 	current_overmap = system_spawned_in
 	if(!position)
 		position = current_overmap.get_unused_overmap_square(force = TRUE)
@@ -126,6 +127,12 @@
  */
 /datum/overmap/proc/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
 	PROTECTED_PROC(TRUE)
+	return
+
+/**
+ * This proc is called when SSovermaps has completed all overmap system set-up, to allow for finer manipulation of things.
+ */
+/datum/overmap/proc/on_overmaps_loaded()
 	return
 
 /**

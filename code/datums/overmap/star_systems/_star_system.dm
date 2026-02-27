@@ -678,3 +678,15 @@
 
 
 	return list("x" = edge_x, "y" = edge_y)
+
+/**
+ * Gets the edge of a star system
+ * * dir - The direction we are getting the edge from.
+ */
+//Returns the edge as coordinates.
+/datum/overmap_star_system/proc/check_for_encounter(to_find)
+	for(var/datum/overmap/dynamic/encounter in dynamic_encounters)
+		if(istype(encounter.planet, to_find))
+			return TRUE
+
+	return FALSE

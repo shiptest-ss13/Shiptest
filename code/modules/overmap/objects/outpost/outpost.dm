@@ -97,6 +97,7 @@
 		market = new()
 		market.name = "[name] market"
 
+/datum/overmap/outpost/on_overmaps_loaded()
 	fill_missions()
 	addtimer(CALLBACK(src, PROC_REF(cycle_missions)), 1 HOURS, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 	addtimer(CALLBACK(src, PROC_REF(fill_missions)), 30 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)

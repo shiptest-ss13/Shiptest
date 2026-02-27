@@ -6,6 +6,11 @@
 	num_wanted = 1
 	objective_type = /obj/item/drill_sample
 	container_type = /obj/item/drill_core_container
+	required_locations = list(
+		DYNAMIC_WORLD_JUNGLE,
+		DYNAMIC_WORLD_ICE,
+		DYNAMIC_WORLD_ROCKPLANET
+	)
 	var/obj/machinery/drill/sampler_mission/mission_drill
 
 /datum/mission/acquire/industrial_drill/New(...)

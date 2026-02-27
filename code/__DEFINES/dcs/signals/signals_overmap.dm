@@ -1,5 +1,8 @@
 // /datum/overmap signals
 
+/// From SSOvermap Initialize(), sent when all overmaps are loaded.
+#define COMSIG_OVERMAP_FINISHED_CREATION "overmap_created"
+
 /// From overmap Move(): (old_x, old_y)
 #define COMSIG_OVERMAP_MOVED "overmap_moved"
 /// From overmap move_overmaps(): (datum/overmap, old_x, old_y)

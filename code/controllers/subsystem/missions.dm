@@ -26,8 +26,8 @@ SUBSYSTEM_DEF(missions)
 		return target_mission
 	//otherwise check the target overmap for an encounter that fulfills the mission's need
 	for(var/encounter in system_to_check.dynamic_encounters)
-		for(var/location in target_mission.required_locations)
-			if(istype(encounter, location))
+		for(var/datum/overmap/dynamic/location in target_mission.required_locations)
+			if(istype(encounter, location.planet))
 				return target_mission
 	//if we don't find one for this current mission, remove it from the list and try again with a new one.
 	valid_missions -= target_mission

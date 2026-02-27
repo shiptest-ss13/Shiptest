@@ -84,6 +84,8 @@ SUBSYSTEM_DEF(overmap)
 
 	link_systems()
 
+	SEND_GLOBAL_SIGNAL(COMSIG_OVERMAP_FINISHED_CREATION)
+
 	return ..()
 
 /datum/controller/subsystem/overmap/proc/spawn_new_star_system(datum/overmap_star_system/system_to_spawn=/datum/overmap_star_system)

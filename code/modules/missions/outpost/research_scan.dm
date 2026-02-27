@@ -63,6 +63,10 @@
 	scanner_type = /obj/item/survey_handheld
 	objective_type = /obj/structure/flora/ash/garden
 	num_wanted = 12
+	required_locations = list(
+		DYNAMIC_WORLD_JUNGLE,
+		DYNAMIC_WORLD_BEACHPLANET
+	)
 	var/garden_string = "lush gardens"
 	var/planet_hint ="Beach and Jungle"
 
@@ -85,6 +89,9 @@
 	num_wanted = 6
 	garden_string = "sickly gardens"
 	planet_hint = "Waste"
+	required_locations = list(
+		DYNAMIC_WORLD_WASTEPLANET
+	)
 
 /datum/mission/survey/garden/ice
 	value = 2000
@@ -93,6 +100,9 @@
 	num_wanted = 6
 	garden_string = "chilly gardens"
 	planet_hint = "Ice"
+	required_locations = list(
+		DYNAMIC_WORLD_ICE
+	)
 
 /datum/mission/survey/garden/arid
 	value = 2000
@@ -101,6 +111,10 @@
 	num_wanted = 6
 	garden_string = "rock gardens"
 	planet_hint = "Rock"
+	required_locations = list(
+		DYNAMIC_WORLD_ROCKPLANET
+	)
+
 
 //Survey: we like chemicals
 
@@ -113,6 +127,12 @@
 	weight = 4
 
 	num_wanted = 1
+	required_locations = list(
+		DYNAMIC_WORLD_ROCKPLANET,
+		DYNAMIC_WORLD_LAVA,
+		DYNAMIC_WORLD_SAND,
+		DYNAMIC_WORLD_WASTEPLANET
+	)
 
 /datum/mission/survey/geyser/New(...)
 	if(!desc)
