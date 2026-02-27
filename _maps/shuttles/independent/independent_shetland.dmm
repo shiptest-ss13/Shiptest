@@ -9729,7 +9729,7 @@
 "RO" = (
 /obj/structure/railing,
 /obj/machinery/vending/sustenance{
-	desc = "An old, trashy looking vending machine infested with skittering insects on the inside of it's window. Judging by It's condition, it's contents are probably spoiled... On closer inspection, it's speaker also seems to have been tampered with.";
+	desc = "An old, trashy looking vending machine infested with skittering insects on the inside of it's window. Judging by it's condition, it's contents are probably spoiled... On closer inspection, it's speaker also seems to have been tampered with.";
 	name = "Desecrated Vending Machine"
 	},
 /obj/effect/turf_decal/trimline/transparent/green/filled/line{
@@ -10584,7 +10584,13 @@
 /obj/effect/spawner/bunk_bed,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/north,
+/obj/machinery/light/small/directional/north{
+	pixel_x = 8
+	},
+/obj/structure/sign/poster/contraband/lusty_xenomorph{
+	pixel_y = 32;
+	pixel_x = -10
+	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken2"
 	},
