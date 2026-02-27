@@ -13,6 +13,7 @@ import {
 import { Window } from '../layouts';
 import { Table } from '../components/Table';
 import { decodeHtmlEntities } from 'common/string';
+import { toFixed } from '../../common/math';
 
 export const HelmConsole = (_props, context) => {
   const { data } = useBackend(context);
@@ -46,10 +47,47 @@ export const HelmConsole = (_props, context) => {
 
 const SharedContent = (_props, context) => {
   const { act, data } = useBackend(context);
-  const { isViewer, canRename, shipInfo = [], otherInfo = [] } = data;
+  const {
+    isViewer,
+    canRename,
+    cloaked,
+    cloakChargePercent,
+    hasCloaking,
+    shipInfo = [],
+    otherInfo = [],
+  } = data;
   return (
     <>
-      <Section title="Radar">
+      <Section
+        title="Radar"
+        buttons={
+          hasCloaking ? (
+            <>
+              <Button
+                tooltip="Cloak"
+                tooltipPosition="left"
+                icon="user-secret"
+                selected={cloaked}
+                disabled={isViewer}
+                onClick={() => act('toggle_cloak')}
+              />
+              <ProgressBar
+                value={cloakChargePercent}
+                minValue={0}
+                maxValue={100}
+                width="72px"
+                ranges={{
+                  good: [50, Infinity],
+                  average: [15, 50],
+                  bad: [-Infinity, 15],
+                }}
+              >
+                {toFixed(cloakChargePercent, 1)}%
+              </ProgressBar>
+            </>
+          ) : null
+        }
+      >
         <Table>
           <Table.Row bold>
             <Table.Cell>Name</Table.Cell>
@@ -58,7 +96,9 @@ const SharedContent = (_props, context) => {
           </Table.Row>
           {otherInfo.map((ship) => (
             <Table.Row key={ship.name}>
-              <Table.Cell>{ship.name}</Table.Cell>
+              <Table.Cell>
+                {ship.hidden ? 'Unidentified ' + ship.object_class : ship.name}
+              </Table.Cell>
               {!isViewer && (
                 <Table.Cell>
                   <Button

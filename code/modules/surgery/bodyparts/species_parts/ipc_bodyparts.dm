@@ -5,6 +5,7 @@
 	limb_id = "synth"
 	dynamic_rename = FALSE
 	draw_eyes = FALSE
+	var/has_screen = TRUE
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
@@ -703,6 +704,7 @@
 	uses_mutcolor = TRUE
 	should_draw_greyscale = TRUE
 	overlay_icon_state = TRUE
+	has_screen = FALSE
 	draw_eyes = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT
 
@@ -762,6 +764,7 @@
 	name = "\improper Inteq Mothership 'Sprinter' Type-1 head"
 	icon_state = "inteqsprinter_head"
 	limb_id = "inteqsprinter"
+	has_screen = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 /obj/item/bodypart/chest/ipc/sprinter
@@ -802,6 +805,7 @@
 	name = "\improper Maxim Dynamics 'Seeker' head"
 	icon_state = "seekeripc_head"
 	limb_id = "seekeripc"
+	has_screen = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 /obj/item/bodypart/chest/ipc/seeker
@@ -835,6 +839,7 @@
 	name = "\improper Absolution-Lux 'Solferino' head"
 	icon_state = "ablux_head"
 	limb_id = "ablux"
+	has_screen = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 /obj/item/bodypart/chest/ipc/solferino
@@ -869,6 +874,7 @@
 	icon_state = "humanipc_head"
 	limb_id = "humanipc"
 	draw_eyes = TRUE
+	has_screen = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 /obj/item/bodypart/chest/ipc/humaniform

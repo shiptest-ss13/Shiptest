@@ -42,6 +42,8 @@
 		/obj/item/reagent_containers/medigel/hadrakine = 3,
 		/obj/item/reagent_containers/medigel/quardexane = 3,
 		/obj/item/storage/pill_bottle/stardrop = 5,
+		/obj/item/storage/pill_bottle/rcyte = 5,
+		/obj/item/inhaler/sting = 5,
 	)
 
 /obj/item/vending_refill/wallmed
