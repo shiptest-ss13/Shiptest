@@ -283,7 +283,7 @@
 /obj/item/clothing/head/helmet/riot/cybersun
 	name = "\improper Riot \"Solution\" Helmet"
 	desc = "A heavy helmet made to pair with Cybersun's \"Solution\" combat armor. Effective against most weapons."
-	icon_state = "cybersun_riot"
+	icon_state = "riot_cybersun"
 	unique_reskin = null
 
 	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
@@ -292,10 +292,10 @@
 /obj/item/clothing/head/helmet/riot/cybersun/trauma
 	name = "\improper Riot \"Recovery\" Helmet"
 	desc = "A heavy helmet made to pair with Cybersun's Trauma Team \"Recovery\" combat armor. Effective against most weapons."
-	icon_state = "trauma_riot"
+	icon_state = "riot_trauma"
 	unique_reskin = list(
-		"None" = "trauma_riot",
-		"Trauma Teal" = "trauma_teal_riot"
+		"None" = "riot_trauma",
+		"Trauma Teal" = "riot_trauma_teal"
 	)
 
 //Cybersun Hardsuit
