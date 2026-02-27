@@ -384,7 +384,7 @@
 
 //Chief Medical Officer
 
-/datum/outfit/job/syndicate/cmo/suns
+/datum/outfit/job/syndicate/suns_doctor
 	name = "Syndicate - Medical Instructor (SUNS)"
 	id_assignment = "Medical Instructor"
 
