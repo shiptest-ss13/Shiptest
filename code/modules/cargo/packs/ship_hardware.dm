@@ -76,7 +76,7 @@
 	crate_name = "cloaking system crate"
 	crate_type = /obj/structure/closet/crate/engineering
 	faction = /datum/faction/syndicate/hardliners
-	faction_discount = 0.3
+	faction_discount = 30
 
 /datum/supply_pack/ship_hardware/advanced_cloaking_device
 	name = "BFRD-3A Advanced Cloaking System"

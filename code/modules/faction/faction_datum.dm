@@ -106,7 +106,7 @@
 	name = FACTION_CLIP
 	short_name = "CLIP"
 	parent_faction = /datum/faction/clip
-	official_language = /datum/language/zohil_kalixcian
+	official_language = /datum/language/league_kalixcian
 	prefixes = PREFIX_CLIP
 	color = "#3F90DF"
 
