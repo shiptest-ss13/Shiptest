@@ -70,11 +70,12 @@
 	. = ..()
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C
+		var/obj/item/bodypart/head/ipc/our_head = C.bodyparts[BODY_ZONE_HEAD]
 		if(!change_screen)
-			if(C.bodyparts[BODY_ZONE_HEAD].has_screen)
+			if(our_head.has_screen)
 				change_screen = new
 				change_screen.Grant(H)
-			else if (C.bodyparts[BODY_ZONE_HEAD].draw_eyes)
+			else if (our_head.draw_eyes && !our_head.force_white_eye_color)
 				change_eye_color = new
 				change_eye_color.Grant(H)
 		C.RegisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, TYPE_PROC_REF(/mob/living/carbon, charge))

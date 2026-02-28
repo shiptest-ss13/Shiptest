@@ -3,6 +3,9 @@
 	icon = 'icons/mob/species/ipc/bodyparts.dmi'
 	icon_state = "synth_head"
 	limb_id = "synth"
+	var/custom_eye_sprite
+	/// if true, we set the eyes to #FFFFFF - useful for ipcs where the light color probably shouldnt be changable
+	var/force_white_eye_color = FALSE
 	dynamic_rename = FALSE
 	draw_eyes = FALSE
 	var/has_screen = FALSE
@@ -18,6 +21,26 @@
 	light_burn_msg = "burned"
 	medium_burn_msg = "scorched"
 	heavy_burn_msg = "seared"
+
+//awful workaround for the lack of differing eye sprite handling
+/obj/item/bodypart/head/ipc/update_limb(dropping_limb, mob/living/carbon/source, is_creating)
+	var/mob/living/carbon/human/limb_owner
+	if(source)
+		limb_owner = source
+	else
+		limb_owner = owner
+
+	var/obj/item/organ/eyes/eyes_to_edit = limb_owner.getorganslot(ORGAN_SLOT_EYES)
+
+	if(!limb_owner || !eyes_to_edit)
+		return ..()
+	if(custom_eye_sprite)
+		eyes_to_edit.eye_icon_state = custom_eye_sprite
+
+	if(force_white_eye_color)
+		limb_owner.eye_color = COLOR_WHITE
+		eyes_to_edit.eye_color = COLOR_WHITE
+	return ..()
 
 /obj/item/bodypart/chest/ipc
 	static_icon = 'icons/mob/species/ipc/bodyparts.dmi'
@@ -182,6 +205,7 @@
 	name = "\improper Makosso-Warra MW-PMU head"
 	icon_state = "mwpmu_head"
 	limb_id = "mwpmu"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT
 
 /obj/item/bodypart/chest/ipc/mwpmu
 	name = "\improper Makosso-Warra MW-PMU chest"
@@ -200,13 +224,13 @@
 
 /obj/item/bodypart/leg/left/ipc/mwpmu
 	name = "\improper Makosso-Warra MW-PMU left leg"
-	icon_state = "mwpmu_l_leg"
+	icon_state = "mwpmu_l_leg_digigrade"
 	limb_id = "mwpmu"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
 /obj/item/bodypart/leg/right/ipc/mwpmu
 	name = "\improper Makosso-Warra MW-PMU right leg"
-	icon_state = "mwpmu_r_leg"
+	icon_state = "mwpmu_r_leg_digigrade"
 	limb_id = "mwpmu"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
@@ -217,6 +241,7 @@
 	name = "\improper Makosso-Warra MW-HIACU head"
 	icon_state = "mwhiacu_head"
 	limb_id = "mwhiacu"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT
 
 /obj/item/bodypart/chest/ipc/mwhiacu
 	name = "\improper Makosso-Warra MW-HIACU chest"
@@ -235,13 +260,13 @@
 
 /obj/item/bodypart/leg/left/ipc/mwhiacu
 	name = "\improper Makosso-Warra MW-HIACU left leg"
-	icon_state = "mwhiacu_l_leg"
+	icon_state = "mwhiacu_l_leg_digigrade"
 	limb_id = "mwhiacu"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
 /obj/item/bodypart/leg/right/ipc/mwhiacu
 	name = "\improper Makosso-Warra MW-HIACU right leg"
-	icon_state = "mwhiacu_r_leg"
+	icon_state = "mwhiacu_r_leg_digigrade"
 	limb_id = "mwhiacu"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
@@ -252,6 +277,7 @@
 	name = "\improper Makosso-Warra MW-HIACU head"
 	icon_state = "mwhiacu_vi_head"
 	limb_id = "mwhiacu_vi"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT
 
 /obj/item/bodypart/chest/ipc/mwhiacu_vi
 	name = "\improper Makosso-Warra MW-HIACU chest"
@@ -270,13 +296,13 @@
 
 /obj/item/bodypart/leg/left/ipc/mwhiacu_vi
 	name = "\improper Makosso-Warra MW-HIACU left leg"
-	icon_state = "mwhiacu_vi_l_leg"
+	icon_state = "mwhiacu_vi_l_leg_digigrade"
 	limb_id = "mwhiacu_vi"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
 /obj/item/bodypart/leg/right/ipc/mwhiacu_vi
 	name = "\improper Makosso-Warra MW-HIACU right leg"
-	icon_state = "mwhiacu_vi_r_leg"
+	icon_state = "mwhiacu_vi_r_leg_digigrade"
 	limb_id = "mwhiacu_vi"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
@@ -322,6 +348,7 @@
 	limb_id = "saipc"
 	draw_eyes = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT_SMALL
+	custom_eye_sprite = "eyes_mono"
 
 /obj/item/bodypart/chest/ipc/saipc
 	name = "\improper Scarborgh Arms IPC-73 chest"
@@ -356,6 +383,7 @@
 	limb_id = "saipc2"
 	draw_eyes = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT_SMALL
+	custom_eye_sprite = "eyes_mono"
 
 /obj/item/bodypart/chest/ipc/saipc2
 	name = "\improper Scarborgh Arms IPC-80 MK.2 chest"
@@ -374,15 +402,13 @@
 
 /obj/item/bodypart/leg/left/ipc/saipc2
 	name = "\improper Scarborgh Arms IPC-80 MK.2 left leg"
-	icon_state = "saipc2_l_leg_digigrade"
+	icon_state = "saipc2_l_leg"
 	limb_id = "saipc2"
-	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
 /obj/item/bodypart/leg/right/ipc/saipc2
 	name = "\improper Scarborgh Arms IPC-80 MK.2 right leg"
-	icon_state = "saipc2_r_leg_digigrade"
+	icon_state = "saipc2_r_leg"
 	limb_id = "saipc2"
-	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
 // Scarborgh Arms IPC-80 MK.2
 
@@ -410,15 +436,13 @@
 
 /obj/item/bodypart/leg/left/ipc/saipc2
 	name = "\improper Scarborgh Arms IPC-80 MK.2 left leg"
-	icon_state = "saipc2_l_leg_digigrade"
+	icon_state = "saipc2_l_leg"
 	limb_id = "saipc2"
-	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
 /obj/item/bodypart/leg/right/ipc/saipc2
 	name = "\improper Scarborgh Arms IPC-80 MK.2 right leg"
-	icon_state = "saipc2_r_leg_digigrade"
+	icon_state = "saipc2_r_leg"
 	limb_id = "saipc2"
-	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
 // Lanchester Mechanics 'HEAVY DUTY FRAME'
 
@@ -426,7 +450,8 @@
 	name = "\improper Lanchester Mechanics 'HEAVY DUTY FRAME' head"
 	icon_state = "lanchesterheavy_head"
 	limb_id = "lanchesterheavy"
-	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	draw_eyes = TRUE
+	custom_eye_sprite = "eyes_circle"
 
 /obj/item/bodypart/chest/ipc/lanchesterheavy
 	name = "\improper Lanchester Mechanics 'HEAVY DUTY FRAME' chest"
@@ -461,6 +486,7 @@
 	name = "\improper HARDLINE 'Longshore' head"
 	icon_state = "lanchesterworker_head"
 	limb_id = "lanchesterworker"
+	has_screen = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
 
 /obj/item/bodypart/chest/ipc/lanchesterworker
@@ -496,6 +522,7 @@
 	name = "\improper Custom Unplated head"
 	icon_state = "lanchesterunplated_head"
 	limb_id = "lanchesterunplated"
+	has_screen = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
 
 /obj/item/bodypart/chest/ipc/lanchesterunplated
@@ -533,6 +560,7 @@
 	limb_id = "pgfmk3_suhols"
 	draw_eyes = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT_SMALL
+	custom_eye_sprite = "eyes_elzu"
 
 /obj/item/bodypart/chest/ipc/pgfmk3_suhols
 	name = "\improper Suhols-Ro chest"
@@ -545,7 +573,7 @@
 	name = "\improper PGF Mechanics MK.III Type 'Wusha' head"
 	icon_state = "pgfmk3_wusha_head"
 	limb_id = "pgfmk3_wusha"
-	draw_eyes = TRUE
+	draw_eyes = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT_SMALL
 
 /obj/item/bodypart/chest/ipc/pgfmk3_wusha
@@ -644,6 +672,8 @@
 	name = "\improper Besoro Bishop head"
 	icon_state = "bishop_head"
 	limb_id = "bishop"
+	draw_eyes = TRUE
+	custom_eye_sprite = "eyes_circle"
 
 /obj/item/bodypart/chest/ipc/bishop
 	name = "\improper Besoro Bishop chest"
@@ -678,6 +708,9 @@
 	limb_id = "inteqsprinter"
 	has_screen = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	custom_eye_sprite = "eyes_inteqsprinter"
+	draw_eyes = TRUE
+	force_white_eye_color = TRUE
 
 /obj/item/bodypart/chest/ipc/sprinter
 	name = "\improper Inteq Mothership 'Sprinter' chest"
@@ -710,6 +743,9 @@
 	name = "\improper Inteq Mothership 'Sprinter' Type-2 head"
 	icon_state = "inteqsprinter2_head"
 	limb_id = "inteqsprinter2"
+	custom_eye_sprite = "eyes_inteqsprinter2"
+	draw_eyes = TRUE
+	force_white_eye_color = TRUE
 
 // MAXIM SEEKER
 
@@ -717,8 +753,9 @@
 	name = "\improper Maxim Dynamics 'Seeker' head"
 	icon_state = "seekeripc_head"
 	limb_id = "seekeripc"
-	has_screen = FALSE
-	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	custom_eye_sprite = "eyes_seekeripc"
+	draw_eyes = TRUE
+	force_white_eye_color = TRUE
 
 /obj/item/bodypart/chest/ipc/seeker
 	name = "\improper Maxim Dynamics 'Seeker' chest"
@@ -820,7 +857,8 @@
 	name = "\improper Cybersun Biodynamics S Series 'Ghost' head"
 	icon_state = "cyber_head"
 	limb_id = "cyber"
-	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	custom_eye_sprite = "eyes_cybersun_ghost"
+	force_white_eye_color = TRUE
 
 /obj/item/bodypart/chest/ipc/ghost
 	name = "\improper Cybersun Biodynamics S Series 'Ghost' chest"

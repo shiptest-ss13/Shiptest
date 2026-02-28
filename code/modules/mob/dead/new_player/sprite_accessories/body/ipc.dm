@@ -1,5 +1,3 @@
-// Start chassis - the worst thing ever please rework this
-
 /*
 	The blurbs in the PR you shouldn't take these as offical lore for your IPC, these should instead serve as jumping-off points for your
 	character's lore, after all, these are just skins at the end of the day.
@@ -11,7 +9,7 @@
 	icon_state = "who cares fuck you" // In order to pull the chassis correctly, we need AN icon_state(see line 36-39). It doesn't have to be useful, because it isn't used.
 	color_src = 0
 	/// Associated list of bodyparts by zone.
-	var/list/chassis_bodyparts = list(
+	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc,
@@ -19,8 +17,6 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc,
 	)
-	/// Associated list of features granted by this chassis and their default values.
-	var/list/chassis_features = list()
 
 //Pawsitrons United N1
 /*
@@ -31,7 +27,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/pawsitrons
 	name = "Pawsitrons United N1"
-	chassis_bodyparts = list(
+	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pawsitrons,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/pawsitrons,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/pawsitrons,
@@ -48,7 +44,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/mwpmu
 	name = "Makosso-Warra MW-PMU"
-	chassis_bodyparts = list(
+	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/mwpmu,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/mwpmu,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/mwpmu,
@@ -65,7 +61,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/mwhiacu
 	name = "Makosso-Warra MW-HIACU (MW)"
-	chassis_bodyparts = list(
+	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/mwhiacu,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/mwhiacu,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/mwhiacu,
@@ -76,15 +72,15 @@
 
 //Makosso-Warra MW-HIACU (VI)
 
-/datum/sprite_accessory/body/ipc_chassis/mwhiacu
+/datum/sprite_accessory/body/ipc_chassis/mwhiacu_vi
 	name = "Makosso-Warra MW-HIACU (VI)"
-	chassis_bodyparts = list(
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/mwhiacu,
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/mwhiacu,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/mwhiacu,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/mwhiacu,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/mwhiacu,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/mwhiacu,
+	replacement_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/mwhiacu_vi,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/mwhiacu_vi,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/mwhiacu_vi,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/mwhiacu_vi,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/mwhiacu_vi,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/mwhiacu_vi,
 	)
 
 //Atua Synkinetics Parça
@@ -95,7 +91,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/atua
 	name = "Atua Synkinetics Parça"
-	chassis_bodyparts = list(
+	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/atua,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/atua,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/atua,
@@ -113,7 +109,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/saipc
 	name = "Scarborgh Arms IPC-73"
-	chassis_bodyparts = list(
+	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/saipc,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/saipc,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/saipc,
@@ -131,7 +127,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/saipc2
 	name = "Scarborgh Arms IPC-80 MK.2"
-	chassis_bodyparts = list(
+	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/saipc2,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/saipc2,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/saipc2,
@@ -148,7 +144,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/lanchesterheavy
 	name = "Lanchester Mechanics 'HEAVY DUTY FRAME'"
-	chassis_bodyparts = list(
+	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/lanchesterheavy,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/lanchesterheavy,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/lanchesterheavy,
@@ -165,7 +161,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/lanchesterworker
 	name = "HARDLINE 'Longshore'"
-	chassis_bodyparts = list(
+	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/lanchesterworker,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/lanchesterworker,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/lanchesterworker,
@@ -181,7 +177,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/lanchesterunplated
 	name = "Custom 'Unplated'"
-	chassis_bodyparts = list(
+	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/lanchesterunplated,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/lanchesterunplated,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/lanchesterunplated,
@@ -200,7 +196,7 @@
 /datum/sprite_accessory/body/ipc_chassis/pgfmk3_suhols
 	name = "PGF Mechanics MK.3 Type 'Suhols-Ro'"
 	color_src = MUTCOLORS
-	chassis_bodyparts = list(
+	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pgfmk3_suhols,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/pgfmk3_suhols,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/pgfmk3,
@@ -213,7 +209,7 @@
 /datum/sprite_accessory/body/ipc_chassis/pgfmk3_wusha
 	name = "PGF Mechanics MK.3 Type 'Wusha'"
 	color_src = MUTCOLORS
-	chassis_bodyparts = list(
+	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pgfmk3_wusha,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/pgfmk3_wusha,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/pgfmk3,
@@ -232,7 +228,7 @@
 /datum/sprite_accessory/body/ipc_chassis/pgf
 	name = "PGF Mechanics MK.5 Type-P"
 	color_src = MUTCOLORS
-	chassis_bodyparts = list(
+	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pgf,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/pgf,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/pgf,
@@ -244,7 +240,7 @@
 /datum/sprite_accessory/body/ipc_chassis/pgf_type_d
 	name = "PGF Mechanics MK.5 Type-D"
 	color_src = MUTCOLORS
-	chassis_bodyparts = list(
+	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pgf,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/pgf,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/pgf,
@@ -262,7 +258,7 @@
 /datum/sprite_accessory/body/ipc_chassis/bishop
 	name = "Besoro Bishop"
 //	color_src = MUTCOLORS
-	chassis_bodyparts = list(
+	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/bishop,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/bishop,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/bishop,
@@ -274,7 +270,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/sprinter
 	name = "Inteq Mothership 'Sprinter' Type 1"
-	chassis_bodyparts = list(
+	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/sprinter,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/sprinter,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/sprinter,
@@ -285,7 +281,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/sprinter_v2
 	name = "Inteq Mothership 'Sprinter' Type 2"
-	chassis_bodyparts = list(
+	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/sprinter/type_2,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/sprinter,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/sprinter,
@@ -296,7 +292,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/seeker
 	name = "Maxim Dynamics 'Seeker'"
-	chassis_bodyparts = list(
+	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/seeker,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/seeker,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/seeker,
@@ -307,7 +303,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/solferino
 	name = "Absolution-Lux 'Solferino'"
-	chassis_bodyparts = list(
+	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/solferino,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/solferino,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/solferino,
@@ -318,7 +314,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/humaniform
 	name = "Clover Corporation 'Humaniform'"
-	chassis_bodyparts = list(
+	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/humaniform,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/humaniform,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/humaniform,
@@ -329,7 +325,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/cybersun
 	name = "Cybersun Biodynamics S Series 'Ghost'"
-	chassis_bodyparts = list(
+	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/ghost,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/ghost,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/ghost,
