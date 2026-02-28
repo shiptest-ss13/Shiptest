@@ -318,7 +318,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
  * * excluded_zones - list, add zone defines to block organs inside of the zones from getting handled. see headless mutation for an example
  */
 /datum/species/proc/regenerate_organs(mob/living/carbon/C, datum/species/old_species,replace_current=TRUE, list/excluded_zones, robotic = FALSE)
-	for(var/slot in (species_organs | old_species.species_organs))
+	for(var/slot in (species_organs | old_species?.species_organs))
 		var/obj/item/organ/oldorgan = C.getorganslot(slot) //used in removing
 		var/obj/item/organ/neworgan = C.new_organ(slot, robotic, src) //used in adding
 

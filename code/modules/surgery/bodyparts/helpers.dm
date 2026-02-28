@@ -177,8 +177,8 @@
 	species ||= dna.species
 	robotic ||= HAS_TRAIT(src, TRAIT_USE_PROSTHETIC)
 	var/organ_type
-	if(robotic && species.prosthetic_style)
-		organ_type = species.prosthetic_style.replacement_organs[slot] || species.species_organs[slot]
+	if(robotic && species.prosthetic_style && (slot in species.prosthetic_style.replacement_organs))
+		organ_type = species.prosthetic_style.replacement_organs[slot]
 	else
 		organ_type = species.species_organs[slot]
 	if(!organ_type)
