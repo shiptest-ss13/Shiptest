@@ -138,6 +138,14 @@
 	build_path = /obj/item/stack/sheet/leather/synthetic
 	category = list("initial","Organic Materials")
 
+/datum/design/meatproduct
+	name = "Synthetic Meat Product"
+	id = "meats"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass= 150)
+	build_path = /obj/item/food/meat/slab/meatproduct
+	category = list("initial","Organic Materials")
+
 /datum/design/rngplant
 	name = "SYNTHESIS"
 	id = "rngplant"
