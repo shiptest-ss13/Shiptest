@@ -23,12 +23,22 @@
 	/// Use to set a delay after activation to trigger the explosion.
 	var/blast_delay = 1 DECISECONDS
 
+	/// Should our start live?
+	var/spawn_armed = FALSE
+	/// Sets a delay for mines for mines that start live
+	var/spawn_arm_delay
+
 	var/manufacturer = MANUFACTURER_NONE
 
 /obj/item/mine/Initialize(mapload)
 	. = ..()
-	if(armed)
-		now_armed()
+	if(spawn_armed)
+		if(spawn_arm_delay)
+			armed = FALSE
+			update_appearance(UPDATE_ICON_STATE)
+			addtimer(CALLBACK(src, PROC_REF(now_armed)), spawn_arm_delay)
+		else
+			now_armed()
 
 /obj/item/mine/examine(mob/user)
 	. = ..()
@@ -817,7 +827,7 @@
 #define LIVE_MINE_HELPER(mine_type)		\
 	/obj/item/mine/##mine_type/live {		\
 		anchored = TRUE;					\
-		armed = TRUE;						\
+		spawn_armed = TRUE;						\
 	}
 
 LIVE_MINE_HELPER(pressure/explosive)
