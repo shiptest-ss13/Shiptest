@@ -1,9 +1,9 @@
 /// Maximimum number of characters that we allow on paper.
 #define MAX_PAPER_LENGTH 5000
 /// Max number of stamps that can be applied to the paper in tgui.
-#define MAX_PAPER_STAMPS 30
+#define MAX_PAPER_GRAPHICS 30
 /// Max number of stamp overlays that we'll add to a piece of paper's icon.
-#define MAX_PAPER_STAMPS_OVERLAYS 4
+#define MAX_PAPER_GRAPHIC_OVERLAYS 4
 /// Maximum length of input fields. Input fields greater than this length are clamped tgui-side. Input field text input greater than this length is rejected tgui-side, discarded + logged if it reaches DM-side.
 #define MAX_PAPER_INPUT_FIELD_LENGTH MAX_NAME_LEN
 

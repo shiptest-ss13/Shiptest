@@ -1201,7 +1201,7 @@
 	return ..()
 
 GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
-	/obj/item/gun/energy/plasmacutter,
+	/obj/item/plasmacutter,
 	/obj/item/melee/energy,
 	/obj/item/gear_handle/anglegrinder,
 	/obj/item/hatchet,
