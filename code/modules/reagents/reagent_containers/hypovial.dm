@@ -60,6 +60,8 @@
 
 /obj/item/reagent_containers/glass/bottle/vial/tiny
 	name = "small hypovial"
+	icon_state = "hypovial-small"
+	volume = 30
 	//Shouldn't be possible to get this without adminbuse
 
 /obj/item/reagent_containers/glass/bottle/vial/small
@@ -121,10 +123,33 @@
 	unique_reskin = null
 
 
+/obj/item/reagent_containers/glass/bottle/vial/tiny/preloaded
+
+/obj/item/reagent_containers/glass/bottle/vial/tiny/preloaded/silfrine
+	name = "small red hypovial (silfrine)"
+	icon_state = "hypovial-b-small"
+	comes_with = list(/datum/reagent/medicine/silfrine = 30)
+
+/obj/item/reagent_containers/glass/bottle/vial/tiny/preloaded/ysiltane
+	name = "small red hypovial (silfrine)"
+	icon_state = "hypovial-b-small"
+	comes_with = list(/datum/reagent/medicine/ysiltane = 30)
+
+/obj/item/reagent_containers/glass/bottle/vial/tiny/preloaded/gjalrazine
+	name = "small red hypovial (silfrine)"
+	icon_state = "hypovial-b-small"
+	comes_with = list(/datum/reagent/medicine/gjalrazine = 30)
+
 /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/indomide
 	name = "red hypovial (indomide)"
 	icon_state = "hypovial-b"
 	comes_with = list(/datum/reagent/medicine/indomide = 60)
+
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/hadrakine
+	name = "red hypovial (hadrakine)"
+	desc = "Set hypospray to 'spray' before use!"
+	icon_state = "hypovial-b"
+	comes_with = list(/datum/reagent/medicine/hadrakine = 60)
 
 /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/pancrazine
 	name = "green hypovial (pancrazine)"
