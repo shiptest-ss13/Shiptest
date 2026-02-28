@@ -396,6 +396,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 
 ///Replaces all of a mob's limbs and organs with cybernetics at roundstart.
 #define TRAIT_USE_PROSTHETIC "use_prosthetic"
+///This human's a mutant!
+#define TRAIT_GENEMODDED "genemodded"
 
 ///Trait granted by lipstick
 #define LIPSTICK_TRAIT "lipstick_trait"

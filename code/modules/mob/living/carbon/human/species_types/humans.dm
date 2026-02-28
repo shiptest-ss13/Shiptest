@@ -15,37 +15,58 @@
 	prosthetic_style = /datum/sprite_accessory/body/prosthetic/human
 
 /datum/species/human/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
+	var/modded = FALSE
 	switch(C.dna.features["ears"])
 		if("Elf")
 			species_organs[ORGAN_SLOT_EARS] = /obj/item/organ/ears/elf
+			modded = TRUE
 		if("Cat")
 			species_organs[ORGAN_SLOT_EARS] = /obj/item/organ/ears/cat
+			modded = TRUE
 		if("Dog")
 			species_organs[ORGAN_SLOT_EARS] = /obj/item/organ/ears/dog
+			modded = TRUE
 		if("Fox")
 			species_organs[ORGAN_SLOT_EARS] = /obj/item/organ/ears/fox
+			modded = TRUE
 		if("Rabbit")
 			species_organs[ORGAN_SLOT_EARS] = /obj/item/organ/ears/rabbit
+			modded = TRUE
 		if("Bent Rabbit")
 			species_organs[ORGAN_SLOT_EARS] = /obj/item/organ/ears/rabbit/bent
+			modded = TRUE
 		if("Floppy Rabbit")
 			species_organs[ORGAN_SLOT_EARS] = /obj/item/organ/ears/rabbit/floppy
+			modded = TRUE
 		if("Horse")
 			species_organs[ORGAN_SLOT_EARS] = /obj/item/organ/ears/horse
+			modded = TRUE
 	switch(C.dna.features["tail_human"])
 		if("Cat")
-			species_organs[ORGAN_SLOT_TAIL] |= /obj/item/organ/tail/cat
+			species_organs[ORGAN_SLOT_TAIL] = /obj/item/organ/tail/cat
+			modded = TRUE
 		if("Dog")
-			species_organs[ORGAN_SLOT_TAIL] |= /obj/item/organ/tail/dog
+			species_organs[ORGAN_SLOT_TAIL] = /obj/item/organ/tail/dog
+			modded = TRUE
 		if("Fox")
-			species_organs[ORGAN_SLOT_TAIL] |= /obj/item/organ/tail/fox
+			species_organs[ORGAN_SLOT_TAIL] = /obj/item/organ/tail/fox
+			modded = TRUE
 		if("Fox 2")
-			species_organs[ORGAN_SLOT_TAIL] |= /obj/item/organ/tail/fox/alt
+			species_organs[ORGAN_SLOT_TAIL] = /obj/item/organ/tail/fox/alt
+			modded = TRUE
 		if("Rabbit")
-			species_organs[ORGAN_SLOT_TAIL] |= /obj/item/organ/tail/rabbit
+			species_organs[ORGAN_SLOT_TAIL] = /obj/item/organ/tail/rabbit
+			modded = TRUE
 		if("Horse")
-			species_organs[ORGAN_SLOT_TAIL] |= /obj/item/organ/tail/horse
+			species_organs[ORGAN_SLOT_TAIL] = /obj/item/organ/tail/horse
+			modded = TRUE
 
+	if(modded)
+		inherent_traits += TRAIT_GENEMODDED
+
+	return ..()
+
+/datum/species/human/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	return ..()
 
 /datum/species/human/spec_death(gibbed, mob/living/carbon/human/H)

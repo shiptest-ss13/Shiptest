@@ -342,7 +342,7 @@ GENE SCANNER
 			render_list += "<span class='info ml-1'>Genetic Stability: [H.dna.stability]%.</span>\n"
 
 		// Species and body temperature
-		render_list += "<span class='info ml-1'>Species: [H.dna.species.name]</span>\n"
+		render_list += "<span class='info ml-1'>Species: [HAS_TRAIT(H, TRAIT_GENEMODDED) ? "Modified " : ""][H.dna.species.name]</span>\n"
 	render_list += "<span class='info ml-1'>Body temperature: [round(M.bodytemperature-T0C,0.1)] &deg;C ([round(M.bodytemperature*1.8-459.67,0.1)] &deg;F)</span>\n"
 
 	// Time of death
