@@ -4,7 +4,7 @@
 	species_age_min = 0
 	species_age_max = 300
 	species_traits = list(HAIR,NOTRANSSTING,NO_DNA_COPY,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH) //all of these + whatever we inherit from the real species
-	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_LIMBATTACHMENT)
+	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_USE_PROSTHETIC,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_LIMBATTACHMENT)
 	inherent_biotypes = MOB_ROBOTIC | MOB_HUMANOID
 	mutant_bodyparts = list("ipc_screen", "ipc_antenna", "ipc_chassis", "ipc_tail", "ipc_brain")
 	default_features = list("mcolor" = "#7D7D7D", "ipc_screen" = "Static", "ipc_antenna" = "None", "ipc_chassis" = "Morpheus Cyberkinetics (Custom)", "ipc_tail" = "None", "ipc_brain" = "Posibrain")
@@ -46,11 +46,13 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc,
 	)
 
+	// This will be set manually based on IPC chassis selection.
+	prosthetic_style = null
+
 	/// The last screen used when the IPC died.
 	var/saved_screen
 	var/datum/action/innate/change_screen/change_screen
 	var/datum/action/innate/change_eye_color/change_eye_color
-	var/has_screen = TRUE //do we have a screen. Used to determine if we mess with the screen or not
 
 /datum/species/ipc/random_name(unique)
 	var/ipc_name = "[pick(GLOB.posibrain_names)]-[rand(100, 999)]"
@@ -65,19 +67,23 @@
 		"[GLASSES_LAYER]" = list("[NORTH]" = list("x" = 0, "y" = 0), "[EAST]" = list("x" = 2, "y" = 0), "[SOUTH]" = list("x" = 0, "y" = 0), "[WEST]" = list("x" = -2, "y" = 0)),
 	)
 
-/datum/species/ipc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load) // Let's make that IPC actually robotic.
+/datum/species/ipc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load, robotic = TRUE) // Let's make that IPC actually robotic.
+	var/datum/sprite_accessory/body/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[C.dna.features["ipc_chassis"]]
+	if(chassis_of_choice)
+		prosthetic_style = chassis_of_choice
+	else // in case of fuckery
+		stack_trace("Invalid IPC chassis: [C.dna.features["ipc_chassis"]]")
 	if(C.dna?.features["ipc_brain"] == "Man-Machine Interface")
 		species_organs[ORGAN_SLOT_BRAIN] = /obj/item/organ/brain/mmi_holder
-	. = ..()
+	. = ..(C, old_species, pref_load, robotic = TRUE)
 	if(ishuman(C))
-		var/mob/living/carbon/human/H = C
-		if(!change_screen)
-			if(C.bodyparts[BODY_ZONE_HEAD].has_screen)
-				change_screen = new
-				change_screen.Grant(H)
-			else if (C.bodyparts[BODY_ZONE_HEAD].draw_eyes)
-				change_eye_color = new
-				change_eye_color.Grant(H)
+		var/obj/item/bodypart/head/robot_head = C.get_bodypart(BODY_ZONE_HEAD)
+		if(robot_head.bodytype & BODYTYPE_BOXHEAD)
+			change_screen = new
+			change_screen.Grant(C)
+		else if(robot_head.draw_eyes)
+			change_eye_color = new
+			change_eye_color.Grant(C)
 		C.RegisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, TYPE_PROC_REF(/mob/living/carbon, charge))
 
 /datum/species/ipc/on_species_loss(mob/living/carbon/C)
@@ -89,7 +95,7 @@
 	C.UnregisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT)
 
 /datum/species/ipc/spec_death(gibbed, mob/living/carbon/C)
-	if(!has_screen)
+	if(!(C.get_bodypart(BODY_ZONE_HEAD)?.bodytype & BODYTYPE_BOXHEAD))
 		return
 	saved_screen = C.dna.features["ipc_screen"]
 	C.dna.features["ipc_screen"] = "BSOD"
@@ -99,7 +105,7 @@
 /datum/species/ipc/proc/post_death(mob/living/carbon/C)
 	if(C.stat < DEAD)
 		return
-	if(!has_screen)
+	if(!(C.get_bodypart(BODY_ZONE_HEAD)?.bodytype & BODYTYPE_BOXHEAD))
 		return
 	C.dna.features["ipc_screen"] = null // Turns off their monitor on death.
 	C.update_body()
@@ -123,7 +129,7 @@
 	var/datum/species/ipc/species_datum = H.dna.species
 	if(!species_datum)
 		return
-	if(!species_datum.has_screen)
+	if(!(H.get_bodypart(BODY_ZONE_HEAD)?.bodytype & BODYTYPE_BOXHEAD))
 		return
 	H.dna.features["ipc_screen"] = screen_choice
 	H.eye_color = sanitize_hexcolor(color_choice)
@@ -249,7 +255,7 @@
 
 
 /datum/species/ipc/spec_revival(mob/living/carbon/human/H)
-	if(has_screen)
+	if(H.get_bodypart(BODY_ZONE_HEAD)?.bodytype & BODYTYPE_BOXHEAD)
 		H.dna.features["ipc_screen"] = "BSOD"
 		H.update_body()
 	H.say("Reactivating [pick("core systems", "central subroutines", "key functions")]...")
@@ -258,27 +264,10 @@
 /datum/species/ipc/proc/post_revival(mob/living/carbon/human/H)
 	if(H.stat == DEAD)
 		return
-	if(!has_screen)
+	if(!(H.get_bodypart(BODY_ZONE_HEAD)?.bodytype & BODYTYPE_BOXHEAD))
 		return
 	H.dna.features["ipc_screen"] = saved_screen
 	H.update_body()
-
-/datum/species/ipc/replace_body(mob/living/carbon/C, datum/species/old_species, datum/species/new_species, robotic)
-	var/datum/sprite_accessory/body/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[C.dna.features["ipc_chassis"]]
-	if(chassis_of_choice)
-		qdel(species_limbs)
-		species_limbs = chassis_of_choice.replacement_bodyparts.Copy() // elegant.
-		var/obj/item/bodypart/chest/new_chest = species_limbs[BODY_ZONE_CHEST]
-		if(new_chest)
-			bodytype = initial(new_chest.acceptable_bodytype)
-		else
-			stack_trace("[chassis_of_choice.type] had no chest bodypart!")
-		for(var/feature in chassis_of_choice.body_features)
-			mutant_bodyparts |= feature
-			default_features[feature] = chassis_of_choice.body_features[feature]
-	else // in case of fuckery
-		stack_trace("Invalid IPC chassis: [C.dna.features["ipc_chassis"]]")
-	return ..()
 
 /mob/living/carbon/proc/charge(datum/source, amount, repairs)
 	if(nutrition < NUTRITION_LEVEL_WELL_FED)

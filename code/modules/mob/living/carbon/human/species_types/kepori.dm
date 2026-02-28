@@ -62,18 +62,6 @@
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
 	)
 
-	species_robotic_organs = list(
-		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
-		ORGAN_SLOT_HEART = /obj/item/organ/heart/cybernetic,
-		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs/cybernetic,
-		ORGAN_SLOT_EYES = /obj/item/organ/eyes/robotic/kepori,
-		ORGAN_SLOT_EARS = /obj/item/organ/ears/cybernetic,
-		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/robot,
-		ORGAN_SLOT_LIVER = /obj/item/organ/liver/cybernetic,
-		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/cybernetic,
-		ORGAN_SLOT_APPENDIX = null
-	)
-
 	species_limbs = list(
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/kepori,
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/kepori,
@@ -83,14 +71,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/kepori,
 	)
 
-	species_robotic_limbs = list(
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/robot/kepori,
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/robot/kepori,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/robot/surplus/kepori,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot/surplus/kepori,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus/kepori,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus/kepori,
-	)
+	prosthetic_style = /datum/sprite_accessory/body/prosthetic/kepori
 
 	//I'm not emotionally prepared to spend ten more hours splicing overlays together
 	damage_overlay_type = ""

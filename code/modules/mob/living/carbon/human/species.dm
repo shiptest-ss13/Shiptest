@@ -207,17 +207,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	//why does it work this way? because traits also disable the downsides of not having an organ, removing organs but not having the trait will make your species die
 	//shut up you're not my mother
 
-	/// species_organs but for fully-robotic mobs.
-	var/list/obj/item/organ/species_robotic_organs = list(
-		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
-		ORGAN_SLOT_HEART = /obj/item/organ/heart/cybernetic,
-		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs/cybernetic,
-		ORGAN_SLOT_EYES = /obj/item/organ/eyes/robotic,
-		ORGAN_SLOT_EARS = /obj/item/organ/ears/cybernetic,
-		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/robot,
-		ORGAN_SLOT_LIVER = /obj/item/organ/liver/cybernetic,
-		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/cybernetic,
-	)
 	///Forces an item into this species' hands. Only an honorary mutantthing because this is not an organ and not loaded in the same way, you've been warned to do your research.
 	var/obj/item/mutanthands
 
@@ -235,15 +224,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left,
 	)
 
-	/// Default robotic bodyparts for this species.
-	var/list/obj/item/bodypart/species_robotic_limbs = list(
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/robot,
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/robot,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/robot/surplus,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot/surplus,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus,
-	)
+	/// Default prosthetic replacements.
+	var/datum/sprite_accessory/body/prosthetic_style = /datum/sprite_accessory/body/prosthetic
 
 	///For custom overrides for species ass images
 	var/icon/ass_image
@@ -255,7 +237,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 /datum/species/New()
 	wings_icons = string_list(wings_icons)
-	..()
+	if(prosthetic_style)
+		prosthetic_style = GLOB.alternative_body_list[prosthetic_style::name]
+		if(!prosthetic_style)
+			stack_trace("[type] had a defined prosthetic_style but could not find a valid datum!")
+	return ..()
 
 /**
  * Generates species available to choose in character setup at roundstart
@@ -332,20 +318,15 @@ GLOBAL_LIST_EMPTY(roundstart_races)
  * * excluded_zones - list, add zone defines to block organs inside of the zones from getting handled. see headless mutation for an example
  */
 /datum/species/proc/regenerate_organs(mob/living/carbon/C, datum/species/old_species,replace_current=TRUE, list/excluded_zones, robotic = FALSE)
-	//what should be put in if there is no mutantorgan (brains handled seperately)
-	var/list/new_organ_list = robotic ? species_robotic_organs : species_organs
-
-	for(var/slot in (new_organ_list | old_species.species_organs))
-
+	for(var/slot in (species_organs | old_species.species_organs))
 		var/obj/item/organ/oldorgan = C.getorganslot(slot) //used in removing
-		var/obj/item/organ/neworgan = new_organ_list[slot] //used in adding
+		var/obj/item/organ/neworgan = C.new_organ(slot, robotic, src) //used in adding
 
 		if(isnull(neworgan)) //If null is specified, just delete the old organ and call it a day
 			QDEL_NULL(oldorgan)
 			continue
 
 		var/used_neworgan = FALSE
-		neworgan = new neworgan()
 		var/should_have = neworgan.get_availability(src) //organ proc that points back to a species trait (so if the species is supposed to have this organ)
 
 		if(oldorgan && (!should_have || replace_current) && !(oldorgan.zone in excluded_zones))
@@ -416,6 +397,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	if(C.hud_used)
 		C.hud_used.update_locked_slots()
+
+	if(robotic && prosthetic_style)
+		prosthetic_style.apply_to_species(C, src)
 
 	replace_body(C, old_species, robotic = robotic)
 

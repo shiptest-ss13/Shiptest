@@ -12,15 +12,7 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP
 	loreblurb = "Mostly hairless mammalians. Their home system, Sol, lies in a sort of \"bluespace dead-zone\" that blocks anything from entering or exiting Sol's dead-zone through bluespace without a relay. While it leaves Sol extremely well-defended, it meant that they went unnoticed and uncontacted until they were themselves able to breach it."
 	species_language_holder = /datum/language_holder/human
-
-	species_robotic_limbs = list(
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/robot/human,
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/robot/human,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/robot/surplus/human,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot/surplus/human,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus/human,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus/human,
-	)
+	prosthetic_style = /datum/sprite_accessory/body/prosthetic/human
 
 /datum/species/human/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	switch(C.dna.features["ears"])

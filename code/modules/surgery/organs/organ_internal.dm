@@ -239,7 +239,7 @@
 		ears.Insert(src)
 
 /mob/living/carbon/human/regenerate_organs()
-	dna.species.regenerate_organs(src, robotic = fbp)
+	dna.species.regenerate_organs(src, robotic = HAS_TRAIT(src, TRAIT_USE_PROSTHETIC))
 
 /** get_availability
  * returns whether the species should innately have this organ.

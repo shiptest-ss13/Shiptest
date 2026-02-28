@@ -32,13 +32,4 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot,
 	)
 
-	species_robotic_limbs = list(
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/robot,
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/robot,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/robot/surplus,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot/surplus,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus,
-	)
-
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN

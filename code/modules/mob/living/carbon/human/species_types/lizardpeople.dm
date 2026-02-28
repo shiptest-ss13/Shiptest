@@ -37,17 +37,6 @@
 		ORGAN_SLOT_TAIL = /obj/item/organ/tail/lizard,
 	)
 
-	species_robotic_organs = list(
-		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
-		ORGAN_SLOT_HEART = /obj/item/organ/heart/cybernetic,
-		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs/cybernetic,
-		ORGAN_SLOT_EYES = /obj/item/organ/eyes/robotic/lizard,
-		ORGAN_SLOT_EARS = /obj/item/organ/ears/cybernetic,
-		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/robot,
-		ORGAN_SLOT_LIVER = /obj/item/organ/liver/cybernetic,
-		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/cybernetic,
-	)
-
 	species_limbs = list(
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/lizard,
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/lizard,
@@ -57,14 +46,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/lizard/digitigrade,
 	)
 
-	species_robotic_limbs = list(
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/robot/lizard,
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/robot/lizard,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/robot/surplus/lizard,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot/surplus/lizard,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus/lizard/digitigrade,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus/lizard/digitigrade,
-	)
+	prosthetic_style = /datum/sprite_accessory/body/prosthetic/sarathi
 
 	// Sarathi are coldblooded and can stand a greater temperature range than humans
 	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 30

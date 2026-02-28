@@ -42,14 +42,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/moth,
 	)
 
-	species_robotic_limbs = list(
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/robot/human,
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/robot,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/robot/surplus/human,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/robot/surplus/human,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/robot/surplus/human,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/robot/surplus/human,
-	)
+	prosthetic_style = /datum/sprite_accessory/body/prosthetic/human
 
 	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 5
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 5

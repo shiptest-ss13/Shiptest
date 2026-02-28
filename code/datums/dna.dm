@@ -338,7 +338,7 @@
 			language_holder = new species_holder(src)
 
 /mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE, robotic = FALSE)
-	robotic ||= fbp
+	robotic ||= HAS_TRAIT(src, TRAIT_USE_PROSTHETIC)
 	..()
 	if(icon_update)
 		update_hair()
