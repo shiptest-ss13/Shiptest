@@ -1,6 +1,12 @@
 // Start chassis - the worst thing ever please rework this
 
-/datum/sprite_accessory/ipc_chassis // Used for changing limb icons, doesn't need to hold the actual icon. That's handled in ipc.dm
+/*
+	The blurbs in the PR you shouldn't take these as offical lore for your IPC, these should instead serve as jumping-off points for your
+	character's lore, after all, these are just skins at the end of the day.
+	They exist mostly to document the 'story' that was in mind when spriting, and have nearly no bearing on gameplay or roleplay.
+*/
+
+/datum/sprite_accessory/body/ipc_chassis // Used for changing limb icons, doesn't need to hold the actual icon. That's handled in ipc.dm
 	icon = null
 	icon_state = "who cares fuck you" // In order to pull the chassis correctly, we need AN icon_state(see line 36-39). It doesn't have to be useful, because it isn't used.
 	color_src = 0
@@ -16,64 +22,15 @@
 	/// Associated list of features granted by this chassis and their default values.
 	var/list/chassis_features = list()
 
-/datum/sprite_accessory/ipc_chassis/morpheus
-	name = "Morpheus Cyberkinetics (Custom)"
-	chassis_bodyparts = list(
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/morpheus,
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/morpheus,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/morpheus,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/morpheus,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/morpheus,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/morpheus,
-	)
-	color_src = MUTCOLORS
+//Pawsitrons United N1
+/*
+	A highly unconventional frame produced by Pawsitrons United. Both the N1 and company were formed for a crowdfunder on a solarian gene-modder's forum,
+	it's suprise popularity ensured that it's production continued long after the crowdfunding's end. It's awkward build along with paws for hands and
+	feet make it extremely disorienting to use for non-fans
+*/
 
-/datum/sprite_accessory/ipc_chassis/bishop
-	name = "Bishop Cyberkinetics"
-	chassis_bodyparts = list(
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/bishop,
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/bishop,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/bishop,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/bishop,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/bishop,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/bishop,
-	)
-
-/datum/sprite_accessory/ipc_chassis/bishop_v2
-	name = "Bishop Cyberkinetics 2.0"
-	chassis_bodyparts = list(
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/bishop_v2,
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/bishop_v2,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/bishop_v2,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/bishop_v2,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/bishop_v2,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/bishop_v2,
-	)
-
-/datum/sprite_accessory/ipc_chassis/hephaestus
-	name = "Hephaestus Industries"
-	chassis_bodyparts = list(
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/hephaestus,
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/hephaestus,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/hephaestus,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/hephaestus,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/hephaestus,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/hephaestus,
-	)
-
-/datum/sprite_accessory/ipc_chassis/hephaestus_v2
-	name = "Hephaestus Industries 2.0"
-	chassis_bodyparts = list(
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/hephaestus_v2,
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/hephaestus_v2,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/hephaestus_v2,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/hephaestus_v2,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/hephaestus_v2,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/hephaestus_v2,
-	)
-
-/datum/sprite_accessory/ipc_chassis/pawsitrons
-	name = "Pawsitrons United"
+/datum/sprite_accessory/body/ipc_chassis/pawsitrons
+	name = "Pawsitrons United N1"
 	chassis_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pawsitrons,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/pawsitrons,
@@ -83,63 +40,79 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/pawsitrons,
 	)
 
-/datum/sprite_accessory/ipc_chassis/shellguard
-	name = "Shellguard Munitions Standard Series"
+//Makosso-Warra MW-PMU
+/*
+	Makosso-Warra's standard consumer frame, built on top of the MW-HIAU base. A popular choice for prosthetics, as well as a full postrionic frame.
+	The visor unit contains a wide camera for imaging, much cheaper than robotic eyes, but allegedly is not that much of a tradeoff for cost.
+*/
+
+/datum/sprite_accessory/body/ipc_chassis/mwpmu
+	name = "Makosso-Warra MW-PMU"
 	chassis_bodyparts = list(
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/shellguard,
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/shellguard,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/shellguard,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/shellguard,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/shellguard,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/shellguard,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/mwpmu,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/mwpmu,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/mwpmu,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/mwpmu,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/mwpmu,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/mwpmu,
 	)
 
-/datum/sprite_accessory/ipc_chassis/ward_takahashi
-	name = "Ward-Takahashi Manufacturing"
+//Makosso-Warra MW-HIACU
+/*
+	A more durable and eaier to manufacture frame, based on the MW-PMU. A large number of Tricorp employees during the ICW have had HIACU as a chassis or
+	prosthetic. Made for all the Tricorp companies, production has paused as MW has too many stockpiled, but intends to continue once demand catches up.
+*/
+
+/datum/sprite_accessory/body/ipc_chassis/mwhiacu
+	name = "Makosso-Warra MW-HIACU (MW)"
 	chassis_bodyparts = list(
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/ward_takahashi,
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/ward_takahashi,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/ward_takahashi,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/ward_takahashi,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/ward_takahashi,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/ward_takahashi,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/mwhiacu,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/mwhiacu,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/mwhiacu,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/mwhiacu,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/mwhiacu,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/mwhiacu,
 	)
 
-/datum/sprite_accessory/ipc_chassis/xion
-	name = "Xion Manufacturing Group"
+//Makosso-Warra MW-HIACU (VI)
+
+/datum/sprite_accessory/body/ipc_chassis/mwhiacu
+	name = "Makosso-Warra MW-HIACU (VI)"
 	chassis_bodyparts = list(
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/xion,
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/xion,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/xion,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/xion,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/xion,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/xion,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/mwhiacu,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/mwhiacu,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/mwhiacu,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/mwhiacu,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/mwhiacu,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/mwhiacu,
 	)
 
-/datum/sprite_accessory/ipc_chassis/xion_v2
-	name = "Xion Manufacturing Group 2.0"
+//Atua Synkinetics Parça
+/*
+	Atua Synkinetics's standard IPC frame. Originally designed by a lonely solarian student who lived in the African Canton, the design is  has reamained
+	identical to as it was centuries ago, besides spec-upgrades. It is considered a classic, and appears in numerous pieces of solarian media.
+*/
+
+/datum/sprite_accessory/body/ipc_chassis/atua
+	name = "Atua Synkinetics Parça"
 	chassis_bodyparts = list(
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/xion_v2,
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/xion_v2,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/xion_v2,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/xion_v2,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/xion_v2,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/xion_v2,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/atua,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/atua,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/atua,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/atua,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/atua,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/atua,
 	)
 
-/datum/sprite_accessory/ipc_chassis/zeng_hu
-	name = "Nanotrasen Zeng-Hu"
-	chassis_bodyparts = list(
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/zeng_hu,
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/zeng_hu,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/zeng_hu,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/zeng_hu,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/zeng_hu,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/zeng_hu,
-	)
+//Scarborgh Arms IPC-73
+/*
+	Scarborgh Arms's old line of frames, based on licened Atua Synkinetics's Parça frames. Atua attempted to revoke the licence during the ICW to
+	avoid conflict, but by then it was too late; Scarborgh Arms now could produce the IPC-80 at an unprecedented scale at that point. However the IPC-73
+	ceased production to avoid legal troubles with Atua.
+*/
 
-/datum/sprite_accessory/ipc_chassis/saipc
-	name = "Scarborgh Arms IPC-80"
+/datum/sprite_accessory/body/ipc_chassis/saipc
+	name = "Scarborgh Arms IPC-73"
 	chassis_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/saipc,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/saipc,
@@ -149,7 +122,14 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/saipc,
 	)
 
-/datum/sprite_accessory/ipc_chassis/saipc2
+//Scarborgh Arms IPC-80 Mk.2
+/*
+	Scarborgh Arms's new line of frames. It's an improved and more well built version of the IPC-80. While produced for indvidual sale, a large amount
+	is produced on contract for the NGR in NGR territory, as a way to grow domestic production capablity. The NGR offers veterans with old IPC-73 or IPC-80
+	parts to replace them with the Mk.2
+*/
+
+/datum/sprite_accessory/body/ipc_chassis/saipc2
 	name = "Scarborgh Arms IPC-80 MK.2"
 	chassis_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/saipc2,
@@ -160,7 +140,13 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/saipc2,
 	)
 
-/datum/sprite_accessory/ipc_chassis/lanchesterheavy
+//Lanchester Mechanics 'HEAVY DUTY FRAME'
+/*
+	Lanchester Mechanics's industrial frame. Often loaned to employees then returned once they change jobs, however secondhand or privately owned users
+	are	not unheard of. Often bought by Tricorp before inhouse frame production capablity was established.
+*/
+
+/datum/sprite_accessory/body/ipc_chassis/lanchesterheavy
 	name = "Lanchester Mechanics 'HEAVY DUTY FRAME'"
 	chassis_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/lanchesterheavy,
@@ -171,8 +157,14 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/lanchesterheavy,
 	)
 
-/datum/sprite_accessory/ipc_chassis/lanchesterworker
-	name = "Lanchester Mechanics 'WORKER FRAME'"
+//HARDLINE 'Longshore'
+/*
+	HARDLINE's only frame. It's based on a Lanchester Mechanics frame with custom plating, intended to help with internal shipbuilding. However, it's
+	specializiation has made it popular outside the company's production lines, and is commonly sold in volume as a side-buisness for HARDLINE.
+*/
+
+/datum/sprite_accessory/body/ipc_chassis/lanchesterworker
+	name = "HARDLINE 'Longshore'"
 	chassis_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/lanchesterworker,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/lanchesterworker,
@@ -182,7 +174,12 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/lanchesterworker,
 	)
 
-/datum/sprite_accessory/ipc_chassis/lanchesterunplated
+//Custom Lanchester Unplated
+/*
+	A Lanchester frame with no plating. It is not sold like this, and the lack of protection makes it more vulnerable to damage.
+*/
+
+/datum/sprite_accessory/body/ipc_chassis/lanchesterunplated
 	name = "Custom 'Unplated'"
 	chassis_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/lanchesterunplated,
@@ -193,7 +190,46 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/lanchesterunplated,
 	)
 
-/datum/sprite_accessory/ipc_chassis/pgf
+//PGF Mechanics MK.III
+/*
+	A very old frame of PGF Mechanics. It's low cost vs newer models is seen as why it has never stopped production. Intended as both a simple postrionic
+	frame and as prosthetics for Elzuose, it's mass adoptation outside the military has resulted in its very long lifespan, despite it's replacement.
+	It comes in two variations, Suhols-Ro and Wusha. The differences are mostly cosmetic, with almost no difference in specs.
+*/
+
+/datum/sprite_accessory/body/ipc_chassis/pgfmk3_suhols
+	name = "PGF Mechanics MK.3 Type 'Suhols-Ro'"
+	color_src = MUTCOLORS
+	chassis_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pgfmk3_suhols,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/pgfmk3_suhols,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/pgfmk3,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/pgfmk3,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/pgfmk3,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/pgfmk3,
+	)
+
+
+/datum/sprite_accessory/body/ipc_chassis/pgfmk3_wusha
+	name = "PGF Mechanics MK.3 Type 'Wusha'"
+	color_src = MUTCOLORS
+	chassis_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pgfmk3_wusha,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/pgfmk3_wusha,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/pgfmk3,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/pgfmk3,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/pgfmk3,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/pgfmk3,
+	)
+
+
+//PGF Mechanics MK.V
+/*
+	Widely considered to be the most advanced postrionic frame ever created, the MK.V is a masterwork of technology, only held back by it's masterwork of
+	a price. It's wide adoption in the PGFN is considered by many a show of force for the PGF's technological superiority.
+*/
+
+/datum/sprite_accessory/body/ipc_chassis/pgf
 	name = "PGF Mechanics MK.5 Type-P"
 	color_src = MUTCOLORS
 	chassis_bodyparts = list(
@@ -205,8 +241,8 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/pgf,
 	)
 
-/datum/sprite_accessory/ipc_chassis/pgf_type_d
-	name = "PGF Mechanics Type-D"
+/datum/sprite_accessory/body/ipc_chassis/pgf_type_d
+	name = "PGF Mechanics MK.5 Type-D"
 	color_src = MUTCOLORS
 	chassis_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pgf,
@@ -217,7 +253,26 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/pgf/type_d,
 	)
 
-/datum/sprite_accessory/ipc_chassis/sprinter
+//Besoro Bishop
+/*
+	The flagship of Besoro, an up and coming tech startup. Intended for medical purposes, it has gained a niche following for its clean and sleek look.
+	The company isn't sure how to deal with it however, and only sells it for internal or as prosthetics
+*/
+
+/datum/sprite_accessory/body/ipc_chassis/bishop
+	name = "Besoro Bishop"
+//	color_src = MUTCOLORS
+	chassis_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/bishop,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/bishop,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/bishop,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/bishop,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/bishop,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/bishop,
+	)
+
+
+/datum/sprite_accessory/body/ipc_chassis/sprinter
 	name = "Inteq Mothership 'Sprinter' Type 1"
 	chassis_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/sprinter,
@@ -228,7 +283,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/sprinter,
 	)
 
-/datum/sprite_accessory/ipc_chassis/sprinter_v2
+/datum/sprite_accessory/body/ipc_chassis/sprinter_v2
 	name = "Inteq Mothership 'Sprinter' Type 2"
 	chassis_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/sprinter/type_2,
@@ -239,7 +294,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/sprinter,
 	)
 
-/datum/sprite_accessory/ipc_chassis/seeker
+/datum/sprite_accessory/body/ipc_chassis/seeker
 	name = "Maxim Dynamics 'Seeker'"
 	chassis_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/seeker,
@@ -250,7 +305,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/seeker,
 	)
 
-/datum/sprite_accessory/ipc_chassis/solferino
+/datum/sprite_accessory/body/ipc_chassis/solferino
 	name = "Absolution-Lux 'Solferino'"
 	chassis_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/solferino,
@@ -261,7 +316,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/solferino,
 	)
 
-/datum/sprite_accessory/ipc_chassis/humaniform
+/datum/sprite_accessory/body/ipc_chassis/humaniform
 	name = "Clover Corporation 'Humaniform'"
 	chassis_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/humaniform,
@@ -272,7 +327,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/humaniform,
 	)
 
-/datum/sprite_accessory/ipc_chassis/cybersun
+/datum/sprite_accessory/body/ipc_chassis/cybersun
 	name = "Cybersun Biodynamics S Series 'Ghost'"
 	chassis_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/ghost,
