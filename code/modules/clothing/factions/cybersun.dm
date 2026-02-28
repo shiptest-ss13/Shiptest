@@ -5,6 +5,7 @@
 	desc = "The standard jumpsuit used by the agents employed by Cybersun, in its distinctive half-black-half-white aesthetic."
 	icon_state = "cybersun_agent"
 	roll_sleeves = FALSE
+	roll_down = TRUE
 
 	icon = 'icons/obj/clothing/faction/cybersun/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/uniforms.dmi'
@@ -22,7 +23,6 @@
 	icon_state = "cybersun_med"
 	permeability_coefficient = 0.5
 	roll_down = TRUE
-	roll_sleeves = FALSE
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
@@ -39,6 +39,8 @@
 	icon_state = "cybersun_md"
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 20, "rad" = 0, "fire" = 0, "acid" = 0)
+	roll_sleeves = FALSE
+	roll_down = FALSE
 	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/cybersun/overalls
@@ -46,21 +48,24 @@
 	desc = "Durable black-on-red overalls built for Cybersun's field workers."
 	icon_state = "cybersun_overalls"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 100)
-	roll_sleeves = TRUE
+	roll_sleeves = FALSE
+	roll_down = FALSE
 	//supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/cybersun/suit
 	name = "cybersun suit"
 	desc = "White shirt and suit pants, worn by the many office inhabitants working for Cybersun."
 	icon_state = "cybersun_suit"
-	roll_sleeves = TRUE
+	roll_sleeves = FALSE
+	roll_down = FALSE
 	//supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/cybersun/officer
 	name = "cybersun officer's suit"
 	desc = "A crimson-red suit used by the officers employed by Cybersun."
 	icon_state = "cybersun_officer"
-	roll_sleeves = TRUE
+	roll_sleeves = FALSE
+	roll_down = FALSE
 	supports_variations = DIGITIGRADE_VARIATION
 
 //suit
@@ -224,7 +229,6 @@
 		"Maroon" = "surgical_maroon"
 	)
 
-
 /obj/item/clothing/head/cybersun
 	name = "cybersun hat"
 	desc = "A crimson-red hat fit for a high ranking cybersun officer."
@@ -283,6 +287,7 @@
 /obj/item/clothing/head/helmet/riot/cybersun
 	name = "\improper Riot \"Solution\" Helmet"
 	desc = "A heavy helmet made to pair with Cybersun's \"Solution\" combat armor. Effective against most weapons."
+	base_icon_state = "riot_cybersun"
 	icon_state = "riot_cybersun"
 	unique_reskin = null
 
@@ -292,6 +297,7 @@
 /obj/item/clothing/head/helmet/riot/cybersun/trauma
 	name = "\improper Riot \"Recovery\" Helmet"
 	desc = "A heavy helmet made to pair with Cybersun's Trauma Team \"Recovery\" combat armor. Effective against most weapons."
+	base_icon_state = "riot_trauma"
 	icon_state = "riot_trauma"
 	unique_reskin = list(
 		"None" = "riot_trauma",
@@ -305,9 +311,11 @@
 	alt_desc = "Designed with fighting Nanotrasen weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in travel mode. Produced by Cybersun Industries."
 	icon_state = "hardsuit1-cybersun"
 	hardsuit_type = "cybersun"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 50, "energy" = 50, "bomb" = 25, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60, "wound" = 30)
+	armor = list("melee" = 35, "bullet" = 45, "laser" = 70, "energy" = 50, "bomb" = 25, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60, "wound" = 30)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+	icon = 'icons/obj/clothing/faction/cybersun/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/suits.dmi'
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun
 	name = "neutron-star combat hardsuit helmet"
@@ -315,7 +323,9 @@
 	alt_desc = "Designed with fighting Nanotrasen weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in travel mode. Produced by Cybersun Industries."
 	icon_state = "hardsuit1-cybersun"
 	hardsuit_type = "cybersun"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 50, "energy" = 50, "bomb" = 25, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60, "wound" = 30)
+	armor = list("melee" = 30, "bullet" = 40, "laser" = 70, "energy" = 50, "bomb" = 25, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60, "wound" = 30)
+	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/head.dmi'
 
 //Cybersun Medical Techinician Hardsuit
 /obj/item/clothing/suit/space/hardsuit/syndi/cybersun/paramed
@@ -324,9 +334,11 @@
 	alt_desc = "A stripped down version of the neutron-star hardsuit for use by medical technicians. It is in travel mode. Produced by Cybersun Industries."
 	icon_state = "hardsuit1-cyberparamed"
 	hardsuit_type = "cyberparamed"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 35, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 20)
+	armor = list("melee" = 25, "bullet" = 35, "laser" = 45, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 20)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun/paramed
 	jetpack = null
+	icon = 'icons/obj/clothing/faction/cybersun/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/suits.dmi'
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun/paramed
 	name = "cybersun medical technician hardsuit helmet"
@@ -334,5 +346,6 @@
 	alt_desc = "A stripped down version of the neutron-star hardsuit for use by medical technicians. It is in travel mode. Produced by Cybersun Industries"
 	icon_state = "hardsuit1-cyberparamed"
 	hardsuit_type = "cyberparamed"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 35, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 20)
-
+	armor = list("melee" = 25, "bullet" = 35, "laser" = 45, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 20)
+	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/head.dmi'
