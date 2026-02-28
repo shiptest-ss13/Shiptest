@@ -31,7 +31,6 @@
 	stock = 2
 	availability_prob = 25
 
-
 /datum/blackmarket_item/tool/jaws
 	name = "Jaws of Life"
 	desc = "These prying jaws are useful for rescuing trapped victims. Or you know. Breaking into secure areas."
