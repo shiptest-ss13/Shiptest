@@ -257,8 +257,8 @@
 
 /datum/map_template/greeble/jungleplanet/twentyseven
 	name = "Jungle Greeble 27"
-	mappath = "_maps/templates/greebles/jungle/greeble_jungle_22.dmm"
-	description = "A crashed vessel, completely out of place."
+	mappath = "_maps/templates/greebles/jungle/greeble_jungle_27.dmm"
+	description = "Poor bastard exploded."
 
 /datum/map_template/greeble/jungleplanet/twentyeight
 	name = "Jungle Greeble 28"
