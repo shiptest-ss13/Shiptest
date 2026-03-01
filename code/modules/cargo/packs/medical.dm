@@ -288,7 +288,7 @@
 	desc = "Contains a spare gjalrazine vial, for usage in a Hypospray."
 	cost = 800
 	contains = list(
-		/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/pancrazine,
+		/obj/item/reagent_containers/glass/bottle/vial/tiny/preloaded/gjalrazine,
 	)
 	crate_name = "gjalrazine vial crate"
 
