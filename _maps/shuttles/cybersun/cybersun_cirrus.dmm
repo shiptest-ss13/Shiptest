@@ -827,10 +827,6 @@
 /obj/item/pen{
 	pixel_x = -13
 	},
-/obj/item/clothing/suit/apron/surgical{
-	pixel_x = 4;
-	pixel_y = -5
-	},
 /obj/item/healthanalyzer/advanced{
 	pixel_x = -13;
 	pixel_y = -7
@@ -844,6 +840,13 @@
 	},
 /obj/machinery/firealarm/directional/east{
 	pixel_y = -2
+	},
+/obj/item/clothing/suit/cybersun/smock{
+	pixel_y = -3;
+	pixel_x = 1
+	},
+/obj/item/clothing/head/cybersun/medical{
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical/surgery)
@@ -2735,6 +2738,10 @@
 	pixel_y = -3
 	},
 /obj/item/radio/headset/syndicate/alt/cybersun,
+/obj/item/sensor_device{
+	pixel_x = -6;
+	pixel_y = 6
+	},
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/dorm/commad)
 "sC" = (
@@ -3404,9 +3411,6 @@
 /obj/item/clothing/mask/surgical{
 	pixel_y = -4
 	},
-/obj/item/clothing/suit/apron/surgical{
-	pixel_y = -2
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
@@ -3421,6 +3425,13 @@
 	pixel_y = 5
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/item/clothing/suit/cybersun/smock{
+	pixel_y = -3;
+	pixel_x = 1
+	},
+/obj/item/clothing/head/cybersun/medical{
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical/morgue)
 "zZ" = (
@@ -4049,7 +4060,6 @@
 /obj/effect/turf_decal/box/white,
 /obj/structure/rack,
 /obj/item/pipe_dispenser{
-	pixel_x = 0;
 	pixel_y = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5,
@@ -4060,7 +4070,6 @@
 	pixel_x = -6
 	},
 /obj/item/stack/sheet/glass/twenty{
-	pixel_y = 0;
 	pixel_x = 2
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -5679,6 +5688,10 @@
 /obj/item/storage/backpack/satchel/med{
 	pixel_x = 5;
 	pixel_y = -3
+	},
+/obj/item/sensor_device{
+	pixel_x = -6;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)

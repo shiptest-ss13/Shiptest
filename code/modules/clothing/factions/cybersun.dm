@@ -349,3 +349,22 @@
 	armor = list("melee" = 25, "bullet" = 35, "laser" = 45, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 20)
 	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/head.dmi'
+
+
+/* BELTS */
+
+/obj/item/storage/belt/military/cybersun
+	name = "\improper Cybersun webbing"
+	desc = "Tactical webbing woven from a metafabric lattice. Lightweight and durable. Perfect for Cybersun's operators."
+
+	icon = 'icons/obj/clothing/faction/cybersun/belt.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/belt.dmi'
+
+	icon_state = "cybersun_webbing"
+	item_state = "cybersun_webbing"
+
+	unique_reskin = list(
+		"Troubleshooter" = "cybersun_webbing",
+		"Trauma Team" = "trauma_webbing"
+	)
+
