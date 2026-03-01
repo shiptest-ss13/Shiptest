@@ -26,6 +26,7 @@
 	job_icon = "stationengineer"
 
 	uniform = /obj/item/clothing/under/cybersun/coverall
+	alt_uniform = /obj/item/clothing/under/syndicate/gec
 	shoes = /obj/item/clothing/shoes/workboots
 
 /datum/outfit/job/cybersun/miner
