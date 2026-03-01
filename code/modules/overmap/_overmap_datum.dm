@@ -324,7 +324,7 @@
 			return
 		if(INTERACTION_OVERMAP_DOCK)
 			if(docked_to || docking)
-				return "ERROR: Unable to do this currently! Reduce speed or undock!"
+				return "ERROR: Unable to do this while docked! Undock first!"
 
 			var/list/dockables = interact_target.get_dockable_locations(src)
 			if(!dockables.len)
@@ -335,15 +335,15 @@
 			return Dock(interact_target, choice)
 		if(INTERACTION_OVERMAP_QUICKDOCK)
 			if(docked_to || docking)
-				return "ERROR: Unable to do this currently! Undock first!"
+				return "ERROR: Unable to do this while docked! Undock first!"
 			return Dock(interact_target)
 		if(INTERACTION_OVERMAP_HAIL)
 			return do_hail(user, interact_target)
 		if(INTERACTION_OVERMAP_INTERDICTION)
 			if(docked_to || docking)
-				return "ERROR: Unable to do this currently! Reduce speed or undock!"
+				return "ERROR: Unable to do this while docked! Undock first!"
 			if(interact_target.docked_to || interact_target.docking)
-				return "ERROR: Unable to do this currently! Target is docked or docking!"
+				return "ERROR: Unable to do this while target is docked or docking!"
 
 			var/list/dockables = get_dockable_locations(src)
 			if(!dockables.len)

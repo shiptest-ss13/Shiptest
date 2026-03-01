@@ -694,6 +694,17 @@
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/bridge)
+"dF" = (
+/obj/docking_port/stationary{
+	dir = 2;
+	dwidth = 22;
+	height = 31;
+	width = 40;
+	name = "Starboard Airlock";
+	dheight = 1
+	},
+/turf/template_noop,
+/area/template_noop)
 "dG" = (
 /obj/effect/turf_decal/corner/opaque/red/half,
 /obj/effect/turf_decal/techfloor{
@@ -6049,15 +6060,13 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "FI" = (
-/obj/docking_port/stationary{
-	dir = 2;
-	dwidth = 15;
-	height = 15;
-	width = 30;
-	name = "Starboard Airlock"
+/obj/docking_port/mobile{
+	launch_status = 0;
+	preferred_direction = 4;
+	port_direction = 4
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "FJ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -7002,12 +7011,6 @@
 	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
-	},
-/obj/docking_port/mobile{
-	dir = 4;
-	launch_status = 0;
-	port_direction = 2;
-	preferred_direction = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -9576,8 +9579,8 @@
 /area/ship/engineering/atmospherics)
 "Xv" = (
 /obj/docking_port/stationary{
-	dwidth = 10;
-	height = 15;
+	dwidth = 11;
+	height = 30;
 	width = 30;
 	name = "Portside Airlock"
 	},
@@ -10421,7 +10424,7 @@ Dp
 Dp
 Dp
 Dp
-CN
+Wo
 CN
 CN
 "}
@@ -10453,7 +10456,7 @@ zS
 Qx
 CH
 FI
-CN
+dF
 CN
 "}
 (13,1,1) = {"
@@ -10483,7 +10486,7 @@ Rx
 lj
 pb
 Lm
-CN
+Wo
 CN
 CN
 "}
@@ -10543,7 +10546,7 @@ Dp
 WP
 Dp
 Dp
-CN
+Wo
 CN
 CN
 CN
