@@ -240,7 +240,7 @@
 
 /datum/supply_pack/medical/vials/silf_vial
 	name = "Silfrine Vial Crate"
-	desc = "Contains a spare hadrakine vial, for usage in a Hypospray."
+	desc = "Contains a spare silfrine vial, for usage in a Hypospray."
 	cost = 800
 	contains = list(
 		/obj/item/reagent_containers/glass/bottle/vial/tiny/preloaded/silfrine,
