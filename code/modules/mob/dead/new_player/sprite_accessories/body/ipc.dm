@@ -1,3 +1,5 @@
+
+//desc comments are meant for the pr body when its more finished, ignore them
 /*
 	The blurbs in the PR you shouldn't take these as offical lore for your IPC, these should instead serve as jumping-off points for your
 	character's lore, after all, these are just skins at the end of the day.
@@ -194,7 +196,7 @@
 */
 
 /datum/sprite_accessory/body/ipc_chassis/pgfmk3_suhols
-	name = "PGF Mechanics MK.3 Type 'Suhols-Ro'"
+	name = "PGF Mechanics MK.III Type 'Suhols-Ro'"
 	color_src = MUTCOLORS
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pgfmk3_suhols,
@@ -207,7 +209,7 @@
 
 
 /datum/sprite_accessory/body/ipc_chassis/pgfmk3_wusha
-	name = "PGF Mechanics MK.3 Type 'Wusha'"
+	name = "PGF Mechanics MK.III Type 'Wusha'"
 	color_src = MUTCOLORS
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pgfmk3_wusha,
@@ -226,7 +228,7 @@
 */
 
 /datum/sprite_accessory/body/ipc_chassis/pgf
-	name = "PGF Mechanics MK.5 Type-P"
+	name = "PGF Mechanics MK.V Type-P"
 	color_src = MUTCOLORS
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pgf,
@@ -238,7 +240,7 @@
 	)
 
 /datum/sprite_accessory/body/ipc_chassis/pgf_type_d
-	name = "PGF Mechanics MK.5 Type-D"
+	name = "PGF Mechanics MK.V Type-D"
 	color_src = MUTCOLORS
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pgf,

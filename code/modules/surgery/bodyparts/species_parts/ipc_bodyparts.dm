@@ -23,10 +23,10 @@
 	heavy_burn_msg = "seared"
 
 //awful workaround for the lack of differing eye sprite handling
-/obj/item/bodypart/head/ipc/update_limb(dropping_limb, mob/living/carbon/source, is_creating)
+/obj/item/bodypart/head/ipc/attach_limb(mob/living/carbon/our_carbon, special, is_creating = FALSE)
 	var/mob/living/carbon/human/limb_owner
-	if(source)
-		limb_owner = source
+	if(our_carbon)
+		limb_owner = our_carbon
 	else
 		limb_owner = owner
 
@@ -39,7 +39,23 @@
 
 	if(force_white_eye_color)
 		limb_owner.eye_color = COLOR_WHITE
-		eyes_to_edit.eye_color = COLOR_WHITE
+	var/datum/species/ipc/species_datum = limb_owner.dna.species
+	species_datum.update_screen_action()
+	return ..()
+
+//ditto
+/obj/item/bodypart/head/ipc/drop_limb(special)
+	var/mob/living/carbon/human/limb_owner = owner
+
+	var/obj/item/organ/eyes/eyes_to_edit = limb_owner.getorganslot(ORGAN_SLOT_EYES)
+
+	if(!limb_owner || !eyes_to_edit)
+		return ..()
+	if(custom_eye_sprite)
+		eyes_to_edit.eye_icon_state = eyes_to_edit::eye_icon_state
+
+	if(force_white_eye_color)
+		limb_owner.eye_color = eyes_to_edit.eye_color
 	return ..()
 
 /obj/item/bodypart/chest/ipc
@@ -857,6 +873,7 @@
 	name = "\improper Cybersun Biodynamics S Series 'Ghost' head"
 	icon_state = "cyber_head"
 	limb_id = "cyber"
+	draw_eyes = TRUE
 	custom_eye_sprite = "eyes_cybersun_ghost"
 	force_white_eye_color = TRUE
 
