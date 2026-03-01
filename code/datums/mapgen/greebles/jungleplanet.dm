@@ -21,10 +21,10 @@
 			/obj/effect/greeble_spawner/jungleplanet/seventeen = 5,
 			/obj/effect/greeble_spawner/jungleplanet/eighteen = 5,
 			/obj/effect/greeble_spawner/jungleplanet/nineteen = 5,
-			/obj/effect/greeble_spawner/jungleplanet/twenty = 5,
+			/obj/effect/greeble_spawner/jungleplanet/twenty = 1,
 			/obj/effect/greeble_spawner/jungleplanet/twentyone = 5,
-			/obj/effect/greeble_spawner/jungleplanet/twentytwo = 5,
-			/obj/effect/greeble_spawner/jungleplanet/twentythree = 5,
+			/obj/effect/greeble_spawner/jungleplanet/twentytwo = 1,
+			/obj/effect/greeble_spawner/jungleplanet/twentythree = 1,
 			/obj/effect/greeble_spawner/jungleplanet/twentyfour = 5,
 			/obj/effect/greeble_spawner/jungleplanet/twentyfive = 5,
 			/obj/effect/greeble_spawner/jungleplanet/twentysix = 5,
@@ -474,7 +474,7 @@
 /datum/map_template/greeble/jungleplanet/anomaly/eight
 	name = "Jungle Anomaly Greeble 8"
 	mappath = "_maps/templates/greebles/jungle/greeble_jungle_anomaly_8.dmm"
-	description = "KILL YOUR TV"
+	description = "KILL YOUR TELEVISION"
 
 /datum/map_template/greeble/jungleplanet/anomaly/nine
 	name = "Jungle Anomaly Greeble 9"
