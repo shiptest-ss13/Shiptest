@@ -40,7 +40,8 @@
 	if(force_white_eye_color)
 		limb_owner.eye_color = COLOR_WHITE
 	var/datum/species/ipc/species_datum = limb_owner.dna.species
-	species_datum.update_screen_action()
+	if(!species_datum)
+		species_datum.update_screen_action()
 	return ..()
 
 //ditto
@@ -240,13 +241,13 @@
 
 /obj/item/bodypart/leg/left/ipc/mwpmu
 	name = "\improper Makosso-Warra MW-PMU left leg"
-	icon_state = "mwpmu_l_leg_digigrade"
+	icon_state = "mwpmu_l_leg_digitigrade"
 	limb_id = "mwpmu"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
 /obj/item/bodypart/leg/right/ipc/mwpmu
 	name = "\improper Makosso-Warra MW-PMU right leg"
-	icon_state = "mwpmu_r_leg_digigrade"
+	icon_state = "mwpmu_r_leg_digitigrade"
 	limb_id = "mwpmu"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
@@ -276,13 +277,13 @@
 
 /obj/item/bodypart/leg/left/ipc/mwhiacu
 	name = "\improper Makosso-Warra MW-HIACU left leg"
-	icon_state = "mwhiacu_l_leg_digigrade"
+	icon_state = "mwhiacu_l_leg_digitigrade"
 	limb_id = "mwhiacu"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
 /obj/item/bodypart/leg/right/ipc/mwhiacu
 	name = "\improper Makosso-Warra MW-HIACU right leg"
-	icon_state = "mwhiacu_r_leg_digigrade"
+	icon_state = "mwhiacu_r_leg_digitigrade"
 	limb_id = "mwhiacu"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
@@ -312,13 +313,13 @@
 
 /obj/item/bodypart/leg/left/ipc/mwhiacu_vi
 	name = "\improper Makosso-Warra MW-HIACU left leg"
-	icon_state = "mwhiacu_vi_l_leg_digigrade"
+	icon_state = "mwhiacu_vi_l_leg_digitigrade"
 	limb_id = "mwhiacu_vi"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
 /obj/item/bodypart/leg/right/ipc/mwhiacu_vi
 	name = "\improper Makosso-Warra MW-HIACU right leg"
-	icon_state = "mwhiacu_vi_r_leg_digigrade"
+	icon_state = "mwhiacu_vi_r_leg_digitigrade"
 	limb_id = "mwhiacu_vi"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
