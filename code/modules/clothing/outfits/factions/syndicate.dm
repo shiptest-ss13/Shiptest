@@ -392,7 +392,7 @@
 	suit = /obj/item/clothing/suit/ngr
 	alt_suit = null
 	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/color/red/insulated
+	gloves = /obj/item/clothing/gloves/color/yellow
 
 
 //Chief Medical Officer
