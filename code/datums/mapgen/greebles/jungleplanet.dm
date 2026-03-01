@@ -30,7 +30,7 @@
 			/obj/effect/greeble_spawner/jungleplanet/twentysix = 5,
 			/obj/effect/greeble_spawner/jungleplanet/twentyseven = 5,
 			/obj/effect/greeble_spawner/jungleplanet/twentyeight = 5,
-			/obj/effect/greeble_spawner/jungleplanet/twentynine = 5,
+			/obj/effect/greeble_spawner/jungleplanet/twentynine = 1,
 			/obj/effect/greeble_spawner/jungleplanet/thirty = 5,
 		)
 
