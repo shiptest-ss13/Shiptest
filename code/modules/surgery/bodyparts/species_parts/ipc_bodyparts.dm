@@ -222,33 +222,39 @@
 	name = "\improper Makosso-Warra MW-PMU head"
 	icon_state = "mwpmu_head"
 	limb_id = "mwpmu"
+	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT
 
 /obj/item/bodypart/chest/ipc/mwpmu
 	name = "\improper Makosso-Warra MW-PMU chest"
 	icon_state = "mwpmu_chest"
 	limb_id = "mwpmu"
+	overlay_icon_state = TRUE
 
 /obj/item/bodypart/l_arm/ipc/mwpmu
 	name = "\improper Makosso-Warra MW-PMU left arm"
 	icon_state = "mwpmu_l_arm"
 	limb_id = "mwpmu"
+	overlay_icon_state = TRUE
 
 /obj/item/bodypart/r_arm/ipc/mwpmu
 	name = "\improper Makosso-Warra MW-PMU right arm"
 	icon_state = "mwpmu_r_arm"
 	limb_id = "mwpmu"
+	overlay_icon_state = TRUE
 
 /obj/item/bodypart/leg/left/ipc/mwpmu
 	name = "\improper Makosso-Warra MW-PMU left leg"
 	icon_state = "mwpmu_l_leg_digitigrade"
 	limb_id = "mwpmu"
+	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
 /obj/item/bodypart/leg/right/ipc/mwpmu
 	name = "\improper Makosso-Warra MW-PMU right leg"
 	icon_state = "mwpmu_r_leg_digitigrade"
 	limb_id = "mwpmu"
+	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
 
