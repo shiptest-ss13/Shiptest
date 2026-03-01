@@ -145,7 +145,7 @@
 	cost = 1000
 	contains = list(/obj/item/circuitboard/machine/seed_extractor)
 
-/datum/supply_pack/gardening/seed_extractor
+/datum/supply_pack/gardening/biogenerator
 	name = "Biogenerator Crate"
 	desc = "One circuitboard for construction of a Biogenerator, an advanced fabricator designed to make biological compounds out of a bio-slurry."
 	cost = 3000
