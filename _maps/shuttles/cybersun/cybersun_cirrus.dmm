@@ -72,10 +72,6 @@
 	pixel_y = -11;
 	pixel_x = -4
 	},
-/obj/item/food/meat/slab/chicken{
-	pixel_y = -11;
-	pixel_x = -4
-	},
 /obj/item/food/grown/refa_li{
 	pixel_x = 6;
 	pixel_y = -5
@@ -87,18 +83,6 @@
 /obj/item/food/grown/refa_li{
 	pixel_x = 6;
 	pixel_y = -5
-	},
-/obj/item/food/grown/refa_li{
-	pixel_x = 6;
-	pixel_y = -5
-	},
-/obj/item/food/meat/slab/remes{
-	pixel_y = -5;
-	pixel_x = -5
-	},
-/obj/item/food/meat/slab/remes{
-	pixel_y = -5;
-	pixel_x = -5
 	},
 /obj/item/food/meat/slab/remes{
 	pixel_y = -5;
@@ -120,14 +104,6 @@
 	pixel_y = 5;
 	pixel_x = 4
 	},
-/obj/item/food/grown/dotu_fime{
-	pixel_y = 4;
-	pixel_x = 4
-	},
-/obj/item/food/mirasegg{
-	pixel_x = -6;
-	pixel_y = 4
-	},
 /obj/item/food/mirasegg{
 	pixel_x = -6;
 	pixel_y = 4
@@ -137,6 +113,33 @@
 	pixel_y = 4
 	},
 /obj/effect/turf_decal/siding/black/end,
+/obj/item/food/grown/sososi,
+/obj/item/food/grown/sososi,
+/obj/item/food/grown/sososi,
+/obj/item/food/grown/dote_berries{
+	pixel_x = 0;
+	pixel_y = -8
+	},
+/obj/item/food/grown/dote_berries{
+	pixel_x = 1;
+	pixel_y = -9
+	},
+/obj/item/food/grown/dote_berries{
+	pixel_x = 2;
+	pixel_y = -10
+	},
+/obj/item/food/meat/slab/tiris{
+	pixel_x = -1;
+	pixel_y = -4
+	},
+/obj/item/food/meat/slab/tiris{
+	pixel_x = -2;
+	pixel_y = -1
+	},
+/obj/item/food/meat/slab/tiris{
+	pixel_x = -2;
+	pixel_y = -2
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
 "aE" = (
@@ -1059,6 +1062,15 @@
 /obj/effect/turf_decal/siding/black/end{
 	dir = 8
 	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = -9;
+	name = "bathroom lock";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	id = "ccrlock"
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "gD" = (
@@ -1815,6 +1827,14 @@
 	},
 /turf/open/floor/suns/hatch/maple,
 /area/ship/bridge)
+"kM" = (
+/obj/effect/turf_decal/corner/opaque/cybersunteal/border,
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 5
+	},
+/obj/structure/closet/emcloset/wall/directional/south,
+/turf/open/floor/plasteel/dark,
+/area/ship/medical)
 "kO" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/closed/wall/mineral/titanium,
@@ -3513,7 +3533,7 @@
 /obj/machinery/door/airlock{
 	name = "Restroom";
 	dir = 4;
-	id_tag = "cpiss"
+	id_tag = "ccrlock"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -5781,6 +5801,7 @@
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 10
 	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Te" = (
@@ -7103,7 +7124,7 @@ ep
 Kk
 ja
 ak
-vq
+kM
 Vn
 PH
 lN

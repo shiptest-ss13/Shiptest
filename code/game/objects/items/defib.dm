@@ -390,7 +390,7 @@
 /obj/item/shockpaddles/attack(mob/M, mob/user)
 	if(busy)
 		return
-	if(!M.get_ghost(FALSE, TRUE)) //Stops from reviving DNR player corpses. Maybe expand this to still defib, but have a body thump and fail message then for drama or whatever
+	if(!M.mind) //Stops from reviving DNR player corpses. Maybe expand this to still defib, but have a body thump and fail message then for drama or whatever
 		to_chat(user, span_warning("It's too late for [M.p_them()]. Revival is impossible."))
 		return
 	if(req_defib && !defib.powered)

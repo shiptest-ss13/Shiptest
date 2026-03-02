@@ -3306,10 +3306,8 @@
 	disable_on_owner_ship_dock = 1
 	},
 /obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	port_direction = 8;
-	preferred_direction = 4;
-	dir = 2
+	port_direction = 4;
+	preferred_direction = 4
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
