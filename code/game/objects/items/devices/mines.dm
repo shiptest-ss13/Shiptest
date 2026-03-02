@@ -36,7 +36,7 @@
 		if(spawn_arm_delay)
 			armed = FALSE
 			update_appearance(UPDATE_ICON_STATE)
-			addtimer(CALLBACK(src, PROC_REF(now_armed)), spawn_arm_delay)
+			addtimer(CALLBACK(src, PROC_REF(now_armed),FALSE), spawn_arm_delay)
 		else
 			now_armed()
 
@@ -104,12 +104,13 @@
 	return TRUE
 
 /// let them know the mine's done cooking
-/obj/item/mine/proc/now_armed()
+/obj/item/mine/proc/now_armed(silent = FALSE)
 	armed = TRUE
 	update_appearance(UPDATE_ICON_STATE)
 	light_power = 1
 	light_range = 1
-	playsound(src, 'sound/machines/nuke/angry_beep.ogg', 55, FALSE, 1)
+	if(!silent)
+		playsound(src, 'sound/machines/nuke/angry_beep.ogg', 55, FALSE, 1)
 	visible_message("<span class='danger'>\The [src] beeps softly, indicating it is now active.<span>", vision_distance = COMBAT_MESSAGE_RANGE)
 
 /// Can this mine trigger on the passed movable?
