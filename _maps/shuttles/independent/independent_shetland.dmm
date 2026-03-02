@@ -4525,14 +4525,16 @@
 /obj/item/reagent_scanner{
 	pixel_y = -10
 	},
+/obj/item/storage/bag/chemistry,
+/obj/item/reagent_containers/glass/mortar/metal,
+/obj/item/pestle,
+/obj/item/clothing/mask/gas/sechailer,
+/obj/item/clothing/glasses/safety,
 /obj/structure/sign/warning/chemdiamond{
 	layer = 2.9;
 	pixel_x = -32
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/clothing/glasses/safety,
-/obj/item/storage/bag/chemistry,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "uY" = (
@@ -9832,8 +9834,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/west,
 /obj/item/storage/box/masks{
-	pixel_x = 8;
-	pixel_y = 8
+	pixel_x = 10;
+	pixel_y = 12
+	},
+/obj/item/storage/box/rxglasses{
+	pixel_y = 4;
+	pixel_x = 5
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
