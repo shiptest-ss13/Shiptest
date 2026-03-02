@@ -8,7 +8,6 @@
 	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
 	icon_state = "brimmedwhite"
 	item_state = "brimmedwhite"
-	custom_price = 60
 	unique_reskin = list(
 		"white brimmed" = "brimmedwhite",
 		"grey brimmed" = "brimmedgrey",
@@ -32,6 +31,7 @@
 		"navy brimmed" = "brimmednavy",
 		"tan brimmed" = "brimmedtan",
 	)
+	unique_reskin_changes_name = TRUE
 
 //16 jumpsuit colour
 

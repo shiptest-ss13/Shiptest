@@ -2,7 +2,7 @@
 
 /obj/item/clothing/suit/toggle/overcoat
 	name = "overcoat"
-	desc = "Good for keeping the chilly wind off of you."
+	desc = "A long, comfy, knee-length coat for both warmth and style."
 	icon = 'icons/obj/clothing/suits/toggle.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suits/toggle.dmi'
 	icon_state = "overcoatselago"
