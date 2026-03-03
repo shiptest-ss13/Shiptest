@@ -144,6 +144,7 @@
 		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/pgf,
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/pgf,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/pgf,
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/pgf,
 	)
 
 /datum/sprite_accessory/body/ipc_chassis/pgf_type_d
@@ -156,6 +157,7 @@
 		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/pgf,
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/pgf/type_d,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/pgf/type_d,
+		BODY_ZONE_TAIL = /obj/item/bodypart/tail/ipc/pgf,
 	)
 
 /datum/sprite_accessory/body/ipc_chassis/sprinter

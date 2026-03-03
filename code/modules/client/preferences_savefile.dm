@@ -135,8 +135,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			if(old_limb == "amputated")
 				old_limb = PROSTHETIC_NONE
 			if(istext(old_limb) && !(old_limb in basic_options))
-				var/datum/sprite_accessory/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[old_limb]
-				old_limb = chassis_of_choice.chassis_bodyparts[zone]
+				var/datum/sprite_accessory/body/limb_style = GLOB.alternative_body_list[old_limb]
+				old_limb = limb_style.replacement_bodyparts[zone]
 			custom_limbs[zone] = old_limb
 		var/static/list/legacy_features_to_bodypart = list(
 			"Smooth (Two color)" = PROSTHETIC_NORMAL,

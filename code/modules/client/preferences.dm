@@ -1542,10 +1542,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(initial(part.bodytype) & pref_species.bodytype)
 				continue
 			var/is_ipc_part = FALSE
-			var/datum/sprite_accessory/ipc_chassis/ipc_style
-			for(var/chassis_style in GLOB.ipc_chassis_list)
-				ipc_style = GLOB.ipc_chassis_list[chassis_style]
-				if(custom_limb == ipc_style.chassis_bodyparts[zone])
+			var/datum/sprite_accessory/body/limb_style
+			for(var/alt_body in GLOB.alternative_body_list)
+				limb_style = GLOB.ipc_chassis_list[alt_body]
+				if(custom_limb == limb_style.replacement_bodyparts[zone])
 					is_ipc_part = TRUE
 					break
 			if(is_ipc_part)
@@ -2217,7 +2217,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if(limb in pref_species.species_optional_limbs) // special bodypart options! mainly used for tails
 							for(var/obj/item/bodypart/limb_type as anything in pref_species.species_optional_limbs[limb])
 								limb_options[initial(limb_type.name)] = limb_type
-						var/datum/sprite_accessory/ipc_chassis/limb_style
 						var/obj/item/bodypart/part_candidate
 						var/datum/sprite_accessory/body/limb_style
 						for(var/body in GLOB.alternative_body_list)
@@ -2225,9 +2224,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							part_candidate = limb_style.replacement_bodyparts[limb]
 							if(isnull(part_candidate))
 								continue
-							if(length(limb_style.allowed_species))
-								if(!(pref_species.type in limb_style.allowed_species))
-									continue
+							if(limb_style.allowed_species && !(pref_species.type in limb_style.allowed_species))
+								continue
 							if(!(pref_species.bodytype & initial(part_candidate.bodytype))) // don't allow vox and kepori to select limbs that aren't compatible
 								continue
 							limb_options[initial(part_candidate.name)] = part_candidate

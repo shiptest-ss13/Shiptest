@@ -13,7 +13,7 @@
 	/// Associated list of features granted by this chassis and their default values.
 	var/list/body_features = list()
 	///species whitelist
-	var/list/allowed_species = list()
+	var/list/allowed_species
 
 
 /* Test body for checking functionality
