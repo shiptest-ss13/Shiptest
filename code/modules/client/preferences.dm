@@ -934,9 +934,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			for(var/index in prosthetic_limbs)
 				if(!metal_skin && (index == BODY_ZONE_CHEST || index == BODY_ZONE_HEAD))
 					continue
-				var/bodypart_name = parse_zone(index)
-				dat += "<tr><td><b>[bodypart_name]:</b></td>"
-				dat += "<td><a href='byond://?_src_=prefs;preference=limbs;customize_limb=[index]'>[prosthetic_limbs[index]]</a></td></tr>"
+				var/zone_name = parse_zone(index)
+				dat += "<tr><td><b>[zone_name]:</b></td>"
+				var/limb_name = prosthetic_limbs[index]
+				dat += "<td><a href='byond://?_src_=prefs;preference=limbs;customize_limb=[index]'>[limb_name]</a>"
+				switch(limb_name)
+					if(PROSTHETIC_NORMAL, PROSTHETIC_AMPUTATED, PROSTHETIC_ROBOTIC)
+						dat += "</td></tr>"
+					else
+						var/datum/sprite_accessory/body/limb_style = GLOB.alternative_body_list[limb_name]
+						if(!limb_style?.desc)
+							continue
+						dat += "<a href='byond://?_src_=prefs;preference=body_desc;limb_style=[REF(limb_style)]'>?</a></td></tr>"
 			dat += "</table><br>"
 
 		if(2) //Loadout
@@ -2244,6 +2253,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						)
 						if(limb_selection)
 							prosthetic_limbs[limb] = limb_selection
+
+				if("body_desc")
+					var/datum/sprite_accessory/body/limb_style = locate(href_list["limb_style"])
+					if(!limb_style?.desc)
+						return
+					tgui_alert(user, limb_style.desc, limb_style.name, list("Close"), 0)
+					return
 
 				if("hotkeys")
 					hotkeys = !hotkeys

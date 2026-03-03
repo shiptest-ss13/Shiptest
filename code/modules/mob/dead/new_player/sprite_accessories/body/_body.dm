@@ -1,6 +1,8 @@
 /datum/sprite_accessory/body // Used for changing limb icons, doesn't need to hold the actual icon.
 	icon = null
 	icon_state = "who cares fuck you"
+	/// When selected, clicking the [?] button will provide a description of this body.
+	var/desc
 	/// Associated list of bodyparts by zone.
 	var/list/replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head,
@@ -25,17 +27,3 @@
 	for(var/feature in body_features)
 		species_applied.mutant_bodyparts |= feature
 		species_applied.default_features[feature] = body_features[feature]
-
-/* Test body for checking functionality
-/datum/sprite_accessory/body/test_body
-	name = "testificate"
-	replacement_bodyparts = list(
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/plasmaman,
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/plasmaman,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/plasmaman,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/plasmaman,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/plasmaman,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/plasmaman,
-	)
-	allowed_species = list(/datum/species/moth)
-*/
