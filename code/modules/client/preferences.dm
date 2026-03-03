@@ -739,7 +739,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				dat += "<h3>Chassis Style</h3>"
 
-				dat += "<a href='byond://?_src_=prefs;preference=ipc_chassis;task=input'>[features["ipc_chassis"]]</a><BR>"
+				var/datum/sprite_accessory/body/ipc_chassis/chassis_style = GLOB.ipc_chassis_list[features["ipc_chassis"]]
+				if(!chassis_style)
+					chassis_style = pick(GLOB.ipc_chassis_list)
+					features["ipc_chassis"] = chassis_style.name
+				dat += "<a href='byond://?_src_=prefs;preference=ipc_chassis;task=input'>[chassis_style.name]</a>"
+				if(chassis_style.desc)
+					dat += "<a href='byond://?_src_=prefs;preference=body_desc;limb_style=[REF(chassis_style)]'>?</a>"
+				dat += "<br>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
