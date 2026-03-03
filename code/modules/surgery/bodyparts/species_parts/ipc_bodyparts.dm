@@ -4,9 +4,12 @@
 	icon_state = "synth_head"
 	limb_id = "synth"
 	draw_eyes = FALSE
+	var/has_screen = TRUE
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
+	biological_state = BIO_ROBOTIC
+
 	light_brute_msg = "scratched"
 	medium_brute_msg = "dented"
 	heavy_brute_msg = "sheared"
@@ -23,6 +26,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	biological_state = BIO_ROBOTIC
 
 	light_brute_msg = "scratched"
 	medium_brute_msg = "dented"
@@ -39,6 +43,7 @@
 	limb_id = "synth"
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	light_brute_msg = "scratched"
 	medium_brute_msg = "dented"
@@ -55,6 +60,7 @@
 	limb_id = "synth"
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	light_brute_msg = "scratched"
 	medium_brute_msg = "dented"
@@ -71,6 +77,7 @@
 	limb_id = "synth"
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	light_brute_msg = "scratched"
 	medium_brute_msg = "dented"
@@ -87,6 +94,7 @@
 	limb_id = "synth"
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	biological_state = (BIO_ROBOTIC|BIO_JOINTED)
 
 	light_brute_msg = "scratched"
 	medium_brute_msg = "dented"
@@ -570,6 +578,7 @@
 	uses_mutcolor = TRUE
 	should_draw_greyscale = TRUE
 	overlay_icon_state = TRUE
+	has_screen = FALSE
 	draw_eyes = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT
 
@@ -662,6 +671,7 @@
 	examine_id = "\improper Inteq Mothership 'Sprinter' Type-1"
 	icon_state = "inteqsprinter_head"
 	limb_id = "inteqsprinter"
+	has_screen = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 /obj/item/bodypart/chest/ipc/sprinter
@@ -709,6 +719,7 @@
 	examine_id = "\improper Maxim Dynamics 'Seeker'"
 	icon_state = "seekeripc_head"
 	limb_id = "seekeripc"
+	has_screen = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 /obj/item/bodypart/chest/ipc/seeker
@@ -748,6 +759,7 @@
 	examine_id = "\improper Absolution-Lux 'Solferino'"
 	icon_state = "ablux_head"
 	limb_id = "ablux"
+	has_screen = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 /obj/item/bodypart/chest/ipc/solferino
@@ -788,6 +800,7 @@
 	icon_state = "humanipc_head"
 	limb_id = "humanipc"
 	draw_eyes = TRUE
+	has_screen = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 /obj/item/bodypart/chest/ipc/humaniform
@@ -819,3 +832,36 @@
 	examine_id = "\improper Clover Corporation 'Humaniform'"
 	icon_state = "humanipc_r_leg"
 	limb_id = "humanipc"
+
+// CYBERSUN GHOST
+
+/obj/item/bodypart/head/ipc/ghost
+	name = "\improper Cybersun Biodynamics S Series 'Ghost' head"
+	icon_state = "cyber_head"
+	limb_id = "cyber"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/chest/ipc/ghost
+	name = "\improper Cybersun Biodynamics S Series 'Ghost' chest"
+	icon_state = "cyber_chest"
+	limb_id = "cyber"
+
+/obj/item/bodypart/l_arm/ipc/ghost
+	name = "\improper Cybersun Biodynamics S Series 'Ghost' left arm"
+	icon_state = "cyber_l_arm"
+	limb_id = "cyber"
+
+/obj/item/bodypart/r_arm/ipc/ghost
+	name = "\improper Cybersun Biodynamics S Series 'Ghost' right arm"
+	icon_state = "cyber_r_arm"
+	limb_id = "cyber"
+
+/obj/item/bodypart/leg/left/ipc/ghost
+	name = "\improper Cybersun Biodynamics S Series 'Ghost' left leg"
+	icon_state = "cyber_l_leg"
+	limb_id = "cyber"
+
+/obj/item/bodypart/leg/right/ipc/ghost
+	name = "\improper Cybersun Biodynamics S Series 'Ghost' right leg"
+	icon_state = "cyber_r_leg"
+	limb_id = "cyber"

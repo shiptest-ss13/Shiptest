@@ -184,8 +184,8 @@
 	var/list/obj/effect/portal/created = create_portal_pair(current_location, get_teleport_turf(current_location, get_turf(T), 0, FALSE), 300, 1, null, atmos_link_override)
 	if(!(LAZYLEN(created) == 2))
 		return
-	RegisterSignal(created[1], COMSIG_PARENT_QDELETING, PROC_REF(on_portal_destroy)) //Gosh darn it kevinz.
-	RegisterSignal(created[2], COMSIG_PARENT_QDELETING, PROC_REF(on_portal_destroy))
+	RegisterSignal(created[1], COMSIG_QDELETING, PROC_REF(on_portal_destroy)) //Gosh darn it kevinz.
+	RegisterSignal(created[2], COMSIG_QDELETING, PROC_REF(on_portal_destroy))
 	var/obj/effect/portal/c1 = created[1]
 	var/obj/effect/portal/c2 = created[2]
 	var/turf/check_turf = get_turf(get_step(user, user.dir))

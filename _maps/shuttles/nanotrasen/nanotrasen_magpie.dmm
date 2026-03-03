@@ -168,16 +168,20 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm/commad)
 "bm" = (
-/obj/structure/table/wood,
-/obj/item/flashlight/lamp{
-	pixel_x = -5;
-	pixel_y = 2
-	},
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/dogbed,
+/mob/living/simple_animal/hostile/retaliate/gator/steppy{
+	desc = "Exported from one of many Solarian Cantons, this small but domesticated alligator lives aboard this vessel. Be careful not to step on the tail!";
+	gender = "male";
+	name = "Lioples";
+	melee_damage_lower = 10;
+	melee_damage_upper = 15;
+	faction = list("neutral, nanotrasen")
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "bo" = (
@@ -2949,10 +2953,10 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/toilet)
 "ve" = (
-/obj/structure/fluff/hedge,
 /obj/effect/turf_decal/corner/opaque/ntbluelight{
 	dir = 10
 	},
+/obj/structure/fluff/hedge,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "vi" = (
@@ -3107,7 +3111,7 @@
 /area/ship/cargo)
 "wD" = (
 /obj/structure/chair/office{
-	dir = 8
+	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/wood/walnut,
@@ -6534,12 +6538,16 @@
 	dir = 1
 	},
 /obj/item/paper_bin{
-	pixel_x = 6;
+	pixel_x = 7;
 	pixel_y = 4
 	},
 /obj/item/pen{
-	pixel_x = 6;
+	pixel_x = 7;
 	pixel_y = 4
+	},
+/obj/item/flashlight/lamp{
+	pixel_x = -7;
+	pixel_y = 6
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)

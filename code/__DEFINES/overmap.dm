@@ -81,7 +81,7 @@
 #define BURN_STOP -1
 
 // The filepath used to store the admin-controlled next round outpost map override.
-#define OUTPOST_OVERRIDE_FILEPATH "data/outpost_override.json"
+#define SAFEZONE_OVERRIDE_FILEPATH "data/safezone_override.json"
 
 // Converts ores to colors, meant for examining planets on the overmap
 #define ORES_TO_COLORS_LIST list(\
@@ -113,4 +113,4 @@
 #define SHIPMODULE_BSDRIVE "bluespace_drive"
 #define SHIPMODULE_HELMCONSOLE "helm_console"
 #define SHIPMODULE_TRANSPONDER "transponder"
-
+#define SHIPMODULE_CLOAKING "cloaking"

@@ -49,7 +49,7 @@
 
 	var/fraction = min(gulp_size/reagents.total_volume, 1)
 	checkLiked(fraction, M)
-	reagents.trans_to(M, gulp_size, transfered_by = user, method = INGEST)
+	reagents.trans_to(M, gulp_size, transfered_by = user, methods = INGEST)
 	playsound(M.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
 	return TRUE
 
@@ -369,18 +369,19 @@
 	desc +=  span_notice("The writing reads '[random_reagent.name]'.")
 	update_appearance()
 
-/obj/item/reagent_containers/food/drinks/beer
-	name = "Bizircan Brewery GDM" //ditto the plan for bottled water, need to find a way to make multiple variants
+/obj/item/reagent_containers/food/drinks/mead
+	name = "Bizircan Brewery Dark Mead" //ditto the plan for bottled water, need to find a way to make multiple variants
 	desc = "A popular Gezenan drink made of fermented honey and spices, known as Gezenan Dark Mead, or GDM for short."
 	icon_state = "beer"
-	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 30)
+	list_reagents = list(/datum/reagent/consumable/ethanol/mead = 30)
 	foodtype = SUGAR | ALCOHOL
 	custom_price = 10
 
-/obj/item/reagent_containers/food/drinks/beer/light
+/obj/item/reagent_containers/food/drinks/beer
 	name = "Carp Lite"
 	desc = "Brewed with \"Pure Ice Asteroid Spring Water\"."
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/light = 30)
+	icon_state = "beer"
 
 /obj/item/reagent_containers/food/drinks/ale
 	name = "RHIMBASA TAP"

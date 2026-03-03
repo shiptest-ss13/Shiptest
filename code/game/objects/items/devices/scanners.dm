@@ -382,6 +382,30 @@ GENE SCANNER
 			<div class='ml-2'>Name: [D.name].\nType: [D.spread_text].\nStage: [D.stage]/[D.max_stages].\nPossible Cure: [D.cure_text]</div>\
 			</span>" // divs do not need extra linebreak
 
+	// Lungs
+	var/obj/item/organ/lungs/lungs = M.getorganslot(ORGAN_SLOT_LUNGS)
+	if (lungs)
+		var/initial_pressure_mult = lungs::received_pressure_mult
+		if (abs(lungs.received_pressure_mult - initial_pressure_mult) > 0.01)
+			var/tooltip
+			var/dilation_text
+			var/beginning_text = "Lung Dilation: "
+			if (lungs.received_pressure_mult > initial_pressure_mult) // higher than usual
+				beginning_text = span_blue("<b>[beginning_text]</b>")
+				dilation_text = span_blue("[(lungs.received_pressure_mult * 100) - 100]%")
+				tooltip = "Subject's lungs are dilated and breathing more air than usual. Increases the effects of inhaled gases."
+			else
+				beginning_text = span_danger("<b>Lung Constriction: </b>")
+				if (lungs.received_pressure_mult <= 0) // lethal
+					dilation_text = span_bolddanger("[100 - (lungs.received_pressure_mult * 100)]%")
+					tooltip = "Subject's lungs are completely shut. Subject is unable to breathe and requires emergency surgery. If asthmatic, perform asthmatic bypass surgery and adminster salbutamol inhalant. Otherwise, replace lungs."
+				else
+					dilation_text = span_danger("[100 - (lungs.received_pressure_mult * 100)]%")
+					tooltip = "Subject's lungs are partially shut. If unable to breathe, administer a high-pressure internals tank or replace lungs. If asthmatic, inhaled salbutamol or bypass surgery will likely help."
+
+			var/lung_message = beginning_text + conditional_tooltip(dilation_text, tooltip, TRUE)
+			render_list += lung_message
+
 	// Blood Level
 	if(M.has_dna())
 		var/mob/living/carbon/C = M
@@ -444,11 +468,11 @@ GENE SCANNER
 				for(var/bile in belly.reagents.reagent_list)
 					var/datum/reagent/bit = bile
 					if(!belly.food_reagents[bit.type])
-						render_block += "<span class='notice ml-2'>[round(bit.volume, 0.001)] units of [bit.name][bit.overdosed ? "</span> - [span_bolddanger("OVERDOSING")]" : ".</span>"]<br>"
+						render_list += "<span class='notice ml-2'>[round(bit.volume, 0.001)] units of [bit.name][bit.overdosed ? "</span> - <span class='boldannounce'>OVERDOSING</span>" : ".</span>"]\n"
 					else
 						var/bit_vol = bit.volume - belly.food_reagents[bit.type]
 						if(bit_vol > 0)
-							render_block += "<span class='notice ml-2'>[round(bit_vol, 0.001)] units of [bit.name][bit.overdosed ? "</span> - [span_bolddanger("OVERDOSING")]" : ".</span>"]<br>"
+							render_list += "<span class='notice ml-2'>[round(bit_vol, 0.001)] units of [bit.name][bit.overdosed ? "</span> - <span class='boldannounce'>OVERDOSING</span>" : ".</span>"]\n"
 
 			if(!length(render_block))
 				render_list += "<span class='notice ml-1'>Subject contains no reagents in their stomach.</span><br>"
@@ -654,6 +678,7 @@ GENE SCANNER
 
 		var/total_moles = air_contents.total_moles()
 		var/pressure = air_contents.return_pressure()
+		var/mass = air_contents.return_mass()
 		var/volume = air_contents.return_volume() //could just do mixture.volume... but safety, I guess?
 		var/temperature = air_contents.return_temperature()
 		var/cached_scan_results = air_contents.analyzer_results
@@ -663,7 +688,9 @@ GENE SCANNER
 			render_list += "[span_notice("Moles: [round(total_moles, 0.01)] mol")]\
 							\n[span_notice("Volume: [volume] L")]\
 							\n[span_notice("Pressure: [round(pressure,0.01)] kPa")]\
-							\n[span_notice("Temperature: [round(temperature - T0C,0.01)] &deg;C ([round(temperature, 0.01)] K)")]"
+							\n[span_notice("Temperature: [round(temperature - T0C,0.01)] &deg;C ([round(temperature, 0.01)] K)")]\
+							\n[span_notice("Mass: [round(mass, 0.01)] g")]\
+							\n[span_notice("Density: [round(mass / volume, 0.01)] g/L")]"
 			//WS End
 
 			for(var/id in air_contents.get_gases())

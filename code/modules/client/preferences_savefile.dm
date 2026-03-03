@@ -5,7 +5,7 @@
 //	You do not need to raise this if you are adding new values that have sane defaults.
 //	Only raise this value when changing the meaning/format/name/layout of an existing value
 //	where you would want the updater procs below to run
-#define SAVEFILE_VERSION_MAX 43
+#define SAVEFILE_VERSION_MAX 44
 
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
@@ -114,6 +114,17 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		READ_FILE(S["body_size"], body_size)
 		height_filter = body_size
 	if(current_version < 43)
+		var/gender
+		READ_FILE(S["gender"], gender)
+		if(gender == MALE)
+			pronouns = "He"
+		else if(gender == FEMALE)
+			pronouns = "She"
+		else if(gender == NEUTER)
+			pronouns = "It"
+		else
+			pronouns = "They"
+	if(current_version < 44)
 		var/list/prosthetic_limbs = list()
 		READ_FILE(S["prosthetic_limbs"], prosthetic_limbs)
 		var/static/list/basic_options = list(PROSTHETIC_NORMAL, PROSTHETIC_NONE, PROSTHETIC_ROBOTIC)
@@ -466,6 +477,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Character
 	READ_FILE(S["real_name"], real_name)
 	READ_FILE(S["gender"], gender)
+	READ_FILE(S["pronouns"], pronouns)
 	READ_FILE(S["age"], age)
 	READ_FILE(S["hair_color"], hair_color)
 	READ_FILE(S["facial_hair_color"], facial_hair_color)
@@ -483,7 +495,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["socks_color"], socks_color)
 	READ_FILE(S["backpack"], backpack)
 	READ_FILE(S["jumpsuit_style"], jumpsuit_style)
-	READ_FILE(S["phobia"], phobia)
 	READ_FILE(S["generic_adjective"], generic_adjective)
 	READ_FILE(S["randomise"],  randomise)
 	READ_FILE(S["height_filter"], height_filter)
@@ -493,7 +504,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	else
 		sanitize_custom_limbs(FALSE)
 	READ_FILE(S["learned_languages"], learned_languages)
-	if(!learned_languages?.len) init_learned_languages()
 	READ_FILE(S["native_language"], native_language)
 	native_language ||= /datum/language/galactic_common
 	READ_FILE(S["feature_mcolor"], features["mcolor"])
@@ -575,6 +585,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Sanitize
 	real_name = reject_bad_name(real_name)
 	gender = sanitize_gender(gender)
+	pronouns = sanitize_pronouns(pronouns)
+	learned_languages = sanitize_learned_languages(learned_languages)
 	if(!real_name)
 		real_name = random_unique_name(gender)
 
@@ -665,6 +677,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Character
 	WRITE_FILE(S["real_name"]					, real_name)
 	WRITE_FILE(S["gender"]						, gender)
+	WRITE_FILE(S["pronouns"]					, pronouns)
 	WRITE_FILE(S["age"]							, age)
 	WRITE_FILE(S["hair_color"]					, hair_color)
 	WRITE_FILE(S["facial_hair_color"]			, facial_hair_color)
@@ -683,7 +696,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["backpack"]					, backpack)
 	WRITE_FILE(S["randomise"]					, randomise)
 	WRITE_FILE(S["species"]						, pref_species.id)
-	WRITE_FILE(S["phobia"]						, phobia)
 	WRITE_FILE(S["generic_adjective"]			, generic_adjective)
 	WRITE_FILE(S["height_filter"]				, height_filter)
 	WRITE_FILE(S["custom_limbs"]				, custom_limbs)

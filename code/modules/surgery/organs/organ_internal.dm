@@ -27,7 +27,10 @@
 	var/low_threshold_cleared
 
 	var/useable = TRUE
-	var/list/food_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	var/list/food_reagents = list(/datum/reagent/consumable/nutriment/organ_tissue = 5)
+	///The size of the reagent container
+	var/reagent_vol = 10
+
 	var/vital = 0
 	//Was this organ implanted/inserted/etc, if true will not be removed during species change.
 	var/external = FALSE
@@ -41,16 +44,18 @@
 		AddComponent(/datum/component/edible,\
 		initial_reagents = food_reagents,\
 		foodtypes = RAW | MEAT | GORE,\
-		volume = 10,\
+		volume = reagent_vol,\
 		filling_color = COLOR_PINK,\
 		pre_eat = CALLBACK(src, PROC_REF(pre_eat)),\
 		on_compost = CALLBACK(src, PROC_REF(pre_compost)),\
 		after_eat = CALLBACK(src, PROC_REF(on_eat_from)))
+	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_ORGAN_FAILING), PROC_REF(on_organ_fail))
+	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_ORGAN_FAILING), PROC_REF(on_organ_restore))
 
 	///When you take a bite you cant jam it in for surgery anymore.
 /obj/item/organ/proc/Insert(mob/living/carbon/M, special = 0, drop_if_replaced = TRUE)
 	if(!iscarbon(M) || owner == M)
-		return
+		return FALSE
 
 	var/obj/item/organ/replaced = M.getorganslot(slot)
 	if(replaced)
@@ -74,6 +79,7 @@
 		var/datum/action/A = X
 		A.Grant(M)
 	STOP_PROCESSING(SSobj, src)
+	return TRUE
 
 //Special is for instant replacement like autosurgeons
 /obj/item/organ/proc/Remove(mob/living/carbon/M, special = FALSE)
@@ -187,6 +193,7 @@
 	var/delta = damage - prev_damage
 	if(delta > 0)
 		if(damage >= maxHealth)
+			ADD_TRAIT(src, TRAIT_ORGAN_FAILING, DAMAGE_TRAIT)
 			organ_flags |= ORGAN_FAILING
 			return now_failing
 		if(damage > high_threshold && prev_damage <= high_threshold)
@@ -194,7 +201,7 @@
 		if(damage > low_threshold && prev_damage <= low_threshold)
 			return low_threshold_passed
 	else
-		organ_flags &= ~ORGAN_FAILING
+		REMOVE_TRAIT(src, TRAIT_ORGAN_FAILING, DAMAGE_TRAIT)
 		if(prev_damage > low_threshold && damage <= low_threshold)
 			return low_threshold_cleared
 		if(prev_damage > high_threshold && damage <= high_threshold)
@@ -209,9 +216,11 @@
 	return 0
 
 /mob/living/carbon/regenerate_organs()
-	if(!getorganslot(ORGAN_SLOT_LUNGS))
-		var/obj/item/organ/lungs/L = new()
-		L.Insert(src)
+	var/obj/item/organ/lungs/lungs = getorganslot(ORGAN_SLOT_LUNGS)
+	if(!lungs)
+		lungs = new()
+		lungs.Insert(src)
+	lungs.received_pressure_mult = lungs::received_pressure_mult
 
 	if(!getorganslot(ORGAN_SLOT_HEART))
 		var/obj/item/organ/heart/H = new()
@@ -242,3 +251,12 @@
  */
 /obj/item/organ/proc/get_availability(datum/species/S)
 	return TRUE
+
+/obj/item/organ/proc/on_organ_fail()
+	SIGNAL_HANDLER
+	organ_flags |= ORGAN_FAILING
+
+/obj/item/organ/proc/on_organ_restore()
+	SIGNAL_HANDLER
+	organ_flags &= ~ORGAN_FAILING
+

@@ -24,7 +24,7 @@
 /datum/ert/syndicate/ngr
 	teamsize = 5
 	leader_role = /datum/antagonist/ert/syndicate/ngr/leader
-	roles = list(/datum/antagonist/ert/syndicate/ngr, /datum/antagonist/ert/syndicate/ngr/grenadier = 1, /datum/antagonist/ert/syndicate/ngr/medic = 1, /datum/antagonist/ert/syndicate/ngr/sniper = 1)
+	roles = list(/datum/antagonist/ert/syndicate/ngr, /* /datum/antagonist/ert/syndicate/ngr/grenadier = 1, */ /datum/antagonist/ert/syndicate/ngr/medic = 1, /datum/antagonist/ert/syndicate/ngr/sniper = 1)
 	mission = "Uphold the sovereignty of the New Gorlex Republic."
 	rename_team = "Gorlex Republic Detachment"
 	polldesc = "a Gorlex Republic battle squad"

@@ -117,7 +117,7 @@
 	if(opened)
 		. += span_notice("The parts are <b>welded</b> together.")
 	else if(secure && !opened)
-		. += span_notice("Alt-click to [locked ? "unlock" : "lock"].")
+		. += span_notice("Right-click to [locked ? "unlock" : "lock"].")
 
 /obj/structure/closet/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
@@ -252,11 +252,16 @@
 		bust_open()
 	. = ..()
 
-/obj/structure/closet/attackby(obj/item/W, mob/user, params)
+/obj/structure/closet/attackby(obj/item/attacking_item, mob/user, params)
 	if(user in src)
 		return
-	if(src.tool_interact(W,user))
-		return TRUE // No afterattack
+	if(user.a_intent == INTENT_HARM)
+		return ..()
+	if(attacking_item.GetID()) //if you're hitting with an id item, toggle the lock
+		togglelock(user)
+		return TRUE
+	if(opened && user.transferItemToLoc(attacking_item, drop_location())) //try to transfer the held item to it
+		return TRUE
 	else
 		return ..()
 
@@ -273,49 +278,67 @@
 		deconstruct(TRUE)
 	return TRUE
 
-/obj/structure/closet/proc/tool_interact(obj/item/W, mob/user)//returns TRUE if attackBy call shouldnt be continued (because tool was used/closet was of wrong type), FALSE if otherwise
-	. = TRUE
-	if(opened)
-		if(W.tool_behaviour == cutting_tool && user.a_intent != INTENT_HELP)
-			try_deconstruct(W, user)
-			return
-		if(user.transferItemToLoc(W, drop_location())) // so we put in unlit welder too
-			return
-		return
-	else if(W.tool_behaviour == TOOL_WELDER && can_weld_shut)
-		if(!W.tool_start_check(user, src, src, amount=0))
-			return
-
+/obj/structure/closet/welder_act(mob/living/user, obj/item/tool, modifiers)
+	if(user.a_intent == INTENT_HARM)
+		return FALSE
+	if(!tool.tool_start_check(user, amount=0))
+		return FALSE
+	if(opened && !(flags_1 & NODECONSTRUCT_1))
+		if(tool.tool_behaviour != cutting_tool)
+			return FALSE // the wrong tool
+		to_chat(user, span_notice("You begin cutting \the [src] apart..."))
+		if(tool.use_tool(src, user, 4 SECONDS, volume=50))
+			if(!opened)
+				return TRUE
+			user.visible_message(span_notice("[user] slices apart \the [src]."),
+				span_notice("You cut \the [src] apart with \the [tool]."),
+				span_italics("You hear welding."))
+			deconstruct(TRUE)
+		return TRUE
+	if(can_weld_shut)
 		to_chat(user, span_notice("You begin [welded ? "unwelding":"welding"] \the [src]..."))
-		if(W.use_tool(src, user, 40, volume=50))
+		if(tool.use_tool(src, user, 4 SECONDS, volume=50))
 			if(opened)
-				return
+				return TRUE
 			welded = !welded
 			after_weld(welded)
 			user.visible_message(span_notice("[user] [welded ? "welds shut" : "unwelded"] \the [src]."),
-							span_notice("You [welded ? "weld" : "unwelded"] \the [src] with \the [W]."),
-							span_hear("You hear welding."))
+				span_notice("You [welded ? "weld" : "unwelded"] \the [src] with \the [tool]."),
+				span_italics("You hear welding."))
 			update_appearance()
-	else if(W.tool_behaviour == TOOL_WRENCH && anchorable)
-		if(isinspace() && !anchored)
-			return
-		set_anchored(!anchored)
-		W.play_tool_sound(src, 75)
-		user.visible_message(span_notice("[user] [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground."), \
-						span_notice("You [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground."), \
-						span_hear("You hear a ratchet."))
-	else if(user.a_intent != INTENT_HARM)
-		var/item_is_id = W.GetID()
-		if(!item_is_id)
-			return FALSE
-		if(item_is_id || !toggle(user))
-			togglelock(user)
-	else
-		return FALSE
+		return TRUE
+	return FALSE
 
-/obj/structure/closet/tool_act(mob/living/user, obj/item/I, tool_type)
+/obj/structure/closet/wirecutter_act(mob/living/user, obj/item/tool, modifiers)
+	if(user.a_intent == INTENT_HARM)
+		return FALSE
+	if(tool.tool_behaviour != cutting_tool)
+		return FALSE
+	user.visible_message(span_notice("[user] cut apart \the [src]."), \
+		span_notice("You cut \the [src] apart with \the [tool]."))
+	deconstruct(TRUE)
+	return TRUE
+
+/obj/structure/closet/wrench_act(mob/living/user, obj/item/tool, modifiers)
+	if(user.a_intent == INTENT_HARM)
+		return FALSE
+	if(!anchorable)
+		return FALSE
+	if(isinspace() && !anchored)
+		return FALSE
+	set_anchored(!anchored)
+	tool.play_tool_sound(src, 75)
+	user.visible_message(span_notice("[user] [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground."), \
+		span_notice("You [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground."), \
+		span_italics("You hear a ratchet."))
+	return TRUE
+
+/obj/structure/closet/tool_act(mob/living/user, obj/item/tool, tool_type, params)
 	if(user in src)
 		return FALSE
+	var/list/modifiers = params2list(params)
+	if(opened && !LAZYACCESS(modifiers, RIGHT_CLICK) && user.transferItemToLoc(tool, drop_location()))
+		return TRUE
 	return ..()
 
 /obj/structure/closet/deconstruct_act(mob/living/user, obj/item/tool)
@@ -406,6 +429,15 @@
 	if(!toggle(user))
 		togglelock(user)
 
+/obj/structure/closet/attack_hand_secondary(mob/user, modifiers)
+	if(!opened && secure)
+		togglelock(user)
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
+/obj/structure/closet/attackby_secondary(obj/item/weapon, mob/user, params)
+	if(!opened && secure)
+		togglelock(user)
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/structure/closet/attack_paw(mob/user)
 	return attack_hand(user)
@@ -475,15 +507,6 @@
 	locked = FALSE //applies to critter crates and secure lockers only
 	broken = TRUE //applies to secure lockers only
 	open()
-
-/obj/structure/closet/AltClick(mob/user)
-	..()
-	if(!user.canUseTopic(src, BE_CLOSE) || !isturf(loc))
-		return
-	if(opened || !secure)
-		return
-	else
-		togglelock(user)
 
 /obj/structure/closet/proc/togglelock(mob/living/user, silent)
 	if(secure && !broken)

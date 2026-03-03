@@ -66,6 +66,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/slot_randomized					//keeps track of round-to-round randomization of the character slot, prevents overwriting
 	var/real_name						//our character's name
 	var/gender = MALE					//gender of character (well duh)
+	var/pronouns = "He"					//pronouns of character
 	var/age = 30						//age of character
 	var/underwear = "Nude"				//Type of underwear
 	var/underwear_color = "000"			//Greyscale color of underwear
@@ -142,6 +143,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"Other" = "plural",
 							"None" = "neuter"
 						)
+	var/list/friendlyPronouns = list(
+							"He/Him" = "He",
+							"She/Her" = "She",
+							"They/Them" = "They",
+							"It/Its" = "It"
+						)
 	var/list/custom_limbs = list(
 							BODY_ZONE_HEAD = PROSTHETIC_NORMAL,
 							BODY_ZONE_CHEST = PROSTHETIC_NORMAL,
@@ -152,7 +159,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							BODY_ZONE_TAIL = PROSTHETIC_NORMAL,
 						)
 	var/fbp = FALSE
-	var/phobia = "spiders"
 	var/list/alt_titles_preferences = list()
 	var/list/custom_names = list()
 	var/preferred_ai_core_display = "Blue"
@@ -340,7 +346,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(randomise[RANDOM_BODY] || randomise[RANDOM_BODY_ANTAG]) //doesn't work unless random body
 					dat += "<a href='byond://?_src_=prefs;preference=toggle_random;random_type=[RANDOM_GENDER]'>Always Random Gender: [(randomise[RANDOM_GENDER]) ? "Yes" : "No"]</A>"
 					dat += "<a href='byond://?_src_=prefs;preference=toggle_random;random_type=[RANDOM_GENDER_ANTAG]'>When Antagonist: [(randomise[RANDOM_GENDER_ANTAG]) ? "Yes" : "No"]</A>"
-
+			var/dispPronouns
+			if(pronouns == "He")
+				dispPronouns = "He/Him"
+			else if(pronouns == "She")
+				dispPronouns = "She/Her"
+			else if(pronouns == "It")
+				dispPronouns = "It/Its"
+			else
+				dispPronouns = "They/Them"
+			dat += "<br><b>Pronouns:</b> <a href='byond://?_src_=prefs;preference=pronouns'>[dispPronouns]</a>"
 			dat += "<br><b>Age:</b> <a href='byond://?_src_=prefs;preference=age;task=input'>[age]</a>"
 			if(randomise[RANDOM_BODY] || randomise[RANDOM_BODY_ANTAG]) //doesn't work unless random body
 				dat += "<a href='byond://?_src_=prefs;preference=toggle_random;random_type=[RANDOM_AGE]'>Always Random Age: [(randomise[RANDOM_AGE]) ? "Yes" : "No"]</A>"
@@ -374,7 +389,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<tr><td><b>[get_language_point_balance()]</b> points left.</td></tr>"
 			dat += "<tr><td><a href='byond://?_src_=prefs;preference=native_language;task=input'><b>Native Language: </b>[initial(native_language.name)]</a></td></tr>"
 			if(!learned_languages?.len)
-				init_learned_languages()
+				learned_languages = sanitize_learned_languages()
 			for(var/datum/language/lang_type as anything in learned_languages)
 				if(lang_type == native_language)
 					continue
@@ -842,19 +857,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<h3>Tail</h3>"
 
 				dat += "<a href='byond://?_src_=prefs;preference=tail_elzu;task=input'>[features["tail_elzu"]]</a><BR>"
-
-				mutant_category++
-				if(mutant_category >= MAX_MUTANT_ROWS)
-					dat += "</td>"
-					mutant_category = 0
-
-			//Adds a thing to select which phobia because I can't be assed to put that in the quirks window
-			if("Phobia" in all_quirks)
-				if(!mutant_category)
-					dat += APPEARANCE_CATEGORY_COLUMN
-				dat += "<h3>Phobia</h3>"
-
-				dat += "<a href='byond://?_src_=prefs;preference=phobia;task=input'>[phobia]</a><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -1482,11 +1484,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		if(SSquirks.quirk_points[q] > 0)
 			.++
 
-/datum/preferences/proc/init_learned_languages()
-	learned_languages = list()
+/datum/preferences/proc/sanitize_learned_languages(list/language_list)
+	var/list/new_language_list = list()
 	for(var/datum/language/lang_type as anything in subtypesof(/datum/language))
-		if(initial(lang_type.flags) & ROUNDSTART_LANGUAGE)
-			learned_languages[lang_type] = LANGUAGE_UNKNOWN
+		if(!(initial(lang_type.flags) & ROUNDSTART_LANGUAGE))
+			continue
+		if(!(lang_type in language_list))
+			new_language_list[lang_type] = LANGUAGE_UNKNOWN
+			continue
+		new_language_list[lang_type] = language_list[lang_type]
+	return new_language_list
 
 /datum/preferences/proc/get_language_point_balance()
 	var/points_balance = MAX_LANGUAGE_POINTS
@@ -2138,7 +2145,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							to_chat(usr, span_warning("You don't have enough language points!"))
 
 				if("reset_languages")
-					init_learned_languages()
+					learned_languages = sanitize_learned_languages()
 
 				if ("clientfps")
 					var/desiredfps = input(user, "Choose your desired fps. (0 = default, 60 FPS))", "Character Preference", clientfps)  as null|num //WS Edit - Client FPS Tweak -
@@ -2159,11 +2166,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/pickedPDAColor = input(user, "Choose your PDA Interface color.", "Character Preference", pda_color) as color|null
 					if(pickedPDAColor)
 						pda_color = pickedPDAColor
-
-				if("phobia")
-					var/phobiaType = input(user, "What is your character scared of?", "Quirk Preference", phobia) as null|anything in SStraumas.phobia_types
-					if(phobiaType)
-						phobia = phobiaType
 
 				if("generic_adjective")
 					var/selectAdj
@@ -2195,7 +2197,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						socks = random_socks()
 						facial_hairstyle = random_facial_hairstyle(gender)
 						hairstyle = random_hairstyle(gender)
-
+				if("pronouns")
+					var/pickedPronouns = input(user, "Choose your pronouns.", "Character Preference", pronouns) as null|anything in friendlyPronouns
+					if(pickedPronouns)
+						pronouns = friendlyPronouns[pickedPronouns]
 				if("fbp")
 					fbp = !fbp
 
@@ -2214,11 +2219,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								limb_options[initial(limb_type.name)] = limb_type
 						var/datum/sprite_accessory/ipc_chassis/limb_style
 						var/obj/item/bodypart/part_candidate
-						for(var/chassis in GLOB.ipc_chassis_list)
-							limb_style = GLOB.ipc_chassis_list[chassis]
-							part_candidate = limb_style.chassis_bodyparts[limb]
-							if(!part_candidate)
+						var/datum/sprite_accessory/body/limb_style
+						for(var/body in GLOB.alternative_body_list)
+							limb_style = GLOB.alternative_body_list[body]
+							part_candidate = limb_style.replacement_bodyparts[limb]
+							if(isnull(part_candidate))
 								continue
+							if(length(limb_style.allowed_species))
+								if(!(pref_species.type in limb_style.allowed_species))
+									continue
 							if(!(pref_species.bodytype & initial(part_candidate.bodytype))) // don't allow vox and kepori to select limbs that aren't compatible
 								continue
 							limb_options[initial(part_candidate.name)] = part_candidate
@@ -2539,6 +2548,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.name = character.real_name
 
 	character.gender = gender
+	character.pronouns = pronouns
 	character.age = clamp(age, pref_species.species_age_min, pref_species.species_age_max)
 	character.eye_color = eye_color
 	var/obj/item/organ/eyes/organ_eyes = character.getorgan(/obj/item/organ/eyes)
@@ -2648,7 +2658,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.set_mob_height(GLOB.height_filters[height_filter])
 
 	if(!character_setup && get_language_point_balance() < 0)
-		init_learned_languages() // no exploits allowed
+		learned_languages = sanitize_learned_languages() // no exploits allowed
 	character.grant_language(native_language)
 	character.get_language_holder().selected_language = native_language
 	for(var/datum/language/lang_type as anything in learned_languages)

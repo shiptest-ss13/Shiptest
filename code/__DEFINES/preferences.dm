@@ -124,7 +124,7 @@
 #define RANDOM_HAIR_GRADIENT_STYLE "random_grad_style"
 #define RANDOM_HAIR_GRADIENT_COLOR "random_grad_color"
 
-//prosthetics stuff
+//Limbs stuff
 #define PROSTHETIC_NORMAL "normal"
 #define PROSTHETIC_NONE "none"
 #define PROSTHETIC_ROBOTIC "prosthetic"

@@ -173,11 +173,10 @@
 	if(decal)
 		. += decal
 
-/obj/structure/closet/supplypod/tool_interact(obj/item/W, mob/user)
+/obj/structure/closet/supplypod/tool_act(mob/living/user, obj/item/I, tool_type)
 	if(bluespace) //We dont want to worry about interacting with bluespace pods, as they are due to delete themselves soon anyways.
 		return FALSE
-	else
-		..()
+	return ..()
 
 /obj/structure/closet/supplypod/ex_act() //Explosions dont do SHIT TO US! This is because supplypods create explosions when they land.
 	return
