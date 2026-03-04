@@ -148,5 +148,11 @@
 /// Index of the intelligibility of a level of understanding
 #define INDEX_UNDERSTANDING 2
 
+//Eye scarring
+#define SCAR_RIGHT "Right"
+#define SCAR_LEFT "Left"
+#define SCAR_DOUBLE "Double"
+#define SCAR_RANDOM "Random"
+
 #define NOT_SYNTHETIC FALSE
 #define IS_SYNTHETIC TRUE

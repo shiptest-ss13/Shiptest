@@ -28,6 +28,9 @@
 #define COMSIG_BODYPART_GAUZE_DESTROYED "bodypart_degauzed" // from /datum/bodypart_aid/gauze/Destroy() //When a gauze is removed
 #define COMSIG_BODYPART_SPLINTED "bodypart_splinted" // from /datum/bodypart_aid/splint/New() //When a splint is applied
 #define COMSIG_BODYPART_SPLINT_DESTROYED "bodypart_desplinted" // from /datum/bodypart_aid/gauze/Destroy() //When a splint is removed
+/// Called from /obj/item/bodypart/proc/update_part_wound_overlay()
+#define COMSIG_BODYPART_UPDATE_WOUND_OVERLAY "bodypart_update_wound_overlay"
+	#define COMPONENT_PREVENT_WOUND_OVERLAY_UPDATE (1 << 0)
 
 ///Called when someone attempts to cuff a carbon
 #define COMSIG_CARBON_CUFF_ATTEMPTED "carbon_attempt_cuff"

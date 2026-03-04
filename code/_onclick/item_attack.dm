@@ -197,11 +197,6 @@
 		to_chat(user, span_warning("You don't want to harm other living beings!"))
 		return
 
-	if(item_flags & EYE_STAB && user.zone_selected == BODY_ZONE_PRECISE_EYES)
-		if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
-			target_mob = user
-		return eyestab(target_mob,user)
-
 	if(!force)
 		playsound(loc, 'sound/weapons/tap.ogg', get_clamped_volume(), TRUE, -1)
 	else if(hitsound)
