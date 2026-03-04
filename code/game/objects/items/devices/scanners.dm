@@ -526,7 +526,7 @@ GENE SCANNER
 	if(usr.incapacitated())
 		return
 
-	mode =! mode
+	mode = !mode
 	to_chat(usr, mode == SCANNER_VERBOSE ? "The scanner now shows specific limb damage." : "The scanner no longer shows limb damage.")
 
 /obj/item/healthanalyzer/advanced
