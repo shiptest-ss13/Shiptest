@@ -251,7 +251,7 @@ GENE SCANNER
 		render_list += "<span class='info ml-1'>Subject is hallucinating.</span>\n"
 
 	// Body part damage report
-	if(iscarbon(M) && mode == SCANNER_VERBOSE)
+	if(iscarbon(M) && verbose)
 		var/mob/living/carbon/C = M
 		var/list/damaged = C.get_damaged_bodyparts(1,1)
 		if(length(damaged)>0 || oxy_loss>0 || tox_loss>0 || fire_loss>0)
@@ -947,4 +947,4 @@ GENE SCANNER
 
 #undef SCANMODE_HEALTH
 #undef SCANMODE_CHEMICAL
-#undef SCANNER_VERBOSE
+#undef SCANMODE_SURGICAL
