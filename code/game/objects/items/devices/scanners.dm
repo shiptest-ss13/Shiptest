@@ -13,7 +13,8 @@ GENE SCANNER
 // Describes the two modes of scanning available for health analyzers
 #define SCANMODE_HEALTH 0
 #define SCANMODE_CHEMICAL 1
-#define SCANNER_VERBOSE 2
+#define SCANMODE_SURGICAL 2
+#define SCANNER_VERBOSE 3
 
 /obj/item/t_scanner
 	name = "\improper T-ray scanner"
@@ -489,6 +490,24 @@ GENE SCANNER
 		// we handled the last <br> so we don't need handholding
 		to_chat(user, boxed_message(jointext(render_list, "")), type = MESSAGE_TYPE_INFO)
 
+/proc/surgical_scan(mob/living/user, mob/living/target)
+	if(target.surgeries.len)
+		for(var/datum/surgery/procedure in target.surgeries)
+			var/datum/surgery_step/surgery_step = procedure.get_surgery_step()
+			var/chems_needed = surgery_step.get_chem_list()
+			var/alternative_step
+			var/alt_chems_needed = ""
+			if(surgery_step.repeatable)
+				var/datum/surgery_step/next_step = procedure.get_surgery_next_step()
+				if(next_step)
+					alternative_step = capitalize(next_step.name)
+					alt_chems_needed = next_step.get_chem_list()
+				else
+					alternative_step = "Finish operation"
+
+	else
+		to_chat(user, span_warning("Subject has no current surgeries."))
+
 /obj/item/healthanalyzer/verb/toggle_mode()
 	set name = "Switch Verbosity"
 	set category = "Object"
@@ -496,7 +515,9 @@ GENE SCANNER
 	if(usr.incapacitated())
 		return
 
-	mode = !mode
+	mode += 1
+	if(mode%2 == 0)
+		mode = 0
 	to_chat(usr, mode == SCANNER_VERBOSE ? "The scanner now shows specific limb damage." : "The scanner no longer shows limb damage.")
 
 /obj/item/healthanalyzer/advanced
