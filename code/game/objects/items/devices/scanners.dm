@@ -100,6 +100,7 @@ GENE SCANNER
 	scanmode = (scanmode + 1) % 3
 
 	icon_state = "[advanced ? "adv" : ""]analyzer-[scanmode]"
+	item_state = icon_state
 
 	switch(scanmode)
 		if(SCANMODE_HEALTH)
@@ -531,8 +532,8 @@ GENE SCANNER
 /obj/item/healthanalyzer/advanced
 	name = "advanced health analyzer"
 	icon_state = "health_adv"
-	icon_state = "advanalyzer"
-	item_state = "advanalyzer"
+	icon_state = "advanalyzer-0"
+	item_state = "advanalyzer-0"
 	desc = "A hand-held body scanner able to distinguish vital signs of the subject with high accuracy."
 	advanced = TRUE
 
