@@ -496,7 +496,7 @@ GENE SCANNER
 	if(target.surgeries.len)
 		var/list/render_list = "<span class='boldannounce ml-1'>The patient is undergoing the following surgeries:</span><br>"
 		for(var/datum/surgery/procedure in target.surgeries)
-			render_list += "<span class='notice ml-1'>[procedure.name]: "
+			render_list += "<span class='notice ml-1'>[capitalize(procedure.name)]: "
 			var/datum/surgery_step/surgery_step = procedure.get_surgery_step()
 			var/chems_needed = surgery_step.get_chem_list()
 			var/alternative_step
@@ -511,9 +511,9 @@ GENE SCANNER
 				render_list += "[alternative_step] </span>"
 				render_list += alt_chems_needed
 				break
-			render_list += "[surgery_step.name] </span>"
-			render_list += chems_needed
-			render_list += "<br>"
+			render_list += "[surgery_step.name] "
+			render_list += "[chems_needed]</span><br>"
+
 		to_chat(user, boxed_message(jointext(render_list, "")), type = MESSAGE_TYPE_INFO)
 
 	else
