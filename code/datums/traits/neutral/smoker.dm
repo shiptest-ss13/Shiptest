@@ -1,7 +1,7 @@
 /datum/quirk/smoker
 	name = "Smoker"
 	desc = "Sometimes you just really want a smoke. Probably not great for your lungs."
-	value = -1
+	value = 0
 	gain_text = span_danger("You could really go for a smoke right about now.")
 	lose_text = span_notice("You feel like you should quit smoking.")
 	medical_record_text = "Patient is a current smoker."
