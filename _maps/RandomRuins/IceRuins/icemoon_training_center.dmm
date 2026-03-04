@@ -2150,6 +2150,7 @@
 	pixel_x = 0;
 	pixel_y = -5
 	},
+/obj/item/reagent_containers/food/drinks/mead,
 /turf/open/floor/wood,
 /area/ruin/icemoon/training_facility/office_2)
 "kA" = (
@@ -4342,7 +4343,7 @@
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/classroom)
 "vC" = (
-/obj/machinery/computer/apc_control{
+/obj/machinery/computer/monitor{
 	dir = 1
 	},
 /obj/effect/spawner/random/trash/crushed_can{
@@ -5369,11 +5370,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/classroom)
-"Ay" = (
-/obj/structure/table/greyscale,
-/obj/item/attachment/gun/flamethrower,
-/turf/open/floor/plating/asteroid/icerock/cracked,
-/area/ruin/icemoon/training_facility)
 "AA" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 5
@@ -6371,6 +6367,10 @@
 "Ff" = (
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/training_facility/dorms)
+"Fi" = (
+/mob/living/simple_animal/hostile/human/ramzi/melee/sawbones,
+/turf/open/floor/plating/rust,
+/area/ruin/icemoon/training_facility/medbay)
 "Fj" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -7673,9 +7673,6 @@
 /area/ruin/icemoon/training_facility/dorms)
 "Lz" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/ramzi/melee/machete{
-	name = "Ramzi Clique Sawbones"
-	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/icemoon/training_facility/medbay)
 "LA" = (
@@ -8518,6 +8515,11 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/icemoon/training_facility/classroom)
+"PO" = (
+/obj/structure/table/greyscale,
+/obj/item/attachment/gun/flamethrower,
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/ruin/icemoon/training_facility)
 "PP" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
@@ -9245,10 +9247,6 @@
 /obj/item/clothing/glasses/hud/security/sunglasses{
 	pixel_x = 0;
 	pixel_y = 12
-	},
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = 3;
-	pixel_y = 10
 	},
 /turf/open/floor/wood,
 /area/ruin/icemoon/training_facility/office_2)
@@ -13948,7 +13946,7 @@ qr
 tx
 Cd
 wr
-ZU
+Fi
 ZU
 rW
 qP
@@ -14827,7 +14825,7 @@ kk
 wN
 Bv
 kk
-Ay
+PO
 xj
 xj
 tB

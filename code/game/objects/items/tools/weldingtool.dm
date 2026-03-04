@@ -58,7 +58,9 @@
 /obj/item/weldingtool/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/update_icon_updates_onmob)
-	AddElement(/datum/element/tool_flash, light_range)
+	if(light_range > 0)
+		AddElement(/datum/element/tool_flash, light_range)
+	AddElement(/datum/element/robotic_heal, brute_heal = 15, self_delay = 5 SECONDS)
 
 /obj/item/weldingtool/update_icon_state()
 	if(welding)
@@ -115,23 +117,6 @@
 	target.add_overlay(GLOB.welding_sparks)
 	. = ..()
 	target.cut_overlay(GLOB.welding_sparks)
-
-/obj/item/weldingtool/attack(mob/living/carbon/human/target, mob/user)
-	if(!istype(target))
-		return ..()
-	var/obj/item/bodypart/attackedLimb = target.get_bodypart(check_zone(user.zone_selected))
-	if(!attackedLimb || IS_ORGANIC_LIMB(attackedLimb) || (user.a_intent == INTENT_HARM))
-		return ..()
-	if(!target.is_exposed(user, TRUE, user.zone_selected))
-		return TRUE
-	if(!tool_start_check(user, amount = 1))
-		return TRUE
-	user.visible_message(span_notice("[user] starts to fix some of the dents on [target]'s [parse_zone(attackedLimb.body_zone)]."),
-			span_notice("You start fixing some of the dents on [target == user ? "your" : "[target]'s"] [parse_zone(attackedLimb.body_zone)]."))
-	if(!use_tool(target, user, delay = (target == user ? 5 SECONDS : 0.5 SECONDS), amount = 1, volume = 25))
-		return TRUE
-	item_heal_robotic(target, user, brute_heal = 15, burn_heal = 0)
-	return TRUE
 
 /obj/item/weldingtool/afterattack(atom/O, mob/user, proximity)
 	. = ..()

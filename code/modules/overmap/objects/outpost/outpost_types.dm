@@ -225,6 +225,19 @@
 	)
 	faction = /datum/faction/nt
 
+	main_level_ztraits = list(
+		ZTRAIT_STATION = TRUE,
+		ZTRAIT_SUN_TYPE = AZIMUTH,
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
+		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/icerock/temperate/lit
+	)
+	hangar_ztraits =  list(
+		ZTRAIT_GAS_GIANT = TRUE,
+		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
+		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/icerock/temperate/lit
+	)
+
 /datum/overmap/outpost/ngr_rock
 	token_icon_state = "station_asteroid"
 	main_template = /datum/map_template/outpost/ngr_rock
@@ -238,6 +251,19 @@
 		/datum/map_template/outpost/hangar/ngr_rock_56x40
 	)
 
+	main_level_ztraits = list(
+		ZTRAIT_STATION = TRUE,
+		ZTRAIT_SUN_TYPE = AZIMUTH,
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
+		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/rockplanet/safe/lit
+	)
+	hangar_ztraits =  list(
+		ZTRAIT_GAS_GIANT = TRUE,
+		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
+		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/rockplanet/safe/lit
+	)
+
 /datum/overmap/outpost/clip_ocean
 	token_icon_state = "station_planet"
 	main_template = /datum/map_template/outpost/clip_ocean
@@ -249,6 +275,19 @@
 		/datum/map_template/outpost/hangar/clip_ocean_40x40,
 		/datum/map_template/outpost/hangar/clip_ocean_56x20,
 		/datum/map_template/outpost/hangar/clip_ocean_56x40
+	)
+
+	main_level_ztraits = list(
+		ZTRAIT_STATION = TRUE,
+		ZTRAIT_SUN_TYPE = AZIMUTH,
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
+		ZTRAIT_BASETURF = /turf/open/water/beach/deep/outpost
+	)
+	hangar_ztraits =  list(
+		ZTRAIT_GAS_GIANT = TRUE,
+		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
+		ZTRAIT_BASETURF = /turf/open/water/beach/deep/outpost
 	)
 
 /datum/overmap/outpost/cybersun_gas_giant
@@ -268,12 +307,14 @@
 		ZTRAIT_GAS_GIANT = TRUE,
 		ZTRAIT_STATION = TRUE,
 		ZTRAIT_SUN_TYPE = AZIMUTH,
-		ZTRAIT_GRAVITY = STANDARD_GRAVITY
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
+		ZTRAIT_BASETURF = /turf/open/cybersun_outpost_exterior
 	)
 	hangar_ztraits =  list(
 		ZTRAIT_GAS_GIANT = TRUE,
 		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
-		ZTRAIT_GRAVITY = STANDARD_GRAVITY
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
+		ZTRAIT_BASETURF = /turf/open/cybersun_outpost_exterior
 	)
 
 

@@ -298,13 +298,13 @@
 		if(isbodypart(target))
 			hit_part = target
 			target = hit_part.owner
-			if(wound_info_by_part[hit_part] && (initial(P.damage_type) == BRUTE || initial(P.damage_type) == BURN)) // so a cloud of disablers that deal stamina don't inadvertently end up causing burn wounds)
+			var/damage_type = initial(P.damage_type)
+			if(wound_info_by_part[hit_part] && (damage_type == BRUTE || damage_type == BURN)) // so a cloud of disablers that deal stamina don't inadvertently end up causing burn wounds)
 				var/damage_dealt = wound_info_by_part[hit_part][CLOUD_POSITION_DAMAGE]
 				var/w_bonus = wound_info_by_part[hit_part][CLOUD_POSITION_W_BONUS]
 				var/bw_bonus = wound_info_by_part[hit_part][CLOUD_POSITION_BW_BONUS]
-				var/wound_type = (initial(P.damage_type) == BRUTE) ? WOUND_BLUNT : WOUND_BURN // sharpness is handled in the wound rolling
-				wound_info_by_part[hit_part] = null
-				hit_part.painless_wound_roll(wound_type, damage_dealt, w_bonus, bw_bonus, initial(P.sharpness))
+				wound_info_by_part -= hit_part
+				hit_part.wound_roll((damage_type == BRUTE) ? damage_dealt : 0, (damage_type == BURN) ? damage_dealt : 0, w_bonus, bw_bonus, initial(P.sharpness))
 
 		if(num_hits > 1)
 			target.visible_message(span_danger("[target] is hit by [num_hits] [proj_name]s[hit_part ? " in the [hit_part.name]" : ""]!"), null, null, COMBAT_MESSAGE_RANGE, target)

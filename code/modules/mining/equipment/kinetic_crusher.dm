@@ -68,7 +68,7 @@
 		D.preparePixelProjectile(target, user, modifiers)
 		D.firer = user
 		D.hammer_synced = src
-		playsound(user, 'sound/weapons/plasma_cutter.ogg', 100, TRUE)
+		playsound(user, 'sound/weapons/melee/plasmacutter/plasma_cutter.ogg', 100, TRUE)
 		D.fire()
 		charged = FALSE
 		update_appearance()

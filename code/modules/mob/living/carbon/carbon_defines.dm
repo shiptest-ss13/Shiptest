@@ -11,6 +11,9 @@
 	usable_legs = 0 //Populated on init through list/bodyparts
 	num_hands = 0 //Populated on init through list/bodyparts
 	usable_hands = 0 //Populated on init through list/bodyparts
+
+	rotate_on_lying = TRUE
+
 	var/list/internal_organs		= list()	///List of [/obj/item/organ] in the mob. They don't go in the contents for some reason I don't want to know.
 	var/list/internal_organs_slot= list() ///Same as [above][/mob/living/carbon/var/internal_organs], but stores "slot ID" - "organ" pairs for easy access.
 	var/silent = 0 		///Can't talk. Value goes down every life proc. NOTE TO FUTURE CODERS: DO NOT INITIALIZE NUMERICAL VARS AS NULL OR I WILL MURDER YOU.
@@ -26,6 +29,8 @@
 	var/obj/item/clothing/mask/wear_mask = null
 	var/obj/item/clothing/neck/wear_neck = null
 	var/obj/item/tank/internal = null
+	/// "External" air tank. Never set this manually. Not required to stay directly equipped on the mob (i.e. could be a machine or MOD suit module).
+	var/obj/item/tank/external = null
 	var/obj/item/clothing/head = null
 
 	var/obj/item/wear_id = null //only used by humans
@@ -44,8 +49,6 @@
 	var/obj/item/food/meat/slab/type_of_meat = /obj/item/food/meat/slab
 
 	var/gib_type = /obj/effect/decal/cleanable/blood/gibs
-
-	var/rotate_on_lying = 1
 
 	var/tinttotal = 0	/// Total level of visualy impairing items
 
@@ -87,6 +90,9 @@
 
 	/// All of the wounds a carbon has afflicted throughout their limbs
 	var/list/all_wounds
+
+	/// Assoc list of BODY_ZONE -> wounding_type. Set when a limb is dismembered, unset when one is attached. Used for determining what scar to add when it comes time to generate them.
+	var/list/body_zone_dismembered_by
 
 	/// Levels of moth dust
 	var/mothdust
