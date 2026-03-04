@@ -34,9 +34,8 @@
 #define IMMUTABLE_SLOW (1<<10) // When players should not be able to change the slowdown of the item (Speed potions, etc)
 #define IN_STORAGE (1<<11) //is this item in the storage item, such as backpack? used for tooltips
 #define SURGICAL_TOOL (1<<12)	//Tool commonly used for surgery: won't attack targets in an active surgical operation on help intent (in case of mistakes)
-#define EYE_STAB (1<<13) /// Item can be used to eyestab
-#define NO_PIXEL_RANDOM_DROP (1<<14) //if dropped, it wont have a randomized pixel_x/pixel_y
-#define HAND_ITEM (1<<15) /// If an item is just your hand (circled hand, slapper) and shouldn't block things like riding
+#define NO_PIXEL_RANDOM_DROP (1<<13) //if dropped, it wont have a randomized pixel_x/pixel_y
+#define HAND_ITEM (1<<14) /// If an item is just your hand (circled hand, slapper) and shouldn't block things like riding
 
 // Flags for the clothing_flags var on /obj/item/clothing
 
@@ -65,6 +64,11 @@
 #define ORGAN_VITAL (1<<4)	//Currently only the brain
 #define ORGAN_EDIBLE (1<<5)	//is a snack? :D
 #define ORGAN_SYNTHETIC_EMP (1<<6)	//Synthetic organ affected by an EMP. Deteriorates over time.
+
+/// Scarring on the right eye
+#define RIGHT_EYE_SCAR (1<<0)
+/// Scarring on the left eye
+#define LEFT_EYE_SCAR (1<<1)
 
 /// Integrity defines for clothing (not flags but close enough)
 #define CLOTHING_PRISTINE 0 // We have no damage on the clothing

@@ -1299,6 +1299,12 @@
 	else
 		set_lying_angle(new_lying_angle)
 
+/mob/living/carbon/proc/get_eye_scars()
+	var/obj/item/organ/eyes/eyes = getorganslot(ORGAN_SLOT_EYES)
+	if(!isnull(eyes))
+		return eyes.scarring
+	return NONE
+
 /mob/living/carbon/get_fire_overlay(stacks, on_fire)
 	var/fire_icon = "[dna?.species.fire_overlay || "human"]_[stacks > MOB_BIG_FIRE_STACK_THRESHOLD ? "big_fire" : "small_fire"]"
 
