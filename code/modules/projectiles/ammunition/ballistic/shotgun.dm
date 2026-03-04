@@ -129,7 +129,7 @@
 	pellets = 8
 	variance = 45
 
-	wear_modifier = 1
+	wear_modifier = 4
 
 /obj/item/ammo_casing/shotgun/meteorslug
 	name = "meteorslug shell"
@@ -137,7 +137,7 @@
 	icon_state = "meteor"
 	projectile_type = /obj/projectile/bullet/slug/meteor
 
-	wear_modifier = 1
+	wear_modifier = 4
 
 /obj/item/ammo_casing/shotgun/frag12
 	name = "FRAG-12 slug"
@@ -159,8 +159,8 @@
 	wear_modifier = 4
 
 /obj/item/ammo_casing/shotgun/laserscatter
-	name = "scatter laser shell"
-	desc = "An advanced shotgun shell that uses a micro laser to replicate the effects of a scatter laser weapon in a ballistic package."
+	name = "scatter plasma shell"
+	desc = "An advanced shotgun shell that uses a micro laser to replicate the effects of an EP weapon in a ballistic package."
 	icon_state = "laser"
 	projectile_type = /obj/projectile/beam/weak/shotgun/sharplite
 	pellets = 6
