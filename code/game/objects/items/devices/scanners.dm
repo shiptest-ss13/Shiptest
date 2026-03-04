@@ -908,9 +908,9 @@ GENE SCANNER
 
 /obj/item/reagent_scanner //essentially just the code from the PDA reagent scanner, but shoved into this object, and specifies amount
 	name = "reagent scanner"
-	icon = 'icons/obj/device.dmi'
-	icon_state = "reagentanalyzer"
-	item_state = "reagentanalyzer-1"
+	icon = 'icons/obj/medical/healthanalyzer.dmi'
+	icon_state = "analyzer-1"
+	item_state = "analyzer-1"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	pickup_sound =  'sound/items/handling/device_pickup.ogg'
@@ -927,9 +927,9 @@ GENE SCANNER
 
 /obj/item/reagent_scanner/afterattack(atom/A as mob|obj|turf|area, mob/user, proximity)
 	. = ..()
-	flick("[icon_state]-anim", src)
 	if(!proximity)
 		return
+	flick("[icon_state]-anim", src)
 	playsound(src, 'sound/effects/fastbeep.ogg', 10)
 	if(!isnull(A.reagents))
 		if(A.reagents.reagent_list.len > 0)
