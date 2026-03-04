@@ -14,8 +14,6 @@
 	var/where_accessory //! where the accessory spawned
 	/// If this is null, an accessory won't be spawned.
 	var/obj/item/accessory_type = /obj/item/lighter/greyscale
-	var/process_interval = 30 MINUTES //! how frequently the quirk processes
-	var/next_process = 0 //! ticker for processing
 
 /datum/quirk/smoker/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -44,8 +42,3 @@
 
 /datum/quirk/smoker/proc/announce_drugs()
 	to_chat(quirk_holder, span_boldnotice("There is a [initial(drug_container_type.name)] of [initial(reagent_type.name)] [where_drug]. Better hope you don't run out..."))
-
-/datum/quirk/smoker/on_process(seconds_per_tick)
-	if(world.time > next_process)
-		next_process = world.time + (process_interval + rand(-300, 300))
-		to_chat(quirk_holder, span_danger("You could go for a smoke right about now..."))
