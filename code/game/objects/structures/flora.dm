@@ -448,7 +448,8 @@
 	pass_flags_self = LETPASSTHROW
 	max_integrity = 100
 	var/obj/item/stack/mineResult = /obj/item/stack/ore/glass/basalt
-	var/passchance = 50
+	passchance = 50
+	pass_through = TRUE
 
 	hitsound_type = PROJECTILE_HITSOUND_STONE
 
@@ -478,22 +479,12 @@
 		if(BURN)
 			playsound(src.loc, 'sound/items/welder.ogg', 100, TRUE)
 
-/obj/structure/flora/rock/CanAllowThrough(atom/movable/mover, border_dir)
-	. = ..()
-	if(istype(mover, /obj/projectile))
-		var/obj/projectile/proj = mover
-		if(proj.firer && Adjacent(proj.firer))
-			return TRUE
-		if(prob(passchance))
-			return TRUE
-		return FALSE
-	if((mover.pass_flags & PASSGRILLE))
-		return prob(passchance)
 
 /obj/structure/flora/rock/pile
 	icon_state = "lavarocks1"
 	base_icon_state = "lavarocks"
 	desc = "A pile of rocks."
+	density = FALSE
 
 //Jungle grass
 
@@ -679,6 +670,7 @@
 	icon = 'icons/obj/flora/lavarocks.dmi'
 	icon_state = "lavarocks1"
 	base_icon_state = "lavarocks"
+	density = FALSE
 	gender = PLURAL
 
 /obj/structure/flora/rock/asteroid
@@ -798,6 +790,7 @@
 	icon_state = "redrocks1"
 	base_icon_state = "redrocks"
 	mineResult = /obj/item/stack/ore/glass/rockplanet
+	density = FALSE
 
 /obj/structure/flora/grass/rockplanet
 	name = "cottongrass"
