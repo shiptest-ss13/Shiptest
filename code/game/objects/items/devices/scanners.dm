@@ -526,7 +526,7 @@ GENE SCANNER
 		return
 
 	verbose = !verbose
-	to_chat(usr, mode == SCANNER_VERBOSE ? "The scanner now shows specific limb damage." : "The scanner no longer shows limb damage.")
+	to_chat(usr, verbose ? "The scanner now shows specific limb damage." : "The scanner no longer shows limb damage.")
 
 /obj/item/healthanalyzer/advanced
 	name = "advanced health analyzer"
