@@ -102,7 +102,7 @@ GENE SCANNER
 
 /obj/item/healthanalyzer/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/machines/click.ogg', 50, TRUE)
-	scanmode = (scanmode + 1) % 2
+	scanmode = (scanmode + 1) % 3
 	switch(scanmode)
 		if(SCANMODE_HEALTH)
 			to_chat(user, span_notice("You switch the health analyzer to check physical health."))
@@ -493,6 +493,7 @@ GENE SCANNER
 /proc/surgical_scan(mob/living/user, mob/living/target)
 	if(target.surgeries.len)
 		for(var/datum/surgery/procedure in target.surgeries)
+			var/list/render_list = "<span class='notice ml-1'>Subject contains the following reagents in their stomach:</span><br>"
 			var/datum/surgery_step/surgery_step = procedure.get_surgery_step()
 			var/chems_needed = surgery_step.get_chem_list()
 			var/alternative_step
@@ -504,6 +505,12 @@ GENE SCANNER
 					alt_chems_needed = next_step.get_chem_list()
 				else
 					alternative_step = "Finish operation"
+				render_list += alternative_step
+				render_list += alt_chems_needed
+				break
+			render_list += surgery_step
+			render_list += chems_needed
+		to_chat(user, boxed_message(jointext(render_list, "")), type = MESSAGE_TYPE_INFO)
 
 	else
 		to_chat(user, span_warning("Subject has no current surgeries."))
@@ -515,9 +522,7 @@ GENE SCANNER
 	if(usr.incapacitated())
 		return
 
-	mode += 1
-	if(mode%2 == 0)
-		mode = 0
+	mode =! mode
 	to_chat(usr, mode == SCANNER_VERBOSE ? "The scanner now shows specific limb damage." : "The scanner no longer shows limb damage.")
 
 /obj/item/healthanalyzer/advanced
