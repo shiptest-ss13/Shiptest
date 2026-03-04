@@ -75,8 +75,8 @@ GENE SCANNER
 
 /obj/item/healthanalyzer
 	name = "health analyzer"
-	icon = 'icons/obj/device.dmi'
-	icon_state = "analyzer-1"
+	icon = 'icons/obj/medical/healthanalyzer.dmi'
+	icon_state = "analyzer-0"
 	item_state = "analyzer"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
@@ -94,24 +94,23 @@ GENE SCANNER
 	var/mode = SCANNER_VERBOSE
 	var/scanmode = SCANMODE_HEALTH
 	var/advanced = FALSE
-	var/healthmode = "analyzer-1"
-	var/reagentmode = "reagentanalyzer"
-	var/healthmodeinhand = "analyzer"
-	var/reagentmodeinhand = "reagentanalyzer-1"
 	custom_price = 300
 
 /obj/item/healthanalyzer/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/machines/click.ogg', 50, TRUE)
 	scanmode = (scanmode + 1) % 3
+
+	icon_state = "[advanced ? "adv" : ""]analyzer-[scanmode]"
+
 	switch(scanmode)
 		if(SCANMODE_HEALTH)
 			to_chat(user, span_notice("You switch the health analyzer to check physical health."))
-			icon_state = healthmode
-			item_state = healthmodeinhand
+
 		if(SCANMODE_CHEMICAL)
 			to_chat(user, span_notice("You switch the health analyzer to scan chemical contents."))
-			icon_state = reagentmode
-			item_state = reagentmodeinhand
+
+		if(SCANMODE_SURGICAL)
+			to_chat(user, span_notice("You switch the health analyzer to report surgical status."))
 
 /obj/item/healthanalyzer/attack(mob/living/M, mob/living/carbon/human/user)
 	flick("[icon_state]-anim", src) //makes it so that it plays the scan animation upon scanning, including clumsy scanning
@@ -133,10 +132,13 @@ GENE SCANNER
 	user.visible_message(span_notice("[user] analyzes [M]'s vitals."), \
 						span_notice("You analyze [M]'s vitals."))
 
-	if(scanmode == SCANMODE_HEALTH)
-		healthscan(user, M, mode, advanced)
-	else if(scanmode == SCANMODE_CHEMICAL)
-		chemscan(user, M)
+	switch(scanmode)
+		if(SCANMODE_HEALTH)
+			healthscan(user, M, mode, advanced)
+		if(SCANMODE_CHEMICAL)
+			chemscan(user, M)
+		if(SCANMODE_SURGICAL)
+			surgical_scan(user, M)
 
 	add_fingerprint(user)
 
@@ -492,8 +494,9 @@ GENE SCANNER
 
 /proc/surgical_scan(mob/living/user, mob/living/target)
 	if(target.surgeries.len)
+		var/list/render_list = "<span class='boldannounce ml-1'>The patient is undergoing the following surgeries:</span><br>"
 		for(var/datum/surgery/procedure in target.surgeries)
-			var/list/render_list = "<span class='notice ml-1'>Subject contains the following reagents in their stomach:</span><br>"
+			render_list += "<span class='notice ml-1'>[procedure.name]: "
 			var/datum/surgery_step/surgery_step = procedure.get_surgery_step()
 			var/chems_needed = surgery_step.get_chem_list()
 			var/alternative_step
@@ -505,11 +508,12 @@ GENE SCANNER
 					alt_chems_needed = next_step.get_chem_list()
 				else
 					alternative_step = "Finish operation"
-				render_list += alternative_step
+				render_list += "[alternative_step] </span>"
 				render_list += alt_chems_needed
 				break
-			render_list += surgery_step
+			render_list += "[surgery_step.name] </span>"
 			render_list += chems_needed
+			render_list += "<br>"
 		to_chat(user, boxed_message(jointext(render_list, "")), type = MESSAGE_TYPE_INFO)
 
 	else
@@ -532,10 +536,6 @@ GENE SCANNER
 	item_state = "advanalyzer"
 	desc = "A hand-held body scanner able to distinguish vital signs of the subject with high accuracy."
 	advanced = TRUE
-	healthmode = "advanalyzer"
-	reagentmode = "advreagentanalyzer"
-	healthmodeinhand = "advanalyzer"
-	reagentmodeinhand = "advreagentanalyzer"
 
 /obj/item/analyzer
 	desc = "A hand-held environmental scanner which reports current gas levels. Alt-Click to use the built in barometer function."
