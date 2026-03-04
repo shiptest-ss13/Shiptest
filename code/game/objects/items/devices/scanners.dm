@@ -10,11 +10,10 @@ GENE SCANNER
 
 */
 
-// Describes the two modes of scanning available for health analyzers
+// Describes the modes of scanning available for health analyzers
 #define SCANMODE_HEALTH 0
 #define SCANMODE_CHEMICAL 1
 #define SCANMODE_SURGICAL 2
-#define SCANNER_VERBOSE 3
 
 /obj/item/t_scanner
 	name = "\improper T-ray scanner"
@@ -91,7 +90,7 @@ GENE SCANNER
 	throw_speed = 3
 	throw_range = 7
 	custom_materials = list(/datum/material/iron=200)
-	var/mode = SCANNER_VERBOSE
+	var/verbose = TRUE
 	var/scanmode = SCANMODE_HEALTH
 	var/advanced = FALSE
 	custom_price = 300
@@ -134,7 +133,7 @@ GENE SCANNER
 
 	switch(scanmode)
 		if(SCANMODE_HEALTH)
-			healthscan(user, M, mode, advanced)
+			healthscan(user, M, verbose, advanced)
 		if(SCANMODE_CHEMICAL)
 			chemscan(user, M)
 		if(SCANMODE_SURGICAL)
@@ -143,7 +142,7 @@ GENE SCANNER
 	add_fingerprint(user)
 
 // Used by the PDA medical scanner too
-/proc/healthscan(mob/user, mob/living/M, mode = SCANNER_VERBOSE, advanced = FALSE, see_all_quirks = FALSE)
+/proc/healthscan(mob/user, mob/living/M, verbose = TRUE, advanced = FALSE, see_all_quirks = FALSE)
 	if(isliving(user) && (user.incapacitated()))
 		return
 
@@ -526,7 +525,7 @@ GENE SCANNER
 	if(usr.incapacitated())
 		return
 
-	mode = !mode
+	verbose = !verbose
 	to_chat(usr, mode == SCANNER_VERBOSE ? "The scanner now shows specific limb damage." : "The scanner no longer shows limb damage.")
 
 /obj/item/healthanalyzer/advanced
