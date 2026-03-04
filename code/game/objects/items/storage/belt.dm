@@ -87,10 +87,6 @@
 		/obj/item/stack/tape/industrial,
 		/obj/item/trench_tool,
 		))
-	var/static/list/exception_cache = typecacheof(list(
-		/obj/item/bodycamera,
-	))
-	STR.exception_hold = exception_cache
 
 /obj/item/storage/belt/utility/chief
 	name = "\improper Chief Engineer's toolbelt" //"the Chief Engineer's toolbelt", because "Chief Engineer's toolbelt" is not a proper noun
@@ -237,10 +233,6 @@
 		/obj/item/bonesetter,
 		/obj/item/stack/sticky_tape/surgical
 		))
-	var/static/list/exception_cache = typecacheof(list(
-		/obj/item/bodycamera,
-	))
-	STR.exception_hold = exception_cache
 
 /obj/item/storage/belt/medical/paramedic/PopulateContents()
 	new /obj/item/sensor_device(src)
@@ -344,10 +336,6 @@
 	STR.can_hold_max_of_items = typecacheof(list(
 		/obj/item/gun = 1,
 	))
-	var/static/list/exception_cache = typecacheof(list(
-		/obj/item/bodycamera,
-	))
-	STR.exception_hold = exception_cache
 
 /obj/item/storage/belt/security/full/PopulateContents()
 	new /obj/item/reagent_containers/spray/pepper(src)
@@ -438,10 +426,6 @@
 		/obj/item/tank/internals/emergency_oxygen,
 		/obj/item/trench_tool,
 		))
-	var/static/list/exception_cache = typecacheof(list(
-		/obj/item/bodycamera,
-	))
-	STR.exception_hold = exception_cache
 
 
 /obj/item/storage/belt/mining/vendor

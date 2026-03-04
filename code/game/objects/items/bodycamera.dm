@@ -16,6 +16,7 @@
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
 	var/view_range = 5
 	var/busy = FALSE
+	var/broadcast_camera = FALSE
 	var/can_transmit_across_z_levels = FALSE
 	var/updating = FALSE //portable camera camerachunk update
 	var/mob/tracked_mob //last mob that picked up the bodycamera. needed for cameranet updates
@@ -47,7 +48,7 @@
 	if(in_range(src, user))
 		. += span_notice("The camera is set to a nametag of '<b>[c_tag]</b>'.")
 		. += span_notice("The camera is set to transmit on the '<b>[network[1]]</b>' network.")
-		if(!(istype(src, /obj/item/bodycamera/broadcast_camera)))
+		if(!broadcast_camera)
 			. += span_notice("It looks like you can configure the camera settings by <b>using it in your hand</b>, or by using a multitool on it.")
 		else
 			. += span_notice("It looks like you can configure the camera settings by <b>using a multitool on it.</b>")
@@ -100,7 +101,7 @@
 	. = ..()
 
 	//skips broadcast cameras in this proc so that the rest of their functions work
-	if(istype(src, /obj/item/bodycamera/broadcast_camera))
+	if(broadcast_camera)
 		return
 
 	var/list/choice_list = list("Modify the camera tag", "Change the camera network")
@@ -130,7 +131,7 @@
 	else
 		c_tag = camera_name
 
-	if(istype(src, /obj/item/bodycamera/broadcast_camera))
+	if(broadcast_camera)
 		name = camera_name
 	else
 		name = "body camera - (" + c_tag + ")"
@@ -230,9 +231,10 @@
 	icon_state = "broadcast"
 	lefthand_file = 'icons/mob/inhands/misc/broadcast_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/broadcast_righthand.dmi'
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	view_range = 7
 	can_transmit_across_z_levels = TRUE
+	broadcast_camera = TRUE
 	network = list("IntraNet")
 	var/obj/item/radio/broadcast/radio
 	var/mob/listeningTo
@@ -247,7 +249,7 @@
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 	RegisterSignal(radio, COMSIG_RADIO_NEW_FREQUENCY, PROC_REF(adjust_name))
-	c_tag = "Broadcast Camera - Unlabeled"
+	c_tag = "Broadcast Camera - " + random_string(6, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
 	name = c_tag
 	update_appearance()
 
