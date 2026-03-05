@@ -39,9 +39,12 @@
 
 	if(force_white_eye_color)
 		limb_owner.eye_color = COLOR_WHITE
-	var/datum/species/ipc/species_datum = limb_owner.dna.species
-	if(!species_datum)
-		species_datum.update_screen_action()
+	var/datum/species/ipc/ipc_species_datum = limb_owner.dna.species
+	var/datum/species/species_datum = limb_owner.dna.species
+	if(!ipc_species_datum)
+		ipc_species_datum.update_screen_action()
+	else if(species_datum)
+		LAZYREMOVE(species_datum.species_traits, SCLERA)
 	return ..()
 
 //ditto
