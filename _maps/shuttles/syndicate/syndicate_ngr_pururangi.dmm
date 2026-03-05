@@ -2347,15 +2347,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
-"qk" = (
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "puru_exterior_shutters";
-	dir = 1
-	},
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/ship/crew)
 "qn" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -3557,10 +3548,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew)
 "yE" = (
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "puru_thrusters_starboard_blastdoors"
-	},
 /obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -3568,6 +3555,10 @@
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "puru_thrusters_port_blastdoors"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -4625,6 +4616,15 @@
 /obj/effect/turf_decal/industrial/outline/grey,
 /turf/open/floor/pod/dark,
 /area/ship/engineering)
+"IM" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "puru_exterior_shutters";
+	dir = 1
+	},
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ship/crew)
 "IQ" = (
 /obj/structure/railing/thin{
 	dir = 8
@@ -7115,7 +7115,7 @@ bg
 Kr
 Vd
 GJ
-qk
+IM
 Jn
 Jn
 "}
