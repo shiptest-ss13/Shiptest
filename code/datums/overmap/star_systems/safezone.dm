@@ -123,5 +123,5 @@
 		"Cybersun is not liable for damage caused by stellar objects in-system.",
 		"Weather on the Perch is safe for now.",
 		"Follow the buoys. Don't get lost.",
-		"Cybersun welcomes you to Thousand Eyes Perch."
+		"The Watcher's gaze is on you. Welcome back."
 	)
