@@ -459,30 +459,6 @@
 	icon_state = "saipc2_r_leg"
 	limb_id = "saipc2"
 
-// Scarborgh Arms IPC-80 MK.2
-
-/obj/item/bodypart/head/ipc/saipc2
-	name = "\improper Scarborgh Arms IPC-80 MK.2 head"
-	icon_state = "saipc2_head"
-	limb_id = "saipc2"
-	draw_eyes = TRUE
-	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT
-
-/obj/item/bodypart/chest/ipc/saipc2
-	name = "\improper Scarborgh Arms IPC-80 MK.2 chest"
-	icon_state = "saipc2_chest"
-	limb_id = "saipc2"
-
-/obj/item/bodypart/l_arm/ipc/saipc2
-	name = "\improper Scarborgh Arms IPC-80 MK.2 left arm"
-	icon_state = "saipc2_l_arm"
-	limb_id = "saipc2"
-
-/obj/item/bodypart/r_arm/ipc/saipc2
-	name = "\improper Scarborgh Arms IPC-80 MK.2 right arm"
-	icon_state = "saipc2_r_arm"
-	limb_id = "saipc2"
-
 /obj/item/bodypart/leg/left/ipc/saipc2
 	name = "\improper Scarborgh Arms IPC-80 MK.2 left leg"
 	icon_state = "saipc2_l_leg"
@@ -973,3 +949,347 @@
 	has_screen = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
 
+/obj/item/bodypart/head/ipc/custom_monoeye
+	name = "\improper Custom 3D Printed monoeye head"
+	icon_state = "customsa_head"
+	limb_id = "customsa"
+	draw_eyes = TRUE
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT_SMALL
+	custom_eye_sprite = "eyes_mono"
+
+/obj/item/bodypart/head/ipc/customatua_monoc
+	name = "\improper Custom 3D Printed Atua head"
+	icon_state = "customatua_monoc_head"
+	limb_id = "customatua_monoc"
+	draw_eyes = TRUE
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT_SMALL
+	custom_eye_sprite = "eyes_mono"
+
+/obj/item/bodypart/leg/left/ipc/customatua_monoc
+	name = "\improper Custom 3D Printed Atua left leg"
+	icon_state = "customatua_monoc_l_leg"
+	limb_id = "customatua_monoc"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/leg/right/ipc/customatua_monoc
+	name = "\improper Custom 3D Printed Atua right leg"
+	icon_state = "customatua_monoc_r_leg"
+	limb_id = "customatua_monoc"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+// Custom 3D Printed MK.III Type 'Suhols-Ro'
+
+/obj/item/bodypart/head/ipc/custompgf3_suhols
+	name = "\improper Custom 3D Printed MK.III Type 'Suhols-Ro' head"
+	icon_state = "custompgf3_suhols_head"
+	limb_id = "custompgf3_suhols"
+	draw_eyes = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT_SMALL
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+	custom_eye_sprite = "eyes_elzu"
+
+/obj/item/bodypart/chest/ipc/custompgf3_suhols
+	name = "\improper Custom 3D Printed MK.III Type 'Suhols-Ro' chest"
+	icon_state = "custompgf3_suhols_chest"
+	limb_id = "custompgf3_suhols"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+// Custom 3D Printed MK.III Type 'Wusha'
+
+/obj/item/bodypart/head/ipc/custompgf3_wusha
+	name = "\improper Custom 3D Printed MK.III Type 'Wusha' head"
+	icon_state = "custompgf3_wusha_head"
+	limb_id = "custompgf3_wusha"
+	draw_eyes = FALSE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT_SMALL
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+	overlay2_icon_state = TRUE
+
+/obj/item/bodypart/chest/ipc/custompgf3_wusha
+	name = "\improper Custom 3D Printed MK.III Type 'Wusha' chest"
+	icon_state = "custompgf3_wusha_chest"
+	limb_id = "custompgf3_wusha"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+// Custom 3D Printed MK.III generic
+
+/obj/item/bodypart/l_arm/ipc/custompgf3
+	name = "\improper Custom 3D Printed MK.III left arm"
+	icon_state = "custompgf3_l_arm"
+	limb_id = "custompgf3"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/r_arm/ipc/custompgf3
+	name = "\improper Custom 3D Printed MK.III right arm"
+	icon_state = "custompgf3_r_arm"
+	limb_id = "custompgf3"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/leg/left/ipc/custompgf3
+	name = "\improper Custom 3D Printed MK.III left leg"
+	icon_state = "custompgf3_l_leg"
+	limb_id = "custompgf3"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/leg/right/ipc/custompgf3
+	name = "\improper Custom 3D Printed MK.III right leg"
+	icon_state = "custompgf3_r_leg"
+	limb_id = "custompgf3"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+//Custom 3D Printed Atua
+
+/obj/item/bodypart/head/ipc/customatua
+	name = "\improper Custom 3D Printed Atua head"
+	icon_state = "customatua_head"
+	limb_id = "customatua"
+	draw_eyes = TRUE
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+	overlay2_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT_SMALL
+
+/obj/item/bodypart/chest/ipc/customatua
+	name = "\improper Custom 3D Printed Atua chest"
+	icon_state = "customatua_chest"
+	limb_id = "customatua"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+	overlay2_icon_state = TRUE
+
+/obj/item/bodypart/l_arm/ipc/customatua
+	name = "\improper Custom 3D Printed Atua left arm"
+	icon_state = "customatua_l_arm"
+	limb_id = "customatua"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+	overlay2_icon_state = TRUE
+
+/obj/item/bodypart/r_arm/ipc/customatua
+	name = "\improper Custom 3D Printed Atua right arm"
+	icon_state = "customatua_r_arm"
+	limb_id = "customatua"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+	overlay2_icon_state = TRUE
+
+/obj/item/bodypart/leg/left/ipc/customatua
+	name = "\improper Custom 3D Printed Atua left leg"
+	icon_state = "customatua_l_leg"
+	limb_id = "customatua"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+	overlay2_icon_state = TRUE
+
+/obj/item/bodypart/leg/right/ipc/customatua
+	name = "\improper Custom 3D Printed Atua right leg"
+	icon_state = "customatua_r_leg"
+	limb_id = "customatua"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+	overlay2_icon_state = TRUE
+
+// Custom 3D Printed Bishop
+
+/obj/item/bodypart/head/ipc/custombishop
+	name = "\improper Custom 3D Printed Bishop head"
+	icon_state = "custombishop_head"
+	limb_id = "custombishop"
+	draw_eyes = TRUE
+	custom_eye_sprite = "eyes_circle"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/chest/ipc/custombishop
+	name = "\improper Custom 3D Printed Bishop chest"
+	icon_state = "custombishop_chest"
+	limb_id = "custombishop"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/l_arm/ipc/custombishop
+	name = "\improper Custom 3D Printed Bishop left arm"
+	icon_state = "custombishop_l_arm"
+	limb_id = "custombishop"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/r_arm/ipc/custombishop
+	name = "\improper Custom 3D Printed Bishop right arm"
+	icon_state = "custombishop_r_arm"
+	limb_id = "custombishop"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/leg/left/ipc/custombishop
+	name = "\improper Custom 3D Printed Bishop left leg"
+	icon_state = "custombishop_l_leg"
+	limb_id = "custombishop"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/leg/right/ipc/custombishop
+	name = "\improper Custom 3D Printed Bishop right leg"
+	icon_state = "custombishop_r_leg"
+	limb_id = "custombishop"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+//Custom 3D Printed HIACU
+
+/obj/item/bodypart/head/ipc/customhiacu
+	name = "\improper Custom 3D Printed HIACU head"
+	icon_state = "customhiacu_head"
+	limb_id = "customhiacu"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+	overlay2_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT
+
+/obj/item/bodypart/chest/ipc/customhiacu
+	name = "\improper Custom 3D Printed HIACU chest"
+	icon_state = "customhiacu_chest"
+	limb_id = "customhiacu"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+	overlay2_icon_state = TRUE
+
+/obj/item/bodypart/l_arm/ipc/customhiacu
+	name = "\improper Custom 3D Printed HIACU left arm"
+	icon_state = "customhiacu_l_arm"
+	limb_id = "customhiacu"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/r_arm/ipc/customhiacu
+	name = "\improper Custom 3D Printed HIACU right arm"
+	icon_state = "customhiacu_r_arm"
+	limb_id = "customhiacu"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/leg/left/ipc/customhiacu
+	name = "\improper Custom 3D Printed HIACU left leg"
+	icon_state = "customhiacu_l_leg_digitigrade"
+	limb_id = "customhiacu"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
+
+/obj/item/bodypart/leg/right/ipc/customhiacu
+	name = "\improper Custom 3D Printed HIACU right leg"
+	icon_state = "customhiacu_r_leg_digitigrade"
+	limb_id = "customhiacu"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
+
+// Custom 3D Printed Lanchester
+
+/obj/item/bodypart/head/ipc/customlanchesterheavy
+	name = "\improper Custom 3D Printed Lanchester head"
+	icon_state = "customlanchesterheavy_head"
+	limb_id = "customlanchesterheavy"
+	draw_eyes = TRUE
+	custom_eye_sprite = "eyes_circle"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/chest/ipc/customlanchesterheavy
+	name = "\improper Custom 3D Printed Lanchester chest"
+	icon_state = "customlanchesterheavy_chest"
+	limb_id = "customlanchesterheavy"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/l_arm/ipc/customlanchesterheavy
+	name = "\improper Custom 3D Printed Lanchester left arm"
+	icon_state = "customlanchesterheavy_l_arm"
+	limb_id = "customlanchesterheavy"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/r_arm/ipc/customlanchesterheavy
+	name = "\improper Custom 3D Printed Lanchester right arm"
+	icon_state = "customlanchesterheavy_r_arm"
+	limb_id = "customlanchesterheavy"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/leg/left/ipc/customlanchesterheavy
+	name = "\improper Custom 3D Printed Lanchester left leg"
+	icon_state = "customlanchesterheavy_l_leg"
+	limb_id = "customlanchesterheavy"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/leg/right/ipc/customlanchesterheavy
+	name = "\improper Custom 3D Printed Lanchester right leg"
+	icon_state = "customlanchesterheavy_r_leg"
+	limb_id = "customlanchesterheavy"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+// Custom 3D Printed Longshore
+
+/obj/item/bodypart/head/ipc/customlanchesterworker
+	name = "\improper Custom 3D Printed Longshore head"
+	icon_state = "customlanchesterworker_head"
+	limb_id = "customlanchesterworker"
+	has_screen = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/chest/ipc/customlanchesterworker
+	name = "\improper Custom 3D Printed Longshore chest"
+	icon_state = "customlanchesterworker_chest"
+	limb_id = "customlanchesterworker"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/l_arm/ipc/customlanchesterworker
+	name = "\improper Custom 3D Printed Longshore left arm"
+	icon_state = "customlanchesterworker_l_arm"
+	limb_id = "customlanchesterworker"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/r_arm/ipc/customlanchesterworker
+	name = "\improper Custom 3D Printed Longshore right arm"
+	icon_state = "customlanchesterworker_r_arm"
+	limb_id = "customlanchesterworker"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/leg/left/ipc/customlanchesterworker
+	name = "\improper Custom 3D Printed Longshore left leg"
+	icon_state = "customlanchesterworker_l_leg"
+	limb_id = "customlanchesterworker"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/leg/right/ipc/customlanchesterworker
+	name = "\improper Custom 3D Printed Longshore right leg"
+	icon_state = "customlanchesterworker_r_leg"
+	limb_id = "customlanchesterworker"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE

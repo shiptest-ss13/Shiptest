@@ -381,3 +381,103 @@
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/custom_boxhead,
 	)
 	color_src = MUTCOLORS
+
+/datum/sprite_accessory/body/custom_monoeye
+	name = "Custom 3D Printed monoeye head"
+	replacement_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/custom_monoeye,
+	)
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/body/ipc_chassis/custompgfmk3_suhols
+	name = "Custom 3D Printed MK.III Type 'Suhols-Ro'"
+	color_src = MUTCOLORS
+	replacement_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/custompgf3_suhols,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/custompgf3_suhols,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/custompgf3,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/custompgf3,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/custompgf3,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/custompgf3,
+	)
+
+/datum/sprite_accessory/body/ipc_chassis/custompgf3_wusha
+	name = "Custom 3D Printed MK.III Type 'Wusha'"
+	color_src = MUTCOLORS
+	replacement_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/custompgf3_wusha,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/custompgf3_wusha,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/custompgf3,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/custompgf3,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/custompgf3,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/custompgf3,
+	)
+
+/datum/sprite_accessory/body/ipc_chassis/customatua
+	name = "Custom 3D Printed Atua"
+	color_src = MUTCOLORS
+	replacement_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/customatua,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/customatua,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/customatua,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/customatua,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/customatua,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/customatua,
+	)
+
+/datum/sprite_accessory/body/ipc_chassis/customlanchesterheavy
+	name = "Custom 3D Printed Lanchester"
+	color_src = MUTCOLORS
+	replacement_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/customlanchesterheavy,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/customlanchesterheavy,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/customlanchesterheavy,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/customlanchesterheavy,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/customlanchesterheavy,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/customlanchesterheavy,
+	)
+
+/datum/sprite_accessory/body/ipc_chassis/customlanchesterworker
+	name = "Custom 3D Printed Longshore"
+	color_src = MUTCOLORS
+	replacement_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/customlanchesterworker,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/customlanchesterworker,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/customlanchesterworker,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/customlanchesterworker,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/customlanchesterworker,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/customlanchesterworker,
+	)
+
+/datum/sprite_accessory/body/ipc_chassis/custombishop
+	name = "Custom 3D Printed Bishop"
+	color_src = MUTCOLORS
+	replacement_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/custombishop,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/custombishop,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/custombishop,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/custombishop,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/custombishop,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/custombishop,
+	)
+
+/datum/sprite_accessory/body/ipc_chassis/customhiacu
+	name = "Custom 3D Printed HIACU"
+	color_src = MUTCOLORS
+	replacement_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/customhiacu,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/customhiacu,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/customhiacu,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/customhiacu,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/customhiacu,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/customhiacu,
+	)
+
+/datum/sprite_accessory/body/customatua_monoc
+	name = "Custom 3D Printed Atua (Monocolor)"
+	color_src = MUTCOLORS
+	replacement_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/customatua_monoc,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/customatua_monoc,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/customatua_monoc,
+	)
