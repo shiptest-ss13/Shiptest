@@ -1148,13 +1148,12 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew)
 "hD" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "puru_exterior_shutters";
 	dir = 1
 	},
 /obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/crew)
 "hL" = (
@@ -4616,15 +4615,6 @@
 /obj/effect/turf_decal/industrial/outline/grey,
 /turf/open/floor/pod/dark,
 /area/ship/engineering)
-"IM" = (
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "puru_exterior_shutters";
-	dir = 1
-	},
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/ship/crew)
 "IQ" = (
 /obj/structure/railing/thin{
 	dir = 8
@@ -4735,6 +4725,15 @@
 /obj/machinery/advanced_airlock_controller/directional/east,
 /turf/open/floor/pod/dark,
 /area/ship/maintenance/starboard)
+"JF" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "puru_exterior_shutters";
+	dir = 1
+	},
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ship/crew)
 "JI" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 4
@@ -7115,7 +7114,7 @@ bg
 Kr
 Vd
 GJ
-IM
+hD
 Jn
 Jn
 "}
@@ -7140,7 +7139,7 @@ Ni
 fa
 Js
 Kl
-hD
+JF
 Jn
 Jn
 "}
