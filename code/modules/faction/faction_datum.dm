@@ -69,7 +69,7 @@
 	check_prefix = FALSE
 	color = "#97150B"
 
-/datum/faction/syndicate/suns
+/datum/faction/solgov/suns
 	name = FACTION_SUNS
 	short_name = "SUNS"
 	official_language = /datum/language/solarian_international
