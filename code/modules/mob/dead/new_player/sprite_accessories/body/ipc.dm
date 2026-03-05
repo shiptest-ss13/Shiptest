@@ -54,6 +54,13 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/mwpmu,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/mwpmu,
 	)
+//Makosso-Warra MW-PMU (Custom Visor Color)
+
+/datum/sprite_accessory/body/mwpmu
+	name = "Custom Makosso-Warra MW-PMU (Custom Visor Color)"
+	replacement_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/mwpmu_visor_color,
+	)
 
 //Makosso-Warra MW-HIACU
 /*

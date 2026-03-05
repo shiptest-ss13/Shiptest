@@ -225,6 +225,7 @@
 	name = "\improper Makosso-Warra MW-PMU head"
 	icon_state = "mwpmu_head"
 	limb_id = "mwpmu"
+	overlay_use_primary_color = TRUE
 	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT
 
@@ -232,24 +233,28 @@
 	name = "\improper Makosso-Warra MW-PMU chest"
 	icon_state = "mwpmu_chest"
 	limb_id = "mwpmu"
+	overlay_use_primary_color = TRUE
 	overlay_icon_state = TRUE
 
 /obj/item/bodypart/l_arm/ipc/mwpmu
 	name = "\improper Makosso-Warra MW-PMU left arm"
 	icon_state = "mwpmu_l_arm"
 	limb_id = "mwpmu"
+	overlay_use_primary_color = TRUE
 	overlay_icon_state = TRUE
 
 /obj/item/bodypart/r_arm/ipc/mwpmu
 	name = "\improper Makosso-Warra MW-PMU right arm"
 	icon_state = "mwpmu_r_arm"
 	limb_id = "mwpmu"
+	overlay_use_primary_color = TRUE
 	overlay_icon_state = TRUE
 
 /obj/item/bodypart/leg/left/ipc/mwpmu
 	name = "\improper Makosso-Warra MW-PMU left leg"
 	icon_state = "mwpmu_l_leg_digitigrade"
 	limb_id = "mwpmu"
+	overlay_use_primary_color = TRUE
 	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
@@ -257,9 +262,20 @@
 	name = "\improper Makosso-Warra MW-PMU right leg"
 	icon_state = "mwpmu_r_leg_digitigrade"
 	limb_id = "mwpmu"
+	overlay_use_primary_color = TRUE
 	overlay_icon_state = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
+//Makosso-Warra MW-PMU (Custom Visor Color)
+
+/obj/item/bodypart/head/ipc/mwpmu_visor_color
+	name = "\improper Makosso-Warra MW-PMU head"
+	icon_state = "mwpmu_head"
+	limb_id = "mwpmu"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+	overlay2_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT
 
 //Makosso-Warra MW-HIACU (MW)
 
@@ -629,10 +645,10 @@
 	icon_state = "pgfmk3_r_leg"
 	limb_id = "pgfmk3"
 
-// PGF MECHANICS TYPE-P
+// PGF Mechanics MK.V TYPE-P
 
 /obj/item/bodypart/head/ipc/pgf
-	name = "\improper PGF Mechanics head"
+	name = "\improper PGF Mechanics MK.V head"
 	icon_state = "pgfipc-p_head"
 	limb_id = "pgfipc-p"
 	uses_mutcolor = TRUE
@@ -643,7 +659,7 @@
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT
 
 /obj/item/bodypart/chest/ipc/pgf
-	name = "\improper PGF Mechanics chest"
+	name = "\improper PGF Mechanics MK.V chest"
 	icon_state = "pgfipc-p_chest"
 	limb_id = "pgfipc-p"
 	uses_mutcolor = TRUE
@@ -651,7 +667,7 @@
 	overlay_icon_state = TRUE
 
 /obj/item/bodypart/l_arm/ipc/pgf
-	name = "\improper PGF Mechanics left arm"
+	name = "\improper PGF Mechanics MK.V left arm"
 	icon_state = "pgfipc-p_l_arm"
 	limb_id = "pgfipc-p"
 	uses_mutcolor = TRUE
@@ -659,7 +675,7 @@
 	overlay_icon_state = TRUE
 
 /obj/item/bodypart/r_arm/ipc/pgf
-	name = "\improper PGF Mechanics right arm"
+	name = "\improper PGF Mechanics MK.V right arm"
 	icon_state = "pgfipc-p_r_arm"
 	limb_id = "pgfipc-p"
 	uses_mutcolor = TRUE
@@ -667,7 +683,7 @@
 	overlay_icon_state = TRUE
 
 /obj/item/bodypart/leg/left/ipc/pgf
-	name = "\improper PGF Mechanics Type-P left leg"
+	name = "\improper PGF Mechanics MK.V Type-P left leg"
 	icon_state = "pgfipc-p_l_leg"
 	limb_id = "pgfipc-p"
 	uses_mutcolor = TRUE
@@ -675,21 +691,21 @@
 	overlay_icon_state = TRUE
 
 /obj/item/bodypart/leg/right/ipc/pgf
-	name = "\improper PGF Mechanics Type-P right leg"
+	name = "\improper PGF Mechanics MK.V Type-P right leg"
 	icon_state = "pgfipc-p_r_leg"
 	limb_id = "pgfipc-p"
 	uses_mutcolor = TRUE
 	should_draw_greyscale = TRUE
 	overlay_icon_state = TRUE
 
-// PGF MECHANICS TYPE-D
+// PGF Mechanics MK.V TYPE-D
 
 /obj/item/bodypart/leg/left/ipc/pgf/type_d
-	name = "\improper PGF Mechanics Type-D left leg"
+	name = "\improper PGF Mechanics MK.V Type-D left leg"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
 /obj/item/bodypart/leg/right/ipc/pgf/type_d
-	name = "\improper PGF Mechanics Type-D right leg"
+	name = "\improper PGF Mechanics MK.V Type-D right leg"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
 
 // Besoro Bishop
