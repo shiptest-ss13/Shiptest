@@ -88,7 +88,7 @@
 
 /obj/item/ammo_casing/shotgun/dart
 	name = "shotgun dart"
-	desc = "A dart for use in shotguns. Can be injected with up to thirty units of any chemical."
+	desc = "A dart for use in shotguns. Can be injected with up to ten units of any chemical."
 	icon_state = "dart"
 	projectile_type = /obj/projectile/bullet/dart
 	var/reagent_amount = 10
