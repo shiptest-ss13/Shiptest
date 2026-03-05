@@ -54,6 +54,7 @@
 		CALLBACK(src, PROC_REF(remove_attachment)), \
 		CALLBACK(src, PROC_REF(toggle_attachment)), \
 		CALLBACK(src, PROC_REF(toggle_ammo)), \
+		CALLBACK(src, PROC_REF(on_fire_gun)), \
 		CALLBACK(src, PROC_REF(on_preattack)), \
 		CALLBACK(src, PROC_REF(on_attacked)), \
 		CALLBACK(src, PROC_REF(on_secondary_action)), \
@@ -103,6 +104,9 @@
 	playsound(src.loc, 'sound/weapons/gun/pistol/mag_release_alt.ogg', 75, 1)
 	gun_cell = null
 	return TRUE
+
+/obj/item/attachment/proc/on_fire_gun(obj/item/gun/gun, mob/user, atom/target, flag, params)
+	return NONE
 
 /obj/item/attachment/proc/on_preattack(obj/item/gun/gun, atom/target, mob/user, list/params)
 	return FALSE

@@ -469,24 +469,8 @@
 
 	switch (severity)
 		if (EXPLODE_DEVASTATE)
-			if(bomb_armor < EXPLODE_GIB_THRESHOLD) //gibs the mob if their bomb armor is lower than EXPLODE_GIB_THRESHOLD
-				for(var/I in contents)
-					var/atom/A = I
-					if(!QDELETED(A))
-						switch(severity)
-							if(EXPLODE_DEVASTATE)
-								SSexplosions.highobj += A
-							if(EXPLODE_HEAVY)
-								SSexplosions.medobj += A
-							if(EXPLODE_LIGHT)
-								SSexplosions.lowobj += A
-				gib()
-				return
-			else
-				brute_loss = 500
-				var/atom/throw_target = get_edge_target_turf(src, get_dir(src, get_step_away(src, src)))
-				throw_at(throw_target, 200, 4)
-				damage_clothes(400 - bomb_armor, BRUTE, "bomb")
+			brute_loss = 500
+			damage_clothes(400 - bomb_armor, BRUTE, "bomb")
 
 		if (EXPLODE_HEAVY)
 			brute_loss = 35
@@ -1031,12 +1015,11 @@
  *
  * Arguments:
  * - delta_time
- * - times_fired
  * - stacks: Current amount of firestacks
  *
  */
 
-/mob/living/carbon/human/proc/burn_clothing(delta_time, times_fired, stacks)
+/mob/living/carbon/human/proc/burn_clothing(delta_time, stacks)
 	var/list/burning_items = list()
 	var/obscured = check_obscured_slots(TRUE)
 	//HEAD//
@@ -1096,10 +1079,10 @@
 
 	return GLOB.fire_appearances[fire_icon]
 
-/mob/living/carbon/human/on_fire_stack(delta_time, times_fired, datum/status_effect/fire_handler/fire_stacks/fire_handler)
+/mob/living/carbon/human/on_fire_stack(delta_time, datum/status_effect/fire_handler/fire_stacks/fire_handler)
 	SEND_SIGNAL(src, COMSIG_HUMAN_BURNING)
-	burn_clothing(delta_time, times_fired, fire_handler.stacks)
+	burn_clothing(delta_time, fire_handler.stacks)
 	var/no_protection = FALSE
 	if(dna && dna.species)
 		no_protection = dna.species.handle_fire(src, no_protection)
-	fire_handler.harm_human(delta_time, times_fired, no_protection)
+	fire_handler.harm_human(delta_time, no_protection)

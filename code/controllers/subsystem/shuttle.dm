@@ -116,17 +116,21 @@ SUBSYSTEM_DEF(shuttle)
 	///attempt at making transit levels bigger to allow for better ship to ship docking
 	if(transit_width <= 32) ///32 x 3 = 96 - small sized ships shouldnt be bigger than this
 		transit_width *= 3
-	else if(transit_width <= 63) // 63 x 2 = 127 -  127 is the defialt size of planets, ideally we dont go higher than this
+	else if(transit_width <= 63) // 63 x 2 = 127 -  127 is the default size of planets, ideally we dont go higher than this
 		transit_width *= 2
+	else if(transit_width <= 127) // fuckhuge ships should prbobaly max out here,
+		transit_width = 127 // ditto
 	else
-		transit_width = 127 // fuckhuge ships should prbobaly max out here
+		transit_width = 255 //...however, for the sake of edgecase handling, if a mapper decides to break all mapping conventions (map size larger than 127), we assume this is intentional,
 
 	if(transit_height <= 32) ///32 x 3 = 96 - small sized ships shouldnt be bigger than this
 		transit_height *= 3
-	else if(transit_height <= 63) // 63 x 2 = 127 -  127 is the defialt size of planets, ideally we dont go higher than this
+	else if(transit_height <= 63) // 63 x 2 = 127 -  127 is the default size of planets, ideally we dont go higher than this
 		transit_height *= 2
+	else if(transit_height <= 127) // fuckhuge ships should prbobaly max out here,
+		transit_height = 127 // ditto
 	else
-		transit_height = 127 // fuckhuge ships should prbobaly max out here
+		transit_height = 255 //...however, for the sake of edgecase handling, if a mapper decides to break all mapping conventions (map size larger than 127), we assume this is intentional,
 
 	var/transit_path = /turf/open/space/transit
 	switch(travel_dir)

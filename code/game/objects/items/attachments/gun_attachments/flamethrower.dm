@@ -26,10 +26,12 @@
 	else
 		return ..()
 
-/obj/item/attachment/gun/flamethrower/on_preattack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
-	log_combat(user, target, "flamethrowered", src)
-	attached_flamethrower.flame_turf(get_turf(target))
-	return COMPONENT_SECONDARY_CANCEL_ATTACK_CHAIN
+/obj/item/attachment/gun/flamethrower/on_fire_gun(obj/item/gun/gun, mob/living/user, atom/target, flag, params)
+	var/list/modifiers = params2list(params)
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+		log_combat(user, target, "flamethrowered", src)
+		INVOKE_ASYNC(attached_flamethrower, TYPE_PROC_REF(/obj/item/flamethrower, flame_turf), get_turf(target))
+		return COMPONENT_CANCEL_GUN_FIRE
 
 /obj/item/attachment/gun/flamethrower/on_unique_action(obj/item/gun/gun, mob/user)
 	attached_flamethrower.unique_action(user)

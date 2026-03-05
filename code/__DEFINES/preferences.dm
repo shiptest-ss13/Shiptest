@@ -123,7 +123,7 @@
 #define RANDOM_HAIR_GRADIENT_STYLE "random_grad_style"
 #define RANDOM_HAIR_GRADIENT_COLOR "random_grad_color"
 
-//prosthetics stuff
+//Limbs stuff
 #define PROSTHETIC_NORMAL "normal"
 #define PROSTHETIC_AMPUTATED "amputated"
 #define PROSTHETIC_ROBOTIC "prosthetic"
@@ -138,6 +138,12 @@
 #define LANGUAGE_FLUENT "Fluent (3)"
 /// Maximum number of additional languages that can be selected.
 #define MAX_LANGUAGE_POINTS 4
+
+//Eye scarring
+#define SCAR_RIGHT "Right"
+#define SCAR_LEFT "Left"
+#define SCAR_DOUBLE "Double"
+#define SCAR_RANDOM "Random"
 
 #define NOT_SYNTHETIC FALSE
 #define IS_SYNTHETIC TRUE

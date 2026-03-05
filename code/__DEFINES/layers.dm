@@ -76,6 +76,8 @@
 #define HIGH_SIGIL_LAYER 2.56
 
 #define BELOW_OPEN_DOOR_LAYER 2.6
+///Anything below this layer is to be considered completely (visually) under water by the immerse layer.
+#define WATER_LEVEL_LAYER 2.61
 #define OPEN_DOOR_LAYER 2.7
 #define DOOR_HELPER_LAYER 2.71 //keep this above OPEN_DOOR_LAYER
 #define PROJECTILE_HIT_THRESHHOLD_LAYER 2.75 //projectiles won't hit objects at or below this layer if possible
@@ -159,6 +161,14 @@
 
 ///Wants to be part of the game plane, but also wants to draw above literally everything else
 #define HIGH_GAME_PLANE 30
+
+
+//Placeholders in case the game plane and possibly other things between it and the floor plane are ever made into topdown planes
+
+///Below this level, objects with topdown layers are rendered as if underwater by the immerse element
+#define TOPDOWN_WATER_LEVEL_LAYER 100 + TOPDOWN_LAYER
+///Above this level, objects with topdown layers are unaffected by the immerse element
+#define TOPDOWN_ABOVE_WATER_LAYER 200 + TOPDOWN_LAYER
 
 //HUD layer defines
 

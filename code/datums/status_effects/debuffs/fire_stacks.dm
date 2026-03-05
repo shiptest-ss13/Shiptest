@@ -126,7 +126,7 @@
 	/// Type of mob light emitter we use when on fire
 	var/firelight_type = /obj/effect/dummy/lighting_obj/moblight/fire
 
-/datum/status_effect/fire_handler/fire_stacks/tick(seconds_per_tick, times_fired)
+/datum/status_effect/fire_handler/fire_stacks/tick(seconds_between_ticks)
 	if(stacks <= 0)
 		qdel(src)
 		return TRUE
@@ -135,9 +135,9 @@
 		return TRUE
 
 	if(iscyborg(owner))
-		adjust_stacks(-0.55 * seconds_per_tick)
+		adjust_stacks(-0.55 * seconds_between_ticks)
 	else
-		adjust_stacks(-0.05 * seconds_per_tick)
+		adjust_stacks(-0.05 * seconds_between_ticks)
 
 	if(stacks <= 0)
 		qdel(src)
@@ -148,61 +148,52 @@
 		qdel(src)
 		return TRUE
 
-	deal_damage(seconds_per_tick, times_fired)
+	deal_damage(seconds_between_ticks)
 
 /**
  * Proc that handles damage dealing and all special effects
  *
  * Arguments:
  * - seconds_per_tick
- * - times_fired
  *
  */
 
-/datum/status_effect/fire_handler/fire_stacks/proc/deal_damage(seconds_per_tick, times_fired)
-	owner.on_fire_stack(seconds_per_tick, times_fired, src)
+/datum/status_effect/fire_handler/fire_stacks/proc/deal_damage(seconds_between_ticks)
+	owner.on_fire_stack(seconds_between_ticks, src)
 
 	var/turf/location = get_turf(owner)
-	location.hotspot_expose(700, 25 * seconds_per_tick, TRUE)
+	location.hotspot_expose(700, 25 * seconds_between_ticks, TRUE)
 
 /**
  * Used to deal damage to humans and count their protection.
  *
  * Arguments:
  * - seconds_per_tick
- * - times_fired
+
  * - no_protection: When set to TRUE, fire will ignore any possible fire protection
  *
  */
 
-/datum/status_effect/fire_handler/fire_stacks/proc/harm_human(seconds_per_tick, times_fired, no_protection = FALSE)
+/datum/status_effect/fire_handler/fire_stacks/proc/harm_human(seconds_between_ticks, no_protection = FALSE)
 	var/mob/living/carbon/human/victim = owner
 	var/thermal_protection = victim.get_thermal_protection()
 
 	if(!no_protection)
 		if(thermal_protection >= FIRE_IMMUNITY_MAX_TEMP_PROTECT)
+			SEND_SIGNAL(victim, COMSIG_CLEAR_MOOD_EVENT, "on_fire")
 			return
 		if(thermal_protection >= FIRE_SUIT_MAX_TEMP_PROTECT)
-			victim.adjust_bodytemperature(5.5 * seconds_per_tick)
+			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "on_fire", /datum/mood_event/on_fire)
+			victim.adjust_bodytemperature(5.5 * seconds_between_ticks)
 			return
 
-	victim.adjust_bodytemperature((victim.dna.species.bodytemp_heating_rate_max + (stacks * 12)) * 0.5 * seconds_per_tick)
-	victim.apply_damage((stacks * 0.5), FIRE, blocked = victim.run_armor_check(null, "fire", armour_penetration=stacks*5, silent=TRUE), spread_damage = TRUE)
-	if(SPT_PROB(20, seconds_per_tick))
-		var/obj/item/bodypart/it_burns = victim.get_bodypart(pick(BODY_ZONE_L_ARM,BODY_ZONE_L_LEG, BODY_ZONE_R_ARM, BODY_ZONE_R_LEG, BODY_ZONE_CHEST, BODY_ZONE_HEAD))
-		if(it_burns)
-			var/datum/wound/burn_injury
-			switch(stacks)
-				if(1 to 3)
-					EMPTY_BLOCK_GUARD
-				if(3 to 7)
-					burn_injury = new /datum/wound/burn/moderate
-				if(7 to 14)
-					burn_injury = new /datum/wound/burn/severe
-				if(14 to 20)
-					burn_injury = new /datum/wound/burn/critical
-			if(burn_injury)
-				burn_injury.apply_wound(it_burns)
+	victim.adjust_bodytemperature((victim.dna.species.bodytemp_heating_rate_max + (stacks * 12)) * 0.5 * seconds_between_ticks)
+	if(!victim.apply_damage((stacks * 0.5), BURN, blocked = victim.run_armor_check(null, FIRE, armour_penetration=stacks*5, silent=TRUE), spread_damage = TRUE))
+		return
+	if(SPT_PROB(50, seconds_between_ticks))
+		var/obj/item/bodypart/it_burns = victim.get_random_bodypart()
+		if(it_burns) // apply_damage doesn't cause wounds without a selected bodypart, so we do this manually here
+			it_burns.wound_roll(0, stacks * min(victim.bodytemperature / FIRE_MINIMUM_TEMPERATURE_TO_EXIST, 2), no_dismember = TRUE)
 	SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "on_fire", /datum/mood_event/on_fire)
 
 /**
@@ -277,8 +268,8 @@
 	enemy_types = list(/datum/status_effect/fire_handler/fire_stacks)
 	stack_modifier = -1
 
-/datum/status_effect/fire_handler/wet_stacks/tick(seconds_per_tick)
-	adjust_stacks(-0.5 * seconds_per_tick)
+/datum/status_effect/fire_handler/wet_stacks/tick(seconds_between_ticks)
+	adjust_stacks(-0.5 * seconds_between_ticks)
 	if(stacks <= 0)
 		qdel(src)
 

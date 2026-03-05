@@ -166,9 +166,9 @@
 	. = ..()
 
 	var/obj/item/card/id/W = H.get_idcard()
-	if(H.age < AGE_MINOR)
-		W.registered_age = AGE_MINOR
-		to_chat(H, span_notice("You're not technically old enough to access or serve alcohol, but your ID has been discreetly modified to display your age as [AGE_MINOR]. Try to keep that a secret!"))
+	if(H.age < AGE_DRINKING)
+		W.registered_age = AGE_DRINKING
+		to_chat(H, span_notice("You're not technically old enough to access or serve alcohol, but your ID has been discreetly modified to display your age as [AGE_DRINKING]. Try to keep that a secret!"))
 
 /datum/outfit/job/syndicate/bartender/suns
 	name = "Syndicate - Student Mixologist (SUNS)"
@@ -392,7 +392,7 @@
 	suit = /obj/item/clothing/suit/ngr
 	alt_suit = null
 	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/color/red/insulated
+	gloves = /obj/item/clothing/gloves/color/yellow
 
 
 //Chief Medical Officer
