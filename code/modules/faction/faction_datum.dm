@@ -69,7 +69,7 @@
 	check_prefix = FALSE
 	color = "#97150B"
 
-/datum/faction/solgov/suns
+/datum/faction/suns
 	name = FACTION_SUNS
 	short_name = "SUNS"
 	official_language = /datum/language/solarian_international
@@ -85,6 +85,7 @@
 	name = FACTION_SOLCON
 	parent_faction = /datum/faction/solgov
 	official_language = /datum/language/solarian_international
+	allowed_factions = list(/datum/faction/suns)
 	prefixes = PREFIX_SOLCON
 	color = "#444e5f"
 
