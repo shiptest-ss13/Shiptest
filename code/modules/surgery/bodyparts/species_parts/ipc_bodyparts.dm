@@ -417,6 +417,13 @@
 	icon_state = "saipc_r_leg"
 	limb_id = "saipc"
 
+/obj/item/bodypart/head/ipc/saipc_boxhead
+	name = "\improper Scarborgh Arms IPC-73 Type-2 boxhead"
+	icon_state = "saipc_alt_head"
+	limb_id = "saipc_alt"
+	has_screen = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
+
 // Scarborgh Arms IPC-80 MK.2
 
 /obj/item/bodypart/head/ipc/saipc2
@@ -522,6 +529,13 @@
 	limb_id = "lanchesterheavy"
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
+/obj/item/bodypart/head/ipc/lanchesterheavy_boxhead
+	name = "\improper Lanchester Mechanics 'HEAVY DUTY FRAME' head"
+	icon_state = "lanchesterheavy_alt_head"
+	limb_id = "lanchesterheavy_alt"
+	has_screen = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
+
 // HARDLINE 'Longshore'
 
 /obj/item/bodypart/head/ipc/lanchesterworker
@@ -597,7 +611,7 @@
 // PGF Mechanics MK.III Type 'Suhols-Ro'
 
 /obj/item/bodypart/head/ipc/pgfmk3_suhols
-	name = "\improper Suhols-Ro head"
+	name = "\improper PGF Mechanics MK.III Type 'Suhols-Ro' head"
 	icon_state = "pgfmk3_suhols_head"
 	limb_id = "pgfmk3_suhols"
 	draw_eyes = TRUE
@@ -605,9 +619,16 @@
 	custom_eye_sprite = "eyes_elzu"
 
 /obj/item/bodypart/chest/ipc/pgfmk3_suhols
-	name = "\improper Suhols-Ro chest"
+	name = "\improper PGF Mechanics MK.III Type 'Suhols-Ro' chest"
 	icon_state = "pgfmk3_suhols_chest"
 	limb_id = "pgfmk3_suhols"
+
+/obj/item/bodypart/head/ipc/pgfmk3_suhols_boxhead
+	name = "\improper PGF Mechanics MK.III Type 'Suhols-Ro' aftermarket boxhead"
+	icon_state = "pgfmk3_suhols_alt_head"
+	limb_id = "pgfmk3_suhols_alt"
+	has_screen = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
 
 // PGF Mechanics MK.III Type 'Wusha'
 
@@ -622,6 +643,13 @@
 	name = "\improper PGF Mechanics MK.III Type 'Wusha' chest"
 	icon_state = "pgfmk3_wusha_chest"
 	limb_id = "pgfmk3_wusha"
+
+/obj/item/bodypart/head/ipc/pgfmk3_wusha_boxhead
+	name = "\improper PGF Mechanics MK.III Type 'Wusha' aftermarket boxhead"
+	icon_state = "pgfmk3_wusha_alt_head"
+	limb_id = "pgfmk3_wusha_alt"
+	has_screen = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
 
 // PGF Mechanics MK.III generic
 
@@ -741,6 +769,13 @@
 	name = "\improper Besoro Bishop right leg"
 	icon_state = "bishop_r_leg"
 	limb_id = "bishop"
+
+/obj/item/bodypart/head/ipc/bishop_boxhead
+	name = "\improper Besoro Bishop Type-B head"
+	icon_state = "bishop_alt_head"
+	limb_id = "bishop_alt"
+	has_screen = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
 
 // INTEQ SPRINTER
 
@@ -927,3 +962,14 @@
 	name = "\improper Cybersun Biodynamics S Series 'Ghost' right leg"
 	icon_state = "cyber_r_leg"
 	limb_id = "cyber"
+
+//Custom 3D Printed (Various)
+/obj/item/bodypart/head/ipc/custom_boxhead
+	name = "\improper Custom 3D Printed Boxhead"
+	icon_state = "custom_3d_boxhead"
+	limb_id = "custom_3d_box"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+	has_screen = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
+

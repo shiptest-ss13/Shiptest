@@ -46,6 +46,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/mwpmu
 	name = "Makosso-Warra MW-PMU"
+	color_src = MUTCOLORS
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/mwpmu,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/mwpmu,
@@ -57,7 +58,7 @@
 //Makosso-Warra MW-PMU (Custom Visor Color)
 
 /datum/sprite_accessory/body/mwpmu
-	name = "Custom Makosso-Warra MW-PMU (Custom Visor Color)"
+	name = "Makosso-Warra MW-PMU (Custom Visor Color)"
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/mwpmu_visor_color,
 	)
@@ -127,6 +128,12 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/saipc,
 	)
 
+/datum/sprite_accessory/body/saipc
+	name = "Scarborgh Arms IPC-73 Type-2 boxhead"
+	replacement_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/saipc_boxhead,
+	)
+
 //Scarborgh Arms IPC-80 Mk.2
 /*
 	Scarborgh Arms's new line of frames. It's an improved and more well built version of the IPC-80. While produced for indvidual sale, a large amount
@@ -162,6 +169,12 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/lanchesterheavy,
 	)
 
+/datum/sprite_accessory/body/lanchesterheavy_boxhead
+	name = "Lanchester Mechanics 'HEAVY DUTY FRAME' 'PLUS' boxhead"
+	replacement_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/lanchesterheavy_boxhead,
+	)
+
 //HARDLINE 'Longshore'
 /*
 	HARDLINE's only frame. It's based on a Lanchester Mechanics frame with custom plating, intended to help with internal shipbuilding. However, it's
@@ -181,7 +194,7 @@
 
 //Custom Lanchester Unplated
 /*
-	A Lanchester frame with no plating. It is not sold like this, and the lack of protection makes it more vulnerable to damage.
+	A Lanchester frame with no plating. It is not intended to be used or sold like this, and the lack of protection makes critical components vulnerable.
 */
 
 /datum/sprite_accessory/body/ipc_chassis/lanchesterunplated
@@ -214,6 +227,12 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/pgfmk3,
 	)
 
+/datum/sprite_accessory/body/pgfmk3_suhols_boxhead
+	name = "PGF Mechanics MK.III Type 'Suhols-Ro' aftermarket boxhead"
+	color_src = MUTCOLORS
+	replacement_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pgfmk3_suhols_boxhead,
+	)
 
 /datum/sprite_accessory/body/ipc_chassis/pgfmk3_wusha
 	name = "PGF Mechanics MK.III Type 'Wusha'"
@@ -227,6 +246,11 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/pgfmk3,
 	)
 
+/datum/sprite_accessory/body/pgfmk3_wusha_boxhead
+	name = "PGF Mechanics MK.III Type 'Wusha' aftermarket boxhead"
+	replacement_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pgfmk3_wusha_boxhead,
+	)
 
 //PGF Mechanics MK.V
 /*
@@ -342,3 +366,18 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/ghost,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/ghost,
 	)
+
+
+//Custom 3D Printed
+/*
+	Modern day autolathes are able to create a wide assortment of things at relatively low cost, IPC parts included. As such, 3D Printed parts are
+	increasingly popular with bodymoders and fashionable postrionics alike.
+*/
+
+
+/datum/sprite_accessory/body/lanchesterunplated
+	name = "Custom 3D Printed Boxhead"
+	replacement_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/custom_boxhead,
+	)
+	color_src = MUTCOLORS
