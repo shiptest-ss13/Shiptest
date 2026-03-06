@@ -478,6 +478,50 @@
 	color_src = MUTCOLORS
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/customatua_monoc,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/customatua_monoc,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/customatua_monoc,
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/customatua_monoc,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/customatua_monoc,
+	)
+
+/datum/sprite_accessory/body/ipc_chassis/customseeker
+	name = "Custom 3D Printed Seeker"
+	replacement_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/customseeker,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/customseeker,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/customseeker,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/customseeker,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/customseeker,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/customseeker,
+	)
+
+/datum/sprite_accessory/body/saipc2
+	name = "Custom 3D Printed IPC-80"
+	replacement_bodyparts = list(
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/custom_saipc2,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/custom_saipc2,
+	)
+
+/datum/sprite_accessory/body/pgf_monocolor
+	name = "PGF Mechanics MK.V Type-P (Monocolor)"
+	color_src = MUTCOLORS
+	replacement_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pgf_monocolor,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/pgf_monocolor,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/pgf_monocolor,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/pgf_monocolor,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/pgf_monocolor,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/pgf_monocolor,
+	)
+
+/datum/sprite_accessory/body/pgf_monocolor_type_d
+	name = "PGF Mechanics MK.V Type-D (Monocolor)"
+	color_src = MUTCOLORS
+	replacement_bodyparts = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pgf_monocolor,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/pgf_monocolor,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/pgf_monocolor,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/pgf_monocolor,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/pgf_monocolor/type_d,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/pgf_monocolor/type_d,
 	)

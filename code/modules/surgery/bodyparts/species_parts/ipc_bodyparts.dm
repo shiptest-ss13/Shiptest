@@ -983,6 +983,35 @@
 	overlay_use_primary_color = TRUE
 	overlay_icon_state = TRUE
 
+/obj/item/bodypart/l_arm/ipc/customatua_monoc
+	name = "\improper Custom 3D Printed Atua left arm"
+	icon_state = "customatua_monoc_l_arm"
+	limb_id = "customatua_monoc"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/r_arm/ipc/customatua_monoc
+	name = "\improper Custom 3D Printed Atua right arm"
+	icon_state = "customatua_monoc_r_arm"
+	limb_id = "customatua_monoc"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/l_arm/ipc/custom_saipc2
+	name = "\improper Custom 3D Printed IPC-80 left arm"
+	icon_state = "customsa_l_arm"
+	limb_id = "customsa"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+/obj/item/bodypart/r_arm/ipc/custom_saipc2
+	name = "\improper Custom 3D Printed IPC-80 right arm"
+	icon_state = "customsa_r_arm"
+	limb_id = "customsa"
+	overlay_use_primary_color = TRUE
+	overlay_icon_state = TRUE
+
+
 // Custom 3D Printed MK.III Type 'Suhols-Ro'
 
 /obj/item/bodypart/head/ipc/custompgf3_suhols
@@ -1293,3 +1322,100 @@
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 	overlay_use_primary_color = TRUE
 	overlay_icon_state = TRUE
+
+// Custom 3D Printed Seeeker
+
+/obj/item/bodypart/head/ipc/customseeker
+	name = "\improper Custom 3D Printed Seeeker head"
+	icon_state = "seekeripc_head"
+	limb_id = "seekeripc"
+	custom_eye_sprite = "eyes_seekeripc_greyscale"
+	draw_eyes = TRUE
+	should_draw_greyscale = TRUE
+
+/obj/item/bodypart/chest/ipc/customseeker
+	name = "\improper Custom 3D Printed Seeeker chest"
+	icon_state = "seekeripc_chest"
+	limb_id = "seekeripc"
+	should_draw_greyscale = TRUE
+
+/obj/item/bodypart/l_arm/ipc/customseeker
+	name = "\improper Custom 3D Printed Seeeker left arm"
+	icon_state = "seekeripc_l_arm"
+	limb_id = "seekeripc"
+	should_draw_greyscale = TRUE
+
+/obj/item/bodypart/r_arm/ipc/customseeker
+	name = "\improper Custom 3D Printed Seeeker right arm"
+	icon_state = "seekeripc_r_arm"
+	limb_id = "seekeripc"
+	should_draw_greyscale = TRUE
+
+/obj/item/bodypart/leg/left/ipc/customseeker
+	name = "\improper Custom 3D Printed Seeeker left leg"
+	icon_state = "seekeripc_l_leg"
+	limb_id = "seekeripc"
+	should_draw_greyscale = TRUE
+
+/obj/item/bodypart/leg/right/ipc/customseeker
+	name = "\improper Custom 3D Printed Seeeker right leg"
+	icon_state = "seekeripc_r_leg"
+	limb_id = "seekeripc"
+	should_draw_greyscale = TRUE
+
+// PGF Mechanics MK.V TYPE-P (Monocolor)
+
+/obj/item/bodypart/head/ipc/pgf_monocolor
+	name = "\improper PGF Mechanics MK.V head"
+	icon_state = "pgfipc-p_head"
+	limb_id = "pgfipc-p"
+	uses_mutcolor = TRUE
+	should_draw_greyscale = TRUE
+	has_screen = FALSE
+	draw_eyes = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT
+
+/obj/item/bodypart/chest/ipc/pgf_monocolor
+	name = "\improper PGF Mechanics MK.V chest"
+	icon_state = "pgfipc-p_chest"
+	limb_id = "pgfipc-p"
+	uses_mutcolor = TRUE
+	should_draw_greyscale = TRUE
+
+/obj/item/bodypart/l_arm/ipc/pgf_monocolor
+	name = "\improper PGF Mechanics MK.V left arm"
+	icon_state = "pgfipc-p_l_arm"
+	limb_id = "pgfipc-p"
+	uses_mutcolor = TRUE
+	should_draw_greyscale = TRUE
+
+/obj/item/bodypart/r_arm/ipc/pgf_monocolor
+	name = "\improper PGF Mechanics MK.V right arm"
+	icon_state = "pgfipc-p_r_arm"
+	limb_id = "pgfipc-p"
+	uses_mutcolor = TRUE
+	should_draw_greyscale = TRUE
+
+/obj/item/bodypart/leg/left/ipc/pgf_monocolor
+	name = "\improper PGF Mechanics MK.V Type-P left leg"
+	icon_state = "pgfipc-p_l_leg"
+	limb_id = "pgfipc-p"
+	uses_mutcolor = TRUE
+	should_draw_greyscale = TRUE
+
+/obj/item/bodypart/leg/right/ipc/pgf_monocolor
+	name = "\improper PGF Mechanics MK.V Type-P right leg"
+	icon_state = "pgfipc-p_r_leg"
+	limb_id = "pgfipc-p"
+	uses_mutcolor = TRUE
+	should_draw_greyscale = TRUE
+
+// PGF Mechanics MK.V TYPE-D
+
+/obj/item/bodypart/leg/left/ipc/pgf_monocolor/type_d
+	name = "\improper PGF Mechanics MK.V Type-D left leg"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
+
+/obj/item/bodypart/leg/right/ipc/pgf_monocolor/type_d
+	name = "\improper PGF Mechanics MK.V Type-D right leg"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
