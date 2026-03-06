@@ -482,3 +482,6 @@
 	name = "old radio"
 	icon_state = "radio"
 	desc = "An old handheld radio. You could use it, if you really wanted to."
+
+/obj/item/radio/command
+	command = TRUE
