@@ -82,7 +82,7 @@
 		/obj/item/clothing/glasses/welding, //WS edit: ok mald sure I'll add the welding stuff to the. ok.
 		/obj/item/clothing/mask/gas/welding,
 		/obj/item/clothing/head/welding, //WS end
-		/obj/item/gun/energy/plasmacutter,
+		/obj/item/plasmacutter,
 		/obj/item/bodycamera,
 		/obj/item/stack/tape/industrial,
 		/obj/item/trench_tool,
@@ -312,6 +312,7 @@
 		/obj/item/ammo_box/vickland_a8_50r,
 		/obj/item/ammo_box/a300,
 		/obj/item/ammo_box/a762_stripper,
+		/obj/item/ammo_box/a4570,
 		/obj/item/ammo_box/amagpellet_claris, //that's the last of the clips
 		/obj/item/food/donut,
 		/obj/item/melee/knife/combat,

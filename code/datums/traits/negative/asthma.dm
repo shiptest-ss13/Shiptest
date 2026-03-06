@@ -7,7 +7,7 @@
 	lose_text = span_notice("You suddenly feel like your lungs just got a lot better at breathing!")
 	medical_record_text = "Patient suffers from asthma."
 	//hardcore_value = 2
-	//quirk_flags = QUIRK_HUMAN_ONLY
+	quirk_flags = QUIRK_HUMAN_ONLY
 	mob_traits = list(TRAIT_ASTHMATIC)
 
 	/// The amount of inflammation we will receive when our owner breathes smoke.

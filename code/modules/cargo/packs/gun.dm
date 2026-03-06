@@ -306,7 +306,7 @@
 
 /datum/supply_pack/gun/laser/bg16
 	name = "Etherbor BG-16 Beam Gun Crate"
-	desc = "Contains a single BG-16 Beam Gun, a military-grade automatic developed in the PGF and manufactured by Etherbor Industries for use within the Marine Corps."
+	desc = "Contains a single BG-16 Beam Gun, a light military-grade automatic developed in the PGF and manufactured by Etherbor Industries for use within the Marine Corps."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/energy/bg16)
 	crate_name = "beam gun crate"
@@ -320,6 +320,16 @@
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/energy/bgc10)
 	crate_name = "beam carbine crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/laser/hbg7
+	name = "Etherbor HBG-7 Beam Rifle Crate"
+	desc = "Contains a single HBG-7 Beam Rifle, a high power military-grade automatic developed in the PGF and manufactured by Etherbor Industries for use within the Marine Corps."
+	cost = 6000
+	contains = list(/obj/item/storage/guncase/energy/hbg7)
+	crate_name = "beam rifle crate"
 	faction = /datum/faction/pgf
 	faction_discount = 0
 	faction_locked = TRUE
@@ -635,6 +645,14 @@
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/absolution)
 	crate_name = "shotguns crate"
+	faction = /datum/faction/srm
+
+/datum/supply_pack/gun/pyre
+	name = "Pyre Lever Action Rifle Crate"
+	desc = "Contains a devastating but unwieldy lever-action rifle for annihilating larger wildlife. Chambered in .45-70."
+	cost = 3000
+	contains = list(/obj/item/storage/guncase/pyre)
+	crate_name = "rifle crate"
 	faction = /datum/faction/srm
 
 /datum/supply_pack/gun/illestren

@@ -3,7 +3,7 @@
 
 /datum/blackmarket_item/weapon/bear_trap
 	name = "Bear Trap"
-	desc = "A pressure activated solid steel bear trap. Good for both bears, and the most dangerous game."
+	desc = "A pressure-activated solid steel bear trap. Good for both bears and the most dangerous game."
 	item = /obj/item/restraints/legcuffs/beartrap
 
 	cost_min = 100
@@ -14,7 +14,7 @@
 
 /datum/blackmarket_item/weapon/switchblade
 	name = "Switchblade"
-	desc = "Extra shrap switchblades for intimidation AND style. Bandages not included if you cut yourself."
+	desc = "Extra sharp switchblades for intimidation AND style. Bandages not included if you cut yourself."
 	item = /obj/item/melee/knife/switchblade
 
 	cost_min = 250
@@ -34,7 +34,7 @@
 
 /datum/blackmarket_item/weapon/boarding_axe
 	name = "Boarding Axe"
-	desc = "Boughta stash of these demolition axes offa pretty lady comin from Lanchester. Cute tattoos. Handed em over for some food anna ride to Trifuge. Poor soul. Things hack through metal as easy as flesh, though."
+	desc = "Boughta stash of these demolition axes offa pretty lady comin from Lanchester. Cute tattoos. Handed 'em over for some food anna ride to Trifuge. Poor soul. Things hack through metal as easy as flesh, though."
 	item = /obj/item/melee/boarding_axe
 
 	cost_min = 1000
@@ -54,7 +54,7 @@
 
 /datum/blackmarket_item/weapon/blastinghammer
 	name = "Blasting Hammer"
-	desc = "Have you ever thought: \"Man, my 20 pound sledgehammer isn't crushing skulls well enough.\" No? Well, our friends in the Ramzi Clique have solved this issue anyways and made it everyone else's problem. This baby loads 12g blanks as propollent to really make that swing a home run. Just don't put a live shell in, yeah?"
+	desc = "Have you ever thought: \"Man, my 20 pound sledgehammer isn't crushing skulls well enough.\" No? Well, our friends in the Ramzi Clique have solved this issue anyways and made it everyone else's problem. This baby loads 12g blanks as propellent to really make that swing a home run. Just don't put a live shell in, yeah?"
 	item = /obj/item/storage/backpack/duffelbag/syndie
 
 	cost_min = 4000
@@ -68,19 +68,9 @@
 	new /obj/item/gun/ballistic/shotgun/blasting_hammer(B)
 	new /obj/item/storage/box/ammo/a12g_blank(B)
 	return B
-/datum/blackmarket_item/weapon/spikeshield
-	name = "Spiked Ballistic Shield"
-	desc = "Be the ancient warrior you always wanted to be. Block bullets and impale your enemies."
-	item = /obj/item/shield/riot/spike
-
-	cost_min = 1000
-	cost_max = 1500
-	stock_max = 2
-	availability_prob = 50
-
 /datum/blackmarket_item/weapon/powerfist
 	name = "Powerfist"
-	desc = "Lookin to give a fisting someone'll remember? This electrically assisted powerfist'll slam em in the face hard enough they won't ever forget. Unless they black out an' forget it."
+	desc = "Lookin' to give a fisting someone'll remember? This electrically assisted powerfist'll slam 'em in the face hard enough they won't ever forget. Unless they black out an' forget it."
 	item = /obj/item/melee/powerfist
 	cost_min = 1000
 	cost_max = 3000
@@ -89,7 +79,7 @@
 
 /datum/blackmarket_item/weapon/cutlass
 	name = "Gezenan Boarding Cutlass"
-	desc = "A mass produced fighting blade fresh from the belt of some poor sailor. It's got some mean weight to it."
+	desc = "A mass-produced fighting blade fresh from the belt of some poor sailor. It's got some mean weight to it."
 	item = /obj/item/storage/belt/sabre/pgf
 
 	cost_min = 1000
@@ -99,7 +89,7 @@
 
 /datum/blackmarket_item/weapon/sabre
 	name = "SUNS Dueling Sabre"
-	desc = "A mastercrafted sabre formerly wielded by a SUNS academic. It's very sharp, we had to spend hours stitching our fingers back on after getting it."
+	desc = "A mastercrafted sabre formerly wielded by a SUNS academic. It's very sharp; we had to spend hours stitching our fingers back on after getting it."
 	item = /obj/item/storage/belt/sabre/suns
 
 	cost_min = 1250
@@ -109,7 +99,7 @@
 
 /datum/blackmarket_item/weapon/mag_cleaver
 	name = "Magnetic Cleaver"
-	desc = "A prototype modification to the standard crusher, featuring an energy blade rather than the standard alloy cutting edge allowing for much more devasting detonations. The guy who sold this to us disappeared the next week, but that's probably a coincidence."
+	desc = "A prototype modification to the standard crusher. It features an energy blade rather than the standard alloy cutting edge, allowing for much more devasting detonations. The guy who sold this to us disappeared the next week, but that's probably a coincidence."
 	item = /obj/item/kinetic_crusher/syndie_crusher
 
 	cost_min = 1500
@@ -120,7 +110,7 @@
 
 /datum/blackmarket_item/weapon/disposable_gun_disk
 	name = "Disposable Gun Design Disk"
-	desc = "An autolathe compatible fabrication disk for printing disposable guns chambered in .22 LR. Improper disposal or recycling of these guns is an enviromental felony misdemeanor in Solarian space. Luckily, we aren't in Solarian space, so litter all you want."
+	desc = "An autolathe compatible fabrication disk for printing disposable guns chambered in .22 LR. Improper disposal or recycling of these guns is an environmental felony in Solarian space. Luckily, we aren't in Solarian space, so litter all you want."
 	item = /obj/item/disk/design_disk/disposable_gun
 
 	cost_min = 1000
@@ -190,7 +180,7 @@
 
 /datum/blackmarket_item/weapon/guncase/syndi_derringer
 	name = ".357 Derringer"
-	desc = "A concealable hangun with a tasteful red and black paintjob, which makes it slightly more noticable. Chambered in .357, so you actually have a chance at killing something."
+	desc = "A concealable hangun with a tasteful red and black paintjob, which makes it slightly more noticeable. Chambered in .357, so you actually have a chance at killing something."
 	item = /obj/item/gun/ballistic/derringer/traitor
 	pair_item = list(/datum/blackmarket_item/ammo/a357_box)
 	gun_unloaded = FALSE
@@ -213,7 +203,7 @@
 
 /datum/blackmarket_item/weapon/guncase/e11
 	name = "E-11 Energy Gun"
-	desc = "Look. I'll be straight with you. These guns are awful. But, they are cheap if you're that desperate."
+	desc = "Look. I'll be straight with you. These guns are awful. But they are cheap if you're that desperate."
 	item = /obj/item/gun/energy/e_gun/e11
 
 	cost_min = 200
@@ -223,7 +213,7 @@
 
 /datum/blackmarket_item/weapon/guncase/e40
 	name = "E-40 Hybrid Assault Rifle"
-	desc = "A dual mode hybrid assault rifle made by the now defunct Eoehoma Firearms. Capable of firing both bullets AND lasers, for the discerning dealer in death. Chambered in Eoehoma .299 Caseless."
+	desc = "A dual-mode hybrid assault rifle made by the now defunct Eoehoma Firearms. Capable of firing both bullets AND lasers, for the discerning dealer in death. Chambered in Eoehoma .299 Caseless."
 	item = /obj/item/gun/ballistic/automatic/assault/e40
 	pair_item = list(/datum/blackmarket_item/ammo/e40_mag)
 
@@ -293,7 +283,7 @@
 
 /datum/blackmarket_item/weapon/guncase/cm5
 	name = "CM-5 SMG"
-	desc = "Now isn't this a good find. A whole League sub-machinegun, chambered in 9x18mm. We're pretty sure no one is gonna notice the pallet of these missing."
+	desc = "Now isn't this a good find? A whole League sub-machinegun, chambered in 9x18mm. We're pretty sure no one is gonna notice the pallet of these missing."
 
 	item = /obj/item/gun/ballistic/automatic/smg/cm5
 	pair_item = list(/datum/blackmarket_item/ammo/cm5_mag)
@@ -304,7 +294,7 @@
 
 /datum/blackmarket_item/weapon/guncase/vga5
 	name = "VG-A5 Beam Gun"
-	desc = "So you've seen those quad burst Etherbor Volleyguns? Well this thing has a quintuple burst! That means five!"
+	desc = "So you've seen those quad burst Etherbor Volleyguns? Well, this thing has a quintuple burst! That means five!"
 	item = /obj/item/gun/energy/kalix/pgf/nock
 
 	cost_min = 3500
@@ -314,7 +304,7 @@
 
 /datum/blackmarket_item/weapon/guncase/bg_16
 	name = "BG-16 Beam Gun"
-	desc = "Not satisfied by Etherbor's civilian offerings? Try this military grade one we found!"
+	desc = "Not satisfied by Etherbor's civilian offerings? Try this military-grade one we found!"
 	item = /obj/item/gun/energy/kalix/pgf
 
 	cost_min = 2500
@@ -363,7 +353,7 @@
 
 /datum/blackmarket_item/weapon/guncase/sgg
 	name = "SSG-669C Rotary Sniper Rifle"
-	desc = "I could tell you it's full name, but we'd be here all day. It's a sniper rifle. It shoots people from far away. Chambered in 8x58mm caseless."
+	desc = "I could tell you its full name, but we'd be here all day. It's a sniper rifle. It shoots people from far away. Chambered in 8x58mm caseless."
 	item = /obj/item/gun/ballistic/rifle/solgov
 	mag_type = /obj/item/ammo_box/a858
 	pair_item = list(/datum/blackmarket_item/ammo/a858_box)
@@ -386,7 +376,7 @@
 
 /datum/blackmarket_item/weapon/guncase/cycler
 	name = "Cycler Shotgun"
-	desc = "Perpetuate the cycle of violence with this dual feed shotgun! Has two built in 4 shell magazine tubes that can be swapped at the press of a button!"
+	desc = "Perpetuate the cycle of violence with this dual-feed shotgun! Has two built-in 4-shell magazine tubes that can be swapped at the press of a button!"
 	item = /obj/item/gun/ballistic/shotgun/automatic/negotiator
 	gun_unloaded = FALSE
 	mag_number = 0
@@ -419,7 +409,7 @@
 
 /datum/blackmarket_item/weapon/guncase/mauler/semi
 	name = "Mauler Semi-Automatic"
-	desc = "Enjoy the Mauler, but want to actually hit the broadside of a Vela? This semi-automatic conversion of the Mauler still features a better than average rate of fire and improved handling.."
+	desc = "Enjoy the Mauler, but want to actually hit the broadside of a Vela? This semi-automatic conversion of the Mauler still features a better-than-average rate of fire and improved handling."
 	item = /obj/item/gun/ballistic/automatic/pistol/mauler/regular
 
 	cost_min = 500
@@ -429,7 +419,7 @@
 
 /datum/blackmarket_item/weapon/guncase/spitter
 	name = "Spitter Submachine Gun"
-	desc = "The aptly named Spitter won't be hitting anything outside of spitting distance. Anything in that range on the otherhand? Let's just say the bereaved will be wanting a closed casket funeral. Chambered in 9x18mm."
+	desc = "The aptly named Spitter won't be hitting anything outside of spitting distance. Anything in that range on the other hand? Let's just say the bereaved will be wanting a closed-casket funeral. Chambered in 9x18mm."
 	item = /obj/item/gun/ballistic/automatic/pistol/spitter
 	pair_item = list(/datum/blackmarket_item/ammo/spitter_mag)
 
@@ -441,7 +431,7 @@
 
 /datum/blackmarket_item/weapon/guncase/pounder
 	name = "Pounder Submachine Gun"
-	desc = "There's a certain quality to quantity. With a massive 50 round capacity, this .22lr submachine is capable of laying down an jawdropping amount of fire."
+	desc = "There's a certain quality to quantity. With a massive 50-round capacity, this .22lr submachine is capable of laying down an jawdropping amount of fire."
 	item = /obj/item/gun/ballistic/automatic/smg/pounder
 	pair_item = list(/datum/blackmarket_item/ammo/pounder_mag)
 
@@ -486,7 +476,7 @@
 
 /datum/blackmarket_item/weapon/guncase/polymer
 	name = "Polymer Survivor Rifle"
-	desc = "A slapdash rifle held together by spite, dreams and a good helping of duct tape. Chambered in 7.62x40mm CLIP."
+	desc = "A slapdash rifle held together by spite, dreams, and a good helping of duct tape. Chambered in 7.62x40mm CLIP."
 	item = /obj/item/gun/ballistic/rifle/polymer
 	mag_type = /obj/item/ammo_box/a762_stripper
 	pair_item = list(/datum/blackmarket_item/ammo/a762_box)
@@ -510,7 +500,7 @@
 
 /datum/blackmarket_item/weapon/guncase/skm_lmg
 	name = "SKM-24u Light Machinegun"
-	desc = "Your regular rifles not have enough oomph for you? This SKM-24 was converted with help from a 'liberated' CM-40 parts shipment into a light machinegun, ready to blow away whatever you point it at. Increased firerate makes it buck like a mule, so keep that bipod on the ground. Drums sold separately!"
+	desc = "Your regular rifles not have enough oomph for you? This SKM-24 was converted with help from a 'liberated' CM-40 parts shipment into a light machine gun, ready to blow away whatever you point it at. Increased fire rate makes it buck like a mule, so keep that bipod on the ground. Drums sold separately!"
 	item = /obj/item/gun/ballistic/automatic/hmg/skm_lmg
 
 	cost_min = 5000

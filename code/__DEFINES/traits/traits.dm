@@ -216,6 +216,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_NOMETABOLISM "no_metabolism"
 #define TRAIT_NOCLONELOSS "no_cloneloss"
 #define TRAIT_TOXIMMUNE "toxin_immune"
+#define TRAIT_NOBLOOD "noblood"
 #define TRAIT_EASYDISMEMBER "easy_dismember"
 #define TRAIT_LIMBATTACHMENT "limb_attach"
 #define TRAIT_NOLIMBDISABLE "no_limb_disable"
@@ -378,6 +379,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_BADTOUCH "bad_touch"
 #define TRAIT_ANXIOUS "anxious"
 #define TRAIT_ANALGESIA "congenital_analgesia"
+/// Mob has a scar on one of their eyes.
+#define TRAIT_SCARRED_EYE "scarred_eye"
 #define TRAIT_CLOUDED "clouded_eyes"
 #define TRAIT_PINPOINT_EYES "pinpoint_eyes"
 #define TRAIT_CHEMICAL_NIGHTVISION "chemical_nightvision"
@@ -436,6 +439,10 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define MAPPING_HELPER_TRAIT "mapping-helper" //obtained from mapping helper
 /// Trait associated to wearing a suit
 #define SUIT_TRAIT "suit"
+/// Trait associated with being EMPed
+#define EMP_TRAIT "emp"
+/// Trait associated with damage, whatever that means in the datum's context
+#define DAMAGE_TRAIT "damage"
 /// Trait associated to lying down (having a [lying_angle] of a different value than zero).
 #define LYING_DOWN_TRAIT "lying-down"
 /// Trait associated to lacking electrical power.
@@ -488,6 +495,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define LACKING_MANIPULATION_APPENDAGES_TRAIT "lacking-manipulation-appengades" //trait associated to not having fine manipulation appendages such as hands
 #define HANDCUFFED_TRAIT "handcuffed"
 #define ORBITED_TRAIT "orbited"
+/// Trait applied to organs when they are unable to function.
+#define TRAIT_ORGAN_FAILING "organ_failing"
 /// Trait granted by [/obj/item/warpwhistle]
 #define WARPWHISTLE_TRAIT "warpwhistle"
 ///Turf trait for when a turf is transparent
@@ -514,6 +523,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// Self-explainatory.
 #define BEAUTY_ELEMENT_TRAIT "beauty_element"
 #define MOOD_COMPONENT_TRAIT "mood_component"
+#define EYE_SCARRING_TRAIT "eye_scarring_trait"
 
 #define TRAIT_CANT_RIDE "cant_ride"
 #define TRAIT_BLOODY_MESS "bloody_mess" //from heparin, makes open bleeding wounds rapidly spill more blood
@@ -530,6 +540,12 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_MOVE_PHASING "move_phasing"
 /// Disables the floating animation. See above.
 #define TRAIT_NO_FLOATING_ANIM "no-floating-animation"
+
+// Traits for ships and other overmap objects
+///This ship is cloaked or hidden and cannot be detected on long-range scanners
+#define TRAIT_CLOAKED "cloaked"
+///Currently only adds a blue-shifting during the cloak animation, will add functionality later when I add anti-ship weapons
+#define TRAIT_BLUESPACE_SHIFT "bluespace_shift"
 
 /// Trait granted by [mob/living/silicon/ai]
 /// Applied when the ai anchors itself
