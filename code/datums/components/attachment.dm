@@ -142,7 +142,7 @@
 		return TRUE
 	return TRUE
 
-/datum/component/attachment/proc/update_overlays(obj/item/attachment/parent, list/overlays, list/offset, obj/item/gun/our_gun))
+/datum/component/attachment/proc/update_overlays(obj/item/attachment/parent, list/overlays, list/offset, obj/item/gun/our_gun)
 	if(!(attach_features_flags & ATTACH_NO_SPRITE))
 		var/overlay_layer = FLOAT_LAYER
 		var/overlay_plane = FLOAT_PLANE

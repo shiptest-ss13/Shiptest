@@ -13,12 +13,12 @@
 	. = ..()
 
 	if(toggled)
-		gun.spread -= 3
-		gun.spread_unwielded -= 3
+		gun.spread -= 2
+		gun.spread_unwielded -= 2
 		gun.wield_delay -= 0.3 SECONDS
 	else
-		gun.spread += 3
-		gun.spread_unwielded += 3
+		gun.spread += 2
+		gun.spread_unwielded += 2
 		gun.wield_delay += 0.3 SECONDS
 
 	playsound(user, toggled ? 'sound/weapons/magin.ogg' : 'sound/weapons/magout.ogg', 40, TRUE)
@@ -30,7 +30,7 @@
 
 /obj/item/attachment/laser_sight/proc/do_overlay(obj/item/gun/gun, atom/target, mob/user, list/params)
 	if(toggled) //copied from lsaer pointer code, dont kill me
-		var/targloc = get_turf(target)
+		var/turf/targloc = get_turf(target)
 		var/image/laser_image = image('icons/obj/projectiles.dmi',targloc,"red_laser",10)
 		var/list/modifiers = params2list(params)
 		if(modifiers.len)
@@ -43,4 +43,4 @@
 			laser_image.pixel_y = target.pixel_y + rand(-5,5)
 		laser_image.layer = ABOVE_ALL_MOB_LAYER
 
-		flick_overlay_view(laser_image, targloc, 1 SECONDS)
+		targloc.flick_overlay_view(laser_image, 1 SECONDS)
