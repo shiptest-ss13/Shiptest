@@ -51,6 +51,7 @@
 	var/body_zone //BODY_ZONE_CHEST, BODY_ZONE_L_ARM, etc , used for def_zone
 	/// The body zone of this part in english ("chest", "left arm", etc) without the species attached to it
 	var/plaintext_zone
+	var/bodypart_layer = BODYPARTS_LAYER
 	var/aux_zone // used for hands
 	var/aux_layer
 	///bitflag used to check which clothes cover this bodypart
@@ -1049,7 +1050,7 @@
 			if(burnstate)
 				. += image(dmg_overlay_icon, "[dmg_overlay_type]_[body_zone]_0[burnstate]", -DAMAGE_LAYER, image_dir)
 
-	var/image/limb = image(layer = -BODYPARTS_LAYER, dir = image_dir)
+	var/image/limb = image(layer = -bodypart_layer, dir = image_dir)
 	var/image/aux
 	//. += limb
 
@@ -1123,14 +1124,14 @@
 				aux.color = "#[draw_color]"
 
 		if(overlay_icon_state)
-			var/image/overlay = image(limb.icon, "[limb.icon_state]_overlay", -BODY_ADJ_LAYER, image_dir)
+			var/image/overlay = image(limb.icon, "[limb.icon_state]_overlay", -bodypart_layer, image_dir)
 			if(overlay_use_primary_color)
 				overlay.color = "#[species_color]"
 			else
 				overlay.color = "#[species_secondary_color]"
 			. += overlay
 		if(overlay2_icon_state)
-			var/image/overlay = image(limb.icon, "[limb.icon_state]_overlay2", -BODY_ADJ_LAYER, image_dir)
+			var/image/overlay = image(limb.icon, "[limb.icon_state]_overlay2", -bodypart_layer, image_dir)
 			if(overlay2_use_primary_color)
 				overlay.color = "#[species_color]"
 			else
