@@ -200,9 +200,9 @@
 
 /datum/supply_pack/medical/mkiii_hypo
 	name = "mk.III Hypospray kit"
-	desc = "Contains a mk.III Nanotrasen Hypospray, for on the field medical care. Comes with an assortment of Ready-To-Go Vials"
-	cost = 3000
-	contains = list(/obj/item/storage/box/hypospray/mkiii)
+	desc = "Contains a mk.III Nanotrasen Hypospray, for on the field medical care. Comes with an assortment of Ready-To-Go Vials - loaded with Morphine, Saline-Glucose, Morphine, Cureall Solution, Salbutamol, and a stabilizant mixture."
+	cost = 2500
+	contains = list(/obj/item/storage/box/hypospray/mkiii/cargo)
 	crate_name = "mk.III hypospray crate"
 	faction = /datum/faction/nt
 	faction_locked = TRUE

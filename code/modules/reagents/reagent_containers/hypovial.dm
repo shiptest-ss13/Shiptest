@@ -264,6 +264,11 @@
 	icon_state = "hypoviallarge-k"
 	comes_with = list(/datum/reagent/medicine/synthflesh = 120)
 
+/obj/item/reagent_containers/glass/bottle/vial/large/preloaded/morphine
+	name = "large hypovial (morphine)"
+	icon_state = "hypoviallarge-t"
+	comes_with = list(/datum/reagent/medicine/morphine = 120)
+
 /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/combat
 	name = "combat hypovial"
 	icon_state = "hypoviallarge-t"
