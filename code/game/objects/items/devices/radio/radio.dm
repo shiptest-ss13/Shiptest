@@ -136,6 +136,12 @@
 		listening = !listening
 		to_chat(user, span_notice("You toggle speaker [listening ? "on" : "off"]."))
 
+/obj/item/radio/attack_hand_secondary(mob/user, modifiers)
+	if((!headset && command) && user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
+		use_command = !use_command
+		to_chat(user, span_notice("You toggle high volume [use_command ? "on" : "off"]."))
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
 /obj/item/radio/interact(mob/user)
 	if(unscrewed && !isAI(user))
 		wires.interact(user)
@@ -485,5 +491,6 @@
 
 /obj/item/radio/command
 	name = "command radio"
+	icon_state = "cmd_radio"
 	desc = "A handheld radio with a configurable volume knob. Useful for making your voice carry farther."
 	command = TRUE
