@@ -484,4 +484,6 @@
 	desc = "An old handheld radio. You could use it, if you really wanted to."
 
 /obj/item/radio/command
+	name = "command radio"
+	desc = "A handheld radio with a configurable volume knob. Useful for making your voice carry farther."
 	command = TRUE

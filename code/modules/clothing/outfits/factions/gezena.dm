@@ -147,6 +147,9 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/captain
 	courierbag = /obj/item/storage/backpack/messenger/com
 
+	backpack_contents = list(
+		/obj/item/radio/command = 1)
+
 //Adminspawn Roles (for events):
 
 /datum/outfit/job/gezena/assistant/geared

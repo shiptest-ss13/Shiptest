@@ -233,7 +233,7 @@
 	head = /obj/item/clothing/head/HoS/syndicate
 	gloves = /obj/item/clothing/gloves/combat
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/radio/command=1)
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec

@@ -46,7 +46,7 @@
 	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
 
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/radio/command=1)
 
 /datum/outfit/job/inteq/captain/empty
 	name = "IRMG - Vanguard (Naked)"
