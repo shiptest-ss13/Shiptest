@@ -196,7 +196,6 @@
 /obj/item/storage/box/survival/command
 	radio_type = /obj/item/radio/command
 
-
 /obj/item/storage/box/gloves
 	name = "box of latex gloves"
 	desc = "Contains sterile latex gloves."

@@ -78,8 +78,7 @@
 	backpack_contents = list(
 		/obj/item/storage/box/ids = 1,
 		/obj/item/melee/classic_baton/telescopic = 1,
-		/obj/item/modular_computer/tablet/preset/advanced = 1,
-		)
+		/obj/item/modular_computer/tablet/preset/advanced = 1)
 
 /datum/outfit/job/clip/ce
 	name = "CLIP - Foreman"
@@ -343,8 +342,7 @@
 
 	backpack_contents = list(/obj/item/storage/box/ids=1,
 		/obj/item/melee/classic_baton/telescopic=1,
-		/obj/item/modular_computer/tablet/preset/advanced = 1,
-		)
+		/obj/item/modular_computer/tablet/preset/advanced = 1)
 
 /datum/outfit/job/clip/minutemen/captain/general
 	name = "CLIP Minutemen - General"
