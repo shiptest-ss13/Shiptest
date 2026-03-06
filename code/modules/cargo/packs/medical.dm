@@ -208,6 +208,10 @@
 	faction_locked = TRUE
 	faction_discount = 0
 
+/datum/supply_pack/medical/mkiii_hypo/cybersun
+	desc = "Contains a mk.III Cybersun Hypospray, for on the field medical care. Comes with an assortment of Ready-To-Go Vials"
+	faction = /datum/faction/syndicate/cybersun
+
 /datum/supply_pack/medical/vials
 	faction = /datum/faction/nt
 	faction_discount = 50
