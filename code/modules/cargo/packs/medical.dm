@@ -201,7 +201,7 @@
 /datum/supply_pack/medical/mkiii_hypo
 	name = "mk.III Hypospray kit"
 	desc = "Contains a mk.III Nanotrasen Hypospray, for on the field medical care. Comes with an assortment of Ready-To-Go Vials"
-	cost = 2000
+	cost = 3000
 	contains = list(/obj/item/storage/box/hypospray/mkiii)
 	crate_name = "mk.III hypospray crate"
 	faction = /datum/faction/nt
