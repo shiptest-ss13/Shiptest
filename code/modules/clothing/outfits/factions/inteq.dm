@@ -42,11 +42,12 @@
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/inteq/alt/captain
 	shoes = /obj/item/clothing/shoes/combat
+	box = /obj/item/storage/box/survival/inteq/command
 
 	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
 
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/radio/command=1)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
 
 /datum/outfit/job/inteq/captain/empty
 	name = "IRMG - Vanguard (Naked)"
