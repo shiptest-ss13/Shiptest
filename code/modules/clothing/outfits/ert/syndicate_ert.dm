@@ -178,7 +178,7 @@
 
 	head = null
 	mask = /obj/item/clothing/mask/breath
-	uniform = /obj/item/clothing/under/syndicate/cybersun
+	uniform = /obj/item/clothing/under/cybersun
 	belt = /obj/item/storage/belt/military/boomslang
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/cybersun
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/boomslang
@@ -201,8 +201,8 @@
 	name = "ERT - Syndicate Cybersun Representative"
 	jobtype = /datum/job/ert/commander
 
-	uniform = /obj/item/clothing/under/syndicate/cybersun/officer
-	head = /obj/item/clothing/head/HoS/cybersun
+	uniform = /obj/item/clothing/under/cybersun/officer
+	head = /obj/item/clothing/head/cybersun
 	shoes = /obj/item/clothing/shoes/laceup
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	suit = null
@@ -224,7 +224,7 @@
 	job_icon = "paramedic"
 	jobtype = /datum/job/ert/med
 
-	uniform = /obj/item/clothing/under/syndicate/medic
+	uniform = /obj/item/clothing/under/cybersun/medic
 	accessory = /obj/item/clothing/accessory/holster/marine
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/cybersun/paramed
 	suit_store = /obj/item/tank/internals/oxygen
