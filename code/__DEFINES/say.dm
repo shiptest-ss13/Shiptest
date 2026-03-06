@@ -27,6 +27,10 @@
 #define MODE_KEY_INTERCOM "i"
 #define MODE_TOKEN_INTERCOM ":i"
 
+#define MODE_WIDEBAND "wideband"
+#define MODE_KEY_WIDEBAND "w"
+#define MODE_TOKEN_WIDEBAND ":w"
+
 #define MODE_BINARY "binary"
 #define MODE_KEY_BINARY "b"
 #define MODE_TOKEN_BINARY ":b"

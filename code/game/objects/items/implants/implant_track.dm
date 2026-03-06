@@ -17,7 +17,7 @@
 
 /obj/item/implant/tracking/bullet/Initialize()
 	. = ..()
-	timerid = QDEL_IN(src, lifespan)
+	timerid = QDEL_IN_STOPPABLE(src, lifespan)
 	AddComponent(/datum/component/gps/item, "*TRAC")
 
 /obj/item/implant/tracking/bullet/Destroy()

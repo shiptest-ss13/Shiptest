@@ -179,7 +179,7 @@
 
 /obj/item/gun/ballistic/automatic/assault/e40/toggle_safety(mob/user, silent=FALSE)
 	. = ..()
-	secondary.toggle_safety(user, silent=TRUE)
+	secondary.safety = safety
 
 /obj/item/gun/ballistic/automatic/assault/e40/fire_select(mob/living/carbon/human/user)
 	. = ..()

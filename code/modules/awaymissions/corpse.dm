@@ -322,6 +322,13 @@
 	name = "dead wolf"
 	mob_type = /mob/living/simple_animal/hostile/asteroid/wolf
 
+/obj/effect/mob_spawn/animal_corpse/monkey
+	name = "dead monkey"
+	mob_type = /mob/living/carbon/monkey
+
+/obj/effect/mob_spawn/animal_corpse/junglefowl //chicken
+	name = "dead monkey"
+	mob_type = /mob/living/simple_animal/hostile/retaliate/chicken
 
 // I'll work on making a list of corpses people request for maps, or that I think will be commonly used. Syndicate operatives for example.
 
@@ -446,9 +453,9 @@
 	. = ..()
 
 	var/obj/item/card/id/W = H.get_idcard()
-	if(H.age < AGE_MINOR)
-		W.registered_age = AGE_MINOR
-		to_chat(H, span_notice("You're not technically old enough to access or serve alcohol, but your ID has been discreetly modified to display your age as [AGE_MINOR]. Try to keep that a secret!"))
+	if(H.age < AGE_DRINKING)
+		W.registered_age = AGE_DRINKING
+		to_chat(H, span_notice("You're not technically old enough to access or serve alcohol, but your ID has been discreetly modified to display your age as [AGE_DRINKING]. Try to keep that a secret!"))
 
 /obj/effect/mob_spawn/human/beach
 	outfit = /datum/outfit/beachbum

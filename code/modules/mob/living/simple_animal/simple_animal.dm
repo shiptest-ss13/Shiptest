@@ -350,9 +350,9 @@
 	if(!environment_air_is_safe())
 		adjustHealth(unsuitable_atmos_damage)
 		if(unsuitable_atmos_damage > 0)
-			throw_alert("not_enough_oxy", /atom/movable/screen/alert/not_enough_oxy)
+			throw_alert(ALERT_NOT_ENOUGH_OXYGEN, /atom/movable/screen/alert/not_enough_oxy)
 	else
-		clear_alert("not_enough_oxy")
+		clear_alert(ALERT_NOT_ENOUGH_OXYGEN)
 
 	handle_temperature_damage()
 
@@ -458,15 +458,11 @@
 			return FALSE
 	return TRUE
 
-/mob/living/simple_animal/handle_fire()
-	return TRUE
-
-/mob/living/simple_animal/IgniteMob()
+/mob/living/simple_animal/ignite_mob()
 	return FALSE
 
-/mob/living/simple_animal/ExtinguishMob()
+/mob/living/simple_animal/extinguish_mob()
 	return
-
 
 /mob/living/simple_animal/revive(full_heal = FALSE, admin_revive = FALSE)
 	. = ..()

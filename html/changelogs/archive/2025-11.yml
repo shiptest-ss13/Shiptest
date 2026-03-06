@@ -1,3 +1,168 @@
 2025-11-02:
   generalthrax:
   - rscadd: Added 9mm ammo can to the puppis
+2025-11-05:
+  zimon9:
+  - refactor: modified the orientation of the Kali Andhi's briefing room.
+2025-11-07:
+  Erikafox:
+  - rscdel: Holemaker, Ice Village ruins
+2025-11-08:
+  Goat:
+  - bugfix: Dwyane's engine no longer leaves a wall behind
+  - rscadd: Shetland now has a command console in its bridge
+  moffball19:
+  - rscadd: Remaps the Magpie-class Exploration Frigate
+2025-11-10:
+  DIB-DOG:
+  - rscadd: Added new PGF uniform sprites
+  - bugfix: fixed errors in existing PGF uniform sprites
+  Erikafox:
+  - bugfix: Pinprick eyes properly clears after painkiller overdose
+  - bugfix: solferino arm orientation
+  thearbiber:
+  - rscadd: arm warmers and shoulder holster resprite
+  - rscadd: resprites jensen, coffee house, and half hanged hairs
+2025-11-11:
+  generalthrax:
+  - bugfix: rhode has insuls again
+2025-11-12:
+  DIB-DOG:
+  - rscadd: Added and implemented new PGF recruitment posters
+  - bugfix: Fixes PGF outfits with the wrong items/names
+  Retrino:
+  - rscdel: Removed radiation causing hair to fall out
+  generalthrax:
+  - balance: bluespace jump delay decreased from 1 minute to 20 seconds
+  - balance: switchblade is smaller, both extended and unextended
+  smartkar, Erika (port fox):
+  - code_imp: Changed some fire-related procs to be snake_case
+  - refactor: Refactored firestacks into status effects
+  - bugfix: Monkeys no longer have human fire overlay when on fire and instead use
+      the one they're supposed to use.
+  zimon9:
+  - rscadd: Adds cabbage to the cargo outpost market
+2025-11-13:
+  Erikafox:
+  - rscdel: no armor on the prototype miner suit
+  moffball19:
+  - rscdel: removes the valor
+  - rscdel: removes the haste
+2025-11-15:
+  Retrino:
+  - rscadd: New hair sprites, VLH, VLH (bangs), Ponytail (both eyes)
+  thearbiber:
+  - rscadd: Ramzi Hideout Ruin
+2025-11-16:
+  Erikafox:
+  - bugfix: height filter runtimes for kepori/vox
+2025-11-17:
+  Addust:
+  - bugfix: Kali Andhi destroyers have been given new APCs in areas where they were
+      previously missing them, and duplicate APCs have been removed.
+  - bugfix: This also fixes whatever area fuckery was going on with the thruster bays
+2025-11-18:
+  moffball19:
+  - rscdel: Talos-class Command Clipper
+2025-11-19:
+  Erikafox:
+  - code_imp: cell magazines no longer auto scatter on init
+  - bugfix: ship targetting random events should actually fire
+  firebudgy:
+  - balance: You can't get Pacification and Lobotomy surgeries off surgical disks
+      anymore.
+  generalthrax:
+  - rscadd: Added Sand Settlement Raid, a new Sand ruin
+  - rscadd: Two new bosses
+  - rscadd: Worn-out blood-red, not space worthy. And the old Invictus battle rifle
+  zimon9:
+  - balance: doubles loadout slots
+2025-11-20:
+  Erikafox:
+  - rscadd: 'port: lmb/rmb syringes. LMB to inject, RMB to draw'
+  - code_imp: context menu is now on shift+rmb rather than rmb
+  - code_imp: add right mouse button action support
+  - rscdel: underbarrel weapons removed pending refactor
+2025-11-22:
+  Addust:
+  - bugfix: The NGR-aligned remnants of a pre-ICW architecture company have written
+      a large number of very angry faxes to Hardline's catering firm, and the officer's
+      mess on the Kali Andhi-class is now less overstocked. Wonderful.
+  Aquidu:
+  - rscadd: Boxes of 7 empty medical gels can now be purchased from Cargo
+  - rscdel: Removed Medical Surplus Crate from cargo
+  Erikafox:
+  - bugfix: minor cirrus mapchange
+  SapphicOverload:
+  - rscadd: Added more right-click actions
+  - bugfix: Fixed existing right-click actions not working
+  zimon9:
+  - bugfix: fixed some typos
+2025-11-23:
+  Gristlebee:
+  - bugfix: Burn kit patches
+2025-11-25:
+  Erikafox:
+  - rscadd: Rezadone can now undo sepsis in sufficient quantities (10 units)
+  Goat:
+  - rscadd: Pronouns. Your pronouns are now separate from your gender. Be as woke
+      as you want. Pronouns are your gender's default when your save file gets updated
+      so don't worry about having to set them.
+  Overteh:
+  - balance: changes civ Cobra to rapid fire bursts of 4. Decreases spread on Cobras
+      to 2, (3-1 from silencer on mil cobra) and increases on Mongrel and Resolution
+      by 1
+  SapphicOverload:
+  - bugfix: CLIP now uses Zohilan as its official language
+  nikothedude, sapphicoverload, swanni:
+  - rscadd: Added asthma
+  - rscadd: Added inhalers, a new method of applying reagents
+  - rscadd: Oxygen deprivation medical kits now contain salbutamol in inhaler form
+      instead of an injector
+  - rscadd: Histamine and certain gases like SO2 and HCl can cause lung inflammation,
+      even in non-asthmatics
+  - balance: Salbutamol only heals suffocation damage if the affected mob is currently
+      receiving enough oxygen/plasma/etc to breathe, but significantly increases their
+      ability to receive enough in the first place
+  - bugfix: Fixed reagent duplication from smoke
+2025-11-26:
+  00-Steven, Erika (porting fox):
+  - refactor: Refactored tasting code. Please report any jank tasting behaviours.
+  - bugfix: You taste what you eat instead of the contents of your own stomach.
+  - bugfix: Other basic nutriment subtypes also carry food flavours, instead of outweighing
+      the food flavours with their lack of flavour.
+  - bugfix: Basic nutriment subtypes have a flavour they default to, in case of not
+      carrying any food flavours.
+  - bugfix: Tasted flavours can actually be "strong" in addition to mild or "a hint
+      of", as intended.
+  Aquidu:
+  - rscadd: Pill bottle and several medkits' sprites and descriptions updated.
+  - rscadd: Roumain medkit is now purchasable at the outpost.
+  thearbiber:
+  - rscadd: resprites hazard jacket and adds two variants
+  - rscadd: SRM midline hardsuit
+  - balance: Adds SRM hardsuits to ivory and elder
+2025-11-27:
+  generalthrax:
+  - bugfix: Onehalf Safe is now visible again
+2025-11-29:
+  Addust:
+  - bugfix: hardline has sent a few very angry faxes to the previously-mentioned bankrupt
+      architecture firm, reminding them of why they went bankrupt (kali doesnt have
+      doubled central hall APCs anymore)
+  moffball19:
+  - rscadd: Adds the Apso-class Signaller
+  thearbiber, generalthrax:
+  - rscadd: Added Entrenching Tool, available in cargo for 500
+  - balance: Added Entrenching tools to Raleigh and Bolide
+  zimon9:
+  - bugfix: fixed a few lottery typos
+2025-11-30:
+  generalthrax:
+  - rscadd: Added new kitchen stuff to CLIP moon ruin, Beach gunsmith, Arrowsong,
+      and NT Ice (and NGR rock)
+  - balance: Griddle and oven no longer requires titanium to build
+  - bugfix: Bad access on Gunsmith
+  - bugfix: NGR rock no longer uses away mission APCs
+  thearbiber:
+  - rscadd: remaps banshee

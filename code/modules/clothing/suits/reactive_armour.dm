@@ -117,7 +117,7 @@
 		for(var/mob/living/carbon/C in range(6, owner))
 			if(C != owner)
 				C.fire_stacks += 8
-				C.IgniteMob()
+				C.ignite_mob()
 		owner.fire_stacks = -20
 		reactivearmor_cooldown = world.time + reactivearmor_cooldown_duration
 		return 1

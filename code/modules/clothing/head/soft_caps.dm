@@ -38,13 +38,16 @@
 
 	flip(usr)
 
+/obj/item/clothing/head/soft/attack_hand_secondary(mob/user, list/modifiers)
+	flip()
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
 /obj/item/clothing/head/soft/AltClick(mob/user)
 	if(!user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		return FALSE
 	if(unique_reskin && !current_skin)
 		reskin_obj(user)
-	else
-		flip(user)
+
 	return TRUE
 
 /obj/item/clothing/head/soft/proc/flip(mob/user)

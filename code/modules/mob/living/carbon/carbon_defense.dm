@@ -79,12 +79,12 @@
 	if(!affecting) //missing limb? we select the first bodypart (you can never have zero, because of chest)
 		affecting = get_first_available_bodypart()
 	SEND_SIGNAL(I, COMSIG_ITEM_ATTACK_ZONE, src, user, affecting)
-	send_item_attack_message(I, user, affecting.name, parse_zone(affecting.body_zone))
+	send_item_attack_message(I, user, affecting.name, affecting)
 
 	if(I.force)
 		var/attack_direction = get_dir(user, src)
 		apply_damage(I.force, I.damtype, affecting, wound_bonus = I.wound_bonus, bare_wound_bonus = I.bare_wound_bonus, sharpness = I.get_sharpness(), attack_direction = attack_direction)
-		if(I.damtype == BRUTE && (IS_ORGANIC_LIMB(affecting)))
+		if(I.damtype == BRUTE && affecting.can_bleed())
 			if(prob(33))
 				I.add_mob_blood(src)
 				var/turf/location = get_turf(src)
@@ -113,15 +113,38 @@
 		return
 
 	var/extra_wound_details = ""
-	if(I.damtype == BRUTE && hit_bodypart.can_dismember())
+
+	if(I.damtype != STAMINA && hit_bodypart.can_dismember())
+
 		var/mangled_state = hit_bodypart.get_mangled_state()
-		var/bio_state = get_biological_state()
-		if(mangled_state == BODYPART_MANGLED_BOTH)
+
+		var/bio_status = hit_bodypart.get_bio_state_status()
+
+		var/has_exterior = ((bio_status & ANATOMY_EXTERIOR))
+		var/has_interior = ((bio_status & ANATOMY_INTERIOR))
+
+		var/exterior_ready_to_dismember = (!has_exterior || ((mangled_state & BODYPART_MANGLED_EXTERIOR)))
+		var/interior_ready_to_dismember = (!has_interior || ((mangled_state & BODYPART_MANGLED_INTERIOR)))
+
+		var/dismemberable = ((hit_bodypart.dismemberable_by_wound()) || hit_bodypart.dismemberable_by_total_damage())
+		if (dismemberable)
 			extra_wound_details = ", threatening to sever it entirely"
-		else if((mangled_state == BODYPART_MANGLED_FLESH && I.get_sharpness()) || (mangled_state & BODYPART_MANGLED_BONE && bio_state == BIO_JUST_BONE))
-			extra_wound_details = ", [I.get_sharpness() == SHARP_EDGED ? "slicing" : "piercing"] through to the bone"
-		else if((mangled_state == BODYPART_MANGLED_BONE && I.get_sharpness()) || (mangled_state & BODYPART_MANGLED_FLESH && bio_state == BIO_JUST_FLESH))
-			extra_wound_details = ", [I.get_sharpness() == SHARP_EDGED ? "slicing" : "piercing"] at the remaining tissue"
+		else
+			var/sharpness = I.get_sharpness()
+			var/sharpness_text
+			switch(sharpness)
+				if(SHARP_EDGED)
+					sharpness_text = "slicing"
+				if(SHARP_POINTY)
+					sharpness_text = "piercing"
+				else
+					sharpness_text = "smashing"
+			if((has_interior && (has_exterior && exterior_ready_to_dismember) && I.get_sharpness()))
+				var/bone_text = hit_bodypart.get_internal_description()
+				extra_wound_details = ", [sharpness_text] through to the [bone_text]"
+			else if(has_exterior && ((has_interior && interior_ready_to_dismember) && I.get_sharpness()))
+				var/tissue_text = hit_bodypart.get_external_description()
+				extra_wound_details = ", [sharpness_text] at the remaining [tissue_text]"
 
 	var/message_hit_area = ""
 	if(hit_area)
@@ -134,7 +157,7 @@
 		attack_message_local = "[user] [message_verb] you[message_hit_area] with [I][extra_wound_details]!"
 
 	if(user == src)
-		attack_message_local = "You [message_verb] yourself[message_hit_area] with [I][extra_wound_details]"
+		attack_message_local = "You [message_verb] yourself[message_hit_area] with [I][extra_wound_details]!"
 	visible_message(
 		span_danger("[attack_message]"),
 		span_userdanger("[attack_message_local]"), null, COMBAT_MESSAGE_RANGE,
@@ -145,7 +168,7 @@
 	return //so we don't call the carbon's attack_hand().
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
-/mob/living/carbon/attack_hand(mob/living/carbon/human/user)
+/mob/living/carbon/attack_hand(mob/living/carbon/human/user, list/modifiers)
 
 	if(SEND_SIGNAL(src, COMSIG_ATOM_ATTACK_HAND, user) & COMPONENT_CANCEL_ATTACK_CHAIN)
 		. = TRUE
@@ -155,7 +178,7 @@
 			continue
 		if(!S.self_operable && user == src)
 			continue
-		if(S.next_step(user, user.a_intent))
+		if(S.next_step(user, modifiers))
 			return TRUE
 
 	for(var/thing in diseases)
@@ -170,14 +193,14 @@
 
 	for(var/i in all_wounds)
 		var/datum/wound/W = i
-		if(W.try_handling(user))
+		if(W.try_handling(user, modifiers))
 			return TRUE
 
 	return FALSE
 
 /mob/living/carbon/attack_paw(mob/living/carbon/monkey/M)
 
-	if(can_inject(M, TRUE))
+	if(can_inject(M))
 		for(var/thing in diseases)
 			var/datum/disease/D = thing
 			if((D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN) && prob(85))
@@ -414,12 +437,30 @@
 	if(should_stun)
 		Paralyze(60)
 
+/mob/living/carbon/proc/help_extinguish_act(mob/living/carbon/helper)
+	if(on_fire && src != helper)
+		if(helper.check_hot_hands())
+			if(do_after(helper, 10, src))
+				adjust_fire_stacks(-3)
+				playsound(src.loc, 'sound/weapons/thudswoosh.ogg', 25, 1, 7)
+				helper.visible_message(span_danger("[helper] tries to put out the fire on [src]!"),
+					span_warning("You try to put out the fire on [src]!"), null, 5)
+				if(fire_stacks <= 0)
+					helper.visible_message(span_warning("[helper] has successfully extinguished the fire on [src]!"),
+						span_notice("You extinguished the fire on [src]."), null, 5)
+					extinguish_mob()
+					return TRUE
+				return TRUE
+		else
+			to_chat(helper, span_warning("You can't get close enough without getting burnt!"))
+	else
+		to_chat(helper, span_warning("You can't put [p_them()] out with just your bare hands!"))
+		return
+
 /mob/living/carbon/proc/help_shake_act(mob/living/carbon/M)
 	var/datum/component/mood/hugger_mood = M.GetComponent(/datum/component/mood)
 	var/nosound = FALSE
-	if(on_fire)
-		to_chat(M, span_warning("You can't put [p_them()] out with just your bare hands!"))
-		return
+
 
 	if(M == src && check_self_for_injuries())
 		return
@@ -591,7 +632,7 @@
 	return embeds
 
 
-/mob/living/carbon/flash_act(intensity = 1, override_blindness_check = 0, affect_silicon = 0, visual = 0)
+/mob/living/carbon/flash_act(intensity = 1, override_blindness_check = 0, affect_silicon = 0, visual = 0, type = /atom/movable/screen/fullscreen/flash)
 	var/obj/item/organ/eyes/eyes = getorganslot(ORGAN_SLOT_EYES)
 	if(!eyes) //can't flash what can't see!
 		return
@@ -599,8 +640,11 @@
 	. = ..()
 
 	var/damage = intensity - get_eye_protection()
-	if(.) // we've been flashed
+	if(. & FLASH_DAMAGE) // we've been flashed
 		if(visual)
+			return
+
+		if(!damage)
 			return
 
 		if (damage == 1)
@@ -633,8 +677,7 @@
 
 			else
 				to_chat(src, span_warning("Your eyes are really starting to hurt. This can't be good for you!"))
-		return 1
-	else if(damage == 0) // just enough protection
+	else if(!is_blind()) // just enough protection
 		if(prob(20))
 			to_chat(src, span_notice("Something bright flashes in the corner of your vision!"))
 
@@ -712,7 +755,7 @@
 	self_grasp_bleeding_limb(grasped_part, supress_message)
 
 /mob/living/carbon/proc/self_grasp_bleeding_limb(obj/item/bodypart/grasped_part, supress_message = FALSE)
-	if(!grasped_part?.get_part_bleed_rate())
+	if(!grasped_part?.can_be_grasped())
 		return
 
 	var/starting_hand_index = active_hand_index
@@ -720,7 +763,9 @@
 		to_chat(src, span_danger("You can't grasp your [grasped_part.name] with itself!"))
 		return
 
-	to_chat(src, span_warning("You try grasping at your [grasped_part.name], trying to stop the bleeding..."))
+	var/bleed_rate = grasped_part.get_part_bleed_rate()
+	var/bleeding_text = (bleed_rate ? ", trying to stop the bleeding" : "")
+	to_chat(src, span_warning("You try grasping at your [grasped_part.name][bleeding_text]..."))
 	if(!do_after(src, 0.5 SECONDS))
 		to_chat(src, span_danger("You fail to grasp your [grasped_part.name]."))
 		return
@@ -731,6 +776,17 @@
 		QDEL_NULL(grasp)
 		return
 	grasp.grasp_limb(grasped_part)
+
+/// If TRUE, the owner of this bodypart can try grabbing it to slow bleeding, as well as various other effects.
+/obj/item/bodypart/proc/can_be_grasped()
+	if (get_part_bleed_rate())
+		return TRUE
+
+	for (var/datum/wound/iterated_wound as anything in wounds)
+		if (iterated_wound.wound_flags & CAN_BE_GRASPED)
+			return TRUE
+
+	return FALSE
 
 /// an abstract item representing you holding your own limb to staunch the bleeding, see [/mob/living/carbon/proc/grabbedby] will probably need to find somewhere else to put this.
 /obj/item/self_grasp
@@ -750,10 +806,10 @@
 /obj/item/self_grasp/Destroy()
 	if(user)
 		to_chat(user, span_warning("You stop holding onto your[grasped_part ? " [grasped_part.name]" : "self"]."))
-		UnregisterSignal(user, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(user, COMSIG_QDELETING)
 
 	if(grasped_part)
-		UnregisterSignal(grasped_part, list(COMSIG_CARBON_REMOVE_LIMB, COMSIG_PARENT_QDELETING))
+		UnregisterSignal(grasped_part, list(COMSIG_CARBON_REMOVE_LIMB, COMSIG_QDELETING))
 		grasped_part.grasped_by = null
 
 	grasped_part = null
@@ -774,11 +830,13 @@
 
 	grasped_part = grasping_part
 	grasped_part.grasped_by = src
-	RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(qdel_void))
-	RegisterSignal(grasped_part, list(COMSIG_CARBON_REMOVE_LIMB, COMSIG_PARENT_QDELETING), PROC_REF(qdel_void))
+	RegisterSignal(user, COMSIG_QDELETING, PROC_REF(qdel_void))
+	RegisterSignal(grasped_part, list(COMSIG_CARBON_REMOVE_LIMB, COMSIG_QDELETING), PROC_REF(qdel_void))
 
+	var/bleed_rate = grasped_part.get_part_bleed_rate()
+	var/bleeding_text = (bleed_rate ? ", trying to stop the bleeding" : "")
 	user.visible_message(
-		span_danger("[user] grasps at [user.p_their()] [grasped_part.name], trying to stop the bleeding."),
+		span_danger("[user] grasps at [user.p_their()] [grasped_part.name][bleeding_text]."),
 		span_notice("You grab hold of your [grasped_part.name] tightly."),
 		vision_distance=COMBAT_MESSAGE_RANGE,
 	)
@@ -823,3 +881,11 @@
 			check_projectile_dismemberment(P, def_zone)
 
 	return on_hit_state ? BULLET_ACT_HIT : BULLET_ACT_BLOCK
+
+/mob/living/carbon/proc/check_hot_hands()
+	var/can_handle_hot = FALSE
+	if(gloves && (gloves.max_heat_protection_temperature > 360))
+		can_handle_hot = TRUE
+	else if(HAS_TRAIT(src, TRAIT_RESISTHEAT) || HAS_TRAIT(src, TRAIT_RESISTHEATHANDS))
+		can_handle_hot = TRUE
+	return can_handle_hot

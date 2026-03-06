@@ -50,7 +50,7 @@
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), M, span_notice("[pick(strings(REDPILL_FILE, "redpill_questions"))]")), 50)
 
 	if(reagents.total_volume)
-		reagents.trans_to(M, reagents.total_volume, transfered_by = user, method = apply_type)
+		reagents.trans_to(M, reagents.total_volume, transfered_by = user, methods = apply_type)
 	qdel(src)
 	return TRUE
 
@@ -316,3 +316,9 @@
 	desc = "A pill composed of a white, powdery substance. Take as prescribed."
 	icon_state = "pill9"
 	list_reagents = list(/datum/reagent/drug/placebatol = 10)
+
+/obj/item/reagent_containers/pill/rcyte
+	name = "R-Cyte tablet"
+	desc = "A pill composed of a white, powdery substance. Take as prescribed."
+	icon_state = "pill0"
+	list_reagents = list(/datum/reagent/drug/cytodron = 10)

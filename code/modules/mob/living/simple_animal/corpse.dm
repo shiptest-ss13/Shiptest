@@ -26,6 +26,29 @@
 	neck = /obj/item/clothing/neck/dogtag/ramzi
 	id = /obj/item/card/id/syndicate
 
+/obj/effect/mob_spawn/human/corpse/ramzi/engi
+	name = "Ramzi Engineer"
+	outfit = /datum/outfit/ramzi/engi
+
+/datum/outfit/ramzi/engi
+	name = "Ramzi Technician Corpse"
+	suit = /obj/item/clothing/suit/ramzi
+	gloves = /obj/item/clothing/gloves/color/fyellow/old
+	head = /obj/item/clothing/head/hardhat/ramzi
+	glasses = /obj/item/clothing/glasses/welding
+	belt = /obj/item/storage/belt/utility
+
+/obj/effect/mob_spawn/human/corpse/ramzi/doctor
+	name = "Ramzi Field Medic"
+	outfit = /datum/outfit/ramzi/doctor
+
+/datum/outfit/ramzi/doctor
+	name = "Ramzi Sawbones Corpse"
+	uniform = /obj/item/clothing/under/syndicate/ramzi
+	suit = /obj/item/clothing/suit/ramzi/smock
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil //EVIL
+	head = /obj/item/clothing/head/ramzi/surgical
+
 /datum/outfit/ramzi/bulletproof
 	name = "Ramzi Clique Rifleman"
 	suit = /obj/item/clothing/suit/armor/ramzi/bulletproof
@@ -69,6 +92,20 @@
 	name = "Ramzi Softsuit Surplus"
 	outfit = /datum/outfit/ramzi/soft/surplus
 
+/obj/effect/mob_spawn/human/corpse/ramzi/towel
+	name = "Ramzi Showerer"
+	outfit = /datum/outfit/ramzi/towel
+
+/datum/outfit/ramzi/towel
+	name = "Ramzi Clique Showerer"
+	uniform = null
+	head = null
+	suit = /obj/item/towel/full
+	back = null
+	id = null
+	shoes = null
+	gloves = null
+
 /datum/outfit/ramzi/soft/surplus
 	name = "Ramzi Clique Softsuit Surplus"
 	uniform = /obj/item/clothing/under/syndicate/ramzi
@@ -76,6 +113,19 @@
 	suit = /obj/item/clothing/suit/space/syndicate/ramzi/surplus
 	back = /obj/item/storage/backpack
 	r_pocket = /obj/item/tank/internals/emergency_oxygen
+
+/datum/outfit/ramzi/sniper
+	name = "Ramzi Clique Sniper"
+	uniform = /obj/item/clothing/under/syndicate/ramzi
+	head = /obj/item/clothing/head/helmet/space/hardsuit/stealth/ramzi
+	suit = /obj/item/clothing/suit/space/hardsuit/stealth/ramzi
+	back = /obj/item/tank/jetpack/oxygen/harness
+	r_pocket = /obj/item/tank/internals/emergency_oxygen
+
+/obj/effect/mob_spawn/human/corpse/ramzi/sniper
+	name = "Ramzi Clique Sniper"
+	id_job = "Operative"
+	outfit = /datum/outfit/ramzi/sniper
 
 /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
 	name = "Ramzi Clique Trooper"
@@ -89,6 +139,7 @@
 	head = /obj/item/clothing/head/ramzi/beret
 	back = null
 	mask = /obj/item/clothing/mask/breath/facemask
+	neck = /obj/item/clothing/neck/dogtag/gold
 
 /obj/effect/mob_spawn/human/corpse/ramzi/officer
 	name = "Ramzi Clique Officer"
@@ -373,8 +424,3 @@
 	id_job = "Captain"
 	outfit = /datum/outfit/job/gezena/captain
 
-/* clip ig */
-
-/obj/effect/mob_spawn/human/corpse/clip/bombsuitguy
-	name = "CLIP Bombsuit Spawner"
-	outfit = /datum/outfit/job/clip/minutemen/grunt/dressed/bombsuit

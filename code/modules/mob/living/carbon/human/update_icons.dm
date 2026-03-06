@@ -63,10 +63,6 @@ There are several things that need to be remembered:
 	remove_overlay(BODY_LAYER)
 	dna.species.handle_body(src)
 
-/mob/living/carbon/human/update_fire()
-	..((fire_stacks > HUMAN_FIRE_STACK_ICON_NUM) ? "Standing" : "Generic_mob_burning")
-
-
 /* --------------------------------------- */
 //For legacy support.
 /mob/living/carbon/human/regenerate_icons()
@@ -1183,6 +1179,10 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 			mask_icon = 'icons/effects/cut_64x64.dmi'
 		else if(icon_height == 48 && icon_width <= 48)
 			mask_icon = 'icons/effects/cut_48x48.dmi'
+		else if(icon_height == 36 && icon_width <= 48)
+			mask_icon = 'icons/effects/cut_48x36.dmi'
+		else if(icon_height == 32 && icon_width <= 48 && icon_width != 32)
+			mask_icon = 'icons/effects/cut_48x32.dmi'
 		else if(icon_height != 32 || icon_width > 32)
 			stack_trace("Bad dimensions (w[icon_width],h[icon_height]) for icon '[appearance.icon]'")
 

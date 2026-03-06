@@ -217,7 +217,7 @@
 
 /obj/item/ammo_casing/energy/disabler/hitscan
 	projectile_type = /obj/projectile/beam/hitscan/disabler
-	e_cost = 666
+	e_cost = 500
 
 /obj/projectile/beam/hitscan/disabler
 	name = "disabler beam"
@@ -250,7 +250,7 @@
 
 /obj/item/ammo_casing/energy/disabler/hitscan/heavy
 	projectile_type = /obj/projectile/beam/hitscan/disabler/heavy
-	e_cost = 1000
+	e_cost = 666
 
 /obj/projectile/beam/hitscan/disabler/heavy
 	range = 15

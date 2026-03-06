@@ -279,7 +279,7 @@
 /datum/mutation/human/fire/on_life()
 	if(prob((1+(100-dna.stability)/10)) * GET_MUTATION_SYNCHRONIZER(src))
 		owner.adjust_fire_stacks(2 * GET_MUTATION_POWER(src))
-		owner.IgniteMob()
+		owner.ignite_mob()
 
 /datum/mutation/human/fire/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -351,16 +351,14 @@
 	if(..())
 		return
 	ADD_TRAIT(owner, TRAIT_GIANT, GENETIC_MUTATION)
-	owner.resize = 1.25
-	owner.update_transform()
+	owner.update_transform(1.25)
 	owner.visible_message(span_danger("[owner] suddenly grows!"), span_notice("Everything around you seems to shrink.."))
 
 /datum/mutation/human/gigantism/on_losing(mob/living/carbon/human/owner)
 	if(..())
 		return
 	REMOVE_TRAIT(owner, TRAIT_GIANT, GENETIC_MUTATION)
-	owner.resize = 0.8
-	owner.update_transform()
+	owner.update_transform(0.8)
 	owner.visible_message(span_danger("[owner] suddenly shrinks!"), span_notice("Everything around you seems to grow.."))
 
 /datum/mutation/human/spastic
