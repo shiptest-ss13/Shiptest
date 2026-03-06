@@ -26,6 +26,8 @@
 		/obj/item/clothing/head/hairbow = 3,
 		/obj/item/clothing/head/headband = 3,
 		/obj/item/clothing/head/ribbon = 3,
+		/obj/item/clothing/head/brimmed = 3,
+		/obj/item/clothing/gloves/long = 2,
 		/obj/item/clothing/gloves/armwarmer = 2,
 		/obj/item/clothing/gloves/armwarmer/striped = 2,
 		/obj/item/clothing/gloves/fingerless = 2,
@@ -79,6 +81,7 @@
 		/obj/item/clothing/under/dress/skirt/pinafore/plaid/brown = 2,
 		/obj/item/clothing/under/suit/white/skirt = 2,
 		/obj/item/clothing/suit/jacket = 2,
+		/obj/item/clothing/suit/toggle/overcoat = 3,
 		/obj/item/clothing/suit/toggle/windbreaker = 3,
 		/obj/item/clothing/suit/toggle/pufferjacket = 3,
 		/obj/item/clothing/suit/toggle/puffervest = 3,
@@ -120,10 +123,10 @@
 		/obj/item/clothing/under/syndicate/tacticool = 2,
 		/obj/item/clothing/under/syndicate/tacticool/skirt = 2,
 		/obj/item/clothing/mask/balaclava = 2,
+		/obj/item/clothing/mask/breath/facemask =3,
 		/obj/item/storage/belt/fannypack/black = 2,
 		/obj/item/clothing/suit/jacket/letterman_syndie = 1,
-		/obj/item/towel = 3,
-		/obj/item/clothing/mask/breath/facemask =3)
+		/obj/item/towel = 3,)
 	premium = list(
 		/obj/item/clothing/under/suit/checkered = 1,
 		/obj/item/clothing/suit/jacket/leather = 1,
