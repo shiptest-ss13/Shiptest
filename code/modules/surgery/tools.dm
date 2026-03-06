@@ -76,7 +76,7 @@
 	hitsound = 'sound/weapons/circsawhit.ogg'
 	custom_materials = list(/datum/material/iron=10000, /datum/material/glass=6000)
 	flags_1 = CONDUCT_1
-	item_flags = SURGICAL_TOOL | EYE_STAB
+	item_flags = SURGICAL_TOOL
 	force = 10		//WS Edit - Makes drill weaker than circular saw
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("drilled")
@@ -87,6 +87,7 @@
 
 /obj/item/surgicaldrill/Initialize()		//WS Edit Start - Trying to butcher with a drill is a bad idea
 	. = ..()
+	AddElement(/datum/element/eyestab)
 	AddComponent(/datum/component/butchering, 300 * toolspeed, 30, 0, 'sound/weapons/circsawhit.ogg')		// Only technically works - WS Edit End
 
 /obj/item/surgicaldrill/augment
@@ -107,7 +108,7 @@
 	drop_sound = 'sound/items/handling/knife2_drop.ogg'
 	item_state = "scalpel-1"
 	flags_1 = CONDUCT_1
-	item_flags = SURGICAL_TOOL | EYE_STAB
+	item_flags = SURGICAL_TOOL
 	force = 10
 	w_class = WEIGHT_CLASS_SMALL
 	throwforce = 5
@@ -123,6 +124,7 @@
 
 /obj/item/scalpel/Initialize()
 	. = ..()
+	AddElement(/datum/element/eyestab)
 	AddComponent(/datum/component/butchering, 80 * toolspeed, 100, 0)
 
 /obj/item/scalpel/augment

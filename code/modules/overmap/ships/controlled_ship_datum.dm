@@ -48,7 +48,8 @@
 	/// List of mob refs indexed by their job instance
 	var/list/datum/weakref/job_holder_refs = list()
 
-	var/list/datum/mind/owner_candidates
+	/// Dictionary of all candidate minds associated with a list containing their real name and whether they are eligible
+	var/list/list/owner_candidates
 
 	/// The mob of the current ship owner. Tracking mostly uses this; that lets us pick up on logouts, which let us
 	/// determine if a player is switching to control of a mob with a different mind, who thus shouldn't be the ship owner.
