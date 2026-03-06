@@ -1,10 +1,7 @@
 
-//desc comments are meant for the pr body when its more finished, ignore them
-/*
-	The blurbs in the PR you shouldn't take these as offical lore for your IPC, these should instead serve as jumping-off points for your
-	character's lore, after all, these are just skins at the end of the day.
-	They exist mostly to document the 'story' that was in mind when spriting, and have nearly no bearing on gameplay or roleplay.
-*/
+
+#define GENERIC_3D_PRINTED_DESC "Modern day autolathes are able to create a wide assortment of things at relatively low cost, IPC parts included. As such, 3D Printed parts are\
+	\nincreasingly popular with bodymoders and fashionable postrionics alike."
 
 /datum/sprite_accessory/body/ipc_chassis // Used for changing limb icons, doesn't need to hold the actual icon. That's handled in ipc.dm
 	icon = null
@@ -21,11 +18,6 @@
 	)
 
 //Pawsitrons United N1
-/*
-	A highly unconventional frame produced by Pawsitrons United. Both the N1 and company were formed for a crowdfunder on a solarian gene-modder's forum,
-	it's suprise popularity ensured that it's production continued long after the crowdfunding's end. It's awkward build along with paws for hands and
-	feet make it extremely disorienting to use for non-fans
-*/
 
 /datum/sprite_accessory/body/ipc_chassis/pawsitrons
 	name = "Pawsitrons United N1"
@@ -39,13 +31,11 @@
 	)
 
 //Makosso-Warra MW-PMU
-/*
-	Makosso-Warra's standard consumer frame, built on top of the MW-HIAU base. A popular choice for prosthetics, as well as a full postrionic frame.
-	The visor unit contains a wide camera for imaging, much cheaper than robotic eyes, but allegedly is not that much of a tradeoff for cost.
-*/
 
 /datum/sprite_accessory/body/ipc_chassis/mwpmu
 	name = "Makosso-Warra MW-PMU"
+	desc = "Makosso-Warra's standard consumer frame, built on top of the MW-HIAU base. A popular choice for prosthetics, as well as a full postrionic frame.\
+	\nThe visor unit contains a wide camera for imaging, much cheaper than robotic eyes, but allegedly is not that much of a tradeoff for the lower cost."
 	color_src = MUTCOLORS
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/mwpmu,
@@ -64,13 +54,11 @@
 	)
 
 //Makosso-Warra MW-HIACU
-/*
-	A more durable and eaier to manufacture frame, based on the MW-PMU. A large number of Tricorp employees during the ICW have had HIACU as a chassis or
-	prosthetic. Made for all the Tricorp companies, production has paused as MW has too many stockpiled, but intends to continue once demand catches up.
-*/
 
 /datum/sprite_accessory/body/ipc_chassis/mwhiacu
 	name = "Makosso-Warra MW-HIACU (MW)"
+	desc = "A more durable and eaier to manufacture frame, based on the MW-PMU. A large number of Tricorp employees during the ICW have had HIACU as a chassis or\
+	\nprosthetic. Made for all the Tricorp companies, production has paused as MW has too many stockpiled, but intends to continue once demand catches up."
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/mwhiacu,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/mwhiacu,
@@ -94,13 +82,11 @@
 	)
 
 //Atua Synkinetics Parça
-/*
-	Atua Synkinetics's standard IPC frame. Originally designed by a lonely solarian student who lived in the African Canton, the design is  has reamained
-	identical to as it was centuries ago, besides spec-upgrades. It is considered a classic, and appears in numerous pieces of solarian media.
-*/
 
 /datum/sprite_accessory/body/ipc_chassis/atua
 	name = "Atua Synkinetics Parça"
+	desc = "Atua Synkinetics's standard IPC frame. Originally designed by a lonely solarian student who lived in the African Canton, the design is has remained\
+	\nidentical to as it was centuries ago, besides spec-upgrades. It is considered a classic, and appears in numerous pieces of solarian media."
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/atua,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/atua,
@@ -111,14 +97,12 @@
 	)
 
 //Scarborgh Arms IPC-73
-/*
-	Scarborgh Arms's old line of frames, based on licened Atua Synkinetics's Parça frames. Atua attempted to revoke the licence during the ICW to
-	avoid conflict, but by then it was too late; Scarborgh Arms now could produce the IPC-80 at an unprecedented scale at that point. However the IPC-73
-	ceased production to avoid legal troubles with Atua.
-*/
 
 /datum/sprite_accessory/body/ipc_chassis/saipc
 	name = "Scarborgh Arms IPC-73"
+	desc = "Scarborgh Arms's old line of frames, based on licened Atua Synkinetics's Parça frames. Atua attempted to revoke the licence during the ICW to\
+	\navoid conflict, but by then it was too late; Scarborgh Arms now could produce the IPC-80 at an unprecedented scale at that point. However the IPC-73\
+	\nceased production to avoid legal troubles with Atua."
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/saipc,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/saipc,
@@ -135,14 +119,12 @@
 	)
 
 //Scarborgh Arms IPC-80 Mk.2
-/*
-	Scarborgh Arms's new line of frames. It's an improved and more well built version of the IPC-80. While produced for indvidual sale, a large amount
-	is produced on contract for the NGR in NGR territory, as a way to grow domestic production capablity. The NGR offers veterans with old IPC-73 or IPC-80
-	parts to replace them with the Mk.2
-*/
 
 /datum/sprite_accessory/body/ipc_chassis/saipc2
 	name = "Scarborgh Arms IPC-80 MK.2"
+	desc = "Scarborgh Arms's new line of frames. It's an improved and more well built version of the IPC-80. While produced for indvidual sale, a large amount\
+	is produced on contract for the NGR in their territory, as a way to grow domestic production capablity. The NGR offers veterans with old IPC-73 or IPC-80\
+	parts to replace them with the MK.2"
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/saipc2,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/saipc2,
@@ -153,13 +135,11 @@
 	)
 
 //Lanchester Mechanics 'HEAVY DUTY FRAME'
-/*
-	Lanchester Mechanics's industrial frame. Often loaned to employees then returned once they change jobs, however secondhand or privately owned users
-	are	not unheard of. Often bought by Tricorp before inhouse frame production capablity was established.
-*/
 
 /datum/sprite_accessory/body/ipc_chassis/lanchesterheavy
 	name = "Lanchester Mechanics 'HEAVY DUTY FRAME'"
+	desc = "Lanchester Mechanics's industrial frame. Often loaned to employees then returned once they change jobs, however secondhand or privately owned users\
+	\nare not unheard of. Was commonly bought by Tricorp before inhouse frame production capablity was established."
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/lanchesterheavy,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/lanchesterheavy,
@@ -176,13 +156,11 @@
 	)
 
 //HARDLINE 'Longshore'
-/*
-	HARDLINE's only frame. It's based on a Lanchester Mechanics frame with custom plating, intended to help with internal shipbuilding. However, it's
-	specializiation has made it popular outside the company's production lines, and is commonly sold in volume as a side-buisness for HARDLINE.
-*/
 
 /datum/sprite_accessory/body/ipc_chassis/lanchesterworker
 	name = "HARDLINE 'Longshore'"
+	desc = "HARDLINE's only frame. It's based on a Lanchester Mechanics frame with custom plating, intended to help with internal shipbuilding. However, it's\
+	specializiation has made it popular outside the company's production lines, and is commonly sold in volume as a side-buisness for HARDLINE."
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/lanchesterworker,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/lanchesterworker,
@@ -193,12 +171,10 @@
 	)
 
 //Custom Lanchester Unplated
-/*
-	A Lanchester frame with no plating. It is not intended to be used or sold like this, and the lack of protection makes critical components vulnerable.
-*/
 
 /datum/sprite_accessory/body/ipc_chassis/lanchesterunplated
-	name = "Custom 'Unplated'"
+	name = "Custom Unplated"
+	desc = "A Lanchester frame with no plating. It is not intended to be used or sold like this, and the lack of protection makes critical components vulnerable."
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/lanchesterunplated,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/lanchesterunplated,
@@ -209,14 +185,12 @@
 	)
 
 //PGF Mechanics MK.III
-/*
-	A very old frame of PGF Mechanics. It's low cost vs newer models is seen as why it has never stopped production. Intended as both a simple postrionic
-	frame and as prosthetics for Elzuose, it's mass adoptation outside the military has resulted in its very long lifespan, despite it's replacement.
-	It comes in two variations, Suhols-Ro and Wusha. The differences are mostly cosmetic, with almost no difference in specs.
-*/
 
 /datum/sprite_accessory/body/ipc_chassis/pgfmk3_suhols
 	name = "PGF Mechanics MK.III Type 'Suhols-Ro'"
+	desc = "A very old frame of PGF Mechanics. It's low cost vs newer models is seen as why it has never stopped production. Intended as both a simple postrionic\
+	\nframe and as prosthetics for Elzuose, it's mass adoptation outside the military has resulted in its very long lifespan, despite it's replacements.\
+	\nIt comes in two variations, Suhols-Ro and Wusha. The differences are mostly cosmetic, with almost no difference in specs."
 	color_src = MUTCOLORS
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pgfmk3_suhols,
@@ -236,6 +210,9 @@
 
 /datum/sprite_accessory/body/ipc_chassis/pgfmk3_wusha
 	name = "PGF Mechanics MK.III Type 'Wusha'"
+	desc = "A very old frame of PGF Mechanics. It's low cost vs newer models is seen as why it has never stopped production. Intended as both a simple postrionic\
+	\nframe and as prosthetics for Elzuose, it's mass adoptation outside the military has resulted in its very long lifespan, despite it's replacements.\
+	\nIt comes in two variations, Suhols-Ro and Wusha. The differences are mostly cosmetic, with almost no difference in specs."
 	color_src = MUTCOLORS
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pgfmk3_wusha,
@@ -253,13 +230,12 @@
 	)
 
 //PGF Mechanics MK.V
-/*
-	Widely considered to be the most advanced postrionic frame ever created, the MK.V is a masterwork of technology, only held back by it's masterwork of
-	a price. It's wide adoption in the PGFN is considered by many a show of force for the PGF's technological superiority.
-*/
 
 /datum/sprite_accessory/body/ipc_chassis/pgf
 	name = "PGF Mechanics MK.V Type-P"
+	desc = "Widely considered to be the most advanced postrionic frame ever created, the MK.V is a masterwork of technology, only held back by it's masterwork of\
+	\na price. The visor is holographic, meant for depth for the eyes, but is able to be manipulated for emotions or even used as a monochrome screen. The jaw also \
+	moves with speech, but unable to truly eat. It's wide adoption in the PGFN is considered by many a show of force for the PGF's technological might."
 	color_src = MUTCOLORS
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pgf,
@@ -272,6 +248,9 @@
 
 /datum/sprite_accessory/body/ipc_chassis/pgf_type_d
 	name = "PGF Mechanics MK.V Type-D"
+	desc = "Widely considered to be the most advanced postrionic frame ever created, the MK.V is a masterwork of technology, only held back by it's masterwork of\
+	\na price. The visor is holographic, meant for depth for the eyes, but is able to be manipulated for emotions or even used as a monochrome screen. The jaw also \
+	moves with speech, but unable to truly eat. It's wide adoption in the PGFN is considered by many a show of force for the PGF's technological might."
 	color_src = MUTCOLORS
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pgf,
@@ -283,14 +262,12 @@
 	)
 
 //Besoro Bishop
-/*
-	The flagship of Besoro, an up and coming tech startup. Intended for medical purposes, it has gained a niche following for its clean and sleek look.
-	The company isn't sure how to deal with it however, and only sells it for internal or as prosthetics
-*/
 
 /datum/sprite_accessory/body/ipc_chassis/bishop
 	name = "Besoro Bishop"
-//	color_src = MUTCOLORS
+	desc = "The flagship of Besoro, an up and coming tech startup. Intended for medical purposes, it has gained a niche following for its clean and sleek look.\
+	The company isn't sure how to deal with it however, and still only sells it for internal-use or as prosthetics to customers. But many have gotten their hands\
+	on it anyways, in no small part due to it's following happily paying for the markup when sold seperately as prosthetics."
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/bishop,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/bishop,
@@ -369,14 +346,10 @@
 
 
 //Custom 3D Printed
-/*
-	Modern day autolathes are able to create a wide assortment of things at relatively low cost, IPC parts included. As such, 3D Printed parts are
-	increasingly popular with bodymoders and fashionable postrionics alike.
-*/
-
 
 /datum/sprite_accessory/body/lanchesterunplated
 	name = "Custom 3D Printed Boxhead"
+	desc = GENERIC_3D_PRINTED_DESC
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/custom_boxhead,
 	)
@@ -384,6 +357,7 @@
 
 /datum/sprite_accessory/body/custom_monoeye
 	name = "Custom 3D Printed monoeye head"
+	desc = GENERIC_3D_PRINTED_DESC
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/custom_monoeye,
 	)
@@ -391,6 +365,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/custompgfmk3_suhols
 	name = "Custom 3D Printed MK.III Type 'Suhols-Ro'"
+	desc = GENERIC_3D_PRINTED_DESC
 	color_src = MUTCOLORS
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/custompgf3_suhols,
@@ -403,6 +378,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/custompgf3_wusha
 	name = "Custom 3D Printed MK.III Type 'Wusha'"
+	desc = GENERIC_3D_PRINTED_DESC
 	color_src = MUTCOLORS
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/custompgf3_wusha,
@@ -415,6 +391,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/customatua
 	name = "Custom 3D Printed Atua"
+	desc = GENERIC_3D_PRINTED_DESC
 	color_src = MUTCOLORS
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/customatua,
@@ -427,6 +404,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/customlanchesterheavy
 	name = "Custom 3D Printed Lanchester"
+	desc = GENERIC_3D_PRINTED_DESC
 	color_src = MUTCOLORS
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/customlanchesterheavy,
@@ -439,6 +417,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/customlanchesterworker
 	name = "Custom 3D Printed Longshore"
+	desc = GENERIC_3D_PRINTED_DESC
 	color_src = MUTCOLORS
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/customlanchesterworker,
@@ -451,6 +430,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/custombishop
 	name = "Custom 3D Printed Bishop"
+	desc = GENERIC_3D_PRINTED_DESC
 	color_src = MUTCOLORS
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/custombishop,
@@ -463,6 +443,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/customhiacu
 	name = "Custom 3D Printed HIACU"
+	desc = GENERIC_3D_PRINTED_DESC
 	color_src = MUTCOLORS
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/customhiacu,
@@ -475,6 +456,7 @@
 
 /datum/sprite_accessory/body/customatua_monoc
 	name = "Custom 3D Printed Atua (Monocolor)"
+	desc = GENERIC_3D_PRINTED_DESC
 	color_src = MUTCOLORS
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/customatua_monoc,
@@ -486,6 +468,7 @@
 
 /datum/sprite_accessory/body/ipc_chassis/customseeker
 	name = "Custom 3D Printed Seeker"
+	desc = GENERIC_3D_PRINTED_DESC
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/customseeker,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ipc/customseeker,
@@ -497,6 +480,7 @@
 
 /datum/sprite_accessory/body/saipc2
 	name = "Custom 3D Printed IPC-80"
+	desc = GENERIC_3D_PRINTED_DESC
 	replacement_bodyparts = list(
 		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ipc/custom_saipc2,
 		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ipc/custom_saipc2,
@@ -504,6 +488,7 @@
 
 /datum/sprite_accessory/body/pgf_monocolor
 	name = "PGF Mechanics MK.V Type-P (Monocolor)"
+	desc = GENERIC_3D_PRINTED_DESC
 	color_src = MUTCOLORS
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pgf_monocolor,
@@ -516,6 +501,7 @@
 
 /datum/sprite_accessory/body/pgf_monocolor_type_d
 	name = "PGF Mechanics MK.V Type-D (Monocolor)"
+	desc = GENERIC_3D_PRINTED_DESC
 	color_src = MUTCOLORS
 	replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ipc/pgf_monocolor,
@@ -525,3 +511,5 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ipc/pgf_monocolor/type_d,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ipc/pgf_monocolor/type_d,
 	)
+
+#undef GENERIC_3D_PRINTED_DESC
