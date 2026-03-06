@@ -185,38 +185,6 @@
 	icon_state = "pawsitrons_r_leg"
 	limb_id = "pawsitrons"
 
-// SHELLGUARD MUNITIONS
-
-/obj/item/bodypart/head/ipc/shellguard
-	name = "\improper Shellguard Munitions head"
-	icon_state = "sgmipc_head"
-	limb_id = "sgmipc"
-
-/obj/item/bodypart/chest/ipc/shellguard
-	name = "\improper Shellguard Munitions chest"
-	icon_state = "sgmipc_chest"
-	limb_id = "sgmipc"
-
-/obj/item/bodypart/l_arm/ipc/shellguard
-	name = "\improper Shellguard Munitions left arm"
-	icon_state = "sgmipc_l_arm"
-	limb_id = "sgmipc"
-
-/obj/item/bodypart/r_arm/ipc/shellguard
-	name = "\improper Shellguard Munitions right arm"
-	icon_state = "sgmipc_r_arm"
-	limb_id = "sgmipc"
-
-/obj/item/bodypart/leg/left/ipc/shellguard
-	name = "\improper Shellguard Munitions left leg"
-	icon_state = "sgmipc_l_leg"
-	limb_id = "sgmipc"
-
-/obj/item/bodypart/leg/right/ipc/shellguard
-	name = "\improper Shellguard Munitions right leg"
-	icon_state = "sgmipc_r_leg"
-	limb_id = "sgmipc"
-
 //Makosso-Warra MW-HIAU (high-inteligence-automated-unit)
 
 //Makosso-Warra MW-PMU
