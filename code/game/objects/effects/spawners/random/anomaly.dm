@@ -61,7 +61,7 @@
 /obj/effect/spawner/random/anomaly/jungle
 	name = "Jungle Anomaly Spawner"
 	loot = list(
-		/obj/effect/anomaly/flux/planetary,
+		/obj/effect/anomaly/transfusion/planetary,
 		/obj/effect/anomaly/hallucination/planetary,
 		/obj/effect/anomaly/heartbeat/planetary,
 		/obj/effect/anomaly/tvstatic/planetary,
@@ -71,7 +71,7 @@
 
 /obj/effect/spawner/random/anomaly/jungle/cave
 	loot = list(
-		/obj/effect/anomaly/flux/planetary,
+		/obj/effect/anomaly/transfusion/planetary,
 		/obj/effect/anomaly/hallucination/planetary,
 		/obj/effect/anomaly/heartbeat/planetary,
 		/obj/effect/anomaly/tvstatic/planetary,
