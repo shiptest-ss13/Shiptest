@@ -910,7 +910,7 @@
 //Custom 3D Printed (Various)
 /obj/item/bodypart/head/ipc/custom_boxhead
 	name = "\improper Custom 3D Printed Boxhead"
-	icon_state = "custom_3d_boxhead"
+	icon_state = "custom_3d_box_head"
 	limb_id = "custom_3d_box"
 	overlay_use_primary_color = TRUE
 	overlay_icon_state = TRUE
