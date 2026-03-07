@@ -75,7 +75,7 @@
 /datum/map_template/outpost/makossowarra_ice
 	name = "makossowarra_ice"
 	outpost_name = "Yebiri Sipili"
-	outpost_administrator = "Nanotrasen Authorities"
+	outpost_administrator = "Makosso-Warra Authorities"
 
 /datum/map_template/outpost/hangar/makossowarra_ice_20x20
 	name = "hangar/makossowarra_ice_20x20"

@@ -27,18 +27,18 @@
 	pixel_y = -2
 	},
 /obj/machinery/button/door{
+	dir = 1;
 	id = "shrikeventwindow";
 	name = "Window button";
 	pixel_x = 8;
-	pixel_y = -23;
-	dir = 1
+	pixel_y = -23
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "aj" = (
 /obj/machinery/computer/secure_data{
-	icon_state = "computer-middle";
-	dir = 1
+	dir = 1;
+	icon_state = "computer-middle"
 	},
 /obj/item/radio/intercom/directional/east,
 /obj/machinery/light/directional/south,
@@ -52,8 +52,8 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/white{
-	layer = 2.041;
-	dir = 4
+	dir = 4;
+	layer = 2.041
 	},
 /obj/effect/turf_decal/trimline/opaque/vired/line{
 	dir = 8
@@ -86,9 +86,9 @@
 	pixel_y = 23
 	},
 /obj/machinery/button/shieldwallgen{
+	id = "shrikecargofields";
 	pixel_x = -1;
-	pixel_y = 21;
-	id = "shrikecargofields"
+	pixel_y = 21
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/sign/warning/vacuum/external{
@@ -102,8 +102,8 @@
 	color = "#c1b6a5"
 	},
 /obj/machinery/camera/autoname{
-	network = list("shrikenetwork");
-	dir = 4
+	dir = 4;
+	network = list("shrikenetwork")
 	},
 /obj/machinery/light_switch{
 	dir = 4;
@@ -111,9 +111,9 @@
 	pixel_y = 12
 	},
 /obj/machinery/turretid/ship{
-	pixel_y = -3;
 	id = "shriketurrets";
-	pixel_x = -24
+	pixel_x = -24;
+	pixel_y = -3
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/corner/opaque/vired/half,
@@ -163,8 +163,8 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/white{
-	layer = 2.041;
-	dir = 4
+	dir = 4;
+	layer = 2.041
 	},
 /obj/effect/turf_decal/trimline/opaque/vired/line{
 	dir = 8
@@ -232,15 +232,15 @@
 /area/ship/hallway/port)
 "cL" = (
 /obj/effect/turf_decal/siding/white{
-	layer = 2.041;
-	dir = 4
+	dir = 4;
+	layer = 2.041
 	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/transparent/vired/border{
-	layer = 2.040;
-	dir = 1
+	dir = 1;
+	layer = 2.040
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
@@ -268,8 +268,8 @@
 	dir = 4
 	},
 /obj/machinery/camera/autoname{
-	network = list("shrikenetwork");
-	dir = 1
+	dir = 1;
+	network = list("shrikenetwork")
 	},
 /obj/structure/sign/warning/nosmoking{
 	pixel_y = -32
@@ -306,8 +306,8 @@
 	dir = 8
 	},
 /obj/machinery/camera/autoname{
-	network = list("shrikenetwork");
-	dir = 8
+	dir = 8;
+	network = list("shrikenetwork")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
@@ -355,8 +355,8 @@
 "dS" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
 /obj/item/paper_bin{
-	pixel_y = 7;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 7
 	},
 /obj/item/pen/fourcolor{
 	pixel_y = 3
@@ -427,8 +427,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/mining/glass{
-	name = "Cargo Bay";
-	dir = 4
+	dir = 4;
+	name = "Cargo Bay"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -444,8 +444,8 @@
 	},
 /obj/effect/turf_decal/siding/white,
 /obj/machinery/atmospherics/components/binary/pump{
-	name = "afterburner pump";
-	dir = 4
+	dir = 4;
+	name = "afterburner pump"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
@@ -473,9 +473,9 @@
 /area/ship/crew)
 "fh" = (
 /obj/machinery/door/airlock{
-	name = "Bathroom";
 	dir = 4;
-	id_tag = "shrikebathroom"
+	id_tag = "shrikebathroom";
+	name = "Bathroom"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -620,8 +620,8 @@
 /area/ship/cargo)
 "hC" = (
 /obj/machinery/camera/autoname{
-	network = list("shrikenetwork");
-	dir = 8
+	dir = 8;
+	network = list("shrikenetwork")
 	},
 /obj/effect/turf_decal/corner/transparent/lightgrey/diagonal,
 /obj/effect/turf_decal/siding/white{
@@ -652,8 +652,8 @@
 /area/ship/hallway/central)
 "iR" = (
 /obj/item/food/cherrycupcake{
-	pixel_y = 3;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 3
 	},
 /obj/item/reagent_containers/food/drinks/coffee{
 	pixel_x = 10;
@@ -677,8 +677,8 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/transparent/vired/border{
-	layer = 2.040;
-	dir = 1
+	dir = 1;
+	layer = 2.040
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -719,8 +719,8 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/white{
-	layer = 2.041;
-	dir = 4
+	dir = 4;
+	layer = 2.041
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -733,8 +733,8 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/transparent/vired/border{
-	layer = 2.040;
-	dir = 1
+	dir = 1;
+	layer = 2.040
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -782,19 +782,19 @@
 	},
 /obj/machinery/door/window/brigdoor/eastleft,
 /obj/machinery/door/poddoor{
-	id = "shrinkestarboardengine";
-	dir = 4
+	dir = 4;
+	id = "shrinkestarboardengine"
 	},
 /obj/machinery/atmospherics/components/unary/shuttle/heater,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "kv" = (
 /obj/docking_port/stationary{
+	dir = 8;
 	dwidth = 15;
 	height = 30;
-	width = 30;
 	name = "Shrike Stern Dock";
-	dir = 8
+	width = 30
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -860,8 +860,8 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor{
-	id = "shrikeportengine";
-	dir = 4
+	dir = 4;
+	id = "shrikeportengine"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -984,8 +984,8 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor{
-	id = "shrikeportengine";
-	dir = 4
+	dir = 4;
+	id = "shrikeportengine"
 	},
 /obj/machinery/atmospherics/components/unary/shuttle/heater,
 /turf/open/floor/plating,
@@ -1053,8 +1053,8 @@
 /area/ship/engineering/engines/starboard)
 "mP" = (
 /obj/machinery/camera/autoname{
-	network = list("shrikenetwork");
-	dir = 10
+	dir = 10;
+	network = list("shrikenetwork")
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/crate_shelf,
@@ -1086,32 +1086,32 @@
 	pixel_x = -4
 	},
 /obj/machinery/button/door{
-	pixel_x = -6;
-	pixel_y = 30;
 	id = "shrikeportlockdown";
-	name = "Port lockdown"
-	},
-/obj/machinery/button/door{
+	name = "Port lockdown";
 	pixel_x = -6;
-	pixel_y = 21;
+	pixel_y = 30
+	},
+/obj/machinery/button/door{
 	id = "shrikegeneralwindows";
-	name = "Window shutters"
+	name = "Window shutters";
+	pixel_x = -6;
+	pixel_y = 21
 	},
 /obj/machinery/button/door{
-	pixel_x = 6;
-	pixel_y = 30;
 	id = "shrikestarboardlockdown";
-	name = "Starboard lockdown"
-	},
-/obj/machinery/button/door{
+	name = "Starboard lockdown";
 	pixel_x = 6;
-	pixel_y = 21;
-	name = "Bridge shutters";
-	id = "shrikebridgewindow"
+	pixel_y = 30
 	},
 /obj/machinery/button/door{
-	name = "Privacy Shutters";
+	id = "shrikebridgewindow";
+	name = "Bridge shutters";
+	pixel_x = 6;
+	pixel_y = 21
+	},
+/obj/machinery/button/door{
 	id = "shrikecaptainwindow";
+	name = "Privacy Shutters";
 	pixel_x = 9;
 	pixel_y = -10
 	},
@@ -1119,9 +1119,9 @@
 /area/ship/bridge)
 "mV" = (
 /obj/machinery/door/airlock/security{
-	req_access_txt = "3";
+	dir = 4;
 	name = "Armoury";
-	dir = 4
+	req_access_txt = "3"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1153,8 +1153,8 @@
 	pixel_y = 8
 	},
 /obj/item/coffee_cartridge/fancy/blend{
-	pixel_y = 5;
-	pixel_x = 12
+	pixel_x = 12;
+	pixel_y = 5
 	},
 /obj/item/coffee_cartridge/fancy/mocha{
 	pixel_x = 12;
@@ -1203,8 +1203,8 @@
 	},
 /obj/machinery/photocopier,
 /obj/machinery/camera/autoname{
-	network = list("shrikenetwork");
-	dir = 6
+	dir = 6;
+	network = list("shrikenetwork")
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/port)
@@ -1234,8 +1234,8 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/white{
-	layer = 2.041;
-	dir = 4
+	dir = 4;
+	layer = 2.041
 	},
 /obj/effect/turf_decal/trimline/opaque/vired/line{
 	dir = 8
@@ -1271,16 +1271,16 @@
 /area/ship/cargo)
 "pi" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "shrikecargofields";
-	dir = 1
+	dir = 1;
+	id = "shrikecargofields"
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "shrikecargobay";
-	name = "Cargo Bay";
-	dir = 4
+	name = "Cargo Bay"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -1347,8 +1347,8 @@
 	},
 /obj/item/radio/intercom/directional/east,
 /obj/effect/turf_decal/corner/transparent/vired/border{
-	layer = 2.040;
-	dir = 1
+	dir = 1;
+	layer = 2.040
 	},
 /obj/effect/turf_decal/corner/transparent/vired/border{
 	dir = 4
@@ -1401,8 +1401,8 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "shrinkestarboardengine";
-	dir = 4
+	dir = 4;
+	id = "shrinkestarboardengine"
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -1449,15 +1449,15 @@
 /area/ship/hallway/port)
 "rA" = (
 /obj/machinery/camera/autoname{
-	network = list("shrikenetwork");
-	dir = 6
+	dir = 6;
+	network = list("shrikenetwork")
 	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/transparent/vired/border{
-	layer = 2.040;
-	dir = 1
+	dir = 1;
+	layer = 2.040
 	},
 /obj/effect/turf_decal/siding/white/corner,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
@@ -1475,16 +1475,16 @@
 "rC" = (
 /obj/structure/closet/secure_closet/armorycage{
 	anchored = 1;
-	name = "ammunition locker";
 	locked = 0;
+	name = "ammunition locker";
 	req_access = null
 	},
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
 /obj/machinery/camera/autoname{
-	network = list("shrikenetwork");
-	dir = 9
+	dir = 9;
+	network = list("shrikenetwork")
 	},
 /obj/item/ammo_box/magazine/co9mm{
 	pixel_x = -10;
@@ -1499,8 +1499,8 @@
 	pixel_y = -4
 	},
 /obj/item/storage/toolbox/ammo/c9mm{
-	pixel_y = -4;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = -4
 	},
 /obj/item/stock_parts/cell/gun/sharplite/plus{
 	pixel_y = 7
@@ -1709,8 +1709,8 @@
 	pixel_x = -5
 	},
 /obj/machinery/camera/autoname{
-	network = list("shrikenetwork");
-	dir = 10
+	dir = 10;
+	network = list("shrikenetwork")
 	},
 /turf/open/floor/carpet/red,
 /area/ship/security/armory)
@@ -1746,8 +1746,8 @@
 	dir = 4
 	},
 /obj/machinery/computer/helm{
-	icon_state = "computer-middle";
 	dir = 8;
+	icon_state = "computer-middle";
 	pixel_x = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -1947,8 +1947,8 @@
 	dir = 4
 	},
 /obj/structure/sign/warning/electricshock{
-	pixel_y = 28;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 28
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -2064,8 +2064,8 @@
 "yS" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/preopen{
-	id = "shrikebridgewindow";
-	dir = 4
+	dir = 4;
+	id = "shrikebridgewindow"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/firedoor/heavy,
@@ -2080,8 +2080,8 @@
 	layer = 2.038
 	},
 /obj/effect/turf_decal/corner/transparent/vired/border{
-	layer = 2.040;
-	dir = 8
+	dir = 8;
+	layer = 2.040
 	},
 /obj/structure/extinguisher_cabinet/directional/north,
 /obj/structure/filingcabinet/chestdrawer{
@@ -2103,8 +2103,8 @@
 	},
 /obj/item/clothing/suit/armor/makossowarra/slim,
 /obj/item/clothing/shoes/combat{
-	pixel_y = -7;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = -7
 	},
 /obj/item/clothing/gloves/combat{
 	pixel_x = -9
@@ -2130,7 +2130,7 @@
 /obj/effect/turf_decal/trimline/transparent/vired/corner{
 	dir = 4
 	},
-/obj/item/clothing/head/helmet/m10/nanotrasen,
+/obj/item/clothing/head/helmet/m10/makossowarra,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/starboard)
 "zg" = (
@@ -2159,8 +2159,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/structure/table/reinforced,
 /obj/item/melee/knife{
-	pixel_y = -4;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = -4
 	},
 /obj/item/kitchen/rollingpin,
 /obj/structure/sink/chem{
@@ -2309,8 +2309,8 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/camera/autoname{
-	network = list("shrikenetwork");
-	dir = 8
+	dir = 8;
+	network = list("shrikenetwork")
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -2373,17 +2373,17 @@
 /area/ship/bridge)
 "Cy" = (
 /obj/machinery/button/shieldwallgen{
-	id = "shrikecargofields";
 	dir = 8;
+	id = "shrikecargofields";
 	pixel_x = 23;
 	pixel_y = 7
 	},
 /obj/machinery/button/door{
+	dir = 8;
 	id = "shrikecargobay";
 	name = "Cargo door button";
 	pixel_x = 24;
-	pixel_y = -2;
-	dir = 8
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
@@ -2404,13 +2404,13 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "shrikecaptainwindow";
-	dir = 4
+	dir = 4;
+	id = "shrikecaptainwindow"
 	},
 /obj/machinery/door/airlock/command/glass{
-	req_access_txt = "19";
+	dir = 4;
 	name = "Bridge";
-	dir = 4
+	req_access_txt = "19"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -2435,10 +2435,10 @@
 	pixel_y = 35
 	},
 /obj/machinery/button/door{
-	pixel_y = 23;
-	pixel_x = 11;
 	id = "shrikebathroom";
-	name = "Bathroom Bolt"
+	name = "Bathroom Bolt";
+	pixel_x = 11;
+	pixel_y = 23
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/port)
@@ -2483,8 +2483,8 @@
 /area/ship/hallway/starboard)
 "Dp" = (
 /obj/effect/turf_decal/siding/white{
-	layer = 2.041;
-	dir = 8
+	dir = 8;
+	layer = 2.041
 	},
 /obj/machinery/light/dim/directional/west,
 /obj/structure/chair/handrail{
@@ -2536,8 +2536,8 @@
 	layer = 2.040
 	},
 /obj/effect/turf_decal/siding/white{
-	layer = 2.041;
-	dir = 6
+	dir = 6;
+	layer = 2.041
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -2590,10 +2590,10 @@
 /area/ship/crew/cryo)
 "Ep" = (
 /obj/structure/filingcabinet/double/grey{
+	density = 0;
 	dir = 4;
 	pixel_x = -8;
-	pixel_y = 10;
-	density = 0
+	pixel_y = 10
 	},
 /obj/item/folder/blue{
 	pixel_x = 3
@@ -2644,8 +2644,8 @@
 /area/ship/bridge)
 "FD" = (
 /obj/effect/turf_decal/siding/white{
-	layer = 2.041;
-	dir = 4
+	dir = 4;
+	layer = 2.041
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -2662,8 +2662,8 @@
 /area/ship/hallway/starboard)
 "FS" = (
 /obj/structure/closet/secure_closet/hos{
-	populate = 0;
-	name = "sergeants locker"
+	name = "sergeants locker";
+	populate = 0
 	},
 /obj/item/storage/backpack/satchel/sec{
 	pixel_x = 10;
@@ -2790,8 +2790,8 @@
 	pixel_y = 12
 	},
 /obj/effect/turf_decal/siding/white{
-	layer = 2.041;
-	dir = 8
+	dir = 8;
+	layer = 2.041
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/plasteel/dark,
@@ -2812,8 +2812,8 @@
 	dir = 1
 	},
 /obj/machinery/camera/autoname{
-	network = list("shrikenetwork");
-	dir = 9
+	dir = 9;
+	network = list("shrikenetwork")
 	},
 /obj/structure/chair/handrail{
 	dir = 8
@@ -2848,8 +2848,8 @@
 "HJ" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor{
-	id = "shrikegeneralwindows";
-	dir = 4
+	dir = 4;
+	id = "shrikegeneralwindows"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/firedoor/heavy,
@@ -2890,12 +2890,12 @@
 	pixel_x = -6
 	},
 /obj/item/computer_hardware/hard_drive/small{
-	pixel_y = -7;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = -7
 	},
 /obj/item/screwdriver{
-	pixel_y = -5;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = -5
 	},
 /obj/effect/turf_decal/trimline/opaque/nsorange/line{
 	dir = 4
@@ -2969,15 +2969,15 @@
 /area/ship/hallway/central)
 "IQ" = (
 /obj/effect/turf_decal/siding/white{
-	layer = 2.041;
-	dir = 4
+	dir = 4;
+	layer = 2.041
 	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/transparent/vired/border{
-	layer = 2.040;
-	dir = 4
+	dir = 4;
+	layer = 2.040
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
@@ -3015,8 +3015,8 @@
 	dir = 8
 	},
 /obj/machinery/camera/autoname{
-	network = list("shrikenetwork");
-	dir = 8
+	dir = 8;
+	network = list("shrikenetwork")
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/port)
@@ -3080,8 +3080,8 @@
 	dir = 8
 	},
 /obj/structure/sign/warning/electricshock{
-	pixel_y = 28;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 28
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -3118,8 +3118,8 @@
 /obj/structure/railing/thin,
 /obj/machinery/door/window/brigdoor/eastright{
 	dir = 8;
-	req_access_txt = "19";
-	layer = 3
+	layer = 3;
+	req_access_txt = "19"
 	},
 /obj/structure/window/reinforced,
 /obj/machinery/blackbox_recorder,
@@ -3142,8 +3142,8 @@
 	pixel_x = -8
 	},
 /obj/item/pen/red{
-	pixel_y = 7;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 7
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
 	pixel_x = -32
@@ -3183,8 +3183,8 @@
 /area/ship/hallway/starboard)
 "Lj" = (
 /obj/structure/toilet{
-	pixel_y = 15;
-	pixel_x = -10
+	pixel_x = -10;
+	pixel_y = 15
 	},
 /obj/structure/closet/wall/directional/south{
 	name = "Cleaning Supplies"
@@ -3214,8 +3214,8 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/transparent/vired/border{
-	layer = 2.040;
-	dir = 8
+	dir = 8;
+	layer = 2.040
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
@@ -3296,8 +3296,8 @@
 /area/ship/hallway/central)
 "MI" = (
 /obj/machinery/computer/security{
-	icon_state = "computer-middle";
 	dir = 1;
+	icon_state = "computer-middle";
 	network = list("shrikenetwork")
 	},
 /obj/item/radio/intercom/wideband/directional/west,
@@ -3343,8 +3343,8 @@
 	dir = 1
 	},
 /obj/machinery/computer/crew{
-	icon_state = "computer-left";
 	dir = 8;
+	icon_state = "computer-left";
 	pixel_x = 4
 	},
 /obj/effect/turf_decal/corner/opaque/vired/half{
@@ -3376,8 +3376,8 @@
 	layer = 2.040
 	},
 /obj/effect/turf_decal/siding/white{
-	layer = 2.041;
-	dir = 8
+	dir = 8;
+	layer = 2.041
 	},
 /obj/structure/chair/handrail{
 	dir = 4
@@ -3391,8 +3391,8 @@
 	dir = 5
 	},
 /obj/structure/sign/poster/official/focus{
-	pixel_y = 32;
-	layer = 2.89
+	layer = 2.89;
+	pixel_y = 32
 	},
 /obj/structure/table/reinforced,
 /obj/item/megaphone/sec,
@@ -3417,12 +3417,12 @@
 /area/ship/cargo)
 "Of" = (
 /obj/effect/turf_decal/siding/white{
-	layer = 2.041;
-	dir = 4
+	dir = 4;
+	layer = 2.041
 	},
 /obj/effect/turf_decal/siding/white{
-	layer = 2.041;
-	dir = 4
+	dir = 4;
+	layer = 2.041
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/trimline/opaque/vired/line,
@@ -3483,12 +3483,12 @@
 /area/ship/hallway/starboard)
 "OR" = (
 /obj/docking_port/stationary{
+	dheight = 1;
+	dir = 2;
 	dwidth = 20;
 	height = 40;
-	width = 30;
 	name = "Shrike Starboard Dock";
-	dir = 2;
-	dheight = 1
+	width = 30
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -3499,9 +3499,9 @@
 /area/ship/bridge)
 "OY" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "shrikecargobay";
-	name = "Cargo Bay";
-	dir = 4
+	name = "Cargo Bay"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -3563,8 +3563,8 @@
 	layer = 2.040
 	},
 /obj/effect/turf_decal/siding/white{
-	layer = 2.041;
-	dir = 4
+	dir = 4;
+	layer = 2.041
 	},
 /obj/machinery/newscaster/directional/south,
 /turf/open/floor/plasteel/dark,
@@ -3623,9 +3623,9 @@
 	},
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "shrikecargobay";
-	name = "Cargo Bay";
-	dir = 4
+	name = "Cargo Bay"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -3664,8 +3664,8 @@
 	},
 /obj/machinery/door/window/brigdoor/eastleft{
 	dir = 8;
-	req_access_txt = "19";
-	layer = 3
+	layer = 3;
+	req_access_txt = "19"
 	},
 /obj/structure/window/reinforced{
 	dir = 1
@@ -3750,8 +3750,8 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/corner/transparent/vired/border{
-	layer = 2.040;
-	dir = 10
+	dir = 10;
+	layer = 2.040
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/port)
@@ -3810,8 +3810,8 @@
 /obj/machinery/light/dim/directional/east,
 /obj/machinery/computer/helm/viewscreen/directional/north,
 /obj/machinery/camera/autoname{
-	network = list("shrikenetwork");
-	dir = 8
+	dir = 8;
+	network = list("shrikenetwork")
 	},
 /obj/effect/turf_decal/siding/white,
 /obj/effect/turf_decal/trimline/transparent/vired/warning,
@@ -3858,8 +3858,8 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/transparent/vired/border{
-	layer = 2.040;
-	dir = 1
+	dir = 1;
+	layer = 2.040
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
@@ -4067,8 +4067,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock{
-	name = "Crew Quarters";
-	dir = 4
+	dir = 4;
+	name = "Crew Quarters"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew)
@@ -4091,8 +4091,8 @@
 "Uu" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor{
-	id = "shrikegeneralwindows";
-	dir = 4
+	dir = 4;
+	id = "shrikegeneralwindows"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
@@ -4142,8 +4142,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/camera/autoname{
-	network = list("shrikenetwork");
-	dir = 10
+	dir = 10;
+	network = list("shrikenetwork")
 	},
 /obj/machinery/light_switch{
 	dir = 1;
@@ -4205,8 +4205,8 @@
 	dir = 1
 	},
 /obj/machinery/camera/autoname{
-	network = list("shrikenetwork");
-	dir = 10
+	dir = 10;
+	network = list("shrikenetwork")
 	},
 /obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel/tech/grid,
@@ -4344,16 +4344,16 @@
 	pixel_y = 2
 	},
 /obj/item/clothing/shoes/jackboots{
-	pixel_y = -10;
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = -10
 	},
 /obj/item/clothing/shoes/jackboots{
-	pixel_y = -10;
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = -10
 	},
 /obj/item/clothing/shoes/jackboots{
-	pixel_y = -10;
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = -10
 	},
 /obj/item/clothing/shoes/sneakers/black{
 	pixel_x = -1;
@@ -4453,15 +4453,15 @@
 	layer = 2.042
 	},
 /obj/effect/turf_decal/siding/white{
-	layer = 2.041;
-	dir = 6
+	dir = 6;
+	layer = 2.041
 	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 6
 	},
 /obj/effect/turf_decal/corner/transparent/vired/border{
-	layer = 2.040;
-	dir = 6
+	dir = 6;
+	layer = 2.040
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
@@ -4496,8 +4496,8 @@
 	},
 /obj/item/clothing/suit/armor/makossowarra/slim,
 /obj/item/clothing/shoes/combat{
-	pixel_y = -7;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = -7
 	},
 /obj/item/clothing/gloves/combat{
 	pixel_x = -9
@@ -4523,7 +4523,7 @@
 /obj/effect/turf_decal/trimline/transparent/vired/corner{
 	dir = 1
 	},
-/obj/item/clothing/head/helmet/m10/nanotrasen,
+/obj/item/clothing/head/helmet/m10/makossowarra,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/starboard)
 "XP" = (
@@ -4552,8 +4552,8 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/transparent/vired/border{
-	layer = 2.040;
-	dir = 1
+	dir = 1;
+	layer = 2.040
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 10
@@ -4571,8 +4571,8 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "shrikecaptainwindow";
-	dir = 4
+	dir = 4;
+	id = "shrikecaptainwindow"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -4592,8 +4592,8 @@
 /area/ship/engineering/engines/port)
 "Yu" = (
 /obj/effect/turf_decal/siding/white{
-	layer = 2.041;
-	dir = 4
+	dir = 4;
+	layer = 2.041
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -4680,15 +4680,15 @@
 /area/ship/engineering/engines/port)
 "Zx" = (
 /obj/effect/turf_decal/siding/white{
-	layer = 2.041;
-	dir = 4
+	dir = 4;
+	layer = 2.041
 	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/transparent/vired/border{
-	layer = 2.040;
-	dir = 4
+	dir = 4;
+	layer = 2.040
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 9
@@ -4731,32 +4731,32 @@
 	pixel_y = 3
 	},
 /obj/item/clothing/mask/gas/vigilitas,
-/obj/item/clothing/under/nanotrasen/security/director,
-/obj/item/clothing/suit/armor/nanotrasen/sec_director{
+/obj/item/clothing/under/makossowarra/security/director,
+/obj/item/clothing/suit/armor/makossowarra/sec_director{
 	pixel_x = 10
 	},
 /obj/item/radio/headset/heads/captain/alt{
 	pixel_x = 11;
 	pixel_y = 10
 	},
-/obj/item/radio/headset/nanotrasen/alt/captain{
+/obj/item/radio/headset/makossowarra/alt/captain{
 	pixel_x = 12;
 	pixel_y = 4
 	},
-/obj/item/clothing/head/nanotrasen/beret/security/command{
+/obj/item/clothing/head/makossowarra/beret/security/command{
 	pixel_y = 12
 	},
 /obj/item/clothing/glasses/sunglasses{
-	pixel_y = 12;
-	pixel_x = -10
+	pixel_x = -10;
+	pixel_y = 12
 	},
 /obj/item/storage/belt/military/assault,
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/item/storage/guncase/x01,
 /obj/structure/closet/secure_closet/wall/directional/north{
-	req_access = list(20);
 	icon_state = "solgov_wall";
-	populate = 0
+	populate = 0;
+	req_access = list(20)
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -4771,8 +4771,8 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/transparent/vired/border{
-	layer = 2.040;
-	dir = 1
+	dir = 1;
+	layer = 2.040
 	},
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 8

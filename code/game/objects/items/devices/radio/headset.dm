@@ -223,7 +223,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/makossowarra/alt/captain
 	name = "Makosso-Warra captain's bowman headset"
-	desc = "Worn proudly by Nanotrasen's remaining captains on the frontier. Protects ears from flashbangs."
+	desc = "Worn proudly by Makosso-Warra's remaining captains on the frontier. Protects ears from flashbangs."
 	keyslot2 = /obj/item/encryptionkey/heads/captain
 	command = TRUE
 
