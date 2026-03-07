@@ -13,34 +13,36 @@
 	. = ..()
 
 	if(toggled)
-		gun.spread -= 2
+		gun.spread -= 1
 		gun.spread_unwielded -= 2
 		gun.wield_delay -= 0.3 SECONDS
 	else
-		gun.spread += 2
+		gun.spread += 1
 		gun.spread_unwielded += 2
 		gun.wield_delay += 0.3 SECONDS
 
 	playsound(user, toggled ? 'sound/weapons/magin.ogg' : 'sound/weapons/magout.ogg', 40, TRUE)
 
 /obj/item/attachment/laser_sight/on_beforefire(obj/item/gun/gun, atom/target, mob/user, list/params)
-	do_overlay(gun, target, user, params)
+	if(toggled)
+		make_laser(gun, target, user, params)
 	return FALSE
 
+/obj/item/attachment/laser_sight/proc/make_laser(obj/item/gun/gun, atom/target, mob/user, list/params)
 
-/obj/item/attachment/laser_sight/proc/do_overlay(obj/item/gun/gun, atom/target, mob/user, list/params)
-	if(toggled) //copied from lsaer pointer code, dont kill me
-		var/turf/targloc = get_turf(target)
-		var/image/laser_image = image('icons/obj/projectiles.dmi',targloc,"red_laser",10)
-		var/list/modifiers = params2list(params)
-		if(modifiers.len)
-			if(LAZYACCESS(modifiers, ICON_X))
-				laser_image.pixel_x = (text2num(LAZYACCESS(modifiers, ICON_X)) - 16)
-			if(LAZYACCESS(modifiers, ICON_Y))
-				laser_image.pixel_y = (text2num(LAZYACCESS(modifiers, ICON_Y)) - 16)
-		else
-			laser_image.pixel_x = target.pixel_x + rand(-5,5)
-			laser_image.pixel_y = target.pixel_y + rand(-5,5)
-		laser_image.layer = ABOVE_ALL_MOB_LAYER
+//	var/turf/target_turf =  get_turf(user.client.mouseObject)
 
-		targloc.flick_overlay_view(laser_image, 1 SECONDS)
+	var/obj/projectile/beam/beam_rifle/hitscan/aiming_beam/fake_laser_projectile = new
+	fake_laser_projectile.gun = src
+
+	var/turf/curloc = get_turf(src)
+	var/turf/targloc = get_turf(target)
+	var/angle = get_angle(curloc, target)
+
+	if(!istype(targloc))
+		if(!istype(curloc))
+			return
+		targloc = get_turf_in_angle(angle, curloc, 10)
+	var/mouse_modifiers = params2list(user.client.mouseParams)
+	fake_laser_projectile.preparePixelProjectile(targloc, user, mouse_modifiers, 0)
+	fake_laser_projectile.fire(angle)

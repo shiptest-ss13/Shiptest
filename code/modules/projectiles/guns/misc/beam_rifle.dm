@@ -527,17 +527,30 @@
 	name = "aiming beam"
 	hitsound = null
 	hitsound_non_living = null
+	hitsound_volume = 0
+	ricochet_sound = null
 	nodamage = TRUE
+	color = "#FF0000"
 	damage = 0
 	constant_tracer = TRUE
 	hitscan_light_range = 0
 	hitscan_light_intensity = 0
-	hitscan_light_color_override = "#99ff99"
+	hitscan_light_color_override = "#FF0000"
 	reflectable = REFLECT_FAKEPROJECTILE
+	near_miss_sound = FALSE
 
 /obj/projectile/beam/beam_rifle/hitscan/aiming_beam/prehit_pierce(atom/target)
+	do_overlay(target)
 	return PROJECTILE_DELETE_WITHOUT_HITTING
 
-/obj/projectile/beam/beam_rifle/hitscan/aiming_beam/on_hit()
+/obj/projectile/beam/beam_rifle/hitscan/aiming_beam/on_hit(atom/target, blocked = FALSE, piercing_hit = FALSE)
 	qdel(src)
 	return BULLET_ACT_BLOCK
+
+/obj/projectile/beam/beam_rifle/hitscan/aiming_beam/proc/do_overlay(atom/target)
+	var/turf/targloc = get_turf(target)
+
+	var/x_pixel = target.pixel_x + rand(-8,8)
+	var/y_pixel = target.pixel_y + rand(-8,8)
+
+	new /obj/effect/temp_visual/impact_effect/laser_sight(targloc, x_pixel, y_pixel)

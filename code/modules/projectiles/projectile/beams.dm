@@ -31,10 +31,17 @@
 	ricochets_max = 50	//Honk!
 	ricochet_chance = 90
 	reflectable = REFLECT_NORMAL
+	///are we emissive?
+	var/is_emissive = TRUE
 
 /obj/projectile/beam/throw_atom_into_space()
 	return
 
+/obj/projectile/beam/Initialize()
+	. = ..()
+	if(is_emissive)
+		var/mutable_appearance/emissive_look = emissive_appearance(icon, icon_state, layer)
+		add_overlay(emissive_look)
 
 /obj/projectile/beam/laser
 	tracer_type = /obj/effect/projectile/tracer/laser

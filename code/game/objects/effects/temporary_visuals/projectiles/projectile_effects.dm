@@ -37,7 +37,7 @@
 		apply_vars(angle_override, p_x, p_y, color_override, scaling)
 	return ..()
 
-/obj/effect/projectile/proc/apply_vars(angle_override, p_x = 0, p_y = 0, color_override, scaling = 1, new_loc, increment = 0)
+/obj/effect/projectile/proc/apply_vars(angle_override, p_x = 0, p_y = 0, color_override, scaling = 1, new_loc, increment = 0, is_emissive = FALSE)
 	var/mutable_appearance/look = new(src)
 	look.pixel_x = p_x
 	look.pixel_y = p_y
@@ -51,6 +51,9 @@
 	for(var/i in 1 to increment)
 		pixel_x += round((sin(angle_override)+16*sin(angle_override)*2), 1)
 		pixel_y += round((cos(angle_override)+16*cos(angle_override)*2), 1)
+	if(is_emissive)
+		var/mutable_appearance/emissive_look = emissive_appearance(look.icon, look.icon_state, look.layer, EMISSIVE_PLANE)
+		add_overlay(emissive_look)
 
 /obj/effect/projectile_lighting
 	var/owner
