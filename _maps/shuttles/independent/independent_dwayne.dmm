@@ -994,13 +994,6 @@
 /obj/machinery/door/airlock/external{
 	dir = 4
 	},
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 4;
-	name = "mining_ship_all";
-	port_direction = 2;
-	preferred_direction = 4
-	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "ki" = (
@@ -5376,6 +5369,21 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/canteen)
+"Wb" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/heavy,
+/obj/machinery/door/poddoor{
+	id = "dwayne_port"
+	},
+/obj/docking_port/mobile{
+	dir = 2;
+	name = "mining_ship_all";
+	launch_status = 0;
+	port_direction = 8;
+	preferred_direction = 4
+	},
+/turf/open/floor/plating,
+/area/ship/cargo/port)
 "Wg" = (
 /obj/structure/table/wood,
 /obj/structure/cable/cyan{
@@ -6210,7 +6218,7 @@ Dv
 "}
 (19,1,1) = {"
 wh
-AB
+Wb
 DT
 Ip
 px
