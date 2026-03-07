@@ -139,6 +139,9 @@
 	for(var/datum/reagent/reag as anything in reagents.reagent_list)
 		reagents.remove_reagent(reag.type, reag.volume * frac)
 
+/obj/item/reagent_containers/attack_hand_secondary(mob/user)
+	attack_self_secondary(user)
+
 /obj/item/reagent_containers/attack_self_secondary(mob/user)
 	if(!can_interact(user))
 		return

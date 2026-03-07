@@ -947,8 +947,22 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/grind_requirements(obj/machinery/reagentgrinder/R) //Used to check for extra requirements for grinding an object
 	return TRUE
 
-///Called BEFORE the object is ground up - use this to change grind results based on conditions. Use "return -1" to prevent the grinding from occurring
-/obj/item/proc/on_grind()
+/obj/item/reagent_scan()
+	var/list/composition = on_grind(simulated=TRUE)
+
+	var/render_list = list()
+	if (composition.len > 0)
+		render_list += span_notice("[composition.len] chemical agent[composition.len > 1 ? "s" : ""] found in [src]'s composition:<br>")
+		for (var/reagent_id in composition)
+			var/datum/reagent/reagent = GLOB.chemical_reagents_list[reagent_id]
+			render_list += span_notice("\t [composition[reagent_id]] units of [reagent.name].") + "<br>"
+
+	return ..() + jointext(render_list, "")
+
+
+/// returns a list of the result of grinding the item, edits nothing unless simulated=TRUE
+/obj/item/proc/on_grind(simulated=FALSE)
+	return grind_results ? grind_results : list()
 
 /obj/item/proc/on_juice()
 

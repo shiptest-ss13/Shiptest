@@ -587,7 +587,7 @@
 
 /mob/living/reagent_scan()
 	if(!reagents)
-		return
+		return ""
 
 	var/list/render_list = list() //The master list of readouts, including reagents in the blood/stomach, addictions, quirks, etc.
 	var/list/render_block = list() //A second block of readout strings. If this ends up empty after checking stomach/blood contents, we give the "empty" header.

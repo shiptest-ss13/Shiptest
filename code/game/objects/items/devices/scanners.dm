@@ -147,7 +147,7 @@ GENE SCANNER
 // Used by the PDA medical scanner too
 /proc/healthscan(mob/user, mob/living/M, mode = SCANNER_VERBOSE, advanced = FALSE, see_all_quirks = FALSE)
 	if(!istype(M))
-		user.show_message("<span class='alert ml-1'>Null vitals, the object is inanimate!</span>"))
+		user.show_message(boxed_message("<span class='alert ml-1'>Null vitals, the object is inanimate!</span>"))
 		return
 
 	if(isliving(user) && (user.incapacitated()))
@@ -449,8 +449,12 @@ GENE SCANNER
 	// we handled the last <br> so we don't need handholding
 	to_chat(user, boxed_message(jointext(render_list, "")), trailing_newline = FALSE, type = MESSAGE_TYPE_INFO)
 
+/// Displays the result of a reagent scan of target to user, returns nothing
 /proc/chemscan(mob/living/user, atom/target)
-	to_chat(user, boxed_message(target.reagent_scan()), type = MESSAGE_TYPE_INFO)
+	var/scan_result = target.reagent_scan()
+	if (!scan_result)
+		scan_result = "No significant chemical agents found in [target]."
+	to_chat(user, boxed_message(scan_result), type = MESSAGE_TYPE_INFO)
 
 /obj/item/healthanalyzer/verb/toggle_mode()
 	set name = "Switch Verbosity"
@@ -869,7 +873,7 @@ GENE SCANNER
 	if(!proximity)
 		return
 	playsound(src, 'sound/effects/fastbeep.ogg', 10)
-	to_chat(user, boxed_message(A.reagent_scan()), type = MESSAGE_TYPE_INFO)
+	chemscan(user, A)
 
 
 #undef SCANMODE_HEALTH

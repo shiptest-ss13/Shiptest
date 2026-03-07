@@ -493,7 +493,7 @@
 /atom/proc/is_drainable()
 	return reagents && (reagents.flags & DRAINABLE)
 
-/// Proc called to reagent_scan an atom
+/// gives the informations to display on a reagent scanner when scanned, returns a string
 /atom/proc/reagent_scan()
 	var/list/render_list = list()
 
@@ -501,15 +501,11 @@
 		if(reagents.reagent_list.len > 0)
 			var/reagents_length = reagents.reagent_list.len
 			var/reagents_temp =	reagents.chem_temp
-			render_list += span_notice("[reagents_length] chemical agent[reagents_length > 1 ? "s" : ""] found at [reagents_temp]°K.") + "<br>"
+			render_list += span_notice("[reagents_length] chemical agent[reagents_length > 1 ? "s" : ""] found inside [src] at [reagents_temp]°K.") + "<br>"
 			for (var/re in reagents.reagent_list)
 				var/datum/reagent/R = re
 				var/amount = R.volume
 				render_list += span_notice("\t [amount] units of [re].") + "<br>"
-		else
-			render_list += span_notice("No active chemical agents found in [src].")
-	else
-		render_list += span_notice("No significant chemical agents found in [src].")
 
 	return jointext(render_list, "")
 
