@@ -139,5 +139,11 @@
 /// Maximum number of additional languages that can be selected.
 #define MAX_LANGUAGE_POINTS 4
 
+//Eye scarring
+#define SCAR_RIGHT "Right"
+#define SCAR_LEFT "Left"
+#define SCAR_DOUBLE "Double"
+#define SCAR_RANDOM "Random"
+
 #define NOT_SYNTHETIC FALSE
 #define IS_SYNTHETIC TRUE

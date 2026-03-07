@@ -311,3 +311,15 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+//cybersun
+
+/datum/supply_pack/tools/cybersun_webbing
+	name = "Cybersun Webbing"
+	desc = "Contains a lightweight multichromatic rigging kit for storage of materials on the fly."
+	cost = 500
+	contains = list(/obj/item/storage/belt/military/cybersun)
+	crate_name = "webbing crate"
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 0
+	faction_locked = TRUE
+

@@ -64,7 +64,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	for(var/V in cli?.prefs.all_quirks)
 		var/datum/quirk/Q = quirks[V]
 		if(Q)
-			user.add_quirk(Q, spawn_effects)
+			user.add_quirk(Q, cli, spawn_effects)
 		else
 			stack_trace("Invalid quirk \"[V]\" in client [cli.ckey] preferences")
 			cli?.prefs.all_quirks -= V

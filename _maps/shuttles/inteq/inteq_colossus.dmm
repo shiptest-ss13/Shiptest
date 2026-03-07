@@ -472,13 +472,16 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "dQ" = (
-/obj/docking_port/mobile{
-	dir = 8;
-	launch_status = 0;
-	preferred_direction = 4
+/obj/docking_port/stationary{
+	dwidth = 30;
+	height = 60;
+	width = 60;
+	disable_on_owner_ship_dock = 1;
+	dheight = 1;
+	name = "Colossus Port Beam Dock"
 	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
+/turf/template_noop,
+/area/template_noop)
 "dT" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
@@ -536,14 +539,6 @@
 /obj/structure/table/wood,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
-"ef" = (
-/obj/docking_port/stationary{
-	dwidth = 15;
-	height = 15;
-	width = 30
-	},
-/turf/template_noop,
-/area/template_noop)
 "en" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/yellow{
@@ -6010,6 +6005,12 @@
 "Kl" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock/external,
+/obj/docking_port/mobile{
+	dir = 2;
+	launch_status = 0;
+	port_direction = 8;
+	preferred_direction = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/external/dark)
 "Ko" = (
@@ -8806,37 +8807,6 @@
 (1,1,1) = {"
 re
 re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-"}
-(2,1,1) = {"
-re
-re
 vm
 hU
 hU
@@ -8863,9 +8833,8 @@ NR
 NR
 sy
 re
-re
 "}
-(3,1,1) = {"
+(2,1,1) = {"
 re
 re
 vm
@@ -8894,9 +8863,8 @@ cV
 cV
 sy
 re
-re
 "}
-(4,1,1) = {"
+(3,1,1) = {"
 re
 re
 vm
@@ -8925,9 +8893,8 @@ Jc
 QW
 sy
 re
-re
 "}
-(5,1,1) = {"
+(4,1,1) = {"
 re
 vm
 vm
@@ -8956,9 +8923,8 @@ YQ
 lf
 sy
 sy
-re
 "}
-(6,1,1) = {"
+(5,1,1) = {"
 re
 vm
 pD
@@ -8987,9 +8953,8 @@ AL
 bH
 hT
 sy
-re
 "}
-(7,1,1) = {"
+(6,1,1) = {"
 re
 vm
 Oa
@@ -9018,9 +8983,8 @@ Om
 gf
 zQ
 sy
-re
 "}
-(8,1,1) = {"
+(7,1,1) = {"
 re
 vm
 VP
@@ -9049,9 +9013,8 @@ zr
 nB
 IC
 sy
-re
 "}
-(9,1,1) = {"
+(8,1,1) = {"
 re
 vm
 ZK
@@ -9080,9 +9043,8 @@ ys
 Fp
 lC
 sy
-re
 "}
-(10,1,1) = {"
+(9,1,1) = {"
 re
 vm
 ey
@@ -9111,9 +9073,8 @@ PH
 Gk
 vc
 sy
-re
 "}
-(11,1,1) = {"
+(10,1,1) = {"
 re
 vm
 QU
@@ -9142,9 +9103,8 @@ cA
 qo
 qK
 sy
-re
 "}
-(12,1,1) = {"
+(11,1,1) = {"
 re
 vm
 mI
@@ -9173,9 +9133,8 @@ yP
 Bb
 nQ
 sy
-re
 "}
-(13,1,1) = {"
+(12,1,1) = {"
 re
 vm
 vm
@@ -9204,9 +9163,8 @@ sy
 VW
 sy
 sy
-re
 "}
-(14,1,1) = {"
+(13,1,1) = {"
 re
 re
 XD
@@ -9235,9 +9193,8 @@ yF
 Lo
 nE
 re
-re
 "}
-(15,1,1) = {"
+(14,1,1) = {"
 re
 re
 XD
@@ -9266,9 +9223,8 @@ JH
 Kd
 nE
 re
-re
 "}
-(16,1,1) = {"
+(15,1,1) = {"
 re
 re
 XD
@@ -9297,9 +9253,8 @@ nb
 bl
 nE
 re
-re
 "}
-(17,1,1) = {"
+(16,1,1) = {"
 re
 re
 XD
@@ -9328,9 +9283,8 @@ LT
 Ti
 nE
 re
-re
 "}
-(18,1,1) = {"
+(17,1,1) = {"
 re
 re
 XD
@@ -9359,9 +9313,8 @@ nE
 nE
 nE
 re
-re
 "}
-(19,1,1) = {"
+(18,1,1) = {"
 re
 re
 re
@@ -9390,9 +9343,8 @@ re
 re
 re
 re
-re
 "}
-(20,1,1) = {"
+(19,1,1) = {"
 re
 re
 re
@@ -9421,9 +9373,8 @@ Vu
 Vu
 re
 re
-re
 "}
-(21,1,1) = {"
+(20,1,1) = {"
 re
 al
 al
@@ -9452,9 +9403,8 @@ KB
 Vu
 Vu
 Vu
-re
 "}
-(22,1,1) = {"
+(21,1,1) = {"
 re
 RS
 TR
@@ -9483,9 +9433,8 @@ dx
 IB
 jT
 wL
-re
 "}
-(23,1,1) = {"
+(22,1,1) = {"
 re
 RS
 WV
@@ -9514,9 +9463,8 @@ FD
 Hy
 lv
 wL
-re
 "}
-(24,1,1) = {"
+(23,1,1) = {"
 re
 vK
 hZ
@@ -9545,9 +9493,8 @@ Ch
 Ch
 yi
 cJ
-re
 "}
-(25,1,1) = {"
+(24,1,1) = {"
 re
 RS
 oX
@@ -9576,9 +9523,8 @@ Ch
 DC
 aK
 wL
-re
 "}
-(26,1,1) = {"
+(25,1,1) = {"
 re
 RS
 CS
@@ -9607,9 +9553,8 @@ Ch
 wB
 MQ
 wL
-re
 "}
-(27,1,1) = {"
+(26,1,1) = {"
 re
 al
 al
@@ -9638,10 +9583,9 @@ XT
 pI
 uZ
 cJ
-re
 "}
-(28,1,1) = {"
-ef
+(27,1,1) = {"
+dQ
 Kl
 xt
 dT
@@ -9669,9 +9613,8 @@ As
 dr
 kG
 wL
-re
 "}
-(29,1,1) = {"
+(28,1,1) = {"
 re
 HA
 kR
@@ -9700,9 +9643,8 @@ sE
 pE
 JX
 wL
-re
 "}
-(30,1,1) = {"
+(29,1,1) = {"
 re
 KF
 wJ
@@ -9731,9 +9673,8 @@ Vu
 Vu
 Vu
 rC
-re
 "}
-(31,1,1) = {"
+(30,1,1) = {"
 re
 re
 wJ
@@ -9762,9 +9703,8 @@ ye
 Zn
 nZ
 re
-re
 "}
-(32,1,1) = {"
+(31,1,1) = {"
 re
 re
 zn
@@ -9793,9 +9733,8 @@ HQ
 qB
 nZ
 re
-re
 "}
-(33,1,1) = {"
+(32,1,1) = {"
 re
 re
 wJ
@@ -9824,9 +9763,8 @@ IJ
 yw
 nZ
 re
-re
 "}
-(34,1,1) = {"
+(33,1,1) = {"
 re
 re
 vs
@@ -9855,9 +9793,8 @@ ES
 RF
 nZ
 re
-re
 "}
-(35,1,1) = {"
+(34,1,1) = {"
 re
 re
 Ha
@@ -9886,9 +9823,8 @@ BJ
 Gu
 CB
 re
-re
 "}
-(36,1,1) = {"
+(35,1,1) = {"
 re
 re
 DR
@@ -9917,9 +9853,8 @@ vI
 nZ
 CB
 re
-re
 "}
-(37,1,1) = {"
+(36,1,1) = {"
 re
 re
 DW
@@ -9948,9 +9883,8 @@ zH
 Mk
 Sz
 re
-re
 "}
-(38,1,1) = {"
+(37,1,1) = {"
 re
 re
 TB
@@ -9979,9 +9913,8 @@ TV
 vF
 Sz
 re
-re
 "}
-(39,1,1) = {"
+(38,1,1) = {"
 re
 re
 vs
@@ -10010,9 +9943,8 @@ GN
 GN
 GN
 re
-re
 "}
-(40,1,1) = {"
+(39,1,1) = {"
 re
 re
 re
@@ -10041,9 +9973,8 @@ re
 re
 re
 re
-re
 "}
-(41,1,1) = {"
+(40,1,1) = {"
 re
 re
 re
@@ -10058,9 +9989,38 @@ re
 re
 rK
 Cb
-dQ
+va
 VZ
 yB
+re
+re
+re
+re
+re
+re
+re
+re
+re
+re
+re
+"}
+(41,1,1) = {"
+re
+re
+re
+lI
+re
+Fg
+re
+re
+re
+re
+re
+re
+re
+re
+re
+re
 re
 re
 re
@@ -10078,72 +10038,9 @@ re
 re
 re
 re
-lI
-re
-Fg
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-"}
-(43,1,1) = {"
-re
-re
-re
 re
 re
 lI
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-re
-"}
-(44,1,1) = {"
-re
-re
-re
-re
-re
-re
-re
 re
 re
 re
