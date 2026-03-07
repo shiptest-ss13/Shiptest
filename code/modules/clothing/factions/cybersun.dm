@@ -334,7 +334,7 @@
 	alt_desc = "A stripped down version of the neutron-star hardsuit for use by medical technicians. It is in travel mode. Produced by Cybersun Industries."
 	icon_state = "hardsuit1-cyberparamed"
 	hardsuit_type = "cyberparamed"
-	armor = list("melee" = 25, "bullet" = 30, "laser" = 40, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 20)
+	armor = list("melee" = 25, "bullet" = 35, "laser" = 40, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 20)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun/paramed
 	jetpack = null
 	icon = 'icons/obj/clothing/faction/cybersun/suits.dmi'
@@ -346,7 +346,7 @@
 	alt_desc = "A stripped down version of the neutron-star hardsuit for use by medical technicians. It is in travel mode. Produced by Cybersun Industries"
 	icon_state = "hardsuit1-cyberparamed"
 	hardsuit_type = "cyberparamed"
-	armor = list("melee" = 25, "bullet" = 30, "laser" = 40, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 20)
+	armor = list("melee" = 25, "bullet" = 35, "laser" = 40, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 20)
 	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/head.dmi'
 
