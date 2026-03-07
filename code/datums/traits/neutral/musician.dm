@@ -5,7 +5,7 @@
 	mob_traits = list(TRAIT_MUSICIAN)
 	gain_text = span_notice("You know everything about musical instruments.<")
 	lose_text = span_danger("You forget how musical instruments work.")
-	detectable = FALSE
+	quirk_flags = QUIRK_HUMAN_ONLY | QUIRK_HIDE_FROM_SCAN
 
 /datum/quirk/musician/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder

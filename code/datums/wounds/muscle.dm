@@ -5,7 +5,7 @@
 	name = "Muscle Wound"
 	wound_flags = ACCEPTS_SPLINT
 	bio_state_required = BIO_FLESH
-	excluded_zones = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST)
+
 	processes = TRUE
 	///How much do we need to regen. Will regen faster if we're splinted and or laying down
 	var/regen_ticks_needed
@@ -16,6 +16,7 @@
 	abstract = TRUE
 	required_limb_biostate = BIO_FLESH
 
+	excluded_zones = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST)
 	required_wounding_types = list(WOUND_BLUNT)
 	wound_series = WOUND_SERIES_FLESH_MUSCLE
 	weight = WOUND_MUSCLE_WEIGHT
