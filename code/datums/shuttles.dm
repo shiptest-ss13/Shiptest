@@ -454,7 +454,7 @@
 	name = "Skink-class Cargo Runner"
 	faction = /datum/faction/makossowarra
 	token_icon_state = "ship_tiny_generic"
-	prefix = "NTSV"
+	prefix = "MWSV"
 
 /datum/map_template/shuttle/subshuttles/bambulance
 	file_name = "cybersun_bambulance"
