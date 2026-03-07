@@ -55,7 +55,7 @@
 	if(samples_required == num_current)
 		. += span_notice("[src] has finished operation! Bring it back for a bonus!")
 	else
-		. += span_notice("[src] has drilled [PERCENT(num_current)]% of the way to its desired depth!")
+		. += span_notice("[src] has drilled [PERCENT(num_current)/samples_required]% of the way to its desired depth!")
 
 /obj/machinery/drill/sampler_mission/start_mining()
 	if(our_vein.vein_class < 4)
