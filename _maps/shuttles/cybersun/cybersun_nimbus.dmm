@@ -1157,15 +1157,15 @@
 /obj/item/clothing/head/soft/cybersun{
 	pixel_y = 9
 	},
-/obj/item/clothing/under/syndicate/cybersun{
+/obj/item/clothing/under/cybersun{
 	pixel_x = 9;
 	pixel_y = -5
 	},
-/obj/item/clothing/under/syndicate/cybersun{
+/obj/item/clothing/under/cybersun{
 	pixel_x = -8;
 	pixel_y = -5
 	},
-/obj/item/clothing/under/syndicate/cybersun{
+/obj/item/clothing/under/cybersun{
 	pixel_y = -5
 	},
 /obj/item/clothing/shoes/combat{
@@ -1283,7 +1283,7 @@
 /obj/structure/closet/wall/orange/directional/north{
 	name = "technician's closet"
 	},
-/obj/item/clothing/under/syndicate/cybersun/research{
+/obj/item/clothing/under/cybersun/coverall{
 	pixel_y = 9
 	},
 /obj/item/clothing/shoes/combat{
@@ -1726,9 +1726,12 @@
 	name = "weapons closet";
 	req_access_txt = "48"
 	},
-/obj/item/storage/guncase/pistol/rattlesnake,
-/obj/item/storage/guncase/pistol/rattlesnake{
-	pixel_y = 6
+/obj/effect/turf_decal/corner/transparent/cybersunteal/half{
+	dir = 8
+	},
+/obj/machinery/recharger{
+	pixel_x = -2;
+	pixel_y = 4
 	},
 /obj/item/storage/box/ammo/c9mm{
 	pixel_x = -5;
@@ -1738,24 +1741,17 @@
 	pixel_x = -5;
 	pixel_y = -1
 	},
-/obj/effect/turf_decal/corner/transparent/cybersunteal/half{
-	dir = 8
-	},
-/obj/item/melee/energy/flyssa{
-	pixel_x = 7;
-	pixel_y = -4
+/obj/item/storage/guncase/pistol/rattlesnake,
+/obj/item/storage/guncase/pistol/rattlesnake{
+	pixel_y = 6
 	},
 /obj/item/melee/energy/flyssa{
 	pixel_x = 4;
 	pixel_y = -1
 	},
-/obj/machinery/recharger{
-	pixel_x = -2;
-	pixel_y = 4
-	},
-/obj/machinery/recharger{
-	pixel_x = -5;
-	pixel_y = 4
+/obj/item/melee/energy/flyssa{
+	pixel_x = 7;
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -1815,25 +1811,38 @@
 	pixel_x = -6;
 	pixel_y = 5
 	},
-/obj/item/food/grown/sososi{
-	pixel_x = -6;
+/obj/item/food/grown/dote_berries{
+	pixel_x = 5
+	},
+/obj/item/food/grown/dote_berries{
+	pixel_x = 5
+	},
+/obj/item/food/grown/dote_berries{
+	pixel_x = 5
+	},
+/obj/item/food/grown/refa_li{
+	pixel_x = -11;
+	pixel_y = -6
+	},
+/obj/item/food/grown/refa_li{
+	pixel_x = -11;
+	pixel_y = -6
+	},
+/obj/item/food/grown/refa_li{
+	pixel_x = -11;
+	pixel_y = -7
+	},
+/obj/item/food/grown/siti{
+	pixel_x = -5;
+	pixel_y = 4
+	},
+/obj/item/food/grown/siti{
+	pixel_x = -7;
 	pixel_y = 5
 	},
-/obj/item/food/grown/sososi{
-	pixel_x = -6;
-	pixel_y = 5
-	},
-/obj/item/food/grown/dote_berries{
-	pixel_x = 5
-	},
-/obj/item/food/grown/dote_berries{
-	pixel_x = 5
-	},
-/obj/item/food/grown/dote_berries{
-	pixel_x = 5
-	},
-/obj/item/food/grown/dote_berries{
-	pixel_x = 5
+/obj/item/food/grown/siti{
+	pixel_x = -9;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
@@ -2148,20 +2157,20 @@
 	pixel_y = 10;
 	pixel_x = 5
 	},
-/obj/item/clothing/suit/armor/vest/capcarapace/cybersun{
+/obj/item/clothing/suit/armor/cybersun{
 	pixel_x = -5
 	},
-/obj/item/clothing/suit/cybersun_suit{
+/obj/item/clothing/suit/cybersun{
 	pixel_x = -6
 	},
-/obj/item/clothing/under/syndicate/cybersun/officer{
+/obj/item/clothing/under/cybersun/officer{
 	pixel_x = 8
 	},
 /obj/item/clothing/shoes/jackboots{
 	pixel_y = -7
 	},
 /obj/item/clothing/gloves/combat,
-/obj/item/clothing/head/HoS/cybersun{
+/obj/item/clothing/head/cybersun{
 	pixel_y = 8
 	},
 /obj/machinery/light_switch{

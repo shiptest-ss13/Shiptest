@@ -265,3 +265,28 @@
 	icon_state = "maid_arms"
 	item_state = "lgloves"
 	supports_variations = VOX_VARIATION
+
+//long gloves
+
+/obj/item/clothing/gloves/long
+	name = "long gloves"
+	desc = "Stylish, elbow-length gloves."
+	icon = 'icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/hands.dmi'
+	icon_state = "longgloveswhite"
+	item_state = "longgloveswhite"
+	unique_reskin = list(
+		"white long gloves" = "longgloveswhite",
+		"black long gloves" = "longglovesblack",
+	)
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/gloves/long/white
+	name = "white long gloves"
+	icon_state = "longgloveswhite"
+	current_skin = "white long gloves"
+
+/obj/item/clothing/gloves/long/black
+	name = "black long gloves"
+	icon_state = "longglovesblack"
+	current_skin = "black long gloves"

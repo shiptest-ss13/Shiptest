@@ -172,20 +172,6 @@
  * Misc
  */
 
-/obj/item/clothing/suit/cybersun_suit
-	name = "cybersun suit"
-	desc = "A plain white suit commonly used by Cybersun's officers."
-	icon_state = "cybersun_suit"
-	item_state = "cybersun_suit"
-
-	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
-	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
-
-	equip_sound = 'sound/items/equip/cloth_equip.ogg'
-	equip_delay_self = EQUIP_DELAY_COAT
-	equip_delay_other = EQUIP_DELAY_COAT * 1.5
-	strip_delay = EQUIP_DELAY_COAT * 1.5
-
 /obj/item/clothing/suit/straight_jacket
 	name = "straight jacket"
 	desc = "A suit that completely restrains the wearer. Manufactured by Antyphun Corp." //Straight jacket is antifun
