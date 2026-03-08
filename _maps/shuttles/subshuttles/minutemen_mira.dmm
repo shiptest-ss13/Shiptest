@@ -55,7 +55,20 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
-/obj/machinery/light/directional/west,
+/obj/machinery/button/shieldwallgen{
+	dir = 4;
+	pixel_y = -9;
+	pixel_x = -18;
+	id = "glaucus_starboard_holo";
+	name = "Shuttle Holofield"
+	},
+/obj/machinery/button/door{
+	id = "glaucus_starboard_blast";
+	name = "Checkpoint Shutters";
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "g" = (
@@ -80,6 +93,7 @@
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 6
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "h" = (
@@ -158,22 +172,21 @@
 /area/ship/bridge)
 "m" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/button/door{
-	id = "glaucus_starboard_blast";
-	name = "Checkpoint Shutters";
-	dir = 8;
-	pixel_x = 20;
-	pixel_y = 0
-	},
-/obj/machinery/button/shieldwallgen{
-	dir = 8;
-	pixel_y = -9;
-	pixel_x = 18;
-	id = "glaucus_starboard_holo";
-	name = "Shuttle Holofield"
-	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
+	},
+/obj/structure/closet/emcloset/wall/directional/east,
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_y = -4;
+	pixel_x = 7
+	},
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_y = -4;
+	pixel_x = 7
+	},
+/obj/item/clothing/mask/gas/clip{
+	pixel_x = 7;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -582,6 +595,7 @@
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 5
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Q" = (
@@ -680,27 +694,27 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
-/obj/machinery/light/directional/west,
-/turf/open/floor/plasteel/tech,
-/area/ship/bridge)
-"Z" = (
-/obj/machinery/button/door{
-	id = "glaucus_port_blast";
-	name = "Checkpoint Shutters";
-	dir = 8;
-	pixel_x = 20;
-	pixel_y = 0
-	},
 /obj/machinery/button/shieldwallgen{
-	dir = 8;
+	dir = 4;
 	pixel_y = 9;
-	pixel_x = 18;
+	pixel_x = -18;
 	id = "glaucus_port_holo";
 	name = "Shuttle Holofield"
 	},
+/obj/machinery/button/door{
+	id = "glaucus_port_blast";
+	name = "Checkpoint Shutters";
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"Z" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/structure/closet/firecloset/wall/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 
