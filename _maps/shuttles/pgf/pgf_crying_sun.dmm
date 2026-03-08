@@ -2309,14 +2309,14 @@
 /obj/item/clothing/suit/space/gezena/marine,
 /obj/item/clothing/head/helmet/space/gezena/marine,
 /obj/item/clothing/mask/breath/pgfmask,
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 8
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 4
 	},
 /obj/machinery/light/directional/west,
-/turf/open/floor/plasteel/tech,
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/eva)
 "mW" = (
 /obj/effect/turf_decal/borderfloor,
@@ -2511,14 +2511,14 @@
 /obj/item/clothing/suit/space/gezena/marine,
 /obj/item/clothing/head/helmet/space/gezena/marine,
 /obj/item/clothing/mask/breath/pgfmask,
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 9
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/north,
-/turf/open/floor/plasteel/tech,
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/eva)
 "od" = (
 /obj/structure/table/wood,
@@ -3265,10 +3265,6 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
-"sy" = (
-/obj/machinery/newscaster/directional/south,
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/canteen)
 "sA" = (
 /obj/effect/turf_decal/corner/transparent/black/full,
 /obj/effect/turf_decal/trimline/opaque/lightgrey/line{
@@ -3557,6 +3553,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
+"tU" = (
+/obj/machinery/newscaster/directional/south,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
 "ug" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5933,16 +5933,16 @@
 /obj/item/clothing/suit/space/gezena/marine,
 /obj/item/clothing/head/helmet/space/gezena/marine,
 /obj/item/clothing/mask/breath/pgfmask,
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 10
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 4
 	},
 /obj/machinery/camera/autoname{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech,
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/eva)
 "GN" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -7401,16 +7401,14 @@
 /obj/item/clothing/suit/space/gezena/marine,
 /obj/item/clothing/head/helmet/space/gezena/marine,
 /obj/item/clothing/mask/breath/pgfmask,
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 6
-	},
 /obj/machinery/light/directional/south,
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line,
 /obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 5;
 	pixel_x = 0;
 	pixel_y = 0
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/eva)
 "MY" = (
 /obj/machinery/atmospherics/components/trinary/mixer/layer2{
@@ -7734,13 +7732,11 @@
 /obj/item/clothing/suit/space/gezena/marine,
 /obj/item/clothing/head/helmet/space/gezena/marine,
 /obj/item/clothing/mask/breath/pgfmask,
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 10
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech,
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/eva)
 "OV" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -10543,7 +10539,7 @@ sc
 HD
 iX
 lv
-sy
+tU
 GJ
 Ov
 YC
