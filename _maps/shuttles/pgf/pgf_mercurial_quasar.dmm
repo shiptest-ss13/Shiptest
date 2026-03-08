@@ -99,7 +99,8 @@
 	},
 /obj/item/storage/guncase/pistol/kalixpistol{
 	pixel_y = -12;
-	pixel_x = -1
+	pixel_x = -1;
+	mag_count = 3
 	},
 /obj/item/clothing/shoes/combat/gezena{
 	pixel_y = -3;
@@ -1479,7 +1480,6 @@
 "ta" = (
 /obj/machinery/modular_computer/console/preset/command{
 	dir = 2;
-	layer = 3.09;
 	icon_state = "computer-right"
 	},
 /obj/effect/turf_decal/techfloor{
@@ -2881,16 +2881,20 @@
 	dir = 9
 	},
 /obj/item/radio/intercom/wideband/directional/north{
-	pixel_y = 28;
+	pixel_y = 30;
 	pixel_x = -4
+	},
+/obj/machinery/computer/crew{
+	dir = 2;
+	icon_state = "computer-left"
 	},
 /obj/item/radio/intercom/directional/north{
 	pixel_x = 14;
 	pixel_y = 30
 	},
-/obj/machinery/computer/crew{
-	dir = 2;
-	icon_state = "computer-left"
+/obj/item/radio/intercom/directional/north{
+	pixel_x = 14;
+	pixel_y = 40
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/hallway/fore)
