@@ -39,7 +39,7 @@
 
 //unfortunately: the behavior for normal mission drills is different than what I want.
 /obj/machinery/drill/sampler_mission
-	name = "deep-drust sampling drill"
+	name = "deep-crust sampling drill"
 	desc = "A micro-scale laser-assisted deep survey drill. Well-built, given the conditions that they regularly endure. As long as the laser is intact, it'll be an easy fix."
 	var/num_current = 0
 	var/samples_required = 10
