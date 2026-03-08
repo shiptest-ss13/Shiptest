@@ -698,6 +698,10 @@
 	pixel_x = -8;
 	pixel_y = 10
 	},
+/obj/item/storage/toolbox/ammo/a308{
+	pixel_x = 0;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "fw" = (
@@ -2609,51 +2613,48 @@
 	name = "ammunition storage"
 	},
 /obj/item/ammo_box/magazine/cm5_9mm{
-	pixel_x = -8
+	pixel_x = -13;
+	pixel_y = -8
 	},
 /obj/item/ammo_box/magazine/cm5_9mm{
-	pixel_x = -9;
-	pixel_y = -3
+	pixel_x = -13;
+	pixel_y = -8
 	},
 /obj/item/ammo_box/magazine/cm5_9mm{
-	pixel_x = -10;
+	pixel_x = -13;
+	pixel_y = -8
+	},
+/obj/item/ammo_box/magazine/cm23{
+	pixel_x = 10;
+	pixel_y = -11
+	},
+/obj/item/ammo_box/magazine/cm23{
+	pixel_x = 10;
+	pixel_y = -11
+	},
+/obj/item/ammo_box/magazine/cm23{
+	pixel_x = 10;
+	pixel_y = -11
+	},
+/obj/item/ammo_box/magazine/cm15_12g{
+	pixel_x = -1;
 	pixel_y = -6
 	},
-/obj/item/ammo_box/magazine/cm5_9mm{
-	pixel_x = -7;
-	pixel_y = -9
-	},
-/obj/item/ammo_box/magazine/cm5_9mm{
-	pixel_x = -6;
-	pixel_y = -12
-	},
-/obj/item/ammo_box/magazine/cm5_9mm{
-	pixel_x = -3;
-	pixel_y = -15
-	},
-/obj/item/ammo_box/magazine/cm23{
-	pixel_x = 16;
-	pixel_y = -14
-	},
-/obj/item/ammo_box/magazine/cm23{
-	pixel_x = 12;
-	pixel_y = -12
-	},
-/obj/item/ammo_box/magazine/cm23{
-	pixel_x = 9;
-	pixel_y = -15
+/obj/item/ammo_box/magazine/cm15_12g{
+	pixel_x = -1;
+	pixel_y = -6
 	},
 /obj/item/ammo_box/magazine/cm15_12g{
-	pixel_x = 5;
-	pixel_y = 4
+	pixel_x = -1;
+	pixel_y = -6
 	},
-/obj/item/ammo_box/magazine/cm15_12g{
+/obj/item/ammo_box/magazine/f4_308{
 	pixel_x = 7;
-	pixel_y = 7
+	pixel_y = 2
 	},
-/obj/item/ammo_box/magazine/cm15_12g{
-	pixel_x = 12;
-	pixel_y = 7
+/obj/item/ammo_box/magazine/f4_308{
+	pixel_x = 7;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
@@ -3605,21 +3606,21 @@
 	pixel_y = 15;
 	pixel_x = -3
 	},
-/obj/item/gun/ballistic/automatic/smg/cm5/no_mag{
-	pixel_x = -8;
+/obj/item/gun/ballistic/automatic/marksman/f4{
+	pixel_x = -11;
 	pixel_y = 28
 	},
 /obj/item/gun/ballistic/automatic/smg/cm5/no_mag{
 	pixel_x = -10;
 	pixel_y = 23
 	},
+/obj/item/gun/ballistic/shotgun/cm15/no_mag{
+	pixel_x = -11;
+	pixel_y = 16
+	},
 /obj/item/gun/ballistic/automatic/pistol/cm23/no_mag{
 	pixel_x = -6;
 	pixel_y = 5
-	},
-/obj/item/gun/ballistic/shotgun/cm15/no_mag{
-	pixel_x = -11;
-	pixel_y = 15
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
@@ -4124,6 +4125,7 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel,
 /area/ship/crew/office)
 "DM" = (
