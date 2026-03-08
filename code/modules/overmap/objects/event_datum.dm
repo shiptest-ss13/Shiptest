@@ -445,7 +445,7 @@
 	if(current_overmap != other_wormhole.current_overmap)
 		S.move_overmaps(other_wormhole.current_overmap, other_wormhole.x, other_wormhole.y)
 	else
-		S.move_overmaps(other_wormhole.x, other_wormhole.y)
+		S.overmap_move(other_wormhole.x, other_wormhole.y)
 	S.overmap_step(S.get_heading())
 
 //Carp "meteors" - throws carp at the ship
