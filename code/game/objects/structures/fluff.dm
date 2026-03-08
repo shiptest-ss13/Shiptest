@@ -274,3 +274,9 @@
 	light_color = "#C3E381"
 	light_range = 2
 	light_power = 1
+
+/obj/structure/fluff/ladder
+	name = "old ladder"
+	desc = "An old, bent ladder - now practically unusable."
+	icon = 'icons/obj/structures.dmi'
+	icon_state = "ladder00"

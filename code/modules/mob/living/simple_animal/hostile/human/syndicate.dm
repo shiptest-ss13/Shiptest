@@ -360,6 +360,11 @@
 	casingtype = /obj/item/ammo_casing/c57x39mm
 	projectilesound = 'sound/weapons/gun/smg/sidewinder.ogg'
 
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg/sidewinder/ballistic_armour
+	desc = "A deserter from the Gorlex Marauders turned pirate. They hold a PDW level to their yellow visor, sweeping the room with disdain and precision."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/trooper
+	armor_base = /obj/item/clothing/suit/armor/ramzi/bulletproof
+
 /mob/living/simple_animal/hostile/human/ramzi/ranged/hydra
 	name = "Ramzi Clique Trooper"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They scan the room with their assault rifle held at eye level, sweeping every corner."
@@ -396,6 +401,10 @@
 	wander = 0
 	retreat_distance = 0
 	environment_smash = 0
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/hydra/dmr/sentry/ballistic_armour
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/trooper
+	armor_base = /obj/item/clothing/suit/armor/ramzi/bulletproof
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/officer
 	name = "Ramzi Clique Quartermaster"
@@ -464,6 +473,11 @@
 	projectilesound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 	l_hand =/obj/item/gun/ballistic/shotgun/automatic/bulldog
 	shoot_point_blank = TRUE
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun/ballistic_armour
+	desc = "A deserter from the Gorlex Marauders turned pirate. Their yellow goggles hide an expression of malice, a heavy combat shotgun already trained in your direction."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/trooper
+	armor_base = /obj/item/clothing/suit/armor/ramzi/bulletproof
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun/incendiary
 	name = "Ramzi Clique Firestarter"
@@ -736,18 +750,19 @@
 
 /mob/living/simple_animal/hostile/human/ramzi/civilian
 	name = "Ramzi Clique Technician"
-	desc = "A deserter from the Gorlex Marauders turned pirate. This one is not only unarmed, but a coward as well."
+	desc = "A deserter from the Gorlex Marauders turned pirate. A tattered respirator and hard-hat conceals their identity as they cower."
 	minimum_distance = 10
 	retreat_distance = 10
 	obj_damage = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/engi
 	armor_base = /obj/item/clothing/suit/ramzi //nope
+	var/helpcall = "GUARDS!!!"
 
 /mob/living/simple_animal/hostile/human/ramzi/civilian/Aggro()
 	..()
 	summon_backup(15)
-	say("GUARDS!!")
+	say(helpcall)
 
 /mob/living/simple_animal/hostile/human/ramzi/civilian/space
 	name = "Ramzi Clique Technician"
@@ -764,6 +779,16 @@
 	desc = "A deserter from the Gorlex Marauders turned pirate. This one is not only unarmed, but also just got out the shower."
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/towel
 	armor_base = null
+	helpcall = "HELP!!!"
+
+/mob/living/simple_animal/hostile/human/ramzi/civilian/runt
+	name = "Ramzi Clique Runt"
+	desc = "A deserter from the Gorlex Marauders turned pirate. This one is not only unarmed, but a coward as well."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/runt/noarmour
+	helpcall = "I DON'T WANT TO DIE!! HELP!!!"
+
+/mob/living/simple_animal/hostile/human/ramzi/civilian/runt/flapcap
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/runt/noarmour/flapcap
 
 /mob/living/simple_animal/hostile/viscerator
 	name = "viscerator"

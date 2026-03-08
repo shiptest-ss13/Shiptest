@@ -56,6 +56,14 @@
 	neck = /obj/item/clothing/neck/shemagh/ramzi
 	mask = /obj/item/clothing/mask/breath/facemask
 
+/obj/effect/mob_spawn/human/corpse/ramzi/runt/noarmour/flapcap
+	name = "Flap-cap Ramzi Runt Unarmoured"
+	outfit = /datum/outfit/ramzi/runt/noarmour/flapcap
+
+/datum/outfit/ramzi/runt/noarmour/flapcap
+	name = "Flap-Cap Unarmoured Ramzi Runt Corpse"
+	head = /obj/item/clothing/head/ramzi/flap
+
 /obj/effect/mob_spawn/human/corpse/ramzi/engi
 	name = "Ramzi Engineer"
 	outfit = /datum/outfit/ramzi/engi
