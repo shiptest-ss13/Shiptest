@@ -2083,6 +2083,12 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
+"lk" = (
+/obj/structure/railing/thin/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
 "ls" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
@@ -2105,6 +2111,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/toilet/two)
 "lv" = (
+/obj/structure/railing/thin{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "lw" = (
@@ -3555,6 +3564,9 @@
 /area/ship/crew/dorm)
 "tU" = (
 /obj/machinery/newscaster/directional/south,
+/obj/structure/railing/thin/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "ug" = (
@@ -3711,6 +3723,13 @@
 	layer = 2.901
 	},
 /obj/effect/turf_decal/industrial/hatch/orange,
+/obj/machinery/button/door{
+	dir = 2;
+	id = "c-sun_cargo_shut";
+	name = "Window Shutters";
+	pixel_x = 6;
+	pixel_y = 22
+	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/hallway/central)
 "vk" = (
@@ -4513,7 +4532,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "zo" = (
-/obj/machinery/door/poddoor/multi_tile/three_tile_hor,
+/obj/machinery/door/poddoor,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security)
 "zp" = (
@@ -5220,6 +5239,9 @@
 /area/ship/bridge)
 "CA" = (
 /obj/machinery/light/directional/east,
+/obj/structure/railing/thin/corner{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "CC" = (
@@ -5285,6 +5307,10 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/poddoor/shutters{
+	id = "c-sun_cargo_shut";
+	dir = 2
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "CT" = (
@@ -6052,6 +6078,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/eva)
+"HB" = (
+/obj/structure/railing/thin/corner,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
 "HD" = (
 /obj/structure/table,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -10538,7 +10568,7 @@ Vx
 sc
 HD
 iX
-lv
+HB
 tU
 GJ
 Ov
@@ -10638,7 +10668,7 @@ xo
 KZ
 wJ
 CA
-lv
+lk
 GJ
 Hp
 xT
@@ -10939,7 +10969,7 @@ Qk
 Qk
 Qk
 ki
-af
+zo
 mN
 aF
 RS
@@ -10972,7 +11002,7 @@ MN
 MN
 MN
 FM
-af
+zo
 xN
 aF
 RS
