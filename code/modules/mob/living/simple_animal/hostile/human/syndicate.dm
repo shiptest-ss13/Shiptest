@@ -321,6 +321,9 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/runt
 	retreat_distance = 7 //they run more because they're untrained
 
+/mob/living/simple_animal/hostile/human/ramzi/ranged/runt/flapcap
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/runt/flapcap //i was considering making it random but i dont think itd end well
+
 /mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth
 	name = "Ramzi Clique Operative"
 	desc = "A deserter from the Gorlex Marauders turned pirate. They warily glance around, a modified machinepistol held at the ready."
@@ -384,6 +387,15 @@
 	minimum_distance = 7
 	vision_range = 12
 	aggro_vision_range = 14
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/hydra/dmr/sentry
+	vision_range = 14
+	aggro_vision_range = 14
+	minimum_distance = 14
+	stop_automated_movement = 1
+	wander = 0
+	retreat_distance = 0
+	environment_smash = 0
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/officer
 	name = "Ramzi Clique Quartermaster"

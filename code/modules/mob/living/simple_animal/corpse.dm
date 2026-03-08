@@ -36,6 +36,16 @@
 	neck = /obj/item/clothing/neck/shemagh/ramzi
 	ears = /obj/item/radio/headset //civilian
 
+/obj/effect/mob_spawn/human/corpse/ramzi/runt/flapcap
+	name = "Flap-cap Ramzi Runt"
+	outfit = /datum/outfit/ramzi/runt/flapcap
+
+/datum/outfit/ramzi/runt/flapcap
+	name = "Flap-Cap Ramzi Runt Corpse"
+	head = /obj/item/clothing/head/ramzi/flap
+	neck = /obj/item/clothing/neck/shemagh/ramzi
+	ears = /obj/item/radio/headset //civilian
+
 /obj/effect/mob_spawn/human/corpse/ramzi/runt/noarmour
 	name = "Ramzi Runt Unarmoured"
 	outfit = /datum/outfit/ramzi/runt/noarmour
