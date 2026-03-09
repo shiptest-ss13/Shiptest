@@ -2835,19 +2835,27 @@
 	},
 /obj/effect/turf_decal/industrial/warning/corner,
 /obj/machinery/light/directional/west,
-/obj/item/pickaxe,
-/obj/item/pickaxe,
-/obj/item/mining_scanner{
-	pixel_x = 4;
-	pixel_y = -3
+/obj/structure/closet/crate/wooden{
+	desc = "A sturdy wooden crate with the label 'MINING EQUIPMENT' stamped into the lid.";
+	name = "mining equipment"
 	},
 /obj/item/storage/bag/ore{
 	pixel_x = -7
 	},
-/obj/item/stack/marker_beacon/ten,
-/obj/structure/closet/crate/wooden{
-	desc = "A sturdy wooden crate with the label 'MINING EQUIPMENT' stamped into the lid.";
-	name = "mining equipment"
+/obj/item/storage/bag/ore{
+	pixel_x = -7
+	},
+/obj/item/trench_tool/gezena{
+	pixel_y = 4;
+	pixel_x = -1
+	},
+/obj/item/trench_tool/gezena{
+	pixel_y = 4;
+	pixel_x = -1
+	},
+/obj/item/mining_scanner{
+	pixel_x = 4;
+	pixel_y = -3
 	},
 /obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/tech,

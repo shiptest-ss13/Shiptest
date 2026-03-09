@@ -3053,17 +3053,23 @@
 /area/ship/crew/cryo)
 "EI" = (
 /obj/structure/crate_shelf,
-/obj/structure/closet/crate/engineering,
-/obj/item/pickaxe,
-/obj/item/pickaxe,
-/obj/item/mining_scanner,
-/obj/item/storage/bag/ore{
-	pixel_x = -7
-	},
-/obj/item/storage/bag/ore{
-	pixel_x = -7
-	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/crate/secure/exo{
+	desc = "A lock-enabled crate used to carry mining supplies.";
+	name = "mining equipment"
+	},
+/obj/item/storage/bag/ore{
+	pixel_x = -7
+	},
+/obj/item/storage/bag/ore{
+	pixel_x = -7
+	},
+/obj/item/pickaxe,
+/obj/item/pickaxe/drill,
+/obj/item/mining_scanner{
+	pixel_x = 3;
+	pixel_y = -3
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "Fm" = (
