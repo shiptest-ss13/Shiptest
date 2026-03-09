@@ -82,3 +82,6 @@
 
 /obj/effect/projectile/tracer/gauss
 	icon_state = "hc_gauss"
+
+/obj/effect/projectile/tracer/e20hitscan
+	icon_state = "beam_e20"

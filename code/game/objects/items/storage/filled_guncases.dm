@@ -201,11 +201,6 @@
 	gun_type = /obj/item/gun/ballistic/automatic/m12_sporter
 	mag_type = /obj/item/ammo_box/magazine/m12_sporter
 
-/obj/item/storage/guncase/m13
-	gun_type = /obj/item/gun/ballistic/automatic/m12_sporter/mod
-	mag_type = /obj/item/ammo_box/magazine/m12_sporter
-	mag_count = 3
-
 /obj/item/storage/guncase/m15
 	gun_type = /obj/item/gun/ballistic/automatic/m15
 	mag_type = /obj/item/ammo_box/magazine/m15

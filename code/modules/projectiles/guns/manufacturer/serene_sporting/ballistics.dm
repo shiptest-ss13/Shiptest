@@ -178,8 +178,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/m20_auto_elite)
 
 	manufacturer = MANUFACTURER_SERENE
 
-	valid_attachments = SERENE_ATTACHMENTS
-	slot_available = SERENE_ATTACH_SLOTS
+	valid_attachments = list(/obj/item/attachment/rail_light, /obj/item/attachment/bayonet,/obj/item/attachment/scope, /obj/item/attachment/ammo_counter,/obj/item/attachment/gun, /obj/item/attachment/m12_burst)
+	slot_available = list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_RAIL = 1, ATTACHMENT_SLOT_SCOPE = 1, ATTACHMENT_SLOT_STOCK = 1)
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -211,24 +211,6 @@ EMPTY_GUN_HELPER(automatic/m12_sporter)
 
 /obj/item/ammo_box/magazine/m12_sporter/empty
 	start_empty = TRUE
-
-/obj/item/gun/ballistic/automatic/m12_sporter/mod
-	name = "Model 13 \"Larker\""
-	desc = "A common after-market modification of the Model 12 \"Sporter\" rifle, keyed to fire a three round burst."
-	burst_size = 3
-	burst_delay = 0.6
-
-	icon_state = "larker"
-	item_state = "larker"
-
-	wear_minor_threshold = 240
-	wear_major_threshold = 720
-	wear_maximum = 1200
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
-	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "triptych")
-	default_firemode = FIREMODE_BURST
-
-EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
 
 /* woodsman */
 

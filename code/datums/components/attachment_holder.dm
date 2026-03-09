@@ -130,7 +130,7 @@
 	for(var/obj/item/attach as anything in attachments)
 		SEND_SIGNAL(attach, COMSIG_ATTACHMENT_EXAMINE_MORE, user, examine_list)
 
-/datum/component/attachment_holder/proc/do_attach(obj/item/attachment, mob/user, bypass_checks)
+/datum/component/attachment_holder/proc/do_attach(obj/item/attachment/attachment, mob/user, bypass_checks)
 	var/slot = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_GET_SLOT)
 	slot = attachment_slot_from_bflag(slot)
 	if(!(is_type_in_typecache(attachment,valid_types)))
@@ -138,6 +138,11 @@
 		return
 	if(!slot_room[slot])
 		to_chat(user, span_notice("[parent] does not contain room for [attachment]!"))
+		return
+	if(attachment.attach_sound)
+		playsound(parent, attachment.attach_sound, 50, FALSE)
+	if(!do_after(user, attachment.attachment_time, parent))
+		to_chat(user, span_warning("Your attaching of the [attachment.name] was interrupted!"))
 		return
 	slot_room[slot]--
 	. = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_ATTACH, parent, user, bypass_checks)

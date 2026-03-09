@@ -3,12 +3,17 @@
 	desc = "Basetype you probably shouldnt see."
 	icon = 'icons/obj/guns/manufacturer/eoehoma/e20_attachment_obj.dmi'
 	icon_state = "silencer"
+	attach_features_flags = null
+	attach_sound = 'sound/items/drill_use.ogg'
+	attachment_time = 10 SECONDS
 
 	var/gun_icon_state = "e20"
 	var/add_desc = "It seems to have been modified with an scattershot mod, scattering the lasers in a radius in exchange for large damage dropoff"
 
 /obj/item/attachment/e20mod/apply_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
+	if(!.)
+		return FALSE
 	gun.desc = (gun::desc + "\n" + span_notice(add_desc))
 	gun.base_icon_state = gun_icon_state
 	gun.item_state = gun_icon_state
@@ -76,7 +81,7 @@
 /obj/item/attachment/e20mod/heavy/apply_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
 	var/obj/item/gun/energy/laser/e20/our_gun = gun
-	our_gun.ammo_type = list(/obj/item/ammo_casing/energy/lasergun/eoehoma/heavy)
+	our_gun.ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma/e20_heavy)
 	our_gun.update_ammo_types()
 	gun.chambered = null
 	our_gun.recharge_newshot()
@@ -85,7 +90,7 @@
 /obj/item/attachment/e20mod/heavy/remove_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
 	var/obj/item/gun/energy/laser/e20/our_gun = gun
-	our_gun.ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma/mining)
+	our_gun.ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma/e20_heavy)
 	our_gun.update_ammo_types()
 	gun.chambered = null
 	our_gun.recharge_newshot()
@@ -94,7 +99,7 @@
 
 /obj/item/attachment/e20mod/efficency
 	name = "E-20 Rapid Efficency mod"
-	desc = "A mod for the E-20 that makes the plasma heater less powerful, causing the resulting blast to be less damaging. Related to the E-50, and may even contain parts from it."
+	desc = "A mod for the E-20 that makes the plasma heater less powerful, causing the resulting blast to be less damaging. Related to the Wasp, and may even contain parts from it."
 
 	icon_state = "e20_efficency"
 	gun_icon_state = "e20_efficency"
@@ -124,3 +129,37 @@
 	gun.chambered = null
 	our_gun.recharge_newshot()
 	gun.update_appearance()
+
+/obj/item/attachment/e20mod/pierce
+	name = "E-20 Piercing Laser mod"
+	desc = "A mod for the E-20 replaces the lens with a narrow lens, along with replacing the plasma internals with a kalixcian style laser of concentrated light."
+
+	icon_state = "e20_pierce"
+	gun_icon_state = "e20_pierce"
+	add_desc = "It seems to have been modified with piercing mod, making the weapon a true laser weapon, in exchange for poor long-range effectiveness."
+
+	allow_icon_state_prefixes = TRUE
+	slot = ATTACHMENT_SLOT_MUZZLE
+
+	spread_mod = 0
+	spread_unwielded_mod = 10
+	wield_delay = 0.1 SECONDS
+
+/obj/item/attachment/e20mod/pierce/apply_attachment(obj/item/gun/gun, mob/user)
+	. = ..()
+	var/obj/item/gun/energy/laser/e20/our_gun = gun
+	our_gun.ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma/e20_pierce)
+	our_gun.update_ammo_types()
+	gun.chambered = null
+	our_gun.recharge_newshot()
+	gun.update_appearance()
+
+/obj/item/attachment/e20mod/pierce/remove_attachment(obj/item/gun/gun, mob/user)
+	. = ..()
+	var/obj/item/gun/energy/laser/e20/our_gun = gun
+	our_gun.ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma/e20_pierce)
+	our_gun.update_ammo_types()
+	gun.chambered = null
+	our_gun.recharge_newshot()
+	gun.update_appearance()
+

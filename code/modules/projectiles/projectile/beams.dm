@@ -438,10 +438,11 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser/emitter
 	impact_type = /obj/effect/projectile/impact/laser/emitter
 	impact_effect_type = null
+	var/fire_color = "green"
 
 /obj/projectile/beam/emitter/hitscan/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	var/turf/targets_turf = target.loc
 	if(!isopenturf(targets_turf))
 		return
-	targets_turf.ignite_turf(rand(8,22), "green")
+	targets_turf.ignite_turf(rand(8,22), fire_color)

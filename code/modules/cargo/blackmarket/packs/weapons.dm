@@ -313,15 +313,15 @@
 	availability_prob = 20
 
 /datum/blackmarket_item/weapon/guncase/larker
-	name = "Model 13 \"Larker\""
-	desc = "Gotta deal for you broski. We got this mod of those shoddy Sporter Rifles an' you can buy one, or two, orreven three if yer int' that."
-	item = /obj/item/storage/guncase/m13
+	name = "Model 12 'assault rifle' coversion kit"
+	desc = "As seen on tv, specifically the failed assasination attempt on Kiirv-Waha; Hey, no publicity is bad publicity! Gives the Sporter a burst fire and full auto mode, at cost to accuracy."
+	item = /obj/item/attachment/m12_burst
 
 	cost_min = 500
 	cost_max = 1200
 	stock_min = 3
 	stock_max = 5
-	availability_prob = 40
+	availability_prob = 35
 
 /datum/blackmarket_item/weapon/guncase/sawn_illestren
 	name = "Sawn off Illestren Rifle"

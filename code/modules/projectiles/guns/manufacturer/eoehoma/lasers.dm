@@ -71,6 +71,55 @@
 	spread = 0
 	spread_unwielded = 10
 
+/obj/item/ammo_casing/energy/laser/eoehoma/e20_heavy
+	projectile_type = /obj/projectile/beam/emitter/hitscan/e20
+	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
+	e_cost = 10000
+	delay = 1 SECONDS
+
+//heavy
+/obj/projectile/beam/emitter/hitscan/e20
+	damage = 35
+	fire_color = "red"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
+	light_color = COLOR_SOFT_RED
+	tracer_type = /obj/effect/projectile/tracer/heavy_laser
+	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
+	impact_type = /obj/effect/projectile/impact/heavy_laser
+
+/obj/item/ammo_casing/energy/laser/eoehoma/e20_pierce
+	projectile_type = /obj/projectile/beam/hitscan/e20hitscan
+	fire_sound = 'sound/weapons/gun/energy/kalixrifle.ogg'
+	e_cost = 1000
+	delay = 1 SECONDS
+
+//pierce
+/obj/projectile/beam/hitscan/e20hitscan
+	name = "concentrated mining beam"
+	tracer_type = /obj/effect/projectile/tracer/e20hitscan
+	muzzle_type = /obj/effect/projectile/muzzle/e20hitscan
+	impact_type = /obj/effect/projectile/impact/e20hitscan
+
+	projectile_piercing = PASSMOB
+
+	range = 8
+	damage_constant = 0.7
+	damage = 40
+	armour_penetration = 60
+
+
+/obj/projectile/beam/hitscan/e20hitscan/prehit_pierce(atom/target)
+	. = ..()
+	if(ismineralturf(target))
+		return PROJECTILE_PIERCE_HIT
+
+/obj/projectile/beam/hitscan/e20hitscan/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(!isclosedturf(target))
+		return BULLET_ACT_HIT
+	damage *= 2
+
+	return BULLET_ACT_HIT
 
 /obj/item/gun/energy/laser/e50
 	name = "E-50 energy emitter"

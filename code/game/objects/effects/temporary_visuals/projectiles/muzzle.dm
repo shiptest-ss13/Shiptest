@@ -44,3 +44,6 @@
 
 /obj/effect/projectile/muzzle/gauss
 	icon_state = "muzzle_gauss_rifle"
+
+/obj/effect/projectile/muzzle/e20hitscan
+	icon_state = "muzzle_e20"

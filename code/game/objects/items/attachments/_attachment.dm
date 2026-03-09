@@ -15,6 +15,10 @@
 	var/list/signals = list()
 	///Component that handles most of the logic of attachments
 	var/datum/component/attachment/attachment_comp
+	///How long does it take to attach this attachment?
+	var/attachment_time = 5 SECONDS
+	///The sound used whlie attaching. Not the same as after attaching
+	var/attach_sound
 
 
 	/// the cell in the gun, if any

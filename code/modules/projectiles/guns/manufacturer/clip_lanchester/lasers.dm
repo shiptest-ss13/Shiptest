@@ -66,3 +66,4 @@
 
 /obj/projectile/beam/emitter/hitscan/clip
 	damage = 35
+	fire_color = "blue"

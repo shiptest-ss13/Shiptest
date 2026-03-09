@@ -56,3 +56,7 @@
 /obj/effect/projectile/impact/gauss
 	name = "gauss impact"
 	icon_state = "hc_gauss"
+
+/obj/effect/projectile/impact/e20hitscan
+	name = "beam impact"
+	icon_state = "impact_e20"
