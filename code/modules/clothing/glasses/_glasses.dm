@@ -143,11 +143,42 @@
 
 /obj/item/clothing/glasses/eyepatch/AltClick(mob/user)
 	. = ..()
+	flip_eyepatch(user)
+
+/obj/item/clothing/glasses/eyepatch/proc/flip_eyepatch(mob/user)
 	flipped = !flipped
-	to_chat(user, span_notice("You shift the eyepatch to cover the [flipped == 0 ? "right" : "left"] eye."))
+	if(user)
+		to_chat(user, span_notice("You shift the eyepatch to cover the [flipped == 0 ? "right" : "left"] eye."))
 	icon_state = "eyepatch-[flipped]"
 	item_state = "eyepatch-[flipped]"
 	update_appearance()
+	if (!ismob(loc))
+		return
+	var/mob/wearer = loc
+	wearer.update_inv_glasses()
+	if (!ishuman(user))
+		return
+	var/mob/living/carbon/human/human_wearer = user
+	if (human_wearer.get_eye_scars() & (flipped ? RIGHT_EYE_SCAR : LEFT_EYE_SCAR))
+		tint = INFINITY
+	else
+		tint = initial(tint)
+	human_wearer.update_tint()
+
+/obj/item/clothing/glasses/eyepatch/equipped(mob/living/user, slot)
+	if (!ishuman(user))
+		return ..()
+	var/mob/living/carbon/human/human_user = user
+	// lol lmao
+	if (human_user.get_eye_scars() & (flipped ? RIGHT_EYE_SCAR : LEFT_EYE_SCAR))
+		tint = INFINITY
+	else
+		tint = initial(tint)
+	return ..()
+
+/obj/item/clothing/glasses/eyepatch/dropped(mob/living/user)
+	. = ..()
+	tint = initial(tint)
 
 /obj/item/clothing/glasses/eyepatch/examine(mob/user)
 	. = ..()

@@ -59,6 +59,11 @@ GLOBAL_LIST_EMPTY(dummy_mob_list)
 			var/mob/living/carbon/human/human_target = target
 			human_target.copy_clothing_prefs(copycat)
 
+		for(var/datum/quirk/applied_quirk as anything in carbon_target.roundstart_quirks)
+			if(!(applied_quirk.quirk_flags & QUIRK_CHANGES_APPEARANCE))
+				continue
+			copycat.add_quirk(applied_quirk.type, target.client, FALSE)
+
 		copycat.updateappearance(icon_update=TRUE, mutcolor_update=TRUE, mutations_overlay_update=TRUE)
 	else
 		//even if target isn't a carbon, if they have a client we can make the
