@@ -456,8 +456,7 @@
 	icon_state = "lattice-137"
 	},
 /obj/machinery/camera/autoname{
-	dir = 4;
-	id = "typhon_grid"
+	dir = 4
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
@@ -2099,6 +2098,9 @@
 	pixel_x = -5;
 	id = "typhon_cargo_holo";
 	name = "Cargo Holofield"
+	},
+/obj/machinery/camera/autoname{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
@@ -4672,9 +4674,6 @@
 /obj/item/stack/sheet/metal/twenty{
 	pixel_x = 3;
 	pixel_y = 4
-	},
-/obj/machinery/camera/autoname{
-	dir = 10
 	},
 /obj/structure/extinguisher_cabinet/directional/south{
 	pixel_x = -6
