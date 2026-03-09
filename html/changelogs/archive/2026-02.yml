@@ -107,3 +107,61 @@
   PositiveEntropy:
   - imageadd: Prettier bureaucratic supplies have been added to offices all over the
       frontier!
+2026-02-19:
+  KOCMODECAHTHUK:
+  - bugfix: Fixes movement keys being stuck
+  SapphicOverload:
+  - rscadd: Added ship cloaking devices.
+  - rscadd: The Leyak-class Covert Frigate is now equipped with a cloaking system.
+  - rscadd: Hiding in a nebula obscures ships from long-range sensors.
+2026-02-20:
+  SapphicOverload:
+  - rscdel: Removed "Goebbles" from the list of random last names
+2026-02-21:
+  SapphicOverload:
+  - rscadd: Returns Zohilan as a selectable language
+  - spellcheck: Zohilan
+  meemofcourse:
+  - rscadd: League Zohilian
+  - rscdel: Zohilian is no longer a roundstart language
+2026-02-22:
+  SapphicOverload:
+  - bugfix: Fixed Gorlex Hardliners receiving a 0.3% discount on cloaking devices
+      instead of 30%
+2026-02-24:
+  OnlineGirlfriend:
+  - spellcheck: pavement
+2026-02-25:
+  SapphicOverload:
+  - bugfix: Fixed new languages added to the game not showing up in character preferences
+  generalthrax:
+  - rscadd: Added more ingredients to Cirrus / Nimbus
+  - rscadd: Oxygen closets in Cirrus
+  - bugfix: Cirrus command bathroom no longer locks crew bathroom, lock to crew bathroom
+  - bugfix: Removed duplicate recharger on Nimbus
+  rye-rice:
+  - rscadd: Quick dock now searches for docking ports your ship can land at, rather
+      than picking the first option and failing. Quicker!
+  - rscadd: Makes docking port messages less vauge.
+  - rscadd: Adjusts transit vlevel sizes for larger ships
+  - rscadd: In case you are unable to dock to something, you should be given more
+      feedback
+  - bugfix: Shuttle errors due to docking ports being stolen
+  - bugfix: Edgecase handling for docking ports, should fix very rare shuttle bugs
+  - bugfix: Kali, Corona, Dwayne, Firefly, Scarab, Venetia, Typhoon, June, and especially
+      the Quasar have either proper docking ports or fixed docking ports
+  - bugfix: Firefly is now not extremely dangerous to dock to
+  - bugfix: Shuttle code should be less prone to breaking in general
+2026-02-26:
+  OnlineGirlfriend:
+  - spellcheck: cthonian-class description
+  generalthrax:
+  - rscdel: Removed phobia trait
+  moffball19:
+  - bugfix: replaces a missing console on the kiwi
+2026-02-28:
+  OnlineGirlfriend:
+  - bugfix: add directionals for SUNS bedsheet
+  - spellcheck: drink_reagents.dm
+  rye-rice:
+  - bugfix: Outposts now have proper baseturfs

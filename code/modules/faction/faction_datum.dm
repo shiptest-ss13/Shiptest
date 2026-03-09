@@ -106,7 +106,7 @@
 	name = FACTION_CLIP
 	short_name = "CLIP"
 	parent_faction = /datum/faction/clip
-	official_language = /datum/language/zohil_kalixcian
+	official_language = /datum/language/league_kalixcian
 	prefixes = PREFIX_CLIP
 	color = "#3F90DF"
 
@@ -142,6 +142,14 @@
 	official_language = /datum/language/gezena_kalixcian
 	prefixes = PREFIX_PGF
 	color = "#359829"
+
+/datum/faction/zohil // in case anyone wants to give zohil a ship
+	name = FACTION_ZOHIL
+	short_name = "ZHL"
+	parent_faction = /datum/faction/zohil
+	official_language = /datum/language/zohil_kalixcian
+	prefixes = PREFIX_ZOHIL
+	color = "#6b2ba0"
 
 /datum/faction/independent
 	name = FACTION_INDEPENDENT
