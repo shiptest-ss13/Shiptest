@@ -178,7 +178,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/m20_auto_elite)
 
 	manufacturer = MANUFACTURER_SERENE
 
-	valid_attachments = list(/obj/item/attachment/rail_light, /obj/item/attachment/bayonet,/obj/item/attachment/scope, /obj/item/attachment/ammo_counter,/obj/item/attachment/gun, /obj/item/attachment/m12_burst)
+	valid_attachments = list(/obj/item/attachment/rail_light, /obj/item/attachment/bayonet,/obj/item/attachment/scope, /obj/item/attachment/ammo_counter, /obj/item/attachment/gun, /obj/item/attachment/m12_burst)
 	slot_available = list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_RAIL = 1, ATTACHMENT_SLOT_SCOPE = 1, ATTACHMENT_SLOT_STOCK = 1)
 
 	slot_offsets = list(
@@ -198,6 +198,10 @@ NO_MAG_GUN_HELPER(automatic/pistol/m20_auto_elite)
 
 EMPTY_GUN_HELPER(automatic/m12_sporter)
 
+/obj/item/gun/ballistic/automatic/m12_sporter/premodded
+	default_attachments = list(/obj/item/attachment/m12_burst)
+
+EMPTY_GUN_HELPER(automatic/m12_sporter/premodded)
 
 /obj/item/ammo_box/magazine/m12_sporter
 	name = "Model 12 magazine (.22lr)"

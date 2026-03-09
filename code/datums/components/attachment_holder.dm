@@ -141,9 +141,10 @@
 		return
 	if(attachment.attach_sound)
 		playsound(parent, attachment.attach_sound, 50, FALSE)
-	if(!do_after(user, attachment.attachment_time, parent))
-		to_chat(user, span_warning("Your attaching of the [attachment.name] was interrupted!"))
-		return
+	if(!bypass_checks)
+		if(!do_after(user, attachment.attachment_time, parent))
+			to_chat(user, span_warning("Your attaching of the [attachment.name] was interrupted!"))
+			return
 	slot_room[slot]--
 	. = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_ATTACH, parent, user, bypass_checks)
 	if(.)
