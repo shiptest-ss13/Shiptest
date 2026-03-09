@@ -3260,6 +3260,7 @@
 	dir = 9
 	},
 /obj/machinery/airalarm/directional/south,
+/obj/machinery/computer/cryopod/directional/east,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/cryo)
 "sx" = (
@@ -5225,6 +5226,10 @@
 /obj/item/radio{
 	pixel_x = -2;
 	pixel_y = 6
+	},
+/obj/item/hand_labeler{
+	pixel_y = -5;
+	pixel_x = 3
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/port)
