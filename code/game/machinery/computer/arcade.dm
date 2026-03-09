@@ -39,7 +39,6 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 		/obj/item/toy/clockwork_watch = 2,
 		/obj/item/toy/toy_dagger = 2,
 		/obj/item/extendohand/acme = 1,
-		/obj/item/card/emagfake = 1,
 		/obj/item/clothing/shoes/kindleKicks = 2,
 		/obj/item/toy/plush/goatplushie/angry/realgoat = 2,
 		/obj/item/toy/plush/moth = 2,

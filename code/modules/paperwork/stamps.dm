@@ -71,11 +71,6 @@
 	icon_state = "stamp-syndicate"
 	dye_color = DYE_SYNDICATE
 
-/obj/item/stamp/donk
-	name = "Donk! Co. rubber stamp"
-	icon_state = "stamp-donk"
-	dye_color = DYE_SYNDICATE
-
 /obj/item/stamp/cybersun
 	name = "Cybersun Virtual Solutions rubber stamp"
 	icon_state = "stamp-cybersun"

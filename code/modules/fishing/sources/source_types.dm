@@ -36,7 +36,6 @@
 		/obj/item/fish/trout = 10,
 		/obj/item/fish/catfish = 10,
 		/obj/item/fish/bass = 10,
-		/obj/item/fish/donkfish = 5,
 		/obj/item/fish/emulsijack = 1
 	)
 	fishing_difficulty = FISHING_DEFAULT_DIFFICULTY + 5

@@ -124,7 +124,6 @@
 		"stamp-clip_deed" = 'icons/paper_graphics/stamps/large_stamp-clip_deed.png',
 		"stamp-cybersun" = 'icons/paper_graphics/stamps/large_stamp-cybersun.png',
 		"stamp-biodynamics" = 'icons/paper_graphics/stamps/large_stamp-biodynamics.png',
-		"stamp-donk" = 'icons/paper_graphics/stamps/large_stamp-donk.png',
 		"stamp-ngr" = 'icons/paper_graphics/stamps/large_stamp-ngr.png',
 		"stamp-ngr_cap" = 'icons/paper_graphics/stamps/large_stamp-ngr_captain.png',
 		"stamp-ngr_fore" = 'icons/paper_graphics/stamps/large_stamp-ngr_foreman.png',

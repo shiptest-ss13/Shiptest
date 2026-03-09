@@ -5,19 +5,19 @@
 		Ready-to-eat
 */
 
-/datum/supply_pack/food/donkpockets
-	name = "Donk Pocket Variety Crate"
-	desc = "Featuring a line up of Donk Co.'s most popular pastry!"
+/datum/supply_pack/food/shoalpockets
+	name = "Shoal Pocket Variety Crate"
+	desc = "Featuring a collection of heavily-processed reheatable food packets, straight from the Shoal."
 	cost = 500
-	contains = list(/obj/item/storage/box/donkpockets/donkpocketspicy,
-					/obj/item/storage/box/donkpockets/donkpocketteriyaki,
-					/obj/item/storage/box/donkpockets/donkpocketpizza,
-					/obj/item/storage/box/donkpockets/donkpocketberry)
-	crate_name = "donk pocket crate"
+	contains = list(/obj/item/storage/box/shoalpockets/shoalpocketspicy,
+					/obj/item/storage/box/shoalpockets/shoalpocketteriyaki,
+					/obj/item/storage/box/shoalpockets/shoalpocketpizza,
+					/obj/item/storage/box/shoalpockets/shoalpocketberry)
+	crate_name = "shoal pocket crate"
 	crate_type = /obj/structure/closet/crate/freezer
 	faction = /datum/faction/syndicate
 
-/datum/supply_pack/food/donkpockets/fill(obj/structure/closet/crate/C)
+/datum/supply_pack/food/shoalpockets/fill(obj/structure/closet/crate/C)
 	for(var/i in 1 to 3)
 		var/item = pick(contains)
 		new item(C)

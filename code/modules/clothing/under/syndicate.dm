@@ -99,32 +99,6 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	supports_variations = DIGITIGRADE_VARIATION
 
-/obj/item/clothing/under/syndicate/donk
-	name = "Donk! Co. employee uniform"
-	desc = "The standard employee uniform of Donk Co. Smells like minimum wage."
-	icon_state = "donk_cargo"
-	roll_sleeves = FALSE
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
-	body_parts_covered = CHEST|GROIN|ARMS
-	supports_variations = DIGITIGRADE_VARIATION
-
-/obj/item/clothing/under/syndicate/donk/qm
-	name = "Donk! Co. manager uniform"
-	desc = "The standard uniform of Donk Co. managers. Direct all complaints here."
-	icon_state = "donk_qm"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	supports_variations = DIGITIGRADE_VARIATION
-
-/obj/item/clothing/suit/hazardvest/donk
-	name = "Donk! Co. employee vest"
-	desc = "A vest used to easily identify employees. It has a name tag attached. It reads: 'Hello! My name is..' It's not filled in."
-	icon_state = "donk_cargo_vest"
-
-/obj/item/clothing/suit/hazardvest/donk/qm
-	name = "Donk! Co. manager vest"
-	desc = "A vest used to easily identify managers. It has a name tag attached. It reads: 'Hello! My name is... THE BOSS'"
-	icon_state = "donk_qm_vest"
-
 /obj/item/clothing/under/syndicate/gec
 	name = "GEC engineer jumpsuit"
 	desc = "A jumpsuit worn by GEC engineers. This one is worn by low ranking engineers."
