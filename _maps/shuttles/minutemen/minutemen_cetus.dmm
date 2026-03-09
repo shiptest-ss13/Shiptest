@@ -3811,6 +3811,34 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
+"wF" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/transparent/blue/line{
+	dir = 1
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/closet/emcloset/wall/directional/north,
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_x = 6;
+	pixel_y = 0
+	},
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_x = 6;
+	pixel_y = 0
+	},
+/obj/item/clothing/mask/gas/clip,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/starboard)
 "wI" = (
 /obj/effect/turf_decal/box/white/corners{
 	color = "#CBB1CA"
@@ -7937,6 +7965,30 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
+"Ut" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/trimline/transparent/blue/line,
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/closet/emcloset/wall/directional/south,
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_x = 6;
+	pixel_y = 0
+	},
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_x = 6;
+	pixel_y = 0
+	},
+/obj/item/clothing/mask/gas/clip,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
 "Uu" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/corner,
 /turf/open/floor/plasteel/dark,
@@ -9857,7 +9909,7 @@ eX
 BF
 OV
 pU
-vB
+Ut
 Dn
 vV
 Bb
@@ -9867,7 +9919,7 @@ Bb
 Bb
 vV
 LT
-GD
+wF
 vE
 dI
 to
