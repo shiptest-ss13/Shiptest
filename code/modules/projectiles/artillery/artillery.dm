@@ -37,11 +37,16 @@
 	desc = "A manual, crew-operated and towable howitzer, will rain down shells on any of your foes."
 	icon = 'icons/obj/machines/howitzer.dmi'
 	icon_state = "howitzer_deployed"
+	var/icon_undeployed = "howitzer_undeployed"
+	var/icon_deployed = "howitzer_deployed"
 	var/fire_sound = 'sound/machines/artillery/howitzer_fire.ogg'
 	var/reload_sound = 'sound/machines/artillery/tat36_reload.ogg'
 	var/fall_sound = 'sound/machines/artillery/howitzer_whistle.ogg'
-	obj_integrity = 400
+	atom_integrity = 400
 	max_integrity = 400
+
+	///probably shouldnt have this towed around everywhere
+	drag_slowdown = 1.5
 
 	can_be_unanchored = TRUE
 	pixel_x = -16
@@ -68,7 +73,30 @@
 	var/list/allowed_shells = list(
 		/obj/item/mortal_shell/howitzer,
 		/obj/item/mortal_shell/howitzer/incendiary,
+		/obj/item/mortal_shell/howitzer/he,
 	)
+
+/obj/machinery/artillery/wrench_act(mob/user, obj/item/tool)
+	. = ..()
+	if(!can_be_unanchored)
+		return FALSE
+	switch(anchored)
+		if(FALSE)
+			if(!isfloorturf(loc))
+				to_chat(user, span_warning("A floor must be present to secure [src]!"))
+
+			to_chat(user, span_notice("You start securing [src]..."))
+			if(tool.use_tool(src, user, 8 SECONDS, volume=100))
+				to_chat(user, span_notice("You secure [src]."))
+				set_anchored(TRUE)
+			return TRUE
+		if(TRUE)
+			to_chat(user, span_notice("You start unsecuring [src]..."))
+			if(tool.use_tool(src, user, 8 SECONDS, volume=100))
+				to_chat(user, span_notice("You unsecure [src]."))
+				set_anchored(FALSE)
+			return TRUE
+
 
 /obj/machinery/artillery/attack_hand(mob/living/user)
 	. = ..()
@@ -147,7 +175,7 @@
 	SHOULD_NOT_SLEEP(TRUE)
 	return
 
-/obj/machinery/artillery/attackby(obj/item/I, mob/user, params)
+/obj/machinery/artillery/attackby(obj/item/potential_shell, mob/user, params)
 	. = ..()
 
 	if(!anchored)
@@ -159,10 +187,12 @@
 		to_chat(user, span_danger("The barrel is steaming hot. Wait till it cools off!"))
 		return
 
-	if(istype(I, /obj/item/mortal_shell))
-		var/obj/item/mortal_shell/mortar_shell = I
+	if(istype(potential_shell, /obj/item/mortal_shell))
+		var/obj/item/mortal_shell/mortar_shell = potential_shell
+		if(!istype(mortar_shell))
+			return
 
-		if(!(I.type in allowed_shells))
+		if(!(potential_shell.type in allowed_shells))
 			user.balloon_alert(user, "This shell doesn't fit")
 			to_chat(user, span_danger("This shell doesn't fit!"))
 			return
@@ -173,29 +203,35 @@
 		if(!do_after(user, reload_time, src, NONE))
 			return
 
-		var/datum/virtual_level/our_vlevel = get_virtual_level()
-		if(!our_vlevel)
-			return
+		pre_fire(mortar_shell, user, params)
 
-		var/real_x = our_vlevel.low_x + target_x - 1
-		var/real_y = our_vlevel.low_y + target_y - 1
+/obj/machinery/artillery/proc/pre_fire(obj/item/mortal_shell/mortar_shell, mob/user, params)
+	var/datum/virtual_level/our_vlevel = get_virtual_level()
 
-		var/turf/target_turf = locate(real_x, real_y, z)
-		//var/list/our_coords = our_vlevel.get_relative_coords(target_turf)
+	var/real_x = our_vlevel.low_x + target_x - 1
+	var/real_y = our_vlevel.low_y + target_y - 1
 
-		var/max_offset = round(abs((get_dist_euclide(src,target_turf)))/offset_per_turfs)
-		var/firing_spread = max_offset + spread
-		if(firing_spread > max_spread)
-			firing_spread = max_spread
+	var/turf/target_turf = locate(real_x, real_y, z)
 
-		var/list/turf_list = list()
-		for(var/turf/spread_turf in RANGE_TURFS(firing_spread, target_turf))
-			if(!check_valid_turf(spread_turf))
-				continue
-			turf_list += spread_turf
-		var/turf/impact_turf = pick(turf_list)
-		mortar_shell.forceMove(src)
-		begin_fire(impact_turf, mortar_shell)
+	if(!target_turf)
+		user.balloon_alert(user, "Invalid location.")
+		to_chat(user, span_danger("Invalid location. Please set valid coordinates"))
+		target_x = old_x
+		target_y = old_y
+
+	var/max_offset = round(abs((get_dist_euclide(src,target_turf)))/offset_per_turfs)
+	var/firing_spread = max_offset + spread
+	if(firing_spread > max_spread)
+		firing_spread = max_spread
+
+	var/list/turf_list = list()
+	for(var/turf/spread_turf in RANGE_TURFS(firing_spread, target_turf))
+		if(!check_valid_turf(spread_turf))
+			continue
+		turf_list += spread_turf
+	var/turf/impact_turf = pick(turf_list)
+	mortar_shell.forceMove(src)
+	begin_fire(impact_turf, mortar_shell)
 
 
 ///Start firing the gun on target and increase tally
@@ -217,6 +253,7 @@
 	shell.fire(Get_Angle(src,target))
 
 	perform_firing_visuals()
+	qdel(arty_shell)
 
 	var/fall_time = (shell_range/(shell.speed * 5)) - 0.5 SECONDS
 	//prevent runtime
@@ -228,6 +265,7 @@
 ///Begins fall animation for projectile and plays fall sound
 /obj/machinery/artillery/proc/falling(turf/T, obj/projectile/shell)
 	flick(shell.icon_state + "_falling", shell)
+	shell.icon_state = shell.icon_state + "_falling"
 	playsound(T, fall_sound, 75, 1)
 
 /obj/machinery/artillery/mortar
@@ -235,11 +273,13 @@
 	desc = "A manual, crew-operated mortar system intended to rain down shells on anything it's aimed at. Less accurate than a howitzer, but still useful neverless. Needs to be set down first to fire. Ctrl+Click on a tile to deploy, drag the mortar's sprites to mob's sprite to undeploy."
 	icon = 'icons/obj/machines/mortar.dmi'
 	icon_state = "mortar_deployed"
-	obj_integrity = 250
+	atom_integrity = 250
 	max_integrity = 250
 	fire_sound = 'sound/machines/artillery/mortar_fire.ogg'
 	reload_sound = 'sound/machines/artillery/mortar_reload.ogg' // Our reload sound.
 	fall_sound = 'sound/machines/artillery/mortar_long_whistle.ogg' //The sound the shell makes when falling.
+	///32x32 sprite
+	pixel_x = 0
 	/// Max spread on target
 	max_spread = 5
 	/// Used for deconstruction and aiming sanity
@@ -248,6 +288,15 @@
 	cool_off_time = 1 SECONDS
 	///Time to load a shell
 	reload_time = 0.5 SECONDS
+	/// Prevents the standard behavior
+	can_be_unanchored = FALSE
+	///Ditto
+	anchored = TRUE
+
+	/// What gets spawned if the object is undeployed
+	var/obj/spawned_on_undeploy = /obj/item/deployable_mortar_folded
+	/// How long it takes for a wrench user to undeploy the object
+	var/undeploy_time = 5 SECONDS
 
 	allowed_shells = list(
 		/obj/item/mortal_shell/he,
@@ -262,7 +311,7 @@
 		return
 
 	if(over_object == user)
-		to_chat(user, "<span class='notice'>You start undeploying the [src]...</span>")
+		to_chat(user, "<span class='notice'>You start undeploying [src]...</span>")
 		user.balloon_alert(user, "undeploying...")
 		if(!do_after(user, undeploy_time))
 			return
@@ -271,6 +320,20 @@
 		undeployed_object.modify_max_integrity(max_integrity)
 		user.put_in_hands(undeployed_object)
 		qdel(src)
+
+/// Undeploying, for when you want to move your big dakka around
+/obj/machinery/artillery/mortar/wrench_act(mob/living/user, obj/item/wrench/used_wrench)
+	. = ..()
+	if(!ishuman(user))
+		return
+	used_wrench.play_tool_sound(user)
+	to_chat(user, span_notice("You start undeploying [src]..."))
+	if(!do_after(user, undeploy_time))
+		return
+	var/obj/undeployed_object = new spawned_on_undeploy(src)
+	//Keeps the health the same even if you redeploy the gun
+	undeployed_object.modify_max_integrity(max_integrity)
+	qdel(src)
 
 /obj/item/deployable_mortar_folded
 	name = "folded mortar"
@@ -285,99 +348,3 @@
 	. = ..()
 	AddComponent(/datum/component/deployable, 5 SECONDS, /obj/machinery/artillery/mortar, delete_on_use = TRUE)
 
-// Shells themselves //
-
-/obj/item/mortal_shell
-	name = "\improper 80mm mortar shell"
-	desc = "An unlabeled 80mm mortar shell, probably a casing."
-	icon = 'icons/obj/machines/mortar.dmi'
-	icon_state = "mortar_ammo_cas"
-	w_class = WEIGHT_CLASS_SMALL
-	///Ammo projectile typepath that the shell uses
-	var/obj/projectile/bullet/ammo_type
-
-/obj/item/mortal_shell/he
-	name = "\improper 80mm high explosive mortar shell"
-	desc = "An 80mm mortar shell, loaded with a high explosive charge."
-	icon_state = "mortar_ammo_he"
-	ammo_type = /obj/projectile/bullet/mortar
-
-/obj/item/mortal_shell/incendiary
-	name = "\improper 80mm incendiary mortar shell"
-	desc = "An 80mm mortar shell, loaded with a napalm charge."
-	icon_state = "mortar_ammo_inc"
-	ammo_type = /obj/projectile/bullet/mortar/incend
-
-/obj/item/mortal_shell/smoke
-	name = "\improper 80mm smoke mortar shell"
-	desc = "An 80mm mortar shell, loaded with smoke dispersal agents. Can be fired at marines more-or-less safely. Way slimmer than your typical 80mm."
-	icon_state = "mortar_ammo_smk"
-	ammo_type = /obj/projectile/bullet/mortar/smoke
-
-
-/obj/item/mortal_shell/howitzer
-	name = "\improper 150mm artillery shell"
-	desc = "An unlabeled 150mm shell, probably a casing."
-	icon = 'icons/obj/machines/howitzer.dmi'
-	icon_state = "howitzer"
-	w_class = WEIGHT_CLASS_BULKY
-
-/obj/item/mortal_shell/howitzer/incendiary
-	name = "\improper 150mm incendiary artillery shell"
-	desc = "An 150mm artillery shell, loaded with explosives to punch through light structures then burn out whatever is on the other side. Will ruin their day and skin."
-	icon_state = "howitzer_incend"
-	ammo_type = /obj/projectile/bullet/mortar/howi/incend
-
-/obj/projectile/bullet/mortar
-	name = "80mm shell"
-	icon_state = "mortar"
-
-	movement_type = PHASING
-	pass_flags = PASSTABLE | PASSGRILLE | PASSGRILLE | PASSMOB | PASSCLOSEDTURF | LETPASSTHROW | PASSPLATFORM
-
-	speed = 3
-	damage = 0
-	range = 1000
-	light_color = COLOR_VERY_SOFT_YELLOW
-	light_range = 1.5
-	near_miss_sound = FALSE
-
-/obj/projectile/bullet/mortar/proc/payload()
-	explosion(get_turf(src), 1, 2, 5, 0, flame_range = 3)
-
-/obj/projectile/bullet/mortar/on_range()
-	payload()
-	return ..()
-
-/obj/projectile/bullet/mortar/incend/payload()
-	explosion(get_turf(src), 0, 2, 3, 0, flame_range = 7)
-	flame_radius(get_turf(src), 4)
-	playsound(get_turf(src), pick('sound/weapons/gun/flamethrower/flamethrower1.ogg','sound/weapons/gun/flamethrower/flamethrower2.ogg','sound/weapons/gun/flamethrower/flamethrower3.ogg'), 35, 1, 4)
-
-/obj/projectile/bullet/mortar/smoke
-	///the smoke effect at the point of detonation
-	var/datum/effect_system/smoke_spread/smoketype = /datum/effect_system/smoke_spread
-
-/obj/projectile/bullet/mortar/smoke/payload()
-	var/datum/effect_system/smoke_spread/smoke = new smoketype()
-	explosion(get_turf(src), 0, 0, 1, 0,  flame_range = 3)
-	playsound(get_turf(src), 'sound/effects/smoke.ogg', 25, 1, 4)
-	smoke.set_up(10, get_turf(src), 11)
-	smoke.start()
-
-/obj/projectile/bullet/mortar/howi
-	name = "150mm shell"
-	icon_state = "howi"
-
-
-/obj/projectile/bullet/mortar/howi/payload()
-	explosion(get_turf(src), 1, 6, 7, 0, flame_range = 7)
-
-/obj/projectile/bullet/mortar/howi/incend/payload()
-	explosion(get_turf(src), 0, 3, 0, 0, 0, 3)
-	flame_radius(5, get_turf(src))
-	playsound(get_turf(src), pick('sound/weapons/gun/flamethrower/flamethrower1.ogg','sound/weapons/gun/flamethrower/flamethrower2.ogg','sound/weapons/gun/flamethrower/flamethrower3.ogg'), 35, 1, 4)
-
-/obj/projectile/bullet/mortar/howi/smoke
-	name = "150mm shell"
-	icon_state = "howi"

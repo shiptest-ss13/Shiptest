@@ -1,0 +1,49 @@
+/obj/item/mortal_shell
+	name = "\improper 80mm mortar shell"
+	desc = "An unlabeled 80mm mortar shell, probably a casing."
+	icon = 'icons/obj/machines/mortar.dmi'
+	icon_state = "mortar_ammo_cas"
+	w_class = WEIGHT_CLASS_SMALL
+	///Ammo projectile typepath that the shell uses
+	var/obj/projectile/bullet/ammo_type
+
+/obj/item/mortal_shell/he
+	name = "\improper 80mm high explosive mortar shell"
+	desc = "An 80mm mortar shell, loaded with a high explosive charge."
+	icon_state = "mortar_ammo_he"
+	ammo_type = /obj/projectile/bullet/mortar/he
+
+/obj/item/mortal_shell/incendiary
+	name = "\improper 80mm incendiary mortar shell"
+	desc = "An 80mm mortar shell, loaded with a napalm charge."
+	icon_state = "mortar_ammo_inc"
+	ammo_type = /obj/projectile/bullet/mortar/incend
+
+/obj/item/mortal_shell/smoke
+	name = "\improper 80mm smoke mortar shell"
+	desc = "An 80mm mortar shell, loaded with smoke dispersal agents. Can be fired at marines more-or-less safely. Way slimmer than your typical 80mm."
+	icon_state = "mortar_ammo_smk"
+	ammo_type = /obj/projectile/bullet/mortar/smoke
+
+
+/obj/item/mortal_shell/howitzer
+	name = "\improper 150mm artillery shell"
+	desc = "An unlabeled 150mm shell, probably a casing."
+	icon = 'icons/obj/machines/howitzer.dmi'
+	icon_state = "howitzer"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/mortal_shell/howitzer/incendiary
+	name = "\improper 150mm incendiary artillery shell"
+	desc = "An 150mm artillery shell, loaded with explosives to punch through light structures then burn out whatever is on the other side. Will ruin their day and skin."
+	icon_state = "howitzer_ammo_incend"
+	ammo_type = /obj/projectile/bullet/mortar/howi/incend
+
+/obj/item/mortal_shell/howitzer/he
+	name = "\improper 150mm artillery shell"
+	desc = "An 150mm incendiary shell, loaded with a high explosive charge.."
+	icon = 'icons/obj/machines/howitzer.dmi'
+	icon_state = "howitzer_ammo"
+	w_class = WEIGHT_CLASS_BULKY
+	ammo_type = /obj/projectile/bullet/mortar/howi/he
+
