@@ -207,10 +207,6 @@
 			if(istype(A, initial(AM.power_type)))
 				qdel(A)
 
-/mob/living/silicon/ai/IgniteMob()
-	fire_stacks = 0
-	. = ..()
-
 /mob/living/silicon/ai/proc/set_core_display_icon(input, client/C)
 	if(client && !C)
 		C = client
@@ -734,11 +730,11 @@
 	for (var/obj/machinery/camera/C in remove)
 		lit_cameras -= C //Removed from list before turning off the light so that it doesn't check the AI looking away.
 		C.Togglelight(0)
-		UnregisterSignal(C, COMSIG_PARENT_QDELETING, PROC_REF(camera_deleted))
+		UnregisterSignal(C, COMSIG_QDELETING, PROC_REF(camera_deleted))
 	for (var/obj/machinery/camera/C in add)
 		C.Togglelight(1)
 		lit_cameras |= C
-		RegisterSignal(C, COMSIG_PARENT_QDELETING, PROC_REF(camera_deleted))
+		RegisterSignal(C, COMSIG_QDELETING, PROC_REF(camera_deleted))
 
 /mob/living/silicon/ai/proc/camera_deleted(obj/machinery/camera/camera)
 	SIGNAL_HANDLER

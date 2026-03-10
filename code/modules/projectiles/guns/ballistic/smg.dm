@@ -118,7 +118,7 @@
 	eject_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
 
-	spread = 7
+	spread = 8
 	spread_unwielded = 10
 
 	recoil = 0

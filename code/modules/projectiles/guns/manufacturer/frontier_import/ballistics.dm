@@ -239,7 +239,7 @@
 	wield_slowdown = SMG_SLOWDOWN
 	safety_multiplier = 2
 
-	refused_attachments = list(/obj/item/attachment/gun)
+	//refused_attachments = list(/obj/item/attachment/gun)
 
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,

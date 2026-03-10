@@ -416,7 +416,7 @@
 	if(.)
 		var/found_hypo = FALSE
 		for(var/obj/item/reagent_containers/borghypo/H in R.module.modules)
-			H.bypass_protection = TRUE
+			H.inject_flags = INJECT_CHECK_PENETRATE_THICK
 			found_hypo = TRUE
 
 		if(!found_hypo)
@@ -426,7 +426,7 @@
 	. = ..()
 	if (.)
 		for(var/obj/item/reagent_containers/borghypo/H in R.module.modules)
-			H.bypass_protection = initial(H.bypass_protection)
+			H.inject_flags = initial(H.inject_flags)
 
 /obj/item/borg/upgrade/defib
 	name = "medical cyborg defibrillator"
@@ -535,17 +535,15 @@
 			R.SetLockdown(0)
 		R.set_anchored(FALSE)
 		R.notransform = FALSE
-		R.resize = 2
 		R.hasExpanded = TRUE
-		R.update_transform()
+		R.update_transform(2)
 
 /obj/item/borg/upgrade/expand/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()
 	if (.)
 		if (R.hasExpanded)
 			R.hasExpanded = FALSE
-			R.resize = 0.5
-			R.update_transform()
+			R.update_transform(0.5)
 
 /obj/item/borg/upgrade/rped
 	name = "engineering cyborg RPED"

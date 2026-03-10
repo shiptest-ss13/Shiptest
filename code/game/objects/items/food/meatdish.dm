@@ -164,7 +164,7 @@
 	tastes = list("boiled rice" = 4, "fish" = 2, "spicyness" = 2)
 	foodtypes = VEGETABLES | MEAT
 
-/obj/item/food/vegetariansushiroll/make_processable()
+/obj/item/food/spicyfiletsushiroll/make_processable()
 	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/spicyfiletsushislice, 4, 30, table_required = TRUE)
 
 /obj/item/food/spicyfiletsushislice
@@ -386,7 +386,7 @@
 	)
 	tastes = list("meat" = 1)
 	foodtypes = MEAT | RAW
-	eatverbs = list("bite","chew","nibble","deep throat","gobble","chomp")
+	eatverbs = list("bite","chew","nibble","gobble","chomp")
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/raw_sausage/make_grillable()

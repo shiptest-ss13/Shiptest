@@ -1,14 +1,3 @@
-//Human Overlay Index Shortcuts for alternate_worn_layer, layers
-//Because I *KNOW* somebody will think layer+1 means "above"
-//IT DOESN'T OK, IT MEANS "UNDER"
-#define UNDER_SUIT_LAYER (SUIT_LAYER+1)
-#define UNDER_HEAD_LAYER (HEAD_LAYER+1)
-
-//AND -1 MEANS "ABOVE", OK?, OK!?!
-#define ABOVE_SHOES_LAYER (SHOES_LAYER-1)
-#define ABOVE_BODY_FRONT_LAYER (BODY_FRONT_LAYER-1)
-
-
 //Security levels
 #define SEC_LEVEL_GREEN 0
 #define SEC_LEVEL_BLUE 1
@@ -41,6 +30,10 @@
 #define GAME_STATE_FINISHED 4
 
 #define RESIZE_DEFAULT_SIZE 1
+
+//Lying angles, which way your head points
+#define LYING_ANGLE_EAST 90
+#define LYING_ANGLE_WEST 270
 
 //transfer_ai() defines. Main proc in ai_core.dm
 #define AI_TRANS_TO_CARD 1 //Downloading AI to InteliCard.
@@ -298,9 +291,6 @@ GLOBAL_LIST_INIT(ghost_others_options, list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DE
 //This makes sure that a single person can only spam 3 reopens and 3 closes before being ignored
 
 #define MAX_PROC_DEPTH 195 // 200 proc calls deep and shit breaks, this is a bit lower to give some safety room
-
-#define SYRINGE_DRAW 0
-#define SYRINGE_INJECT 1
 
 #define LUMINESCENT_DEFAULT_GLOW 2
 

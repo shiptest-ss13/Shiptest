@@ -1,30 +1,5 @@
 // Icemoon Ruins
 
-//Corporate Rejects
-
-/area/ruin/unpowered/corprejectrooms
-	name = "NT Security Solutions Site Gamma Rooms"
-	icon_state = "dk_yellow"
-
-/area/ruin/unpowered/corprejectengineering
-	name = "NT Security Solutions Site Gamma Engineering"
-	icon_state = "dk_yellow"
-
-/area/ruin/unpowered/corprejectvault
-	name = "NT Security Solutions Site Gamma Vault"
-	icon_state = "dk_yellow"
-
-//Hydroponics lab
-
-/area/ruin/powered/hydroponicslab
-	name = "Hydroponics Lab"
-	icon_state = "dk_yellow"
-
-// Crashed Holemaker
-/area/ruin/unpowered/crashed_holemaker
-	name = "NTSV Holemaker II" // In honor of the kugelblitz shenanigan of all time
-	icon_state = "green"
-
 // Ice Lodge
 
 /area/ruin/powered/icemoon/lodge/mainhall
@@ -249,3 +224,51 @@
 /area/ruin/unpowered/icemoon/downed_transport/security_office
 	name = "Security Office"
 	icon_state = "security"
+
+// command post
+
+/area/ruin/icemoon/command_post
+	name = "Command Post"
+	icon_state = "green"
+
+/area/ruin/icemoon/command_post/eva
+	name = "Command Post EVA Storage"
+	icon_state = "red"
+
+/area/ruin/icemoon/command_post/armory
+	name = "Command Post Armory"
+	icon_state = "armory"
+
+/area/ruin/icemoon/command_post/engi
+	name = "Command Post Garage"
+	icon_state = "engine"
+
+/area/ruin/icemoon/command_post/crew_quarters
+	name = "Command Post Crew Quarters"
+	icon_state = "crew_quarters"
+
+/area/ruin/icemoon/command_post/kitchen
+	name = "Command Post Kitchen"
+	icon_state = "cafeteria"
+
+/area/ruin/icemoon/command_post/dorms
+	name = "Command Post Dorms"
+	icon_state = "Sleep"
+
+/area/ruin/icemoon/command_post/officer
+	name = "Command Post Officer Dorm"
+	icon_state = "Sleep"
+
+/area/ruin/icemoon/command_post/mission_control
+	name = "Command Post Mission Control"
+	icon_state = "bridge"
+
+/area/ruin/icemoon/command_post/kitchen/second
+
+/area/ruin/icemoon/command_post/dorms/second
+
+/area/ruin/icemoon/command_post/dorms/third
+
+/area/ruin/icemoon/command_post/storage
+	name = "Command Post Shed"
+	icon_state = "storage"

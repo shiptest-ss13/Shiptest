@@ -477,10 +477,7 @@
 /area/ship/crew/canteen/kitchen)
 "eO" = (
 /obj/structure/table/glass,
-/obj/item/reagent_containers/food/drinks/beer/light{
-	pixel_x = 9;
-	pixel_y = 6
-	},
+/obj/item/reagent_containers/food/drinks/beer,
 /obj/item/toy/cards/deck{
 	pixel_x = -15;
 	pixel_y = 9
@@ -1430,10 +1427,17 @@
 /area/ship/crew/dorm/dormtwo)
 "od" = (
 /obj/docking_port/stationary{
-	dwidth = 15;
-	width = 30;
-	height = 15;
+	dwidth = 20;
+	width = 40;
+	height = 35;
 	dir = 8
+	},
+/obj/docking_port/stationary{
+	dwidth = 20;
+	width = 40;
+	height = 35;
+	dir = 8;
+	name = "Venetia Port Quarter Dock"
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -2569,34 +2573,6 @@
 "zX" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
-/obj/item/cutting_board{
-	pixel_x = 1;
-	pixel_y = 3
-	},
-/obj/item/reagent_containers/glass/bottle/syrup_bottle/honey{
-	pixel_x = 16;
-	pixel_y = 11
-	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = -12;
-	pixel_y = 10
-	},
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_x = -12;
-	pixel_y = 4
-	},
-/obj/item/reagent_containers/condiment/soysauce{
-	pixel_x = 16;
-	pixel_y = 3
-	},
-/obj/item/melee/knife/kitchen{
-	pixel_x = 6;
-	pixel_y = 5
-	},
-/obj/item/kitchen/rollingpin{
-	pixel_x = -3;
-	pixel_y = 7
-	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen/kitchen)
 "zY" = (
@@ -2728,42 +2704,8 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "BG" = (
-/obj/structure/closet/secure_closet/freezer/fridge{
-	populate = 0
-	},
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
-/obj/item/reagent_containers/condiment/milk,
-/obj/item/reagent_containers/condiment/milk,
-/obj/item/reagent_containers/condiment/enzyme,
-/obj/item/food/grown/cabbage,
-/obj/item/food/grown/cabbage,
-/obj/item/food/grown/cabbage,
-/obj/item/food/grown/cabbage,
-/obj/item/food/meat/slab,
-/obj/item/food/meat/slab,
-/obj/item/food/meat/slab,
-/obj/item/food/meat/slab,
-/obj/item/reagent_containers/condiment/flour,
-/obj/item/reagent_containers/condiment/flour,
-/obj/item/reagent_containers/condiment/sugar,
-/obj/item/reagent_containers/condiment/sugar,
-/obj/item/reagent_containers/condiment/rice,
-/obj/item/reagent_containers/condiment/rice,
-/obj/item/food/fishmeat,
-/obj/item/food/fishmeat,
-/obj/item/food/fishmeat,
-/obj/item/food/fishmeat,
-/obj/item/storage/fancy/egg_box,
-/obj/item/food/meat/steak/tiris,
-/obj/item/storage/cans/sixbeer,
-/obj/item/food/meat/steak/tiris{
-	pixel_x = 0;
-	pixel_y = 5
-	},
-/obj/item/storage/cans/sixbeer{
-	pixel_x = 0;
-	pixel_y = -6
-	},
+/obj/machinery/griddle,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen/kitchen)
 "BJ" = (
@@ -4381,6 +4323,7 @@
 "Ud" = (
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
 /obj/item/radio/intercom/directional/west,
+/obj/machinery/oven,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen/kitchen)
 "Uf" = (
@@ -4567,10 +4510,7 @@
 /area/ship/engineering)
 "Vz" = (
 /obj/structure/table/glass,
-/obj/item/reagent_containers/food/drinks/beer/light{
-	pixel_x = 7;
-	pixel_y = 5
-	},
+/obj/item/reagent_containers/food/drinks/beer,
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm/dormtwo)
 "VJ" = (
@@ -4622,7 +4562,6 @@
 /area/ship/crew/dorm/captain)
 "VZ" = (
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
-/obj/structure/table/reinforced,
 /obj/machinery/firealarm/directional/east{
 	pixel_x = 32;
 	pixel_y = 8
@@ -4631,6 +4570,42 @@
 	pixel_x = 28;
 	pixel_y = -6
 	},
+/obj/structure/closet/secure_closet/freezer/fridge{
+	populate = 0
+	},
+/obj/item/food/meat/steak/tiris{
+	pixel_x = 0;
+	pixel_y = 5
+	},
+/obj/item/storage/cans/sixbeer{
+	pixel_x = 0;
+	pixel_y = -6
+	},
+/obj/item/storage/cans/sixbeer,
+/obj/item/food/meat/steak/tiris,
+/obj/item/storage/fancy/egg_box,
+/obj/item/food/fishmeat,
+/obj/item/food/fishmeat,
+/obj/item/food/fishmeat,
+/obj/item/food/fishmeat,
+/obj/item/reagent_containers/condiment/rice,
+/obj/item/reagent_containers/condiment/rice,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/grown/cabbage,
+/obj/item/food/grown/cabbage,
+/obj/item/food/grown/cabbage,
+/obj/item/food/grown/cabbage,
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/storage/fancy/egg_box,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen/kitchen)
 "Wj" = (
@@ -4646,9 +4621,34 @@
 "Wl" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
-/obj/machinery/microwave{
-	pixel_x = 0;
-	pixel_y = 6
+/obj/structure/closet/secure_closet/freezer/kitchen/wall/directional/east,
+/obj/item/melee/knife/kitchen{
+	pixel_x = 6;
+	pixel_y = 5
+	},
+/obj/item/cutting_board{
+	pixel_x = 1;
+	pixel_y = 3
+	},
+/obj/item/kitchen/rollingpin{
+	pixel_x = -3;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = -12;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = -12;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/condiment/soysauce{
+	pixel_x = 16;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/glass/bottle/syrup_bottle/honey{
+	pixel_x = 16;
+	pixel_y = 11
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen/kitchen)
@@ -4778,27 +4778,31 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/port)
 "XG" = (
-/obj/item/reagent_containers/glass/mortar/metal{
-	pixel_x = 0;
-	pixel_y = 3
-	},
-/obj/item/cigbutt{
-	pixel_y = 13;
-	pixel_x = -2
-	},
-/obj/item/cigbutt{
-	pixel_y = 8;
-	pixel_x = 6
-	},
-/obj/item/cigbutt{
-	pixel_y = 12;
-	pixel_x = 6
-	},
 /obj/structure/table,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5
 	},
 /obj/machinery/light/directional/south,
+/obj/machinery/coffeemaker{
+	pixel_y = 2;
+	pixel_x = -4
+	},
+/obj/item/coffee_cartridge/fancy{
+	pixel_x = -10;
+	pixel_y = 11
+	},
+/obj/item/coffee_cartridge/fancy/roast{
+	pixel_x = 1;
+	pixel_y = 11
+	},
+/obj/item/coffee_cartridge/fancy/mocha{
+	pixel_x = 12;
+	pixel_y = 11
+	},
+/obj/item/storage/fancy/coffee_cart_rack{
+	pixel_x = 12;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/canteen/kitchen)
 "XJ" = (
@@ -4967,26 +4971,6 @@
 "YM" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
-/obj/machinery/coffeemaker{
-	pixel_y = 2;
-	pixel_x = -3
-	},
-/obj/item/storage/fancy/coffee_cart_rack{
-	pixel_x = 14;
-	pixel_y = 0
-	},
-/obj/item/coffee_cartridge/fancy/mocha{
-	pixel_x = 12;
-	pixel_y = 11
-	},
-/obj/item/coffee_cartridge/fancy/roast{
-	pixel_x = 1;
-	pixel_y = 11
-	},
-/obj/item/coffee_cartridge/fancy{
-	pixel_x = -10;
-	pixel_y = 11
-	},
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen/kitchen)

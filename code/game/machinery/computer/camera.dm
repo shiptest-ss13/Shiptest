@@ -237,7 +237,7 @@
 		var/cam_location = active_camera_B.loc
 
 		// Is the camera in the following items? If so, let it transmit an image as normal
-		if((istype(cam_location, /obj/item/clothing/suit)) || (istype(cam_location, /obj/item/clothing/head/helmet)) || istype(cam_location, /obj/item/storage/belt) || istype(cam_location, /obj/item/storage/pouch)) //Should probably be refactored into excluding backpacks and boots instead of the current whitelist if more places need to be added
+		if(!(istype(cam_location, /obj/item/clothing/shoes)))
 			cam_location = active_camera_B.loc.loc
 
 		// If we're not forcing an update for some reason and the cameras are in the same location,

@@ -51,7 +51,7 @@
 	if(prob(10))
 		M.drowsyness += 1
 	M.adjust_timed_status_effect(-12 SECONDS, /datum/status_effect/jitter)
-	M.reagents.remove_reagent(/datum/reagent/toxin/histamine,3)
+	holder.remove_reagent(/datum/reagent/toxin/histamine,3)
 	..()
 
 
@@ -151,8 +151,8 @@
 	M.AdjustUnconscious(-20)
 	M.AdjustImmobilized(-20)
 	M.AdjustParalyzed(-20)
-	if(M.has_reagent(/datum/reagent/toxin/mindbreaker))
-		M.reagents.remove_reagent(/datum/reagent/toxin/mindbreaker, 5)
+	if(holder.has_reagent(/datum/reagent/toxin/mindbreaker))
+		holder.remove_reagent(/datum/reagent/toxin/mindbreaker, 5)
 	M.hallucination = max(0, M.hallucination - 10)
 	if(prob(30))
 		M.adjustToxLoss(1, 0)
@@ -166,10 +166,10 @@
 
 /datum/reagent/medicine/synaphydramine/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = max(M.drowsyness-5, 0)
-	if(M.has_reagent(/datum/reagent/toxin/mindbreaker))
-		M.remove_reagent(/datum/reagent/toxin/mindbreaker, 5)
-	if(M.has_reagent(/datum/reagent/toxin/histamine))
-		M.remove_reagent(/datum/reagent/toxin/histamine, 5)
+	if(holder.has_reagent(/datum/reagent/toxin/mindbreaker))
+		holder.remove_reagent(/datum/reagent/toxin/mindbreaker, 5)
+	if(holder.has_reagent(/datum/reagent/toxin/histamine))
+		holder.remove_reagent(/datum/reagent/toxin/histamine, 5)
 	M.hallucination = max(0, M.hallucination - 10)
 	if(prob(30))
 		M.adjustToxLoss(1, 0)
@@ -189,6 +189,8 @@
 
 /datum/reagent/medicine/lithium_carbonate/on_mob_life(mob/living/carbon/M)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
+	if(!mood)
+		return ..()
 	if(mood.sanity <= SANITY_GREAT)
 		mood.setSanity(min(mood.sanity+5, SANITY_GREAT))
 	..()
@@ -225,6 +227,8 @@
 	M.confused = max(0, M.confused-6)
 	M.disgust = max(0, M.disgust-6)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
+	if(!mood)
+		return ..()
 	if(mood.sanity <= SANITY_NEUTRAL) // only take effect if in negative sanity and then...
 		mood.setSanity(min(mood.sanity+5, SANITY_NEUTRAL)) // set minimum to prevent unwanted spiking over neutral
 	..()
@@ -243,7 +247,6 @@
 	color = "#D2FFFA"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
-	addiction_threshold = 25
 
 /datum/reagent/medicine/ephedrine/on_mob_metabolize(mob/living/L)
 	..()
@@ -282,51 +285,3 @@
 		M.losebreath++
 		. = 1
 	return TRUE
-
-/datum/reagent/medicine/ephedrine/addiction_act_stage1(mob/living/M)
-	if(prob(3) && iscarbon(M))
-		M.visible_message(span_danger("[M] starts having a seizure!"), span_userdanger("You have a seizure!"))
-		M.Unconscious(100)
-		M.set_timed_status_effect(120 SECONDS, /datum/status_effect/jitter)
-
-	if(prob(33))
-		M.adjustToxLoss(2*REM, 0)
-		M.losebreath += 2
-		. = 1
-	..()
-
-/datum/reagent/medicine/ephedrine/addiction_act_stage2(mob/living/M)
-	if(prob(6) && iscarbon(M))
-		M.visible_message(span_danger("[M] starts having a seizure!"), span_userdanger("You have a seizure!"))
-		M.Unconscious(100)
-		M.set_timed_status_effect(240 SECONDS, /datum/status_effect/jitter)
-
-	if(prob(33))
-		M.adjustToxLoss(3*REM, 0)
-		M.losebreath += 3
-		. = 1
-	..()
-
-/datum/reagent/medicine/ephedrine/addiction_act_stage3(mob/living/M)
-	if(prob(12) && iscarbon(M))
-		M.visible_message(span_danger("[M] starts having a seizure!"), span_userdanger("You have a seizure!"))
-		M.Unconscious(100)
-		M.set_timed_status_effect(300 SECONDS, /datum/status_effect/jitter)
-
-	if(prob(33))
-		M.adjustToxLoss(4*REM, 0)
-		M.losebreath += 4
-		. = 1
-	..()
-
-/datum/reagent/medicine/ephedrine/addiction_act_stage4(mob/living/M)
-	if(prob(24) && iscarbon(M))
-		M.visible_message(span_danger("[M] starts having a seizure!"), span_userdanger("You have a seizure!"))
-		M.Unconscious(100)
-		M.set_timed_status_effect(300 SECONDS, /datum/status_effect/jitter)
-
-	if(prob(33))
-		M.adjustToxLoss(5*REM, 0)
-		M.losebreath += 5
-		. = 1
-	..()

@@ -429,11 +429,7 @@
 /obj/item/gun/examine_more(mob/user)
 	. = ..()
 	if(has_safety)
-		. += "The safety is [safety ? span_green("ON") : span_red("OFF")]. Ctrl-Click to toggle the safety."
-
-	if(gun_firemodes.len > 1)
-		. += "You can change the [src]'s firemode by pressing the <b>secondary action</b> key. By default, this is <b>Shift + Space</b>"
-
+		. += "The safety is [safety ? span_green("ON") : span_red("OFF")]. Right-Click to toggle the safety."
 
 /obj/item/gun/attackby(obj/item/I, mob/living/user, params)
 	. = ..()
@@ -473,7 +469,11 @@
 	return
 
 /obj/item/gun/afterattack(atom/target, mob/living/user, flag, params)
-	. = ..()
+	if(fire_gun(target, user, flag, params))
+		return TRUE
+	return ..()
+
+/obj/item/gun/proc/fire_gun(atom/target, mob/living/user, flag, params)
 	if(!actually_shoots)// this gun doesn't actually fire bullets. Dont shoot.
 		return
 	//No target? Why are we even firing anyways...
@@ -482,6 +482,13 @@
 	//If we are burst firing, don't fire, obviously
 	if(currently_firing_burst)
 		return
+
+	if(SEND_SIGNAL(user, COMSIG_MOB_TRYING_TO_FIRE_GUN, src, target, flag, params) & COMPONENT_CANCEL_GUN_FIRE)
+		return
+
+	if(SEND_SIGNAL(src, COMSIG_GUN_TRY_FIRE, user, target, flag, params) & COMPONENT_CANCEL_GUN_FIRE)
+		return
+
 	//This var happens when we are either clicking someone next to us or ourselves. Check if we don't want to fire...
 	if(flag)
 		if(target in user.contents) //can't shoot stuff inside us.
@@ -748,16 +755,39 @@
 
 /obj/item/gun/CtrlClick(mob/user)
 	. = ..()
-	if(!has_safety)
-		return
-	// only checks for first level storage e.g pockets, hands, suit storage, belts, nothing in containers
-	if(!in_contents_of(user))
-		return
-
 	if(isliving(user) && in_range(src, user))
 		toggle_safety(user)
 
-/obj/item/gun/proc/toggle_safety(mob/user, silent=FALSE)
+// This is overridden when interacting with attached underbarrel guns.
+/obj/item/gun/attack_hand_secondary(mob/user, list/modifiers)
+	. = ..()
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+		return
+	if(toggle_safety(user))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
+/obj/item/gun/attackby_secondary(obj/item/weapon, mob/user, params)
+	. = ..()
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+		return
+	if(toggle_safety(user))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
+/obj/item/gun/attack_self_secondary(mob/user, modifiers)
+	. = ..()
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+		return
+	if(toggle_safety(user))
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
+/obj/item/gun/proc/toggle_safety(mob/user, silent=FALSE, override_check = FALSE)
+	if(!has_safety)
+		return FALSE
+
+	// only checks for first level storage e.g pockets, hands, suit storage, belts, nothing in containers
+	if(!in_contents_of(user) && !override_check)
+		return FALSE
+
 	safety = !safety
 
 	if(!silent)
@@ -768,8 +798,9 @@
 		)
 
 	update_appearance()
+	return TRUE
 
-/obj/item/gun/attack_hand(mob/user)
+/obj/item/gun/attack_hand(mob/user, list/modifiers)
 	. = ..()
 	update_appearance()
 
@@ -885,6 +916,8 @@
 
 	if(HAS_TRAIT(user, TRAIT_POOR_AIM))
 		randomized_bonus_spread += rand(0, 25)
+	if(!wielded_fully && (HAS_TRAIT(user, TRAIT_SCARRED_EYE)))
+		randomized_bonus_spread += rand(0, 5) // can't aim as well with no depth perception
 
 	//We will then calculate gun spread depending on if we are fully wielding (after do_after) the gun or not
 	randomized_gun_spread =	rand(0, wielded_fully ? spread : spread_unwielded)
@@ -1157,10 +1190,6 @@
 	for(var/datum/action/current_action as anything in actions)
 		current_action.UpdateButtonIcon()
 
-/obj/item/gun/secondary_action(user)
-	if(gun_firemodes.len > 1)
-		fire_select(user)
-
 /datum/action/item_action/toggle_firemode/UpdateButtonIcon(status_only = FALSE, force = FALSE)
 	var/obj/item/gun/our_gun = target
 
@@ -1174,9 +1203,10 @@
 	return ..()
 
 GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
-	/obj/item/gun/energy/plasmacutter,
+	/obj/item/plasmacutter,
 	/obj/item/melee/energy,
 	/obj/item/gear_handle/anglegrinder,
+	/obj/item/hatchet,
 	)))
 
 ///Handles all the logic of sawing off guns,

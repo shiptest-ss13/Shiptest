@@ -13,6 +13,8 @@
 	var/name
 	///A quick description of the event. Should fit into a quick tgui hoverover tip.
 	var/desc
+	///The class of this object, used in place of its name when cloaked or obscured.
+	var/ship_class = "Object"
 	///Extra info that would fit into a sidebar or an extra pane such as. Should fit into a quick tgui hoverover tip.
 	var/extra_info
 	///the color of the event if it isn't overridden by the overmap
@@ -78,7 +80,7 @@
 		current_overmap = docked_object.current_overmap
 
 	if(!current_overmap)
-		current_overmap = SSovermap.default_system
+		current_overmap = SSovermap.safe_system
 		stack_trace("[src.name] has no overmap on load!! This is very bad!! Set the object's overmap to the default overmap of the round!!")
 	current_overmap.overmap_objects |= src
 	SSovermap.overmap_objects |= src
@@ -94,6 +96,8 @@
 	if(!char_rep && name)
 		char_rep = name[1]
 
+	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_CLOAKED), PROC_REF(activate_cloak))
+	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_CLOAKED), PROC_REF(deactivate_cloak))
 	Initialize(arglist(args))
 
 /datum/overmap/Destroy(force)
@@ -177,7 +181,7 @@
 	if(new_x == x && new_y == y)
 		return
 	if(!current_overmap)
-		current_overmap = SSovermap.default_system
+		current_overmap = SSovermap.safe_system
 		CRASH("Overmap datum [src] tried to move() with no valid overmap! What?? Moving to the default sector of SSovermap as a failsafe!")
 	new_x %= current_overmap.size
 	new_y %= current_overmap.size
@@ -320,7 +324,7 @@
 			return
 		if(INTERACTION_OVERMAP_DOCK)
 			if(docked_to || docking)
-				return "ERROR: Unable to do this currently! Reduce speed or undock!"
+				return "ERROR: Unable to do this while docked! Undock first!"
 
 			var/list/dockables = interact_target.get_dockable_locations(src)
 			if(!dockables.len)
@@ -331,15 +335,15 @@
 			return Dock(interact_target, choice)
 		if(INTERACTION_OVERMAP_QUICKDOCK)
 			if(docked_to || docking)
-				return "ERROR: Unable to do this currently! Undock first!"
+				return "ERROR: Unable to do this while docked! Undock first!"
 			return Dock(interact_target)
 		if(INTERACTION_OVERMAP_HAIL)
 			return do_hail(user, interact_target)
 		if(INTERACTION_OVERMAP_INTERDICTION)
 			if(docked_to || docking)
-				return "ERROR: Unable to do this currently! Reduce speed or undock!"
+				return "ERROR: Unable to do this while docked! Undock first!"
 			if(interact_target.docked_to || interact_target.docking)
-				return "ERROR: Unable to do this currently! Target is docked or docking!"
+				return "ERROR: Unable to do this while target is docked or docking!"
 
 			var/list/dockables = get_dockable_locations(src)
 			if(!dockables.len)
@@ -673,6 +677,12 @@
 		token.color = current_overmap.primary_color
 	current_overmap.post_edit_token_state(src)
 
+/datum/overmap/proc/activate_cloak()
+	alter_token_appearance()
+
+/datum/overmap/proc/deactivate_cloak()
+	alter_token_appearance()
+
 /*
  * For use when this datum is just completely fucked with no real solutions.
  *
@@ -681,10 +691,10 @@
  */
 /datum/overmap/proc/fsck()
 	//set the current overmap to the default one. If theres no default overmap shit is truly fucked
-	if(!SSovermap.default_system)
+	if(!SSovermap.safe_system)
 		message_admins(span_userdanger("There is no default overmap set. Consider restarting the round."))
 		CRASH("There is no default overmap set. Consider restarting the round.")
-	current_overmap = SSovermap.default_system
+	current_overmap = SSovermap.safe_system
 
 	//reset all docking timers
 	dock_time = null

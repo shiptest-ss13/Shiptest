@@ -74,6 +74,7 @@
 		else
 			var/dist_modifier = max((4 - dist), 1)
 			if(prob((concealment.concealment_power/dist_modifier)))
+				playsound_local(get_turf(src), pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, TRUE)
 				return TRUE // we are concealed and the bullet misses
 	return FALSE
 
@@ -156,7 +157,7 @@
 
 /mob/living/fire_act()
 	adjust_fire_stacks(3)
-	IgniteMob()
+	ignite_mob()
 
 /mob/living/proc/grabbedby(mob/living/carbon/user, supress_message = FALSE)
 	if(user == src || anchored || !isturf(user.loc))
@@ -233,7 +234,7 @@
 				to_chat(user, span_danger("You're strangling [src]!"))
 				if(!buckled && !density)
 					Move(user.loc)
-		user.set_pull_offsets(src, grab_state)
+		user.set_pull_offsets(src, user.grab_state)
 		return 1
 
 
@@ -430,12 +431,14 @@
 //called when the mob receives a bright flash
 /mob/living/proc/flash_act(intensity = 1, override_blindness_check = 0, affect_silicon = 0, visual = 0, type = /atom/movable/screen/fullscreen/flash)
 	if(HAS_TRAIT(src, TRAIT_NOFLASH))
-		return FALSE
-	if(get_eye_protection() < intensity && (override_blindness_check || !is_blind()))
-		overlay_fullscreen("flash", type)
-		addtimer(CALLBACK(src, PROC_REF(clear_fullscreen), "flash", 25), 25)
-		return TRUE
-	return FALSE
+		return NONE
+	if(get_eye_protection() >= intensity)
+		return NONE
+	if(is_blind() && !override_blindness_check)
+		return FLASH_DAMAGE
+	overlay_fullscreen("flash", type)
+	addtimer(CALLBACK(src, PROC_REF(clear_fullscreen), "flash", 25), 25)
+	return FLASH_EFFECT | FLASH_DAMAGE
 
 //called when the mob receives a loud bang
 /mob/living/proc/soundbang_act()
@@ -455,15 +458,20 @@
  *
  * If the method is INGEST the mob tastes the reagents.
  * If the method is VAPOR it incorporates permiability protection.
+ * If the method is INHALE it can be blocked by smoke/gas protection.
  */
 /mob/living/expose_reagents(list/reagents, datum/reagents/source, method=TOUCH, volume_modifier=1, show_message=TRUE)
 	if((. = ..()) & COMPONENT_NO_EXPOSE_REAGENTS)
 		return
 
 	if(method == INGEST)
-		taste(source)
+		taste_list(reagents)
 
-	var/touch_protection = (method == VAPOR) ? get_permeability_protection() : 0
+	var/permeability = 1
+	if(method == VAPOR)
+		permeability *= 1 - get_permeability_protection()
+	if(method == INHALE)
+		permeability *= 1 - has_smoke_protection()
 	for(var/reagent in reagents)
 		var/datum/reagent/R = reagent
-		. |= R.expose_mob(src, method, reagents[R], show_message, touch_protection)
+		. |= R.expose_mob(src, method, reagents[R], show_message, 1 - permeability)
