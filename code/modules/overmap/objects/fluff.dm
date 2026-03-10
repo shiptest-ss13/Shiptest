@@ -1,3 +1,4 @@
+#define GENERIC_SATELLITE_MESSAGE "NOTICE: Local sector authorities prohibit tampering with satellite. Aborting."
 /**
  * # Fluff Object
  *
@@ -85,7 +86,7 @@
 /datum/overmap/fluff/satellite
 	name = "satellite"
 	desc = "Metal scaffolding runs alongside unfurled solar panels, forming into a satellite. The locals have placed it out here for a reason unknown to you. It's smart to leave it as you found it."
-	docking_message = "NOTICE: Local sector authorities prohibit tampering with satellite. Aborting."
+	docking_message = GENERIC_SATELLITE_MESSAGE
 	token_icon_state = "satellite"
 	overmap_color_type = STARSYSTEM_COLOR_SECONDARY_STRUCTURE_COLOR
 	flag_overlay = TRUE
@@ -103,7 +104,7 @@
 /datum/overmap/fluff/commsat
 	name = "communications relay satellite"
 	desc = "A collection of scintillating antenna stretched out into the heavens. Every signal coming from the stars, they hear, and their brethren relay. The closer you are, the clearer you can hear them sing." + span_notice("You can get closer to reduce the interference aboard your vessel!")
-	docking_message = "NOTICE: Local sector authorities prohibit tampering with satellite. Aborting."
+	docking_message = GENERIC_SATELLITE_MESSAGE
 	token_icon_state = "commsat"
 	overmap_color_type = STARSYSTEM_COLOR_SECONDARY_STRUCTURE_COLOR
 	flag_overlay = TRUE

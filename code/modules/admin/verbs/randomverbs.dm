@@ -955,6 +955,10 @@
 
 	var/datum/overmap_star_system/nova = new /datum/overmap_star_system(FALSE)
 
+	if(!nova)
+		message_admins("Failed to generate Star System!")
+		return
+
 	// set generator to json
 	nova.generator_type = OVERMAP_GENERATOR_JSON
 	nova.json = json_file
@@ -967,9 +971,7 @@
 	if(nova)
 		nova.setup_system()
 		nova = SSovermap.spawn_new_star_system(nova)
-	if(!nova)
-		message_admins("Failed to generate Star System [system_name]!")
-		return
+
 	message_admins(span_big("Overmap [nova.name] successfully generated!"))
 	BLACKBOX_LOG_ADMIN_VERB("Spawn Overmap")
 
