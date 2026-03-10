@@ -659,6 +659,10 @@
 	else
 		var/list/results = current_overmap.get_unused_overmap_square()
 		overmap_move(results["x"], results["y"])
+	for(var/datum/overmap/towed_datum as anything in contents)
+		towed_datum.current_overmap = current_overmap
+		towed_datum.x = x
+		towed_datum.y = y
 	alter_token_appearance()
 
 
