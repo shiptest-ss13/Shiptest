@@ -51,7 +51,8 @@
 
 /obj/item/plasmacutter/examine(mob/user)
 	. = ..()
-	. += span_notice("You can <b>Control+Click</b> the plasmacutter to change its mode. It is currently on [tool_behaviour]")
+	if(powered)
+		. += span_notice("You can <b>Control+Click</b> the plasmacutter to change its mode. It is currently on [tool_behaviour]")
 
 /obj/item/plasmacutter/CtrlClick(mob/user)
 	. = ..()
@@ -104,7 +105,7 @@
 /obj/item/plasmacutter/unique_action(mob/user, modifiers)
 	. = ..()
 	if(!HAS_TRAIT(src, TRAIT_WIELDED))
-		to_chat(user, span_warning("[src] needs to beheld in both hands to activate!"))
+		to_chat(user, span_warning("[src] needs to be held in both hands to activate!"))
 		return FALSE
 	if(!powered)
 		if(!(item_use_power(power_use_amount, user, TRUE) & COMPONENT_POWER_SUCCESS))
