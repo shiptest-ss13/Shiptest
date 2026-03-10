@@ -37,54 +37,6 @@
 	contains = list(/obj/item/storage/belt/military/assault)
 	crate_name = "assault belt crate"
 
-/datum/supply_pack/tools/webbing/hardliner
-	name = "Hardliner Webbing Crate"
-	desc = "Contains a webbing, with a standard implement of six pockets."
-	cost = 300
-	contains = list(/obj/item/storage/belt/security/webbing/hardliners)
-	crate_name = "webbing crate"
-	faction = /datum/faction/syndicate/hardliners
-	faction_discount = 0
-	faction_locked = TRUE
-
-/datum/supply_pack/tools/webbing/hardliner/alt
-	name = "Hardliner Drop Pouch Harness Crate"
-	desc = "Contains a drop pouch harness, with a standard implement of six pockets."
-	contains = list(/obj/item/storage/belt/security/webbing/hardliners/alt)
-	crate_name = "drop pouch crate"
-
-/datum/supply_pack/tools/webbing/inteq
-	name = "Inteq Webbing Crate"
-	desc = "Contains a webbing, with a standard implement of six pockets."
-	cost = 300
-	contains = list(/obj/item/storage/belt/security/webbing/inteq)
-	crate_name = "webbing crate"
-	faction = /datum/faction/inteq
-	faction_discount = 0
-	faction_locked = TRUE
-
-/datum/supply_pack/tools/webbing/inteq/alt
-	name = "Inteq Drop Pouch Harness Crate"
-	desc = "Contains a drop pouch harness, with a standard implement of six pockets."
-	contains = list(/obj/item/storage/belt/security/webbing/inteq/alt)
-	crate_name = "drop pouch crate"
-
-/datum/supply_pack/tools/webbing/ngr
-	name = "NGR Webbing Crate"
-	desc = "Contains a webbing, with a standard implement of six pockets."
-	cost = 300
-	contains = list(/obj/item/storage/belt/security/webbing/ngr)
-	crate_name = "webbing crate"
-	faction = /datum/faction/syndicate/ngr
-	faction_discount = 0
-	faction_locked = TRUE
-
-/datum/supply_pack/tools/webbing/ngr/alt
-	name = "NGR Drop Pouch Harness Crate"
-	desc = "Contains a drop pouch harness, with a standard implement of six pockets."
-	contains = list(/obj/item/storage/belt/security/webbing/ngr/alt)
-	crate_name = "drop pouch crate"
-
 /datum/supply_pack/tools/chestrig
 	name = "Chest Rig Crate"
 	desc = "Contains a chest rig, with seven places to store small items."
