@@ -23,26 +23,23 @@
 
 	playsound(user, toggled ? 'sound/weapons/magin.ogg' : 'sound/weapons/magout.ogg', 40, TRUE)
 
-/obj/item/attachment/laser_sight/on_beforefire(obj/item/gun/gun, atom/target, mob/user, list/params)
+/obj/item/attachment/laser_sight/on_fireliveshot(obj/item/gun/gun, user, pointblank, atom/pbtarget, message, params)
 	if(toggled)
-		make_laser(gun, target, user, params)
+		make_laser(gun, user, pointblank, pbtarget, message, params)
 	return FALSE
 
-/obj/item/attachment/laser_sight/proc/make_laser(obj/item/gun/gun, atom/target, mob/user, list/params)
-
-//	var/turf/target_turf =  get_turf(user.client.mouseObject)
-
+/obj/item/attachment/laser_sight/proc/make_laser(obj/item/gun/gun, user, pointblank, atom/pbtarget, message, params)
 	var/obj/projectile/beam/beam_rifle/hitscan/aiming_beam/fake_laser_projectile = new
 	fake_laser_projectile.gun = src
 
-	var/turf/curloc = get_turf(src)
-	var/turf/targloc = get_turf(target)
-	var/angle = get_angle(curloc, target)
+	var/turf/curloc = (get_turf(user) || get_turf(src))
+	var/turf/targloc = get_turf(pbtarget)
 
-	if(!istype(targloc))
-		if(!istype(curloc))
-			return
-		targloc = get_turf_in_angle(angle, curloc, 10)
-	var/mouse_modifiers = params2list(user.client.mouseParams)
-	fake_laser_projectile.preparePixelProjectile(targloc, user, mouse_modifiers, 0)
-	fake_laser_projectile.fire(angle)
+	var/mouse_modifiers = params2list(params)
+
+	if(user)
+		fake_laser_projectile.preparePixelProjectile(targloc, curloc, mouse_modifiers, 0)
+	else
+		fake_laser_projectile.preparePixelProjectile(targloc, user, mouse_modifiers, 0)
+
+	fake_laser_projectile.fire()

@@ -798,6 +798,9 @@
 //called in /obj/item/gun/proc/before_firing (src)
 #define COMSIG_GUN_BEFORE_FIRING "gun_before_fire"
 
+//called in /obj/item/gun/proc/gun_fire_live_shot (src, user, pointblank, pbtarget, message, actual_angle)
+#define COMSIG_GUN_FIRE_LIVE_SHOT "gun_fire_live_shot"
+
 ///called when an elzu should unroot
 #define COMSIG_DIGOUT "dig_out"
 

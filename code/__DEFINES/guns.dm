@@ -132,6 +132,7 @@
 #define COMSIG_ATTACHMENT_TRY_FIRE_GUN "attach-try-fire-gun"
 #define COMSIG_ATTACHMENT_PRE_ATTACK "attach-pre-attack"
 #define COMSIG_ATTACHMENT_BEFORE_FIRING "attachment_before_firing"
+#define COMSIG_ATTACHMENT_FIRE_LIVE_SHOT "attachment_fire_live_shot"
 #define COMSIG_ATTACHMENT_AFTER_ATTACK "attach-after-attack"
 #define COMSIG_ATTACHMENT_ATTACK "attach-attacked"
 #define COMSIG_ATTACHMENT_WIELD "attach-wield"

@@ -32,6 +32,7 @@
 	RegisterSignal(parent, COMSIG_GUN_TRY_FIRE, PROC_REF(handle_gun_try_fire))
 	RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK_SECONDARY, PROC_REF(handle_item_pre_attack))
 	RegisterSignal(parent, COMSIG_GUN_BEFORE_FIRING, PROC_REF(handle_gun_before_firing))
+	RegisterSignal(parent, COMSIG_GUN_FIRE_LIVE_SHOT, PROC_REF(handle_gun_fire_live_shot))
 	RegisterSignal(parent, COMSIG_TWOHANDED_WIELD, PROC_REF(handle_item_wield))
 	RegisterSignal(parent, COMSIG_TWOHANDED_UNWIELD, PROC_REF(handle_item_unwield))
 	RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND_SECONDARY, PROC_REF(handle_hand_attack))
@@ -229,6 +230,13 @@
 
 	for(var/obj/item/attach as anything in attachments)
 		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_BEFORE_FIRING, parent, target_atom, user, params))
+			return TRUE
+
+/datum/component/attachment_holder/proc/handle_gun_fire_live_shot(obj/item/parent, user, pointblank, atom/pbtarget, message, params)
+	SIGNAL_HANDLER
+
+	for(var/obj/item/attach as anything in attachments)
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_FIRE_LIVE_SHOT, parent, user, pointblank, pbtarget, message, params))
 			return TRUE
 
 /datum/component/attachment_holder/proc/handle_item_wield(obj/item/parent, mob/user, params)

@@ -660,7 +660,7 @@
 		currently_firing_burst = FALSE
 		return FALSE
 	//Are we PBing someone? If so, set pointblank to TRUE
-	shoot_live_shot(user, (get_dist(user, target) <= 1), target, message) //Making sure whether the target is in vicinity for the pointblank shot
+	shoot_live_shot(user, (get_dist(user, target) <= 1), target, message, params) //Making sure whether the target is in vicinity for the pointblank shot
 
 	//process the chamber...
 	process_chamber(shooter = user)
@@ -701,7 +701,8 @@
 	to_chat(user, span_danger("Safeties are active on the [src]! Turn them off to fire!"))
 
 
-/obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, atom/pbtarget = null, message = TRUE)
+/obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, atom/pbtarget = null, message = TRUE, params = null)
+	SIGNAL_HANDLER
 	var/actual_angle = get_angle_with_scatter((user || get_turf(src)), pbtarget, rand(-recoil_deviation, recoil_deviation) + 180)
 	var/muzzle_angle = Get_Angle(get_turf(src), pbtarget)
 
@@ -742,6 +743,7 @@
 						vision_distance = COMBAT_MESSAGE_RANGE,
 						ignored_mobs = user
 				)
+	SEND_SIGNAL(src, COMSIG_GUN_FIRE_LIVE_SHOT, user, pointblank, pbtarget, message, params)
 
 	//cloudy sent a meme in the discord. i dont know if its true, but i made this piece of code in honor of it
 	var/mob/living/carbon/human/living_human = user
@@ -905,7 +907,7 @@
 //Happens before the actual projectile creation
 /obj/item/gun/proc/before_firing(atom/target, mob/user, params)
 	SIGNAL_HANDLER
-	SEND_SIGNAL(src,COMSIG_GUN_BEFORE_FIRING, target, user, params)
+	SEND_SIGNAL(src, COMSIG_GUN_BEFORE_FIRING, target, user, params)
 	return
 
 /obj/item/gun/proc/calculate_recoil(mob/living/user, recoil_bonus = 0)

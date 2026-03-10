@@ -21,6 +21,8 @@
 	var/datum/callback/on_preattack
 	///Called on the parents before_fire
 	var/datum/callback/on_beforefire
+	///Called on the parents fire_live_shot
+	var/datum/callback/on_fireliveshot
 	///Called on the parents wield
 	var/datum/callback/on_wield
 	///Called on the parents unwield
@@ -43,6 +45,7 @@
 		datum/callback/on_fire_gun = null,
 		datum/callback/on_preattack = null,
 		datum/callback/on_beforefire = null,
+		datum/callback/on_fireliveshot = null,
 		datum/callback/on_attacked = null,
 		datum/callback/on_secondary_action = null,
 		datum/callback/on_ctrl_click = null,
@@ -67,6 +70,7 @@
 	src.on_fire_gun = on_fire_gun
 	src.on_preattack = on_preattack
 	src.on_beforefire = on_beforefire
+	src.on_fireliveshot = on_fireliveshot
 	src.on_attacked = on_attacked
 	src.on_secondary_action = on_secondary_action
 	src.on_ctrl_click = on_ctrl_click
@@ -90,6 +94,7 @@
 	RegisterSignal(parent, COMSIG_ATTACHMENT_TRY_FIRE_GUN, PROC_REF(try_fire_gun))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_PRE_ATTACK, PROC_REF(relay_pre_attack))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_BEFORE_FIRING, PROC_REF(relay_before_fire))
+	RegisterSignal(parent, COMSIG_ATTACHMENT_FIRE_LIVE_SHOT, PROC_REF(relay_fire_live_shot))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_UPDATE_OVERLAY, PROC_REF(update_overlays))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_GET_SLOT, PROC_REF(send_slot))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_CHANGE_SLOT, PROC_REF(change_slot))
@@ -230,6 +235,12 @@
 
 	if(on_beforefire)
 		return on_beforefire.Invoke(gun, target_atom, user, params)
+
+/datum/component/attachment/proc/relay_fire_live_shot(obj/item/parent, obj/item/gun, user, pointblank, atom/pbtarget, message, params)
+	SIGNAL_HANDLER_DOES_SLEEP
+
+	if(on_fireliveshot)
+		return on_fireliveshot.Invoke(parent, user, pointblank, pbtarget, message, params)
 
 /datum/component/attachment/proc/relay_attacked(obj/item/parent, obj/item/gun, obj/item, mob/user, params)
 	SIGNAL_HANDLER_DOES_SLEEP

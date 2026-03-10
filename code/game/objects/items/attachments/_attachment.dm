@@ -66,6 +66,7 @@
 		CALLBACK(src, PROC_REF(on_fire_gun)), \
 		CALLBACK(src, PROC_REF(on_preattack)), \
 		CALLBACK(src, PROC_REF(on_beforefire)), \
+		CALLBACK(src, PROC_REF(on_fireliveshot)), \
 		CALLBACK(src, PROC_REF(on_attacked)), \
 		CALLBACK(src, PROC_REF(on_secondary_action)), \
 		CALLBACK(src, PROC_REF(on_ctrl_click)), \
@@ -119,6 +120,9 @@
 	return NONE
 
 /obj/item/attachment/proc/on_preattack(obj/item/gun/gun, atom/target, mob/user, list/params)
+	return FALSE
+
+/obj/item/attachment/proc/on_fireliveshot(obj/item/gun/gun, user, pointblank, atom/pbtarget, message, angle, params)
 	return FALSE
 
 /obj/item/attachment/proc/on_beforefire(obj/item/gun/gun, atom/target, mob/user, list/params)
