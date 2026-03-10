@@ -24,7 +24,7 @@
 
 	power_use_amount = POWER_CELL_USE_VERY_LOW
 
-	tool_behaviour = TOOL_DECONSTRUCT
+	tool_behaviour = NONE
 	wall_decon_damage = 200
 	toolspeed = 0.75
 
@@ -51,7 +51,7 @@
 
 /obj/item/plasmacutter/examine(mob/user)
 	. = ..()
-	. += span_notice("You can <b>Control+Click</b> the plasmacutter to change its mode. It is currently on [powered ? tool_behavior : "OFF"]")
+	. += span_notice("You can <b>Control+Click</b> the plasmacutter to change its mode. It is currently set to [powered ? tool_behavior : "OFF"]")
 
 /obj/item/plasmacutter/CtrlClick(mob/user)
 	. = ..()
