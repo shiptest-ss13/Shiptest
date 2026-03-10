@@ -773,6 +773,18 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer2,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
+"eJ" = (
+/obj/effect/turf_decal/box,
+/obj/machinery/light/floor,
+/obj/machinery/porta_turret/ship/pgf/heavy{
+	id = "crying_sun_grid"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/autoname{
+	dir = 6
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "eK" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
@@ -1140,6 +1152,14 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
+"gL" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/autoname{
+	dir = 2
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "gR" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
@@ -1552,6 +1572,19 @@
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
+"iz" = (
+/obj/effect/turf_decal/box,
+/obj/machinery/light/floor,
+/obj/machinery/porta_turret/ship/pgf/heavy{
+	dir = 1;
+	id = "crying_sun_grid"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "iB" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2,
 /obj/machinery/portable_atmospherics/canister/air,
@@ -2056,19 +2089,6 @@
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
-"kY" = (
-/obj/effect/turf_decal/box,
-/obj/machinery/light/floor,
-/obj/machinery/porta_turret/ship/pgf/heavy{
-	dir = 1;
-	id = "crying_sun_grid"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
 "lb" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/office)
@@ -3145,18 +3165,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/office)
-"rn" = (
-/obj/effect/turf_decal/box,
-/obj/machinery/light/floor,
-/obj/machinery/porta_turret/ship/pgf/heavy{
-	id = "crying_sun_grid"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 6
-	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
 "rw" = (
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm/commad)
@@ -3258,6 +3266,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "se" = (
@@ -8186,6 +8197,16 @@
 "QQ" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/toilet/two)
+"QR" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/light/floor,
+/obj/machinery/camera/autoname{
+	dir = 9
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "QS" = (
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden{
 	dir = 4
@@ -10178,7 +10199,7 @@ Na
 Sc
 FK
 CU
-Ua
+QR
 My
 Ua
 CU
@@ -10354,7 +10375,7 @@ Go
 dh
 FR
 nx
-mN
+gL
 RS
 RS
 RS
@@ -10859,7 +10880,7 @@ RS
 (22,1,1) = {"
 RS
 GN
-kY
+iz
 Ny
 wi
 QW
@@ -11148,7 +11169,7 @@ PW
 vv
 OG
 LX
-rn
+eJ
 ZX
 aF
 RS
