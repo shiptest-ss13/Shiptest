@@ -2156,22 +2156,6 @@
 /obj/item/flashlight/seclite{
 	pixel_y = -10
 	},
-/obj/item/melee/knife/survival{
-	pixel_x = 1;
-	pixel_y = 5
-	},
-/obj/item/melee/knife/survival{
-	pixel_x = 2;
-	pixel_y = 3
-	},
-/obj/item/melee/knife/survival{
-	pixel_x = 3;
-	pixel_y = 1
-	},
-/obj/item/melee/knife/survival{
-	pixel_x = 4;
-	pixel_y = -1
-	},
 /obj/item/attachment/rail_light{
 	pixel_x = -5;
 	pixel_y = 5
@@ -2189,12 +2173,12 @@
 	pixel_y = 8
 	},
 /obj/item/trench_tool/gezena{
-	pixel_y = 11;
-	pixel_x = -5
+	pixel_y = 12;
+	pixel_x = -6
 	},
 /obj/item/trench_tool/gezena{
-	pixel_y = 9;
-	pixel_x = -1
+	pixel_y = 8;
+	pixel_x = -3
 	},
 /obj/item/trench_tool/gezena{
 	pixel_y = 16;
@@ -2202,6 +2186,26 @@
 	},
 /obj/effect/turf_decal/corner/opaque/purple/border{
 	dir = 4
+	},
+/obj/item/trench_tool/gezena{
+	pixel_y = 4;
+	pixel_x = 0
+	},
+/obj/item/attachment/bayonet{
+	pixel_x = -1;
+	pixel_y = -1
+	},
+/obj/item/attachment/bayonet{
+	pixel_x = 0;
+	pixel_y = -3
+	},
+/obj/item/attachment/bayonet{
+	pixel_x = 1;
+	pixel_y = -5
+	},
+/obj/item/attachment/bayonet{
+	pixel_x = 2;
+	pixel_y = -7
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
