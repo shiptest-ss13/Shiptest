@@ -187,7 +187,8 @@
 
 /obj/item/clothing/head/wig/attack_hand_secondary(mob/living/carbon/human/user, modifiers)
 	attack_self(user)
-	user.regenerate_icons()
+	user.update_inv_head()
+	user.update_inv_neck()
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/item/clothing/head/wig/afterattack(mob/living/carbon/human/target, mob/user)
