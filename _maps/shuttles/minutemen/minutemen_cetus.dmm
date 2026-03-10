@@ -3389,9 +3389,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/eva)
 "to" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 8
-	},
 /obj/effect/turf_decal/trimline/transparent/blue/filled/line{
 	dir = 8
 	},
@@ -3411,6 +3408,9 @@
 /obj/machinery/light_switch{
 	pixel_x = 11;
 	pixel_y = 20
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/office/lobby)
