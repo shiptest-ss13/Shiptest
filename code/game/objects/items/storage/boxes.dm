@@ -508,7 +508,7 @@
 		new /obj/item/reagent_containers/food/drinks/sillycup(src)
 
 /obj/item/storage/box/shoalpockets
-	name = "box of shoal-pockets"
+	name = "box of shoalwiches"
 	desc = "An ultra-processed form of food originating from upper layers of the Shoal - now commercialized. Contrary to popular belief, it contains no real grain. Heated in the microwave."
 	icon_state = "shoalpocketbox"
 	illustration=null
@@ -519,22 +519,22 @@
 		new shoalpockettype(src)
 
 /obj/item/storage/box/shoalpockets/shoalpocketspicy
-	name = "box of spicy-flavoured shoal-pockets"
+	name = "box of spicy-flavoured shoalwiches"
 	icon_state = "shoalpocketboxspicy"
 	shoalpockettype = /obj/item/food/shoalpocket/spicy
 
 /obj/item/storage/box/shoalpockets/shoalpocketteriyaki
-	name = "box of teriyaki-flavoured shoal-pockets"
+	name = "box of teriyaki-flavoured shoalwiches"
 	icon_state = "shoalpocketboxteriyaki"
 	shoalpockettype = /obj/item/food/shoalpocket/teriyaki
 
 /obj/item/storage/box/shoalpockets/shoalpocketpizza
-	name = "box of pizza-flavoured shoal-pockets"
+	name = "box of pizza-flavoured shoalwiches"
 	icon_state = "shoalpocketboxpizza"
 	shoalpockettype = /obj/item/food/shoalpocket/pizza
 
 /obj/item/storage/box/shoalpockets/shoalpocketberry
-	name = "box of berry-flavoured shoal-pockets"
+	name = "box of berry-flavoured shoalwiches"
 	icon_state = "shoalpocketboxberry"
 	shoalpockettype = /obj/item/food/shoalpocket/berry
 

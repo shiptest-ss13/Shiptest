@@ -1,5 +1,5 @@
 /obj/item/food/shoalpocket/random
-	name = "\improper Random Shoal-pocket"
+	name = "\improper Random Shoalwich"
 	icon_state = "shoalpocket"
 	desc = "If you see this, you should contact a coder."
 	food_reagents = list(
@@ -21,9 +21,9 @@
 	return INITIALIZE_HINT_QDEL
 
 /obj/item/food/shoalpocket
-	name = "shoal-pocket"
+	name = "Shoalwich"
 	icon_state = "shoalpocket"
-	desc = "A single shoal-pocket. It might taste better if you warm it up."
+	desc = "A single Shoalwich. It might taste better if you warm it up."
 	microwaved_type = /obj/item/food/shoalpocket/warm
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 3,
@@ -38,9 +38,9 @@
 	AddComponent(/datum/component/bakeable, microwaved_type, rand(25 SECONDS, 30 SECONDS), TRUE, TRUE)
 
 /obj/item/food/shoalpocket/warm
-	name = "warm shoal-pocket"
+	name = "warm Shoalwich"
 	icon_state = "shoalpocket"
-	desc = "A single shoal-pocket. Careful, it's hot."
+	desc = "A single Shoalwich. Careful, it's hot."
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 3,
 		/datum/reagent/consumable/nutriment/protein = 2,
@@ -56,7 +56,7 @@
 /obj/item/food/shoalpocket/spicy
 	name = "spicy-pocket"
 	icon_state = "shoalpocketspicy"
-	desc = "A single shoal-pocket, with an alarming amount of added spice. It might taste better if you warm it up."
+	desc = "A single Shoalwich, with an alarming amount of added spice. It might taste better if you warm it up."
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 3,
 		/datum/reagent/consumable/nutriment/protein = 2,
@@ -79,7 +79,7 @@
 /obj/item/food/shoalpocket/teriyaki
 	name = "teriyaki-pocket"
 	icon_state = "shoalpocketteriyaki"
-	desc = "A single teriyaki-themed shoal-pocket. It might taste better if you warm it up."
+	desc = "A single teriyaki-themed Shoalwich. It might taste better if you warm it up."
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 3,
 		/datum/reagent/consumable/nutriment/protein = 2,
@@ -102,7 +102,7 @@
 /obj/item/food/shoalpocket/pizza
 	name = "pizza-pocket"
 	icon_state = "shoalpocketpizza"
-	desc = "A single shoal-pocket imitating a pizza. It might taste better if you warm it up."
+	desc = "A single Shoalwich imitating a pizza. It might taste better if you warm it up."
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 3,
 		/datum/reagent/consumable/nutriment/protein = 2,
@@ -125,7 +125,7 @@
 /obj/item/food/shoalpocket/berry
 	name = "berry-pocket"
 	icon_state = "shoalpocketberry"
-	desc = "A berry-flavored shoal-pocket. It might taste better if you warm it up."
+	desc = "A berry-flavored Shoalwich. It might taste better if you warm it up."
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
 		/datum/reagent/consumable/berryjuice = 3,

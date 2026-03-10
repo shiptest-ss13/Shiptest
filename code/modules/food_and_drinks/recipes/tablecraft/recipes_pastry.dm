@@ -39,7 +39,7 @@
 
 /datum/crafting_recipe/food/shoalpocket
 	time = 15
-	name = "Shoal-pocket"
+	name = "Shoalwich"
 	reqs = list(
 		/obj/item/food/pastrybase = 1,
 		/obj/item/food/meatball = 1

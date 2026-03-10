@@ -363,11 +363,11 @@ GLOBAL_LIST_INIT(cardboard_recipes, list (														\
 	new/datum/stack_recipe_list("fancy boxes", list(
 		new /datum/stack_recipe("donut box", /obj/item/storage/fancy/donut_box),				\
 		new /datum/stack_recipe("egg box", /obj/item/storage/fancy/egg_box),					\
-		new /datum/stack_recipe("shoal-pockets box", /obj/item/storage/box/shoalpockets),			\
-		new /datum/stack_recipe("shoal-pockets spicy box", /obj/item/storage/box/shoalpockets/shoalpocketspicy),			\
-		new /datum/stack_recipe("shoal-pockets teriyaki box", /obj/item/storage/box/shoalpockets/shoalpocketteriyaki),		\
-		new /datum/stack_recipe("shoal-pockets pizza box", /obj/item/storage/box/shoalpockets/shoalpocketpizza),			\
-		new /datum/stack_recipe("shoal-pockets berry box", /obj/item/storage/box/shoalpockets/shoalpocketberry),			\
+		new /datum/stack_recipe("shoalwiches box", /obj/item/storage/box/shoalpockets),			\
+		new /datum/stack_recipe("shoalwiches spicy box", /obj/item/storage/box/shoalpockets/shoalpocketspicy),			\
+		new /datum/stack_recipe("shoalwiches teriyaki box", /obj/item/storage/box/shoalpockets/shoalpocketteriyaki),		\
+		new /datum/stack_recipe("shoalwiches pizza box", /obj/item/storage/box/shoalpockets/shoalpocketpizza),			\
+		new /datum/stack_recipe("shoalwiches berry box", /obj/item/storage/box/shoalpockets/shoalpocketberry),			\
 		new /datum/stack_recipe("monkey cube box", /obj/item/storage/box/monkeycubes),
 		new /datum/stack_recipe("nugget box", /obj/item/storage/fancy/nugget_box),			\
 		null,																					\

@@ -6,7 +6,7 @@
 */
 
 /datum/supply_pack/food/shoalpockets
-	name = "Shoal Pocket Variety Crate"
+	name = "Shoalwich Variety Crate"
 	desc = "Featuring a collection of heavily-processed reheatable food packets, straight from the Shoal."
 	cost = 500
 	contains = list(/obj/item/storage/box/shoalpockets/shoalpocketspicy,
