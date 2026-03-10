@@ -2454,6 +2454,16 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
+"nU" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/transparent/blue/line{
+	dir = 1
+	},
+/obj/structure/chair/handrail,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
 "nW" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
@@ -2632,6 +2642,15 @@
 /obj/effect/turf_decal/siding/thinplating/corner,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
+"pt" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/trimline/transparent/blue/line,
+/obj/structure/chair/handrail{
+	layer = 2.8;
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/starboard)
 "pu" = (
 /obj/structure/closet/secure_closet/armory1{
 	populate = 0;
@@ -10376,7 +10395,7 @@ bB
 bB
 bB
 bB
-zY
+nU
 vB
 NK
 vV
@@ -10388,7 +10407,7 @@ Bb
 vV
 Co
 GD
-AL
+pt
 xF
 xF
 xF
@@ -10673,7 +10692,7 @@ oN
 lG
 zZ
 jk
-zY
+nU
 vB
 NK
 Bb
@@ -10685,7 +10704,7 @@ Bb
 Bb
 Co
 GD
-AL
+pt
 vi
 cl
 lE
