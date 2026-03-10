@@ -20,7 +20,7 @@
 	var/slab_color = "#FF0000"
 
 /obj/item/food/meat/slab/make_dryable()
-	AddElement(/datum/element/dryable, /obj/item/food/sosjerky/healthy)
+	AddElement(/datum/element/dryable, /obj/item/food/homemade_jerky)
 
 /obj/item/food/meat/slab/make_grillable()
 	AddComponent(/datum/component/grillable, /obj/item/food/meat/steak/plain, rand(30 SECONDS, 90 SECONDS), TRUE, TRUE)

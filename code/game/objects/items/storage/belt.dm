@@ -548,7 +548,7 @@
 		/obj/item/food/sosjerky,
 		/obj/item/food/syndicake,
 		/obj/item/food/spacetwinkie,
-		/obj/item/food/cheesiehonkers,
+		/obj/item/food/gummycarps,
 		/obj/item/food/nachos,
 		/obj/item/food/cheesynachos,
 		/obj/item/food/cubannachos,
