@@ -51,7 +51,7 @@
 
 /obj/item/plasmacutter/examine(mob/user)
 	. = ..()
-	. += span_notice("You can <b>Control+Click</b> the plasmacutter to change its mode. It is currently set to [powered ? tool_behavior : "off"]")
+	. += span_notice("You can <b>Control+Click</b> the plasmacutter to change its mode. It is currently set to <b>[powered ? tool_behavior : "off"]</b>")
 
 /obj/item/plasmacutter/CtrlClick(mob/user)
 	. = ..()
