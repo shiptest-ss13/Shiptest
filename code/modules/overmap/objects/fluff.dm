@@ -84,7 +84,7 @@
 
 /datum/overmap/fluff/satellite
 	name = "satellite"
-	desc = "A satellite of some kind, allowed by the local inhabitants. You probably shouldn't mess with this."
+	desc = "Metal scaffolding runs alongside unfurled solar panels, forming into a satellite. The locals have placed it out here for a reason unknown to you. It's smart to leave it as you found it."
 	docking_message = "NOTICE: Local sector authorities prohibit tampering with satellite. Aborting."
 	token_icon_state = "satellite"
 	overmap_color_type = STARSYSTEM_COLOR_SECONDARY_STRUCTURE_COLOR
@@ -93,7 +93,7 @@
 
 /datum/overmap/fluff/satellite/abandoned
 	name = "abandoned satellite"
-	desc = "An abandoned satellite. Luckily it hasn't broken apart to form a debris field yet"
+	desc = "Paneling breaks and decays in solitude, each year left alone another coating of microscopic holes in this satellite's abandoned hull. One day it'll break into debris, until then it floats here."
 	docking_message = null
 	default_color = "#b8ccbf"
 	overmap_color_type = STARSYSTEM_COLOR_HAZARD_SECONDARY_COLOR
@@ -102,7 +102,7 @@
 
 /datum/overmap/fluff/commsat
 	name = "communications relay satellite"
-	desc = "An communications relay! It relays off wideband messages and amplifies them. You can get closer to get clearer recception if there is too much interference."
+	desc = "A collection of scintillating antenna stretched out into the heavens. Every signal coming from the stars, they hear, and their brethren relay. The closer you are, the clearer you can hear them sing." + span_notice("You can get closer to reduce the interference aboard your vessel!")
 	docking_message = "NOTICE: Local sector authorities prohibit tampering with satellite. Aborting."
 	token_icon_state = "commsat"
 	overmap_color_type = STARSYSTEM_COLOR_SECONDARY_STRUCTURE_COLOR
@@ -111,16 +111,16 @@
 
 /datum/overmap/fluff/commsat/abandoned
 	name = "abandoned communications relay satellite"
-	desc = "An communications satellite that has fallen into disuse and disrepair. It might still work, but a lack of maintenance and upkeep has left it less effective than usual."
+	desc = "Damaged metallic spires still try to catch and hear what travels by them, even as their foundation crumbles around them. " + span_notice("You can get closer to reduce the interference aboard your vessel!")
 	docking_message = null
 	default_color = "#b8ccbf"
 	overmap_color_type = STARSYSTEM_COLOR_HAZARD_SECONDARY_COLOR
 	flag_overlay = FALSE
-	interference_power = -10
+	interference_power = -25
 
 /datum/overmap/fluff/spacecolony
 	name = "o'neill cylinder"
-	desc = "A habitation station for an colony comprised of a cluster of cylinders. Despite the low cost of modern gravity generators, these still used for very cheap prefab stations, or old stations towed to a new owner secondhand. It would be a very, very, bad idea to drop this on a planetoid."
+	desc = "A habitation station for an colony comprised of a cluster of cylinders. Despite the low cost of modern gravity generators, these are still used as very cheap prefabricated stations, or sold off to a new owner once the previous owner has outgrown them." + span_warning("It would be an exceedingly bad idea to drop this on a planetoid.")
 	docking_message = "Colony is not accepting visitors at the moment."
 	token_icon_state = "colony"
 	overmap_color_type = STARSYSTEM_COLOR_SECONDARY_STRUCTURE_COLOR
@@ -130,7 +130,7 @@
 
 /datum/overmap/fluff/spacecolony/abandoned
 	name = "abandoned o'neill cylinder"
-	desc = "An abandoned habitation station, which may have broken off from it's cylinder cluster. It's unusual to see an abandoned cylinder, as they are scrapped as soon as possible due to the extreme danger of letting such a large structure drift aimlessly. It would be a very, very, bad idea to drop this on a planetoid."
+	desc = "An abandoned habitat, taken from its cluster by cosmic calamity. It's unusual to see an abandoned cylinder, as they are scrapped as soon as possible due to the extreme danger of letting such a large structure drift aimlessly." + span_warning("It would be an exceedingly bad idea to drop this on a planetoid.")
 	docking_message = "Cylinder's docking section is far too damaged to land in. Aborting."
 	default_color = "#b8ccbf"
 	overmap_color_type = STARSYSTEM_COLOR_HAZARD_SECONDARY_COLOR
@@ -139,7 +139,7 @@
 //d
 /datum/overmap/fluff/dud
 	name = "dud missile"
-	desc = "The horror washing over slowly fades as you realize this is a dud missile. The explosives have been removed, rendering this safe to pass. You probably shouldn't mess with this anyways."
+	desc = "Inactive munitions from the wars of modernity. It stays still no matter how provoked it gets. That doesn't mean it's safe."
 	docking_message = "NOTICE: Local sector authorities prohibit tampering with dud. Aborting."
 	token_icon_state = "missile_stationary"
 	overmap_color_type = STARSYSTEM_COLOR_HAZARD_PRIMARY_COLOR
@@ -317,7 +317,7 @@
 
 /datum/overmap/fluff/fakestation/boxstation
 	name = "research station MWSS-13 'Box'"
-	desc = "What's left of the extremely infamous MW-SS13. The parts that haven't joined the surrounding debris belt are nearly untouched, however the ruins itself is extremely dangerous with radiation and other unknown hazards. Even now up close, you really cannot tell what the hell happened here."
+	desc = "What's left of the infamous MWSS-13 station. The parts that haven't joined the debris ring around it are untouched by living hands, only haunted by the specters of radiation and other unknowable horrors. Even now, no one is sure what happened here."
 
 	flag_overlay = FALSE
 	token_icon_state = "station_classic"
