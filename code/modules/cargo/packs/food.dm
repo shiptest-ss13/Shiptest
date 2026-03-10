@@ -13,9 +13,8 @@
 					/obj/item/storage/box/shoalpockets/shoalpocketteriyaki,
 					/obj/item/storage/box/shoalpockets/shoalpocketpizza,
 					/obj/item/storage/box/shoalpockets/shoalpocketberry)
-	crate_name = "shoal pocket crate"
+	crate_name = "shoalwich crate"
 	crate_type = /obj/structure/closet/crate/freezer
-	faction = /datum/faction/syndicate
 
 /datum/supply_pack/food/shoalpockets/fill(obj/structure/closet/crate/C)
 	for(var/i in 1 to 3)
