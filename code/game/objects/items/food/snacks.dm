@@ -23,9 +23,8 @@
 	desc = "A traditional treat from the Antechannal League, each sugary piece of meat is individually wrapped to preserve the contents."
 	trash_type = /obj/item/trash/channelercandy
 	food_reagents = list(
-		/datum/reagent/consumable/nutriment/protein = 3,
-		/datum/reagent/consumable/sugar = 2,
-		/datum/reagent/consumable/sodiumchloride = 2,
+		/datum/reagent/consumable/nutriment/protein = 4,
+		/datum/reagent/consumable/sugar = 3,
 	)
 	junkiness = 25
 	tastes = list("channeler meat" = 3, "sugar" = 2)
@@ -105,12 +104,12 @@
 	icon_state = "gummy_carps"
 	trash_type = /obj/item/trash/gummycarps
 	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 1,
-		/datum/reagent/consumable/sugar = 3,
+		/datum/reagent/consumable/nutriment = 3,
+		/datum/reagent/consumable/sugar = 2,
 	)
 	junkiness = 25
 	tastes = list("gummy" = 5, "artificial fruitiness" = 2)
-	foodtypes = JUNKFOOD | DAIRY | SUGAR
+	foodtypes = JUNKFOOD | SUGAR
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/syndicake

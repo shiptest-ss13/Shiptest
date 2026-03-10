@@ -545,7 +545,7 @@
 		/obj/item/food/candy,
 		/obj/item/reagent_containers/food/drinks/dry_ramen,
 		/obj/item/food/chips,
-		/obj/item/food/sosjerky,
+		/obj/item/food/channeler_meats,
 		/obj/item/food/syndicake,
 		/obj/item/food/spacetwinkie,
 		/obj/item/food/gummycarps,
