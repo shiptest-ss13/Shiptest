@@ -156,32 +156,34 @@
 // PAWSITRONS UNITED
 
 /obj/item/bodypart/head/ipc/pawsitrons
-	name = "\improper Pawsitrons United head"
+	name = "\improper Pawsitrons United N1 head"
 	icon_state = "pawsitrons_head"
 	limb_id = "pawsitrons"
+	has_screen = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
 
 /obj/item/bodypart/chest/ipc/pawsitrons
-	name = "\improper Pawsitrons United chest"
+	name = "\improper Pawsitrons United N1 chest"
 	icon_state = "pawsitrons_chest"
 	limb_id = "pawsitrons"
 
 /obj/item/bodypart/l_arm/ipc/pawsitrons
-	name = "\improper Pawsitrons United left arm"
+	name = "\improper Pawsitrons United N1 left arm"
 	icon_state = "pawsitrons_l_arm"
 	limb_id = "pawsitrons"
 
 /obj/item/bodypart/r_arm/ipc/pawsitrons
-	name = "\improper Pawsitrons United right arm"
+	name = "\improper Pawsitrons United N1 right arm"
 	icon_state = "pawsitrons_r_arm"
 	limb_id = "pawsitrons"
 
 /obj/item/bodypart/leg/left/ipc/pawsitrons
-	name = "\improper Pawsitrons United left leg"
+	name = "\improper Pawsitrons United N1 left leg"
 	icon_state = "pawsitrons_l_leg"
 	limb_id = "pawsitrons"
 
 /obj/item/bodypart/leg/right/ipc/pawsitrons
-	name = "\improper Pawsitrons United right leg"
+	name = "\improper Pawsitrons United N1 right leg"
 	icon_state = "pawsitrons_r_leg"
 	limb_id = "pawsitrons"
 
