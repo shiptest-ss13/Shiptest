@@ -53,7 +53,13 @@
 	ammo_type = /obj/projectile/bullet/mortar/howi/he
 
 /obj/item/mortal_shell/howitzer/flare
+	name = "\improper 150mm smoke artillery shell"
+	desc = "An 150mm artillery shell, loaded with smoke dispersal agents. Can be fired at friendlies more-or-less safely."
+	icon_state = "howitzer_ammo_smoke"
+	ammo_type = /obj/projectile/bullet/mortar/smoke
+
+/obj/item/mortal_shell/howitzer/flare
 	name = "\improper 150mm flare artillery shell"
-	desc = "An 150mm artillery shell, loaded with an illumination flare, lighting up large radius while dazzling anyone in the area. Can be fired out of larger cannons."
+	desc = "An 150mm artillery shell, loaded with an illumination flare, lighting up large radius while dazzling anyone in the area."
 	icon_state = "howitzer_ammo_smoke"
 	ammo_type = /obj/projectile/bullet/mortar/flare

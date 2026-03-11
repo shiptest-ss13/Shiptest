@@ -273,10 +273,10 @@
 	perform_firing_visuals()
 	qdel(arty_shell)
 
-	var/fall_time = (shell_range/(shell.speed * 4)) - 0.5 SECONDS
+	var/fall_time = ((shell_range * (shell.speed/20)) SECONDS) - 1.5 SECONDS
 	//prevent runtime
-	if(fall_time < 0.5 SECONDS)
-		fall_time = 0.5 SECONDS
+	if(fall_time < 1.5 SECONDS)
+		fall_time = 1.5 SECONDS
 	addtimer(CALLBACK(src, PROC_REF(falling), target, shell), fall_time)
 	addtimer(VARSET_CALLBACK(src, firing, FALSE), cool_off_time)
 
@@ -294,17 +294,11 @@
 	atom_integrity = 250
 	max_integrity = 250
 	fire_sound = 'sound/machines/artillery/mortar_fire.ogg'
-	reload_sound = 'sound/machines/artillery/mortar_reload.ogg' // Our reload sound.
-	fall_sound = 'sound/machines/artillery/mortar_long_whistle.ogg' //The sound the shell makes when falling.
+	reload_sound = 'sound/machines/artillery/mortar_reload.ogg'
 	///32x32 sprite
 	pixel_x = 0
-	/// Max spread on target
 	max_spread = 5
-	/// Used for deconstruction and aiming sanity
-	firing = 0
-	///Time it takes for the mortar to cool off to fire
 	cool_off_time = 1 SECONDS
-	///Time to load a shell
 	reload_time = 0.5 SECONDS
 	/// Prevents the standard behavior
 	can_be_unanchored = FALSE
