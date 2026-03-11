@@ -543,6 +543,9 @@
 	if(new_icon_state)
 		icon_state = new_icon_state
 
+
+//artillery flares
+//'dazzles' nearby players
 #define CONFUSION_STACK_MAX_MULTIPLIER 2
 
 /obj/effect/temp_visual/above_flare
