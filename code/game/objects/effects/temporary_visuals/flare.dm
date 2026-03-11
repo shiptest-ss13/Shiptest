@@ -30,7 +30,7 @@
 /obj/effect/temp_visual/above_flare/process(seconds_per_tick)
 	check_flashers_in_range()
 
-/obj/effect/temp_visual/above_flare/proc/check_flashers_in_range(range = 4, power = 5)
+/obj/effect/temp_visual/above_flare/proc/check_flashers_in_range(range = 6, power = 5)
 	var/list/mob/targets = get_flash_targets(get_turf(src), range, FALSE)
 	for(var/mob/living/carbon/dazzler in targets)
 		do_flash(dazzler, power)

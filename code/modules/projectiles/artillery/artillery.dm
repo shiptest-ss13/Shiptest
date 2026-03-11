@@ -27,6 +27,8 @@
 	desc = "A manual, crew-operated and towable howitzer, will rain down shells on any of your foes."
 	icon = 'icons/obj/machines/howitzer.dmi'
 	icon_state = "howitzer_deployed"
+	//layers above
+	layer = ABOVE_MOB_LAYER
 	var/icon_undeployed = "howitzer_undeployed"
 	var/icon_deployed = "howitzer_deployed"
 	var/fire_sound = 'sound/machines/artillery/howitzer_fire.ogg'
@@ -41,6 +43,7 @@
 	can_be_unanchored = TRUE
 	pixel_x = -16
 	anchored = TRUE // You can move this.
+
 
 	/// Number of turfs to offset from target by 1
 	var/offset_per_turfs = 15

@@ -5,7 +5,7 @@
 
 	projectile_phasing = ALL
 	projectile_piercing = ALL
-	pass_flags = PASSTABLE | PASSGRILLE | PASSGRILLE | PASSMOB | PASSCLOSEDTURF | LETPASSTHROW | PASSPLATFORM
+	pass_flags = ALL
 
 	speed = 3
 	damage = 0
@@ -14,8 +14,13 @@
 	light_range = 1.5
 	near_miss_sound = FALSE
 
-/obj/projectile/bullet/mortar/scan_moved_turf()
-	. = ..()
+//dont hit ANYTHING
+/obj/projectile/bullet/mortar/can_hit_target(atom/target, direct_target = FALSE, ignore_loc = FALSE)
+	return FALSE
+
+//ditto
+/obj/projectile/bullet/mortar/CanPassThrough(atom/blocker, movement_dir, blocker_opinion)
+	return TRUE
 
 /obj/projectile/bullet/mortar/proc/payload()
 	return
@@ -23,6 +28,7 @@
 /obj/projectile/bullet/mortar/on_range()
 	if(isarea(get_area(src), /area/overmap_encounter/planetoid/cave))
 		to_chat(get_turf(src), span_danger("Something slams into the roof of the cave, but you appear protected!"))
+		return ..()
 	payload()
 	return ..()
 
