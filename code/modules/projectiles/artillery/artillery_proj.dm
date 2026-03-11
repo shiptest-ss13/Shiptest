@@ -1,5 +1,6 @@
 /obj/projectile/bullet/mortar
 	name = "80mm shell"
+	icon = 'icons/obj/projectiles_artillery.dmi'
 	icon_state = "mortar"
 
 	projectile_phasing = ALL
