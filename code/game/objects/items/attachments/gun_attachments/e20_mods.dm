@@ -2,7 +2,7 @@
 	name = "Generic E-20 Mod"
 	desc = "Basetype you probably shouldnt see."
 	icon = 'icons/obj/guns/manufacturer/eoehoma/e20_attachment_obj.dmi'
-	icon_state = "silencer"
+	icon_state = "e20mod"
 	attach_features_flags = null
 	attach_sound = 'sound/items/drill_use.ogg'
 	attachment_time = 10 SECONDS
