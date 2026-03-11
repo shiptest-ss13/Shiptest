@@ -256,7 +256,7 @@
 	stock_max = 3
 	availability_prob = 40
 
-/datum/blackmarket_item/e20_scatter
+/datum/blackmarket_item/weapon/e20_scatter
 	name = "E-20 Scattershot coversion kit"
 	desc = "An unoffical modication kit, designed to tranform your E-20 into a laser shotgun. Of course, this ruins the mining functionality, so no going back once applied."
 	item = /obj/item/attachment/e20mod/scatter
@@ -266,7 +266,7 @@
 	stock = 2
 	availability_prob = 40
 
-/datum/blackmarket_item/e20_heavy
+/datum/blackmarket_item/weapon/e20_heavy
 	name = "E-20 Heavy Emitter coversion kit"
 	desc = "An unoffical modication kit, designed to tranform your E-20 into a discount E-50. Of course, this ruins the mining functionality, so no going back once applied."
 	item = /obj/item/attachment/e20mod/heavy
@@ -276,7 +276,7 @@
 	stock = 2
 	availability_prob = 40
 
-/datum/blackmarket_item/e20_efficency
+/datum/blackmarket_item/weapon/e20_efficency
 	name = "E-20 efficency coversion kit"
 	desc = "An unoffical modication kit, designed to tranform your E-20 into a extremely efficent weapon. Of course, this ruins the mining functionality, and is suspicously similar to the wasp... still, no going back once applied."
 	item = /obj/item/attachment/e20mod/efficency
@@ -286,7 +286,7 @@
 	stock = 2
 	availability_prob = 40
 
-/datum/blackmarket_item/e20_pierce
+/datum/blackmarket_item/weapon/e20_pierce
 	name = "E-20 piercing laser coversion kit"
 	desc = "An unoffical modication kit, designed to tranform your E-20 into a short-range true-beam gun. Somehow, this retains the mining functionality, but has quite the dropoff in atmosphere. Still, no going back once applied."
 	item = /obj/item/attachment/e20mod/pierce
