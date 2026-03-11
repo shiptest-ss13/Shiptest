@@ -4821,7 +4821,6 @@
 	desc = "A sturdy wooden crate with the label 'MINING EQUIPMENT' stamped into the lid.";
 	name = "mining equipment"
 	},
-/obj/effect/mapping_helpers/crate_shelve,
 /obj/item/storage/bag/ore{
 	pixel_x = -7
 	},
@@ -4840,6 +4839,7 @@
 	pixel_x = 4;
 	pixel_y = -3
 	},
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/eva)
 "AT" = (
@@ -5923,8 +5923,8 @@
 	pixel_y = 1
 	},
 /obj/item/stock_parts/matter_bin/adv{
-	pixel_x = -21;
-	pixel_y = 5
+	pixel_x = -26;
+	pixel_y = 4
 	},
 /obj/item/pen{
 	pixel_x = -7;
@@ -7688,7 +7688,6 @@
 /obj/structure/closet/crate{
 	name = "Mission Accomplished"
 	},
-/obj/effect/mapping_helpers/crate_shelve,
 /obj/item/poster/mission_accomplished_1,
 /obj/item/poster/mission_accomplished_2,
 /obj/item/poster/mission_accomplished_3,
@@ -7696,6 +7695,7 @@
 /obj/item/poster/mission_accomplished_5,
 /obj/item/poster/mission_accomplished_6,
 /obj/item/poster/mission_accomplished_7,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
 "Od" = (
@@ -8971,7 +8971,6 @@
 /obj/structure/closet/crate/internals{
 	name = "spare EVA crate"
 	},
-/obj/effect/mapping_helpers/crate_shelve,
 /obj/item/clothing/suit/space/gezena,
 /obj/item/clothing/suit/space/gezena,
 /obj/item/clothing/suit/space/gezena,
@@ -8996,6 +8995,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Uc" = (
@@ -9555,6 +9555,10 @@
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_y = 24;
 	pixel_x = 9
+	},
+/obj/item/stock_parts/micro_laser/high{
+	pixel_x = 13;
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
