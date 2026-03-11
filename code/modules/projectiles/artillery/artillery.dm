@@ -65,6 +65,7 @@
 		/obj/item/mortal_shell/howitzer/incendiary,
 		/obj/item/mortal_shell/howitzer/he,
 		/obj/item/mortal_shell/howitzer/flare,
+		/obj/item/mortal_shell/howitzer/smoke,
 		/obj/item/mortal_shell/flare,
 	)
 

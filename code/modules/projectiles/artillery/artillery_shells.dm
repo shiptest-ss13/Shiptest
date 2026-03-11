@@ -52,7 +52,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = /obj/projectile/bullet/mortar/howi/he
 
-/obj/item/mortal_shell/howitzer/flare
+/obj/item/mortal_shell/howitzer/smoke
 	name = "\improper 150mm smoke artillery shell"
 	desc = "An 150mm artillery shell, loaded with smoke dispersal agents. Can be fired at friendlies more-or-less safely."
 	icon_state = "howitzer_ammo_smoke"
@@ -61,5 +61,5 @@
 /obj/item/mortal_shell/howitzer/flare
 	name = "\improper 150mm flare artillery shell"
 	desc = "An 150mm artillery shell, loaded with an illumination flare, lighting up large radius while dazzling anyone in the area."
-	icon_state = "howitzer_ammo_smoke"
+	icon_state = "howitzer_ammo_flares"
 	ammo_type = /obj/projectile/bullet/mortar/flare
