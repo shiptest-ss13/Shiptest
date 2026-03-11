@@ -489,6 +489,7 @@
 		/obj/item/gun/energy/sharplite/x26,
 		/obj/item/gun/energy/disabler,
 		/obj/item/gun/energy/kalix/pistol,
+		/obj/item/bodycamera,
 		))
 	STR.exception_hold = exception_cache
 	STR.max_w_class = WEIGHT_CLASS_SMALL
