@@ -2,7 +2,7 @@
 	name = "\improper 80mm mortar shell"
 	desc = "An unlabeled 80mm mortar shell, probably a casing."
 	icon = 'icons/obj/machines/mortar.dmi'
-	icon_state = "mortar_ammo_cas"
+	icon_state = "mortar_ammo_he"
 	w_class = WEIGHT_CLASS_SMALL
 	///Ammo projectile typepath that the shell uses
 	var/obj/projectile/bullet/ammo_type
@@ -22,7 +22,7 @@
 /obj/item/mortal_shell/smoke
 	name = "\improper 80mm smoke mortar shell"
 	desc = "An 80mm mortar shell, loaded with smoke dispersal agents. Can be fired at friendlies more-or-less safely. Way slimmer than your typical 80mm."
-	icon_state = "mortar_ammo_smk"
+	icon_state = "mortar_ammo_smoke"
 	ammo_type = /obj/projectile/bullet/mortar/smoke
 
 /obj/item/mortal_shell/flare
@@ -55,5 +55,5 @@
 /obj/item/mortal_shell/howitzer/flare
 	name = "\improper 150mm flare artillery shell"
 	desc = "An 150mm artillery shell, loaded with an illumination flare, lighting up large radius while dazzling anyone in the area. Can be fired out of larger cannons."
-	icon_state = "mortar_ammo_smk"
+	icon_state = "howitzer_ammo_smoke"
 	ammo_type = /obj/projectile/bullet/mortar/flare

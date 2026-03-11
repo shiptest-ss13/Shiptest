@@ -12,17 +12,6 @@
 /obj/item/binoculars/rangefinder/afterattack(atom/target, mob/living/user, flag, params)
 	. = ..()
 	var/turf/targloc = get_turf(target)
-	//laser pointer image
-	var/image/I = image('icons/obj/projectiles.dmi',targloc,"red_laser",10)
-	var/list/modifiers = params2list(params)
-	if(modifiers)
-		if(LAZYACCESS(modifiers, ICON_X))
-			I.pixel_x = (text2num(LAZYACCESS(modifiers, ICON_X)) - 16)
-		if(LAZYACCESS(modifiers, ICON_Y))
-			I.pixel_y = (text2num(LAZYACCESS(modifiers, ICON_Y)) - 16)
-	else
-		I.pixel_x = target.pixel_x + rand(-5,5)
-		I.pixel_y = target.pixel_y + rand(-5,5)
 
 	var/datum/virtual_level/our_vlevel = get_virtual_level()
 	if(!our_vlevel)
@@ -147,12 +136,12 @@
 			if(is_type_in_list(our_overmap_object, list(/datum/planet_type/asteroid, /datum/planet_type/spaceruin, /datum/overmap/dynamic/empty)))
 				do_not_fire = TRUE
 		if(do_not_fire)
-			user.balloon_alert(user, "Not in 0g!")
+			user.balloon_alert(user, "not in 0g!")
 			to_chat(user, span_danger("How are you going to fire this in 0g..?"))
 			return
 
 	if(!target_turf)
-		user.balloon_alert(user, "Invalid location.")
+		user.balloon_alert(user, "invalid location.")
 		to_chat(user, span_danger("Invalid location."))
 		target_x = old_x
 		target_y = old_y
@@ -160,21 +149,21 @@
 		return
 
 	if(get_dist(loc, target_turf) < minimum_range)
-		user.balloon_alert(user, "The target is too close to the gun.")
+		user.balloon_alert(user, "the target is too close to the gun.")
 		to_chat(user, span_danger("The target is too close to the gun."))
 		target_x = old_x
 		target_y = old_y
 		return
 
 	if(!isturf(target_turf) || isindestructiblewall(target_turf))
-		user.balloon_alert(user, "You cannot fire the gun to this target.")
+		user.balloon_alert(user, "you cannot fire the gun to this target.")
 		to_chat(user, span_danger("You cannot fire the gun to this target."))
 		target_x = old_x
 		target_y = old_y
 		return
 
 	if(!target_turf.virtual_z() == virtual_z())
-		user.balloon_alert(user, "You cannot fire the gun to this target.")
+		user.balloon_alert(user, "you cannot fire the gun to this target.")
 		to_chat(user, span_danger("You cannot fire the gun to this target."))
 		target_x = old_x
 		target_y = old_y
@@ -186,7 +175,7 @@
 	. = ..()
 
 	if(!anchored)
-		user.balloon_alert(user, "Anchor it first!")
+		user.balloon_alert(user, "anchor it first!")
 		to_chat(user, span_danger("Anchor [src] first!"))
 		return
 
@@ -195,7 +184,7 @@
 		return
 
 	if(firing)
-		user.balloon_alert(user, "The barrel is steaming hot. Wait till it cools off")
+		user.balloon_alert(user, "the barrel is steaming hot. wait till it cools off")
 		to_chat(user, span_danger("The barrel is steaming hot. Wait till it cools off!"))
 		return
 
@@ -205,7 +194,7 @@
 			return
 
 		if(!(potential_shell.type in allowed_shells))
-			user.balloon_alert(user, "This shell doesn't fit")
+			user.balloon_alert(user, "this shell doesn't fit")
 			to_chat(user, span_danger("This shell doesn't fit!"))
 			return
 
@@ -245,7 +234,7 @@
 	var/turf/target_turf = locate(real_x, real_y, z)
 
 	if(!target_turf || !check_valid_turf(target_turf))
-		user.balloon_alert(user, "Invalid location.")
+		user.balloon_alert(user, "invalid location.")
 		to_chat(user, span_danger("Invalid location. Please set valid coordinates"))
 
 	var/max_offset = round(abs((get_dist_euclide(src,target_turf)))/offset_per_turfs)
