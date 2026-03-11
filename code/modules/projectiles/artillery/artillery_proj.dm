@@ -36,6 +36,9 @@
 	///the smoke effect at the point of detonation
 	var/datum/effect_system/smoke_spread/smoketype = /datum/effect_system/smoke_spread
 
+/obj/projectile/bullet/mortar/flare/payload()
+	new /obj/effect/temp_visual/above_flare(get_turf(src))
+
 /obj/projectile/bullet/mortar/smoke/payload()
 	var/datum/effect_system/smoke_spread/smoke = new smoketype()
 	explosion(get_turf(src), 0, 0, 1, 0,  flame_range = 3)

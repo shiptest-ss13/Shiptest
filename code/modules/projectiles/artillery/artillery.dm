@@ -6,6 +6,7 @@
 	name = "rangefinder"
 	desc = "A pair of binoculars, with a laser targeting function that will tell you the gps location where you point it."
 	icon_state = "rangefinder"
+	item_state = "binoculars"
 
 
 /obj/item/binoculars/rangefinder/afterattack(atom/target, mob/living/user, flag, params)
@@ -74,6 +75,8 @@
 		/obj/item/mortal_shell/howitzer,
 		/obj/item/mortal_shell/howitzer/incendiary,
 		/obj/item/mortal_shell/howitzer/he,
+		/obj/item/mortal_shell/howitzer/flare,
+		/obj/item/mortal_shell/flare,
 	)
 
 /obj/machinery/artillery/wrench_act(mob/user, obj/item/tool)
@@ -328,6 +331,7 @@
 		/obj/item/mortal_shell/he,
 		/obj/item/mortal_shell/incendiary,
 		/obj/item/mortal_shell/smoke,
+		/obj/item/mortal_shell/flare,
 	)
 
 /obj/machinery/artillery/mortar/examine(mob/user)

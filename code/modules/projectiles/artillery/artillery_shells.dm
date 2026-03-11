@@ -21,10 +21,15 @@
 
 /obj/item/mortal_shell/smoke
 	name = "\improper 80mm smoke mortar shell"
-	desc = "An 80mm mortar shell, loaded with smoke dispersal agents. Can be fired at marines more-or-less safely. Way slimmer than your typical 80mm."
+	desc = "An 80mm mortar shell, loaded with smoke dispersal agents. Can be fired at friendlies more-or-less safely. Way slimmer than your typical 80mm."
 	icon_state = "mortar_ammo_smk"
 	ammo_type = /obj/projectile/bullet/mortar/smoke
 
+/obj/item/mortal_shell/flare
+	name = "\improper 80mm flare mortar shell"
+	desc = "An 80mm mortar shell, loaded with an illumination flare, far slimmer than your typical 80mm shell. Can be fired out of larger cannons."
+	icon_state = "mortar_ammo_flare"
+	ammo_type = /obj/projectile/bullet/mortar/flare
 
 /obj/item/mortal_shell/howitzer
 	name = "\improper 150mm artillery shell"
@@ -41,9 +46,14 @@
 
 /obj/item/mortal_shell/howitzer/he
 	name = "\improper 150mm artillery shell"
-	desc = "An 150mm incendiary shell, loaded with a high explosive charge.."
+	desc = "An 150mm incendiary shell, loaded with a high explosive charge."
 	icon = 'icons/obj/machines/howitzer.dmi'
 	icon_state = "howitzer_ammo"
 	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = /obj/projectile/bullet/mortar/howi/he
 
+/obj/item/mortal_shell/howitzer/flare
+	name = "\improper 150mm flare artillery shell"
+	desc = "An 150mm artillery shell, loaded with an illumination flare, lighting up large radius while dazzling anyone in the area. Can be fired out of larger cannons."
+	icon_state = "mortar_ammo_smk"
+	ammo_type = /obj/projectile/bullet/mortar/flare
