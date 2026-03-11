@@ -1,6 +1,6 @@
 /obj/item/attachment/m12_burst
-	name = "Model 12 'Sporter' assualt rifle mod kit"
-	desc = "A random assortment of parts intended to make the Sporter into a 'assualt rifle.' Random parts are taken from various Serene Sporting weapons alongside an assualt rifle stock. This gives it full auto along with bust fire."
+	name = "Model 12 'Sporter' assault rifle mod kit"
+	desc = "A random assortment of parts intended to make the Sporter into a 'assault rifle.' Random parts are taken from various Serene Sporting weapons alongside an assault rifle stock. This gives it full auto along with bust fire."
 	icon = 'icons/obj/improvised.dmi'
 	icon_state = "kitsuitcase"
 	attach_features_flags = null
