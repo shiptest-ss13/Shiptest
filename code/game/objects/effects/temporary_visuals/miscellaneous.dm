@@ -542,4 +542,3 @@
 	. = ..()
 	if(new_icon_state)
 		icon_state = new_icon_state
-
