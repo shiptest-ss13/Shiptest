@@ -2,7 +2,6 @@
 	name = "80mm shell"
 	icon_state = "mortar"
 
-	movement_type = PHASING
 	projectile_phasing = ALL
 	projectile_piercing = ALL
 	pass_flags = PASSTABLE | PASSGRILLE | PASSGRILLE | PASSMOB | PASSCLOSEDTURF | LETPASSTHROW | PASSPLATFORM
