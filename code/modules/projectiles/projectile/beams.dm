@@ -128,8 +128,8 @@
 	damage = 25
 	armour_penetration = 20
 
-/obj/projectile/beam/laser/assault/mining
-	armour_penetration = 30
+/obj/projectile/beam/laser/eoehoma/mining
+	armour_penetration = 20
 
 /obj/projectile/beam/laser/eoehoma/mining/on_hit(atom/target, blocked = FALSE)
 	. = ..()

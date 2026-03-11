@@ -1,7 +1,6 @@
 /obj/item/gun/energy/laser
-	name = "E-20 mining emitter"
-	desc = "A basic mining tool that fires concentrated bolts of light, which easily cause flesh, stone, and metal to yield."
-	//desc = "A basic mining laser that fires concentrated beams of light which break down rock. Notably, these beams of light melt down flesh, and the design, while literally ancient, is well known and suprisngly modular, leading to many modifications and upgrades over the years."
+	name = "laser gun basetype i DEMANDS!!!"
+	desc = "that whoever mapped this in be DEMOTED!!! it was the best thing having proper paths and being all like 'what the fuck, are you real' and being 'we are the good github reporter we are the hero in the story'"
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
 	item_state = "laser"

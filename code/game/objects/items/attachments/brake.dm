@@ -1,6 +1,6 @@
 /obj/item/attachment/muzzle_brake
 	name = "muzzle brake"
-	desc = "An attachment for the barrel of a firearm. Hides the muzzle flash completely and gives greater control over recoil, in exchange for being significantly louderi."
+	desc = "An attachment for the barrel of a firearm. Hides the muzzle flash completely and gives greater control over recoil, in exchange for being significantly louder."
 	icon_state = "brake"
 
 	allow_icon_state_prefixes = TRUE

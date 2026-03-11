@@ -59,7 +59,6 @@
 		for(var/mutable_appearance/overlay as anything in attach_overlays)
 			if(slot_offsets && slot_offsets[slot])
 				var/matrix/overlay_matrix = new
-				//big_raillight-on-attached
 				overlay_matrix.Translate(slot_offsets[slot]["x"] - attach.pixel_shift_x, slot_offsets[slot]["y"] - attach.pixel_shift_y)
 				overlay.transform = overlay_matrix
 			overlays += overlay

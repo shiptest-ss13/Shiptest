@@ -82,13 +82,25 @@
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/armor/vest/marine/frontier
-	name = "light tactical armor vest"
+	name = "heavy Frontiersmen armor plating"
 	desc = "A bulky set of stamped plasteel armor plates, coated with the intimidating grey of the Frontiersmen. If you have the time to inspect this vest, either you are about to die, or you have killed the one who wore it originally."
 	icon_state = "marine_frontier"
 	item_state = "armor"
+	// VERY good armor, for aspawn pirates, this is pretty okay
 	armor = list("melee" = 35, "bullet" = 70, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50, "wound" = 40)
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	cold_protection = CHEST | GROIN | LEGS | FEET | ARMS | HANDS
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	slowdown = 0.6
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
+
+/obj/item/clothing/suit/armor/vest/marine/frontier/player_obtainable
+	desc = "A bulky set of stamped plasteel armor plates, coated with the intimidating grey of the Frontiersmen. The massive amount of damage and holes means you have killed the one who wore it originally. This unfortunately means the protection is worse than it was stock."
+	body_parts_covered = CHEST|GROIN
+	cold_protection = CHEST|GROIN
+	heat_protection = CHEST|GROIN
+	armor = list("melee" = 20, "bullet" = 45, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 65, "fire" = 40, "acid" = 50, "wound" = 20)
 
 /obj/item/clothing/suit/armor/frontier
 	name = "reinforced fur coat"
@@ -227,8 +239,9 @@
 	icon_state = "marine_frontier"
 	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
+	// VERY good armor, for aspawn pirates, this is pretty okay
 	armor = list("melee" = 35, "bullet" = 70, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50, "wound" = 40)
-	slowdown = 0.1
+	slowdown = 0.2
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	clothing_flags = STOPSPRESSUREDAMAGE | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
 	resistance_flags = FIRE_PROOF | ACID_PROOF

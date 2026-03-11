@@ -254,12 +254,12 @@
 	crate_type = /obj/structure/closet/crate/secure/plasma
 	faction = /datum/faction/nt
 
-/datum/supply_pack/gun/scatterlaser
-	name = "Scatter Laser Crate"
-	desc = "Contains a multi-function scatter energy gun, capable of firing armour penetrating slugs, and devastating scattered laser bolts."
-	cost = 1250
-	contains = list(/obj/item/gun/energy/laser/scatter)
-	crate_name = "scatter laser crate"
+/datum/supply_pack/gun/e20_tm_only_remove_from_tm_when_done
+	name = "(SPECIAL OFFER - LIMITED TIME) E-20 mining emitter"
+	desc = "SPECIAL: While cleaning out our warehouse, we found a crate of new-old stock E-20s! As a result, we're getting rid of them for THIS WEEK ONLY! So don't miss this once-in-a-lifetime opportunity to get a NEW mint Eoehoma in the year of the hunstman 507! E-20 shots break walls and especially rocks faster than other laser weapons!"
+	cost = 1200
+	contains = list(/obj/item/gun/energy/laser/e20)
+	crate_name = "laser gun crate"
 
 /datum/supply_pack/gun/ion
 	name = "Ion Rifle Crate"

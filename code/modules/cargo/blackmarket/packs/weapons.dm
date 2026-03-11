@@ -211,6 +211,16 @@
 	stock = 5
 	availability_prob = 60
 
+/datum/blackmarket_item/weapon/guncase/e20
+	name = "E-20 mining emitter"
+	desc = "Want to mine in an easy, efficent, and fun way? This thing can mine the bones of your enemies alongside rocks; to say nothing about the potential modding capablity!"
+	item = /obj/item/gun/energy/laser/e20
+
+	cost_min = 800
+	cost_max = 2200
+	stock_max = 5
+	availability_prob = 50
+
 /datum/blackmarket_item/weapon/guncase/e40
 	name = "E-40 Hybrid Assault Rifle"
 	desc = "A dual-mode hybrid assault rifle made by the now defunct Eoehoma Firearms. Capable of firing both bullets AND lasers, for the discerning dealer in death. Chambered in Eoehoma .299 Caseless."
@@ -235,19 +245,6 @@
 	availability_prob = 20
 	spawn_weighting = FALSE
 
-/*
-/datum/blackmarket_item/weapon/guncase/e50_underbarrel
-	name = "Underbarrel Energy Cannon"
-	desc = "The normal E-50 too big to handle for you? This underbarrel conversion cuts it down to a managable size with only a <i>minor</i> chance of painfully burning your hands."
-	item = /obj/item/attachment/gun/energy/e50
-	mag_type = /obj/item/stock_parts/cell/gun
-
-	cost_min = 4000
-	cost_max = 5000
-	stock_max = 2
-	availability_prob = 20
-	spawn_weighting = FALSE
-*/
 
 /datum/blackmarket_item/weapon/guncase/e60
 	name = "E-60 Disabler"
@@ -257,6 +254,46 @@
 	cost_min = 500
 	cost_max = 750
 	stock_max = 3
+	availability_prob = 40
+
+/datum/blackmarket_item/e20_scatter
+	name = "E-20 Scattershot coversion kit"
+	desc = "An unoffical modication kit, designed to tranform your E-20 into a laser shotgun. Of course, this ruins the mining functionality, so no going back once applied."
+	item = /obj/item/attachment/e20mod/scatter
+
+	cost_min = 300
+	cost_max = 1000
+	stock = 2
+	availability_prob = 40
+
+/datum/blackmarket_item/e20_heavy
+	name = "E-20 Heavy Emitter coversion kit"
+	desc = "An unoffical modication kit, designed to tranform your E-20 into a discount E-50. Of course, this ruins the mining functionality, so no going back once applied."
+	item = /obj/item/attachment/e20mod/heavy
+
+	cost_min = 800
+	cost_max = 3000
+	stock = 2
+	availability_prob = 40
+
+/datum/blackmarket_item/e20_efficency
+	name = "E-20 efficency coversion kit"
+	desc = "An unoffical modication kit, designed to tranform your E-20 into a extremely efficent weapon. Of course, this ruins the mining functionality, and is suspicously similar to the wasp... still, no going back once applied."
+	item = /obj/item/attachment/e20mod/efficency
+
+	cost_min = 300
+	cost_max = 2000
+	stock = 2
+	availability_prob = 40
+
+/datum/blackmarket_item/e20_pierce
+	name = "E-20 piercing laser coversion kit"
+	desc = "An unoffical modication kit, designed to tranform your E-20 into a short-range true-beam gun. Somehow, this retains the mining functionality, but has quite the dropoff in atmosphere. Still, no going back once applied."
+	item = /obj/item/attachment/e20mod/pierce
+
+	cost_min = 800
+	cost_max = 3000
+	stock = 2
 	availability_prob = 40
 
 /datum/blackmarket_item/weapon/guncase/cm23
@@ -312,7 +349,7 @@
 	stock = 2
 	availability_prob = 20
 
-/datum/blackmarket_item/weapon/guncase/larker
+/datum/blackmarket_item/weapon/m12_burst_conversion
 	name = "Model 12 'assault rifle' coversion kit"
 	desc = "As seen on tv, specifically the failed assasination attempt on Kiirv-Waha; Hey, no publicity is bad publicity! Gives the Sporter a burst fire and full auto mode, at cost to accuracy."
 	item = /obj/item/attachment/m12_burst

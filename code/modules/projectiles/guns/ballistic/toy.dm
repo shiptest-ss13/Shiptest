@@ -94,7 +94,7 @@
 		/obj/item/ammo_box/magazine/internal/shot/toy/crossbow,
 	)
 	fire_sound = 'sound/items/syringeproj.ogg'
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
+	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10

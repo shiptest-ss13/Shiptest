@@ -27,6 +27,14 @@
 	muzzleflash_iconstate = "muzzle_flash_light"
 	light_range = 2
 
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/muzzle_brake,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/ammo_counter,
+	)
+
 	refused_attachments = list(
 		/obj/item/attachment/gun,
 		)

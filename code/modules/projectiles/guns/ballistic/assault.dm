@@ -39,7 +39,6 @@
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
 		/obj/item/attachment/gun,
-		/obj/item/attachment/ammo_counter
 	)
 
 /obj/item/gun/ballistic/automatic/assault/skm
