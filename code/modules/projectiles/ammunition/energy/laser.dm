@@ -68,7 +68,7 @@
 	projectile_type = /obj/projectile/beam/laser/sharplite/sniper
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 	delay = 1.3 SECONDS
-	e_cost = 2600 // 3 per regular cell 7 per upgraded cell
+	e_cost = 2000 // 5 per regular cell 10 per upgraded cell
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/lasergun/eoehoma

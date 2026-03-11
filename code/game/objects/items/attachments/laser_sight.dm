@@ -24,6 +24,7 @@
 	playsound(user, toggled ? 'sound/weapons/magin.ogg' : 'sound/weapons/magout.ogg', 40, TRUE)
 
 /obj/item/attachment/laser_sight/on_fireliveshot(obj/item/gun/gun, user, pointblank, atom/pbtarget, message, params)
+	//send signal to destroy previous beam if there was one, register signal with this from the bullet to destroy when this gun fires again
 	if(toggled)
 		make_laser(gun, user, pointblank, pbtarget, message, params)
 	return FALSE
