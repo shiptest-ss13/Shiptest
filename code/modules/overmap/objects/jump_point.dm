@@ -37,6 +37,11 @@
 /datum/overmap/jump_point/proc/link_points(other_point)
 	target_jump_point = other_point
 	target_jump_point.target_jump_point = src
+
+	RegisterSignal(target_jump_point, COMSIG_OVERMAP_MOVED, PROC_REF(alter_token_appearance))
+	target_jump_point.RegisterSignal(src, COMSIG_OVERMAP_MOVED, PROC_REF(alter_token_appearance))
+
+	alter_token_appearance()
 	target_jump_point.alter_token_appearance()
 
 /datum/overmap/jump_point/get_jump_to_turf()

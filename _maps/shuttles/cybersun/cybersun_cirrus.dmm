@@ -72,10 +72,6 @@
 	pixel_y = -11;
 	pixel_x = -4
 	},
-/obj/item/food/meat/slab/chicken{
-	pixel_y = -11;
-	pixel_x = -4
-	},
 /obj/item/food/grown/refa_li{
 	pixel_x = 6;
 	pixel_y = -5
@@ -87,18 +83,6 @@
 /obj/item/food/grown/refa_li{
 	pixel_x = 6;
 	pixel_y = -5
-	},
-/obj/item/food/grown/refa_li{
-	pixel_x = 6;
-	pixel_y = -5
-	},
-/obj/item/food/meat/slab/remes{
-	pixel_y = -5;
-	pixel_x = -5
-	},
-/obj/item/food/meat/slab/remes{
-	pixel_y = -5;
-	pixel_x = -5
 	},
 /obj/item/food/meat/slab/remes{
 	pixel_y = -5;
@@ -120,14 +104,6 @@
 	pixel_y = 5;
 	pixel_x = 4
 	},
-/obj/item/food/grown/dotu_fime{
-	pixel_y = 4;
-	pixel_x = 4
-	},
-/obj/item/food/mirasegg{
-	pixel_x = -6;
-	pixel_y = 4
-	},
 /obj/item/food/mirasegg{
 	pixel_x = -6;
 	pixel_y = 4
@@ -137,6 +113,33 @@
 	pixel_y = 4
 	},
 /obj/effect/turf_decal/siding/black/end,
+/obj/item/food/grown/sososi,
+/obj/item/food/grown/sososi,
+/obj/item/food/grown/sososi,
+/obj/item/food/grown/dote_berries{
+	pixel_x = 0;
+	pixel_y = -8
+	},
+/obj/item/food/grown/dote_berries{
+	pixel_x = 1;
+	pixel_y = -9
+	},
+/obj/item/food/grown/dote_berries{
+	pixel_x = 2;
+	pixel_y = -10
+	},
+/obj/item/food/meat/slab/tiris{
+	pixel_x = -1;
+	pixel_y = -4
+	},
+/obj/item/food/meat/slab/tiris{
+	pixel_x = -2;
+	pixel_y = -1
+	},
+/obj/item/food/meat/slab/tiris{
+	pixel_x = -2;
+	pixel_y = -2
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
 "aE" = (
@@ -827,10 +830,6 @@
 /obj/item/pen{
 	pixel_x = -13
 	},
-/obj/item/clothing/suit/apron/surgical{
-	pixel_x = 4;
-	pixel_y = -5
-	},
 /obj/item/healthanalyzer/advanced{
 	pixel_x = -13;
 	pixel_y = -7
@@ -844,6 +843,13 @@
 	},
 /obj/machinery/firealarm/directional/east{
 	pixel_y = -2
+	},
+/obj/item/clothing/suit/cybersun/smock{
+	pixel_y = -3;
+	pixel_x = 1
+	},
+/obj/item/clothing/head/cybersun/medical{
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical/surgery)
@@ -882,16 +888,16 @@
 /obj/item/clothing/shoes/jackboots{
 	pixel_y = -7
 	},
-/obj/item/clothing/under/syndicate/cybersun/officer{
+/obj/item/clothing/under/cybersun/officer{
 	pixel_x = 8
 	},
-/obj/item/clothing/suit/cybersun_suit{
+/obj/item/clothing/suit/cybersun{
 	pixel_x = -6
 	},
-/obj/item/clothing/suit/armor/vest/capcarapace/cybersun{
+/obj/item/clothing/suit/armor/cybersun{
 	pixel_x = -5
 	},
-/obj/item/clothing/head/HoS/cybersun{
+/obj/item/clothing/head/cybersun{
 	pixel_y = 8
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -1058,6 +1064,15 @@
 	},
 /obj/effect/turf_decal/siding/black/end{
 	dir = 8
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = -9;
+	name = "bathroom lock";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	id = "ccrlock"
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
@@ -1412,8 +1427,8 @@
 	populate = 0
 	},
 /obj/effect/turf_decal/box/white,
-/obj/item/clothing/under/syndicate/medic,
-/obj/item/clothing/under/syndicate/medic/skirt,
+/obj/item/clothing/under/cybersun/medic,
+/obj/item/clothing/under/cybersun/medic/skirt,
 /obj/item/clothing/head/soft/cybersun/medical{
 	pixel_y = 9;
 	pixel_x = 9
@@ -1452,11 +1467,11 @@
 	pixel_y = -5
 	},
 /obj/item/radio/headset/alt,
-/obj/item/clothing/suit/armor/vest/trauma{
+/obj/item/clothing/suit/armor/vest/cybersun/trauma{
 	pixel_x = 8;
 	pixel_y = -7
 	},
-/obj/item/clothing/head/helmet/medical{
+/obj/item/clothing/head/helmet/m10/cybersun/trauma{
 	pixel_x = 7;
 	pixel_y = 6
 	},
@@ -1536,8 +1551,8 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 6
 	},
-/obj/item/clothing/under/syndicate/medic,
-/obj/item/clothing/under/syndicate/medic/skirt,
+/obj/item/clothing/under/cybersun/medic,
+/obj/item/clothing/under/cybersun/medic/skirt,
 /obj/item/clothing/head/soft/cybersun/medical{
 	pixel_y = 9;
 	pixel_x = 9
@@ -1576,11 +1591,11 @@
 	pixel_y = -5
 	},
 /obj/item/radio/headset/alt,
-/obj/item/clothing/suit/armor/vest/trauma{
+/obj/item/clothing/suit/armor/vest/cybersun/trauma{
 	pixel_x = 8;
 	pixel_y = -7
 	},
-/obj/item/clothing/head/helmet/medical{
+/obj/item/clothing/head/helmet/m10/cybersun/trauma{
 	pixel_x = 7;
 	pixel_y = 6
 	},
@@ -1815,6 +1830,14 @@
 	},
 /turf/open/floor/suns/hatch/maple,
 /area/ship/bridge)
+"kM" = (
+/obj/effect/turf_decal/corner/opaque/cybersunteal/border,
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 5
+	},
+/obj/structure/closet/emcloset/wall/directional/south,
+/turf/open/floor/plasteel/dark,
+/area/ship/medical)
 "kO" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/closed/wall/mineral/titanium,
@@ -1878,19 +1901,19 @@
 /obj/structure/closet/secure_closet/personal/cabinet{
 	populate = 0
 	},
-/obj/item/clothing/under/syndicate/cybersun{
+/obj/item/clothing/under/cybersun{
 	pixel_x = -8;
 	pixel_y = -7
 	},
-/obj/item/clothing/under/syndicate/cybersun{
+/obj/item/clothing/under/cybersun{
 	pixel_x = -5;
 	pixel_y = -7
 	},
-/obj/item/clothing/under/syndicate/cybersun/research{
+/obj/item/clothing/under/cybersun/coverall{
 	pixel_y = -7;
 	pixel_x = -1
 	},
-/obj/item/clothing/under/syndicate/cybersun/research{
+/obj/item/clothing/under/cybersun/coverall{
 	pixel_y = -7;
 	pixel_x = 3
 	},
@@ -1902,11 +1925,11 @@
 	pixel_x = -5;
 	pixel_y = 8
 	},
-/obj/item/clothing/under/syndicate/medic{
+/obj/item/clothing/under/cybersun/medic{
 	pixel_x = 7;
 	pixel_y = -7
 	},
-/obj/item/clothing/under/syndicate/medic{
+/obj/item/clothing/under/cybersun/medic{
 	pixel_x = 11;
 	pixel_y = -7
 	},
@@ -2705,10 +2728,10 @@
 	pixel_x = -5
 	},
 /obj/item/clothing/neck/stethoscope,
-/obj/item/clothing/head/beret/cmo/cybersun{
+/obj/item/clothing/head/cybersun/cmo{
 	pixel_y = 9
 	},
-/obj/item/clothing/suit/cybersun_suit{
+/obj/item/clothing/suit/cybersun{
 	pixel_x = 1;
 	pixel_y = 9
 	},
@@ -2716,7 +2739,7 @@
 	pixel_x = 4;
 	pixel_y = 3
 	},
-/obj/item/clothing/under/rank/medical/chief_medical_officer/cybersun{
+/obj/item/clothing/under/cybersun/doctor{
 	pixel_x = 7;
 	pixel_y = 8
 	},
@@ -2735,6 +2758,10 @@
 	pixel_y = -3
 	},
 /obj/item/radio/headset/syndicate/alt/cybersun,
+/obj/item/sensor_device{
+	pixel_x = -6;
+	pixel_y = 6
+	},
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/dorm/commad)
 "sC" = (
@@ -3404,9 +3431,6 @@
 /obj/item/clothing/mask/surgical{
 	pixel_y = -4
 	},
-/obj/item/clothing/suit/apron/surgical{
-	pixel_y = -2
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
@@ -3421,6 +3445,13 @@
 	pixel_y = 5
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/item/clothing/suit/cybersun/smock{
+	pixel_y = -3;
+	pixel_x = 1
+	},
+/obj/item/clothing/head/cybersun/medical{
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical/morgue)
 "zZ" = (
@@ -3513,7 +3544,7 @@
 /obj/machinery/door/airlock{
 	name = "Restroom";
 	dir = 4;
-	id_tag = "cpiss"
+	id_tag = "ccrlock"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -4049,7 +4080,6 @@
 /obj/effect/turf_decal/box/white,
 /obj/structure/rack,
 /obj/item/pipe_dispenser{
-	pixel_x = 0;
 	pixel_y = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5,
@@ -4060,7 +4090,6 @@
 	pixel_x = -6
 	},
 /obj/item/stack/sheet/glass/twenty{
-	pixel_y = 0;
 	pixel_x = 2
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -4886,7 +4915,7 @@
 /obj/item/clothing/shoes/combat{
 	pixel_y = -8
 	},
-/obj/item/clothing/under/syndicate/cybersun/research{
+/obj/item/clothing/under/cybersun/coverall{
 	pixel_y = -2
 	},
 /obj/structure/closet/secure_closet/wall/directional/south{
@@ -5664,8 +5693,8 @@
 	pixel_y = 4;
 	pixel_x = 5
 	},
-/obj/item/clothing/under/syndicate/medic/skirt,
-/obj/item/clothing/under/syndicate/medic,
+/obj/item/clothing/under/cybersun/medic/skirt,
+/obj/item/clothing/under/cybersun/medic,
 /obj/item/clothing/head/soft/cybersun/medical{
 	pixel_y = 10;
 	pixel_x = -6
@@ -5679,6 +5708,10 @@
 /obj/item/storage/backpack/satchel/med{
 	pixel_x = 5;
 	pixel_y = -3
+	},
+/obj/item/sensor_device{
+	pixel_x = -6;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
@@ -5781,6 +5814,7 @@
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 10
 	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Te" = (
@@ -7103,7 +7137,7 @@ ep
 Kk
 ja
 ak
-vq
+kM
 Vn
 PH
 lN
