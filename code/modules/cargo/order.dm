@@ -61,7 +61,7 @@
 	if(ordering_ship_name)
 		manifest_text += "Destination: [ordering_ship_name]<br/>"
 	manifest_text += "Order #[id]<br/>"
-	manifest_text += "Time of Order: [station_time_timestamp("hh:mm")]<br/>"
+	manifest_text += "Time of Order: [station_time_timestamp("hh:mm")] [sector_datestamp()]<br/>"
 	manifest_text += "<br/>"
 	manifest_text += "Supply Packs Purchased:<br/>"
 	var/previous_pack
