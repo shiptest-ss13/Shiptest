@@ -59,7 +59,7 @@
 	/// Constant spread on target
 	var/spread = 1
 	/// Max spread on target
-	var/max_spread = 5
+	var/max_spread = 2
 	/// Used for deconstruction and aiming sanity
 	var/firing = 0
 	///Time it takes for the mortar to cool off to fire
@@ -88,12 +88,14 @@
 			to_chat(user, span_notice("You start securing [src]..."))
 			if(tool.use_tool(src, user, 8 SECONDS, volume=100))
 				to_chat(user, span_notice("You secure [src]."))
+				icon_state = icon_deployed
 				set_anchored(TRUE)
 			return TRUE
 		if(TRUE)
 			to_chat(user, span_notice("You start unsecuring [src]..."))
 			if(tool.use_tool(src, user, 8 SECONDS, volume=100))
 				to_chat(user, span_notice("You unsecure [src]."))
+				icon_state = icon_undeployed
 				set_anchored(FALSE)
 			return TRUE
 
@@ -120,11 +122,31 @@
 	if(!our_vlevel)
 		return
 
+	var/datum/overmap/our_overmap_object = get_overmap_location()
 	var/real_x = our_vlevel.low_x + target_x - 1
 	var/real_y = our_vlevel.low_y + target_y - 1
 
 	var/turf/target_turf = locate(real_x, real_y, z)
 	var/list/our_coords = our_vlevel.get_relative_coords(target_turf)
+
+	//Check if we're not in space or 0g, basically
+	if(istype(our_overmap_object, /datum/overmap/dynamic) || istype(our_overmap_object, /datum/overmap/ship))
+		var/datum/overmap/dynamic/our_dynamic_object
+		var/do_not_fire = FALSE
+		//get thing this is docked to
+		if(istype(our_overmap_object, /datum/overmap/ship))
+			our_dynamic_object = our_overmap_object.docked_to
+			if(!(istype(our_overmap_object.docked_to, /datum/overmap/static_object) || istype(our_overmap_object.docked_to, /datum/overmap/outpost)))
+				do_not_fire = TRUE
+		else
+			our_dynamic_object = our_overmap_object
+		if(our_dynamic_object)
+			if(is_type_in_list(our_overmap_object, list(/datum/planet_type/asteroid, /datum/planet_type/spaceruin, /datum/overmap/dynamic/empty)))
+				do_not_fire = TRUE
+		if(do_not_fire)
+			user.balloon_alert(user, "Not in 0g!")
+			to_chat(user, span_danger("How are you going to fire this in 0g..?"))
+			return
 
 	if(!target_turf)
 		user.balloon_alert(user, "Invalid location.")
@@ -157,24 +179,6 @@
 
 	to_chat(user, span_notice("TARGET SET: LONGITUDE [our_coords[1]]. LATITUDE [our_coords[2]]."))
 
-/obj/machinery/artillery/proc/check_valid_turf(turf/checked_turf)
-	if(!checked_turf)
-		return FALSE
-
-	if(get_dist(loc, checked_turf) < minimum_range)
-		return FALSE
-
-	if(!isturf(checked_turf) || isindestructiblewall(checked_turf))
-		return FALSE
-
-	if(!checked_turf.virtual_z() == virtual_z())
-		return FALSE
-	return TRUE
-
-/obj/machinery/artillery/proc/perform_firing_visuals()
-	SHOULD_NOT_SLEEP(TRUE)
-	return
-
 /obj/machinery/artillery/attackby(obj/item/potential_shell, mob/user, params)
 	. = ..()
 
@@ -182,6 +186,11 @@
 		user.balloon_alert(user, "Anchor it first!")
 		to_chat(user, span_danger("Anchor [src] first!"))
 		return
+
+	if(isnull(target_x) || isnull(target_y))
+		to_chat(user, span_danger("Please set coordinates before firing."))
+		return
+
 	if(firing)
 		user.balloon_alert(user, "The barrel is steaming hot. Wait till it cools off")
 		to_chat(user, span_danger("The barrel is steaming hot. Wait till it cools off!"))
@@ -205,6 +214,25 @@
 
 		pre_fire(mortar_shell, user, params)
 
+/obj/machinery/artillery/proc/check_valid_turf(turf/checked_turf)
+	if(!checked_turf)
+		return FALSE
+
+	if(get_dist(loc, checked_turf) < minimum_range)
+		return FALSE
+
+	if(!isturf(checked_turf) || isindestructiblewall(checked_turf))
+		return FALSE
+
+	if(!checked_turf.virtual_z() == virtual_z())
+		return FALSE
+	return TRUE
+
+/obj/machinery/artillery/proc/perform_firing_visuals()
+	SHOULD_NOT_SLEEP(TRUE)
+	return
+
+//Calcuate the final location before firing.
 /obj/machinery/artillery/proc/pre_fire(obj/item/mortal_shell/mortar_shell, mob/user, params)
 	var/datum/virtual_level/our_vlevel = get_virtual_level()
 
@@ -213,11 +241,9 @@
 
 	var/turf/target_turf = locate(real_x, real_y, z)
 
-	if(!target_turf)
+	if(!target_turf || !check_valid_turf(target_turf))
 		user.balloon_alert(user, "Invalid location.")
 		to_chat(user, span_danger("Invalid location. Please set valid coordinates"))
-		target_x = old_x
-		target_y = old_y
 
 	var/max_offset = round(abs((get_dist_euclide(src,target_turf)))/offset_per_turfs)
 	var/firing_spread = max_offset + spread
@@ -255,7 +281,7 @@
 	perform_firing_visuals()
 	qdel(arty_shell)
 
-	var/fall_time = (shell_range/(shell.speed * 5)) - 0.5 SECONDS
+	var/fall_time = (shell_range/(shell.speed * 4)) - 0.5 SECONDS
 	//prevent runtime
 	if(fall_time < 0.5 SECONDS)
 		fall_time = 0.5 SECONDS
@@ -270,7 +296,7 @@
 
 /obj/machinery/artillery/mortar
 	name = "\improper mortar"
-	desc = "A manual, crew-operated mortar system intended to rain down shells on anything it's aimed at. Less accurate than a howitzer, but still useful neverless. Needs to be set down first to fire. Ctrl+Click on a tile to deploy, drag the mortar's sprites to mob's sprite to undeploy."
+	desc = "A manual, crew-operated mortar system intended to rain down shells on anything it's aimed at. Less accurate than a proper artillery cannon, but still useful neverless. Needs to be set down first to fire."
 	icon = 'icons/obj/machines/mortar.dmi'
 	icon_state = "mortar_deployed"
 	atom_integrity = 250
@@ -304,6 +330,10 @@
 		/obj/item/mortal_shell/smoke,
 	)
 
+/obj/machinery/artillery/mortar/examine(mob/user)
+	. = ..()
+	. += span_notice("Ctrl+Click on a tile to deploy. Once deployed, you can drag the mortar onto yourself to undeploy.")
+
 /obj/machinery/artillery/mortar/MouseDrop(atom/over_object)
 	. = ..()
 	var/mob/living/user = usr
@@ -321,28 +351,18 @@
 		user.put_in_hands(undeployed_object)
 		qdel(src)
 
-/// Undeploying, for when you want to move your big dakka around
-/obj/machinery/artillery/mortar/wrench_act(mob/living/user, obj/item/wrench/used_wrench)
-	. = ..()
-	if(!ishuman(user))
-		return
-	used_wrench.play_tool_sound(user)
-	to_chat(user, span_notice("You start undeploying [src]..."))
-	if(!do_after(user, undeploy_time))
-		return
-	var/obj/undeployed_object = new spawned_on_undeploy(src)
-	//Keeps the health the same even if you redeploy the gun
-	undeployed_object.modify_max_integrity(max_integrity)
-	qdel(src)
-
 /obj/item/deployable_mortar_folded
 	name = "folded mortar"
-	desc = "A folded mortar, ready to be deployed and used."
+	desc = "A manual, crew-operated mortar system intended to rain down shells on anything it's aimed at. Less accurate than a proper artillery cannon, but still useful neverless. Needs to be set down first to fire."
 	icon = 'icons/obj/machines/mortar.dmi'
 	icon_state = "mortar"
 	max_integrity = 250
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
+
+/obj/item/deployable_mortar_folded/examine(mob/user)
+	. = ..()
+	. += span_notice("Ctrl+Click on a tile to deploy. Once deployed, you can drag the mortar onto yourself to undeploy.")
 
 /obj/item/deployable_mortar_folded/Initialize(mapload)
 	. = ..()
