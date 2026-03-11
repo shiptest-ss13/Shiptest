@@ -29,7 +29,7 @@
 
 /obj/projectile/bullet/mortar/incend/payload()
 	explosion(get_turf(src), 0, 2, 3, 0, flame_range = 7)
-	flame_radius(get_turf(src), 4)
+	flame_radius(get_turf(src), 4, 20)
 	playsound(get_turf(src), pick('sound/weapons/gun/flamethrower/flamethrower1.ogg','sound/weapons/gun/flamethrower/flamethrower2.ogg','sound/weapons/gun/flamethrower/flamethrower3.ogg'), 35, 1, 4)
 
 /obj/projectile/bullet/mortar/smoke
@@ -56,7 +56,7 @@
 
 /obj/projectile/bullet/mortar/howi/incend/payload()
 	explosion(get_turf(src), 0, 3, 0, 0, 0, 3)
-	flame_radius(5, get_turf(src))
+	flame_radius(5, get_turf(src), 30)
 	playsound(get_turf(src), pick('sound/weapons/gun/flamethrower/flamethrower1.ogg','sound/weapons/gun/flamethrower/flamethrower2.ogg','sound/weapons/gun/flamethrower/flamethrower3.ogg'), 35, 1, 4)
 
 /obj/projectile/bullet/mortar/howi/smoke
