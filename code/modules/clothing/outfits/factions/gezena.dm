@@ -90,7 +90,8 @@
 
 /datum/outfit/job/gezena/security/paramedic
 	name = "PGF - Marine Corpsman"
-	jobtype = /datum/job/paramedic
+	id_assignment = "Marine Corpsman"
+	jobtype = /datum/job/brig_phys
 	job_icon = "paramedic"
 
 	neck = /obj/item/clothing/neck/cloak/gezena/med
@@ -292,7 +293,7 @@
 
 /datum/outfit/job/gezena/security/paramedic/geared
 	name = "PGF - Marine Corpsman - Equipped"
-	jobtype = /datum/job/paramedic
+	jobtype = /datum/job/brig_phys
 	job_icon = "paramedic"
 
 	uniform = /obj/item/clothing/under/gezena/marine

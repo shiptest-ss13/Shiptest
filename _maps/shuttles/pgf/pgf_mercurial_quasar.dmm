@@ -2404,7 +2404,9 @@
 	dir = 2
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/crate/trashcart,
+/obj/structure/closet/crate/trashcart{
+	name = "cleaning cart"
+	},
 /obj/item/reagent_containers/glass/bucket,
 /obj/item/mop,
 /obj/item/reagent_containers/spray/cleaner{

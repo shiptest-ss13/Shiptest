@@ -684,6 +684,7 @@
 	var/max_bottles = 6
 	var/list/valid_bottles = list(/obj/item/reagent_containers/food/drinks/beer,
 	/obj/item/reagent_containers/food/drinks/ale,
+	/obj/item/reagent_containers/food/drinks/mead,
 	/obj/item/reagent_containers/food/drinks/bottle)
 
 /obj/item/storage/bottles/Initialize()
