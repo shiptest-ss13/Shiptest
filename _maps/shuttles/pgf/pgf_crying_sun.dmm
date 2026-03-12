@@ -1944,6 +1944,17 @@
 	pixel_x = 5;
 	pixel_y = 0
 	},
+/obj/item/pen/blue{
+	pixel_x = 4;
+	pixel_y = -3
+	},
+/obj/structure/railing{
+	dir = 6
+	},
+/obj/item/megaphone/command{
+	pixel_x = 6;
+	pixel_y = 16
+	},
 /obj/item/pen/red{
 	pixel_x = 4;
 	pixel_y = 7
@@ -1951,13 +1962,6 @@
 /obj/item/pen{
 	pixel_x = 4;
 	pixel_y = 2
-	},
-/obj/item/pen/blue{
-	pixel_x = 4;
-	pixel_y = -3
-	},
-/obj/structure/railing{
-	dir = 6
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -4846,6 +4850,10 @@
 /obj/structure/table/reinforced,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
+	},
+/obj/item/binoculars{
+	pixel_y = 0;
+	pixel_x = -5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
