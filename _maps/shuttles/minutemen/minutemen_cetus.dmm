@@ -68,22 +68,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "aI" = (
-/obj/item/storage/bag/ore{
-	pixel_x = -7
-	},
-/obj/item/storage/bag/ore{
-	pixel_x = -7
-	},
-/obj/item/pickaxe,
-/obj/item/pickaxe,
-/obj/item/mining_scanner{
-	pixel_x = 4;
-	pixel_y = -3
-	},
-/obj/item/mining_scanner{
-	pixel_x = 4;
-	pixel_y = -3
-	},
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
@@ -93,11 +77,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
-/obj/structure/closet/crate/secure/exo{
-	name = "mining equipment";
-	desc = "A lock-enabled crate used to carry mining equipment."
-	},
-/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "aL" = (
@@ -876,17 +855,16 @@
 /turf/open/floor/carpet/blue,
 /area/ship/crew/ccommons)
 "eX" = (
-/obj/effect/turf_decal/box/white/corners{
-	dir = 8;
-	color = "#CBB1CA"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/box/white/corners{
+	dir = 8;
+	color = "#CBB1CA"
+	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "fc" = (
@@ -1419,16 +1397,24 @@
 /area/ship/hallway/starboard)
 "ib" = (
 /obj/effect/turf_decal/corner/opaque/mauve/bordercorner,
-/obj/machinery/airalarm/directional/west,
-/obj/structure/chair/handrail{
-	layer = 2.8;
-	dir = 1
-	},
 /obj/machinery/light_switch{
 	pixel_x = 12;
 	pixel_y = -20;
 	dir = 1
 	},
+/obj/machinery/autolathe,
+/obj/item/stack/sheet/glass/twenty{
+	pixel_x = -2;
+	pixel_y = 4
+	},
+/obj/item/stack/sheet/metal/twenty{
+	pixel_x = 3;
+	pixel_y = 4
+	},
+/obj/machinery/airalarm/directional/west{
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "if" = (
@@ -1477,25 +1463,6 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
-/obj/item/reagent_containers/glass/bucket{
-	pixel_x = -8;
-	pixel_y = -2
-	},
-/obj/item/storage/bag/trash,
-/obj/item/reagent_containers/glass/rag{
-	pixel_x = 7;
-	pixel_y = 2
-	},
-/obj/item/reagent_containers/glass/rag{
-	pixel_x = 6;
-	pixel_y = -2
-	},
-/obj/item/mop,
-/obj/structure/closet/crate/trashcart/laundry{
-	name = "cleaning cart";
-	desc = "A large cart for hauling around cleaning supplies in an easily stored container."
-	},
-/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "iE" = (
@@ -2202,11 +2169,6 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
-/obj/structure/table/reinforced,
-/obj/machinery/cell_charger{
-	pixel_y = 1;
-	pixel_x = -3
-	},
 /obj/machinery/button/door{
 	id = "typhon_cargo_blast";
 	name = "Cargo Blast Doors";
@@ -2224,6 +2186,9 @@
 /obj/machinery/camera/autoname{
 	dir = 1
 	},
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "mG" = (
@@ -2236,7 +2201,6 @@
 /obj/effect/turf_decal/box/white/corners{
 	color = "#CBB1CA"
 	},
-/obj/structure/crate_shelf,
 /obj/effect/turf_decal/box/white/corners{
 	dir = 8;
 	color = "#CBB1CA"
@@ -2488,35 +2452,35 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
 "og" = (
+/obj/item/storage/bag/ore{
+	pixel_x = -7
+	},
+/obj/item/storage/bag/ore{
+	pixel_x = -7
+	},
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/obj/item/mining_scanner{
+	pixel_x = 4;
+	pixel_y = -3
+	},
+/obj/item/mining_scanner{
+	pixel_x = 4;
+	pixel_y = -3
+	},
+/obj/structure/closet/crate/secure/exo{
+	name = "mining equipment";
+	desc = "A lock-enabled crate used to carry mining equipment."
+	},
+/obj/effect/mapping_helpers/crate_shelve,
 /obj/effect/turf_decal/industrial/warning/green/corner{
 	dir = 1
 	},
 /obj/structure/chair/handrail{
-	layer = 2.8
+	dir = 2
 	},
-/obj/structure/closet/crate/freezer,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/effect/spawner/random/food_or_drink/ration,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/effect/mapping_helpers/crate_shelve,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "oi" = (
@@ -2771,11 +2735,11 @@
 	pixel_y = 9
 	},
 /obj/effect/turf_decal/corner/transparent/blue/mono,
-/obj/item/stack/medical/splint/twelve{
-	pixel_y = 3;
-	pixel_x = 6
-	},
 /obj/machinery/firealarm/directional/west,
+/obj/item/storage/firstaid/regular{
+	pixel_x = 4;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "pM" = (
@@ -2910,6 +2874,10 @@
 	pixel_x = -1
 	},
 /obj/effect/turf_decal/corner/transparent/blue/mono,
+/obj/item/healthanalyzer{
+	pixel_x = -9;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "qy" = (
@@ -3055,18 +3023,21 @@
 /obj/effect/turf_decal/corner/opaque/mauve/bordercorner{
 	dir = 8
 	},
-/obj/structure/cable/cyan{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/apc/auto_name/directional/east,
-/obj/structure/chair/handrail{
-	layer = 2.8;
-	dir = 1
-	},
 /obj/machinery/light_switch{
 	pixel_x = -12;
 	pixel_y = -20;
 	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/cell_charger{
+	pixel_y = 1;
+	pixel_x = 4
+	},
+/obj/machinery/power/apc/auto_name/directional/east{
+	layer = 3
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
@@ -3315,6 +3286,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "sH" = (
@@ -3503,6 +3475,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "2-4"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "tU" = (
@@ -3577,11 +3550,11 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "um" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 2
-	},
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 2
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
@@ -4068,15 +4041,16 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "wI" = (
-/obj/effect/turf_decal/box/white/corners{
-	color = "#CBB1CA"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/turf_decal/box/white/corners{
+	color = "#CBB1CA"
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "wM" = (
@@ -4595,24 +4569,6 @@
 /obj/structure/closet/secure_closet/clip/minutemen/combat_medic{
 	populate = 0
 	},
-/obj/item/clothing/under/clip/medic,
-/obj/item/pinpointer/crew,
-/obj/item/sensor_device,
-/obj/item/clothing/gloves/color/latex/nitrile/clip{
-	pixel_x = -7;
-	pixel_y = 1
-	},
-/obj/item/clothing/head/clip/corpsman{
-	pixel_x = 6;
-	pixel_y = -4
-	},
-/obj/item/storage/belt/medical/webbing/clip{
-	pixel_y = -7
-	},
-/obj/item/clothing/shoes/combat{
-	pixel_y = -7;
-	pixel_x = -5
-	},
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /obj/effect/turf_decal/siding/white{
 	dir = 6
@@ -4622,6 +4578,42 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
+	},
+/obj/item/storage/box/syringes{
+	pixel_x = 0;
+	pixel_y = -3
+	},
+/obj/item/storage/box/bodybags{
+	pixel_x = 0;
+	pixel_y = 5
+	},
+/obj/item/pinpointer/crew{
+	pixel_x = 10;
+	pixel_y = 9
+	},
+/obj/item/sensor_device{
+	pixel_x = 12;
+	pixel_y = -5
+	},
+/obj/item/clothing/shoes/combat{
+	pixel_y = -10;
+	pixel_x = -4
+	},
+/obj/item/clothing/under/clip/medic{
+	pixel_x = -2;
+	pixel_y = 0
+	},
+/obj/item/storage/belt/medical/webbing/clip{
+	pixel_y = -1;
+	pixel_x = -3
+	},
+/obj/item/clothing/head/clip/corpsman{
+	pixel_x = -2;
+	pixel_y = 7
+	},
+/obj/item/clothing/gloves/color/latex/nitrile/clip{
+	pixel_x = 2;
+	pixel_y = -7
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -4795,17 +4787,34 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "AU" = (
+/obj/structure/crate_shelf,
 /obj/machinery/light/directional/west,
+/obj/structure/closet/crate/trashcart/laundry{
+	name = "cleaning cart";
+	desc = "A large cart for hauling around cleaning supplies in an easily stored container."
+	},
+/obj/item/reagent_containers/glass/bucket{
+	pixel_x = -8;
+	pixel_y = -2
+	},
+/obj/item/storage/bag/trash,
+/obj/item/mop,
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = 7;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = 6;
+	pixel_y = -2
+	},
 /obj/effect/turf_decal/box/white/corners{
 	dir = 1;
 	color = "#CBB1CA"
 	},
-/obj/structure/crate_shelf,
 /obj/effect/turf_decal/box/white/corners{
 	dir = 4;
 	color = "#CBB1CA"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "AV" = (
@@ -4858,7 +4867,7 @@
 	dir = 4;
 	color = "#CBB1CA"
 	},
-/obj/structure/reagent_dispensers/watertank,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "Bm" = (
@@ -4991,20 +5000,14 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
-/obj/machinery/autolathe,
-/obj/item/stack/sheet/glass/twenty{
-	pixel_x = -2;
-	pixel_y = 4
-	},
-/obj/item/stack/sheet/metal/twenty{
-	pixel_x = 3;
-	pixel_y = 4
-	},
 /obj/structure/extinguisher_cabinet/directional/south{
 	pixel_x = -6
 	},
 /obj/machinery/firealarm/directional/south{
 	pixel_x = 6
+	},
+/obj/structure/chair/handrail{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
@@ -6054,14 +6057,6 @@
 	pixel_x = 5;
 	pixel_y = 8
 	},
-/obj/item/food/grown/cabbage{
-	pixel_x = 9;
-	pixel_y = -1
-	},
-/obj/item/food/grown/cabbage{
-	pixel_x = 9;
-	pixel_y = -1
-	},
 /obj/item/food/grown/corn{
 	pixel_x = 10;
 	pixel_y = 6
@@ -6086,6 +6081,8 @@
 	pixel_x = 13;
 	pixel_y = -4
 	},
+/obj/item/food/grown/carrot,
+/obj/item/food/grown/carrot,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "Id" = (
@@ -6817,6 +6814,10 @@
 	pixel_x = 11
 	},
 /obj/effect/turf_decal/corner/transparent/blue/mono,
+/obj/item/stack/medical/splint/twelve{
+	pixel_y = 3;
+	pixel_x = 2
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "Lr" = (
@@ -7612,13 +7613,14 @@
 /area/ship/hallway/port)
 "PR" = (
 /obj/effect/turf_decal/box/white/corners{
+	color = "#CBB1CA"
+	},
+/obj/effect/turf_decal/box/white/corners{
 	dir = 8;
 	color = "#CBB1CA"
 	},
-/obj/structure/crate_shelf,
-/obj/effect/turf_decal/box/white/corners{
-	color = "#CBB1CA"
-	},
+/obj/structure/reagent_dispensers/watertank,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "PT" = (
@@ -8537,7 +8539,6 @@
 	dir = 1;
 	color = "#CBB1CA"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "UC" = (
@@ -8600,17 +8601,37 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "Vb" = (
-/obj/machinery/light/directional/east,
+/obj/structure/closet/crate/freezer,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
 /obj/effect/turf_decal/box/white/corners{
 	dir = 4;
 	color = "#CBB1CA"
 	},
-/obj/structure/crate_shelf,
 /obj/effect/turf_decal/box/white/corners{
 	dir = 1;
 	color = "#CBB1CA"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/crate_shelf,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "Vc" = (
@@ -8646,12 +8667,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "VA" = (
-/obj/effect/turf_decal/industrial/warning/green/corner{
-	dir = 4
-	},
-/obj/structure/chair/handrail{
-	layer = 2.8
-	},
 /obj/structure/closet/crate/internals{
 	name = "spare EVA crate"
 	},
@@ -8667,7 +8682,6 @@
 	pixel_x = 7;
 	pixel_y = -4
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/clothing/suit/space/clip{
 	pixel_x = 7;
 	pixel_y = -8
@@ -8693,6 +8707,13 @@
 /obj/item/tank/internals/oxygen/red,
 /obj/item/tank/internals/oxygen/red,
 /obj/effect/mapping_helpers/crate_shelve,
+/obj/effect/turf_decal/industrial/warning/green/corner{
+	dir = 4
+	},
+/obj/structure/chair/handrail{
+	dir = 2
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "VD" = (
@@ -9647,7 +9668,9 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/storage/eva)
 "ZP" = (
-/obj/machinery/atmospherics/components/unary/tank/air,
+/obj/machinery/atmospherics/components/unary/tank/air{
+	dir = 1
+	},
 /obj/effect/turf_decal/corner/transparent/lime/half,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
