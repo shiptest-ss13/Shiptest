@@ -660,8 +660,8 @@
 	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/drinks/soda_cans/sol_dry
-	name = "Sol Dry"
-	desc = "A can of ginger ale, known for helping those with upset stomachs. Popularized due to a widespread belief from Solarians that drinking it will alleviate the nausea from bluespace travel."
+	name = "Kepori Pyramid"
+	desc = "An incredibly controversial rebrand of Sol Dry sold on the anniversary of first contact with Teceti. It differs only in branding, and apparently came to Sol Dry's marketing team in a dream. The source of the attached controversy is unknown."
 	icon_state = "sol_dry"
 	list_reagents = list(/datum/reagent/consumable/sol_dry = 30)
 	foodtype = SUGAR
