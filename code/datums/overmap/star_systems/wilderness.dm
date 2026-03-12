@@ -194,7 +194,7 @@
 	)
 	entry_quotes = list(
 		"..a brilliant light in the heavens..",
-		"..it'll guide every spacer home..",
+		"..it'll guide every spacer..",
 		"..watch the beams..",
 		"..you'll always guide us home..",
 	)

@@ -32,6 +32,8 @@
 
 	///Map of tiles at each radius (represented by index) around the sun
 	var/list/list/radius_positions
+	///Map of tiles that can have jump points spawned there (represented by index)
+	var/list/list/jump_spawnlocs
 	///Width/height of the overmap "zlevel"
 	var/size
 	///The maximum amount of dynamic events that can spawn in this sector.
@@ -109,6 +111,9 @@
 	///Quotes to show to players when entering this sector via jump.
 	//try to populate this list with at least 5 examples.
 	var/list/entry_quotes = list()
+
+	/// If generator_type is set to OVERMAP_GENERATOR_JSON, we load all overmap objects from this
+	var/json
 
 	COOLDOWN_DECLARE(dynamic_despawn_cooldown)
 
@@ -639,9 +644,9 @@
  */
 //Returns the jump point in our system
 /datum/overmap_star_system/proc/create_jump_point_link(datum/overmap_star_system/destination_system, point_direction)
-	var/datum/overmap/jump_point/point2 = new(destination_system.get_overmap_edge(REVERSE_DIR(point_direction)), destination_system, TRUE)
+	var/datum/overmap/jump_point/point2 = new(length(destination_system.jump_spawnlocs) ? pick(jump_spawnlocs) : destination_system.get_overmap_edge(REVERSE_DIR(point_direction)), destination_system, TRUE)
 	point2.dir = REVERSE_DIR(point_direction)
-	var/datum/overmap/jump_point/point1 = new(get_overmap_edge(point_direction), src, point2)
+	var/datum/overmap/jump_point/point1 = new(length(jump_spawnlocs) ? pick(jump_spawnlocs) : get_overmap_edge(point_direction), src, point2)
 	point1.dir = point_direction
 	point1.alter_token_appearance()
 	point2.alter_token_appearance()
@@ -654,7 +659,7 @@
  */
 //Returns the jump point in our system
 /datum/overmap_star_system/proc/create_jump_point(datum/overmap_star_system/destination_system, point_direction)
-	var/datum/overmap/jump_point/point1 = new(get_overmap_edge(point_direction), src, destination_system)
+	var/datum/overmap/jump_point/point1 = new(length(jump_spawnlocs) ? pick(jump_spawnlocs) : get_overmap_edge(point_direction), src, destination_system)
 	point1.dir = point_direction
 	point1.alter_token_appearance()
 	return point1

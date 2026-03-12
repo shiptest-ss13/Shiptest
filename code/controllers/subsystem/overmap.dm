@@ -86,24 +86,6 @@ SUBSYSTEM_DEF(overmap)
 
 	SEND_GLOBAL_SIGNAL(COMSIG_OVERMAP_FINISHED_CREATION)
 
-/*
-	//if jump locations arent setup, revert to the old system
-	if(!safe_system.jump_spawnlocs)
-		return ..()
-	var/list/total_spawn_locations = list()
-	var/list/location_to_use
-	var/datum/overmap/jump_point/point_used
-
-	for(var/list/jumppoint_spawnloc as anything in safe_system.jump_spawnlocs)
-		total_spawn_locations += list(jumppoint_spawnloc)
-
-	location_to_use = pick(total_spawn_locations)
-	point_used = safe_system.create_jump_point_link(wild_system, location_to_use["dir"])
-	point_used.overmap_move(location_to_use["x"], location_to_use["y"])
-
-	return ..()
-*/
-
 /datum/controller/subsystem/overmap/proc/spawn_new_star_system(datum/overmap_star_system/system_to_spawn=/datum/overmap_star_system)
 	if(istype(system_to_spawn))
 		return create_new_star_system(system_to_spawn)
