@@ -354,6 +354,12 @@
 	icon_state = "satchel-pgf"
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 
+/obj/item/storage/backpack/messenger/sec/gezena
+	name = "PGFMC assault pack"
+	desc = "An aqua-green assault pack designed for use with PGFMC rigging, although it can still be worn on its own."
+	icon_state = "pgfassault"
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+
 //Belt
 
 /obj/item/storage/belt/military/gezena

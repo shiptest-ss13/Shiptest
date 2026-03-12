@@ -75,7 +75,7 @@
 	backpack = /obj/item/storage/backpack/security/gezena
 	satchel = /obj/item/storage/backpack/satchel/sec/gezena
 	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/satchel/sec/gezena
+	courierbag = /obj/item/storage/backpack/messenger/sec/gezena
 	box = /obj/item/storage/box/survival/pgf
 
 /datum/outfit/job/gezena/security/sapper
@@ -112,7 +112,7 @@
 	backpack = /obj/item/storage/backpack/security/gezena
 	satchel = /obj/item/storage/backpack/satchel/sec/gezena
 	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/satchel/sec/gezena
+	courierbag = /obj/item/storage/backpack/messenger/sec/gezena
 	box = /obj/item/storage/box/survival/pgf
 
 /datum/outfit/job/gezena/hop
@@ -229,7 +229,7 @@
 	backpack = /obj/item/storage/backpack/security/gezena
 	satchel = /obj/item/storage/backpack/satchel/sec/gezena
 	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/satchel/sec/gezena
+	courierbag = /obj/item/storage/backpack/messenger/sec/gezena
 	box = /obj/item/storage/box/survival/pgf
 
 /datum/outfit/job/gezena/security/sapper/geared
@@ -250,7 +250,7 @@
 	backpack = /obj/item/storage/backpack/security/gezena
 	satchel = /obj/item/storage/backpack/satchel/sec/gezena
 	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/satchel/sec/gezena
+	courierbag = /obj/item/storage/backpack/messenger/sec/gezena
 	box = /obj/item/storage/box/survival/pgf
 
 /datum/outfit/job/gezena/hos/geared
@@ -272,7 +272,7 @@
 	backpack = /obj/item/storage/backpack/security/gezena
 	satchel = /obj/item/storage/backpack/satchel/sec/gezena
 	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/satchel/sec/gezena
+	courierbag = /obj/item/storage/backpack/messenger/sec/gezena
 	box = /obj/item/storage/box/survival/pgf
 
 /datum/outfit/job/gezena/paramedic

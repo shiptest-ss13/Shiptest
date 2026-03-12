@@ -21,7 +21,7 @@
 	backpack = /obj/item/storage/backpack/security/gezena
 	satchel = /obj/item/storage/backpack/satchel/sec/gezena
 	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/satchel/sec/gezena
+	courierbag = /obj/item/storage/backpack/messenger/sec/gezena
 
 	backpack_contents = list(/obj/item/gun/energy/kalix/pistol, /obj/item/stock_parts/cell/gun/kalix = 2, /obj/item/grenade/frag=2, /obj/item/flashlight/seclite)
 
