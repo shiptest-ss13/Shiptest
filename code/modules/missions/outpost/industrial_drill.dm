@@ -39,7 +39,7 @@
 
 //unfortunately: the behavior for normal mission drills is different than what I want.
 /obj/machinery/drill/sampler_mission
-	name = "deep-drust sampling drill"
+	name = "deep-crust sampling drill"
 	desc = "A micro-scale laser-assisted deep survey drill. Well-built, given the conditions that they regularly endure. As long as the laser is intact, it'll be an easy fix."
 	var/num_current = 0
 	var/samples_required = 10
@@ -55,7 +55,7 @@
 	if(samples_required == num_current)
 		. += span_notice("[src] has finished operation! Bring it back for a bonus!")
 	else
-		. += span_notice("[src] has drilled [PERCENT(num_current)]% of the way to its desired depth!")
+		. += span_notice("[src] has drilled [PERCENT(num_current/samples_required)]% of the way to its desired depth!")
 
 /obj/machinery/drill/sampler_mission/start_mining()
 	if(our_vein.vein_class < 4)

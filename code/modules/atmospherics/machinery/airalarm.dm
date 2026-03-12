@@ -40,7 +40,7 @@
 
 /obj/item/wallframe/airalarm
 	name = "air alarm frame"
-	desc = "Used for building Air Alarms."
+	desc = "Used for building air alarms."
 	icon = 'icons/obj/monitors.dmi'
 	icon_state = "alarm_bitem"
 	result_path = /obj/machinery/airalarm
@@ -135,7 +135,7 @@
 	)
 
 /obj/machinery/airalarm/freezer // Won't go off for low temps; Won't heat the room
-	desc = "A machine that monitors atmosphere levels. This one is set to go off in room temperature, as to not let freezer contents spoil."
+	desc = "A machine that monitors atmosphere levels. This one is set to go off at room temperature, so as to not let freezer contents spoil."
 	heating_manage = FALSE
 
 	TLV = list( // Breathable air.
@@ -493,7 +493,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 					tlv.vars[name] = -1
 				else
 					tlv.vars[name] = round(value, 0.01)
-				investigate_log(" treshold value for [env]:[name] was set to [value] by [key_name(usr)]",INVESTIGATE_ATMOS)
+				investigate_log(" threshold value for [env]:[name] was set to [value] by [key_name(usr)]",INVESTIGATE_ATMOS)
 				. = TRUE
 		if("mode")
 			mode = text2num(params["mode"])
@@ -765,7 +765,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 /obj/machinery/airalarm/proc/airalarm_toggleheat()
 	if(heating_manage)
 		if(heating_current_mode == "Heat")
-			visible_message(span_notice("The air alarm makes a quiet click as it stops heating the area"))
+			visible_message(span_notice("The air alarm makes a quiet click as it stops heating the area."))
 			heating_current_mode = "Idle"
 			heating_manage = FALSE
 			return
@@ -790,14 +790,14 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 		wanted_mode = "Idle"
 
 	if(wanted_mode == "Idle" & heating_current_mode == "Heat")
-		visible_message(span_notice("The air alarm makes a quiet click as it stops heating the area"))
+		visible_message(span_notice("The air alarm makes a quiet click as it stops heating the area."))
 		playsound(src, 'sound/machines/terminal_off.ogg', 40)
 		heating_current_mode = "Idle"
 		set_idle_power()
 		return
 
 	if(wanted_mode == "Heat" & heating_current_mode == "Idle")
-		visible_message(span_notice("The air alarm makes a quiet click as it starts heating the area"))
+		visible_message(span_notice("The air alarm makes a quiet click as it starts heating the area."))
 		playsound(src, 'sound/machines/terminal_on.ogg', 40)
 		heating_current_mode = "Heat"
 		set_active_power()

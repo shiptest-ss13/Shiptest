@@ -1,6 +1,6 @@
 /obj/item/folder/biscuit
 	name = "\proper biscuit card"
-	desc = "An biscuit card. Has label which says <b>DO NOT DIGEST</b>."
+	desc = "A biscuit card. The label says <b>DO NOT DIGEST</b>."
 	icon_state = "paperbiscuit"
 	bg_color = "#ffffff"
 	w_class = WEIGHT_CLASS_TINY
@@ -27,7 +27,7 @@
 /obj/item/folder/biscuit/examine()
 	. = ..()
 	if(!cracked)
-		. += span_notice("To reach contents you need to crack it open.")
+		. += span_notice("To reach contents, you need to crack it open.")
 
 //All next is done so you can't reach contents, or put any new contents when its not cracked open
 /obj/item/folder/biscuit/remove_item(obj/item/item, mob/user)
@@ -61,15 +61,15 @@
 	ui_interact(user)
 //Corporate "confidental" biscuit cards
 /obj/item/folder/biscuit/confidental
-	name = "\proper confidental biscuit card"
-	desc = "An confidental biscuit card. In a tasteful blue color with NT logo, looks like a chocolate bar. Has label which says <b>DO NOT DIGEST</b>."
+	name = "\proper confidential biscuit card"
+	desc = "A confidential biscuit card in a tasteful blue color; it looks like a chocolate bar. The label says <b>DO NOT DIGEST</b>."
 	icon_state = "paperbiscuit_secret"
 	bg_color = "#355e9f"
 
 //Biscuits which start not-sealed/cracked initially for the crafting, printing and such
 /obj/item/folder/biscuit/unsealed
 	name = "\proper biscuit card"
-	desc = "An biscuit card. Has a label which says <b>DO NOT DIGEST</b>."
+	desc = "A biscuit card. The label says <b>DO NOT DIGEST</b>."
 	icon_state = "paperbiscuit_cracked"
 	cracked = TRUE
 	///Was the biscuit already sealed by players? To prevent several tgui alerts
@@ -80,7 +80,7 @@
 /obj/item/folder/biscuit/unsealed/examine()
 	. = ..()
 	if(!sealed)
-		. += span_notice("This one have not been sealed yet. You many insert anything to seal it by pressing it in hand. Once sealed, the contents are inaccessible until cracked open (irreversible).")
+		. += span_notice("This one has not been sealed yet. You many insert anything to seal it by pressing it in hand. Once sealed, the contents are inaccessible until cracked open (irreversible).")
 
 //Asks if you want to seal the biscuit, after you do that it behaves like normal paper biscuit.
 /obj/item/folder/biscuit/unsealed/attack_self(mob/user)
@@ -97,8 +97,8 @@
 	return ..()
 
 /obj/item/folder/biscuit/unsealed/confidental
-	name = "\proper confidental biscuit card"
-	desc = "An confidental biscuit card. In a tasteful blue color with NT logo, looks like a chocolate bar. To reach contents you need to crack it open. Has label which says <b>DO NOT DIGEST</b>."
+	name = "\proper confidential biscuit card"
+	desc = "A confidential biscuit card in a tasteful blue color; it looks like a chocolate bar. To reach contents, you need to crack it open. The label says <b>DO NOT DIGEST</b>."
 	icon_state = "paperbiscuit_secret_cracked"
 	bg_color = "#355e9f"
 	not_cracked_icon = "paperbiscuit_secret"

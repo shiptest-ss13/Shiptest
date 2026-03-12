@@ -276,7 +276,7 @@
 
 
 /obj/item/clothing/head/helmet/bulletproof/x11/cybersun/trauma
-	name = "\improper X11 \"Troubleshooter\""
+	name = "\improper X11 \"Trauma Team\""
 	desc = "A bulletproof combat helmet purchased and modified by Cybersun. Painted in Trauma Team colors."
 	icon_state = "trauma_x11helm"
 	unique_reskin = list(

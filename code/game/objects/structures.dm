@@ -19,6 +19,10 @@
 	var/climb_stun = 0
 
 	var/broken = 0 //similar to machinery's stat BROKEN
+	///The chance of a projectile to pass through the structure
+	var/passchance = 0
+	///If projectiles are allowed to pass through a structure at all
+	var/pass_through = FALSE
 
 /obj/structure/Initialize()
 	if (!armor)
@@ -53,6 +57,18 @@
 		return
 	if (O.loc != src.loc)
 		step(O, get_dir(O, src))
+
+/obj/structure/CanAllowThrough(atom/movable/mover, border_dir)
+	. = ..()
+	if(istype(mover, /obj/projectile) && pass_through)
+		var/obj/projectile/proj = mover
+		if(proj.firer && Adjacent(proj.firer))
+			return TRUE
+		if(prob(passchance))
+			return TRUE
+		return FALSE
+	if((mover.pass_flags & PASSGRILLE) && pass_through)
+		return prob(passchance)
 
 /obj/structure/examine(mob/user)
 	. = ..()
