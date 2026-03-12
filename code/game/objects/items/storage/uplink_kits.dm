@@ -207,26 +207,26 @@
 	name = "Contractor Guide"
 
 /obj/item/paper/contractor_guide/Initialize()
-	default_raw_text = {"<p>Welcome agent, congratulations on your new position as contractor. On top of your already assigned objectives,
+	default_raw_text = {"<p>Welcome agent! Congratulations on your new position as contractor. On top of your already assigned objectives,
 			this kit will provide you contracts to take on for TC payments.</p>
 
-			<p>Provided within, we give your specialist contractor space suit. It's even more compact, being able to fit into a pocket, and faster than the
+			<p>Your specialist contractor space suit is provided within. It's even more compact - able to fit into a pocket - and faster than the
 			Syndicate space suit available to you on the uplink. We also provide your chameleon jumpsuit and mask, both of which can be changed
-			to any form you need for the moment. The cigarettes are a special blend - it'll heal your injuries slowly overtime.</p>
+			to any form you need for the moment. The cigarettes are a special blend - it'll heal your injuries slowly over time.</p>
 
-			<p>Your standard issue contractor baton hits harder than the ones you might be used to, and likely be your go to weapon for kidnapping your
+			<p>Your standard-issue contractor baton hits harder than the ones you might be used to, and it's likely be your go-to weapon for kidnapping your
 			targets. The three additional items have been randomly selected from what we had available. We hope they're useful to you for your mission.</p>
 
 			<p>The contractor hub, available at the top right of the uplink, will provide you unique items and abilities. These are bought using Contractor Rep,
-			with two Rep being provided each time you complete a contract.</p>
+			with two Rep provided each time you complete a contract.</p>
 
 			<h3>Using the tablet</h3>
 			<ol>
 				<li>Open the Syndicate Contract Uplink program.</li>
-				<li>Here, you can accept a contract, and redeem your TC payments from completed contracts.</li>
-				<li>The payment number shown in brackets is the bonus you'll recieve when bringing your target <b>alive</b>. You recieve the
-				other number regardless of if they were alive or dead.</li>
-				<li>Contracts are completed by bringing the target to designated dropoff, calling for extraction, and putting them
+				<li>Here, you can accept a contract and redeem your TC payments from completed contracts.</li>
+				<li>The payment number shown in brackets is the bonus you'll receive for bringing your target <b>alive</b>. The other number
+				is the payment you receive regardless of whether they are alive or dead.</li>
+				<li>Contracts are completed by bringing the target to the designated dropoff, calling for extraction, and putting them
 				inside the pod.</li>
 			</ol>
 
@@ -236,16 +236,16 @@
 			<h3>Extracting</h3>
 			<ol>
 				<li>Make sure both yourself and your target are at the dropoff.</li>
-				<li>Call the extraction, and stand back from the drop point.</li>
-				<li>If it fails, make sure your target is inside, and there's a free space for the pod to land.</li>
+				<li>Call the extraction, and stand back from the dropoff point.</li>
+				<li>If it fails, make sure your target is inside and that there's a free space for the pod to land.</li>
 				<li>Grab your target, and drag them into the pod.</li>
 			</ol>
 			<h3>Ransoms</h3>
 			<p>We need your target for our own reasons, but we ransom them back to your mission area once their use is served. They will return back
-			from where you sent them off from in several minutes time. Don't worry, we give you a cut of what we get paid. We pay this into whatever
+			from where you sent them off from in several minutes' time. Don't worry, we give you a cut of what we get paid. We pay this into whatever
 			ID card you have equipped, on top of the TC payment we give.</p>
 
-			<p>Good luck agent. You can burn this document with the supplied lighter.</p>"}
+			<p>Good luck, agent. You can burn this document with the supplied lighter.</p>"}
 
 	return ..()
 

@@ -167,7 +167,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 //wideband radio
 /obj/item/radio/intercom/wideband
 	name = "wideband relay"
-	desc = "A low-gain reciever capable of sending and recieving wideband subspace messages."
+	desc = "A low-gain receiver capable of sending and receiving wideband subspace messages."
 	icon_state = "intercom-wideband"
 	canhear_range = 3
 	keyslot = new /obj/item/encryptionkey/wideband
