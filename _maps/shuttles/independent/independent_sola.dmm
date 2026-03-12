@@ -177,12 +177,16 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "du" = (
-/obj/effect/landmark/start/head_of_personnel,
-/obj/effect/landmark/start/shaft_miner{
-	pixel_x = -5
+/obj/docking_port/stationary{
+	dwidth = 15;
+	height = 15;
+	width = 30;
+	dir = 2;
+	name = "Sola External Airlock";
+	disable_on_owner_ship_dock = 1
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "dv" = (
 /obj/structure/cable/pink{
 	icon_state = "4-10"
@@ -250,20 +254,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/fore)
-"em" = (
-/obj/effect/turf_decal/solarpanel,
-/obj/machinery/power/solar,
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "eq" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9;
@@ -281,21 +271,21 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/captain)
 "fb" = (
-/obj/effect/landmark/start/assistant,
-/turf/template_noop,
-/area/template_noop)
+/obj/docking_port/mobile{
+	port_direction = 4;
+	preferred_direction = 4
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "fh" = (
 /obj/effect/turf_decal/solarpanel,
-/obj/machinery/power/solar,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
+/obj/machinery/power/solar,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "fl" = (
@@ -797,9 +787,14 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "mA" = (
-/obj/effect/landmark/start/captain,
-/turf/template_noop,
-/area/template_noop)
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow,
+/obj/machinery/power/solar,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "mB" = (
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 8
@@ -1160,20 +1155,6 @@
 /obj/structure/chair/handrail,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
-"ri" = (
-/obj/structure/railing/thick{
-	dir = 4
-	},
-/obj/effect/turf_decal/solarpanel,
-/obj/machinery/power/solar,
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "rp" = (
 /obj/machinery/door/airlock/freezer{
 	dir = 4;
@@ -1267,17 +1248,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
-"sA" = (
-/obj/docking_port/stationary{
-	dwidth = 15;
-	height = 15;
-	width = 30;
-	dir = 2;
-	name = "Sola External Airlock";
-	disable_on_owner_ship_dock = 1
-	},
-/turf/template_noop,
-/area/template_noop)
 "sE" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -2020,12 +1990,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
-"AE" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "AG" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6;
@@ -2398,10 +2362,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
-"Fc" = (
-/obj/effect/landmark/start/medical_doctor,
-/turf/template_noop,
-/area/template_noop)
 "Fl" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#D2BC9D"
@@ -2686,9 +2646,14 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Je" = (
-/obj/structure/marker_beacon{
-	picked_color = "Lime"
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/solar,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Jq" = (
@@ -2737,18 +2702,6 @@
 /obj/structure/chair/wood,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
-"JP" = (
-/obj/effect/turf_decal/solarpanel,
-/obj/machinery/power/solar,
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow,
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "JY" = (
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
 	piping_layer = 5
@@ -2903,10 +2856,10 @@
 /area/ship/engineering/electrical)
 "Ml" = (
 /obj/effect/turf_decal/solarpanel,
-/obj/machinery/power/solar,
 /obj/structure/cable/yellow{
-	icon_state = "0-2"
+	icon_state = "0-4"
 	},
+/obj/machinery/power/solar,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Mr" = (
@@ -3015,10 +2968,6 @@
 /obj/effect/turf_decal/ihejirika_small/right,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
-"NI" = (
-/obj/effect/landmark/start/station_engineer,
-/turf/template_noop,
-/area/template_noop)
 "NP" = (
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/eva,
@@ -3382,13 +3331,17 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/aft)
 "Sa" = (
-/obj/docking_port/mobile{
-	dir = 2;
-	name = "sola dock";
-	launch_status = 0;
-	port_direction = 8;
-	preferred_direction = 4
+/obj/structure/railing/thick{
+	dir = 4
 	},
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/power/solar,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Sd" = (
@@ -3970,10 +3923,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
-"Zu" = (
-/obj/effect/landmark/start/shaft_miner,
-/turf/template_noop,
-/area/template_noop)
 "Zw" = (
 /obj/effect/turf_decal/borderfloor/corner{
 	dir = 8
@@ -4048,7 +3997,6 @@ bK
 bK
 bK
 bK
-bK
 CM
 vw
 Yj
@@ -4061,14 +4009,12 @@ bK
 bK
 bK
 bK
-mA
 "}
 (2,1,1) = {"
 bK
 bK
 bK
 bK
-bK
 qU
 CM
 CM
@@ -4082,10 +4028,8 @@ bK
 bK
 bK
 bK
-du
 "}
 (3,1,1) = {"
-bK
 bK
 bK
 bK
@@ -4103,10 +4047,8 @@ bK
 bK
 bK
 bK
-Zu
 "}
 (4,1,1) = {"
-bK
 bK
 bK
 bK
@@ -4124,10 +4066,8 @@ bK
 bK
 bK
 bK
-Fc
 "}
 (5,1,1) = {"
-bK
 bK
 bK
 bK
@@ -4145,10 +4085,8 @@ bK
 bK
 bK
 bK
-NI
 "}
 (6,1,1) = {"
-bK
 bK
 bK
 bK
@@ -4166,10 +4104,8 @@ bK
 bK
 bK
 bK
-fb
 "}
 (7,1,1) = {"
-bK
 bK
 bK
 bK
@@ -4187,10 +4123,8 @@ bK
 bK
 bK
 bK
-fb
 "}
 (8,1,1) = {"
-bK
 bK
 bK
 iC
@@ -4208,11 +4142,9 @@ BN
 LR
 bK
 bK
-bK
 "}
 (9,1,1) = {"
-bK
-bK
+LM
 WG
 iC
 JY
@@ -4228,12 +4160,10 @@ LR
 ah
 Td
 WG
-bK
-bK
+LM
 "}
 (10,1,1) = {"
-bK
-bK
+LM
 LM
 iC
 rT
@@ -4248,14 +4178,12 @@ Aa
 sS
 zl
 Sd
-Sa
-bK
-bK
+LM
+fb
 "}
 (11,1,1) = {"
 bK
-bK
-bK
+LM
 iC
 Kt
 iC
@@ -4269,12 +4197,10 @@ Um
 LR
 HE
 fH
-sA
-bK
+du
 bK
 "}
 (12,1,1) = {"
-bK
 bK
 bK
 SC
@@ -4292,10 +4218,8 @@ LR
 jN
 bK
 bK
-bK
 "}
 (13,1,1) = {"
-bK
 bK
 bK
 LM
@@ -4313,10 +4237,8 @@ XF
 LM
 bK
 bK
-bK
 "}
 (14,1,1) = {"
-bK
 bK
 bK
 SR
@@ -4334,10 +4256,8 @@ XF
 sn
 bK
 bK
-bK
 "}
 (15,1,1) = {"
-bK
 bK
 bK
 vu
@@ -4355,10 +4275,8 @@ UP
 XF
 bK
 bK
-bK
 "}
 (16,1,1) = {"
-bK
 bK
 bK
 vu
@@ -4376,10 +4294,8 @@ sP
 XF
 bK
 bK
-bK
 "}
 (17,1,1) = {"
-bK
 bK
 IW
 mF
@@ -4397,10 +4313,8 @@ jZ
 jZ
 Ua
 bK
-bK
 "}
 (18,1,1) = {"
-bK
 bK
 vE
 Fw
@@ -4418,10 +4332,8 @@ TD
 zq
 ho
 bK
-bK
 "}
 (19,1,1) = {"
-bK
 bK
 tB
 Bh
@@ -4439,11 +4351,9 @@ Ep
 nV
 tB
 bK
-bK
 "}
 (20,1,1) = {"
-bK
-Ua
+Ml
 yj
 Bh
 VK
@@ -4459,11 +4369,9 @@ wY
 VO
 jZ
 QL
-Ua
-bK
+Ml
 "}
 (21,1,1) = {"
-Ml
 fh
 Bh
 TM
@@ -4480,12 +4388,10 @@ WV
 CC
 iZ
 jZ
-em
-Ga
+Je
 "}
 (22,1,1) = {"
-Je
-AE
+fh
 Bh
 QX
 JB
@@ -4501,11 +4407,9 @@ jZ
 jZ
 jZ
 jZ
-AE
 Je
 "}
 (23,1,1) = {"
-Ml
 fh
 vC
 vC
@@ -4522,12 +4426,10 @@ in
 Bm
 xo
 Pl
-JP
-Ga
+mA
 "}
 (24,1,1) = {"
-bK
-ri
+Sa
 vC
 wn
 NP
@@ -4544,10 +4446,8 @@ Te
 Wb
 rd
 nA
-bK
 "}
 (25,1,1) = {"
-bK
 ok
 TZ
 Zw
@@ -4565,10 +4465,8 @@ wK
 lv
 rd
 Bu
-bK
 "}
 (26,1,1) = {"
-bK
 yk
 BJ
 Vf
@@ -4586,10 +4484,8 @@ aj
 aj
 aj
 Nx
-bK
 "}
 (27,1,1) = {"
-bK
 bK
 vC
 FY
@@ -4607,10 +4503,8 @@ SZ
 pj
 aj
 bK
-bK
 "}
 (28,1,1) = {"
-bK
 bK
 BG
 vC
@@ -4628,10 +4522,8 @@ uB
 aj
 Dh
 bK
-bK
 "}
 (29,1,1) = {"
-bK
 bK
 LM
 vC
@@ -4649,10 +4541,8 @@ Hj
 Ss
 Ga
 bK
-bK
 "}
 (30,1,1) = {"
-bK
 bK
 bK
 BG
@@ -4670,10 +4560,8 @@ qL
 zi
 bK
 bK
-bK
 "}
 (31,1,1) = {"
-bK
 bK
 bK
 LM
@@ -4691,10 +4579,8 @@ VN
 lF
 bK
 bK
-bK
 "}
 (32,1,1) = {"
-bK
 bK
 bK
 bK
@@ -4712,10 +4598,8 @@ tB
 bK
 bK
 bK
-bK
 "}
 (33,1,1) = {"
-bK
 bK
 bK
 bK
@@ -4733,7 +4617,6 @@ bK
 bK
 bK
 bK
-bK
 "}
 (34,1,1) = {"
 bK
@@ -4741,7 +4624,6 @@ bK
 bK
 bK
 bK
-bK
 Lw
 dy
 dx
@@ -4749,7 +4631,6 @@ dx
 dx
 dy
 Lw
-bK
 bK
 bK
 bK

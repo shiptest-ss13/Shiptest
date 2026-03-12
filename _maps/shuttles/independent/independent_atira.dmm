@@ -53,6 +53,21 @@
 "bz" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
+"bK" = (
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/effect/turf_decal/techfloor,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "a_engines_s";
+	dir = 4
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/engineering/engine)
 "cq" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -387,20 +402,22 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "eB" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/effect/turf_decal/techfloor,
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "a_engines_s"
-	},
-/obj/structure/window/reinforced{
+/obj/machinery/power/terminal{
 	dir = 8
 	},
-/turf/open/floor/plasteel/telecomms_floor,
+/obj/effect/turf_decal/techfloor,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_y = -22;
+	pixel_x = -9;
+	id = "a_engines_s";
+	name = "engine shutter"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "fa" = (
 /turf/closed/wall/mineral/titanium,
@@ -1084,14 +1101,26 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/cryo)
 "ne" = (
-/obj/machinery/power/shuttle/engine/electric,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/button/door{
+	pixel_y = 22;
+	pixel_x = -9;
+	id = "a_engines_p";
+	name = "engine shutter"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
-/turf/open/floor/engine/hull,
+/turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "nq" = (
 /obj/effect/turf_decal/borderfloor{
@@ -1381,26 +1410,11 @@
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/medical/surgery)
 "rj" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 2
-	},
-/obj/effect/turf_decal/techfloor{
+/obj/effect/turf_decal/arrows{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer2{
-	dir = 10
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "a_engines_p"
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/turf/open/floor/plasteel/telecomms_floor,
-/area/ship/engineering/engine)
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "rm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -2472,7 +2486,7 @@
 /area/ship/hallway/central)
 "Dj" = (
 /turf/open/floor/engine/hull,
-/area/ship/engineering/engine)
+/area/ship/external/dark)
 "Dx" = (
 /obj/effect/turf_decal/techfloor/orange,
 /obj/effect/turf_decal/techfloor/orange{
@@ -3028,6 +3042,16 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
+"LP" = (
+/obj/machinery/power/shuttle/engine/electric,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/engine/hull,
+/area/ship/engineering/engine)
 "LV" = (
 /obj/structure/railing/thin{
 	dir = 8
@@ -3273,28 +3297,8 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "PH" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer2{
-	dir = 5
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/button/door{
-	dir = 4;
-	pixel_y = 9;
-	pixel_x = -22;
-	id = "a_engines_p";
-	name = "engine shutter"
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering/engine)
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "PZ" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 6
@@ -3953,20 +3957,24 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "XQ" = (
-/obj/machinery/power/terminal,
-/obj/effect/turf_decal/techfloor,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/button/door{
-	dir = 4;
-	pixel_y = -8;
-	pixel_x = -22;
-	id = "a_engines_s";
-	name = "engine shutter"
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
 	},
-/turf/open/floor/plasteel/tech,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "a_engines_p";
+	dir = 8
+	},
+/turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/engine)
 "XY" = (
 /obj/effect/turf_decal/trimline/opaque/blue/filled/arrow_cw{
@@ -4259,7 +4267,6 @@ CM
 CM
 CM
 CM
-CM
 Xh
 gS
 Xh
@@ -4269,10 +4276,8 @@ xS
 CM
 CM
 CM
-CM
 "}
 (2,1,1) = {"
-CM
 CM
 CM
 CM
@@ -4288,10 +4293,8 @@ sI
 CM
 CM
 CM
-CM
 "}
 (3,1,1) = {"
-CM
 CM
 CM
 Xh
@@ -4307,12 +4310,10 @@ zh
 Xh
 CM
 CM
-CM
 "}
 (4,1,1) = {"
 CM
-CM
-CM
+LG
 Eq
 Xc
 UX
@@ -4324,14 +4325,12 @@ FZ
 DG
 yg
 Xh
-CM
-CM
+Dj
 CM
 "}
 (5,1,1) = {"
-CM
-LG
-Dj
+mN
+LP
 Eq
 yL
 AU
@@ -4343,14 +4342,12 @@ Nk
 DG
 vz
 Xh
-Dj
-Dj
-CM
+yb
+mN
 "}
 (6,1,1) = {"
 mN
-ne
-Xh
+XQ
 Xh
 Xh
 tr
@@ -4362,14 +4359,12 @@ hy
 tr
 rY
 Xh
-Xh
-yb
+bK
 mN
 "}
 (7,1,1) = {"
 mN
-rj
-PH
+ne
 Xh
 ij
 Uv
@@ -4381,12 +4376,10 @@ kr
 ia
 Sq
 Xh
-XQ
 eB
 mN
 "}
 (8,1,1) = {"
-mN
 mN
 rC
 XN
@@ -4402,10 +4395,8 @@ dq
 Po
 cN
 mN
-mN
 "}
 (9,1,1) = {"
-CM
 mN
 mN
 Xh
@@ -4421,10 +4412,8 @@ mM
 tr
 mN
 mN
-CM
 "}
 (10,1,1) = {"
-CM
 CM
 mN
 Xh
@@ -4440,10 +4429,8 @@ BL
 Nb
 mN
 CM
-CM
 "}
 (11,1,1) = {"
-CM
 CM
 ps
 Xh
@@ -4459,11 +4446,9 @@ tT
 Md
 mN
 CM
-CM
 "}
 (12,1,1) = {"
-HD
-sf
+CM
 JX
 lQ
 Wo
@@ -4477,11 +4462,9 @@ In
 Xh
 In
 mN
-HY
-HD
+CM
 "}
 (13,1,1) = {"
-HD
 CM
 uL
 VK
@@ -4497,10 +4480,8 @@ Xh
 uI
 mN
 CM
-HD
 "}
 (14,1,1) = {"
-HD
 CM
 HP
 RK
@@ -4516,11 +4497,9 @@ Xh
 uY
 mN
 CM
-HD
 "}
 (15,1,1) = {"
-HD
-sf
+CM
 JX
 SI
 xx
@@ -4534,11 +4513,9 @@ FY
 FY
 FY
 FY
-HY
-HD
+CM
 "}
 (16,1,1) = {"
-CM
 CM
 JX
 NT
@@ -4554,10 +4531,8 @@ SL
 FY
 FY
 CM
-CM
 "}
 (17,1,1) = {"
-CM
 CM
 CM
 JX
@@ -4573,10 +4548,8 @@ GY
 FY
 CM
 CM
-CM
 "}
 (18,1,1) = {"
-CM
 CM
 CM
 uu
@@ -4592,10 +4565,8 @@ cZ
 FY
 CM
 CM
-CM
 "}
 (19,1,1) = {"
-CM
 CM
 CM
 uu
@@ -4611,10 +4582,8 @@ OF
 FY
 iP
 CM
-CM
 "}
 (20,1,1) = {"
-CM
 CM
 CM
 uu
@@ -4630,11 +4599,9 @@ Ic
 Zz
 iP
 CM
-CM
 "}
 (21,1,1) = {"
-CM
-CM
+rj
 Pf
 uu
 gk
@@ -4649,12 +4616,10 @@ sS
 yy
 iP
 CM
-CM
 "}
 (22,1,1) = {"
-CM
-CM
 YO
+PH
 Dx
 Lq
 dn
@@ -4668,12 +4633,10 @@ oA
 iP
 iP
 CM
-CM
 "}
 (23,1,1) = {"
-CM
-CM
 Sa
+rj
 Gk
 jv
 Cy
@@ -4687,12 +4650,10 @@ sS
 be
 iP
 CM
-CM
 "}
 (24,1,1) = {"
-CM
-CM
 YO
+PH
 sw
 YF
 XY
@@ -4706,11 +4667,9 @@ Ke
 tq
 iP
 CM
-CM
 "}
 (25,1,1) = {"
-CM
-CM
+rj
 Ks
 uu
 Zm
@@ -4725,10 +4684,8 @@ WX
 wr
 iP
 CM
-CM
 "}
 (26,1,1) = {"
-CM
 CM
 CM
 CM
@@ -4744,10 +4701,8 @@ iP
 iP
 CM
 CM
-CM
 "}
 (27,1,1) = {"
-CM
 CM
 HD
 sf
@@ -4763,10 +4718,8 @@ NK
 yE
 HY
 HD
-CM
 "}
 (28,1,1) = {"
-CM
 CM
 HD
 CM
@@ -4782,10 +4735,8 @@ Qr
 yE
 CM
 HD
-CM
 "}
 (29,1,1) = {"
-CM
 CM
 HD
 sf
@@ -4801,10 +4752,8 @@ Za
 yE
 HY
 HD
-CM
 "}
 (30,1,1) = {"
-CM
 CM
 CM
 CM
@@ -4820,10 +4769,8 @@ yE
 yE
 CM
 CM
-CM
 "}
 (31,1,1) = {"
-CM
 CM
 CM
 fa
@@ -4839,10 +4786,8 @@ Mf
 bz
 JZ
 CM
-CM
 "}
 (32,1,1) = {"
-CM
 CM
 CM
 fa
@@ -4858,10 +4803,8 @@ lx
 ss
 JZ
 CM
-CM
 "}
 (33,1,1) = {"
-CM
 CM
 CM
 fa
@@ -4877,10 +4820,8 @@ uM
 RQ
 oN
 CM
-CM
 "}
 (34,1,1) = {"
-CM
 CM
 CM
 fa
@@ -4896,10 +4837,8 @@ cq
 tl
 tm
 CM
-CM
 "}
 (35,1,1) = {"
-CM
 CM
 CM
 fa
@@ -4915,10 +4854,8 @@ wo
 pv
 jL
 CM
-CM
 "}
 (36,1,1) = {"
-CM
 CM
 CM
 CM
@@ -4934,10 +4871,8 @@ xQ
 Bz
 dA
 CM
-CM
 "}
 (37,1,1) = {"
-CM
 CM
 CM
 CM
@@ -4953,10 +4888,8 @@ iU
 rO
 CM
 CM
-CM
 "}
 (38,1,1) = {"
-CM
 CM
 CM
 CM
@@ -4972,10 +4905,8 @@ CM
 CM
 CM
 CM
-CM
 "}
 (39,1,1) = {"
-CM
 CM
 CM
 CM
@@ -4991,10 +4922,8 @@ CM
 CM
 CM
 CM
-CM
 "}
 (40,1,1) = {"
-CM
 CM
 CM
 CM
@@ -5005,7 +4934,6 @@ rQ
 rQ
 rQ
 gu
-CM
 CM
 CM
 CM
