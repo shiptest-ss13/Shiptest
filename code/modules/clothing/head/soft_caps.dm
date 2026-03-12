@@ -26,7 +26,7 @@
 						)
 	unique_reskin_changes_base_icon_state = TRUE
 	unique_reskin_changes_name = TRUE
-	var/flipped = TRUE
+	var/flipped = FALSE
 
 /obj/item/clothing/head/soft/Initialize()
 	. = ..()
@@ -39,7 +39,7 @@
 	flip(usr)
 
 /obj/item/clothing/head/soft/attack_hand_secondary(mob/user, list/modifiers)
-	flip()
+	flip(user)
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/item/clothing/head/soft/AltClick(mob/user)
@@ -184,20 +184,6 @@
 	dog_fashion = null
 	icon = 'icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/head.dmi'
-
-/obj/item/clothing/head/soft/cybersun
-	name = "cybersun agent cap"
-	desc = "A black baseball hat emblazoned with a reflective Cybersun patch."
-	icon_state = "agentsoft"
-	unique_reskin = null
-	dog_fashion = null
-
-/obj/item/clothing/head/soft/cybersun/medical
-	name = "cybersun medic cap"
-	desc = "A turquoise baseball hat emblazoned with a reflective cross. Typical of Cybersun Industries field medics."
-	icon_state = "cybersunsoft"
-	unique_reskin = null
-	dog_fashion = null
 
 /obj/item/clothing/head/soft/utility_beige
 	name = "beige utility cover"

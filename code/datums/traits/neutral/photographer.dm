@@ -5,7 +5,7 @@
 	mob_traits = list(TRAIT_PHOTOGRAPHER)
 	gain_text = span_notice("You know everything about photography.")
 	lose_text = span_danger("You forget how photo cameras work.")
-	detectable = FALSE
+	quirk_flags = QUIRK_HUMAN_ONLY | QUIRK_HIDE_FROM_SCAN
 
 /datum/quirk/photographer/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder

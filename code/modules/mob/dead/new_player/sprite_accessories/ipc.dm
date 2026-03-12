@@ -270,24 +270,53 @@
 	name = "Synthetic Sarathi"
 	icon_state = "synth"
 
+/datum/sprite_accessory/ipc_tail/lizard/secondary
+	name = "Synthetic Sarathi (Secondary Color)"
+	color_src = MUTCOLORS_SECONDARY
+
 /datum/sprite_accessory/ipc_tail/lizard_big
 	name = "Synthetic Sarathi Large"
 	icon_state = "large"
 
+/datum/sprite_accessory/ipc_tail/lizard_big/secondary
+	name = "Synthetic Sarathi Large (Secondary Color)"
+	color_src = MUTCOLORS_SECONDARY
+
 /datum/sprite_accessory/ipc_tail/plug
 	name = "Power Plug"
 	icon_state = "plug"
-	secondary_color = TRUE
+	color_src = MUTCOLORS_SECONDARY
+	primary_color_overlay = TRUE
+
+/datum/sprite_accessory/ipc_tail/plug/secondary
+	name = "Power Plug (Secondary Color)"
+	icon_state = "plug"
+	color_src = MUTCOLORS
+	secondary_color_overlay = TRUE
 
 /datum/sprite_accessory/ipc_tail/cat
 	name = "Pawsitrons Cat"
 	icon_state = "cat"
 
+/datum/sprite_accessory/ipc_tail/cat/secondary
+	name = "Pawsitrons Cat (Secondary Color)"
+	icon_state = "cat"
+	color_src = MUTCOLORS_SECONDARY
+
 /datum/sprite_accessory/ipc_tail/fox
 	name = "Pawsitrons Fox"
 	icon_state = "fox"
+
+/datum/sprite_accessory/ipc_tail/cat/secondary
+	name = "Pawsitrons Fox (Secondary Color)"
+	icon_state = "fox"
+	color_src = MUTCOLORS_SECONDARY
 
 /datum/sprite_accessory/ipc_tail/fox_alt
 	name = "Pawsitrons Fox 2"
 	icon_state = "fox2"
 
+/datum/sprite_accessory/ipc_tail/fox_alt/secondary
+	name = "Pawsitrons Fox 2 (Secondary Color)"
+	icon_state = "fox2"
+	color_src = MUTCOLORS_SECONDARY
