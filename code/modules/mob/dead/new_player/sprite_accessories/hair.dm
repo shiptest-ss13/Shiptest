@@ -376,7 +376,7 @@
 
 /datum/sprite_accessory/hair/kusangipony
 	name = "Kusanagi Hair (Ponytail)"
-	icon_state = "hair_kusunagipony"
+	icon_state = "hair_kusanagipony"
 
 /datum/sprite_accessory/hair/long
 	name = "Long Hair 1"
