@@ -21,7 +21,7 @@
 	/// Do we cycle between posters?
 	var/cycle_posters = TRUE
 	/// How long between cycles?
-	var/cycle_time = 45 SECONDS
+	var/cycle_time = 47 SECONDS
 	/// The cycling cooldown
 	COOLDOWN_DECLARE(cycle_cooldown)
 
@@ -34,14 +34,21 @@
 	/// Do we want to never appear in the random poster pool? Used in the random subtype to prevent infinite loops of random posters, and the NO ERP poster to make it effectively admin only.
 	var/never_random = FALSE
 
+	var/previous_icon_state
+
 /obj/machinery/holosign/Initialize()
 	. = ..()
 	if(random_type)
 		randomise()
 	if(!overlay_state)
 		overlay_state = icon_state
+	icon_state = holosign
 
 	AddElement(/datum/element/beauty, 300)
+
+/obj/machinery/holosign/proc/do_switch_advert()
+	change_to_poster(/obj/machinery/holosign/switchadvert)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/machinery/holosign, randomise)), 2 SECONDS)
 
 /obj/machinery/holosign/proc/randomise()
 	var/obj/machinery/holosign/selected
@@ -62,9 +69,15 @@
 		for(var/obj/machinery/holosign/current_poster as anything in poster_types)
 			if(overlay_state == current_poster::icon_state)
 				continue
+			if(previous_icon_state && overlay_state == previous_icon_state)
+				continue
 			if((current_poster::icon_state) && !(current_poster::never_random))
 				approved_types |= current_poster
 		selected = pick(approved_types)
+	change_to_poster(selected)
+
+/obj/machinery/holosign/proc/change_to_poster(obj/machinery/holosign/selected)
+	previous_icon_state = icon_state
 
 	name = selected::name
 	desc_add = selected::desc_add
@@ -72,7 +85,6 @@
 	light_color = selected::light_color
 	update_light()
 	update_appearance()
-	flick_overlay("switchadvert", src, 1 SECONDS)
 
 /obj/machinery/holosign/update_overlays()
 	. = ..()
@@ -100,9 +112,9 @@
 		return FALSE
 	if(!COOLDOWN_FINISHED(src, cycle_cooldown))
 		return FALSE
-	randomise()
+	do_switch_advert()
 	//rand() is used in case a bunch of holoposters are placed down, so they slowly desync
-	COOLDOWN_START(src, cycle_cooldown, cycle_time + round(rand(-2 SECONDS, 2 SECONDS), 1 SECONDS))
+	COOLDOWN_START(src, cycle_cooldown, cycle_time + round(rand(-3 SECONDS, 3 SECONDS), 1 SECONDS))
 	return TRUE
 
 /obj/machinery/holosign/examine(mob/user)
@@ -114,21 +126,21 @@
 	. += span_notice("\nIt reads: \"[desc_add]\"")
 
 
-/obj/machinery/holosign/nanotrasen
-	name = "holosign - Buy Nanotrasen"
-	desc_add = "Nanotrasen. Selling ships, medical supplies, and technology since 342 FSC. Shop now."
-	icon_state = "nanotrasen"
+/obj/machinery/holosign/makossowarra
+	name = "holosign - Buy Makosso"
+	desc_add = "Makosso-Warra. Selling ships, medical supplies, and technology since 342 FSC. Shop now."
+	icon_state = "mw"
 	light_color = LIGHT_COLOR_BLUE
 
 /obj/machinery/holosign/tadpole
-	name = "holosign - Visit Tadpole City"
-	desc_add = "Tadpole city: Get rich, Find love, or buy restricted weaponry, it doesn't matter, find your inner tadpole at the April sector at X:4, Y:30, Z:22."
+	name = "holosign - Visit Lanchester City"
+	desc_add = "Tadpole city: Party all night, cause the night almost never ends, find your fun at Lanchester City."
 	icon_state = "tadpole"
 	light_color = LIGHT_COLOR_GREEN
 
 /obj/machinery/holosign/gec
 	name = "holosign - GEC"
-	desc_add = "GEC: United the workers build back the ruins. We can also repair your vessels, stations, and other facilities. We would be glad to help."
+	desc_add = "GEC: United the workers build back the ruins. We can repair your vessels, stations, and other equipment. We would be glad to help."
 	icon_state = "gec"
 	light_color = LIGHT_COLOR_INTENSE_RED
 
@@ -152,7 +164,7 @@
 
 /obj/machinery/holosign/kfp
 	name = "holosign - KFP"
-	desc_add = "KFP"
+	desc_add = "The most affordable and reliable spacecraft, without compromising on safety or quality."
 	icon_state = "kfp"
 	light_color = LIGHT_COLOR_BLUE
 
@@ -162,11 +174,77 @@
 	icon_state = "hardline"
 	light_color = LIGHT_COLOR_HOLY_MAGIC
 
-/obj/machinery/holosign/science
-	name = "holosign - Science"
-	desc_add = "Scientific Outreach requested"
-	icon_state = "moebius"
+/obj/machinery/holosign/clover
+	name = "holosign - Clover Corporation"
+	desc_add = "Clover Corporation - Lucky products for lucky people. Postrionics? Computers? Washing machines? Moible phones? Lucky you, we got them too!"
+	icon_state = "clover"
+	light_color = LIGHT_COLOR_ELECTRIC_CYAN
+
+/obj/machinery/holosign/isf
+	name = "holosign - ISF Spacecraft"
+	desc_add = "ISF Spacecraft - Made to perfection. If you need to ask, it's solved."
+	icon_state = "isf"
 	light_color = LIGHT_COLOR_LAVENDER
+
+/obj/machinery/holosign/ihejirika
+	name = "holosign - Ihejirika Civilian Manufacturing"
+	desc_add = "Enviromentally friendly and recycled ships for everyone. What ship can we get you today?"
+	icon_state = "ihejirika"
+	light_color = LIGHT_COLOR_DARK_BLUE
+
+/obj/machinery/holosign/cybersun
+	name = "holosign - Cybersun Industries"
+	desc_add = "Cybersun Industries - Ships, Robotics, Personal Defense, and Pharmaceuticals at extreme premium quality? Try not to get dazzled, that's just the Cybersun way."
+	icon_state = "cybersun"
+	light_color = LIGHT_COLOR_FLARE
+
+/obj/machinery/holosign/scarborough
+	name = "holosign - Scarborough Arms"
+	desc_add = "Scarborough Arms - Premium firearms and Postrionics, for the tactical and effective civilian."
+	icon_state = "scarborough"
+	light_color = LIGHT_COLOR_FLARE
+
+/obj/machinery/holosign/atua
+	name = "holosign - Atua Synkinetics Parça"
+	desc_add = "Atua Synkinetics Parça - Introducing the latest spec update to the Parça. Same friendy and iconic design, modern parts for a new generation. Buy now!"
+	icon_state = "atua"
+	light_color = LIGHT_COLOR_ELECTRIC_CYAN
+
+/obj/machinery/holosign/lanchestermechanics
+	name = "holosign - Lanchester Mechanics"
+	desc_add = "Lanchester Mechanics - A hard chassis for hard work; Lanchester Mechanics' line of postrionics have you covered."
+	icon_state = "lanchestermechanics"
+	light_color = LIGHT_COLOR_HOLY_MAGIC
+
+/obj/machinery/holosign/ns_logistics
+	name = "holosign - N+S Logistics"
+	desc_add = "N+S Logistics - Need something delivered fast? Our frontierwide network of warehouses and bodies gurantee that your parcels will anywhere quickly and safely."
+	icon_state = "ns_logistics"
+	light_color = LIGHT_COLOR_FLARE
+
+/obj/machinery/holosign/vigilitas
+	name = "holosign - Vigilitas Interstellar"
+	desc_add = "Vigilitas Interstellar - The number one private security for buisnesses. Others may be newer and cheaper, yet we have the experience to make your money worth."
+	icon_state = "vi"
+	light_color = LIGHT_COLOR_FLARE
+
+/obj/machinery/holosign/exocom
+	name = "holosign - EXOCOM"
+	desc_add = "EXOCOM - Helping the people to break the earth with more advanced and inexpensive technology. Try our new heavy mining suit, guranteed to satisfy any miner!"
+	icon_state = "exocom"
+	light_color = LIGHT_COLOR_LAVENDER
+
+/obj/machinery/holosign/trifuge
+	name = "holosign - Installation Trifuge"
+	desc_add = "Installation Trifuge - If stuck in the middle of nowhere, why not stop by Trifuge? Well worn but respected, with Caldwell at the helm, you'll be safe here."
+	icon_state = "trifuge"
+	light_color = LIGHT_COLOR_GREEN
+
+/obj/machinery/holosign/vitcom
+	name = "holosign - VitCom Consumer Electronics"
+	desc_add = "VitCom - Keeping the galaxy connected, our new flip-phone and PDA help you stay in touch with the galaxy!"
+	icon_state = "ihejirika"
+	light_color = LIGHT_COLOR_DARK_BLUE
 
 /obj/machinery/holosign/visitor
 	name = "holosign - Attention Spacer Visitors"
@@ -197,6 +275,13 @@
 	never_random = TRUE
 	random_basetype = /obj/machinery/holosign
 	random_type = POSTER_SUBTYPES
+
+/obj/machinery/holosign/switchadvert
+	name = "blank holosign"
+	desc_add = "It's blank. It seems like it's changing adverts at the moment."
+	icon_state = "switchadvert"
+	light_color = "#000000"
+	never_random = TRUE
 
 #undef POSTER_SUBTYPES
 #undef POSTER_LIST
