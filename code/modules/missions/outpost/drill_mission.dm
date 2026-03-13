@@ -1,5 +1,5 @@
 /*
-		Core sampling missions
+		Break: the earth
 */
 /datum/mission/drill
 	name = "Class 1 core sample mission"
@@ -11,6 +11,7 @@
 
 	var/datum/planet_type/selected_planet
 	var/list/available_planets = list(
+		/* This is what a constructed list looks like. It's empty until created
 		/datum/planet_type/lava = /obj/structure/vein/lavaland,
 		/datum/planet_type/ice = /obj/structure/vein/ice,
 		/datum/planet_type/jungle = /obj/structure/vein/jungle,
@@ -18,6 +19,7 @@
 		/datum/planet_type/rock = /obj/structure/vein/rockplanet,
 		/datum/planet_type/moon = /obj/structure/vein/moon,
 		/datum/planet_type/asteroid = /obj/structure/vein/asteroid,
+		*/
 	)
 	///a punchcard spawned on mission init, allows spawning a specific kind of planet
 	var/obj/item/overmap_punchcard_spawner/dynamic/mission/punchcard
@@ -32,9 +34,24 @@
 	///what class of vein does this mission want
 	var/class_wanted = 1
 	///does this mission spawn a punchcard?
-	var/spawn_punchcard = TRUE
+	var/spawn_punchcard = FALSE
 	///bonus fluff
-	var/bonus_text = TRUE
+	var/bonus_text = FALSE
+
+/datum/mission/drill/New(datum/overmap/outpost/_outpost)
+	var/datum/overmap_star_system/mission_system = _outpost.get_mission_sector()
+	for(var/datum/overmap/dynamic/location in mission_system.dynamic_encounters)
+		if(location.planet.vein_type)
+			available_planets += location.planet
+			available_planets[location.planet] = location.planet.vein_type
+
+	if(locate(/datum/overmap/event/meteor) in mission_system.events)
+		available_planets += /datum/planet_type/asteroid
+		available_planets[/datum/planet_type/asteroid] = /obj/structure/vein/asteroid
+
+	if(!length(available_planets))
+		return INITIALIZE_HINT_QDEL
+	return ..()
 
 /datum/mission/drill/generate_mission_details()
 	. = ..()
@@ -128,7 +145,8 @@
 
 /*
 		Variant for rare planets
-*/
+		Disabled due to rare planets not spawning
+
 /datum/mission/drill/rareplanet
 	name = "Class 1 rare core sample mission"
 	desc = "We have discovered a rare planetoid and wish to study it's geology. \
@@ -191,6 +209,7 @@
 		/datum/planet_type/desert = /obj/structure/vein/desert,
 		/datum/planet_type/shrouded = /obj/structure/vein/shrouded,
 	)
+*/
 
 /* The drill itself */
 

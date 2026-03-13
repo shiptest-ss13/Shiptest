@@ -30,6 +30,9 @@
 	///How much of a radio message we mess up on nearby or on landed/orbitting ships
 	var/interference_power = 0
 
+	///what kind of veins spawn on this planet? Mostly a holder for drill missions.
+	var/vein_type = null
+
 
 /datum/planet_type/lava
 	name = "lava planetoid"
@@ -43,6 +46,8 @@
 	weather_controller_type = /datum/weather_controller/lavaland
 	ruin_type = RUINTYPE_LAVA
 	interference_power = 0
+
+	vein_type = /obj/structure/vein/lavaland
 
 	primary_ores = list(
 		/obj/item/stack/ore/iron,
@@ -62,6 +67,8 @@
 	weather_controller_type = /datum/weather_controller/snow_planet
 	ruin_type = RUINTYPE_ICE
 
+	vein_type = /obj/structure/vein/ice
+
 	primary_ores = list(\
 		/obj/item/stack/ore/iron,
 		/obj/item/stack/ore/gold,
@@ -78,6 +85,9 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_JUNGLE
+
+	vein_type = /obj/structure/vein/jungle
+
 	primary_ores = list(\
 		/obj/item/stack/ore/gold,
 		/obj/item/stack/ore/diamond, //this isnt very common, but it's more common here than every other planet, so i list it here
@@ -94,6 +104,9 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/rockplanet
 	ruin_type = RUINTYPE_ROCK
+
+	vein_type = /obj/structure/vein/rockplanet
+
 	primary_ores = list(\
 		/obj/item/stack/ore/iron,
 		)
@@ -109,6 +122,9 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/desert
 	ruin_type = RUINTYPE_SAND
+
+	vein_type = /obj/structure/vein/sand
+
 	primary_ores = list(\
 		/obj/item/stack/ore/iron,
 		/obj/item/stack/ore/titanium,
@@ -305,6 +321,8 @@
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/plating/asteroid/moon/lit
 	weather_controller_type = null
+
+	vein_type = /obj/structure/vein/moon
 
 	primary_ores = list(\
 		/obj/item/stack/ore/iron,

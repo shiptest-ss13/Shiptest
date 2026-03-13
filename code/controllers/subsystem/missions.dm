@@ -7,6 +7,8 @@ SUBSYSTEM_DEF(missions)
 // should probably come up with a better solution for this
 // hierarchical weighting? would need to distinguish between "real" and "fake" missions
 /datum/controller/subsystem/missions/proc/get_weighted_mission_type(datum/overmap_star_system/system_to_check)
+	if(!system_to_check)
+		CRASH("get_weighted_mission_type called without target star system!")
 	var/static/list/weighted_missions
 	if(!weighted_missions)
 		weighted_missions = list()

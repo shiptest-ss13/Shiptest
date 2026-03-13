@@ -55,7 +55,7 @@
 
 	var/blackbox_prefix = ""
 
-/datum/mission/New(_outpost)
+/datum/mission/New(datum/overmap/outpost/_outpost)
 	source_outpost = _outpost
 	RegisterSignal(source_outpost, COMSIG_QDELETING, PROC_REF(on_vital_delete))
 

@@ -20,7 +20,7 @@
 /datum/round_event/high_priority_mission/setup()
 	target_outpost = pick(SSovermap.outposts)
 	for(var/i = 0, i<3, i++)
-		var/high_priority = SSmissions.get_weighted_mission_type()
+		var/high_priority = SSmissions.get_weighted_mission_type(target_outpost.get_mission_sector())
 		if(!high_priority)
 			stack_trace("[src] could not find any valid missions while attempting to create a high priority mission at [target_outpost]!")
 			return FALSE

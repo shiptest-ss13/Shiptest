@@ -231,7 +231,6 @@
 		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/icerock/temperate/lit
 	)
 	hangar_ztraits =  list(
-		ZTRAIT_GAS_GIANT = TRUE,
 		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
 		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/icerock/temperate/lit
@@ -260,7 +259,6 @@
 		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/rockplanet/safe/lit
 	)
 	hangar_ztraits =  list(
-		ZTRAIT_GAS_GIANT = TRUE,
 		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
 		ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/rockplanet/safe/lit
@@ -289,7 +287,6 @@
 		ZTRAIT_BASETURF = /turf/open/water/beach/deep/outpost
 	)
 	hangar_ztraits =  list(
-		ZTRAIT_GAS_GIANT = TRUE,
 		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
 		ZTRAIT_GRAVITY = STANDARD_GRAVITY,
 		ZTRAIT_BASETURF = /turf/open/water/beach/deep/outpost
