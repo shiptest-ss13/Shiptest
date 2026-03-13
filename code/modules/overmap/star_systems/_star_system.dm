@@ -304,6 +304,8 @@
 
 	var/datum/overmap/outpost/our_outpost = new default_outpost_type(location, src)
 
+	outposts += our_outpost
+
 	//gets rid of nearby events that casue radio interference
 	for(var/direction as anything in GLOB.cardinals)
 		var/newcords = our_outpost.get_overmap_step(direction)
@@ -960,6 +962,10 @@
 			current_static.default_baseturf = current_data["default_baseturf "]
 			current_static.border_size = current_data["border_size"]
 			current_static.landing_sound = current_data["landing_sound"]
+
+		//add any spawned outposts to the system's outpost list.
+		if(istype(new_obj, /datum/overmap/outpost))
+			outposts += new_obj
 
 		//load names and desc, if any
 		if(current_data["name"])
