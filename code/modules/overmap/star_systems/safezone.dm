@@ -26,7 +26,7 @@
 		/datum/overmap/event/meteor/dust = 50,
 	)
 
-
+/*
 /datum/overmap_star_system/safezone/agni
 	name = "Gorlex Controlled - Value of Public Works"
 	starname = "Ecbatana"
@@ -60,6 +60,8 @@
 	secondary_structure_color = "#6fa8de"
 
 	overmap_icon_state = "overmap_dark"
+*/
+
 
 /datum/overmap_star_system/safezone/trifuge
 	name = "Independent - Minya"
@@ -86,6 +88,10 @@
 		"Someone just lost a bet.",
 	)
 
+	json = '_maps/sectors/aubaine_starsystem.json'
+	generator_type = OVERMAP_GENERATOR_JSON
+	has_outpost = FALSE
+/*
 /datum/overmap_star_system/safezone/yebiri
 	name = "Nanotrasen Controlled - Persei-277"
 	starname = "Persei-277"
@@ -102,6 +108,8 @@
 	secondary_structure_color = "#38a0eb"
 
 	overmap_icon_state = "overmap_dark"
+*/
+
 
 /datum/overmap_star_system/safezone/thousand_eyes
 	name = "Cybersun - Kapche-Legnica"
@@ -125,4 +133,8 @@
 		"Follow the buoys. Don't get lost.",
 		"The Watcher's gaze is on you. Welcome back."
 	)
+
+	json = '_maps/sectors/kapche_starsystem.json'
+	generator_type = OVERMAP_GENERATOR_JSON
+	has_outpost = FALSE
 

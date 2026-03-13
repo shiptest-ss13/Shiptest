@@ -119,6 +119,15 @@
 	flag_overlay = FALSE
 	interference_power = -25
 
+/datum/overmap/fluff/nav_beacon
+	name = "navigation marker"
+	desc = "A beacon illuminating the heavens. Follow its guidance and you shall never be lost."
+	docking_message = GENERIC_SATELLITE_MESSAGE
+	token_icon_state = "marker"
+	overmap_color_type = STARSYSTEM_COLOR_SECONDARY_STRUCTURE_COLOR
+	flag_overlay = FALSE
+	interference_power = 0
+
 /datum/overmap/fluff/spacecolony
 	name = "o'neill cylinder"
 	desc = "A habitation station for an colony comprised of a cluster of cylinders. Despite the low cost of modern gravity generators, these are still used as very cheap prefabricated stations, or sold off to a new owner once the previous owner has outgrown them." + span_warning("It would be an exceedingly bad idea to drop this on a planetoid.")
