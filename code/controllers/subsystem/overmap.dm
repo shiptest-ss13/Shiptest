@@ -57,8 +57,8 @@ SUBSYSTEM_DEF(overmap)
 	dynamic_encounters = list()
 	events = list()
 
-	var/list/primary_outpost_sector = pick(subtypesof(/datum/overmap_star_system/safezone) - /datum/overmap_star_system/safezone/json_example)
-	var/list/secondary_outpost_sector = pick(subtypesof(/datum/overmap_star_system/safezone) - primary_outpost_sector)
+	var/primary_outpost_sector = pick(subtypesof(/datum/overmap_star_system/safezone) - /datum/overmap_star_system/safezone/json_example)
+	var/secondary_outpost_sector = pick(subtypesof(/datum/overmap_star_system/safezone) - primary_outpost_sector - /datum/overmap_star_system/safezone/json_example)
 	var/list/wilderness_sector_types = typesof(/datum/overmap_star_system/wilderness)
 
 	/* needs refactor for multi outpost
