@@ -24,7 +24,7 @@
 
 	power_use_amount = POWER_CELL_USE_VERY_LOW
 
-	tool_behaviour = TOOL_DECONSTRUCT
+	tool_behaviour = NONE
 	wall_decon_damage = 200
 	toolspeed = 0.75
 
@@ -51,7 +51,7 @@
 
 /obj/item/plasmacutter/examine(mob/user)
 	. = ..()
-	. += span_notice("You can <b>Control+Click</b> the plasmacutter to change its mode. It is currently on [tool_behaviour]")
+	. += span_notice("You can <b>Control+Click</b> the plasmacutter to change its mode. It is currently set to <b>[powered ? tool_behaviour : "off"]</b>")
 
 /obj/item/plasmacutter/CtrlClick(mob/user)
 	. = ..()
@@ -104,7 +104,7 @@
 /obj/item/plasmacutter/unique_action(mob/user, modifiers)
 	. = ..()
 	if(!HAS_TRAIT(src, TRAIT_WIELDED))
-		to_chat(user, span_warning("[src] needs to beheld in both hands to activate!"))
+		to_chat(user, span_warning("[src] needs to be held in both hands to activate!"))
 		return FALSE
 	if(!powered)
 		if(!(item_use_power(power_use_amount, user, TRUE) & COMPONENT_POWER_SUCCESS))

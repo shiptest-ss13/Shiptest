@@ -68,13 +68,17 @@
 	if(C.dna?.features["ipc_brain"] == "Man-Machine Interface")
 		mutantbrain = /obj/item/organ/brain/mmi_holder
 	. = ..()
+	update_screen_action(C)
+
+/datum/species/ipc/proc/update_screen_action(mob/living/carbon/C)
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C
+		var/obj/item/bodypart/head/ipc/our_head = C.bodyparts[BODY_ZONE_HEAD]
 		if(!change_screen)
-			if(C.bodyparts[BODY_ZONE_HEAD].has_screen)
+			if(our_head.has_screen)
 				change_screen = new
 				change_screen.Grant(H)
-			else if (C.bodyparts[BODY_ZONE_HEAD].draw_eyes)
+			else if (our_head.draw_eyes && !our_head.force_white_eye_color)
 				change_eye_color = new
 				change_eye_color.Grant(H)
 		C.RegisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, TYPE_PROC_REF(/mob/living/carbon, charge))
@@ -120,7 +124,10 @@
 		return
 	var/mob/living/carbon/human/H = owner
 	var/datum/species/ipc/species_datum = H.dna.species
+	var/obj/item/bodypart/head/ipc/our_head = H.bodyparts[BODY_ZONE_HEAD]
 	if(!species_datum)
+		return
+	if(!our_head.has_screen || !our_head.draw_eyes || our_head.force_white_eye_color)
 		return
 	if(!species_datum.has_screen)
 		return
