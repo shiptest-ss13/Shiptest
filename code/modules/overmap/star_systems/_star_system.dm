@@ -271,7 +271,7 @@
 
 
 /datum/overmap_star_system/proc/spawn_ruin_level()
-	new /datum/overmap/dynamic(system_spawned_in = src)
+	new /datum/overmap/dynamic(get_unused_overmap_square_in_radius(), system_spawned_in = src)
 
 /**
  * See [/datum/controller/subsystem/overmap/proc/spawn_events], spawns "veins" (like ores) of events

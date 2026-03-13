@@ -66,14 +66,15 @@
 	if(current_ship.docked_to || current_ship.docking)
 		say("Bluespace Jump Calibration detected interference in the local area.")
 		return
-	message_admins("[ADMIN_LOOKUPFLW(usr)] has initiated a bluespace jump in [ADMIN_VERBOSEJMP(src)]")
+
 	jump_timer = addtimer(CALLBACK(src, PROC_REF(jump_sequence), TRUE), JUMP_CHARGEUP_TIME, TIMER_STOPPABLE)
 	if(new_system)
 		priority_announce("Bluespace jump calibration to destination [new_system.name] initialized. Calibration completion in [JUMP_CHARGEUP_TIME/10] seconds.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
 		jump_destination = new_system
 		jump_coords = newpos
 	else
-		priority_announce("Bluespace jump calibration initialized. Exitting Frontier. Calibration completion in [JUMP_CHARGEUP_TIME/10] seconds.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+		priority_announce("Bluespace jump calibration initialized. Exiting Frontier. Calibration completion in [JUMP_CHARGEUP_TIME/10] seconds.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+		message_admins("[ADMIN_LOOKUPFLW(usr)] has initiated a bluespace jump in [ADMIN_VERBOSEJMP(src)]")
 
 	calibrating = TRUE
 	return TRUE
@@ -91,7 +92,7 @@
 /obj/machinery/computer/helm/proc/cancel_jump()
 	if(!calibrating)
 		return
-	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override = "[current_ship.name] Bluespace Pylon", zlevel = virtual_z())
+	say("Exiting jump sequence.")
 	calibrating = FALSE
 	jump_coords = null
 	deltimer(jump_timer)
@@ -100,7 +101,6 @@
 	switch(jump_state)
 		if(JUMP_STATE_OFF)
 			jump_state = JUMP_STATE_CHARGING
-			SStgui.close_uis(src)
 		if(JUMP_STATE_CHARGING)
 			jump_state = JUMP_STATE_IONIZING
 			say("Bluespace Jump Calibration completed. Ionizing Bluespace Pylon.")
@@ -115,13 +115,14 @@
 	jump_timer = addtimer(CALLBACK(src, PROC_REF(jump_sequence), TRUE), JUMP_CHARGE_DELAY, TIMER_STOPPABLE)
 
 /obj/machinery/computer/helm/proc/do_jump()
+	if(!jump_destination)
+		qdel(current_ship)
+		return
 	var/quote = pick(jump_destination.entry_quotes)
 	for(var/mob/looker as anything in GLOB.player_list)
 		if(current_ship.shuttle_port.is_in_shuttle_bounds(looker))
 			jump_announcement(jump_destination ? "Bluespace Jump Completed. Welcome to [jump_destination.name]" : "Bluespace Jump Completed", quote, current_ship.name, looker)
-	if(!jump_destination)
-		qdel(current_ship)
-		return
+
 	if(jump_coords)
 		current_ship.move_overmaps(jump_destination, jump_coords["x"], jump_coords["y"])
 	else

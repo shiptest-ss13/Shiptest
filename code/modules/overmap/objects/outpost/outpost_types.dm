@@ -322,7 +322,7 @@
 		ZTRAIT_BASETURF = /turf/open/cybersun_outpost_exterior
 	)
 
-	outpost_name = "Thousand Eyes Perch"
+	outpost_name = "Thousand Eyed Perch"
 	outpost_administrator = "Cybersun Frontier Developments"
 
 
