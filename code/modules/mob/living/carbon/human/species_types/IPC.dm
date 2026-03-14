@@ -34,7 +34,7 @@
 		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/robot,
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver/cybernetic/upgraded/ipc,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/cell,
-		ORGAN_SLOT_LEFT_ARM_AUG = /obj/item/organ/cyberimp/arm/power_cord
+		ORGAN_SLOT_LEFT_ARM_AUG = /obj/item/organ/cyberimp/arm/power_cord,
 	)
 
 	species_limbs = list(
@@ -78,13 +78,13 @@
 	. = ..(C, old_species, pref_load, robotic = TRUE)
 	update_screen_action(C)
 
-/datum/species/ipc/proc/update_screen_action(robot)
+/datum/species/ipc/proc/update_screen_action(mob/living/carbon/robot)
 	if(ishuman(robot))
 		var/obj/item/bodypart/head/robot_head = robot.get_bodypart(BODY_ZONE_HEAD)
 		if(robot_head.bodytype & BODYTYPE_BOXHEAD)
 			change_screen = new
 			change_screen.Grant(robot)
-		else if(robot_head.draw_eyes && !robot_head.force_white_eye_color)
+		else if(robot_head.draw_eyes && robot_head.greyscale_eyes)
 			change_eye_color = new
 			change_eye_color.Grant(robot)
 		robot.RegisterSignal(robot, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, TYPE_PROC_REF(/mob/living/carbon, charge))
@@ -133,7 +133,7 @@
 	var/obj/item/bodypart/head/ipc/our_head = H.bodyparts[BODY_ZONE_HEAD]
 	if(!species_datum)
 		return
-	if(our_head.force_white_eye_color)
+	if(!our_head.greyscale_eyes)
 		return
 	if(!(H.get_bodypart(BODY_ZONE_HEAD)?.bodytype & BODYTYPE_BOXHEAD) && !our_head.draw_eyes)
 		return

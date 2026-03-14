@@ -47,6 +47,8 @@
 	var/draw_eyes = TRUE
 	///Uses greyscale coloring for eyes
 	var/greyscale_eyes = TRUE
+	///Sprite to override the one used by the eye organ
+	var/eye_state_override
 
 /obj/item/bodypart/head/Destroy()
 	QDEL_NULL(brainmob) //order is sensitive, see warning in handle_atom_del() below
