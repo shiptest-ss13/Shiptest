@@ -56,10 +56,15 @@
 /datum/overmap_star_system/wilderness/singularity
 	startype = /datum/overmap/star/singularity
 	dynamic_probabilities = list(
+		DYNAMIC_WORLD_LAVA = 15,
 		DYNAMIC_WORLD_ICE = 40,
-		DYNAMIC_WORLD_SAND = 40,
-		DYNAMIC_WORLD_SPACERUIN = 40,
-		DYNAMIC_WORLD_MOON = 20
+		DYNAMIC_WORLD_SAND = 30,
+		DYNAMIC_WORLD_JUNGLE = 10,
+		DYNAMIC_WORLD_ROCKPLANET = 10,
+		DYNAMIC_WORLD_BEACHPLANET = 5,
+		DYNAMIC_WORLD_WASTEPLANET = 5,
+		DYNAMIC_WORLD_SPACERUIN = 20,
+		DYNAMIC_WORLD_MOON = 25
 	)
 	event_probabilities = list(
 		/datum/overmap/event/nebula = 60,
@@ -81,9 +86,13 @@
 /datum/overmap_star_system/wilderness/temperate
 	startype = /datum/overmap/star/medium
 	dynamic_probabilities = list(
-		DYNAMIC_WORLD_JUNGLE = 40,
-		DYNAMIC_WORLD_ROCKPLANET = 40,
+		DYNAMIC_WORLD_LAVA = 30,
+		DYNAMIC_WORLD_ICE = 20,
+		DYNAMIC_WORLD_SAND = 30,
+		DYNAMIC_WORLD_JUNGLE = 30,
+		DYNAMIC_WORLD_ROCKPLANET = 20,
 		DYNAMIC_WORLD_BEACHPLANET = 40,
+		DYNAMIC_WORLD_WASTEPLANET = 5,
 		DYNAMIC_WORLD_SPACERUIN = 20,
 		DYNAMIC_WORLD_MOON = 20
 	)
@@ -112,10 +121,14 @@
 /datum/overmap_star_system/wilderness/warzone
 	startype = /datum/overmap/star/medium/orange
 	dynamic_probabilities = list(
-		DYNAMIC_WORLD_LAVA = 40,
-		DYNAMIC_WORLD_SAND = 40,
-		DYNAMIC_WORLD_JUNGLE = 40,
-		DYNAMIC_WORLD_WASTEPLANET = 40,
+		DYNAMIC_WORLD_LAVA = 20,
+		DYNAMIC_WORLD_ICE = 20,
+		DYNAMIC_WORLD_SAND = 30,
+		DYNAMIC_WORLD_JUNGLE = 30,
+		DYNAMIC_WORLD_ROCKPLANET = 15,
+		DYNAMIC_WORLD_BEACHPLANET = 15,
+		DYNAMIC_WORLD_WASTEPLANET = 30,
+		DYNAMIC_WORLD_SPACERUIN = 20,
 		DYNAMIC_WORLD_MOON = 20
 	)
 	event_probabilities = list(
@@ -142,9 +155,14 @@
 /datum/overmap_star_system/wilderness/anomaly
 	dynamic_probabilities = list(
 		DYNAMIC_WORLD_LAVA = 40,
+		DYNAMIC_WORLD_ICE = 25,
+		DYNAMIC_WORLD_SAND = 25,
+		DYNAMIC_WORLD_JUNGLE = 25,
 		DYNAMIC_WORLD_ROCKPLANET = 40,
-		DYNAMIC_WORLD_JUNGLE = 40,
-		DYNAMIC_WORLD_WASTEPLANET = 40,
+		DYNAMIC_WORLD_BEACHPLANET = 5,
+		DYNAMIC_WORLD_WASTEPLANET = 5,
+		DYNAMIC_WORLD_SPACERUIN = 15,
+		DYNAMIC_WORLD_MOON = 5
 	)
 	event_probabilities = list(
 		/datum/overmap/event/nebula = 60,
@@ -166,10 +184,15 @@
 
 /datum/overmap_star_system/wilderness/terraforming
 	dynamic_probabilities = list(
-		DYNAMIC_WORLD_LAVA = 40,
+		DYNAMIC_WORLD_LAVA = 30,
+		DYNAMIC_WORLD_ICE = 20,
+		DYNAMIC_WORLD_SAND = 30,
+		DYNAMIC_WORLD_JUNGLE = 25,
 		DYNAMIC_WORLD_ROCKPLANET = 40,
-		DYNAMIC_WORLD_JUNGLE = 40,
-		DYNAMIC_WORLD_SAND = 40,
+		DYNAMIC_WORLD_BEACHPLANET = 10,
+		DYNAMIC_WORLD_WASTEPLANET = 5,
+		DYNAMIC_WORLD_SPACERUIN = 15,
+		DYNAMIC_WORLD_MOON = 15
 	)
 	entry_quotes = list(
 		"..just a few more years..",
@@ -204,11 +227,15 @@
 	startype = /datum/overmap/star/giant
 	dynamic_probabilities = list(
 		DYNAMIC_WORLD_LAVA = 40,
+		DYNAMIC_WORLD_ICE = 15,
+		DYNAMIC_WORLD_SAND = 15,
+		DYNAMIC_WORLD_JUNGLE = 25,
+		DYNAMIC_WORLD_ROCKPLANET = 15,
+		DYNAMIC_WORLD_BEACHPLANET = 20,
 		DYNAMIC_WORLD_WASTEPLANET = 40,
-		DYNAMIC_WORLD_SPACERUIN = 40,
+		DYNAMIC_WORLD_SPACERUIN = 30,
 		DYNAMIC_WORLD_MOON = 20
 	)
-
 	event_probabilities = list(
 		/datum/overmap/event/nebula = 60,
 		/datum/overmap/event/flare/minor = 20,
@@ -228,11 +255,15 @@
 /datum/overmap_star_system/wilderness/frozen
 	startype = /datum/overmap/star/dwarf/white
 	dynamic_probabilities = list(
+		DYNAMIC_WORLD_LAVA = 5,
 		DYNAMIC_WORLD_ICE = 40,
-		DYNAMIC_WORLD_SAND = 40,
-		DYNAMIC_WORLD_ROCKPLANET = 40,
-		DYNAMIC_WORLD_SPACERUIN = 40,
-		DYNAMIC_WORLD_MOON = 20
+		DYNAMIC_WORLD_SAND = 30,
+		DYNAMIC_WORLD_JUNGLE = 15,
+		DYNAMIC_WORLD_ROCKPLANET = 30,
+		DYNAMIC_WORLD_BEACHPLANET = 5,
+		DYNAMIC_WORLD_WASTEPLANET = 15,
+		DYNAMIC_WORLD_SPACERUIN = 15,
+		DYNAMIC_WORLD_MOON = 15
 	)
 
 	event_probabilities = list(
