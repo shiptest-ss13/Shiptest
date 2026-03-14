@@ -237,7 +237,7 @@
 
 	event_probabilities = list(
 		//ice field
-		/datum/overmap/event/wormhole = 10,
+		/datum/overmap/event/wormhole = 5,
 		/datum/overmap/event/nebula = 60,
 		/datum/overmap/event/meteor/minor = 45,
 		/datum/overmap/event/meteor = 40,

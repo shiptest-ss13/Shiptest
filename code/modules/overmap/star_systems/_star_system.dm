@@ -324,6 +324,8 @@
 /datum/overmap_star_system/proc/handle_dynamic_encounters()
 	if(length(dynamic_encounters) < max_overmap_dynamic_events)
 		spawn_ruin_level()
+
+	/*
 	if(COOLDOWN_FINISHED(src, dynamic_despawn_cooldown))
 		//need to make this have a weight for older planets at some point soon
 		var/datum/overmap/dynamic/picked_encounter = pick(dynamic_encounters)
@@ -335,6 +337,7 @@
 				COOLDOWN_START(src, dynamic_despawn_cooldown, 5 MINUTES)
 			else
 				COOLDOWN_START(src, dynamic_despawn_cooldown, 1 MINUTES)
+	*/
 
 /**
  * Reserves a square dynamic encounter area, generates it, and spawns a ruin in it if one is supplied.
