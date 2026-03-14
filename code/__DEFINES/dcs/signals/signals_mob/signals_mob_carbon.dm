@@ -18,6 +18,8 @@
 // /mob/living/carbon physiology signals
 #define COMSIG_CARBON_GAIN_WOUND "carbon_gain_wound" //from /datum/wound/proc/apply_wound() (/mob/living/carbon/C, /datum/wound/W, /obj/item/bodypart/L)
 #define COMSIG_CARBON_LOSE_WOUND "carbon_lose_wound" //from /datum/wound/proc/remove_wound() (/mob/living/carbon/C, /datum/wound/W, /obj/item/bodypart/L)
+/// Called after limb AND victim has been unset
+#define COMSIG_CARBON_POST_LOSE_WOUND "carbon_post_lose_wound" //from /datum/wound/proc/remove_wound() (/datum/wound/lost_wound, /obj/item/bodypart/part, ignore_limb, replaced)
 ///from base of /obj/item/bodypart/proc/attach_limb(): (new_limb, special) allows you to fail limb attachment
 #define COMSIG_CARBON_ATTACH_LIMB "carbon_attach_limb"
 	#define COMPONENT_NO_ATTACH (1<<0)
@@ -26,6 +28,9 @@
 #define COMSIG_BODYPART_GAUZE_DESTROYED "bodypart_degauzed" // from /datum/bodypart_aid/gauze/Destroy() //When a gauze is removed
 #define COMSIG_BODYPART_SPLINTED "bodypart_splinted" // from /datum/bodypart_aid/splint/New() //When a splint is applied
 #define COMSIG_BODYPART_SPLINT_DESTROYED "bodypart_desplinted" // from /datum/bodypart_aid/gauze/Destroy() //When a splint is removed
+/// Called from /obj/item/bodypart/proc/update_part_wound_overlay()
+#define COMSIG_BODYPART_UPDATE_WOUND_OVERLAY "bodypart_update_wound_overlay"
+	#define COMPONENT_PREVENT_WOUND_OVERLAY_UPDATE (1 << 0)
 
 ///Called when someone attempts to cuff a carbon
 #define COMSIG_CARBON_CUFF_ATTEMPTED "carbon_attempt_cuff"
@@ -33,10 +38,6 @@
 #define COMSIG_CARBON_GAIN_MUTATION "carbon_gain_mutation"
 ///Called when a carbon loses a mutation (source = dna, mutation = mutation lose)
 #define COMSIG_CARBON_LOSE_MUTATION "carbon_lose_mutation"
-///Called when a carbon becomes addicted (source = what addiction datum, addicted_mind = mind of the addicted carbon)
-#define COMSIG_CARBON_GAIN_ADDICTION "carbon_gain_addiction"
-///Called when a carbon is no longer addicted (source = what addiction datum was lost, addicted_mind = mind of the freed carbon)
-#define COMSIG_CARBON_LOSE_ADDICTION "carbon_lose_addiction"
 ///Called when a carbon gets a brain trauma (source = carbon, trauma = what trauma was added) - this is before on_gain()
 #define COMSIG_CARBON_GAIN_TRAUMA "carbon_gain_trauma"
 ///Called when a carbon loses a brain trauma (source = carbon, trauma = what trauma was removed)

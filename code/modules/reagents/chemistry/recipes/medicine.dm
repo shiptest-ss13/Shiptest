@@ -257,10 +257,6 @@
 	required_temp = 207
 	is_cold_recipe = TRUE
 
-/datum/chemical_reaction/system_cleaner
-	results = list(/datum/reagent/medicine/system_cleaner = 4)
-	required_reagents = list(/datum/reagent/consumable/ethanol = 1, /datum/reagent/chlorine = 1, /datum/reagent/phenol = 2, /datum/reagent/potassium = 1)
-
 /datum/chemical_reaction/liquid_solder
 	results = list(/datum/reagent/medicine/liquid_solder = 3)
 	required_reagents = list(/datum/reagent/consumable/ethanol = 1, /datum/reagent/copper = 1, /datum/reagent/silver = 1)

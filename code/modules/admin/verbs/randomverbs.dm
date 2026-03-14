@@ -939,6 +939,42 @@
 		message_admins("Click here to jump to the overmap token: [ADMIN_JMP(encounter.token)]")
 	BLACKBOX_LOG_ADMIN_VERB("Spawn Planet/Ruin")
 
+/client/proc/spawn_overmap_json()
+	set name = "Spawn Overmap with JSON"
+	set category = "Event.Spawning"
+	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
+		return
+
+	var/json_file = input(usr, "Choose a star system to load", "Upload Map Template") as null|file
+	if(!json_file)
+		return
+
+	var/list/file_data = json_decode(file2text(json_file))
+	var/list/system_data = file_data["system_info"]
+
+
+	var/datum/overmap_star_system/nova = new /datum/overmap_star_system(FALSE)
+
+	if(!nova)
+		message_admins("Failed to generate Star System!")
+		return
+
+	// set generator to json
+	nova.generator_type = OVERMAP_GENERATOR_JSON
+	nova.json = json_file
+
+	var/system_name = "Untitled"
+	if(system_data["name"])
+		system_name = system_data["name"]
+
+	message_admins("Generating Star System [system_name], this may take some time!")
+	if(nova)
+		nova.setup_system()
+		nova = SSovermap.spawn_new_star_system(nova)
+
+	message_admins(span_big("Overmap [nova.name] successfully generated!"))
+	BLACKBOX_LOG_ADMIN_VERB("Spawn Overmap")
+
 /client/proc/spawn_overmap()
 	set name = "Spawn Overmap"
 	set category = "Event.Spawning"
@@ -1172,8 +1208,14 @@
 				squish_part = C.bodyparts[zone]
 				if(!squish_part)
 					continue
-				var/type_wound = pick(list(/datum/wound/blunt/severe, /datum/wound/blunt/severe, /datum/wound/blunt/moderate))
-				squish_part.force_wound_upwards(type_wound, smited=TRUE)
+				var/severity = pick(list(
+					"[WOUND_SEVERITY_MODERATE]",
+					"[WOUND_SEVERITY_SEVERE]",
+					"[WOUND_SEVERITY_SEVERE]",
+					"[WOUND_SEVERITY_CRITICAL]",
+					"[WOUND_SEVERITY_CRITICAL]",
+				))
+				C.cause_wound_of_type_and_severity(WOUND_BLUNT, squish_part, severity)
 
 		if(ADMIN_PUNISHMENT_BLEED)
 			if(!iscarbon(target))
@@ -1185,11 +1227,11 @@
 				slice_part = C.bodyparts[zone]
 				if(!slice_part)
 					continue
-				var/type_wound = pick(list(/datum/wound/slash/critical, /datum/wound/slash/moderate))
+				var/type_wound = pick(list(/datum/wound/slash/flesh/critical, /datum/wound/slash/flesh/moderate))
 				slice_part.force_wound_upwards(type_wound, smited=TRUE)
-				type_wound = pick(list(/datum/wound/slash/critical, /datum/wound/slash/moderate))
+				type_wound = pick(list(/datum/wound/slash/flesh/critical, /datum/wound/slash/flesh/moderate))
 				slice_part.force_wound_upwards(type_wound, smited=TRUE)
-				type_wound = pick(list(/datum/wound/slash/critical, /datum/wound/slash/moderate))
+				type_wound = pick(list(/datum/wound/slash/flesh/critical, /datum/wound/slash/flesh/moderate))
 				slice_part.force_wound_upwards(type_wound, smited=TRUE)
 
 		if(ADMIN_PUNISHMENT_PERFORATE)

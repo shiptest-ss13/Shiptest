@@ -99,6 +99,10 @@
 	display_name = " lime hazard jacket"
 	path = /obj/item/clothing/suit/toggle/hazard/lime
 
+/datum/gear/suit/overcoat
+	display_name = "overcoat, colorable"
+	path = /obj/item/clothing/suit/toggle/overcoat
+
 /datum/gear/suit/jacket/windbreaker
 	display_name = "windbreaker, colorable"
 	path = /obj/item/clothing/suit/toggle/windbreaker

@@ -101,13 +101,21 @@
 		return new /datum/docking_ticket(_docking_error = "[src] cannot be docked to.")
 	else
 		var/dock_to_use = override_dock
+		//if true, we say that we do in fact have free docks, just you cant fit in any of them for whatever reason. hopefully this is less vauge than "X Cannot be docked to."
+		var/alt_message = FALSE
 		if(!override_dock)
 			for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
+				//meant for quick dock, as such we check if we can actually dock here before checking all other docking ports.
+				//This means you can name a docking port with a leading ! like '!Ship Starboard Stern Docking Port' to have priority over other docking ports
 				if(!dock.docked)
+					alt_message = TRUE
+				if(!dock.docked && dock_requester.shuttle_port.check_dock(dock, TRUE, FALSE))
 					dock_to_use = dock
 					break
 
 		if(!dock_to_use)
+			if(alt_message)
+				return new /datum/docking_ticket(_docking_error = "[src] has free docks, however vessel is unable to fit in any. Attempt manual docking for more information. Aborting docking.")
 			return new /datum/docking_ticket(_docking_error = "[src] does not have any free docks. Aborting docking.")
 		return new /datum/docking_ticket(dock_to_use, src, dock_requester)
 
@@ -249,13 +257,21 @@
 			. += "-"
 			. += "[pick(rand(1,999))]"
 		if(3 to 5)
-			. += "[pick(GLOB.planet_names)]"
+			. += "[pick_planet_name()]"
 		if(5 to 7)
-			. += "[pick(GLOB.planet_names)] \Roman[rand(1,9)]"
+			. += "[pick_planet_name()] \Roman[rand(1,9)]"
 		if(8 to 11)
-			. += "[pick(GLOB.planet_prefixes)] [pick(GLOB.planet_names)]"
+			. += "[pick(GLOB.planet_prefixes)] [pick_planet_name()]"
 		if(12)
-			. += "[capitalize(pick(GLOB.adjectives))] [pick(GLOB.planet_names)]"
+			. += "[capitalize(pick(GLOB.adjectives))] [pick_planet_name()]"
+
+/datum/overmap/dynamic/proc/pick_planet_name()
+	if(!length(GLOB.planet_names))
+		stack_trace("We ran out of planet names! Consider running shorter rounds or expanding the namelist.")
+		GLOB.planet_names = world.file2list("strings/planet_names.txt")
+	var/planet_name = pick(GLOB.planet_names)
+	GLOB.planet_names -= planet_name
+	return planet_name
 
 /**
  * Load a level for a ship that's visiting the level.

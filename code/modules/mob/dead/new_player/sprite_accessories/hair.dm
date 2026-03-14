@@ -210,6 +210,10 @@
 	name = "Double Bun"
 	icon_state = "hair_doublebun"
 
+/datum/sprite_accessory/hair/doublebunmessy
+	name = "Double Bun (Messy)"
+	icon_state = "hair_doublebunmessy"
+
 /datum/sprite_accessory/hair/dreadlocks
 	name = "Dreadlocks"
 	icon_state = "hair_dreads"
@@ -370,6 +374,10 @@
 	name = "Kusanagi Hair"
 	icon_state = "hair_kusanagi"
 
+/datum/sprite_accessory/hair/kusangipony
+	name = "Kusanagi Hair (Ponytail)"
+	icon_state = "hair_kusanagipony"
+
 /datum/sprite_accessory/hair/long
 	name = "Long Hair 1"
 	icon_state = "hair_long"
@@ -377,6 +385,10 @@
 /datum/sprite_accessory/hair/long2
 	name = "Long Hair 2"
 	icon_state = "hair_long2"
+
+/datum/sprite_accessory/hair/longhalf
+	name = "Long Hair (half)"
+	icon_state = "hair_longhalf"
 
 /datum/sprite_accessory/hair/long_over_eye
 	name = "Long Over Eye"
@@ -526,10 +538,6 @@
 	name = "Ponytail (both eyes)"
 	icon_state = "hair_ponytailbotheyes"
 
-/datum/sprite_accessory/hair/ponytail4
-	name = "Ponytail 4"
-	icon_state = "hair_ponytail4"
-
 /datum/sprite_accessory/hair/ponytail5
 	name = "Ponytail 5"
 	icon_state = "hair_ponytail5"
@@ -546,6 +554,9 @@
 	name = "Ponytail 7"
 	icon_state = "hair_ponytail7"
 
+/datum/sprite_accessory/hair/rattail
+	name = "Ponytail (Rat)"
+	icon_state = "hair_ponytailrat"
 
 /datum/sprite_accessory/hair/stail
 	name = "Ponytail (Short)"
@@ -755,6 +766,10 @@
 	name = "Ruby (Long)"
 	icon_state = "hair_rubylong"
 
+/datum/sprite_accessory/hair/ponytailruby
+	name = "Ruby (Ponytail)"
+	icon_state = "hair_rubypony"
+
 /datum/sprite_accessory/hair/undercut
 	name = "Undercut"
 	icon_state = "hair_undercut"
@@ -806,6 +821,22 @@
 /datum/sprite_accessory/hair/wisp
 	name = "Wisp"
 	icon_state = "hair_wisp"
+
+/datum/sprite_accessory/hair/halfup
+	name = "Half Up"
+	icon_state = "hair_halfup"
+
+/datum/sprite_accessory/hair/halfupalt
+	name = "Half Up (Alt Bangs)"
+	icon_state = "hair_halfupalt"
+
+/datum/sprite_accessory/hair/wavy
+	name = "Wavy"
+	icon_state = "hair_wavy"
+
+/datum/sprite_accessory/hair/wavyalt
+	name = "Wavy (Alt Bangs)"
+	icon_state = "hair_wavyalt"
 
 /*
 /////////////////////////////////////

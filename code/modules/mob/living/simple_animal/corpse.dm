@@ -114,6 +114,19 @@
 	back = /obj/item/storage/backpack
 	r_pocket = /obj/item/tank/internals/emergency_oxygen
 
+/datum/outfit/ramzi/sniper
+	name = "Ramzi Clique Sniper"
+	uniform = /obj/item/clothing/under/syndicate/ramzi
+	head = /obj/item/clothing/head/helmet/space/hardsuit/stealth/ramzi
+	suit = /obj/item/clothing/suit/space/hardsuit/stealth/ramzi
+	back = /obj/item/tank/jetpack/oxygen/harness
+	r_pocket = /obj/item/tank/internals/emergency_oxygen
+
+/obj/effect/mob_spawn/human/corpse/ramzi/sniper
+	name = "Ramzi Clique Sniper"
+	id_job = "Operative"
+	outfit = /datum/outfit/ramzi/sniper
+
 /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
 	name = "Ramzi Clique Trooper"
 	id_job = "Operative"
@@ -175,8 +188,8 @@
 
 /datum/outfit/cybersunmedicaldirectorcorpse
 	name = "Cybersun Medical Director Corpse"
-	uniform = /obj/item/clothing/under/rank/medical/chief_medical_officer/cybersun
-	suit = /obj/item/clothing/suit/armor/vest/capcarapace/cybersun
+	uniform = /obj/item/clothing/under/cybersun/doctor
+	suit = /obj/item/clothing/suit/cybersun
 	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
 	ears = /obj/item/radio/headset/syndicate
@@ -193,7 +206,7 @@
 
 /datum/outfit/cybersunfieldmediccorpse
 	name = "Cybersun Field Medic Corpse"
-	uniform = /obj/item/clothing/under/syndicate/medic
+	uniform = /obj/item/clothing/under/cybersun/medic
 	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil

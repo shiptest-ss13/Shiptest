@@ -20,6 +20,10 @@
 		Retrieve their dogtags, put them in the provided case, and return it to us to complete the bounty."
 	value += (num_wanted*200)
 
+/datum/mission/acquire/dogtags/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc, obj/hangar_crate_spawner/cargo_belt)
+	. = ..()
+	container.name = "dogtag case ([num_wanted] [pirate_type] dogtags)"
+
 /datum/mission/acquire/dogtags/ramzi
 	name = "Ramzi Clique Bounty"
 	desc = null

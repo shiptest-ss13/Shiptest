@@ -740,7 +740,7 @@
 	category = list("initial", "Misc")
 
 /datum/design/voice_analyser
-	name = "Voice Analyser"
+	name = "Voice Analyzer"
 	id = "voice_analyser"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 50)
@@ -910,7 +910,7 @@
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/buckshot_surplus
-	name = "surplus buckshot"
+	name = "Surplus Buckshot"
 	id = "buckshot-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 5000)
@@ -1214,6 +1214,14 @@
 	build_path = /obj/item/ammo_box/magazine/illestren_a850r/empty
 	category = list("initial", "Security", "Ammo")
 
+/datum/design/a4570clip
+	name = ".45-70 Stripper Clip"
+	id = "PyreStripClip"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 1000)
+	build_path = /obj/item/ammo_box/a4570/empty
+	category = list("initial", "Security", "Ammo")
+
 /datum/design/a300clip
 	name = ".300 Scout Stripper Clip"
 	id = "ScoutStripClip"
@@ -1321,7 +1329,7 @@
 	category = list("initial", "Tools", "Misc")
 
 /datum/design/paper_biscuit_confidental
-	name = "Confidental Paper Biscuit"
+	name = "Confidential Paper Biscuit"
 	id = "confidental_biscuit"
 	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/plastic = 30)

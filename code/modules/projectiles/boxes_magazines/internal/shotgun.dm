@@ -4,10 +4,20 @@
 	caliber = "12ga"
 	max_ammo = 4
 
-/obj/item/ammo_box/magazine/internal/shot/tube
+/obj/item/ammo_box/magazine/internal/shot/tube/rubbershot
 	name = "dual feed shotgun internal tube"
 	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
 	max_ammo = 5
+
+/obj/item/ammo_box/magazine/internal/shot/tube/buckshot
+	name = "dual feed shotgun internal tube"
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	max_ammo = 5
+
+/obj/item/ammo_box/magazine/internal/shot/tube/empty
+	name = "dual feed shotgun internal tube"
+	max_ammo = 5
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/internal/shot/lethal
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
@@ -53,6 +63,13 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	caliber = "12ga"
 	max_ammo = 5
+
+/obj/item/ammo_box/magazine/internal/shot/winchester/pyre
+	name = "pyre internal magazine"
+	ammo_type = /obj/item/ammo_casing/a4570
+	caliber = ".45-70"
+	max_ammo = 5
+	instant_load = TRUE
 
 /obj/item/ammo_box/magazine/internal/shot/beacon
 	name = "beacon internal magazine"
