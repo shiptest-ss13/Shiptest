@@ -14,7 +14,8 @@
 	)
 
 /datum/overmap_star_system/wilderness/create_map()
-	max_overmap_dynamic_events = CONFIG_GET(number/max_overmap_dynamic_events)
+	//max_overmap_dynamic_events = CONFIG_GET(number/max_overmap_dynamic_events)
+	max_overmap_dynamic_events = 3
 	. = ..()
 
 /* to-do: heat signature

@@ -139,9 +139,11 @@
 	if(!generator_type)
 		generator_type = CONFIG_GET(string/overmap_generator_type)
 	if(!size)
-		size = CONFIG_GET(number/overmap_size)
+		//size = CONFIG_GET(number/overmap_size)
+		size = 15
 	if(!max_overmap_dynamic_events)
 		max_overmap_dynamic_events = isnull(max_overmap_dynamic_events)
+
 
 	overmap_container = new/list(size, size, 0)
 
