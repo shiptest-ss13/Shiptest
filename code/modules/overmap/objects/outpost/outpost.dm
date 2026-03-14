@@ -100,9 +100,7 @@
 /datum/overmap/outpost/on_overmaps_loaded()
 	mission_system = SSovermap.wild_sectors[1]
 	fill_missions()
-	addtimer(CALLBACK(src, PROC_REF(cycle_missions)), 1 HOURS, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
-	addtimer(CALLBACK(src, PROC_REF(fill_missions)), 30 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
-
+	addtimer(CALLBACK(src, PROC_REF(cycle_missions)), 30 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
 /datum/overmap/outpost/Destroy(...)
 	SSpoints_of_interest.remove_point_of_interest(token)

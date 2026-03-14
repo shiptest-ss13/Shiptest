@@ -45,6 +45,15 @@
 
 	overmap_icon_state = "overmap_dark"
 
+	entry_quotes = list(
+		"Agni's open to visitors. Feel free to make an approach.",
+		"The 2nd Battlegroup is protecting this sector. You're safe.",
+		"Welcome brothers and sisters. Safe travels I hope.",
+		"Careful on your approach, there's a storm coming in.",
+	)
+
+
+
 /datum/overmap_star_system/safezone/arrowsong
 	name = "CLIP Controlled - High-Pier"
 	starname = "Chana"
@@ -61,6 +70,13 @@
 	secondary_structure_color = "#6fa8de"
 
 	overmap_icon_state = "overmap_dark"
+	entry_quotes = list(
+		"Arrowsong is monitoring your approach.",
+		"Incoming vessel follow flight plan as designated.",
+		"Good mark on bluespace wake. Welcome to High-Pier",
+		"Tide's out. Come on in.",
+	)
+
 
 
 /datum/overmap_star_system/safezone/trifuge
@@ -108,6 +124,15 @@
 	secondary_structure_color = "#38a0eb"
 
 	overmap_icon_state = "overmap_dark"
+
+	//these ones need to be better
+	entry_quotes = list(
+		"Wake detected. Welcome to Persei-277",
+		"This area of space is protected by Vigilitas Interstellar",
+		"Best value this side of Lanchester",
+		"Nanotrasen extends its greetings",
+	)
+
 
 
 /datum/overmap_star_system/safezone/thousand_eyes

@@ -137,7 +137,7 @@
 		return
 	target.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[jump_destination.name]</u></span><br>[station_time_timestamp("hh:mm")]<br><i>\"[quote]\"</i>")
 	to_chat(target, "[span_minorannounce("<font color = red>[title]</font color><BR>[message]")]<BR>")
-	playsound(target, 'sound/effects/overmap/jump.ogg', 50)
+	SEND_SOUND(target, 'sound/effects/overmap/jump.ogg', volume = 50)
 
 /obj/machinery/computer/helm/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	if(!viewer)
