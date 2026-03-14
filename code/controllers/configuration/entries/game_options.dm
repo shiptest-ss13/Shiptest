@@ -385,13 +385,13 @@
 	config_entry_value = "solar_system"
 
 /datum/config_entry/number/overmap_size
-	config_entry_value = 15
+	config_entry_value = 20
 	min_val = 1
 
 /datum/config_entry/number/overmap_encounter_size
-	max_val = 255
+	max_val = 127
 	config_entry_value = 255
-	min_val = 255
+	min_val = 127
 
 /datum/config_entry/number/commendation_percent_poll
 	integer = FALSE

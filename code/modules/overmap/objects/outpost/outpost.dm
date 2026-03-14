@@ -98,6 +98,7 @@
 		market.name = "[name] market"
 
 /datum/overmap/outpost/on_overmaps_loaded()
+	mission_system = SSovermap.wild_sectors[1]
 	fill_missions()
 	addtimer(CALLBACK(src, PROC_REF(cycle_missions)), 1 HOURS, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 	addtimer(CALLBACK(src, PROC_REF(fill_missions)), 30 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
@@ -527,4 +528,4 @@
 /datum/overmap/outpost/proc/get_mission_sector()
 	if(!mission_system)
 		return SSovermap.wild_sectors[1]
-	return current_overmap.next_overmap
+	return mission_system

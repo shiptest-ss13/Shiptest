@@ -79,10 +79,8 @@ SUBSYSTEM_DEF(overmap)
 	wild_sectors += tracked_star_systems[2]
 	tracked_star_systems[3] = spawn_new_star_system(secondary_outpost_sector)
 	safe_sectors += tracked_star_systems[3]
-	tracked_star_systems[4] = spawn_new_star_system(pick(wilderness_sector_types))
-	wild_sectors += tracked_star_systems[4]
 
-	link_systems()
+	link_systems_to_center()
 
 	SEND_GLOBAL_SIGNAL(COMSIG_OVERMAP_FINISHED_CREATION)
 
@@ -104,10 +102,14 @@ SUBSYSTEM_DEF(overmap)
 				if(MC_TICK_CHECK)
 					return
 
-/datum/controller/subsystem/overmap/proc/link_systems()
+/datum/controller/subsystem/overmap/proc/link_systems_to_center()
+	var/datum/overmap_star_system/first_system = safe_sectors[1]
+	var/datum/overmap_star_system/second_system = safe_sectors[2]
+	first_system.create_jump_point_link(wild_sectors[1], 4)
+	second_system.create_jump_point_link(wild_sectors[1], 8)
+
+/datum/controller/subsystem/overmap/proc/looplink_4_systems()
 	var/sector_size = length(tracked_star_systems)
-	if(sector_size!=4)
-		CRASH("Overmap attempted to generate [sector_size] sectors, but currently requires 4!")
 	var/list/jump_dirs = list(5, 6, 10, 9) //NE=>SE->SW->NW
 	for(var/i = 1, i <= sector_size, i++)
 		var/datum/overmap_star_system/source_system = tracked_star_systems[i]
@@ -116,10 +118,7 @@ SUBSYSTEM_DEF(overmap)
 			target_system = tracked_star_systems[1]
 		else
 			target_system = tracked_star_systems[i+1]
-		source_system.next_overmap = target_system
 		source_system.create_jump_point(target_system, jump_dirs[i])
-
-
 
 /**
  * Gets the parent overmap object (e.g. the planet the atom is on) for a given atom.

@@ -42,7 +42,7 @@
 	var/datum/overmap_star_system/mission_system = _outpost.get_mission_sector()
 	for(var/datum/overmap/dynamic/location in mission_system.dynamic_encounters)
 		if(location.planet.vein_type)
-			available_planets += location.planet
+			available_planets += location.planet.type
 			available_planets[location.planet] = location.planet.vein_type
 
 	if(locate(/datum/overmap/event/meteor) in mission_system.events)

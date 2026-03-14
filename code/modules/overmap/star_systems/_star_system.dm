@@ -105,9 +105,6 @@
 	/// Datum type for the main outpost spawned here
 	var/datum/overmap/outpost/default_outpost_type
 
-	//What system comes 'next' in the chain?
-	var/datum/overmap_star_system/next_overmap
-
 	///Quotes to show to players when entering this sector via jump.
 	//try to populate this list with at least 5 examples.
 	var/list/entry_quotes = list()
@@ -140,7 +137,7 @@
 		generator_type = CONFIG_GET(string/overmap_generator_type)
 	if(!size)
 		//size = CONFIG_GET(number/overmap_size)
-		size = 15
+		size = 20
 	if(!max_overmap_dynamic_events)
 		max_overmap_dynamic_events = isnull(max_overmap_dynamic_events)
 
@@ -651,9 +648,9 @@
  */
 //Returns the jump point in our system
 /datum/overmap_star_system/proc/create_jump_point_link(datum/overmap_star_system/destination_system, point_direction)
-	var/datum/overmap/jump_point/point2 = new(length(destination_system.jump_spawnlocs) ? pick(jump_spawnlocs) : destination_system.get_overmap_edge(REVERSE_DIR(point_direction)), destination_system, TRUE)
+	var/datum/overmap/jump_point/point2 = new(length(destination_system.jump_spawnlocs) ? pick(jump_spawnlocs) : destination_system.get_overmap_edge(REVERSE_DIR(point_direction)), destination_system, src)
 	point2.dir = REVERSE_DIR(point_direction)
-	var/datum/overmap/jump_point/point1 = new(length(jump_spawnlocs) ? pick(jump_spawnlocs) : get_overmap_edge(point_direction), src, point2)
+	var/datum/overmap/jump_point/point1 = new(length(jump_spawnlocs) ? pick(jump_spawnlocs) : get_overmap_edge(point_direction), src, destination_system, point2)
 	point1.dir = point_direction
 	point1.alter_token_appearance()
 	point2.alter_token_appearance()

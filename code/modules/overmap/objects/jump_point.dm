@@ -27,12 +27,6 @@
 	target_overmap = target_system
 	if(_other_point)
 		link_points(_other_point)
-	if(target_overmap)
-		desc += {"
-		[span_boldnotice("Destination information:")]
-		[span_bold("System: ")][target_overmap.name]
-		[target_jump_point ? span_bold("Location: ") + "[target_jump_point.x] by [target_jump_point.y]" : ""]
-		"}
 
 /datum/overmap/jump_point/proc/link_points(other_point)
 	target_jump_point = other_point

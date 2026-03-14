@@ -501,17 +501,17 @@ MAX_OVERMAP_EVENT_CLUSTERS 6
 MAX_OVERMAP_EVENTS 50
 
 ## Put the maximum amount of dynamic (runtime loaded) overmap locations here. Distributed per overmap.
-MAX_OVERMAP_DYNAMIC_EVENTS 3
+MAX_OVERMAP_DYNAMIC_EVENTS 5
 
 ## Size of the overmap squared
-OVERMAP_SIZE 15
+OVERMAP_SIZE 20
 
 ## Which overmap generator to use
 ## Valid values are: "random", "solar_system"
 OVERMAP_GENERATOR_TYPE solar_system
 
 ## Size of overmap encounters, vertical and width with a 3 tile border
-OVERMAP_ENCOUNTER_SIZE 255
+OVERMAP_ENCOUNTER_SIZE 127
 
 ## Whether this server is an authentication server
 #AUTH_ONLY
