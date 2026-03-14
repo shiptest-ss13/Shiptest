@@ -939,6 +939,42 @@
 		message_admins("Click here to jump to the overmap token: [ADMIN_JMP(encounter.token)]")
 	BLACKBOX_LOG_ADMIN_VERB("Spawn Planet/Ruin")
 
+/client/proc/spawn_overmap_json()
+	set name = "Spawn Overmap with JSON"
+	set category = "Event.Spawning"
+	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
+		return
+
+	var/json_file = input(usr, "Choose a star system to load", "Upload Map Template") as null|file
+	if(!json_file)
+		return
+
+	var/list/file_data = json_decode(file2text(json_file))
+	var/list/system_data = file_data["system_info"]
+
+
+	var/datum/overmap_star_system/nova = new /datum/overmap_star_system(FALSE)
+
+	if(!nova)
+		message_admins("Failed to generate Star System!")
+		return
+
+	// set generator to json
+	nova.generator_type = OVERMAP_GENERATOR_JSON
+	nova.json = json_file
+
+	var/system_name = "Untitled"
+	if(system_data["name"])
+		system_name = system_data["name"]
+
+	message_admins("Generating Star System [system_name], this may take some time!")
+	if(nova)
+		nova.setup_system()
+		nova = SSovermap.spawn_new_star_system(nova)
+
+	message_admins(span_big("Overmap [nova.name] successfully generated!"))
+	BLACKBOX_LOG_ADMIN_VERB("Spawn Overmap")
+
 /client/proc/spawn_overmap()
 	set name = "Spawn Overmap"
 	set category = "Event.Spawning"

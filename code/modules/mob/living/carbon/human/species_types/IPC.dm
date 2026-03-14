@@ -76,15 +76,18 @@
 	if(C.dna?.features["ipc_brain"] == "Man-Machine Interface")
 		species_organs[ORGAN_SLOT_BRAIN] = /obj/item/organ/brain/mmi_holder
 	. = ..(C, old_species, pref_load, robotic = TRUE)
-	if(ishuman(C))
-		var/obj/item/bodypart/head/robot_head = C.get_bodypart(BODY_ZONE_HEAD)
+	update_screen_action(C)
+
+/datum/species/ipc/proc/update_screen_action(robot)
+	if(ishuman(robot))
+		var/obj/item/bodypart/head/robot_head = robot.get_bodypart(BODY_ZONE_HEAD)
 		if(robot_head.bodytype & BODYTYPE_BOXHEAD)
 			change_screen = new
-			change_screen.Grant(C)
-		else if(robot_head.draw_eyes)
+			change_screen.Grant(robot)
+		else if(robot_head.draw_eyes && !robot_head.force_white_eye_color)
 			change_eye_color = new
-			change_eye_color.Grant(C)
-		C.RegisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, TYPE_PROC_REF(/mob/living/carbon, charge))
+			change_eye_color.Grant(robot)
+		robot.RegisterSignal(robot, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, TYPE_PROC_REF(/mob/living/carbon, charge))
 
 /datum/species/ipc/on_species_loss(mob/living/carbon/C)
 	. = ..()
@@ -127,9 +130,12 @@
 		return
 	var/mob/living/carbon/human/H = owner
 	var/datum/species/ipc/species_datum = H.dna.species
+	var/obj/item/bodypart/head/ipc/our_head = H.bodyparts[BODY_ZONE_HEAD]
 	if(!species_datum)
 		return
-	if(!(H.get_bodypart(BODY_ZONE_HEAD)?.bodytype & BODYTYPE_BOXHEAD))
+	if(our_head.force_white_eye_color)
+		return
+	if(!(H.get_bodypart(BODY_ZONE_HEAD)?.bodytype & BODYTYPE_BOXHEAD) && !our_head.draw_eyes)
 		return
 	H.dna.features["ipc_screen"] = screen_choice
 	H.eye_color = sanitize_hexcolor(color_choice)
