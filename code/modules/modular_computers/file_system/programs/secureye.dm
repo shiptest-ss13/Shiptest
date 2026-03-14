@@ -175,7 +175,7 @@
 
 	var/cam_location = active_camera.loc
 
-	if(!(istype(cam_location, /obj/item/clothing/shoes)))
+	if(!((istype(cam_location, /obj/item/clothing/shoes)) || (isturf(cam_location))))
 		cam_location = active_camera.loc.loc
 
 	// If we're not forcing an update for some reason and the cameras are in the same location,

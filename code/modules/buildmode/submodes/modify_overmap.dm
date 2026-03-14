@@ -58,7 +58,17 @@ the parameters are from the client, meaning object is what they clicked on, not 
 			position["x"] = overmap_x
 			position["y"] = overmap_y
 
-			new datum_holder(position,vlevel.current_systen)
+			var/datum/overmap/newobj = new datum_holder(position,vlevel.current_systen)
+			if(istype(newobj, /datum/overmap/fluff))
+				var/datum/overmap/fluff/current_fluff = newobj
+				current_fluff.dir = BM.build_dir
+				current_fluff.alter_token_appearance()
+
+			if(istype(newobj, /datum/overmap/mapping_helper/wild_sector_jumppoint_helper))
+				var/datum/overmap/mapping_helper/wild_sector_jumppoint_helper/current_helper = newobj
+				current_helper.dir = BM.build_dir
+				current_helper.alter_token_appearance()
+
 
 			log_admin("Build Mode: [key_name(target_client)] modified [overmap_x], [overmap_y] in [AREACOORD(object)] to [datum_holder]")
 		else

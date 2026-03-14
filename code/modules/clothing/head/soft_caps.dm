@@ -26,7 +26,7 @@
 						)
 	unique_reskin_changes_base_icon_state = TRUE
 	unique_reskin_changes_name = TRUE
-	var/flipped = TRUE
+	var/flipped = FALSE
 
 /obj/item/clothing/head/soft/Initialize()
 	. = ..()
@@ -39,7 +39,7 @@
 	flip(usr)
 
 /obj/item/clothing/head/soft/attack_hand_secondary(mob/user, list/modifiers)
-	flip()
+	flip(user)
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/item/clothing/head/soft/AltClick(mob/user)

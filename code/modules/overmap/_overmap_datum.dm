@@ -643,6 +643,9 @@
 	if(!new_system)
 		CRASH("move_overmaps() called with no valid overmap!")
 
+	//very shitty 'fix' to the runtime that happens when you jump to a sector thats larger than the previous one
+	//if you aren't me and want to fix this in a better, the moving between star systems code should be on overmap_move() insteads
+	overmap_move(1, 1)
 	try
 		current_overmap.overmap_container[x][y] -= src
 	catch(var/exception/error)
@@ -656,6 +659,10 @@
 	else
 		var/list/results = current_overmap.get_unused_overmap_square()
 		overmap_move(results["x"], results["y"])
+	for(var/datum/overmap/towed_datum as anything in contents)
+		towed_datum.current_overmap = current_overmap
+		towed_datum.x = x
+		towed_datum.y = y
 	alter_token_appearance()
 
 
