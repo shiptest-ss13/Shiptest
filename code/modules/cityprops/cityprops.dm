@@ -67,94 +67,6 @@
 		/obj/structure/shipping_container/lime=1,
 	)
 
-/* not today - never actually, remove this
-/obj/item/clothing/mask
-	var/breathing_sound = null //Set this if you want to have a gasmask like breathing sound when used.
-	var/datum/looping_sound/gasmask/soundloop
-
-/obj/item/clothing/mask/breath
-	breathing_sound = null
-
-/obj/item/clothing/mask/Initialize(mapload)
-	. = ..()
-	if(breathing_sound)
-		soundloop = new(list(src), FALSE)
-
-/obj/item/clothing/mask/gas
-	breathing_sound = TRUE
-
-/obj/item/clothing/mask/gas/tiki_mask
-	breathing_sound = null
-
-/obj/item/clothing/mask/gas/sexymime
-	breathing_sound = null
-
-/obj/item/clothing/mask/gas/monkeymask
-	breathing_sound = null
-
-/obj/item/clothing/mask/gas/mime
-	breathing_sound = null
-
-/obj/item/clothing/mask/gas/sexyclown
-	breathing_sound = null
-
-/obj/item/clothing/mask/gas/clown_hat
-	breathing_sound = null
-
-/obj/item/clothing/mask/gas/sechailer
-	breathing_sound = null
-
-/obj/item/clothing/mask/equipped(mob/living/mobster, slot)
-	. = ..()
-	if(mobster.stat == DEAD)
-		soundloop?.stop()
-		RegisterSignal(mobster,COMSIG_GLOB_MOB_DEATH,PROC_REF(stopsound))
-		RegisterSignal(mobster,COMSIG_LIVING_REVIVE,PROC_REF(startsound))
-		return
-	if(slot == ITEM_SLOT_MASK)
-		soundloop?.start()
-		RegisterSignal(mobster,COMSIG_GLOB_MOB_DEATH,PROC_REF(stopsound))
-		RegisterSignal(mobster,COMSIG_LIVING_REVIVE,PROC_REF(startsound))
-
-	else
-		soundloop?.stop()
-		UnregisterSignal(mobster,COMSIG_GLOB_MOB_DEATH)
-		UnregisterSignal(mobster,COMSIG_LIVING_REVIVE)
-
-/obj/item/clothing/mask/proc/startsound()
-	soundloop.start()
-
-/obj/item/clothing/mask/proc/stopsound()
-	soundloop.stop()
-
-/obj/item/clothing/mask/adjustmask(mob/living/mobster)
-	. = ..()
-	if(mobster.stat == DEAD)
-		soundloop?.stop()
-		RegisterSignal(mobster,COMSIG_MOB_DEATH,PROC_REF(stopsound))
-		RegisterSignal(mobster,COMSIG_LIVING_REVIVE,PROC_REF(startsound))
-		return
-	if(!mask_adjusted)
-		soundloop?.start()
-		RegisterSignal(mobster,COMSIG_MOB_DEATH,PROC_REF(stopsound))
-		RegisterSignal(mobster,COMSIG_LIVING_REVIVE,PROC_REF(startsound))
-	else
-		soundloop?.stop()
-		UnregisterSignal(mobster,COMSIG_MOB_DEATH)
-		UnregisterSignal(mobster,COMSIG_LIVING_REVIVE)
-
-/obj/item/clothing/mask/dropped(mob/mobster)
-	. = ..()
-	soundloop?.stop()
-	UnregisterSignal(mobster,COMSIG_MOB_DEATH)
-	UnregisterSignal(mobster,COMSIG_LIVING_REVIVE)
-
-/datum/looping_sound/gasmask
-	mid_sounds = list('sound/effects/gasmask.ogg'=1)
-	mid_length = 3 SECONDS
-	volume = 30
-*/
-
 /atom/movable/screen/alert/status_effect/dazzled
 	name = "Dazzled"
 	desc = "You're dazzled from the bright searchlight! The blinding effects will wear off after a bit once you get used to it, making you immune to further dazzling until your eyes return to normal."
@@ -182,7 +94,7 @@
 /obj/machinery/deployable_turret/spotlight
 	name = "spotlight"
 	desc = "While the trigger is held down, this spotlight will dazzle those in range."
-	icon = 'icons/obj/city/event_structs.dmi'
+	icon = 'icons/obj/machines/searchlight.dmi'
 	icon_state = "searchlight_off"
 	can_buckle = TRUE
 	anchored = TRUE
@@ -334,20 +246,21 @@
 /obj/structure/fluff/sealadder
 	name = "ladder"
 	desc = "A ladder for climbing out the water."
-	icon = 'icons/obj/city/event_structs.dmi'
+	icon = 'icons/obj/city/fakeladder.dmi'
 	icon_state = "ladder2"
 	deconstructible = FALSE
 	layer = BELOW_MOB_LAYER
 	pixel_y = -8
 
-///BROKEN VEHICLE PROPS
+///VEHICLE PROPS
+//idle sound is https://freesound.org/people/kyles/sounds/451699/
 /obj/structure/fluff/vehicle
 	icon = 'icons/obj/city/vehicles.dmi'
 	layer = WALL_OBJ_LAYER
 	light_system = MOVABLE_LIGHT_DIRECTIONAL
-	light_color = "#e7f8ff" //Cit lighting
+	light_color = "#e7f8ff"
 	light_range = 10 // A little better than the standard flashlight.
-	light_power = 2 //Cit lighting
+	light_power = 2
 	resistance_flags = FIRE_PROOF
 	max_integrity = 500
 	armor = list("melee" = 90, "bullet" = 80, "laser" = 70, "energy" = 50, "bomb" = 40, "bio" = 100, "rad" = 50, "fire" = 100, "acid" = 10)
