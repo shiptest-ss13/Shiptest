@@ -21,6 +21,16 @@
 	path = /obj/item/clothing/head/hardhat/dblue
 	allowed_roles = list("Chief Engineer", "Engineer", "Atmospheric Technician")
 
+//Motorcycle Helmets
+
+/datum/gear/hat/motorcycle
+	display_name = "motorcycle helmet, recolorable"
+	path = /obj/item/clothing/head/motorcycle
+
+/datum/gear/hat/motorcycle_cat
+	display_name = "motorcycle helmet (ears), recolorable"
+	path = /obj/item/clothing/head/motorcycle/cat
+
 //Berets, AKA how I lost my will to live again
 
 /datum/gear/hat/beret
@@ -102,6 +112,10 @@
 	path = /obj/item/clothing/head/beanie
 
 //Misc
+
+/datum/gear/hat/brimmed
+	display_name = "brimmed hat, colorable"
+	path = /obj/item/clothing/head/brimmed
 
 /datum/gear/hat/that
 	display_name = "top hat"

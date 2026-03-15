@@ -1058,10 +1058,13 @@
 	pixel_x = -7;
 	pixel_y = -10
 	},
-/obj/item/flamethrower/full,
 /obj/item/attachment/energy_bayonet{
 	pixel_x = 1;
 	pixel_y = 16
+	},
+/obj/item/attachment/gun/flamethrower,
+/obj/item/attachment/gun/ballistic/shotgun{
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/beach/gunsmith/workshop)
@@ -1817,10 +1820,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/beach/gunsmith/workshop)
 "qT" = (
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = 12;
-	pixel_y = -6
-	},
+/obj/item/reagent_containers/food/drinks/mead,
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/gunsmith)
 "qV" = (
@@ -2798,9 +2798,6 @@
 	pixel_x = -7;
 	pixel_y = 11
 	},
-/obj/effect/landmark/mission_poi/main{
-	already_spawned = 1
-	},
 /obj/item/documents/syndicate/ngr{
 	pixel_x = 1;
 	pixel_y = 0
@@ -3680,10 +3677,7 @@
 /turf/open/floor/concrete/tiles,
 /area/ruin/beach/gunsmith)
 "Mb" = (
-/obj/item/gun/energy/plasmacutter{
-	pixel_x = -16;
-	pixel_y = 11
-	},
+/obj/item/plasmacutter,
 /obj/effect/decal/cleanable/oil/slippery,
 /mob/living/simple_animal/hostile/human/ramzi/civilian{
 	wander = 0
@@ -4453,9 +4447,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/hydra{
-	wander = 0
-	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/hydra/gunsmith,
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/gunsmith)
 "Up" = (

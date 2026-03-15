@@ -386,7 +386,7 @@
 /obj/item/multitool,
 /obj/item/stack/marker_beacon/thirty,
 /obj/item/gear_pack/anglegrinder,
-/obj/item/gun/energy/plasmacutter,
+/obj/item/plasmacutter,
 /obj/item/flashlight/seclite,
 /obj/item/flashlight/seclite,
 /obj/item/melee/knife/survival,
@@ -2151,7 +2151,8 @@
 	},
 /obj/item/food/muffin{
 	pixel_x = -5;
-	pixel_y = 2
+	pixel_y = 2;
+	layer = 3.1
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/hallway/aft)

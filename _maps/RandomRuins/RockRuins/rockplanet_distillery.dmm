@@ -2624,10 +2624,7 @@
 	dir = 1;
 	layer = 2.7
 	},
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = 4;
-	pixel_y = 8
-	},
+/obj/item/reagent_containers/food/drinks/mead,
 /obj/item/reagent_containers/food/drinks/mug/coco{
 	pixel_x = -6;
 	pixel_y = 8
@@ -4053,10 +4050,7 @@
 	pixel_x = -3;
 	pixel_y = 4
 	},
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = 6;
-	pixel_y = 8
-	},
+/obj/item/reagent_containers/food/drinks/mead,
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/distillery/saloon)
 "Uo" = (
@@ -4376,10 +4370,6 @@
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals{
 	weapon_drop_chance = 100
-	},
-/obj/effect/landmark/mission_poi/main/kill{
-	already_spawned = 1;
-	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals
 	},
 /turf/open/floor/wood,
 /area/ruin/rockplanet/distillery/office)

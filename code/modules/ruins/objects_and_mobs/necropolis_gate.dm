@@ -257,6 +257,7 @@ GLOBAL_DATUM(necropolis_gate, /obj/structure/necropolis_gate/legion_gate)
 	layer = ABOVE_OPEN_TURF_LAYER
 	anchored = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	var/list/give_turf_traits = list(TRAIT_IMMERSE_STOPPED, TRAIT_CHASM_STOPPED, TRAIT_LAVA_STOPPED, TRAIT_TURF_IGNORE_SLOWDOWN, TRAIT_ACID_STOPPED)
 	var/tile_key = "pristine_tile"
 	var/tile_random_sprite_max = 24
 	var/fall_on_cross = STABLE //If the tile has some sort of effect when crossed
@@ -271,6 +272,9 @@ GLOBAL_DATUM(necropolis_gate, /obj/structure/necropolis_gate/legion_gate)
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered)
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
+	if(length(give_turf_traits))
+		give_turf_traits = string_list(give_turf_traits)
+		AddElement(/datum/element/give_turf_traits, give_turf_traits)
 
 /obj/structure/stone_tile/Destroy(force)
 	if(force || fallen)
@@ -307,6 +311,9 @@ GLOBAL_DATUM(necropolis_gate, /obj/structure/necropolis_gate/legion_gate)
 	playsound(src, 'sound/effects/pressureplate.ogg', 50, TRUE)
 	Shake(-1, -1, 25)
 	sleep(5)
+	if(length(give_turf_traits))
+		give_turf_traits = string_list(give_turf_traits)
+		RemoveElement(/datum/element/give_turf_traits, give_turf_traits)
 	if(break_that_sucker)
 		playsound(src, 'sound/effects/break_stone.ogg', 50, TRUE)
 	else
@@ -325,6 +332,9 @@ GLOBAL_DATUM(necropolis_gate, /obj/structure/necropolis_gate/legion_gate)
 	sleep(30)
 	falling = FALSE
 	fallen = FALSE
+	if(length(give_turf_traits))
+		give_turf_traits = string_list(give_turf_traits)
+		AddElement(/datum/element/give_turf_traits, give_turf_traits)
 
 /obj/structure/stone_tile/proc/crossed_effect(atom/movable/AM)
 	return

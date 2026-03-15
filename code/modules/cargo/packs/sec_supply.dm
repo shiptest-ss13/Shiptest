@@ -118,18 +118,18 @@
 		Misc. weapons / protection
 */
 
-/datum/supply_pack/sec_supply/riotshields
-	name = "Ballistic Shield Crate"
-	desc = "Contains a ballistic shield, effective at holding back hostile fauna, xenofauna, or large crowds."
-	cost = 1000
-	contains = list(/obj/item/shield/riot)
+/datum/supply_pack/sec_supply/heavyshields
+	name = "Heavy Ballistic Shield Crate"
+	desc = "Contains a heavy ballistic shield, very effective at protecting the user from light arms fire. Can struggle against stronger firepower."
+	cost = 1200
+	contains = list(/obj/item/shield/heavy)
 	crate_name = "riot shield crate"
 
-/datum/supply_pack/sec_supply/teleriotshields
+/datum/supply_pack/sec_supply/telescopicshields
 	name = "Telescopic Riot Shield Crate"
-	desc = "Contains a telescopic riot shield, effective at holding back hostile fauna, xenofauna, or large crowds in tight spaces."
+	desc = "Contains a telescopic riot shield, effective at protecting the user in close quarters combat. Assuming a gun isn't involved of course."
 	cost = 750
-	contains = list(/obj/item/shield/riot/tele)
+	contains = list(/obj/item/shield/tele)
 	crate_name = "riot shield crate"
 
 /datum/supply_pack/sec_supply/survknives
@@ -308,6 +308,18 @@
 	contains = list(/obj/item/storage/belt/military/gezena)
 	crate_name = "webbing crate"
 	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
+//cybersun
+
+/datum/supply_pack/tools/cybersun_webbing
+	name = "Cybersun Webbing"
+	desc = "Contains a lightweight multichromatic rigging kit for storage of materials on the fly."
+	cost = 500
+	contains = list(/obj/item/storage/belt/military/cybersun)
+	crate_name = "webbing crate"
+	faction = /datum/faction/syndicate/cybersun
 	faction_discount = 0
 	faction_locked = TRUE
 

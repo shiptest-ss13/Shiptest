@@ -190,6 +190,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/sound/attack_sound = 'sound/weapons/punch1.ogg'
 	var/sound/miss_sound = 'sound/weapons/punchmiss.ogg'
 
+	///Cache of generated eye icons.
+	var/static/list/masked_eye_icons_cache = list()
+
 	///What gas does this species breathe? Used by suffocation screen alerts, most of actual gas breathing is handled by mutantlungs. See [life.dm][code/modules/mob/living/carbon/human/life.dm]
 	var/breathid = "o2"
 
@@ -707,13 +710,33 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			if(eyes)
 				if(!HAS_TRAIT(H, TRAIT_EYESCLOSED) && !(H.stat == DEAD))
 
-					if(iskepori(H)) // Kepori need sclera but don't fit the normal silhouette, so this needs changing. Make better later.
-						eye_overlay = mutable_appearance('icons/mob/species/kepori/kepori_eyes.dmi', eyes.eye_icon_state, -BODYPARTS_LAYER)
-						sclera_overlay = mutable_appearance('icons/mob/species/kepori/kepori_eyes.dmi', eyes.sclera_icon_state, -BODYPARTS_LAYER)
+					var/icon/eye_icon
+					var/icon/sclera_icon
+					var/icon_cache_key = "[eyes.eye_icon_state]-[eyes.sclera_icon_state]-[id]-[eyes.scarring]"
+					if(!masked_eye_icons_cache[icon_cache_key])
+						if(iskepori(H)) // Kepori need sclera but don't fit the normal silhouette, so this needs changing. Make better later.
+							eye_icon = icon('icons/mob/species/kepori/kepori_eyes.dmi', eyes.eye_icon_state)
+							sclera_icon = icon('icons/mob/species/kepori/kepori_eyes.dmi', eyes.sclera_icon_state)
+						else
+							eye_icon = icon(species_eye_path || 'icons/mob/human_face.dmi', eyes.eye_icon_state)
+							sclera_icon = icon('icons/mob/human_face.dmi', eyes.sclera_icon_state)
 
+						if(eyes.scarring & RIGHT_EYE_SCAR)
+							var/icon/right_scar_mask = icon('icons/mob/eye_masks.dmi', "right_eye")
+							eye_icon.Blend(right_scar_mask, ICON_MULTIPLY)
+							sclera_icon.Blend(right_scar_mask, ICON_MULTIPLY)
+						if(eyes.scarring & LEFT_EYE_SCAR)
+							var/icon/left_scar_mask = icon('icons/mob/eye_masks.dmi', "left_eye")
+							eye_icon.Blend(left_scar_mask, ICON_MULTIPLY)
+							sclera_icon.Blend(left_scar_mask, ICON_MULTIPLY)
+
+						masked_eye_icons_cache[icon_cache_key] = list(eye_icon, sclera_icon)
 					else
-						eye_overlay = mutable_appearance(species_eye_path || 'icons/mob/human_face.dmi', eyes.eye_icon_state, -BODYPARTS_LAYER)
-						sclera_overlay = mutable_appearance('icons/mob/human_face.dmi', eyes.sclera_icon_state, -BODYPARTS_LAYER)
+						eye_icon = masked_eye_icons_cache[icon_cache_key][1]
+						sclera_icon = masked_eye_icons_cache[icon_cache_key][2]
+
+					eye_overlay = mutable_appearance(eye_icon, layer = -BODY_LAYER)
+					sclera_overlay = mutable_appearance(sclera_icon, layer = -BODY_LAYER)
 
 					if(HD.greyscale_eyes && eyes)
 						eye_overlay.color = "#" + H.eye_color
@@ -1474,6 +1497,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 
 /datum/species/proc/help(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)
+	if(target.on_fire)
+		return target.help_extinguish_act(user)
 	if(target.body_position == STANDING_UP || (target.health >= 0 && !HAS_TRAIT(target, TRAIT_FAKEDEATH)))
 		target.help_shake_act(user)
 		if(target != user)
@@ -1737,7 +1762,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	return TRUE
 
-/datum/species/proc/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE, attack_direction = null)
+/datum/species/proc/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE, attack_direction = null, no_animation=FALSE)
 	SEND_SIGNAL(H, COMSIG_MOB_APPLY_DAMAGE, damage, damagetype, def_zone, wound_bonus, bare_wound_bonus, sharpness, attack_direction)
 	var/hit_percent = (100-(blocked+armor))/100
 	hit_percent = (hit_percent * (100-H.physiology.damage_resistance))/100
@@ -1764,7 +1789,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					H.update_damage_overlays()
 			else //no bodypart, we deal damage with a more general method.
 				H.adjustBruteLoss(damage_amount)
-			if(H.stat <= HARD_CRIT)
+			if(H.stat <= HARD_CRIT && !no_animation)
 				H.shake_animation(damage_amount)
 		if(BURN)
 			H.damageoverlaytemp = 20
@@ -1774,7 +1799,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					H.update_damage_overlays()
 			else
 				H.adjustFireLoss(damage_amount)
-			if(H.stat <= HARD_CRIT)
+			if(H.stat <= HARD_CRIT && !no_animation)
 				H.shake_animation(damage_amount)
 		if(TOX)
 			var/damage_amount = forced ? damage : damage * hit_percent * H.physiology.tox_mod
@@ -1792,7 +1817,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					H.update_stamina()
 			else
 				H.adjustStaminaLoss(damage_amount)
-			if(H.stat <= HARD_CRIT)
+			if(H.stat <= HARD_CRIT && !no_animation)
 				H.shake_animation(damage_amount)
 		if(BRAIN)
 			var/damage_amount = forced ? damage : damage * hit_percent * H.physiology.brain_mod
@@ -2365,15 +2390,5 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 /datum/species/proc/get_harm_descriptors()
 	return
-
-/**
- * The human species version of [/mob/living/carbon/proc/get_biological_state]. Depends on the HAS_FLESH and HAS_BONE species traits, having bones lets you have bone wounds, having flesh lets you have burn, slash, and piercing wounds
- */
-/datum/species/proc/get_biological_state(mob/living/carbon/human/H)
-	. = BIO_INORGANIC
-	if(HAS_FLESH in species_traits)
-		. |= BIO_JUST_FLESH
-	if(HAS_BONE in species_traits)
-		. |= BIO_JUST_BONE
 
 #undef MINIMUM_MOLS_TO_HARM

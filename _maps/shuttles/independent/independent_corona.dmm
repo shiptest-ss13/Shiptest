@@ -2237,9 +2237,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen/kitchen)
 "zH" = (
-/obj/machinery/mission_viewer{
-	pixel_y = 32
-	},
 /obj/structure/chair/handrail,
 /turf/open/floor/plasteel/stairs/left{
 	dir = 8
@@ -4187,9 +4184,6 @@
 /obj/structure/railing{
 	dir = 10
 	},
-/obj/machinery/computer/mission{
-	dir = 4
-	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
 "RD" = (
@@ -4380,7 +4374,6 @@
 /obj/docking_port/stationary{
 	dheight = 1;
 	dir = 8;
-	disable_on_owner_ship_dock = 1;
 	dwidth = 15;
 	height = 31;
 	name = "Corona Stern Dock";
