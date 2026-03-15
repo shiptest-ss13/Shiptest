@@ -289,14 +289,26 @@
 	tracer_type = /obj/effect/projectile/tracer/pulse
 	muzzle_type = /obj/effect/projectile/muzzle/pulse
 	impact_type = /obj/effect/projectile/impact/pulse
+	var/starts_fires = TRUE
+
+/obj/projectile/beam/pulse/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(!starts_fires)
+		return
+	var/turf/targets_turf = target.loc
+	if(!isopenturf(targets_turf))
+		return
+	targets_turf.ignite_turf(rand(8,22), "blue")
 
 /obj/projectile/beam/pulse/sharplite_turret
 	wall_damage_flags = null
 	wall_damage_override = 0
+	demolition_mod = 0
 	speed = 0.4
 
 /obj/projectile/beam/pulse/shotgun
 	damage = 40
+	starts_fires = FALSE
 
 /obj/projectile/beam/pulse/condor
 	range = 128
