@@ -154,7 +154,7 @@
 	return (damage < t_min ? 0 : damage)
 
 /turf/closed/proc/get_proj_damage(obj/projectile/P, t_min = min_dam)
-	var/dam = P.damage
+	var/dam = P.damage * P.demolition_mod
 	if(proj_bonus_damage_flags & P.wall_damage_flags)
 		dam = P.wall_damage_override
 	else

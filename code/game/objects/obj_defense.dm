@@ -28,7 +28,7 @@
 	if(hitting_projectile.suppressed != SUPPRESSED_VERY)
 		visible_message(span_danger("[src] is hit by \a [hitting_projectile]!"), null, null, COMBAT_MESSAGE_RANGE)
 	if(!QDELETED(src)) //Bullet on_hit effect might have already destroyed this object
-		take_damage(hitting_projectile.damage, hitting_projectile.damage_type, hitting_projectile.flag, 0, turn(hitting_projectile.dir, 180), hitting_projectile.armour_penetration)
+		take_damage(hitting_projectile.damage * hitting_projectile.demolition_mod, hitting_projectile.damage_type, hitting_projectile.flag, 0, turn(hitting_projectile.dir, 180), hitting_projectile.armour_penetration)
 
 ///Called to get the damage that hulks will deal to the obj.
 /obj/proc/hulk_damage()
