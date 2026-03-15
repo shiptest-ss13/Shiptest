@@ -129,7 +129,7 @@
 			SSexplosions.lowturf += target
 
 /datum/spacevine_mutation/aggressive_spread/on_buckle(obj/structure/spacevine/holder, mob/living/buckled)
-	buckled.ex_act(severity, null, src)
+	buckled.ex_act(severity, null, origin = src)
 
 /datum/spacevine_mutation/transparency
 	name = "transparent"

@@ -486,7 +486,7 @@ SUBSYSTEM_DEF(explosions)
 				var/list/explodey = thing
 				var/turf/T = explodey[1]
 				T.explosion_level = max(T.explosion_level, EXPLODE_LIGHT)
-				T.ex_act(EXPLODE_LIGHT, explodey[2],explodey[3],explodey[4],explodey[5])
+				T.ex_act(EXPLODE_LIGHT, null, explodey[2],explodey[3],explodey[4],explodey[5])
 			else if(isturf(thing))
 				var/turf/T = thing
 				T.explosion_level = max(T.explosion_level, EXPLODE_LIGHT)
@@ -501,7 +501,7 @@ SUBSYSTEM_DEF(explosions)
 				var/list/explodey = thing
 				var/turf/T = explodey[1]
 				T.explosion_level = max(T.explosion_level, EXPLODE_HEAVY)
-				T.ex_act(EXPLODE_HEAVY, explodey[2],explodey[3],explodey[4],explodey[5])
+				T.ex_act(EXPLODE_HEAVY, null, explodey[2],explodey[3],explodey[4],explodey[5])
 			else if(isturf(thing))
 				var/turf/T = thing
 				T.explosion_level = max(T.explosion_level, EXPLODE_HEAVY)
@@ -516,7 +516,7 @@ SUBSYSTEM_DEF(explosions)
 				var/list/explodey = thing
 				var/turf/T = explodey[1]
 				T.explosion_level = max(T.explosion_level, EXPLODE_DEVASTATE)
-				T.ex_act(EXPLODE_DEVASTATE, explodey[2],explodey[3],explodey[4],explodey[5])
+				T.ex_act(EXPLODE_DEVASTATE, null, explodey[2],explodey[3],explodey[4],explodey[5])
 			else if(isturf(thing))
 				var/turf/T = thing
 				T.explosion_level = max(T.explosion_level, EXPLODE_DEVASTATE)
@@ -550,7 +550,7 @@ SUBSYSTEM_DEF(explosions)
 				var/list/explodey = exploded
 				var/obj/O = explodey[1]
 				if(!QDELETED(O))
-					O.ex_act(EXPLODE_DEVASTATE, explodey[2],explodey[3],explodey[4],explodey[5])
+					O.ex_act(EXPLODE_DEVASTATE,null, explodey[2],explodey[3],explodey[4],explodey[5])
 			else if(isatom(exploded))
 				var/obj/O = exploded
 				if(!QDELETED(O))
@@ -568,7 +568,7 @@ SUBSYSTEM_DEF(explosions)
 				var/list/explodey = exploded
 				var/obj/O = explodey[1]
 				if(!QDELETED(O))
-					O.ex_act(EXPLODE_HEAVY, explodey[2],explodey[3],explodey[4],explodey[5])
+					O.ex_act(EXPLODE_HEAVY, null, explodey[2],explodey[3],explodey[4],explodey[5])
 			else if(isatom(exploded))
 				var/obj/O = exploded
 				if(!QDELETED(O))
@@ -586,7 +586,7 @@ SUBSYSTEM_DEF(explosions)
 				var/list/explodey = exploded
 				var/obj/O = explodey[1]
 				if(!QDELETED(O))
-					O.ex_act(EXPLODE_LIGHT, explodey[2],explodey[3],explodey[4],explodey[5])
+					O.ex_act(EXPLODE_LIGHT, null, explodey[2],explodey[3],explodey[4],explodey[5])
 			else if(isatom(exploded))
 				var/obj/O = exploded
 				if(!QDELETED(O))

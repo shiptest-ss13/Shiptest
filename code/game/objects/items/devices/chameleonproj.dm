@@ -145,7 +145,7 @@
 /obj/effect/dummy/chameleon/attack_alien()
 	master.disrupt()
 
-/obj/effect/dummy/chameleon/ex_act(S, T, origin, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM)
+/obj/effect/dummy/chameleon/ex_act(S, T, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM)
 	contents_explosion(S, T)
 	master.disrupt()
 
