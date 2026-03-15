@@ -28,7 +28,6 @@
 	var/message_apply_self = "You are affected by a trickwine!"
 	var/message_remove_others = "is no longer affected by a trickwine!"
 	var/message_remove_self = "You are no longer affected by a trickwine!"
-	var/trickwine_examine_text
 	var/alert_desc
 	// Applied and removes with reagent
 	var/trait
