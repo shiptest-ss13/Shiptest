@@ -257,13 +257,21 @@
 			. += "-"
 			. += "[pick(rand(1,999))]"
 		if(3 to 5)
-			. += "[pick(GLOB.planet_names)]"
+			. += "[pick_planet_name()]"
 		if(5 to 7)
-			. += "[pick(GLOB.planet_names)] \Roman[rand(1,9)]"
+			. += "[pick_planet_name()] \Roman[rand(1,9)]"
 		if(8 to 11)
-			. += "[pick(GLOB.planet_prefixes)] [pick(GLOB.planet_names)]"
+			. += "[pick(GLOB.planet_prefixes)] [pick_planet_name()]"
 		if(12)
-			. += "[capitalize(pick(GLOB.adjectives))] [pick(GLOB.planet_names)]"
+			. += "[capitalize(pick(GLOB.adjectives))] [pick_planet_name()]"
+
+/datum/overmap/dynamic/proc/pick_planet_name()
+	if(!length(GLOB.planet_names))
+		stack_trace("We ran out of planet names! Consider running shorter rounds or expanding the namelist.")
+		GLOB.planet_names = world.file2list("strings/planet_names.txt")
+	var/planet_name = pick(GLOB.planet_names)
+	GLOB.planet_names -= planet_name
+	return planet_name
 
 /**
  * Load a level for a ship that's visiting the level.

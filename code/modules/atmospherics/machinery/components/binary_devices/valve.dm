@@ -77,6 +77,10 @@ It's like a regular ol' straight pipe, but you can turn it on and off.
 	use_power(ACTIVE_DRAW_MINIMAL)
 	. = ..()
 
+/obj/machinery/atmospherics/components/binary/valve/layer1
+	piping_layer = 1
+	icon_state = "mvalve_map-1"
+
 /obj/machinery/atmospherics/components/binary/valve/layer2
 	piping_layer = 2
 	icon_state = "mvalve_map-2"
@@ -84,6 +88,10 @@ It's like a regular ol' straight pipe, but you can turn it on and off.
 /obj/machinery/atmospherics/components/binary/valve/layer4
 	piping_layer = 4
 	icon_state = "mvalve_map-4"
+
+/obj/machinery/atmospherics/components/binary/valve/layer5
+	piping_layer = 5
+	icon_state = "mvalve_map-5"
 
 /obj/machinery/atmospherics/components/binary/valve/on
 	on = TRUE
