@@ -1097,9 +1097,7 @@
 	pixel_y = 8;
 	pixel_x = 21;
 	name = "port thrusters blast door control";
-	id = "puru_thrusters_port_blastdoors";
-	normaldoorcontrol = 1;
-	specialfunctions = 4
+	id = "puru_thrusters_port_blastdoors"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -1674,8 +1672,7 @@
 	pixel_y = -15;
 	pixel_x = -21;
 	name = "recovery room privacy shutters control";
-	id = "puru_medroom_fore_shutters";
-	specialfunctions = 4
+	id = "puru_medroom_fore_shutters"
 	},
 /obj/item/radio/intercom/directional/west,
 /obj/effect/decal/cleanable/dirt,
@@ -1890,7 +1887,7 @@
 	pixel_y = 28;
 	engraved = 1;
 	name = "Puru-Rangi commemoration plaque";
-	desc = "Ranginui, god of the sky, rains grievous tears upon the soil of his beloved Papatūānuku, and at times he storms in desperation to reach her. Puru-Rangi, a prayer to soothe his yearning heart, deprive the wind of its power, rendering gentle the would-be torrent."
+	desc = "Ranginui, god of the sky, rains grievous tears upon the soil of his beloved Papatūānuku, and at times he storms in desperation to reach her. Puru-Rangi, a prayer to soothe his yearning heart, deprives the wind of its power, rendering gentle the would-be torrent."
 	},
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
@@ -1996,8 +1993,7 @@
 	pixel_y = -15;
 	pixel_x = 21;
 	name = "recovery room privacy shutters control";
-	id = "puru_medroom_aft_shutters";
-	specialfunctions = 4
+	id = "puru_medroom_aft_shutters"
 	},
 /obj/item/radio/intercom/directional/east,
 /obj/effect/decal/cleanable/dirt,
@@ -2787,13 +2783,12 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "tv" = (
-/obj/machinery/door/window/brigdoor/westright{
-	dir = 1;
-	req_ship_access = 1;
-	req_access_txt = "3"
-	},
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/window/brigdoor/southright{
+	req_access_txt = "3";
+	req_ship_access = 1
+	},
 /obj/machinery/door/poddoor/shutters{
 	id = "puru_armory_shutters";
 	layer = 3.3
@@ -2908,13 +2903,12 @@
 /area/ship/engineering)
 "uh" = (
 /obj/item/radio/intercom/directional/west,
-/obj/machinery/door/window/brigdoor/westleft{
-	req_ship_access = 1;
-	dir = 1;
-	req_access_txt = "3"
-	},
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/window/brigdoor/southleft{
+	req_access_txt = "3";
+	req_ship_access = 1
+	},
 /obj/machinery/door/poddoor/shutters{
 	id = "puru_armory_shutters";
 	layer = 3.3
@@ -4486,6 +4480,11 @@
 	dir = 1;
 	name = "first aid supplies locker";
 	pixel_y = 28
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 19;
+	pixel_y = -12
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
@@ -6423,9 +6422,7 @@
 	pixel_y = -8;
 	pixel_x = 21;
 	name = "starboard thrusters blast door control";
-	id = "puru_thrusters_starboard_blastdoors";
-	normaldoorcontrol = 1;
-	specialfunctions = 4
+	id = "puru_thrusters_starboard_blastdoors"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -6589,7 +6586,7 @@
 /turf/open/floor/carpet/red,
 /area/ship/crew)
 "Zv" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector{
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	dir = 4
 	},
 /turf/open/floor/engine/hull/reinforced,
