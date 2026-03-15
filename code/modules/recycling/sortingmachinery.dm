@@ -25,15 +25,16 @@
 		AM.forceMove(T)
 	return ..()
 
-/obj/structure/bigDelivery/contents_explosion(severity, target)
+/obj/structure/bigDelivery/contents_explosion(severity, target,light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM)
 	for(var/atom/movable/AM in contents)
+		var/list/to_explode = list(AM,light_dam,light_item_dam,heavy_dam,heavy_item_dam)
 		switch(severity)
 			if(EXPLODE_DEVASTATE)
-				SSexplosions.highobj += AM
+				SSexplosions.highobj += list(to_explode)
 			if(EXPLODE_HEAVY)
-				SSexplosions.medobj += AM
+				SSexplosions.medobj += list(to_explode)
 			if(EXPLODE_LIGHT)
-				SSexplosions.lowobj += AM
+				SSexplosions.lowobj += list(to_explode)
 
 /obj/structure/bigDelivery/examine(mob/user)
 	. = ..()
