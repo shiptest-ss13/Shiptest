@@ -202,12 +202,12 @@
 			owner.adjust_drugginess(3)
 
 /datum/reagent/consumable/ethanol/trickwine/ice_wine
-	name = "Wine Of Ice"
+	name = "Wine of Ice"
 	description = "A specialized brew utilized by members of the Saint-Roumain Militia, designed to assist in temperature regulation while working in hot environments. Known to give one the cold shoulder when thrown."
 	color = "#C0F1EE"
 	boozepwr = 70
 	taste_description = "a weighty meat, undercut by a mild pepper."
-	glass_name = "Wine Of Ice"
+	glass_name = "Wine of Ice"
 	glass_desc = "A specialized brew utilized by members of the Saint-Roumain Militia, designed to assist in temperature regulation while working in hot environments. Known to give one the cold shoulder when thrown."
 	breakaway_flask_icon_state = "baflaskicewine"
 	buff_effect = /datum/status_effect/trickwine/buff/ice
