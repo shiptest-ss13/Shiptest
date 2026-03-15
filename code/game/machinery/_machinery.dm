@@ -138,6 +138,9 @@ Class Procs:
 	var/atmos_processing = FALSE
 	var/interacts_with_air = FALSE
 
+	var/power_flags = POWER_ALLOW_AREA
+	var/datum/powernet/powernet = null
+
 /obj/machinery/Initialize(mapload, apply_default_parts = TRUE)
 	if(!armor)
 		armor = list("melee" = 25, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 70)
@@ -185,6 +188,7 @@ Class Procs:
 /obj/machinery/proc/exit_area(datum/source, area/A)
 	SIGNAL_HANDLER
 	set_no_power(A)
+	disconnect_from_network()
 
 /obj/machinery/Destroy()
 	GLOB.machines.Remove(src)

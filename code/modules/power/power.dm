@@ -11,11 +11,11 @@
 	icon = 'icons/obj/power.dmi'
 	anchored = TRUE
 	obj_flags = CAN_BE_HIT | ON_BLUEPRINTS
-	var/datum/powernet/powernet = null
 	use_power = NO_POWER_USE
 	idle_power_usage = 0
 	active_power_usage = 0
 	req_ship_access = TRUE
+	power_flags = POWER_ALLOW_WIRE
 
 /obj/machinery/power/Destroy()
 	disconnect_from_network()
@@ -31,46 +31,46 @@
 // Machines should use add_load(), surplus(), avail()
 // Non-machines should use add_delayedload(), delayed_surplus(), newavail()
 
-/obj/machinery/power/proc/add_avail(amount)
+/obj/machinery/proc/add_avail(amount)
 	if(powernet)
 		powernet.newavail += amount
 		return TRUE
 	else
 		return FALSE
 
-/obj/machinery/power/proc/add_load(amount)
+/obj/machinery/proc/add_load(amount)
 	if(powernet)
 		powernet.load += amount
 
-/obj/machinery/power/proc/surplus()
+/obj/machinery/proc/surplus()
 	if(powernet)
 		return clamp(powernet.avail-powernet.load, 0, powernet.avail)
 	else
 		return 0
 
-/obj/machinery/power/proc/avail(amount)
+/obj/machinery/proc/avail(amount)
 	if(powernet)
 		return amount ? powernet.avail >= amount : powernet.avail
 	else
 		return 0
 
-/obj/machinery/power/proc/add_delayedload(amount)
+/obj/machinery/proc/add_delayedload(amount)
 	if(powernet)
 		powernet.delayedload += amount
 
-/obj/machinery/power/proc/delayed_surplus()
+/obj/machinery/proc/delayed_surplus()
 	if(powernet)
 		return clamp(powernet.newavail - powernet.delayedload, 0, powernet.newavail)
 	else
 		return 0
 
-/obj/machinery/power/proc/newavail()
+/obj/machinery/proc/newavail()
 	if(powernet)
 		return powernet.newavail
 	else
 		return 0
 
-/obj/machinery/power/proc/disconnect_terminal() // machines without a terminal will just return, no harm no fowl.
+/obj/machinery/proc/disconnect_terminal() // machines without a terminal will just return, no harm no fowl.
 	return
 
 // returns true if the area has power on given channel (or doesn't require power).
@@ -167,20 +167,21 @@
 	update_appearance()
 
 // connect the machine to a powernet if a node cable is present on the turf
-/obj/machinery/power/proc/connect_to_network()
-	var/turf/T = src.loc
-	if(!T || !istype(T))
-		return FALSE
-
-	var/obj/structure/cable/C = T.get_cable_node() //check if we have a node cable on the machine turf, the first found is picked
-	if(!C || !C.powernet)
-		return FALSE
-
-	C.powernet.add_machine(src)
-	return TRUE
+/obj/machinery/proc/connect_to_network()
+	. = FALSE
+	powernet = null
+	var/turf/T = get_turf(src)
+	if(!T)
+		return
+	var/obj/structure/cable/attached_wire = T.get_cable_node()
+	if((power_flags & POWER_ALLOW_WIRE) && attached_wire)
+		attached_wire.powernet.add_machine(src)
+		. = TRUE
+	if((power_flags & POWER_ALLOW_AREA) && get_area(src))
+		. = TRUE
 
 // remove and disconnect the machine from its current powernet
-/obj/machinery/power/proc/disconnect_from_network()
+/obj/machinery/proc/disconnect_from_network()
 	if(!powernet)
 		return FALSE
 	powernet.remove_machine(src)

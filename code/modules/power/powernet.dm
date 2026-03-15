@@ -65,7 +65,7 @@
 
 //add a power machine to the current powernet
 //Warning : this proc DON'T check if the machine exists
-/datum/powernet/proc/add_machine(obj/machinery/power/M)
+/datum/powernet/proc/add_machine(obj/machinery/M)
 	if(M.powernet)// if M already has a powernet...
 		if(M.powernet == src)
 			return

@@ -23,6 +23,8 @@
 	var/needs_to_update_solar_exposure = TRUE //do we need to call update_solar_exposure() next tick?
 	var/obj/effect/overlay/panel
 
+	power_flags = POWER_ALLOW_AREA | POWER_ALLOW_WIRE
+
 /obj/machinery/power/solar/Initialize(mapload, obj/item/solar_assembly/S)
 	. = ..()
 	panel = new()
@@ -332,7 +334,6 @@
 
 	var/track = SOLAR_TRACK_OFF ///SOLAR_TRACK_OFF, SOLAR_TRACK_TIMED, SOLAR_TRACK_AUTO
 
-	var/datum/powernet/powernet = null
 	var/obj/machinery/power/tracker/connected_tracker = null
 	var/list/connected_panels = list()
 
@@ -452,20 +453,8 @@
 	for(var/obj/machinery/power/solar/S in connected_panels)
 		S.queue_turn(azimuth)
 
-/obj/machinery/computer/solar_control/proc/connect_to_network()
-	. = FALSE
-	powernet = null
-	var/turf/T = get_turf(src)
-	var/obj/structure/cable/attached_wire = locate(/obj/structure/cable) in T
-	if(attached_wire)
-		powernet = attached_wire.powernet
-	if(!powernet) //if the computer isn't directly connected to a wire, attempt to find the APC powering it to pull it's powernet instead
-		var/area/A = get_area(src)
-		if(!A)
-			return
-		var/obj/machinery/power/apc/local_apc = A.get_apc()
-		if(local_apc && local_apc.terminal)
-			powernet = local_apc.terminal.powernet
+/obj/machinery/computer/solar_control/connect_to_network()
+	..()
 	if(powernet)
 		search_for_connected()
 		return TRUE
