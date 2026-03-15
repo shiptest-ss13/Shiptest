@@ -176,9 +176,9 @@
 
 			if (s_store && swap)
 				var/obj/item/s_store_backup = s_store
-				dropItemToGround(s_store_backup)
-				put_in_inactive_hand(s_store_backup)
 				equip_to_slot_if_possible(s_store_backup, ITEM_SLOT_SUITSTORE)
+				put_in_inactive_hand(s_store_backup)
+				dropItemToGround(s_store_backup)
 
 			if(I.flags_inv & HIDEJUMPSUIT)
 				update_inv_w_uniform()
@@ -237,7 +237,8 @@
 		put_in_hand(new dna.species.mutanthands(), index)
 	if(I == wear_suit)
 		if(s_store && invdrop)
-			dropItemToGround(s_store, TRUE) //It makes no sense for your suit storage to stay on you if you drop your suit.
+			if(!(HAS_TRAIT(s_store, TRAIT_FORCE_SUIT_STORAGE) || HAS_TRAIT(s_store, TRAIT_FORCE_SUIT_STORAGE_ALWAYS))) //Don't drop things that don't need a suit
+				dropItemToGround(s_store, TRUE) //It makes no sense for your suit storage to stay on you if you drop your suit.
 		if(wear_suit.breakouttime) //when unequipping a straightjacket
 			REMOVE_TRAIT(src, TRAIT_RESTRAINED, SUIT_TRAIT)
 			drop_all_held_items() //suit is restraining
