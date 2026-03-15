@@ -469,7 +469,7 @@
 
 	switch (severity)
 		if (EXPLODE_DEVASTATE)
-			if(bomb_armor < EXPLODE_GIB_THRESHOLD) //gibs the mob if their bomb armor is lower than EXPLODE_GIB_THRESHOLD
+			if(bomb_armor < EXPLODE_GIB_THRESHOLD)
 				for(var/I in contents)
 					var/atom/A = I
 					var/list/to_explode = list(A,light_dam,light_item_dam,heavy_dam,heavy_item_dam)
