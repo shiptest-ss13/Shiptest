@@ -5,7 +5,7 @@
 	..()
 	take_damage(AM.throwforce, BRUTE, "melee", 1, get_dir(src, AM))
 
-/obj/ex_act(severity, target, origin, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM)
+/obj/ex_act(severity, target, light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM)
 	if(resistance_flags & INDESTRUCTIBLE)
 		return
 	..() //contents explosion
