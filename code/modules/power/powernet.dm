@@ -81,7 +81,7 @@
 /datum/powernet/proc/reset()
 	load += static_load
 	//see if there's a surplus of power remaining in the powernet and stores unused power in the SMES
-	last_excess = netexcess
+	var/last_excess = netexcess
 	netexcess = avail - load
 
 	if(netexcess != last_excess)

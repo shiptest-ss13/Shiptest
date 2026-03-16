@@ -156,7 +156,9 @@
 /obj/machinery/proc/power_change(area/A)
 	SIGNAL_HANDLER
 	SHOULD_CALL_PARENT(1)
-	connect_to_network()
+
+	if(power_flags & POWER_ALLOW_WIRE && !powernet)
+		connect_to_network()
 	set_no_power(A)
 
 	if(machine_stat & BROKEN)
@@ -354,15 +356,15 @@
 			worklist |= C.get_connections() //get adjacents power objects, with or without a powernet
 
 		else if(P.anchored && istype(P, /obj/machinery/power))
-			var/obj/machinery/power/M = P
+			var/obj/machinery/M = P
 			found_machines |= M //we wait until the powernet is fully propagates to connect the machines
 		else
 			continue
 
 	//now that the powernet is set, connect found machines to it
-	for(var/obj/machinery/power/PM in found_machines)
-		if(!PM.connect_to_network()) //couldn't find a node on its turf...
-			PM.disconnect_from_network() //... so disconnect if already on a powernet
+	for(var/obj/machinery/found in found_machines)
+		if(!found.connect_to_network()) //couldn't find a node on its turf...
+			found.disconnect_from_network() //... so disconnect if already on a powernet
 
 
 //Merge two powernets, the bigger (in cable length term) absorbing the other
