@@ -44,7 +44,7 @@
 /obj/docking_port/mobile{
 	dir = 4;
 	name = "Nail-class Shuttle";
-	preferred_direction = 8;
+	preferred_direction = 4;
 	port_direction = 2
 	},
 /turf/open/floor/plating,
@@ -111,6 +111,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "6-9"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "nail_lockdown"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -407,6 +411,12 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/north,
+/obj/machinery/button/door{
+	pixel_x = 16;
+	pixel_y = 21;
+	name = "Cabin Lockdown";
+	id = "nail_lockdown"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "C" = (
@@ -526,6 +536,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "nail_lockdown"
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/bridge)
 "M" = (
@@ -629,6 +643,10 @@
 "U" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "nail_lockdown"
+	},
 /turf/open/floor/plating/airless,
 /area/ship/bridge)
 "V" = (
@@ -679,7 +697,7 @@
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/button/door{
 	id = "nail_window_shut";
-	name = "Nail Window Shutters";
+	name = "Window Shutters";
 	dir = 1;
 	pixel_y = -20;
 	pixel_x = -9
