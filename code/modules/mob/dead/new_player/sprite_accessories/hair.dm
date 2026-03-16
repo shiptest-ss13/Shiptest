@@ -74,7 +74,7 @@
 	name = "Cornrows"
 	icon_state = "hair_cornrows"
 
-/datum/sprite_accessory/hair/cornrows
+/datum/sprite_accessory/hair/cornrowslong
 	name = "Cornrows (Long)"
 	icon_state = "hair_cornrowslong"
 
@@ -250,10 +250,6 @@
 	name = "Kusanagi Hair (Ponytail)"
 	icon_state = "hair_kusanagipony"
 
-/datum/sprite_accessory/hair/shagcut
-	name = "Shag Cut"
-	icon_state = "hair_shagcut"
-
 /datum/sprite_accessory/hair/longhalf
 	name = "Long Half"
 	icon_state = "hair_longhalf"
@@ -331,7 +327,7 @@
 	icon_state = "hair_pigtails"
 
 /datum/sprite_accessory/hair/pigtailslong
-	name = "Pigtails (long)"
+	name = "Pigtails (Long)"
 	icon_state = "hair_pigtailslong"
 
 /datum/sprite_accessory/hair/pixie
@@ -445,6 +441,10 @@
 /datum/sprite_accessory/hair/sidetailshort
 	name = "Sidetail (Short)"
 	icon_state = "hair_sidetailshort"
+
+/datum/sprite_accessory/hair/shagcut
+	name = "Shag Cut"
+	icon_state = "hair_shagcut"
 
 /datum/sprite_accessory/hair/shaved
 	name = "Shaved"
