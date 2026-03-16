@@ -15,6 +15,8 @@
 	var/netexcess = 0			// excess power on the powernet (typically avail-load)///////
 	var/delayedload = 0			// load applied to powernet between power ticks.
 
+	var/static_load = 0
+
 /datum/powernet/New()
 	SSmachines.powernets += src
 
@@ -77,6 +79,7 @@
 //handles the power changes in the powernet
 //called every ticks by the powernet controller
 /datum/powernet/proc/reset()
+	load += static_load
 	//see if there's a surplus of power remaining in the powernet and stores unused power in the SMES
 	netexcess = avail - load
 

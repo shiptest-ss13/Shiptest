@@ -70,6 +70,12 @@
 	else
 		return 0
 
+/obj/machinery/proc/add_static_load(amount)
+	. = FALSE
+	if(powernet)
+		powernet.static_load += amount
+		return TRUE
+
 /obj/machinery/proc/disconnect_terminal() // machines without a terminal will just return, no harm no fowl.
 	return
 
@@ -106,28 +112,28 @@
 	A.addStaticPower(value, powerchannel)
 
 /obj/machinery/proc/removeStaticPower(value, powerchannel, area/A)
-	addStaticPower(-value, powerchannel, A)
+	general_add_static(-value, powerchannel, A)
 
 /obj/machinery/proc/set_idle_power(area/A)
 	set_no_power(A)
 	if(use_power == NO_POWER_USE)
 		return
 	use_static_power = IDLE_POWER_USE
-	addStaticPower(idle_power_usage, power_channel + 3, A)
+	general_add_static(idle_power_usage, power_channel + 3, A)
 
 /obj/machinery/proc/set_active_power(area/A)
 	set_no_power(A)
 	if(use_power == NO_POWER_USE)
 		return
 	use_static_power = ACTIVE_POWER_USE
-	addStaticPower(active_power_usage, power_channel + 3, A)
+	general_add_static(active_power_usage, power_channel + 3, A)
 
 /obj/machinery/proc/set_no_power(area/A)
 	switch(use_static_power)
 		if(IDLE_POWER_USE)
-			removeStaticPower(idle_power_usage, power_channel + 3, A)
+			general_remove_static(idle_power_usage, power_channel + 3, A)
 		if(ACTIVE_POWER_USE)
-			removeStaticPower(active_power_usage, power_channel + 3, A)
+			general_remove_static(active_power_usage, power_channel + 3, A)
 	use_static_power = NO_POWER_USE
 
 /obj/machinery/proc/set_static_power(area/A)//used to set the actual draw to the value of use_static_power
@@ -153,7 +159,7 @@
 
 	if(machine_stat & BROKEN)
 		return
-	if(powered(power_channel))
+	if(general_powered(chan = power_channel))
 		set_static_power(A)
 		if(machine_stat & NOPOWER)
 			SEND_SIGNAL(src, COMSIG_MACHINERY_POWER_RESTORED)
@@ -165,6 +171,10 @@
 			. = TRUE
 		set_machine_stat(machine_stat | NOPOWER)
 	update_appearance()
+
+///////////////////////////////////////////
+// Generic Power Procs
+///////////////////////////////////////////
 
 // connect the machine to a powernet if a node cable is present on the turf
 /obj/machinery/proc/connect_to_network()
@@ -186,6 +196,41 @@
 		return FALSE
 	powernet.remove_machine(src)
 	return TRUE
+
+/obj/machinery/proc/general_powered(amount, chan = -1)
+	if(power_flags & POWER_ALLOW_WIRE)
+		return avail(amount)
+	if(power_flags & POWER_ALLOW_AREA)
+		return powered(chan)
+	return FALSE
+
+/obj/machinery/proc/general_temp_load(amount, chan = -1)
+	if(power_flags & POWER_ALLOW_WIRE)
+		return add_load(amount)
+	if(power_flags & POWER_ALLOW_AREA)
+		return use_power(amount, chan)
+	return FALSE
+
+/obj/machinery/proc/general_temp_avail(amount, chan = -1)
+	if(power_flags & POWER_ALLOW_WIRE)
+		return add_avail(amount)
+	if(power_flags & POWER_ALLOW_AREA)
+		return // TODO
+	return FALSE
+
+/obj/machinery/proc/general_add_static(amount, chan = -1, area)
+	if(power_flags & POWER_ALLOW_WIRE)
+		return add_static_load(amount)
+	if(power_flags & POWER_ALLOW_AREA)
+		return addStaticPower(amount, chan, area)
+	return FALSE
+
+/obj/machinery/proc/general_remove_static(amount, chan = -1, area)
+	if(power_flags & POWER_ALLOW_WIRE)
+		return add_static_load(-amount)
+	if(power_flags & POWER_ALLOW_AREA)
+		return removeStaticPower(amount, chan, area)
+	return FALSE
 
 // attach a wire to a power machine - leads from the turf you are standing on
 //almost never called, overwritten by all power machines but terminal and generator
