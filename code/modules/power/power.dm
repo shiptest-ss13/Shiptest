@@ -16,6 +16,7 @@
 	active_power_usage = 0
 	req_ship_access = TRUE
 	power_flags = POWER_ALLOW_WIRE
+	interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_SET_MACHINE | INTERACT_MACHINE_UNPOWERED
 
 /obj/machinery/power/Destroy()
 	disconnect_from_network()
@@ -155,6 +156,7 @@
 /obj/machinery/proc/power_change(area/A)
 	SIGNAL_HANDLER
 	SHOULD_CALL_PARENT(1)
+	connect_to_network()
 	set_no_power(A)
 
 	if(machine_stat & BROKEN)
@@ -198,35 +200,35 @@
 	return TRUE
 
 /obj/machinery/proc/general_powered(amount, chan = -1)
-	if(power_flags & POWER_ALLOW_WIRE)
+	if(power_flags & POWER_ALLOW_WIRE && powernet)
 		return avail(amount)
 	if(power_flags & POWER_ALLOW_AREA)
 		return powered(chan)
 	return FALSE
 
 /obj/machinery/proc/general_temp_load(amount, chan = -1)
-	if(power_flags & POWER_ALLOW_WIRE)
+	if(power_flags & POWER_ALLOW_WIRE && powernet)
 		return add_load(amount)
 	if(power_flags & POWER_ALLOW_AREA)
 		return use_power(amount, chan)
 	return FALSE
 
 /obj/machinery/proc/general_temp_avail(amount, chan = -1)
-	if(power_flags & POWER_ALLOW_WIRE)
+	if(power_flags & POWER_ALLOW_WIRE && powernet)
 		return add_avail(amount)
 	if(power_flags & POWER_ALLOW_AREA)
 		return // TODO
 	return FALSE
 
 /obj/machinery/proc/general_add_static(amount, chan = -1, area)
-	if(power_flags & POWER_ALLOW_WIRE)
+	if(power_flags & POWER_ALLOW_WIRE && powernet)
 		return add_static_load(amount)
 	if(power_flags & POWER_ALLOW_AREA)
 		return addStaticPower(amount, chan, area)
 	return FALSE
 
 /obj/machinery/proc/general_remove_static(amount, chan = -1, area)
-	if(power_flags & POWER_ALLOW_WIRE)
+	if(power_flags & POWER_ALLOW_WIRE && powernet)
 		return add_static_load(-amount)
 	if(power_flags & POWER_ALLOW_AREA)
 		return removeStaticPower(amount, chan, area)

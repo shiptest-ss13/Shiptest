@@ -138,7 +138,7 @@ Class Procs:
 	var/atmos_processing = FALSE
 	var/interacts_with_air = FALSE
 
-	var/power_flags = POWER_ALLOW_AREA
+	var/power_flags = POWER_ALLOW_AREA | POWER_ALLOW_WIRE
 	var/datum/powernet/powernet = null
 
 /obj/machinery/Initialize(mapload, apply_default_parts = TRUE)

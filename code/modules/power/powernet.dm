@@ -81,7 +81,12 @@
 /datum/powernet/proc/reset()
 	load += static_load
 	//see if there's a surplus of power remaining in the powernet and stores unused power in the SMES
+	last_excess = netexcess
 	netexcess = avail - load
+
+	if(netexcess != last_excess)
+		for(var/obj/machinery/machine in nodes)
+			machine.power_change()
 
 	if(netexcess > 100 && nodes && nodes.len)		// if there was excess power last cycle
 		for(var/obj/machinery/power/smes/S in nodes)	// find the SMESes in the network
