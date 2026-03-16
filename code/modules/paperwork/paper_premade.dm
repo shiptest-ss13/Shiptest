@@ -158,4 +158,6 @@
 	name = "\improper DO NOT READ."
 	default_raw_text = "Keep forgetting where I put my derringer everytime I leave it somewhere, so im keeping it in the safe. REMINDER: The safe is besides the only plant that seems to survive in this dumb habitat."
 
-
+/obj/item/paper/fluff/ships/silverfish
+	name ="\improper WARNING!!!!"
+	default_raw_text = "DO NOT USE THE BASE AIRMIX ON THE TURBINE!! We didn't have time to get a custom one installed so ya gotta do it yourself, remember, the ratio of the mix determines the thrust, and with limited fuel, this beautiful emergency thruster needs the best thrust possible to be as efficient. ALSO ONLY USE IT WHEN BEING CHASED...unless ya somehow discovered a shitload of fuel."
