@@ -185,6 +185,7 @@
 	playsound(src, firesound, 75, TRUE)
 	projectile_to_fire.preparePixelProjectile(target, targets_from)
 	projectile_to_fire.fire()
+	projectile_to_fire.firer = src
 
 /obj/machinery/deployable_turret/ultimate  // Admin-only proof of concept for autoclicker automatics
 	name = "Infinity Gun"

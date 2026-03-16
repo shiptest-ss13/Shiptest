@@ -67,30 +67,6 @@
 		/obj/structure/shipping_container/lime=1,
 	)
 
-/atom/movable/screen/alert/status_effect/dazzled
-	name = "Dazzled"
-	desc = "You're dazzled from the bright searchlight! The blinding effects will wear off after a bit once you get used to it, making you immune to further dazzling until your eyes return to normal."
-	icon = 'icons/obj/city/event_structs.dmi'
-	icon_state = "searchlight_on"
-
-/datum/status_effect/dazzled
-	id = "dazzled"
-	status_type = STATUS_EFFECT_REFRESH
-	duration = 5 SECONDS
-	alert_type = /atom/movable/screen/alert/status_effect/dazzled
-
-/datum/status_effect/dazzled/on_creation(mob/living/new_owner, set_duration)
-	if(isnum(set_duration))
-		duration = set_duration
-	. = ..()
-/*
-/datum/status_effect/pacify/on_apply()
-	ADD_TRAIT(owner, TRAIT_PACIFISM, "status_effect")
-	return ..()
-
-/datum/status_effect/pacify/on_remove()
-	REMOVE_TRAIT(owner, TRAIT_PACIFISM, "status_effect")
-*/
 /obj/machinery/deployable_turret/spotlight
 	name = "spotlight"
 	desc = "While the trigger is held down, this spotlight will dazzle those in range."

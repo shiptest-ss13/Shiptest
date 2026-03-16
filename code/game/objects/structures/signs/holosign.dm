@@ -42,7 +42,7 @@
 		randomise()
 	if(!overlay_state)
 		overlay_state = icon_state
-	icon_state = holosign
+	icon_state = "holosign"
 
 	AddElement(/datum/element/beauty, 300)
 
@@ -88,6 +88,8 @@
 
 /obj/machinery/holosign/update_overlays()
 	. = ..()
+	if(overlay_state == /obj/machinery/holosign/switchadvert::icon_state)
+		return
 	if(machine_stat & NOPOWER)
 		return
 	if(machine_stat & BROKEN)
@@ -110,7 +112,7 @@
 		return FALSE
 	if(!cycle_posters)
 		return FALSE
-	if(!COOLDOWN_FINISHED(src, cycle_cooldown))
+	if(!COOLDOWN_FINISHED(src, cycle_cooldown) || random_type == POSTER_NORANDOM)
 		return FALSE
 	do_switch_advert()
 	//rand() is used in case a bunch of holoposters are placed down, so they slowly desync
@@ -132,10 +134,10 @@
 	icon_state = "mw"
 	light_color = LIGHT_COLOR_BLUE
 
-/obj/machinery/holosign/tadpole
+/obj/machinery/holosign/lanchester
 	name = "holosign - Visit Lanchester City"
-	desc_add = "Tadpole city: Party all night, cause the night almost never ends, find your fun at Lanchester City."
-	icon_state = "tadpole"
+	desc_add = "Lanchester city: Party all night, cause the night almost never ends, find your fun at Lanchester City."
+	icon_state = "lanchester"
 	light_color = LIGHT_COLOR_GREEN
 
 /obj/machinery/holosign/gec
