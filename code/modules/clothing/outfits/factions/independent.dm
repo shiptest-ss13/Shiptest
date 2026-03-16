@@ -291,6 +291,16 @@
 	head = /obj/item/clothing/head/pirate
 	suit = /obj/item/clothing/suit/pirate
 
+/datum/outfit/job/independent/hop/gown
+	name = "Independent - Head of Personnel (Gown)"
+
+	ears = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	dcoat = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+
+	backpack_contents = null
+
 // Head of Security
 
 /datum/outfit/job/independent/hos
@@ -424,6 +434,21 @@
 	backpack_contents = list(/obj/item/melee/baton/loaded=1)
 
 	implants = list(/obj/item/implant/radio)
+
+/datum/outfit/job/independent/security/gown
+	name = "Independent - Security Officer (Gown)"
+	jobtype = /datum/job/officer
+	job_icon = "securityofficer"
+
+	ears = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	gloves = null
+	head = null
+	suit = null
+	dcoat = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+	l_pocket = null
+	backpack_contents = null
 
 // Engineer
 
@@ -566,6 +591,15 @@
 
 	ears = /obj/item/radio/headset/pirate
 	uniform = /obj/item/clothing/under/costume/sailor
+
+/datum/outfit/job/independent/doctor/gown
+	name = "Independent - Medical Doctor (Gown)"
+
+	ears = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+	suit =  null
+	dcoat = null
 
 // Cargo Tech
 
@@ -732,6 +766,18 @@
 	backpack = /obj/item/storage/backpack/science
 	satchel = /obj/item/storage/backpack/satchel/tox
 	courierbag = /obj/item/storage/backpack/messenger/tox
+
+/datum/outfit/job/independent/miner/gown
+	name = "Independent - Miner (Gown)"
+
+	ears = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
+	gloves = null
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	suit = null
+	dcoat = null
+	l_pocket = null
+	backpack_contents = null
 
 // Hunter
 

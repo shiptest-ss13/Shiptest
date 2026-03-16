@@ -36,7 +36,6 @@
 	pixel_y = 6
 	},
 /obj/item/radio/intercom/directional/west{
-	pixel_x = -31;
 	pixel_y = -12
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
@@ -45,8 +44,7 @@
 	},
 /obj/structure/chair/sofa/blue/corpo/right/directional,
 /obj/item/clothing/head/hairbow/darkblue{
-	pixel_x = -3;
-	pixel_y = 0
+	pixel_x = -3
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
@@ -62,7 +60,6 @@
 /area/ship/hallway/central)
 "as" = (
 /obj/structure/chair/handrail{
-	pixel_x = 0;
 	pixel_y = 1
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -143,11 +140,9 @@
 /obj/machinery/light/directional/east,
 /obj/item/crowbar/power,
 /obj/item/storage/toolbox/electrical{
-	pixel_x = 0;
 	pixel_y = -10
 	},
 /obj/item/storage/toolbox/mechanical{
-	pixel_x = 0;
 	pixel_y = 7
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -182,8 +177,7 @@
 "bT" = (
 /obj/structure/dresser{
 	dir = 8;
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
@@ -218,7 +212,8 @@
 /obj/docking_port/stationary{
 	width = 30;
 	height = 15;
-	dwidth = 15
+	dwidth = 15;
+	name = "Puppis Port Dock"
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -226,9 +221,7 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/computer/cargo{
 	dir = 8;
-	icon_state = "computer-left";
-	pixel_x = 0;
-	pixel_y = 0
+	icon_state = "computer-left"
 	},
 /obj/machinery/button/door{
 	pixel_x = 8;
@@ -266,9 +259,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "cG" = (
-/obj/effect/turf_decal/siding/thinplating/dark/corner{
-	dir = 2
-	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner,
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 4
 	},
@@ -338,8 +329,7 @@
 	dir = 1
 	},
 /obj/machinery/iv_drip{
-	pixel_x = -14;
-	pixel_y = 0
+	pixel_x = -14
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
@@ -443,7 +433,6 @@
 /obj/effect/turf_decal/corner/transparent/blue/diagonal,
 /obj/structure/table/reinforced,
 /obj/item/cutting_board{
-	pixel_x = 0;
 	pixel_y = 2
 	},
 /turf/open/floor/plasteel/patterned/brushed,
@@ -805,8 +794,7 @@
 "im" = (
 /obj/structure/dresser{
 	dir = 8;
-	pixel_x = 6;
-	pixel_y = 0
+	pixel_x = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/carpet/blue,
@@ -1022,12 +1010,10 @@
 "lj" = (
 /obj/structure/rack,
 /obj/item/mop{
-	pixel_x = 6;
-	pixel_y = 0
+	pixel_x = 6
 	},
 /obj/item/storage/bag/trash{
-	pixel_x = -7;
-	pixel_y = 0
+	pixel_x = -7
 	},
 /obj/machinery/airalarm/directional/east,
 /obj/machinery/firealarm/directional/south,
@@ -1218,16 +1204,11 @@
 	pixel_x = -7;
 	pixel_y = -3
 	},
+/obj/item/reagent_containers/glass/bowl,
 /obj/item/reagent_containers/glass/bowl{
-	pixel_x = 0;
-	pixel_y = 0
-	},
-/obj/item/reagent_containers/glass/bowl{
-	pixel_x = 0;
 	pixel_y = -4
 	},
 /obj/item/reagent_containers/glass/bowl{
-	pixel_x = 0;
 	pixel_y = -8
 	},
 /turf/open/floor/plasteel/patterned/brushed,
@@ -1531,8 +1512,7 @@
 	pixel_y = 21
 	},
 /obj/machinery/firealarm/directional/north{
-	pixel_x = -1;
-	pixel_y = 32
+	pixel_x = -1
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -1553,7 +1533,8 @@
 /obj/docking_port/mobile{
 	dir = 8;
 	launch_status = 0;
-	preferred_direction = 4
+	preferred_direction = 4;
+	name = "Puppis-class"
 	},
 /obj/machinery/door/poddoor{
 	dir = 4;
@@ -1628,9 +1609,7 @@
 "qv" = (
 /obj/machinery/computer/monitor{
 	dir = 1;
-	icon_state = "computer-right";
-	pixel_x = 0;
-	pixel_y = 0
+	icon_state = "computer-right"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plasteel/telecomms_floor,
@@ -1851,8 +1830,7 @@
 /obj/machinery/airalarm/directional/north,
 /obj/structure/chair/sofa/blue/corpo/left,
 /obj/item/clothing/under/pants/pajamablue{
-	pixel_x = 4;
-	pixel_y = 0
+	pixel_x = 4
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
@@ -2015,7 +1993,6 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/newscaster/directional/west{
-	pixel_x = -30;
 	pixel_y = 6
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -2233,10 +2210,7 @@
 /obj/effect/turf_decal/trimline/opaque/blue/warning{
 	dir = 1
 	},
-/obj/structure/chair/handrail{
-	pixel_x = 0;
-	pixel_y = 0
-	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "yi" = (
@@ -2271,8 +2245,6 @@
 /obj/machinery/computer/atmos_control/external{
 	dir = 1;
 	icon_state = "computer-left";
-	pixel_x = 0;
-	pixel_y = 0;
 	sensors = list("puppis_external" = "External Atmospherics Monitoring")
 	},
 /turf/open/floor/plasteel/telecomms_floor,
@@ -2282,7 +2254,6 @@
 /area/ship/crew/cryo)
 "zk" = (
 /obj/structure/closet/crate/bin{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /obj/effect/turf_decal/siding/wood{
@@ -2438,7 +2409,6 @@
 /obj/structure/filingcabinet/double{
 	dir = 4;
 	pixel_x = -11;
-	pixel_y = 0;
 	density = 0
 	},
 /obj/item/folder/blue,
@@ -2487,12 +2457,10 @@
 	},
 /obj/structure/closet/emcloset/wall/directional/north,
 /obj/item/tank/internals/emergency_oxygen/engi{
-	pixel_x = -1;
-	pixel_y = 0
+	pixel_x = -1
 	},
 /obj/item/tank/internals/emergency_oxygen/engi{
-	pixel_x = 6;
-	pixel_y = 0
+	pixel_x = 6
 	},
 /obj/item/clothing/mask/gas/clip,
 /turf/open/floor/plasteel/dark,
@@ -2750,7 +2718,6 @@
 /obj/machinery/door/window/northleft,
 /obj/machinery/shower{
 	dir = 8;
-	pixel_x = 0;
 	pixel_y = -3
 	},
 /obj/machinery/light/small/directional/west,
@@ -2790,9 +2757,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Da" = (
-/obj/effect/turf_decal/siding/thinplating/dark/corner{
-	dir = 2
-	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner,
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 4
 	},
@@ -2972,8 +2937,7 @@
 	},
 /obj/effect/turf_decal/siding/thinplating,
 /obj/structure/chair/bench/blue/directional/east{
-	pixel_x = -4;
-	pixel_y = 0
+	pixel_x = -4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
@@ -3256,12 +3220,10 @@
 "Jg" = (
 /obj/effect/turf_decal/trimline/transparent/blue/warning,
 /obj/item/storage/box/flares{
-	pixel_x = -9;
-	pixel_y = 0
+	pixel_x = -9
 	},
 /obj/item/storage/box/flares{
-	pixel_x = 8;
-	pixel_y = 0
+	pixel_x = 8
 	},
 /obj/structure/closet/crate/engineering{
 	name = "emergency disembarkation supplies"
@@ -3319,8 +3281,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/structure/table/reinforced,
 /obj/machinery/coffeemaker{
-	pixel_x = -2;
-	pixel_y = 4
+	pixel_x = -2
 	},
 /obj/item/storage/fancy/coffee_cart_rack{
 	pixel_x = 15;
@@ -3659,7 +3620,6 @@
 	pixel_y = 5
 	},
 /obj/item/reagent_containers/spray/pepper{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /obj/item/storage/pouch/ammo{
@@ -3746,7 +3706,6 @@
 	pixel_y = -8
 	},
 /obj/item/storage/belt/military/clip{
-	pixel_x = 0;
 	pixel_y = -4
 	},
 /obj/item/clothing/glasses/sunglasses/ballistic{
@@ -3845,11 +3804,9 @@
 /obj/structure/closet/secure_closet/armorycage,
 /obj/effect/turf_decal/spline/plain/opaque/blue,
 /obj/item/ammo_box/magazine/f4_308{
-	pixel_x = 0;
 	pixel_y = 9
 	},
 /obj/item/ammo_box/magazine/f4_308{
-	pixel_x = 0;
 	pixel_y = 8
 	},
 /obj/item/stock_parts/cell/gun/kalix{
@@ -3857,8 +3814,7 @@
 	pixel_y = -9
 	},
 /obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = -7;
-	pixel_y = 0
+	pixel_x = -7
 	},
 /obj/item/ammo_box/magazine/cm23{
 	pixel_x = 10;
@@ -4045,8 +4001,7 @@
 "Po" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger{
-	pixel_x = 4;
-	pixel_y = 0
+	pixel_x = 4
 	},
 /obj/effect/turf_decal/spline/plain/opaque/blue{
 	dir = 8
@@ -4058,7 +4013,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/structure/table/reinforced,
 /obj/machinery/microwave{
-	pixel_x = 0;
 	pixel_y = 7
 	},
 /turf/open/floor/plasteel/patterned/brushed,
@@ -4491,7 +4445,6 @@
 	pixel_y = -5
 	},
 /obj/item/clothing/under/clip/minutemen{
-	pixel_x = 0;
 	pixel_y = -5
 	},
 /obj/item/clothing/under/clip/minutemen{
@@ -4542,8 +4495,7 @@
 	dir = 8
 	},
 /obj/structure/chair/bench/blue/directional/east{
-	pixel_x = -4;
-	pixel_y = 0
+	pixel_x = -4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/light/directional/west,
@@ -4776,7 +4728,6 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light_switch{
-	pixel_x = 0;
 	pixel_y = 21
 	},
 /turf/open/floor/wood/walnut,
@@ -4830,10 +4781,7 @@
 /obj/effect/turf_decal/trimline/transparent/blue/line{
 	dir = 10
 	},
-/obj/machinery/vending/cola/starkist{
-	pixel_x = 0;
-	pixel_y = 0
-	},
+/obj/machinery/vending/cola/starkist,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
 "WE" = (
@@ -5046,7 +4994,6 @@
 	pixel_y = 5
 	},
 /obj/item/clothing/head/clip/boonie{
-	pixel_x = 0;
 	pixel_y = 5
 	},
 /obj/item/clothing/head/clip/boonie{
@@ -5070,7 +5017,6 @@
 	pixel_y = -13
 	},
 /obj/item/clothing/shoes/cowboy/black{
-	pixel_x = 0;
 	pixel_y = -12
 	},
 /obj/item/clothing/shoes/cowboy/black{
