@@ -16,4 +16,4 @@
 /obj/item/ammo_casing/caseless/rocket/test
 	name = "\improper test rocket"
 	desc = "An 84mm High Explosive rocket. Fire at people and pray."
-	projectile_type = /obj/projectile/bullet/a84mm_test
+	projectile_type = /obj/projectile/bullet/a84mm_weak

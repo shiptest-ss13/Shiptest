@@ -59,7 +59,7 @@
 
 /obj/projectile/bullet/slug/frag12/on_hit(atom/target, blocked = FALSE)
 	..()
-	explosion(target, -1, 0, 1)
+	explosion(target, -1, 0, 2, light_dam = 30)
 	return BULLET_ACT_HIT
 
 /obj/projectile/bullet/pellet

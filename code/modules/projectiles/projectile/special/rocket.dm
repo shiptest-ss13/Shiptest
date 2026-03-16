@@ -31,14 +31,14 @@
 	explosion(target, 0, 1, 2, 4)
 	return BULLET_ACT_HIT
 
-/obj/projectile/bullet/a84mm_test
+/obj/projectile/bullet/a84mm_weak
 	name ="\improper HE missile"
 	desc = "Boom."
 	icon_state = "missile"
 	damage = 0
 	ricochets_max = 0 //it's a MISSILE
 
-/obj/projectile/bullet/a84mm_test/on_hit(atom/target, blocked=0)
+/obj/projectile/bullet/a84mm_weak/on_hit(atom/target, blocked=0)
 	..()
 	explosion(target, 0, 0, 3, light_dam = 20, light_item_dam = 30)
 	return BULLET_ACT_HIT
