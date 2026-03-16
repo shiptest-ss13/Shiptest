@@ -248,29 +248,6 @@
 	icon_state = "ihejirika"
 	light_color = LIGHT_COLOR_DARK_BLUE
 
-/obj/machinery/holosign/visitor
-	name = "holosign - Attention Spacer Visitors"
-	desc_add = "Attention Spacer Visitors!\nWe welcome you to Tadpole City! Before embarking onto downtown, a few things to remember:\n\
-	You MUST bring a gas mask, cloak or covering suit, and a hat or head covering. The toxic rain will cause serious harm if none are on your person.\n\
-	On your person, you are ALLOWED to conceal carry small arms, but are strictly forbidden from carrying long arms. Only Tadpoles are allowed to carry longarms on person.\n\
-	Thank you, we hope you will love your visit as much as we love you!"
-	icon_state = "visitors"
-	light_color = COLOR_ASSEMBLY_WHITE
-	never_random = TRUE
-	cycle_posters = FALSE
-
-/obj/machinery/holosign/blockade
-	name = "holosign - Attention Exitting Vessels"
-	desc_add = "Attention Spacer Visitors!\n Due to the ongoing blockade by the CLIP CMM:\n\
-	All vessels attempting to exit back into CLIP space from the May Thrace Sector route WILL be intercepted and arrested. Any goods coming from that route are intercepted and confescated\n\
-	Attempting to exit or visit from that route may result in being shot down by clip.\n\
-	We have attempted diplomatic talks in order to resolve this situation yet it remains unsolved. The siutation will also severely affect prices of local goods.\n\
-	We apologize for the situation, but it is out of our control"
-	icon_state = "blockade"
-	light_color = COLOR_ASSEMBLY_WHITE
-	never_random = TRUE
-	cycle_posters = FALSE
-
 /obj/machinery/holosign/random
 	name = "randomized holosign"
 	icon_state = "random"
