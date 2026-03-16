@@ -50,10 +50,7 @@
 		return 0
 
 /obj/machinery/proc/avail(amount)
-	if(powernet)
-		return amount ? powernet.avail >= amount : powernet.avail
-	else
-		return 0
+	return general_powered(amount = amount)
 
 /obj/machinery/proc/add_delayedload(amount)
 	if(powernet)
@@ -83,17 +80,7 @@
 // returns true if the area has power on given channel (or doesn't require power).
 // defaults to power_channel
 /obj/machinery/proc/powered(chan = -1) // defaults to power_channel
-	if(!loc)
-		return FALSE
-	if(!use_power)
-		return TRUE
-
-	var/area/A = get_area(src)		// make sure it's in an area
-	if(!A)
-		return FALSE					// if not, then not powered
-	if(chan == -1)
-		chan = power_channel
-	return A.powered(chan)	// return power status of the area
+	return general_powered(chan)
 
 // increment the power usage stats for an area
 /obj/machinery/proc/use_power(amount, chan = -1) // defaults to power_channel
@@ -201,35 +188,44 @@
 	powernet.remove_machine(src)
 	return TRUE
 
-/obj/machinery/proc/general_powered(amount, chan = -1)
+/obj/machinery/proc/general_powered(chan = -1, amount)
+	if(!loc)
+		return FALSE
+	if(!use_power)
+		return TRUE
 	if(power_flags & POWER_ALLOW_WIRE && powernet)
-		return avail(amount)
+		return amount ? powernet.avail >= amount : powernet.avail
 	if(power_flags & POWER_ALLOW_AREA)
-		return powered(chan)
+		var/area/A = get_area(src)		// make sure it's in an area
+		if(!A)
+			return FALSE					// if not, then not powered
+		if(chan == -1)
+			chan = power_channel
+		return A.powered(chan)	// return power status of the area
 	return FALSE
 
-/obj/machinery/proc/general_temp_load(amount, chan = -1)
+/obj/machinery/proc/general_temp_load(chan = -1, amount)
 	if(power_flags & POWER_ALLOW_WIRE && powernet)
 		return add_load(amount)
 	if(power_flags & POWER_ALLOW_AREA)
 		return use_power(amount, chan)
 	return FALSE
 
-/obj/machinery/proc/general_temp_avail(amount, chan = -1)
+/obj/machinery/proc/general_temp_avail(chan = -1, amount)
 	if(power_flags & POWER_ALLOW_WIRE && powernet)
 		return add_avail(amount)
 	if(power_flags & POWER_ALLOW_AREA)
 		return // TODO
 	return FALSE
 
-/obj/machinery/proc/general_add_static(amount, chan = -1, area)
+/obj/machinery/proc/general_add_static(chan = -1, amount, area)
 	if(power_flags & POWER_ALLOW_WIRE && powernet)
 		return add_static_load(amount)
 	if(power_flags & POWER_ALLOW_AREA)
 		return addStaticPower(amount, chan, area)
 	return FALSE
 
-/obj/machinery/proc/general_remove_static(amount, chan = -1, area)
+/obj/machinery/proc/general_remove_static(chan = -1, amount, area)
 	if(power_flags & POWER_ALLOW_WIRE && powernet)
 		return add_static_load(-amount)
 	if(power_flags & POWER_ALLOW_AREA)
