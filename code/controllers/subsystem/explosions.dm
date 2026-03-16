@@ -560,9 +560,6 @@ SUBSYSTEM_DEF(explosions)
 		timer = TICK_USAGE_REAL
 		var/list/med_obj = medobj
 		medobj = list()
-		// for(var/obj/O as anything in med_obj)
-		// 	if(!QDELETED(O))
-		// 		O.ex_act(EXPLODE_HEAVY)
 		for(var/exploded in med_obj)
 			if(islist(exploded))
 				var/list/explodey = exploded
@@ -578,9 +575,6 @@ SUBSYSTEM_DEF(explosions)
 		timer = TICK_USAGE_REAL
 		var/list/low_obj = lowobj
 		lowobj = list()
-		// for(var/obj/O as anything in low_obj)
-		// 	if(!QDELETED(O))
-		// 		O.ex_act(EXPLODE_LIGHT)
 		for(var/exploded as anything in low_obj)
 			if(islist(exploded))
 				var/list/explodey = exploded

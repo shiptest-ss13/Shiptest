@@ -185,14 +185,14 @@
 
 		if (EXPLODE_HEAVY)
 			take_overall_damage(heavy_dam/2, heavy_dam/2)
-			damage_clothes(200, BRUTE, "bomb")
+			damage_clothes(heavy_item_dam, BRUTE, "bomb")
 			adjustEarDamage(30, 120)
 			if(prob(70))
 				Unconscious(200)
 
 		if(EXPLODE_LIGHT)
 			take_overall_damage(light_dam/2, light_dam/2)
-			damage_clothes(50, BRUTE, "bomb")
+			damage_clothes(light_item_dam, BRUTE, "bomb")
 			adjustEarDamage(15,60)
 			if (prob(50))
 				Unconscious(160)

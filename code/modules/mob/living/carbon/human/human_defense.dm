@@ -494,8 +494,8 @@
 				brute_loss = 20*(2 - round(bomb_armor*0.01, 0.05))
 				burn_loss = brute_loss				//damage gets reduced from 120 to up to 60 combined brute+burn
 			intensity = 2
-			ear_damage = 30
-			deafness_power = 120
+			ear_damage = heavy_dam/3
+			deafness_power = heavy_dam * (3/2)
 			damage_clothes(max(heavy_item_dam - bomb_armor, 0), BRUTE, "bomb")
 			Unconscious(20)							//short amount of time for follow up attacks against elusive enemies like wizards
 			Knockdown(200 - (bomb_armor * 1.6)) 	//between ~4 and ~20 seconds of knockdown depending on bomb armor
@@ -508,8 +508,8 @@
 				burn_loss = bruteloss
 			damage_clothes(max(light_item_dam - bomb_armor, 0), BRUTE, "bomb")
 			intensity = 1.5
-			ear_damage = 15
-			deafness_power = 60
+			ear_damage = light_dam/3
+			deafness_power = light_dam * (3/2)
 			Knockdown(160 - (bomb_armor * 1.6))		//100 bomb armor will prevent knockdown altogether
 
 	take_overall_damage(brute_loss,burn_loss)

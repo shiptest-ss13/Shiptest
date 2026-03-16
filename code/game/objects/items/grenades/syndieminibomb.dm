@@ -20,9 +20,8 @@
 	icon_state = "concussion"
 	ex_dev = 0
 	ex_heavy = 2
-	heavy_damage = 2
+	heavy_damage = 50
 	ex_light = 3
-	light_damage = 1
 	ex_flame = 3
 
 /obj/item/grenade/frag
@@ -33,6 +32,7 @@
 	shrapnel_radius = 4
 	ex_heavy = 0
 	ex_light = 3
+	light_damage = 20
 	ex_flame = 1
 
 /obj/item/grenade/frag/mega

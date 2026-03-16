@@ -23,14 +23,14 @@
 	var/ex_dev = 0
 	///how big of a heavy explosion radius on prime
 	var/ex_heavy = 0
-	// how much damage the heavy explosion deals. Leave as is for default values
-	var/heavy_damage
-	var/heavy_item_damage
+	// how much damage the heavy explosion deals.
+	var/heavy_damage = EX_HEAVY_BASE_DAM
+	var/heavy_item_damage = EX_HEAVY_BASE_ITEM_DAM
 	///how big of a light explosion radius on prime
 	var/ex_light = 0
-	// how much damage the light explosion deals. Leave as is for default values
-	var/light_damage
-	var/light_item_damage
+	// how much damage the light explosion deals.
+	var/light_damage = EX_LIGHT_BASE_DAM
+	var/light_item_damage = EX_LIGHT_BASE_ITEM_DAM
 	///how big of a flame explosion radius on prime
 	var/ex_flame = 0
 
