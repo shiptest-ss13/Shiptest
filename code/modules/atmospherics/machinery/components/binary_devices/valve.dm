@@ -11,7 +11,7 @@ It's like a regular ol' straight pipe, but you can turn it on and off.
 	can_unwrench = TRUE
 	shift_underlay_only = FALSE
 
-	interaction_flags_machine = INTERACT_MACHINE_OFFLINE | INTERACT_MACHINE_OPEN //Intentionally no allow_silicon flag
+	interaction_flags_machine = INTERACT_MACHINE_UNPOWERED | INTERACT_MACHINE_OPEN //Intentionally no allow_silicon flag
 	pipe_flags = PIPING_CARDINAL_AUTONORMALIZE
 
 	var/frequency = 0
@@ -64,7 +64,7 @@ It's like a regular ol' straight pipe, but you can turn it on and off.
 	valve_type = "d"
 	pipe_state = "dvalve"
 
-	interaction_flags_machine = INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OFFLINE | INTERACT_MACHINE_OPEN | INTERACT_MACHINE_OPEN_SILICON
+	interaction_flags_machine = INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_UNPOWERED | INTERACT_MACHINE_OPEN | INTERACT_MACHINE_OPEN_SILICON
 
 /obj/machinery/atmospherics/components/binary/valve/digital/update_icon_nopipes(animation)
 	if(!is_operational)

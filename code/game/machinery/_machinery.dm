@@ -320,7 +320,9 @@ Class Procs:
 
 
 /obj/machinery/can_interact(mob/user)
-	if((machine_stat & (NOPOWER|BROKEN)) && !(interaction_flags_machine & INTERACT_MACHINE_OFFLINE)) // Check if the machine is broken, and if we can still interact with it if so
+	if(machine_stat & BROKEN && !(interaction_flags_machine & INTERACT_MACHINE_BROKEN)) // Check if the machine is broken, and if we can still interact with it if so
+		return FALSE
+	if(machine_stat & NOPOWER && !(interaction_flags_machine & INTERACT_MACHINE_UNPOWERED)) // Chef if the machine is powered, and if we can still interact with it if not
 		return FALSE
 
 	var/silicon = issilicon(user)
