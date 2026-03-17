@@ -23,8 +23,6 @@
 	var/needs_to_update_solar_exposure = TRUE //do we need to call update_solar_exposure() next tick?
 	var/obj/effect/overlay/panel
 
-	power_flags = POWER_ALLOW_AREA | POWER_ALLOW_WIRE
-
 /obj/machinery/power/solar/Initialize(mapload, obj/item/solar_assembly/S)
 	. = ..()
 	panel = new()
@@ -336,6 +334,8 @@
 
 	var/obj/machinery/power/tracker/connected_tracker = null
 	var/list/connected_panels = list()
+
+	power_flags = POWER_ALLOW_AREA | POWER_ALLOW_WIRE
 
 /obj/machinery/computer/solar_control/Initialize(mapload)
 	. = ..()

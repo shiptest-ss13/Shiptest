@@ -33,15 +33,10 @@
 // Non-machines should use add_delayedload(), delayed_surplus(), newavail()
 
 /obj/machinery/proc/add_avail(amount)
-	if(powernet)
-		powernet.newavail += amount
-		return TRUE
-	else
-		return FALSE
+	return general_temp_avail(amount = amount)
 
 /obj/machinery/proc/add_load(amount)
-	if(powernet)
-		powernet.load += amount
+	return general_temp_load(amount = amount)
 
 /obj/machinery/proc/surplus()
 	if(powernet)
@@ -68,12 +63,6 @@
 	else
 		return 0
 
-/obj/machinery/proc/add_static_load(amount)
-	. = FALSE
-	if(powernet)
-		powernet.static_load += amount
-		return TRUE
-
 /obj/machinery/proc/disconnect_terminal() // machines without a terminal will just return, no harm no fowl.
 	return
 
@@ -84,23 +73,13 @@
 
 // increment the power usage stats for an area
 /obj/machinery/proc/use_power(amount, chan = -1) // defaults to power_channel
-	var/area/A = get_area(src)		// make sure it's in an area
-	if(!A)
-		return
-	if(chan == -1)
-		chan = power_channel
-	A.use_power(amount, chan)
+	general_temp_load(chan, amount)
 
 /obj/machinery/proc/addStaticPower(value, powerchannel, area/A)
-	if(!A)
-		if(get_area(src))
-			A = get_area(src)
-		else
-			return
-	A.addStaticPower(value, powerchannel)
+	return general_add_static(powerchannel, value, A)
 
 /obj/machinery/proc/removeStaticPower(value, powerchannel, area/A)
-	general_add_static(-value, powerchannel, A)
+	general_add_static(powerchannel, -value, A)
 
 /obj/machinery/proc/set_idle_power(area/A)
 	set_no_power(A)
@@ -206,30 +185,41 @@
 
 /obj/machinery/proc/general_temp_load(chan = -1, amount)
 	if(power_flags & POWER_ALLOW_WIRE && powernet)
-		return add_load(amount)
+		powernet.load += amount
+		return TRUE
 	if(power_flags & POWER_ALLOW_AREA)
-		return use_power(amount, chan)
+		var/area/A = get_area(src)		// make sure it's in an area
+		if(!A)
+			return
+		if(chan == -1)
+			chan = power_channel
+		A.use_power(amount, chan)
 	return FALSE
 
 /obj/machinery/proc/general_temp_avail(chan = -1, amount)
 	if(power_flags & POWER_ALLOW_WIRE && powernet)
-		return add_avail(amount)
+		powernet.newavail += amount
+		return TRUE
 	if(power_flags & POWER_ALLOW_AREA)
 		return // TODO
 	return FALSE
 
-/obj/machinery/proc/general_add_static(chan = -1, amount, area)
+/obj/machinery/proc/general_add_static(chan = -1, amount, area/area)
 	if(power_flags & POWER_ALLOW_WIRE && powernet)
-		return add_static_load(amount)
+		powernet.static_load += amount
+		return TRUE
 	if(power_flags & POWER_ALLOW_AREA)
-		return addStaticPower(amount, chan, area)
+		area ||= get_area(src)
+		if(!area)
+			return FALSE
+		area.addStaticPower(amount, chan)
 	return FALSE
 
-/obj/machinery/proc/general_remove_static(chan = -1, amount, area)
+/obj/machinery/proc/general_remove_static(chan = -1, amount, area/area)
 	if(power_flags & POWER_ALLOW_WIRE && powernet)
-		return add_static_load(-amount)
+		return general_add_static(chan, -amount, area)
 	if(power_flags & POWER_ALLOW_AREA)
-		return removeStaticPower(amount, chan, area)
+		return general_add_static(chan, -amount, area)
 	return FALSE
 
 // attach a wire to a power machine - leads from the turf you are standing on
