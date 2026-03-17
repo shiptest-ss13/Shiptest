@@ -31,7 +31,7 @@
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 25,
+			"x" = 24,
 			"y" = 13,
 		)
 	)
@@ -112,7 +112,7 @@
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 24,
+			"x" = 25,
 			"y" = 13,
 		)
 	)
@@ -183,7 +183,7 @@
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 24,
+			"x" = 25,
 			"y" = 13,
 		)
 	)
@@ -220,7 +220,7 @@
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 25,
+			"x" = 24,
 			"y" = 13,
 		)
 	)
@@ -274,7 +274,7 @@
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 21,
+			"x" = 22,
 			"y" = 14,
 		)
 	)
@@ -331,7 +331,7 @@
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 30,
+			"x" = 31,
 			"y" = 13,
 		)
 	)
@@ -369,7 +369,7 @@
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 31,
+			"x" = 32,
 			"y" = 13,
 		)
 	)
@@ -436,7 +436,7 @@
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 35,
+			"x" = 36,
 			"y" = 13,
 		)
 	)
