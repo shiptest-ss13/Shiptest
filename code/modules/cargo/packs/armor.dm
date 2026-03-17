@@ -265,8 +265,8 @@
 					/obj/item/clothing/head/helmet/m10/nanotrasen,
 					/obj/item/clothing/suit/armor/nanotrasen,
 					/obj/item/clothing/under/nanotrasen/security)
-crate_name = "armor crate"
+	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-faction = /datum/faction/nt
+	faction = /datum/faction/nt
 	faction_discount = 0
 	faction_locked = TRUE
