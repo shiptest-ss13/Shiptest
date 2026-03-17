@@ -23,6 +23,8 @@
 	var/frontier_network = FALSE
 	/// True if the fax machine should be visible to other fax machines in general.
 	var/visible_to_network = TRUE
+	/// Mainly for if there's multiple admin faxes with the same ID and you want mail to go a specific fax first. The paper will be sent to a non-low priority fax first.
+	var/low_priority = FALSE
 	/// If true we will eject faxes at speed rather than sedately place them into a tray.
 	var/hurl_contents = FALSE
 	/// If true you can fax things which strictly speaking are not paper.
@@ -342,11 +344,21 @@
 			to_chat(GLOB.admins, span_adminnotice("[icon2html(src.icon, GLOB.admins)]<b><font color=green>FAX REQUEST: </font>[ADMIN_FULLMONTY(usr)]:</b> <span class='linkify'>sent a fax message from [fax_name]/[fax_id][ADMIN_FLW(src)] to [html_encode(params["name"])][to_show]"))
 			log_fax(thing_to_send, params["id"], params["name"])
 			loaded_item_ref = null
-
+			var/list/low_priority_faxes = list()
+			var/fax_found = FALSE
 			for(var/obj/machinery/fax/fax as anything in GLOB.fax_machines)
 				if(fax.admin_fax_id == params["id"])
+					if(fax.low_priority)
+						low_priority_faxes += fax
+						continue
 					fax.receive(thing_to_send, fax_name)
+					fax_found = TRUE
 					break
+			if(!fax_found)
+				for(var/obj/machinery/fax/fax as anything in low_priority_faxes)
+					if(fax.admin_fax_id == params["id"])
+						fax.receive(thing_to_send, fax_name)
+						break
 			update_appearance()
 
 		if("history_clear")
