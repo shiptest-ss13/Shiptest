@@ -219,7 +219,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 9
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/engines)
 "dl" = (
 /obj/effect/turf_decal/borderfloor{
@@ -260,6 +263,12 @@
 	pixel_y = 5;
 	name = "turbine blastdoor";
 	id = "s_flare"
+	},
+/obj/machinery/button/ignition{
+	dir = 4;
+	pixel_x = -22;
+	pixel_y = -7;
+	id = "silverturbine"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
@@ -992,9 +1001,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "lh" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1;
 	layer = 2.020
@@ -1005,7 +1011,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1224,12 +1229,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
-	},
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/engines)
@@ -2411,7 +2410,10 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4{
 	dir = 1
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 10
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/engines)
 "Am" = (
 /obj/structure/closet/secure_closet/cabinet{
@@ -2774,12 +2776,10 @@
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/computer/turbine_computer{
-	dir = 4;
-	pixel_x = -7
+	dir = 4
 	},
-/obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
-	dir = 1
+	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/engines)
@@ -2848,13 +2848,9 @@
 	},
 /area/ship/crew/dorm)
 "EF" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	layer = 2.020
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/engines)
 "EI" = (
@@ -3277,12 +3273,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4{
 	dir = 9
-	},
-/obj/machinery/button/ignition{
-	dir = 8;
-	pixel_x = 20;
-	pixel_y = -7;
-	id = "silverturbine"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
