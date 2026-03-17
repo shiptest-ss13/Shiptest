@@ -73,7 +73,18 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/plating/rust,
+/obj/effect/turf_decal/borderfloor{
+	layer = 2.020;
+	dir = 1
+	},
+/obj/effect/turf_decal/borderfloor{
+	layer = 2.020
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "aW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
@@ -384,18 +395,17 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/trimline/opaque/red/line{
-	dir = 1;
-	layer = 2.040
-	},
-/obj/effect/turf_decal/trimline/opaque/red/line,
 /obj/effect/turf_decal/borderfloor{
 	layer = 2.020;
 	dir = 1
 	},
 /obj/effect/turf_decal/borderfloor{
 	layer = 2.020
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1;
+	layer = 2.040
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -2043,7 +2053,22 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plating/rust,
+/obj/effect/turf_decal/borderfloor{
+	layer = 2.020;
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloor{
+	layer = 2.020;
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 8;
+	layer = 2.040
+	},
+/turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "ww" = (
 /obj/machinery/light/directional/east,
@@ -4207,18 +4232,17 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/trimline/opaque/red/line{
-	dir = 1;
-	layer = 2.040
-	},
-/obj/effect/turf_decal/trimline/opaque/red/line,
 /obj/effect/turf_decal/borderfloor{
 	layer = 2.020;
 	dir = 1
 	},
 /obj/effect/turf_decal/borderfloor{
 	layer = 2.020
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1;
+	layer = 2.040
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
