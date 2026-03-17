@@ -371,7 +371,7 @@
 	speak = list()
 	speak_emote = list("sniffles","twitches")
 	emote_hear = list("hops.")
-	emote_see = list("hops around","bounces up and down")
+	emote_see = list("hops around.","bounces up and down.")
 	butcher_results = list(/obj/item/food/meat/slab = 1)
 	food_type = /obj/item/food/grown/carrot
 	minbodytemp = 0
