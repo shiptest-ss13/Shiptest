@@ -154,7 +154,7 @@
 	if(!T)
 		return
 	var/obj/structure/cable/attached_wire = T.get_cable_node()
-	if((power_flags & POWER_ALLOW_WIRE) && attached_wire)
+	if((power_flags & POWER_ALLOW_WIRE) && attached_wire.powernet)
 		attached_wire.powernet.add_machine(src)
 		. = TRUE
 	if((power_flags & POWER_ALLOW_AREA) && get_area(src))
