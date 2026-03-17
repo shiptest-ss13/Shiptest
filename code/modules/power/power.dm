@@ -18,11 +18,6 @@
 	power_flags = POWER_ALLOW_WIRE
 	interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_SET_MACHINE | INTERACT_MACHINE_UNPOWERED
 
-/obj/machinery/power/Destroy()
-	disconnect_from_network()
-	set_no_power()
-	return ..()
-
 ///////////////////////////////
 // General procedures
 //////////////////////////////
