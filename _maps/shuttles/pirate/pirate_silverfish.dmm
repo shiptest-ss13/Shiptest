@@ -628,6 +628,12 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/structure/closet/crate/engineering/electrical,
+/obj/item/circuitboard/machine/grounding_rod,
+/obj/item/circuitboard/machine/grounding_rod,
+/obj/item/circuitboard/machine/grounding_rod,
+/obj/item/circuitboard/machine/grounding_rod,
+/obj/item/circuitboard/machine/grounding_rod,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "iB" = (
@@ -2018,6 +2024,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/engineering/engines)
+"vU" = (
+/obj/machinery/power/shuttle/engine/electric/premium,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "vZ" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable{
@@ -2538,6 +2551,7 @@
 /obj/item/storage/box/stockparts/t2,
 /obj/item/storage/box/stockparts/t2,
 /obj/effect/mapping_helpers/crate_shelve,
+/obj/item/storage/box/stockparts/t3,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "Ch" = (
@@ -4567,7 +4581,7 @@ yb
 yb
 yb
 SI
-re
+vU
 re
 SI
 ME
