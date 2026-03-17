@@ -228,6 +228,7 @@
 	gloves = /obj/item/clothing/gloves/combat
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
+	box = /obj/item/storage/box/survival/command
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec

@@ -158,17 +158,29 @@
 /obj/item/storage/box/survival/clip
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi //clip actually cares about their personnel
 
+/obj/item/storage/box/survival/clip/command
+	radio_type = /obj/item/radio/command
+
 /obj/item/storage/box/survival/clip/minutemen
 	mask_type = /obj/item/clothing/mask/balaclava/combat
 	internal_type = /obj/item/tank/internals/emergency_oxygen/double
+
+/obj/item/storage/box/survival/clip/minutemen/command
+	radio_type = /obj/item/radio/command
 
 /obj/item/storage/box/survival/pgf
 	mask_type = /obj/item/clothing/mask/breath/pgfmask
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
 
+/obj/item/storage/box/survival/pgf/command
+	radio_type = /obj/item/radio/command
+
 /obj/item/storage/box/survival/inteq
 	mask_type = /obj/item/clothing/mask/balaclava/inteq
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
+
+/obj/item/storage/box/survival/inteq/command
+	radio_type = /obj/item/radio/command
 
 /obj/item/storage/box/survival/frontier
 	mask_type = null // we spawn in gas masks in frontiersmen bags alongside this, so it isn't nessary
@@ -177,6 +189,12 @@
 /obj/item/storage/box/survival/vi
 	mask_type = /obj/item/clothing/mask/gas/vigilitas
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
+
+/obj/item/storage/box/survival/vi/command
+	radio_type = /obj/item/radio/command
+
+/obj/item/storage/box/survival/command
+	radio_type = /obj/item/radio/command
 
 /obj/item/storage/box/gloves
 	name = "box of latex gloves"
