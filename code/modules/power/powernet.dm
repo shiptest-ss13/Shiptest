@@ -25,7 +25,7 @@
 	for(var/obj/structure/cable/C in cables)
 		cables -= C
 		C.powernet = null
-	for(var/obj/machinery/power/M in nodes)
+	for(var/obj/machinery/M in nodes)
 		nodes -= M
 		M.powernet = null
 
@@ -58,7 +58,7 @@
 //remove a power machine from the current powernet
 //if the powernet is then empty, delete it
 //Warning : this proc DON'T check if the machine exists
-/datum/powernet/proc/remove_machine(obj/machinery/power/M)
+/datum/powernet/proc/remove_machine(obj/machinery/M)
 	nodes -=M
 	M.powernet = null
 	if(is_empty())//the powernet is now empty...

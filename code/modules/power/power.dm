@@ -238,7 +238,7 @@
 
 //returns all the cables WITHOUT a powernet in neighbors turfs,
 //pointing towards the turf the machine is located at
-/obj/machinery/power/proc/get_connections()
+/obj/machinery/proc/get_connections()
 
 	. = list()
 	var/cdir
@@ -257,7 +257,7 @@
 
 //returns all the cables in neighbors turfs,
 //pointing towards the turf the machine is located at
-/obj/machinery/power/proc/get_marked_connections()
+/obj/machinery/proc/get_marked_connections()
 
 	. = list()
 
@@ -274,7 +274,7 @@
 	return .
 
 //returns all the NODES (O-X) cables WITHOUT a powernet in the turf the machine is located at
-/obj/machinery/power/proc/get_indirect_connections()
+/obj/machinery/proc/get_indirect_connections()
 	. = list()
 	for(var/obj/structure/cable/C in loc)
 		if(C.powernet)
@@ -297,8 +297,8 @@
 	for(var/AM in T)
 		if(AM == source)
 			continue			//we don't want to return source
-		if(!cable_only && istype(AM, /obj/machinery/power))
-			var/obj/machinery/power/P = AM
+		if(!cable_only && istype(AM, /obj/machinery))
+			var/obj/machinery/P = AM
 			if(P.powernet == 0)
 				continue		// exclude APCs which have powernet=0
 
@@ -336,7 +336,7 @@
 				PN.add_cable(C)
 			worklist |= C.get_connections() //get adjacents power objects, with or without a powernet
 
-		else if(P.anchored && istype(P, /obj/machinery/power))
+		else if(P.anchored && istype(P, /obj/machinery))
 			var/obj/machinery/M = P
 			found_machines |= M //we wait until the powernet is fully propagates to connect the machines
 		else
@@ -366,7 +366,7 @@
 	for(var/obj/structure/cable/Cable in net2.cables) //merge cables
 		net1.add_cable(Cable)
 
-	for(var/obj/machinery/power/Node in net2.nodes) //merge power machines
+	for(var/obj/machinery/Node in net2.nodes) //merge power machines
 		if(!Node.connect_to_network())
 			Node.disconnect_from_network() //if somehow we can't connect the machine to the new powernet, disconnect it from the old nonetheless
 
