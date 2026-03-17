@@ -264,7 +264,7 @@
 	contains = list(/obj/item/clothing/head/nanotrasen/cap/security,
 					/obj/item/clothing/head/helmet/m10/nanotrasen,
 					/obj/item/clothing/suit/armor/nanotrasen,
-					/obj/item/clothing/under/nanotrasen/security,
+					/obj/item/clothing/under/nanotrasen/security)
 crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 faction = /datum/faction/nt
