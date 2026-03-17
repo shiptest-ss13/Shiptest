@@ -3,6 +3,7 @@
 	desc = "Stabby-Stabby"
 	icon_state = "bayonet"
 	item_state = "bayonet"
+	world_file = 'icons/obj/weapon/knives/knife_world.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/knifes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/knifes_righthand.dmi'
 	force = 15
