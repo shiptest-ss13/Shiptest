@@ -2,6 +2,9 @@
 	name = "bayonet"
 	desc = "Stabby-Stabby"
 	icon_state = "bayonet"
+	item_state = "bayonet"
+	lefthand_file = 'icons/mob/inhands/weapons/knifes_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/knifes_righthand.dmi'
 	force = 15
 	throwforce = 10
 	pickup_sound =  'sound/items/handling/knife1_pickup.ogg'

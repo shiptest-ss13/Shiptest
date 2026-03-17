@@ -29,6 +29,13 @@
 
 	manufacturer = MANUFACTURER_PGF
 
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 25,
+			"y" = 13,
+		)
+	)
+
 /obj/item/ammo_casing/energy/kalix
 	projectile_type = /obj/projectile/beam/hitscan/kalix
 	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
@@ -100,6 +107,14 @@
 
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_MUZZLE = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 24,
+			"y" = 13,
+		)
 	)
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/kalix
@@ -163,6 +178,14 @@
 
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_MUZZLE = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 24,
+			"y" = 13,
+		)
 	)
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/pgf
@@ -194,6 +217,13 @@
 
 	wield_delay = 0.7 SECONDS
 	wield_slowdown = LASER_SMG_SLOWDOWN
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 25,
+			"y" = 13,
+		)
+	)
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/pgf
 	allowed_ammo_types = list(
@@ -241,6 +271,13 @@
 
 	spread = 2
 	spread_unwielded = 5
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 21,
+			"y" = 14,
+		)
+	)
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/kalix
 	allowed_ammo_types = list(
@@ -292,6 +329,13 @@
 	spread = 0.5
 	spread_unwielded = 15
 
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 30,
+			"y" = 13,
+		)
+	)
+
 	ammo_type = list(/obj/item/ammo_casing/energy/pgf/assault, /obj/item/ammo_casing/energy/disabler/hitscan/heavy)
 
 /obj/item/gun/energy/kalix/pgf/medium/empty_cell
@@ -322,6 +366,13 @@
 
 	spread = 0
 	spread_unwielded = 20
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 31,
+			"y" = 13,
+		)
+	)
 
 	ammo_type = list(/obj/item/ammo_casing/energy/pgf/assault, /obj/item/ammo_casing/energy/pgf/sniper)
 
@@ -382,6 +433,13 @@
 
 	wield_slowdown = LASER_SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 35,
+			"y" = 13,
+		)
+	)
 
 /obj/item/gun/energy/kalix/pgf/heavy/sniper/empty_cell
 	spawn_no_ammo = TRUE
