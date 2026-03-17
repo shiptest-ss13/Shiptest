@@ -192,6 +192,14 @@
 	name = "Ramzi Clique Ensign"
 	head = /obj/item/clothing/head/ramzi
 
+/obj/effect/mob_spawn/human/corpse/ramzi/lieutenant
+	name = "Ramzi Clique Lieutenant"
+	outfit = /datum/outfit/ramzi/officer/lieutenant
+
+/datum/outfit/ramzi/officer/lieutenant
+	name = "Ramzi Clique Lieutenant"
+	head = /obj/item/clothing/head/ramzi/peaked
+
 /obj/effect/mob_spawn/human/corpse/ramzi/officer/captain
 	name = "Ramzi Clique Captain"
 	outfit = /datum/outfit/ramzi/officer/captain
