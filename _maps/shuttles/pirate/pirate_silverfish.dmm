@@ -1517,6 +1517,9 @@
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "rf" = (
@@ -1580,9 +1583,6 @@
 	icon_state = "0-4"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
 "sc" = (
@@ -1881,10 +1881,10 @@
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
-/obj/machinery/power/cloak,
 /obj/structure/cable{
-	icon_state = "0-1"
+	icon_state = "0-8"
 	},
+/obj/machinery/power/cloak,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "uS" = (
@@ -2127,6 +2127,11 @@
 /obj/effect/turf_decal/trimline/opaque/solgovgold/filled/line{
 	dir = 4
 	},
+/obj/machinery/modular_computer/console/preset/command{
+	dir = 4;
+	icon_state = "computer-middle";
+	pixel_x = -7
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "xn" = (
@@ -2159,6 +2164,9 @@
 	},
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/engineering/engines)
@@ -3011,6 +3019,9 @@
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/engineering/engines)
 "HQ" = (
@@ -3028,6 +3039,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
@@ -4295,9 +4309,6 @@
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
