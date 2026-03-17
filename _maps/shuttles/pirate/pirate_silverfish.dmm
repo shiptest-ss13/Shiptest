@@ -64,27 +64,16 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/cryo)
 "aP" = (
-/obj/effect/turf_decal/trimline/opaque/red/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/red/line,
-/obj/effect/turf_decal/borderfloor{
-	layer = 2.020
-	},
-/obj/effect/turf_decal/borderfloor{
-	layer = 2.020;
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plating/rust,
 /area/ship/hallway/central)
 "aW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
@@ -396,9 +385,19 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating{
-	icon_state = "panelscorched"
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1;
+	layer = 2.040
 	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/effect/turf_decal/borderfloor{
+	layer = 2.020;
+	dir = 1
+	},
+/obj/effect/turf_decal/borderfloor{
+	layer = 2.020
+	},
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "ft" = (
 /obj/structure/cable{
@@ -968,20 +967,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "kP" = (
-/obj/effect/turf_decal/borderfloor{
-	layer = 2.020;
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/effect/turf_decal/borderfloor{
-	layer = 2.020;
-	dir = 4
-	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plating/rust,
 /area/ship/hallway/central)
 "kX" = (
 /obj/machinery/suit_storage_unit/inherit,
@@ -1188,14 +1179,6 @@
 /turf/open/floor/plating/rust,
 /area/ship/engineering/engines)
 "nM" = (
-/obj/effect/turf_decal/trimline/opaque/red/line,
-/obj/effect/turf_decal/borderfloor{
-	layer = 2.020;
-	dir = 1
-	},
-/obj/effect/turf_decal/borderfloor{
-	layer = 2.020
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1205,7 +1188,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plating/rust,
 /area/ship/hallway/central)
 "nW" = (
 /turf/open/floor/wood/walnut,
@@ -2049,12 +2032,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "wp" = (
-/obj/effect/turf_decal/trimline/opaque/red/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/opaque/red/line{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
@@ -2063,15 +2040,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/effect/turf_decal/borderfloor{
-	layer = 2.020;
-	dir = 4
-	},
-/obj/effect/turf_decal/borderfloor{
-	layer = 2.020;
-	dir = 8
-	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plating/rust,
 /area/ship/hallway/central)
 "ww" = (
 /obj/machinery/light/directional/east,
@@ -2943,13 +2912,6 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/cryo)
 "GL" = (
-/obj/effect/turf_decal/trimline/opaque/red/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/red/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/opaque/red/corner,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2961,10 +2923,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
-/obj/effect/turf_decal/borderfloor/full{
-	layer = 2.020
-	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plating/rust,
 /area/ship/hallway/central)
 "Hd" = (
 /obj/structure/cable{
@@ -2983,6 +2942,9 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken3"
@@ -3634,16 +3596,6 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/engines)
 "Pj" = (
-/obj/effect/turf_decal/trimline/opaque/red/line,
-/obj/effect/turf_decal/borderfloor/full{
-	layer = 2.020
-	},
-/obj/effect/turf_decal/trimline/opaque/red/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/red/corner{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -3654,6 +3606,17 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 2
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/borderfloor/full{
+	layer = 2.020
+	},
+/obj/effect/turf_decal/trimline/opaque/red/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/red/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Pm" = (
@@ -3700,7 +3663,6 @@
 /obj/machinery/atmospherics/components/trinary/mixer/flipped{
 	dir = 1
 	},
-/obj/item/paper/fluff/ships/silverfish,
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "PZ" = (
@@ -4239,7 +4201,19 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/trimline/opaque/red/line{
+	dir = 1;
+	layer = 2.040
+	},
+/obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/effect/turf_decal/borderfloor{
+	layer = 2.020;
+	dir = 1
+	},
+/obj/effect/turf_decal/borderfloor{
+	layer = 2.020
+	},
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "WW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
