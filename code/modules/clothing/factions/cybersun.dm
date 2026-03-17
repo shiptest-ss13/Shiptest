@@ -276,7 +276,7 @@
 
 
 /obj/item/clothing/head/helmet/bulletproof/x11/cybersun/trauma
-	name = "\improper X11 \"Troubleshooter\""
+	name = "\improper X11 \"Trauma Team\""
 	desc = "A bulletproof combat helmet purchased and modified by Cybersun. Painted in Trauma Team colors."
 	icon_state = "trauma_x11helm"
 	unique_reskin = list(
@@ -350,6 +350,23 @@
 	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/head.dmi'
 
+//Cybersun infiltrator hardsuit
+/obj/item/clothing/suit/space/hardsuit/stealth/cybersun
+	name = "\improper Magnetar recon hardsuit"
+	desc = "Injection-formed crystalline titanium forms the plates of this lightweight hardsuit, the joints protected by a thin weave of pressure-resistant self-repairing kevlars. A rarity on the field, as Cybersun does not sell them to the open market, instead keeping it for their own service."
+	icon = 'icons/obj/clothing/faction/cybersun/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/suits.dmi'
+	icon_state = "hardsuit-cyberstealth"
+	hardsuit_type = "cyberstealth"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/stealth/cybersun
+
+/obj/item/clothing/head/helmet/space/hardsuit/stealth/cybersun
+	name = "\improper Magnetar hardsuit helmet"
+	desc = "Thin, slick plates part into a visor of light reflective material. Sensors aboard function as a nightvision unit"
+	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/head.dmi'
+	icon_state = "hardsuit0-cyberstealth"
+	hardsuit_type = "cyberstealth"
 
 /* BELTS */
 
