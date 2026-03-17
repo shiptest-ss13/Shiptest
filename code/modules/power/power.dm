@@ -144,7 +144,7 @@
 // connect the machine to a powernet if a node cable is present on the turf
 /obj/machinery/proc/connect_to_network()
 	. = FALSE
-	powernet = null
+	// powernet = null
 	var/turf/T = get_turf(src)
 	if(!T)
 		return
@@ -153,6 +153,7 @@
 		attached_wire.powernet.add_machine(src)
 		. = TRUE
 	if((power_flags & POWER_ALLOW_AREA) && get_area(src))
+		disconnect_from_network()
 		. = TRUE
 
 // remove and disconnect the machine from its current powernet
