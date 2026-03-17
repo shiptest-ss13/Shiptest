@@ -197,8 +197,8 @@ Class Procs:
 	lose_area_sensitivity(ROUNDSTART_TRAIT)
 	QDEL_NULL(circuit)
 	QDEL_LIST(component_parts)
-	disconnect_from_network()
 	set_no_power()
+	disconnect_from_network()
 	return ..()
 
 /obj/machinery/proc/locate_machinery()
