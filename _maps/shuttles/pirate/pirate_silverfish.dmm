@@ -1235,11 +1235,6 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/obj/machinery/computer/turbine_computer{
-	dir = 4;
-	icon_state = "computer-middle";
-	pixel_x = -7
-	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/engines)
 "oz" = (
@@ -3632,8 +3627,11 @@
 /obj/structure/sign/poster/contraband/power{
 	pixel_x = -31
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating,
+/obj/machinery/computer/turbine_computer{
+	dir = 4;
+	pixel_x = -8
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/engines)
 "Pj" = (
 /obj/effect/turf_decal/trimline/opaque/red/line,
