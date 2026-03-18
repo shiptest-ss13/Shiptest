@@ -258,6 +258,8 @@
 				dropItemToGround(wear_id)
 			if(belt)
 				dropItemToGround(belt)
+			if(s_store && !wear_suit && !HAS_TRAIT(s_store, TRAIT_FORCE_SUIT_STORAGE_ALWAYS))
+				dropItemToGround(s_store, TRUE)
 		w_uniform = null
 		update_suit_sensors()
 		if(!QDELETED(src))
