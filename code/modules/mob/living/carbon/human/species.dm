@@ -1287,9 +1287,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			if(HAS_TRAIT(I, TRAIT_FORCE_SUIT_STORAGE_ALWAYS))
 				return TRUE
 			if(HAS_TRAIT(I, TRAIT_FORCE_SUIT_STORAGE))
-				if(!H.w_uniform)
+				if(!H.w_uniform && !H.wear_suit)
 					if(!disable_warning)
-						to_chat(H, span_warning("You need at least a uniform before you can attach this [I.name]!"))
+						to_chat(H, span_warning("You need a uniform or a suit before you can attach this [I.name]!"))
 					return FALSE
 				return TRUE
 			if(!H.wear_suit)
