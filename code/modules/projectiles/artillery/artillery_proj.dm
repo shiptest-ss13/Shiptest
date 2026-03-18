@@ -20,6 +20,7 @@
 
 //ditto
 /obj/projectile/bullet/mortar/CanPassThrough(atom/blocker, movement_dir, blocker_opinion)
+	. = ..()
 	return TRUE
 
 /obj/projectile/bullet/mortar/proc/payload()
@@ -54,6 +55,13 @@
 	smoke.set_up(10, get_turf(src), 11)
 	smoke.start()
 
+/obj/projectile/bullet/mortar/airburst/payload()
+	explosion(get_turf(src), 0, 0, 1, 0, flame_range = 3)
+	var/obj/item/grenade/frag/our_nade = new (get_turf(src))
+	our_nade.name = "airburst shell"
+	our_nade.prime()
+
+
 /obj/projectile/bullet/mortar/howi
 	name = "150mm shell"
 	icon_state = "howi"
@@ -66,3 +74,9 @@
 	explosion(get_turf(src), 0, 3, 0, 0, 0, 3)
 	flame_radius(get_turf(src), 5, 30)
 	playsound(get_turf(src), pick('sound/weapons/gun/flamethrower/flamethrower1.ogg','sound/weapons/gun/flamethrower/flamethrower2.ogg','sound/weapons/gun/flamethrower/flamethrower3.ogg'), 35, 1, 4)
+
+/obj/projectile/bullet/mortar/howi/airburst/payload()
+	explosion(get_turf(src), 0, 3, 5, 0, flame_range = 7)
+	var/obj/item/grenade/frag/mega/our_nade = new (get_turf(src))
+	our_nade.name = "airburst shell"
+	our_nade.prime()

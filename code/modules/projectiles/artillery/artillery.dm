@@ -69,6 +69,7 @@
 		/obj/item/mortal_shell/howitzer/he,
 		/obj/item/mortal_shell/howitzer/flare,
 		/obj/item/mortal_shell/howitzer/smoke,
+		/obj/item/mortal_shell/howitzer/airburst,
 		/obj/item/mortal_shell/flare,
 	)
 
@@ -319,6 +320,7 @@
 		/obj/item/mortal_shell/incendiary,
 		/obj/item/mortal_shell/smoke,
 		/obj/item/mortal_shell/flare,
+		/obj/item/mortal_shell/airburst,
 	)
 
 /obj/machinery/artillery/mortar/examine(mob/user)

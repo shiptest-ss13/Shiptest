@@ -31,6 +31,12 @@
 	icon_state = "mortar_ammo_flare"
 	ammo_type = /obj/projectile/bullet/mortar/flare
 
+/obj/item/mortal_shell/airburst
+	name = "\improper 80mm airburst mortar shell"
+	desc = "An 80mm mortar shell, loaded with an a shrapnel payload, detonated midair for maximum infantry damage."
+	icon_state = "mortar_ammo_airburst"
+	ammo_type = /obj/projectile/bullet/mortar/airburst
+
 /obj/item/mortal_shell/howitzer
 	name = "\improper 150mm artillery shell"
 	desc = "An unlabeled 150mm shell, probably a casing."
@@ -63,3 +69,9 @@
 	desc = "An 150mm artillery shell, loaded with an illumination flare, lighting up large radius while dazzling anyone in the area."
 	icon_state = "howitzer_ammo_flares"
 	ammo_type = /obj/projectile/bullet/mortar/flare
+
+/obj/item/mortal_shell/howitzer/airburst
+	name = "\improper 150mm airburst artillery shell"
+	desc = "An 150mm artillery shell, loaded with an a shrapnel payload, detonated midair for maximum infantry damage."
+	icon_state = "howitzer_ammo_airburst"
+	ammo_type = /obj/projectile/bullet/mortar/howi/airburst
