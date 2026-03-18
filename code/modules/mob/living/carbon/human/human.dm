@@ -142,16 +142,14 @@
 	dat += "<tr><td>&nbsp;</td></tr>"
 
 	dat += "<tr><td><B>Exosuit:</B></td><td><A href='byond://?src=[REF(src)];item=[ITEM_SLOT_OCLOTHING]'>[(wear_suit && !(wear_suit.item_flags & ABSTRACT)) ? wear_suit : "<font color=grey>Empty</font>"]</A></td></tr>"
-	if(wear_suit)
-		if(ITEM_SLOT_SUITSTORE in obscured)
-			dat += "<tr><td><font color=grey>&nbsp;&#8627;<B>Suit Storage:</B></font></td></tr>"
-		else
-			dat += "<tr><td>&nbsp;&#8627;<B>Suit Storage:</B></td><td><A href='byond://?src=[REF(src)];item=[ITEM_SLOT_SUITSTORE]'>[(s_store && !(s_store.item_flags & ABSTRACT)) ? s_store : "<font color=grey>Empty</font>"]</A>"
-			if(has_breathable_mask && istype(s_store, /obj/item/tank))
-				dat += "&nbsp;<A href='byond://?src=[REF(src)];internal=[ITEM_SLOT_SUITSTORE]'>[internal ? "Disable Internals" : "Set Internals"]</A>"
-			dat += "</td></tr>"
-	else
+
+	if(ITEM_SLOT_SUITSTORE in obscured)
 		dat += "<tr><td><font color=grey>&nbsp;&#8627;<B>Suit Storage:</B></font></td></tr>"
+	else
+		dat += "<tr><td>&nbsp;&#8627;<B>Suit Storage:</B></td><td><A href='byond://?src=[REF(src)];item=[ITEM_SLOT_SUITSTORE]'>[(s_store && !(s_store.item_flags & ABSTRACT)) ? s_store : "<font color=grey>Empty</font>"]</A>"
+		if(has_breathable_mask && istype(s_store, /obj/item/tank))
+			dat += "&nbsp;<A href='byond://?src=[REF(src)];internal=[ITEM_SLOT_SUITSTORE]'>[internal ? "Disable Internals" : "Set Internals"]</A>"
+		dat += "</td></tr>"
 
 	if(ITEM_SLOT_FEET in obscured)
 		dat += "<tr><td><font color=grey><B>Shoes:</B></font></td><td><font color=grey>Obscured</font></td></tr>"
