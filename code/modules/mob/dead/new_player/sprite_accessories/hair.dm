@@ -94,7 +94,7 @@
 	name = "Crewcut"
 	icon_state = "hair_crewcut"
 
-/datum/sprite_accessory/hair/dandpompadour
+/datum/sprite_accessory/hair/dandypompadour
 	name = "Dandy Pompadour"
 	icon_state = "hair_dandypompadour"
 
@@ -346,13 +346,13 @@
 	name = "Ponytail (Both Eyes)"
 	icon_state = "hair_ponytailbotheyes"
 
-/datum/sprite_accessory/hair/ponytail_braided
+/datum/sprite_accessory/hair/ponytailbraided
 	name = "Ponytail (Braided)"
-	icon_state = "hair_braided"
+	icon_state = "hair_ponytailbraided"
 
-/datum/sprite_accessory/hair/ponytail_braided_short
-	name = "Ponytail (Braided Long)"
-	icon_state = "hair_braidedlong"
+/datum/sprite_accessory/hair/ponytailbraidedlong
+	name = "Ponytail (Braided, Long)"
+	icon_state = "hair_ponytailbraidedlong"
 
 /datum/sprite_accessory/hair/ponytailfuzzy
 	name = "Ponytail (Fuzzy)"
@@ -368,7 +368,7 @@
 
 /datum/sprite_accessory/hair/ponytailside
 	name = "Ponytail (Side)"
-	icon_state = "hair_ponytail7"
+	icon_state = "hair_ponytailside"
 
 /datum/sprite_accessory/hair/ponytailsimple
 	name = "Ponytail (Simple)"
@@ -382,19 +382,19 @@
 	name = "Ponytail (Spiky)"
 	icon_state = "hair_ponytailspiky"
 
-/datum/sprite_accessory/hair/ponytail_straight_short
+/datum/sprite_accessory/hair/ponytailstraight
 	name = "Ponytail (Straight)"
 	icon_state = "hair_ponytailstraight"
 
-/datum/sprite_accessory/hair/ponytail_straight
-	name = "Ponytail (Straight Long)"
-	icon_state = "hair_longstraightponytail"
+/datum/sprite_accessory/hair/ponytailstraightlong
+	name = "Ponytail (Straight, Long)"
+	icon_state = "hair_ponytailstraightlong"
 
-/datum/sprite_accessory/hair/rattail
+/datum/sprite_accessory/hair/ponytailrat
 	name = "Ponytail (Rat)"
 	icon_state = "hair_ponytailrat"
 
-/datum/sprite_accessory/hair/wisp
+/datum/sprite_accessory/hair/ponytailwisp
 	name = "Ponytail (Wisp)"
 	icon_state = "hair_ponytailwisp"
 
