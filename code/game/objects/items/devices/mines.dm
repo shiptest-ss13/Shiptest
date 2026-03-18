@@ -470,8 +470,11 @@
 	name = "\improper Rusted Landmine"
 	desc = "An anti-infantry explosive, designed to go off underfoot. This one has seen better days."
 	manufacturer = MANUFACTURER_NONE
-	range_heavy = 0
+	heavy_damage = 50
+	heavy_item_damage = 40
 	range_light = 3
+	light_damage = 30
+	light_item_damage = 25
 	shrapnel_type = /obj/projectile/bullet/shrapnel/rusty
 
 
@@ -480,7 +483,11 @@
 	desc = "An anti-infantry explosive produced during the corporate wars. Transforms into superheated slag and a ball of fire on detonation. "
 
 	range_flame = 6
+	heavy_damage = 40
+	heavy_item_damage = 40
 	range_light = 3
+	light_damage = 30
+	light_item_damage = 25
 	range_flash = 3
 
 	shrapnel_type = /obj/projectile/bullet/shrapnel/hot
