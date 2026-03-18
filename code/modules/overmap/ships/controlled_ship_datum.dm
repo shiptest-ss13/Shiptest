@@ -24,6 +24,8 @@
 	///Whether objects on the ship require an ID with ship access granted
 	var/unique_ship_access = FALSE
 
+	/// The amount of tiles we can see on the overmap
+	var/sensor_range = 4
 	/// The shipkey for this ship
 	var/obj/item/key/ship/shipkey
 	/// All helms connected to this ship
