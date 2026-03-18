@@ -268,17 +268,20 @@
 	icon_door = "med_wall";
 	req_access_txt = "5"
 	},
+/obj/item/radio/headset/headset_med,
+/obj/item/radio/headset/headset_med,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "bC" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
-/obj/machinery/suit_storage_unit/inherit{
-	req_access_txt = "3"
-	},
 /obj/item/clothing/suit/space/hardsuit/syndi/ngr,
 /obj/item/clothing/mask/gas/syndicate,
+/obj/machinery/suit_storage_unit/inherit/locked{
+	req_access_txt = "3"
+	},
+/obj/item/tank/jetpack/oxygen/harness,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "bN" = (
@@ -1000,7 +1003,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/airlock/grunge,
+/obj/machinery/door/airlock/grunge{
+	name = "Cryopod Room"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "gz" = (
@@ -1020,7 +1025,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/grunge{
-	dir = 4
+	dir = 4;
+	name = "Bridge"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -1054,11 +1060,12 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
-/obj/machinery/suit_storage_unit/inherit{
-	req_access_txt = "3"
-	},
 /obj/item/clothing/suit/space/hardsuit/syndi/ngr,
 /obj/item/clothing/mask/gas/syndicate,
+/obj/machinery/suit_storage_unit/inherit/locked{
+	req_access_txt = "3"
+	},
+/obj/item/tank/jetpack/oxygen/harness,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "gR" = (
@@ -1185,7 +1192,8 @@
 "hZ" = (
 /obj/machinery/door/airlock/security{
 	req_access_txt = "3";
-	dir = 4
+	dir = 4;
+	name = "Armory"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -1580,7 +1588,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/engineering{
-	dir = 4
+	dir = 4;
+	name = "Cargo Bay"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -1865,14 +1874,15 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/engineering{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/door/airlock/engineering{
+	dir = 4;
+	name = "Cargo Bay"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -2152,7 +2162,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/door/airlock/grunge,
+/obj/machinery/door/airlock/grunge{
+	name = "Crew Quarters"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew)
 "oV" = (
@@ -2169,6 +2181,10 @@
 /obj/item/desk_flag/ngr{
 	pixel_x = -10;
 	pixel_y = 10
+	},
+/obj/item/pen/red{
+	pixel_x = -5;
+	pixel_y = -7
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office)
@@ -2213,7 +2229,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/airlock/grunge,
+/obj/machinery/door/airlock/grunge{
+	name = "Bridge"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "ps" = (
@@ -2376,8 +2394,8 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/flashlight/lamp{
-	pixel_x = 5;
-	pixel_y = 2
+	pixel_x = -6;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office)
@@ -2431,7 +2449,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/door/airlock/grunge,
+/obj/machinery/door/airlock/grunge{
+	name = "Bridge"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "qN" = (
@@ -2725,10 +2745,7 @@
 /obj/item/ammo_box/magazine/m57_39_sidewinder/empty,
 /obj/item/ammo_box/magazine/m57_39_sidewinder/empty,
 /obj/item/ammo_box/magazine/m57_39_sidewinder/empty,
-/obj/item/storage/box/ammo/c57x39,
-/obj/item/storage/box/ammo/c57x39,
-/obj/item/storage/box/ammo/c57x39,
-/obj/item/storage/box/ammo/c57x39,
+/obj/item/storage/toolbox/ammo/c57,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "sS" = (
@@ -2820,7 +2837,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/medical/glass{
-	dir = 4
+	dir = 4;
+	name = "Infirmary"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical)
@@ -3089,21 +3107,21 @@
 	dir = 6
 	},
 /obj/structure/table/reinforced,
-/obj/item/paper_bin{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/item/pen{
-	pixel_x = 6;
-	pixel_y = 1
-	},
-/obj/item/pen/red{
-	pixel_x = 9;
-	pixel_y = 7
-	},
 /obj/structure/sign/flag/ngr{
 	dir = 1;
 	pixel_y = -32
+	},
+/obj/machinery/cell_charger{
+	pixel_x = 2;
+	pixel_y = 2
+	},
+/obj/item/paper_bin{
+	pixel_x = -16;
+	pixel_y = 4
+	},
+/obj/item/pen{
+	pixel_x = -16;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office)
@@ -3294,11 +3312,11 @@
 /area/ship/engineering/communications/room)
 "wJ" = (
 /obj/effect/turf_decal/corner/opaque/red/mono,
-/obj/structure/chair/office/dark{
-	dir = 4
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
+	},
+/obj/structure/chair/office/dark{
+	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office)
@@ -3569,7 +3587,7 @@
 "yT" = (
 /obj/structure/closet/wall/white/med{
 	pixel_y = -28;
-	name = "medical supplies locker";
+	name = "cleaning supplies locker";
 	icon_door = null
 	},
 /obj/item/mop,
@@ -3637,10 +3655,10 @@
 /area/ship/engineering)
 "zH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/components/trinary/mixer/airmix{
+/obj/effect/turf_decal/industrial/outline/blue,
+/obj/machinery/atmospherics/components/trinary/mixer/airmix/inverse{
 	dir = 4
 	},
-/obj/effect/turf_decal/industrial/outline/blue,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "zM" = (
@@ -3687,6 +3705,10 @@
 	pixel_x = -8;
 	pixel_y = 10
 	},
+/obj/item/radio/headset/alt,
+/obj/item/radio/headset/alt,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/syndicate,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Aa" = (
@@ -3727,7 +3749,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/airlock/grunge{
-	req_access_txt = "10"
+	req_access_txt = "10";
+	name = "Office"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/office)
@@ -3825,7 +3848,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/grunge{
-	dir = 4
+	dir = 4;
+	name = "Bridge"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -4118,7 +4142,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/grunge{
-	req_access_txt = "10"
+	req_access_txt = "10";
+	name = "Storage Bay"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -4316,7 +4341,8 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/medical/glass{
-	dir = 4
+	dir = 4;
+	name = "Infirmary"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical)
@@ -5067,7 +5093,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/grunge{
-	req_access_txt = "10"
+	req_access_txt = "10";
+	name = "Communications Room"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/communications/room)
@@ -5413,7 +5440,8 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 1;
 	req_ship_access = 0;
-	id_tag = "puru_restroom_doorbolts"
+	id_tag = "puru_restroom_doorbolts";
+	name = "Restroom"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -5798,7 +5826,8 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/airlock/grunge{
-	req_access_txt = "10"
+	req_access_txt = "10";
+	name = "Communications Room"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/communications/room)
@@ -5818,6 +5847,19 @@
 /obj/item/clothing/under/syndicate/ngr/officer,
 /obj/item/clothing/suit/armor/ngr/lieutenant,
 /obj/item/clothing/head/ngr/flap,
+/obj/item/clothing/head/ngr,
+/obj/item/clothing/head/ngr/peaked,
+/obj/item/clothing/glasses/hud/security/sunglasses/ngr,
+/obj/item/clothing/mask/balaclava/ngr,
+/obj/item/clothing/mask/breath/ngr,
+/obj/item/clothing/gloves/tackler/combat/insulated,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/neck/shemagh/ngr,
+/obj/item/storage/pouch/squad,
+/obj/item/radio/headset/syndicate/alt/ngr,
+/obj/item/megaphone/sec,
+/obj/item/radio/headset/syndicate/ngr,
+/obj/item/clothing/mask/gas/syndicate,
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm/commad)
 "UI" = (
@@ -5874,6 +5916,10 @@
 	pixel_x = 4
 	},
 /obj/machinery/light/directional/east,
+/obj/item/stamp/ngr{
+	pixel_x = -10;
+	pixel_y = 4
+	},
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm/commad)
 "UT" = (
@@ -6141,7 +6187,8 @@
 "WG" = (
 /obj/machinery/door/airlock/grunge{
 	req_access_txt = "19";
-	dir = 4
+	dir = 4;
+	name = "Command Quarters"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -6306,7 +6353,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/airlock/grunge,
+/obj/machinery/door/airlock/grunge{
+	name = "Crew Quarters"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew)
 "XD" = (
@@ -6605,6 +6654,17 @@
 /obj/item/clothing/suit/armor/ngr/captain,
 /obj/item/clothing/head/ngr/peaked,
 /obj/machinery/airalarm/directional/west,
+/obj/item/clothing/glasses/hud/security/sunglasses/ngr,
+/obj/item/clothing/mask/balaclava/ngr,
+/obj/item/clothing/mask/breath/ngr,
+/obj/item/clothing/gloves/tackler/combat/insulated,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/neck/shemagh/ngr,
+/obj/item/storage/pouch/squad,
+/obj/item/radio/headset/syndicate/alt/captain/ngr,
+/obj/item/megaphone/sec,
+/obj/item/radio/headset/syndicate/captain/ngr,
+/obj/item/clothing/mask/gas/syndicate,
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm/commad)
 "ZO" = (
