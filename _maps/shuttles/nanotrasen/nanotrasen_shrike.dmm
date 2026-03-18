@@ -541,19 +541,16 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/port)
 "gs" = (
-/obj/machinery/portable_atmospherics/canister/toxins,
 /obj/effect/turf_decal/siding/white,
 /obj/effect/decal/cleanable/cobweb,
-/obj/machinery/atmospherics/components/unary/portables_connector{
-	dir = 4
-	},
+/obj/machinery/portable_atmospherics/pump,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
 "gt" = (
 /obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/turf_decal/siding/white,
-/obj/machinery/atmospherics/components/unary/tank/toxins,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
 "gu" = (
@@ -2143,9 +2140,7 @@
 "zj" = (
 /obj/machinery/light/dim/directional/north,
 /obj/effect/turf_decal/siding/white,
-/obj/machinery/atmospherics/pipe/manifold/orange/hidden{
-	dir = 1
-	},
+/obj/machinery/atmospherics/components/unary/tank/toxins,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
 "zm" = (
@@ -2639,7 +2634,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/safe/floor,
+/obj/structure/safe/floor{
+	number_of_tumblers = 4;
+	tumblers = list(17,42,86, 63)
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "FD" = (
@@ -4763,6 +4761,9 @@
 	},
 /obj/effect/turf_decal/corner/opaque/vired/half{
 	dir = 1
+	},
+/obj/item/paper/crumpled{
+	default_raw_text = "17, 42, 89, 63"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)

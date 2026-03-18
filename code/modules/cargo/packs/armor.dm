@@ -198,8 +198,8 @@
 	name = "Cybersun Bulletproof Armor Crate"
 	desc = "Contains one full set of bulletproof armor, guaranteed to reduce a bullet's stopping power by half but with limited protection against melee weaponry."
 	cost = 1750
-	contains = list(/obj/item/clothing/suit/armor/vest/bulletproof,
-					/obj/item/clothing/head/helmet/bulletproof,
+	contains = list(/obj/item/clothing/suit/armor/vest/bulletproof/cybersun,
+					/obj/item/clothing/head/helmet/bulletproof/x11/cybersun,
 					/obj/item/clothing/glasses/sunglasses/ballistic)
 	crate_name = "bulletproof armor crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
@@ -242,7 +242,7 @@
 	name = "Trauma Team Bulletproof Armor Crate"
 	desc = "Contains one full set of bulletproof armor, guaranteed to reduce a bullet's stopping power by half but with limited protection against melee weaponry."
 	contains = list(/obj/item/clothing/suit/armor/vest/bulletproof/cybersun/trauma,
-					/obj/item/clothing/head/helmet/bulletproof,
+					/obj/item/clothing/head/helmet/bulletproof/x11/cybersun/trauma,
 					/obj/item/clothing/glasses/sunglasses/ballistic)
 
 /datum/supply_pack/armor/marine_cybersun/trauma_team
