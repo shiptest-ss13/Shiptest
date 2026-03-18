@@ -609,8 +609,11 @@
 	dir = 5
 	},
 /obj/machinery/light/directional/north,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 8
+	},
 /obj/machinery/portable_atmospherics/canister/oxygen,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "el" = (
 /obj/structure/rack,
@@ -1159,6 +1162,10 @@
 /turf/open/floor/pod/dark,
 /area/ship/engineering)
 "hq" = (
+/obj/machinery/porta_turret/ship/ngr/light{
+	dir = 6;
+	id = "puru_turrets"
+	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew)
 "hD" = (
@@ -1258,6 +1265,29 @@
 	dir = 10
 	},
 /obj/machinery/firealarm/directional/east,
+/obj/structure/closet/wall/directional/north{
+	name = "radio closet"
+	},
+/obj/item/radio{
+	pixel_y = 8;
+	pixel_x = -8
+	},
+/obj/item/radio{
+	pixel_y = 8
+	},
+/obj/item/radio{
+	pixel_y = 8;
+	pixel_x = 8
+	},
+/obj/item/radio{
+	pixel_x = -8
+	},
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio{
+	pixel_x = 8
+	},
 /turf/open/floor/pod/dark,
 /area/ship/crew/cryo)
 "iA" = (
@@ -2090,11 +2120,11 @@
 /area/ship/crew/cryo)
 "nL" = (
 /obj/machinery/porta_turret/ship/ngr/light{
-	dir = 6;
+	dir = 5;
 	id = "puru_turrets"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/security/armory)
+/area/ship/cargo)
 "nQ" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
@@ -2587,12 +2617,35 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "rz" = (
-/obj/machinery/porta_turret/ship/ngr/light{
-	dir = 5;
-	id = "puru_turrets"
+/obj/effect/turf_decal/techfloor{
+	dir = 1
 	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew/toilet)
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall/orange/directional/east{
+	name = "Wrecker's Locker";
+	req_access = list(48);
+	pixel_x = 0;
+	pixel_y = 28;
+	dir = 1
+	},
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/under/syndicate/ngr/jumpsuit,
+/obj/item/clothing/accessory/armband/cargo,
+/obj/item/clothing/suit/hazardvest/ngr,
+/obj/item/clothing/head/hardhat/ngr,
+/obj/item/clothing/gloves/explorer,
+/obj/item/clothing/head/ngr/flap,
+/obj/item/clothing/head/ngr,
+/obj/item/clothing/neck/shemagh/ngr,
+/obj/item/clothing/mask/balaclava/ngr,
+/obj/item/clothing/suit/hooded/wintercoat/security/ngr,
+/obj/item/storage/belt/mining/ngr,
+/obj/item/clothing/glasses/meson,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
 "rN" = (
 /obj/effect/turf_decal/trimline/opaque/tan/filled/warning{
 	dir = 8
@@ -3763,7 +3816,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/airlock/grunge{
 	req_access_txt = "10";
-	name = "Engineering Office"
+	name = "Office"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/office)
@@ -3998,7 +4051,10 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech/grid,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "CJ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -4222,9 +4278,12 @@
 	dir = 4
 	},
 /obj/item/radio/intercom/directional/east,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 9
+	},
 /obj/structure/closet/crate/freezer/blood,
 /obj/effect/mapping_helpers/crate_shelve,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "Fk" = (
 /obj/effect/turf_decal/trimline/opaque/tan/filled/warning,
@@ -4790,9 +4849,6 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/corner/opaque/tan,
-/obj/effect/turf_decal/corner_techfloor_grid{
-	dir = 2
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "JJ" = (
@@ -5284,7 +5340,11 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/north,
-/turf/open/floor/plasteel/tech/grid,
+/obj/effect/turf_decal/corner/opaque/tan{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "Ps" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -6203,6 +6263,10 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "WE" = (
+/obj/machinery/porta_turret/ship/ngr/light{
+	dir = 6;
+	id = "puru_turrets"
+	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/cargo)
 "WF" = (
@@ -7509,7 +7573,7 @@ Jn
 Jn
 "}
 (32,1,1) = {"
-rz
+UT
 UT
 UT
 UT
@@ -7604,7 +7668,7 @@ An
 An
 An
 An
-nL
+ep
 Jn
 Jn
 "}
@@ -7723,7 +7787,7 @@ hf
 hf
 tL
 qg
-CI
+rz
 vb
 eh
 qg
@@ -7763,7 +7827,7 @@ Jn
 Jn
 Jn
 Jn
-WE
+nL
 Xu
 Xu
 Xu
