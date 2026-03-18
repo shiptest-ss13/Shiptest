@@ -149,6 +149,10 @@
 		return
 	linked_searchlight.throw_at(target_turf, 10, 1,spin=FALSE,gentle=TRUE)
 
+/obj/machinery/deployable_turret/spotlight/Destroy()
+	. = ..()
+	QDEL_NULL(linked_searchlight)
+
 /obj/effect/abstract/searchlight
 	light_system = MOVABLE_LIGHT
 	light_color = "#feffed"
@@ -186,6 +190,10 @@
 
 	else
 		set_light_power(0)
+
+/obj/effect/abstract/searchlight/Destroy(force)
+	. = ..()
+	linked_spotlighter = null
 
 /obj/effect/abstract/searchlight/proc/check_flashers_in_range(range = 2, power = 5)
 	var/list/mob/targets = get_flash_targets(get_turf(src), range, FALSE)
@@ -232,6 +240,7 @@
 //idle sound is https://freesound.org/people/kyles/sounds/451699/
 /obj/structure/fluff/vehicle
 	icon = 'icons/obj/city/vehicles.dmi'
+	icon_state = "truck"
 	layer = WALL_OBJ_LAYER
 	light_system = MOVABLE_LIGHT_DIRECTIONAL
 	light_color = "#e7f8ff"
@@ -280,6 +289,11 @@
 	. = ..()
 	if(.) //received damage
 		update_appearance()
+
+
+/obj/structure/fluff/vehicle/Destroy()
+	. = ..()
+	QDEL_NULL(soundloop)
 
 //https://freesound.org/people/kyles/sounds/451699/
 /datum/looping_sound/vehicle
