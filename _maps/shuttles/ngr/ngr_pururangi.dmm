@@ -178,6 +178,9 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/light/small/directional/west,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "bm" = (
@@ -596,6 +599,9 @@
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/light/small/directional/west,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/pod/dark,
 /area/ship/maintenance/starboard)
 "ek" = (
@@ -677,7 +683,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/grunge{
-	name = "Recovery Room A"
+	name = "Infirmary Recovery Room A"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical)
@@ -979,6 +985,9 @@
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/starboard)
 "gp" = (
@@ -989,7 +998,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/grunge{
-	name = "Closet"
+	name = "Infirmary Closet"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical)
@@ -1169,7 +1178,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/grunge{
-	name = "Recovery Room B"
+	name = "Infirmary Recovery Room B"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical)
@@ -1977,13 +1986,14 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
 "mY" = (
-/obj/machinery/telecomms/server/presets/ngr{
-	network = "ngr_commnet"
-	},
 /obj/effect/turf_decal/techfloor,
 /obj/item/radio/intercom/directional/north,
 /obj/machinery/camera/autoname{
 	dir = 5
+	},
+/obj/machinery/telecomms/processor/preset_one{
+	network = "ngr_commnet";
+	autolinkers = list("processor4","bus")
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications/room)
@@ -2368,7 +2378,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/grunge{
-	name = "Morgue"
+	name = "Infirmary Morgue"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical)
@@ -2660,12 +2670,12 @@
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
 "sj" = (
+/obj/effect/turf_decal/techfloor,
 /obj/machinery/telecomms/hub{
 	autolinkers = list("hub","bus","relay","broadcasterG","receiverG");
 	id = "Communications Hub";
 	network = "ngr_commnet"
 	},
-/obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications/room)
 "st" = (
@@ -3099,6 +3109,9 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/closet/emcloset/wall/directional/west,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "vr" = (
@@ -3750,7 +3763,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/airlock/grunge{
 	req_access_txt = "10";
-	name = "Office"
+	name = "Engineering Office"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/office)
@@ -3882,7 +3895,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/grunge{
-	name = "Operating Room"
+	name = "Infirmary Operating Room"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical)
@@ -4041,7 +4054,8 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/maintenance_hatch{
-	req_access_txt = "10"
+	req_access_txt = "10";
+	name = "Starboard Engines"
 	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -4331,6 +4345,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/external,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/starboard)
 "FU" = (
@@ -4382,13 +4399,14 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "Gd" = (
-/obj/machinery/telecomms/receiver/preset_left{
-	network = "ngr_commnet"
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
 /obj/machinery/firealarm/directional/south,
+/obj/machinery/telecomms/broadcaster/preset_right{
+	autolinkers = list("broadcasterG","hub");
+	network = "ngr_commnet"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications/room)
 "Gj" = (
@@ -4515,11 +4533,13 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "Hg" = (
-/obj/machinery/telecomms/broadcaster/preset_left{
-	network = "ngr_commnet"
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 8
+	},
+/obj/machinery/telecomms/receiver/preset_left/birdstation{
+	autolinkers = list("receiverG");
+	freq_listening = list(1353, 1205);
+	network = "ngr_commnet"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications/room)
@@ -4979,6 +4999,9 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/closet/firecloset/wall/directional/west,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Lk" = (
@@ -5212,13 +5235,13 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "OX" = (
+/obj/effect/turf_decal/techfloor,
+/obj/machinery/light/directional/north,
 /obj/machinery/telecomms/bus/preset_one{
 	autolinkers = list("hub","processor4","bus");
 	network = "ngr_commnet";
-	freq_listening = list(1353)
+	freq_listening = list(1353, 1205)
 	},
-/obj/effect/turf_decal/techfloor,
-/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications/room)
 "OY" = (
@@ -5370,6 +5393,9 @@
 	preferred_direction = 4;
 	port_direction = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "QN" = (
@@ -5385,11 +5411,12 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "QO" = (
-/obj/machinery/telecomms/processor/preset_one{
-	network = "ngr_commnet";
-	autolinkers = list("processor4","bus")
-	},
 /obj/effect/turf_decal/techfloor,
+/obj/machinery/telecomms/server/presets/common{
+	autolinkers = list("common","hub");
+	freq_listening = list(1353);
+	network = "ngr_commnet"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications/room)
 "QP" = (
@@ -5457,7 +5484,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/door/airlock/grunge,
+/obj/machinery/door/airlock/grunge{
+	name = "Starboard Maintenance Airlock"
+	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
@@ -5508,6 +5537,9 @@
 	dir = 8
 	},
 /obj/structure/closet/emcloset/wall/directional/west,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/pod/dark,
 /area/ship/maintenance/starboard)
 "RV" = (
@@ -6447,7 +6479,8 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/maintenance_hatch{
-	req_access_txt = "10"
+	req_access_txt = "10";
+	name = "Port Engines"
 	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
