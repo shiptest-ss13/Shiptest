@@ -75,3 +75,16 @@
 	desc = "An 150mm artillery shell, loaded with an a shrapnel payload, detonated midair for maximum infantry damage."
 	icon_state = "howitzer_ammo_airburst"
 	ammo_type = /obj/projectile/bullet/mortar/howi/airburst
+
+//Rockets
+/obj/item/mortal_shell/rocket/he
+	name = "\improper 200mm rocket"
+	desc = "A 200mm guided rocket loaded with explosives, meant to be used at long range."
+	icon_state = "mortar_ammo_he"
+	ammo_type = /obj/projectile/bullet/mortar/rocket/he
+
+/obj/item/mortal_shell/rocket/incendiary
+	name = "\improper 200mm incendiary rocket"
+	desc = "A 200mm guided rocket loaded with an incendiary payload with a minor side of explosive."
+	icon_state = "mortar_ammo_inc"
+	ammo_type = /obj/projectile/bullet/mortar/rocket/incend

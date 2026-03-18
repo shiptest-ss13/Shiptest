@@ -361,3 +361,30 @@
 	. = ..()
 	AddComponent(/datum/component/deployable, 5 SECONDS, /obj/machinery/artillery/mortar, delete_on_use = TRUE)
 
+
+/obj/machinery/artillery/vls
+	name = "\improper missile launch tube"
+	desc = "A tube covered with a hatch, letting out guided missles upon being fired."
+	icon = 'icons/obj/machines/vls.dmi'
+	icon_state = "vls_deployed"
+	atom_integrity = 1000
+	max_integrity = 1000
+	fire_sound = 'sound/weapons/gun/general/rocket_launch.ogg'
+	fall_sound = 'sound/machines/artillery/rocket_whistle.ogg'
+	reload_sound = 'sound/machines/artillery/tat36_reload.ogg'
+	//meant to be under the player
+	layer = BELOW_OBJ_LAYER
+	reload_time = 2 SECONDS
+	///32x32 sprite
+	pixel_x = 0
+	max_spread = 0
+	cool_off_time = 2 SECONDS
+	/// stationary
+	can_be_unanchored = FALSE
+	///stationary
+	anchored = TRUE
+
+	allowed_shells = list(
+		/obj/item/mortal_shell/rocket/he,
+		/obj/item/mortal_shell/rocket/incendiary,
+	)
