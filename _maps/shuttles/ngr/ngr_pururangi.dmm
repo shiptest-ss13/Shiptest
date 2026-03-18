@@ -1638,21 +1638,34 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/closet/crate/secure{
-	name = "Patriotism Crate";
-	desc = "A secure crate containing the Flag of the Republic, perfectly pressed and folded for rapid deployment."
-	},
-/obj/item/sign/flag/ngr,
-/obj/item/sign/flag/ngr,
-/obj/item/sign/flag/ngr,
-/obj/item/sign/flag/ngr,
-/obj/item/sign/flag/ngr,
-/obj/effect/mapping_helpers/crate_shelve,
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -20;
 	pixel_y = 13
 	},
+/obj/structure/closet/crate/engineering{
+	name = "relay crate"
+	},
+/obj/effect/mapping_helpers/crate_shelve,
+/obj/item/circuitboard/machine/telecomms/relay,
+/obj/item/circuitboard/machine/telecomms/relay,
+/obj/item/stock_parts/subspace/filter,
+/obj/item/stock_parts/subspace/filter,
+/obj/item/stock_parts/subspace/filter,
+/obj/item/stock_parts/subspace/filter,
+/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/manipulator,
+/obj/item/stack/cable_coil/white,
+/obj/item/stock_parts/subspace/transmitter,
+/obj/item/stock_parts/subspace/transmitter,
+/obj/item/stock_parts/subspace/transmitter,
+/obj/item/stock_parts/subspace/transmitter,
+/obj/item/stock_parts/subspace/transmitter,
+/obj/item/stock_parts/subspace/transmitter,
+/obj/item/stock_parts/subspace/transmitter,
+/obj/item/stock_parts/subspace/transmitter,
+/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/manipulator,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "lm" = (
@@ -2623,27 +2636,6 @@
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/wall/orange/directional/east{
-	name = "Wrecker's Locker";
-	req_access = list(48);
-	pixel_x = 0;
-	pixel_y = 28;
-	dir = 1
-	},
-/obj/item/clothing/shoes/workboots,
-/obj/item/clothing/under/syndicate/ngr/jumpsuit,
-/obj/item/clothing/accessory/armband/cargo,
-/obj/item/clothing/suit/hazardvest/ngr,
-/obj/item/clothing/head/hardhat/ngr,
-/obj/item/clothing/gloves/explorer,
-/obj/item/clothing/head/ngr/flap,
-/obj/item/clothing/head/ngr,
-/obj/item/clothing/neck/shemagh/ngr,
-/obj/item/clothing/mask/balaclava/ngr,
-/obj/item/clothing/suit/hooded/wintercoat/security/ngr,
-/obj/item/storage/belt/mining/ngr,
-/obj/item/clothing/glasses/meson,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "rN" = (
@@ -3136,6 +3128,16 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/effect/mapping_helpers/crate_shelve,
+/obj/structure/closet/crate/secure{
+	name = "Patriotism Crate";
+	desc = "A secure crate containing the Flag of the Republic, perfectly pressed and folded for rapid deployment."
+	},
+/obj/item/sign/flag/ngr,
+/obj/item/sign/flag/ngr,
+/obj/item/sign/flag/ngr,
+/obj/item/sign/flag/ngr,
+/obj/item/sign/flag/ngr,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "vf" = (
@@ -4054,6 +4056,27 @@
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall/orange/directional/east{
+	name = "Wrecker's Locker";
+	req_access = list(48);
+	pixel_x = 0;
+	pixel_y = 28;
+	dir = 1
+	},
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/under/syndicate/ngr/jumpsuit,
+/obj/item/clothing/accessory/armband/cargo,
+/obj/item/clothing/suit/hazardvest/ngr,
+/obj/item/clothing/head/hardhat/ngr,
+/obj/item/clothing/gloves/explorer,
+/obj/item/clothing/head/ngr/flap,
+/obj/item/clothing/head/ngr,
+/obj/item/clothing/neck/shemagh/ngr,
+/obj/item/clothing/mask/balaclava/ngr,
+/obj/item/clothing/suit/hooded/wintercoat/security/ngr,
+/obj/item/storage/belt/mining/ngr,
+/obj/item/clothing/glasses/meson,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "CJ" = (
@@ -7762,7 +7785,7 @@ cK
 eS
 AO
 qg
-CI
+rz
 Xf
 mE
 qg
@@ -7787,7 +7810,7 @@ hf
 hf
 tL
 qg
-rz
+CI
 vb
 eh
 qg
