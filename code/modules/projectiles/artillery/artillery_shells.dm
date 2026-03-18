@@ -67,7 +67,7 @@
 /obj/item/mortal_shell/howitzer/flare
 	name = "\improper 150mm flare artillery shell"
 	desc = "An 150mm artillery shell, loaded with an illumination flare, lighting up large radius while dazzling anyone in the area."
-	icon_state = "howitzer_ammo_flares"
+	icon_state = "howitzer_ammo_flare"
 	ammo_type = /obj/projectile/bullet/mortar/flare
 
 /obj/item/mortal_shell/howitzer/airburst
