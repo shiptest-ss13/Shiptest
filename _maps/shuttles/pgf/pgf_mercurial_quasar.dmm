@@ -354,17 +354,10 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "dn" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 2
-	},
-/obj/machinery/door/airlock/external,
-/obj/effect/turf_decal/techfloor/orange,
-/obj/effect/turf_decal/techfloor/orange{
-	dir = 1
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/hallway/fore)
 "dA" = (
@@ -704,6 +697,7 @@
 /obj/item/tank/internals/oxygen/red,
 /obj/item/clothing/suit/space/gezena,
 /obj/item/clothing/head/helmet/space/gezena,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/hallway/fore)
 "gO" = (
@@ -1637,14 +1631,12 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "tV" = (
-/obj/machinery/advanced_airlock_controller{
-	pixel_y = 25
-	},
-/obj/item/radio/intercom/directional/east,
 /obj/structure/chair/handrail{
 	dir = 8
 	},
-/obj/machinery/light/small/directional/south,
+/obj/machinery/light/small/directional/east,
+/obj/item/radio/intercom/directional/south,
+/obj/machinery/advanced_airlock_controller/directional/north,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/hallway/fore)
 "uy" = (
@@ -3009,13 +3001,24 @@
 "LD" = (
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
-	port_direction = 8;
+	port_direction = 4;
 	preferred_direction = 4;
 	dir = 1;
 	name = "quasar dock"
 	},
+/obj/machinery/door/airlock/external,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 2
+	},
+/obj/effect/turf_decal/techfloor/orange,
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 1
+	},
 /turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
+/area/ship/hallway/fore)
 "LH" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -3676,9 +3679,6 @@
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
-"Vv" = (
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
 "Vx" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
@@ -4390,7 +4390,7 @@ lS
 fB
 gw
 PB
-Vv
+PB
 sB
 "}
 (22,1,1) = {"
@@ -4424,7 +4424,7 @@ Hk
 Hk
 tV
 PB
-Vv
+PB
 sB
 "}
 (24,1,1) = {"
