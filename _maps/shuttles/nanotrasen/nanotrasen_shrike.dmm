@@ -2634,7 +2634,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/safe/floor,
+/obj/structure/safe/floor{
+	number_of_tumblers = 4;
+	tumblers = list(17,42,86, 63)
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "FD" = (
@@ -4758,6 +4761,9 @@
 	},
 /obj/effect/turf_decal/corner/opaque/vired/half{
 	dir = 1
+	},
+/obj/item/paper/crumpled{
+	default_raw_text = "17, 42, 89, 63"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
