@@ -334,6 +334,6 @@
 					/obj/item/clothing/under/nanotrasen/security,
 					/obj/item/clothing/shoes/jackboots,
 					/obj/item/clothing/gloves/color/black)
-	faction = datum/faction/nt
+	faction = /datum/faction/nt
 	faction_discount = 0
 	faction_locked = TRUE
