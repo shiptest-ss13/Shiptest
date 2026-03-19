@@ -320,7 +320,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</center>"
 
 			dat += "<center><h2>Outfit Preview Settings</h2>"
+			dat += "<center>Current outfit: [selected_outfit]</center>"
 			dat += "<a href='byond://?_src_=prefs;preference=job'>Set Preview Job Gear</a><br></center>"
+
 			if(CONFIG_GET(flag/roundstart_traits))
 				dat += "<center><h2>Quirk Setup</h2>"
 				dat += "<a href='byond://?_src_=prefs;preference=trait;task=menu'>Configure Quirks</a><br></center>"
