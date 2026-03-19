@@ -93,7 +93,7 @@
 	fire_sound = 'sound/weapons/gun/pistol/cm70.ogg'
 
 	spread = 8
-	spread_unwielded = 14
+	spread_unwielded = 20
 
 	wear_minor_threshold = 240
 	wear_major_threshold = 720
@@ -256,13 +256,13 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 /obj/item/gun/ballistic/automatic/smg/cm5/compact
 	name = "\improper CM-5c"
-	desc = "A modification of the CM-5 featuring a dramatically shortened barrel and removed stock. Initially designed for CLIP-GOLD covert enforcement agents to maximize portability without sacrificing firepower, the CM-5c is more often found issued to armored vehicle crewmen and shuttle pilots for use as a PDW. Chambered in 9mm."
+	desc = "A modification of the CM-5 featuring a dramatically shortened barrel and removed stock. Designed for CLIP-GOLD covert enforcement agents to maximize portability without sacrificing firepower, though accuracy at range is abysmal at best. Chambered in 9mm."
 	icon_state = "cm5c"
 	item_state = "cm5c"
 
 	w_class = WEIGHT_CLASS_NORMAL
-	spread = 8
-	spread_unwielded = 18
+	spread = 10
+	spread_unwielded = 20
 
 	fire_delay = 0.1 SECONDS
 
@@ -283,8 +283,8 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	)
 
 
-	recoil = 0.25
-	recoil_unwielded = 0.5
+	recoil = 1
+	recoil_unwielded = 2
 	wield_delay = 0.2 SECONDS
 	wield_slowdown = 0.15
 
