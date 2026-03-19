@@ -10,7 +10,7 @@
  *		Tracking and chemical implant boxes,
  *		Prescription glasses and drinking glass boxes,
  *		Condiment bottle and silly cup boxes,
- *		Donkpocket and monkeycube boxes,
+ *		shoalpocket and monkeycube boxes,
  *		ID and security PDA cart boxes,
  *		Handcuff, mousetrap, and pillbottle boxes,
  *		Snap-pops and matchboxes,
@@ -525,36 +525,36 @@
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/food/drinks/sillycup(src)
 
-/obj/item/storage/box/donkpockets
-	name = "box of donk-pockets"
-	desc = "<B>Instructions:</B> <I>Heat in microwave. Product will cool if not eaten within seven minutes.</I>"
-	icon_state = "donkpocketbox"
+/obj/item/storage/box/shoalpockets
+	name = "box of shoalwiches"
+	desc = "An ultra-processed form of food originating from upper layers of the Shoal - now commercialized. Contrary to popular belief, it contains no real grain. Heated in the microwave."
+	icon_state = "shoalpocketbox"
 	illustration=null
-	var/donktype = /obj/item/food/donkpocket
+	var/shoalpockettype = /obj/item/food/shoalpocket
 
-/obj/item/storage/box/donkpockets/PopulateContents()
+/obj/item/storage/box/shoalpockets/PopulateContents()
 	for(var/i in 1 to 6)
-		new donktype(src)
+		new shoalpockettype(src)
 
-/obj/item/storage/box/donkpockets/donkpocketspicy
-	name = "box of spicy-flavoured donk-pockets"
-	icon_state = "donkpocketboxspicy"
-	donktype = /obj/item/food/donkpocket/spicy
+/obj/item/storage/box/shoalpockets/shoalpocketspicy
+	name = "box of spicy-flavoured shoalwiches"
+	icon_state = "shoalpocketboxspicy"
+	shoalpockettype = /obj/item/food/shoalpocket/spicy
 
-/obj/item/storage/box/donkpockets/donkpocketteriyaki
-	name = "box of teriyaki-flavoured donk-pockets"
-	icon_state = "donkpocketboxteriyaki"
-	donktype = /obj/item/food/donkpocket/teriyaki
+/obj/item/storage/box/shoalpockets/shoalpocketteriyaki
+	name = "box of teriyaki-flavoured shoalwiches"
+	icon_state = "shoalpocketboxteriyaki"
+	shoalpockettype = /obj/item/food/shoalpocket/teriyaki
 
-/obj/item/storage/box/donkpockets/donkpocketpizza
-	name = "box of pizza-flavoured donk-pockets"
-	icon_state = "donkpocketboxpizza"
-	donktype = /obj/item/food/donkpocket/pizza
+/obj/item/storage/box/shoalpockets/shoalpocketpizza
+	name = "box of pizza-flavoured shoalwiches"
+	icon_state = "shoalpocketboxpizza"
+	shoalpockettype = /obj/item/food/shoalpocket/pizza
 
-/obj/item/storage/box/donkpockets/donkpocketberry
-	name = "box of berry-flavoured donk-pockets"
-	icon_state = "donkpocketboxberry"
-	donktype = /obj/item/food/donkpocket/berry
+/obj/item/storage/box/shoalpockets/shoalpocketberry
+	name = "box of berry-flavoured shoalwiches"
+	icon_state = "shoalpocketboxberry"
+	shoalpockettype = /obj/item/food/shoalpocket/berry
 
 /obj/item/storage/box/monkeycubes
 	name = "monkey cube box"
