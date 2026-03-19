@@ -186,6 +186,9 @@
 	},
 /obj/item/storage/bag/ore,
 /obj/effect/mapping_helpers/crate_shelve,
+/obj/item/storage/bag/ore,
+/obj/item/mining_scanner,
+/obj/item/mining_scanner,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "dg" = (
@@ -934,6 +937,10 @@
 	dir = 8
 	},
 /obj/machinery/firealarm/directional/west,
+/obj/item/paper/fluff/ships/silverfish{
+	pixel_x = 6;
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "jP" = (
@@ -2354,11 +2361,13 @@
 	pixel_y = 3;
 	pixel_x = -7
 	},
-/obj/item/melee/knife/switchblade{
-	pixel_x = 8
+/obj/item/storage/pouch/ammo{
+	pixel_x = 5;
+	pixel_y = 2
 	},
-/obj/item/attachment/bayonet,
-/obj/item/attachment/bayonet,
+/obj/item/storage/pouch/ammo{
+	pixel_x = 5
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "zo" = (
@@ -3792,6 +3801,7 @@
 /obj/machinery/atmospherics/components/trinary/mixer/flipped{
 	dir = 1
 	},
+/obj/item/paper/crumpled/fluff/ships/silverfish/enginebay,
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "PZ" = (
@@ -4019,7 +4029,6 @@
 /obj/structure/closet/crate/radiation{
 	name = "fuel crate"
 	},
-/obj/item/stack/sheet/mineral/uranium/twenty,
 /obj/effect/decal/cleanable/plastic,
 /obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned/grid/dark,
