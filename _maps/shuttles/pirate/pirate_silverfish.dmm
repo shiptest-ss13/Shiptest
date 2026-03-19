@@ -3206,6 +3206,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rust,
 /area/ship/cargo)
+"Jh" = (
+/obj/machinery/holopad/secure,
+/turf/open/floor/carpet/green,
+/area/ship/crew/ccommons)
 "Ju" = (
 /obj/effect/spawner/bunk_bed{
 	dir = 4
@@ -3813,10 +3817,6 @@
 "QQ" = (
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
-"QS" = (
-/obj/machinery/holopad/secure,
-/turf/open/floor/carpet/green,
-/area/ship/crew/ccommons)
 "Re" = (
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/patterned/grid,
@@ -4430,6 +4430,9 @@
 	},
 /obj/structure/closet/wall/med/directional/east{
 	name = "medical supplies"
+	},
+/obj/item/storage/firstaid{
+	pixel_x = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
@@ -5091,7 +5094,7 @@ JN
 Ec
 Ui
 RU
-QS
+Jh
 tT
 WT
 Qq

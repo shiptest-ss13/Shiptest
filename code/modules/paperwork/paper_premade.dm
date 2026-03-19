@@ -160,7 +160,7 @@
 
 /obj/item/paper/fluff/ships/silverfish
 	name ="\improper Reminder!"
-	default_raw_text = "Hey! whoever was assigned to this hunk of junk, we had to reset the built in security systems to get everything running so the security cameras wont be connected to the command console, download the camera app and connect to "silversecurity" to see the ship camera system, and don't break any! they're expensive!"
+	default_raw_text = "Hey! whoever was assigned to this hunk of junk, we had to reset the built in security systems to get everything running so the security cameras wont be connected to the command console, download the camera app and connect to 'silversecurity' to see the ship camera system, and don't break any! they're expensive!"
 
 /obj/item/paper/crumpled/fluff/ships/silverfish/enginebay
 	name = "\improper Turbine fuel reserves"
