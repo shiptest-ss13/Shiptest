@@ -33,6 +33,10 @@
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 26,
 			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 20,
+			"y" = 15,
 		)
 	)
 
@@ -114,6 +118,10 @@
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 25,
 			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 17,
+			"y" = 15,
 		)
 	)
 
@@ -185,6 +193,10 @@
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 25,
 			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 17,
+			"y" = 15,
 		)
 	)
 
@@ -222,6 +234,10 @@
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 26,
 			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 20,
+			"y" = 15,
 		)
 	)
 
@@ -276,6 +292,10 @@
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 22,
 			"y" = 14,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 15,
+			"y" = 17,
 		)
 	)
 
@@ -333,6 +353,10 @@
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 31,
 			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 24,
+			"y" = 15,
 		)
 	)
 
@@ -371,6 +395,10 @@
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 32,
 			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 26,
+			"y" = 15,
 		)
 	)
 
@@ -438,6 +466,10 @@
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 36,
 			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 26,
+			"y" = 15,
 		)
 	)
 

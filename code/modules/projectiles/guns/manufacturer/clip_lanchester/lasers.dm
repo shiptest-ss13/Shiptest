@@ -19,6 +19,10 @@
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 26,
 			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 20,
+			"y" = 15,
 		)
 	)
 
@@ -49,6 +53,10 @@
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 26,
 			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 20,
+			"y" = 15,
 		)
 	)
 
