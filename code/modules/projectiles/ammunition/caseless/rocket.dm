@@ -3,7 +3,7 @@
 	desc = "An 84mm High Explosive rocket. Fire at people and pray."
 	icon_state = "srm-8"
 	caliber = "84mm"
-	projectile_type = /obj/projectile/bullet/a84mm_he
+	projectile_type = /obj/projectile/bullet/a84mm/he
 	auto_rotate = FALSE
 
 /obj/item/ammo_casing/caseless/rocket/hedp
@@ -13,7 +13,7 @@
 	icon_state = "84mm-hedp"
 	projectile_type = /obj/projectile/bullet/a84mm
 
-/obj/item/ammo_casing/caseless/rocket/test
-	name = "\improper test rocket"
-	desc = "An 84mm High Explosive rocket. Fire at people and pray."
-	projectile_type = /obj/projectile/bullet/a84mm_weak
+/obj/item/ammo_casing/caseless/rocket/light
+	name = "\improper  PM-9LE"
+	desc = "An 84mm Light Explosive rocket. For when you don't want to cause *too* much collateral damage."
+	projectile_type = /obj/projectile/bullet/a84mm/he/weak
