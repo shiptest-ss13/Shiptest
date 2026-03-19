@@ -84,9 +84,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "in" = (
@@ -259,9 +256,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "rj" = (
@@ -279,17 +273,7 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 6
 	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/effect/turf_decal/steeldecal/steel_decals_central7{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/light_switch{
-	pixel_x = -12;
-	pixel_y = 22
-	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "sX" = (
@@ -463,9 +447,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "EX" = (
@@ -478,9 +459,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
 	},
 /obj/structure/closet/emcloset/wall/directional/east,
 /turf/open/floor/plasteel/tech,
@@ -572,6 +550,10 @@
 	name = "Cabin Lockdown";
 	id = "nail_lockdown"
 	},
+/obj/machinery/light_switch{
+	pixel_x = -16;
+	pixel_y = 22
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Mg" = (
@@ -634,13 +616,10 @@
 	dir = 1
 	},
 /obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -697,6 +676,9 @@
 	pixel_x = 0;
 	pixel_y = 0
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "SL" = (
@@ -744,7 +726,13 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
 	},
-/obj/machinery/airalarm/directional/north,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/effect/turf_decal/steeldecal/steel_decals_central7{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 

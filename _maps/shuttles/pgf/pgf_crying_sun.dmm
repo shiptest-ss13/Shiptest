@@ -105,6 +105,14 @@
 	},
 /obj/machinery/autolathe,
 /obj/item/radio/intercom/directional/south,
+/obj/item/stack/sheet/metal/ten{
+	pixel_x = 2;
+	pixel_y = 2
+	},
+/obj/item/stack/sheet/glass/twenty{
+	pixel_y = -2;
+	pixel_x = -2
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "aQ" = (
@@ -3620,8 +3628,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "sH" = (
 /obj/machinery/power/terminal{
@@ -4210,6 +4217,11 @@
 	dir = 10
 	},
 /obj/machinery/firealarm/directional/east,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = -11
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office/lobby)
 "wr" = (
@@ -7959,8 +7971,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Na" = (
 /obj/structure/cable{
