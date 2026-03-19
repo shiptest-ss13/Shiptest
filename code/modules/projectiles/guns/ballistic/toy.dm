@@ -19,7 +19,7 @@
 	burst_size = 3
 	item_flags = NONE
 	casing_ejector = FALSE
-	manufacturer = MANUFACTURER_DONKCO
+	manufacturer = MANUFACTURER_NONE
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
 	wear_rate = 0
@@ -72,7 +72,7 @@
 	fire_sound = 'sound/items/syringeproj.ogg'
 	item_flags = NONE
 	casing_ejector = FALSE
-	manufacturer = MANUFACTURER_DONKCO
+	manufacturer = MANUFACTURER_NONE
 	pb_knockback = 0
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
