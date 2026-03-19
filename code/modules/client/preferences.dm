@@ -1313,19 +1313,20 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(!SSmapping)
 		return
 
-	var/ship_selection = tgui_input_list(user, "Please select which ship to preview outfits for.", "Outfit selection", (list("None") + SSmapping.ship_purchase_list))
-	if(ship_selection == "None")
-		selected_outfit = new /datum/outfit //The base type outfit is nude
+	var/static/list/job_paths = subtypesof(/datum/outfit/job)
+	var/static/list/job_outfits = list()
+	if(!length(job_outfits))
+		for(var/path in job_paths)
+			var/datum/outfit/O = path
+			if(initial(O.can_be_admin_equipped))
+				job_outfits[initial(O.name)] = path
 
-	var/datum/map_template/shuttle/ship = SSmapping.ship_purchase_list[ship_selection]
-	if(!ship)
+	var/outfit_choice = tgui_input_list(user, "Please select which job to preview outfits for.", "Outfit selection", job_outfits)
+	if(!job_outfits[outfit_choice])
 		return
+	outfit_choice = job_outfits[outfit_choice]
 
-	var/datum/job/preview_job = tgui_input_list(user, "Please select which job to preview outfits for on the [ship.name].", "Outfit selection", ship.job_slots)
-	if(!preview_job?.outfit)
-		return
-
-	selected_outfit = new preview_job.outfit
+	selected_outfit = new outfit_choice
 
 /datum/preferences/proc/ShowSpeciesChoices(mob/user)
 	var/list/dat = list()
