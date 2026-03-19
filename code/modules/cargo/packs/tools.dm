@@ -23,6 +23,13 @@
 					/obj/item/clothing/glasses/meson/engine)
 	crate_name = "engineering gear crate"
 
+/datum/supply_pack/tools/command_radio
+	name = "Command Radio Crate"
+	desc = "Contains a specialty radio that can transmit radio signals at an enhanced volume."
+	contains = list(/obj/item/radio/command)
+	cost = 750
+	crate_name = "radio crate"
+
 /datum/supply_pack/tools/bodycamera
 	name = "Body Camera Crate"
 	desc = "Contains one portable camera, designed to help keep track of a working group at all times."

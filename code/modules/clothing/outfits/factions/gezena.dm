@@ -141,6 +141,7 @@
 	uniform = /obj/item/clothing/under/gezena/captain
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/captain
+	box = /obj/item/storage/box/survival/pgf/command
 
 	backpack = /obj/item/storage/backpack/captain
 	satchel = /obj/item/storage/backpack/satchel/cap

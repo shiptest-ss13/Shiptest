@@ -5,7 +5,7 @@
 	name = "Shotgun Dart"
 	desc = "These handy darts can be filled up with any chemical and be shot with a shotgun! \
 	Prank your friends by shooting them with laughter! \
-	Not recommended for comercial use."
+	Not recommended for commercial use."
 	item = /obj/item/ammo_casing/shotgun/dart
 
 	cost_min = 10

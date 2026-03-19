@@ -17,36 +17,37 @@
 	"map_path": "_maps/shuttles/independent/independent_shetland.dmm",
 	"token_icon_state": "ship_mid_generic",
 	"map_id": "independent_shetland",
+	"starting_funds": 3000,
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/independent/captain/cheap",
+			"outfit": "/datum/outfit/job/independent/captain/gown",
 			"officer": true,
 			"slots": 1
 		},
 		"First Mate": {
-			"outfit": "/datum/outfit/job/independent/hop",
+			"outfit": "/datum/outfit/job/independent/hop/gown",
 			"officer": true,
 			"slots": 1
 		},
 		"Medical Doctor": {
-			"outfit": "/datum/outfit/job/independent/doctor",
+			"outfit": "/datum/outfit/job/independent/doctor/gown",
 			"slots": 1
 		},
-		"Ship's Engineer": {
-			"outfit": "/datum/outfit/job/independent/engineer",
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/independent/engineer/gown",
 			"slots": 2
 		},
-		"Asteroid Miner": {
-			"outfit": "/datum/outfit/job/independent/miner/hazard",
-			"slots": 1
+		"Explorer": {
+			"outfit": "/datum/outfit/job/independent/miner/gown",
+			"slots": 2
 		},
 		"Security Detail": {
-			"outfit": "/datum/outfit/job/independent/security/western",
+			"outfit": "/datum/outfit/job/independent/security/gown",
 			"slots": 1
 		},
 		"Deckhand": {
-			"outfit": "/datum/outfit/job/independent/assistant/cheap",
-			"slots": 3
+			"outfit": "/datum/outfit/job/independent/assistant/gown",
+			"slots": 4
 		}
 	},
 	"enabled": true

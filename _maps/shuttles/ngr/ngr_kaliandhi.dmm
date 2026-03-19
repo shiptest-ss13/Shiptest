@@ -4248,26 +4248,16 @@
 	},
 /obj/structure/table,
 /obj/item/bodycamera{
-	pixel_x = 1;
-	pixel_y = 11
-	},
-/obj/item/bodycamera{
-	pixel_x = -4;
-	pixel_y = 11
-	},
-/obj/item/bodycamera{
-	pixel_x = -9;
-	pixel_y = 11
-	},
-/obj/item/multitool/syndie{
 	pixel_x = 8;
-	pixel_y = 8
+	pixel_y = 2
 	},
-/obj/item/paper/guides/bodycam{
-	pixel_x = -10;
-	pixel_y = -5
+/obj/item/bodycamera{
+	pixel_y = 11
 	},
-/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/bodycamera{
+	pixel_x = -8;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "wA" = (
@@ -7951,10 +7941,10 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 6
 	},
-/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/shoalpockets,
 /obj/item/storage/cans/sixbeer,
-/obj/effect/spawner/random/food_or_drink/donkpockets,
-/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/effect/spawner/random/food_or_drink/shoalpockets,
+/obj/effect/spawner/random/food_or_drink/shoalpockets,
 /obj/item/storage/cans/sixbeer,
 /obj/structure/closet/secure_closet/freezer{
 	anchored = 1;

@@ -3,7 +3,7 @@
 ///////////////////
 /atom/movable/screen/alert/status_effect/trickwine
 	name = "Trickwine"
-	desc = "Your empowered or weakened by a trickwine!"
+	desc = "You are empowered or weakened by a trickwine!"
 	icon_state = "breakaway_flask"
 
 /atom/movable/screen/alert/status_effect/trickwine/proc/setup(datum/reagent/consumable/ethanol/trickwine/trickwine_reagent)
@@ -24,11 +24,10 @@
 	var/flask_icon = 'icons/obj/drinks/drinks.dmi'
 	// Used for mod outline
 	var/reagent_color = "#FFFFFF"
-	var/message_apply_others = "is affected by a wine!"
-	var/message_apply_self = "You are affected by trickwine!"
-	var/message_remove_others = "is no longer affected by a wine!"
-	var/message_remove_self = "You are no longer affected by trickwine!"
-	var/trickwine_examine_text
+	var/message_apply_others = "is affected by a trickwine!"
+	var/message_apply_self = "You are affected by a trickwine!"
+	var/message_remove_others = "is no longer affected by a trickwine!"
+	var/message_remove_self = "You are no longer affected by a trickwine!"
 	var/alert_desc
 	// Applied and removes with reagent
 	var/trait
@@ -62,24 +61,21 @@
 		QDEL_NULL(particle_generator)
 
 /datum/status_effect/trickwine/get_examine_text()
-	if(trickwine_examine_text)
-		return span_notice(trickwine_examine_text)
-	else
-		return span_notice("SUBJECTPRONOUN seems to be affected by [src].")
+		return span_notice("[owner.p_they(TRUE)] seem[owner.p_s()] to be affected by [src].")
 
 //////////
 // BUFF //
 //////////
 /datum/status_effect/trickwine/buff
 	id = "trick_wine_buff"
-	alert_desc = "Your empowered a trickwine!"
+	alert_desc = "You are empowered by a trickwine!"
 
 
 // DEBUFF //
 ////////////
 /datum/status_effect/trickwine/debuff
 	id = "trick_wine_debuff"
-	alert_desc = "Your weakened a trickwine!"
+	alert_desc = "You are weakened by a trickwine!"
 
 //////////////
 // REAGENTS //
@@ -148,13 +144,13 @@
 
 
 /datum/reagent/consumable/ethanol/trickwine/ash_wine
-	name = "Wine Of Ash"
+	name = "Wine of Ash"
 	description = "A traditional sacrament for members of the Saint-Roumain Militia. Believed to grant visions, seeing use both in ritual and entertainment within the Militia."
 	color = "#6CC66C"
 	boozepwr = 80
 	quality = DRINK_VERYGOOD
 	taste_description = "a rustic fruit, with hints of sweet yet tangy ash."
-	glass_name = "Wine Of Ash"
+	glass_name = "Wine of Ash"
 	glass_desc = "A traditional sacrament for members of the Saint-Roumain Militia. Believed to grant visions, seeing use both in ritual and entertainment within the Militia."
 	breakaway_flask_icon_state = "baflaskashwine"
 	buff_effect = /datum/status_effect/trickwine/buff/ash
@@ -162,7 +158,7 @@
 	dip_ammo_type = /obj/item/ammo_casing/c38/ashwine
 
 /datum/reagent/consumable/ethanol/trickwine/ash_wine/on_mob_life(mob/living/M)
-	var/high_message = pick("You feel far more devoted to the cause", "You feel like you should go on a hunt")
+	var/high_message = pick("You feel far more devoted to the cause.", "You feel like you should go on a hunt.")
 	var/cleanse_message = pick("Divine light purifies you.", "You are purged of foul spirts.")
 	if(prob(10))
 		M.adjust_drugginess(5)
@@ -175,21 +171,25 @@
 
 /datum/status_effect/trickwine/buff/ash
 	id = "ash_wine_buff"
-	trickwine_examine_text = "SUBJECTPRONOUN is filled with energy and devotion! Their eyes are dialated and they are twitching."
 	//message_apply_others =  ""
 	//message_apply_self = ""
 	//message_remove_others = ""
 	//message_remove_self = ""
 	//alert_desc = ""
 
+/datum/status_effect/trickwine/buff/ash/get_examine_text()
+	return span_notice("[owner.p_they(TRUE)] [owner.p_are()] filled with energy and devotion! [owner.p_their(TRUE)] eyes are dilated and [owner.p_they()] [owner.p_are()] twitching.")
+
 /datum/status_effect/trickwine/debuff/ash
 	id = "ash_wine_debuff"
-	trickwine_examine_text = "SUBJECTPRONOUN is covered in a thin layer of ash. They are twitching and jittery."
 	//message_apply_others =  ""
 	//message_apply_self = ""
 	//message_remove_others = ""
 	//message_remove_self = ""
 	//alert_desc = ""
+
+/datum/status_effect/trickwine/debuff/ash/get_examine_text()
+	return span_notice("[owner.p_they(TRUE)] [owner.p_are()] covered in a thin layer of ash. [owner.p_they(TRUE)] [owner.p_are()] twitching and jittery.")
 
 /datum/status_effect/trickwine/debuff/ash/tick()
 	switch(pick("jitter", "dizzy", "drug"))
@@ -201,12 +201,12 @@
 			owner.adjust_drugginess(3)
 
 /datum/reagent/consumable/ethanol/trickwine/ice_wine
-	name = "Wine Of Ice"
+	name = "Wine of Ice"
 	description = "A specialized brew utilized by members of the Saint-Roumain Militia, designed to assist in temperature regulation while working in hot environments. Known to give one the cold shoulder when thrown."
 	color = "#C0F1EE"
 	boozepwr = 70
 	taste_description = "a weighty meat, undercut by a mild pepper."
-	glass_name = "Wine Of Ice"
+	glass_name = "Wine of Ice"
 	glass_desc = "A specialized brew utilized by members of the Saint-Roumain Militia, designed to assist in temperature regulation while working in hot environments. Known to give one the cold shoulder when thrown."
 	breakaway_flask_icon_state = "baflaskicewine"
 	buff_effect = /datum/status_effect/trickwine/buff/ice
@@ -281,13 +281,15 @@
 
 /datum/status_effect/trickwine/buff/shock
 	id = "shock_wine_buff"
-	trickwine_examine_text = "SUBJECTPRONOUN seems to be crackling with energy."
 	message_apply_others =  "seems to be crackling with energy!"
 	message_apply_self = "You feel like a bolt of lightning!"
 	message_remove_others = "has lost their statis energy."
 	message_remove_self = "Inertia leaves your body!"
 	alert_desc = "You feel faster than lightning and cracking with energy! You are immune to shock damage and move faster!"
 	trait = TRAIT_SHOCKIMMUNE
+
+/datum/status_effect/trickwine/buff/shock/get_examine_text()
+	return span_notice("[owner.p_they(TRUE)] seem[owner.p_s()] to be crackling with energy.")
 
 /datum/status_effect/trickwine/buff/shock/on_apply()
 	owner.add_movespeed_modifier(/datum/movespeed_modifier/reagent/shock_wine)

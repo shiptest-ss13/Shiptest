@@ -1170,6 +1170,13 @@
 	else
 		..()
 
+//If a gun does not already have a secondary_action set, and has more than one firemode, the firemode can be toggled with the secondary action: default being shift+space
+/obj/item/gun/secondary_action(user)
+	if(gun_firemodes.len > 1)
+		fire_select(user)
+	else
+		..()
+
 /obj/item/gun/proc/fire_select(mob/living/carbon/human/user)
 
 	//gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER)

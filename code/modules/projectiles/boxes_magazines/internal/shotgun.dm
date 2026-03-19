@@ -52,6 +52,9 @@
 	caliber = ".38"
 	max_ammo = 12
 
+/obj/item/ammo_box/magazine/internal/shot/winchester/presawn
+	max_ammo = 7
+
 /obj/item/ammo_box/magazine/internal/shot/winchester/absolution
 	name = "absolution internal magazine"
 	ammo_type = /obj/item/ammo_casing/a357

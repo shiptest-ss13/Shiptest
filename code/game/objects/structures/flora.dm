@@ -445,8 +445,11 @@
 	icon = 'icons/obj/flora/rocks.dmi'
 	resistance_flags = FIRE_PROOF
 	density = TRUE
+	pass_flags_self = LETPASSTHROW
 	max_integrity = 100
 	var/obj/item/stack/mineResult = /obj/item/stack/ore/glass/basalt
+	passchance = 50
+	pass_through = TRUE
 
 	hitsound_type = PROJECTILE_HITSOUND_STONE
 
@@ -476,10 +479,12 @@
 		if(BURN)
 			playsound(src.loc, 'sound/items/welder.ogg', 100, TRUE)
 
+
 /obj/structure/flora/rock/pile
 	icon_state = "lavarocks1"
 	base_icon_state = "lavarocks"
 	desc = "A pile of rocks."
+	density = FALSE
 
 //Jungle grass
 
@@ -665,6 +670,7 @@
 	icon = 'icons/obj/flora/lavarocks.dmi'
 	icon_state = "lavarocks1"
 	base_icon_state = "lavarocks"
+	density = FALSE
 	gender = PLURAL
 
 /obj/structure/flora/rock/asteroid
@@ -784,6 +790,7 @@
 	icon_state = "redrocks1"
 	base_icon_state = "redrocks"
 	mineResult = /obj/item/stack/ore/glass/rockplanet
+	density = FALSE
 
 /obj/structure/flora/grass/rockplanet
 	name = "cottongrass"

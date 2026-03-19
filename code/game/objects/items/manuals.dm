@@ -168,7 +168,7 @@
 				Put ingredients on table, then click and drag the table onto yourself to see what recipes you can prepare.
 
 				<h2>Microwave:</h2>
-				Use it to cook or boil food ingredients (meats, doughs, egg, spaghetti, donkpocket, etc...).
+				Use it to cook or boil food ingredients (meats, doughs, egg, spaghetti, shoalpocket, etc...).
 				It can cook multiple items at once.
 
 				<h2>Processor:</h2>

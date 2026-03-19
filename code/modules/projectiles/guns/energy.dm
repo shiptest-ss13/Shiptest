@@ -219,6 +219,15 @@
 			update_appearance()
 	return
 
+//If an energy gun has both a variable firerate and a variable ammotype, prioritize switching the firerate. Otherwise, swap the ammotype.
+/obj/item/gun/energy/secondary_action(user)
+	if(gun_firemodes.len > 1)
+		fire_select(user)
+	else if (ammo_type.len > 1)
+		select_fire(user)
+	else
+		..()
+
 /obj/item/gun/energy/can_shoot(visuals)
 	if(safety && !visuals)
 		return FALSE

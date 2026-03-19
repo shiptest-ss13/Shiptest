@@ -173,7 +173,7 @@
 
 /obj/item/organ/cyberimp/brain/datachip/Insert()
 	. = ..()
-	to_chat(owner, span_notice("you feel well versed in the sales of donkpockets and other Donk Co. products"))
+	to_chat(owner, span_notice("you feel well versed in the sales of shoalpockets and other Donk Co. products"))
 
 //[[[[MOUTH]]]]
 /obj/item/organ/cyberimp/mouth

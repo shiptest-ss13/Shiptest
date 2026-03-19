@@ -247,13 +247,6 @@
 	icon_state = "syndicate"
 	is_editable = TRUE
 
-/obj/structure/sign/donk	//based off a collection of simplfied syndicate logos
-	name = "\improper Donk Co. logo sign"
-	sign_change_name = "Corporate Logo - Donk Co."
-	desc = "A sign with the Donk Co. logo on it. Fight for your Donk Pockets!"
-	icon_state = "donkco"
-	is_editable = TRUE
-
 // some solgov stuff
 /obj/structure/sign/solgov_seal
 	name = "seal of the solarian government"

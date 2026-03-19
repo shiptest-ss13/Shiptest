@@ -335,15 +335,6 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_STELLAR)
 	canSmoothWith = list(SMOOTH_GROUP_CARPET_STELLAR)
 
-/turf/open/floor/carpet/donk
-	name = "Donk Co. carpet"
-	icon = 'icons/turf/floors/carpet_donk.dmi'
-	icon_state = "donk_carpet-255"
-	base_icon_state = "donk_carpet"
-	floor_tile = /obj/item/stack/tile/carpet/donk
-	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_DONK)
-	canSmoothWith = list(SMOOTH_GROUP_CARPET_DONK)
-
 /turf/open/floor/carpet/nanoweave
 	name = "nanoweave carpet"
 	desc = "A padded piece of plasteel plating, used to make space-based installations a feel little less soulless."

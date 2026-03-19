@@ -32,7 +32,7 @@
 
 /obj/item/clothing/under/rank/centcom/officer/replica
 	name = "\improper CentCom turtleneck replica"
-	desc = "A cheap copy of the CentCom turtleneck! A Donk Co. logo can be seen on the collar."
+	desc = "A cheap copy of the CentCom turtleneck!"
 
 /obj/item/clothing/under/rank/centcom/officer_skirt
 	name = "\improper CentCom turtleneck skirt"
@@ -43,7 +43,7 @@
 
 /obj/item/clothing/under/rank/centcom/officer_skirt/replica
 	name = "\improper CentCom turtleneck skirt replica"
-	desc = "A cheap copy of the CentCom turtleneck skirt! A Donk Co. logo can be seen on the collar."
+	desc = "A cheap copy of the CentCom turtleneck skirt!"
 
 /obj/item/clothing/under/rank/centcom/centcom_skirt
 	name = "\improper CentCom commander's suitskirt"

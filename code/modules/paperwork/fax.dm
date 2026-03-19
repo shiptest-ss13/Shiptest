@@ -42,7 +42,7 @@
 	var/static/list/exotic_types = list(
 		/obj/item/food/pizzaslice,
 		/obj/item/food/breadslice,
-		/obj/item/food/donkpocket,
+		/obj/item/food/shoalpocket,
 		/obj/item/food/cookie,
 		/obj/item/food/salami,
 		/obj/item/food/cookie/sugar,

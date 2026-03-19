@@ -162,7 +162,7 @@
 	cost = 750
 	contains = list(/obj/item/storage/belt/sabre/suns)
 	crate_name = "student's sabre crate"
-	faction = /datum/faction/syndicate/suns
+	faction = /datum/faction/suns
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -172,7 +172,7 @@
 	cost = 800
 	contains = list(/obj/item/storage/belt/sabre/suns/cmo)
 	crate_name = "student's sabre crate"
-	faction = /datum/faction/syndicate/suns
+	faction = /datum/faction/suns
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -182,7 +182,7 @@
 	cost = 600
 	contains = list(/obj/item/melee/sword/sabre/suns/telescopic)
 	crate_name = "telescopic sabre crate"
-	faction = /datum/faction/syndicate/suns
+	faction = /datum/faction/suns
 	faction_discount = 0
 	faction_locked = TRUE
 

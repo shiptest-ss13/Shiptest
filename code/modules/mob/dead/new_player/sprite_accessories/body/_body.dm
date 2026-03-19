@@ -1,6 +1,8 @@
 /datum/sprite_accessory/body // Used for changing limb icons, doesn't need to hold the actual icon.
 	icon = null
 	icon_state = "who cares fuck you"
+	/// When selected, clicking the [?] button will provide a description of this body.
+	var/desc
 	/// Associated list of bodyparts by zone.
 	var/list/replacement_bodyparts = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head,

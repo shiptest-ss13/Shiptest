@@ -112,6 +112,7 @@
 	item_state = "duster_sec"
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/suit/armor/hos
 	name = "armored greatcoat"

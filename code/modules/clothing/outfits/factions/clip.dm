@@ -67,6 +67,7 @@
 	ears = /obj/item/radio/headset/clip/alt/captain
 	gloves = /obj/item/clothing/gloves/color/white
 	shoes = /obj/item/clothing/shoes/laceup
+	box = /obj/item/storage/box/survival/clip/command
 //	accessory = /obj/item/clothing/accessory/medal/gold/captain
 
 	backpack = /obj/item/storage/backpack/captain
@@ -337,6 +338,7 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/clip/slouch/officer
+	box = /obj/item/storage/box/survival/clip/minutemen/command
 
 	backpack_contents = list(/obj/item/storage/box/ids=1,
 		/obj/item/melee/classic_baton/telescopic=1,

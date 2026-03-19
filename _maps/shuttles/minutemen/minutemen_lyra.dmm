@@ -2975,6 +2975,11 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/closet/crate/secure/plasma{
+	name = "uranium crate (DANGER)"
+	},
+/obj/item/stack/sheet/mineral/uranium/ten,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "wb" = (
@@ -5131,6 +5136,9 @@
 /obj/structure/cable{
 	icon_state = "0-9"
 	},
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "My" = (
@@ -6625,6 +6633,9 @@
 "ZA" = (
 /obj/effect/turf_decal/box,
 /obj/machinery/power/port_gen/pacman/super,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "ZG" = (

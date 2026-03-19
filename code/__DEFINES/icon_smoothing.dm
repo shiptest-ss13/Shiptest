@@ -70,7 +70,6 @@ DEFINE_BITFIELD(smoothing_flags, list(
 #define SMOOTH_GROUP_CARPET_ROYAL_BLUE S_TURF(21) ///turf/open/floor/carpet/royalblue
 #define SMOOTH_GROUP_CARPET_EXECUTIVE S_TURF(22)	///turf/open/floor/carpet/executive
 #define SMOOTH_GROUP_CARPET_STELLAR S_TURF(23)	///turf/open/floor/carpet/stellar
-#define SMOOTH_GROUP_CARPET_DONK S_TURF(24) ///turf/open/floor/carpet/donk
 #define SMOOTH_GROUP_CARPET_RED_GOLD S_TURF(25) ///turf/open/floor/carpet/red_gold
 #define SMOOTH_GROUP_CARPET_NWDARK S_TURF(26) ///turf/open/floor/carpet/nanoweave
 #define SMOOTH_GROUP_CARPET_NWRED S_TURF(27) ///turf/open/floor/carpet/nanoweave/red

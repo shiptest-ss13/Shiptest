@@ -510,8 +510,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/board/donksofttoyvendor
-	name = "Machine Design (Donksoft Toy Vendor Board)"
-	desc = "The circuit board for a Donksoft Toy Vendor."
+	name = "Machine Design (Toy Gun Vendor Board)"
+	desc = "The circuit board for a Toy Gun Vendor."
 	id = "donksofttoyvendor"
 	build_path = /obj/item/circuitboard/machine/vending/donksofttoyvendor
 	category = list ("Misc. Machinery")

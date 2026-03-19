@@ -53,14 +53,6 @@
 		/datum/reagent/consumable/nutriment/protein = 3,
 	)
 
-/obj/item/food/fishmeat/donkfish
-	name = "donkfillet"
-	desc = "The dreaded donkfish fillet. No sane spaceman would eat this, and it does not get better when cooked."
-	icon_state = "donkfillet"
-	food_reagents = list(
-		/datum/reagent/yuck = 3,
-	)
-
 /obj/item/food/fishmeat/carp
 	name = "carp fillet"
 	desc = "A fillet of spess carp meat."

@@ -1070,17 +1070,29 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					accessory_overlay.color = forced_colour
 			standing += accessory_overlay
 
-			if(S.secondary_color)
-				var/mutable_appearance/secondary_color_overlay = mutable_appearance(S.icon, layer = -layer)
+			if(S.primary_color_overlay)
+				var/mutable_appearance/primary_color_overlay_mut = mutable_appearance(S.icon, layer = -layer)
 				if(S.gender_specific)
-					secondary_color_overlay.icon_state = "[g]_[bodypart]_secondary_[S.icon_state]_[layertext]"
+					primary_color_overlay_mut.icon_state = "[g]_[bodypart]_secondary_[S.icon_state]_[layertext]"
 				else
-					secondary_color_overlay.icon_state = "m_[bodypart]_secondary_[S.icon_state]_[layertext]"
+					primary_color_overlay_mut.icon_state = "m_[bodypart]_secondary_[S.icon_state]_[layertext]"
 
 				if(S.center)
-					secondary_color_overlay = center_image(secondary_color_overlay, S.dimension_x, S.dimension_y)
-				secondary_color_overlay.color = "#[H.dna.features["mcolor2"]]"
-				standing += secondary_color_overlay
+					primary_color_overlay_mut = center_image(primary_color_overlay_mut, S.dimension_x, S.dimension_y)
+				primary_color_overlay_mut.color = "#[H.dna.features["mcolor"]]"
+				standing += primary_color_overlay_mut
+
+			if(S.secondary_color_overlay)
+				var/mutable_appearance/secondary_color_overlay_mut = mutable_appearance(S.icon, layer = -layer)
+				if(S.gender_specific)
+					secondary_color_overlay_mut.icon_state = "[g]_[bodypart]_secondary_[S.icon_state]_[layertext]"
+				else
+					secondary_color_overlay_mut.icon_state = "m_[bodypart]_secondary_[S.icon_state]_[layertext]"
+
+				if(S.center)
+					secondary_color_overlay_mut = center_image(secondary_color_overlay_mut, S.dimension_x, S.dimension_y)
+				secondary_color_overlay_mut.color = "#[H.dna.features["mcolor2"]]"
+				standing += secondary_color_overlay_mut
 
 		H.overlays_standing[layer] = standing.Copy()
 		standing = list()
