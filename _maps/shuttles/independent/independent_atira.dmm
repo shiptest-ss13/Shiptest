@@ -438,6 +438,15 @@
 	pixel_x = -30
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	id = "a_head";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Head Lock Override";
+	dir = 4;
+	pixel_y = -16;
+	pixel_x = -20
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "ee" = (
@@ -678,6 +687,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
+"gx" = (
+/turf/closed/wall/mineral/titanium/exterior,
+/area/ship/cargo)
 "gH" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
@@ -2137,6 +2149,9 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
+"sd" = (
+/turf/closed/wall/mineral/titanium/exterior,
+/area/ship/crew/office/lobby)
 "sf" = (
 /obj/structure/closet/secure_closet/engineering_personal{
 	populate = 0;
@@ -2482,6 +2497,9 @@
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
+"to" = (
+/turf/closed/wall/mineral/titanium/exterior,
+/area/ship/engineering/engines/port)
 "tq" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/on{
 	dir = 8
@@ -3605,6 +3623,9 @@
 "Ag" = (
 /turf/template_noop,
 /area/template_noop)
+"Al" = (
+/turf/closed/wall/mineral/titanium/exterior,
+/area/ship/security/armory)
 "An" = (
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
@@ -3666,6 +3687,9 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
+"AB" = (
+/turf/closed/wall/mineral/titanium/exterior,
+/area/ship/engineering/engines/starboard)
 "AD" = (
 /obj/structure/table/reinforced,
 /obj/item/gps{
@@ -4382,6 +4406,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
+"HK" = (
+/turf/closed/wall/mineral/titanium/exterior,
+/area/ship/crew)
 "HM" = (
 /obj/effect/turf_decal/trimline/opaque/blue/filled/corner{
 	dir = 1
@@ -5180,6 +5207,9 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
+"NJ" = (
+/turf/closed/wall/mineral/titanium/exterior,
+/area/ship/bridge)
 "NK" = (
 /obj/structure/mirror{
 	pixel_y = 2;
@@ -5198,6 +5228,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
+"NX" = (
+/turf/closed/wall/mineral/titanium/exterior,
+/area/ship/medical)
 "Oc" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/effect/turf_decal/industrial/warning{
@@ -6091,6 +6124,9 @@
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew)
+"Vv" = (
+/turf/closed/wall/mineral/titanium/exterior,
+/area/ship/crew/ccommons)
 "VG" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/toilet)
@@ -7080,7 +7116,7 @@ PT
 "}
 (10,1,1) = {"
 Ag
-Xi
+to
 Xi
 Xi
 Vd
@@ -7098,12 +7134,12 @@ BL
 so
 PT
 PT
-PT
+AB
 "}
 (11,1,1) = {"
 Ag
 Ag
-Xi
+to
 Xi
 zD
 ps
@@ -7119,7 +7155,7 @@ Kg
 tT
 Md
 PT
-PT
+AB
 Ag
 "}
 (12,1,1) = {"
@@ -7280,7 +7316,7 @@ HD
 Ag
 Ag
 Ag
-lG
+gx
 lG
 lG
 lG
@@ -7294,7 +7330,7 @@ Ge
 hu
 OF
 Ge
-Ge
+Al
 Ag
 Ag
 "}
@@ -7404,7 +7440,7 @@ Jw
 rS
 Jw
 Jw
-Cn
+NX
 Ag
 Ag
 "}
@@ -7523,7 +7559,7 @@ Ag
 Ag
 Ag
 Ag
-Ic
+sd
 Ic
 Po
 uY
@@ -7536,7 +7572,7 @@ vd
 MK
 yu
 Cn
-Cn
+NX
 Ag
 Ag
 "}
@@ -7677,7 +7713,7 @@ Ag
 Ag
 Ag
 Ag
-Qq
+HK
 Qq
 rj
 Vq
@@ -7690,7 +7726,7 @@ er
 er
 er
 er
-er
+NJ
 Ag
 Ag
 "}
@@ -7765,7 +7801,7 @@ Ag
 Ag
 Ag
 Ag
-Qq
+HK
 Qq
 Qq
 Qq
@@ -7898,7 +7934,7 @@ Ag
 Ag
 Ag
 Ag
-GA
+Vv
 FY
 FY
 FY
