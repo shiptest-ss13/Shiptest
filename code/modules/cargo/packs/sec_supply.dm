@@ -327,7 +327,7 @@
 
 /datum/supply_pack/sec_supply/vigilitas_uniform
 	name = "Vigilitas Security Uniform"
-	desc = "Contains a replacement uniform for Vigilitas Interstellar security staff. Armor set sold separately.
+	desc = "Contains a replacement uniform for Vigilitas Interstellar security staff. Armor set sold separately."
 	cost = 150
 	contains = list(/obj/item/clothing/head/nanotrasen/cap/security,
 					/obj/item/clothing/mask/gas/vigilitas,
