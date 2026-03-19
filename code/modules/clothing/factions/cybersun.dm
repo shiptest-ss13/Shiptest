@@ -276,7 +276,7 @@
 
 
 /obj/item/clothing/head/helmet/bulletproof/x11/cybersun/trauma
-	name = "\improper X11 \"Troubleshooter\""
+	name = "\improper X11 \"Trauma Team\""
 	desc = "A bulletproof combat helmet purchased and modified by Cybersun. Painted in Trauma Team colors."
 	icon_state = "trauma_x11helm"
 	unique_reskin = list(
@@ -311,7 +311,7 @@
 	alt_desc = "Designed with fighting Nanotrasen weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in travel mode. Produced by Cybersun Industries."
 	icon_state = "hardsuit1-cybersun"
 	hardsuit_type = "cybersun"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 50, "energy" = 50, "bomb" = 25, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60, "wound" = 30)
+	armor = list("melee" = 30, "bullet" = 35, "laser" = 60, "energy" = 60, "bomb" = 25, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60, "wound" = 30)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	icon = 'icons/obj/clothing/faction/cybersun/suits.dmi'
@@ -323,7 +323,7 @@
 	alt_desc = "Designed with fighting Nanotrasen weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in travel mode. Produced by Cybersun Industries."
 	icon_state = "hardsuit1-cybersun"
 	hardsuit_type = "cybersun"
-	armor = list("melee" = 20, "bullet" = 25, "laser" = 50, "energy" = 50, "bomb" = 25, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60, "wound" = 30)
+	armor = list("melee" = 30, "bullet" = 35, "laser" = 60, "energy" = 60, "bomb" = 25, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60, "wound" = 30)
 	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/head.dmi'
 
@@ -334,7 +334,7 @@
 	alt_desc = "A stripped down version of the neutron-star hardsuit for use by medical technicians. It is in travel mode. Produced by Cybersun Industries."
 	icon_state = "hardsuit1-cyberparamed"
 	hardsuit_type = "cyberparamed"
-	armor = list("melee" = 25, "bullet" = 35, "laser" = 45, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 20)
+	armor = list("melee" = 25, "bullet" = 35, "laser" = 40, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 20)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun/paramed
 	jetpack = null
 	icon = 'icons/obj/clothing/faction/cybersun/suits.dmi'
@@ -346,10 +346,27 @@
 	alt_desc = "A stripped down version of the neutron-star hardsuit for use by medical technicians. It is in travel mode. Produced by Cybersun Industries"
 	icon_state = "hardsuit1-cyberparamed"
 	hardsuit_type = "cyberparamed"
-	armor = list("melee" = 25, "bullet" = 35, "laser" = 45, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 20)
+	armor = list("melee" = 25, "bullet" = 35, "laser" = 40, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 20)
 	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/head.dmi'
 
+//Cybersun infiltrator hardsuit
+/obj/item/clothing/suit/space/hardsuit/stealth/cybersun
+	name = "\improper Magnetar recon hardsuit"
+	desc = "Injection-formed crystalline titanium forms the plates of this lightweight hardsuit, the joints protected by a thin weave of pressure-resistant self-repairing kevlars. A rarity on the field, as Cybersun does not sell them to the open market, instead keeping it for their own service."
+	icon = 'icons/obj/clothing/faction/cybersun/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/suits.dmi'
+	icon_state = "hardsuit-cyberstealth"
+	hardsuit_type = "cyberstealth"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/stealth/cybersun
+
+/obj/item/clothing/head/helmet/space/hardsuit/stealth/cybersun
+	name = "\improper Magnetar hardsuit helmet"
+	desc = "Thin, slick plates part into a visor of light reflective material. Sensors aboard function as a nightvision unit"
+	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/head.dmi'
+	icon_state = "hardsuit0-cyberstealth"
+	hardsuit_type = "cyberstealth"
 
 /* BELTS */
 
