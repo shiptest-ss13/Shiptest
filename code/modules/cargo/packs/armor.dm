@@ -257,16 +257,14 @@
 	contains = list(/obj/item/clothing/suit/armor/vest/marine/medium/cybersun/trauma,
 					/obj/item/clothing/head/helmet/riot/cybersun/trauma)
 //Nanotrasen
-/datum/supply_pack/armor/basic_nanotrasen
+/datum/supply_pack/armor/basic_armor/nanotrasen
 	name = "Vigilitas Armor Crate"
-	desc = "One Vigilitas standard issue security uniform, complete with armor."
-	cost = 800
-	contains = list(/obj/item/clothing/head/nanotrasen/cap/security,
-					/obj/item/clothing/head/helmet/m10/nanotrasen,
-					/obj/item/clothing/suit/armor/nanotrasen,
-					/obj/item/clothing/under/nanotrasen/security)
-crate_name = "armor crate"
+	desc = "One set of Vigilitas-branded armor. The set includes a helmet and a vest."
+	cost = 750 //The red stripe comes at no extra cost to you, director.
+	contains = list(/obj/item/clothing/head/helmet/m10/nanotrasen,
+					/obj/item/clothing/suit/armor/nanotrasen)
+	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-faction = /datum/faction/nt
+	faction = /datum/faction/nt
 	faction_discount = 0
 	faction_locked = TRUE

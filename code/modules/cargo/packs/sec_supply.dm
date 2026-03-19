@@ -14,7 +14,7 @@
 
 /datum/supply_pack/sec_supply/seclite
 	name = "Seclite Crate"
-	desc = "Contains a single high power flashlight, complete with the hardware for attachment to standard helmet mounting brackets"
+	desc = "Contains a single high power flashlight, complete with the hardware for attachment to standard helmet mounting brackets."
 	contains = list(/obj/item/flashlight/seclite)
 	cost = 100
 	crate_name = "seclite crate"
@@ -323,3 +323,17 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+//nanotrasen
+
+/datum/supply_pack/sec_supply/vigilitas_uniform
+	name = "Vigilitas Security Uniform"
+	desc = "Contains a replacement uniform for Vigilitas Interstellar security staff. Armor set sold separately.
+	cost = 150
+	contains = list(/obj/item/clothing/head/nanotrasen/cap/security,
+					/obj/item/clothing/mask/gas/vigilitas,
+					/obj/item/clothing/under/nanotrasen/security,
+					/obj/item/clothing/shoes/jackboots,
+					/obj/item/clothing/gloves/color/black)
+	faction = datum/faction/nt
+	faction_discount = 0
+	faction_locked = TRUE
