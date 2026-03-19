@@ -1,0 +1,43 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "712-Y Nimbus-class Caravel",
+	"faction": "/datum/faction/syndicate/cybersun",
+	"prefix": "CSSV",
+	"manufacturer": "ISF Spacecraft",
+	"map_short_name": "Fractus-class",
+	"description": "",
+	"starting_funds": 5000,
+	"tags": [
+		"Combat",
+		"Engineering",
+		"Specialist"
+	],
+	"map_path": "_maps/shuttles/cybersun/cybersun_fractus.dmm",
+	"tranist_x_offset": -15,
+	"tranist_y_offset": -10,
+	"token_icon_state": "ship_small_generic",
+	"namelists": [
+		"SPACE",
+		"BEASTS"
+	],
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/cybersun/officer/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Troubleshooter": {
+			"outfit": "/datum/outfit/job/cybersun/troubleshooter",
+			"slots": 2
+		},
+		"Technician": {
+			"outfit": "/datum/outfit/job/cybersun/engineer",
+			"slots": 1
+		},
+		"Ship's Aide": {
+			"outfit": "/datum/outfit/job/cybersun/assistant",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}
