@@ -257,7 +257,7 @@
 	contains = list(/obj/item/clothing/suit/armor/vest/marine/medium/cybersun/trauma,
 					/obj/item/clothing/head/helmet/riot/cybersun/trauma)
 //Nanotrasen
-/datum/supply_pack/armor/basic_armor/nanotrasen
+/datum/supply_pack/armor/nanotrasen_armor
 	name = "Vigilitas Armor Crate"
 	desc = "One set of Vigilitas-branded armor. The set includes a helmet and a vest."
 	cost = 750 //The red stripe comes at no extra cost to you, director.
