@@ -1643,17 +1643,20 @@
 /obj/structure/table/reinforced,
 /obj/machinery/recharger{
 	pixel_y = 8;
-	pixel_x = -5
+	pixel_x = -9
 	},
 /obj/machinery/recharger{
-	pixel_y = 8;
-	pixel_x = 6
+	pixel_y = 8
 	},
 /obj/item/hand_labeler{
 	pixel_y = -6
 	},
 /obj/machinery/light/directional/east,
 /obj/machinery/airalarm/directional/north,
+/obj/machinery/recharger{
+	pixel_y = 8;
+	pixel_x = 9
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "uA" = (
