@@ -159,5 +159,9 @@
 	default_raw_text = "Keep forgetting where I put my derringer everytime I leave it somewhere, so im keeping it in the safe. REMINDER: The safe is besides the only plant that seems to survive in this dumb habitat."
 
 /obj/item/paper/fluff/ships/silverfish
-	name ="\improper WARNING!!!!"
-	default_raw_text = "DO NOT USE THE BASE AIRMIX ON THE TURBINE!! We didn't have time to get a custom one installed so ya gotta do it yourself, remember, the ratio of the mix determines the thrust, and with limited fuel, this beautiful emergency thruster needs the best thrust possible to be as efficient. ALSO ONLY USE IT WHEN BEING CHASED...unless ya somehow discovered a shitload of fuel."
+	name ="\improper Reminder!"
+	default_raw_text = "Hey! whoever was assigned to this hunk of junk, we had to reset the built in security systems to get everything running so the security cameras wont be connected to the command console, download the camera app and connect to "silversecurity" to see the ship camera system, and don't break any! they're expensive!"
+
+/obj/item/paper/crumpled/fluff/ships/silverfish/enginebay
+	name = "\improper Turbine fuel reserves"
+	default_raw_text = "if you're reading this, you got a bad end of the stick, this ship wasn't built for our little engine refit, so the turbine runs on canisters, that means only use it in emergencies! if ya run out of fuel its useless, and ya need the speed."

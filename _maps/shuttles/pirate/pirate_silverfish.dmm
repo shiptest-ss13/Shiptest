@@ -7,9 +7,10 @@
 	dir = 9
 	},
 /obj/structure/railing/thin,
-/obj/effect/turf_decal/trimline/opaque/red/end{
-	dir = 8
-	},
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/suit/space/hardsuit/stealth/ramzi,
+/obj/item/tank/jetpack/oxygen/harness,
+/obj/effect/turf_decal/industrial/outline/red,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "ak" = (
@@ -279,6 +280,10 @@
 /obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 5
 	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 4;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "dJ" = (
@@ -345,6 +350,10 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/machinery/camera/emp_proof{
+	network = list("silversecurity");
 	dir = 8
 	},
 /turf/open/floor/wood/walnut,
@@ -585,6 +594,10 @@
 	dir = 8;
 	layer = 2.040
 	},
+/obj/structure/chair/office/dark{
+	dir = 8;
+	pixel_x = -8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "ih" = (
@@ -612,6 +625,8 @@
 	},
 /obj/item/gun/ballistic/automatic/smg/sidewinder/no_mag,
 /obj/item/gun/ballistic/automatic/marksman/boomslang/no_mag,
+/obj/item/gun/ballistic/automatic/smg/cobra/no_mag,
+/obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "iz" = (
@@ -634,13 +649,17 @@
 /obj/item/circuitboard/machine/grounding_rod,
 /obj/item/circuitboard/machine/grounding_rod,
 /obj/item/circuitboard/machine/grounding_rod,
+/obj/machinery/camera/emp_proof{
+	network = list("silversecurity");
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "iB" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
 	name = "Bathroom";
-	id_tag = "fireshitter"
+	id_tag = "silverbath"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -657,9 +676,6 @@
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-8"
-	},
-/obj/machinery/camera/emp_proof{
-	dir = 9
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -835,9 +851,7 @@
 	pixel_x = 3;
 	pixel_y = 7
 	},
-/obj/machinery/camera/emp_proof{
-	dir = 6
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/cryo)
 "jA" = (
@@ -920,9 +934,6 @@
 	dir = 8
 	},
 /obj/machinery/firealarm/directional/west,
-/obj/machinery/camera/emp_proof{
-	dir = 4
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "jP" = (
@@ -986,9 +997,22 @@
 /obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 1
 	},
-/obj/item/storage/toolbox/ammo/c57,
-/obj/item/storage/toolbox/ammo/c65,
+/obj/item/storage/toolbox/ammo/c57{
+	pixel_x = -6;
+	pixel_y = 9
+	},
+/obj/item/storage/toolbox/ammo/c65{
+	pixel_x = 6;
+	pixel_y = 9
+	},
 /obj/machinery/airalarm/directional/north,
+/obj/item/storage/toolbox/ammo/c45{
+	pixel_x = -6;
+	pixel_y = 1
+	},
+/obj/item/storage/toolbox/ammo/c10mm{
+	pixel_x = 7
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "kP" = (
@@ -1004,6 +1028,7 @@
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/item/clothing/suit/space/hardsuit/syndi/ramzi,
 /obj/item/clothing/mask/gas/ramzi,
+/obj/item/tank/jetpack/oxygen/harness,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "lh" = (
@@ -1100,9 +1125,6 @@
 	dir = 6
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/camera/emp_proof{
-	dir = 5
-	},
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -1366,6 +1388,10 @@
 	pixel_x = -9;
 	pixel_y = 22
 	},
+/obj/machinery/camera/emp_proof{
+	network = list("silversecurity");
+	dir = 9
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "po" = (
@@ -1430,6 +1456,15 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
+	},
+/obj/machinery/button/door{
+	pixel_x = -8;
+	pixel_y = -22;
+	dir = 1;
+	id = "silverbath";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock"
 	},
 /turf/open/floor/plating/rust,
 /area/ship/crew/toilet)
@@ -1499,6 +1534,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 10
+	},
+/obj/machinery/camera/emp_proof{
+	network = list("silversecurity");
+	dir = 9
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/ccommons)
@@ -1604,6 +1643,10 @@
 "sg" = (
 /obj/structure/sign/departments/cargo{
 	pixel_x = 30
+	},
+/obj/machinery/camera/emp_proof{
+	network = list("silversecurity");
+	dir = 8
 	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/ccommons)
@@ -1800,9 +1843,6 @@
 "tL" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/camera/emp_proof{
-	dir = 10
-	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "tT" = (
@@ -1849,6 +1889,13 @@
 	pixel_x = 23;
 	id = "silverfish_head_exterior"
 	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_y = 7;
+	name = "window control";
+	id = "silverfish_head_interior";
+	pixel_x = 23
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "uw" = (
@@ -1876,6 +1923,10 @@
 /obj/machinery/fax/ramzi,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
+	},
+/obj/machinery/camera/emp_proof{
+	network = list("silversecurity");
+	dir = 5
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -1989,6 +2040,10 @@
 	},
 /obj/structure/sign/warning/securearea{
 	pixel_y = 26
+	},
+/obj/machinery/camera/emp_proof{
+	network = list("silversecurity");
+	dir = 6
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
@@ -2291,6 +2346,19 @@
 	dir = 5
 	},
 /obj/machinery/light/directional/north,
+/obj/item/melee/knife/combat{
+	pixel_y = 3;
+	pixel_x = -7
+	},
+/obj/item/melee/knife/combat{
+	pixel_y = 3;
+	pixel_x = -7
+	},
+/obj/item/melee/knife/switchblade{
+	pixel_x = 8
+	},
+/obj/item/attachment/bayonet,
+/obj/item/attachment/bayonet,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "zo" = (
@@ -2315,6 +2383,10 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/camera/emp_proof{
+	network = list("silversecurity");
+	dir = 5
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/cryo)
 "zu" = (
@@ -2449,18 +2521,15 @@
 /obj/structure/sign/poster/contraband/m90{
 	pixel_y = -30
 	},
+/obj/machinery/camera/emp_proof{
+	network = list("silversecurity");
+	dir = 8
+	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
 /area/ship/cargo)
 "AC" = (
-/obj/machinery/button/door{
-	dir = 1;
-	pixel_y = -23;
-	name = "window control";
-	id = "silverfish_head_interior";
-	pixel_x = 1
-	},
 /obj/machinery/button/door{
 	dir = 1;
 	pixel_y = -23;
@@ -2605,6 +2674,7 @@
 	dir = 8;
 	layer = 2.040
 	},
+/obj/machinery/holopad/secure,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "CH" = (
@@ -2747,9 +2817,6 @@
 /obj/structure/sign/warning/nosmoking/burnt{
 	pixel_x = 32
 	},
-/obj/machinery/camera/emp_proof{
-	dir = 10
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "DZ" = (
@@ -2781,7 +2848,9 @@
 	dir = 6
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/camera/emp_proof,
+/obj/machinery/camera/emp_proof{
+	network = list("silversecurity")
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "Ee" = (
@@ -3189,7 +3258,9 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/north,
-/obj/machinery/camera/emp_proof,
+/obj/machinery/camera/emp_proof{
+	network = list("silversecurity")
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "JN" = (
@@ -3500,13 +3571,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "NR" = (
-/obj/effect/turf_decal/trimline/opaque/red/corner{
-	dir = 1
-	},
 /obj/structure/railing/thin,
-/obj/effect/turf_decal/trimline/opaque/red/line{
-	dir = 6
-	},
+/obj/effect/turf_decal/trimline/opaque/red/end,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "NT" = (
@@ -3589,8 +3655,16 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 4
 	},
-/obj/structure/closet/crate/freezer,
+/obj/structure/closet/crate/freezer{
+	name = "emergency blood crate"
+	},
 /obj/effect/mapping_helpers/crate_shelve,
+/obj/item/reagent_containers/blood/OMinus,
+/obj/item/reagent_containers/blood/OMinus,
+/obj/item/reagent_containers/blood/elzuose,
+/obj/item/reagent_containers/blood/lizard,
+/obj/item/reagent_containers/blood/synthetic,
+/obj/machinery/iv_drip,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "OD" = (
@@ -3696,6 +3770,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark/end{
 	dir = 8
 	},
+/obj/item/megaphone/sec,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Pp" = (
@@ -3718,9 +3793,6 @@
 "PZ" = (
 /obj/machinery/vending/coffee,
 /obj/machinery/light/small/directional/east,
-/obj/machinery/camera/emp_proof{
-	dir = 8
-	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "Qq" = (
@@ -3741,6 +3813,10 @@
 "QQ" = (
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
+"QS" = (
+/obj/machinery/holopad/secure,
+/turf/open/floor/carpet/green,
+/area/ship/crew/ccommons)
 "Re" = (
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/patterned/grid,
@@ -3767,6 +3843,10 @@
 /obj/machinery/firealarm/directional/east,
 /obj/structure/extinguisher_cabinet/directional/north{
 	pixel_x = -6
+	},
+/obj/machinery/camera/emp_proof{
+	network = list("silversecurity");
+	dir = 9
 	},
 /turf/open/floor/plating/rust,
 /area/ship/engineering/engines)
@@ -4135,6 +4215,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/machinery/camera/emp_proof{
+	network = list("silversecurity");
+	dir = 10
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "VU" = (
@@ -4202,6 +4286,15 @@
 /obj/item/ammo_box/magazine/boomslang/short,
 /obj/item/ammo_box/magazine/boomslang/short,
 /obj/item/ammo_box/magazine/boomslang/short,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m45_cobra,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/item/ammo_box/magazine/m10mm_ringneck,
+/obj/machinery/camera/emp_proof{
+	network = list("silversecurity")
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "WF" = (
@@ -4214,9 +4307,6 @@
 	},
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/vomit/old,
-/obj/machinery/camera/emp_proof{
-	dir = 4
-	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "WK" = (
@@ -4326,22 +4416,6 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 4
 	},
-/obj/item/reagent_containers/blood/elzuose{
-	pixel_y = -5;
-	pixel_x = 8
-	},
-/obj/item/reagent_containers/blood/lizard{
-	pixel_y = -5;
-	pixel_x = 8
-	},
-/obj/item/reagent_containers/blood/OMinus{
-	pixel_x = 8;
-	pixel_y = -5
-	},
-/obj/item/reagent_containers/blood/OMinus{
-	pixel_x = 8;
-	pixel_y = -5
-	},
 /obj/item/storage/firstaid/fire{
 	pixel_x = 8;
 	pixel_y = 8
@@ -4380,6 +4454,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/camera/emp_proof{
+	network = list("silversecurity");
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/crew/ccommons)
 "YO" = (
@@ -4447,9 +4525,6 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/insectguts,
-/obj/machinery/camera/emp_proof{
-	dir = 10
-	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "ZO" = (
@@ -5016,7 +5091,7 @@ JN
 Ec
 Ui
 RU
-dx
+QS
 tT
 WT
 Qq
