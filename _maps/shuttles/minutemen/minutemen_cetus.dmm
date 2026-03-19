@@ -4165,28 +4165,10 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/dorm/captain)
 "xr" = (
-/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1,
-/obj/machinery/atmospherics/components/binary/pump/on/layer4{
-	dir = 2;
-	name = "scrubbers output pump";
-	layer = 2.43
-	},
-/obj/machinery/atmospherics/components/binary/pump/on/layer2{
-	dir = 1;
-	name = "distribution output pump";
-	layer = 2.43;
-	pixel_y = -1
-	},
-/obj/machinery/atmospherics/pipe/manifold/brown/hidden{
-	dir = 4
-	},
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 8
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "xs" = (
@@ -7227,10 +7209,6 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/button/door{
 	dir = 1;
 	pixel_y = -20;
@@ -7726,11 +7704,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
 "Qy" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden/layer5{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/brown/hidden,
 /obj/effect/turf_decal/corner/transparent/lime/half{
 	dir = 1
 	},
@@ -7740,10 +7713,6 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/firealarm/directional/east{
 	pixel_y = -4
 	},
@@ -8795,12 +8764,6 @@
 	},
 /obj/structure/cable/cyan{
 	icon_state = "2-8"
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 4
 	},
 /obj/item/radio/intercom/directional/east,
 /obj/machinery/light_switch{
