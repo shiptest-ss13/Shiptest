@@ -147,6 +147,10 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_ASTHMATIC "asthmatic"
 /// Prevents lung inflammation from increasing.
 #define TRAIT_ANTI_INFLAMMATORY "anti-inflammatory"
+/// This mob is a remote-controlled body of another mob, and shouldn't show up as catatonic/SSD/etc.
+#define TRAIT_REMOTE_CONTROL "remote_control"
+/// This mob is capable of using binary chat.
+#define TRAIT_BINARY_RADIO "binary_radio"
 #define TRAIT_BLIND "blind"
 #define TRAIT_DEAF "deaf"
 #define TRAIT_MUTE "mute"

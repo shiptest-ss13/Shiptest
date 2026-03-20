@@ -124,7 +124,7 @@
 
 	return FALSE
 
-/obj/proc/check_ship_ai_access(mob/living/silicon/robot)
+/obj/proc/check_ship_ai_access(mob/living/robot)
 	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(src)
 	if (gen_ship_access(ship))
 		return TRUE

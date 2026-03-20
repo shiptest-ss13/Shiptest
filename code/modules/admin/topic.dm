@@ -981,14 +981,28 @@
 		if(!check_rights(R_SPAWN))
 			return
 
-		var/mob/living/carbon/human/H = locate(href_list["makeai"])
-		if(!istype(H))
+		var/mob/living/carbon/human/character = locate(href_list["makeai"])
+		if(!ishuman(character))
 			to_chat(usr, "This can only be used on instances of type /mob/living/carbon/human.", confidential = TRUE)
 			return
 
-		message_admins(span_danger("Admin [key_name_admin(usr)] AIized [key_name_admin(H)]!"))
-		log_admin("[key_name(usr)] AIized [key_name(H)].")
-		H.AIize(TRUE, H.client)
+		var/client/user_client = character.client
+		if(alert(usr, "Create a remote frame?", "AI-ize", "Yes", "No") == "Yes")
+			var/mob/living/silicon/ai/new_ai = character.AIize(TRUE, FALSE, user_client)
+			if(!(character.mob_biotypes & MOB_ROBOTIC))
+				character.set_species(/datum/species/ipc)
+				character.apply_pref_name(new_ai, user_client) //If this runtimes oh well jobcode is fucked. //what is this no energy attitude man
+
+			var/obj/item/organ/brain/old_brain = character.getorganslot(ORGAN_SLOT_BRAIN)
+			if(old_brain)
+				qdel(old_brain)
+
+			var/obj/item/organ/brain/remote_control/controller = new()
+			controller.set_linked_ai(new_ai)
+			controller.Insert(character, TRUE, FALSE, TRUE)
+
+		message_admins(span_danger("Admin [key_name_admin(usr)] AIized [key_name_admin(user_client)]!"))
+		log_admin("[key_name(usr)] AIized [key_name(user_client)].")
 
 	else if(href_list["makealien"])
 		if(!check_rights(R_SPAWN))

@@ -32,7 +32,8 @@
 	if(circuit)
 		QDEL_NULL(circuit)
 	if(brain)
-		QDEL_NULL(brain)
+		brain.forceMove(drop_location())
+		brain = null
 	QDEL_NULL(laws)
 	return ..()
 
@@ -224,9 +225,9 @@
 						var/mob/living/silicon/ai/A = null
 
 						if (brain.overrides_aicore_laws)
-							A = new /mob/living/silicon/ai(loc, brain.laws, B)
+							A = new /mob/living/silicon/ai(loc, brain.laws, B, brain)
 						else
-							A = new /mob/living/silicon/ai(loc, laws, B)
+							A = new /mob/living/silicon/ai(loc, laws, B, brain)
 
 						if(brain.force_replace_ai_name)
 							A.fully_replace_character_name(A.name, brain.replacement_ai_name())
@@ -287,10 +288,12 @@
 	anchored = TRUE
 	state = AI_READY_CORE
 
-/obj/structure/AIcore/deactivated/Initialize()
+/obj/structure/AIcore/deactivated/Initialize(mapload, obj/item/mmi/core_brain)
 	. = ..()
 	circuit = new(src)
-
+	if(core_brain)
+		core_brain.forceMove(src)
+		brain = core_brain
 
 /*
 This is a good place for AI-related object verbs so I'm sticking it here.

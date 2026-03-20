@@ -1142,7 +1142,7 @@
 
 ///Can the mob interact() with an atom?
 /mob/proc/can_interact_with(atom/A)
-	return isAdminGhostAI(src) || Adjacent(A)
+	return isAdminGhostAI(src) || HAS_TRAIT(src, TRAIT_REMOTE_CONTROL) || Adjacent(A)
 
 ///Can the mob use Topic to interact with machines
 /mob/proc/canUseTopic(atom/movable/M, be_close=FALSE, no_dexterity=FALSE, no_tk=FALSE)
@@ -1533,3 +1533,14 @@
 		client.movingmob.client_mobs_in_contents -= src
 		UNSETEMPTY(client.movingmob.client_mobs_in_contents)
 		client.movingmob = null
+
+/// This checks whether a mob has access to a ship.
+/mob/proc/has_ship_access(datum/overmap/ship/controlled/ship)
+	var/signal_result = SEND_SIGNAL(src, COMSIG_MOB_HAS_SHIP_ACCESS, ship)
+	if(signal_result & ALLOW_SHIP_ACCESS)
+		return TRUE
+	if(signal_result & DENY_SHIP_ACCESS)
+		return TRUE
+	var/obj/item/card/id/access_card = get_idcard()
+	if(access_card?.ship_access.Find(ship))
+		return TRUE

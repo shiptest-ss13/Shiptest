@@ -264,7 +264,11 @@ SUBSYSTEM_DEF(mapping)
 				if(isnull(job_outfit))
 					stack_trace("Invalid job outfit: [value["outfit"]] on [S.name]'s config! Defaulting to assistant clothing.")
 					job_outfit = /datum/outfit/job/assistant
-				job_slot = new /datum/job(job, job_outfit)
+				var/job_type = job_outfit.jobtype
+				if(!job_type)
+					stack_trace("Outfit [job_outfit] is missing a defined jobtype!")
+					job_type = /datum/job
+				job_slot = new job_type(job, job_outfit)
 				job_slot.display_order = length(S.job_slots)
 				job_slot.wiki_page = value["wiki_page"]
 				job_slot.officer = value["officer"]

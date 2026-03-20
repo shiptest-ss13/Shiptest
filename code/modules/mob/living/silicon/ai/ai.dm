@@ -48,6 +48,9 @@
 	var/tracking = FALSE //this is 1 if the AI is currently tracking somebody, but the track has not yet been completed.
 	var/datum/effect_system/spark_spread/spark_system //So they can initialize sparks whenever/N
 
+	/// The brain inside this AI to be recovered on deconstruction.
+	var/obj/item/mmi/brain
+
 	//MALFUNCTION
 	var/datum/module_picker/malf_picker
 	var/list/datum/AI_Module/current_modules = list()
@@ -101,13 +104,14 @@
 
 	var/datum/robot_control/robot_control
 
-/mob/living/silicon/ai/Initialize(mapload, datum/ai_laws/L, mob/target_ai)
+/mob/living/silicon/ai/Initialize(mapload, datum/ai_laws/L, mob/target_ai, obj/item/mmi/new_brain)
 	. = ..()
 	if(!target_ai) //If there is no player/brain inside.
 		new/obj/structure/AIcore/deactivated(loc) //New empty terminal.
 		return INITIALIZE_HINT_QDEL //Delete AI.
 
 	ADD_TRAIT(src, TRAIT_NO_TELEPORT, AI_ANCHOR_TRAIT)
+	ADD_TRAIT(src, TRAIT_REMOTE_CONTROL, INNATE_TRAIT)
 	if(L && istype(L, /datum/ai_laws))
 		laws = L
 		laws.associate(src)
@@ -153,6 +157,10 @@
 
 	deploy_action.Grant(src)
 
+	if(new_brain)
+		new_brain.forceMove(src)
+		brain = new_brain
+
 	if(isturf(loc))
 		add_verb(src, list(/mob/living/silicon/ai/proc/ai_network_change, \
 		/mob/living/silicon/ai/proc/ai_statuschange, /mob/living/silicon/ai/proc/ai_hologram_change, \
@@ -190,6 +198,7 @@
 
 /mob/living/silicon/ai/Destroy()
 	GLOB.ai_list -= src
+	QDEL_NULL(brain)
 	QDEL_NULL(eyeobj) // No AI, no Eye
 	QDEL_NULL(aiMulti)
 	QDEL_NULL(spark_system)

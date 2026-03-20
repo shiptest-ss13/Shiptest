@@ -112,6 +112,7 @@
 	wires = new /datum/wires/robot(src)
 	AddComponent(/datum/component/empprotection, EMP_PROTECT_WIRES)
 	RegisterSignal(src, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, PROC_REF(charge))
+	ADD_TRAIT(src, TRAIT_REMOTE_CONTROL, INNATE_TRAIT)
 
 	robot_modules_background = new()
 	robot_modules_background.icon_state = "block"
@@ -1094,8 +1095,9 @@
 		unbuckle_mob(unbuckle_me_now, FALSE)
 
 
-/mob/living/silicon/robot/proc/TryConnectToAI()
-	set_connected_ai(select_active_ai_with_fewest_borgs(z))
+/mob/living/silicon/robot/proc/TryConnectToAI(mob/living/silicon/ai/new_ai)
+	new_ai ||= select_active_ai_with_fewest_borgs(z)
+	set_connected_ai(new_ai)
 	if(connected_ai)
 		lawsync()
 		lawupdate = 1

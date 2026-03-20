@@ -49,24 +49,22 @@
 	GLOB.name_occupations[name] = src
 
 //Only override this proc
-//H is usually a human unless an /equip override transformed it
-//do actions on H but send messages to M as the key may not have been transferred_yet
-/datum/job/proc/after_spawn(mob/living/H, mob/M)
-	//do actions on H but send messages to M as the key may not have been transferred_yet
+//character is usually a human unless an /equip override transformed it
+/datum/job/proc/after_spawn(mob/living/character, mob/joining_mob, datum/overmap/ship/controlled/ship, client/user_client)
 	if(mind_traits)
 		for(var/t in mind_traits)
-			ADD_TRAIT(H.mind, t, JOB_TRAIT)
-	if(roundstart_experience && ishuman(H))
-		var/mob/living/carbon/human/experiencer = H
+			ADD_TRAIT(character.mind, t, JOB_TRAIT)
+	if(roundstart_experience && ishuman(character))
+		var/mob/living/carbon/human/experiencer = character
 		for(var/i in roundstart_experience)
 			experiencer.mind.adjust_experience(i, roundstart_experience[i], TRUE)
 
-	if(!iscarbon(H))
+	if(!iscarbon(character))
 		return
-	var/mob/living/carbon/spawnee = H
-	if(M.client && (M.client.prefs.equipped_gear && length(M.client.prefs.equipped_gear)))
+	var/mob/living/carbon/spawnee = character
+	if(user_client && (user_client.prefs.equipped_gear && length(user_client.prefs.equipped_gear)))
 		var/obj/item/storage/box/loadout_dumper = new()
-		for(var/gear in M.client.prefs.equipped_gear)
+		for(var/gear in user_client.prefs.equipped_gear)
 			var/datum/gear/new_gear = GLOB.gear_datums[gear]
 			new_gear.spawn_item(loadout_dumper, spawnee)
 		var/datum/component/storage/back_storage = spawnee.back.GetComponent(/datum/component/storage)
@@ -79,11 +77,11 @@
 	return FALSE
 
 //Used for a special check of whether to allow a client to latejoin as this job.
-/datum/job/proc/special_check_latejoin(client/C)
+/datum/job/proc/special_check_latejoin(datum/overmap/ship/controlled/ship, client/C)
 	return TRUE
 
 //Gives the player the stuff he should have with his rank
-/datum/job/proc/EquipRank(mob/living/living_mob, datum/overmap/ship/controlled/ship)
+/datum/job/proc/EquipRank(mob/living/living_mob, mob/joining_mob, datum/overmap/ship/controlled/ship)
 	living_mob.job = name
 
 	SEND_SIGNAL(living_mob, COMSIG_JOB_RECEIVED, living_mob.job)
@@ -113,8 +111,6 @@
 	if(ishuman(living_mob))
 		var/mob/living/carbon/human/wageslave = living_mob
 		living_mob.add_memory("Your account ID is [wageslave.account_id].")
-	if(living_mob)
-		after_spawn(living_mob, living_mob) // note: this happens before the mob has a key! living_mob will always have a client, H might not.
 
 	if (ship)
 		var/obj/item/card/id/idcard = living_mob.get_idcard(TRUE)

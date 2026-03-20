@@ -413,6 +413,6 @@
 	if (ship)
 		ship_access -= ship
 
-/mob/living/silicon/proc/has_ship_access(datum/overmap/ship/controlled/ship)
+/mob/living/silicon/has_ship_access(datum/overmap/ship/controlled/ship)
 	if (ship)
 		return ship_access.Find(ship)

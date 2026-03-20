@@ -357,8 +357,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	ORGAN_SLOT_EYES, ORGAN_SLOT_EARS, ORGAN_SLOT_TONGUE, ORGAN_SLOT_LIVER, ORGAN_SLOT_STOMACH))
 
 		var/obj/item/organ/oldorgan = C.getorganslot(slot) //used in removing
-		var/obj/item/organ/neworgan = slot_mutantorgans[slot] //used in adding
+		if(oldorgan && (oldorgan.organ_flags & ORGAN_PERSISTENT))
+			continue
 
+		var/obj/item/organ/neworgan = slot_mutantorgans[slot] //used in adding
 		if(isnull(neworgan)) //If null is specified, just delete the old organ and call it a day
 			QDEL_NULL(oldorgan)
 			continue

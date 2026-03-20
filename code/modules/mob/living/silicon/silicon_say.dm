@@ -5,7 +5,7 @@
 		var/mob/living/silicon/S = src
 		desig = trim_left(S.designation + " " + S.job)
 	var/message_a = say_quote(message)
-	var/rendered = "Robotic Talk, [span_name("[name]")] [span_message("[message_a]")]"
+	var/rendered = "Robotic Talk, [span_name("[real_name]")] [span_message("[message_a]")]"
 	for(var/mob/M in GLOB.player_list)
 		if(M.binarycheck())
 			if(isAI(M))
@@ -24,7 +24,7 @@
 			to_chat(M, span_binarysay("[link] [rendered]"))
 
 /mob/living/silicon/binarycheck()
-	return 1
+	return TRUE
 
 /mob/living/silicon/lingcheck()
 	return 0 //Borged or AI'd lings can't speak on the ling channel.

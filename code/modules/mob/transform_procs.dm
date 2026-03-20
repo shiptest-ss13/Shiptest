@@ -343,39 +343,44 @@
 
 	qdel(src)
 
-/mob/living/carbon/human/AIize(transfer_after = TRUE, client/preference_source)
+/mob/living/carbon/human/AIize(transfer_after = TRUE, delete_self = TRUE, client/preference_source)
 	if (notransform)
 		return
-	for(var/t in get_all_bodyparts())
-		qdel(t)
-
+	if(delete_self)
+		for(var/t in get_all_bodyparts())
+			qdel(t)
 	return ..()
 
-/mob/living/carbon/AIize(transfer_after = TRUE, client/preference_source)
+/mob/living/carbon/AIize(transfer_after = TRUE, delete_self = TRUE, client/preference_source)
 	if (notransform)
 		return
 	notransform = TRUE
-	Paralyze(1, ignore_canstun = TRUE)
-	for(var/obj/item/W in src)
-		dropItemToGround(W)
-	regenerate_icons()
-	icon = null
-	invisibility = INVISIBILITY_MAXIMUM
+	if(delete_self)
+		Paralyze(1, ignore_canstun = TRUE)
+		for(var/obj/item/W in src)
+			dropItemToGround(W)
+		regenerate_icons()
+		icon = null
+		invisibility = INVISIBILITY_MAXIMUM
 	return ..()
 
-/mob/proc/AIize(transfer_after = TRUE, client/preference_source)
+/mob/proc/AIize(transfer_after = TRUE, delete_self = TRUE, client/preference_source)
 	var/list/turf/landmark_loc = list()
 	for(var/obj/effect/landmark/start/ai/sloc in GLOB.landmarks_list)
 		if(locate(/mob/living/silicon/ai) in sloc.loc)
 			continue
+		if(sloc.linked_port && !sloc.linked_port.is_in_shuttle_bounds(sloc))
+			continue
 		if(sloc.primary_ai)
-			LAZYCLEARLIST(landmark_loc)
+			landmark_loc.Cut()
 			landmark_loc += sloc.loc
 			break
 		landmark_loc += sloc.loc
 	if(!landmark_loc.len)
 		to_chat(src, "Oh god sorry we can't find an unoccupied AI spawn location, so we're spawning you on top of someone.")
 		for(var/obj/effect/landmark/start/ai/sloc in GLOB.landmarks_list)
+			if(sloc.linked_port && !sloc.linked_port.is_in_shuttle_bounds(sloc))
+				continue
 			landmark_loc += sloc.loc
 
 	if(!landmark_loc.len)
@@ -388,12 +393,21 @@
 	if(!transfer_after)
 		mind.active = FALSE
 
-	. = new /mob/living/silicon/ai(pick(landmark_loc), null, src)
+	var/mob/living/silicon/ai/new_ai = new(pick(landmark_loc), null, src)
+
+	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(new_ai)
+	if(ship)
+		new_ai.add_ship_access(ship)
 
 	if(preference_source)
-		apply_pref_name("ai",preference_source)
+		new_ai.apply_pref_name("ai", preference_source)
 
-	qdel(src)
+	if(delete_self)
+		qdel(src)
+	else
+		notransform = FALSE
+
+	return new_ai
 
 /mob/living/carbon/human/proc/Robotize(delete_items = 0, transfer_after = TRUE)
 	if (notransform)

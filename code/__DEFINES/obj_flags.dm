@@ -64,6 +64,7 @@
 #define ORGAN_VITAL (1<<4)	//Currently only the brain
 #define ORGAN_EDIBLE (1<<5)	//is a snack? :D
 #define ORGAN_SYNTHETIC_EMP (1<<6)	//Synthetic organ affected by an EMP. Deteriorates over time.
+#define ORGAN_PERSISTENT (1<<7) //This organ should persist through admin-heals.
 
 /// Scarring on the right eye
 #define RIGHT_EYE_SCAR (1<<0)

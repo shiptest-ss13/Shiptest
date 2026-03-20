@@ -284,7 +284,7 @@
 		return JOB_UNAVAILABLE_ACCOUNTAGE
 	if(check_playtime && !ship.source_template.has_job_playtime(client, job))
 		return JOB_UNAVAILABLE_PLAYTIME
-	if(latejoin && !job.special_check_latejoin(client))
+	if(latejoin && !job.special_check_latejoin(ship, client))
 		return JOB_UNAVAILABLE_GENERIC
 	return JOB_AVAILABLE
 
@@ -292,8 +292,10 @@
 	if(auth_check)
 		return
 
-	if(!client.prefs.randomise[RANDOM_NAME]) // do they have random names enabled
-		var/name = client.prefs.real_name
+	var/client/user_client = client
+
+	if(!user_client.prefs.randomise[RANDOM_NAME]) // do they have random names enabled
+		var/name = user_client.prefs.real_name
 		if(GLOB.real_names_joined.Find(name)) // is there someone who spawned with the same name
 			to_chat(usr, "<span class='warning'>Someone has spawned with this name already.")
 			return FALSE
@@ -311,24 +313,24 @@
 	SSticker.queue_delay = 4
 
 	var/mob/living/carbon/human/character = create_character(TRUE)	//creates the human and transfers vars and mind
-	var/equip = job.EquipRank(character, ship)
+	var/equip = job.EquipRank(character, src, ship)
 	if(isliving(equip))	//Borgs get borged in the equip, so we need to make sure we handle the new mob.
 		character = equip
 
 	if(job && !job.override_latejoin_spawn(character))
 		var/atom/spawn_point = pick(ship.shuttle_port.spawn_points)
 		spawn_point.join_player_here(character)
-		var/atom/movable/screen/splash/Spl = new(character.client, TRUE)
+		var/atom/movable/screen/splash/Spl = new(user_client, TRUE)
 		Spl.Fade(TRUE)
 
 		character.update_parallax_teleport()
 
-	character.client.init_verbs() // init verbs for the late join
+	user_client.init_verbs() // init verbs for the late join
 
 	if(ishuman(character))	//These procs all expect humans
 		var/mob/living/carbon/human/humanc = character
-		ship.manifest_inject(humanc, client, job)
-		GLOB.data_core.manifest_inject(humanc, client)
+		ship.manifest_inject(humanc, user_client, job)
+		GLOB.data_core.manifest_inject(humanc, user_client)
 		ship.add_mob_to_crew_guestbook(humanc)
 		AnnounceArrival(humanc, job.name, ship)
 		AddEmploymentContract(humanc)
@@ -339,9 +341,11 @@
 		if(GLOB.curse_of_madness_triggered)
 			give_madness(humanc, GLOB.curse_of_madness_triggered)
 		if(CONFIG_GET(flag/roundstart_traits))
-			SSquirks.AssignQuirks(humanc, humanc.client, TRUE)
+			SSquirks.AssignQuirks(humanc, user_client, TRUE)
 
 	GLOB.joined_player_list += character.ckey
+
+	job.after_spawn(character, src, ship, user_client)
 
 	log_manifest(character.mind.key, character.mind, character, TRUE)
 
