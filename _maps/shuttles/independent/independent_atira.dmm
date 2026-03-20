@@ -581,6 +581,15 @@
 	},
 /turf/open/floor/wood/birch,
 /area/ship/crew/ccommons)
+"fj" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/machinery/door/poddoor{
+	id = "a_tankwindow_e"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "fv" = (
 /obj/machinery/computer/monitor{
 	dir = 4;
@@ -3166,22 +3175,22 @@
 /obj/item/gps{
 	pixel_x = -6;
 	pixel_y = -8;
-	gpstag = *RESCUE1
+	gpstag = "*RESCUE1"
 	},
 /obj/item/gps{
 	pixel_x = -2;
 	pixel_y = -8;
-	gpstag = *RESCUE2
+	gpstag = "*RESCUE2"
 	},
 /obj/item/gps{
 	pixel_y = -8;
 	pixel_x = 2;
-	gpstag = *RESCUE3
+	gpstag = "*RESCUE3"
 	},
 /obj/item/gps{
 	pixel_y = -8;
 	pixel_x = 6;
-	gpstag = *RESCUE4
+	gpstag = "*RESCUE4"
 	},
 /obj/item/bodycamera{
 	pixel_x = -4
@@ -3205,7 +3214,7 @@
 	pixel_x = 10
 	},
 /obj/item/defibrillator/compact/loaded{
-	pixel_y = -8
+	pixel_y = -5
 	},
 /obj/item/flashlight,
 /obj/item/flashlight,
@@ -4029,15 +4038,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
-"CI" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/machinery/door/poddoor{
-	id = "a_tankwindow_e"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
 "CM" = (
 /obj/machinery/modular_computer/console/preset/command{
 	dir = 1;
@@ -7318,7 +7318,7 @@ ve
 xp
 OQ
 Pk
-CI
+fj
 ml
 yf
 ne
