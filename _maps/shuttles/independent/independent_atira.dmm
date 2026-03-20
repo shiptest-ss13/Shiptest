@@ -422,7 +422,16 @@
 	pixel_x = 20;
 	id = "a_tankwindow";
 	name = "Chamber Window Control";
-	req_ship_access = 1
+	req_ship_access = 1;
+	pixel_y = -6
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = 20;
+	id = "a_tankwindow_e";
+	name = "Chamber Side Window Control";
+	req_ship_access = 1;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
@@ -545,6 +554,10 @@
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
 	dir = 4
+	},
+/obj/item/candle{
+	pixel_y = 6;
+	pixel_x = 12
 	},
 /turf/open/floor/wood/birch,
 /area/ship/crew/ccommons)
@@ -899,16 +912,24 @@
 	},
 /obj/effect/turf_decal/techfloor,
 /obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = -8
 	},
 /obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = -2
 	},
 /obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 4
 	},
 /obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 10
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = 5;
+	pixel_y = -8
 	},
 /obj/item/stock_parts/cell/gun/kalix{
 	pixel_x = 5;
@@ -916,15 +937,11 @@
 	},
 /obj/item/stock_parts/cell/gun/kalix{
 	pixel_x = 5;
-	pixel_y = -2
+	pixel_y = 4
 	},
 /obj/item/stock_parts/cell/gun/kalix{
 	pixel_x = 5;
-	pixel_y = -2
-	},
-/obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = 5;
-	pixel_y = -2
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
@@ -3023,6 +3040,7 @@
 	dir = 8
 	},
 /obj/machinery/computer/helm/viewscreen/directional/west,
+/obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "wy" = (
@@ -3147,19 +3165,23 @@
 	},
 /obj/item/gps{
 	pixel_x = -6;
-	pixel_y = -8
+	pixel_y = -8;
+	gpstag = *RESCUE1
 	},
 /obj/item/gps{
 	pixel_x = -2;
-	pixel_y = -8
+	pixel_y = -8;
+	gpstag = *RESCUE2
 	},
 /obj/item/gps{
 	pixel_y = -8;
-	pixel_x = 2
+	pixel_x = 2;
+	gpstag = *RESCUE3
 	},
 /obj/item/gps{
 	pixel_y = -8;
-	pixel_x = 6
+	pixel_x = 6;
+	gpstag = *RESCUE4
 	},
 /obj/item/bodycamera{
 	pixel_x = -4
@@ -3488,12 +3510,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/thinplating/dark,
 /obj/machinery/meter/atmos,
-/turf/open/floor/plasteel/tech,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "zl" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -4010,6 +4029,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
+"CI" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/machinery/door/poddoor{
+	id = "a_tankwindow_e"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "CM" = (
 /obj/machinery/modular_computer/console/preset/command{
 	dir = 1;
@@ -4123,7 +4151,7 @@
 	pixel_y = -8
 	},
 /obj/item/disk/surgery/t3,
-/obj/item/reagent_containers/syringe/stasis,
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/stasis,
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/medical/surgery)
@@ -4555,10 +4583,13 @@
 	pixel_x = -7;
 	pixel_y = -8
 	},
-/obj/effect/mapping_helpers/crate_shelve,
+/obj/item/lighter{
+	pixel_y = -6
+	},
 /obj/structure/chair/handrail{
 	dir = 4
 	},
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "HV" = (
@@ -4997,7 +5028,7 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/door/poddoor{
-	id = "a_tankwindow"
+	id = "a_tankwindow_e"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -5292,6 +5323,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
+	},
+/obj/machinery/light/small/directional/east{
+	pixel_y = 14
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm/captain)
@@ -5969,6 +6003,8 @@
 	req_ship_access = 1;
 	pixel_y = -10
 	},
+/obj/item/storage/fancy/candle_box,
+/obj/item/lighter,
 /turf/open/floor/wood/birch,
 /area/ship/crew/ccommons)
 "SI" = (
@@ -7282,7 +7318,7 @@ ve
 xp
 OQ
 Pk
-yf
+CI
 ml
 yf
 ne
