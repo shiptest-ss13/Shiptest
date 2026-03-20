@@ -233,7 +233,7 @@
 	item_state = "bluecloth"
 
 /obj/item/clothing/head/gezena/medic
-	name = "navy medical cap"
+	name = "medical cap"
 	desc = "The standard cap of the PGF military. The coloring indicates the wearer as a medical specialist."
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
