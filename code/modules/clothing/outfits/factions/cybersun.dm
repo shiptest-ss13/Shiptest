@@ -37,6 +37,7 @@
 	job_icon = "securityofficer"
 
 	uniform = /obj/item/clothing/under/cybersun/overalls
+	alt_uniform = /obj/item/clothing/under/cybersun/sneak
 
 /datum/outfit/job/cybersun/troubleshooter
 	name = "Cybersun - Troubleshooter"
@@ -46,6 +47,7 @@
 	job_icon = "securityofficer"
 
 	uniform = /obj/item/clothing/under/cybersun/suit
+	alt_uniform = /obj/item/clothing/under/cybersun/sneak
 	head = /obj/item/clothing/head/soft/cybersun
 
 /datum/outfit/job/cybersun/paramedic
@@ -113,6 +115,7 @@
 	job_icon = "headofsecurity"
 
 	uniform = /obj/item/clothing/under/cybersun/officer
+	alt_uniform = /obj/item/clothing/under/cybersun/sneak
 
 	head = /obj/item/clothing/head/cybersun
 	id = /obj/item/card/id/syndicate_command/crew_id
