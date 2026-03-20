@@ -1649,28 +1649,6 @@
 	pixel_y = 15;
 	pixel_x = 8
 	},
-/obj/item/reagent_containers/glass/beaker{
-	pixel_y = 8;
-	pixel_x = -10
-	},
-/obj/item/reagent_containers/glass/beaker{
-	pixel_y = 8
-	},
-/obj/item/reagent_containers/glass/beaker{
-	pixel_y = 8;
-	pixel_x = 10
-	},
-/obj/item/reagent_containers/glass/beaker{
-	pixel_y = 3;
-	pixel_x = -10
-	},
-/obj/item/reagent_containers/glass/beaker{
-	pixel_y = 2
-	},
-/obj/item/reagent_containers/glass/beaker{
-	pixel_y = 2;
-	pixel_x = 10
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office/lobby)
 "oa" = (
@@ -3566,6 +3544,46 @@
 	pixel_y = -8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/inhaler{
+	pixel_y = -4;
+	pixel_x = -10
+	},
+/obj/item/inhaler{
+	pixel_y = -8;
+	pixel_x = -10
+	},
+/obj/item/reagent_containers/inhaler_canister{
+	pixel_y = -6;
+	pixel_x = -1
+	},
+/obj/item/reagent_containers/inhaler_canister{
+	pixel_y = -6;
+	pixel_x = 3
+	},
+/obj/item/reagent_containers/inhaler_canister{
+	pixel_y = -6;
+	pixel_x = 7
+	},
+/obj/item/reagent_containers/inhaler_canister{
+	pixel_y = -6;
+	pixel_x = 11
+	},
+/obj/item/reagent_containers/inhaler_canister{
+	pixel_y = -10;
+	pixel_x = -1
+	},
+/obj/item/reagent_containers/inhaler_canister{
+	pixel_y = -10;
+	pixel_x = 3
+	},
+/obj/item/reagent_containers/inhaler_canister{
+	pixel_y = -10;
+	pixel_x = 7
+	},
+/obj/item/reagent_containers/inhaler_canister{
+	pixel_y = -10;
+	pixel_x = 11
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "zA" = (
@@ -5426,6 +5444,9 @@
 	pixel_x = 5;
 	pixel_y = 10
 	},
+/obj/item/storage/box/beakers{
+	pixel_y = 5
+	},
 /obj/item/reagent_containers/glass/chem_jug/fluorine{
 	pixel_x = 7;
 	pixel_y = 5
@@ -5468,57 +5489,21 @@
 /obj/item/reagent_containers/glass/chem_jug/iodine{
 	pixel_x = -8
 	},
-/obj/item/reagent_containers/glass/chem_jug/sodium{
+/obj/item/reagent_containers/glass/chem_jug/hydrogen{
 	pixel_y = -5;
 	pixel_x = 7
 	},
-/obj/item/reagent_containers/glass/chem_jug/potassium{
+/obj/item/reagent_containers/glass/chem_jug/sulfur{
 	pixel_y = -5;
 	pixel_x = 4
 	},
-/obj/item/reagent_containers/glass/chem_jug/hydrogen{
+/obj/item/reagent_containers/glass/chem_jug/sodium{
 	pixel_y = -5;
 	pixel_x = 1
 	},
-/obj/item/reagent_containers/inhaler_canister{
-	pixel_y = -6;
-	pixel_x = -1
-	},
-/obj/item/reagent_containers/inhaler_canister{
-	pixel_y = -6;
-	pixel_x = 3
-	},
-/obj/item/reagent_containers/inhaler_canister{
-	pixel_y = -6;
-	pixel_x = 7
-	},
-/obj/item/reagent_containers/inhaler_canister{
-	pixel_y = -6;
-	pixel_x = 11
-	},
-/obj/item/reagent_containers/inhaler_canister{
-	pixel_y = -10;
-	pixel_x = -1
-	},
-/obj/item/reagent_containers/inhaler_canister{
-	pixel_y = -10;
-	pixel_x = 3
-	},
-/obj/item/reagent_containers/inhaler_canister{
-	pixel_y = -10;
-	pixel_x = 7
-	},
-/obj/item/reagent_containers/inhaler_canister{
-	pixel_y = -10;
-	pixel_x = 11
-	},
-/obj/item/inhaler{
-	pixel_y = -4;
-	pixel_x = -10
-	},
-/obj/item/inhaler{
-	pixel_y = -8;
-	pixel_x = -10
+/obj/item/reagent_containers/glass/chem_jug/potassium{
+	pixel_y = -5;
+	pixel_x = -2
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office/lobby)
