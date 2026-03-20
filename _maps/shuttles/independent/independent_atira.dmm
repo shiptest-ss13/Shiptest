@@ -1570,7 +1570,7 @@
 	dir = 5
 	},
 /turf/open/floor/engine/hull,
-/area/ship/external/dark)
+/area/ship/engineering/engine)
 "nK" = (
 /obj/effect/turf_decal/spline/fancy/opaque/blue{
 	dir = 1
@@ -1627,6 +1627,50 @@
 	layer = 2.04
 	},
 /obj/machinery/light/directional/west,
+/obj/item/reagent_containers/glass/beaker/large{
+	pixel_y = 20;
+	pixel_x = -8
+	},
+/obj/item/reagent_containers/glass/beaker/large{
+	pixel_y = 20
+	},
+/obj/item/reagent_containers/glass/beaker/large{
+	pixel_y = 20;
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/glass/beaker/large{
+	pixel_y = 15;
+	pixel_x = -8
+	},
+/obj/item/reagent_containers/glass/beaker/large{
+	pixel_y = 15
+	},
+/obj/item/reagent_containers/glass/beaker/large{
+	pixel_y = 15;
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/glass/beaker{
+	pixel_y = 8;
+	pixel_x = -10
+	},
+/obj/item/reagent_containers/glass/beaker{
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/glass/beaker{
+	pixel_y = 8;
+	pixel_x = 10
+	},
+/obj/item/reagent_containers/glass/beaker{
+	pixel_y = 3;
+	pixel_x = -10
+	},
+/obj/item/reagent_containers/glass/beaker{
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/glass/beaker{
+	pixel_y = 2;
+	pixel_x = 10
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office/lobby)
 "oa" = (
@@ -3072,6 +3116,9 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/steeldecal/steel_decals6{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/office/lobby)
 "xj" = (
@@ -3271,6 +3318,9 @@
 /obj/machinery/camera/autoname{
 	dir = 8
 	},
+/obj/effect/turf_decal/steeldecal/steel_decals6{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/office/lobby)
 "xP" = (
@@ -3372,6 +3422,9 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/steeldecal/steel_decals6{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/office/lobby)
 "yy" = (
@@ -3404,6 +3457,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/east{
+	pixel_y = 14
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "yQ" = (
@@ -4748,7 +4804,7 @@
 	name = "Fuel Mixer"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/light/small/directional/east,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "KN" = (
@@ -5529,9 +5585,13 @@
 	layer = 2.89
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/colorsalve{
+	pixel_y = 14;
+	pixel_x = -5
+	},
 /obj/item/dyespray{
 	pixel_x = 8;
-	pixel_y = 15
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew)
@@ -5848,9 +5908,8 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/on/layer4,
-/obj/machinery/light/small/directional/east,
 /turf/open/floor/engine/hull,
-/area/ship/external/dark)
+/area/ship/engineering/engine)
 "SE" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -6797,6 +6856,7 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/effect/turf_decal/steeldecal/steel_decals6,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/office/lobby)
 "ZC" = (
