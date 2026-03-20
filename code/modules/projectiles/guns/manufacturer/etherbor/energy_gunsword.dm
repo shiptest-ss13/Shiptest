@@ -82,7 +82,7 @@
 
 /obj/item/ammo_casing/energy/disabler/hitscan/kalix/nock
 	projectile_type = /obj/projectile/beam/hitscan/disabler
-	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
+	fire_sound = 'sound/weapons/taser2.ogg'
 	e_cost = 312 //10 bursts per cell
 	select_name = "disable"
 
@@ -157,7 +157,7 @@
 
 /obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/nock
 	projectile_type = /obj/projectile/beam/hitscan/disabler
-	fire_sound = 'sound/weapons/gun/energy/kalixrifle.ogg'
+	fire_sound = 'sound/weapons/taser2.ogg'
 	e_cost = 250 //16 bursts per cell
 	select_name = "disable"
 
