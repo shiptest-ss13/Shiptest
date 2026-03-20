@@ -371,7 +371,9 @@
 /obj/structure/sign/warning/electricshock{
 	pixel_y = 24
 	},
-/obj/machinery/power/port_gen/pacman,
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
@@ -1639,51 +1641,40 @@
 /area/ship/crew)
 "iu" = (
 /obj/structure/rack,
-/obj/item/attachment/rail_light{
-	pixel_x = 7;
-	pixel_y = 4
-	},
-/obj/item/attachment/rail_light{
-	pixel_x = 7;
-	pixel_y = 4
-	},
-/obj/item/attachment/rail_light{
-	pixel_x = 7;
-	pixel_y = 4
-	},
-/obj/item/attachment/rail_light{
-	pixel_x = 7;
-	pixel_y = 4
-	},
-/obj/item/gps{
-	pixel_x = -10;
-	pixel_y = 1
-	},
-/obj/item/gps{
-	pixel_x = -10;
-	pixel_y = 1
-	},
-/obj/item/gps{
-	pixel_x = -10;
-	pixel_y = 1
-	},
-/obj/item/gps{
-	pixel_x = -10;
-	pixel_y = 1
-	},
-/obj/item/gps{
-	pixel_x = -10;
-	pixel_y = 1
-	},
-/obj/item/bodycamera,
-/obj/item/attachment/rail_light{
-	pixel_x = 7;
-	pixel_y = 4
-	},
-/obj/item/bodycamera,
 /obj/effect/turf_decal/corner/opaque/neutral/full,
 /obj/effect/turf_decal/corner/opaque/purple/bordercee,
 /obj/machinery/light/directional/west,
+/obj/item/attachment/rail_light{
+	pixel_x = 9;
+	pixel_y = 4
+	},
+/obj/item/bodycamera{
+	pixel_x = -11;
+	pixel_y = 4
+	},
+/obj/item/bodycamera{
+	pixel_x = -5;
+	pixel_y = 4
+	},
+/obj/item/bodycamera{
+	pixel_x = 1;
+	pixel_y = 4
+	},
+/obj/item/gps{
+	pixel_x = -10;
+	pixel_y = -6;
+	gpstag = PGFMC - ABLE
+	},
+/obj/item/gps{
+	pixel_x = -1;
+	pixel_y = -6;
+	gpstag = PGFMC - BAKER
+	},
+/obj/item/gps{
+	pixel_y = -6;
+	gpstag = PGFMC - STAR;
+	pixel_x = -5
+	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "iv" = (
@@ -2360,7 +2351,8 @@
 	},
 /obj/item/gps{
 	pixel_x = -15;
-	pixel_y = 12
+	pixel_y = 12;
+	gpstag = PGFN - Crying Sun
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 5

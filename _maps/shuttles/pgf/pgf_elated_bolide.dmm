@@ -698,7 +698,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "eI" = (
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 5
+	},
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/tank/jetpack/oxygen,
 /obj/item/clothing/suit/space/gezena,
@@ -2024,7 +2026,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "mC" = (
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "mF" = (
@@ -2809,7 +2813,8 @@
 /area/ship/bridge)
 "qq" = (
 /obj/structure/railing{
-	dir = 1
+	dir = 1;
+	layer = 2.85
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
@@ -3445,7 +3450,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "uR" = (
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 5
+	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -3638,6 +3645,11 @@
 	pixel_x = 4;
 	pixel_y = 5
 	},
+/obj/item/gps{
+	pixel_x = 14;
+	pixel_y = 3;
+	gpstag = PGFN - Elated Bolide
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/office)
 "we" = (
@@ -3779,7 +3791,8 @@
 /area/ship/crew/ccommons)
 "xs" = (
 /obj/structure/railing{
-	dir = 10
+	dir = 10;
+	layer = 5
 	},
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -3990,7 +4003,9 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "yv" = (
-/obj/structure/railing/corner,
+/obj/structure/railing/corner{
+	layer = 5
+	},
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
@@ -4158,7 +4173,9 @@
 /obj/machinery/power/terminal{
 	dir = 4
 	},
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 5
+	},
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
@@ -4184,7 +4201,8 @@
 	dir = 4
 	},
 /obj/structure/railing{
-	dir = 6
+	dir = 6;
+	layer = 5
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/green{
 	dir = 6
@@ -5446,7 +5464,8 @@
 	charge = 1e+006
 	},
 /obj/structure/railing{
-	dir = 6
+	dir = 6;
+	layer = 5
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -6071,7 +6090,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 5
+	},
 /obj/structure/closet/secure_closet/engineering_electrical,
 /obj/machinery/camera/autoname{
 	dir = 8
@@ -7168,14 +7189,17 @@
 /obj/structure/table/reinforced,
 /obj/item/gps{
 	pixel_x = -10;
-	pixel_y = -6
+	pixel_y = -6;
+	gpstag = PGFMC - ABLE
 	},
 /obj/item/gps{
-	pixel_y = -6
+	pixel_y = -6;
+	gpstag = PGFMC - STAR
 	},
 /obj/item/gps{
 	pixel_x = 10;
-	pixel_y = -6
+	pixel_y = -6;
+	gpstag = PGFMC - BAKER
 	},
 /obj/item/bodycamera{
 	pixel_y = 8;
@@ -7586,7 +7610,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "RQ" = (
-/obj/structure/railing/corner,
+/obj/structure/railing/corner{
+	layer = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "RS" = (
@@ -7718,7 +7744,8 @@
 	dir = 1
 	},
 /obj/structure/railing{
-	dir = 1
+	dir = 1;
+	layer = 2.85
 	},
 /obj/structure/filingcabinet/double/grey,
 /obj/item/restraints/handcuffs/cable/zipties,

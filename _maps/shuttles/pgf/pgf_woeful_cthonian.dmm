@@ -697,6 +697,9 @@
 "gg" = (
 /obj/effect/turf_decal/borderfloor/corner,
 /obj/effect/turf_decal/siding/black/corner,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "gm" = (
@@ -895,7 +898,8 @@
 	dir = 1
 	},
 /obj/structure/railing/corner{
-	dir = 8
+	dir = 8;
+	layer = 5
 	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/cable{
@@ -993,6 +997,9 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/black/corner{
+	dir = 8
+	},
+/obj/structure/chair/handrail{
 	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -1791,7 +1798,9 @@
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 1
 	},
-/obj/structure/railing/corner,
+/obj/structure/railing/corner{
+	layer = 5
+	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -2002,7 +2011,9 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "uK" = (
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 5
+	},
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
 	},
@@ -2491,6 +2502,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "yh" = (
@@ -2873,7 +2885,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Ck" = (
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 5
+	},
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 6
 	},
@@ -2982,11 +2996,17 @@
 	pixel_y = 6;
 	pixel_x = -7
 	},
-/obj/item/gps,
-/obj/item/gps,
-/obj/item/gps,
 /obj/item/crowbar/large,
 /obj/item/crowbar/large,
+/obj/item/gps{
+	gpstag = PGFN - CHARLIE
+	},
+/obj/item/gps{
+	gpstag = PGFN - BRAVO
+	},
+/obj/item/gps{
+	gpstag = PGFN - ALPHA
+	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "DJ" = (
@@ -4185,6 +4205,7 @@
 	dir = 4
 	},
 /obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/chair/handrail,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Sp" = (
@@ -4736,7 +4757,8 @@
 	},
 /obj/item/gps{
 	pixel_y = 11;
-	pixel_x = -10
+	pixel_x = -10;
+	gpstag = PGFN - Woeful Cthonian
 	},
 /obj/item/bodycamera{
 	pixel_y = 0;
