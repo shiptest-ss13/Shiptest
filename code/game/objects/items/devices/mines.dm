@@ -712,7 +712,7 @@
 			AddComponent(/datum/component/pellet_cloud, projectile_type = shredammo, magnitude = 2)
 	else
 		var/blastloc = get_step_towards(src, target_turf)
-		explosion(loc, range_devastation, range_heavy, range_light, range_flash, 1, 0, range_flame, 0, 1, \
+		explosion(blastloc, range_devastation, range_heavy, range_light, range_flash, 1, 0, range_flame, 0, 1, \
 		light_dam = light_damage, light_item_dam = light_item_damage, heavy_dam = heavy_damage, heavy_item_dam = heavy_item_damage)
 		if(shredtype)
 			var/obj/item/ammo_casing/shredcasing = new shredtype(src)

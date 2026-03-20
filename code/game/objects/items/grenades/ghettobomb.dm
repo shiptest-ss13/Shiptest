@@ -17,8 +17,14 @@
 	det_time = 50
 	display_timer = 0
 	var/check_parts = FALSE
-	var/range = 3
 	var/list/times
+	ex_heavy = 1
+	heavy_damage = 25
+	heavy_item_damage = 20
+	ex_light = 2
+	light_damage = 15
+	light_item_damage = 10
+	ex_flame = 4 // small explosion, large fireball
 
 /obj/item/grenade/iedcasing/Initialize()
 	. = ..()
@@ -27,10 +33,7 @@
 	times = list("5" = 10, "-1" = 20, "[rand(30,80)]" = 50, "[rand(65,180)]" = 20)// "Premature, Dud, Short Fuse, Long Fuse"=[weighting value]
 	det_time = text2num(pick_weight(times))
 	if(det_time < 0) //checking for 'duds'
-		range = 1
 		det_time = rand(30,80)
-	else
-		range = pick(2,2,2,3,3,3,4)
 	if(check_parts) //since construction code calls this itself, no need to always call it. This does have the downside that adminspawned ones can potentially not have cans if they don't use the /spawned subtype.
 		CheckParts()
 
@@ -62,12 +65,6 @@
 			to_chat(user, span_warning("You light the [name]!"))
 			cut_overlay("improvised_grenade_filled")
 			preprime(user, null, FALSE)
-
-/obj/item/grenade/iedcasing/prime() //Blowing that can up
-	. = ..()
-	update_mob()
-	explosion(src.loc,-1,-1,2, flame_range = 4)	// small explosion, plus a very large fireball.
-	resolve()
 
 /obj/item/grenade/iedcasing/change_det_time()
 	return //always be random.
