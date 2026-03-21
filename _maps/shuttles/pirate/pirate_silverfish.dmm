@@ -618,7 +618,9 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
 "ir" = (
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
+	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9;
 	color = "#912a2a"
@@ -2337,8 +2339,7 @@
 "yP" = (
 /obj/machinery/door/airlock/engineering{
 	dir = 1;
-	name = "Starboard Engine";
-	req_access_txt = "10"
+	name = "Starboard Engine"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 2
@@ -4087,8 +4088,7 @@
 "Tz" = (
 /obj/machinery/door/airlock/engineering{
 	dir = 4;
-	name = "Port Engine";
-	req_access_txt = "10"
+	name = "Port Engine"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -4333,7 +4333,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Wl" = (
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
+	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1;
 	color = "#912a2a"
