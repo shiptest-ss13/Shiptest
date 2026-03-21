@@ -646,6 +646,7 @@
 	suit = null
 	glasses = null
 	r_pocket = null
+	suit_store = null
 
 //psychologist
 
