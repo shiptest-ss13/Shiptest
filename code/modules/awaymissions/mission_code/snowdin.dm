@@ -332,13 +332,17 @@
 /obj/structure/flora/rock/icy
 	name = "icy rock"
 	icon_state = "snowrock_1"
+	density = FALSE
 
 /obj/structure/flora/rock/icy/Initialize()
 	. = ..()
 	icon_state = "snowrock_[rand(1,4)]"
 
+	if(icon_state == "snowrock_1")
+		density = TRUE
+
 /obj/structure/flora/rock/pile/icy
-	name = "icey rocks"
+	name = "icy rocks"
 	icon_state = "snowrock_4"
 
 /obj/structure/flora/rock/pile/icy/Initialize()

@@ -2650,9 +2650,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					prosthetic_limbs[pros_limb] = PROSTHETIC_NORMAL
 					character.regenerate_limb(pros_limb, robotic = fbp)
 					continue
-				if(new_part.should_draw_greyscale) // species that don't use mutant colors normally should still be able to color prosthetics that do
+				// species that don't use mutant colors normally should still be able to color prosthetics that do
+				if(new_part.should_draw_greyscale)
 					new_part.draw_color = features["mcolor"]
-				if(new_part.overlay_icon_state)
+				if(new_part.overlay_use_primary_color || new_part.overlay2_use_primary_color)
+					new_part.species_color = features["mcolor"]
+				if(new_part.overlay_icon_state || new_part.overlay2_icon_state)
 					new_part.species_secondary_color = features["mcolor2"]
 				new_part.replace_limb(character, TRUE)
 				new_part.update_limb(is_creating = TRUE)

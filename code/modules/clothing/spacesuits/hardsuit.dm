@@ -277,6 +277,7 @@
 	heat_protection = HEAD
 	flash_protect = FLASH_PROTECTION_SENSITIVE
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
+	darkness_view = 8
 
 /obj/item/clothing/suit/space/hardsuit/stealth
 	name = "INF-95 Tactical Hardsuit"

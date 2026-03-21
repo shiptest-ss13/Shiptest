@@ -198,8 +198,8 @@
 	name = "Cybersun Bulletproof Armor Crate"
 	desc = "Contains one full set of bulletproof armor, guaranteed to reduce a bullet's stopping power by half but with limited protection against melee weaponry."
 	cost = 1750
-	contains = list(/obj/item/clothing/suit/armor/vest/bulletproof,
-					/obj/item/clothing/head/helmet/bulletproof,
+	contains = list(/obj/item/clothing/suit/armor/vest/bulletproof/cybersun,
+					/obj/item/clothing/head/helmet/bulletproof/x11/cybersun,
 					/obj/item/clothing/glasses/sunglasses/ballistic)
 	crate_name = "bulletproof armor crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
@@ -242,7 +242,7 @@
 	name = "Trauma Team Bulletproof Armor Crate"
 	desc = "Contains one full set of bulletproof armor, guaranteed to reduce a bullet's stopping power by half but with limited protection against melee weaponry."
 	contains = list(/obj/item/clothing/suit/armor/vest/bulletproof/cybersun/trauma,
-					/obj/item/clothing/head/helmet/bulletproof,
+					/obj/item/clothing/head/helmet/bulletproof/x11/cybersun/trauma,
 					/obj/item/clothing/glasses/sunglasses/ballistic)
 
 /datum/supply_pack/armor/marine_cybersun/trauma_team
@@ -256,3 +256,15 @@
 	desc = "A trauma team \"Point\" suit, made for first responders in hostile situations. Plates are attached to the vest and cover the limbs. The set includes a helmet and chestpiece."
 	contains = list(/obj/item/clothing/suit/armor/vest/marine/medium/cybersun/trauma,
 					/obj/item/clothing/head/helmet/riot/cybersun/trauma)
+//Nanotrasen
+/datum/supply_pack/armor/nanotrasen_armor
+	name = "Vigilitas Armor Crate"
+	desc = "One set of Vigilitas-branded armor. The set includes a helmet and a vest."
+	cost = 750 //The red stripe comes at no extra cost to you, director.
+	contains = list(/obj/item/clothing/head/helmet/m10/nanotrasen,
+					/obj/item/clothing/suit/armor/nanotrasen)
+	crate_name = "armor crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+	faction = /datum/faction/nt
+	faction_discount = 0
+	faction_locked = TRUE

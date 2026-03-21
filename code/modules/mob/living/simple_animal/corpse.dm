@@ -192,7 +192,7 @@
 	suit = /obj/item/clothing/suit/cybersun
 	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
-	ears = /obj/item/radio/headset/syndicate
+	ears = /obj/item/radio/headset/syndicate/cybersun
 	belt = /obj/item/gun/ballistic/automatic/pistol/challenger
 	head = /obj/item/clothing/head/soft/cybersun/medical
 	id = /obj/item/card/id
@@ -210,7 +210,7 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
-	ears = /obj/item/radio/headset/syndicate
+	ears = /obj/item/radio/headset/syndicate/cybersun
 	belt = /obj/item/storage/belt/medical/paramedic
 	head = /obj/item/clothing/head/soft/cybersun/medical
 	back = /obj/item/storage/backpack/messenger
