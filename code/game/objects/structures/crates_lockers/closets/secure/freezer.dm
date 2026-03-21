@@ -1,5 +1,7 @@
 /obj/structure/closet/secure_closet/freezer
 	icon_state = "freezer"
+	drag_slowdown = 3
+	storage_capacity = 50
 	var/jones = FALSE
 
 /obj/structure/closet/secure_closet/freezer/Destroy()

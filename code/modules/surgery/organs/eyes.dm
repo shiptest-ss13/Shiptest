@@ -234,6 +234,14 @@
 /obj/item/organ/eyes/robotic/kepori
 	eye_icon_state = "eyes_kepori_synth"
 
+/obj/item/organ/eyes/robotic/mono
+	name = "monoeye"
+	eye_icon_state = "eyes_mono"
+
+/obj/item/organ/eyes/robotic/circle
+	name = "circle monitor"
+	eye_icon_state = "eyes_circle"
+
 /obj/item/organ/eyes/robotic/emp_act(severity)
 	. = ..()
 	if(!owner || . & EMP_PROTECT_SELF)
