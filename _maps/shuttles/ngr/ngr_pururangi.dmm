@@ -206,6 +206,7 @@
 /obj/item/radio/headset/alt,
 /obj/item/storage/backpack/duffelbag/engineering,
 /obj/item/clothing/glasses/welding,
+/obj/item/clothing/neck/shemagh/ngr,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office)
 "bs" = (
@@ -273,6 +274,8 @@
 	},
 /obj/item/radio/headset/headset_med,
 /obj/item/radio/headset/headset_med,
+/obj/item/clothing/neck/shemagh/ngr,
+/obj/item/clothing/neck/shemagh/ngr,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "bC" = (
@@ -1072,11 +1075,11 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
-/obj/item/clothing/suit/space/hardsuit/syndi/ngr,
-/obj/item/clothing/mask/gas/syndicate,
 /obj/machinery/suit_storage_unit/inherit/locked{
 	req_access_txt = "3"
 	},
+/obj/item/clothing/suit/space/syndicate/ngr,
+/obj/item/clothing/mask/gas/syndicate,
 /obj/item/tank/jetpack/oxygen/harness,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -2636,6 +2639,27 @@
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall/orange/directional/east{
+	name = "Wrecker's Locker";
+	req_access = list(48);
+	pixel_x = 0;
+	pixel_y = 28;
+	dir = 1
+	},
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/under/syndicate/ngr/jumpsuit,
+/obj/item/clothing/accessory/armband/cargo,
+/obj/item/clothing/suit/hazardvest/ngr,
+/obj/item/clothing/head/hardhat/ngr,
+/obj/item/clothing/gloves/explorer,
+/obj/item/clothing/head/ngr/flap,
+/obj/item/clothing/head/ngr,
+/obj/item/clothing/neck/shemagh/ngr,
+/obj/item/clothing/mask/balaclava/ngr,
+/obj/item/clothing/suit/hooded/wintercoat/security/ngr,
+/obj/item/storage/belt/mining/ngr,
+/obj/item/clothing/glasses/meson,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "rN" = (
@@ -3128,7 +3152,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/crate_shelve,
 /obj/structure/closet/crate/secure{
 	name = "Patriotism Crate";
 	desc = "A secure crate containing the Flag of the Republic, perfectly pressed and folded for rapid deployment."
@@ -3138,6 +3161,7 @@
 /obj/item/sign/flag/ngr,
 /obj/item/sign/flag/ngr,
 /obj/item/sign/flag/ngr,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "vf" = (
@@ -4056,27 +4080,6 @@
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/wall/orange/directional/east{
-	name = "Wrecker's Locker";
-	req_access = list(48);
-	pixel_x = 0;
-	pixel_y = 28;
-	dir = 1
-	},
-/obj/item/clothing/shoes/workboots,
-/obj/item/clothing/under/syndicate/ngr/jumpsuit,
-/obj/item/clothing/accessory/armband/cargo,
-/obj/item/clothing/suit/hazardvest/ngr,
-/obj/item/clothing/head/hardhat/ngr,
-/obj/item/clothing/gloves/explorer,
-/obj/item/clothing/head/ngr/flap,
-/obj/item/clothing/head/ngr,
-/obj/item/clothing/neck/shemagh/ngr,
-/obj/item/clothing/mask/balaclava/ngr,
-/obj/item/clothing/suit/hooded/wintercoat/security/ngr,
-/obj/item/storage/belt/mining/ngr,
-/obj/item/clothing/glasses/meson,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "CJ" = (
@@ -7785,7 +7788,7 @@ cK
 eS
 AO
 qg
-rz
+CI
 Xf
 mE
 qg
@@ -7810,7 +7813,7 @@ hf
 hf
 tL
 qg
-CI
+rz
 vb
 eh
 qg
