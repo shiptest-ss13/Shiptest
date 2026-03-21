@@ -37,6 +37,7 @@
 	job_icon = "securityofficer"
 
 	uniform = /obj/item/clothing/under/cybersun/overalls
+	alt_uniform = /obj/item/clothing/under/cybersun/sneak
 
 /datum/outfit/job/cybersun/troubleshooter
 	name = "Cybersun - Troubleshooter"
@@ -46,6 +47,7 @@
 	job_icon = "securityofficer"
 
 	uniform = /obj/item/clothing/under/cybersun/suit
+	alt_uniform = /obj/item/clothing/under/cybersun/sneak
 	head = /obj/item/clothing/head/soft/cybersun
 
 /datum/outfit/job/cybersun/paramedic
@@ -96,7 +98,7 @@
 	jobtype = /datum/job/captain
 	job_icon = "headofsecurity"
 
-	ears = /obj/item/radio/headset/syndicate/alt/captain
+	ears = /obj/item/radio/headset/syndicate/captain/cybersun
 	uniform = /obj/item/clothing/under/cybersun/officer
 	suit = /obj/item/clothing/suit/armor/cybersun
 
@@ -113,6 +115,7 @@
 	job_icon = "headofsecurity"
 
 	uniform = /obj/item/clothing/under/cybersun/officer
+	alt_uniform = /obj/item/clothing/under/cybersun/sneak
 
 	head = /obj/item/clothing/head/cybersun
 	id = /obj/item/card/id/syndicate_command/crew_id
@@ -128,7 +131,7 @@
 	uniform = /obj/item/clothing/under/cybersun/doctor
 	alt_uniform = /obj/item/clothing/under/cybersun/medic
 
-	ears = /obj/item/radio/headset/syndicate/alt/captain
+	ears = /obj/item/radio/headset/syndicate/alt/cybersun
 	id = /obj/item/card/id/syndicate_command/captain_id
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/cybersun/cmo
