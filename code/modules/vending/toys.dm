@@ -1,5 +1,5 @@
 /obj/machinery/vending/donksofttoyvendor
-	name = "\improper Donksoft Toy Vendor"
+	name = "\improper Toy Gun Vendor"
 	desc = "Ages 8 and up approved vendor that dispenses toys."
 	icon_state = "nt-donk"
 	product_slogans = "Get your cool toys today!;Quality toy weapons for cheap prices!"
@@ -25,5 +25,5 @@
 	extra_price = 300
 
 /obj/item/vending_refill/donksoft
-	machine_name = "Donksoft Toy Vendor"
+	machine_name = "Toy Gun Vendor"
 	icon_state = "refill_donksoft"

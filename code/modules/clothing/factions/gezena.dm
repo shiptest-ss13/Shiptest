@@ -341,6 +341,25 @@
 	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
+//Back
+/obj/item/storage/backpack/security/gezena
+	name = "PGFMC backpack"
+	desc = "An aqua-green backpack designed for use with PGFMC rigging, although it can still be worn on its own."
+	icon_state = "pgfpack"
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+
+/obj/item/storage/backpack/satchel/sec/gezena
+	name = "PGFMC satchel"
+	desc = "An aqua-green satchel designed for use with PGFMC rigging, although it can still be worn on its own."
+	icon_state = "satchel-pgf"
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+
+/obj/item/storage/backpack/messenger/sec/gezena
+	name = "PGFMC assault pack"
+	desc = "An aqua-green assault pack designed for use with PGFMC rigging, although it can still be worn on its own."
+	icon_state = "pgfassault"
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+
 //Belt
 
 /obj/item/storage/belt/military/gezena

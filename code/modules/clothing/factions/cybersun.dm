@@ -52,6 +52,14 @@
 	roll_down = FALSE
 	//supports_variations = DIGITIGRADE_VARIATION
 
+/obj/item/clothing/under/cybersun/sneak
+	name = "Cybersun sneaksuit"
+	desc = "A tight form-fitting uniform made from a silky metamaterial. It clings to flesh like shadow clings to light. Near frictionless but extremely comfortable."
+	icon_state = "cybersun_sneaksuit"
+	roll_sleeves = TRUE
+	roll_down = FALSE
+	supports_variations = DIGITIGRADE_VARIATION
+
 /obj/item/clothing/under/cybersun/suit
 	name = "cybersun suit"
 	desc = "White shirt and suit pants, worn by the many office inhabitants working for Cybersun."
@@ -303,6 +311,43 @@
 		"None" = "riot_trauma",
 		"Trauma Teal" = "riot_trauma_teal"
 	)
+//Cybersun Collapsar hardsuit
+/obj/item/clothing/suit/space/hardsuit/collapsar
+	name = "Cybersun \"Collapsar\" assault hardsuit"
+	desc = "Thick plates of flexible plastitanium-kevlar weave with a titanium laminate applied to seal the top make this armor maneuverable and durable. Typically only issued when a fight is expected."
+	icon_state = "hardsuit-collapsar"
+	hardsuit_type = "collapsar"
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 40, "bomb" = 50, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 30)
+	slowdown = 0.5
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/collapsar
+	icon = 'icons/obj/clothing/faction/cybersun/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/suits.dmi'
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/head/helmet/space/hardsuit/collapsar
+	name = "Cybersun \"Collapsar\" assault hardsuit helmet"
+	desc = "Impact resistant plasmaglass is inset with plastitanium to make a durable helmet with clean unassisted field-of-view."
+	icon_state = "hardsuit0-collapsar"
+	hardsuit_type = "collapsar"
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 40, "energy" = 40, "bomb" = 50, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40, "wound" = 30)
+	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/head.dmi'
+
+/obj/item/clothing/suit/space/hardsuit/collapsar/paramed
+	name = "Cybersun \"Collapsar\" retrieval hardsuit"
+	desc = "A Collapsar assault hardsuit coated in teal-tinted titanium coverings. Emblematic of the Trauma Team. "
+	icon_state = "hardsuit-collapsmed"
+	hardsuit_type = "collapsmed"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/collapsar/paramed
+	icon = 'icons/obj/clothing/faction/cybersun/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/suits.dmi'
+
+/obj/item/clothing/head/helmet/space/hardsuit/collapsar/paramed
+	name = "Cybersun \"Collapsar\" retrieval hardsuit helmet"
+	icon_state = "hardsuit0-collapsmed"
+	hardsuit_type = "collapsmed"
+	icon = 'icons/obj/clothing/faction/cybersun/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/cybersun/head.dmi'
 
 //Cybersun Hardsuit
 /obj/item/clothing/suit/space/hardsuit/syndi/cybersun
@@ -382,6 +427,7 @@
 
 	unique_reskin = list(
 		"Troubleshooter" = "cybersun_webbing",
-		"Trauma Team" = "trauma_webbing"
+		"Trauma Team" = "cybersun_med_webbing",
+		"Troubleshooter Alt" = "cybersun_webalt",
+		"Trauma Alt" = "cybersun_med_webalt"
 	)
-
