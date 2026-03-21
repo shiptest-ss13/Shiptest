@@ -1123,7 +1123,7 @@ SUBSYSTEM_DEF(overmap)
 	name = "Makosso-Warra Controlled - Persei-277"
 	starname = "Persei-277"
 	startype = /datum/overmap/star/medium
-	default_outpost_type = /datum/overmap/outpost/makossowarra_ice
+	default_outpost_type = /datum/overmap/outpost/warra_ice
 
 	//main colors, used for dockable terrestrials, and background
 	primary_color = "#7e8cd9"

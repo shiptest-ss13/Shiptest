@@ -12,14 +12,14 @@
 	desc = "Contains a 9x18mm magazine for the standard-issue Commander pistol, with a capacity of twelve rounds."
 	contains = list(/obj/item/ammo_box/magazine/co9mm/empty)
 	cost = 150
-	faction = /datum/faction/makossowarra
+	faction = /datum/faction/warra
 
 /datum/supply_pack/magazine/smgm9mm_mag
 	name = "9x18mm SMG Magazine Crate"
 	desc = "Contains a 9x18mm magazine for the Vector and Saber SMGs, with a capacity of thirty rounds."
 	contains = list(/obj/item/ammo_box/magazine/m9mm_expedition/empty)
 	cost = 250
-	faction = /datum/faction/makossowarra
+	faction = /datum/faction/warra
 
 /* Hunter's Pride */
 
@@ -130,7 +130,7 @@
 	desc = "Contains a 4.6x30mm magazine for the Podium and Schnauzer pistols, with a capacity of 12 rounds."
 	contains = list(/obj/item/ammo_box/magazine/m46_30_podium)
 	cost = 250
-	faction = /datum/faction/makossowarra
+	faction = /datum/faction/warra
 
 /datum/supply_pack/magazine/m10mm_mag
 	name = "Ringneck Magazine Crate"
@@ -295,14 +295,14 @@
 	desc = "Contains a 20-round magazine for the Resolution Auto Rifle. Each magazine is designed to facilitate rapid tactical reloads."
 	cost = 300
 	contains = list(/obj/item/ammo_box/magazine/wt550m9/empty)
-	faction = /datum/faction/makossowarra
+	faction = /datum/faction/warra
 
 /datum/supply_pack/magazine/expedition_mag
 	name = "SGL9 Expedition Submachinegun Magazine Crate"
 	desc = "Contains a 30-round magazine for the Expedition Submachinegun, chambered in 9mm."
 	cost = 250
 	contains = list(/obj/item/ammo_box/magazine/m9mm_expedition)
-	faction = /datum/faction/makossowarra
+	faction = /datum/faction/warra
 
 /* SolGov */
 
@@ -390,11 +390,11 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/magazine/makossowarra_guncell
+/datum/supply_pack/magazine/warra_guncell
 	name = "Sharplite Power Cell"
 	desc = "Contains a proprietary weapon cell, compatible with most Sharplite energy weapons."
 	contains = list(/obj/item/stock_parts/cell/gun/sharplite)
-	faction = /datum/faction/makossowarra
+	faction = /datum/faction/warra
 	faction_discount = 30
 	cost = 700
 
@@ -402,7 +402,7 @@
 	name = "Sharplite Mini Power Cell"
 	desc = "Contains a proprietary weapon cell, compatible with the Ohm self-defence pistol."
 	contains = list(/obj/item/stock_parts/cell/gun/sharplite/mini)
-	faction = /datum/faction/makossowarra
+	faction = /datum/faction/warra
 	faction_discount = 30
 	cost = 300
 
@@ -411,7 +411,7 @@
 	desc = "Contains an upgraded weapon cell, compatible with most Sharplite models. For MW use only."
 	contains = list(/obj/item/stock_parts/cell/gun/sharplite/plus)
 	cost = 1000
-	faction = /datum/faction/makossowarra
+	faction = /datum/faction/warra
 	faction_discount = 0
 	faction_locked = TRUE
 

@@ -34,10 +34,10 @@
 	name = "\improper Commissar"
 	desc = "A Makosso-Warra-issue handgun, modified with a voice box to further enhance its effectiveness in troop discipline."
 	icon_state = "challenger"
-	icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/makossowarra_sharplite/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/makossowarra_sharplite/onmob.dmi'
+	icon = 'icons/obj/guns/manufacturer/warra_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/warra_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/warra_sharplite/onmob.dmi'
 
 	w_class = WEIGHT_CLASS_NORMAL
 	default_ammo_type = /obj/item/ammo_box/magazine/co9mm

@@ -178,7 +178,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/medical)
 	crate_name = "medical hardsuit crate"
 	crate_type = /obj/structure/closet/crate/medical
-	faction = /datum/faction/makossowarra
+	faction = /datum/faction/warra
 
 /datum/supply_pack/spacesuits/engineering_hardsuit
 	name = "Engineering Hardsuit Crate"
@@ -187,7 +187,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/engine)
 	crate_name = "engineering hardsuit crate"
 	crate_type = /obj/structure/closet/crate/medical
-	faction = /datum/faction/makossowarra
+	faction = /datum/faction/warra
 
 /datum/supply_pack/spacesuits/mining_hardsuit_heavy
 	name = "Heavy Mining Hardsuit Crate"
@@ -197,7 +197,7 @@
 					/obj/item/clothing/shoes/bhop)
 	crate_name = "heavy mining hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
-	faction = /datum/faction/makossowarra
+	faction = /datum/faction/warra
 
 /datum/supply_pack/spacesuits/NS_hardsuit
 	name = "N+S Hardsuit Crate"
@@ -206,7 +206,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/mining/heavy/ns)
 	crate_name = "N+S hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
-	faction = /datum/faction/makossowarra
+	faction = /datum/faction/warra
 	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/atmos_hardsuit
@@ -216,7 +216,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/engine/atmos)
 	crate_name = "atmospherics hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
-	faction = /datum/faction/makossowarra
+	faction = /datum/faction/warra
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -227,7 +227,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/engine/elite)
 	crate_name = "advanced hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
-	faction = /datum/faction/makossowarra
+	faction = /datum/faction/warra
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -238,7 +238,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/security/hos)
 	crate_name = "advanced hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/makossowarra
+	faction = /datum/faction/warra
 	faction_discount = 0
 	faction_locked = TRUE
 

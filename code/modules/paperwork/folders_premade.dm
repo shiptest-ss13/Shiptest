@@ -27,7 +27,7 @@
 	icon_state = "folder_syndie"
 
 /obj/item/folder/documents
-	var/document = /obj/item/documents/makossowarra
+	var/document = /obj/item/documents/warra
 	name = "folder- 'TOP SECRET'"
 	desc = "A folder stamped \"Top Secret - Property of Makosso-Warra Corporation. Unauthorized distribution is punishable by death.\""
 

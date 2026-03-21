@@ -34,10 +34,10 @@
 //high rof, range, faster projectile speed
 /* 'Makosso-Warra' turrets */
 
-/obj/machinery/porta_turret/ship/makossowarra
+/obj/machinery/porta_turret/ship/warra
 	name = "Sharplite Defense Turret"
 	desc = "A cheap and effective turret designed by Sharplite and purchased and installed on most Makosso-Warra Vessels."
-	faction = list(FACTION_PLAYER_MAKOSSOWARRA, FACTION_TURRET)
+	faction = list(FACTION_PLAYER_WARRA, FACTION_TURRET)
 	max_integrity = 160
 	integrity_failure = 0.6
 	icon_state = "standard_lethal"
@@ -49,7 +49,7 @@
 	shot_delay = 10
 	scan_range = 10
 
-/obj/machinery/porta_turret/ship/makossowarra/light
+/obj/machinery/porta_turret/ship/warra/light
 	name = "Sharplite LDS"
 	desc = "A cheap and effective 'defensive system' designed by Sharplite for installation on Makosso-Warra vessels."
 	stun_projectile = /obj/projectile/beam/disabler/weak/sharplite
@@ -57,14 +57,14 @@
 	lethal_projectile_sound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 	stun_projectile_sound = 'sound/weapons/taser2.ogg'
 
-/obj/machinery/porta_turret/ship/makossowarra/heavy
+/obj/machinery/porta_turret/ship/warra/heavy
 	name = "Sharplite Defense Cannon"
 	desc = "A heavy laser mounting designed by Sharplite for usage on Makosso-Warra vessels."
 	lethal_projectile = /obj/projectile/beam/laser/heavylaser/sharplite
 	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
 	max_integrity = 250
 
-/obj/machinery/porta_turret/ship/makossowarra/pulse
+/obj/machinery/porta_turret/ship/warra/pulse
 	name = "Sharplite Pulse Cannon"
 	desc = "A pulse cannon mounting designed by Sharplite. Not sold to any purchasers and exclusively used on Makosso-Warra Vessels."
 	lethal_projectile = /obj/projectile/beam/pulse/sharplite_turret

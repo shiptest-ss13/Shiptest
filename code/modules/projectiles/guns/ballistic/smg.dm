@@ -167,4 +167,4 @@ NO_MAG_GUN_HELPER(automatic/smg/skm_carbine/inteq)
 	default_attachments = list(/obj/item/attachment/foldable_stock)
 	bolt_type = BOLT_TYPE_LOCKING
 	show_magazine_on_sprite = TRUE
-	manufacturer = MANUFACTURER_MAKOSSOWARRA_OLD
+	manufacturer = MANUFACTURER_WARRA_OLD

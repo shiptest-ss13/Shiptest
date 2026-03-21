@@ -197,7 +197,7 @@
 
 /obj/item/disk/holodisk/snowdin/overrun
 	name = "Conversation #AOP#55"
-	preset_image_type = /datum/preset_holoimage/makossowarraprivatesecurity
+	preset_image_type = /datum/preset_holoimage/warraprivatesecurity
 	preset_record_text = {"
 	NAME James Reed
 	DELAY 10
@@ -208,7 +208,7 @@
 	DELAY 10
 	SAY Hell if I know! Just shoot it already!
 	DELAY 30
-	PRESET /datum/preset_holoimage/makossowarraprivatesecurity
+	PRESET /datum/preset_holoimage/warraprivatesecurity
 	NAME James Reed
 	DELAY 10
 	SOUND sound/weapons/laser.ogg

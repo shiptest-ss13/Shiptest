@@ -35,7 +35,7 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper-open"
 
-/obj/structure/fluff/empty_sleeper/makossowarra
+/obj/structure/fluff/empty_sleeper/warra
 	name = "broken hypersleep chamber"
 	desc = "A Makosso-Warra hypersleep chamber - this one appears broken. \
 		There are exposed bolts for easy disassembly using a wrench."

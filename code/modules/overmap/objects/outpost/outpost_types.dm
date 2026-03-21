@@ -72,33 +72,33 @@
 /*
 	Makosso-Warra Ice Planet
 */
-/datum/map_template/outpost/makossowarra_ice
-	name = "makossowarra_ice"
+/datum/map_template/outpost/warra_ice
+	name = "warra_ice"
 	outpost_name = "Yebiri Sipili"
 	outpost_administrator = "Makosso-Warra Authorities"
 
-/datum/map_template/outpost/hangar/makossowarra_ice_20x20
-	name = "hangar/makossowarra_ice_20x20"
+/datum/map_template/outpost/hangar/warra_ice_20x20
+	name = "hangar/warra_ice_20x20"
 	dock_width = 20
 	dock_height = 20
 
-/datum/map_template/outpost/hangar/makossowarra_ice_40x20
-	name = "hangar/makossowarra_ice_40x20"
+/datum/map_template/outpost/hangar/warra_ice_40x20
+	name = "hangar/warra_ice_40x20"
 	dock_width = 40
 	dock_height = 20
 
-/datum/map_template/outpost/hangar/makossowarra_ice_40x40
-	name = "hangar/makossowarra_ice_40x40"
+/datum/map_template/outpost/hangar/warra_ice_40x40
+	name = "hangar/warra_ice_40x40"
 	dock_width = 40
 	dock_height = 40
 
-/datum/map_template/outpost/hangar/makossowarra_ice_56x20
-	name = "hangar/makossowarra_ice_56x20"
+/datum/map_template/outpost/hangar/warra_ice_56x20
+	name = "hangar/warra_ice_56x20"
 	dock_width = 56
 	dock_height = 20
 
-/datum/map_template/outpost/hangar/makossowarra_ice_56x40
-	name = "hangar/makossowarra_ice_56x40"
+/datum/map_template/outpost/hangar/warra_ice_56x40
+	name = "hangar/warra_ice_56x40"
 	dock_width = 56
 	dock_height = 40
 
@@ -210,20 +210,20 @@
 	faction = FACTION_INDEPENDENT
 	// Uses "default" hangars (indie_space).
 
-/datum/overmap/outpost/makossowarra_ice
+/datum/overmap/outpost/warra_ice
 	token_icon_state = "station_asteroid"
-	main_template = /datum/map_template/outpost/makossowarra_ice
+	main_template = /datum/map_template/outpost/warra_ice
 	elevator_template = /datum/map_template/outpost/elevator_ice
-	faction = FACTION_MAKOSSOWARRA
+	faction = FACTION_WARRA
 	weather_controller_type = /datum/weather_controller/chill
 	hangar_templates = list(
-		/datum/map_template/outpost/hangar/makossowarra_ice_20x20,
-		/datum/map_template/outpost/hangar/makossowarra_ice_40x20,
-		/datum/map_template/outpost/hangar/makossowarra_ice_40x40,
-		/datum/map_template/outpost/hangar/makossowarra_ice_56x20,
-		/datum/map_template/outpost/hangar/makossowarra_ice_56x40
+		/datum/map_template/outpost/hangar/warra_ice_20x20,
+		/datum/map_template/outpost/hangar/warra_ice_40x20,
+		/datum/map_template/outpost/hangar/warra_ice_40x40,
+		/datum/map_template/outpost/hangar/warra_ice_56x20,
+		/datum/map_template/outpost/hangar/warra_ice_56x40
 	)
-	faction = /datum/faction/makossowarra
+	faction = /datum/faction/warra
 
 	main_level_ztraits = list(
 		ZTRAIT_STATION = TRUE,

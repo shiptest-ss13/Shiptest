@@ -33,9 +33,9 @@
 #define RADIO_KEY_SOLGOV "s"
 #define RADIO_TOKEN_SOLGOV ":s"
 
-#define RADIO_CHANNEL_MAKOSSOWARRA "Makosso-Warra"
-#define RADIO_KEY_MAKOSSOWARRA "w"
-#define RADIO_TOKEN_MAKOSSOWARRA ":w"
+#define RADIO_CHANNEL_WARRA "Makosso-Warra"
+#define RADIO_KEY_WARRA "w"
+#define RADIO_TOKEN_WARRA ":w"
 
 #define RADIO_CHANNEL_MINUTEMEN "Minutemen"
 #define RADIO_KEY_MINUTEMEN "m"
@@ -66,7 +66,7 @@
 #define FREQ_SOLGOV 1345 // SolGov comms frequency, dark blue WS ADDITION
 #define FREQ_INTEQ 1347 // Inteq comms frequency, light brown
 #define FREQ_PGF 1349 // PGF comms frequency, lime green
-#define FREQ_MAKOSSOWARRA 1351 // Makosso-Warra comms frequency, plum
+#define FREQ_WARRA 1351 // Makosso-Warra comms frequency, plum
 #define FREQ_EMERGENCY 1353 // Emergency comms frequency, red
 #define FREQ_MINUTEMEN 1355 // Minutemen comms frequency, soft blue
 #define FREQ_PIRATE 1359 // Pirate comms frequency, gold

@@ -48,10 +48,10 @@
 
 //Shiptest edits start
 
-/obj/item/encryptionkey/makossowarra
+/obj/item/encryptionkey/warra
 	name = "Makosso-Warra encryption key"
 	icon_state = "hop_cypherkey"
-	channels = list(RADIO_CHANNEL_MAKOSSOWARRA = 1)
+	channels = list(RADIO_CHANNEL_WARRA = 1)
 
 /obj/item/encryptionkey/minutemen
 	name = "minutemen encryption key"

@@ -2,7 +2,7 @@
 	category = "Telecommunications"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 	crate_name = "telecommunication equipment"
-	faction = /datum/faction/makossowarra
+	faction = /datum/faction/warra
 	faction_discount = 30
 
 /datum/supply_pack/tcomms/bowman

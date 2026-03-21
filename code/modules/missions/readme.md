@@ -10,7 +10,7 @@ A new advanced type of missions with the core goal of making them more intrestin
 	description = "A Makosso-Warra processing facility, assaulted by a pirate raid that has killed most of the staff. The offices however, remain unbreached for now."
 	suffix = "lavaland_surface_wrecked_factory.dmm"
 	ruin_mission_types = list(
-		/datum/mission/ruin/makossowarra_docs,
+		/datum/mission/ruin/warra_docs,
 		/datum/mission/ruin/captain_medal,
 		/datum/mission/ruin/brainchip
 	)
@@ -39,7 +39,7 @@ If you want your own cost, item, or other simple tweaks create a subtype. vars l
 generate_mission_details is useful if you want to add some extra randomization of flavor like here.
 
 ```dm
-/datum/mission/ruin/makossowarra_files/generate_mission_details()
+/datum/mission/ruin/warra_files/generate_mission_details()
 	. = ..()
 	author = "Captain [random_species_name()]"
 ```
@@ -67,9 +67,9 @@ the signaled subtype of mission/ruin work well for this
 			We want the seismograph readout it prints out when its done as proof."
 	value = 15000
 	faction = list(
-		/datum/faction/makossowarra,
-		/datum/faction/makossowarra/ns_logi,
-		/datum/faction/makossowarra/vigilitas,
+		/datum/faction/warra,
+		/datum/faction/warra/ns_logi,
+		/datum/faction/warra/vigilitas,
 		/datum/faction/independent
 	)
 	registered_type = /obj/machinery/drill/mission/ruin

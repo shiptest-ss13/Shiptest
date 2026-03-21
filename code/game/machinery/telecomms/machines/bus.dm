@@ -56,8 +56,8 @@
 /obj/machinery/telecomms/bus/preset_two
 	id = "Makosso-Warra Communications Bus"
 	network = "tcommsat"
-	freq_listening = list(FREQ_MAKOSSOWARRA, FREQ_COMMON)
-	autolinkers = list("processor2", "makossowarra", "receiverA", "messaging")
+	freq_listening = list(FREQ_WARRA, FREQ_COMMON)
+	autolinkers = list("processor2", "warra", "receiverA", "messaging")
 
 /obj/machinery/telecomms/bus/preset_three
 	id = "Syndicate Communications Bus"

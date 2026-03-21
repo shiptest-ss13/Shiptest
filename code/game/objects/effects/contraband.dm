@@ -504,7 +504,7 @@
 /obj/structure/sign/poster/contraband/aclf
 	name = "Syndicate Support Poster"
 	desc = "An poster made by ACLF protestors in support of the Syndicate, listing Makosso-Warra's abuses of their workers. While this poster was made during for the ICW, it seems like some keep it up as it still resonates with them."
-	icon_state = "poster-aclf_antimakossowarra"
+	icon_state = "poster-aclf_antiwarra"
 
 /obj/structure/sign/poster/contraband/bulldog
 	name = "Bulldog Shotgun"
@@ -516,10 +516,10 @@
 	desc = "A poster advertising the Scarborough M90. Burst action with a grenade launcher, for some reason."
 	icon_state = "poster-m90"
 
-/obj/structure/sign/poster/contraband/inteq_makossowarra
+/obj/structure/sign/poster/contraband/inteq_warra
 	name = "Inteq Recruitment"
 	desc = "Tired of your underpaying and abusive job at Makosso-Warra? Join the IRMG Artificers! You won't get bullshit from us. Retrofit spacecraft and weaponry, field test weaponry, and earn higher pay!"
-	icon_state = "poster-inteq_poaching_makossowarra"
+	icon_state = "poster-inteq_poaching_warra"
 
 /obj/structure/sign/poster/contraband/inteq_gec
 	name = "Inteq Recruitment"
@@ -656,10 +656,10 @@
 	desc = "A poster glorifying the Makosso-Warra private security forces."
 	icon_state = "poster_saftey"
 
-/obj/structure/sign/poster/official/makossowarra_logo
+/obj/structure/sign/poster/official/warra_logo
 	name = "\improper Makosso-Warra logo"
 	desc = "A poster depicting the Makosso-Warra logo."
-	icon_state = "poster_makossowarra"
+	icon_state = "poster_warra"
 
 /obj/structure/sign/poster/official/cleanliness
 	name = "Cleanliness"
@@ -831,15 +831,15 @@
 	random_basetype = /obj/structure/sign/poster/retro
 	random_type = POSTER_SUBTYPES
 
-/obj/structure/sign/poster/retro/makossowarra_logo_70s
+/obj/structure/sign/poster/retro/warra_logo_70s
 	name = "\improper Ancient Makosso-Warra logo"
 	desc = "A poster depicting an older Makosso-Warra logo. This thing is ancient."
-	icon_state = "poster-makossowarra70s_retro"
+	icon_state = "poster-warra70s_retro"
 
-/obj/structure/sign/poster/retro/makossowarra_logo_80s
+/obj/structure/sign/poster/retro/warra_logo_80s
 	name = "\improper Makosso-Warra logo"
 	desc = "A poster depicting Makosso-Warra's ICW-era logo. It has a nice aesthetic."
-	icon_state = "poster-makossowarra_retro"
+	icon_state = "poster-warra_retro"
 
 /obj/structure/sign/poster/retro/smile
 	name = "Smile"

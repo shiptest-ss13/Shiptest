@@ -46,20 +46,20 @@ Featuring:
 	. = ..()
 	wanted_objects = typecacheof(/obj/mecha/combat, TRUE)
 
-/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/makossowarra //makossowarra are syndies! no it's just a weird path.
+/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/warra //makosso-warra are syndies! no it's just a weird path.
 	name = "\improper Makosso-Warra Mecha Pilot"
 	desc = "Death to the Syndicate. This variant comes in MECHA DEATH flavour."
-	icon_living = "makossowarra"
-	icon_state = "makossowarra"
-	faction = list("makossowarra")
+	icon_living = "warra"
+	icon_state = "warra"
+	faction = list("warra")
 	spawn_mecha_type = /obj/mecha/combat/marauder/loaded
 
-/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech/makossowarra
+/mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/no_mech/warra
 	name = "\improper Makosso-Warra Mecha Pilot"
 	desc = "Death to the Syndicate. This variant comes in MECHA DEATH flavour."
-	icon_living = "makossowarra"
-	icon_state = "makossowarra"
-	faction = list("makossowarra")
+	icon_living = "warra"
+	icon_state = "warra"
+	faction = list("warra")
 
 /mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/Initialize()
 	. = ..()

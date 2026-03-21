@@ -499,9 +499,9 @@
 	name = "Bridge Officer"
 	id_job = "Bridge Officer"
 	id_access_list = list(ACCESS_CENT_CAPTAIN)
-	outfit = /datum/outfit/makossowarrabridgeofficercorpse
+	outfit = /datum/outfit/warrabridgeofficercorpse
 
-/datum/outfit/makossowarrabridgeofficercorpse
+/datum/outfit/warrabridgeofficercorpse
 	name = "Bridge Officer Corpse"
 	ears = /obj/item/radio/headset/heads/head_of_personnel
 	uniform = /obj/item/clothing/under/rank/centcom/official
@@ -515,9 +515,9 @@
 	name = "Commander"
 	id_job = "Commander"
 	id_access_list = list(ACCESS_CENT_CAPTAIN, ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_MEDICAL, ACCESS_CENT_STORAGE)
-	outfit = /datum/outfit/makossowarracommandercorpse
+	outfit = /datum/outfit/warracommandercorpse
 
-/datum/outfit/makossowarracommandercorpse
+/datum/outfit/warracommandercorpse
 	name = "\improper Vigilitas Private Security Commander"
 	uniform = /obj/item/clothing/under/rank/centcom/commander
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
@@ -531,11 +531,11 @@
 	id = /obj/item/card/id
 
 
-/obj/effect/mob_spawn/human/makossowarrasoldier
+/obj/effect/mob_spawn/human/warrasoldier
 	name = "\improper Vigilitas LP Security Specialist"
 	id_job = "Private Security Force"
 	id_access_list = list(ACCESS_CENT_CAPTAIN, ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_MEDICAL, ACCESS_CENT_STORAGE, ACCESS_SECURITY, ACCESS_MECH_SECURITY)
-	outfit = /datum/outfit/job/makossowarra/security/lp
+	outfit = /datum/outfit/job/warra/security/lp
 
 /obj/effect/mob_spawn/human/commander/alive
 	death = FALSE
@@ -546,14 +546,14 @@
 	icon_state = "sleeper"
 	short_desc = "You are a Vigilitas Commander!"
 
-/obj/effect/mob_spawn/human/makossowarrasoldier/alive
+/obj/effect/mob_spawn/human/warrasoldier/alive
 	death = FALSE
 	roundstart = FALSE
 	mob_name = "Private Security Officer"
 	name = "sleeper"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
-	faction = "makossowarraprivate"
+	faction = "warraprivate"
 	short_desc = "You are a Vigilitas Private Security Officer!"
 
 

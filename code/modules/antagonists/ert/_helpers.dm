@@ -5,7 +5,7 @@
 	if (ertemplate)
 		ertemplate = new ertemplate
 	else
-		ertemplate = new /datum/ert/makossowarra
+		ertemplate = new /datum/ert/warra
 	var/list/spawnpoints = GLOB.emergencyresponseteamspawn
 	var/index = 0
 

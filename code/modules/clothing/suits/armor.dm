@@ -146,7 +146,7 @@
 	desc = "A white jacket with silver rank pips and body armor strapped on top."
 	icon_state = "armor_warden_jacket"
 
-/obj/item/clothing/suit/armor/vest/security/warden/alt/makossowarra
+/obj/item/clothing/suit/armor/vest/security/warden/alt/warra
 	name = "warden's red armored jacket"
 	desc = "A red jacket with silver rank pips and body armor strapped on top."
 	icon_state = "armor_rwarden_jacket"

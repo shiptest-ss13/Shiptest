@@ -113,10 +113,10 @@
 
 /* Makosso-Warra Derelict Turrets */
 
-/obj/machinery/porta_turret/ruin/makossowarra
+/obj/machinery/porta_turret/ruin/warra
 	name = "Sharplite Defense Turret"
 	desc = "A cheap and effective turret designed by Sharplite and purchased and installed on most Makosso-Warra Vessels."
-	faction = list(FACTION_PLAYER_MAKOSSOWARRA, "turret")
+	faction = list(FACTION_PLAYER_WARRA, "turret")
 	max_integrity = 160
 	integrity_failure = 0.6
 	icon_state = "standard_lethal"
@@ -128,7 +128,7 @@
 	shot_delay = 10
 	scan_range = 10
 
-/obj/machinery/porta_turret/ruin/makossowarra/light
+/obj/machinery/porta_turret/ruin/warra/light
 	name = "Sharplite LDS"
 	desc = "A cheap and effective 'defensive system' designed by Sharplite for installation on Makosso-Warra vessels."
 	stun_projectile = /obj/projectile/beam/disabler/weak/sharplite
@@ -136,7 +136,7 @@
 	lethal_projectile_sound = 'sound/weapons/gun/laser/sharplite-fire.ogg'
 	stun_projectile_sound = 'sound/weapons/taser2.ogg'
 
-/obj/machinery/porta_turret/ruin/makossowarra/light/sniper
+/obj/machinery/porta_turret/ruin/warra/light/sniper
 	name = "Sharplite Long-Range LDS"
 	desc = "A long-ranged 'defensive system' designed by Sharplite for installation on Makosso-Warra stations."
 	stun_projectile = /obj/projectile/beam/disabler/weak/sharplite
@@ -147,7 +147,7 @@
 	burst_size = 2
 	burst_delay = 3
 
-/obj/machinery/porta_turret/ruin/makossowarra/heavy
+/obj/machinery/porta_turret/ruin/warra/heavy
 	name = "Sharplite Defense Cannon"
 	desc = "A heavy laser mounting designed by Sharplite for usage on Makosso-Warra vessels."
 	lethal_projectile = /obj/projectile/beam/laser/heavylaser/sharplite

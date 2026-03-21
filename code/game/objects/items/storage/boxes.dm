@@ -882,7 +882,7 @@
 	. = ..()
 	papersack_designs = sortList(list(
 		"None" = image(icon = src.icon, icon_state = "paperbag_None"),
-		"MakossowarraStandard" = image(icon = src.icon, icon_state = "paperbag_MakossowarraStandard"),
+		"WarraStandard" = image(icon = src.icon, icon_state = "paperbag_WarraStandard"),
 		"SyndiSnacks" = image(icon = src.icon, icon_state = "paperbag_SyndiSnacks"),
 		"Heart" = image(icon = src.icon, icon_state = "paperbag_Heart"),
 		"SmileyFace" = image(icon = src.icon, icon_state = "paperbag_SmileyFace")
@@ -905,7 +905,7 @@
 		switch(choice)
 			if("None")
 				desc = "A sack neatly crafted out of paper."
-			if("MakossowarraStandard")
+			if("WarraStandard")
 				desc = "A standard Makosso-Warra paper lunch sack for loyal employees on the go."
 			if("SyndiSnacks")
 				desc = "The design on this paper sack is a remnant of the notorious 'SyndieSnacks' program."

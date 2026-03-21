@@ -207,11 +207,11 @@ LINEN BINS
 	item_state = "sheetwiz"
 	dream_messages = list("a book", "an explosion", "lightning", "a staff", "a skeleton", "a robe", "magic")
 
-/obj/item/bedsheet/makossowarra
+/obj/item/bedsheet/warra
 	name = "\improper Makosso-Warra bedsheet"
 	desc = "It has the Makosso-Warra logo on it and has an aura of duty."
-	icon_state = "sheetmakossowarra"
-	item_state = "sheetmakossowarra"
+	icon_state = "sheetwarra"
+	item_state = "sheetwarra"
 	dream_messages = list("authority", "an ending")
 
 /obj/item/bedsheet/solgov

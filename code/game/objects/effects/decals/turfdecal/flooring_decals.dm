@@ -128,8 +128,8 @@ TURF_DECAL_COLOR_HELPER(opaque/white, COLOR_WHITE, 255)
 TURF_DECAL_COLOR_HELPER(opaque/grey, COLOR_FLOORTILE_GRAY, 255)
 TURF_DECAL_COLOR_HELPER(opaque/lightgrey, "#a8b2b6", 255)
 TURF_DECAL_COLOR_HELPER(opaque/bottlegreen, "#57967f", 255)
-TURF_DECAL_COLOR_HELPER(opaque/makossowarrablue, "#2270d0", 255)
-TURF_DECAL_COLOR_HELPER(opaque/makossowarrabluelight, "#39a0eb", 255)
+TURF_DECAL_COLOR_HELPER(opaque/warrablue, "#2270d0", 255)
+TURF_DECAL_COLOR_HELPER(opaque/warrabluelight, "#39a0eb", 255)
 TURF_DECAL_COLOR_HELPER(opaque/nsorange, "#f97016", 255)
 TURF_DECAL_COLOR_HELPER(opaque/vired, "#c92020", 255)
 TURF_DECAL_COLOR_HELPER(opaque/solgovblue, "#2d2a4e", 255)
@@ -159,8 +159,8 @@ TURF_DECAL_COLOR_HELPER(transparent/white, COLOR_WHITE, 140)
 TURF_DECAL_COLOR_HELPER(transparent/grey, COLOR_FLOORTILE_GRAY, 140)
 TURF_DECAL_COLOR_HELPER(transparent/lightgrey, "#a8b2b6", 140)
 TURF_DECAL_COLOR_HELPER(transparent/bottlegreen, "#57967f", 140)
-TURF_DECAL_COLOR_HELPER(transparent/makossowarrablue, "#2270d0", 140)
-TURF_DECAL_COLOR_HELPER(transparent/makossowarrabluelight, "#39a0eb", 140)
+TURF_DECAL_COLOR_HELPER(transparent/warrablue, "#2270d0", 140)
+TURF_DECAL_COLOR_HELPER(transparent/warrabluelight, "#39a0eb", 140)
 TURF_DECAL_COLOR_HELPER(transparent/nsorange, "#f97016", 140)
 TURF_DECAL_COLOR_HELPER(transparent/vired, "#c92020", 140)
 TURF_DECAL_COLOR_HELPER(transparent/solgovblue, "#2d2a4e", 140)
@@ -1228,187 +1228,187 @@ TURF_DECAL_COLOR_HELPER(transparent/cybersunteal, "#4C9C9C", 140)
 
 ////////// MAKOSSO-WARRA /////////
 
-/obj/effect/turf_decal/makossowarra //placeholder for sorting these together, add 3x3 MW and Vigilitas logos later
-	icon = 'icons/obj/makossowarra_floor.dmi'
+/obj/effect/turf_decal/warra //placeholder for sorting these together, add 3x3 MW and Vigilitas logos later
+	icon = 'icons/obj/warra_floor.dmi'
 	icon_state = "NS-2x2" //also placeholder
 
 // M-W
 
-/obj/effect/turf_decal/makossowarra/modern/left
+/obj/effect/turf_decal/warra/modern/left
 	icon_state = "MW-left"
 
-/obj/effect/turf_decal/makossowarra/modern/right
+/obj/effect/turf_decal/warra/modern/right
 	icon_state = "MW-right"
 
-/obj/effect/turf_decal/makossowarra/modern/tile/top_left
+/obj/effect/turf_decal/warra/modern/tile/top_left
 	icon_state = "MW-tile-top-left"
 
-/obj/effect/turf_decal/makossowarra/modern/tile/top_right
+/obj/effect/turf_decal/warra/modern/tile/top_right
 	icon_state = "MW-tile-top-right"
 
-/obj/effect/turf_decal/makossowarra/modern/tile/bottom_left
+/obj/effect/turf_decal/warra/modern/tile/bottom_left
 	icon_state = "MW-tile-bottom-left"
 
-/obj/effect/turf_decal/makossowarra/modern/tile/bottom_right
+/obj/effect/turf_decal/warra/modern/tile/bottom_right
 	icon_state = "MW-tile-bottom-right"
 
 // M-W OLD
 
-/obj/effect/turf_decal/makossowarra/old/top_left
+/obj/effect/turf_decal/warra/old/top_left
 	icon_state = "MW-old-top-left"
 
-/obj/effect/turf_decal/makossowarra/old/top_right
+/obj/effect/turf_decal/warra/old/top_right
 	icon_state = "MW-old-top-right"
 
-/obj/effect/turf_decal/makossowarra/old/bottom_left
+/obj/effect/turf_decal/warra/old/bottom_left
 	icon_state = "MW-old-bottom-left"
 
-/obj/effect/turf_decal/makossowarra/old/bottom_right
+/obj/effect/turf_decal/warra/old/bottom_right
 	icon_state = "MW-old-bottom-right"
 
-/obj/effect/turf_decal/makossowarra/old/tile/top_left
+/obj/effect/turf_decal/warra/old/tile/top_left
 	icon_state = "MW-oldtile-top-left"
 
-/obj/effect/turf_decal/makossowarra/old/tile/top_right
+/obj/effect/turf_decal/warra/old/tile/top_right
 	icon_state = "MW-oldtile-top-right"
 
-/obj/effect/turf_decal/makossowarra/old/tile/bottom_left
+/obj/effect/turf_decal/warra/old/tile/bottom_left
 	icon_state = "MW-oldtile-bottom-left"
 
-/obj/effect/turf_decal/makossowarra/old/tile/bottom_right
+/obj/effect/turf_decal/warra/old/tile/bottom_right
 	icon_state = "MW-oldtile-bottom-right"
 
 // M-W BIG
 
-/obj/effect/turf_decal/makossowarra/modern_big/corner_left
+/obj/effect/turf_decal/warra/modern_big/corner_left
 	icon_state = "MW-3x3-corner-left"
 
-/obj/effect/turf_decal/makossowarra/modern_big/top
+/obj/effect/turf_decal/warra/modern_big/top
 	icon_state = "MW-3x3-top"
 
-/obj/effect/turf_decal/makossowarra/modern_big/corner_right
+/obj/effect/turf_decal/warra/modern_big/corner_right
 	icon_state = "MW-3x3-corner-right"
 
-/obj/effect/turf_decal/makossowarra/modern_big/side
+/obj/effect/turf_decal/warra/modern_big/side
 	icon_state = "MW-3x3-side"
 
-/obj/effect/turf_decal/makossowarra/modern_big/center
+/obj/effect/turf_decal/warra/modern_big/center
 	icon_state = "MW-3x3-center"
 
-/obj/effect/turf_decal/makossowarra/modern_big/top_left
+/obj/effect/turf_decal/warra/modern_big/top_left
 	icon_state = "MW-tile-3x3-top-left"
 
-/obj/effect/turf_decal/makossowarra/modern_big/top_center
+/obj/effect/turf_decal/warra/modern_big/top_center
 	icon_state = "MW-tile-3x3-top-center"
 
-/obj/effect/turf_decal/makossowarra/modern_big/top_right
+/obj/effect/turf_decal/warra/modern_big/top_right
 	icon_state = "MW-tile-3x3-top-right"
 
-/obj/effect/turf_decal/makossowarra/modern_big/center_left
+/obj/effect/turf_decal/warra/modern_big/center_left
 	icon_state = "MW-tile-3x3-center-left"
 
-/obj/effect/turf_decal/makossowarra/modern_big/center
+/obj/effect/turf_decal/warra/modern_big/center
 	icon_state = "MW-tile-3x3-center"
 
-/obj/effect/turf_decal/makossowarra/modern_big/center_right
+/obj/effect/turf_decal/warra/modern_big/center_right
 	icon_state = "MW-tile-3x3-center-right"
 
-/obj/effect/turf_decal/makossowarra/modern_big/bottom_left
+/obj/effect/turf_decal/warra/modern_big/bottom_left
 	icon_state = "MW-tile-3x3-bottom-left"
 
-/obj/effect/turf_decal/makossowarra/modern_big/bottom_center
+/obj/effect/turf_decal/warra/modern_big/bottom_center
 	icon_state = "MW-tile-3x3-bottom-center"
 
-/obj/effect/turf_decal/makossowarra/modern_big/bottom_right
+/obj/effect/turf_decal/warra/modern_big/bottom_right
 	icon_state = "MW-tile-3x3-bottom-right"
 
 //M-W OLD BIG
 
-/obj/effect/turf_decal/makossowarra/old_big/top_left
+/obj/effect/turf_decal/warra/old_big/top_left
 	icon_state = "MW-old-3x3-top-left"
 
-/obj/effect/turf_decal/makossowarra/old_big/top_center
+/obj/effect/turf_decal/warra/old_big/top_center
 	icon_state = "MW-old-3x3-top-center"
 
-/obj/effect/turf_decal/makossowarra/old_big/top_right
+/obj/effect/turf_decal/warra/old_big/top_right
 	icon_state = "MW-old-3x3-top-right"
 
-/obj/effect/turf_decal/makossowarra/old_big/center_left
+/obj/effect/turf_decal/warra/old_big/center_left
 	icon_state = "MW-old-3x3-center-left"
 
-/obj/effect/turf_decal/makossowarra/old_big/center
+/obj/effect/turf_decal/warra/old_big/center
 	icon_state = "MW-old-3x3-center"
 
-/obj/effect/turf_decal/makossowarra/old_big/center_right
+/obj/effect/turf_decal/warra/old_big/center_right
 	icon_state = "MW-old-3x3-center-right"
 
-/obj/effect/turf_decal/makossowarra/old_big/bottom_left
+/obj/effect/turf_decal/warra/old_big/bottom_left
 	icon_state = "MW-old-3x3-bottom-left"
 
-/obj/effect/turf_decal/makossowarra/old_big/bottom_center
+/obj/effect/turf_decal/warra/old_big/bottom_center
 	icon_state = "MW-old-3x3-bottom-center"
 
-/obj/effect/turf_decal/makossowarra/old_big/bottom_right
+/obj/effect/turf_decal/warra/old_big/bottom_right
 	icon_state = "MW-old-3x3-bottom-right"
 
-/obj/effect/turf_decal/makossowarra/old_big/tile/top_left
+/obj/effect/turf_decal/warra/old_big/tile/top_left
 	icon_state = "MW-oldtile-3x3-top-left"
 
-/obj/effect/turf_decal/makossowarra/old_big/tile/top_center
+/obj/effect/turf_decal/warra/old_big/tile/top_center
 	icon_state = "MW-oldtile-3x3-top-center"
 
-/obj/effect/turf_decal/makossowarra/old_big/tile/top_right
+/obj/effect/turf_decal/warra/old_big/tile/top_right
 	icon_state = "MW-oldtile-3x3-top-right"
 
-/obj/effect/turf_decal/makossowarra/old_big/tile/center_left
+/obj/effect/turf_decal/warra/old_big/tile/center_left
 	icon_state = "MW-oldtile-3x3-center-left"
 
-/obj/effect/turf_decal/makossowarra/old_big/tile/center
+/obj/effect/turf_decal/warra/old_big/tile/center
 	icon_state = "MW-oldtile-3x3-center"
 
-/obj/effect/turf_decal/makossowarra/old_big/tile/center_right
+/obj/effect/turf_decal/warra/old_big/tile/center_right
 	icon_state = "MW-oldtile-3x3-center-right"
 
-/obj/effect/turf_decal/makossowarra/old_big/tile/bottom_left
+/obj/effect/turf_decal/warra/old_big/tile/bottom_left
 	icon_state = "MW-oldtile-3x3-bottom-left"
 
-/obj/effect/turf_decal/makossowarra/old_big/tile/bottom_center
+/obj/effect/turf_decal/warra/old_big/tile/bottom_center
 	icon_state = "MW-oldtile-3x3-bottom-center"
 
-/obj/effect/turf_decal/makossowarra/old_big/tile/bottom_right
+/obj/effect/turf_decal/warra/old_big/tile/bottom_right
 	icon_state = "MW-oldtile-3x3-bottom-right"
 
 
 // N + S
 
-/obj/effect/turf_decal/makossowarra/ns
+/obj/effect/turf_decal/warra/ns
 	icon_state = "NS-2x2"
 
-/obj/effect/turf_decal/makossowarra/ns/top_left
+/obj/effect/turf_decal/warra/ns/top_left
 	icon_state = "NS-top-left"
 
-/obj/effect/turf_decal/makossowarra/ns/top
+/obj/effect/turf_decal/warra/ns/top
 	icon_state = "NS-top-center"
 
-/obj/effect/turf_decal/makossowarra/ns/top_right
+/obj/effect/turf_decal/warra/ns/top_right
 	icon_state = "NS-top-right"
 
-/obj/effect/turf_decal/makossowarra/ns/center_left
+/obj/effect/turf_decal/warra/ns/center_left
 	icon_state = "NS-center-left"
 
-/obj/effect/turf_decal/makossowarra/ns/center
+/obj/effect/turf_decal/warra/ns/center
 	icon_state = "NS-center"
 
-/obj/effect/turf_decal/makossowarra/ns/center_right
+/obj/effect/turf_decal/warra/ns/center_right
 	icon_state = "NS-center-right"
 
-/obj/effect/turf_decal/makossowarra/ns/bottom_left
+/obj/effect/turf_decal/warra/ns/bottom_left
 	icon_state = "NS-bottom-left"
 
-/obj/effect/turf_decal/makossowarra/ns/bottom
+/obj/effect/turf_decal/warra/ns/bottom
 	icon_state = "NS-bottom-center"
 
-/obj/effect/turf_decal/makossowarra/ns/bottom_right
+/obj/effect/turf_decal/warra/ns/bottom_right
 	icon_state = "NS-bottom-right"
 
 /obj/effect/turf_decal/road
@@ -1619,41 +1619,41 @@ TURF_DECAL_COLOR_HELPER(transparent/cybersunteal, "#4C9C9C", 140)
 
 //M-W Spaceworks
 
-/obj/effect/turf_decal/makossowarraspaceworks_small
+/obj/effect/turf_decal/warraspaceworks_small
 	name = "small mwspaceworks logo"
 	icon_state = "mwspaceworks-center"
 
-/obj/effect/turf_decal/makossowarraspaceworks_small/left
+/obj/effect/turf_decal/warraspaceworks_small/left
 	icon_state = "mwspaceworks-left"
 
-/obj/effect/turf_decal/makossowarraspaceworks_small/right
+/obj/effect/turf_decal/warraspaceworks_small/right
 	icon_state = "mwspaceworks-right"
 
-/obj/effect/turf_decal/makossowarraspaceworks_big
+/obj/effect/turf_decal/warraspaceworks_big
 	name = "big mwspaceworks logo"
 
-/obj/effect/turf_decal/makossowarraspaceworks_big/one
+/obj/effect/turf_decal/warraspaceworks_big/one
 	icon_state = "mwspaceworks_big-1"
 
-/obj/effect/turf_decal/makossowarraspaceworks_big/two
+/obj/effect/turf_decal/warraspaceworks_big/two
 	icon_state = "mwspaceworks_big-2"
 
-/obj/effect/turf_decal/makossowarraspaceworks_big/three
+/obj/effect/turf_decal/warraspaceworks_big/three
 	icon_state = "mwspaceworks_big-3"
 
-/obj/effect/turf_decal/makossowarraspaceworks_big/four
+/obj/effect/turf_decal/warraspaceworks_big/four
 	icon_state = "mwspaceworks_big-4"
 
-/obj/effect/turf_decal/makossowarraspaceworks_big/five
+/obj/effect/turf_decal/warraspaceworks_big/five
 	icon_state = "mwspaceworks_big-5"
 
-/obj/effect/turf_decal/makossowarraspaceworks_big/six
+/obj/effect/turf_decal/warraspaceworks_big/six
 	icon_state = "mwspaceworks_big-6"
 
-/obj/effect/turf_decal/makossowarraspaceworks_big/seven
+/obj/effect/turf_decal/warraspaceworks_big/seven
 	icon_state = "mwspaceworks_big-7"
 
-/obj/effect/turf_decal/makossowarraspaceworks_big/eight
+/obj/effect/turf_decal/warraspaceworks_big/eight
 	icon_state = "mwspaceworks_big-8"
 
 //Etherbor Lihmona Shipyards

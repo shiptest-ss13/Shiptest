@@ -110,19 +110,19 @@
 	prefixes = PREFIX_CLIP
 	color = "#3F90DF"
 
-/datum/faction/makossowarra
-	name = FACTION_MAKOSSOWARRA
+/datum/faction/warra
+	name = FACTION_WARRA
 	short_name = "MAKOSSO-WARRA"
-	parent_faction = /datum/faction/makossowarra
-	prefixes = PREFIX_MAKOSSOWARRA
+	parent_faction = /datum/faction/warra
+	prefixes = PREFIX_WARRA
 	color = "#0094FF"
 
-/datum/faction/makossowarra/ns_logi
+/datum/faction/warra/ns_logi
 	name = FACTION_NS_LOGI
 	prefixes = PREFIX_NS_LOGI
 	color = "#FF6600"
 
-/datum/faction/makossowarra/vigilitas
+/datum/faction/warra/vigilitas
 	name = FACTION_VIGILITAS
 	prefixes = PREFIX_VIGILITAS
 	color = "#d40000"

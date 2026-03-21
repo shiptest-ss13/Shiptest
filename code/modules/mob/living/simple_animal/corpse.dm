@@ -262,13 +262,13 @@
 
 /datum/outfit/vigilitas
 	name = "VI Corpse"
-	uniform = /obj/item/clothing/under/makossowarra/security
-	suit = /obj/item/clothing/suit/armor/makossowarra
+	uniform = /obj/item/clothing/under/warra/security
+	suit = /obj/item/clothing/suit/armor/warra
 	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/color/black
 	ears = /obj/item/radio/headset/headset_sec/alt
 	mask = /obj/item/clothing/mask/gas/vigilitas
-	head = /obj/item/clothing/head/makossowarra/cap/security
+	head = /obj/item/clothing/head/warra/cap/security
 	back = /obj/item/storage/backpack/messenger
 	id = /obj/item/card/id
 
@@ -286,9 +286,9 @@
 
 /datum/outfit/vigilitas/director
 	name = "VI director"
-	uniform = /obj/item/clothing/under/makossowarra/security/director
-	suit = /obj/item/clothing/suit/armor/makossowarra/sec_director
-	head = /obj/item/clothing/head/makossowarra/beret/security/command
+	uniform = /obj/item/clothing/under/warra/security/director
+	suit = /obj/item/clothing/suit/armor/warra/sec_director
+	head = /obj/item/clothing/head/warra/beret/security/command
 
 /datum/outfit/vigilitas/private
 	name = "VI Private"

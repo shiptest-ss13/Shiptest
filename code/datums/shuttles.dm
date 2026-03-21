@@ -397,11 +397,11 @@
 	prefix = "CLSV"
 
 /datum/map_template/shuttle/subshuttles/ancon
-	file_name = "makossowarra_ancon"
+	file_name = "warra_ancon"
 	name = "Makosso-Warra Ancon-class Command Ship"
 	token_icon_state = "ship_tiny_generic"
-	faction = /datum/faction/makossowarra
-	prefix = "NTSV"
+	faction = /datum/faction/warra
+	prefix = "MWSV"
 	name_categories = list("GENERAL", "SPACE")
 
 /datum/map_template/shuttle/subshuttles/frontiersmen_gut //i need to give this a better name at some point
@@ -450,9 +450,9 @@
 	prefix = "SV"
 
 /datum/map_template/shuttle/subshuttles/skink
-	file_name = "makossowarra_skink"
+	file_name = "warra_skink"
 	name = "Skink-class Cargo Runner"
-	faction = /datum/faction/makossowarra
+	faction = /datum/faction/warra
 	token_icon_state = "ship_tiny_generic"
 	prefix = "MWSV"
 

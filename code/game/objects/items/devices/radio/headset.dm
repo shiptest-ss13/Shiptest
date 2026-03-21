@@ -8,7 +8,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	RADIO_CHANNEL_CYBERSUN = RADIO_TOKEN_CYBERSUN,
 	RADIO_CHANNEL_NGR = RADIO_TOKEN_NGR,
 	RADIO_CHANNEL_SUNS = RADIO_TOKEN_SUNS,
-	RADIO_CHANNEL_MAKOSSOWARRA = RADIO_TOKEN_MAKOSSOWARRA,
+	RADIO_CHANNEL_WARRA = RADIO_TOKEN_WARRA,
 	RADIO_CHANNEL_MINUTEMEN = RADIO_TOKEN_MINUTEMEN,
 	RADIO_CHANNEL_PGF = RADIO_TOKEN_PGF,
 	RADIO_CHANNEL_INTEQ = RADIO_TOKEN_INTEQ,
@@ -202,26 +202,26 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	keyslot2 = /obj/item/encryptionkey/heads/captain
 
 
-//makossowarra
-/obj/item/radio/headset/makossowarra
+//Makosso-Warra
+/obj/item/radio/headset/warra
 	name = "Makosso-Warra radio headset"
 	desc = "Worn proudly by the battered remnants of Makosso-Warra's frontier holdings."
-	icon_state = "makossowarra_headset"
-	keyslot = /obj/item/encryptionkey/makossowarra
+	icon_state = "warra_headset"
+	keyslot = /obj/item/encryptionkey/warra
 
-/obj/item/radio/headset/makossowarra/captain
+/obj/item/radio/headset/warra/captain
 	name = "Makosso-Warra captain's radio headset"
 	desc = "Worn proudly by Makosso-Warra's remaining captains on the frontier."
 	keyslot2 = new /obj/item/encryptionkey/heads/captain
 	command = TRUE
 
-/obj/item/radio/headset/makossowarra/alt
+/obj/item/radio/headset/warra/alt
 	name = "Makosso-Warra bowman headset"
 	desc = "Worn proudly by the battered remnants of Makosso-Warra's frontier holdings. Protects ears from flashbangs."
-	icon_state = "makossowarra_headset_alt"
+	icon_state = "warra_headset_alt"
 	hearing_protection = TRUE
 
-/obj/item/radio/headset/makossowarra/alt/captain
+/obj/item/radio/headset/warra/alt/captain
 	name = "Makosso-Warra captain's bowman headset"
 	desc = "Worn proudly by Makosso-Warra's remaining captains on the frontier. Protects ears from flashbangs."
 	keyslot2 = /obj/item/encryptionkey/heads/captain

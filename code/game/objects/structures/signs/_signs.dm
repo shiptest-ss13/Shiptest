@@ -212,26 +212,26 @@
 	placed_sign.setDir(turn(dir,180)) //SinguloStation13 Edit (Normally all wallframes's dir point away from the wall, not look into it when placed.)
 	qdel(src)
 
-/obj/structure/sign/makossowarra
+/obj/structure/sign/warra
 	name = "\improper Makosso-Warra logo sign"
 	sign_change_name = "Corporate Logo - Makosso-Warra"
-	desc = "A sign with the Makosso-Warra logo on it. Glory to Makosso-Warra!"
-	icon = 'icons/obj/makossowarra_logos.dmi'
-	icon_state = "makossowarra"
+	desc = "A sign with the Makosso-Warra logo on it."
+	icon = 'icons/obj/warra_logos.dmi'
+	icon_state = "warra"
 	is_editable = TRUE
 
-/obj/structure/sign/makossowarra/old
+/obj/structure/sign/warra/old
 	name = "\improper old Makosso-Warra logo sign"
 	sign_change_name = "Corporate Logo - Makosso-Warra (Outdated)"
 	desc = "A sign with an Inter-Corporate War-era Makosso-Warra logo on it."
-	icon_state = "makossowarra_old"
+	icon_state = "warra_old"
 
-/obj/structure/sign/makossowarra/ns
+/obj/structure/sign/warra/ns
 	name = "\improper N+S Logistics logo sign"
 	sign_change_name = "Corporate Logo - N+S Logistics"
 	desc = "A sign with the N+S Logistics compass rose on it."
 	icon_state = "ns"
-/obj/structure/sign/makossowarra/vigilitas
+/obj/structure/sign/warra/vigilitas
 	name = "\improper Vigilitas Interstellar logo sign"
 	sign_change_name = "Corporate Logo - Vigilitas Interstellar"
 	desc = "A sign with Vigilitas Interstellar's VI logo on it."

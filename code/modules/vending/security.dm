@@ -132,11 +132,11 @@
 		"C-20r SMG" = /obj/item/gun/ballistic/automatic/smg/cobra,
 		"Bulldog Shotgun" = /obj/item/gun/ballistic/shotgun/automatic/bulldog)
 
-/obj/machinery/vending/security/marine/makossowarra
-	icon_state = "nt-marine"
-	icon_deny = "nt-marine-deny"
-	light_mask = "nt-marine-mask"
-	icon_vend = "nt-marine-vend"
+/obj/machinery/vending/security/marine/warra
+	icon_state = "warra-marine"
+	icon_deny = "warra-marine-deny"
+	light_mask = "warra-marine-mask"
+	icon_vend = "warra-marine-vend"
 	req_access = list(ACCESS_SECURITY)
 	products = list(
 		/obj/item/restraints/handcuffs = 10,
@@ -170,7 +170,7 @@
 	desc = "A token used to redeem equipment from your nearest marine vendor."
 	icon_state = "syndie-voucher"
 
-/obj/item/gun_voucher/makossowarra
+/obj/item/gun_voucher/warra
 	name = "Makosso-Warra weapon voucher"
 	desc = "A token used to redeem equipment from your nearest marine vendor."
-	icon_state = "makossowarra-voucher"
+	icon_state = "warra-voucher"
