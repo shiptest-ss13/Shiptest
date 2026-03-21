@@ -352,7 +352,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/machinery/camera/emp_proof{
+/obj/machinery/camera{
 	network = list("silversecurity");
 	dir = 8
 	},
@@ -632,6 +632,10 @@
 /obj/item/gun/ballistic/automatic/marksman/boomslang/no_mag,
 /obj/item/gun/ballistic/automatic/smg/cobra/no_mag,
 /obj/item/gun/ballistic/automatic/pistol/ringneck/no_mag,
+/obj/machinery/camera{
+	network = list("silversecurity");
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "iz" = (
@@ -654,10 +658,6 @@
 /obj/item/circuitboard/machine/grounding_rod,
 /obj/item/circuitboard/machine/grounding_rod,
 /obj/item/circuitboard/machine/grounding_rod,
-/obj/machinery/camera/emp_proof{
-	network = list("silversecurity");
-	dir = 8
-	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "iB" = (
@@ -1401,7 +1401,7 @@
 	pixel_x = -9;
 	pixel_y = 22
 	},
-/obj/machinery/camera/emp_proof{
+/obj/machinery/camera{
 	network = list("silversecurity");
 	dir = 9
 	},
@@ -1548,10 +1548,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 10
 	},
-/obj/machinery/camera/emp_proof{
-	network = list("silversecurity");
-	dir = 9
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/ccommons)
 "qY" = (
@@ -1657,7 +1653,7 @@
 /obj/structure/sign/departments/cargo{
 	pixel_x = 30
 	},
-/obj/machinery/camera/emp_proof{
+/obj/machinery/camera{
 	network = list("silversecurity");
 	dir = 8
 	},
@@ -1939,7 +1935,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
 	},
-/obj/machinery/camera/emp_proof{
+/obj/machinery/camera{
 	network = list("silversecurity");
 	dir = 5
 	},
@@ -2056,7 +2052,7 @@
 /obj/structure/sign/warning/securearea{
 	pixel_y = 26
 	},
-/obj/machinery/camera/emp_proof{
+/obj/machinery/camera{
 	network = list("silversecurity");
 	dir = 6
 	},
@@ -2403,7 +2399,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/camera/emp_proof{
+/obj/machinery/camera{
 	network = list("silversecurity");
 	dir = 5
 	},
@@ -2552,7 +2548,7 @@
 /obj/structure/sign/poster/contraband/m90{
 	pixel_y = -30
 	},
-/obj/machinery/camera/emp_proof{
+/obj/machinery/camera{
 	network = list("silversecurity");
 	dir = 8
 	},
@@ -2883,7 +2879,7 @@
 	dir = 6
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/camera/emp_proof{
+/obj/machinery/camera{
 	network = list("silversecurity")
 	},
 /turf/open/floor/plating,
@@ -3302,7 +3298,7 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/north,
-/obj/machinery/camera/emp_proof{
+/obj/machinery/camera{
 	network = list("silversecurity")
 	},
 /turf/open/floor/plasteel/dark,
@@ -3909,7 +3905,7 @@
 /obj/structure/extinguisher_cabinet/directional/north{
 	pixel_x = -6
 	},
-/obj/machinery/camera/emp_proof{
+/obj/machinery/camera{
 	network = list("silversecurity");
 	dir = 9
 	},
@@ -4279,7 +4275,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/camera/emp_proof{
+/obj/machinery/camera{
 	network = list("silversecurity");
 	dir = 10
 	},
@@ -4358,9 +4354,6 @@
 /obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/machinery/camera/emp_proof{
-	network = list("silversecurity")
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "WF" = (
@@ -4521,7 +4514,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/camera/emp_proof{
+/obj/machinery/camera{
 	network = list("silversecurity");
 	dir = 4
 	},
