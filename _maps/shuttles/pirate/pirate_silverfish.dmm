@@ -1,12 +1,5 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "af" = (
-/obj/structure/railing/thin{
-	dir = 8
-	},
-/obj/structure/railing/thin{
-	dir = 9
-	},
-/obj/structure/railing/thin,
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/hardsuit/stealth/ramzi,
 /obj/item/tank/jetpack/oxygen/harness,
@@ -24,7 +17,7 @@
 	id_tag = "atira_sensor";
 	pixel_x = 17
 	},
-/turf/open/floor/engine/hull/reinforced/interior,
+/turf/open/floor/engine/hull,
 /area/ship/engineering/engines)
 "ax" = (
 /obj/effect/turf_decal/siding/wood{
@@ -606,6 +599,7 @@
 	dir = 8;
 	pixel_x = -8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "ih" = (
@@ -977,11 +971,24 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/ccommons)
+"kg" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engines)
 "kh" = (
 /obj/machinery/power/compressor{
 	dir = 4
 	},
-/turf/open/floor/engine/hull/reinforced/interior,
+/turf/open/floor/engine/hull,
 /area/ship/engineering/engines)
 "kl" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -1213,6 +1220,7 @@
 /obj/structure/sign/warning/explosives{
 	pixel_x = -31
 	},
+/obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/plating/rust,
 /area/ship/hallway/central)
 "nm" = (
@@ -1315,13 +1323,16 @@
 /area/ship/cargo)
 "oH" = (
 /obj/effect/turf_decal/stairs{
-	dir = 9;
-	layer = 2.050
+	dir = 5
 	},
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 1
+	},
+/obj/structure/railing/thin,
+/obj/structure/railing/thin{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
@@ -2091,7 +2102,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/engine/hull/reinforced/interior,
+/turf/open/floor/engine/hull,
 /area/ship/engineering/engines)
 "vU" = (
 /obj/machinery/power/shuttle/engine/electric/premium,
@@ -2180,6 +2191,10 @@
 /obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 1;
 	layer = 2.040
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing/thin{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -2432,6 +2447,8 @@
 	icon_state = "0-1"
 	},
 /obj/effect/turf_decal/trimline/opaque/red/line,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "zD" = (
@@ -2444,6 +2461,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing/thin{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -2474,6 +2495,11 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing/thin/corner{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -2564,6 +2590,7 @@
 /obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 6
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Bh" = (
@@ -2573,19 +2600,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /turf/open/floor/plating,
 /area/ship/crew/ccommons)
-"Bl" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/purple/hidden{
-	dir = 6
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engines)
 "Bn" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 6
@@ -2703,10 +2717,12 @@
 	layer = 2.040
 	},
 /obj/machinery/holopad/secure,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "CH" = (
 /obj/machinery/light/directional/east,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "CS" = (
@@ -2740,7 +2756,7 @@
 	dir = 4;
 	id = "s_flare"
 	},
-/turf/open/floor/engine/hull/reinforced,
+/turf/open/floor/engine/hull,
 /area/ship/engineering/engines)
 "Dr" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -3009,6 +3025,9 @@
 /obj/item/storage/box/ammo/a357,
 /obj/machinery/light/directional/north,
 /obj/effect/turf_decal/industrial/outline/red,
+/obj/structure/railing/thin{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "FB" = (
@@ -3166,6 +3185,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
 "Ic" = (
+/obj/effect/decal/cleanable/oil/streak,
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
@@ -3257,7 +3277,7 @@
 /obj/machinery/power/shuttle/engine/turbine{
 	dir = 8
 	},
-/turf/open/floor/engine/hull/reinforced/interior,
+/turf/open/floor/engine/hull,
 /area/ship/engineering/engines)
 "JB" = (
 /obj/structure/cable{
@@ -3413,6 +3433,9 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
+/obj/structure/railing/thin{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Lq" = (
@@ -3432,7 +3455,6 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/east,
-/obj/structure/railing/thin,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "LC" = (
@@ -3524,6 +3546,9 @@
 /obj/effect/turf_decal/trimline/opaque/red/end{
 	dir = 4
 	},
+/obj/structure/railing/thin{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Mt" = (
@@ -3608,8 +3633,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "NR" = (
-/obj/structure/railing/thin,
 /obj/effect/turf_decal/trimline/opaque/red/end,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "NT" = (
@@ -3665,6 +3690,11 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 4
 	},
+/obj/structure/railing/thin/corner{
+	dir = 4
+	},
+/obj/structure/railing/thin/corner,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Om" = (
@@ -3800,9 +3830,6 @@
 /obj/item/storage/pill_bottle/stimulant{
 	pixel_x = 11;
 	pixel_y = 8
-	},
-/obj/structure/railing/thin{
-	dir = 10
 	},
 /obj/effect/turf_decal/siding/thinplating/dark/end{
 	dir = 8
@@ -4178,6 +4205,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "VB" = (
@@ -4744,7 +4772,7 @@ QQ
 QQ
 ME
 DR
-Bl
+kg
 dC
 sT
 vT
