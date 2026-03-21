@@ -260,7 +260,6 @@
 /turf/open/floor/carpet/green,
 /area/ship/crew/ccommons)
 "dC" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/button/door{
 	dir = 4;
 	pixel_x = -24;
@@ -274,6 +273,10 @@
 	pixel_y = -7;
 	id = "silverturbine"
 	},
+/obj/machinery/atmospherics/components/trinary/mixer/flipped{
+	dir = 1
+	},
+/obj/item/paper/crumpled/fluff/ships/silverfish/enginebay,
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "dG" = (
@@ -437,11 +440,13 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/purple/hidden,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	dir = 10
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
@@ -1101,8 +1106,8 @@
 	},
 /obj/machinery/firealarm/directional/north,
 /obj/machinery/light/directional/east,
-/obj/machinery/portable_atmospherics/canister/toxins,
 /obj/effect/turf_decal/box/red,
+/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "lD" = (
@@ -1822,6 +1827,9 @@
 /obj/structure/grille,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	dir = 5
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
@@ -2825,6 +2833,8 @@
 /obj/structure/sign/warning/nosmoking/burnt{
 	pixel_x = 32
 	},
+/obj/effect/turf_decal/box/red,
+/obj/machinery/portable_atmospherics/canister/toxins,
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "DZ" = (
@@ -3244,8 +3254,11 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/purple/hidden,
-/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	dir = 9
+	},
+/obj/machinery/atmospherics/components/unary/portables_connector,
+/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "JE" = (
@@ -3371,6 +3384,8 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4{
 	dir = 9
 	},
+/obj/effect/turf_decal/box/red,
+/obj/machinery/portable_atmospherics/canister/toxins,
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "KQ" = (
@@ -3797,10 +3812,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/components/trinary/mixer/flipped{
-	dir = 1
-	},
-/obj/item/paper/crumpled/fluff/ships/silverfish/enginebay,
+/obj/machinery/atmospherics/pipe/manifold/cyan,
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "PZ" = (
@@ -4419,6 +4431,19 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/cargo)
+"Xp" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engines)
 "Yr" = (
 /obj/structure/table/chem,
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
@@ -4720,7 +4745,7 @@ QQ
 QQ
 ME
 DR
-oI
+Xp
 dC
 sT
 vT
