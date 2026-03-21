@@ -206,6 +206,14 @@
 	name = "Half-shave"
 	icon_state = "hair_halfshave"
 
+/datum/sprite_accessory/hair/halfup
+	name = "Half Up"
+	icon_state = "hair_halfup"
+
+/datum/sprite_accessory/hair/halfupalt
+	name = "Half Up (Alt Bangs)"
+	icon_state = "hair_halfupalt"
+
 /datum/sprite_accessory/hair/harley
 	name = "Harley"
 	icon_state = "hair_harley"
@@ -545,14 +553,6 @@
 /datum/sprite_accessory/hair/volaju
 	name = "Volaju"
 	icon_state = "hair_volaju"
-
-/datum/sprite_accessory/hair/halfup
-	name = "Half Up"
-	icon_state = "hair_halfup"
-
-/datum/sprite_accessory/hair/halfupalt
-	name = "Half Up (Alt Bangs)"
-	icon_state = "hair_halfupalt"
 
 /datum/sprite_accessory/hair/wavy
 	name = "Wavy"
