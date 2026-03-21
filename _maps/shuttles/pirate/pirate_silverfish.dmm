@@ -47,6 +47,7 @@
 	},
 /obj/item/melee/sledgehammer/gorlex,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/pipe_dispenser,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/engines)
 "aI" = (
@@ -971,19 +972,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/ccommons)
-"kg" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/purple/hidden{
-	dir = 6
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engines)
 "kh" = (
 /obj/machinery/power/compressor{
 	dir = 4
@@ -3859,6 +3847,19 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
+"Qe" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engines)
 "Qq" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -4772,7 +4773,7 @@ QQ
 QQ
 ME
 DR
-kg
+Qe
 dC
 sT
 vT
