@@ -480,6 +480,10 @@
 	pixel_y = 13
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/dropper{
+	pixel_y = 10;
+	pixel_x = -4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "ek" = (
@@ -814,7 +818,8 @@
 	pixel_y = 20;
 	id = "a_armourywindow";
 	name = "Armoury Window Control";
-	req_ship_access = 1
+	req_ship_access = 1;
+	req_access_txt = "19"
 	},
 /obj/machinery/recharger{
 	pixel_y = 8;
@@ -1675,6 +1680,7 @@
 	pixel_y = 15;
 	pixel_x = 8
 	},
+/obj/item/reagent_containers/dropper,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/office/lobby)
 "oa" = (
@@ -1766,6 +1772,9 @@
 	},
 /obj/item/radio/intercom/directional/south,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/south{
+	pixel_x = 15
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical/surgery)
 "oB" = (
@@ -2108,7 +2117,7 @@
 /obj/structure/chair/handrail{
 	dir = 4
 	},
-/obj/machinery/light/directional/west,
+/obj/machinery/light/small/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
@@ -2592,6 +2601,12 @@
 	pixel_y = 12
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_y = -20;
+	id = "a_surgery_window";
+	name = "Window Control"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical/surgery)
 "tT" = (
@@ -2858,6 +2873,14 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/office/lobby)
+"vo" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "a_surgery_window"
+	},
+/turf/open/floor/plating,
+/area/ship/medical/surgery)
 "vy" = (
 /obj/effect/turf_decal/spline/fancy/opaque/blue{
 	dir = 9
@@ -3631,7 +3654,8 @@
 	pixel_y = -20;
 	id = "a_armourywindow";
 	name = "Armoury Window Control";
-	req_ship_access = 1
+	req_ship_access = 1;
+	req_access_txt = "19"
 	},
 /obj/machinery/button/door{
 	id = "a_armourylock";
@@ -3957,6 +3981,7 @@
 	},
 /obj/item/stack/sheet/mineral/titanium/twenty,
 /obj/item/stack/sheet/mineral/plasma/five,
+/obj/item/stack/sheet/plastic/five,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "Cl" = (
@@ -7450,7 +7475,7 @@ Ao
 Ic
 qy
 ge
-Jw
+vo
 Hj
 rL
 sS
@@ -7494,7 +7519,7 @@ Cy
 Ic
 nK
 qf
-Jw
+vo
 Di
 mS
 tS
