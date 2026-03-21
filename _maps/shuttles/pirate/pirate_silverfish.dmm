@@ -3448,7 +3448,8 @@
 /area/ship/bridge)
 "LC" = (
 /obj/structure/closet/syndicate{
-	name = "equipment closet"
+	name = "equipment closet";
+	anchored = 1
 	},
 /obj/effect/turf_decal/industrial/warning{
 	color = "#912a2a";
@@ -3824,6 +3825,8 @@
 	dir = 8
 	},
 /obj/item/megaphone/sec,
+/obj/item/camera_bug,
+/obj/item/melee/classic_baton/telescopic/contractor_baton,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Pp" = (
