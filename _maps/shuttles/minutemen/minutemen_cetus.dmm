@@ -7600,9 +7600,6 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 2
 	},
@@ -8633,6 +8630,7 @@
 	},
 /obj/structure/crate_shelf,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/east,
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "Vc" = (
