@@ -82,7 +82,7 @@
 	sleep(15)
 	say("User DB corrupted \[Code 0x00FA\]. Truncating data structure...")
 	sleep(30)
-	say("User DB truncated. Please contact your Nanotrasen system operator for future assistance.")
+	say("User DB truncated. Please contact your system operator for future assistance.")
 
 /obj/machinery/mecha_part_fabricator/proc/output_parts_list(set_name)
 	var/output = ""

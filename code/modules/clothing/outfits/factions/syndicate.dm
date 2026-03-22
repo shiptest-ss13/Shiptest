@@ -369,7 +369,7 @@
 	faction = FACTION_NGR
 
 	head = /obj/item/clothing/head/hardhat/ngr/foreman
-	ears = /obj/item/radio/headset/syndicate/alt
+	ears = /obj/item/radio/headset/syndicate/alt/ngr
 	uniform = /obj/item/clothing/under/syndicate/ngr/officer
 	alt_uniform = null
 	suit = /obj/item/clothing/suit/ngr
@@ -385,7 +385,7 @@
 	id_assignment = "Medical Instructor"
 
 	uniform = /obj/item/clothing/under/syndicate/suns/doctorscrubs
-	ears = /obj/item/radio/headset/syndicate/alt/captain
+	ears = /obj/item/radio/headset/syndicate/alt/suns
 	id = /obj/item/card/id/syndicate_command/captain_id
 	shoes = /obj/item/clothing/shoes/combat/suns
 	l_pocket = /obj/item/pinpointer/crew
@@ -427,7 +427,7 @@
 	faction = FACTION_NGR
 	id_assignment = "Ensign"
 
-	ears = /obj/item/radio/headset/syndicate
+	ears = /obj/item/radio/headset/syndicate/ngr
 	uniform = /obj/item/clothing/under/syndicate/ngr/officer
 	head = /obj/item/clothing/head/ngr
 	suit = /obj/item/clothing/suit/armor/ngr/lieutenant
@@ -517,7 +517,7 @@
 	shoes = /obj/item/clothing/shoes/combat/suns
 	head = /obj/item/clothing/head/welding/suns/hos
 	glasses = /obj/item/clothing/glasses/hud/security/suns
-	suit_store = /obj/item/gun/ballistic/automatic/powered/gauss/modelh/suns
+	suit_store = /obj/item/gun/ballistic/automatic/powered/gauss/modelh
 
 	backpack = /obj/item/storage/backpack
 	satchel  = /obj/item/storage/backpack/satchel
