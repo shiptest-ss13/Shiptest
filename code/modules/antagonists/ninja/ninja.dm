@@ -30,7 +30,7 @@
 /datum/antagonist/ninja/proc/addMemories()
 	antag_memory += "I am an elite mercenary assassin of the mighty Spider Clan. A <font color='red'><B>SPACE NINJA</B></font>!<br>"
 	antag_memory += "Surprise is my weapon. Shadows are my armor. Without them, I am nothing. (//initialize your suit by clicking the initialize UI button, to use abilities like stealth)!<br>"
-	antag_memory += "Officially, [helping_station?"Nanotrasen":"The Syndicate"] are my employer.<br>"
+	antag_memory += "Officially, [helping_station?"Makosso-Warra":"The Syndicate"] are my employer.<br>"
 
 /datum/antagonist/ninja/proc/addObjectives(quantity = 6)
 	var/list/possible_targets = list()
@@ -115,7 +115,7 @@
 	SEND_SOUND(owner.current, sound('sound/effects/ninja_greeting.ogg'))
 	to_chat(owner.current, "I am an elite mercenary assassin of the mighty Spider Clan. A <font color='red'><B>SPACE NINJA</B></font>!")
 	to_chat(owner.current, "Surprise is my weapon. Shadows are my armor. Without them, I am nothing. (//initialize your suit by right clicking on it, to use abilities like stealth)!")
-	to_chat(owner.current, "Officially, [helping_station?"Nanotrasen":"The Syndicate"] are my employer.")
+	to_chat(owner.current, "Officially, [helping_station?"Makosso-Warra":"The Syndicate"] are my employer.")
 	owner.announce_objectives()
 	return
 
@@ -129,14 +129,14 @@
 
 /datum/antagonist/ninja/admin_add(datum/mind/new_owner,mob/admin)
 	var/adj
-	switch(input("What kind of ninja?", "Ninja") as null|anything in list("Random","Syndicate","Nanotrasen","No objectives"))
+	switch(input("What kind of ninja?", "Ninja") as null|anything in list("Random","Syndicate","Makosso-Warra","No objectives"))
 		if("Random")
 			helping_station = pick(TRUE,FALSE)
 			adj = ""
 		if("Syndicate")
 			helping_station = FALSE
 			adj = "syndie"
-		if("Nanotrasen")
+		if("Makosso-Warra")
 			helping_station = TRUE
 			adj = "friendly"
 		if("No objectives")

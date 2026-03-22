@@ -1450,39 +1450,47 @@
 	pixel_y = 12;
 	pixel_x = 8
 	},
-/obj/item/storage/backpack/duffelbag/sec{
-	pixel_y = -13;
-	pixel_x = 4
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 8
 	},
-/obj/item/storage/backpack/satchel/sec{
-	pixel_x = -7;
-	pixel_y = -17
+/obj/item/storage/backpack/satchel/sec/gezena{
+	pixel_x = -8;
+	pixel_y = -12
 	},
-/obj/item/clothing/suit/toggle/gezena/marine{
-	pixel_y = -2;
-	pixel_x = 8
+/obj/item/storage/backpack/messenger/sec/gezena{
+	pixel_x = 10;
+	pixel_y = -13
+	},
+/obj/item/storage/backpack/security/gezena{
+	pixel_x = 1;
+	pixel_y = -15
 	},
 /obj/item/clothing/under/gezena/marine{
 	pixel_x = -9;
 	pixel_y = -1
 	},
-/obj/item/clothing/neck/cloak/gezena/command{
-	pixel_y = -9;
-	pixel_x = -7
-	},
-/obj/item/clothing/shoes/combat/gezena/marine{
-	pixel_y = -9;
-	pixel_x = 6
-	},
-/obj/item/clothing/gloves/gezena/marine{
-	pixel_x = -1
-	},
 /obj/item/radio/headset/pgf/captain{
 	pixel_x = -9;
 	pixel_y = 1
 	},
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 8
+/obj/item/clothing/suit/toggle/gezena/marine{
+	pixel_y = -2;
+	pixel_x = 8
+	},
+/obj/item/storage/backpack/duffelbag{
+	pixel_x = -1;
+	pixel_y = -13
+	},
+/obj/item/clothing/neck/cloak/gezena/command{
+	pixel_y = -9;
+	pixel_x = -7
+	},
+/obj/item/clothing/gloves/gezena/marine{
+	pixel_x = -1
+	},
+/obj/item/clothing/shoes/combat/gezena/marine{
+	pixel_y = -6;
+	pixel_x = 9
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
@@ -6591,63 +6599,45 @@
 	name = "uniforms locker";
 	req_access_txt = "1"
 	},
-/obj/item/clothing/under/gezena/marine,
-/obj/item/clothing/under/gezena/marine,
-/obj/item/clothing/under/gezena/marine,
-/obj/item/clothing/shoes/combat/gezena/marine{
-	pixel_x = 7;
-	pixel_y = 8
-	},
-/obj/item/clothing/shoes/combat/gezena/marine{
-	pixel_x = 7;
-	pixel_y = 8
-	},
-/obj/item/clothing/shoes/combat/gezena/marine{
-	pixel_x = 7;
-	pixel_y = 8
-	},
-/obj/item/clothing/shoes/combat/gezena/marine{
-	pixel_x = 7;
-	pixel_y = 8
-	},
-/obj/item/clothing/shoes/combat/gezena/marine{
-	pixel_x = 7;
-	pixel_y = 8
-	},
-/obj/item/clothing/neck/cloak/gezena{
-	pixel_x = -4;
-	pixel_y = 6
-	},
-/obj/item/clothing/neck/cloak/gezena/engi{
-	pixel_x = -5
-	},
-/obj/item/clothing/neck/cloak/gezena/engi{
-	pixel_x = -5
-	},
-/obj/item/storage/backpack/satchel/sec{
-	pixel_x = -9;
+/obj/item/storage/backpack/satchel/sec/gezena{
+	pixel_x = -8;
 	pixel_y = -12
 	},
-/obj/item/storage/backpack/duffelbag{
-	pixel_x = 8;
-	pixel_y = -9
+/obj/item/storage/backpack/satchel/sec/gezena{
+	pixel_x = -8;
+	pixel_y = -12
 	},
-/obj/item/storage/backpack/duffelbag{
-	pixel_x = 8;
-	pixel_y = -9
+/obj/item/storage/backpack/satchel/sec/gezena{
+	pixel_x = -8;
+	pixel_y = -12
 	},
-/obj/item/storage/backpack/industrial{
-	pixel_y = -11;
-	pixel_x = 1
+/obj/item/storage/backpack/messenger/sec/gezena{
+	pixel_x = 10;
+	pixel_y = -13
 	},
-/obj/item/storage/backpack/industrial{
-	pixel_y = -11;
-	pixel_x = 1
+/obj/item/storage/backpack/messenger/sec/gezena{
+	pixel_x = 10;
+	pixel_y = -13
 	},
-/obj/item/clothing/under/gezena/marine,
-/obj/item/clothing/under/gezena/marine,
-/obj/item/clothing/neck/cloak/gezena/engi{
-	pixel_x = -5
+/obj/item/storage/backpack/messenger/sec/gezena{
+	pixel_x = 10;
+	pixel_y = -13
+	},
+/obj/item/storage/backpack/security/gezena{
+	pixel_x = 1;
+	pixel_y = -15
+	},
+/obj/item/storage/backpack/security/gezena{
+	pixel_x = 1;
+	pixel_y = -15
+	},
+/obj/item/storage/backpack/security/gezena{
+	pixel_x = 1;
+	pixel_y = -15
+	},
+/obj/item/clothing/neck/cloak/gezena{
+	pixel_x = -4;
+	pixel_y = 6
 	},
 /obj/item/clothing/neck/cloak/gezena{
 	pixel_x = -4;
@@ -6656,11 +6646,53 @@
 /obj/item/clothing/neck/cloak/gezena/engi{
 	pixel_x = -5
 	},
+/obj/item/clothing/neck/cloak/gezena/engi{
+	pixel_x = -5
+	},
+/obj/item/clothing/neck/cloak/gezena/engi{
+	pixel_x = -5
+	},
+/obj/item/clothing/neck/cloak/gezena/engi{
+	pixel_x = -5
+	},
+/obj/item/clothing/shoes/combat/gezena/marine{
+	pixel_x = 7;
+	pixel_y = 8
+	},
+/obj/item/clothing/shoes/combat/gezena/marine{
+	pixel_x = 7;
+	pixel_y = 8
+	},
+/obj/item/clothing/shoes/combat/gezena/marine{
+	pixel_x = 7;
+	pixel_y = 8
+	},
+/obj/item/clothing/shoes/combat/gezena/marine{
+	pixel_x = 7;
+	pixel_y = 8
+	},
+/obj/item/clothing/shoes/combat/gezena/marine{
+	pixel_x = 7;
+	pixel_y = 8
+	},
 /obj/item/clothing/shoes/combat/gezena/marine{
 	pixel_x = 7;
 	pixel_y = 8
 	},
 /obj/item/clothing/under/gezena/marine,
+/obj/item/clothing/under/gezena/marine,
+/obj/item/clothing/under/gezena/marine,
+/obj/item/clothing/under/gezena/marine,
+/obj/item/clothing/under/gezena/marine,
+/obj/item/clothing/under/gezena/marine,
+/obj/item/storage/backpack/duffelbag{
+	pixel_x = -1;
+	pixel_y = -13
+	},
+/obj/item/storage/backpack/duffelbag{
+	pixel_x = -1;
+	pixel_y = -13
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "NU" = (
