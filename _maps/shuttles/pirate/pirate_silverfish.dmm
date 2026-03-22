@@ -972,9 +972,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 6
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/ccommons)
@@ -1145,7 +1142,6 @@
 "mo" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2,
 /obj/machinery/advanced_airlock_controller/directional/east,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/ccommons)
 "mq" = (
@@ -1549,9 +1545,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 10
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/ccommons)
 "qY" = (
@@ -1581,7 +1574,6 @@
 /area/ship/external/dark)
 "rf" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
 	dir = 8
 	},
@@ -1908,7 +1900,7 @@
 /obj/machinery/button/door{
 	dir = 8;
 	pixel_y = 7;
-	name = "window control";
+	name = "privacy shutters";
 	id = "silverfish_head_interior";
 	pixel_x = 23
 	},
@@ -2157,7 +2149,6 @@
 "ww" = (
 /obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	dir = 10
 	},
@@ -2762,7 +2753,6 @@
 "Dr" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /obj/structure/tank_dispenser,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -4476,7 +4466,6 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
 	dir = 1
 	},
