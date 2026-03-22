@@ -601,6 +601,9 @@
 #define COMSIG_CARBON_GAIN_ORGAN "carbon_gain_organ"
 ///from /item/organ/proc/Remove() (/obj/item/organ/)
 #define COMSIG_CARBON_LOSE_ORGAN "carbon_lose_organ"
+///from /mob/living/carbon/regenerate_organs()
+#define COMSIG_CARBON_PRE_REGENERATE_ORGANS "carbon_pre_regenerate_organs"
+#define COMSIG_CARBON_POST_REGENERATE_ORGANS "carbon_post_regenerate_organs"
 ///from /mob/living/carbon/doUnEquip(obj/item/I, force, newloc, no_move, invdrop, silent)
 #define COMSIG_CARBON_EQUIP_HAT "carbon_equip_hat"
 ///from /mob/living/carbon/doUnEquip(obj/item/I, force, newloc, no_move, invdrop, silent)

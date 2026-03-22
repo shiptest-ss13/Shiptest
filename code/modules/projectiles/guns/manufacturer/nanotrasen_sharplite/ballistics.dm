@@ -443,7 +443,7 @@ NO_MAG_GUN_HELPER(automatic/smg/resolution/inteq)
 	icon_state = "negotiator"
 	item_state = "negotiator"
 
-	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/tube
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/tube/rubbershot
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/tube,
 	)
@@ -492,3 +492,9 @@ NO_MAG_GUN_HELPER(automatic/smg/resolution/inteq)
 		shotty.toggle_tube(owner)
 		return
 	..()
+
+/obj/item/gun/ballistic/shotgun/automatic/negotiator/buckshot
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/tube/buckshot
+
+/obj/item/gun/ballistic/shotgun/automatic/negotiator/empty
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/tube/empty

@@ -232,6 +232,59 @@
 	wound_path_to_generate = /datum/wound/pierce/bleed/severe
 	threshold_minimum = 60
 
+/datum/wound/pierce/bleed/severe/eye
+	name = "Eyeball Puncture"
+	desc = "Patient's eye has sustained extreme damage, causing severe bleeding from the ocular cavity."
+	occur_text = "looses a violent spray of blood, revealing a crushed eyeball"
+	var/eye_scar = NONE
+
+/datum/wound/pierce/bleed/severe/eye/apply_wound(obj/item/bodypart/limb, silent, datum/wound/old_wound, smited, attack_direction, wound_source, replacing, eye_scar)
+	var/obj/item/organ/eyes/eyes = limb.owner?.getorganslot(ORGAN_SLOT_EYES)
+	if(!istype(eyes))
+		return FALSE
+	. = ..()
+	eye_scar ||= pick(RIGHT_EYE_SCAR, LEFT_EYE_SCAR)
+	src.eye_scar = eye_scar
+	if(!(eyes.scarring & eye_scar))
+		eyes.apply_scar(eye_scar)
+	examine_desc = "has its [(eye_scar == RIGHT_EYE_SCAR) ? "right" : "left"] eye pierced clean through, blood spewing from the cavity"
+	to_chat(victim, span_userdanger("You feel searing pain shoot though your [eye_scar == RIGHT_EYE_SCAR ? "right" : "left"] eye!"))
+	RegisterSignal(limb, COMSIG_BODYPART_UPDATE_WOUND_OVERLAY, PROC_REF(wound_overlay))
+	limb.update_part_wound_overlay()
+
+/datum/wound/pierce/bleed/severe/eye/remove_wound(ignore_limb, replaced)
+	if(!isnull(limb))
+		UnregisterSignal(limb, COMSIG_BODYPART_UPDATE_WOUND_OVERLAY)
+	return ..()
+
+/datum/wound/pierce/bleed/severe/eye/proc/wound_overlay(obj/item/bodypart/source, limb_bleed_rate)
+	SIGNAL_HANDLER
+
+	if(limb_bleed_rate <= BLEED_OVERLAY_LOW || limb_bleed_rate > BLEED_OVERLAY_GUSH)
+		return
+
+	if(blood_flow <= BLEED_OVERLAY_LOW)
+		return
+
+	source.bleed_overlay_icon = (eye_scar == RIGHT_EYE_SCAR) ? "r_eye" : "l_eye"
+	return COMPONENT_PREVENT_WOUND_OVERLAY_UPDATE
+
+/datum/wound_pregen_data/flesh_pierce/open_puncture/eye
+	wound_path_to_generate = /datum/wound/pierce/bleed/severe/eye
+	excluded_zones = list(BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+	weight = WOUND_EYE_SCAR_WEIGHT
+
+/datum/wound_pregen_data/flesh_pierce/open_puncture/eye/can_be_applied_to(obj/item/bodypart/limb, list/suggested_wounding_types, datum/wound/old_wound, random_roll, duplicates_allowed, care_about_existing_wounds)
+	if(!limb.owner?.getorganslot(ORGAN_SLOT_EYES))
+		return FALSE
+	return ..()
+
+/datum/wound_pregen_data/flesh_pierce/open_puncture/eye/get_threshold_for(obj/item/bodypart/part, attack_direction, damage_source)
+	var/obj/item/clothing/eye_protection = part.owner?.get_item_by_slot(ITEM_SLOT_EYES)
+	if(isclothing(eye_protection) && (eye_protection.clothing_flags & SEALS_EYES))
+		return threshold_minimum * 2 // this must result in a threshold equal to or higher than a critical pierce wound
+	return ..()
+
 /datum/wound/pierce/bleed/critical
 	name = "Ruptured Cavity"
 	desc = "Patient's internal tissue and circulatory system is shredded, causing significant internal bleeding and damage to internal organs."

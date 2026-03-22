@@ -349,7 +349,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 
 
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 	default_ammo_type = /obj/item/ammo_box/magazine/m22lr_himehabu
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m22lr_himehabu,
@@ -611,8 +611,8 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 	manufacturer = MANUFACTURER_SCARBOROUGH
 	spread = -5
 	spread_unwielded = 35
-	recoil = 2
-	recoil_unwielded = 10
+	recoil = 1
+	recoil_unwielded = 5
 	wield_slowdown = LIGHT_SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 

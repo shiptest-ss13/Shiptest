@@ -301,6 +301,8 @@ GENE SCANNER
 			message = ""
 			if(C.is_blind())
 				message += "\n<span class='alert ml-2'>Subject is blind.</span>"
+			if(HAS_TRAIT(C, TRAIT_SCARRED_EYE))
+				message += "\n<span class='alert ml-2'>Subject's vision is impaired by severe ocular scarring."
 			if(HAS_TRAIT(C, TRAIT_NEARSIGHT))
 				message += "\n<span class='alert ml-2'>Subject is nearsighted.</span>"
 			if(eyes.damage > 30)
@@ -445,7 +447,7 @@ GENE SCANNER
 		return
 
 	if(istype(target) && target.reagents)
-		var/list/render_list = list() //The master list of readouts, including reagents in the blood/stomach, addictions, quirks, etc.
+		var/list/render_list = list() //The master list of readouts, including reagents in the blood/stomach, quirks, etc.
 		var/list/render_block = list() //A second block of readout strings. If this ends up empty after checking stomach/blood contents, we give the "empty" header.
 
 		// Blood reagents
@@ -479,12 +481,6 @@ GENE SCANNER
 			else
 				render_list += "<span class='notice ml-1'>Subject contains the following reagents in their stomach:</span><br>"
 				render_list += render_block
-
-		// Addictions
-		if(LAZYLEN(target.reagents.addiction_list.len))
-			render_list += "<span class='boldannounce ml-1'>Subject is addicted to the following types of drug:</span><br>"
-			for(var/datum/reagent/R in target.reagents.addiction_list)
-				render_list += "<span class='alert ml-2'>[R.name]</span>\n"
 
 		// we handled the last <br> so we don't need handholding
 		to_chat(user, boxed_message(jointext(render_list, "")), type = MESSAGE_TYPE_INFO)
