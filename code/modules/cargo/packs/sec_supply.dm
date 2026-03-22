@@ -323,17 +323,17 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-//nanotrasen
+//Makosso-Warra
 
 /datum/supply_pack/sec_supply/vigilitas_uniform
 	name = "Vigilitas Security Uniform"
 	desc = "Contains a replacement uniform for Vigilitas Interstellar security staff. Armor set sold separately."
 	cost = 150
-	contains = list(/obj/item/clothing/head/nanotrasen/cap/security,
+	contains = list(/obj/item/clothing/head/warra/cap/security,
 					/obj/item/clothing/mask/gas/vigilitas,
-					/obj/item/clothing/under/nanotrasen/security,
+					/obj/item/clothing/under/warra/security,
 					/obj/item/clothing/shoes/jackboots,
 					/obj/item/clothing/gloves/color/black)
-	faction = /datum/faction/nt
+	faction = /datum/faction/warra
 	faction_discount = 0
 	faction_locked = TRUE
