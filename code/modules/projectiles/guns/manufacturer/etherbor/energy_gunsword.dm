@@ -334,17 +334,21 @@
 
 /obj/item/gun/energy/kalix/pgf/pdw
 	name = "\improper Etherbor SGR-9"
-	desc = "The Etherbor SGR-9's compact design and folding brace make for an unobtrusive and convenient to carry weapon. Ideal for rear echeleon troops, such as vehicle crews or artillerymen, who may still expect to see some action."
+	desc = "The Etherbor SGR-9's compact design and folding brace make for an unobtrusive and convenient to carry weapon. Ideal for rear echelon troops, such as vehicle crews or artillerymen, who may still expect to see some action."
 	icon_state = "pgfpdw"
 	item_state = "pgfpdw"
 	w_class = WEIGHT_CLASS_NORMAL
 	modifystate = TRUE
 
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
-	default_firemode = FIREMODE_SEMIAUTO
+	gun_firemodes = list(FIREMODE_BURST, FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_BURST
 
 	wield_delay = 0.2 SECONDS
 	wield_slowdown = LASER_PISTOL_SLOWDOWN
+
+	burst_size = 2
+	burst_delay = 0.1 SECONDS
+	fire_delay = 0.5 SECONDS
 
 	spread = 8
 	spread_unwielded = 11
@@ -391,7 +395,7 @@
 /obj/item/ammo_casing/energy/kalix/pgf/pdw
 	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf/pdw
 	fire_sound = 'sound/weapons/gun/energy/kalixrifle.ogg'
-	e_cost = 800 //25 shots per cell
+	e_cost = 765 //26 shots per cell
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/pdw
