@@ -216,7 +216,7 @@
 
 /datum/supply_pack/machinery/drill_crate
 	name = "Heavy duty laser mining drill"
-	desc = "An experimental laser-based mining drill that Nanotrasen is kindly allowing YOU, the customer, to opt into testing of."
+	desc = "An experimental laser-based mining drill that Makoso-Warra is kindly allowing YOU, the customer, to opt into testing of."
 	cost = 1000 //Only while TMed, jack up the price before merging
 	contains = list(
 		/obj/machinery/drill,
