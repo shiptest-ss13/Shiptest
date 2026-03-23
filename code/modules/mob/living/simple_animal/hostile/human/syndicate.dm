@@ -360,7 +360,7 @@
 	casingtype = /obj/item/ammo_casing/c57x39mm
 	projectilesound = 'sound/weapons/gun/smg/sidewinder.ogg'
 
-/mob/living/simple_animal/hostile/human/ramzi/ranged/smg/sidewinder/ballistic_armour
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg/sidewinder/ballistic
 	desc = "A deserter from the Gorlex Marauders turned pirate. They hold a PDW level to their yellow visor, sweeping the room with disdain and precision."
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/trooper
 	armor_base = /obj/item/clothing/suit/armor/ramzi/bulletproof
@@ -402,7 +402,7 @@
 	retreat_distance = 0
 	environment_smash = 0
 
-/mob/living/simple_animal/hostile/human/ramzi/ranged/hydra/dmr/sentry/ballistic_armour
+/mob/living/simple_animal/hostile/human/ramzi/ranged/hydra/dmr/sentry/ballistic
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/trooper
 	armor_base = /obj/item/clothing/suit/armor/ramzi/bulletproof
 
@@ -478,7 +478,7 @@
 	l_hand =/obj/item/gun/ballistic/shotgun/automatic/bulldog
 	shoot_point_blank = TRUE
 
-/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun/ballistic_armour
+/mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun/ballistic
 	desc = "A deserter from the Gorlex Marauders turned pirate. Their yellow goggles hide an expression of malice, a heavy combat shotgun already trained in your direction."
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/trooper
 	armor_base = /obj/item/clothing/suit/armor/ramzi/bulletproof
