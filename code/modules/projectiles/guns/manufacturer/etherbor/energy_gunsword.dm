@@ -16,6 +16,9 @@
 	wield_delay = 0.7 SECONDS
 	wield_slowdown = LASER_SMG_SLOWDOWN
 
+	spread = 3
+	spread_unwielded = 10
+
 	default_ammo_type = /obj/item/stock_parts/cell/gun/kalix
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/kalix,
@@ -195,6 +198,9 @@
 	wield_delay = 0.7 SECONDS
 	wield_slowdown = LASER_SMG_SLOWDOWN
 
+	spread = 3
+	spread_unwielded = 10
+
 	default_ammo_type = /obj/item/stock_parts/cell/gun/pgf
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/kalix,
@@ -264,6 +270,66 @@
 	delay = 0
 
 /obj/item/gun/energy/kalix/pistol/empty_cell
+	spawn_no_ammo = TRUE
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/kalix,
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix/empty,
+		/obj/item/stock_parts/cell/gun/pgf/empty,
+	)
+
+/obj/item/gun/energy/kalix/pgf/pdw
+	name = "\improper Etherbor SGR-9"
+	desc = "Etherbor's current and sidearm offering. While marketed for the military, it's also available for civillians as an upgrade over older and obsolete beam pistols."
+	icon_state = "kalixpistol"
+	item_state = "kalixpistol"
+	w_class = WEIGHT_CLASS_NORMAL
+	modifystate = FALSE
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
+	wield_delay = 0.2 SECONDS
+	wield_slowdown = LASER_PISTOL_SLOWDOWN
+
+	spread = 4
+	spread_unwielded = 8
+
+	default_ammo_type = /obj/item/stock_parts/cell/gun/pgf
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/kalix,
+		/obj/item/stock_parts/cell/gun/pgf,
+		/obj/item/stock_parts/cell/gun/kalix/empty,
+		/obj/item/stock_parts/cell/gun/pgf/empty,
+	)
+	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pgf/pdw,/obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/pdw)
+
+
+	load_sound = 'sound/weapons/gun/gauss/pistol_reload.ogg'
+
+	//refused_attachments = list(
+	//	/obj/item/attachment/gun,
+	//	)
+
+/obj/projectile/beam/hitscan/kalix/pgf/pdw
+	name = "concentrated energy beam"
+	damage_constant = 0.8
+	damage = 20
+	armour_penetration = 10
+
+/obj/item/ammo_casing/energy/kalix/pgf/pdw
+	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf/pdw
+	fire_sound = 'sound/weapons/gun/energy/kalixrifle.ogg'
+	e_cost = 800 //25 shots per cell
+	select_name = "kill"
+
+/obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/pdw
+	projectile_type = /obj/projectile/beam/hitscan/disabler
+	fire_sound = 'sound/weapons/taser2.ogg'
+	e_cost = 800 //25 shots per cell
+	select_name = "disable"
+
+/obj/item/gun/energy/kalix/pgf/pdw/empty_cell
 	spawn_no_ammo = TRUE
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/kalix,
