@@ -350,7 +350,7 @@
 	burst_delay = 0.1 SECONDS
 	fire_delay = 0.5 SECONDS
 
-	spread = 8
+	spread = 9
 	spread_unwielded = 11
 
 	slot_available = list(
