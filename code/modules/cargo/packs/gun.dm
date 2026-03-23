@@ -304,6 +304,16 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+	/datum/supply_pack/gun/laser/sg9
+	name = "Etherbor SGR-9 Beam PDW Crate"
+	desc = "Contains a single SGR-9 Beam PDW, a compact military-grade automatic developed in the PGF and manufactured by Etherbor Industries for use within the Marine Corps."
+	cost = 2000
+	contains = list(/obj/item/storage/guncase/energy/sgr9)
+	crate_name = "beam pdw crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/gun/laser/bg16
 	name = "Etherbor BG-16 Beam Gun Crate"
 	desc = "Contains a single BG-16 Beam Gun, a light military-grade automatic developed in the PGF and manufactured by Etherbor Industries for use within the Marine Corps."

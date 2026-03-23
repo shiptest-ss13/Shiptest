@@ -1,6 +1,6 @@
 /obj/item/gun/energy/kalix
 	name = "\improper Etherbor BG-12"
-	desc = "Etherbor Industries's current civilian energy weapon model. The BG-12 energy beam gun is identical to the military model, minus the removal of the full auto mode. Otherwise, it's no different from older hunting beams from Kalixcis's history."
+	desc = "The BG-12 is Etherbor Industries's current civilian beam gun model. The BG-12 energy beam gun is practically identical to the military model barring the removal of the full auto mode. Otherwise, it's no different from older hunting beams from Kalixcis's history."
 	icon_state = "kalixgun"
 	item_state = "kalixgun"
 	icon = 'icons/obj/guns/manufacturer/etherbor/48x32.dmi'
@@ -223,7 +223,7 @@
 
 /obj/item/gun/energy/kalix/pgf
 	name = "\improper Etherbor BG-16"
-	desc = "The BG-16 is the military-grade beam gun designed and manufactured by Etherbor Industries as the standard-issue close-range weapon of the PGF."
+	desc = "The BG-16 is a military-grade beam gun designed and manufactured by Etherbor Industries for use by the PGF's armed forces as their primary close-combat weapon."
 	icon_state = "pgfgun"
 	item_state = "pgfgun"
 
@@ -279,7 +279,7 @@
 
 /obj/item/gun/energy/kalix/pistol //blue
 	name = "\improper Etherbor SG-8"
-	desc = "Etherbor's current and sidearm offering. While marketed for the military, it's also available for civillians as an upgrade over older and obsolete beam pistols."
+	desc = "Handy and remarkably accurate, the SG-8 is Etherbor's current sidearm offering. While marketed for the military, it's also available for civillians as an upgrade over older and more obsolete beam pistols."
 	icon_state = "kalixpistol"
 	item_state = "kalixpistol"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -334,11 +334,11 @@
 
 /obj/item/gun/energy/kalix/pgf/pdw
 	name = "\improper Etherbor SGR-9"
-	desc = "Etherbor's current and sidearm offering. While marketed for the military, it's also available for civillians as an upgrade over older and obsolete beam pistols."
-	icon_state = "kalixpistol"
-	item_state = "kalixpistol"
+	desc = "The Etherbor's SGR-9's compact design and folding brace make for an unobtrusive and convenient to carry weapon. Ideal for rear echeleon troops, such as vehicle crews or artillerymen, who may still expect to see some action."
+	icon_state = "pgfpdw"
+	item_state = "pgfpdw"
 	w_class = WEIGHT_CLASS_NORMAL
-	modifystate = FALSE
+	modifystate = TRUE
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
@@ -346,8 +346,29 @@
 	wield_delay = 0.2 SECONDS
 	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
-	spread = 4
-	spread_unwielded = 8
+	spread = 8
+	spread_unwielded = 11
+
+	slot_available = list(
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_STOCK = 1,
+	)
+
+	unique_attachments = list(
+		/obj/item/attachment/foldable_stock/pgfpdw
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 27,
+			"y" = 14,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 26,
+			"y" = 15,
+		)
+	)
+	default_attachments = list(/obj/item/attachment/foldable_stock/pgfpdw)
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/pgf
 	allowed_ammo_types = list(
@@ -361,13 +382,9 @@
 
 	load_sound = 'sound/weapons/gun/gauss/pistol_reload.ogg'
 
-	//refused_attachments = list(
-	//	/obj/item/attachment/gun,
-	//	)
-
 /obj/projectile/beam/hitscan/kalix/pgf/pdw
 	name = "concentrated energy beam"
-	damage_constant = 0.8
+	damage_constant = 0.9
 	damage = 20
 	armour_penetration = 10
 
