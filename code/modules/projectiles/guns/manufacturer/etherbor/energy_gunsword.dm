@@ -334,7 +334,7 @@
 
 /obj/item/gun/energy/kalix/pgf/pdw
 	name = "\improper Etherbor SGR-9"
-	desc = "The Etherbor's SGR-9's compact design and folding brace make for an unobtrusive and convenient to carry weapon. Ideal for rear echeleon troops, such as vehicle crews or artillerymen, who may still expect to see some action."
+	desc = "The Etherbor SGR-9's compact design and folding brace make for an unobtrusive and convenient to carry weapon. Ideal for rear echeleon troops, such as vehicle crews or artillerymen, who may still expect to see some action."
 	icon_state = "pgfpdw"
 	item_state = "pgfpdw"
 	w_class = WEIGHT_CLASS_NORMAL
