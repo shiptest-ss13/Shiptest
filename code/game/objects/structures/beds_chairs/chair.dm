@@ -14,6 +14,7 @@
 	var/buildstackamount = 1
 	var/item_chair = /obj/item/chair // if null it can't be picked up
 	layer = OBJ_LAYER
+	var/buckle_dir = null // force a buckled mob to face in this direction
 
 /obj/structure/chair/examine(mob/user)
 	. = ..()
