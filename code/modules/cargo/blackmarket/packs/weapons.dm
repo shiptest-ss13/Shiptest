@@ -343,13 +343,7 @@
 	cost_min = 2000
 	cost_max = 3500
 	stock = 2
-	availability_prob = 100
-
-/datum/blackmarket_item/weapon/guncase/model_h/spawn_item(loc)
-	var/model_h = pick(list(/obj/item/gun/ballistic/automatic/powered/gauss/modelh/suns,
-				/obj/item/gun/ballistic/automatic/powered/gauss/modelh))
-	item = model_h
-	return ..()
+	availability_prob = 50
 
 /datum/blackmarket_item/weapon/guncase/sgg
 	name = "SSG-669C Rotary Sniper Rifle"

@@ -517,7 +517,7 @@
 	shoes = /obj/item/clothing/shoes/combat/suns
 	head = /obj/item/clothing/head/welding/suns/hos
 	glasses = /obj/item/clothing/glasses/hud/security/suns
-	suit_store = /obj/item/gun/ballistic/automatic/powered/gauss/modelh/suns
+	suit_store = /obj/item/gun/ballistic/automatic/powered/gauss/modelh
 
 	backpack = /obj/item/storage/backpack
 	satchel  = /obj/item/storage/backpack/satchel
