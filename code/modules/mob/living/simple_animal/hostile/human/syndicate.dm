@@ -455,7 +455,7 @@
 /mob/living/simple_animal/hostile/human/ramzi/ranged/officer/lieutenant
 	name = "Ramzi Clique Lieutenant"
 	desc = "A commanding deserter from the Gorlex Marauders turned pirate. They cradle a revolver as black as a starless sky, covered in a thick, dirty-green coat. They turn their gaze in your direction; intent on ensuring they are the last thing you see."
-	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/officer/lieutenant
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/lieutenant
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/officer/captain
 	name = "Ramzi Clique Captain"
