@@ -314,11 +314,14 @@
 
 	load_sound = 'sound/weapons/gun/gauss/pistol_reload.ogg'
 
-	//refused_attachments = list(
-	//	/obj/item/attachment/gun,
-	//	)
+/obj/projectile/beam/hitscan/kalix/pistol
+	name = "concentrated energy beam"
+	damage_constant = 0.7
+	damage = 25
+	armour_penetration = -10
 
 /obj/item/ammo_casing/energy/kalix/pistol
+	projectile_type = /obj/projectile/beam/hitscan/kalix/pistol
 	fire_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
 	e_cost = 1000 //12 shots per cell
 	delay = 0
@@ -394,7 +397,7 @@
 
 /obj/item/ammo_casing/energy/kalix/pgf/pdw
 	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf/pdw
-	fire_sound = 'sound/weapons/gun/energy/kalixrifle.ogg'
+	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
 	e_cost = 765 //26 shots per cell
 	select_name = "kill"
 
