@@ -166,7 +166,7 @@
 
 /obj/item/gun/energy/kalix/pgf/nock
 	name = "\improper Etherbor VG-A5"
-	desc = "Piggybacking off the success of the VG-F3, the Etherbor Industries VG-A5 Beam Volleygun was designed specifically for contract sale to the PGFMC. With the addition of a stronger capacitor and a forward grip, the VG-A5 has found itself popular among marine raiders for its ability to take control of tight spaces."
+	desc = "Piggybacking off the success of the VG-F3, the Etherbor Industries VG-A5 Beam Volleygun was designed specifically for contract sale to the PGF armed forces. With the addition of a stronger capacitor and a forward grip, the VG-A5 has found itself popular among marine raiders for its ability to take control of tight spaces."
 	icon_state = "pgfnock"
 	item_state = "pgfnock"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
@@ -223,7 +223,7 @@
 
 /obj/item/gun/energy/kalix/pgf
 	name = "\improper Etherbor BG-16"
-	desc = "The BG-16 is a military-grade beam gun designed and manufactured by Etherbor Industries for use by the PGF's armed forces as their primary close-combat weapon."
+	desc = "Designed as the PGF armed forces primary close-combat weapon, the Etherbor BG-16 trades stability and power at range for an impressive shot capacity."
 	icon_state = "pgfgun"
 	item_state = "pgfgun"
 
@@ -334,7 +334,7 @@
 
 /obj/item/gun/energy/kalix/pgf/pdw
 	name = "\improper Etherbor SGR-9"
-	desc = "The Etherbor SGR-9's compact design and folding brace make for an unobtrusive and convenient to carry weapon. Ideal for rear echelon troops, such as vehicle crews or artillerymen, who may still expect to see some action."
+	desc = "Favored by vehicle crews, artillerymen, logistics personnel and more, the compact frame of the Etherbor SGR-9 is ideal for rear echelon troops who may still expect to see some action."
 	icon_state = "pgfpdw"
 	item_state = "pgfpdw"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -415,7 +415,7 @@
 
 /obj/item/gun/energy/kalix/pgf/medium
 	name = "\improper Etherbor BGC-10"
-	desc = "Etherbor's answer to the PGFMC's request for a carbine style weapon; the BGC-10 offers greater accuracy and power than the BG-16, while being less cumbersome than the DMR mode equipped HBG series rifles."
+	desc = "Etherbor's answer to the PGF armed forces's request for a carbine style weapon; the BGC-10 offers greater accuracy and power than the BG-16, while being less cumbersome than the DMR mode equipped HBG series rifles."
 	icon_state = "pgfmedium"
 	item_state = "pgfmedium"
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
@@ -457,7 +457,7 @@
 
 /obj/item/gun/energy/kalix/pgf/heavy
 	name = "\improper Etherbor HBG-7"
-	desc = "The HBG-7 is the standard-issue rifle weapon of the PGF. It comes with a special DMR mode that has greater armor piercing for dealing with armored targets."
+	desc = "The HBG-7 is the standard-issue rifle weapon of the PGF armed forces. It comes equipped with a special DMR mode that has greater armor piercing for dealing with armored targets."
 	icon_state = "pgfheavy"
 	item_state = "pgfheavy"
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
@@ -532,7 +532,7 @@
 
 /obj/item/gun/energy/kalix/pgf/heavy/sniper
 	name = "\improper Etherbor HBG-7L"
-	desc = "HBG-7 with a longer barrel and scope. Intended to get the best use out of the DMR mode, it suffers from longer wield times and slowdown, but it's longer barrel makes it ideal for accuracy."
+	desc = "HBG-7 with a longer barrel and scope. Intended to get the best use out of the DMR mode, it suffers from longer wield times and greaterslowdown, but it's longer barrel makes it ideal for precision shooting."
 	icon_state = "pgfheavy_sniper"
 	item_state = "pgfheavy_sniper"
 
