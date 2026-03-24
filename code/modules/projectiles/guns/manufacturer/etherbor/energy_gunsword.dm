@@ -391,7 +391,7 @@
 
 /obj/projectile/beam/hitscan/kalix/pgf/pdw
 	name = "concentrated energy beam"
-	damage_constant = 0.8
+	damage_constant = 0.9
 	damage = 20
 	armour_penetration = 10
 
