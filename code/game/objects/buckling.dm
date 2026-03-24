@@ -82,12 +82,7 @@
 
 	M.buckling = null
 	M.set_buckled(src)
-
-	var/obj/structure/chair/buckle_chair = null
-	if(istype(src, /obj/structure/chair))
-		buckle_chair = src
-
-	M.setDir(buckle_chair.buckle_dir || dir)
+	M.setDir(dir)
 
 	buckled_mobs |= M
 	M.throw_alert("buckled", /atom/movable/screen/alert/restrained/buckled)
