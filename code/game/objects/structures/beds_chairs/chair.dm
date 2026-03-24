@@ -108,6 +108,11 @@
 	else
 		layer = OBJ_LAYER
 
+/obj/structure/chair/buckle_mob(mob/living/M, force, check_loc)
+	. = ..()
+	if(buckle_dir)
+		M.setDir(buckle_dir)
+
 /obj/structure/chair/post_buckle_mob(mob/living/M)
 	. = ..()
 	handle_layer()
