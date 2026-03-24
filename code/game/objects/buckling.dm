@@ -82,7 +82,13 @@
 
 	M.buckling = null
 	M.set_buckled(src)
-	M.setDir(dir)
+
+	var/obj/structure/chair/buckle_chair = null
+	if(istype(src, /obj/structure/chair))
+		buckle_chair = src
+
+	M.setDir(buckle_chair.buckle_dir || dir)
+
 	buckled_mobs |= M
 	M.throw_alert("buckled", /atom/movable/screen/alert/restrained/buckled)
 	M.set_glide_size(glide_size)
