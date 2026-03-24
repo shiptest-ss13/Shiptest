@@ -4,7 +4,14 @@
 /turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "ab" = (
-/turf/open/floor/plating,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
+	dir = 8
+	},
+/obj/machinery/portable_atmospherics/pump,
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 1
+	},
+/turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "ac" = (
 /obj/item/storage/bag/trash,
@@ -24,6 +31,12 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/beach/corpo_resort/hotel/rooms/one)
+"ae" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/beach/corpo_resort/supply)
 "al" = (
 /obj/item/door_seal{
 	pixel_x = -4;
@@ -123,6 +136,12 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"aO" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/beach/corpo_resort/supply)
 "aQ" = (
 /obj/structure/platform/corner{
 	dir = 4
@@ -299,13 +318,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/electrical)
-"bx" = (
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/apc/auto_name/directional/south,
-/turf/open/floor/plasteel/mono,
-/area/ruin/beach/corpo_resort/supply)
 "by" = (
 /obj/item/shard,
 /obj/structure/cable{
@@ -364,7 +376,10 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 6
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "bN" = (
 /obj/item/chair/plastic,
@@ -918,9 +933,6 @@
 	icon_state = "wood-broken5"
 	},
 /area/ruin/beach/corpo_resort/office)
-"eQ" = (
-/turf/open/floor/plasteel/patterned,
-/area/ruin/beach/corpo_resort/bar)
 "eU" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#D2BC9D";
@@ -961,6 +973,9 @@
 /obj/structure/girder,
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/security)
+"fi" = (
+/turf/open/floor/plasteel/patterned,
+/area/ruin/beach/corpo_resort/bar)
 "fn" = (
 /obj/effect/turf_decal/corner/opaque/grey{
 	dir = 5
@@ -1206,7 +1221,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 6
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "gy" = (
 /mob/living/basic/hivebot,
@@ -1931,7 +1949,8 @@
 /obj/item/clothing/suit/space/syndicate/ramzi/surplus,
 /obj/item/tank/internals/oxygen,
 /obj/item/clothing/mask/gas/ramzi,
-/turf/open/floor/plasteel/tech/grid,
+/obj/effect/turf_decal/corner_techfloor_grid/diagonal,
+/turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "kR" = (
 /obj/effect/turf_decal/borderfloor{
@@ -2260,12 +2279,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/beach/corpo_resort/electrical)
-"mE" = (
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
-/turf/open/floor/plasteel/mono,
-/area/ruin/beach/corpo_resort/supply)
 "mJ" = (
 /obj/machinery/autolathe/hacked,
 /obj/machinery/light/directional/north,
@@ -2359,8 +2372,13 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /mob/living/simple_animal/hostile/human/ramzi/ranged/cottonmouth,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	dir = 5
+	},
 /turf/open/floor/plating,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "no" = (
@@ -2389,12 +2407,6 @@
 "nq" = (
 /turf/open/floor/plating,
 /area/ruin/beach/corpo_resort/security)
-"nr" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 8
-	},
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/beach/corpo_resort/ramzi_shuttle)
 "nt" = (
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/beach/lit{
@@ -2584,6 +2596,19 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/beach/corpo_resort/bar)
+"oO" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock/engineering,
+/obj/effect/mapping_helpers/airlock/sealed,
+/turf/open/floor/plasteel/patterned,
+/area/ruin/beach/corpo_resort/electrical)
 "oP" = (
 /obj/effect/turf_decal/stairs{
 	dir = 5
@@ -3627,12 +3652,6 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/asteroid/sand/dense/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"tI" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
-/turf/open/floor/plasteel/mono,
-/area/ruin/beach/corpo_resort/supply)
 "tJ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
@@ -4222,7 +4241,10 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
+	},
+/turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "wN" = (
 /obj/effect/decal/cleanable/dirt,
@@ -4308,6 +4330,13 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
+"xe" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/directional/south,
+/turf/open/floor/plasteel/mono,
+/area/ruin/beach/corpo_resort/supply)
 "xf" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 4
@@ -4387,6 +4416,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/tiles,
 /area/ruin/beach/corpo_resort/hotel/rooms/officer)
+"xL" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/beach/corpo_resort/supply)
 "xM" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
@@ -4948,6 +4983,7 @@
 /obj/machinery/door/airlock/maintenance_hatch,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "AJ" = (
@@ -5115,6 +5151,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/corpo_resort/hotel)
+"Bn" = (
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/closet/toolcloset,
+/turf/open/floor/plating/rust,
+/area/ruin/beach/corpo_resort/ramzi_shuttle)
 "Bp" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -5162,6 +5204,15 @@
 "BG" = (
 /obj/effect/turf_decal/corner/opaque/grey/three_quarters,
 /turf/open/floor/plating/rust,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"BJ" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#D2BC9D";
+	dir = 6
+	},
+/turf/open/floor/wood/birch/beach/lit{
+	icon_state = "wood-broken7"
+	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "BK" = (
 /mob/living/basic/mouse/rat,
@@ -5358,7 +5409,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/south,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "CT" = (
 /obj/structure/closet/crate/engineering,
@@ -5410,7 +5461,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-9"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/patterned/grid/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "Di" = (
 /obj/effect/turf_decal/siding/wood{
@@ -5521,10 +5572,9 @@
 /obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4{
 	dir = 9
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
-	},
-/turf/open/floor/plating,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "DI" = (
 /obj/effect/turf_decal/road/edge{
@@ -5650,7 +5700,10 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/open/floor/plating,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	dir = 6
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "EA" = (
 /obj/structure/hazard_shutoff/electrical_shutoff/resets{
@@ -5724,10 +5777,12 @@
 /obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped{
 	piping_layer = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	dir = 8
 	},
-/turf/open/floor/plating,
+/mob/living/simple_animal/hostile/human/ramzi/civilian,
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "EQ" = (
 /obj/effect/turf_decal/corner_steel_grid/full{
@@ -5861,7 +5916,13 @@
 /area/ruin/beach/corpo_resort/hotel)
 "FC" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
+	},
+/turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "FJ" = (
 /obj/structure/salvageable/machine,
@@ -6244,11 +6305,10 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/ramzi/civilian,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/north,
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/open/floor/plating,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "Ij" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6501,6 +6561,9 @@
 /obj/item/clothing/suit/space/syndicate/ramzi/surplus,
 /obj/item/tank/internals/oxygen,
 /obj/item/clothing/mask/gas/ramzi,
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 6
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "Jn" = (
@@ -6583,6 +6646,7 @@
 	name = "Fire Exit"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/airlock/sealed,
 /turf/open/floor/plasteel,
 /area/ruin/beach/corpo_resort/electrical)
 "JI" = (
@@ -6720,7 +6784,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 9
 	},
-/turf/open/floor/plating,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "KF" = (
 /obj/effect/turf_decal/siding/thinplating/light{
@@ -6813,15 +6878,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/beach/corpo_resort/hotel/rooms/two)
-"Lx" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#D2BC9D";
-	dir = 6
-	},
-/turf/open/floor/wood/birch/beach/lit{
-	icon_state = "wood-broken7"
-	},
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "LA" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#D2BC9D";
@@ -6916,7 +6972,8 @@
 	},
 /obj/machinery/power/terminal,
 /obj/machinery/power/port_gen/pacman,
-/turf/open/floor/plating,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "Ma" = (
 /turf/open/floor/wood/mahogany,
@@ -7112,12 +7169,6 @@
 	},
 /turf/open/floor/wood/birch/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"NG" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/mono,
-/area/ruin/beach/corpo_resort/supply)
 "NH" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -8132,7 +8183,9 @@
 "Tg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/open/floor/plating,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "Tj" = (
 /obj/structure/flora/tree/jungle,
@@ -8150,6 +8203,9 @@
 /obj/item/clothing/suit/space/syndicate/ramzi/surplus,
 /obj/item/tank/internals/oxygen,
 /obj/item/clothing/head/helmet/space/syndicate/ramzi/surplus,
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "Tl" = (
@@ -9150,6 +9206,12 @@
 /obj/item/clothing/under/warra/security,
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"XE" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ruin/beach/corpo_resort/ramzi_shuttle)
 "XH" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/human/ramzi/ranged/runt/flapcap,
@@ -9294,10 +9356,17 @@
 /turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "YA" = (
-/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
-	dir = 8
+/obj/machinery/portable_atmospherics/scrubber,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	dir = 9
 	},
-/turf/open/floor/plating,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 2
+	},
+/turf/open/floor/plating/rust,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "YC" = (
 /obj/structure/hazard/electrical/electrified_water{
@@ -10428,7 +10497,7 @@ wH
 Aw
 wH
 vx
-bx
+xe
 XN
 Fl
 nR
@@ -10505,7 +10574,7 @@ bB
 cP
 Oo
 NX
-NG
+aO
 XN
 GV
 PZ
@@ -10581,8 +10650,8 @@ Gw
 Gw
 XN
 wH
-mE
-tI
+ae
+xL
 XN
 QG
 rL
@@ -10897,7 +10966,7 @@ pG
 LJ
 qH
 LJ
-Lx
+BJ
 ld
 vp
 bn
@@ -11647,7 +11716,7 @@ hv
 Tf
 YX
 zS
-ab
+Bn
 YA
 ab
 zS
@@ -11961,7 +12030,7 @@ QO
 RR
 Gz
 ej
-nr
+XE
 ez
 Tv
 aN
@@ -12921,7 +12990,7 @@ vF
 rY
 oI
 nO
-vF
+oO
 fL
 rI
 oI
@@ -13616,9 +13685,9 @@ tj
 qW
 qW
 UQ
-eQ
-eQ
-eQ
+fi
+fi
+fi
 tj
 GC
 hv
@@ -13693,9 +13762,9 @@ qW
 qW
 qW
 tj
-eQ
-eQ
-eQ
+fi
+fi
+fi
 tj
 hv
 hv
@@ -13770,9 +13839,9 @@ qW
 qW
 qW
 tj
-eQ
-eQ
-eQ
+fi
+fi
+fi
 tj
 hv
 hv
