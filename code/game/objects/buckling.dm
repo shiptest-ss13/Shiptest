@@ -83,7 +83,6 @@
 	M.buckling = null
 	M.set_buckled(src)
 	M.setDir(dir)
-
 	buckled_mobs |= M
 	M.throw_alert("buckled", /atom/movable/screen/alert/restrained/buckled)
 	M.set_glide_size(glide_size)
