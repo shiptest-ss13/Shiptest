@@ -7501,11 +7501,6 @@
 "Pj" = (
 /obj/item/stack/ore/salvage/scraptitanium,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/geiger_counter{
-	scanning = 1;
-	pixel_x = 6;
-	pixel_y = -13
-	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/beach/corpo_resort/security)
 "Pm" = (
@@ -7762,12 +7757,14 @@
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "QO" = (
-/obj/machinery/door/airlock/external,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/beach/corpo_resort/ramzi_shuttle)
+/obj/item/geiger_counter{
+	scanning = 1;
+	pixel_x = -1;
+	pixel_y = 0;
+	icon_state = "geiger_on_2"
+	},
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "QR" = (
 /turf/open/floor/wood/ebony{
 	icon_state = "wood-broken3"
@@ -12026,7 +12023,7 @@ YX
 ic
 JI
 BU
-QO
+bE
 RR
 Gz
 ej
@@ -13586,7 +13583,7 @@ xl
 Wb
 fh
 Fi
-GC
+QO
 yo
 ID
 HM
