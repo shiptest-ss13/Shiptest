@@ -404,7 +404,7 @@
 /obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/pdw
 	projectile_type = /obj/projectile/beam/hitscan/disabler
 	fire_sound = 'sound/weapons/taser2.ogg'
-	e_cost = 800 //25 shots per cell
+	e_cost = 765 //26 shots per cell
 	select_name = "disable"
 
 /obj/item/gun/energy/kalix/pgf/pdw/empty_cell
