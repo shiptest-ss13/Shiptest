@@ -115,6 +115,19 @@
 
 	chameleon_extras = /obj/item/stamp/warra/vigilitas/captain
 
+/datum/outfit/job/warra/captain/vi/empty
+	name = "Makosso-Warra - Captain (Vigilitas Interstellar) (Naked)"
+
+	head = null
+	suit = null
+	ears = null
+	alt_suit = null
+	glasses = null
+	gloves = null
+	neck = null
+	belt = null
+	backpack_contents = null
+
 /datum/outfit/job/warra/captain/centcom
 	name = "Makosso-Warra - Captain (Central Command)"
 
@@ -220,6 +233,21 @@
 	box = /obj/item/storage/box/survival/vi
 
 	chameleon_extras = /obj/item/stamp/warra/vigilitas/security
+
+/datum/outfit/job/warra/hos/vi/empty
+	name = "Makosso-Warra - Vigilitas Sergeant (Naked)"
+
+	head = null
+	suit = null
+	ears = null
+	alt_suit = null
+	glasses = null
+	gloves = null
+	neck = null
+	r_pocket = null
+	l_pocket = null
+	belt = null
+	backpack_contents = null
 
 // Security Officer
 /datum/outfit/job/warra/security
