@@ -535,7 +535,7 @@
 
 /obj/item/gun/energy/kalix/pgf/heavy/sniper
 	name = "\improper Etherbor HBG-7L"
-	desc = "HBG-7 with a longer barrel and scope. Intended to get the best use out of the DMR mode, it suffers from longer wield times and greaterslowdown, but it's longer barrel makes it ideal for precision shooting."
+	desc = "HBG-7 with a longer barrel and scope. Intended to get the best use out of the DMR mode, it suffers from longer wield times and greater slowdown, but it's longer barrel makes it ideal for precision shooting."
 	icon_state = "pgfheavy_sniper"
 	item_state = "pgfheavy_sniper"
 
