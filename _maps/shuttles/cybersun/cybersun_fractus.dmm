@@ -121,12 +121,12 @@
 	specialfunctions = 4;
 	dir = 4
 	},
+/obj/machinery/recharger{
+	pixel_y = -5;
+	pixel_x = -7
+	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
-"az" = (
-/obj/effect/turf_decal/isf_small/right,
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "aJ" = (
 /obj/structure/closet/cabinet,
 /obj/structure/sign/poster/contraband/cybersun_med{
@@ -384,25 +384,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
-"da" = (
-/obj/structure/table/glass,
-/obj/item/storage/bag/tray{
-	pixel_y = 5
-	},
-/obj/item/food/dofi_dore{
-	pixel_y = 5;
-	pixel_x = -1
-	},
-/obj/item/food/dofi_dore{
-	pixel_y = 2;
-	pixel_x = 5
-	},
-/obj/item/food/dofi_dore{
-	pixel_y = -1;
-	pixel_x = -1
-	},
-/turf/open/floor/suns/dark/plain,
-/area/ship/crew/ccommons)
 "dk" = (
 /obj/effect/turf_decal/industrial/warning/fulltile{
 	color = "#FFFFFF"
@@ -450,6 +431,13 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/storage/eva)
+"dt" = (
+/obj/structure/closet/crate/engineering{
+	name = "uranium crate"
+	},
+/obj/item/stack/sheet/mineral/uranium/twenty,
+/turf/open/floor/plasteel/patterned/grid/dark,
+/area/ship/cargo)
 "dx" = (
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/dorm/captain)
@@ -495,19 +483,6 @@
 /obj/effect/turf_decal/siding/black/corner,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
-"ew" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#E6D2BA";
-	dir = 9
-	},
-/obj/item/kirbyplants{
-	icon_state = "plant-10";
-	pixel_y = 17;
-	pixel_x = -5
-	},
-/obj/machinery/firealarm/directional/west,
-/turf/open/floor/suns/hatch/bamboo,
-/area/ship/crew/ccommons)
 "eD" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/ccommons)
@@ -533,20 +508,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/suns/hatch/maple,
 /area/ship/bridge)
-"eY" = (
-/obj/machinery/door/firedoor/heavy,
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 8;
-	id = "fracs"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "0-8"
-	},
-/obj/machinery/door/poddoor{
-	id = "frac"
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/cargo)
 "fb" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/syndiered{
@@ -706,18 +667,23 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "gE" = (
-/obj/structure/table/chem,
-/obj/structure/railing/thin{
-	dir = 4
+/obj/effect/turf_decal/corner/transparent/syndiered{
+	dir = 5
 	},
-/obj/item/paper_bin{
-	pixel_x = 6
+/obj/effect/turf_decal/siding/black{
+	dir = 1
 	},
-/obj/item/pen/fourcolor{
-	pixel_x = 6;
-	pixel_y = 2
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
 	},
-/turf/open/floor/suns/dark/plain,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "gJ" = (
 /obj/effect/turf_decal/trimline/opaque/cybersunteal/warning{
@@ -910,8 +876,8 @@
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/ccommons)
 "je" = (
-/turf/closed/wall/mineral/titanium,
-/area/ship/crew/ccommons)
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/cargo)
 "jo" = (
 /obj/machinery/door/airlock{
 	name = "Dormitory A";
@@ -1168,6 +1134,18 @@
 "mZ" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/cargo)
+"ng" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dwidth = 10;
+	height = 30;
+	name = "Fractus Airlock Dock";
+	width = 40;
+	dir = 2;
+	disable_on_owner_ship_dock = 1
+	},
+/turf/template_noop,
+/area/template_noop)
 "no" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2032,14 +2010,17 @@
 "wi" = (
 /obj/structure/table,
 /obj/item/wrench{
-	pixel_y = 11;
-	pixel_x = -2
+	pixel_y = 8;
+	pixel_x = -10
 	},
 /obj/item/analyzer{
-	pixel_y = 3;
-	pixel_x = -2
+	pixel_x = -6
 	},
 /obj/machinery/airalarm/directional/west,
+/obj/machinery/recharger{
+	pixel_x = 5;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "wo" = (
@@ -2212,18 +2193,6 @@
 	},
 /turf/open/floor/suns/hatch/maple,
 /area/ship/bridge)
-"yC" = (
-/obj/docking_port/stationary{
-	dheight = 1;
-	dwidth = 10;
-	height = 30;
-	name = "Fractus Airlock Dock";
-	width = 40;
-	dir = 2;
-	disable_on_owner_ship_dock = 1
-	},
-/turf/template_noop,
-/area/template_noop)
 "yJ" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/components/binary/pump{
@@ -2458,27 +2427,12 @@
 	pixel_x = 9
 	},
 /obj/machinery/light/small/directional/north,
+/obj/item/melee/energy/flyssa{
+	pixel_x = 9;
+	pixel_y = -10
+	},
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/dorm/captain)
-"BM" = (
-/obj/structure/table/glass,
-/obj/item/food/tiris_fondue{
-	pixel_y = 8
-	},
-/obj/item/food/ration/condiment/tiris_sele{
-	pixel_y = -3;
-	pixel_x = -6
-	},
-/obj/item/food/ration/condiment/tiris_sele{
-	pixel_y = 1;
-	pixel_x = -11
-	},
-/obj/item/food/ration/condiment/tiris_sele{
-	pixel_y = -3;
-	pixel_x = -12
-	},
-/turf/open/floor/suns/dark/plain,
-/area/ship/crew/ccommons)
 "BU" = (
 /obj/structure/chair/sofa/red/corpo/left/directional/west,
 /obj/effect/turf_decal/siding/wood{
@@ -2826,6 +2780,10 @@
 "Ff" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
+"Fi" = (
+/obj/structure/aquarium/cirrus,
+/turf/open/floor/suns/dark/plain,
+/area/ship/crew/ccommons)
 "Fm" = (
 /obj/machinery/light/directional/east,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
@@ -2868,32 +2826,6 @@
 	},
 /turf/open/floor/suns/hatch/maple,
 /area/ship/bridge)
-"FA" = (
-/obj/effect/turf_decal/corner/transparent/syndiered{
-	dir = 5
-	},
-/obj/effect/turf_decal/siding/black{
-	dir = 1
-	},
-/obj/structure/cable/cyan{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/item/kirbyplants{
-	icon_state = "plant-16";
-	pixel_y = 11
-	},
-/obj/structure/noticeboard{
-	pixel_y = 27;
-	name = "dormitory noticeboard"
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/hallway/central)
 "FD" = (
 /obj/structure/table/chem,
 /obj/structure/closet/wall/white/directional/east{
@@ -3123,6 +3055,25 @@
 	},
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/dorm/dormtwo)
+"HN" = (
+/obj/structure/table/glass,
+/obj/item/food/tiris_fondue{
+	pixel_y = 8
+	},
+/obj/item/food/ration/condiment/tiris_sele{
+	pixel_y = -3;
+	pixel_x = -6
+	},
+/obj/item/food/ration/condiment/tiris_sele{
+	pixel_y = 1;
+	pixel_x = -11
+	},
+/obj/item/food/ration/condiment/tiris_sele{
+	pixel_y = -3;
+	pixel_x = -12
+	},
+/turf/open/floor/suns/dark/plain,
+/area/ship/crew/ccommons)
 "HP" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/three_quarters,
 /obj/effect/turf_decal/siding/black{
@@ -3147,8 +3098,26 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Id" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/cargo)
+/obj/structure/table/glass,
+/obj/item/kirbyplants{
+	icon_state = "plant-22";
+	pixel_y = 12;
+	name = "Mr. Shrub"
+	},
+/obj/item/reagent_containers/food/drinks/bottle/sake/foxgirl{
+	pixel_x = -11;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_x = 12;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_x = 12;
+	pixel_y = 6
+	},
+/turf/open/floor/suns/dark/plain,
+/area/ship/crew/ccommons)
 "If" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/three_quarters{
 	dir = 8
@@ -3174,6 +3143,20 @@
 	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/ccommons)
+"Iy" = (
+/obj/machinery/door/firedoor/heavy,
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "fracs"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	id = "frac"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/cargo)
 "IM" = (
 /obj/machinery/light/directional/south,
 /turf/open/floor/engine/hull,
@@ -3506,22 +3489,20 @@
 /area/ship/security/armory)
 "NU" = (
 /obj/structure/table/glass,
-/obj/item/kirbyplants{
-	icon_state = "plant-22";
-	pixel_y = 12;
-	name = "Mr. Shrub"
-	},
-/obj/item/reagent_containers/food/drinks/bottle/sake/foxgirl{
-	pixel_x = -11;
+/obj/item/storage/bag/tray{
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_x = 12;
-	pixel_y = 12
+/obj/item/food/dofi_dore{
+	pixel_y = 5;
+	pixel_x = -1
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_x = 12;
-	pixel_y = 6
+/obj/item/food/dofi_dore{
+	pixel_y = 2;
+	pixel_x = 5
+	},
+/obj/item/food/dofi_dore{
+	pixel_y = -1;
+	pixel_x = -1
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/ccommons)
@@ -3614,6 +3595,20 @@
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/crew/ccommons)
+"Pk" = (
+/obj/structure/table/chem,
+/obj/structure/railing/thin{
+	dir = 4
+	},
+/obj/item/paper_bin{
+	pixel_x = 6
+	},
+/obj/item/pen/fourcolor{
+	pixel_x = 6;
+	pixel_y = 2
+	},
+/turf/open/floor/suns/dark/plain,
+/area/ship/hallway/central)
 "PO" = (
 /obj/machinery/suit_storage_unit/inherit/locked{
 	req_access_txt = "1"
@@ -3875,9 +3870,22 @@
 	},
 /turf/open/floor/suns/dark/plain,
 /area/ship/bridge)
+"TN" = (
+/obj/effect/turf_decal/isf_small/right,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "TU" = (
-/obj/structure/aquarium/cirrus,
-/turf/open/floor/suns/dark/plain,
+/obj/effect/turf_decal/siding/wood{
+	color = "#E6D2BA";
+	dir = 9
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-10";
+	pixel_y = 17;
+	pixel_x = -5
+	},
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/ccommons)
 "TV" = (
 /obj/effect/turf_decal/siding/wood{
@@ -4035,7 +4043,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/firealarm/directional/north,
+/obj/item/kirbyplants{
+	icon_state = "plant-16";
+	pixel_y = 11
+	},
+/obj/structure/noticeboard{
+	pixel_y = 27;
+	name = "dormitory noticeboard"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "WF" = (
@@ -4145,13 +4160,6 @@
 	},
 /turf/open/floor/suns/hatch/mahogany,
 /area/ship/crew/dorm/captain)
-"Xt" = (
-/obj/structure/closet/crate/engineering{
-	name = "uranium crate"
-	},
-/obj/item/stack/sheet/mineral/uranium/twenty,
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ship/cargo)
 "XL" = (
 /obj/structure/chair/stool{
 	dir = 4
@@ -4261,6 +4269,9 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
+"Zo" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew/ccommons)
 "Zu" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#792f27";
@@ -4475,10 +4486,10 @@ qI
 qI
 qI
 mZ
-Id
+je
 Eo
 Dg
-Id
+je
 mZ
 pG
 aL
@@ -4520,7 +4531,7 @@ qI
 qI
 mZ
 CN
-Xt
+dt
 bx
 Sy
 mZ
@@ -4535,7 +4546,7 @@ pw
 xL
 ZW
 AT
-yC
+ng
 "}
 (11,1,1) = {"
 qI
@@ -4545,7 +4556,7 @@ Jm
 jA
 jA
 Hm
-Id
+je
 Oa
 tZ
 Je
@@ -4606,7 +4617,7 @@ qI
 (14,1,1) = {"
 Wl
 ac
-eY
+Iy
 tk
 gz
 gJ
@@ -4637,7 +4648,7 @@ mZ
 am
 RT
 SM
-gE
+Pk
 oJ
 bI
 HF
@@ -4657,7 +4668,7 @@ Eb
 iL
 Rz
 ND
-WC
+gE
 RR
 eQ
 mG
@@ -4701,7 +4712,7 @@ en
 fb
 Fa
 ND
-FA
+WC
 RR
 VV
 BU
@@ -4808,7 +4819,7 @@ qI
 eD
 he
 Hb
-ew
+TU
 TV
 my
 cb
@@ -4853,7 +4864,7 @@ CE
 Yz
 tx
 UV
-da
+NU
 Iq
 va
 et
@@ -4875,7 +4886,7 @@ CE
 Rr
 tx
 UV
-NU
+Id
 iS
 xD
 Mj
@@ -4897,7 +4908,7 @@ CE
 kq
 tx
 UV
-BM
+HN
 Iq
 va
 Lq
@@ -4916,7 +4927,7 @@ qI
 qI
 qI
 CE
-TU
+Fi
 Fc
 DR
 uP
@@ -4959,7 +4970,7 @@ qI
 qI
 qI
 po
-je
+Zo
 eD
 ZG
 FD
@@ -5036,7 +5047,7 @@ yy
 Ty
 Tn
 Ff
-az
+TN
 po
 qI
 qI
