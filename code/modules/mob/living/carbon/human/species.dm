@@ -44,8 +44,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/grad_style
 	///The gradient color used to color the gradient.
 	var/grad_color
-	///The color used for the "white" of the eye, if the eye has one.
-	var/sclera_color = "#e8e8e8"
 	/// The color used for blush overlay
 	var/blush_color = COLOR_BLUSH_PINK
 	///If the species is allowed to use height filters.
@@ -432,10 +430,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		for(var/obj/item/bodypart/head/head in C.get_all_bodyparts())
 			head.mouth = FALSE
 
-	if(SCLERA in species_traits)
-		var/obj/item/organ/eyes/eyes = C.getorganslot(ORGAN_SLOT_EYES)
-		eyes.sclera_color = sclera_color
-
 	for(var/X in inherent_traits)
 		ADD_TRAIT(C, X, SPECIES_TRAIT)
 
@@ -663,16 +657,16 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 			if(eyes)
 				if(!HAS_TRAIT(H, TRAIT_EYESCLOSED) && !(H.stat == DEAD))
-
 					var/icon/eye_icon
 					var/icon/sclera_icon
-					var/icon_cache_key = "[eyes.eye_icon_state]-[eyes.sclera_icon_state]-[id]-[eyes.scarring]"
+					var/eye_state = HD.eye_state_override || eyes.eye_icon_state
+					var/icon_cache_key = "[eye_state]-[eyes.sclera_icon_state]-[id]-[eyes.scarring]"
 					if(!masked_eye_icons_cache[icon_cache_key])
 						if(iskepori(H)) // Kepori need sclera but don't fit the normal silhouette, so this needs changing. Make better later.
-							eye_icon = icon('icons/mob/species/kepori/kepori_eyes.dmi', eyes.eye_icon_state)
+							eye_icon = icon('icons/mob/species/kepori/kepori_eyes.dmi', eye_state)
 							sclera_icon = icon('icons/mob/species/kepori/kepori_eyes.dmi', eyes.sclera_icon_state)
 						else
-							eye_icon = icon(species_eye_path || 'icons/mob/human_face.dmi', eyes.eye_icon_state)
+							eye_icon = icon(species_eye_path || 'icons/mob/human_face.dmi', eye_state)
 							sclera_icon = icon('icons/mob/human_face.dmi', eyes.sclera_icon_state)
 
 						if(eyes.scarring & RIGHT_EYE_SCAR)
@@ -695,7 +689,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					if(HD.greyscale_eyes && eyes)
 						eye_overlay.color = "#" + H.eye_color
 
-					if((SCLERA in species_traits) && eyes)
+					if(HD.draw_sclera && eyes)
 						sclera_overlay.color = "#" + H.sclera_color
 						standing += sclera_overlay
 

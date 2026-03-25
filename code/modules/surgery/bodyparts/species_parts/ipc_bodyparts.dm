@@ -5,6 +5,7 @@
 	limb_id = "synth"
 	dynamic_rename = FALSE
 	draw_eyes = FALSE
+	draw_sclera = FALSE
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
@@ -17,42 +18,6 @@
 	light_burn_msg = "burned"
 	medium_burn_msg = "scorched"
 	heavy_burn_msg = "seared"
-
-//awful workaround for the lack of differing eye sprite handling
-/obj/item/bodypart/head/ipc/attach_limb(mob/living/carbon/our_carbon, special, is_creating = FALSE)
-	var/mob/living/carbon/human/limb_owner
-	if(our_carbon)
-		limb_owner = our_carbon
-	else
-		limb_owner = owner
-
-	var/obj/item/organ/eyes/eyes_to_edit = limb_owner.getorganslot(ORGAN_SLOT_EYES)
-
-	if(!limb_owner || !eyes_to_edit)
-		return ..()
-	if(eye_state_override)
-		eyes_to_edit.eye_icon_state = eye_state_override
-
-	var/datum/species/ipc/ipc_species_datum = limb_owner.dna.species
-	var/datum/species/species_datum = limb_owner.dna.species
-	if(!ipc_species_datum)
-		ipc_species_datum.update_screen_action()
-	else if(species_datum)
-		LAZYREMOVE(species_datum.species_traits, SCLERA)
-	return ..()
-
-//ditto
-/obj/item/bodypart/head/ipc/drop_limb(special)
-	var/mob/living/carbon/human/limb_owner = owner
-
-	var/obj/item/organ/eyes/eyes_to_edit = limb_owner.getorganslot(ORGAN_SLOT_EYES)
-
-	if(!limb_owner || !eyes_to_edit)
-		return ..()
-	if(eye_state_override)
-		eyes_to_edit.eye_icon_state = eyes_to_edit::eye_icon_state
-
-	return ..()
 
 /obj/item/bodypart/chest/ipc
 	static_icon = 'icons/mob/species/ipc/bodyparts.dmi'

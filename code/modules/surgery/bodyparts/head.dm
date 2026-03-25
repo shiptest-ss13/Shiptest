@@ -45,6 +45,8 @@
 
 	///Whether to show eyes, or lack thereof
 	var/draw_eyes = TRUE
+	///Should this head have sclera?
+	var/draw_sclera = TRUE
 	///Uses greyscale coloring for eyes
 	var/greyscale_eyes = TRUE
 	///Sprite to override the one used by the eye organ
