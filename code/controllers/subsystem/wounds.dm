@@ -65,14 +65,14 @@ SUBSYSTEM_DEF(wounds)
 
 /// Constructs [all_wound_pregen_data] by iterating through a typecache of pregen data, ignoring abstract types, and instantiating the rest.
 /datum/controller/subsystem/wounds/proc/generate_wound_static_data()
-	var/list/datum/wound_pregen_data/all_pregen_data = list()
+	pregen_data = list()
 
 	for (var/datum/wound_pregen_data/iterated_path as anything in typecacheof(path = /datum/wound_pregen_data, ignore_root_path = TRUE))
 		if (initial(iterated_path.abstract))
 			continue
 
-		if (!isnull(all_pregen_data[initial(iterated_path.wound_path_to_generate)]))
-			stack_trace("pre-existing pregen data for [initial(iterated_path.wound_path_to_generate)] when [iterated_path] was being considered: [all_pregen_data[initial(iterated_path.wound_path_to_generate)]]. \
+		if (!isnull(pregen_data[initial(iterated_path.wound_path_to_generate)]))
+			stack_trace("pre-existing pregen data for [initial(iterated_path.wound_path_to_generate)] when [iterated_path] was being considered: [pregen_data[initial(iterated_path.wound_path_to_generate)]]. \
 						this is definitely a bug, and is probably because one of the two pregen data have the wrong wound typepath defined. [iterated_path] will not be instantiated")
 
 			continue
@@ -80,10 +80,15 @@ SUBSYSTEM_DEF(wounds)
 		var/datum/wound_pregen_data/new_data = new iterated_path
 		LAZYSET(pregen_data, new_data.wound_path_to_generate, new_data)
 
+	if(!pregen_data.len)
+		CRASH("Wound pregen data list is empty!")
+
 // Series -> severity -> type -> weight
 /// Generates [wound_series_collections] by iterating through all pregen_data. Refer to the mentioned list for documentation
 /datum/controller/subsystem/wounds/proc/generate_wound_series_collection()
-	for (var/datum/wound/wound_typepath as anything in typecacheof(/datum/wound, FALSE, TRUE))
+	series_collection = list()
+
+	for (var/datum/wound/wound_typepath as anything in typecacheof(/datum/wound, ignore_root_path = TRUE))
 		var/datum/wound_pregen_data/data = pregen_data[wound_typepath]
 		if (!data)
 			continue
@@ -106,6 +111,9 @@ SUBSYSTEM_DEF(wounds)
 			severity_list = series_list[severity]
 
 		severity_list[wound_typepath] = data.weight
+
+	if(!pregen_data.len)
+		CRASH("Wound series collection list is empty!")
 
 /**
  * Searches through all wounds for any of proper type, series, and biostate, and then returns a single one via pickweight.

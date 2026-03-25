@@ -48,7 +48,8 @@
 	/// List of mob refs indexed by their job instance
 	var/list/datum/weakref/job_holder_refs = list()
 
-	var/list/datum/mind/owner_candidates
+	/// Dictionary of all candidate minds associated with a list containing their real name and whether they are eligible
+	var/list/list/owner_candidates
 
 	/// The mob of the current ship owner. Tracking mostly uses this; that lets us pick up on logouts, which let us
 	/// determine if a player is switching to control of a mob with a different mind, who thus shouldn't be the ship owner.
@@ -246,8 +247,10 @@
 		return new /datum/docking_ticket(override_dock, src, dock_requester)
 
 	for(var/obj/docking_port/stationary/docking_port in shuttle_port.docking_points)
-		if(dock_requester.shuttle_port.check_dock(docking_port))
+		if(dock_requester.shuttle_port.check_dock(docking_port, TRUE, FALSE))
 			return new /datum/docking_ticket(docking_port, src, dock_requester)
+	if(shuttle_port.docking_points.len)
+		return new /datum/docking_ticket(_docking_error = "ERROR: [src] has docking ports, however vessel is unable to dock to any. Attempt manual docking for more information. Aborting docking.")
 	return ..()
 
 /datum/overmap/ship/controlled/get_dockable_locations(datum/overmap/requesting_interactor)

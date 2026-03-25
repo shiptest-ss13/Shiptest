@@ -32,7 +32,6 @@
 	output += "! class='unsortable' scope='col' style='background-color:#FFDD66;' |Description\n"
 	output += "! scope='col' style='background-color:#FFDD66;' | Metabolization Rate\n"
 	output += "! scope='col' style='background-color:#FFDD66;' | Overdose Threshold\n"
-	output += "! scope='col' style='background-color:#FFDD66;' | Addiction Threshold\n"
 	output += "|-\n"
 
 	reagents = sortList(reagents, /proc/cmp_typepaths_asc)
@@ -43,7 +42,6 @@
 		output += "|[escape_value(reagent.description)]\n"
 		output += "|data-sort-value=[reagent.metabolization_rate]|[reagent.metabolization_rate] units per tick\n"
 		output += "|[reagent.overdose_threshold || "data-sort-value=0|N/A"]\n"
-		output += "|[reagent.addiction_threshold || "data-sort-value=0|N/A"]\n"
 		output += "|-\n"
 
 	output += "|}\n"

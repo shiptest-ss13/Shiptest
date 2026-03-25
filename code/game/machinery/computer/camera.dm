@@ -237,7 +237,7 @@
 		var/cam_location = active_camera_B.loc
 
 		// Is the camera in the following items? If so, let it transmit an image as normal
-		if(!(istype(cam_location, /obj/item/clothing/shoes)))
+		if(!((istype(cam_location, /obj/item/clothing/shoes)) || (isturf(cam_location))))
 			cam_location = active_camera_B.loc.loc
 
 		// If we're not forcing an update for some reason and the cameras are in the same location,

@@ -1031,7 +1031,7 @@
 				if(has_quirk(T))
 					remove_quirk(T)
 				else
-					add_quirk(T,TRUE)
+					add_quirk(T, spawn_effects = TRUE)
 	if(href_list[VV_HK_MAKE_MONKEY])
 		if(!check_rights(R_SPAWN))
 			return

@@ -1436,10 +1436,11 @@
 /obj/docking_port/stationary{
 	width = 40;
 	height = 40;
-	dwidth = 7;
+	dwidth = 36;
 	name = "Typhon Starboard Quarter Dock";
 	dir = 8;
-	disable_on_owner_ship_dock = 1
+	disable_on_owner_ship_dock = 1;
+	dheight = 1
 	},
 /turf/open/floor/pod/light/external,
 /area/ship/external/dark)
@@ -4212,7 +4213,8 @@
 	height = 40;
 	dwidth = 7;
 	name = "Typhon Quarter Dock";
-	dir = 8
+	dir = 8;
+	dheight = 1
 	},
 /turf/open/floor/pod/light/external,
 /area/ship/external/dark)

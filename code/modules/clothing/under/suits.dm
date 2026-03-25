@@ -45,7 +45,7 @@
 
 /obj/item/clothing/under/suit/black/skirt
 	name = "black suitskirt"
-	desc = "A professional black suitskirt. Nanotrasen Investigation Bureau approved!"
+	desc = "A professional black suitskirt. Makosso-Warra Investigation Bureau approved!"
 	icon_state = "black_suit_skirt"
 	item_state = "black_suit_skirt"
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION

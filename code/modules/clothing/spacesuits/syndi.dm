@@ -33,7 +33,7 @@
 	icon_state = "syndicate-generic"
 	item_state = "syndicate-generic"
 	unique_reskin = list("armored olive space suit" = "syndicate-generic",
-						"armored grey space suit" = "syndicate-grey"
+						"armored grey space suit" = "syndicate-generic-grey"
 						)
 	unique_reskin_changes_base_icon_state = TRUE
 	unique_reskin_changes_name = TRUE

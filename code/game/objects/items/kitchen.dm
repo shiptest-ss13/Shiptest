@@ -25,8 +25,11 @@
 	attack_verb = list("attacked", "stabbed", "poked")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
-	item_flags = EYE_STAB
 	var/datum/reagent/forkload //used to eat omelette
+
+/obj/item/kitchen/fork/Initialize()
+	. = ..()
+	AddElement(/datum/element/eyestab)
 
 /obj/item/kitchen/fork/attack(mob/living/carbon/M, mob/living/carbon/user)
 	if(!istype(M))

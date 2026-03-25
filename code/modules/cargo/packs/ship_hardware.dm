@@ -17,7 +17,7 @@
 
 /datum/supply_pack/ship_hardware/breach_shield_gen
 	name = "Anti-breach Shield Projector Crate"
-	desc = "Hull breaches again? Say no more with the Nanotrasen Anti-Breach Shield Projector! Uses forcefield technology to keep the air in, and the space out. Contains one shield projector."
+	desc = "Hull breaches again? Say no more with the Makosso Technologies Anti-Breach Shield Projector! Uses forcefield technology to keep the air in, and the space out. Contains one shield projector."
 	cost = 1250
 	contains = list(/obj/machinery/shieldgen)
 	crate_name = "anti-breach shield projector crate"
@@ -76,7 +76,7 @@
 	crate_name = "cloaking system crate"
 	crate_type = /obj/structure/closet/crate/engineering
 	faction = /datum/faction/syndicate/hardliners
-	faction_discount = 0.3
+	faction_discount = 30
 
 /datum/supply_pack/ship_hardware/advanced_cloaking_device
 	name = "BFRD-3A Advanced Cloaking System"

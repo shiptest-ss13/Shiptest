@@ -489,6 +489,7 @@
 		/obj/item/gun/energy/sharplite/x26,
 		/obj/item/gun/energy/disabler,
 		/obj/item/gun/energy/kalix/pistol,
+		/obj/item/bodycamera,
 		))
 	STR.exception_hold = exception_cache
 	STR.max_w_class = WEIGHT_CLASS_SMALL
@@ -525,7 +526,7 @@
 
 /obj/item/storage/belt/military/snack/Initialize()
 	. = ..()
-	var/sponsor = pick("Donk! Co.", "CyberSun")
+	var/sponsor = pick("Makosso-Warra", "CyberSun")
 	desc = "A set of snack-tical webbing worn by athletes of the [sponsor] VR sports division."
 
 /obj/item/storage/belt/military/snack/ComponentInitialize()
@@ -555,7 +556,7 @@
 		/obj/item/food/nugget,
 		/obj/item/food/spaghetti/pastatomato,
 		/obj/item/food/rofflewaffles,
-		/obj/item/food/donkpocket,
+		/obj/item/food/shoalpocket,
 		/obj/item/reagent_containers/food/drinks/soda_cans/cola,
 		/obj/item/reagent_containers/food/drinks/soda_cans/comet_trail,
 		/obj/item/reagent_containers/food/drinks/soda_cans/tadrixx,
@@ -689,7 +690,7 @@
 /obj/item/storage/belt/janitor/full/PopulateContents()
 	new /obj/item/lightreplacer(src)
 	new /obj/item/reagent_containers/spray/cleaner(src)
-	new /obj/item/soap/nanotrasen(src)
+	new /obj/item/soap/warra(src)
 	new /obj/item/holosign_creator(src)
 	new /obj/item/melee/flyswatter(src)
 

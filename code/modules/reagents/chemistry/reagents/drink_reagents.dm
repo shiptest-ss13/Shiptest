@@ -6,7 +6,7 @@
 
 /datum/reagent/consumable/orangejuice
 	name = "Orange Juice"
-	description = "Both delicious AND rich in Vitamin C, what more do you need?"
+	description = "Delicious AND rich in Vitamin C. What more do you need?"
 	color = "#E78108" // rgb: 231, 129, 8
 	taste_description = "oranges"
 	glass_icon_state = "glass_orange"
@@ -36,12 +36,12 @@
 
 /datum/reagent/consumable/limejuice
 	name = "Lime Juice"
-	description = "The sweet-sour juice of limes."
+	description = "The sour juice of limes."
 	color = "#669933" // rgb: 54, 94, 48
 	taste_description = "unbearable sourness"
 	glass_icon_state = "glass_green"
 	glass_name = "glass of lime juice"
-	glass_desc = "A glass of intensely sour lime juice. You wonder to yourself: how much do you really need to ward off scurvy for it to come to the point?"
+	glass_desc = "A glass of intensely sour lime juice. You wonder to yourself: how much do you really need to ward off scurvy for it to come to this point?"
 
 /datum/reagent/consumable/limejuice/on_mob_life(mob/living/carbon/M)
 	if(M.getToxLoss() && prob(20))
@@ -55,7 +55,7 @@
 	color = "#cb650c"
 	taste_description = "carrots"
 	glass_icon_state = "carrotjuice"
-	glass_name = "glass of  carrot juice"
+	glass_name = "glass of carrot juice"
 	glass_desc = "Mildly sweet, but it won't actually improve your eyesight all that much beyond the baseline..."
 
 /datum/reagent/consumable/carrotjuice/on_mob_life(mob/living/carbon/M)
@@ -101,7 +101,7 @@
 
 /datum/reagent/consumable/dote_juice
 	name = "Dote Juice"
-	description = "A delicious juice made from Dote berries"
+	description = "A delicious juice made from dote berries."
 	color = "#2359a0"
 	taste_description = "sweet berries"
 	glass_icon_state = "berryjuice"
@@ -110,7 +110,7 @@
 
 /datum/reagent/consumable/dotu_juice
 	name = "Dotu Juice"
-	description = "A neutral juice made from ripe Dote fruit."
+	description = "A neutral juice made from ripe dotu fruit."
 	color = "#2359a0"
 	taste_description = "bitter fruit"
 	glass_icon_state = "berryjuice"
@@ -119,12 +119,12 @@
 
 /datum/reagent/consumable/refa_li
 	name = "Refa-Li Juice"
-	description = "Refa-Li is spicy, unless the seeds have been removed, in which case it takes on a more mellow, earthly tone"
+	description = "Juice made from Refa-Li, a small spicy cave fruit with earthy notes."
 	color = "#d8702b"
 	taste_description = "pungent spice"
 	glass_icon_state = "berryjuice"
 	glass_name = "glass of refa-li juice"
-	glass_desc = "Refa-Li is spicy, unless the seeds have been removed, in which case it takes on a more mellow, earthly tone"
+	glass_desc = "Refa-Li is spicy unless the seeds have been removed, in which case it takes on a mellower, earthy note."
 
 /datum/reagent/consumable/watermelonjuice
 	name = "Watermelon Juice"
@@ -142,7 +142,7 @@
 	taste_description = "sourness"
 	glass_icon_state  = "lemonglass"
 	glass_name = "glass of lemon juice"
-	glass_desc = "A glass of intensely sour lime juice. You wonder to yourself: how much do you really need to ward off scurvy for it to come to the point?"
+	glass_desc = "A glass of intensely sour lime juice. You wonder to yourself: how much do you really need to ward off scurvy for it to come to this point?"
 
 /datum/reagent/consumable/banana
 	name = "Banana Juice"
@@ -170,7 +170,7 @@
 	taste_description = "starchy water"
 	glass_icon_state = "glass_brown"
 	glass_name = "glass of potato juice"
-	glass_desc = "Starchy. It coats your mouth with a filament afterwards, which really isn't helping it's case."
+	glass_desc = "Starchy. It coats your mouth with a filament afterwards, which really isn't helping its case."
 
 /datum/reagent/consumable/grapejuice
 	name = "Grape Juice"
@@ -334,7 +334,7 @@
 	taste_description = "bitter coldness"
 	glass_icon_state = "icedcoffeeglass"
 	glass_name = "iced coffee"
-	glass_desc = "Iced black coffee. It's still going to be pretty bitter on it's own, though!"
+	glass_desc = "Iced black coffee. It's still going to be pretty bitter on its own, though!"
 
 /datum/reagent/consumable/icecoffee/overdose_process(mob/living/M)
 	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
@@ -350,7 +350,7 @@
 
 /datum/reagent/consumable/hot_ice_coffee
 	name = "Hot Ice Coffee"
-	description = "Coffee with pulsing ice shards"
+	description = "Coffee with pulsing ice shards."
 	color = "#132043" // rgb: 16, 40, 56
 	nutriment_factor = 0
 	overdose_threshold = 80
@@ -497,7 +497,7 @@
 
 /datum/reagent/consumable/molten/plasma_fizz
 	name = "Plasma Fizz"
-	description = "A  spinoff of the popular Molten Bubbles drink from Kalixcis, made to emulate the flavor of spiced grape instead. It's... not exactly convincing or a very good mix."
+	description = "A spinoff of the popular Molten Bubbles drink from Kalixcis, made to emulate the flavor of spiced grape instead. It's... not exactly convincing or a very good mix."
 	color = "#5f2010"
 	taste_description = "spiced grape soda"
 	glass_icon_state = "plasma_fizz_glass"
@@ -623,7 +623,7 @@
 
 /datum/reagent/consumable/ice
 	name = "Ice"
-	description = "Frozen water, your dentist wouldn't like you chewing this."
+	description = "Frozen water. Your dentist wouldn't like you chewing this."
 	reagent_state = SOLID
 	color = "#619494" // rgb: 97, 148, 148
 	taste_description = "ice"
@@ -662,14 +662,14 @@
 
 /datum/reagent/consumable/cafe_latte
 	name = "Cafe Latte"
-	description = "A nice, strong and tasty beverage while you are reading."
+	description = "A nice, strong beverage to enjoy while you are reading."
 	color = "#664300" // rgb: 102, 67, 0
 	quality = DRINK_NICE
 	overdose_threshold = 80
 	taste_description = "bitter cream"
 	glass_icon_state = "cafe_latte"
 	glass_name = "cafe latte"
-	glass_desc = "A nice, strong and refreshing beverage. It goes well with a book, if you have the time to read."
+	glass_desc = "A nice, strong, refreshing beverage. It goes well with a book, if you have the time to read."
 
 /datum/reagent/consumable/cafe_latte/overdose_process(mob/living/M)
 	M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
@@ -792,10 +792,10 @@
 	taste_description = "extreme sourness"
 	glass_icon_state = "triplecitrus" //needs own sprite mine are trash //your sprite is great tho
 	glass_name = "glass of triple citrus"
-	glass_desc = "A mixture of citrus juices. Intensely sour, and leaves you reeling afterwards."
+	glass_desc = "A mixture of citrus juices. Intensely sour and leaves you reeling afterwards."
 
 /datum/reagent/consumable/grape_soda
-	name = "Grape soda"
+	name = "Grape Soda"
 	description = "Artificial grape soda."
 	color = "#E6CDFF"
 	taste_description = "grape soda"
@@ -820,7 +820,7 @@
 	quality = DRINK_NICE
 	taste_description = "sweet herbs and lingering bitterness"
 	glass_name = "glass of Lunapunch"
-	glass_desc = "An herbal-sweet soft drink. The bitter bite after each sip is enough to make you wince, but leaves you wanting more."
+	glass_desc = "An herbal-sweet soft drink. The bitter bite after each sip is enough to make you wince but leaves you wanting more."
 /datum/reagent/consumable/hot_coco
 	name = "Hot Cocoa"
 	description = "Made with love and cocoa beans. Or from a vending machine."
@@ -870,7 +870,7 @@
 	color = "#FFA500"
 	taste_description = "parsnip"
 	glass_name = "glass of parsnip juice"
-	glass_desc = "It doesn't really count as a soup this way. Maybe it'd better if it was a soup."
+	glass_desc = "It doesn't really count as a soup this way. Maybe it'd be better if it were a soup."
 
 /datum/reagent/consumable/pineapplejuice
 	name = "Pineapple Juice"
@@ -952,13 +952,13 @@
 /datum/reagent/consumable/beefbroth
 	name = "Beef Broth"
 	color = "#100800" // rgb: 16, 8, 0 , just like cola
-	taste_description = "Pure Beef Essence"
+	taste_description = "pure beef essence"
 	glass_icon_state  = "glass_brown"
 	glass_name = "glass of Master Cola?"
 	glass_desc = "A glass of what appears to be refreshing Space Cola."
 
 /datum/reagent/consumable/prunomix
-	name = "pruno mixture"
+	name = "Pruno Mixture"
 	color = "#E78108"
 	description = "Fruit, sugar, yeast, and water pulped together into a pungent slurry."
 	taste_description = "garbage"
@@ -986,9 +986,9 @@
 	description = "The drank that makes you go wheezy."
 	color = "#DE55ED"
 	quality = DRINK_NICE
-	taste_description = "purple and a hint of opioid."
+	taste_description = "purple with a hint of opioid"
 	glass_icon_state = "lean"
-	glass_name = "Lean"
+	glass_name = "glass of lean"
 	glass_desc = "You just don't often get to see cough syrup out here, and someone had enough to mix it with soda. You're left wondering why."
 
 /datum/reagent/consumable/lean/on_mob_life(mob/living/carbon/M)
