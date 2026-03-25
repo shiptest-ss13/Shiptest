@@ -479,6 +479,7 @@
 	dir = 8
 	},
 /obj/item/tank/jetpack/oxygen,
+/obj/item/analyzer,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "ec" = (
@@ -1014,6 +1015,9 @@
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /obj/effect/turf_decal/siding/black/corner{
+	dir = 4
+	},
+/obj/structure/chair/handrail{
 	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -1981,9 +1985,6 @@
 "uw" = (
 /obj/structure/cable{
 	icon_state = "1-8"
-	},
-/obj/structure/chair/handrail{
-	dir = 8
 	},
 /obj/effect/turf_decal/borderfloor/corner{
 	dir = 1
@@ -3106,6 +3107,9 @@
 /obj/effect/turf_decal/siding/black/corner{
 	dir = 1
 	},
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Fm" = (
@@ -3366,9 +3370,6 @@
 "Is" = (
 /obj/structure/cable{
 	icon_state = "1-4"
-	},
-/obj/structure/chair/handrail{
-	dir = 4
 	},
 /obj/structure/closet/crate/internals,
 /obj/item/tank/internals/oxygen,
@@ -4186,10 +4187,10 @@
 	dheight = 1;
 	dir = 2;
 	disable_on_owner_ship_dock = 1;
-	dwidth = 20;
-	height = 31;
+	dwidth = 30;
+	height = 60;
 	name = "Cthonian Starboard Dock";
-	width = 40
+	width = 60
 	},
 /turf/template_noop,
 /area/template_noop)

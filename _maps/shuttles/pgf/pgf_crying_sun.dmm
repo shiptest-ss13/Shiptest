@@ -2734,7 +2734,7 @@
 "oc" = (
 /obj/machinery/suit_storage_unit/inherit/locked{
 	req_access_txt = "1";
-	name = "marine lieutenant's suit storage unit"
+	name = "marine's suit storage unit"
 	},
 /obj/item/tank/internals/oxygen/red,
 /obj/item/clothing/suit/space/gezena/marine,
@@ -5293,7 +5293,10 @@
 	pixel_x = 2;
 	pixel_y = 5
 	},
-/obj/item/pipe_dispenser,
+/obj/item/pipe_dispenser{
+	pixel_x = -1;
+	pixel_y = 0
+	},
 /obj/item/weldingtool/largetank{
 	pixel_x = -3;
 	pixel_y = -6
@@ -5301,6 +5304,10 @@
 /obj/item/weldingtool/largetank{
 	pixel_x = 5;
 	pixel_y = -6
+	},
+/obj/item/analyzer{
+	pixel_x = 8;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)

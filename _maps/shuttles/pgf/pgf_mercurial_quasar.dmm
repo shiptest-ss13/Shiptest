@@ -9,7 +9,10 @@
 /obj/machinery/light/directional/south{
 	pixel_x = 5
 	},
-/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/machinery/suit_storage_unit/inherit/industrial{
+	name = "marine's suit storage unit";
+	req_access_txt = "1"
+	},
 /obj/item/tank/internals/oxygen/red,
 /obj/item/clothing/suit/space/gezena/marine,
 /obj/item/clothing/head/helmet/space/gezena/marine,
@@ -208,7 +211,10 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 6
 	},
-/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/machinery/suit_storage_unit/inherit/industrial{
+	name = "marine's suit storage unit";
+	req_access_txt = "1"
+	},
 /obj/item/tank/internals/oxygen/red,
 /obj/item/clothing/suit/space/gezena/marine,
 /obj/item/clothing/head/helmet/space/gezena/marine,
@@ -1601,6 +1607,9 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
+"tr" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/hallway/fore)
 "tt" = (
 /obj/machinery/blackbox_recorder,
 /obj/structure/window/reinforced/survival_pod/spawner,
@@ -2989,6 +2998,7 @@
 	pixel_x = 9
 	},
 /obj/item/tank/jetpack/oxygen,
+/obj/item/analyzer,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Lw" = (
@@ -3409,9 +3419,9 @@
 "Rd" = (
 /obj/docking_port/stationary{
 	dir = 2;
-	dwidth = 20;
-	height = 31;
-	width = 30;
+	dwidth = 30;
+	height = 60;
+	width = 60;
 	name = "Quasar Starboard Dock";
 	dheight = 1;
 	disable_on_owner_ship_dock = 1
@@ -4423,7 +4433,7 @@ lS
 fB
 gw
 PB
-PB
+tr
 sB
 "}
 (22,1,1) = {"
@@ -4457,7 +4467,7 @@ Hk
 Hk
 tV
 PB
-PB
+tr
 sB
 "}
 (24,1,1) = {"
