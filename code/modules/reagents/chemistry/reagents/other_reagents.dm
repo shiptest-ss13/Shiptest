@@ -1431,7 +1431,7 @@
 
 /datum/reagent/stable_plasma
 	name = "Stable Plasma"
-	description = "Non-flammable plasma locked in a liquid form that cannot ignite or become gaseous/solid."
+	description = "Non-flammable plasma locked in a liquid form that cannot ignite or change states."
 	reagent_state = LIQUID
 	color = "#2D2D2D"
 	taste_description = "bitterness"
@@ -1532,7 +1532,7 @@
 
 /datum/reagent/carpet/royal/blue
 	name = "Royal Blue Carpet"
-	description = "For those that feel the need to show off their time-wasting skills.. in BLUE."
+	description = "For those that feel the need to show off their time-wasting skills... in BLUE."
 	color = "#5A64C8"
 	taste_description = "blueyalty" //also intentional
 	carpet_type = /turf/open/floor/carpet/royalblue
@@ -1888,8 +1888,8 @@
 	// the REAL zombie powder
 	description = "Romerol is a highly experimental bioterror agent \
 		that causes dormant nodules to be etched into the grey matter of \
-		the subject. These nodules only become active upon death of the \
-		host, upon which time the secondary structures activate and take \
+		the subject. These nodules only become active upon the death of the \
+		host, at which time the secondary structures activate and take \
 		control of the host body."
 	color = "#123524" // RGB (18, 53, 36)
 	metabolization_rate = INFINITY
@@ -2282,7 +2282,7 @@
 	description = "Out on the edge of human space, at the limits of scientific understanding and \
 	cultural taboo, people develop and dose themselves with substances that would curl the hair on \
 	a brinker's vatgrown second head. Three Eye is one of the most notorious narcotics to ever come \
-	out of the independant habitats, and it has about as much in common with recreational drugs as a \
+	out of the independent habitats, and it has about as much in common with recreational drugs as a \
 	Stok does with an Unathi strike trooper. It is equally effective on humans, Skrell, dionaea, and \
 	probably the Captain's cat, and distributing it will get you guaranteed jail time in every \
 	human territory."
@@ -2333,7 +2333,7 @@
 	if(L.client?.holder) //You are worthy.
 		worthy = TRUE
 		L.visible_message(span_danger("[L] grips their head and dances around, collapsing to the floor!"), \
-		span_danger("Visions of a realm BYOND your own flash across your eyes, before it all goes black..."))
+		span_danger("Visions of a realm BYOND your own flash across your eyes before it all goes black..."))
 		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, set_sleeping), 40 SECONDS), 10 SECONDS)
 		addtimer(CALLBACK(L.reagents, TYPE_PROC_REF(/datum/reagents, remove_reagent), src.type, src.volume,), 10 SECONDS)
 		return
@@ -2380,7 +2380,7 @@
 	. = ..()
 	L.remove_client_colour(/datum/client_colour/thirdeye)
 	if(overdosed && !worthy)
-		to_chat(L, span_danger("<font size = 6>Your mind reels and the world begins to fade away...</font>"))
+		to_chat(L, span_danger("<font size = 6>Your mind reels, and the world begins to fade away...</font>"))
 		if(iscarbon(L))
 			var/mob/living/carbon/C = L
 			addtimer(CALLBACK(C, TYPE_PROC_REF(/mob/living/carbon, adjustOrganLoss), ORGAN_SLOT_BRAIN, 200), 5 SECONDS) //Deathblow to the brain
@@ -2507,7 +2507,7 @@
 
 /datum/reagent/concrete/pavement
 	name = "Pavement"
-	description = "Road surface, blacktop, asphalt concrete, whatever you call it, it's the most common material used in constructing runways for ships and roadways for vehicles."
+	description = "Road surface, blacktop, asphalt concrete - whatever you call it, it's the most common material used in constructing runways for ships and roadways for vehicles."
 	color = "#3f4543"
 	floor_type = /turf/open/floor/concrete/pavement
 
@@ -2546,7 +2546,7 @@
 
 /datum/reagent/polar_bear_fur //used for icewine crafting
 	name = "Polar Bear Fur"
-	description = "Fur obtained from griding up a polar bears hide."
+	description = "Fur obtained from griding up a polar bear's hide."
 	reagent_state = SOLID
 	color = "#eeeeee" // rgb: 238, 238, 238
 
@@ -2559,7 +2559,7 @@
 //anti rad foam
 /datum/reagent/anti_radiation_foam
 	name = "Anti-Radiation Foam"
-	description = "A tried and tested foam used for decontaminating nuclear disasters."
+	description = "A tried-and-tested foam used for decontaminating nuclear disasters."
 	reagent_state = LIQUID
 	color = "#A6FAFF55"
 	taste_description = "bitter, foamy awfulness"
