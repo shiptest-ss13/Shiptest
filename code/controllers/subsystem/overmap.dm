@@ -79,8 +79,10 @@ SUBSYSTEM_DEF(overmap)
 	wild_sectors += tracked_star_systems[2]
 	tracked_star_systems[3] = spawn_new_star_system(secondary_outpost_sector)
 	safe_sectors += tracked_star_systems[3]
+	tracked_star_systems[4] = spawn_new_star_system(pick(wilderness_sector_types))
+	wild_sectors += tracked_star_systems[4]
 
-	link_systems_to_center()
+	looplink_4_systems()
 
 	SEND_GLOBAL_SIGNAL(COMSIG_OVERMAP_FINISHED_CREATION)
 
