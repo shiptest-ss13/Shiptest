@@ -7128,9 +7128,11 @@
 	name = "pilot's suit storage unit";
 	req_one_access = list(1,48)
 	},
-/obj/item/clothing/suit/space/clip/armored,
-/obj/item/clothing/head/helmet/space/clip/armored,
 /obj/effect/turf_decal/industrial/warning/green/fulltile,
+/obj/item/clothing/suit/space/pilot{
+	unique_reskin = null
+	},
+/obj/item/clothing/head/helmet/space/pilot,
 /obj/item/clothing/mask/gas/clip,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/eva)
