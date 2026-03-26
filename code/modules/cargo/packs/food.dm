@@ -5,19 +5,18 @@
 		Ready-to-eat
 */
 
-/datum/supply_pack/food/donkpockets
-	name = "Donk Pocket Variety Crate"
-	desc = "Featuring a line up of Donk Co.'s most popular pastry!"
+/datum/supply_pack/food/shoalpockets
+	name = "Shoalwich Variety Crate"
+	desc = "Featuring a collection of heavily-processed reheatable food packets, straight from the Shoal."
 	cost = 500
-	contains = list(/obj/item/storage/box/donkpockets/donkpocketspicy,
-					/obj/item/storage/box/donkpockets/donkpocketteriyaki,
-					/obj/item/storage/box/donkpockets/donkpocketpizza,
-					/obj/item/storage/box/donkpockets/donkpocketberry)
-	crate_name = "donk pocket crate"
+	contains = list(/obj/item/storage/box/shoalpockets/shoalpocketspicy,
+					/obj/item/storage/box/shoalpockets/shoalpocketteriyaki,
+					/obj/item/storage/box/shoalpockets/shoalpocketpizza,
+					/obj/item/storage/box/shoalpockets/shoalpocketberry)
+	crate_name = "shoalwich crate"
 	crate_type = /obj/structure/closet/crate/freezer
-	faction = /datum/faction/syndicate
 
-/datum/supply_pack/food/donkpockets/fill(obj/structure/closet/crate/C)
+/datum/supply_pack/food/shoalpockets/fill(obj/structure/closet/crate/C)
 	for(var/i in 1 to 3)
 		var/item = pick(contains)
 		new item(C)
@@ -182,6 +181,39 @@
 					/obj/item/food/grown/cabbage,
 	)
 
+/datum/supply_pack/food/ingredients_basic/eggplant
+	name = "Eggplant Crate"
+	desc = "Crate containing five eggplants."
+	cost = 75
+	contains = list(/obj/item/food/grown/eggplant,
+					/obj/item/food/grown/eggplant,
+					/obj/item/food/grown/eggplant,
+					/obj/item/food/grown/eggplant,
+					/obj/item/food/grown/eggplant,
+	)
+
+/datum/supply_pack/food/ingredients_basic/whitebeet
+	name = "White-beet Crate"
+	desc = "Crate containing five white-beets."
+	cost = 75
+	contains = list(/obj/item/food/grown/whitebeet,
+					/obj/item/food/grown/whitebeet,
+					/obj/item/food/grown/whitebeet,
+					/obj/item/food/grown/whitebeet,
+					/obj/item/food/grown/whitebeet,
+	)
+
+/datum/supply_pack/food/ingredients_basic/redbeet
+	name = "Redbeet Crate"
+	desc = "Crate containing five redbeets."
+	cost = 75
+	contains = list(/obj/item/food/grown/redbeet,
+					/obj/item/food/grown/redbeet,
+					/obj/item/food/grown/redbeet,
+					/obj/item/food/grown/redbeet,
+					/obj/item/food/grown/redbeet,
+	)
+
 /datum/supply_pack/food/ingredients_basic/chanterelle
 	name = "Chanterelle Crate"
 	desc = "Crate containing five chanterelle mushrooms."
@@ -246,6 +278,17 @@
 					/obj/item/food/grown/apple,
 					/obj/item/food/grown/apple,
 					/obj/item/food/grown/apple,
+	)
+
+/datum/supply_pack/food/ingredients_basic/cherry
+	name = "Cherry Crate"
+	desc = "Crate containing five cherries."
+	cost = 75
+	contains = list(/obj/item/food/grown/cherries,
+					/obj/item/food/grown/cherries,
+					/obj/item/food/grown/cherries,
+					/obj/item/food/grown/cherries,
+					/obj/item/food/grown/cherries,
 	)
 
 /datum/supply_pack/food/ingredients_basic/lime
@@ -487,7 +530,7 @@
 
 /datum/supply_pack/food/beekeeping_fullkit
 	name = "Beekeeping Starter Crate"
-	desc = "BEES BEES BEES. Contains three honey frames, a beekeeper suit and helmet, flyswatter, bee house, and, of course, a pure-bred Nanotrasen-Standardized Queen Bee!"
+	desc = "BEES BEES BEES. Contains three honey frames, a beekeeper suit and helmet, flyswatter, bee house, and, of course, a pure-bred Makosso-Warra-Standardized Queen Bee!"
 	cost = 1000
 	contains = list(/obj/structure/beebox/unwrenched,
 					/obj/item/honey_frame,
@@ -657,4 +700,12 @@
 	cost = 20
 	contains = list(
 		/obj/item/reagent_containers/condiment/tiris_sale
+	)
+
+/datum/supply_pack/food/ingredients_basic/mead
+	name = "Mead Six Pack Crate"
+	desc = "Gezenan Dark Mead in a six-pack. Slightly better value than buying straight from a vendor."
+	cost = 50
+	contains = list(
+		/obj/item/storage/cans/sixbeer
 	)

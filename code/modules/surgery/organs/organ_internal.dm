@@ -216,6 +216,7 @@
 	return 0
 
 /mob/living/carbon/regenerate_organs()
+	SEND_SIGNAL(src, COMSIG_CARBON_PRE_REGENERATE_ORGANS)
 	var/obj/item/organ/lungs/lungs = getorganslot(ORGAN_SLOT_LUNGS)
 	if(!lungs)
 		lungs = new()
@@ -237,9 +238,12 @@
 	if(!getorganslot(ORGAN_SLOT_EARS))
 		var/obj/item/organ/ears/ears = new()
 		ears.Insert(src)
+	SEND_SIGNAL(src, COMSIG_CARBON_POST_REGENERATE_ORGANS)
 
 /mob/living/carbon/human/regenerate_organs()
+	SEND_SIGNAL(src, COMSIG_CARBON_PRE_REGENERATE_ORGANS)
 	dna.species.regenerate_organs(src, robotic = fbp)
+	SEND_SIGNAL(src, COMSIG_CARBON_POST_REGENERATE_ORGANS)
 
 /** get_availability
  * returns whether the species should innately have this organ.

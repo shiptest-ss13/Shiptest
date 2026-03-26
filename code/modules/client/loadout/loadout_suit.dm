@@ -55,6 +55,10 @@
 	display_name = "suit jacket, navy"
 	path = /obj/item/clothing/suit/lawyer/navy
 
+/datum/gear/suit/toggle/flight
+	display_name = "flight jacket, colorable"
+	path = /obj/item/clothing/suit/toggle/flight
+
 /datum/gear/suit/jacket/charcoal
 	display_name = "suit jacket, charcoal"
 	path = /obj/item/clothing/suit/lawyer/charcoal
@@ -98,6 +102,10 @@
 /datum/gear/suit/limehazard
 	display_name = " lime hazard jacket"
 	path = /obj/item/clothing/suit/toggle/hazard/lime
+
+/datum/gear/suit/overcoat
+	display_name = "overcoat, colorable"
+	path = /obj/item/clothing/suit/toggle/overcoat
 
 /datum/gear/suit/jacket/windbreaker
 	display_name = "windbreaker, colorable"

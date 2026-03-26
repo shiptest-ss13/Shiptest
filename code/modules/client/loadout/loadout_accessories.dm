@@ -85,6 +85,10 @@
 	description = "Standard hand coverings for everyday use."
 	path = /obj/item/clothing/gloves/color/black
 
+/datum/gear/accessory/gloves/long
+	display_name = "long gloves, colorable"
+	path = /obj/item/clothing/gloves/long
+
 /datum/gear/accessory/gloves/armwarmers
 	display_name = "arm warmers"
 	path = /obj/item/clothing/gloves/armwarmer

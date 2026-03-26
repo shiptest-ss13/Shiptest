@@ -8,7 +8,7 @@
 	e_cost = 555
 
 /obj/item/ammo_casing/energy/laser/sharplite/efficent
-	e_cost = 700  //9 per NT mini cell
+	e_cost = 700  //9 per MW mini cell
 
 /obj/item/ammo_casing/energy/laser/underbarrel
 	projectile_type = /obj/projectile/beam/laser
@@ -96,7 +96,7 @@
 	e_cost = 500 //20 shots with a normal power cell, 40 with an upgraded
 	select_name = "kill"
 	delay = 0.13 SECONDS
-	fire_sound = 'sound/weapons/gun/laser/nt-fire_light.ogg'
+	fire_sound = 'sound/weapons/gun/laser/sharplite-fire_light.ogg'
 
 /obj/item/ammo_casing/energy/lasergun/old
 	projectile_type = /obj/projectile/beam/laser
@@ -211,7 +211,7 @@
 
 /obj/item/ammo_casing/energy/disabler/hitscan
 	projectile_type = /obj/projectile/beam/hitscan/disabler
-	e_cost = 666
+	e_cost = 500
 
 /obj/projectile/beam/hitscan/disabler
 	name = "disabler beam"
@@ -244,7 +244,7 @@
 
 /obj/item/ammo_casing/energy/disabler/hitscan/heavy
 	projectile_type = /obj/projectile/beam/hitscan/disabler/heavy
-	e_cost = 1000
+	e_cost = 666
 
 /obj/projectile/beam/hitscan/disabler/heavy
 	range = 15

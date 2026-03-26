@@ -5,5 +5,5 @@
 	mob_traits = list(TRAIT_FRIENDLY)
 	gain_text = span_notice("You want to hug someone.")
 	lose_text = span_danger("You no longer feel compelled to hug others.")
-	mood_quirk = TRUE
+	quirk_flags = QUIRK_HUMAN_ONLY | QUIRK_MOODLET_BASED
 	medical_record_text = "Patient demonstrates low-inhibitions for physical contact and well-developed arms. Requesting another doctor take over this case."

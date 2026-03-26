@@ -2690,28 +2690,9 @@
 	pixel_x = 0;
 	pixel_y = -28
 	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 10
 	},
-/obj/item/storage/backpack/duffelbag/sec{
-	pixel_y = -12;
-	pixel_x = 7
-	},
-/obj/item/storage/backpack/duffelbag/sec{
-	pixel_y = -12;
-	pixel_x = 7
-	},
-/obj/item/storage/backpack/satchel/sec{
-	pixel_x = -3;
-	pixel_y = -16
-	},
-/obj/item/storage/backpack/satchel/sec{
-	pixel_x = -3;
-	pixel_y = -16
-	},
 /obj/item/clothing/head/gezena/flap/marine{
 	pixel_y = 8;
 	pixel_x = -6
@@ -2760,17 +2741,32 @@
 	pixel_y = -1;
 	pixel_x = 6
 	},
-/obj/item/clothing/gloves/gezena/marine{
-	pixel_y = -2;
-	pixel_x = 7
+/obj/structure/window/reinforced{
+	dir = 8
 	},
-/obj/item/clothing/gloves/gezena/marine{
-	pixel_y = -2;
-	pixel_x = 7
+/obj/item/storage/backpack/satchel/sec/gezena{
+	pixel_x = -8;
+	pixel_y = -12
 	},
-/obj/item/clothing/gloves/gezena/marine{
-	pixel_y = -2;
-	pixel_x = 7
+/obj/item/storage/backpack/satchel/sec/gezena{
+	pixel_x = -8;
+	pixel_y = -12
+	},
+/obj/item/storage/backpack/satchel/sec/gezena{
+	pixel_x = -8;
+	pixel_y = -12
+	},
+/obj/item/storage/backpack/messenger/sec/gezena{
+	pixel_x = 10;
+	pixel_y = -13
+	},
+/obj/item/storage/backpack/messenger/sec/gezena{
+	pixel_x = 10;
+	pixel_y = -13
+	},
+/obj/item/storage/backpack/messenger/sec/gezena{
+	pixel_x = 10;
+	pixel_y = -13
 	},
 /obj/item/clothing/neck/cloak/gezena{
 	pixel_x = -2;
@@ -2783,6 +2779,34 @@
 /obj/item/clothing/neck/cloak/gezena{
 	pixel_x = -2;
 	pixel_y = 0
+	},
+/obj/item/clothing/gloves/gezena/marine{
+	pixel_y = -2;
+	pixel_x = 7
+	},
+/obj/item/clothing/gloves/gezena/marine{
+	pixel_y = -2;
+	pixel_x = 7
+	},
+/obj/item/clothing/gloves/gezena/marine{
+	pixel_y = -2;
+	pixel_x = 7
+	},
+/obj/item/storage/backpack/security/gezena{
+	pixel_x = 2;
+	pixel_y = -15
+	},
+/obj/item/storage/backpack/security/gezena{
+	pixel_x = 2;
+	pixel_y = -15
+	},
+/obj/item/storage/backpack/security/gezena{
+	pixel_x = 2;
+	pixel_y = -15
+	},
+/obj/item/storage/backpack/duffelbag{
+	pixel_x = 1;
+	pixel_y = -10
 	},
 /obj/item/clothing/shoes/combat/gezena/marine{
 	pixel_y = -10;
@@ -3306,10 +3330,8 @@
 	disable_on_owner_ship_dock = 1
 	},
 /obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	port_direction = 8;
-	preferred_direction = 4;
-	dir = 2
+	port_direction = 4;
+	preferred_direction = 4
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)

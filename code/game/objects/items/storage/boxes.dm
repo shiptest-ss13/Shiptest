@@ -10,7 +10,7 @@
  *		Tracking and chemical implant boxes,
  *		Prescription glasses and drinking glass boxes,
  *		Condiment bottle and silly cup boxes,
- *		Donkpocket and monkeycube boxes,
+ *		shoalpocket and monkeycube boxes,
  *		ID and security PDA cart boxes,
  *		Handcuff, mousetrap, and pillbottle boxes,
  *		Snap-pops and matchboxes,
@@ -158,17 +158,29 @@
 /obj/item/storage/box/survival/clip
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi //clip actually cares about their personnel
 
+/obj/item/storage/box/survival/clip/command
+	radio_type = /obj/item/radio/command
+
 /obj/item/storage/box/survival/clip/minutemen
 	mask_type = /obj/item/clothing/mask/balaclava/combat
 	internal_type = /obj/item/tank/internals/emergency_oxygen/double
+
+/obj/item/storage/box/survival/clip/minutemen/command
+	radio_type = /obj/item/radio/command
 
 /obj/item/storage/box/survival/pgf
 	mask_type = /obj/item/clothing/mask/breath/pgfmask
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
 
+/obj/item/storage/box/survival/pgf/command
+	radio_type = /obj/item/radio/command
+
 /obj/item/storage/box/survival/inteq
 	mask_type = /obj/item/clothing/mask/balaclava/inteq
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
+
+/obj/item/storage/box/survival/inteq/command
+	radio_type = /obj/item/radio/command
 
 /obj/item/storage/box/survival/frontier
 	mask_type = null // we spawn in gas masks in frontiersmen bags alongside this, so it isn't nessary
@@ -177,6 +189,12 @@
 /obj/item/storage/box/survival/vi
 	mask_type = /obj/item/clothing/mask/gas/vigilitas
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
+
+/obj/item/storage/box/survival/vi/command
+	radio_type = /obj/item/radio/command
+
+/obj/item/storage/box/survival/command
+	radio_type = /obj/item/radio/command
 
 /obj/item/storage/box/gloves
 	name = "box of latex gloves"
@@ -507,36 +525,36 @@
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/food/drinks/sillycup(src)
 
-/obj/item/storage/box/donkpockets
-	name = "box of donk-pockets"
-	desc = "<B>Instructions:</B> <I>Heat in microwave. Product will cool if not eaten within seven minutes.</I>"
-	icon_state = "donkpocketbox"
+/obj/item/storage/box/shoalpockets
+	name = "box of shoalwiches"
+	desc = "An ultra-processed form of food originating from upper layers of the Shoal - now commercialized. Contrary to popular belief, it contains no real grain. Heated in the microwave."
+	icon_state = "shoalpocketbox"
 	illustration=null
-	var/donktype = /obj/item/food/donkpocket
+	var/shoalpockettype = /obj/item/food/shoalpocket
 
-/obj/item/storage/box/donkpockets/PopulateContents()
+/obj/item/storage/box/shoalpockets/PopulateContents()
 	for(var/i in 1 to 6)
-		new donktype(src)
+		new shoalpockettype(src)
 
-/obj/item/storage/box/donkpockets/donkpocketspicy
-	name = "box of spicy-flavoured donk-pockets"
-	icon_state = "donkpocketboxspicy"
-	donktype = /obj/item/food/donkpocket/spicy
+/obj/item/storage/box/shoalpockets/shoalpocketspicy
+	name = "box of spicy-flavoured shoalwiches"
+	icon_state = "shoalpocketboxspicy"
+	shoalpockettype = /obj/item/food/shoalpocket/spicy
 
-/obj/item/storage/box/donkpockets/donkpocketteriyaki
-	name = "box of teriyaki-flavoured donk-pockets"
-	icon_state = "donkpocketboxteriyaki"
-	donktype = /obj/item/food/donkpocket/teriyaki
+/obj/item/storage/box/shoalpockets/shoalpocketteriyaki
+	name = "box of teriyaki-flavoured shoalwiches"
+	icon_state = "shoalpocketboxteriyaki"
+	shoalpockettype = /obj/item/food/shoalpocket/teriyaki
 
-/obj/item/storage/box/donkpockets/donkpocketpizza
-	name = "box of pizza-flavoured donk-pockets"
-	icon_state = "donkpocketboxpizza"
-	donktype = /obj/item/food/donkpocket/pizza
+/obj/item/storage/box/shoalpockets/shoalpocketpizza
+	name = "box of pizza-flavoured shoalwiches"
+	icon_state = "shoalpocketboxpizza"
+	shoalpockettype = /obj/item/food/shoalpocket/pizza
 
-/obj/item/storage/box/donkpockets/donkpocketberry
-	name = "box of berry-flavoured donk-pockets"
-	icon_state = "donkpocketboxberry"
-	donktype = /obj/item/food/donkpocket/berry
+/obj/item/storage/box/shoalpockets/shoalpocketberry
+	name = "box of berry-flavoured shoalwiches"
+	icon_state = "shoalpocketboxberry"
+	shoalpockettype = /obj/item/food/shoalpocket/berry
 
 /obj/item/storage/box/monkeycubes
 	name = "monkey cube box"
@@ -882,7 +900,7 @@
 	. = ..()
 	papersack_designs = sortList(list(
 		"None" = image(icon = src.icon, icon_state = "paperbag_None"),
-		"NanotrasenStandard" = image(icon = src.icon, icon_state = "paperbag_NanotrasenStandard"),
+		"WarraStandard" = image(icon = src.icon, icon_state = "paperbag_WarraStandard"),
 		"SyndiSnacks" = image(icon = src.icon, icon_state = "paperbag_SyndiSnacks"),
 		"Heart" = image(icon = src.icon, icon_state = "paperbag_Heart"),
 		"SmileyFace" = image(icon = src.icon, icon_state = "paperbag_SmileyFace")
@@ -905,8 +923,8 @@
 		switch(choice)
 			if("None")
 				desc = "A sack neatly crafted out of paper."
-			if("NanotrasenStandard")
-				desc = "A standard Nanotrasen paper lunch sack for loyal employees on the go."
+			if("WarraStandard")
+				desc = "A standard Makosso-Warra paper lunch sack for loyal employees on the go."
 			if("SyndiSnacks")
 				desc = "The design on this paper sack is a remnant of the notorious 'SyndieSnacks' program."
 			if("Heart")
@@ -1121,8 +1139,8 @@
 	new /obj/item/circuitboard/computer/rdconsole(src)
 
 /obj/item/storage/box/rndboards/old
-	name = "\proper Nanotrasen R&D Construction Kit"
-	desc = "A set of boards for constructing prototype design lathes, dating from a prewar Nanotrasen labratory. These ones are unbraked, and can produce any of the designs in their database without limit."
+	name = "\proper Makosso-Warra R&D Construction Kit"
+	desc = "A set of boards for constructing prototype design lathes, dating from a prewar Makosso-warra labratory. These ones are unbraked, and can produce any of the designs in their database without limit."
 
 //departmental RND kits, for shiptests.
 /obj/item/storage/box/rndmining
@@ -1476,7 +1494,7 @@
 
 /obj/item/storage/box/sparklers
 	name = "box of sparklers"
-	desc = "A box of NT brand sparklers, burns hot even in the cold of space-winter."
+	desc = "A box of Makosso-Warra brand sparklers, burns hot even in the cold of space-winter."
 	illustration = "sparkler"
 
 /obj/item/storage/box/sparklers/PopulateContents()

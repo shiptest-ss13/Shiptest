@@ -486,6 +486,12 @@
 /obj/machinery/door/airlock/external{
 	dir = 4
 	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 4;
+	port_direction = 2;
+	preferred_direction = 4
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/external/dark)
 "fo" = (
@@ -2518,9 +2524,12 @@
 "vg" = (
 /obj/docking_port/stationary{
 	dir = 8;
-	dwidth = 15;
-	height = 15;
-	width = 30
+	dwidth = 30;
+	height = 60;
+	width = 60;
+	disable_on_owner_ship_dock = 1;
+	name = "Vaquero Stern Dock";
+	dheight = 1
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -3047,7 +3056,7 @@
 /obj/machinery/camera/autoname{
 	dir = 4
 	},
-/obj/structure/sign/poster/contraband/inteq_nt{
+/obj/structure/sign/poster/contraband/inteq_warra{
 	pixel_y = 32;
 	layer = 2.809
 	},
@@ -5468,14 +5477,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/starboard)
-"UL" = (
-/obj/docking_port/mobile{
-	dir = 8;
-	launch_status = 0;
-	preferred_direction = 4
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/security/armory)
 "UO" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 4
@@ -6128,19 +6129,14 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/bodycamera{
 	pixel_y = 6;
-	pixel_x = -9
+	pixel_x = -5
 	},
 /obj/item/bodycamera{
 	pixel_y = 6;
-	pixel_x = 1
+	pixel_x = 5
 	},
 /obj/item/bodycamera{
-	pixel_y = 2;
-	pixel_x = -4
-	},
-/obj/item/multitool{
-	pixel_x = 10;
-	pixel_y = 5
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
@@ -6274,14 +6270,14 @@ ww
 ww
 ww
 ww
-Hp
+ww
 ww
 ww
 ww
 vg
 ww
 ww
-Bl
+ww
 ww
 ww
 ww
@@ -6298,14 +6294,14 @@ Hn
 Yo
 Hn
 ww
-ox
+Hp
 ww
 iz
 Ai
 fl
 ad
 ww
-SW
+Bl
 ww
 Qy
 Ds
@@ -6329,7 +6325,7 @@ xZ
 CA
 iz
 ww
-ox
+SW
 ww
 Qy
 Yn
@@ -7001,7 +6997,7 @@ ww
 ww
 ww
 ww
-UL
+zY
 zY
 zY
 qX
