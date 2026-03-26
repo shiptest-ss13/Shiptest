@@ -10,7 +10,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -32,13 +32,8 @@
 /obj/machinery/cryopod{
 	dir = 4
 	},
-/obj/machinery/computer/cryopod{
-	dir = 4;
-	pixel_x = -25
-	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/computer/cryopod/directional/west,
+/obj/machinery/light/directional/west,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "dJ" = (
@@ -157,9 +152,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ks" = (
@@ -169,13 +162,8 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 26
-	},
+/obj/machinery/light/small/directional/east,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "kO" = (
@@ -222,7 +210,7 @@
 /obj/machinery/atmospherics/pipe/manifold/green{
 	dir = 8
 	},
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "mG" = (
@@ -246,9 +234,7 @@
 /area/ship/bridge)
 "qK" = (
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "sn" = (
@@ -348,9 +334,7 @@
 /area/ship/bridge)
 "Ce" = (
 /obj/machinery/power/smes/engineering,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -422,16 +406,14 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
-/obj/item/radio/intercom/wideband{
-	pixel_y = 21
-	},
+/obj/item/radio/intercom/wideband/directional/north,
 /obj/machinery/button/door{
 	id = "masinyane_windowshield";
 	name = "shutters";
 	pixel_x = 25;
 	pixel_y = 30
 	},
-/obj/item/radio/intercom{
+/obj/item/radio/intercom/directional/north{
 	pixel_y = 36
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -483,9 +465,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "IQ" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_y = 32
-	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/chair,
 /turf/open/floor/plasteel/dark,
@@ -498,10 +478,8 @@
 	gpstag = "MasinyaneVessel"
 	},
 /obj/item/storage/firstaid/regular,
-/obj/structure/closet/wall/blue{
-	dir = 4;
-	name = "Equipment closet";
-	pixel_x = -30
+/obj/structure/closet/wall/blue/directional/west{
+	name = "Equipment closet"
 	},
 /obj/item/inducer/sci{
 	cell_type = /obj/item/stock_parts/cell/high
@@ -597,8 +575,8 @@
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
 /obj/item/pickaxe/drill,
-/obj/item/gun/energy/plasmacutter,
-/obj/item/gun/energy/plasmacutter,
+/obj/item/plasmacutter,
+/obj/item/plasmacutter,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Rt" = (
@@ -660,7 +638,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Tq" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -680,9 +658,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Wn" = (
@@ -690,10 +666,7 @@
 /area/ship/bridge)
 "Xc" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = -20
-	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Xe" = (
@@ -704,9 +677,7 @@
 /area/ship/bridge)
 "Xq" = (
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "XT" = (
@@ -717,10 +688,8 @@
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning{
 	dir = 1
 	},
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	name = "air filtration controller";
-	pixel_x = 25
+/obj/machinery/airalarm/directional/east{
+	name = "air filtration controller"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -752,23 +721,20 @@
 /area/ship/bridge)
 "ZU" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2,
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 26
-	},
+/obj/machinery/firealarm/directional/east,
 /obj/structure/closet/crate/freezer,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/food/burrito,
+/obj/item/food/burrito,
+/obj/item/food/burrito,
+/obj/item/food/burrito,
+/obj/item/food/burrito,
+/obj/item/food/burrito,
+/obj/item/food/burrito,
+/obj/item/food/burrito,
+/obj/item/food/burrito,
+/obj/item/food/burrito,
+/obj/item/food/burrito,
+/obj/item/food/burrito,
 /turf/open/floor/plating,
 /area/ship/engineering)
 
