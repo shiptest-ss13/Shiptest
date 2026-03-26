@@ -263,6 +263,67 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/ship/crew/canteen/kitchen)
+"bw" = (
+/obj/structure/closet/secure_closet/armorycage{
+	anchored = 1;
+	req_access = list(1);
+	name = "marine's locker"
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/storage/backpack/satchel/sec/gezena{
+	pixel_x = -8;
+	pixel_y = -8
+	},
+/obj/item/storage/backpack/messenger/sec/gezena{
+	pixel_x = 10;
+	pixel_y = -9
+	},
+/obj/item/storage/backpack/security/gezena{
+	pixel_x = 2;
+	pixel_y = -11
+	},
+/obj/item/storage/backpack/duffelbag{
+	pixel_y = -6
+	},
+/obj/item/clothing/suit/toggle/gezena/marine{
+	pixel_x = 5;
+	pixel_y = -4
+	},
+/obj/item/clothing/under/gezena/marine{
+	pixel_x = -5;
+	pixel_y = -2
+	},
+/obj/item/clothing/neck/cloak/gezena{
+	pixel_x = -7;
+	pixel_y = 0
+	},
+/obj/item/clothing/gloves/gezena/marine{
+	pixel_y = 3;
+	pixel_x = 4
+	},
+/obj/item/clothing/head/gezena/marine{
+	pixel_y = 11;
+	pixel_x = 10
+	},
+/obj/item/clothing/head/gezena/flap/marine{
+	pixel_y = 7;
+	pixel_x = -8
+	},
+/obj/item/clothing/shoes/combat/gezena/marine{
+	pixel_y = -9;
+	pixel_x = 8
+	},
+/obj/item/storage/belt/military/gezena{
+	pixel_x = 1;
+	pixel_y = -2
+	},
+/obj/item/storage/pouch/medical{
+	pixel_x = -1;
+	pixel_y = -10
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/security)
 "bA" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
@@ -1923,9 +1984,6 @@
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/crew/canteen/kitchen)
 "jM" = (
-/obj/structure/closet/secure_closet/engineering_welding{
-	anchored = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 5
 	},
@@ -7301,6 +7359,10 @@
 	pixel_x = 6;
 	pixel_y = -6
 	},
+/obj/item/storage/pouch/medical{
+	pixel_x = -1;
+	pixel_y = -10
+	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "Kk" = (
@@ -9103,7 +9165,7 @@
 /obj/structure/closet/secure_closet/armorycage{
 	anchored = 1;
 	req_access = list(1);
-	name = "marine's locker"
+	name = "marine pioneer's locker"
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -9130,7 +9192,7 @@
 	pixel_x = -5;
 	pixel_y = -2
 	},
-/obj/item/clothing/neck/cloak/gezena{
+/obj/item/clothing/neck/cloak/gezena/engi{
 	pixel_x = -7;
 	pixel_y = 0
 	},
@@ -9153,6 +9215,10 @@
 /obj/item/storage/belt/military/gezena{
 	pixel_x = 1;
 	pixel_y = -2
+	},
+/obj/item/storage/pouch/engi{
+	pixel_x = 1;
+	pixel_y = -10
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
@@ -9665,9 +9731,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/equip)
 "Uq" = (
-/obj/structure/closet/secure_closet/engineering_electrical{
-	anchored = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
 	},
@@ -11494,7 +11557,7 @@ ry
 kf
 cY
 rh
-SA
+bw
 mv
 fT
 aR
@@ -11528,7 +11591,7 @@ NC
 Zp
 Ks
 rh
-SA
+bw
 JO
 Ea
 wV

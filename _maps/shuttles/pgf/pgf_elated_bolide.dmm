@@ -1690,11 +1690,6 @@
 	dir = 8;
 	req_access = list(3)
 	},
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "bolide_armory";
-	name = "Armory"
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "km" = (
@@ -3144,6 +3139,37 @@
 "sT" = (
 /obj/effect/turf_decal/trimline/opaque/white/end{
 	dir = 4
+	},
+/obj/item/storage/pouch/engi{
+	pixel_x = -8;
+	pixel_y = 9
+	},
+/obj/item/storage/pouch/engi{
+	pixel_x = 7;
+	pixel_y = 9
+	},
+/obj/item/storage/pouch/engi{
+	pixel_x = -8;
+	pixel_y = 1
+	},
+/obj/item/storage/pouch/engi{
+	pixel_x = 7;
+	pixel_y = 1
+	},
+/obj/item/storage/pouch/medical{
+	pixel_x = -10;
+	pixel_y = -10
+	},
+/obj/item/storage/pouch/medical{
+	pixel_x = 4;
+	pixel_y = -10
+	},
+/obj/structure/closet/secure_closet/wall/directional/west{
+	icon_state = "sec_wall";
+	name = "supply cabinet";
+	dir = 4;
+	pixel_x = 28;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -5944,6 +5970,10 @@
 	pixel_x = 6;
 	pixel_y = -6
 	},
+/obj/item/storage/pouch/medical{
+	pixel_x = -1;
+	pixel_y = -10
+	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "IM" = (
@@ -8099,8 +8129,8 @@
 	name = "secure storage access";
 	pixel_x = -10;
 	pixel_y = -20;
-	req_access = list(3);
-	req_one_access = list(1, 10)
+	req_one_access = list(1, 10);
+	req_ship_access = 1
 	},
 /obj/machinery/firealarm/directional/south{
 	pixel_x = 5
