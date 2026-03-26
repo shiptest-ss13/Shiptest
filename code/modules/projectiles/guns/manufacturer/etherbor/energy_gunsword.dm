@@ -397,7 +397,7 @@
 
 /obj/item/ammo_casing/energy/kalix/pgf/pdw
 	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf/pdw
-	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
+	fire_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
 	e_cost = 765 //26 shots per cell
 	select_name = "kill"
 
