@@ -1148,5 +1148,5 @@
 			new shaving_type(loc)
 			shaving_count++
 			to_chat(user, span_notice("You cut a [shaving_type.name] off of [src]."))
-			return
+		return
 	return ..()
