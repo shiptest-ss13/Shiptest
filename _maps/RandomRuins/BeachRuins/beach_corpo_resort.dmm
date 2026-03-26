@@ -303,6 +303,10 @@
 	dir = 8
 	},
 /obj/effect/mapping_helpers/airlock/sealed,
+/obj/effect/mapping_helpers/airlock_note_placer{
+	note_info = "KEEP OUT!!! a group of lobsters seem to have taken up residence here a few days before we arrived and until we get the hivebots in the power station sorted THIS IS NOT OUR PROBLEM!!!";
+	note_name = "re: the lobsters"
+	},
 /turf/open/floor/plasteel,
 /area/ruin/beach/corpo_resort/office)
 "bs" = (
@@ -526,6 +530,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/officer/captain,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "cv" = (
@@ -668,6 +673,11 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"db" = (
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/secure/loot,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/beach/corpo_resort/ramzi_shuttle)
 "dg" = (
 /obj/structure/table/reinforced,
 /obj/item/ammo_box/magazine/m10mm_ringneck/empty{
@@ -899,8 +909,14 @@
 /turf/open/floor/wood,
 /area/ruin/beach/corpo_resort/hotel/rooms/one)
 "ez" = (
-/turf/open/floor/plasteel/patterned/grid/dark,
-/area/ruin/beach/corpo_resort/ramzi_shuttle)
+/obj/item/geiger_counter{
+	scanning = 1;
+	pixel_x = -1;
+	pixel_y = 0;
+	icon_state = "geiger_on_2"
+	},
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "eC" = (
 /obj/effect/turf_decal/corner/opaque/red{
 	dir = 10
@@ -946,6 +962,10 @@
 	icon_state = "wood-broken5"
 	},
 /area/ruin/beach/corpo_resort/hotel)
+"eW" = (
+/obj/item/mine/pressure/explosive/rusty/live,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "eX" = (
 /obj/item/stock_parts/capacitor{
 	pixel_x = -4;
@@ -1171,6 +1191,11 @@
 	icon_state = "wood-broken5"
 	},
 /area/ruin/beach/corpo_resort/hotel)
+"gc" = (
+/obj/structure/spacevine,
+/obj/item/mine/pressure/explosive/rusty/live,
+/turf/open/floor/plating/asteroid/dirt/grass/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "ge" = (
 /obj/structure/platform/wood/corner{
 	dir = 4
@@ -2288,14 +2313,10 @@
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "mQ" = (
-/obj/item/paper/crumpled{
-	pixel_x = 1;
-	pixel_y = 6;
-	default_raw_text = "KEEP OUT!!! a group of lobsters seem to have taken up residence here a few days before we arrived and until we get the hivebots in the power station sorted THIS IS NOT OUR PROBLEM!!!"
-	},
-/obj/effect/turf_decal/corner/opaque/warrablue/three_quarters,
-/turf/open/floor/plasteel/white,
-/area/ruin/beach/corpo_resort/office)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/toolcloset,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/beach/corpo_resort/electrical)
 "mR" = (
 /obj/structure/platform{
 	dir = 4
@@ -4151,6 +4172,11 @@
 	icon_state = "wood-broken7"
 	},
 /area/ruin/beach/corpo_resort/ramzi_tent)
+"wc" = (
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/secure/loot,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/beach/corpo_resort/supply)
 "we" = (
 /obj/item/stack/ore/salvage/scrapmetal{
 	pixel_x = -21;
@@ -4261,7 +4287,6 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/officer/captain,
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
@@ -7272,6 +7297,11 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/beach/corpo_resort/supply)
+"NZ" = (
+/obj/structure/spacevine,
+/obj/item/mine/pressure/explosive/rusty/live,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Oc" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
@@ -7663,6 +7693,10 @@
 /obj/structure/flora/stump,
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Qi" = (
+/obj/structure/girder,
+/turf/open/floor/plating/asteroid/dirt/beach,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Qj" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -7724,6 +7758,14 @@
 /obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel,
 /area/ruin/beach/corpo_resort/staff_dorms)
+"Qv" = (
+/obj/structure/sign/warning/securearea{
+	pixel_y = 25;
+	name = "WARNING: MINEFIELD sign";
+	desc = "A warning sign declaring the presence of landmines in this area."
+	},
+/turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Qy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood{
@@ -7755,15 +7797,6 @@
 	pixel_y = 8
 	},
 /turf/open/floor/plating/asteroid/dirt/grass/beach,
-/area/overmap_encounter/planetoid/beachplanet/explored)
-"QO" = (
-/obj/item/geiger_counter{
-	scanning = 1;
-	pixel_x = -1;
-	pixel_y = 0;
-	icon_state = "geiger_on_2"
-	},
-/turf/open/floor/plating/asteroid/dirt/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "QR" = (
 /turf/open/floor/wood/ebony{
@@ -8266,6 +8299,13 @@
 /area/ruin/beach/corpo_resort/security)
 "TG" = (
 /obj/structure/crate_shelf,
+/obj/item/mine/pressure/explosive/rusty,
+/obj/item/mine/pressure/explosive/rusty,
+/obj/item/mine/pressure/explosive/rusty,
+/obj/item/mine/pressure/explosive,
+/obj/item/mine/pressure/explosive,
+/obj/item/mine/pressure/explosive/shrapnel,
+/obj/structure/closet/crate/secure/plasma,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/beach/corpo_resort/ramzi_shuttle)
 "TM" = (
@@ -9106,6 +9146,7 @@
 	dir = 5
 	},
 /obj/structure/closet/wall/blue/directional/north,
+/obj/item/clothing/under/warra/affairs,
 /turf/open/floor/carpet/royalblue,
 /area/ruin/beach/corpo_resort/office)
 "Xe" = (
@@ -10335,7 +10376,7 @@ HE
 VR
 Zq
 bB
-Gw
+wc
 Gw
 XN
 Oo
@@ -11871,7 +11912,7 @@ kP
 Jl
 zS
 QX
-TG
+db
 ct
 Up
 Vv
@@ -11951,7 +11992,7 @@ PK
 aY
 ke
 ee
-hR
+Hg
 vS
 JO
 WL
@@ -12028,7 +12069,7 @@ RR
 Gz
 ej
 XE
-ez
+hR
 Tv
 aN
 hK
@@ -12147,7 +12188,7 @@ zJ
 oI
 EF
 wV
-Jf
+mQ
 hC
 hv
 hv
@@ -12331,7 +12372,7 @@ YX
 Kv
 Kv
 iZ
-iZ
+zS
 QB
 VQ
 Oz
@@ -13224,7 +13265,7 @@ uV
 da
 eJ
 Tc
-Wj
+NZ
 Wj
 hv
 hv
@@ -13299,7 +13340,7 @@ FS
 GC
 mP
 dY
-eJ
+gc
 eJ
 Wj
 GC
@@ -13455,7 +13496,7 @@ tj
 tj
 tj
 tj
-GC
+eW
 GC
 hv
 hv
@@ -13533,8 +13574,8 @@ tj
 lS
 tj
 GC
-hv
-hv
+Qi
+Qv
 hv
 gO
 gO
@@ -13583,7 +13624,7 @@ xl
 Wb
 fh
 Fi
-QO
+ez
 yo
 ID
 HM
@@ -13873,7 +13914,7 @@ SA
 xQ
 gX
 WM
-mQ
+mS
 xQ
 fc
 Sx
