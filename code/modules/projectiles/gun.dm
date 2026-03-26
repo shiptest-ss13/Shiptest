@@ -527,7 +527,7 @@
 	if(currently_firing_burst)
 		return
 	if(canMouseDown)
-		if(aiming_checks(target,user,flag,params))
+		if(!aiming_checks(target,user,flag,params))
 			return
 
 	if(SEND_SIGNAL(user, COMSIG_MOB_TRYING_TO_FIRE_GUN, src, target, flag, params) & COMPONENT_CANCEL_GUN_FIRE)
@@ -1398,11 +1398,13 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 	if(aiming_time_left <= aiming_time_fire_threshold && check_user())
 	//	sync_ammo()
 		afterattack(M.client.mouseObject, M, FALSE, M.client.mouseParams)
+		//pre_fire(M.client.mouseObject,M)
+	to_chat(M,"aiming time left:[aiming_time_left], aiming time threshold [aiming_time_fire_threshold]")
 	stop_aiming()
 	QDEL_LIST(current_tracers)
 	return ..()
 
-/obj/item/gun/proc/aiming_checks(atom/target, mob/living/user, flag, params, passthrough = TRUE)
+/obj/item/gun/proc/aiming_checks(atom/target, mob/living/user, flag, params)
 	// if(flag) //It's adjacent, is the user, or is on the user's person
 	// 	if(target in user.contents) //can't shoot stuff inside us.
 	// 		return
@@ -1410,13 +1412,16 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 	// 		return
 	// 	if(target == user && user.zone_selected != BODY_ZONE_PRECISE_MOUTH) //so we can't shoot ourselves (unless mouth selected)
 	// 		return
-	if(!passthrough && (aiming_time > aiming_time_fire_threshold))
+	// if((aiming_time > aiming_time_fire_threshold))
+	// 	return FALSE
+	if(aiming_time_left <= aiming_time_fire_threshold && check_user())
 		return FALSE
+	to_chat(user,"for aiming checks, aiming time left:[aiming_time_left], aiming time threshold [aiming_time_fire_threshold]")
 	if(lastfire > world.time + delay)
 		return FALSE
 	lastfire = world.time
-	// . = ..()
-	// stop_aiming()
+	stop_aiming()
+	return TRUE
 
 /obj/item/gun/proc/delay_penalty(amount)
 	aiming_time_left = clamp(aiming_time_left + amount, 0, aiming_time)
