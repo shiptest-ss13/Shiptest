@@ -1,0 +1,38 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Wright-class Anything Vessel",
+	"map_short_name": "Wright-class",
+	"faction": "/datum/faction/independent",
+	"prefix": "SV",
+	"tags": [
+		"RP Focus"
+	],
+	"namelists": [
+		"GENERAL",
+		"SPACE"
+	],
+	"map_path": "_maps/shuttles/good_ships/wright.dmm",
+	"token_icon_state": "ship_small_generic",
+	"limit": 1,
+	"starting_funds": 1500,
+	"job_slots": {
+		"Detective": {
+			"outfit": "/datum/outfit/job/independent/detective",
+			"officer": true,
+			"slots": 1
+		},
+		"Lawyer": {
+			"outfit": "/datum/outfit/job/independent/lawyer",
+			"slots": 2
+		},
+		"Secretary": {
+			"outfit": "/datum/outfit/job/independent/assistant/fancy",
+			"slots": 1
+		},
+		"Intern": {
+			"outfit": "/datum/outfit/job/independent/assistant",
+			"slots": 4
+		}
+	},
+	"enabled": true
+}

@@ -1,0 +1,41 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Pubby-class Light Carrier",
+	"prefix": "MWSV",
+	"manufacturer": "Makosso-Warra Spaceworks",
+	"faction": "/datum/faction/warra",
+	"namelists": [
+		"MAKOSSO-WARRA",
+		"SPACE",
+		"MYTHOLOGICAL"
+	],
+	"map_short_name": "Pubby-class",
+	"map_path": "_maps/shuttles/good_ships/whiteship_pubby.dmm",
+	"token_icon_state": "ship_small_long_generic",
+	"tags": [
+		"Mining",
+		"Generalist"
+	],
+	"limit": 2,
+	"starting_funds": 2000,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/warra/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/warra/engineer",
+			"slots": 1
+		},
+		"Shaft Miner": {
+			"outfit": "/datum/outfit/job/warra/miner/no_equipment",
+			"slots": 1
+		},
+		"Assistant": {
+			"outfit": "/datum/outfit/job/warra/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}
