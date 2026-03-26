@@ -354,7 +354,7 @@
 	fire_delay = 0.5 SECONDS
 
 	spread = 9
-	spread_unwielded = 11
+	spread_unwielded = 10
 
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,
