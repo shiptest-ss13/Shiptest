@@ -463,6 +463,7 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/officer/captain
 	armor_base = /obj/item/clothing/suit/armor/ramzi/captain
 	rapid = 2 //they are well-trained and can thus fire a viper quicker
+	rapid_fire_delay = 4
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun
 	name = "Ramzi Clique Breacher"
