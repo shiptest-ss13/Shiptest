@@ -793,22 +793,22 @@
 	unique_reskin_changes_base_icon_state = TRUE
 	unique_reskin_changes_name = TRUE
 
-/obj/item/clothing/neck/cloak/black_greatcoat
+/obj/item/clothing/neck/cloak/greatcoat/black
 	icon_state = "black_greatcoat"
 	current_skin = "black greatcoat"
 
 
-/obj/item/clothing/neck/cloak/white_greatcoat
+/obj/item/clothing/neck/cloak/greatcoat/white
 	icon_state = "white_greatcoat"
 	current_skin = "white greatcoat"
 
 
-/obj/item/clothing/neck/cloak/brown_greatcoat
+/obj/item/clothing/neck/cloak/greatcoat/brown
 	icon_state = "brown_greatcoat"
 	current_skin = "brown greatcoat"
 
 
-/obj/item/clothing/neck/cloak/navy_greatcoat
+/obj/item/clothing/neck/cloak/greatcoat/navy
 	icon_state = "navy_greatcoat"
 	current_skin = "navy greatcoat"
 
