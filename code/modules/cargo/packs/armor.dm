@@ -256,15 +256,15 @@
 	desc = "A trauma team \"Point\" suit, made for first responders in hostile situations. Plates are attached to the vest and cover the limbs. The set includes a helmet and chestpiece."
 	contains = list(/obj/item/clothing/suit/armor/vest/marine/medium/cybersun/trauma,
 					/obj/item/clothing/head/helmet/riot/cybersun/trauma)
-//Nanotrasen
-/datum/supply_pack/armor/nanotrasen_armor
+//Makosso-Warra
+/datum/supply_pack/armor/warra_armor
 	name = "Vigilitas Armor Crate"
 	desc = "One set of Vigilitas-branded armor. The set includes a helmet and a vest."
 	cost = 750 //The red stripe comes at no extra cost to you, director.
-	contains = list(/obj/item/clothing/head/helmet/m10/nanotrasen,
-					/obj/item/clothing/suit/armor/nanotrasen)
+	contains = list(/obj/item/clothing/head/helmet/m10/warra,
+					/obj/item/clothing/suit/armor/warra)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/nt
+	faction = /datum/faction/warra
 	faction_discount = 0
 	faction_locked = TRUE

@@ -29,6 +29,17 @@
 
 	manufacturer = MANUFACTURER_PGF
 
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 26,
+			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 20,
+			"y" = 15,
+		)
+	)
+
 /obj/item/ammo_casing/energy/kalix
 	projectile_type = /obj/projectile/beam/hitscan/kalix
 	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
@@ -71,7 +82,7 @@
 
 /obj/item/ammo_casing/energy/disabler/hitscan/kalix/nock
 	projectile_type = /obj/projectile/beam/hitscan/disabler
-	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
+	fire_sound = 'sound/weapons/taser2.ogg'
 	e_cost = 312 //10 bursts per cell
 	select_name = "disable"
 
@@ -100,6 +111,18 @@
 
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_MUZZLE = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 25,
+			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 17,
+			"y" = 15,
+		)
 	)
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/kalix
@@ -134,7 +157,7 @@
 
 /obj/item/ammo_casing/energy/disabler/hitscan/kalix/pgf/nock
 	projectile_type = /obj/projectile/beam/hitscan/disabler
-	fire_sound = 'sound/weapons/gun/energy/kalixrifle.ogg'
+	fire_sound = 'sound/weapons/taser2.ogg'
 	e_cost = 250 //16 bursts per cell
 	select_name = "disable"
 
@@ -163,6 +186,18 @@
 
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_MUZZLE = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 25,
+			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 17,
+			"y" = 15,
+		)
 	)
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/pgf
@@ -194,6 +229,17 @@
 
 	wield_delay = 0.7 SECONDS
 	wield_slowdown = LASER_SMG_SLOWDOWN
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 26,
+			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 20,
+			"y" = 15,
+		)
+	)
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/pgf
 	allowed_ammo_types = list(
@@ -241,6 +287,17 @@
 
 	spread = 2
 	spread_unwielded = 5
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 22,
+			"y" = 14,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 15,
+			"y" = 17,
+		)
+	)
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/kalix
 	allowed_ammo_types = list(
@@ -292,6 +349,17 @@
 	spread = 0.5
 	spread_unwielded = 15
 
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 31,
+			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 24,
+			"y" = 15,
+		)
+	)
+
 	ammo_type = list(/obj/item/ammo_casing/energy/pgf/assault, /obj/item/ammo_casing/energy/disabler/hitscan/heavy)
 
 /obj/item/gun/energy/kalix/pgf/medium/empty_cell
@@ -322,6 +390,17 @@
 
 	spread = 0
 	spread_unwielded = 20
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 32,
+			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 26,
+			"y" = 15,
+		)
+	)
 
 	ammo_type = list(/obj/item/ammo_casing/energy/pgf/assault, /obj/item/ammo_casing/energy/pgf/sniper)
 
@@ -382,6 +461,17 @@
 
 	wield_slowdown = LASER_SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 36,
+			"y" = 13,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 26,
+			"y" = 15,
+		)
+	)
 
 /obj/item/gun/energy/kalix/pgf/heavy/sniper/empty_cell
 	spawn_no_ammo = TRUE
