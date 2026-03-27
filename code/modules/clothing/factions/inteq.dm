@@ -565,14 +565,3 @@
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/m12g_bulldog(src)
 
-// neck
-
-/obj/item/clothing/neck/cloak/inteq/greatcoat
-	name = "inteq greatcoat"
-	desc = "A fancy inteq greatcoat, perfect for commanding your enforcers."
-	icon_state = "inteq_greatcoat"
-	item_state = "inteq_greatcoat"
-	icon = 'icons/obj/clothing/faction/inteq/neck.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/neck.dmi'
-	lefthand_file = 'icons/mob/inhands/faction/inteq/inteq_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/faction/inteq/inteq_righthand.dmi'

@@ -274,16 +274,3 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/belt.dmi'
 	supports_variations = null
 
-//////////
-//Neck//
-/////////
-
-/obj/item/clothing/neck/cloak/hardliners/greatcoat
-	name = "hardliners greatcoat"
-	desc = "A fancy greatcoat in hardliners colors, great for meeting with your corporate clientele."
-	icon_state = "hardliners_greatcoat"
-	item_state = "hardliners_greatcoat"
-	icon = 'icons/obj/clothing/faction/hardliners/neck.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/neck.dmi'
-	lefthand_file = 'icons/mob/inhands/faction/hardliners/hardliners_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/faction/hardliners/hardliners_righthand.dmi'
