@@ -286,6 +286,10 @@
 	name = "Manime"
 	icon_state = "hair_manime"
 
+/datum/sprite_accessory/hair/messy
+	name = "Messy"
+	icon_state = "hair_messy"
+
 /datum/sprite_accessory/hair/messychop
 	name = "Messy Chop"
 	icon_state = "hair_messychop"

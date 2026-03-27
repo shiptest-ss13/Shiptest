@@ -12,10 +12,18 @@
 		"grey ribbon" = "ribbongrey",
 		"black ribbon" = "ribbonblack",
 		"maroon ribbon" = "ribbonmaroon",
+		"red ribbon" = "ribbonred",
+		"orange ribbon" = "ribbonorange",
+		"yellow ribbon" = "ribbonyellow",
 		"green ribbon" = "ribbongreen",
+		"dark green ribbon" = "ribbondarkgreen",
+		"teal ribbon" = "ribbonteal",
 		"blue ribbon" = "ribbonblue",
+		"dark blue ribbon" = "ribbondarkblue",
+		"purple ribbon" = "ribbonpurple",
 		"pink ribbon" = "ribbonpink",
 		"brown ribbon" = "ribbonbrown",
+		"light brown ribbon" = "ribbonlightbrown",
 	)
 	unique_reskin_changes_name = TRUE
 
@@ -48,15 +56,50 @@
 	icon_state = "ribbonmaroon"
 	current_skin = "maroon ribbon"
 
+/obj/item/clothing/head/ribbon/red
+	name = "red ribbon"
+	icon_state = "ribbonred"
+	current_skin = "red ribbon"
+
+/obj/item/clothing/head/ribbon/orange
+	name = "orange ribbon"
+	icon_state = "ribbonorange"
+	current_skin = "orange ribbon"
+
+/obj/item/clothing/head/ribbon/yellow
+	name = "yellow ribbon"
+	icon_state = "ribbonyellow"
+	current_skin = "yellow ribbon"
+
 /obj/item/clothing/head/ribbon/green
 	name = "green ribbon"
 	icon_state = "ribbongreen"
 	current_skin = "green ribbon"
 
+/obj/item/clothing/head/ribbon/darkgreen
+	name = "dark green ribbon"
+	icon_state = "ribbondarkgreen"
+	current_skin = "dark green ribbon"
+
+/obj/item/clothing/head/ribbon/teal
+	name = "teal ribbon"
+	icon_state = "ribbonteal"
+	current_skin = "teal ribbon"
+
 /obj/item/clothing/head/ribbon/blue
 	name = "blue ribbon"
 	icon_state = "ribbonblue"
 	current_skin = "blue ribbon"
+
+/obj/item/clothing/head/ribbon/darkblue
+	name = "dark blue ribbon"
+	icon_state = "ribbondarkblue"
+	current_skin = "dark blue ribbon"
+
+/obj/item/clothing/head/ribbon/purple
+	name = "purple ribbon"
+	icon_state = "ribbonpurple"
+	current_skin = "purple ribbon"
 
 /obj/item/clothing/head/ribbon/pink
 	name = "ribbon"
@@ -67,3 +110,8 @@
 	name = "brown ribbon"
 	icon_state = "ribbonbrown"
 	current_skin = "brown ribbon"
+
+/obj/item/clothing/head/ribbon/lightbrown
+	name = "light brown ribbon"
+	icon_state = "ribbonlightbrown"
+	current_skin = "light brown ribbon"

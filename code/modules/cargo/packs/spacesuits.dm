@@ -17,8 +17,7 @@
 	name = "Pilot Space Suit Crate"
 	desc = "One pilot space suit, for improved mobility in exosuits."
 	cost = 500
-	contains = list(/obj/item/clothing/suit/space/pilot,
-					/obj/item/clothing/head/helmet/space/pilot/random)
+	contains = list(/obj/item/clothing/suit/space/pilot)
 	crate_name = "pilot space suit crate"
 
 /datum/supply_pack/spacesuits/engi_spacesuit
