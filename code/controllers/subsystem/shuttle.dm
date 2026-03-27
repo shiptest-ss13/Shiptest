@@ -60,8 +60,11 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/request_jump(modifier = 1)
 	jump_mode = BS_JUMP_CALLED
 	jump_timer = addtimer(CALLBACK(src, PROC_REF(initiate_jump)), jump_request_time * modifier, TIMER_STOPPABLE)
-	jump_timer = addtimer(CALLBACK(src, TYPE_PROC_REF(/datum/controller/subsystem/overmap,outpost_recall)), 1 MINUTES, TIMER_STOPPABLE)
-	priority_announce("Bluespace disturbances intensifying. ETD: [jump_request_time * modifier / (1 MINUTES)] minutes.", null, null, ANNOUNCEMENT_PRIORITY)
+	addtimer(CALLBACK(src, PROC_REF(outpost_recall)), 1 MINUTES, TIMER_STOPPABLE)
+	priority_announce("Bluespace disturbances intensifying. ETA: [jump_request_time * modifier / (1 MINUTES)] minutes.", null, null, ANNOUNCEMENT_PRIORITY)
+
+/datum/controller/subsystem/shuttle/proc/outpost_recall()
+	SSovermap.outpost_recall()
 
 /// Cancels a currently requested bluespace jump. Can only be done after the jump has been requested but before the jump has actually begun.
 /datum/controller/subsystem/shuttle/proc/cancel_jump()

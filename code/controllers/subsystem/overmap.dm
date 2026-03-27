@@ -328,3 +328,16 @@ SUBSYSTEM_DEF(overmap)
 					continue
 				interference_power += nearby_obj.interference_power / 8
 		return max(interference_power,0)
+
+/**
+ * Plays an announcement, closes an outpost, and makes the main outpost system jump-to-able
+ */
+///Selects an outpost and makes its sector jumpable.
+/datum/controller/subsystem/overmap/proc/outpost_recall()
+	var/datum/overmap/outpost/outpost_of_the_day = pick(outposts)
+	var/datum/overmap/outpost/loser_outpost = pick(outposts - outpost_of_the_day)
+	priority_announce("[outpost_of_the_day] has activated a bluespace lighthouse, all vessels in the area are advised to return to port.", "Bluespace Beacon", null, sender_override = "[outpost_of_the_day] Communications")
+	outpost_of_the_day.current_overmap.can_jump_to = TRUE
+	for (var/datum/overmap/ship/controlled/target_ship in controlled_ships)
+		target_ship.blacklisted[loser_outpost] = "[loser_outpost] has closed for the incoming bluespace stormfront."
+

@@ -1,8 +1,7 @@
 #define JUMP_STATE_OFF 0
 #define JUMP_STATE_CHARGING 1
-#define JUMP_STATE_IONIZING 2
-#define JUMP_STATE_FIRING 3
-#define JUMP_STATE_FINALIZED 4
+#define JUMP_STATE_FIRING 2
+#define JUMP_STATE_FINALIZED 3
 #define JUMP_CHARGE_DELAY (7 SECONDS)
 #define JUMP_CHARGEUP_TIME (20 SECONDS)
 
@@ -104,12 +103,9 @@
 		if(JUMP_STATE_CHARGING)
 			jump_state = JUMP_STATE_IONIZING
 			say("Bluespace Jump Calibration completed. Ionizing Bluespace Pylon.")
-		if(JUMP_STATE_IONIZING)
-			jump_state = JUMP_STATE_FIRING
-			say("Bluespace Ionization finalized; preparing to fire Bluespace Pylon.")
 		if(JUMP_STATE_FIRING)
 			jump_state = JUMP_STATE_FINALIZED
-			say("Bluespace Pylon launched.")
+			say("Bluespace Ionization finalized; Firing Bluespace Pylon.")
 			addtimer(CALLBACK(src, PROC_REF(do_jump)), 10 SECONDS)
 			return
 	jump_timer = addtimer(CALLBACK(src, PROC_REF(jump_sequence), TRUE), JUMP_CHARGE_DELAY, TIMER_STOPPABLE)
