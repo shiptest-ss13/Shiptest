@@ -2819,7 +2819,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/techfloor{
-	dir = 4
+	dir = 5
 	},
 /obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/plasteel/tech,
@@ -3084,35 +3084,39 @@
 /area/ship/crew/ccommons)
 "sE" = (
 /obj/structure/rack,
-/obj/item/clothing/suit/bomb_suit{
-	pixel_x = -3;
-	pixel_y = -1
-	},
-/obj/item/clothing/head/bomb_hood{
-	pixel_x = -3;
-	pixel_y = 9
-	},
-/obj/item/clothing/shoes/combat/gezena{
-	pixel_x = 3;
-	pixel_y = -7
-	},
-/obj/item/storage/toolbox/explosives{
-	pixel_x = -1;
-	pixel_y = -8
-	},
-/obj/item/clothing/gloves/gezena/engi,
-/obj/item/radio/headset/pgf/alt,
-/obj/item/gps,
-/obj/item/clothing/under/gezena/marine{
-	pixel_x = 8;
-	pixel_y = 9
-	},
-/obj/item/clothing/neck/cloak/gezena/engi{
-	pixel_x = -5
-	},
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 6
+	},
+/obj/item/clothing/suit/space/hardsuit/bomb{
+	pixel_x = -7;
+	pixel_y = 0
+	},
+/obj/item/clothing/suit/space/hardsuit/bomb{
+	pixel_x = 8;
+	pixel_y = 0
+	},
+/obj/item/clothing/gloves/gezena/engi{
+	pixel_x = -7;
+	pixel_y = 0
+	},
+/obj/item/clothing/gloves/gezena/engi{
+	pixel_x = 8;
+	pixel_y = 0
+	},
+/obj/item/radio/headset/pgf/alt{
+	pixel_x = -7
+	},
+/obj/item/radio/headset/pgf/alt{
+	pixel_x = 8
+	},
+/obj/item/storage/toolbox/explosives{
+	pixel_x = -7;
+	pixel_y = -8
+	},
+/obj/item/storage/toolbox/explosives{
+	pixel_x = 8;
+	pixel_y = -8
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/storage/port)
@@ -4504,6 +4508,14 @@
 	pixel_x = -12;
 	pixel_y = -20
 	},
+/obj/item/sensor_device{
+	pixel_y = -4;
+	pixel_x = 8
+	},
+/obj/item/pinpointer/crew/prox{
+	pixel_y = -6;
+	pixel_x = -8
+	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical)
 "AI" = (
@@ -4785,6 +4797,14 @@
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
+	},
+/obj/item/clothing/suit/bomb_suit{
+	pixel_x = -3;
+	pixel_y = -1
+	},
+/obj/item/clothing/head/bomb_hood{
+	pixel_x = -3;
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/port)
@@ -5347,11 +5367,9 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/toilet)
 "ES" = (
-/obj/machinery/door/window/brigdoor{
-	dir = 1;
-	req_access = list(3)
+/obj/effect/turf_decal/techfloor{
+	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "EX" = (
@@ -7275,16 +7293,16 @@
 /obj/item/gps{
 	pixel_x = -10;
 	pixel_y = -6;
-	gpstag = "PGFMC-ABLE"
+	gpstag = "ROMEO-LEAD"
 	},
 /obj/item/gps{
 	pixel_y = -6;
-	gpstag = "PGFMC-STAR"
+	gpstag = "ROMEO-A1"
 	},
 /obj/item/gps{
 	pixel_x = 10;
 	pixel_y = -6;
-	gpstag = "PGFMC-BAKER"
+	gpstag = "ROMEO-B1"
 	},
 /obj/item/bodycamera{
 	pixel_y = 8;
@@ -7837,6 +7855,9 @@
 /obj/item/assembly/flash,
 /obj/item/assembly/flash,
 /obj/item/assembly/flash,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "SY" = (

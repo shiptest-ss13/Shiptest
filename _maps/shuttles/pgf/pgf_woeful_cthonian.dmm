@@ -1175,11 +1175,13 @@
 	},
 /obj/item/clothing/head/helmet/bulletproof/x11{
 	pixel_y = 7;
-	pixel_x = -9
+	pixel_x = -9;
+	unique_reskin = list("None" = "x11helm", "Snow" = "x11helm_snow")
 	},
 /obj/item/clothing/suit/armor/vest/marine{
 	pixel_x = -8;
-	pixel_y = -5
+	pixel_y = -5;
+	unique_reskin = list("None" = "marine_light")
 	},
 /obj/item/storage/belt/sabre/pgf{
 	pixel_x = -7;
@@ -1187,11 +1189,13 @@
 	},
 /obj/item/clothing/suit/armor/vest/marine{
 	pixel_x = 6;
-	pixel_y = -5
+	pixel_y = -5;
+	unique_reskin = list("None" = "marine_light")
 	},
 /obj/item/clothing/head/helmet/bulletproof/x11{
 	pixel_y = 7;
-	pixel_x = 6
+	pixel_x = 6;
+	unique_reskin = list("None" = "x11helm", "Snow" = "x11helm_snow")
 	},
 /obj/item/storage/belt/sabre/pgf{
 	pixel_x = 7;
@@ -3000,13 +3004,13 @@
 /obj/item/crowbar/large,
 /obj/item/crowbar/large,
 /obj/item/gps{
-	gpstag = "PGFN-CHARLIE"
+	gpstag = "ALPHA-3"
 	},
 /obj/item/gps{
-	gpstag = "PGFN-BRAVO"
+	gpstag = "ALPHA-2"
 	},
 /obj/item/gps{
-	gpstag = "PGFN-ALPHA"
+	gpstag = "ALPHA-1"
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)

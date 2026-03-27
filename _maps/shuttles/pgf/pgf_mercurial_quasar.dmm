@@ -1850,7 +1850,6 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "xn" = (
-/obj/structure/table/reinforced,
 /obj/item/storage/box/flares{
 	pixel_x = -7;
 	pixel_y = 11
@@ -1876,30 +1875,31 @@
 	pixel_x = 1;
 	pixel_y = 11
 	},
+/obj/structure/table/reinforced,
+/obj/item/gps{
+	pixel_y = 0;
+	pixel_x = 9;
+	gpstag = "FOXTROT-3"
+	},
+/obj/item/gps{
+	pixel_y = 0;
+	gpstag = "FOXTROT-2"
+	},
+/obj/item/gps{
+	pixel_x = -9;
+	pixel_y = 0;
+	gpstag = "FOXTROT-LEAD"
+	},
 /obj/item/storage/pouch/medical{
 	pixel_y = -10;
 	pixel_x = 7
 	},
 /obj/item/storage/pouch/medical{
-	pixel_y = -10;
-	pixel_x = -7
-	},
-/obj/item/storage/pouch/medical{
 	pixel_y = -10
 	},
-/obj/item/gps{
-	pixel_x = -9;
-	pixel_y = 0;
-	gpstag = "PGFMC-ABLE"
-	},
-/obj/item/gps{
-	pixel_y = 0;
-	pixel_x = 9;
-	gpstag = "PGFMC-BAKER"
-	},
-/obj/item/gps{
-	pixel_y = 0;
-	gpstag = "PGFMC-STAR"
+/obj/item/storage/pouch/medical{
+	pixel_y = -10;
+	pixel_x = -7
 	},
 /obj/item/binoculars,
 /turf/open/floor/plasteel/tech,
@@ -2314,11 +2314,13 @@
 /obj/structure/rack,
 /obj/item/clothing/head/helmet/bulletproof/x11{
 	pixel_y = -3;
-	pixel_x = -5
+	pixel_x = -5;
+	unique_reskin = list("None" = "x11helm", "Snow" = "x11helm_snow")
 	},
 /obj/item/clothing/head/helmet/bulletproof/x11{
 	pixel_y = -3;
-	pixel_x = 5
+	pixel_x = 5;
+	unique_reskin = list("None" = "x11helm", "Snow" = "x11helm_snow")
 	},
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 1
@@ -2330,7 +2332,8 @@
 	dir = 10
 	},
 /obj/item/clothing/head/helmet/bulletproof/x11{
-	pixel_y = 5
+	pixel_y = 5;
+	unique_reskin = list("None" = "x11helm", "Snow" = "x11helm_snow")
 	},
 /obj/machinery/light_switch{
 	dir = 8;
@@ -2654,6 +2657,14 @@
 /obj/item/clothing/head/gezena/medic{
 	pixel_y = 13;
 	pixel_x = 1
+	},
+/obj/item/sensor_device{
+	pixel_y = -4;
+	pixel_x = 8
+	},
+/obj/item/pinpointer/crew/prox{
+	pixel_y = -6;
+	pixel_x = -8
 	},
 /turf/open/floor/plasteel,
 /area/ship/medical)
