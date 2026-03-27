@@ -182,13 +182,6 @@
 	item_state = "suns_pkarmor"
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 
-/obj/item/clothing/suit/armor/vest/suns/ehos //remind me to make this something to buy
-	name = "peacekeeper greatcoat"
-	desc = "A funky armored coat worn by eccentric peacekeepers. Closing the coat is socially improper."
-	icon_state = "suns_greatcoat"
-	item_state = "suns_greatcoat"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
-
 /obj/item/clothing/suit/toggle/suns/pkcoat
 	name = "peacekeeper coat"
 	desc = "An armored coat used during special occasions. This one is used in academic security."
@@ -591,6 +584,12 @@
 	desc = "Worn by SUNS captains. This cloak has a very imposing aura to it."
 	icon_state = "suns_captaincloak"
 	item_state = "suns_captaincloak"
+
+/obj/item/clothing/neck/cloak/suns/greatcoat
+	name = "peacekeeper greatcoat"
+	desc = "A funky coat worn by eccentric peacekeepers. Closing the coat is socially improper."
+	icon_state = "suns_greatcoat"
+	item_state = "suns_greatcoat"
 
 
 ///////////////

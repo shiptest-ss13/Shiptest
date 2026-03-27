@@ -260,6 +260,17 @@
 	icon = 'icons/obj/clothing/faction/ramzi/neck.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ramzi/neck.dmi'
 
+/obj/item/clothing/neck/cloak/ramzi/greatcoat
+	name = "ramzi greatcoat"
+	desc = "A worn-out greatcoat in ramzi colors. The broad shoulders should make you look scarier over holocalls."
+	icon_state = "ramzi_greatcoat"
+	item_state = "ramzi_greatcoat"
+	icon = 'icons/obj/clothing/faction/ramzi/neck.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ramzi/neck.dmi'
+	lefthand_file = 'icons/mob/inhands/faction/ramzi/ramzi_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/ramzi/ramzi_righthand.dmi'
+
+
 //////////
 //Neck//
 /////////

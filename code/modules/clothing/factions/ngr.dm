@@ -308,6 +308,16 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/neck.dmi'
 	supports_variations = VOX_VARIATION
 
+/obj/item/clothing/neck/cloak/ngr/greatcoat
+	name = "NGR greatcoat"
+	desc = "A fashionable greatcoat in NGR colors, worn by eccentric officers."
+	icon_state = "ngr_greatcoat"
+	item_state = "ngr_greatcoat"
+	icon = 'icons/obj/clothing/faction/ngr/neck.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/neck.dmi'
+	lefthand_file = 'icons/mob/inhands/faction/ngr/ngr_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/ngr/ngr_righthand.dmi'
+
 //////////
 //Belts//
 /////////

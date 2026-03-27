@@ -773,6 +773,38 @@
 	name = "ramzi clique dogtag"
 	desc = "A dogtag marked with the name and rank of a Ramzi Clique pirate. You could turn this in to an outpost console contract for money."
 
+// greatcoats
+
+/obj/item/clothing/neck/cloak/greatcoat
+	name = "greatcoat"
+	desc = "A fashionable leather greatcoat, worn by only the coolest."
+	icon_state = "black_greatcoat"
+	item_state = "black_greatcoat"
+	icon = 'icons/obj/clothing/neck.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/neck.dmi'
+	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
+	unique_reskin = list(
+		"black greatcoat" = "black_greatcoat",
+		"white greatcoat" = "white_greatcoat",
+		"brown greatcoat" = "brown_greatcoat",
+		"navy greatcoat" = "navy_greatcoat",
+	)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/neck/cloak/black_greatcoat
+	current_skin = "black greatcoat"
+
+/obj/item/clothing/neck/cloak/white_greatcoat
+	current_skin = "white greatcoat"
+
+/obj/item/clothing/neck/cloak/brown_greatcoat
+	current_skin = "brown greatcoat"
+
+/obj/item/clothing/neck/cloak/navy_greatcoat
+	current_skin = "navy greatcoat"
+
 //////////////
 //DOPE BLING//
 //////////////

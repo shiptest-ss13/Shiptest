@@ -526,7 +526,8 @@
 
 /datum/outfit/job/syndicate/hos/suns/alt
 	name = "Syndicate - Senior Peacekeeper Alt (SUNS)"
-	suit = /obj/item/clothing/suit/armor/vest/suns/ehos
+	neck = /obj/item/clothing/neck/cloak/suns/greatcoat
+	suit = /obj/item/clothing/suit/armor/vest/suns/hos
 	head = /obj/item/clothing/head/HoS/syndicate/suns
 
 //medical doctors (assorted)

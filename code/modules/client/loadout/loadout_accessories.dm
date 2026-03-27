@@ -42,6 +42,12 @@
 	display_name = "mantle, recolorable"
 	path = /obj/item/clothing/neck/mantle
 
+//greatcoat
+
+/datum/gear/accessory/greatcoat
+	display_name = "greatcoat, recolorable"
+	path = /obj/item/clothing/neck/cloak/greatcoat
+
 //neckwraps
 
 /datum/gear/accessory/neckwraps
