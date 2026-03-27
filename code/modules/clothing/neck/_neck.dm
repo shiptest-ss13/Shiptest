@@ -780,8 +780,8 @@
 	desc = "A fashionable leather greatcoat, worn by only the coolest."
 	icon_state = "black_greatcoat"
 	item_state = "black_greatcoat"
-	icon = 'icons/obj/clothing/neck.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/cloaks.dmi'
+	icon = 'icons/obj/clothing/cloaks.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/neck.dmi'
 	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
 	unique_reskin = list(
