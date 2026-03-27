@@ -1,0 +1,24 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Tide-class Salvage Ship",
+	"map_short_name": "Tide-class",
+	"faction": "/datum/faction/independent",
+	"prefix": "SV",
+	"tags": [
+		"Survival Challenge"
+	],
+	"namelists": [
+		"GENERAL",
+		"SPACE"
+	],
+	"map_path": "_maps/shuttles/good_ships/isv_roberts.dmm",
+	"token_icon_state": "ship_small_generic",
+	"limit": 1,
+	"job_slots": {
+		"Assistant": {
+			"outfit": "/datum/outfit/job/independent/assistant",
+			"slots": 6
+		}
+	},
+	"enabled": true
+}

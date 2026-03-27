@@ -1,0 +1,35 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Masinyane-class Personal Shuttle",
+	"map_short_name": "Masinyane-class",
+	"faction": "/datum/faction/independent",
+	"prefix": "ISV",
+	"tags": [
+		"Mining",
+		"Generalist"
+	],
+	"namelists": [
+		"GENERAL",
+		"SPACE"
+	],
+	"map_path": "_maps/shuttles/good_ships/masinyane.dmm",
+	"token_icon_state": "ship_small_generic",
+	"limit": 2,
+	"starting_funds": 4000,
+	"job_slots": {
+		"Private Ship Owner": {
+			"outfit": "/datum/outfit/job/independent/captain/masinyane",
+			"officer": true,
+			"slots": 1
+		},
+		"Ship Engineer": {
+			"outfit": "/datum/outfit/job/independent/engineer",
+			"slots": 1
+		},
+		"Crewmate": {
+			"outfit": "/datum/outfit/job/independent/assistant/fancy",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

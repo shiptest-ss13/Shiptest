@@ -1,0 +1,25 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Sugarcube-class Prison Bus Ship",
+	"map_short_name": "Sugarcube-class",
+	"faction": "/datum/faction/independent",
+	"prefix": "SV",
+	"tags": [
+		"Survival Challenge"
+	],
+	"namelists": [
+		"GENERAL",
+		"SPACE"
+	],
+	"map_path": "_maps/shuttles/good_ships/sugarcube.dmm",
+	"token_icon_state": "ship_small_generic",
+	"space_spawn":true,
+	"limit": 2,
+	"job_slots": {
+		"Assistant": {
+			"outfit": "/datum/outfit/job/independent/assistant",
+			"slots": 4
+		}
+	},
+	"enabled": true
+}

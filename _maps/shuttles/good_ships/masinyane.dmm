@@ -17,6 +17,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"cl" = (
+/obj/docking_port/stationary{
+	dwidth = 7;
+	height = 15;
+	width = 15
+	},
+/turf/template_noop,
+/area/template_noop)
 "cu" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -33,7 +41,9 @@
 	dir = 4
 	},
 /obj/machinery/computer/cryopod/directional/west,
-/obj/machinery/light/directional/west,
+/obj/machinery/light/small/directional/west{
+	pixel_y = 16
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "dJ" = (
@@ -111,7 +121,6 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/effect/landmark/observer_start,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "ix" = (
@@ -131,6 +140,7 @@
 /obj/machinery/computer/helm{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "ju" = (
@@ -167,9 +177,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "kO" = (
-/obj/structure/fans/tiny{
-	pixel_y = -10
-	},
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 1;
 	layer = 2.09
@@ -177,15 +184,38 @@
 /obj/machinery/button/door{
 	dir = 8;
 	id = "masinyane_blastdoors";
-	pixel_x = 23
+	pixel_x = 21;
+	pixel_y = -6
 	},
 /obj/machinery/door/poddoor{
 	id = "masinyane_blastdoors";
 	name = "Masinyane Entrance Doors"
 	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "mayonnaiseshield"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 20;
+	pixel_y = 4;
+	dir = 8;
+	id = "mayonnaiseshield"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "kS" = (
+/obj/structure/window/plasma/reinforced/spawner/west,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "masi_engi";
+	name = "Emergency Engine Shielding";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "kY" = (
@@ -219,6 +249,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-6"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -257,7 +290,8 @@
 	},
 /obj/machinery/door/poddoor/preopen{
 	id = "masi_engi";
-	name = "Emergency Engine Shielding"
+	name = "Emergency Engine Shielding";
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -321,6 +355,11 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 6;
+	pixel_y = -20
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "zI" = (
@@ -340,9 +379,6 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning{
 	dir = 10
-	},
-/obj/item/storage/secure/safe{
-	pixel_x = 33
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -406,15 +442,14 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
-/obj/item/radio/intercom/wideband/directional/north,
 /obj/machinery/button/door{
 	id = "masinyane_windowshield";
 	name = "shutters";
-	pixel_x = 25;
-	pixel_y = 30
+	pixel_x = 20;
+	pixel_y = 22
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 36
+/obj/item/radio/intercom/wideband/directional/north{
+	layer = 2.9
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
@@ -429,7 +464,8 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/hatch{
-	name = "Thruster Maintenance"
+	name = "Thruster Maintenance";
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -440,20 +476,28 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Iu" = (
-/obj/structure/fans/tiny{
-	pixel_y = -10
-	},
 /obj/effect/turf_decal/industrial/stand_clear{
 	layer = 2.09
 	},
 /obj/machinery/button/door{
 	dir = 4;
 	id = "masinyane_blastdoors";
-	pixel_x = -23
+	pixel_x = -21;
+	pixel_y = -6
 	},
 /obj/machinery/door/poddoor{
 	id = "masinyane_blastdoors";
 	name = "Masinyane Entrance Doors"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "mayonnaiseshield"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = -20;
+	pixel_y = 4;
+	dir = 4;
+	id = "mayonnaiseshield"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -504,11 +548,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Md" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
 	id = "masinyane_windowshield";
 	name = "Cockpit Emergency Blast Door"
 	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "Mj" = (
@@ -541,6 +586,10 @@
 /obj/machinery/power/terminal{
 	dir = 1
 	},
+/obj/item/storage/secure/safe{
+	pixel_x = 33;
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Pn" = (
@@ -563,6 +612,11 @@
 	id = "masi_engi";
 	name = "engine emergency shielding";
 	pixel_x = -23
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -21;
+	pixel_y = 11
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -622,6 +676,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"SN" = (
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-9"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "SR" = (
 /obj/machinery/door/window/westright,
 /obj/structure/window,
@@ -670,8 +731,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Xe" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 4
+/obj/machinery/computer/cargo{
+	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
@@ -739,6 +800,7 @@
 /area/ship/engineering)
 
 (1,1,1) = {"
+sx
 dJ
 sx
 sx
@@ -754,6 +816,7 @@ sx
 dJ
 "}
 (2,1,1) = {"
+sx
 dJ
 TB
 TB
@@ -769,28 +832,30 @@ TB
 dJ
 "}
 (3,1,1) = {"
+sx
 dJ
 uf
-uf
-uf
+kS
+kS
 Ng
 TB
 TB
 TB
 dJ
 uf
-uf
-uf
+kS
+kS
 dJ
 "}
 (4,1,1) = {"
+sx
 dJ
 em
 Yl
 Yl
 EK
-uf
-uf
+kS
+kS
 uf
 dJ
 ve
@@ -799,6 +864,7 @@ ve
 dJ
 "}
 (5,1,1) = {"
+sx
 ju
 Pn
 kY
@@ -814,6 +880,7 @@ Sm
 dJ
 "}
 (6,1,1) = {"
+sx
 dJ
 ej
 ZU
@@ -824,11 +891,12 @@ EN
 ks
 ix
 hc
-kS
 ic
+SN
 dJ
 "}
 (7,1,1) = {"
+sx
 dJ
 dJ
 dJ
@@ -844,6 +912,7 @@ Wn
 Wn
 "}
 (8,1,1) = {"
+sx
 Xq
 Iu
 Wi
@@ -859,6 +928,7 @@ cN
 Md
 "}
 (9,1,1) = {"
+cl
 qK
 kO
 up
@@ -874,6 +944,7 @@ Xe
 Md
 "}
 (10,1,1) = {"
+sx
 Wn
 Wn
 Iw
@@ -890,6 +961,7 @@ Md
 "}
 (11,1,1) = {"
 sx
+sx
 Wn
 Wn
 Wn
@@ -904,6 +976,7 @@ Md
 sx
 "}
 (12,1,1) = {"
+sx
 sx
 sx
 sx

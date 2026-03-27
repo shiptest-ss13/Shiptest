@@ -709,6 +709,7 @@
 /obj/item/ammo_box/magazine/co9mm,
 /obj/item/ammo_box/magazine/co9mm,
 /obj/item/gun/ballistic/automatic/pistol/challenger,
+/obj/item/gun/ballistic/automatic/pistol/challenger,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "pz" = (
@@ -1036,7 +1037,7 @@
 	dir = 4;
 	pixel_x = -20;
 	pixel_y = -4;
-	id = "pubbyshield-port"
+	id = "pubbyshield-star"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1789,8 +1790,8 @@
 /obj/item/card/id/captains_spare,
 /obj/item/clothing/gloves/color/captain,
 /obj/item/storage/belt/sabre,
-/obj/item/gun/energy/laser,
 /obj/item/clothing/shoes/laceup,
+/obj/item/gun/energy/sharplite/x01,
 /obj/item/clothing/under/warra/captain,
 /obj/item/clothing/head/warra/captain/peaked,
 /obj/item/clothing/glasses/sunglasses,
@@ -1977,7 +1978,6 @@
 	height = 31;
 	width = 41;
 	dir = 1;
-	disable_on_owner_ship_dock = 1;
 	dheight = 1
 	},
 /turf/template_noop,

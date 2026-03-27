@@ -59,8 +59,6 @@
 /turf/open/floor/plating,
 /area/ship/storage)
 "h" = (
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
 /obj/item/trash/cheesie,
 /obj/item/trash/cheesie,
 /obj/item/trash/candy,
@@ -153,8 +151,17 @@
 /turf/open/floor/plating,
 /area/ship/storage)
 "t" = (
-/obj/item/areaeditor/shuttle,
 /obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_y = 4
+	},
+/obj/item/pen{
+	pixel_y = 4
+	},
+/obj/item/areaeditor/shuttle{
+	pixel_y = -2;
+	pixel_x = 4
+	},
 /turf/open/floor/plating,
 /area/ship/storage)
 "u" = (
@@ -182,7 +189,9 @@
 /turf/open/floor/plating,
 /area/ship/storage)
 "w" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/storage)
 "x" = (
@@ -227,10 +236,16 @@
 /obj/structure/rack,
 /obj/item/storage/toolbox/mechanical/old,
 /obj/item/circuitboard/machine/autolathe,
+/obj/item/circuitboard/computer/cargo,
 /obj/item/pickaxe/improvised,
 /obj/item/pickaxe/improvised,
 /obj/effect/spawner/random/decoration/glowstick,
 /obj/effect/spawner/random/decoration/glowstick,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = 6
+	},
 /turf/open/floor/plating,
 /area/ship/storage)
 "E" = (
@@ -263,7 +278,8 @@
 /area/ship/storage)
 "I" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/deepcore/hub,
+/obj/structure/table/reinforced,
+/obj/machinery/fax/indie,
 /turf/open/floor/plating,
 /area/ship/storage)
 "J" = (
@@ -274,6 +290,11 @@
 "K" = (
 /obj/structure/sign/poster/official/moth/meth,
 /turf/closed/wall/rust,
+/area/ship/storage)
+"T" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/flashlight,
+/turf/open/floor/plating,
 /area/ship/storage)
 
 (1,1,1) = {"
@@ -319,7 +340,7 @@ c
 (6,1,1) = {"
 a
 i
-l
+T
 x
 j
 b
@@ -360,8 +381,8 @@ a
 c
 n
 t
-B
 I
+B
 c
 "}
 (12,1,1) = {"
