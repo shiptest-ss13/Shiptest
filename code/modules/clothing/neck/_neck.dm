@@ -788,7 +788,7 @@
 		"black greatcoat" = "black_greatcoat",
 		"white greatcoat" = "white_greatcoat",
 		"brown greatcoat" = "brown_greatcoat",
-		"navy greatcoat" = "navy_greatcoat",
+		"navy greatcoat" = "navy_greatcoat"
 	)
 	unique_reskin_changes_base_icon_state = TRUE
 	unique_reskin_changes_name = TRUE
