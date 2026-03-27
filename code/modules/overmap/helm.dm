@@ -101,7 +101,7 @@
 		if(JUMP_STATE_OFF)
 			jump_state = JUMP_STATE_CHARGING
 		if(JUMP_STATE_CHARGING)
-			jump_state = JUMP_STATE_IONIZING
+			jump_state = JUMP_STATE_FIRING
 			say("Bluespace Jump Calibration completed. Ionizing Bluespace Pylon.")
 		if(JUMP_STATE_FIRING)
 			jump_state = JUMP_STATE_FINALIZED
@@ -537,7 +537,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/helm/viewscreen, 17)
 
 #undef JUMP_STATE_OFF
 #undef JUMP_STATE_CHARGING
-#undef JUMP_STATE_IONIZING
 #undef JUMP_STATE_FIRING
 #undef JUMP_STATE_FINALIZED
 #undef JUMP_CHARGE_DELAY
