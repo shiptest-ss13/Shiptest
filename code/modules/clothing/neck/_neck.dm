@@ -799,7 +799,7 @@
 
 
 /obj/item/clothing/neck/cloak/white_greatcoat
-	icon_state= = "white_greatcoat"
+	icon_state = "white_greatcoat"
 	current_skin = "white greatcoat"
 
 
