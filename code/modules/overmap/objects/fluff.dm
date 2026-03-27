@@ -127,6 +127,7 @@
 	overmap_color_type = STARSYSTEM_COLOR_SECONDARY_STRUCTURE_COLOR
 	flag_overlay = FALSE
 	interference_power = 0
+	layer = 3.01
 
 /datum/overmap/fluff/spacecolony
 	name = "o'neill cylinder"

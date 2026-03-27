@@ -16,7 +16,7 @@
 
 	max_overmap_dynamic_events = 0
 
-	size = 15
+	size = 20
 
 	//this matters less for static outposts but it is a nice fallback.
 	event_probabilities = list(
@@ -157,4 +157,8 @@
 		"Follow the buoys. Don't get lost.",
 		"The Watcher's gaze is on you. Welcome back."
 	)
+
+	json = '_maps/sectors/kapche_starsystem.json'
+	generator_type = OVERMAP_GENERATOR_JSON
+	has_outpost = FALSE
 

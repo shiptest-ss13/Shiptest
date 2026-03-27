@@ -24,6 +24,9 @@
 	/// The character that represents this overmap datum on the overmap in the admin ASCII mode.
 	var/char_rep
 
+	/// the layer override of the token
+	var/layer = 3
+
 	/// The x position of this datum on the overmap. Use [/datum/overmap/proc/move] to change this.
 	VAR_FINAL/x
 	/// The y position of this datum on the overmap. Use [/datum/overmap/proc/move] to change this.
@@ -691,6 +694,8 @@
 	if(current_overmap.override_object_colors)
 		token.color = current_overmap.primary_color
 	current_overmap.post_edit_token_state(src)
+
+	token.layer = layer
 
 /datum/overmap/proc/activate_cloak()
 	alter_token_appearance()
