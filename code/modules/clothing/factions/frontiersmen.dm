@@ -255,6 +255,16 @@
 //Neck//
 /////////
 
+/obj/item/clothing/neck/cloak/frontiersmen/greatcoat
+	name = "frontiersmen greatcoat"
+	desc = "A roughed-up greatcoat in frontiersmen colors, usually worn by really loud commanders."
+	icon_state = "frontiersmen_greatcoat"
+	item_state = "frontiersmen_greatcoat"
+	icon = 'icons/obj/clothing/faction/frontiersmen/neck.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/neck.dmi'
+	lefthand_file = 'icons/mob/inhands/faction/frontiersmen/frontiersmen_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/frontiersmen/frontiersmen_righthand.dmi'
+
 //////////
 //Belts//
 /////////
