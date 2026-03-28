@@ -46,6 +46,19 @@
 #define COMSIG_AUTOFIRE_SHOT "autofire_shot"
 	#define COMPONENT_AUTOFIRE_SHOT_SUCCESS (1<<0)
 
+//Aimed fire component
+/// Compatible firemode is in the gun. Wait until it's held in the user hands.
+#define AIMEDFIRE_STAT_IDLE (1<<0)
+/// Gun is active and in the user hands. Wait until user does a valid click.
+#define AIMEDFIRE_STAT_ALERT (1<<1)
+/// Gun is shooting.
+#define AIMEDFIRE_STAT_FIRING (1<<2)
+
+#define COMSIG_AIMEDFIRE_ONMOUSEDOWN "aimedfire_onmousedown"
+	#define COMPONENT_AIMEDFIRE_ONMOUSEDOWN_BYPASS (1<<0)
+#define COMSIG_AIMEDFIRE_SHOT "aimedfire_shot"
+	#define COMPONENT_AIMEDFIRE_SHOT_SUCCESS (1<<0)
+
 #define SUPPRESSED_NONE 0
 #define SUPPRESSED_QUIET 1 ///standard suppressed
 #define SUPPRESSED_VERY 2 /// no message
